@@ -10,7 +10,7 @@ Total functions: 4922
 Clean functions: 2529 (51.4%)
 Functions with suspects: 2393 (48.6%)
 
-Total suspect patterns: 20998
+Total suspect patterns: 21011
 Average suspects per function: 4.27
 
 Virtual files: 203 total, 10 at 100%, 12 at 90%+
@@ -73,6 +73,7 @@ SUSPECT PATTERN BREAKDOWN
   signed_shift_global_idiom 17
   static_invalid_pointer_cast 12
   fast_sqrt_inline          12
+  phantom_float_to_int      12
   fast_inv_sqrt_inline      11
   static_null_pointer_redundant_check 10
   static_null_pointer       9
@@ -102,6 +103,7 @@ SUSPECT PATTERN BREAKDOWN
   static_null_pointer_arithmetic 1
   loop_clobbered_constant   1
   builtin_function          1
+  partial_struct_copy       1
   warning_max_restarts      1
   mem_magic_size            1
 
@@ -164,7 +166,7 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   004ff2c0: core_script.cpp_CScript_step_FUN_004ff2c0 (score: 4734, suspects: 134, lines: 3329)
   004a0550: core_game.cpp_CGame_processCheatCodes_FUN_004a0550 (score: 3562, suspects: 133, lines: 2157)
   0047ac50: core_event.cpp_CEventList_executeCommand_FUN_0047ac50 (score: 3099, suspects: 87, lines: 2159)
-  0050c2d0: core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0 (score: 2778, suspects: 222, lines: 523)
+  0050c2d0: core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0 (score: 2793, suspects: 223, lines: 523)
   004349a0: engine_clipper.c_clipPolygonToViewport_FUN_004349a0 (score: 2620, suspects: 217, lines: 425)
   004accf0: core_glass.cpp_CGlass_FUN_004accf0 (score: 2610, suspects: 221, lines: 390)
   00434210: engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00434210 (score: 2576, suspects: 214, lines: 411)
@@ -177,7 +179,7 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   0052f823: engine_special.cpp_renderMMXPerspectiveScanline16_FUN_0052f823 (score: 2042, suspects: 142, lines: 587)
   0052f031: engine_special.cpp_renderMMXPerspectiveScanline32_FUN_0052f031 (score: 2025, suspects: 142, lines: 570)
   004a9270: core_ghoul.cpp_CGhoul_process_FUN_004a9270 (score: 1989, suspects: 86, lines: 1074)
-  0053a760: core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760 (score: 1937, suspects: 132, lines: 582)
+  0053a760: core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760 (score: 1952, suspects: 133, lines: 582)
   005384d0: core_stranger.cpp_CStranger_FUN_005384d0 (score: 1900, suspects: 120, lines: 645)
   0055e040: core_xform.cpp_transformAndClipGeometry_FUN_0055e040 (score: 1840, suspects: 135, lines: 455)
   00535900: core_stranger.cpp_CStranger_processFrame_FUN_00535900 (score: 1788, suspects: 58, lines: 1163)
@@ -692,6 +694,11 @@ FUNCTIONS BY SUSPECT TYPE
     00547b30: core_trigger.cpp_CTrigger_process_FUN_00547b30
     0055ef50: core_zombie.cpp_CZombie_process_FUN_0055ef50
 
+  phantom_float_to_int (3 functions):
+    0043d1c0: core_crossbow.cpp_CCrossbow_fire_FUN_0043d1c0
+    004537d0: core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_004537d0
+    0053a760: core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760
+
   fast_inv_sqrt_inline (8 functions):
     004366f0: core_cloth.cpp_CCloth_applyConstraints_FUN_004366f0
     00438880: core_cloth.cpp_fastInvSqrt_FUN_00438880
@@ -819,6 +826,9 @@ FUNCTIONS BY SUSPECT TYPE
 
   builtin_function (1 functions):
     004f4b30: cockpit_pkbitmap.cpp_CPackedBitmap_FUN_004f4b30
+
+  partial_struct_copy (1 functions):
+    0050c2d0: core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0
 
   warning_max_restarts (1 functions):
     0052bbd0: sound_snddx.cpp_directSoundEnumerationCallback_FUN_0052bbd0

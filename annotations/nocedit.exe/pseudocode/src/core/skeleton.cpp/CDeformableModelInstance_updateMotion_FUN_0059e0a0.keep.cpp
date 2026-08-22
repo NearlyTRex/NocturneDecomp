@@ -194,17 +194,17 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a
           local_1cc = local_122c[local_30];
           local_dc = local_186c[local_30];
           local_ec = (this_ptr->bone_transform).pose_data.bone_rotations[local_30];
-          if (-1 < (int)local_ec.z) {
+          if (-1 < local_28) {
             core_xform_cpp_negateFirstComponent_FUN_005f75e0
-                      (local_122c + (int)local_ec.z,&local_fc);
+                      (local_122c + local_28,&local_fc);
             core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_1cc,&local_fc,&local_25c);
             local_1cc = local_25c;
             core_xform_cpp_negateFirstComponent_FUN_005f75e0
-                      (local_186c + (int)local_ec.z,&local_1fc);
+                      (local_186c + local_28,&local_1fc);
             core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_dc,&local_1fc,&local_19c);
             local_dc = local_19c;
             core_xform_cpp_negateFirstComponent_FUN_005f75e0
-                      (local_6c + (int)local_ec.z,&local_10c);
+                      (local_6c + local_28,&local_10c);
             core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_ec,&local_10c,&local_13c);
             local_ec = local_13c;
           }
@@ -212,12 +212,12 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a
           core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_dc,&local_12c,&local_27c);
           core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_ec,&local_27c,&local_26c);
           local_17c = local_26c;
-          if ((int)local_26c.z < 0) {
+          if (local_28 < 0) {
             pCVar11 = &local_26c;
           }
           else {
             core_xform_cpp_multiplyQuaternion_FUN_005f7640
-                      (&local_17c,local_6c + (int)local_26c.z,&local_11c);
+                      (&local_17c,local_6c + local_28,&local_11c);
             pCVar11 = &local_11c;
           }
           (this_ptr->bone_transform).pose_data.bone_rotations[local_30] = *pCVar11;

@@ -153,7 +153,7 @@ void __cdecl CDemonSet::process(CDemonSet *this_ptr);
 
 // Original: core_set.cpp_CDemonSet_getReverbPresetAtPosition_FUN_0050d1c0
 // Address: 0050d1c0
-float __cdecl CDemonSet::getReverbPresetAtPosition(CDemonSet *this_ptr,CVector3f *position);
+int __cdecl CDemonSet::getReverbPresetAtPosition(CDemonSet *this_ptr,CVector3f *position);
 
 // Original: core_set.cpp_CDemonSet_loadAssets_FUN_0050d280
 // Address: 0050d280

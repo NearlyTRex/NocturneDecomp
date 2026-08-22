@@ -2,11 +2,11 @@
 // Address: 0050d1c0
 // Address Range: [[0050d1c0, 0050d27f]]
 // Convention: __cdecl
-// Signature: float __cdecl core_set_cpp_CDemonSet_getReverbPresetAtPosition_FUN_0050d1c0(CDemonSet *this_ptr,CVector3f *position)
+// Signature: int __cdecl core_set_cpp_CDemonSet_getReverbPresetAtPosition_FUN_0050d1c0(CDemonSet *this_ptr,CVector3f *position)
 
 #include "nocturne.h"
 
-float __cdecl core_set_cpp_CDemonSet_getReverbPresetAtPosition_FUN_0050d1c0(CDemonSet *this_ptr,CVector3f *position)
+int __cdecl core_set_cpp_CDemonSet_getReverbPresetAtPosition_FUN_0050d1c0(CDemonSet *this_ptr,CVector3f *position)
 
 {
   SRoom *pSVar1;
@@ -29,11 +29,11 @@ float __cdecl core_set_cpp_CDemonSet_getReverbPresetAtPosition_FUN_0050d1c0(CDem
                 (this_ptr_00,&local_30,&local_24);
       if (((ABS(local_30.x) <= (pSVar1->extents).x) && (ABS(local_30.y) <= (pSVar1->extents).y)) &&
          (ABS(local_30.z) <= (pSVar1->extents).z)) {
-        return (float)pSVar1->reverb_size;
+        return pSVar1->reverb_size;
       }
       iVar2 = iVar2 + 1;
       this_ptr_00 = (CMatrix3x3f *)((int)(this_ptr_00 + 1) + 0x20);
     } while (iVar2 < this_ptr->room_count);
   }
-  return (float)this_ptr->default_room_size;
+  return this_ptr->default_room_size;
 }

@@ -159,6 +159,7 @@ def run_detectors(susp, code, struct_layout_map=None,
     found.extend(susp.identify_unrolled_memcpy_dword_cast_loop(code))
     found.extend(susp.identify_unrolled_memcpy_index_form(code))
     found.extend(susp.identify_unrolled_field_copy(code, struct_layout_map))
+    found.extend(susp.identify_partial_struct_copy(code, struct_layout_map))
     found.extend(susp.identify_cascade_constant_fill(code))
     found.extend(susp.identify_self_copy_guard(code))
     found.extend(susp.identify_dropped_self_copy(code))
@@ -317,7 +318,8 @@ def main(argv=None):
     # nocedit sources against tridx7's type universe — every type-aware
     # detector (struct_field_overrun, mem_magic_size, alloc_magic_size,
     # stale_struct_offset_64bit, unrolled_field_copy, pointer_truncation,
-    # subfield_vector_pun) then found no matching struct and reported nothing.
+    # subfield_vector_pun, partial_struct_copy) then found no matching struct
+    # and reported nothing.
     import glob as _glob
     _dt_cache = {}
 

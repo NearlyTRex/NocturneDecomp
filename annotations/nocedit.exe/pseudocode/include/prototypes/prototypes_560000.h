@@ -157,7 +157,7 @@ CVector3i * __stack_esi core_set_cpp_transformToWorldSpace_FUN_0056e890(CVector3
 CVector3i * __stack_esi core_set_cpp_transformNormalFixedPoint_FUN_0056e960(CVector3i *input,CVector3i *output);
 void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_ptr,int vertex_count,int tri_count,void *face_data,CVector3i *vertex_positions,int vertices_per_face,CVector3i *vertex_normals);
 void __cdecl core_set_cpp_CDemonSet_process_FUN_0056f940(CDemonSet *this_ptr);
-float __cdecl core_set_cpp_CDemonSet_getReverbPresetAtPosition_FUN_0056fac0(CDemonSet *this_ptr,CVector3f *position);
+int __cdecl core_set_cpp_CDemonSet_getReverbPresetAtPosition_FUN_0056fac0(CDemonSet *this_ptr,CVector3f *position);
 void __cdecl core_set_cpp_CDemonSet_loadAssets_FUN_0056fb80(CDemonSet *this_ptr);
 int __cdecl core_set_cpp_qsortByDisplayListEntry_FUN_0056fba0(SDisplayListSortEntry *a,SDisplayListSortEntry *b);
 void __cdecl core_set_cpp_CDemonSet_buildDisplayList_FUN_0056fbd0(CDemonSet *this_ptr,uint dirty_flags_mask);

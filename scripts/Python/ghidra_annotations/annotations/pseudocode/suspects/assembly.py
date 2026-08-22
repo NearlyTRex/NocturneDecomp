@@ -8,6 +8,9 @@ from ghidra_annotations.annotations.pseudocode.pass_by_value import BYVALUE_CALL
 from ._common import (
     SUSPECT_SEVERITY, _find_global_at, _find_global_in_range, _normalize_addr
 )
+from ._structtypes import (
+    _SFO_SIG_RE, _sfo_resolve_var_types, resolve_access_path_type
+)
 
 
 
@@ -816,6 +819,130 @@ def identify_missing_cave_copy(decompiled_code, assembly_code):
                 "copy `{d} = {s};`.").format(d=dst, s=src, t=type_name, f=dfield),
             'severity': 'moderate',
         })
+    return suspects
+
+
+
+
+# =============================================================================
+# Phantom float->int conversion (§32)
+# =============================================================================
+#
+# A float->int NUMERIC conversion on x87 requires a store-integer instruction —
+# `FIST` / `FISTP`. (Watcom 11 emits these inline; the corpus contains no
+# `_ftol`-style conversion helper calls, so the instruction is the whole story.)
+# When a function's `.asm` has NO `FIST`/`FISTP` at all, every `(int)<float>` in
+# its decompile is fabricated: Ghidra assigned a float type to a stack slot the
+# binary reads as an integer, or lost an integer local entirely and reached for
+# a float field that happens to occupy the slot it wanted.
+#
+# Canonical (CScat::blendAimBones — a bone index served from a quaternion):
+#     blendBoneRotations(&model, &local_6c, t, (int)local_6c.z, cb);
+# The real argument was `g_ScatIndices[5]`, an int local Ghidra dropped; `.z` of
+# the quaternion being passed alongside it is what landed in the slot. The
+# blended rotation went to whatever bone that float's bit pattern indexed.
+#
+# Scope: the FIELD-path shape (`(int)local.field`, `(int)local.a.b`) only. The
+# bare-local shape (`(int)fVar4` on a mistyped float local) is the same root
+# cause but resolves to a Ghidra-side retype rather than a `.keep` edit, and is
+# deliberately not reported here.
+#
+# Not flagged (other detectors own them):
+#   - bit-pattern compares  `(int)x.f < 0x40c00001`  -> bit_int_float_compare
+#   - fast-(inv-)sqrt magic  `(int)x >> 1 + g_FastSqrtMagic` -> fast_sqrt_inline
+#   - pointer / array roots  `(int)pdVar9`, `(int)afStack_4e0` -> pointer_truncation
+_PHANTOM_F2I_FIST_RE = re.compile(r'\bFISTP?\b')
+
+
+_PHANTOM_F2I_CAST_RE = re.compile(
+    r'\((?:int|uint)\)\s*([A-Za-z_]\w*(?:\.[A-Za-z_]\w*)+)')
+
+
+_PHANTOM_F2I_PTR_DECL_RE = re.compile(
+    r'^\s*[A-Za-z_]\w*\s*\*+\s*([A-Za-z_]\w*)\s*[;=]', re.M)
+
+
+_PHANTOM_F2I_ARR_DECL_RE = re.compile(
+    r'^\s*[A-Za-z_]\w*\s+([A-Za-z_]\w*)\s*\[', re.M)
+
+
+_PHANTOM_F2I_MAGIC_RE = re.compile(r'g_Fast(?:Inv)?SqrtMagic')
+
+
+_PHANTOM_F2I_FLOAT_TYPES = frozenset(('float', 'double', 'float10'))
+
+
+def identify_phantom_float_to_int(decompiled_code, assembly_code,
+                                  struct_layout_map=None):
+    """Detect `(int)<float struct field>` casts the assembly cannot perform.
+
+    Gated on the function's `.asm` containing no `FIST`/`FISTP`, which makes a
+    numeric float-to-int conversion impossible in the original binary — so the
+    cast is a decompiler fabrication over a stack slot Ghidra mistyped, and the
+    integer the code needs has to be recovered from the asm. See §32.
+
+    Type-aware: needs a struct layout map to resolve the field's declared type,
+    and is inert without one.
+
+    Args:
+        decompiled_code: The decompiled C pseudocode string.
+        assembly_code: The function's assembly listing (from `.asm`).
+        struct_layout_map: struct name -> field layout, from
+            `get_struct_layout_map()` / `build_struct_layout_map()`.
+
+    Returns:
+        List of suspect dicts, one per cast site.
+    """
+    suspects = []
+    if not decompiled_code or not assembly_code or not struct_layout_map:
+        return suspects
+    if _PHANTOM_F2I_FIST_RE.search(assembly_code):
+        return suspects
+    var_types = _sfo_resolve_var_types(decompiled_code)
+    skip_roots = set(_PHANTOM_F2I_PTR_DECL_RE.findall(decompiled_code))
+    skip_roots |= set(_PHANTOM_F2I_ARR_DECL_RE.findall(decompiled_code))
+    sig_m = _SFO_SIG_RE.search(decompiled_code)
+    if sig_m:
+        for part in sig_m.group(1).split(','):
+            pm = re.match(r'^\s*[A-Za-z_]\w*\s*\*+\s*([A-Za-z_]\w*)\s*$', part)
+            if pm:
+                skip_roots.add(pm.group(1))
+
+    for i, line in enumerate(decompiled_code.split('\n')):
+        stripped = line.strip()
+        if not stripped or stripped.startswith('//'):
+            continue
+        if _PHANTOM_F2I_MAGIC_RE.search(line):
+            continue
+        for m in _PHANTOM_F2I_CAST_RE.finditer(line):
+            path = m.group(1)
+            if path.split('.')[0] in skip_roots:
+                continue
+            if resolve_access_path_type(
+                    path, var_types, struct_layout_map) not in \
+                    _PHANTOM_F2I_FLOAT_TYPES:
+                continue
+            cast = re.escape(m.group(0))
+            # Bit-pattern compare against a hex literal — bit_int_float_compare.
+            if (re.search(cast + r'\s*[<>=!]=?\s*0x[0-9a-fA-F]{6,}', line) or
+                    re.search(r'0x[0-9a-fA-F]{6,}\s*[<>=!]=?\s*' + cast, line)):
+                continue
+            suspects.append({
+                'line': i + 1,
+                'type': 'phantom_float_to_int',
+                'match': m.group(0),
+                'text': stripped[:120],
+                'description': (
+                    "`{expr}` numerically converts float field `{path}` to an "
+                    "integer, but this function's `.asm` contains no "
+                    "`FIST`/`FISTP` — the binary never performs a float-to-int "
+                    "conversion here, so the cast is fabricated. Ghidra lost "
+                    "the real integer (usually a local or global it dropped) "
+                    "and reached for a float field sharing the stack slot. See "
+                    "§32 — recover the true value from the asm; do not keep "
+                    "the cast.").format(expr=m.group(0), path=path),
+                'severity': 'moderate',
+            })
     return suspects
 
 

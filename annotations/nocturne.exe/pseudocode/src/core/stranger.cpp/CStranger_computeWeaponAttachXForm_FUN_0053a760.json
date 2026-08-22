@@ -116,14 +116,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1063,
-    "complexity_score": 1937,
+    "complexity_score": 1952,
     "cross_reference_count": 2,
     "function_call_count": 13,
     "global_count": 13,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 582,
-    "suspect_count": 132,
+    "suspect_count": 133,
     "suspect_types": [
+      "phantom_float_to_int",
       "pointer_cast",
       "pointer_truncation",
       "suspect_float",
@@ -2594,7 +2595,7 @@
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
       "line": 433,
       "match": "field-by-field struct copy",
       "severity": "moderate",
@@ -2602,7 +2603,7 @@
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
       "line": 472,
       "match": "field-by-field struct copy",
       "severity": "moderate",
@@ -2610,12 +2611,20 @@
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
       "line": 529,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_84.x = pCVar3->x;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "`(int)local_180.x` numerically converts float field `local_180.x` to an integer, but this function's `.asm` contains no `FIST`/`FISTP` \u2014 the binary never performs a float-to-int conversion here, so the cast is fabricated. Ghidra lost the real integer (usually a local or global it dropped) and reached for a float field sharing the stack slot. See \u00a732 \u2014 recover the true value from the asm; do not keep the cast.",
+      "line": 139,
+      "match": "(int)local_180.x",
+      "severity": "moderate",
+      "text": "fVar1 = (((CDemonActor *)((int)local_180.x + 0x2a0))->orient).vec.z;",
+      "type": "phantom_float_to_int"
     },
     {
       "description": "Watcom inline memcpy (REP MOVSD at 0053a858, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",

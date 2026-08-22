@@ -433,15 +433,15 @@ void __cdecl resetActorTypeInfo(void);
 
 // Original: core_actor.cpp_CDemonActor_processFootstep_FUN_0040c830
 // Address: 0040c830
-int __cdecl CDemonActor::processFootstep(CDemonActor *this_ptr,float volume);
+uint __cdecl CDemonActor::processFootstep(CDemonActor *this_ptr,float volume);
 
 // Original: core_actor.cpp_CDemonActor_processFootstepAt_FUN_0040c8f0
 // Address: 0040c8f0
-int __cdecl CDemonActor::processFootstepAt(CDemonActor *this_ptr,CVector3f *location,float volume);
+uint __cdecl CDemonActor::processFootstepAt(CDemonActor *this_ptr,CVector3f *location,float volume);
 
 // Original: core_actor.cpp_CDemonActor_handleFootstep_FUN_0040ca10
 // Address: 0040ca10
-int __cdecl CDemonActor::handleFootstep(CDemonActor *this_ptr,CVector3f *position,EGroundType ground_type,float volume);
+uint __cdecl CDemonActor::handleFootstep(CDemonActor *this_ptr,CVector3f *position,EGroundType ground_type,float volume);
 
 // Original: core_actor.cpp_setRandomSeed_FUN_0040cb90
 // Address: 0040cb90

@@ -4,7 +4,7 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  undefined_data                  4085 ( 19.5%)
+  undefined_data                  4085 ( 19.4%)
   pointer_cast                    3557 ( 16.9%)
   pointer_truncation              2886 ( 13.7%)
   unrolled_memcpy                 1476 (  7.0%)
@@ -49,6 +49,7 @@ SUSPECT TYPE COUNTS
   signed_shift_global_idiom         17 (  0.1%)
   static_invalid_pointer_cast       12 (  0.1%)
   fast_sqrt_inline                  12 (  0.1%)
+  phantom_float_to_int              12 (  0.1%)
   fast_inv_sqrt_inline              11 (  0.1%)
   static_null_pointer_redundant_check    10 (  0.0%)
   static_null_pointer                9 (  0.0%)
@@ -78,6 +79,7 @@ SUSPECT TYPE COUNTS
   static_null_pointer_arithmetic     1 (  0.0%)
   loop_clobbered_constant            1 (  0.0%)
   builtin_function                   1 (  0.0%)
+  partial_struct_copy                1 (  0.0%)
   warning_max_restarts               1 (  0.0%)
   mem_magic_size                     1 (  0.0%)
 
@@ -6710,6 +6712,22 @@ Functions:
   core_zombie.cpp_CZombie_process_FUN_0055ef50
 
 ====================================================================================================
+TYPE: phantom_float_to_int (12 occurrences)
+====================================================================================================
+
+Unique patterns:
+     4x  (int)local_28.max.z
+     3x  (int)local_28.max.y
+     2x  (int)CStack_20.y
+     2x  (int)local_28.max.x
+     1x  (int)local_180.x
+
+Functions:
+  core_crossbow.cpp_CCrossbow_fire_FUN_0043d1c0
+  core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_004537d0
+  core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760
+
+====================================================================================================
 TYPE: fast_inv_sqrt_inline (11 occurrences)
 ====================================================================================================
 
@@ -7099,6 +7117,16 @@ Unique patterns:
 
 Functions:
   cockpit_pkbitmap.cpp_CPackedBitmap_FUN_004f4b30
+
+====================================================================================================
+TYPE: partial_struct_copy (1 occurrences)
+====================================================================================================
+
+Unique patterns:
+     1x  local_ec.x = local_104.x; (partial CVector3i copy — 4/12 bytes)
+
+Functions:
+  core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0
 
 ====================================================================================================
 TYPE: warning_max_restarts (1 occurrences)

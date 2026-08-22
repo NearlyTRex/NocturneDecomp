@@ -40,7 +40,7 @@ void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *morph)
   char local_228 [256];
   CBoundingBox3D local_128 [3];
   CDeformableModel *local_8c [3];
-  int local_80;
+  float local_80;
   int local_74;
   int local_70;
   int local_6c;
@@ -168,7 +168,7 @@ void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *morph)
           if (paired_vertex_idx < 0) {
             piVar8 = (int *)((char *)local_4db8[picked_side].skinned_vertices_buffer + iVar15 * 0xc);
             iVar12 = 0;
-            local_80 = 0x7149f2ca;
+            local_80 = 1e30f;
             fVar3 = 0.0;
             while (fVar13 = fVar3, (int)fVar13 < local_8c[1 - picked_side]->vertex_count[0]) {
               piVar7 = (int *)((char *)local_4db8[1 - picked_side].skinned_vertices_buffer + iVar12);
@@ -185,10 +185,10 @@ void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *morph)
                        ((float)piVar8[2] * 0.00390625f - local_128[picked_side].min.x) +
                       local_128[1 - picked_side].min.x) - (float)piVar7[2] * 0.00390625f;
               fVar1 = fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1;
-              if (fVar1 < (float)local_80) {
+              if (fVar1 < local_80) {
                 iVar12 = iVar12 + 0xc;
                 fVar3 = (float)((int)fVar13 + 1);
-                local_80 = (int)fVar1;
+                local_80 = fVar1;
                 paired_vertex_idx = (int)fVar13;
               }
               else {

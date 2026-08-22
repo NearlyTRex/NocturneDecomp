@@ -2,11 +2,11 @@
 // Address: 0040c8f0
 // Address Range: [[0040c8f0, 0040ca08]]
 // Convention: __cdecl
-// Signature: int __cdecl core_actor_cpp_CDemonActor_processFootstepAt_FUN_0040c8f0(CDemonActor *this_ptr,CVector3f *location,float volume)
+// Signature: uint __cdecl core_actor_cpp_CDemonActor_processFootstepAt_FUN_0040c8f0(CDemonActor *this_ptr,CVector3f *location,float volume)
 
 #include "nocturne.h"
 
-int __cdecl core_actor_cpp_CDemonActor_processFootstepAt_FUN_0040c8f0(CDemonActor *this_ptr,CVector3f *location,float volume)
+uint __cdecl core_actor_cpp_CDemonActor_processFootstepAt_FUN_0040c8f0(CDemonActor *this_ptr,CVector3f *location,float volume)
 
 {
   float fVar1;

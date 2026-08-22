@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_actor_cpp_CDemonActor_processFootstep_FUN_0040d930(CDemonActor *this_ptr,float volume)
+; uint __cdecl core_actor_cpp_CDemonActor_processFootstep_FUN_0040d930(CDemonActor *this_ptr,float volume)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr

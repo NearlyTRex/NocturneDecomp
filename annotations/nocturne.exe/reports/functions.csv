@@ -769,7 +769,7 @@ core_charactr.cpp_CCharacter_buildLayerActionTransitionCosts_FUN_0042a800,0042a8
 core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0,0042a9d0,core/charactr.cpp,12,0,,12
 core_charactr.cpp_CCharacter_chooseNextLayerAction_FUN_0042aa50,0042aa50,core/charactr.cpp,55,0,,55
 core_charactr.cpp_CCharacter_processSmoking_FUN_0042abd0,0042abd0,core/charactr.cpp,73,0,,73
-core_charactr.cpp_CCharacter_processMotion_FUN_0042add0,0042add0,core/charactr.cpp,87,0,,87
+core_charactr.cpp_CCharacter_processMotion_FUN_0042add0,0042add0,core/charactr.cpp,88,0,,88
 core_charactr.cpp_CCharacter_FUN_0042af70,0042af70,core/charactr.cpp,158,7,undefined_data|unrolled_memcpy|warning_type_propagation,243
 core_charactr.cpp_CCharacter_playSoundWithCooldown_FUN_0042b490,0042b490,core/charactr.cpp,11,0,,11
 core_charactr.cpp_divideVector_FUN_0042b4d0,0042b4d0,core/charactr.cpp,7,0,,7
@@ -1052,7 +1052,7 @@ core_crossbow.cpp_CCrossbow_process_FUN_0043cfd0,0043cfd0,core/crossbow.cpp,24,1
 core_crossbow.cpp_CCrossbow_renderOpaque_FUN_0043d0a0,0043d0a0,core/crossbow.cpp,22,0,,22
 core_crossbow.cpp_CCrossbow_renderTransparent_FUN_0043d120,0043d120,core/crossbow.cpp,8,0,,8
 core_crossbow.cpp_CCrossbow_getMuzzlePoint_FUN_0043d150,0043d150,core/crossbow.cpp,14,0,,14
-core_crossbow.cpp_CCrossbow_fire_FUN_0043d1c0,0043d1c0,core/crossbow.cpp,196,10,stack_ref|sub84_truncation|suspect_float|unknown_field,316
+core_crossbow.cpp_CCrossbow_fire_FUN_0043d1c0,0043d1c0,core/crossbow.cpp,196,12,phantom_float_to_int|stack_ref|sub84_truncation|suspect_float|unknown_field,341
 core_crossbow.cpp_CCrossbow_getCurFrame_FUN_0043d810,0043d810,core/crossbow.cpp,5,0,,5
 core_crossbow.cpp_CCrossbow_getDamage_FUN_0043d840,0043d840,core/crossbow.cpp,6,0,,6
 core_crossbow.cpp_CCrossbow_dtor_FUN_0043d870,0043d870,core/crossbow.cpp,19,1,negative_offset,34
@@ -1300,7 +1300,7 @@ core_dmodel.cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004530c0,004530c0,cor
 core_dmodel.cpp_CKeyFramedModel_submitToRenderer_FUN_00453170,00453170,core/dmodel.cpp,88,1,pointer_cast,103
 core_dmodel.cpp_CKeyFramedModel_allocate_FUN_004533e0,004533e0,core/dmodel.cpp,66,0,,66
 core_dmodel.cpp_CKeyFramedModel_calcNormals_FUN_00453620,00453620,core/dmodel.cpp,75,5,pointer_cast|pointer_stride_bytecount|pointer_truncation|shadow_pointer_walk,145
-core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_004537d0,004537d0,core/dmodel.cpp,62,9,pointer_cast|unrolled_memcpy,162
+core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_004537d0,004537d0,core/dmodel.cpp,62,18,phantom_float_to_int|pointer_cast|unrolled_memcpy,257
 core_dmodel.cpp_CKeyFramedModel_captureTextures_FUN_00453950,00453950,core/dmodel.cpp,16,0,,16
 core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_00453990,00453990,core/dmodel.cpp,130,5,pointer_cast|unrolled_memcpy|warning_overlapping_globals,195
 core_dmodel.cpp_CKeyFramedModel_intersectCylinder_FUN_00453e10,00453e10,core/dmodel.cpp,31,0,,31
@@ -3679,7 +3679,7 @@ core_set.cpp_computeTriangleNormalIndexed_FUN_0050bcf0,0050bcf0,core/set.cpp,33,
 core_set.cpp_CDemonSet_computeVertexOmniLighting_FUN_0050be20,0050be20,core/set.cpp,61,6,fast_sqrt_inline|undefined_data|warning_overlapping_globals,136
 core_set.cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0050c010,0050c010,core/set.cpp,91,1,warning_overlapping_globals,106
 core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200,0050c200,core/set.cpp,34,0,,34
-core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0,0050c2d0,core/set.cpp,523,222,fast_inv_sqrt_inline|pointer_cast|pointer_stride_bytecount|pointer_truncation|stack_alignment_array|undefined_data|warning_overlapping_globals,2778
+core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0,0050c2d0,core/set.cpp,523,223,fast_inv_sqrt_inline|partial_struct_copy|pointer_cast|pointer_stride_bytecount|pointer_truncation|stack_alignment_array|undefined_data|warning_overlapping_globals,2793
 core_set.cpp_CDemonSet_process_FUN_0050d040,0050d040,core/set.cpp,60,3,undefined_data|warning_overlapping_globals,100
 core_set.cpp_CDemonSet_getReverbPresetAtPosition_FUN_0050d1c0,0050d1c0,core/set.cpp,29,3,pointer_cast|pointer_truncation|shadow_pointer_walk,74
 core_set.cpp_CDemonSet_loadAssets_FUN_0050d280,0050d280,core/set.cpp,6,1,raw_address_constant,21
@@ -4353,7 +4353,7 @@ core_stranger.cpp_CStranger_setPositionAndOrientation_FUN_00539ac0,00539ac0,core
 core_stranger.cpp_CStranger_makeDrawDecision_FUN_00539b10,00539b10,core/stranger.cpp,294,57,bit_int_float_compare|pointer_cast|pointer_truncation|stack_alignment_array|unresolved_funcptr|warning_overlapping_globals|warning_type_propagation,899
 core_stranger.cpp_CStranger_applyArmAimRotation_FUN_0053a260,0053a260,core/stranger.cpp,214,106,pointer_cast|pointer_truncation|stack_alignment_array|undefined_data|warning_overlapping_globals|warning_type_propagation,1304
 core_stranger.cpp_CStranger_updateWeaponPosition_FUN_0053a660,0053a660,core/stranger.cpp,50,10,pointer_cast|pointer_truncation|unrolled_memcpy,165
-core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760,0053a760,core/stranger.cpp,582,132,pointer_cast|pointer_truncation|suspect_float|undefined_data|unrolled_memcpy|warning_overlapping_globals|warning_type_propagation,1937
+core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760,0053a760,core/stranger.cpp,582,133,phantom_float_to_int|pointer_cast|pointer_truncation|suspect_float|undefined_data|unrolled_memcpy|warning_overlapping_globals|warning_type_propagation,1952
 core_stranger.cpp_CStranger_tryPickupObject_FUN_0053b630,0053b630,core/stranger.cpp,278,6,pointer_cast|unrolled_memcpy|warning_overlapping_globals,353
 core_stranger.cpp_CStranger_processPickupComplete_FUN_0053beb0,0053beb0,core/stranger.cpp,21,0,,21
 core_stranger.cpp_CStranger_dropRightHandObject_FUN_0053bf30,0053bf30,core/stranger.cpp,14,0,,14

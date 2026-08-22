@@ -7,7 +7,7 @@ SUMMARY
 Total functions analyzed: 4922
 Clean: 2501 (50.8%)
 With suspects: 2421
-Total suspects: 20998
+Total suspects: 21011
 
 ====================================================================================================
 cockpit_ckptutil.c_applyActPalette_FUN_0042d370 (1 suspect)
@@ -5119,7 +5119,7 @@ core_crossbow.cpp_CCrossbow_dtor_FUN_0043d870 (1 suspect)
   Line 16 [negative_offset]: core_weapon_cpp_CWeapon_dtor_FUN_00553ea0((CWeapon *)pCVar1[-5].footstep_sound_code,1);
 
 ====================================================================================================
-core_crossbow.cpp_CCrossbow_fire_FUN_0043d1c0 (10 suspects)
+core_crossbow.cpp_CCrossbow_fire_FUN_0043d1c0 (12 suspects)
   File: core/crossbow.cpp
 ====================================================================================================
   Line 109 [sub84_truncation]: ((CCharacter *)this_ptr,SUB84(__BITCAST_UINT64(dVar6),0),
@@ -5132,6 +5132,8 @@ core_crossbow.cpp_CCrossbow_fire_FUN_0043d1c0 (10 suspects)
   Line 161 [unknown_field]: auStack_dc._24_4_ = pCVar2->x;
   Line 166 [suspect_float]: fStack_b0 = 1.45735e-43;
   Line 171 [suspect_float]: hit_points = 6.230251e-39;
+  Line 178 [phantom_float_to_int]: CStack_20.y = (float)((int)CStack_20.y + 1);
+  Line 179 [phantom_float_to_int]: } while ((int)CStack_20.y < 4);
 
 ====================================================================================================
 core_crossbow.cpp_CCrossbow_process_FUN_0043cfd0 (1 suspect)
@@ -7264,18 +7266,27 @@ core_dmodel.cpp_CKeyFramedModel_calcNormals_FUN_00453620 (5 suspects)
   Line 53 [pointer_cast]: piVar6 = (int *)((int)&this_ptr->vertex_normal_list->x + iVar4);
 
 ====================================================================================================
-core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_004537d0 (9 suspects)
+core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_004537d0 (18 suspects)
   File: core/dmodel.cpp
 ====================================================================================================
   Line 16 [pointer_cast]: this_ptr_01 = (CBoundingBox3D *)((int)&(this_ptr->frame_bounds->min).x + (int)local_28.max.x);
+  Line 16 [phantom_float_to_int]: this_ptr_01 = (CBoundingBox3D *)((int)&(this_ptr->frame_bounds->min).x + (int)local_28.max.x);
+  Line 17 [phantom_float_to_int]: pCVar1 = this_ptr->vertex_list + (int)local_28.max.y * this_ptr->vertex_count;
   Line 23 [unrolled_memcpy]: (this_ptr_01->min).x = local_28.min.x;
   Line 28 [unrolled_memcpy]: (this_ptr_01->max).x = local_28.min.x;
   Line 46 [unrolled_memcpy]: ((CVector3f *)local_28.max.z)->x = (this_ptr_01->min).x;
   Line 50 [pointer_cast]: if ((CBoundingBox3D *)((int)local_28.max.z + 0xc) != this_ptr_01) {
+  Line 50 [phantom_float_to_int]: if ((CBoundingBox3D *)((int)local_28.max.z + 0xc) != this_ptr_01) {
   Line 51 [pointer_cast]: ((CVector3f *)((int)local_28.max.z + 0xc))->x = (this_ptr_01->min).x;
   Line 51 [unrolled_memcpy]: ((CVector3f *)((int)local_28.max.z + 0xc))->x = (this_ptr_01->min).x;
+  Line 51 [phantom_float_to_int]: ((CVector3f *)((int)local_28.max.z + 0xc))->x = (this_ptr_01->min).x;
   Line 52 [pointer_cast]: ((CVector3f *)((int)local_28.max.z + 0xc))->y = (this_ptr_01->min).y;
+  Line 52 [phantom_float_to_int]: ((CVector3f *)((int)local_28.max.z + 0xc))->y = (this_ptr_01->min).y;
   Line 53 [pointer_cast]: ((CVector3f *)((int)local_28.max.z + 0xc))->z = (this_ptr_01->min).z;
+  Line 53 [phantom_float_to_int]: ((CVector3f *)((int)local_28.max.z + 0xc))->z = (this_ptr_01->min).z;
+  Line 60 [phantom_float_to_int]: local_28.max.x = (float)((int)local_28.max.x + 0x18);
+  Line 61 [phantom_float_to_int]: local_28.max.y = (float)((int)local_28.max.y + 1);
+  Line 62 [phantom_float_to_int]: } while ((int)local_28.max.y < this_ptr->frame_count);
 
 ====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_00453990 (5 suspects)
@@ -18786,7 +18797,7 @@ core_set.cpp_CDemonSet_lightVertexColor_FUN_0050b7f0 (14 suspects)
   Line 153 [undefined_data]: (&DAT_005c503c)[vertex_index * 0xc] = *(uint *)(uVar5 * 4 + 0x1fbb060);
 
 ====================================================================================================
-core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0 (222 suspects)
+core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0 (223 suspects)
   File: core/set.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
@@ -18954,6 +18965,7 @@ core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0 (222 suspects)
   Line 435 [undefined_data]: local_164.z = *(int *)((int)&DAT_005c501c + iVar5);
   Line 435 [pointer_truncation]: local_164.z = *(int *)((int)&DAT_005c501c + iVar5);
   Line 435 [pointer_cast]: local_164.z = *(int *)((int)&DAT_005c501c + iVar5);
+  Line 438 [partial_struct_copy]: local_ec.x = local_104.x;
   Line 439 [pointer_cast]: *(uint *)((int)local_e0 + (uint)bVar16 * -8 + -8) =
   Line 440 [pointer_truncation]: *(uint *)((int)&local_104 + (uint)bVar16 * -8 + 4);
   Line 440 [pointer_cast]: *(uint *)((int)&local_104 + (uint)bVar16 * -8 + 4);
@@ -21328,8 +21340,8 @@ core_sound.cpp_playSfxInternal_FUN_0052d120 (13 suspects)
   Line 84 [unrolled_strlen]: do {
   Line 84 [unrolled_strcat]: do {
   Line 93 [unrolled_strcpy]: do {
-  Line 103 [undefined_data]: puVar8 = &DAT_005bef20;
-  Line 105 [unrolled_memcpy]: for (iVar2 = 0x19; iVar2 != 0; iVar2 = iVar2 + -1) {
+  Line 103 [undefined_data]: puVar7 = &DAT_005bef20;
+  Line 105 [unrolled_memcpy]: for (iVar1 = 0x19; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 111 [unrolled_strchr]: do {
 
 ====================================================================================================
@@ -21777,7 +21789,7 @@ core_stranger.cpp_CStranger_autoAimAtThreat_FUN_0053d910 (6 suspects)
   Line 181 [pointer_cast]: pCStack_1c = *(CDemonActor **)((int)g_CDemonSet_PTR_005be368->threats + iStack_3c);
 
 ====================================================================================================
-core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760 (132 suspects)
+core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760 (133 suspects)
   File: core/stranger.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
@@ -21789,6 +21801,7 @@ core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760 (132 suspects)
   Line 114 [unrolled_memcpy]: // 0053a8f6: MOVSD.REP ES:EDI,ESI
   Line 119 [unrolled_memcpy]: // 0053a906: MOVSD.REP ES:EDI,ESI
   Line 139 [pointer_cast]: fVar1 = (((CDemonActor *)((int)local_180.x + 0x2a0))->orient).vec.z;
+  Line 139 [phantom_float_to_int]: fVar1 = (((CDemonActor *)((int)local_180.x + 0x2a0))->orient).vec.z;
   Line 141 [suspect_float]: if (fVar1 == 1.4013e-45) {
   Line 163 [unrolled_memcpy]: for (iVar5 = 0xc; iVar5 != 0; iVar5 = iVar5 + -1) {
   Line 165 [pointer_cast]: pCVar10 = (CMatrix3x4f *)((int)pCVar10 + ((uint)bVar12 * -2 + 1) * 4);

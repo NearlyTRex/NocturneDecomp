@@ -104,14 +104,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 144,
-    "complexity_score": 162,
+    "complexity_score": 257,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 62,
-    "suspect_count": 9,
+    "suspect_count": 18,
     "suspect_types": [
+      "phantom_float_to_int",
       "pointer_cast",
       "unrolled_memcpy"
     ],
@@ -299,7 +300,7 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
       "line": 23,
       "match": "field-by-field struct copy",
       "severity": "moderate",
@@ -307,7 +308,7 @@
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
       "line": 28,
       "match": "field-by-field struct copy",
       "severity": "moderate",
@@ -315,7 +316,7 @@
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
       "line": 46,
       "match": "field-by-field struct copy",
       "severity": "moderate",
@@ -323,7 +324,7 @@
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
       "line": 51,
       "match": "field-by-field struct copy",
       "severity": "moderate",
@@ -337,6 +338,78 @@
       "severity": "moderate",
       "text": "this_ptr_01 = (CBoundingBox3D *)((int)&(this_ptr->frame_bounds->min).x + (int)local_28.max.x);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "`(int)local_28.max.x` numerically converts float field `local_28.max.x` to an integer, but this function's `.asm` contains no `FIST`/`FISTP` \u2014 the binary never performs a float-to-int conversion here, so the cast is fabricated. Ghidra lost the real integer (usually a local or global it dropped) and reached for a float field sharing the stack slot. See \u00a732 \u2014 recover the true value from the asm; do not keep the cast.",
+      "line": 16,
+      "match": "(int)local_28.max.x",
+      "severity": "moderate",
+      "text": "this_ptr_01 = (CBoundingBox3D *)((int)&(this_ptr->frame_bounds->min).x + (int)local_28.max.x);",
+      "type": "phantom_float_to_int"
+    },
+    {
+      "description": "`(int)local_28.max.y` numerically converts float field `local_28.max.y` to an integer, but this function's `.asm` contains no `FIST`/`FISTP` \u2014 the binary never performs a float-to-int conversion here, so the cast is fabricated. Ghidra lost the real integer (usually a local or global it dropped) and reached for a float field sharing the stack slot. See \u00a732 \u2014 recover the true value from the asm; do not keep the cast.",
+      "line": 17,
+      "match": "(int)local_28.max.y",
+      "severity": "moderate",
+      "text": "pCVar1 = this_ptr->vertex_list + (int)local_28.max.y * this_ptr->vertex_count;",
+      "type": "phantom_float_to_int"
+    },
+    {
+      "description": "`(int)local_28.max.z` numerically converts float field `local_28.max.z` to an integer, but this function's `.asm` contains no `FIST`/`FISTP` \u2014 the binary never performs a float-to-int conversion here, so the cast is fabricated. Ghidra lost the real integer (usually a local or global it dropped) and reached for a float field sharing the stack slot. See \u00a732 \u2014 recover the true value from the asm; do not keep the cast.",
+      "line": 50,
+      "match": "(int)local_28.max.z",
+      "severity": "moderate",
+      "text": "if ((CBoundingBox3D *)((int)local_28.max.z + 0xc) != this_ptr_01) {",
+      "type": "phantom_float_to_int"
+    },
+    {
+      "description": "`(int)local_28.max.z` numerically converts float field `local_28.max.z` to an integer, but this function's `.asm` contains no `FIST`/`FISTP` \u2014 the binary never performs a float-to-int conversion here, so the cast is fabricated. Ghidra lost the real integer (usually a local or global it dropped) and reached for a float field sharing the stack slot. See \u00a732 \u2014 recover the true value from the asm; do not keep the cast.",
+      "line": 51,
+      "match": "(int)local_28.max.z",
+      "severity": "moderate",
+      "text": "((CVector3f *)((int)local_28.max.z + 0xc))->x = (this_ptr_01->min).x;",
+      "type": "phantom_float_to_int"
+    },
+    {
+      "description": "`(int)local_28.max.z` numerically converts float field `local_28.max.z` to an integer, but this function's `.asm` contains no `FIST`/`FISTP` \u2014 the binary never performs a float-to-int conversion here, so the cast is fabricated. Ghidra lost the real integer (usually a local or global it dropped) and reached for a float field sharing the stack slot. See \u00a732 \u2014 recover the true value from the asm; do not keep the cast.",
+      "line": 52,
+      "match": "(int)local_28.max.z",
+      "severity": "moderate",
+      "text": "((CVector3f *)((int)local_28.max.z + 0xc))->y = (this_ptr_01->min).y;",
+      "type": "phantom_float_to_int"
+    },
+    {
+      "description": "`(int)local_28.max.z` numerically converts float field `local_28.max.z` to an integer, but this function's `.asm` contains no `FIST`/`FISTP` \u2014 the binary never performs a float-to-int conversion here, so the cast is fabricated. Ghidra lost the real integer (usually a local or global it dropped) and reached for a float field sharing the stack slot. See \u00a732 \u2014 recover the true value from the asm; do not keep the cast.",
+      "line": 53,
+      "match": "(int)local_28.max.z",
+      "severity": "moderate",
+      "text": "((CVector3f *)((int)local_28.max.z + 0xc))->z = (this_ptr_01->min).z;",
+      "type": "phantom_float_to_int"
+    },
+    {
+      "description": "`(int)local_28.max.x` numerically converts float field `local_28.max.x` to an integer, but this function's `.asm` contains no `FIST`/`FISTP` \u2014 the binary never performs a float-to-int conversion here, so the cast is fabricated. Ghidra lost the real integer (usually a local or global it dropped) and reached for a float field sharing the stack slot. See \u00a732 \u2014 recover the true value from the asm; do not keep the cast.",
+      "line": 60,
+      "match": "(int)local_28.max.x",
+      "severity": "moderate",
+      "text": "local_28.max.x = (float)((int)local_28.max.x + 0x18);",
+      "type": "phantom_float_to_int"
+    },
+    {
+      "description": "`(int)local_28.max.y` numerically converts float field `local_28.max.y` to an integer, but this function's `.asm` contains no `FIST`/`FISTP` \u2014 the binary never performs a float-to-int conversion here, so the cast is fabricated. Ghidra lost the real integer (usually a local or global it dropped) and reached for a float field sharing the stack slot. See \u00a732 \u2014 recover the true value from the asm; do not keep the cast.",
+      "line": 61,
+      "match": "(int)local_28.max.y",
+      "severity": "moderate",
+      "text": "local_28.max.y = (float)((int)local_28.max.y + 1);",
+      "type": "phantom_float_to_int"
+    },
+    {
+      "description": "`(int)local_28.max.y` numerically converts float field `local_28.max.y` to an integer, but this function's `.asm` contains no `FIST`/`FISTP` \u2014 the binary never performs a float-to-int conversion here, so the cast is fabricated. Ghidra lost the real integer (usually a local or global it dropped) and reached for a float field sharing the stack slot. See \u00a732 \u2014 recover the true value from the asm; do not keep the cast.",
+      "line": 62,
+      "match": "(int)local_28.max.y",
+      "severity": "moderate",
+      "text": "} while ((int)local_28.max.y < this_ptr->frame_count);",
+      "type": "phantom_float_to_int"
     }
   ]
 }

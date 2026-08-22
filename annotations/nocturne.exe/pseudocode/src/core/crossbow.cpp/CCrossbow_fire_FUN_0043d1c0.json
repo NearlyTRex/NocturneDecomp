@@ -122,14 +122,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 492,
-    "complexity_score": 316,
+    "complexity_score": 341,
     "cross_reference_count": 0,
     "function_call_count": 18,
     "global_count": 23,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 196,
-    "suspect_count": 10,
+    "suspect_count": 12,
     "suspect_types": [
+      "phantom_float_to_int",
       "stack_ref",
       "sub84_truncation",
       "suspect_float",
@@ -555,6 +556,22 @@
       "severity": "mild",
       "text": "hit_points = 6.230251e-39;",
       "type": "suspect_float"
+    },
+    {
+      "description": "`(int)CStack_20.y` numerically converts float field `CStack_20.y` to an integer, but this function's `.asm` contains no `FIST`/`FISTP` \u2014 the binary never performs a float-to-int conversion here, so the cast is fabricated. Ghidra lost the real integer (usually a local or global it dropped) and reached for a float field sharing the stack slot. See \u00a732 \u2014 recover the true value from the asm; do not keep the cast.",
+      "line": 178,
+      "match": "(int)CStack_20.y",
+      "severity": "moderate",
+      "text": "CStack_20.y = (float)((int)CStack_20.y + 1);",
+      "type": "phantom_float_to_int"
+    },
+    {
+      "description": "`(int)CStack_20.y` numerically converts float field `CStack_20.y` to an integer, but this function's `.asm` contains no `FIST`/`FISTP` \u2014 the binary never performs a float-to-int conversion here, so the cast is fabricated. Ghidra lost the real integer (usually a local or global it dropped) and reached for a float field sharing the stack slot. See \u00a732 \u2014 recover the true value from the asm; do not keep the cast.",
+      "line": 179,
+      "match": "(int)CStack_20.y",
+      "severity": "moderate",
+      "text": "} while ((int)CStack_20.y < 4);",
+      "type": "phantom_float_to_int"
     }
   ],
   "vtable_info": {

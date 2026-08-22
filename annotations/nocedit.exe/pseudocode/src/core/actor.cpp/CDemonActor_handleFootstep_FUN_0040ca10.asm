@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040ca10(CDemonActor *this_ptr,CVector3f *position,EGroundType ground_type,float volume)
+; uint __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040ca10(CDemonActor *this_ptr,CVector3f *position,EGroundType ground_type,float volume)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr

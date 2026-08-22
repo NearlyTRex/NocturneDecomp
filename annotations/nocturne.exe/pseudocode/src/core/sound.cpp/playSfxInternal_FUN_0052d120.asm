@@ -215,7 +215,7 @@ section .text
     MOV ESI,dword ptr [0x005be368]      ; 0052d23b | g_CDemonSet_PTR_005be368
     PUSH ESI                            ; 0052d241 | g_CDemonSet_01e57284
     CALL core_set.cpp_CDemonSet_getReverbPresetAtPosition_FUN_0050d1c0 ; 0052d242
-        ;   XREF to: 0050d1c0 (UNCONDITIONAL_CALL)  ; float core_set.cpp_CDemonSet_getReverbPresetAtPosition_FUN_0050d1c0(CDemonSet * this_ptr, CVector3f * position)
+        ;   XREF to: 0050d1c0 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_getReverbPresetAtPosition_FUN_0050d1c0(CDemonSet * this_ptr, CVector3f * position)
     ADD ESP,0x8                         ; 0052d247
     MOV dword ptr [ESP + 0x150],EAX     ; 0052d24a
     MOV dword ptr [ESP + 0x15c],EAX     ; 0052d251

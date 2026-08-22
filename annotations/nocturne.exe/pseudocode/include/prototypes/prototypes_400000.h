@@ -317,9 +317,9 @@ int __cdecl core_actor_cpp_isOfClassHash_FUN_0040d860(CDemonActor *actor_ptr,uin
 CDemonActor * __cdecl core_actor_cpp_castToClassHash_FUN_0040d890(CDemonActor *actor_ptr,uint class_name_hash);
 void __cdecl core_actor_cpp_syncActorTypeIDs_FUN_0040d8c0(void);
 void __cdecl core_actor_cpp_resetActorTypeInfo_FUN_0040d8f0(void);
-int __cdecl core_actor_cpp_CDemonActor_processFootstep_FUN_0040d930(CDemonActor *this_ptr,float volume);
-int __cdecl core_actor_cpp_CDemonActor_processFootstepAt_FUN_0040d9f0(CDemonActor *this_ptr,CVector3f *location,float volume);
-int __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040db50(CDemonActor *this_ptr,CVector3f *position,EGroundType ground_type,float volume);
+uint __cdecl core_actor_cpp_CDemonActor_processFootstep_FUN_0040d930(CDemonActor *this_ptr,float volume);
+uint __cdecl core_actor_cpp_CDemonActor_processFootstepAt_FUN_0040d9f0(CDemonActor *this_ptr,CVector3f *location,float volume);
+uint __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040db50(CDemonActor *this_ptr,CVector3f *position,EGroundType ground_type,float volume);
 void __cdecl core_actor_cpp_setRandomSeed_FUN_0040dd20(uint seed_value);
 uint __cdecl core_actor_cpp_generateRandomValue_FUN_0040dd30(void);
 float __cdecl core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value,float max_value);

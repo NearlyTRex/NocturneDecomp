@@ -9,14 +9,14 @@
 uint __cdecl core_sound_cpp_playSfxInternal_FUN_0052d120(void *user_data,char *sound_name,float x,float y,float z,CVector3f *position_tracker ,uint flags)
 
 {
-  float fVar1;
-  int iVar2;
-  uint uVar3;
-  float fVar4;
-  char cVar5;
+  int iVar1;
+  uint uVar2;
+  int iVar3;
+  char cVar4;
+  char *pcVar5;
   char *pcVar6;
-  char *pcVar7;
-  uint *puVar8;
+  uint *puVar7;
+  int iVar8;
   char *pcVar9;
   byte bVar10;
   float local_178;
@@ -25,30 +25,30 @@ uint __cdecl core_sound_cpp_playSfxInternal_FUN_0052d120(void *user_data,char *s
   char local_10c [100];
   char local_a8 [100];
   CVector3f local_44;
-  float local_38;
+  int local_38;
   int local_34;
   int local_30;
   int local_2c;
-  float local_28;
+  int local_28;
   int local_24;
   int local_20;
-  float local_1c;
+  int local_1c;
   int local_18;
   char *local_14;
   
   bVar10 = 0;
-  iVar2 = sound_sndmain_cpp_isSoundEnabled_FUN_00526ca0();
-  if (iVar2 != 0) {
+  iVar1 = sound_sndmain_cpp_isSoundEnabled_FUN_00526ca0();
+  if (iVar1 != 0) {
     return 0;
   }
-  uVar3 = 0;
+  uVar2 = 0;
   if ((sound_name != (char *)0x0) && (*sound_name != '\0')) {
-    cVar5 = *sound_name;
+    cVar4 = *sound_name;
     local_14 = sound_name;
-    pcVar7 = local_170;
-    while ((((cVar5 != '\0' && ((g_CharacterClassificationTable[(byte)(*local_14 + 1)] & 2) == 0))
-            && (cVar5 = *local_14, cVar5 != '@')) && (cVar5 != '*'))) {
-      if (cVar5 == '[') {
+    pcVar6 = local_170;
+    while ((((cVar4 != '\0' && ((g_CharacterClassificationTable[(byte)(*local_14 + 1)] & 2) == 0))
+            && (cVar4 = *local_14, cVar4 != '@')) && (cVar4 != '*'))) {
+      if (cVar4 == '[') {
         local_34 = -1;
         sscanf(local_14,"[%d,%d]%n");
         if ((local_34 < 5) || (local_2c < local_30)) {
@@ -56,76 +56,76 @@ uint __cdecl core_sound_cpp_playSfxInternal_FUN_0052d120(void *user_data,char *s
           g_CurrentLineNumber = 311;
           core_main_c_displayErrorAndQuit_FUN_004c8440("Invalid sfx string: %s");
         }
-        iVar2 = _sprintf(pcVar7,"?");
-        pcVar6 = pcVar7 + iVar2;
+        iVar1 = _sprintf(pcVar6,"?");
+        pcVar5 = pcVar6 + iVar1;
         if (9 < local_2c) {
-          iVar2 = _sprintf(pcVar6,"?");
-          pcVar6 = pcVar6 + iVar2;
+          iVar1 = _sprintf(pcVar5,"?");
+          pcVar5 = pcVar5 + iVar1;
         }
         local_14 = local_14 + local_34;
       }
       else {
-        pcVar6 = pcVar7 + 1;
-        *pcVar7 = cVar5;
+        pcVar5 = pcVar6 + 1;
+        *pcVar6 = cVar4;
         local_14 = local_14 + 1;
       }
-      cVar5 = *local_14;
-      pcVar7 = pcVar6;
+      cVar4 = *local_14;
+      pcVar6 = pcVar5;
     }
-    *pcVar7 = '\0';
-    pcVar7 = local_170;
+    *pcVar6 = '\0';
+    pcVar6 = local_170;
     do {
-      pcVar6 = pcVar7;
-      if (*pcVar7 == '.') goto LAB_0052d1a2;
-      if (*pcVar7 == '\0') break;
-      pcVar6 = pcVar7 + 1;
+      pcVar5 = pcVar6;
       if (*pcVar6 == '.') goto LAB_0052d1a2;
-      pcVar7 = pcVar7 + 2;
-    } while (*pcVar6 != '\0');
-    pcVar6 = (char *)0x0;
+      if (*pcVar6 == '\0') break;
+      pcVar5 = pcVar6 + 1;
+      if (*pcVar5 == '.') goto LAB_0052d1a2;
+      pcVar6 = pcVar6 + 2;
+    } while (*pcVar5 != '\0');
+    pcVar5 = (char *)0x0;
 LAB_0052d1a2:
-    if (pcVar6 == (char *)0x0) {
-      pcVar6 = ".wav";
-      iVar2 = -1;
-      pcVar7 = local_170;
+    if (pcVar5 == (char *)0x0) {
+      pcVar5 = ".wav";
+      iVar1 = -1;
+      pcVar6 = local_170;
       do {
-        pcVar9 = pcVar7;
-        if (iVar2 == 0) break;
-        iVar2 = iVar2 + -1;
-        pcVar9 = pcVar7 + (uint)bVar10 * -2 + 1;
-        cVar5 = *pcVar7;
-        pcVar7 = pcVar9;
-      } while (cVar5 != '\0');
+        pcVar9 = pcVar6;
+        if (iVar1 == 0) break;
+        iVar1 = iVar1 + -1;
+        pcVar9 = pcVar6 + (uint)bVar10 * -2 + 1;
+        cVar4 = *pcVar6;
+        pcVar6 = pcVar9;
+      } while (cVar4 != '\0');
       pcVar9 = pcVar9 + -1;
       do {
-        cVar5 = *pcVar6;
-        *pcVar9 = cVar5;
-        if (cVar5 == '\0') break;
-        cVar5 = pcVar6[1];
-        pcVar6 = pcVar6 + 2;
-        pcVar9[1] = cVar5;
+        cVar4 = *pcVar5;
+        *pcVar9 = cVar4;
+        if (cVar4 == '\0') break;
+        cVar4 = pcVar5[1];
+        pcVar5 = pcVar5 + 2;
+        pcVar9[1] = cVar4;
         pcVar9 = pcVar9 + 2;
-      } while (cVar5 != '\0');
+      } while (cVar4 != '\0');
     }
-    puVar8 = &DAT_005bef20;
-    pcVar7 = local_a8;
-    for (iVar2 = 0x19; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *(uint *)pcVar7 = *puVar8;
-      puVar8 = puVar8 + (uint)bVar10 * -2 + 1;
-      pcVar7 = pcVar7 + ((uint)bVar10 * -2 + 1) * 4;
+    puVar7 = &DAT_005bef20;
+    pcVar6 = local_a8;
+    for (iVar1 = 0x19; iVar1 != 0; iVar1 = iVar1 + -1) {
+      *(uint *)pcVar6 = *puVar7;
+      puVar7 = puVar7 + (uint)bVar10 * -2 + 1;
+      pcVar6 = pcVar6 + ((uint)bVar10 * -2 + 1) * 4;
     }
-    pcVar7 = local_170;
+    pcVar6 = local_170;
     do {
-      pcVar6 = pcVar7;
-      if (*pcVar7 == '!') goto LAB_0052d202;
-      if (*pcVar7 == '\0') break;
-      pcVar6 = pcVar7 + 1;
+      pcVar5 = pcVar6;
       if (*pcVar6 == '!') goto LAB_0052d202;
-      pcVar7 = pcVar7 + 2;
-    } while (*pcVar6 != '\0');
-    pcVar6 = (char *)0x0;
+      if (*pcVar6 == '\0') break;
+      pcVar5 = pcVar6 + 1;
+      if (*pcVar5 == '!') goto LAB_0052d202;
+      pcVar6 = pcVar6 + 2;
+    } while (*pcVar5 != '\0');
+    pcVar5 = (char *)0x0;
 LAB_0052d202:
-    if (pcVar6 == (char *)0x0) {
+    if (pcVar5 == (char *)0x0) {
       core_sound_cpp_CSound_findRandomSoundFile_FUN_0052d030
                 (g_CSound_PTR_005bed68,local_a8,local_170);
     }
@@ -141,42 +141,42 @@ LAB_0052d202:
       local_28 = core_set_cpp_CDemonSet_getReverbPresetAtPosition_FUN_0050d1c0
                            (g_CDemonSet_PTR_005be368,&local_44);
       local_1c = local_28;
-      local_18 = (int)local_28 + 5;
+      local_18 = local_28 + 5;
       do {
-        fVar1 = local_1c;
-        iVar2 = 0;
+        iVar1 = local_1c;
+        iVar8 = 0;
         local_38 = local_28;
         do {
-          fVar4 = local_38;
-          if (iVar2 == 0) {
-            fVar4 = fVar1;
+          iVar3 = local_38;
+          if (iVar8 == 0) {
+            iVar3 = iVar1;
           }
-          if ((-1 < (int)fVar4) && ((int)fVar4 < 6)) {
-            pcVar7 = local_170;
-            pcVar6 = local_10c;
-            cVar5 = local_170[0];
-            while (cVar5 != '\0') {
-              cVar5 = *pcVar7;
-              if (cVar5 == '!') {
-                cVar5 = SUB41(fVar4,0) + '0';
+          if ((-1 < iVar3) && (iVar3 < 6)) {
+            pcVar6 = local_170;
+            pcVar5 = local_10c;
+            cVar4 = local_170[0];
+            while (cVar4 != '\0') {
+              cVar4 = *pcVar6;
+              if (cVar4 == '!') {
+                cVar4 = (char)iVar3 + '0';
               }
-              *pcVar6 = cVar5;
+              *pcVar5 = cVar4;
+              pcVar5 = pcVar5 + 1;
+              pcVar9 = pcVar6 + 1;
               pcVar6 = pcVar6 + 1;
-              pcVar9 = pcVar7 + 1;
-              pcVar7 = pcVar7 + 1;
-              cVar5 = *pcVar9;
+              cVar4 = *pcVar9;
             }
-            *pcVar6 = '\0';
+            *pcVar5 = '\0';
             core_sound_cpp_CSound_findRandomSoundFile_FUN_0052d030
                       (g_CSound_PTR_005bed68,local_a8,local_10c);
             if (local_a8[0] != '\0') break;
           }
-          iVar2 = iVar2 + 1;
-        } while (iVar2 < 2);
+          iVar8 = iVar8 + 1;
+        } while (iVar8 < 2);
         if (local_a8[0] != '\0') break;
-        local_1c = (float)((int)local_1c + 1);
-        local_28 = (float)((int)local_28 + -1);
-      } while ((int)local_1c < local_18);
+        local_1c = local_1c + 1;
+        local_28 = local_28 + -1;
+      } while (local_1c < local_18);
     }
     if (local_a8[0] == '\0') {
       engine_console_cpp_CConsole_printf_FUN_0043ac60
@@ -185,8 +185,8 @@ LAB_0052d202:
     }
     local_174 = 1.0;
     local_178 = 1.0;
-    cVar5 = *local_14;
-    while (cVar5 != '\0') {
+    cVar4 = *local_14;
+    while (cVar4 != '\0') {
       if ((g_CharacterClassificationTable[(byte)(*local_14 + 1)] & 2) == 0) {
         if (*local_14 == '@') {
           local_24 = -1;
@@ -223,7 +223,7 @@ LAB_0052d202:
       else {
         local_14 = local_14 + 1;
       }
-      cVar5 = *local_14;
+      cVar4 = *local_14;
     }
     sound_sndmain_cpp_pushSfxOptions_FUN_00526340();
     if (position_tracker == (CVector3f *)0x0) {
@@ -236,8 +236,8 @@ LAB_0052d202:
     sound_sndmain_cpp_setNextSfxUserData_FUN_00526150(0,user_data);
     sound_sndmain_cpp_setNextSfxVolume_FUN_005260f0(local_178);
     sound_sndmain_cpp_setNextSfxBaseFrequency_FUN_00526120(local_174);
-    uVar3 = sound_sndmain_cpp_startSfx_FUN_005265a0(local_a8);
+    uVar2 = sound_sndmain_cpp_startSfx_FUN_005265a0(local_a8);
     sound_sndmain_cpp_popSfxOptions_FUN_005263c0();
   }
-  return uVar3;
+  return uVar2;
 }

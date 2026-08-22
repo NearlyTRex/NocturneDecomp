@@ -97,7 +97,7 @@ void __cdecl core_set_cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0050c010(CDemon
 void __cdecl core_set_cpp_CDemonSet_rotateVerticies_FUN_0050c200(CDemonSet *this_ptr,int vertex_count,CVector3i *input_vertices);
 void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet *this_ptr,int vertex_count,int tri_count,void *face_data,CVector3i *vertex_positions,int vertices_per_face,CVector3i *vertex_normals);
 void __cdecl core_set_cpp_CDemonSet_process_FUN_0050d040(CDemonSet *this_ptr);
-float __cdecl core_set_cpp_CDemonSet_getReverbPresetAtPosition_FUN_0050d1c0(CDemonSet *this_ptr,CVector3f *position);
+int __cdecl core_set_cpp_CDemonSet_getReverbPresetAtPosition_FUN_0050d1c0(CDemonSet *this_ptr,CVector3f *position);
 void __cdecl core_set_cpp_CDemonSet_loadAssets_FUN_0050d280(CDemonSet *this_ptr);
 int __cdecl core_set_cpp_qsortByDisplayListEntry_FUN_0050d2a0(SDisplayListSortEntry *a,SDisplayListSortEntry *b);
 void __cdecl core_set_cpp_CDemonSet_buildDisplayList_FUN_0050d2d0(CDemonSet *this_ptr,uint dirty_flags_mask);

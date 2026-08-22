@@ -375,6 +375,15 @@
       "severity": "moderate",
       "text": "for (; iVar6 != 0; iVar6 = iVar6 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Partial struct copy: `local_e4` (CVector3i) receives only 4 of 12 bytes from `local_3c` \u2014 field(s) `x, y` are never assigned anywhere in the function \u2014 and `&local_e4` is then passed to a call that reads the whole struct, so those bytes are uninitialised stack at runtime. Ghidra truncated a `local_e4 = local_3c;` struct copy. See \u00a731 \u2014 restore the full copy (or pass `&local_3c` directly if the two are the same Watcom stack object).",
+      "line": 144,
+      "match": "local_e4.z = local_3c.z; (partial CVector3i copy \u2014 4/12 bytes)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_e4.z = local_3c.z;",
+      "type": "partial_struct_copy"
     }
   ],
   "stack_frame": {

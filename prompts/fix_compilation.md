@@ -142,6 +142,8 @@ When you are editing a `.keep` for any reason — creating one for a compile err
 - `static_self_assignment` — cppcheck `selfAssignment`, a `pX = pX;` / `iVar = iVar;` no-op (pre-increment / shadow-walk decompiler residue). Delete the dead self-assign line. If it's the only artifact of a `preinc_loop_idiom`, fix the whole loop per §19 instead.
 - `static_int_to_address` — cppcheck `AssignmentIntegerToAddress`, an integer assigned to a pointer (`*(T **)(... + 0xADDR) = ...`, `frame_buffer = (void *)(N)`). Usually a mistyped local (retype it per §12/§13) or a hardcoded address for a known global (§11) / Watcom 1-based base−stride (§15). Express as the symbolic global + index; if the data shape implies a struct with no existing type, STOP and tell the user what to create in Ghidra.
 - `static_identical_inner_condition` — cppcheck `identicalInnerCondition`, an inner `if` whose condition duplicates the enclosing one. Decompiler-redundant guard; drop the inner test (keep the body), confirming against the asm that the two conditions are truly identical.
+- `partial_struct_copy` — §31 (Partial struct copy). A `dst.f = src.f;` run between two same-typed struct locals that leaves a byte gap no other assignment fills, with `&dst` then passed to a call that reads the whole struct. Compiles cleanly, feeds uninitialised stack to the callee. Source-side and byte-coverage based, so unlike `missing_cave_copy` it catches any partial subset, not just a single surviving field.
+- `phantom_float_to_int` — §32 (Phantom float→int conversion). `(int)<float struct field>` in a function whose `.asm` has no `FIST`/`FISTP` — a conversion the binary cannot perform, so Ghidra fabricated it over a mistyped stack slot. Always wrong; recover the real integer from the asm.
 - `pointer_truncation` — §27 (Pointer truncation via `(int)`/`(uint)` cast). A declared-pointer operand narrowed by a sub-pointer-width cast (`(int)a - (int)b`, `(uint)ptr & mask`, `(uint)this` into `%08X`, `g_int = (int)ptr`). Bit-exact on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. Rewrite as `intptr_t`/`uintptr_t` in a `.keep` — **unless** the operand is a mistyped offset field/local (e.g. `void** row_pointers` holding byte offsets), which is a Ghidra-side retype instead. Pointer-ness comes from declared types, not Hungarian naming, so `(int)frame_index` (a pointer despite the name) is caught while integer locals are not.
 
 The next group are **static-analysis-promoted** suspects (synthesized from clang-tidy / cppcheck findings by `static_analysis_suspects.py`, hence the `static_` prefix). Unlike the pattern detectors above they are *review flags*, not guaranteed-mechanical rewrites: each one is a triage between a real `.keep` fix, a Ghidra-side retype, and a faithful-to-the-binary exemption. Always resolve the triage against the `.asm` before editing.
@@ -996,6 +998,69 @@ if (((uintptr_t)p_output & 2) != 0) { ... }
 **Not a truncation — a dereference (the detector skips these):** `(uint)(&agg.field)[i]` subscripts the address, reading a **scalar element** — Watcom's parallel-array idiom over sibling `uchar`/`ushort` fields (e.g. `(uint)(&g_Palette.colors[0].b)[i]` reading the blue plane). The cast widens a byte/short, not a pointer, so it is not flagged — unless the subscripted field is itself pointer-typed (`(int)(&this_ptr->actor_ptr)[i]`), which is a real truncation and stays flagged.
 
 **Eligibility:** `.keep`-layer fix for the portability rewrite; Ghidra-side retype when the operand is a mistyped offset field/local. The `pointer_truncation` suspect (moderate) flags every narrowing `(int)`/`(uint)` cast of a declared-pointer operand.
+
+### 31. Partial struct copy (`partial_struct_copy`) — uninitialised bytes, compiles cleanly
+
+**Cause:** Watcom copied a whole struct between two stack slots (or, more often, kept *one* stack object that Ghidra split into two locals). The decompile keeps only some of the field assignments, so the destination is left with a byte **gap** that nothing ever writes. It then gets passed by address to a call that reads the whole struct, and those bytes are whatever the stack happened to hold.
+
+This is §20's failure mode without §20's fingerprint: the destination *is* assigned and *is* used, so the `missing_cave_copy` dead-local passes are blind to it, and the surviving assignments look like ordinary code.
+
+**Symptoms:**
+- A short run of `dst.f = src.f;` where `dst` and `src` are the same struct type, covering only part of the struct.
+- The uncopied field(s) are never assigned anywhere else in the function.
+- `&dst` is later passed to a call whose parameter is the full struct type.
+- Downstream symptoms are geometric nonsense rather than a crash — objects at garbage world positions, lights projected off-screen, audio listeners placed at random coordinates.
+
+**Confirmed instances (all three the same shape — an uninitialised `CVector3i`):**
+```cpp
+// CDemonCamera::precomputeNormals — .x/.y never written (killed env lighting):
+local_60.z = local_84.z;
+...
+precomputeLight(this_ptr, &local_60, ...);      // reads .x/.y = garbage
+
+// CDemonCamera::precomputeLight — .z never written:
+worldToScreenWithFrustumCull(&light_source->base, input_ptr, &local_70);
+local_64.x = local_70.x;
+local_64.y = local_70.y;
+projectLightAndMarkVisibility(light_source, &local_64, ...);
+
+// updateListeners — .x/.y never written:
+screenToWorldCoord(&g_CDemonCameraInstance, sx, sy, &local_3c);
+local_e4.z = local_3c.z;
+screenToWorldTransform(&g_CDemonCameraInstance, &local_e4, &local_54);
+```
+
+**Verification via asm — check whether the two locals are really one object.** In `updateListeners` the asm shows a single buffer: `screenToWorldCoord` is called with `EDI = ESP+0x8c`, the `.z` slot at `[ESP+0x94]` is then adjusted **in place** (`LEA ECX,[EDX-0x300]; MOV [ESP+0x94],ECX`), and `LEA EAX,[ESP+0x8c]` — the *same* address — is pushed into `screenToWorldTransform`. There was never a copy at all; Ghidra invented a second local.
+
+**Fix:** if the asm shows one object, collapse the two locals into one (pass `&src` everywhere and drop the dead `dst` declaration) — that is the faithful reconstruction. If the asm shows a real block move, restore the full copy `dst = src;` before the modifications. Do **not** simply add the missing field assignments one at a time; the whole-struct form is what the binary did and it stays correct if the struct grows.
+
+**Eligibility:** `.keep`-layer fix. The `partial_struct_copy` suspect is source-side and type-aware (byte coverage from `data_types.json`), so it runs in `test_suspects.sh`. Two gates keep it precise, and both are worth knowing because they mark the **non**-bugs: a destination filled by a ctor/init call *before* the copy (`SLaserInfo_ctor(&dst)`, `initIntersectionCylinder(&dst, ...)`) is already initialised, and a destination whose address is taken into anything other than a plain call argument may be written through an alias (`*(uint *)((int)&dst + 4) = ...`) the field scan cannot see.
+
+**Related detector caveat:** `unrolled_memcpy`'s field-copy form recommends collapsing a run into `dst = src;`. That is only equivalent when the run — plus any sibling runs for the same pair — covers **every** byte. Collapsing a genuinely partial run widens the copy and changes behaviour.
+
+### 32. Phantom float→int conversion (`phantom_float_to_int`)
+
+**Cause:** On x87 a float→int *numeric* conversion requires a store-integer instruction — `FIST`/`FISTP`. Watcom 11 emits these inline (this codebase has no `_ftol`-style helper calls). So when a function's `.asm` contains **no `FIST`/`FISTP` at all**, every `(int)<float>` in its decompile is fabricated: Ghidra assigned a float type to a stack slot the binary reads as an integer, or lost an integer local entirely and reached for a float field that occupies the slot it wanted.
+
+**Canonical example (`CScat::blendAimBones` — a bone index served from a quaternion):**
+```cpp
+// BROKEN — `.z` of the quaternion being passed alongside it stands in for the
+// bone index; the blend went to whatever bone that float's bit pattern indexed:
+blendBoneRotations(&(this_ptr->base).base.model, &local_6c, t, (int)local_6c.z,
+                   blendWeightCallback);
+
+// FIXED — the asm loads the index from g_ScatIndices, an int local Ghidra dropped:
+local_18 = g_ScatIndices[5];        // (or [6] on the other hand_index branch)
+...
+blendBoneRotations(&(this_ptr->base).base.model, &local_6c, t, local_18,
+                   blendWeightCallback);
+```
+
+**Triage:** the cast is never right, so the question is only *what the real integer was*. Read the asm at that call/index site and recover the value — usually a global array element, a loop counter, or a parameter whose stack slot Ghidra reassigned. If the recovered value is a local the decompile never declared, add it to the declaration block (§"all locals at the top") rather than inlining the global at every use, so the branch structure stays readable.
+
+**Scope:** the detector reports the **field-path** shape (`(int)local.field`, `(int)local.a.b`) only. The bare-local shape (`(int)fVar4` on a mistyped `float` local used as a counter or index) has the same root cause but resolves to a Ghidra-side retype rather than a `.keep` edit, so it is deliberately not flagged. Three neighbours are owned by other detectors and are excluded: bit-pattern compares (`(int)x.f < 0x40c00001` → `bit_int_float_compare`), the fast-(inv-)sqrt magics (§21), and pointer/array roots (§27).
+
+**Eligibility:** `.keep`-layer fix, but only once the asm tells you the real value — if it doesn't, say so rather than guessing an index. The suspect needs the `.asm`, so it appears in the export report, not in `test_suspects.sh`.
 
 ### 28. Swapped / mistyped call arguments (`static_swapped_arguments`)
 

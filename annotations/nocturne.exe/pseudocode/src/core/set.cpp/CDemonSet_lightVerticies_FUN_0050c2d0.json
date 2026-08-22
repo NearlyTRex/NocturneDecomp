@@ -122,15 +122,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1084,
-    "complexity_score": 2778,
+    "complexity_score": 2793,
     "cross_reference_count": 8,
     "function_call_count": 6,
     "global_count": 41,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 523,
-    "suspect_count": 222,
+    "suspect_count": 223,
     "suspect_types": [
       "fast_inv_sqrt_inline",
+      "partial_struct_copy",
       "pointer_cast",
       "pointer_stride_bytecount",
       "pointer_truncation",
@@ -2423,6 +2424,14 @@
       "severity": "moderate",
       "text": "*(uint *)((int)&DAT_005c5040 + iVar5) = 0;",
       "type": "pointer_truncation"
+    },
+    {
+      "description": "Partial struct copy: `local_ec` (CVector3i) receives only 4 of 12 bytes from `local_104` \u2014 field(s) `y, z` are never assigned anywhere in the function \u2014 and `&local_ec` is then passed to a call that reads the whole struct, so those bytes are uninitialised stack at runtime. Ghidra truncated a `local_ec = local_104;` struct copy. See \u00a731 \u2014 restore the full copy (or pass `&local_104` directly if the two are the same Watcom stack object).",
+      "line": 438,
+      "match": "local_ec.x = local_104.x; (partial CVector3i copy \u2014 4/12 bytes)",
+      "severity": "moderate",
+      "text": "local_ec.x = local_104.x;",
+      "type": "partial_struct_copy"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",

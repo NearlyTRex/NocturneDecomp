@@ -12,7 +12,8 @@ from ._structtypes import (
     _SFO_ACCESS_RE, _SFO_DECL_RE, _SFO_DEREF_START_RE, _SFO_LOCAL_ASSIGN_RE,
     _SFO_NON_TYPE_KEYWORDS, _SFO_PTR_PARAM_RE, _SFO_SIG_RE,
     _SFO_VALDECL_RE, _SFO_VAL_PARAM_RE, _sfo_field_at_offset,
-    _sfo_field_base_deref_overruns, _sfo_field_owner_offset, _sfo_index_const,
+    _sfo_field_base_deref_overruns, _sfo_field_extent,
+    _sfo_field_owner_offset, _sfo_index_const,
     _sfo_resolve_var_types, _sfo_split_ptr_const,
     resolve_access_path_type
 )
@@ -2478,12 +2479,212 @@ def identify_unrolled_field_copy(decompiled_code, struct_layout_map=None):
                     'Watcom field-by-field struct copy (%d consecutive '
                     '`dst.field = src.field;` lines). Replace with '
                     '`dst = src;` or `memcpy(&dst, &src, sizeof(...));` '
-                    'in a .keep.' % run_len),
+                    'in a .keep — but only once the run (together with any '
+                    'sibling runs for the same dst/src pair) covers every '
+                    'byte of the struct. Collapsing a run that leaves a gap '
+                    'WIDENS the copy and changes behaviour; see '
+                    '`partial_struct_copy` (§31) for that case.' % run_len),
                 'severity': 'moderate',
             })
             i = j
         else:
             i += 1
+    return suspects
+
+
+
+
+# =============================================================================
+# Partial struct copy (§31) — a struct copy Ghidra truncated to a subset of
+# the destination's fields, leaving the rest uninitialised at runtime.
+# =============================================================================
+#
+# Where `identify_unrolled_field_copy` above collapses a COMPLETE field-by-field
+# copy for readability, this detector is a correctness check on the same shape:
+# the run copies `dst.<path> = src.<path>` for some fields but leaves a byte GAP
+# in `dst`, and `dst` is then handed to a call by address. The callee reads the
+# whole struct, so the uncopied bytes are whatever the stack happened to hold.
+#
+# `missing_cave_copy` (assembly.py, §20 quaternary pass) covers the one-surviving
+# -field case but requires the asm AND disqualifies on any second field write, so
+# a 2-of-3 truncation is invisible to it. This pass is source-side and
+# byte-coverage based, so it sees any partial subset.
+#
+# Confirmed instances (all three the same runtime signature — garbage world
+# coordinates from an uninitialised CVector3i):
+#   CDemonCamera::precomputeNormals  `local_60.z = local_84.z;`   (env lighting dead)
+#   CDemonCamera::precomputeLight    `.x`/`.y` copied, `.z` dropped
+#   updateListeners                  `local_e4.z = local_3c.z;`
+#
+# Two gates keep this at zero false positives across the corpus:
+#   1. PRODUCER gate — if `&dst` is passed to a call BEFORE the copy, the
+#      destination was already filled by a ctor/init (`SLaserInfo_ctor(&dst)`,
+#      `initIntersectionCylinder(&dst, ...)`) and the gap is not uninitialised.
+#   2. ALIAS gate — every `&dst` occurrence must be a plain call argument. A
+#      `&dst` inside arithmetic (`*(uint *)((int)&dst + 4) = ...`) or assigned
+#      to a pointer local means bytes can be written through an alias this
+#      field-name scan cannot account for, so we cannot prove a gap exists.
+_PARTIAL_COPY_RE = re.compile(
+    r'^\s*([A-Za-z_]\w*)((?:\.[A-Za-z_]\w*)+)\s*=\s*([A-Za-z_]\w*)\2\s*;\s*$')
+
+
+_PARTIAL_COPY_ANY_WRITE_RE = re.compile(
+    r'^\s*([A-Za-z_]\w*)((?:\.[A-Za-z_]\w*)+)\s*=(?!=)')
+
+
+_PARTIAL_COPY_PTR_DECL_RE = re.compile(
+    r'^\s*[A-Za-z_]\w*\s*\*+\s*([A-Za-z_]\w*)\s*[;=]', re.M)
+
+
+def _partial_copy_merge(intervals):
+    """Merge a list of [start, end) byte intervals into disjoint spans."""
+    out = []
+    for a, b in sorted(intervals):
+        if out and a <= out[-1][1]:
+            out[-1] = (out[-1][0], max(out[-1][1], b))
+        else:
+            out.append((a, b))
+    return out
+
+
+def _partial_copy_gaps(covered, full):
+    """Byte spans present in `full` but not in `covered` (both [start, end))."""
+    covered = _partial_copy_merge(covered)
+    gaps = []
+    for a, b in _partial_copy_merge(full):
+        cur = a
+        for ca, cb in covered:
+            if cb <= cur or ca >= b:
+                continue
+            if ca > cur:
+                gaps.append((cur, min(ca, b)))
+            cur = max(cur, cb)
+            if cur >= b:
+                break
+        if cur < b:
+            gaps.append((cur, b))
+    return gaps
+
+
+def identify_partial_struct_copy(decompiled_code, struct_layout_map=None):
+    """Detect struct copies Ghidra truncated to a subset of the fields.
+
+    Shape:
+        f(..., &src);                 // src filled by the callee
+        dst.x = src.x;                // only SOME of dst's bytes written
+        dst.y = src.y;                //   (.z never assigned anywhere)
+        g(..., &dst, ...);            // callee reads all of dst -> garbage .z
+
+    Runs are grouped per (dst, src) pair and matched on an identical field
+    path on both sides, so nested copies (`dst.a.b = src.a.b`) count toward
+    coverage too. Every other write to `dst.<path>` in the function is folded
+    into the covered set before the gap is computed, so a field assigned
+    separately is not reported as missing. See §31 for the fix pattern.
+
+    Type-aware: needs a struct layout map (field offsets/lengths) and is inert
+    without one, like the other `_sfo_*`-backed detectors.
+
+    Args:
+        decompiled_code: The decompiled C pseudocode string.
+        struct_layout_map: struct name -> field layout, from
+            `get_struct_layout_map()` / `build_struct_layout_map()`.
+
+    Returns:
+        List of suspect dicts, one per (dst, src) pair with an uncovered gap.
+    """
+    suspects = []
+    if not decompiled_code or not struct_layout_map:
+        return suspects
+    lines = decompiled_code.split('\n')
+    var_types = _sfo_resolve_var_types(decompiled_code)
+    ptr_vars = set(_PARTIAL_COPY_PTR_DECL_RE.findall(decompiled_code))
+
+    runs = {}
+    for i, line in enumerate(lines):
+        m = _PARTIAL_COPY_RE.match(line)
+        if not m:
+            continue
+        dst, path, src = m.group(1), m.group(2), m.group(3)
+        if dst == src or dst in ptr_vars or src in ptr_vars:
+            continue
+        runs.setdefault((dst, src), []).append((i, path))
+
+    if not runs:
+        return suspects
+
+    # Every `dst.<path> = ...` write in the function, copy or not.
+    writes = {}
+    for line in lines:
+        m = _PARTIAL_COPY_ANY_WRITE_RE.match(line)
+        if m:
+            writes.setdefault(m.group(1), []).append(m.group(2))
+
+    for (dst, src), items in runs.items():
+        struct_name = var_types.get(dst)
+        if not struct_name or struct_name != var_types.get(src):
+            continue
+        fields = struct_layout_map.get(struct_name)
+        if not fields:
+            continue
+        full = [(f['offset'], f['offset'] + f['len']) for f in fields]
+        covered = []
+        resolved = True
+        for _, path in items:
+            extent = _sfo_field_extent(dst + path, var_types, struct_layout_map)
+            if not extent:
+                resolved = False
+                break
+            covered.append((extent[1], extent[1] + extent[2]))
+        if not resolved:
+            continue
+        for path in writes.get(dst, []):
+            extent = _sfo_field_extent(dst + path, var_types, struct_layout_map)
+            if extent:
+                covered.append((extent[1], extent[1] + extent[2]))
+        gaps = _partial_copy_gaps(covered, full)
+        if not gaps:
+            continue
+
+        first = items[0][0]
+        # ALIAS gate — `&dst` must only ever appear as a plain call argument.
+        plain_amp = re.compile(
+            r'(?<=[(,])\s*&\s*' + re.escape(dst) + r'\s*(?=[,)])')
+        any_amp = re.compile(r'&\s*' + re.escape(dst) + r'\b')
+        if any(len(any_amp.findall(l)) != len(plain_amp.findall(l))
+               for l in lines):
+            continue
+        # `dst` must be CONSUMED as a whole struct after the truncated copy...
+        if not any(any_amp.search(lines[j]) for j in range(first + 1, len(lines))):
+            continue
+        # ...and must NOT have been PRODUCED by a call before it.
+        if any(any_amp.search(lines[j]) for j in range(0, first)):
+            continue
+
+        missing = sorted({f['name'] for f in fields
+                          for a, b in gaps
+                          if f['offset'] < b and f['offset'] + f['len'] > a})
+        covered_bytes = sum(b - a for a, b in _partial_copy_merge(covered))
+        total_bytes = sum(b - a for a, b in _partial_copy_merge(full))
+        suspects.append({
+            'line': first + 1,
+            'type': 'partial_struct_copy',
+            'match': "{d}{p} = {s}{p}; (partial {t} copy — {cb}/{tb} bytes)".format(
+                d=dst, s=src, p=items[0][1], t=struct_name,
+                cb=covered_bytes, tb=total_bytes),
+            'text': lines[first].strip()[:120],
+            'description': (
+                "Partial struct copy: `{d}` ({t}) receives only {cb} of {tb} "
+                "bytes from `{s}` — field(s) `{miss}` are never assigned "
+                "anywhere in the function — and `&{d}` is then passed to a "
+                "call that reads the whole struct, so those bytes are "
+                "uninitialised stack at runtime. Ghidra truncated a "
+                "`{d} = {s};` struct copy. See §31 — restore the full copy "
+                "(or pass `&{s}` directly if the two are the same Watcom "
+                "stack object).").format(
+                    d=dst, s=src, t=struct_name, cb=covered_bytes,
+                    tb=total_bytes, miss=', '.join(missing)),
+            'severity': 'moderate',
+        })
     return suspects
 
 
@@ -7077,6 +7278,7 @@ def detect_content_suspects(code, func_globals=None, global_interval_map=None,
     found.extend(identify_unrolled_memcpy_dword_cast_loop(code))
     found.extend(identify_unrolled_memcpy_index_form(code))
     found.extend(identify_unrolled_field_copy(code, struct_layout_map))
+    found.extend(identify_partial_struct_copy(code, struct_layout_map))
     found.extend(identify_unrolled_offset_copy(code))
     found.extend(identify_cascade_constant_fill(code))
     found.extend(identify_self_copy_guard(code))

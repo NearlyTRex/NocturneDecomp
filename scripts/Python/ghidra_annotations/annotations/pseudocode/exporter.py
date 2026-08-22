@@ -78,6 +78,7 @@ from ghidra_annotations.annotations.pseudocode.suspects import (
     detect_content_suspects, build_global_interval_map,
     identify_missing_cave_copy, identify_unrolled_memset_blocks,
     identify_unrolled_memcpy_blocks, extract_unreachable_block_addrs,
+    identify_phantom_float_to_int,
     get_struct_layout_map, get_struct_size_map
 )
 from ghidra_annotations.annotations.pseudocode.stack_patterns import (
@@ -501,6 +502,14 @@ def process_python_only(result, pseudocode_src_dir, constants_map,
         decompiled_code, result.assembly_code)
     suspects.extend(cave_copy_suspects_cpp)
 
+    # Cross-reference .cpp/.asm: `(int)<float field>` casts in a function whose
+    # asm has no FIST/FISTP — a conversion the binary cannot perform (§32).
+    # Captured separately for the same keep-aware diff as the cave copies.
+    phantom_f2i_suspects_cpp = identify_phantom_float_to_int(
+        decompiled_code, result.assembly_code,
+        get_struct_layout_map(pseudocode_src_dir))
+    suspects.extend(phantom_f2i_suspects_cpp)
+
     # Addresses Ghidra proved dead (`WARNING: Removing unreachable block`).
     # A REP MOVS/STOS inside such a block is dead code a keep correctly omits,
     # so suppress asm-side memcpy/memset suspects at those addresses.
@@ -617,6 +626,9 @@ def process_python_only(result, pseudocode_src_dir, constants_map,
             # Re-run cross-source detectors that take .cpp text against the keep.
             cave_copy_suspects_keep = identify_missing_cave_copy(
                 keep_source, result.assembly_code)
+            phantom_f2i_suspects_keep = identify_phantom_float_to_int(
+                keep_source, result.assembly_code,
+                get_struct_layout_map(pseudocode_src_dir))
 
             def _key(s):
                 return (s.get('type'), s.get('match'))
@@ -624,8 +636,12 @@ def process_python_only(result, pseudocode_src_dir, constants_map,
             # Tracked-cpp suspects — the union of detector outputs that are
             # potentially "fixable" by a keep edit. We compare these against
             # the keep-side outputs by multiset of (type, match) keys.
-            tracked_cpp = list(content_suspects_cpp) + list(cave_copy_suspects_cpp)
-            tracked_keep = list(content_suspects_keep) + list(cave_copy_suspects_keep)
+            tracked_cpp = (list(content_suspects_cpp)
+                           + list(cave_copy_suspects_cpp)
+                           + list(phantom_f2i_suspects_cpp))
+            tracked_keep = (list(content_suspects_keep)
+                            + list(cave_copy_suspects_keep)
+                            + list(phantom_f2i_suspects_keep))
 
             cpp_counts = {}
             for s in tracked_cpp:

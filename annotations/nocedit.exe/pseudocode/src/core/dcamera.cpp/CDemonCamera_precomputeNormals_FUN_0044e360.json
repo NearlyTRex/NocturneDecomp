@@ -462,6 +462,15 @@
       "type": "pointer_truncation"
     },
     {
+      "description": "Partial struct copy: `local_60` (CVector3i) receives only 4 of 12 bytes from `local_84` \u2014 field(s) `x, y` are never assigned anywhere in the function \u2014 and `&local_60` is then passed to a call that reads the whole struct, so those bytes are uninitialised stack at runtime. Ghidra truncated a `local_60 = local_84;` struct copy. See \u00a731 \u2014 restore the full copy (or pass `&local_84` directly if the two are the same Watcom stack object).",
+      "line": 59,
+      "match": "local_60.z = local_84.z; (partial CVector3i copy \u2014 4/12 bytes)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_60.z = local_84.z;",
+      "type": "partial_struct_copy"
+    },
+    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 68,
       "match": "(int)&NAME used in byte-offset arithmetic",

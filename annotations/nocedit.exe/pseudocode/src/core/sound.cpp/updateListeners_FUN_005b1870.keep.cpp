@@ -19,7 +19,6 @@ void __cdecl core_sound_cpp_updateListeners_FUN_005b1870(void)
   CMatrix3x3f local_15c;
   float local_134 [10];
   float local_10c [10];
-  CVector3i local_e4;
   CVector3f local_d8;
   float local_cc;
   float local_c8;
@@ -111,15 +110,14 @@ void __cdecl core_sound_cpp_updateListeners_FUN_005b1870(void)
                           (uint)(iVar4 << 4 < 0)) >> 5,
                      (int)((g_CDemonCameraInstance.framebuffer_height * local_1c + iVar5 * -0x20) -
                           (uint)(iVar5 << 4 < 0)) >> 5,&local_3c);
-          local_e4.z = local_3c.z;
           local_160 = 0.0;
           if (local_3c.z < 0x7fffffff) {
-            local_e4.z = local_3c.z + -0x300;
-            if (local_e4.z < 1) {
-              local_e4.z = 1;
+            local_3c.z = local_3c.z + -0x300;
+            if (local_3c.z < 1) {
+              local_3c.z = 1;
             }
             core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370
-                      (&g_CDemonCameraInstance,&local_e4,&local_54);
+                      (&g_CDemonCameraInstance,&local_3c,&local_54);
             fVar2 = (float)0.00390625;
             local_84.x = (float)local_54.x * fVar2;
             local_84.z = (float)local_54.z * fVar2;
