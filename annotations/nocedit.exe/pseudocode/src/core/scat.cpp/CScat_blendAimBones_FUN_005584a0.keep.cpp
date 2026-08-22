@@ -28,9 +28,11 @@ void __cdecl core_scat_cpp_CScat_blendAimBones_FUN_005584a0(CScat *this_ptr,int 
   CQuaternion4f local_4c;
   CQuaternion4f local_3c;
   int local_1c;
-  
+  int local_18;
+
   if (hand_index == 0) {
     local_1c = g_ScatIndices[3];
+    local_18 = g_ScatIndices[5];
     core_xform_cpp_quaternionFromAngleY_FUN_005f79f0(1.5707964,&local_cc);
     core_xform_cpp_quaternionFromAngleZ_FUN_005f7a30(1.5707964,&local_bc);
     local_fc = local_cc;
@@ -38,6 +40,7 @@ void __cdecl core_scat_cpp_CScat_blendAimBones_FUN_005584a0(CScat *this_ptr,int 
   }
   else {
     local_1c = g_ScatIndices[4];
+    local_18 = g_ScatIndices[6];
     core_xform_cpp_quaternionFromAngleY_FUN_005f79f0(-1.5707964,&local_ac);
     core_xform_cpp_quaternionFromAngleZ_FUN_005f7a30(-1.5707964,&local_9c);
     local_fc = local_ac;
@@ -64,7 +67,7 @@ void __cdecl core_scat_cpp_CScat_blendAimBones_FUN_005584a0(CScat *this_ptr,int 
   core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_fc,&local_13c,&local_5c);
   core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_5c,&local_15c,&local_6c);
   core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
-            (&(this_ptr->base).base.model,&local_6c,t,(int)local_6c.z,
+            (&(this_ptr->base).base.model,&local_6c,t,local_18,
              core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0);
   return;
 }
