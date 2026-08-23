@@ -1,0 +1,51 @@
+tridx7 render probe
+===================
+
+frames presented      255
+APIDLL draw calls     150144
+polygons submitted    321966   (1262.6 / frame)
+vertices converted    645932   (2533.1 / frame)
+glDrawElements calls  10915
+
+Q1 — is anything reaching the hardware at all?
+  If polygons/frame is ~0 the accel path is not being taken and the
+  frame differences come from somewhere else entirely.
+
+Q2 — render_flags combos (sorted by polygon count)
+  entry: [drawPolygon drawPolygon2 drawPolyList drawPolyList2]
+
+  flags    decoded                                                   polys      verts  entry
+  0x2cd    TEX|GOURAUD|SOLIDALPHA|ZTEST|ZWRITE|VTXRGB               321446     645924  [6985 136299 762 5578]
+  0xc0     ZTEST|ZWRITE                                                520          8  [295 225 0 0]
+
+Q3 — vertex colors out of buildTLVertex, per flag combo
+  light   = diffuse red byte (R=G=B on the monochrome light path)
+  alpha   = diffuse alpha; a cluster at ~128 with blending on is the
+            50%-blend fingerprint that explains on = 0.5*off + 12
+  spec    = specular RGB; 0 everywhere means the overbright term
+            never engages (expected below light 0xff0 pre-shift)
+  rgbne   = vertices whose diffuse RGB are not all equal (the 0x200
+            per-vertex-RGB path rather than the light path)
+  hist bins are 16 wide over 0..255, shown as % of that combo
+
+  0x2cd  TEX|GOURAUD|SOLIDALPHA|ZTEST|ZWRITE|VTXRGB
+    light  min   0  mean   74.0  max 255
+    light   0.1  0.0  0.0 38.5 39.9  5.4  5.0  4.5  3.3  2.1  1.1  0.1  0.0  0.0  0.0  0.0
+    alpha  mean  255.0
+    alpha   0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0 100.0
+    spec   nonzero 0/645924 (0.0%)  mean  0.00  max 0
+    rgbne  780/645924
+
+  0xc0  ZTEST|ZWRITE
+    light  min   0  mean    0.0  max   0
+    light  100.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0
+    alpha  mean  255.0
+    alpha   0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0 100.0
+    spec   nonzero 0/8 (0.0%)  mean  0.00  max 0
+    rgbne  0/8
+
+GL state the batches were drawn under
+  triangles with GL_BLEND on   0
+  triangles with GL_BLEND off  327135
+  triangles with ALPHA_TEST    0
+  triangles untextured         0

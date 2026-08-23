@@ -24,6 +24,50 @@
 
 #include "nocturne.h"
 #include "builtin_dll.h"
+#include "render_probe.h"
+
+// The engine's currently-selected texture. Used purely as a bucket key so the
+// probe can separate character geometry from set geometry — both ride
+// render_flags 0x2cd, so a flags-keyed mean cannot tell them apart.
+extern uchar *g_CurrentTextureData;
+
+// The four draw entries are exported through probe wrappers rather than
+// directly. The wrapper records (render_flags, polygon count) and tail-calls
+// the real decompiled export unchanged — the reconstruction stays untouched,
+// and the engine cannot tell the difference. See render_probe.h.
+static int __cdecl probe_drawPolygon(SRenderVertex *vertices, int vertex_count,
+                                     int render_flags) {
+    nocturne_render_probe_texture(g_CurrentTextureData);
+    nocturne_render_probe_draw((unsigned)render_flags, 1, NOCTURNE_PROBE_DRAWPOLYGON);
+    return dll_dx7_cpp_APIDLLdrawPolygon_FUN_10004380(vertices, vertex_count, render_flags);
+}
+
+static int __cdecl probe_drawPolygon2(SRenderVertex **vertex_array, int vertex_count,
+                                      int render_flags) {
+    nocturne_render_probe_texture(g_CurrentTextureData);
+    nocturne_render_probe_draw((unsigned)render_flags, 1, NOCTURNE_PROBE_DRAWPOLYGON2);
+    return dll_dx7_cpp_APIDLLdrawPolygon2_FUN_100043c0(vertex_array, vertex_count, render_flags);
+}
+
+static int __cdecl probe_drawPolyList(SRenderVertex *vertex_buffer,
+                                      SMRGLPrimitiveQuad **polygons, int polygon_count,
+                                      int render_flags) {
+    nocturne_render_probe_texture(g_CurrentTextureData);
+    nocturne_render_probe_draw((unsigned)render_flags, polygon_count,
+                               NOCTURNE_PROBE_DRAWPOLYLIST);
+    return dll_dx7_cpp_APIDLLdrawPolyList_FUN_10004f00(vertex_buffer, polygons,
+                                                       polygon_count, render_flags);
+}
+
+static int __cdecl probe_drawPolyList2(SRenderVertex *vertex_buffer,
+                                       SInputFace **polygons, int polygon_count,
+                                       int render_flags) {
+    nocturne_render_probe_texture(g_CurrentTextureData);
+    nocturne_render_probe_draw((unsigned)render_flags, polygon_count,
+                               NOCTURNE_PROBE_DRAWPOLYLIST2);
+    return dll_dx7_cpp_APIDLLdrawPolyList2_FUN_10005130(vertex_buffer, polygons,
+                                                        polygon_count, render_flags);
+}
 
 static const NocturneBuiltinExport g_Tridx7Exports[] = {
     { "APIDLLGetDisplayContext",     (void *)dll_dx7_cpp_APIDLLGetDisplayContext_FUN_10004d30 },
@@ -36,10 +80,10 @@ static const NocturneBuiltinExport g_Tridx7Exports[] = {
     { "APIDLLclear",                 (void *)dll_dx7_cpp_APIDLLclear_FUN_10004840 },
     { "APIDLLclearZBox",             (void *)dll_dx7_cpp_APIDLLclearZBox_FUN_10004ac0 },
     { "APIDLLclearZBuffer",          (void *)dll_dx7_cpp_APIDLLclearZBuffer_FUN_10004a70 },
-    { "APIDLLdrawPolyList",          (void *)dll_dx7_cpp_APIDLLdrawPolyList_FUN_10004f00 },
-    { "APIDLLdrawPolyList2",         (void *)dll_dx7_cpp_APIDLLdrawPolyList2_FUN_10005130 },
-    { "APIDLLdrawPolygon",           (void *)dll_dx7_cpp_APIDLLdrawPolygon_FUN_10004380 },
-    { "APIDLLdrawPolygon2",          (void *)dll_dx7_cpp_APIDLLdrawPolygon2_FUN_100043c0 },
+    { "APIDLLdrawPolyList",          (void *)probe_drawPolyList },
+    { "APIDLLdrawPolyList2",         (void *)probe_drawPolyList2 },
+    { "APIDLLdrawPolygon",           (void *)probe_drawPolygon },
+    { "APIDLLdrawPolygon2",          (void *)probe_drawPolygon2 },
     { "APIDLLendScene",              (void *)dll_dx7_cpp_APIDLLendScene_FUN_10002d10 },
     { "APIDLLflushLineList",         (void *)dll_dx7_cpp_APIDLLflushLineList_FUN_10004830 },
     { "APIDLLflushParticleList",     (void *)dll_dx7_cpp_APIDLLflushParticleList_FUN_10004810 },

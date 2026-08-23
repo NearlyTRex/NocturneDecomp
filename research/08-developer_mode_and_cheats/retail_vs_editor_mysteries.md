@@ -198,6 +198,62 @@ Net effect: on Linux *no* `nocturne.ini` setting persists (halo, subtitles, cont
 - **Persistence (Linux port) — the actionable fix.** Add `remove`/`rename` (and siblings like `_unlink`/`unlink`) shims in `shims/crt.cpp` that route the path(s) through `normalize_path()`, mirroring the existing `fopen`/`freopen` wrappers. That makes `CIni::writeProfileString`'s temp-swap land on the real `nocturne.ini` and fixes persistence for **all** ini-backed settings at once. (Optionally also fix the temp-name off-by-one so the intermediate file is `nocturne.inix`.) This is a substrate fix, so it follows the runnable-binary goal rather than the `NOCTURNE_AUTHENTIC_*` convention.
 - **Resolution.** There is nothing to "restore" independently — the cap is the documented §1 consequence. Anything that lets `g_UseDirect3D` stay non-zero (e.g. the `NOCTURNE_AUTHENTIC_D3D_OPTIONS=0` default, which already removes §1's per-frame clobber) plus an external renderer path would let clamps #1/#2 relax; clamp #3 still requires the backend to actually accept the larger mode.
 
+## 5. Why does the editor ask every renderer DLL for 23 entry points that no shipped DLL has? (definitive)
+
+**Question:** `loadExternalRenderer` probes 60 `APIDLL*` export names, but the shipped
+`tridx7.dll` exports 37. Is the editor build missing renderer functionality, and does that
+explain why hardware rendering looks wrong in it?
+
+**Answer (definitive): the editor was mid-migration to a hardware-T&L renderer DLL that never
+shipped. The 23 extras are bound but never called, so they do not affect runtime behaviour.**
+
+### The counts
+
+Extracted from each build's `loadExternalRenderer`:
+
+- `nocturne.exe` (retail, 1999-11-02) binds **37** names — exactly the set `tridx7.dll`,
+  `tridx6.dll`, `trid3d.dll` and `tri3dfx.dll` export. Retail + shipped DLL is a matched pair.
+- `nocedit.exe` (editor, 2000-01-10 — the *newer* build by two months) binds **60**.
+
+The 23 the editor adds:
+
+```
+setAmbientLight   setLightVector   setLightConstants   setTransform   setViewport
+setFog            enableClipping   enableCulling       setTextureClamp
+getTextureHandle  getTextureInfo   lockTexture         unlockTexture
+selectTextureBGRA updateTextureBGRA selectTextureByHandle
+drawPolyList3     polyList
+lockFrameX        unlockFrameX     toggleX             setVideoModeX     restoreVideoModeX
+```
+
+`setTransform` + `setViewport` + `setAmbientLight` + `setLightVector` + `setLightConstants` is
+a transform-and-lighting pipeline — i.e. the DX7 hardware T&L that arrived in exactly that
+1999-2000 window. The `*BGRA` / texture-handle group is a matching texture-management
+overhaul, and the `*X` suffixes are second-generation variants of existing calls.
+
+### Why it changes nothing at runtime
+
+All 23 are bound with a plain `getProcAddress` and, unlike the required set, do **not** touch
+`g_DLLFunctionsMissing` when they come back null — so the DLL still loads and validates. More
+decisively: `g_APIDLL_setAmbientLight`, `g_APIDLL_setLightVector`, `g_APIDLL_setLightConstants`
+and `g_APIDLL_setTransform` have **zero callers anywhere in the binary** outside
+`loadExternalRenderer` / `initializeExternalRenderer` / `shutdownExternalRenderer` (which only
+bind, null-check and clear them). They are forward-declared plumbing, not a disabled feature.
+
+### What remains uncertain
+
+- Did a newer renderer DLL ever exist? Nothing in the shipped data set exports these names. A
+  later Terminal Reality title on the same engine (BloodRayne) would be the place to look.
+- The editor's `unlockFrame` also gained a `g_ExternalFrameLocked = 0` line that retail lacks —
+  the only non-identical function in the whole 25-function APIDLL bridge. Whether that is part
+  of the same migration or an unrelated editor fix is unresolved.
+
+### Bearing on the accel-on lighting bug
+
+None — see `research/13-accel_per_pixel_lighting/01_INVESTIGATION_STATE.md`, "DON'T RE-CHASE"
+item 4. That investigation also established that the *used* 37-entry path is byte-identical
+between the two builds.
+
 ## How to add a new mystery
 
 When you find another retail-vs-editor difference worth investigating, follow the per-section template:

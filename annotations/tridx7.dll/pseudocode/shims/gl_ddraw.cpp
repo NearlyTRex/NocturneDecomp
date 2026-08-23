@@ -30,6 +30,7 @@
 #include "gl_api.h"
 #include "gl_present.h"
 #include "debug_log.h"
+#include "render_probe.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -215,6 +216,7 @@ void convert_vertices(const D3DTLVertex *src, GLVertex *dst, size_t count) {
         dst[i].w = w;
         unpack_argb(src[i].diffuse,  dst[i].diffuse);
         unpack_argb(src[i].specular, dst[i].specular);
+        nocturne_render_probe_color(src[i].diffuse, src[i].specular);
         dst[i].u = src[i].u;
         dst[i].v = src[i].v;
     }
@@ -441,6 +443,7 @@ void surface_readback_from_gl(GLSurface *surf);
 // the scene target, whose FBO gl_present owns.
 GLuint surface_depth_fbo(GLSurface *surf) {
     if (surf == nullptr) return 0;
+    if (nocturne_gl_scene_fbo() == 0) return 0;
     if (surf->is_scene_depth) return (GLuint)nocturne_gl_scene_fbo();
     if (surf->depth_fbo != 0) return surf->depth_fbo;
 
@@ -482,10 +485,15 @@ GLuint surface_depth_fbo(GLSurface *surf) {
 int surface_blt_depth(GLSurface *dst, GLSurface *src, RECT *r) {
     if (gl.BlitFramebuffer == nullptr) return 0;
 
+    // Bail out while the GL layer is inactive
+    if (nocturne_gl_scene_fbo() == 0) return 0;
+
     const GLuint dst_fbo = surface_depth_fbo(dst);
     const GLuint src_fbo = surface_depth_fbo(src);
-    if (dst_fbo == 0 && !dst->is_scene_depth) return 0;
-    if (src_fbo == 0 && !src->is_scene_depth) return 0;
+    // fbo 0 is the default framebuffer, never a valid depth blit target here —
+    // reject it whether or not the surface claims to be the scene depth.
+    if (dst_fbo == 0) return 0;
+    if (src_fbo == 0) return 0;
 
     GLint x0 = 0, x1 = (GLint)src->width;
     GLint y0 = 0, y1 = (GLint)src->height;
@@ -764,6 +772,7 @@ static HRESULT surface_Flip(IDirectDrawSurface *this_ptr,
     // back at Lock, 2D drawn over it) and has to go back to the GPU. If it was
     // never locked, the GL framebuffer already holds the finished frame and
     // uploading a stale CPU buffer would erase it.
+    nocturne_render_probe_frame();
     if (back->cpu_dirty && back->pixels != nullptr) {
         nocturne_gl_present_framebuffer(back->pixels, (int)back->width, (int)back->height,
                                         (int)back->pitch, (int)back->bpp);
@@ -953,14 +962,36 @@ GLenum compare_func(DWORD d3d_func) {
 }
 
 // Deferred pieces of state that GL needs as a pair (blend factors, alpha ref).
+// blend_enabled / alpha_test mirror the two glEnable toggles below; nothing in
+// GL needs them cached, but render_probe reports what each batch was drawn
+// under and querying GL per draw would be a pipeline stall.
 struct RenderStateCache {
-    GLenum src_blend  = GL_ONE;
-    GLenum dst_blend  = GL_ZERO;
-    GLenum alpha_func = GL_GEQUAL;
-    float  alpha_ref  = 0.0f;
+    GLenum src_blend    = GL_ONE;
+    GLenum dst_blend    = GL_ZERO;
+    GLenum alpha_func   = GL_GEQUAL;
+    float  alpha_ref    = 0.0f;
+    int    blend_enabled = 0;
+    int    alpha_test    = 0;
 };
 
 RenderStateCache g_state;
+
+// D3D fog needs BOTH renderstates to decide whether GL fog should be on:
+//   FOGENABLE    (28) — fog on at all
+//   FOGTABLEMODE (35) — NONE means "no table fog, use per-vertex fog from the
+//                       specular alpha", which GL cannot express.
+// GL has only table fog: once GL_FOG is enabled it always applies, using the
+// current mode (default GL_EXP at density 1.0). So NONE must mean fog OFF here,
+// otherwise every DLL-drawn primitive is fogged toward the fog colour when D3D
+// would have applied none.
+int g_fog_enable = 0;   // FOGENABLE
+int g_fog_table  = 0;   // FOGTABLEMODE (0 = NONE)
+
+void apply_fog_state() {
+    if (g_fog_enable != 0 && g_fog_table != 0) gl.Enable(GL_FOG);
+    else                                       gl.Disable(GL_FOG);
+}
+
 
 }  // namespace
 
@@ -989,6 +1020,7 @@ static HRESULT device_SetRenderState(IDirect3DDevice3 *this_ptr,
             break;
 
         case 15:  // ALPHATESTENABLE
+            g_state.alpha_test = (value != 0);
             if (value) gl.Enable(GL_ALPHA_TEST); else gl.Disable(GL_ALPHA_TEST);
             break;
         case 24:  // ALPHAREF — D3D passes 0..255, GL wants 0..1
@@ -1001,6 +1033,7 @@ static HRESULT device_SetRenderState(IDirect3DDevice3 *this_ptr,
             break;
 
         case 27:  // ALPHABLENDENABLE
+            g_state.blend_enabled = (value != 0);
             if (value) gl.Enable(GL_BLEND); else gl.Disable(GL_BLEND);
             break;
         case 19:  // SRCBLEND
@@ -1029,7 +1062,8 @@ static HRESULT device_SetRenderState(IDirect3DDevice3 *this_ptr,
             break;
 
         case 28:  // FOGENABLE
-            if (value) gl.Enable(GL_FOG); else gl.Disable(GL_FOG);
+            g_fog_enable = (int)value;
+            apply_fog_state();
             break;
         case 34: { // FOGCOLOR — packed 0x00RRGGBB
             const GLfloat rgba[4] = {
@@ -1042,12 +1076,16 @@ static HRESULT device_SetRenderState(IDirect3DDevice3 *this_ptr,
             break;
         }
         case 35:  // FOGTABLEMODE — 0 NONE, 1 EXP, 2 EXP2, 3 LINEAR
+            g_fog_table = (int)value;
             switch (value) {
                 case 1:  gl.Fogi(GL_FOG_MODE, GL_EXP);    break;
                 case 2:  gl.Fogi(GL_FOG_MODE, GL_EXP2);   break;
                 case 3:  gl.Fogi(GL_FOG_MODE, GL_LINEAR); break;
-                default: break;   // NONE: the vertex specular alpha carries fog
+                default: break;   // NONE: per-vertex fog, which GL cannot do
             }
+            // NONE must turn GL fog off; GL would otherwise keep applying table
+            // fog with its default mode. See apply_fog_state().
+            apply_fog_state();
             break;
 
         case 21:  // TEXTUREMAPBLEND — 2 MODULATE, 4 MODULATEALPHA
@@ -1117,7 +1155,7 @@ static HRESULT device_SetTextureStageState(IDirect3DDevice3 *this_ptr, DWORD sta
         case 16:  // D3DTSS_MAGFILTER — 1 POINT, 2 LINEAR
             gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER,
                              (value == 1) ? GL_NEAREST : GL_LINEAR);
-            break;
+                    break;
         case 17:  // D3DTSS_MINFILTER
         case 18:  // D3DTSS_MIPFILTER — 1 NONE, 2 POINT, 3 LINEAR
             // Min and mip filters combine into one GL enum, so resolve them
@@ -1132,7 +1170,7 @@ static HRESULT device_SetTextureStageState(IDirect3DDevice3 *this_ptr, DWORD sta
                 gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
                                  (value == 1) ? GL_NEAREST : GL_LINEAR);
             }
-            break;
+                    break;
         default:
             DDRAW_LOG_RL(4, 500, "gl_ddraw: unhandled texture stage state %u = %u",
                          (unsigned)state, (unsigned)value);
@@ -1193,6 +1231,7 @@ static HRESULT device_DrawIndexedPrimitive(IDirect3DDevice3 *this_ptr,
     gl.EnableClientState(GL_TEXTURE_COORD_ARRAY);
     gl.VertexPointer(4, GL_FLOAT, sizeof(GLVertex), &base->x);
     gl.ColorPointer(4, GL_UNSIGNED_BYTE, sizeof(GLVertex), base->diffuse);
+    apply_fog_state();
     gl.TexCoordPointer(2, GL_FLOAT, sizeof(GLVertex), &base->u);
 
     // D3D's specular is an additive second color. Without the GL 1.4 entry point
@@ -1204,6 +1243,9 @@ static HRESULT device_DrawIndexedPrimitive(IDirect3DDevice3 *this_ptr,
     }
 
     gl.DrawElements(GL_TRIANGLES, (GLsizei)index_count, GL_UNSIGNED_SHORT, indices);
+    nocturne_render_probe_batch((int)(index_count / 3), g_state.blend_enabled,
+                                (unsigned)g_state.src_blend, (unsigned)g_state.dst_blend,
+                                g_state.alpha_test, dev->bound_texture != nullptr);
 
     if (nocturne_glSecondaryColorPointer != nullptr) {
         gl.Disable(GL_COLOR_SUM);

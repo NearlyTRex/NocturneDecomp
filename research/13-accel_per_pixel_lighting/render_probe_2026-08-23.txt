@@ -1,0 +1,93 @@
+tridx7 render probe
+===================
+
+frames presented      894
+APIDLL draw calls     263573
+polygons submitted    2910487   (3255.6 / frame)
+vertices converted    4031139   (4509.1 / frame)
+glDrawElements calls  130620
+
+Q1 — is anything reaching the hardware at all?
+  If polygons/frame is ~0 the accel path is not being taken and the
+  frame differences come from somewhere else entirely.
+
+Q2 — render_flags combos (sorted by polygon count)
+  entry: [drawPolygon drawPolygon2 drawPolyList drawPolyList2]
+
+  flags    decoded                                                   polys      verts  entry
+  0x2cd    TEX|GOURAUD|SOLIDALPHA|ZTEST|ZWRITE|VTXRGB              2796403    3888666  [3790 23933 9856 112272]
+  0x2e7    TEX|SOLID|GOURAUD|READDEST|ZTEST|ZWRITE|VTXRGB            57925       9875  [72 57853 0 0]
+  0xc0     ZTEST|ZWRITE                                              34707      95352  [1461 33246 0 0]
+  0x267    TEX|SOLID|GOURAUD|READDEST|ZTEST|VTXRGB                   19469      20468  [0 19469 0 0]
+  0x367    TEX|SOLID|GOURAUD|READDEST|ZTEST|VTXALPHA|VTXRGB           1602      16710  [0 1602 0 0]
+  0x205    TEX|GOURAUD|VTXRGB                                          363          0  [0 0 1 0]
+  0xa3     TEX|SOLID|READDEST|ZWRITE                                    17         68  [0 17 0 0]
+  0x327    TEX|SOLID|GOURAUD|READDEST|VTXALPHA|VTXRGB                    1          0  [0 1 0 0]
+
+Q3 — vertex colors out of buildTLVertex, per flag combo
+  light   = diffuse red byte (R=G=B on the monochrome light path)
+  alpha   = diffuse alpha; a cluster at ~128 with blending on is the
+            50%-blend fingerprint that explains on = 0.5*off + 12
+  spec    = specular RGB; 0 everywhere means the overbright term
+            never engages (expected below light 0xff0 pre-shift)
+  rgbne   = vertices whose diffuse RGB are not all equal (the 0x200
+            per-vertex-RGB path rather than the light path)
+  hist bins are 16 wide over 0..255, shown as % of that combo
+
+  0x2cd  TEX|GOURAUD|SOLIDALPHA|ZTEST|ZWRITE|VTXRGB
+    light  min   0  mean   67.3  max 255
+    light   0.1  0.0  0.0 53.6 31.6  6.0  4.9  3.4  0.3  0.0  0.0  0.0  0.0  0.0  0.0  0.1
+    alpha  mean  249.2
+    alpha   0.0  0.0  1.3  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  4.4  0.0  0.0  0.0 94.3
+    spec   nonzero 0/3888666 (0.0%)  mean  0.00  max 0
+    rgbne  1289566/3888666
+
+  0x2e7  TEX|SOLID|GOURAUD|READDEST|ZTEST|ZWRITE|VTXRGB
+    light  min  56  mean   89.7  max 255
+    light   0.0  0.0  0.0 39.5 19.3  0.2  0.0 36.1  2.1  1.0  0.1  0.0  0.8  0.2  0.0  0.6
+    alpha  mean  182.8
+    alpha   5.2  5.1  2.6  2.6  5.1  5.1  2.6  5.0  2.5  5.0  0.0  0.0  0.0  0.0  0.0 59.0
+    spec   nonzero 0/9875 (0.0%)  mean  0.00  max 0
+    rgbne  0/9875
+
+  0xc0  ZTEST|ZWRITE
+    light  min   0  mean   54.0  max 255
+    light  47.6  2.5  3.5  1.6  4.4  3.7 25.4  4.1  1.8  1.7  1.0  1.0  0.4  0.7  0.1  0.6
+    alpha  mean  255.0
+    alpha   0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0 100.0
+    spec   nonzero 0/95352 (0.0%)  mean  0.00  max 0
+    rgbne  29886/95352
+
+  0x267  TEX|SOLID|GOURAUD|READDEST|ZTEST|VTXRGB
+    light  min  66  mean   89.4  max 255
+    light   0.0  0.0  0.0  0.0 87.6  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0 12.4
+    alpha  mean  130.2
+    alpha   0.0  0.0  0.0  0.0  0.0  0.0  0.0 87.6  0.0  0.0  0.0 12.4  0.0  0.0  0.0  0.0
+    spec   nonzero 0/20468 (0.0%)  mean  0.00  max 0
+    rgbne  0/20468
+
+  0x367  TEX|SOLID|GOURAUD|READDEST|ZTEST|VTXALPHA|VTXRGB
+    light  min   8  mean   79.8  max 255
+    light  50.5  0.0  0.0 14.9 10.6  0.9  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0 23.1
+    alpha  mean  136.0
+    alpha   0.0  0.0  0.0 50.5  0.0  0.0  0.0  0.0  0.0  0.0  0.0 23.1  0.0  0.0  0.0 26.4
+    spec   nonzero 0/16710 (0.0%)  mean  0.00  max 0
+    rgbne  8432/16710
+
+  0xa3  TEX|SOLID|READDEST|ZWRITE
+    light  min  66  mean   99.4  max 255
+    light   0.0  0.0  0.0  0.0 82.4  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0 17.6
+    alpha  mean  133.8
+    alpha   0.0  0.0  0.0  0.0  0.0  0.0  0.0 82.4  0.0  0.0  0.0 17.6  0.0  0.0  0.0  0.0
+    spec   nonzero 0/68 (0.0%)  mean  0.00  max 0
+    rgbne  0/68
+
+GL state the batches were drawn under
+  triangles with GL_BLEND on   100138
+  triangles with GL_BLEND off  3257908
+  triangles with ALPHA_TEST    100138
+  triangles untextured         23356
+
+  blend funcs in use (GL enums):
+    src 0x302    dst 0x303          96934 tris  6114 batches
+    src 0x302    dst 0x1             3204 tris  1602 batches

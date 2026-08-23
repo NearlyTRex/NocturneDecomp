@@ -242,6 +242,56 @@ catalogued with snake_case parameters.
 
 ---
 
+### [13-accel_per_pixel_lighting/](13-accel_per_pixel_lighting/)
+
+Why 3D-accelerated geometry rendered darker and flatter than the software rasterizer.
+**Root cause found and fixed:** the GL shim left `GL_FOG` enabled when D3D set
+`FOGTABLEMODE = NONE`, fogging every DLL-drawn primitive toward the fog colour `(5,5,5)`.
+
+| File | Description |
+|------|-------------|
+| `01_INVESTIGATION_STATE.md` | Full log: the root cause, the verification numbers, the measurement traps that made this take far longer than it should have, and a long list of ruled-out causes |
+| `render_probe_*.txt` | Probe dumps (flag combos, per-texture vertex light, GL batch state) for the castle exterior and interior office scenes |
+
+Reference frames are deliberately not committed; the doc carries the capture recipe.
+
+**Root cause** — `gl_ddraw.cpp` `device_SetRenderState` case 35 (`D3DRENDERSTATE_FOGTABLEMODE`)
+fell through on value 0 (NONE), leaving fog enabled from `FOGENABLE`. In D3D7 `NONE` means
+"no table fog — use per-vertex fog from the specular alpha"; GL has no vertex fog, so an enabled
+`GL_FOG` always applies table fog with the current mode (default `GL_EXP`, density 1.0). The
+blitted pre-rendered backdrop never goes through that path, which is exactly why only 3D
+geometry looked wrong. Fixed by enabling GL fog only when
+`FOGENABLE != 0 && FOGTABLEMODE != NONE`.
+
+Verified on the interior office scene (character crop means): software `16.08`, accel with the
+bug `13.11` (0.815), accel fixed `16.47` (1.024). The residual `+2.4 %` is *expected* — a
+single-pixel trace independently predicts hardware is ~2 % brighter than software for identical
+inputs (`texel*(cw>>7)/255` vs `texel*cw/32768`).
+
+**Other outcomes:**
+- `render_flags` bit `0x004` proven to be **GOURAUD**, not "fog-Z colour"
+  (`applyRenderState_FUN_10003f10` maps it to D3DRENDERSTATE_SHADEMODE), and bit `0x008` to be
+  **fog** rather than a generic solid blend — both corrected in
+  `02-.../RENDER_STATE_FLAGS_VERIFIED.md`
+- Retail vs editor ruled out: the whole APIDLL bridge and the `renderPolygon*Op*` table are
+  **byte-identical**; the "const-change" diffs there are only `g_CurrentLineNumber`
+- `render_probe` in tridx7's shims (gdb-dumpable) reports what reaches the hardware: flag
+  combos, per-texture vertex light, and per-batch GL state
+- **Still open (minor):** the per-vertex fog D3D *did* intend is dropped — `buildTLVertex` packs
+  it into the specular alpha and the GL path passes only 3 components to
+  `glSecondaryColorPointer`. Now a fidelity gap rather than a bug.
+
+**Measurement lessons** (all three produced wrong conclusions before being caught):
+- Never least-squares fit on a *differing-pixels mask* — it makes an 18 % effect look like 2×.
+  Use whole-region means, histograms, or matched percentiles.
+- Capture must be **frame-synced** (`SDL_GL_SwapWindow`); an arbitrary gdb pause returns a
+  different image each call.
+- Absolute-brightness thresholds encode brightness, not material — use ratio maps.
+
+**Status:** SOLVED
+
+---
+
 ## Standalone Documents
 
 ### [ghidra_suspect_patterns.md](ghidra_suspect_patterns.md)
@@ -310,6 +360,17 @@ Ghidra source location: `~/Repositories/Ghidra/`
 ---
 
 ## Changelog
+
+### 2026-08-23
+- **`13-accel_per_pixel_lighting/` SOLVED — accelerated geometry was being fogged.** `gl_ddraw.cpp` `device_SetRenderState` case 35 (`FOGTABLEMODE`) fell through on value 0 (NONE), leaving `GL_FOG` enabled from `FOGENABLE`. D3D7's `NONE` means "no table fog, use per-vertex fog from the specular alpha"; GL has no vertex fog, so an enabled `GL_FOG` always applies table fog (default `GL_EXP`, density 1.0) toward the fog colour `(5,5,5)`. Every DLL-drawn primitive was fogged toward near-black while the blitted backdrop never was — hence "only the 3D models look wrong". Fixed by enabling GL fog only when `FOGENABLE != 0 && FOGTABLEMODE != NONE`. Verified: character crop means, software `16.08` / accel-with-bug `13.11` (0.815) / accel-fixed `16.47` (1.024), where the `+2.4%` matches an independent single-pixel trace predicting hardware is ~2% brighter for identical inputs
+- **Retracted the `on = 0.5*off + 12` figure.** It was an artefact of least-squares fitting on a *differing-pixels mask*, which forces a large apparent gain regardless of the true distributions; unbiased statistics put the real effect at ~18% on 3D geometry. Also retracted: "the defect is per-material/skin" (an absolute-threshold artefact — a ratio map shows whole models affected). Ruled out along the way, each by direct measurement: texture filtering, the lightmap composite, the `0x008` solid blend, alpha/specular, interpolation domain, texel construction (100% exact palette match) and per-object vertex light
+- Recorded the measurement traps that caused those retractions: never fit on a differing-pixels mask; frame-sync captures to `SDL_GL_SwapWindow` (an arbitrary gdb pause returns a different image each call); use ratio maps rather than absolute thresholds; switch renderers via the options screen, never by writing `g_UseDirect3D`/`g_UseExternalRenderer`
+
+### 2026-08-22
+- Added `13-accel_per_pixel_lighting/`: measured the accel-on A/B pair numerically and recovered both lighting curves, showing the hardware path is *designed* to match software 1:1 with a specular overbright on top. Ruled out retail-vs-editor as a cause via a 5085-pair `diff_functions.py` run (the APIDLL bridge and the whole `renderPolygon*Op*` table are byte-identical; that bucket's "const-change" is only `g_CurrentLineNumber`). Corrected `render_flags` bit `0x004` to GOURAUD
+- Added `render_probe.{h,cpp}` to tridx7's shims — per-draw `render_flags` histogram, per-vertex diffuse/specular stats and per-batch GL blend state, dumped with `call (int)nocturne_dump_render_flags(path)`. The four APIDLL draw exports are registered through tail-calling wrappers so the decompiled bodies stay untouched
+- Added retail-vs-editor mystery §5: the editor probes **60** `APIDLL*` entry points against every shipped DLL's **37**. The 23 extras are a hardware-T&L renderer (`setTransform`/`setViewport`/`setAmbientLight`/`setLightVector`/`setLightConstants`) plus a texture-handle overhaul — bound optionally and with **zero callers**, so dead plumbing for a DLL that never shipped. Also recorded: `nocedit.exe` (2000-01-10) is *newer* than `nocturne.exe` (1999-11-02), and `engine/2d.c`'s `loadLightTable`/`buildBlendTables` are empty stubs in the editor but live in retail
+
 
 ### 2026-07-27 (transfer)
 - **Names, signatures and struct sizes transferred into nocturne and exported.** nocturne is now **94.1% named** (5302/5633), **2437 functions carry a USER_DEFINED signature**, 2004 have typed parameters (4534 total), and **184 of 231 struct layouts match their own RTTI**
