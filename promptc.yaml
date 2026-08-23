@@ -1,0 +1,75 @@
+# promptc configuration for the NocturneDecomp prompts.
+#
+# The prompt library in promptlib/ is the source; prompts/fix_compilation.md
+# is the monolith it was split from and is kept for reference. Everything
+# promptc knows about this project -- which compiler judges an answer, which
+# detector names route to which recipe -- arrives through this file.
+
+library: promptlib
+contracts: contracts
+
+# The existing project scripts, used unchanged. Each takes a file and
+# returns an exit code; that is the entire contract.
+verifiers:
+  - id: compiles
+    match: cpp
+    command: ["./scripts/Bash/verify_example.sh", "{file}"]
+    timeout: 120
+    suffix: .cpp
+  - id: suspects-clean
+    # Deliberately matches no fence language: "before" examples are meant to
+    # trip the suspect detectors, so running this over example blocks would
+    # fail them by design. It stays available by id for eval scoring.
+    match: keep-file-only
+    command: ["./scripts/Bash/test_suspects.sh", "{file}"]
+    timeout: 120
+    suffix: .cpp
+
+profiles:
+  # The reference model. Large context, so the full routed set fits easily.
+  claude:
+    context: 200000
+    tokenizer: tiktoken:cl100k_base
+    reserve: 32000          # held back for the .cpp/.asm/.json payload
+    output_reserve: 8000
+    backend: command
+    command: ["./scripts/Bash/ask_reference_model.sh"]
+
+  # A local 7B. The tight budget is the point: it is what forces the
+  # prompt to stay routed rather than drifting back toward a monolith.
+  local-7b:
+    context: 32768
+    tokenizer: chars
+    reserve: 12000
+    output_reserve: 4000
+    endpoint: http://localhost:11434
+    model: qwen2.5-coder:7b
+    backend: openai
+
+eval:
+  task: fix-compilation
+  verifiers: [compiles, suspects-clean]
+  extract: fence
+  suffix: .cpp
+  attempts: 3
+  seeds: [101, 202, 303]
+  temperature: 0.1
+  max_tokens: 4096
+  baseline_profile: claude
+  payload_header: "\n\n## Work item\n\n"
+
+# The labelled corpus: every .keep.cpp is a human-verified answer sitting
+# beside the raw decompiler output it was written from.
+corpus:
+  root: annotations/nocedit.exe/pseudocode/src
+  discover: "**/*.keep.cpp"
+  golden_suffix: ".keep.cpp"
+  inputs: ["{stem}.cpp", "{stem}.asm", "{stem}.json"]
+  triggers_command: ["./scripts/Bash/detect_triggers.sh", "{stem}"]
+  stratify_by: triggers
+  holdout: 0.2
+  seed: 20260822
+
+# Terms that must not drift, since the detectors and recipes both use them.
+vocabulary:
+  "keep file": ["keepfile", "kept file"]
