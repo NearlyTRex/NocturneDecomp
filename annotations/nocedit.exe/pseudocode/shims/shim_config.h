@@ -141,6 +141,57 @@
 #define NOCTURNE_AUTHENTIC_VOICE 0
 #endif
 
+// NOCTURNE_AUTHENTIC_FMV
+//   Controls the opening full-motion video (winvideo.cpp's playMovie).
+//   1: matches both shipped binaries — no movie ever plays. The call is there
+//      and unconditional (initializeGameSystems does
+//      playMovie("video", "opening.avi") with no guard), but it asks for
+//      video\opening.avi while the shipped data puts the movies in AVI\, so
+//      playMovie's own fopen existence check fails and it returns 0. The
+//      failure is silent: the only user-visible error ("Unable to open .AVI!")
+//      sits behind the MCI open, which that early return never reaches.
+//      The rest of the module is dead too — openMovie, toggleMoviePlayback and
+//      positionMovieWindow have no callers in either binary, and NOC1..NOC4.AVI
+//      are never referenced at all.
+//   0: dev-friendly default. playMovie runs for real, and the MCI shim
+//      (shims/mci_video.cpp) decodes the AVI through libav and presents it on
+//      the same path the engine's 2D back buffer uses, with audio. Note this
+//      only reaches the movie if the file is actually where the game looks for
+//      it — the hardcoded "video\" directory, not the shipped AVI\ one. This
+//      toggle deliberately does not rewrite that path; staging the file is a
+//      data question, not a code one.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_FMV=1 to restore the shipped
+//   never-plays behaviour even with the movie staged correctly.
+#ifndef NOCTURNE_AUTHENTIC_FMV
+#define NOCTURNE_AUTHENTIC_FMV 0
+#endif
+
+// NOCTURNE_ATTRACT_MOVIES
+//   An ADDITION, not a reconstruction — unlike the NOCTURNE_AUTHENTIC_* toggles
+//   above, there is no "authentic" side to this one. Neither shipped binary ever
+//   played NOC1..NOC4.AVI; those files have no call site anywhere in
+//   nocedit.exe or nocturne.exe.
+//   1: once the opening movie has played, the main menu plays a random
+//      NOC1..NOC4 whenever its splash music finishes, then restarts the music
+//      (so it cycles). Arcade attract-mode behaviour.
+//   0: off — the menu behaves exactly as shipped.
+//
+//   Session-only: nothing is persisted, so the opening still plays every launch
+//   and attract movies only ever follow it within the same run. Requires the
+//   movies to be where the game looks (the hardcoded "video\" directory) and
+//   is inert when NOCTURNE_AUTHENTIC_FMV is 1, when opening.avi is missing, or
+//   while sound is muted (no splash music means no trigger).
+//
+//   Override with -DNOCTURNE_ATTRACT_MOVIES=0.
+#ifndef NOCTURNE_ATTRACT_MOVIES
+#define NOCTURNE_ATTRACT_MOVIES 1
+#endif
+
+// Attract-mode session state (nocturne_attract_*) — declared here so decompiled
+// TUs reach it through nocturne.h, same as the registry queries below.
+#include "attract.h"
+
 // NOCTURNE_AUTHENTIC_NETPLAY
 //   1: matches the shipped binary — netplay is unreachable from any menu.
 //      Neither retail Nocturne nor this editor build ever exposed multiplayer

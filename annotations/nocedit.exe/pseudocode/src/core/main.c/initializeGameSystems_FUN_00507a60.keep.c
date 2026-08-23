@@ -131,7 +131,12 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(int argc,char **argv
     pCVar5->game_bpp = 0x20;
     core_menu_cpp_showCalibrationTest_FUN_00510ba0();
   }
+#if NOCTURNE_ATTRACT_MOVIES
+  nocturne_attract_set_opening_played(
+      wincore_winvideo_cpp_playMovie_FUN_005f4a00("video","opening.avi"));
+#else
   wincore_winvideo_cpp_playMovie_FUN_005f4a00("video","opening.avi");
+#endif
   engine_special_cpp_clearScreen_FUN_005b3e70();
   strcpy(loading_text,
          support_newmsg_cpp_getLocalizedString_FUN_005441f0("Loading..."));

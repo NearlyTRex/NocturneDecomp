@@ -6,6 +6,9 @@
 // Signature: int __cdecl core_main_c_enterMainGameMenu_FUN_00507a50(void)
 
 #include "nocturne.h"
+#if NOCTURNE_ATTRACT_MOVIES
+#include "debug_log.h"
+#endif
 
 int __cdecl core_main_c_enterMainGameMenu_FUN_00507a50(void)
 
@@ -17,6 +20,10 @@ int __cdecl core_main_c_enterMainGameMenu_FUN_00507a50(void)
   char (*pacVar6) [256];
   int iStack_c;
   int iStack_8;
+#if NOCTURNE_ATTRACT_MOVIES
+  char attract_movie [16];
+  int attract_result;
+#endif
 
   pCVar2 = g_CGamePtr;
   if (g_WindowHeight < 0x1e0) {
@@ -172,6 +179,17 @@ LAB_005131d5:
       core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
       engine_2d_c_clearInputAndWait_FUN_00403260();
     }
+#if NOCTURNE_ATTRACT_MOVIES
+    if (nocturne_attract_tick(g_CGamePtr->delta_time_float) != 0) {
+      _sprintf(attract_movie,"noc%d.avi",core_actor_cpp_getRandomInt_FUN_0040cc70(1,4));
+      DLOG_EX("attract","playing '%s'",attract_movie);
+      core_sound_cpp_CSound_reset_FUN_005b39a0(g_CSoundPtr);
+      attract_result = wincore_winvideo_cpp_playMovie_FUN_005f4a00("video",attract_movie);
+      DLOG_EX("attract","playMovie returned %d",attract_result);
+      core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
+      engine_2d_c_clearInputAndWait_FUN_00403260();
+    }
+#endif
     if (iVar5 != 0) {
       core_sound_cpp_CSound_reset_FUN_005b39a0(g_CSoundPtr);
       core_moon_cpp_CMoon_free_FUN_00529ce0(&g_CMoonInstance);

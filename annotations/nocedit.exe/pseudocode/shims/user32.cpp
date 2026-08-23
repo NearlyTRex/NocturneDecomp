@@ -1,5 +1,6 @@
 #include "system/user32.h"
 #include "dump.h"
+#include "mci_video.h"
 #include "shim_config.h"
 #include <SDL.h>
 #include <cstdio>
@@ -424,6 +425,15 @@ static int shim_MessageBoxA(HWND hWnd, LPCSTR lpText, LPCSTR lpCaption,
 
 static BOOL shim_MoveWindow(HWND hWnd, int X, int Y, int nWidth, int nHeight,
                               BOOL bRepaint) {
+    // Only the real top-level window may be moved or resized. winvideo.cpp
+    // also calls MoveWindow on the *movie's* child window (the handle MCI
+    // reported from "status mov window handle") to centre the video inside the
+    // client area — honouring that here would shrink the game window to the
+    // movie's size mid-playback, with nothing to restore it afterwards. The
+    // movie is scaled and centred by the presenter instead.
+    if (hWnd != (HWND)(intptr_t)g_sdlWindow) {
+        return 1;
+    }
     if (g_sdlWindow) {
         SDL_SetWindowPosition(g_sdlWindow, X, Y);
         SDL_SetWindowSize(g_sdlWindow, nWidth, nHeight);
@@ -458,6 +468,21 @@ static BOOL shim_PeekMessageA(LPMSG lpMsg, HWND hWnd,
     // next frame's render. Treat this as the per-frame tick boundary for
     // any debug auto-dumps the user has armed.
     nocturne_auto_dump_tick();
+
+    // Same boundary drives movie playback. winvideo.cpp's playMovie() spends
+    // the whole movie in a processWindowMessages() + Sleep(20) loop, so this
+    // runs ~50x/sec while a movie is up and is a no-op the rest of the time.
+    // The pump reports end of stream once; MCI's "notify" contract says that
+    // becomes MM_MCINOTIFY on the game window, which mainWindowProc turns into
+    // closeMovie() — the thing that actually releases playMovie's loop.
+    if (mci_video_pump_frame()) {
+        MSG done;
+        memset(&done, 0, sizeof(done));
+        done.hwnd = (HWND)(intptr_t)g_sdlWindow;
+        done.message = 0x3b9;   // MM_MCINOTIFY
+        done.wParam = 1;        // MCI_NOTIFY_SUCCESSFUL
+        s_msgQueue.push(done);
+    }
     return 0;
 }
 
