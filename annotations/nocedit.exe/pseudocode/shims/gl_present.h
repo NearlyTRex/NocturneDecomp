@@ -97,6 +97,21 @@ void nocturne_gl_scene_upload(const void *pixels, int width, int height,
 // nocturne_dump_frontbuffer once the SDL_Renderer readback is gone.
 int nocturne_gl_read_front(unsigned char **out_rgb, int *out_width, int *out_height);
 
+// Map a point in SDL window coordinates to the game's render (logical)
+// coordinates, undoing the present viewport's scale and letterbox offset, and
+// clamped to the render area.
+//
+// Needed because SDL reports mouse positions in window space while the game
+// thinks in render space. Those agree only while the window is exactly the
+// render size; once it is not — a window scale, a resolution picked from the
+// menu, fullscreen, borderless — every click lands somewhere else. The
+// SDL_Renderer path gets this for free from SDL_RenderSetLogicalSize; the GL
+// path has to do it here.
+//
+// Passes the input through unchanged when GL is not active.
+void nocturne_gl_window_to_logical(int window_x, int window_y,
+                                   int *out_x, int *out_y);
+
 void nocturne_gl_shutdown(void);
 
 #ifdef __cplusplus

@@ -87,21 +87,52 @@ bool ensure_texture(int width, int height, GLenum format, GLenum type) {
     return true;
 }
 
-// Largest whole-number scale of the logical size that fits the drawable,
-// centered — the letterbox SDL_RenderSetLogicalSize + integer scale produced.
+// Largest scale of the logical size that fits the drawable, aspect preserved
+// and centered — the letterbox SDL_RenderSetLogicalSize produced.
+//
+// The scale is fractional, not whole-number. Integer-only scaling is the
+// crisper choice when the window is a whole multiple of the game resolution,
+// but it wastes most of the screen as soon as it is not: 640x480 inside a
+// 1920x1080 fullscreen drawable clamps to 2x = 1280x960, leaving thick bars on
+// every side, and 640x480 inside an 800x600 window clamps to 1x — the same
+// picture it started at, just with a bigger black border. Since the window can
+// now be any size (fullscreen, borderless, or a resolution the user picked),
+// filling it matters more than exact pixel multiples.
 void compute_viewport(int drawable_w, int drawable_h, int logical_w, int logical_h,
                       int *out_x, int *out_y, int *out_w, int *out_h) {
-    int scale = 1;
+    double scale = 1.0;
     if (logical_w > 0 && logical_h > 0) {
-        int scale_x = drawable_w / logical_w;
-        int scale_y = drawable_h / logical_h;
+        double scale_x = (double)drawable_w / (double)logical_w;
+        double scale_y = (double)drawable_h / (double)logical_h;
         scale = (scale_x < scale_y) ? scale_x : scale_y;
-        if (scale < 1) scale = 1;
+#if !(NOCTURNE_WINDOW_MODE_OPTION || NOCTURNE_MENU_APPLIES_RESOLUTION)
+        // Without those features the window is always a whole multiple of the
+        // game resolution, so keep the original integer-only behaviour, which
+        // has no meaningful value below 1.
+        scale = (double)(int)scale;
+        if (scale < 1.0) scale = 1.0;
+#endif
+        // Deliberately NOT clamped to >= 1 here. The window can now be smaller
+        // than the render (picking 512x384 while the menu still renders at
+        // 640x480), and forcing 1:1 in that case shows the middle of the frame
+        // with everything past the window edge cut off, rather than the whole
+        // frame shrunk to fit.
+        if (scale <= 0.0) scale = 1.0;
     }
-    *out_w = logical_w * scale;
-    *out_h = logical_h * scale;
+    *out_w = (int)(logical_w * scale + 0.5);
+    *out_h = (int)(logical_h * scale + 0.5);
+    if (*out_w < 1) *out_w = 1;
+    if (*out_h < 1) *out_h = 1;
     *out_x = (drawable_w - *out_w) / 2;
     *out_y = (drawable_h - *out_h) / 2;
+}
+
+// 1 when the presented quad is an exact whole multiple of the logical size, so
+// the caller can keep GL_NEAREST (crisp, no resampling). At a fractional scale
+// nearest-neighbour makes pixel sizes visibly uneven, so linear is the better
+// pick there.
+int viewport_is_integer_scale(int vp_w, int logical_w) {
+    return (logical_w > 0) && (vp_w % logical_w == 0);
 }
 
 }  // namespace
@@ -324,9 +355,14 @@ extern "C" void nocturne_gl_present_framebuffer(const void *pixels, int width, i
     // the quad comes out in the primary colour (white), which is exactly the
     // white screen this produced. Filters are cheap; do not rely on them
     // surviving a frame of someone else's state changes.
+    // Nearest keeps whole-multiple scaling crisp; at a fractional scale it makes
+    // pixel sizes visibly uneven (some source pixels land on 1 screen pixel,
+    // their neighbours on 2), so blend instead.
+    const GLint present_filter =
+        viewport_is_integer_scale(vp_w, logical_w) ? GL_NEAREST : GL_LINEAR;
     gl.BindTexture(GL_TEXTURE_2D, g_gl.framebuffer_texture);
-    gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-    gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+    gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, present_filter);
+    gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, present_filter);
     gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
     gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 
@@ -487,6 +523,44 @@ extern "C" int nocturne_gl_read_front(unsigned char **out_rgb, int *out_width, i
     return 0;
 }
 
+extern "C" void nocturne_gl_window_to_logical(int window_x, int window_y,
+                                              int *out_x, int *out_y) {
+    if (out_x) *out_x = window_x;
+    if (out_y) *out_y = window_y;
+    if (!g_gl.active || g_gl.window == nullptr) return;
+
+    int win_w = 0, win_h = 0, drawable_w = 0, drawable_h = 0;
+    SDL_GetWindowSize(g_gl.window, &win_w, &win_h);
+    SDL_GL_GetDrawableSize(g_gl.window, &drawable_w, &drawable_h);
+    if (win_w <= 0 || win_h <= 0 || drawable_w <= 0 || drawable_h <= 0) return;
+
+    const int logical_w = (g_gl.logical_width  > 0) ? g_gl.logical_width  : drawable_w;
+    const int logical_h = (g_gl.logical_height > 0) ? g_gl.logical_height : drawable_h;
+
+    // SDL reports mouse in window units; the viewport is in drawable units, and
+    // the two differ under HiDPI.
+    const double px = (double)window_x * (double)drawable_w / (double)win_w;
+    const double py = (double)window_y * (double)drawable_h / (double)win_h;
+
+    int vp_x = 0, vp_y = 0, vp_w = 0, vp_h = 0;
+    compute_viewport(drawable_w, drawable_h, logical_w, logical_h,
+                     &vp_x, &vp_y, &vp_w, &vp_h);
+    if (vp_w <= 0 || vp_h <= 0) return;
+
+    double lx = (px - (double)vp_x) * (double)logical_w / (double)vp_w;
+    double ly = (py - (double)vp_y) * (double)logical_h / (double)vp_h;
+
+    // Clamp into the render area so a click on a letterbox bar still resolves to
+    // the nearest edge pixel rather than a negative or out-of-range coordinate.
+    if (lx < 0.0) lx = 0.0;
+    if (ly < 0.0) ly = 0.0;
+    if (lx > (double)(logical_w - 1)) lx = (double)(logical_w - 1);
+    if (ly > (double)(logical_h - 1)) ly = (double)(logical_h - 1);
+
+    if (out_x) *out_x = (int)lx;
+    if (out_y) *out_y = (int)ly;
+}
+
 extern "C" void nocturne_gl_shutdown(void) {
     if (!g_gl.active) return;
     if (g_gl.framebuffer_texture != 0) {
@@ -514,6 +588,10 @@ extern "C" void nocturne_gl_scene_upload(const void *, int, int, int, int) {}
 extern "C" void nocturne_gl_set_logical_size(int w, int h) { (void)w; (void)h; }
 extern "C" void nocturne_gl_present_framebuffer(const void *p, int w, int h, int pitch, int bpp) {
     (void)p; (void)w; (void)h; (void)pitch; (void)bpp;
+}
+extern "C" void nocturne_gl_window_to_logical(int wx, int wy, int *ox, int *oy) {
+    if (ox) *ox = wx;
+    if (oy) *oy = wy;
 }
 extern "C" int nocturne_gl_read_front(unsigned char **rgb, int *w, int *h) {
     (void)rgb; (void)w; (void)h; return -1;

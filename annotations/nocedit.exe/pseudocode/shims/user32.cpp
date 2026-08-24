@@ -1,6 +1,7 @@
 #include "system/user32.h"
 #include "dump.h"
 #include "mci_video.h"
+#include "gl_present.h"
 #include "shim_config.h"
 #include <SDL.h>
 #include <cstdio>
@@ -203,11 +204,14 @@ static void translateSdlEvent(const SDL_Event& ev) {
         s_msgQueue.push(msg);
         break;
 
-    case SDL_MOUSEMOTION:
+    case SDL_MOUSEMOTION: {
+        int mx = 0, my = 0;
+        nocturne_gl_window_to_logical(ev.motion.x, ev.motion.y, &mx, &my);
         msg.message = 0x0200; // WM_MOUSEMOVE
-        msg.lParam = (ev.motion.y << 16) | (ev.motion.x & 0xFFFF);
+        msg.lParam = (my << 16) | (mx & 0xFFFF);
         s_msgQueue.push(msg);
         break;
+    }
 
     case SDL_MOUSEBUTTONDOWN:
         if (ev.button.button == SDL_BUTTON_LEFT)
@@ -217,7 +221,11 @@ static void translateSdlEvent(const SDL_Event& ev) {
         else if (ev.button.button == SDL_BUTTON_MIDDLE)
             msg.message = 0x0207; // WM_MBUTTONDOWN
         else break;
-        msg.lParam = (ev.button.y << 16) | (ev.button.x & 0xFFFF);
+        {
+            int bx = 0, by = 0;
+            nocturne_gl_window_to_logical(ev.button.x, ev.button.y, &bx, &by);
+            msg.lParam = (by << 16) | (bx & 0xFFFF);
+        }
         s_msgQueue.push(msg);
         break;
 
@@ -229,7 +237,11 @@ static void translateSdlEvent(const SDL_Event& ev) {
         else if (ev.button.button == SDL_BUTTON_MIDDLE)
             msg.message = 0x0208; // WM_MBUTTONUP
         else break;
-        msg.lParam = (ev.button.y << 16) | (ev.button.x & 0xFFFF);
+        {
+            int bx = 0, by = 0;
+            nocturne_gl_window_to_logical(ev.button.x, ev.button.y, &bx, &by);
+            msg.lParam = (by << 16) | (bx & 0xFFFF);
+        }
         s_msgQueue.push(msg);
         break;
 

@@ -589,6 +589,25 @@ static ULONG surface_Release(IUnknown *this_ptr) {
     return 0;
 }
 
+// Diagnostic: how many of 64 samples across the surface's middle row are
+// non-zero. Distinguishes "the engine composited into this buffer" from "this
+// buffer is still the colour-fill it was created with".
+static int surface_probe_nonzero(const GLSurface *surf) {
+    if (surf == nullptr || surf->pixels == nullptr || surf->height == 0) return -1;
+    const unsigned char *row =
+        (const unsigned char *)surf->pixels + (size_t)(surf->height / 2) * surf->pitch;
+    const unsigned bpp_bytes = (surf->bpp / 8) ? (surf->bpp / 8) : 1;
+    int nonzero = 0;
+    for (int i = 0; i < 64; i++) {
+        const unsigned x = (unsigned)((surf->width * (unsigned)i) / 64u);
+        const unsigned char *px = row + (size_t)x * bpp_bytes;
+        for (unsigned b = 0; b < bpp_bytes; b++) {
+            if (px[b] != 0) { nonzero++; break; }
+        }
+    }
+    return nonzero;
+}
+
 static HRESULT surface_Lock(IDirectDrawSurface *this_ptr, RECT *rect,
                             DDSURFACEDESC2 *desc, DWORD flags, void *event) {
     (void)rect; (void)flags; (void)event;
@@ -616,6 +635,12 @@ static HRESULT surface_Lock(IDirectDrawSurface *this_ptr, RECT *rect,
     fill_surface_format(surf->bpp, surf->caps, &desc->ddpfPixelFormat);
 
     surf->locked = 1;
+    if ((surf->caps & DDSCAPS_OFFSCREENPLAIN) != 0) {
+        DDRAW_LOG_RL(4, 120, "gl_ddraw: HOLD lock  base=%p pitch=%u %ux%u bpp=%u nonzero=%d/64",
+                     surf->pixels, (unsigned)surf->pitch, (unsigned)surf->width,
+                     (unsigned)surf->height, (unsigned)surf->bpp,
+                     surface_probe_nonzero(surf));
+    }
     return DD_OK;
 }
 
@@ -624,6 +649,14 @@ static HRESULT surface_Unlock(IDirectDrawSurface *this_ptr, void *unused) {
     GLSurface *surf = (GLSurface *)this_ptr;
     surf->locked    = 0;
     surf->cpu_dirty = 1;
+
+    // Brackets the engine's composite: this fires straight after it has written
+    // through the scanline pointers APIDLLlockHoldBuffer handed it. Non-zero
+    // here means the write landed in this surface; zero means it went elsewhere.
+    if ((surf->caps & DDSCAPS_OFFSCREENPLAIN) != 0) {
+        DDRAW_LOG_RL(4, 120, "gl_ddraw: HOLD unlock base=%p nonzero=%d/64",
+                     surf->pixels, surface_probe_nonzero(surf));
+    }
 
     // A CPU write to the back buffer IS a write to the render target — in real
     // DirectDraw the Lock/Unlock pixels and the 3D device are one surface, so
@@ -758,6 +791,36 @@ static HRESULT surface_Blt(IDirectDrawSurface *this_ptr, RECT *dest_rect,
                    (unsigned char *)src->pixels + (size_t)y * src->pitch, bytes);
         }
         dst->cpu_dirty = 1;
+
+        // Blitting INTO the back buffer is a write to the render target. In real
+        // DirectDraw the back buffer and the D3D render target are one surface,
+        // so this has to reach the scene FBO — exactly what surface_Unlock does
+        // for a CPU write to that same surface.
+        //
+        // This is the >640x480 path. Above 480 the engine stops locking the back
+        // buffer for the world (CDemonCamera::lockAndRenderToBuffer:
+        // "if (g_WindowHeight < 0x1e1) lockFrame(); else lockHoldBuffer();"),
+        // composites into the DLL's 640x480 OFFSCREENPLAIN hold surface, and
+        // APIDLLunlockHoldBuffer Blts that here. beginScene() — and therefore
+        // every 3D draw — runs after, so this seeding must land before them.
+        // Without it the scene FBO never receives the software world and never
+        // gets its only full-frame clear, so actors pile up as ghost trails on a
+        // mostly-black frame, at high resolutions only.
+        //
+        // The source is 640x480 and the target is the full screen; the original
+        // Blt passes NULL for both rects, i.e. a stretch. nocturne_gl_scene_upload
+        // draws the source across the whole scene target, which is that stretch.
+        if ((dst->caps & (DDSCAPS_BACKBUFFER | DDSCAPS_PRIMARYSURFACE)) != 0) {
+            DDRAW_LOG_RL(4, 120,
+                "gl_ddraw: seed scene from Blt src=%ux%u bpp=%u pitch=%u caps=0x%x "
+                "-> dst=%ux%u bpp=%u caps=0x%x  src_nonzero=%d/64",
+                (unsigned)src->width, (unsigned)src->height, (unsigned)src->bpp,
+                (unsigned)src->pitch, (unsigned)src->caps,
+                (unsigned)dst->width, (unsigned)dst->height, (unsigned)dst->bpp,
+                (unsigned)dst->caps, surface_probe_nonzero(src));
+            nocturne_gl_scene_upload(src->pixels, (int)src->width, (int)src->height,
+                                     (int)src->pitch, (int)src->bpp);
+        }
     }
     return DD_OK;
 }

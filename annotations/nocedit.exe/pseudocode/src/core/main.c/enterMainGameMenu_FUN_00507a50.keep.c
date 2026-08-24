@@ -54,6 +54,9 @@ int __cdecl core_main_c_enterMainGameMenu_FUN_00507a50(void)
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
   do {
     core_game_cpp_CGame_updateDT_FUN_004d7d90(g_CGamePtr);
+#if NOCTURNE_MENU_APPLIES_RESOLUTION
+    nocturne_window_set_size(g_CGamePtr->game_pixx,g_CGamePtr->game_pixy);
+#endif
     core_moon_cpp_CMoon_update_FUN_00529d60(&g_CMoonInstance,g_CGamePtr->delta_time_float);
     core_moon_cpp_CMoon_render_FUN_00529ed0(&g_CMoonInstance);
     strcpy(g_MainMenuTextBuffers[0],

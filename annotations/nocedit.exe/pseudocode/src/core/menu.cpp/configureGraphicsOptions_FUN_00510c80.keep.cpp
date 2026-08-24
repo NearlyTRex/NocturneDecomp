@@ -26,6 +26,17 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_00510c80(void)
   int local_1c [3];
   CGame *pCVar2;
   int iVar3;
+#if NOCTURNE_WINDOW_MODE_OPTION
+  char *menu_ptrs [10];
+  char window_line [256];
+  int window_item;
+  int menu_y;
+  int menu_ch;
+#endif
+#if NOCTURNE_MENU_APPLIES_RESOLUTION
+  int prev_pixx;
+  int prev_pixy;
+#endif
 
   local_20 = 0;
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
@@ -249,16 +260,51 @@ LAB_00510f71:
       iVar7 = 8;
     }
     pcVar14 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Graphic Options");
+#if NOCTURNE_MENU_APPLIES_RESOLUTION
+    prev_pixx = g_CGamePtr->game_pixx;
+    prev_pixy = g_CGamePtr->game_pixy;
+#endif
+#if NOCTURNE_WINDOW_MODE_OPTION
+    for (iVar4 = 0; iVar4 < iVar7; iVar4++) {
+      menu_ptrs[iVar4] = g_GraphicsMenuTextPointers[iVar4];
+    }
+    _sprintf(window_line,"Window : %s",
+             nocturne_window_mode_name(nocturne_window_mode_get()));
+    window_item = iVar7;
+    menu_ptrs[window_item] = window_line;
+    menu_ch = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_ThemeFont,0x58);
+    menu_y = 0xfa;
+    if (g_WindowHeight < menu_y + (window_item + 4) * menu_ch) {
+      menu_y = g_WindowHeight - (window_item + 4) * menu_ch;
+    }
+    if (menu_y < 0) {
+      menu_y = 0;
+    }
+    iVar7 = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000
+                      (menu_ptrs,window_item + 1,&local_20,menu_y,pcVar14);
+#else
     iVar7 = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000
                       (g_GraphicsMenuTextPointers,iVar7,&local_20,0xfa,pcVar14);
+#endif
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     iVar6 = _stricmp(g_RendererDllPath,"trid3d.dll");
     pCVar4 = g_CGamePtr;
     bVar12 = iVar6 != 0;
+#if NOCTURNE_MENU_APPLIES_RESOLUTION
+    if (g_UseDirect3D == 0) {
+      bVar12 = false;
+    }
+#endif
     if ((!bVar12) && (0x1e0 < g_CGamePtr->game_pixy)) {
       g_CGamePtr->game_pixy = 0x1e0;
       pCVar4->game_pixx = 0x280;
     }
+#if NOCTURNE_WINDOW_MODE_OPTION
+    if (iVar7 == window_item) {
+      nocturne_window_mode_cycle();
+      iVar7 = -1;   /* consumed; matches no case below */
+    }
+#endif
     pCVar4 = g_CGamePtr;
     iVar6 = g_CurrentGraphicsBoard;
     iVar3 = g_GraphicsCardCount;
@@ -525,6 +571,11 @@ LAB_005116c3:
       iVar6 = g_CurrentGraphicsBoard;
       iVar3 = g_GraphicsCardCount;
     }
+#if NOCTURNE_MENU_APPLIES_RESOLUTION
+    if ((prev_pixx != g_CGamePtr->game_pixx) || (prev_pixy != g_CGamePtr->game_pixy)) {
+      nocturne_window_set_size(g_CGamePtr->game_pixx,g_CGamePtr->game_pixy);
+    }
+#endif
     g_GraphicsCardCount = iVar3;
     g_CurrentGraphicsBoard = iVar6;
     iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);

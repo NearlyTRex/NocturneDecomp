@@ -19,6 +19,7 @@
 #include "debug_log.h"
 #include "shim_config.h"
 #include "gl_present.h"
+#include "window_mode.h"
 
 extern SDL_Window* g_sdlWindow;
 extern bool g_sdlWindowReadyToShow;
@@ -382,7 +383,19 @@ static HRESULT ddraw_Initialize(IDirectDraw* this_ptr, GUID* guid) {
 static HRESULT ddraw_RestoreDisplayMode(IDirectDraw* this_ptr) {
     DDraw_ShimData* ddraw = reinterpret_cast<DDraw_ShimData*>(this_ptr);
     if (ddraw->window) {
+#if NOCTURNE_WINDOW_MODE_OPTION
+        // DirectDraw's RestoreDisplayMode undoes SetDisplayMode's *display mode*
+        // change; it is not a request to become a window. Forcing windowed here
+        // silently overrode the user's setting, and the engine calls this from
+        // every graphics reinit/reset path — resetGraphicsSystem (which
+        // CGame::setGameRes goes through), reinitializeDirectDraw, videoRestore
+        // — so a borderless or fullscreen window dropped back to windowed on
+        // entering a mission, and only looked right again once the menu
+        // re-applied it. Re-assert the user's choice instead.
+        nocturne_window_mode_apply(ddraw->window);
+#else
         SDL_SetWindowFullscreen(ddraw->window, 0);
+#endif
     }
     return DD_OK;
 }
@@ -394,10 +407,10 @@ static HRESULT ddraw_SetCooperativeLevel(IDirectDraw* this_ptr, HWND window, DWO
               (void*)window, (unsigned)flags,
               (int)((flags & DDSCL_FULLSCREEN) != 0),
               (int)((flags & DDSCL_EXCLUSIVE) != 0));
-    // Strip DDSCL_FULLSCREEN — force windowed mode for debugging.
-    // The game requests exclusive fullscreen but that fights with the
-    // window manager, GDB, and sanitizer output. Remove this line
-    // once rendering is stable enough to test fullscreen.
+    // The game always asks for DDSCL_FULLSCREEN — DirectDraw exclusive mode is
+    // the only thing it knows. Strip it and let the user's window-mode setting
+    // decide instead (see shims/window_mode.h); honouring the game's request
+    // would mean no way to run windowed at all.
     flags &= ~DDSCL_FULLSCREEN;
     ddraw->cooperative_level = flags;
     return DD_OK;
@@ -455,11 +468,13 @@ static HRESULT ddraw_SetDisplayMode(IDirectDraw* this_ptr, DWORD width, DWORD he
             SDL_RenderSetLogicalSize(ddraw->renderer, width, height);
             SDL_RenderSetIntegerScale(ddraw->renderer, SDL_TRUE);
         }
-        if (ddraw->cooperative_level & DDSCL_FULLSCREEN) {
-            // This is disabled for now to make testing easier
-            //SDL_SetWindowFullscreen(ddraw->window, SDL_WINDOW_FULLSCREEN);
-        }
     }
+
+#if NOCTURNE_WINDOW_MODE_OPTION
+    // Push the user's window mode after sizing, so windowed mode gets the new
+    // size and fullscreen/borderless override it.
+    nocturne_window_mode_apply(ddraw->window);
+#endif
 
     // Window was created hidden by user32/ddraw to suppress a flash at the
     // default size; reveal it now that we're at the real game resolution.
