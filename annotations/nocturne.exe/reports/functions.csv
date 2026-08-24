@@ -2806,7 +2806,7 @@ core_larva.cpp_factoryFuncLarva_FUN_004c4850,004c4850,core/larva.cpp,10,0,,10
 core_larva.cpp_CLarva_getActorType_FUN_004c4870,004c4870,core/larva.cpp,4,0,,4
 core_larva.cpp_CLarva_ctor_FUN_004c4880,004c4880,core/larva.cpp,21,0,,21
 core_larva.cpp_CLarva_setup_FUN_004c4910,004c4910,core/larva.cpp,13,0,,13
-core_larva.cpp_CLarva_process_FUN_004c4970,004c4970,core/larva.cpp,343,16,fast_sqrt_inline|self_copy_guard|stack_param|stack_ref|unknown_type|unrolled_memcpy|unrolled_memset|warning_unreachable,543
+core_larva.cpp_CLarva_process_FUN_004c4970,004c4970,core/larva.cpp,343,17,dropped_fyl2x|fast_sqrt_inline|self_copy_guard|stack_param|stack_ref|unknown_type|unrolled_memcpy|unrolled_memset|warning_unreachable,558
 core_larva.cpp_CLarva_archive_FUN_004c5250,004c5250,core/larva.cpp,14,0,,14
 core_larva.cpp_CLarva_processDamage_FUN_004c5310,004c5310,core/larva.cpp,71,0,,71
 core_larva.cpp_CLarva_getTargetPoints_FUN_004c54f0,004c54f0,core/larva.cpp,14,1,unrolled_memcpy,29
@@ -4150,7 +4150,7 @@ sound_snddx.cpp_CDirectSoundDevice_lockSample_FUN_0052adc0,0052adc0,sound/snddx.
 sound_snddx.cpp_CDirectSoundDevice_unlockSample_FUN_0052ae90,0052ae90,sound/snddx.cpp,27,8,format_string_mismatch|raw_address_constant|stack_param|undefined_data|unresolved_funcptr,132
 sound_snddx.cpp_CDirectSoundDevice_allocateSfx_FUN_0052af50,0052af50,sound/snddx.cpp,114,16,raw_address_pointer_store|undefined_data|unresolved_funcptr|warning_overlapping_globals,294
 sound_snddx.cpp_isValidSfxHandle_FUN_0052b240,0052b240,sound/snddx.cpp,8,0,,8
-sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_0052b270,0052b270,sound/snddx.cpp,187,17,pointer_truncation|raw_address_pointer_store|sub84_truncation|unknown_field|unresolved_funcptr|warning_overlapping_globals,387
+sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_0052b270,0052b270,sound/snddx.cpp,187,18,dropped_fyl2x|pointer_truncation|raw_address_pointer_store|sub84_truncation|unknown_field|unresolved_funcptr|warning_overlapping_globals,402
 sound_snddx.cpp_CDirectSoundDevice_isSfxPlaying_FUN_0052b7e0,0052b7e0,sound/snddx.cpp,28,2,raw_address_pointer_store|unresolved_funcptr,58
 sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_0052b880,0052b880,sound/snddx.cpp,26,4,raw_address_pointer_store|stack_ref|unresolved_funcptr,81
 sound_snddx.cpp_CDirectSoundDevice_startSfx_FUN_0052b9a0,0052b9a0,sound/snddx.cpp,34,5,format_string_mismatch|raw_address_pointer_store|stack_ref|unresolved_funcptr,104
@@ -4763,7 +4763,7 @@ core_weapon.cpp_CDemonGlobe_ctor_FUN_00554910,00554910,core/weapon.cpp,4,0,,4
 core_weapon.cpp_CDemonGlobe_dtor_FUN_00554920,00554920,core/weapon.cpp,4,0,,4
 core_weather.cpp_staticInit_FUN_00554930,00554930,core/weather.cpp,6,0,,6
 core_weather.cpp_CWeather_ctor_FUN_00554960,00554960,core/weather.cpp,5,0,,5
-core_weather.cpp_CWeather_update_FUN_00554980,00554980,core/weather.cpp,141,14,pointer_cast|pointer_truncation|raw_address_constant|warning_overlapping_globals,301
+core_weather.cpp_CWeather_update_FUN_00554980,00554980,core/weather.cpp,141,15,dropped_fyl2x|pointer_cast|pointer_truncation|raw_address_constant|warning_overlapping_globals,316
 core_weather.cpp_CWeather_createLightningStrike_FUN_00554d40,00554d40,core/weather.cpp,89,2,raw_address_constant|unrolled_memcpy,119
 core_weather.cpp_CWeather_createThunder_FUN_00554fd0,00554fd0,core/weather.cpp,12,0,,12
 core_weather.cpp_CWeather_renderParticles_FUN_00555020,00555020,core/weather.cpp,215,6,raw_address_constant|undefined_data|warning_overlapping_globals,290
@@ -5005,7 +5005,7 @@ crt_unknown.c_seek_within_buffer_FUN_005657d0,005657d0,crt/unknown.c,10,0,,10
 crt_unknown.c_seek_within_buffer_FUN_00565814,00565814,crt/unknown.c,9,0,,9
 crt_stdio.c_fseek_FUN_0056582c,0056582c,crt/stdio.c,79,9,unresolved_funcptr|warning_unreachable,179
 crt_fstream.cpp_ostream_write_FUN_00565a13,00565a13,crt/fstream.cpp,50,8,pointer_cast|pointer_truncation|unresolved_funcptr|unrolled_memcpy,150
-crt_math.c_pow_FUN_00565ad6,00565ad6,crt/math.c,64,21,bitcast_double_pair|extra_output|raw_address_constant|stack_param|sub84_truncation|undefined_data|warning_unreachable,309
+crt_math.c_pow_FUN_00565ad6,00565ad6,crt/math.c,64,22,bitcast_double_pair|dropped_fyl2x|extra_output|raw_address_constant|stack_param|sub84_truncation|undefined_data|warning_unreachable,324
 crt_unknown.c_integer_power_FUN_00565c12,00565c12,crt/unknown.c,18,8,register_param,103
 crt_memory.c_calloc_FUN_00565c50,00565c50,crt/memory.c,11,0,,11
 crt_math.c_asin_FUN_00565c76,00565c76,crt/math.c,7,1,warning_unreachable,22

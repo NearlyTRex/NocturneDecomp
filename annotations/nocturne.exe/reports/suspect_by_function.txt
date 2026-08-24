@@ -7,7 +7,7 @@ SUMMARY
 Total functions analyzed: 4922
 Clean: 2501 (50.8%)
 With suspects: 2421
-Total suspects: 21011
+Total suspects: 21014
 
 ====================================================================================================
 cockpit_ckptutil.c_applyActPalette_FUN_0042d370 (1 suspect)
@@ -14471,7 +14471,7 @@ core_larva.cpp_CLarva_getTargetPoints_FUN_004c54f0 (1 suspect)
   Line 13 [unrolled_memcpy]: out_points_array->x = pCVar1->x;
 
 ====================================================================================================
-core_larva.cpp_CLarva_process_FUN_004c4970 (16 suspects)
+core_larva.cpp_CLarva_process_FUN_004c4970 (17 suspects)
   File: core/larva.cpp
 ====================================================================================================
   Line 2 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x004c518e) */
@@ -14486,6 +14486,7 @@ core_larva.cpp_CLarva_process_FUN_004c4970 (16 suspects)
   Line 226 [fast_sqrt_inline]: local_40 = (float)(((int)local_44 >> 1) + g_FastSqrtMagic);
   Line 231 [unrolled_memcpy]: local_f8.x = pCVar9->x;
   Line 281 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 295 [dropped_fyl2x]: (float10)0.6931471805599453 * (float10)(this_ptr->base).base.size_scale *
   Line 301 [stack_ref]: _sprintf(&stack0xfffffe10,"slime.wav @%f *%f",(double)(this_ptr->base).base.size_scale,
   Line 304 [stack_ref]: ((CDemonActor *)this_ptr,&stack0xfffffe10);
   Line 333 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
@@ -23527,7 +23528,7 @@ core_weather.cpp_CWeather_setOriginAndRotation_FUN_005557d0 (5 suspects)
   Line 63 [unrolled_memcpy]: pCVar2->x = local_38.x;
 
 ====================================================================================================
-core_weather.cpp_CWeather_update_FUN_00554980 (14 suspects)
+core_weather.cpp_CWeather_update_FUN_00554980 (15 suspects)
   File: core/weather.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
@@ -23544,6 +23545,7 @@ core_weather.cpp_CWeather_update_FUN_00554980 (14 suspects)
   Line 68 [pointer_truncation]: local_28.z = *(float *)((int)&g_CVector3f_ARRAY_02ddfa28[0].z + iVar4);
   Line 68 [pointer_cast]: local_28.z = *(float *)((int)&g_CVector3f_ARRAY_02ddfa28[0].z + iVar4);
   Line 101 [raw_address_constant]: this_ptr_00 = 0x01C03A10;
+  Line 131 [dropped_fyl2x]: (float10)0.6931471805599453 * (float10)this_ptr->max_flash_interval);
 
 ====================================================================================================
 core_werewolf.cpp_CWerewolf_dtor_FUN_00557e90 (2 suspects)
@@ -31224,7 +31226,7 @@ sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_0052a450 (25 suspects)
   Line 155 [unresolved_funcptr]: (**(code **)(*_DAT_02dc921c + 8))(_DAT_02dc921c);
 
 ====================================================================================================
-sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_0052b270 (17 suspects)
+sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_0052b270 (18 suspects)
   File: sound/snddx.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
@@ -31232,6 +31234,7 @@ sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_0052b270 (17 suspects)
   Line 43 [raw_address_pointer_store]: piVar2 = *(int **)(iVar1 * 4 + 0x2dc9324);
   Line 59 [unresolved_funcptr]: uVar7 = (**(code **)(*piVar2 + 0x4c))
   Line 72 [unresolved_funcptr]: uVar4 = (**(code **)(*piVar2 + 0x50))
+  Line 88 [dropped_fyl2x]: dVar8 = floor(dVar8 * 0.6931471805599453 * 868.58900000000006);
   Line 89 [unknown_field]: uStack_38._4_4_ = SUB84(__BITCAST_UINT64(dVar8),0);
   Line 89 [sub84_truncation]: uStack_38._4_4_ = SUB84(__BITCAST_UINT64(dVar8),0);
   Line 93 [pointer_truncation]: if ((int)local_20 < 1) {

@@ -2,16 +2,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 163,
-    "complexity_score": 355,
+    "complexity_score": 370,
     "cross_reference_count": 5,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "severe",
     "pseudocode_lines": 90,
-    "suspect_count": 23,
+    "suspect_count": 24,
     "suspect_types": [
       "bitcast_double_pair",
       "concat_reconstruction",
+      "dropped_fyl2x",
       "nan_function_artifact",
       "raw_address_constant",
       "stack_param",
@@ -367,6 +368,14 @@
       "severity": "moderate",
       "text": "((float10)CONCAT19(uVar8,CONCAT18(uVar7,CONCAT44(SUB84(__BITCAST_UINT64(dVar2),0),uVar6)))",
       "type": "concat_reconstruction"
+    },
+    {
+      "description": "x87 log constant multiplied by `exp` in a function whose asm has 1 FYL2X. FYL2X computes st(1)*log2(st(0)); Ghidra drops it and leaves only the loaded constant, so ln(x) decompiles as 0.693*x. Read the asm and restore the logarithm in a .keep (e.g. `log(x) * 868.589` for a dB conversion). Note log2(e)*ln(2) == 1, so in a pow()-shaped site the constants cancel and the arithmetic looks innocent.",
+      "line": 84,
+      "match": "exp((float10)0.6931471805599453 * exp * ABS(base));",
+      "severity": "major",
+      "text": "exp((float10)0.6931471805599453 * exp * ABS(base));",
+      "type": "dropped_fyl2x"
     }
   ]
 }

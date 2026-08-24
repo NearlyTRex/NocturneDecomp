@@ -67,6 +67,7 @@ SUSPECT TYPE COUNTS
   param_count_too_few                3 (  0.0%)
   warning_deadcode_restart           3 (  0.0%)
   static_array_oob                   3 (  0.0%)
+  dropped_fyl2x                      3 (  0.0%)
   tautological_addr_guard            3 (  0.0%)
   static_self_assignment             2 (  0.0%)
   warning_jumptable                  2 (  0.0%)
@@ -6987,6 +6988,20 @@ Functions:
   core_dcamera.cpp_CDemonCamera_FUN_00447f20
   core_skeleton.cpp_CDeformableModel_loadStream_FUN_00519280
   sound_mp3.cpp_CMP3Decoder_synthesisPoly_FUN_004e7720
+
+====================================================================================================
+TYPE: dropped_fyl2x (3 occurrences)
+====================================================================================================
+
+Unique patterns:
+     1x  (float10)0.6931471805599453 * (float10)(this_ptr->base).base.size_scale *
+     1x  dVar8 = floor(dVar8 * 0.6931471805599453 * 868.58900000000006);
+     1x  (float10)0.6931471805599453 * (float10)this_ptr->max_flash_interval);
+
+Functions:
+  core_larva.cpp_CLarva_process_FUN_004c4970
+  core_weather.cpp_CWeather_update_FUN_00554980
+  sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_0052b270
 
 ====================================================================================================
 TYPE: tautological_addr_guard (3 occurrences)

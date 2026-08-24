@@ -130,8 +130,30 @@ def build_global_ptr_intervals(repo_root):
     return intervals
 
 
+def _sibling_asm(path):
+    """Read the .asm that sits beside a .cpp/.c/.keep.cpp, or '' if absent.
+
+    Most asm-side detectors are decompiler-state-dependent and deliberately
+    excluded here, but dropped_fyl2x is not: it only uses the asm as a yes/no
+    gate ("does this function compute FYL2X at all"), and what it flags is
+    fixable in the keep. Reading the committed .asm makes it usable during keep
+    work instead of only at export time.
+    """
+    base = path
+    for suffix in ('.keep.cpp', '.keep.c', '.cpp', '.c'):
+        if base.endswith(suffix):
+            base = base[:-len(suffix)]
+            break
+    try:
+        with open(base + '.asm', 'r') as f:
+            return f.read()
+    except (IOError, OSError):
+        return ''
+
+
 def run_detectors(susp, code, struct_layout_map=None,
-                  global_interval_map=None, struct_size_map=None):
+                  global_interval_map=None, struct_size_map=None,
+                  asm_code=None):
     """Run the source-text-only content detectors on `code`.
 
     Mirrors detect_content_suspects() but with no func_globals / func_calls —
@@ -192,6 +214,8 @@ def run_detectors(susp, code, struct_layout_map=None,
     found.extend(susp.identify_pointer_stride_bytecount(code))
     found.extend(susp.identify_stale_struct_offset_64bit(
         code, struct_layout_map))
+    if asm_code:
+        found.extend(susp.identify_dropped_fyl2x(code, asm_code))
     return found
 
 
@@ -361,7 +385,8 @@ def main(argv=None):
             code = f.read()
         struct_layout_map, struct_size_map = _maps_for(path)
         suspects = run_detectors(susp, code, struct_layout_map,
-                                 global_interval_map, struct_size_map)
+                                 global_interval_map, struct_size_map,
+                                 _sibling_asm(path))
 
         cppcheck_diags = []
         if not args.no_cppcheck:

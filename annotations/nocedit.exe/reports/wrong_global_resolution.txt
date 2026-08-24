@@ -12,13 +12,13 @@ SUMMARY
 ----------------------------------------------------------------------------------------------------
 
   Functions checked: 6911
-  Functions with suspicious globals: 75
-  Total suspicious global references: 124
+  Functions with suspicious globals: 76
+  Total suspicious global references: 126
 
   Most commonly misresolved globals:
     g_SfxOptions                                       13 functions
     g_KeyboardState                                    9 functions
-    g_WindowHeight                                     5 functions
+    g_WindowHeight                                     6 functions
     g_RenderVertexBuffer                               5 functions
     g_ColorCubeLookup                                  4 functions
     g_CDemonCameraInstance                             4 functions
@@ -37,7 +37,7 @@ SUMMARY
     g_CBaronWeaponClassVersion                         1 functions
     g_CWeaponClassInfo                                 1 functions
 
-  .keep files with issues: 41 (these need manual review)
+  .keep files with issues: 42 (these need manual review)
   Raw .cpp files with issues: 34
 
 ====================================================================================================
@@ -49,63 +49,63 @@ core_main.c_enterMainGameMenu_FUN_00507a50  [.keep]  (15 suspicious globals)
   File: core/main.c
 
   g_CDemonFileManagerInstance
-    Used at lines: 151
+    Used at lines: 161
     NOT found in function reference list
 
   g_CGamePtr
-    Used at lines: 21, 25, 26, 47, 49, ...
+    Used at lines: 28, 32, 33, 54, 56, ...
     NOT found in function reference list
 
   g_CKeysPtr
-    Used at lines: 77, 77, 79, 79, 80, ...
+    Used at lines: 87, 87, 89, 89, 90, ...
     NOT found in function reference list
 
   g_CMoonInstance
-    Used at lines: 45, 50, 51, 75, 94, ...
+    Used at lines: 52, 60, 61, 85, 104, ...
     NOT found in function reference list
 
   g_CSoundPtr
-    Used at lines: 76, 101, 107, 124, 142, ...
+    Used at lines: 86, 111, 117, 134, 152, ...
     NOT found in function reference list
 
   g_InputDisabled
-    Used at lines: 116
+    Used at lines: 126
     NOT found in function reference list
 
   g_MainMenuTextBuffers
-    Used at lines: 52, 54, 56, 58, 60
+    Used at lines: 62, 64, 66, 68, 70
     NOT found in function reference list
 
   g_MenuBitmapFilenames
-    Used at lines: 33
-    NOT found in function reference list
-
-  g_MenuBitmaps
-    Used at lines: 29
-    NOT found in function reference list
-
-  g_MenuBlurLeft
-    Used at lines: 38
-    NOT found in function reference list
-
-  g_MenuBlurMiddle
-    Used at lines: 39
-    NOT found in function reference list
-
-  g_MenuBlurRight
     Used at lines: 40
     NOT found in function reference list
 
+  g_MenuBitmaps
+    Used at lines: 36
+    NOT found in function reference list
+
+  g_MenuBlurLeft
+    Used at lines: 45
+    NOT found in function reference list
+
+  g_MenuBlurMiddle
+    Used at lines: 46
+    NOT found in function reference list
+
+  g_MenuBlurRight
+    Used at lines: 47
+    NOT found in function reference list
+
   g_MenuTextPointers
-    Used at lines: 63, 67
+    Used at lines: 73, 77
     NOT found in function reference list
 
   g_UseDirect3D
-    Used at lines: 25, 132, 140
+    Used at lines: 32, 142, 150
     NOT found in function reference list
 
   g_WindowHeight
-    Used at lines: 22
+    Used at lines: 29
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -190,6 +190,18 @@ core_game.cpp_CGame_beginFadeOut_FUN_004e0960  [.keep]  (2 suspicious globals)
 
   g_CScriptPtr
     Used at lines: 30, 40
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_menu.cpp_configureGraphicsOptions_FUN_00510c80  [.keep]  (2 suspicious globals)
+  File: core/menu.cpp
+
+  g_ThemeFont
+    Used at lines: 275
+    NOT found in function reference list
+
+  g_WindowHeight
+    Used at lines: 277, 278
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

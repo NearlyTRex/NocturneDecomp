@@ -1284,3 +1284,105 @@ def identify_unrolled_memcpy_blocks(assembly_code, unreachable_addrs=None):
             'severity': 'moderate',
         })
     return suspects
+
+
+# =============================================================================
+# dropped_fyl2x — a logarithm Ghidra lost
+# =============================================================================
+# x87 computes logarithms with FYL2X: `st(1) * log2(st(0))`. Watcom emits the
+# idiom
+#       FLD v ; FLDLN2 ; FXCH ; FYL2X        -> ln(2) * log2(v) == ln(v)
+# and for pow()/exp() pairs it with FLDL2E and F2XM1/FSCALE on the way back.
+#
+# Ghidra sometimes drops the FYL2X itself and emits only the constants that
+# were loaded around it, so `ln(v)` decompiles as a plain multiply
+# `0.6931471805599453 * v`. The result still compiles and still looks like
+# ordinary float arithmetic — there is no cast, no intrinsic, and no warning —
+# but the value is the operand where its logarithm belonged.
+#
+# Confirmed instances (all fixed in keeps):
+#   CDirectSoundDevice::setSfxPos  2000*log10(v) became 602*v, so the "> 0 -> 0"
+#                                  clamp turned every volume into 0 dB and the
+#                                  sound sliders did nothing except mute.
+#   CWeather::update               v * e^(0.1f) became exponential in v.
+#   CLarva::process                pow(scale, -0.2) became 2^(-0.2*scale).
+#   exportModelToBIN               log(v)/log(2) became v/2 (two dropped logs).
+#
+# The giveaway is one of the x87 log constants appearing as a *multiplicand* of
+# a variable. Note log2(e) * ln(2) == 1 exactly, so in a pow()-shaped site the
+# two constants cancel and leave arithmetic with no visible residue at all —
+# which is why this has to be anchored on the asm rather than the source alone.
+_FYL2X_ASM_RE = re.compile(r'\bFYL2X\b', re.IGNORECASE)
+
+# The two constants Watcom loads around FYL2X: FLDLN2 (ln 2) and FLDL2E
+# (log2 e). Matched loosely on the leading digits so a differently-rounded
+# literal still hits.
+_FYL2X_CONST_RE = re.compile(
+    r'0\.69314718[0-9]*|1\.44269504[0-9]*')
+
+# A dropped log leaves the constant multiplied by something that is not another
+# literal — a variable, a field, a cast, or a parenthesised expression. If both
+# sides are literals it is ordinary constant folding, not a lost logarithm.
+_FYL2X_MUL_RE = re.compile(
+    r'(?:'
+    r'(0\.69314718[0-9]*|1\.44269504[0-9]*)\s*\*\s*'
+    r'(\(\s*float10\s*\)|\(\s*double\s*\)|\(\s*float\s*\)|)\s*'
+    r'([A-Za-z_(][A-Za-z0-9_\->\.\[\]]*)'
+    r'|'
+    r'([A-Za-z_][A-Za-z0-9_\->\.\[\]]*)\s*\*\s*'
+    r'(?:\(\s*float10\s*\)|\(\s*double\s*\)|\(\s*float\s*\)|)\s*'
+    r'(0\.69314718[0-9]*|1\.44269504[0-9]*)'
+    r')')
+
+
+def identify_dropped_fyl2x(decompiled_code, assembly_code):
+    """Detect logarithms Ghidra dropped from an x87 FYL2X.
+
+    Gated on the function's `.asm` actually containing FYL2X, so a legitimate
+    use of ln(2)/log2(e) as a plain coefficient in a function that computes no
+    logarithm is not flagged.
+
+    Args:
+        decompiled_code: The decompiled C pseudocode string.
+        assembly_code: The function's assembly listing (from `.asm`).
+
+    Returns:
+        List of suspect dicts, one per suspicious multiply.
+    """
+    suspects = []
+    if not decompiled_code or not assembly_code:
+        return suspects
+    if not _FYL2X_ASM_RE.search(assembly_code):
+        return suspects
+
+    n_fyl2x = len(_FYL2X_ASM_RE.findall(assembly_code))
+
+    for idx, line in enumerate(decompiled_code.split('\n'), start=1):
+        stripped = line.strip()
+        if stripped.startswith('//') or stripped.startswith('*'):
+            continue
+        # Already repaired: the line calls a real log function.
+        if re.search(r'\b(?:log|log2|log10|logf|log2f|log10f)\s*\(', line):
+            continue
+        if not _FYL2X_CONST_RE.search(line):
+            continue
+        m = _FYL2X_MUL_RE.search(line)
+        if not m:
+            continue
+        operand = m.group(3) or m.group(4) or '?'
+        suspects.append({
+            'line': idx,
+            'type': 'dropped_fyl2x',
+            'match': stripped[:120],
+            'text': stripped[:200],
+            'description': (
+                'x87 log constant multiplied by `%s` in a function whose asm '
+                'has %d FYL2X. FYL2X computes st(1)*log2(st(0)); Ghidra drops '
+                'it and leaves only the loaded constant, so ln(x) decompiles '
+                'as 0.693*x. Read the asm and restore the logarithm in a '
+                '.keep (e.g. `log(x) * 868.589` for a dB conversion). Note '
+                'log2(e)*ln(2) == 1, so in a pow()-shaped site the constants '
+                'cancel and the arithmetic looks innocent.' % (operand, n_fyl2x)),
+            'severity': 'major',
+        })
+    return suspects

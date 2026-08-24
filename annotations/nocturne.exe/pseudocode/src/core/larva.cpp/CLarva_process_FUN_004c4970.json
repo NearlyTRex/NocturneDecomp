@@ -86,14 +86,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 797,
-    "complexity_score": 543,
+    "complexity_score": 558,
     "cross_reference_count": 0,
     "function_call_count": 25,
     "global_count": 20,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 343,
-    "suspect_count": 16,
+    "suspect_count": 17,
     "suspect_types": [
+      "dropped_fyl2x",
       "fast_sqrt_inline",
       "self_copy_guard",
       "stack_param",
@@ -980,6 +981,14 @@
       "severity": "moderate",
       "text": "local_40 = (float)(((int)local_44 >> 1) + g_FastSqrtMagic);",
       "type": "fast_sqrt_inline"
+    },
+    {
+      "description": "x87 log constant multiplied by `(this_ptr->base` in a function whose asm has 1 FYL2X. FYL2X computes st(1)*log2(st(0)); Ghidra drops it and leaves only the loaded constant, so ln(x) decompiles as 0.693*x. Read the asm and restore the logarithm in a .keep (e.g. `log(x) * 868.589` for a dB conversion). Note log2(e)*ln(2) == 1, so in a pow()-shaped site the constants cancel and the arithmetic looks innocent.",
+      "line": 295,
+      "match": "(float10)0.6931471805599453 * (float10)(this_ptr->base).base.size_scale *",
+      "severity": "major",
+      "text": "(float10)0.6931471805599453 * (float10)(this_ptr->base).base.size_scale *",
+      "type": "dropped_fyl2x"
     }
   ],
   "vtable_info": {

@@ -79,6 +79,7 @@ from ghidra_annotations.annotations.pseudocode.suspects import (
     identify_missing_cave_copy, identify_unrolled_memset_blocks,
     identify_unrolled_memcpy_blocks, extract_unreachable_block_addrs,
     identify_phantom_float_to_int,
+    identify_dropped_fyl2x,
     get_struct_layout_map, get_struct_size_map
 )
 from ghidra_annotations.annotations.pseudocode.stack_patterns import (
@@ -510,6 +511,13 @@ def process_python_only(result, pseudocode_src_dir, constants_map,
         get_struct_layout_map(pseudocode_src_dir))
     suspects.extend(phantom_f2i_suspects_cpp)
 
+    # Cross-reference .cpp/.asm: an x87 log constant multiplied by a value in a
+    # function whose asm computes FYL2X — Ghidra dropped the logarithm and left
+    # only the constant it was loaded with, so ln(x) reads as 0.693*x.
+    dropped_fyl2x_suspects_cpp = identify_dropped_fyl2x(
+        decompiled_code, result.assembly_code)
+    suspects.extend(dropped_fyl2x_suspects_cpp)
+
     # Addresses Ghidra proved dead (`WARNING: Removing unreachable block`).
     # A REP MOVS/STOS inside such a block is dead code a keep correctly omits,
     # so suppress asm-side memcpy/memset suspects at those addresses.
@@ -629,6 +637,8 @@ def process_python_only(result, pseudocode_src_dir, constants_map,
             phantom_f2i_suspects_keep = identify_phantom_float_to_int(
                 keep_source, result.assembly_code,
                 get_struct_layout_map(pseudocode_src_dir))
+            dropped_fyl2x_suspects_keep = identify_dropped_fyl2x(
+                keep_source, result.assembly_code)
 
             def _key(s):
                 return (s.get('type'), s.get('match'))
@@ -638,10 +648,12 @@ def process_python_only(result, pseudocode_src_dir, constants_map,
             # the keep-side outputs by multiset of (type, match) keys.
             tracked_cpp = (list(content_suspects_cpp)
                            + list(cave_copy_suspects_cpp)
-                           + list(phantom_f2i_suspects_cpp))
+                           + list(phantom_f2i_suspects_cpp)
+                           + list(dropped_fyl2x_suspects_cpp))
             tracked_keep = (list(content_suspects_keep)
                             + list(cave_copy_suspects_keep)
-                            + list(phantom_f2i_suspects_keep))
+                            + list(phantom_f2i_suspects_keep)
+                            + list(dropped_fyl2x_suspects_keep))
 
             cpp_counts = {}
             for s in tracked_cpp:
