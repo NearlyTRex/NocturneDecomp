@@ -12,6 +12,7 @@ void __cdecl shape_design_c_exportModelToBIN_FUN_0045aa80(char *filename,int ren
 {
   int iVar4;
   double dVar7;
+  double dVar8;
   int local_f8;
   uint local_98;
   uint local_94;
@@ -111,8 +112,11 @@ void __cdecl shape_design_c_exportModelToBIN_FUN_0045aa80(char *filename,int ren
           local_14 = ABS(g_LoadedVertices[local_28].vertex.z);
         }
       }
-      local_18 = (int)ROUND(ROUND(((double)local_14 * 0.6931471805599453) /
-                                  (2 * 0.6931471805599453))) + 1;
+      dVar8 = (double)local_14;
+      if (!(dVar8 > 0.0)) {
+        dVar8 = 1.0;
+      }
+      local_18 = (int)ROUND(ROUND(log(dVar8) / log(2.0))) + 1;
       dVar7 = ldexp(1.0,local_18);
       local_14 = (float)64 / (float)dVar7;
     }

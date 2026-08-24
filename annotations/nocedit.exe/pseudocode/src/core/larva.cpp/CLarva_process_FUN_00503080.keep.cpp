@@ -51,7 +51,7 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
   CVector3f local_74;
   float local_18;
   float local_14;
-  
+
   iVar7 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar7 == 0) {
     return;
@@ -256,8 +256,8 @@ LAB_00503184:
     if (iVar7 == 0) {
       fVar17 = (float10)1;
       fVar15 = (float10)1.4426950408889634 *
-               (float10)0.6931471805599453 * (float10)(this_ptr->base).base.size_scale *
-               (float10)-0.20000000000000001;
+               ((float10)log((double)(this_ptr->base).base.size_scale) *
+                (float10)-0.20000000000000001);
       fVar16 = (float10)f2xm1(fVar15 - (fVar15 / fVar17) * fVar17);
       fVar17 = (float10)fscale(fVar16 + fVar17,fVar15);
       local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.99,1.01);

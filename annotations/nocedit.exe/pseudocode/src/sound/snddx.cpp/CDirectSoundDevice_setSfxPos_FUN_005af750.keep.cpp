@@ -34,7 +34,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setSfxPos_FUN_005af750(CDirectSou
   double dVar1;
   char *pcVar7;
   IDirectSound3DBuffer *this_ptr_00;
-  
+
   iVar2 = slot->hardware_buffer_handle;
   if ((((iVar2 < 1) || (0x1e < iVar2)) ||
       (g_DirectSoundHardwareSfxBuffers[iVar2] == (IDirectSoundBuffer *)0x0)) ||
@@ -89,7 +89,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setSfxPos_FUN_005af750(CDirectSou
     dVar1 = (double)((slot->options).current_volume * local_cb8);
     if (0.0 < dVar1) {
       if (dVar1 < 1.0) {
-        dVar6 = floor(dVar1 * 0.6931471805599453 * 868.58900000000006);
+        dVar6 = floor(log(dVar1) * 868.58900000000006);
         lStack_1c = (long)ROUND(ROUND(dVar6));
         if (lStack_1c < 1) {
           if (lStack_1c < -10000) goto LAB_005af8a8;

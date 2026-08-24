@@ -98,13 +98,34 @@ struct DSoundBuffer_ShimData {
     long pan;       // -10000 to 10000
     DWORD frequency;
     WAVEFORMATEX format;
+    SDL_AudioFormat sdl_format; // SDL equivalent of format.wBitsPerSample
+    DSound3DBuffer_ShimData* d3d; // 3D view of this buffer, if the game made one
+    double play_pos_frames;       // fractional read position, for rate conversion
 };
+
+// Map the buffer's WAVEFORMATEX to the SDL sample format.
+//
+// DirectSound PCM is unsigned for 8-bit and signed little-endian for 16-bit —
+// not the same convention at both depths, so this cannot be a width-only
+// mapping. Both depths are reachable: the sound options screen exposes the
+// output bit depth, and the engine creates its buffers at whatever is selected.
+static SDL_AudioFormat sdl_format_for(const WAVEFORMATEX& fmt) {
+    switch (fmt.wBitsPerSample) {
+    case 8:  return AUDIO_U8;
+    case 16: return AUDIO_S16LSB;
+    default: return AUDIO_S16LSB;   // 0 == unset; the engine's usual case
+    }
+}
 
 struct DSound3DBuffer_ShimData {
     IDirectSound3DBuffer_vtable* vtable;
     IDirectSound3DBuffer_vtable vtable_data;
     ULONG ref_count;
     DS3DBUFFER params;
+    // The sound buffer this 3D view belongs to. DirectSound's 3D buffer is a
+    // second interface onto the SAME buffer, so its parameters have to reach
+    // that buffer's mixing — otherwise they are write-only state.
+    DSoundBuffer_ShimData* parent;
 };
 
 struct DSound3DListener_ShimData {
@@ -113,6 +134,64 @@ struct DSound3DListener_ShimData {
     ULONG ref_count;
     DS3DLISTENER params;
 };
+
+// The one 3D listener the game creates, remembered at QueryInterface time.
+static DSound3DListener_ShimData* g_ds3d_listener = nullptr;
+
+// DirectSound's distance attenuation for a 3D buffer, as a linear gain.
+//
+// The engine leans on this entirely for positional sounds. CDirectSoundDevice::
+// setSfxPos divides the channel volume back OUT of the value it passes to
+// SetVolume and folds it into flMinDistance/flMaxDistance instead, leaving the
+// falloff to DirectSound. Ignoring these parameters therefore plays every
+// positional sound at its raw volume; only the software-mixed path attenuates
+// on its own.
+//
+// DirectSound's model: no attenuation within flMinDistance, then falloff scaled
+// by the listener's rolloff factor, and no further attenuation past
+// flMaxDistance:
+//     d    = clamp(|listener - source| * distanceFactor, min, max)
+//     gain = (min / d) ^ rolloff
+static float ds3d_distance_gain(const DSoundBuffer_ShimData* buf) {
+    const DSound3DBuffer_ShimData* d3d = buf ? buf->d3d : nullptr;
+    if (d3d == nullptr) return 1.0f;
+
+    // DS3DMODE_DISABLE (2): no 3D processing at all. The engine sets this for
+    // non-positional sounds, which carry their volume in SetVolume instead.
+    if (d3d->params.dwMode == 2) return 1.0f;
+
+    float lx = 0.0f, ly = 0.0f, lz = 0.0f;
+    float distance_factor = 1.0f, rolloff = 1.0f;
+    if (g_ds3d_listener != nullptr) {
+        lx = g_ds3d_listener->params.vPosition.x;
+        ly = g_ds3d_listener->params.vPosition.y;
+        lz = g_ds3d_listener->params.vPosition.z;
+        if (g_ds3d_listener->params.flDistanceFactor > 0.0f)
+            distance_factor = g_ds3d_listener->params.flDistanceFactor;
+        rolloff = g_ds3d_listener->params.flRolloffFactor;
+    }
+
+    // DS3DMODE_HEADRELATIVE (1): the position is already relative to the
+    // listener, so do not subtract it again.
+    if (d3d->params.dwMode == 1) { lx = 0.0f; ly = 0.0f; lz = 0.0f; }
+
+    const float dx = d3d->params.vPosition.x - lx;
+    const float dy = d3d->params.vPosition.y - ly;
+    const float dz = d3d->params.vPosition.z - lz;
+
+    float dist = sqrtf(dx * dx + dy * dy + dz * dz) * distance_factor;
+
+    const float dmin = (d3d->params.flMinDistance > 0.0f) ? d3d->params.flMinDistance : 1.0f;
+    const float dmax = (d3d->params.flMaxDistance > dmin) ? d3d->params.flMaxDistance : dmin;
+    if (dist < dmin) dist = dmin;
+    if (dist > dmax) dist = dmax;
+
+    if (rolloff <= 0.0f) return 1.0f;          // rolloff 0 disables attenuation
+    const float gain = powf(dmin / dist, rolloff);
+    if (gain < 0.0f) return 0.0f;
+    if (gain > 1.0f) return 1.0f;
+    return gain;
+}
 
 struct DSoundCapture_ShimData {
     IDirectSoundCapture_vtable* vtable;
@@ -130,50 +209,175 @@ struct DSoundCaptureBuffer_ShimData {
 // Audio callback for SDL
 // =============================================================================
 
-static void sdl_audio_callback(void* userdata, Uint8* stream, int len) {
-    DSoundBuffer_ShimData* buf = (DSoundBuffer_ShimData*)userdata;
-    SDL_memset(stream, 0, len);
+// =============================================================================
+// The mixer — one output stream, all voices summed into it
+// =============================================================================
+//
+// DirectSound has ONE output stream. Secondary buffers are voices; the mixer
+// (hardware or software) sums them into the primary buffer with saturation, and
+// that single result is what reaches the card.
+//
+// So: one device, one accumulator, every playing buffer summed into it. Rate,
+// depth and channel count are converted per voice, since a secondary buffer may
+// be any format regardless of the output format.
+//
+// Giving each secondary buffer its own OS audio device instead would leave the
+// summing to the host, with every voice at full scale on an independent clock
+// and no shared headroom — which matches neither DirectSound nor the engine's
+// own software mixer, and is loudest on the sounds that play continuously.
 
-    if (!buf) { DSND_LOG("cb: buf=NULL"); return; }
-    DSND_LOG_RL(8, 200, "cb dev=%u play=%d loop=%d pc=%u size=%u data=%p len=%d",
-                (unsigned)buf->device_id, buf->is_playing, buf->is_looping,
-                (unsigned)buf->play_cursor, (unsigned)buf->buffer_size,
-                (void*)buf->audio_data, len);
-    if (!buf->is_playing || !buf->audio_data) return;
+#define DSOUND_MAX_VOICES 64
+static DSoundBuffer_ShimData* g_voices[DSOUND_MAX_VOICES];
+static int g_voice_count = 0;
 
-    DWORD remaining = len;
-    DWORD dst_offset = 0;
+static void dsound_register_voice(DSoundBuffer_ShimData* buf) {
+    if (buf == nullptr || buf->is_primary) return;
+    for (int i = 0; i < g_voice_count; i++) {
+        if (g_voices[i] == buf) return;
+    }
+    if (g_voice_count < DSOUND_MAX_VOICES) {
+        g_voices[g_voice_count++] = buf;
+    } else {
+        DSND_LOG("voice registry full; buffer %p will be silent", (void*)buf);
+    }
+}
 
-    while (remaining > 0) {
-        DWORD available = buf->buffer_size - buf->play_cursor;
-        DWORD to_copy = (remaining < available) ? remaining : available;
-
-        // Mix audio with volume scaling
-        float vol_scale = 1.0f;
-        if (buf->volume < 0) {
-            // Convert from hundredths of dB to linear scale
-            vol_scale = powf(10.0f, buf->volume / 2000.0f);
+static void dsound_unregister_voice(DSoundBuffer_ShimData* buf) {
+    for (int i = 0; i < g_voice_count; i++) {
+        if (g_voices[i] == buf) {
+            g_voices[i] = g_voices[--g_voice_count];
+            g_voices[g_voice_count] = nullptr;
+            return;
         }
+    }
+}
 
-        SDL_MixAudioFormat(stream + dst_offset,
-                          buf->audio_data + buf->play_cursor,
-                          AUDIO_S16LSB,
-                          to_copy,
-                          (int)(SDL_MIX_MAXVOLUME * vol_scale));
+// One source frame -> one signed 16-bit sample per channel.
+static inline void read_source_frame(const DSoundBuffer_ShimData* buf, size_t frame,
+                                     int src_ch, int src_bytes, int* out_l, int* out_r) {
+    const Uint8* p = buf->audio_data + frame * (size_t)(src_ch * src_bytes);
+    int l, r;
+    if (src_bytes == 1) {
+        // DirectSound 8-bit PCM is UNSIGNED, centred on 128.
+        l = ((int)p[0] - 128) << 8;
+        r = (src_ch > 1) ? (((int)p[1] - 128) << 8) : l;
+    } else {
+        l = (int)(Sint16)(p[0] | (p[1] << 8));
+        r = (src_ch > 1) ? (int)(Sint16)(p[2] | (p[3] << 8)) : l;
+    }
+    *out_l = l;
+    *out_r = r;
+}
 
-        buf->play_cursor += to_copy;
-        dst_offset += to_copy;
-        remaining -= to_copy;
+// Sum one voice into the accumulator, converting rate/depth/channels.
+static void mix_voice(DSoundBuffer_ShimData* buf, int* acc, int frames,
+                      int dev_ch, int dev_rate) {
+    if (!buf->is_playing || !buf->audio_data || buf->buffer_size == 0) return;
 
-        if (buf->play_cursor >= buf->buffer_size) {
+    const int src_ch    = buf->format.nChannels ? buf->format.nChannels : 1;
+    const int src_bytes = (buf->format.wBitsPerSample == 8) ? 1 : 2;
+    const int src_rate  = buf->frequency ? (int)buf->frequency : dev_rate;
+    const size_t frame_bytes  = (size_t)(src_ch * src_bytes);
+    const size_t total_frames = buf->buffer_size / frame_bytes;
+    if (total_frames == 0) return;
+
+    float gain = 1.0f;
+    if (buf->volume < 0) gain = powf(10.0f, buf->volume / 2000.0f);
+    gain *= ds3d_distance_gain(buf);
+
+    // DirectSound pan: hundredths of a dB of attenuation on one side.
+    float gain_l = gain, gain_r = gain;
+    if (buf->pan > 0)      gain_l *= powf(10.0f, -buf->pan / 2000.0f);
+    else if (buf->pan < 0) gain_r *= powf(10.0f,  buf->pan / 2000.0f);
+
+    const double step = (double)src_rate / (double)dev_rate;
+    double pos = buf->play_pos_frames;
+
+    for (int i = 0; i < frames; i++) {
+        if (pos >= (double)total_frames) {
             if (buf->is_looping) {
-                buf->play_cursor = 0;
+                pos = fmod(pos, (double)total_frames);
             } else {
                 buf->is_playing = 0;
                 break;
             }
         }
+        int l, r;
+        read_source_frame(buf, (size_t)pos, src_ch, src_bytes, &l, &r);
+
+        if (dev_ch == 1) {
+            acc[i] += (int)(((float)(l + r) * 0.5f) * gain_l);
+        } else {
+            acc[i * dev_ch + 0] += (int)((float)l * gain_l);
+            acc[i * dev_ch + 1] += (int)((float)r * gain_r);
+        }
+        pos += step;
     }
+
+    buf->play_pos_frames = pos;
+    // Keep the byte cursor in step; the engine reads it to decide where to
+    // write streaming data.
+    size_t cur = (size_t)pos;
+    if (cur >= total_frames) cur = total_frames ? total_frames - 1 : 0;
+    buf->play_cursor = (DWORD)(cur * frame_bytes);
+}
+
+static void dsound_mix_callback(void* userdata, Uint8* stream, int len) {
+    DSound_ShimData* ds = (DSound_ShimData*)userdata;
+    SDL_memset(stream, 0, len);
+    if (ds == nullptr) return;
+
+    const int dev_ch   = ds->obtained_spec.channels ? ds->obtained_spec.channels : 2;
+    const int dev_rate = ds->obtained_spec.freq ? ds->obtained_spec.freq : 44100;
+    const int frames   = len / (dev_ch * 2);   // device is S16
+    if (frames <= 0) return;
+
+    static int acc[8192 * 2];
+    const int slots = frames * dev_ch;
+    if (slots > (int)(sizeof(acc) / sizeof(acc[0]))) return;
+    memset(acc, 0, sizeof(acc[0]) * (size_t)slots);
+
+    int active = 0;
+    for (int i = 0; i < g_voice_count; i++) {
+        DSoundBuffer_ShimData* buf = g_voices[i];
+        if (buf == nullptr) continue;
+        if (buf->is_playing) active++;
+        mix_voice(buf, acc, frames, dev_ch, dev_rate);
+    }
+
+    // Saturate, as DirectSound's mixer does — summed voices clip rather than
+    // wrapping round.
+    Sint16* out = (Sint16*)stream;
+    for (int i = 0; i < slots; i++) {
+        int s = acc[i];
+        if (s >  32767) s =  32767;
+        if (s < -32768) s = -32768;
+        out[i] = (Sint16)s;
+    }
+
+    DSND_LOG_RL(4, 400, "mix: voices=%d active=%d frames=%d dev=%dHz ch=%d",
+                g_voice_count, active, frames, dev_rate, dev_ch);
+}
+
+// Bring up the single output device if it is not running yet.
+static void dsound_ensure_device(DSound_ShimData* ds) {
+    if (ds == nullptr || ds->device_id != 0) return;
+
+    SDL_AudioSpec want;
+    SDL_memset(&want, 0, sizeof(want));
+    want.freq     = 44100;
+    want.format   = AUDIO_S16SYS;
+    want.channels = 2;
+    want.samples  = 1024;
+    want.callback = dsound_mix_callback;
+    want.userdata = ds;
+
+    ds->device_id = SDL_OpenAudioDevice(nullptr, 0, &want, &ds->obtained_spec, 0);
+    DSND_LOG("mixer device: dev=%u freq=%d ch=%u fmt=0x%x samples=%u",
+             (unsigned)ds->device_id, ds->obtained_spec.freq,
+             (unsigned)ds->obtained_spec.channels, (unsigned)ds->obtained_spec.format,
+             (unsigned)ds->obtained_spec.samples);
+    if (ds->device_id) SDL_PauseAudioDevice(ds->device_id, 0);
 }
 
 // =============================================================================
@@ -246,22 +450,18 @@ static HRESULT dsound_CreateSoundBuffer(LPDIRECTSOUND this_ptr, LPDSBUFFERDESC p
             memcpy(&buf->format, pcDesc->lpwfxFormat, sizeof(WAVEFORMATEX));
             buf->frequency = pcDesc->lpwfxFormat->nSamplesPerSec;
         }
+        buf->sdl_format = sdl_format_for(buf->format);
 
-        // Open an SDL audio device for this buffer
-        SDL_AudioSpec want, have;
-        SDL_memset(&want, 0, sizeof(want));
-        want.freq = buf->frequency ? buf->frequency : 22050;
-        want.format = AUDIO_S16LSB;
-        want.channels = buf->format.nChannels ? buf->format.nChannels : 1;
-        want.samples = 1024;
-        want.callback = sdl_audio_callback;
-        want.userdata = buf;
-
-        buf->device_id = SDL_OpenAudioDevice(nullptr, 0, &want, &have, 0);
-        DSND_LOG("  secondary SDL_OpenAudioDevice: dev=%u want(freq=%d ch=%u fmt=0x%x samp=%u) have(freq=%d ch=%u fmt=0x%x samp=%u)",
-             (unsigned)buf->device_id,
-             want.freq, want.channels, want.format, want.samples,
-             have.freq, have.channels, have.format, have.samples);
+        // A secondary buffer is a VOICE, not an output. It gets no device of
+        // its own — the shared mixer sums it into the one output stream, the
+        // way DirectSound sums voices into the primary buffer.
+        dsound_ensure_device(ds);
+        SDL_LockAudioDevice(ds->device_id);
+        dsound_register_voice(buf);
+        SDL_UnlockAudioDevice(ds->device_id);
+        DSND_LOG("  secondary voice registered: %ux%ubit @%uHz (voices=%d)",
+                 (unsigned)buf->format.nChannels, (unsigned)buf->format.wBitsPerSample,
+                 (unsigned)buf->frequency, g_voice_count);
     }
 
     *ppBuf = reinterpret_cast<IDirectSoundBuffer*>(buf);
@@ -306,16 +506,12 @@ static HRESULT dsound_DuplicateSoundBuffer(LPDIRECTSOUND this_ptr,
     dup->audio_data = orig->audio_data;
     dup->audio_data_shared = 1;
 
-    // Open a new audio device for the duplicate
-    SDL_AudioSpec want, have;
-    SDL_memset(&want, 0, sizeof(want));
-    want.freq = dup->frequency ? dup->frequency : 22050;
-    want.format = AUDIO_S16LSB;
-    want.channels = dup->format.nChannels ? dup->format.nChannels : 1;
-    want.samples = 1024;
-    want.callback = sdl_audio_callback;
-    want.userdata = dup;
-    dup->device_id = SDL_OpenAudioDevice(nullptr, 0, &want, &have, 0);
+    dup->sdl_format = sdl_format_for(dup->format);
+    // Like the original, the duplicate is a voice on the shared mixer.
+    dsound_ensure_device(orig->dsound);
+    SDL_LockAudioDevice(orig->dsound ? orig->dsound->device_id : 0);
+    dsound_register_voice(dup);
+    SDL_UnlockAudioDevice(orig->dsound ? orig->dsound->device_id : 0);
 
     *ppDuplicate = reinterpret_cast<IDirectSoundBuffer*>(dup);
     return DS_OK;
@@ -379,6 +575,9 @@ static HRESULT dsbuf_QueryInterface(IDirectSoundBuffer* this_ptr, void* riid, vo
         lst->params.flDistanceFactor = 1.0f;
         lst->params.flRolloffFactor = 1.0f;
         lst->params.flDopplerFactor = 1.0f;
+        // There is one listener; remember it so the mixer can read its position
+        // and rolloff when attenuating 3D buffers.
+        g_ds3d_listener = lst;
         *ppv = lst;
         return DS_OK;
     }
@@ -391,6 +590,11 @@ static HRESULT dsbuf_QueryInterface(IDirectSoundBuffer* this_ptr, void* riid, vo
     d3d->params.dwSize = sizeof(DS3DBUFFER);
     d3d->params.flMinDistance = 1.0f;
     d3d->params.flMaxDistance = 1000000000.0f;
+    // Wire both directions so the mixer can find these parameters. Without this
+    // the 3D interface is write-only and every positional sound plays at full
+    // volume — see ds3d_distance_gain().
+    d3d->parent = buf;
+    if (buf != nullptr) buf->d3d = d3d;
     *ppv = d3d;
     return DS_OK;
 }
@@ -403,7 +607,12 @@ static ULONG dsbuf_AddRef(IDirectSoundBuffer* this_ptr) {
 static ULONG dsbuf_Release(IDirectSoundBuffer* this_ptr) {
     DSoundBuffer_ShimData* buf = reinterpret_cast<DSoundBuffer_ShimData*>(this_ptr);
     if (--buf->ref_count == 0) {
-        if (buf->device_id) SDL_CloseAudioDevice(buf->device_id);
+        // Take it off the mixer before freeing, under the audio lock so the
+        // callback cannot be walking the registry at the same time.
+        SDL_AudioDeviceID dev = buf->dsound ? buf->dsound->device_id : 0;
+        SDL_LockAudioDevice(dev);
+        dsound_unregister_voice(buf);
+        SDL_UnlockAudioDevice(dev);
         if (!buf->audio_data_shared) free(buf->audio_data);
         free(buf);
         return 0;
@@ -514,11 +723,15 @@ static HRESULT dsbuf_Play(LPDIRECTSOUNDBUFFER this_ptr, DWORD dwReserved1,
     DSoundBuffer_ShimData* buf = reinterpret_cast<DSoundBuffer_ShimData*>(this_ptr);
     buf->is_playing = 1;
     buf->is_looping = (dwFlags & DSBPLAY_LOOPING) ? 1 : 0;
-    DSND_LOG("Play: dev=%u size=%u pc=%u flags=0x%x looping=%d primary=%d shared=%d",
-         (unsigned)buf->device_id, (unsigned)buf->buffer_size, (unsigned)buf->play_cursor,
+    buf->play_pos_frames = 0.0;
+    DSND_LOG("Play: size=%u pc=%u flags=0x%x looping=%d primary=%d shared=%d",
+         (unsigned)buf->buffer_size, (unsigned)buf->play_cursor,
          (unsigned)dwFlags, buf->is_looping, buf->is_primary, buf->audio_data_shared);
-    if (buf->device_id) {
-        SDL_PauseAudioDevice(buf->device_id, 0);
+    // The shared mixer picks this voice up on its next callback; there is no
+    // per-buffer device to unpause. Just make sure the output is running.
+    if (buf->dsound) {
+        dsound_ensure_device(buf->dsound);
+        if (buf->dsound->device_id) SDL_PauseAudioDevice(buf->dsound->device_id, 0);
     }
     return DS_OK;
 }
@@ -548,6 +761,9 @@ static HRESULT dsbuf_SetFormat(LPDIRECTSOUNDBUFFER this_ptr, LPCWAVEFORMATEX pcf
 
 static HRESULT dsbuf_SetVolume(LPDIRECTSOUNDBUFFER this_ptr, long lVolume) {
     DSoundBuffer_ShimData* buf = reinterpret_cast<DSoundBuffer_ShimData*>(this_ptr);
+    DSND_LOG_RL(8, 100, "SetVolume buf=%p %ld -> %ld (linear %.3f)",
+                (void*)buf, buf->volume, lVolume,
+                (double)(lVolume < 0 ? powf(10.0f, lVolume / 2000.0f) : 1.0f));
     buf->volume = lVolume;
     return DS_OK;
 }
@@ -567,10 +783,8 @@ static HRESULT dsbuf_SetFrequency(LPDIRECTSOUNDBUFFER this_ptr, DWORD dwFrequenc
 
 static HRESULT dsbuf_Stop(LPDIRECTSOUNDBUFFER this_ptr) {
     DSoundBuffer_ShimData* buf = reinterpret_cast<DSoundBuffer_ShimData*>(this_ptr);
+    // Stopping a voice must not stop the output — other voices are still on it.
     buf->is_playing = 0;
-    if (buf->device_id) {
-        SDL_PauseAudioDevice(buf->device_id, 1);
-    }
     return DS_OK;
 }
 

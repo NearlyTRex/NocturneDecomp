@@ -6,9 +6,8 @@
 //
 // An addition, not a reconstruction. The original was DirectDraw exclusive
 // fullscreen only: it asks for DDSCL_FULLSCREEN and has no concept of a window
-// mode, so there is nothing here to be faithful to. The ddraw shim used to strip
-// that flag unconditionally ("force windowed mode for debugging"); this replaces
-// the hardcoded strip with a setting.
+// mode, so there is nothing here to be faithful to. The ddraw shim strips that
+// flag and consults this setting instead.
 //
 // Persistence rides on the game's own INI rather than a side file. The engine's
 // CIni::writeProfileString is a read-modify-write — it streams the existing file

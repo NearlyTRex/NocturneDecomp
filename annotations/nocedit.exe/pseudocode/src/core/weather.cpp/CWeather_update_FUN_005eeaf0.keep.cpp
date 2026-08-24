@@ -25,7 +25,7 @@ void __cdecl core_weather_cpp_CWeather_update_FUN_005eeaf0(CWeather *this_ptr)
   float fVar3;
   CEventList *this_ptr_00;
   float fVar2;
-  
+
   fVar4 = g_CGamePtr->delta_time_float;
   if (this_ptr->lightning_active != 0) {
     fVar6 = this_ptr->flash_timer - fVar4;
@@ -125,7 +125,7 @@ LAB_005eeb1c:
       fVar5 = (float10)1;
       fVar7 = (float10)1.4426950408889634 *
               ((float10)fVar4 * (float10)0.10000000000000001 +
-              (float10)0.6931471805599453 * (float10)this_ptr->max_flash_interval);
+              (float10)log((double)this_ptr->max_flash_interval));
       fVar8 = (float10)f2xm1(fVar7 - (fVar7 / fVar5) * fVar5);
       fVar9 = (float10)fscale(fVar8 + fVar5,fVar7);
       this_ptr->max_flash_interval = (float)fVar9;
