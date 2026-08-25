@@ -49,7 +49,11 @@ void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_00500690(CInventory *thi
   CBitFont *local_18;
   double dVar1;
   byte bVar11;
-  
+#if !NOCTURNE_AUTHENTIC_HUD_SCALE
+  int ui_scale;
+
+  ui_scale = nocturne_ui_scale();
+#endif
   bVar11 = 0;
   if (g_CGamePtr->letterbox_mode != 0) {
     return;
@@ -80,6 +84,13 @@ void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_00500690(CInventory *thi
     local_58 = 0x28;
     local_48 = 8;
   }
+#if !NOCTURNE_AUTHENTIC_HUD_SCALE
+  local_50 = local_50 * ui_scale;
+  local_54 = local_54 * ui_scale;
+  local_58 = local_58 * ui_scale;
+  iVar8 = iVar8 * ui_scale;
+  local_48 = local_48 * ui_scale;
+#endif
   local_68 = 0xffff;
   if (this_ptr->weapon_highlight_timer < 1.0) {
     local_68 = (int)ROUND(ROUND(this_ptr->weapon_highlight_timer * 65535.0f));
@@ -129,7 +140,11 @@ void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_00500690(CInventory *thi
         }
       }
       if (this_ptr_00 != (CAlphaBitmap *)0x0) {
+#if NOCTURNE_AUTHENTIC_HUD_SCALE
         engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(this_ptr_00,iVar10,iVar5,local_68);
+#else
+        nocturne_ui_blit_alpha(this_ptr_00,iVar10,iVar5,local_68,ui_scale);
+#endif
       }
       if ((this_ptr->ammo_detail_timer <= 0.0) || (this_ptr->render_mode_flag != 0)) {
         _sprintf(local_678,"%d",((CWeapon *)this_ptr->selected_weapon)->ammo_count);
@@ -138,8 +153,13 @@ void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_00500690(CInventory *thi
         pcVar13 = core_inv_cpp_getItemDisplayName_FUN_004fcf00(&this_ptr->ammo_ptr->base);
         _sprintf(local_678,"%s %d",pcVar13,((CWeapon *)this_ptr->selected_weapon)->ammo_count);
       }
+#if NOCTURNE_AUTHENTIC_HUD_SCALE
       iVar3 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(local_44,0x58);
       iVar10 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(local_44,local_678);
+#else
+      iVar3 = nocturne_ui_char_height(local_44,0x58,ui_scale);
+      iVar10 = nocturne_ui_text_width(local_44,local_678,ui_scale);
+#endif
       iVar3 = (g_WindowHeight - local_48) - iVar3;
       iVar10 = (g_WindowWidth - local_48) - iVar10;
       pcVar13 = local_678;
@@ -148,14 +168,24 @@ void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_00500690(CInventory *thi
   }
   else {
     _sprintf(local_478,"%d%%",(int)ROUND(ROUND((double)pCVar3->charge_ratio * 100.0)));
+#if NOCTURNE_AUTHENTIC_HUD_SCALE
     iVar3 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(local_44,0x58);
     iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(local_44,local_478);
+#else
+    iVar3 = nocturne_ui_char_height(local_44,0x58,ui_scale);
+    iVar4 = nocturne_ui_text_width(local_44,local_478,ui_scale);
+#endif
     iVar3 = (g_WindowHeight - local_48) - iVar3;
     iVar10 = (g_WindowWidth - local_48) - iVar4;
     pcVar13 = local_478;
 LAB_00500870:
+#if NOCTURNE_AUTHENTIC_HUD_SCALE
     engine_font_cpp_CBitFont_drawText_FUN_004cda80(local_44,pcVar13,iVar10,iVar3,0xf8,0)
     ;
+#else
+    nocturne_ui_draw_text(local_44,pcVar13,iVar10,iVar3,0xf8,0,ui_scale)
+    ;
+#endif
   }
   if (this_ptr->render_mode_flag == 0) goto LAB_005009c0;
   iVar3 = core_inv_cpp_CInventory_isWeaponInCategory_FUN_004ffe70
@@ -186,10 +216,17 @@ LAB_00500870:
 LAB_005008cd:
     _sprintf(local_178,pcVar13,pcVar7,pcVar5);
   }
+#if NOCTURNE_AUTHENTIC_HUD_SCALE
   iVar3 = engine_font_cpp_CBitFont_wrapText_FUN_004d0010
                     (local_44,local_178,g_InventoryWrappedTextLines[0],10,0x100,
                      local_50 - local_58);
   iVar10 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(local_44,0x58);
+#else
+  iVar3 = engine_font_cpp_CBitFont_wrapText_FUN_004d0010
+                    (local_44,local_178,g_InventoryWrappedTextLines[0],10,0x100,
+                     (local_50 - local_58) / ui_scale);
+  iVar10 = nocturne_ui_char_height(local_44,0x58,ui_scale);
+#endif
   iVar5 = g_WindowWidth - local_50;
   iVar11 = (g_WindowHeight - local_54) + local_48;
   iVar9 = 0;
@@ -197,8 +234,12 @@ LAB_005008cd:
     pacVar12 = g_InventoryWrappedTextLines;
     do {
       iVar9 = iVar9 + 1;
+#if NOCTURNE_AUTHENTIC_HUD_SCALE
       engine_font_cpp_CBitFont_drawText_FUN_004cda80
                 (local_44,*pacVar12,local_48 + iVar5,iVar11,0xf8,0);
+#else
+      nocturne_ui_draw_text(local_44,*pacVar12,local_48 + iVar5,iVar11,0xf8,0,ui_scale);
+#endif
       pacVar12 = pacVar12 + 1;
       iVar11 = iVar11 + iVar10;
     } while (iVar9 < iVar3);
@@ -215,17 +256,30 @@ LAB_005009c0:
       local_5c = 0x28;
       local_4c = 8;
     }
+#if !NOCTURNE_AUTHENTIC_HUD_SCALE
+    iVar3 = iVar3 * ui_scale;
+    iVar10 = iVar10 * ui_scale;
+    local_5c = local_5c * ui_scale;
+    local_4c = local_4c * ui_scale;
+#endif
     pCVar7 = (CHealthItem *)
              core_actor_cpp_castToClassHash_FUN_0040c790
                        (this_ptr->selected_item,g_CHealthItemClassInfo.name_hash);
     if (pCVar7 != (CHealthItem *)0x0) {
       _sprintf
                 (local_378,"%d x%3.0f%%",pCVar7->use_count,(double)pCVar7->hp_restored);
+#if NOCTURNE_AUTHENTIC_HUD_SCALE
       iVar5 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(local_44,0x58);
       iVar7 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(local_44,local_378);
       engine_font_cpp_CBitFont_drawText_FUN_004cda80
                 (local_44,local_378,(g_WindowWidth - local_4c) - iVar7,
                  (g_WindowHeight - local_4c) - iVar5,0xf8,0);
+#else
+      iVar5 = nocturne_ui_char_height(local_44,0x58,ui_scale);
+      iVar7 = nocturne_ui_text_width(local_44,local_378,ui_scale);
+      nocturne_ui_draw_text(local_44,local_378,(g_WindowWidth - local_4c) - iVar7,
+                 (g_WindowHeight - local_4c) - iVar5,0xf8,0,ui_scale);
+#endif
     }
     pCVar6 = (CFilmReel *)
              core_actor_cpp_castToClassHash_FUN_0040c790
@@ -233,20 +287,34 @@ LAB_005009c0:
     if (pCVar6 != (CFilmReel *)0x0) {
       pcVar13 = core_inv_cpp_getItemDisplayName_FUN_004fcf00((CDemonActor *)pCVar6);
       _sprintf(local_278,"%s",pcVar13);
+#if NOCTURNE_AUTHENTIC_HUD_SCALE
       iVar5 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(local_44,0x58);
       iVar11 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(local_44,local_278);
       engine_font_cpp_CBitFont_drawText_FUN_004cda80
                 (local_44,local_278,(g_WindowWidth - local_4c) - iVar11,
                  (g_WindowHeight - local_4c) - iVar5,0xf8,0);
+#else
+      iVar5 = nocturne_ui_char_height(local_44,0x58,ui_scale);
+      iVar11 = nocturne_ui_text_width(local_44,local_278,ui_scale);
+      nocturne_ui_draw_text(local_44,local_278,(g_WindowWidth - local_4c) - iVar11,
+                 (g_WindowHeight - local_4c) - iVar5,0xf8,0,ui_scale);
+#endif
     }
     if (this_ptr->render_mode_flag != 0) {
       pcVar7 = core_inv_cpp_getItemIconName_FUN_004fcf70(this_ptr->selected_item);
       pcVar13 = core_inv_cpp_getItemDisplayName_FUN_004fcf00(this_ptr->selected_item);
       _sprintf(local_578,"%s\n\n%s",pcVar13,pcVar7);
+#if NOCTURNE_AUTHENTIC_HUD_SCALE
       iVar5 = engine_font_cpp_CBitFont_wrapText_FUN_004d0010
                         (local_44,local_578,g_InventoryWrappedTextLines2[0],10,0x100,
                          iVar3 - local_5c);
       iVar11 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(local_44,0x58);
+#else
+      iVar5 = engine_font_cpp_CBitFont_wrapText_FUN_004d0010
+                        (local_44,local_578,g_InventoryWrappedTextLines2[0],10,0x100,
+                         (iVar3 - local_5c) / ui_scale);
+      iVar11 = nocturne_ui_char_height(local_44,0x58,ui_scale);
+#endif
       y = (g_WindowHeight - iVar10) + local_4c;
       iVar3 = g_WindowWidth - iVar3;
       iVar10 = 0;
@@ -254,8 +322,12 @@ LAB_005009c0:
         pacVar12 = g_InventoryWrappedTextLines2;
         do {
           iVar10 = iVar10 + 1;
+#if NOCTURNE_AUTHENTIC_HUD_SCALE
           engine_font_cpp_CBitFont_drawText_FUN_004cda80
                     (local_44,*pacVar12,local_4c + iVar3,y,0xf8,0);
+#else
+          nocturne_ui_draw_text(local_44,*pacVar12,local_4c + iVar3,y,0xf8,0,ui_scale);
+#endif
           pacVar12 = pacVar12 + 1;
           y = y + iVar11;
         } while (iVar10 < iVar5);
@@ -264,6 +336,7 @@ LAB_005009c0:
   }
   iVar3 = g_WindowHeight;
   if ((g_CGamePtr->flashlight_active != 0) || (g_CGamePtr->goggles_active != 0)) {
+#if NOCTURNE_AUTHENTIC_HUD_SCALE
     iVar10 = g_WindowHeight + -6;
     engine_2d_c_fillRectColor_FUN_00403170
               (6,(int)ROUND(ROUND((float)iVar10 +
@@ -272,6 +345,16 @@ LAB_005009c0:
     ;
     engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950
               (&g_BatteryIconBitmap,4,iVar3 + -0x24,0xffff);
+#else
+    iVar10 = g_WindowHeight + -6 * ui_scale;
+    engine_2d_c_fillRectColor_FUN_00403170
+              (6 * ui_scale,(int)ROUND(ROUND((float)iVar10 +
+                                  (float)((g_WindowHeight + -0x21 * ui_scale) - iVar10) *
+                                  this_ptr->battery_charge * (float)0.01)),0x10 * ui_scale,iVar10,2)
+    ;
+    nocturne_ui_blit_alpha(&g_BatteryIconBitmap,4 * ui_scale,iVar3 + -0x24 * ui_scale,0xffff,
+                           ui_scale);
+#endif
   }
   if ((0.0 < this_ptr->item_highlight_timer) || (0.0 < this_ptr->inventory_display_timer)) {
     local_67c = this_ptr->inventory_display_timer;
@@ -295,12 +378,21 @@ LAB_005009c0:
       iVar3 = 0x1f;
       iVar10 = 0xd;
     }
+#if NOCTURNE_AUTHENTIC_HUD_SCALE
     iVar11 = (g_WindowWidth + -4) - iVar10;
     iVar5 = (int)ROUND(ROUND((float)iVar3 - (float)iVar3 * local_680));
     engine_alphabit_cpp_CAlphaBitmap_render_FUN_00410b00
               (&g_HealthBar1Bitmap,iVar11,iVar5 + 4,0,iVar5,iVar10 + -1,iVar3,local_64 / 2);
     engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(&g_HealthBar2Bitmap,iVar11,4,local_64 / 2)
     ;
+#else
+    iVar11 = (g_WindowWidth + -4 * ui_scale) - iVar10 * ui_scale;
+    iVar5 = (int)ROUND(ROUND((float)iVar3 - (float)iVar3 * local_680));
+    nocturne_ui_blit_alpha_rect
+              (&g_HealthBar1Bitmap,iVar11,(iVar5 + 4) * ui_scale,0,iVar5,iVar10 + -1,iVar3,
+               local_64 / 2,ui_scale);
+    nocturne_ui_blit_alpha(&g_HealthBar2Bitmap,iVar11,4 * ui_scale,local_64 / 2,ui_scale);
+#endif
   }
   dVar1 = (double)this_ptr->message_display_timer;
   if (0.0 < dVar1) {
@@ -315,16 +407,28 @@ LAB_005009c0:
       iVar3 = g_InventoryHeight / 2;
       local_18 = g_MicroFont;
     }
+#if NOCTURNE_AUTHENTIC_HUD_SCALE
     iVar3 = engine_font_cpp_CBitFont_wrapText_FUN_004d0010
                       (local_18,this_ptr->message_text,g_InventoryWrappedTextLines3[0],10,0x100,
                        (g_WindowWidth - iVar3) + -4);
     iVar10 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(local_18,0x58);
     iVar5 = (g_WindowHeight + -4) - iVar10 * iVar3;
+#else
+    iVar3 = engine_font_cpp_CBitFont_wrapText_FUN_004d0010
+                      (local_18,this_ptr->message_text,g_InventoryWrappedTextLines3[0],10,0x100,
+                       ((g_WindowWidth - iVar3) + -4 * ui_scale) / ui_scale);
+    iVar10 = nocturne_ui_char_height(local_18,0x58,ui_scale);
+    iVar5 = (g_WindowHeight + -4 * ui_scale) - iVar10 * iVar3;
+#endif
     if (((g_MicroFont != local_18) || (g_MessageCount == 0)) && (iVar11 = 0, 0 < iVar3)) {
       pacVar12 = g_InventoryWrappedTextLines3;
       do {
         iVar11 = iVar11 + 1;
+#if NOCTURNE_AUTHENTIC_HUD_SCALE
         engine_font_cpp_CBitFont_drawText_FUN_004cda80(local_18,*pacVar12,4,iVar5,0xf8,0);
+#else
+        nocturne_ui_draw_text(local_18,*pacVar12,4 * ui_scale,iVar5,0xf8,0,ui_scale);
+#endif
         pacVar12 = pacVar12 + 1;
         iVar5 = iVar5 + iVar10;
       } while (iVar11 < iVar3);

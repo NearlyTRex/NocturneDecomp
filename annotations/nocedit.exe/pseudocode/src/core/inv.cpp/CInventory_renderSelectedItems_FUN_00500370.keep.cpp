@@ -24,7 +24,16 @@ void __cdecl core_inv_cpp_CInventory_renderSelectedItems_FUN_00500370(CInventory
   int iVar11;
   int local_1c;
   int local_18;
-  
+  int icon_w;
+  int icon_h;
+
+#if NOCTURNE_AUTHENTIC_HUD_ICON_SPACE
+  icon_w = g_WindowWidth;
+  icon_h = g_WindowHeight;
+#else
+  icon_w = g_CDemonCameraInstance.framebuffer_width;
+  icon_h = g_CDemonCameraInstance.framebuffer_height;
+#endif
   if ((g_CGamePtr->letterbox_mode == 0) &&
      ((CHero *)this_ptr->owner == g_HeroActors[g_LocalHeroIndex])) {
     if (g_WindowHeight != g_InventoryScreenHeight) {
@@ -41,8 +50,8 @@ void __cdecl core_inv_cpp_CInventory_renderSelectedItems_FUN_00500370(CInventory
         iVar7 = 0x28;
         iVar1 = 4;
       }
-      iVar5 = g_WindowWidth - iVar7;
-      iVar6 = g_WindowHeight - iVar7;
+      iVar5 = icon_w - iVar7;
+      iVar6 = icon_h - iVar7;
       local_1c = 0xffff;
       if (this_ptr->weapon_highlight_timer < 1.0) {
         local_1c = (int)ROUND(ROUND(this_ptr->weapon_highlight_timer * 65535.0f));
@@ -50,13 +59,11 @@ void __cdecl core_inv_cpp_CInventory_renderSelectedItems_FUN_00500370(CInventory
       iVar2 = (local_1c * 2) / 3;
       if (this_ptr->render_mode_flag == 0) {
         core_inv_cpp_drawWeaponIconBackground_FUN_00500050
-                  (g_WindowWidth - iVar10,g_WindowHeight - iVar10,g_WindowWidth + -1,
-                   g_WindowHeight + -1,iVar2);
+                  (icon_w - iVar10,icon_h - iVar10,icon_w + -1,icon_h + -1,iVar2);
       }
       else {
         core_inv_cpp_drawItemIconBackground_FUN_005001e0
-                  (g_WindowWidth - iVar11,g_WindowHeight - iVar10,g_WindowWidth + -1,
-                   g_WindowHeight + -1,iVar2);
+                  (icon_w - iVar11,icon_h - iVar10,icon_w + -1,icon_h + -1,iVar2);
       }
       core_inv_cpp_CInventory_renderItemModel_FUN_004fee00
                 (this_ptr,&this_ptr->selected_weapon->base,iVar5 - iVar1,iVar6 - iVar1,iVar7,
@@ -73,8 +80,8 @@ void __cdecl core_inv_cpp_CInventory_renderSelectedItems_FUN_00500370(CInventory
         iVar11 = 0x20;
         iVar10 = 8;
       }
-      iVar8 = g_WindowWidth - iVar11;
-      iVar9 = g_WindowHeight - iVar11;
+      iVar8 = icon_w - iVar11;
+      iVar9 = icon_h - iVar11;
       local_18 = 0xffff;
       if (this_ptr->item_highlight_timer < 1.0) {
         local_18 = (int)ROUND(ROUND(this_ptr->item_highlight_timer * 65535.0f));
@@ -82,13 +89,11 @@ void __cdecl core_inv_cpp_CInventory_renderSelectedItems_FUN_00500370(CInventory
       alpha = (local_18 * 2) / 3;
       if (this_ptr->render_mode_flag == 0) {
         core_inv_cpp_drawWeaponIconBackground_FUN_00500050
-                  (g_WindowWidth - iVar4,g_WindowHeight - iVar4,g_WindowWidth + -1,
-                   g_WindowHeight + -1,alpha);
+                  (icon_w - iVar4,icon_h - iVar4,icon_w + -1,icon_h + -1,alpha);
       }
       else {
         core_inv_cpp_drawItemIconBackground_FUN_005001e0
-                  (g_WindowWidth - iVar3,g_WindowHeight - iVar4,g_WindowWidth + -1,
-                   g_WindowHeight + -1,alpha);
+                  (icon_w - iVar3,icon_h - iVar4,icon_w + -1,icon_h + -1,alpha);
       }
       core_inv_cpp_CInventory_renderItemModel_FUN_004fee00
                 (this_ptr,this_ptr->selected_item,iVar8 - iVar10,iVar9 - iVar10,iVar11,0.0,local_18)

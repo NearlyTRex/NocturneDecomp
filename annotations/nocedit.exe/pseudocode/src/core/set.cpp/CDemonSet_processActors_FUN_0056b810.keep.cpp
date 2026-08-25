@@ -21,7 +21,6 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet *this_p
   CFlameCan *this_ptr_04;
   int iVar9;
   SDamageInfo local_a0;
-  CVector3f aCStack_94 [3];
   CVector3f orient_snapshot;
   CVector3f CStack_58;
   float fStack_48;
@@ -34,11 +33,10 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet *this_p
   int local_20;
   int local_1c;
   int iStack_18;
-  CPathMap *damage_info;
   float fDeltaTime;
   CDemonActor *pCVar3;
   CCharacter *local_34;
-  
+
   for (iVar9 = 0; iVar9 < this_ptr->actor_count; iVar9 = iVar9 + 1) {
     core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
               (this_ptr->actors[iVar9],"..\\core\\set.cpp",1427);
@@ -87,13 +85,11 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet *this_p
                 if (g_CGamePtr->profile_mode != 0) {
                   local_20 = local_20 + 1;
                 }
-                damage_info = (CPathMap *)0x56ba31;
                 this_ptr_00 = (*((g_CurrentProcessingActor->vtable)._ub)->getPathMap)
                                         (g_CurrentProcessingActor);
                 if (this_ptr_00 != (CPathMap *)0x0) {
                   core_path_cpp_CPathMap_updateIfNeeded_FUN_00546a60
                             (this_ptr_00,&(g_CurrentProcessingActor->location).position,0);
-                  damage_info = this_ptr_00;
                 }
                 if ((orient_snapshot.x == (g_CurrentProcessingActor->orient).vec.x) &&
                     (orient_snapshot.y == (g_CurrentProcessingActor->orient).vec.y) &&
@@ -126,19 +122,16 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet *this_p
         if ((this_ptr_01 != (CCharacter *)0x0) &&
            (fVar5 = (float)(*(((this_ptr_01->base).vtable._uc)->_uc).getDeathState)(this_ptr_01),
            fVar5 == 0.0)) {
-          damage_info = (CPathMap *)&fStack_48;
           fStack_48 = fVar5;
           iVar3 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_004c8c90
                             (g_CFireEffectPtr,&(this_ptr_01->base).location.position,0.0,&CStack_58,
-                             (float *)damage_info);
+                             &fStack_48);
           if (iVar3 != 0) {
-            core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&local_a0);
-            if (aCStack_94 != &CStack_58) {
-              aCStack_94[0] = CStack_58;
-            }
-            damage_info = (CPathMap *)&local_a0;
-            (*(((this_ptr_01->base).vtable._uc)->_uc).processDamage)
-                      (this_ptr_01,(SDamageInfo *)damage_info);
+            core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_a0);
+            local_a0.damage_amount = fStack_48;
+            local_a0.damage_type = DAMAGE_TYPE_SHATTER;
+            local_a0.impact_point = CStack_58;
+            (*(((this_ptr_01->base).vtable._uc)->_uc).processDamage)(this_ptr_01,&local_a0);
           }
         }
         this_ptr_02 = (CGlass *)

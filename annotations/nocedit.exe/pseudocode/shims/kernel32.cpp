@@ -23,12 +23,14 @@
 #include <pthread.h>
 #include <sys/mman.h>
 #include <sys/stat.h>
+#include <sys/sysinfo.h>
 #include <sys/types.h>
 #include <dirent.h>
 #include <errno.h>
 #include <fcntl.h>
 #include <fnmatch.h>
 #include <glob.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
@@ -967,16 +969,79 @@ static BOOL shim_GlobalUnlock(HGLOBAL hMem) {
     return 1;
 }
 
+// Every MEMORYSTATUS field is capped at INT_MAX, because the game copies
+// dwTotalPhys and dwAvailPageFile into `int` globals (g_TotalPhysicalMemory /
+// g_AvailableSwapSpace) and then, in initializeGameSystems, compares them
+// SIGNED against 60 MB and 200 MB to decide whether to raise the "Nocturne
+// requires at least 64MB of system RAM" warning. A value past INT_MAX arrives
+// negative, trips both checks, and prints a negative megabyte figure — which
+// is exactly how this warning misfires on modern Windows, where the same
+// 32-bit-era API is documented to report -1 above 4 GB. Saturating keeps the
+// value positive and comfortably over both thresholds.
+static SIZE_T mem_status_clamp(unsigned long long bytes) {
+    const unsigned long long cap = 0x7FFFFFFFull;
+    return (SIZE_T)(bytes > cap ? cap : bytes);
+}
+
+// Linux counts reclaimable page cache as used, so sysinfo's freeram badly
+// understates what a process can actually obtain — on a normally-warm machine
+// it can sit under the 200 MB the swap warning tests against while gigabytes
+// are in fact available. MemAvailable is the kernel's own estimate of that and
+// is the honest number to judge those thresholds by. Returns 0 if unreadable.
+static unsigned long long mem_status_available_bytes(void) {
+    FILE* f = fopen("/proc/meminfo", "r");
+    if (!f) return 0;
+    char line[256];
+    unsigned long long kb = 0;
+    while (fgets(line, sizeof(line), f)) {
+        if (strncmp(line, "MemAvailable:", 13) == 0) {
+            if (sscanf(line + 13, "%llu", &kb) != 1) kb = 0;
+            break;
+        }
+    }
+    fclose(f);
+    return kb * 1024ull;
+}
+
 static void shim_GlobalMemoryStatus(LPMEMORYSTATUS lpBuffer) {
     if (!lpBuffer) return;
     memset(lpBuffer, 0, sizeof(_MEMORYSTATUS));
     lpBuffer->dwLength = sizeof(_MEMORYSTATUS);
-    lpBuffer->dwTotalPhys = 256 * 1024 * 1024;  // 256 MB
-    lpBuffer->dwAvailPhys = 128 * 1024 * 1024;
-    lpBuffer->dwTotalPageFile = 512 * 1024 * 1024;  // 512 MB
-    lpBuffer->dwAvailPageFile = 512 * 1024 * 1024;  // 512 MB
+
+    unsigned long long total_phys, avail_phys, total_commit, avail_commit;
+    struct sysinfo si;
+    if (sysinfo(&si) == 0) {
+        const unsigned long long unit = si.mem_unit ? si.mem_unit : 1;
+        total_phys = (unsigned long long)si.totalram * unit;
+        avail_phys = mem_status_available_bytes();
+        if (avail_phys == 0) {
+            avail_phys = ((unsigned long long)si.freeram +
+                          (unsigned long long)si.bufferram) * unit;
+        }
+        // The page-file fields are Windows' commit limit and remaining commit,
+        // which span RAM plus backing store — not the swap device alone. Match
+        // that: a swapless host would otherwise report a 0-byte page file and
+        // trip the "runs best with at least 200MB free" warning on every start.
+        total_commit = total_phys + (unsigned long long)si.totalswap * unit;
+        avail_commit = avail_phys + (unsigned long long)si.freeswap * unit;
+    } else {
+        // The fixed figures this shim used to report unconditionally.
+        total_phys   = 256ull * 1024 * 1024;
+        avail_phys   = 128ull * 1024 * 1024;
+        total_commit = 512ull * 1024 * 1024;
+        avail_commit = 512ull * 1024 * 1024;
+    }
+
+    lpBuffer->dwTotalPhys     = mem_status_clamp(total_phys);
+    lpBuffer->dwAvailPhys     = mem_status_clamp(avail_phys);
+    lpBuffer->dwTotalPageFile = mem_status_clamp(total_commit);
+    lpBuffer->dwAvailPageFile = mem_status_clamp(avail_commit);
+    // Address space, not memory: the 2 GB user half of a 32-bit process.
     lpBuffer->dwTotalVirtual = 0x7FFFFFFF;
     lpBuffer->dwAvailVirtual = 0x7FFFFFFF;
+    lpBuffer->dwMemoryLoad = (total_phys != 0 && avail_phys < total_phys)
+        ? (DWORD)(((total_phys - avail_phys) * 100) / total_phys)
+        : 0;
 }
 
 // =============================================================================

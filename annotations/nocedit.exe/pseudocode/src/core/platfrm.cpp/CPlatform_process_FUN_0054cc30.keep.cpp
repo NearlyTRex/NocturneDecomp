@@ -53,7 +53,7 @@ void __cdecl core_platfrm_cpp_CPlatform_process_FUN_0054cc30(CPlatform *this_ptr
   int iStack_20;
   float fStack_1c;
   CVector3f *pCStack_18;
-  
+
   if (1 < this_ptr->one_shot) {
     return;
   }
@@ -152,11 +152,10 @@ LAB_0054d090:
   }
   if (this_ptr->render_in_background_when_not_moving_flag != 0) {
     if (bVar12) {
-      pcVar8 = local_324;
-      name = pcVar8;
       strcpy(local_324,this_ptr->camera_while_moving);
-joined_r0x0054cd19:
-      if (local_324[0] != '\0') {
+      pcVar8 = local_324;
+      name = local_324;
+      while (*pcVar8 != '\0') {
         if (*pcVar8 == ';') {
           *pcVar8 = '\0';
           iVar3 = core_set_cpp_CDemonSet_findCameraByName_FUN_0056b790(g_CDemonSetPtr,name);
@@ -165,15 +164,11 @@ joined_r0x0054cd19:
             this_ptr->rendered_in_background = 0;
             goto LAB_0054cd70;
           }
-          pcVar8 = pcVar8 + 1;
-          local_324[0] = *pcVar8;
           name = pcVar8;
         }
         else {
           pcVar8 = pcVar8 + 1;
-          local_324[0] = *pcVar8;
         }
-        goto joined_r0x0054cd19;
       }
 LAB_0054cd70:
       iVar3 = core_set_cpp_CDemonSet_findCameraByName_FUN_0056b790(g_CDemonSetPtr,name);

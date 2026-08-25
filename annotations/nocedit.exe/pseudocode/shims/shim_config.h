@@ -228,6 +228,24 @@
 #define NOCTURNE_MENU_APPLIES_RESOLUTION 1
 #endif
 
+// NOCTURNE_AUTHENTIC_RESOLUTION_STEP
+//   The Graphics Options resolution selector steps DOWN through a chain of
+//   game_pixy comparisons: 1024x768 -> 800x600 -> 640x480 -> 512x384 ->
+//   320x240, then wraps to the largest mode the card's video memory allows.
+//   That chain has no case for 1280x1024 (pixy 0x400), so from there left
+//   falls through to the chain's default and snaps straight to 320x240 — and
+//   since the wrap at 320x240 goes back to 1280x1024, the top of the list is a
+//   two-entry loop with 1024x768 and 800x600 unreachable going left. The
+//   step-UP chain is complete; only left is affected. Both shipped binaries do
+//   this (nocedit.exe: the CMP EDI,0x300 / JNZ default at 0051151b).
+//   1: shipped behaviour — left at 1280x1024 jumps to 320x240.
+//   0: left at 1280x1024 steps to 1024x768, like every other entry.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_RESOLUTION_STEP=1.
+#ifndef NOCTURNE_AUTHENTIC_RESOLUTION_STEP
+#define NOCTURNE_AUTHENTIC_RESOLUTION_STEP 0
+#endif
+
 // Window mode (nocturne_window_mode_*) — declared here so decompiled TUs
 // reach it through nocturne.h.
 #include "window_mode.h"
@@ -235,6 +253,75 @@
 // Attract-mode session state (nocturne_attract_*) — declared here so decompiled
 // TUs reach it through nocturne.h, same as the registry queries below.
 #include "attract.h"
+
+// Console scaling (nocturne_console_*) — declared here so CConsole::render
+// reaches it through nocturne.h. Inert under NOCTURNE_AUTHENTIC_CONSOLE.
+#include "console_scale.h"
+
+// NOCTURNE_AUTHENTIC_HUD_SCALE
+//   The in-game HUD is fixed-size 640x480 pixel art — the battery and health
+//   bitmaps, the ammo icons, and every string, since CBitFont draws glyph
+//   bitmaps and the scalable OS-font path only exists when msglist.txt is
+//   present (it is not in the shipped POD). The engine scales the HUD DOWN
+//   below 384 lines and does nothing above 480, so at 1024x768 and up it
+//   shrinks into the corner.
+//   1: shipped behaviour — HUD elements are always one screen pixel per art
+//      pixel, however large the framebuffer is.
+//   0: HUD bitmaps and text are blitted at an integer scale chosen from the
+//      framebuffer height (1 at 480 and 600, 2 at 768 through 1080, ...), so
+//      they keep the size relative to the screen that they had at 640x480.
+//      Exact at scale 1, so 640x480 is unchanged.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_HUD_SCALE=1.
+#ifndef NOCTURNE_AUTHENTIC_HUD_SCALE
+#define NOCTURNE_AUTHENTIC_HUD_SCALE 0
+#endif
+
+// HUD scaling (nocturne_ui_*) — declared here so the HUD TUs reach it through
+// nocturne.h.
+#include "ui_scale.h"
+
+// NOCTURNE_AUTHENTIC_HUD_ICON_SPACE
+//   The inventory's weapon/item icons are 3D geometry, and above 480 lines the
+//   renderer runs in a 640x480 virtual space: CDemonCamera::init clamps the
+//   camera framebuffer to 640x480, tridx7 draws into a hardcoded 640x480 hold
+//   buffer (SYSTEM/RENDER.INI [Graphics] useHoldBuffer=1, read only when the
+//   screen is taller than 480) and stretch-Blts it to the back buffer, while
+//   buildTLVertex multiplies every submitted vertex by screenW/640 x
+//   screenH/480 to match. CInventory::renderSelectedItems positions the icon
+//   panel and the model viewport in NATIVE window pixels, so at 1280x1024 the
+//   panel is submitted at x=1088..1279, doubled to 2176..2558, and lands off
+//   the screen entirely. Fine at 640x480, where the two spaces coincide.
+//   1: shipped behaviour — the weapon/item icons are invisible above 640x480.
+//   0: the icons are positioned against the camera framebuffer, i.e. the same
+//      virtual space the renderer expects. The stretch then scales them with
+//      the screen, so they need no HUD scale of their own.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_HUD_ICON_SPACE=1.
+#ifndef NOCTURNE_AUTHENTIC_HUD_ICON_SPACE
+#define NOCTURNE_AUTHENTIC_HUD_ICON_SPACE 0
+#endif
+
+// NOCTURNE_AUTHENTIC_ACTOR_DELETE
+//   Nothing in the engine tells a holder that an actor is going away.
+//   CDemonActor::dtor poisons validation_magic and swaps the vtable pointer
+//   back to the base class *in place*, then frees the block — a design that
+//   only works while the freed bytes stay readable, as they did under Watcom's
+//   allocator: a stale pointer still found a valid vtable and dispatched
+//   harmlessly to the base-class method. Under a real allocator (and certainly
+//   under ASan) that same read is a use-after-free. Seen as CStranger::weapon
+//   still pointing at a CCrossbow that the mission delete queue destroyed
+//   earlier in the same frame, crashing in CStranger::renderOpaque.
+//   1: shipped behaviour — deleting an actor leaves every reference to it
+//      dangling and relies on the freed memory still being intact.
+//   0: deleteActor first clears the references the heroes hold to that actor
+//      (weapon in hand, both carry hands, the selected weapon/item), so the
+//      pointer is gone before the memory is.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_ACTOR_DELETE=1.
+#ifndef NOCTURNE_AUTHENTIC_ACTOR_DELETE
+#define NOCTURNE_AUTHENTIC_ACTOR_DELETE 0
+#endif
 
 // NOCTURNE_AUTHENTIC_NETPLAY
 //   1: matches the shipped binary — netplay is unreachable from any menu.

@@ -181,6 +181,20 @@ static float ds3d_distance_gain(const DSoundBuffer_ShimData* buf) {
 
     float dist = sqrtf(dx * dx + dy * dy + dz * dz) * distance_factor;
 
+    // A NaN coordinate at either end, or a NaN rolloff, would sail through
+    // everything below: NaN compares false against everything, so both the
+    // distance clamps and the gain clamps become no-ops and the NaN comes back
+    // as the gain.
+    if (dist != dist || rolloff != rolloff) {
+        DSND_LOG_RL(4, 500,
+                    "3D state is NaN, ignoring attenuation: src=(%g,%g,%g) "
+                    "listener=(%g,%g,%g) distfac=%g rolloff=%g mode=%u",
+                    d3d->params.vPosition.x, d3d->params.vPosition.y,
+                    d3d->params.vPosition.z, lx, ly, lz,
+                    distance_factor, rolloff, d3d->params.dwMode);
+        return 1.0f;
+    }
+
     const float dmin = (d3d->params.flMinDistance > 0.0f) ? d3d->params.flMinDistance : 1.0f;
     const float dmax = (d3d->params.flMaxDistance > dmin) ? d3d->params.flMaxDistance : dmin;
     if (dist < dmin) dist = dmin;
@@ -613,6 +627,9 @@ static ULONG dsbuf_Release(IDirectSoundBuffer* this_ptr) {
         SDL_LockAudioDevice(dev);
         dsound_unregister_voice(buf);
         SDL_UnlockAudioDevice(dev);
+        // The 3D interface can outlive the buffer; ds3d_Release dereferences
+        // this back-pointer to clear buf->d3d, so it must not survive the free.
+        if (buf->d3d != nullptr) buf->d3d->parent = nullptr;
         if (!buf->audio_data_shared) free(buf->audio_data);
         free(buf);
         return 0;
@@ -830,7 +847,21 @@ static ULONG ds3d_AddRef(IDirectSound3DBuffer* this_ptr) {
 }
 static ULONG ds3d_Release(IDirectSound3DBuffer* this_ptr) {
     DSound3DBuffer_ShimData* s = reinterpret_cast<DSound3DBuffer_ShimData*>(this_ptr);
-    if (--s->ref_count == 0) { free(s); return 0; }
+    if (--s->ref_count == 0) {
+        // Clear the buffer's back-pointer before freeing. The mixer reads
+        // buf->d3d on every callback (ds3d_distance_gain), so leaving it set
+        // is a use-after-free in the audio thread for any buffer that outlives
+        // its 3D interface. Under the audio lock, as in dsbuf_Release, so the
+        // callback cannot be part-way through reading it.
+        if (s->parent != nullptr) {
+            SDL_AudioDeviceID dev = s->parent->dsound ? s->parent->dsound->device_id : 0;
+            SDL_LockAudioDevice(dev);
+            s->parent->d3d = nullptr;
+            SDL_UnlockAudioDevice(dev);
+        }
+        free(s);
+        return 0;
+    }
     return s->ref_count;
 }
 

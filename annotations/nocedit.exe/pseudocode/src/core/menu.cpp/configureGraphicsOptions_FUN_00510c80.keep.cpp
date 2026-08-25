@@ -354,6 +354,9 @@ LAB_005114dd:
           }
           else {
             if (iVar7 == 600) goto LAB_005111c6;
+#if !NOCTURNE_AUTHENTIC_RESOLUTION_STEP
+            if (iVar7 == 0x400) goto LAB_005114a9;
+#endif
             if (iVar7 != 0x300) goto LAB_005114dd;
             g_CGamePtr->game_pixy = 600;
             pCVar4->game_pixx = 800;
