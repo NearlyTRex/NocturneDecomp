@@ -28,6 +28,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
   int iVar8;
   int iVar14;
   CSfxSample local_62c;
+  char death_message[64];
   char local_3dc [256];
   char local_2dc [256];
   char local_1dc [200];
@@ -64,7 +65,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
   double dVar1;
   double dVar2;
   CHero *pCVar4;
-  
+
   local_40 = 0;
   if (this_ptr->profile_mode != 0) {
     local_44 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
@@ -300,7 +301,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
           sound_sndmain_cpp_CSfxSample_init_FUN_005a8480(&local_62c);
           iVar6 = sound_sndmain_cpp_getSfxSampleInfo_FUN_005a96e0(uVar14,&local_62c);
           if (iVar6 != 0) {
-            engine_2d_c_drawTextXY_FUN_00402130(0,iVar5,(char *)&local_62c);
+            engine_2d_c_drawTextXY_FUN_00402130(0,iVar5,local_62c.sample_info.name);
             iVar5 = iVar5 + 0xb;
           }
         }
@@ -319,13 +320,30 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
       }
       EVar15 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
                          (&g_HeroActors[g_LocalHeroIndex]->base);
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+      if ((g_CNetGamePtr->connection_type == CONNECTION_CLIENT) &&
+         ((g_HeroActors[g_LocalHeroIndex]->base).base.location.area_id < 0)) {
+        EVar15 = DEATH_STATE_DEAD;
+      }
+#endif
       if (EVar15 == DEATH_STATE_DEAD) {
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+        if (g_CNetGamePtr->connection_type == CONNECTION_CLIENT) {
+          pcVar16 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
+                              ("Waiting for the host to bring you into the game.");
+        }
+        else {
+          pcVar16 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
+                              ("You're dead.  Game over.");
+        }
+#else
         pcVar16 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                             ("You're dead.  Game over.");
-        strcpy((char *)&local_62c.taken, pcVar16);
+#endif
+        strcpy(death_message, pcVar16);
         engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0
                   (g_MediumFont,0,g_WindowWidth,g_WindowHeight + g_MediumFont->max_char_height * -2,
-                   (uint)g_ColorCubeLookup[0x7c00],0,(char *)&local_62c.taken);
+                   (uint)g_ColorCubeLookup[0x7c00],0,death_message);
       }
       if (this_ptr->show_customizable_keys != 0) {
         core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(this_ptr);

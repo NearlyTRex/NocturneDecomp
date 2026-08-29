@@ -16,12 +16,11 @@ void __cdecl core_netgame_cpp_CNetGame_removeChatOut_FUN_00541ff0(CNetGame *this
   float local_158;
   float local_154;
   float local_150;
-  SNetPacket_Simple local_14c;
-  char local_143 [259];
+  SNetPacket_ChatMessage local_14c;
   SChatOutMessage *local_3c;
   int local_38;
   int local_28;
-  
+
   iVar3 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
   iVar3 = iVar3 / 0x12;
   iVar4 = iVar3 - g_LastPingTime;
@@ -65,10 +64,10 @@ void __cdecl core_netgame_cpp_CNetGame_removeChatOut_FUN_00541ff0(CNetGame *this
               local_158 = 30.0;
             }
             if (local_150 < local_158) {
-              local_14c.header.size = 0x109;
+              local_14c.header.size = sizeof(SNetPacket_ChatMessage);
               local_14c.header.type = PACKET_CHAT_MESSAGE;
-              local_14c.value = local_3c->sequence_number;
-              strcpy(local_143, local_3c->message);
+              local_14c.message_id = local_3c->sequence_number;
+              strcpy(local_14c.message, local_3c->message);
               core_netgame_cpp_CNetGame_sendPacket_FUN_00541230
                         (this_ptr,&this_ptr->players[local_28].addr,&local_14c.header);
               local_3c->player_timestamps[local_28] = g_CurrentGameTime;

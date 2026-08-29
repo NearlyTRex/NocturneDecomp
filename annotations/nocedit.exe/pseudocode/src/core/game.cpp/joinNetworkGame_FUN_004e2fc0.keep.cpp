@@ -16,6 +16,12 @@ void __cdecl core_game_cpp_joinNetworkGame_FUN_004e2fc0(void)
   uint local_10;
 
   memcpy(local_74,g_IpAddress,sizeof(local_74));
+#if NOCTURNE_NETPLAY_INI
+  nocturne_net_reload();
+  if (nocturne_net_server_address()[0] != '\0') {
+    _sprintf(local_74,"%s",nocturne_net_server_address());
+  }
+#endif
   iVar2 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                     (g_CEditorToolsPtr,"Enter Server IP",local_74,100,1);
   if (iVar2 == 0) {

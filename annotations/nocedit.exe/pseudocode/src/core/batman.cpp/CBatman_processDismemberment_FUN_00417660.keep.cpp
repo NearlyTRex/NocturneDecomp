@@ -19,9 +19,13 @@ void __cdecl core_batman_cpp_CBatman_processDismemberment_FUN_00417660(CBatman *
   CVector3f *initial_velocity;
   CConsole *this_ptr_00;
   float fVar1;
-  
+
   if ((0.0 < damage_info->dismember_prob) && (damage_info->hit_part_index == -1)) {
+#if NOCTURNE_AUTHENTIC_RNG
     iVar2 = rand();
+#else
+    iVar2 = nocturne_rng_sim();
+#endif
     switch(iVar2 % 6) {
     case 0:
       iVar1 = this_ptr->part_indices[2];

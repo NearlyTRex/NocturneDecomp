@@ -13,7 +13,7 @@ CDemonActor * __cdecl core_script_cpp_getActor_FUN_005594e0(char *actor_specifie
   int iVar2;
   CHero *actor_ptr;
   char *pcVar3;
-  
+
   g_ActorLookedUpByVariable = 0;
   if ((actor_specifier == (char *)0x0) || (*actor_specifier == '\0')) {
     strcpy(g_ScriptErrorBuffer,"Must specify actor name");
@@ -36,11 +36,20 @@ CDemonActor * __cdecl core_script_cpp_getActor_FUN_005594e0(char *actor_specifie
   else {
     iVar2 = _stricmp(actor_specifier,"$");
     if (iVar2 == 0) {
+#if NOCTURNE_AUTHENTIC_NETPLAY
       if (g_CNetGamePtr->connection_type != CONNECTION_NONE) {
         _sprintf(g_ScriptErrorBuffer,"Can't use '$' actor specifier in multi-player");
         return (CDemonActor *)0x0;
       }
       actor_ptr = g_HeroActors[g_LocalHeroIndex];
+#else
+      if (g_CNetGamePtr->connection_type == CONNECTION_NONE) {
+        actor_ptr = g_HeroActors[g_LocalHeroIndex];
+      }
+      else {
+        actor_ptr = g_HeroActors[0];
+      }
+#endif
       if (actor_ptr == (CHero *)0x0) {
         g_ActorLookedUpByVariable = 1;
         _sprintf(g_ScriptErrorBuffer,"Hero doesn't exist!!?!");

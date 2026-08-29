@@ -10,6 +10,7 @@
 void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel *this_ptr,float delta_time)
 
 {
+  CHero *sim_target;
   CLocation *pCVar1;
   CActorDestination *pCVar6;
   CCryptVessel *pCVar7;
@@ -34,7 +35,12 @@ void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel *thi
   CCryptVessel *pCVar5;
   CActorDestination *pCVar3;
   UOrientationVector *pUVar1;
-  
+
+#if NOCTURNE_AUTHENTIC_NETPLAY
+  sim_target = g_HeroActors[g_LocalHeroIndex];
+#else
+  sim_target = nocturne_net_sim_target_for((CDemonActor *)this_ptr);
+#endif
   if (this_ptr->visual_type == 1) {
     (this_ptr->flame).base.location = (this_ptr->base).location;
     pUVar17 = &(this_ptr->flame).base.orient;
@@ -150,7 +156,7 @@ void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel *thi
       }
     }
     else {
-      pCVar4 = g_HeroActors[g_LocalHeroIndex];
+      pCVar4 = sim_target;
       pCVar1 = &(this_ptr->base).location;
       fVar12 = (pCVar4->base).base.location.position.x - (pCVar1->position).x;
       fVar7 = (pCVar4->base).base.location.position.y - (this_ptr->base).location.position.y;

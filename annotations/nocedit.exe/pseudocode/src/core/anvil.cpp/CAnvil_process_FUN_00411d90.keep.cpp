@@ -10,13 +10,19 @@
 void __cdecl core_anvil_cpp_CAnvil_process_FUN_00411d90(CAnvil *this_ptr,float delta_time)
 
 {
+  CHero *sim_target;
   int iVar1;
   int iVar4;
   SDamageInfo local_48;
   float fVar2;
   CHero *pCVar1;
   int iVar3;
-  
+
+#if NOCTURNE_AUTHENTIC_NETPLAY
+  sim_target = g_HeroActors[g_LocalHeroIndex];
+#else
+  sim_target = nocturne_net_sim_target_for((CDemonActor *)this_ptr);
+#endif
   iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                     (g_CEventListPtr,this_ptr->drop_condition);
   iVar3 = g_LocalHeroIndex;
@@ -38,14 +44,14 @@ void __cdecl core_anvil_cpp_CAnvil_process_FUN_00411d90(CAnvil *this_ptr,float d
       this_ptr->yvel = 0.0;
     }
     if ((this_ptr->base).location.position.y <
-        (g_HeroActors[g_LocalHeroIndex]->base).base.location.position.y + (float)6) {
+        (sim_target->base).base.location.position.y + (float)6) {
       core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_48);
       local_48.damage_amount = 9999.9;
       local_48.damage_type = DAMAGE_TYPE_CRUSHED;
       local_48.attacker = &this_ptr->base;
       local_48.wielder = &this_ptr->base;
-      (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).processDamage)
-                (&g_HeroActors[g_LocalHeroIndex]->base,&local_48);
+      (*(((sim_target->base).base.vtable._uc)->_uc).processDamage)
+                (&sim_target->base,&local_48);
       return;
     }
   }

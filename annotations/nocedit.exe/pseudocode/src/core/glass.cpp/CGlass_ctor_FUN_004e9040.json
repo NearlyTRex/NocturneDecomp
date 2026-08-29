@@ -221,6 +221,14 @@
       "severity": "moderate",
       "text": "pCVar3 = core_mirror_cpp_CMirror_ctor_FUN_005213c0((CMirror *)(pCVar2[1].create_event + 0x1c));",
       "type": "pointer_cast"
+    },
+    {
+      "description": "'pCVar2[1].create_event + 0x1c' walks 1 x sizeof(CDemonActor) (0x158) + offsetof(create_event) (0x78) + 0x1c = 0x1ec, which is exactly offsetof(CActorDestination, persistent_event_flag). Ghidra had no CActorDestination type here and reached the field by index arithmetic; write it as ((CActorDestination *)pCVar2)->persistent_event_flag (\u00a7de-pun/\u00a712). Ambiguous: CGlass::mirror also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 13,
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar3 = core_mirror_cpp_CMirror_ctor_FUN_005213c0((CMirror *)(pCVar2[1].create_event + 0x1c));",
+      "type": "derived_field_index_pun"
     }
   ],
   "stack_frame": {

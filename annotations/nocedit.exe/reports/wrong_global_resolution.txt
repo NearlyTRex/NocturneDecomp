@@ -12,18 +12,20 @@ SUMMARY
 ----------------------------------------------------------------------------------------------------
 
   Functions checked: 6911
-  Functions with suspicious globals: 76
-  Total suspicious global references: 126
+  Functions with suspicious globals: 83
+  Total suspicious global references: 137
 
   Most commonly misresolved globals:
     g_SfxOptions                                       13 functions
     g_KeyboardState                                    9 functions
     g_WindowHeight                                     6 functions
+    g_HeroCount                                        5 functions
+    g_CDemonCameraInstance                             5 functions
     g_RenderVertexBuffer                               5 functions
     g_ColorCubeLookup                                  4 functions
-    g_CDemonCameraInstance                             4 functions
     g_WindowWidth                                      4 functions
     g_GetLastErrorFunc                                 3 functions
+    g_HeroActors                                       2 functions
     g_TextureCacheInstance                             2 functions
     g_UseDirect3D                                      2 functions
     g_CMoonInstance                                    2 functions
@@ -32,12 +34,10 @@ SUMMARY
     g_CommandTemplates                                 2 functions
     g_PositiveInfinity                                 2 functions
     g_MMXSupported                                     1 functions
+    g_CStrangerClassInfo                               1 functions
     g_CKeyFramedModelInstanceInstance                  1 functions
-    g_CBaronWeaponClassInfo                            1 functions
-    g_CBaronWeaponClassVersion                         1 functions
-    g_CWeaponClassInfo                                 1 functions
 
-  .keep files with issues: 42 (these need manual review)
+  .keep files with issues: 49 (these need manual review)
   Raw .cpp files with issues: 34
 
 ====================================================================================================
@@ -181,6 +181,38 @@ core_script.cpp_clearSelections_FUN_005644e0  [.keep]  (4 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+core_actor.cpp_deleteActor_FUN_00408820  [.keep]  (3 suspicious globals)
+  File: core/actor.cpp
+
+  g_CStrangerClassInfo
+    Used at lines: 32
+    NOT found in function reference list
+
+  g_HeroActors
+    Used at lines: 26
+    NOT found in function reference list
+
+  g_HeroCount
+    Used at lines: 25
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150  [.keep]  (3 suspicious globals)
+  File: core/netgame.cpp
+
+  g_HeroActors
+    Used at lines: 73, 86, 87, 87
+    NOT found in function reference list
+
+  g_HeroCount
+    Used at lines: 74
+    NOT found in function reference list
+
+  g_LocalHeroIndex
+    Used at lines: 74
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 core_game.cpp_CGame_beginFadeOut_FUN_004e0960  [.keep]  (2 suspicious globals)
   File: core/game.cpp
 
@@ -265,6 +297,22 @@ core_enemy.cpp_CEnemy_updateVictim_FUN_004a9b00  [.keep]  (1 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+core_event.cpp_CEventList_evaluateAtom_FUN_004ae140  [.keep]  (1 suspicious globals)
+  File: core/event.cpp
+
+  g_HeroCount
+    Used at lines: 261, 264, 374
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_event.cpp_CEventList_executeCommand_FUN_004aacc0  [.keep]  (1 suspicious globals)
+  File: core/event.cpp
+
+  g_HeroCount
+    Used at lines: 768, 772
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 core_game.cpp_CGame_finishAct_FUN_004e3b90  [.keep]  (1 suspicious globals)
   File: core/game.cpp
 
@@ -277,7 +325,7 @@ core_game.cpp_CGame_processFrame_FUN_004da100  [.keep]  (1 suspicious globals)
   File: core/game.cpp
 
   g_ColorCubeLookup
-    Used at lines: 328
+    Used at lines: 361
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -286,6 +334,22 @@ core_game.cpp_CGame_renderOverlay_FUN_004d8040  [.keep]  (1 suspicious globals)
 
   g_CDemonCameraInstance
     Used at lines: 45, 50
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_game.cpp_CGame_runGameSession_FUN_004daf80  [.keep]  (1 suspicious globals)
+  File: core/game.cpp
+
+  g_CurrentGameTime
+    Used at lines: 178, 184
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_inv.cpp_CInventory_renderSelectedItems_FUN_00500370  [.keep]  (1 suspicious globals)
+  File: core/inv.cpp
+
+  g_CDemonCameraInstance
+    Used at lines: 34, 35
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -318,6 +382,14 @@ core_script.cpp_CScript_parseActionTemplate_FUN_00567490  [.keep]  (1 suspicious
 
   g_CommandTemplates
     Used at lines: 19
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_script.cpp_CScript_step_FUN_0055a810  [.keep]  (1 suspicious globals)
+  File: core/script.cpp
+
+  g_HeroCount
+    Used at lines: 2043
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

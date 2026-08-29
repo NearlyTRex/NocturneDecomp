@@ -15,14 +15,22 @@ int __cdecl core_actor_cpp_getRandomInt_FUN_0040cc70(int min_value,int max_value
   uint uVar4;
   double dVar1;
   float fVar2;
-  
+
   dVar1 = (double)(max_value - min_value) + 0.99999000000000005;
   if (g_CGamePtr->is_processing == 0) {
+#if NOCTURNE_AUTHENTIC_RNG
     iVar3 = rand();
+#else
+    iVar3 = (int)nocturne_rng_offframe();
+#endif
     fVar2 = (float)iVar3 * 3.051851e-05f;
   }
   else {
+#if NOCTURNE_AUTHENTIC_RNG
     uVar4 = core_actor_cpp_generateRandomValue_FUN_0040cba0();
+#else
+    uVar4 = nocturne_rng_game(__builtin_return_address(0));
+#endif
     fVar2 = (float)(int)uVar4 * 5.960465e-08f;
   }
   iVar1 = (int)ROUND(ROUND((float)min_value + fVar2 * (float)dVar1));

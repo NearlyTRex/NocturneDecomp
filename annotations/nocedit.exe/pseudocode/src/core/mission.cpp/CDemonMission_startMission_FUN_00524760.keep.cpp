@@ -13,7 +13,7 @@ int __cdecl core_mission_cpp_CDemonMission_startMission_FUN_00524760(CDemonMissi
   CEventList *this_ptr_00;
   char *text;
   int iVar1;
-  
+
   if (g_HeroCount < 1) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't run mission - no heros");
@@ -26,8 +26,13 @@ int __cdecl core_mission_cpp_CDemonMission_startMission_FUN_00524760(CDemonMissi
     memset(&(this_ptr->pending_teleport).position, 0, sizeof((this_ptr->pending_teleport).position));
     core_event_cpp_CEventList_reset_FUN_004aaa70(this_ptr_00);
     g_CGamePtr->letterbox_mode = 0;
+#if NOCTURNE_AUTHENTIC_NETPLAY
     core_mission_cpp_CDemonMission_loadSet_FUN_00523fb0
               (this_ptr,(g_HeroActors[g_LocalHeroIndex]->base).base.location.area_id);
+#else
+    core_mission_cpp_CDemonMission_loadSet_FUN_00523fb0
+              (this_ptr,nocturne_net_respawn_world_area());
+#endif
     iVar1 = 0;
     text = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Loading script");
     core_level_cpp_CLevelLoader_update_FUN_00504160(g_CLevelLoaderPtr,text,iVar1);

@@ -16,7 +16,11 @@ void __cdecl core_inv_cpp_CInventory_initialize_FUN_004fd190(CInventory *this_pt
 
   core_inv_cpp_CInventory_clear_FUN_004fd0e0(this_ptr);
   for (i = 0; i < 100; i = i + 1) {
+#if NOCTURNE_AUTHENTIC_RNG
     iVar1 = rand();
+#else
+    iVar1 = (int)nocturne_rng_fx();
+#endif
     this_ptr->item_angles[i] =
          (float)iVar1 * 3.051851e-05f * (float)3.1415926535000001 *
          (float)2;

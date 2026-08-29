@@ -14,9 +14,13 @@ void __cdecl core_bride_cpp_CBride_processDismemberment_FUN_00424600(CBride *thi
   int iVar2;
   CBodyPart *body_part;
   float local_20;
-  
+
   if ((0.0 < damage_info->dismember_prob) && (damage_info->hit_part_index == -1)) {
+#if NOCTURNE_AUTHENTIC_RNG
     iVar1 = rand();
+#else
+    iVar1 = nocturne_rng_sim();
+#endif
     switch(iVar1 % 5) {
     case 0:
       iVar2 = this_ptr->part_indices[0];

@@ -25,7 +25,7 @@ void __cdecl core_boxactor_cpp_CLightActor_process_FUN_00422a50(CLightActor *thi
   CDemonSet *this_ptr_00;
   UVector3 *pUVar1;
   float fVar2;
-  
+
   core_boxactor_cpp_CBoxActor_process_FUN_004219e0(&this_ptr->base,delta_time);
   if ((this_ptr->light_actor_type == LIGHT_TYPE_LANTERN) &&
      (fVar2 = this_ptr->flicker_timer - delta_time, this_ptr->flicker_timer = fVar2, fVar2 <= 0.0))
@@ -64,7 +64,11 @@ void __cdecl core_boxactor_cpp_CLightActor_process_FUN_00422a50(CLightActor *thi
   this_ptr_01 = &this_ptr->globe;
   core_dglobe_cpp_CDemonGlobe_setPosition_FUN_00471310
             (this_ptr_01,&(this_ptr->base).base.location.position);
+#if NOCTURNE_AUTHENTIC_RNG
   uVar3 = rand();
+#else
+  uVar3 = nocturne_rng_fx();
+#endif
   (this_ptr->globe).intensity_multiplier = uVar3 & 0x7fff;
   (this_ptr->globe).intensity.bytes[0] = (uchar)((int)(uVar3 & 0x7fff) >> 10);
   core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360(this_ptr_01,2.0);

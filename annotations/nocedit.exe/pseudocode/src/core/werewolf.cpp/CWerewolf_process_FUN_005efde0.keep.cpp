@@ -10,6 +10,7 @@
 void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_ptr,float delta_time)
 
 {
+  CHero *sim_target;
   CDeformableModelInstance *pCVar3;
   uint uVar5;
   CCharacter *pCVar6;
@@ -84,7 +85,12 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
   EWerewolfType EVar3;
   CVector3f *pCVar2;
   CVector3f local_direction;
-  
+
+#if NOCTURNE_AUTHENTIC_NETPLAY
+  sim_target = g_HeroActors[g_LocalHeroIndex];
+#else
+  sim_target = nocturne_net_sim_target_for((CDemonActor *)this_ptr);
+#endif
   iVar7 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar7 == 0) {
     sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handles[1]);
@@ -140,7 +146,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
     EVar12 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr)
     ;
     if ((EVar12 == DEATH_STATE_ALIVE) &&
-       ((CHero *)(this_ptr->base).victim == g_HeroActors[g_LocalHeroIndex])) {
+       ((CHero *)(this_ptr->base).victim == sim_target)) {
       core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_2a8);
       local_2a8.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(7.0,15.0);
       local_2a8.attacker = (CDemonActor *)this_ptr;
@@ -186,7 +192,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
       if (uVar5 == 0) goto LAB_005f0481;
       if (1 < uVar5) {
         if (2 < uVar5) {
-          if (g_HeroActors[g_LocalHeroIndex] != (CHero *)(this_ptr->base).victim) {
+          if (sim_target != (CHero *)(this_ptr->base).victim) {
             core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_320);
             core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(7.0,15.0);
             pSVar22 = &local_320;
@@ -456,7 +462,7 @@ LAB_005f092a:
           }
           goto LAB_005f0010;
         }
-        if (g_HeroActors[g_LocalHeroIndex] != (CHero *)(this_ptr->base).victim) {
+        if (sim_target != (CHero *)(this_ptr->base).victim) {
           core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_230);
           local_230.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(7.0,15.0);
           local_230.attacker = (CDemonActor *)this_ptr;
@@ -503,7 +509,7 @@ LAB_005f092a:
                     (&(this_ptr->base).base.model.motion_controller,7,1);
         }
 LAB_005f04ff:
-        if ((CHero *)(this_ptr->base).victim != g_HeroActors[g_LocalHeroIndex]) {
+        if ((CHero *)(this_ptr->base).victim != sim_target) {
           core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_2e4);
           local_2e4.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(7.0,15.0);
           local_2e4.attacker = (CDemonActor *)this_ptr;

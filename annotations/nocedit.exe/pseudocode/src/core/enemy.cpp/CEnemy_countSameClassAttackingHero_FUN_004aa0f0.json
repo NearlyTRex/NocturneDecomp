@@ -121,6 +121,14 @@
       "severity": "moderate",
       "text": "this_ptr_01 = *(CCharacter **)((int)g_CDemonSetPtr->enemies + iVar4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "'this_ptr_01[1].base.actor_name + 0x18' walks 1 x sizeof(CCharacter) (0xbe24) + offsetof(base.actor_name) (0x0) + 0x18 = 0xbe3c, which is exactly offsetof(CEnemy, victim). Ghidra had no CEnemy type here and reached the field by index arithmetic; write it as ((CEnemy *)this_ptr_01)->victim (\u00a7de-pun/\u00a712).",
+      "line": 25,
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(CHero **)(this_ptr_01[1].base.actor_name + 0x18) == g_HeroActors[g_LocalHeroIndex])) {",
+      "type": "derived_field_index_pun"
     }
   ],
   "stack_frame": {

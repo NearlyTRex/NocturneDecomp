@@ -11,7 +11,7 @@ void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_00543800(CNetGam
 
 {
   int iVar3;
-  
+
   if (this_ptr->local_player_index < 0) {
     g_CurrentFilename = "..\\core\\netgame.cpp";
     g_CurrentLineNumber = 2509;
@@ -23,5 +23,10 @@ void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_00543800(CNetGam
     g_HeroActors[iVar3]->player_input = sim_frame->player_input[iVar3];
   }
   this_ptr->players[this_ptr->local_player_index].sim_frame_index = sim_frame->sequence_number + 1;
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+  nocturne_net_respawn_apply_if_due(sim_frame->sequence_number);
+  nocturne_net_weapon_apply_if_due(sim_frame->sequence_number);
+  nocturne_net_sync_check(sim_frame->sequence_number);
+#endif
   return;
 }

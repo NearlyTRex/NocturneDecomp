@@ -229,6 +229,14 @@
       "severity": "moderate",
       "text": "else if ((int)fVar1 < 0x44fa0000) {",
       "type": "bit_int_float_compare"
+    },
+    {
+      "description": "'pCVar2[1].actor_name + 4' walks 1 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0x4 = 0x15c, which is exactly offsetof(CActorDestination, dest_class). Ghidra had no CActorDestination type here and reached the field by index arithmetic; write it as ((CActorDestination *)pCVar2)->dest_class (\u00a7de-pun/\u00a712). Ambiguous: CBodyPart::bounding_box, CChain::chain_length, CEmitter::emitter_size also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 16,
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "this_ptr->master_frame = *(float *)(pCVar2[1].actor_name + 4);",
+      "type": "derived_field_index_pun"
     }
   ],
   "stack_frame": {

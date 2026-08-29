@@ -25,7 +25,7 @@ void __cdecl core_fire_cpp_CBulletHole_init_FUN_004bf7f0(CBulletHole *this_ptr,C
   float local_2c;
   CVector3f local_28;
   CVector3f local_1c;
-  
+
   if (this_ptr != (CBulletHole *)hit_position) {
     this_ptr->position = *hit_position;
   }
@@ -44,7 +44,11 @@ void __cdecl core_fire_cpp_CBulletHole_init_FUN_004bf7f0(CBulletHole *this_ptr,C
   (this_ptr->euler_angles).x = (float)-fVar2;
   fVar6 = (float10)fpatan((float10)surface_normal->x,(float10)surface_normal->z);
   (this_ptr->euler_angles).y = (float)fVar6;
+#if NOCTURNE_AUTHENTIC_RNG
   iVar1 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,3);
+#else
+  iVar1 = nocturne_rng_fx_int(0,3);
+#endif
   this_ptr->active = 1;
   this_ptr->texture_index = iVar1;
   this_ptr->actor_ptr = hit_actor;

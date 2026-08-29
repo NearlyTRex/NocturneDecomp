@@ -281,6 +281,26 @@
 // nocturne.h.
 #include "ui_scale.h"
 
+// NOCTURNE_NETPLAY_INI
+//   An addition. Every network parameter in the shipped game is a compile-time
+//   constant: UDP port 0x1ddf appears as a literal in four places, the socket
+//   binds INADDR_ANY, and the Ctrl+J prompt is pre-filled from g_IpAddress —
+//   which is baked in as an original developer's LAN address, "10.0.0.105".
+//   Nothing in any menu changes them.
+//   1: those values are read from system/netplay.ini when it exists, each key
+//      falling back to the shipped constant. See net_config.h for the format.
+//      A missing file leaves behaviour exactly as shipped.
+//   0: the ini is never read and the built-in constants always apply.
+//
+//   Override with -DNOCTURNE_NETPLAY_INI=0.
+#ifndef NOCTURNE_NETPLAY_INI
+#define NOCTURNE_NETPLAY_INI 1
+#endif
+
+// Netplay configuration (nocturne_net_*) — declared here so the netgame TUs
+// reach it through nocturne.h.
+#include "net_config.h"
+
 // NOCTURNE_AUTHENTIC_HUD_ICON_SPACE
 //   The inventory's weapon/item icons are 3D geometry, and above 480 lines the
 //   renderer runs in a 640x480 virtual space: CDemonCamera::init clamps the
@@ -330,12 +350,205 @@
 //   0: dev-friendly mode. Ctrl+H on the main menu hosts a network game;
 //      Ctrl+J joins one. Routes through the orphan CNetGame / trisock
 //      infrastructure. Useful for exercising the unfinished netplay code.
+//      This mode also patches the netplay bugs that mode 1 preserves:
+//        - PACKET_PLAYER_ANNOUNCE made the host overwrite its own address
+//          slot with the announcing client's, so it advertised itself as
+//          0.0.0.0 and no client could ever match the server index.
+//        - CDemonMission::createOneHero requires a CHeroPlaceholder whose
+//          index equals the hero number, but every mission the game shipped
+//          contains exactly one placeholder, always at index 0. Any session
+//          with two or more players died on hero 1 before the mission
+//          started. Extra heroes are no longer placed there at all - there is
+//          no safe spot to choose that early, since createHeros runs before
+//          loadSet - but are held out of the world until the host brings them
+//          in from the pause menu. See net_respawn.h.
+//        - Seven engine features assume a single hero and bail out in a
+//          network game - two of them (CMimic::setup, CTVBat::process) by
+//          quitting the process outright, which killed any mission that
+//          contained either actor. They now resolve as follows:
+//            CMimic (setup and  apes the local machine's own hero
+//              process, which
+//              carries a second
+//              copy of the same
+//              guard)
+//            CTVBat::process     follows hero 0
+//            '$' actor specifier resolves to hero 0 (both the event and the
+//                                script parser)
+//            killHero()          kills every hero
+//            hasItem()           true if any hero holds the item
+//            hasKeyMask()        true if any hero holds the key
+//            removeKeys()        takes the key from every hero
+//          Hero 0 rather than the local hero wherever the choice would
+//          otherwise make two machines disagree about what a script did.
+//        - A PACKET_PLAYER_ANNOUNCE arriving after the lobby had closed was
+//          answered with a half-written refusal (the status byte the client
+//          reads was never assigned) and then admitted anyway. The joiner
+//          landed in a running session with sim_frame_index 0, which pinned
+//          the sim-frame history's trim watermark at 0 until the host quit
+//          with "allocSimFrame - sim history list full". Such a join is now
+//          refused properly, with the status the client already knows how to
+//          report ("Connection refused - already in the game").
+//      Mode 0 also adds one thing the shipped game never had: a host-only
+//      pause-menu item that respawns the other players somewhere safe and on
+//      camera. See net_respawn.h.
 //
 //   Override with -DNOCTURNE_AUTHENTIC_NETPLAY=1 to revert to authentic
 //   shipped behavior.
 #ifndef NOCTURNE_AUTHENTIC_NETPLAY
 #define NOCTURNE_AUTHENTIC_NETPLAY 0
 #endif
+
+// NOCTURNE_NETPLAY_TIMEOUT_SECONDS
+//   How long the host tolerates total silence from a guest before dropping it,
+//   in seconds. Only consulted in the non-authentic netplay mode.
+//
+//   The shipped game has no timeout at all: SNetPlayer::last_arrival_time is
+//   written in four places and read in none, and removePlayer is only ever
+//   reached from an explicit PACKET_DISCONNECT. A guest that crashes or is
+//   killed rather than leaving cleanly therefore stays in the player list
+//   forever with its sim_frame_index frozen — and because
+//   CNetGame::processServerFrame trims the sim-frame history to the *slowest*
+//   player, that frozen index stops the trim dead. The history then grows one
+//   entry per frame until the host quits with "allocSimFrame - sim history
+//   list full".
+//
+//   That is what bounds this value: the history is 512 entries and fills at one
+//   per rendered frame, so at 60fps the host has ~8.5 seconds from the moment a
+//   guest goes quiet. The default leaves margin under that while staying far
+//   above any normal gap — during play a guest sends input every frame and
+//   answers the host's pings, and the two blocking stalls that could look like
+//   silence (the sync barrier and mission loading) both happen outside
+//   NET_MODE_PLAYING, where this check does not run.
+#ifndef NOCTURNE_NETPLAY_TIMEOUT_SECONDS
+#define NOCTURNE_NETPLAY_TIMEOUT_SECONDS 5
+#endif
+
+// g_CurrentGameTime and last_arrival_time are 16.16 fixed-point seconds — see
+// CNetGame::syncPlayers, which scales their difference by 1/65536, and
+// addPlayer's 0x1e0000 (= 30s) ping backdate.
+#define NOCTURNE_NETPLAY_TIMEOUT_TICKS \
+    ((uint)(NOCTURNE_NETPLAY_TIMEOUT_SECONDS * 65536))
+
+// The guest waits longer before giving up on the host than the host does on a
+// guest. The host's limit is forced on it — the sim-frame history is filling
+// while it waits — but nothing accumulates on the guest side, so its only job
+// is to not hang forever. Being three times as patient keeps a host that merely
+// hitched for a few seconds from costing the guest the session, since the
+// guest's clock is its own wall clock and keeps running through a stall the
+// host is frozen in.
+#define NOCTURNE_NETPLAY_HOST_TIMEOUT_TICKS \
+    ((uint)(NOCTURNE_NETPLAY_TIMEOUT_SECONDS * 3 * 65536))
+
+// NOCTURNE_NETPLAY_SYNC_CHECK
+//   1: the host reports its hero positions and a hash of the active set once
+//      per sim frame, and each guest compares them against its own, logging any
+//      mismatch with the frame number and both sides' coordinates. Lockstep has
+//      no state comparison of any kind, so without this a desync is invisible
+//      until a player notices they are somewhere the other machine says they
+//      are not. Costs ~85 bytes per guest per frame and never corrects
+//      anything — see net_sync.h for why correcting would be worse.
+//   0: no reports are sent and no comparison is made.
+//
+//   Override with -DNOCTURNE_NETPLAY_SYNC_CHECK=0.
+#ifndef NOCTURNE_NETPLAY_SYNC_CHECK
+#define NOCTURNE_NETPLAY_SYNC_CHECK 1
+#endif
+
+// NOCTURNE_NETPLAY_SIM_TRACE
+//   1: every machine writes nocturne_simtrace.log — one line per character per
+//      applied sim frame, with position, health, motion state and the AI's
+//      victim fields. The two files are diffed offline and the first differing
+//      line names the desync's origin: frame, actor, and which field went
+//      first. The sync check can only afford to say "this actor's position
+//      differs"; this says what decided to move it.
+//   0: no trace is written.
+//
+//   Only writes during a network game in NET_MODE_PLAYING, so single player and
+//   the menus cost nothing — but expect a few MB per minute while playing.
+//   Turn it off once the desync it is chasing has been found.
+//
+//   Override with -DNOCTURNE_NETPLAY_SIM_TRACE=0.
+#ifndef NOCTURNE_NETPLAY_SIM_TRACE
+#define NOCTURNE_NETPLAY_SIM_TRACE 1
+#endif
+
+// NOCTURNE_NETPLAY_RNG_TRACE
+//   1: every machine writes nocturne_rngtrace.log — one line per sim-stream
+//      draw, carrying the frame, the draw's index within it, and the caller's
+//      offset from generateRandomValue. Diffed offline against the other
+//      machine's, it turns "the guest drew one more number than the host in
+//      this frame" into the name of the function that did it. Also enables the
+//      LOAD SEED and focus-actor DLOG_EX traces in the netgame and game keeps.
+//   0: no trace is written and no attribution is computed.
+//
+//   Separate from NOCTURNE_AUTHENTIC_RNG on purpose. That flag chooses whether
+//   the sim/cosmetic partition exists at all, which is a fix; this one chooses
+//   whether the partition is being *watched*, which is a diagnostic. Turning
+//   the diagnostics off must never cost a fix, so the two are independent —
+//   set this, NOCTURNE_NETPLAY_SIM_TRACE and NOCTURNE_NETPLAY_SYNC_CHECK to 0
+//   for a netplay build that keeps every fix and writes no diagnostic files.
+//
+//   Override with -DNOCTURNE_NETPLAY_RNG_TRACE=0.
+#ifndef NOCTURNE_NETPLAY_RNG_TRACE
+#define NOCTURNE_NETPLAY_RNG_TRACE 1
+#endif
+
+// Host-scheduled safe respawn (nocturne_net_respawn_*), the desync detector
+// (nocturne_net_sync_*) and the sim-state trace (nocturne_sim_trace_*) —
+// declared here so the netgame, mission and game TUs reach them through
+// nocturne.h. Every entry point in all three is a no-op when
+// NOCTURNE_AUTHENTIC_NETPLAY is 1.
+#include "net_respawn.h"
+#include "net_sync.h"
+#include "sim_trace.h"
+
+// Synchronised weapon/item selection (nocturne_net_weapon_*), reached the same
+// way from CGame::processKeyboardControls and the netgame TU. Outside a network
+// game every entry point applies the selection immediately and locally, exactly
+// as the shipped code did.
+#include "net_weapon.h"
+
+// Deterministic hero selection for simulation code (nocturne_net_sim_*). Unlike
+// the two above this is NOT gated on NOCTURNE_AUTHENTIC_NETPLAY: it returns the
+// local hero unchanged outside a network game, so the AI call sites can use it
+// unconditionally and single player keeps the shipped behaviour.
+#include "net_sim.h"
+
+// NOCTURNE_AUTHENTIC_RNG
+//   1: matches the shipped binary — every random draw in the game is the
+//      verbatim rand() the binary made, from whichever stream the original
+//      author happened to reach for.
+//   0: dev-friendly mode. Every rand() call site is routed through one of the
+//      three doors in rng.h, which record at the call site whether the draw
+//      reaches simulation state:
+//        nocturne_rng_sim()      the result reaches simulation state, so every
+//                                machine must draw the same number. In a network
+//                                game this comes off the sim stream
+//                                (g_RandomSeedValue, re-seeded every frame from
+//                                the host's broadcast seed); outside one it is
+//                                rand() unchanged.
+//        nocturne_rng_fx()       cosmetic only — a texture flip, a corona
+//                                flicker. Always rand(), free to differ.
+//        nocturne_rng_offframe() the is_processing == 0 fallback inside the
+//                                game's own RNG primitives. Always rand().
+//      Modes are behaviour-identical outside a network game: every door is
+//      rand() there, so single player keeps the shipped sequence exactly.
+//
+//   This is deliberately its own switch rather than part of
+//   NOCTURNE_AUTHENTIC_NETPLAY. The partition is a determinism property, not a
+//   netplay feature — replay and reproducible-repro debugging want the same
+//   split — and keeping it separate means one toggle governs every draw site in
+//   the game instead of entangling them with the netplay UI.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_RNG=1 to revert to the shipped draws.
+#ifndef NOCTURNE_AUTHENTIC_RNG
+#define NOCTURNE_AUTHENTIC_RNG 0
+#endif
+
+// The funnel itself (nocturne_rng_*) — declared here so every game TU reaches
+// it through nocturne.h. Every entry point collapses to rand() when
+// NOCTURNE_AUTHENTIC_RNG is 1.
+#include "rng.h"
 
 // NOCTURNE_AUTHENTIC_CONSOLE
 //   1: the on-screen debug console is the binary's original 40 cols ×

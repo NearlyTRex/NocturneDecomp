@@ -22,7 +22,11 @@ void __cdecl core_dcamera_cpp_generateFogGrid_FUN_0044bba0(SFogGrid *fog)
   for (iVar6 = 0; iVar6 < 0x10; iVar6 = iVar6 + 1) {
     for (iVar9 = 0; iVar9 < 0x10; iVar9 = iVar9 + 1) {
       for (iVar2 = 0; iVar2 < 0x10; iVar2 = iVar2 + 1) {
+#if NOCTURNE_AUTHENTIC_RNG
         fog->planes[iVar2].grid[iVar9][iVar6] = (char)rand();
+#else
+        fog->planes[iVar2].grid[iVar9][iVar6] = (char)nocturne_rng_fx();
+#endif
       }
     }
   }

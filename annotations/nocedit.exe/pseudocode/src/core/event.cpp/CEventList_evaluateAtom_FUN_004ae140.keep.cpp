@@ -214,10 +214,12 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
     else {
       iVar3 = _stricmp(local_150,"hasItem");
       if (iVar3 == 0) {
+#if NOCTURNE_AUTHENTIC_NETPLAY
         if (g_CNetGamePtr->connection_type != CONNECTION_NONE) {
           strcpy(g_EventErrorMessageBuffer, "Can't use hasItem condition in multi-player");
           return -1;
         }
+#endif
         local_b8 = -1;
         sscanf
                   (expression + *parse_position," (%[^)])%n",acStack_859 + 1,&local_b8);
@@ -242,12 +244,27 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
           SVar18 = SVar18 - 1;
         }
         local_e0 = 0;
+#if NOCTURNE_AUTHENTIC_NETPLAY
         if ((g_HeroActors[g_LocalHeroIndex] != (CHero *)0x0) &&
            (pCVar15 = core_inv_cpp_CInventory_findItemByName_FUN_004fe9d0
                                 (&g_HeroActors[g_LocalHeroIndex]->inventory,acStack_859 + 1),
            pCVar15 != (CDemonActor *)0x0)) {
           local_e0 = 1;
         }
+#else
+        {
+          int hero_i;
+          for (hero_i = 0; hero_i < g_HeroCount; hero_i = hero_i + 1) {
+            if ((g_HeroActors[hero_i] != (CHero *)0x0) &&
+               (pCVar15 = core_inv_cpp_CInventory_findItemByName_FUN_004fe9d0
+                                    (&g_HeroActors[hero_i]->inventory,acStack_859 + 1),
+               pCVar15 != (CDemonActor *)0x0)) {
+              local_e0 = 1;
+              break;
+            }
+          }
+        }
+#endif
         *parse_position = *parse_position + local_b8;
       }
       else {
@@ -313,10 +330,12 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
         }
         iVar3 = _stricmp(local_150,"hasKeyMask");
         if (iVar3 == 0) {
+#if NOCTURNE_AUTHENTIC_NETPLAY
           if (g_CNetGamePtr->connection_type != CONNECTION_NONE) {
             strcpy(g_EventErrorMessageBuffer, "Can't use hasKeyMask condition in multi-player");
             return -1;
           }
+#endif
           local_a4 = -1;
           sscanf
                     (expression + *parse_position," ( %d )%n",&local_a0,&local_a4);
@@ -333,12 +352,26 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
             return -1;
           }
           local_e0 = 0;
+#if NOCTURNE_AUTHENTIC_NETPLAY
           if ((g_HeroActors[g_LocalHeroIndex] != (CHero *)0x0) &&
              (iVar3 = core_inv_cpp_CInventory_checkHasMatchingKey_FUN_005013d0
                                 (&g_HeroActors[g_LocalHeroIndex]->inventory,local_a0,0), iVar3 != 0)
              ) {
             local_e0 = 1;
           }
+#else
+          {
+            int hero_i;
+            for (hero_i = 0; hero_i < g_HeroCount; hero_i = hero_i + 1) {
+              if ((g_HeroActors[hero_i] != (CHero *)0x0) &&
+                 (iVar3 = core_inv_cpp_CInventory_checkHasMatchingKey_FUN_005013d0
+                                    (&g_HeroActors[hero_i]->inventory,local_a0,0), iVar3 != 0)) {
+                local_e0 = 1;
+                break;
+              }
+            }
+          }
+#endif
           *parse_position = *parse_position + local_a4;
         }
         else {

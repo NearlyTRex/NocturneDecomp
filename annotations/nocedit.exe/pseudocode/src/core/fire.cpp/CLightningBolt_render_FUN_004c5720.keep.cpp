@@ -43,11 +43,15 @@ void __cdecl core_fire_cpp_CLightningBolt_render_FUN_004c5720(CLightningBolt *th
   float fVar4;
   float fVar3;
   CVector3f *world_position;
-  
+
   if (this_ptr->lifetime <= 0.0) {
     return;
   }
+#if NOCTURNE_AUTHENTIC_RNG
   iVar7 = rand();
+#else
+  iVar7 = (int)nocturne_rng_fx();
+#endif
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
             (g_CDemonRendererPtr2,g_FireEffectLightningBoltTextures + iVar7 % 6);
   local_dc.base.base.count = 4;
@@ -59,7 +63,11 @@ void __cdecl core_fire_cpp_CLightningBolt_render_FUN_004c5720(CLightningBolt *th
   local_dc.vertices[3] = 3;
   local_dc.vertices[1] = 1;
   local_dc.vertices[2] = 2;
+#if NOCTURNE_AUTHENTIC_RNG
   uVar8 = rand();
+#else
+  uVar8 = nocturne_rng_fx();
+#endif
   if ((uVar8 & 1) == 0) {
     g_RenderVertexBuffer[1].u = 0x8 << 16;
     g_RenderVertexBuffer[2].u = 0x8 << 16;

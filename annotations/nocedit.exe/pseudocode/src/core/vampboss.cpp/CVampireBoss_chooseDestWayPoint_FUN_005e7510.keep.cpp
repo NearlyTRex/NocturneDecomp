@@ -10,6 +10,7 @@
 void __cdecl core_vampboss_cpp_CVampireBoss_chooseDestWayPoint_FUN_005e7510(CVampireBoss *this_ptr)
 
 {
+  CHero *sim_target;
   float fVar1;
   int iVar9;
   float local_20;
@@ -21,7 +22,12 @@ void __cdecl core_vampboss_cpp_CVampireBoss_chooseDestWayPoint_FUN_005e7510(CVam
   float fVar5;
   CDemonActor *pCVar2;
   float fVar3;
-  
+
+#if NOCTURNE_AUTHENTIC_NETPLAY
+  sim_target = g_HeroActors[g_LocalHeroIndex];
+#else
+  sim_target = nocturne_net_sim_target_for((CDemonActor *)this_ptr);
+#endif
   this_ptr->waypoint_index = 0;
   iVar9 = 0;
   local_20 = -8675309.0;
@@ -32,7 +38,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_chooseDestWayPoint_FUN_005e7510(CVam
       g_CurrentLineNumber = 1059;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CVampireBoss::chooseDestWayPoint - wayPoint[%d] == NULL",iVar9);
     }
-    pCVar1 = g_HeroActors[g_LocalHeroIndex];
+    pCVar1 = sim_target;
     fVar3 = (pCVar2->location).position.x - (pCVar1->base).base.location.position.x;
     fVar4 = (pCVar2->location).position.x - (this_ptr->base).base.base.location.position.x;
     fVar8 = (pCVar2->location).position.y - (pCVar1->base).base.location.position.y;

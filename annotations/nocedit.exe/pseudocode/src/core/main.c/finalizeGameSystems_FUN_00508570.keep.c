@@ -27,7 +27,11 @@ void __cdecl core_main_c_finalizeGameSystems_FUN_00508570(void)
     iVar1 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_ThemeFont,0x58);
     wincore_winrun_cpp_getTime_FUN_005f2dc0();
     engine_2d_c_clearInputAndWait_FUN_00403260();
+#if NOCTURNE_AUTHENTIC_RNG
     uVar2 = rand();
+#else
+    uVar2 = nocturne_rng_fx();
+#endif
     _sprintf(local_110,"load%d",(uVar2 & 3) + 1);
     engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0
               (&g_LoadingScreenBitmap1,local_110,0x280,0x1e0);

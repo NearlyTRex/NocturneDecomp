@@ -19,12 +19,14 @@ void __cdecl core_mimic_cpp_CMimic_setup_FUN_0051f3e0(CMimic *this_ptr)
   int iVar11;
   uint class_name_hash;
   char *model_name;
-  
+
+#if NOCTURNE_AUTHENTIC_NETPLAY
   if (g_CNetGamePtr->connection_type != CONNECTION_NONE) {
     g_CurrentFilename = "..\\core\\mimic.cpp";
     g_CurrentLineNumber = 182;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMimic::setup - can't use mimic in multi-player!");
   }
+#endif
   if (g_HeroActors[g_LocalHeroIndex] == (CHero *)0x0) {
     model_name = "stranger.dfm";
   }

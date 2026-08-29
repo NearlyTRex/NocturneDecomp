@@ -17,7 +17,7 @@ void __cdecl core_fire_cpp_CSmokeParticle_process_FUN_004bf390(CSmokeParticle *t
   float fVar2;
   float fVar3;
   CVector3f *pCVar1;
-  
+
   fVar3 = g_CGamePtr->delta_time_float;
   this_ptr->age = fVar3 * 30.0f + this_ptr->age;
   if (this_ptr->age >= 40.0f) {
@@ -26,10 +26,17 @@ void __cdecl core_fire_cpp_CSmokeParticle_process_FUN_004bf390(CSmokeParticle *t
   }
   (this_ptr->position).y =
        fVar3 * this_ptr->vertical_accel * this_ptr->drag_factor + (this_ptr->position).y;
+#if NOCTURNE_AUTHENTIC_RNG
   fVar5 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-1.0,1.0);
   (this_ptr->position).x = fVar5 * fVar3 + (this_ptr->position).x;
   fVar4 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-1.0,1.0);
   (this_ptr->position).z = fVar4 * fVar3 + (this_ptr->position).z;
+#else
+  fVar5 = nocturne_rng_fx_range(-1.0,1.0);
+  (this_ptr->position).x = fVar5 * fVar3 + (this_ptr->position).x;
+  fVar4 = nocturne_rng_fx_range(-1.0,1.0);
+  (this_ptr->position).z = fVar4 * fVar3 + (this_ptr->position).z;
+#endif
   fVar4 = (this_ptr->wind_influence).y;
   fVar2 = (this_ptr->wind_influence).z;
   pCVar1 = &this_ptr->position;

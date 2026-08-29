@@ -23,7 +23,7 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(char **menu_text_a
   char **local_1c;
   char *pcVar7;
   CBitFont *this_ptr;
-  
+
   this_ptr = g_ThemeFont;
   if (title != (char *)0x0) {
     engine_font_cpp_CBitFont_drawText_FUN_004cda80
@@ -47,9 +47,15 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(char **menu_text_a
         else {
           iVar4 = 0;
           do {
+#if NOCTURNE_AUTHENTIC_RNG
             uVar3 = rand();
             uVar4 = rand();
             iVar5 = rand();
+#else
+            uVar3 = nocturne_rng_fx();
+            uVar4 = nocturne_rng_fx();
+            iVar5 = (int)nocturne_rng_fx();
+#endif
             engine_3d_c_setRenderAlpha_FUN_00406d80
                       ((uint)((longlong)iVar5 * 48000) >> 0x10 |
                        (int)((ulonglong)((longlong)iVar5 * 48000) >> 0x20) << 0x10);

@@ -10,6 +10,7 @@
 void __cdecl core_svetlana_cpp_CSvetlana_processAI_FUN_005d9260(CSvetlana *this_ptr,float delta_time)
 
 {
+  CHero *sim_leader;
   CDeformableModelInstance *this_ptr_01;
   float fVar2;
   CHero *pCVar3;
@@ -45,14 +46,19 @@ void __cdecl core_svetlana_cpp_CSvetlana_processAI_FUN_005d9260(CSvetlana *this_
   float fVar4;
   float fVar1;
   EHeroTask EVar2;
-  
+
+#if NOCTURNE_AUTHENTIC_NETPLAY
+  sim_leader = g_HeroActors[g_LocalHeroIndex];
+#else
+  sim_leader = nocturne_net_sim_leader_hero();
+#endif
   bVar3 = false;
   local_1c = 0.25;
   local_24 = 0.7853982;
-  pCVar10 = g_HeroActors[g_LocalHeroIndex];
+  pCVar10 = sim_leader;
   memset(&(this_ptr->base).player_input,0,0x2c);
   if ((this_ptr->base).ai_task != HERO_TASK_STAND) {
-    pCVar3 = g_HeroActors[g_LocalHeroIndex];
+    pCVar3 = sim_leader;
     local_6c.x = (this_ptr->base).base.base.location.position.x -
                  (pCVar3->base).base.location.position.x;
     local_6c.y = (this_ptr->base).base.base.location.position.y -
@@ -64,8 +70,8 @@ void __cdecl core_svetlana_cpp_CSvetlana_processAI_FUN_005d9260(CSvetlana *this_
       local_30 = 0.0;
     }
     local_28 = 20.0;
-    iVar5 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uh)->_uh).isWeaponDrawn)
-                      (g_HeroActors[g_LocalHeroIndex]);
+    iVar5 = (*(((sim_leader->base).base.vtable._uh)->_uh).isWeaponDrawn)
+                      (sim_leader);
     if (iVar5 != 0) {
       local_28 = 30.0;
     }
@@ -100,10 +106,10 @@ void __cdecl core_svetlana_cpp_CSvetlana_processAI_FUN_005d9260(CSvetlana *this_
         (this_ptr->base).base.hero_proximity_timer = 0.0;
       }
       else {
-        pCStack_20 = (*((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._ub)->getPathMap)
-                               ((CDemonActor *)g_HeroActors[g_LocalHeroIndex]);
-        iVar6 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uh)->_uh).isWeaponDrawn)
-                          (g_HeroActors[g_LocalHeroIndex]);
+        pCStack_20 = (*((sim_leader->base).base.vtable._ub)->getPathMap)
+                               ((CDemonActor *)sim_leader);
+        iVar6 = (*(((sim_leader->base).base.vtable._uh)->_uh).isWeaponDrawn)
+                          (sim_leader);
         if ((iVar6 == 0) &&
            (uVar7 = core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0
                               ((CCharacter *)this_ptr,delta_time), uVar7 != 0)) {
@@ -164,8 +170,8 @@ void __cdecl core_svetlana_cpp_CSvetlana_processAI_FUN_005d9260(CSvetlana *this_
         if ((pSVar5->state_index == 10) && (this_ptr->blades_drawn != 0)) {
           (this_ptr->base).player_input.action_state.draw = 1;
         }
-        iVar6 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uh)->_uh).isWeaponDrawn)
-                          (g_HeroActors[g_LocalHeroIndex]);
+        iVar6 = (*(((sim_leader->base).base.vtable._uh)->_uh).isWeaponDrawn)
+                          (sim_leader);
         if ((iVar6 == 0) &&
            (uVar9 = core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0
                               ((CCharacter *)this_ptr,delta_time), uVar9 != 0)) {

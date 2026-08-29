@@ -10,6 +10,7 @@
 void __cdecl core_flame_cpp_CFlame_process_FUN_004c9c00(CFlame *this_ptr,float delta_time)
 
 {
+  CHero *sim_target;
   CLocation *pCVar2;
   CHero *this_ptr_02;
   CEnemy *this_ptr_03;
@@ -24,6 +25,11 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_004c9c00(CFlame *this_ptr,float d
   SCollisionInfo SStack_64;
   float fVar2;
 
+#if NOCTURNE_AUTHENTIC_NETPLAY
+  sim_target = g_HeroActors[g_LocalHeroIndex];
+#else
+  sim_target = nocturne_net_sim_target_for((CDemonActor *)this_ptr);
+#endif
   if (((this_ptr->on_event[0] != '\0') && (this_ptr->flame_state == 0)) &&
      (iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                         (g_CEventListPtr,this_ptr->on_event), iVar3 != 0)) {
@@ -65,11 +71,19 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_004c9c00(CFlame *this_ptr,float d
     else {
       iVar6 = core_sound_cpp_CSound_isSoundPlaying_FUN_005b3b80(g_CSoundPtr,this_ptr->sfx_handle);
       if (iVar6 == 0) {
+#if NOCTURNE_AUTHENTIC_RNG
         fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.95,1.05);
         _sprintf(local_f8,"torch.wav * %f",(double)fVar3);
         sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
         iVar6 = 2;
         fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.0,1.0);
+#else
+        fVar3 = nocturne_rng_fx_range(0.95,1.05);
+        _sprintf(local_f8,"torch.wav * %f",(double)fVar3);
+        sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
+        iVar6 = 2;
+        fVar3 = nocturne_rng_fx_range(0.0,1.0);
+#endif
         sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005a8be0((double)fVar3,iVar6);
         uVar5 = (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,local_f8);
         this_ptr->sfx_handle = uVar5;
@@ -78,10 +92,10 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_004c9c00(CFlame *this_ptr,float d
     }
     if (this_ptr->burn_hero != 0) {
       core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&SStack_8c);
-      EVar4 = (*((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._ub)->getCollisionType)
-                        ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],&SStack_8c);
+      EVar4 = (*((sim_target->base).base.vtable._ub)->getCollisionType)
+                        ((CDemonActor *)sim_target,&SStack_8c);
       if (EVar4 == COLLISION_TYPE_CYLINDER) {
-        this_ptr_02 = g_HeroActors[g_LocalHeroIndex];
+        this_ptr_02 = sim_target;
         pCVar2 = &(this_ptr->base).location;
         fVar3 = (this_ptr_02->base).base.location.position.y - (this_ptr->base).location.position.y;
         if (((float)-0.5 < fVar3) && (fVar3 < SStack_8c.cylinder_top_y)) {

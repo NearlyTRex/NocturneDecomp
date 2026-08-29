@@ -26,7 +26,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderGridCube_FUN_00496e70(CDemonRa
   float local_1c;
   float local_18;
   float local_14;
-  
+
   local_1c = (this_ptr->cell_size).x / 8.0f;
   local_18 = (this_ptr->cell_size).y * 0.125f;
   local_14 = 0.125f * (this_ptr->cell_size).z;
@@ -75,7 +75,11 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderGridCube_FUN_00496e70(CDemonRa
   local_94.z = (int)ROUND((world_pos->z + local_44) * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[7].projected_vertex,&local_94);
+#if NOCTURNE_AUTHENTIC_RNG
   uVar1 = rand();
+#else
+  uVar1 = nocturne_rng_fx();
+#endif
   engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960
             (g_CDemonRendererPtr2,uVar1 & 0xff);
   local_dc.base.base.count = 4;

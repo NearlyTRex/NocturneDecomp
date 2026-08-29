@@ -31,7 +31,7 @@ void __cdecl core_sound_cpp_CSound_process_FUN_005b2fd0(CSound *this_ptr)
   STrainNoise *local_1c;
   STrainNoise *pSVar3;
   float fVar2;
-  
+
   fVar7 = g_CGamePtr->delta_time_float;
   fVar3 = fVar7 * (float)0.5;
   core_sound_cpp_updateListeners_FUN_005b1870();
@@ -190,7 +190,11 @@ void __cdecl core_sound_cpp_CSound_process_FUN_005b2fd0(CSound *this_ptr)
       g_TrainNoiseCooldown = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(1.0,5.0);
       local_2c = 20.0;
       memcpy(local_d0,g_TrainSoundFilenameTemplate,100);
+#if NOCTURNE_AUTHENTIC_RNG
       iVar6 = rand();
+#else
+      iVar6 = (int)nocturne_rng_fx();
+#endif
       local_140 = 1.0;
       switch(iVar6 % 5) {
       case 0:

@@ -10,6 +10,7 @@
 void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004f13f0(CHaystack *this_ptr,float delta_time)
 
 {
+  CHero *sim_leader;
   CDeformableModelInstance *this_ptr_02;
   CHero *pCVar1;
   CHero *pCVar5;
@@ -35,12 +36,17 @@ void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004f13f0(CHaystack *this_p
   EHeroTask EVar2;
   float fVar1;
   float fVar4;
-  
+
+#if NOCTURNE_AUTHENTIC_NETPLAY
+  sim_leader = g_HeroActors[g_LocalHeroIndex];
+#else
+  sim_leader = nocturne_net_sim_leader_hero();
+#endif
   bVar3 = false;
-  pCVar9 = g_HeroActors[g_LocalHeroIndex];
+  pCVar9 = sim_leader;
   memset(&(this_ptr->base).player_input,0,0x2c);
   if ((this_ptr->base).ai_task != HERO_TASK_STAND) {
-    pCVar1 = g_HeroActors[g_LocalHeroIndex];
+    pCVar1 = sim_leader;
     local_48.x = (this_ptr->base).base.base.location.position.x -
                  (pCVar1->base).base.location.position.x;
     local_48.y = (this_ptr->base).base.base.location.position.y -
@@ -75,8 +81,8 @@ void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004f13f0(CHaystack *this_p
     if ((float)6 <= fVar2) {
       this_ptr_01 = (CPathMap *)0x0;
       if (!bVar3) {
-        this_ptr_01 = (*((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._ub)->getPathMap)
-                                ((CDemonActor *)g_HeroActors[g_LocalHeroIndex]);
+        this_ptr_01 = (*((sim_leader->base).base.vtable._ub)->getPathMap)
+                                ((CDemonActor *)sim_leader);
       }
       if (this_ptr_01 == (CPathMap *)0x0) {
         this_ptr_01 = core_path_cpp_getPathMap_FUN_00548500(&(pCVar9->base).base.location);

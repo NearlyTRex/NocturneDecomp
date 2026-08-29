@@ -80,7 +80,11 @@ LAB_004c7785:
   switch(ground_type) {
   case 2:
   case 8:
+#if NOCTURNE_AUTHENTIC_RNG
     iVar3 = core_actor_cpp_randomChance_FUN_0040cd10(0.16666667);
+#else
+    iVar3 = nocturne_rng_fx_chance(0.16666667);
+#endif
     if (iVar3 != 0) {
       pcVar3 = core_ground_cpp_getGroundTypeCode_FUN_004eece0(GROUND_TYPE_CONCRETE);
       _sprintf(acStack_60,"ric-%s!?.wav",pcVar3);
@@ -92,7 +96,11 @@ LAB_004c7785:
     break;
   case 3:
   case 4:
+#if NOCTURNE_AUTHENTIC_RNG
     iVar3 = core_actor_cpp_randomChance_FUN_0040cd10(0.16666667);
+#else
+    iVar3 = nocturne_rng_fx_chance(0.16666667);
+#endif
     if (iVar3 != 0) {
       pcVar1 = core_ground_cpp_getGroundTypeCode_FUN_004eece0(GROUND_TYPE_DIRT);
       _sprintf(acStack_60,"ric-%s.wav",pcVar1);
@@ -103,7 +111,11 @@ LAB_004c7785:
     }
     break;
   case 5:
+#if NOCTURNE_AUTHENTIC_RNG
     iVar3 = core_actor_cpp_randomChance_FUN_0040cd10(0.16666667);
+#else
+    iVar3 = nocturne_rng_fx_chance(0.16666667);
+#endif
     if (iVar3 != 0) {
       pcVar1 = core_ground_cpp_getGroundTypeCode_FUN_004eece0(GROUND_TYPE_METAL);
       _sprintf(acStack_60,"ric-%s!?.wav",pcVar1);
@@ -114,7 +126,11 @@ LAB_004c7785:
     }
     break;
   case 7:
+#if NOCTURNE_AUTHENTIC_RNG
     iVar3 = core_actor_cpp_randomChance_FUN_0040cd10(0.16666667);
+#else
+    iVar3 = nocturne_rng_fx_chance(0.16666667);
+#endif
     if (iVar3 != 0) {
       pcVar1 = core_ground_cpp_getGroundTypeCode_FUN_004eece0(GROUND_TYPE_WOOD);
       _sprintf(acStack_60,"ric-%s!?.wav",pcVar1);

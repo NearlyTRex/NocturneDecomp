@@ -28,6 +28,7 @@ void __cdecl core_netgame_cpp_CNetGame_sendGameSetting_FUN_00542dd0(CNetGame *th
   packet.header.type = PACKET_GAME_SETTINGS;
   packet.header.size = 0xb1;
   __arrinit(packet.players,2,&g_SPlayerTypeInfo);
+  packet.random_seed = this_ptr->random_seed;
   packet.settings_version = INT_02f7c8c4;
   strcpy(packet.mission_name, this_ptr->mission_name);
   packet.player_count = this_ptr->player_count;

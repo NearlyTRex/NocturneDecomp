@@ -7,13 +7,13 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6454
-Clean functions: 6454 (100.0%)
-Functions with suspects: 0 (0.0%)
+Clean functions: 6453 (100.0%)
+Functions with suspects: 1 (0.0%)
 
-Total suspect patterns: 0
+Total suspect patterns: 1
 Average suspects per function: 0.00
 
-Virtual files: 216 total, 216 at 100%, 216 at 90%+
+Virtual files: 216 total, 215 at 100%, 216 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3337, Average: 47.8
@@ -28,6 +28,7 @@ Failed: 0
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
+  unrolled_memcpy           1
 
 EASIEST FUNCTIONS (Clean, Sorted by Size)
 ----------------------------------------
@@ -81,7 +82,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   00419000: core_bodypart.cpp_CBodyPart_getActorType_FUN_00419000 (4 lines)
   00419f50: core_bodypart.cpp_CBodyPart_getCollisionType_FUN_00419f50 (4 lines)
   0041a040: core_bodypart.cpp_CBodyPart_getCarrier_FUN_0041a040 (4 lines)
-  ... and 6404 more
+  ... and 6403 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -118,3 +119,6 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
+
+  unrolled_memcpy (1 functions):
+    00543bb0: core_netgame.cpp_swapPlayerData_FUN_00543bb0

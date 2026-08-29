@@ -10,6 +10,7 @@
 void __cdecl core_scat_cpp_CScat_updateAI_FUN_005578e0(CScat *this_ptr,float delta_time)
 
 {
+  CHero *sim_leader;
   CHero *pCVar1;
   CHero *pCVar4;
   SMotion *pSVar5;
@@ -35,15 +36,20 @@ void __cdecl core_scat_cpp_CScat_updateAI_FUN_005578e0(CScat *this_ptr,float del
   EHeroTask EVar1;
   CWeapon *pCVar2;
   float fVar3;
-  
+
+#if NOCTURNE_AUTHENTIC_NETPLAY
+  sim_leader = g_HeroActors[g_LocalHeroIndex];
+#else
+  sim_leader = nocturne_net_sim_leader_hero();
+#endif
   local_20 = 0.25;
   local_1c = 0.7853982;
-  this_ptr_01 = g_HeroActors[g_LocalHeroIndex];
+  this_ptr_01 = sim_leader;
   if ((this_ptr->base).ai_task == HERO_TASK_STAND) {
     return;
   }
   memset(&(this_ptr->base).player_input,0,0x2c);
-  pCVar1 = g_HeroActors[g_LocalHeroIndex];
+  pCVar1 = sim_leader;
   local_3c.x = (this_ptr->base).base.base.location.position.x -
                (pCVar1->base).base.location.position.x;
   local_3c.y = (this_ptr->base).base.base.location.position.y -

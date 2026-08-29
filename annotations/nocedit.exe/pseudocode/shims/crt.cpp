@@ -15,6 +15,7 @@
 
 #include "system/crt.h"
 #include "debug_log.h"
+#include "rng.h"            // nocturne_rng_note_raw_draw() — the rand() audit
 #include <cerrno>
 #include <dlfcn.h>          // dlsym / RTLD_NEXT for remove()/rename() interposition
 // Full struct layouts for Watcom types that crt.h only forward-declares.
@@ -44,7 +45,12 @@
 // dynamic linker resolves references here before libc.so.
 static unsigned int g_WatcomRandSeed = 1;
 
+// Every draw is reported to the RNG funnel's audit (rng.h), which discards the
+// ones that came through one of its doors and counts the rest. Reporting from
+// here rather than instrumenting call sites means a rand() added later is
+// caught without anyone remembering to mark it.
 extern "C" int rand(void) {
+    nocturne_rng_note_raw_draw();
     g_WatcomRandSeed = g_WatcomRandSeed * 0x41c64e6du + 0x3039u;
     return (int)((g_WatcomRandSeed >> 16) & 0x7fff);
 }

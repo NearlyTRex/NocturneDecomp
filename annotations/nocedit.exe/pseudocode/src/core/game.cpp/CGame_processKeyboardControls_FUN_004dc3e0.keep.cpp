@@ -6,10 +6,12 @@
 // Signature: void __cdecl core_game_cpp_CGame_processKeyboardControls_FUN_004dc3e0(CGame *this_ptr,SPlayerInput *player_control)
 
 #include "nocturne.h"
+#include "net_weapon.h"
 
 void __cdecl core_game_cpp_CGame_processKeyboardControls_FUN_004dc3e0(CGame *this_ptr,SPlayerInput *player_control)
 
 {
+  void (*request_selection)(int,int,int);
   float *pfVar2;
   CHero *this_ptr_01;
   float fVar3;
@@ -20,10 +22,9 @@ void __cdecl core_game_cpp_CGame_processKeyboardControls_FUN_004dc3e0(CGame *thi
   EDeathState EVar6;
   int *piVar7;
   byte bVar6;
-  CHero *this_ptr_00;
   float fVar2;
   float *pfVar1;
-  
+
   if (this_ptr->screen_clear_condition != 0) {
     (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIM_LBUTTON);
     (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIM_RBUTTON);
@@ -189,28 +190,30 @@ LAB_004dc4e9:
   else {
     *piVar7 = (uint)(byte)g_KeyboardState[iVar5];
   }
+#if NOCTURNE_AUTHENTIC_NETPLAY
+  request_selection = nocturne_net_weapon_apply_local;
+#else
+  request_selection = nocturne_net_weapon_request;
+#endif
   iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_next_weapon);
   if (iVar4 != 0) {
-    core_inv_cpp_CInventory_selectWeapon_FUN_004feb10
-              (&g_HeroActors[g_LocalHeroIndex]->inventory,(CDemonActor *)0x0,5,1);
+    request_selection(NOCTURNE_NET_WEAPON_SELECT,5,1);
   }
   iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_prev_weapon);
   if (iVar5 != 0) {
-    core_inv_cpp_CInventory_selectWeapon_FUN_004feb10
-              (&g_HeroActors[g_LocalHeroIndex]->inventory,(CDemonActor *)0x0,5,-1);
+    request_selection(NOCTURNE_NET_WEAPON_SELECT,5,-1);
   }
   iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_next_item);
   if (iVar5 != 0) {
-    core_inv_cpp_CInventory_selectItem_FUN_004fec10(&g_HeroActors[g_LocalHeroIndex]->inventory,1);
+    request_selection(NOCTURNE_NET_WEAPON_ITEM,0,1);
   }
   iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_prev_item);
   if (iVar5 != 0) {
-    core_inv_cpp_CInventory_selectItem_FUN_004fec10(&g_HeroActors[g_LocalHeroIndex]->inventory,-1);
+    request_selection(NOCTURNE_NET_WEAPON_ITEM,0,-1);
   }
   iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_next_ammo);
   if (iVar5 != 0) {
-    core_inv_cpp_CInventory_cycleWeaponOfSameClass_FUN_004fed10
-              (&g_HeroActors[g_LocalHeroIndex]->inventory,1);
+    request_selection(NOCTURNE_NET_WEAPON_AMMO,0,1);
   }
   iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_item_desc);
   if (iVar5 != 0) {
@@ -219,28 +222,23 @@ LAB_004dc4e9:
   }
   iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_weapon_1);
   if (iVar5 != 0) {
-    core_inv_cpp_CInventory_selectWeapon_FUN_004feb10
-              (&g_HeroActors[g_LocalHeroIndex]->inventory,(CDemonActor *)0x0,0,1);
+    request_selection(NOCTURNE_NET_WEAPON_SELECT,0,1);
   }
   iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_weapon_2);
   if (iVar5 != 0) {
-    core_inv_cpp_CInventory_selectWeapon_FUN_004feb10
-              (&g_HeroActors[g_LocalHeroIndex]->inventory,(CDemonActor *)0x0,1,1);
+    request_selection(NOCTURNE_NET_WEAPON_SELECT,1,1);
   }
   iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_weapon_3);
   if (iVar5 != 0) {
-    core_inv_cpp_CInventory_selectWeapon_FUN_004feb10
-              (&g_HeroActors[g_LocalHeroIndex]->inventory,(CDemonActor *)0x0,2,1);
+    request_selection(NOCTURNE_NET_WEAPON_SELECT,2,1);
   }
   iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_weapon_4);
   if (iVar5 != 0) {
-    core_inv_cpp_CInventory_selectWeapon_FUN_004feb10
-              (&g_HeroActors[g_LocalHeroIndex]->inventory,(CDemonActor *)0x0,4,1);
+    request_selection(NOCTURNE_NET_WEAPON_SELECT,4,1);
   }
   iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_weapon_5);
   if (iVar5 != 0) {
-    core_inv_cpp_CInventory_selectWeapon_FUN_004feb10
-              (&g_HeroActors[g_LocalHeroIndex]->inventory,(CDemonActor *)0x0,3,1);
+    request_selection(NOCTURNE_NET_WEAPON_SELECT,3,1);
   }
   iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_infrared);
   if (iVar5 != 0) {

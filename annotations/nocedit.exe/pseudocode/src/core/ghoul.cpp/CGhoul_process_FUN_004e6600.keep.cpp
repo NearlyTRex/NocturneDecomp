@@ -10,6 +10,7 @@
 void __cdecl core_ghoul_cpp_CGhoul_process_FUN_004e6600(CGhoul *this_ptr,float delta_time)
 
 {
+  CHero *sim_target;
   CDeformableModelInstance *this_ptr_00;
   float fVar1;
   float fVar2;
@@ -110,7 +111,12 @@ void __cdecl core_ghoul_cpp_CGhoul_process_FUN_004e6600(CGhoul *this_ptr,float d
   CPathMap *local_18;
   float local_14;
   float local_44;
-  
+
+#if NOCTURNE_AUTHENTIC_NETPLAY
+  sim_target = g_HeroActors[g_LocalHeroIndex];
+#else
+  sim_target = nocturne_net_sim_target_for((CDemonActor *)this_ptr);
+#endif
   iVar7 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar7 == 0) {
     return;
@@ -382,8 +388,8 @@ LAB_004e6a5f:
         {
           cVar19 = cVar19 + '\x01';
         }
-        EVar13 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
-                           (&g_HeroActors[g_LocalHeroIndex]->base);
+        EVar13 = (*(((sim_target->base).base.vtable._uc)->_uc).getDeathState)
+                           (&sim_target->base);
         pCVar6 = g_CGamePtr;
         if (EVar13 == DEATH_STATE_ALIVE) {
           (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time)
@@ -529,19 +535,19 @@ LAB_004e7a33:
               local_174.x = 0.0;
               local_174.y = 0.0;
               local_174.z = local_2c;
-              pCVar11 = (*((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._ub)->getPathMap)
-                                  ((CDemonActor *)g_HeroActors[g_LocalHeroIndex]);
+              pCVar11 = (*((sim_target->base).base.vtable._ub)->getPathMap)
+                                  ((CDemonActor *)sim_target);
               pCVar12 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-                                  (&(g_HeroActors[g_LocalHeroIndex]->base).model,&local_198,0);
+                                  (&(sim_target->base).model,&local_198,0);
               pCVar12 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                                  ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],&local_150,pCVar12)
+                                  ((CDemonActor *)sim_target,&local_150,pCVar12)
               ;
               iVar9 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
                                 ((CCharacter *)this_ptr,pCVar12,pCVar11,&local_174,
                                  0.5f,fVar23);
               if (0 < iVar9) {
-                EVar13 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).
-                           getDeathState)(&g_HeroActors[g_LocalHeroIndex]->base);
+                EVar13 = (*(((sim_target->base).base.vtable._uc)->_uc).
+                           getDeathState)(&sim_target->base);
                 if (EVar13 == DEATH_STATE_DEAD) {
                   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                             (&(this_ptr->base).base.model.motion_controller,this_ptr->pending_eat_state,1);

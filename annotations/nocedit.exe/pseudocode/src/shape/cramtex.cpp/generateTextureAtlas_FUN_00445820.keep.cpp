@@ -42,9 +42,13 @@ void __cdecl shape_cramtex_cpp_generateTextureAtlas_FUN_00445820(int acceptable_
   int *piVar5;
   int *piVar4;
   int *piVar3;
-  
+
   remove("..\\shape\\cramlog.txt");
+#if NOCTURNE_AUTHENTIC_RNG
   seed = rand();
+#else
+  seed = (int)nocturne_rng_fx();
+#endif
   srand(0x16);
   _qsort
             (g_CramSortedTextureEntries,g_CramTextureCount,0x4c,

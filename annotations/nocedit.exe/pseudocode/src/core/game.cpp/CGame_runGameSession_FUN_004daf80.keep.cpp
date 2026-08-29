@@ -6,6 +6,7 @@
 // Signature: int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
 
 #include "nocturne.h"
+#include "debug_log.h"
 
 int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
 
@@ -31,7 +32,21 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
   int saved_pb_index;
   float saved_pb_timer;
 #endif
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+  int net_respawn_item;
+  int net_waiting;
+  int net_was_waiting;
+  int net_host_hero;
+  CDemonActor *net_dbg_focus;
+#endif
 
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+  net_respawn_item = -1;
+  net_waiting = 0;
+  net_was_waiting = 0;
+  net_host_hero = 0;
+  net_dbg_focus = (CDemonActor *)0x0;
+#endif
   local_14 = 0.0;
   local_1c = 0;
   engine_console_cpp_CConsole_reset_FUN_00441a40(g_CConsolePtr);
@@ -150,14 +165,36 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
       }
       iVar5 = 0;
       core_game_cpp_CGame_processFrame_FUN_004da100(this_ptr);
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+      if ((g_CNetGamePtr->connection_type == CONNECTION_CLIENT) &&
+         (-1 < g_CNetGamePtr->server_player_index)) {
+        if (NOCTURNE_NETPLAY_HOST_TIMEOUT_TICKS <
+            (uint)(g_CurrentGameTime -
+                   g_CNetGamePtr->players[g_CNetGamePtr->server_player_index].last_arrival_time)) {
+          shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
+                    (g_CEditorToolsPtr,"Connection lost - the host stopped responding");
+          core_netgame_cpp_CNetGame_disconnect_FUN_0053fd00(g_CNetGamePtr,0);
+          local_1c = 0;
+          goto LAB_004db434;
+        }
+      }
+#endif
       if (g_ModalDialogActive == 0) {
         iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
         if (iVar7 != 0) {
           shape_edittool_cpp_CPickList_clear_FUN_004a5770(&g_CPickList);
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+          net_respawn_item = -1;
+#endif
           this_ptr->wait_for_keypress = 0;
           EVar6 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
                             (&g_HeroActors[g_LocalHeroIndex]->base);
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+          if ((g_CNetGamePtr->connection_type != CONNECTION_CLIENT) && (1 < (int)EVar6))
+          goto LAB_004db434;
+#else
           if (1 < (int)EVar6) goto LAB_004db434;
+#endif
           if (g_CNetGamePtr->connection_type == CONNECTION_CLIENT) {
             pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                                 ("Leave network game");
@@ -176,6 +213,14 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
             pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                                 ("Abort network game");
             shape_edittool_cpp_CStrList_add_FUN_004a2b80(&g_CPickList.base,pcVar10);
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+            if (nocturne_net_respawn_available() != 0) {
+              pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
+                                  ("Respawn players near me");
+              net_respawn_item = g_CPickList.base.item_count;
+              shape_edittool_cpp_CStrList_add_FUN_004a2b80(&g_CPickList.base,pcVar10);
+            }
+#endif
             pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Return to game");
             shape_edittool_cpp_CStrList_add_FUN_004a2b80(&g_CPickList.base,pcVar10);
             uVar9 = 1;
@@ -266,6 +311,12 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
           shape_edittool_cpp_CPickList_clear_FUN_004a5770(&g_CPickList);
           g_ModalDialogActive = 0;
         }
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+        if ((iVar4 == net_respawn_item) && (iVar4 != -2)) {
+          nocturne_net_respawn_request();
+          net_respawn_item = -1;
+        }
+#endif
         if (iVar4 == 0) {
           core_netgame_cpp_CNetGame_disconnect_FUN_0053fd00(g_CNetGamePtr,1);
           goto LAB_004db434;
@@ -302,6 +353,51 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
       }
       EVar6 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
                         (&g_HeroActors[g_LocalHeroIndex]->base);
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+      net_waiting = 0;
+      if ((g_CNetGamePtr->connection_type == CONNECTION_CLIENT) &&
+         ((EVar6 == DEATH_STATE_DEAD) ||
+          ((g_HeroActors[g_LocalHeroIndex]->base).base.location.area_id < 0))) {
+        net_waiting = 1;
+      }
+      if (net_waiting != 0) {
+        EVar6 = DEATH_STATE_DYING;
+        net_host_hero = g_CNetGamePtr->server_player_index;
+        if ((((-1 < net_host_hero) && (net_host_hero < 4)) &&
+             (g_HeroActors[net_host_hero] != (CHero *)0x0)) &&
+           (g_CScriptPtr->focus_actor == (CDemonActor *)g_HeroActors[g_LocalHeroIndex])) {
+          g_CScriptPtr->focus_actor = (CDemonActor *)g_HeroActors[net_host_hero];
+          g_CScriptPtr->focus_actor_changed = 1;
+        }
+      }
+      else if (net_was_waiting != 0) {
+        g_CScriptPtr->focus_actor = (CDemonActor *)g_HeroActors[g_LocalHeroIndex];
+        g_CScriptPtr->focus_actor_changed = 1;
+      }
+      if (net_waiting != net_was_waiting) {
+        net_host_hero = g_CNetGamePtr->server_player_index;
+        if ((net_host_hero < 0) || (3 < net_host_hero)) {
+          net_host_hero = g_LocalHeroIndex;
+        }
+#if NOCTURNE_NETPLAY_RNG_TRACE
+        DLOG_EX("netplay",
+                "waiting %d->%d conn=%d localHero=%d area=%d death=%d own=%p host=%p focus=%p",
+                net_was_waiting,net_waiting,(int)g_CNetGamePtr->connection_type,g_LocalHeroIndex,
+                (g_HeroActors[g_LocalHeroIndex]->base).base.location.area_id,(int)EVar6,
+                (void *)g_HeroActors[g_LocalHeroIndex],(void *)g_HeroActors[net_host_hero],
+                (void *)g_CScriptPtr->focus_actor);
+#endif
+      }
+      if (g_CScriptPtr->focus_actor != net_dbg_focus) {
+        net_dbg_focus = g_CScriptPtr->focus_actor;
+#if NOCTURNE_NETPLAY_RNG_TRACE
+        DLOG_EX("netplay","focus_actor now %p (own=%p) locked=%d speaking=%p",
+                (void *)net_dbg_focus,(void *)g_HeroActors[g_LocalHeroIndex],
+                g_CScriptPtr->focus_actor_locked,(void *)g_CScriptPtr->who_is_speaking);
+#endif
+      }
+      net_was_waiting = net_waiting;
+#endif
       if (EVar6 == DEATH_STATE_DEAD) {
         iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_RETURN);
         if (iVar5 != 0) goto LAB_004db434;

@@ -12,7 +12,7 @@ void __cdecl core_mission_cpp_CDemonMission_process_FUN_00524250(CDemonMission *
 {
   CHero *pCVar1;
   int iVar3;
-  
+
   if (this_ptr->delete_queue_count != 0) {
     iVar3 = 0;
     if (0 < this_ptr->delete_queue_count) {
@@ -28,9 +28,19 @@ void __cdecl core_mission_cpp_CDemonMission_process_FUN_00524250(CDemonMission *
   }
   core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_00524120(this_ptr);
   if (-1 < (this_ptr->pending_teleport).area_id) {
+#if NOCTURNE_AUTHENTIC_NETPLAY
     pCVar1 = g_HeroActors[g_LocalHeroIndex];
     (pCVar1->base).base.location.position = (this_ptr->pending_teleport).position;
     (pCVar1->base).base.location.area_id = (this_ptr->pending_teleport).area_id;
+#else
+    for (iVar3 = 0; iVar3 < 4; iVar3 = iVar3 + 1) {
+      pCVar1 = g_HeroActors[iVar3];
+      if ((pCVar1 != (CHero *)0x0) && (-1 < (pCVar1->base).base.location.area_id)) {
+        (pCVar1->base).base.location.position = (this_ptr->pending_teleport).position;
+        (pCVar1->base).base.location.area_id = (this_ptr->pending_teleport).area_id;
+      }
+    }
+#endif
     if ((this_ptr->pending_teleport).area_id != this_ptr->current_set_index) {
       engine_special_cpp_clearScreen_FUN_005b3e70();
       engine_2d_c_drawText_FUN_00401fd0("Changing sets...",0,0);

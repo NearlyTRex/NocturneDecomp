@@ -17,7 +17,7 @@ void __cdecl core_moon_cpp_CMoon_init_FUN_00529ae0(CMoon *this_ptr)
   int iVar3;
   int iVar5;
   CAlphaBitmap *this_ptr_00;
-  
+
   if (this_ptr->is_loaded == 0) {
     if (g_CGamePtr->head_of_horror_cheat == 0x29a) {
       core_dmodel_cpp_CKeyFramedModel_load_FUN_00476db0(&this_ptr->moon,"taylor_head.kfm");
@@ -44,7 +44,11 @@ void __cdecl core_moon_cpp_CMoon_init_FUN_00529ae0(CMoon *this_ptr)
   this_ptr->rotation_phase = 0.25;
   iVar3 = 0;
   do {
+#if NOCTURNE_AUTHENTIC_RNG
     iVar2 = rand();
+#else
+    iVar2 = (int)nocturne_rng_fx();
+#endif
     g_MoonBats[iVar3].course_index = iVar2 % 3;
     fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10
                       (0.0,(float)g_MoonBatCourses[iVar2 % 3].len);

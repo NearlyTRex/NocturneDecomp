@@ -10,6 +10,7 @@
 void __cdecl core_hostage_cpp_CHostage_process_FUN_004f4bd0(CHostage *this_ptr,float delta_time)
 
 {
+  CHero *sim_target;
   CLocation *pCVar3;
   CDeformableModelInstance *pCVar4;
   CVector3f *pCVar7;
@@ -68,7 +69,12 @@ void __cdecl core_hostage_cpp_CHostage_process_FUN_004f4bd0(CHostage *this_ptr,f
   float fVar3;
   CDeformableModelInstance *pCVar2;
   CLocation *pCVar1;
-  
+
+#if NOCTURNE_AUTHENTIC_NETPLAY
+  sim_target = g_HeroActors[g_LocalHeroIndex];
+#else
+  sim_target = nocturne_net_sim_target_for((CDemonActor *)this_ptr);
+#endif
   switch(this_ptr->hostage_state) {
   case 0:
   case 4:
@@ -157,7 +163,7 @@ LAB_004f4dd2:
         (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
                   ((CCharacter *)this_ptr,1,(CVector3f *)0x0);
         core_inv_cpp_CInventory_addItem_FUN_004fd600
-                  (&g_HeroActors[g_LocalHeroIndex]->inventory,pCVar9,1);
+                  (&sim_target->inventory,pCVar9,1);
       }
     }
     else {
@@ -202,7 +208,7 @@ LAB_004f4fc0:
         case 0:
           iVar25 = core_hostage_cpp_CHostage_processGrabberFlee_FUN_004f5ff0(this_ptr,delta_time);
           if (iVar25 == 0) {
-            pCVar8 = g_HeroActors[g_LocalHeroIndex];
+            pCVar8 = sim_target;
             fVar14 = (pCVar8->base).base.location.position.x -
                      (this_ptr->base).base.base.location.position.x;
             fVar24 = (pCVar8->base).base.location.position.y -
@@ -242,7 +248,7 @@ LAB_004f4fc0:
                                  ((CCharacter *)this_ptr,delta_time);
               if (iVar25 == 0) {
                 core_charactr_cpp_CCharacter_followActor_FUN_0042c5f0
-                          ((CCharacter *)this_ptr,(CDemonActor *)g_HeroActors[g_LocalHeroIndex],5.0,
+                          ((CCharacter *)this_ptr,(CDemonActor *)sim_target,5.0,
                            10.0,&this_ptr->follow_state);
               }
               else {
@@ -286,7 +292,7 @@ LAB_004f4fc0:
           iVar25 = core_hostage_cpp_CHostage_processGrabberFlee_FUN_004f5ff0(this_ptr,delta_time);
           if (iVar25 == 0) {
             core_charactr_cpp_CCharacter_followActor_FUN_0042c5f0
-                      ((CCharacter *)this_ptr,(CDemonActor *)g_HeroActors[g_LocalHeroIndex],4.0,10.0
+                      ((CCharacter *)this_ptr,(CDemonActor *)sim_target,4.0,10.0
                        ,&this_ptr->follow_state);
             uVar10 = this_ptr->follow_state;
             if (uVar10 == 0) {

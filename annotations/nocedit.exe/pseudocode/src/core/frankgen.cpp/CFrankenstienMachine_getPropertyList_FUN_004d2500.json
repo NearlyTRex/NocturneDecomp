@@ -98,6 +98,16 @@
     },
     "pcode_op_count": 143
   },
+  "resolved_suspects": [
+    {
+      "description": "'pCVar1[1].actor_name + 4' walks 1 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0x4 = 0x15c, which is exactly offsetof(CActorDestination, dest_class). Ghidra had no CActorDestination type here and reached the field by index arithmetic; write it as ((CActorDestination *)pCVar1)->dest_class (\u00a7de-pun/\u00a712). Ambiguous: CBodyPart::bounding_box, CChain::chain_length, CEmitter::emitter_size also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 14,
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(property_list,local_68,(float *)(pCVar1[1].actor_name + 4),callback);",
+      "type": "derived_field_index_pun"
+    }
+  ],
   "stack_frame": {
     "frame_size": 116,
     "local_size": 108,

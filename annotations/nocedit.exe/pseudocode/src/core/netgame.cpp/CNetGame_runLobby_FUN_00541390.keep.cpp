@@ -6,6 +6,7 @@
 // Signature: int __cdecl core_netgame_cpp_CNetGame_runLobby_FUN_00541390(CNetGame *this_ptr)
 
 #include "nocturne.h"
+#include "debug_log.h"
 
 int __cdecl core_netgame_cpp_CNetGame_runLobby_FUN_00541390(CNetGame *this_ptr)
 
@@ -33,7 +34,11 @@ int __cdecl core_netgame_cpp_CNetGame_runLobby_FUN_00541390(CNetGame *this_ptr)
     g_ForceMessagePump = 0;
     this_ptr->network_mode = NET_MODE_LOBBY;
     if (this_ptr->connection_type == CONNECTION_HOST) {
+#if NOCTURNE_AUTHENTIC_RNG
       uVar3 = rand();
+#else
+      uVar3 = nocturne_rng_seed();
+#endif
       this_ptr->random_seed = uVar3;
       core_netgame_cpp_CNetGame_gameSettingsChanged_FUN_00542cf0(this_ptr);
     }
@@ -43,6 +48,11 @@ int __cdecl core_netgame_cpp_CNetGame_runLobby_FUN_00541390(CNetGame *this_ptr)
     mission_filename = this_ptr->mission_name;
     while (this_ptr->connection_type != CONNECTION_NONE) {
       engine_special_cpp_clearScreen_FUN_005b3e70();
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+      engine_2d_c_drawText_FUN_00401fd0
+                ("ENTER toggle ready    S send chat    ESC leave lobby",0,0);
+      engine_2d_c_drawText_FUN_00401fd0("Starts when all players ready",400,0);
+#endif
       _sprintf(local_130,"Mission: %s",mission_filename);
       engine_2d_c_drawText_FUN_00401fd0(local_130,0,0xb);
       _sprintf(local_130,"MyGameSettigsId: %d",INT_02f7c8c4);
@@ -159,6 +169,12 @@ LAB_005415cb:
                       (g_CEditorToolsPtr,"Loading %s",mission_filename);
             srand(this_ptr->random_seed);
             core_actor_cpp_setRandomSeed_FUN_0040cb90(this_ptr->random_seed);
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+#if NOCTURNE_NETPLAY_RNG_TRACE
+            DLOG_EX("netplay", "LOAD SEED (host) random_seed=%u (0x%06x masked)",
+                    this_ptr->random_seed, this_ptr->random_seed & 0xffffff);
+#endif
+#endif
             core_mission_cpp_CDemonMission_load_FUN_00522d90(g_CDemonMissionPtr,mission_filename,0);
             iVar6 = core_mission_cpp_CDemonMission_createHeros_FUN_00524a80
                               (g_CDemonMissionPtr,(CCharacter *)0x0);
@@ -179,6 +195,12 @@ LAB_005415cb:
                   (g_CEditorToolsPtr,"Loading %s",this_ptr->mission_name);
         srand(this_ptr->random_seed);
         core_actor_cpp_setRandomSeed_FUN_0040cb90(this_ptr->random_seed);
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+#if NOCTURNE_NETPLAY_RNG_TRACE
+        DLOG_EX("netplay", "LOAD SEED (guest) random_seed=%u (0x%06x masked)",
+                this_ptr->random_seed, this_ptr->random_seed & 0xffffff);
+#endif
+#endif
         core_mission_cpp_CDemonMission_load_FUN_00522d90
                   (g_CDemonMissionPtr,this_ptr->mission_name,0);
         iVar6 = core_mission_cpp_CDemonMission_createHeros_FUN_00524a80

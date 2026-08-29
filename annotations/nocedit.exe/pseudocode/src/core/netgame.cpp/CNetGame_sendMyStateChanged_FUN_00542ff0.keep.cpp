@@ -13,10 +13,8 @@ void __cdecl core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_00542ff0(CNetGame 
   int iVar2;
   int iVar3;
   SNetPlayer *pSVar4;
-  char *pcVar5;
-  SNetPacket_Simple local_3c;
-  char local_33 [20];
-  
+  SNetPacket_PlayerState local_3c;
+
   if ((this_ptr->connection_type != CONNECTION_CLIENT) || (this_ptr->network_mode != NET_MODE_LOBBY)
      ) {
     g_CurrentFilename = "..\\core\\netgame.cpp";
@@ -32,13 +30,15 @@ void __cdecl core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_00542ff0(CNetGame 
     iVar3 = 0x20000;
   }
   g_CurrentGameTime = g_CurrentGameTime + iVar3;
-  local_3c.header.size = 0x29;
+  local_3c.header.size = sizeof(SNetPacket_PlayerState);
   local_3c.header.type = PACKET_PLAYER_STATE;
-  pcVar5 = local_33;
   pSVar4 = this_ptr->players + this_ptr->local_player_index;
-  strcpy(pcVar5,pSVar4->name);
+  strcpy(local_3c.name,pSVar4->name);
+  local_3c.ready_flag = pSVar4->ready_flag;
+  local_3c.hero_number = pSVar4->hero_number;
+  local_3c.aim_mode = pSVar4->aim_mode;
   g_LastPingTime = iVar2 / 0x12;
-  local_3c.value = g_CurrentGameTime;
+  local_3c.timestamp = g_CurrentGameTime;
   core_netgame_cpp_CNetGame_send_FUN_005411c0
             (this_ptr,this_ptr->server_player_index,&local_3c.header);
   INT_00680a04 = 1;

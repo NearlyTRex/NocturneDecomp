@@ -38,19 +38,19 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_processInEditor_FUN_004d25f0
   pCVar2 = core_frankgen_cpp_findLeader_FUN_004d2330();
   iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_PERIOD);
   if (iVar2 != 0) {
-    *(float *)(pCVar2[1].actor_name + 4) = *(float *)(pCVar2[1].actor_name + 4) + local_18;
+    ((CFrankenstienMachine *)pCVar2)->master_frame = ((CFrankenstienMachine *)pCVar2)->master_frame + local_18;
   }
   iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_COMMA);
   if (iVar2 != 0) {
-    *(float *)(pCVar2[1].actor_name + 4) = *(float *)(pCVar2[1].actor_name + 4) - local_18;
+    ((CFrankenstienMachine *)pCVar2)->master_frame = ((CFrankenstienMachine *)pCVar2)->master_frame - local_18;
   }
-  if (*(float *)(pCVar2[1].actor_name + 4) < 0.0) {
-    *(float *)(pCVar2[1].actor_name + 4) = 2300.0f + *(float *)(pCVar2[1].actor_name + 4);
+  if (((CFrankenstienMachine *)pCVar2)->master_frame < 0.0) {
+    ((CFrankenstienMachine *)pCVar2)->master_frame = 2300.0f + ((CFrankenstienMachine *)pCVar2)->master_frame;
   }
-  if (2300.0f <= *(float *)(pCVar2[1].actor_name + 4)) {
-    *(float *)(pCVar2[1].actor_name + 4) = *(float *)(pCVar2[1].actor_name + 4) - 2300.0f;
+  if (2300.0f <= ((CFrankenstienMachine *)pCVar2)->master_frame) {
+    ((CFrankenstienMachine *)pCVar2)->master_frame = ((CFrankenstienMachine *)pCVar2)->master_frame - 2300.0f;
   }
-  this_ptr->master_frame = *(float *)(pCVar2[1].actor_name + 4);
+  this_ptr->master_frame = ((CFrankenstienMachine *)pCVar2)->master_frame;
   core_frankgen_cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004d2190(this_ptr);
   return;
 }

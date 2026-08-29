@@ -16,14 +16,18 @@ void __cdecl core_charactr_cpp_CCharacter_renderEthereal_FUN_0042af60(CCharacter
   SPose local_1aac;
   CDeformableModelInstance *this_ptr_00;
   CBoundingBox3D *bounding_box;
-  
+
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0xc000);
   if ((CHero *)this_ptr == g_HeroActors[g_LocalHeroIndex]) {
     INT_00823a90 = (int)ROUND(ROUND((float)INT_00823a90 +
                                     g_CGamePtr->delta_time_float * 8388608.0f));
   }
+#if NOCTURNE_AUTHENTIC_RNG
   iVar2 = rand();
+#else
+  iVar2 = (int)nocturne_rng_fx();
+#endif
   INT_00823a94 = iVar2 % 6;
   g_CDemonRendererPtr2->skip_uv_extraction = 1;
   engine_texture_cpp_ensureTextureLoaded_FUN_005dd800(SMRGLTextureBasic_ARRAY_0066e6b0 + iVar2 % 6);

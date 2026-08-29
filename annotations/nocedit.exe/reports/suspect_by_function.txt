@@ -5,6 +5,12 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 6454 (100.0%)
-With suspects: 0
-Total suspects: 0
+Clean: 6453 (100.0%)
+With suspects: 1
+Total suspects: 1
+
+====================================================================================================
+core_netgame.cpp_swapPlayerData_FUN_00543bb0 (1 suspect)
+  File: core/netgame.cpp
+====================================================================================================
+  Line 22 [unrolled_memcpy]: temp.addr.port = (player->addr).port;

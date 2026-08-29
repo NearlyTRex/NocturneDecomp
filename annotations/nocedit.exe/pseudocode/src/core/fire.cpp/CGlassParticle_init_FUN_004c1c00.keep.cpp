@@ -40,7 +40,7 @@ void __cdecl core_fire_cpp_CGlassParticle_init_FUN_004c1c00(CGlassParticle *this
   float local_54;
   CVector3f local_50;
   CVector3f *pCVar1;
-  
+
   bVar4 = 0;
   local_80.x = (triangle_vertices->vertices[0].x + triangle_vertices->vertices[1].x +
                triangle_vertices->vertices[2].x) / 3.0f;
@@ -51,10 +51,17 @@ void __cdecl core_fire_cpp_CGlassParticle_init_FUN_004c1c00(CGlassParticle *this
   local_50 = local_80;
   this_ptr->uv_u_per_vertex = *uv_u_per_vertex;
   this_ptr->uv_v_per_vertex = *uv_v_per_vertex;
+#if NOCTURNE_AUTHENTIC_RNG
   fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.0,3.1415927);
   (this_ptr->euler_angles).z = 0.0;
   (this_ptr->euler_angles).x = fVar3;
   fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.0,6.2831855);
+#else
+  fVar3 = nocturne_rng_fx_range(0.0,3.1415927);
+  (this_ptr->euler_angles).z = 0.0;
+  (this_ptr->euler_angles).x = fVar3;
+  fVar3 = nocturne_rng_fx_range(0.0,6.2831855);
+#endif
   (this_ptr->euler_angles).y = fVar3;
   local_5c = triangle_vertices->vertices[0].x - local_50.x;
   local_58 = triangle_vertices->vertices[0].y - local_50.y;
@@ -87,8 +94,13 @@ void __cdecl core_fire_cpp_CGlassParticle_init_FUN_004c1c00(CGlassParticle *this
   local_84 = (this_ptr->triangle_delta).vertices[2].z - (this_ptr->triangle_delta).vertices[0].z;
   fVar3 = SQRT(local_84 * local_84 + local_8c * local_8c + local_88 * local_88) *
           (float)10;
+#if NOCTURNE_AUTHENTIC_RNG
   fVar4 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.7853982,1.5707964);
   fVar9 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.0,6.2831855);
+#else
+  fVar4 = nocturne_rng_fx_range(0.7853982,1.5707964);
+  fVar9 = nocturne_rng_fx_range(0.0,6.2831855);
+#endif
   fVar5 = (float10)fcos((float10)fVar9);
   fVar6 = (float10)fcos((float10)fVar4);
   fVar7 = (float10)fsin((float10)fVar9);

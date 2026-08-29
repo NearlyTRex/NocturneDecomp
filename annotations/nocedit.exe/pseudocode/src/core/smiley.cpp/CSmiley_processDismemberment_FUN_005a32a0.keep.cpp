@@ -15,7 +15,7 @@ void __cdecl core_smiley_cpp_CSmiley_processDismemberment_FUN_005a32a0(CSmiley *
   int iVar1;
   float local_14;
   CVector3f *initial_velocity;
-  
+
   if ((int)damage_info->damage_type < 0xc) {
     return;
   }
@@ -26,7 +26,11 @@ void __cdecl core_smiley_cpp_CSmiley_processDismemberment_FUN_005a32a0(CSmiley *
     if (2 < iVar1) {
       damage_info->dismember_prob = 1.0;
       if ((0.0 < damage_info->dismember_prob) && (damage_info->hit_part_index == -1)) {
+#if NOCTURNE_AUTHENTIC_RNG
         iVar2 = rand();
+#else
+        iVar2 = nocturne_rng_sim();
+#endif
         switch(iVar2 % 6) {
         case 0:
           iVar2 = this_ptr->part_indices[0];

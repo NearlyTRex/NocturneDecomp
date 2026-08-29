@@ -8,7 +8,7 @@
 ; int *            Stack[0x8]:4   src
 ;
 ; XREF[1]:
-;   core_netgame.cpp_CNetGame_swapPlayerData_FUN_00543bb0 at 00543be5
+;   core_netgame.cpp_swapPlayerData_FUN_00543bb0 at 00543be5
 ;
 ; *****************************************************************************
 

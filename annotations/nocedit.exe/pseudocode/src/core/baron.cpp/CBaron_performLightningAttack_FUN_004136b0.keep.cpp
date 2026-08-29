@@ -55,11 +55,19 @@ void __cdecl core_baron_cpp_CBaron_performLightningAttack_FUN_004136b0(CBaron *t
     iVar2 = (*((this_ptr_00->base).base.vtable._ub)->getTargetPoints)
                       ((CDemonActor *)this_ptr_00,local_148);
     iStack_18 = iVar2;
+#if NOCTURNE_AUTHENTIC_RNG
     iVar3 = rand();
+#else
+    iVar3 = nocturne_rng_sim();
+#endif
     pCVar2 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                        ((CDemonActor *)this_ptr_00,&CStack_94,local_148 + iVar3 % iVar2);
     CStack_28 = *pCVar2;
+#if NOCTURNE_AUTHENTIC_RNG
     iVar4 = rand();
+#else
+    iVar4 = nocturne_rng_sim();
+#endif
     pCVar2 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                        ((CDemonActor *)this_ptr_00,&CStack_58,local_148 + iVar4 % iStack_18);
     CStack_4c = *pCVar2;

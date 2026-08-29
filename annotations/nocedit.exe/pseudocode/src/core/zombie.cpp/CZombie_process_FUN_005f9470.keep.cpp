@@ -10,6 +10,7 @@
 void __cdecl core_zombie_cpp_CZombie_process_FUN_005f9470(CZombie *this_ptr,float delta_time)
 
 {
+  CHero *sim_target;
   CLocation *pCVar1;
   CDeformableModelInstance *pCVar2;
   CCharacter *pCVar3;
@@ -137,6 +138,11 @@ void __cdecl core_zombie_cpp_CZombie_process_FUN_005f9470(CZombie *this_ptr,floa
   uint local_19c;
   float local_74;
 
+#if NOCTURNE_AUTHENTIC_NETPLAY
+  sim_target = g_HeroActors[g_LocalHeroIndex];
+#else
+  sim_target = nocturne_net_sim_target_for((CDemonActor *)this_ptr);
+#endif
   iVar6 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar6 == 0) {
     return;
@@ -460,11 +466,11 @@ LAB_005f9541:
         }
         (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
         if (((this_ptr->base).victim == (CCharacter *)0x0) && (local_38 != 0)) {
-          EVar13 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
-                             (&g_HeroActors[g_LocalHeroIndex]->base);
+          EVar13 = (*(((sim_target->base).base.vtable._uc)->_uc).getDeathState)
+                             (&sim_target->base);
           if (EVar13 == DEATH_STATE_ALIVE) goto LAB_005fa18b;
           g_CGamePtr->player_hit_flag = 1;
-          (this_ptr->base).victim = &g_HeroActors[g_LocalHeroIndex]->base;
+          (this_ptr->base).victim = &sim_target->base;
         }
         if ((this_ptr->base).victim != (CCharacter *)0x0) {
           core_zombie_cpp_CZombie_resetChaseState_FUN_005fca10(this_ptr);
@@ -487,10 +493,10 @@ LAB_005f9541:
         pCVar3 = (this_ptr->base).victim;
         (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
         if ((((this_ptr->base).victim == (CCharacter *)0x0) && (local_38 != 0)) &&
-           (EVar13 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState
-                     )(&g_HeroActors[g_LocalHeroIndex]->base), EVar13 != DEATH_STATE_ALIVE)) {
+           (EVar13 = (*(((sim_target->base).base.vtable._uc)->_uc).getDeathState
+                     )(&sim_target->base), EVar13 != DEATH_STATE_ALIVE)) {
           g_CGamePtr->player_hit_flag = 1;
-          (this_ptr->base).victim = &g_HeroActors[g_LocalHeroIndex]->base;
+          (this_ptr->base).victim = &sim_target->base;
         }
         if ((this_ptr->base).victim == (CCharacter *)0x0) {
           iVar6 = core_enemy_cpp_CEnemy_updatePatrol_FUN_004a9fd0(&this_ptr->base,delta_time);
@@ -758,8 +764,8 @@ LAB_005fac96:
         }
       }
       else if ((uVar8 < 0x19) || (uVar8 < 0x1a)) {
-        EVar13 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
-                           (&g_HeroActors[g_LocalHeroIndex]->base);
+        EVar13 = (*(((sim_target->base).base.vtable._uc)->_uc).getDeathState)
+                           (&sim_target->base);
         if ((EVar13 == DEATH_STATE_ALIVE) &&
            ((*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)
                       (&this_ptr->base,delta_time), (this_ptr->base).victim != (CCharacter *)0x0)) {

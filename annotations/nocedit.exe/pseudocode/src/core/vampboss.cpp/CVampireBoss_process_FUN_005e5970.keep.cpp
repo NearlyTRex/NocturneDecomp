@@ -10,6 +10,7 @@
 void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *this_ptr,float delta_time)
 
 {
+  CHero *sim_target;
   CLocation *pCVar3;
   UOrientationVector *euler_00;
   CDeformableModelInstance *pCVar6;
@@ -79,7 +80,12 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *t
   float fVar6;
   CDemonActor *pCVar5;
   float fVar3;
-  
+
+#if NOCTURNE_AUTHENTIC_NETPLAY
+  sim_target = g_HeroActors[g_LocalHeroIndex];
+#else
+  sim_target = nocturne_net_sim_target_for((CDemonActor *)this_ptr);
+#endif
   for (iVar9 = 0; iVar9 < 4; iVar9 = iVar9 + 1) {
     if ((&this_ptr->way_point_0)[iVar9] == (CDemonActor *)0x0) {
       g_CurrentFilename = "..\\core\\vampboss.cpp";
@@ -110,7 +116,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *t
       }
     }
     if ((this_ptr->bat_ai_state != 2) && (this_ptr->bat_ai_state != 3)) {
-      pCVar4 = g_HeroActors[g_LocalHeroIndex];
+      pCVar4 = sim_target;
       fVar13 = (this_ptr->base).base.base.location.position.x -
                (pCVar4->base).base.location.position.x;
       fVar10 = (this_ptr->base).base.base.location.position.y;
@@ -126,8 +132,8 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *t
           local_244.damage_amount = 10.0;
           local_244.attacker = (CDemonActor *)this_ptr;
           local_244.wielder = (CDemonActor *)this_ptr;
-          (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).processDamage)
-                    (&g_HeroActors[g_LocalHeroIndex]->base,&local_244);
+          (*(((sim_target->base).base.vtable._uc)->_uc).processDamage)
+                    (&sim_target->base,&local_244);
         }
       }
       if ((float)40 < fVar13) {
@@ -157,7 +163,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *t
                   (&(this_ptr->model).motion_controller,iVar18,1);
       }
     }
-    pCVar12 = g_HeroActors[g_LocalHeroIndex];
+    pCVar12 = sim_target;
     pCVar15 = &(pCVar12->base).base.location;
     local_b8 = (pCVar15->position).x;
     local_b4 = (pCVar12->base).base.location.position.y;
@@ -454,7 +460,7 @@ LAB_005e648e:
         pCVar3 = &(this_ptr->base).base.base.location;
         iVar21 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004f2220(&pCVar3->position,12.0);
         if (iVar21 == 0) {
-          pCVar12 = g_HeroActors[g_LocalHeroIndex];
+          pCVar12 = sim_target;
           local_d0.x = (pCVar12->base).base.location.position.x - (pCVar3->position).x;
           local_d0.y = (pCVar12->base).base.location.position.y -
                        (this_ptr->base).base.base.location.position.y;
@@ -508,7 +514,7 @@ LAB_005e648e:
       iVar21 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                          (pCVar17,"morphToBat");
       if (iVar21 == 0) {
-        pCVar12 = g_HeroActors[g_LocalHeroIndex];
+        pCVar12 = sim_target;
         local_13c.x = (pCVar12->base).base.location.position.x -
                       (this_ptr->base).base.base.location.position.x;
         local_13c.y = (pCVar12->base).base.location.position.y -

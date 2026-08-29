@@ -2015,6 +2015,7 @@ joined_r0x0055c026:
                                                     return -1;
                                                   }
                                                   local_11c = local_11c + local_90;
+#if NOCTURNE_AUTHENTIC_NETPLAY
                                                   if (g_CNetGamePtr->connection_type !=
                                                       CONNECTION_NONE) {
                                                     _sprintf
@@ -2028,6 +2029,18 @@ joined_r0x0055c026:
                                                             (g_HeroActors[g_LocalHeroIndex],local_94
                                                             );
                                                   }
+#else
+                                                  if (g_ScriptEventsEnabled == 0) {
+                                                    int hero_i;
+                                                    for (hero_i = 0; hero_i < g_HeroCount;
+                                                         hero_i = hero_i + 1) {
+                                                      if (g_HeroActors[hero_i] != (CHero *)0x0) {
+                                                  core_hero_cpp_CHero_removeMatchingKeys_FUN_004f3910
+                                                            (g_HeroActors[hero_i],local_94);
+                                                      }
+                                                    }
+                                                  }
+#endif
                                                   }
                                                   else {
                                                     iVar8 = _strnicmp
@@ -2362,6 +2375,19 @@ LAB_0055e656:
                                                                           &g_CDemonActorClassInfo);
                                                   if (pCVar18_00 == (CDemonActor *)0x0)
                                                   goto joined_r0x0055c026;
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+                                                  if (((g_CNetGamePtr->
+                                                        connection_type !=
+                                                        CONNECTION_NONE) &&
+                                                      (pCVar18_00 ==
+                                                       (CDemonActor *)
+                                                       g_HeroActors[0])) &&
+                                                     (g_HeroActors[g_LocalHeroIndex] !=
+                                                      (CHero *)0x0)) {
+                                                    pCVar18_00 = (CDemonActor *)
+                                                  g_HeroActors[g_LocalHeroIndex];
+                                                  }
+#endif
                                                   if (pCVar18_00 != this_ptr->focus_actor) {
                                                     this_ptr->focus_actor_changed = 1;
                                                     this_ptr->focus_actor = pCVar18_00;

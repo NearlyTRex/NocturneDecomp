@@ -10,6 +10,7 @@
 void __cdecl core_dracbrid_cpp_CDraculaBride_process_FUN_00484410(CDraculaBride *this_ptr,float delta_time)
 
 {
+  CHero *sim_target;
   CLocation *pCVar1;
   CDeformableModelInstance *pCVar5;
   CBodyPart *pCVar7;
@@ -93,7 +94,12 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_process_FUN_00484410(CDraculaBride 
   SDamageInfo *pSVar18;
   float fVar19;
   float local_34;
-  
+
+#if NOCTURNE_AUTHENTIC_NETPLAY
+  sim_target = g_HeroActors[g_LocalHeroIndex];
+#else
+  sim_target = nocturne_net_sim_target_for((CDemonActor *)this_ptr);
+#endif
   if (this_ptr->exploded != 0) {
     fVar20 = this_ptr->fade_timer - delta_time;
     this_ptr->fade_timer = fVar20;
@@ -407,8 +413,8 @@ LAB_004852f8:
               (&(this_ptr->base).base.model.motion_controller,0xe,1);
     break;
   case 0xc:
-    EVar14 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
-                       (&g_HeroActors[g_LocalHeroIndex]->base);
+    EVar14 = (*(((sim_target->base).base.vtable._uc)->_uc).getDeathState)
+                       (&sim_target->base);
     if ((EVar14 == DEATH_STATE_ALIVE) &&
        (iVar10 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                            (g_CEventListPtr,this_ptr->rise_event), iVar10 != 0)) {
@@ -499,8 +505,8 @@ LAB_004852f8:
     core_gore_cpp_CGore_createBloodPool_FUN_004ede30(g_CGorePtr,&local_1cc,0);
     goto switchD_004858cd_caseD_10;
   case 0x12:
-    EVar13 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
-                       (&g_HeroActors[g_LocalHeroIndex]->base);
+    EVar13 = (*(((sim_target->base).base.vtable._uc)->_uc).getDeathState)
+                       (&sim_target->base);
     if ((EVar13 == DEATH_STATE_ALIVE) &&
        (iVar10 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                            (g_CEventListPtr,this_ptr->rise_event), iVar10 != 0)) {

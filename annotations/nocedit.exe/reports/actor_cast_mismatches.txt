@@ -13,12 +13,12 @@ accesses and vtable calls will be wrong.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Total resolution calls found:  337
+  Total resolution calls found:  338
   Type mismatches found:         0
   Unresolved (indirect variable): 17
 
   Calls by function:
-    castToClassHash                264 calls
+    castToClassHash                265 calls
     createActorByName              7 calls
     getActor                       35 calls
     resolveActorByName             31 calls
@@ -151,13 +151,13 @@ Manual inspection is needed to determine the expected class.
   core/mimic.cpp/CMimic_setup_FUN_0051f3e0.keep.cpp
 --------------------------------------------------------------------------------
 
-  Line 79: createActorByName()
-    77:              &(this_ptr->base).base.base.orient.vec,pCVar1);
-    78:   class_name_hash = g_CEnemyClassInfo.name_hash;
-    79:   actor_ptr = core_actor_cpp_createActorByName_FUN_0040c430(this_ptr->morph_actor_type);
-    80:   pCVar10 = (CEnemy *)core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,class_name_hash);
-    81:   this_ptr->morph_target_actor = (CDemonActor *)pCVar10;
-    82:   if (pCVar10 == (CEnemy *)0x0) {
+  Line 94: createActorByName()
+    92:              &(this_ptr->base).base.base.orient.vec,pCVar1);
+    93:   class_name_hash = g_CEnemyClassInfo.name_hash;
+    94:   actor_ptr = core_actor_cpp_createActorByName_FUN_0040c430(this_ptr->morph_actor_type);
+    95:   pCVar10 = (CEnemy *)core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,class_name_hash);
+    96:   this_ptr->morph_target_actor = (CDemonActor *)pCVar10;
+    97:   if (pCVar10 == (CEnemy *)0x0) {
 
 --------------------------------------------------------------------------------
   core/mission.cpp/CDemonMission_readMissionFile_FUN_00522eb0.keep.cpp

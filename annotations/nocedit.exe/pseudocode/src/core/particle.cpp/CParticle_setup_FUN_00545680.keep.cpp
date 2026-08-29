@@ -17,7 +17,7 @@ void __cdecl core_particle_cpp_CParticle_setup_FUN_00545680(CParticle *this_ptr,
   float10 fVar5;
   float10 fVar6;
   float10 fVar7;
-  
+
   this_ptr->gravity_acceleration = -32.0;
   if (this_ptr != (CParticle *)position) {
     this_ptr->position = *position;
@@ -30,8 +30,13 @@ void __cdecl core_particle_cpp_CParticle_setup_FUN_00545680(CParticle *this_ptr,
     this_ptr->was_in_solid = 0;
     return;
   }
+#if NOCTURNE_AUTHENTIC_RNG
   fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.7853982,1.5707964);
   fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.0,6.2831855);
+#else
+  fVar1 = nocturne_rng_fx_range(0.7853982,1.5707964);
+  fVar2 = nocturne_rng_fx_range(0.0,6.2831855);
+#endif
   fVar3 = (float10)fcos((float10)fVar2);
   fVar4 = (float10)fcos((float10)fVar1);
   fVar5 = (float10)fsin((float10)fVar2);

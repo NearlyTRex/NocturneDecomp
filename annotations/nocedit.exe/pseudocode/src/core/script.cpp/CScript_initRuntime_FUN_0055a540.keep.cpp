@@ -15,7 +15,7 @@ void __cdecl core_script_cpp_CScript_initRuntime_FUN_0055a540(CScript *this_ptr)
   char local_70 [100];
   CGame *pCVar2;
   byte bVar7;
-  
+
   bVar7 = 0;
   this_ptr->next_cmd = 0;
   this_ptr->current_message[0] = '\0';
@@ -23,6 +23,18 @@ void __cdecl core_script_cpp_CScript_initRuntime_FUN_0055a540(CScript *this_ptr)
   this_ptr->dialog_wav_time = -1.0;
   this_ptr->script_pause_flag = 0;
   iVar4 = g_LocalHeroIndex;
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+  if ((g_HeroActors[iVar4] == (CHero *)0x0) ||
+     ((g_HeroActors[iVar4]->base).base.location.area_id < 0)) {
+    for (iVar4 = 0; iVar4 < 4; iVar4 = iVar4 + 1) {
+      if ((g_HeroActors[iVar4] != (CHero *)0x0) &&
+         (-1 < (g_HeroActors[iVar4]->base).base.location.area_id)) break;
+    }
+    if (iVar4 == 4) {
+      iVar4 = g_LocalHeroIndex;
+    }
+  }
+#endif
   this_ptr->who_is_speaking = (CDemonActor *)0x0;
   this_ptr->focus_actor = (CDemonActor *)g_HeroActors[iVar4];
   pCVar2 = g_CGamePtr;

@@ -124,7 +124,7 @@ int __cdecl core_event_cpp_CEventList_executeCommand_FUN_004aacc0(CEventList *th
   int local_1c;
   int local_18;
   uint local_14;
-  
+
   bVar20 = 0;
   g_EventErrorMessageBuffer[0] = '\0';
   if (((command_buffer != (char *)0x0) && (*command_buffer != '\0')) &&
@@ -725,11 +725,13 @@ LAB_004aaf38:
                                        != 0) {
                                   local_ec = local_ec + 1;
                                 }
+#if NOCTURNE_AUTHENTIC_NETPLAY
                                 if (g_CNetGamePtr->connection_type != CONNECTION_NONE) {
                                   iVar2 = core_event_cpp_formatEventError_FUN_004aa2a0
                                                     ("Can't use killHero command in multi-player");
                                   return iVar2;
                                 }
+#endif
                                 local_94 = -1;
                                 sscanf
                                           ((char *)local_ec," ( %[^)])%n",local_27c,&local_94);
@@ -750,12 +752,25 @@ LAB_004aaf38:
                                                     ("Unknown death type \"%s\" in killHero command.",local_27c);
                                   return iVar2;
                                 }
+#if NOCTURNE_AUTHENTIC_NETPLAY
                                 if ((local_f0 != 0) &&
                                    (this_ptr_01 = g_HeroActors[g_LocalHeroIndex],
                                    this_ptr_01 != (CHero *)0x0)) {
                                   (*(((this_ptr_01->base).base.vtable._uc)->_uc).kill)
                                             (&this_ptr_01->base,local_90,(CVector3f *)0x0,-1.0);
                                 }
+#else
+                                if (local_f0 != 0) {
+                                  int hero_i;
+                                  for (hero_i = 0; hero_i < g_HeroCount; hero_i = hero_i + 1) {
+                                    this_ptr_01 = g_HeroActors[hero_i];
+                                    if (this_ptr_01 != (CHero *)0x0) {
+                                      (*(((this_ptr_01->base).base.vtable._uc)->_uc).kill)
+                                                (&this_ptr_01->base,local_90,(CVector3f *)0x0,-1.0);
+                                    }
+                                  }
+                                }
+#endif
                               }
                               else {
                                 iVar2 = _strnicmp
@@ -1252,7 +1267,7 @@ LAB_004aaf38:
                                                   SVar16 = SVar16 - 1;
                                                 }
                                                 this_ptr_02 = (CLever *)
-                                                                                                                            
+
                                                   core_event_cpp_resolveActorByName_FUN_004aa400
                                                             (local_d6d + 1,
                                                              g_CLeverClassInfo.name_hash,
@@ -1262,7 +1277,7 @@ LAB_004aaf38:
                                                 }
                                                 if ((this_ptr_02 == (CLever *)g_ActorNameSentinel)
                                                    || (local_f0 == 0)) {
-                                                  pcVar18 = 
+                                                  pcVar18 =
                                                   core_event_cpp_CEventList_validateCondition_FUN_004add00
                                                             (this_ptr,local_1475 + 1);
                                                   if (pcVar18 != (char *)0x0) {
@@ -1270,7 +1285,7 @@ LAB_004aaf38:
                                                   }
                                                 }
                                                 else {
-                                                  iVar2 = 
+                                                  iVar2 =
                                                   core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                                                             (g_CEventListPtr,local_1475 + 1);
                                                   if (iVar2 == 0) {
@@ -1346,7 +1361,7 @@ LAB_004aaf38:
                                                     SVar16 = SVar16 - 1;
                                                   }
                                                   pCVar4 = (CCharacter *)
-                                                                                                                      
+
                                                   core_event_cpp_resolveActorByName_FUN_004aa400
                                                             (local_985 + 1,
                                                              g_CCharacterClassInfo.name_hash,
@@ -1357,10 +1372,10 @@ LAB_004aaf38:
                                                   if (pCVar4 != (CCharacter *)g_ActorNameSentinel) {
                                                     pcVar18 = local_8bd + 1;
                                                     iVar2 = 0;
-                                                    pCVar10 = 
+                                                    pCVar10 =
                                                   core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                                                             (&(pCVar4->model).motion_controller);
-                                                  iVar2 = 
+                                                  iVar2 =
                                                   core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0
                                                             (pCVar10,pcVar18,iVar2);
                                                   if (iVar2 < 0) {
@@ -1372,7 +1387,7 @@ LAB_004aaf38:
                                                     return 0;
                                                   }
                                                   if (local_f0 != 0) {
-                                                                                                        
+
                                                   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                                                             (&(pCVar4->model).motion_controller,
                                                              iVar2,1);
@@ -1437,7 +1452,7 @@ LAB_004aaf38:
                                                       return 0;
                                                     }
                                                     if (local_f0 != 0) {
-                                                                                                            
+
                                                   core_event_cpp_CEventList_setTimerEvent_FUN_004b05a0
                                                             (this_ptr,local_a4d + 1,local_3c);
                                                   }
@@ -1462,7 +1477,7 @@ LAB_004aaf38:
                                                       if (local_34 < 3) {
                                                         _sprintf
                                                                   (g_EventErrorMessageBuffer,
-                                                                                                                                      
+
                                                   "Error parsing setWeather command parms");
                                                   return 0;
                                                   }
@@ -1510,7 +1525,7 @@ LAB_004aaf38:
                                                     }
                                                   }
                                                   if (local_f0 != 0) {
-                                                                                                        
+
                                                   core_weather_cpp_CWeather_setWeatherType_FUN_005ef8c0
                                                             (g_CWeatherPtr,type);
                                                   }
@@ -1536,13 +1551,13 @@ LAB_004aaf38:
                                                       if (local_24 < 5) {
                                                         _sprintf
                                                                   (g_EventErrorMessageBuffer,
-                                                                                                                                      
+
                                                   "Error parsing shakeScreen command parms");
                                                   return 0;
                                                   }
                                                   local_ec = local_ec + local_24;
                                                   if (local_f0 != 0) {
-                                                                                                        
+
                                                   core_set_cpp_CDemonSet_initCameraShake_FUN_00570fa0
                                                             (g_CDemonSetPtr,local_30,local_2c,
                                                              local_80,local_28);
@@ -1569,7 +1584,7 @@ LAB_004aaf38:
                                                       if (local_20 < 5) {
                                                         _sprintf
                                                                   (g_EventErrorMessageBuffer,
-                                                                                                                                      
+
                                                   "Error parsing slamModelToMotion command parms");
                                                   return 0;
                                                   }
@@ -1622,10 +1637,10 @@ LAB_004aaf38:
                                                     pcVar18 = local_40d + 1;
                                                     iVar2 = 0;
                                                     this_ptr_00 = &(pCVar7->base).model;
-                                                    pCVar10 = 
+                                                    pCVar10 =
                                                   core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                                                             (&this_ptr_00->motion_controller);
-                                                  iVar2 = 
+                                                  iVar2 =
                                                   core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460
                                                             (pCVar10,pcVar18,iVar2);
                                                   if (iVar2 < 0) {
@@ -1637,12 +1652,12 @@ LAB_004aaf38:
                                                     return 0;
                                                   }
                                                   if (local_f0 != 0) {
-                                                                                                        
+
                                                   core_motion_cpp_CMotionController_jumpToMotion_FUN_0052dde0
                                                             (&this_ptr_00->motion_controller,iVar2,
                                                              0.0);
                                                   iVar2 = 1;
-                                                  pSVar11 = 
+                                                  pSVar11 =
                                                   core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                                                             (&this_ptr_00->motion_controller);
                                                   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -1671,7 +1686,7 @@ LAB_004aaf38:
                                                                 ((char *)pbVar12," ( %[^ ,)]%n",
                                                                  local_344,&local_1c);
                                                       if (local_1c < 2) {
-                                                        iVar2 = 
+                                                        iVar2 =
                                                   core_event_cpp_formatEventError_FUN_004aa2a0
                                                             ("Syntax error in switchCamera() parms");
                                                   return iVar2;
@@ -1681,11 +1696,11 @@ LAB_004aaf38:
                                                           [(byte)(*local_ec + 1)] & 2) != 0) {
                                                     local_ec = local_ec + 1;
                                                   }
-                                                  iVar2 = 
+                                                  iVar2 =
                                                   core_set_cpp_CDemonSet_findCameraByName_FUN_0056b790
                                                             (g_CDemonSetPtr,local_344);
                                                   if (iVar2 < 0) {
-                                                    iVar2 = 
+                                                    iVar2 =
                                                   core_event_cpp_formatEventError_FUN_004aa2a0
                                                             ("Camera \"%s\" doesn't exist",local_344);
                                                   return iVar2;
@@ -1697,7 +1712,7 @@ LAB_004aaf38:
                                                               ((char *)local_ec,",%f%n",
                                                                &local_70,&local_1c);
                                                     if (local_1c < 2) {
-                                                      iVar2 = 
+                                                      iVar2 =
                                                   core_event_cpp_formatEventError_FUN_004aa2a0
                                                             ("Syntax error in switchCamera() parms");
                                                   return iVar2;
@@ -1709,14 +1724,14 @@ LAB_004aaf38:
                                                   }
                                                   }
                                                   if (*local_ec != 0x29) {
-                                                    iVar2 = 
+                                                    iVar2 =
                                                   core_event_cpp_formatEventError_FUN_004aa2a0
                                                             ("Missing ')' in switchCamera() statement");
                                                   return iVar2;
                                                   }
                                                   local_ec = local_ec + 1;
                                                   if (local_f0 != 0) {
-                                                                                                        
+
                                                   core_setdir_cpp_CDemonSet_setPendingCamera_FUN_00575b00
                                                             (g_CDemonSetPtr,iVar2,local_70);
                                                   }
@@ -1729,7 +1744,7 @@ LAB_004aaf38:
                                                        ((g_CharacterClassificationTable
                                                          [(byte)(command_buffer[6] + 1)] & 0xe0) !=
                                                         0)) {
-                                                      iVar2 = 
+                                                      iVar2 =
                                                   core_event_cpp_formatEventError_FUN_004aa2a0
                                                             ("Unknown meta-function starting at %s",command_buffer);
                                                   return iVar2;
@@ -1744,7 +1759,7 @@ LAB_004aaf38:
                                                             ((char *)local_ec,"(%[^,], %[^)])%n",
                                                              local_bdd + 1,local_59d + 1,&local_18);
                                                   if (local_18 < 5) {
-                                                    iVar2 = 
+                                                    iVar2 =
                                                   core_event_cpp_formatEventError_FUN_004aa2a0
                                                             ("Error parsing warpTo command parms");
                                                   return iVar2;
@@ -1790,7 +1805,7 @@ LAB_004aaf38:
                                                           [(byte)(*local_ec + 1)] & 2) != 0) {
                                                     local_ec = local_ec + 1;
                                                   }
-                                                  pCVar8 = 
+                                                  pCVar8 =
                                                   core_event_cpp_resolveActorByName_FUN_004aa400
                                                             (local_bdd + 1,
                                                              g_CDemonActorClassInfo.name_hash,
@@ -1829,7 +1844,7 @@ LAB_004aaf38:
                                                     ;
                                                   }
                                                   if (local_18 < 0) {
-                                                    pCVar13 = 
+                                                    pCVar13 =
                                                   core_event_cpp_resolveActorByName_FUN_004aa400
                                                             (local_59d + 1,
                                                              g_CDemonActorClassInfo.name_hash,
@@ -1854,14 +1869,14 @@ LAB_004aaf38:
                                                   }
                                                   if ((local_18 < 0) ||
                                                      (local_59d[local_18 + 1] != '\0')) {
-                                                    iVar2 = 
+                                                    iVar2 =
                                                   core_event_cpp_formatEventError_FUN_004aa2a0
                                                             ("Error parsing warpTo command parms");
                                                   return iVar2;
                                                   }
                                                   if (local_f0 != 0) {
                                                     pCVar9 = (CCharacter *)
-                                                                                                                          
+
                                                   core_actor_cpp_castToClassHash_FUN_0040c790
                                                             (pCVar8,g_CCharacterClassInfo.name_hash)
                                                   ;

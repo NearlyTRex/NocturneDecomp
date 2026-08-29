@@ -10,6 +10,7 @@
 void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr,float delta_time)
 
 {
+  CHero *sim_target;
   CLocation *out_pos_00;
   UOrientationVector *pUVar3;
   CVector3f *pCVar4;
@@ -59,7 +60,12 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr,f
   float fVar4;
   char *model_name;
   UOrientationVector *pUVar1;
-  
+
+#if NOCTURNE_AUTHENTIC_NETPLAY
+  sim_target = g_HeroActors[g_LocalHeroIndex];
+#else
+  sim_target = nocturne_net_sim_target_for((CDemonActor *)this_ptr);
+#endif
   local_14 = (this_ptr->course).len;
   local_28 = (this_ptr->cur_time / this_ptr->total_time) * (float)local_14;
   core_course_cpp_CCourse_evaluate_FUN_00442710(&this_ptr->course,local_28,&local_70,&local_7c);
@@ -159,7 +165,7 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr,f
     }
   }
   if (((this_ptr->is_visible != 0) ||
-      (pCVar8 = g_HeroActors[g_LocalHeroIndex],
+      (pCVar8 = sim_target,
       fVar6 = (this_ptr->base).location.position.x - (pCVar8->base).base.location.position.x,
       fVar7 = (this_ptr->base).location.position.y - (pCVar8->base).base.location.position.y,
       fVar14 = (this_ptr->base).location.position.z - (pCVar8->base).base.location.position.z,

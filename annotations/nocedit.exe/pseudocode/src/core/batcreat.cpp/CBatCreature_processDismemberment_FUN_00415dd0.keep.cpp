@@ -15,9 +15,13 @@ void __cdecl core_batcreat_cpp_CBatCreature_processDismemberment_FUN_00415dd0(CB
   CBodyPart *body_part;
   float local_14;
   CVector3f *initial_velocity;
-  
+
   if ((0.0 < damage_info->dismember_prob) && (damage_info->hit_part_index == -1)) {
+#if NOCTURNE_AUTHENTIC_RNG
     iVar1 = rand();
+#else
+    iVar1 = nocturne_rng_sim();
+#endif
     switch(iVar1 % 6) {
     case 0:
       iVar2 = this_ptr->part_indices[8];

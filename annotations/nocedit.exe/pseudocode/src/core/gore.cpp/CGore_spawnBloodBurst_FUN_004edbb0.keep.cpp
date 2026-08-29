@@ -21,7 +21,7 @@ void __cdecl core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0(CGore *this_ptr,CV
   CVector3f local_40;
   CVector3f local_34;
   float fVar1;
-  
+
   if (blood_type != 2) {
     if (direction == (CVector3f *)0x0) {
       iVar2 = 0;
@@ -61,15 +61,26 @@ void __cdecl core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0(CGore *this_ptr,CV
           local_34.z = 0.0;
           local_34.x = (float)-fVar4;
           local_34.y = (float)fVar3;
+#if NOCTURNE_AUTHENTIC_RNG
           fVar5 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-0.7853982,0.7853982);
           local_34.x = fVar5 + local_34.x;
           fVar5 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-0.7853982,0.7853982);
           local_34.y = fVar5 + local_34.y;
+#else
+          fVar5 = nocturne_rng_fx_range(-0.7853982,0.7853982);
+          local_34.x = fVar5 + local_34.x;
+          fVar5 = nocturne_rng_fx_range(-0.7853982,0.7853982);
+          local_34.y = fVar5 + local_34.y;
+#endif
           core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(&local_74,&local_34);
           local_34.x = local_74.m[0].z;
           local_34.y = local_74.m[1].z;
           local_34.z = local_74.m[2].z;
+#if NOCTURNE_AUTHENTIC_RNG
           core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-0.5,0.5);
+#else
+          nocturne_rng_fx_range(-0.5,0.5);
+#endif
           local_4c.x = local_34.x * fVar2;
           local_4c.y = local_34.y * fVar2;
           local_4c.z = local_34.z * fVar2;

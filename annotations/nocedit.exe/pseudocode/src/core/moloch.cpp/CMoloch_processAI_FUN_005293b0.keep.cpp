@@ -10,6 +10,7 @@
 void __cdecl core_moloch_cpp_CMoloch_processAI_FUN_005293b0(CMoloch *this_ptr,float delta_time)
 
 {
+  CHero *sim_leader;
   CPathMap *this_ptr_00;
   int iVar6;
   float fVar1;
@@ -28,13 +29,18 @@ void __cdecl core_moloch_cpp_CMoloch_processAI_FUN_005293b0(CMoloch *this_ptr,fl
   EHeroTask EVar4;
   CHero *pCVar5;
   CLocation *pCVar1;
-  
-  pCVar3 = g_HeroActors[g_LocalHeroIndex];
+
+#if NOCTURNE_AUTHENTIC_NETPLAY
+  sim_leader = g_HeroActors[g_LocalHeroIndex];
+#else
+  sim_leader = nocturne_net_sim_leader_hero();
+#endif
+  pCVar3 = sim_leader;
   memset(&(this_ptr->base).player_input,0,0x2c);
   iVar2 = g_LocalHeroIndex;
   EVar4 = (this_ptr->base).ai_task;
   if ((EVar4 != HERO_TASK_STAND) && (EVar4 == HERO_TASK_FOLLOW)) {
-    pCVar5 = g_HeroActors[g_LocalHeroIndex];
+    pCVar5 = sim_leader;
     pCVar1 = &(this_ptr->base).base.base.location;
     local_44.x = (pCVar3->base).base.location.position.x - (pCVar1->position).x;
     local_44.y = (pCVar3->base).base.location.position.y -

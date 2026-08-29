@@ -16,9 +16,13 @@ void __cdecl core_mobster_cpp_CMobster_processDismemberment_FUN_00527380(CMobste
   CBodyPart *body_part;
   float local_1c;
   CVector3f *initial_velocity;
-  
+
   if ((0.0 < damage_info->dismember_prob) && (damage_info->hit_part_index == -1)) {
+#if NOCTURNE_AUTHENTIC_RNG
     iVar1 = rand();
+#else
+    iVar1 = nocturne_rng_sim();
+#endif
     switch(iVar1 % 6) {
     case 0:
       iVar2 = this_ptr->part_indices[0];

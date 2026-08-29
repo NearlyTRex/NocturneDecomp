@@ -10,6 +10,7 @@
 void __cdecl core_tvbat_cpp_CTVBat_process_FUN_005e4210(CTVBat *this_ptr,float delta_time)
 
 {
+  CHero *sim_target;
   CLocation *pCVar1;
   float fVar2;
   float fVar9;
@@ -70,7 +71,12 @@ void __cdecl core_tvbat_cpp_CTVBat_process_FUN_005e4210(CTVBat *this_ptr,float d
   float fVar7;
   float fVar4;
   float fVar5;
-  
+
+#if NOCTURNE_AUTHENTIC_NETPLAY
+  sim_target = g_HeroActors[g_LocalHeroIndex];
+#else
+  sim_target = nocturne_net_sim_target_for((CDemonActor *)this_ptr);
+#endif
   if ((this_ptr->follow_orders != 0) && (this_ptr->boss_actor == (CDemonActor *)0x0)) {
     for (iVar18 = 0; iVar18 < g_CDemonSetPtr->enemy_count; iVar18 = iVar18 + 1) {
       iVar12 = core_actor_cpp_isOfClass_FUN_0040c6d0
@@ -143,7 +149,7 @@ void __cdecl core_tvbat_cpp_CTVBat_process_FUN_005e4210(CTVBat *this_ptr,float d
   local_78 = *pfVar2;
   local_74 = *pfVar1;
   if (this_ptr->follow_orders == 0) {
-    pCVar14 = g_HeroActors[g_LocalHeroIndex];
+    pCVar14 = sim_target;
     (this_ptr->base).victim = &pCVar14->base;
     if (pCVar14 != (CHero *)0x0) {
       pCVar1 = &(pCVar14->base).base.location;
@@ -184,12 +190,21 @@ LAB_005e4342:
     if (fVar16 < 0.0) {
       this_ptr->attack_timer = 0.0;
     }
+#if NOCTURNE_AUTHENTIC_NETPLAY
     if (g_CNetGamePtr->connection_type != CONNECTION_NONE) {
       g_CurrentFilename = "..\\core\\tvbat.cpp";
       g_CurrentLineNumber = 266;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CTVBat::process - can't follow orders in network game!");
     }
     pCVar10 = g_HeroActors[g_LocalHeroIndex];
+#else
+    if (g_CNetGamePtr->connection_type == CONNECTION_NONE) {
+      pCVar10 = g_HeroActors[g_LocalHeroIndex];
+    }
+    else {
+      pCVar10 = g_HeroActors[0];
+    }
+#endif
     pCVar17 = &(pCVar10->base).base.location;
     if ((CLocation *)&local_58 != pCVar17) {
       local_58 = (pCVar17->position).x;

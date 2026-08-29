@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        20 ( 0.3%)
+  Functions with type issues:        18 ( 0.3%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,12 +22,12 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          0
-    Undefined types in variables:      20
+    Undefined types in variables:      18
     Unresolved stack params:           0
 
-  Excluded (.keep / MMX / by-value):   197 functions
+  Excluded (.keep / MMX / by-value):   199 functions
     Wrong calling convention:          0
-    Undefined types in variables:      197
+    Undefined types in variables:      199
     Unresolved stack params:           0
 
 ====================================================================================================
@@ -81,7 +81,7 @@ Unresolved stack parameters (missing from signature) (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types in variables (20)
+Undefined types in variables (18)
 --------------------------------------------------------------------------------
 
   CFireEffect_load
@@ -174,16 +174,6 @@ Undefined types in variables (20)
     Locals:  local_10 (undefined4[4])
     Suggested: Resolve undefined types to concrete types
 
-  connectSocket
-    Address: 0x005e1bd0  File: support/trisock.cpp
-    Locals:  auStackY_1804 (undefined4[1524])
-    Suggested: Resolve undefined types to concrete types
-
-  performSocketOperation
-    Address: 0x005e1ca0  File: support/trisock.cpp
-    Locals:  auStackY_1808 (undefined4[1521])
-    Suggested: Resolve undefined types to concrete types
-
 ====================================================================================================
 EXCLUDED: FUNCTIONS WITH .keep / MMX / BY-VALUE STRUCT OVERRIDES
 ====================================================================================================
@@ -193,7 +183,7 @@ manual .keep.cpp files, MMX inline assembly transforms, or by-value struct
 passing patterns. Issues here are expected and not actionable.
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (197)
+Undefined types - .keep overrides (199)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -316,7 +306,7 @@ Undefined types - .keep overrides (197)
     Locals:  local_108 (undefined4), uStack_104 (undefined4), local_100 (undefined4), uStack_fc (undefined4), local_f0 (undefined4), local_e4 (undefined4), local_d8 (undefined4), local_cc (undefined4), local_64 (undefined4 *), local_50 (undefined4 *), local_18 (undefined4 *)
     Suggested: Resolve undefined types to concrete types
 
-  CNetGame_swapPlayerData
+  swapPlayerData
     Address: 0x00543bb0  File: core/netgame.cpp
     Locals:  uStack_80 (undefined4), uStack_7c (undefined4), uStack_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_68 (undefined2), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_48 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -1174,6 +1164,16 @@ Undefined types - .keep overrides (197)
   resampleAndConvertAudio
     Address: 0x005aa7f0  File: sound/sndmain.cpp
     Locals:  local_18 (undefined1)
+    Suggested: Resolve undefined types to concrete types
+
+  connectSocket
+    Address: 0x005e1bd0  File: support/trisock.cpp
+    Locals:  auStackY_1804 (undefined4[1524])
+    Suggested: Resolve undefined types to concrete types
+
+  performSocketOperation
+    Address: 0x005e1ca0  File: support/trisock.cpp
+    Locals:  auStackY_1808 (undefined4[1521])
     Suggested: Resolve undefined types to concrete types
 
   waitForMutexTimeout

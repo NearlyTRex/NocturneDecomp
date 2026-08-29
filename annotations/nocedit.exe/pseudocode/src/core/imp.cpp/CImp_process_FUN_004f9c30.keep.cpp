@@ -10,6 +10,7 @@
 void __cdecl core_imp_cpp_CImp_process_FUN_004f9c30(CImp *this_ptr,float delta_time)
 
 {
+  CHero *sim_target;
   CDeformableModelInstance *pCVar1;
   CVector3f *pCVar2;
   CCharacter *pCVar3;
@@ -47,7 +48,12 @@ void __cdecl core_imp_cpp_CImp_process_FUN_004f9c30(CImp *this_ptr,float delta_t
   CVector3f local_5c;
   CVector3f local_50;
   float local_34 [2];
-  
+
+#if NOCTURNE_AUTHENTIC_NETPLAY
+  sim_target = g_HeroActors[g_LocalHeroIndex];
+#else
+  sim_target = nocturne_net_sim_target_for((CDemonActor *)this_ptr);
+#endif
   iVar6 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar6 == 0) {
     return;
@@ -158,8 +164,8 @@ LAB_004f9c99:
   if (iVar12 == 0) {
     switch(iVar6) {
     case 0:
-      EVar10 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
-                         (&g_HeroActors[g_LocalHeroIndex]->base);
+      EVar10 = (*(((sim_target->base).base.vtable._uc)->_uc).getDeathState)
+                         (&sim_target->base);
       if (EVar10 == DEATH_STATE_ALIVE) {
         (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
         pCVar3 = (this_ptr->base).victim;

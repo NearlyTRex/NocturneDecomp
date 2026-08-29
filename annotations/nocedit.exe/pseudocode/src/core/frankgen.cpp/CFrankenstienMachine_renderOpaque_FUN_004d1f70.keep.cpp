@@ -22,7 +22,7 @@ int __cdecl core_frankgen_cpp_CFrankenstienMachine_renderOpaque_FUN_004d1f70(CFr
   
   if (g_CDemonMissionPtr->is_in_editor != 0) {
     pCVar2 = core_frankgen_cpp_findLeader_FUN_004d2330();
-    this_ptr->master_frame = *(float *)(pCVar2[1].actor_name + 4);
+    this_ptr->master_frame = ((CFrankenstienMachine *)pCVar2)->master_frame;
     core_frankgen_cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004d2190(this_ptr);
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);

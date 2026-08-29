@@ -10,16 +10,22 @@
 void __cdecl core_lightgun_cpp_CLightGun_process_FUN_00506450(CLightGun *this_ptr,float delta_time)
 
 {
+  CHero *sim_target;
   float fVar2;
   float fVar1;
   int iVar2;
   CDemonFilter *filter_ptr;
   uint uVar3;
   float base_frequency;
-  
+
+#if NOCTURNE_AUTHENTIC_NETPLAY
+  sim_target = g_HeroActors[g_LocalHeroIndex];
+#else
+  sim_target = nocturne_net_sim_target_for((CDemonActor *)this_ptr);
+#endif
   core_weapon_cpp_CWeapon_process_FUN_005ee110(&this_ptr->base,delta_time);
   fVar1 = core_inv_cpp_CInventory_calculateTotalBatteryCharge_FUN_004ffda0
-                    (&g_HeroActors[g_LocalHeroIndex]->inventory,30.0f);
+                    (&sim_target->inventory,30.0f);
   fVar2 = (30.0f / fVar1) * delta_time + this_ptr->charge_level;
   this_ptr->charge_level = fVar2;
   if (30.0f < fVar2) {

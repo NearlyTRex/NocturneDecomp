@@ -8,6 +8,9 @@
 //
 
 #include "system/winsock.h"
+#include "debug_log.h"
+#include "net_config.h"
+#include <cstdlib>
 #include <cstring>
 
 // POSIX wrappers defined in winsock_posix.c
@@ -88,6 +91,26 @@ _SOCKET accept(_SOCKET s, struct SOCKADDR* addr, int* addrlen) {
 }
 
 int bind(_SOCKET s, const struct SOCKADDR* addr, int namelen) {
+    // Inert unless [Network] bindAddress (or NOCTURNE_NET_BIND) is set; see
+    // net_config.h.
+    //
+    // The game binds a fixed port on INADDR_ANY, so a second instance on the
+    // same machine collides and gets EADDRINUSE ("Can't bind UDP socket").
+    // Substituting a specific local address lets each instance hold the port
+    // on its own loopback IP — 127.0.0.1, 127.0.0.2, ... — which is enough to
+    // run a host and a client side by side. It also makes getsockname report a
+    // real address instead of 0.0.0.0, which is what the lobby hands out as
+    // the player's own address.
+    if (addr != nullptr && addr->sin_addr == 0) {
+        const char* bind_ip = nocturne_net_bind_address();
+        if (bind_ip != nullptr && *bind_ip != '\0') {
+            SOCKADDR local = *addr;
+            local.sin_addr = (int)posix_inet_addr(bind_ip);
+            DLOG_EX("net", "bind: INADDR_ANY -> %s port %u", bind_ip,
+                    (unsigned)ntohs(local.sin_port));
+            return posix_bind((int)s, &local, (unsigned int)namelen);
+        }
+    }
     return posix_bind((int)s, addr, (unsigned int)namelen);
 }
 
@@ -107,7 +130,13 @@ int getsockname(_SOCKET s, struct SOCKADDR* name, int* namelen) {
 }
 
 int ioctlsocket(_SOCKET s, long cmd, uint* argp) {
-    return posix_ioctl((int)s, (unsigned long)cmd, argp);
+    // Winsock ioctl codes are 32-bit _IOW values and the game passes them as
+    // negative int literals — FIONBIO is 0x8004667E, i.e. -0x7ffb9982. `long`
+    // is 64 bits here, so widening sign-extends that to 0xFFFFFFFF8004667E and
+    // posix_ioctl's FIONBIO case stops matching, leaving the raw ioctl() to
+    // fail; on the 32-bit build the same code matched exactly. Narrow back to
+    // the 32 bits the command actually is before widening.
+    return posix_ioctl((int)s, (unsigned long)(unsigned int)cmd, argp);
 }
 
 int listen(_SOCKET s, int backlog) {

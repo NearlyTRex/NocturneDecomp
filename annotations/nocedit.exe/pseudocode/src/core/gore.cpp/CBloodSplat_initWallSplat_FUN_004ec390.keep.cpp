@@ -12,7 +12,7 @@ void __cdecl core_gore_cpp_CBloodSplat_initWallSplat_FUN_004ec390(CBloodSplat *t
 {
   int iVar1;
   float10 fVar2;
-  
+
   this_ptr->is_wall_splat = 1;
   if (&this_ptr->position != position) {
     this_ptr->position = *position;
@@ -24,7 +24,11 @@ void __cdecl core_gore_cpp_CBloodSplat_initWallSplat_FUN_004ec390(CBloodSplat *t
   (this_ptr->rotation).x = (float)-fVar2;
   fVar2 = (float10)fpatan((float10)normal->x,(float10)normal->z);
   (this_ptr->rotation).y = (float)fVar2;
+#if NOCTURNE_AUTHENTIC_RNG
   iVar1 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,3);
+#else
+  iVar1 = nocturne_rng_fx_int(0,3);
+#endif
   this_ptr->texture_variant = iVar1;
   this_ptr->age = 0.0;
   (this_ptr->position_fixed).x = (int)ROUND(position->x * 256.0f);

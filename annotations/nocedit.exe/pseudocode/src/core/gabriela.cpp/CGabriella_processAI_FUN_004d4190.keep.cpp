@@ -10,6 +10,7 @@
 void __cdecl core_gabriela_cpp_CGabriella_processAI_FUN_004d4190(CGabriella *this_ptr,float delta_time)
 
 {
+  CHero *sim_leader;
   CHero *pCVar2;
   float fVar3;
   float fVar4;
@@ -47,10 +48,15 @@ void __cdecl core_gabriela_cpp_CGabriella_processAI_FUN_004d4190(CGabriella *thi
   CDemonSet *this_ptr_00;
   EHeroTask EVar2;
   CHero *pCVar1;
-  
+
+#if NOCTURNE_AUTHENTIC_NETPLAY
+  sim_leader = g_HeroActors[g_LocalHeroIndex];
+#else
+  sim_leader = nocturne_net_sim_leader_hero();
+#endif
   memset(&(this_ptr->base).player_input,0,0x2c);
   if ((this_ptr->base).ai_task != HERO_TASK_STAND) {
-    pCVar1 = g_HeroActors[g_LocalHeroIndex];
+    pCVar1 = sim_leader;
     local_84 = (this_ptr->base).base.base.location.position.x -
                (pCVar1->base).base.location.position.x;
     local_80 = (this_ptr->base).base.base.location.position.y -
@@ -63,7 +69,7 @@ void __cdecl core_gabriela_cpp_CGabriella_processAI_FUN_004d4190(CGabriella *thi
     }
     if ((float)4 <= local_120) {
       iVar6 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
-                        (&g_HeroActors[g_LocalHeroIndex]->path_map,
+                        (&sim_leader->path_map,
                          &(this_ptr->base).base.base.location.position,&local_c0,
                          (this_ptr->base).base.base.direction_hint);
       if (iVar6 != 0) {

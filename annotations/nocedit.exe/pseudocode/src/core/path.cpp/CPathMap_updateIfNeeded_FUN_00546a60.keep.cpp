@@ -14,7 +14,7 @@ void __cdecl core_path_cpp_CPathMap_updateIfNeeded_FUN_00546a60(CPathMap *this_p
   uint uVar1;
   int iVar2;
   CVector3i local_1c;
-  
+
   if (force_update == 0) {
     iVar2 = this_ptr->update_timer - g_GlobalDeltaTimeInt;
     this_ptr->update_timer = iVar2;
@@ -31,7 +31,11 @@ void __cdecl core_path_cpp_CPathMap_updateIfNeeded_FUN_00546a60(CPathMap *this_p
     }
   }
   else {
+#if NOCTURNE_AUTHENTIC_RNG
     uVar1 = rand();
+#else
+    uVar1 = nocturne_rng_sim();
+#endif
     this_ptr->update_timer = uVar1 & 0x3fff;
   }
   if (this_ptr != (CPathMap *)source_position) {

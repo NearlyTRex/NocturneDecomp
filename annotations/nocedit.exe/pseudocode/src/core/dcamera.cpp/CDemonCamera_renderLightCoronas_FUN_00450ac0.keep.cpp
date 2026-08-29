@@ -31,7 +31,11 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0(CDemo
   memcpy(&g_CoronaCameraRotationMatrix, &(light_source->base).base.rotation_matrix,
          sizeof(g_CoronaCameraRotationMatrix));
   for (iVar1 = 0; iVar1 < 256; iVar1 = iVar1 + 1) {
+#if NOCTURNE_AUTHENTIC_RNG
     uVar2 = rand();
+#else
+    uVar2 = nocturne_rng_fx();
+#endif
     g_DitherPatternTable[iVar1] = uVar2 & 0xff;
   }
   iVar1 = 0;

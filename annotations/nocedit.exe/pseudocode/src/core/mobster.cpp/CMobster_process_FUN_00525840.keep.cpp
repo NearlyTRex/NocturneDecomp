@@ -10,6 +10,7 @@
 void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,float delta_time)
 
 {
+  CHero *sim_target;
   CDeformableModelInstance *pCVar6;
   CDemonActor *pCVar7;
   uint uVar9;
@@ -70,7 +71,12 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
   SDamageInfo *pSVar17;
   float local_1c;
   float local_18;
-  
+
+#if NOCTURNE_AUTHENTIC_NETPLAY
+  sim_target = g_HeroActors[g_LocalHeroIndex];
+#else
+  sim_target = nocturne_net_sim_target_for((CDemonActor *)this_ptr);
+#endif
   iVar6 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar6 == 0) {
     if (this_ptr->vehicle != (CDemonActor *)0x0) {
@@ -241,7 +247,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
       }
       else {
         fVar24 = this_ptr->firing_blend;
-        (this_ptr->base).victim = &g_HeroActors[g_LocalHeroIndex]->base;
+        (this_ptr->base).victim = &sim_target->base;
         if (fVar24 <= (float)0.5) break;
       }
       core_mobster_cpp_CMobster_startFiringAttack_FUN_005271c0(this_ptr);

@@ -219,9 +219,9 @@ void __cdecl CNetGame::setMode12(CNetGame *this_ptr);
 // Address: 00543ba0
 void __cdecl CNetGame::setMode13(CNetGame *this_ptr);
 
-// Original: core_netgame.cpp_CNetGame_swapPlayerData_FUN_00543bb0
+// Original: core_netgame.cpp_swapPlayerData_FUN_00543bb0
 // Address: 00543bb0
-void __cdecl CNetGame::swapPlayerData(CNetGame *this_ptr,SNetPlayer *other);
+void __cdecl swapPlayerData(SNetPlayer *player,SNetPlayer *other);
 
 // Original: core_netgame.cpp_SPlayer_ctor_FUN_00543cb0
 // Address: 00543cb0

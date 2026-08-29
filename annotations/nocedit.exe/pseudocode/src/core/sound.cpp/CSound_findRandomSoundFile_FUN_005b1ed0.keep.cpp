@@ -14,7 +14,7 @@ void __cdecl core_sound_cpp_CSound_findRandomSoundFile_FUN_005b1ed0(CSound *this
   char *pcVar3;
   char *pcVar4;
   int iVar5;
-  
+
   g_SoundMatchCount = 0;
   *out_result = '\0';
   for (iVar2 = 0; iVar2 < g_SoundFileList.item_count; iVar2 = iVar2 + 1) {
@@ -32,7 +32,11 @@ void __cdecl core_sound_cpp_CSound_findRandomSoundFile_FUN_005b1ed0(CSound *this
   if (g_SoundMatchCount < 1) {
     return;
   }
+#if NOCTURNE_AUTHENTIC_RNG
   iVar2 = rand();
+#else
+  iVar2 = (int)nocturne_rng_fx();
+#endif
   pcVar3 = g_SoundMatchedFilenames[iVar2 % g_SoundMatchCount];
   strcpy(out_result,pcVar3);
   return;

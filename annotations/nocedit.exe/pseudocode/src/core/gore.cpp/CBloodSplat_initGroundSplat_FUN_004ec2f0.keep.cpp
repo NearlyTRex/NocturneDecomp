@@ -11,12 +11,16 @@ void __cdecl core_gore_cpp_CBloodSplat_initGroundSplat_FUN_004ec2f0(CBloodSplat 
 
 {
   int iVar1;
-  
+
   this_ptr->is_wall_splat = 0;
   if (&this_ptr->position != position) {
     this_ptr->position = *position;
   }
+#if NOCTURNE_AUTHENTIC_RNG
   iVar1 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,3);
+#else
+  iVar1 = nocturne_rng_fx_int(0,3);
+#endif
   this_ptr->texture_variant = iVar1;
   this_ptr->age = 0.0;
   (this_ptr->position_fixed).x = (int)ROUND(position->x * 256.0f);

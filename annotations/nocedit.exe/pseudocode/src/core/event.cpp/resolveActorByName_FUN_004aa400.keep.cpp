@@ -32,11 +32,20 @@ CDemonActor * __cdecl core_event_cpp_resolveActorByName_FUN_004aa400(char *name,
       }
       goto LAB_004aa48f;
     }
+#if NOCTURNE_AUTHENTIC_NETPLAY
     if (g_CNetGamePtr->connection_type != CONNECTION_NONE) {
       _sprintf(g_EventErrorMessageBuffer,"Can't use '$' actor specifier in multi-player");
       return (CDemonActor *)0x0;
     }
     actor_ptr = (CDemonActor *)g_HeroActors[g_LocalHeroIndex];
+#else
+    if (g_CNetGamePtr->connection_type == CONNECTION_NONE) {
+      actor_ptr = (CDemonActor *)g_HeroActors[g_LocalHeroIndex];
+    }
+    else {
+      actor_ptr = (CDemonActor *)g_HeroActors[0];
+    }
+#endif
   }
   if ((CHero *)actor_ptr == (CHero *)0x0) {
     return g_ActorNameSentinel;

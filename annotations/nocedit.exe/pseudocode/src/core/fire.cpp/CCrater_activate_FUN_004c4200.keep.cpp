@@ -33,7 +33,7 @@ void __cdecl core_fire_cpp_CCrater_activate_FUN_004c4200(CCrater *this_ptr,CVect
   CDemonSet *pCVar3;
   float fVar2;
   float fVar1;
-  
+
   if (&this_ptr->center_position != center_position) {
     this_ptr->center_position = *center_position;
   }
@@ -47,10 +47,17 @@ void __cdecl core_fire_cpp_CCrater_activate_FUN_004c4200(CCrater *this_ptr,CVect
   (this_ptr->center_position).y = local_14;
   local_18 = -radius;
   for (i = 0; i < 3; i = i + 1) {
+#if NOCTURNE_AUTHENTIC_RNG
     local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(local_18,radius);
     this_ptr->smoke_positions[i].x = local_14 * (float)0.5 + (this_ptr->center_position).x;
     this_ptr->smoke_positions[i].y = (this_ptr->center_position).y;
     local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(local_18,radius);
+#else
+    local_14 = nocturne_rng_fx_range(local_18,radius);
+    this_ptr->smoke_positions[i].x = local_14 * (float)0.5 + (this_ptr->center_position).x;
+    this_ptr->smoke_positions[i].y = (this_ptr->center_position).y;
+    local_14 = nocturne_rng_fx_range(local_18,radius);
+#endif
     this_ptr->smoke_positions[i].z = local_14 * (float)0.5 + (this_ptr->center_position).z;
   }
   local_48 = (this_ptr->center_position).x + local_18;

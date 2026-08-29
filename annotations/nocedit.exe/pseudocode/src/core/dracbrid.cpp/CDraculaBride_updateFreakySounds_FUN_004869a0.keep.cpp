@@ -32,7 +32,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_updateFreakySounds_FUN_004869a0(CDr
   SFreaky *local_20;
   CVector3f *local_1c;
   float local_18;
-  
+
   fVar2 = this_ptr->freaky_timer - delta_time;
   this_ptr->freaky_timer = fVar2;
   if (fVar2 < 0.0) {
@@ -78,11 +78,19 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_updateFreakySounds_FUN_004869a0(CDr
           local_68 = g_CDemonCameraInstance.base.position.f.x;
           local_64 = *local_24;
           local_60 = *local_28;
+#if NOCTURNE_AUTHENTIC_RNG
           local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-5.0,5.0);
           local_68 = local_18 + local_68;
           local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-2.0,2.0);
           local_64 = local_18 + local_64;
           local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-5.0,5.0);
+#else
+          local_18 = nocturne_rng_fx_range(-5.0,5.0);
+          local_68 = local_18 + local_68;
+          local_18 = nocturne_rng_fx_range(-2.0,2.0);
+          local_64 = local_18 + local_64;
+          local_18 = nocturne_rng_fx_range(-5.0,5.0);
+#endif
           local_44.x = local_68;
           local_60 = local_18 + local_60;
           local_44.y = *local_30;

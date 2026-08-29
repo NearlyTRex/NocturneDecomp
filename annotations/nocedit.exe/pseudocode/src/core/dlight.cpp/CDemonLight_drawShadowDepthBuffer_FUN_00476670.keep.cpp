@@ -31,7 +31,11 @@ void __cdecl core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_00476670(CDem
   g_NoiseTableIndex = 0;
   iVar3 = 0;
   do {
+#if NOCTURNE_AUTHENTIC_RNG
     uVar4 = rand();
+#else
+    uVar4 = nocturne_rng_fx();
+#endif
     g_NoiseTable[iVar3] = (uVar4 & 0x1f) - 0x10;
     iVar3 = iVar3 + 1;
   } while (iVar3 != 100);

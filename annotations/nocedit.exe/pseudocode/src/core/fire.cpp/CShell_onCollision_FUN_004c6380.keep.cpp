@@ -18,14 +18,22 @@ int __cdecl core_fire_cpp_CShell_onCollision_FUN_004c6380(CShell *this_ptr,CVect
   uint uVar4;
   int iVar5;
   float local_18;
-  
+
   local_18 = (float)(4 - this_ptr->bounce_count) * (float)0.25;
   if (local_18 < 0.0) {
     local_18 = 0.0;
   }
+#if NOCTURNE_AUTHENTIC_RNG
   fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-6.2831855,6.2831855);
+#else
+  fVar1 = nocturne_rng_fx_range(-6.2831855,6.2831855);
+#endif
   (this_ptr->angular_velocity).x = fVar1 * local_18;
+#if NOCTURNE_AUTHENTIC_RNG
   fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-3.1415927,3.1415927);
+#else
+  fVar2 = nocturne_rng_fx_range(-3.1415927,3.1415927);
+#endif
   iVar3 = this_ptr->bounce_count;
   (this_ptr->angular_velocity).y = fVar2 * local_18;
   if (iVar3 == 0) {

@@ -119,7 +119,11 @@ void __cdecl core_sound_cpp_processTrainSounds_FUN_005b2770(void)
     local_20 = 20.0;
     local_11c = 1.0;
     memcpy(local_118,g_TrainSoundFilenameTemplate,100);
+#if NOCTURNE_AUTHENTIC_RNG
     iVar6 = rand();
+#else
+    iVar6 = (int)nocturne_rng_fx();
+#endif
     switch(iVar6 % 5) {
     case 0:
     case 1:

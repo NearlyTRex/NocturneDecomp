@@ -1514,6 +1514,126 @@
       "severity": "moderate",
       "text": "for (local_8 = 0; local_8 < *(int *)(in_stack_0000000c[1].actor_name + 0x14) * 2;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "'in_stack_0000000c[1].actor_name + 8' walks 1 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0x8 = 0x160, which is exactly offsetof(CChain, segment_length). Ghidra had no CChain type here and reached the field by index arithmetic; write it as ((CChain *)in_stack_0000000c)->segment_length (\u00a7de-pun/\u00a712). Ambiguous: CFrankenstienMachine::course_filename, CLightCone::state, CStairs::width also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 117,
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "fVar3 = -*(float *)(in_stack_0000000c[1].actor_name + 8) * (float)0.5;",
+      "type": "derived_field_index_pun"
+    },
+    {
+      "description": "'in_stack_0000000c[1].actor_name + 4' walks 1 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0x4 = 0x15c, which is exactly offsetof(CActorDestination, dest_class). Ghidra had no CActorDestination type here and reached the field by index arithmetic; write it as ((CActorDestination *)in_stack_0000000c)->dest_class (\u00a7de-pun/\u00a712). Ambiguous: CBodyPart::bounding_box, CChain::chain_length, CEmitter::emitter_size also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 119,
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "fVar2 = (float)iVar12 * *(float *)(in_stack_0000000c[1].actor_name + 4);",
+      "type": "derived_field_index_pun"
+    },
+    {
+      "description": "'in_stack_0000000c[1].actor_name + 4' walks 1 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0x4 = 0x15c, which is exactly offsetof(CActorDestination, dest_class). Ghidra had no CActorDestination type here and reached the field by index arithmetic; write it as ((CActorDestination *)in_stack_0000000c)->dest_class (\u00a7de-pun/\u00a712). Ambiguous: CBodyPart::bounding_box, CChain::chain_length, CEmitter::emitter_size also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 127,
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "fVar2 = fVar2 + *(float *)(in_stack_0000000c[1].actor_name + 4);",
+      "type": "derived_field_index_pun"
+    },
+    {
+      "description": "'in_stack_0000000c[1].actor_name + 4' walks 1 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0x4 = 0x15c, which is exactly offsetof(CActorDestination, dest_class). Ghidra had no CActorDestination type here and reached the field by index arithmetic; write it as ((CActorDestination *)in_stack_0000000c)->dest_class (\u00a7de-pun/\u00a712). Ambiguous: CBodyPart::bounding_box, CChain::chain_length, CEmitter::emitter_size also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 135,
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "fVar2 = fVar2 - *(float *)(in_stack_0000000c[1].actor_name + 4);",
+      "type": "derived_field_index_pun"
+    },
+    {
+      "description": "'in_stack_0000000c[1].actor_name + 8' walks 1 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0x8 = 0x160, which is exactly offsetof(CChain, segment_length). Ghidra had no CChain type here and reached the field by index arithmetic; write it as ((CChain *)in_stack_0000000c)->segment_length (\u00a7de-pun/\u00a712). Ambiguous: CFrankenstienMachine::course_filename, CLightCone::state, CStairs::width also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 136,
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "fVar3 = fVar3 + *(float *)(in_stack_0000000c[1].actor_name + 8);",
+      "type": "derived_field_index_pun"
+    },
+    {
+      "description": "'in_stack_0000000c[1].actor_name + 4' walks 1 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0x4 = 0x15c, which is exactly offsetof(CActorDestination, dest_class). Ghidra had no CActorDestination type here and reached the field by index arithmetic; write it as ((CActorDestination *)in_stack_0000000c)->dest_class (\u00a7de-pun/\u00a712). Ambiguous: CBodyPart::bounding_box, CChain::chain_length, CEmitter::emitter_size also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 148,
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "ROUND((fVar2 + *(float *)(in_stack_0000000c[1].actor_name + 4)) * 256.0f);",
+      "type": "derived_field_index_pun"
+    },
+    {
+      "description": "'in_stack_0000000c[1].actor_name + 0x14' walks 1 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0x14 = 0x16c, which is exactly offsetof(CChain, texture_size). Ghidra had no CChain type here and reached the field by index arithmetic; write it as ((CChain *)in_stack_0000000c)->texture_size (\u00a7de-pun/\u00a712). Ambiguous: CEmitter::event_on, CStairs::stair_count, CTrigger::trigger_state also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 161,
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "} while (iVar12 <= *(int *)(in_stack_0000000c[1].actor_name + 0x14));",
+      "type": "derived_field_index_pun"
+    },
+    {
+      "description": "'in_stack_0000000c[1].actor_name + 0x14' walks 1 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0x14 = 0x16c, which is exactly offsetof(CChain, texture_size). Ghidra had no CChain type here and reached the field by index arithmetic; write it as ((CChain *)in_stack_0000000c)->texture_size (\u00a7de-pun/\u00a712). Ambiguous: CEmitter::event_on, CStairs::stair_count, CTrigger::trigger_state also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 165,
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (0 < *(int *)(in_stack_0000000c[1].actor_name + 0x14)) {",
+      "type": "derived_field_index_pun"
+    },
+    {
+      "description": "'in_stack_0000000c[1].actor_name + 0x14' walks 1 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0x14 = 0x16c, which is exactly offsetof(CChain, texture_size). Ghidra had no CChain type here and reached the field by index arithmetic; write it as ((CChain *)in_stack_0000000c)->texture_size (\u00a7de-pun/\u00a712). Ambiguous: CEmitter::event_on, CStairs::stair_count, CTrigger::trigger_state also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 577,
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "} while (local_14 < *(int *)(in_stack_0000000c[1].actor_name + 0x14));",
+      "type": "derived_field_index_pun"
+    },
+    {
+      "description": "'in_stack_0000000c[1].actor_name + 0x14' walks 1 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0x14 = 0x16c, which is exactly offsetof(CChain, texture_size). Ghidra had no CChain type here and reached the field by index arithmetic; write it as ((CChain *)in_stack_0000000c)->texture_size (\u00a7de-pun/\u00a712). Ambiguous: CEmitter::event_on, CStairs::stair_count, CTrigger::trigger_state also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 580,
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar14 = pSVar15 + *(int *)(in_stack_0000000c[1].actor_name + 0x14) * 4 + 2;",
+      "type": "derived_field_index_pun"
+    },
+    {
+      "description": "'in_stack_0000000c[1].actor_name + 0x14' walks 1 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0x14 = 0x16c, which is exactly offsetof(CChain, texture_size). Ghidra had no CChain type here and reached the field by index arithmetic; write it as ((CChain *)in_stack_0000000c)->texture_size (\u00a7de-pun/\u00a712). Ambiguous: CEmitter::event_on, CStairs::stair_count, CTrigger::trigger_state also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 587,
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar15 = pSVar15 + *(int *)(in_stack_0000000c[1].actor_name + 0x14) * 4;",
+      "type": "derived_field_index_pun"
+    },
+    {
+      "description": "'in_stack_0000000c[1].actor_name + 0x14' walks 1 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0x14 = 0x16c, which is exactly offsetof(CChain, texture_size). Ghidra had no CChain type here and reached the field by index arithmetic; write it as ((CChain *)in_stack_0000000c)->texture_size (\u00a7de-pun/\u00a712). Ambiguous: CEmitter::event_on, CStairs::stair_count, CTrigger::trigger_state also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 639,
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar39 <= *(int *)(in_stack_0000000c[1].actor_name + 0x14) * 4; iVar39 = iVar39 + 1) {",
+      "type": "derived_field_index_pun"
+    },
+    {
+      "description": "'in_stack_0000000c[1].actor_name + 0x14' walks 1 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0x14 = 0x16c, which is exactly offsetof(CChain, texture_size). Ghidra had no CChain type here and reached the field by index arithmetic; write it as ((CChain *)in_stack_0000000c)->texture_size (\u00a7de-pun/\u00a712). Ambiguous: CEmitter::event_on, CStairs::stair_count, CTrigger::trigger_state also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 649,
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (0 < *(int *)(in_stack_0000000c[1].actor_name + 0x14)) {",
+      "type": "derived_field_index_pun"
+    },
+    {
+      "description": "'in_stack_0000000c[1].actor_name + 0x14' walks 1 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0x14 = 0x16c, which is exactly offsetof(CChain, texture_size). Ghidra had no CChain type here and reached the field by index arithmetic; write it as ((CChain *)in_stack_0000000c)->texture_size (\u00a7de-pun/\u00a712). Ambiguous: CEmitter::event_on, CStairs::stair_count, CTrigger::trigger_state also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 666,
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "} while (iVar4 < *(int *)(in_stack_0000000c[1].actor_name + 0x14));",
+      "type": "derived_field_index_pun"
+    },
+    {
+      "description": "'in_stack_0000000c[1].actor_name + 0x14' walks 1 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0x14 = 0x16c, which is exactly offsetof(CChain, texture_size). Ghidra had no CChain type here and reached the field by index arithmetic; write it as ((CChain *)in_stack_0000000c)->texture_size (\u00a7de-pun/\u00a712). Ambiguous: CEmitter::event_on, CStairs::stair_count, CTrigger::trigger_state also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 678,
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (local_8 = 0; local_8 < *(int *)(in_stack_0000000c[1].actor_name + 0x14) * 2;",
+      "type": "derived_field_index_pun"
     }
   ],
   "stack_frame": {

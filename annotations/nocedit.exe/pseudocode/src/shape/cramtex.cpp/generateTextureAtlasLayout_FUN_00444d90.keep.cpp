@@ -42,7 +42,7 @@ int __cdecl shape_cramtex_cpp_generateTextureAtlasLayout_FUN_00444d90(int textur
   int *piVar1;
   int *piVar4;
   int *piVar3;
-  
+
   g_CramTextureCount = texture_count;
   g_CramAtlasDimension = atlas_width;
   g_CramPaddingSize = atlas_height;
@@ -65,7 +65,11 @@ int __cdecl shape_cramtex_cpp_generateTextureAtlasLayout_FUN_00444d90(int textur
     } while (iVar11 < texture_count);
   }
   remove("..\\shape\\cramlog.txt");
+#if NOCTURNE_AUTHENTIC_RNG
   seed = rand();
+#else
+  seed = (int)nocturne_rng_fx();
+#endif
   srand(0x16);
   _qsort
             (g_CramSortedTextureEntries,g_CramTextureCount,0x4c,

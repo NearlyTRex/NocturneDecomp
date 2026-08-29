@@ -78,7 +78,7 @@ void __cdecl core_netgame_cpp_CNetGame_setMode9_FUN_00543b70(CNetGame *this_ptr)
 void __cdecl core_netgame_cpp_CNetGame_setMode10_FUN_00543b80(CNetGame *this_ptr);
 void __cdecl core_netgame_cpp_CNetGame_setMode12_FUN_00543b90(CNetGame *this_ptr);
 void __cdecl core_netgame_cpp_CNetGame_setMode13_FUN_00543ba0(CNetGame *this_ptr);
-void __cdecl core_netgame_cpp_CNetGame_swapPlayerData_FUN_00543bb0(CNetGame *this_ptr,SNetPlayer *other);
+void __cdecl core_netgame_cpp_swapPlayerData_FUN_00543bb0(SNetPlayer *player,SNetPlayer *other);
 SPlayer * __cdecl core_netgame_cpp_SPlayer_ctor_FUN_00543cb0(SPlayer *this_ptr);
 SChatHistory * __cdecl core_netgame_cpp_SChatHistory_ctor_FUN_00543cc0(SChatHistory *this_ptr);
 SChatHistory * __cdecl core_netgame_cpp_SChatHistory_dtor_FUN_00543cd0(SChatHistory *this_ptr,uint flags);

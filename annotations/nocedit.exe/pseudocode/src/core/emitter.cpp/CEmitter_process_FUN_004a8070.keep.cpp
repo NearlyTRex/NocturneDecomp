@@ -10,6 +10,7 @@
 void __cdecl core_emitter_cpp_CEmitter_process_FUN_004a8070(CEmitter *this_ptr,float delta_time)
 
 {
+  CHero *sim_target;
   CLocation *pCVar4;
   CDemonActor *pCVar7;
   CDemonSet *this_ptr_01;
@@ -42,7 +43,12 @@ void __cdecl core_emitter_cpp_CEmitter_process_FUN_004a8070(CEmitter *this_ptr,f
   CDemonActor *pCVar2;
   CDemonSet *pCVar3;
   float fVar13;
-  
+
+#if NOCTURNE_AUTHENTIC_NETPLAY
+  sim_target = g_HeroActors[g_LocalHeroIndex];
+#else
+  sim_target = nocturne_net_sim_target_for((CDemonActor *)this_ptr);
+#endif
   iVar8 = this_ptr->was_active;
   iVar4 = _strcmp(this_ptr->event_on,"none");
   if ((iVar4 != 0) &&
@@ -134,7 +140,7 @@ LAB_004a811d:
     core_emitter_cpp_CEmitter_getRandomBoundingBoxPoint_FUN_004a8d20(this_ptr,&local_b8);
     core_fire_cpp_CFireEffect_createGunFlames_FUN_004c8ef0
               (g_CFireEffectPtr,&local_b8,&(this_ptr->base).orient.vec,2,1);
-    this_ptr_00 = g_HeroActors[g_LocalHeroIndex];
+    this_ptr_00 = sim_target;
     pCVar4 = &(this_ptr->base).location;
     fVar14 = (this_ptr_00->base).base.location.position.x - (pCVar4->position).x;
     fVar15 = (this_ptr_00->base).base.location.position.y - (this_ptr->base).location.position.y;
@@ -143,7 +149,7 @@ LAB_004a811d:
       core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                 ((CDemonActor *)this_ptr_00,&local_a0,&pCVar4->position);
       core_charactr_cpp_CCharacter_igniteBone_FUN_0042b5b0
-                (&g_HeroActors[g_LocalHeroIndex]->base,&local_a0,0,0,1.0,1);
+                (&sim_target->base,&local_a0,0,0,1.0,1);
     }
     break;
   case 6:

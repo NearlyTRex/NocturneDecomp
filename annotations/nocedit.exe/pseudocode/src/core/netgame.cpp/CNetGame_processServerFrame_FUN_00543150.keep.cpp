@@ -19,7 +19,7 @@ void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_00543150(CNetGame 
   int local_24;
   int local_20;
   SNetPlayer *local_14;
-  
+
   iVar1 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
   iVar1 = iVar1 / 0x12;
   iVar2 = iVar1 - g_LastPingTime;
@@ -32,7 +32,11 @@ void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_00543150(CNetGame 
   g_CurrentGameTime = g_CurrentGameTime + iVar2;
   g_LastPingTime = iVar1;
   if (this_ptr->connection_type == CONNECTION_NONE) {
+#if NOCTURNE_AUTHENTIC_RNG
     seed_value = rand();
+#else
+    seed_value = nocturne_rng_seed();
+#endif
     this_ptr->random_seed = seed_value;
     core_actor_cpp_setRandomSeed_FUN_0040cb90(seed_value);
     return;
@@ -57,6 +61,18 @@ void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_00543150(CNetGame 
       } while (iVar1 < this_ptr->player_count);
     }
     core_netgame_cpp_CNetGame_receivePackets_FUN_005405b0(this_ptr);
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+    for (iVar2 = this_ptr->player_count + -1; 0 < iVar2; iVar2 = iVar2 + -1) {
+      if (((this_ptr->local_player_index < iVar2) && (this_ptr->server_player_index < iVar2)) &&
+         (NOCTURNE_NETPLAY_TIMEOUT_TICKS <
+          (uint)(g_CurrentGameTime - this_ptr->players[iVar2].last_arrival_time))) {
+        if ((iVar2 < 4) && (g_HeroActors[iVar2] != (CHero *)0x0)) {
+          memset(&g_HeroActors[iVar2]->player_input,0,sizeof(g_HeroActors[iVar2]->player_input));
+        }
+        core_netgame_cpp_CNetGame_removePlayer_FUN_00542b00(this_ptr,iVar2);
+      }
+    }
+#endif
     iVar1 = 0x7fffffff;
     iVar2 = 0;
     if (0 < this_ptr->player_count) {
@@ -105,7 +121,11 @@ void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_00543150(CNetGame 
     memset(pSVar4,0,100);
     pSVar4->sequence_number = iVar1;
 LAB_005432f5:
+#if NOCTURNE_AUTHENTIC_RNG
     iVar1 = rand();
+#else
+    iVar1 = (int)nocturne_rng_seed();
+#endif
     pSVar4->random_seed = iVar1;
     pSVar4->delta_time = g_CGamePtr->delta_time_float;
     iVar1 = 0;

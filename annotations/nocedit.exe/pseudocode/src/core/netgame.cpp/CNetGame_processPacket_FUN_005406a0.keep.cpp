@@ -20,14 +20,12 @@ void __cdecl core_netgame_cpp_CNetGame_processPacket_FUN_005406a0(CNetGame *this
   float local_f0;
   float local_ec;
   float local_e8;
-  SNetPacketHeader local_e4;
-  char local_df [20];
-  char local_cb [80];
-  SNetPacketHeader local_70;
-  SNetPacketHeader local_64;
-  SNetPacketHeader local_58 [2];
-  SNetPacketHeader local_4c;
-  SNetPacketHeader local_40;
+  SNetPacket_ServerAccept local_e4;
+  SNetPacket_Simple local_70;
+  SNetPacket_Simple local_64;
+  SNetPacket_Simple local_58 [2];
+  SNetPacket_Simple local_4c;
+  SNetPacket_Simple local_40;
   SNetworkAddr local_34;
   SNetPlayer *local_1c;
   char *pcVar12;
@@ -42,9 +40,21 @@ void __cdecl core_netgame_cpp_CNetGame_processPacket_FUN_005406a0(CNetGame *this
   switch((packet->header).type) {
   case PACKET_PLAYER_ANNOUNCE:
     if (this_ptr->network_mode != NET_MODE_LOBBY) {
-      local_58[0].type = PACKET_GAME_START;
-      local_58[0].size = 9;
-      core_netgame_cpp_CNetGame_sendPacket_FUN_00541230(this_ptr,source_addr,local_58);
+#if NOCTURNE_AUTHENTIC_NETPLAY
+      local_58[0].header.type = PACKET_GAME_START;
+      local_58[0].header.size = sizeof(SNetPacket_Simple);
+      core_netgame_cpp_CNetGame_sendPacket_FUN_00541230
+                (this_ptr,source_addr,&local_58[0].header);
+#else
+      local_58[0].header.type = PACKET_GAME_START;
+      local_58[0].header.size = sizeof(SNetPacket_Simple);
+      local_58[0].value = CONNECTION_STATUS_REJECTED_ALREADY_IN_GAME;
+      core_netgame_cpp_CNetGame_sendPacket_FUN_00541230
+                (this_ptr,source_addr,&local_58[0].header);
+      if ((int)uVar2 < 0) {
+        return;
+      }
+#endif
     }
     if ((int)uVar2 < 0) {
       uVar2 = core_netgame_cpp_CNetGame_addPlayer_FUN_005412b0
@@ -62,13 +72,16 @@ void __cdecl core_netgame_cpp_CNetGame_processPacket_FUN_005406a0(CNetGame *this
         core_netgame_cpp_CNetGame_gameSettingsChanged_FUN_00542cf0(this_ptr);
       }
     }
-    local_e4.size = 0x71;
-    local_e4.type = PACKET_SERVER_ACCEPT;
-    strcpy(local_cb, this_ptr->mission_name);
-    strcpy(local_df, this_ptr->player_name);
-    core_netgame_cpp_CNetGame_send_FUN_005411c0(this_ptr,uVar2,&local_e4);
+    local_e4.header.size = sizeof(SNetPacket_ServerAccept);
+    local_e4.header.type = PACKET_SERVER_ACCEPT;
+    strcpy(local_e4.mission_name, this_ptr->mission_name);
+    strcpy(local_e4.player_name, this_ptr->player_name);
+    local_e4.client_addr = *source_addr;
+    core_netgame_cpp_CNetGame_send_FUN_005411c0(this_ptr,uVar2,&local_e4.header);
+#if NOCTURNE_AUTHENTIC_NETPLAY
     iVar5 = this_ptr->local_player_index;
     this_ptr->players[iVar5].addr = (packet->player_announce).addr;
+#endif
     return;
   case PACKET_SERVER_ACCEPT:
     if (((this_ptr->connection_type != CONNECTION_CLIENT) || ((int)uVar2 < 0)) ||
@@ -98,9 +111,10 @@ LAB_0054097f:
       core_netgame_cpp_CNetGame_sendDisconnectNotify_FUN_00543930(this_ptr,source_addr,0);
       return;
     }
-    local_40.size = 9;
-    local_40.type = PACKET_PING_RESPONSE;
-    core_netgame_cpp_CNetGame_sendPacket_FUN_00541230(this_ptr,source_addr,&local_40);
+    local_40.header.size = sizeof(SNetPacket_Simple);
+    local_40.header.type = PACKET_PING_RESPONSE;
+    local_40.value = (packet->simple).value;
+    core_netgame_cpp_CNetGame_sendPacket_FUN_00541230(this_ptr,source_addr,&local_40.header);
     return;
   case PACKET_PING_RESPONSE:
     if ((this_ptr->connection_type == CONNECTION_NONE) || ((int)uVar2 < 0)) {
@@ -149,9 +163,10 @@ LAB_0054097f:
                   (this_ptr,source_addr,(packet->simple).value,local_1c->name,
                    (packet->server_accept).player_name + 4);
       }
-      local_70.size = 9;
-      local_70.type = PACKET_CHAT_ACK;
-      core_netgame_cpp_CNetGame_sendPacket_FUN_00541230(this_ptr,source_addr,&local_70);
+      local_70.header.size = sizeof(SNetPacket_Simple);
+      local_70.header.type = PACKET_CHAT_ACK;
+      local_70.value = (packet->simple).value;
+      core_netgame_cpp_CNetGame_sendPacket_FUN_00541230(this_ptr,source_addr,&local_70.header);
       return;
     }
     break;
@@ -172,9 +187,11 @@ LAB_0054097f:
        ((packet->player_announce).addr.ip_address == 1)) {
       this_ptr->network_mode = NET_MODE_SYNCING;
     }
-    local_4c.size = 9;
-    local_4c.type = PACKET_SYNC_STAGE_RESP;
-    core_netgame_cpp_CNetGame_send_FUN_005411c0(this_ptr,this_ptr->server_player_index,&local_4c);
+    local_4c.header.size = sizeof(SNetPacket_Simple);
+    local_4c.header.type = PACKET_SYNC_STAGE_RESP;
+    local_4c.value = this_ptr->players[this_ptr->local_player_index].local_sync_stage;
+    core_netgame_cpp_CNetGame_send_FUN_005411c0
+              (this_ptr,this_ptr->server_player_index,&local_4c.header);
     if (g_RemoteSyncStage < (packet->simple).value) {
       g_RemoteSyncStage = (packet->simple).value;
       return;
@@ -201,7 +218,7 @@ LAB_00540df8:
     if (this_ptr->network_mode == NET_MODE_LOBBY) {
       if (local_1c->state_change_time != 0) {
         local_f0 = (float)(int)(local_1c->state_change_time -
-                               (packet->player_announce).addr.ip_address) * (float)1.52587890625e-05;
+                               (packet->player_state).timestamp) * (float)1.52587890625e-05;
         if (local_f0 < (float)-30) {
           local_f0 = -30.0;
         }
@@ -212,9 +229,18 @@ LAB_00540df8:
           return;
         }
       }
+#if NOCTURNE_AUTHENTIC_NETPLAY
       local_1c->ready_flag = (packet->player_state).ready_flag;
       strcpy(local_1c->name, (packet->player_state).name);
       core_netgame_cpp_CNetGame_gameSettingsChanged_FUN_00542cf0(this_ptr);
+#else
+      iVar5 = _strcmp(local_1c->name,(packet->player_state).name);
+      if ((iVar5 != 0) || (local_1c->ready_flag != (packet->player_state).ready_flag)) {
+        local_1c->ready_flag = (packet->player_state).ready_flag;
+        strcpy(local_1c->name, (packet->player_state).name);
+        core_netgame_cpp_CNetGame_gameSettingsChanged_FUN_00542cf0(this_ptr);
+      }
+#endif
       return;
     }
     break;
@@ -229,9 +255,11 @@ LAB_00540df8:
         }
         INT_02f7c8c4 = (packet->simple).value;
       }
-      local_64.size = 9;
-      local_64.type = PACKET_SETTINGS_ACK;
-      core_netgame_cpp_CNetGame_send_FUN_005411c0(this_ptr,this_ptr->server_player_index,&local_64);
+      local_64.header.size = sizeof(SNetPacket_Simple);
+      local_64.header.type = PACKET_SETTINGS_ACK;
+      local_64.value = INT_02f7c8c4;
+      core_netgame_cpp_CNetGame_send_FUN_005411c0
+                (this_ptr,this_ptr->server_player_index,&local_64.header);
       return;
     }
     break;
@@ -294,7 +322,7 @@ LAB_00540df8:
     memset(dest,0,100);
     dest->sequence_number = uVar3;
 LAB_00541015:
-    dest->random_seed = *(int *)&(packet->player_announce).addr.port;
+    dest->random_seed = (packet->sim_frame).frame.random_seed;
     dest->delta_time = (packet->sim_frame).frame.delta_time;
     iVar5 = 0;
     if (0 < this_ptr->player_count) {
@@ -311,26 +339,29 @@ LAB_00541015:
     }
     if ((this_ptr->network_mode == NET_MODE_PLAYING) &&
        (local_1c->sim_frame_index < (packet->simple).value)) {
-      local_1c->sim_frame_index = (packet->simple).value;
-      (local_1c->player_input).action_state.walk = *(int *)&(packet->player_announce).addr.port;
-      (local_1c->player_input).action_state.backup = (int)(packet->sim_frame).frame.delta_time;
-      (local_1c->player_input).action_state.run =
-           (packet->sim_frame).frame.player_input[0].action_state.walk;
-      (local_1c->player_input).action_state.fire =
-           (packet->sim_frame).frame.player_input[0].action_state.backup;
-      (local_1c->player_input).action_state.use_item =
-           (packet->sim_frame).frame.player_input[0].action_state.run;
-      (local_1c->player_input).action_state.light = (packet->player_state).ready_flag;
-      (local_1c->player_input).action_state.draw = (packet->player_announce).hero_number;
-      (local_1c->player_input).action_state.jump = (packet->player_announce).aim_mode;
-      (local_1c->player_input).strafe_speed =
-           (float)(packet->sim_frame).frame.player_input[0].action_state.draw;
-      (local_1c->player_input).turn_speed =
-           (float)(packet->sim_frame).frame.player_input[0].action_state.jump;
-      (local_1c->player_input).look_up_down_speed =
-           (packet->sim_frame).frame.player_input[0].strafe_speed;
+      local_1c->sim_frame_index = (packet->player_input).sim_frame_index;
+      local_1c->player_input = (packet->player_input).player_input;
       return;
     }
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+    break;
+  case PACKET_UNUSED:
+    if ((this_ptr->connection_type == CONNECTION_CLIENT) &&
+       (uVar2 == this_ptr->server_player_index)) {
+      nocturne_net_respawn_on_packet(packet,(packet->header).size + 3);
+    }
+    break;
+  case NOCTURNE_NET_PACKET_SYNC_CHECK:
+    if ((this_ptr->connection_type == CONNECTION_CLIENT) &&
+       (uVar2 == this_ptr->server_player_index)) {
+      nocturne_net_sync_on_packet(packet,(packet->header).size + 3);
+    }
+    break;
+  case NOCTURNE_NET_PACKET_WEAPON:
+    if (-1 < (int)uVar2) {
+      nocturne_net_weapon_on_packet(packet,(packet->header).size + 3);
+    }
+#endif
   }
   return;
 }

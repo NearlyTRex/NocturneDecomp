@@ -26,12 +26,21 @@ void __cdecl core_procedur_cpp_CProceduralTexture_createWaterFrames_FUN_005542b0
   byte bVar3;
 
   for (iWave = 0; iWave < 128; iWave = iWave + 1) {
+#if NOCTURNE_AUTHENTIC_RNG
     iVar1 = rand();
     this_ptr->wave_x[iWave] = (float)iVar1 * 3.051851e-05f * (float)256;
     iVar1 = rand();
     this_ptr->wave_y[iWave] = (float)iVar1 * 3.051851e-05f * (float)256;
     iVar1 = rand();
     this_ptr->wave_radius[iWave] = (float)iVar1 * 3.051851e-05f * (float)128;
+#else
+    iVar1 = (int)nocturne_rng_fx();
+    this_ptr->wave_x[iWave] = (float)iVar1 * 3.051851e-05f * (float)256;
+    iVar1 = (int)nocturne_rng_fx();
+    this_ptr->wave_y[iWave] = (float)iVar1 * 3.051851e-05f * (float)256;
+    iVar1 = (int)nocturne_rng_fx();
+    this_ptr->wave_radius[iWave] = (float)iVar1 * 3.051851e-05f * (float)128;
+#endif
   }
   local_1c = 0;
   do {

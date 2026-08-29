@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_netgame_cpp_CNetGame_swapPlayerData_FUN_00543bb0(CNetGame *this_ptr,SNetPlayer *other)
+; void __cdecl core_netgame_cpp_swapPlayerData_FUN_00543bb0(SNetPlayer *player,SNetPlayer *other)
 ;
 ; Parameters:
-; CNetGame *       Stack[0x4]:4   this_ptr
+; SNetPlayer *     Stack[0x4]:4   player
 ; SNetPlayer *     Stack[0x8]:4   other
 ; Local Variables:
 ; EConnectionType  Stack[-0x88]:4  EStack_88
@@ -46,7 +46,7 @@
 section .text
 
     PUSH EBX                            ; 00543bb0
-        ;   Label: core_netgame.cpp_CNetGame_swapPlayerData_FUN_00543bb0
+        ;   Label: core_netgame.cpp_swapPlayerData_FUN_00543bb0
     PUSH ESI                            ; 00543bb1
     PUSH EDI                            ; 00543bb2
     PUSH EBP                            ; 00543bb3

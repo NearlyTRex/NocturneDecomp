@@ -10,15 +10,23 @@
 int __cdecl core_enemy_cpp_CEnemy_countSameClassAttackingHero_FUN_004aa0f0(CEnemy *this_ptr)
 
 {
+  CHero *sim_target;
   CCharacter *this_ptr_01;
   char *class_name;
   int iVar1;
   EDeathState EVar2;
   int iVar3;
   int iVar5;
-  
+  CHero *target_hero;
+
+#if NOCTURNE_AUTHENTIC_NETPLAY
+  sim_target = g_HeroActors[g_LocalHeroIndex];
+#else
+  sim_target = nocturne_net_sim_target_for((CDemonActor *)this_ptr);
+#endif
   iVar5 = 0;
   class_name = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90((CDemonActor *)this_ptr);
+  target_hero = sim_target;
   iVar3 = 0;
   while( true ) {
     if (g_CDemonSetPtr->enemy_count <= iVar5) break;
@@ -27,7 +35,7 @@ int __cdecl core_enemy_cpp_CEnemy_countSameClassAttackingHero_FUN_004aa0f0(CEnem
     if (iVar1 != 0) {
       EVar2 = (*(((this_ptr_01->base).vtable._uc)->_uc).getDeathState)(this_ptr_01);
       if ((EVar2 == DEATH_STATE_ALIVE) &&
-         (*(CHero **)(this_ptr_01[1].base.actor_name + 0x18) == g_HeroActors[g_LocalHeroIndex])) {
+         (((CEnemy *)this_ptr_01)->victim == &target_hero->base)) {
         iVar3 = iVar3 + 1;
       }
     }
