@@ -214,6 +214,8 @@ def run_detectors(susp, code, struct_layout_map=None,
     found.extend(susp.identify_pointer_stride_bytecount(code))
     found.extend(susp.identify_stale_struct_offset_64bit(
         code, struct_layout_map))
+    found.extend(susp.identify_derived_field_index_pun(
+        code, struct_layout_map, struct_size_map))
     if asm_code:
         found.extend(susp.identify_dropped_fyl2x(code, asm_code))
     return found

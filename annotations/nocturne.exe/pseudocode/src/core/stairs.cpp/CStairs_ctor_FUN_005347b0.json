@@ -62,14 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 23,
-    "complexity_score": 207,
+    "complexity_score": 222,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 17,
-    "suspect_count": 18,
+    "suspect_count": 19,
     "suspect_types": [
+      "derived_field_index_pun",
       "pointer_cast",
       "pointer_truncation"
     ],
@@ -324,6 +325,13 @@
       "severity": "moderate",
       "text": "return (CStairs *)((int)pvVar2 + -0x168);",
       "type": "pointer_truncation"
+    },
+    {
+      "description": "'pCVar1[1].actor_name + 0x18' walks 1 x sizeof(CDemonActor) (0x150) + offsetof(actor_name) (0x0) + 0x18 = 0x168, which is exactly offsetof(CChain, texture_handle). Ghidra had no CChain type here and reached the field by index arithmetic; write it as ((CChain *)pCVar1)->texture_handle (\u00a7de-pun/\u00a712). Ambiguous: CStairs::collision_triangles, CTrigger::shape, CWaterActor::time_to_move_down also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 10,
+      "severity": "moderate",
+      "text": "(pCVar1[1].actor_name + 0x18,0x28,&g_CDemonTriangleTypeInfo_0059c080);",
+      "type": "derived_field_index_pun"
     }
   ],
   "vtable_info": {

@@ -74,14 +74,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 124,
-    "complexity_score": 526,
+    "complexity_score": 541,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 66,
-    "suspect_count": 44,
+    "suspect_count": 45,
     "suspect_types": [
+      "derived_field_index_pun",
       "pointer_cast",
       "pointer_truncation",
       "unrolled_strcpy",
@@ -679,6 +680,13 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "'pCVar4[1].base.base.create_event + 8' walks 1 x sizeof(CEnemy) (0xbd24) + offsetof(base.base.create_event) (0x78) + 0x8 = 0xbda4, which is exactly offsetof(CBoneGuy, boxes). Ghidra had no CBoneGuy type here and reached the field by index arithmetic; write it as ((CBoneGuy *)pCVar4)->boxes (\u00a7de-pun/\u00a712).",
+      "line": 22,
+      "severity": "moderate",
+      "text": "(pCVar4[1].base.base.create_event + 8,0x14,&g_SBoneGuyBoxTypeInfo_0059aa00);",
+      "type": "derived_field_index_pun"
     }
   ],
   "vtable_info": {

@@ -87,14 +87,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 129,
+    "complexity_score": 144,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 39,
-    "suspect_count": 8,
+    "suspect_count": 9,
     "suspect_types": [
+      "derived_field_index_pun",
       "negative_offset",
       "pointer_truncation"
     ],
@@ -272,6 +273,13 @@
       "severity": "moderate",
       "text": "pCVar3[-2].base.scale.z = (int)&g_CCrossbowVTable;",
       "type": "pointer_truncation"
+    },
+    {
+      "description": "'pCVar2[1].base.actor_name + 4' walks 1 x sizeof(CWeapon) (0x570) + offsetof(base.actor_name) (0x0) + 0x4 = 0x574, which is exactly offsetof(CCrossbow, bolt_flame). Ghidra had no CCrossbow type here and reached the field by index arithmetic; write it as ((CCrossbow *)pCVar2)->bolt_flame (\u00a7de-pun/\u00a712). Ambiguous: CDynamite::toss_velocity, CElephantGun::muzzle_flash_active, CFlameThrower::sfx_handle also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 10,
+      "severity": "moderate",
+      "text": "pCVar3 = core_flame_cpp_CFlame_ctor_FUN_0048cf60((CFlame *)(pCVar2[1].base.actor_name + 4));",
+      "type": "derived_field_index_pun"
     }
   ],
   "vtable_info": {

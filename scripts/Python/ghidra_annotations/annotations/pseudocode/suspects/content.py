@@ -6961,6 +6961,197 @@ def identify_stale_struct_offset_64bit(code, struct_layout_map=None):
     return suspects
 
 
+
+
+_DFI_PUN_RE = re.compile(
+    r'\b([A-Za-z_]\w*)\s*\[\s*(\d+)\s*\]\s*\.\s*'
+    r'([A-Za-z_]\w*(?:\s*\.\s*[A-Za-z_]\w*)*)\s*\+\s*(0x[0-9a-fA-F]+|\d+)\b')
+
+
+def _dfi_path_offset(struct_name, path, layout):
+    """Byte offset of a dotted field path within `struct_name`, or None.
+
+    Walks `a.b.c` accumulating each field's offset. Returns
+    (offset, final_field_dict) so callers can test whether a computed address
+    stays inside the named field or walks past it.
+    """
+    offset = 0
+    cur = struct_name
+    fld = None
+    for part in [p.strip() for p in path.split('.')]:
+        flds = layout.get(cur)
+        if not flds:
+            return None
+        fld = None
+        for candidate in flds:
+            if candidate['name'] == part:
+                fld = candidate
+                break
+        if fld is None:
+            return None
+        offset += fld['offset']
+        cur = fld.get('type')
+    return (offset, fld)
+
+
+def _dfi_derived_map(layout):
+    """base struct -> [structs whose first member is that base at offset 0].
+
+    That is the decompiler-visible shape of single inheritance in this codebase:
+    CEnemy's first member is `CCharacter base; // 0x0`, CCharacter's is
+    `CDemonActor base; // 0x0`, and so on.
+    """
+    derived = {}
+    for name, flds in layout.items():
+        if not flds:
+            continue
+        first = flds[0]
+        if first['offset'] != 0:
+            continue
+        base = first.get('type')
+        if not base or base == name or base not in layout:
+            continue
+        derived.setdefault(base, []).append(name)
+    return derived
+
+
+def identify_derived_field_index_pun(code, struct_layout_map=None,
+                                     struct_size_map=None):
+    """Flag `IDENT[N].FIELD + 0xNN` that really names a derived class's field.
+
+    When Ghidra has no type for a derived class it cannot write `->victim`, so
+    it reaches the field arithmetically instead: it steps N whole *base*-class
+    strides off a base-typed pointer, picks whichever base field lands nearby,
+    and adds a raw byte offset. The canonical case is
+    `*(CHero **)(this_ptr_01[1].base.actor_name + 0x18)` on a `CCharacter *`,
+    where 1 * sizeof(CCharacter) (0xbe24) + offsetof(actor_name) (0) + 0x18
+    lands on 0xbe3c — exactly `offsetof(CEnemy, victim)`. The whole expression
+    is one named field access written the long way round.
+
+    No existing detector sees it. `stale_struct_offset_64bit` only matches
+    `*(T *)(base + 0xNN)`, where the offset is a visible term; here it is
+    buried inside array-index arithmetic, so the shape never matches. It also
+    survives compilation and 64-bit portability checks, because every term is
+    individually well-typed.
+
+    Two shapes, both requiring the arithmetic to land on a field *exactly*:
+
+    * `N >= 1` — steps past the end of the base struct into a derived one.
+      Indexing element N of a base-typed pointer that actually points at a
+      derived object is meaningless on its own, which is what makes this
+      precise: it only resolves at all when a derived type has a field at the
+      computed offset.
+    * `N == 0` — stays inside the same struct but resolves to a *different*
+      field than the one named, i.e. Ghidra reached a neighbour through
+      whichever field it happened to pick. Skipped when the address stays
+      within the named field's own bytes, which is ordinary array indexing.
+
+    Needs both maps (inert without them), like struct_field_overrun.
+
+    Args:
+        code: source text.
+        struct_layout_map: struct -> field layout (build_struct_layout_map).
+        struct_size_map: struct -> size in bytes (build_struct_size_map).
+
+    Returns:
+        List of suspect dicts (type derived_field_index_pun).
+    """
+    suspects = []
+    if not code or not struct_layout_map or not struct_size_map:
+        return suspects
+    var_types = _sfo_resolve_var_types(code)
+    if not var_types:
+        return suspects
+    derived_map = _dfi_derived_map(struct_layout_map)
+
+    # The class this function belongs to, used to disambiguate between sibling
+    # derived types. `this_ptr` names it directly when present; otherwise take
+    # it from the `// Name: core_stairs.cpp_CStairs_renderOpaque_FUN_...` header.
+    func_class = var_types.get('this_ptr')
+    if not func_class or func_class not in struct_layout_map:
+        nm = re.search(r'//\s*Name:\s*\w+?\.\w+_([A-Z]\w*?)_[a-z]\w*_FUN_', code)
+        func_class = nm.group(1) if nm else None
+
+    for lineno, line in enumerate(code.split('\n'), 1):
+        stripped = line.strip()
+        if (stripped.startswith('//') or stripped.startswith('/*')
+                or stripped.startswith('*')):
+            continue
+        for m in _DFI_PUN_RE.finditer(line):
+            ident, idx_s, path, const_s = m.groups()
+            base_type = var_types.get(ident)
+            if not base_type or base_type not in struct_layout_map:
+                continue
+            size = struct_size_map.get(base_type)
+            if not size:
+                continue
+            resolved = _dfi_path_offset(base_type, path, struct_layout_map)
+            if resolved is None:
+                continue
+            path_off, path_fld = resolved
+            index = int(idx_s)
+            const = int(const_s, 16) if const_s.lower().startswith('0x') \
+                else int(const_s)
+            total = index * size + path_off + const
+
+            if index == 0:
+                # Same struct: only interesting if it left the named field.
+                if total < path_off + path_fld['len']:
+                    continue
+                owners = [base_type]
+            else:
+                owners = derived_map.get(base_type, [])
+                if not owners:
+                    continue
+
+            # Exact landing only — a hit in the middle of a field is not a
+            # recovered name, it is a different (overrun) problem.
+            hits = []
+            for owner in owners:
+                fld = _sfo_field_at_offset(struct_layout_map, owner, total)
+                if fld and fld['offset'] == total:
+                    hits.append((owner, fld))
+            if not hits:
+                continue
+
+            # A base class usually has many derived classes, and several can
+            # happen to have a field at the same offset — so the offset alone
+            # does not name the type. The function's own class does: a pun in
+            # CStairs::renderOpaque is a CStairs, not whichever sibling of
+            # CDemonActor happens to match. Fall back to reporting the
+            # candidates rather than asserting one of them.
+            preferred = [h for h in hits if h[0] == func_class]
+            if preferred:
+                owner, fld = preferred[0]
+                alt = ''
+            elif len(hits) == 1:
+                owner, fld = hits[0]
+                alt = ''
+            else:
+                owner, fld = hits[0]
+                alt = (' Ambiguous: %s also has a field there — confirm the '
+                       'real class from the .asm before rewriting.'
+                       % ', '.join('%s::%s' % (o, f['name'])
+                                   for o, f in hits[1:4]))
+
+            suspects.append({
+                'type': 'derived_field_index_pun',
+                'line': lineno,
+                'text': stripped[:200],
+                'description': (
+                    "'%s' walks %d x sizeof(%s) (0x%x) + offsetof(%s) (0x%x) "
+                    "+ 0x%x = 0x%x, which is exactly offsetof(%s, %s). Ghidra "
+                    "had no %s type here and reached the field by index "
+                    "arithmetic; write it as ((%s *)%s)->%s (§de-pun/§12).%s"
+                    % (m.group(0).strip(), index, base_type, size, path,
+                       path_off, const, total, owner, fld['name'], owner,
+                       owner, ident, fld['name'], alt)),
+                'severity': SUSPECT_SEVERITY.get(
+                    'derived_field_index_pun', 'moderate'),
+            })
+    return suspects
+
+
 def identify_mem_magic_size(code, struct_layout_map=None, struct_size_map=None):
     """Flag memcpy/memmove/memset whose byte size hardcodes sizeof(an unstable T).
 
@@ -7311,6 +7502,8 @@ def detect_content_suspects(code, func_globals=None, global_interval_map=None,
         code, struct_layout_map, struct_size_map))
     found.extend(identify_pointer_stride_bytecount(code))
     found.extend(identify_stale_struct_offset_64bit(code, struct_layout_map))
+    found.extend(identify_derived_field_index_pun(
+        code, struct_layout_map, struct_size_map))
     return found
 
 

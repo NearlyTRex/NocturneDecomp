@@ -6,7 +6,7 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 203
 Total functions: 4922
-Clean functions: 2529 (51.4%)
+Clean functions: 2528 (51.4%)
 Files at 100%: 10
 Files at 90%+: 12
 Files at 50%+: 138
@@ -90,7 +90,7 @@ FILES AT 50-89%
            - core_gasmask.cpp_CGasMask_getBoundingBox_FUN_004a8b70 (14 lines) [unrolled_memcpy]
    82.4% | core/stairs.cpp
          14/17 clean, 3 remaining
-           - core_stairs.cpp_CStairs_ctor_FUN_005347b0 (17 lines) [pointer_cast, pointer_truncation]
+           - core_stairs.cpp_CStairs_ctor_FUN_005347b0 (17 lines) [derived_field_index_pun, pointer_cast, pointer_truncation]
            - core_stairs.cpp_CStairs_customRayIntersect_FUN_00534960 (27 lines) [unrolled_memcpy]
            - core_stairs.cpp_CStairs_dtor_FUN_00534c10 (19 lines) [negative_offset]
    81.8% | core/dest.cpp
@@ -192,7 +192,7 @@ FILES AT 50-89%
            - core_tbplayer.cpp_CBassPlayer_dtor_FUN_005436f0 (35 lines) [negative_offset]
    75.0% | core/tvbat.cpp
          12/16 clean, 4 remaining
-           - core_tvbat.cpp_CTVBat_ctor_FUN_0054b140 (45 lines) [negative_offset, pointer_cast]
+           - core_tvbat.cpp_CTVBat_ctor_FUN_0054b140 (45 lines) [derived_field_index_pun, negative_offset, pointer_cast]
            - core_tvbat.cpp_CTVBat_process_FUN_0054b460 (326 lines) [pointer_cast, self_copy_guard, unrolled_memcpy, unrolled_memset, warning_type_propagation]
            - core_tvbat.cpp_CTVBat_getBoundingBox_FUN_0054c040 (16 lines) [unrolled_memcpy]
            - core_tvbat.cpp_CTVBat_dtor_FUN_0054c190 (32 lines) [negative_offset]
@@ -356,7 +356,7 @@ FILES AT 50-89%
            - core_weapon.cpp_CWeapon_fireProjectile_FUN_00554750 (65 lines) [unrolled_memcpy]
    66.7% | core/crossbow.cpp
          8/12 clean, 4 remaining
-           - core_crossbow.cpp_CCrossbow_ctor_FUN_0043cf10 (39 lines) [negative_offset, pointer_truncation]
+           - core_crossbow.cpp_CCrossbow_ctor_FUN_0043cf10 (39 lines) [derived_field_index_pun, negative_offset, pointer_truncation]
            - core_crossbow.cpp_CCrossbow_process_FUN_0043cfd0 (24 lines) [unrolled_memcpy]
            - core_crossbow.cpp_CCrossbow_fire_FUN_0043d1c0 (196 lines) [phantom_float_to_int, stack_ref, sub84_truncation, suspect_float, unknown_field]
            - core_crossbow.cpp_CCrossbow_dtor_FUN_0043d870 (19 lines) [negative_offset]
@@ -416,7 +416,7 @@ FILES AT 50-89%
            - core_boxactor.cpp_CBoxActor_getBoundingBox_FUN_0041ebe0 (16 lines) [unrolled_memcpy]
            - core_boxactor.cpp_CBoxActor_FUN_0041f190 (31 lines) [unrolled_memcpy]
            - core_boxactor.cpp_CBoxActor_setPositionAndOrientation_FUN_0041f240 (28 lines) [unrolled_memcpy]
-           - core_boxactor.cpp_CLightActor_ctor_FUN_0041f310 (34 lines) [negative_offset, suspect_float]
+           - core_boxactor.cpp_CLightActor_ctor_FUN_0041f310 (34 lines) [derived_field_index_pun, negative_offset, suspect_float]
            - core_boxactor.cpp_CLightActor_process_FUN_0041f3d0 (78 lines) [pointer_cast, pointer_truncation, undefined_data, unrolled_memcpy]
            - core_boxactor.cpp_CLightActor_archive_FUN_0041f600 (28 lines) [undefined_data]
            - core_boxactor.cpp_CLightActor_FUN_0041f6e0 (93 lines) [undefined_data, unrolled_memset]
@@ -485,7 +485,7 @@ FILES AT 50-89%
            - core_cow.cpp_CZombieCow_dtor_FUN_0043c6f0 (32 lines) [negative_offset]
    63.6% | core/curtain.cpp
          14/22 clean, 8 remaining
-           - core_curtain.cpp_CCurtain_ctor_FUN_0043d960 (57 lines) [pointer_cast, pointer_truncation, unrolled_strcpy]
+           - core_curtain.cpp_CCurtain_ctor_FUN_0043d960 (57 lines) [derived_field_index_pun, pointer_cast, pointer_truncation, unrolled_strcpy]
            - core_curtain.cpp_CCurtain_setup_FUN_0043dad0 (271 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, unaffected_reg, unrolled_memcpy, unrolled_memset]
            - core_curtain.cpp_CCurtain_updateWorldPositions_FUN_0043e110 (39 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, unrolled_memcpy]
            - core_curtain.cpp_CCurtain_updateLocalPositions_FUN_0043e1e0 (33 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, unrolled_memcpy]
@@ -560,26 +560,6 @@ FILES AT 50-89%
            - core_haystack.cpp_CHaystack_updateAI_FUN_004b3880 (183 lines) [unrolled_memcpy, warning_type_propagation]
            - core_haystack.cpp_CHaystack_advanceMotion_FUN_004b3e00 (51 lines) [warning_overlapping_globals, warning_type_propagation]
            - core_haystack.cpp_CHaystack_checkMeleeHit_FUN_004b3f40 (32 lines) [pointer_cast]
-   60.0% | core/hero.cpp
-         27/45 clean, 18 remaining
-           - core_hero.cpp_closestHeroToPoint_FUN_004b4500 (35 lines) [pointer_cast, pointer_truncation, warning_overlapping_globals]
-           - core_hero.cpp_isAnyHeroWithinRadius_FUN_004b45b0 (25 lines) [pointer_cast, pointer_truncation, warning_overlapping_globals]
-           - core_hero.cpp_isAnyHeroWithinCylinder_FUN_004b4630 (25 lines) [pointer_cast, pointer_truncation, warning_overlapping_globals]
-           - core_hero.cpp_CHero_FUN_004b46d0 (54 lines) [negative_offset, pointer_cast, pointer_truncation, suspect_float]
-           - core_hero.cpp_CHero_dtor_FUN_004b4800 (36 lines) [negative_offset, pointer_cast, pointer_truncation]
-           - core_hero.cpp_CHero_archive_FUN_004b49a0 (74 lines) [undefined_data]
-           - core_hero.cpp_CHero_releaseFromGrab_FUN_004b4d50 (27 lines) [undefined_data]
-           - core_hero.cpp_CHero_createDefaultWeapon_FUN_004b4dd0 (32 lines) [suspect_float, unrolled_strcpy]
-           - core_hero.cpp_CHero_tryInteract_FUN_004b4e90 (52 lines) [pointer_cast, unresolved_funcptr, warning_overlapping_globals]
-           - core_hero.cpp_CHero_tryTalkToNearbyCharacter_FUN_004b4fe0 (48 lines) [pointer_cast]
-           - core_hero.cpp_CHero_FUN_004b5110 (54 lines) [pointer_cast]
-           - core_hero.cpp_CHero_tryPullLever_FUN_004b52f0 (52 lines) [pointer_cast]
-           - core_hero.cpp_CHero_tryPushNearbyBox_FUN_004b54c0 (84 lines) [pointer_cast]
-           - core_hero.cpp_CHero_tryApproachNearbyActor_FUN_004b5750 (65 lines) [pointer_cast]
-           - core_hero.cpp_CHero_findItemUseTarget_FUN_004b5950 (69 lines) [pointer_cast, unrolled_memcpy]
-           - core_hero.cpp_CHero_closestEnemy_FUN_004b5d00 (58 lines) [pointer_cast]
-           - core_hero.cpp_CHero_reset_FUN_004b5ec0 (22 lines) [preinc_loop_idiom]
-           - core_hero.cpp_CHeroPlaceholder_createHero_FUN_004b6080 (68 lines) [unrolled_memcpy]
    60.0% | core/level.cpp
          3/5 clean, 2 remaining
            - core_level.cpp_CLevelLoader_show_FUN_004c5640 (95 lines) [undefined_data]
@@ -628,7 +608,7 @@ FILES AT 50-89%
            - core_setutil.cpp_C3DSLight_renderVolumetricSphere_FUN_005159a0 (98 lines) [pointer_cast, pointer_truncation, stack_ref, undefined_data, warning_overlapping_globals]
    59.1% | core/turret.cpp
          13/22 clean, 9 remaining
-           - core_turret.cpp_CTurret_ctor_FUN_005494a0 (74 lines) [negative_offset, pointer_cast, pointer_truncation, unrolled_strcpy]
+           - core_turret.cpp_CTurret_ctor_FUN_005494a0 (74 lines) [derived_field_index_pun, negative_offset, pointer_cast, pointer_truncation, unrolled_strcpy]
            - core_turret.cpp_CTurret_setup_FUN_005495f0 (30 lines) [warning_overlapping_globals]
            - core_turret.cpp_CTurret_process_FUN_005497f0 (191 lines) [pointer_cast, pointer_truncation, raw_address_constant, stack_alignment_array, unrolled_memcpy]
            - core_turret.cpp_CTurret_getBoundingBox_FUN_00549cd0 (80 lines) [pointer_cast, pointer_truncation, stack_ref, undefined_data, unknown_field, unrolled_memcpy]
@@ -645,7 +625,7 @@ FILES AT 50-89%
            - core_enemy.cpp_CEnemy_getTargetPoint_FUN_00479a30 (12 lines) [unknown_field]
            - core_enemy.cpp_CEnemy_updateVictim_FUN_00479b60 (143 lines) [pointer_cast, undefined_data, unresolved_funcptr]
            - core_enemy.cpp_CEnemy_releaseVictim_FUN_0047a090 (23 lines) [undefined_data]
-           - core_enemy.cpp_CEnemy_FUN_0047a150 (29 lines) [pointer_cast]
+           - core_enemy.cpp_CEnemy_FUN_0047a150 (29 lines) [derived_field_index_pun, pointer_cast]
    58.3% | core/batcreat.cpp
          7/12 clean, 5 remaining
            - core_batcreat.cpp_CBatCreature_setup_FUN_00412160 (94 lines) [undefined_data, warning_overlapping_globals]
@@ -736,10 +716,31 @@ FILES AT 50-89%
            - core_frankgen.cpp_CFrankenstienMachine_setup_FUN_004946c0 (104 lines) [unrolled_strcpy]
            - core_frankgen.cpp_CFrankenstienMachine_process_FUN_00494950 (150 lines) [bit_int_float_compare, unrolled_memcpy, warning_overlapping_globals]
            - core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_00494e30 (12 lines) [warning_overlapping_globals]
-           - core_frankgen.cpp_CFrankenstienMachine_renderOpaque_FUN_00494e80 (54 lines) [bit_int_float_compare]
+           - core_frankgen.cpp_CFrankenstienMachine_renderOpaque_FUN_00494e80 (54 lines) [bit_int_float_compare, derived_field_index_pun]
            - core_frankgen.cpp_CFrankenstienMachine_getBoundingBox_FUN_00495000 (16 lines) [unrolled_memcpy]
            - core_frankgen.cpp_CFrankenstienMachine_FUN_004950a0 (83 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_ref, unrolled_memcpy, warning_overlapping_globals]
            - core_frankgen.cpp_findLeader_FUN_00495240 (23 lines) [pointer_cast]
+   57.8% | core/hero.cpp
+         26/45 clean, 19 remaining
+           - core_hero.cpp_closestHeroToPoint_FUN_004b4500 (35 lines) [pointer_cast, pointer_truncation, warning_overlapping_globals]
+           - core_hero.cpp_isAnyHeroWithinRadius_FUN_004b45b0 (25 lines) [pointer_cast, pointer_truncation, warning_overlapping_globals]
+           - core_hero.cpp_isAnyHeroWithinCylinder_FUN_004b4630 (25 lines) [pointer_cast, pointer_truncation, warning_overlapping_globals]
+           - core_hero.cpp_CHero_FUN_004b46d0 (54 lines) [derived_field_index_pun, negative_offset, pointer_cast, pointer_truncation, suspect_float]
+           - core_hero.cpp_CHero_dtor_FUN_004b4800 (36 lines) [negative_offset, pointer_cast, pointer_truncation]
+           - core_hero.cpp_CHero_archive_FUN_004b49a0 (74 lines) [undefined_data]
+           - core_hero.cpp_CHero_releaseFromGrab_FUN_004b4d50 (27 lines) [undefined_data]
+           - core_hero.cpp_CHero_createDefaultWeapon_FUN_004b4dd0 (32 lines) [suspect_float, unrolled_strcpy]
+           - core_hero.cpp_CHero_tryInteract_FUN_004b4e90 (52 lines) [pointer_cast, unresolved_funcptr, warning_overlapping_globals]
+           - core_hero.cpp_CHero_tryTalkToNearbyCharacter_FUN_004b4fe0 (48 lines) [pointer_cast]
+           - core_hero.cpp_CHero_FUN_004b5110 (54 lines) [pointer_cast]
+           - core_hero.cpp_CHero_tryPullLever_FUN_004b52f0 (52 lines) [pointer_cast]
+           - core_hero.cpp_CHero_tryPushNearbyBox_FUN_004b54c0 (84 lines) [derived_field_index_pun, pointer_cast]
+           - core_hero.cpp_CHero_stopPushingBox_FUN_004b56f0 (20 lines) [derived_field_index_pun]
+           - core_hero.cpp_CHero_tryApproachNearbyActor_FUN_004b5750 (65 lines) [pointer_cast]
+           - core_hero.cpp_CHero_findItemUseTarget_FUN_004b5950 (69 lines) [pointer_cast, unrolled_memcpy]
+           - core_hero.cpp_CHero_closestEnemy_FUN_004b5d00 (58 lines) [pointer_cast]
+           - core_hero.cpp_CHero_reset_FUN_004b5ec0 (22 lines) [preinc_loop_idiom]
+           - core_hero.cpp_CHeroPlaceholder_createHero_FUN_004b6080 (68 lines) [unrolled_memcpy]
    57.1% | cockpit/drawsurf.cpp
          52/91 clean, 39 remaining
            - cockpit_drawsurf.cpp_setColor_FUN_0045b5f0 (54 lines) [warning_overlapping_globals, warning_unreachable]
@@ -871,7 +872,7 @@ FILES AT 50-89%
            - engine_keys.cpp_CKeys_clearKeyPressState_FUN_004c4200 (5 lines) [undefined_data]
    55.0% | core/glass.cpp
          11/20 clean, 9 remaining
-           - core_glass.cpp_CGlass_ctor_FUN_004abb50 (62 lines) [pointer_cast, pointer_truncation, unrolled_strcpy]
+           - core_glass.cpp_CGlass_ctor_FUN_004abb50 (62 lines) [derived_field_index_pun, pointer_cast, pointer_truncation, unrolled_strcpy]
            - core_glass.cpp_CGlass_setup_FUN_004abc90 (264 lines) [pointer_cast, stack_ref, suspect_float, unrolled_memcpy, unrolled_strcpy]
            - core_glass.cpp_CGlass_renderOpaque_FUN_004ac440 (68 lines) [shadow_pointer_walk, warning_overlapping_globals]
            - core_glass.cpp_CGlass_renderTransparent_FUN_004ac600 (66 lines) [shadow_pointer_walk, warning_overlapping_globals]
@@ -1032,7 +1033,7 @@ FILES AT 50-89%
            - core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004d9c20 (71 lines) [stack_param, stack_ref, unrolled_memcpy]
    52.4% | core/bugs.cpp
          22/42 clean, 20 remaining
-           - core_bugs.cpp_CBugs_ctor_FUN_00421040 (93 lines) [negative_offset, pointer_cast, pointer_truncation, unrolled_strcpy]
+           - core_bugs.cpp_CBugs_ctor_FUN_00421040 (93 lines) [derived_field_index_pun, negative_offset, pointer_cast, pointer_truncation, unrolled_strcpy]
            - core_bugs.cpp_CBugs_setup_FUN_004211e0 (90 lines) [negative_offset, pointer_cast, pointer_truncation, shadow_pointer_walk, unrolled_memcpy, unrolled_memset]
            - core_bugs.cpp_CBugs_renderOpaque_FUN_00421540 (61 lines) [shadow_pointer_walk, stack_param, unrolled_memcpy, warning_type_propagation]
            - core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_004216d0 (64 lines) [pointer_cast, shadow_pointer_walk, unaffected_reg, warning_overlapping_globals]
@@ -1240,7 +1241,7 @@ FILES AT 50-89%
            - core_fire.cpp_CStake_dtor_FUN_0048cc30 (6 lines) [negative_offset]
    50.0% | core/flies.cpp
          9/18 clean, 9 remaining
-           - core_flies.cpp_CFlies_ctor_FUN_0048eef0 (23 lines) [pointer_cast, pointer_truncation]
+           - core_flies.cpp_CFlies_ctor_FUN_0048eef0 (23 lines) [derived_field_index_pun, pointer_cast, pointer_truncation]
            - core_flies.cpp_CFlies_process_FUN_0048f090 (119 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, unrolled_memcpy]
            - core_flies.cpp_drawFlyPixel_FUN_0048f3c0 (49 lines) [concat_reconstruction, nonstandard_int, pointer_cast, pointer_truncation, warning_overlapping_globals]
            - core_flies.cpp_CFlies_renderOpaque_FUN_0048f490 (143 lines) [pointer_cast, pointer_truncation, stack_ref, undefined_data, unknown_field, unrolled_memcpy, warning_overlapping_globals]
@@ -1270,7 +1271,7 @@ FILES AT 50-89%
            - core_shotgun.cpp_CShotgun_fireProjectile_FUN_00516770 (62 lines) [self_copy_guard]
    50.0% | core/svetlana.cpp
          8/16 clean, 8 remaining
-           - core_svetlana.cpp_CSvetlana_ctor_FUN_005419b0 (30 lines) [negative_offset, pointer_truncation]
+           - core_svetlana.cpp_CSvetlana_ctor_FUN_005419b0 (30 lines) [derived_field_index_pun, negative_offset, pointer_truncation]
            - core_svetlana.cpp_CSvetlana_setup_FUN_00541a40 (78 lines) [warning_overlapping_globals]
            - core_svetlana.cpp_CSvetlana_process_FUN_00541d00 (295 lines) [pointer_cast, pointer_truncation, stack_alignment_array, unknown_field, unresolved_funcptr, unrolled_memcpy, unrolled_memset, warning_overlapping_globals, warning_type_propagation]
            - core_svetlana.cpp_CSvetlana_FUN_005423c0 (236 lines) [unrolled_memcpy, warning_type_propagation]
@@ -1445,7 +1446,7 @@ FILES BELOW 50%
            - core_boneguy.cpp_getLocalBoundingBoxCenter_FUN_00418180 (12 lines) [warning_overlapping_globals]
            - core_boneguy.cpp_getWorldBoundingBoxCenter_FUN_004181f0 (18 lines) [warning_overlapping_globals]
            - core_boneguy.cpp_rgbToHsv_FUN_004182d0 (58 lines) [warning_overlapping_globals]
-           - core_boneguy.cpp_CBoneGuy_ctor_FUN_00418630 (66 lines) [pointer_cast, pointer_truncation, unrolled_strcpy, warning_overlapping_globals]
+           - core_boneguy.cpp_CBoneGuy_ctor_FUN_00418630 (66 lines) [derived_field_index_pun, pointer_cast, pointer_truncation, unrolled_strcpy, warning_overlapping_globals]
            - core_boneguy.cpp_CBoneGuy_setup_FUN_00418800 (56 lines) [undefined_data, warning_overlapping_globals]
            - core_boneguy.cpp_CBoneGuy_process_FUN_00418a00 (443 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, stack_alignment_array, undefined_data, unknown_field, unrolled_memcpy, unrolled_memset, warning_type_propagation]
            - core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_004194b0 (82 lines) [pointer_cast, pointer_truncation, undefined_data, unknown_field, unrolled_memcpy, warning_type_propagation]
@@ -1544,7 +1545,7 @@ FILES BELOW 50%
    46.5% | core/bodypart.cpp
          20/43 clean, 23 remaining
            - core_bodypart.cpp_createBodyPart_FUN_00415b30 (64 lines) [unrolled_memcpy]
-           - core_bodypart.cpp_CBodyPart_ctor_FUN_00415d20 (35 lines) [negative_offset, pointer_cast, pointer_truncation, suspect_float]
+           - core_bodypart.cpp_CBodyPart_ctor_FUN_00415d20 (35 lines) [derived_field_index_pun, negative_offset, pointer_cast, pointer_truncation, suspect_float]
            - core_bodypart.cpp_CBodyPart_dtor_FUN_00415e40 (28 lines) [negative_offset]
            - core_bodypart.cpp_CBodyPart_setCounts_FUN_00415ee0 (34 lines) [alloc_magic_size]
            - core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00416030 (51 lines) [pointer_cast]
@@ -1622,7 +1623,7 @@ FILES BELOW 50%
    45.0% | core/mimic.cpp
          9/20 clean, 11 remaining
            - core_mimic.cpp_mirrorXTransform_FUN_004d43c0 (11 lines) [warning_overlapping_globals]
-           - core_mimic.cpp_CMimic_ctor_FUN_004d4450 (70 lines) [negative_offset, pointer_truncation, unrolled_strcpy]
+           - core_mimic.cpp_CMimic_ctor_FUN_004d4450 (70 lines) [derived_field_index_pun, negative_offset, pointer_truncation, unrolled_strcpy]
            - core_mimic.cpp_CMimic_dtor_FUN_004d4540 (45 lines) [negative_offset]
            - core_mimic.cpp_CMimic_setup_FUN_004d4650 (144 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_ref, warning_overlapping_globals]
            - core_mimic.cpp_CMimic_FUN_004d4ba0 (183 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, unrolled_memcpy, warning_type_propagation]
@@ -1973,7 +1974,7 @@ FILES BELOW 50%
            - core_netgame.cpp_CNetGame_processClientFrame_FUN_004ed720 (91 lines) [pointer_stride_bytecount, undefined_data, warning_overlapping_globals]
            - core_netgame.cpp_CNetGame_applySimFrameHistory_FUN_004ed980 (38 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, unrolled_memcpy]
            - core_netgame.cpp_CNetGame_sendSimFrameAck_FUN_004edaf0 (45 lines) [pointer_cast, pointer_truncation, unrolled_memcpy, warning_overlapping_globals]
-           - core_netgame.cpp_CNetGame_swapPlayerData_FUN_004edd30 (82 lines) [pointer_cast, pointer_truncation, unknown_field, unrolled_memcpy]
+           - core_netgame.cpp_swapPlayerData_FUN_004edd30 (81 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
            - core_netgame.cpp_SNetPlayer_copy_FUN_004ede70 (34 lines) [unrolled_memcpy]
            - core_netgame.cpp_copyPlayerInput_FUN_004edf30 (15 lines) [unrolled_memcpy]
    38.1% | core/cloth.cpp
@@ -2200,7 +2201,7 @@ FILES BELOW 50%
            - core_set.cpp_CDemonSet_FUN_0050e550 (5 lines) [unnamed_param]
            - core_set.cpp_CDemonSet_setCameraEnabledByGroup_FUN_0050e580 (17 lines) [shadow_pointer_walk]
            - core_set.cpp_CDemonSet_addLightFilter_FUN_0050e5d0 (30 lines) [undefined_data]
-           - core_set.cpp_CDemonSet_buildActorTypeLists_FUN_0050e6b0 (59 lines) [pointer_cast, shadow_pointer_walk]
+           - core_set.cpp_CDemonSet_buildActorTypeLists_FUN_0050e6b0 (59 lines) [derived_field_index_pun, pointer_cast, shadow_pointer_walk]
            - core_set.cpp_CDemonSet_loadMasterLightStates_FUN_0050e820 (17 lines) [undefined_data, warning_overlapping_globals]
            - core_set.cpp_CDemonSet_saveMasterLightStates_FUN_0050e860 (17 lines) [undefined_data, warning_overlapping_globals]
            - core_set.cpp_CDemonSet_saveStateInfo_FUN_0050e8a0 (19 lines) [shadow_pointer_walk]
@@ -2227,7 +2228,7 @@ FILES BELOW 50%
            - core_inv.cpp_CInventory_load_FUN_004c1190 (105 lines) [shadow_pointer_walk, unrolled_memcpy, unrolled_strcpy]
            - core_inv.cpp_CInventory_loadItems_FUN_004c14d0 (16 lines) [shadow_pointer_walk]
            - core_inv.cpp_CInventory_setupItems_FUN_004c1510 (20 lines) [shadow_pointer_walk]
-           - core_inv.cpp_CInventory_select_FUN_004c1580 (127 lines) [unrolled_strcat, unrolled_strcpy, unrolled_strlen]
+           - core_inv.cpp_CInventory_select_FUN_004c1580 (127 lines) [derived_field_index_pun, unrolled_strcat, unrolled_strcpy, unrolled_strlen]
            - core_inv.cpp_CInventory_updateInventory_FUN_004c1850 (107 lines) [shadow_pointer_walk]
            - core_inv.cpp_CInventory_calculateTotalBatteryCharge_FUN_004c1b20 (22 lines) [shadow_pointer_walk]
            - core_inv.cpp_drawWeaponIconBackground_FUN_004c1dd0 (62 lines) [undefined_data]

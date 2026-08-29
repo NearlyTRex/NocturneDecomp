@@ -213,14 +213,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 124,
+    "complexity_score": 139,
     "cross_reference_count": 9,
     "function_call_count": 5,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 54,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
+      "derived_field_index_pun",
       "negative_offset",
       "pointer_cast",
       "pointer_truncation",
@@ -516,6 +517,13 @@
       "severity": "moderate",
       "text": "pCVar2 = core_path_cpp_CPathMap_ctor_FUN_004efd50((CPathMap *)((int)&pCVar1[1].base.orient + 4));",
       "type": "pointer_cast"
+    },
+    {
+      "description": "'pCVar1[1].base.orient + 4' walks 1 x sizeof(CCharacter) (0xbc8c) + offsetof(base.orient) (0x30) + 0x4 = 0xbcc0, which is exactly offsetof(CHero, path_map). Ghidra had no CHero type here and reached the field by index arithmetic; write it as ((CHero *)pCVar1)->path_map (\u00a7de-pun/\u00a712).",
+      "line": 11,
+      "severity": "moderate",
+      "text": "pCVar2 = core_path_cpp_CPathMap_ctor_FUN_004efd50((CPathMap *)((int)&pCVar1[1].base.orient + 4));",
+      "type": "derived_field_index_pun"
     }
   ]
 }

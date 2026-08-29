@@ -62,14 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 93,
-    "complexity_score": 204,
+    "complexity_score": 219,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 74,
-    "suspect_count": 11,
+    "suspect_count": 12,
     "suspect_types": [
+      "derived_field_index_pun",
       "negative_offset",
       "pointer_cast",
       "pointer_truncation",
@@ -342,6 +343,13 @@
       "severity": "moderate",
       "text": "*(float *)(this_ptr_00[1].model_name + 0xdc) = pCVar3->z;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "'pCVar2[1].base.actor_name + 0xc' walks 1 x sizeof(CWeapon) (0x570) + offsetof(base.actor_name) (0x0) + 0xc = 0x57c, which is exactly offsetof(CFlameThrower, fire_rate_timer). Ghidra had no CFlameThrower type here and reached the field by index arithmetic; write it as ((CFlameThrower *)pCVar2)->fire_rate_timer (\u00a7de-pun/\u00a712). Ambiguous: CLightGun::charge_ratio, CMelee::dismember_prob, CTurret::model also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 16,
+      "severity": "moderate",
+      "text": "((CKeyFramedModelInstance *)(pCVar2[1].base.actor_name + 0xc));",
+      "type": "derived_field_index_pun"
     }
   ],
   "vtable_info": {

@@ -62,14 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 112,
-    "complexity_score": 89,
+    "complexity_score": 104,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 59,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
+      "derived_field_index_pun",
       "pointer_cast",
       "shadow_pointer_walk"
     ],
@@ -227,6 +228,13 @@
       "severity": "moderate",
       "text": "pCVar6 = (CDemonSet *)pCVar6->cameras;",
       "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "'pCVar4[1].actor_name + 0x1c' walks 1 x sizeof(CDemonActor) (0x150) + offsetof(actor_name) (0x0) + 0x1c = 0x16c, which is exactly offsetof(CBodyPart, vertex_count). Ghidra had no CBodyPart type here and reached the field by index arithmetic; write it as ((CBodyPart *)pCVar4)->vertex_count (\u00a7de-pun/\u00a712). Ambiguous: CChain::texture_name, CTrigger::hero_triggers_me, CWaterActor::move_sound also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 43,
+      "severity": "moderate",
+      "text": "if (((pCVar4 != (CDemonActor *)0x0) && (*(int *)(pCVar4[1].actor_name + 0x1c) == 4)) &&",
+      "type": "derived_field_index_pun"
     }
   ]
 }

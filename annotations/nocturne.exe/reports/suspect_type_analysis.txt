@@ -10,7 +10,7 @@ SUSPECT TYPE COUNTS
   unrolled_memcpy                 1476 (  7.0%)
   warning_overlapping_globals      866 (  4.1%)
   stack_param                      780 (  3.7%)
-  unknown_field                    723 (  3.4%)
+  unknown_field                    721 (  3.4%)
   concat_reconstruction            661 (  3.1%)
   shadow_pointer_walk              544 (  2.6%)
   unrolled_strcpy                  484 (  2.3%)
@@ -44,6 +44,7 @@ SUSPECT TYPE COUNTS
   eflags_input                      26 (  0.1%)
   static_object_index               25 (  0.1%)
   sign_compare_idiom                22 (  0.1%)
+  derived_field_index_pun           20 (  0.1%)
   extra_output                      19 (  0.1%)
   format_string_mismatch            17 (  0.1%)
   signed_shift_global_idiom         17 (  0.1%)
@@ -1204,7 +1205,7 @@ Functions:
   core_netgame.cpp_CNetGame_removePlayer_FUN_004ecc80
   core_netgame.cpp_CNetGame_sendGameSetting_FUN_004ecf50
   core_netgame.cpp_CNetGame_sendSimFrameAck_FUN_004edaf0
-  core_netgame.cpp_CNetGame_swapPlayerData_FUN_004edd30
+  core_netgame.cpp_swapPlayerData_FUN_004edd30
   core_passngr.cpp_CPassenger_ctor_FUN_004ef4e0
   core_path.cpp_CPathMap_findPathToDestination_FUN_004f0c20
   core_path.cpp_CPathMap_updateIfNeeded_FUN_004f0360
@@ -1866,7 +1867,7 @@ Functions:
   core_netgame.cpp_CNetGame_removePlayer_FUN_004ecc80
   core_netgame.cpp_CNetGame_sendGameSetting_FUN_004ecf50
   core_netgame.cpp_CNetGame_sendSimFrameAck_FUN_004edaf0
-  core_netgame.cpp_CNetGame_swapPlayerData_FUN_004edd30
+  core_netgame.cpp_swapPlayerData_FUN_004edd30
   core_npc.cpp_CNPC_ctor_FUN_004ee950
   core_passngr.cpp_CPassenger_ctor_FUN_004ef4e0
   core_path.cpp_CPathMap_findPathToDestination_FUN_004f0c20
@@ -2474,9 +2475,9 @@ Functions:
   core_netgame.cpp_CNetGame_processPacket_FUN_004ea830
   core_netgame.cpp_CNetGame_processServerFrame_FUN_004ed2d0
   core_netgame.cpp_CNetGame_sendSimFrameAck_FUN_004edaf0
-  core_netgame.cpp_CNetGame_swapPlayerData_FUN_004edd30
   core_netgame.cpp_SNetPlayer_copy_FUN_004ede70
   core_netgame.cpp_copyPlayerInput_FUN_004edf30
+  core_netgame.cpp_swapPlayerData_FUN_004edd30
   core_particle.cpp_CParticle_process_FUN_004ef120
   core_particle.cpp_CParticle_setup_FUN_004ef040
   core_passngr.cpp_CPassenger_process_FUN_004ef890
@@ -3705,7 +3706,7 @@ Functions:
   support_trisock.cpp_parseIPAddress_FUN_00548af0
 
 ====================================================================================================
-TYPE: unknown_field (723 occurrences)
+TYPE: unknown_field (721 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -3716,8 +3717,8 @@ Unique patterns:
     18x  ._16_4_
     16x  ._24_4_
     13x  ._20_4_
-    10x  ._2_2_
      9x  ._28_4_
+     9x  ._2_2_
      7x  ._0_1_
      7x  ._3_1_
      6x  ._32_4_
@@ -3727,8 +3728,8 @@ Unique patterns:
      3x  ._40_4_
      3x  ._72_4_
      3x  ._56_4_
-     3x  ._0_2_
      3x  ._0_8_
+     2x  ._52_4_
 
 Functions:
   core_actor.cpp_CDemonActor_handleFootstep_FUN_0040db50
@@ -3805,7 +3806,6 @@ Functions:
   core_moon.cpp_CMoon_update_FUN_004deae0
   core_motion.cpp_CMotionController_advanceFrameAndCheckSignals_FUN_004e1a20
   core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_004e9a90
-  core_netgame.cpp_CNetGame_swapPlayerData_FUN_004edd30
   core_particle.cpp_CParticle_process_FUN_004ef120
   core_path.cpp_CPathMap_findPathToDestination_FUN_004f0c20
   core_path.cpp_CPathMap_getDirection_FUN_004efeb0
@@ -6604,6 +6604,35 @@ Functions:
   engine_prim.c_getTriangleWindingFromPackedIndices_FUN_004f9cb0
   engine_prim.c_renderIndexedPolygonSoftware_FUN_004fa2e0
   engine_prim.c_renderPolygonSoftware_FUN_004f9dd0
+
+====================================================================================================
+TYPE: derived_field_index_pun (20 occurrences)
+====================================================================================================
+
+Unique patterns:
+    20x  
+
+Functions:
+  core_bodypart.cpp_CBodyPart_ctor_FUN_00415d20
+  core_boneguy.cpp_CBoneGuy_ctor_FUN_00418630
+  core_boxactor.cpp_CLightActor_ctor_FUN_0041f310
+  core_bugs.cpp_CBugs_ctor_FUN_00421040
+  core_crossbow.cpp_CCrossbow_ctor_FUN_0043cf10
+  core_curtain.cpp_CCurtain_ctor_FUN_0043d960
+  core_enemy.cpp_CEnemy_FUN_0047a150
+  core_flies.cpp_CFlies_ctor_FUN_0048eef0
+  core_frankgen.cpp_CFrankenstienMachine_renderOpaque_FUN_00494e80
+  core_glass.cpp_CGlass_ctor_FUN_004abb50
+  core_hero.cpp_CHero_FUN_004b46d0
+  core_hero.cpp_CHero_stopPushingBox_FUN_004b56f0
+  core_hero.cpp_CHero_tryPushNearbyBox_FUN_004b54c0
+  core_inv.cpp_CInventory_select_FUN_004c1580
+  core_mimic.cpp_CMimic_ctor_FUN_004d4450
+  core_set.cpp_CDemonSet_buildActorTypeLists_FUN_0050e6b0
+  core_stairs.cpp_CStairs_ctor_FUN_005347b0
+  core_svetlana.cpp_CSvetlana_ctor_FUN_005419b0
+  core_turret.cpp_CTurret_ctor_FUN_005494a0
+  core_tvbat.cpp_CTVBat_ctor_FUN_0054b140
 
 ====================================================================================================
 TYPE: extra_output (19 occurrences)

@@ -62,14 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 135,
+    "complexity_score": 150,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 70,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
+      "derived_field_index_pun",
       "negative_offset",
       "pointer_truncation",
       "unrolled_strcpy"
@@ -259,6 +260,13 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "'pCVar6[1].base.base.create_event + 0x50' walks 1 x sizeof(CEnemy) (0xbd24) + offsetof(base.base.create_event) (0x78) + 0x50 = 0xbdec, which is exactly offsetof(CMimic, cloth). Ghidra had no CMimic type here and reached the field by index arithmetic; write it as ((CMimic *)pCVar6)->cloth (\u00a7de-pun/\u00a712).",
+      "line": 18,
+      "severity": "moderate",
+      "text": "((CCloth *)(pCVar6[1].base.base.create_event + 0x50));",
+      "type": "derived_field_index_pun"
     }
   ],
   "vtable_info": {

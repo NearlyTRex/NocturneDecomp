@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 4922
-Clean: 2501 (50.8%)
-With suspects: 2421
-Total suspects: 21014
+Clean: 2500 (50.8%)
+With suspects: 2422
+Total suspects: 21032
 
 ====================================================================================================
 cockpit_ckptutil.c_applyActPalette_FUN_0042d370 (1 suspect)
@@ -2599,11 +2599,12 @@ core_bodypart.cpp_CBodyPart_archive_FUN_00416570 (53 suspects)
   Line 109 [undefined_data]: _fprintf(DAT_00763e84,"\t\"%s\"\n",pcVar8);
 
 ====================================================================================================
-core_bodypart.cpp_CBodyPart_ctor_FUN_00415d20 (29 suspects)
+core_bodypart.cpp_CBodyPart_ctor_FUN_00415d20 (30 suspects)
   File: core/bodypart.cpp
 ====================================================================================================
   Line 11 [pointer_truncation]: ((void *)((int)&pCVar1[1].previous_transform_state.orientation + 4),3,
   Line 11 [pointer_cast]: ((void *)((int)&pCVar1[1].previous_transform_state.orientation + 4),3,
+  Line 11 [derived_field_index_pun]: ((void *)((int)&pCVar1[1].previous_transform_state.orientation + 4),3,
   Line 14 [pointer_cast]: ((void *)((int)pvVar2 + 0x4c0),2,&g_SBodyPartFireTypeInfo_0059a840);
   Line 14 [pointer_truncation]: ((void *)((int)pvVar2 + 0x4c0),2,&g_SBodyPartFireTypeInfo_0059a840);
   Line 15 [pointer_cast]: pCVar3 = core_box_cpp_CBox_ctor_FUN_0041a610((CBox *)((int)pvVar2 + 0x56c));
@@ -2836,10 +2837,11 @@ core_boneguy.cpp_CBoneGuy_beginRecombine_FUN_0041a310 (11 suspects)
   Line 44 [shadow_pointer_walk]: pCVar3 = (CBoneGuy *)((pCVar3->base).base.base.orient_matrix.m + 1);
 
 ====================================================================================================
-core_boneguy.cpp_CBoneGuy_ctor_FUN_00418630 (44 suspects)
+core_boneguy.cpp_CBoneGuy_ctor_FUN_00418630 (45 suspects)
   File: core/boneguy.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+  Line 22 [derived_field_index_pun]: (pCVar4[1].base.base.create_event + 8,0x14,&g_SBoneGuyBoxTypeInfo_0059aa00);
   Line 23 [pointer_cast]: *(CBoneGuy_full_vtable **)((int)dest + -0xbc58) = &g_CBoneGuyVTable;
   Line 23 [pointer_truncation]: *(CBoneGuy_full_vtable **)((int)dest + -0xbc58) = &g_CBoneGuyVTable;
   Line 25 [pointer_cast]: ((CDeformableModelInstance *)((int)dest + -0xbc54),"boneguy.dfm");
@@ -3342,9 +3344,10 @@ core_boxactor.cpp_CLightActor_archive_FUN_0041f600 (1 suspect)
   Line 14 [undefined_data]: if (DAT_00763e88 == 1) {
 
 ====================================================================================================
-core_boxactor.cpp_CLightActor_ctor_FUN_0041f310 (4 suspects)
+core_boxactor.cpp_CLightActor_ctor_FUN_0041f310 (5 suspects)
   File: core/boxactor.cpp
 ====================================================================================================
+  Line 11 [derived_field_index_pun]: ((CDemonLight *)(pCVar2[1].base.actor_name + 4),0x100,0x100);
   Line 12 [negative_offset]: pCVar3[-1].saved_screen_buffer_rows[0x36f] = &g_CLightActorVTable;
   Line 35 [negative_offset]: pCVar3[-1].volumetric_intensity = 1.4013e-45;
   Line 35 [suspect_float]: pCVar3[-1].volumetric_intensity = 1.4013e-45;
@@ -3530,9 +3533,10 @@ core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422370 (13 suspects)
   Line 132 [pointer_truncation]: pCVar7 = (CMatrix3x4f *)((int)pCVar7 + (uint)bVar8 * -8 + 4);
 
 ====================================================================================================
-core_bugs.cpp_CBugs_ctor_FUN_00421040 (7 suspects)
+core_bugs.cpp_CBugs_ctor_FUN_00421040 (8 suspects)
   File: core/bugs.cpp
 ====================================================================================================
+  Line 14 [derived_field_index_pun]: (pCVar2[1].base.base.actor_name + 8,400,&g_SBugTypeInfo_0059b010);
   Line 16 [pointer_cast]: ((void *)((int)pvVar3 + 0x6404),4,
   Line 16 [pointer_truncation]: ((void *)((int)pvVar3 + 0x6404),4,
   Line 18 [pointer_truncation]: this_ptr_00[-0xc2].part_visibility_flags[5] = (int)&g_CBugsVTable;
@@ -5100,9 +5104,10 @@ core_crate.cpp_CCrate_process_FUN_0043c9a0 (6 suspects)
   Line 79 [unrolled_memcpy]: (pUVar2->vec).x = (pUVar5->vec).x;
 
 ====================================================================================================
-core_crossbow.cpp_CCrossbow_ctor_FUN_0043cf10 (8 suspects)
+core_crossbow.cpp_CCrossbow_ctor_FUN_0043cf10 (9 suspects)
   File: core/crossbow.cpp
 ====================================================================================================
+  Line 10 [derived_field_index_pun]: pCVar3 = core_flame_cpp_CFlame_ctor_FUN_0048cf60((CFlame *)(pCVar2[1].base.actor_name + 4));
   Line 11 [negative_offset]: pCVar3[-2].base.scale.z = (int)&g_CCrossbowVTable;
   Line 11 [pointer_truncation]: pCVar3[-2].base.scale.z = (int)&g_CCrossbowVTable;
   Line 13 [negative_offset]: ((CKeyFramedModelInstance *)&pCVar3[-2].base.blood_effect_timer,"crossbow.kfm")
@@ -5148,9 +5153,10 @@ core_curtain.cpp_CCurtain_FUN_0043f330 (1 suspect)
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 ====================================================================================================
-core_curtain.cpp_CCurtain_ctor_FUN_0043d960 (54 suspects)
+core_curtain.cpp_CCurtain_ctor_FUN_0043d960 (55 suspects)
   File: core/curtain.cpp
 ====================================================================================================
+  Line 13 [derived_field_index_pun]: (pCVar2[1].create_event + 0x38,1000,&g_SCurtainVertexTypeInfo_0059bd90);
   Line 14 [pointer_cast]: *(CDemonActor_vtable **)((int)pvVar3 + -0xb4) = &g_CCurtainVTable;
   Line 14 [pointer_truncation]: *(CDemonActor_vtable **)((int)pvVar3 + -0xb4) = &g_CCurtainVTable;
   Line 16 [pointer_cast]: *(uint *)((int)pvVar3 + -0xb0) = 0x40800000;
@@ -9405,10 +9411,11 @@ core_emitter.cpp_SLaserInfo_copy_FUN_00479470 (1 suspect)
   Line 5 [unrolled_memcpy]: this_ptr->intensity = copy->intensity;
 
 ====================================================================================================
-core_enemy.cpp_CEnemy_FUN_0047a150 (1 suspect)
+core_enemy.cpp_CEnemy_FUN_0047a150 (2 suspects)
   File: core/enemy.cpp
 ====================================================================================================
   Line 19 [pointer_cast]: this_ptr_00 = *(CCharacter **)((int)g_CDemonSet_PTR_005be368->enemies + iVar4);
+  Line 24 [derived_field_index_pun]: (*(CHero **)(this_ptr_00[1].base.actor_name + 0x18) == g_HeroActors[g_LocalHeroIndex])) {
 
 ====================================================================================================
 core_enemy.cpp_CEnemy_ctor_FUN_00479560 (1 suspect)
@@ -11103,9 +11110,10 @@ core_flashlit.cpp_CFlashlight_ctor_FUN_0048ed60 (1 suspect)
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 ====================================================================================================
-core_flies.cpp_CFlies_ctor_FUN_0048eef0 (26 suspects)
+core_flies.cpp_CFlies_ctor_FUN_0048eef0 (27 suspects)
   File: core/flies.cpp
 ====================================================================================================
+  Line 11 [derived_field_index_pun]: (pCVar1[1].actor_name + 0x10,200,&g_SFlyTypeInfo_0059db10);
   Line 12 [pointer_cast]: *(CDemonActor_vtable **)((int)pvVar2 + -0x14) = &g_CFliesVTable;
   Line 12 [pointer_truncation]: *(CDemonActor_vtable **)((int)pvVar2 + -0x14) = &g_CFliesVTable;
   Line 13 [pointer_cast]: *(uint *)((int)pvVar2 + -4) = 0x14;
@@ -11286,9 +11294,10 @@ core_frankgen.cpp_CFrankenstienMachine_process_FUN_00494950 (6 suspects)
   Line 98 [unrolled_memcpy]: CStack_38.x = pCVar4->x;
 
 ====================================================================================================
-core_frankgen.cpp_CFrankenstienMachine_renderOpaque_FUN_00494e80 (4 suspects)
+core_frankgen.cpp_CFrankenstienMachine_renderOpaque_FUN_00494e80 (5 suspects)
   File: core/frankgen.cpp
 ====================================================================================================
+  Line 16 [derived_field_index_pun]: this_ptr->master_frame = *(float *)(pCVar2[1].actor_name + 4);
   Line 27 [bit_int_float_compare]: if ((int)fVar1 < 0x4400c000) {
   Line 30 [bit_int_float_compare]: else if ((int)fVar1 < 0x44e10000) {
   Line 33 [bit_int_float_compare]: else if ((int)fVar1 < 0x44ed8000) {
@@ -12896,10 +12905,11 @@ core_glass.cpp_CGlass_FUN_004accf0 (229 suspects)
   Line 388 [unnamed_param]: local_1a4.z = param_4[3];
 
 ====================================================================================================
-core_glass.cpp_CGlass_ctor_FUN_004abb50 (40 suspects)
+core_glass.cpp_CGlass_ctor_FUN_004abb50 (41 suspects)
   File: core/glass.cpp
 ====================================================================================================
   Line 13 [pointer_cast]: pCVar3 = core_mirror_cpp_CMirror_ctor_FUN_004d6550((CMirror *)(pCVar2[1].create_event + 0x1c));
+  Line 13 [derived_field_index_pun]: pCVar3 = core_mirror_cpp_CMirror_ctor_FUN_004d6550((CMirror *)(pCVar2[1].create_event + 0x1c));
   Line 17 [pointer_cast]: *(CDemonActor_vtable **)((int)pvVar4 + -0x238) = &g_CGlassVTable;
   Line 17 [pointer_truncation]: *(CDemonActor_vtable **)((int)pvVar4 + -0x238) = &g_CGlassVTable;
   Line 19 [pointer_cast]: *(uint *)((int)pvVar4 + -0x234) = 0x40800000;
@@ -13629,11 +13639,12 @@ core_hero.cpp_CHeroPlaceholder_createHero_FUN_004b6080 (2 suspects)
   Line 65 [unrolled_memcpy]: (pUVar1->vec).x = (pUVar2->vec).x;
 
 ====================================================================================================
-core_hero.cpp_CHero_FUN_004b46d0 (5 suspects)
+core_hero.cpp_CHero_FUN_004b46d0 (6 suspects)
   File: core/hero.cpp
 ====================================================================================================
   Line 11 [pointer_truncation]: pCVar2 = core_path_cpp_CPathMap_ctor_FUN_004efd50((CPathMap *)((int)&pCVar1[1].base.orient + 4));
   Line 11 [pointer_cast]: pCVar2 = core_path_cpp_CPathMap_ctor_FUN_004efd50((CPathMap *)((int)&pCVar1[1].base.orient + 4));
+  Line 11 [derived_field_index_pun]: pCVar2 = core_path_cpp_CPathMap_ctor_FUN_004efd50((CPathMap *)((int)&pCVar1[1].base.orient + 4));
   Line 42 [suspect_float]: pCVar3[-0x48].item_angles[0x15] = 2.8026e-45;
   Line 43 [negative_offset]: pCVar3[-1].cached_ammo_count = 0;
   Line 55 [suspect_float]: pCVar3[-0x6b].item_angles[0x48] = 1.4013e-45;
@@ -13698,6 +13709,12 @@ core_hero.cpp_CHero_reset_FUN_004b5ec0 (1 suspect)
   Line 19 [preinc_loop_idiom]: do {
 
 ====================================================================================================
+core_hero.cpp_CHero_stopPushingBox_FUN_004b56f0 (1 suspect)
+  File: core/hero.cpp
+====================================================================================================
+  Line 14 [derived_field_index_pun]: sfx_handle = *(uint *)(pCVar1[2].create_event + 8);
+
+====================================================================================================
 core_hero.cpp_CHero_tryApproachNearbyActor_FUN_004b5750 (1 suspect)
   File: core/hero.cpp
 ====================================================================================================
@@ -13720,10 +13737,11 @@ core_hero.cpp_CHero_tryPullLever_FUN_004b52f0 (1 suspect)
   Line 23 [pointer_cast]: (*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + iVar3),
 
 ====================================================================================================
-core_hero.cpp_CHero_tryPushNearbyBox_FUN_004b54c0 (1 suspect)
+core_hero.cpp_CHero_tryPushNearbyBox_FUN_004b54c0 (2 suspects)
   File: core/hero.cpp
 ====================================================================================================
   Line 34 [pointer_cast]: (*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + iVar1),
+  Line 76 [derived_field_index_pun]: (this_ptr_00,this_ptr_00[2].create_event + 0xc);
 
 ====================================================================================================
 core_hero.cpp_CHero_tryTalkToNearbyCharacter_FUN_004b4fe0 (1 suspect)
@@ -14346,9 +14364,10 @@ core_inv.cpp_CInventory_selectWeapon_FUN_004c0850 (1 suspect)
   Line 23 [shadow_pointer_walk]: pCVar4 = (CInventory *)&pCVar4->owner;
 
 ====================================================================================================
-core_inv.cpp_CInventory_select_FUN_004c1580 (7 suspects)
+core_inv.cpp_CInventory_select_FUN_004c1580 (8 suspects)
   File: core/inv.cpp
 ====================================================================================================
+  Line 40 [derived_field_index_pun]: (0x01C03A10,pCVar3[4].create_event + 0x40);
   Line 58 [unrolled_strcpy]: do {
   Line 70 [unrolled_strlen]: do {
   Line 70 [unrolled_strcat]: do {
@@ -15471,9 +15490,10 @@ core_mimic.cpp_CMimic_beginMorph_FUN_004d5d00 (4 suspects)
   Line 32 [unrolled_memcpy]: (pCVar2->orient).vec.x = (pUVar1->vec).x;
 
 ====================================================================================================
-core_mimic.cpp_CMimic_ctor_FUN_004d4450 (5 suspects)
+core_mimic.cpp_CMimic_ctor_FUN_004d4450 (6 suspects)
   File: core/mimic.cpp
 ====================================================================================================
+  Line 18 [derived_field_index_pun]: ((CCloth *)(pCVar6[1].base.base.create_event + 0x50));
   Line 21 [pointer_truncation]: pCVar8[-0x5d].models[0].textures[0xc].textures[2].base.count = (int)&g_CMimicVTable;
   Line 39 [negative_offset]: pCVar8[-1].models[1].textures[0x13].textures[2].base.count = 0;
   Line 40 [negative_offset]: pcVar10 = pCVar8[-1].models[1].textures[0x13].textures[2].texture_name + 4;
@@ -16867,21 +16887,6 @@ core_netgame.cpp_CNetGame_sendSimFrameAck_FUN_004edaf0 (4 suspects)
   Line 43 [pointer_truncation]: pSVar2 = (SPlayerInput *)((int)pSVar2 + ((uint)bVar4 * -2 + 1) * 4);
 
 ====================================================================================================
-core_netgame.cpp_CNetGame_swapPlayerData_FUN_004edd30 (10 suspects)
-  File: core/netgame.cpp
-====================================================================================================
-  Line 57 [unknown_field]: local_48._0_2_ = this_ptr->players[0].addr.port;
-  Line 58 [unknown_field]: local_48._2_2_ = this_ptr->players[0].addr.other;
-  Line 73 [unrolled_memcpy]: for (iVar1 = 0x1e; iVar1 != 0; iVar1 = iVar1 + -1) {
-  Line 75 [pointer_cast]: pSVar2 = (SNetPlayer *)((int)pSVar2 + (uint)bVar4 * -8 + 4);
-  Line 75 [pointer_truncation]: pSVar2 = (SNetPlayer *)((int)pSVar2 + (uint)bVar4 * -8 + 4);
-  Line 75 [unrolled_memcpy]: // 004ede14: MOVSD.REP ES:EDI,ESI
-  Line 76 [pointer_cast]: this_ptr = (CNetGame *)((int)this_ptr + (uint)bVar4 * -8 + 4);
-  Line 79 [unrolled_memcpy]: for (iVar1 = 0x1e; iVar1 != 0; iVar1 = iVar1 + -1) {
-  Line 79 [unrolled_memcpy]: // 004ede1f: MOVSD.REP ES:EDI,ESI
-  Line 82 [pointer_cast]: other = (SNetPlayer *)((int)other + (uint)bVar4 * -8 + 4);
-
-====================================================================================================
 core_netgame.cpp_CNetGame_syncPlayers_FUN_004ea370 (4 suspects)
   File: core/netgame.cpp
 ====================================================================================================
@@ -16966,6 +16971,19 @@ core_netgame.cpp_staticInit_FUN_004e94a0 (1 suspect)
   File: core/netgame.cpp
 ====================================================================================================
   Line 10 [undefined_data]: DAT_01d1640c = 0;
+
+====================================================================================================
+core_netgame.cpp_swapPlayerData_FUN_004edd30 (8 suspects)
+  File: core/netgame.cpp
+====================================================================================================
+  Line 72 [unrolled_memcpy]: for (iVar1 = 0x1e; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 74 [pointer_cast]: pSVar2 = (SNetPlayer *)((int)pSVar2 + (uint)bVar4 * -8 + 4);
+  Line 74 [pointer_truncation]: pSVar2 = (SNetPlayer *)((int)pSVar2 + (uint)bVar4 * -8 + 4);
+  Line 75 [pointer_cast]: player = (SNetPlayer *)((int)player + (uint)bVar4 * -8 + 4);
+  Line 75 [unrolled_memcpy]: // 004ede14: MOVSD.REP ES:EDI,ESI
+  Line 78 [unrolled_memcpy]: for (iVar1 = 0x1e; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 79 [unrolled_memcpy]: // 004ede1f: MOVSD.REP ES:EDI,ESI
+  Line 81 [pointer_cast]: other = (SNetPlayer *)((int)other + (uint)bVar4 * -8 + 4);
 
 ====================================================================================================
 core_netgame.cpp_updateGameTime_FUN_004e9520 (1 suspect)
@@ -18511,10 +18529,11 @@ core_set.cpp_CDemonSet_addQueuedCoronaGlobe_FUN_0050aa20 (2 suspects)
   Line 12 [raw_address_pointer_store]: *(CDemonGlobe **)(_DAT_01fba480 * 4 + 0x1fba484) = globe;
 
 ====================================================================================================
-core_set.cpp_CDemonSet_buildActorTypeLists_FUN_0050e6b0 (2 suspects)
+core_set.cpp_CDemonSet_buildActorTypeLists_FUN_0050e6b0 (3 suspects)
   File: core/set.cpp
 ====================================================================================================
   Line 43 [pointer_cast]: if (((pCVar4 != (CDemonActor *)0x0) && (*(int *)(pCVar4[1].actor_name + 0x1c) == 4)) &&
+  Line 43 [derived_field_index_pun]: if (((pCVar4 != (CDemonActor *)0x0) && (*(int *)(pCVar4[1].actor_name + 0x1c) == 4)) &&
   Line 58 [shadow_pointer_walk]: pCVar6 = (CDemonSet *)pCVar6->cameras;
 
 ====================================================================================================
@@ -21437,9 +21456,10 @@ core_spike.cpp_CSpike_getBoundingBox_FUN_005335a0 (1 suspect)
   Line 10 [unrolled_memcpy]: (out_box->min).x = (pCVar1->min).x;
 
 ====================================================================================================
-core_stairs.cpp_CStairs_ctor_FUN_005347b0 (18 suspects)
+core_stairs.cpp_CStairs_ctor_FUN_005347b0 (19 suspects)
   File: core/stairs.cpp
 ====================================================================================================
+  Line 10 [derived_field_index_pun]: (pCVar1[1].actor_name + 0x18,0x28,&g_CDemonTriangleTypeInfo_0059c080);
   Line 11 [pointer_cast]: *(CDemonActor_vtable **)((int)pvVar2 + -0x1c) = &g_CStairsVTable;
   Line 11 [pointer_truncation]: *(CDemonActor_vtable **)((int)pvVar2 + -0x1c) = &g_CStairsVTable;
   Line 12 [pointer_cast]: *(uint *)((int)pvVar2 + -0x18) = 0x3f800000;
@@ -22354,9 +22374,10 @@ core_svetlana.cpp_CSvetlana_advanceMotion_FUN_00542ad0 (1 suspect)
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 ====================================================================================================
-core_svetlana.cpp_CSvetlana_ctor_FUN_005419b0 (6 suspects)
+core_svetlana.cpp_CSvetlana_ctor_FUN_005419b0 (7 suspects)
   File: core/svetlana.cpp
 ====================================================================================================
+  Line 10 [derived_field_index_pun]: pCVar2 = core_cloth_cpp_CCloth_ctor_FUN_00435100((CCloth *)(pCVar1[1].base.base.actor_name + 8));
   Line 12 [negative_offset]: pCVar3[-2].vertices[0x184].connected_count = (int)&g_CSvetlanaVTable;
   Line 12 [pointer_truncation]: pCVar3[-2].vertices[0x184].connected_count = (int)&g_CSvetlanaVTable;
   Line 13 [negative_offset]: pCVar3[-2].wind_velocity.y = 0.0;
@@ -22729,9 +22750,10 @@ core_trigger.cpp_CTrigger_process_FUN_00547b30 (9 suspects)
   Line 173 [pointer_cast]: actor_ptr = *(CTrigger **)((int)g_CDemonSet_PTR_005be368->actors + local_24);
 
 ====================================================================================================
-core_turret.cpp_CTurret_ctor_FUN_005494a0 (11 suspects)
+core_turret.cpp_CTurret_ctor_FUN_005494a0 (12 suspects)
   File: core/turret.cpp
 ====================================================================================================
+  Line 16 [derived_field_index_pun]: ((CKeyFramedModelInstance *)(pCVar2[1].base.actor_name + 0xc));
   Line 17 [negative_offset]: this_ptr_00[-3].part_visibility_flags[0x11] = (int)&g_CTurretVTable;
   Line 17 [pointer_truncation]: this_ptr_00[-3].part_visibility_flags[0x11] = (int)&g_CTurretVTable;
   Line 19 [negative_offset]: ((CKeyFramedModelInstance *)(this_ptr_00[-3].part_visibility_flags + 0x12),
@@ -22879,9 +22901,10 @@ core_turret.cpp_CTurret_updateTargeting_FUN_0054a110 (32 suspects)
   Line 141 [unrolled_memcpy]: CStack_88.x = CStack_40.x;
 
 ====================================================================================================
-core_tvbat.cpp_CTVBat_ctor_FUN_0054b140 (2 suspects)
+core_tvbat.cpp_CTVBat_ctor_FUN_0054b140 (3 suspects)
   File: core/tvbat.cpp
 ====================================================================================================
+  Line 11 [derived_field_index_pun]: ((CKeyFramedModelInstance *)(pCVar1[1].base.base.actor_name + 4));
   Line 13 [negative_offset]: this_ptr_00[-1].model_ptr = (CKeyFramedModel *)0x0;
   Line 33 [pointer_cast]: *(byte *)(this_ptr_00[1].part_visibility_flags + 0x10) = 0;
 

@@ -62,14 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 200,
-    "complexity_score": 99,
+    "complexity_score": 114,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 84,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "derived_field_index_pun",
       "pointer_cast"
     ],
     "total_lines": 284
@@ -306,6 +307,13 @@
       "severity": "moderate",
       "text": "(*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + iVar1),",
       "type": "pointer_cast"
+    },
+    {
+      "description": "'this_ptr_00[2].create_event + 0xc' walks 2 x sizeof(CDemonActor) (0x150) + offsetof(create_event) (0x78) + 0xc = 0x324, which is exactly offsetof(CBoxActor, push_sound). Ghidra had no CBoxActor type here and reached the field by index arithmetic; write it as ((CBoxActor *)this_ptr_00)->push_sound (\u00a7de-pun/\u00a712).",
+      "line": 76,
+      "severity": "moderate",
+      "text": "(this_ptr_00,this_ptr_00[2].create_event + 0xc);",
+      "type": "derived_field_index_pun"
     }
   ]
 }

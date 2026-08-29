@@ -7,10 +7,10 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 4922
-Clean functions: 2529 (51.4%)
-Functions with suspects: 2393 (48.6%)
+Clean functions: 2528 (51.4%)
+Functions with suspects: 2394 (48.6%)
 
-Total suspect patterns: 21014
+Total suspect patterns: 21032
 Average suspects per function: 4.27
 
 Virtual files: 203 total, 10 at 100%, 12 at 90%+
@@ -34,7 +34,7 @@ SUSPECT PATTERN BREAKDOWN
   unrolled_memcpy           1476
   warning_overlapping_globals 866
   stack_param               780
-  unknown_field             723
+  unknown_field             721
   concat_reconstruction     661
   shadow_pointer_walk       544
   unrolled_strcpy           484
@@ -68,6 +68,7 @@ SUSPECT PATTERN BREAKDOWN
   eflags_input              26
   static_object_index       25
   sign_compare_idiom        22
+  derived_field_index_pun   20
   extra_output              19
   format_string_mismatch    17
   signed_shift_global_idiom 17
@@ -160,7 +161,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   00414e60: core_battery.cpp_CBattery_process_FUN_00414e60 (4 lines)
   00414f40: core_battery.cpp_CBattery_getCollisionType_FUN_00414f40 (4 lines)
   00415040: core_beast.cpp_CBeast_getActorType_FUN_00415040 (4 lines)
-  ... and 2479 more
+  ... and 2478 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -276,7 +277,7 @@ FUNCTIONS BY SUSPECT TYPE
     00429220: core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_00429220
     ... and 94 more
 
-  unknown_field (125 functions):
+  unknown_field (124 functions):
     00403fb0: engine_2d.c_getInputWithPrompt_FUN_00403fb0
     00405870: engine_3d.c_drawLineStrip2D_FUN_00405870
     00405900: engine_3d.c_drawLineStrip3D_FUN_00405900
@@ -287,7 +288,7 @@ FUNCTIONS BY SUSPECT TYPE
     004194b0: core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_004194b0
     0041ad10: core_box.cpp_CBox_processPhysics_FUN_0041ad10
     0041e5e0: core_boxactor.cpp_CBoxActor_process_FUN_0041e5e0
-    ... and 115 more
+    ... and 114 more
 
   concat_reconstruction (49 functions):
     00404680: engine_3d.c_lookupLitColor_FUN_00404680
@@ -655,6 +656,19 @@ FUNCTIONS BY SUSPECT TYPE
     004f9dd0: engine_prim.c_renderPolygonSoftware_FUN_004f9dd0
     004fa2e0: engine_prim.c_renderIndexedPolygonSoftware_FUN_004fa2e0
     ... and 1 more
+
+  derived_field_index_pun (20 functions):
+    00415d20: core_bodypart.cpp_CBodyPart_ctor_FUN_00415d20
+    00418630: core_boneguy.cpp_CBoneGuy_ctor_FUN_00418630
+    0041f310: core_boxactor.cpp_CLightActor_ctor_FUN_0041f310
+    00421040: core_bugs.cpp_CBugs_ctor_FUN_00421040
+    0043cf10: core_crossbow.cpp_CCrossbow_ctor_FUN_0043cf10
+    0043d960: core_curtain.cpp_CCurtain_ctor_FUN_0043d960
+    0047a150: core_enemy.cpp_CEnemy_FUN_0047a150
+    0048eef0: core_flies.cpp_CFlies_ctor_FUN_0048eef0
+    00494e80: core_frankgen.cpp_CFrankenstienMachine_renderOpaque_FUN_00494e80
+    004abb50: core_glass.cpp_CGlass_ctor_FUN_004abb50
+    ... and 10 more
 
   extra_output (3 functions):
     0051f080: core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_0051f080

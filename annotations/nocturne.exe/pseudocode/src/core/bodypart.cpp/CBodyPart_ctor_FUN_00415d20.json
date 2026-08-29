@@ -68,14 +68,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 345,
+    "complexity_score": 360,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 35,
-    "suspect_count": 29,
+    "suspect_count": 30,
     "suspect_types": [
+      "derived_field_index_pun",
       "negative_offset",
       "pointer_cast",
       "pointer_truncation",
@@ -448,6 +449,13 @@
       "severity": "moderate",
       "text": "((void *)((int)&pCVar1[1].previous_transform_state.orientation + 4),3,",
       "type": "pointer_cast"
+    },
+    {
+      "description": "'pCVar1[1].previous_transform_state.orientation + 4' walks 1 x sizeof(CDemonActor) (0x150) + offsetof(previous_transform_state.orientation) (0x134) + 0x4 = 0x288, which is exactly offsetof(CBodyPart, attached_models). Ghidra had no CBodyPart type here and reached the field by index arithmetic; write it as ((CBodyPart *)pCVar1)->attached_models (\u00a7de-pun/\u00a712). Ambiguous: CFlame::is_visible also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 11,
+      "severity": "moderate",
+      "text": "((void *)((int)&pCVar1[1].previous_transform_state.orientation + 4),3,",
+      "type": "derived_field_index_pun"
     }
   ],
   "vtable_info": {

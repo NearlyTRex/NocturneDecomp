@@ -62,15 +62,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 147,
-    "complexity_score": 99,
+    "complexity_score": 114,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 54,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
-      "bit_int_float_compare"
+      "bit_int_float_compare",
+      "derived_field_index_pun"
     ],
     "total_lines": 201
   },
@@ -307,6 +308,13 @@
       "severity": "moderate",
       "text": "else if ((int)fVar1 < 0x44fa0000) {",
       "type": "bit_int_float_compare"
+    },
+    {
+      "description": "'pCVar2[1].actor_name + 4' walks 1 x sizeof(CDemonActor) (0x150) + offsetof(actor_name) (0x0) + 0x4 = 0x154, which is exactly offsetof(CActorDestination, dest_class). Ghidra had no CActorDestination type here and reached the field by index arithmetic; write it as ((CActorDestination *)pCVar2)->dest_class (\u00a7de-pun/\u00a712). Ambiguous: CBodyPart::bounding_box, CChain::chain_length, CEmitter::emitter_size also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 16,
+      "severity": "moderate",
+      "text": "this_ptr->master_frame = *(float *)(pCVar2[1].actor_name + 4);",
+      "type": "derived_field_index_pun"
     }
   ],
   "vtable_info": {

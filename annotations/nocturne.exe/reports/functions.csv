@@ -494,7 +494,7 @@ core_bodypart.cpp_staticInit_FUN_00415b00,00415b00,core/bodypart.cpp,8,0,,8
 core_bodypart.cpp_createBodyPart_FUN_00415b30,00415b30,core/bodypart.cpp,64,4,unrolled_memcpy,109
 core_bodypart.cpp_factoryFuncBodyPart_FUN_00415cf0,00415cf0,core/bodypart.cpp,10,0,,10
 core_bodypart.cpp_CBodyPart_getActorType_FUN_00415d10,00415d10,core/bodypart.cpp,4,0,,4
-core_bodypart.cpp_CBodyPart_ctor_FUN_00415d20,00415d20,core/bodypart.cpp,35,29,negative_offset|pointer_cast|pointer_truncation|suspect_float,345
+core_bodypart.cpp_CBodyPart_ctor_FUN_00415d20,00415d20,core/bodypart.cpp,35,30,derived_field_index_pun|negative_offset|pointer_cast|pointer_truncation|suspect_float,360
 core_bodypart.cpp_CBodyPart_dtor_FUN_00415e40,00415e40,core/bodypart.cpp,28,3,negative_offset,63
 core_bodypart.cpp_CBodyPart_setCounts_FUN_00415ee0,00415ee0,core/bodypart.cpp,34,3,alloc_magic_size,69
 core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00416030,00416030,core/bodypart.cpp,51,2,pointer_cast,76
@@ -540,7 +540,7 @@ core_boneguy.cpp_factoryFuncBoneGuy_FUN_004182a0,004182a0,core/boneguy.cpp,10,0,
 core_boneguy.cpp_CBoneGuy_getActorType_FUN_004182c0,004182c0,core/boneguy.cpp,4,0,,4
 core_boneguy.cpp_rgbToHsv_FUN_004182d0,004182d0,core/boneguy.cpp,58,1,warning_overlapping_globals,73
 core_boneguy.cpp_hsvToRgb_FUN_00418480,00418480,core/boneguy.cpp,61,0,,61
-core_boneguy.cpp_CBoneGuy_ctor_FUN_00418630,00418630,core/boneguy.cpp,66,44,pointer_cast|pointer_truncation|unrolled_strcpy|warning_overlapping_globals,526
+core_boneguy.cpp_CBoneGuy_ctor_FUN_00418630,00418630,core/boneguy.cpp,66,45,derived_field_index_pun|pointer_cast|pointer_truncation|unrolled_strcpy|warning_overlapping_globals,541
 core_boneguy.cpp_CBoneGuy_setup_FUN_00418800,00418800,core/boneguy.cpp,56,15,undefined_data|warning_overlapping_globals,216
 core_boneguy.cpp_CBoneGuy_process_FUN_00418a00,00418a00,core/boneguy.cpp,443,27,pointer_cast|pointer_truncation|shadow_pointer_walk|stack_alignment_array|undefined_data|unknown_field|unrolled_memcpy|unrolled_memset|warning_type_propagation,758
 core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_004194b0,004194b0,core/boneguy.cpp,82,17,pointer_cast|pointer_truncation|undefined_data|unknown_field|unrolled_memcpy|warning_type_propagation,282
@@ -618,7 +618,7 @@ core_boxactor.cpp_CBoxActor_setPositionAndOrientation_FUN_0041f240,0041f240,core
 core_boxactor.cpp_CBoxActor_getAllowedMeleeAttackTypes_FUN_0041f2d0,0041f2d0,core/boxactor.cpp,4,0,,4
 core_boxactor.cpp_factoryFuncLightActor_FUN_0041f2e0,0041f2e0,core/boxactor.cpp,10,0,,10
 core_boxactor.cpp_CLightActor_getActorType_FUN_0041f300,0041f300,core/boxactor.cpp,4,0,,4
-core_boxactor.cpp_CLightActor_ctor_FUN_0041f310,0041f310,core/boxactor.cpp,34,4,negative_offset|suspect_float,84
+core_boxactor.cpp_CLightActor_ctor_FUN_0041f310,0041f310,core/boxactor.cpp,34,5,derived_field_index_pun|negative_offset|suspect_float,99
 core_boxactor.cpp_CLightActor_setup_FUN_0041f3a0,0041f3a0,core/boxactor.cpp,7,0,,7
 core_boxactor.cpp_CLightActor_process_FUN_0041f3d0,0041f3d0,core/boxactor.cpp,78,8,pointer_cast|pointer_truncation|undefined_data|unrolled_memcpy,178
 core_boxactor.cpp_CLightActor_archive_FUN_0041f600,0041f600,core/boxactor.cpp,28,1,undefined_data,43
@@ -642,7 +642,7 @@ core_bride.cpp_CBride_dtor_FUN_00420f20,00420f20,core/bride.cpp,32,2,negative_of
 core_bugs.cpp_staticInit_FUN_00420fe0,00420fe0,core/bugs.cpp,7,0,,7
 core_bugs.cpp_factoryFuncBugs_FUN_00421010,00421010,core/bugs.cpp,10,0,,10
 core_bugs.cpp_CBugs_getActorType_FUN_00421030,00421030,core/bugs.cpp,4,0,,4
-core_bugs.cpp_CBugs_ctor_FUN_00421040,00421040,core/bugs.cpp,93,7,negative_offset|pointer_cast|pointer_truncation|unrolled_strcpy,183
+core_bugs.cpp_CBugs_ctor_FUN_00421040,00421040,core/bugs.cpp,93,8,derived_field_index_pun|negative_offset|pointer_cast|pointer_truncation|unrolled_strcpy,198
 core_bugs.cpp_CBugs_setup_FUN_004211e0,004211e0,core/bugs.cpp,90,15,negative_offset|pointer_cast|pointer_truncation|shadow_pointer_walk|unrolled_memcpy|unrolled_memset,270
 core_bugs.cpp_CBugs_process_FUN_00421480,00421480,core/bugs.cpp,29,0,,29
 core_bugs.cpp_CBugs_renderOpaque_FUN_00421540,00421540,core/bugs.cpp,61,6,shadow_pointer_walk|stack_param|unrolled_memcpy|warning_type_propagation,141
@@ -1047,7 +1047,7 @@ core_crate.cpp_CCrate_dtor_FUN_0043ce60,0043ce60,core/crate.cpp,16,0,,16
 core_crossbow.cpp_staticInit_FUN_0043ceb0,0043ceb0,core/crossbow.cpp,8,0,,8
 core_crossbow.cpp_factoryFuncCrossbow_FUN_0043cee0,0043cee0,core/crossbow.cpp,10,0,,10
 core_crossbow.cpp_CCrossbow_getActorType_FUN_0043cf00,0043cf00,core/crossbow.cpp,4,0,,4
-core_crossbow.cpp_CCrossbow_ctor_FUN_0043cf10,0043cf10,core/crossbow.cpp,39,8,negative_offset|pointer_truncation,129
+core_crossbow.cpp_CCrossbow_ctor_FUN_0043cf10,0043cf10,core/crossbow.cpp,39,9,derived_field_index_pun|negative_offset|pointer_truncation,144
 core_crossbow.cpp_CCrossbow_process_FUN_0043cfd0,0043cfd0,core/crossbow.cpp,24,1,unrolled_memcpy,39
 core_crossbow.cpp_CCrossbow_renderOpaque_FUN_0043d0a0,0043d0a0,core/crossbow.cpp,22,0,,22
 core_crossbow.cpp_CCrossbow_renderTransparent_FUN_0043d120,0043d120,core/crossbow.cpp,8,0,,8
@@ -1059,7 +1059,7 @@ core_crossbow.cpp_CCrossbow_dtor_FUN_0043d870,0043d870,core/crossbow.cpp,19,1,ne
 core_curtain.cpp_staticInit_FUN_0043d8e0,0043d8e0,core/curtain.cpp,11,0,,11
 core_curtain.cpp_factoryFuncCurtain_FUN_0043d930,0043d930,core/curtain.cpp,10,0,,10
 core_curtain.cpp_CCurtain_getActorType_FUN_0043d950,0043d950,core/curtain.cpp,4,0,,4
-core_curtain.cpp_CCurtain_ctor_FUN_0043d960,0043d960,core/curtain.cpp,57,54,pointer_cast|pointer_truncation|unrolled_strcpy,612
+core_curtain.cpp_CCurtain_ctor_FUN_0043d960,0043d960,core/curtain.cpp,57,55,derived_field_index_pun|pointer_cast|pointer_truncation|unrolled_strcpy,627
 core_curtain.cpp_CCurtain_setup_FUN_0043dad0,0043dad0,core/curtain.cpp,271,35,pointer_cast|pointer_truncation|shadow_pointer_walk|unaffected_reg|unrolled_memcpy|unrolled_memset,651
 core_curtain.cpp_CCurtain_updateWorldPositions_FUN_0043e110,0043e110,core/curtain.cpp,39,4,pointer_cast|pointer_truncation|shadow_pointer_walk|unrolled_memcpy,99
 core_curtain.cpp_CCurtain_updateLocalPositions_FUN_0043e1e0,0043e1e0,core/curtain.cpp,33,4,pointer_cast|pointer_truncation|shadow_pointer_walk|unrolled_memcpy,93
@@ -1887,7 +1887,7 @@ core_enemy.cpp_CEnemy_renderBackground_FUN_0047a000,0047a000,core/enemy.cpp,10,0
 core_enemy.cpp_CEnemy_updatePatrol_FUN_0047a030,0047a030,core/enemy.cpp,16,0,,16
 core_enemy.cpp_CEnemy_releaseVictim_FUN_0047a090,0047a090,core/enemy.cpp,23,1,undefined_data,38
 core_enemy.cpp_CEnemy_onVictimLost_FUN_0047a120,0047a120,core/enemy.cpp,8,0,,8
-core_enemy.cpp_CEnemy_FUN_0047a150,0047a150,core/enemy.cpp,29,1,pointer_cast,44
+core_enemy.cpp_CEnemy_FUN_0047a150,0047a150,core/enemy.cpp,29,2,derived_field_index_pun|pointer_cast,59
 core_event.cpp_staticInit_FUN_0047a1d0,0047a1d0,core/event.cpp,5,0,,5
 core_event.cpp_setEventError_FUN_0047a1e0,0047a1e0,core/event.cpp,18,2,undefined_data|unrolled_strcpy,48
 core_event.cpp_formatEventError_FUN_0047a210,0047a210,core/event.cpp,9,3,stack_ref|undefined_data,49
@@ -2204,7 +2204,7 @@ core_flattn.cpp_doNothing_FUN_0048ee80,0048ee80,core/flattn.cpp,4,0,,4
 core_flies.cpp_staticInit_FUN_0048ee90,0048ee90,core/flies.cpp,8,0,,8
 core_flies.cpp_factoryFuncFlies_FUN_0048eec0,0048eec0,core/flies.cpp,10,0,,10
 core_flies.cpp_CFlies_getActorType_FUN_0048eee0,0048eee0,core/flies.cpp,4,0,,4
-core_flies.cpp_CFlies_ctor_FUN_0048eef0,0048eef0,core/flies.cpp,23,26,pointer_cast|pointer_truncation,293
+core_flies.cpp_CFlies_ctor_FUN_0048eef0,0048eef0,core/flies.cpp,23,27,derived_field_index_pun|pointer_cast|pointer_truncation,308
 core_flies.cpp_CFlies_setup_FUN_0048efb0,0048efb0,core/flies.cpp,14,0,,14
 core_flies.cpp_CFlies_archive_FUN_0048eff0,0048eff0,core/flies.cpp,20,0,,20
 core_flies.cpp_CFlies_process_FUN_0048f090,0048f090,core/flies.cpp,119,9,pointer_cast|pointer_truncation|shadow_pointer_walk|unrolled_memcpy,229
@@ -2281,7 +2281,7 @@ core_frankgen.cpp_CFrankenstienMachine_archive_FUN_004948f0,004948f0,core/frankg
 core_frankgen.cpp_CFrankenstienMachine_process_FUN_00494950,00494950,core/frankgen.cpp,150,6,bit_int_float_compare|unrolled_memcpy|warning_overlapping_globals,225
 core_frankgen.cpp_CFrankenstienMachine_accumulateParticles_FUN_00494dd0,00494dd0,core/frankgen.cpp,11,0,,11
 core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_00494e30,00494e30,core/frankgen.cpp,12,1,warning_overlapping_globals,27
-core_frankgen.cpp_CFrankenstienMachine_renderOpaque_FUN_00494e80,00494e80,core/frankgen.cpp,54,4,bit_int_float_compare,99
+core_frankgen.cpp_CFrankenstienMachine_renderOpaque_FUN_00494e80,00494e80,core/frankgen.cpp,54,5,bit_int_float_compare|derived_field_index_pun,114
 core_frankgen.cpp_CFrankenstienMachine_getBoundingBox_FUN_00495000,00495000,core/frankgen.cpp,16,1,unrolled_memcpy,31
 core_frankgen.cpp_CFrankenstienMachine_FUN_004950a0,004950a0,core/frankgen.cpp,83,12,pointer_cast|pointer_truncation|stack_alignment_array|stack_ref|unrolled_memcpy|warning_overlapping_globals,233
 core_frankgen.cpp_findLeader_FUN_00495240,00495240,core/frankgen.cpp,23,1,pointer_cast,38
@@ -2434,7 +2434,7 @@ core_ghoul.cpp_CGhoul_dtor_FUN_004aba30,004aba30,core/ghoul.cpp,32,2,negative_of
 core_glass.cpp_staticInit_FUN_004abaf0,004abaf0,core/glass.cpp,8,0,,8
 core_glass.cpp_factoryFuncGlass_FUN_004abb20,004abb20,core/glass.cpp,10,0,,10
 core_glass.cpp_CGlass_getActorType_FUN_004abb40,004abb40,core/glass.cpp,4,0,,4
-core_glass.cpp_CGlass_ctor_FUN_004abb50,004abb50,core/glass.cpp,62,40,pointer_cast|pointer_truncation|unrolled_strcpy,477
+core_glass.cpp_CGlass_ctor_FUN_004abb50,004abb50,core/glass.cpp,62,41,derived_field_index_pun|pointer_cast|pointer_truncation|unrolled_strcpy,492
 core_glass.cpp_CGlass_setup_FUN_004abc90,004abc90,core/glass.cpp,264,11,pointer_cast|stack_ref|suspect_float|unrolled_memcpy|unrolled_strcpy,399
 core_glass.cpp_CGlass_process_FUN_004ac3f0,004ac3f0,core/glass.cpp,16,0,,16
 core_glass.cpp_CGlass_renderOpaque_FUN_004ac440,004ac440,core/glass.cpp,68,2,shadow_pointer_walk|warning_overlapping_globals,98
@@ -2575,7 +2575,7 @@ core_hero.cpp_staticInit_FUN_004b44b0,004b44b0,core/hero.cpp,11,0,,11
 core_hero.cpp_closestHeroToPoint_FUN_004b4500,004b4500,core/hero.cpp,35,3,pointer_cast|pointer_truncation|warning_overlapping_globals,80
 core_hero.cpp_isAnyHeroWithinRadius_FUN_004b45b0,004b45b0,core/hero.cpp,25,3,pointer_cast|pointer_truncation|warning_overlapping_globals,70
 core_hero.cpp_isAnyHeroWithinCylinder_FUN_004b4630,004b4630,core/hero.cpp,25,3,pointer_cast|pointer_truncation|warning_overlapping_globals,70
-core_hero.cpp_CHero_FUN_004b46d0,004b46d0,core/hero.cpp,54,5,negative_offset|pointer_cast|pointer_truncation|suspect_float,124
+core_hero.cpp_CHero_FUN_004b46d0,004b46d0,core/hero.cpp,54,6,derived_field_index_pun|negative_offset|pointer_cast|pointer_truncation|suspect_float,139
 core_hero.cpp_CHero_dtor_FUN_004b4800,004b4800,core/hero.cpp,36,7,negative_offset|pointer_cast|pointer_truncation,121
 core_hero.cpp_CHero_setup_FUN_004b48d0,004b48d0,core/hero.cpp,8,0,,8
 core_hero.cpp_CHero_testCylinderCollision_FUN_004b4910,004b4910,core/hero.cpp,11,0,,11
@@ -2595,8 +2595,8 @@ core_hero.cpp_CHero_FUN_004b5110,004b5110,core/hero.cpp,54,1,pointer_cast,69
 core_hero.cpp_CHero_tryOpenDoor_FUN_004b5270,004b5270,core/hero.cpp,17,0,,17
 core_hero.cpp_CHero_tryPullLever_FUN_004b52f0,004b52f0,core/hero.cpp,52,1,pointer_cast,67
 core_hero.cpp_CHero_executeLeverPull_FUN_004b5490,004b5490,core/hero.cpp,9,0,,9
-core_hero.cpp_CHero_tryPushNearbyBox_FUN_004b54c0,004b54c0,core/hero.cpp,84,1,pointer_cast,99
-core_hero.cpp_CHero_stopPushingBox_FUN_004b56f0,004b56f0,core/hero.cpp,20,0,,20
+core_hero.cpp_CHero_tryPushNearbyBox_FUN_004b54c0,004b54c0,core/hero.cpp,84,2,derived_field_index_pun|pointer_cast,114
+core_hero.cpp_CHero_stopPushingBox_FUN_004b56f0,004b56f0,core/hero.cpp,20,1,derived_field_index_pun,35
 core_hero.cpp_CHero_tryApproachNearbyActor_FUN_004b5750,004b5750,core/hero.cpp,65,1,pointer_cast,80
 core_hero.cpp_CHero_stopNearbyInteraction_FUN_004b5920,004b5920,core/hero.cpp,11,0,,11
 core_hero.cpp_CHero_findItemUseTarget_FUN_004b5950,004b5950,core/hero.cpp,69,3,pointer_cast|unrolled_memcpy,109
@@ -2743,7 +2743,7 @@ core_inv.cpp_CInventory_saveItems_FUN_004c1140,004c1140,core/inv.cpp,19,2,shadow
 core_inv.cpp_CInventory_load_FUN_004c1190,004c1190,core/inv.cpp,105,5,shadow_pointer_walk|unrolled_memcpy|unrolled_strcpy,170
 core_inv.cpp_CInventory_loadItems_FUN_004c14d0,004c14d0,core/inv.cpp,16,1,shadow_pointer_walk,31
 core_inv.cpp_CInventory_setupItems_FUN_004c1510,004c1510,core/inv.cpp,20,1,shadow_pointer_walk,35
-core_inv.cpp_CInventory_select_FUN_004c1580,004c1580,core/inv.cpp,127,7,unrolled_strcat|unrolled_strcpy|unrolled_strlen,212
+core_inv.cpp_CInventory_select_FUN_004c1580,004c1580,core/inv.cpp,127,8,derived_field_index_pun|unrolled_strcat|unrolled_strcpy|unrolled_strlen,227
 core_inv.cpp_CInventory_getActiveLightGun_FUN_004c1830,004c1830,core/inv.cpp,9,0,,9
 core_inv.cpp_CInventory_updateInventory_FUN_004c1850,004c1850,core/inv.cpp,107,3,shadow_pointer_walk,142
 core_inv.cpp_CInventory_calculateTotalBatteryCharge_FUN_004c1b20,004c1b20,core/inv.cpp,22,1,shadow_pointer_walk,37
@@ -3014,7 +3014,7 @@ core_mimic.cpp_staticInit_FUN_004d4390,004d4390,core/mimic.cpp,8,0,,8
 core_mimic.cpp_mirrorXTransform_FUN_004d43c0,004d43c0,core/mimic.cpp,11,1,warning_overlapping_globals,26
 core_mimic.cpp_factoryFuncMimic_FUN_004d4420,004d4420,core/mimic.cpp,10,0,,10
 core_mimic.cpp_CMimic_getActorType_FUN_004d4440,004d4440,core/mimic.cpp,4,0,,4
-core_mimic.cpp_CMimic_ctor_FUN_004d4450,004d4450,core/mimic.cpp,70,5,negative_offset|pointer_truncation|unrolled_strcpy,135
+core_mimic.cpp_CMimic_ctor_FUN_004d4450,004d4450,core/mimic.cpp,70,6,derived_field_index_pun|negative_offset|pointer_truncation|unrolled_strcpy,150
 core_mimic.cpp_CMimic_dtor_FUN_004d4540,004d4540,core/mimic.cpp,45,3,negative_offset,80
 core_mimic.cpp_CMimic_setup_FUN_004d4650,004d4650,core/mimic.cpp,144,20,pointer_cast|pointer_truncation|stack_alignment_array|stack_ref|warning_overlapping_globals,369
 core_mimic.cpp_CMimic_process_FUN_004d49f0,004d49f0,core/mimic.cpp,65,0,,65
@@ -3342,7 +3342,7 @@ core_netgame.cpp_CNetGame_setMode9_FUN_004edcf0,004edcf0,core/netgame.cpp,6,0,,6
 core_netgame.cpp_CNetGame_setMode10_FUN_004edd00,004edd00,core/netgame.cpp,6,0,,6
 core_netgame.cpp_CNetGame_setMode12_FUN_004edd10,004edd10,core/netgame.cpp,6,0,,6
 core_netgame.cpp_CNetGame_setMode13_FUN_004edd20,004edd20,core/netgame.cpp,6,0,,6
-core_netgame.cpp_CNetGame_swapPlayerData_FUN_004edd30,004edd30,core/netgame.cpp,82,10,pointer_cast|pointer_truncation|unknown_field|unrolled_memcpy,202
+core_netgame.cpp_swapPlayerData_FUN_004edd30,004edd30,core/netgame.cpp,81,8,pointer_cast|pointer_truncation|unrolled_memcpy,176
 core_netgame.cpp_SPlayer_ctor_FUN_004ede30,004ede30,core/netgame.cpp,4,0,,4
 core_netgame.cpp_SChatHistory_ctor_FUN_004ede40,004ede40,core/netgame.cpp,4,0,,4
 core_netgame.cpp_SChatHistory_dtor_FUN_004ede50,004ede50,core/netgame.cpp,4,0,,4
@@ -3709,7 +3709,7 @@ core_set.cpp_CDemonSet_FUN_0050e550,0050e550,core/set.cpp,5,4,unnamed_param,50
 core_set.cpp_CDemonSet_setCameraEnabledByGroup_FUN_0050e580,0050e580,core/set.cpp,17,1,shadow_pointer_walk,32
 core_set.cpp_CDemonSet_addLightFilter_FUN_0050e5d0,0050e5d0,core/set.cpp,30,1,undefined_data,45
 core_set.cpp_CDemonSet_initCameraShake_FUN_0050e660,0050e660,core/set.cpp,8,0,,8
-core_set.cpp_CDemonSet_buildActorTypeLists_FUN_0050e6b0,0050e6b0,core/set.cpp,59,2,pointer_cast|shadow_pointer_walk,89
+core_set.cpp_CDemonSet_buildActorTypeLists_FUN_0050e6b0,0050e6b0,core/set.cpp,59,3,derived_field_index_pun|pointer_cast|shadow_pointer_walk,104
 core_set.cpp_CDemonSet_loadMasterLightStates_FUN_0050e820,0050e820,core/set.cpp,17,2,undefined_data|warning_overlapping_globals,47
 core_set.cpp_CDemonSet_saveMasterLightStates_FUN_0050e860,0050e860,core/set.cpp,17,2,undefined_data|warning_overlapping_globals,47
 core_set.cpp_CDemonSet_saveStateInfo_FUN_0050e8a0,0050e8a0,core/set.cpp,19,1,shadow_pointer_walk,34
@@ -4312,7 +4312,7 @@ shape_spotview.cpp_CSpotView_dtor_FUN_00534740,00534740,shape/spotview.cpp,4,0,,
 core_stairs.cpp_staticInit_FUN_00534750,00534750,core/stairs.cpp,8,0,,8
 core_stairs.cpp_factoryFuncStairs_FUN_00534780,00534780,core/stairs.cpp,10,0,,10
 core_stairs.cpp_CStairs_getActorType_FUN_005347a0,005347a0,core/stairs.cpp,4,0,,4
-core_stairs.cpp_CStairs_ctor_FUN_005347b0,005347b0,core/stairs.cpp,17,18,pointer_cast|pointer_truncation,207
+core_stairs.cpp_CStairs_ctor_FUN_005347b0,005347b0,core/stairs.cpp,17,19,derived_field_index_pun|pointer_cast|pointer_truncation,222
 core_stairs.cpp_CStairs_setup_FUN_00534820,00534820,core/stairs.cpp,6,0,,6
 core_stairs.cpp_CStairs_process_FUN_00534840,00534840,core/stairs.cpp,4,0,,4
 core_stairs.cpp_CStairs_renderOpaque_FUN_00534850,00534850,core/stairs.cpp,4,0,,4
@@ -4409,7 +4409,7 @@ core_succubus.cpp_CSuccubus_dtor_FUN_00541860,00541860,core/succubus.cpp,39,4,ne
 core_svetlana.cpp_staticInit_FUN_00541950,00541950,core/svetlana.cpp,8,0,,8
 core_svetlana.cpp_factoryFuncSvetlana_FUN_00541980,00541980,core/svetlana.cpp,10,0,,10
 core_svetlana.cpp_CSvetlana_getActorType_FUN_005419a0,005419a0,core/svetlana.cpp,4,0,,4
-core_svetlana.cpp_CSvetlana_ctor_FUN_005419b0,005419b0,core/svetlana.cpp,30,6,negative_offset|pointer_truncation,100
+core_svetlana.cpp_CSvetlana_ctor_FUN_005419b0,005419b0,core/svetlana.cpp,30,7,derived_field_index_pun|negative_offset|pointer_truncation,115
 core_svetlana.cpp_CSvetlana_setup_FUN_00541a40,00541a40,core/svetlana.cpp,78,1,warning_overlapping_globals,93
 core_svetlana.cpp_CSvetlana_process_FUN_00541d00,00541d00,core/svetlana.cpp,295,16,pointer_cast|pointer_truncation|stack_alignment_array|unknown_field|unresolved_funcptr|unrolled_memcpy|unrolled_memset|warning_overlapping_globals|warning_type_propagation,500
 core_svetlana.cpp_CSvetlana_FUN_005423c0,005423c0,core/svetlana.cpp,236,4,unrolled_memcpy|warning_type_propagation,286
@@ -4583,7 +4583,7 @@ core_terrain.cpp_CTerrain_process_FUN_00549410,00549410,core/terrain.cpp,14,1,wa
 core_turret.cpp_staticInit_FUN_00549440,00549440,core/turret.cpp,8,0,,8
 core_turret.cpp_factoryFuncTurret_FUN_00549470,00549470,core/turret.cpp,10,0,,10
 core_turret.cpp_CTurret_getActorType_FUN_00549490,00549490,core/turret.cpp,4,0,,4
-core_turret.cpp_CTurret_ctor_FUN_005494a0,005494a0,core/turret.cpp,74,11,negative_offset|pointer_cast|pointer_truncation|unrolled_strcpy,204
+core_turret.cpp_CTurret_ctor_FUN_005494a0,005494a0,core/turret.cpp,74,12,derived_field_index_pun|negative_offset|pointer_cast|pointer_truncation|unrolled_strcpy,219
 core_turret.cpp_CTurret_setup_FUN_005495f0,005495f0,core/turret.cpp,30,1,warning_overlapping_globals,45
 core_turret.cpp_CTurret_renderOpaque_FUN_005496d0,005496d0,core/turret.cpp,36,0,,36
 core_turret.cpp_CTurret_process_FUN_005497f0,005497f0,core/turret.cpp,191,29,pointer_cast|pointer_truncation|raw_address_constant|stack_alignment_array|unrolled_memcpy,506
@@ -4606,7 +4606,7 @@ core_tvbat.cpp_staticInit_FUN_0054b0b0,0054b0b0,core/tvbat.cpp,8,0,,8
 core_tvbat.cpp_factoryFuncTVBat_FUN_0054b0e0,0054b0e0,core/tvbat.cpp,10,0,,10
 core_tvbat.cpp_CTVBat_getActorType_FUN_0054b100,0054b100,core/tvbat.cpp,4,0,,4
 core_tvbat.cpp_jitterValue_FUN_0054b110,0054b110,core/tvbat.cpp,6,0,,6
-core_tvbat.cpp_CTVBat_ctor_FUN_0054b140,0054b140,core/tvbat.cpp,45,2,negative_offset|pointer_cast,75
+core_tvbat.cpp_CTVBat_ctor_FUN_0054b140,0054b140,core/tvbat.cpp,45,3,derived_field_index_pun|negative_offset|pointer_cast,90
 core_tvbat.cpp_CTVBat_setup_FUN_0054b2a0,0054b2a0,core/tvbat.cpp,13,0,,13
 core_tvbat.cpp_CTVBat_archive_FUN_0054b310,0054b310,core/tvbat.cpp,37,0,,37
 core_tvbat.cpp_CTVBat_process_FUN_0054b460,0054b460,core/tvbat.cpp,326,8,pointer_cast|self_copy_guard|unrolled_memcpy|unrolled_memset|warning_type_propagation,431

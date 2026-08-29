@@ -62,14 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 79,
-    "complexity_score": 612,
+    "complexity_score": 627,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 57,
-    "suspect_count": 54,
+    "suspect_count": 55,
     "suspect_types": [
+      "derived_field_index_pun",
       "pointer_cast",
       "pointer_truncation",
       "unrolled_strcpy"
@@ -663,6 +664,13 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "'pCVar2[1].create_event + 0x38' walks 1 x sizeof(CDemonActor) (0x150) + offsetof(create_event) (0x78) + 0x38 = 0x200, which is exactly offsetof(CCurtain, vertices). Ghidra had no CCurtain type here and reached the field by index arithmetic; write it as ((CCurtain *)pCVar2)->vertices (\u00a7de-pun/\u00a712).",
+      "line": 13,
+      "severity": "moderate",
+      "text": "(pCVar2[1].create_event + 0x38,1000,&g_SCurtainVertexTypeInfo_0059bd90);",
+      "type": "derived_field_index_pun"
     }
   ],
   "vtable_info": {

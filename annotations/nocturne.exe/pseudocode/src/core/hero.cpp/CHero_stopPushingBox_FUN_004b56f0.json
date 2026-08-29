@@ -62,14 +62,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 35,
-    "complexity_score": 20,
+    "complexity_score": 35,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 1,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 20,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "derived_field_index_pun"
+    ],
     "total_lines": 55
   },
   "cross_references": [
@@ -212,5 +214,13 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "'pCVar1[2].create_event + 8' walks 2 x sizeof(CDemonActor) (0x150) + offsetof(create_event) (0x78) + 0x8 = 0x320, which is exactly offsetof(CAmmoBox, open_sound). Ghidra had no CAmmoBox type here and reached the field by index arithmetic; write it as ((CAmmoBox *)pCVar1)->open_sound (\u00a7de-pun/\u00a712). Ambiguous: CBoxActor::push_sfx_handle, CPlatform::end_pos also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 14,
+      "severity": "moderate",
+      "text": "sfx_handle = *(uint *)(pCVar1[2].create_event + 8);",
+      "type": "derived_field_index_pun"
+    }
+  ]
 }

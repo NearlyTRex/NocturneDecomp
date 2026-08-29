@@ -68,14 +68,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 282,
-    "complexity_score": 212,
+    "complexity_score": 227,
     "cross_reference_count": 2,
     "function_call_count": 11,
     "global_count": 22,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 127,
-    "suspect_count": 7,
+    "suspect_count": 8,
     "suspect_types": [
+      "derived_field_index_pun",
       "unrolled_strcat",
       "unrolled_strcpy",
       "unrolled_strlen"
@@ -509,6 +510,13 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcat"
+    },
+    {
+      "description": "'pCVar3[4].create_event + 0x40' walks 4 x sizeof(CDemonActor) (0x150) + offsetof(create_event) (0x78) + 0x40 = 0x5f8, which is exactly offsetof(CBoxActor, use_event). Ghidra had no CBoxActor type here and reached the field by index arithmetic; write it as ((CBoxActor *)pCVar3)->use_event (\u00a7de-pun/\u00a712).",
+      "line": 40,
+      "severity": "moderate",
+      "text": "(0x01C03A10,pCVar3[4].create_event + 0x40);",
+      "type": "derived_field_index_pun"
     }
   ]
 }

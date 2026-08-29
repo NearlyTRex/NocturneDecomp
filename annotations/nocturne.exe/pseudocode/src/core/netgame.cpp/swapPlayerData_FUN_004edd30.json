@@ -54,18 +54,6 @@
         "column": 40,
         "line": 499,
         "message": "exponent has no digits"
-      },
-      {
-        "category": "type_error",
-        "column": 11,
-        "line": 64,
-        "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 11,
-        "line": 65,
-        "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
       }
     ],
     "success": false,
@@ -74,20 +62,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 202,
+    "complexity_score": 176,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 82,
-    "suspect_count": 10,
+    "pseudocode_lines": 81,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "unknown_field",
       "unrolled_memcpy"
     ],
-    "total_lines": 167
+    "total_lines": 166
   },
   "cross_references": [],
   "function": {
@@ -99,8 +86,8 @@
       ]
     ],
     "convention": "__cdecl",
-    "name": "core_netgame.cpp_CNetGame_swapPlayerData_FUN_004edd30",
-    "signature": "void __cdecl core_netgame_cpp_CNetGame_swapPlayerData_FUN_004edd30(CNetGame *this_ptr,SNetPlayer *other)"
+    "name": "core_netgame.cpp_swapPlayerData_FUN_004edd30",
+    "signature": "void __cdecl core_netgame_cpp_swapPlayerData_FUN_004edd30(SNetPlayer *player,SNetPlayer *other)"
   },
   "function_calls": [
     {
@@ -329,10 +316,10 @@
       },
       {
         "is_param": true,
-        "name": "this_ptr",
+        "name": "player",
         "offset": 4,
         "size": 4,
-        "type": "CNetGame *"
+        "type": "SNetPlayer *"
       },
       {
         "is_param": true,
@@ -369,24 +356,8 @@
   },
   "suspects": [
     {
-      "description": "Unknown/mangled field access",
-      "line": 57,
-      "match": "._0_2_",
-      "severity": "mild",
-      "text": "local_48._0_2_ = this_ptr->players[0].addr.port;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 58,
-      "match": "._2_2_",
-      "severity": "mild",
-      "text": "local_48._2_2_ = this_ptr->players[0].addr.other;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 75,
+      "line": 74,
       "match": "(SNetPlayer *)((int)pSVar2",
       "severity": "moderate",
       "text": "pSVar2 = (SNetPlayer *)((int)pSVar2 + (uint)bVar4 * -8 + 4);",
@@ -394,15 +365,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 76,
-      "match": "(CNetGame *)((int)this_ptr",
+      "line": 75,
+      "match": "(SNetPlayer *)((int)player",
       "severity": "moderate",
-      "text": "this_ptr = (CNetGame *)((int)this_ptr + (uint)bVar4 * -8 + 4);",
+      "text": "player = (SNetPlayer *)((int)player + (uint)bVar4 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 82,
+      "line": 81,
       "match": "(SNetPlayer *)((int)other",
       "severity": "moderate",
       "text": "other = (SNetPlayer *)((int)other + (uint)bVar4 * -8 + 4);",
@@ -410,7 +381,7 @@
     },
     {
       "description": "Pointer value `pSVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 75,
+      "line": 74,
       "match": "(int)pSVar2",
       "severity": "moderate",
       "text": "pSVar2 = (SNetPlayer *)((int)pSVar2 + (uint)bVar4 * -8 + 4);",
@@ -418,7 +389,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 73,
+      "line": 72,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0x1e; iVar1 != 0; iVar1 = iVar1 + -1) {",
@@ -426,7 +397,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 79,
+      "line": 78,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0x1e; iVar1 != 0; iVar1 = iVar1 + -1) {",

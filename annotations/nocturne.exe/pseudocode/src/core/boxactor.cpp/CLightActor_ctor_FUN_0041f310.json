@@ -62,14 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 31,
-    "complexity_score": 84,
+    "complexity_score": 99,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 34,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
+      "derived_field_index_pun",
       "negative_offset",
       "suspect_float"
     ],
@@ -206,6 +207,13 @@
       "severity": "mild",
       "text": "return (CLightActor *)(pCVar3[-1].saved_screen_buffer_rows + 0x31c);",
       "type": "negative_offset"
+    },
+    {
+      "description": "'pCVar2[1].base.actor_name + 4' walks 1 x sizeof(CBoxActor) (0x664) + offsetof(base.actor_name) (0x0) + 0x4 = 0x668, which is exactly offsetof(CLightActor, light). Ghidra had no CLightActor type here and reached the field by index arithmetic; write it as ((CLightActor *)pCVar2)->light (\u00a7de-pun/\u00a712).",
+      "line": 11,
+      "severity": "moderate",
+      "text": "((CDemonLight *)(pCVar2[1].base.actor_name + 4),0x100,0x100);",
+      "type": "derived_field_index_pun"
     }
   ],
   "vtable_info": {
