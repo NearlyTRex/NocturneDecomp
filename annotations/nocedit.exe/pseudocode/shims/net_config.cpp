@@ -55,9 +55,9 @@ static const char NET_INI_TEMPLATE[] =
     "; The shipped game hardcodes 7647.\n"
     "port = 7647\n"
     "\n"
-    "; Pre-fills the \"Enter Server IP\" prompt on Ctrl+J. Blank keeps the\n"
-    "; address compiled into the executable, which is one of the original\n"
-    "; developers' LAN machines (10.0.0.105) and is unlikely to be useful.\n"
+    "; Pre-fills the \"Enter Server IP\" prompt on Ctrl+J. Blank uses 127.0.0.1,\n"
+    "; which is where a second copy on this machine will be. Set it to the\n"
+    "; host's address to join over a network.\n"
     "serverAddress =\n"
     "\n"
     "; Name shown for you in the lobby, up to 19 characters. Blank keeps the\n"
@@ -179,6 +179,9 @@ const char *nocturne_net_bind_address(void) {
 
 const char *nocturne_net_server_address(void) {
     net_ensure_loaded();
+    if (s_server_address[0] == '\0') {
+        return "127.0.0.1";
+    }
     return s_server_address;
 }
 

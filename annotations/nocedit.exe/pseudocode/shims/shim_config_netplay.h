@@ -19,12 +19,15 @@
 //   An addition. Every network parameter in the shipped game is a compile-time
 //   constant: UDP port 0x1ddf appears as a literal in four places, the socket
 //   binds INADDR_ANY, and the Ctrl+J prompt is pre-filled from g_IpAddress —
-//   which is baked in as an original developer's LAN address, "10.0.0.105".
+//   which is baked in as an original developer's LAN address.
 //   Nothing in any menu changes them.
-//   1: those values are read from system/netplay.ini when it exists, each key
-//      falling back to the shipped constant. See net_config.h for the format.
-//      A missing file leaves behaviour exactly as shipped.
-//   0: the ini is never read and the built-in constants always apply.
+//   1: those values are read from system/netplay.ini when it exists. See
+//      net_config.h for the format. bindAddress and port fall back to the
+//      shipped constant; serverAddress falls back to 127.0.0.1 instead, since
+//      the baked-in address is a developer's old LAN machine and could only
+//      ever be a wrong answer.
+//   0: the ini is never read and the built-in constants always apply, the
+//      join prompt included.
 //
 //   Override with -DNOCTURNE_NETPLAY_INI=0.
 #ifndef NOCTURNE_NETPLAY_INI

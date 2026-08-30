@@ -24,6 +24,14 @@ int __cdecl core_main_c_enterMainGameMenu_FUN_00507a50(void)
   char attract_movie [16];
   int attract_result;
 #endif
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+  char *menu_ptrs [8];
+  char multiplayer_line [256];
+  int multiplayer_item;
+  int menu_count;
+  int menu_ch;
+  int menu_y;
+#endif
 
   pCVar2 = g_CGamePtr;
   if (g_WindowHeight < 0x1e0) {
@@ -74,12 +82,54 @@ int __cdecl core_main_c_enterMainGameMenu_FUN_00507a50(void)
       iVar4 = iVar4 + 4;
       pacVar6 = pacVar6 + 1;
     } while (iVar4 != 0x10);
+#if NOCTURNE_AUTHENTIC_NETPLAY
     iVar4 = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(g_MenuTextPointers,4,&iStack_c,0xfa,0)
     ;
+#else
+    menu_ptrs[0] = g_MenuTextPointers[0];
+    strcpy(multiplayer_line,
+           support_newmsg_cpp_getLocalizedString_FUN_005441f0("M U L T I P L A Y E R"));
+    multiplayer_item = 1;
+    menu_ptrs[multiplayer_item] = multiplayer_line;
+    menu_ptrs[2] = g_MenuTextPointers[1];
+    menu_ptrs[3] = g_MenuTextPointers[2];
+    menu_ptrs[4] = g_MenuTextPointers[3];
+    menu_count = 5;
+    menu_ch = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_ThemeFont,0x58);
+    menu_y = 0xfa;
+    if (g_WindowHeight < menu_y + (menu_count * 2 + 1) * menu_ch) {
+      menu_y = g_WindowHeight - (menu_count * 2 + 1) * menu_ch;
+    }
+    if (menu_y < 0) {
+      menu_y = 0;
+    }
+    iVar4 = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000
+                      (menu_ptrs,menu_count,&iStack_c,menu_y,0);
+#endif
     if (iStack_8 != 0) {
       engine_special_cpp_clearScreen_FUN_005b3e70();
     }
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+    if (iVar4 == multiplayer_item) {
+      iVar4 = nocturne_net_menu_multiplayer();
+      if (iVar4 == NOCTURNE_NET_MENU_HOST) {
+        core_sound_cpp_CSound_reset_FUN_005b39a0(g_CSoundPtr);
+        core_game_cpp_hostNetworkGame_FUN_004e2f10();
+        core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
+      }
+      else if (iVar4 == NOCTURNE_NET_MENU_JOIN) {
+        core_sound_cpp_CSound_reset_FUN_005b39a0(g_CSoundPtr);
+        core_game_cpp_joinNetworkGame_FUN_004e2fc0();
+        core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
+      }
+      engine_2d_c_clearInputAndWait_FUN_00403260();
+      iVar4 = -1;
+    }
+    else if (multiplayer_item < iVar4) {
+      iVar4 = iVar4 + -1;
+    }
+#endif
     switch(iVar4) {
     case 0:
       core_moon_cpp_CMoon_free_FUN_00529ce0(&g_CMoonInstance);

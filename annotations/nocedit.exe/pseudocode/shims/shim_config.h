@@ -67,6 +67,10 @@
 // reach it through nocturne.h.
 #include "net_config.h"
 
+// The main menu's MULTIPLAYER submenu (nocturne_net_menu_*), reached from the
+// main.c menu loop.
+#include "net_menu.h"
+
 // Lobby hero selection (nocturne_net_hero_*), reached the same way from the
 // netgame TU. Unlike the netplay additions below, nothing here is compiled out
 // under NOCTURNE_AUTHENTIC_NETPLAY — the name table and the cycle step are

@@ -17,7 +17,15 @@ void __cdecl core_menu_cpp_showOptionsScreen_FUN_00512d30(int initialize_systems
   char (*pacVar4) [256];
   int local_10;
   EControlMode EVar1;
-  
+#if NOCTURNE_AUTHENTIC_DEV_TOOLS
+  char *menu_ptrs [8];
+  char dev_tools_line [256];
+  int dev_tools_item;
+  int menu_count;
+  int menu_ch;
+  int menu_y;
+#endif
+
   local_10 = 0;
   if (initialize_systems != 0) {
     core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
@@ -45,8 +53,37 @@ void __cdecl core_menu_cpp_showOptionsScreen_FUN_00512d30(int initialize_systems
     _sprintf(g_OptionsMenuTextBuffers[3],pcVar1);
     g_CGamePtr->hero_number = HERO_TYPE_STRANGER;
     pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Option Menu");
+#if NOCTURNE_AUTHENTIC_DEV_TOOLS
+    dev_tools_item = -1;
+    menu_count = 4;
+    if (initialize_systems == 0) {
+      for (iVar3 = 0; iVar3 < 4; iVar3++) {
+        menu_ptrs[iVar3] = g_OptionsMenuPointers[iVar3];
+      }
+      strcpy(dev_tools_line,
+             support_newmsg_cpp_getLocalizedString_FUN_005441f0("Developer tools"));
+      dev_tools_item = 4;
+      menu_ptrs[dev_tools_item] = dev_tools_line;
+      menu_count = 5;
+      menu_ch = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_ThemeFont,0x58);
+      menu_y = 0xfa;
+      if (g_WindowHeight < menu_y + (menu_count + 4) * menu_ch) {
+        menu_y = g_WindowHeight - (menu_count + 4) * menu_ch;
+      }
+      if (menu_y < 0) {
+        menu_y = 0;
+      }
+      iVar3 = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000
+                        (menu_ptrs,menu_count,&local_10,menu_y,pcVar1);
+    }
+    else {
+      iVar3 = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000
+                        (g_OptionsMenuPointers,4,&local_10,0xfa,pcVar1);
+    }
+#else
     iVar3 = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000
                       (g_OptionsMenuPointers,4,&local_10,0xfa,pcVar1);
+#endif
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     switch(iVar3) {
     case 0:
@@ -65,6 +102,26 @@ void __cdecl core_menu_cpp_showOptionsScreen_FUN_00512d30(int initialize_systems
     case 3:
       core_game_cpp_CGame_rollCredits_FUN_004e4010(g_CGamePtr);
       core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
+      break;
+#if NOCTURNE_AUTHENTIC_DEV_TOOLS
+    case 4:
+#if NOCTURNE_AUTHENTIC_D3D_OPTIONS
+      if (g_UseDirect3D != 0) {
+        engine_special_cpp_clearScreen_FUN_005b3e70();
+        engine_2d_c_drawText_FUN_00401fd0("3D acceleration has been turned off!",0,0);
+        engine_2d_c_drawText_FUN_00401fd0("Press any key to continue...",0,0xb);
+        wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
+        engine_2d_c_clearInputAndWait_FUN_00403260();
+        wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
+      }
+      g_UseDirect3D = 0;
+#endif
+      core_sound_cpp_CSound_reset_FUN_005b39a0(g_CSoundPtr);
+      core_main_c_showDeveloperToolsMenu_FUN_005073a0();
+      core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
+      engine_2d_c_clearInputAndWait_FUN_00403260();
+      break;
+#endif
     }
     iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
   } while (iVar3 == 0);

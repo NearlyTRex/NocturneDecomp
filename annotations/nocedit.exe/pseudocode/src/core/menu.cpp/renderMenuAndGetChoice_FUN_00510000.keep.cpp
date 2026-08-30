@@ -103,12 +103,6 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(char **menu_text_a
   engine_font_cpp_CBitFont_drawText_FUN_004cda80
             (g_SmallEditorFont,"Press CTRL+D to access the editor menu",0,0x14,0xf8,0);
 #endif
-#if NOCTURNE_AUTHENTIC_DEV_TOOLS && !NOCTURNE_AUTHENTIC_NETPLAY
-  engine_font_cpp_CBitFont_drawText_FUN_004cda80
-            (g_SmallEditorFont,"Press CTRL+H to host a multiplayer session",0,0x28,0xf8,0);
-  engine_font_cpp_CBitFont_drawText_FUN_004cda80
-            (g_SmallEditorFont,"Press CTRL+J to join a multiplayer session",0,0x3c,0xf8,0);
-#endif
   pcVar6 = strchr(menu_text_array[*selected_index_ptr],':');
   g_MenuInputHappened = 0;
   iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD8);

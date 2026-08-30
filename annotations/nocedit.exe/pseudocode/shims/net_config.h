@@ -8,19 +8,24 @@
 // game is a compile-time constant: the UDP port is the literal 0x1ddf (7647)
 // in four places, the socket binds INADDR_ANY, and the "Enter Server IP"
 // dialog is pre-filled from g_IpAddress — which is baked into the binary as
-// one of the original developers' LAN addresses, "10.0.0.105". There is no
-// menu for any of it, so a player cannot point the game at another machine
-// without editing the executable.
+// one of the original developers' LAN addresses,. There is no menu for any of it,
+// so a player cannot point the game at another machine without editing the executable.
 //
 // This reads those values from their own ini instead, in the same spirit as
 // the renderer's system/render.ini: a separate file, read on first use, with
-// every key optional and the shipped constant as its default. Absent file =
-// unchanged behaviour.
+// every key optional.
 //
 //   [Network]
 //   bindAddress  = 127.0.0.1   ; local address to bind (blank = all)
 //   port         = 7647        ; UDP port; must match on host and client
 //   serverAddress= 192.168.1.5 ; pre-fills the Ctrl+J "Enter Server IP" prompt
+//
+// bindAddress and port fall back to the shipped constant, so leaving them out
+// changes nothing. serverAddress does not: with no key it offers 127.0.0.1
+// rather than the baked-in address, which belongs to a machine that has not
+// existed for twenty-five years and could only ever be a wrong answer. Ctrl+J
+// therefore finds a host on this machine with no ini at all. Setting the key,
+// or just typing over the prompt, reaches anywhere else.
 //
 // bindAddress exists mainly so two instances can run on one machine: the game
 // binds a fixed port, so a second copy would collide on INADDR_ANY. Giving each
@@ -44,7 +49,10 @@ void nocturne_net_reload(void);
 // Local address to bind, or "" to leave the game's INADDR_ANY alone.
 const char *nocturne_net_bind_address(void);
 
-// Address to offer in the join prompt, or "" to keep the game's built-in one.
+// Address to offer in the join prompt. Never blank: with no serverAddress key
+// this is 127.0.0.1, so Ctrl+J finds a host on this machine without anything
+// being configured. The address baked into the executable is a developer's old
+// LAN machine and is never offered while NOCTURNE_NETPLAY_INI is on.
 const char *nocturne_net_server_address(void);
 
 // Name this player appears under in the lobby, or "" to keep the game's own.
