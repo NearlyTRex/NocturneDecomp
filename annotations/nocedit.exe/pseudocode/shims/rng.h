@@ -38,7 +38,7 @@
 // from the function's name. A bare rand() left in game code is then a visible
 // defect, and the audit counters here catch the ones that slip through.
 //
-// Gated by NOCTURNE_AUTHENTIC_RNG in shim_config.h: with it set every call site
+// Gated by NOCTURNE_AUTHENTIC_RNG in shim_config_authentic.h: with it set every call site
 // compiles back to the verbatim rand() the binary made, and every entry point
 // here collapses to rand() as well.
 

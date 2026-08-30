@@ -17,7 +17,7 @@
 //   (gdb) call (void)nocturne_mirror_all()
 //   (gdb) call (void)nocturne_mirror_status()
 //
-// Compile-time gated by NOCTURNE_DUMP_TOOLS (shim_config.h). When 0, the macro
+// Compile-time gated by NOCTURNE_DUMP_TOOLS (shim_config_debug.h). When 0, the macro
 // expands to the bare count expression — the canonical build is unaffected.
 
 #include "shim_config.h"

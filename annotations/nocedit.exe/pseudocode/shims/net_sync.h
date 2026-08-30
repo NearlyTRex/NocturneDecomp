@@ -36,7 +36,7 @@
 //
 // Uses packet type 0x11, one past the shipped protocol's last assigned value.
 //
-// Gated by NOCTURNE_NETPLAY_SYNC_CHECK in shim_config.h, and by
+// Gated by NOCTURNE_NETPLAY_SYNC_CHECK in shim_config_netplay.h, and by
 // NOCTURNE_AUTHENTIC_NETPLAY — with authentic netplay on, every entry point
 // here compiles to nothing.
 

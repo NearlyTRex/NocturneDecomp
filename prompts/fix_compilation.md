@@ -1390,7 +1390,7 @@ When investigating something downstream of a known non-fatal sanitizer trap, set
 
 ### FPU exception trap (NaN tracing)
 
-When NaN cascades cause hangs (loops with `< INT_MIN` comparisons because `(int)NaN = 0x80000000`), wrong renders (clip-to-nothing because projected coords are NaN), or wrong physics (actor falling through world), the actual NaN-producing op may be far upstream from the symptom. The build has a configurable FPU trap (gated by `NOCTURNE_FPU_TRAP=1` in `shims/shim_config.h`, default on):
+When NaN cascades cause hangs (loops with `< INT_MIN` comparisons because `(int)NaN = 0x80000000`), wrong renders (clip-to-nothing because projected coords are NaN), or wrong physics (actor falling through world), the actual NaN-producing op may be far upstream from the symptom. The build has a configurable FPU trap (gated by `NOCTURNE_FPU_TRAP=1` in `shims/shim_config_debug.h`, default on):
 
 ```gdb
 # Drive the program past benign-NaN regions (intro, menu) into the relevant state, then:

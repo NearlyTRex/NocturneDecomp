@@ -11,7 +11,7 @@ void __cdecl core_fire_cpp_CTrail_render_FUN_004c5e90(CTrail *this_ptr)
 
 {
   float fVar1;
-  SMRGLPrimitiveQuad local_78;
+  SMRGLPrimitiveQuadIndex local_78;
   CVector3i local_50;
   float local_44;
   float local_40;
@@ -30,10 +30,10 @@ void __cdecl core_fire_cpp_CTrail_render_FUN_004c5e90(CTrail *this_ptr)
   local_78.base.surface_normal.B.i = 0;
   local_78.base.surface_normal.C.i = 0;
   local_78.base.surface_normal.D.i = 0;
-  local_78.vertices[0].vertex_index = 0;
-  local_78.vertices[1].vertex_index = 1;
-  local_78.vertices[2].vertex_index = 2;
-  local_78.vertices[3].vertex_index = 3;
+  local_78.vertices[0] = 0;
+  local_78.vertices[1] = 1;
+  local_78.vertices[2] = 2;
+  local_78.vertices[3] = 3;
   engine_drender_cpp_CDemonRenderer_setRenderAlphaNormalized_FUN_0048ca70
             (g_CDemonRendererPtr2,this_ptr->current_alpha);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);

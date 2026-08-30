@@ -310,6 +310,9 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
           shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
           shape_edittool_cpp_CPickList_clear_FUN_004a5770(&g_CPickList);
           g_ModalDialogActive = 0;
+#if !NOCTURNE_AUTHENTIC_UI_CURSOR_WARP
+          core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004dce70(this_ptr);
+#endif
         }
 #if !NOCTURNE_AUTHENTIC_NETPLAY
         if ((iVar4 == net_respawn_item) && (iVar4 != -2)) {

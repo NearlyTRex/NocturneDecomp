@@ -30,7 +30,7 @@
 // Only runs during a network game in NET_MODE_PLAYING, which bounds the volume
 // on its own - nothing is written in single player, the menus, or the lobby.
 // Still, expect a few MB per minute. Gated by NOCTURNE_NETPLAY_SIM_TRACE in
-// shim_config.h; turn it off once the desync it is chasing is found.
+// shim_config_netplay.h; turn it off once the desync it is chasing is found.
 
 #ifdef __cplusplus
 extern "C" {

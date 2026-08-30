@@ -64,11 +64,10 @@ static FILE *trace_file(void)
 // Which slot of the set's character list a victim pointer refers to, WITHOUT
 // dereferencing it.
 //
-// The obvious version printed victim->actor_name and crashed the host: an
-// enemy's victim field can hold 0xffffffff — a 32-bit -1 sentinel sitting in a
-// 64-bit pointer slot — and strlen walked into it from inside fprintf. Nothing
-// may deref one of these until it has been matched against a pointer the set
-// itself holds.
+// An enemy's victim field can hold 0xffffffff — a 32-bit -1 sentinel sitting in
+// a 64-bit pointer slot — so printing victim->actor_name walks strlen into it
+// from inside fprintf. Nothing may deref one of these until it has been matched
+// against a pointer the set itself holds.
 //
 // An index is also the better thing to print. Every machine walks
 // g_CDemonSetPtr->characters in the same order, so the index is directly

@@ -22,7 +22,7 @@
 // delegate straight to the engine routine they mirror, so a 640x480 frame is
 // pixel-identical to the shipped build.
 //
-// Gated by NOCTURNE_AUTHENTIC_HUD_SCALE in shim_config.h.
+// Gated by NOCTURNE_AUTHENTIC_HUD_SCALE in shim_config_authentic.h.
 
 struct CAlphaBitmap;
 struct CBitFont;

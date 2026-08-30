@@ -26,9 +26,20 @@ int __cdecl core_netgame_cpp_CNetGame_runLobby_FUN_00541390(CNetGame *this_ptr)
   int local_24;
   int local_20;
   bool bVar2;
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+  SNetPlayer *local_player;
+  int hero_cycle_dir;
+  int host_hero_view;
+  int saved_input_key_mask;
+#endif
 
   iVar5 = g_ForceMessagePump;
   if (this_ptr->connection_type != CONNECTION_NONE) {
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+    nocturne_net_hero_forget_host_view();
+    saved_input_key_mask = g_InputKeyMask;
+    engine_keys_cpp_CKeys_toggleInputMask_FUN_005024b0(g_CKeysPtr,1);
+#endif
     this_ptr->players[this_ptr->local_player_index].local_sync_stage = 1;
     this_ptr->players[this_ptr->local_player_index].ready_flag = 0;
     g_ForceMessagePump = 0;
@@ -52,6 +63,9 @@ int __cdecl core_netgame_cpp_CNetGame_runLobby_FUN_00541390(CNetGame *this_ptr)
       engine_2d_c_drawText_FUN_00401fd0
                 ("ENTER toggle ready    S send chat    ESC leave lobby",0,0);
       engine_2d_c_drawText_FUN_00401fd0("Starts when all players ready",400,0);
+      if (this_ptr->connection_type == CONNECTION_CLIENT) {
+        engine_2d_c_drawText_FUN_00401fd0("LEFT/RIGHT change hero",0,0x16);
+      }
 #endif
       _sprintf(local_130,"Mission: %s",mission_filename);
       engine_2d_c_drawText_FUN_00401fd0(local_130,0,0xb);
@@ -101,7 +115,11 @@ LAB_005415cb:
         }
         strcpy(local_130, pcVar7);
         engine_2d_c_drawText_FUN_00401fd0(local_130,300,iVar4);
+#if NOCTURNE_AUTHENTIC_NETPLAY
         _sprintf(local_130,"%d",player->hero_number);
+#else
+        strcpy(local_130, nocturne_net_hero_name(player->hero_number));
+#endif
         engine_2d_c_drawText_FUN_00401fd0(local_130,400,iVar4);
         if (this_ptr->connection_type == CONNECTION_HOST) {
           _sprintf(local_130,"%d",player->player_id);
@@ -191,6 +209,12 @@ LAB_005415cb:
       }
       if ((this_ptr->connection_type == CONNECTION_CLIENT) &&
          (this_ptr->network_mode == NET_MODE_SYNCING)) {
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+        host_hero_view = nocturne_net_hero_host_view();
+        if (-1 < host_hero_view) {
+          this_ptr->players[this_ptr->local_player_index].hero_number = host_hero_view;
+        }
+#endif
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                   (g_CEditorToolsPtr,"Loading %s",this_ptr->mission_name);
         srand(this_ptr->random_seed);
@@ -260,6 +284,25 @@ LAB_005415cb:
          iVar6 != 0)) {
         core_netgame_cpp_CNetGame_processChatOut_FUN_00541e40(this_ptr,g_ChatMessageBuffer,-1);
       }
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+      if (this_ptr->connection_type == CONNECTION_CLIENT) {
+        hero_cycle_dir = 0;
+        iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_RIGHT);
+        if (iVar6 != 0) {
+          hero_cycle_dir = 1;
+        }
+        iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_LEFT);
+        if (iVar6 != 0) {
+          hero_cycle_dir = -1;
+        }
+        if (hero_cycle_dir != 0) {
+          local_player = this_ptr->players + this_ptr->local_player_index;
+          local_player->hero_number =
+               nocturne_net_hero_cycle(local_player->hero_number,hero_cycle_dir);
+          core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_00542ff0(this_ptr);
+        }
+      }
+#endif
       for (iVar6 = 0; iVar6 < g_CNetGamePtr->player_count; iVar6 = iVar6 + 1) {
         core_netgame_cpp_CNetGame_updatePing_FUN_00541c80(this_ptr,iVar6,2.0);
       }
@@ -270,6 +313,9 @@ LAB_005416d1:
     engine_2d_c_clearInputAndWait_FUN_00403260();
     core_netgame_cpp_CNetGame_disconnect_FUN_0053fd00(this_ptr,1);
     engine_2d_c_clearInputAndWait_FUN_00403260();
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+    g_InputKeyMask = saved_input_key_mask;
+#endif
   }
   g_ForceMessagePump = iVar5;
   return 0;

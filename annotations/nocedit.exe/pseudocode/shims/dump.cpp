@@ -2,7 +2,8 @@
 // DEBUG DUMP TOOLS — implementation
 // =============================================================================
 //
-// See dump.h for the public API and shim_config.h for the build-time toggle.
+// See dump.h for the public API and shim_config_debug.h for the build-time
+// toggle.
 
 #include "dump.h"
 #include "shim_config.h"

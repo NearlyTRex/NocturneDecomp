@@ -83,7 +83,16 @@ int __cdecl core_netgame_cpp_CNetGame_applyNewGameSettings_FUN_00542470(CNetGame
           if (iVar3 != 0) {
             INT_00680a04 = 1;
           }
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+          nocturne_net_hero_note_host_view(localPkt.players[iVar6].hero_number);
+#endif
           if (this_ptr->players[local_44[3]].ready_flag == localPkt.players[iVar6].ready_flag) {
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+            if (this_ptr->players[local_44[3]].hero_number !=
+                localPkt.players[iVar6].hero_number) {
+              INT_00680a04 = 1;
+            }
+#endif
             if (INT_00680a04 == 0) goto LAB_005429ed;
           }
           else {

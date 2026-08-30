@@ -103,3 +103,27 @@ extern "C" CHero *nocturne_net_sim_target_hero(const CVector3f *from)
     }
     return best;
 }
+
+// See net_sim.h, "AM I THE PLAYER?", for why the index is substituted rather
+// than each subclass patched.
+extern "C" int nocturne_net_sim_begin_hero_setup(CDemonActor *actor)
+{
+    int saved = g_LocalHeroIndex;
+    int i;
+
+    if ((actor == (CDemonActor *)0x0) || (sim_is_network_game() == 0)) {
+        return saved;
+    }
+    for (i = 0; (i < SIM_MAX_HEROES) && (i < g_HeroCount); i++) {
+        if ((CDemonActor *)g_HeroActors[i] == actor) {
+            g_LocalHeroIndex = i;
+            break;
+        }
+    }
+    return saved;
+}
+
+extern "C" void nocturne_net_sim_end_hero_setup(int saved_local_hero_index)
+{
+    g_LocalHeroIndex = saved_local_hero_index;
+}

@@ -2,7 +2,7 @@
 // FPU EXCEPTION TRAP — implementation
 // =============================================================================
 //
-// See fpu_trap.h for the public API and shim_config.h for the build-time
+// See fpu_trap.h for the public API and shim_config_debug.h for the build-time
 // toggle. Linux/glibc only — feenableexcept isn't standard C.
 
 #include "fpu_trap.h"

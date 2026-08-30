@@ -28,7 +28,7 @@
 // The NOCTURNE_NET_BIND environment variable overrides this key, so a pair of
 // instances can be launched from one directory without two ini files.
 //
-// Gated by NOCTURNE_NETPLAY_INI in shim_config.h.
+// Gated by NOCTURNE_NETPLAY_INI in shim_config_netplay.h.
 //
 // The host-scheduled safe respawn lives next door in net_respawn.h.
 

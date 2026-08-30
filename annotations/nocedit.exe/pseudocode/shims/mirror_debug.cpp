@@ -2,7 +2,8 @@
 // MIRROR RENDER-STAGE TOGGLES — implementation
 // =============================================================================
 //
-// See mirror_debug.h for the public API and shim_config.h for the build toggle.
+// See mirror_debug.h for the public API and shim_config_debug.h for the build
+// toggle.
 
 #include "shim_config.h"
 

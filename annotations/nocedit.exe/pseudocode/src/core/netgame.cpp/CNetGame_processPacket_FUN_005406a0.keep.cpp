@@ -235,8 +235,10 @@ LAB_00540df8:
       core_netgame_cpp_CNetGame_gameSettingsChanged_FUN_00542cf0(this_ptr);
 #else
       iVar5 = _strcmp(local_1c->name,(packet->player_state).name);
-      if ((iVar5 != 0) || (local_1c->ready_flag != (packet->player_state).ready_flag)) {
+      if (((iVar5 != 0) || (local_1c->ready_flag != (packet->player_state).ready_flag)) ||
+         (local_1c->hero_number != (packet->player_state).hero_number)) {
         local_1c->ready_flag = (packet->player_state).ready_flag;
+        local_1c->hero_number = (packet->player_state).hero_number;
         strcpy(local_1c->name, (packet->player_state).name);
         core_netgame_cpp_CNetGame_gameSettingsChanged_FUN_00542cf0(this_ptr);
       }

@@ -13,7 +13,7 @@
 // dumpers also produce a sidecar `<path>.txt` with relevant engine state and
 // derived statistics (histograms, bounding boxes, min/max values, etc.).
 //
-// Compile-time gated by NOCTURNE_DUMP_TOOLS in shim_config.h. When 0, every
+// Compile-time gated by NOCTURNE_DUMP_TOOLS in shim_config_debug.h. When 0, every
 // function is a no-op stub returning -1 (the symbols stay so `call` from gdb
 // doesn't fail).
 //

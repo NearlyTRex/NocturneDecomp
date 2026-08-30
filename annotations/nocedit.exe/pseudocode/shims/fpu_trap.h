@@ -7,7 +7,7 @@
 // Runtime control of the x87/SSE exception traps. Intended for use from gdb
 // when localizing the source of a NaN, Inf, or numerically unstable op.
 //
-// Compile-time gated by NOCTURNE_FPU_TRAP in shim_config.h. When 0 these are
+// Compile-time gated by NOCTURNE_FPU_TRAP in shim_config_debug.h. When 0 these are
 // no-op stubs that return 0 (the symbols stay so `call` from gdb still works).
 //
 // The mask values below are stable across platforms — the implementation maps

@@ -19,7 +19,10 @@ void __cdecl core_mission_cpp_CDemonMission_prepareAllActors_FUN_00523cf0(CDemon
   int iVar7;
   int iVar6;
   int iVar5;
-  
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+  int saved_local_hero;
+#endif
+
   shape_memdbg_cpp_checkAllMemory_FUN_0050efe0("..\\core\\mission.cpp",821);
   iVar4 = 0;
   iVar5 = 0;
@@ -35,7 +38,13 @@ void __cdecl core_mission_cpp_CDemonMission_prepareAllActors_FUN_00523cf0(CDemon
       core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
                 (pCVar3,"..\\core\\mission.cpp",831);
       iVar3 = iVar3 + 1;
+#if NOCTURNE_AUTHENTIC_NETPLAY
       (*((pCVar3->vtable)._ub)->setup)(pCVar3);
+#else
+      saved_local_hero = nocturne_net_sim_begin_hero_setup(pCVar3);
+      (*((pCVar3->vtable)._ub)->setup)(pCVar3);
+      nocturne_net_sim_end_hero_setup(saved_local_hero);
+#endif
       if (iVar3 == iVar4 / 4) {
         iVar6 = 0;
         pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Setting up actors");

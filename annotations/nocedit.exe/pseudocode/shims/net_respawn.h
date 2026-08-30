@@ -8,8 +8,8 @@
 // exactly one spawn point — every mission ships a single CHeroPlaceholder — and
 // it has to be used before anything is ready: CDemonMission::createHeros runs
 // ahead of loadSet, so there is no collision geometry to stand on and no camera
-// to be visible to. Any placement decided there is a guess, and a guess is what
-// dropped guests through ledges.
+// to be visible to. Any placement decided there is a guess, and a guess there
+// can put a guest below the floor or off a ledge.
 //
 // So guests are not placed there at all. createOneHero creates the hero with a
 // negative location.area_id, which holds it out of the world (see below), and
@@ -65,7 +65,7 @@
 //
 // Uses PACKET_UNUSED (0xE), the gap the shipped protocol never assigned.
 //
-// Gated by NOCTURNE_AUTHENTIC_NETPLAY in shim_config.h: with authentic netplay
+// Gated by NOCTURNE_AUTHENTIC_NETPLAY in shim_config_authentic.h: with authentic netplay
 // on, every entry point here compiles to nothing.
 
 #ifdef __cplusplus
