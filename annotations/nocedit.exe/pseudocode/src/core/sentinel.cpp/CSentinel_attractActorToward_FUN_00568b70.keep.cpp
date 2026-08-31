@@ -16,7 +16,7 @@ int __cdecl core_sentinel_cpp_CSentinel_attractActorToward_FUN_00568b70(CSentine
   CVector3f local_28;
   CVector3f local_1c;
   CVector3f local_10;
-  
+
   if (actor == (CDemonActor *)0x0) {
     return 0;
   }
@@ -34,6 +34,11 @@ int __cdecl core_sentinel_cpp_CSentinel_attractActorToward_FUN_00568b70(CSentine
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
             ((CDemonActor *)this_ptr,&local_28,&local_1c);
   local_28.y = local_28.y + -4.0f;
+#if !NOCTURNE_AUTHENTIC_HERO_GRAB
+  if (nocturne_grab_carry_move(actor,&local_28) != 0) {
+    return 1;
+  }
+#endif
   (*((actor->vtable)._ub)->setPositionAndOrientation)(actor,&local_28,(CVector3f *)&actor->orient);
   return 1;
 }

@@ -43,6 +43,12 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_00524420(CDemonMission *this
               (this_ptr,(CDemonActor *)this_ptr_00);
     (*(((this_ptr_00->base).base.vtable._uh)->_uh).reset)(this_ptr_00);
     core_mission_cpp_CDemonMission_clearMissionData_FUN_00522d30(this_ptr);
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+    if ((iVar1 != 0) &&
+        ((g_PendingMissionName[0] != '\0') || (nocturne_net_mission_pending() != 0))) {
+      nocturne_net_mission_resolve(g_PendingMissionName,sizeof(g_PendingMissionName));
+    }
+#endif
     if ((iVar1 == 0) || (g_PendingMissionName[0] == '\0')) break;
     iVar1 = _stricmp(g_CDemonSetPtr->geometry_filename,"hq.geo");
     bVar2 = iVar1 != 0;
@@ -55,11 +61,20 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_00524420(CDemonMission *this
     }
     color_value = (uint)!bVar2;
     core_level_cpp_CLevelLoader_show_FUN_00503dc0(g_CLevelLoaderPtr,9,(uint)bVar2,iVar1);
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+    if (nocturne_net_mission_begin() == 0) goto LAB_005244ee;
+#endif
     core_mission_cpp_CDemonMission_load_FUN_00522d90(this_ptr,g_PendingMissionName,0);
     iVar1 = core_mission_cpp_CDemonMission_createHeros_FUN_00524a80(this_ptr,&this_ptr_00->base);
     if (iVar1 == 0) goto LAB_005244ee;
     iVar1 = core_mission_cpp_CDemonMission_startMission_FUN_00524760(this_ptr);
     if (iVar1 == 0) goto LAB_005244ee;
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+    if (nocturne_net_mission_finish() == 0) goto LAB_005244ee;
+    if (nocturne_net_mission_skip_prompt() != 0) {
+      color_value = 1;
+    }
+#endif
     if (color_value == 0) {
       text = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Press any key to continue...")
       ;

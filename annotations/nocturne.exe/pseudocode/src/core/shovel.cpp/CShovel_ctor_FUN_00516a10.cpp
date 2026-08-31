@@ -15,7 +15,7 @@ CShovel * __cdecl core_shovel_cpp_CShovel_ctor_FUN_00516a10(CShovel *this_ptr)
   (pCVar1->base).vtable._ub = &g_CShovelVTable._ub;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
             (&pCVar1->model,"shoveit.kfm");
-  pCVar1->weapon_type = 7;
+  pCVar1->weapon_type = WEAPON_TYPE_MELEE;
   pCVar1->ammo_type = -1;
   pCVar1->ammo_count = 0;
   pCVar1->is_spread_weapon = 0;

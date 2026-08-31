@@ -70,7 +70,7 @@ void __cdecl core_gabriela_cpp_CGabriella_process_FUN_004d2ea0(CGabriella *this_
   CGame *pCVar9;
   uint uVar8;
   byte bVar6;
-  
+
   iVar10 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar10 == 0) {
     return;
@@ -154,6 +154,9 @@ void __cdecl core_gabriela_cpp_CGabriella_process_FUN_004d2ea0(CGabriella *this_
   pCVar5 = (this_ptr->base).ladder_to_climb;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.walk_step_speed * delta_time;
   if (pCVar5 == (CLadder *)0x0) {
+#if !NOCTURNE_AUTHENTIC_HERO_GRAB
+    nocturne_hero_grab_escape(&this_ptr->base,delta_time);
+#endif
     pCVar6 = (this_ptr->base).base.grabbed_by;
     if (pCVar6 != (CDemonActor *)0x0) {
       if ((this_ptr->base).base.grabbed_type == 0) {

@@ -20,7 +20,7 @@ int __cdecl core_script_cpp_CScript_FUN_00504d90(CScript *this_ptr)
   core_script_cpp_CScript_FUN_00504d60(this_ptr);
   iVar3 = 0;
   this_ptr->next_cmd = this_ptr->saved_cmd_index;
-  while ((g_CGame_PTR_005b9354->letterbox_mode != 0 && (this_ptr->script_pause_flag == 0))) {
+  while ((g_CGame_PTR_005b9354->letterbox_mode != 0 && (this_ptr->mission_ended == 0))) {
     local_c = 0.25;
     iVar1 = this_ptr->next_cmd;
     iVar2 = core_script_cpp_CScript_step_FUN_004ff2c0(this_ptr,&local_c);

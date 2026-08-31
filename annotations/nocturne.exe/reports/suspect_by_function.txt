@@ -12249,7 +12249,7 @@ core_game.cpp_CGame_runGameSession_FUN_0049da10 (20 suspects)
   Line 151 [raw_address_constant]: 0x01E56DA0->focus_actor_changed = 0;
   Line 216 [stack_param]: (&local_290,pcVar2,iVar3,in_stack_fffffc00);
   Line 246 [raw_address_constant]: iVar3 = core_script_cpp_CScript_FUN_00504d90(0x01E56DA0);
-  Line 308 [raw_address_constant]: if (0x01E56DA0->script_pause_flag != 0) {
+  Line 308 [raw_address_constant]: if (0x01E56DA0->mission_ended != 0) {
   Line 329 [stack_ref]: shape_edittool_cpp_CPickList_ctor_FUN_00474c90((CPickList *)&stack0xfffffc00);
   Line 331 [stack_ref]: shape_edittool_cpp_CStrList_add_FUN_00473cb0((CStrList *)&stack0xfffffc00,pcVar2);
   Line 333 [stack_ref]: shape_edittool_cpp_CStrList_add_FUN_00473cb0((CStrList *)&stack0xfffffc00,pcVar2);
@@ -14367,14 +14367,14 @@ core_inv.cpp_CInventory_selectWeapon_FUN_004c0850 (1 suspect)
 core_inv.cpp_CInventory_select_FUN_004c1580 (8 suspects)
   File: core/inv.cpp
 ====================================================================================================
-  Line 40 [derived_field_index_pun]: (0x01C03A10,pCVar3[4].create_event + 0x40);
-  Line 58 [unrolled_strcpy]: do {
-  Line 70 [unrolled_strlen]: do {
-  Line 70 [unrolled_strcat]: do {
-  Line 79 [unrolled_strcpy]: do {
-  Line 91 [unrolled_strlen]: do {
-  Line 91 [unrolled_strcat]: do {
-  Line 100 [unrolled_strcpy]: do {
+  Line 41 [derived_field_index_pun]: (0x01C03A10,pCVar3[4].create_event + 0x40);
+  Line 59 [unrolled_strcpy]: do {
+  Line 71 [unrolled_strlen]: do {
+  Line 71 [unrolled_strcat]: do {
+  Line 80 [unrolled_strcpy]: do {
+  Line 92 [unrolled_strlen]: do {
+  Line 92 [unrolled_strcat]: do {
+  Line 101 [unrolled_strcpy]: do {
 
 ====================================================================================================
 core_inv.cpp_CInventory_setupItems_FUN_004c1510 (1 suspect)
@@ -14620,8 +14620,8 @@ core_lightgun.cpp_CLightGun_fire_FUN_004c71a0 (20 suspects)
 core_lightgun.cpp_CLightGun_process_FUN_004c79a0 (2 suspects)
   File: core/lightgun.cpp
 ====================================================================================================
-  Line 58 [raw_address_constant]: (0x014B8DE8,"lgunmask.raw",0);
-  Line 61 [raw_address_constant]: core_weather_cpp_CWeather_createLightningStrike_FUN_00554d40(0x02DDF9F0,0.1,0);
+  Line 59 [raw_address_constant]: (0x014B8DE8,"lgunmask.raw",0);
+  Line 62 [raw_address_constant]: core_weather_cpp_CWeather_createLightningStrike_FUN_00554d40(0x02DDF9F0,0.1,0);
 
 ====================================================================================================
 core_lightgun.cpp_CLightGun_updateBeamLight_FUN_004c6ff0 (5 suspects)
@@ -17801,16 +17801,16 @@ core_scat.cpp_CScat_FUN_004fdd00 (14 suspects)
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
   Line 3 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 43 [unrolled_memcpy]: for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-  Line 45 [pointer_cast]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
-  Line 45 [pointer_truncation]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
-  Line 46 [pointer_cast]: pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
-  Line 46 [pointer_truncation]: pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
-  Line 54 [unrolled_memcpy]: for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-  Line 56 [pointer_cast]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
-  Line 56 [pointer_truncation]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
-  Line 57 [pointer_cast]: pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
-  Line 57 [pointer_truncation]: pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
+  Line 44 [unrolled_memcpy]: for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
+  Line 46 [pointer_cast]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
+  Line 46 [pointer_truncation]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
+  Line 47 [pointer_cast]: pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
+  Line 47 [pointer_truncation]: pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
+  Line 55 [unrolled_memcpy]: for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
+  Line 57 [pointer_cast]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
+  Line 57 [pointer_truncation]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
+  Line 58 [pointer_cast]: pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
+  Line 58 [pointer_truncation]: pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
   Line 68 [unrolled_memcpy]: // 004fddb8: MOVSD.REP ES:EDI,ESI
   Line 85 [unrolled_memcpy]: // 004fdde7: MOVSD.REP ES:EDI,ESI
 
@@ -21671,10 +21671,10 @@ core_stranger.cpp_CStranger_FUN_0053c800 (13 suspects)
 core_stranger.cpp_CStranger_FUN_0053ffe0 (4 suspects)
   File: core/stranger.cpp
 ====================================================================================================
-  Line 13 [unaffected_reg]: CDemonActor *unaff_EBX;
-  Line 15 [unaffected_reg]: int unaff_EDI;
-  Line 121 [unaffected_reg]: ((CCharacter *)this_ptr->weapon,grabber,unaff_EDI), iVar4 != 0)) {
-  Line 129 [unaffected_reg]: ((CCharacter *)this_ptr->weapon,unaff_EBX);
+  Line 14 [unaffected_reg]: CDemonActor *unaff_EBX;
+  Line 16 [unaffected_reg]: int unaff_EDI;
+  Line 122 [unaffected_reg]: ((CCharacter *)this_ptr->weapon,grabber,unaff_EDI), iVar5 != 0)) {
+  Line 130 [unaffected_reg]: ((CCharacter *)this_ptr->weapon,unaff_EBX);
 
 ====================================================================================================
 core_stranger.cpp_CStranger_aimLeftPistol_FUN_0053e320 (4 suspects)
@@ -21804,10 +21804,10 @@ core_stranger.cpp_CStranger_autoAimAtThreat_FUN_0053d910 (6 suspects)
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
   Line 3 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 144 [unrolled_memcpy]: CStack_100.x = pCVar6->x;
-  Line 153 [unrolled_memcpy]: CStack_100.x = pCVar6->x;
-  Line 174 [pointer_cast]: (*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->threats + iStack_3c),
-  Line 181 [pointer_cast]: pCStack_1c = *(CDemonActor **)((int)g_CDemonSet_PTR_005be368->threats + iStack_3c);
+  Line 145 [unrolled_memcpy]: CStack_100.x = pCVar6->x;
+  Line 154 [unrolled_memcpy]: CStack_100.x = pCVar6->x;
+  Line 175 [pointer_cast]: (*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->threats + iStack_3c),
+  Line 182 [pointer_cast]: pCStack_1c = *(CDemonActor **)((int)g_CDemonSet_PTR_005be368->threats + iStack_3c);
 
 ====================================================================================================
 core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760 (133 suspects)
@@ -22150,11 +22150,11 @@ core_stranger.cpp_CStranger_renderOpaque_FUN_0053d100 (13 suspects)
   Line 62 [unrolled_memcpy]: for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
   Line 65 [pointer_cast]: pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar8 * -2 + 1) * 4);
   Line 65 [pointer_truncation]: pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar8 * -2 + 1) * 4);
-  Line 200 [unrolled_memcpy]: for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-  Line 202 [pointer_cast]: pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar8 * -2 + 1) * 4);
-  Line 202 [pointer_truncation]: pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar8 * -2 + 1) * 4);
-  Line 203 [pointer_cast]: pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar8 * -2 + 1) * 4);
-  Line 203 [pointer_truncation]: pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar8 * -2 + 1) * 4);
+  Line 201 [unrolled_memcpy]: for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
+  Line 203 [pointer_cast]: pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar8 * -2 + 1) * 4);
+  Line 203 [pointer_truncation]: pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar8 * -2 + 1) * 4);
+  Line 204 [pointer_cast]: pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar8 * -2 + 1) * 4);
+  Line 204 [pointer_truncation]: pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar8 * -2 + 1) * 4);
   Line 287 [unrolled_memcpy]: // 0053d452: MOVSD.REP ES:EDI,ESI
   Line 403 [unrolled_memcpy]: // 0053d590: MOVSD.REP ES:EDI,ESI
 

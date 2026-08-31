@@ -28,6 +28,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
   int iVar8;
   int iVar14;
   CSfxSample local_62c;
+  int death_message_y;
   char death_message[64];
   char local_3dc [256];
   char local_2dc [256];
@@ -327,10 +328,12 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
       }
 #endif
       if (EVar15 == DEATH_STATE_DEAD) {
+        death_message_y = g_WindowHeight + g_MediumFont->max_char_height * -2;
 #if !NOCTURNE_AUTHENTIC_NETPLAY
         if (g_CNetGamePtr->connection_type == CONNECTION_CLIENT) {
           pcVar16 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                               ("Waiting for the host to bring you into the game.");
+          death_message_y = g_MediumFont->max_char_height * 2;
         }
         else {
           pcVar16 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
@@ -342,7 +345,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
 #endif
         strcpy(death_message, pcVar16);
         engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0
-                  (g_MediumFont,0,g_WindowWidth,g_WindowHeight + g_MediumFont->max_char_height * -2,
+                  (g_MediumFont,0,g_WindowWidth,death_message_y,
                    (uint)g_ColorCubeLookup[0x7c00],0,death_message);
       }
       if (this_ptr->show_customizable_keys != 0) {

@@ -99,7 +99,7 @@ LAB_004fcf93:
                 (this_ptr->weapon_actor = (CWeapon *)this_ptr_00, this_ptr_00 != (CCharacter *)0x0))
                && ((*(((this_ptr_00->base).vtable._uc)->_uc).kill)
                              (this_ptr_00,2,damage_direction,(float)this_ptr_01),
-                  this_ptr->weapon_actor->weapon_type == 8)) {
+                  this_ptr->weapon_actor->weapon_type == WEAPON_TYPE_BARON)) {
               iVar7 = 1;
               this_ptr_01 = unaff_EDI;
               core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(unaff_EDI,6,1);

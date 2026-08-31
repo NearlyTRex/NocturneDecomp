@@ -85,7 +85,8 @@ void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004ffad0(CInventory *th
       this_ptr_00 = (CLightGun *)
                     core_actor_cpp_castToClassHash_FUN_0040c790
                               (this_ptr->items[iVar5],g_CLightGunClassInfo.name_hash);
-      if ((this_ptr_00 != (CLightGun *)0x0) && ((this_ptr_00->base).weapon_state != 2)) {
+      if ((this_ptr_00 != (CLightGun *)0x0) &&
+         ((this_ptr_00->base).weapon_state != WEAPON_STATE_IN_HAND)) {
         (*((this_ptr_00->base).base.vtable._ub)->process)
                   ((CDemonActor *)this_ptr_00,g_CGamePtr->delta_time_float);
       }

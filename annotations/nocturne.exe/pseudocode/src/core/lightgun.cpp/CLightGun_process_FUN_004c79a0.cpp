@@ -9,47 +9,48 @@
 void __cdecl core_lightgun_cpp_CLightGun_process_FUN_004c79a0(CLightGun *this_ptr,float delta_time)
 
 {
+  EWeaponState EVar1;
   float base_frequency;
-  float fVar1;
-  int iVar2;
-  CHero *pCVar3;
+  float fVar2;
+  int iVar3;
+  CHero *pCVar4;
   CDemonFilter *filter_ptr;
-  uint uVar4;
-  double dVar5;
+  uint uVar5;
+  double dVar6;
   
   core_weapon_cpp_CWeapon_process_FUN_00554030(&this_ptr->base,delta_time);
-  fVar1 = core_inv_cpp_CInventory_calculateTotalBatteryCharge_FUN_004c1b20
+  fVar2 = core_inv_cpp_CInventory_calculateTotalBatteryCharge_FUN_004c1b20
                     (&g_HeroActors[g_LocalHeroIndex]->inventory,30.0f);
-  fVar1 = (30.0f / fVar1) * delta_time + this_ptr->charge_level;
-  this_ptr->charge_level = fVar1;
-  if (30.0f < fVar1) {
+  fVar2 = (30.0f / fVar2) * delta_time + this_ptr->charge_level;
+  this_ptr->charge_level = fVar2;
+  if (30.0f < fVar2) {
     this_ptr->charge_level = 30.0f;
   }
-  fVar1 = this_ptr->charge_level / 30.0f;
-  this_ptr->charge_ratio = fVar1;
-  iVar2 = (this_ptr->base).weapon_state;
-  dVar5 = round((double)(fVar1 * (float)100));
-  (this_ptr->base).ammo_count = (int)ROUND(dVar5);
-  if (iVar2 == 2) {
-    fVar1 = (2.5f - 2.0f) * this_ptr->charge_ratio + 2.0f;
+  fVar2 = this_ptr->charge_level / 30.0f;
+  this_ptr->charge_ratio = fVar2;
+  EVar1 = (this_ptr->base).weapon_state;
+  dVar6 = round((double)(fVar2 * (float)100));
+  (this_ptr->base).ammo_count = (int)ROUND(dVar6);
+  if (EVar1 == WEAPON_STATE_IN_HAND) {
+    fVar2 = (2.5f - 2.0f) * this_ptr->charge_ratio + 2.0f;
     base_frequency = 1.0f + (2.0f - 1.0f) * this_ptr->charge_ratio;
-    iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(this_ptr->sfx_handle);
-    if (iVar2 == 0) {
+    iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(this_ptr->sfx_handle);
+    if (iVar3 == 0) {
       sound_sndmain_cpp_pushSfxOptions_FUN_00526340();
       sound_sndmain_cpp_setNextSfxTrackedFloatPosition_FUN_00525fc0
                 (&(this_ptr->base).base.location.position);
-      sound_sndmain_cpp_setNextSfxVolume_FUN_005260f0(fVar1);
+      sound_sndmain_cpp_setNextSfxVolume_FUN_005260f0(fVar2);
       sound_sndmain_cpp_setNextSfxBaseFrequency_FUN_00526120(base_frequency);
-      uVar4 = sound_sndmain_cpp_startSfx_FUN_005265a0("cre-charge.wav");
-      this_ptr->sfx_handle = uVar4;
+      uVar5 = sound_sndmain_cpp_startSfx_FUN_005265a0("cre-charge.wav");
+      this_ptr->sfx_handle = uVar5;
       sound_sndmain_cpp_popSfxOptions_FUN_005263c0();
     }
     else {
-      sound_sndmain_cpp_setSfxVolume_FUN_005270d0(this_ptr->sfx_handle,fVar1);
+      sound_sndmain_cpp_setSfxVolume_FUN_005270d0(this_ptr->sfx_handle,fVar2);
       sound_sndmain_cpp_setSfxBaseFrequency_FUN_00527130(this_ptr->sfx_handle,base_frequency);
     }
-    pCVar3 = (CHero *)(*((this_ptr->base).base.vtable._ub)->getCarrier)((CDemonActor *)this_ptr);
-    if (pCVar3 == g_HeroActors[g_LocalHeroIndex]) {
+    pCVar4 = (CHero *)(*((this_ptr->base).base.vtable._ub)->getCarrier)((CDemonActor *)this_ptr);
+    if (pCVar4 == g_HeroActors[g_LocalHeroIndex]) {
       engine_force_cpp_CForceFeedback_processEvent_FUN_004940d0
                 (g_CForceFeedback_PTR_005b9284,
                  1.0f + (1.58f - 1.0f) * this_ptr->charge_ratio,
@@ -73,8 +74,8 @@ void __cdecl core_lightgun_cpp_CLightGun_process_FUN_004c79a0(CLightGun *this_pt
     return;
   }
   sound_sndmain_cpp_killSfx_FUN_00527230(this_ptr->sfx_handle);
-  pCVar3 = (CHero *)(*((this_ptr->base).base.vtable._ub)->getCarrier)((CDemonActor *)this_ptr);
-  if (pCVar3 == g_HeroActors[g_LocalHeroIndex]) {
+  pCVar4 = (CHero *)(*((this_ptr->base).base.vtable._ub)->getCarrier)((CDemonActor *)this_ptr);
+  if (pCVar4 == g_HeroActors[g_LocalHeroIndex]) {
     engine_force_cpp_CForceFeedback_processEvent_FUN_004940d0(g_CForceFeedback_PTR_005b9284);
   }
   this_ptr->fire_flash_pending = 0;

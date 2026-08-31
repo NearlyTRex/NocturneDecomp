@@ -40,7 +40,7 @@ void __cdecl core_icepick_cpp_CIcePick_process_FUN_004f80b0(CIcePick *this_ptr,f
   bool bVar1;
   CDeformableModel_MotionBlendWeightFunc *blend_callback;
   float fVar2;
-  
+
   iVar3 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar3 == 0) {
     return;
@@ -131,6 +131,9 @@ LAB_004f8427:
                   core_hero_cpp_CHero_executeLeverPull_FUN_004f30f0(&this_ptr->base);
                   goto LAB_004f84cc;
                 }
+#if !NOCTURNE_AUTHENTIC_SHEATHED_FIRE
+                goto LAB_004f84cc;
+#endif
               }
               else {
 LAB_004f84cc:
@@ -221,6 +224,9 @@ LAB_004f8417:
               (&(this_ptr->base).base.model.motion_controller,iVar6,1);
   }
 LAB_004f81b6:
+#if !NOCTURNE_AUTHENTIC_HERO_GRAB
+  nocturne_hero_grab_escape(&this_ptr->base,delta_time);
+#endif
   pCVar2 = (this_ptr->base).base.grabbed_by;
   if (pCVar2 == (CDemonActor *)0x0) {
     fVar12 = (this_ptr->base).base.model.accumulated_root_motion.x;

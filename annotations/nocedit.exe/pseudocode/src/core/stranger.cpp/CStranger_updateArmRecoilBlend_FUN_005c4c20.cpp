@@ -38,7 +38,7 @@ void __cdecl core_stranger_cpp_CStranger_updateArmRecoilBlend_FUN_005c4c20(CStra
   CStranger *this_ptr_00;
   float fVar1;
   
-  if ((this_ptr->weapon == (CWeapon *)0x0) || (this_ptr->weapon->weapon_type != 0)) {
+  if ((this_ptr->weapon == (CWeapon *)0x0) || (this_ptr->weapon->weapon_type != WEAPON_TYPE_GUN)) {
     is_weapon_active = 0;
   }
   iVar5 = 0;

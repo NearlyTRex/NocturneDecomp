@@ -18,7 +18,7 @@ CMelee * __cdecl core_melee_cpp_CMelee_ctor_FUN_0050e7d0(CMelee *this_ptr)
   (pCVar2->base).base.vtable._ub = &g_CMeleeVTable._ub;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (&(pCVar2->base).model,"melee.kfm");
-  (pCVar2->base).weapon_type = 7;
+  (pCVar2->base).weapon_type = WEAPON_TYPE_MELEE;
   pCVar2->ammo_type = -1;
   (pCVar2->base).ammo_count = 0;
   (pCVar2->base).is_spread_weapon = 0;

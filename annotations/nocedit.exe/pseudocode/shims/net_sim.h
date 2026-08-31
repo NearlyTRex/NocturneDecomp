@@ -109,6 +109,23 @@ int nocturne_net_sim_begin_hero_setup(struct CDemonActor *actor);
 // Restores what the paired begin returned.
 void nocturne_net_sim_end_hero_setup(int saved_local_hero_index);
 
+// The hero a CMimic is built from and mirrors: the leader, so every machine
+// builds the same one. Outside a network game it is the local hero, which is
+// the shipped behaviour.
+//
+// CMimic::updatePose copies the source's bone rotations, world matrices and
+// transformed vertices into the mimic index by index, and memcpys the source's
+// cloth vertex list into the mimic's. Both are only meaningful — and the cloth
+// copy only in bounds — when the two carry the same skeleton and the same
+// cloth. CMimic::setup guarantees that by building the mimic out of this same
+// hero's model and cloth, so no class restriction is needed here: whatever the
+// leader is, the mimic is made to match it.
+//
+// The mimic's chase AI does not use this. Chasing carries no skeleton
+// constraint, so it goes through nocturne_net_sim_target_for like every other
+// enemy and follows whoever is nearest.
+struct CHero *nocturne_net_sim_mimic_hero(void);
+
 // Simulation code must not call rand() directly either — that is the other half
 // of the same problem, and it lives in rng.h (nocturne_rng_sim).
 

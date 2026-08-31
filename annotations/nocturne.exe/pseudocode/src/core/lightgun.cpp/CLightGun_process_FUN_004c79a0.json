@@ -58,13 +58,13 @@
       {
         "category": "incompatible_types",
         "column": 20,
-        "line": 64,
+        "line": 65,
         "message": "no matching function for call to 'core_dfilter_cpp_CFilterCache_getFilter_FUN_0044bd20'"
       },
       {
         "category": "incompatible_types",
         "column": 7,
-        "line": 68,
+        "line": 69,
         "message": "no matching function for call to 'core_weather_cpp_CWeather_createLightningStrike_FUN_00554d40'"
       }
     ],
@@ -74,17 +74,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 219,
-    "complexity_score": 97,
+    "complexity_score": 98,
     "cross_reference_count": 0,
     "function_call_count": 19,
     "global_count": 20,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 72,
+    "pseudocode_lines": 73,
     "suspect_count": 2,
     "suspect_types": [
       "raw_address_constant"
     ],
-    "total_lines": 291
+    "total_lines": 292
   },
   "cross_references": [],
   "function": {
@@ -416,7 +416,7 @@
   "suspects": [
     {
       "description": "Raw hex literal 0x14b8de8 matches address of g_CFilterCache_014b8de8 (type CFilterCache). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 58,
+      "line": 59,
       "match": "0x14b8de8",
       "severity": "moderate",
       "text": "(0x014B8DE8,\"lgunmask.raw\",0);",
@@ -424,7 +424,7 @@
     },
     {
       "description": "Raw hex literal 0x2ddf9f0 matches address of g_CWeather_02ddf9f0 (type CWeather). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 61,
+      "line": 62,
       "match": "0x2ddf9f0",
       "severity": "moderate",
       "text": "core_weather_cpp_CWeather_createLightningStrike_FUN_00554d40(0x02DDF9F0,0.1,0);",

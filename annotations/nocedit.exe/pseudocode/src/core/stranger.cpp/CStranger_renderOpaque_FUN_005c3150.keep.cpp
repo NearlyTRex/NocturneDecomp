@@ -113,36 +113,37 @@ switchD_005c331f_caseD_3:
   }
   else {
     switch(this_ptr->weapon->weapon_type) {
-    case 0:
-    case 5:
+    case WEAPON_TYPE_GUN:
+    case WEAPON_TYPE_FLASHLIGHT:
       iVar5 = 2;
       break;
-    case 1:
+    case WEAPON_TYPE_SHOTGUN:
       iVar5 = 4;
       break;
-    case 2:
+    case WEAPON_TYPE_LIGHT_GUN:
       iVar5 = 5;
       break;
     default:
       goto switchD_005c331f_caseD_3;
-    case 4:
+    case WEAPON_TYPE_TOMMY_GUN:
       iVar5 = 7;
       break;
-    case 7:
+    case WEAPON_TYPE_MELEE:
       iVar5 = 8;
     }
   }
   fVar6 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840
                     ((CCharacter *)this_ptr,iVar5);
   bVar4 = (float)0.94999999999999996 < fVar6;
-  if ((this_ptr->weapon->weapon_type == 1) && ((this_ptr->base).base.layer_action_index == 8)) {
+  if ((this_ptr->weapon->weapon_type == WEAPON_TYPE_SHOTGUN) &&
+     ((this_ptr->base).base.layer_action_index == 8)) {
     bVar4 = true;
 LAB_005c336f:
     (*(((((CCharacter *)this_ptr->weapon)->base).vtable._uc)->_uc).releaseFromGrab)
               ((CCharacter *)this_ptr->weapon);
   }
   else if (bVar4) goto LAB_005c336f;
-  if (this_ptr->weapon->weapon_type == 0) {
+  if (this_ptr->weapon->weapon_type == WEAPON_TYPE_GUN) {
     core_stranger_cpp_CStranger_updateWeaponPosition_FUN_005c06b0(this_ptr,1);
     (*((this_ptr->weapon->base).vtable._ub)->renderOpaque)(&this_ptr->weapon->base);
     if (bVar4) {

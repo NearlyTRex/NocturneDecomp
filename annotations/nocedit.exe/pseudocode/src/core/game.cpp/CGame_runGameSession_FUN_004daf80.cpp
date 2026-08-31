@@ -318,7 +318,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
           }
         }
       }
-      if (g_CScriptPtr->script_pause_flag != 0) {
+      if (g_CScriptPtr->mission_ended != 0) {
         local_1c = 1;
         goto LAB_004db434;
       }

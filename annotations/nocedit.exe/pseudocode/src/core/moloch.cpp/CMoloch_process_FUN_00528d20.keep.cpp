@@ -37,7 +37,7 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch *this_ptr,floa
   float fVar4;
   CGame *pCVar5;
   CVector3f *pCVar1;
-  
+
   if ((this_ptr->base).ai_task == HERO_TASK_SUSPEND) {
     return;
   }
@@ -86,6 +86,14 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch *this_ptr,floa
         }
         (this_ptr->base).player_input.action_state.draw = 0;
       }
+#if !NOCTURNE_AUTHENTIC_HERO_INTERACT
+      if (((this_ptr->base).player_input.action_state.fire != 0) &&
+          ((this_ptr->base).control_type != HERO_CONTROL_AI)) {
+        if (nocturne_hero_interact(&this_ptr->base) != 0) {
+          (this_ptr->base).player_input.action_state.fire = 0;
+        }
+      }
+#endif
       (this_ptr->base).base.turn_angle_accumulator =
            (this_ptr->base).player_input.turn_speed * (this_ptr->base).base.turn_speed;
       pSVar10 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
@@ -119,6 +127,9 @@ LAB_00528e32:
               (&(this_ptr->base).base.model.motion_controller,uVar9,1);
   }
 LAB_00528e3a:
+#if !NOCTURNE_AUTHENTIC_HERO_GRAB
+  nocturne_hero_grab_escape(&this_ptr->base,delta_time);
+#endif
   pCVar3 = (this_ptr->base).base.grabbed_by;
   if (pCVar3 == (CDemonActor *)0x0) {
     (this_ptr->base).base.velocity.y =

@@ -124,22 +124,22 @@ switchD_0053f7b3_caseD_3:
               }
               else {
                 switch(this_ptr->weapon->weapon_type) {
-                case 0:
-                case 5:
+                case WEAPON_TYPE_GUN:
+                case WEAPON_TYPE_FLASHLIGHT:
                   iVar12 = 2;
                   break;
-                case 1:
+                case WEAPON_TYPE_SHOTGUN:
                   iVar12 = 4;
                   break;
-                case 2:
+                case WEAPON_TYPE_LIGHT_GUN:
                   iVar12 = 5;
                   break;
                 default:
                   goto switchD_0053f7b3_caseD_3;
-                case 4:
+                case WEAPON_TYPE_TOMMY_GUN:
                   iVar12 = 7;
                   break;
-                case 7:
+                case WEAPON_TYPE_MELEE:
                   iVar12 = 8;
                 }
               }

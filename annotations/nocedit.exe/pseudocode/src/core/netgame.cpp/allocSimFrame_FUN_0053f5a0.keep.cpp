@@ -32,7 +32,7 @@ SSimFrame * __cdecl core_netgame_cpp_allocSimFrame_FUN_0053f5a0(int sequence_num
   }
   dest = g_SimFrameHistory + g_SimFrameCount;
   g_SimFrameCount = g_SimFrameCount + 1;
-  memset(dest,0,100);
+  memset(dest,0,sizeof(*dest));
   dest->sequence_number = sequence_number;
   return dest;
 }

@@ -10,7 +10,7 @@ int __cdecl core_scat_cpp_CScat_isWeaponReady_FUN_00558010(CScat *this_ptr)
 
 {
   if (((this_ptr->guns_drawn != 0) && (this_ptr->weapon_actor != (CWeapon *)0x0)) &&
-     (this_ptr->weapon_actor->weapon_type == 8)) {
+     (this_ptr->weapon_actor->weapon_type == WEAPON_TYPE_BARON)) {
     return 1;
   }
   return 0;

@@ -22,7 +22,7 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_005c48b0(CStranger *t
   CConsole *this_ptr_01;
   CGame *pCVar2;
   float random_value;
-  
+
   if (g_CGamePtr->god_mode_enabled != 0) {
     damage_info->damage_amount = 0.0;
   }
@@ -30,6 +30,9 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_005c48b0(CStranger *t
     damage_info->damage_amount = 0.0;
   }
   core_hero_cpp_CHero_stopNearbyInteraction_FUN_004f3580(&this_ptr->base);
+#if !NOCTURNE_AUTHENTIC_FRIENDLY_FIRE
+  nocturne_net_friendly_fire_block(&(this_ptr->base).base,damage_info);
+#endif
   if ((0.0 < (this_ptr->base).invincibility_timer) && (0xb < (int)damage_info->damage_type)) {
     damage_info->damage_amount = 0.0;
     return;

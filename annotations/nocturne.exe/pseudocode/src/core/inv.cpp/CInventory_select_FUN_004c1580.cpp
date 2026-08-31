@@ -35,7 +35,8 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004c1580(CInventory *this_ptr,CDe
         pCVar5 = (CLightGun *)
                  core_actor_cpp_castToClassHash_FUN_0040d890
                            (actor_ptr,g_CGasMaskActorType_01c78b84.name_hash);
-        (pCVar5->base).weapon_state = (uint)((pCVar5->base).weapon_state == 0);
+        (pCVar5->base).weapon_state =
+             (uint)((pCVar5->base).weapon_state == WEAPON_STATE_LYING_AROUND);
         this_ptr->light_gun_ptr = pCVar5;
         return 0;
       }

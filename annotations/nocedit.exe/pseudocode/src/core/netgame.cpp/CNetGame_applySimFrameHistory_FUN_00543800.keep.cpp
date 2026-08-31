@@ -6,12 +6,29 @@
 // Signature: void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_00543800(CNetGame *this_ptr,SSimFrame *sim_frame)
 
 #include "nocturne.h"
+#include "debug_log.h"
 
 void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_00543800(CNetGame *this_ptr,SSimFrame *sim_frame)
 
 {
   int iVar3;
+#if !NOCTURNE_AUTHENTIC_NETPLAY && NOCTURNE_NETPLAY_SIM_TRACE
+  static int apply_log_budget = 8;
+#endif
 
+#if !NOCTURNE_AUTHENTIC_NETPLAY && NOCTURNE_NETPLAY_SIM_TRACE
+  if (0 < apply_log_budget) {
+    apply_log_budget = apply_log_budget + -1;
+    DLOG_EX("netplay",
+            "APPLY seq=%d conn=%d mode=%d local_idx=%d->%d process=%d dt=%g",
+            sim_frame->sequence_number, (int)this_ptr->connection_type,
+            (int)this_ptr->network_mode,
+            this_ptr->players[this_ptr->local_player_index].sim_frame_index,
+            sim_frame->sequence_number + 1,
+            nocturne_sim_trace_process_calls(),
+            (double)sim_frame->delta_time);
+  }
+#endif
   if (this_ptr->local_player_index < 0) {
     g_CurrentFilename = "..\\core\\netgame.cpp";
     g_CurrentLineNumber = 2509;

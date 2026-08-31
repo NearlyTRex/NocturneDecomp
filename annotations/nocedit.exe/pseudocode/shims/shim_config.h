@@ -77,6 +77,31 @@
 // ordinary functions; it is the lobby's call sites that are gated.
 #include "net_hero.h"
 
+// The weapon each hero class starts holding (nocturne_hero_default_weapon),
+// reached from CDemonMission::createOneHero — the one place a player hero is
+// built, and the only one whose inventory is not immediately overwritten by
+// CInventory::load. Gated there on NOCTURNE_AUTHENTIC_HERO_WEAPON, not on the
+// netplay flag: the CGun that CHero::ctor hands every class is wrong for that
+// class whoever is driving it, so the correction belongs to the hero rather
+// than to the lobby.
+#include "hero_weapon.h"
+
+// The CHero interaction set (nocturne_hero_interact), reached from the two
+// hero classes whose fire button never had it. Gated at those call sites on
+// NOCTURNE_AUTHENTIC_HERO_INTERACT.
+#include "hero_interact.h"
+
+// Breaking out of a grab (nocturne_hero_grab_escape), reached from the eight
+// hero classes that never had it. Gated at those call sites on
+// NOCTURNE_AUTHENTIC_HERO_GRAB.
+#include "hero_grab.h"
+
+// The retail Volume/Chapter picker (nocturne_chapter_pick_mission), lifted out
+// of CGame::showChapterSelect so the multiplayer host can offer the same choice
+// its START menu does. Reached from the game TU; gated at that call site on
+// NOCTURNE_AUTHENTIC_CHAPTER_SELECT.
+#include "chapter_select.h"
+
 // Host-scheduled safe respawn (nocturne_net_respawn_*), the desync detector
 // (nocturne_net_sync_*) and the sim-state trace (nocturne_sim_trace_*) —
 // declared here so the netgame, mission and game TUs reach them through
@@ -85,6 +110,22 @@
 #include "net_respawn.h"
 #include "net_sync.h"
 #include "sim_trace.h"
+
+// Mission-to-mission transitions (nocturne_net_mission_*), which the shipped
+// game moves through with no rendezvous and no packet at all. Reached from the
+// mission, game and netgame TUs. Every entry point is inert outside a network
+// game, and when NOCTURNE_AUTHENTIC_NETPLAY is 1.
+#include "net_mission.h"
+
+// Socket servicing for screens inside a mission that run their own loop and do
+// not return to CGame::processFrame (nocturne_net_keepalive) — declared here so
+// the game TU reaches it through nocturne.h. A no-op outside a network game.
+#include "net_keepalive.h"
+
+// Friendly fire (nocturne_net_friendly_fire_block), reached from each hero's
+// processDamage. Gated there on NOCTURNE_AUTHENTIC_FRIENDLY_FIRE, and inert
+// outside a network game.
+#include "net_friendly.h"
 
 // Synchronised weapon/item selection (nocturne_net_weapon_*), reached the same
 // way from CGame::processKeyboardControls and the netgame TU. Outside a network

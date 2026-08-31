@@ -17,7 +17,8 @@ int __cdecl core_stranger_cpp_CStranger_tryThrowDynamite_FUN_0053ff50(CStranger 
   if (((this_ptr_00 == (CDemonActor *)0x0) ||
       (uVar2 = (*((this_ptr_00->vtable)._ub)->getAllowedMeleeAttackTypes)(this_ptr_00),
       (uVar2 & 4) == 0)) &&
-     ((this_ptr->weapon == (CWeapon *)0x0 || (this_ptr->weapon->weapon_type != 3)))) {
+     ((this_ptr->weapon == (CWeapon *)0x0 || (this_ptr->weapon->weapon_type != WEAPON_TYPE_DYNAMITE)
+      ))) {
     return 0;
   }
   fVar1 = 10.0f;

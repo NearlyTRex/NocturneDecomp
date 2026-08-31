@@ -123,7 +123,7 @@ void __cdecl core_scat_cpp_CScat_process_FUN_004fbf20(CScat *this_ptr,float delt
                     ((CCharacter *)this_ptr->weapon_actor,in_stack_ffffff84);
           pCVar9 = this_ptr->weapon_actor;
           (this_ptr->base).player_input.action_state.fire = 0;
-          if (pCVar9->weapon_type == 8) {
+          if (pCVar9->weapon_type == WEAPON_TYPE_BARON) {
             desired_state_index = 0xb;
           }
         }

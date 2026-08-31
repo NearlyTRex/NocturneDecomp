@@ -58,7 +58,7 @@
       {
         "category": "incompatible_types",
         "column": 9,
-        "line": 46,
+        "line": 47,
         "message": "no matching function for call to 'core_event_cpp_CEventList_executeCommands_FUN_0047ab70'"
       }
     ],
@@ -68,12 +68,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 282,
-    "complexity_score": 227,
+    "complexity_score": 228,
     "cross_reference_count": 2,
     "function_call_count": 11,
     "global_count": 22,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 127,
+    "pseudocode_lines": 128,
     "suspect_count": 8,
     "suspect_types": [
       "derived_field_index_pun",
@@ -81,7 +81,7 @@
       "unrolled_strcpy",
       "unrolled_strlen"
     ],
-    "total_lines": 409
+    "total_lines": 410
   },
   "cross_references": [
     {
@@ -457,7 +457,7 @@
   "suspects": [
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 58,
+      "line": 59,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -465,7 +465,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 79,
+      "line": 80,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -473,7 +473,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 100,
+      "line": 101,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -481,7 +481,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 70,
+      "line": 71,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -489,7 +489,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 91,
+      "line": 92,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -497,7 +497,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 70,
+      "line": 71,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -505,7 +505,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 91,
+      "line": 92,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -513,7 +513,7 @@
     },
     {
       "description": "'pCVar3[4].create_event + 0x40' walks 4 x sizeof(CDemonActor) (0x150) + offsetof(create_event) (0x78) + 0x40 = 0x5f8, which is exactly offsetof(CBoxActor, use_event). Ghidra had no CBoxActor type here and reached the field by index arithmetic; write it as ((CBoxActor *)pCVar3)->use_event (\u00a7de-pun/\u00a712).",
-      "line": 40,
+      "line": 41,
       "severity": "moderate",
       "text": "(0x01C03A10,pCVar3[4].create_event + 0x40);",
       "type": "derived_field_index_pun"

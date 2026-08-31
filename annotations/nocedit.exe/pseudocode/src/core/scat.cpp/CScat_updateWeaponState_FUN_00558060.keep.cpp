@@ -32,7 +32,7 @@ void __cdecl core_scat_cpp_CScat_updateWeaponState_FUN_00558060(CScat *this_ptr,
     }
     weapon_actor = this_ptr->weapon_actor;
     if (((weapon_actor != (CWeapon *)0x0) && (selected_weapon != weapon_actor)) &&
-       (weapon_actor->weapon_type == 8)) {
+       (weapon_actor->weapon_type == WEAPON_TYPE_BARON)) {
       pCVar1 = &(this_ptr->base).base.model;
       pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                          (&pCVar1->motion_controller);
@@ -55,20 +55,20 @@ void __cdecl core_scat_cpp_CScat_updateWeaponState_FUN_00558060(CScat *this_ptr,
           default:
             weapon_action = 2;
             break;
-          case 8:
+          case WEAPON_TYPE_BARON:
             weapon_action = 0;
           }
         }
       }
       else if (weapon_actor == (CWeapon *)0x0) {
         if ((selected_weapon != (CWeapon *)0x0) &&
-           (selected_weapon->weapon_type != 8)) {
+           (selected_weapon->weapon_type != WEAPON_TYPE_BARON)) {
 LAB_00558263:
           weapon_action = 1;
         }
       }
       else {
-        if (weapon_actor->weapon_type != 8) goto LAB_00558263;
+        if (weapon_actor->weapon_type != WEAPON_TYPE_BARON) goto LAB_00558263;
         weapon_action = 0;
       }
       layer_result =
@@ -79,15 +79,15 @@ LAB_00558263:
         current_weapon = this_ptr->weapon_actor;
         if (selected_weapon != current_weapon) {
           if ((current_weapon != (CWeapon *)0x0) &&
-             ((int)(current_weapon->weapon_type != 8) == layer_result)) {
+             ((int)(current_weapon->weapon_type != WEAPON_TYPE_BARON) == layer_result)) {
             (*(this_ptr->weapon_actor->base.vtable._uw)->_uw.setWeaponState)
-                      (this_ptr->weapon_actor, 1);
+                      (this_ptr->weapon_actor, WEAPON_STATE_IN_INVENTORY);
             this_ptr->weapon_actor = (CWeapon *)0x0;
           }
           if (this_ptr->guns_drawn != 0) {
             int weapon_ready;
             if ((selected_weapon == (CWeapon *)0x0) ||
-               (selected_weapon->weapon_type == 8)) {
+               (selected_weapon->weapon_type == WEAPON_TYPE_BARON)) {
               weapon_ready = 0;
             }
             else {
@@ -96,8 +96,8 @@ LAB_00558263:
             if (((weapon_ready == layer_result) &&
                 (this_ptr->weapon_actor = selected_weapon, selected_weapon != (CWeapon *)0x0))
                && ((*(selected_weapon->base.vtable._uw)->_uw.setWeaponState)
-                             (selected_weapon, 2),
-                  this_ptr->weapon_actor->weapon_type == 8)) {
+                             (selected_weapon, WEAPON_STATE_IN_HAND),
+                  this_ptr->weapon_actor->weapon_type == WEAPON_TYPE_BARON)) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(this_ptr_01,6,1);
             }
           }

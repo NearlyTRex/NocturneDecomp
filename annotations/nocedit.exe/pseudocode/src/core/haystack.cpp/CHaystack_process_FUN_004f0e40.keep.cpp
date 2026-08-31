@@ -36,7 +36,7 @@ void __cdecl core_haystack_cpp_CHaystack_process_FUN_004f0e40(CHaystack *this_pt
   CCharacter *this_ptr_00;
   CDemonActor *pCVar2;
   CDeformableModel_MotionBlendWeightFunc *blend_callback;
-  
+
   iVar5 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar5 == 0) {
     return;
@@ -116,6 +116,9 @@ void __cdecl core_haystack_cpp_CHaystack_process_FUN_004f0e40(CHaystack *this_pt
               core_hero_cpp_CHero_executeLeverPull_FUN_004f30f0(&this_ptr->base);
               goto LAB_004f11d6;
             }
+#if !NOCTURNE_AUTHENTIC_SHEATHED_FIRE
+            goto LAB_004f11d6;
+#endif
           }
           else {
 LAB_004f11d6:
@@ -171,6 +174,9 @@ LAB_004f0f1c:
               (&(this_ptr->base).base.model.motion_controller,iVar6,1);
   }
 switchD_004f12ce_caseD_8:
+#if !NOCTURNE_AUTHENTIC_HERO_GRAB
+  nocturne_hero_grab_escape(&this_ptr->base,delta_time);
+#endif
   pCVar2 = (this_ptr->base).base.grabbed_by;
   if (pCVar2 == (CDemonActor *)0x0) {
     pCVar7 = &(this_ptr->base).base.model.accumulated_root_motion;

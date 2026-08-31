@@ -46,12 +46,29 @@ void nocturne_attract_set_opening_played(int played);
 // the sample cannot be found — disarms the trigger instead of firing instantly.
 void nocturne_attract_set_music_duration(float seconds);
 
-// Called once per main-menu frame with that frame's delta in seconds. Returns 1
-// on the frame the countdown runs out; the caller should play one attract movie
-// and then restart the music (CSound::reset followed by CSound::configure, the
-// same pairing the menu already uses around submenus), which re-arms this for
-// the next cycle. Returns 1 at most once per cycle.
-int nocturne_attract_tick(float delta_seconds);
+// Called once per main-menu frame. Returns 1 on the frame the music is due to
+// have ended; the caller should play one attract movie and then restart the
+// music (CSound::reset followed by CSound::configure, the same pairing the menu
+// already uses around submenus), which re-arms this for the next cycle. Returns
+// 1 at most once per cycle.
+//
+// Takes no frame delta. It used to accumulate one, and that desynced it from
+// the music whenever a blocking screen ran between two menu frames - the music
+// plays on through showOptionsScreen while the menu loop that would have ticked
+// the countdown is not running. The deadline is measured against a monotonic
+// clock instead, so the two cannot drift apart. See attract.cpp.
+int nocturne_attract_tick(void);
+
+// Holds a short silence, to be called after CSound::reset has stopped the music
+// and before playMovie opens the cutscene.
+//
+// Stopping the music does not empty the audio device — what the mixer has
+// already queued still drains, so without this the last fragment of the splash
+// track is heard over the opening moment of the movie. Waiting it out also
+// gives the transition a beat of silence instead of a hard splice. The length,
+// and how early the trigger fires so a looping track cannot wrap first, are
+// both constants at the top of attract.cpp.
+void nocturne_attract_pre_movie_pause(void);
 
 #ifdef __cplusplus
 }

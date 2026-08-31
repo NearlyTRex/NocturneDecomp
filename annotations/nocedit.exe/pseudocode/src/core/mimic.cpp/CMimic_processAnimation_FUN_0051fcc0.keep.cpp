@@ -54,12 +54,18 @@ void __cdecl core_mimic_cpp_CMimic_processAnimation_FUN_0051fcc0(CMimic *this_pt
   float fVar2;
   float fVar1;
   float fVar3;
+  CHero *sim_target;
 
+#if NOCTURNE_AUTHENTIC_NETPLAY
+  sim_target = g_HeroActors[g_LocalHeroIndex];
+#else
+  sim_target = nocturne_net_sim_target_for((CDemonActor *)this_ptr);
+#endif
   pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-                     (&(g_HeroActors[g_LocalHeroIndex]->base).model,&local_10c,0);
+                     (&(sim_target->base).model,&local_10c,0);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-            ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],&local_94,pCVar4);
-  local_94.y = (g_HeroActors[g_LocalHeroIndex]->base).base.location.position.y;
+            ((CDemonActor *)sim_target,&local_94,pCVar4);
+  local_94.y = (sim_target->base).base.location.position.y;
   core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
             ((CDemonActor *)this_ptr,&local_88,&local_94);
   local_1c = -1.0;
@@ -72,11 +78,11 @@ void __cdecl core_mimic_cpp_CMimic_processAnimation_FUN_0051fcc0(CMimic *this_pt
   uVar2 = pSVar5->state_index;
   if (uVar2 < 2) {
     if (uVar2 == 0) {
-      EVar3 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
-                        (&g_HeroActors[g_LocalHeroIndex]->base);
+      EVar3 = (*(((sim_target->base).base.vtable._uc)->_uc).getDeathState)
+                        (&sim_target->base);
       if (((EVar3 == DEATH_STATE_ALIVE) && (g_CGamePtr->freeze_enemies_enabled == 0)) &&
          (ABS((this_ptr->base).base.base.location.position.y -
-              (g_HeroActors[g_LocalHeroIndex]->base).base.location.position.y) <=
+              (sim_target->base).base.location.position.y) <=
           (float)15)) {
         pCVar5 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                            (&local_58,&local_70);
@@ -106,8 +112,8 @@ void __cdecl core_mimic_cpp_CMimic_processAnimation_FUN_0051fcc0(CMimic *this_pt
       goto LAB_0051fdb4;
     }
 LAB_0051fd7d:
-    EVar6 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
-                      (&g_HeroActors[g_LocalHeroIndex]->base);
+    EVar6 = (*(((sim_target->base).base.vtable._uc)->_uc).getDeathState)
+                      (&sim_target->base);
     if ((EVar6 != DEATH_STATE_ALIVE) || (g_CGamePtr->freeze_enemies_enabled != 0)) {
       iVar14 = 0;
       goto LAB_0051fdac;
@@ -139,8 +145,8 @@ LAB_0051fd7d:
       local_e8.y = 0.0;
       iVar8 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
                         ((CCharacter *)this_ptr,
-                         &(g_HeroActors[g_LocalHeroIndex]->base).base.location.position,
-                         &g_HeroActors[g_LocalHeroIndex]->path_map,&local_e8,1.0,0.17453292);
+                         &(sim_target->base).base.location.position,
+                         &sim_target->path_map,&local_e8,1.0,0.17453292);
       if (iVar8 < 0) {
         iVar14 = 0;
       }
@@ -166,7 +172,7 @@ LAB_0051fd7d:
     if (0xb < uVar2) {
       if (0xc < uVar2) {
         if (uVar2 != 0x13) goto LAB_005202b7;
-        if ((g_HeroActors[g_LocalHeroIndex]->base).grabbed_by == (CDemonActor *)0x0) {
+        if ((sim_target->base).grabbed_by == (CDemonActor *)0x0) {
           fVar6 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_0052e2b0
                             (&pCVar1->motion_controller);
           if (fVar6 <= (float)2) {
@@ -225,8 +231,8 @@ LAB_0051fdb4:
     local_64.y = 0.0;
     iVar8 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
                       ((CCharacter *)this_ptr,
-                       &(g_HeroActors[g_LocalHeroIndex]->base).base.location.position,
-                       &g_HeroActors[g_LocalHeroIndex]->path_map,&local_64,3.0,0.5235988);
+                       &(sim_target->base).base.location.position,
+                       &sim_target->path_map,&local_64,3.0,0.5235988);
     if (iVar8 != 1) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 (&(this_ptr->base).base.model.motion_controller,2,1);

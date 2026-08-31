@@ -11,16 +11,16 @@ int __cdecl core_stranger_cpp_getWeaponHoldType_FUN_005bafa0(CWeapon *weapon)
 {
   if (weapon != (CWeapon *)0x0) {
     switch(weapon->weapon_type) {
-    case 0:
-    case 5:
+    case WEAPON_TYPE_GUN:
+    case WEAPON_TYPE_FLASHLIGHT:
       return 2;
-    case 1:
+    case WEAPON_TYPE_SHOTGUN:
       return 4;
-    case 2:
+    case WEAPON_TYPE_LIGHT_GUN:
       return 5;
-    case 4:
+    case WEAPON_TYPE_TOMMY_GUN:
       return 7;
-    case 7:
+    case WEAPON_TYPE_MELEE:
       return 8;
     }
   }

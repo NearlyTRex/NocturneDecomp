@@ -50,12 +50,22 @@ static unsigned int s_last_flag_fingerprint = 0;
 static int   s_process_calls = 0;
 static float s_last_delta_time = 0.0f;
 
+// Truncate once per run and append from then on. nocturne_sim_trace_reset
+// closes the file at every mission start, and reopening with "w" threw away
+// everything before the transition — on a host that moved to a second mission
+// the trace began at the frame the new one loaded, so the only side of a
+// divergence that could still be read was the guest's. The counters reset
+// either way; it is only the file that carries over.
+static int s_trace_truncated = 0;
+
 static FILE *trace_file(void)
 {
     if ((s_trace == (FILE *)0) && (s_open_failed == 0)) {
-        s_trace = std::fopen("nocturne_simtrace.log", "w");
+        s_trace = std::fopen("nocturne_simtrace.log", s_trace_truncated ? "a" : "w");
         if (s_trace == (FILE *)0) {
             s_open_failed = 1;
+        } else {
+            s_trace_truncated = 1;
         }
     }
     return s_trace;
@@ -124,6 +134,9 @@ static const char *trace_slot_name(int slot)
 extern "C" void nocturne_sim_trace_reset(void)
 {
     if (s_trace != (FILE *)0) {
+        // A marker rather than a gap, so a mission boundary is findable in a
+        // file that now spans several of them.
+        std::fprintf(s_trace, "---- trace reset ----\n");
         std::fclose(s_trace);
         s_trace = (FILE *)0;
     }
@@ -320,6 +333,11 @@ extern "C" void nocturne_sim_trace_note_process(float delta_time)
     s_last_delta_time = delta_time;
 }
 
+extern "C" int nocturne_sim_trace_process_calls(void)
+{
+    return s_process_calls;
+}
+
 extern "C" void nocturne_sim_trace_frame(int sequence_number)
 {
     CNetGame *net_game = g_CNetGamePtr;
@@ -423,5 +441,6 @@ extern "C" void nocturne_sim_trace_frame(int sequence_number)
 extern "C" void nocturne_sim_trace_frame(int) {}
 extern "C" void nocturne_sim_trace_reset(void) {}
 extern "C" void nocturne_sim_trace_note_process(float) {}
+extern "C" int  nocturne_sim_trace_process_calls(void) { return 0; }
 
 #endif

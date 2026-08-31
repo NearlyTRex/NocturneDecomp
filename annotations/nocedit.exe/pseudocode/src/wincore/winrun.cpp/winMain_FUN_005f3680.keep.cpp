@@ -23,7 +23,13 @@ int __stdcall wincore_winrun_cpp_winMain_FUN_005f3680(HINSTANCE hInstance,HINSTA
   char *pcVar9;
   WNDCLASSA windowClass;
   _MEMORYSTATUS memStatus;
+  char *windowTitle;
 
+#if NOCTURNE_AUTHENTIC_EDITOR_BRANDING
+  windowTitle = g_ApplicationTimerTitle;
+#else
+  windowTitle = (char *)"Nocturne";
+#endif
   existingWindow = (*g_FindWindowAFunc)(g_ApplicationTitle,(LPCSTR)0x0);
   if (existingWindow != 0) {
     activePopup = (*g_GetLastActivePopupFunc)(existingWindow);
@@ -87,7 +93,7 @@ int __stdcall wincore_winrun_cpp_winMain_FUN_005f3680(HINSTANCE hInstance,HINSTA
   (*g_RegisterClassAFunc)(&windowClass);
   g_MainWindowHandle =
        (*g_CreateWindowExAFunc)
-                 (0x40000,g_ApplicationTitle,g_ApplicationTimerTitle,0x80000000,0,0,0,0,0,(HMENU)0x0
+                 (0x40000,g_ApplicationTitle,windowTitle,0x80000000,0,0,0,0,0,(HMENU)0x0
                   ,hInstance,(LPVOID)0x0);
   if (g_MainWindowHandle == 0) {
     return 0;

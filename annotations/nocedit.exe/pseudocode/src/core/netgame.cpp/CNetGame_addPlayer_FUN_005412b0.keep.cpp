@@ -24,7 +24,7 @@ int __cdecl core_netgame_cpp_CNetGame_addPlayer_FUN_005412b0(CNetGame *this_ptr,
   iVar2 = this_ptr->player_count;
   dest = this_ptr->players + iVar2;
   this_ptr->player_count = iVar2 + 1;
-  memset(dest,0,0x78);
+  memset(dest,0,sizeof(*dest));
   strcpy(dest->name,name);
   (dest->addr).ip_address = addr->ip_address;
   uVar3 = addr->other;

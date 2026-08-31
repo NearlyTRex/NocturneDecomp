@@ -26,7 +26,7 @@ void __cdecl core_netgame_cpp_CNetGame_sendGameSetting_FUN_00542dd0(CNetGame *th
     core_main_c_displayErrorAndQuit_FUN_00506f10("CNetGame::send - invalid player index");
   }
   packet.header.type = PACKET_GAME_SETTINGS;
-  packet.header.size = 0xb1;
+  packet.header.size = sizeof(SNetPacket_GameSettings);
   __arrinit(packet.players,2,&g_SPlayerTypeInfo);
   packet.random_seed = this_ptr->random_seed;
   packet.settings_version = INT_02f7c8c4;

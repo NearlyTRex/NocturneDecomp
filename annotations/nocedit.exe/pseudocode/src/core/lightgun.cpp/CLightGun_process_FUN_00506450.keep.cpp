@@ -34,7 +34,7 @@ void __cdecl core_lightgun_cpp_CLightGun_process_FUN_00506450(CLightGun *this_pt
   fVar2 = this_ptr->charge_level / 30.0f;
   this_ptr->charge_ratio = fVar2;
   (this_ptr->base).ammo_count = (int)ROUND(ROUND(fVar2 * (float)100));
-  if ((this_ptr->base).weapon_state == 2) {
+  if ((this_ptr->base).weapon_state == WEAPON_STATE_IN_HAND) {
     fVar2 = (2.5f - 2.0f) * this_ptr->charge_ratio + 2.0f;
     base_frequency = 1.0f + (2.0f - 1.0f) * this_ptr->charge_ratio;
     iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handle);

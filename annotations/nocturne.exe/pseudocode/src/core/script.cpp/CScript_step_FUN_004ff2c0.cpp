@@ -650,7 +650,7 @@ LAB_0050064d:
                                   if (_DAT_01e56418 == 0) {
                                     core_mission_cpp_CDemonMission_setMissionName_FUN_004d9650
                                               (g_CDemonMission_PTR_005baf90,local_2e24);
-                                    this_ptr->script_pause_flag = 1;
+                                    this_ptr->mission_ended = 1;
                                     local_124 = uVar16;
                                   }
                                 }
@@ -1143,7 +1143,7 @@ LAB_00501802:
                                                             (pcVar18 + 3);
                                                   if (_DAT_01e56418 == 0) {
                                                     local_124 = _DAT_01e56418;
-                                                    this_ptr->script_pause_flag = 1;
+                                                    this_ptr->mission_ended = 1;
                                                   }
                                                   }
                                                   else {
@@ -1426,7 +1426,7 @@ LAB_004ff42f:
                                                             (g_CEditorTools_PTR_005b6d50,
                                                              "Script GTFO at line %d:\n%s\nTerminating mission.",
                                                              local_11c,local_3400);
-                                                  this_ptr->script_pause_flag = 1;
+                                                  this_ptr->mission_ended = 1;
                                                   local_124 = 0;
                                                   }
                                                   }
@@ -1590,7 +1590,7 @@ LAB_004ff42f:
                                                   }
                                                   local_118 = local_118 + local_18;
                                                   if (_DAT_01e56418 == 0) {
-                                                    this_ptr->script_pause_flag = 1;
+                                                    this_ptr->mission_ended = 1;
                                                     local_124 = uVar16;
                                                     pCVar4->act_completion_state = 1;
                                                   }
@@ -2177,7 +2177,7 @@ joined_r0x00500ad6:
                                                   }
                                                   local_118 = local_118 + local_88;
                                                   if (_DAT_01e56418 == 0) {
-                                                    this_ptr->script_pause_flag = 1;
+                                                    this_ptr->mission_ended = 1;
                                                     local_124 = uVar16;
                                                     pCVar4->act_completion_state = 2;
                                                   }

@@ -13,7 +13,7 @@ void __cdecl core_baron_cpp_CBaronWeapon_setWeaponState_FUN_00413e90(CBaronWeapo
   
   core_weapon_cpp_CWeapon_setWeaponState_FUN_005ee640(&this_ptr->base,weapon_state);
   target = (*((this_ptr->base).base.vtable._ub)->getCarrier)((CDemonActor *)this_ptr);
-  if ((this_ptr->base).weapon_state == 2) {
+  if ((this_ptr->base).weapon_state == WEAPON_STATE_IN_HAND) {
     if (target == (CDemonActor *)0x0) {
       g_CurrentFilename = "..\\core\\baron.cpp";
       g_CurrentLineNumber = 796;

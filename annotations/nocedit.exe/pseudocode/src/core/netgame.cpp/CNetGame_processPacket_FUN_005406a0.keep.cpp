@@ -321,7 +321,7 @@ LAB_00540df8:
     }
     dest = g_SimFrameHistory + g_SimFrameCount;
     g_SimFrameCount = g_SimFrameCount + 1;
-    memset(dest,0,100);
+    memset(dest,0,sizeof(*dest));
     dest->sequence_number = uVar3;
 LAB_00541015:
     dest->random_seed = (packet->sim_frame).frame.random_seed;
@@ -357,6 +357,12 @@ LAB_00541015:
     if ((this_ptr->connection_type == CONNECTION_CLIENT) &&
        (uVar2 == this_ptr->server_player_index)) {
       nocturne_net_sync_on_packet(packet,(packet->header).size + 3);
+    }
+    break;
+  case NOCTURNE_NET_PACKET_MISSION:
+    if ((this_ptr->connection_type == CONNECTION_CLIENT) &&
+       (uVar2 == this_ptr->server_player_index)) {
+      nocturne_net_mission_on_packet(packet,(packet->header).size + 3);
     }
     break;
   case NOCTURNE_NET_PACKET_WEAPON:

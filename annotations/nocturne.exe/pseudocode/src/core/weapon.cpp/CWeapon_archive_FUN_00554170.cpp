@@ -17,7 +17,8 @@ void __cdecl core_weapon_cpp_CWeapon_archive_FUN_00554170(CWeapon *this_ptr)
     core_actor_cpp_archiveActor_FUN_0040c980(&this_ptr->carried_by_actor,"carriedByActor");
   }
   if (3 < INT_005c1590) {
-    core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->weapon_state,"weaponState");
+    core_actor_cpp_archiveInteger_FUN_0040c900
+              ((int *)&this_ptr->weapon_state,"weaponState");
     core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->ammo_count,"ammoCount");
     core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->ammo_type,"ammoType");
   }

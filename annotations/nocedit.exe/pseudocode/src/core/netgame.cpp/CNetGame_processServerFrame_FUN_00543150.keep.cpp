@@ -6,6 +6,7 @@
 // Signature: void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_00543150(CNetGame *this_ptr)
 
 #include "nocturne.h"
+#include "debug_log.h"
 
 void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_00543150(CNetGame *this_ptr)
 
@@ -118,7 +119,7 @@ void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_00543150(CNetGame 
     }
     pSVar4 = g_SimFrameHistory + g_SimFrameCount;
     g_SimFrameCount = g_SimFrameCount + 1;
-    memset(pSVar4,0,100);
+    memset(pSVar4,0,sizeof(*pSVar4));
     pSVar4->sequence_number = iVar1;
 LAB_005432f5:
 #if NOCTURNE_AUTHENTIC_RNG
@@ -144,6 +145,15 @@ LAB_005432f5:
           iVar1 = this_ptr->players[this_ptr->local_player_index].sim_frame_index -
                   local_14->sim_frame_index;
           if (iVar1 < 1) {
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+            DLOG_EX("netplay",
+                    "AHEAD player=%d server_idx=%d player_idx=%d diff=%d "
+                    "history=%d dt=%g",
+                    local_24,
+                    this_ptr->players[this_ptr->local_player_index].sim_frame_index,
+                    local_14->sim_frame_index, iVar1, g_SimFrameCount,
+                    (double)g_CGamePtr->delta_time_float);
+#endif
             g_CurrentFilename = "..\\core\\netgame.cpp";
             g_CurrentLineNumber = 2363;
             core_main_c_displayErrorAndQuit_FUN_00506f10("CNetGame::processServerFrame - player is ahead of the server!?!!");
@@ -168,7 +178,7 @@ LAB_005434de:
               core_main_c_displayErrorAndQuit_FUN_00506f10("CNetGame::processServerFrame - client needs frame, but we don't have it in history!");
             }
             pSVar4 = g_SimFrameHistory + iVar2;
-            local_90.header.size = 0x69;
+            local_90.header.size = sizeof(SNetPacket_SimFrame);
             local_90.header.type = PACKET_SIM_FRAME;
             local_90.frame.sequence_number = pSVar4->sequence_number;
             local_90.frame.random_seed = g_SimFrameHistory[iVar2].random_seed;

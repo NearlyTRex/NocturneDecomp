@@ -56,7 +56,7 @@ void __cdecl core_netgame_cpp_CNetGame_processChatOut_FUN_00541e40(CNetGame *thi
   }
   dest = g_ChatOutMessages[iVar1].message;
   g_ChatOutMessages[iVar1].ack_flags.bytes[this_ptr->local_player_index] = 1;
-  memset(dest,0,0x100);
+  memset(dest,0,sizeof(g_ChatOutMessages[iVar1].message));
   _strncpy(dest,message,0xff);
   core_netgame_cpp_CNetGame_addChatHistory_FUN_00542370
             (this_ptr,&this_ptr->players[this_ptr->local_player_index].addr,

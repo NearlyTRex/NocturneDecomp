@@ -9236,12 +9236,16 @@
           "val":5
         },
         {
-          "name":"WEAPON_TYPE_MELEE",
+          "name":"WEAPON_TYPE_UNUSED",
           "val":6
         },
         {
-          "name":"WEAPON_TYPE_BARON",
+          "name":"WEAPON_TYPE_MELEE",
           "val":7
+        },
+        {
+          "name":"WEAPON_TYPE_BARON",
+          "val":8
         }
       ]
     },
@@ -37264,7 +37268,7 @@
       "fields":[
         {
           "len":4,
-          "name":"script_pause_flag",
+          "name":"mission_ended",
           "offset":0,
           "type":"int"
         },
@@ -40944,7 +40948,7 @@
           "len":4,
           "name":"weapon_state",
           "offset":716,
-          "type":"int"
+          "type":"EWeaponState"
         },
         {
           "len":4,
@@ -40962,7 +40966,7 @@
           "len":4,
           "name":"weapon_type",
           "offset":728,
-          "type":"int"
+          "type":"EWeaponType"
         },
         {
           "len":4,

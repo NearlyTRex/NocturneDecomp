@@ -25,7 +25,7 @@ void __cdecl core_script_cpp_CScript_FUN_004feff0(CScript *this_ptr)
   this_ptr->current_message[0] = '\0';
   this_ptr->cmd_timer = -1.0;
   this_ptr->dialog_wav_time = -1.0;
-  this_ptr->script_pause_flag = 0;
+  this_ptr->mission_ended = 0;
   iVar3 = g_LocalHeroIndex;
   this_ptr->who_is_speaking = (CDemonActor *)0x0;
   this_ptr->focus_actor = (CDemonActor *)g_HeroActors[iVar3];

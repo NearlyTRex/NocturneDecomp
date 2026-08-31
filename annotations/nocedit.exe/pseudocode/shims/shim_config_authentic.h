@@ -231,6 +231,140 @@
 #define NOCTURNE_AUTHENTIC_ACTOR_DELETE 0
 #endif
 
+// NOCTURNE_AUTHENTIC_HERO_WEAPON
+//   CHero::ctor ends with a direct (not virtual — it is a constructor) call to
+//   CHero::createDefaultWeapon, so every hero class is built holding a CGun
+//   named "Your_weapon" with a hundred rounds. Only CScat corrects it, from its
+//   own constructor. For the rest the pistol is wrong: Svetlana, IcePick and
+//   Haystack attack from melee motion states and never read
+//   inventory.selected_weapon at all, and Colonel and Moloch have no attack
+//   whatsoever, so the weapon slot names a weapon none of them can fire. The
+//   shipped game never showed it because the options screen pinned the player
+//   to the Stranger, for whom a CGun is right.
+//   1: shipped behaviour — every hero starts with the pistol.
+//   0: CDemonMission::createOneHero gives each newly built player hero what its
+//      class actually attacks with, or nothing when it attacks bare-handed.
+//      Inventory contents only; no fire path and no damage changes. NPCs of the
+//      same classes are untouched, and a hero carried over from a previous
+//      mission keeps the inventory it earned. See hero_weapon.h for the models
+//      chosen, where the slot's text comes from, and why this is not done from
+//      the constructors. Also covers how a weapon with no ammunition is
+//      presented: CInventory::renderAllItems suppresses the HUD ammo readout
+//      for the two such weapons the shipped game could reach (a CLightGun by
+//      class, a CMelee by category 3) but not for CBaronWeapon, which is
+//      neither - so Scat's summon printed the 20 rounds of type 0 that
+//      CWeapon::ctor left on it and that nothing reads or decrements.
+//      In a network game Scat also gains a pistol as a second weapon, with the
+//      Baron keeping the starting selection. Its reserve is restored after each
+//      shot: collecting ammunition runs through the pickup machinery, which is
+//      CStranger's alone, so a finite magazine would be spent permanently the
+//      first time it emptied.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_HERO_WEAPON=1.
+#ifndef NOCTURNE_AUTHENTIC_HERO_WEAPON
+#define NOCTURNE_AUTHENTIC_HERO_WEAPON 0
+#endif
+
+// NOCTURNE_AUTHENTIC_SHEATHED_FIRE
+//   With the weapon sheathed, the melee heroes treat fire as the action button:
+//   interact, open a door, talk, pull a lever. When none of those find anything
+//   the binary does not stop there - it jumps past the guard that would have
+//   suppressed the attack and swings anyway. In CSvetlana::process that is the
+//   JMP at 005d90cc landing on 005d9015, one instruction past the TEST/JZ at
+//   005d9011 that every successful interaction branches to; CIcePick and
+//   CHaystack are assembled the same way. So a hero with her blades put away
+//   still attacks with them whenever there is nothing nearby to use.
+//   It is deliberate in the original rather than a decompilation artifact, but
+//   it was never exercised: the options screen pinned the player to the
+//   Stranger, whose fire button is CStranger::handleFireButton and shares none
+//   of this.
+//   1: shipped behaviour - sheathed fire falls through to an attack.
+//   0: sheathed fire is only the action button; the attack needs the weapon
+//      drawn. Nothing else about the fire path changes.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_SHEATHED_FIRE=1.
+#ifndef NOCTURNE_AUTHENTIC_SHEATHED_FIRE
+#define NOCTURNE_AUTHENTIC_SHEATHED_FIRE 0
+#endif
+
+// NOCTURNE_AUTHENTIC_HERO_INTERACT
+//   Six of the nine playable classes reach the CHero interaction set from the
+//   fire button - tryInteract, a door, a conversation, a lever. CScat and
+//   CMoloch reach none of it: CScat::process goes from the button straight to
+//   the weapon, and CMoloch::process reads fire only to let him struggle out of
+//   a grab. Neither can open a door, pull a lever or talk to anyone, which in a
+//   mission built around levers and locked doors is a hero who cannot finish
+//   the level. The shipped game never noticed, because the options screen
+//   pinned the player to the Stranger.
+//   None of it needs animation - CHero::tryOpenDoor calls CDoor::onOpened and
+//   CHero::executeLeverPull calls CLever::activate - which is why the other
+//   five already work without the opendoor/pulllever motions that only
+//   STRANGER.SKL carries.
+//   1: shipped behaviour — Scat and Moloch cannot interact with anything.
+//   0: both reach the same interaction set the other melee heroes use, through
+//      the shared nocturne_hero_interact. Object pickup, item use and box
+//      pushing are NOT included; those sit on carry-hand state these classes do
+//      not maintain. See hero_interact.h.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_HERO_INTERACT=1.
+#ifndef NOCTURNE_AUTHENTIC_HERO_INTERACT
+#define NOCTURNE_AUTHENTIC_HERO_INTERACT 0
+#endif
+
+// NOCTURNE_AUTHENTIC_HERO_GRAB
+//   Whether a held hero can break out of a grab. Eight of the nine playable
+//   classes read grabbed_by only to face the grabber, call its
+//   attractActorToward and play a struggle motion while fire is down; not one
+//   of them ever calls releaseFromGrab, so the grab ends only when the grabber
+//   decides it does. CStranger is the exception - his own grab_timer releases
+//   him after 1.5 seconds - and the shipped options screen pinned the player
+//   to him, so nobody else's inability to escape was ever reachable.
+//   It is not a survivable difference. An enemy releases on a motion event in
+//   its own animation, and CSentinel::attractActorToward moves the victim with
+//   setPositionAndOrientation, a teleport with no collision test: a sentinel
+//   that never reaches its release event drags the hero through walls and off
+//   the map, and mashing fire does nothing.
+//   Escaping bounds how long the drag lasts; it does not make the drag legal,
+//   so this covers the carry too. The other two attractActorToward are
+//   harmless - CImp's moves nobody, CCharacter's pulls horizontally only and
+//   caps the step at delta_time * 5 - while CSentinel's snaps the victim onto
+//   the midpoint of its claw bones on all three axes, uncapped. The claw point
+//   is the right destination; writing it into the position is what puts the
+//   victim on the far side of the wall, and of whatever trigger was behind it.
+//   1: shipped behaviour — only the Stranger can break a grab, and the
+//      sentinel's carry ignores the world.
+//   0: a hero of any class breaks out on the Stranger's own 1.5 second timer,
+//      through the game's own CHero::releaseFromGrab; and the sentinel reaches
+//      the same claw point through CCharacter::moveAndCollide, so the carry
+//      stops at geometry and keeps area_id right. Scripted grabs still cannot
+//      be escaped. Every hero rather than only the player's, because
+//      control_type is per-machine and gating on it breaks lockstep — see
+//      hero_grab.h.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_HERO_GRAB=1.
+#ifndef NOCTURNE_AUTHENTIC_HERO_GRAB
+#define NOCTURNE_AUTHENTIC_HERO_GRAB 0
+#endif
+
+// NOCTURNE_AUTHENTIC_FRIENDLY_FIRE
+//   Whether a hero's damage lands on another hero in a network game. The
+//   shipped damage path has no notion of sides - SDamageInfo carries an
+//   attacker and a wielder and nothing asks which team either is on, because
+//   the game as shipped only ever had one hero in the world. With two, every
+//   weapon works on both, and a guest can end the host's run with one shot.
+//   1: shipped behaviour — heroes damage each other normally.
+//   0: a hit whose attacker or wielder is a hero does nothing to another hero,
+//      in a network game only. Single player is untouched, and so is anything
+//      an enemy does. See net_friendly.h.
+//
+//   Symmetric: it also stops the host killing a guest. Making it one-way is a
+//   single test in nocturne_net_friendly_fire_block if that is wanted.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_FRIENDLY_FIRE=1.
+#ifndef NOCTURNE_AUTHENTIC_FRIENDLY_FIRE
+#define NOCTURNE_AUTHENTIC_FRIENDLY_FIRE 0
+#endif
+
 // NOCTURNE_AUTHENTIC_NETPLAY
 //   1: matches the shipped binary — netplay is unreachable from any menu.
 //      Neither retail Nocturne nor this editor build ever exposed multiplayer
@@ -254,11 +388,11 @@
 //          network game - two of them (CMimic::setup, CTVBat::process) by
 //          quitting the process outright, which killed any mission that
 //          contained either actor. They now resolve as follows:
-//            CMimic (setup and  apes the local machine's own hero
-//              process, which
-//              carries a second
-//              copy of the same
-//              guard)
+//            CMimic              is built from the leader's model, skeleton
+//                                and cloth, and mirrors that same hero, so
+//                                every machine shows the same mimic. It
+//                                chases through the nearest-hero rule every
+//                                other enemy uses. See net_sim.h.
 //            CTVBat::process     follows hero 0
 //            '$' actor specifier resolves to hero 0 (both the event and the
 //                                script parser)
@@ -335,17 +469,71 @@
 #endif
 
 // NOCTURNE_AUTHENTIC_DEV_TOOLS
-//   Controls the editor's developer-tools surface: the "NON-RELEASE EDITOR
-//   BUILD" / "Press CTRL+D to access the editor menu" banner shown on menu
-//   screens, plus the Ctrl+D / Ctrl+L hotkeys that open the developer-tools
-//   menu (showDeveloperToolsMenu).
-//   1: show the banner and enable the Ctrl+D / Ctrl+L hotkeys — authentic
-//      nocedit.exe editor behavior.
-//   0: hide them; the build looks like a retail player (default).
+//   Whether the editor's developer-tools menu (showDeveloperToolsMenu) is
+//   available: the "Developer tools" entry on the Options screen, and the
+//   Ctrl+D / Ctrl+L hotkeys on the main menu.
+//   1: available — authentic nocedit.exe editor behavior (default).
+//   0: neither the Options entry nor the hotkeys exist; the build looks like a
+//      retail player.
 //
-//   Override with -DNOCTURNE_AUTHENTIC_DEV_TOOLS=1.
+//   The "NON-RELEASE EDITOR BUILD" / "Press CTRL+D to access the editor menu"
+//   banner is controlled separately, by NOCTURNE_AUTHENTIC_EDITOR_BRANDING
+//   below - the two are independent, so the developer tools can stay reachable
+//   without the build announcing itself as an editor.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_DEV_TOOLS=0.
 #ifndef NOCTURNE_AUTHENTIC_DEV_TOOLS
 #define NOCTURNE_AUTHENTIC_DEV_TOOLS 1
+#endif
+
+// NOCTURNE_AUTHENTIC_EDITOR_BRANDING
+//   Whether the build presents itself as Terminal Reality's internal editor.
+//   nocedit.exe says so in two places: a "NON-RELEASE EDITOR BUILD" line with
+//   "Press CTRL+D to access the editor menu" under it, drawn in the top-left
+//   corner of every menu screen by renderMenuAndGetChoice, and the window title
+//   "Nocturne Editor" that winMain passes to CreateWindowExA.
+//   1: authentic — both appear exactly as the editor shipped them.
+//   0: neither does; the window is titled "Nocturne" and the menus carry no
+//      banner. The banner advertised a keystroke that was once the only route
+//      to the developer-tools menu, and that menu is an Options entry now, so
+//      it has nothing left to tell anyone.
+//
+//   Only the window *title* changes. g_ApplicationTitle is separately the
+//   window class name and the key FindWindowA uses for the single-instance
+//   check, so it keeps its value in both modes.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_EDITOR_BRANDING=1.
+#ifndef NOCTURNE_AUTHENTIC_EDITOR_BRANDING
+#define NOCTURNE_AUTHENTIC_EDITOR_BRANDING 0
+#endif
+
+// NOCTURNE_AUTHENTIC_CHAPTER_SELECT
+//   What START on the main menu offers. CGame::showChapterSelect decides by
+//   probing for pod.ini:
+//
+//       p_Var3 = openFile("pod.ini", ...);
+//       if (bVar8 || p_Var3 != (_FILE *)0x0)  -> "*.msn" file browser
+//       else                                  -> Volume / Chapter pick lists
+//
+//   so a build with a pod.ini beside it gets the editor's mission browser and
+//   one without it gets the retail storyline. That is a sensible test for
+//   "am I sitting in a content tree", and a poor one for "does this player want
+//   to pick a chapter" - a working copy has a pod.ini in it, so the chapter
+//   lists the retail game shows are unreachable here however the game is built.
+//   The multiplayer host had no version of this at all: hostNetworkGame calls
+//   showFileSelectionDialog("*.msn") straight into g_CNetGamePtr->mission_name,
+//   so hosting means picking out of a raw listing of world\ and knowing which
+//   file is which chapter. This covers that call site too.
+//   1: shipped behaviour — the presence of pod.ini decides for START, and the
+//      host always gets the file browser.
+//   0: START always offers the chapter lists, and so does hosting. The mission
+//      browser is still one keystroke away in both: holding CTRL on START
+//      passes select_mode 1, which takes the browser branch on its own, and
+//      holding CTRL while hosting asks for it explicitly.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_CHAPTER_SELECT=1.
+#ifndef NOCTURNE_AUTHENTIC_CHAPTER_SELECT
+#define NOCTURNE_AUTHENTIC_CHAPTER_SELECT 0
 #endif
 
 // NOCTURNE_AUTHENTIC_BATTERY

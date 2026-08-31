@@ -21,7 +21,7 @@ CLightGun * __cdecl core_lightgun_cpp_CLightGun_ctor_FUN_004c6e30(CLightGun *thi
   pCVar3->fire_flash_pending = 0;
   (pCVar3->base).is_spread_weapon = 0;
   (pCVar3->base).fire_mode = 0;
-  (pCVar3->base).weapon_type = 2;
+  (pCVar3->base).weapon_type = WEAPON_TYPE_LIGHT_GUN;
   (pCVar3->base).can_penetrate = 0;
   (pCVar3->base).bolt_velocity = 32.0;
   (pCVar3->base).fire_cooldown = 1;

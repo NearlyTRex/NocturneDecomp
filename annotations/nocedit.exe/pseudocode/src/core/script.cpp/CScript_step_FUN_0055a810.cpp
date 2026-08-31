@@ -681,7 +681,7 @@ LAB_0055bb9d:
                                   if (g_ScriptEventsEnabled == 0) {
                                     core_mission_cpp_CDemonMission_setMissionName_FUN_00524630
                                               (g_CDemonMissionPtr,local_2e24);
-                                    this_ptr->script_pause_flag = 1;
+                                    this_ptr->mission_ended = 1;
                                     local_114 = iVar8;
                                   }
                                 }
@@ -1172,7 +1172,7 @@ LAB_0055cd52:
                                                             (pcVar7 + 3);
                                                   if (g_ScriptEventsEnabled == 0) {
                                                     local_114 = g_ScriptEventsEnabled;
-                                                    this_ptr->script_pause_flag = 1;
+                                                    this_ptr->mission_ended = 1;
                                                   }
                                                   }
                                                   else {
@@ -1452,7 +1452,7 @@ LAB_0055a97f:
                                                             (g_CEditorToolsPtr,
                                                              "Script GTFO at line %d:\n%s\nTerminating mission.",
                                                              iVar4,local_3400);
-                                                  this_ptr->script_pause_flag = 1;
+                                                  this_ptr->mission_ended = 1;
                                                   local_114 = 0;
                                                   }
                                                   }
@@ -1614,7 +1614,7 @@ LAB_0055a97f:
                                                   }
                                                   local_11c = local_11c + local_bc;
                                                   if (g_ScriptEventsEnabled == 0) {
-                                                    this_ptr->script_pause_flag = 1;
+                                                    this_ptr->mission_ended = 1;
                                                     local_114 = iVar8;
                                                     pCVar6->act_completion_state = 1;
                                                   }
@@ -2186,7 +2186,7 @@ joined_r0x0055c026:
                                                   }
                                                   local_11c = local_11c + local_8c;
                                                   if (g_ScriptEventsEnabled == 0) {
-                                                    this_ptr->script_pause_flag = 1;
+                                                    this_ptr->mission_ended = 1;
                                                     local_114 = iVar8;
                                                     pCVar6->act_completion_state = 2;
                                                   }

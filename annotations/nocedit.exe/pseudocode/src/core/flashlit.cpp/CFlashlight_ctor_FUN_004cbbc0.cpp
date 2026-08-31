@@ -18,7 +18,7 @@ CFlashlight * __cdecl core_flashlit_cpp_CFlashlight_ctor_FUN_004cbbc0(CFlashligh
             (&pCVar2->model,"flashlit.kfm");
   pCVar2->is_spread_weapon = 0;
   pCVar2->fire_mode = 0;
-  pCVar2->weapon_type = 5;
+  pCVar2->weapon_type = WEAPON_TYPE_FLASHLIGHT;
   pCVar2->can_penetrate = 0;
   pCVar2->bolt_velocity = 0.0;
   fVar1 = 8.0f;

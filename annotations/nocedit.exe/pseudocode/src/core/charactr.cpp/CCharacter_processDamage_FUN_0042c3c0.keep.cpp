@@ -19,7 +19,10 @@ void __cdecl core_charactr_cpp_CCharacter_processDamage_FUN_0042c3c0(CCharacter 
   float fVar2;
   EDamageType EVar5;
   float fVar4;
-  
+
+#if !NOCTURNE_AUTHENTIC_FRIENDLY_FIRE
+  nocturne_net_friendly_fire_block(this_ptr,damage_info);
+#endif
   if (damage_info->damage_amount <= 0.0) {
     return;
   }

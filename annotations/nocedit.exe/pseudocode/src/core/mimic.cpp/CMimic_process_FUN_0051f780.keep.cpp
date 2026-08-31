@@ -14,6 +14,7 @@ void __cdecl core_mimic_cpp_CMimic_process_FUN_0051f780(CMimic *this_ptr,float d
   uint uVar2;
   int iVar3;
   SMotion *pSVar4;
+  CHero *mirror_hero;
 
 #if NOCTURNE_AUTHENTIC_NETPLAY
   if (g_CNetGamePtr->connection_type != CONNECTION_NONE) {
@@ -22,11 +23,18 @@ void __cdecl core_mimic_cpp_CMimic_process_FUN_0051f780(CMimic *this_ptr,float d
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMimic::setup - can't use mimic in multi-player!");
   }
 #endif
-  iVar3 = g_LocalHeroIndex;
-  (this_ptr->base).base.base.scale.x = (g_HeroActors[g_LocalHeroIndex]->base).base.scale.x;
-  (this_ptr->base).base.base.scale.y = (g_HeroActors[iVar3]->base).base.scale.y;
+#if NOCTURNE_AUTHENTIC_NETPLAY
+  mirror_hero = g_HeroActors[g_LocalHeroIndex];
+#else
+  mirror_hero = nocturne_net_sim_mimic_hero();
+  if (mirror_hero == (CHero *)0x0) {
+    mirror_hero = nocturne_net_sim_leader_hero();
+  }
+#endif
+  (this_ptr->base).base.base.scale.x = (mirror_hero->base).base.scale.x;
+  (this_ptr->base).base.base.scale.y = (mirror_hero->base).base.scale.y;
   fVar1 = this_ptr->morph_blend;
-  (this_ptr->base).base.base.scale.z = (g_HeroActors[iVar3]->base).base.scale.z;
+  (this_ptr->base).base.base.scale.z = (mirror_hero->base).base.scale.z;
   if (0.0 <= fVar1) {
     core_mimic_cpp_CMimic_processMorph_FUN_00520ba0(this_ptr,delta_time);
     return;
@@ -44,7 +52,7 @@ void __cdecl core_mimic_cpp_CMimic_process_FUN_0051f780(CMimic *this_ptr,float d
       if ((iVar3 != 0) &&
          (core_mimic_cpp_CMimic_updatePose_FUN_0051f930(this_ptr), this_ptr->attack_mode == 1)) {
         pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                           (&(g_HeroActors[g_LocalHeroIndex]->base).model.motion_controller);
+                           (&(mirror_hero->base).model.motion_controller);
         uVar2 = pSVar4->state_index;
         if ((uVar2 < 3) || (uVar2 < 4)) {
 LAB_0051f8da:

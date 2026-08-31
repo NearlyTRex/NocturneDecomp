@@ -14,7 +14,8 @@ int __cdecl core_weapon_cpp_CWeapon_canPickup_FUN_00554260(CWeapon *this_ptr,CDe
   float fVar3;
   int iVar4;
   
-  if (((((this_ptr->carried_by_actor == (CDemonActor *)0x0) && (this_ptr->weapon_state == 0)) &&
+  if (((((this_ptr->carried_by_actor == (CDemonActor *)0x0) &&
+        (this_ptr->weapon_state == WEAPON_STATE_LYING_AROUND)) &&
        ((this_ptr->physics_box).is_valid != 0)) &&
       (fVar1 = (this_ptr->physics_box).linear_velocity_local.y,
       fVar2 = (this_ptr->physics_box).linear_velocity_local.x,
@@ -29,7 +30,8 @@ int __cdecl core_weapon_cpp_CWeapon_canPickup_FUN_00554260(CWeapon *this_ptr,CDe
     if (iVar4 != 0) {
       return 2;
     }
-    if ((this_ptr->weapon_state != 0) && (this_ptr->weapon_state != 3)) {
+    if ((this_ptr->weapon_state != WEAPON_STATE_LYING_AROUND) &&
+       (this_ptr->weapon_state != WEAPON_STATE_ON_HOOK)) {
       return 0;
     }
   }

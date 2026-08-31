@@ -6,6 +6,7 @@
 // Signature: void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004e2910(CGame *this_ptr)
 
 #include "nocturne.h"
+#include "debug_log.h"
 
 void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004e2910(CGame *this_ptr)
 
@@ -131,6 +132,28 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004e2910(CGame *this_p
       }
       engine_2d_c_clearInputAndWait_FUN_00403260();
       core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004dce70(this_ptr);
+      DLOG_EX("bitmap","showing '%s' conn=%d fire_down=%d mouse=%d",
+              this_ptr->bitmap_filename,(int)g_CNetGamePtr->connection_type,
+              (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,this_ptr->key_fire),
+              (int)g_MouseButtonFlags.dword);
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+      if (g_CNetGamePtr->connection_type != CONNECTION_NONE) {
+        nocturne_net_hold_begin();
+        do {
+          nocturne_net_keepalive();
+          wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
+        } while (nocturne_net_hold_active() != 0);
+        engine_2d_c_clearInputAndWait_FUN_00403260();
+        while ((g_MouseButtonFlags.dword != 0) ||
+              (iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,this_ptr->key_fire),
+               iVar4 != 0)) {
+          nocturne_net_keepalive();
+          wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
+        }
+      }
+      else
+#endif
+      {
       do {
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
         if (this_ptr->game_control == CONTROL_MODE_GAMEPAD) {
@@ -151,6 +174,8 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004e2910(CGame *this_p
           wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
         }
       }
+      }
+      DLOG_EX("bitmap","dismissed '%s'",this_ptr->bitmap_filename);
       engine_2d_c_clearInputAndWait_FUN_00403260();
       core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004dce70(this_ptr);
       core_game_cpp_CGame_saveClockTime_FUN_004d7d80(this_ptr);

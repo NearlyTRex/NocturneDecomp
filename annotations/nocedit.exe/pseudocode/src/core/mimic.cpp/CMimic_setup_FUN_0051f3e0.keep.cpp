@@ -19,6 +19,14 @@ void __cdecl core_mimic_cpp_CMimic_setup_FUN_0051f3e0(CMimic *this_ptr)
   int iVar11;
   uint class_name_hash;
   char *model_name;
+  CHero *mirror_hero;
+  char *cloth_name;
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+  char saved_motion_name[sizeof((this_ptr->base).base.model.motion_controller.current_motion_name)];
+  int motion_index;
+
+  saved_motion_name[0] = '\0';
+#endif
 
 #if NOCTURNE_AUTHENTIC_NETPLAY
   if (g_CNetGamePtr->connection_type != CONNECTION_NONE) {
@@ -27,16 +35,39 @@ void __cdecl core_mimic_cpp_CMimic_setup_FUN_0051f3e0(CMimic *this_ptr)
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMimic::setup - can't use mimic in multi-player!");
   }
 #endif
-  if (g_HeroActors[g_LocalHeroIndex] == (CHero *)0x0) {
+#if NOCTURNE_AUTHENTIC_NETPLAY
+  mirror_hero = g_HeroActors[g_LocalHeroIndex];
+#else
+  mirror_hero = nocturne_net_sim_mimic_hero();
+#endif
+  if (mirror_hero == (CHero *)0x0) {
     model_name = "stranger.dfm";
   }
   else {
-    model_name = (g_HeroActors[g_LocalHeroIndex]->base).model.model_name;
+    model_name = (mirror_hero->base).model.model_name;
   }
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&(this_ptr->base).base.model,model_name);
   pCVar1 = &(this_ptr->base).base.model;
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+  if ((g_CNetGamePtr->connection_type != CONNECTION_NONE) &&
+      (mirror_hero != (CHero *)0x0)) {
+    strcpy(saved_motion_name,
+           (this_ptr->base).base.model.motion_controller.current_motion_name);
+    (this_ptr->base).base.model.motion_controller.current_motion_name[0] = '\0';
+  }
+#endif
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(pCVar1);
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+  if (saved_motion_name[0] != '\0') {
+    motion_index = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460
+                             (pCVar1->motion_controller.motion_list_ptr,saved_motion_name,0);
+    if (motion_index < 0) {
+      motion_index = 0;
+    }
+    pCVar1->motion_controller.current_motion_index = motion_index;
+  }
+#endif
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(pCVar1);
   g_MimicIndices[0] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"Bip01 head",1);
@@ -73,7 +104,14 @@ void __cdecl core_mimic_cpp_CMimic_setup_FUN_0051f3e0(CMimic *this_ptr)
   g_MimicIndices[0x13] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"Bip01 Spine",1);
   core_enemy_cpp_CEnemy_setup_FUN_004a9650(&this_ptr->base);
-  core_cloth_cpp_CCloth_load_FUN_00438cf0(&this_ptr->cloth,"strcoat.cth");
+  cloth_name = "strcoat.cth";
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+  if (((g_CNetGamePtr->connection_type != CONNECTION_NONE) &&
+       (mirror_hero != (CHero *)0x0)) && (0 < (mirror_hero->base).cloth_list.count)) {
+    cloth_name = (mirror_hero->base).cloth_list.filenames[0];
+  }
+#endif
+  core_cloth_cpp_CCloth_load_FUN_00438cf0(&this_ptr->cloth,cloth_name);
   core_cloth_cpp_CCloth_setup_FUN_00439710
             (&this_ptr->cloth,&(this_ptr->base).base.base.location.position,
              &(this_ptr->base).base.base.orient.vec,pCVar1);

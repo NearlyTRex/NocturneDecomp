@@ -38,7 +38,10 @@ Press CTRL+D to access the editor menu        (top-left, line 0x14)
 
 These show up on the main menu, options menu, load/save screens — anywhere `renderMenuAndGetChoice` is the active menu renderer. Both strings are hardcoded literals — there's no `developer_mode_enabled` check around them, because as far as Terminal Reality was concerned, this binary is *always* the editor build. The retail Nocturne shipped a different player executable (not in this decompilation).
 
-**In this decompilation** the "unconditional" behavior above is the *original* binary's, preserved in the raw `.cpp`. The `.keep` files gate the banner *and* the `Ctrl+D` / `Ctrl+L` hotkeys behind `NOCTURNE_AUTHENTIC_DEV_TOOLS` (`shims/shim_config.h`), which defaults to `0` — so a default build **hides** them and behaves like a retail player. Build with `-DNOCTURNE_AUTHENTIC_DEV_TOOLS=1` to restore the original always-on editor banner + dev-tools access. Affected keeps: `renderMenuAndGetChoice_FUN_00510000.keep.cpp`, `showMainGameMenu_FUN_00512f40.keep.cpp`, `enterMainGameMenu_FUN_00507a50.keep.c`.
+**In this decompilation** the "unconditional" behavior above is the *original* binary's, preserved in the raw `.cpp`. The `.keep` files change it in two ways:
+
+- **The banner is never drawn.** Both corner strings are gone from `renderMenuAndGetChoice_FUN_00510000.keep.cpp` in every configuration. They existed to advertise a keystroke that was the only route in; the Options entry below says the same thing where a player already looks.
+- **Access is gated by `NOCTURNE_AUTHENTIC_DEV_TOOLS`** (`shims/shim_config_authentic.h`, default `1`). At `1` the developer-tools menu is reachable two ways: a `Developer tools` entry on the Options screen — main-menu route only, since `showDeveloperToolsMenu` resets the sound system and under `NOCTURNE_AUTHENTIC_D3D_OPTIONS` kills acceleration — and the original `Ctrl+D` / `Ctrl+L` hotkeys. At `0` neither exists and the build looks like a retail player. Affected keeps: `showOptionsScreen_FUN_00512d30.keep.cpp`, `enterMainGameMenu_FUN_00507a50.keep.c`, `showMainGameMenu_FUN_00512f40.keep.cpp` (orphan; no callers).
 
 ## License-agreement gate
 

@@ -17,7 +17,7 @@ int __cdecl core_charactr_cpp_CCharacter_process_FUN_00429870(CCharacter *this_p
   CScript *this_ptr_00;
   float fVar1;
   CPlatform *pCVar2;
-  
+
   fVar2 = this_ptr->sound_cooldown - delta_time;
   this_ptr->sound_cooldown = fVar2;
   if (fVar2 < 0.0) {
@@ -41,7 +41,13 @@ int __cdecl core_charactr_cpp_CCharacter_process_FUN_00429870(CCharacter *this_p
               (g_CGamePtr,this_ptr->descriptive_name,
                (int)(this_ptr->hit_points / this_ptr->max_hit_points),2.0);
   }
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+  if ((this_ptr->render_active == 0) ||
+     ((g_CNetGamePtr != (CNetGame *)0x0) &&
+      (g_CNetGamePtr->connection_type != CONNECTION_NONE))) {
+#else
   if (this_ptr->render_active == 0) {
+#endif
     if (this_ptr->closest_distance_threshold == 9999.0f) {
       for (iVar3 = 0; iVar3 < 2; iVar3 = iVar3 + 1) {
         if (this_ptr->carry_hands[iVar3].carry_actor != (CDemonActor *)0x0) {

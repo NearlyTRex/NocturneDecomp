@@ -24,7 +24,7 @@ CCrossbow * __cdecl core_crossbow_cpp_CCrossbow_ctor_FUN_00448c70(CCrossbow *thi
   (pCVar3->flame_size).z = 0.45;
   ADJ(pCVar3)->base.is_spread_weapon = 0;
   ADJ(pCVar3)->base.fire_mode = 0;
-  ADJ(pCVar3)->base.weapon_type = 1;
+  ADJ(pCVar3)->base.weapon_type = WEAPON_TYPE_SHOTGUN;
   ADJ(pCVar3)->base.can_penetrate = 0;
   ADJ(pCVar3)->base.bolt_velocity = 50.0;
   ADJ(pCVar3)->base.fire_cooldown = 0;

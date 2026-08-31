@@ -21,7 +21,7 @@ void __cdecl core_script_cpp_CScript_initRuntime_FUN_0055a540(CScript *this_ptr)
   this_ptr->current_message[0] = '\0';
   this_ptr->cmd_timer = -1.0;
   this_ptr->dialog_wav_time = -1.0;
-  this_ptr->script_pause_flag = 0;
+  this_ptr->mission_ended = 0;
   iVar4 = g_LocalHeroIndex;
 #if !NOCTURNE_AUTHENTIC_NETPLAY
   if ((g_HeroActors[iVar4] == (CHero *)0x0) ||

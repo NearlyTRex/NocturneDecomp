@@ -6,6 +6,8 @@
 #include "types/classes/CColor3i.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CKeyFramedModelInstance.h"
+#include "types/enums/EWeaponState.h"
+#include "types/enums/EWeaponType.h"
 
 // Structure: CWeapon
 // Ghidra size: 0x570 (1392 bytes)
@@ -13,10 +15,10 @@
 typedef struct CWeapon {
     CDemonActor base; // 0x0
     CKeyFramedModelInstance model; // 0x150
-    int weapon_state; // 0x2cc
+    EWeaponState weapon_state; // 0x2cc
     int is_spread_weapon; // 0x2d0
     int fire_mode; // 0x2d4
-    int weapon_type; // 0x2d8
+    EWeaponType weapon_type; // 0x2d8
     int can_penetrate; // 0x2dc
     float bolt_velocity; // 0x2e0
     int fire_cooldown; // 0x2e4

@@ -58,13 +58,13 @@
       {
         "category": "cast_error",
         "column": 13,
-        "line": 118,
+        "line": 119,
         "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
       },
       {
         "category": "cast_error",
         "column": 37,
-        "line": 121,
+        "line": 122,
         "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
       }
     ],
@@ -74,17 +74,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 285,
-    "complexity_score": 184,
+    "complexity_score": 185,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 139,
+    "pseudocode_lines": 140,
     "suspect_count": 4,
     "suspect_types": [
       "unaffected_reg"
     ],
-    "total_lines": 424
+    "total_lines": 425
   },
   "cross_references": [
     {
@@ -225,7 +225,7 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 13,
+      "line": 14,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "CDemonActor *unaff_EBX;",
@@ -233,7 +233,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 15,
+      "line": 16,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "int unaff_EDI;",
@@ -241,15 +241,15 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 121,
+      "line": 122,
       "match": "unaff_EDI",
       "severity": "moderate",
-      "text": "((CCharacter *)this_ptr->weapon,grabber,unaff_EDI), iVar4 != 0)) {",
+      "text": "((CCharacter *)this_ptr->weapon,grabber,unaff_EDI), iVar5 != 0)) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 129,
+      "line": 130,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "((CCharacter *)this_ptr->weapon,unaff_EBX);",

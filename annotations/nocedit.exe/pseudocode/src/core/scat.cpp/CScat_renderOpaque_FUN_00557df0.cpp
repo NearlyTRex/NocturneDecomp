@@ -26,7 +26,7 @@ int __cdecl core_scat_cpp_CScat_renderOpaque_FUN_00557df0(CScat *this_ptr)
         default:
           iVar2 = 2;
           break;
-        case 8:
+        case WEAPON_TYPE_BARON:
           iVar2 = 0;
         }
       }

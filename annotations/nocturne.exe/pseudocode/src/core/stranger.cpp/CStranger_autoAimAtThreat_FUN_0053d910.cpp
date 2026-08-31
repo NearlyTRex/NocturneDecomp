@@ -46,7 +46,7 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0053d910(CStranger 
   float fStack_54;
   float fStack_50;
   float fStack_4c;
-  int local_48;
+  EWeaponType local_48;
   float fStack_44;
   int iStack_40;
   int iStack_3c;
@@ -77,13 +77,13 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0053d910(CStranger 
       local_24->aim_pitch = 0.0;
       return;
     }
-    local_48 = 3;
+    local_48 = WEAPON_TYPE_DYNAMITE;
   }
   else {
     local_48 = this_ptr->weapon->weapon_type;
   }
   if (hand_index == 0) {
-    if (((this_ptr->base).aim_mode == AIM_MODE_MANUAL) && (local_48 == 0)) {
+    if (((this_ptr->base).aim_mode == AIM_MODE_MANUAL) && (local_48 == WEAPON_TYPE_GUN)) {
       return;
     }
     local_30 = -1.3089969;
@@ -94,7 +94,7 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0053d910(CStranger 
   else {
     iVar9 = _DAT_02dc9f88;
     iVar10 = _DAT_02dc9f60;
-    if (local_48 == 0) {
+    if (local_48 == WEAPON_TYPE_GUN) {
       local_2c = 1.3089969;
       local_30 = -0.5235988;
     }
@@ -128,7 +128,8 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0053d910(CStranger 
   local_24->aim_lock_state = 0;
   fStack_38 = local_24->aim_yaw;
   fStack_34 = local_24->aim_pitch;
-  if ((local_48 == 3) || (EVar1 = (this_ptr->base).aim_mode, EVar1 != AIM_MODE_AUTO)) {
+  if ((local_48 == WEAPON_TYPE_DYNAMITE) ||
+     (EVar1 = (this_ptr->base).aim_mode, EVar1 != AIM_MODE_AUTO)) {
     local_24->target_yaw = 0.0;
   }
   else {
@@ -144,7 +145,7 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0053d910(CStranger 
       EStack_74 = pEVar5[2];
     }
     this_ptr_01 = &(this_ptr->base).base.model;
-    if (local_48 == 0) {
+    if (local_48 == WEAPON_TYPE_GUN) {
       pCVar6 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
                          (this_ptr_01,&CStack_a0,iVar10);
       if (&CStack_100 != pCVar6) {
@@ -244,7 +245,7 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0053d910(CStranger 
     }
   }
   dVar3 = 1.5;
-  if (local_48 != 0) {
+  if (local_48 != WEAPON_TYPE_GUN) {
     dVar3 = 0.5;
   }
   fStack_44 = delta_time * (float)3.1415926535000001 * (float)dVar3;

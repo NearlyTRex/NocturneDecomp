@@ -29,8 +29,8 @@ void __cdecl core_script_cpp_CScript_process_FUN_004fe5b0(CScript *this_ptr)
     _DAT_01e56c24 = 0;
     local_14 = local_18;
     do {
-      if (((local_18 <= 0.0) || (this_ptr->script_state == 2)) || (this_ptr->script_pause_flag != 0)
-         ) goto LAB_004fe623;
+      if (((local_18 <= 0.0) || (this_ptr->script_state == 2)) || (this_ptr->mission_ended != 0))
+      goto LAB_004fe623;
       iVar1 = this_ptr->next_cmd;
       iVar2 = core_script_cpp_CScript_step_FUN_004ff2c0(this_ptr,&local_18);
       if (iVar2 == 0) goto LAB_004fe623;

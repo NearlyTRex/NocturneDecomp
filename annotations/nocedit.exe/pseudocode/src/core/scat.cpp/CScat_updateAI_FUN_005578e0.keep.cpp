@@ -84,7 +84,7 @@ void __cdecl core_scat_cpp_CScat_updateAI_FUN_005578e0(CScat *this_ptr,float del
   }
   if (this_ptr->weapon_actor == (CWeapon *)0x0) goto LAB_00557b63;
   local_2c = 0;
-  if (this_ptr->weapon_actor->weapon_type == 8) {
+  if (this_ptr->weapon_actor->weapon_type == WEAPON_TYPE_BARON) {
     if (local_7c < (float)8) {
       pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                          (&(this_ptr->base).base.model.motion_controller);

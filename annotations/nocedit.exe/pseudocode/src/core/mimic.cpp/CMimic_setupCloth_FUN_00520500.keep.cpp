@@ -14,23 +14,30 @@ void __cdecl core_mimic_cpp_CMimic_setupCloth_FUN_00520500(CMimic *this_ptr)
   CGabriella *pCVar1;
   SMotion *motion_name;
   float frame_number;
+  CHero *mirror_hero;
 
+#if NOCTURNE_AUTHENTIC_NETPLAY
+  mirror_hero = g_HeroActors[g_LocalHeroIndex];
+#else
+  mirror_hero = nocturne_net_sim_mimic_hero();
+  if (mirror_hero == (CHero *)0x0) {
+    return;
+  }
+#endif
   this_ptr->attack_mode = 2;
   core_cloth_cpp_CCloth_setup_FUN_00439710
             (&this_ptr->cloth,&(this_ptr->base).base.base.location.position,
              &(this_ptr->base).base.base.orient.vec,&(this_ptr->base).base.model);
   pCVar1 = (CGabriella *)
            core_actor_cpp_castToClassHash_FUN_0040c790
-                     ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],g_CGabriellaClassInfo.name_hash)
-  ;
+                     ((CDemonActor *)mirror_hero,g_CGabriellaClassInfo.name_hash);
   if (pCVar1 != (CGabriella *)0x0) {
     memcpy((this_ptr->cloth).vertices,(pCVar1->coat_cloth).vertices,
            (this_ptr->cloth).model.vertex_count * sizeof(SClothVertex));
   }
-  frame_number = (g_HeroActors[g_LocalHeroIndex]->base).model.motion_controller.current_frame_number
-  ;
+  frame_number = (mirror_hero->base).model.motion_controller.current_frame_number;
   motion_name = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                          (&(g_HeroActors[g_LocalHeroIndex]->base).model.motion_controller);
+                          (&(mirror_hero->base).model.motion_controller);
   this_ptr_01 = &(this_ptr->base).base.model;
   core_motion_cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0
             (&this_ptr_01->motion_controller,motion_name->motion_name,frame_number);

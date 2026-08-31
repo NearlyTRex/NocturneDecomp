@@ -18,8 +18,8 @@ void __cdecl core_weapon_cpp_CWeapon_process_FUN_00554030(CWeapon *this_ptr,floa
      fVar3 < 0.0)) {
     this_ptr->fire_cooldown_timer = 0.0;
   }
-  if (((this_ptr->carried_by_actor == (CDemonActor *)0x0) && (this_ptr->weapon_state == 0)) &&
-     (0.0 < this_ptr->sim_timer)) {
+  if (((this_ptr->carried_by_actor == (CDemonActor *)0x0) &&
+      (this_ptr->weapon_state == WEAPON_STATE_LYING_AROUND)) && (0.0 < this_ptr->sim_timer)) {
     fVar3 = this_ptr->sim_timer - delta_time;
     this_ptr->sim_timer = fVar3;
     if (fVar3 < 0.0) {

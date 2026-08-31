@@ -37,6 +37,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
   int net_waiting;
   int net_was_waiting;
   int net_host_hero;
+  int net_was_client;
   CDemonActor *net_dbg_focus;
 #endif
 
@@ -46,6 +47,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
   net_was_waiting = 0;
   net_host_hero = 0;
   net_dbg_focus = (CDemonActor *)0x0;
+  net_was_client = g_CNetGamePtr->connection_type == CONNECTION_CLIENT;
 #endif
   local_14 = 0.0;
   local_1c = 0;
@@ -137,6 +139,17 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
   if ((iVar3 != 0) &&
      (iVar5 = core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(g_CNetGamePtr,4), iVar5 != 0)) {
     g_CNetGamePtr->network_mode = NET_MODE_PLAYING;
+#if !NOCTURNE_AUTHENTIC_NETPLAY && NOCTURNE_NETPLAY_SIM_TRACE
+    if (g_CNetGamePtr->connection_type != CONNECTION_NONE &&
+        0 <= g_CNetGamePtr->local_player_index) {
+      DLOG_EX("netplay",
+              "PLAYING conn=%d local_idx=%d server_idx=%d history=%d process=%d",
+              (int)g_CNetGamePtr->connection_type,
+              g_CNetGamePtr->players[g_CNetGamePtr->local_player_index].sim_frame_index,
+              g_CNetGamePtr->server_player_index, g_SimFrameCount,
+              nocturne_sim_trace_process_calls());
+    }
+#endif
     core_game_cpp_CGame_saveClockTime_FUN_004d7d80(this_ptr);
     core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004dce70(this_ptr);
     core_netgame_cpp_CNetGame_processServerFrame_FUN_00543150(g_CNetGamePtr);
@@ -177,6 +190,13 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
           local_1c = 0;
           goto LAB_004db434;
         }
+      }
+      if ((net_was_client != 0) &&
+         (g_CNetGamePtr->connection_type == CONNECTION_NONE)) {
+        shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
+                  (g_CEditorToolsPtr,"The host ended the network game");
+        local_1c = 0;
+        goto LAB_004db434;
       }
 #endif
       if (g_ModalDialogActive == 0) {
@@ -416,10 +436,16 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
           }
         }
       }
-      if (g_CScriptPtr->script_pause_flag != 0) {
+      if (g_CScriptPtr->mission_ended != 0) {
         local_1c = 1;
         goto LAB_004db434;
       }
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+      if (nocturne_net_mission_pending() != 0) {
+        local_1c = 1;
+        goto LAB_004db434;
+      }
+#endif
       core_game_cpp_CGame_showFullscreenBitmap_FUN_004e2910(this_ptr);
       if (this_ptr->wait_for_keypress != 0) {
         wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
@@ -435,7 +461,11 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
 LAB_004db434:
   EVar5 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
                     (&g_HeroActors[g_LocalHeroIndex]->base);
-  if ((EVar5 == DEATH_STATE_DEAD) && (this_ptr->need_chapter_reload == 0)) {
+  if ((EVar5 == DEATH_STATE_DEAD) && (this_ptr->need_chapter_reload == 0)
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+      && (net_was_client == 0)
+#endif
+     ) {
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_4c8);
     pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Load game");
     shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_4c8.base,pcVar10);

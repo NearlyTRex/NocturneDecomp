@@ -6,6 +6,7 @@
 // Signature: void __cdecl core_game_cpp_CGame_displayBitmap_FUN_004e2890(CGame *this_ptr,char *filename,int width,int height)
 
 #include "nocturne.h"
+#include "debug_log.h"
 
 void __cdecl core_game_cpp_CGame_displayBitmap_FUN_004e2890(CGame *this_ptr,char *filename,int width,int height)
 
@@ -19,5 +20,6 @@ void __cdecl core_game_cpp_CGame_displayBitmap_FUN_004e2890(CGame *this_ptr,char
   strcpy(this_ptr->bitmap_filename,filename);
   this_ptr->bitmap_width = width;
   this_ptr->bitmap_height = height;
+  DLOG_EX("bitmap","queued '%s' %dx%d",filename,width,height);
   return;
 }

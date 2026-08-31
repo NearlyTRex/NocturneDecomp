@@ -93,6 +93,14 @@ void nocturne_sim_trace_note_process(float delta_time);
 // previous session cannot be diffed against this one.
 void nocturne_sim_trace_reset(void);
 
+// How many times CGame::process has run since the last reset. Exposed because
+// the count is the thing that distinguishes two machines that agree on every
+// sim frame but have stepped the world a different number of times — a guest
+// one process ahead applies the same sequence numbers with the same seeds and
+// still ends up permanently offset in position. Zero when the trace is
+// compiled out, so a caller reads "no information", not a wrong number.
+int nocturne_sim_trace_process_calls(void);
+
 #ifdef __cplusplus
 }
 #endif

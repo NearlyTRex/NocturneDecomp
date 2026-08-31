@@ -20,7 +20,7 @@ CFlameThrower * __cdecl core_flamegun_cpp_CFlameThrower_ctor_FUN_004cb880(CFlame
   pCVar2->is_firing = 0;
   (pCVar2->base).is_spread_weapon = 0;
   (pCVar2->base).fire_mode = 0;
-  (pCVar2->base).weapon_type = 2;
+  (pCVar2->base).weapon_type = WEAPON_TYPE_LIGHT_GUN;
   (pCVar2->base).can_penetrate = 0;
   (pCVar2->base).bolt_velocity = 15.0;
   (pCVar2->base).fire_cooldown = 1;

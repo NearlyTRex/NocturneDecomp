@@ -6060,8 +6060,8 @@ static_assert(__builtin_offsetof(CScat, aim_converged) == 130044,
 // ---- CScript (1152 bytes) ----
 static_assert(sizeof(CScript) == 1152,
               "sizeof(CScript) != 1152");
-static_assert(__builtin_offsetof(CScript, script_pause_flag) == 0,
-              "offsetof(CScript, script_pause_flag) != 0");
+static_assert(__builtin_offsetof(CScript, mission_ended) == 0,
+              "offsetof(CScript, mission_ended) != 0");
 static_assert(__builtin_offsetof(CScript, who_is_speaking) == 4,
               "offsetof(CScript, who_is_speaking) != 4");
 static_assert(__builtin_offsetof(CScript, last_speaker) == 8,

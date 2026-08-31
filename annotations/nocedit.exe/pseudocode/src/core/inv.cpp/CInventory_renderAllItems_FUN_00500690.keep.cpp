@@ -101,6 +101,12 @@ void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_00500690(CInventory *thi
   if (pCVar3 == (CLightGun *)0x0) {
     iVar3 = core_inv_cpp_CInventory_isWeaponInCategory_FUN_004ffe70
                       (this_ptr,&this_ptr->selected_weapon->base,3);
+#if !NOCTURNE_AUTHENTIC_HERO_WEAPON
+    if (iVar3 == 0) {
+      iVar3 = core_actor_cpp_isOfClass_FUN_0040c6d0
+                        (&this_ptr->selected_weapon->base,"CBaronWeapon");
+    }
+#endif
     if (iVar3 == 0) {
       iVar10 = g_WindowWidth - iVar8;
       iVar5 = g_WindowHeight - iVar8;

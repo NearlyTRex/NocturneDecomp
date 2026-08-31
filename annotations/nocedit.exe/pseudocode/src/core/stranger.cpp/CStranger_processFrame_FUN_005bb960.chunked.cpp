@@ -1388,7 +1388,7 @@ LAB_005bc1a6:
   }
   core_stranger_cpp_CStranger_updateProceduralAnimation_FUN_005be520(this_ptr);
   if ((((this_ptr->base).aim_mode == AIM_MODE_MANUAL) && (this_ptr->weapon != (CWeapon *)0x0)) &&
-     (this_ptr->weapon->weapon_type == 0)) {
+     (this_ptr->weapon->weapon_type == WEAPON_TYPE_GUN)) {
     core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
               (&(this_ptr->base).base.model);
     core_stranger_cpp_CStranger_updateWeaponPosition_FUN_005c06b0(this_ptr,0);

@@ -77,7 +77,7 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(CNetGame *this_pt
       if ((float)0.10000000000000001 < local_198) {
         local_24 = g_CurrentGameTime;
         local_30.header.type = PACKET_SYNC_STAGE_REQ;
-        local_30.header.size = 9;
+        local_30.header.size = sizeof(SNetPacket_Simple);
         local_30.value = sync_stage;
         iVar1 = 0;
         if (0 < this_ptr->player_count) {

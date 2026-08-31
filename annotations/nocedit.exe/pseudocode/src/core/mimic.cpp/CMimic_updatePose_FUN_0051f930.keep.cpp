@@ -31,12 +31,21 @@ void __cdecl core_mimic_cpp_CMimic_updatePose_FUN_0051f930(CMimic *this_ptr)
   CCloth *pCVar3;
   CDemonActor *pCVar4;
   CHero *pCVar2;
-  
+  CHero *mirror_hero;
+
+#if NOCTURNE_AUTHENTIC_NETPLAY
+  mirror_hero = g_HeroActors[g_LocalHeroIndex];
+#else
+  mirror_hero = nocturne_net_sim_mimic_hero();
+  if (mirror_hero == (CHero *)0x0) {
+    return;
+  }
+#endif
   pCVar6 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
                      (&(this_ptr->base).base.model);
   iVar6 = pCVar6->bone_count;
   for (iVar7 = 0; iVar7 < iVar6; iVar7 = iVar7 + 1) {
-    pCVar5 = g_HeroActors[g_LocalHeroIndex];
+    pCVar5 = mirror_hero;
     (this_ptr->base).base.model.bone_transform.pose_data.bone_rotations[iVar7] =
          (pCVar5->base).model.bone_transform.pose_data.bone_rotations[iVar7];
     (this_ptr->base).base.model.bone_transform.bone_world_matrices[iVar7] =
@@ -44,7 +53,7 @@ void __cdecl core_mimic_cpp_CMimic_updatePose_FUN_0051f930(CMimic *this_ptr)
     (this_ptr->base).base.model.transformed_vertices[iVar7] =
          (pCVar5->base).model.transformed_vertices[iVar7];
   }
-  pCVar2 = g_HeroActors[g_LocalHeroIndex];
+  pCVar2 = mirror_hero;
   pSVar8 = &(this_ptr->base).base.model.bone_transform;
   pSVar13 = &(pCVar2->base).model.bone_transform;
   if (pSVar8 != pSVar13) {
@@ -55,9 +64,17 @@ void __cdecl core_mimic_cpp_CMimic_updatePose_FUN_0051f930(CMimic *this_ptr)
          (pCVar2->base).model.bone_transform.pose_data.root_position.z;
   }
   (this_ptr->base).base.model.cached_skinned_lod_index = -1;
-  pCVar3 = (g_HeroActors[g_LocalHeroIndex]->base).cloth_list.cloths[0];
+  pCVar3 = (mirror_hero->base).cloth_list.cloths[0];
+#if NOCTURNE_AUTHENTIC_NETPLAY
   memcpy((this_ptr->cloth).model.vertex_list,(pCVar3->model).vertex_list,
          (pCVar3->model).vertex_count * sizeof(CVector3i));
+#else
+  if ((pCVar3 != (CCloth *)0x0) &&
+      ((pCVar3->model).vertex_count <= (this_ptr->cloth).model.vertex_count)) {
+    memcpy((this_ptr->cloth).model.vertex_list,(pCVar3->model).vertex_list,
+           (pCVar3->model).vertex_count * sizeof(CVector3i));
+  }
+#endif
   pCVar4 = this_ptr->mirror_plane_actor;
   if (pCVar4 != (CDemonActor *)0x0) {
     core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
@@ -66,8 +83,8 @@ void __cdecl core_mimic_cpp_CMimic_updatePose_FUN_0051f930(CMimic *this_ptr)
               (&local_c0,&(this_ptr->mirror_plane_actor->location).position,
                &(this_ptr->mirror_plane_actor->orient).vec);
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
-              (&local_f0,&(g_HeroActors[g_LocalHeroIndex]->base).base.location.position,
-               &(g_HeroActors[g_LocalHeroIndex]->base).base.orient.vec);
+              (&local_f0,&(mirror_hero->base).base.location.position,
+               &(mirror_hero->base).base.orient.vec);
     core_xform_cpp_buildZFlipMatrix_FUN_005f6fa0(0.0,&local_90);
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_f0,&local_120,&local_210);
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_210,&local_90,&local_1e0);

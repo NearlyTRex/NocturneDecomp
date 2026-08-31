@@ -13,9 +13,9 @@ void __cdecl core_weapon_cpp_CWeapon_getPropertyList_FUN_005ee9f0(CWeapon *this_
   core_actor_cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0
             (property_list,"Model file (.kfm)",&this_ptr->model,0);
   core_actor_cpp_CActorPropertyList_addEnumPair_FUN_0040e640
-            (property_list,"Weapon state",4,g_WeaponStateTypePairs,&this_ptr->weapon_state)
-  ;
-  if (this_ptr->weapon_state != 0) {
+            (property_list,"Weapon state",4,g_WeaponStateTypePairs,
+             (int *)&this_ptr->weapon_state);
+  if (this_ptr->weapon_state != WEAPON_STATE_LYING_AROUND) {
     return;
   }
   core_actor_cpp_CActorPropertyList_addFloat_FUN_0040e160

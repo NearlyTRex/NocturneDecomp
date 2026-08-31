@@ -33,7 +33,7 @@ void __cdecl core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_00543970(CNetGame *th
     g_CurrentLineNumber = 2604;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CNetGame::sendSimFrameAck - I'm not in player list");
   }
-  local_48.header.size = 0x35;
+  local_48.header.size = sizeof(SNetPacket_PlayerInput);
   local_48.header.type = PACKET_PLAYER_INPUT;
   local_48.sim_frame_index = this_ptr->players[this_ptr->local_player_index].sim_frame_index;
   iVar1 = this_ptr->local_player_index;

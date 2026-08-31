@@ -31,7 +31,8 @@ void __cdecl core_scat_cpp_CScat_updateWeaponAttachment_FUN_00558fd0(CScat *this
   CDemonActor_vtable *pCVar1;
   CWeapon *this_ptr_00;
   
-  if ((this_ptr->weapon_actor != (CWeapon *)0x0) && (this_ptr->weapon_actor->weapon_type != 8)) {
+  if ((this_ptr->weapon_actor != (CWeapon *)0x0) &&
+     (this_ptr->weapon_actor->weapon_type != WEAPON_TYPE_BARON)) {
     local_40.x = 0.0;
     local_40.z = 1.5707964;
     local_40.y = 1.5707964;

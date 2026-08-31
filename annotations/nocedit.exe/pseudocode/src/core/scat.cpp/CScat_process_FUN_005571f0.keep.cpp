@@ -42,7 +42,7 @@ void __cdecl core_scat_cpp_CScat_process_FUN_005571f0(CScat *this_ptr,float delt
   float fVar4;
   CVector3f *pCVar1;
   float fVar2;
-  
+
   iVar10 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
   pCVar9 = g_CGamePtr;
   if (iVar10 == 0) {
@@ -108,13 +108,25 @@ void __cdecl core_scat_cpp_CScat_process_FUN_005571f0(CScat *this_ptr,float delt
             desired_state_index = 10;
           }
         }
+#if !NOCTURNE_AUTHENTIC_HERO_INTERACT
+        if (((this_ptr->base).player_input.action_state.fire != 0) &&
+            (this_ptr->guns_drawn == 0) &&
+            ((this_ptr->base).control_type != HERO_CONTROL_AI)) {
+          if (nocturne_hero_interact(&this_ptr->base) != 0) {
+            (this_ptr->base).player_input.action_state.fire = 0;
+          }
+        }
+#endif
         if (((((this_ptr->base).player_input.action_state.fire != 0) && (this_ptr->guns_drawn != 0))
             && (pCVar6 = this_ptr->weapon_actor, pCVar6 != (CWeapon *)0x0)) &&
            (iVar7 = (*(((pCVar6->base).vtable._uw)->_uw).isReadyToFire)(pCVar6), iVar7 != 0)) {
           (*(((this_ptr->weapon_actor->base).vtable._uw)->_uw).fire)(this_ptr->weapon_actor);
           pCVar6 = this_ptr->weapon_actor;
+#if !NOCTURNE_AUTHENTIC_HERO_WEAPON
+          nocturne_hero_reload_extra_gun(&this_ptr->base,pCVar6);
+#endif
           (this_ptr->base).player_input.action_state.fire = 0;
-          if (pCVar6->weapon_type == 8) {
+          if (pCVar6->weapon_type == WEAPON_TYPE_BARON) {
             desired_state_index = 0xb;
           }
         }
@@ -186,6 +198,9 @@ LAB_00557637:
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
               (&(this_ptr->base).base.model.motion_controller,iVar7,1);
   }
+#if !NOCTURNE_AUTHENTIC_HERO_GRAB
+  nocturne_hero_grab_escape(&this_ptr->base,delta_time);
+#endif
   pCVar4 = (this_ptr->base).base.grabbed_by;
   if (pCVar4 == (CDemonActor *)0x0) {
     pCVar8 = &(this_ptr->base).base.model.accumulated_root_motion;

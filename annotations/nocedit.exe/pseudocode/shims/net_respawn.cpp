@@ -432,6 +432,18 @@ extern "C" void nocturne_net_respawn_apply_if_due(int sequence_number)
                 (&(hero->base).model.motion_controller, 0, 0.0f);
         }
 
+        // Whatever had hold of the hero does not still have hold of him
+        // somewhere else. CHero::releaseFromGrab forces STAND when a GETGRABBED
+        // state is still blended in and clears grabbed_by, which notifies the
+        // grabber through onVictimLost so it drops its victim too — otherwise
+        // the hero arrives at the respawn point locked in the grab animation,
+        // with his class's process still taking the grabbed branch every frame
+        // and no way to move. Ordering matters: this runs before the move, so
+        // the teleport below is the last word on where he ends up.
+        if ((hero->base).grabbed_by != (CDemonActor *)0x0) {
+            (*(((hero->base).base.vtable._uc)->_uc).releaseFromGrab)(&hero->base);
+        }
+
         (*((hero->base).base.vtable._ub)->setPositionAndOrientation)
             (&(hero->base).base, &position, &orient);
 

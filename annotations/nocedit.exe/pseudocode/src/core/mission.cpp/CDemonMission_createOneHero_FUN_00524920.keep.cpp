@@ -45,6 +45,9 @@ LAB_0052499a:
             (fallback_placeholder != (CHeroPlaceholder *)0x0)) {
           this_ptr_00 = fallback_placeholder;
           local_14 = core_hero_cpp_CHeroPlaceholder_createHero_FUN_004f3d80(this_ptr_00,hero_type);
+#if !NOCTURNE_AUTHENTIC_HERO_WEAPON
+          nocturne_hero_default_weapon(local_14,hero_type);
+#endif
           (local_14->base).base.location.area_id = -1;
           core_mission_cpp_CDemonMission_addActorToList_FUN_00523b70
                     (g_CDemonMissionPtr,(CDemonActor *)local_14);
@@ -76,6 +79,9 @@ LAB_0052499a:
       if (index == this_ptr_00->index) {
         if (existing_actor == (CCharacter *)0x0) {
           local_14 = core_hero_cpp_CHeroPlaceholder_createHero_FUN_004f3d80(this_ptr_00,hero_type);
+#if !NOCTURNE_AUTHENTIC_HERO_WEAPON
+          nocturne_hero_default_weapon(local_14,hero_type);
+#endif
         }
         else {
           local_14 = (CHero *)existing_actor;

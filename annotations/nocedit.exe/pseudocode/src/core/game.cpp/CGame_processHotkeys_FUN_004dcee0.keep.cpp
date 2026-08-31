@@ -22,7 +22,7 @@ void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004dcee0(CGame *this_ptr)
   char acStack_118 [232];
   float fStack_2c;
   int iStack_30;
-  
+
   if (g_ModalDialogActive == 0) {
     if (this_ptr->cutscene_skippable == 0) {
       if ((((this_ptr->developer_mode_enabled != 0) &&
@@ -123,6 +123,11 @@ void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004dcee0(CGame *this_ptr)
       core_game_cpp_CGame_saveGame_FUN_004e0cd0(this_ptr,(char *)0x0);
     }
     iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_F3);
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+    if (g_CNetGamePtr->connection_type != CONNECTION_NONE) {
+      iVar4 = 0;
+    }
+#endif
     if (iVar4 != 0) {
       core_game_cpp_CGame_promptLoadGame_FUN_004e36f0(this_ptr);
     }

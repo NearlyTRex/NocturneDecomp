@@ -35,7 +35,7 @@ void __cdecl core_colonel_cpp_CColonel_process_FUN_0043fa00(CColonel *this_ptr,f
   uint uVar2;
   CDemonActor *pCVar3;
   CVector3f *pCVar1;
-  
+
   iVar5 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar5 == 0) {
     return;
@@ -151,6 +151,9 @@ LAB_0043fad3:
               (&(this_ptr->base).base.model.motion_controller,iVar6,1);
   }
 switchD_0043fe37_caseD_5:
+#if !NOCTURNE_AUTHENTIC_HERO_GRAB
+  nocturne_hero_grab_escape(&this_ptr->base,delta_time);
+#endif
   pCVar3 = (this_ptr->base).base.grabbed_by;
   if (pCVar3 == (CDemonActor *)0x0) {
     (this_ptr->base).base.velocity.y =

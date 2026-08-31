@@ -15,7 +15,7 @@ void __cdecl core_stranger_cpp_CStranger_updateWeaponLayerActions_FUN_005c5270(C
   CDeformableModelInstance *this_ptr_01;
   CWeapon *pCVar3;
   CDemonActor *pCVar4;
-  uint uVar5;
+  EWeaponType EVar5;
   int iVar5;
   CMotionList *pCVar6;
   CDynamite *this_ptr_02;
@@ -137,22 +137,22 @@ switchD_005c56f5_caseD_8:
               }
               else {
                 switch(this_ptr->weapon->weapon_type) {
-                case 0:
-                case 5:
+                case WEAPON_TYPE_GUN:
+                case WEAPON_TYPE_FLASHLIGHT:
                   iVar15 = 2;
                   break;
-                case 1:
+                case WEAPON_TYPE_SHOTGUN:
                   iVar15 = 4;
                   break;
-                case 2:
+                case WEAPON_TYPE_LIGHT_GUN:
                   iVar15 = 5;
                   break;
                 default:
                   goto switchD_005c56f5_caseD_8;
-                case 4:
+                case WEAPON_TYPE_TOMMY_GUN:
                   iVar15 = 7;
                   break;
-                case 7:
+                case WEAPON_TYPE_MELEE:
                   iVar15 = 8;
                 }
               }
@@ -162,9 +162,9 @@ switchD_005c56f5_caseD_8:
                 iVar15 = 0;
               }
               else {
-                uVar5 = local_1c->weapon_type;
-                if (uVar5 < 7) goto joined_r0x005c57cf;
-                if (((7 < uVar5) && (uVar5 != 8)) ||
+                EVar5 = local_1c->weapon_type;
+                if (EVar5 < WEAPON_TYPE_MELEE) goto joined_r0x005c57cf;
+                if (((WEAPON_TYPE_MELEE < EVar5) && (EVar5 != WEAPON_TYPE_BARON)) ||
                    ((pCVar11 = (CMelee *)
                                core_actor_cpp_castToClassHash_FUN_0040c790
                                          (&local_1c->base,g_CMeleeClassInfo.name_hash),
@@ -174,14 +174,14 @@ switchD_005c56f5_caseD_8:
               }
             }
             else {
-              uVar5 = pCVar3->weapon_type;
-              if (uVar5 < 7) {
+              EVar5 = pCVar3->weapon_type;
+              if (EVar5 < WEAPON_TYPE_MELEE) {
 joined_r0x005c57cf:
-                if (uVar5 != 0) goto LAB_005c52fa;
+                if (EVar5 != WEAPON_TYPE_GUN) goto LAB_005c52fa;
                 iVar15 = 1;
               }
               else {
-                if (((7 < uVar5) && (uVar5 != 8)) ||
+                if (((WEAPON_TYPE_MELEE < EVar5) && (EVar5 != WEAPON_TYPE_BARON)) ||
                    ((pCVar8 = (CMelee *)
                               core_actor_cpp_castToClassHash_FUN_0040c790
                                         (&pCVar3->base,g_CMeleeClassInfo.name_hash),
@@ -271,16 +271,16 @@ joined_r0x005c57cf:
       pCVar3 = this_ptr->weapon;
       if (pCVar3 != local_1c) {
         if (pCVar3 != (CWeapon *)0x0) {
-          uVar5 = pCVar3->weapon_type;
-          if (uVar5 < 7) {
-            if (uVar5 == 0) {
+          EVar5 = pCVar3->weapon_type;
+          if (EVar5 < WEAPON_TYPE_MELEE) {
+            if (EVar5 == WEAPON_TYPE_GUN) {
               iVar8 = 1;
             }
             else {
               iVar8 = 3;
             }
           }
-          else if ((uVar5 < 8) || (uVar5 == 8)) {
+          else if ((EVar5 < WEAPON_TYPE_BARON) || (EVar5 == WEAPON_TYPE_BARON)) {
             pCVar9 = (CMelee *)
                      core_actor_cpp_castToClassHash_FUN_0040c790
                                (&pCVar3->base,g_CMeleeClassInfo.name_hash);
@@ -305,16 +305,16 @@ LAB_005c53f2:
             iVar7 = 0;
           }
           else {
-            uVar5 = local_1c->weapon_type;
-            if (uVar5 < 7) {
-              if (uVar5 == 0) {
+            EVar5 = local_1c->weapon_type;
+            if (EVar5 < WEAPON_TYPE_MELEE) {
+              if (EVar5 == WEAPON_TYPE_GUN) {
                 iVar7 = 1;
               }
               else {
                 iVar7 = 3;
               }
             }
-            else if ((uVar5 < 8) || (uVar5 == 8)) {
+            else if ((EVar5 < WEAPON_TYPE_BARON) || (EVar5 == WEAPON_TYPE_BARON)) {
               pCVar10 = (CMelee *)
                         core_actor_cpp_castToClassHash_FUN_0040c790
                                   (&local_1c->base,g_CMeleeClassInfo.name_hash);

@@ -54,6 +54,18 @@ extern "C" CHero *nocturne_net_sim_leader_hero(void)
     return sim_local_hero();
 }
 
+// See net_sim.h. The leader, because CMimic::setup builds the mimic out of
+// whatever this returns — model, skeleton and cloth — so the copies in
+// updatePose match by construction whichever hero it is.
+extern "C" CHero *nocturne_net_sim_mimic_hero(void)
+{
+    if (sim_is_network_game() == 0) {
+        // Single player mirrors the player, exactly as shipped.
+        return sim_local_hero();
+    }
+    return nocturne_net_sim_leader_hero();
+}
+
 extern "C" CHero *nocturne_net_sim_target_for(CDemonActor *self)
 {
     if (self == (CDemonActor *)0x0) {
