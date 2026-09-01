@@ -90,6 +90,32 @@
 #define NOCTURNE_NETPLAY_SYNC_CHECK 1
 #endif
 
+// NOCTURNE_NETPLAY_SYNC_FATAL
+//   What the sync check does with the first mismatch it finds.
+//   1: stops on it — the guest writes its full report to nocturne_netplay.log
+//      and then calls displayErrorAndQuit, the game's own error box, with the
+//      frame number and what differed. A desync is otherwise something you
+//      find out about minutes later by reading a log, or never, because the
+//      two worlds drift quietly and the first visible sign is a player
+//      standing somewhere the other machine says they are not. Stopping on it
+//      also freezes both logs at the frame it started, which is the only frame
+//      worth reading.
+//   0: the mismatch is logged and play continues.
+//
+//   A development instrument, like the traces around it: it ends the session
+//   on the first disagreement, which is right when you are hunting one and
+//   wrong when you are trying to play. Set it to 0 for a netplay build that
+//   keeps the detector and its log without the interruption.
+//
+//   Only ever fires on a guest — the host broadcasts its state and never
+//   compares, so it has nothing to detect. Requires
+//   NOCTURNE_NETPLAY_SYNC_CHECK.
+//
+//   Override with -DNOCTURNE_NETPLAY_SYNC_FATAL=0.
+#ifndef NOCTURNE_NETPLAY_SYNC_FATAL
+#define NOCTURNE_NETPLAY_SYNC_FATAL 1
+#endif
+
 // NOCTURNE_NETPLAY_SIM_TRACE
 //   1: every machine writes nocturne_simtrace.log — one line per character per
 //      applied sim frame, with position, health, motion state and the AI's

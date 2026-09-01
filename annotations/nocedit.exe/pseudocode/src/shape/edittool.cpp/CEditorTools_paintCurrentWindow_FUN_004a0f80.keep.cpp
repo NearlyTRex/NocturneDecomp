@@ -1,0 +1,113 @@
+// Name: shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80
+// Address: 004a0f80
+// MANUAL RECONSTRUCTION
+// Address Range: [[004a0f80, 004a1221]]
+// Convention: __cdecl
+// Signature: void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(CEditorTools *this_ptr)
+
+#include "nocturne.h"
+
+void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(CEditorTools *this_ptr)
+
+{
+  int iVar3;
+  int y;
+  int iVar4;
+  int iVar5;
+  int iVar7;
+#if NOCTURNE_AUTHENTIC_EDITOR_BUTTON
+  int iVar6;
+#endif
+  SWindow *pSVar7;
+  int iVar8;
+  int color_mode;
+  int color_value;
+  char *text;
+  int iVar1;
+  int iVar2;
+
+  if (g_EditorFont == (CBitFont *)0x0) {
+    g_CurrentFilename = "..\\shape\\edittool.cpp";
+    g_CurrentLineNumber = 141;
+    core_main_c_displayErrorAndQuit_FUN_00506f10("gEdFont must be set by the application.");
+  }
+  g_FontCharacterHeight = g_EditorFont->max_char_width;
+  g_FontCharacterWidth = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_EditorFont,0x6a);
+  if (g_WindowStackCount < 1) {
+    g_CurrentFilename = "..\\shape\\edittool.cpp";
+    g_CurrentLineNumber = 2183;
+    core_main_c_displayErrorAndQuit_FUN_00506f10("CEditorTools::paintWindow() called but no window was opened!");
+  }
+  iVar2 = g_ActiveRenderColor;
+  iVar3 = g_WindowStackCount + -1;
+  pSVar7 = g_WindowStack + iVar3;
+#if NOCTURNE_AUTHENTIC_EDITOR_BUTTON
+  shape_edittool_cpp_paintWindowBackground_FUN_0049e590();
+#endif
+  iVar8 = g_WindowStack[iVar3].rect.top;
+  iVar7 = (pSVar7->rect).left;
+  engine_matrix_c_pushViewport_FUN_0050e320
+            (iVar7,iVar8,(g_WindowStack[iVar3].rect.right - iVar7) + 1,
+             (g_WindowStack[iVar3].rect.bottom - iVar8) + 1);
+  engine_2d_c_fillRectWithBorder_FUN_00403200
+            ((pSVar7->rect).left + 1,g_WindowStack[iVar3].rect.top + 1,
+             g_WindowStack[iVar3].rect.right + -2,g_WindowStack[iVar3].rect.bottom + -2,
+             g_WindowContentColor,g_WindowBorderHighlightColor);
+#if NOCTURNE_AUTHENTIC_EDITOR_BUTTON
+  g_ActiveRenderColor = g_WindowBorderShadowColor;
+  engine_2d_c_drawHLine_FUN_00402ee0
+            ((pSVar7->rect).left,g_WindowStack[iVar3].rect.bottom + -1,
+             g_WindowStack[iVar3].rect.right + -1);
+  engine_2d_c_drawVLine_FUN_00402ff0
+            (g_WindowStack[iVar3].rect.right + -1,g_WindowStack[iVar3].rect.top,
+             g_WindowStack[iVar3].rect.bottom + -1);
+#endif
+  engine_matrix_c_popViewport_FUN_0050e480();
+  iVar1 = g_ClipTop;
+  if (g_WindowStack[iVar3].text_buffer[0] == '\0') {
+    g_ActiveRenderColor = iVar2;
+    return;
+  }
+  g_ClipTop = g_WindowStack[iVar3].rect.top;
+#if NOCTURNE_AUTHENTIC_EDITOR_BUTTON
+  iVar8 = g_FontCharacterWidth / 2 + g_WindowStack[iVar3].rect.top + -1;
+  iVar6 = g_FontCharacterWidth * 5 >> 0x1f;
+  engine_2d_c_fillRectColor_FUN_00403170
+            ((pSVar7->rect).left + 1,iVar8,g_WindowStack[iVar3].rect.right + -2,
+             ((int)((g_FontCharacterWidth * 5 + iVar6 * -4) - (uint)(iVar6 << 1 < 0)) >> 2) + iVar8
+             + -1,g_TitleBarFillColor);
+#endif
+  engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
+  color_value = -1;
+  y = g_FontCharacterWidth / 2 + g_WindowStack[iVar3].rect.top
+      + (NOCTURNE_AUTHENTIC_EDITOR_BUTTON ? 0 : 1);
+  text = g_WindowStack[iVar3].text_buffer;
+  iVar8 = (pSVar7->rect).left;
+  iVar7 = g_WindowStack[iVar3].rect.right;
+  color_mode = g_TitleBarColor;
+  iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_EditorFont,text);
+  engine_font_cpp_CBitFont_drawText_FUN_004cda80
+            (g_EditorFont,text,((iVar8 + iVar7) - iVar4) / 2,y,color_mode,color_value);
+  iVar5 = engine_font_cpp_CBitFont_getTextHeight_FUN_004cff40(g_EditorFont,text);
+  iVar8 = g_FontCharacterWidth + iVar5;
+#if NOCTURNE_AUTHENTIC_EDITOR_BUTTON
+  iVar7 = engine_font_cpp_CBitFont_getTextHeight_FUN_004cff40(g_EditorFont,"j");
+  if (iVar8 < iVar7 + g_FontCharacterWidth) {
+    iVar8 = iVar7 + g_FontCharacterWidth;
+  }
+#endif
+  g_ActiveRenderColor = g_WindowBorderHighlightColor;
+  iVar8 = iVar8 + g_WindowStack[iVar3].rect.top;
+  engine_2d_c_drawHLine_FUN_00402ee0
+            ((pSVar7->rect).left + 1,iVar8,g_WindowStack[iVar3].rect.right + -2);
+#if NOCTURNE_AUTHENTIC_EDITOR_BUTTON
+  if (g_WindowBorderHighlightColor != g_WindowBorderShadowColor) {
+    g_ActiveRenderColor = g_WindowBorderShadowColor;
+    engine_2d_c_drawHLine_FUN_00402ee0
+              ((pSVar7->rect).left + 1,iVar8 + -1,g_WindowStack[iVar3].rect.right + -2);
+  }
+#endif
+  g_ClipTop = iVar1;
+  g_ActiveRenderColor = iVar2;
+  return;
+}

@@ -16,6 +16,10 @@ int __cdecl shape_edittool_cpp_CPickList_handleInput_FUN_004a3f20(CPickList *thi
   uint uVar4;
   int iVar5;
   int iVar6;
+#if !NOCTURNE_AUTHENTIC_EDITOR_BUTTON
+  int iVar4;
+  int iVar7;
+#endif
 
   iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_RETURN);
   if (iVar2 != 0) {
@@ -141,6 +145,22 @@ LAB_004a402a:
             if (iVar2 == 8) {
               this_ptr->search_text_buffer[0] = '\0';
             }
+#if !NOCTURNE_AUTHENTIC_EDITOR_BUTTON
+            for (iVar7 = 0; iVar7 < (this_ptr->base).item_count; iVar7 = iVar7 + 1) {
+              iVar4 = shape_edittool_cpp_CPickList_getItemHotKey_FUN_004a5610(this_ptr,iVar7);
+              if (iVar4 == -1) break;
+              if (toupper(iVar4) == iVar2) {
+                this_ptr->current_index = iVar7;
+                shape_edittool_cpp_CPickList_validateScrollBounds_FUN_004a5240(this_ptr);
+                iVar4 = shape_edittool_cpp_CPickList_isItemEnabled_FUN_004a54e0
+                                  (this_ptr,this_ptr->current_index);
+                if (iVar4 != 0) {
+                  this_ptr->confirmed_flag = 1;
+                  return 0;
+                }
+              }
+            }
+#endif
           } while (this_ptr->hotkey_capacity != 0);
           if ((g_CharacterClassificationTable[(byte)((char)iVar2 + 1)] & 0xe0) != 0) {
             uVar4 = strlen(str1) + 1;

@@ -10,10 +10,12 @@
 void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004a4d40(CPickList *this_ptr)
 
 {
+#if NOCTURNE_AUTHENTIC_EDITOR_BUTTON
   int iVar3;
   int iVar4;
   int iVar5;
   int iVar6;
+#endif
   int iVar1;
   char *pcVar7;
   int iVar8;
@@ -28,13 +30,14 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004a4d40(CPickList *t
   int local_24;
   int local_20;
   int local_1c;
-  int local_18;
   int local_14;
   char cVar1;
   char *pcVar2;
-  
+
   shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(g_CEditorToolsPtr);
+#if NOCTURNE_AUTHENTIC_EDITOR_BUTTON
   shape_edittool_cpp_CEditorTools_drawWindowSeparator_FUN_004a1230(g_CEditorToolsPtr,1);
+#endif
   local_28 = g_ClipLeft;
   local_24 = this_ptr->scroll_top;
   local_30 = 0;
@@ -53,10 +56,12 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004a4d40(CPickList *t
               iVar1 = g_ConfirmedSelectionColor;
             }
             engine_2d_c_fillRectColor_FUN_00403170(local_28,local_1c,x2,y2,iVar1);
+#if NOCTURNE_AUTHENTIC_EDITOR_BUTTON
             if (this_ptr->selection_state == -1) {
               g_ActiveRenderColor = 0;
               shape_edittool_cpp_drawDashedLine_FUN_0049d290(local_28,local_1c,x2,y2,1);
             }
+#endif
           }
           pcVar7 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&this_ptr->base,local_24);
           local_14 = local_28 + this_ptr->column_padding;
@@ -91,6 +96,7 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004a4d40(CPickList *t
       iVar1 = g_ActiveRenderColor;
       if (0 < local_30) {
         g_ActiveRenderColor = g_PickListSeparatorColor;
+#if NOCTURNE_AUTHENTIC_EDITOR_BUTTON
         iVar3 = shape_edittool_cpp_calculateGridHeight_FUN_004a64b0();
         iVar4 = g_WindowHeight / 0x60;
         if (this_ptr->dialog_result == 2) {
@@ -105,6 +111,9 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004a4d40(CPickList *t
         }
         engine_2d_c_drawLine_FUN_004011b0
                   (local_28,g_ClipTop,local_28,g_ClipBottom - (iVar3 + iVar4 * iVar5 + iVar6));
+#else
+        engine_2d_c_drawLine_FUN_004011b0(local_28,g_ClipTop,local_28,g_ClipBottom);
+#endif
       }
       local_30 = local_30 + 1;
       local_28 = local_28 + this_ptr->total_content_width;
@@ -137,6 +146,7 @@ LAB_004a4f19:
   if (this_ptr->state_flag != 0) {
     return;
   }
-  shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_004a1380(g_CEditorToolsPtr,0);
+  shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_004a1380
+            (g_CEditorToolsPtr,NOCTURNE_AUTHENTIC_EDITOR_BUTTON ? 0 : 1);
   return;
 }

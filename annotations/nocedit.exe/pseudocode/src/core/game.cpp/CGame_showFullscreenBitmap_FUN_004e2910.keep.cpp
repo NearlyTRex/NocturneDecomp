@@ -176,6 +176,14 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004e2910(CGame *this_p
       }
       }
       DLOG_EX("bitmap","dismissed '%s'",this_ptr->bitmap_filename);
+      for (iVar4 = 0; iVar4 < 3; iVar4 = iVar4 + 1) {
+        wincore_wddvmem_cpp_openScreenDevice_FUN_005ed580();
+        engine_special_cpp_lockFrame_FUN_005b7210();
+        engine_special_cpp_clearScreen_FUN_005b3e70();
+        engine_special_cpp_unlockFrame_FUN_005b7250(0);
+        wincore_wddvmem_cpp_closeScreenDevice_FUN_005ed630();
+        wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
+      }
       engine_2d_c_clearInputAndWait_FUN_00403260();
       core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004dce70(this_ptr);
       core_game_cpp_CGame_saveClockTime_FUN_004d7d80(this_ptr);

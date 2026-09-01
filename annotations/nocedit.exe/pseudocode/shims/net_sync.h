@@ -39,6 +39,15 @@
 // Gated by NOCTURNE_NETPLAY_SYNC_CHECK in shim_config_netplay.h, and by
 // NOCTURNE_AUTHENTIC_NETPLAY — with authentic netplay on, every entry point
 // here compiles to nothing.
+//
+// NOCTURNE_NETPLAY_SYNC_FATAL decides what the first mismatch costs. With it
+// set the guest writes its full report and then raises displayErrorAndQuit,
+// the game's own error box, naming the frame and what differed — so a desync
+// is something you are told about the moment it happens rather than something
+// you find in a log afterwards, and both machines' traces stop at the frame
+// worth reading instead of burying it under minutes of consequences. Reporting
+// still never corrects: stopping is not a repair, it is the report arriving on
+// time.
 
 // One past PACKET_PLAYER_INPUT (0x10), the last type the shipped game assigns.
 // Declared here rather than added to ENetPacketType, which is generated from

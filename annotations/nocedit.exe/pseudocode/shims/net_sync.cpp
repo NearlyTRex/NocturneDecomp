@@ -11,6 +11,7 @@
 
 #include "debug_log.h"
 
+#include <cstdio>
 #include <cstring>
 
 #if !NOCTURNE_AUTHENTIC_NETPLAY && NOCTURNE_NETPLAY_SYNC_CHECK
@@ -215,6 +216,72 @@ static void sync_capture(SNetPacket_SyncCheck *out, int sequence_number)
 // Comparison
 // =============================================================================
 
+#if NOCTURNE_NETPLAY_SYNC_FATAL
+// The game's own error box, raised on the first mismatch. Called after the
+// full report has gone to nocturne_netplay.log — DLOG_EX is line-buffered and
+// the trace files flush per frame, so everything written up to here is on disk
+// before displayErrorAndQuit tears the process down.
+//
+// The message is built here and passed through a "%s" rather than used as the
+// format itself: displayErrorAndQuit is variadic and vsprintf's whatever it is
+// given, so a stray %s in anything interpolated would read a pointer that was
+// never passed.
+static void sync_fatal(const SNetPacket_SyncCheck *host_state,
+                       const SNetPacket_SyncCheck *own,
+                       int heroes_differ, int actors_differ,
+                       int draws_differ)
+{
+    char message[1024];
+    int  used;
+    int  i;
+
+    used = std::snprintf(
+        message, sizeof(message),
+        "Netplay desync at sim frame %d.\n\n"
+        "%s, %s\n"
+        "actors: host %d hash=%08x | ours %d hash=%08x\n"
+        "sim RNG draws: host %u | ours %u%s\n",
+        own->sequence_number,
+        (heroes_differ != 0) ? "heroes differ" : "heroes match",
+        (actors_differ != 0) ? "actors differ" : "actors match",
+        host_state->actor_count, host_state->actor_hash,
+        own->actor_count, own->actor_hash,
+        host_state->sim_rng_draws, own->sim_rng_draws,
+        (draws_differ != 0) ? "  <- diverged inside this frame" : "");
+
+    for (i = 0; (i < own->hero_count) && (used > 0) && (used < (int)sizeof(message)); i++) {
+        if ((own->hero_area[i] == host_state->hero_area[i]) &&
+            (std::memcmp(own->hero_position[i], host_state->hero_position[i],
+                         sizeof(own->hero_position[i])) == 0)) {
+            continue;
+        }
+        used = used + std::snprintf(
+            message + used, sizeof(message) - (size_t)used,
+            "\nhero %d  host (%.3f, %.3f, %.3f) area %d\n"
+            "        ours (%.3f, %.3f, %.3f) area %d\n",
+            i,
+            (double)host_state->hero_position[i][0],
+            (double)host_state->hero_position[i][1],
+            (double)host_state->hero_position[i][2],
+            host_state->hero_area[i],
+            (double)own->hero_position[i][0],
+            (double)own->hero_position[i][1],
+            (double)own->hero_position[i][2],
+            own->hero_area[i]);
+    }
+
+    if ((used > 0) && (used < (int)sizeof(message))) {
+        std::snprintf(message + used, sizeof(message) - (size_t)used,
+                      "\nWhich actors differ is in nocturne_netplay.log; the frame "
+                      "itself is in nocturne_simtrace.log on both machines.");
+    }
+
+    g_CurrentFilename   = (char *)"..\\shims\\net_sync.cpp";
+    g_CurrentLineNumber = __LINE__;
+    core_main_c_displayErrorAndQuit_FUN_00506f10((char *)"%s", message);
+}
+#endif /* NOCTURNE_NETPLAY_SYNC_FATAL */
+
 static void sync_report(const SNetPacket_SyncCheck *host_state,
                         const SNetPacket_SyncCheck *own,
                         int heroes_differ, int actors_differ,
@@ -297,6 +364,14 @@ static void sync_report(const SNetPacket_SyncCheck *host_state,
         }
         break;
     }
+
+#if NOCTURNE_NETPLAY_SYNC_FATAL
+    // The first one only. Everything after it is the same divergence still
+    // being true, and this call does not return.
+    if (s_mismatches == 1) {
+        sync_fatal(host_state, own, heroes_differ, actors_differ, draws_differ);
+    }
+#endif
 }
 
 // =============================================================================

@@ -507,6 +507,45 @@
 #define NOCTURNE_AUTHENTIC_EDITOR_BRANDING 0
 #endif
 
+// NOCTURNE_AUTHENTIC_EDITOR_BUTTON
+//   Whether a dialog is the editor's or retail's. Named for the buttons because
+//   they are the loudest part of it, but it covers the whole of what nocedit
+//   puts on a dialog that nocturne.exe does not.
+//
+//     the OK/Cancel pair on a pick list. Retail's ctor sets no button text and
+//       its layout and render (00475470, 004759d0) never touch CEdButton, so
+//       leaving the two strings empty drops the buttons from the measured size,
+//       the layout and the paint at once - every downstream user is already
+//       guarded on ok_button_text[0] != '\0'.
+//     the strip they sit in: drawWindowSeparator(1) above the row, and the
+//       column rule stopped short of it rather than run to g_ClipBottom.
+//     CEdButton::paint's own additions over retail's 00476f40, for the dialogs
+//       that draw buttons directly - the clip pushed to the button's top, the
+//       label offset by button_state, getCharYOffset('A') in the centring, a
+//       dashed focus ring, and the underlined shortcut key.
+//     the dashed ring around the selected row.
+//     drawMousePointer's use_clipping, 0 here against retail's 1, so the
+//       crosshair is not confined to the dialog.
+//     the confirm prompt's class - a CStrList through showMultiChoiceDialog
+//       against retail's CPickList, which gates all ~20 callers at once - and
+//       the Y/N row shortcut that comes with it.
+//     paintCurrentWindow's chrome, shared by every dialog: paintWindowBackground,
+//       the shadow lines down the right and bottom edges, the title-bar fill
+//       behind the caption, the "j" measurement holding the rule below a
+//       descender, the second line making that rule a 2px bevel, and the caption
+//       one pixel higher than retail's.
+//
+//   1: authentic — the editor's dialogs, buttons and window chrome.
+//   0: no buttons on a pick list and no strip around them, a plain highlight, a
+//      cursor clipped to the dialog, the confirm prompt a two-row list with
+//      working Y/N, retail's flat window chrome, and any button another dialog
+//      does draw uses nocturne.exe's paint, instruction for instruction.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_EDITOR_BUTTON=1.
+#ifndef NOCTURNE_AUTHENTIC_EDITOR_BUTTON
+#define NOCTURNE_AUTHENTIC_EDITOR_BUTTON 0
+#endif
+
 // NOCTURNE_AUTHENTIC_CHAPTER_SELECT
 //   What START on the main menu offers. CGame::showChapterSelect decides by
 //   probing for pod.ini:

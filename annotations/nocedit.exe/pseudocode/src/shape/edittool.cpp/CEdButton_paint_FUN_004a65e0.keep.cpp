@@ -11,16 +11,17 @@ void __cdecl shape_edittool_cpp_CEdButton_paint_FUN_004a65e0(CEdButton *this_ptr
 
 {
   char *text;
-  byte bVar3;
   int iVar2;
   int iVar3;
+  int iVar9;
+  int iVar10;
+#if NOCTURNE_AUTHENTIC_EDITOR_BUTTON
+  byte bVar3;
   int iVar4;
   int iVar5;
   uint uVar7;
   uint uVar5;
   int iVar8;
-  int iVar9;
-  int iVar10;
   byte *pbVar12;
   byte local_dc [200];
 
@@ -69,4 +70,16 @@ void __cdecl shape_edittool_cpp_CEdButton_paint_FUN_004a65e0(CEdButton *this_ptr
                     (g_EditorFont,(uint)(byte)this_ptr->shortcut_key);
   engine_2d_c_drawHLine_FUN_00402ee0(iVar10,iVar9 + iVar5 + 1,iVar8 + iVar10 + -1);
   return;
+#else
+  (void)draw_border_flag;
+  shape_edittool_cpp_draw3DBorder_FUN_004a58f0
+            (this_ptr->left,this_ptr->top,this_ptr->right,this_ptr->bottom,this_ptr->button_state);
+  text = this_ptr->button_text;
+  iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_EditorFont,text);
+  iVar3 = engine_font_cpp_CBitFont_getTextHeight_FUN_004cff40(g_EditorFont,text);
+  iVar10 = ((this_ptr->right + this_ptr->left) - iVar2) / 2;
+  iVar9 = ((this_ptr->top + this_ptr->bottom) - iVar3) / 2;
+  engine_font_cpp_CBitFont_drawText_FUN_004cda80(g_EditorFont,text,iVar10,iVar9,g_UITextColor,-1);
+  return;
+#endif
 }
