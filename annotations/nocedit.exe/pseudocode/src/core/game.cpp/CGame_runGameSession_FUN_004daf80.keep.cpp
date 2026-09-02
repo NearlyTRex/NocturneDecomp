@@ -135,6 +135,9 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
   }
   core_game_cpp_CGame_beginFadeIn_FUN_004e0920(this_ptr);
   core_game_cpp_CGame_loadAssets_FUN_004e07a0(this_ptr);
+#if !NOCTURNE_AUTHENTIC_CHEAT_MENU
+  nocturne_cheats_apply();
+#endif
   iVar3 = core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(g_CNetGamePtr,3);
   if ((iVar3 != 0) &&
      (iVar5 = core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(g_CNetGamePtr,4), iVar5 != 0)) {

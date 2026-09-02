@@ -486,6 +486,80 @@
 #define NOCTURNE_AUTHENTIC_DEV_TOOLS 1
 #endif
 
+// NOCTURNE_AUTHENTIC_CAMERA_SHAKE_TRACE
+//   CDemonCamera::beginScene runs the camera-shake ADSR state machine once per
+//   rendered scene and traces the phase to the console on every one of them.
+//   The shipped call passes the label and nothing else — the asm pushes one
+//   string and g_CConsolePtr, no third argument — so it emits "Attack : ",
+//   "Sustain : " or "Decay : " with no value after the colon and no newline,
+//   and a shake that decays over a second writes "Decay : Decay : Decay : ..."
+//   across one console line. The value the colon was introducing is the current
+//   shake intensity, which the statement after the call feeds into
+//   g_CameraShakeAccumulator; the developers evidently never finished the line.
+//   1: authentic — the bare labels, run together, exactly as shipped.
+//   0: the trace is completed rather than removed: same three labels, then the
+//      intensity (16.16 converted to the float it stands for) and a newline.
+//
+//   This is on-screen console output and, with [Debug] logConsoleFlag set, goes
+//   to the console log as well — CConsole::printf appends there whenever
+//   file_logging_enabled is set, so the authentic form fills the log too.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_CAMERA_SHAKE_TRACE=1.
+#ifndef NOCTURNE_AUTHENTIC_CAMERA_SHAKE_TRACE
+#define NOCTURNE_AUTHENTIC_CAMERA_SHAKE_TRACE 0
+#endif
+
+// NOCTURNE_AUTHENTIC_GOD_MODE_FALL
+//   Whether a lethal-height fall kills the hero while god mode is on.
+//
+//   CStranger::processFrame's landing handler decides fatality from fall speed
+//   *before* it deals the damage: under 20 units/s is a soft landing, above
+//   that costs (speed - 20) * 5, and past 100 it latches "this landing was
+//   fatal" and sets the damage to 9999. It then calls processDamage and takes
+//   the death branch on `hit_points <= 0 || latch` (asm: the latch is zeroed at
+//   005bda98, set at 005bdad5, and read back with CMP [ESP+0x27c],0x0 at
+//   005bdb0e). God mode zeroes the damage inside processDamage, so hit_points
+//   never moves — but the latch still stands, the death animation plays, and
+//   CCharacter::getDeathState reports DEAD because it reads the *animation
+//   state name* rather than health. So the hero dies at 100 hit points.
+//   1: authentic — that is what both shipped binaries do. God mode makes you
+//      immune to every enemy in the game and not to a staircase.
+//   0: dev-friendly default — if processDamage zeroed the damage, the landing
+//      was prevented rather than survived, so the latch is cleared with it and
+//      the hero walks away.
+//
+//   This keys off the damage actually being zeroed rather than reading
+//   god_mode_enabled, so it equally covers the script-driven allow_damage_flag,
+//   which suppresses damage the same way and hits the same absurdity: a
+//   cutscene that turns damage off cannot currently stop a scripted fall from
+//   killing the player.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_GOD_MODE_FALL=1.
+#ifndef NOCTURNE_AUTHENTIC_GOD_MODE_FALL
+#define NOCTURNE_AUTHENTIC_GOD_MODE_FALL 0
+#endif
+
+// NOCTURNE_AUTHENTIC_CHEAT_MENU
+//   Whether the game's forty-six cheats can only be reached the way the shipped
+//   binary offered them: typed letter by letter into CGame::processCheatCodes'
+//   rolling g_InputHistory, from codes stored encrypted so they could not be
+//   read out of the executable, with nothing on any screen saying they exist.
+//   1: authentic — that is the only route, and no cheat is ever applied by
+//      itself.
+//   0: the Options screen carries a CHEATS entry (see shims/cheats.h), an
+//      On/Off list of eight of them. An armed line is applied when a mission
+//      starts, so a cheat can be set once rather than re-entered every reload.
+//      Typing a code still works and is unchanged.
+//
+//   Independent of NOCTURNE_AUTHENTIC_DEV_TOOLS above: the developer-tools menu
+//   and the cheats the editor gates behind developer mode are a different
+//   feature, and "Developer mode" is one of the lines this list can arm.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_CHEAT_MENU=1.
+#ifndef NOCTURNE_AUTHENTIC_CHEAT_MENU
+#define NOCTURNE_AUTHENTIC_CHEAT_MENU 0
+#endif
+
 // NOCTURNE_AUTHENTIC_EDITOR_BRANDING
 //   Whether the build presents itself as Terminal Reality's internal editor.
 //   nocedit.exe says so in two places: a "NON-RELEASE EDITOR BUILD" line with
@@ -573,19 +647,6 @@
 //   Override with -DNOCTURNE_AUTHENTIC_CHAPTER_SELECT=1.
 #ifndef NOCTURNE_AUTHENTIC_CHAPTER_SELECT
 #define NOCTURNE_AUTHENTIC_CHAPTER_SELECT 0
-#endif
-
-// NOCTURNE_AUTHENTIC_BATTERY
-//   Controls the flashlight/goggles battery in CInventory::updateInventory.
-//   1: authentic — the battery discharges while the flashlight or goggles are
-//      on (and recharges while both are off), exactly like nocedit.exe.
-//   0: dev-friendly default — the battery never drains (the discharge is still
-//      computed but discarded, so it can't empty). Recharge-while-off is
-//      unaffected.
-//
-//   Override with -DNOCTURNE_AUTHENTIC_BATTERY=1.
-#ifndef NOCTURNE_AUTHENTIC_BATTERY
-#define NOCTURNE_AUTHENTIC_BATTERY 0
 #endif
 
 // NOCTURNE_AUTHENTIC_SAVE

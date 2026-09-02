@@ -57,7 +57,12 @@ void __cdecl core_dcamera_cpp_CDemonCamera_beginScene_FUN_0044c430(CDemonCamera 
   default:
     goto switchD_0044c448_caseD_3;
   }
+#if NOCTURNE_AUTHENTIC_CAMERA_SHAKE_TRACE
   engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,format);
+#else
+  engine_console_cpp_CConsole_printf_FUN_00441890
+            (g_CConsolePtr,"%s%.4f\n",format,(double)iVar3 / 65536.0);
+#endif
 switchD_0044c448_caseD_3:
   g_CameraShakeAccumulator =
        g_CameraShakeAccumulator +

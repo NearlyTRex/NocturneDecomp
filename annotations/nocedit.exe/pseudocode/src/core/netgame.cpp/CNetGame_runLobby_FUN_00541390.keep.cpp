@@ -37,6 +37,7 @@ int __cdecl core_netgame_cpp_CNetGame_runLobby_FUN_00541390(CNetGame *this_ptr)
   if (this_ptr->connection_type != CONNECTION_NONE) {
 #if !NOCTURNE_AUTHENTIC_NETPLAY
     nocturne_net_hero_forget_host_view();
+    nocturne_net_cheats_reset();
     saved_input_key_mask = g_InputKeyMask;
     engine_keys_cpp_CKeys_toggleInputMask_FUN_005024b0(g_CKeysPtr,1);
 #endif
@@ -181,6 +182,9 @@ LAB_005415cb:
         if ((bVar2) && (1 < this_ptr->player_count)) {
           this_ptr->network_mode = NET_MODE_SYNCING;
           engine_2d_c_clearInputAndWait_FUN_00403260();
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+          nocturne_net_cheats_announce();
+#endif
           iVar6 = core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(this_ptr,1);
           if (iVar6 != 0) {
             shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790

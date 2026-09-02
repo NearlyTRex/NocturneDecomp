@@ -318,7 +318,7 @@ extern "C" int nocturne_net_respawn_request(void)
 
     std::memset(&s_pending, 0, sizeof(s_pending));
     s_pending.header.size = sizeof(SNetPacket_HeroRespawn);
-    s_pending.header.type = PACKET_UNUSED;
+    s_pending.header.type = (ENetPacketType)NOCTURNE_NET_PACKET_RESPAWN;
     s_pending.hero_count  = hero_count;
     s_pending.area_id     = (anchor->base).base.location.area_id;
     s_pending.orient[0]   = (anchor->base).base.orient.vec.x;
@@ -374,7 +374,7 @@ extern "C" int nocturne_net_respawn_on_packet(const void *packet, int packet_siz
     if ((packet == (const void *)0x0) || (packet_size < (int)sizeof(SNetPacket_HeroRespawn))) {
         return 0;
     }
-    if (incoming->header.type != PACKET_UNUSED) {
+    if (incoming->header.type != (ENetPacketType)NOCTURNE_NET_PACKET_RESPAWN) {
         return 0;
     }
 

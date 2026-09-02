@@ -71,8 +71,10 @@ void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004ffad0(CInventory *th
     }
     fVar1 = this_ptr->battery_charge -
             (g_CGamePtr->delta_time_float * (float)100) / local_1c;
-#if !NOCTURNE_AUTHENTIC_BATTERY
-    fVar1 = this_ptr->battery_charge;
+#if !NOCTURNE_AUTHENTIC_CHEAT_MENU
+    if (nocturne_cheat_active(NOCTURNE_CHEAT_INF_BATTERY) != 0) {
+      fVar1 = this_ptr->battery_charge;
+    }
 #endif
     this_ptr->battery_charge = fVar1;
     if (fVar1 < 0.0) {

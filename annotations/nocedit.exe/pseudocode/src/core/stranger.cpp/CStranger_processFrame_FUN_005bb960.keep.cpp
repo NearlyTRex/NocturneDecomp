@@ -902,7 +902,12 @@ LAB_005bd5e6:
           pCVar11 = (this_ptr->base).base.base.vtable._uc;
           (this_ptr->base).invincibility_timer = 0.0;
           (*(pCVar11->_uc).processDamage)((CCharacter *)this_ptr,&local_2bc);
-          if (((this_ptr->base).base.hit_points <= 0.0) || (local_6c != 0.0)) {
+#if !NOCTURNE_AUTHENTIC_GOD_MODE_FALL
+          if (local_2bc.damage_amount == 0.0f) {
+            local_74 = 0;
+          }
+#endif
+          if (((this_ptr->base).base.hit_points <= 0.0) || (local_74 != 0)) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                       (&(this_ptr->base).base.model.motion_controller,0x12,1);
             (*((this_ptr->base).base.base.vtable._ub)->playSound)

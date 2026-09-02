@@ -63,10 +63,17 @@
 // re-sent every frame until it is due, because the transport is UDP and a lost
 // respawn would be a desync rather than a dropped update.
 //
-// Uses PACKET_UNUSED (0xE), the gap the shipped protocol never assigned.
+// The packet type is 0x15. The shipped protocol's own types stop at
+// PACKET_PLAYER_INPUT (0x10), and 0x11 to 0x14 are taken by net_sync,
+// net_weapon, net_mission and net_cheats. PACKET_UNUSED (0xE) is deliberately
+// NOT used: it is a gap inside the shipped enum's range, and leaving it alone
+// keeps the reconstruction's own numbering intact and every addition in one
+// contiguous block above it.
 //
 // Gated by NOCTURNE_AUTHENTIC_NETPLAY in shim_config_authentic.h: with authentic netplay
 // on, every entry point here compiles to nothing.
+
+#define NOCTURNE_NET_PACKET_RESPAWN 0x15
 
 #ifdef __cplusplus
 extern "C" {
@@ -100,8 +107,8 @@ int nocturne_net_respawn_world_area(void);
 // a respawn was scheduled, 0 if the request could not be honoured.
 int nocturne_net_respawn_request(void);
 
-// Feeds one received PACKET_UNUSED to this module. Returns 1 if it was a
-// respawn packet and has been consumed.
+// Feeds one received packet of type NOCTURNE_NET_PACKET_RESPAWN to this module.
+// Returns 1 if it was a respawn packet and has been consumed.
 int nocturne_net_respawn_on_packet(const void *packet, int packet_size);
 
 // Called once per applied sim frame on every machine, from

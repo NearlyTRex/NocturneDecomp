@@ -71,6 +71,16 @@
 // main.c menu loop.
 #include "net_menu.h"
 
+// The Options screen's CHEATS submenu (nocturne_cheats_menu) and the mission-
+// start application of whatever it armed (nocturne_cheats_apply), reached from
+// the menu and mission TUs. Both are no-ops under NOCTURNE_AUTHENTIC_CHEAT_MENU.
+#include "cheats.h"
+
+// Host-authoritative cheats (nocturne_net_cheats_*), reached from the netgame
+// TU. A lockstep session cannot carry two cheat lists, so the host's stands in
+// for a guest's for the length of it. Inert outside a network game.
+#include "net_cheats.h"
+
 // Lobby hero selection (nocturne_net_hero_*), reached the same way from the
 // netgame TU. Unlike the netplay additions below, nothing here is compiled out
 // under NOCTURNE_AUTHENTIC_NETPLAY — the name table and the cycle step are

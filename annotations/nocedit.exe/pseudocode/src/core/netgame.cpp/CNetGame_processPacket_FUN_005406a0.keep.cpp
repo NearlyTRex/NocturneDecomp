@@ -347,7 +347,7 @@ LAB_00541015:
     }
 #if !NOCTURNE_AUTHENTIC_NETPLAY
     break;
-  case PACKET_UNUSED:
+  case NOCTURNE_NET_PACKET_RESPAWN:
     if ((this_ptr->connection_type == CONNECTION_CLIENT) &&
        (uVar2 == this_ptr->server_player_index)) {
       nocturne_net_respawn_on_packet(packet,(packet->header).size + 3);
@@ -368,6 +368,12 @@ LAB_00541015:
   case NOCTURNE_NET_PACKET_WEAPON:
     if (-1 < (int)uVar2) {
       nocturne_net_weapon_on_packet(packet,(packet->header).size + 3);
+    }
+    break;
+  case NOCTURNE_NET_PACKET_CHEATS:
+    if ((this_ptr->connection_type == CONNECTION_CLIENT) &&
+       (uVar2 == this_ptr->server_player_index)) {
+      nocturne_net_cheats_on_packet(packet,(packet->header).size + 3);
     }
 #endif
   }

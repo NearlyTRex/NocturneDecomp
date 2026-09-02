@@ -156,6 +156,10 @@ extern "C" void nocturne_net_mission_resolve(char *name, int name_size)
         s_have_announced = 1;
 
         mission_broadcast();
+        // Alongside the mission and the seed, since the cheat list is the third
+        // thing both machines have to agree on before they simulate — and this
+        // re-covers a guest that missed the lobby's copy. See net_cheats.h.
+        nocturne_net_cheats_announce();
         DLOG_EX("netplay", "MISSION announce #%d '%s' seed=%u",
                 s_announced.serial, s_announced.mission, s_announced.seed);
         return;
@@ -181,6 +185,7 @@ extern "C" int nocturne_net_mission_begin(void)
         // Once more before the barrier: the guest spends the barrier pumping
         // the socket, so this is the copy it is most likely to catch.
         mission_broadcast();
+        nocturne_net_cheats_announce();
     } else if (s_have_announced == 0) {
         if (mission_wait_for_announcement() == 0) {
             return 0;
