@@ -13,7 +13,7 @@ SUMMARY
 
   Functions checked: 6911
   Functions with suspicious globals: 90
-  Total suspicious global references: 148
+  Total suspicious global references: 146
 
   Most commonly misresolved globals:
     g_SfxOptions                                       13 functions
@@ -32,24 +32,24 @@ SUMMARY
     g_HeroActors                                       2 functions
     g_TextureCacheInstance                             2 functions
     g_CMoonInstance                                    2 functions
-    g_InputReadIndex                                   2 functions
-    g_InputWriteIndex                                  2 functions
     g_VisibleCoronaGlobeCount                          2 functions
     g_CommandTemplates                                 2 functions
+    g_PositiveInfinity                                 2 functions
+    g_MMXSupported                                     1 functions
 
-  .keep files with issues: 56 (these need manual review)
-  Raw .cpp files with issues: 34
+  .keep files with issues: 57 (these need manual review)
+  Raw .cpp files with issues: 33
 
 ====================================================================================================
 DETAILED FINDINGS
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-core_main.c_enterMainGameMenu_FUN_00507a50  [.keep]  (18 suspicious globals)
+core_main.c_enterMainGameMenu_FUN_00507a50  [.keep]  (16 suspicious globals)
   File: core/main.c
 
   g_CDemonFileManagerInstance
-    Used at lines: 217
+    Used at lines: 212
     NOT found in function reference list
 
   g_CGamePtr
@@ -69,15 +69,7 @@ core_main.c_enterMainGameMenu_FUN_00507a50  [.keep]  (18 suspicious globals)
     NOT found in function reference list
 
   g_InputDisabled
-    Used at lines: 182
-    NOT found in function reference list
-
-  g_InputReadIndex
-    Used at lines: 160, 247
-    NOT found in function reference list
-
-  g_InputWriteIndex
-    Used at lines: 160, 247
+    Used at lines: 177
     NOT found in function reference list
 
   g_MainMenuTextBuffers
@@ -113,7 +105,7 @@ core_main.c_enterMainGameMenu_FUN_00507a50  [.keep]  (18 suspicious globals)
     NOT found in function reference list
 
   g_UseDirect3D
-    Used at lines: 40, 198, 206
+    Used at lines: 40, 193, 201
     NOT found in function reference list
 
   g_WindowHeight
@@ -241,11 +233,11 @@ core_game.cpp_CGame_runGameSession_FUN_004daf80  [.keep]  (2 suspicious globals)
   File: core/game.cpp
 
   g_CurrentGameTime
-    Used at lines: 197
+    Used at lines: 185
     NOT found in function reference list
 
   g_SimFrameCount
-    Used at lines: 161
+    Used at lines: 149
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -301,7 +293,7 @@ core_charactr.cpp_CCharacter_process_FUN_00429870  [.keep]  (1 suspicious global
   File: core/charactr.cpp
 
   g_CNetGamePtr
-    Used at lines: 64, 65
+    Used at lines: 46, 47
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -357,7 +349,7 @@ core_game.cpp_CGame_processFrame_FUN_004da100  [.keep]  (1 suspicious globals)
   File: core/game.cpp
 
   g_ColorCubeLookup
-    Used at lines: 356
+    Used at lines: 349
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -365,7 +357,7 @@ core_game.cpp_CGame_processHotkeys_FUN_004dcee0  [.keep]  (1 suspicious globals)
   File: core/game.cpp
 
   g_CNetGamePtr
-    Used at lines: 131
+    Used at lines: 127
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -397,7 +389,7 @@ core_game.cpp_hostNetworkGame_FUN_004e2f10  [.keep]  (1 suspicious globals)
   File: core/game.cpp
 
   g_CKeysPtr
-    Used at lines: 26, 26
+    Used at lines: 22, 22
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -606,6 +598,14 @@ shape_design.c_showPointEditor_FUN_0045c6c0  [.keep]  (1 suspicious globals)
 
   g_KeyboardState
     Used at lines: 27, 28, 34, 35, 38, ...
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060  [.keep]  (1 suspicious globals)
+  File: shape/edittool.cpp
+
+  g_ConfirmationMessageBuffer
+    Used at lines: 24, 31, 47
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -874,14 +874,6 @@ shape_design.c_handleEditorHotkeys_FUN_0045b990  [.cpp]  (1 suspicious globals)
 
   g_KeyboardState
     Used at lines: 14, 14, 15, 22, 22, ...
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060  [.cpp]  (1 suspicious globals)
-  File: shape/edittool.cpp
-
-  g_ConfirmationMessageBuffer
-    Used at lines: 17, 23
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
