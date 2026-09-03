@@ -163,7 +163,7 @@ LAB_0053ec87:
   }
 LAB_0053eb7b:
   if (0.0 < damage_info->damage_amount) {
-    core_game_cpp_CGame_FUN_004a3a90(g_CGame_PTR_005b9354);
+    core_game_cpp_CGame_resetInventoryDisplayTimer_FUN_004a3a90(g_CGame_PTR_005b9354);
   }
   core_charactr_cpp_CCharacter_processDamage_FUN_00428510((CCharacter *)this_ptr,damage_info);
   return;

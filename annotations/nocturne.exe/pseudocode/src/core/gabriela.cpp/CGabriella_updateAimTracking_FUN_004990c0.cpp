@@ -56,7 +56,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateAimTracking_FUN_004990c0(CGabrie
       for (local_20 = 0; local_20 < g_CDemonSet_PTR_005be368->actor_count; local_20 = local_20 + 1)
       {
         target_actor = *(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + iVar4);
-        local_18 = core_gabriela_cpp_CGabriella_FUN_00498de0
+        local_18 = core_gabriela_cpp_CGabriella_scoreTargetVisibility_FUN_00498de0
                              (this_ptr,target_actor,(uint)(target_actor == this_ptr->aim_target));
         if ((0.0 <= local_18) && (local_18 < local_24)) {
           local_28 = target_actor;

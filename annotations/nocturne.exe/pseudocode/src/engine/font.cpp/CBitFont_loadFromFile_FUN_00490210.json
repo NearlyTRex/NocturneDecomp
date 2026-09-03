@@ -1,0 +1,317 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 5,
+        "line": 20,
+        "message": "unknown type name 'FLOATING_SAVE_AREA'"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 52,
+        "message": "unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 53,
+        "message": "unknown type name 'PCONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 498,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 498,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 499,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 499,
+        "message": "exponent has no digits"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 169,
+    "complexity_score": 68,
+    "cross_reference_count": 0,
+    "function_call_count": 6,
+    "global_count": 8,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 43,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unnamed_param"
+    ],
+    "total_lines": 212
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00490210",
+    "address_range": [
+      [
+        "00490210",
+        "00490417"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_font.cpp_CBitFont_loadFromFile_FUN_00490210",
+    "signature": "void __cdecl engine_font_cpp_CBitFont_loadFromFile_FUN_00490210(CBitFont *this_ptr,char *param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "00563380",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fclose_FUN_00563380"
+    },
+    {
+      "addr": "00564b20",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fgets_FUN_00564b20"
+    },
+    {
+      "addr": "00563350",
+      "is_variadic": true,
+      "name": "crt_stdio.c_fscanf_FUN_00563350"
+    },
+    {
+      "addr": "00456a60",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_getFile_FUN_00456a60"
+    },
+    {
+      "addr": "004901d0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_loadNewBitmap_FUN_004901d0"
+    },
+    {
+      "addr": "0048ff40",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_openFontFile_FUN_0048ff40"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00581801",
+      "name": "s_rt_00581801",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00581804",
+      "name": "s_art_00581804",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00581808",
+      "name": "s_s_00581808",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058180c",
+      "name": "s_d_d_0058180c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00581813",
+      "name": "s_d_d_00581813",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058181a",
+      "name": "s_d_0058181a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058181e",
+      "name": "s_d_0058181e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00581822",
+      "name": "s_d_d_00581822",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.8333333333333335,
+    "instruction_count": 144,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 1,
+      "CALL": 16,
+      "CBRANCH": 3,
+      "COPY": 111,
+      "INT_ADD": 62,
+      "INT_AND": 45,
+      "INT_CARRY": 18,
+      "INT_EQUAL": 44,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 18,
+      "INT_SLESS": 22,
+      "INT_SUB": 78,
+      "LOAD": 24,
+      "POPCOUNT": 22,
+      "RETURN": 2,
+      "STORE": 78
+    },
+    "pcode_op_count": 552
+  },
+  "stack_frame": {
+    "frame_size": 568,
+    "local_size": 560,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_22c",
+        "offset": -556,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_12c",
+        "offset": -300,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBitFont *"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void __cdecl engine_font_cpp_CBitFont_loadFromFile_FUN_00490210(CBitFont *this_ptr,char *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "stream = engine_dosio_cpp_getFile_FUN_00456a60(\"art\",param_2,\"rt\");",
+      "type": "unnamed_param"
+    }
+  ]
+}

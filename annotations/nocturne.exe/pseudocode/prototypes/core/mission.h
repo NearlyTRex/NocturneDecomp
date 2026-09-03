@@ -11,13 +11,13 @@ void __cdecl staticInit(void);
 // Address: 004d7de0
 void __cdecl skipLine(_FILE *file_handle);
 
-// Original: core_mission.cpp_CDemonMission_FUN_004d7e00
+// Original: core_mission.cpp_CDemonMission_reset_FUN_004d7e00
 // Address: 004d7e00
-void __cdecl CDemonMission(CDemonMission *this_ptr);
+void __cdecl CDemonMission::reset(CDemonMission *this_ptr);
 
-// Original: core_mission.cpp_CDemonMission_FUN_004d7e90
+// Original: core_mission.cpp_CDemonMission_clearMission_FUN_004d7e90
 // Address: 004d7e90
-void __cdecl CDemonMission(CDemonMission *this_ptr);
+void __cdecl CDemonMission::clearMission(CDemonMission *this_ptr);
 
 // Original: core_mission.cpp_CDemonMission_FUN_004d7ea0
 // Address: 004d7ea0
@@ -43,9 +43,9 @@ CDemonActor * __cdecl CDemonMission::getNextLoadedInventoryActor(CDemonMission *
 // Address: 004d86d0
 int __cdecl CDemonMission::loadScript(CDemonMission *this_ptr,int is_loading);
 
-// Original: core_mission.cpp_CDemonMission_FUN_004d8720
+// Original: core_mission.cpp_CDemonMission_writeFile_FUN_004d8720
 // Address: 004d8720
-void __cdecl CDemonMission(CDemonMission *this_ptr,_FILE *file_handle);
+void __cdecl CDemonMission::writeFile(CDemonMission *this_ptr,_FILE *file_handle);
 
 // Original: core_mission.cpp_CDemonMission_loadActor_FUN_004d8aa0
 // Address: 004d8aa0
@@ -79,9 +79,9 @@ void __cdecl CDemonMission::buildSetActorList(CDemonMission *this_ptr);
 // Address: 004d8f90
 void __cdecl CDemonMission::removeActor(CDemonMission *this_ptr,CDemonActor *actor,int should_delete);
 
-// Original: core_mission.cpp_CDemonMission_FUN_004d8fc0
+// Original: core_mission.cpp_CDemonMission_removeAllActors_FUN_004d8fc0
 // Address: 004d8fc0
-void __cdecl CDemonMission(CDemonMission *this_ptr);
+void __cdecl CDemonMission::removeAllActors(CDemonMission *this_ptr);
 
 // Original: core_mission.cpp_CDemonMission_loadSet_FUN_004d9020
 // Address: 004d9020
@@ -91,9 +91,9 @@ void __cdecl CDemonMission::loadSet(CDemonMission *this_ptr,int set_index);
 // Address: 004d90a0
 CDemonActor * __cdecl CDemonMission::findActorByName(CDemonMission *this_ptr,char *name);
 
-// Original: core_mission.cpp_CDemonMission_FUN_004d90e0
+// Original: core_mission.cpp_CDemonMission_setTeleportTarget_FUN_004d90e0
 // Address: 004d90e0
-void __cdecl CDemonMission(CDemonMission *this_ptr,CLocation *teleport_target);
+void __cdecl CDemonMission::setTeleportTarget(CDemonMission *this_ptr,CLocation *teleport_target);
 
 // Original: core_mission.cpp_CDemonMission_markActorToDelete_FUN_004d9110
 // Address: 004d9110
@@ -107,9 +107,9 @@ void __cdecl CDemonMission::buildActiveSetActorList(CDemonMission *this_ptr);
 // Address: 004d92a0
 void __cdecl CDemonMission::process(CDemonMission *this_ptr);
 
-// Original: core_mission.cpp_CDemonMission_FUN_004d93d0
+// Original: core_mission.cpp_CDemonMission_createFromSingleSet_FUN_004d93d0
 // Address: 004d93d0
-void __cdecl CDemonMission(CDemonMission *this_ptr,char *param_2);
+void __cdecl CDemonMission::createFromSingleSet(CDemonMission *this_ptr,char *param_2);
 
 // Original: core_mission.cpp_CDemonMission_run_FUN_004d9440
 // Address: 004d9440

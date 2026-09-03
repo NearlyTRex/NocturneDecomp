@@ -53,7 +53,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004a7870(CGargoyle *this_pt
   float local_18;
   float local_14;
   
-  iVar4 = core_charactr_cpp_CCharacter_FUN_004259f0((CCharacter *)this_ptr,delta_time);
+  iVar4 = core_charactr_cpp_CCharacter_process_FUN_004259f0((CCharacter *)this_ptr,delta_time);
   if (iVar4 == 0) {
     pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
                        (&(this_ptr->base).base.model.motion_controller);
@@ -84,7 +84,8 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004a7870(CGargoyle *this_pt
                      (&pCVar1->motion_controller);
   iVar4 = pSVar5->state_index;
   local_28 = iVar4;
-  iVar6 = core_charactr_cpp_CCharacter_FUN_00428c00((CCharacter *)this_ptr,delta_time);
+  iVar6 = core_charactr_cpp_CCharacter_processWalking_FUN_00428c00
+                    ((CCharacter *)this_ptr,delta_time);
   if (iVar6 == 0) {
     switch(iVar4) {
     case 0:
@@ -356,7 +357,7 @@ switchD_004a818f_caseD_4:
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0
             (&(this_ptr->base).base.model);
   iVar4 = local_28;
-  core_charactr_cpp_CCharacter_FUN_0042a150((CCharacter *)this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042a150((CCharacter *)this_ptr,delta_time);
   if (iVar4 == 5) {
     (this_ptr->target_scale).x = this_ptr->stone_red << 8;
     (this_ptr->target_scale).y = this_ptr->stone_green << 8;

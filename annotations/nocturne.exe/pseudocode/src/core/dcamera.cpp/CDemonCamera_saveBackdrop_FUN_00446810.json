@@ -1,0 +1,950 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 5,
+        "line": 20,
+        "message": "unknown type name 'FLOATING_SAVE_AREA'"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 52,
+        "message": "unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 53,
+        "message": "unknown type name 'PCONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 498,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 498,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 499,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 499,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 3,
+        "line": 55,
+        "message": "use of undeclared identifier '_DAT_012b022c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 3,
+        "line": 56,
+        "message": "use of undeclared identifier '_DAT_0140d778'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 3,
+        "line": 57,
+        "message": "use of undeclared identifier '_DAT_0140d77c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 3,
+        "line": 59,
+        "message": "use of undeclared identifier '_DAT_0140d780'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 5,
+        "line": 62,
+        "message": "use of undeclared identifier '_DAT_0140d780'"
+      },
+      {
+        "category": "format_error",
+        "column": 31,
+        "line": 64,
+        "message": "format specifies type 'char *' but the argument has type 'CDemonCamera *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 13,
+        "line": 95,
+        "message": "use of undeclared identifier '_DAT_0140d780'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 23,
+        "line": 107,
+        "message": "use of undeclared identifier 'DAT_012ceb78'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 19,
+        "line": 165,
+        "message": "use of undeclared identifier 'DAT_012ceb78'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 51,
+        "line": 185,
+        "message": "use of undeclared identifier 'DAT_012ceb78'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 450,
+    "complexity_score": 476,
+    "cross_reference_count": 1,
+    "function_call_count": 18,
+    "global_count": 30,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 206,
+    "suspect_count": 24,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "raw_address_constant",
+      "unaffected_reg",
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 656
+  },
+  "cross_references": [
+    {
+      "addr": "004421b0",
+      "from_addr": "00442402",
+      "name": "core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_004421b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00446810",
+    "address_range": [
+      [
+        "00446810",
+        "00446e94"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_00446810",
+    "signature": "void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_00446810(CDemonCamera *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00446ea0",
+      "is_variadic": false,
+      "name": "core_dcamera.cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00446ea0"
+    },
+    {
+      "addr": "0043fa20",
+      "is_variadic": false,
+      "name": "core_dcamera.cpp_resetFogSamplingOffset_FUN_0043fa20"
+    },
+    {
+      "addr": "0043fc80",
+      "is_variadic": false,
+      "name": "core_dcamera.cpp_sampleFogAlongRay_FUN_0043fc80"
+    },
+    {
+      "addr": "0043fe60",
+      "is_variadic": false,
+      "name": "core_dcamera.cpp_updateFogScrollOffset_FUN_0043fe60"
+    },
+    {
+      "addr": "004c8440",
+      "is_variadic": true,
+      "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
+    },
+    {
+      "addr": "0056511e",
+      "is_variadic": false,
+      "name": "crt_fstream.cpp_ofstream_ctor_FUN_0056511e"
+    },
+    {
+      "addr": "005651ca",
+      "is_variadic": false,
+      "name": "crt_fstream.cpp_ofstream_dtor_FUN_005651ca"
+    },
+    {
+      "addr": "00565a13",
+      "is_variadic": false,
+      "name": "crt_fstream.cpp_ostream_write_FUN_00565a13"
+    },
+    {
+      "addr": "00563a30",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_00563a30"
+    },
+    {
+      "addr": "00563380",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fclose_FUN_00563380"
+    },
+    {
+      "addr": "00563c90",
+      "is_variadic": true,
+      "name": "crt_stdio.c_sprintf_FUN_00563c90"
+    },
+    {
+      "addr": "00456a60",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_getFile_FUN_00456a60"
+    },
+    {
+      "addr": "00438f30",
+      "is_variadic": false,
+      "name": "support_codec.cpp_CCodec_dtor_FUN_00438f30"
+    },
+    {
+      "addr": "004390b0",
+      "is_variadic": false,
+      "name": "support_codec.cpp_CCodec_processFromBuffer_FUN_004390b0"
+    },
+    {
+      "addr": "00439830",
+      "is_variadic": false,
+      "name": "support_codec.cpp_CLZWCompress_ctor_FUN_00439830"
+    },
+    {
+      "addr": "004399a0",
+      "is_variadic": false,
+      "name": "support_codec.cpp_CLZWCompress_finalize_FUN_004399a0"
+    },
+    {
+      "addr": "00439880",
+      "is_variadic": false,
+      "name": "support_codec.cpp_CLZWCompress_init_FUN_00439880"
+    },
+    {
+      "addr": "00439370",
+      "is_variadic": false,
+      "name": "support_codec.cpp_CLZWDictionary_dtor_FUN_00439370"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0057b9fb",
+      "name": "s_s_fog_0057b9fb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057ba02",
+      "name": "s_rb_0057ba02",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057ba05",
+      "name": "s_backdrop_0057ba05",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057ba0e",
+      "name": "s_backdrop_s_0057ba0e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057ba1a",
+      "name": "s_core_dcamera_cpp_0057ba1a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057ba2e",
+      "name": "s_Can_t_create_s_0057ba2e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057ba3e",
+      "name": "s_core_dcamera_cpp_0057ba3e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057ba52",
+      "name": "s_Error_compressing_s_0057ba52",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057ba67",
+      "name": "s_core_dcamera_cpp_0057ba67",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057ba7b",
+      "name": "s_Not_all_bytes_consumed_c_0057ba7b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057baa1",
+      "name": "s_core_dcamera_cpp_0057baa1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057bab5",
+      "name": "s_Error_writing_compressed_0057bab5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057badb",
+      "name": "DOUBLE_0057badb",
+      "type": "double",
+      "value": "256"
+    },
+    {
+      "addr": "005a47a0",
+      "name": "DAT_005a47a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ad4b8",
+      "name": "DAT_005ad4b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00ac2ff8",
+      "name": "DAT_00ac2ff8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00ac34f8",
+      "name": "DAT_00ac34f8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00ac34fc",
+      "name": "DAT_00ac34fc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "012b022c",
+      "name": "DAT_012b022c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "012cecb8",
+      "name": "DAT_012cecb8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "012cedf8",
+      "name": "DAT_012cedf8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0140d778",
+      "name": "DAT_0140d778",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0140d77c",
+      "name": "DAT_0140d77c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0140d780",
+      "name": "DAT_0140d780",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0140e790",
+      "name": "g_SFogGrid_0140d784.scroll_vector.x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0140e794",
+      "name": "g_SFogGrid_0140d784.scroll_vector.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0140e798",
+      "name": "g_SFogGrid_0140d784.scroll_vector.z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0140e7a0",
+      "name": "g_SFogGrid_0140d784.density_multiplier",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc4800",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "01cc4804",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00442402",
+        "call_type": "direct",
+        "caller": "core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_004421b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.389189189189189,
+    "instruction_count": 370,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 13,
+      "BOOL_OR": 6,
+      "BRANCH": 4,
+      "CALL": 26,
+      "CBRANCH": 23,
+      "COPY": 326,
+      "FLOAT2FLOAT": 4,
+      "FLOAT_MULT": 3,
+      "INT_ADD": 178,
+      "INT_AND": 199,
+      "INT_CARRY": 43,
+      "INT_EQUAL": 176,
+      "INT_LESS": 20,
+      "INT_MULT": 5,
+      "INT_NOTEQUAL": 17,
+      "INT_OR": 11,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 20,
+      "INT_SCARRY": 51,
+      "INT_SEXT": 3,
+      "INT_SLESS": 86,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 109,
+      "INT_XOR": 4,
+      "INT_ZEXT": 2,
+      "LOAD": 74,
+      "POPCOUNT": 85,
+      "RETURN": 3,
+      "ROUND": 3,
+      "STORE": 121,
+      "SUBPIECE": 2,
+      "TRUNC": 3
+    },
+    "pcode_op_count": 1624
+  },
+  "stack_frame": {
+    "frame_size": 636,
+    "local_size": 632,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_274",
+        "offset": -628,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_174",
+        "offset": -372,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_130",
+        "offset": -304,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_114",
+        "offset": -276,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_f8",
+        "offset": -248,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_94",
+        "offset": -148,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_90",
+        "offset": -144,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonCamera *"
+      }
+    ]
+  },
+  "static_analysis": {
+    "analyzed_file": "CDemonCamera_saveBackdrop_FUN_00446810.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 3,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 7,
+          "line": 72,
+          "message": "Uninitialized variable: local_114",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 13,
+          "line": 197,
+          "message": "Uninitialized variable: iStack_120",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 17,
+          "line": 101,
+          "message": "Uninitialized variable: unaff_EDI",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 14,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "CDemonCamera *unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 94,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "if (1 < unaff_EDI->display_height) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 100,
+      "match": "DAT_012ceb78",
+      "severity": "mild",
+      "text": "puVar4 = &DAT_012ceb78 + local_40;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 103,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "if (1 < unaff_EDI->display_width) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 121,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "} while (iVar10 < unaff_EDI->display_width);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 127,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "} while (local_34 < unaff_EDI->display_height);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 129,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "core_dcamera_cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00446ea0(unaff_EDI,local_20);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 131,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "if (0 < unaff_EDI->display_height) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 140,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "if (0 < unaff_EDI->display_width) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 158,
+      "match": "DAT_012ceb78",
+      "severity": "mild",
+      "text": "(&DAT_012ceb78)[iVar6] = (char)iVar2;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 169,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "} while (iVar11 < unaff_EDI->display_width);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 174,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "} while (local_38 < unaff_EDI->display_height);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 178,
+      "match": "DAT_012ceb78",
+      "severity": "mild",
+      "text": "((CCodec *)auStack_a0,&DAT_012ceb78,&local_58,(_ostream *)auStack_13c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `&g_VOID_PTR_012e1778` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 146,
+      "match": "(int)&g_VOID_PTR_012e1778",
+      "severity": "moderate",
+      "text": "uVar1 = (uint)*(byte *)((int)&g_VOID_PTR_012e1778 + local_50 + local_30 + iVar11);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_VOID_PTR_012e1778` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 148,
+      "match": "(int)&g_VOID_PTR_012e1778",
+      "severity": "moderate",
+      "text": "uVar1 = uVar1 - *(byte *)((int)&g_VOID_PTR_012e1778 + local_4c + local_30 + iVar11",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_VOID_PTR_012e1778` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 162,
+      "match": "(int)&g_VOID_PTR_012e1778",
+      "severity": "moderate",
+      "text": "cVar3 = cVar3 + *(char *)((int)&g_VOID_PTR_012e1778 + local_4c + local_30 + iVar11",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_VOID_PTR_012e1778` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 165,
+      "match": "(int)&g_VOID_PTR_012e1778",
+      "severity": "moderate",
+      "text": "*(char *)((int)&g_VOID_PTR_012e1778 + iVar7) = cVar3;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Raw hex address 0x444645 assigned to bare local `local_50`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_50` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 73,
+      "match": "0x444645",
+      "severity": "moderate",
+      "text": "local_50 = 0x00444645;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x4469b4 assigned to bare local `iVar10`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar10` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 81,
+      "match": "0x4469b4",
+      "severity": "moderate",
+      "text": "iVar10 = 0x4469b4;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 146,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "uVar1 = (uint)*(byte *)((int)&g_VOID_PTR_012e1778 + local_50 + local_30 + iVar11);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 148,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "uVar1 = uVar1 - *(byte *)((int)&g_VOID_PTR_012e1778 + local_4c + local_30 + iVar11",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 162,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "cVar3 = cVar3 + *(char *)((int)&g_VOID_PTR_012e1778 + local_4c + local_30 + iVar11",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 165,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(char *)((int)&g_VOID_PTR_012e1778 + iVar7) = cVar3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Uninitialized variable: local_114",
+      "line": 72,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "if (local_114 != (void *)0x0) {",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: iStack_120",
+      "line": 197,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "if (iStack_120 != 0) {",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: unaff_EDI",
+      "line": 101,
+      "match": "Cppcheck: uninitialized variable (legacy detector)",
+      "severity": "major",
+      "text": "if (1 < unaff_EDI->display_height) {",
+      "type": "static_legacy_uninitvar"
+    }
+  ]
+}

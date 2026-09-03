@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 2368,
-    "complexity_score": 1989,
+    "complexity_score": 1990,
     "cross_reference_count": 0,
     "function_call_count": 40,
     "global_count": 65,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 1074,
+    "pseudocode_lines": 1075,
     "suspect_count": 86,
     "suspect_types": [
       "pointer_cast",
@@ -142,7 +142,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 3442
+    "total_lines": 3443
   },
   "cross_references": [],
   "function": {
@@ -180,19 +180,9 @@
       "name": "core_actor.cpp_randomChance_FUN_0040dea0"
     },
     {
-      "addr": "004259f0",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_004259f0"
-    },
-    {
-      "addr": "00428c00",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_00428c00"
-    },
-    {
       "addr": "0042a150",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042a150"
+      "name": "core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042a150"
     },
     {
       "addr": "00425960",
@@ -210,6 +200,11 @@
       "name": "core_charactr.cpp_CCharacter_preProcess_FUN_004259a0"
     },
     {
+      "addr": "004259f0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_process_FUN_004259f0"
+    },
+    {
       "addr": "004277f0",
       "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_processDamageDecals_FUN_004277f0"
@@ -218,6 +213,11 @@
       "addr": "0042add0",
       "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_processMotion_FUN_0042add0"
+    },
+    {
+      "addr": "00428c00",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_processWalking_FUN_00428c00"
     },
     {
       "addr": "00427990",
@@ -1873,7 +1873,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 375,
+      "line": 376,
       "match": "in_stack_fffffc88",
       "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)0x4aa254;",
@@ -1881,7 +1881,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 379,
+      "line": 380,
       "match": "in_stack_fffffc88",
       "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)this_ptr;",
@@ -1889,7 +1889,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 442,
+      "line": 443,
       "match": "in_stack_fffffc88",
       "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)0x4aa46a;",
@@ -1897,7 +1897,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 445,
+      "line": 446,
       "match": "in_stack_fffffc88",
       "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)&(this_ptr->base).base.model;",
@@ -1905,7 +1905,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 447,
+      "line": 448,
       "match": "in_stack_fffffc88",
       "severity": "moderate",
       "text": "((CMotionController *)in_stack_fffffc88,0,1);",
@@ -1913,7 +1913,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 469,
+      "line": 470,
       "match": "in_stack_fffffc88",
       "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)(*((pCVar3->base).vtable._ub)->getPathMap)(&pCVar3->base);",
@@ -1921,7 +1921,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 473,
+      "line": 474,
       "match": "in_stack_fffffc88",
       "severity": "moderate",
       "text": "(CPathMap *)in_stack_fffffc88,pCVar12,fVar25,",
@@ -1929,7 +1929,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 474,
+      "line": 475,
       "match": "in_stack_fffffc94",
       "severity": "moderate",
       "text": "(float)in_stack_fffffc94);",
@@ -1937,7 +1937,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 476,
+      "line": 477,
       "match": "in_stack_fffffc88",
       "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)0x4aa677;",
@@ -1945,7 +1945,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 534,
+      "line": 535,
       "match": "in_stack_fffffc88",
       "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)(*((pCVar14->vtable)._ub)->getPathMap)(pCVar14);",
@@ -1953,7 +1953,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 538,
+      "line": 539,
       "match": "in_stack_fffffc88",
       "severity": "moderate",
       "text": "(CPathMap *)in_stack_fffffc88,pCVar12,fVar25,",
@@ -1961,7 +1961,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 539,
+      "line": 540,
       "match": "in_stack_fffffc94",
       "severity": "moderate",
       "text": "(float)in_stack_fffffc94);",
@@ -1969,7 +1969,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 541,
+      "line": 542,
       "match": "in_stack_fffffc88",
       "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)0x4aa3ef;",
@@ -1977,7 +1977,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 552,
+      "line": 553,
       "match": "in_stack_fffffc88",
       "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)0x4aa42c;",
@@ -1985,7 +1985,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 588,
+      "line": 589,
       "match": "in_stack_fffffc88",
       "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)0x3db2b8c2;",
@@ -1993,7 +1993,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 602,
+      "line": 603,
       "match": "in_stack_fffffc88",
       "severity": "moderate",
       "text": "(float)in_stack_fffffc88,(float)in_stack_fffffc8c);",
@@ -2001,7 +2001,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 602,
+      "line": 603,
       "match": "in_stack_fffffc8c",
       "severity": "moderate",
       "text": "(float)in_stack_fffffc88,(float)in_stack_fffffc8c);",
@@ -2009,7 +2009,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 604,
+      "line": 605,
       "match": "in_stack_fffffc88",
       "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)0x4aa770;",
@@ -2017,7 +2017,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 608,
+      "line": 609,
       "match": "in_stack_fffffc88",
       "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)&(this_ptr->base).base.model;",
@@ -2025,7 +2025,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 610,
+      "line": 611,
       "match": "in_stack_fffffc88",
       "severity": "moderate",
       "text": "((CMotionController *)in_stack_fffffc88,this_ptr->pending_eat_state,1);",
@@ -2033,7 +2033,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 615,
+      "line": 616,
       "match": "in_stack_fffffc88",
       "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)this_ptr;",
@@ -2041,7 +2041,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 624,
+      "line": 625,
       "match": "in_stack_fffffc88",
       "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)0x1;",
@@ -2049,7 +2049,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 640,
+      "line": 641,
       "match": "in_stack_fffffc88",
       "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)0x3f000000;",
@@ -2057,7 +2057,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 650,
+      "line": 651,
       "match": "in_stack_fffffc88",
       "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)pCVar11;",
@@ -2065,7 +2065,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 661,
+      "line": 662,
       "match": "in_stack_fffffc88",
       "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)&local_2d8;",
@@ -2073,7 +2073,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 673,
+      "line": 674,
       "match": "in_stack_fffffc88",
       "severity": "moderate",
       "text": "(&this_ptr->base,pCVar12,fVar25,(SDamageInfo *)in_stack_fffffc88);",
@@ -2081,7 +2081,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 675,
+      "line": 676,
       "match": "in_stack_fffffc88",
       "severity": "moderate",
       "text": "in_stack_fffffc88 = \"gh-hits?.wav\";",
@@ -2089,7 +2089,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 683,
+      "line": 684,
       "match": "in_stack_fffffc88",
       "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)0x1;",
@@ -2097,7 +2097,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 740,
+      "line": 741,
       "match": "(CMotionList *)(((int)local_7c",
       "severity": "moderate",
       "text": "local_78 = (CMotionList *)(((int)local_7c._ub >> 1) + g_FastSqrtMagic);",
@@ -2105,7 +2105,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 800,
+      "line": 801,
       "match": "in_stack_fffffc88",
       "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)0x4a9e85;",
@@ -2113,7 +2113,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 820,
+      "line": 821,
       "match": "in_stack_fffffc88",
       "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)(this_ptr->base).victim;",
@@ -2121,7 +2121,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 822,
+      "line": 823,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)((int)(&((UOrientationVector *)",
@@ -2129,7 +2129,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 823,
+      "line": 824,
       "match": "in_stack_fffffc88",
       "severity": "moderate",
       "text": "((CPathMap *)in_stack_fffffc88)->height_cache)->vec)[0x17].z",
@@ -2137,7 +2137,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 824,
+      "line": 825,
       "match": "in_stack_fffffc88",
       "severity": "moderate",
       "text": "+ 0xec))((CCharacter *)in_stack_fffffc88);",
@@ -2145,7 +2145,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 826,
+      "line": 827,
       "match": "in_stack_fffffc88",
       "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)0x1;",
@@ -2153,7 +2153,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 838,
+      "line": 839,
       "match": "in_stack_fffffc88",
       "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)0x3f000000;",
@@ -2161,7 +2161,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 847,
+      "line": 848,
       "match": "in_stack_fffffc88",
       "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)pCVar11;",
@@ -2169,7 +2169,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 859,
+      "line": 860,
       "match": "in_stack_fffffc88",
       "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)&local_314;",
@@ -2177,7 +2177,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 871,
+      "line": 872,
       "match": "in_stack_fffffc88",
       "severity": "moderate",
       "text": "(&this_ptr->base,pCVar12,fVar25,(SDamageInfo *)in_stack_fffffc88);",
@@ -2185,7 +2185,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 873,
+      "line": 874,
       "match": "in_stack_fffffc88",
       "severity": "moderate",
       "text": "in_stack_fffffc88 = \"gh-hits?.wav\";",
@@ -2193,7 +2193,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 888,
+      "line": 889,
       "match": "in_stack_fffffc88",
       "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)0x41700000;",
@@ -2201,7 +2201,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 896,
+      "line": 897,
       "match": "in_stack_fffffc88",
       "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)0x0;",
@@ -2209,7 +2209,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 916,
+      "line": 917,
       "match": "in_stack_fffffc88",
       "severity": "moderate",
       "text": "(float)in_stack_fffffc88);",
@@ -2217,7 +2217,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 1018,
+      "line": 1019,
       "match": "&stack0xfffffc88",
       "severity": "moderate",
       "text": "_sprintf(&stack0xfffffc88,\"ghoul-walk-?.wav *%f\",(double)(this_ptr->base).speed);",
@@ -2225,7 +2225,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 1020,
+      "line": 1021,
       "match": "&stack0xfffffc88",
       "severity": "moderate",
       "text": "((CDemonActor *)this_ptr,&stack0xfffffc88);",
@@ -2241,7 +2241,7 @@
     },
     {
       "description": "Pointer value `local_7c._ub` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 740,
+      "line": 741,
       "match": "(int)local_7c._ub",
       "severity": "moderate",
       "text": "local_78 = (CMotionList *)(((int)local_7c._ub >> 1) + g_FastSqrtMagic);",
@@ -2249,7 +2249,7 @@
     },
     {
       "description": "Pointer value `local_14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 787,
+      "line": 788,
       "match": "(int)local_14",
       "severity": "moderate",
       "text": "(10.0,(float)(int)local_14 * (float)10);",
@@ -2289,7 +2289,7 @@
     },
     {
       "description": "Raw hex address 0x4a9e4f assigned to bare local `iVar9`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar9` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 710,
+      "line": 711,
       "match": "0x4a9e4f",
       "severity": "moderate",
       "text": "iVar9 = 0x4a9e4f;",
@@ -2313,7 +2313,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 1074,
+      "line": 1075,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(this_ptr->prev_position).x = (pCVar16->position).x;",
@@ -2329,7 +2329,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 423,
+      "line": 424,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -2337,7 +2337,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 949,
+      "line": 950,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -2345,7 +2345,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 981,
+      "line": 982,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.position_delta.z = 0.0;",
@@ -2353,7 +2353,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 984,
+      "line": 985,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -2361,7 +2361,7 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_c0 != &local_120)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 733,
+      "line": 734,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&local_c0 != &local_120) {",

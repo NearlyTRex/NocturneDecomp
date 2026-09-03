@@ -32,7 +32,8 @@ void __cdecl core_set_cpp_CDemonSet_renderPrimitiveList_FUN_0050df40(CDemonSet *
       if (0 < primitive_count) {
         do {
           iVar1 = iVar1 + 1;
-          core_mirror_cpp_CMirror_FUN_004d76e0(this_ptr->active_mirror,primitive_array);
+          core_mirror_cpp_CMirror_clipAndRenderReflectedPrimitive_FUN_004d76e0
+                    (this_ptr->active_mirror,primitive_array);
           primitive_array = (SMRGLHeaderPrimitive *)&primitive_array[1].surface_normal.C;
         } while (iVar1 < primitive_count);
       }

@@ -13,8 +13,8 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[3]:
-;   core_charactr.cpp_CCharacter_FUN_004270e0 at 0042723d
-;   core_gabriela.cpp_CGabriella_FUN_00499b00 at 00499bb5
+;   core_charactr.cpp_CCharacter_renderEthereal_FUN_004270e0 at 0042723d
+;   core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_00499b00 at 00499bb5
 ;   core_stranger.cpp_CStranger_FUN_005396d0 at 0053979d
 ;
 ; Called Functions:

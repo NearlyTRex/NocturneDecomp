@@ -11,7 +11,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   core_hero.cpp_CHero_FUN_004b5110 at 004b5220
+;   core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004b5110 at 004b5220
 ;
 ; Referenced Globals:
 ;   void* switchdataD_00456498 = 00456566

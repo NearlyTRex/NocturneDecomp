@@ -50,7 +50,7 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_00540f50(CSuccubus *this_pt
   CHotDemon *local_18;
   float local_14;
   
-  iVar9 = core_charactr_cpp_CCharacter_FUN_004259f0((CCharacter *)this_ptr,delta_time);
+  iVar9 = core_charactr_cpp_CCharacter_process_FUN_004259f0((CCharacter *)this_ptr,delta_time);
   if (iVar9 == 0) {
     return;
   }
@@ -83,7 +83,8 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_00540f50(CSuccubus *this_pt
   pSVar10 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
                       (&pCVar15->motion_controller);
   uVar12 = pSVar10->state_index;
-  iVar9 = core_charactr_cpp_CCharacter_FUN_00428c00((CCharacter *)this_ptr,delta_time);
+  iVar9 = core_charactr_cpp_CCharacter_processWalking_FUN_00428c00
+                    ((CCharacter *)this_ptr,delta_time);
   if (iVar9 == 0) {
     if (uVar12 == 0) {
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
@@ -218,7 +219,7 @@ LAB_00541090:
   core_charactr_cpp_CCharacter_preProcess_FUN_004259a0((CCharacter *)this_ptr);
   pCVar15 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(pCVar15);
-  core_charactr_cpp_CCharacter_FUN_0042a150((CCharacter *)this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042a150((CCharacter *)this_ptr,delta_time);
   local_20 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
                        (&pCVar15->motion_controller);
   local_1c = (this_ptr->base).base.model.motion_controller.current_frame_number;

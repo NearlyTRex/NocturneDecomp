@@ -21,7 +21,7 @@
 ;   undefined4 g_CGame_01c775ec.render_mode
 ;
 ; Called Functions:
-;   core_set.cpp_CDemonSet_FUN_0050d910
+;   core_set.cpp_CDemonSet_renderEnvMapTriangles_FUN_0050d910
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
 ;   engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_00461720
 ;
@@ -73,8 +73,8 @@ section .text
     PUSH EDI                            ; 0050df2d
     MOV EBP,dword ptr [ESP + 0x20]      ; 0050df2e
     PUSH EBP                            ; 0050df32
-    CALL core_set.cpp_CDemonSet_FUN_0050d910 ; 0050df33
-        ;   XREF to: 0050d910 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0050d910(CDemonSet * this_ptr, SInputFace * face_data, int count, int alpha)
+    CALL core_set.cpp_CDemonSet_renderEnvMapTriangles_FUN_0050d910 ; 0050df33
+        ;   XREF to: 0050d910 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderEnvMapTriangles_FUN_0050d910(CDemonSet * this_ptr, SInputFace * face_data, int count, int alpha)
     ADD ESP,0x10                        ; 0050df38
     POP ESI                             ; 0050df3b
     POP EDI                             ; 0050df3c

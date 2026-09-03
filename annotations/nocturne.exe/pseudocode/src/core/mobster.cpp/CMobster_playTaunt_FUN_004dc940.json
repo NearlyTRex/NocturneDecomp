@@ -62,17 +62,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 159,
-    "complexity_score": 75,
+    "complexity_score": 76,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 60,
+    "pseudocode_lines": 61,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 219
+    "total_lines": 220
   },
   "cross_references": [
     {
@@ -104,7 +104,7 @@
     {
       "addr": "0052ebc0",
       "is_variadic": false,
-      "name": "core_sound.cpp_CSound_FUN_0052ebc0"
+      "name": "core_sound.cpp_CSound_getSoundDuration_FUN_0052ebc0"
     },
     {
       "addr": "00563c90",
@@ -320,7 +320,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 50,
+      "line": 51,
       "match": "(CDemonActor **)((int)g_CDemonSet_PTR_005be368",
       "severity": "moderate",
       "text": "(*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->enemies + local_18),",

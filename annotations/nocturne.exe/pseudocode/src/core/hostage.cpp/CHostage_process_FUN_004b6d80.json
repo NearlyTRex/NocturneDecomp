@@ -70,49 +70,49 @@
       {
         "category": "incompatible_types",
         "column": 24,
-        "line": 246,
+        "line": 247,
         "message": "no matching function for call to 'core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30'"
       },
       {
         "category": "format_error",
         "column": 67,
-        "line": 251,
+        "line": 252,
         "message": "format specifies type 'char *' but the argument has type 'CHostage *' [-Werror,-Wformat]"
       },
       {
         "category": "incompatible_types",
         "column": 11,
-        "line": 252,
+        "line": 253,
         "message": "no matching function for call to 'core_event_cpp_CEventList_executeCommands_FUN_0047ab70'"
       },
       {
         "category": "format_error",
         "column": 54,
-        "line": 299,
+        "line": 301,
         "message": "format specifies type 'char *' but the argument has type 'CHostage *' [-Werror,-Wformat]"
       },
       {
         "category": "incompatible_types",
         "column": 15,
-        "line": 300,
+        "line": 302,
         "message": "no matching function for call to 'core_event_cpp_CEventList_executeCommands_FUN_0047ab70'"
       },
       {
         "category": "format_error",
         "column": 71,
-        "line": 309,
+        "line": 311,
         "message": "format specifies type 'char *' but the argument has type 'CHostage *' [-Werror,-Wformat]"
       },
       {
         "category": "incompatible_types",
         "column": 11,
-        "line": 310,
+        "line": 312,
         "message": "no matching function for call to 'core_event_cpp_CEventList_executeCommands_FUN_0047ab70'"
       },
       {
         "category": "format_error",
         "column": 96,
-        "line": 344,
+        "line": 346,
         "message": "format specifies type 'char *' but the argument has type 'CHostage *' [-Werror,-Wformat]"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1656,
-    "complexity_score": 871,
+    "complexity_score": 873,
     "cross_reference_count": 0,
     "function_call_count": 39,
     "global_count": 44,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 691,
+    "pseudocode_lines": 693,
     "suspect_count": 14,
     "suspect_types": [
       "concat_reconstruction",
@@ -139,7 +139,7 @@
       "unrolled_memset",
       "warning_overlapping_globals"
     ],
-    "total_lines": 2347
+    "total_lines": 2349
   },
   "cross_references": [],
   "function": {
@@ -197,6 +197,11 @@
       "name": "core_actor.cpp_randomChance_FUN_0040dea0"
     },
     {
+      "addr": "0042a150",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042a150"
+    },
+    {
       "addr": "00429730",
       "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00429730"
@@ -207,29 +212,14 @@
       "name": "core_charactr.cpp_CCharacter_followActor_FUN_00428780"
     },
     {
-      "addr": "004259f0",
+      "addr": "00425050",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_004259f0"
-    },
-    {
-      "addr": "00428c00",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_00428c00"
-    },
-    {
-      "addr": "0042a150",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042a150"
+      "name": "core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050"
     },
     {
       "addr": "0042af70",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042af70"
-    },
-    {
-      "addr": "00425050",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050"
+      "name": "core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042af70"
     },
     {
       "addr": "004259a0",
@@ -237,9 +227,19 @@
       "name": "core_charactr.cpp_CCharacter_preProcess_FUN_004259a0"
     },
     {
+      "addr": "004259f0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_process_FUN_004259f0"
+    },
+    {
       "addr": "0042add0",
       "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_processMotion_FUN_0042add0"
+    },
+    {
+      "addr": "00428c00",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_processWalking_FUN_00428c00"
     },
     {
       "addr": "00423ed0",
@@ -1224,7 +1224,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 401,
+      "line": 403,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "pCVar21 = SUB84(__BITCAST_UINT64((double)fVar4),0);",
@@ -1232,7 +1232,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 534,
+      "line": 536,
       "match": "1.4013e-45",
       "severity": "mild",
       "text": "local_20 = 1.4013e-45;",
@@ -1240,7 +1240,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 677,
+      "line": 679,
       "match": "8.40779e-45",
       "severity": "mild",
       "text": "(pCVar17->model).transformed_vertices[0x4f].z = 8.40779e-45;",
@@ -1248,7 +1248,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 410,
+      "line": 412,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "pCVar15->x = pCVar19->x;",
@@ -1264,7 +1264,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 535,
+      "line": 537,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -1272,7 +1272,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 588,
+      "line": 590,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.position_delta.z = 0.0;",
@@ -1280,7 +1280,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 591,
+      "line": 593,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",

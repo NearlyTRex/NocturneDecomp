@@ -14,9 +14,9 @@
 ;   core_crossbow.cpp_CCrossbow_fire_FUN_0043d1c0 at 0043d310
 ;   core_elephant.cpp_CElephantGun_fire_FUN_00477890 at 00477a82
 ;   core_emitter.cpp_CEmitter_renderOpaque_FUN_00478f80 at 00478fc9
-;   core_fire.cpp_CFireEffect_FUN_0048b6f0 at 0048bc14
-;   core_gabriela.cpp_CGabriella_FUN_00498de0 at 00499068
-;   core_gabriela.cpp_CGabriella_FUN_004998c0 at 00499a74
+;   core_fire.cpp_CFireEffect_traceLaser_FUN_0048b6f0 at 0048bc14
+;   core_gabriela.cpp_CGabriella_processAI_FUN_00496d10 at 004971e0
+;   core_gabriela.cpp_CGabriella_scoreTargetVisibility_FUN_00498de0 at 00499068
 ;   ... and 21 more
 ;
 ; *****************************************************************************

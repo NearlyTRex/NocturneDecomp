@@ -6,9 +6,9 @@
 ;
 ; XREF[4]:
 ;   core_set.cpp_CDemonSet_load_FUN_00506f10 at 0050782c
-;   core_setcolid.cpp_CDemonSet_FUN_00511a10 at 00511a72
-;   core_setcolid.cpp_CDemonSet_FUN_00511aa0 at 00511b02
+;   core_setcolid.cpp_CDemonSet_castVoxelShadow_FUN_00511a10 at 00511a72
 ;   core_setcolid.cpp_CDemonSet_commitVoxelBuffer_FUN_00511b30 at 00511b3d
+;   core_setcolid.cpp_CDemonSet_transferVoxelShadow_FUN_00511aa0 at 00511b02
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_path_cpp_0058ce3f

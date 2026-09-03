@@ -57,7 +57,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_0041fe40(CBride *this_ptr,float d
   float local_18;
   float local_14;
   
-  iVar4 = core_charactr_cpp_CCharacter_FUN_004259f0((CCharacter *)this_ptr,delta_time);
+  iVar4 = core_charactr_cpp_CCharacter_process_FUN_004259f0((CCharacter *)this_ptr,delta_time);
   if (iVar4 != 0) {
     if (0.0 <= this_ptr->action_timer) {
       this_ptr->action_timer = this_ptr->action_timer - delta_time;
@@ -376,7 +376,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_0041fe40(CBride *this_ptr,float d
     }
     core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0
               (&(this_ptr->base).base.model);
-    core_charactr_cpp_CCharacter_FUN_0042a150((CCharacter *)this_ptr,delta_time);
+    core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042a150((CCharacter *)this_ptr,delta_time);
     if ((this_ptr->base).pool_me == 0) {
       core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_004278e0
                 ((CCharacter *)this_ptr,this_ptr->part_indices[0],DAT_00764b40,0.2);

@@ -9,10 +9,10 @@
 ; int              Stack[0xc]:4   should_delete
 ;
 ; XREF[5]:
-;   core_mission.cpp_CDemonMission_FUN_004d8fc0 at 004d8fdb
 ;   core_mission.cpp_CDemonMission_createHeros_FUN_004d9a80 at 004d9b68
 ;   core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004d9c20 at 004d9d59
 ;   core_mission.cpp_CDemonMission_process_FUN_004d92a0 at 004d92cd
+;   core_mission.cpp_CDemonMission_removeAllActors_FUN_004d8fc0 at 004d8fdb
 ;   core_mission.cpp_CDemonMission_run_FUN_004d9440 at 004d9506
 ;
 ; Called Functions:

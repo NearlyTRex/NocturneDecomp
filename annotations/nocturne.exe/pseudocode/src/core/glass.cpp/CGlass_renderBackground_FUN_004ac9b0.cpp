@@ -23,7 +23,7 @@ void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004ac9b0(CGlass *this_pt
   
   if (this_ptr->background_flag == 0) {
     if (((layer_flag != 0) && (this_ptr->shattered != 0)) && (this_ptr->mirror_flag != 0)) {
-      core_glass_cpp_CGlass_FUN_004ac7c0(this_ptr);
+      core_glass_cpp_CGlass_renderBrokenGlass_FUN_004ac7c0(this_ptr);
       return;
     }
   }

@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   render_completeness
 ;
 ; XREF[2]:
-;   core_set.cpp_CDemonSet_FUN_00509a80 at 00509eb8
+;   core_set.cpp_CDemonSet_renderScene_FUN_00509a80 at 00509eb8
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508caa
 ;
 ; Referenced Globals:

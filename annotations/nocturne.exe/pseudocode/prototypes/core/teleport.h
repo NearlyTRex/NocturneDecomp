@@ -23,9 +23,9 @@ CTeleportDest * __cdecl CTeleportDest::ctor(CTeleportDest *this_ptr);
 // Address: 00543860
 CBoundingBox3D * __cdecl CTeleportDest::getBoundingBox(CTeleportDest *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_teleport.cpp_CTeleportDest_FUN_00543890
+// Original: core_teleport.cpp_CTeleportDest_getCollisionType_FUN_00543890
 // Address: 00543890
-ECollisionType __cdecl CTeleportDest(CDemonActor *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CTeleportDest::getCollisionType(CTeleportDest *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_teleport.cpp_factoryFuncTeleport_FUN_005438a0
 // Address: 005438a0

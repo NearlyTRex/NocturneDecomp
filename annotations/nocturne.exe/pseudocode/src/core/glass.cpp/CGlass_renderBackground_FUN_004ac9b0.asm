@@ -20,7 +20,7 @@
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0
-;   core_glass.cpp_CGlass_FUN_004ac7c0
+;   core_glass.cpp_CGlass_renderBrokenGlass_FUN_004ac7c0
 ;   core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0
 ;   engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0045f460
@@ -172,8 +172,8 @@ section .text
     JZ 0x004acb1b                       ; 004acb47
         ;   XREF to: 004acb1b (CONDITIONAL_JUMP)  ; LAB_004acb1b
     PUSH EBP                            ; 004acb49
-    CALL core_glass.cpp_CGlass_FUN_004ac7c0 ; 004acb4a
-        ;   XREF to: 004ac7c0 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_FUN_004ac7c0(CGlass * this_ptr)
+    CALL core_glass.cpp_CGlass_renderBrokenGlass_FUN_004ac7c0 ; 004acb4a
+        ;   XREF to: 004ac7c0 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_renderBrokenGlass_FUN_004ac7c0(CGlass * this_ptr)
     ADD ESP,0x4                         ; 004acb4f
     ADD ESP,0x18                        ; 004acb52
     POP EBP                             ; 004acb55

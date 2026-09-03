@@ -27,7 +27,7 @@
 ;   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
 ;   core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041d550
-;   core_boxactor.cpp_CBoxActor_FUN_0041f190
+;   core_boxactor.cpp_CBoxActor_constrainToExtents_FUN_0041f190
 ;   core_boxactor.cpp_CBoxActor_setupPhysicsBox_FUN_0041e4d0
 ;
 ; *****************************************************************************
@@ -142,8 +142,8 @@ section .text
         ;   XREF to: 0041e4d0 (UNCONDITIONAL_CALL)  ; void core_boxactor.cpp_CBoxActor_setupPhysicsBox_FUN_0041e4d0(CBoxActor * this_ptr)
     ADD ESP,0x4                         ; 0041f094
     PUSH EBX                            ; 0041f097
-    CALL core_boxactor.cpp_CBoxActor_FUN_0041f190 ; 0041f098
-        ;   XREF to: 0041f190 (UNCONDITIONAL_CALL)  ; void core_boxactor.cpp_CBoxActor_FUN_0041f190(CBoxActor * this_ptr)
+    CALL core_boxactor.cpp_CBoxActor_constrainToExtents_FUN_0041f190 ; 0041f098
+        ;   XREF to: 0041f190 (UNCONDITIONAL_CALL)  ; void core_boxactor.cpp_CBoxActor_constrainToExtents_FUN_0041f190(CBoxActor * this_ptr)
     ADD ESP,0x4                         ; 0041f09d
     MOV ESP,EBP                         ; 0041f0a0
     POP EBP                             ; 0041f0a2

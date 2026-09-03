@@ -120,12 +120,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0052dff0",
-      "from_addr": "0052e27f",
-      "name": "core_sound.cpp_CSound_FUN_0052dff0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0052e850",
       "from_addr": "0052e899",
       "name": "core_sound.cpp_CSound_configure_FUN_0052e850",
@@ -135,6 +129,12 @@
       "addr": "0052ddf0",
       "from_addr": "0052debd",
       "name": "core_sound.cpp_CSound_init_FUN_0052ddf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052dff0",
+      "from_addr": "0052e27f",
+      "name": "core_sound.cpp_CSound_process_FUN_0052dff0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -274,7 +274,7 @@
       {
         "call_addr": "0052e27f",
         "call_type": "direct",
-        "caller": "core_sound.cpp_CSound_FUN_0052dff0",
+        "caller": "core_sound.cpp_CSound_process_FUN_0052dff0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

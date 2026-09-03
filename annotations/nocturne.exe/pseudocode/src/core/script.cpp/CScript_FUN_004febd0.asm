@@ -34,11 +34,11 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
+;   core_script.cpp_CScript_buildParsedLines_FUN_004fee30
 ;   core_script.cpp_CScript_dbLoad_FUN_00504e70
 ;   core_script.cpp_CScript_FUN_004fe500
-;   core_script.cpp_CScript_FUN_004fee30
-;   core_script.cpp_CScript_FUN_004fef60
-;   core_script.cpp_CScript_FUN_004feff0
+;   core_script.cpp_CScript_initRuntime_FUN_004feff0
+;   core_script.cpp_CScript_validateSyntax_FUN_004fef60
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fgetc_FUN_00564570
 ;   crt_stdio.c_ftell_FUN_00566e70
@@ -175,8 +175,8 @@ section .text
     ADD ESP,0x4                         ; 004fecf6
     MOV ESI,dword ptr [ESP + 0x320]     ; 004fecf9
     PUSH ESI                            ; 004fed00
-    CALL core_script.cpp_CScript_FUN_004fee30 ; 004fed01
-        ;   XREF to: 004fee30 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_004fee30(CScript * this_ptr)
+    CALL core_script.cpp_CScript_buildParsedLines_FUN_004fee30 ; 004fed01
+        ;   XREF to: 004fee30 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_buildParsedLines_FUN_004fee30(CScript * this_ptr)
     ADD ESP,0x4                         ; 004fed06
     CMP dword ptr [ESP + 0x328],0x0     ; 004fed09
     JNZ 0x004fee03                      ; 004fed11
@@ -184,8 +184,8 @@ section .text
     LEA EAX,[ESP + 0x304]               ; 004fed17
     PUSH EAX                            ; 004fed1e
     PUSH ESI                            ; 004fed1f
-    CALL core_script.cpp_CScript_FUN_004fef60 ; 004fed20
-        ;   XREF to: 004fef60 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_CScript_FUN_004fef60(CScript * this_ptr, int * error_line_out)
+    CALL core_script.cpp_CScript_validateSyntax_FUN_004fef60 ; 004fed20
+        ;   XREF to: 004fef60 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_CScript_validateSyntax_FUN_004fef60(CScript * this_ptr, int * error_line_out)
     ADD ESP,0x8                         ; 004fed25
     PUSH 0x1e56c30                      ; 004fed28
     MOV EBX,EAX                         ; 004fed2d
@@ -268,8 +268,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x320]     ; 004fee03
         ;   Label: LAB_004fee03
     PUSH EBX                            ; 004fee0a
-    CALL core_script.cpp_CScript_FUN_004feff0 ; 004fee0b
-        ;   XREF to: 004feff0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_004feff0(CScript * this_ptr)
+    CALL core_script.cpp_CScript_initRuntime_FUN_004feff0 ; 004fee0b
+        ;   XREF to: 004feff0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_initRuntime_FUN_004feff0(CScript * this_ptr)
     MOV EAX,0x1                         ; 004fee10
     ADD ESP,0x4                         ; 004fee15
     ADD ESP,0x30c                       ; 004fee18

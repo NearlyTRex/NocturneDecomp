@@ -78,7 +78,7 @@
 ; undefined        Stack[-0x10]:1  local_10
 ;
 ; XREF[1]:
-;   core_dlight.cpp_CDemonLight_FUN_0044f0b0 at 0044f3ed
+;   core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_0044f0b0 at 0044f3ed
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0057c8c6 = 0.100000000000000

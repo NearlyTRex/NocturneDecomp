@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   mode
 ;
 ; XREF[22]:
-;   cockpit_pkbitmap.cpp_CPackedBitmap_FUN_004f4b30 at 004f4b3f
+;   cockpit_pkbitmap.cpp_CPackedBitmap_saveToPBMFile_FUN_004f4b30 at 004f4b3f
 ;   core_game.cpp_CGame_FUN_004a3b90 at 004a3c6a
 ;   core_game.cpp_CGame_FUN_004a4170 at 004a4541
 ;   core_game.cpp_CGame_FUN_004a4b50 at 004a4bdf

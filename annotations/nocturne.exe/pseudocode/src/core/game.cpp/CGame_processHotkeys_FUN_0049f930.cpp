@@ -231,7 +231,7 @@ LAB_0049fc23:
       }
       iVar4 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_F9);
       if (iVar4 != 0) {
-        core_script_cpp_CScript_FUN_00504d60(0x01E56DA0);
+        core_script_cpp_CScript_resetDialogState_FUN_00504d60(0x01E56DA0);
       }
     }
   }

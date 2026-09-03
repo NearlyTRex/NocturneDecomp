@@ -19,7 +19,7 @@
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
-;   core_set.cpp_CDemonSet_FUN_0050e370
+;   core_set.cpp_CDemonSet_cacheMirrorLighting_FUN_0050e370
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
 ;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0
@@ -123,8 +123,8 @@ section .text
     PUSH EAX                            ; 0042163a
     MOV EAX,[0x005be368]                ; 0042163b | g_CDemonSet_PTR_005be368
     PUSH EAX                            ; 00421640 | g_CDemonSet_01e57284
-    CALL core_set.cpp_CDemonSet_FUN_0050e370 ; 00421641
-        ;   XREF to: 0050e370 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0050e370(CDemonSet * this_ptr, CVector3f * position)
+    CALL core_set.cpp_CDemonSet_cacheMirrorLighting_FUN_0050e370 ; 00421641
+        ;   XREF to: 0050e370 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_cacheMirrorLighting_FUN_0050e370(CDemonSet * this_ptr, CVector3f * position)
     ADD ESP,0x8                         ; 00421646
     PUSH 0xffff                         ; 00421649
     MOV EDX,dword ptr [0x005ae704]      ; 0042164e | g_CDemonRenderer_PTR_005ae704
@@ -159,8 +159,8 @@ section .text
         ;   Label: LAB_004216a6
     MOV ECX,dword ptr [0x005be368]      ; 004216a8 | g_CDemonSet_PTR_005be368
     PUSH ECX                            ; 004216ae | g_CDemonSet_01e57284
-    CALL core_set.cpp_CDemonSet_FUN_0050e370 ; 004216af
-        ;   XREF to: 0050e370 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0050e370(CDemonSet * this_ptr, CVector3f * position)
+    CALL core_set.cpp_CDemonSet_cacheMirrorLighting_FUN_0050e370 ; 004216af
+        ;   XREF to: 0050e370 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_cacheMirrorLighting_FUN_0050e370(CDemonSet * this_ptr, CVector3f * position)
     ADD ESP,0x8                         ; 004216b4
     POP ESI                             ; 004216b7
     POP EDI                             ; 004216b8

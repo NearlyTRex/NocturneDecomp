@@ -15,8 +15,8 @@
 ;   core_bride.cpp_CBride_setup_FUN_0041fc20 at 0041fd2c
 ;   core_bugs.cpp_CBugs_setSwarmTarget_FUN_00423790 at 0042384b
 ;   core_bugs.cpp_CBugs_updateBugRenderingData_FUN_00422c70 at 00422eed
-;   core_charactr.cpp_CCharacter_FUN_004270e0 at 004271bc
 ;   core_charactr.cpp_CCharacter_dismember_FUN_00427b60 at 00427b9d
+;   core_charactr.cpp_CCharacter_getPartDominantBone_FUN_00426570 at 0042657f
 ;   ... and 40 more
 ;
 ; Referenced Globals:

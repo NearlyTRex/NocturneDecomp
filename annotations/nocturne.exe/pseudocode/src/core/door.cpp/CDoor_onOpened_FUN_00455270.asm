@@ -8,8 +8,8 @@
 ;
 ; XREF[3]:
 ;   core_charactr.cpp_CCharacter_clearDoorTarget_FUN_00428ef0 at 00428f02
-;   core_hero.cpp_CHero_FUN_004b5110 at 004b523a
 ;   core_hero.cpp_CHero_tryOpenDoor_FUN_004b5270 at 004b52b1
+;   core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004b5110 at 004b523a
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b7650

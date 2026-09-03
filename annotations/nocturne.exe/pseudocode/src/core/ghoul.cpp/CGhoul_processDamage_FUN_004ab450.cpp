@@ -66,7 +66,7 @@ void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004ab450(CGhoul *this_ptr,S
     iVar9 = (this_ptr->base).special_form_flag;
     (this_ptr->base).base.hit_points = 0.0;
     if (iVar9 != 0) {
-      core_charactr_cpp_CCharacter_FUN_00427a60((CCharacter *)this_ptr);
+      core_charactr_cpp_CCharacter_shatter_FUN_00427a60((CCharacter *)this_ptr);
       core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(&this_ptr->base,damage_info);
       return;
     }

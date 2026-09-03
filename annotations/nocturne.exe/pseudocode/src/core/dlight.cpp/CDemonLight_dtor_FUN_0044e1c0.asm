@@ -13,7 +13,7 @@
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_dtor_FUN_0043ff30
-;   core_dlight.cpp_CDemonLight_FUN_0044e2c0
+;   core_dlight.cpp_CDemonLight_free_FUN_0044e2c0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 0044e1c0
         ;   Label: core_dlight.cpp_CDemonLight_dtor_FUN_0044e1c0
     PUSH EDX                            ; 0044e1c4
-    CALL core_dlight.cpp_CDemonLight_FUN_0044e2c0 ; 0044e1c5
-        ;   XREF to: 0044e2c0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_FUN_0044e2c0(CDemonLight * this_ptr)
+    CALL core_dlight.cpp_CDemonLight_free_FUN_0044e2c0 ; 0044e1c5
+        ;   XREF to: 0044e2c0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_free_FUN_0044e2c0(CDemonLight * this_ptr)
     ADD ESP,0x4                         ; 0044e1ca
     PUSH 0x1                            ; 0044e1cd
     MOV ECX,dword ptr [ESP + 0x8]       ; 0044e1cf

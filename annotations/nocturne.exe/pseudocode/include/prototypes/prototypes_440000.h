@@ -59,7 +59,7 @@ CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_worldToCameraSpace_FUN_00
 CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_transformVectorWithAlpha_FUN_00441a10(CDemonCamera *this_ptr,CVector3i *input_vector,CVector3i *output_vector);
 char * __cdecl core_dcamera_cpp_CDemonCamera_allocLight_FUN_00441c20(CDemonCamera *this_ptr);
 void __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_00441c50(CDemonCamera *this_ptr,CDemonLight *light_source,CRect *rect);
-void __cdecl core_dcamera_cpp_CDemonCamera_FUN_004421b0(CDemonCamera *this_ptr);
+void __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_004421b0(CDemonCamera *this_ptr);
 void core_dcamera_cpp_FUN_004425d0(undefined4 param_1,int param_2,int param_3);
 int __cdecl core_dcamera_cpp_CDemonCamera_sampleLightingAntialiased_FUN_004425f0(CDemonCamera *this_ptr,CVector3i *world_pos,CDemonLight *light_source,int intensity);
 int __cdecl core_dcamera_cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_00442c50(CDemonCamera *this_ptr,CVector3i *world_pos,CDemonLight *light_source,CVector3i *light_direction);
@@ -91,8 +91,8 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00445fe0(CDem
 int __cdecl core_dcamera_cpp_CDemonCamera_isSphereVisible_FUN_00446590(CDemonCamera *this_ptr,CVector3f *position,float radius);
 void __cdecl core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_00446740(CDemonCamera *this_ptr,float intensity);
 void __cdecl core_dcamera_cpp_CDemonCamera_screenToWorldRay_FUN_00446760(CDemonCamera *this_ptr,CVector3f *output_ray,int screen_x,int screen_y);
-void __cdecl core_dcamera_cpp_CDemonCamera_FUN_00446800(CDemonCamera *this_ptr);
-void __cdecl core_dcamera_cpp_CDemonCamera_FUN_00446810(CDemonCamera *this_ptr);
+void __cdecl core_dcamera_cpp_CDemonCamera_generateFogGrid_FUN_00446800(CDemonCamera *this_ptr);
+void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_00446810(CDemonCamera *this_ptr);
 void __cdecl core_dcamera_cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00446ea0(CDemonCamera *this_ptr,int plane_index);
 void __cdecl core_dcamera_cpp_CDemonCamera_blendFogPlanes_FUN_00446fe0(CDemonCamera *this_ptr,int plane_index,uint blend_alpha);
 void __cdecl core_dcamera_cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_004470f0(CDemonCamera *this_ptr);
@@ -104,14 +104,14 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveAlphaTransform_FUN_004477f0(CDemo
 CVector3i * __stack3_esi core_dcamera_cpp_CDemonCamera_restoreAlphaTransform_FUN_00447910(CDemonCamera *this_ptr,CVector3i *screen_pos,int alpha_index,CVector3i *world_pos);
 void __cdecl core_dcamera_cpp_CDemonCamera_generateGammaPalette_FUN_00447a70(CDemonCamera *this_ptr,int gamma_value);
 void __cdecl core_dcamera_cpp_CDemonCamera_clearFramebufferAndWorkBuffers_FUN_00447b30(CDemonCamera *this_ptr,int clear_color);
-void __cdecl core_dcamera_cpp_CDemonCamera_FUN_00447bb0(CDemonCamera *this_ptr,int screen_x,int screen_y,int offset);
-void __cdecl core_dcamera_cpp_CDemonCamera_FUN_00447c60(CDemonCamera *this_ptr,int screen_x,int screen_y,int offset);
+void __cdecl core_dcamera_cpp_CDemonCamera_blendLightmapPixel32_FUN_00447bb0(CDemonCamera *this_ptr,int screen_x,int screen_y,int offset);
+void __cdecl core_dcamera_cpp_CDemonCamera_blendLightmapPixel16_FUN_00447c60(CDemonCamera *this_ptr,int screen_x,int screen_y,int offset);
 void __cdecl core_dcamera_cpp_loadCameraFog_FUN_00447d10(SFog *fog,_FILE *file_handle,int file_version);
 void __cdecl core_dcamera_cpp_saveCameraFog_FUN_00447dd0(SFog *fog,_FILE *file_handle);
 void __cdecl core_dcamera_cpp_CDemonCamera_initCameraShake_FUN_00447e80(CDemonCamera *this_ptr,float peak_intensity,float attack_time,float sustain_duration ,float decay_time);
 CVector3f * __cdecl core_dcamera_cpp_CDemonCamera_FUN_00447f20(CDemonCamera *this_ptr,CVector3f *output_bounds);
-void __cdecl core_dcamera_cpp_CDemonCamera_FUN_00448310(CDemonCamera *this_ptr);
-void __cdecl core_dcamera_cpp_CDemonCamera_FUN_00448380(CDemonCamera *this_ptr);
+void __cdecl core_dcamera_cpp_CDemonCamera_saveZBufferScanlines_FUN_00448310(CDemonCamera *this_ptr);
+void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferScanlines_FUN_00448380(CDemonCamera *this_ptr);
 CVector3f * __cdecl core_dcamera_cpp_CVector3f_arrdtor77120_FUN_004483f0(CVector3f *this_ptr,uint flags);
 void __cdecl core_dcube_cpp_staticInit_FUN_00448410(void);
 void __cdecl core_dcube_cpp_copyVector3_FUN_004484a0(CVector3f *dest,CVector3f *src);
@@ -203,7 +203,7 @@ void __cdecl core_dlight_cpp_staticInit_FUN_0044e0f0(void);
 CDemonLight * __cdecl core_dlight_cpp_CDemonLight_ctor_FUN_0044e110(CDemonLight *this_ptr,int shadow_map_width,int shadow_map_height);
 CDemonLight * __cdecl core_dlight_cpp_CDemonLight_dtor_FUN_0044e1c0(CDemonLight *this_ptr,uint flags);
 void __cdecl core_dlight_cpp_CDemonLight_init_FUN_0044e1e0(CDemonLight *this_ptr);
-void __cdecl core_dlight_cpp_CDemonLight_FUN_0044e2c0(CDemonLight *this_ptr);
+void __cdecl core_dlight_cpp_CDemonLight_free_FUN_0044e2c0(CDemonLight *this_ptr);
 void * __cdecl core_dlight_cpp_getRestoreMemory_FUN_0044e340(int pixel_count);
 void __cdecl core_dlight_cpp_resetRestoreMemoryAllocator_FUN_0044e3b0(void);
 void __cdecl core_dlight_cpp_CDemonLight_allocMasterZBuffer_FUN_0044e3c0(CDemonLight *this_ptr);
@@ -218,7 +218,7 @@ ushort * __cdecl core_dlight_cpp_CDemonLight_projectLightAndMarkVisibility_FUN_0
 void __cdecl core_dlight_cpp_drawGrayscalePixel_FUN_0044ed50(int x,int y,int grayscale_value);
 void __cdecl core_dlight_cpp_CDemonLight_renderShadowMapDebugView_FUN_0044ed80(CDemonLight *this_ptr,int screen_x,int screen_y,int display_size);
 void __cdecl core_dlight_cpp_CDemonLight_clearCircularShadowMapEdges_FUN_0044efb0(CDemonLight *this_ptr);
-void __cdecl core_dlight_cpp_CDemonLight_FUN_0044f0b0(CDemonLight *this_ptr);
+void __cdecl core_dlight_cpp_CDemonLight_renderCoronaGeometry_FUN_0044f0b0(CDemonLight *this_ptr);
 void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430(CDemonLight *this_ptr);
 void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_0044f9b0(CDemonLight *this_ptr);
 

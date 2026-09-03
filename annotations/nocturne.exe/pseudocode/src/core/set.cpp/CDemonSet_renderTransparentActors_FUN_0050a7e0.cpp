@@ -57,7 +57,7 @@ void __cdecl core_set_cpp_CDemonSet_renderTransparentActors_FUN_0050a7e0(CDemonS
                   (g_CDemonRenderer_PTR_005ae704,1);
         if (0 < this_ptr->mirror_glass_actor_count) {
           do {
-            core_set_cpp_CDemonSet_FUN_0050e080(this_ptr,iVar3,0);
+            core_set_cpp_CDemonSet_setupMirrorRendering_FUN_0050e080(this_ptr,iVar3,0);
             iVar4 = (**(code **)(*(int *)(iVar1 + 0x14c) + 0xc))(iVar1);
             if (iVar4 != 0) {
               *(byte *)(iVar1 + 0x140) = *(byte *)(iVar1 + 0x140) | 8;

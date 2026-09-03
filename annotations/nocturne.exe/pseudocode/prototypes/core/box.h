@@ -71,9 +71,9 @@ int __cdecl CBoundingBox3D::isVisibleWithShadow(CBoundingBox3D *this_ptr);
 // Address: 0041ceb0
 int __cdecl CBoundingBox3D::isVisible(CBoundingBox3D *this_ptr);
 
-// Original: core_box.cpp_CBoundingBox3D_FUN_0041d050
+// Original: core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_0041d050
 // Address: 0041d050
-int __cdecl CBoundingBox3D(CBoundingBox3D *this_ptr);
+int __cdecl CBoundingBox3D::isVisibleWithCamera(CBoundingBox3D *this_ptr);
 
 // Original: core_box.cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_0041d450
 // Address: 0041d450

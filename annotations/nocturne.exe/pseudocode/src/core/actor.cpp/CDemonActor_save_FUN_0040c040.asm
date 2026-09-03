@@ -12,7 +12,7 @@
 ;
 ; XREF[2]:
 ;   core_inv.cpp_CInventory_save_FUN_004c0fa0 at 004c10e3
-;   core_mission.cpp_CDemonMission_FUN_004d8720 at 004d8a20
+;   core_mission.cpp_CDemonMission_writeFile_FUN_004d8720 at 004d8a20
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_actor_cpp_005779d9

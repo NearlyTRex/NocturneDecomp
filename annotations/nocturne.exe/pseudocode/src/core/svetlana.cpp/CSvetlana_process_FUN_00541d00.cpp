@@ -55,7 +55,7 @@ void __cdecl core_svetlana_cpp_CSvetlana_process_FUN_00541d00(CSvetlana *this_pt
      (this_ptr->base).base.hit_points = fVar13, (float)100 < fVar13)) {
     (this_ptr->base).base.hit_points = 100.0;
   }
-  iVar4 = core_charactr_cpp_CCharacter_FUN_004259f0((CCharacter *)this_ptr,delta_time);
+  iVar4 = core_charactr_cpp_CCharacter_process_FUN_004259f0((CCharacter *)this_ptr,delta_time);
   if ((iVar4 == 0) || ((this_ptr->base).ai_task == HERO_TASK_SUSPEND)) {
 switchD_005420d7_caseD_9:
     return;
@@ -75,10 +75,11 @@ switchD_005420d7_caseD_9:
   pCVar6->x = (this_ptr->base).base.model.accumulated_root_motion.y;
   core_svetlana_cpp_CSvetlana_advanceMotion_FUN_00542ad0(this_ptr,delta_time);
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-  iVar4 = core_charactr_cpp_CCharacter_FUN_00428c00((CCharacter *)this_ptr,delta_time);
+  iVar4 = core_charactr_cpp_CCharacter_processWalking_FUN_00428c00
+                    ((CCharacter *)this_ptr,delta_time);
   if (iVar4 == 0) {
     if ((this_ptr->base).control_type == HERO_CONTROL_AI) {
-      core_svetlana_cpp_CSvetlana_FUN_005423c0(this_ptr,delta_time);
+      core_svetlana_cpp_CSvetlana_processAI_FUN_005423c0(this_ptr,delta_time);
     }
     pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
                        (&(this_ptr->base).base.model.motion_controller);
@@ -122,7 +123,7 @@ switchD_005420d7_caseD_9:
             iVar9 = core_hero_cpp_CHero_tryInteract_FUN_004b4e90(&this_ptr->base);
             bVar2 = false;
             if (iVar9 != 0) goto LAB_00542171;
-            local_24 = core_hero_cpp_CHero_FUN_004b5110(&this_ptr->base);
+            local_24 = core_hero_cpp_CHero_tryOpenNearbyDoor_FUN_004b5110(&this_ptr->base);
             if ((local_24 != 0) && (local_24 != 1)) {
               core_hero_cpp_CHero_tryOpenDoor_FUN_004b5270(&this_ptr->base);
             }
@@ -292,7 +293,7 @@ LAB_00541f87:
     core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0051cfd0
               (pCStack_1c,&CStack_94,fVar13,iVar4,blend_callback);
   }
-  core_charactr_cpp_CCharacter_FUN_0042a150((CCharacter *)this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042a150((CCharacter *)this_ptr,delta_time);
   model_ptr = &(this_ptr->base).base.model;
   euler = &(this_ptr->base).base.base.orient;
   local_14 = (CCharacter_full_vtable *)&(this_ptr->base).base.base.location;

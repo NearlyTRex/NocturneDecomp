@@ -180,7 +180,7 @@ void __cdecl core_enemy_cpp_CEnemy_renderBackground_FUN_0047a000(CEnemy *this_pt
 int __cdecl core_enemy_cpp_CEnemy_updatePatrol_FUN_0047a030(CEnemy *this_ptr,float delta_time);
 void __cdecl core_enemy_cpp_CEnemy_releaseVictim_FUN_0047a090(CEnemy *this_ptr);
 void __cdecl core_enemy_cpp_CEnemy_onVictimLost_FUN_0047a120(CEnemy *this_ptr,CDemonActor *lost_actor);
-int __cdecl core_enemy_cpp_CEnemy_FUN_0047a150(CEnemy *this_ptr);
+int __cdecl core_enemy_cpp_CEnemy_countSameClassAttackingHero_FUN_0047a150(CEnemy *this_ptr);
 void __cdecl core_event_cpp_staticInit_FUN_0047a1d0(void);
 int __cdecl core_event_cpp_setEventError_FUN_0047a1e0(char *source_file,int source_line,char *error_message);
 int __cdecl core_event_cpp_formatEventError_FUN_0047a210(char *format,...) __attribute__((format(printf, 1, 2)));

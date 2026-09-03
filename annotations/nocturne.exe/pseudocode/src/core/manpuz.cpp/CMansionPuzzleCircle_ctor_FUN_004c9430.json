@@ -115,7 +115,7 @@
     {
       "addr": "004ca410",
       "is_variadic": false,
-      "name": "core_manpuz.cpp_CMansionPuzzleCircle_FUN_004ca410"
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_initPuzzleState_FUN_004ca410"
     },
     {
       "addr": "005644a7",
@@ -431,10 +431,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 50,
+      "line": 51,
       "match": "(CMansionPuzzleCircle *)((int)pvVar4",
       "severity": "moderate",
-      "text": "core_manpuz_cpp_CMansionPuzzleCircle_FUN_004ca410((CMansionPuzzleCircle *)((int)pvVar4 + -0x1338))",
+      "text": "((CMansionPuzzleCircle *)((int)pvVar4 + -0x1338));",
       "type": "pointer_cast"
     },
     {
@@ -623,10 +623,10 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 50,
+      "line": 51,
       "match": "(int)pvVar4",
       "severity": "moderate",
-      "text": "core_manpuz_cpp_CMansionPuzzleCircle_FUN_004ca410((CMansionPuzzleCircle *)((int)pvVar4 + -0x1338))",
+      "text": "((CMansionPuzzleCircle *)((int)pvVar4 + -0x1338));",
       "type": "pointer_truncation"
     },
     {

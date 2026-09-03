@@ -54,7 +54,7 @@
 ;   core_dtrace.cpp_CDemonRaytrace_rayIntersection_FUN_00467930 at 0046794f
 ;   core_gore.cpp_CFootstep_init_FUN_004af8a0 at 004af977
 ;   core_particle.cpp_CParticle_process_FUN_004ef120 at 004ef222
-;   core_setcolid.cpp_CDemonSet_FUN_0050f910 at 0050f987
+;   core_setcolid.cpp_CDemonSet_rayVoxelHeightQuery_FUN_0050f910 at 0050f987
 ;   core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00 at 0050fb50
 ;   core_tvbat.cpp_CTVBat_process_FUN_0054b460 at 0054bc57
 ;

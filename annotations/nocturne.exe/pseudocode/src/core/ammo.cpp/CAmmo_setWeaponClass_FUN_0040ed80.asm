@@ -8,11 +8,11 @@
 ; char *           Stack[0x8]:4   weapon_class_name
 ;
 ; XREF[6]:
-;   core_ammobox.cpp_CAmmoBox_FUN_0040f1a0 at 0040f230
+;   core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040f1a0 at 0040f230
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004a0550 at 004a1fff
 ;   core_game.cpp_giveHeroWeaponAmmo_FUN_004a03a0 at 004a03f7
-;   core_inv.cpp_CInventory_FUN_004c0640 at 004c06ba
 ;   core_inv.cpp_CInventory_addItem_FUN_004bf360 at 004bff5e
+;   core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004c0640 at 004c06ba
 ;   core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004c1b90 at 004c1be5
 ;
 ; Referenced Globals:

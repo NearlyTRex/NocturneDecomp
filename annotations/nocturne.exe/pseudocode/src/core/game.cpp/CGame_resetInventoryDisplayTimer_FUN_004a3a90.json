@@ -1,0 +1,186 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 5,
+        "line": 20,
+        "message": "unknown type name 'FLOATING_SAVE_AREA'"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 52,
+        "message": "unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 53,
+        "message": "unknown type name 'PCONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 498,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 498,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 499,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 499,
+        "message": "exponent has no digits"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 9,
+    "complexity_score": 6,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 15
+  },
+  "cross_references": [
+    {
+      "addr": "004996b0",
+      "from_addr": "00499898",
+      "name": "core_gabriela.cpp_CGabriella_processDamage_FUN_004996b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053e860",
+      "from_addr": "0053eb8d",
+      "name": "core_stranger.cpp_CStranger_processDamage_FUN_0053e860",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a3a90",
+    "address_range": [
+      [
+        "004a3a90",
+        "004a3aaa"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_game.cpp_CGame_resetInventoryDisplayTimer_FUN_004a3a90",
+    "signature": "void __cdecl core_game_cpp_CGame_resetInventoryDisplayTimer_FUN_004a3a90(CGame *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004c1da0",
+      "is_variadic": false,
+      "name": "core_inv.cpp_CInventory_resetInventoryDisplayTimer_FUN_004c1da0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01cae0e8",
+      "name": "g_LocalHeroIndex",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00499898",
+        "call_type": "direct",
+        "caller": "core_gabriela.cpp_CGabriella_processDamage_FUN_004996b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0053eb8d",
+        "call_type": "direct",
+        "caller": "core_stranger.cpp_CStranger_processDamage_FUN_0053e860",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.571428571428571,
+    "instruction_count": 7,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 3,
+      "INT_ADD": 4,
+      "INT_AND": 4,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 4,
+      "INT_MULT": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 2,
+      "INT_SUB": 2,
+      "LOAD": 2,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 2
+    },
+    "pcode_op_count": 32
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGame *"
+      }
+    ]
+  },
+  "suspects": []
+}

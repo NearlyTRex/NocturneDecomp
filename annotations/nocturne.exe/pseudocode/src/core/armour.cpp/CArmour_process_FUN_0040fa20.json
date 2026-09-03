@@ -58,7 +58,7 @@
       {
         "category": "incompatible_types",
         "column": 13,
-        "line": 49,
+        "line": 50,
         "message": "no matching function for call to 'core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30'"
       }
     ],
@@ -68,17 +68,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 122,
-    "complexity_score": 77,
+    "complexity_score": 78,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 52,
+    "pseudocode_lines": 53,
     "suspect_count": 2,
     "suspect_types": [
       "unrolled_memset"
     ],
-    "total_lines": 174
+    "total_lines": 175
   },
   "cross_references": [],
   "function": {
@@ -96,6 +96,11 @@
   },
   "function_calls": [
     {
+      "addr": "0042a150",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042a150"
+    },
+    {
       "addr": "00427b60",
       "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_dismember_FUN_00427b60"
@@ -103,17 +108,12 @@
     {
       "addr": "004259f0",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_004259f0"
+      "name": "core_charactr.cpp_CCharacter_process_FUN_004259f0"
     },
     {
       "addr": "00428c00",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_00428c00"
-    },
-    {
-      "addr": "0042a150",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042a150"
+      "name": "core_charactr.cpp_CCharacter_processWalking_FUN_00428c00"
     },
     {
       "addr": "0047dc30",
@@ -261,7 +261,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 33,
+      "line": 34,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",

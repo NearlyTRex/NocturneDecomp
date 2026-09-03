@@ -10,7 +10,7 @@
 ;
 ; Called Functions:
 ;   engine_special.cpp_clearScreen_FUN_0052ee70
-;   engine_texture.cpp_CTextureCache_FUN_00545700
+;   engine_texture.cpp_CTextureCache_renderAllTextures_FUN_00545700
 ;   wincore_wddvmem.cpp_closeScreenDevice_FUN_00553520
 ;   wincore_wddvmem.cpp_openScreenDevice_FUN_00553470
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_00553910
@@ -30,8 +30,8 @@ section .text
         ;   XREF to: 00553470 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_openScreenDevice_FUN_00553470()
     MOV ECX,dword ptr [0x02dd0f84]      ; 00545ab0 | DAT_02dd0f84
     PUSH ECX                            ; 00545ab6
-    CALL engine_texture.cpp_CTextureCache_FUN_00545700 ; 00545ab7
-        ;   XREF to: 00545700 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_CTextureCache_FUN_00545700(CTextureCache * this_ptr)
+    CALL engine_texture.cpp_CTextureCache_renderAllTextures_FUN_00545700 ; 00545ab7
+        ;   XREF to: 00545700 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_CTextureCache_renderAllTextures_FUN_00545700(CTextureCache * this_ptr)
     ADD ESP,0x4                         ; 00545abc
     CALL engine_special.cpp_clearScreen_FUN_0052ee70 ; 00545abf
         ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_0052ee70()

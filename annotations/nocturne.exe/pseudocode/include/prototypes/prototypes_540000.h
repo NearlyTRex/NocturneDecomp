@@ -49,7 +49,7 @@
 // FUNCTION PROTOTYPES - Range 0x540000
 // =============================================================================
 
-void __cdecl core_stranger_cpp_CStranger_FUN_005402f0(CStranger *this_ptr);
+void __cdecl core_stranger_cpp_CStranger_updateClothSimulation_FUN_005402f0(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_processWeaponTick_FUN_00540660(CStranger *this_ptr,float delta_time);
 int __cdecl core_stranger_cpp_CStranger_isWeaponDrawn_FUN_00540720(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_drawWeapon_FUN_00540730(CStranger *this_ptr,int drawn);
@@ -86,7 +86,7 @@ CDemonActorType * __cdecl core_svetlana_cpp_CSvetlana_getActorType_FUN_005419a0(
 CSvetlana * __cdecl core_svetlana_cpp_CSvetlana_ctor_FUN_005419b0(CSvetlana *this_ptr);
 void __cdecl core_svetlana_cpp_CSvetlana_setup_FUN_00541a40(CSvetlana *this_ptr);
 void __cdecl core_svetlana_cpp_CSvetlana_process_FUN_00541d00(CSvetlana *this_ptr,float delta_time);
-void __cdecl core_svetlana_cpp_CSvetlana_FUN_005423c0(CSvetlana *this_ptr,float delta_time);
+void __cdecl core_svetlana_cpp_CSvetlana_processAI_FUN_005423c0(CSvetlana *this_ptr,float delta_time);
 void __cdecl core_svetlana_cpp_CSvetlana_advanceMotion_FUN_00542ad0(CSvetlana *this_ptr,float delta_time);
 void __cdecl core_svetlana_cpp_CSvetlana_performBladeAttack_FUN_00542b70(CSvetlana *this_ptr,int bone_index);
 void __cdecl core_svetlana_cpp_CSvetlana_archive_FUN_00542d10(CSvetlana *this_ptr);
@@ -117,7 +117,7 @@ CTeleportDest * __cdecl core_teleport_cpp_factoryFuncTeleportDest_FUN_00543810(v
 CDemonActorType * __cdecl core_teleport_cpp_CTeleportDest_getActorType_FUN_00543830(CTeleportDest *this_ptr);
 CTeleportDest * __cdecl core_teleport_cpp_CTeleportDest_ctor_FUN_00543840(CTeleportDest *this_ptr);
 CBoundingBox3D * __cdecl core_teleport_cpp_CTeleportDest_getBoundingBox_FUN_00543860(CTeleportDest *this_ptr,CBoundingBox3D *out_box);
-ECollisionType __cdecl core_teleport_cpp_CTeleportDest_FUN_00543890(CDemonActor *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl core_teleport_cpp_CTeleportDest_getCollisionType_FUN_00543890(CTeleportDest *this_ptr,SCollisionInfo *collision_info);
 CTeleport * __cdecl core_teleport_cpp_factoryFuncTeleport_FUN_005438a0(void);
 CDemonActorType * __cdecl core_teleport_cpp_CTeleport_getActorType_FUN_005438c0(CTeleport *this_ptr);
 CTeleport * __cdecl core_teleport_cpp_CTeleport_ctor_FUN_005438d0(CTeleport *this_ptr);
@@ -146,14 +146,14 @@ void __cdecl core_texlist_cpp_CTextureList_load_FUN_00544950(CTextureList *this_
 void __cdecl core_texlist_cpp_CTextureList_save_FUN_00544c10(CTextureList *this_ptr,char *filename);
 void __cdecl core_texlist_cpp_CTextureList_captureAllTextures_FUN_00544d70(CTextureList *this_ptr);
 void __cdecl core_texlist_cpp_CTextureList_captureTexture_FUN_00544db0(CTextureList *this_ptr,uint texture_index);
-CTextureCache * __cdecl engine_texture_cpp_CTextureCache_FUN_00544de0(CTextureCache *this_ptr,int max_texture_count);
+CTextureCache * __cdecl engine_texture_cpp_CTextureCache_ctor_FUN_00544de0(CTextureCache *this_ptr,int max_texture_count);
 int __cdecl engine_texture_cpp_CTextureCache_free_FUN_00544e30(CTextureCache *this_ptr);
-void __cdecl engine_texture_cpp_CTextureCache_FUN_00544e50(CTextureCache *this_ptr);
+void __cdecl engine_texture_cpp_CTextureCache_reset_FUN_00544e50(CTextureCache *this_ptr);
 void __cdecl engine_texture_cpp_CTextureCache_freeTextures_FUN_00544e60(CTextureCache *this_ptr);
 int __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_00544ef0(CTextureCache *this_ptr,char *texture_name);
 int __cdecl engine_texture_cpp_CTextureCache_findTexture_FUN_00545390(CTextureCache *this_ptr,int hint_index,char *texture_name);
 void __cdecl engine_texture_cpp_CTextureCache_setupTexture_FUN_00545410(CTextureCache *this_ptr,int texture_index);
-void __cdecl engine_texture_cpp_CTextureCache_FUN_00545700(CTextureCache *this_ptr);
+void __cdecl engine_texture_cpp_CTextureCache_renderAllTextures_FUN_00545700(CTextureCache *this_ptr);
 int __cdecl engine_texture_cpp_CTextureCache_getTextureCacheStats_FUN_00545810(CTextureCache *this_ptr,char *output_buffer);
 CTextureCache * __cdecl engine_texture_cpp_initTextureCache_FUN_005458a0(void);
 void __cdecl engine_texture_cpp_freeTextureCache_FUN_005458d0(void);
@@ -284,7 +284,7 @@ CTVBat * __cdecl core_tvbat_cpp_CTVBat_ctor_FUN_0054b140(CTVBat *this_ptr);
 void __cdecl core_tvbat_cpp_CTVBat_setup_FUN_0054b2a0(CTVBat *this_ptr);
 void __cdecl core_tvbat_cpp_CTVBat_archive_FUN_0054b310(CTVBat *this_ptr);
 void __cdecl core_tvbat_cpp_CTVBat_process_FUN_0054b460(CTVBat *this_ptr,float delta_time);
-void __cdecl core_tvbat_cpp_CTVBat_FUN_0054bfc0(CTVBat *this_ptr);
+void __cdecl core_tvbat_cpp_CTVBat_orderAttack_FUN_0054bfc0(CTVBat *this_ptr);
 int __cdecl core_tvbat_cpp_CTVBat_renderOpaque_FUN_0054bfd0(CTVBat *this_ptr);
 CBoundingBox3D * __cdecl core_tvbat_cpp_CTVBat_getBoundingBox_FUN_0054c040(CTVBat *this_ptr,CBoundingBox3D *out_box);
 ECollisionType __cdecl core_tvbat_cpp_CTVBat_getCollisionType_FUN_0054c0c0(CTVBat *this_ptr,SCollisionInfo *collision_info);
@@ -308,7 +308,7 @@ EDeathState __cdecl core_vampboss_cpp_CVampireBoss_getDeathState_FUN_0054df90(CV
 int __cdecl core_vampboss_cpp_CVampireBoss_getTargetPoints_FUN_0054dfa0(CVampireBoss *this_ptr,CVector3f *out_points_array);
 void __cdecl core_vampboss_cpp_CVampireBoss_summonBats_FUN_0054e040(CVampireBoss *this_ptr);
 void __cdecl core_vampboss_cpp_CVampireBoss_summonStalagmites_FUN_0054e0b0(CVampireBoss *this_ptr);
-void __cdecl core_vampboss_cpp_CVampireBoss_FUN_0054e130(CVampireBoss *this_ptr);
+void __cdecl core_vampboss_cpp_CVampireBoss_summonFireEmitters_FUN_0054e130(CVampireBoss *this_ptr);
 void __cdecl core_vampboss_cpp_CVampireBoss_transformToBat_FUN_0054e1a0(CVampireBoss *this_ptr);
 void __cdecl core_vampboss_cpp_CVampireBoss_transformToHuman_FUN_0054e1e0(CVampireBoss *this_ptr);
 void __cdecl core_vampboss_cpp_CVampireBoss_chooseDestWayPoint_FUN_0054e230(CVampireBoss *this_ptr);

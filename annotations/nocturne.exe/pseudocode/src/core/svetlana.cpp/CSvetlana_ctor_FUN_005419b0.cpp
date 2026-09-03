@@ -13,7 +13,7 @@ CSvetlana * __cdecl core_svetlana_cpp_CSvetlana_ctor_FUN_005419b0(CSvetlana *thi
   CCloth *pCVar2;
   CCloth *pCVar3;
   
-  pCVar1 = core_hero_cpp_CHero_FUN_004b46d0(&this_ptr->base);
+  pCVar1 = core_hero_cpp_CHero_ctor_FUN_004b46d0(&this_ptr->base);
   pCVar2 = core_cloth_cpp_CCloth_ctor_FUN_00435100((CCloth *)(pCVar1[1].base.base.actor_name + 8));
   pCVar3 = core_cloth_cpp_CCloth_ctor_FUN_00435100(pCVar2 + 1);
   pCVar3[-2].vertices[0x184].connected_count = (int)&g_CSvetlanaVTable;

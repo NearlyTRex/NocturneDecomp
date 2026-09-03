@@ -47,9 +47,9 @@ int __cdecl CFrankenstienMachine::renderOpaque(CFrankenstienMachine *this_ptr);
 // Address: 00495000
 CBoundingBox3D * __cdecl CFrankenstienMachine::getBoundingBox(CFrankenstienMachine *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_frankgen.cpp_CFrankenstienMachine_FUN_004950a0
+// Original: core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004950a0
 // Address: 004950a0
-CVector3f * __cdecl CFrankenstienMachine(CFrankenstienMachine *this_ptr);
+CVector3f * __cdecl CFrankenstienMachine::updateAnchorPosition(CFrankenstienMachine *this_ptr);
 
 // Original: core_frankgen.cpp_findLeader_FUN_00495240
 // Address: 00495240

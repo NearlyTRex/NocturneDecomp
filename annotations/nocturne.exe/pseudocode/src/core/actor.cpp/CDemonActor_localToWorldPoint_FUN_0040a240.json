@@ -152,15 +152,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004196b0",
-      "from_addr": "004198e5",
-      "name": "core_boneguy.cpp_CBoneGuy_FUN_004196b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00418a00",
       "from_addr": "004190fc",
       "name": "core_boneguy.cpp_CBoneGuy_process_FUN_00418a00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004196b0",
+      "from_addr": "004198e5",
+      "name": "core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_004196b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -172,7 +172,7 @@
     {
       "addr": "0041f190",
       "from_addr": "0041f214",
-      "name": "core_boxactor.cpp_CBoxActor_FUN_0041f190",
+      "name": "core_boxactor.cpp_CBoxActor_constrainToExtents_FUN_0041f190",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -314,12 +314,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0045ab40",
-      "from_addr": "0045abda",
-      "name": "core_dracbrid.cpp_CDraculaBride_FUN_0045ab40",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00459f70",
       "from_addr": "0045a061",
       "name": "core_dracbrid.cpp_CDraculaBride_explode_FUN_00459f70",
@@ -335,6 +329,12 @@
       "addr": "00458a90",
       "from_addr": "004590a9",
       "name": "core_dracbrid.cpp_CDraculaBride_process_FUN_00458a90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045ab40",
+      "from_addr": "0045abda",
+      "name": "core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_0045ab40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -392,27 +392,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004950a0",
-      "from_addr": "00495157",
-      "name": "core_frankgen.cpp_CFrankenstienMachine_FUN_004950a0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00494950",
       "from_addr": "00494ad7",
       "name": "core_frankgen.cpp_CFrankenstienMachine_process_FUN_00494950",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00498de0",
-      "from_addr": "00499005",
-      "name": "core_gabriela.cpp_CGabriella_FUN_00498de0",
+      "addr": "004950a0",
+      "from_addr": "00495157",
+      "name": "core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004950a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00499b00",
       "from_addr": "00499b63",
-      "name": "core_gabriela.cpp_CGabriella_FUN_00499b00",
+      "name": "core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_00499b00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -431,6 +425,12 @@
       "addr": "00495a20",
       "from_addr": "004960f8",
       "name": "core_gabriela.cpp_CGabriella_process_FUN_00495a20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00498de0",
+      "from_addr": "00499005",
+      "name": "core_gabriela.cpp_CGabriella_scoreTargetVisibility_FUN_00498de0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -598,7 +598,7 @@
     {
       "addr": "004cb010",
       "from_addr": "004cb05a",
-      "name": "core_manpuz.cpp_CMansionPuzzleCircle_FUN_004cb010",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN_004cb010",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -628,7 +628,7 @@
     {
       "addr": "004d4f30",
       "from_addr": "004d4f7a",
-      "name": "core_mimic.cpp_CMimic_FUN_004d4f30",
+      "name": "core_mimic.cpp_CMimic_processAnimation_FUN_004d4f30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -710,15 +710,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0050a260",
-      "from_addr": "0050a2de",
-      "name": "core_set.cpp_CDemonSet_FUN_0050a260",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0050d2d0",
       "from_addr": "0050d4ea",
       "name": "core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050a260",
+      "from_addr": "0050a2de",
+      "name": "core_set.cpp_CDemonSet_renderGogglesView_FUN_0050a260",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -766,7 +766,7 @@
     {
       "addr": "00533750",
       "from_addr": "0053383c",
-      "name": "core_spike.cpp_CSpike_FUN_00533750",
+      "name": "core_spike.cpp_CSpike_testCollisionWithCharacters_FUN_00533750",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -914,15 +914,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00561010",
-      "from_addr": "005612b5",
-      "name": "core_zombie.cpp_CZombie_FUN_00561010",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00561bf0",
       "from_addr": "00561ca5",
       "name": "core_zombie.cpp_CZombie_canBeAttracted_FUN_00561bf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00561010",
+      "from_addr": "005612b5",
+      "name": "core_zombie.cpp_CZombie_processPickup_FUN_00561010",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -1041,7 +1041,7 @@
       {
         "call_addr": "0050a2de",
         "call_type": "direct",
-        "caller": "core_set.cpp_CDemonSet_FUN_0050a260",
+        "caller": "core_set.cpp_CDemonSet_renderGogglesView_FUN_0050a260",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

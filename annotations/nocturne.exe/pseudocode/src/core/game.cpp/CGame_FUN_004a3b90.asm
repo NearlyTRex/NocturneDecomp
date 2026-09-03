@@ -50,7 +50,7 @@
 ; Called Functions:
 ;   core_event.cpp_CEventList_saveState_FUN_00481330
 ;   core_fire.cpp_CFireEffect_save_FUN_0048c850
-;   core_mission.cpp_CDemonMission_FUN_004d8720
+;   core_mission.cpp_CDemonMission_writeFile_FUN_004d8720
 ;   core_script.cpp_CScript_saveState_FUN_005055f0
 ;   core_set.cpp_CDemonSet_saveMasterLightStates_FUN_0050e860
 ;   core_set.cpp_CDemonSet_saveStateInfo_FUN_0050e8a0
@@ -175,8 +175,8 @@ section .text
     PUSH ESI                            ; 004a3c9c
     MOV EDI,dword ptr [0x005baf90]      ; 004a3c9d | g_CDemonMission_PTR_005baf90
     PUSH EDI                            ; 004a3ca3
-    CALL core_mission.cpp_CDemonMission_FUN_004d8720 ; 004a3ca4
-        ;   XREF to: 004d8720 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_004d8720(CDemonMission * this_ptr, _FILE * file_handle)
+    CALL core_mission.cpp_CDemonMission_writeFile_FUN_004d8720 ; 004a3ca4
+        ;   XREF to: 004d8720 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_writeFile_FUN_004d8720(CDemonMission * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 004a3ca9
     PUSH 0x583ba0                       ; 004a3cac | = "// Hero count, local hero index, hero..."
     PUSH ESI                            ; 004a3cb1

@@ -58,25 +58,25 @@
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 120,
+        "line": 122,
         "message": "use of undeclared identifier 'DAT_0076934c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 82,
-        "line": 143,
+        "line": 145,
         "message": "use of undeclared identifier 'DAT_0076934c'; did you mean 'DAT_0076936c'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 39,
-        "line": 147,
+        "line": 149,
         "message": "use of undeclared identifier 'DAT_0076934c'; did you mean 'DAT_0076936c'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 37,
-        "line": 150,
+        "line": 152,
         "message": "use of undeclared identifier 'DAT_0076934c'; did you mean 'DAT_0076936c'?"
       }
     ],
@@ -86,12 +86,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 395,
-    "complexity_score": 278,
+    "complexity_score": 281,
     "cross_reference_count": 6,
     "function_call_count": 9,
     "global_count": 16,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 148,
+    "pseudocode_lines": 151,
     "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
@@ -99,7 +99,7 @@
       "shadow_pointer_walk",
       "undefined_data"
     ],
-    "total_lines": 543
+    "total_lines": 546
   },
   "cross_references": [
     {
@@ -153,14 +153,14 @@
   },
   "function_calls": [
     {
-      "addr": "0050ddd0",
-      "is_variadic": false,
-      "name": "core_set.cpp_CDemonSet_FUN_0050ddd0"
-    },
-    {
       "addr": "0050c2d0",
       "is_variadic": false,
       "name": "core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0"
+    },
+    {
+      "addr": "0050ddd0",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_0050ddd0"
     },
     {
       "addr": "0050c200",
@@ -494,7 +494,7 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 113,
+      "line": 115,
       "match": "DAT_0076934c",
       "severity": "mild",
       "text": "local_18 = &DAT_0076934c;",
@@ -502,7 +502,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 122,
+      "line": 124,
       "match": "(uint *)((int)pSVar8",
       "severity": "moderate",
       "text": "puVar5 = (uint *)((int)pSVar8 + (uint)bVar6 * -8 + iVar9 + 0x1c);",
@@ -510,7 +510,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 123,
+      "line": 125,
       "match": "(uint *)((int)pSVar8",
       "severity": "moderate",
       "text": "*(uint *)(puVar3 + 0x18) = *(uint *)((int)pSVar8 + iVar9 + 0x18);",
@@ -518,7 +518,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 136,
+      "line": 138,
       "match": "DAT_0076934c",
       "severity": "mild",
       "text": "(g_CDemonSet_PTR_005be368,(this_ptr->model).vertex_count,local_20,&DAT_0076934c,",
@@ -526,7 +526,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 140,
+      "line": 142,
       "match": "DAT_0076934c",
       "severity": "mild",
       "text": "pSVar8 = (SMRGLPrimitiveQuad *)&DAT_0076934c;",
@@ -534,7 +534,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 143,
+      "line": 145,
       "match": "DAT_0076934c",
       "severity": "mild",
       "text": "pSVar8 = (SMRGLPrimitiveQuad *)&DAT_0076934c;",
@@ -542,7 +542,7 @@
     },
     {
       "description": "Pointer value `pSVar8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 122,
+      "line": 124,
       "match": "(int)pSVar8",
       "severity": "moderate",
       "text": "puVar5 = (uint *)((int)pSVar8 + (uint)bVar6 * -8 + iVar9 + 0x1c);",
@@ -550,7 +550,7 @@
     },
     {
       "description": "Pointer value `pSVar8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 123,
+      "line": 125,
       "match": "(int)pSVar8",
       "severity": "moderate",
       "text": "*(uint *)(puVar3 + 0x18) = *(uint *)((int)pSVar8 + iVar9 + 0x18);",
@@ -558,7 +558,7 @@
     },
     {
       "description": "Pointer value `(puVar3 + (uint)bVar6 * -8 + 0x1c)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 125,
+      "line": 127,
       "match": "(int)(puVar3 + (uint)bVar6 * -8 + 0x1c)",
       "severity": "moderate",
       "text": "*(uint *)((int)(puVar3 + (uint)bVar6 * -8 + 0x1c) + ((uint)bVar6 * -2 + 1) * 4) =",
@@ -574,7 +574,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 93,
+      "line": 94,
       "match": "pCVar2 = (T *)((pCVar2->FIELD).SUBFIELD...ARRAY + CONST)",
       "severity": "moderate",
       "text": "pCVar2 = (CCloth *)((pCVar2->model).model_filename + 4);",

@@ -58,19 +58,19 @@
       {
         "category": "format_error",
         "column": 87,
-        "line": 100,
+        "line": 101,
         "message": "format specifies type 'char *' but the argument has type 'CHotDemon *' [-Werror,-Wformat]"
       },
       {
         "category": "undeclared_identifier",
         "column": 49,
-        "line": 271,
+        "line": 272,
         "message": "use of undeclared identifier 'DAT_02dd1184'"
       },
       {
         "category": "undeclared_identifier",
         "column": 25,
-        "line": 273,
+        "line": 274,
         "message": "use of undeclared identifier '_DAT_01cae1e8'"
       }
     ],
@@ -80,12 +80,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 675,
-    "complexity_score": 412,
+    "complexity_score": 413,
     "cross_reference_count": 0,
     "function_call_count": 24,
     "global_count": 14,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 312,
+    "pseudocode_lines": 313,
     "suspect_count": 8,
     "suspect_types": [
       "undefined_data",
@@ -93,7 +93,7 @@
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 987
+    "total_lines": 988
   },
   "cross_references": [],
   "function": {
@@ -126,19 +126,9 @@
       "name": "core_actor.cpp_normalizeAngleToPi_FUN_0040df00"
     },
     {
-      "addr": "004259f0",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_004259f0"
-    },
-    {
-      "addr": "00428c00",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_00428c00"
-    },
-    {
       "addr": "0042a150",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042a150"
+      "name": "core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042a150"
     },
     {
       "addr": "00425960",
@@ -156,9 +146,19 @@
       "name": "core_charactr.cpp_CCharacter_preProcess_FUN_004259a0"
     },
     {
+      "addr": "004259f0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_process_FUN_004259f0"
+    },
+    {
       "addr": "0042add0",
       "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_processMotion_FUN_0042add0"
+    },
+    {
+      "addr": "00428c00",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_processWalking_FUN_00428c00"
     },
     {
       "addr": "004247f0",
@@ -699,7 +699,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 264,
+      "line": 265,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(&local_4c,(CVector3f *)&DAT_02dd1184,",
@@ -715,7 +715,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 95,
+      "line": 96,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -723,7 +723,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 165,
+      "line": 166,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -731,7 +731,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 302,
+      "line": 303,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.position_delta.z = 0.0;",
@@ -739,7 +739,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 305,
+      "line": 306,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",

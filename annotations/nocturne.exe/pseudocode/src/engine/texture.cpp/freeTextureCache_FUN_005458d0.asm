@@ -13,7 +13,7 @@
 ; Called Functions:
 ;   crt_memory.c_operator_delete_FUN_00564494
 ;   engine_texture.cpp_CTextureCache_freeTextures_FUN_00544e60
-;   engine_texture.cpp_CTextureCache_FUN_00544e50
+;   engine_texture.cpp_CTextureCache_reset_FUN_00544e50
 ;
 ; *****************************************************************************
 
@@ -23,8 +23,8 @@ section .text
         ;   Label: engine_texture.cpp_freeTextureCache_FUN_005458d0
     MOV EDX,dword ptr [0x02dd0f84]      ; 005458d1 | DAT_02dd0f84
     PUSH EDX                            ; 005458d7
-    CALL engine_texture.cpp_CTextureCache_FUN_00544e50 ; 005458d8
-        ;   XREF to: 00544e50 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_CTextureCache_FUN_00544e50(CTextureCache * this_ptr)
+    CALL engine_texture.cpp_CTextureCache_reset_FUN_00544e50 ; 005458d8
+        ;   XREF to: 00544e50 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_CTextureCache_reset_FUN_00544e50(CTextureCache * this_ptr)
     MOV ECX,dword ptr [0x02dd0f84]      ; 005458dd | DAT_02dd0f84
     ADD ESP,0x4                         ; 005458e3
     TEST ECX,ECX                        ; 005458e6

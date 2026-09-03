@@ -27,7 +27,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
-;   core_sound.cpp_CSound_FUN_0052ebc0
+;   core_sound.cpp_CSound_getSoundDuration_FUN_0052ebc0
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_00526c50
 ;
@@ -109,8 +109,8 @@ section .text
     PUSH EAX                            ; 004dc9d8
     MOV EDX,dword ptr [0x005bed68]      ; 004dc9d9 | g_CSound_PTR_005bed68
     PUSH EDX                            ; 004dc9df
-    CALL core_sound.cpp_CSound_FUN_0052ebc0 ; 004dc9e0
-        ;   XREF to: 0052ebc0 (UNCONDITIONAL_CALL)  ; float core_sound.cpp_CSound_FUN_0052ebc0(CSound * this_ptr, char * param_2)
+    CALL core_sound.cpp_CSound_getSoundDuration_FUN_0052ebc0 ; 004dc9e0
+        ;   XREF to: 0052ebc0 (UNCONDITIONAL_CALL)  ; float core_sound.cpp_CSound_getSoundDuration_FUN_0052ebc0(CSound * this_ptr, char * sound_name)
     MOV dword ptr [ESP + 0x74],EAX      ; 004dc9e5
     MOV EAX,dword ptr [ESP + 0x74]      ; 004dc9e9
     MOV dword ptr [ESI + 0xbd3c],EAX    ; 004dc9ed

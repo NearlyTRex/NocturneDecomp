@@ -9,7 +9,7 @@
 ; XREF[5]:
 ;   core_game.cpp_CGame_rollCredits_FUN_004a6e90 at 004a7205
 ;   core_menu.cpp_configureSoundOptions_FUN_004d12e0 at 004d1cfa
-;   core_sound.cpp_CSound_FUN_0052dff0 at 0052e3ab
+;   core_sound.cpp_CSound_process_FUN_0052dff0 at 0052e3ab
 ;   core_sound.cpp_playSfxInternal_FUN_0052d120 at 0052d322
 ;   core_sound.cpp_processTrainSounds_FUN_0052d790 at 0052d8b5
 ;

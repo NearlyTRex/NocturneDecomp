@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 306
-  Total diagnostics: 895
+  Functions with findings: 304
+  Total diagnostics: 893
   Functions flagged by multiple tools: 3
-  .keep.cpp files: 0, raw .cpp files: 306
+  .keep.cpp files: 0, raw .cpp files: 304
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -322,7 +322,7 @@ core_dlight.cpp_CDemonLight_renderShadowMapDebugView_FUN_0044ed80  [.cpp] [Cppch
   Line   58: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-core_glass.cpp_CGlass_FUN_004accf0  [.cpp] [Cppcheck (quick)]
+core_glass.cpp_CGlass_createShatterParticles_FUN_004accf0  [.cpp] [Cppcheck (quick)]
   File: core/glass.cpp  (8 diagnostics)
 
   Line  171: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
@@ -553,8 +553,8 @@ core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80  [.cpp] [Cppcheck 
   Line   88: [uninitvar] Uninitialized variable: in_stack_0000000c
   Line   90: [uninitvar] Uninitialized variable: in_stack_00000010
   Line   96: [legacyUninitvar] Uninitialized variable: iStack_18
-  Line  145: [uninitvar] Uninitialized variable: iStack_24
-  Line  157: [legacyUninitvar] Uninitialized variable: iStack_24
+  Line  146: [uninitvar] Uninitialized variable: iStack_24
+  Line  158: [legacyUninitvar] Uninitialized variable: iStack_24
 
 ----------------------------------------------------------------------------------------------------
 core_sound.cpp_playSfxInternal_FUN_0052d120  [.cpp] [Cppcheck (quick)]
@@ -902,7 +902,7 @@ cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_0045bfb0  [.cpp] [Cppcheck
   Line   30: [uninitvar] Uninitialized variable: in_stack_00000030
 
 ----------------------------------------------------------------------------------------------------
-core_charactr.cpp_CCharacter_FUN_0042af70  [.cpp] [Clang-Tidy (quick)]
+core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042af70  [.cpp] [Clang-Tidy (quick)]
   File: core/charactr.cpp  (3 diagnostics)
 
   Line   77: [cert-flp30-c] loop induction expression should not have floating-point type
@@ -942,14 +942,6 @@ core_curtain.cpp_CCurtain_solveConstraints_FUN_0043e290  [.cpp] [Cppcheck (quick
   Line  166: [uninitvar] Uninitialized variable: local_dc
 
 ----------------------------------------------------------------------------------------------------
-core_dcamera.cpp_CDemonCamera_FUN_00446810  [.cpp] [Cppcheck (quick)]
-  File: core/dcamera.cpp  (3 diagnostics)
-
-  Line   72: [uninitvar] Uninitialized variable: local_114
-  Line  101: [legacyUninitvar] Uninitialized variable: unaff_EDI
-  Line  197: [uninitvar] Uninitialized variable: iStack_120
-
-----------------------------------------------------------------------------------------------------
 core_dcamera.cpp_CDemonCamera_isSphereVisible_FUN_00446590  [.cpp] [Cppcheck (quick)]
   File: core/dcamera.cpp  (3 diagnostics)
 
@@ -964,6 +956,14 @@ core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_00441c50  [.cpp] [Cppcheck (qu
   Line  107: [uninitvar] Uninitialized variable: local_78
   Line  115: [legacyUninitvar] Uninitialized variable: local_74
   Line  127: [uninitvar] Uninitialized variable: local_74
+
+----------------------------------------------------------------------------------------------------
+core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_00446810  [.cpp] [Cppcheck (quick)]
+  File: core/dcamera.cpp  (3 diagnostics)
+
+  Line   72: [uninitvar] Uninitialized variable: local_114
+  Line  101: [legacyUninitvar] Uninitialized variable: unaff_EDI
+  Line  197: [uninitvar] Uninitialized variable: iStack_120
 
 ----------------------------------------------------------------------------------------------------
 core_dcamera.cpp_renderCoronaScanlineSegment_FUN_004451a0  [.cpp] [Cppcheck (quick)]
@@ -1314,13 +1314,6 @@ core_course.cpp_FUN_0043b500  [.cpp] [Cppcheck (quick)]
   Line   17: [uninitvar] Uninitialized variable: in_stack_00000008
 
 ----------------------------------------------------------------------------------------------------
-core_dcamera.cpp_CDemonCamera_FUN_004421b0  [.cpp] [Cppcheck (quick)]
-  File: core/dcamera.cpp  (2 diagnostics)
-
-  Line  140: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  148: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
 core_dcamera.cpp_CDemonCamera_FUN_00447f20  [.cpp] [Cppcheck (quick)]
   File: core/dcamera.cpp  (2 diagnostics)
 
@@ -1333,6 +1326,13 @@ core_dcamera.cpp_CDemonCamera_initLookupTable_FUN_0043ff50  [.cpp] [Cppcheck (qu
 
   Line   38: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line   39: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+----------------------------------------------------------------------------------------------------
+core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_004421b0  [.cpp] [Cppcheck (quick)]
+  File: core/dcamera.cpp  (2 diagnostics)
+
+  Line  140: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  148: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_00444920  [.cpp] [Cppcheck (quick)]
@@ -1832,12 +1832,6 @@ core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041d550  [.cpp] [Cppcheck (qui
   Line  145: [compareBoolExpressionWithInt] Comparison of a boolean expression with an integer other than 0 or 1.
 
 ----------------------------------------------------------------------------------------------------
-core_bugs.cpp_CBugs_FUN_00421b80  [.cpp] [Cppcheck (quick)]
-  File: core/bugs.cpp  (1 diagnostics)
-
-  Line   72: [uninitvar] Uninitialized variable: unaff_EBX
-
-----------------------------------------------------------------------------------------------------
 core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_004216d0  [.cpp] [Cppcheck (quick)]
   File: core/bugs.cpp  (1 diagnostics)
 
@@ -1847,7 +1841,13 @@ core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_004216d0  [.cpp] [Cppcheck (quick
 core_bugs.cpp_CBugs_renderOpaque_FUN_00421540  [.cpp] [Cppcheck (quick)]
   File: core/bugs.cpp  (1 diagnostics)
 
-  Line   63: [uninitvar] Uninitialized variable: in_stack_00000008
+  Line   64: [uninitvar] Uninitialized variable: in_stack_00000008
+
+----------------------------------------------------------------------------------------------------
+core_bugs.cpp_CBugs_updateGroundHeightGrid_FUN_00421b80  [.cpp] [Cppcheck (quick)]
+  File: core/bugs.cpp  (1 diagnostics)
+
+  Line   72: [uninitvar] Uninitialized variable: unaff_EBX
 
 ----------------------------------------------------------------------------------------------------
 core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_004266a0  [.cpp] [Cppcheck (quick)]
@@ -2006,7 +2006,7 @@ core_ground.cpp_CGround_load_FUN_004b14d0  [.cpp] [Cppcheck (quick)]
   Line   47: [uninitvar] Uninitialized variable: *pcVar6
 
 ----------------------------------------------------------------------------------------------------
-core_inv.cpp_CInventory_FUN_004c2470  [.cpp] [Cppcheck (quick)]
+core_inv.cpp_CInventory_renderAllItems_FUN_004c2470  [.cpp] [Cppcheck (quick)]
   File: core/inv.cpp  (1 diagnostics)
 
   Line  170: [legacyUninitvar] Uninitialized variable: local_4c
@@ -2046,12 +2046,6 @@ core_mission.cpp_CDemonMission_loadActor_FUN_004d8aa0  [.cpp] [Cppcheck (quick)]
   File: core/mission.cpp  (1 diagnostics)
 
   Line   63: [legacyUninitvar] Uninitialized variable: unaff_ESI
-
-----------------------------------------------------------------------------------------------------
-core_morph.cpp_CMorph_FUN_004e0300  [.cpp] [Cppcheck (quick)]
-  File: core/morph.cpp  (1 diagnostics)
-
-  Line   17: [uninitvar] Uninitialized variable: in_stack_00000008
 
 ----------------------------------------------------------------------------------------------------
 core_motion.cpp_CMotionController_markerPositionToFrame_FUN_004e1f50  [.cpp] [Cppcheck (quick)]
@@ -2102,28 +2096,22 @@ core_script.cpp_trimLine_FUN_004fdf60  [.cpp] [Cppcheck (quick)]
   Line   46: [nullPointer] Possible null pointer dereference: pcVar2
 
 ----------------------------------------------------------------------------------------------------
-core_set.cpp_CDemonSet_FUN_00509a80  [.cpp] [Cppcheck (quick)]
-  File: core/set.cpp  (1 diagnostics)
-
-  Line  208: [legacyUninitvar] Uninitialized variable: in_stack_ffffff9c
-
-----------------------------------------------------------------------------------------------------
-core_set.cpp_CDemonSet_FUN_0050a260  [.cpp] [Cppcheck (quick)]
-  File: core/set.cpp  (1 diagnostics)
-
-  Line  115: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
 core_set.cpp_CDemonSet_FUN_0050aba0  [.cpp] [Cppcheck (quick)]
   File: core/set.cpp  (1 diagnostics)
 
   Line   34: [ignoredReturnValue] Return value of function atan2() is not used.
 
 ----------------------------------------------------------------------------------------------------
-core_set.cpp_CDemonSet_FUN_0050dd60  [.cpp] [Cppcheck (quick)]
+core_set.cpp_CDemonSet_renderGogglesView_FUN_0050a260  [.cpp] [Cppcheck (quick)]
   File: core/set.cpp  (1 diagnostics)
 
-  Line   23: [legacyUninitvar] Uninitialized variable: in_stack_00000008
+  Line  115: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+----------------------------------------------------------------------------------------------------
+core_set.cpp_CDemonSet_renderScene_FUN_00509a80  [.cpp] [Cppcheck (quick)]
+  File: core/set.cpp  (1 diagnostics)
+
+  Line  209: [legacyUninitvar] Uninitialized variable: in_stack_ffffff9c
 
 ----------------------------------------------------------------------------------------------------
 core_setdir.cpp_CDemonSet_FUN_00513720  [.cpp] [Cppcheck (quick)]

@@ -11,7 +11,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_sound.cpp_CSound_FUN_0052ebc0 at 0052ebf5
+;   core_sound.cpp_CSound_getSoundDuration_FUN_0052ebc0 at 0052ebf5
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_00593734

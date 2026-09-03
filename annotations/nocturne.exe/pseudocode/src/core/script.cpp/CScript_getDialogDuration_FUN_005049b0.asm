@@ -30,7 +30,7 @@
 ;
 ; Called Functions:
 ;   core_script.cpp_getActor_FUN_004fe180
-;   core_sound.cpp_CSound_FUN_0052ebc0
+;   core_sound.cpp_CSound_getSoundDuration_FUN_0052ebc0
 ;   core_sound.cpp_CSound_playSound_FUN_0052ea40
 ;   crt_stdio.c_sscanf_FUN_00566b5c
 ;   shape_edittool.cpp_CStrList_add_FUN_00473cb0
@@ -102,8 +102,8 @@ section .text
     PUSH EDI                            ; 00504a39
     MOV EAX,[0x005bed68]                ; 00504a3a | g_CSound_PTR_005bed68
     PUSH EAX                            ; 00504a3f
-    CALL core_sound.cpp_CSound_FUN_0052ebc0 ; 00504a40
-        ;   XREF to: 0052ebc0 (UNCONDITIONAL_CALL)  ; float core_sound.cpp_CSound_FUN_0052ebc0(CSound * this_ptr, char * param_2)
+    CALL core_sound.cpp_CSound_getSoundDuration_FUN_0052ebc0 ; 00504a40
+        ;   XREF to: 0052ebc0 (UNCONDITIONAL_CALL)  ; float core_sound.cpp_CSound_getSoundDuration_FUN_0052ebc0(CSound * this_ptr, char * sound_name)
     MOV dword ptr [ESP + 0x1c],EAX      ; 00504a45
     FLD float ptr [ESP + 0x1c]          ; 00504a49
     ADD ESP,0x8                         ; 00504a4d

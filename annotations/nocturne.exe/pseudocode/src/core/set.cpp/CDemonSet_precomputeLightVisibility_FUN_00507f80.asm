@@ -22,16 +22,16 @@
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_00440290
 ;   core_dcamera.cpp_CDemonCamera_computeLightExtentBounds_FUN_00444ef0
 ;   core_dcamera.cpp_CDemonCamera_endScene_FUN_00440a20
-;   core_dcamera.cpp_CDemonCamera_FUN_004421b0
 ;   core_dcamera.cpp_CDemonCamera_FUN_00447f20
 ;   core_dcamera.cpp_CDemonCamera_isCoronaSufficientlyVisible_FUN_00444e20
 ;   core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_00441c50
+;   core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_004421b0
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_set.cpp_CDemonSet_FUN_0050ad20
 ;   core_set.cpp_CDemonSet_initScene_FUN_005084c0
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00507c80
-;   core_setutil.cpp_C3DSCamera_FUN_005148b0
-;   core_setutil.cpp_C3DSLight_FUN_00515c40
+;   core_setutil.cpp_C3DSCamera_apply_FUN_005148b0
+;   core_setutil.cpp_C3DSLight_isVisible_FUN_00515c40
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   crt_string.c__strcmp_FUN_005649c0
 ;   ... and 2 more
@@ -81,8 +81,8 @@ section .text
     PUSH 0x1fb8508                      ; 00508028
     ADD EAX,EBX                         ; 0050802d
     PUSH EAX                            ; 0050802f
-    CALL core_setutil.cpp_C3DSCamera_FUN_005148b0 ; 00508030
-        ;   XREF to: 005148b0 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_C3DSCamera_FUN_005148b0(C3DSCamera * this_ptr, CDemonCamera * camera)
+    CALL core_setutil.cpp_C3DSCamera_apply_FUN_005148b0 ; 00508030
+        ;   XREF to: 005148b0 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_C3DSCamera_apply_FUN_005148b0(C3DSCamera * this_ptr, CDemonCamera * camera)
     ADD ESP,0x8                         ; 00508035
     PUSH 0x0                            ; 00508038
     PUSH 0x1fb8508                      ; 0050803a
@@ -104,8 +104,8 @@ section .text
         ;   XREF to: 00440a20 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_endScene_FUN_00440a20(CDemonCamera * this_ptr, int skip_zbuffer_copy)
     ADD ESP,0x8                         ; 00508075
     PUSH 0x1fb8508                      ; 00508078
-    CALL core_dcamera.cpp_CDemonCamera_FUN_004421b0 ; 0050807d
-        ;   XREF to: 004421b0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_FUN_004421b0(CDemonCamera * this_ptr)
+    CALL core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_004421b0 ; 0050807d
+        ;   XREF to: 004421b0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_004421b0(CDemonCamera * this_ptr)
     ADD ESP,0x4                         ; 00508082
     LEA EAX,[ESP + 0x100]               ; 00508085
     PUSH EAX                            ; 0050808c
@@ -377,8 +377,8 @@ section .text
     ADD ESP,0x8                         ; 00508426
     ADD ESI,dword ptr [ESP + 0x140]     ; 00508429
     PUSH ESI                            ; 00508430
-    CALL core_setutil.cpp_C3DSLight_FUN_00515c40 ; 00508431
-        ;   XREF to: 00515c40 (UNCONDITIONAL_CALL)  ; int core_setutil.cpp_C3DSLight_FUN_00515c40(C3DSLight * this_ptr)
+    CALL core_setutil.cpp_C3DSLight_isVisible_FUN_00515c40 ; 00508431
+        ;   XREF to: 00515c40 (UNCONDITIONAL_CALL)  ; int core_setutil.cpp_C3DSLight_isVisible_FUN_00515c40(C3DSLight * this_ptr)
     ADD ESP,0x4                         ; 00508436
     PUSH 0x0                            ; 00508439
     MOV ESI,dword ptr [ESP + 0x154]     ; 0050843b

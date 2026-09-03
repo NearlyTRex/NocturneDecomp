@@ -7,7 +7,7 @@
 ; CRuleList *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_hero.cpp_CHero_FUN_004b5110 at 004b5203
+;   core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004b5110 at 004b5203
 ;   core_hero.cpp_CHero_tryPullLever_FUN_004b52f0 at 004b5463
 ;
 ; Referenced Globals:

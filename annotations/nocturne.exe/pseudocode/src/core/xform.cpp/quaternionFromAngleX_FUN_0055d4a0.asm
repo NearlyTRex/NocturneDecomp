@@ -14,9 +14,9 @@
 ; XREF[9]:
 ;   core_charactr.cpp_CCharacter_applyLookAt_FUN_00429e60 at 00429e98
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_00497900 at 00497a92
-;   core_icepick.cpp_CIcePick_FUN_004ba740 at 004ba824
+;   core_icepick.cpp_CIcePick_updateShootBlend_FUN_004ba740 at 004ba824
 ;   core_mobster.cpp_CMobster_aimTommyGun_FUN_004db6f0 at 004db956
-;   core_scat.cpp_CScat_FUN_004fd1d0 at 004fd2fa
+;   core_scat.cpp_CScat_blendAimBones_FUN_004fd1d0 at 004fd2fa
 ;   core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0051d650 at 0051d6f0
 ;   core_stranger.cpp_CStranger_FUN_005384d0 at 005386c1
 ;   core_stranger.cpp_CStranger_applyArmAimRotation_FUN_0053a260 at 0053a3e1

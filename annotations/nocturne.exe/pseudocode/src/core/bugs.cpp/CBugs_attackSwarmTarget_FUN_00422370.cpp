@@ -102,10 +102,10 @@ void __cdecl core_bugs_cpp_CBugs_attackSwarmTarget_FUN_00422370(CBugs *this_ptr,
         (this_ptr->base).base.base.location.position.z = fStack_38;
         core_bugs_cpp_CBugs_applySwarmTranslation_FUN_00423a50(this_ptr,&CStack_70);
       }
-      core_bugs_cpp_CBugs_FUN_00421b80(this_ptr);
+      core_bugs_cpp_CBugs_updateGroundHeightGrid_FUN_00421b80(this_ptr);
     }
     else {
-      core_bugs_cpp_CBugs_FUN_00421b80(this_ptr);
+      core_bugs_cpp_CBugs_updateGroundHeightGrid_FUN_00421b80(this_ptr);
     }
   }
   if ((0 < (int)pfVar6) &&

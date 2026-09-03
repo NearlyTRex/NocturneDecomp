@@ -8,7 +8,7 @@
 ;
 ; XREF[129]:
 ;   core_ammo.cpp_factoryFuncAmmo_FUN_0040eb40 at 0040eb45
-;   core_ammobox.cpp_CAmmoBox_FUN_0040f1a0 at 0040f1e8
+;   core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040f1a0 at 0040f1e8
 ;   core_ammobox.cpp_factoryFuncAmmoBox_FUN_0040f010 at 0040f015
 ;   core_anvil.cpp_factoryFuncAnvil_FUN_0040f530 at 0040f535
 ;   core_armour.cpp_factoryFuncArmour_FUN_0040f930 at 0040f935

@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   alpha_index
 ;
 ; XREF[1]:
-;   core_set.cpp_CDemonSet_FUN_0050e080 at 0050e15a
+;   core_set.cpp_CDemonSet_setupMirrorRendering_FUN_0050e080 at 0050e15a
 ;
 ; Referenced Globals:
 ;   CMatrix3x3i g_TransformMatrix

@@ -166,7 +166,7 @@
     {
       "addr": "0043f330",
       "from_addr": "0043f37c",
-      "name": "core_curtain.cpp_CCurtain_FUN_0043f330",
+      "name": "core_curtain.cpp_CCurtain_renderMesh_FUN_0043f330",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -244,7 +244,7 @@
     {
       "addr": "004ac7c0",
       "from_addr": "004ac808",
-      "name": "core_glass.cpp_CGlass_FUN_004ac7c0",
+      "name": "core_glass.cpp_CGlass_renderBrokenGlass_FUN_004ac7c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -338,27 +338,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0050dd60",
-      "from_addr": "0050dd80",
-      "name": "core_set.cpp_CDemonSet_FUN_0050dd60",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0050ddd0",
-      "from_addr": "0050dea5",
-      "name": "core_set.cpp_CDemonSet_FUN_0050ddd0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0050c2d0",
       "from_addr": "0050c31a",
       "name": "core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0050dd60",
+      "from_addr": "0050dd80",
+      "name": "core_set.cpp_CDemonSet_renderFaceBatchOrEnvMap_FUN_0050dd60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0050ded0",
       "from_addr": "0050def0",
       "name": "core_set.cpp_CDemonSet_renderFaceListOrEnvMap_FUN_0050ded0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050ddd0",
+      "from_addr": "0050dea5",
+      "name": "core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_0050ddd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -488,7 +488,7 @@
       {
         "call_addr": "004ac808",
         "call_type": "direct",
-        "caller": "core_glass.cpp_CGlass_FUN_004ac7c0",
+        "caller": "core_glass.cpp_CGlass_renderBrokenGlass_FUN_004ac7c0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -543,7 +543,7 @@
       {
         "call_addr": "0050dea5",
         "call_type": "direct",
-        "caller": "core_set.cpp_CDemonSet_FUN_0050ddd0",
+        "caller": "core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_0050ddd0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

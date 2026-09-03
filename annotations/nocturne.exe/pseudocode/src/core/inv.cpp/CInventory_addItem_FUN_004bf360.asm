@@ -9,14 +9,14 @@
 ; int              Stack[0xc]:4   show_tutorial_message
 ;
 ; XREF[10]:
-;   core_ammobox.cpp_CAmmoBox_FUN_0040f1a0 at 0040f1c4
+;   core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040f1a0 at 0040f1c4
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004a0550 at 004a115f
 ;   core_game.cpp_giveHeroWeaponAmmo_FUN_004a03a0 at 004a0420
 ;   core_game.cpp_giveHeroWeapon_FUN_004a02e0 at 004a0364
 ;   core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004b5c70 at 004b5c9c
 ;   core_hero.cpp_CHero_createDefaultWeapon_FUN_004b4dd0 at 004b4e37
 ;   core_hostage.cpp_CHostage_process_FUN_004b6d80 at 004b7078
-;   core_inv.cpp_CInventory_FUN_004c0640 at 004c06f7
+;   core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004c0640 at 004c06f7
 ;   core_scat.cpp_CScat_createDefaultWeapon_FUN_004fbe80 at 004fbeca
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 00500788
 ;

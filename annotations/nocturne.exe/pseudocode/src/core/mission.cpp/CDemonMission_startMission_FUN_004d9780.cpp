@@ -39,7 +39,7 @@ int __cdecl core_mission_cpp_CDemonMission_startMission_FUN_004d9780(CDemonMissi
     if (iVar1 == 0) {
       return 0;
     }
-    core_script_cpp_CScript_FUN_004feff0(0x01E56DA0);
+    core_script_cpp_CScript_initRuntime_FUN_004feff0(0x01E56DA0);
     core_script_cpp_CScript_executeInitSection_FUN_004ff170(0x01E56DA0);
     core_setdir_cpp_CDemonSet_clearCameraSwitchCooldown_FUN_005135f0(g_CDemonSet_PTR_005be368);
     return 1;

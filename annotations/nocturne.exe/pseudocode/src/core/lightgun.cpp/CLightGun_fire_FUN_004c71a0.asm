@@ -35,13 +35,13 @@
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0
 ;   core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00445fe0
 ;   core_lightgun.cpp_CLightGun_updateBeamLight_FUN_004c6ff0
-;   core_setcolid.cpp_CDemonSet_FUN_00511740
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_00511780
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00511750
 ;   core_setcolid.cpp_CDemonSet_popRaytraceState_FUN_00511590
 ;   core_setcolid.cpp_CDemonSet_pushRaytraceState_FUN_005113e0
 ;   core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00
 ;   core_setcolid.cpp_CDemonSet_setRayType_FUN_00511800
+;   core_setcolid.cpp_CDemonSet_skipExactCollisions_FUN_00511740
 ;   ... and 7 more
 ;
 ; *****************************************************************************
@@ -161,8 +161,8 @@ section .text
     ADD ESP,0x8                         ; 004c7348
     MOV ECX,dword ptr [0x005be368]      ; 004c734b | g_CDemonSet_PTR_005be368
     PUSH ECX                            ; 004c7351 | g_CDemonSet_01e57284
-    CALL core_setcolid.cpp_CDemonSet_FUN_00511740 ; 004c7352
-        ;   XREF to: 00511740 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_FUN_00511740(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_skipExactCollisions_FUN_00511740 ; 004c7352
+        ;   XREF to: 00511740 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_skipExactCollisions_FUN_00511740(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 004c7357
     PUSH EDI                            ; 004c735a
     MOV ESI,dword ptr [0x005be368]      ; 004c735b | g_CDemonSet_PTR_005be368

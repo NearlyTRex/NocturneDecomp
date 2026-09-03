@@ -36,7 +36,7 @@
 ;   core_fire.cpp_CFireEffect_createBulletImpact_FUN_0048ab60
 ;   core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_0048af20
 ;   core_flamecan.cpp_CFlameCan_ignite_FUN_0048e550
-;   core_glass.cpp_CGlass_FUN_004aded0
+;   core_glass.cpp_CGlass_checkBreakableCondition_FUN_004aded0
 ;   core_glass.cpp_CGlass_shatter_FUN_004ada20
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_00511780
 ;   core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00
@@ -392,8 +392,8 @@ section .text
         ;   XREF to: 0054aea2 (UNCONDITIONAL_JUMP)  ; LAB_0054aea2
     PUSH ECX                            ; 0054af9e
         ;   Label: LAB_0054af9e
-    CALL core_glass.cpp_CGlass_FUN_004aded0 ; 0054af9f
-        ;   XREF to: 004aded0 (UNCONDITIONAL_CALL)  ; int core_glass.cpp_CGlass_FUN_004aded0(CGlass * this_ptr)
+    CALL core_glass.cpp_CGlass_checkBreakableCondition_FUN_004aded0 ; 0054af9f
+        ;   XREF to: 004aded0 (UNCONDITIONAL_CALL)  ; int core_glass.cpp_CGlass_checkBreakableCondition_FUN_004aded0(CGlass * this_ptr)
     ADD ESP,0x4                         ; 0054afa4
     TEST EAX,EAX                        ; 0054afa7
     JZ 0x0054aec3                       ; 0054afa9

@@ -17,7 +17,7 @@ void __cdecl core_mission_cpp_CDemonMission_save_FUN_004d7f80(CDemonMission *thi
     g_CurrentLineNumber = 182;
     core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonMission::save - Unable to open file");
   }
-  core_mission_cpp_CDemonMission_FUN_004d8720(this_ptr,file_handle);
+  core_mission_cpp_CDemonMission_writeFile_FUN_004d8720(this_ptr,file_handle);
   _fclose(file_handle);
   return;
 }

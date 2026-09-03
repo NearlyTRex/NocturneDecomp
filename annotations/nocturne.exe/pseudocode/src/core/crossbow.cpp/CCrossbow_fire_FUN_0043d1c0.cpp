@@ -121,7 +121,7 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_0043d1c0(CCrossbow *this_ptr)
                   (g_CDemonSet_PTR_005be368,(CDemonActor *)CStack_20.x);
       }
       else {
-        iVar3 = core_glass_cpp_CGlass_FUN_004aded0(pCStack_14);
+        iVar3 = core_glass_cpp_CGlass_checkBreakableCondition_FUN_004aded0(pCStack_14);
         if (iVar3 == 0) break;
         core_glass_cpp_CGlass_shatter_FUN_004ada20
                   (pCStack_14,&g_CDemonSet_PTR_005be368->collision_impact_position);

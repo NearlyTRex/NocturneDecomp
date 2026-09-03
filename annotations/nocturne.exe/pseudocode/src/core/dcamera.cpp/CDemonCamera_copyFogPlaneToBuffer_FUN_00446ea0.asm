@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   plane_index
 ;
 ; XREF[1]:
-;   core_dcamera.cpp_CDemonCamera_FUN_00446810 at 00446b5f
+;   core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_00446810 at 00446b5f
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_012ceb79

@@ -7,9 +7,9 @@
 ; CStrList *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
-;   core_script.cpp_CScript_FUN_004fe9d0 at 004feabb
 ;   core_script.cpp_CScript_FUN_004febd0 at 004fedc0
-;   core_script.cpp_CScript_FUN_004fee30 at 004fee50
+;   core_script.cpp_CScript_buildParsedLines_FUN_004fee30 at 004fee50
+;   core_script.cpp_CScript_renderEditor_FUN_004fe9d0 at 004feabb
 ;
 ; *****************************************************************************
 

@@ -74,12 +74,6 @@
   },
   "cross_references": [
     {
-      "addr": "004fe9d0",
-      "from_addr": "004feabb",
-      "name": "core_script.cpp_CScript_FUN_004fe9d0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004febd0",
       "from_addr": "004fedc0",
       "name": "core_script.cpp_CScript_FUN_004febd0",
@@ -88,7 +82,13 @@
     {
       "addr": "004fee30",
       "from_addr": "004fee50",
-      "name": "core_script.cpp_CScript_FUN_004fee30",
+      "name": "core_script.cpp_CScript_buildParsedLines_FUN_004fee30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004fe9d0",
+      "from_addr": "004feabb",
+      "name": "core_script.cpp_CScript_renderEditor_FUN_004fe9d0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -112,7 +112,7 @@
       {
         "call_addr": "004feabb",
         "call_type": "direct",
-        "caller": "core_script.cpp_CScript_FUN_004fe9d0",
+        "caller": "core_script.cpp_CScript_renderEditor_FUN_004fe9d0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -134,7 +134,7 @@
       {
         "call_addr": "004fee50",
         "call_type": "direct",
-        "caller": "core_script.cpp_CScript_FUN_004fee30",
+        "caller": "core_script.cpp_CScript_buildParsedLines_FUN_004fee30",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

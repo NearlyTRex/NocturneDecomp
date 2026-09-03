@@ -131,9 +131,9 @@ char * __cdecl CDemonCamera::allocLight(CDemonCamera *this_ptr);
 // Address: 00441c50
 void __cdecl CDemonCamera::precomputeLight(CDemonCamera *this_ptr,CDemonLight *light_source,CRect *rect);
 
-// Original: core_dcamera.cpp_CDemonCamera_FUN_004421b0
+// Original: core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_004421b0
 // Address: 004421b0
-void __cdecl CDemonCamera(CDemonCamera *this_ptr);
+void __cdecl CDemonCamera::precomputeNormals(CDemonCamera *this_ptr);
 
 // Original: core_dcamera.cpp_FUN_004425d0
 // Address: 004425d0
@@ -259,13 +259,13 @@ void __cdecl CDemonCamera::setEffectIntensity(CDemonCamera *this_ptr,float inten
 // Address: 00446760
 void __cdecl CDemonCamera::screenToWorldRay(CDemonCamera *this_ptr,CVector3f *output_ray,int screen_x,int screen_y);
 
-// Original: core_dcamera.cpp_CDemonCamera_FUN_00446800
+// Original: core_dcamera.cpp_CDemonCamera_generateFogGrid_FUN_00446800
 // Address: 00446800
-void __cdecl CDemonCamera(CDemonCamera *this_ptr);
+void __cdecl CDemonCamera::generateFogGrid(CDemonCamera *this_ptr);
 
-// Original: core_dcamera.cpp_CDemonCamera_FUN_00446810
+// Original: core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_00446810
 // Address: 00446810
-void __cdecl CDemonCamera(CDemonCamera *this_ptr);
+void __cdecl CDemonCamera::saveBackdrop(CDemonCamera *this_ptr);
 
 // Original: core_dcamera.cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00446ea0
 // Address: 00446ea0
@@ -311,13 +311,13 @@ void __cdecl CDemonCamera::generateGammaPalette(CDemonCamera *this_ptr,int gamma
 // Address: 00447b30
 void __cdecl CDemonCamera::clearFramebufferAndWorkBuffers(CDemonCamera *this_ptr,int clear_color);
 
-// Original: core_dcamera.cpp_CDemonCamera_FUN_00447bb0
+// Original: core_dcamera.cpp_CDemonCamera_blendLightmapPixel32_FUN_00447bb0
 // Address: 00447bb0
-void __cdecl CDemonCamera(CDemonCamera *this_ptr,int screen_x,int screen_y,int offset);
+void __cdecl CDemonCamera::blendLightmapPixel32(CDemonCamera *this_ptr,int screen_x,int screen_y,int offset);
 
-// Original: core_dcamera.cpp_CDemonCamera_FUN_00447c60
+// Original: core_dcamera.cpp_CDemonCamera_blendLightmapPixel16_FUN_00447c60
 // Address: 00447c60
-void __cdecl CDemonCamera(CDemonCamera *this_ptr,int screen_x,int screen_y,int offset);
+void __cdecl CDemonCamera::blendLightmapPixel16(CDemonCamera *this_ptr,int screen_x,int screen_y,int offset);
 
 // Original: core_dcamera.cpp_loadCameraFog_FUN_00447d10
 // Address: 00447d10
@@ -335,13 +335,13 @@ void __cdecl CDemonCamera::initCameraShake(CDemonCamera *this_ptr,float peak_int
 // Address: 00447f20
 CVector3f * __cdecl CDemonCamera(CDemonCamera *this_ptr,CVector3f *output_bounds);
 
-// Original: core_dcamera.cpp_CDemonCamera_FUN_00448310
+// Original: core_dcamera.cpp_CDemonCamera_saveZBufferScanlines_FUN_00448310
 // Address: 00448310
-void __cdecl CDemonCamera(CDemonCamera *this_ptr);
+void __cdecl CDemonCamera::saveZBufferScanlines(CDemonCamera *this_ptr);
 
-// Original: core_dcamera.cpp_CDemonCamera_FUN_00448380
+// Original: core_dcamera.cpp_CDemonCamera_restoreZBufferScanlines_FUN_00448380
 // Address: 00448380
-void __cdecl CDemonCamera(CDemonCamera *this_ptr);
+void __cdecl CDemonCamera::restoreZBufferScanlines(CDemonCamera *this_ptr);
 
 // Original: core_dcamera.cpp_CVector3f_arrdtor77120_FUN_004483f0
 // Address: 004483f0

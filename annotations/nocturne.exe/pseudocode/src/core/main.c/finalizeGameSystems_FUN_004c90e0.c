@@ -77,8 +77,8 @@ void __cdecl core_main_c_finalizeGameSystems_FUN_004c90e0(void)
   }
   core_netgame_cpp_CNetGame_shutdown_FUN_004e99c0(g_CNetGame_PTR_005bdee0);
   engine_force_cpp_CForceFeedback_processEvent_FUN_004940d0(g_CForceFeedback_PTR_005b9284);
-  engine_ncursfx_cpp_CMouse_FUN_004ee680(g_CMouse_PTR_005be060);
-  core_mission_cpp_CDemonMission_FUN_004d7e90(g_CDemonMission_PTR_005baf90);
+  engine_ncursfx_cpp_CMouse_reset_FUN_004ee680(g_CMouse_PTR_005be060);
+  core_mission_cpp_CDemonMission_clearMission_FUN_004d7e90(g_CDemonMission_PTR_005baf90);
   core_sound_cpp_CSound_dtor_FUN_0052dd80(g_CSound_PTR_005bed68);
   core_dmodel_cpp_freeAllModels_FUN_00454460();
   core_skeleton_cpp_freeAllModels_FUN_0051f650();

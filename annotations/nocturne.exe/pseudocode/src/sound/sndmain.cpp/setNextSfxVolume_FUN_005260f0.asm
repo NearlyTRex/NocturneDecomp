@@ -8,11 +8,11 @@
 ;
 ; XREF[9]:
 ;   core_charactr.cpp_CCharacter_processFire_FUN_004269b0 at 00426d33
-;   core_dracbrid.cpp_CDraculaBride_FUN_0045ab40 at 0045afce
+;   core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_0045ab40 at 0045afce
 ;   core_fire.cpp_CFireball_onCollision_FUN_00484b60 at 00484c76
 ;   core_lightgun.cpp_CLightGun_process_FUN_004c79a0 at 004c7c1d
 ;   core_manpuz.cpp_updateGemHumChannel_FUN_004caef0 at 004cafb5
-;   core_sound.cpp_CSound_FUN_0052dff0 at 0052e625
+;   core_sound.cpp_CSound_process_FUN_0052dff0 at 0052e625
 ;   core_sound.cpp_playSfxInternal_FUN_0052d120 at 0052d33b
 ;   core_sound.cpp_processTrainSounds_FUN_0052d790 at 0052da8f
 ;   core_stranger.cpp_CStranger_processFrame_FUN_00535900 at 00537c8c

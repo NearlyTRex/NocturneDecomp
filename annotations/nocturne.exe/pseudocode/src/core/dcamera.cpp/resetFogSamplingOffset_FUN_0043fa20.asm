@@ -7,7 +7,7 @@
 ; SFogGrid *       Stack[0x4]:4   fog
 ;
 ; XREF[2]:
-;   core_dcamera.cpp_CDemonCamera_FUN_00446810 at 0044683c
+;   core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_00446810 at 0044683c
 ;   core_dcamera.cpp_generateFogGrid_FUN_0043fa50 at 0043fc69
 ;
 ; *****************************************************************************

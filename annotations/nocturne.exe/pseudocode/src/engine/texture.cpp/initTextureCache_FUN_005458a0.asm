@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   crt_memory.c_operator_new_FUN_0056497c
-;   engine_texture.cpp_CTextureCache_FUN_00544de0
+;   engine_texture.cpp_CTextureCache_ctor_FUN_00544de0
 ;
 ; *****************************************************************************
 
@@ -31,8 +31,8 @@ section .text
     PUSH 0x400                          ; 005458b7
         ;   Label: LAB_005458b7
     PUSH EAX                            ; 005458bc
-    CALL engine_texture.cpp_CTextureCache_FUN_00544de0 ; 005458bd
-        ;   XREF to: 00544de0 (UNCONDITIONAL_CALL)  ; CTextureCache * engine_texture.cpp_CTextureCache_FUN_00544de0(CTextureCache * this_ptr, int max_texture_count)
+    CALL engine_texture.cpp_CTextureCache_ctor_FUN_00544de0 ; 005458bd
+        ;   XREF to: 00544de0 (UNCONDITIONAL_CALL)  ; CTextureCache * engine_texture.cpp_CTextureCache_ctor_FUN_00544de0(CTextureCache * this_ptr, int max_texture_count)
     ADD ESP,0x8                         ; 005458c2
     MOV [0x02dd0f84],EAX                ; 005458c5 | DAT_02dd0f84
     RET                                 ; 005458ca

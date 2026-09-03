@@ -11,7 +11,7 @@
 ;
 ; XREF[2]:
 ;   core_game.cpp_CGame_renderOverlay_FUN_0049ab50 at 0049abfb
-;   core_script.cpp_CScript_FUN_004fe770 at 004fe7f3
+;   core_script.cpp_CScript_renderSubtitles_FUN_004fe770 at 004fe7f3
 ;
 ; Referenced Globals:
 ;   int g_WindowWidth = 0x140

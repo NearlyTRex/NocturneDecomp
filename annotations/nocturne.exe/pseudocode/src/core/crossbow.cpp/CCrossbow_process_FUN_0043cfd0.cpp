@@ -22,7 +22,7 @@ void __cdecl core_crossbow_cpp_CCrossbow_process_FUN_0043cfd0(CCrossbow *this_pt
   (this_ptr->bolt_flame).base.location.position.z = pCVar1->z;
   if (((((this_ptr->base).weapon_state != WEAPON_STATE_IN_HAND) || ((this_ptr->base).ammo_count < 1)
        ) || ((this_ptr->base).ammo_type != 5)) || (0.0 < (this_ptr->base).fire_cooldown_timer)) {
-    core_flame_cpp_CFlame_FUN_0048df10(&this_ptr->bolt_flame);
+    core_flame_cpp_CFlame_hide_FUN_0048df10(&this_ptr->bolt_flame);
     this_ptr->flame_active = 0;
   }
   else {

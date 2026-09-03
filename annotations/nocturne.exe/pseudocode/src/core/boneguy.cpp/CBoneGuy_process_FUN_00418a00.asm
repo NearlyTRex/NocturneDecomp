@@ -99,15 +99,15 @@
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
 ;   core_boneguy.cpp_CBoneGuy_beginRecombine_FUN_0041a310
 ;   core_boneguy.cpp_CBoneGuy_explode_FUN_0041a0f0
-;   core_boneguy.cpp_CBoneGuy_FUN_004196b0
-;   core_charactr.cpp_CCharacter_FUN_004259f0
-;   core_charactr.cpp_CCharacter_FUN_00428c00
-;   core_charactr.cpp_CCharacter_FUN_0042a150
+;   core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_004196b0
+;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042a150
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_00425960
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428f40
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_004259a0
+;   core_charactr.cpp_CCharacter_process_FUN_004259f0
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_0042add0
+;   core_charactr.cpp_CCharacter_processWalking_FUN_00428c00
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0
 ;   ... and 22 more
@@ -157,8 +157,8 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 00418a73
         ;   Label: LAB_00418a73
     PUSH EBX                            ; 00418a79
-    CALL core_charactr.cpp_CCharacter_FUN_004259f0 ; 00418a7a
-        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_004259f0(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_process_FUN_004259f0 ; 00418a7a
+        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_process_FUN_004259f0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00418a7f
     TEST EAX,EAX                        ; 00418a82
     JZ 0x00418c90                       ; 00418a84
@@ -475,8 +475,8 @@ section .text
     MOV EDI,dword ptr [EAX + 0x24]      ; 00418e0a
     PUSH EBX                            ; 00418e0d
     MOV dword ptr [EBP + 0x56],EDI      ; 00418e0e
-    CALL core_charactr.cpp_CCharacter_FUN_00428c00 ; 00418e11
-        ;   XREF to: 00428c00 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_00428c00(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_processWalking_FUN_00428c00 ; 00418e11
+        ;   XREF to: 00428c00 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processWalking_FUN_00428c00(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00418e16
     TEST EAX,EAX                        ; 00418e19
     JZ 0x0041949d                       ; 00418e1b
@@ -613,8 +613,8 @@ section .text
     ADD ESP,0x4                         ; 00418f97
     PUSH dword ptr [EBP + 0x92]         ; 00418f9a
     PUSH EBX                            ; 00418fa0
-    CALL core_charactr.cpp_CCharacter_FUN_0042a150 ; 00418fa1
-        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042a150(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042a150 ; 00418fa1
+        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042a150(CCharacter * this_ptr, float delta_time)
     MOV ECX,dword ptr [EBP + 0x56]      ; 00418fa6
     ADD ESP,0x8                         ; 00418fa9
     CMP ECX,0x1                         ; 00418fac
@@ -954,8 +954,8 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 00419363
         ;   Label: LAB_00419363
     PUSH EBX                            ; 00419369
-    CALL core_boneguy.cpp_CBoneGuy_FUN_004196b0 ; 0041936a
-        ;   XREF to: 004196b0 (UNCONDITIONAL_CALL)  ; int core_boneguy.cpp_CBoneGuy_FUN_004196b0(CBoneGuy * this_ptr, float delta_time)
+    CALL core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_004196b0 ; 0041936a
+        ;   XREF to: 004196b0 (UNCONDITIONAL_CALL)  ; int core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_004196b0(CBoneGuy * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0041936f
     TEST EAX,EAX                        ; 00419372
     JNZ 0x00418e64                      ; 00419374

@@ -12,8 +12,8 @@
 ; XREF[31]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_getTextWidth_FUN_0045e340 at 0045e350
 ;   core_game.cpp_CGame_renderOverlay_FUN_0049ab50 at 0049b032
-;   core_inv.cpp_CInventory_FUN_004c2470 at 004c261b
 ;   core_inv.cpp_CInventory_addItem_FUN_004bf360 at 004bff0c
+;   core_inv.cpp_CInventory_renderAllItems_FUN_004c2470 at 004c261b
 ;   core_level.cpp_CLevelLoader_update_FUN_004c59e0 at 004c5f13
 ;   core_main.c_drawCenteredText_FUN_004c8dc0 at 004c8dd0
 ;   core_main.c_finalizeGameSystems_FUN_004c90e0 at 004c9187

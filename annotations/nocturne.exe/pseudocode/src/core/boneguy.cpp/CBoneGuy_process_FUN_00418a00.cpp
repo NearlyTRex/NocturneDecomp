@@ -91,7 +91,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_00418a00(CBoneGuy *this_ptr,f
     core_motion_cpp_CMotionController_jumpToMotion_FUN_004e1990
               (&(this_ptr->base).base.model.motion_controller,5,0.0);
   }
-  iVar7 = core_charactr_cpp_CCharacter_FUN_004259f0((CCharacter *)this_ptr,delta_time);
+  iVar7 = core_charactr_cpp_CCharacter_process_FUN_004259f0((CCharacter *)this_ptr,delta_time);
   if (iVar7 == 0) goto LAB_00418c90;
   if ((this_ptr->blown_up == 1) && (0.0 < (this_ptr->base).base.hit_points)) {
     fVar17 = this_ptr->recombine_interpolation + delta_time;
@@ -218,7 +218,8 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_00418a00(CBoneGuy *this_ptr,f
                      (&pCVar2->motion_controller);
   iVar7 = pSVar9->state_index;
   local_34 = iVar7;
-  iVar10 = core_charactr_cpp_CCharacter_FUN_00428c00((CCharacter *)this_ptr,delta_time);
+  iVar10 = core_charactr_cpp_CCharacter_processWalking_FUN_00428c00
+                     ((CCharacter *)this_ptr,delta_time);
   if (iVar10 == 0) {
     switch(iVar7) {
     case 0:
@@ -245,7 +246,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_00418a00(CBoneGuy *this_ptr,f
         }
       }
       else {
-        iVar7 = core_boneguy_cpp_CBoneGuy_FUN_004196b0(this_ptr,delta_time);
+        iVar7 = core_boneguy_cpp_CBoneGuy_updatePickupBehavior_FUN_004196b0(this_ptr,delta_time);
         if (iVar7 == 0) {
           local_30 = 2.0f;
           if ((this_ptr->base).base.carry_hands[1].carry_actor != (CDemonActor *)0x0) {
@@ -427,7 +428,7 @@ LAB_0041907c:
   core_charactr_cpp_CCharacter_preProcess_FUN_004259a0((CCharacter *)this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0
             (&(this_ptr->base).base.model);
-  core_charactr_cpp_CCharacter_FUN_0042a150((CCharacter *)this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042a150((CCharacter *)this_ptr,delta_time);
   if ((local_34 == 1) &&
      (iVar7 = sound_sndmain_cpp_isWithinListenerRadius_FUN_00527880
                         ((double)(this_ptr->base).base.base.location.position.x,

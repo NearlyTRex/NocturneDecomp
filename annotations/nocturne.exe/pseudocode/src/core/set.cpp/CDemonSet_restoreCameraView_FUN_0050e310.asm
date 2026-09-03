@@ -7,7 +7,7 @@
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_set.cpp_CDemonSet_FUN_00509a80 at 00509af1
+;   core_set.cpp_CDemonSet_renderScene_FUN_00509a80 at 00509af1
 ;
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0

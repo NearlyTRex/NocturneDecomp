@@ -97,7 +97,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_00555c60(CWerewolf *this_pt
   uint local_18;
   float local_14;
   
-  iVar6 = core_charactr_cpp_CCharacter_FUN_004259f0((CCharacter *)this_ptr,delta_time);
+  iVar6 = core_charactr_cpp_CCharacter_process_FUN_004259f0((CCharacter *)this_ptr,delta_time);
   if (iVar6 == 0) {
     sound_sndmain_cpp_killSfx_FUN_00527230(this_ptr->sfx_handles[1]);
     return;
@@ -151,7 +151,8 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_00555c60(CWerewolf *this_pt
                      (&pCVar1->motion_controller);
   uVar7 = pSVar9->state_index;
   local_18 = uVar7;
-  iVar6 = core_charactr_cpp_CCharacter_FUN_00428c00((CCharacter *)this_ptr,delta_time);
+  iVar6 = core_charactr_cpp_CCharacter_processWalking_FUN_00428c00
+                    ((CCharacter *)this_ptr,delta_time);
   if (iVar6 == 0) {
     EVar11 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr)
     ;
@@ -719,7 +720,7 @@ LAB_00555e90:
   core_charactr_cpp_CCharacter_preProcess_FUN_004259a0((CCharacter *)this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0
             (&(this_ptr->base).base.model);
-  core_charactr_cpp_CCharacter_FUN_0042a150((CCharacter *)this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042a150((CCharacter *)this_ptr,delta_time);
   core_werewolf_cpp_CWerewolf_processChainConstraint_FUN_00557cc0(this_ptr);
   this_ptr->eye_glow_phase = delta_time * (float)0.5 + this_ptr->eye_glow_phase;
   return;

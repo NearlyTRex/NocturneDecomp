@@ -1,0 +1,698 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 5,
+        "line": 20,
+        "message": "unknown type name 'FLOATING_SAVE_AREA'"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 52,
+        "message": "unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 53,
+        "message": "unknown type name 'PCONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 498,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 498,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 499,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 499,
+        "message": "exponent has no digits"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 626,
+    "complexity_score": 396,
+    "cross_reference_count": 1,
+    "function_call_count": 14,
+    "global_count": 15,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 251,
+    "suspect_count": 13,
+    "suspect_types": [
+      "pointer_cast",
+      "stack_param",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 877
+  },
+  "cross_references": [
+    {
+      "addr": "0053fc60",
+      "from_addr": "0053fd07",
+      "name": "core_stranger.cpp_CStranger_handleActionButton_FUN_0053fc60",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0053c800",
+    "address_range": [
+      [
+        "0053c800",
+        "0053cf8b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_stranger.cpp_CStranger_tryPlaceObject_FUN_0053c800",
+    "signature": "int __cdecl core_stranger_cpp_CStranger_tryPlaceObject_FUN_0053c800(CStranger *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040d890",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040d890"
+    },
+    {
+      "addr": "0040a200",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_transformVector_FUN_0040a200"
+    },
+    {
+      "addr": "0040a290",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290"
+    },
+    {
+      "addr": "0042a9d0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0"
+    },
+    {
+      "addr": "0044bab0",
+      "is_variadic": false,
+      "name": "core_dest.cpp_CActorDestination_acceptsActor_FUN_0044bab0"
+    },
+    {
+      "addr": "004e18d0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004e18d0"
+    },
+    {
+      "addr": "004e16b0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0"
+    },
+    {
+      "addr": "00511780",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_ignore_FUN_00511780"
+    },
+    {
+      "addr": "00511750",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_init_FUN_00511750"
+    },
+    {
+      "addr": "0050ec80",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80"
+    },
+    {
+      "addr": "00510a40",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00510a40"
+    },
+    {
+      "addr": "00534fc0",
+      "is_variadic": false,
+      "name": "core_stranger.cpp_getCarriedObjectVerticalOffset_FUN_00534fc0"
+    },
+    {
+      "addr": "0043ac60",
+      "is_variadic": true,
+      "name": "engine_console.cpp_CConsole_printf_FUN_0043ac60"
+    },
+    {
+      "addr": "0046fb40",
+      "is_variadic": true,
+      "name": "shape_edittool.cpp_CEditorTools_showWarning_FUN_0046fb40"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00595b87",
+      "name": "s_actionPending_d_stranger_00595b87",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00595baf",
+      "name": "s_Delta_to_dest_3_2f_3_2f_00595baf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00595bd7",
+      "name": "DOUBLE_00595bd7",
+      "type": "double",
+      "value": "0.990000000000000"
+    },
+    {
+      "addr": "00595bdf",
+      "name": "DOUBLE_00595bdf",
+      "type": "double",
+      "value": "3"
+    },
+    {
+      "addr": "00595be7",
+      "name": "DOUBLE_00595be7",
+      "type": "double",
+      "value": "2"
+    },
+    {
+      "addr": "00595bef",
+      "name": "DOUBLE_00595bef",
+      "type": "double",
+      "value": "4"
+    },
+    {
+      "addr": "005ad350",
+      "name": "g_CConsole_PTR_005ad350",
+      "type": "CConsole*",
+      "value": "0077ad0c"
+    },
+    {
+      "addr": "005b6d50",
+      "name": "g_CEditorTools_PTR_005b6d50",
+      "type": "CEditorTools*",
+      "value": "01bcd074"
+    },
+    {
+      "addr": "005be368",
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
+    },
+    {
+      "addr": "0077ad0c",
+      "name": "g_CConsole_0077ad0c",
+      "type": "CConsole",
+      "value": null
+    },
+    {
+      "addr": "0077bd78",
+      "name": "g_CCrateActorType_0077bd40.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8a54",
+      "name": "g_CActorDestinationActorType_014b8a1c.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e57284",
+      "name": "g_CDemonSet_01e57284",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "01fa3ff0",
+      "name": "g_CDemonSet_01e57284.actor_count",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fa3ff4",
+      "name": "g_CDemonSet_01e57284.actors[0]",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0053fd07",
+        "call_type": "direct",
+        "caller": "core_stranger.cpp_CStranger_handleActionButton_FUN_0053fc60",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.722846441947565,
+    "instruction_count": 534,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 18,
+      "BOOL_OR": 17,
+      "BRANCH": 5,
+      "CALL": 26,
+      "CALLIND": 2,
+      "CBRANCH": 36,
+      "COPY": 1114,
+      "FLOAT2FLOAT": 89,
+      "FLOAT_ABS": 3,
+      "FLOAT_ADD": 9,
+      "FLOAT_EQUAL": 15,
+      "FLOAT_LESS": 15,
+      "FLOAT_MULT": 3,
+      "FLOAT_NAN": 30,
+      "FLOAT_SQRT": 1,
+      "FLOAT_SUB": 12,
+      "INT2FLOAT": 7,
+      "INT_ADD": 245,
+      "INT_AND": 249,
+      "INT_CARRY": 43,
+      "INT_EQUAL": 164,
+      "INT_LEFT": 60,
+      "INT_LESS": 16,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 76,
+      "INT_OR": 75,
+      "INT_SBORROW": 16,
+      "INT_SCARRY": 46,
+      "INT_SLESS": 81,
+      "INT_SUB": 122,
+      "INT_XOR": 7,
+      "INT_ZEXT": 60,
+      "LOAD": 136,
+      "POPCOUNT": 81,
+      "RETURN": 4,
+      "STORE": 172
+    },
+    "pcode_op_count": 3056
+  },
+  "stack_frame": {
+    "frame_size": 272,
+    "local_size": 268,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_108",
+        "offset": -264,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_100",
+        "offset": -256,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_f8",
+        "offset": -248,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_e8",
+        "offset": -232,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_e0",
+        "offset": -224,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_dc",
+        "offset": -220,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_d8",
+        "offset": -216,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_d4",
+        "offset": -212,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_d0",
+        "offset": -208,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_cc",
+        "offset": -204,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c8",
+        "offset": -200,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_bc",
+        "offset": -188,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_b8",
+        "offset": -184,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_b4",
+        "offset": -180,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a4",
+        "offset": -164,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_8c",
+        "offset": -140,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_80",
+        "offset": -128,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_7c",
+        "offset": -124,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_78",
+        "offset": -120,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CStranger *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0053c80c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_ffffff18",
+      "severity": "moderate",
+      "text": "double in_stack_ffffff18;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 72,
+      "match": "(CDemonActor **)((int)g_CDemonSet_PTR_005be368",
+      "severity": "moderate",
+      "text": "(*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + iStack_1c),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 122,
+      "match": "(CDemonActor **)((int)g_CDemonSet_PTR_005be368",
+      "severity": "moderate",
+      "text": "(*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + (int)local_18),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 141,
+      "match": "in_stack_ffffff18",
+      "severity": "moderate",
+      "text": "(in_stack_ffffff18 = (double)local_8c, 0.0 < in_stack_ffffff18)) &&",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 141,
+      "match": "in_stack_ffffff18",
+      "severity": "moderate",
+      "text": "(in_stack_ffffff18 = (double)local_8c, 0.0 < in_stack_ffffff18)) &&",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 142,
+      "match": "in_stack_ffffff18",
+      "severity": "moderate",
+      "text": "(in_stack_ffffff18 < 4)))) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 219,
+      "match": "in_stack_ffffff18",
+      "severity": "moderate",
+      "text": "force_immediate = (int)((ulonglong)in_stack_ffffff18 >> 0x20);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 238,
+      "match": "(CDemonActor **)((int)g_CDemonSet_PTR_005be368",
+      "severity": "moderate",
+      "text": "(*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + iVar13),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 98,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar7->x = (pCVar12->position).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 105,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pUVar5->vec).x = (pUVar11->vec).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 148,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->carry_object_world_center).x = pCVar7->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 166,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar7->x = (pCVar12->position).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 173,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pUVar11->vec).x = (pUVar5->vec).x;",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

@@ -20,7 +20,7 @@
 ;
 ; XREF[3]:
 ;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049ceb1
-;   core_set.cpp_CDemonSet_FUN_00509a80 at 00509ad1
+;   core_set.cpp_CDemonSet_renderScene_FUN_00509a80 at 00509ad1
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508cf0
 ;
 ; Referenced Globals:
@@ -48,10 +48,10 @@
 ;   core_fire.cpp_CFireEffect_render_FUN_0048a650
 ;   core_gore.cpp_CGore_renderParticles_FUN_004afe00
 ;   core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2d0
-;   core_set.cpp_CDemonSet_FUN_0050e080
 ;   core_set.cpp_CDemonSet_renderBackgroundActors_FUN_00508750
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00507c80
 ;   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190
+;   core_set.cpp_CDemonSet_setupMirrorRendering_FUN_0050e080
 ;   engine_console.cpp_CConsole_printf_FUN_0043ac60
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050
 ;   wincore_winrun.cpp_getTime_FUN_00558a30
@@ -204,8 +204,8 @@ section .text
         ;   Label: LAB_005098e3
     PUSH EBX                            ; 005098e5
     PUSH ESI                            ; 005098e6
-    CALL core_set.cpp_CDemonSet_FUN_0050e080 ; 005098e7
-        ;   XREF to: 0050e080 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0050e080(CDemonSet * this_ptr, int mirror_index, int enable_flag)
+    CALL core_set.cpp_CDemonSet_setupMirrorRendering_FUN_0050e080 ; 005098e7
+        ;   XREF to: 0050e080 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setupMirrorRendering_FUN_0050e080(CDemonSet * this_ptr, int mirror_index, int enable_flag)
     ADD ESP,0xc                         ; 005098ec
     MOV EAX,dword ptr [EDI + 0x15f300]  ; 005098ef
     PUSH EAX                            ; 005098f5

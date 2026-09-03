@@ -19,10 +19,10 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[14]:
-;   core_charactr.cpp_CCharacter_FUN_004270e0 at 004271ac
-;   core_charactr.cpp_CCharacter_FUN_0042a150 at 0042a16e
+;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042a150 at 0042a16e
+;   core_charactr.cpp_CCharacter_renderEthereal_FUN_004270e0 at 004271ac
 ;   core_cloth.cpp_CCloth_setup_FUN_004359e0 at 00435dc5
-;   core_mimic.cpp_CMimic_FUN_004d4f30 at 004d5702
+;   core_mimic.cpp_CMimic_processAnimation_FUN_004d4f30 at 004d5702
 ;   core_mimic.cpp_CMimic_setup_FUN_004d4650 at 004d48b1
 ;   core_passngr.cpp_CPassenger_setup_FUN_004ef6d0 at 004ef70e
 ;   core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0051b880 at 0051b892

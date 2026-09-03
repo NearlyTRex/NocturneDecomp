@@ -8,8 +8,8 @@
 ;
 ; XREF[3]:
 ;   core_set.cpp_CDemonSet_clear_FUN_00506ec0 at 00506edf
-;   core_setutil.cpp_C3DSCamera_FUN_00514470 at 00514476
 ;   core_setutil.cpp_C3DSCamera_dtor_FUN_00514410 at 00514416
+;   core_setutil.cpp_C3DSCamera_reset_FUN_00514470 at 00514476
 ;
 ; Called Functions:
 ;   crt_memory.c_free_FUN_005638d0

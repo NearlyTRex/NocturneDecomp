@@ -33,7 +33,7 @@
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0
 ;   core_fire.cpp_CFireEffect_createStake_FUN_0048b070
-;   core_glass.cpp_CGlass_FUN_004aded0
+;   core_glass.cpp_CGlass_checkBreakableCondition_FUN_004aded0
 ;   core_glass.cpp_CGlass_shatter_FUN_004ada20
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_00511780
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00511750
@@ -500,8 +500,8 @@ section .text
         ;   XREF to: 0043d7bc (UNCONDITIONAL_JUMP)  ; LAB_0043d7bc
     PUSH EAX                            ; 0043d790
         ;   Label: LAB_0043d790
-    CALL core_glass.cpp_CGlass_FUN_004aded0 ; 0043d791
-        ;   XREF to: 004aded0 (UNCONDITIONAL_CALL)  ; int core_glass.cpp_CGlass_FUN_004aded0(CGlass * this_ptr)
+    CALL core_glass.cpp_CGlass_checkBreakableCondition_FUN_004aded0 ; 0043d791
+        ;   XREF to: 004aded0 (UNCONDITIONAL_CALL)  ; int core_glass.cpp_CGlass_checkBreakableCondition_FUN_004aded0(CGlass * this_ptr)
     ADD ESP,0x4                         ; 0043d796
     TEST EAX,EAX                        ; 0043d799
     JZ 0x0043d38c                       ; 0043d79b

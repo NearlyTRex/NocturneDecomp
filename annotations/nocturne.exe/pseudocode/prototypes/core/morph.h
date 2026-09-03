@@ -123,9 +123,9 @@ void __cdecl CMorph::addPartFromDeformableModel(CMorph *this_ptr,int model_index
 // Address: 004e02c0
 void __cdecl CMorph::addPartFromKeyframedModel(CMorph *this_ptr,int model_index,CKeyFramedModel *model_ptr,int frame_index);
 
-// Original: core_morph.cpp_CMorph_FUN_004e0300
+// Original: core_morph.cpp_CMorph_updateModelVertices_FUN_004e0300
 // Address: 004e0300
-void __cdecl CMorph(CMorph *this_ptr);
+void __cdecl CMorph::updateModelVertices(CMorph *this_ptr,int model_index,CVector3i *vertices,int part_index);
 
 // Original: core_morph.cpp_CMorph_updateModelFromDeformable_FUN_004e0340
 // Address: 004e0340

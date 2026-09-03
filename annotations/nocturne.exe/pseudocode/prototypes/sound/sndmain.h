@@ -623,9 +623,9 @@ void __cdecl logSoundError(char *format,...) __attribute__((format(printf, 1, 2)
 // Address: 005299e0
 CSfxOptions * __cdecl CSfxOptions::ctor(CSfxOptions *this_ptr);
 
-// Original: sound_sndmain.cpp_CSfxSample_FUN_00529a00
+// Original: sound_sndmain.cpp_CSfxSample_getStreamingBufferSizeBytes_FUN_00529a00
 // Address: 00529a00
-int __cdecl CSfxSample(CSfxSample *this_ptr);
+int __cdecl CSfxSample::getStreamingBufferSizeBytes(CSfxSample *this_ptr);
 
 // Original: sound_sndmain.cpp_CSfxSlot_ctor_FUN_00529a20
 // Address: 00529a20

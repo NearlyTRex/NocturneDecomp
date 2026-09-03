@@ -19,7 +19,7 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[3]:
-;   core_dracbrid.cpp_CDraculaBride_FUN_0045ab40 at 0045af24
+;   core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_0045ab40 at 0045af24
 ;   core_dracbrid.cpp_CDraculaBride_updateFreakySounds_FUN_0045b020 at 0045b23b
 ;   core_flies.cpp_CFlies_renderOpaque_FUN_0048f490 at 0048f53f
 ;

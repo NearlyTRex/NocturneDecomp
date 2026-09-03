@@ -16,7 +16,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_set.cpp_CDemonSet_FUN_0050ddd0 at 0050de52
+;   core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_0050ddd0 at 0050de52
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_012b0660

@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "from": "nocedit.exe",
+  "to": "nocturne.exe",
+  "purpose": "Hand adjudications for TU-layout pairs that tu_anchor.py held for review. The automatic size-ratio gate cannot tell a heavily rewritten function from a wrong pairing; these rows were decided by reading both bodies. status=accept folds the pair into sibling_manual_pairs.json, status=reject blocks it permanently so a later run does not re-propose it.",
+  "entries": [
+    {
+      "a": "00420680",
+      "b": "0041d050",
+      "name": "core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420680",
+      "status": "accept",
+      "note": "SAME FUNCTION, retail inlines what the editor factored out -- 447 B vs 1023 B is the whole difference, not a mispairing. Proof: (1) core/box.cpp holds 30 functions in BOTH exes in the same order, and this slot sits between isVisible and getBoundingBoxScreenSize on each side; (2) both bodies open with the identical distinctive prologue -- getCorner, *256 via FISTP, transformAndProjectPoint into g_RenderVertexBuffer[i], the byte test at +0x13 for bit 31 of screen_x, the 0xff outcode accumulator, and the cmp against 8 corners; (3) they then diverge on purpose -- nocedit delegates to the CDemonCamera::testVisibility virtual, while nocturne inlines that same bounding-box rasterisation (isVisiblePlane + renderSinglePrimitive over the 6 box faces) and has no testVisibility in dcamera.cpp at all. That inlined copy performs no camera save/swap/restore, which is the mirror actor-reflection root cause -- see research/14-mirror_actor_reflections/."
+    }
+  ]
+}

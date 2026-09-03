@@ -13,7 +13,7 @@ void __cdecl engine_3d_c_freeTextureCache_FUN_00404490(void)
 {
   CTextureCache *ptr;
   
-  engine_texture_cpp_CTextureCache_FUN_00544e50(_DAT_02dd0f84);
+  engine_texture_cpp_CTextureCache_reset_FUN_00544e50(_DAT_02dd0f84);
   ptr = _DAT_02dd0f84;
   if (_DAT_02dd0f84 == (CTextureCache *)0x0) {
     _DAT_02dd0f84 = (CTextureCache *)0x0;

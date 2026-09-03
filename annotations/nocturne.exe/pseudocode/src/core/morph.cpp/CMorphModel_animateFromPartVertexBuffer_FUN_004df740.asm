@@ -9,7 +9,7 @@
 ; CVector3i *      Stack[0xc]:4   vertex_buffer
 ;
 ; XREF[1]:
-;   core_morph.cpp_CMorph_FUN_004e0300 at 004e0327
+;   core_morph.cpp_CMorph_updateModelVertices_FUN_004e0300 at 004e0327
 ;
 ; Called Functions:
 ;   core_morph.cpp_CMorphModel_animateFromVertexBuffer_FUN_004df660

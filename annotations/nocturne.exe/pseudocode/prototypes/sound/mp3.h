@@ -23,13 +23,13 @@ void __cdecl CFileBitStream::fillBuffer(CFileBitStream *this_ptr);
 // Address: 004e2850
 void __cdecl CFileBitStream::reset(CFileBitStream *this_ptr);
 
-// Original: sound_mp3.cpp_CFileBitStream_FUN_004e28a0
+// Original: sound_mp3.cpp_CFileBitStream_init_FUN_004e28a0
 // Address: 004e28a0
-void __cdecl CFileBitStream(CFileBitStream *this_ptr,_FILE *param_2,ulong param_3,int param_4);
+void __cdecl CFileBitStream::init(CFileBitStream *this_ptr,_FILE *param_2,ulong param_3,int param_4);
 
-// Original: sound_mp3.cpp_CFileBitStream_FUN_004e2980
+// Original: sound_mp3.cpp_CFileBitStream_close_FUN_004e2980
 // Address: 004e2980
-void __cdecl CFileBitStream(CFileBitStream *this_ptr);
+void __cdecl CFileBitStream::close(CFileBitStream *this_ptr);
 
 // Original: sound_mp3.cpp_CFileBitStream_readBit_FUN_004e29d0
 // Address: 004e29d0
@@ -43,9 +43,9 @@ uint __cdecl CFileBitStream::readBits(CFileBitStream *this_ptr,int num_bits);
 // Address: 004e2c40
 int __cdecl CFileBitStream::getTotalBitsRead(CFileBitStream *this_ptr);
 
-// Original: sound_mp3.cpp_CFileBitStream_FUN_004e2c50
+// Original: sound_mp3.cpp_CFileBitStream_getErrorFlag_FUN_004e2c50
 // Address: 004e2c50
-int __cdecl CFileBitStream(CFileBitStream *this_ptr);
+int __cdecl CFileBitStream::getErrorFlag(CFileBitStream *this_ptr);
 
 // Original: sound_mp3.cpp_CFileBitStream_syncToPattern_FUN_004e2c60
 // Address: 004e2c60

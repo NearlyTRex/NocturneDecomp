@@ -19,9 +19,9 @@ CDemonLight * __cdecl CDemonLight::dtor(CDemonLight *this_ptr,uint flags);
 // Address: 0044e1e0
 void __cdecl CDemonLight::init(CDemonLight *this_ptr);
 
-// Original: core_dlight.cpp_CDemonLight_FUN_0044e2c0
+// Original: core_dlight.cpp_CDemonLight_free_FUN_0044e2c0
 // Address: 0044e2c0
-void __cdecl CDemonLight(CDemonLight *this_ptr);
+void __cdecl CDemonLight::free(CDemonLight *this_ptr);
 
 // Original: core_dlight.cpp_getRestoreMemory_FUN_0044e340
 // Address: 0044e340
@@ -79,9 +79,9 @@ void __cdecl CDemonLight::renderShadowMapDebugView(CDemonLight *this_ptr,int scr
 // Address: 0044efb0
 void __cdecl CDemonLight::clearCircularShadowMapEdges(CDemonLight *this_ptr);
 
-// Original: core_dlight.cpp_CDemonLight_FUN_0044f0b0
+// Original: core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_0044f0b0
 // Address: 0044f0b0
-void __cdecl CDemonLight(CDemonLight *this_ptr);
+void __cdecl CDemonLight::renderCoronaGeometry(CDemonLight *this_ptr);
 
 // Original: core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430
 // Address: 0044f430

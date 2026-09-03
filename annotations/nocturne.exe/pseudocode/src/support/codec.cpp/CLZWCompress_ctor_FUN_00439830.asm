@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   num_bits
 ;
 ; XREF[2]:
-;   core_dcamera.cpp_CDemonCamera_FUN_00446810 at 004469bc
+;   core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_00446810 at 004469bc
 ;   core_game.cpp_CGame_FUN_004a3b90 at 004a3f0a
 ;
 ; Referenced Globals:

@@ -10,7 +10,7 @@
 ;
 ; XREF[2]:
 ;   core_dglobe.cpp_CDemonGlobe_renderCorona_FUN_0044ce80 at 0044cfe2
-;   core_dlight.cpp_CDemonLight_FUN_0044f0b0 at 0044f39e
+;   core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_0044f0b0 at 0044f39e
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_012b0660

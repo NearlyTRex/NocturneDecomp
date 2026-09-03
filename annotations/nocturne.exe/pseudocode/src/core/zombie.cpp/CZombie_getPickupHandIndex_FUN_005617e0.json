@@ -74,15 +74,15 @@
   },
   "cross_references": [
     {
-      "addr": "00561010",
-      "from_addr": "005611be",
-      "name": "core_zombie.cpp_CZombie_FUN_00561010",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00561880",
       "from_addr": "0056188b",
       "name": "core_zombie.cpp_CZombie_canPickupWithHand_FUN_00561880",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00561010",
+      "from_addr": "005611be",
+      "name": "core_zombie.cpp_CZombie_processPickup_FUN_00561010",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -214,7 +214,7 @@
       {
         "call_addr": "005611be",
         "call_type": "direct",
-        "caller": "core_zombie.cpp_CZombie_FUN_00561010",
+        "caller": "core_zombie.cpp_CZombie_processPickup_FUN_00561010",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

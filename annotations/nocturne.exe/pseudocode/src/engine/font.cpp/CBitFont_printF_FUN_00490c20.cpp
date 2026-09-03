@@ -12,7 +12,7 @@ void __cdecl engine_font_cpp_CBitFont_printF_FUN_00490c20(CBitFont *this_ptr,int
   byte *local_14;
   
   local_14 = &stack0x0000001c;
-  engine_font_cpp_CBitFont_FUN_00490c70
+  engine_font_cpp_CBitFont_printFV_FUN_00490c70
             (this_ptr,x,y,color_mode,color_value,format,(va_list_t)&local_14);
   return;
 }

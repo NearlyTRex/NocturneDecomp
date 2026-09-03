@@ -15,7 +15,7 @@ void __cdecl engine_texture_cpp_renderTextureAtlas_FUN_00545aa0(void)
     return;
   }
   wincore_wddvmem_cpp_openScreenDevice_FUN_00553470();
-  engine_texture_cpp_CTextureCache_FUN_00545700(_DAT_02dd0f84);
+  engine_texture_cpp_CTextureCache_renderAllTextures_FUN_00545700(_DAT_02dd0f84);
   engine_special_cpp_clearScreen_FUN_0052ee70();
   wincore_wddvmem_cpp_closeScreenDevice_FUN_00553520();
   wincore_wddvmem_cpp_swapBuffers_FUN_00553910();

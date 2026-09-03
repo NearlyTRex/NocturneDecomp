@@ -7,9 +7,9 @@
 // Address: 004c5600
 void __cdecl staticInit(void);
 
-// Original: core_level.cpp_CLevelLoader_FUN_004c5630
+// Original: core_level.cpp_CLevelLoader_reset_FUN_004c5630
 // Address: 004c5630
-void __cdecl CLevelLoader(CLevelLoader *this_ptr);
+void __cdecl CLevelLoader::reset(CLevelLoader *this_ptr);
 
 // Original: core_level.cpp_CLevelLoader_show_FUN_004c5640
 // Address: 004c5640

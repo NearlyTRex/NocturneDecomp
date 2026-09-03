@@ -7,9 +7,9 @@
 ; CDemonMission *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
-;   core_mission.cpp_CDemonMission_FUN_004d8fc0 at 004d8fef
 ;   core_mission.cpp_CDemonMission_createHeros_FUN_004d9a80 at 004d9b7b
 ;   core_mission.cpp_CDemonMission_loadSet_FUN_004d9020 at 004d9051
+;   core_mission.cpp_CDemonMission_removeAllActors_FUN_004d8fc0 at 004d8fef
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_mission_cpp_00589ca4

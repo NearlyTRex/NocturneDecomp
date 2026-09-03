@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_004ca710(CMansionPuzzleCircle *this_ptr,int param_2)
+; void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_004ca710(CMansionPuzzleCircle *this_ptr,int panel_index)
 ;
 ; Parameters:
 ; CMansionPuzzleCircle * Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
+; int              Stack[0x8]:4   panel_index
 ;
 ; XREF[1]:
 ;   core_manpuz.cpp_CMansionPuzzleCircle_renderOpaque_FUN_004c9be0 at 004c9c71

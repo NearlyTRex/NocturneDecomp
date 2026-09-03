@@ -100,19 +100,19 @@
       {
         "category": "format_error",
         "column": 86,
-        "line": 582,
+        "line": 583,
         "message": "format specifies type 'char *' but the argument has type 'CZombie *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 73,
-        "line": 609,
+        "line": 610,
         "message": "format specifies type 'char *' but the argument has type 'CZombie *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 71,
-        "line": 618,
+        "line": 619,
         "message": "format specifies type 'char *' but the argument has type 'CZombie *' [-Werror,-Wformat]"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 2528,
-    "complexity_score": 1229,
+    "complexity_score": 1230,
     "cross_reference_count": 0,
     "function_call_count": 49,
     "global_count": 70,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 1034,
+    "pseudocode_lines": 1035,
     "suspect_count": 14,
     "suspect_types": [
       "fast_sqrt_inline",
@@ -142,7 +142,7 @@
       "warning_type_propagation",
       "warning_unreachable"
     ],
-    "total_lines": 3562
+    "total_lines": 3563
   },
   "cross_references": [],
   "function": {
@@ -200,19 +200,9 @@
       "name": "core_actor.cpp_randomChance_FUN_0040dea0"
     },
     {
-      "addr": "004259f0",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_004259f0"
-    },
-    {
-      "addr": "00428c00",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_00428c00"
-    },
-    {
       "addr": "0042a150",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042a150"
+      "name": "core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042a150"
     },
     {
       "addr": "00425960",
@@ -235,6 +225,11 @@
       "name": "core_charactr.cpp_CCharacter_preProcess_FUN_004259a0"
     },
     {
+      "addr": "004259f0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_process_FUN_004259f0"
+    },
+    {
       "addr": "004277f0",
       "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_processDamageDecals_FUN_004277f0"
@@ -243,6 +238,11 @@
       "addr": "0042add0",
       "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_processMotion_FUN_0042add0"
+    },
+    {
+      "addr": "00428c00",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_processWalking_FUN_00428c00"
     },
     {
       "addr": "00427990",
@@ -375,14 +375,14 @@
       "name": "core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0"
     },
     {
-      "addr": "00561010",
-      "is_variadic": false,
-      "name": "core_zombie.cpp_CZombie_FUN_00561010"
-    },
-    {
       "addr": "005617e0",
       "is_variadic": false,
       "name": "core_zombie.cpp_CZombie_getPickupHandIndex_FUN_005617e0"
+    },
+    {
+      "addr": "00561010",
+      "is_variadic": false,
+      "name": "core_zombie.cpp_CZombie_processPickup_FUN_00561010"
     },
     {
       "addr": "005624e0",
@@ -1909,7 +1909,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 733,
+      "line": 734,
       "match": "(int *)((int)g_CDemonSet_PTR_005be368",
       "severity": "moderate",
       "text": "iVar9 = *(int *)((int)g_CDemonSet_PTR_005be368->characters + iVar6);",
@@ -1917,7 +1917,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 734,
+      "line": 735,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar18 = (**(code **)(*(int *)(iVar9 + 0x14c) + 0xdc))(iVar9,this_ptr);",
@@ -1925,7 +1925,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 946,
+      "line": 947,
       "match": "DAT_00765a9c",
       "severity": "mild",
       "text": "(DAT_00765a9c,g_CDoorActorType_01af4e9c.name_hash),",
@@ -1957,7 +1957,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 536,
+      "line": 537,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -1965,7 +1965,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 896,
+      "line": 897,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -1973,7 +1973,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 936,
+      "line": 937,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.position_delta.z = 0.0;",
@@ -1981,7 +1981,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 939,
+      "line": 940,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -1989,7 +1989,7 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_134 != &local_254)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 801,
+      "line": 802,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&local_134 != &local_254) {",
@@ -1997,7 +1997,7 @@
     },
     {
       "description": "Inlined fast sqrt bit-trick (bias `g_FastSqrtMagic`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Replace with `fastSqrt(<expr>)` in a .keep - the helper function exists in the binary (FUN_00431350).",
-      "line": 807,
+      "line": 808,
       "match": "local_5c = (float)(((int)local_1c >> 1) + g_FastSqrtMagic);",
       "severity": "moderate",
       "text": "local_5c = (float)(((int)local_1c >> 1) + g_FastSqrtMagic);",

@@ -55,9 +55,9 @@ int __cdecl CMansionPuzzleCircle::customGetFloorHeight(CMansionPuzzleCircle *thi
 // Address: 004ca300
 void __cdecl CMansionPuzzleCircle::onLaserHit(CMansionPuzzleCircle *this_ptr,SLaserInfo *laser_info);
 
-// Original: core_manpuz.cpp_CMansionPuzzleCircle_FUN_004ca410
+// Original: core_manpuz.cpp_CMansionPuzzleCircle_initPuzzleState_FUN_004ca410
 // Address: 004ca410
-void __cdecl CMansionPuzzleCircle(CMansionPuzzleCircle *this_ptr);
+void __cdecl CMansionPuzzleCircle::initPuzzleState(CMansionPuzzleCircle *this_ptr);
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_004ca640
 // Address: 004ca640
@@ -65,7 +65,7 @@ void __cdecl CMansionPuzzleCircle::updatePanelTransform(CMansionPuzzleCircle *th
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_FUN_004ca710
 // Address: 004ca710
-void __cdecl CMansionPuzzleCircle(CMansionPuzzleCircle *this_ptr,int param_2);
+void __cdecl CMansionPuzzleCircle(CMansionPuzzleCircle *this_ptr,int panel_index);
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_FUN_004ca790
 // Address: 004ca790
@@ -87,9 +87,9 @@ void __cdecl CMansionPuzzleCircle::getPanelColor(CMansionPuzzleCircle *this_ptr,
 // Address: 004caef0
 int __cdecl updateGemHumChannel(float *hum_value,float target,float max_step,uint *sfx_handle,char *wav_filename,CVector3f *world_position);
 
-// Original: core_manpuz.cpp_CMansionPuzzleCircle_FUN_004cb010
+// Original: core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN_004cb010
 // Address: 004cb010
-void __cdecl CMansionPuzzleCircle(CMansionPuzzleCircle *this_ptr,int gem_index,float delta_time);
+void __cdecl CMansionPuzzleCircle::updateGem(CMansionPuzzleCircle *this_ptr,int gem_index,float delta_time);
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_updateLaser_FUN_004cb2d0
 // Address: 004cb2d0

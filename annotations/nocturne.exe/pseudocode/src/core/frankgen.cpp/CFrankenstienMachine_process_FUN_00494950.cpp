@@ -44,7 +44,7 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_process_FUN_00494950(CFranke
   if (this_ptr->master_frame < _DAT_01c71340) {
     _DAT_01c71340 = _DAT_01c71340 - 2300.0f;
   }
-  core_frankgen_cpp_CFrankenstienMachine_FUN_004950a0(this_ptr);
+  core_frankgen_cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004950a0(this_ptr);
   switch(this_ptr->which_part) {
   case 0:
     fVar1 = this_ptr->master_frame;

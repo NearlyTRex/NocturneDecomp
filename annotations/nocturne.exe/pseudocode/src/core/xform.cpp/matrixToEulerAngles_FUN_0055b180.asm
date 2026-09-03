@@ -39,7 +39,7 @@
 ;   core_fire.cpp_CBulletHole_init_FUN_00482c80 at 00482e2b
 ;   core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_00499ca0 at 00499fbf
 ;   core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004980d0 at 00498277
-;   core_ladder.cpp_CLadder_FUN_004c45a0 at 004c4673
+;   core_ladder.cpp_CLadder_cacheRelativePosition_FUN_004c46b0 at 004c4790
 ;   ... and 16 more
 ;
 ; Referenced Globals:

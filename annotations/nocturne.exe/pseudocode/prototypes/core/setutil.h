@@ -15,9 +15,9 @@ C3DSCamera * __cdecl C3DSCamera::dtor(C3DSCamera *this_ptr,uint flags);
 // Address: 00514430
 void __cdecl C3DSCamera::free(C3DSCamera *this_ptr);
 
-// Original: core_setutil.cpp_C3DSCamera_FUN_00514470
+// Original: core_setutil.cpp_C3DSCamera_reset_FUN_00514470
 // Address: 00514470
-void __cdecl C3DSCamera(C3DSCamera *this_ptr);
+void __cdecl C3DSCamera::reset(C3DSCamera *this_ptr);
 
 // Original: core_setutil.cpp_C3DSCamera_load_FUN_005144e0
 // Address: 005144e0
@@ -27,9 +27,9 @@ void __cdecl C3DSCamera::load(C3DSCamera *this_ptr,_FILE *file_handle);
 // Address: 00514800
 void __cdecl C3DSCamera::loadPVS(C3DSCamera *this_ptr,_FILE *file_handle);
 
-// Original: core_setutil.cpp_C3DSCamera_FUN_005148b0
+// Original: core_setutil.cpp_C3DSCamera_apply_FUN_005148b0
 // Address: 005148b0
-void __cdecl C3DSCamera(C3DSCamera *this_ptr,CDemonCamera *camera);
+void __cdecl C3DSCamera::apply(C3DSCamera *this_ptr,CDemonCamera *camera);
 
 // Original: core_setutil.cpp_C3DSCamera_testSphereInFrustum_FUN_00514980
 // Address: 00514980
@@ -51,9 +51,9 @@ CDemonLight * __cdecl C3DSLight::create(C3DSLight *this_ptr);
 // Address: 00515350
 void __cdecl C3DSLight::apply(C3DSLight *this_ptr,CDemonLight *light);
 
-// Original: core_setutil.cpp_C3DSLight_FUN_00515410
+// Original: core_setutil.cpp_C3DSLight_doNothing_FUN_00515410
 // Address: 00515410
-void __cdecl C3DSLight(C3DSLight *this_ptr);
+void __cdecl C3DSLight::doNothing(C3DSLight *this_ptr);
 
 // Original: core_setutil.cpp_C3DSLight_process_FUN_00515420
 // Address: 00515420
@@ -87,6 +87,6 @@ int __cdecl calculateVertexIndex(int row_index,int column_index);
 // Address: 005159a0
 void __cdecl C3DSLight::renderVolumetricSphere(C3DSLight *this_ptr);
 
-// Original: core_setutil.cpp_C3DSLight_FUN_00515c40
+// Original: core_setutil.cpp_C3DSLight_isVisible_FUN_00515c40
 // Address: 00515c40
-int __cdecl C3DSLight(C3DSLight *this_ptr);
+int __cdecl C3DSLight::isVisible(C3DSLight *this_ptr);

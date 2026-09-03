@@ -126,7 +126,7 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040b300(CDemonActor 
                 (*((this_ptr->vtable)._ub)->playAttackHitEffects)
                           (this_ptr,hit_type,(SDamageInfo *)(auStack_240 + 0x10),
                            (CDemonActor *)pCVar6);
-                iVar4 = core_glass_cpp_CGlass_FUN_004aded0(pCVar6);
+                iVar4 = core_glass_cpp_CGlass_checkBreakableCondition_FUN_004aded0(pCVar6);
                 if (iVar4 != 0) {
                   core_glass_cpp_CGlass_shatter_FUN_004ada20(pCVar6,(CVector3f *)(auStack_9c + 8));
                 }
@@ -193,7 +193,7 @@ LAB_0040b4bd:
   if (CStack_40.z == 1.4013e-45) {
     core_setcolid_cpp_CDemonSet_setRayType_FUN_00511800(g_CDemonSet_PTR_005be368,1);
     core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSet_PTR_005be368,this_ptr);
-    core_setcolid_cpp_CDemonSet_FUN_00511740(g_CDemonSet_PTR_005be368);
+    core_setcolid_cpp_CDemonSet_skipExactCollisions_FUN_00511740(g_CDemonSet_PTR_005be368);
     if (pCStack_1c != (CDemonActor *)0x0) {
       core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSet_PTR_005be368,pCStack_1c);
     }
@@ -262,7 +262,7 @@ LAB_0040b4bd:
                     (this_ptr,hit_type,(SDamageInfo *)(auStack_1f4 + 0x24),(CDemonActor *)pCVar6);
           (*((this_ptr->vtable)._ub)->playAttackHitEffects)
                     (this_ptr,hit_type,(SDamageInfo *)(auStack_1d0 + 0x10),(CDemonActor *)pCVar6);
-          iVar4 = core_glass_cpp_CGlass_FUN_004aded0(pCVar6);
+          iVar4 = core_glass_cpp_CGlass_checkBreakableCondition_FUN_004aded0(pCVar6);
           if (iVar4 == 0) {
             return 0;
           }

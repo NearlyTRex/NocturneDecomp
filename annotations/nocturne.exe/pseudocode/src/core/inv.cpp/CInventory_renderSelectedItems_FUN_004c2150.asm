@@ -19,7 +19,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_set.cpp_CDemonSet_FUN_00509a80 at 0050a23c
+;   core_set.cpp_CDemonSet_renderScene_FUN_00509a80 at 0050a23c
 ;
 ; Referenced Globals:
 ;   float FLOAT_00587469 = 65535

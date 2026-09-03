@@ -7,7 +7,7 @@
 ; CInventory *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_hero.cpp_CHero_FUN_004b46d0 at 004b46f2
+;   core_hero.cpp_CHero_ctor_FUN_004b46d0 at 004b46f2
 ;
 ; *****************************************************************************
 

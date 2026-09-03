@@ -64,25 +64,19 @@
       {
         "category": "format_error",
         "column": 84,
-        "line": 269,
+        "line": 270,
         "message": "format specifies type 'char *' but the argument has type 'CBoneGuy *' [-Werror,-Wformat]"
       },
       {
         "category": "undeclared_identifier",
         "column": 52,
-        "line": 307,
+        "line": 308,
         "message": "use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
       },
       {
         "category": "type_error",
         "column": 57,
-        "line": 326,
-        "message": "invalid suffix '._0_4_' on floating constant"
-      },
-      {
-        "category": "type_error",
-        "column": 57,
-        "line": 329,
+        "line": 327,
         "message": "invalid suffix '._0_4_' on floating constant"
       },
       {
@@ -92,9 +86,15 @@
         "message": "invalid suffix '._0_4_' on floating constant"
       },
       {
+        "category": "type_error",
+        "column": 57,
+        "line": 331,
+        "message": "invalid suffix '._0_4_' on floating constant"
+      },
+      {
         "category": "format_error",
         "column": 87,
-        "line": 385,
+        "line": 386,
         "message": "format specifies type 'char *' but the argument has type 'CBoneGuy *' [-Werror,-Wformat]"
       }
     ],
@@ -104,12 +104,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 952,
-    "complexity_score": 758,
+    "complexity_score": 759,
     "cross_reference_count": 0,
     "function_call_count": 37,
     "global_count": 24,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 443,
+    "pseudocode_lines": 444,
     "suspect_count": 27,
     "suspect_types": [
       "pointer_cast",
@@ -122,7 +122,7 @@
       "unrolled_memset",
       "warning_type_propagation"
     ],
-    "total_lines": 1395
+    "total_lines": 1396
   },
   "cross_references": [],
   "function": {
@@ -162,22 +162,12 @@
     {
       "addr": "004196b0",
       "is_variadic": false,
-      "name": "core_boneguy.cpp_CBoneGuy_FUN_004196b0"
-    },
-    {
-      "addr": "004259f0",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_004259f0"
-    },
-    {
-      "addr": "00428c00",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_00428c00"
+      "name": "core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_004196b0"
     },
     {
       "addr": "0042a150",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042a150"
+      "name": "core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042a150"
     },
     {
       "addr": "00425960",
@@ -200,9 +190,19 @@
       "name": "core_charactr.cpp_CCharacter_preProcess_FUN_004259a0"
     },
     {
+      "addr": "004259f0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_process_FUN_004259f0"
+    },
+    {
       "addr": "0042add0",
       "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_processMotion_FUN_0042add0"
+    },
+    {
+      "addr": "00428c00",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_processWalking_FUN_00428c00"
     },
     {
       "addr": "004247f0",
@@ -1044,7 +1044,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 300,
+      "line": 301,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(&local_94,(CVector3f *)&DAT_02dd1184,",
@@ -1052,7 +1052,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 302,
+      "line": 303,
       "match": "DAT_00764794",
       "severity": "mild",
       "text": "DAT_00764794);",
@@ -1060,7 +1060,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 319,
+      "line": 320,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_c4.x = local_10c * 5.2220990168285998e-315._0_4_;",
@@ -1068,7 +1068,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 322,
+      "line": 323,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_c4.y = local_108 * 5.2220990168285998e-315._0_4_;",
@@ -1076,7 +1076,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 323,
+      "line": 324,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_c4.z = local_104 * 5.2220990168285998e-315._0_4_;",
@@ -1132,7 +1132,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 337,
+      "line": 338,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_100.x = pCVar13->x;",
@@ -1140,7 +1140,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 344,
+      "line": 345,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_f4.x = pCVar13->x;",
@@ -1156,7 +1156,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 380,
+      "line": 381,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -1164,7 +1164,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 411,
+      "line": 412,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.position_delta.z = 0.0;",
@@ -1172,7 +1172,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 414,
+      "line": 415,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",

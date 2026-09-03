@@ -80,11 +80,11 @@
 ;   core_game.cpp_CGame_showCustomizableKeys_FUN_0049b4e0
 ;   core_game.cpp_CGame_slamDT_FUN_004a5f00
 ;   core_game.cpp_CGame_updateDT_FUN_0049a8a0
-;   core_inv.cpp_CInventory_FUN_004c2470
+;   core_inv.cpp_CInventory_renderAllItems_FUN_004c2470
 ;   core_netgame.cpp_CNetGame_processClientFrame_FUN_004ed720
 ;   core_netgame.cpp_CNetGame_processServerFrame_FUN_004ed2d0
-;   core_script.cpp_CScript_FUN_004fe770
-;   core_script.cpp_CScript_FUN_004fe9d0
+;   core_script.cpp_CScript_renderEditor_FUN_004fe9d0
+;   core_script.cpp_CScript_renderSubtitles_FUN_004fe770
 ;   ... and 39 more
 ;
 ; *****************************************************************************
@@ -190,8 +190,8 @@ section .text
     PUSH 0x1                            ; 0049cd18
     MOV EDI,dword ptr [0x005be368]      ; 0049cd1a | g_CDemonSet_PTR_005be368
     PUSH EDI                            ; 0049cd20 | g_CDemonSet_01e57284
-    CALL core_set.cpp_CDemonSet_FUN_00509a80 ; 0049cd21
-        ;   XREF to: 00509a80 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_00509a80(CDemonSet * this_ptr, int skip_prerender)
+    CALL core_set.cpp_CDemonSet_renderScene_FUN_00509a80 ; 0049cd21
+        ;   XREF to: 00509a80 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderScene_FUN_00509a80(CDemonSet * this_ptr, int skip_prerender)
     ADD ESP,0x8                         ; 0049cd26
     MOV EAX,[0x005bdee0]                ; 0049cd29 | g_CNetGame_PTR_005bdee0
         ;   Label: LAB_0049cd29
@@ -373,8 +373,8 @@ section .text
         ;   XREF to: 0049cf5d (CONDITIONAL_JUMP)  ; LAB_0049cf5d
     MOV EAX,[0x005be368]                ; 0049cf4f | g_CDemonSet_PTR_005be368
     PUSH EAX                            ; 0049cf54 | g_CDemonSet_01e57284
-    CALL core_set.cpp_CDemonSet_FUN_0050a260 ; 0049cf55
-        ;   XREF to: 0050a260 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0050a260(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_renderGogglesView_FUN_0050a260 ; 0049cf55
+        ;   XREF to: 0050a260 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderGogglesView_FUN_0050a260(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0049cf5a
     MOV EAX,dword ptr [EBP + 0x92]      ; 0049cf5d
         ;   Label: LAB_0049cf5d
@@ -409,8 +409,8 @@ section .text
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 0049cfb6
     ADD EAX,0x1f5a0                     ; 0049cfbd
     PUSH EAX                            ; 0049cfc2
-    CALL core_inv.cpp_CInventory_FUN_004c2470 ; 0049cfc3
-        ;   XREF to: 004c2470 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_FUN_004c2470(CInventory * this_ptr)
+    CALL core_inv.cpp_CInventory_renderAllItems_FUN_004c2470 ; 0049cfc3
+        ;   XREF to: 004c2470 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_renderAllItems_FUN_004c2470(CInventory * this_ptr)
     MOV EAX,dword ptr [EBP + 0x92]      ; 0049cfc8
     MOV ESI,dword ptr [EAX + 0x278]     ; 0049cfce
     ADD ESP,0x4                         ; 0049cfd4
@@ -469,8 +469,8 @@ section .text
     MOV EAX,[0x005be220]                ; 0049d066 | DAT_005be220
         ;   Label: LAB_0049d066
     PUSH EAX                            ; 0049d06b | g_CScript_01e56da0
-    CALL core_script.cpp_CScript_FUN_004fe770 ; 0049d06c
-        ;   XREF to: 004fe770 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_004fe770(CScript * this_ptr)
+    CALL core_script.cpp_CScript_renderSubtitles_FUN_004fe770 ; 0049d06c
+        ;   XREF to: 004fe770 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_renderSubtitles_FUN_004fe770(CScript * this_ptr)
     ADD ESP,0x4                         ; 0049d071
     MOV EDX,dword ptr [EBP + 0x92]      ; 0049d074
     PUSH EDX                            ; 0049d07a
@@ -812,8 +812,8 @@ section .text
     PUSH 0x0                            ; 0049d466
     MOV EDI,dword ptr [0x005be220]      ; 0049d468 | DAT_005be220
     PUSH EDI                            ; 0049d46e | g_CScript_01e56da0
-    CALL core_script.cpp_CScript_FUN_004fe9d0 ; 0049d46f
-        ;   XREF to: 004fe9d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_004fe9d0(CScript * this_ptr, int left, int top, int right, ...)
+    CALL core_script.cpp_CScript_renderEditor_FUN_004fe9d0 ; 0049d46f
+        ;   XREF to: 004fe9d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_renderEditor_FUN_004fe9d0(CScript * this_ptr, int left, int top, int right, ...)
     ADD ESP,0x14                        ; 0049d474
     MOV EAX,dword ptr [EBP + 0x92]      ; 0049d477
         ;   Label: LAB_0049d477
@@ -954,8 +954,8 @@ section .text
     ADD ESP,0x4                         ; 0049d5df
     MOV EBX,dword ptr [0x005bed68]      ; 0049d5e2 | g_CSound_PTR_005bed68
     PUSH EBX                            ; 0049d5e8
-    CALL core_sound.cpp_CSound_FUN_0052dff0 ; 0049d5e9
-        ;   XREF to: 0052dff0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_FUN_0052dff0(CSound * this_ptr)
+    CALL core_sound.cpp_CSound_process_FUN_0052dff0 ; 0049d5e9
+        ;   XREF to: 0052dff0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_process_FUN_0052dff0(CSound * this_ptr)
     ADD ESP,0x4                         ; 0049d5ee
     MOV ESI,dword ptr [0x005b9284]      ; 0049d5f1 | g_CForceFeedback_PTR_005b9284
     PUSH ESI                            ; 0049d5f7

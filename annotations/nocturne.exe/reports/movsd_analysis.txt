@@ -146,7 +146,7 @@ FIXABLE 4x MOVSD SITES (16 bytes copy, 162 sites)
     0x00497fd2  4x MOVSD (16 bytes copy, 5 bytes borrowable)
     0x00497ffa  4x MOVSD (16 bytes copy, 5 bytes borrowable)
     0x0049805c  4x MOVSD (16 bytes copy, 7 bytes borrowable)
-  CScat_FUN_004fd1d0                                                      11 sites  ~429 bytes
+  CScat_blendAimBones_FUN_004fd1d0                                        11 sites  ~429 bytes
     0x004fd225  4x MOVSD (16 bytes copy, 9 bytes borrowable)
     0x004fd248  4x MOVSD (16 bytes copy, 10 bytes borrowable)
     0x004fd2a1  4x MOVSD (16 bytes copy, 9 bytes borrowable)
@@ -242,11 +242,11 @@ FIXABLE 4x MOVSD SITES (16 bytes copy, 162 sites)
     0x00441fb8  4x MOVSD (16 bytes copy, 8 bytes borrowable)
   CHaystack_process_FUN_004b32d0                                           1 sites  ~39 bytes
     0x004b3560  4x MOVSD (16 bytes copy, 5 bytes borrowable)
-  CIcePick_FUN_004ba740                                                    1 sites  ~39 bytes
-    0x004ba840  4x MOVSD (16 bytes copy, 8 bytes borrowable)
   CIcePick_process_FUN_004b9fe0                                            1 sites  ~39 bytes
     0x004ba2ce  4x MOVSD (16 bytes copy, 5 bytes borrowable)
-  CMimic_FUN_004d4ba0                                                      1 sites  ~39 bytes
+  CIcePick_updateShootBlend_FUN_004ba740                                   1 sites  ~39 bytes
+    0x004ba840  4x MOVSD (16 bytes copy, 8 bytes borrowable)
+  CMimic_updatePose_FUN_004d4ba0                                           1 sites  ~39 bytes
     0x004d4cbf  4x MOVSD (16 bytes copy, 7 bytes borrowable)
   CPlatform_evaluatePosition_FUN_004f5ff0                                  1 sites  ~39 bytes
     0x004f60ea  4x MOVSD (16 bytes copy, 5 bytes borrowable)
@@ -313,7 +313,7 @@ FIXABLE 3x MOVSD SITES (12 bytes copy, 104 sites)
     0x0050c705  3x MOVSD (12 bytes copy, 7 bytes borrowable)
     0x0050c777  3x MOVSD (12 bytes copy, 5 bytes borrowable)
     0x0050c821  3x MOVSD (12 bytes copy, 10 bytes borrowable)
-  CDemonCamera_FUN_004421b0                                                5 sites  ~165 bytes
+  CDemonCamera_precomputeNormals_FUN_004421b0                              5 sites  ~165 bytes
     0x00442282  3x MOVSD (12 bytes copy, 7 bytes borrowable)
     0x004422b6  3x MOVSD (12 bytes copy, 7 bytes borrowable)
     0x004422c7  3x MOVSD (12 bytes copy, 5 bytes borrowable)
@@ -415,7 +415,7 @@ FIXABLE 3x MOVSD SITES (12 bytes copy, 104 sites)
     0x004826ed  3x MOVSD (12 bytes copy, 5 bytes borrowable)
   CSpark_setupRenderState_FUN_004837a0                                     1 sites  ~33 bytes
     0x00483847  3x MOVSD (12 bytes copy, 9 bytes borrowable)
-  CFrankenstienMachine_FUN_004950a0                                        1 sites  ~33 bytes
+  CFrankenstienMachine_updateAnchorPosition_FUN_004950a0                   1 sites  ~33 bytes
     0x00495127  3x MOVSD (12 bytes copy, 5 bytes borrowable)
   CBloodParticle_setupRenderState_FUN_004ae0a0                             1 sites  ~33 bytes
     0x004ae10d  3x MOVSD (12 bytes copy, 5 bytes borrowable)
@@ -435,7 +435,7 @@ FIXABLE 3x MOVSD SITES (12 bytes copy, 104 sites)
     0x004f1cde  3x MOVSD (12 bytes copy, 5 bytes borrowable)
   renderPathMapsAtPosition_FUN_004f1f80                                    1 sites  ~33 bytes
     0x004f1fa9  3x MOVSD (12 bytes copy, 9 bytes borrowable)
-  CDemonSet_FUN_0050d910                                                   1 sites  ~33 bytes
+  CDemonSet_renderEnvMapTriangles_FUN_0050d910                             1 sites  ~33 bytes
     0x0050db27  3x MOVSD (12 bytes copy, 6 bytes borrowable)
   CDeformableModelInstance_computeBoundingBoxFromVertices_FUN_0051de60     1 sites  ~33 bytes
     0x0051ded3  3x MOVSD (12 bytes copy, 7 bytes borrowable)
@@ -749,7 +749,7 @@ FIXABLE REP MOVSD STRUCT COPIES (208 sites)
     0x0049823f  REP MOVSD 12 dwords (48 bytes)
     0x004982d3  REP MOVSD 12 dwords (48 bytes)
     0x004983ce  REP MOVSD 12 dwords (48 bytes)
-  CMimic_FUN_004d4ba0                                                      7 sites
+  CMimic_updatePose_FUN_004d4ba0                                           7 sites
     0x004d4ce6  REP MOVSD 12 dwords (48 bytes)
     0x004d4dc8  REP MOVSD 12 dwords (48 bytes)
     0x004d4dee  REP MOVSD 12 dwords (48 bytes)
@@ -904,7 +904,7 @@ FIXABLE REP MOVSD STRUCT COPIES (208 sites)
     0x0048acce  REP MOVSD 12 dwords (48 bytes)
   CGlassParticle_init_FUN_004850d0                                         1 sites
     0x004852c7  REP MOVSD 6 dwords (24 bytes)
-  CGabriella_FUN_00499b00                                                  1 sites
+  CGabriella_binarySearchClavicleBlend_FUN_00499b00                        1 sites
     0x00499c06  REP MOVSD 12 dwords (48 bytes)
   CGhoul_getTargetPoint_FUN_004ab110                                       1 sites
     0x004ab140  REP MOVSD 12 dwords (48 bytes)
@@ -912,10 +912,10 @@ FIXABLE REP MOVSD STRUCT COPIES (208 sites)
     0x004bab54  REP MOVSD 12 dwords (48 bytes)
   CImp_getCarryObjToBodyXForm_FUN_004bc7e0                                 1 sites
     0x004bc907  REP MOVSD 12 dwords (48 bytes)
-  CLadder_FUN_004c45a0                                                     1 sites
-    0x004c4620  REP MOVSD 12 dwords (48 bytes)
-  CLadder_FUN_004c46b0                                                     1 sites
+  CLadder_cacheRelativePosition_FUN_004c46b0                               1 sites
     0x004c472c  REP MOVSD 12 dwords (48 bytes)
+  CLadder_updatePositionFromMaster_FUN_004c45a0                            1 sites
+    0x004c4620  REP MOVSD 12 dwords (48 bytes)
   CMansionPuzzleCircle_setup_FUN_004c9580                                  1 sites
     0x004c98cb  REP MOVSD 12 dwords (48 bytes)
   CMimic_renderMirrored_FUN_004d5860                                       1 sites
@@ -980,7 +980,7 @@ REP MOVSD — NO ARTIFACTS (decompiler handles OK) (11 sites)
     0x004f4bd1  REP MOVSD 4 dwords (16 bytes)
   CDemonSet_setLightingParameters_FUN_0050adc0                             1 sites
     0x0050ae5b  REP MOVSD 10 dwords (40 bytes)
-  C3DSCamera_FUN_005148b0                                                  1 sites
+  C3DSCamera_apply_FUN_005148b0                                            1 sites
     0x005148ec  REP MOVSD 10 dwords (40 bytes)
   buildScaleMatrix_FUN_0055c970                                            1 sites
     0x0055c9bd  REP MOVSD 12 dwords (48 bytes)
@@ -1102,7 +1102,7 @@ REP MOVSD — TOO LARGE FOR STRUCT COPY (buffer/string) (87 sites)
     0x0050d71e  REP MOVSD 18 dwords (72 bytes)
   CDemonSet_FUN_00513720                                                   1 sites
     0x0051382a  REP MOVSD 256 dwords (1024 bytes)
-  CSound_FUN_0052dff0                                                      1 sites
+  CSound_process_FUN_0052dff0                                              1 sites
     0x0052e821  REP MOVSD 25 dwords (100 bytes)
   playSfxInternal_FUN_0052d120                                             1 sites
     0x0052d1e2  REP MOVSD 25 dwords (100 bytes)
@@ -1190,7 +1190,7 @@ REP MOVSD — DYNAMIC COUNT (ECX not immediate) (76 sites)
     0x0041969c  REP MOVSD (dynamic count)
   CBox_processPhysics_FUN_0041ad10                                         1 sites
     0x0041b26d  REP MOVSD (dynamic count)
-  CBugs_FUN_00421b80                                                       1 sites
+  CBugs_updateGroundHeightGrid_FUN_00421b80                                1 sites
     0x00421d51  REP MOVSD (dynamic count)
   CDemonCamera_beginBackgroundScene_FUN_00440b20                           1 sites
     0x00440bac  REP MOVSD (dynamic count)
@@ -1210,12 +1210,12 @@ REP MOVSD — DYNAMIC COUNT (ECX not immediate) (76 sites)
     0x0044e950  REP MOVSD (dynamic count)
   CGabriella_getCarryObjToBodyXForm_FUN_00499ca0                           1 sites
     0x00499e50  REP MOVSD (dynamic count)
-  CMimic_FUN_004d4ba0                                                      1 sites
-    0x004d4c7d  REP MOVSD (dynamic count)
-  CMimic_FUN_004d4f30                                                      1 sites
+  CMimic_processAnimation_FUN_004d4f30                                     1 sites
     0x004d51fe  REP MOVSD (dynamic count)
   CMimic_setupCloth_FUN_004d5770                                           1 sites
     0x004d5849  REP MOVSD (dynamic count)
+  CMimic_updatePose_FUN_004d4ba0                                           1 sites
+    0x004d4c7d  REP MOVSD (dynamic count)
   CScript_step_FUN_004ff2c0                                                1 sites
     0x00502165  REP MOVSD (dynamic count)
   CDeformableModelInstance_setBoneTransform_FUN_0051ee60                   1 sites

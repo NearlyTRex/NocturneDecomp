@@ -11,7 +11,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_bugs.cpp_CBugs_FUN_00422050 at 004220ff
+;   core_bugs.cpp_CBugs_updateBugsBehavior_FUN_00422050 at 004220ff
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_swarming_on_s_at_LOD_d_00579d8d
@@ -26,7 +26,7 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
 ;   core_actor.cpp_getRandomInt_FUN_0040de00
-;   core_bugs.cpp_CBugs_FUN_004219f0
+;   core_bugs.cpp_CBugs_initializeSwarmGraph_FUN_004219f0
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020
 ;   core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_0051da50
 ;   engine_console.cpp_CConsole_printf_FUN_0043ac60
@@ -122,8 +122,8 @@ section .text
     MOV EBX,dword ptr [EAX + EDX*0x4 + 0x54] ; 004238a3
     PUSH EBX                            ; 004238a7
     PUSH EBP                            ; 004238a8
-    CALL core_bugs.cpp_CBugs_FUN_004219f0 ; 004238a9
-        ;   XREF to: 004219f0 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_CBugs_FUN_004219f0(CBugs * this_ptr, int tri_count, SInputFace * triangles)
+    CALL core_bugs.cpp_CBugs_initializeSwarmGraph_FUN_004219f0 ; 004238a9
+        ;   XREF to: 004219f0 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_CBugs_initializeSwarmGraph_FUN_004219f0(CBugs * this_ptr, int tri_count, SInputFace * triangles)
     ADD ESP,0xc                         ; 004238ae
     MOV EDI,dword ptr [EBP + 0x12998]   ; 004238b1
     PUSH EDI                            ; 004238b7

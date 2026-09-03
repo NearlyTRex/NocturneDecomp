@@ -26,7 +26,7 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(CBoundingBox3D *t
   float local_18;
   CVector3f local_14;
   
-  iVar1 = core_box_cpp_CBoundingBox3D_FUN_0041d050(this_ptr);
+  iVar1 = core_box_cpp_CBoundingBox3D_isVisibleWithCamera_FUN_0041d050(this_ptr);
   if ((iVar1 == -1) || (iVar1 == 0)) {
     return 0;
   }

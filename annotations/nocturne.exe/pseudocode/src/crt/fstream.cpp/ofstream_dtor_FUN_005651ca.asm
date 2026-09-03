@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[6]:
-;   core_dcamera.cpp_CDemonCamera_FUN_00446810 at 00446dda
+;   core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_00446810 at 00446dda
 ;   core_game.cpp_CGame_FUN_004a3b90 at 004a3fae
 ;   core_game.cpp_CGame_FUN_004a4170 at 004a45a5
 ;   crt_unknown.c_FUN_0056519c at 005651a9

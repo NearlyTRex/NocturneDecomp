@@ -58,55 +58,55 @@
       {
         "category": "format_error",
         "column": 91,
-        "line": 116,
+        "line": 117,
         "message": "format specifies type 'char *' but the argument has type 'CMoloch *' [-Werror,-Wformat]"
       },
       {
         "category": "cast_error",
         "column": 18,
-        "line": 160,
+        "line": 161,
         "message": "cannot cast from type 'float' to pointer type 'SMotion *'"
       },
       {
         "category": "cast_error",
         "column": 20,
-        "line": 161,
-        "message": "C-style cast from 'SMotion *' to 'float' is not allowed"
-      },
-      {
-        "category": "cast_error",
-        "column": 11,
         "line": 162,
         "message": "C-style cast from 'SMotion *' to 'float' is not allowed"
       },
       {
         "category": "cast_error",
-        "column": 22,
+        "column": 11,
         "line": 163,
+        "message": "C-style cast from 'SMotion *' to 'float' is not allowed"
+      },
+      {
+        "category": "cast_error",
+        "column": 22,
+        "line": 164,
         "message": "C-style cast from 'SMotion *' to 'float' is not allowed"
       },
       {
         "category": "type_error",
         "column": 58,
-        "line": 166,
+        "line": 167,
         "message": "invalid suffix '._0_4_' on floating constant"
       },
       {
         "category": "incompatible_types",
         "column": 15,
-        "line": 202,
+        "line": 203,
         "message": "no matching function for call to 'core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30'"
       },
       {
         "category": "incompatible_types",
         "column": 15,
-        "line": 210,
+        "line": 211,
         "message": "no matching function for call to 'core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30'"
       },
       {
         "category": "undeclared_identifier",
         "column": 9,
-        "line": 228,
+        "line": 229,
         "message": "use of undeclared identifier '_DAT_005a0ab8'"
       }
     ],
@@ -116,12 +116,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 582,
-    "complexity_score": 360,
+    "complexity_score": 361,
     "cross_reference_count": 0,
     "function_call_count": 26,
     "global_count": 19,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 250,
+    "pseudocode_lines": 251,
     "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
@@ -131,7 +131,7 @@
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 832
+    "total_lines": 833
   },
   "cross_references": [],
   "function": {
@@ -164,19 +164,9 @@
       "name": "core_actor.cpp_normalizeAngleToPi_FUN_0040df00"
     },
     {
-      "addr": "004259f0",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_004259f0"
-    },
-    {
-      "addr": "00428c00",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_00428c00"
-    },
-    {
       "addr": "0042a150",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042a150"
+      "name": "core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042a150"
     },
     {
       "addr": "00425050",
@@ -189,9 +179,19 @@
       "name": "core_charactr.cpp_CCharacter_preProcess_FUN_004259a0"
     },
     {
+      "addr": "004259f0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_process_FUN_004259f0"
+    },
+    {
       "addr": "0042add0",
       "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_processMotion_FUN_0042add0"
+    },
+    {
+      "addr": "00428c00",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_processWalking_FUN_00428c00"
     },
     {
       "addr": "0047dc30",
@@ -623,7 +623,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 159,
+      "line": 160,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_1b18 = local_1b18 + 1.5938625219265179e-314._0_4_;",
@@ -631,7 +631,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 177,
+      "line": 178,
       "match": "(CCharacter_vtable *)((int)local_14",
       "severity": "moderate",
       "text": "iVar6 = (*((CCharacter_vtable *)((int)local_14 + 0xd0))->attractActorToward)",
@@ -639,7 +639,7 @@
     },
     {
       "description": "Pointer value `local_14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 177,
+      "line": 178,
       "match": "(int)local_14",
       "severity": "moderate",
       "text": "iVar6 = (*((CCharacter_vtable *)((int)local_14 + 0xd0))->attractActorToward)",
@@ -655,7 +655,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 139,
+      "line": 140,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -663,7 +663,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 143,
+      "line": 144,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.position_delta.z = 0.0;",

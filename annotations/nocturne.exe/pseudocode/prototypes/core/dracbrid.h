@@ -63,9 +63,9 @@ EDeathState __cdecl CDraculaBride::getDeathState(CDraculaBride *this_ptr);
 // Address: 0045a9e0
 int __cdecl CDraculaBride::getTargetPoints(CDraculaBride *this_ptr,CVector3f *out_points_array);
 
-// Original: core_dracbrid.cpp_CDraculaBride_FUN_0045ab40
+// Original: core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_0045ab40
 // Address: 0045ab40
-void __cdecl CDraculaBride(CDraculaBride *this_ptr,char *sound_name,float volume);
+void __cdecl CDraculaBride::startFreakySound(CDraculaBride *this_ptr,char *sound_name,float volume);
 
 // Original: core_dracbrid.cpp_CDraculaBride_updateFreakySounds_FUN_0045b020
 // Address: 0045b020

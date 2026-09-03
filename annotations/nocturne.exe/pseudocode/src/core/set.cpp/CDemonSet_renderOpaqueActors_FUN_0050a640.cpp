@@ -59,7 +59,7 @@ void __cdecl core_set_cpp_CDemonSet_renderOpaqueActors_FUN_0050a640(CDemonSet *t
         iVar3 = 0;
         if (0 < this_ptr->mirror_glass_actor_count) {
           do {
-            core_set_cpp_CDemonSet_FUN_0050e080(this_ptr,iVar3,0);
+            core_set_cpp_CDemonSet_setupMirrorRendering_FUN_0050e080(this_ptr,iVar3,0);
             iVar4 = (**(code **)(*(int *)(iVar1 + 0x14c) + 8))(iVar1);
             if (iVar4 != 0) {
               *(byte *)(iVar1 + 0x140) = *(byte *)(iVar1 + 0x140) | 4;

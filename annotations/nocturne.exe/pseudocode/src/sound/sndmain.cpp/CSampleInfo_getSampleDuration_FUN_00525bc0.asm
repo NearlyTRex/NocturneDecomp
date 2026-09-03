@@ -9,7 +9,7 @@
 ; undefined8       Stack[-0x10]:8  local_10
 ;
 ; XREF[1]:
-;   core_sound.cpp_CSound_FUN_0052ebc0 at 0052ec3f
+;   core_sound.cpp_CSound_getSoundDuration_FUN_0052ebc0 at 0052ec3f
 ;
 ; *****************************************************************************
 

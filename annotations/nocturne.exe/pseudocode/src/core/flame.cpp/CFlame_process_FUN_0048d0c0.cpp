@@ -109,7 +109,7 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_0048d0c0(CFlame *this_ptr,float d
           local_14 = fStack_18;
           if ((ABS(fStack_44) < local_94.cylinder_radius + fStack_1c) &&
              (ABS(fStack_3c) < local_94.cylinder_radius + fStack_1c)) {
-            core_charactr_cpp_CCharacter_FUN_00427730
+            core_charactr_cpp_CCharacter_igniteBone_FUN_00427730
                       (&this_ptr_00->base,&pCVar1->position,0,0,2.0,1);
           }
         }
@@ -144,7 +144,7 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_0048d0c0(CFlame *this_ptr,float d
             if ((ABS(fStack_3c) < SStack_6c.cylinder_top_y + fStack_28) &&
                (ABS(fStack_34) < SStack_6c.cylinder_top_y + fStack_28)) {
               fStack_18 = (float)iStack_24;
-              core_charactr_cpp_CCharacter_FUN_00427730
+              core_charactr_cpp_CCharacter_igniteBone_FUN_00427730
                         (&this_ptr_01->base,&pCVar1->position,0,0,2.0,0);
             }
           }

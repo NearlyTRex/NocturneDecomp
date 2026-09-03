@@ -62,8 +62,8 @@ void __cdecl core_moloch_cpp_CMoloch_processAI_FUN_004de1b0(CMoloch *this_ptr,fl
       iVar6 = (*(((g_HeroActors[iVar6]->base).base.vtable._uh)->_uh).isWeaponDrawn)
                         (g_HeroActors[iVar6]);
       if ((iVar6 == 0) &&
-         (uVar8 = core_charactr_cpp_CCharacter_FUN_0042af70((CCharacter *)this_ptr,delta_time),
-         uVar8 != 0)) {
+         (uVar8 = core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042af70
+                            ((CCharacter *)this_ptr,delta_time), uVar8 != 0)) {
         if (uVar8 < 2) {
           (this_ptr->base).player_input.action_state.walk = 1;
         }

@@ -8,8 +8,8 @@
 ; int              Stack[0x8]:4   skip_clear_buffers
 ;
 ; XREF[4]:
-;   core_set.cpp_CDemonSet_FUN_0050a260 at 0050a3af
 ;   core_set.cpp_CDemonSet_initScene_FUN_005084c0 at 0050861b
+;   core_set.cpp_CDemonSet_renderGogglesView_FUN_0050a260 at 0050a3af
 ;   core_set.cpp_CDemonSet_renderStaticLights_FUN_00509760 at 00509862
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508fbe
 ;

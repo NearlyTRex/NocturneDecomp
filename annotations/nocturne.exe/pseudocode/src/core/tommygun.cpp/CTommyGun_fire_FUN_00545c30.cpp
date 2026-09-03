@@ -162,7 +162,7 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_00545c30(CTommyGun *this_ptr)
         }
       }
       else {
-        iVar4 = core_glass_cpp_CGlass_FUN_004aded0(pCStack_18);
+        iVar4 = core_glass_cpp_CGlass_checkBreakableCondition_FUN_004aded0(pCStack_18);
         if (iVar4 == 0) goto LAB_00545ebe;
         core_glass_cpp_CGlass_shatter_FUN_004ada20
                   (pCStack_18,&g_CDemonSet_PTR_005be368->collision_impact_position);

@@ -15,7 +15,7 @@
 ;   engine_font.cpp_CBitFont_showExtendedFontTest_FUN_00493760 at 00493ac9
 ;
 ; Called Functions:
-;   engine_font.cpp_CBitFont_FUN_00490b70
+;   engine_font.cpp_CBitFont_drawTextFV_FUN_00490b70
 ;
 ; *****************************************************************************
 
@@ -43,8 +43,8 @@ section .text
     PUSH EDI                            ; 00490b49
     MOV EBP,dword ptr [ESP + 0x30]      ; 00490b4a
     PUSH EBP                            ; 00490b4e
-    CALL engine_font.cpp_CBitFont_FUN_00490b70 ; 00490b4f
-        ;   XREF to: 00490b70 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_FUN_00490b70(CBitFont * this_ptr, int x_pos, int y_pos, int color_mode, ...)
+    CALL engine_font.cpp_CBitFont_drawTextFV_FUN_00490b70 ; 00490b4f
+        ;   XREF to: 00490b70 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextFV_FUN_00490b70(CBitFont * this_ptr, int x_pos, int y_pos, int color_mode, ...)
     ADD ESP,0x1c                        ; 00490b54
     XOR EDX,EDX                         ; 00490b57
     MOV dword ptr [ESP],EDX             ; 00490b59

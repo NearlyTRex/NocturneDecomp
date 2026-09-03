@@ -23,7 +23,7 @@
 ;
 ; XREF[6]:
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_00497900 at 00498003
-;   core_icepick.cpp_CIcePick_FUN_004ba740 at 004ba856
+;   core_icepick.cpp_CIcePick_updateShootBlend_FUN_004ba740 at 004ba856
 ;   core_mobster.cpp_CMobster_aimTommyGun_FUN_004db6f0 at 004db98b
 ;   core_stranger.cpp_CStranger_FUN_005384d0 at 005386fa
 ;   core_stranger.cpp_CStranger_FUN_005396d0 at 00539780

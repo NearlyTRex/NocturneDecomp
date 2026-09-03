@@ -13,7 +13,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[3]:
-;   core_cloth.cpp_CCloth_FUN_00437ab0 at 00437cb0
+;   core_cloth.cpp_CCloth_renderBone_FUN_00437ab0 at 00437cb0
 ;   core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_00518f60 at 005190e1
 ;   shape_edittool.cpp_CEditorTools_draw3DAxisLabelsAt_FUN_00472fd0 at 00473060
 ;

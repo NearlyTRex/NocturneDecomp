@@ -7,7 +7,7 @@
 ; CBitFont *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   engine_font.cpp_CBitFont_FUN_0048fe30 at 0048fe36
+;   engine_font.cpp_CBitFont_dtor_FUN_0048fe30 at 0048fe36
 ;   engine_font.cpp_CBitFont_loadNewBitmap_FUN_004901d0 at 004901d8
 ;
 ; Called Functions:

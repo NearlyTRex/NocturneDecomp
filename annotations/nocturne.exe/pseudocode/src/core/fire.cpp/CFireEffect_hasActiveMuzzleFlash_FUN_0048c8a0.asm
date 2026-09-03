@@ -7,7 +7,7 @@
 ; CFireEffect *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_set.cpp_CDemonSet_FUN_0050a260 at 0050a4dc
+;   core_set.cpp_CDemonSet_renderGogglesView_FUN_0050a260 at 0050a4dc
 ;
 ; Referenced Globals:
 ;   CMuzzleFlash[20] g_CMuzzleFlash_ARRAY_01c4e958

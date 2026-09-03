@@ -188,10 +188,10 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[4]:
-;   core_script.cpp_CScript_FUN_004fef60 at 004fefa5
-;   core_script.cpp_CScript_FUN_00504d90 at 00504ded
 ;   core_script.cpp_CScript_executeInitSection_FUN_004ff170 at 004ff1e6
 ;   core_script.cpp_CScript_process_FUN_004fe5b0 at 004fe661
+;   core_script.cpp_CScript_skipCinematic_FUN_00504d90 at 00504ded
+;   core_script.cpp_CScript_validateSyntax_FUN_004fef60 at 004fefa5
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_script_cpp_0058e489

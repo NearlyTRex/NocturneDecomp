@@ -12,6 +12,7 @@ void __cdecl core_barrier_cpp_CBarrier_updateCollisionData_FUN_004118a0(CBarrier
   if (this_ptr->add_to_path_grid == 0) {
     return;
   }
-  core_setcolid_cpp_CDemonSet_FUN_00511a10(g_CDemonSet_PTR_005be368,&this_ptr->base);
+  core_setcolid_cpp_CDemonSet_castVoxelShadow_FUN_00511a10(g_CDemonSet_PTR_005be368,&this_ptr->base)
+  ;
   return;
 }

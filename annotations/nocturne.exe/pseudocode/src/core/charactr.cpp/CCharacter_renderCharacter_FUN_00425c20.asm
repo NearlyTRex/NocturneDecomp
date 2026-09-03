@@ -25,10 +25,10 @@
 ;   undefined4 g_CGame_01c775ec.collision_render_enabled
 ;
 ; Called Functions:
-;   core_charactr.cpp_CCharacter_FUN_004270e0
 ;   core_charactr.cpp_CCharacter_renderAttachedModels_FUN_004265a0
 ;   core_charactr.cpp_CCharacter_renderBurn_FUN_00426e80
 ;   core_charactr.cpp_CCharacter_renderCollision_FUN_00425cc0
+;   core_charactr.cpp_CCharacter_renderEthereal_FUN_004270e0
 ;   core_cloth.cpp_CClothList_render_FUN_004385a0
 ;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_0051d9d0
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
@@ -69,8 +69,8 @@ section .text
     JNC 0x00425c6b                      ; 00425c60
         ;   XREF to: 00425c6b (CONDITIONAL_JUMP)  ; LAB_00425c6b
     PUSH EBX                            ; 00425c62
-    CALL core_charactr.cpp_CCharacter_FUN_004270e0 ; 00425c63
-        ;   XREF to: 004270e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_004270e0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_renderEthereal_FUN_004270e0 ; 00425c63
+        ;   XREF to: 004270e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderEthereal_FUN_004270e0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00425c68
     PUSH EBX                            ; 00425c6b
         ;   Label: LAB_00425c6b

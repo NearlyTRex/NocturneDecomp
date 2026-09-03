@@ -74,15 +74,9 @@
   },
   "cross_references": [
     {
-      "addr": "004d8720",
-      "from_addr": "004d8749",
-      "name": "core_mission.cpp_CDemonMission_FUN_004d8720",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004d93d0",
       "from_addr": "004d9415",
-      "name": "core_mission.cpp_CDemonMission_FUN_004d93d0",
+      "name": "core_mission.cpp_CDemonMission_createFromSingleSet_FUN_004d93d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -95,6 +89,12 @@
       "addr": "004d9780",
       "from_addr": "004d97a9",
       "name": "core_mission.cpp_CDemonMission_startMission_FUN_004d9780",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d8720",
+      "from_addr": "004d8749",
+      "name": "core_mission.cpp_CDemonMission_writeFile_FUN_004d8720",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -160,7 +160,7 @@
       {
         "call_addr": "004d8749",
         "call_type": "direct",
-        "caller": "core_mission.cpp_CDemonMission_FUN_004d8720",
+        "caller": "core_mission.cpp_CDemonMission_writeFile_FUN_004d8720",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -193,7 +193,7 @@
       {
         "call_addr": "004d9415",
         "call_type": "direct",
-        "caller": "core_mission.cpp_CDemonMission_FUN_004d93d0",
+        "caller": "core_mission.cpp_CDemonMission_createFromSingleSet_FUN_004d93d0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

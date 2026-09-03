@@ -58,25 +58,25 @@
       {
         "category": "format_error",
         "column": 48,
-        "line": 220,
+        "line": 221,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 42,
-        "line": 286,
+        "line": 287,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 308,
+        "line": 309,
         "message": "use of undeclared identifier 'stack0xfffffe10'"
       },
       {
         "category": "undeclared_identifier",
         "column": 52,
-        "line": 311,
+        "line": 312,
         "message": "use of undeclared identifier 'stack0xfffffe10'"
       }
     ],
@@ -86,12 +86,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 797,
-    "complexity_score": 558,
+    "complexity_score": 559,
     "cross_reference_count": 0,
     "function_call_count": 25,
     "global_count": 20,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 343,
+    "pseudocode_lines": 344,
     "suspect_count": 17,
     "suspect_types": [
       "dropped_fyl2x",
@@ -104,7 +104,7 @@
       "unrolled_memset",
       "warning_unreachable"
     ],
-    "total_lines": 1140
+    "total_lines": 1141
   },
   "cross_references": [],
   "function": {
@@ -137,19 +137,9 @@
       "name": "core_actor.cpp_normalizeAngleToPi_FUN_0040df00"
     },
     {
-      "addr": "004259f0",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_004259f0"
-    },
-    {
-      "addr": "00428c00",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_00428c00"
-    },
-    {
       "addr": "0042a150",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042a150"
+      "name": "core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042a150"
     },
     {
       "addr": "00425960",
@@ -165,6 +155,16 @@
       "addr": "004259a0",
       "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_preProcess_FUN_004259a0"
+    },
+    {
+      "addr": "004259f0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_process_FUN_004259f0"
+    },
+    {
+      "addr": "00428c00",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_processWalking_FUN_00428c00"
     },
     {
       "addr": "004247f0",
@@ -880,7 +880,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 210,
+      "line": 211,
       "match": "in_stack_fffffe18",
       "severity": "moderate",
       "text": "fVar17,in_stack_fffffe18);",
@@ -888,7 +888,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 301,
+      "line": 302,
       "match": "&stack0xfffffe10",
       "severity": "moderate",
       "text": "_sprintf(&stack0xfffffe10,\"slime.wav @%f *%f\",(double)(this_ptr->base).base.size_scale,",
@@ -896,7 +896,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 304,
+      "line": 305,
       "match": "&stack0xfffffe10",
       "severity": "moderate",
       "text": "((CDemonActor *)this_ptr,&stack0xfffffe10);",
@@ -912,7 +912,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 231,
+      "line": 232,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_f8.x = pCVar9->x;",
@@ -928,7 +928,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 195,
+      "line": 196,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -936,7 +936,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 281,
+      "line": 282,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -944,7 +944,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 333,
+      "line": 334,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.position_delta.z = 0.0;",
@@ -952,7 +952,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 336,
+      "line": 337,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -968,7 +968,7 @@
     },
     {
       "description": "Inlined fast sqrt bit-trick (bias `g_FastSqrtMagic`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Replace with `fastSqrt(<expr>)` in a .keep - the helper function exists in the binary (FUN_00431350).",
-      "line": 167,
+      "line": 168,
       "match": "local_2c = (float)(((int)local_54 >> 1) + g_FastSqrtMagic);",
       "severity": "moderate",
       "text": "local_2c = (float)(((int)local_54 >> 1) + g_FastSqrtMagic);",
@@ -976,7 +976,7 @@
     },
     {
       "description": "Inlined fast sqrt bit-trick (bias `g_FastSqrtMagic`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Replace with `fastSqrt(<expr>)` in a .keep - the helper function exists in the binary (FUN_00431350).",
-      "line": 226,
+      "line": 227,
       "match": "local_40 = (float)(((int)local_44 >> 1) + g_FastSqrtMagic);",
       "severity": "moderate",
       "text": "local_40 = (float)(((int)local_44 >> 1) + g_FastSqrtMagic);",
@@ -984,7 +984,7 @@
     },
     {
       "description": "x87 log constant multiplied by `(this_ptr->base` in a function whose asm has 1 FYL2X. FYL2X computes st(1)*log2(st(0)); Ghidra drops it and leaves only the loaded constant, so ln(x) decompiles as 0.693*x. Read the asm and restore the logarithm in a .keep (e.g. `log(x) * 868.589` for a dB conversion). Note log2(e)*ln(2) == 1, so in a pow()-shaped site the constants cancel and the arithmetic looks innocent.",
-      "line": 295,
+      "line": 296,
       "match": "(float10)0.6931471805599453 * (float10)(this_ptr->base).base.size_scale *",
       "severity": "major",
       "text": "(float10)0.6931471805599453 * (float10)(this_ptr->base).base.size_scale *",

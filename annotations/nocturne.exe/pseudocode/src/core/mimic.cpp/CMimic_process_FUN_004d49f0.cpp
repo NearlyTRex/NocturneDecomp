@@ -28,7 +28,7 @@ void __cdecl core_mimic_cpp_CMimic_process_FUN_004d49f0(CMimic *this_ptr,float d
     core_mimic_cpp_CMimic_processMorph_FUN_004d5e20(this_ptr,delta_time);
     return;
   }
-  iVar3 = core_charactr_cpp_CCharacter_FUN_004259f0((CCharacter *)this_ptr,delta_time);
+  iVar3 = core_charactr_cpp_CCharacter_process_FUN_004259f0((CCharacter *)this_ptr,delta_time);
   if (iVar3 != 0) {
     if (this_ptr->attack_mode < 2) {
       if ((this_ptr->attack_mode < 1) &&
@@ -38,8 +38,8 @@ void __cdecl core_mimic_cpp_CMimic_process_FUN_004d49f0(CMimic *this_ptr,float d
       }
       iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
                         (0x01C03A10,this_ptr->mirror_condition);
-      if ((iVar3 != 0) && (core_mimic_cpp_CMimic_FUN_004d4ba0(this_ptr), this_ptr->attack_mode == 1)
-         ) {
+      if ((iVar3 != 0) &&
+         (core_mimic_cpp_CMimic_updatePose_FUN_004d4ba0(this_ptr), this_ptr->attack_mode == 1)) {
         pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
                            (&(g_HeroActors[g_LocalHeroIndex]->base).model.motion_controller);
         uVar2 = pSVar4->state_index;
@@ -67,7 +67,7 @@ LAB_004d4b4a:
       }
     }
     else {
-      core_mimic_cpp_CMimic_FUN_004d4f30(this_ptr,delta_time);
+      core_mimic_cpp_CMimic_processAnimation_FUN_004d4f30(this_ptr,delta_time);
     }
     core_charactr_cpp_CCharacter_computeBoundingBox_FUN_004296c0((CCharacter *)this_ptr);
   }

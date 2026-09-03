@@ -1,0 +1,596 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 5,
+        "line": 20,
+        "message": "unknown type name 'FLOATING_SAVE_AREA'"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 52,
+        "message": "unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 53,
+        "message": "unknown type name 'PCONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 498,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 498,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 499,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 499,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "format_error",
+        "column": 99,
+        "line": 66,
+        "message": "format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 18,
+        "line": 67,
+        "message": "format specifies type 'char *' but the argument has type 'struct CDemonActor *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 26,
+        "line": 79,
+        "message": "use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 271,
+    "complexity_score": 144,
+    "cross_reference_count": 31,
+    "function_call_count": 9,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 104,
+    "suspect_count": 3,
+    "suspect_types": [
+      "undefined_data",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 375
+  },
+  "cross_references": [
+    {
+      "addr": "0040fa20",
+      "from_addr": "0040faad",
+      "name": "core_armour.cpp_CArmour_process_FUN_0040fa20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00410490",
+      "from_addr": "004105e9",
+      "name": "core_baron.cpp_CBaron_process_FUN_00410490",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00412480",
+      "from_addr": "00412528",
+      "name": "core_batcreat.cpp_CBatCreature_process_FUN_00412480",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00413800",
+      "from_addr": "004138ab",
+      "name": "core_batman.cpp_CBatman_process_FUN_00413800",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004154b0",
+      "from_addr": "0041553c",
+      "name": "core_biggs.cpp_CBiggs_process_FUN_004154b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00418a00",
+      "from_addr": "00418e11",
+      "name": "core_boneguy.cpp_CBoneGuy_process_FUN_00418a00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00439f50",
+      "from_addr": "00439ff2",
+      "name": "core_colonel.cpp_CColonel_process_FUN_00439f50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0043bdb0",
+      "from_addr": "0043be58",
+      "name": "core_cow.cpp_CZombieCow_process_FUN_0043bdb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00454750",
+      "from_addr": "0045480f",
+      "name": "core_dog.cpp_CZombieDog_process_FUN_00454750",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00458a90",
+      "from_addr": "00458cfe",
+      "name": "core_dracbrid.cpp_CDraculaBride_process_FUN_00458a90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00462a60",
+      "from_addr": "00462b19",
+      "name": "core_drone.cpp_CDrone_process_FUN_00462a60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00495a20",
+      "from_addr": "004965e0",
+      "name": "core_gabriela.cpp_CGabriella_process_FUN_00495a20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a7870",
+      "from_addr": "004a794a",
+      "name": "core_gargoyle.cpp_CGargoyle_process_FUN_004a7870",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a9270",
+      "from_addr": "004a9373",
+      "name": "core_ghoul.cpp_CGhoul_process_FUN_004a9270",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b32d0",
+      "from_addr": "004b3379",
+      "name": "core_haystack.cpp_CHaystack_process_FUN_004b32d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b6d80",
+      "from_addr": "004b75f6",
+      "name": "core_hostage.cpp_CHostage_process_FUN_004b6d80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b8f20",
+      "from_addr": "004b8fc4",
+      "name": "core_hotdemon.cpp_CHotDemon_process_FUN_004b8f20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b9fe0",
+      "from_addr": "004ba09b",
+      "name": "core_icepick.cpp_CIcePick_process_FUN_004b9fe0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bbaf0",
+      "from_addr": "004bbe5c",
+      "name": "core_imp.cpp_CImp_process_FUN_004bbaf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c4970",
+      "from_addr": "004c4a21",
+      "name": "core_larva.cpp_CLarva_process_FUN_004c4970",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004da790",
+      "from_addr": "004daa94",
+      "name": "core_mobster.cpp_CMobster_process_FUN_004da790",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ddb20",
+      "from_addr": "004ddc01",
+      "name": "core_moloch.cpp_CMoloch_process_FUN_004ddb20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004eea20",
+      "from_addr": "004eeb2a",
+      "name": "core_npc.cpp_CNPC_process_FUN_004eea20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004fbf20",
+      "from_addr": "004fbfba",
+      "name": "core_scat.cpp_CScat_process_FUN_004fbf20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00505ba0",
+      "from_addr": "00505c45",
+      "name": "core_sentinel.cpp_CSentinel_process_FUN_00505ba0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005200c0",
+      "from_addr": "00520328",
+      "name": "core_smiley.cpp_CSmiley_process_FUN_005200c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00535900",
+      "from_addr": "00537116",
+      "name": "core_stranger.cpp_CStranger_processFrame_FUN_00535900",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00540f50",
+      "from_addr": "0054103d",
+      "name": "core_succubus.cpp_CSuccubus_process_FUN_00540f50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00541d00",
+      "from_addr": "00541dde",
+      "name": "core_svetlana.cpp_CSvetlana_process_FUN_00541d00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00555c60",
+      "from_addr": "00555e34",
+      "name": "core_werewolf.cpp_CWerewolf_process_FUN_00555c60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055ef50",
+      "from_addr": "0055f95e",
+      "name": "core_zombie.cpp_CZombie_process_FUN_0055ef50",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00428c00",
+    "address_range": [
+      [
+        "00428c00",
+        "00428ed5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_charactr.cpp_CCharacter_processWalking_FUN_00428c00",
+    "signature": "int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_00428c00(CCharacter *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040d890",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040d890"
+    },
+    {
+      "addr": "0040a290",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290"
+    },
+    {
+      "addr": "0040df00",
+      "is_variadic": false,
+      "name": "core_actor.cpp_normalizeAngleToPi_FUN_0040df00"
+    },
+    {
+      "addr": "00428780",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_followActor_FUN_00428780"
+    },
+    {
+      "addr": "004247f0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0"
+    },
+    {
+      "addr": "00456260",
+      "is_variadic": false,
+      "name": "core_door.cpp_CDoor_getOpenStandPos_FUN_00456260"
+    },
+    {
+      "addr": "0054e4a0",
+      "is_variadic": false,
+      "name": "core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0"
+    },
+    {
+      "addr": "00552680",
+      "is_variadic": false,
+      "name": "core_waypoint.cpp_CWayPoint_findNearestReachable_FUN_00552680"
+    },
+    {
+      "addr": "0043ac60",
+      "is_variadic": true,
+      "name": "engine_console.cpp_CConsole_printf_FUN_0043ac60"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0057a106",
+      "name": "s_s_can_t_figure_out_next_0057a106",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057a142",
+      "name": "DOUBLE_0057a142",
+      "type": "double",
+      "value": "0.628318530700000"
+    },
+    {
+      "addr": "005ad350",
+      "name": "g_CConsole_PTR_005ad350",
+      "type": "CConsole*",
+      "value": "0077ad0c"
+    },
+    {
+      "addr": "0077ad0c",
+      "name": "g_CConsole_0077ad0c",
+      "type": "CConsole",
+      "value": null
+    },
+    {
+      "addr": "02dd1184",
+      "name": "DAT_02dd1184",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02ddf54c",
+      "name": "g_CWayPointActorType_02ddf514.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 31,
+    "call_sites": [
+      {
+        "call_addr": "004a9373",
+        "call_type": "direct",
+        "caller": "core_ghoul.cpp_CGhoul_process_FUN_004a9270",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004b75f6",
+        "call_type": "direct",
+        "caller": "core_hostage.cpp_CHostage_process_FUN_004b6d80",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00505c45",
+        "call_type": "direct",
+        "caller": "core_sentinel.cpp_CSentinel_process_FUN_00505ba0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00537116",
+        "call_type": "direct",
+        "caller": "core_stranger.cpp_CStranger_processFrame_FUN_00535900",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0040faad",
+        "call_type": "direct",
+        "caller": "core_armour.cpp_CArmour_process_FUN_0040fa20",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004105e9",
+        "call_type": "direct",
+        "caller": "core_baron.cpp_CBaron_process_FUN_00410490",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00412528",
+        "call_type": "direct",
+        "caller": "core_batcreat.cpp_CBatCreature_process_FUN_00412480",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004138ab",
+        "call_type": "direct",
+        "caller": "core_batman.cpp_CBatman_process_FUN_00413800",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0041553c",
+        "call_type": "direct",
+        "caller": "core_biggs.cpp_CBiggs_process_FUN_004154b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00418e11",
+        "call_type": "direct",
+        "caller": "core_boneguy.cpp_CBoneGuy_process_FUN_00418a00",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.1535087719298245,
+    "instruction_count": 228,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "BOOL_OR": 10,
+      "BRANCH": 3,
+      "CALL": 9,
+      "CALLIND": 3,
+      "CBRANCH": 15,
+      "COPY": 368,
+      "FLOAT2FLOAT": 15,
+      "FLOAT_EQUAL": 6,
+      "FLOAT_LESS": 6,
+      "FLOAT_NAN": 12,
+      "FLOAT_NEG": 1,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 3,
+      "INT_ADD": 127,
+      "INT_AND": 96,
+      "INT_CARRY": 21,
+      "INT_EQUAL": 62,
+      "INT_LEFT": 24,
+      "INT_LESS": 5,
+      "INT_NOTEQUAL": 32,
+      "INT_OR": 30,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 21,
+      "INT_SLESS": 31,
+      "INT_SUB": 53,
+      "INT_XOR": 1,
+      "INT_ZEXT": 24,
+      "LOAD": 78,
+      "POPCOUNT": 31,
+      "RETURN": 7,
+      "STORE": 70
+    },
+    "pcode_op_count": 1175
+  },
+  "stack_frame": {
+    "frame_size": 72,
+    "local_size": 64,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCharacter *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 72,
+      "match": "DAT_02dd1184",
+      "severity": "mild",
+      "text": "pCVar5 = (CVector3f *)&DAT_02dd1184;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 30,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->base).location.position.x = (pCVar2->location).position.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 37,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pUVar1->vec).x = (pCVar2->orient).vec.x;",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

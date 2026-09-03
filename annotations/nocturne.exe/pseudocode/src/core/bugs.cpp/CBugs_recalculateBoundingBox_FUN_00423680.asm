@@ -7,10 +7,10 @@
 ; CBugs *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[4]:
-;   core_bugs.cpp_CBugs_FUN_00422050 at 00422151
 ;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422370 at 004224f1
 ;   core_bugs.cpp_CBugs_setup_FUN_004211e0 at 00421417
 ;   core_bugs.cpp_CBugs_updateBoundingBox_FUN_004227a0 at 004227a5
+;   core_bugs.cpp_CBugs_updateBugsBehavior_FUN_00422050 at 00422151
 ;
 ; Referenced Globals:
 ;   float FLOAT_00579d85 = -0.3333333

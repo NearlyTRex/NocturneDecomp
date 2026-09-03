@@ -7,7 +7,7 @@
 ; CHero *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_hero.cpp_CHero_FUN_004b46d0 at 004b47ce
+;   core_hero.cpp_CHero_ctor_FUN_004b46d0 at 004b47ce
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CGun_005857f6

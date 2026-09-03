@@ -32,7 +32,8 @@ void __cdecl core_mobster_cpp_CMobster_playTaunt_FUN_004dc940(CMobster *this_ptr
         _sprintf(local_80,"mobster-cheese-%c-%c-%d.wav",
                    (uint)(this_ptr->sound_variant).bytes[0],local_1c,
                    *(uint *)(iVar5 + 0x1ccdb94));
-        local_14 = core_sound_cpp_CSound_FUN_0052ebc0(g_CSound_PTR_005bed68,local_80);
+        local_14 = core_sound_cpp_CSound_getSoundDuration_FUN_0052ebc0
+                             (g_CSound_PTR_005bed68,local_80);
         this_ptr->taunt_timer = local_14;
         if (0.0 < this_ptr->taunt_timer) break;
         *(uint *)(iVar5 + 0x1ccdb94) = 0;

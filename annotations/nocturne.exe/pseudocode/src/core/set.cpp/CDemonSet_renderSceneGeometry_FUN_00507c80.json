@@ -114,12 +114,6 @@
   },
   "cross_references": [
     {
-      "addr": "0050a260",
-      "from_addr": "0050a3cf",
-      "name": "core_set.cpp_CDemonSet_FUN_0050a260",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "005084c0",
       "from_addr": "00508634",
       "name": "core_set.cpp_CDemonSet_initScene_FUN_005084c0",
@@ -129,6 +123,12 @@
       "addr": "00507f80",
       "from_addr": "00508061",
       "name": "core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050a260",
+      "from_addr": "0050a3cf",
+      "name": "core_set.cpp_CDemonSet_renderGogglesView_FUN_0050a260",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -191,7 +191,7 @@
     {
       "addr": "004ac7c0",
       "is_variadic": false,
-      "name": "core_glass.cpp_CGlass_FUN_004ac7c0"
+      "name": "core_glass.cpp_CGlass_renderBrokenGlass_FUN_004ac7c0"
     },
     {
       "addr": "004d7980",
@@ -204,14 +204,14 @@
       "name": "core_set.cpp_CDemonSet_buildMirrorList_FUN_0050e210"
     },
     {
-      "addr": "0050e080",
-      "is_variadic": false,
-      "name": "core_set.cpp_CDemonSet_FUN_0050e080"
-    },
-    {
       "addr": "0050e190",
       "is_variadic": false,
       "name": "core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190"
+    },
+    {
+      "addr": "0050e080",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_setupMirrorRendering_FUN_0050e080"
     },
     {
       "addr": "00549310",
@@ -361,7 +361,7 @@
       {
         "call_addr": "0050a3cf",
         "call_type": "direct",
-        "caller": "core_set.cpp_CDemonSet_FUN_0050a260",
+        "caller": "core_set.cpp_CDemonSet_renderGogglesView_FUN_0050a260",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -372,7 +372,7 @@
       {
         "call_addr": "0050a5dc",
         "call_type": "direct",
-        "caller": "core_set.cpp_CDemonSet_FUN_0050a260",
+        "caller": "core_set.cpp_CDemonSet_renderGogglesView_FUN_0050a260",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

@@ -25,7 +25,7 @@
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
-;   core_frankgen.cpp_CFrankenstienMachine_FUN_004950a0
+;   core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004950a0
 ;   core_frankgen.cpp_findLeader_FUN_00495240
 ;   crt_math.c_floor_FUN_005648c0
 ;
@@ -51,8 +51,8 @@ section .text
     FLD float ptr [EAX + 0x154]         ; 00494e9f
     PUSH EBX                            ; 00494ea5
     FSTP float ptr [EBX + 0x154]        ; 00494ea6
-    CALL core_frankgen.cpp_CFrankenstienMachine_FUN_004950a0 ; 00494eac
-        ;   XREF to: 004950a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_frankgen.cpp_CFrankenstienMachine_FUN_004950a0(CFrankenstienMachine * this_ptr)
+    CALL core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004950a0 ; 00494eac
+        ;   XREF to: 004950a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004950a0(CFrankenstienMachine * this_ptr)
     ADD ESP,0x4                         ; 00494eb1
     PUSH EBX                            ; 00494eb4
         ;   Label: LAB_00494eb4

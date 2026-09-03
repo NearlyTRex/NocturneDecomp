@@ -9,7 +9,7 @@
 void __cdecl core_mission_cpp_CDemonMission_FUN_004d7ea0(CDemonMission *this_ptr)
 
 {
-  core_mission_cpp_CDemonMission_FUN_004d8fc0(this_ptr);
+  core_mission_cpp_CDemonMission_removeAllActors_FUN_004d8fc0(this_ptr);
   this_ptr->num_sets = 0;
   this_ptr->mission_name[0] = '\0';
   this_ptr->has_inventory_actors = 0;

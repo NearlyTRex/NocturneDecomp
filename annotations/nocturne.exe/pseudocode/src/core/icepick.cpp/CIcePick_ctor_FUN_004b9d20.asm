@@ -14,7 +14,7 @@
 ;   CHero_full_vtable g_CIcePickVTable
 ;
 ; Called Functions:
-;   core_hero.cpp_CHero_FUN_004b46d0
+;   core_hero.cpp_CHero_ctor_FUN_004b46d0
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0
 ;
 ; *****************************************************************************
@@ -25,8 +25,8 @@ section .text
         ;   Label: core_icepick.cpp_CIcePick_ctor_FUN_004b9d20
     MOV EDX,dword ptr [ESP + 0x8]       ; 004b9d21
     PUSH EDX                            ; 004b9d25
-    CALL core_hero.cpp_CHero_FUN_004b46d0 ; 004b9d26
-        ;   XREF to: 004b46d0 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_CHero_FUN_004b46d0(CHero * this_ptr)
+    CALL core_hero.cpp_CHero_ctor_FUN_004b46d0 ; 004b9d26
+        ;   XREF to: 004b46d0 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_CHero_ctor_FUN_004b46d0(CHero * this_ptr)
     MOV EBX,EAX                         ; 004b9d2b
     ADD EAX,0x150                       ; 004b9d2d
     ADD ESP,0x4                         ; 004b9d32

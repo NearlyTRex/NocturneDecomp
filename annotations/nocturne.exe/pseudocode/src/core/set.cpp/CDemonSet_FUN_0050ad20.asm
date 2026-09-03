@@ -20,7 +20,7 @@
 ;   core_dcamera.cpp_CDemonCamera_free_FUN_004401d0
 ;   core_dlight.cpp_CDemonLight_dtor_FUN_0044e1c0
 ;   core_dlight.cpp_resetRestoreMemoryAllocator_FUN_0044e3b0
-;   core_setutil.cpp_C3DSLight_FUN_00515410
+;   core_setutil.cpp_C3DSLight_doNothing_FUN_00515410
 ;   crt_memory.c_operator_delete_FUN_00564494
 ;
 ; *****************************************************************************
@@ -64,8 +64,8 @@ section .text
     LEA EBX,[EDI + 0x19648]             ; 0050ad69
     PUSH EBX                            ; 0050ad6f
         ;   Label: LAB_0050ad6f
-    CALL core_setutil.cpp_C3DSLight_FUN_00515410 ; 0050ad70
-        ;   XREF to: 00515410 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_C3DSLight_FUN_00515410(C3DSLight * this_ptr)
+    CALL core_setutil.cpp_C3DSLight_doNothing_FUN_00515410 ; 0050ad70
+        ;   XREF to: 00515410 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_C3DSLight_doNothing_FUN_00515410(C3DSLight * this_ptr)
     INC ESI                             ; 0050ad75
     ADD ESP,0x4                         ; 0050ad76
     MOV ECX,dword ptr [EDI + 0x19644]   ; 0050ad79

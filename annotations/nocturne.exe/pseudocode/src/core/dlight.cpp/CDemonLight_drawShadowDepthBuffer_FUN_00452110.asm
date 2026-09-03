@@ -24,7 +24,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_set.cpp_CDemonSet_FUN_0050a260 at 0050a566
+;   core_set.cpp_CDemonSet_renderGogglesView_FUN_0050a260 at 0050a566
 ;
 ; Referenced Globals:
 ;   int g_WindowWidth = 0x140

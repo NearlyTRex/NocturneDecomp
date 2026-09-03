@@ -14,10 +14,10 @@
 ;   core_box.cpp_CBox_loadFromFile_FUN_0041c850 at 0041c9a9
 ;   core_box.cpp_CBox_processPhysics_FUN_0041ad10 at 0041af66
 ;   core_box.cpp_CBox_updateTransform_FUN_0041aaa0 at 0041ac2c
-;   core_bugs.cpp_CBugs_FUN_00422050 at 00422210
 ;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422370 at 004226a6
-;   core_charactr.cpp_CCharacter_FUN_0042af70 at 0042b17d
+;   core_bugs.cpp_CBugs_updateBugsBehavior_FUN_00422050 at 00422210
 ;   core_charactr.cpp_CCharacter_dismember_FUN_00427b60 at 00427d5e
+;   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042af70 at 0042b17d
 ;   core_cloth.cpp_CCloth_applyConstraints_FUN_004366f0 at 00436ca3
 ;   ... and 39 more
 ;

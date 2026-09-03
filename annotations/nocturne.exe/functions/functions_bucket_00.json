@@ -8224,7 +8224,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_bugs.cpp_CBugs_FUN_00421b80",
+    "name":"core_bugs.cpp_CBugs_updateGroundHeightGrid_FUN_00421b80",
     "ret":"void",
     "vars":{
       "locals":[
@@ -9960,7 +9960,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_charactr.cpp_CCharacter_FUN_00428c00",
+    "name":"core_charactr.cpp_CCharacter_processWalking_FUN_00428c00",
     "ret":"int",
     "vars":{
       "locals":[
@@ -15480,7 +15480,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_dcamera.cpp_CDemonCamera_FUN_00446800",
+    "name":"core_dcamera.cpp_CDemonCamera_generateFogGrid_FUN_00446800",
     "ret":"void",
     "vars":{
       "params":[
@@ -15612,7 +15612,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_dcamera.cpp_CDemonCamera_FUN_00448380",
+    "name":"core_dcamera.cpp_CDemonCamera_restoreZBufferScanlines_FUN_00448380",
     "ret":"void",
     "vars":{
       "params":[
@@ -31571,7 +31571,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gabriela.cpp_CGabriella_FUN_00499b00",
+    "name":"core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_00499b00",
     "ret":"void",
     "vars":{
       "locals":[
@@ -31770,7 +31770,7 @@
           "type":"CGabriella*"
         },
         {
-          "name":"param_2",
+          "name":"delta_time",
           "storage":{
             "offset":8,
             "size":4,
@@ -31786,7 +31786,7 @@
           "type":"float"
         },
         {
-          "name":"param_3",
+          "name":"clavicle_blend",
           "storage":{
             "offset":12,
             "size":4,
@@ -31802,7 +31802,7 @@
           "type":"float*"
         },
         {
-          "name":"param_4",
+          "name":"probe_bone_index",
           "storage":{
             "offset":16,
             "size":4,
@@ -31818,7 +31818,7 @@
           "type":"int"
         },
         {
-          "name":"param_5",
+          "name":"blend_bone_index",
           "storage":{
             "offset":20,
             "size":4,
@@ -31834,7 +31834,7 @@
           "type":"int"
         },
         {
-          "name":"param_6",
+          "name":"probe_offset",
           "storage":{
             "offset":24,
             "size":4,
@@ -34779,7 +34779,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_hero.cpp_CHero_FUN_004b5b00",
+    "name":"core_hero.cpp_CHero_tryUseSelectedItem_FUN_004b5b00",
     "ret":"int",
     "vars":{
       "params":[
@@ -41683,7 +41683,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_mission.cpp_CDemonMission_FUN_004d7e00",
+    "name":"core_mission.cpp_CDemonMission_reset_FUN_004d7e00",
     "ret":"void",
     "vars":{
       "params":[
@@ -42641,7 +42641,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_morph.cpp_CMorph_FUN_004e0300",
+    "name":"core_morph.cpp_CMorph_updateModelVertices_FUN_004e0300",
     "ret":"void",
     "vars":{
       "params":[
@@ -42660,6 +42660,54 @@
             ]
           },
           "type":"CMorph*"
+        },
+        {
+          "name":"model_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"vertices",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3i*"
+        },
+        {
+          "name":"part_index",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -43221,7 +43269,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"sound_mp3.cpp_CFileBitStream_FUN_004e2980",
+    "name":"sound_mp3.cpp_CFileBitStream_close_FUN_004e2980",
     "ret":"void",
     "vars":{
       "params":[
@@ -45990,7 +46038,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_ncursfx.cpp_CMouse_FUN_004ee680",
+    "name":"engine_ncursfx.cpp_CMouse_reset_FUN_004ee680",
     "ret":"void",
     "vars":{
       "params":[
@@ -48686,7 +48734,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_set.cpp_CDemonSet_FUN_00509a80",
+    "name":"core_set.cpp_CDemonSet_renderScene_FUN_00509a80",
     "ret":"void",
     "vars":{
       "locals":[
@@ -49160,7 +49208,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_set.cpp_CDemonSet_FUN_0050e080",
+    "name":"core_set.cpp_CDemonSet_setupMirrorRendering_FUN_0050e080",
     "ret":"void",
     "vars":{
       "locals":[
@@ -56351,7 +56399,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndmain.cpp_CSfxSample_FUN_00529a00",
+    "name":"sound_sndmain.cpp_CSfxSample_getStreamingBufferSizeBytes_FUN_00529a00",
     "ret":"int",
     "vars":{
       "params":[
@@ -57760,7 +57808,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_stranger.cpp_CStranger_FUN_0053c800",
+    "name":"core_stranger.cpp_CStranger_tryPlaceObject_FUN_0053c800",
     "ret":"int",
     "vars":{
       "locals":[
@@ -59470,7 +59518,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_texture.cpp_CTextureCache_FUN_00545700",
+    "name":"engine_texture.cpp_CTextureCache_renderAllTextures_FUN_00545700",
     "ret":"void",
     "vars":{
       "locals":[

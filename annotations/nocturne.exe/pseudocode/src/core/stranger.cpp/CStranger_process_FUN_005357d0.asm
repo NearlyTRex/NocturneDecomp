@@ -18,7 +18,7 @@
 ;   undefined4 g_CGame_01c775ec.delta_time_float
 ;
 ; Called Functions:
-;   core_charactr.cpp_CCharacter_FUN_004259f0
+;   core_charactr.cpp_CCharacter_process_FUN_004259f0
 ;   core_game.cpp_CGame_slamDT_FUN_004a5f00
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660
 ;   core_stranger.cpp_CStranger_processFrame_FUN_00535900
@@ -33,8 +33,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 005357d4
     PUSH dword ptr [ESP + 0x14]         ; 005357d8
     PUSH EBX                            ; 005357dc
-    CALL core_charactr.cpp_CCharacter_FUN_004259f0 ; 005357dd
-        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_004259f0(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_process_FUN_004259f0 ; 005357dd
+        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_process_FUN_004259f0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 005357e2
     TEST EAX,EAX                        ; 005357e5
     JNZ 0x0053585b                      ; 005357e7

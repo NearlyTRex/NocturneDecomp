@@ -83,6 +83,29 @@ METHOD_RE = re.compile(
 # classes really are ~0x1fa54 bytes, so `this_ptr` typing is sound.
 
 NO_PARAM_FIXES = [
+    # Not a NO_PARAMS case -- a wrong-CLASS receiver, the fourth mode. The
+    # classifier blocks it ("neither side is provably right") because the body
+    # is `xor eax,eax; ret` and never touches `this`, so the assembly cannot
+    # settle the type on its own. The surrounding evidence does:
+    #   - nocedit's counterpart 005da7c0 is byte-identical (xor eax,eax; ret)
+    #     and typed CTeleportDest *this_ptr;
+    #   - both sit in core/teleport.cpp between CTeleportDest_getBoundingBox
+    #     and factoryFuncTeleport, and every nocedit function in between
+    #     (renderOpaque, matchesTeleportDestination, processInEditor,
+    #     showEditorHelp) is editor-only, so the slot corresponds exactly;
+    #   - CTeleportDest derives from CDemonActor, so this narrows the receiver
+    #     rather than contradicting it.
+    # Left as CDemonActor* it aborts the whole nocturne export with
+    # ThisPtrMismatchError, because the transferred NAME asserts the class.
+    dict(program="nocturne.exe", addr="00543890",
+         expect="core_teleport.cpp_CTeleportDest_getCollisionType_FUN_00543890",
+         name="core_teleport.cpp_CTeleportDest_getCollisionType_FUN_00543890",
+         ret="ECollisionType", conv="__cdecl",
+         params=[("this_ptr", "CTeleportDest *"),
+                 ("collision_info", "SCollisionInfo *")],
+         note="receiver narrowed CDemonActor* -> CTeleportDest* to match the "
+              "transferred name and nocedit's prototype; body is a 3-byte stub "
+              "that never dereferences this."),
     dict(program="nocturne.exe", addr="00411310",
          expect="core_baron.cpp_CBaron_handlePureVirtualCall_FUN_00411310",
          name="core_baron.cpp_CBaron_drawWeapon_FUN_00411310",

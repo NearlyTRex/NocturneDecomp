@@ -11,7 +11,7 @@
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004a0550 at 004a284a
 ;   core_set.cpp_CDemonSet_initScene_FUN_005084c0 at 00508589
 ;   core_set.cpp_CDemonSet_setCameraAmbientValue_FUN_0050e4c0 at 0050e4f8
-;   core_setutil.cpp_C3DSCamera_FUN_005148b0 at 0051491f
+;   core_setutil.cpp_C3DSCamera_apply_FUN_005148b0 at 0051491f
 ;   core_weather.cpp_CWeather_createLightningStrike_FUN_00554d40 at 00554f8e
 ;   core_weather.cpp_CWeather_update_FUN_00554980 at 00554bec
 ;

@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 553,
-    "complexity_score": 494,
+    "complexity_score": 495,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 18,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 254,
+    "pseudocode_lines": 255,
     "suspect_count": 21,
     "suspect_types": [
       "raw_address_pointer_store",
@@ -137,7 +137,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 807
+    "total_lines": 808
   },
   "cross_references": [
     {
@@ -189,7 +189,7 @@
     {
       "addr": "004aded0",
       "is_variadic": false,
-      "name": "core_glass.cpp_CGlass_FUN_004aded0"
+      "name": "core_glass.cpp_CGlass_checkBreakableCondition_FUN_004aded0"
     },
     {
       "addr": "004ada20",
@@ -725,7 +725,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar7` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar7->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 194,
+      "line": 195,
       "match": "pCVar7 = (T *)pCVar7->ARRAY",
       "severity": "moderate",
       "text": "pCVar7 = (CDemonSet *)pCVar7->cameras;",

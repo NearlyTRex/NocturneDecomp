@@ -174,7 +174,8 @@ void __cdecl core_sound_cpp_updateListeners_FUN_0052c9d0(void)
               local_160 = (fVar1 + (float)-50) * (float)0.02 + 0.0;
             }
             local_84.y = (float)local_8c[0] * fVar2 + 1.0;
-            local_14 = core_setcolid_cpp_CDemonSet_FUN_0050f910(g_CDemonSet_PTR_005be368,&local_84);
+            local_14 = core_setcolid_cpp_CDemonSet_rayVoxelHeightQuery_FUN_0050f910
+                                 (g_CDemonSet_PTR_005be368,&local_84);
             if ((float)60 < local_14 - local_84.y) {
               local_160 = ((local_14 - local_84.y) + (float)-60) *
                           (float)0.016666666666666701 + local_160;

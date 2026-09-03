@@ -423,9 +423,9 @@ void __cdecl CFireEffect::createLaserPath(CFireEffect *this_ptr,CVector3f *start
 // Address: 0048b6b0
 SLaserInfo * __cdecl SLaserInfo::ctor(SLaserInfo *this_ptr);
 
-// Original: core_fire.cpp_CFireEffect_FUN_0048b6f0
+// Original: core_fire.cpp_CFireEffect_traceLaser_FUN_0048b6f0
 // Address: 0048b6f0
-void __cdecl CFireEffect(CFireEffect *this_ptr,CVector3f *origin,CVector3f *direction,SLaserInfo *laser_info,int recursion_depth);
+void __cdecl CFireEffect::traceLaser(CFireEffect *this_ptr,CVector3f *origin,CVector3f *direction,SLaserInfo *laser_info,int recursion_depth);
 
 // Original: core_fire.cpp_CFireEffect_createExplosion_FUN_0048c0d0
 // Address: 0048c0d0

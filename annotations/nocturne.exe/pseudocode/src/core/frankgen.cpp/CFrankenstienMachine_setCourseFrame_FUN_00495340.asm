@@ -13,7 +13,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_frankgen.cpp_CFrankenstienMachine_FUN_004950a0 at 004950ca
+;   core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004950a0 at 004950ca
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_frankgen_cpp_00581dbb

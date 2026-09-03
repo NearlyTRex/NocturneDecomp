@@ -10,9 +10,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   core_mirror.cpp_CMirror_FUN_004d76e0 at 004d76ea
-;   core_mirror.cpp_CMirror_FUN_004d7720 at 004d772a
+;   core_mirror.cpp_CMirror_clipAndRenderReflectedPrimitive_FUN_004d76e0 at 004d76ea
 ;   core_mirror.cpp_CMirror_renderMirroredPrimitive_FUN_004d7760 at 004d77be
+;   core_mirror.cpp_CMirror_renderReflectedPrimitive_FUN_004d7720 at 004d772a
 ;
 ; Referenced Globals:
 ;   float FLOAT_005a0880 = 256

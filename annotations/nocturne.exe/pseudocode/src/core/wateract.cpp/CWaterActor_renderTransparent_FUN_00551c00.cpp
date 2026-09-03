@@ -89,7 +89,7 @@ int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_00551c00(CWaterA
         }
       }
       else {
-        core_set_cpp_CDemonSet_FUN_0050ddd0
+        core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_0050ddd0
                   (g_CDemonSet_PTR_005be368,(SMRGLPrimitiveQuad *)poly,this_ptr->primitive_count,-1)
         ;
       }

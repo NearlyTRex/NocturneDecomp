@@ -67,7 +67,7 @@ void __cdecl core_stranger_cpp_CStranger_processFrame_FUN_00535900(CStranger *th
   float fStack_19c;
   float fStack_198;
   CVector3f CStack_194;
-  float afStack_188 [3];
+  CVector3f CStack_188;
   CVector3f CStack_17c;
   float fStack_168;
   uint uStack_164;
@@ -170,7 +170,7 @@ void __cdecl core_stranger_cpp_CStranger_processFrame_FUN_00535900(CStranger *th
        (this_ptr->base).base.model.accumulated_root_motion.z;
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
-  pCVar16 = (CVector3f *)core_stranger_cpp_CStranger_FUN_00538440(this_ptr,afStack_188);
+  pCVar16 = core_stranger_cpp_CStranger_getHandsMidpoint_FUN_00538440(this_ptr,&CStack_188);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
             ((CDemonActor *)this_ptr,&CStack_194,pCVar16);
   core_stranger_cpp_CStranger_processMotionEvents_FUN_00537cd0(this_ptr,delta_time);
@@ -343,7 +343,8 @@ void __cdecl core_stranger_cpp_CStranger_processFrame_FUN_00535900(CStranger *th
         pCVar8 = (this_ptr->base).base.grabbed_by;
         if (pCVar8 == (CDemonActor *)0x0) {
           if ((this_ptr->base).pushed_object == (CBoxActor *)0x0) {
-            iVar21 = core_charactr_cpp_CCharacter_FUN_00428c00((CCharacter *)this_ptr,delta_time);
+            iVar21 = core_charactr_cpp_CCharacter_processWalking_FUN_00428c00
+                               ((CCharacter *)this_ptr,delta_time);
             pCVar2 = &(this_ptr->base).base.model;
             if (iVar21 == 0) {
               if (iStack_20 != 0) {
@@ -436,7 +437,7 @@ void __cdecl core_stranger_cpp_CStranger_processFrame_FUN_00535900(CStranger *th
                                 (&(this_ptr->base).base.model.motion_controller,iStack_7c,1);
                     }
                     if ((this_ptr->base).player_input.action_state.use_item != 0) {
-                      core_hero_cpp_CHero_FUN_004b5b00(&this_ptr->base);
+                      core_hero_cpp_CHero_tryUseSelectedItem_FUN_004b5b00(&this_ptr->base);
                       iStack_60 = 0;
                       break;
                     }
@@ -1093,7 +1094,7 @@ LAB_00536144:
     (this_ptr->left_arm_aim).recoil_timer = 0.0;
   }
   if (bVar11) {
-    core_stranger_cpp_CStranger_FUN_0053fc60(this_ptr);
+    core_stranger_cpp_CStranger_handleActionButton_FUN_0053fc60(this_ptr);
   }
   core_stranger_cpp_CStranger_FUN_005384d0(this_ptr);
   if ((((this_ptr->base).aim_mode == AIM_MODE_MANUAL) && (this_ptr->weapon != (CWeapon *)0x0)) &&
@@ -1105,8 +1106,8 @@ LAB_00536144:
     core_stranger_cpp_CStranger_FUN_005384d0(this_ptr);
   }
   core_stranger_cpp_CStranger_updateArmRecoilBlend_FUN_0053ecc0(this_ptr,delta_time,iVar25);
-  core_stranger_cpp_CStranger_FUN_005402f0(this_ptr);
-  core_charactr_cpp_CCharacter_FUN_0042a150((CCharacter *)this_ptr,delta_time);
+  core_stranger_cpp_CStranger_updateClothSimulation_FUN_005402f0(this_ptr);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042a150((CCharacter *)this_ptr,delta_time);
   pCVar2 = &(this_ptr->base).base.model;
   fVar17 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
                      (&pCVar2->motion_controller,6);
@@ -1122,7 +1123,7 @@ LAB_00536144:
                             (&((this_ptr->base).pushed_object)->base,
                              g_CBoxActorActorType_00764800.name_hash), pCVar20 != (CBoxActor *)0x0))
     {
-      core_stranger_cpp_CStranger_FUN_00538440(this_ptr,&CStack_17c.x);
+      core_stranger_cpp_CStranger_getHandsMidpoint_FUN_00538440(this_ptr,&CStack_17c);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                 ((CDemonActor *)this_ptr,(CVector3f *)auStack_110,&CStack_17c);
       CStack_1dc.y = 0.0;
@@ -1138,7 +1139,7 @@ LAB_00536144:
   core_stranger_cpp_CStranger_updateWeaponPosition_FUN_0053a660(this_ptr,0);
   core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0053d910(this_ptr,0,delta_time);
   core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0053d910(this_ptr,1,delta_time);
-  core_stranger_cpp_CStranger_FUN_0053ffe0(this_ptr,delta_time);
+  core_stranger_cpp_CStranger_handleFireButton_FUN_0053ffe0(this_ptr,delta_time);
   core_inv_cpp_CInventory_updateInventory_FUN_004c1850(&(this_ptr->base).inventory);
   core_stranger_cpp_CStranger_processWeaponTick_FUN_00540660(this_ptr,delta_time);
   if ((this_ptr->weapon != (CWeapon *)0x0) && ((this_ptr->weapon->base).is_transparent != 0)) {

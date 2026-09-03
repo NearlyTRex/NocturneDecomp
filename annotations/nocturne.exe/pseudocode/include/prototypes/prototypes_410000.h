@@ -223,7 +223,7 @@ CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_ctor_FUN_00418630(CBoneGuy *this_pt
 void __cdecl core_boneguy_cpp_CBoneGuy_setup_FUN_00418800(CBoneGuy *this_ptr);
 void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_00418a00(CBoneGuy *this_ptr,float delta_time);
 void __stack2_esi core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_004194b0(CBoneGuy *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
-int __cdecl core_boneguy_cpp_CBoneGuy_FUN_004196b0(CBoneGuy *this_ptr,float delta_time);
+int __cdecl core_boneguy_cpp_CBoneGuy_updatePickupBehavior_FUN_004196b0(CBoneGuy *this_ptr,float delta_time);
 void __cdecl core_boneguy_cpp_CBoneGuy_renderOpaque_FUN_00419bf0(CBoneGuy *this_ptr);
 int __cdecl core_boneguy_cpp_CBoneGuy_renderTransparent_FUN_00419c20(CBoneGuy *this_ptr);
 void __cdecl core_boneguy_cpp_CBoneGuy_archive_FUN_00419ce0(CBoneGuy *this_ptr);
@@ -259,7 +259,7 @@ void __cdecl core_box_cpp_CBoundingBox3D_expand_FUN_0041cc00(CBoundingBox3D *thi
 CVector3f * __cdecl core_box_cpp_CBoundingBox3D_getCorner_FUN_0041cc70(CBoundingBox3D *this_ptr,CVector3f *out_point,uint corner_index);
 int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithShadow_FUN_0041cce0(CBoundingBox3D *this_ptr);
 int __cdecl core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(CBoundingBox3D *this_ptr);
-int __cdecl core_box_cpp_CBoundingBox3D_FUN_0041d050(CBoundingBox3D *this_ptr);
+int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithCamera_FUN_0041d050(CBoundingBox3D *this_ptr);
 float __cdecl core_box_cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_0041d450(CBoundingBox3D *this_ptr);
 float __cdecl core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_0041d550(CBoundingBox3D *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal);
 void __cdecl core_box_cpp_CBoundingBox3D_normalize_FUN_0041d980(CBoundingBox3D *this_ptr);
@@ -292,7 +292,7 @@ void __cdecl core_boxactor_cpp_CBoxActor_onDropped_FUN_0041f0f0(CBoxActor *this_
 CDemonActor * __cdecl core_boxactor_cpp_CBoxActor_getCarrier_FUN_0041f150(CBoxActor *this_ptr);
 EGroundType __cdecl core_boxactor_cpp_CBoxActor_getGroundType_FUN_0041f160(CBoxActor *this_ptr);
 void __cdecl core_boxactor_cpp_CBoxActor_onPickup_FUN_0041f170(CBoxActor *this_ptr,CDemonActor *owner);
-void __cdecl core_boxactor_cpp_CBoxActor_FUN_0041f190(CBoxActor *this_ptr);
+void __cdecl core_boxactor_cpp_CBoxActor_constrainToExtents_FUN_0041f190(CBoxActor *this_ptr);
 void __cdecl core_boxactor_cpp_CBoxActor_setPositionAndOrientation_FUN_0041f240(CBoxActor *this_ptr,CVector3f *new_position,CVector3f *new_orientation);
 int __cdecl core_boxactor_cpp_CBoxActor_getAllowedMeleeAttackTypes_FUN_0041f2d0(CBoxActor *this_ptr);
 CLightActor * __cdecl core_boxactor_cpp_factoryFuncLightActor_FUN_0041f2e0(void);

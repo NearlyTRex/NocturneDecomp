@@ -87,7 +87,7 @@ void __cdecl core_gabriela_cpp_CGabriella_process_FUN_00495a20(CGabriella *this_
   float local_18;
   CCharacter_full_vtable *local_14;
   
-  iVar10 = core_charactr_cpp_CCharacter_FUN_004259f0((CCharacter *)this_ptr,delta_time);
+  iVar10 = core_charactr_cpp_CCharacter_process_FUN_004259f0((CCharacter *)this_ptr,delta_time);
   if (iVar10 == 0) {
     return;
   }
@@ -228,7 +228,8 @@ void __cdecl core_gabriela_cpp_CGabriella_process_FUN_00495a20(CGabriella *this_
       goto LAB_00495d8e;
     }
     if ((this_ptr->base).pushed_object == (CBoxActor *)0x0) {
-      iVar10 = core_charactr_cpp_CCharacter_FUN_00428c00((CCharacter *)this_ptr,delta_time);
+      iVar10 = core_charactr_cpp_CCharacter_processWalking_FUN_00428c00
+                         ((CCharacter *)this_ptr,delta_time);
       pCVar2 = &(this_ptr->base).base.model;
       if (iVar10 == 0) {
         if (is_holstering == 0) {
@@ -525,7 +526,7 @@ LAB_00496834:
     }
     local_40 = 0.64f + (float)-0.14999999999999999;
     if ((local_44 <= local_40) && (local_40 < this_ptr->draw_blend)) {
-      core_game_cpp_CGame_FUN_004a3a70(g_CGame_PTR_005b9354);
+      core_game_cpp_CGame_resetWeaponSwitchTimers_FUN_004a3a70(g_CGame_PTR_005b9354);
       sound_name = "draw-f.wav @ 1.5";
 LAB_00495f6c:
       (*((this_ptr->base).base.base.vtable._ub)->playSound)((CDemonActor *)this_ptr,sound_name);
@@ -575,7 +576,7 @@ LAB_00495fcb:
     if (this_ptr->weapon_state_flags == 0) {
       if ((this_ptr->draw_blend <= 0.0) &&
          (iVar10 = core_hero_cpp_CHero_tryInteract_FUN_004b4e90(&this_ptr->base), iVar10 == 0)) {
-        iVar10 = core_hero_cpp_CHero_FUN_004b5110(&this_ptr->base);
+        iVar10 = core_hero_cpp_CHero_tryOpenNearbyDoor_FUN_004b5110(&this_ptr->base);
         switch(iVar10) {
         case 0:
         case 1:
@@ -613,8 +614,9 @@ LAB_00495fcb:
     }
   }
   core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_00497900(this_ptr);
-  core_gabriela_cpp_CGabriella_FUN_004998c0(this_ptr,delta_time,(uint)(is_holstering == 0));
-  core_charactr_cpp_CCharacter_FUN_0042a150((CCharacter *)this_ptr,delta_time);
+  core_gabriela_cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_004998c0
+            (this_ptr,delta_time,(uint)(is_holstering == 0));
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042a150((CCharacter *)this_ptr,delta_time);
   pCVar2 = &(this_ptr->base).base.model;
   local_14 = (CCharacter_full_vtable *)
              core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0

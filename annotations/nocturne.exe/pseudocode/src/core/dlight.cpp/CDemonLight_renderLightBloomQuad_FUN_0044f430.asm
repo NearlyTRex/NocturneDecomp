@@ -54,7 +54,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_set.cpp_CDemonSet_FUN_00509a80 at 0050a17a
+;   core_set.cpp_CDemonSet_renderScene_FUN_00509a80 at 0050a17a
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0057c7de = 0.00390625

@@ -12,7 +12,7 @@
 ; char *           Stack[0x18]:4   format_string
 ;
 ; Called Functions:
-;   engine_font.cpp_CBitFont_FUN_00490d70
+;   engine_font.cpp_CBitFont_drawTextCenterFV_FUN_00490d70
 ;
 ; *****************************************************************************
 
@@ -40,8 +40,8 @@ section .text
     PUSH EDI                            ; 00490d49
     MOV EBP,dword ptr [ESP + 0x30]      ; 00490d4a
     PUSH EBP                            ; 00490d4e
-    CALL engine_font.cpp_CBitFont_FUN_00490d70 ; 00490d4f
-        ;   XREF to: 00490d70 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_FUN_00490d70(CBitFont * this_ptr, int center_x, int y_pos, int color_mode, ...)
+    CALL engine_font.cpp_CBitFont_drawTextCenterFV_FUN_00490d70 ; 00490d4f
+        ;   XREF to: 00490d70 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenterFV_FUN_00490d70(CBitFont * this_ptr, int center_x, int y_pos, int color_mode, ...)
     ADD ESP,0x1c                        ; 00490d54
     XOR EDX,EDX                         ; 00490d57
     MOV dword ptr [ESP],EDX             ; 00490d59

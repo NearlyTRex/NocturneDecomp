@@ -33,7 +33,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_process_FUN_004c9cf0(CMansionP
     } while (iVar3 < 0xc);
     iVar3 = 0;
     do {
-      core_manpuz_cpp_CMansionPuzzleCircle_FUN_004cb010(this_ptr,iVar3,delta_time);
+      core_manpuz_cpp_CMansionPuzzleCircle_updateGem_FUN_004cb010(this_ptr,iVar3,delta_time);
       iVar3 = iVar3 + 1;
     } while (iVar3 < 0xc);
     iVar3 = 0;

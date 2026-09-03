@@ -35,9 +35,9 @@
 ;   ... and 2 more
 ;
 ; Called Functions:
+;   core_dcamera.cpp_CDemonCamera_blendLightmapPixel16_FUN_00447c60
+;   core_dcamera.cpp_CDemonCamera_blendLightmapPixel32_FUN_00447bb0
 ;   core_dcamera.cpp_CDemonCamera_blurCoronaBufferAndClearEdges_FUN_00444810
-;   core_dcamera.cpp_CDemonCamera_FUN_00447bb0
-;   core_dcamera.cpp_CDemonCamera_FUN_00447c60
 ;   core_dcamera.cpp_updateFogScrollOffset_FUN_0043fe60
 ;   core_dstrender.cpp_blendHBilerpLightmapSharedU64toU16pBB56Px2MMX_FUN_00465fc9
 ;   core_dstrender.cpp_blendHBilerpLightmapSharedU64toU64pBB12Px2MMX_FUN_00464afc
@@ -251,8 +251,8 @@ section .text
     PUSH EDI                            ; 00447343
     ADD EBX,0xc                         ; 00447344
     INC ESI                             ; 00447347
-    CALL core_dcamera.cpp_CDemonCamera_FUN_00447c60 ; 00447348
-        ;   XREF to: 00447c60 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_FUN_00447c60(CDemonCamera * this_ptr, int screen_x, int screen_y, int offset)
+    CALL core_dcamera.cpp_CDemonCamera_blendLightmapPixel16_FUN_00447c60 ; 00447348
+        ;   XREF to: 00447c60 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_blendLightmapPixel16_FUN_00447c60(CDemonCamera * this_ptr, int screen_x, int screen_y, int offset)
     ADD ESP,0x10                        ; 0044734d
     CMP ESI,dword ptr [0x012b0664]      ; 00447350 | DAT_012b0664
     JL 0x00447326                       ; 00447356
@@ -387,8 +387,8 @@ section .text
     PUSH EDI                            ; 004474bb
     ADD EBX,0xc                         ; 004474bc
     INC ESI                             ; 004474bf
-    CALL core_dcamera.cpp_CDemonCamera_FUN_00447bb0 ; 004474c0
-        ;   XREF to: 00447bb0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_FUN_00447bb0(CDemonCamera * this_ptr, int screen_x, int screen_y, int offset)
+    CALL core_dcamera.cpp_CDemonCamera_blendLightmapPixel32_FUN_00447bb0 ; 004474c0
+        ;   XREF to: 00447bb0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_blendLightmapPixel32_FUN_00447bb0(CDemonCamera * this_ptr, int screen_x, int screen_y, int offset)
     ADD ESP,0x10                        ; 004474c5
     CMP ESI,dword ptr [0x012b0664]      ; 004474c8 | DAT_012b0664
     JL 0x0044749e                       ; 004474ce

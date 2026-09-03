@@ -193,7 +193,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     File: core/boneguy.cpp, Suspects: 0
     - [stack_alignment] at 00418487: AND ESP,0xfffffff8
 
-  core_boneguy.cpp_CBoneGuy_FUN_004196b0
+  core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_004196b0
     File: core/boneguy.cpp, Suspects: 4
     - [stack_alignment] at 004196bc: AND ESP,0xfffffff8
 
@@ -245,7 +245,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     File: core/bugs.cpp, Suspects: 8
     - [stack_alignment] at 004216d9: AND ESP,0xfffffff8
 
-  core_bugs.cpp_CBugs_FUN_00422050
+  core_bugs.cpp_CBugs_updateBugsBehavior_FUN_00422050
     File: core/bugs.cpp, Suspects: 4
     - [stack_alignment] at 0042205c: AND ESP,0xfffffff8
 
@@ -265,5 +265,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 12.5 suspects/function
+  With stack patterns:    avg 12.4 suspects/function
   Without stack patterns: avg 3.6 suspects/function

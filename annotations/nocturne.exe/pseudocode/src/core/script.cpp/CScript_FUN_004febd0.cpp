@@ -89,13 +89,13 @@ LAB_004fecd4:
       shape_edittool_cpp_CStrList_add_FUN_00473cb0(local_14,local_31c);
     } while (bVar2);
     _fclose(file_handle);
-    core_script_cpp_CScript_FUN_004fee30(this_ptr);
+    core_script_cpp_CScript_buildParsedLines_FUN_004fee30(this_ptr);
     if (param_3 != 0) {
 LAB_004fee03:
-      core_script_cpp_CScript_FUN_004feff0(this_ptr);
+      core_script_cpp_CScript_initRuntime_FUN_004feff0(this_ptr);
       return 1;
     }
-    pcVar6 = core_script_cpp_CScript_FUN_004fef60(this_ptr,&local_18);
+    pcVar6 = core_script_cpp_CScript_validateSyntax_FUN_004fef60(this_ptr,&local_18);
     shape_edittool_cpp_CPickList_clear_FUN_00476160(&g_CPickList_01e56c30);
     if (pcVar6 == (char *)0x0) goto LAB_004fee03;
     g_CurrentFilename = "..\\core\\script.cpp";

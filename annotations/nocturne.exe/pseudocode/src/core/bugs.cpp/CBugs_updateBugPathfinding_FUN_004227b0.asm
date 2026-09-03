@@ -44,8 +44,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_bugs.cpp_CBugs_FUN_00422050 at 00422130
 ;   core_bugs.cpp_CBugs_updateBugRenderingData_FUN_00422c70 at 0042339a
+;   core_bugs.cpp_CBugs_updateBugsBehavior_FUN_00422050 at 00422130
 ;
 ; Referenced Globals:
 ;   float FLOAT_00579d41 = 12

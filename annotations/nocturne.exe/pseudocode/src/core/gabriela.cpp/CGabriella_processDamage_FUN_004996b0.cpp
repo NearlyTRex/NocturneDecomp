@@ -69,7 +69,7 @@ void __cdecl core_gabriela_cpp_CGabriella_processDamage_FUN_004996b0(CGabriella 
     core_charactr_cpp_CCharacter_processDamage_FUN_00428510((CCharacter *)this_ptr,damage_info);
     return;
   }
-  core_game_cpp_CGame_FUN_004a3a90(g_CGame_PTR_005b9354);
+  core_game_cpp_CGame_resetInventoryDisplayTimer_FUN_004a3a90(g_CGame_PTR_005b9354);
   core_charactr_cpp_CCharacter_processDamage_FUN_00428510((CCharacter *)this_ptr,damage_info);
   return;
 }

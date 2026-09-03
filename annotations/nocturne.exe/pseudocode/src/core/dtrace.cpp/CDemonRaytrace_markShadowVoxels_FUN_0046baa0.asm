@@ -35,7 +35,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_setcolid.cpp_CDemonSet_FUN_00511a10 at 00511a6a
+;   core_setcolid.cpp_CDemonSet_castVoxelShadow_FUN_00511a10 at 00511a6a
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0057e3be = 2

@@ -10,8 +10,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_set.cpp_CDemonSet_FUN_0050d910 at 0050dd4b
 ;   core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_0050d6a0 at 0050d902
+;   core_set.cpp_CDemonSet_renderEnvMapTriangles_FUN_0050d910 at 0050dd4b
 ;
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8

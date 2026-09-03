@@ -23,7 +23,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderCharacter_FUN_00425c20(CCharacte
       core_charactr_cpp_CCharacter_renderBurn_FUN_00426e80(this_ptr);
     }
     if (0.0 < this_ptr->stagger_amount) {
-      core_charactr_cpp_CCharacter_FUN_004270e0(this_ptr);
+      core_charactr_cpp_CCharacter_renderEthereal_FUN_004270e0(this_ptr);
     }
   }
   core_charactr_cpp_CCharacter_renderAttachedModels_FUN_004265a0(this_ptr);

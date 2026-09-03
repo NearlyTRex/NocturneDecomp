@@ -12,7 +12,7 @@
 ;   engine_prim.c_renderPolygonSoftware_FUN_004f9dd0 at 004f9faa
 ;   engine_prim.c_renderScanlinePolygon_FUN_004fad00 at 004fafd9
 ;   engine_special.cpp_drawFullScreenQuad_FUN_005329c0 at 00532a5d
-;   engine_texture.cpp_CTextureCache_FUN_00545700 at 005457e4
+;   engine_texture.cpp_CTextureCache_renderAllTextures_FUN_00545700 at 005457e4
 ;   engine_zraster.c_rasterizeTriangle_FUN_005628c0 at 00562bb0
 ;
 ; Referenced Globals:

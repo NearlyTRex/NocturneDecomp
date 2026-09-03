@@ -15,7 +15,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   core_set.cpp_CDemonSet_FUN_0050e370 at 0050e3be
+;   core_set.cpp_CDemonSet_cacheMirrorLighting_FUN_0050e370 at 0050e3be
 ;   core_set.cpp_CDemonSet_computeLighting_FUN_0050bb50 at 0050bb6d
 ;   core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0 at 0050c3be
 ;

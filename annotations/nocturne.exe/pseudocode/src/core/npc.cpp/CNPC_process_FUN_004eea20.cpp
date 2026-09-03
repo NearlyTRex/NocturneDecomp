@@ -30,7 +30,7 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_004eea20(CNPC *this_ptr,float delta_t
   float fStack_20;
   float fStack_1c;
   
-  iVar6 = core_charactr_cpp_CCharacter_FUN_004259f0(&this_ptr->base,delta_time);
+  iVar6 = core_charactr_cpp_CCharacter_process_FUN_004259f0(&this_ptr->base,delta_time);
   if (iVar6 == 0) {
     return;
   }
@@ -61,7 +61,7 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_004eea20(CNPC *this_ptr,float delta_t
   fVar4 = (float)0.5;
   (this_ptr->base).walk_step_speed = (this_ptr->base).model.accumulated_root_motion.z;
   (this_ptr->base).turn_speed = delta_time * fVar5 * fVar4;
-  iVar6 = core_charactr_cpp_CCharacter_FUN_00428c00(&this_ptr->base,delta_time);
+  iVar6 = core_charactr_cpp_CCharacter_processWalking_FUN_00428c00(&this_ptr->base,delta_time);
   if (iVar6 == 0) goto LAB_004eeb7c;
   uVar3 = (this_ptr->base).is_walking;
   if (uVar3 < 2) {
@@ -124,6 +124,6 @@ LAB_004eeb7c:
   core_charactr_cpp_CCharacter_moveAndCollide_FUN_00425050(&this_ptr->base,&CStack_54);
   core_charactr_cpp_CCharacter_preProcess_FUN_004259a0(&this_ptr->base);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(&(this_ptr->base).model);
-  core_charactr_cpp_CCharacter_FUN_0042a150(&this_ptr->base,delta_time);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042a150(&this_ptr->base,delta_time);
   return;
 }

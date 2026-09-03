@@ -2,16 +2,16 @@
 // Address: 004ca710
 // Address Range: [[004ca710, 004ca780]]
 // Convention: __cdecl
-// Signature: void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_004ca710(CMansionPuzzleCircle *this_ptr,int param_2)
+// Signature: void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_004ca710(CMansionPuzzleCircle *this_ptr,int panel_index)
 
 #include "nocturne.h"
 
-void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_004ca710(CMansionPuzzleCircle *this_ptr,int param_2)
+void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_004ca710(CMansionPuzzleCircle *this_ptr,int panel_index)
 
 {
   SPanel *pSVar1;
   
-  pSVar1 = this_ptr->panels + param_2;
+  pSVar1 = this_ptr->panels + panel_index;
   if (pSVar1->exists == 0) {
     return;
   }

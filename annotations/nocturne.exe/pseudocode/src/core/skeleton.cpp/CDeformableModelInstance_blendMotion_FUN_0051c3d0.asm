@@ -44,12 +44,12 @@
 ; XREF[14]:
 ;   core_charactr.cpp_CCharacter_applyGesture_FUN_00429560 at 00429625
 ;   core_charactr.cpp_CCharacter_blendLayerActionMotion_FUN_0042a700 at 0042a748
-;   core_gabriela.cpp_CGabriella_FUN_004998c0 at 00499ac6
-;   core_gabriela.cpp_CGabriella_FUN_00499b00 at 00499bd0
+;   core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_00499b00 at 00499bd0
+;   core_gabriela.cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_004998c0 at 00499ac6
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_00497900 at 00497c7c
 ;   core_ghoul.cpp_CGhoul_process_FUN_004a9270 at 004a9576
 ;   core_hostage.cpp_CHostage_process_FUN_004b6d80 at 004b80c8
-;   core_icepick.cpp_CIcePick_FUN_004ba740 at 004ba7c0
+;   core_icepick.cpp_CIcePick_updateShootBlend_FUN_004ba740 at 004ba7c0
 ;   core_mobster.cpp_CMobster_aimTommyGun_FUN_004db6f0 at 004db942
 ;   core_scat.cpp_CScat_blendLayerAction_FUN_004fcff0 at 004fd18b
 ;   ... and 4 more

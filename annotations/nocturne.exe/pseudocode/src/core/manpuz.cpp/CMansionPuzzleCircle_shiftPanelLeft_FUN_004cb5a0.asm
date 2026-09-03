@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_004cb010 at 004cb2b5
+;   core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN_004cb010 at 004cb2b5
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_manpuz_cpp_00588032

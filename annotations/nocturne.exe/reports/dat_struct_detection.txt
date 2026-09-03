@@ -138,10 +138,10 @@ Consider removing the Ghidra label and leaving the raw number.
       PUSH 0x1cc3700                      ; 004c846a | DAT_01cc3700
 
   DAT_005be680  value=0x5BE680 (6022784)  refs=2
-    CDemonSet
-      PUSH 0x5be680                       ; 0050d91f | DAT_005be680
     CDemonSet_renderEnvMapPrimitives
       PUSH 0x5be680                       ; 0050d6b1 | DAT_005be680
+    CDemonSet_renderEnvMapTriangles
+      PUSH 0x5be680                       ; 0050d91f | DAT_005be680
 
   DAT_005a47a4  value=0x5A47A4 (5916580)  refs=2
     ifstream_ctor
@@ -171,13 +171,13 @@ Consider removing the Ghidra label and leaving the raw number.
     CDirectSoundDevice_setMode
       PUSH 0x5bed10                       ; 0052a8cc | DAT_005bed10
 
-  DAT_005ad140  value=0x5AD140 (5951808)  refs=1
-    CCharacter
-      ADD EAX,0x5ad140                    ; 00427179 | DAT_005ad140
-
   DAT_005ad1fc  value=0x5AD1FC (5951996)  refs=1
     CCharacter_renderBurn
       PUSH 0x5ad1fc                       ; 00426e9f | DAT_005ad1fc
+
+  DAT_005ad140  value=0x5AD140 (5951808)  refs=1
+    CCharacter_renderEthereal
+      ADD EAX,0x5ad140                    ; 00427179 | DAT_005ad140
 
   DAT_005ad57c  value=0x5AD57C (5952892)  refs=1
     CDemonGlobe_renderCoronaTextured

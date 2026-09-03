@@ -31,7 +31,7 @@
 ;   core_dfont.cpp_freeFonts_FUN_0044cc00
 ;   core_dmodel.cpp_freeAllModels_FUN_00454460
 ;   core_inivar.cpp_writeIniData_FUN_004be2d0
-;   core_mission.cpp_CDemonMission_FUN_004d7e90
+;   core_mission.cpp_CDemonMission_clearMission_FUN_004d7e90
 ;   core_netgame.cpp_CNetGame_shutdown_FUN_004e99c0
 ;   core_skeleton.cpp_freeAllModels_FUN_0051f650
 ;   core_skeleton.cpp_freeAllSkeletons_FUN_0051f730
@@ -266,13 +266,13 @@ section .text
     ADD ESP,0x4                         ; 004c9323
     MOV EDI,dword ptr [0x005be060]      ; 004c9326 | g_CMouse_PTR_005be060
     PUSH EDI                            ; 004c932c
-    CALL engine_ncursfx.cpp_CMouse_FUN_004ee680 ; 004c932d
-        ;   XREF to: 004ee680 (UNCONDITIONAL_CALL)  ; void engine_ncursfx.cpp_CMouse_FUN_004ee680(CMouse * this_ptr)
+    CALL engine_ncursfx.cpp_CMouse_reset_FUN_004ee680 ; 004c932d
+        ;   XREF to: 004ee680 (UNCONDITIONAL_CALL)  ; void engine_ncursfx.cpp_CMouse_reset_FUN_004ee680(CMouse * this_ptr)
     ADD ESP,0x4                         ; 004c9332
     MOV EBP,dword ptr [0x005baf90]      ; 004c9335 | g_CDemonMission_PTR_005baf90
     PUSH EBP                            ; 004c933b
-    CALL core_mission.cpp_CDemonMission_FUN_004d7e90 ; 004c933c
-        ;   XREF to: 004d7e90 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_004d7e90(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_clearMission_FUN_004d7e90 ; 004c933c
+        ;   XREF to: 004d7e90 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_clearMission_FUN_004d7e90(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 004c9341
     MOV EAX,[0x005bed68]                ; 004c9344 | g_CSound_PTR_005bed68
     PUSH EAX                            ; 004c9349

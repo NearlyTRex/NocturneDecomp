@@ -49,7 +49,7 @@ void __cdecl core_colonel_cpp_CColonel_process_FUN_00439f50(CColonel *this_ptr,f
   CCharacter_full_vtable *local_14;
   
   bVar12 = 0;
-  iVar5 = core_charactr_cpp_CCharacter_FUN_004259f0((CCharacter *)this_ptr,delta_time);
+  iVar5 = core_charactr_cpp_CCharacter_process_FUN_004259f0((CCharacter *)this_ptr,delta_time);
   if (iVar5 == 0) {
     return;
   }
@@ -70,7 +70,8 @@ void __cdecl core_colonel_cpp_CColonel_process_FUN_00439f50(CColonel *this_ptr,f
   fVar14 = (float)12.566370614;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
   (this_ptr->base).base.turn_speed = delta_time * fVar14;
-  iVar5 = core_charactr_cpp_CCharacter_FUN_00428c00((CCharacter *)this_ptr,delta_time);
+  iVar5 = core_charactr_cpp_CCharacter_processWalking_FUN_00428c00
+                    ((CCharacter *)this_ptr,delta_time);
   pCVar13 = &(this_ptr->base).base.model;
   if (iVar5 == 0) {
     pSVar9 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
@@ -105,7 +106,7 @@ void __cdecl core_colonel_cpp_CColonel_process_FUN_00439f50(CColonel *this_ptr,f
             iVar8 = core_hero_cpp_CHero_tryInteract_FUN_004b4e90(&this_ptr->base);
             bVar4 = false;
             if (iVar8 != 0) goto LAB_0043a2b0;
-            local_24 = core_hero_cpp_CHero_FUN_004b5110(&this_ptr->base);
+            local_24 = core_hero_cpp_CHero_tryOpenNearbyDoor_FUN_004b5110(&this_ptr->base);
             if ((local_24 != 0) && (local_24 != 1)) {
               core_hero_cpp_CHero_tryOpenDoor_FUN_004b5270(&this_ptr->base);
             }
@@ -257,7 +258,7 @@ LAB_0043a164:
     core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0051cfd0
               (pCVar13,source_quaternions,fVar14,iVar5,blend_callback);
   }
-  core_charactr_cpp_CCharacter_FUN_0042a150((CCharacter *)this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042a150((CCharacter *)this_ptr,delta_time);
 switchD_0043a387_caseD_6:
   return;
 }

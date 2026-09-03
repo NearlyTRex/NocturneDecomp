@@ -9,7 +9,7 @@
 ; SIZE_T           Stack[0xc]:4   count
 ;
 ; XREF[2]:
-;   core_dcamera.cpp_CDemonCamera_FUN_00446810 at 00446929
+;   core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_00446810 at 00446929
 ;   core_game.cpp_CGame_FUN_004a3b90 at 004a3ef3
 ;
 ; Called Functions:

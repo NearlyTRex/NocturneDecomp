@@ -80,12 +80,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00490b70",
-      "from_addr": "00490bc2",
-      "name": "engine_font.cpp_CBitFont_FUN_00490b70",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00490de0",
       "from_addr": "00490e1f",
       "name": "engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_00490de0",
@@ -101,6 +95,12 @@
       "addr": "00490ce0",
       "from_addr": "00490d15",
       "name": "engine_font.cpp_CBitFont_drawTextCenter_FUN_00490ce0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00490b70",
+      "from_addr": "00490bc2",
+      "name": "engine_font.cpp_CBitFont_drawTextFV_FUN_00490b70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -180,7 +180,7 @@
       {
         "call_addr": "00490bc2",
         "call_type": "direct",
-        "caller": "engine_font.cpp_CBitFont_FUN_00490b70",
+        "caller": "engine_font.cpp_CBitFont_drawTextFV_FUN_00490b70",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",

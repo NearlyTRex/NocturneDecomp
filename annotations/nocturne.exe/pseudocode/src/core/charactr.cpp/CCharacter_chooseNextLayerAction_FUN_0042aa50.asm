@@ -14,7 +14,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_scat.cpp_CScat_FUN_004fcd90 at 004fcf03
+;   core_scat.cpp_CScat_updateWeaponState_FUN_004fcd90 at 004fcf03
 ;   core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_0053f310 at 0053f644
 ;
 ; Referenced Globals:

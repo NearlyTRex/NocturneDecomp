@@ -36,9 +36,9 @@
 ;   core_charactr.cpp_CCharacter_dismember_FUN_00427b60
 ;   core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_004291f0
 ;   core_charactr.cpp_CCharacter_explode_FUN_00427ab0
-;   core_charactr.cpp_CCharacter_FUN_00427730
-;   core_charactr.cpp_CCharacter_FUN_00427a60
+;   core_charactr.cpp_CCharacter_igniteBone_FUN_00427730
 ;   core_charactr.cpp_CCharacter_setStaggerAmount_FUN_004286d0
+;   core_charactr.cpp_CCharacter_shatter_FUN_00427a60
 ;   core_game.cpp_CGame_setStatusDisplay_FUN_004a3ab0
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200
 ;   crt_math.c_round_FUN_00563a30
@@ -116,8 +116,8 @@ section .text
     LEA EAX,[ESP + 0x10]                ; 0042859d
     PUSH EAX                            ; 004285a1
     PUSH EBX                            ; 004285a2
-    CALL core_charactr.cpp_CCharacter_FUN_00427730 ; 004285a3
-        ;   XREF to: 00427730 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_00427730(CCharacter * this_ptr, CVector3f * position, int fire_type, int flame_type, ...)
+    CALL core_charactr.cpp_CCharacter_igniteBone_FUN_00427730 ; 004285a3
+        ;   XREF to: 00427730 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_igniteBone_FUN_00427730(CCharacter * this_ptr, CVector3f * position, int fire_type, int flame_type, ...)
     ADD ESP,0x18                        ; 004285a8
     FLD float ptr [ESI + 0x8]           ; 004285ab
         ;   Label: LAB_004285ab
@@ -238,8 +238,8 @@ section .text
         ;   XREF to: 0042865c (CONDITIONAL_JUMP)  ; LAB_0042865c
         ;   Label: LAB_004286ae
     PUSH EBX                            ; 004286b0
-    CALL core_charactr.cpp_CCharacter_FUN_00427a60 ; 004286b1
-        ;   XREF to: 00427a60 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_00427a60(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_shatter_FUN_00427a60 ; 004286b1
+        ;   XREF to: 00427a60 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_shatter_FUN_00427a60(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 004286b6
     JMP 0x00428579                      ; 004286b9
         ;   XREF to: 00428579 (UNCONDITIONAL_JUMP)  ; LAB_00428579

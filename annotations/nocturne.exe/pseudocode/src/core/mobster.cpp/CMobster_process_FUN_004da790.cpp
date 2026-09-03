@@ -77,7 +77,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004da790(CMobster *this_ptr,f
   float local_18;
   float local_14;
   
-  iVar5 = core_charactr_cpp_CCharacter_FUN_004259f0((CCharacter *)this_ptr,delta_time);
+  iVar5 = core_charactr_cpp_CCharacter_process_FUN_004259f0((CCharacter *)this_ptr,delta_time);
   if (iVar5 == 0) {
     if (this_ptr->vehicle != (CDemonActor *)0x0) {
       core_mobster_cpp_CMobster_positionOnVehicle_FUN_004da5a0(this_ptr);
@@ -170,7 +170,8 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004da790(CMobster *this_ptr,f
   pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
                      (&pCVar2->motion_controller);
   iVar5 = pSVar8->state_index;
-  iVar9 = core_charactr_cpp_CCharacter_FUN_00428c00((CCharacter *)this_ptr,delta_time);
+  iVar9 = core_charactr_cpp_CCharacter_processWalking_FUN_00428c00
+                    ((CCharacter *)this_ptr,delta_time);
   if (iVar9 == 0) {
     switch(iVar5) {
     case 0:
@@ -601,6 +602,6 @@ switchD_004db6cf_caseD_3:
   if (EVar6 == DEATH_STATE_ALIVE) {
     core_mobster_cpp_CMobster_aimTommyGun_FUN_004db6f0(this_ptr,delta_time);
   }
-  core_charactr_cpp_CCharacter_FUN_0042a150((CCharacter *)this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042a150((CCharacter *)this_ptr,delta_time);
   return;
 }

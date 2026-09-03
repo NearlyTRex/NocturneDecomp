@@ -74,7 +74,7 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_005200c0(CSmiley *this_ptr,floa
     (*(((this_ptr->base).base.base.vtable._uc)->_uc).processDamage)
               ((CCharacter *)this_ptr,&local_1cc);
   }
-  iVar5 = core_charactr_cpp_CCharacter_FUN_004259f0((CCharacter *)this_ptr,delta_time);
+  iVar5 = core_charactr_cpp_CCharacter_process_FUN_004259f0((CCharacter *)this_ptr,delta_time);
   if (iVar5 == 0) {
     return;
   }
@@ -144,7 +144,8 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_005200c0(CSmiley *this_ptr,floa
                      (&pCVar2->motion_controller);
   iVar5 = pSVar7->state_index;
   local_24 = iVar5;
-  iVar8 = core_charactr_cpp_CCharacter_FUN_00428c00((CCharacter *)this_ptr,delta_time);
+  iVar8 = core_charactr_cpp_CCharacter_processWalking_FUN_00428c00
+                    ((CCharacter *)this_ptr,delta_time);
   if (iVar8 == 0) {
     switch(iVar5) {
     case 1:
@@ -389,6 +390,6 @@ switchD_00520915_caseD_3:
   core_charactr_cpp_CCharacter_preProcess_FUN_004259a0((CCharacter *)this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0
             (&(this_ptr->base).base.model);
-  core_charactr_cpp_CCharacter_FUN_0042a150((CCharacter *)this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042a150((CCharacter *)this_ptr,delta_time);
   return;
 }

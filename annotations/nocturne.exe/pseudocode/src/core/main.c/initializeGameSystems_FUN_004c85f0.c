@@ -486,7 +486,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004c85f0(int argc,char **argv
   engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040e340(&CStack_28,0);
   core_sound_cpp_CSound_findAllSoundFiles_FUN_0052dd20(g_CSound_PTR_005bed68);
   iVar8 = 0;
-  core_mission_cpp_CDemonMission_FUN_004d7e00(g_CDemonMission_PTR_005baf90);
+  core_mission_cpp_CDemonMission_reset_FUN_004d7e00(g_CDemonMission_PTR_005baf90);
   iStack_14 = 0;
   do {
     puVar1 = (uint *)((int)&DAT_005ad51c + iVar8);

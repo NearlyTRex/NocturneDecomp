@@ -6,7 +6,7 @@
 ;
 ; XREF[3]:
 ;   core_game.cpp_CGame_loadAssets_FUN_004a3660 at 004a368e
-;   core_inv.cpp_CInventory_FUN_004c2470 at 004c2dd3
+;   core_inv.cpp_CInventory_renderAllItems_FUN_004c2470 at 004c2dd3
 ;   core_inv.cpp_CInventory_renderSelectedItems_FUN_004c2150 at 004c23d1
 ;
 ; Referenced Globals:

@@ -17,8 +17,8 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
-;   core_bugs.cpp_CBugs_FUN_00422050 at 0042235a
 ;   core_bugs.cpp_CBugs_process_FUN_00421480 at 0042151c
+;   core_bugs.cpp_CBugs_updateBugsBehavior_FUN_00422050 at 0042235a
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00579d2d = 2
@@ -30,9 +30,9 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
 ;   core_bugs.cpp_CBugs_applySwarmTranslation_FUN_00423a50
-;   core_bugs.cpp_CBugs_FUN_00421b80
 ;   core_bugs.cpp_CBugs_recalculateBoundingBox_FUN_00423680
 ;   core_bugs.cpp_CBugs_updateBugRenderingData_FUN_00422c70
+;   core_bugs.cpp_CBugs_updateGroundHeightGrid_FUN_00421b80
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0
@@ -361,8 +361,8 @@ section .text
     ADD ESP,0x8                         ; 00422742
     PUSH EBX                            ; 00422745
         ;   Label: LAB_00422745
-    CALL core_bugs.cpp_CBugs_FUN_00421b80 ; 00422746
-        ;   XREF to: 00421b80 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_CBugs_FUN_00421b80(CBugs * this_ptr)
+    CALL core_bugs.cpp_CBugs_updateGroundHeightGrid_FUN_00421b80 ; 00422746
+        ;   XREF to: 00421b80 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_CBugs_updateGroundHeightGrid_FUN_00421b80(CBugs * this_ptr)
     ADD ESP,0x4                         ; 0042274b
     JMP 0x004223c4                      ; 0042274e
         ;   XREF to: 004223c4 (UNCONDITIONAL_JUMP)  ; LAB_004223c4
@@ -382,8 +382,8 @@ section .text
     JA 0x004225f7                       ; 0042277d
         ;   XREF to: 004225f7 (CONDITIONAL_JUMP)  ; LAB_004225f7
     PUSH EBX                            ; 00422783
-    CALL core_bugs.cpp_CBugs_FUN_00421b80 ; 00422784
-        ;   XREF to: 00421b80 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_CBugs_FUN_00421b80(CBugs * this_ptr)
+    CALL core_bugs.cpp_CBugs_updateGroundHeightGrid_FUN_00421b80 ; 00422784
+        ;   XREF to: 00421b80 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_CBugs_updateGroundHeightGrid_FUN_00421b80(CBugs * this_ptr)
     ADD ESP,0x4                         ; 00422789
     JMP 0x004223c4                      ; 0042278c
         ;   XREF to: 004223c4 (UNCONDITIONAL_JUMP)  ; LAB_004223c4

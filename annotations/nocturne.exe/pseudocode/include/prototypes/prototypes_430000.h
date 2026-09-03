@@ -97,8 +97,8 @@ void __cdecl core_cloth_cpp_CCloth_computeBoneTransform_FUN_00436580(CCloth *thi
 void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_004366f0(CCloth *this_ptr,SClothVertex *vertex);
 void __cdecl core_cloth_cpp_CCloth_process_FUN_00436e50(CCloth *this_ptr,CVector3f *position,CVector3f *euler,float delta_time,float floor_y ,CDeformableModelInstance *model_ptr);
 void __cdecl core_cloth_cpp_CCloth_step_FUN_00436e80(CCloth *this_ptr,CVector3f *position,CVector3f *euler,float delta_time,float floor_y ,CDeformableModelInstance *model_ptr);
-void __cdecl core_cloth_cpp_CCloth_FUN_00437a60(CCloth *this_ptr);
-void __cdecl core_cloth_cpp_CCloth_FUN_00437ab0(CCloth *this_ptr,int param_2,int param_3);
+void __cdecl core_cloth_cpp_CCloth_renderCollisionBones_FUN_00437a60(CCloth *this_ptr);
+void __cdecl core_cloth_cpp_CCloth_renderBone_FUN_00437ab0(CCloth *this_ptr,int bone_index,int show_labels);
 int __cdecl core_cloth_cpp_CCloth_saveJoinedLight_FUN_00437cc0(CCloth *this_ptr,CDeformableModelInstance *model_ptr);
 void __cdecl core_cloth_cpp_CCloth_render_FUN_00437db0(CCloth *this_ptr,CDeformableModelInstance *deformable_model);
 CClothList * __cdecl core_cloth_cpp_CClothList_ctor_FUN_00438210(CClothList *this_ptr);
@@ -263,7 +263,7 @@ void __cdecl core_curtain_cpp_CCurtain_updateWorldPositions_FUN_0043e110(CCurtai
 void __cdecl core_curtain_cpp_CCurtain_updateLocalPositions_FUN_0043e1e0(CCurtain *this_ptr);
 void __cdecl core_curtain_cpp_CCurtain_solveConstraints_FUN_0043e290(CCurtain *this_ptr,SCurtainVertex *vertex);
 void __cdecl core_curtain_cpp_CCurtain_process_FUN_0043ebf0(CCurtain *this_ptr,float delta_time);
-int __cdecl core_curtain_cpp_CCurtain_FUN_0043f330(CCurtain *this_ptr);
+int __cdecl core_curtain_cpp_CCurtain_renderMesh_FUN_0043f330(CCurtain *this_ptr);
 int __cdecl core_curtain_cpp_CCurtain_renderOpaque_FUN_0043f610(CCurtain *this_ptr);
 int __cdecl core_curtain_cpp_CCurtain_renderTransparent_FUN_0043f630(CCurtain *this_ptr);
 ECollisionType __cdecl core_curtain_cpp_CCurtain_getCollisionType_FUN_0043f640(CCurtain *this_ptr,SCollisionInfo *collision_info);

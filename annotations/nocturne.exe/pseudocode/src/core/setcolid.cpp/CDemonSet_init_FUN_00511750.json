@@ -118,19 +118,7 @@
     {
       "addr": "0048b6f0",
       "from_addr": "0048bc14",
-      "name": "core_fire.cpp_CFireEffect_FUN_0048b6f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00498de0",
-      "from_addr": "00499068",
-      "name": "core_gabriela.cpp_CGabriella_FUN_00498de0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004998c0",
-      "from_addr": "00499a74",
-      "name": "core_gabriela.cpp_CGabriella_FUN_004998c0",
+      "name": "core_fire.cpp_CFireEffect_traceLaser_FUN_0048b6f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -140,9 +128,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00498de0",
+      "from_addr": "00499068",
+      "name": "core_gabriela.cpp_CGabriella_scoreTargetVisibility_FUN_00498de0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00498b60",
       "from_addr": "00498bb6",
       "name": "core_gabriela.cpp_CGabriella_tryFireWeapon_FUN_00498b60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004998c0",
+      "from_addr": "00499a74",
+      "name": "core_gabriela.cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_004998c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -196,19 +196,13 @@
     {
       "addr": "0052dff0",
       "from_addr": "0052e2cd",
-      "name": "core_sound.cpp_CSound_FUN_0052dff0",
+      "name": "core_sound.cpp_CSound_process_FUN_0052dff0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0052d790",
       "from_addr": "0052d7d7",
       "name": "core_sound.cpp_processTrainSounds_FUN_0052d790",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0053c800",
-      "from_addr": "0053ce59",
-      "name": "core_stranger.cpp_CStranger_FUN_0053c800",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -227,6 +221,12 @@
       "addr": "0053d100",
       "from_addr": "0053d184",
       "name": "core_stranger.cpp_CStranger_renderOpaque_FUN_0053d100",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053c800",
+      "from_addr": "0053ce59",
+      "name": "core_stranger.cpp_CStranger_tryPlaceObject_FUN_0053c800",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -280,7 +280,7 @@
       {
         "call_addr": "0052e2cd",
         "call_type": "direct",
-        "caller": "core_sound.cpp_CSound_FUN_0052dff0",
+        "caller": "core_sound.cpp_CSound_process_FUN_0052dff0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -291,7 +291,7 @@
       {
         "call_addr": "0052e38c",
         "call_type": "direct",
-        "caller": "core_sound.cpp_CSound_FUN_0052dff0",
+        "caller": "core_sound.cpp_CSound_process_FUN_0052dff0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -368,7 +368,7 @@
       {
         "call_addr": "00499a74",
         "call_type": "direct",
-        "caller": "core_gabriela.cpp_CGabriella_FUN_004998c0",
+        "caller": "core_gabriela.cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_004998c0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

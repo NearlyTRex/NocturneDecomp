@@ -47,13 +47,13 @@ CVector3f * __cdecl CMirrorReflection::applyMirrorTransform(CMirrorReflection *t
 // Address: 004d74a0
 uint __cdecl CMirror::reflectAndClipPrimitive(CMirror *this_ptr,SMRGLHeaderPrimitive *primitive);
 
-// Original: core_mirror.cpp_CMirror_FUN_004d76e0
+// Original: core_mirror.cpp_CMirror_clipAndRenderReflectedPrimitive_FUN_004d76e0
 // Address: 004d76e0
-void __cdecl CMirror(CMirror *this_ptr,SMRGLHeaderPrimitive *prim);
+void __cdecl CMirror::clipAndRenderReflectedPrimitive(CMirror *this_ptr,SMRGLHeaderPrimitive *prim);
 
-// Original: core_mirror.cpp_CMirror_FUN_004d7720
+// Original: core_mirror.cpp_CMirror_renderReflectedPrimitive_FUN_004d7720
 // Address: 004d7720
-int __cdecl CMirror(CMirror *this_ptr,SMRGLHeaderPrimitive *prim);
+int __cdecl CMirror::renderReflectedPrimitive(CMirror *this_ptr,SMRGLHeaderPrimitive *prim);
 
 // Original: core_mirror.cpp_CMirror_renderMirroredPrimitive_FUN_004d7760
 // Address: 004d7760

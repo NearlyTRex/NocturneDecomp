@@ -53,7 +53,7 @@ void __cdecl core_set_cpp_CDemonSet_renderStaticLights_FUN_00509760(CDemonSet *t
                           (pCVar6->sorted_render_actors[0]);
                 if (0 < this_ptr->mirror_glass_actor_count) {
                   do {
-                    core_set_cpp_CDemonSet_FUN_0050e080(this_ptr,iVar5,0);
+                    core_set_cpp_CDemonSet_setupMirrorRendering_FUN_0050e080(this_ptr,iVar5,0);
                     (*((pCVar6->sorted_render_actors[0]->vtable)._ub)->renderOpaque)
                               (pCVar6->sorted_render_actors[0]);
                     iVar5 = iVar5 + 1;

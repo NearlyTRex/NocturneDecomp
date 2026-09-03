@@ -67,29 +67,29 @@ void __cdecl CScript::process(CScript *this_ptr);
 // Address: 004fe710
 int __cdecl CScript::getLetterboxHeight(CScript *this_ptr);
 
-// Original: core_script.cpp_CScript_FUN_004fe770
+// Original: core_script.cpp_CScript_renderSubtitles_FUN_004fe770
 // Address: 004fe770
-void __cdecl CScript(CScript *this_ptr);
+void __cdecl CScript::renderSubtitles(CScript *this_ptr);
 
-// Original: core_script.cpp_CScript_FUN_004fe9d0
+// Original: core_script.cpp_CScript_renderEditor_FUN_004fe9d0
 // Address: 004fe9d0
-void __cdecl CScript(CScript *this_ptr,int left,int top,int right,int bottom);
+void __cdecl CScript::renderEditor(CScript *this_ptr,int left,int top,int right,int bottom);
 
 // Original: core_script.cpp_CScript_FUN_004febd0
 // Address: 004febd0
 int __cdecl CScript(CScript *this_ptr,char *param_2,int param_3);
 
-// Original: core_script.cpp_CScript_FUN_004fee30
+// Original: core_script.cpp_CScript_buildParsedLines_FUN_004fee30
 // Address: 004fee30
-void __cdecl CScript(CScript *this_ptr);
+void __cdecl CScript::buildParsedLines(CScript *this_ptr);
 
-// Original: core_script.cpp_CScript_FUN_004fef60
+// Original: core_script.cpp_CScript_validateSyntax_FUN_004fef60
 // Address: 004fef60
-char * __cdecl CScript(CScript *this_ptr,int *error_line_out);
+char * __cdecl CScript::validateSyntax(CScript *this_ptr,int *error_line_out);
 
-// Original: core_script.cpp_CScript_FUN_004feff0
+// Original: core_script.cpp_CScript_initRuntime_FUN_004feff0
 // Address: 004feff0
-void __cdecl CScript(CScript *this_ptr);
+void __cdecl CScript::initRuntime(CScript *this_ptr);
 
 // Original: core_script.cpp_CScript_executeInitSection_FUN_004ff170
 // Address: 004ff170
@@ -119,13 +119,13 @@ int __cdecl CScript::findLabelIndex(CScript *this_ptr,char *label_name);
 // Address: 00504c70
 int __cdecl CScript::skipCommands(CScript *this_ptr,int direction,int count);
 
-// Original: core_script.cpp_CScript_FUN_00504d60
+// Original: core_script.cpp_CScript_resetDialogState_FUN_00504d60
 // Address: 00504d60
-void __cdecl CScript(CScript *this_ptr);
+void __cdecl CScript::resetDialogState(CScript *this_ptr);
 
-// Original: core_script.cpp_CScript_FUN_00504d90
+// Original: core_script.cpp_CScript_skipCinematic_FUN_00504d90
 // Address: 00504d90
-int __cdecl CScript(CScript *this_ptr);
+int __cdecl CScript::skipCinematic(CScript *this_ptr);
 
 // Original: core_script.cpp_CScript_dbLoad_FUN_00504e70
 // Address: 00504e70

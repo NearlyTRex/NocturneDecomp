@@ -73,13 +73,13 @@
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040df00
 ;   core_actor.cpp_randomChance_FUN_0040dea0
-;   core_charactr.cpp_CCharacter_FUN_004259f0
-;   core_charactr.cpp_CCharacter_FUN_00428c00
-;   core_charactr.cpp_CCharacter_FUN_0042a150
+;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042a150
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_00425960
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_004259a0
+;   core_charactr.cpp_CCharacter_process_FUN_004259f0
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_0042add0
+;   core_charactr.cpp_CCharacter_processWalking_FUN_00428c00
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0
 ;   core_enemy.cpp_CEnemy_testAttackRadius_FUN_004798e0
@@ -101,8 +101,8 @@ section .text
     MOV EBX,dword ptr [EBP + 0x8e]      ; 004a787f
     PUSH dword ptr [EBP + 0x92]         ; 004a7885
     PUSH EBX                            ; 004a788b
-    CALL core_charactr.cpp_CCharacter_FUN_004259f0 ; 004a788c
-        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_004259f0(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_process_FUN_004259f0 ; 004a788c
+        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_process_FUN_004259f0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004a7891
     TEST EAX,EAX                        ; 004a7894
     JZ 0x004a78ea                       ; 004a7896
@@ -175,8 +175,8 @@ section .text
     MOV EDI,dword ptr [EAX + 0x24]      ; 004a7943
     PUSH EBX                            ; 004a7946
     MOV dword ptr [EBP + 0x62],EDI      ; 004a7947
-    CALL core_charactr.cpp_CCharacter_FUN_00428c00 ; 004a794a
-        ;   XREF to: 00428c00 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_00428c00(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_processWalking_FUN_00428c00 ; 004a794a
+        ;   XREF to: 00428c00 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processWalking_FUN_00428c00(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004a794f
     TEST EAX,EAX                        ; 004a7952
     JZ 0x004a8186                       ; 004a7954
@@ -295,8 +295,8 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 004a7a9f
     PUSH EBX                            ; 004a7aa5
     MOV ESI,dword ptr [EBP + 0x62]      ; 004a7aa6
-    CALL core_charactr.cpp_CCharacter_FUN_0042a150 ; 004a7aa9
-        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042a150(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042a150 ; 004a7aa9
+        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042a150(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004a7aae
     CMP ESI,0x5                         ; 004a7ab1
     JNZ 0x004a8196                      ; 004a7ab4

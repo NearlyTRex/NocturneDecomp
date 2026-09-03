@@ -1,0 +1,191 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 5,
+        "line": 20,
+        "message": "unknown type name 'FLOATING_SAVE_AREA'"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 52,
+        "message": "unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 53,
+        "message": "unknown type name 'PCONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 498,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 498,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 499,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 499,
+        "message": "exponent has no digits"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 36,
+    "complexity_score": 34,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 19,
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 55
+  },
+  "cross_references": [
+    {
+      "addr": "005088f0",
+      "from_addr": "00508b3c",
+      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_005088f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00448310",
+    "address_range": [
+      [
+        "00448310",
+        "00448372"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dcamera.cpp_CDemonCamera_saveZBufferScanlines_FUN_00448310",
+    "signature": "void __cdecl core_dcamera_cpp_CDemonCamera_saveZBufferScanlines_FUN_00448310(CDemonCamera *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00481a28",
+      "is_variadic": false,
+      "name": "crt_watcom.c__memcpy_FUN_00481a28"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01bd4260",
+      "name": "g_ZBufferScanlineArray",
+      "type": "uint*[1200]",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00508b3c",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_setCameraView_FUN_005088f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.966666666666667,
+    "instruction_count": 30,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 15,
+      "BOOL_OR": 1,
+      "CALL": 1,
+      "CBRANCH": 2,
+      "COPY": 26,
+      "INT_ADD": 16,
+      "INT_AND": 54,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 23,
+      "INT_LEFT": 6,
+      "INT_LESS": 1,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 9,
+      "INT_OR": 15,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 4,
+      "INT_SEXT": 3,
+      "INT_SLESS": 16,
+      "INT_SUB": 8,
+      "INT_XOR": 4,
+      "LOAD": 12,
+      "POPCOUNT": 10,
+      "RETURN": 1,
+      "STORE": 4,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 239
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonCamera *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 16,
+      "match": "(void *)(iVar1 * 4 + (int)this_ptr",
+      "severity": "moderate",
+      "text": "((void *)(iVar1 * 4 + (int)this_ptr->zbuffer_aligned),",
+      "type": "pointer_cast"
+    }
+  ]
+}

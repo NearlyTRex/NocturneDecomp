@@ -58,7 +58,7 @@ int __cdecl core_emitter_cpp_CEmitter_renderOpaque_FUN_00478f80(CEmitter *this_p
     local_78.color.b = local_cc.color.b;
     direction = core_actor_cpp_CDemonActor_transformVector_FUN_0040a200
                           (&this_ptr->base,&local_24,&local_18);
-    core_fire_cpp_CFireEffect_FUN_0048b6f0
+    core_fire_cpp_CFireEffect_traceLaser_FUN_0048b6f0
               (g_CFireEffect_PTR_005b80f0,&(this_ptr->base).location.position,direction,laser_info,
                iVar1);
     core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);

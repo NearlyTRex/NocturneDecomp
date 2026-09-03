@@ -42,7 +42,7 @@ void __cdecl core_cow_cpp_CZombieCow_process_FUN_0043bdb0(CZombieCow *this_ptr,f
   float local_18;
   float local_14;
   
-  iVar4 = core_charactr_cpp_CCharacter_FUN_004259f0((CCharacter *)this_ptr,delta_time);
+  iVar4 = core_charactr_cpp_CCharacter_process_FUN_004259f0((CCharacter *)this_ptr,delta_time);
   if (iVar4 == 0) {
     return;
   }
@@ -66,7 +66,8 @@ void __cdecl core_cow_cpp_CZombieCow_process_FUN_0043bdb0(CZombieCow *this_ptr,f
   pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
                      (&this_ptr_00->motion_controller);
   iVar4 = pSVar5->state_index;
-  iVar6 = core_charactr_cpp_CCharacter_FUN_00428c00((CCharacter *)this_ptr,delta_time);
+  iVar6 = core_charactr_cpp_CCharacter_processWalking_FUN_00428c00
+                    ((CCharacter *)this_ptr,delta_time);
   if (iVar6 == 0) {
     switch(iVar4) {
     case 0:
@@ -226,6 +227,6 @@ switchD_0043c2cd_caseD_3:
   core_charactr_cpp_CCharacter_preProcess_FUN_004259a0((CCharacter *)this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0
             (&(this_ptr->base).base.model);
-  core_charactr_cpp_CCharacter_FUN_0042a150((CCharacter *)this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042a150((CCharacter *)this_ptr,delta_time);
   return;
 }

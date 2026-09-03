@@ -47,13 +47,13 @@ void __cdecl CStranger::processFrame(CStranger *this_ptr,float delta_time);
 // Address: 00537cd0
 void __cdecl CStranger::processMotionEvents(CStranger *this_ptr,float delta_time);
 
-// Original: core_stranger.cpp_CStranger_FUN_005383e0
+// Original: core_stranger.cpp_CStranger_getCarryLightIntensity_FUN_005383e0
 // Address: 005383e0
-float __cdecl CStranger(CStranger *this_ptr);
+float __cdecl CStranger::getCarryLightIntensity(CStranger *this_ptr);
 
-// Original: core_stranger.cpp_CStranger_FUN_00538440
+// Original: core_stranger.cpp_CStranger_getHandsMidpoint_FUN_00538440
 // Address: 00538440
-float * __cdecl CStranger(CStranger *this_ptr,float *param_2);
+CVector3f * __cdecl CStranger::getHandsMidpoint(CStranger *this_ptr,CVector3f *out_position);
 
 // Original: core_stranger.cpp_CStranger_FUN_005384d0
 // Address: 005384d0
@@ -107,9 +107,9 @@ int __cdecl CStranger::tryClimbLadder(CStranger *this_ptr);
 // Address: 0053c3b0
 int __cdecl CStranger::tryDescendLadder(CStranger *this_ptr);
 
-// Original: core_stranger.cpp_CStranger_FUN_0053c800
+// Original: core_stranger.cpp_CStranger_tryPlaceObject_FUN_0053c800
 // Address: 0053c800
-int __cdecl CStranger(CStranger *this_ptr);
+int __cdecl CStranger::tryPlaceObject(CStranger *this_ptr);
 
 // Original: core_stranger.cpp_CStranger_archive_FUN_0053cf90
 // Address: 0053cf90
@@ -159,21 +159,21 @@ CVector3f * __cdecl CStranger::getThrowDirection(CStranger *this_ptr,CVector3f *
 // Address: 0053f310
 void __cdecl CStranger::updateWeaponLayerActions(CStranger *this_ptr,float delta_time);
 
-// Original: core_stranger.cpp_CStranger_FUN_0053fc60
+// Original: core_stranger.cpp_CStranger_handleActionButton_FUN_0053fc60
 // Address: 0053fc60
-void __cdecl CStranger(CStranger *this_ptr);
+void __cdecl CStranger::handleActionButton(CStranger *this_ptr);
 
 // Original: core_stranger.cpp_CStranger_tryThrowDynamite_FUN_0053ff50
 // Address: 0053ff50
 int __cdecl CStranger::tryThrowDynamite(CStranger *this_ptr);
 
-// Original: core_stranger.cpp_CStranger_FUN_0053ffe0
+// Original: core_stranger.cpp_CStranger_handleFireButton_FUN_0053ffe0
 // Address: 0053ffe0
-void __cdecl CStranger(CStranger *this_ptr,float delta_time);
+void __cdecl CStranger::handleFireButton(CStranger *this_ptr,float delta_time);
 
-// Original: core_stranger.cpp_CStranger_FUN_005402f0
+// Original: core_stranger.cpp_CStranger_updateClothSimulation_FUN_005402f0
 // Address: 005402f0
-void __cdecl CStranger(CStranger *this_ptr);
+void __cdecl CStranger::updateClothSimulation(CStranger *this_ptr);
 
 // Original: core_stranger.cpp_CStranger_processWeaponTick_FUN_00540660
 // Address: 00540660

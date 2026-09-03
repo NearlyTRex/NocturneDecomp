@@ -76,43 +76,43 @@
       {
         "category": "cast_error",
         "column": 37,
-        "line": 302,
+        "line": 303,
         "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
       },
       {
         "category": "cast_error",
         "column": 43,
-        "line": 395,
+        "line": 396,
         "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
       },
       {
         "category": "undeclared_identifier",
         "column": 31,
-        "line": 492,
+        "line": 493,
         "message": "use of undeclared identifier '_DAT_01ccdbac'"
       },
       {
         "category": "undeclared_identifier",
         "column": 55,
-        "line": 489,
+        "line": 490,
         "message": "use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 31,
-        "line": 506,
+        "line": 507,
         "message": "use of undeclared identifier '_DAT_01ccdbb0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 54,
-        "line": 503,
+        "line": 504,
         "message": "use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
       },
       {
         "category": "format_error",
         "column": 42,
-        "line": 538,
+        "line": 539,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1369,
-    "complexity_score": 965,
+    "complexity_score": 966,
     "cross_reference_count": 0,
     "function_call_count": 38,
     "global_count": 22,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 595,
+    "pseudocode_lines": 596,
     "suspect_count": 34,
     "suspect_types": [
       "stack_param",
@@ -137,7 +137,7 @@
       "unrolled_memset",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1964
+    "total_lines": 1965
   },
   "cross_references": [],
   "function": {
@@ -180,19 +180,9 @@
       "name": "core_actor.cpp_randomChance_FUN_0040dea0"
     },
     {
-      "addr": "004259f0",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_004259f0"
-    },
-    {
-      "addr": "00428c00",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_00428c00"
-    },
-    {
       "addr": "0042a150",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042a150"
+      "name": "core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042a150"
     },
     {
       "addr": "00425960",
@@ -215,9 +205,19 @@
       "name": "core_charactr.cpp_CCharacter_preProcess_FUN_004259a0"
     },
     {
+      "addr": "004259f0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_process_FUN_004259f0"
+    },
+    {
       "addr": "0042add0",
       "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_processMotion_FUN_0042add0"
+    },
+    {
+      "addr": "00428c00",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_processWalking_FUN_00428c00"
     },
     {
       "addr": "00429220",
@@ -1098,7 +1098,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 225,
+      "line": 226,
       "match": "1.12104e-44",
       "severity": "mild",
       "text": "fVar15 = 1.12104e-44;",
@@ -1106,7 +1106,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 228,
+      "line": 229,
       "match": "1.4013e-45",
       "severity": "mild",
       "text": "fVar15 = 1.4013e-45;",
@@ -1114,7 +1114,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 295,
+      "line": 296,
       "match": "in_stack_fffffe74",
       "severity": "moderate",
       "text": "fVar15,(float)in_stack_fffffe74);",
@@ -1122,7 +1122,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 388,
+      "line": 389,
       "match": "in_stack_fffffe74",
       "severity": "moderate",
       "text": "pCVar12,fVar15,(float)in_stack_fffffe74);",
@@ -1130,7 +1130,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 414,
+      "line": 415,
       "match": "1.4013e-43",
       "severity": "mild",
       "text": "(pCVar13->model).transformed_vertices[0x4f].y = 1.4013e-43;",
@@ -1138,7 +1138,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 415,
+      "line": 416,
       "match": "in_stack_fffffe74",
       "severity": "moderate",
       "text": "iVar5 = (*(pCVar4->_uc).canBeGrabbed)(pCVar13,in_stack_fffffe74,(int)in_stack_fffffe78);",
@@ -1146,7 +1146,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 415,
+      "line": 416,
       "match": "in_stack_fffffe78",
       "severity": "moderate",
       "text": "iVar5 = (*(pCVar4->_uc).canBeGrabbed)(pCVar13,in_stack_fffffe74,(int)in_stack_fffffe78);",
@@ -1154,7 +1154,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 418,
+      "line": 419,
       "match": "in_stack_fffffe80",
       "severity": "moderate",
       "text": "(pCVar13,(CDemonActor *)in_stack_fffffe80);",
@@ -1162,7 +1162,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 431,
+      "line": 432,
       "match": "1.4013e-43",
       "severity": "mild",
       "text": "(pCVar13->model).transformed_vertices[0x4f].y = 1.4013e-43;",
@@ -1170,7 +1170,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 432,
+      "line": 433,
       "match": "in_stack_fffffe88",
       "severity": "moderate",
       "text": "iVar5 = (*(pCVar4->_uc).canBeGrabbed)(pCVar13,in_stack_fffffe88,in_stack_fffffe8c);",
@@ -1178,7 +1178,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 432,
+      "line": 433,
       "match": "in_stack_fffffe8c",
       "severity": "moderate",
       "text": "iVar5 = (*(pCVar4->_uc).canBeGrabbed)(pCVar13,in_stack_fffffe88,in_stack_fffffe8c);",
@@ -1186,7 +1186,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 437,
+      "line": 438,
       "match": "in_stack_fffffe94",
       "severity": "moderate",
       "text": "(*(((pCVar13->base).vtable._uc)->_uc).isGrabbable)(pCVar13,in_stack_fffffe94);",
@@ -1194,7 +1194,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 482,
+      "line": 483,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(&local_118,(CVector3f *)&DAT_02dd1184,",
@@ -1202,7 +1202,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 496,
+      "line": 497,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(&local_94,(CVector3f *)&DAT_02dd1184,",
@@ -1218,7 +1218,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 281,
+      "line": 282,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -1226,7 +1226,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 377,
+      "line": 378,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -1234,7 +1234,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 533,
+      "line": 534,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -1242,7 +1242,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 565,
+      "line": 566,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.position_delta.z = 0.0;",
@@ -1250,7 +1250,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 568,
+      "line": 569,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",

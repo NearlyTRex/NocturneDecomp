@@ -94,7 +94,7 @@
     {
       "addr": "0041f190",
       "from_addr": "0041f1b1",
-      "name": "core_boxactor.cpp_CBoxActor_FUN_0041f190",
+      "name": "core_boxactor.cpp_CBoxActor_constrainToExtents_FUN_0041f190",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -110,21 +110,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00428c00",
-      "from_addr": "00428d4a",
-      "name": "core_charactr.cpp_CCharacter_FUN_00428c00",
+      "addr": "00428260",
+      "from_addr": "00428273",
+      "name": "core_charactr.cpp_CCharacter_checkCylinderCollisionWorld_FUN_00428260",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0042af70",
       "from_addr": "0042b00f",
-      "name": "core_charactr.cpp_CCharacter_FUN_0042af70",
+      "name": "core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042af70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00428260",
-      "from_addr": "00428273",
-      "name": "core_charactr.cpp_CCharacter_checkCylinderCollisionWorld_FUN_00428260",
+      "addr": "00428c00",
+      "from_addr": "00428d4a",
+      "name": "core_charactr.cpp_CCharacter_processWalking_FUN_00428c00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -202,19 +202,13 @@
     {
       "addr": "0048b6f0",
       "from_addr": "0048b8e6",
-      "name": "core_fire.cpp_CFireEffect_FUN_0048b6f0",
+      "name": "core_fire.cpp_CFireEffect_traceLaser_FUN_0048b6f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004880d0",
       "from_addr": "004881d7",
       "name": "core_fire.cpp_CGunFlame_init_FUN_004880d0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00498de0",
-      "from_addr": "00498e6f",
-      "name": "core_gabriela.cpp_CGabriella_FUN_00498de0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -233,6 +227,12 @@
       "addr": "00495a20",
       "from_addr": "004962ca",
       "name": "core_gabriela.cpp_CGabriella_process_FUN_00495a20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00498de0",
+      "from_addr": "00498e6f",
+      "name": "core_gabriela.cpp_CGabriella_scoreTargetVisibility_FUN_00498de0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -266,12 +266,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004b5110",
-      "from_addr": "004b51af",
-      "name": "core_hero.cpp_CHero_FUN_004b5110",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004b5950",
       "from_addr": "004b5a0a",
       "name": "core_hero.cpp_CHero_findItemUseTarget_FUN_004b5950",
@@ -287,6 +281,12 @@
       "addr": "004b5750",
       "from_addr": "004b5864",
       "name": "core_hero.cpp_CHero_tryApproachNearbyActor_FUN_004b5750",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b5110",
+      "from_addr": "004b51af",
+      "name": "core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004b5110",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -322,7 +322,7 @@
     {
       "addr": "004d4f30",
       "from_addr": "004d4fa2",
-      "name": "core_mimic.cpp_CMimic_FUN_004d4f30",
+      "name": "core_mimic.cpp_CMimic_processAnimation_FUN_004d4f30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -334,7 +334,7 @@
     {
       "addr": "004f7360",
       "from_addr": "004f7411",
-      "name": "core_platfrm.cpp_CPlatform_FUN_004f7360",
+      "name": "core_platfrm.cpp_CPlatform_isActorOnPlatform_FUN_004f7360",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -388,19 +388,13 @@
     {
       "addr": "00533750",
       "from_addr": "00533a4a",
-      "name": "core_spike.cpp_CSpike_FUN_00533750",
+      "name": "core_spike.cpp_CSpike_testCollisionWithCharacters_FUN_00533750",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005384d0",
       "from_addr": "00538891",
       "name": "core_stranger.cpp_CStranger_FUN_005384d0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0053c800",
-      "from_addr": "0053c9c3",
-      "name": "core_stranger.cpp_CStranger_FUN_0053c800",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -449,6 +443,12 @@
       "addr": "0053b630",
       "from_addr": "0053bb88",
       "name": "core_stranger.cpp_CStranger_tryPickupObject_FUN_0053b630",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053c800",
+      "from_addr": "0053c9c3",
+      "name": "core_stranger.cpp_CStranger_tryPlaceObject_FUN_0053c800",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -644,7 +644,7 @@
       {
         "call_addr": "004b51af",
         "call_type": "direct",
-        "caller": "core_hero.cpp_CHero_FUN_004b5110",
+        "caller": "core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004b5110",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

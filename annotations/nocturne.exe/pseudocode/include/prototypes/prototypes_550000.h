@@ -60,7 +60,7 @@ CDemonActorType * __cdecl core_wateract_cpp_CWaterActor_getActorType_FUN_0055121
 CWaterActor * __cdecl core_wateract_cpp_CWaterActor_ctor_FUN_00551220(CWaterActor *this_ptr);
 void __cdecl core_wateract_cpp_CWaterActor_setup_FUN_00551370(CWaterActor *this_ptr);
 void __cdecl core_wateract_cpp_CWaterActor_updateWorldPositions_FUN_00551920(CWaterActor *this_ptr);
-void __cdecl core_wateract_cpp_CWaterActor_FUN_005519c0(CWaterActor *param_1);
+void __cdecl core_wateract_cpp_CWaterActor_updateLocalPositions_FUN_005519c0(CWaterActor *this_ptr);
 void __cdecl core_wateract_cpp_CWaterActor_process_FUN_00551a80(CWaterActor *this_ptr,float delta_time);
 int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_00551c00(CWaterActor *this_ptr);
 CBoundingBox3D * __cdecl core_wateract_cpp_CWaterActor_getBoundingBox_FUN_00551e40(CWaterActor *this_ptr,CBoundingBox3D *out_box);

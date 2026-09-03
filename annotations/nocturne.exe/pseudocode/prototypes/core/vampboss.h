@@ -67,9 +67,9 @@ void __cdecl CVampireBoss::summonBats(CVampireBoss *this_ptr);
 // Address: 0054e0b0
 void __cdecl CVampireBoss::summonStalagmites(CVampireBoss *this_ptr);
 
-// Original: core_vampboss.cpp_CVampireBoss_FUN_0054e130
+// Original: core_vampboss.cpp_CVampireBoss_summonFireEmitters_FUN_0054e130
 // Address: 0054e130
-void __cdecl CVampireBoss(CVampireBoss *this_ptr);
+void __cdecl CVampireBoss::summonFireEmitters(CVampireBoss *this_ptr);
 
 // Original: core_vampboss.cpp_CVampireBoss_transformToBat_FUN_0054e1a0
 // Address: 0054e1a0

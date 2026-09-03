@@ -24,7 +24,13 @@
 #   SKIP_SHAPE  bodies disagree too much in size to trust the pairing
 #   SKIP_CRT    CRT interior: reachable only from other CRT, deliberately walled off
 #   SKIP_NAMED  nocturne already has a class/method core that differs; never
-#               clobbered, reported for review instead
+#               clobbered, reported for review instead. --upgrade-class-only
+#               exempts the one case that is not a disagreement: nocturne holds
+#               a bare CLASS with no method (`CDemonSet`) and nocedit offers
+#               that same class plus a method (`CDemonSet_renderScene`). That
+#               strictly adds information and cannot rename anything, so it
+#               falls through to the ordinary gates. A different class, or a
+#               method already present, still skips.
 #   SKIP_TU     nocturne's hand-assigned unit disagrees with nocedit's, so the
 #               pairing is suspect. Independent of everything the matcher used,
 #               which is what makes it worth blocking on (--ignore-tu to allow)
@@ -155,7 +161,7 @@ def target_name(nocedit_name, nocturne_name, nocturne_addr):
 
 def plan(mapping, crt_wall, min_confidence, want_signatures, current_names,
          require_tu_match=True, refresh_signatures=False, ledger=None,
-         current_params=None):
+         current_params=None, upgrade_class_only=False, current_receiver=None):
     """Decide an action per pair without touching Ghidra.
 
     `ledger` is an optional reviewed approval list keyed by nocturne address
@@ -187,6 +193,26 @@ def plan(mapping, crt_wall, min_confidence, want_signatures, current_names,
             claimed_cls = mcls.group(1) if mcls else None
         needs_receiver = claimed_cls is not None
         has_receiver = (current_params or {}).get(b, 0) > 0
+        # Counting parameters is not enough. The name asserts parameter 0 is
+        # `<Class> *this_ptr`, and a target that already declares some OTHER
+        # class there satisfies the count while still contradicting the name --
+        # which is precisely what check_this_ptr aborts the export on. A base
+        # class is not close enough: CTeleportDest::getCollisionType named onto
+        # a receiver typed CDemonActor* killed a whole nocturne export.
+        recv_type = ((current_receiver or {}).get(b) or "").replace(" ", "")
+        receiver_conflict = bool(needs_receiver and has_receiver and recv_type
+                                 and recv_type != claimed_cls + "*")
+
+        # nocturne carrying a bare class with no method is not a competing
+        # name, it is an unnamed method on a known class -- every one of these
+        # came from an earlier transfer that could only recover the class. Only
+        # an exact `<class>_` extension qualifies: a different class, or a
+        # method already present, is a real disagreement and keeps its veto.
+        _, want_core = sm.split_qualified_name(want) if want else (None, None)
+        class_only_upgrade = bool(
+            upgrade_class_only and cur_core and want_core
+            and "_" not in cur_core
+            and want_core.startswith(cur_core + "_"))
 
         led = ledger.get(b) if ledger else None
         # An approved row bypasses the confidence gate but still faces every
@@ -240,7 +266,7 @@ def plan(mapping, crt_wall, min_confidence, want_signatures, current_names,
             row["action"] = ("NAME_SIG"
                              if (refresh_signatures and sig_ok)
                              else "ALREADY")
-        elif cur_core is not None:
+        elif cur_core is not None and not class_only_upgrade:
             # A core already present is either hand-written or from an earlier
             # transfer; either way it is not this run's to overwrite.
             row["action"] = "SKIP_NAMED"
@@ -264,6 +290,13 @@ def plan(mapping, crt_wall, min_confidence, want_signatures, current_names,
                 row["action"] = "SKIP_CONF"
                 row["detail"] = ("ambiguous" if p.get("ambiguous")
                                  else "confidence %.2f" % p["confidence"])
+        elif needs_receiver and receiver_conflict and not sig_ok:
+            # Applying the signature would fix parameter 0 on the way in; with
+            # no signature to apply, naming it would plant the defect instead.
+            row["action"] = "SKIP_NO_RECEIVER"
+            row["detail"] = ("name claims class %s but the target's parameter 0 "
+                             "is %s, and no signature is being applied to "
+                             "correct it" % (claimed_cls, recv_type))
         elif needs_receiver and not has_receiver:
             # `<tu>_<Class>_<method>_FUN_<addr>` ASSERTS that parameter 0 is
             # `<Class> *this_ptr`. Applying such a name to a function with no
@@ -501,6 +534,12 @@ def main():
                     help="map_sibling_functions.py output (optionally verified)")
     ap.add_argument("--crt-wall", help="wall_off_crt.py output; skips CRT interior")
     ap.add_argument("--min-confidence", type=float, default=0.90)
+    ap.add_argument("--upgrade-class-only", action="store_true",
+                    help="let a pair name a target whose existing core is a bare "
+                         "class with no method, when the proposed core is that "
+                         "same class plus a method (CDemonSet -> "
+                         "CDemonSet_renderScene). Adds information; never renames. "
+                         "A different class or an existing method still skips.")
     ap.add_argument("--signatures", action="store_true",
                     help="also transfer prototypes where the signature gate is "
                          "satisfied (see signature_supported)")
@@ -576,13 +615,22 @@ def main():
             # Live parameter counts, so the receiver gate can tell an
             # unsignatured target from one that can actually hold `this`.
             current_params = {a: f.getParameterCount() for a, f in funcs.items()}
+            # Parameter 0's declared type, so the receiver gate can see a
+            # wrong-class receiver and not just a missing one.
+            current_receiver = {}
+            for a, f in funcs.items():
+                ps = f.getParameters()
+                if len(ps):
+                    current_receiver[a] = str(ps[0].getDataType().getName())
             print("Program has %d functions" % len(funcs))
 
             rows = plan(mapping, crt_wall, args.min_confidence,
                         args.signatures, current,
                         require_tu_match=not args.ignore_tu,
                         refresh_signatures=args.refresh_signatures,
-                        ledger=ledger, current_params=current_params)
+                        ledger=ledger, current_params=current_params,
+                        upgrade_class_only=args.upgrade_class_only,
+                        current_receiver=current_receiver)
             for r in rows:
                 r["conv"] = conv_by_a.get(r["a"])
                 r["sig"] = sig_by_a.get(r["a"])

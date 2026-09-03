@@ -58,31 +58,31 @@
       {
         "category": "undeclared_identifier",
         "column": 52,
-        "line": 358,
+        "line": 359,
         "message": "use of undeclared identifier 'DAT_02dd1184'"
       },
       {
         "category": "undeclared_identifier",
         "column": 28,
-        "line": 360,
+        "line": 361,
         "message": "use of undeclared identifier '_DAT_01e57220'"
       },
       {
         "category": "undeclared_identifier",
         "column": 52,
-        "line": 371,
+        "line": 372,
         "message": "use of undeclared identifier 'DAT_02dd1184'"
       },
       {
         "category": "undeclared_identifier",
         "column": 28,
-        "line": 373,
+        "line": 374,
         "message": "use of undeclared identifier '_DAT_01e57218'"
       },
       {
         "category": "format_error",
         "column": 85,
-        "line": 436,
+        "line": 437,
         "message": "format specifies type 'char *' but the argument has type 'CSentinel *' [-Werror,-Wformat]"
       }
     ],
@@ -92,12 +92,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1024,
-    "complexity_score": 585,
+    "complexity_score": 586,
     "cross_reference_count": 0,
     "function_call_count": 24,
     "global_count": 18,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 465,
+    "pseudocode_lines": 466,
     "suspect_count": 10,
     "suspect_types": [
       "undefined_data",
@@ -105,7 +105,7 @@
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 1489
+    "total_lines": 1490
   },
   "cross_references": [],
   "function": {
@@ -143,19 +143,9 @@
       "name": "core_actor.cpp_randomChance_FUN_0040dea0"
     },
     {
-      "addr": "004259f0",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_004259f0"
-    },
-    {
-      "addr": "00428c00",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_00428c00"
-    },
-    {
       "addr": "0042a150",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042a150"
+      "name": "core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042a150"
     },
     {
       "addr": "00425960",
@@ -173,9 +163,19 @@
       "name": "core_charactr.cpp_CCharacter_preProcess_FUN_004259a0"
     },
     {
+      "addr": "004259f0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_process_FUN_004259f0"
+    },
+    {
       "addr": "0042add0",
       "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_processMotion_FUN_0042add0"
+    },
+    {
+      "addr": "00428c00",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_processWalking_FUN_00428c00"
     },
     {
       "addr": "004247f0",
@@ -861,7 +861,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 351,
+      "line": 352,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(&local_b0,(CVector3f *)&DAT_02dd1184,",
@@ -869,7 +869,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 364,
+      "line": 365,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(&local_50,(CVector3f *)&DAT_02dd1184,",
@@ -885,7 +885,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 208,
+      "line": 209,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -893,7 +893,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 289,
+      "line": 290,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -901,7 +901,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 431,
+      "line": 432,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -909,7 +909,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 455,
+      "line": 456,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.position_delta.z = 0.0;",
@@ -917,7 +917,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 458,
+      "line": 459,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",

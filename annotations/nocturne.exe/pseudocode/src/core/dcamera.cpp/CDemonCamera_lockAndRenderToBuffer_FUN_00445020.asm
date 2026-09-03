@@ -7,7 +7,7 @@
 ; CDemonCamera *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_set.cpp_CDemonSet_FUN_00509a80 at 00509d1f
+;   core_set.cpp_CDemonSet_renderScene_FUN_00509a80 at 00509d1f
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dcamera_cpp_0057b983

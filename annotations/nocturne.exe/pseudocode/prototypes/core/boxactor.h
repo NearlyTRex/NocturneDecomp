@@ -83,9 +83,9 @@ EGroundType __cdecl CBoxActor::getGroundType(CBoxActor *this_ptr);
 // Address: 0041f170
 void __cdecl CBoxActor::onPickup(CBoxActor *this_ptr,CDemonActor *owner);
 
-// Original: core_boxactor.cpp_CBoxActor_FUN_0041f190
+// Original: core_boxactor.cpp_CBoxActor_constrainToExtents_FUN_0041f190
 // Address: 0041f190
-void __cdecl CBoxActor(CBoxActor *this_ptr);
+void __cdecl CBoxActor::constrainToExtents(CBoxActor *this_ptr);
 
 // Original: core_boxactor.cpp_CBoxActor_setPositionAndOrientation_FUN_0041f240
 // Address: 0041f240

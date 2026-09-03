@@ -97,7 +97,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_applyACTPalette_FUN_004f4a00(CPa
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_applyPaletteToPackedData_FUN_004f4a50(CPackedBitmap *this_ptr,uchar *palette_buffer);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_applyPalette_FUN_004f4ab0(CPackedBitmap *this_ptr);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_loadByFileExtension_FUN_004f4ac0(CPackedBitmap *this_ptr,int apply_palette_flag);
-void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_FUN_004f4b30(CPackedBitmap *this_ptr,char *param_2);
+void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_saveToPBMFile_FUN_004f4b30(CPackedBitmap *this_ptr,char *param_2);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_writePBMFile_FUN_004f4bb0(CPackedBitmap *this_ptr,_FILE *file_handle);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_004f4c80(CPackedBitmap *this_ptr,_FILE *file_handle,int skip_data_load);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_openPBMFile_FUN_004f4e40(CPackedBitmap *this_ptr,char *filename,int apply_palette_flag);
@@ -138,7 +138,7 @@ int __cdecl core_platfrm_cpp_CPlatform_renderOpaque_FUN_004f6c60(CPlatform *this
 void __cdecl core_platfrm_cpp_CPlatform_renderBackground_FUN_004f6d90(CPlatform *this_ptr,int layer_flag);
 CBoundingBox3D * __cdecl core_platfrm_cpp_CPlatform_getBoundingBox_FUN_004f6f50(CPlatform *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_platfrm_cpp_CPlatform_archive_FUN_004f6fa0(CPlatform *this_ptr);
-int __cdecl core_platfrm_cpp_CPlatform_FUN_004f7360(CPlatform *this_ptr,CDemonActor *actor);
+int __cdecl core_platfrm_cpp_CPlatform_isActorOnPlatform_FUN_004f7360(CPlatform *this_ptr,CDemonActor *actor);
 ECollisionType __cdecl core_platfrm_cpp_CPlatform_getCollisionType_FUN_004f7560(CPlatform *this_ptr,SCollisionInfo *collision_info);
 int __cdecl core_platfrm_cpp_CPlatform_allowBulletHoles_FUN_004f7580(CPlatform *this_ptr);
 EGroundType __cdecl core_platfrm_cpp_CPlatform_getGroundType_FUN_004f75a0(CPlatform *this_ptr);
@@ -216,9 +216,9 @@ void __cdecl core_scat_cpp_CScat_processDamage_FUN_004fcbd0(CScat *this_ptr,SDam
 int __cdecl core_scat_cpp_CScat_isWeaponDrawn_FUN_004fcd20(CScat *this_ptr);
 void __cdecl core_scat_cpp_CScat_drawWeapon_FUN_004fcd30(CScat *this_ptr,int drawn);
 int __cdecl core_scat_cpp_CScat_isWeaponReady_FUN_004fcd40(CScat *this_ptr);
-void __cdecl core_scat_cpp_CScat_FUN_004fcd90(CScat *this_ptr,float delta_time);
+void __cdecl core_scat_cpp_CScat_updateWeaponState_FUN_004fcd90(CScat *this_ptr,float delta_time);
 void __cdecl core_scat_cpp_CScat_blendLayerAction_FUN_004fcff0(CScat *this_ptr);
-void __cdecl core_scat_cpp_CScat_FUN_004fd1d0(CScat *this_ptr,int hand_index);
+void __cdecl core_scat_cpp_CScat_blendAimBones_FUN_004fd1d0(CScat *this_ptr,int hand_index);
 void __cdecl core_scat_cpp_CScat_updateAiming_FUN_004fd450(CScat *this_ptr,float delta_time,int is_holstered);
 int __cdecl core_scat_cpp_CScat_scoreAimTarget_FUN_004fda20(CScat *this_ptr,CDemonActor *target,int hand_index);
 void __cdecl core_scat_cpp_CScat_FUN_004fdd00(CScat *this_ptr);
@@ -239,12 +239,12 @@ void __cdecl core_script_cpp_CScript_FUN_004fe500(CScript *this_ptr);
 void __cdecl core_script_cpp_CScript_freeParsedLines_FUN_004fe550(CScript *this_ptr);
 void __cdecl core_script_cpp_CScript_process_FUN_004fe5b0(CScript *this_ptr);
 int __cdecl core_script_cpp_CScript_getLetterboxHeight_FUN_004fe710(CScript *this_ptr);
-void __cdecl core_script_cpp_CScript_FUN_004fe770(CScript *this_ptr);
-void __cdecl core_script_cpp_CScript_FUN_004fe9d0(CScript *this_ptr,int left,int top,int right,int bottom);
+void __cdecl core_script_cpp_CScript_renderSubtitles_FUN_004fe770(CScript *this_ptr);
+void __cdecl core_script_cpp_CScript_renderEditor_FUN_004fe9d0(CScript *this_ptr,int left,int top,int right,int bottom);
 int __cdecl core_script_cpp_CScript_FUN_004febd0(CScript *this_ptr,char *param_2,int param_3);
-void __cdecl core_script_cpp_CScript_FUN_004fee30(CScript *this_ptr);
-char * __cdecl core_script_cpp_CScript_FUN_004fef60(CScript *this_ptr,int *error_line_out);
-void __cdecl core_script_cpp_CScript_FUN_004feff0(CScript *this_ptr);
+void __cdecl core_script_cpp_CScript_buildParsedLines_FUN_004fee30(CScript *this_ptr);
+char * __cdecl core_script_cpp_CScript_validateSyntax_FUN_004fef60(CScript *this_ptr,int *error_line_out);
+void __cdecl core_script_cpp_CScript_initRuntime_FUN_004feff0(CScript *this_ptr);
 void __cdecl core_script_cpp_CScript_executeInitSection_FUN_004ff170(CScript *this_ptr);
 int __cdecl core_script_cpp_CScript_step_FUN_004ff2c0(CScript *this_ptr,float *time_remaining);
 

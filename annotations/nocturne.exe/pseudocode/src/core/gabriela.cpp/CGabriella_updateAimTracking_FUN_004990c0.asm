@@ -44,7 +44,7 @@
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040df00
-;   core_gabriela.cpp_CGabriella_FUN_00498de0
+;   core_gabriela.cpp_CGabriella_scoreTargetVisibility_FUN_00498de0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
@@ -212,8 +212,8 @@ section .text
     PUSH EAX                            ; 004992ea
     PUSH ESI                            ; 004992eb
     PUSH EBX                            ; 004992ec
-    CALL core_gabriela.cpp_CGabriella_FUN_00498de0 ; 004992ed
-        ;   XREF to: 00498de0 (UNCONDITIONAL_CALL)  ; float core_gabriela.cpp_CGabriella_FUN_00498de0(CGabriella * this_ptr, CDemonActor * target_actor, int use_wider_fov)
+    CALL core_gabriela.cpp_CGabriella_scoreTargetVisibility_FUN_00498de0 ; 004992ed
+        ;   XREF to: 00498de0 (UNCONDITIONAL_CALL)  ; float core_gabriela.cpp_CGabriella_scoreTargetVisibility_FUN_00498de0(CGabriella * this_ptr, CDemonActor * target_actor, int use_wider_fov)
     MOV dword ptr [ESP + 0x12c],EAX     ; 004992f2
     FLD float ptr [ESP + 0x12c]         ; 004992f9
     ADD ESP,0xc                         ; 00499300

@@ -100,7 +100,7 @@ int __cdecl core_spike_cpp_CSpike_renderOpaque_FUN_00533530(CSpike *this_ptr);
 CBoundingBox3D * __cdecl core_spike_cpp_CSpike_getBoundingBox_FUN_005335a0(CSpike *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_spike_cpp_CSpike_archive_FUN_005335f0(CSpike *this_ptr);
 ECollisionType __cdecl core_spike_cpp_CSpike_getCollisionType_FUN_00533740(CSpike *this_ptr,SCollisionInfo *collision_info);
-void __cdecl core_spike_cpp_CSpike_FUN_00533750(CSpike *this_ptr);
+void __cdecl core_spike_cpp_CSpike_testCollisionWithCharacters_FUN_00533750(CSpike *this_ptr);
 CSpike * __cdecl core_spike_cpp_CSpike_dtor_FUN_00533c90(CSpike *this_ptr,uint flags);
 void __cdecl core_spline_cpp_computeSplineBasis_FUN_00533ce0(float *out_basis,float t,float tension);
 float __cdecl core_spline_cpp_evaluateSplineScalar_FUN_00533e70(float *basis,float *cp0,float *cp1,float *cp2,float *cp3);
@@ -150,8 +150,8 @@ void __cdecl core_stranger_cpp_CStranger_setup_FUN_00535450(CStranger *this_ptr)
 void __cdecl core_stranger_cpp_CStranger_process_FUN_005357d0(CStranger *this_ptr,float delta_time);
 void __cdecl core_stranger_cpp_CStranger_processFrame_FUN_00535900(CStranger *this_ptr,float delta_time);
 void __cdecl core_stranger_cpp_CStranger_processMotionEvents_FUN_00537cd0(CStranger *this_ptr,float delta_time);
-float __cdecl core_stranger_cpp_CStranger_FUN_005383e0(CStranger *this_ptr);
-float * __cdecl core_stranger_cpp_CStranger_FUN_00538440(CStranger *this_ptr,float *param_2);
+float __cdecl core_stranger_cpp_CStranger_getCarryLightIntensity_FUN_005383e0(CStranger *this_ptr);
+CVector3f * __cdecl core_stranger_cpp_CStranger_getHandsMidpoint_FUN_00538440(CStranger *this_ptr,CVector3f *out_position);
 void __cdecl core_stranger_cpp_CStranger_FUN_005384d0(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_FUN_005396d0(CStranger *this_ptr,SPose *out_pose);
 void __cdecl core_stranger_cpp_CStranger_updateTurnBlending_FUN_005397b0(CStranger *this_ptr,float delta_time);
@@ -165,7 +165,7 @@ void __cdecl core_stranger_cpp_CStranger_processPickupComplete_FUN_0053beb0(CStr
 void __cdecl core_stranger_cpp_CStranger_dropRightHandObject_FUN_0053bf30(CStranger *this_ptr);
 int __cdecl core_stranger_cpp_CStranger_tryClimbLadder_FUN_0053bf90(CStranger *this_ptr);
 int __cdecl core_stranger_cpp_CStranger_tryDescendLadder_FUN_0053c3b0(CStranger *this_ptr);
-int __cdecl core_stranger_cpp_CStranger_FUN_0053c800(CStranger *this_ptr);
+int __cdecl core_stranger_cpp_CStranger_tryPlaceObject_FUN_0053c800(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_archive_FUN_0053cf90(CStranger *this_ptr);
 int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_0053d100(CStranger *this_ptr);
 int __cdecl core_stranger_cpp_CStranger_renderTransparent_FUN_0053d6c0(CStranger *this_ptr);
@@ -178,7 +178,7 @@ void __cdecl core_stranger_cpp_CStranger_updateArmRecoilBlend_FUN_0053ecc0(CStra
 void __stack2_esi core_stranger_cpp_CStranger_getCarryObjToBodyXForm_FUN_0053f210(CStranger *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 CVector3f * __cdecl core_stranger_cpp_CStranger_getThrowDirection_FUN_0053f260(CStranger *this_ptr,CVector3f *out_direction);
 void __cdecl core_stranger_cpp_CStranger_updateWeaponLayerActions_FUN_0053f310(CStranger *this_ptr,float delta_time);
-void __cdecl core_stranger_cpp_CStranger_FUN_0053fc60(CStranger *this_ptr);
+void __cdecl core_stranger_cpp_CStranger_handleActionButton_FUN_0053fc60(CStranger *this_ptr);
 int __cdecl core_stranger_cpp_CStranger_tryThrowDynamite_FUN_0053ff50(CStranger *this_ptr);
-void __cdecl core_stranger_cpp_CStranger_FUN_0053ffe0(CStranger *this_ptr,float delta_time);
+void __cdecl core_stranger_cpp_CStranger_handleFireButton_FUN_0053ffe0(CStranger *this_ptr,float delta_time);
 

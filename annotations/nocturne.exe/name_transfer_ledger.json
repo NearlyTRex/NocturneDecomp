@@ -5,6 +5,15 @@
  "purpose": "Pairs that must NEVER be named, with the evidence that condemned them. This is the negative counterpart to sibling_manual_pairs.json, which can only ADD pairs -- a wrong pair regenerates on every refresh, so the refusal has to live somewhere. Consumed by apply_sibling_annotations.py --ledger, where a rejected row is skipped (SKIP_LEDGER) however high the mapper rated it.\n\nThe approvals this file used to carry were applied on 2026-08-15 and then removed: once a name is in Ghidra, Ghidra is the record, and a stale approval list re-approves rows whose addresses have since moved. Rejections do not expire the same way -- an absent name is indistinguishable from an un-analysed one, so nothing else remembers the decision.",
  "entries": [
   {
+   "a": "00420680",
+   "b": "0041d050",
+   "name": "core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420680",
+   "confidence": 1.0,
+   "verdict": "STRONG",
+   "status": "approve",
+   "note": "APPROVE despite shape=size_mismatch (447 B vs 1023 B). The size gap IS the finding, not a mispairing: retail inlines the bounding-box rasterisation test that the editor delegates to the CDemonCamera::testVisibility virtual, and retail has no testVisibility in dcamera.cpp at all. Slot proof: core/box.cpp holds 30 functions in the same order in both exes, this one sitting between isVisible and getBoundingBoxScreenSize on each side. Body proof: both open with the identical prologue -- getCorner, *256 via FISTP, transformAndProjectPoint into g_RenderVertexBuffer[i], byte test at +0x13 for bit 31 of screen_x, 0xff outcode accumulator, cmp against 8 corners. Full adjudication in annotations/nocturne.exe/tu_anchor_reviewed.json; consequence in research/14-mirror_actor_reflections/."
+  },
+  {
    "a": "00456400",
    "b": "0044a150",
    "name": "core_dcube.cpp_clipTriangleToAABB_FUN_00456400",
@@ -21,6 +30,15 @@
    "verdict": "STRONG",
    "status": "reject",
    "note": "REJECT despite an identical body: it is a generic 3-instruction accessor (return arg->field_0x8), a shape the strict hash collides on. The TUs are incompatible -- shape_multicrm.cpp is an editor-only tool, mapped into game core_stranger.cpp -- and nocedit has nothing between 005c6930 and 005c6950, so nocturne 00540a10 is most likely game-only. The body audit CANNOT see this; only the TU cross-check can."
+  },
+  {
+   "a": "00571320",
+   "b": "0050aba0",
+   "name": "core_set.cpp_CDemonSet_isCameraPanning_FUN_00571320",
+   "confidence": 0.85,
+   "verdict": "SUSPECT",
+   "status": "reject",
+   "note": "NOT the same function. nocedit isCameraPanning is an 89 B accessor returning cameras[selected_camera_index].is_panning; nocturne 0050aba0 is a 375 B render path calling beginScene, buildDisplayList, renderOpaqueActors, restoreDirtyRegions and atan2. The pairing comes from a single callsite signal via renderScene, and that callsite is exactly where the two builds diverge: nocedit renderScene does `if (skip_prerender) { if (isCameraPanning(this)) { <callee compiled out -- raw bytes 53 83 c4 04, a push and stack cleanup with no CALL> return; } }`, while nocturne inlined the predicate into a field test and calls the render function there: `if (skip_prerender && this->field_0x15aa64) { FUN_0050aba0(this); return; }`. Same call slot, different callee. 0050aba0 is game-only and has no nocedit counterpart -- it must stay anonymous. Confidence rose 0.59 -> 0.85 when the renderScene pair was added by tu_anchor.py, so pin the rejection rather than relying on the 0.90 gate."
   }
  ]
 }

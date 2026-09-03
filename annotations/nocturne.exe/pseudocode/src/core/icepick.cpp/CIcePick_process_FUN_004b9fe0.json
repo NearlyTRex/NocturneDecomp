@@ -64,55 +64,55 @@
       {
         "category": "format_error",
         "column": 91,
-        "line": 219,
+        "line": 220,
         "message": "format specifies type 'char *' but the argument has type 'CIcePick *' [-Werror,-Wformat]"
       },
       {
         "category": "cast_error",
         "column": 14,
-        "line": 253,
+        "line": 254,
         "message": "cannot cast from type 'float' to pointer type 'CDeformableModelInstance *'"
       },
       {
         "category": "cast_error",
         "column": 9,
-        "line": 254,
-        "message": "C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed"
-      },
-      {
-        "category": "cast_error",
-        "column": 45,
         "line": 255,
         "message": "C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed"
       },
       {
         "category": "cast_error",
+        "column": 45,
+        "line": 256,
+        "message": "C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed"
+      },
+      {
+        "category": "cast_error",
         "column": 32,
-        "line": 257,
+        "line": 258,
         "message": "C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed"
       },
       {
         "category": "cast_error",
         "column": 45,
-        "line": 258,
+        "line": 259,
         "message": "C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed"
       },
       {
         "category": "type_error",
         "column": 84,
-        "line": 258,
+        "line": 259,
         "message": "invalid suffix '._0_4_' on floating constant"
       },
       {
         "category": "cast_error",
         "column": 14,
-        "line": 260,
+        "line": 261,
         "message": "cannot cast from type 'float' to pointer type 'CDeformableModelInstance *'"
       },
       {
         "category": "cast_error",
         "column": 45,
-        "line": 261,
+        "line": 262,
         "message": "C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 682,
-    "complexity_score": 579,
+    "complexity_score": 580,
     "cross_reference_count": 0,
     "function_call_count": 30,
     "global_count": 14,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 314,
+    "pseudocode_lines": 315,
     "suspect_count": 21,
     "suspect_types": [
       "pointer_truncation",
@@ -142,7 +142,7 @@
       "warning_overlapping_globals",
       "warning_unreachable"
     ],
-    "total_lines": 996
+    "total_lines": 997
   },
   "cross_references": [],
   "function": {
@@ -180,19 +180,9 @@
       "name": "core_actor.cpp_normalizeAngleToPi_FUN_0040df00"
     },
     {
-      "addr": "004259f0",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_004259f0"
-    },
-    {
-      "addr": "00428c00",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_00428c00"
-    },
-    {
       "addr": "0042a150",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042a150"
+      "name": "core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042a150"
     },
     {
       "addr": "00425050",
@@ -205,14 +195,19 @@
       "name": "core_charactr.cpp_CCharacter_preProcess_FUN_004259a0"
     },
     {
+      "addr": "004259f0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_process_FUN_004259f0"
+    },
+    {
+      "addr": "00428c00",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_processWalking_FUN_00428c00"
+    },
+    {
       "addr": "004b5490",
       "is_variadic": false,
       "name": "core_hero.cpp_CHero_executeLeverPull_FUN_004b5490"
-    },
-    {
-      "addr": "004b5110",
-      "is_variadic": false,
-      "name": "core_hero.cpp_CHero_FUN_004b5110"
     },
     {
       "addr": "004b4e90",
@@ -223,6 +218,11 @@
       "addr": "004b5270",
       "is_variadic": false,
       "name": "core_hero.cpp_CHero_tryOpenDoor_FUN_004b5270"
+    },
+    {
+      "addr": "004b5110",
+      "is_variadic": false,
+      "name": "core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004b5110"
     },
     {
       "addr": "004b52f0",
@@ -240,14 +240,9 @@
       "name": "core_icepick.cpp_CIcePick_findAndPickupGun_FUN_004ba8a0"
     },
     {
-      "addr": "004ba740",
-      "is_variadic": false,
-      "name": "core_icepick.cpp_CIcePick_FUN_004ba740"
-    },
-    {
       "addr": "004baba0",
       "is_variadic": false,
-      "name": "core_icepick.cpp_CIcePick_FUN_004baba0"
+      "name": "core_icepick.cpp_CIcePick_processAI_FUN_004baba0"
     },
     {
       "addr": "004bb2d0",
@@ -258,6 +253,11 @@
       "addr": "004baa00",
       "is_variadic": false,
       "name": "core_icepick.cpp_CIcePick_startThrowAttack_FUN_004baa00"
+    },
+    {
+      "addr": "004ba740",
+      "is_variadic": false,
+      "name": "core_icepick.cpp_CIcePick_updateShootBlend_FUN_004ba740"
     },
     {
       "addr": "004c1850",
@@ -658,7 +658,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 159,
+      "line": 160,
       "match": "in_stack_ffffff68",
       "severity": "moderate",
       "text": "(*(((pCVar10->base).vtable._uc)->_uc).isGrabbable)(pCVar10,in_stack_ffffff68);",
@@ -666,7 +666,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 251,
+      "line": 252,
       "match": "._0_4_",
       "severity": "mild",
       "text": "pCVar7 = (CDeformableModelInstance *)((float)pCVar7 + 1.5938625219265179e-314._0_4_);",
@@ -674,7 +674,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 280,
+      "line": 281,
       "match": "in_stack_ffffff78",
       "severity": "moderate",
       "text": "in_stack_ffffff78 = 1.4013e-45;",
@@ -682,7 +682,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 280,
+      "line": 281,
       "match": "1.4013e-45",
       "severity": "mild",
       "text": "in_stack_ffffff78 = 1.4013e-45;",
@@ -690,7 +690,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 290,
+      "line": 291,
       "match": "1.4013e-43",
       "severity": "mild",
       "text": "pCVar8[4].location.position.x = 1.4013e-43;",
@@ -698,7 +698,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 301,
+      "line": 302,
       "match": "&stack0xffffff78",
       "severity": "moderate",
       "text": "(&this_ptr->head_look_euler,(CQuaternion4f *)&stack0xffffff78);",
@@ -706,7 +706,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 302,
+      "line": 303,
       "match": "in_stack_ffffff78",
       "severity": "moderate",
       "text": "auStack_78._0_4_ = in_stack_ffffff78;",
@@ -714,7 +714,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 302,
+      "line": 303,
       "match": "._0_4_",
       "severity": "mild",
       "text": "auStack_78._0_4_ = in_stack_ffffff78;",
@@ -722,7 +722,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 304,
+      "line": 305,
       "match": "&stack0xffffff7c",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffff7c + (uint)bVar14 * -8);",
@@ -730,7 +730,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 306,
+      "line": 307,
       "match": "&stack0xffffff80",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffff80 + (uint)bVar14 * -8 + (uint)bVar14 * -8);",
@@ -738,7 +738,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 310,
+      "line": 311,
       "match": "&stack0xffffff80",
       "severity": "moderate",
       "text": "((int)(&stack0xffffff80 + (uint)bVar14 * -8 + (uint)bVar14 * -8) +",
@@ -746,7 +746,7 @@
     },
     {
       "description": "Pointer value `(&stack0xffffff80 + (uint)bVar14 * -8 + (uint)bVar14 * -8)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 310,
+      "line": 311,
       "match": "(int)(&stack0xffffff80 + (uint)bVar14 * -8 + (uint)bVar14 * -8)",
       "severity": "moderate",
       "text": "((int)(&stack0xffffff80 + (uint)bVar14 * -8 + (uint)bVar14 * -8) +",
@@ -754,7 +754,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 225,
+      "line": 226,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_30.x = (this_ptr->base).base.model.accumulated_root_motion.x;",
@@ -770,7 +770,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 192,
+      "line": 193,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",

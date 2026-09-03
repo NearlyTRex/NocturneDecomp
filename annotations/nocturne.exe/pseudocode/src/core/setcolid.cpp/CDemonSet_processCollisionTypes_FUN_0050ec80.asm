@@ -31,7 +31,7 @@
 ;   core_actor.cpp_CDemonActor_processFootstep_FUN_0040d930 at 0040d9ab
 ;   core_fire.cpp_CCrater_activate_FUN_004876d0 at 00487725
 ;   core_gore.cpp_CBloodPool_init_FUN_004af730 at 004af75b
-;   core_stranger.cpp_CStranger_FUN_0053c800 at 0053ce36
+;   core_stranger.cpp_CStranger_tryPlaceObject_FUN_0053c800 at 0053ce36
 ;   core_trash.cpp_CTrash_process_FUN_00546e10 at 00547456
 ;
 ; Referenced Globals:

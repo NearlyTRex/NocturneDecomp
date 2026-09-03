@@ -13,9 +13,9 @@
 ;   core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_0044f9b0 at 0044fb30
 ;   core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00450520 at 00450695
 ;   core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0 at 00469d34
-;   core_set.cpp_CDemonSet_FUN_0050d910 at 0050d95f
 ;   core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2d0 at 0050d303
 ;   core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_0050d6a0 at 0050d6f5
+;   core_set.cpp_CDemonSet_renderEnvMapTriangles_FUN_0050d910 at 0050d95f
 ;
 ; Called Functions:
 ;   engine_matrix.c_getCameraOrigin_FUN_004ce760

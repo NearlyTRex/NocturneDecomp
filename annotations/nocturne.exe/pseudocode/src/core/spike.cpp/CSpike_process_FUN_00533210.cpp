@@ -129,6 +129,6 @@ LAB_005332db:
   if (fVar2 * fVar2 + fVar3 * fVar3 + fVar6 * fVar6 <= (float)1.0000000000000001e-05) {
     return;
   }
-  core_spike_cpp_CSpike_FUN_00533750(this_ptr);
+  core_spike_cpp_CSpike_testCollisionWithCharacters_FUN_00533750(this_ptr);
   return;
 }

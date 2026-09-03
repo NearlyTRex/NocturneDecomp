@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 344,
-    "complexity_score": 391,
+    "complexity_score": 393,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 17,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 141,
+    "pseudocode_lines": 143,
     "suspect_count": 23,
     "suspect_types": [
       "pointer_cast",
@@ -135,7 +135,7 @@
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 485
+    "total_lines": 487
   },
   "cross_references": [
     {
@@ -159,19 +159,19 @@
   },
   "function_calls": [
     {
-      "addr": "00444810",
+      "addr": "00447c60",
       "is_variadic": false,
-      "name": "core_dcamera.cpp_CDemonCamera_blurCoronaBufferAndClearEdges_FUN_00444810"
+      "name": "core_dcamera.cpp_CDemonCamera_blendLightmapPixel16_FUN_00447c60"
     },
     {
       "addr": "00447bb0",
       "is_variadic": false,
-      "name": "core_dcamera.cpp_CDemonCamera_FUN_00447bb0"
+      "name": "core_dcamera.cpp_CDemonCamera_blendLightmapPixel32_FUN_00447bb0"
     },
     {
-      "addr": "00447c60",
+      "addr": "00444810",
       "is_variadic": false,
-      "name": "core_dcamera.cpp_CDemonCamera_FUN_00447c60"
+      "name": "core_dcamera.cpp_CDemonCamera_blurCoronaBufferAndClearEdges_FUN_00444810"
     },
     {
       "addr": "0043fe60",
@@ -566,7 +566,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 101,
+      "line": 102,
       "match": "(ulonglong *)((int)this_ptr",
       "severity": "moderate",
       "text": "(ulonglong *)((int)this_ptr->framebuffer_aligned + this_ptr->screen_width * uVar8 * 4);",
@@ -574,7 +574,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 102,
+      "line": 103,
       "match": "DAT_012b0660",
       "severity": "mild",
       "text": "iVar3 = ((int)uVar8 >> (DAT_012b0660 & 0x1f)) * 0x140;",
@@ -582,7 +582,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 104,
+      "line": 105,
       "match": "DAT_012ceb78",
       "severity": "mild",
       "text": "pbVar7 = &DAT_012ceb78 + iVar3;",
@@ -598,7 +598,7 @@
     },
     {
       "description": "Pointer value `g_ScreenBufferArray[(this_ptr->framebuffer_height + uVar8) - _DAT_012ceb74]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 98,
+      "line": 99,
       "match": "(int)g_ScreenBufferArray[(this_ptr->framebuffer_height + uVar8) - _DAT_012ceb74]",
       "severity": "moderate",
       "text": "((int)g_ScreenBufferArray[(this_ptr->framebuffer_height + uVar8) - _DAT_012ceb74] +",
@@ -614,7 +614,7 @@
     },
     {
       "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
-      "line": 97,
+      "line": 98,
       "match": "(TYPE *) ((int)NAME ...) split across lines",
       "severity": "moderate",
       "text": "puVar6 = (ulonglong *)",

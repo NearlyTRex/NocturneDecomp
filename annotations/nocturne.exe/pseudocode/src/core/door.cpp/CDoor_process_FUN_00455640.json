@@ -64,25 +64,25 @@
       {
         "category": "incompatible_types",
         "column": 13,
-        "line": 83,
+        "line": 84,
         "message": "no matching function for call to 'core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30'"
       },
       {
         "category": "incompatible_types",
         "column": 3,
-        "line": 121,
+        "line": 124,
         "message": "no matching function for call to 'core_event_cpp_CEventList_executeCommands_FUN_0047ab70'"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 134,
+        "line": 137,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 26,
-        "line": 134,
+        "line": 137,
         "message": "expected expression"
       }
     ],
@@ -92,19 +92,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 573,
-    "complexity_score": 234,
+    "complexity_score": 237,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 189,
+    "pseudocode_lines": 192,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
       "unresolved_funcptr",
       "unrolled_memcpy"
     ],
-    "total_lines": 762
+    "total_lines": 765
   },
   "cross_references": [],
   "function": {
@@ -143,12 +143,12 @@
     {
       "addr": "00511a10",
       "is_variadic": false,
-      "name": "core_setcolid.cpp_CDemonSet_FUN_00511a10"
+      "name": "core_setcolid.cpp_CDemonSet_castVoxelShadow_FUN_00511a10"
     },
     {
       "addr": "00511aa0",
       "is_variadic": false,
-      "name": "core_setcolid.cpp_CDemonSet_FUN_00511aa0"
+      "name": "core_setcolid.cpp_CDemonSet_transferVoxelShadow_FUN_00511aa0"
     },
     {
       "addr": "00511990",
@@ -308,7 +308,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 125,
+      "line": 128,
       "match": "(int *)((int)g_CDemonSet_PTR_005be368",
       "severity": "moderate",
       "text": "iVar1 = *(int *)((int)g_CDemonSet_PTR_005be368->characters + iVar4);",
@@ -316,7 +316,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 127,
+      "line": 130,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar2 = (**(code **)(*(int *)(iVar1 + 0x14c) + 0x34))(iVar1,&SStack_d0);",
@@ -324,7 +324,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 139,
+      "line": 142,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "aCStack_6c[0].x = pCVar3->x;",

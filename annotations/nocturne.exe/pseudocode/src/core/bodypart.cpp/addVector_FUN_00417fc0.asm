@@ -9,9 +9,9 @@
 ; CVector3f *      Stack[0xc]:4   b
 ;
 ; XREF[3]:
-;   core_boneguy.cpp_CBoneGuy_FUN_004196b0 at 004198b5
+;   core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_004196b0 at 004198b5
 ;   core_mobster.cpp_CMobster_processWeaponPickup_FUN_004dbce0 at 004dbf16
-;   core_zombie.cpp_CZombie_FUN_00561010 at 0056127f
+;   core_zombie.cpp_CZombie_processPickup_FUN_00561010 at 0056127f
 ;
 ; *****************************************************************************
 

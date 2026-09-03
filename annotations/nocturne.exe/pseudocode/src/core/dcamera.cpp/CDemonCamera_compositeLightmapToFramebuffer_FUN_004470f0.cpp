@@ -88,7 +88,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00
           piVar2 = (int *)(iVar3 + 0x12b066c);
           iVar3 = iVar3 + 0xc;
           iVar9 = iVar9 + 1;
-          core_dcamera_cpp_CDemonCamera_FUN_00447c60(this_ptr,*piVar2,*puVar5,*piVar1);
+          core_dcamera_cpp_CDemonCamera_blendLightmapPixel16_FUN_00447c60
+                    (this_ptr,*piVar2,*puVar5,*piVar1);
         } while (iVar9 < _DAT_012b0664);
         uVar8 = uVar8 + 1;
       }
@@ -138,7 +139,8 @@ LAB_0044729d:
           piVar2 = (int *)(iVar3 + 0x12b066c);
           iVar3 = iVar3 + 0xc;
           iVar9 = iVar9 + 1;
-          core_dcamera_cpp_CDemonCamera_FUN_00447bb0(this_ptr,*piVar2,*puVar5,*piVar1);
+          core_dcamera_cpp_CDemonCamera_blendLightmapPixel32_FUN_00447bb0
+                    (this_ptr,*piVar2,*puVar5,*piVar1);
         } while (iVar9 < _DAT_012b0664);
         uVar8 = uVar8 + 1;
       }

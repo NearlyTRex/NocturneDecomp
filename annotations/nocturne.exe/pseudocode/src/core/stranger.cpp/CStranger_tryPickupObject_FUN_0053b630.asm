@@ -14,7 +14,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_stranger.cpp_CStranger_FUN_0053fc60 at 0053fe06
+;   core_stranger.cpp_CStranger_handleActionButton_FUN_0053fc60 at 0053fe06
 ;
 ; Referenced Globals:
 ;   void* switchdataD_0053b60c = 0053b971

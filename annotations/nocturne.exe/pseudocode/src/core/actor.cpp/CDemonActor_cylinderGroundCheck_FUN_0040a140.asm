@@ -22,7 +22,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
-;   core_setcolid.cpp_CDemonSet_FUN_005117f0
+;   core_setcolid.cpp_CDemonSet_enableCollision_FUN_005117f0
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_00511780
 ;   core_setcolid.cpp_CDemonSet_popRaytraceState_FUN_00511590
 ;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80
@@ -53,8 +53,8 @@ section .text
     ADD ESP,0x8                         ; 0040a16b
     MOV EDI,dword ptr [0x005be368]      ; 0040a16e | g_CDemonSet_PTR_005be368
     PUSH EDI                            ; 0040a174 | g_CDemonSet_01e57284
-    CALL core_setcolid.cpp_CDemonSet_FUN_005117f0 ; 0040a175
-        ;   XREF to: 005117f0 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_FUN_005117f0(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_enableCollision_FUN_005117f0 ; 0040a175
+        ;   XREF to: 005117f0 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_enableCollision_FUN_005117f0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0040a17a
     LEA EAX,[ESI + 0x20]                ; 0040a17d
     PUSH dword ptr [ESP + 0x20]         ; 0040a180

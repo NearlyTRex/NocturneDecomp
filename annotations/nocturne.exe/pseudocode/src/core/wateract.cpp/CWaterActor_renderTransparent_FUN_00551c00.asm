@@ -28,7 +28,7 @@
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0
 ;   core_set.cpp_CDemonSet_computeVertexOmniLighting_FUN_0050be20
-;   core_set.cpp_CDemonSet_FUN_0050ddd0
+;   core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_0050ddd0
 ;   core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
@@ -199,8 +199,8 @@ section .text
     PUSH EBX                            ; 00551dcd
     MOV EDX,dword ptr [0x005be368]      ; 00551dce | g_CDemonSet_PTR_005be368
     PUSH EDX                            ; 00551dd4 | g_CDemonSet_01e57284
-    CALL core_set.cpp_CDemonSet_FUN_0050ddd0 ; 00551dd5
-        ;   XREF to: 0050ddd0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0050ddd0(CDemonSet * this_ptr, SMRGLPrimitiveQuad * primitive_array, int primitive_count, int render_flags)
+    CALL core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_0050ddd0 ; 00551dd5
+        ;   XREF to: 0050ddd0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_0050ddd0(CDemonSet * this_ptr, SMRGLPrimitiveQuad * primitive_array, int primitive_count, int render_flags)
     ADD ESP,0x10                        ; 00551dda
     LEA EAX,[EAX]                       ; 00551ddd
     PUSH 0x0                            ; 00551de0

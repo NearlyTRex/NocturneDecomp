@@ -154,7 +154,7 @@ LAB_0047883d:
         (float)2.5) {
       core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
                 ((CDemonActor *)this_ptr_00,&local_a0,&pCVar1->position);
-      core_charactr_cpp_CCharacter_FUN_00427730
+      core_charactr_cpp_CCharacter_igniteBone_FUN_00427730
                 (&g_HeroActors[g_LocalHeroIndex]->base,&local_a0,0,0,1.0,1);
     }
     break;

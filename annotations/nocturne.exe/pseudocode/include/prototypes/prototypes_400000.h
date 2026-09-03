@@ -376,7 +376,7 @@ CAmmoBox * __cdecl core_ammobox_cpp_CAmmoBox_ctor_FUN_0040f040(CAmmoBox *this_pt
 void __cdecl core_ammobox_cpp_CAmmoBox_setup_FUN_0040f0f0(CAmmoBox *this_ptr);
 void __cdecl core_ammobox_cpp_CAmmoBox_process_FUN_0040f120(CAmmoBox *this_ptr,float delta_time);
 void __cdecl core_ammobox_cpp_CAmmoBox_openBox_FUN_0040f130(CAmmoBox *this_ptr,float open_pct);
-void __cdecl core_ammobox_cpp_CAmmoBox_FUN_0040f1a0(CAmmoBox *this_ptr,CInventory *inventory);
+void __cdecl core_ammobox_cpp_CAmmoBox_addToInventory_FUN_0040f1a0(CAmmoBox *this_ptr,CInventory *inventory);
 int __cdecl core_ammobox_cpp_CAmmoBox_renderOpaque_FUN_0040f2b0(CAmmoBox *this_ptr);
 CBoundingBox3D * __cdecl core_ammobox_cpp_CAmmoBox_getBoundingBox_FUN_0040f340(CAmmoBox *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_ammobox_cpp_CAmmoBox_archive_FUN_0040f390(CAmmoBox *this_ptr);

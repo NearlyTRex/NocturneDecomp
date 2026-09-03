@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   expire_flag
 ;
 ; XREF[2]:
-;   core_set.cpp_CDemonSet_FUN_00509a80 at 00509ea7
+;   core_set.cpp_CDemonSet_renderScene_FUN_00509a80 at 00509ea7
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508c99
 ;
 ; Referenced Globals:

@@ -14,7 +14,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Called Functions:
-;   engine_font.cpp_CBitFont_FUN_00490c70
+;   engine_font.cpp_CBitFont_printFV_FUN_00490c70
 ;
 ; *****************************************************************************
 
@@ -42,8 +42,8 @@ section .text
     PUSH EDI                            ; 00490c49
     MOV EBP,dword ptr [ESP + 0x30]      ; 00490c4a
     PUSH EBP                            ; 00490c4e
-    CALL engine_font.cpp_CBitFont_FUN_00490c70 ; 00490c4f
-        ;   XREF to: 00490c70 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_FUN_00490c70(CBitFont * this_ptr, int x, int y, int color_mode, ...)
+    CALL engine_font.cpp_CBitFont_printFV_FUN_00490c70 ; 00490c4f
+        ;   XREF to: 00490c70 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_printFV_FUN_00490c70(CBitFont * this_ptr, int x, int y, int color_mode, ...)
     ADD ESP,0x1c                        ; 00490c54
     XOR EDX,EDX                         ; 00490c57
     MOV dword ptr [ESP],EDX             ; 00490c59

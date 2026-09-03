@@ -191,13 +191,13 @@ void __cdecl CGame::renderIrisFade(CGame *this_ptr);
 // Address: 004a3a50
 uint __cdecl CGame::fadeIn(CGame *this_ptr);
 
-// Original: core_game.cpp_CGame_FUN_004a3a70
+// Original: core_game.cpp_CGame_resetWeaponSwitchTimers_FUN_004a3a70
 // Address: 004a3a70
-void __cdecl CGame(CGame *this_ptr);
+void __cdecl CGame::resetWeaponSwitchTimers(CGame *this_ptr);
 
-// Original: core_game.cpp_CGame_FUN_004a3a90
+// Original: core_game.cpp_CGame_resetInventoryDisplayTimer_FUN_004a3a90
 // Address: 004a3a90
-void __cdecl CGame(CGame *this_ptr);
+void __cdecl CGame::resetInventoryDisplayTimer(CGame *this_ptr);
 
 // Original: core_game.cpp_CGame_setStatusDisplay_FUN_004a3ab0
 // Address: 004a3ab0

@@ -10,13 +10,13 @@
 ; XREF[66]:
 ;   core_actor.cpp_CDemonActor_renderTargetPoints_FUN_0040add0 at 0040ae5d
 ;   core_actor.cpp_draw3DPointMarker_FUN_0040ab70 at 0040abae
-;   core_box.cpp_CBoundingBox3D_FUN_0041d050 at 0041d0b3
 ;   core_box.cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_0041d450 at 0041d4df
+;   core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_0041d050 at 0041d0b3
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0 at 0041cfb4
 ;   core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_004216d0 at 0042177f
 ;   core_charactr.cpp_CCharacter_renderCollision_FUN_00425cc0 at 00425e70
 ;   core_charactr.cpp_projectPointToVertex_FUN_0042b510 at 0042b558
-;   core_cloth.cpp_CCloth_FUN_00437ab0 at 00437b90
+;   core_cloth.cpp_CCloth_renderBone_FUN_00437ab0 at 00437b90
 ;   core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00445fe0 at 00446166
 ;   ... and 56 more
 ;

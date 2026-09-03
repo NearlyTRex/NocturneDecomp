@@ -63,9 +63,9 @@ void __cdecl CSound::init(CSound *this_ptr);
 // Address: 0052df90
 void __cdecl CSound::shutdown(CSound *this_ptr);
 
-// Original: core_sound.cpp_CSound_FUN_0052dff0
+// Original: core_sound.cpp_CSound_process_FUN_0052dff0
 // Address: 0052dff0
-void __cdecl CSound(CSound *this_ptr);
+void __cdecl CSound::process(CSound *this_ptr);
 
 // Original: core_sound.cpp_CSound_configure_FUN_0052e850
 // Address: 0052e850
@@ -111,9 +111,9 @@ int __cdecl CSound::isSoundPlaying(CSound *this_ptr,uint sfx_handle);
 // Address: 0052ebb0
 void __cdecl CSound::killSound(CSound *this_ptr,uint sfx_handle);
 
-// Original: core_sound.cpp_CSound_FUN_0052ebc0
+// Original: core_sound.cpp_CSound_getSoundDuration_FUN_0052ebc0
 // Address: 0052ebc0
-float __cdecl CSound(CSound *this_ptr,char *param_2);
+float __cdecl CSound::getSoundDuration(CSound *this_ptr,char *sound_name);
 
 // Original: core_sound.cpp_CSound_getReverbPresetCount_FUN_0052ec80
 // Address: 0052ec80

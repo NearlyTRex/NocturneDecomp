@@ -19,7 +19,8 @@ CDoor * __cdecl core_door_cpp_CDoor_ctor_FUN_00455050(CDoor *this_ptr)
   pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_00409d30(&this_ptr->base);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490
                           ((CKeyFramedModelInstance *)(pCVar2 + 1));
-  core_event_cpp_CRuleList_FUN_00481620((CRuleList *)(this_ptr_00[2].part_visibility_flags + 10));
+  core_event_cpp_CRuleList_clear_FUN_00481620
+            ((CRuleList *)(this_ptr_00[2].part_visibility_flags + 10));
   this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CDoorVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
             (this_ptr_00,"churchd01.kfm");

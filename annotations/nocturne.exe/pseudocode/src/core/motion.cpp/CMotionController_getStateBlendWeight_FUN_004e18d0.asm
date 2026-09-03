@@ -18,7 +18,7 @@
 ;   core_ghoul.cpp_CGhoul_process_FUN_004a9270 at 004a92e2
 ;   core_hero.cpp_CHero_releaseFromGrab_FUN_004b4d50 at 004b4d96
 ;   core_hostage.cpp_CHostage_process_FUN_004b6d80 at 004b70cd
-;   core_mimic.cpp_CMimic_FUN_004d4f30 at 004d5305
+;   core_mimic.cpp_CMimic_processAnimation_FUN_004d4f30 at 004d5305
 ;   core_scat.cpp_CScat_blendLayerAction_FUN_004fcff0 at 004fd05c
 ;   core_scat.cpp_CScat_process_FUN_004fbf20 at 004fc1ae
 ;   ... and 9 more

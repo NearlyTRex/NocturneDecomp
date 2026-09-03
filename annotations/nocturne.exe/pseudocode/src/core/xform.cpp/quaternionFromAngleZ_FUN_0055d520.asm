@@ -13,7 +13,7 @@
 ;
 ; XREF[3]:
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_00497900 at 00497daf
-;   core_scat.cpp_CScat_FUN_004fd1d0 at 004fd239
+;   core_scat.cpp_CScat_blendAimBones_FUN_004fd1d0 at 004fd239
 ;   core_stranger.cpp_CStranger_applyArmAimRotation_FUN_0053a260 at 0053a2c1
 ;
 ; Referenced Globals:

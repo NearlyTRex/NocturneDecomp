@@ -45,7 +45,7 @@
 // FUNCTION PROTOTYPES - Range 0x4C0000
 // =============================================================================
 
-void __cdecl core_inv_cpp_CInventory_FUN_004c0640(CInventory *this_ptr,int param_2);
+void __cdecl core_inv_cpp_CInventory_createAmmoFromWeapon_FUN_004c0640(CInventory *this_ptr,int param_2);
 CDemonActor * __cdecl core_inv_cpp_CInventory_findItemByName_FUN_004c0710(CInventory *this_ptr,char *item_name);
 int __cdecl core_inv_cpp_CInventory_hasItemOfClass_FUN_004c0760(CInventory *this_ptr,char *class_name);
 void __cdecl core_inv_cpp_CInventory_removeItem_FUN_004c07b0(CInventory *this_ptr,CDemonActor *item_to_remove,int should_delete_actor);
@@ -70,7 +70,7 @@ void __cdecl core_inv_cpp_CInventory_resetInventoryDisplayTimer_FUN_004c1da0(CIn
 void __cdecl core_inv_cpp_drawWeaponIconBackground_FUN_004c1dd0(int x1,int y1,int x2,int y2,int alpha);
 void __cdecl core_inv_cpp_drawItemIconBackground_FUN_004c1f90(int x1,int y1,int x2,int y2,int alpha);
 void __cdecl core_inv_cpp_CInventory_renderSelectedItems_FUN_004c2150(CInventory *this_ptr);
-void __cdecl core_inv_cpp_CInventory_FUN_004c2470(CInventory *this_ptr);
+void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_004c2470(CInventory *this_ptr);
 int __cdecl core_inv_cpp_CInventory_checkHasMatchingKey_FUN_004c31b0(CInventory *this_ptr,uint key_mask,int show_message);
 void __cdecl core_inv_cpp_CInventory_removeMatchingKeys_FUN_004c3280(CInventory *this_ptr,uint key_mask);
 void __cdecl core_inv_cpp_CInventory_toggleDetailView_FUN_004c32e0(CInventory *this_ptr);
@@ -112,8 +112,8 @@ int __cdecl core_ladder_cpp_CLadder_renderOpaque_FUN_004c4370(CLadder *this_ptr)
 CBoundingBox3D * __cdecl core_ladder_cpp_CLadder_getBoundingBox_FUN_004c43f0(CLadder *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_ladder_cpp_CLadder_archive_FUN_004c44f0(CLadder *this_ptr);
 ECollisionType __cdecl core_ladder_cpp_CLadder_getCollisionType_FUN_004c4570(CLadder *this_ptr,SCollisionInfo *collision_info);
-void __cdecl core_ladder_cpp_CLadder_FUN_004c45a0(CLadder *this_ptr);
-void __cdecl core_ladder_cpp_CLadder_FUN_004c46b0(CLadder *this_ptr);
+void __cdecl core_ladder_cpp_CLadder_updatePositionFromMaster_FUN_004c45a0(CLadder *this_ptr);
+void __cdecl core_ladder_cpp_CLadder_cacheRelativePosition_FUN_004c46b0(CLadder *this_ptr);
 EGroundType __cdecl core_ladder_cpp_CLadder_getGroundType_FUN_004c47c0(CLadder *this_ptr);
 CLadder * __cdecl core_ladder_cpp_CLadder_dtor_FUN_004c47d0(CLadder *this_ptr,uint flags);
 void __cdecl core_larva_cpp_staticInit_FUN_004c4820(void);
@@ -127,7 +127,7 @@ void __cdecl core_larva_cpp_CLarva_processDamage_FUN_004c5310(CLarva *this_ptr,S
 int __cdecl core_larva_cpp_CLarva_getTargetPoints_FUN_004c54f0(CLarva *this_ptr,CVector3f *out_points_array);
 CLarva * __cdecl core_larva_cpp_CLarva_dtor_FUN_004c5540(CLarva *this_ptr,uint flags);
 void __cdecl core_level_cpp_staticInit_FUN_004c5600(void);
-void __cdecl core_level_cpp_CLevelLoader_FUN_004c5630(CLevelLoader *this_ptr);
+void __cdecl core_level_cpp_CLevelLoader_reset_FUN_004c5630(CLevelLoader *this_ptr);
 void __cdecl core_level_cpp_CLevelLoader_show_FUN_004c5640(CLevelLoader *this_ptr,int total_frames,int use_custom_viewport,int image_variant);
 void __cdecl core_level_cpp_CLevelLoader_update_FUN_004c59e0(CLevelLoader *this_ptr,char *text,int clear_screen);
 void __cdecl core_level_cpp_CLevelLoader_cleanup_FUN_004c5fa0(CLevelLoader *this_ptr);
@@ -160,7 +160,7 @@ CLightGun * __cdecl core_lightgun_cpp_factoryFuncLightGun_FUN_004c6e00(void);
 CDemonActorType * __cdecl core_lightgun_cpp_CLightGun_getActorType_FUN_004c6e20(CLightGun *this_ptr);
 CLightGun * __cdecl core_lightgun_cpp_CLightGun_ctor_FUN_004c6e30(CLightGun *this_ptr);
 int __cdecl core_lightgun_cpp_CLightGun_isVampireType_FUN_004c6ef0(CLightGun *this_ptr);
-int __cdecl core_lightgun_cpp_CLightGun_FUN_004c6f50(CLightGun *this_ptr);
+int __cdecl core_lightgun_cpp_CLightGun_isLightVulnerable_FUN_004c6f50(CLightGun *this_ptr);
 void __cdecl core_lightgun_cpp_CLightGun_updateBeamLight_FUN_004c6ff0(CLightGun *this_ptr);
 int __cdecl core_lightgun_cpp_CLightGun_canSeeTarget_FUN_004c70a0(CLightGun *this_ptr,CDemonActor *target);
 int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_004c71a0(CLightGun *this_ptr);
@@ -201,15 +201,15 @@ float __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customRayIntersect_FUN_004c9e
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customIntersectCylinderXZ_FUN_004ca240(CMansionPuzzleCircle *this_ptr,SIntersectXZCylinder *cylinder);
 int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customGetFloorHeight_FUN_004ca2f0(CMansionPuzzleCircle *this_ptr,CVector3f *position,float search_radius,float *out_floor_height);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_onLaserHit_FUN_004ca300(CMansionPuzzleCircle *this_ptr,SLaserInfo *laser_info);
-void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_004ca410(CMansionPuzzleCircle *this_ptr);
+void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_initPuzzleState_FUN_004ca410(CMansionPuzzleCircle *this_ptr);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_004ca640(CMansionPuzzleCircle *this_ptr,int panel_index);
-void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_004ca710(CMansionPuzzleCircle *this_ptr,int param_2);
+void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_004ca710(CMansionPuzzleCircle *this_ptr,int panel_index);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_004ca790(CMansionPuzzleCircle *this_ptr,int gem_index);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderReflector_FUN_004cabf0(CMansionPuzzleCircle *this_ptr,int reflector_index);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_processPanel_FUN_004cac90(CMansionPuzzleCircle *this_ptr,int panel_index,float delta_time);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_getPanelColor_FUN_004cae20(CMansionPuzzleCircle *this_ptr,int panel_index,float *out_r,float *out_g,float *out_b);
 int __cdecl core_manpuz_cpp_updateGemHumChannel_FUN_004caef0(float *hum_value,float target,float max_step,uint *sfx_handle,char *wav_filename,CVector3f *world_position);
-void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_004cb010(CMansionPuzzleCircle *this_ptr,int gem_index,float delta_time);
+void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_updateGem_FUN_004cb010(CMansionPuzzleCircle *this_ptr,int gem_index,float delta_time);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_updateLaser_FUN_004cb2d0(CMansionPuzzleCircle *this_ptr,int panel_index,float delta_time);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_004cb5a0(CMansionPuzzleCircle *this_ptr,int panel_index);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_004cb740(CMansionPuzzleCircle *this_ptr,int panel_index);

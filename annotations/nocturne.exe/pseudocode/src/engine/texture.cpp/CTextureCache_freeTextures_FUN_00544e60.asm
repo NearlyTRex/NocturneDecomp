@@ -7,8 +7,8 @@
 ; CTextureCache *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[4]:
-;   engine_texture.cpp_CTextureCache_FUN_00544e50 at 00544e55
 ;   engine_texture.cpp_CTextureCache_free_FUN_00544e30 at 00544e35
+;   engine_texture.cpp_CTextureCache_reset_FUN_00544e50 at 00544e55
 ;   engine_texture.cpp_clearTextureCache_FUN_005459f0 at 005459f7
 ;   engine_texture.cpp_freeTextureCache_FUN_005458d0 at 005458f7
 ;

@@ -115,7 +115,7 @@
     {
       "addr": "00509a80",
       "from_addr": "00509dc6",
-      "name": "core_set.cpp_CDemonSet_FUN_00509a80",
+      "name": "core_set.cpp_CDemonSet_renderScene_FUN_00509a80",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -133,11 +133,6 @@
   },
   "function_calls": [
     {
-      "addr": "0050e080",
-      "is_variadic": false,
-      "name": "core_set.cpp_CDemonSet_FUN_0050e080"
-    },
-    {
       "addr": "0050e190",
       "is_variadic": false,
       "name": "core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190"
@@ -151,6 +146,11 @@
       "addr": "0050adc0",
       "is_variadic": false,
       "name": "core_set.cpp_CDemonSet_setLightingParameters_FUN_0050adc0"
+    },
+    {
+      "addr": "0050e080",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_setupMirrorRendering_FUN_0050e080"
     },
     {
       "addr": "00461050",
@@ -178,7 +178,7 @@
       {
         "call_addr": "00509dc6",
         "call_type": "direct",
-        "caller": "core_set.cpp_CDemonSet_FUN_00509a80",
+        "caller": "core_set.cpp_CDemonSet_renderScene_FUN_00509a80",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

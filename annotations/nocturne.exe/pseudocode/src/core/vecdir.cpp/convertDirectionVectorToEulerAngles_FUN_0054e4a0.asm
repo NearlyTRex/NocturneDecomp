@@ -14,12 +14,12 @@
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00412480 at 004128b6
 ;   core_batman.cpp_CBatman_process_FUN_00413800 at 00413c58
 ;   core_bugs.cpp_CBugs_updateBugPathfinding_FUN_004227b0 at 00422949
-;   core_charactr.cpp_CCharacter_FUN_00428c00 at 00428d58
-;   core_charactr.cpp_CCharacter_FUN_0042af70 at 0042b021
 ;   core_charactr.cpp_CCharacter_addDamageDecal_FUN_00427310 at 00427515
 ;   core_charactr.cpp_CCharacter_dismember_FUN_00427b60 at 00427ca5
 ;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00429730 at 0042996f
 ;   core_charactr.cpp_CCharacter_followActor_FUN_00428780 at 004288cf
+;   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042af70 at 0042b021
+;   core_charactr.cpp_CCharacter_processWalking_FUN_00428c00 at 00428d58
 ;   ... and 64 more
 ;
 ; Called Functions:

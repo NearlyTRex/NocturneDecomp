@@ -183,7 +183,8 @@ int __cdecl core_shotgun_cpp_CShotgun_fire_FUN_00515ea0(CShotgun *this_ptr)
           }
           else {
             in_stack_fffffec4 = (CDemonSet *)0x516572;
-            iVar3 = core_glass_cpp_CGlass_FUN_004aded0((CGlass *)pCStack_2c);
+            iVar3 = core_glass_cpp_CGlass_checkBreakableCondition_FUN_004aded0((CGlass *)pCStack_2c)
+            ;
             if (iVar3 == 0) break;
             in_stack_fffffec0 = (CDemonActor *)0x516595;
             in_stack_fffffec4 = pCStack_2c;

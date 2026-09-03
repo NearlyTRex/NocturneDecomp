@@ -110,15 +110,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004270e0",
-      "from_addr": "0042710d",
-      "name": "core_charactr.cpp_CCharacter_FUN_004270e0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00425cc0",
       "from_addr": "00425dc6",
       "name": "core_charactr.cpp_CCharacter_renderCollision_FUN_00425cc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004270e0",
+      "from_addr": "0042710d",
+      "name": "core_charactr.cpp_CCharacter_renderEthereal_FUN_004270e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -130,7 +130,7 @@
     {
       "addr": "0043f330",
       "from_addr": "0043f3ae",
-      "name": "core_curtain.cpp_CCurtain_FUN_0043f330",
+      "name": "core_curtain.cpp_CCurtain_renderMesh_FUN_0043f330",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -184,7 +184,7 @@
     {
       "addr": "004ac7c0",
       "from_addr": "004ac902",
-      "name": "core_glass.cpp_CGlass_FUN_004ac7c0",
+      "name": "core_glass.cpp_CGlass_renderBrokenGlass_FUN_004ac7c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -260,12 +260,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0050d910",
-      "from_addr": "0050dcf0",
-      "name": "core_set.cpp_CDemonSet_FUN_0050d910",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00508750",
       "from_addr": "00508809",
       "name": "core_set.cpp_CDemonSet_renderBackgroundActors_FUN_00508750",
@@ -275,6 +269,12 @@
       "addr": "0050d6a0",
       "from_addr": "0050d8db",
       "name": "core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_0050d6a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050d910",
+      "from_addr": "0050dcf0",
+      "name": "core_set.cpp_CDemonSet_renderEnvMapTriangles_FUN_0050d910",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -396,7 +396,7 @@
       {
         "call_addr": "004ac902",
         "call_type": "direct",
-        "caller": "core_glass.cpp_CGlass_FUN_004ac7c0",
+        "caller": "core_glass.cpp_CGlass_renderBrokenGlass_FUN_004ac7c0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

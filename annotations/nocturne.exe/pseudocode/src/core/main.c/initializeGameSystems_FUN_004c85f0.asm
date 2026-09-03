@@ -35,7 +35,7 @@
 ;   core_inivar.cpp_readIniData_FUN_004bdb80
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_menu.cpp_showCalibrationTest_FUN_004cffa0
-;   core_mission.cpp_CDemonMission_FUN_004d7e00
+;   core_mission.cpp_CDemonMission_reset_FUN_004d7e00
 ;   core_mmx.c_detectCPUFeatures_FUN_004d9e70
 ;   core_netgame.cpp_CNetGame_init_FUN_004e9910
 ;   core_sound.cpp_CSound_findAllSoundFiles_FUN_0052dd20
@@ -750,8 +750,8 @@ section .text
     MOV EBX,dword ptr [0x005baf90]      ; 004c8c84 | g_CDemonMission_PTR_005baf90
     PUSH EBX                            ; 004c8c8a
     XOR ESI,ESI                         ; 004c8c8b
-    CALL core_mission.cpp_CDemonMission_FUN_004d7e00 ; 004c8c8d
-        ;   XREF to: 004d7e00 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_004d7e00(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_reset_FUN_004d7e00 ; 004c8c8d
+        ;   XREF to: 004d7e00 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_reset_FUN_004d7e00(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 004c8c92
     XOR EBX,EBX                         ; 004c8c95
     MOV dword ptr [ESP + 0x714],EBX     ; 004c8c97

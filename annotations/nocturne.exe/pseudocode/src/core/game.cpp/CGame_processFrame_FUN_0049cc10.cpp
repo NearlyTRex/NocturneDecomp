@@ -96,12 +96,12 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_0049cc10(CGame *this_ptr)
     engine_special_cpp_clearScreen_FUN_0052ee70();
   }
   if (this_ptr->goggles_active == 0) {
-    core_set_cpp_CDemonSet_FUN_00509a80(g_CDemonSet_PTR_005be368,1);
+    core_set_cpp_CDemonSet_renderScene_FUN_00509a80(g_CDemonSet_PTR_005be368,1);
   }
   core_netgame_cpp_CNetGame_processClientFrame_FUN_004ed720(g_CNetGame_PTR_005bdee0);
   if (this_ptr->is_paused == 0) {
     core_game_cpp_CGame_process_FUN_004a6010(this_ptr);
-    core_sound_cpp_CSound_FUN_0052dff0(g_CSound_PTR_005bed68);
+    core_sound_cpp_CSound_process_FUN_0052dff0(g_CSound_PTR_005bed68);
     engine_force_cpp_CForceFeedback_processEvent_FUN_004940d0(g_CForceFeedback_PTR_005b9284);
   }
   else {
@@ -168,7 +168,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_0049cc10(CGame *this_ptr)
   if (this_ptr->skip_frame_render != 0) goto LAB_0049d5b0;
   engine_special_cpp_lockFrame_FUN_005322e0();
   if (this_ptr->goggles_active != 0) {
-    core_set_cpp_CDemonSet_FUN_0050a260(g_CDemonSet_PTR_005be368);
+    core_set_cpp_CDemonSet_renderGogglesView_FUN_0050a260(g_CDemonSet_PTR_005be368);
   }
   if (this_ptr->developer_mode_enabled == 0) {
     pcVar19 = support_newmsg_cpp_decryptMessage_FUN_004ee3f0((char *)BYTE_ARRAY_005825f0);
@@ -184,7 +184,7 @@ LAB_0049cf70:
       engine_pcx_c_saveScreenshotGeneral_FUN_004f2990((char *)0x1c780c0);
     }
   }
-  core_inv_cpp_CInventory_FUN_004c2470(&g_HeroActors[g_LocalHeroIndex]->inventory);
+  core_inv_cpp_CInventory_renderAllItems_FUN_004c2470(&g_HeroActors[g_LocalHeroIndex]->inventory);
   if (this_ptr->screen_clear_enabled != 0) {
     core_set_cpp_CDemonSet_FUN_0050aa70(g_CDemonSet_PTR_005be368);
   }
@@ -267,7 +267,7 @@ LAB_0049cf70:
       _DAT_01c78acc = 0;
     }
   }
-  core_script_cpp_CScript_FUN_004fe770(0x01E56DA0);
+  core_script_cpp_CScript_renderSubtitles_FUN_004fe770(0x01E56DA0);
   core_game_cpp_CGame_renderOverlay_FUN_0049ab50(this_ptr);
   core_game_cpp_CGame_renderIrisFade_FUN_004a3960(this_ptr);
   if (this_ptr->camera_debug_enabled == 0) {
@@ -340,8 +340,8 @@ LAB_0049cf70:
     core_event_cpp_CEventList_render_FUN_0047dd80(0x01C03A10);
   }
   if ((this_ptr->subtitle_system_enabled != 0) && (this_ptr->screen_clear_enabled != 0)) {
-    core_script_cpp_CScript_FUN_004fe9d0(0x01E56DA0,0,0xf0,g_WindowWidth + -1,g_WindowHeight + -1)
-    ;
+    core_script_cpp_CScript_renderEditor_FUN_004fe9d0
+              (0x01E56DA0,0,0xf0,g_WindowWidth + -1,g_WindowHeight + -1);
   }
   if (this_ptr->editor_tools_enabled != 0) {
     shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004736d0

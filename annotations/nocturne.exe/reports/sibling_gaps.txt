@@ -1,5 +1,5 @@
 mapping: /home/aryie/Repositories/NocturneDecomp/annotations/nocturne.exe/reports/sibling_verified_mapping.json
-  nocedit.exe 7100 functions, nocturne.exe 5707 functions, 5257 pairs
+  nocedit.exe 7100 functions, nocturne.exe 5707 functions, 5264 pairs
 
 ==============================================================================
 A. TRANSLATION-UNIT RESIDUE
@@ -10,14 +10,13 @@ A. TRANSLATION-UNIT RESIDUE
 
   unit                          nocedit  nocturne  known-eo  verdict
   ---------------------------- -------- --------- ---------  ------------
-  engine_3d.c                        12         6        11  PAIRABLE
   shape_edittool.cpp                 23         5        17  PAIRABLE
-  core_charactr.cpp                   9         5         6  PAIRABLE
-  core_setdir.cpp                    16         4        15  PAIRABLE
+  engine_3d.c                        11         5        11  PAIRABLE
+  core_charactr.cpp                   8         4         5  PAIRABLE
+  core_setdir.cpp                    15         3        15  PAIRABLE
   core_course.cpp                     8         3         0  PAIRABLE
   core_dcube.cpp                      7         3         2  PAIRABLE
   core_bat.cpp                        4         3         4  PAIRABLE
-  sound_sndmain.cpp                  35         2        33  PAIRABLE
   engine_2d.c                         2         9         2  PAIRABLE
   core_stranger.cpp                   6         2         3  PAIRABLE
   core_game.cpp                       4         2         4  PAIRABLE
@@ -25,10 +24,7 @@ A. TRANSLATION-UNIT RESIDUE
   core_scat.cpp                       3         2         3  PAIRABLE
   core_dcamera.cpp                    2         2         2  PAIRABLE
   core_script.cpp                    56         1        56  PAIRABLE
-  core_setutil.cpp                   20         1        11  PAIRABLE
-  core_manpuz.cpp                     7         1         5  PAIRABLE
   engine_drender.cpp                  6         1         4  PAIRABLE
-  core_ladder.cpp                     5         1         0  PAIRABLE
   core_event.cpp                      1         4         0  PAIRABLE
   core_sound.cpp                      1         4         1  PAIRABLE
   core_dlight.cpp                     1         3         0  PAIRABLE
@@ -47,8 +43,10 @@ A. TRANSLATION-UNIT RESIDUE
   core_setedit.cpp                   58         0         0  EDITOR-ONLY
   core_dmodel.cpp                    34         0        32  EDITOR-ONLY
   shape_quantize.cpp                 33         0         0  EDITOR-ONLY
+  sound_sndmain.cpp                  33         0        33  EDITOR-ONLY
   shape_cramtex.cpp                  21         0         0  EDITOR-ONLY
-  shape_memdbg.cpp                   21         0         0  EDITOR-ONLY
+  shape_memdbg.cpp                   20         0         0  EDITOR-ONLY
+  core_setutil.cpp                   19         0        11  EDITOR-ONLY
   core_cloth.cpp                     13         0        12  EDITOR-ONLY
   core_boxactor.cpp                  12         0        12  EDITOR-ONLY
   core_fileman.cpp                   12         0         0  EDITOR-ONLY
@@ -65,12 +63,14 @@ A. TRANSLATION-UNIT RESIDUE
   core_texlist.cpp                    7         0         0  EDITOR-ONLY
   engine_dosio.cpp                    7         0         1  EDITOR-ONLY
   core_camview.cpp                    6         0         0  EDITOR-ONLY
+  core_manpuz.cpp                     6         0         6  EDITOR-ONLY
   core_zombie.cpp                     6         0         3  EDITOR-ONLY
   engine_palette.cpp                  6         0         0  EDITOR-ONLY
   engine_pod.cpp                      6         0         2  EDITOR-ONLY
   core_door.cpp                       5         0         5  EDITOR-ONLY
   core_drip.cpp                       5         0         5  EDITOR-ONLY
   core_frankgen.cpp                   5         0         5  EDITOR-ONLY
+  core_ladder.cpp                     5         0         0  EDITOR-ONLY
   core_pendulum.cpp                   5         0         0  EDITOR-ONLY
   core_set.cpp                        5         0         5  EDITOR-ONLY
   core_werewolf.cpp                   5         0         0  EDITOR-ONLY
@@ -116,7 +116,6 @@ A. TRANSLATION-UNIT RESIDUE
   core_svetlana.cpp                   3         0         0  EDITOR-ONLY
   core_trigger.cpp                    3         0         3  EDITOR-ONLY
   core_vehicle.cpp                    3         0         3  EDITOR-ONLY
-  core_weapon.cpp                     3         0         3  EDITOR-ONLY
   engine_texture.cpp                  3         0         3  EDITOR-ONLY
   cockpit_drawsurf.cpp                2         0         0  EDITOR-ONLY
   core_anvil.cpp                      2         0         2  EDITOR-ONLY
@@ -156,6 +155,7 @@ A. TRANSLATION-UNIT RESIDUE
   core_trap.cpp                       2         0         2  EDITOR-ONLY
   core_turret.cpp                     2         0         2  EDITOR-ONLY
   core_vessel.cpp                     2         0         0  EDITOR-ONLY
+  core_weapon.cpp                     2         0         2  EDITOR-ONLY
   sound_mp3.cpp                       2         0         2  EDITOR-ONLY
   cockpit_ckptutil.c                  1         0         1  EDITOR-ONLY
   core_dfilter.cpp                    1         0         1  EDITOR-ONLY
@@ -181,8 +181,8 @@ A. TRANSLATION-UNIT RESIDUE
   support_trisock.cpp                 1         0         1  EDITOR-ONLY
   wincore_wddvmem.cpp                 1         0         0  EDITOR-ONLY
 
-  1601 nocedit / 73 nocturne functions unmatched across 170 units
-  units: 27 pairable, 141 editor-only, 2 game-only
+  1592 nocedit / 65 nocturne functions unmatched across 170 units
+  units: 23 pairable, 145 editor-only, 2 game-only
   (crt_* units excluded; they are archive members, not source-ordered -- --include-crt)
   families absent from the target entirely: 34 class(es), 16 method categor(ies)
 
@@ -218,18 +218,6 @@ core_stranger.cpp   between 005c6850->00540920 and 005c6930->005409f0
       005409c0    41b   15i  core_stranger.cpp
   UNSURE -- no proposal: 3 nocedit / 2 nocturne left over
 ------------------------------------------------------------------------------
-sound_sndmain.cpp   between 005ade00->00529a20 and 005ade40->00529a60
-  refused: equal counts, every body too small to hash (<8B) -- order is unopposed here
-  nocedit  residue (2):
-      005ade20     5b    ?i  sound_sndmain.cpp_CSfxSlot_dtor
-      005ade30     5b    ?i  sound_sndmain.cpp_CSfxOptions_dtor
-  nocturne residue (2):
-      00529a40     5b    ?i  sound_sndmain.cpp_CSfxOptions_dtor
-      00529a50     5b    ?i  sound_sndmain.cpp_CSfxOptions_dtor
-  suggested alignment:
-      005ade20 -> 00529a40   (position only)   sound_sndmain.cpp_CSfxSlot_dtor
-      005ade30 -> 00529a50   (position only)   sound_sndmain.cpp_CSfxOptions_dtor
-------------------------------------------------------------------------------
 core_dcube.cpp   between 004569b0->0044adf0 and 00457530->0044aed0
   refused: count mismatch 5 vs 1 -- something was added AND removed here
   nocedit  residue (5):
@@ -242,28 +230,6 @@ core_dcube.cpp   between 004569b0->0044adf0 and 00457530->0044aed0
       0044ae80    78b   31i  core_dcube.cpp
   UNSURE -- no proposal: 5 nocedit / 1 nocturne left over
 ------------------------------------------------------------------------------
-core_ladder.cpp   between 00502b80->004c46b0 and 00502ed0->004c47d0
-  refused: count mismatch 5 vs 1 -- something was added AND removed here
-  nocedit  residue (5):
-      00502ca0    94b   33i  core_ladder.cpp_CLadder_getPropertyList
-      00502d00   335b   92i  core_ladder.cpp_CLadder_processInEditor
-      00502e50    60b   25i  core_ladder.cpp_CLadder_showEditorHelp
-      00502e90    28b    7i  core_ladder.cpp_CLadder_onActorDeleted
-      00502eb0    24b    8i  core_ladder.cpp_CLadder_addFilesToExtract
-  nocturne residue (1):
-      004c47c0    11b    3i  core_ladder.cpp_CLadder_getGroundType
-  suggested alignment:
-      00502e90 -> 004c47c0   (position after absent-family strip)   core_ladder.cpp_CLadder_onActorDeleted
-------------------------------------------------------------------------------
-core_manpuz.cpp   between 00509b20->004ca640 and 00509d50->004ca790
-  refused: count mismatch 2 vs 1 -- something was added AND removed here
-  nocedit  residue (2):
-      00509bf0   101b   34i  core_manpuz.cpp_CMansionPuzzleCircle_renderPanel
-      00509c60   237b   72i  core_manpuz.cpp_CMansionPuzzleCircle_renderEmitter
-  nocturne residue (1):
-      004ca710   113b   36i  core_manpuz.cpp_CMansionPuzzleCircle
-  UNSURE -- no proposal: 2 nocedit / 1 nocturne left over
-------------------------------------------------------------------------------
 core_slew.cpp   between 005a2050->0051f920 and 005a20b0->0051f980
   refused: count mismatch 2 vs 1 -- something was added AND removed here
   nocedit  residue (2):
@@ -274,12 +240,12 @@ core_slew.cpp   between 005a2050->0051f920 and 005a20b0->0051f980
   UNSURE -- no proposal: 2 nocedit / 1 nocturne left over
 ------------------------------------------------------------------------------
 
-  7 pairable brackets covering 23 nocedit / 11 nocturne functions
-  226 one-sided brackets (631 editor-only, 22 game-only) -- not pairable by construction
-  947 nocedit functions in 55 regions with no bracket at all:
+  4 pairable brackets covering 14 nocedit / 7 nocturne functions
+  227 one-sided brackets (642 editor-only, 24 game-only) -- not pairable by construction
+  936 nocedit functions in 52 regions with no bracket at all:
         713  fewer than 2 anchors in the unit
-        144  before the unit's first anchor
-         90  after the unit's last anchor
+        135  before the unit's first anchor
+         88  after the unit's last anchor
       (a unit with no anchors is usually absent from the game build entirely)
 
 ==============================================================================
@@ -289,7 +255,7 @@ D. UNMATCHED ON BOTH SIDES UNDER THE SAME NAME
   these are invisible to it. Unit and name core both agree on each row.
 
   candidate pairs   : 0
-  ambiguous cores   : 1   (core repeats on one side -- overloads; excluded)
+  ambiguous cores   : 0   (core repeats on one side -- overloads; excluded)
   by shape agreement: {}
     identical/same_mnemonics -- the body did not change either; the mapper
     missed these on layout alone, so they are as safe as a matched pair.
@@ -300,18 +266,55 @@ D. UNMATCHED ON BOTH SIDES UNDER THE SAME NAME
 ==============================================================================
 C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
 ==============================================================================
-  pairs compared        : 5257
+  pairs compared        : 5264
   never transferred     : 5   (nocturne side has no signature at all -- transfer work, not drift)
-  genuine divergence    : 38   (both sides typed, and they disagree -- investigate)
-  name core differs     : 182   (mapped as the same function under two different names)
+  genuine divergence    : 40   (both sides typed, and they disagree -- investigate)
+  name core differs     : 69   (mapped as the same function under two different names)
 
   -- genuine divergence, highest confidence first --
-  by kind: {'ret': 25, 'param': 13, 'param1': 4, 'param2': 4, 'param0': 4, 'param3': 1, 'conv': 1}
+  by kind: {'ret': 28, 'param': 12, 'param0': 7, 'param1': 4, 'param2': 4, 'param3': 1, 'conv': 1}
 
-    005be490 -> 00538440  conf 1.00  shape same_mnemonics
-      core_stranger.cpp_CStranger_getHandsMidpoint
-        param1 CVector3f* -> float*
-        ret CVector3f* -> float*
+    00403740 -> 00404430  conf 1.00  shape same_mnemonics
+      engine_3d.c_abortOldFuncNoOpcode
+        param0 SMRGLHeaderPrimitive* -> SMRGLHeaderExtended*
+        ret void* -> SMRGLHeaderExtended*
+    0042cd50 -> 00428ee0  conf 1.00  shape same_mnemonics
+      core_charactr.cpp_CCharacter_setDoorTarget
+        param1 CDoor* -> float
+    004ea1c0 -> 004accf0  conf 1.00  shape same_mnemonics
+      core_glass.cpp_CGlass_createShatterParticles
+        param1 SQuadVertices* -> float*
+        param2 CVector4i* -> int*
+        param3 CVector4i* -> int*
+    004fe900 -> 004c0640  conf 1.00  shape similar_size
+      core_inv.cpp_CInventory_createAmmoFromWeapon
+        param1 CWeapon* -> int
+    0052ecf0 -> 004e28a0  conf 1.00  shape similar_size
+      sound_mp3.cpp_CFileBitStream_init
+        param2 int -> ulong
+    00576910 -> 005143c0  conf 1.00  shape same_mnemonics
+      core_setdir.cpp_CZThumb_arrdtor1500
+        param0 CZThumb* -> CBoundingBox3D*
+        ret CZThumb* -> CBoundingBox3D*
+    005ade20 -> 00529a40  conf 1.00  shape unshaped
+      sound_sndmain.cpp_CSfxSlot_dtor
+        param0 CSfxSlot* -> CSfxOptions*
+        ret CSfxSlot* -> CSfxOptions*
+    005b7c30 -> 00532ba0  conf 1.00  shape similar_size
+      engine_special.cpp_presentToExternalRenderer
+        param count 1 -> 0
+        ret void -> int
+    005bac80 -> 00534c80  conf 1.00  shape identical
+      core_stairs.cpp_CDemonTriangle_arrdtor40
+        param0 CDemonTriangle* -> SFly*
+        ret CDemonTriangle* -> SFly*
+    005ee490 -> 005543b0  conf 1.00  shape same_mnemonics
+      core_weapon.cpp_CWeapon_getCarrier
+        param0 CWeapon* -> CLadder*
+        ret CDemonActor* -> EGroundType
+    00606b17 -> 0056c007  conf 1.00  shape identical
+      crt_math.c_fdiv_thunk
+        ret float10 -> void
     0053ee30 -> 00540a10  conf 0.99  shape identical
       shape_multicrm.cpp_CMultiCram_getSecondModel
         param0 CMultiCram* -> void*
@@ -328,9 +331,6 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
       crt_math.c_dispatch_divide
         ret float10 -> undefined1
     00606aeb -> 0056bfdb  conf 0.99  shape identical
-      crt_math.c_fdiv_thunk
-        ret float10 -> void
-    00606b17 -> 0056c007  conf 0.99  shape identical
       crt_math.c_fdiv_thunk
         ret float10 -> void
     00606b7f -> 0056c06f  conf 0.99  shape identical
@@ -379,29 +379,18 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
     00570ea0 -> 0050e550  conf 0.93  shape size_mismatch
       core_set.cpp_CDemonSet_setCameraEnabled
         param2 int -> undefined4
-    0052b5c0 -> 004e0300  conf 0.89  shape identical
-      core_morph.cpp_CMorph_updateModelVertices
-        param count 4 -> 1
-    00570700 -> 0050dd60  conf 0.89  shape identical
-      core_set.cpp_CDemonSet_renderFaceBatchOrEnvMap
-        param count 4 -> 1
-    004fe900 -> 004c0640  conf 0.85  shape similar_size
-      core_inv.cpp_CInventory_createAmmoFromWeapon
-        param1 CWeapon* -> int
     0050f1b0 -> 0056497c  conf 0.85  shape size_mismatch
       shape_memdbg.cpp_debugAllocTracked1
+        param count 3 -> 1
+    0050f250 -> 005635b0  conf 0.85  shape size_mismatch
+      shape_memdbg.cpp_debugMalloc
         param count 3 -> 1
     0050f350 -> 00565c50  conf 0.85  shape size_mismatch
       shape_memdbg.cpp_debugCalloc
         param count 4 -> 2
-    005b7c30 -> 00532ba0  conf 0.85  shape similar_size
-      engine_special.cpp_presentToExternalRenderer
-        param count 1 -> 0
-        ret void -> int
-    005bac80 -> 00534c80  conf 0.85  shape identical
-      core_stairs.cpp_CDemonTriangle_arrdtor40
-        param0 CDemonTriangle* -> SFly*
-        ret CDemonTriangle* -> SFly*
+    00571320 -> 0050aba0  conf 0.85  shape size_mismatch
+      core_set.cpp_CDemonSet_isCameraPanning
+        ret int -> void
     005e1ee0 -> 005492a0  conf 0.85  shape unshaped
       support_trisock.cpp_cleanupWinsock
         conv __cdecl -> __stdcall
@@ -412,33 +401,19 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
       core_dest.cpp_CActorDestination_renderTransparent
         param count 1 -> 2
         ret int -> ECollisionType
-    005da7c0 -> 00543890  conf 0.82  shape unshaped
-      core_teleport.cpp_CTeleportDest_getCollisionType
-        param0 CTeleportDest* -> CDemonActor*
-    0052ecf0 -> 004e28a0  conf 0.78  shape similar_size
-      sound_mp3.cpp_CFileBitStream_init
-        param2 int -> ulong
     0056b7e0 -> 005090f0  conf 0.78  shape size_mismatch
       core_set.cpp_CDemonSet_reinitCamera
         param1 int -> undefined4
         param2 int -> undefined4
-    004ea1c0 -> 004accf0  conf 0.75  shape same_mnemonics
-      core_glass.cpp_CGlass_createShatterParticles
-        param1 SQuadVertices* -> float*
-        param2 CVector4i* -> int*
-        param3 CVector4i* -> int*
     00574910 -> 00513720  conf 0.75  shape size_mismatch
       core_setdir.cpp_CZThumb_saveZBufferTable
         param count 7 -> 1
-    00571320 -> 0050aba0  conf 0.59  shape size_mismatch
-      core_set.cpp_CDemonSet_isCameraPanning
-        ret int -> void
     004090a0 -> 0040a130  conf 0.57  shape unshaped
       core_actor.cpp_CDemonActor_getPathMap
         ret CPathMap* -> int
 
   -- same pair, different name core --
-  {'unnamed on one side': 173, 'renamed': 6, 'stubbed in nocturne': 3}
+  {'unnamed on one side': 56, 'renamed': 7, 'MAPPING SUSPECT': 3, 'stubbed in nocturne': 3}
     MAPPING SUSPECT     the two names claim different CLASSES, so the
                         pair is probably wrong, not the names
     case-only spelling  same name, different capitalisation -- one build
@@ -447,24 +422,36 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
     stubbed in nocturne the game build compiled the body out; expected
     renamed             genuinely different identifiers; read both
 
-    [renamed] 00448630 -> 0043c970  conf 0.91  shape same_mnemonics
-      nocedit  CCrate_drop
-      nocturne CCrate_onDropped
-    [renamed] 004111b0 -> 0040ef60  conf 0.85  shape same_mnemonics
+    [MAPPING SUSPECT] 00576910 -> 005143c0  conf 1.00  shape same_mnemonics
+      nocedit  CZThumb_arrdtor1500
+      nocturne CBoundingBox3D_arrdtor2000
+    [MAPPING SUSPECT] 005ade20 -> 00529a40  conf 1.00  shape unshaped
+      nocedit  CSfxSlot_dtor
+      nocturne CSfxOptions_dtor
+    [MAPPING SUSPECT] 005ee490 -> 005543b0  conf 1.00  shape same_mnemonics
+      nocedit  CWeapon_getCarrier
+      nocturne CLadder_getGroundType
+    [renamed] 004111b0 -> 0040ef60  conf 1.00  shape same_mnemonics
       nocedit  CAmmo_setAmmoCount
       nocturne CAmmo_setWeaponAmmo
-    [renamed] 005bac80 -> 00534c80  conf 0.85  shape identical
+    [renamed] 0042cd50 -> 00428ee0  conf 1.00  shape same_mnemonics
+      nocedit  CCharacter_setDoorTarget
+      nocturne CCharacter_setWalkTimeout
+    [renamed] 00448630 -> 0043c970  conf 1.00  shape same_mnemonics
+      nocedit  CCrate_drop
+      nocturne CCrate_onDropped
+    [renamed] 005bac80 -> 00534c80  conf 1.00  shape identical
       nocedit  CDemonTriangle_arrdtor40
       nocturne SFly_arrdtor40
+    [renamed] 005db9d0 -> 005445c0  conf 1.00  shape same_mnemonics
+      nocedit  CTentacle_updateGrabbedVictim
+      nocturne CTentacle_attractActorToward
+    [renamed] 005e3540 -> 0054a900  conf 1.00  shape same_mnemonics
+      nocedit  CTurret_stopInteraction
+      nocturne CTurret_stopUsing
     [renamed] 0046fb70 -> 0044ba10  conf 0.82  shape unshaped
       nocedit  CActorDestination_renderTransparent
       nocturne CActorDestination_getCollisionType
-    [renamed] 005db9d0 -> 005445c0  conf 0.82  shape same_mnemonics
-      nocedit  CTentacle_updateGrabbedVictim
-      nocturne CTentacle_attractActorToward
-    [renamed] 005e3540 -> 0054a900  conf 0.78  shape same_mnemonics
-      nocedit  CTurret_stopInteraction
-      nocturne CTurret_stopUsing
     [stubbed in nocturne] 00408ac0 -> 00409f00  conf 0.82  shape similar_size
       nocedit  CDemonActor_renderTransparent
       nocturne CDemonActor_returnZero
@@ -474,21 +461,54 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
     [stubbed in nocturne] 004090a0 -> 0040a130  conf 0.57  shape unshaped
       nocedit  CDemonActor_getPathMap
       nocturne CDemonActor_returnZero
-    [unnamed on one side] 00454450 -> 00448310  conf 1.00  shape similar_size
-      nocedit  CDemonCamera_saveZBufferScanlines
-      nocturne CDemonCamera
-    [unnamed on one side] 004544a0 -> 00448380  conf 1.00  shape similar_size
-      nocedit  CDemonCamera_restoreZBufferScanlines
-      nocturne CDemonCamera
+    [unnamed on one side] 00403740 -> 00404430  conf 1.00  shape same_mnemonics
+      nocedit  abortOldFuncNoOpcode
+      nocturne abortRemovedMRGLHandler
+    [unnamed on one side] 00403ec0 -> 004051e0  conf 1.00  shape similar_size
+      nocedit  abortOldFuncOp11
+      nocturne renderMRGLSubChain
+    [unnamed on one side] 00403ef0 -> 00405200  conf 1.00  shape size_mismatch
+      nocedit  abortOldFuncOp12
+      nocturne renderBSPNode
+    [unnamed on one side] 00438cb0 -> 00435210  conf 1.00  shape size_mismatch
+      nocedit  CCloth_free
+      nocturne CCloth
+    [unnamed on one side] 00477690 -> 00452f10  conf 1.00  shape size_mismatch
+      nocedit  CKeyFramedModel_free
+      nocturne CKeyFramedModel
+    [unnamed on one side] 004d29f0 -> 00495580  conf 1.00  shape identical
+      nocedit  weaponDrawBlendWeightCallback
+      nocturne motionBlendWeightFunc
+    [unnamed on one side] 00523be0 -> 004d8cd0  conf 1.00  shape size_mismatch
+      nocedit  CDemonMission_removeActorFromList
+      nocturne CDemonMission
+    [unnamed on one side] 00599a50 -> 005174e0  conf 1.00  shape size_mismatch
+      nocedit  CSkeleton_free
+      nocturne CSkeleton
+    [unnamed on one side] 0059ddb0 -> 0051b650  conf 1.00  shape unshaped
+      nocedit  blendWeightCallback
+      nocturne motionBlendWeightFunc
+    [unnamed on one side] 0059df40 -> 0051b7d0  conf 1.00  shape size_mismatch
+      nocedit  CDeformableModelInstance_free
+      nocturne CDeformableModelInstance
+    [unnamed on one side] 005a23f0 -> 0051fcc0  conf 1.00  shape similar_size
+      nocedit  factorFunc
+      nocturne factoryFuncSmiley
+    [unnamed on one side] 005b7c30 -> 00532ba0  conf 1.00  shape similar_size
+      nocedit  presentToExternalRenderer
+      nocturne toggle
     [unnamed on one side] 005baee0 -> 00534e90  conf 1.00  shape identical
       nocedit  blendWeightCallback
       nocturne motionBlendWeightFunc
-    [unnamed on one side] 005be430 -> 005383e0  conf 1.00  shape same_mnemonics
-      nocedit  CStranger_getCarryLightIntensity
-      nocturne CStranger
-    [unnamed on one side] 005be490 -> 00538440  conf 1.00  shape same_mnemonics
-      nocedit  CStranger_getHandsMidpoint
-      nocturne CStranger
+    [unnamed on one side] 005e9180 -> 0054fc40  conf 1.00  shape same_mnemonics
+      nocedit  isStartLocTriggered
+      nocturne CCryptVessel
+    [unnamed on one side] 005fee9f -> 00564905  conf 1.00  shape identical
+      nocedit  pureVirtualStub
+      nocturne pureVirtualConstructor
+    [unnamed on one side] 006015f1 -> 00566ed7  conf 1.00  shape identical
+      nocedit  handlePureVirtualCall
+      nocturne pureVirtual
     [unnamed on one side] 0054bcd0 -> 004f5290  conf 0.99  shape identical
       nocedit  CPackedBitmapSet_ctor
       nocturne CPackedBitmapSet
@@ -498,171 +518,33 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
     [unnamed on one side] 00600e29 -> 00565e59  conf 0.99  shape identical
       nocedit  fflush
       nocturne ostream_flush
-    [unnamed on one side] 006015f1 -> 00566ed7  conf 0.99  shape identical
-      nocedit  handlePureVirtualCall
-      nocturne pureVirtual
-    [unnamed on one side] 005d9260 -> 005423c0  conf 0.96  shape same_mnemonics
-      nocedit  CSvetlana_processAI
-      nocturne CSvetlana
+    [unnamed on one side] 00522d30 -> 004d7ea0  conf 0.96  shape size_mismatch
+      nocedit  CDemonMission_clearMissionData
+      nocturne CDemonMission
     [unnamed on one side] 00404420 -> 00405740  conf 0.93  shape size_mismatch
       nocedit  abortOldFuncOp18
       nocturne skipMRGLPrimitive
-    [unnamed on one side] 00411700 -> 0040f1a0  conf 0.93  shape similar_size
-      nocedit  CAmmoBox_addToInventory
-      nocturne CAmmoBox
-    [unnamed on one side] 00438cb0 -> 00435210  conf 0.93  shape size_mismatch
-      nocedit  CCloth_free
-      nocturne CCloth
-    [unnamed on one side] 004caa70 -> 0048df10  conf 0.93  shape same_mnemonics
-      nocedit  CFlame_hide
-      nocturne CFlame
-    [unnamed on one side] 004f2340 -> 004b46d0  conf 0.93  shape same_mnemonics
-      nocedit  CHero_ctor
-      nocturne CHero
-    [unnamed on one side] 004f8810 -> 004ba740  conf 0.93  shape same_mnemonics
-      nocedit  CIcePick_updateShootBlend
-      nocturne CIcePick
-    [unnamed on one side] 00503db0 -> 004c5630  conf 0.93  shape identical
-      nocedit  CLevelLoader_reset
-      nocturne CLevelLoader
-    [unnamed on one side] 00522d30 -> 004d7ea0  conf 0.93  shape size_mismatch
-      nocedit  CDemonMission_clearMissionData
-      nocturne CDemonMission
-    [unnamed on one side] 00523be0 -> 004d8cd0  conf 0.93  shape size_mismatch
-      nocedit  CDemonMission_removeActorFromList
-      nocturne CDemonMission
     [unnamed on one side] 0054bd60 -> 004f5320  conf 0.93  shape size_mismatch
       nocedit  CPackedBitmapSet_reset
       nocturne CPackedBitmapSet
+    [unnamed on one side] 00559f80 -> 004febd0  conf 0.93  shape size_mismatch
+      nocedit  CScript_loadScript
+      nocturne CScript
     [unnamed on one side] 00570ea0 -> 0050e550  conf 0.93  shape size_mismatch
       nocedit  CDemonSet_setCameraEnabled
       nocturne CDemonSet
     [unnamed on one side] 005751d0 -> 005125a0  conf 0.93  shape size_mismatch
       nocedit  CDemonSet_evaluateVirtualDirector
       nocturne CDemonSet
-    [unnamed on one side] 005853b0 -> 00514470  conf 0.93  shape similar_size
-      nocedit  C3DSCamera_reset
-      nocturne C3DSCamera
-    [unnamed on one side] 00599a50 -> 005174e0  conf 0.93  shape size_mismatch
-      nocedit  CSkeleton_free
-      nocturne CSkeleton
-    [unnamed on one side] 0059df40 -> 0051b7d0  conf 0.93  shape size_mismatch
-      nocedit  CDeformableModelInstance_free
-      nocturne CDeformableModelInstance
-    [unnamed on one side] 005e9180 -> 0054fc40  conf 0.93  shape same_mnemonics
-      nocedit  isStartLocTriggered
-      nocturne CCryptVessel
-    [unnamed on one side] 00425660 -> 004219f0  conf 0.89  shape same_mnemonics
-      nocedit  CBugs_initializeSwarmGraph
-      nocturne CBugs
-    [unnamed on one side] 0042dfc0 -> 0042a150  conf 0.89  shape same_mnemonics
-      nocedit  CCharacter_applyGestureLookAt
-      nocturne CCharacter
-    [unnamed on one side] 004529a0 -> 00446800  conf 0.89  shape identical
-      nocedit  CDemonCamera_generateFogGrid
-      nocturne CDemonCamera
-    [unnamed on one side] 004529b0 -> 00446810  conf 0.89  shape similar_size
-      nocedit  CDemonCamera_saveBackdrop
-      nocturne CDemonCamera
-    [unnamed on one side] 00453d10 -> 00447bb0  conf 0.89  shape similar_size
-      nocedit  CDemonCamera_blendLightmapPixel32
-      nocturne CDemonCamera
-    [unnamed on one side] 00453db0 -> 00447c60  conf 0.89  shape similar_size
-      nocedit  CDemonCamera_blendLightmapPixel16
-      nocturne CDemonCamera
-    [unnamed on one side] 004728b0 -> 0044e2c0  conf 0.89  shape similar_size
-      nocedit  CDemonLight_free
-      nocturne CDemonLight
-    [unnamed on one side] 004736c0 -> 0044f0b0  conf 0.89  shape same_mnemonics
-      nocedit  CDemonLight_renderCoronaGeometry
-      nocturne CDemonLight
-    [unnamed on one side] 004c8230 -> 0048b6f0  conf 0.89  shape same_mnemonics
-      nocedit  CFireEffect_traceLaser
-      nocturne CFireEffect
-    [unnamed on one side] 004cd2c0 -> 00490210  conf 0.89  shape similar_size
-      nocedit  CBitFont_loadFromFile
-      nocturne CBitFont
-    [unnamed on one side] 004d2190 -> 004950a0  conf 0.89  shape same_mnemonics
-      nocedit  CFrankenstienMachine_updateAnchorPosition
-      nocturne CFrankenstienMachine
-    [unnamed on one side] 004e0bd0 -> 004a3a90  conf 0.89  shape same_mnemonics
-      nocedit  CGame_resetInventoryDisplayTimer
-      nocturne CGame
-    [unnamed on one side] 00500690 -> 004c2470  conf 0.89  shape same_mnemonics
-      nocedit  CInventory_renderAllItems
-      nocturne CInventory
-    [unnamed on one side] 0050a610 -> 004cb010  conf 0.89  shape same_mnemonics
-      nocedit  CMansionPuzzleCircle_updateGem
-      nocturne CMansionPuzzleCircle
-    [unnamed on one side] 0051f930 -> 004d4ba0  conf 0.89  shape same_mnemonics
-      nocedit  CMimic_updatePose
-      nocturne CMimic
-    [unnamed on one side] 0051fcc0 -> 004d4f30  conf 0.89  shape same_mnemonics
-      nocedit  CMimic_processAnimation
-      nocturne CMimic
-    [unnamed on one side] 00523600 -> 004d8720  conf 0.89  shape similar_size
-      nocedit  CDemonMission_writeFile
-      nocturne CDemonMission
-    [unnamed on one side] 00523f50 -> 004d8fc0  conf 0.89  shape same_mnemonics
-      nocedit  CDemonMission_removeAllActors
-      nocturne CDemonMission
-    [unnamed on one side] 0052b5c0 -> 004e0300  conf 0.89  shape identical
-      nocedit  CMorph_updateModelVertices
-      nocturne CMorph
+    [unnamed on one side] 00403e00 -> 00404b10  conf 0.91  shape size_mismatch
+      nocedit  abortOldFuncOp9
+      nocturne renderRotatedMRGLSubChain
     [unnamed on one side] 0054a8e0 -> 004f3f50  conf 0.89  shape size_mismatch
       nocedit  CPackedBitmap_free
       nocturne CPackedBitmap
-    [unnamed on one side] 00559b20 -> 004fe770  conf 0.89  shape same_mnemonics
-      nocedit  CScript_renderSubtitles
-      nocturne CScript
-    [unnamed on one side] 00559d80 -> 004fe9d0  conf 0.89  shape same_mnemonics
-      nocedit  CScript_renderEditor
-      nocturne CScript
-    [unnamed on one side] 00559f80 -> 004febd0  conf 0.89  shape size_mismatch
-      nocedit  CScript_loadScript
-      nocturne CScript
-    [unnamed on one side] 0055a370 -> 004fee30  conf 0.89  shape similar_size
-      nocedit  CScript_buildParsedLines
-      nocturne CScript
-    [unnamed on one side] 0055a540 -> 004feff0  conf 0.89  shape same_mnemonics
-      nocedit  CScript_initRuntime
-      nocturne CScript
-    [unnamed on one side] 0056c1a0 -> 00509a80  conf 0.89  shape similar_size
-      nocedit  CDemonSet_renderScene
-      nocturne CDemonSet
-    [unnamed on one side] 0056c990 -> 0050a260  conf 0.89  shape similar_size
-      nocedit  CDemonSet_renderGogglesView
-      nocturne CDemonSet
-    [unnamed on one side] 005702b0 -> 0050d910  conf 0.89  shape same_mnemonics
-      nocedit  CDemonSet_renderEnvMapTriangles
-      nocturne CDemonSet
-    [unnamed on one side] 00570700 -> 0050dd60  conf 0.89  shape identical
-      nocedit  CDemonSet_renderFaceBatchOrEnvMap
-      nocturne CDemonSet
-    [unnamed on one side] 00570770 -> 0050ddd0  conf 0.89  shape same_mnemonics
-      nocedit  CDemonSet_renderPrimitiveBatch
-      nocturne CDemonSet
-    [unnamed on one side] 005709e0 -> 0050e080  conf 0.89  shape similar_size
-      nocedit  CDemonSet_setupMirrorRendering
-      nocturne CDemonSet
-    [unnamed on one side] 00570cd0 -> 0050e370  conf 0.89  shape same_mnemonics
-      nocedit  CDemonSet_cacheMirrorLighting
-      nocturne CDemonSet
-    [unnamed on one side] 005b3ba0 -> 0052ebc0  conf 0.89  shape same_mnemonics
-      nocedit  CSound_getSoundDuration
-      nocturne CSound
     [unnamed on one side] 005be520 -> 005384d0  conf 0.89  shape same_mnemonics
       nocedit  CStranger_updateProceduralAnimation
       nocturne CStranger
-    [unnamed on one side] 005c6220 -> 005402f0  conf 0.89  shape similar_size
-      nocedit  CStranger_updateClothSimulation
-      nocturne CStranger
-    [unnamed on one side] 005e7410 -> 0054e130  conf 0.89  shape same_mnemonics
-      nocedit  CVampireBoss_summonFireEmitters
-      nocturne CVampireBoss
-    [unnamed on one side] 005fb530 -> 00561010  conf 0.89  shape same_mnemonics
-      nocedit  CZombie_processPickup
-      nocturne CZombie
     [unnamed on one side] 00408820 -> 00409cd0  conf 0.85  shape size_mismatch
       nocedit  deleteActor
       nocturne destroyActor
@@ -672,42 +554,18 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
     [unnamed on one side] 004569b0 -> 0044adf0  conf 0.85  shape size_mismatch
       nocedit  CDemonCube_freeMemory
       nocturne CDemonCube
-    [unnamed on one side] 00477690 -> 00452f10  conf 0.85  shape size_mismatch
-      nocedit  CKeyFramedModel_free
-      nocturne CKeyFramedModel
-    [unnamed on one side] 004b1670 -> 00481620  conf 0.85  shape identical
-      nocedit  CRuleList_clear
-      nocturne CRuleList
-    [unnamed on one side] 004d29f0 -> 00495580  conf 0.85  shape identical
-      nocedit  weaponDrawBlendWeightCallback
-      nocturne motionBlendWeightFunc
-    [unnamed on one side] 004eb3a0 -> 004aded0  conf 0.85  shape same_mnemonics
-      nocedit  CGlass_checkBreakableCondition
-      nocturne CGlass
-    [unnamed on one side] 004fe900 -> 004c0640  conf 0.85  shape similar_size
-      nocedit  CInventory_createAmmoFromWeapon
-      nocturne CInventory
-    [unnamed on one side] 00502a70 -> 004c45a0  conf 0.85  shape same_mnemonics
-      nocedit  CLadder_updatePositionFromMaster
-      nocturne CLadder
-    [unnamed on one side] 00502b80 -> 004c46b0  conf 0.85  shape same_mnemonics
-      nocedit  CLadder_cacheRelativePosition
-      nocturne CLadder
     [unnamed on one side] 0050f1b0 -> 0056497c  conf 0.85  shape size_mismatch
       nocedit  debugAllocTracked1
       nocturne operator_new
     [unnamed on one side] 0050f210 -> 00564494  conf 0.85  shape size_mismatch
       nocedit  debugFreeChecked
       nocturne operator_delete
+    [unnamed on one side] 0050f250 -> 005635b0  conf 0.85  shape size_mismatch
+      nocedit  debugMalloc
+      nocturne malloc
     [unnamed on one side] 0050f350 -> 00565c50  conf 0.85  shape size_mismatch
       nocedit  debugCalloc
       nocturne calloc
-    [unnamed on one side] 0052f0d0 -> 004e2c50  conf 0.85  shape identical
-      nocedit  CFileBitStream_getErrorFlag
-      nocturne CFileBitStream
-    [unnamed on one side] 00544500 -> 004ee680  conf 0.85  shape unshaped
-      nocedit  CMouse_reset
-      nocturne CMouse
     [unnamed on one side] 0054bb40 -> 004f5110  conf 0.85  shape similar_size
       nocedit  loadPBGFile
       nocturne CPackedBitmapSet
@@ -720,222 +578,27 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
     [unnamed on one side] 0056d190 -> 0050aa70  conf 0.85  shape similar_size
       nocedit  CDemonSet_renderLightDebugView
       nocturne CDemonSet
+    [unnamed on one side] 00571320 -> 0050aba0  conf 0.85  shape size_mismatch
+      nocedit  CDemonSet_isCameraPanning
+      nocturne CDemonSet
     [unnamed on one side] 00575e40 -> 00513670  conf 0.85  shape size_mismatch
       nocedit  CDemonSet_writeThumbs
       nocturne CDemonSet
-    [unnamed on one side] 0059ddb0 -> 0051b650  conf 0.85  shape unshaped
-      nocedit  blendWeightCallback
-      nocturne motionBlendWeightFunc
-    [unnamed on one side] 005b2fd0 -> 0052dff0  conf 0.85  shape same_mnemonics
-      nocedit  CSound_process
-      nocturne CSound
-    [unnamed on one side] 005b7c30 -> 00532ba0  conf 0.85  shape similar_size
-      nocedit  presentToExternalRenderer
-      nocturne toggle
-    [unnamed on one side] 005dcab0 -> 00544de0  conf 0.85  shape similar_size
-      nocedit  CTextureCache_ctor
-      nocturne CTextureCache
-    [unnamed on one side] 005dd580 -> 00545700  conf 0.85  shape same_mnemonics
-      nocedit  CTextureCache_renderAllTextures
-      nocturne CTextureCache
     [unnamed on one side] 005e1ee0 -> 005492a0  conf 0.85  shape unshaped
       nocedit  cleanupWinsock
       nocturne WSACleanup
-    [unnamed on one side] 005e4d70 -> 0054bfc0  conf 0.85  shape same_mnemonics
-      nocedit  CTVBat_orderAttack
-      nocturne CTVBat
-    [unnamed on one side] 005da7c0 -> 00543890  conf 0.82  shape unshaped
-      nocedit  CTeleportDest_getCollisionType
-      nocturne CTeleportDest
-    [unnamed on one side] 004aa0f0 -> 0047a150  conf 0.80  shape same_mnemonics
-      nocedit  CEnemy_countSameClassAttackingHero
-      nocturne CEnemy
-    [unnamed on one side] 005add90 -> 00529a00  conf 0.80  shape same_mnemonics
-      nocedit  CSfxSample_getStreamingBufferSizeBytes
-      nocturne CSfxSample
-    [unnamed on one side] 00403e00 -> 00404b10  conf 0.78  shape size_mismatch
-      nocedit  abortOldFuncOp9
-      nocturne renderRotatedMRGLSubChain
-    [unnamed on one side] 00403ec0 -> 004051e0  conf 0.78  shape similar_size
-      nocedit  abortOldFuncOp11
-      nocturne renderMRGLSubChain
-    [unnamed on one side] 00403ef0 -> 00405200  conf 0.78  shape size_mismatch
-      nocedit  abortOldFuncOp12
-      nocturne renderBSPNode
-    [unnamed on one side] 0041cc40 -> 004196b0  conf 0.78  shape same_mnemonics
-      nocedit  CBoneGuy_updatePickupBehavior
-      nocturne CBoneGuy
-    [unnamed on one side] 00420680 -> 0041d050  conf 0.78  shape size_mismatch
-      nocedit  CBoundingBox3D_isVisibleWithCamera
-      nocturne CBoundingBox3D
-    [unnamed on one side] 004257f0 -> 00421b80  conf 0.78  shape same_mnemonics
-      nocedit  CBugs_updateGroundHeightGrid
-      nocturne CBugs
-    [unnamed on one side] 00425cc0 -> 00422050  conf 0.78  shape same_mnemonics
-      nocedit  CBugs_updateBugsBehavior
-      nocturne CBugs
-    [unnamed on one side] 0043b790 -> 00437a60  conf 0.78  shape same_mnemonics
-      nocedit  CCloth_renderCollisionBones
-      nocturne CCloth
-    [unnamed on one side] 0043b7e0 -> 00437ab0  conf 0.78  shape same_mnemonics
-      nocedit  CCloth_renderBone
-      nocturne CCloth
-    [unnamed on one side] 004cceb0 -> 0048fe30  conf 0.78  shape identical
-      nocedit  CBitFont_dtor
-      nocturne CBitFont
-    [unnamed on one side] 004cdc70 -> 00490b70  conf 0.78  shape identical
-      nocedit  CBitFont_drawTextFV
-      nocturne CBitFont
-    [unnamed on one side] 004cdd70 -> 00490c70  conf 0.78  shape identical
-      nocedit  CBitFont_printFV
-      nocturne CBitFont
-    [unnamed on one side] 004cde70 -> 00490d70  conf 0.78  shape identical
-      nocedit  CBitFont_drawTextCenterFV
-      nocturne CBitFont
-    [unnamed on one side] 004d6260 -> 00498de0  conf 0.78  shape same_mnemonics
-      nocedit  CGabriella_scoreTargetVisibility
-      nocturne CGabriella
-    [unnamed on one side] 004e0bb0 -> 004a3a70  conf 0.78  shape same_mnemonics
-      nocedit  CGame_resetWeaponSwitchTimers
-      nocturne CGame
-    [unnamed on one side] 004f8c70 -> 004baba0  conf 0.78  shape same_mnemonics
-      nocedit  CIcePick_processAI
-      nocturne CIcePick
-    [unnamed on one side] 00505a20 -> 004c6f50  conf 0.78  shape same_mnemonics
-      nocedit  CLightGun_isLightVulnerable
-      nocturne CLightGun
-    [unnamed on one side] 005098f0 -> 004ca410  conf 0.78  shape same_mnemonics
-      nocedit  CMansionPuzzleCircle_initPuzzleState
-      nocturne CMansionPuzzleCircle
-    [unnamed on one side] 00522560 -> 004d76e0  conf 0.78  shape identical
-      nocedit  CMirror_clipAndRenderReflectedPrimitive
-      nocturne CMirror
-    [unnamed on one side] 005225a0 -> 004d7720  conf 0.78  shape identical
-      nocedit  CMirror_renderReflectedPrimitive
-      nocturne CMirror
-    [unnamed on one side] 00522c80 -> 004d7e00  conf 0.78  shape similar_size
-      nocedit  CDemonMission_reset
-      nocturne CDemonMission
-    [unnamed on one side] 00522d20 -> 004d7e90  conf 0.78  shape identical
-      nocedit  CDemonMission_clearMission
-      nocturne CDemonMission
-    [unnamed on one side] 00524070 -> 004d90e0  conf 0.78  shape same_mnemonics
-      nocedit  CDemonMission_setTeleportTarget
-      nocturne CDemonMission
-    [unnamed on one side] 005243a0 -> 004d93d0  conf 0.78  shape similar_size
-      nocedit  CDemonMission_createFromSingleSet
-      nocturne CDemonMission
-    [unnamed on one side] 0052ecf0 -> 004e28a0  conf 0.78  shape similar_size
-      nocedit  CFileBitStream_init
-      nocturne CFileBitStream
-    [unnamed on one side] 0052edf0 -> 004e2980  conf 0.78  shape similar_size
-      nocedit  CFileBitStream_close
-      nocturne CFileBitStream
-    [unnamed on one side] 0054b520 -> 004f4b30  conf 0.78  shape similar_size
-      nocedit  CPackedBitmap_saveToPBMFile
-      nocturne CPackedBitmap
-    [unnamed on one side] 0054df80 -> 004f7360  conf 0.78  shape same_mnemonics
-      nocedit  CPlatform_isActorOnPlatform
-      nocturne CPlatform
     [unnamed on one side] 00559870 -> 004fe500  conf 0.78  shape size_mismatch
       nocedit  CScript_clear
-      nocturne CScript
-    [unnamed on one side] 0055a4b0 -> 004fef60  conf 0.78  shape same_mnemonics
-      nocedit  CScript_validateSyntax
-      nocturne CScript
-    [unnamed on one side] 005602b0 -> 00504d60  conf 0.78  shape same_mnemonics
-      nocedit  CScript_resetDialogState
-      nocturne CScript
-    [unnamed on one side] 005602e0 -> 00504d90  conf 0.78  shape same_mnemonics
-      nocedit  CScript_skipCinematic
       nocturne CScript
     [unnamed on one side] 0056b7e0 -> 005090f0  conf 0.78  shape size_mismatch
       nocedit  CDemonSet_reinitCamera
       nocturne CDemonSet
-    [unnamed on one side] 00572340 -> 0050f910  conf 0.78  shape same_mnemonics
-      nocedit  CDemonSet_rayVoxelHeightQuery
-      nocturne CDemonSet
-    [unnamed on one side] 005726c0 -> 0050fc90  conf 0.78  shape same_mnemonics
-      nocedit  CDemonSet_refinedRaycast
-      nocturne CDemonSet
-    [unnamed on one side] 00574170 -> 00511740  conf 0.78  shape same_mnemonics
-      nocedit  CDemonSet_skipExactCollisions
-      nocturne CDemonSet
-    [unnamed on one side] 00574220 -> 005117f0  conf 0.78  shape same_mnemonics
-      nocedit  CDemonSet_enableCollision
-      nocturne CDemonSet
-    [unnamed on one side] 00574440 -> 00511a10  conf 0.78  shape same_mnemonics
-      nocedit  CDemonSet_castVoxelShadow
-      nocturne CDemonSet
-    [unnamed on one side] 005744d0 -> 00511aa0  conf 0.78  shape same_mnemonics
-      nocedit  CDemonSet_transferVoxelShadow
-      nocturne CDemonSet
-    [unnamed on one side] 00576340 -> 00513e20  conf 0.78  shape same_mnemonics
-      nocedit  CDemonSet_isPointInVdirGroup
-      nocturne CDemonSet
-    [unnamed on one side] 00586ca0 -> 00515410  conf 0.78  shape unshaped
-      nocedit  C3DSLight_doNothing
-      nocturne C3DSLight
-    [unnamed on one side] 005a23f0 -> 0051fcc0  conf 0.78  shape similar_size
-      nocedit  factorFunc
-      nocturne factoryFuncSmiley
     [unnamed on one side] 005bf720 -> 005396d0  conf 0.78  shape same_mnemonics
       nocedit  CStranger_extractTurnPose
       nocturne CStranger
-    [unnamed on one side] 005c2850 -> 0053c800  conf 0.78  shape same_mnemonics
-      nocedit  CStranger_tryPlaceObject
-      nocturne CStranger
-    [unnamed on one side] 005c5b90 -> 0053fc60  conf 0.78  shape same_mnemonics
-      nocedit  CStranger_handleActionButton
-      nocturne CStranger
-    [unnamed on one side] 005c5f10 -> 0053ffe0  conf 0.78  shape same_mnemonics
-      nocedit  CStranger_handleFireButton
-      nocturne CStranger
-    [unnamed on one side] 005dcb20 -> 00544e50  conf 0.78  shape identical
-      nocedit  CTextureCache_reset
-      nocturne CTextureCache
-    [unnamed on one side] 005eb040 -> 005519c0  conf 0.78  shape same_mnemonics
-      nocedit  CWaterActor_updateLocalPositions
-      nocturne CWaterActor
-    [unnamed on one side] 00422590 -> 0041f190  conf 0.75  shape same_mnemonics
-      nocedit  CBoxActor_constrainToExtents
-      nocturne CBoxActor
     [unnamed on one side] 00422d60 -> 0041f6e0  conf 0.75  shape same_mnemonics
       nocedit  CLightActor_setupLightModel
       nocturne CLightActor
-    [unnamed on one side] 00429870 -> 004259f0  conf 0.75  shape same_mnemonics
-      nocedit  CCharacter_process
-      nocturne CCharacter
-    [unnamed on one side] 0042af60 -> 004270e0  conf 0.75  shape same_mnemonics
-      nocedit  CCharacter_renderEthereal
-      nocturne CCharacter
-    [unnamed on one side] 0042b5b0 -> 00427730  conf 0.75  shape same_mnemonics
-      nocedit  CCharacter_igniteBone
-      nocturne CCharacter
-    [unnamed on one side] 0042b8e0 -> 00427a60  conf 0.75  shape same_mnemonics
-      nocedit  CCharacter_shatter
-      nocturne CCharacter
-    [unnamed on one side] 0042ca70 -> 00428c00  conf 0.75  shape same_mnemonics
-      nocedit  CCharacter_processWalking
-      nocturne CCharacter
-    [unnamed on one side] 0042ede0 -> 0042af70  conf 0.75  shape same_mnemonics
-      nocedit  CCharacter_moveOutOfHeroWay
-      nocturne CCharacter
-    [unnamed on one side] 0044b060 -> 0043f330  conf 0.75  shape similar_size
-      nocedit  CCurtain_renderMesh
-      nocturne CCurtain
-    [unnamed on one side] 0044e360 -> 004421b0  conf 0.75  shape similar_size
-      nocedit  CDemonCamera_precomputeNormals
-      nocturne CDemonCamera
-    [unnamed on one side] 004864c0 -> 0045ab40  conf 0.75  shape same_mnemonics
-      nocedit  CDraculaBride_startFreakySound
-      nocturne CDraculaBride
-    [unnamed on one side] 004d6d40 -> 004998c0  conf 0.75  shape same_mnemonics
-      nocedit  CGabriella_updateClavicleCollisionAvoidance
-      nocturne CGabriella
-    [unnamed on one side] 004d6f80 -> 00499b00  conf 0.75  shape same_mnemonics
-      nocedit  CGabriella_binarySearchClavicleBlend
-      nocturne CGabriella
     [unnamed on one side] 004e0cd0 -> 004a3b90  conf 0.75  shape similar_size
       nocedit  CGame_saveGame
       nocturne CGame
@@ -948,51 +611,24 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
     [unnamed on one side] 004e2910 -> 004a57c0  conf 0.75  shape similar_size
       nocedit  CGame_showFullscreenBitmap
       nocturne CGame
-    [unnamed on one side] 004e9ca0 -> 004ac7c0  conf 0.75  shape similar_size
-      nocedit  CGlass_renderBrokenGlass
-      nocturne CGlass
-    [unnamed on one side] 004ea1c0 -> 004accf0  conf 0.75  shape same_mnemonics
-      nocedit  CGlass_createShatterParticles
-      nocturne CGlass
-    [unnamed on one side] 004f2d70 -> 004b5110  conf 0.75  shape same_mnemonics
-      nocedit  CHero_tryOpenNearbyDoor
-      nocturne CHero
-    [unnamed on one side] 004f3760 -> 004b5b00  conf 0.75  shape same_mnemonics
-      nocedit  CHero_tryUseSelectedItem
-      nocturne CHero
+    [unnamed on one side] 00509bf0 -> 004ca710  conf 0.75  shape similar_size
+      nocedit  CMansionPuzzleCircle_renderPanel
+      nocturne CMansionPuzzleCircle
     [unnamed on one side] 00509d50 -> 004ca790  conf 0.75  shape similar_size
       nocedit  CMansionPuzzleCircle_renderGem
       nocturne CMansionPuzzleCircle
     [unnamed on one side] 0054b9b0 -> 004f4f90  conf 0.75  shape similar_size
       nocedit  parsePBGFile
       nocturne CPackedBitmapSet
-    [unnamed on one side] 00558060 -> 004fcd90  conf 0.75  shape same_mnemonics
-      nocedit  CScat_updateWeaponState
-      nocturne CScat
-    [unnamed on one side] 005584a0 -> 004fd1d0  conf 0.75  shape same_mnemonics
-      nocedit  CScat_blendAimBones
-      nocturne CScat
     [unnamed on one side] 0056d2d0 -> 0050ad20  conf 0.75  shape similar_size
       nocedit  CDemonSet_clearLights
       nocturne CDemonSet
     [unnamed on one side] 00574910 -> 00513720  conf 0.75  shape size_mismatch
       nocedit  CZThumb_saveZBufferTable
       nocturne CDemonSet
-    [unnamed on one side] 00585870 -> 005148b0  conf 0.75  shape similar_size
-      nocedit  C3DSCamera_apply
-      nocturne C3DSCamera
-    [unnamed on one side] 005b8950 -> 00533750  conf 0.75  shape same_mnemonics
-      nocedit  CSpike_testCollisionWithCharacters
-      nocturne CSpike
-    [unnamed on one side] 005fee9f -> 00564905  conf 0.75  shape identical
-      nocedit  pureVirtualStub
-      nocturne pureVirtualConstructor
     [unnamed on one side] 0060128c -> 00566440  conf 0.75  shape unshaped
       nocedit  _getcwd
       nocturne getcwd
-    [unnamed on one side] 00571320 -> 0050aba0  conf 0.59  shape size_mismatch
-      nocedit  CDemonSet_isCameraPanning
-      nocturne CDemonSet
 
-  for reference, verify_sibling_signatures.py's byte-measured verdicts: {'agree': 2493, 'unverifiable': 2735, 'conflict': 29}
+  for reference, verify_sibling_signatures.py's byte-measured verdicts: {'agree': 2494, 'unverifiable': 2740, 'conflict': 30}
   those measure ARGUMENT SIZE from nocturne's own bytes and are a different axis

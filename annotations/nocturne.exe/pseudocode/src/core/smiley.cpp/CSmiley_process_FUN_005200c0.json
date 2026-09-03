@@ -76,43 +76,43 @@
       {
         "category": "incompatible_types",
         "column": 15,
-        "line": 151,
+        "line": 152,
         "message": "no matching function for call to 'core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30'"
       },
       {
         "category": "incompatible_types",
         "column": 15,
-        "line": 184,
+        "line": 185,
         "message": "no matching function for call to 'core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30'"
       },
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 234,
+        "line": 235,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 20,
-        "line": 234,
+        "line": 235,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 22,
-        "line": 234,
+        "line": 235,
         "message": "use of undeclared identifier 'iRam0000014c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 54,
-        "line": 247,
+        "line": 248,
         "message": "use of undeclared identifier 'DAT_02dd1184'"
       },
       {
         "category": "undeclared_identifier",
         "column": 30,
-        "line": 249,
+        "line": 250,
         "message": "use of undeclared identifier '_DAT_02da8a7c'"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 847,
-    "complexity_score": 528,
+    "complexity_score": 529,
     "cross_reference_count": 0,
     "function_call_count": 25,
     "global_count": 16,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 383,
+    "pseudocode_lines": 384,
     "suspect_count": 12,
     "suspect_types": [
       "undefined_data",
@@ -136,7 +136,7 @@
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 1230
+    "total_lines": 1231
   },
   "cross_references": [],
   "function": {
@@ -174,19 +174,9 @@
       "name": "core_actor.cpp_normalizeAngleToPi_FUN_0040df00"
     },
     {
-      "addr": "004259f0",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_004259f0"
-    },
-    {
-      "addr": "00428c00",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_00428c00"
-    },
-    {
       "addr": "0042a150",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042a150"
+      "name": "core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042a150"
     },
     {
       "addr": "00425960",
@@ -204,9 +194,19 @@
       "name": "core_charactr.cpp_CCharacter_preProcess_FUN_004259a0"
     },
     {
+      "addr": "004259f0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_process_FUN_004259f0"
+    },
+    {
       "addr": "0042add0",
       "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_processMotion_FUN_0042add0"
+    },
+    {
+      "addr": "00428c00",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_processWalking_FUN_00428c00"
     },
     {
       "addr": "004247f0",
@@ -823,7 +823,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 227,
+      "line": 228,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(iRam0000014c + 0xe8))(0);",
@@ -831,7 +831,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 240,
+      "line": 241,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(&local_b8,(CVector3f *)&DAT_02dd1184,",
@@ -839,7 +839,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 276,
+      "line": 277,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(&local_88,(CVector3f *)&DAT_02dd1184,",
@@ -855,7 +855,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 190,
+      "line": 191,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -863,7 +863,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 325,
+      "line": 326,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -871,7 +871,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 344,
+      "line": 345,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -879,7 +879,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 372,
+      "line": 373,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.position_delta.z = 0.0;",
@@ -887,7 +887,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 375,
+      "line": 376,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",

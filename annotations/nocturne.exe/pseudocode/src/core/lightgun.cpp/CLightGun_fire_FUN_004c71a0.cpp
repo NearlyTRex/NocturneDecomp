@@ -77,7 +77,7 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_004c71a0(CLightGun *this_ptr)
   CStack_50.z = aCStack_a4[0].z - fStack_30;
   core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
   core_setcolid_cpp_CDemonSet_setRayType_FUN_00511800(g_CDemonSet_PTR_005be368,1);
-  core_setcolid_cpp_CDemonSet_FUN_00511740(g_CDemonSet_PTR_005be368);
+  core_setcolid_cpp_CDemonSet_skipExactCollisions_FUN_00511740(g_CDemonSet_PTR_005be368);
   core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSet_PTR_005be368,(CDemonActor *)this_ptr);
   if ((this_ptr->base).carried_by_actor != (CDemonActor *)0x0) {
     core_setcolid_cpp_CDemonSet_ignore_FUN_00511780

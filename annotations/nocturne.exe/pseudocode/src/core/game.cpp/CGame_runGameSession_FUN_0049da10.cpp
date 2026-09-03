@@ -250,7 +250,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(CGame *this_ptr)
               }
             }
             if (iVar3 == 5) {
-              iVar3 = core_script_cpp_CScript_FUN_00504d90(0x01E56DA0);
+              iVar3 = core_script_cpp_CScript_skipCinematic_FUN_00504d90(0x01E56DA0);
               this_ptr->cutscene_skippable = (uint)(iVar3 == 0);
             }
             engine_2d_c_clearInputAndWait_FUN_00403f50();

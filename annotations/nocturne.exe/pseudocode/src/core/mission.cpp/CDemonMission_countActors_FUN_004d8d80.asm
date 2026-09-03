@@ -7,7 +7,7 @@
 ; CDemonMission *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_mission.cpp_CDemonMission_FUN_004d8720 at 004d8883
+;   core_mission.cpp_CDemonMission_writeFile_FUN_004d8720 at 004d8883
 ;
 ; *****************************************************************************
 

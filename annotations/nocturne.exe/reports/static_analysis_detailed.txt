@@ -20,7 +20,7 @@ bugprone-integer-division (7)
     File: core/bodypart.cpp
     result of integer division used in a floating point context; possible loss of precision
 
-  core_charactr.cpp_CCharacter_FUN_0042af70          line 115
+  core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_ line 115
     File: core/charactr.cpp
     result of integer division used in a floating point context; possible loss of precision
 
@@ -48,11 +48,11 @@ cert-flp30-c (5)
     File: core/actor.cpp
     loop induction expression should not have floating-point type
 
-  core_charactr.cpp_CCharacter_FUN_0042af70          line 77
+  core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_ line 77
     File: core/charactr.cpp
     loop induction expression should not have floating-point type
 
-  core_charactr.cpp_CCharacter_FUN_0042af70          line 125
+  core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_ line 125
     File: core/charactr.cpp
     loop induction expression should not have floating-point type
 
@@ -65,11 +65,11 @@ cert-flp30-c (5)
     loop induction expression should not have floating-point type
 
 ====================================================================================================
-Cppcheck (quick) (883 diagnostics)
+Cppcheck (quick) (881 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-uninitvar (371)
+uninitvar (370)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_ckptutil.c_applyActPalette_FUN_0042d370    line 19
@@ -256,10 +256,6 @@ uninitvar (371)
     File: core/box.cpp
     Uninitialized variable: in_stack_00000008
 
-  core_bugs.cpp_CBugs_FUN_00421b80                   line 72
-    File: core/bugs.cpp
-    Uninitialized variable: unaff_EBX
-
   core_bugs.cpp_CBugs_findNextSwarmVertex_FUN_004234 line 95
     File: core/bugs.cpp
     Uninitialized variable: local_34
@@ -280,9 +276,13 @@ uninitvar (371)
     File: core/bugs.cpp
     Uninitialized variable: unaff_EDI
 
-  core_bugs.cpp_CBugs_renderOpaque_FUN_00421540      line 63
+  core_bugs.cpp_CBugs_renderOpaque_FUN_00421540      line 64
     File: core/bugs.cpp
     Uninitialized variable: in_stack_00000008
+
+  core_bugs.cpp_CBugs_updateGroundHeightGrid_FUN_004 line 72
+    File: core/bugs.cpp
+    Uninitialized variable: unaff_EBX
 
   core_chain.cpp_CChain_constrainSegmentDistance_FUN line 35
     File: core/chain.cpp
@@ -424,14 +424,6 @@ uninitvar (371)
     File: core/curtain.cpp
     Uninitialized variable: local_dc
 
-  core_dcamera.cpp_CDemonCamera_FUN_00446810         line 72
-    File: core/dcamera.cpp
-    Uninitialized variable: local_114
-
-  core_dcamera.cpp_CDemonCamera_FUN_00446810         line 197
-    File: core/dcamera.cpp
-    Uninitialized variable: iStack_120
-
   core_dcamera.cpp_CDemonCamera_FUN_00447f20         line 93
     File: core/dcamera.cpp
     Uninitialized variable: iStack_60
@@ -455,6 +447,14 @@ uninitvar (371)
   core_dcamera.cpp_CDemonCamera_saveAlphaTransform_F line 24
     File: core/dcamera.cpp
     Uninitialized variable: unaff_retaddr
+
+  core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_004 line 72
+    File: core/dcamera.cpp
+    Uninitialized variable: local_114
+
+  core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_004 line 197
+    File: core/dcamera.cpp
+    Uninitialized variable: iStack_120
 
   core_dcamera.cpp_CDemonCamera_saveCameraTransform_ line 19
     File: core/dcamera.cpp
@@ -1040,10 +1040,6 @@ uninitvar (371)
     File: core/mmx.c
     Uninitialized variable: in_AC
 
-  core_morph.cpp_CMorph_FUN_004e0300                 line 17
-    File: core/morph.cpp
-    Uninitialized variable: in_stack_00000008
-
   core_motion.cpp_CMotionController_markerPositionTo line 45
     File: core/motion.cpp
     Uninitialized variable: local_1c
@@ -1108,7 +1104,7 @@ uninitvar (371)
     File: core/set.cpp
     Uninitialized variable: in_stack_00000010
 
-  core_set.cpp_CDemonSet_precomputeLightVisibility_F line 145
+  core_set.cpp_CDemonSet_precomputeLightVisibility_F line 146
     File: core/set.cpp
     Uninitialized variable: iStack_24
 
@@ -1608,14 +1604,6 @@ shiftTooManyBitsSigned (200)
     File: core/cloth.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_dcamera.cpp_CDemonCamera_FUN_004421b0         line 140
-    File: core/dcamera.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_dcamera.cpp_CDemonCamera_FUN_004421b0         line 148
-    File: core/dcamera.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
   core_dcamera.cpp_CDemonCamera_initLookupTable_FUN_ line 38
     File: core/dcamera.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
@@ -1649,6 +1637,14 @@ shiftTooManyBitsSigned (200)
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
   core_dcamera.cpp_CDemonCamera_loadImage_FUN_004432 line 462
+    File: core/dcamera.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_dcamera.cpp_CDemonCamera_precomputeNormals_FU line 140
+    File: core/dcamera.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_dcamera.cpp_CDemonCamera_precomputeNormals_FU line 148
     File: core/dcamera.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
@@ -1952,35 +1948,35 @@ shiftTooManyBitsSigned (200)
     File: core/game.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_glass.cpp_CGlass_FUN_004accf0                 line 171
+  core_glass.cpp_CGlass_createShatterParticles_FUN_0 line 171
     File: core/glass.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_glass.cpp_CGlass_FUN_004accf0                 line 177
+  core_glass.cpp_CGlass_createShatterParticles_FUN_0 line 177
     File: core/glass.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_glass.cpp_CGlass_FUN_004accf0                 line 230
+  core_glass.cpp_CGlass_createShatterParticles_FUN_0 line 230
     File: core/glass.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_glass.cpp_CGlass_FUN_004accf0                 line 236
+  core_glass.cpp_CGlass_createShatterParticles_FUN_0 line 236
     File: core/glass.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_glass.cpp_CGlass_FUN_004accf0                 line 285
+  core_glass.cpp_CGlass_createShatterParticles_FUN_0 line 285
     File: core/glass.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_glass.cpp_CGlass_FUN_004accf0                 line 291
+  core_glass.cpp_CGlass_createShatterParticles_FUN_0 line 291
     File: core/glass.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_glass.cpp_CGlass_FUN_004accf0                 line 344
+  core_glass.cpp_CGlass_createShatterParticles_FUN_0 line 344
     File: core/glass.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_glass.cpp_CGlass_FUN_004accf0                 line 350
+  core_glass.cpp_CGlass_createShatterParticles_FUN_0 line 350
     File: core/glass.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
@@ -2112,10 +2108,6 @@ shiftTooManyBitsSigned (200)
     File: core/path.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_set.cpp_CDemonSet_FUN_0050a260                line 115
-    File: core/set.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
   core_set.cpp_CDemonSet_lightVertexColor_FUN_0050b7 line 126
     File: core/set.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
@@ -2137,6 +2129,10 @@ shiftTooManyBitsSigned (200)
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
   core_set.cpp_CDemonSet_lightVertexColor_FUN_0050b7 line 146
+    File: core/set.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_set.cpp_CDemonSet_renderGogglesView_FUN_0050a line 115
     File: core/set.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
@@ -2361,7 +2357,7 @@ shiftTooManyBitsSigned (200)
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-legacyUninitvar (84)
+legacyUninitvar (83)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_ckptutil.c_drawLineAA_FUN_0042f600         line 65
@@ -2428,13 +2424,13 @@ legacyUninitvar (84)
     File: core/box.cpp
     Uninitialized variable: local_378
 
-  core_dcamera.cpp_CDemonCamera_FUN_00446810         line 101
-    File: core/dcamera.cpp
-    Uninitialized variable: unaff_EDI
-
   core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_ line 115
     File: core/dcamera.cpp
     Uninitialized variable: local_74
+
+  core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_004 line 101
+    File: core/dcamera.cpp
+    Uninitialized variable: unaff_EDI
 
   core_dcube.cpp_FUN_0044ae80                        line 27
     File: core/dcube.cpp
@@ -2516,7 +2512,7 @@ legacyUninitvar (84)
     File: core/elephant.cpp
     Uninitialized variable: pCStack_2c
 
-  core_inv.cpp_CInventory_FUN_004c2470               line 170
+  core_inv.cpp_CInventory_renderAllItems_FUN_004c247 line 170
     File: core/inv.cpp
     Uninitialized variable: local_4c
 
@@ -2536,14 +2532,6 @@ legacyUninitvar (84)
     File: core/path.cpp
     Uninitialized variable: local_38
 
-  core_set.cpp_CDemonSet_FUN_00509a80                line 208
-    File: core/set.cpp
-    Uninitialized variable: in_stack_ffffff9c
-
-  core_set.cpp_CDemonSet_FUN_0050dd60                line 23
-    File: core/set.cpp
-    Uninitialized variable: in_stack_00000008
-
   core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2 line 96
     File: core/set.cpp
     Uninitialized variable: fStack_5c
@@ -2560,7 +2548,7 @@ legacyUninitvar (84)
     File: core/set.cpp
     Uninitialized variable: fStack_50
 
-  core_set.cpp_CDemonSet_precomputeLightVisibility_F line 157
+  core_set.cpp_CDemonSet_precomputeLightVisibility_F line 158
     File: core/set.cpp
     Uninitialized variable: iStack_24
 
@@ -2575,6 +2563,10 @@ legacyUninitvar (84)
   core_set.cpp_CDemonSet_processActors_FUN_00509140  line 105
     File: core/set.cpp
     Uninitialized variable: iStack_18
+
+  core_set.cpp_CDemonSet_renderScene_FUN_00509a80    line 209
+    File: core/set.cpp
+    Uninitialized variable: in_stack_ffffff9c
 
   core_setdir.cpp_CDemonSet_FUN_00513720             line 72
     File: core/setdir.cpp

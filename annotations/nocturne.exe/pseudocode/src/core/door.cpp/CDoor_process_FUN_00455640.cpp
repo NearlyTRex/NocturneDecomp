@@ -56,7 +56,8 @@ void __cdecl core_door_cpp_CDoor_process_FUN_00455640(CDoor *this_ptr,float delt
       if (this_ptr->open_sound[0] != '\0') {
         (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,this_ptr->open_sound);
       }
-      core_setcolid_cpp_CDemonSet_FUN_00511aa0(g_CDemonSet_PTR_005be368,&this_ptr->base);
+      core_setcolid_cpp_CDemonSet_transferVoxelShadow_FUN_00511aa0
+                (g_CDemonSet_PTR_005be368,&this_ptr->base);
     }
     this_ptr->param = 0.0;
     break;
@@ -97,7 +98,8 @@ void __cdecl core_door_cpp_CDoor_process_FUN_00455640(CDoor *this_ptr,float delt
         if (this_ptr->one_shot != 0) {
           this_ptr->one_shot = 2;
         }
-        core_setcolid_cpp_CDemonSet_FUN_00511a10(g_CDemonSet_PTR_005be368,&this_ptr->base);
+        core_setcolid_cpp_CDemonSet_castVoxelShadow_FUN_00511a10
+                  (g_CDemonSet_PTR_005be368,&this_ptr->base);
       }
     }
     else if (this_ptr->param < 0.0) {
@@ -106,7 +108,8 @@ void __cdecl core_door_cpp_CDoor_process_FUN_00455640(CDoor *this_ptr,float delt
       if (this_ptr->one_shot != 0) {
         this_ptr->one_shot = 2;
       }
-      core_setcolid_cpp_CDemonSet_FUN_00511a10(g_CDemonSet_PTR_005be368,&this_ptr->base);
+      core_setcolid_cpp_CDemonSet_castVoxelShadow_FUN_00511a10
+                (g_CDemonSet_PTR_005be368,&this_ptr->base);
     }
   }
   if (this_ptr->door_state == DOOR_STATE_CLOSED) {

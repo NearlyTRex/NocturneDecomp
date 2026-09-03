@@ -82,37 +82,37 @@
       {
         "category": "undeclared_identifier",
         "column": 11,
-        "line": 193,
+        "line": 194,
         "message": "use of undeclared identifier '_DAT_02dc9468'"
       },
       {
         "category": "undeclared_identifier",
         "column": 51,
-        "line": 193,
+        "line": 194,
         "message": "use of undeclared identifier '_DAT_02dc9468'"
       },
       {
         "category": "undeclared_identifier",
         "column": 5,
-        "line": 199,
+        "line": 200,
         "message": "use of undeclared identifier '_DAT_02dc9468'"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 199,
+        "line": 200,
         "message": "use of undeclared identifier '_DAT_02dc9468'"
       },
       {
         "category": "undeclared_identifier",
         "column": 37,
-        "line": 199,
+        "line": 200,
         "message": "use of undeclared identifier '_DAT_02dc9468'"
       },
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 200,
+        "line": 201,
         "message": "use of undeclared identifier '_DAT_02dc9468'"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 417,
-    "complexity_score": 418,
+    "complexity_score": 419,
     "cross_reference_count": 2,
     "function_call_count": 7,
     "global_count": 32,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 203,
+    "pseudocode_lines": 204,
     "suspect_count": 18,
     "suspect_types": [
       "pointer_cast",
@@ -138,19 +138,19 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 620
+    "total_lines": 621
   },
   "cross_references": [
-    {
-      "addr": "0052dff0",
-      "from_addr": "0052e02f",
-      "name": "core_sound.cpp_CSound_FUN_0052dff0",
-      "type": "UNCONDITIONAL_CALL"
-    },
     {
       "addr": "0052ddf0",
       "from_addr": "0052de2d",
       "name": "core_sound.cpp_CSound_init_FUN_0052ddf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052dff0",
+      "from_addr": "0052e02f",
+      "name": "core_sound.cpp_CSound_process_FUN_0052dff0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -186,7 +186,7 @@
     {
       "addr": "0050f910",
       "is_variadic": false,
-      "name": "core_setcolid.cpp_CDemonSet_FUN_0050f910"
+      "name": "core_setcolid.cpp_CDemonSet_rayVoxelHeightQuery_FUN_0050f910"
     },
     {
       "addr": "00564bc0",
@@ -415,7 +415,7 @@
       {
         "call_addr": "0052e02f",
         "call_type": "direct",
-        "caller": "core_sound.cpp_CSound_FUN_0052dff0",
+        "caller": "core_sound.cpp_CSound_process_FUN_0052dff0",
         "estimated_params": 0,
         "instructions_analyzed": 9,
         "method": "push_count",
@@ -999,7 +999,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 200,
+      "line": 201,
       "match": "&stack0x00000000",
       "severity": "moderate",
       "text": "if (&stack0x00000000 == (byte *)0x2dc9528) {",

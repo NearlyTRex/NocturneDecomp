@@ -31,9 +31,9 @@ void __cdecl CFlame::process(CFlame *this_ptr,float delta_time);
 // Address: 0048d5d0
 int __cdecl CFlame::renderTransparent(CFlame *this_ptr);
 
-// Original: core_flame.cpp_CFlame_FUN_0048df10
+// Original: core_flame.cpp_CFlame_hide_FUN_0048df10
 // Address: 0048df10
-void __cdecl CFlame(CFlame *this_ptr);
+void __cdecl CFlame::hide(CFlame *this_ptr);
 
 // Original: core_flame.cpp_CFlame_renderBackground_FUN_0048df20
 // Address: 0048df20

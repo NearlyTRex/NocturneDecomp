@@ -51,9 +51,9 @@ void __cdecl freeInventory(void);
 // Address: 004bf360
 int __cdecl CInventory::addItem(CInventory *this_ptr,CDemonActor *item_actor,int show_tutorial_message);
 
-// Original: core_inv.cpp_CInventory_FUN_004c0640
+// Original: core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004c0640
 // Address: 004c0640
-void __cdecl CInventory(CInventory *this_ptr,int param_2);
+void __cdecl CInventory::createAmmoFromWeapon(CInventory *this_ptr,int param_2);
 
 // Original: core_inv.cpp_CInventory_findItemByName_FUN_004c0710
 // Address: 004c0710
@@ -151,9 +151,9 @@ void __cdecl drawItemIconBackground(int x1,int y1,int x2,int y2,int alpha);
 // Address: 004c2150
 void __cdecl CInventory::renderSelectedItems(CInventory *this_ptr);
 
-// Original: core_inv.cpp_CInventory_FUN_004c2470
+// Original: core_inv.cpp_CInventory_renderAllItems_FUN_004c2470
 // Address: 004c2470
-void __cdecl CInventory(CInventory *this_ptr);
+void __cdecl CInventory::renderAllItems(CInventory *this_ptr);
 
 // Original: core_inv.cpp_CInventory_checkHasMatchingKey_FUN_004c31b0
 // Address: 004c31b0

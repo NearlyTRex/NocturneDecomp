@@ -17,7 +17,7 @@
 ;   core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_0050ffe0 at 00510118
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_0051ef40 at 0051efd8
 ;   core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0051b280 at 0051b39e
-;   core_spike.cpp_CSpike_FUN_00533750 at 00533862
+;   core_spike.cpp_CSpike_testCollisionWithCharacters_FUN_00533750 at 00533862
 ;   ... and 3 more
 ;
 ; *****************************************************************************

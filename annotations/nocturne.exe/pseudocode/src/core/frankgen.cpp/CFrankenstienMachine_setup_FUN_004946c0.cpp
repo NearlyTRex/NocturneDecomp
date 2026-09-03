@@ -106,9 +106,9 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_setup_FUN_004946c0(CFrankens
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(&this_ptr->bed_model);
   if (this_ptr->course_filename[0] != '\0') {
     core_course_cpp_CCourse_load_FUN_0043b690(&this_ptr->course,this_ptr->course_filename);
-    core_frankgen_cpp_CFrankenstienMachine_FUN_004950a0(this_ptr);
+    core_frankgen_cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004950a0(this_ptr);
     return;
   }
-  core_frankgen_cpp_CFrankenstienMachine_FUN_004950a0(this_ptr);
+  core_frankgen_cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004950a0(this_ptr);
   return;
 }

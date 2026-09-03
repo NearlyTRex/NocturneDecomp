@@ -81,10 +81,10 @@
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
 ;   core_actor.cpp_randomChance_FUN_0040dea0
-;   core_charactr.cpp_CCharacter_FUN_004259f0
-;   core_charactr.cpp_CCharacter_FUN_0042a150
+;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042a150
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_00425960
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050
+;   core_charactr.cpp_CCharacter_process_FUN_004259f0
 ;   core_charactr.cpp_CCharacter_processDamageDecals_FUN_004277f0
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_0042add0
 ;   core_charactr.cpp_CCharacter_spawnBloodAtBone_FUN_00427990
@@ -109,8 +109,8 @@ section .text
     MOV EBX,dword ptr [EBP + 0x8e]      ; 0041fe4f
     PUSH dword ptr [EBP + 0x92]         ; 0041fe55
     PUSH EBX                            ; 0041fe5b
-    CALL core_charactr.cpp_CCharacter_FUN_004259f0 ; 0041fe5c
-        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_004259f0(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_process_FUN_004259f0 ; 0041fe5c
+        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_process_FUN_004259f0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0041fe61
     TEST EAX,EAX                        ; 0041fe64
     JZ 0x00420962                       ; 0041fe66
@@ -1003,8 +1003,8 @@ section .text
     ADD ESP,0x4                         ; 0042088d
     PUSH dword ptr [EBP + 0x92]         ; 00420890
     PUSH EBX                            ; 00420896
-    CALL core_charactr.cpp_CCharacter_FUN_0042a150 ; 00420897
-        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042a150(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042a150 ; 00420897
+        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042a150(CCharacter * this_ptr, float delta_time)
     MOV EDX,dword ptr [EBX + 0xbc90]    ; 0042089c
     ADD ESP,0x8                         ; 004208a2
     TEST EDX,EDX                        ; 004208a5

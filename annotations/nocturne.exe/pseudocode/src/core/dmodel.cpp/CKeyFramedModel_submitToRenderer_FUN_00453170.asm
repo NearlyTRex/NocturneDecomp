@@ -30,7 +30,7 @@
 ;   CDemonSet g_CDemonSet_01e57284
 ;
 ; Called Functions:
-;   core_set.cpp_CDemonSet_FUN_0050ddd0
+;   core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_0050ddd0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
@@ -202,8 +202,8 @@ section .text
     PUSH EAX                            ; 00453325
     MOV EDX,dword ptr [0x005be368]      ; 00453326 | g_CDemonSet_PTR_005be368
     PUSH EDX                            ; 0045332c | g_CDemonSet_01e57284
-    CALL core_set.cpp_CDemonSet_FUN_0050ddd0 ; 0045332d
-        ;   XREF to: 0050ddd0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0050ddd0(CDemonSet * this_ptr, SMRGLPrimitiveQuad * primitive_array, int primitive_count, int render_flags)
+    CALL core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_0050ddd0 ; 0045332d
+        ;   XREF to: 0050ddd0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_0050ddd0(CDemonSet * this_ptr, SMRGLPrimitiveQuad * primitive_array, int primitive_count, int render_flags)
     ADD ESP,0x10                        ; 00453332
     JMP 0x00453219                      ; 00453335
         ;   XREF to: 00453219 (UNCONDITIONAL_JUMP)  ; LAB_00453219
@@ -249,8 +249,8 @@ section .text
     PUSH EAX                            ; 0045339b
     MOV EDX,dword ptr [0x005be368]      ; 0045339c | g_CDemonSet_PTR_005be368
     PUSH EDX                            ; 004533a2 | g_CDemonSet_01e57284
-    CALL core_set.cpp_CDemonSet_FUN_0050ddd0 ; 004533a3
-        ;   XREF to: 0050ddd0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0050ddd0(CDemonSet * this_ptr, SMRGLPrimitiveQuad * primitive_array, int primitive_count, int render_flags)
+    CALL core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_0050ddd0 ; 004533a3
+        ;   XREF to: 0050ddd0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_0050ddd0(CDemonSet * this_ptr, SMRGLPrimitiveQuad * primitive_array, int primitive_count, int render_flags)
     ADD ESP,0x10                        ; 004533a8
     CMP EBX,dword ptr [ESP + 0x24]      ; 004533ab
     JL 0x00453348                       ; 004533af

@@ -58,19 +58,19 @@
       {
         "category": "format_error",
         "column": 82,
-        "line": 167,
+        "line": 168,
         "message": "format specifies type 'char *' but the argument has type 'CZombieDog *' [-Werror,-Wformat]"
       },
       {
         "category": "undeclared_identifier",
         "column": 51,
-        "line": 195,
+        "line": 196,
         "message": "use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
       },
       {
         "category": "format_error",
         "column": 85,
-        "line": 242,
+        "line": 243,
         "message": "format specifies type 'char *' but the argument has type 'CZombieDog *' [-Werror,-Wformat]"
       }
     ],
@@ -80,12 +80,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 592,
-    "complexity_score": 378,
+    "complexity_score": 379,
     "cross_reference_count": 0,
     "function_call_count": 23,
     "global_count": 19,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 278,
+    "pseudocode_lines": 279,
     "suspect_count": 8,
     "suspect_types": [
       "fast_sqrt_inline",
@@ -93,7 +93,7 @@
       "unrolled_memset",
       "warning_type_propagation"
     ],
-    "total_lines": 870
+    "total_lines": 871
   },
   "cross_references": [],
   "function": {
@@ -121,19 +121,9 @@
       "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0"
     },
     {
-      "addr": "004259f0",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_004259f0"
-    },
-    {
-      "addr": "00428c00",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_00428c00"
-    },
-    {
       "addr": "0042a150",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042a150"
+      "name": "core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042a150"
     },
     {
       "addr": "00425960",
@@ -151,9 +141,19 @@
       "name": "core_charactr.cpp_CCharacter_preProcess_FUN_004259a0"
     },
     {
+      "addr": "004259f0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_process_FUN_004259f0"
+    },
+    {
       "addr": "0042add0",
       "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_processMotion_FUN_0042add0"
+    },
+    {
+      "addr": "00428c00",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_processWalking_FUN_00428c00"
     },
     {
       "addr": "004247f0",
@@ -653,7 +653,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 188,
+      "line": 189,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(&local_98,(CVector3f *)&DAT_02dd1184,",
@@ -669,7 +669,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 143,
+      "line": 144,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -677,7 +677,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 237,
+      "line": 238,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -685,7 +685,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 268,
+      "line": 269,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.position_delta.z = 0.0;",
@@ -693,7 +693,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 271,
+      "line": 272,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -701,7 +701,7 @@
     },
     {
       "description": "Inlined fast sqrt bit-trick (bias `g_FastSqrtMagic`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Replace with `fastSqrt(<expr>)` in a .keep - the helper function exists in the binary (FUN_00431350).",
-      "line": 88,
+      "line": 89,
       "match": "local_18 = (float)(((int)local_24 >> 1) + g_FastSqrtMagic);",
       "severity": "moderate",
       "text": "local_18 = (float)(((int)local_24 >> 1) + g_FastSqrtMagic);",

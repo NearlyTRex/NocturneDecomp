@@ -40,12 +40,12 @@
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0
 ;   core_crate.cpp_CCrate_explode_FUN_0043cdb0
 ;   core_flamecan.cpp_CFlameCan_ignite_FUN_0048e550
-;   core_glass.cpp_CGlass_FUN_004aded0
+;   core_glass.cpp_CGlass_checkBreakableCondition_FUN_004aded0
 ;   core_glass.cpp_CGlass_shatter_FUN_004ada20
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200
-;   core_setcolid.cpp_CDemonSet_FUN_00511740
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_00511780
 ;   core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00
+;   core_setcolid.cpp_CDemonSet_setRayType_FUN_00511800
 ;   ... and 5 more
 ;
 ; *****************************************************************************
@@ -404,8 +404,8 @@ section .text
     CALL dword ptr [EDX + 0x78]         ; 0040b780
     ADD ESP,0x10                        ; 0040b783
     PUSH EDI                            ; 0040b786
-    CALL core_glass.cpp_CGlass_FUN_004aded0 ; 0040b787
-        ;   XREF to: 004aded0 (UNCONDITIONAL_CALL)  ; int core_glass.cpp_CGlass_FUN_004aded0(CGlass * this_ptr)
+    CALL core_glass.cpp_CGlass_checkBreakableCondition_FUN_004aded0 ; 0040b787
+        ;   XREF to: 004aded0 (UNCONDITIONAL_CALL)  ; int core_glass.cpp_CGlass_checkBreakableCondition_FUN_004aded0(CGlass * this_ptr)
     ADD ESP,0x4                         ; 0040b78c
     TEST EAX,EAX                        ; 0040b78f
     JZ 0x0040b4bd                       ; 0040b791
@@ -446,8 +446,8 @@ section .text
     ADD ESP,0x8                         ; 0040b7df
     MOV EAX,[0x005be368]                ; 0040b7e2 | g_CDemonSet_PTR_005be368
     PUSH EAX                            ; 0040b7e7 | g_CDemonSet_01e57284
-    CALL core_setcolid.cpp_CDemonSet_FUN_00511740 ; 0040b7e8
-        ;   XREF to: 00511740 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_FUN_00511740(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_skipExactCollisions_FUN_00511740 ; 0040b7e8
+        ;   XREF to: 00511740 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_skipExactCollisions_FUN_00511740(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0040b7ed
     MOV EDX,dword ptr [ESP + 0x278]     ; 0040b7f0
     TEST EDX,EDX                        ; 0040b7f7
@@ -734,8 +734,8 @@ section .text
     CALL dword ptr [EAX + 0x78]         ; 0040bbb4
     ADD ESP,0x10                        ; 0040bbb7
     PUSH EDI                            ; 0040bbba
-    CALL core_glass.cpp_CGlass_FUN_004aded0 ; 0040bbbb
-        ;   XREF to: 004aded0 (UNCONDITIONAL_CALL)  ; int core_glass.cpp_CGlass_FUN_004aded0(CGlass * this_ptr)
+    CALL core_glass.cpp_CGlass_checkBreakableCondition_FUN_004aded0 ; 0040bbbb
+        ;   XREF to: 004aded0 (UNCONDITIONAL_CALL)  ; int core_glass.cpp_CGlass_checkBreakableCondition_FUN_004aded0(CGlass * this_ptr)
     ADD ESP,0x4                         ; 0040bbc0
     TEST EAX,EAX                        ; 0040bbc3
     JZ 0x0040b7b9                       ; 0040bbc5

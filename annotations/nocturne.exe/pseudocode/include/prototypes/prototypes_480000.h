@@ -77,7 +77,7 @@ void __cdecl core_event_cpp_CEventList_restartSfxEntries_FUN_00480eb0(CEventList
 int __cdecl core_event_cpp_isValidIdentifierChar_FUN_00480f40(int ch);
 int __cdecl core_event_cpp_CEventList_loadState_FUN_00480f70(CEventList *this_ptr,_FILE *file_handle);
 int __cdecl core_event_cpp_CEventList_saveState_FUN_00481330(CEventList *this_ptr,_FILE *file_handle);
-void __cdecl core_event_cpp_CRuleList_FUN_00481620(CRuleList *this_ptr);
+void __cdecl core_event_cpp_CRuleList_clear_FUN_00481620(CRuleList *this_ptr);
 void __cdecl core_event_cpp_CRuleList_insert_FUN_00481630(CRuleList *this_ptr,int index,char *condition,char *event);
 void __cdecl core_event_cpp_CRuleList_remove_FUN_00481770(CRuleList *this_ptr,int index);
 int __cdecl core_event_cpp_CRuleList_findFirst_FUN_00481840(CRuleList *this_ptr);
@@ -220,7 +220,7 @@ void __cdecl core_fire_cpp_CFireEffect_createLaserSegment_FUN_0048b370(CFireEffe
 void __cdecl core_fire_cpp_CFireEffect_createLaserCone_FUN_0048b3e0(CFireEffect *this_ptr,CVector3f *origin,CVector3f *hit_position,float beam_width,int red,int green,int blue,float cone_angle);
 void __cdecl core_fire_cpp_CFireEffect_createLaserPath_FUN_0048b440(CFireEffect *this_ptr,CVector3f *start_position,CVector3f *velocity,float beam_width ,float reticle_intensity,CVector3f *reflection_normal,float total_time,int red,int green,int blue);
 SLaserInfo * __cdecl core_fire_cpp_SLaserInfo_ctor_FUN_0048b6b0(SLaserInfo *this_ptr);
-void __cdecl core_fire_cpp_CFireEffect_FUN_0048b6f0(CFireEffect *this_ptr,CVector3f *origin,CVector3f *direction,SLaserInfo *laser_info,int recursion_depth);
+void __cdecl core_fire_cpp_CFireEffect_traceLaser_FUN_0048b6f0(CFireEffect *this_ptr,CVector3f *origin,CVector3f *direction,SLaserInfo *laser_info,int recursion_depth);
 void __cdecl core_fire_cpp_CFireEffect_createExplosion_FUN_0048c0d0(CFireEffect *this_ptr,CVector3f *position,float scale,float gore_multiplier,float radius);
 int __cdecl core_fire_cpp_CFireEffect_getExplosionEffect_FUN_0048c160(CFireEffect *this_ptr,CVector3f *position,float radius,CVector3f *out_force_dir,float *out_gore_multiplier);
 void __cdecl core_fire_cpp_CFireEffect_createToss_FUN_0048c2a0(CFireEffect *this_ptr,CVector3f *position,UOrientationVector *orientation,CVector3f *velocity,float fuse_time,uint sfx_handle);
@@ -304,7 +304,7 @@ CFlame * __cdecl core_flame_cpp_CFlame_ctor_FUN_0048cf60(CFlame *this_ptr);
 void __cdecl core_flame_cpp_CFlame_setup_FUN_0048d050(CFlame *this_ptr);
 void __cdecl core_flame_cpp_CFlame_process_FUN_0048d0c0(CFlame *this_ptr,float delta_time);
 int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_0048d5d0(CFlame *this_ptr);
-void __cdecl core_flame_cpp_CFlame_FUN_0048df10(CFlame *this_ptr);
+void __cdecl core_flame_cpp_CFlame_hide_FUN_0048df10(CFlame *this_ptr);
 void __cdecl core_flame_cpp_CFlame_renderBackground_FUN_0048df20(CFlame *this_ptr,int layer_flag);
 CBoundingBox3D * __cdecl core_flame_cpp_CFlame_getBoundingBox_FUN_0048e0a0(CFlame *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_flame_cpp_CFlame_archive_FUN_0048e100(CFlame *this_ptr);
@@ -363,7 +363,7 @@ SFly * __cdecl core_flies_cpp_SFly_arrdtor200_FUN_0048fce0(SFly *this_ptr,uint f
 int __cdecl engine_font_cpp_isRectangleClipped_FUN_0048fd00(int rect_width,int rect_height,int rect_x,int rect_y);
 int __cdecl engine_font_cpp_clipCharacter_FUN_0048fd50(int *bitmap_offset,int *left_x,int *top_y,int *right_x,int *bottom_y,int bitmap_width );
 CBitFont * __cdecl engine_font_cpp_CBitFont_ctor_FUN_0048fe10(CBitFont *this_ptr);
-CBitFont * __cdecl engine_font_cpp_CBitFont_FUN_0048fe30(CBitFont *this_ptr,uint flags);
+CBitFont * __cdecl engine_font_cpp_CBitFont_dtor_FUN_0048fe30(CBitFont *this_ptr,uint flags);
 void __cdecl engine_font_cpp_CBitFont_reset_FUN_0048fe50(CBitFont *this_ptr);
 void __cdecl engine_font_cpp_CBitFont_openFontFile_FUN_0048ff40(CBitFont *this_ptr,char *filename,int width,int height,int load_flags);
 void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_0048ff70(CBitFont *this_ptr,char *filename,int width,int height,int first_char);

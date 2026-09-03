@@ -35,7 +35,7 @@ void __cdecl core_fire_cpp_CGunFlame_init_FUN_004880d0(CGunFlame *this_ptr)
         core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(&this_ptr_00->model);
         core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
                   (&this_ptr_00->base,local_40,&this_ptr->position);
-        core_charactr_cpp_CCharacter_FUN_00427730
+        core_charactr_cpp_CCharacter_igniteBone_FUN_00427730
                   (this_ptr_00,local_40,0,0,1.0,(uint)(this_ptr->flame_type == 2));
       }
       local_20 = local_20 + 4;

@@ -11,7 +11,7 @@
 ;
 ; XREF[8]:
 ;   core_menu.cpp_configureCustomKeyBindings_FUN_004d2d00 at 004d3d4c
-;   core_mission.cpp_CDemonMission_FUN_004d8720 at 004d8740
+;   core_mission.cpp_CDemonMission_writeFile_FUN_004d8720 at 004d8740
 ;   core_netgame.cpp_CNetGame_initializeNetworkToHost_FUN_004e99f0 at 004e9a05
 ;   core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_004e9a90 at 004e9b62
 ;   core_netgame.cpp_CNetGame_initializeNetwork_FUN_004e9d50 at 004e9d63

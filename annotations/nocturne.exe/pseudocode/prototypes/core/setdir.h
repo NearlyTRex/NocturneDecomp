@@ -47,9 +47,9 @@ void __cdecl CDemonSet::skipDeprecatedVirtualDirectorData(CDemonSet *this_ptr,_F
 // Address: 00513d80
 int __cdecl CDemonSet::isPointInVdirBox(CDemonSet *this_ptr,int box_index,CVector3f *point);
 
-// Original: core_setdir.cpp_CDemonSet_FUN_00513e20
+// Original: core_setdir.cpp_CDemonSet_isPointInVdirGroup_FUN_00513e20
 // Address: 00513e20
-int __cdecl CDemonSet(CDemonSet *this_ptr,int param_2,CVector3f *param_3);
+int __cdecl CDemonSet::isPointInVdirGroup(CDemonSet *this_ptr,int box_index,CVector3f *point);
 
 // Original: core_setdir.cpp_testOBBIntersection_FUN_00513e80
 // Address: 00513e80

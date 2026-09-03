@@ -145,7 +145,7 @@ int __cdecl core_gun_cpp_CGun_fire_FUN_004b27c0(CGun *this_ptr)
         }
       }
       else {
-        iVar2 = core_glass_cpp_CGlass_FUN_004aded0(pCStack_1c);
+        iVar2 = core_glass_cpp_CGlass_checkBreakableCondition_FUN_004aded0(pCStack_1c);
         if (iVar2 == 0) break;
         core_glass_cpp_CGlass_shatter_FUN_004ada20
                   (pCStack_1c,&g_CDemonSet_PTR_005be368->collision_impact_position);

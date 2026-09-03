@@ -86,15 +86,15 @@
   },
   "cross_references": [
     {
-      "addr": "00422050",
-      "from_addr": "0042235a",
-      "name": "core_bugs.cpp_CBugs_FUN_00422050",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00421480",
       "from_addr": "0042151c",
       "name": "core_bugs.cpp_CBugs_process_FUN_00421480",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00422050",
+      "from_addr": "0042235a",
+      "name": "core_bugs.cpp_CBugs_updateBugsBehavior_FUN_00422050",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -123,11 +123,6 @@
       "name": "core_bugs.cpp_CBugs_applySwarmTranslation_FUN_00423a50"
     },
     {
-      "addr": "00421b80",
-      "is_variadic": false,
-      "name": "core_bugs.cpp_CBugs_FUN_00421b80"
-    },
-    {
       "addr": "00423680",
       "is_variadic": false,
       "name": "core_bugs.cpp_CBugs_recalculateBoundingBox_FUN_00423680"
@@ -136,6 +131,11 @@
       "addr": "00422c70",
       "is_variadic": false,
       "name": "core_bugs.cpp_CBugs_updateBugRenderingData_FUN_00422c70"
+    },
+    {
+      "addr": "00421b80",
+      "is_variadic": false,
+      "name": "core_bugs.cpp_CBugs_updateGroundHeightGrid_FUN_00421b80"
     },
     {
       "addr": "00425050",
@@ -226,7 +226,7 @@
       {
         "call_addr": "0042235a",
         "call_type": "direct",
-        "caller": "core_bugs.cpp_CBugs_FUN_00422050",
+        "caller": "core_bugs.cpp_CBugs_updateBugsBehavior_FUN_00422050",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

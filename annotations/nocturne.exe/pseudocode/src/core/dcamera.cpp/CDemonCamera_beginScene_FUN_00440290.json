@@ -137,12 +137,6 @@
   },
   "cross_references": [
     {
-      "addr": "00509a80",
-      "from_addr": "00509b0a",
-      "name": "core_set.cpp_CDemonSet_FUN_00509a80",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0050aba0",
       "from_addr": "0050acb9",
       "name": "core_set.cpp_CDemonSet_FUN_0050aba0",
@@ -152,6 +146,12 @@
       "addr": "00507f80",
       "from_addr": "0050803f",
       "name": "core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00509a80",
+      "from_addr": "00509b0a",
+      "name": "core_set.cpp_CDemonSet_renderScene_FUN_00509a80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -438,7 +438,7 @@
       {
         "call_addr": "00509b0a",
         "call_type": "direct",
-        "caller": "core_set.cpp_CDemonSet_FUN_00509a80",
+        "caller": "core_set.cpp_CDemonSet_renderScene_FUN_00509a80",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

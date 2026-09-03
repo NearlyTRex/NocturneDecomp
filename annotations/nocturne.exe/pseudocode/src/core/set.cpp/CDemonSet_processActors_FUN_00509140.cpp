@@ -170,8 +170,9 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_00509140(CDemonSet *this_p
           iVar8 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_0048c160
                             (g_CFireEffect_PTR_005b80f0,(CVector3f *)pCStack_34,0.0,(CVector3f *)0x0
                              ,(float *)0x0);
-          if ((iVar8 != 0) && (iVar8 = core_glass_cpp_CGlass_FUN_004aded0(this_ptr_02), iVar8 != 0))
-          {
+          if ((iVar8 != 0) &&
+             (iVar8 = core_glass_cpp_CGlass_checkBreakableCondition_FUN_004aded0(this_ptr_02),
+             iVar8 != 0)) {
             core_glass_cpp_CGlass_shatter_FUN_004ada20(this_ptr_02,(CVector3f *)pCStack_34);
           }
         }

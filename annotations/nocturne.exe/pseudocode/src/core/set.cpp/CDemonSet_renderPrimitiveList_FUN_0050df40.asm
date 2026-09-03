@@ -20,7 +20,7 @@
 ;   undefined4 g_CGame_01c775ec.scripted_sequence_active
 ;
 ; Called Functions:
-;   core_mirror.cpp_CMirror_FUN_004d76e0
+;   core_mirror.cpp_CMirror_clipAndRenderReflectedPrimitive_FUN_004d76e0
 ;   engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60
 ;   engine_special.cpp_sync_FUN_00532b30
 ;
@@ -55,8 +55,8 @@ section .text
     MOV EAX,dword ptr [EBP + 0x161268]  ; 0050df75
     PUSH EAX                            ; 0050df7b
     INC EBX                             ; 0050df7c
-    CALL core_mirror.cpp_CMirror_FUN_004d76e0 ; 0050df7d
-        ;   XREF to: 004d76e0 (UNCONDITIONAL_CALL)  ; void core_mirror.cpp_CMirror_FUN_004d76e0(CMirror * this_ptr, SMRGLHeaderPrimitive * prim)
+    CALL core_mirror.cpp_CMirror_clipAndRenderReflectedPrimitive_FUN_004d76e0 ; 0050df7d
+        ;   XREF to: 004d76e0 (UNCONDITIONAL_CALL)  ; void core_mirror.cpp_CMirror_clipAndRenderReflectedPrimitive_FUN_004d76e0(CMirror * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESI,0x28                        ; 0050df82
     ADD ESP,0x8                         ; 0050df85
     CMP EBX,EDI                         ; 0050df88

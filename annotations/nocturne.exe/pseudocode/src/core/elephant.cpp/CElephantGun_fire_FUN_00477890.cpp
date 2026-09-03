@@ -181,7 +181,8 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_00477890(CElephantGun *this_
           }
           else {
             in_stack_fffffec4 = (CDemonSet *)0x477f2b;
-            iVar3 = core_glass_cpp_CGlass_FUN_004aded0((CGlass *)pCStack_2c);
+            iVar3 = core_glass_cpp_CGlass_checkBreakableCondition_FUN_004aded0((CGlass *)pCStack_2c)
+            ;
             if (iVar3 == 0) break;
             in_stack_fffffec0 = (CDemonActor *)0x477f4e;
             in_stack_fffffec4 = pCStack_2c;

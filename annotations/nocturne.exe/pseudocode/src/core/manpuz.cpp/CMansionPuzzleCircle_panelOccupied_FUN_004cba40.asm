@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   panel_index
 ;
 ; XREF[1]:
-;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_004cb010 at 004cb279
+;   core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN_004cb010 at 004cb279
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_manpuz_cpp_0058810f

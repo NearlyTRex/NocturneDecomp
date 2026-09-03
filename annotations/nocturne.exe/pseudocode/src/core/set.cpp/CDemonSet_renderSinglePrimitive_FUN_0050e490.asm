@@ -8,7 +8,7 @@
 ; SMRGLHeaderPrimitive * Stack[0x8]:4   prim
 ;
 ; XREF[1]:
-;   core_box.cpp_CBoundingBox3D_FUN_0041d050 at 0041d1c8
+;   core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_0041d050 at 0041d1c8
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
@@ -16,7 +16,7 @@
 ;   undefined4 DAT_01b4d750
 ;
 ; Called Functions:
-;   core_mirror.cpp_CMirror_FUN_004d7720
+;   core_mirror.cpp_CMirror_renderReflectedPrimitive_FUN_004d7720
 ;   engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190
 ;
 ; *****************************************************************************
@@ -34,8 +34,8 @@ section .text
     PUSH ECX                            ; 0050e4a4
     MOV EDX,dword ptr [EAX + 0x161268]  ; 0050e4a5
     PUSH EDX                            ; 0050e4ab
-    CALL core_mirror.cpp_CMirror_FUN_004d7720 ; 0050e4ac
-        ;   XREF to: 004d7720 (UNCONDITIONAL_CALL)  ; int core_mirror.cpp_CMirror_FUN_004d7720(CMirror * this_ptr, SMRGLHeaderPrimitive * prim)
+    CALL core_mirror.cpp_CMirror_renderReflectedPrimitive_FUN_004d7720 ; 0050e4ac
+        ;   XREF to: 004d7720 (UNCONDITIONAL_CALL)  ; int core_mirror.cpp_CMirror_renderReflectedPrimitive_FUN_004d7720(CMirror * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 0050e4b1
     RET                                 ; 0050e4b4
     PUSH ECX                            ; 0050e4b5

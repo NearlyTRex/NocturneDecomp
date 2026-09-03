@@ -10,7 +10,7 @@
 ; int              Stack[0x10]:4   alpha
 ;
 ; XREF[1]:
-;   core_set.cpp_CDemonSet_FUN_0050ddd0 at 0050debd
+;   core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_0050ddd0 at 0050debd
 ;
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_0050d6a0

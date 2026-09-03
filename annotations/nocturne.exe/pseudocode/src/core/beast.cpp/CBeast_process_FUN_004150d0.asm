@@ -10,9 +10,9 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; Called Functions:
-;   core_charactr.cpp_CCharacter_FUN_004259f0
-;   core_charactr.cpp_CCharacter_FUN_0042a150
+;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042a150
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_004259a0
+;   core_charactr.cpp_CCharacter_process_FUN_004259f0
 ;   core_motion.cpp_CMotionController_advance_FUN_004e11c0
 ;   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0
 ;
@@ -30,8 +30,8 @@ section .text
     MOV ESI,dword ptr [EBP + 0x10]      ; 004150db
     PUSH dword ptr [EBP + 0x14]         ; 004150de
     PUSH ESI                            ; 004150e1
-    CALL core_charactr.cpp_CCharacter_FUN_004259f0 ; 004150e2
-        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_004259f0(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_process_FUN_004259f0 ; 004150e2
+        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_process_FUN_004259f0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004150e7
     TEST EAX,EAX                        ; 004150ea
     JZ 0x00415150                       ; 004150ec
@@ -73,8 +73,8 @@ section .text
     ADD ESP,0x4                         ; 00415141
     PUSH dword ptr [EBP + 0x14]         ; 00415144
     PUSH ESI                            ; 00415147
-    CALL core_charactr.cpp_CCharacter_FUN_0042a150 ; 00415148
-        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042a150(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042a150 ; 00415148
+        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042a150(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0041514d
     MOV ESP,EBP                         ; 00415150
         ;   Label: LAB_00415150

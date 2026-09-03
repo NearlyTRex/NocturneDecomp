@@ -18,6 +18,6 @@ CTextureCache * __cdecl engine_texture_cpp_initTextureCache_FUN_005458a0(void)
     _DAT_02dd0f84 = this_ptr;
     return (CTextureCache *)0x0;
   }
-  _DAT_02dd0f84 = engine_texture_cpp_CTextureCache_FUN_00544de0(this_ptr,0x400);
+  _DAT_02dd0f84 = engine_texture_cpp_CTextureCache_ctor_FUN_00544de0(this_ptr,0x400);
   return _DAT_02dd0f84;
 }

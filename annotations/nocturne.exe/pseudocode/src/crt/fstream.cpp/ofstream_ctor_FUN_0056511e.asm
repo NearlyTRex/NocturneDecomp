@@ -11,7 +11,7 @@
 ; int              Stack[0x14]:4   buffer_size
 ;
 ; XREF[2]:
-;   core_dcamera.cpp_CDemonCamera_FUN_00446810 at 004468da
+;   core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_00446810 at 004468da
 ;   support_codec.cpp_CCodec_processFiles_FUN_004391b0 at 0043920d
 ;
 ; Referenced Globals:

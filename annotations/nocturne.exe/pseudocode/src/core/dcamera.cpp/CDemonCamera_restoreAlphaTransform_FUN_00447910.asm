@@ -18,7 +18,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   core_dcamera.cpp_CDemonCamera_FUN_004421b0 at 004422e1
+;   core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_004421b0 at 004422e1
 ;
 ; *****************************************************************************
 

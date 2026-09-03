@@ -11,7 +11,7 @@
 ;   core_boxactor.cpp_CLightActor_process_FUN_0041f3d0 at 0041f5e1
 ;   core_elephant.cpp_CElephantGun_process_FUN_004777a0 at 0047787b
 ;   core_lightgun.cpp_CLightGun_process_FUN_004c79a0 at 004c7b8e
-;   core_set.cpp_CDemonSet_FUN_00509a80 at 00509ac8
+;   core_set.cpp_CDemonSet_renderScene_FUN_00509a80 at 00509ac8
 ;   core_shotgun.cpp_CShotgun_process_FUN_00515db0 at 00515e8b
 ;   core_weapon.cpp_CWeapon_process_FUN_00554030 at 00554160
 ;

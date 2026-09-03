@@ -9,6 +9,6 @@
 CRuleList * __cdecl core_door_cpp_clearRuleList_FUN_00456690(CRuleList *rule_list)
 
 {
-  core_event_cpp_CRuleList_FUN_00481620(rule_list);
+  core_event_cpp_CRuleList_clear_FUN_00481620(rule_list);
   return rule_list;
 }

@@ -92,7 +92,7 @@ section .text
         ;   Label: LAB_004c9c6f
     PUSH ESI                            ; 004c9c70
     CALL core_manpuz.cpp_CMansionPuzzleCircle_FUN_004ca710 ; 004c9c71
-        ;   XREF to: 004ca710 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_FUN_004ca710(CMansionPuzzleCircle * this_ptr, int param_2)
+        ;   XREF to: 004ca710 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_FUN_004ca710(CMansionPuzzleCircle * this_ptr, int panel_index)
     ADD ESP,0x8                         ; 004c9c76
     PUSH EBX                            ; 004c9c79
     PUSH ESI                            ; 004c9c7a

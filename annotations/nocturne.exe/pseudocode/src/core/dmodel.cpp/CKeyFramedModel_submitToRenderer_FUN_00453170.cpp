@@ -56,7 +56,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_00453170(CKeyF
               engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
                         (g_CDemonRenderer_PTR_005ae704,this_ptr->texture_list[0].textures);
             }
-            core_set_cpp_CDemonSet_FUN_0050ddd0
+            core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_0050ddd0
                       (g_CDemonSet_PTR_005be368,this_ptr->poly_vert_list + iVar8,iVar5 - iVar8,
                        render_flags);
           }
@@ -76,7 +76,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_00453170(CKeyF
                 iVar7 = iVar7 + 1;
                 if (iVar5 * 4 <= iVar6) break;
               } while (iVar9 == *(int *)((int)this_ptr->poly_texture_index_list + iVar6));
-              core_set_cpp_CDemonSet_FUN_0050ddd0
+              core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_0050ddd0
                         (g_CDemonSet_PTR_005be368,this_ptr->poly_vert_list + iVar8,iVar7 - iVar8,
                          render_flags);
               iVar8 = iVar7;

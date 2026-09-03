@@ -110,12 +110,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004259f0",
-      "from_addr": "00425c04",
-      "name": "core_charactr.cpp_CCharacter_FUN_004259f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00427b60",
       "from_addr": "00427b82",
       "name": "core_charactr.cpp_CCharacter_dismember_FUN_00427b60",
@@ -131,6 +125,12 @@
       "addr": "004269b0",
       "from_addr": "00426cf3",
       "name": "core_charactr.cpp_CCharacter_processFire_FUN_004269b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004259f0",
+      "from_addr": "00425c04",
+      "name": "core_charactr.cpp_CCharacter_process_FUN_004259f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -260,15 +260,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0052dff0",
-      "from_addr": "0052e3e0",
-      "name": "core_sound.cpp_CSound_FUN_0052dff0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0052ebb0",
       "from_addr": "0052ebb5",
       "name": "core_sound.cpp_CSound_killSound_FUN_0052ebb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052dff0",
+      "from_addr": "0052e3e0",
+      "name": "core_sound.cpp_CSound_process_FUN_0052dff0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -492,7 +492,7 @@
       {
         "call_addr": "0052e3e0",
         "call_type": "direct",
-        "caller": "core_sound.cpp_CSound_FUN_0052dff0",
+        "caller": "core_sound.cpp_CSound_process_FUN_0052dff0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -503,7 +503,7 @@
       {
         "call_addr": "0052e4f1",
         "call_type": "direct",
-        "caller": "core_sound.cpp_CSound_FUN_0052dff0",
+        "caller": "core_sound.cpp_CSound_process_FUN_0052dff0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

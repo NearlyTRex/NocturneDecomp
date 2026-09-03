@@ -220,7 +220,7 @@
     {
       "addr": "004c2470",
       "is_variadic": false,
-      "name": "core_inv.cpp_CInventory_FUN_004c2470"
+      "name": "core_inv.cpp_CInventory_renderAllItems_FUN_004c2470"
     },
     {
       "addr": "004ed720",
@@ -233,29 +233,29 @@
       "name": "core_netgame.cpp_CNetGame_processServerFrame_FUN_004ed2d0"
     },
     {
-      "addr": "004fe770",
-      "is_variadic": false,
-      "name": "core_script.cpp_CScript_FUN_004fe770"
-    },
-    {
       "addr": "004fe9d0",
       "is_variadic": false,
-      "name": "core_script.cpp_CScript_FUN_004fe9d0"
+      "name": "core_script.cpp_CScript_renderEditor_FUN_004fe9d0"
     },
     {
-      "addr": "00509a80",
+      "addr": "004fe770",
       "is_variadic": false,
-      "name": "core_set.cpp_CDemonSet_FUN_00509a80"
-    },
-    {
-      "addr": "0050a260",
-      "is_variadic": false,
-      "name": "core_set.cpp_CDemonSet_FUN_0050a260"
+      "name": "core_script.cpp_CScript_renderSubtitles_FUN_004fe770"
     },
     {
       "addr": "0050aa70",
       "is_variadic": false,
       "name": "core_set.cpp_CDemonSet_FUN_0050aa70"
+    },
+    {
+      "addr": "0050a260",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_renderGogglesView_FUN_0050a260"
+    },
+    {
+      "addr": "00509a80",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_renderScene_FUN_00509a80"
     },
     {
       "addr": "00509760",
@@ -280,7 +280,7 @@
     {
       "addr": "0052dff0",
       "is_variadic": false,
-      "name": "core_sound.cpp_CSound_FUN_0052dff0"
+      "name": "core_sound.cpp_CSound_process_FUN_0052dff0"
     },
     {
       "addr": "00566e10",
@@ -1467,15 +1467,15 @@
       "line": 263,
       "match": "0x1e56da0",
       "severity": "moderate",
-      "text": "core_script_cpp_CScript_FUN_004fe770(0x01E56DA0);",
+      "text": "core_script_cpp_CScript_renderSubtitles_FUN_004fe770(0x01E56DA0);",
       "type": "raw_address_constant"
     },
     {
       "description": "Raw hex literal 0x1e56da0 matches address of g_CScript_01e56da0 (type CScript). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 336,
+      "line": 337,
       "match": "0x1e56da0",
       "severity": "moderate",
-      "text": "core_script_cpp_CScript_FUN_004fe9d0(0x01E56DA0,0,0xf0,g_WindowWidth + -1,g_WindowHeight + -1)",
+      "text": "(0x01E56DA0,0,0xf0,g_WindowWidth + -1,g_WindowHeight + -1);",
       "type": "raw_address_constant"
     },
     {

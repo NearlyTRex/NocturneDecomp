@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   enabled
 ;
 ; XREF[7]:
-;   core_box.cpp_CBoundingBox3D_FUN_0041d050 at 0041d107
+;   core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_0041d050 at 0041d107
 ;   core_box.cpp_CBoundingBox3D_render_FUN_0041dcc0 at 0041dd45
 ;   core_dmodel.cpp_CKeyFramedModel_submitToRenderer_FUN_00453170 at 00453289
 ;   core_dpart.cpp_CDemonPart_renderFaces_FUN_004574e0 at 00457505

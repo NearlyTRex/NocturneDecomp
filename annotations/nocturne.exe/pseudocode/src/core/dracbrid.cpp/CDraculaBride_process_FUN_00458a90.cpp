@@ -134,7 +134,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_process_FUN_00458a90(CDraculaBride 
     }
   }
   core_dracbrid_cpp_CDraculaBride_updateFreakySounds_FUN_0045b020(this_ptr,delta_time);
-  iVar8 = core_charactr_cpp_CCharacter_FUN_004259f0((CCharacter *)this_ptr,delta_time);
+  iVar8 = core_charactr_cpp_CCharacter_process_FUN_004259f0((CCharacter *)this_ptr,delta_time);
   if (iVar8 == 0) {
     return;
   }
@@ -184,7 +184,8 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_process_FUN_00458a90(CDraculaBride 
     (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
     (this_ptr->base).base.turn_speed = fVar21 * fVar19;
   }
-  iVar10 = core_charactr_cpp_CCharacter_FUN_00428c00((CCharacter *)this_ptr,delta_time);
+  iVar10 = core_charactr_cpp_CCharacter_processWalking_FUN_00428c00
+                     ((CCharacter *)this_ptr,delta_time);
   if (iVar10 != 0) {
     uVar6 = (this_ptr->base).base.is_walking;
     if (uVar6 < 2) {
@@ -243,7 +244,7 @@ LAB_00458f79:
       }
       if (iVar10 == g_CDemonSet_PTR_005be368->enemy_count) {
         _sprintf(local_430,"bride-%d?.wav",this_ptr->freaky_voice_number);
-        core_dracbrid_cpp_CDraculaBride_FUN_0045ab40(this_ptr,local_430,1.0);
+        core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_0045ab40(this_ptr,local_430,1.0);
         core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                   (&(this_ptr->base).base.model.motion_controller,0x17,1);
         (*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -347,10 +348,10 @@ LAB_00458f79:
   case 9:
     if (this_ptr->freaky_timer <= 0.0) {
       _sprintf(local_3cc,"bride-%d?.wav",this_ptr->freaky_voice_number);
-      core_dracbrid_cpp_CDraculaBride_FUN_0045ab40(this_ptr,local_3cc,1.0);
+      core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_0045ab40(this_ptr,local_3cc,1.0);
       iVar8 = core_actor_cpp_randomChance_FUN_0040dea0(0.2);
       if (iVar8 != 0) {
-        core_dracbrid_cpp_CDraculaBride_FUN_0045ab40(this_ptr,local_3cc,1.0);
+        core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_0045ab40(this_ptr,local_3cc,1.0);
       }
     }
     (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
@@ -437,10 +438,10 @@ LAB_00459978:
   case 0xe:
     if (this_ptr->freaky_timer <= 0.0) {
       _sprintf(local_368,"bride-%d?.wav",this_ptr->freaky_voice_number);
-      core_dracbrid_cpp_CDraculaBride_FUN_0045ab40(this_ptr,local_368,1.0);
+      core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_0045ab40(this_ptr,local_368,1.0);
       iVar8 = core_actor_cpp_randomChance_FUN_0040dea0(0.2);
       if (iVar8 != 0) {
-        core_dracbrid_cpp_CDraculaBride_FUN_0045ab40(this_ptr,local_368,1.0);
+        core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_0045ab40(this_ptr,local_368,1.0);
       }
     }
     (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
@@ -579,10 +580,10 @@ LAB_00459978:
   case 0x17:
     if (this_ptr->freaky_timer <= 0.0) {
       _sprintf(local_494,"bride-%d?.wav",this_ptr->freaky_voice_number);
-      core_dracbrid_cpp_CDraculaBride_FUN_0045ab40(this_ptr,local_494,1.0);
+      core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_0045ab40(this_ptr,local_494,1.0);
       iVar8 = core_actor_cpp_randomChance_FUN_0040dea0(0.2);
       if (iVar8 != 0) {
-        core_dracbrid_cpp_CDraculaBride_FUN_0045ab40(this_ptr,local_494,1.0);
+        core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_0045ab40(this_ptr,local_494,1.0);
       }
     }
     switch(this_ptr->mist_state) {
@@ -748,7 +749,7 @@ switchD_00458fa0_default:
   core_charactr_cpp_CCharacter_preProcess_FUN_004259a0((CCharacter *)this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0
             (&(this_ptr->base).base.model);
-  core_charactr_cpp_CCharacter_FUN_0042a150((CCharacter *)this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042a150((CCharacter *)this_ptr,delta_time);
   return;
 switchD_00459f4d_caseD_10:
   (this_ptr->base).pool_me = 1;

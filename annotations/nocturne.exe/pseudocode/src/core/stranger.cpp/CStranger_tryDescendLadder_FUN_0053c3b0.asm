@@ -16,7 +16,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_stranger.cpp_CStranger_FUN_0053fc60 at 0053fef3
+;   core_stranger.cpp_CStranger_handleActionButton_FUN_0053fc60 at 0053fef3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Ladder_dot_f_00595b3f

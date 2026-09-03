@@ -1,0 +1,432 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 5,
+        "line": 20,
+        "message": "unknown type name 'FLOATING_SAVE_AREA'"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 52,
+        "message": "unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 53,
+        "message": "unknown type name 'PCONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 498,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 498,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 499,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 499,
+        "message": "exponent has no digits"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 145,
+    "complexity_score": 131,
+    "cross_reference_count": 1,
+    "function_call_count": 8,
+    "global_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 66,
+    "suspect_count": 5,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 211
+  },
+  "cross_references": [
+    {
+      "addr": "004998c0",
+      "from_addr": "004999f7",
+      "name": "core_gabriela.cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_004998c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00499b00",
+    "address_range": [
+      [
+        "00499b00",
+        "00499c9f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_00499b00",
+    "signature": "void __cdecl core_gabriela_cpp_CGabriella_binarySearchClavicleBlend_FUN_00499b00(CGabriella *this_ptr,float delta_time,float *clavicle_blend,int probe_bone_index,int blend_bone_index,CVector3f *probe_offset)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040a240",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240"
+    },
+    {
+      "addr": "0050fa30",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_testLineOcclusion_FUN_0050fa30"
+    },
+    {
+      "addr": "0051c3d0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0"
+    },
+    {
+      "addr": "0051ed90",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_0051ed90"
+    },
+    {
+      "addr": "0051d0a0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0"
+    },
+    {
+      "addr": "0051d2a0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0"
+    },
+    {
+      "addr": "0051ee60",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_0051ee60"
+    },
+    {
+      "addr": "0055a8b0",
+      "is_variadic": false,
+      "name": "core_xform.cpp_transformVector3x4_FUN_0055a8b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00582286",
+      "name": "FLOAT_00582286",
+      "type": "float",
+      "value": "-0.3000000"
+    },
+    {
+      "addr": "0058228a",
+      "name": "DOUBLE_0058228a",
+      "type": "double",
+      "value": "0.5"
+    },
+    {
+      "addr": "0059dcb8",
+      "name": "FLOAT_0059dcb8",
+      "type": "float",
+      "value": "0.05000000"
+    },
+    {
+      "addr": "005be368",
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
+    },
+    {
+      "addr": "01e57284",
+      "name": "g_CDemonSet_01e57284",
+      "type": "CDemonSet",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004999f7",
+        "call_type": "direct",
+        "caller": "core_gabriela.cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_004998c0",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "00499a66",
+        "call_type": "direct",
+        "caller": "core_gabriela.cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_004998c0",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 6,
+    "declared_stack_bytes": 24,
+    "estimated_params": 6,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.459677419354839,
+    "instruction_count": 124,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "BRANCH": 3,
+      "CALL": 9,
+      "CBRANCH": 5,
+      "COPY": 168,
+      "FLOAT2FLOAT": 11,
+      "FLOAT_ADD": 3,
+      "FLOAT_DIV": 1,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 1,
+      "FLOAT_NAN": 2,
+      "INT2FLOAT": 1,
+      "INT_ADD": 54,
+      "INT_AND": 44,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 37,
+      "INT_LEFT": 4,
+      "INT_LESS": 2,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 5,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 12,
+      "INT_SLESS": 18,
+      "INT_SUB": 45,
+      "INT_XOR": 1,
+      "INT_ZEXT": 6,
+      "LOAD": 29,
+      "POPCOUNT": 18,
+      "RETURN": 1,
+      "STORE": 49
+    },
+    "pcode_op_count": 553
+  },
+  "stack_frame": {
+    "frame_size": 7012,
+    "local_size": 6988,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1b48",
+        "offset": -6984,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1b44",
+        "offset": -6980,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_a8",
+        "offset": -168,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_78",
+        "offset": -120,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGabriella *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "clavicle_blend",
+        "offset": 12,
+        "size": 4,
+        "type": "float *"
+      },
+      {
+        "is_param": true,
+        "name": "probe_bone_index",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "blend_bone_index",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "probe_offset",
+        "offset": 24,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00499b0c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 50,
+      "match": "(CMatrix3x4f *)((int)pCVar4",
+      "severity": "moderate",
+      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 51,
+      "match": "(CMatrix3x4f *)((int)pCVar5",
+      "severity": "moderate",
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `pCVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 50,
+      "match": "(int)pCVar4",
+      "severity": "moderate",
+      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 51,
+      "match": "(int)pCVar5",
+      "severity": "moderate",
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 48,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

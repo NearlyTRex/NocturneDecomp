@@ -77,7 +77,7 @@
 ; XREF[8]:
 ;   core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00416030 at 00416084
 ;   core_cloth.cpp_CCloth_render_FUN_00437db0 at 00437e8c
-;   core_curtain.cpp_CCurtain_FUN_0043f330 at 0043f4a4
+;   core_curtain.cpp_CCurtain_renderMesh_FUN_0043f330 at 0043f4a4
 ;   core_dmodel.cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004530c0 at 00453127
 ;   core_glass.cpp_CGlass_renderOpaque_FUN_004ac440 at 004ac583
 ;   core_glass.cpp_CGlass_renderTransparent_FUN_004ac600 at 004ac73f

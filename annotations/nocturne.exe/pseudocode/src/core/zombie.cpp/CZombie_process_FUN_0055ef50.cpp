@@ -139,7 +139,7 @@ void __cdecl core_zombie_cpp_CZombie_process_FUN_0055ef50(CZombie *this_ptr,floa
   CVector3f *local_18;
   CVector3f *local_14;
   
-  iVar6 = core_charactr_cpp_CCharacter_FUN_004259f0((CCharacter *)this_ptr,delta_time);
+  iVar6 = core_charactr_cpp_CCharacter_process_FUN_004259f0((CCharacter *)this_ptr,delta_time);
   if (iVar6 == 0) {
     return;
   }
@@ -450,7 +450,8 @@ LAB_0055f021:
                       (&pCVar2->motion_controller);
   iVar6 = pSVar15->state_index;
   local_48 = 0;
-  iVar9 = core_charactr_cpp_CCharacter_FUN_00428c00((CCharacter *)this_ptr,delta_time);
+  iVar9 = core_charactr_cpp_CCharacter_processWalking_FUN_00428c00
+                    ((CCharacter *)this_ptr,delta_time);
   if (iVar9 == 0) {
     local_34 = -1.0;
     local_4c = 0.3;
@@ -545,7 +546,7 @@ LAB_0056033e:
                (this_ptr->base).base.model.accumulated_root_motion.z;
           (this_ptr->base).base.model.accumulated_root_motion.x =
                (this_ptr->base).base.model.accumulated_root_motion.y;
-          iVar6 = core_zombie_cpp_CZombie_FUN_00561010(this_ptr,delta_time);
+          iVar6 = core_zombie_cpp_CZombie_processPickup_FUN_00561010(this_ptr,delta_time);
           if (iVar6 == 0) {
             local_50 = 1.3f;
             local_40 = core_zombie_cpp_CZombie_getPickupHandIndex_FUN_005617e0(this_ptr,1);
@@ -998,7 +999,7 @@ LAB_0055fa02:
   if (iVar6 != 0xe) {
     core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0
               (&(this_ptr->base).base.model);
-    core_charactr_cpp_CCharacter_FUN_0042a150((CCharacter *)this_ptr,delta_time);
+    core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042a150((CCharacter *)this_ptr,delta_time);
   }
   if ((this_ptr->base).pool_me == 0) {
     iVar6 = this_ptr->part_indices[5];

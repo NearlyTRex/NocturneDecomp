@@ -37,7 +37,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0050ad20(CDemonSet *this_ptr)
   if (0 < this_ptr->light_count) {
     this_ptr_00 = this_ptr->lights;
     do {
-      core_setutil_cpp_C3DSLight_FUN_00515410(this_ptr_00);
+      core_setutil_cpp_C3DSLight_doNothing_FUN_00515410(this_ptr_00);
       iVar3 = iVar3 + 1;
       this_ptr_00 = this_ptr_00 + 1;
     } while (iVar3 < this_ptr->light_count);

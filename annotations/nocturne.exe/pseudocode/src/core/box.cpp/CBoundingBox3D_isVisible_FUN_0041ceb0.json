@@ -262,7 +262,7 @@
     {
       "addr": "0043f330",
       "from_addr": "0043f357",
-      "name": "core_curtain.cpp_CCurtain_FUN_0043f330",
+      "name": "core_curtain.cpp_CCurtain_renderMesh_FUN_0043f330",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -362,15 +362,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004ac7c0",
-      "from_addr": "004ac7ee",
-      "name": "core_glass.cpp_CGlass_FUN_004ac7c0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004ac9b0",
       "from_addr": "004aca03",
       "name": "core_glass.cpp_CGlass_renderBackground_FUN_004ac9b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ac7c0",
+      "from_addr": "004ac7ee",
+      "name": "core_glass.cpp_CGlass_renderBrokenGlass_FUN_004ac7c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -490,7 +490,7 @@
     {
       "addr": "00515c40",
       "from_addr": "00515cb0",
-      "name": "core_setutil.cpp_C3DSLight_FUN_00515c40",
+      "name": "core_setutil.cpp_C3DSLight_isVisible_FUN_00515c40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -582,7 +582,7 @@
     {
       "addr": "0041d050",
       "is_variadic": false,
-      "name": "core_box.cpp_CBoundingBox3D_FUN_0041d050"
+      "name": "core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_0041d050"
     },
     {
       "addr": "0041cce0",
@@ -673,7 +673,7 @@
       {
         "call_addr": "004ac7ee",
         "call_type": "direct",
-        "caller": "core_glass.cpp_CGlass_FUN_004ac7c0",
+        "caller": "core_glass.cpp_CGlass_renderBrokenGlass_FUN_004ac7c0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

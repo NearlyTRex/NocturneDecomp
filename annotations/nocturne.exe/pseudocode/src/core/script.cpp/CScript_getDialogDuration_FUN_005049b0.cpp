@@ -28,7 +28,8 @@ float __cdecl core_script_cpp_CScript_getDialogDuration_FUN_005049b0(CScript *th
   if (this_ptr->message_duration < 0.0) {
     iVar3 = sscanf(sound_name,(char *)&DOUBLE_0058fa9a,&local_28);
     if (iVar3 != 1) {
-      local_28 = core_sound_cpp_CSound_FUN_0052ebc0(g_CSound_PTR_005bed68,sound_name);
+      local_28 = core_sound_cpp_CSound_getSoundDuration_FUN_0052ebc0
+                           (g_CSound_PTR_005bed68,sound_name);
       local_14 = local_28;
       if (local_28 < 0.0) {
         shape_edittool_cpp_CStrList_add_FUN_00473cb0(&g_CPickList_01e56c30.base,sound_name);

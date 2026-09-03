@@ -16,12 +16,12 @@
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040b300 at 0040b656
 ;   core_actor.cpp_CDemonActor_rayIntersect_FUN_0040a740 at 0040a828
 ;   core_baron.cpp_CBaron_performLightningAttack_FUN_00410cc0 at 00410cfd
-;   core_boxactor.cpp_CBoxActor_FUN_0041f190 at 0041f1b1
+;   core_boxactor.cpp_CBoxActor_constrainToExtents_FUN_0041f190 at 0041f1b1
 ;   core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_0041ef90 at 0041efab
 ;   core_chain.cpp_CChain_getBoundingBox_FUN_0042ca90 at 0042cb5f
-;   core_charactr.cpp_CCharacter_FUN_00428c00 at 00428d4a
-;   core_charactr.cpp_CCharacter_FUN_0042af70 at 0042b00f
 ;   core_charactr.cpp_CCharacter_checkCylinderCollisionWorld_FUN_00428260 at 00428273
+;   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042af70 at 0042b00f
+;   core_charactr.cpp_CCharacter_processWalking_FUN_00428c00 at 00428d4a
 ;   core_charactr.cpp_CCharacter_renderCollision_FUN_00425cc0 at 00425e04
 ;   ... and 66 more
 ;

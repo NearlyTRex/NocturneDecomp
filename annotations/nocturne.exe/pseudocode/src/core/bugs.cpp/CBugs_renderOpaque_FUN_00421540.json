@@ -62,12 +62,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 146,
-    "complexity_score": 141,
+    "complexity_score": 143,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 61,
+    "pseudocode_lines": 63,
     "suspect_count": 6,
     "suspect_types": [
       "shadow_pointer_walk",
@@ -75,7 +75,7 @@
       "unrolled_memcpy",
       "warning_type_propagation"
     ],
-    "total_lines": 207
+    "total_lines": 209
   },
   "cross_references": [],
   "function": {
@@ -114,7 +114,7 @@
     {
       "addr": "0050e370",
       "is_variadic": false,
-      "name": "core_set.cpp_CDemonSet_FUN_0050e370"
+      "name": "core_set.cpp_CDemonSet_cacheMirrorLighting_FUN_0050e370"
     },
     {
       "addr": "00460aa0",
@@ -238,7 +238,7 @@
         {
           "check_id": "uninitvar",
           "column": 37,
-          "line": 63,
+          "line": 64,
           "message": "Uninitialized variable: in_stack_00000008",
           "severity": "error"
         }
@@ -266,7 +266,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 56,
+      "line": 57,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "} while (iVar1 < *(int *)(in_stack_00000008 + 0xbd28));",
@@ -282,7 +282,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `position` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*position) + offsetof(subfield)` equals the real array stride. Replace `position->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 53,
+      "line": 54,
       "match": "position = (T *)&position[N].SUBFIELD",
       "severity": "moderate",
       "text": "position = (CVector3f *)&position[5].y;",
@@ -290,7 +290,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `rotation` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*rotation) + offsetof(subfield)` equals the real array stride. Replace `rotation->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 55,
+      "line": 56,
       "match": "rotation = (T *)&rotation[N].SUBFIELD",
       "severity": "moderate",
       "text": "rotation = (CVector3f *)&rotation[5].y;",
@@ -298,7 +298,7 @@
     },
     {
       "description": "Uninitialized variable: in_stack_00000008",
-      "line": 63,
+      "line": 64,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "} while (iVar1 < *(int *)(in_stack_00000008 + 0xbd28));",

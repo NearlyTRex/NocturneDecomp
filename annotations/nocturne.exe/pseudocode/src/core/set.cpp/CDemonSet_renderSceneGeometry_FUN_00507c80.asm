@@ -13,9 +13,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[6]:
-;   core_set.cpp_CDemonSet_FUN_0050a260 at 0050a3cf
 ;   core_set.cpp_CDemonSet_initScene_FUN_005084c0 at 00508634
 ;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80 at 00508061
+;   core_set.cpp_CDemonSet_renderGogglesView_FUN_0050a260 at 0050a3cf
 ;   core_set.cpp_CDemonSet_renderStaticLights_FUN_00509760 at 0050988e
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508b2f
 ;   core_setdir.cpp_CDemonSet_FUN_00513720 at 00513809
@@ -38,11 +38,11 @@
 ;   core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0
 ;   core_dtrace.cpp_CDemonRaytrace_savePVS_FUN_0046ae40
 ;   core_dtrace.cpp_CDemonRaytrace_setPVS_FUN_0046ace0
-;   core_glass.cpp_CGlass_FUN_004ac7c0
+;   core_glass.cpp_CGlass_renderBrokenGlass_FUN_004ac7c0
 ;   core_mirror.cpp_CMirror_renderMirrorQuadDepth_FUN_004d7980
 ;   core_set.cpp_CDemonSet_buildMirrorList_FUN_0050e210
-;   core_set.cpp_CDemonSet_FUN_0050e080
 ;   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190
+;   core_set.cpp_CDemonSet_setupMirrorRendering_FUN_0050e080
 ;   core_terrain.cpp_CTerrain_render_FUN_00549310
 ;   core_water.cpp_CWater_calculateVisibleTiles_FUN_00550800
 ;   core_water.cpp_CWater_render_FUN_00550cb0
@@ -204,15 +204,15 @@ section .text
     JZ 0x00507e29                       ; 00507e1e
         ;   XREF to: 00507e29 (CONDITIONAL_JUMP)  ; LAB_00507e29
     PUSH EAX                            ; 00507e20
-    CALL core_glass.cpp_CGlass_FUN_004ac7c0 ; 00507e21
-        ;   XREF to: 004ac7c0 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_FUN_004ac7c0(CGlass * this_ptr)
+    CALL core_glass.cpp_CGlass_renderBrokenGlass_FUN_004ac7c0 ; 00507e21
+        ;   XREF to: 004ac7c0 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_renderBrokenGlass_FUN_004ac7c0(CGlass * this_ptr)
     ADD ESP,0x4                         ; 00507e26
     PUSH 0x1                            ; 00507e29
         ;   Label: LAB_00507e29
     PUSH EDI                            ; 00507e2b
     PUSH EBX                            ; 00507e2c
-    CALL core_set.cpp_CDemonSet_FUN_0050e080 ; 00507e2d
-        ;   XREF to: 0050e080 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0050e080(CDemonSet * this_ptr, int mirror_index, int enable_flag)
+    CALL core_set.cpp_CDemonSet_setupMirrorRendering_FUN_0050e080 ; 00507e2d
+        ;   XREF to: 0050e080 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setupMirrorRendering_FUN_0050e080(CDemonSet * this_ptr, int mirror_index, int enable_flag)
     ADD ESP,0xc                         ; 00507e32
     PUSH 0x0                            ; 00507e35
     PUSH dword ptr [ESP + 0x28]         ; 00507e37
@@ -311,15 +311,15 @@ section .text
     JZ 0x00507f3d                       ; 00507f32
         ;   XREF to: 00507f3d (CONDITIONAL_JUMP)  ; LAB_00507f3d
     PUSH EAX                            ; 00507f34
-    CALL core_glass.cpp_CGlass_FUN_004ac7c0 ; 00507f35
-        ;   XREF to: 004ac7c0 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_FUN_004ac7c0(CGlass * this_ptr)
+    CALL core_glass.cpp_CGlass_renderBrokenGlass_FUN_004ac7c0 ; 00507f35
+        ;   XREF to: 004ac7c0 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_renderBrokenGlass_FUN_004ac7c0(CGlass * this_ptr)
     ADD ESP,0x4                         ; 00507f3a
     PUSH 0x0                            ; 00507f3d
         ;   Label: LAB_00507f3d
     PUSH ESI                            ; 00507f3f
     PUSH EBX                            ; 00507f40
-    CALL core_set.cpp_CDemonSet_FUN_0050e080 ; 00507f41
-        ;   XREF to: 0050e080 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0050e080(CDemonSet * this_ptr, int mirror_index, int enable_flag)
+    CALL core_set.cpp_CDemonSet_setupMirrorRendering_FUN_0050e080 ; 00507f41
+        ;   XREF to: 0050e080 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setupMirrorRendering_FUN_0050e080(CDemonSet * this_ptr, int mirror_index, int enable_flag)
     ADD ESP,0xc                         ; 00507f46
     PUSH 0x0                            ; 00507f49
     PUSH dword ptr [ESP + 0x28]         ; 00507f4b

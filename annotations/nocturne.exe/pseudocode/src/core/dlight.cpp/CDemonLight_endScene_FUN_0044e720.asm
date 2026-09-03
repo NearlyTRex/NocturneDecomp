@@ -10,8 +10,8 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[4]:
-;   core_set.cpp_CDemonSet_FUN_0050a260 at 0050a474
 ;   core_set.cpp_CDemonSet_initScene_FUN_005084c0 at 00508643
+;   core_set.cpp_CDemonSet_renderGogglesView_FUN_0050a260 at 0050a474
 ;   core_set.cpp_CDemonSet_renderStaticLights_FUN_00509760 at 00509961
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508fe6
 ;

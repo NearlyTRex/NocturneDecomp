@@ -18,7 +18,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_0040a200
-;   core_charactr.cpp_CCharacter_FUN_0042a150
+;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042a150
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_0042add0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60
@@ -206,8 +206,8 @@ section .text
     ADD ESP,0x4                         ; 004efa41
     PUSH dword ptr [EBP + 0x18]         ; 004efa44
     PUSH EBX                            ; 004efa47
-    CALL core_charactr.cpp_CCharacter_FUN_0042a150 ; 004efa48
-        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042a150(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042a150 ; 004efa48
+        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042a150(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004efa4d
     MOV ESP,EBP                         ; 004efa50
     POP EBP                             ; 004efa52

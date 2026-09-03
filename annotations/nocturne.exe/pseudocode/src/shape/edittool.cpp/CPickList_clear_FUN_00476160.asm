@@ -11,7 +11,7 @@
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049dd03
 ;   core_script.cpp_CScript_FUN_004fe500 at 004fe52d
 ;   core_script.cpp_CScript_FUN_004febd0 at 004fed2f
-;   core_script.cpp_CScript_FUN_004fef60 at 004fef83
+;   core_script.cpp_CScript_validateSyntax_FUN_004fef60 at 004fef83
 ;   shape_edittool.cpp_CPickList_dtor_FUN_00474cf0 at 00474d04
 ;
 ; Called Functions:

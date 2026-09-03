@@ -21,8 +21,8 @@
 ;   core_charactr.cpp_CCharacter_computePickup_FUN_00429010 at 00429050
 ;   core_cloth.cpp_CCloth_orientBoneToChild_FUN_004363e0 at 004364da
 ;   core_fire.cpp_CBulletHole_init_FUN_00482c80 at 00482dbf
-;   core_ladder.cpp_CLadder_FUN_004c46b0 at 004c46fb
-;   core_mimic.cpp_CMimic_FUN_004d4ba0 at 004d4d3a
+;   core_ladder.cpp_CLadder_cacheRelativePosition_FUN_004c46b0 at 004c46fb
+;   core_mimic.cpp_CMimic_updatePose_FUN_004d4ba0 at 004d4d3a
 ;   core_platfrm.cpp_CPlatform_attachActor_FUN_004f75c0 at 004f7648
 ;   core_platfrm.cpp_CPlatform_process_FUN_004f6170 at 004f6381
 ;   ... and 4 more

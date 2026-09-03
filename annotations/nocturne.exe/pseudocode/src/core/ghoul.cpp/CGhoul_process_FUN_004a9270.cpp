@@ -128,7 +128,7 @@ void __cdecl core_ghoul_cpp_CGhoul_process_FUN_004a9270(CGhoul *this_ptr,float d
   CPathMap *local_18;
   SMotionTransition *local_14;
   
-  iVar7 = core_charactr_cpp_CCharacter_FUN_004259f0((CCharacter *)this_ptr,delta_time);
+  iVar7 = core_charactr_cpp_CCharacter_process_FUN_004259f0((CCharacter *)this_ptr,delta_time);
   if (iVar7 == 0) {
     return;
   }
@@ -359,7 +359,8 @@ LAB_004a96cf:
     (this_ptr->base).base.turn_speed = (float)(fVar20 * (float10)(this_ptr->base).base.turn_speed);
     (this_ptr->base).base.walk_step_speed = (float)((float10)local_8c * fVar20 * (float10)fVar25);
   }
-  iVar9 = core_charactr_cpp_CCharacter_FUN_00428c00((CCharacter *)this_ptr,delta_time);
+  iVar9 = core_charactr_cpp_CCharacter_processWalking_FUN_00428c00
+                    ((CCharacter *)this_ptr,delta_time);
   if (iVar9 == 0) {
     local_20 = -1.0;
     pCVar11 = (CPathMap *)&(this_ptr->base).base.model;
@@ -1014,7 +1015,7 @@ LAB_004a93c4:
       this_ptr->flinch_blend_weight = 0.0;
     }
   }
-  core_charactr_cpp_CCharacter_FUN_0042a150((CCharacter *)this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042a150((CCharacter *)this_ptr,delta_time);
   if (((float)0.01 < ABS((this_ptr->base).base.turn_angle_accumulator)) ||
      (fVar25 = (this_ptr->base).base.position_delta.y,
      fVar1 = (this_ptr->base).base.position_delta.x, fVar2 = (this_ptr->base).base.position_delta.z,

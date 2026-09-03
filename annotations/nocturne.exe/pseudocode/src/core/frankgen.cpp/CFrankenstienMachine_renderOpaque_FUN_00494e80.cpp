@@ -21,7 +21,7 @@ int __cdecl core_frankgen_cpp_CFrankenstienMachine_renderOpaque_FUN_00494e80(CFr
   if (g_CDemonMission_PTR_005baf90->is_in_editor != 0) {
     pCVar2 = core_frankgen_cpp_findLeader_FUN_00495240();
     this_ptr->master_frame = *(float *)(pCVar2[1].actor_name + 4);
-    core_frankgen_cpp_CFrankenstienMachine_FUN_004950a0(this_ptr);
+    core_frankgen_cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004950a0(this_ptr);
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(&this_ptr->base);
   this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_34);
