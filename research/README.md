@@ -292,6 +292,53 @@ inputs (`texel*(cw>>7)/255` vs `texel*cw/32768`).
 
 ---
 
+### [14-mirror_actor_reflections/](14-mirror_actor_reflections/)
+
+Why mirrors reflected the room and a character's corona but never the character's opaque
+model. **Root cause found and fixed:** the actor visibility gate ran against the wrong
+camera *and* through a transform its caller had pushed, so every bounding-box face was
+clipped away by the mirror's own clip planes.
+
+| File | Description |
+|------|-------------|
+| `00_OVERVIEW.md` | Problem, resolution, reading order, and the consolidated don't-re-chase list. **Start here.** |
+| `01_HOW_MIRRORS_WORK.md` | Architecture: the two independent reflection mechanisms, the cull chain, the camera-state globals, and the actor transform push |
+| `02_RULING_OUT_THE_PIPELINE.md` | The mirror pipeline diffed byte-for-byte and cleared; the `make_sibling_anchors.py` gap that hid the real difference behind ~1900 unpaired functions |
+| `03_THE_VISIBILITY_GATE.md` | Where the two builds actually diverge, side by side |
+| `04_FAILED_AND_PARTIAL_FIXES.md` | Two fixes that looked correct and were not, and what each one falsified |
+| `05_MEASUREMENT_AND_SOLUTION.md` | The instrumented diagnosis, the fix, and its before/after verification |
+| `06_CLEARED_LEADS.md` | Everything audited against asm and found faithful, with the evidence, plus the open questions |
+| `mirror_cull_probe.gdb` | The gdb probe used for the measurements — source it with `scripts/Bash/dbg.sh probe` |
+
+**Root cause** — two causes stacked. `CDemonCamera::testVisibility` (`0x4544f0`) installs
+`g_BackgroundSavedCameraState` before rasterising an actor's bounding box, which during a
+mirror pass discards the mirror camera and tests the reflection against the main scene
+camera. But that swap cannot simply be removed: its real purpose is to overwrite
+`g_TransformMatrix` with a *clean* camera matrix, discarding the actor transform that
+`CDemonActor::setupRenderState` pushed a moment earlier. Fixed by capturing the clean
+mirror camera in `setupMirrorRendering` and installing that, behind
+`NOCTURNE_AUTHENTIC_MIRROR_CULL` (default 0).
+
+Verified causally, not just visually: the actor's box corner moved from `z = -11.68`
+(behind the mirror camera) to `+46.20` (in front), and box tests went from 209 pass / 554
+fail to 743 pass / 4 fail across a full 360° turn.
+
+**Other outcomes:**
+- Corrected a long-standing architecture claim: character actors *do* reach `CMirror`, via
+  the cull gate (`renderSinglePrimitive` branches on `advanced_culling_enabled`)
+- `CMirror::reflectAndClipPrimitive`'s `d=0.122` cross-binary drift decoded and shown
+  benign — register allocation, one strength reduction, NOP padding
+- The 5 mirror clip planes proven correct: `sizeof(CMirrorReflection)=0x94` plus path
+  offsets `{0x04,0x14,0x24,0x34,0x44}` = `CMirror::clip_planes[0..4]`
+
+**Caveat:** the fix makes reflections work but is **not** demonstrated to match retail —
+retail has no camera swap at all, and how it tolerates the pushed actor transform is
+still unexplained (open question 1 in `06_CLEARED_LEADS.md`).
+
+**Status:** FIXED (deviation, not a faithful reconstruction)
+
+---
+
 ## Standalone Documents
 
 ### [ghidra_suspect_patterns.md](ghidra_suspect_patterns.md)
@@ -356,10 +403,18 @@ Ghidra source location: `~/Repositories/Ghidra/`
 | Audio system | [04-mp3_audio_system/mp3_audio_system_analysis.md](04-mp3_audio_system/mp3_audio_system_analysis.md) |
 | tridx7 CRT catalog | [10-tridx7_crt_identification/crt_functions.md](10-tridx7_crt_identification/crt_functions.md) |
 | tridx7 render API + bridge | [11-tridx7_3d_renderer_dll/apidll_signatures_and_bridge.md](11-tridx7_3d_renderer_dll/apidll_signatures_and_bridge.md) |
+| How mirror reflection works | [14-mirror_actor_reflections/01_HOW_MIRRORS_WORK.md](14-mirror_actor_reflections/01_HOW_MIRRORS_WORK.md) |
+| Compare the two binaries | [14-mirror_actor_reflections/02_RULING_OUT_THE_PIPELINE.md](14-mirror_actor_reflections/02_RULING_OUT_THE_PIPELINE.md) |
 
 ---
 
 ## Changelog
+
+### 2026-09-03
+- **`14-mirror_actor_reflections/` FIXED — actors were culled out of mirrors by the visibility gate.** Two stacked causes. `CDemonCamera::testVisibility` installs `g_BackgroundSavedCameraState` before rasterising an actor's bounding box, which during a mirror pass throws away the mirror camera and tests the reflection against the main scene camera. That swap cannot simply be skipped: its real job is to overwrite `g_TransformMatrix` with a *clean* camera matrix, discarding the actor transform `CDemonActor::setupRenderState` pushes just before the gate — so skipping it leaves the box being measured through a matrix that rotates with the character. Fixed by capturing the clean mirror camera in `setupMirrorRendering` (`g_MirrorCullCameraState`, `shims/mirror_cull.{h,cpp}`) and installing that while `active_mirror != 0`, behind `NOCTURNE_AUTHENTIC_MIRROR_CULL` (default 0). Verified causally: the box corner moved from `z = -11.68` (behind the mirror camera) to `+46.20` (in front); box tests went 209 pass / 554 fail → 743 pass / 4 fail over a full 360° turn. **Not proven to match retail** — retail has no swap at all and how it tolerates the pushed transform is still open
+- Cleared, with evidence, so they are not re-chased: `CMirror::reflectAndClipPrimitive`'s `d=0.122` drift (register allocation, one strength reduction, NOP padding — semantically identical); the 5 mirror clip planes (`sizeof(CMirrorReflection)=0x94` + path offsets `{0x04,0x14,0x24,0x34,0x44}` land exactly on `clip_planes[0..4]`); and `isVisible` / `isVisibleWithCamera` / `clipPolygonToViewFrustum` / `renderPolygonSoftware` / `calculateTriangleWindingOrder`, all audited against asm
+- Corrected a load-bearing architecture claim: character actors **do** reach `CMirror`, through the cull gate — `renderSinglePrimitive` branches on `advanced_culling_enabled`, so the bounding-box faces are clipped by `reflectAndClipPrimitive` during a mirror pass. The earlier "actors never touch CMirror" note had also been used to defer the `reflectAndClipPrimitive` drift as static-path-only
+- Extended the `derived_field_index_pun` suspect detector to the cast-carried shape (`(T *)&IDENT[N].path`, no `+ 0xNN` term), which is how the mirror clip-plane writes were expressed. Gated on a leading cast whose type differs from both the field's own type and the indexed type — without those gates `&verts[4].y` on a `CVector3f *` produces ~100 false hits, since any struct leading with a `CVector3f` counts as derived from it. Array hits now resolve to the correct element rather than only `[0]`, and field paths may carry a constant subscript. Corpus-wide: 26 → 34 hits over 9749 files, 0 lost
 
 ### 2026-08-23
 - **`13-accel_per_pixel_lighting/` SOLVED — accelerated geometry was being fogged.** `gl_ddraw.cpp` `device_SetRenderState` case 35 (`FOGTABLEMODE`) fell through on value 0 (NONE), leaving `GL_FOG` enabled from `FOGENABLE`. D3D7's `NONE` means "no table fog, use per-vertex fog from the specular alpha"; GL has no vertex fog, so an enabled `GL_FOG` always applies table fog (default `GL_EXP`, density 1.0) toward the fog colour `(5,5,5)`. Every DLL-drawn primitive was fogged toward near-black while the blitted backdrop never was — hence "only the 3D models look wrong". Fixed by enabling GL fog only when `FOGENABLE != 0 && FOGTABLEMODE != NONE`. Verified: character crop means, software `16.08` / accel-with-bug `13.11` (0.815) / accel-fixed `16.47` (1.024), where the `+2.4%` matches an independent single-pixel trace predicting hardware is ~2% brighter for identical inputs

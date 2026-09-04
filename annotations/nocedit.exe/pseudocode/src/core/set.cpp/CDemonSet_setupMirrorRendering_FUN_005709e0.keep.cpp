@@ -14,7 +14,7 @@ void __cdecl core_set_cpp_CDemonSet_setupMirrorRendering_FUN_005709e0(CDemonSet 
   CVector3f *pCVar2;
   CVector3f afStack_2c;
   CVector3f local_20;
-  
+
   pUVar1 = (UVector3 *)
            engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_0048c780
                      (g_CDemonRendererPtr2,&local_20);
@@ -33,6 +33,10 @@ void __cdecl core_set_cpp_CDemonSet_setupMirrorRendering_FUN_005709e0(CDemonSet 
   core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0
             (&(this_ptr->mirror_glass_actors[mirror_index]->mirror).reflection,
              &g_SavedCameraOrigin.f,&g_SavedCameraRotation,g_SavedProjectionFactor);
+#if !NOCTURNE_AUTHENTIC_MIRROR_CULL
+  engine_drender_cpp_CDemonRenderer_getCameraAndViewportState_FUN_0048de20
+            (g_CDemonRendererPtr2,&g_MirrorCullCameraState);
+#endif
   engine_drender_cpp_CDemonRenderer_enableAdvancedCulling_FUN_0048ce10(g_CDemonRendererPtr2,1);
   (*((g_CurrentSceneCamera->base).vtable)->saveAlphaTransform)
             (g_CurrentSceneCamera,mirror_index + 1);

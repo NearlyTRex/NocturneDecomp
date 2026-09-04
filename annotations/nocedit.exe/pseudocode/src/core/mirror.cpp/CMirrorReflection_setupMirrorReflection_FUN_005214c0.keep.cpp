@@ -14,6 +14,7 @@ void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c
   CVector3f *pCVar2;
   CVector3f *pCVar3;
   CMatrix3x4f *pCVar9;
+  CMirror *mirror;
   CMatrix3x4f local_4a4;
   CMatrix3x4f local_444;
   CMatrix3x4f local_414;
@@ -65,7 +66,7 @@ void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c
   CVector3f local_50;
   CVector3f local_44;
   float fVar1;
-  
+
   core_mirror_cpp_computePlaneFromTriangle_FUN_00520fe0
             (&local_1a4,&this_ptr->corner1,&this_ptr->corner2,&this_ptr->corner3);
   if ((ABS(local_1a4.A.f) <= ABS(local_1a4.B.f)) || (ABS(local_1a4.A.f) <= ABS(local_1a4.C.f))) {
@@ -251,17 +252,16 @@ void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c
   if (&local_98 != pCVar3) {
     local_98 = *pCVar3;
   }
+  mirror = (CMirror *)this_ptr;
   core_mirror_cpp_computePlaneFromTriangle_FUN_00520fe0
-            ((SClipPlane *)&this_ptr[1].corner1.y,&local_170,&local_d4,&local_a4);
+            (&mirror->clip_planes[0],&local_170,&local_d4,&local_a4);
   core_mirror_cpp_computePlaneFromTriangle_FUN_00520fe0
-            ((SClipPlane *)&this_ptr[1].corner2.z,&local_98,&local_170,&local_d4);
+            (&mirror->clip_planes[1],&local_98,&local_170,&local_d4);
   core_mirror_cpp_computePlaneFromTriangle_FUN_00520fe0
-            ((SClipPlane *)&this_ptr[1].corner4,&local_98,&local_d4,&local_a4);
+            (&mirror->clip_planes[2],&local_98,&local_d4,&local_a4);
   core_mirror_cpp_computePlaneFromTriangle_FUN_00520fe0
-            ((SClipPlane *)&this_ptr[1].mirror_transform_matrix.m[0].x,&local_98,&local_a4,&local_bc
-            );
+            (&mirror->clip_planes[3],&local_98,&local_a4,&local_bc);
   core_mirror_cpp_computePlaneFromTriangle_FUN_00520fe0
-            ((SClipPlane *)&this_ptr[1].mirror_transform_matrix.m[1].x,&local_98,&local_bc,
-             &local_170);
+            (&mirror->clip_planes[4],&local_98,&local_bc,&local_170);
   return;
 }

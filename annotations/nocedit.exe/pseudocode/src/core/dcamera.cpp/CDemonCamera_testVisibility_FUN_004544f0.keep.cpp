@@ -16,13 +16,20 @@ int __cdecl core_dcamera_cpp_CDemonCamera_testVisibility_FUN_004544f0(CDemonCame
   int iVar3;
   SRenderVertex *output;
   SMRGLPrimitiveQuadIndex local_38;
-  
+  SCameraViewportState *cull_camera_state;
+
   engine_drender_cpp_CDemonRenderer_getCameraAndViewportState_FUN_0048de20
             (g_CDemonRendererPtr2,&g_SavedCameraState);
   output = g_RenderVertexBuffer;
   pCVar2 = corners + 8;
+  cull_camera_state = &g_BackgroundSavedCameraState;
+#if !NOCTURNE_AUTHENTIC_MIRROR_CULL
+  if (g_CDemonSetPtr->active_mirror != (CMirror *)0x0) {
+    cull_camera_state = &g_MirrorCullCameraState;
+  }
+#endif
   engine_drender_cpp_CDemonRenderer_setupCameraAndViewport_FUN_0048dcc0
-            (g_CDemonRendererPtr2,&g_BackgroundSavedCameraState);
+            (g_CDemonRendererPtr2,cull_camera_state);
   do {
     engine_special_cpp_transformPoint_FUN_005b5a25(&output->projected_vertex,corners);
     corners = corners + 1;

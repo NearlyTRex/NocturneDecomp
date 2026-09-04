@@ -6965,13 +6965,39 @@ def identify_stale_struct_offset_64bit(code, struct_layout_map=None):
 
 _DFI_PUN_RE = re.compile(
     r'\b([A-Za-z_]\w*)\s*\[\s*(\d+)\s*\]\s*\.\s*'
-    r'([A-Za-z_]\w*(?:\s*\.\s*[A-Za-z_]\w*)*)\s*\+\s*(0x[0-9a-fA-F]+|\d+)\b')
+    r'([A-Za-z_]\w*(?:\s*\[\s*\d+\s*\])?(?:\s*\.\s*[A-Za-z_]\w*(?:\s*\[\s*\d+\s*\])?)*)\s*\+\s*(0x[0-9a-fA-F]+|\d+)\b')
+
+# Same pun with the byte offset carried entirely by the field path, so there is
+# no `+ 0xNN` term for _DFI_PUN_RE to anchor on:
+#     computePlaneFromTriangle((SClipPlane *)&this_ptr[1].corner1.y, ...)
+# where this_ptr is a CMirrorReflection * and 1 * 0x94 + offsetof(corner1.y) (4)
+# = 0x98 = offsetof(CMirror, clip_planes[0]).
+#
+# The leading cast is REQUIRED, and the caller additionally drops the match when
+# the cast names the field's own type. Without that pair of gates this shape is
+# useless: `&verts[4].y` on a CVector3f * is ordinary array indexing, but every
+# struct whose first member is a CVector3f counts as "derived" from it, so some
+# field almost always lands on the computed offset and the detector invents a
+# recovered name. Requiring a cast to a *different* type is what separates "the
+# decompiler lost the type and is reaching bytes" from "this is an array".
+#
+# Index 0 is excluded at the regex level — `&x[0].f` is just `&x->f` — and a
+# trailing additive constant is left to _DFI_PUN_RE so the two shapes cannot
+# both report the same expression.
+_DFI_ADDR_RE = re.compile(
+    r'\(\s*([A-Za-z_]\w*)\s*\*\s*\)\s*'
+    r'&\s*([A-Za-z_]\w*)\s*\[\s*([1-9]\d*)\s*\]\s*\.\s*'
+    r'([A-Za-z_]\w*(?:\s*\[\s*\d+\s*\])?(?:\s*\.\s*[A-Za-z_]\w*(?:\s*\[\s*\d+\s*\])?)*)'
+    r'(?!\s*\+\s*(?:0x[0-9a-fA-F]+|\d+)\b)')
 
 
 def _dfi_path_offset(struct_name, path, layout):
     """Byte offset of a dotted field path within `struct_name`, or None.
 
-    Walks `a.b.c` accumulating each field's offset. Returns
+    Walks `a.b.c` accumulating each field's offset. A part may carry a constant
+    array subscript (`m[1]`), which contributes index * element size — without
+    it a path like `mirror_transform_matrix.m[1].x` resolves to the start of
+    the matrix and the caller sees an offset that lands nowhere. Returns
     (offset, final_field_dict) so callers can test whether a computed address
     stays inside the named field or walks past it.
     """
@@ -6979,6 +7005,10 @@ def _dfi_path_offset(struct_name, path, layout):
     cur = struct_name
     fld = None
     for part in [p.strip() for p in path.split('.')]:
+        sub = re.match(r'^([A-Za-z_]\w*)\s*\[\s*(\d+)\s*\]$', part)
+        idx = 0
+        if sub:
+            part, idx = sub.group(1), int(sub.group(2))
         flds = layout.get(cur)
         if not flds:
             return None
@@ -6990,6 +7020,11 @@ def _dfi_path_offset(struct_name, path, layout):
         if fld is None:
             return None
         offset += fld['offset']
+        if idx:
+            n = fld.get('n')
+            if not n or not fld['len'] % n == 0:
+                return None
+            offset += idx * (fld['len'] // n)
         cur = fld.get('type')
     return (offset, fld)
 
@@ -7077,8 +7112,12 @@ def identify_derived_field_index_pun(code, struct_layout_map=None,
         if (stripped.startswith('//') or stripped.startswith('/*')
                 or stripped.startswith('*')):
             continue
-        for m in _DFI_PUN_RE.finditer(line):
-            ident, idx_s, path, const_s = m.groups()
+        matches = [(m,) + m.groups() + (None,)
+                   for m in _DFI_PUN_RE.finditer(line)]
+        matches += [(m, mm[1], mm[2], mm[3], '0', mm[0])
+                    for m, mm in ((m, m.groups())
+                                  for m in _DFI_ADDR_RE.finditer(line))]
+        for m, ident, idx_s, path, const_s, cast_type in matches:
             base_type = var_types.get(ident)
             if not base_type or base_type not in struct_layout_map:
                 continue
@@ -7089,6 +7128,20 @@ def identify_derived_field_index_pun(code, struct_layout_map=None,
             if resolved is None:
                 continue
             path_off, path_fld = resolved
+            # `(CVector3f *)&verts[4].position` reinterprets nothing — the cast
+            # names the field's own type, so this is an array access written
+            # with a redundant cast, not a lost-type pun.
+            #
+            # A cast back to the *indexed* type is a realignment within the
+            # same array — `(CVector3f *)&verts[4].y` starts a vector one
+            # component in. That is real, but it is subfield_vector_pun's (§26)
+            # shape, and claiming it here would both double-report it and
+            # attach a bogus "recovered name" (any struct leading with a
+            # CVector3f counts as derived from it, so some field lands on the
+            # offset by chance).
+            if cast_type and (cast_type == path_fld.get('type')
+                              or cast_type == base_type):
+                continue
             index = int(idx_s)
             const = int(const_s, 16) if const_s.lower().startswith('0x') \
                 else int(const_s)
@@ -7109,8 +7162,23 @@ def identify_derived_field_index_pun(code, struct_layout_map=None,
             hits = []
             for owner in owners:
                 fld = _sfo_field_at_offset(struct_layout_map, owner, total)
-                if fld and fld['offset'] == total:
-                    hits.append((owner, fld))
+                if not fld:
+                    continue
+                delta = total - fld['offset']
+                if delta == 0:
+                    hits.append((owner, fld, fld['name']))
+                    continue
+                # An array field resolves to an *element* when the address
+                # lands exactly on an element boundary — CMirror's
+                # clip_planes[5] at 0x98 with a 0x10 stride makes 0xa8
+                # `clip_planes[1]`, a recovered name rather than an overrun.
+                # Without this only the [0] element of any array is reported.
+                n = fld.get('n')
+                if n and n > 1 and fld['len'] % n == 0:
+                    elem = fld['len'] // n
+                    if elem and delta % elem == 0:
+                        hits.append((owner, fld, '%s[%d]'
+                                     % (fld['name'], delta // elem)))
             if not hits:
                 continue
 
@@ -7122,17 +7190,17 @@ def identify_derived_field_index_pun(code, struct_layout_map=None,
             # candidates rather than asserting one of them.
             preferred = [h for h in hits if h[0] == func_class]
             if preferred:
-                owner, fld = preferred[0]
+                owner, fld, fld_name = preferred[0]
                 alt = ''
             elif len(hits) == 1:
-                owner, fld = hits[0]
+                owner, fld, fld_name = hits[0]
                 alt = ''
             else:
-                owner, fld = hits[0]
+                owner, fld, fld_name = hits[0]
                 alt = (' Ambiguous: %s also has a field there — confirm the '
                        'real class from the .asm before rewriting.'
-                       % ', '.join('%s::%s' % (o, f['name'])
-                                   for o, f in hits[1:4]))
+                       % ', '.join('%s::%s' % (o, fn)
+                                   for o, f, fn in hits[1:4]))
 
             suspects.append({
                 'type': 'derived_field_index_pun',
@@ -7144,8 +7212,8 @@ def identify_derived_field_index_pun(code, struct_layout_map=None,
                     "had no %s type here and reached the field by index "
                     "arithmetic; write it as ((%s *)%s)->%s (§de-pun/§12).%s"
                     % (m.group(0).strip(), index, base_type, size, path,
-                       path_off, const, total, owner, fld['name'], owner,
-                       owner, ident, fld['name'], alt)),
+                       path_off, const, total, owner, fld_name, owner,
+                       owner, ident, fld_name, alt)),
                 'severity': SUSPECT_SEVERITY.get(
                     'derived_field_index_pun', 'moderate'),
             })

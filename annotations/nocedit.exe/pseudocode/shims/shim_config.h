@@ -153,3 +153,10 @@
 // it through nocturne.h. Every entry point collapses to rand() when
 // NOCTURNE_AUTHENTIC_RNG is 1.
 #include "rng.h"
+
+// One saved camera state (g_MirrorCullCameraState) shared by
+// CDemonSet::setupMirrorRendering and CDemonCamera::testVisibility, so a
+// reflected actor's bounding box is tested against the mirror camera rather
+// than through the actor transform its caller pushed. Declares nothing when
+// NOCTURNE_AUTHENTIC_MIRROR_CULL is 1.
+#include "mirror_cull.h"

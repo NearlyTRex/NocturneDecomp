@@ -111,6 +111,43 @@
 #define NOCTURNE_AUTHENTIC_RENDERER_DLL 0
 #endif
 
+// NOCTURNE_AUTHENTIC_MIRROR_CULL
+//   Which camera an actor's bounding box is tested against, and so whether
+//   actors appear in mirrors. CBoundingBox3D::isVisibleWithCamera projects the
+//   box's 8 corners with the current camera, un-projects them back to world
+//   space through g_InverseMatrix, and hands those world corners to the virtual
+//   CDemonCamera::testVisibility, which installs g_BackgroundSavedCameraState
+//   before re-projecting and rasterising the 6 box faces. That swap is
+//   load-bearing on every actor — the background camera, not the current one,
+//   is what the box test is meant to run against — so it is emphatically not a
+//   no-op to remove in general. During a mirror pass, though, the renderer is
+//   holding the mirrored camera that setupMirrorReflection installed, and the
+//   swap throws it away and tests the reflection's virtual position — behind
+//   the mirror plane, inside the wall — against the main scene camera. It
+//   fails, and CCharacter::renderOpaque culls the model.
+//   1: matches nocedit.exe as-shipped — the swap stands, so a mirror reflects
+//      the room and a character's corona but never the character's model.
+//      Static geometry is unaffected either way: it reflects through CMirror's
+//      own polygon clipper and never reaches this gate.
+//   0: dev-friendly default, and what retail nocturne.exe does. Retail carries
+//      no CDemonCamera::testVisibility at all — it inlines the same face
+//      rasterisation into isVisibleWithCamera (0x41d050, 1023 B against the
+//      editor's 447 B) with no camera save/swap/restore, testing against
+//      whatever camera is current. Reproduced here only while a mirror pass is
+//      active (CDemonSet::active_mirror, set by setupMirrorRendering and
+//      cleared by restoreCameraAfterMirror — the two only writers), so the
+//      background-camera test every other actor depends on is untouched.
+//      Installing the state just read back is a no-op:
+//      getCameraAndViewportState and setupCameraAndViewport are exact inverses
+//      over the same 39 globals, so this leaves the mirror camera in place and
+//      the reflected box is tested where it is actually being drawn.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_MIRROR_CULL=1 for reflection-less
+//   mirrors.
+#ifndef NOCTURNE_AUTHENTIC_MIRROR_CULL
+#define NOCTURNE_AUTHENTIC_MIRROR_CULL 0
+#endif
+
 // NOCTURNE_AUTHENTIC_VOICE
 //   1: matches nocedit.exe as-shipped — subtitles render but no voice audio
 //      plays. The streaming MP3 entry point (`loadStreamingSoundFile`) is
