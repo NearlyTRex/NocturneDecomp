@@ -49,7 +49,22 @@ Consolidated from `06_CLEARED_LEADS.md`; each entry there carries the evidence.
 
 ## Status of the fix
 
-It makes reflections work and is verified causally, not just visually. It is **not**
-demonstrated to reproduce what the shipped game did: retail has no camera swap at all,
-and how retail tolerates the pushed actor transform is still unexplained. See the open
-questions in `06_CLEARED_LEADS.md`.
+It makes reflections work, is verified causally rather than visually, and is now known to
+compute the same camera-space vertices retail computes.
+
+Retail has no camera swap because it never leaves the actor-pushed space: it rasterises
+the box faces straight from the vertices it just projected. nocedit instead round-trips
+through world space via the **camera-only** `g_InverseMatrix`, and re-projecting world
+corners requires a pure camera matrix — which is the swap's entire purpose. Installing the
+clean *mirror* camera state is the unique choice that lands nocedit's vertices where
+retail's are. Derivation and evidence in `06_CLEARED_LEADS.md`.
+
+The remaining deviation is structural, not numerical: two sites (a capture in
+`setupMirrorRendering`, a use in `testVisibility`) where the shipped code had one
+self-contained swap.
+
+## Separate open defect
+
+Under hardware acceleration, mirror rooms show a horizontal displacement between the
+pre-rendered backdrop and the 3D geometry. Unrelated to the cull gate.
+See `07_ACCEL_DISPLACEMENT.md`.

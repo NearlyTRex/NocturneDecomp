@@ -242,6 +242,31 @@ catalogued with snake_case parameters.
 
 ---
 
+### [12-camera_switch_lighting_flip/](12-camera_switch_lighting_flip/)
+
+Scene lighting changing when the game window gains or loses focus. Two bugs behind one
+symptom report.
+
+| File | Description |
+|------|-------------|
+| `README.md` | Both bugs, the eliminated list, and where Bug 2 stands |
+| `altfocus_lighting_probe.gdb` | projection + `CDemonSet` lighting gates per camera apply |
+| `altfocus_lighting_dump.gdb` | automatic numbered lighting-state dumps after each apply |
+| `altfocus_restore_probe.gdb` | focus transitions against camera applies |
+| `altfocus_filter_phase_probe.gdb` | per-light animated-filter phase at each apply |
+
+**Key outcomes:**
+- Bug 1 **fixed** — `setCameraView` made the current camera its own previous-best, so the
+  virtual director stole the view on focus regain. Gated by `NOCTURNE_AUTHENTIC_WINDOWS`.
+- Bug 2 **open** — five hypotheses eliminated by measurement against a live repro; inputs
+  to the per-regain rebuild are byte-identical yet the output visibly differs.
+- The original notes for this chapter were never committed; the README is a reconstruction
+  and marks which claims were re-verified.
+
+**Status:** Bug 1 fixed; Bug 2 open with a documented don't-re-chase list
+
+---
+
 ### [13-accel_per_pixel_lighting/](13-accel_per_pixel_lighting/)
 
 Why 3D-accelerated geometry rendered darker and flatter than the software rasterizer.

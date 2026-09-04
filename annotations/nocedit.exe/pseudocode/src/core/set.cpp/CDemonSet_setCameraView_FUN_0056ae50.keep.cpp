@@ -31,6 +31,9 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_p
   CVector3f local_48;
   CVector3f local_3c;
   CVector3f local_30;
+#if !NOCTURNE_AUTHENTIC_MIRROR_PROJECTION
+  CVector3f scene_rotation;
+#endif
   int local_14;
   CDemonActor *this_ptr_00;
   CDemonLight *this_ptr_01;
@@ -107,6 +110,12 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_p
     core_set_cpp_CDemonSet_renderBackgroundActors_FUN_0056aca0(this_ptr,1);
     core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0(&g_CDemonCameraInstance,0);
     if (g_UseExternalRenderer != 0) {
+#if !NOCTURNE_AUTHENTIC_MIRROR_PROJECTION
+      engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_0048c800
+                (g_CDemonRendererPtr2,&scene_rotation);
+      engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0
+                (g_CDemonRendererPtr2,&scene_rotation);
+#endif
       core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(this_ptr,9999.9,0);
       if (g_CWaterPtr->wave_animation_enabled == 0) {
         core_water_cpp_CWater_render_FUN_005ea320(g_CWaterPtr,0);

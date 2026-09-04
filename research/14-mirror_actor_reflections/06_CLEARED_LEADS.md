@@ -140,23 +140,63 @@ During a mirror pass `advanced_culling_enabled` is 1, so culling mode becomes 2 
 reversed-winding mirror mode) and plane culling is disabled — matching retail's explicit
 `setPlaneCullingEnabled(0)`. Culling mode was therefore never the problem.
 
+## Cleared — how retail tolerates the pushed actor transform
+
+**It does not have to. The question was the wrong shape: the two builds do the box test in
+different *spaces*.**
+
+`g_InverseMatrix` is a **camera-only** inverse. It has exactly one writer,
+`invertTransformMatrix` (`0x50c640`), reached only from `buildRotationMatrix` (`0x50c920`)
+and `setupCameraAndProjection` (`0x48c200`) — both camera setup.
+`matrixPushAndTransform` (`0x50cee0`), the actor push, writes `g_TransformMatrix`,
+`g_Relative*` and `g_LightDirection*` and **never** the inverse.
+
+That is what makes nocedit's un-projection exact, and it is deliberate rather than
+accidental:
+
+```
+R_cam⁻¹ · ( R_cam · (R_actor·v + p − c) ) + c  =  R_actor·v + p     ← true world corner
+```
+
+The camera-only inverse cancels the camera and leaves the actor transform baked in, so the
+corners handed to `testVisibility` are genuine world coordinates whatever is on the matrix
+stack.
+
+| | `nocedit` `0x420680` | retail `0x41d050` |
+|---|---|---|
+| 1 | project 8 model-local corners with the actor-pushed matrix | same |
+| 2 | **un-project to world** via camera-only `g_InverseMatrix` + `g_CameraOrigin` | — |
+| 3 | `testVisibility` re-projects the world corners, which **requires** a pure camera matrix in `g_TransformMatrix` | rasterise the six face quads straight from the step-1 vertices |
+
+Retail rasterises quads `{0,4,6,2}`, `{1,3,7,5}`, … by index out of `vertex_buffer[0..7]` —
+the identical face topology `testVisibility` builds. It never leaves the actor-pushed
+space, so it never needs a clean matrix, so it has no swap to make. The pushed actor
+transform is not something retail tolerates; it is the correct transform for model-local
+corners and retail uses it end to end. The swap exists **only** to service nocedit's
+world-space round trip.
+
+**Consequence for the fix's status.** `R_cam_mirror` applied to true world corners and
+`mirror_cam · R_actor` applied to model-local corners are the same points. Installing the
+clean **mirror** camera state is therefore not merely "the variant that works" — it is the
+unique choice that puts nocedit's re-projected vertices where retail's already are, up to
+16.16 round-trip rounding. The residual deviation is structural (a captured state versus
+never leaving the space), not numerical.
+
+Established statically from the sources above; the forward half of the transform was
+already confirmed numerically in `05_MEASUREMENT_AND_SOLUTION.md`.
+
 ## Open questions
 
-1. **How does retail tolerate the pushed actor transform?** Retail has no camera swap at
-   all, yet reflects actors correctly, so its box corners and its transform must agree in
-   a way not yet pinned down. Until this is answered, the fix in
-   `05_MEASUREMENT_AND_SOLUTION.md` should be described as "makes reflections work", not
-   as a faithful reconstruction. A useful next measurement: dump `corners[0..7]`,
-   `g_CameraOrigin*` and `g_TransformMatrix` for the same actor in both the normal and the
-   mirror pass of a single frame and compare.
-2. **Do not reorder `setupRenderState` against the cull gate** as a way of resolving (1) —
-   retail calls the same pair in the same order.
-3. **The alpha-mask round trip is unaudited.** `setupMirrorRendering` calls
+1. **Do not reorder `setupRenderState` against the cull gate** — retail calls the same pair
+   in the same order.
+2. **The alpha-mask round trip is unaudited.** `setupMirrorRendering` calls
    `saveAlphaTransform(i+1)` with no matching restore and sets
    `alpha_mask = (i+1) << 24`. `CCharacter::renderOpaque` reads `getAlphaMask()` to decide
    `was_rendered_opaque`. Whatever consumes that mask downstream — the scanline renderers,
    the mirror composite — has never been checked, and it is the one piece of state set
    *only* during a mirror pass.
-4. **The 0.5% residual**: two pairs of frames where all six faces clear all five clip
+3. **The 0.5% residual**: two pairs of frames where all six faces clear all five clip
    planes but `renderSinglePrimitive` still returns 0. Consistent with correct occlusion;
    never investigated.
+4. **Horizontal geometry displacement in mirror rooms under hardware acceleration.** A
+   separate, still-open defect. See `07_ACCEL_DISPLACEMENT.md`.

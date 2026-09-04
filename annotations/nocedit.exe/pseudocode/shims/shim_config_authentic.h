@@ -148,6 +148,44 @@
 #define NOCTURNE_AUTHENTIC_MIRROR_CULL 0
 #endif
 
+// NOCTURNE_AUTHENTIC_MIRROR_PROJECTION
+//   Whether accelerated static geometry is drawn through the same projection as
+//   the pre-rendered backdrop it is composited over. CDemonSet::setCameraView
+//   builds a camera angle by rendering the room's geometry once into the
+//   background buffer, loading the backdrop art over it, and then — only when an
+//   external renderer is active — rendering that geometry a second time for the
+//   accelerated pipeline. The viewport stack straddles the two passes, and
+//   pushViewport resets g_ProjectionScale to 0x10000 while leaving
+//   g_TransformMatrix alone (the stack carries the camera scalars, not the
+//   derived matrices), so between the push and the next bake the global and the
+//   matrix disagree by design. Pass 1's mirror loop then bakes the matrix from
+//   that transient value — setupMirrorRendering samples it through
+//   calculateProjectionFactor, restoreCameraAfterMirror installs it — and
+//   popViewport restores the real scale without re-baking. Pass 2 inherits the
+//   matrix built for the default field of view.
+//   1: matches nocedit.exe as-shipped, and retail nocturne.exe, which carries
+//      the identical second pass (0x5088f0) and the identical
+//      pushViewport reset (0x4ce8e1, MOV ECX,0x10000). In a mirror room, at any
+//      camera angle where buildMirrorList found a visible mirror, the
+//      accelerated geometry is drawn at the default field of view while the
+//      backdrop was drawn at the camera's. Measured as a uniform 4/3 on
+//      g_TransformMatrix columns 0 and 1 with column 2 byte-identical: doors and
+//      walls sit away from the backdrop toward the left and right of the screen,
+//      worsening with distance from centre, and never self-correct because
+//      setCameraView runs once per camera angle. Collision is unaffected.
+//   0: dev-friendly default. Re-establishes the scene camera after
+//      endBackgroundScene, before the accelerated pass. popViewport has by then
+//      restored g_ProjectionScale, the clip window, the camera origin and the
+//      rotation, so the only stale state left is the matrix pair, and one bake
+//      from the restored rotation rebuilds both. Software rendering is untouched
+//      — it issues no second pass, and its own copy of the transient converges
+//      after the first frames.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_MIRROR_PROJECTION=1.
+#ifndef NOCTURNE_AUTHENTIC_MIRROR_PROJECTION
+#define NOCTURNE_AUTHENTIC_MIRROR_PROJECTION 0
+#endif
+
 // NOCTURNE_AUTHENTIC_VOICE
 //   1: matches nocedit.exe as-shipped — subtitles render but no voice audio
 //      plays. The streaming MP3 entry point (`loadStreamingSoundFile`) is
