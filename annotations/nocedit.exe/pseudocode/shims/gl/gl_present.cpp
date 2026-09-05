@@ -511,6 +511,72 @@ extern "C" void nocturne_gl_scene_upload(const void *pixels, int width, int heig
     if (gl.PopAttrib != nullptr)       gl.PopAttrib();
 }
 
+extern "C" void nocturne_gl_present_scene(void) {
+    if (!g_gl.active || g_gl.scene_fbo == 0 || g_gl.scene_color == 0) return;
+
+    gl.BindFramebuffer(GL_FRAMEBUFFER, 0);
+
+    int drawable_w = 0, drawable_h = 0;
+    SDL_GL_GetDrawableSize(g_gl.window, &drawable_w, &drawable_h);
+
+    const int logical_w = (g_gl.logical_width  > 0) ? g_gl.logical_width  : g_gl.scene_width;
+    const int logical_h = (g_gl.logical_height > 0) ? g_gl.logical_height : g_gl.scene_height;
+    int vp_x = 0, vp_y = 0, vp_w = 0, vp_h = 0;
+    compute_viewport(drawable_w, drawable_h, logical_w, logical_h,
+                     &vp_x, &vp_y, &vp_w, &vp_h);
+
+    gl.Viewport(0, 0, drawable_w, drawable_h);
+    gl.Disable(GL_SCISSOR_TEST);
+    gl.ClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+    gl.Clear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    gl.Viewport(vp_x, vp_y, vp_w, vp_h);
+
+    gl.Disable(GL_DEPTH_TEST);
+    gl.Disable(GL_BLEND);
+    gl.Disable(GL_CULL_FACE);
+
+    const GLint present_filter =
+        viewport_is_integer_scale(vp_w, logical_w) ? GL_NEAREST : GL_LINEAR;
+    gl.BindTexture(GL_TEXTURE_2D, g_gl.scene_color);
+    gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, present_filter);
+    gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, present_filter);
+    gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+    gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+
+    // A render target is drawn bottom-up, unlike an uploaded CPU image, so the
+    // quad samples it the other way round.
+    if (!nocturne_gl_blit_quad_flipped(g_gl.scene_color)) {
+        gl.MatrixMode(GL_PROJECTION);
+        gl.PushMatrix();
+        gl.LoadIdentity();
+        gl.Ortho(0.0, 1.0, 0.0, 1.0, -1.0, 1.0);
+        gl.MatrixMode(GL_MODELVIEW);
+        gl.PushMatrix();
+        gl.LoadIdentity();
+
+        gl.Enable(GL_TEXTURE_2D);
+        gl.TexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
+        gl.Color4f(1.0f, 1.0f, 1.0f, 1.0f);
+
+        gl.Begin(GL_TRIANGLE_STRIP);
+            gl.TexCoord2f(0.0f, 0.0f); gl.Vertex2f(0.0f, 0.0f);
+            gl.TexCoord2f(1.0f, 0.0f); gl.Vertex2f(1.0f, 0.0f);
+            gl.TexCoord2f(0.0f, 1.0f); gl.Vertex2f(0.0f, 1.0f);
+            gl.TexCoord2f(1.0f, 1.0f); gl.Vertex2f(1.0f, 1.0f);
+        gl.End();
+
+        gl.MatrixMode(GL_PROJECTION);
+        gl.PopMatrix();
+        gl.MatrixMode(GL_MODELVIEW);
+        gl.PopMatrix();
+    }
+
+    SDL_GL_SwapWindow(g_gl.window);
+
+    gl.BindFramebuffer(GL_FRAMEBUFFER, g_gl.scene_fbo);
+    gl.Viewport(0, 0, g_gl.scene_width, g_gl.scene_height);
+}
+
 extern "C" void nocturne_gl_swap_only(void) {
     if (!g_gl.active) return;
     SDL_GL_SwapWindow(g_gl.window);
@@ -631,6 +697,7 @@ extern "C" int  nocturne_gl_scene_target_active(void) { return 0; }
 extern "C" unsigned int nocturne_gl_scene_fbo(void) { return 0u; }
 extern "C" int  nocturne_gl_ensure_active(void) { return 0; }
 extern "C" void nocturne_gl_swap_only(void) {}
+extern "C" void nocturne_gl_present_scene(void) {}
 extern "C" void nocturne_gl_scene_upload(const void *, int, int, int, int) {}
 extern "C" void nocturne_gl_set_logical_size(int w, int h) { (void)w; (void)h; }
 extern "C" void nocturne_gl_present_framebuffer(const void *p, int w, int h, int pitch, int bpp) {

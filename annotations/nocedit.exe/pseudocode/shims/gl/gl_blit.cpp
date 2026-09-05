@@ -64,14 +64,22 @@ const char *kFragmentSource =
     "    gl_FragColor = texture2D(u_tex, v_uv);\n"
     "}\n";
 
-// Clip-space x, y then u, v. GL_TRIANGLE_STRIP order, the same winding the
-// immediate-mode quad used.
-const GLfloat kQuad[16] = {
+// Clip-space x, y then u, v, in GL_TRIANGLE_STRIP order. Two quads: the first
+// samples top-down for an uploaded CPU image, the second bottom-up for a render
+// target. One buffer, two draw offsets, so the layout is stated once.
+const GLfloat kQuad[32] = {
     -1.0f,  1.0f,   0.0f, 0.0f,
      1.0f,  1.0f,   1.0f, 0.0f,
     -1.0f, -1.0f,   0.0f, 1.0f,
      1.0f, -1.0f,   1.0f, 1.0f,
+
+    -1.0f,  1.0f,   0.0f, 1.0f,
+     1.0f,  1.0f,   1.0f, 1.0f,
+    -1.0f, -1.0f,   0.0f, 0.0f,
+     1.0f, -1.0f,   1.0f, 0.0f,
 };
+const int kQuadTopDown  = 0;
+const int kQuadBottomUp = 4;
 
 bool have_entry_points() {
     return gl.CreateShader != nullptr && gl.ShaderSource != nullptr &&
@@ -188,9 +196,7 @@ bool build_program() {
     return true;
 }
 
-}  // namespace
-
-extern "C" int nocturne_gl_blit_quad(unsigned int texture) {
+int blit_quad(unsigned int texture, int first) {
     if (shader_mode() == 0) return 0;
 
     if (g_program == 0) {
@@ -231,13 +237,23 @@ extern "C" int nocturne_gl_blit_quad(unsigned int texture) {
                                (const void *)(intptr_t)(2 * sizeof(GLfloat)));
     }
 
-    gl.DrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+    gl.DrawArrays(GL_TRIANGLE_STRIP, first, 4);
 
     gl.DisableVertexAttribArray((GLuint)g_attr_pos);
     if (g_attr_uv >= 0) gl.DisableVertexAttribArray((GLuint)g_attr_uv);
     gl.BindBuffer(GL_ARRAY_BUFFER, (GLuint)prev_buffer);
     gl.UseProgram((GLuint)prev_program);
     return 1;
+}
+
+}  // namespace
+
+extern "C" int nocturne_gl_blit_quad(unsigned int texture) {
+    return blit_quad(texture, kQuadTopDown);
+}
+
+extern "C" int nocturne_gl_blit_quad_flipped(unsigned int texture) {
+    return blit_quad(texture, kQuadBottomUp);
 }
 
 extern "C" void nocturne_gl_blit_shutdown(void) {
@@ -258,6 +274,7 @@ extern "C" void nocturne_gl_blit_shutdown(void) {
 
 extern "C" int nocturne_gl_blit_shader = 0;
 extern "C" int nocturne_gl_blit_quad(unsigned int texture) { (void)texture; return 0; }
+extern "C" int nocturne_gl_blit_quad_flipped(unsigned int t) { (void)t; return 0; }
 extern "C" void nocturne_gl_blit_shutdown(void) {}
 
 #endif  // NOCTURNE_GL_PRESENT

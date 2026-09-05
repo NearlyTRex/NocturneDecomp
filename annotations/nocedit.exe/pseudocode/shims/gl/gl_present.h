@@ -78,6 +78,12 @@ void nocturne_gl_present_framebuffer(const void *pixels, int width, int height,
 // to composite — uploading a stale one would erase the frame.
 void nocturne_gl_swap_only(void);
 
+// Draw the SCENE target onto the window and swap, letterboxed the same way an
+// uploaded frame is. For a renderer whose finished frame is already in the
+// scene target, this avoids a readback to the CPU and an upload straight back.
+// Does nothing, and does not swap, when there is no scene target.
+void nocturne_gl_present_scene(void);
+
 // Upload `pixels` into the SCENE target's colour, with no swap and without
 // touching depth. This is the counterpart to the renderer DLL's Lock readback:
 // in real DirectDraw the CPU pixels and the 3D device share one surface, so a

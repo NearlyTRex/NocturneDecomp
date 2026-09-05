@@ -43,6 +43,11 @@ extern "C" {
 // must fall back to its own quad.
 int nocturne_gl_blit_quad(unsigned int texture);
 
+// The same quad sampling bottom-up. A render target is drawn with its origin at
+// the bottom, where an uploaded CPU image has its first row at the top, so a
+// target presented with nocturne_gl_blit_quad would come out upside down.
+int nocturne_gl_blit_quad_flipped(unsigned int texture);
+
 // Which path the blit takes, live-settable from a debugger so one run can
 // capture the same frame both ways rather than comparing across scenes, which
 // no two frames of this game survive:
