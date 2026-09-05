@@ -145,6 +145,7 @@ extern "C" int nocturne_gl_load_api(void) {
     NOCTURNE_GL_LOAD_OPT(Uniform1i);
     NOCTURNE_GL_LOAD_OPT(Uniform1f);
     NOCTURNE_GL_LOAD_OPT(Uniform2f);
+    NOCTURNE_GL_LOAD_OPT(Uniform3f);
     NOCTURNE_GL_LOAD_OPT(Uniform4f);
     NOCTURNE_GL_LOAD_OPT(ActiveTexture);
 
@@ -160,6 +161,10 @@ extern "C" int nocturne_gl_load_api(void) {
     NOCTURNE_GL_LOAD_OPT(VertexAttribPointer);
     NOCTURNE_GL_LOAD_OPT(UniformMatrix4fv);
     NOCTURNE_GL_LOAD_OPT(DrawArrays);
+    NOCTURNE_GL_LOAD_OPT(GenVertexArrays);
+    NOCTURNE_GL_LOAD_OPT(DeleteVertexArrays);
+    NOCTURNE_GL_LOAD_OPT(BindVertexArray);
+    NOCTURNE_GL_LOAD_OPT(GenerateMipmap);
 
     // Optional — absence just costs the specular term, not the GL path.
     nocturne_glSecondaryColorPointer =

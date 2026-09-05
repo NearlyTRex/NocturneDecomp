@@ -146,6 +146,7 @@ struct NocturneGLApi {
     void   (APIENTRY *Uniform1i)(GLint, GLint);
     void   (APIENTRY *Uniform1f)(GLint, GLfloat);
     void   (APIENTRY *Uniform2f)(GLint, GLfloat, GLfloat);
+    void   (APIENTRY *Uniform3f)(GLint, GLfloat, GLfloat, GLfloat);
     void   (APIENTRY *Uniform4f)(GLint, GLfloat, GLfloat, GLfloat, GLfloat);
     void   (APIENTRY *ActiveTexture)(GLenum);
 
@@ -181,6 +182,19 @@ struct NocturneGLApi {
     // shader blit uses it (gl_blit.cpp) — a null here must cost that path and
     // nothing else, exactly as a missing glCreateShader does.
     void   (APIENTRY *DrawArrays)(GLenum, GLint, GLsizei);
+
+    // --- vertex array objects (GL 3.0), optional -----------------------------
+    // A core profile requires a non-zero vertex array object bound for any
+    // draw; a compatibility one supplies a default at zero and never needs
+    // these. Loaded optionally so a driver without them keeps the compatibility
+    // behaviour rather than losing the renderer.
+    void   (APIENTRY *GenVertexArrays)(GLsizei, GLuint *);
+    void   (APIENTRY *DeleteVertexArrays)(GLsizei, const GLuint *);
+    void   (APIENTRY *BindVertexArray)(GLuint);
+
+    // GL 3.0. Builds a texture's mip chain from its base level, replacing a
+    // hand-filtered chain uploaded level by level.
+    void   (APIENTRY *GenerateMipmap)(GLenum);
 };
 
 // D3D's second (specular) vertex color. GL 1.4 / EXT_secondary_color, so unlike
