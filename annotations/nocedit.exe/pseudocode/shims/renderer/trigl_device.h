@@ -57,9 +57,10 @@ int nocturne_trigl_device_lock_frame(void);
 int nocturne_trigl_device_unlock_frame(void);
 int nocturne_trigl_device_frame_locked(void);
 
-// The 640x480 buffer the engine composites into above 480 lines. Locking hands
-// out its scanlines; unlocking stretches it onto the target.
-int nocturne_trigl_device_lock_hold_buffer(void **scanlines);
+// The 640x480 buffer the engine composites into above 480 lines. Locking points
+// the engine's own scanline array at it; unlocking puts the frame's rows back
+// and stretches the hold buffer onto the target.
+int nocturne_trigl_device_lock_hold_buffer(void);
 int nocturne_trigl_device_unlock_hold_buffer(void);
 
 // Clear colour, clear depth, and the box-limited depth clear the engine uses to

@@ -333,9 +333,7 @@ static int __cdecl trigl_lock_frame(void)  { return nocturne_trigl_device_lock_f
 static int __cdecl trigl_unlock_frame(void){ return nocturne_trigl_device_unlock_frame(); }
 
 static int __cdecl trigl_lock_hold_buffer(void) {
-    CExternalRendererBridge *b = bridge();
-    void **scanlines = (b != nullptr) ? (void **)b->frame_buffer_ptr : nullptr;
-    return nocturne_trigl_device_lock_hold_buffer(scanlines);
+    return nocturne_trigl_device_lock_hold_buffer();
 }
 
 static int __cdecl trigl_unlock_hold_buffer(void) {

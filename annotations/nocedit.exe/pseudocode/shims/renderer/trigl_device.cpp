@@ -49,6 +49,14 @@ struct Device {
     int            hold_pitch = 0;
     void         **hold_lines = nullptr;
 
+    // The array the engine was handed at setVideoMode2 and goes on addressing
+    // the frame through. Locking the hold buffer REPLACES its entries with the
+    // hold buffer's rows and unlocking puts the frame's back, which is how the
+    // engine composites into one buffer and presents from another without
+    // knowing it changed.
+    void         **engine_scanlines = nullptr;
+    int            engine_scanline_count = 0;
+
     bool in_scene     = false;
     bool frame_locked = false;
     bool open         = false;
@@ -80,6 +88,8 @@ void free_mode_storage() {
     g_dev.scanlines  = nullptr;
     g_dev.hold       = nullptr;
     g_dev.hold_lines = nullptr;
+    g_dev.engine_scanlines      = nullptr;
+    g_dev.engine_scanline_count = 0;
 }
 
 bool gl_format_for_bpp(int bpp, GLenum *format, GLenum *type) {
@@ -188,6 +198,8 @@ int nocturne_trigl_device_set_mode(int width, int height, int bpp, void **scanli
     for (int y = 0; y < kHoldHeight; ++y) {
         g_dev.hold_lines[y] = g_dev.hold + (size_t)y * (size_t)g_dev.hold_pitch;
     }
+    g_dev.engine_scanlines      = scanlines;
+    g_dev.engine_scanline_count = height;
     if (scanlines != nullptr) {
         memcpy(scanlines, g_dev.scanlines, (size_t)height * sizeof(void *));
     }
@@ -272,21 +284,31 @@ int nocturne_trigl_device_unlock_frame(void) {
 
 int nocturne_trigl_device_frame_locked(void) { return g_dev.frame_locked ? 1 : 0; }
 
-int nocturne_trigl_device_lock_hold_buffer(void **scanlines) {
+int nocturne_trigl_device_lock_hold_buffer(void) {
     if (!g_dev.open || g_dev.hold == nullptr) return 0;
     if (g_dev.in_scene) nocturne_trigl_device_end_scene();
-    if (scanlines != nullptr) {
-        memcpy(scanlines, g_dev.hold_lines, (size_t)kHoldHeight * sizeof(void *));
-    }
+    if (g_dev.engine_scanlines == nullptr) return 0;
+
+    // Never more rows than the engine's array holds. The hold buffer is only
+    // reached above 480 lines, so it always fits, but the array's length is the
+    // engine's to decide and writing past it lands in whatever global follows.
+    int rows = kHoldHeight;
+    if (rows > g_dev.engine_scanline_count) rows = g_dev.engine_scanline_count;
+    memcpy(g_dev.engine_scanlines, g_dev.hold_lines, (size_t)rows * sizeof(void *));
     return 1;
 }
 
 int nocturne_trigl_device_unlock_hold_buffer(void) {
     if (!g_dev.open || g_dev.hold == nullptr) return 0;
+    if (g_dev.engine_scanlines != nullptr) {
+        memcpy(g_dev.engine_scanlines, g_dev.scanlines,
+               (size_t)g_dev.engine_scanline_count * sizeof(void *));
+    }
     // Drawn across the whole target, which is the stretch the engine's own blit
     // performs from a 640x480 hold buffer to a larger screen.
     nocturne_gl_scene_upload(g_dev.hold, kHoldWidth, kHoldHeight,
                              g_dev.hold_pitch, g_dev.bpp);
+    g_dev.target_ahead = false;
     return 1;
 }
 
@@ -351,7 +373,7 @@ void nocturne_trigl_device_flush(void) {}
 int  nocturne_trigl_device_lock_frame(void) { return 0; }
 int  nocturne_trigl_device_unlock_frame(void) { return 0; }
 int  nocturne_trigl_device_frame_locked(void) { return 0; }
-int  nocturne_trigl_device_lock_hold_buffer(void **) { return 0; }
+int  nocturne_trigl_device_lock_hold_buffer(void) { return 0; }
 int  nocturne_trigl_device_unlock_hold_buffer(void) { return 0; }
 void nocturne_trigl_device_clear_color(void) {}
 void nocturne_trigl_device_clear_depth(void) {}
