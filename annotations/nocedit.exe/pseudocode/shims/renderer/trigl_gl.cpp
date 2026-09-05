@@ -34,6 +34,10 @@ extern "C" void nocturne_trigl_stats_reset(void) {
     nocturne_trigl_stats.screen_max_x = -(1 << 30);
     nocturne_trigl_stats.screen_min_y = 1 << 30;
     nocturne_trigl_stats.screen_max_y = -(1 << 30);
+    nocturne_trigl_stats.depth_saves = 0;
+    nocturne_trigl_stats.depth_restores = 0;
+    nocturne_trigl_stats.depth_rect_max_x = 0;
+    nocturne_trigl_stats.depth_rect_max_y = 0;
 }
 
 namespace {
@@ -696,6 +700,7 @@ int nocturne_trigl_gl_save_depth(int slot, int width, int height) {
     if (scene == 0) return 0;
     MasterDepth *m = ensure_master_depth(slot, width, height);
     if (m == nullptr) return 0;
+    ++nocturne_trigl_stats.depth_saves;
 
     gl.BindFramebuffer(GL_READ_FRAMEBUFFER, scene);
     gl.BindFramebuffer(GL_DRAW_FRAMEBUFFER, m->fbo);
@@ -713,6 +718,14 @@ int nocturne_trigl_gl_restore_depth(int slot, int left, int top, int right, int 
     if (slot < 0 || slot >= kMasterDepthSlots) return 0;
     MasterDepth &m = g_master_depth[slot];
     if (m.fbo == 0) return 0;
+
+    ++nocturne_trigl_stats.depth_restores;
+    if (right  > nocturne_trigl_stats.depth_rect_max_x) {
+        nocturne_trigl_stats.depth_rect_max_x = right;
+    }
+    if (bottom > nocturne_trigl_stats.depth_rect_max_y) {
+        nocturne_trigl_stats.depth_rect_max_y = bottom;
+    }
 
     // Top-down to bottom-up. An empty rectangle is nothing to do rather than a
     // failure — the engine asks for one when nothing moved.

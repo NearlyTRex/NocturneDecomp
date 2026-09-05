@@ -110,6 +110,11 @@ typedef struct NocturneTriglStats {
     unsigned missing_texture_draws;   // texturing on with nothing bound
     int screen_min_x, screen_max_x;   // whole pixels, as submitted
     int screen_min_y, screen_max_y;
+    // The largest depth-restore rectangle the engine has asked for, as it asked
+    // for it. Compare against the target size: a rectangle that stops at 640x480
+    // on a larger target is being given in the hold buffer's space.
+    unsigned depth_saves, depth_restores;
+    int depth_rect_max_x, depth_rect_max_y;
 } NocturneTriglStats;
 
 extern NocturneTriglStats nocturne_trigl_stats;
