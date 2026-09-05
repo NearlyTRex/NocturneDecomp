@@ -123,6 +123,15 @@ inline std::string show(const T &) { return "<value>"; }
         }                                                                       \
     } while (0)
 
+// A plain condition with a caller-supplied note, for checks inside a loop.
+#define CHECK_AT(expr, note)                                                    \
+    do {                                                                        \
+        ++::nocturne_test::checks();                                            \
+        if (!(expr)) {                                                          \
+            ::nocturne_test::fail(__FILE__, __LINE__, #expr, std::string(note)); \
+        }                                                                       \
+    } while (0)
+
 #define CHECK_NEAR(a, b, tol)                                                   \
     do {                                                                        \
         ++::nocturne_test::checks();                                            \
