@@ -141,7 +141,7 @@ extern "C" const NocturneBuiltinExport *nocturne_tridx7_exports(int *count) {
 static NocturneBuiltinExport g_TriglExports[sizeof(g_Tridx7Exports) /
                                             sizeof(g_Tridx7Exports[0])];
 
-extern "C" const NocturneBuiltinExport *nocturne_trigl_exports(int *count) {
+extern "C" const NocturneBuiltinExport *nocturne_tridx7gl_exports(int *count) {
     static bool built = false;
     const int   n     = (int)(sizeof(g_Tridx7Exports) / sizeof(g_Tridx7Exports[0]));
 
