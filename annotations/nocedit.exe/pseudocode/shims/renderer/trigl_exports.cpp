@@ -399,23 +399,13 @@ static int __cdecl trigl_master_z_buffer(int slot) {
 // the rectangle, whose right and bottom edges are inclusive.
 static int __cdecl trigl_restore_z_buffer(int slot, int left, int top, int right, int bottom) {
     nocturne_trigl_device_flush();
-    // The rectangle is in the same space the engine submits geometry in, so
-    // while it is compositing through the hold buffer it describes a 640x480
-    // frame and has to be scaled onto the target the depth buffer belongs to.
-    // Applied unscaled it restores a corner and leaves the rest of the depth
-    // buffer holding whatever the last frame left, which stops distant geometry
-    // being occluded by near.
-    const int width  = nocturne_trigl_device_width();
-    const int height = nocturne_trigl_device_height();
-    float sx = 1.0f, sy = 1.0f;
-    if (nocturne_trigl_device_hold_active()) {
-        if (width  > 0) sx = (float)width  / 640.0f;
-        if (height > 0) sy = (float)height / 480.0f;
-    }
-    return nocturne_trigl_gl_restore_depth(slot,
-                                           (int)(left * sx), (int)(top * sy),
-                                           (int)((right + 1) * sx), (int)((bottom + 1) * sy),
-                                           width, height);
+    // The rectangle is in the TARGET's space, not the 640x480 one the engine
+    // submits geometry in while it composites through the hold buffer. Measured:
+    // on a 1024x768 target it asks for 1024x768. The two spaces do not have to
+    // agree and here they do not, so nothing is scaled.
+    return nocturne_trigl_gl_restore_depth(slot, left, top, right + 1, bottom + 1,
+                                           nocturne_trigl_device_width(),
+                                           nocturne_trigl_device_height());
 }
 
 // =============================================================================
