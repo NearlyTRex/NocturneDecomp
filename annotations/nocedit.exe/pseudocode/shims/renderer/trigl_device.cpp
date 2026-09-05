@@ -53,6 +53,17 @@ struct Device {
     bool frame_locked = false;
     bool open         = false;
 
+    // Whether the target holds anything the CPU image does not. Set by drawing
+    // and by a clear; cleared once the two agree again.
+    //
+    // This decides whether locking reads the target back, and getting it wrong
+    // is invisible in one direction and fatal in the other. The engine draws its
+    // 2D straight into the CPU image — g_ScreenBufferArray points at it and is
+    // never repointed — so a lock that reads back unconditionally erases
+    // whatever was drawn since the last unlock. A screen with no 3D on it, the
+    // pause menu among them, would never appear at all.
+    bool target_ahead = false;
+
     NocturneTriglScreenVertex *batch_vertices = nullptr;
     unsigned short            *batch_indices  = nullptr;
     NocturneTriglBatch         batch;
@@ -214,12 +225,20 @@ void nocturne_trigl_device_flush(void) {
     }
     nocturne_trigl_gl_draw_batch(&g_dev.batch);
     nocturne_trigl_batch_reset(&g_dev.batch);
+    g_dev.target_ahead = true;
 }
 
 int nocturne_trigl_device_lock_frame(void) {
     if (!g_dev.open || g_dev.image == nullptr) return 0;
     // Geometry has to have landed before the target can be read.
     if (g_dev.in_scene) nocturne_trigl_device_end_scene();
+
+    // Nothing has been drawn since the two last agreed, so the CPU image is the
+    // newer of the pair and reading the target back would overwrite it.
+    if (!g_dev.target_ahead) {
+        g_dev.frame_locked = true;
+        return 1;
+    }
 
     GLenum format = 0, type = 0;
     if (!gl_format_for_bpp(g_dev.bpp, &format, &type)) return 0;
@@ -234,6 +253,7 @@ int nocturne_trigl_device_lock_frame(void) {
     gl.PixelStorei(GL_PACK_ROW_LENGTH, 0);
     flip_rows(g_dev.image, g_dev.pitch, g_dev.height);
 
+    g_dev.target_ahead = false;
     g_dev.frame_locked = true;
     return 1;
 }
@@ -246,6 +266,7 @@ int nocturne_trigl_device_unlock_frame(void) {
     // place the finished frame lives.
     nocturne_gl_scene_upload(g_dev.image, g_dev.width, g_dev.height,
                              g_dev.pitch, g_dev.bpp);
+    g_dev.target_ahead = false;
     return 1;
 }
 
@@ -275,6 +296,7 @@ void nocturne_trigl_device_clear_color(void) {
     // Colour only: the depth buffer has its own clear, and the engine calls
     // them separately because it often keeps depth across a colour clear.
     gl.Clear(GL_COLOR_BUFFER_BIT);
+    g_dev.target_ahead = true;
 }
 
 void nocturne_trigl_device_clear_depth(void) {
