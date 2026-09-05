@@ -68,6 +68,10 @@ void nocturne_trigl_gl_bind_texture(unsigned texture);
 // Drop every cached texture, e.g. when the engine changes video mode.
 void nocturne_trigl_gl_release_textures(void);
 
+// What the driver calls itself, for the card list the options screen shows.
+// Never null; a generic name before the context is up.
+const char *nocturne_trigl_gl_renderer_name(void);
+
 // --- drawing -----------------------------------------------------------------
 // Submit an accumulated batch. Does nothing for an empty one; the caller resets
 // it afterwards.

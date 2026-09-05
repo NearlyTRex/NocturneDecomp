@@ -580,6 +580,22 @@ void nocturne_trigl_gl_bind_texture(unsigned texture) {
     }
 }
 
+const char *nocturne_trigl_gl_renderer_name(void) {
+    static char name[128] = "";
+    if (name[0] == '\0' && gl.GetString != nullptr) {
+        const char *reported = (const char *)gl.GetString(GL_RENDERER);
+        if (reported != nullptr) {
+            size_t n = 0;
+            while (reported[n] != '\0' && n + 1 < sizeof(name)) {
+                name[n] = reported[n];
+                ++n;
+            }
+            name[n] = '\0';
+        }
+    }
+    return (name[0] != '\0') ? name : "OpenGL";
+}
+
 void nocturne_trigl_gl_release_textures(void) {
     for (int i = 0; i < kTextureSlots; ++i) {
         if (g_textures[i].texture != 0 && gl.DeleteTextures != nullptr) {
@@ -674,6 +690,7 @@ void nocturne_trigl_gl_apply_state(const NocturneTriglPipelineState *) {}
 unsigned nocturne_trigl_gl_texture(const char *, int, const unsigned *, int, int) { return 0; }
 void nocturne_trigl_gl_bind_texture(unsigned) {}
 void nocturne_trigl_gl_release_textures(void) {}
+const char *nocturne_trigl_gl_renderer_name(void) { return "OpenGL"; }
 void nocturne_trigl_gl_draw_batch(const NocturneTriglBatch *) {}
 
 #endif  // NOCTURNE_GL_PRESENT

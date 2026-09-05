@@ -77,11 +77,18 @@ struct EventHandle {
     int manualReset;
 };
 
+// Internal linkage: watcom.cpp has a FindHandle of its own with a different
+// layout, and one class name with two definitions is an ODR violation whose
+// symptom is a destructor reading the wrong field as a pointer.
+namespace {
+
 struct FindHandle {
     int tag;
     std::vector<std::string> matches;
     size_t currentIndex;
 };
+
+}  // namespace
 
 // =============================================================================
 // Thread-local last error

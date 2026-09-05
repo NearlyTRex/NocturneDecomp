@@ -166,10 +166,19 @@ char* _getcwd(char* buffer, int size) {
 // file matching. Results are collected up front so _findnext is a simple
 // index bump (matches Watcom's iterator-style API).
 
+// Internal linkage, deliberately. kernel32.cpp defines a FindHandle of its own
+// with a different layout, and two definitions of one class name in a program
+// is an ODR violation the linker resolves by keeping whichever destructor it
+// saw first — silently giving one of them the other's field offsets. Anonymous
+// namespaces here and there make the two unrelated types they always were.
+namespace {
+
 struct FindHandle {
     std::vector<std::string> matches;
     size_t current_index;
 };
+
+}  // namespace
 
 static void split_filespec(const char* filespec, std::string& dir, std::string& pattern) {
     std::string spec(filespec);

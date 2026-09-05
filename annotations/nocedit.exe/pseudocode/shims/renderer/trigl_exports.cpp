@@ -210,17 +210,25 @@ static void __cdecl trigl_kill(void) {
     g_r.state_valid = false;
 }
 
+// The mode the engine last asked for. setVideoMode2 records it and does the
+// work; setVideoMode does the same work against whatever was recorded, which is
+// the only place the resolution comes from — its own arguments carry the
+// scanline array and nothing else.
+static int g_mode_width  = 0;
+static int g_mode_height = 0;
+static int g_mode_bpp    = 0;
+
 static int __cdecl trigl_set_video_mode(void **scanline_ptrs) {
-    CExternalRendererBridge *b = bridge();
-    const int bpp = (b != nullptr) ? read_bridge(b->texture_bits, 32) : 32;
-    return nocturne_trigl_device_set_mode(nocturne_trigl_device_width(),
-                                          nocturne_trigl_device_height(),
-                                          bpp, scanline_ptrs);
+    return nocturne_trigl_device_set_mode(g_mode_width, g_mode_height, g_mode_bpp,
+                                          scanline_ptrs);
 }
 
 static int __cdecl trigl_set_video_mode2(int width, int height, int bits_per_pixel,
                                          void **screen_buffer_array) {
-    return nocturne_trigl_device_set_mode(width, height, bits_per_pixel, screen_buffer_array);
+    g_mode_width  = width;
+    g_mode_height = height;
+    g_mode_bpp    = bits_per_pixel;
+    return trigl_set_video_mode(screen_buffer_array);
 }
 
 static int __cdecl trigl_restore_video_mode(void) { return 1; }
@@ -235,9 +243,32 @@ static int __cdecl trigl_sync(void) {
     return 1;
 }
 
+// How the renderer describes itself, and the first thing the engine asks for.
+// loadExternalRenderer calls this BEFORE resolving a single entry point and
+// checks the answer against a reference it builds itself; a renderer that fails
+// the check is unloaded and acceleration goes back off, with every APIDLL name
+// left unresolved. The reference asks for four things:
+//
+//   api_version either matching its own 1, or the 0xffff that means "whatever
+//   you are running"; feature bit 0 set; an interface version whose high byte
+//   is 1; and a function count of exactly 16, with all 16 table entries zero.
+//
+// Driver version and vendor name are only compared when the reference carries
+// them, and it carries neither.
 static void __cdecl trigl_information(HMODULE handle, CExternalRenderer *renderer) {
     (void)handle;
-    (void)renderer;
+    if (renderer == nullptr) return;
+
+    CExternalRenderer info;
+    memset(&info, 0, sizeof(info));
+    strcpy(info.description, "OpenGL");
+    strcpy(info.vendor_name, "Nocturne");
+    info.api_version       = 0xffff;
+    info.interface_version = 0x100;
+    info.driver_version    = 0x100;
+    info.function_count    = 0x10;
+    info.feature_flags.dword = 3;
+    memcpy(renderer, &info, sizeof(info));
 }
 
 static int __cdecl trigl_select_card(int card_index) {
@@ -245,13 +276,18 @@ static int __cdecl trigl_select_card(int card_index) {
     return 1;
 }
 
+// One card: the context the process already has.
+//
+// The name arrays are arrays of POINTERS the renderer fills in with storage of
+// its own; the engine does not provide buffers to copy into. Leaving one null
+// while reporting a card is what makes the options screen concatenate a null
+// string, so the storage is static here and outlives every caller.
 static int __cdecl trigl_build_card_list(int *out_count, char **out_drivers, char **out_names,
                                          int *out_vendor_ids, int *out_device_ids) {
-    // One card: the GL context the process already has. The engine only uses
-    // this to populate its options screen.
+    static char driver_name[32] = "OpenGL";
     if (out_count != nullptr) *out_count = 1;
-    if (out_drivers != nullptr && out_drivers[0] != nullptr) strcpy(out_drivers[0], "OpenGL");
-    if (out_names != nullptr && out_names[0] != nullptr) strcpy(out_names[0], "OpenGL");
+    if (out_drivers != nullptr) out_drivers[0] = driver_name;
+    if (out_names != nullptr) out_names[0] = (char *)nocturne_trigl_gl_renderer_name();
     if (out_vendor_ids != nullptr) out_vendor_ids[0] = 0;
     if (out_device_ids != nullptr) out_device_ids[0] = 0;
     return 1;
