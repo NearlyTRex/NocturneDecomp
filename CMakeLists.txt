@@ -517,3 +517,38 @@ if(NOCTURNE_BUILD_EXE)
             WORLD_READ WORLD_EXECUTE
     )
 endif()
+
+# =============================================================================
+# Target: nocturne_tests  (ctest)
+# =============================================================================
+#
+# Unit tests for the parts of the renderer that decide something: how a draw's
+# render flags become pipeline state, how a vertex is converted, how a texture
+# is decoded. Those files take no GL and read no global, so a test needs neither
+# a context nor a window and runs anywhere.
+#
+# Built for the host rather than with NOCTURNE_ARCH_FLAGS. What is under test is
+# arithmetic on explicit widths, identical on both lanes, and building it -m32
+# would put the tests behind the multilib toolchain for no coverage.
+file(GLOB_RECURSE _test_sources CONFIGURE_DEPENDS "${CMAKE_SOURCE_DIR}/tests/*.cpp")
+if(_test_sources)
+    enable_testing()
+    foreach(_test_src IN LISTS _test_sources)
+        get_filename_component(_test_name "${_test_src}" NAME_WE)
+        add_executable(${_test_name} EXCLUDE_FROM_ALL
+            "${_test_src}"
+            "${NOCTURNE_SHIMS_DIR}/renderer/trigl_state.cpp"
+        )
+        target_include_directories(${_test_name} PRIVATE
+            "${CMAKE_SOURCE_DIR}/tests" "${NOCTURNE_SHIMS_DIR}")
+        target_compile_features(${_test_name} PRIVATE cxx_std_17)
+        target_compile_options(${_test_name} PRIVATE ${NOCTURNE_COMMON_WARNINGS})
+        add_test(NAME ${_test_name} COMMAND ${_test_name})
+        list(APPEND _test_targets ${_test_name})
+    endforeach()
+    # `ctest` only runs what is already built, and the tests are EXCLUDE_FROM_ALL
+    # so an ordinary build does not pay for them. This target builds them all.
+    add_custom_target(nocturne_tests DEPENDS ${_test_targets})
+    list(LENGTH _test_targets _test_count)
+    message(STATUS "nocturne_tests: ${_test_count} test binaries")
+endif()
