@@ -131,6 +131,12 @@ void begin_draw(unsigned render_flags, NocturneTriglPipelineState *out_state) {
         memcmp(out_state, &g_r.state, sizeof(*out_state)) != 0;
     if (!changed) return;
 
+    NocturneTriglStats &st = nocturne_trigl_stats;
+    ++st.draws;
+    if (out_state->blend_enabled) ++st.blended_draws;
+    if (!out_state->texture_enabled) ++st.untextured_draws;
+    if (out_state->texture_enabled && texture == 0) ++st.missing_texture_draws;
+
     nocturne_trigl_device_flush();
     nocturne_trigl_gl_apply_state(out_state);
     nocturne_trigl_gl_bind_texture(texture);
@@ -154,6 +160,15 @@ void submit_polygon(const NocturneTriglVertexContext *ctx,
     for (int i = 0; i < count; ++i) {
         nocturne_trigl_convert_vertex(ctx, &vertices[i], &slot[i]);
     }
+
+    NocturneTriglStats &st = nocturne_trigl_stats;
+    ++st.polygons;
+    const int x = vertices[0].screen_x >> 16;
+    const int y = vertices[0].screen_y >> 16;
+    if (x < st.screen_min_x) st.screen_min_x = x;
+    if (x > st.screen_max_x) st.screen_max_x = x;
+    if (y < st.screen_min_y) st.screen_min_y = y;
+    if (y > st.screen_max_y) st.screen_max_y = y;
     if (nocturne_trigl_batch_should_flush(batch)) {
         nocturne_trigl_device_flush();
     }
@@ -212,6 +227,7 @@ static int __cdecl trigl_init(HWND window, CExternalRendererBridge *interface) {
         return 0;
     }
     g_r.state_valid = false;
+    nocturne_trigl_stats_reset();
     return 1;
 }
 

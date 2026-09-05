@@ -90,6 +90,25 @@ void nocturne_trigl_gl_release_depth(void);
 // it afterwards.
 void nocturne_trigl_gl_draw_batch(const NocturneTriglBatch *batch);
 
+// --- what reached the hardware -----------------------------------------------
+// Updated once per polygon rather than per vertex, so it costs nothing to leave
+// on and can be read from a debugger without a breakpoint. A breakpoint in the
+// per-vertex path is not a usable instrument: it fires hundreds of thousands of
+// times a second and the game stops advancing, which reads as "no such draw"
+// rather than as "too slow to observe".
+typedef struct NocturneTriglStats {
+    unsigned polygons;
+    unsigned draws;
+    unsigned blended_draws;
+    unsigned untextured_draws;
+    unsigned missing_texture_draws;   // texturing on with nothing bound
+    int screen_min_x, screen_max_x;   // whole pixels, as submitted
+    int screen_min_y, screen_max_y;
+} NocturneTriglStats;
+
+extern NocturneTriglStats nocturne_trigl_stats;
+void nocturne_trigl_stats_reset(void);
+
 // Whether per-vertex fog is applied. The engine supplies a fog factor on nearly
 // every vertex, but a whole-frame comparison could not separate it from
 // animation drift, so it is off until a measurement can see it.

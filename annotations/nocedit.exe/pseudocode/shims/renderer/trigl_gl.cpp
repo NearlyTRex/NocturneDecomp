@@ -21,6 +21,20 @@
 
 extern "C" int nocturne_trigl_vertex_fog = -1;
 
+extern "C" NocturneTriglStats nocturne_trigl_stats = {};
+
+extern "C" void nocturne_trigl_stats_reset(void) {
+    nocturne_trigl_stats.polygons = 0;
+    nocturne_trigl_stats.draws = 0;
+    nocturne_trigl_stats.blended_draws = 0;
+    nocturne_trigl_stats.untextured_draws = 0;
+    nocturne_trigl_stats.missing_texture_draws = 0;
+    nocturne_trigl_stats.screen_min_x = 1 << 30;
+    nocturne_trigl_stats.screen_max_x = -(1 << 30);
+    nocturne_trigl_stats.screen_min_y = 1 << 30;
+    nocturne_trigl_stats.screen_max_y = -(1 << 30);
+}
+
 namespace {
 
 int vertex_fog() {
@@ -787,6 +801,8 @@ void nocturne_trigl_gl_draw_batch(const NocturneTriglBatch *batch) {
 #include "renderer/trigl_gl.h"
 
 extern "C" int nocturne_trigl_vertex_fog = 0;
+extern "C" NocturneTriglStats nocturne_trigl_stats = {};
+extern "C" void nocturne_trigl_stats_reset(void) {}
 int  nocturne_trigl_gl_init(void) { return 0; }
 int  nocturne_trigl_gl_ready(void) { return 0; }
 void nocturne_trigl_gl_shutdown(void) {}
