@@ -14,10 +14,16 @@ void __cdecl core_game_cpp_CGame_renderIrisFade_FUN_004e0aa0(CGame *this_ptr)
   int iVar2;
   uint *puVar3;
   int iVar5;
-  
+
   if (g_IrisFadeType != 0) {
     if (((g_IrisFadeType < 4) && (g_IrisFadeType != 1)) && (1.0 <= g_IrisFadeRadius)) {
+#if NOCTURNE_AUTHENTIC_IRIS_FADE
       core_game_cpp_calculateIrisFadeCenter_FUN_004e09a0();
+#else
+      if (g_IrisFadeType != 2) {
+        core_game_cpp_calculateIrisFadeCenter_FUN_004e09a0();
+      }
+#endif
       if (g_BitsPerPixel == 0x20) {
         fVar1 = g_IrisFadeRadius * g_IrisFadeRadius;
         for (iVar5 = 0; iVar5 < g_WindowHeight; iVar5 = iVar5 + 1) {

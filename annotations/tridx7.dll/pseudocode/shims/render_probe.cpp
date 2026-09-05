@@ -47,6 +47,21 @@ struct FlagBucket {
     unsigned long spec_sum;
     unsigned      spec_max;
 
+    // Specular ALPHA is a separate question from specular RGB: D3D7 carries the
+    // per-vertex FOG FACTOR there (255 = unfogged, 0 = solid fog colour) when
+    // FOGTABLEMODE is NONE, which is the mode this engine uses. GL's secondary
+    // colour is 3 components, so that byte is dropped on the floor today and no
+    // fog reaches the screen from the DLL path at all.
+    //
+    // Whether implementing it is worth anything depends entirely on whether the
+    // engine ever writes something other than 255 here, so measure before
+    // building: if this is 255 everywhere, vertex fog is a no-op in practice.
+    unsigned long specA_sum;
+    unsigned      specA_min;
+    unsigned      specA_max;
+    unsigned long specA_not_opaque;   // vertices with specular alpha != 255
+    unsigned long specA_hist[HIST_BINS];
+
     unsigned long rgb_unequal;        // diffuse R != G or G != B (the 0x200 path)
 };
 
@@ -123,6 +138,7 @@ FlagBucket *bucket_for(unsigned flags) {
     memset(b, 0, sizeof(*b));
     b->flags     = flags;
     b->light_min = 0x100;             // sentinel: no sample yet
+    b->specA_min = 0x100;
     return b;
 }
 
@@ -188,6 +204,7 @@ extern "C" void nocturne_render_probe_color(unsigned diffuse, unsigned specular)
     const unsigned sr = (specular >> 16) & 0xff;
     const unsigned sg = (specular >>  8) & 0xff;
     const unsigned sb = (specular      ) & 0xff;
+    const unsigned sa = (specular >> 24) & 0xff;
 
     g_vertices++;
 
@@ -209,6 +226,12 @@ extern "C" void nocturne_render_probe_color(unsigned diffuse, unsigned specular)
     if (smax != 0) fb->spec_nonzero++;
     fb->spec_sum += smax;
     if (smax > fb->spec_max) fb->spec_max = smax;
+
+    fb->specA_sum += sa;
+    if (sa < fb->specA_min) fb->specA_min = sa;
+    if (sa > fb->specA_max) fb->specA_max = sa;
+    if (sa != 255) fb->specA_not_opaque++;
+    fb->specA_hist[sa / HIST_BINS]++;
 
     TexBucket *tb = tex_bucket_for(g_current_tex);
     if (tb != nullptr) {
@@ -378,6 +401,11 @@ extern "C" int nocturne_dump_render_flags(const char *path) {
     fprintf(fp, "  light   = diffuse red byte (R=G=B on the monochrome light path)\n");
     fprintf(fp, "  alpha   = diffuse alpha; a cluster at ~128 with blending on is the\n");
     fprintf(fp, "            50%%-blend fingerprint that explains on = 0.5*off + 12\n");
+    fprintf(fp, "  specA   = specular ALPHA, which is where D3D7 carries the\n");
+    fprintf(fp, "            per-vertex FOG FACTOR (255 unfogged, 0 solid fog).\n");
+    fprintf(fp, "            GL's secondary colour is 3 components so this byte\n");
+    fprintf(fp, "            is dropped today. 255 everywhere means implementing\n");
+    fprintf(fp, "            vertex fog in the shader would change nothing.\n");
     fprintf(fp, "  spec    = specular RGB; 0 everywhere means the overbright term\n");
     fprintf(fp, "            never engages (expected below light 0xff0 pre-shift)\n");
     fprintf(fp, "  rgbne   = vertices whose diffuse RGB are not all equal (the 0x200\n");
@@ -403,6 +431,15 @@ extern "C" int nocturne_dump_render_flags(const char *path) {
                 b->spec_nonzero, b->vertices,
                 100.0 * (double)b->spec_nonzero / (double)b->vertices,
                 (double)b->spec_sum / (double)b->vertices, b->spec_max);
+        {
+            const unsigned specA_min = (b->specA_min > 0xff) ? 0 : b->specA_min;
+            fprintf(fp,
+                    "    specA  min %3u  mean %6.1f  max %3u   != 255 on %lu/%lu (%.1f%%)\n",
+                    specA_min, (double)b->specA_sum / (double)b->vertices,
+                    b->specA_max, b->specA_not_opaque, b->vertices,
+                    100.0 * (double)b->specA_not_opaque / (double)b->vertices);
+            write_hist(fp, "specA", b->specA_hist, b->vertices);
+        }
         fprintf(fp, "    rgbne  %lu/%lu\n\n", b->rgb_unequal, b->vertices);
     }
 

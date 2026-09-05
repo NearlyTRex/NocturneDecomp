@@ -6,6 +6,7 @@
 // SDL_Renderer.
 
 #include "gl_present.h"
+#include "gl_version.h"
 #include "shim_config.h"
 #include "debug_log.h"
 
@@ -14,6 +15,7 @@
 #if NOCTURNE_GL_PRESENT
 
 #include "gl_api.h"
+#include "gl_blit.h"
 #include <stdlib.h>
 #include <string.h>
 
@@ -46,6 +48,10 @@ struct GLPresentState {
 };
 
 GLPresentState g_gl;
+
+// Leading "major.minor" of GL_VERSION, cached at context creation. Empty until
+// then, and read by nocturne_gl_version_short() for the 3D API menu line.
+char g_gl_version_short[16] = "";
 
 // Map the game's back-buffer bit depth onto a GL upload format. The 32bpp case
 // is SDL_PIXELFORMAT_ARGB8888, which on little-endian is B,G,R,A in memory —
@@ -179,10 +185,37 @@ extern "C" int nocturne_gl_init(SDL_Window *window) {
     g_gl.window = window;
     g_gl.active = true;
 
+    // Cache the leading "major.minor" for the Graphics Options 3D API line.
+    // Captured here rather than queried on demand because the menu can be drawn
+    // with no context current, and glGetString would then return null.
+    {
+        const char *ver = (const char *)gl.GetString(GL_VERSION);
+        g_gl_version_short[0] = '\0';
+        if (ver != nullptr) {
+            size_t n = 0;
+            while (ver[n] != '\0' && n + 1 < sizeof(g_gl_version_short) &&
+                   (ver[n] == '.' || (ver[n] >= '0' && ver[n] <= '9'))) {
+                ++n;
+            }
+            // Keep only major.minor: GL_VERSION is "4.6.0 NVIDIA 595.84" and the
+            // trailing ".0" and driver build add nothing here.
+            size_t dots = 0, cut = n;
+            for (size_t i = 0; i < n; ++i) {
+                if (ver[i] == '.' && ++dots == 2) { cut = i; break; }
+            }
+            memcpy(g_gl_version_short, ver, cut);
+            g_gl_version_short[cut] = '\0';
+        }
+    }
+
     DDRAW_LOG("gl_present: context up — GL_VERSION=%s GL_RENDERER=%s",
               (const char *)gl.GetString(GL_VERSION),
               (const char *)gl.GetString(GL_RENDERER));
     return 1;
+}
+
+extern "C" const char *nocturne_gl_version_short(void) {
+    return g_gl_version_short;
 }
 
 extern "C" int nocturne_gl_is_active(void) {
@@ -330,23 +363,12 @@ extern "C" void nocturne_gl_present_framebuffer(const void *pixels, int width, i
     gl.Viewport(vp_x, vp_y, vp_w, vp_h);
 
     // The 2D layer is an opaque full-frame blit: no depth, no blend, no lighting.
-    gl.MatrixMode(GL_PROJECTION);
-    gl.PushMatrix();
-    gl.LoadIdentity();
-    gl.Ortho(0.0, 1.0, 1.0, 0.0, -1.0, 1.0);  // top-left origin, matching raster order
-    gl.MatrixMode(GL_MODELVIEW);
-    gl.PushMatrix();
-    gl.LoadIdentity();
-
     gl.Disable(GL_DEPTH_TEST);
     gl.Disable(GL_BLEND);
     gl.Disable(GL_ALPHA_TEST);
     gl.Disable(GL_FOG);
     gl.Disable(GL_CULL_FACE);
     gl.Disable(GL_LIGHTING);
-    gl.Enable(GL_TEXTURE_2D);
-    gl.TexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
-    gl.Color4f(1.0f, 1.0f, 1.0f, 1.0f);
     // Bind and fully re-specify the sampling state every frame. The renderer
     // DLL's D3DTSS_MINFILTER/MIPFILTER handling calls glTexParameteri against
     // whatever texture happens to be bound, and this one is still bound from the
@@ -366,17 +388,35 @@ extern "C" void nocturne_gl_present_framebuffer(const void *pixels, int width, i
     gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
     gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 
-    gl.Begin(GL_TRIANGLE_STRIP);
-        gl.TexCoord2f(0.0f, 0.0f); gl.Vertex2f(0.0f, 0.0f);
-        gl.TexCoord2f(1.0f, 0.0f); gl.Vertex2f(1.0f, 0.0f);
-        gl.TexCoord2f(0.0f, 1.0f); gl.Vertex2f(0.0f, 1.0f);
-        gl.TexCoord2f(1.0f, 1.0f); gl.Vertex2f(1.0f, 1.0f);
-    gl.End();
+    // Shader quad where the driver has one, the immediate-mode quad below where
+    // it does not. Nothing selects between them per renderer: software mode
+    // reaches the screen through here too, so this path has to be right for a
+    // build with no accelerated renderer loaded at all.
+    if (!nocturne_gl_blit_quad(g_gl.framebuffer_texture)) {
+        gl.MatrixMode(GL_PROJECTION);
+        gl.PushMatrix();
+        gl.LoadIdentity();
+        gl.Ortho(0.0, 1.0, 1.0, 0.0, -1.0, 1.0);  // top-left origin, matching raster order
+        gl.MatrixMode(GL_MODELVIEW);
+        gl.PushMatrix();
+        gl.LoadIdentity();
 
-    gl.MatrixMode(GL_PROJECTION);
-    gl.PopMatrix();
-    gl.MatrixMode(GL_MODELVIEW);
-    gl.PopMatrix();
+        gl.Enable(GL_TEXTURE_2D);
+        gl.TexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
+        gl.Color4f(1.0f, 1.0f, 1.0f, 1.0f);
+
+        gl.Begin(GL_TRIANGLE_STRIP);
+            gl.TexCoord2f(0.0f, 0.0f); gl.Vertex2f(0.0f, 0.0f);
+            gl.TexCoord2f(1.0f, 0.0f); gl.Vertex2f(1.0f, 0.0f);
+            gl.TexCoord2f(0.0f, 1.0f); gl.Vertex2f(0.0f, 1.0f);
+            gl.TexCoord2f(1.0f, 1.0f); gl.Vertex2f(1.0f, 1.0f);
+        gl.End();
+
+        gl.MatrixMode(GL_PROJECTION);
+        gl.PopMatrix();
+        gl.MatrixMode(GL_MODELVIEW);
+        gl.PopMatrix();
+    }
 
     SDL_GL_SwapWindow(g_gl.window);
 
@@ -421,14 +461,6 @@ extern "C" void nocturne_gl_scene_upload(const void *pixels, int width, int heig
     gl.Viewport(0, 0, g_gl.scene_width, g_gl.scene_height);
     gl.Disable(GL_SCISSOR_TEST);
 
-    gl.MatrixMode(GL_PROJECTION);
-    gl.PushMatrix();
-    gl.LoadIdentity();
-    gl.Ortho(0.0, 1.0, 1.0, 0.0, -1.0, 1.0);  // top-left origin, matching the readback flip
-    gl.MatrixMode(GL_MODELVIEW);
-    gl.PushMatrix();
-    gl.LoadIdentity();
-
     gl.Disable(GL_DEPTH_TEST);
     gl.DepthMask(GL_FALSE);
     gl.Disable(GL_BLEND);
@@ -436,9 +468,6 @@ extern "C" void nocturne_gl_scene_upload(const void *pixels, int width, int heig
     gl.Disable(GL_FOG);
     gl.Disable(GL_CULL_FACE);
     gl.Disable(GL_LIGHTING);
-    gl.Enable(GL_TEXTURE_2D);
-    gl.TexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
-    gl.Color4f(1.0f, 1.0f, 1.0f, 1.0f);
 
     // Re-specify sampling state: the DLL's D3DTSS filter handling runs against
     // whatever texture is bound, and a mipmap MIN_FILTER on this single-level
@@ -449,17 +478,34 @@ extern "C" void nocturne_gl_scene_upload(const void *pixels, int width, int heig
     gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
     gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 
-    gl.Begin(GL_TRIANGLE_STRIP);
-        gl.TexCoord2f(0.0f, 0.0f); gl.Vertex2f(0.0f, 0.0f);
-        gl.TexCoord2f(1.0f, 0.0f); gl.Vertex2f(1.0f, 0.0f);
-        gl.TexCoord2f(0.0f, 1.0f); gl.Vertex2f(0.0f, 1.0f);
-        gl.TexCoord2f(1.0f, 1.0f); gl.Vertex2f(1.0f, 1.0f);
-    gl.End();
+    // Same quad, same choice as the present path. glPushAttrib above does not
+    // cover the program or the array-buffer binding, so gl_blit puts those back
+    // itself — without that, the DLL's very next draw would inherit them.
+    if (!nocturne_gl_blit_quad(g_gl.framebuffer_texture)) {
+        gl.MatrixMode(GL_PROJECTION);
+        gl.PushMatrix();
+        gl.LoadIdentity();
+        gl.Ortho(0.0, 1.0, 1.0, 0.0, -1.0, 1.0);  // top-left origin, matching the readback flip
+        gl.MatrixMode(GL_MODELVIEW);
+        gl.PushMatrix();
+        gl.LoadIdentity();
 
-    gl.MatrixMode(GL_PROJECTION);
-    gl.PopMatrix();
-    gl.MatrixMode(GL_MODELVIEW);
-    gl.PopMatrix();
+        gl.Enable(GL_TEXTURE_2D);
+        gl.TexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
+        gl.Color4f(1.0f, 1.0f, 1.0f, 1.0f);
+
+        gl.Begin(GL_TRIANGLE_STRIP);
+            gl.TexCoord2f(0.0f, 0.0f); gl.Vertex2f(0.0f, 0.0f);
+            gl.TexCoord2f(1.0f, 0.0f); gl.Vertex2f(1.0f, 0.0f);
+            gl.TexCoord2f(0.0f, 1.0f); gl.Vertex2f(0.0f, 1.0f);
+            gl.TexCoord2f(1.0f, 1.0f); gl.Vertex2f(1.0f, 1.0f);
+        gl.End();
+
+        gl.MatrixMode(GL_PROJECTION);
+        gl.PopMatrix();
+        gl.MatrixMode(GL_MODELVIEW);
+        gl.PopMatrix();
+    }
 
     if (gl.PopClientAttrib != nullptr) gl.PopClientAttrib();
     if (gl.PopAttrib != nullptr)       gl.PopAttrib();
@@ -563,6 +609,7 @@ extern "C" void nocturne_gl_window_to_logical(int window_x, int window_y,
 
 extern "C" void nocturne_gl_shutdown(void) {
     if (!g_gl.active) return;
+    nocturne_gl_blit_shutdown();
     if (g_gl.framebuffer_texture != 0) {
         gl.DeleteTextures(1, &g_gl.framebuffer_texture);
         g_gl.framebuffer_texture = 0;

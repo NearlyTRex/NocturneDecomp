@@ -121,12 +121,80 @@ struct NocturneGLApi {
     void (APIENTRY *ColorPointer)(GLint, GLenum, GLsizei, const void *);
     void (APIENTRY *TexCoordPointer)(GLint, GLenum, GLsizei, const void *);
     void (APIENTRY *DrawElements)(GLenum, GLsizei, GLenum, const void *);
+
+    // --- shaders -------------------------------------------------------------
+    // Step 1 of moving off fixed function; see
+    // research/17-shader_renderer_migration. Every entry here is optional: the
+    // shader path checks for nulls and falls back to fixed function, so a
+    // driver without them behaves exactly as before.
+    //
+    // The compatibility profile keeps the client-array attributes visible to
+    // GLSL as gl_Vertex / gl_Color / gl_MultiTexCoord0 / gl_SecondaryColor, so
+    // a shader can be used over the existing DrawElements path unchanged.
+    GLuint (APIENTRY *CreateShader)(GLenum);
+    void   (APIENTRY *ShaderSource)(GLuint, GLsizei, const GLchar *const *, const GLint *);
+    void   (APIENTRY *CompileShader)(GLuint);
+    void   (APIENTRY *GetShaderiv)(GLuint, GLenum, GLint *);
+    void   (APIENTRY *GetShaderInfoLog)(GLuint, GLsizei, GLsizei *, GLchar *);
+    void   (APIENTRY *DeleteShader)(GLuint);
+    GLuint (APIENTRY *CreateProgram)(void);
+    void   (APIENTRY *AttachShader)(GLuint, GLuint);
+    void   (APIENTRY *LinkProgram)(GLuint);
+    void   (APIENTRY *GetProgramiv)(GLuint, GLenum, GLint *);
+    void   (APIENTRY *GetProgramInfoLog)(GLuint, GLsizei, GLsizei *, GLchar *);
+    void   (APIENTRY *DeleteProgram)(GLuint);
+    void   (APIENTRY *UseProgram)(GLuint);
+    GLint  (APIENTRY *GetUniformLocation)(GLuint, const GLchar *);
+    void   (APIENTRY *Uniform1i)(GLint, GLint);
+    void   (APIENTRY *Uniform1f)(GLint, GLfloat);
+    void   (APIENTRY *Uniform2f)(GLint, GLfloat, GLfloat);
+    void   (APIENTRY *Uniform4f)(GLint, GLfloat, GLfloat, GLfloat, GLfloat);
+    void   (APIENTRY *ActiveTexture)(GLenum);
+
+    // --- buffers and generic attributes (GL 1.5 / 2.0), all optional ---------
+    //
+    // What actually leaves fixed function behind. The block above still reads
+    // vertices through gl_Vertex / gl_Color / gl_MultiTexCoord0, which are the
+    // compatibility profile's names for the client arrays — a shader stapled
+    // onto the old pipeline. These replace that with a buffer object and named
+    // attributes, and UniformMatrix4fv replaces ftransform()'s dependence on the
+    // fixed-function matrix stack.
+    //
+    // Every one is allowed to be null: the draw path checks once and keeps using
+    // client arrays if any are missing, so a driver that cannot do this still
+    // renders.
+    void   (APIENTRY *GenBuffers)(GLsizei, GLuint *);
+    void   (APIENTRY *DeleteBuffers)(GLsizei, const GLuint *);
+    void   (APIENTRY *BindBuffer)(GLenum, GLuint);
+    void   (APIENTRY *BufferData)(GLenum, GLsizeiptr, const void *, GLenum);
+    void   (APIENTRY *BufferSubData)(GLenum, GLintptr, GLsizeiptr, const void *);
+    GLint  (APIENTRY *GetAttribLocation)(GLuint, const GLchar *);
+    // Must be called BEFORE linking. Position has to land on location 0: in a
+    // compatibility context generic attribute 0 aliases gl_Vertex, and a draw
+    // with neither attribute 0 nor the fixed-function vertex array enabled
+    // renders nothing at all on several drivers. Letting the linker choose is a
+    // coin flip.
+    void   (APIENTRY *BindAttribLocation)(GLuint, GLuint, const GLchar *);
+    void   (APIENTRY *EnableVertexAttribArray)(GLuint);
+    void   (APIENTRY *DisableVertexAttribArray)(GLuint);
+    void   (APIENTRY *VertexAttribPointer)(GLuint, GLint, GLenum, GLboolean,
+                                           GLsizei, const void *);
+    void   (APIENTRY *UniformMatrix4fv)(GLint, GLsizei, GLboolean, const GLfloat *);
+    // GL 1.1, but loaded optionally with the block above because only the
+    // shader blit uses it (gl_blit.cpp) — a null here must cost that path and
+    // nothing else, exactly as a missing glCreateShader does.
+    void   (APIENTRY *DrawArrays)(GLenum, GLint, GLsizei);
 };
 
 // D3D's second (specular) vertex color. GL 1.4 / EXT_secondary_color, so unlike
 // the table above it is allowed to be null — callers must check before use and
 // fall back to dropping the specular term.
 extern void (APIENTRY *nocturne_glSecondaryColorPointer)(GLint, GLenum, GLsizei, const void *);
+
+// GL 1.4, optional. Carries D3D7's per-vertex fog factor, which buildTLVertex
+// packs into the specular ALPHA byte — the one component glSecondaryColorPointer
+// has no room for. Consumed only by the shader path, as gl_FogCoord.
+extern void (APIENTRY *nocturne_glFogCoordPointer)(GLenum, GLsizei, const void *);
 
 // The loaded table. Valid only after nocturne_gl_load_api() returns 1.
 extern struct NocturneGLApi gl;

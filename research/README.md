@@ -254,16 +254,20 @@ symptom report.
 | `altfocus_lighting_dump.gdb` | automatic numbered lighting-state dumps after each apply |
 | `altfocus_restore_probe.gdb` | focus transitions against camera applies |
 | `altfocus_filter_phase_probe.gdb` | per-light animated-filter phase at each apply |
+| `altfocus_dirtyrect_probe.gdb` | spot-light shadow-map dirty-rect accounting |
+| `altfocus_pixel_capture.gdb` | periodic frontbuffer capture |
+| `altfocus_transient_burst.gdb` | 14 consecutive frames per apply — found Bug 2a |
 
 **Key outcomes:**
 - Bug 1 **fixed** — `setCameraView` made the current camera its own previous-best, so the
   virtual director stole the view on focus regain. Gated by `NOCTURNE_AUTHENTIC_WINDOWS`.
-- Bug 2 **open** — five hypotheses eliminated by measurement against a live repro; inputs
-  to the per-regain rebuild are byte-identical yet the output visibly differs.
+- Bug 2a **fixed** — a focus regain re-applies the same camera and tears down the corona
+  queue, costing one frame of light glows (braziers). Dip measured −0.243 → −0.023.
+- Bug 2b **open** — the longer-lived dim; six state hypotheses eliminated by measurement.
 - The original notes for this chapter were never committed; the README is a reconstruction
   and marks which claims were re-verified.
 
-**Status:** Bug 1 fixed; Bug 2 open with a documented don't-re-chase list
+**Status:** Bugs 1 and 2a fixed; Bug 2b open with a documented don't-re-chase list
 
 ---
 
@@ -364,6 +368,106 @@ still unexplained (open question 1 in `06_CLEARED_LEADS.md`).
 
 ---
 
+### [15-iris_fade_transition/](15-iris_fade_transition/)
+
+The circle that widens as a room loads jumps part-way through and appears to start over,
+centred on the main character as he walks into the shot.
+
+| File | Description |
+|------|-------------|
+| `README.md` | State machine, cause, measurements, fix |
+| `iris_fade_probe.gdb` | every `beginFadeIn`/`beginFadeOut` with a backtrace, plus type transitions |
+| `iris_jump_probe.gdb` | every centre change during a fade, with radius and percentage |
+
+**Key outcomes:**
+- Not a second trigger — exactly one `beginFadeIn`, state machine `1 → 2 → 0` once, and
+  `updateFadeTransition` verified faithful instruction by instruction against `0x4e09c0`.
+- `renderIrisFade` re-centres on the focus actor every frame (`CALL` at `0x4e0add`), but
+  `calculateIrisFadeCenter` only writes the centre while that actor is on screen — so a
+  hero who walks in after the load makes the centre snap mid-growth.
+- Measured: centre held at `(320,240)` to 46 % of the fade then jumped ~250 px to
+  `(400,477)` while the disc radius was only ~296. After the fix, one centre change at 0 %.
+- Fix pins the **opening** iris only; the closing iris still tracks the hero.
+
+**Status:** FIXED (deviation; original-game defect, gated by `NOCTURNE_AUTHENTIC_IRIS_FADE`)
+
+---
+
+### [16-svetlana_blade_envmap/](16-svetlana_blade_envmap/)
+
+Black artefacts on Svetlana's blades, worst around the handles, tracking the lighting.
+Present in retail and in **both** software and accelerated rendering.
+
+| File | Description |
+|------|-------------|
+| `README.md` | Mechanism, the measured dead leads, method traps |
+| `blade_mixed_triangle_probe.gdb` | the mixed-UV-source triangle count — the headline measurement |
+| `blade_zero_slots_probe.gdb` | which blade vertices leave the lighting pass unwritten |
+| `blade_normal_writer_probe.gdb` | watchpoint reporting who writes a normal slot |
+| `blade_scratch_clobber_probe.gdb` | traces the nonzero normal population across the frame |
+| (+29 more) | DLL-side emit probes, software-mode probes, earlier bisects |
+
+**Key outcomes:**
+- `renderEnvMapTriangles` picks each vertex's UV source independently — bone normal if any
+  component reaches 1.0, else eye direction. **14 of 78 triangles mix the two**, so they
+  interpolate across an arbitrary span of the env map. Bit-stable frame to frame, and
+  faithful to the asm (plain 0-based `base + index*12`, no §15 offset).
+- Branch-B vertices read **exactly 0.0** because they are **never lit**: the covering
+  `lightVerticies` call (538 verts, 1208 triangles) references none of them, while the env
+  pass renders them. **8–12 % of the env pass's vertex references have no normal**, because
+  the list it renders is not the list that was lit — the body is lit at `lod_index=2` while
+  the env pass draws `part_indices[0..1]`.
+- The env map is legitimately near-black: `g_EnvMapTexture` is a static `"BACKGND.RAW"`
+  never written anywhere, measured 38.1 % pure black and 92.2 % luma<32. Dark blades are
+  the correct result of reflecting it.
+- Four big leads **measured dead**: out-of-range indices, shared-scratch clobbering (so
+  splitting `g_VertexNormalArray` would change nothing), a float/int pun, and the earlier
+  "software is clean, remainder is accel-only" claim.
+- Unrelated shim bug found and fixed on the way: the GL shim dropped
+  `D3DRENDERSTATE_TEXTUREADDRESS = CLAMP`, leaving every texture on `GL_REPEAT`.
+
+**Status:** OPEN — mechanism measured end to end (unlit vertices from a lighting/render
+face-list mismatch); what remains is why the two lists differ, and which of two fixes to take
+
+---
+
+### [17-shader_renderer_migration/](17-shader_renderer_migration/)
+
+Moving the GL shim off fixed function onto shaders, so the graphics can later be improved with
+modern techniques. Ships as a second selectable renderer, `trigl.dll`, in Graphics Options →
+3D API, beside the fixed-function `tridx7.dll`; `tridx7.dll`'s authentic 37-export surface is
+untouched, and the new renderer is one row in the built-in DLL registry.
+
+**The draw path is off fixed function and verified pixel-neutral; the present blit is not.**
+Vertex submission now goes through a streaming buffer object with named generic attributes and
+its own `u_projection` — replacing `gl_Vertex`/`gl_Color`/`ftransform()`, which were only the
+compatibility profile's names for the client arrays and matrix stack the shader was supposed to
+be replacing. Exit criterion was a same-scene A/B of both vertex paths, flipped live: every
+matched percentile `1.0000`, `mean|d| 0.614` against a `0.56–0.82` noise floor. Remaining on
+the fixed-function ledger: the present blit in `gl_present.cpp` (`glOrtho`, immediate mode,
+`TexEnv`), and the compatibility context itself, which is blocked on it.
+
+**The main result of the first working session is a correction.** The migration was expected to
+fix the chapel window (`12-camera_switch_lighting_flip/`) by applying the per-pixel light/fog
+grid to hardware geometry. That was built, measured, and reverted: accel *without* the grid
+matches software at every percentile (`14.33` vs `14.22`, ratio `1.0076`), while applying it
+darkens to `0.41x`. The grid is the **software rasterizer's** lighting mechanism — geometry
+drawn through the renderer DLL carries its own per-vertex lighting and already arrives at final
+brightness. So the window is a **double-draw** of `CGlass`, needing a game-side fix, and
+`NOCTURNE_AUTHENTIC_SHADER_LIGHTING` defaults to 1 (grid not applied). Do not reopen this.
+
+What the shader path *can* do that fixed function structurally cannot: D3D7's per-vertex fog,
+which `buildTLVertex` packs into the specular **alpha** byte and GL's 3-component secondary
+colour therefore drops entirely — set on 94.4% of vertices at mean 126/255. Implemented and
+defaulted off, because the A/B could not separate it from animation drift.
+
+The README there is the handoff: state table, open items with a DON'T-RE-CHASE list, the live
+debug toggles, and the measurement rules this work depends on (capture only synced to
+`SDL_GL_SwapWindow`; never compare across scenes or resolutions; establish the noise floor in
+the same run — two of that session's conclusions turned out to be smaller than it).
+
+---
+
 ## Standalone Documents
 
 ### [ghidra_suspect_patterns.md](ghidra_suspect_patterns.md)
@@ -434,6 +538,15 @@ Ghidra source location: `~/Repositories/Ghidra/`
 ---
 
 ## Changelog
+
+### 2026-09-04
+- **`15-iris_fade_transition/` FIXED — the opening iris snaps onto the hero part-way through its growth.** Not a second trigger, which was the obvious suspicion: there is exactly one `beginFadeIn`, the state machine runs `1 → 2 → 0` once, and `updateFadeTransition` was verified faithful instruction by instruction against `0x4e09c0`. The cause is that `renderIrisFade` re-centres on the focus actor every frame (`CALL` at `0x4e0add`) while `calculateIrisFadeCenter` only writes the centre *while that actor is on screen* — so a hero who walks into the shot after the load moves the centre mid-growth. Measured: the centre held at `(320,240)` until 46 % of the fade, then jumped ~250 px to `(400,477)` while the disc radius was only ~296, which is why it reads as starting over. Fixed by pinning the **opening** iris (type 2) only; the closing iris still tracks the hero. After the fix, one centre change at 0 %. Deviation from an original-game defect, gated by `NOCTURNE_AUTHENTIC_IRIS_FADE`
+- **`16-svetlana_blade_envmap/` mechanism identified — the blade overlay draws 18 % of its triangles from two different sphere maps at once.** `renderEnvMapTriangles` picks each vertex's UV source independently (`(skip_normal_normalization == 0) || 1.0 <= ABS(n.x|y|z)` → bone normal, else eye direction). Measured over the full face list and bit-stable frame to frame: 56 all-B, 8 all-A, **14 of 78 mixed**. The branch is faithful to the asm — plain 0-based `base + index*12` with no §15 offset, and four exits matching the `||` chain. Branch-B vertices read *exactly* `0.0` because `lightVerticies` accumulates face normals unconditionally, so a slot reading exactly `0.0` is either unreferenced or cancelled — and the covering call (`vertex_count=538`, `tri_count=1208`) references **0** of vertices 496/510/511/529, against a live contrast of `v509 = (24262.8, -53461.9, -15574.7)`. They are **never lit**, not cancelled. The env pass renders them anyway (`496 x4, 510 x4, 511 x4, 529 x2` in the 78-face draw), leaving **18 of 234** vertex references with no normal there and **28 of 228** in the 76-face draw. The list being rendered is not the list that was lit — the body goes through `CDeformableModel::lightVertices(lod_index=2)` while the env pass draws `part_indices[0..1]`. An earlier reading of this as normal *cancellation* on a welded double-sided blade was **disproved**: the faces that would have cancelled are not in the lighting list at all
+- **Four leads cleared with measurements, so they are not re-chased:** vertex indices out of range (`idx=[495..529]` vs the covering pass's `vertex_count=538` — 0 of 234 above); the shared scratch array being clobbered (the nonzero count leaving `lightVerticies` is the count the env draw reads, every frame — **splitting `g_VertexNormalArray` would change nothing**); a float/int pun in `lightVerticies` (the slots hold genuine floats); and the earlier "software is clean, the remainder is accelerated-only" claim, which is false — software shows the artefact too, and both renderers take the same emit path with the same alpha, blend mode and texture
+- **Established that the env map is legitimately near-black.** `g_EnvMapTexture` is a static initialiser `"BACKGND.RAW"` never written anywhere in the codebase, so the env map is hardcoded to the room's own backdrop; decoded from the live cache it is 38.1 % pure black, 92.2 % luma<32, mean luma 11.4. Dark blades are the correct result of reflecting it, and the pure-black texels hit the colorkey and show the model texture underneath — neither is a defect
+- **Corrected the render-flag reading.** The env draw reaches the DLL as `0x2e7` (`FORCE_SOLID_LOOP | BLEND_READ_DEST`), not `0x2cd`; `renderDestReadBlendPoly` sets it explicitly and the `0x2cd` overwrite lives in the *other* emit path, selected by `alpha < 0xfde9`. The earlier "render flags are not it" conclusion stands, but its reasoning did not
+- **Fixed an unrelated GL shim bug:** `initDefaultRenderStates` sets `D3DRENDERSTATE_TEXTUREADDRESS = CLAMP` once at device init with no texture bound, the shim dropped it there, `setRenderStateCached` never re-sent it, and `surface_sync_texture` hardcoded `GL_REPEAT` on every texture — so everything wrapped when the DLL asked for clamping. Now recorded device-wide and applied on each bind. Not the cause here (no emitted UV leaves 0..1), but wrong on its own terms
+- Recorded the analysis traps that cost time: reading `out->*` at `buildTLVertex`'s first line returns the previous frame's leftovers in that vertex-buffer slot; a breakpoint inside the per-face loop sees `face_data` already advanced, so counts over `face_data[i]` are a sliding window that mimics temporal flicker; any float in ~1e-3..1e5 has an exponent that, read as an int over 65536, lands in 14000..18300, making "these decode to plausible 16.16 values" circular; and forcing `g_UseExternalRenderer = 0` for a single function is **not** software mode
 
 ### 2026-09-03
 - **`14-mirror_actor_reflections/` FIXED — actors were culled out of mirrors by the visibility gate.** Two stacked causes. `CDemonCamera::testVisibility` installs `g_BackgroundSavedCameraState` before rasterising an actor's bounding box, which during a mirror pass throws away the mirror camera and tests the reflection against the main scene camera. That swap cannot simply be skipped: its real job is to overwrite `g_TransformMatrix` with a *clean* camera matrix, discarding the actor transform `CDemonActor::setupRenderState` pushes just before the gate — so skipping it leaves the box being measured through a matrix that rotates with the character. Fixed by capturing the clean mirror camera in `setupMirrorRendering` (`g_MirrorCullCameraState`, `shims/mirror_cull.{h,cpp}`) and installing that while `active_mirror != 0`, behind `NOCTURNE_AUTHENTIC_MIRROR_CULL` (default 0). Verified causally: the box corner moved from `z = -11.68` (behind the mirror camera) to `+46.20` (in front); box tests went 209 pass / 554 fail → 743 pass / 4 fail over a full 360° turn. **Not proven to match retail** — retail has no swap at all and how it tolerates the pushed transform is still open

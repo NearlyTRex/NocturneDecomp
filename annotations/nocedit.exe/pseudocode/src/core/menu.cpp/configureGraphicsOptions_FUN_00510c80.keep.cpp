@@ -10,6 +10,9 @@
 void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_00510c80(void)
 
 {
+#if !NOCTURNE_AUTHENTIC_RENDERER_DLL
+  char local_api_label[64];
+#endif
   uint uVar3;
   CGame *pCVar4;
   int iVar4;
@@ -211,7 +214,24 @@ LAB_00510f71:
               pcVar14 = "3D API : Voodoo Blit Emulation";
             }
             else {
+#if !NOCTURNE_AUTHENTIC_RENDERER_DLL
+              iVar7 = _stricmp(g_RendererDllPath,"trigl.dll");
+              if (iVar7 == 0) {
+                if (nocturne_gl_version_short()[0] == '\0') {
+                  pcVar14 = "3D API : OpenGL";
+                }
+                else {
+                  _sprintf(local_api_label,"3D API : OpenGL %s",
+                           nocturne_gl_version_short());
+                  pcVar14 = local_api_label;
+                }
+              }
+              else {
+                pcVar14 = "3D API : Custom";
+              }
+#else
               pcVar14 = "3D API : Custom";
+#endif
             }
           }
         }

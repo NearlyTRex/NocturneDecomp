@@ -25,6 +25,9 @@
 #include "nocturne.h"
 #include "builtin_dll.h"
 #include "render_probe.h"
+#include "gl_shader.h"
+
+#include <string.h>
 
 // The engine's currently-selected texture. Used purely as a bucket key so the
 // probe can separate character geometry from set geometry — both ride
@@ -67,6 +70,22 @@ static int __cdecl probe_drawPolyList2(SRenderVertex *vertex_buffer,
                                NOCTURNE_PROBE_DRAWPOLYLIST2);
     return dll_dx7_cpp_APIDLLdrawPolyList2_FUN_10005130(vertex_buffer, polygons,
                                                         polygon_count, render_flags);
+}
+
+// trigl.dll — the same renderer with the shader path on.
+//
+// Not a second renderer implementation: every entry point below is tridx7's,
+// and only APIDLLinit differs, enabling the shader path before delegating. It
+// exists as its own module purely so it appears in the in-game Graphics Options
+// 3D-API selector (shims/builtin_dll.h drives that list from the registry, and
+// names nothing), which makes shader-vs-fixed-function a runtime choice with no
+// rebuild, no ini edit and no restart. See research/17-shader_renderer_migration.
+//
+// If the driver has no shader entry points or the program fails to build, the
+// shader layer reports inactive and this renderer behaves exactly as tridx7.
+static int __cdecl trigl_init(HWND windowHandle, CExternalRendererBridge *interface) {
+    nocturne_gl_shader_set_enabled(1);
+    return dll_dx7_cpp_APIDLLinit_FUN_10001a80(windowHandle, interface);
 }
 
 static const NocturneBuiltinExport g_Tridx7Exports[] = {
@@ -114,4 +133,27 @@ extern "C" const NocturneBuiltinExport *nocturne_tridx7_exports(int *count) {
         *count = (int)(sizeof(g_Tridx7Exports) / sizeof(g_Tridx7Exports[0]));
     }
     return g_Tridx7Exports;
+}
+
+// trigl.dll's table: tridx7's rows verbatim, with APIDLLinit swapped for the
+// wrapper above. Built at startup rather than duplicated as a literal so the
+// two can never drift when a row is added to g_Tridx7Exports.
+static NocturneBuiltinExport g_TriglExports[sizeof(g_Tridx7Exports) /
+                                            sizeof(g_Tridx7Exports[0])];
+
+extern "C" const NocturneBuiltinExport *nocturne_trigl_exports(int *count) {
+    static bool built = false;
+    const int   n     = (int)(sizeof(g_Tridx7Exports) / sizeof(g_Tridx7Exports[0]));
+
+    if (!built) {
+        for (int i = 0; i < n; ++i) {
+            g_TriglExports[i] = g_Tridx7Exports[i];
+            if (strcmp(g_TriglExports[i].name, "APIDLLinit") == 0) {
+                g_TriglExports[i].proc = (void *)trigl_init;
+            }
+        }
+        built = true;
+    }
+    if (count != nullptr) *count = n;
+    return g_TriglExports;
 }

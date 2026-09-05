@@ -148,6 +148,60 @@
 #define NOCTURNE_AUTHENTIC_MIRROR_CULL 0
 #endif
 
+// NOCTURNE_AUTHENTIC_IRIS_FADE
+//   Whether an opening iris transition can teleport part-way through. The circle
+//   that widens as a room loads is centred on the script's focus actor:
+//   CGame::beginFadeIn seeds the centre to the middle of the window and calls
+//   calculateIrisFadeCenter, and CGame::renderIrisFade calls it again on every
+//   frame the iris is open (0x4e0add). That helper only writes the centre when
+//   CDemonCamera::worldToScreenWithFrustumCull reports the actor on screen, so
+//   while he is still outside the view the centre keeps the window-middle
+//   fallback — and snaps onto him the moment he walks in.
+//   1: matches nocedit.exe as-shipped. In any mission where the hero enters the
+//      shot after the load, the opening circle jumps to him mid-growth and reads
+//      as the transition starting over. Measured on the reproducing mission: the
+//      centre moved from (320,240) to (451,326) during a single fade.
+//   0: dev-friendly default. The opening iris (type 2) keeps the centre chosen
+//      when the fade began; the closing iris (type 3) still re-centres every
+//      frame, which is what makes it converge on the hero, and by then he is on
+//      screen so there is nothing to snap to.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_IRIS_FADE=1.
+#ifndef NOCTURNE_AUTHENTIC_IRIS_FADE
+#define NOCTURNE_AUTHENTIC_IRIS_FADE 0
+#endif
+
+// NOCTURNE_AUTHENTIC_ENVMAP_UV
+//   Whether a sphere-mapped triangle may take its UVs from two unrelated
+//   sources at once. CDemonSet::renderEnvMapTriangles derives each vertex's
+//   sphere-map coordinate from the transformed normal, but falls back to the
+//   normalised direction from g_LightingReferencePosition to the vertex when
+//   skip_normal_normalization is set and every component of that normal is under
+//   1.0 — a test for "this vertex has no usable normal". CSvetlana::renderOpaque
+//   sets that flag for her whole render, and her blades are drawn again by a
+//   second pass over part_indices[0..1].
+//   Either way the direction is a unit vector scaled to +/-0xFFFF
+//   (normalizeVector3DFloat multiplies by 65535; a live normal measures
+//   ~64000-69000), and the code offsets it by 0x8000 without halving it. A
+//   sphere map spans 0..0xFFFF, so a unit direction has to map on as
+//   dir/2 + 0x8000.
+//   1: matches nocedit.exe as-shipped. The coordinates span about twice the
+//      texture. Measured on Svetlana's blade pass: u over [-34038..95760],
+//      v over [-24285..103392], 97 % of emitted vertices outside 0..0xFFFF.
+//      Everything outside wraps into unintended parts of the captured frame —
+//      and since captureTexture grabs the framebuffer rather than an authored
+//      texture, its unwritten regions are black, which is what appears on the
+//      blades.
+//   0: dev-friendly default. The direction is halved before the offset, so a
+//      unit vector covers the sphere map exactly once. This also makes the seam
+//      fixup coherent: its 0x8000 comparisons are midpoint tests, which only
+//      hold on the halved range.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_ENVMAP_UV=1.
+#ifndef NOCTURNE_AUTHENTIC_ENVMAP_UV
+#define NOCTURNE_AUTHENTIC_ENVMAP_UV 0
+#endif
+
 // NOCTURNE_AUTHENTIC_MIRROR_PROJECTION
 //   Whether accelerated static geometry is drawn through the same projection as
 //   the pre-rendered backdrop it is composited over. CDemonSet::setCameraView
@@ -769,4 +823,43 @@
 //   Override with -DNOCTURNE_AUTHENTIC_UI_CURSOR_WARP=1.
 #ifndef NOCTURNE_AUTHENTIC_UI_CURSOR_WARP
 #define NOCTURNE_AUTHENTIC_UI_CURSOR_WARP 0
+#endif
+
+// NOCTURNE_AUTHENTIC_SHADER_LIGHTING
+//   Whether hardware-drawn geometry receives the per-pixel light/fog grid that
+//   CDemonCamera::compositeLightmapToFramebuffer applies to the CPU image.
+//   1: DEFAULT, and the measured-correct answer — it does not. The grid is the
+//      SOFTWARE rasterizer's lighting mechanism; geometry drawn through the
+//      renderer DLL carries its own per-vertex lighting and already arrives at
+//      final brightness. Applying the grid on top darkens it a second time.
+//   0: the grid is published through shims/lighting_bridge.h and the shader
+//      renderer applies it per fragment. Kept for A/B work only — see below.
+//
+//   MEASURED, one static scene, three captures synced to SDL_GL_SwapWindow, the
+//   two accelerated ones from the SAME frame via nocturne_gl_lightmap_debug:
+//
+//                        mean    p50   p70   p90   p95   p99   max
+//     software          14.22   14.0  20.0  24.0  24.0  28.0   181
+//     accel, grid OFF   14.33   14.0  20.0  24.0  24.0  29.0   182   ratio 1.0076
+//     accel, grid ON    12.85   11.0  20.0  23.0  24.0  24.0   144   ratio 0.9035
+//
+//   Accel without the grid matches software at every percentile. This is not a
+//   scene where the grid is a no-op either: its corona grid averages 16 against
+//   64-is-unity, so the composite darkens the software image to 0.41x and the
+//   two still agree. That independently confirms research/13's earlier character
+//   -crop measurement (software 16.083 vs accel 16.471, ratio 1.024).
+//
+//   So the chapel window that motivated this (research/12, accelerated mean
+//   20.53 / max 56 against 19.50 / 28 for software and retail) is a DOUBLE-DRAW
+//   bug, not a missing lightmap: CGlass renders once CPU-side into the
+//   composite's source and again as hardware geometry. It needs the redundant
+//   draw suppressed, which is a fix on the game side, not in the renderer.
+//
+//   The 0 path is retained because it is the only way to A/B the grid against a
+//   live frame, and because a future per-fragment lighting model may want the
+//   data — nothing else in the build reads lighting_bridge.h.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_SHADER_LIGHTING=0 to apply it anyway.
+#ifndef NOCTURNE_AUTHENTIC_SHADER_LIGHTING
+#define NOCTURNE_AUTHENTIC_SHADER_LIGHTING 1
 #endif

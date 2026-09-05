@@ -7,6 +7,7 @@
 
 #include "builtin_dll.h"
 #include "shim_config.h"
+#include "debug_log.h"
 
 #include <stddef.h>
 #include <string.h>
@@ -21,6 +22,12 @@
 
 extern "C" const NocturneBuiltinExport *nocturne_tridx7_exports(int *count);
 
+// trigl.dll — tridx7's entry points with the shader path enabled at init. Not a
+// separate renderer implementation; registering it as its own module is what
+// puts it in the Graphics Options 3D-API cycle, making shader-vs-fixed-function
+// a runtime choice. See research/17-shader_renderer_migration.
+extern "C" const NocturneBuiltinExport *nocturne_trigl_exports(int *count);
+
 // -----------------------------------------------------------------------------
 // Registry
 // -----------------------------------------------------------------------------
@@ -28,6 +35,7 @@ extern "C" const NocturneBuiltinExport *nocturne_tridx7_exports(int *count);
 
 static const NocturneBuiltinModule g_BuiltinModules[] = {
     { "tridx7.dll", nocturne_tridx7_exports },
+    { "trigl.dll",  nocturne_trigl_exports  },
     // { "tridx6.dll", nocturne_tridx6_exports },
     // { "trid3d.dll", nocturne_trid3d_exports },
     // { "tri3dfx.dll", nocturne_tri3dfx_exports },
@@ -79,10 +87,19 @@ extern "C" const char *nocturne_builtin_dll_next(const char *current) {
     }
     module = find_module(current);
     if (module == NULL) {
+        // Logged because the Graphics Options line shows a label, not the DLL
+        // name, so there is otherwise no way to tell which renderer the
+        // selector has landed on.
+        DDRAW_LOG("builtin_dll: 3D API cycle \"%s\" (unknown) -> \"%s\"",
+                  (current != NULL) ? current : "", g_BuiltinModules[0].dll_name);
         return g_BuiltinModules[0].dll_name;
     }
-    return g_BuiltinModules[(int)(module - g_BuiltinModules + 1) %
-                            g_BuiltinModuleCount].dll_name;
+    {
+        const char *next = g_BuiltinModules[(int)(module - g_BuiltinModules + 1) %
+                                            g_BuiltinModuleCount].dll_name;
+        DDRAW_LOG("builtin_dll: 3D API cycle \"%s\" -> \"%s\"", module->dll_name, next);
+        return next;
+    }
 #else
     (void)current;
     return NULL;
@@ -92,7 +109,17 @@ extern "C" const char *nocturne_builtin_dll_next(const char *current) {
 extern "C" void *nocturne_builtin_dll_open(const char *dll_name) {
 #if !NOCTURNE_AUTHENTIC_RENDERER_DLL
     // The module row's own address is the handle — stable, unique, non-null.
-    return (void *)find_module(dll_name);
+    {
+        const NocturneBuiltinModule *module = find_module(dll_name);
+        // This is the authoritative "which renderer is live" line: it fires on
+        // the LoadLibraryA the engine performs during loadExternalRenderer, so
+        // it reflects what was actually loaded rather than what the menu label
+        // suggests.
+        DDRAW_LOG("builtin_dll: LoadLibraryA(\"%s\") -> %s",
+                  (dll_name != NULL) ? dll_name : "(null)",
+                  (module != NULL) ? "built-in module" : "NOT REGISTERED");
+        return (void *)module;
+    }
 #else
     (void)dll_name;
     return NULL;

@@ -47,6 +47,18 @@
 // decompiled TUs reach them through nocturne.h like the other shim toggles.
 #include "builtin_dll.h"
 
+// GL version query (nocturne_gl_version_short) — declared here so the Graphics
+// Options 3D API line can name the shader renderer by the version actually
+// running. Separate from gl_present.h, which names SDL types.
+#include "gl_version.h"
+
+// The per-pixel light/fog grid, published for the shader renderer
+// (nocturne_lighting_bridge*) — declared here so
+// CDemonCamera::compositeLightmapToFramebuffer reaches it through nocturne.h.
+// Its one call site is gated on NOCTURNE_AUTHENTIC_SHADER_LIGHTING; the shim
+// itself is not, because the consumer compiles against tridx7's stub config.
+#include "lighting_bridge.h"
+
 // Window mode (nocturne_window_mode_*) — declared here so decompiled TUs
 // reach it through nocturne.h.
 #include "window_mode.h"

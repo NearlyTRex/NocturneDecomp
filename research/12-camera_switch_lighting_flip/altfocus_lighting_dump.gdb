@@ -1,11 +1,11 @@
 # Bistable lighting on alt-tab — automatic lighting-state dump per focus regain.
 #
-# Repro: castle mission at the start, the window high in the chapel tower. It
-# dims while the window is unfocused, which is expected; the defect is that it
-# SOMETIMES comes back dim after focus is regained.
+# Repro: castle mission at the start, the window high in the chapel tower. The
+# lighting changes while the window is unfocused — that is itself part of the
+# defect, not expected dimming — and sometimes stays changed after focus returns.
 #
-# The observer problem this exists to solve: to report which state you are in you
-# have to alt-tab away, which itself changes the state. So the dump cannot be
+# The observer problem this exists to solve: reporting which state is on screen
+# requires alt-tabbing away, which itself changes the state. So the dump cannot be
 # on-demand. This fires it automatically, five frames after each camera re-apply,
 # by which point the regain has settled — and every dump is numbered, so the
 # states can be diffed afterwards against a count of which regains looked wrong.

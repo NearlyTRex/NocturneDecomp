@@ -23,7 +23,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00
   uint uVar9;
   uint uVar6;
   int iVar10;
-  
+
   g_ImageProcessingState2 = g_ImageProcessingState2 + g_GlobalDeltaTimeInt * 4;
   iVar10 = 0;
   if (0x10000 < g_ImageProcessingState2) {
@@ -49,6 +49,12 @@ void __cdecl core_dcamera_cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00
          (g_LightmapTexturePalette[g_FogColorIndexG] & 0xff) << 8 |
          g_LightmapTexturePalette[g_FogColorIndexB] & 0xff;
   }
+#if !NOCTURNE_AUTHENTIC_SHADER_LIGHTING
+  nocturne_lighting_bridge_update(this_ptr->framebuffer_width,
+                                  this_ptr->framebuffer_height,
+                                  this_ptr->scale_factor);
+#endif
+
   if (g_BitsPerPixel == 0x10) {
     uVar9 = 1;
     while ((int)uVar9 < this_ptr->framebuffer_height + -1) {

@@ -28,6 +28,7 @@
 #include "system/d3d.h"
 
 #include "gl_api.h"
+#include "gl_shader.h"
 #include "gl_present.h"
 #include "debug_log.h"
 #include "render_probe.h"
@@ -175,6 +176,10 @@ struct GLVertex {
     unsigned char diffuse[4];   // RGBA byte order
     unsigned char specular[4];
     float         u, v;
+    // D3D7's per-vertex fog factor, unpacked from specular[3] to 0..1 with 1 =
+    // unfogged. Its own float because glFogCoordPointer takes only GL_FLOAT or
+    // GL_DOUBLE, so the byte cannot be handed over in place.
+    float         fog;
 };
 
 GLVertex *g_vertex_scratch      = nullptr;
@@ -219,19 +224,27 @@ void convert_vertices(const D3DTLVertex *src, GLVertex *dst, size_t count) {
         nocturne_render_probe_color(src[i].diffuse, src[i].specular);
         dst[i].u = src[i].u;
         dst[i].v = src[i].v;
+        // buildTLVertex writes 0xff - (alpha >> 8) here and leaves specular RGB
+        // at zero, so this byte — not the colour — is the whole payload. D3D
+        // reads it as the fog factor: 255 keeps the vertex colour, 0 replaces it
+        // with FOGCOLOR outright.
+        dst[i].fog = (float)dst[i].specular[3] * (1.0f / 255.0f);
     }
 }
 
 // Pixel-space -> clip-space projection, column major.
 //   x_ndc = 2x/width  - 1        y_ndc = 1 - 2y/height   (D3D y grows downward)
 //   z_ndc = 2z - 1               (D3D depth is 0..1, GL clip is -1..1)
-void load_screen_projection(float width, float height) {
+void load_screen_projection(float width, float height, float out[16]) {
     const float m[16] = {
         2.0f / width,  0.0f,           0.0f,  0.0f,
         0.0f,         -2.0f / height,  0.0f,  0.0f,
         0.0f,          0.0f,           2.0f,  0.0f,
        -1.0f,          1.0f,          -1.0f,  1.0f,
     };
+    for (int i = 0; i < 16; i++) out[i] = m[i];
+    // Still loaded onto the fixed-function stack: the client-array path's
+    // ftransform() reads it, and so does anything drawn without the shader.
     gl.MatrixMode(GL_PROJECTION);
     gl.LoadMatrixf(m);
     gl.MatrixMode(GL_MODELVIEW);
@@ -381,6 +394,13 @@ static IDirect3DTexture2_vtable g_texture_vtable = {
 
 namespace {
 
+// D3DRENDERSTATE_TEXTUREADDRESS is device-wide in D3D, but in GL the wrap mode
+// is a property of each texture object. initDefaultRenderStates sends it exactly
+// once, before any texture exists, and setRenderStateCached then caches the pair
+// so it is never sent again -- so it has to be remembered here and re-applied to
+// whichever texture is bound.
+GLenum g_texture_wrap = GL_REPEAT;
+
 // Push a texture surface's CPU pixels to its GL texture. Called lazily at bind
 // time so a sequence of Blt/Lock writes costs exactly one upload.
 void surface_sync_texture(GLSurface *surf) {
@@ -390,8 +410,6 @@ void surface_sync_texture(GLSurface *surf) {
         gl.GenTextures(1, &surf->gl_texture);
         if (surf->gl_texture == 0) return;
         gl.BindTexture(GL_TEXTURE_2D, surf->gl_texture);
-        gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-        gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
         gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
         gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
         // Only level 0 is ever uploaded, but the DLL's D3DTSS_MIPFILTER handling
@@ -407,6 +425,12 @@ void surface_sync_texture(GLSurface *surf) {
     } else {
         gl.BindTexture(GL_TEXTURE_2D, surf->gl_texture);
     }
+
+    // Device-wide in D3D, per-object in GL, so it goes on with every bind --
+    // and above the not-dirty early-out, since a texture whose pixels are
+    // unchanged still has to pick up the current mode.
+    gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, g_texture_wrap);
+    gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, g_texture_wrap);
 
     if (!surf->cpu_dirty) return;
 
@@ -1035,6 +1059,10 @@ struct RenderStateCache {
     float  alpha_ref    = 0.0f;
     int    blend_enabled = 0;
     int    alpha_test    = 0;
+    // Mirrors D3DTSS_COLOROP: 1 = MODULATE, 0 = DISABLE. Fixed function carries
+    // this as glEnable(GL_TEXTURE_2D); the shader path needs it as a uniform,
+    // so it is tracked here rather than queried back out of GL.
+    int    texture_enabled = 1;
 };
 
 RenderStateCache g_state;
@@ -1050,9 +1078,22 @@ RenderStateCache g_state;
 int g_fog_enable = 0;   // FOGENABLE
 int g_fog_table  = 0;   // FOGTABLEMODE (0 = NONE)
 
+// FOGCOLOR, kept alongside the glFogfv call because the shader path needs it as
+// a uniform and cannot ask GL for it without a pipeline stall.
+float g_fog_color[3] = { 0.0f, 0.0f, 0.0f };
+
 void apply_fog_state() {
     if (g_fog_enable != 0 && g_fog_table != 0) gl.Enable(GL_FOG);
     else                                       gl.Disable(GL_FOG);
+}
+
+// The mode GL cannot express: fog on, but table fog disabled, meaning the fog
+// factor rides in each vertex's specular alpha. apply_fog_state() correctly
+// turns GL fog OFF for it — GL would otherwise apply distance fog nobody asked
+// for — which leaves the term unapplied entirely on the fixed-function path.
+// The shader path can honour it, so it asks here.
+bool vertex_fog_active() {
+    return g_fog_enable != 0 && g_fog_table == 0;
 }
 
 
@@ -1066,7 +1107,11 @@ static HRESULT device_SetRenderState(IDirect3DDevice3 *this_ptr,
     // TEXTUREMAG / TEXTUREMIN render states below map to glTexParameteri, which
     // applies to the currently bound texture. With no texture of ours bound that
     // would be the exe's present texture.
-    if (((DWORD)state == 3 || (DWORD)state == 17 || (DWORD)state == 18) &&
+    // TEXTUREADDRESS (3) is deliberately NOT in this list: it is sent once at
+    // init with nothing bound, so dropping it there would lose it for good.
+    // TEXTUREMAG/TEXTUREMIN stay, because applyRenderState re-sends the filter
+    // states on every texture change and so cannot lose them.
+    if (((DWORD)state == 17 || (DWORD)state == 18) &&
         dev->bound_texture == nullptr) {
         return DD_OK;
     }
@@ -1135,6 +1180,9 @@ static HRESULT device_SetRenderState(IDirect3DDevice3 *this_ptr,
                 ( value        & 0xff) / 255.0f,
                 1.0f,
             };
+            g_fog_color[0] = rgba[0];
+            g_fog_color[1] = rgba[1];
+            g_fog_color[2] = rgba[2];
             gl.Fogfv(GL_FOG_COLOR, rgba);
             break;
         }
@@ -1155,10 +1203,14 @@ static HRESULT device_SetRenderState(IDirect3DDevice3 *this_ptr,
             gl.TexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
             break;
         case 3:   // TEXTUREADDRESS — 1 WRAP, 2 MIRROR, 3 CLAMP
-            gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S,
-                             (value == 3) ? GL_CLAMP_TO_EDGE : GL_REPEAT);
-            gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T,
-                             (value == 3) ? GL_CLAMP_TO_EDGE : GL_REPEAT);
+            // Record the device-wide mode; surface_sync_texture puts it on each
+            // texture as it is bound. Applying it only to the current binding
+            // would drop it, since this arrives before any texture exists.
+            g_texture_wrap = (value == 3) ? GL_CLAMP_TO_EDGE : GL_REPEAT;
+            if (dev->bound_texture != nullptr) {
+                gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, g_texture_wrap);
+                gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, g_texture_wrap);
+            }
             break;
         case 17:  // TEXTUREMAG — 1 POINT, 2 LINEAR
             gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER,
@@ -1208,6 +1260,7 @@ static HRESULT device_SetTextureStageState(IDirect3DDevice3 *this_ptr, DWORD sta
 
     switch ((DWORD)state) {
         case 1:   // D3DTSS_COLOROP — 1 DISABLE, 4 MODULATE
+            g_state.texture_enabled = (value == 1) ? 0 : 1;
             if (value == 1) {
                 gl.Disable(GL_TEXTURE_2D);
             } else {
@@ -1285,38 +1338,114 @@ static HRESULT device_DrawIndexedPrimitive(IDirect3DDevice3 *this_ptr,
     // The projection is derived from the render target rather than cached, so a
     // resolution change cannot leave a stale matrix behind.
     const GLSurface *target = dev->render_target;
+    float projection[16];
     load_screen_projection((float)(target ? target->width  : 640),
-                           (float)(target ? target->height : 480));
+                           (float)(target ? target->height : 480),
+                           projection);
 
     const GLVertex *base = g_vertex_scratch;
-    gl.EnableClientState(GL_VERTEX_ARRAY);
-    gl.EnableClientState(GL_COLOR_ARRAY);
-    gl.EnableClientState(GL_TEXTURE_COORD_ARRAY);
-    gl.VertexPointer(4, GL_FLOAT, sizeof(GLVertex), &base->x);
-    gl.ColorPointer(4, GL_UNSIGNED_BYTE, sizeof(GLVertex), base->diffuse);
-    apply_fog_state();
-    gl.TexCoordPointer(2, GL_FLOAT, sizeof(GLVertex), &base->u);
 
-    // D3D's specular is an additive second color. Without the GL 1.4 entry point
-    // there is nowhere to put it, so it is dropped (gl_api logs that once).
-    if (nocturne_glSecondaryColorPointer != nullptr) {
-        gl.EnableClientState(GL_SECONDARY_COLOR_ARRAY);
-        nocturne_glSecondaryColorPointer(3, GL_UNSIGNED_BYTE, sizeof(GLVertex), base->specular);
-        gl.Enable(GL_COLOR_SUM);
+    // Shader path (research/17). Inactive unless the trigl.dll renderer was
+    // selected AND the program built, in which case the shader calls are no-ops
+    // and the fixed-function state stands on its own. The shader takes over
+    // texturing, the secondary-colour add and the alpha test, so the GL alpha
+    // test is suspended while it is bound to avoid testing twice.
+    const bool shaded = vertex_count > 0 && nocturne_gl_shader_ensure() != 0;
+
+    const bool vfog = vertex_fog_active() && nocturne_glFogCoordPointer != nullptr;
+
+    // Buffer object + named attributes when the driver allows it. This REPLACES
+    // the client arrays rather than adding to them: feeding a shader through
+    // gl_Vertex / gl_Color is still fixed-function vertex submission wearing a
+    // shader, and leaving both set up would only obscure which one fed the draw.
+    static const NocturneGLVertexLayout layout = {
+        (int)sizeof(GLVertex),
+        (int)offsetof(GLVertex, x),
+        (int)offsetof(GLVertex, diffuse),
+        (int)offsetof(GLVertex, specular),
+        (int)offsetof(GLVertex, u),
+        (int)offsetof(GLVertex, fog),
+    };
+    const bool modern =
+        shaded && nocturne_gl_shader_bind_vertices(base, (int)vertex_count, &layout) != 0;
+
+    if (modern) {
+        // NB: the projection uniform is pushed after begin_draw below, not here.
+        // glUniform* writes to the program that is CURRENTLY BOUND, and nothing
+        // has bound one yet at this point.
+        apply_fog_state();
+    } else {
+        gl.EnableClientState(GL_VERTEX_ARRAY);
+        gl.EnableClientState(GL_COLOR_ARRAY);
+        gl.EnableClientState(GL_TEXTURE_COORD_ARRAY);
+        gl.VertexPointer(4, GL_FLOAT, sizeof(GLVertex), &base->x);
+        gl.ColorPointer(4, GL_UNSIGNED_BYTE, sizeof(GLVertex), base->diffuse);
+        apply_fog_state();
+        gl.TexCoordPointer(2, GL_FLOAT, sizeof(GLVertex), &base->u);
+
+        // D3D's specular is an additive second color. Without the GL 1.4 entry
+        // point there is nowhere to put it, so it is dropped (gl_api logs once).
+        if (nocturne_glSecondaryColorPointer != nullptr) {
+            gl.EnableClientState(GL_SECONDARY_COLOR_ARRAY);
+            nocturne_glSecondaryColorPointer(3, GL_UNSIGNED_BYTE, sizeof(GLVertex),
+                                             base->specular);
+            gl.Enable(GL_COLOR_SUM);
+        }
+
+        // The 4th specular component, which the array above has no room for.
+        // Safe for fixed function: GL only consults the fog coordinate when
+        // GL_FOG is on AND the coord source is GL_FOG_COORD, and this mode has
+        // apply_fog_state() turning GL_FOG off.
+        if (vfog) {
+            gl.EnableClientState(GL_FOG_COORD_ARRAY);
+            nocturne_glFogCoordPointer(GL_FLOAT, sizeof(GLVertex), &base->fog);
+        }
+    }
+
+    if (shaded) {
+        // in_scene asks for the per-pixel lightmap: it is set only between
+        // BeginScene and EndScene, so 3D geometry is lightmapped the way the CPU
+        // path lightmaps the image it draws into, and anything the engine draws
+        // outside a scene is left alone.
+        nocturne_gl_shader_begin_draw(g_state.texture_enabled && dev->bound_texture != nullptr,
+                                      g_state.alpha_test,
+                                      g_state.alpha_ref,
+                                      g_state.alpha_func == GL_GREATER,
+                                      dev->in_scene);
+        nocturne_gl_shader_set_vertex_fog(vfog ? 1 : 0, g_fog_color);
+        // Now that the program is bound, and only now, the uniforms will land.
+        if (modern) nocturne_gl_shader_set_projection(projection);
+        if (g_state.alpha_test) gl.Disable(GL_ALPHA_TEST);
     }
 
     gl.DrawElements(GL_TRIANGLES, (GLsizei)index_count, GL_UNSIGNED_SHORT, indices);
+
+    if (shaded) {
+        nocturne_gl_shader_end_draw();
+        if (g_state.alpha_test) gl.Enable(GL_ALPHA_TEST);
+    }
+
     nocturne_render_probe_batch((int)(index_count / 3), g_state.blend_enabled,
                                 (unsigned)g_state.src_blend, (unsigned)g_state.dst_blend,
                                 g_state.alpha_test, dev->bound_texture != nullptr);
 
-    if (nocturne_glSecondaryColorPointer != nullptr) {
-        gl.Disable(GL_COLOR_SUM);
-        gl.DisableClientState(GL_SECONDARY_COLOR_ARRAY);
+    // Tear down whichever path was set up. Doing both would disable client
+    // arrays the modern path never enabled — harmless in itself, but it would
+    // hide a mismatch between the two branches rather than surface it.
+    if (modern) {
+        nocturne_gl_shader_unbind_vertices();
+    } else {
+        if (vfog) {
+            gl.DisableClientState(GL_FOG_COORD_ARRAY);
+        }
+        if (nocturne_glSecondaryColorPointer != nullptr) {
+            gl.Disable(GL_COLOR_SUM);
+            gl.DisableClientState(GL_SECONDARY_COLOR_ARRAY);
+        }
+        gl.DisableClientState(GL_TEXTURE_COORD_ARRAY);
+        gl.DisableClientState(GL_COLOR_ARRAY);
+        gl.DisableClientState(GL_VERTEX_ARRAY);
     }
-    gl.DisableClientState(GL_TEXTURE_COORD_ARRAY);
-    gl.DisableClientState(GL_COLOR_ARRAY);
-    gl.DisableClientState(GL_VERTEX_ARRAY);
     return DD_OK;
 }
 
