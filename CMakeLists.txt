@@ -543,6 +543,7 @@ if(_test_sources)
     set(_test_subjects
         "${NOCTURNE_SHIMS_DIR}/renderer/trigl_state.cpp"
         "${NOCTURNE_SHIMS_DIR}/renderer/trigl_vertex.cpp"
+        "${NOCTURNE_SHIMS_DIR}/renderer/trigl_texture.cpp"
     )
     foreach(_test_src IN LISTS _test_sources)
         get_filename_component(_test_name "${_test_src}" NAME_WE)
