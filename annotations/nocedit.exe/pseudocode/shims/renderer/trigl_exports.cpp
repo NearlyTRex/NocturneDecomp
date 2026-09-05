@@ -99,8 +99,19 @@ void gather_vertex_context(unsigned effective_flags, int rhw_scale,
     CExternalRendererBridge *b = bridge();
     ctx->render_flags   = effective_flags;
     ctx->rhw_scale      = (float)rhw_scale;
+    // Above 480 lines the engine composites through a 640x480 hold buffer and
+    // submits geometry in THAT space, not the target's. Left unscaled, the
+    // whole 3D scene lands in the top-left corner of a larger target while the
+    // stretched hold buffer fills the rest, and the two disagree about where
+    // everything is.
     ctx->screen_scale_x = 1.0f;
     ctx->screen_scale_y = 1.0f;
+    if (nocturne_trigl_device_hold_active()) {
+        const int width  = nocturne_trigl_device_width();
+        const int height = nocturne_trigl_device_height();
+        if (width  > 0) ctx->screen_scale_x = (float)width  / 640.0f;
+        if (height > 0) ctx->screen_scale_y = (float)height / 480.0f;
+    }
     ctx->current_alpha  = (b != nullptr) ? read_bridge(b->current_alpha, 255) : 255;
     ctx->palette_index  = (b != nullptr) ? (read_bridge(b->console_text_color, 0) & 0xff) : 0;
     ctx->palette        = g_r.color_palette;

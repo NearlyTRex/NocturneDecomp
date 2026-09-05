@@ -63,6 +63,11 @@ int nocturne_trigl_device_frame_locked(void);
 int nocturne_trigl_device_lock_hold_buffer(void);
 int nocturne_trigl_device_unlock_hold_buffer(void);
 
+// Whether the engine is compositing through the hold buffer. It does so above
+// 480 lines, and while it does it submits geometry in the hold buffer's 640x480
+// space rather than the target's, so vertex positions have to be scaled up.
+int nocturne_trigl_device_hold_active(void);
+
 // Clear colour, clear depth, and the box-limited depth clear the engine uses to
 // reset a region rather than the whole buffer.
 void nocturne_trigl_device_clear_color(void);

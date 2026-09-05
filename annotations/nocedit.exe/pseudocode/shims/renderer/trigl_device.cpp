@@ -57,6 +57,10 @@ struct Device {
     void         **engine_scanlines = nullptr;
     int            engine_scanline_count = 0;
 
+    // Set the first time the engine locks the hold buffer, which is how it says
+    // it is compositing at 640x480 and expects geometry in that space.
+    bool hold_active = false;
+
     bool in_scene     = false;
     bool frame_locked = false;
     bool open         = false;
@@ -200,6 +204,7 @@ int nocturne_trigl_device_set_mode(int width, int height, int bpp, void **scanli
     }
     g_dev.engine_scanlines      = scanlines;
     g_dev.engine_scanline_count = height;
+    g_dev.hold_active           = false;
     if (scanlines != nullptr) {
         memcpy(scanlines, g_dev.scanlines, (size_t)height * sizeof(void *));
     }
@@ -295,8 +300,11 @@ int nocturne_trigl_device_lock_hold_buffer(void) {
     int rows = kHoldHeight;
     if (rows > g_dev.engine_scanline_count) rows = g_dev.engine_scanline_count;
     memcpy(g_dev.engine_scanlines, g_dev.hold_lines, (size_t)rows * sizeof(void *));
+    g_dev.hold_active = true;
     return 1;
 }
+
+int nocturne_trigl_device_hold_active(void) { return g_dev.hold_active ? 1 : 0; }
 
 int nocturne_trigl_device_unlock_hold_buffer(void) {
     if (!g_dev.open || g_dev.hold == nullptr) return 0;
@@ -375,6 +383,7 @@ int  nocturne_trigl_device_unlock_frame(void) { return 0; }
 int  nocturne_trigl_device_frame_locked(void) { return 0; }
 int  nocturne_trigl_device_lock_hold_buffer(void) { return 0; }
 int  nocturne_trigl_device_unlock_hold_buffer(void) { return 0; }
+int  nocturne_trigl_device_hold_active(void) { return 0; }
 void nocturne_trigl_device_clear_color(void) {}
 void nocturne_trigl_device_clear_depth(void) {}
 void nocturne_trigl_device_clear_depth_box(int, int, int, int) {}
