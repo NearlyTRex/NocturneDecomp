@@ -6,7 +6,7 @@
 // Signature: void __cdecl core_game_cpp_CGame_displayBitmap_FUN_004e2890(CGame *this_ptr,char *filename,int width,int height)
 
 #include "nocturne.h"
-#include "debug_log.h"
+#include "core/debug_log.h"
 
 void __cdecl core_game_cpp_CGame_displayBitmap_FUN_004e2890(CGame *this_ptr,char *filename,int width,int height)
 

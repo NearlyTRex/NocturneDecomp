@@ -6,7 +6,7 @@
 // Signature: void __cdecl engine_dosio_cpp_addGetFileInfoHook_FUN_00481710(FileSearchHandlerFunc *handler)
 
 #include "nocturne.h"
-#include "debug_log.h"
+#include "core/debug_log.h"
 
 void __cdecl engine_dosio_cpp_addGetFileInfoHook_FUN_00481710(FileSearchHandlerFunc *handler)
 

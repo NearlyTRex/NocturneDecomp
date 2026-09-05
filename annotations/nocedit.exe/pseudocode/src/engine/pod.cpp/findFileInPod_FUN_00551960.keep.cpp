@@ -6,7 +6,7 @@
 // Signature: int __cdecl engine_pod_cpp_findFileInPod_FUN_00551960(SFoundFileInfo *info)
 
 #include "nocturne.h"
-#include "debug_log.h"
+#include "core/debug_log.h"
 
 int __cdecl engine_pod_cpp_findFileInPod_FUN_00551960(SFoundFileInfo *info)
 

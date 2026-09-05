@@ -6,7 +6,7 @@
 // Signature: int __cdecl engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650(CPodFile *this_ptr,char *pod_filename)
 
 #include "nocturne.h"
-#include "debug_log.h"
+#include "core/debug_log.h"
 
 int __cdecl engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650(CPodFile *this_ptr,char *pod_filename)
 

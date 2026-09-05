@@ -6,7 +6,7 @@
 // Signature: int __cdecl support_codec_cpp_CCodec_processToBuffer_FUN_0043ea80(CCodec *this_ptr,_istream *ifstream,int *byte_count,char *output_buffer,int *output_size,int enable_finalize)
 
 #include "nocturne.h"
-#include "stream_compat.h"
+#include "core/stream_compat.h"
 
 int __cdecl support_codec_cpp_CCodec_processToBuffer_FUN_0043ea80(CCodec *this_ptr,_istream *ifstream,int *byte_count,char *output_buffer,int *output_size,int enable_finalize)
 

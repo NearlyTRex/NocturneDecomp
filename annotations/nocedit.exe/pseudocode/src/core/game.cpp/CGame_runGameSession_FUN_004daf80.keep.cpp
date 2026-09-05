@@ -6,7 +6,7 @@
 // Signature: int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
 
 #include "nocturne.h"
-#include "debug_log.h"
+#include "core/debug_log.h"
 
 int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
 

@@ -32,9 +32,9 @@
 // away to no-ops — silently, with no warning and no log line to show for it.
 
 #include "gl_shader.h"
-#include "gl_api.h"
-#include "lighting_bridge.h"
-#include "debug_log.h"
+#include "gl/gl_api.h"
+#include "renderer/lighting_bridge.h"
+#include "core/debug_log.h"
 
 #include <stdio.h>
 #include <stdlib.h>

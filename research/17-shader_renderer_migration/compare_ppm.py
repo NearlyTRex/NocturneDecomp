@@ -61,7 +61,7 @@ def percentiles(values, points=(50, 70, 90, 95, 99)):
 
 
 def main(argv):
-    if len(argv) < 2:
+    if not argv:
         print(__doc__)
         return 1
 

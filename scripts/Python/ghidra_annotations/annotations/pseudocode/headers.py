@@ -2175,7 +2175,7 @@ def generate_watcom_runtime_inlines():
     These are appended to watcom.h after the struct definitions from Ghidra.
     The functions implement the Watcom 11 C++ runtime array new/delete helpers.
 
-    Implementations are in shims/watcom.cpp.
+    Implementations are in shims/core/watcom.cpp.
 
     Returns:
         List of content lines to append to watcom.h
@@ -2193,7 +2193,7 @@ def generate_watcom_runtime_inlines():
     lines.append("// Destruction hierarchy:")
     lines.append("//   __vec_delete -> __arrfini -> __arrdtor")
     lines.append("//")
-    lines.append("// Implementations are in shims/watcom.cpp.")
+    lines.append("// Implementations are in shims/core/watcom.cpp.")
     lines.append("//")
     lines.append("// =============================================================================")
     lines.append("")
@@ -2205,7 +2205,7 @@ def generate_watcom_runtime_inlines():
     lines.append("// -fsanitize=function flags every such indirect call even though the")
     lines.append("// indirection is safe by construction (the compiler emits matching TypeInfo).")
     lines.append("// WATCOM_TRAMPOLINE marks the trampoline functions (both this header's inline")
-    lines.append("// template __arr_op and the out-of-line shims in shims/watcom.cpp) exempt")
+    lines.append("// template __arr_op and the out-of-line shims in shims/core/watcom.cpp) exempt")
     lines.append("// from the function-type check. Keep the attribute list narrow on purpose so")
     lines.append("// real UBSan hits elsewhere still fire.")
     lines.append("#if defined(__clang__) || defined(__GNUC__)")
@@ -2367,7 +2367,7 @@ def generate_winsock_runtime_inlines():
     The transforms.py CRT transform converts crt_wsock32_c_* calls to standard
     winsock function names, and these declarations resolve them.
 
-    Implementations are in shims/winsock.cpp (POSIX BSD sockets).
+    Implementations are in shims/win32/winsock.cpp (POSIX BSD sockets).
 
     Returns:
         List of content lines to append to winsock.h
@@ -2381,7 +2381,7 @@ def generate_winsock_runtime_inlines():
     lines.append("// The CRT transform in transforms.py converts crt_wsock32_c_* calls to")
     lines.append("// standard winsock function names (e.g., crt_wsock32_c_recv_FUN_XXXX -> recv).")
     lines.append("//")
-    lines.append("// Implementations are in shims/winsock.cpp (POSIX BSD sockets).")
+    lines.append("// Implementations are in shims/win32/winsock.cpp (POSIX BSD sockets).")
     lines.append("//")
     lines.append("// =============================================================================")
     lines.append("")

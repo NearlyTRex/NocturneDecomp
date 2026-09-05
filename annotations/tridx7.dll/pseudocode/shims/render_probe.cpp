@@ -17,7 +17,7 @@
 
 #include "render_probe.h"
 
-#include "debug_log.h"
+#include "core/debug_log.h"
 
 #include <stdio.h>
 #include <string.h>

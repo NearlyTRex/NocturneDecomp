@@ -6,7 +6,7 @@
 // Signature: void __cdecl core_game_cpp_CGame_processKeyboardControls_FUN_004dc3e0(CGame *this_ptr,SPlayerInput *player_control)
 
 #include "nocturne.h"
-#include "net_weapon.h"
+#include "net/net_weapon.h"
 
 void __cdecl core_game_cpp_CGame_processKeyboardControls_FUN_004dc3e0(CGame *this_ptr,SPlayerInput *player_control)
 

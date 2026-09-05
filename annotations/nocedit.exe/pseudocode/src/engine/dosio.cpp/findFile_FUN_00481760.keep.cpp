@@ -6,7 +6,7 @@
 // Signature: int __cdecl engine_dosio_cpp_findFile_FUN_00481760(SFoundFileInfo *context)
 
 #include "nocturne.h"
-#include "debug_log.h"
+#include "core/debug_log.h"
 
 int __cdecl engine_dosio_cpp_findFile_FUN_00481760(SFoundFileInfo *context)
 

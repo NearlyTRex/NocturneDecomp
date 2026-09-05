@@ -6,7 +6,7 @@
 // Signature: int __cdecl support_codec_cpp_readByteWithCount_FUN_0043e4c0(_istream *istream,int *remaining_count)
 
 #include "nocturne.h"
-#include "stream_compat.h"
+#include "core/stream_compat.h"
 
 int __cdecl support_codec_cpp_readByteWithCount_FUN_0043e4c0(_istream *istream,int *remaining_count)
 

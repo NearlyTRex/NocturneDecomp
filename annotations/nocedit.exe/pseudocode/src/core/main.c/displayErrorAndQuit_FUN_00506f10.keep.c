@@ -6,7 +6,7 @@
 // Signature: void __cdecl core_main_c_displayErrorAndQuit_FUN_00506f10(char *format,...)
 
 #include "nocturne.h"
-#include "debug_log.h"
+#include "core/debug_log.h"
 
 void __cdecl core_main_c_displayErrorAndQuit_FUN_00506f10(char *format,...)
 

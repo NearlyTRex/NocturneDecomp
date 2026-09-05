@@ -6,7 +6,7 @@
 // Signature: int __cdecl support_codec_cpp_readBitsFromStream_FUN_0043e530(SBitBuffer *bit_buffer,int bit_count,_istream *istream,int *bytes_remaining)
 
 #include "nocturne.h"
-#include "stream_compat.h"
+#include "core/stream_compat.h"
 
 int __cdecl support_codec_cpp_readBitsFromStream_FUN_0043e530(SBitBuffer *bit_buffer,int bit_count,_istream *istream,int *bytes_remaining)
 

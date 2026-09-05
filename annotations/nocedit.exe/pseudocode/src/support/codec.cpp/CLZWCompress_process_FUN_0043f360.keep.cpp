@@ -6,7 +6,7 @@
 // Signature: int __cdecl support_codec_cpp_CLZWCompress_process_FUN_0043f360(CLZWCompress *this_ptr,_istream *istream,int *byte_count,_ostream *ostream)
 
 #include "nocturne.h"
-#include "stream_compat.h"
+#include "core/stream_compat.h"
 
 int __cdecl support_codec_cpp_CLZWCompress_process_FUN_0043f360(CLZWCompress *this_ptr,_istream *istream,int *byte_count,_ostream *ostream)
 

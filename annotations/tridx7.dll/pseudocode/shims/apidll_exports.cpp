@@ -23,7 +23,7 @@
 // always did (setting g_DLLFunctionsMissing for the optional ones).
 
 #include "nocturne.h"
-#include "builtin_dll.h"
+#include "renderer/builtin_dll.h"
 #include "render_probe.h"
 #include "gl_shader.h"
 

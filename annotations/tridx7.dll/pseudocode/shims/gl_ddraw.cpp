@@ -27,10 +27,10 @@
 #include "system/ddraw.h"
 #include "system/d3d.h"
 
-#include "gl_api.h"
+#include "gl/gl_api.h"
 #include "gl_shader.h"
-#include "gl_present.h"
-#include "debug_log.h"
+#include "gl/gl_present.h"
+#include "core/debug_log.h"
 #include "render_probe.h"
 
 #include <stdio.h>

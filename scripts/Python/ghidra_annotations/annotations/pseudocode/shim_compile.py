@@ -70,7 +70,11 @@ def get_sdl2_flags():
 
 
 def find_shim_files(shims_dir):
-    """Find all .cpp and .c files in the shims directory.
+    """Find all .cpp and .c files in the shims tree.
+
+    The shims are grouped into subdirectories by concern, so this walks rather
+    than lists: a flat scan finds only shim_config.h's directory and reports
+    "0 shims verified" instead of failing.
 
     Args:
         shims_dir: Path to shims directory
@@ -80,14 +84,15 @@ def find_shim_files(shims_dir):
     """
     if not os.path.isdir(shims_dir):
         return []
-    return sorted([
-        os.path.join(shims_dir, f)
-        for f in os.listdir(shims_dir)
-        if f.endswith('.cpp') or f.endswith('.c')
-    ])
+    found = []
+    for dirpath, _dirnames, filenames in os.walk(shims_dir):
+        for name in filenames:
+            if name.endswith('.cpp') or name.endswith('.c'):
+                found.append(os.path.join(dirpath, name))
+    return sorted(found)
 
 
-def compile_shim_file(src_path, include_dir, compiler, extra_flags):
+def compile_shim_file(src_path, include_dir, compiler, extra_flags, shims_dir):
     """Compile a single shim source file for syntax verification.
 
     Args:
@@ -95,6 +100,8 @@ def compile_shim_file(src_path, include_dir, compiler, extra_flags):
         include_dir: Include directory for -I flag
         compiler: Compiler to use (for .cpp files; .c files use C compiler)
         extra_flags: Additional flags (e.g., SDL2 include flags)
+        shims_dir: Root of the shims tree, which is the only shim include path;
+            sources name their siblings by subdirectory ("gl/gl_api.h")
 
     Returns:
         Tuple of (success, error_message)
@@ -106,9 +113,9 @@ def compile_shim_file(src_path, include_dir, compiler, extra_flags):
             c_compiler = compiler.replace('clang++', 'clang').replace('g++', 'gcc')
             cmd = [c_compiler, '-fsyntax-only', '-std=c11', '-Wno-everything', src_path]
         else:
-            # Add the shims dir itself to the include path: nocturne.h pulls
-            # in shim_config.h, which lives alongside the shim sources.
-            shims_dir = os.path.dirname(src_path)
+            # Add the shims root to the include path: nocturne.h pulls in
+            # shim_config.h, which sits there, and every other shim header is
+            # named relative to it.
             cmd = ([compiler] + SHIM_COMPILE_FLAGS + extra_flags +
                    ['-I', include_dir, '-I', shims_dir, src_path])
         result = subprocess.run(
@@ -155,7 +162,8 @@ def verify_shims(shims_dir, include_dir, compiler=DEFAULT_COMPILER,
 
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
         futures = {
-            executor.submit(compile_shim_file, f, include_dir, compiler, extra_flags): f
+            executor.submit(compile_shim_file, f, include_dir, compiler,
+                            extra_flags, shims_dir): f
             for f in shim_files
         }
         for future in as_completed(futures):

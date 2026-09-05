@@ -6,7 +6,7 @@
 // Signature: void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(int argc,char **argv)
 
 #include "nocturne.h"
-#include "debug_log.h"
+#include "core/debug_log.h"
 
 void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(int argc,char **argv)
 

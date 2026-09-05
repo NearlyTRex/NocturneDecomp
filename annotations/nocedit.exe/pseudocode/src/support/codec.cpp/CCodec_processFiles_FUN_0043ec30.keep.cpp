@@ -6,7 +6,7 @@
 // Signature: int __cdecl support_codec_cpp_CCodec_processFiles_FUN_0043ec30(CCodec *this_ptr,char *input_file_path,char *output_file_path)
 
 #include "nocturne.h"
-#include "stream_compat.h"
+#include "core/stream_compat.h"
 
 int __cdecl support_codec_cpp_CCodec_processFiles_FUN_0043ec30(CCodec *this_ptr,char *input_file_path,char *output_file_path)
 

@@ -7,7 +7,7 @@
 
 #include "nocturne.h"
 #if NOCTURNE_ATTRACT_MOVIES
-#include "debug_log.h"
+#include "core/debug_log.h"
 #endif
 
 int __cdecl core_main_c_enterMainGameMenu_FUN_00507a50(void)
