@@ -72,6 +72,19 @@ void nocturne_trigl_gl_release_textures(void);
 // Never null; a generic name before the context is up.
 const char *nocturne_trigl_gl_renderer_name(void);
 
+// --- master depth ------------------------------------------------------------
+// The engine renders the static world once, keeps its depth, and restores that
+// instead of clearing on the frames that follow. Saving is whole-buffer;
+// restoring takes a rectangle, so only the region that moved is paid for.
+//
+// Rectangles arrive top-down, as the engine measures them; GL measures from the
+// bottom. Both are given the target height so the flip happens here rather than
+// at each call site.
+int nocturne_trigl_gl_save_depth(int slot, int width, int height);
+int nocturne_trigl_gl_restore_depth(int slot, int left, int top, int right, int bottom,
+                                    int width, int height);
+void nocturne_trigl_gl_release_depth(void);
+
 // --- drawing -----------------------------------------------------------------
 // Submit an accumulated batch. Does nothing for an empty one; the caller resets
 // it afterwards.

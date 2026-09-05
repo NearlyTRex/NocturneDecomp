@@ -58,7 +58,15 @@ struct Renderer {
 
 Renderer g_r;
 
-CExternalRendererBridge *bridge() { return nocturne_trigl_device_bridge(); }
+// The engine builds the bridge ON ITS OWN STACK, inside loadExternalRenderer,
+// and passes a pointer to it — which dangles the moment that function returns.
+// So it is copied, not kept. Copying is enough because every member is a
+// pointer to a live engine global: the values behind them go on changing, and
+// only the table of addresses is ours.
+CExternalRendererBridge g_bridge;
+bool g_bridge_valid = false;
+
+CExternalRendererBridge *bridge() { return g_bridge_valid ? &g_bridge : nullptr; }
 
 int read_bridge(int *slot, int fallback) {
     return (slot != nullptr) ? *slot : fallback;
@@ -194,7 +202,11 @@ unsigned resolve_texture(SMRGLTextureBasic *info, int refresh) {
 
 static int __cdecl trigl_init(HWND window, CExternalRendererBridge *interface) {
     (void)window;
-    nocturne_trigl_device_set_bridge(interface);
+    if (interface != nullptr) {
+        g_bridge = *interface;
+        g_bridge_valid = true;
+    }
+    nocturne_trigl_device_set_bridge(g_bridge_valid ? &g_bridge : nullptr);
     if (!nocturne_trigl_device_open()) {
         DDRAW_LOG("trigl: the device could not be opened");
         return 0;
@@ -204,6 +216,7 @@ static int __cdecl trigl_init(HWND window, CExternalRendererBridge *interface) {
 }
 
 static void __cdecl trigl_kill(void) {
+    nocturne_trigl_gl_release_depth();
     nocturne_trigl_device_close();
     free(g_r.expanded);
     g_r.expanded = nullptr;
@@ -348,14 +361,22 @@ static int __cdecl trigl_clear_z_box(int left, int right, int top, int bottom) {
     return 1;
 }
 
-static int __cdecl trigl_master_z_buffer(int mode) {
-    (void)mode;
-    return 1;
+// The engine renders the static world once, keeps its depth in a numbered slot,
+// and restores that region instead of clearing on the frames that follow.
+static int __cdecl trigl_master_z_buffer(int slot) {
+    nocturne_trigl_device_flush();
+    return nocturne_trigl_gl_save_depth(slot, nocturne_trigl_device_width(),
+                                        nocturne_trigl_device_height());
 }
 
-static int __cdecl trigl_restore_z_buffer(int left, int top, int mode, int right, int bottom) {
-    (void)left; (void)top; (void)mode; (void)right; (void)bottom;
-    return 1;
+// The parameter names this entry point was reconstructed with do not describe
+// it. Read against the body, the first is the SLOT and the remaining four are
+// the rectangle, whose right and bottom edges are inclusive.
+static int __cdecl trigl_restore_z_buffer(int slot, int left, int top, int right, int bottom) {
+    nocturne_trigl_device_flush();
+    return nocturne_trigl_gl_restore_depth(slot, left, top, right + 1, bottom + 1,
+                                           nocturne_trigl_device_width(),
+                                           nocturne_trigl_device_height());
 }
 
 // =============================================================================

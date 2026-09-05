@@ -11,6 +11,7 @@
 #include "renderer/trigl_gl.h"
 #include "renderer/trigl_vertex.h"
 #include "gl/gl_api.h"
+#include "gl/gl_present.h"
 #include "core/debug_log.h"
 
 #include <stddef.h>
@@ -401,6 +402,60 @@ TextureSlot *insert_slot(const char *name, int dimension) {
     return &slot;
 }
 
+// --- master depth ------------------------------------------------------------
+// One framebuffer per slot, each carrying a depth renderbuffer the size of the
+// scene. The engine reads its slot count from an ini key and the shipped
+// configuration asks for few, so the table is small and filled lazily.
+const int kMasterDepthSlots = 8;
+
+struct MasterDepth {
+    GLuint fbo = 0;
+    GLuint depth = 0;
+    int    width = 0;
+    int    height = 0;
+};
+
+MasterDepth g_master_depth[kMasterDepthSlots];
+
+MasterDepth *ensure_master_depth(int slot, int width, int height) {
+    if (slot < 0 || slot >= kMasterDepthSlots) return nullptr;
+    if (gl.GenFramebuffers == nullptr || gl.BindFramebuffer == nullptr ||
+        gl.GenRenderbuffers == nullptr || gl.RenderbufferStorage == nullptr ||
+        gl.FramebufferRenderbuffer == nullptr || gl.BlitFramebuffer == nullptr) {
+        return nullptr;
+    }
+    MasterDepth &m = g_master_depth[slot];
+    if (m.fbo != 0 && m.width == width && m.height == height) return &m;
+
+    if (m.fbo != 0) {
+        gl.DeleteFramebuffers(1, &m.fbo);
+        gl.DeleteRenderbuffers(1, &m.depth);
+        m.fbo = m.depth = 0;
+    }
+    gl.GenRenderbuffers(1, &m.depth);
+    gl.BindRenderbuffer(GL_RENDERBUFFER, m.depth);
+    gl.RenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT24, width, height);
+    gl.BindRenderbuffer(GL_RENDERBUFFER, 0);
+
+    gl.GenFramebuffers(1, &m.fbo);
+    gl.BindFramebuffer(GL_FRAMEBUFFER, m.fbo);
+    gl.FramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, m.depth);
+    const GLenum status = (gl.CheckFramebufferStatus != nullptr)
+                              ? gl.CheckFramebufferStatus(GL_FRAMEBUFFER)
+                              : (GLenum)GL_FRAMEBUFFER_COMPLETE;
+    gl.BindFramebuffer(GL_FRAMEBUFFER, (GLuint)nocturne_gl_scene_fbo());
+    if (status != GL_FRAMEBUFFER_COMPLETE) {
+        DDRAW_LOG("trigl_gl: master depth slot %d incomplete at %dx%d", slot, width, height);
+        gl.DeleteFramebuffers(1, &m.fbo);
+        gl.DeleteRenderbuffers(1, &m.depth);
+        m.fbo = m.depth = 0;
+        return nullptr;
+    }
+    m.width  = width;
+    m.height = height;
+    return &m;
+}
+
 bool ensure_scratch(size_t vertices) {
     if (vertices <= g_scratch_capacity) return true;
     HardwareVertex *grown =
@@ -607,6 +662,57 @@ void nocturne_trigl_gl_release_textures(void) {
     g_texture_clock = 0;
 }
 
+int nocturne_trigl_gl_save_depth(int slot, int width, int height) {
+    if (!g_ready) return 0;
+    const GLuint scene = (GLuint)nocturne_gl_scene_fbo();
+    if (scene == 0) return 0;
+    MasterDepth *m = ensure_master_depth(slot, width, height);
+    if (m == nullptr) return 0;
+
+    gl.BindFramebuffer(GL_READ_FRAMEBUFFER, scene);
+    gl.BindFramebuffer(GL_DRAW_FRAMEBUFFER, m->fbo);
+    gl.BlitFramebuffer(0, 0, width, height, 0, 0, width, height,
+                       GL_DEPTH_BUFFER_BIT, GL_NEAREST);
+    gl.BindFramebuffer(GL_FRAMEBUFFER, scene);
+    return 1;
+}
+
+int nocturne_trigl_gl_restore_depth(int slot, int left, int top, int right, int bottom,
+                                    int width, int height) {
+    if (!g_ready) return 0;
+    const GLuint scene = (GLuint)nocturne_gl_scene_fbo();
+    if (scene == 0) return 0;
+    if (slot < 0 || slot >= kMasterDepthSlots) return 0;
+    MasterDepth &m = g_master_depth[slot];
+    if (m.fbo == 0) return 0;
+
+    // Top-down to bottom-up. An empty rectangle is nothing to do rather than a
+    // failure — the engine asks for one when nothing moved.
+    const GLint x0 = left;
+    const GLint x1 = right;
+    const GLint y0 = height - bottom;
+    const GLint y1 = height - top;
+    if (x1 <= x0 || y1 <= y0) return 1;
+    (void)width;
+
+    gl.BindFramebuffer(GL_READ_FRAMEBUFFER, m.fbo);
+    gl.BindFramebuffer(GL_DRAW_FRAMEBUFFER, scene);
+    gl.BlitFramebuffer(x0, y0, x1, y1, x0, y0, x1, y1,
+                       GL_DEPTH_BUFFER_BIT, GL_NEAREST);
+    gl.BindFramebuffer(GL_FRAMEBUFFER, scene);
+    return 1;
+}
+
+void nocturne_trigl_gl_release_depth(void) {
+    for (int i = 0; i < kMasterDepthSlots; ++i) {
+        MasterDepth &m = g_master_depth[i];
+        if (m.fbo != 0 && gl.DeleteFramebuffers != nullptr) gl.DeleteFramebuffers(1, &m.fbo);
+        if (m.depth != 0 && gl.DeleteRenderbuffers != nullptr) gl.DeleteRenderbuffers(1, &m.depth);
+        m.fbo = m.depth = 0;
+        m.width = m.height = 0;
+    }
+}
+
 void nocturne_trigl_gl_draw_batch(const NocturneTriglBatch *batch) {
     if (!g_ready || batch->vertex_count <= 0 || batch->index_count <= 0) return;
     if (!ensure_scratch((size_t)batch->vertex_count)) return;
@@ -691,6 +797,9 @@ unsigned nocturne_trigl_gl_texture(const char *, int, const unsigned *, int, int
 void nocturne_trigl_gl_bind_texture(unsigned) {}
 void nocturne_trigl_gl_release_textures(void) {}
 const char *nocturne_trigl_gl_renderer_name(void) { return "OpenGL"; }
+int  nocturne_trigl_gl_save_depth(int, int, int) { return 0; }
+int  nocturne_trigl_gl_restore_depth(int, int, int, int, int, int, int) { return 0; }
+void nocturne_trigl_gl_release_depth(void) {}
 void nocturne_trigl_gl_draw_batch(const NocturneTriglBatch *) {}
 
 #endif  // NOCTURNE_GL_PRESENT
