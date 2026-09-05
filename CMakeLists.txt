@@ -421,6 +421,10 @@ if(NOCTURNE_BUILD_EXE)
         "${NOCTURNE_SHIMS_DIR}/*.cpp"
         "${NOCTURNE_SHIMS_DIR}/*.c"
     )
+    # shims/tests/ is built by the nocturne_tests target instead. Every test
+    # file defines a main(), so leaving them in here would collide with the
+    # game's at link time.
+    list(FILTER _shim_sources EXCLUDE REGEX "/shims/tests/")
     set_source_files_properties(${_shim_sources} PROPERTIES LANGUAGE CXX)
     add_library(nocturne_shims OBJECT ${_shim_sources})
     target_include_directories(nocturne_shims PRIVATE
@@ -530,17 +534,19 @@ endif()
 # Built for the host rather than with NOCTURNE_ARCH_FLAGS. What is under test is
 # arithmetic on explicit widths, identical on both lanes, and building it -m32
 # would put the tests behind the multilib toolchain for no coverage.
-file(GLOB_RECURSE _test_sources CONFIGURE_DEPENDS "${CMAKE_SOURCE_DIR}/tests/*.cpp")
+file(GLOB_RECURSE _test_sources CONFIGURE_DEPENDS "${NOCTURNE_SHIMS_DIR}/tests/*.cpp")
 if(_test_sources)
     enable_testing()
+    # The pure renderer sources under test. Named rather than globbed: a file
+    # that reaches GL or a global does not belong here, and having to add it by
+    # hand is the point at which that gets noticed.
+    set(_test_subjects
+        "${NOCTURNE_SHIMS_DIR}/renderer/trigl_state.cpp"
+    )
     foreach(_test_src IN LISTS _test_sources)
         get_filename_component(_test_name "${_test_src}" NAME_WE)
-        add_executable(${_test_name} EXCLUDE_FROM_ALL
-            "${_test_src}"
-            "${NOCTURNE_SHIMS_DIR}/renderer/trigl_state.cpp"
-        )
-        target_include_directories(${_test_name} PRIVATE
-            "${CMAKE_SOURCE_DIR}/tests" "${NOCTURNE_SHIMS_DIR}")
+        add_executable(${_test_name} EXCLUDE_FROM_ALL "${_test_src}" ${_test_subjects})
+        target_include_directories(${_test_name} PRIVATE "${NOCTURNE_SHIMS_DIR}")
         target_compile_features(${_test_name} PRIVATE cxx_std_17)
         target_compile_options(${_test_name} PRIVATE ${NOCTURNE_COMMON_WARNINGS})
         add_test(NAME ${_test_name} COMMAND ${_test_name})

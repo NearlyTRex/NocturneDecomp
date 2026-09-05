@@ -13,7 +13,7 @@
 // 256 flag words crossed with blend mode, opacity table and premultiply — 2048
 // cases, checked exhaustively.
 
-#include "nocturne_test.h"
+#include "tests/nocturne_test.h"
 #include "renderer/trigl_state.h"
 
 #include <string>
