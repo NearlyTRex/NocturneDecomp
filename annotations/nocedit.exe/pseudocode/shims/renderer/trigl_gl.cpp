@@ -20,6 +20,7 @@
 #include <string.h>
 
 extern "C" int nocturne_trigl_vertex_fog = -1;
+extern "C" int nocturne_trigl_mipmaps = -1;
 
 extern "C" NocturneTriglStats nocturne_trigl_stats = {};
 
@@ -36,6 +37,14 @@ extern "C" void nocturne_trigl_stats_reset(void) {
 }
 
 namespace {
+
+int mipmaps() {
+    if (nocturne_trigl_mipmaps < 0) {
+        const char *env = getenv("NOCTURNE_TRIGL_MIPMAPS");
+        nocturne_trigl_mipmaps = (env != nullptr) ? atoi(env) : 0;
+    }
+    return nocturne_trigl_mipmaps;
+}
 
 int vertex_fog() {
     if (nocturne_trigl_vertex_fog < 0) {
@@ -618,7 +627,7 @@ unsigned nocturne_trigl_gl_texture(const char *name, int dimension,
     // B,G,R,A in memory — GL_BGRA, not GL_RGBA.
     gl.TexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, dimension, dimension, 0,
                   GL_BGRA, GL_UNSIGNED_BYTE, rgba);
-    if (mipmapped && gl.GenerateMipmap != nullptr) {
+    if (mipmapped && mipmaps() && gl.GenerateMipmap != nullptr) {
         gl.GenerateMipmap(GL_TEXTURE_2D);
     } else {
         // Without a chain the texture must say so, or a mip-filtered sampler
@@ -634,8 +643,13 @@ void nocturne_trigl_gl_bind_texture(unsigned texture) {
     gl.ActiveTexture(GL_TEXTURE0);
     gl.BindTexture(GL_TEXTURE_2D, (GLuint)texture);
     if (texture != 0) {
+        // A mip filter is only asked for when there is a chain to sample. With
+        // one level the minification filter is the magnification filter, which
+        // is what keeps a minified surface as detailed as the engine's own
+        // renderer draws it.
+        const bool chained = (g_current.mip_filter == NOCTURNE_TRIGL_MIP_LINEAR) && mipmaps();
         const GLint min_filter =
-            (g_current.mip_filter == NOCTURNE_TRIGL_MIP_LINEAR)
+            chained
                 ? (g_current.min_filter == NOCTURNE_TRIGL_FILTER_LINEAR
                        ? GL_LINEAR_MIPMAP_LINEAR : GL_NEAREST_MIPMAP_LINEAR)
                 : (g_current.min_filter == NOCTURNE_TRIGL_FILTER_LINEAR
@@ -801,6 +815,7 @@ void nocturne_trigl_gl_draw_batch(const NocturneTriglBatch *batch) {
 #include "renderer/trigl_gl.h"
 
 extern "C" int nocturne_trigl_vertex_fog = 0;
+extern "C" int nocturne_trigl_mipmaps = 0;
 extern "C" NocturneTriglStats nocturne_trigl_stats = {};
 extern "C" void nocturne_trigl_stats_reset(void) {}
 int  nocturne_trigl_gl_init(void) { return 0; }

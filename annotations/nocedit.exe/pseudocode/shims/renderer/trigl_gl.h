@@ -68,6 +68,12 @@ void nocturne_trigl_gl_bind_texture(unsigned texture);
 // Drop every cached texture, e.g. when the engine changes video mode.
 void nocturne_trigl_gl_release_textures(void);
 
+// Whether textures carry a mip chain. Off matches what the engine's own
+// renderer does — it uploads one level and samples it at every distance, so
+// fine detail survives minification instead of being averaged away.
+//   -1 resolve from NOCTURNE_TRIGL_MIPMAPS (default 0)   0 off   1 on
+extern int nocturne_trigl_mipmaps;
+
 // What the driver calls itself, for the card list the options screen shows.
 // Never null; a generic name before the context is up.
 const char *nocturne_trigl_gl_renderer_name(void);
