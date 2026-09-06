@@ -556,6 +556,7 @@ if(_test_sources)
         # state. Its answer is a function of the path and what is on disk, which
         # is what makes it testable against a directory a test builds itself.
         "${NOCTURNE_SHIMS_DIR}/watcom/path.cpp"
+        "${NOCTURNE_SHIMS_DIR}/core/file_search.cpp"
     )
     # The GL-facing sources, for the suites that test ORDER rather than answers.
     # These reach the driver, so they are deliberately outside the list above —

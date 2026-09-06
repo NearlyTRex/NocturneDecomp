@@ -17,6 +17,7 @@
 #include "system/kernel32.h"
 #include "globals/globals_610000.h"
 #include "renderer/builtin_dll.h"
+#include "core/file_search.h"   // nocturne_find_files() — shared with _findfirst
 
 #include <SDL.h>
 #include <dlfcn.h>
@@ -25,11 +26,8 @@
 #include <sys/stat.h>
 #include <sys/sysinfo.h>
 #include <sys/types.h>
-#include <dirent.h>
 #include <errno.h>
 #include <fcntl.h>
-#include <fnmatch.h>
-#include <glob.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -478,50 +476,22 @@ static void populate_find_data(const char* path, LPWIN32_FIND_DATAA lpFindFileDa
     }
 }
 
-// Windows FindFirstFileA is case-insensitive. Replace glob() (which is
-// case-sensitive on Linux) with opendir/readdir + fnmatch(FNM_CASEFOLD)
-// for portable case-insensitive file matching.
+// The search is in core/file_search.cpp, shared with Watcom's _findfirst — the
+// same question asked through a different API. What is Win32's here is the
+// handle, the find-data the first match is written into, and the error code for
+// finding nothing.
 static HANDLE shim_FindFirstFileA(LPCSTR lpFileName, LPWIN32_FIND_DATAA lpFindFileData) {
-    // Split "dir/pattern" or just "pattern"
-    std::string spec(lpFileName);
-    for (char& c : spec) { if (c == '\\') c = '/'; }
-
-    std::string dir, pattern;
-    size_t sep = spec.rfind('/');
-    if (sep == std::string::npos) {
-        dir = ".";
-        pattern = spec;
-    } else {
-        dir = spec.substr(0, sep);
-        pattern = spec.substr(sep + 1);
-    }
-
-    DIR* d = opendir(dir.c_str());
-    if (!d) {
-        s_lastError = 2;
+    std::vector<std::string> matches = nocturne_find_files(lpFileName);
+    if (matches.empty()) {
+        s_lastError = 2; // ERROR_FILE_NOT_FOUND
         return INVALID_HANDLE;
     }
 
     FindHandle* fh = new FindHandle();
     fh->tag = HANDLE_TAG_FIND;
-    while (struct dirent* entry = readdir(d)) {
-        if (fnmatch(pattern.c_str(), entry->d_name, FNM_CASEFOLD) == 0) {
-            if (dir == ".") {
-                fh->matches.push_back(entry->d_name);
-            } else {
-                fh->matches.push_back(dir + "/" + entry->d_name);
-            }
-        }
-    }
-    closedir(d);
-
-    if (fh->matches.empty()) {
-        delete fh;
-        s_lastError = 2; // ERROR_FILE_NOT_FOUND
-        return INVALID_HANDLE;
-    }
-
-    fh->currentIndex = 0;
+    fh->matches = matches;
+    // Win32 hands the first match back through the out-parameter rather than
+    // making the caller ask for it, so the cursor starts on the second.
     populate_find_data(fh->matches[0].c_str(), lpFindFileData);
     fh->currentIndex = 1;
     return (HANDLE)fh;

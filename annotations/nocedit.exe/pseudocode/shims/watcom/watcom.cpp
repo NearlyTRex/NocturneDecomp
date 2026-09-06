@@ -1,6 +1,3 @@
-// For case-insensitive _findfirst/_findnext (portable, no glibc extensions).
-#include <fnmatch.h>
-#include <strings.h>
 #include <vector>
 #include <string>
 
@@ -16,14 +13,13 @@
 //
 
 #include "system/watcom.h"
+#include "core/file_search.h"   // nocturne_find_files() — shared with kernel32
 
 #include <cerrno>
 #include <cstdlib>
 #include <cstring>
 #include <unistd.h>
 #include <sys/stat.h>
-#include <dirent.h>
-#include <glob.h>
 
 // =============================================================================
 // Array Construction Functions
@@ -160,17 +156,21 @@ char* _getcwd(char* buffer, int size) {
 // =============================================================================
 // File Find Functions (Watcom io.h)
 // =============================================================================
-// Windows FindFirstFile/FindNextFile is case-insensitive. Linux glob() is not,
-// and GLOB_NOCASE is unreliable across glibc versions. This implementation
-// uses opendir/readdir + fnmatch(FNM_CASEFOLD) for portable case-insensitive
-// file matching. Results are collected up front so _findnext is a simple
-// index bump (matches Watcom's iterator-style API).
+// The search itself is in core/file_search.cpp, shared with the Win32 flavour
+// of the same question in kernel32.cpp. What is left here is Watcom's shape for
+// it: a long handle, and an iterator that reports the end by returning -1.
+//
+// Results are collected up front, so _findnext is an index bump. That matches
+// the API — the caller is not told how many there are and cannot go back — and
+// it means the directory is read once rather than being held open across calls
+// the game makes no promise about the timing of.
 
-// Internal linkage, deliberately. kernel32.cpp defines a FindHandle of its own
-// with a different layout, and two definitions of one class name in a program
-// is an ODR violation the linker resolves by keeping whichever destructor it
-// saw first — silently giving one of them the other's field offsets. Anonymous
-// namespaces here and there make the two unrelated types they always were.
+// Internal linkage, deliberately. kernel32.cpp has a handle of its own with a
+// different layout, and two definitions of one class name in a program is an ODR
+// violation the linker resolves by keeping whichever destructor it saw first —
+// silently giving one of them the other's field offsets. Anonymous namespaces
+// here and there make the two unrelated types they always were. Sharing the
+// search below removes the reason they ever looked alike.
 namespace {
 
 struct FindHandle {
@@ -180,47 +180,14 @@ struct FindHandle {
 
 }  // namespace
 
-static void split_filespec(const char* filespec, std::string& dir, std::string& pattern) {
-    std::string spec(filespec);
-    // Normalize backslashes
-    for (char& c : spec) {
-        if (c == '\\') c = '/';
-    }
-    size_t sep = spec.rfind('/');
-    if (sep == std::string::npos) {
-        dir = ".";
-        pattern = spec;
-    } else {
-        dir = spec.substr(0, sep);
-        pattern = spec.substr(sep + 1);
-    }
-}
-
 long _findfirst(const char* filespec, void* fileinfo) {
     (void)fileinfo;
 
-    std::string dir, pattern;
-    split_filespec(filespec, dir, pattern);
-
-    DIR* d = opendir(dir.c_str());
-    if (!d) return -1;
+    std::vector<std::string> matches = nocturne_find_files(filespec);
+    if (matches.empty()) return -1;
 
     FindHandle* handle = new FindHandle();
-    while (struct dirent* entry = readdir(d)) {
-        if (fnmatch(pattern.c_str(), entry->d_name, FNM_CASEFOLD) == 0) {
-            if (dir == ".") {
-                handle->matches.push_back(entry->d_name);
-            } else {
-                handle->matches.push_back(dir + "/" + entry->d_name);
-            }
-        }
-    }
-    closedir(d);
-
-    if (handle->matches.empty()) {
-        delete handle;
-        return -1;
-    }
+    handle->matches = matches;
     handle->current_index = 0;
     return (long)(intptr_t)handle;
 }
