@@ -565,6 +565,7 @@ if(_test_sources)
         "${NOCTURNE_SHIMS_DIR}/renderer/trigl_exports.cpp"
         "${NOCTURNE_SHIMS_DIR}/tests/renderer/gl_recorder.cpp"
         "${NOCTURNE_SHIMS_DIR}/tests/renderer/gl_present_support.cpp"
+        "${NOCTURNE_SHIMS_DIR}/tests/renderer/golden_trace_support.cpp"
     )
     foreach(_test_src IN LISTS _test_sources)
         get_filename_component(_test_name "${_test_src}" NAME_WE)
@@ -578,6 +579,12 @@ if(_test_sources)
             "${NOCTURNE_INCLUDE_DIR}" ${SDL2_INCLUDE_DIRS})
         target_compile_features(${_test_name} PRIVATE cxx_std_17)
         target_compile_options(${_test_name} PRIVATE ${NOCTURNE_COMMON_WARNINGS})
+        # Where a test's recorded expectations live. A golden file is only useful
+        # if it is read from the source tree and can be regenerated in place, so
+        # a changed one shows up as a reviewable diff rather than as a rebuilt
+        # copy nobody sees.
+        target_compile_definitions(${_test_name} PRIVATE
+            NOCTURNE_TEST_DATA_DIR="${NOCTURNE_SHIMS_DIR}/tests/renderer/golden")
         add_test(NAME ${_test_name} COMMAND ${_test_name})
         list(APPEND _test_targets ${_test_name})
     endforeach()

@@ -1,0 +1,115 @@
+CreateShader
+ShaderSource
+CompileShader
+CreateShader
+ShaderSource
+CompileShader
+CreateProgram
+AttachShader
+AttachShader
+BindAttribLocation
+LinkProgram
+DeleteShader
+DeleteShader
+use program1
+Uniform1i
+use none
+GenVertexArrays
+GenBuffers
+GenBuffers
+bind array array1
+bind buffer buffer1
+bind buffer buffer2
+EnableVertexAttribArray
+VertexAttribPointer
+EnableVertexAttribArray
+VertexAttribPointer
+EnableVertexAttribArray
+VertexAttribPointer
+EnableVertexAttribArray
+VertexAttribPointer
+bind array none
+bind buffer none
+bind buffer none
+use program1
+UniformMatrix4fv
+use none
+GenTextures
+ActiveTexture
+bind texture texture1
+PixelStorei
+upload texture1 64x64
+texture parameter 0x813c = 0
+texture parameter 0x813d = 0
+bind texture none
+disable blend
+BlendFunc
+enable depth_test
+depth write 1
+DepthFunc
+use program1
+Uniform1i
+Uniform1i
+Uniform1i
+Uniform1i
+Uniform1i
+Uniform3f
+ActiveTexture
+bind texture texture1
+texture parameter 0x2801 = 9728
+texture parameter 0x2800 = 9728
+texture parameter 0x2802 = 33071
+texture parameter 0x2803 = 33071
+GenTextures
+ActiveTexture
+bind texture texture2
+PixelStorei
+upload texture2 64x64
+texture parameter 0x813c = 0
+texture parameter 0x813d = 0
+bind texture texture1
+viewport 640x480
+bind array array1
+bind buffer buffer1
+buffer data 128 bytes
+bind buffer buffer2
+buffer data 12 bytes
+use program1
+DRAW texture1 indices=6 program=program1 array=array1 depth_test=1 depth_write=1 blend=0
+bind array none
+use none
+enable blend
+depth write 0
+use program1
+Uniform1i
+Uniform1i
+Uniform1i
+ActiveTexture
+bind texture texture2
+texture parameter 0x2801 = 9728
+texture parameter 0x2800 = 9728
+texture parameter 0x2802 = 33071
+texture parameter 0x2803 = 33071
+viewport 640x480
+bind array array1
+bind buffer buffer1
+buffer data 128 bytes
+BufferSubData
+bind buffer buffer2
+buffer data 12 bytes
+BufferSubData
+use program1
+DRAW texture2 indices=6 program=program1 array=array1 depth_test=1 depth_write=0 blend=1
+bind array none
+use none
+PixelStorei
+PixelStorei
+ReadBuffer
+read back 640x480
+PixelStorei
+disable depth_test
+disable blend
+disable depth_test
+disable blend
+disable cull
+disable scissor
