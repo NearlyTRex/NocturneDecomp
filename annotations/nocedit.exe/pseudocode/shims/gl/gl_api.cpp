@@ -14,8 +14,6 @@
 #include <SDL.h>
 
 struct NocturneGLApi gl;
-void (APIENTRY *nocturne_glSecondaryColorPointer)(GLint, GLenum, GLsizei, const void *) = nullptr;
-void (APIENTRY *nocturne_glFogCoordPointer)(GLenum, GLsizei, const void *) = nullptr;
 
 namespace {
 
@@ -68,24 +66,12 @@ extern "C" int nocturne_gl_load_api(void) {
     NOCTURNE_GL_LOAD(Enable);
     NOCTURNE_GL_LOAD(Disable);
     NOCTURNE_GL_LOAD(BlendFunc);
-    NOCTURNE_GL_LOAD(AlphaFunc);
     NOCTURNE_GL_LOAD(DepthFunc);
     NOCTURNE_GL_LOAD(DepthMask);
     NOCTURNE_GL_LOAD(DepthRange);
-    NOCTURNE_GL_LOAD(ShadeModel);
     NOCTURNE_GL_LOAD(CullFace);
     NOCTURNE_GL_LOAD(FrontFace);
     NOCTURNE_GL_LOAD(PolygonMode);
-    NOCTURNE_GL_LOAD(Fogi);
-    NOCTURNE_GL_LOAD(Fogf);
-    NOCTURNE_GL_LOAD(Fogfv);
-
-    NOCTURNE_GL_LOAD(MatrixMode);
-    NOCTURNE_GL_LOAD(LoadIdentity);
-    NOCTURNE_GL_LOAD(PushMatrix);
-    NOCTURNE_GL_LOAD(PopMatrix);
-    NOCTURNE_GL_LOAD(Ortho);
-    NOCTURNE_GL_LOAD(LoadMatrixf);
 
     NOCTURNE_GL_LOAD(GenFramebuffers);
     NOCTURNE_GL_LOAD(DeleteFramebuffers);
@@ -105,30 +91,15 @@ extern "C" int nocturne_gl_load_api(void) {
     NOCTURNE_GL_LOAD(TexParameteri);
     NOCTURNE_GL_LOAD(TexImage2D);
     NOCTURNE_GL_LOAD(TexSubImage2D);
-    NOCTURNE_GL_LOAD(TexEnvi);
-    NOCTURNE_GL_LOAD(PushAttrib);
-    NOCTURNE_GL_LOAD(PopAttrib);
-    NOCTURNE_GL_LOAD(PushClientAttrib);
-    NOCTURNE_GL_LOAD(PopClientAttrib);
 
-    NOCTURNE_GL_LOAD(Begin);
-    NOCTURNE_GL_LOAD(End);
-    NOCTURNE_GL_LOAD(Color4f);
-    NOCTURNE_GL_LOAD(TexCoord2f);
-    NOCTURNE_GL_LOAD(Vertex2f);
-
-    NOCTURNE_GL_LOAD(EnableClientState);
-    NOCTURNE_GL_LOAD(DisableClientState);
-    NOCTURNE_GL_LOAD(VertexPointer);
-    NOCTURNE_GL_LOAD(ColorPointer);
-    NOCTURNE_GL_LOAD(TexCoordPointer);
     NOCTURNE_GL_LOAD(DrawElements);
 
-    // Shaders. Loaded with the OPTIONAL macro on purpose: NOCTURNE_GL_LOAD
-    // records a missing symbol, which sets g_failed and takes the entire GL
-    // path down. A driver without shader entry points must keep working
-    // exactly as before, so these must never be able to do that — gl_shader.cpp
-    // null-checks and leaves the renderer on fixed function instead.
+    // Shaders and buffers. Loaded with the OPTIONAL macro: a missing name under
+    // NOCTURNE_GL_LOAD sets g_failed and takes the whole GL path down with one
+    // line naming the first symbol it could not find, whereas the callers here
+    // check for null and say which capability is missing and what it costs. On a
+    // context that has none of this there is nothing to draw with either way; the
+    // difference is whether the log explains that.
     NOCTURNE_GL_LOAD_OPT(CreateShader);
     NOCTURNE_GL_LOAD_OPT(ShaderSource);
     NOCTURNE_GL_LOAD_OPT(CompileShader);
@@ -167,36 +138,6 @@ extern "C" int nocturne_gl_load_api(void) {
     NOCTURNE_GL_LOAD_OPT(BindVertexArray);
     NOCTURNE_GL_LOAD_OPT(GenerateMipmap);
 
-    // Optional — absence just costs the specular term, not the GL path.
-    nocturne_glSecondaryColorPointer =
-        reinterpret_cast<void (APIENTRY *)(GLint, GLenum, GLsizei, const void *)>(
-            SDL_GL_GetProcAddress("glSecondaryColorPointer"));
-    if (nocturne_glSecondaryColorPointer == nullptr) {
-        nocturne_glSecondaryColorPointer =
-            reinterpret_cast<void (APIENTRY *)(GLint, GLenum, GLsizei, const void *)>(
-                SDL_GL_GetProcAddress("glSecondaryColorPointerEXT"));
-    }
-    if (nocturne_glSecondaryColorPointer == nullptr) {
-        DLOG("render","gl_api: no glSecondaryColorPointer — specular term dropped");
-    }
-
-    // Also optional. This is the channel D3D7's per-vertex fog factor needs:
-    // buildTLVertex packs it into the specular ALPHA byte, and GL's secondary
-    // colour is only 3 components, so there is nowhere else to put it. Only the
-    // shader path consumes it — fixed function reads the fog coordinate as a
-    // distance for table fog, which is not what this value means.
-    nocturne_glFogCoordPointer =
-        reinterpret_cast<void (APIENTRY *)(GLenum, GLsizei, const void *)>(
-            SDL_GL_GetProcAddress("glFogCoordPointer"));
-    if (nocturne_glFogCoordPointer == nullptr) {
-        nocturne_glFogCoordPointer =
-            reinterpret_cast<void (APIENTRY *)(GLenum, GLsizei, const void *)>(
-                SDL_GL_GetProcAddress("glFogCoordPointerEXT"));
-    }
-    if (nocturne_glFogCoordPointer == nullptr) {
-        DLOG("render","gl_api: no glFogCoordPointer — per-vertex fog unavailable");
-    }
-
     if (missing != nullptr) {
         DLOG("render","gl_api: failed to resolve %s — GL path unavailable", missing);
         g_failed = true;
@@ -214,8 +155,6 @@ extern "C" int nocturne_gl_load_api(void) {
 
 #include "gl/gl_api.h"
 struct NocturneGLApi gl;
-void (APIENTRY *nocturne_glSecondaryColorPointer)(GLint, GLenum, GLsizei, const void *) = nullptr;
-void (APIENTRY *nocturne_glFogCoordPointer)(GLenum, GLsizei, const void *) = nullptr;
 extern "C" int nocturne_gl_load_api(void) { return 0; }
 
 #endif  // NOCTURNE_GL_PRESENT

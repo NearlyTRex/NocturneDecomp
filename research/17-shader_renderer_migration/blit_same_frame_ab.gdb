@@ -1,5 +1,12 @@
 # The present blit A/B with the game taken out of it entirely.
 #
+# KEPT FOR THE METHOD, NOT FOR RUNNING. It switches `nocturne_gl_blit_shader`
+# between a shader quad and an immediate-mode one; a core-profile build has one
+# quad and no such toggle, so this cannot execute as written. The design is the
+# part worth keeping — redraw one frame through the other path before the swap,
+# with a clear in between — and it applies to any A/B of two implementations of
+# something that only carries an image.
+#
 # blit_path_ab.gdb compares consecutive frames, which is as close as the draw
 # path could get. This quad can do better, and should be held to a harder
 # standard, because it only CARRIES a finished image — it rasterises nothing, so

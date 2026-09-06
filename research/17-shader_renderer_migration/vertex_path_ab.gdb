@@ -1,5 +1,9 @@
 # Did leaving client arrays change any pixels? One scene, captured both ways.
 #
+# KEPT AS A RECORD. It drives `nocturne_gl_shader_force_compat` against a
+# client-array vertex stage, and neither the symbol nor the stage exists in a
+# core-profile build, so it cannot execute as written.
+#
 # The draw path now submits vertices through a buffer object with named
 # attributes (a_pos pinned to location 0) and its own u_projection, instead of
 # gl_Vertex / gl_Color / gl_MultiTexCoord0 and ftransform() — which were only the

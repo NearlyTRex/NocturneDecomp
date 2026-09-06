@@ -150,10 +150,15 @@ extern "C" int nocturne_gl_init(SDL_Window *window) {
         return 1;
     }
 
-    // Compatibility profile: the renderer DLL's D3D render states map onto
-    // fixed-function GL, so a core profile would buy nothing and cost a shader
-    // reimplementation of alpha test / fog / texture env.
-    SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_COMPATIBILITY);
+    // Core profile, 3.3: every draw this build makes goes through a program of
+    // its own, so the fixed-function half of a compatibility context has no
+    // caller. 3.3 is the floor the renderer needs — GLSL 150, vertex array
+    // objects, instanced-free indexed drawing — and asking for exactly it keeps
+    // the driver from handing back something older on a machine that could do
+    // better.
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 3);
     SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
     SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);
 
@@ -362,13 +367,10 @@ extern "C" void nocturne_gl_present_framebuffer(const void *pixels, int width, i
 
     gl.Viewport(vp_x, vp_y, vp_w, vp_h);
 
-    // The 2D layer is an opaque full-frame blit: no depth, no blend, no lighting.
+    // The 2D layer is an opaque full-frame blit: no depth, no blend, no culling.
     gl.Disable(GL_DEPTH_TEST);
     gl.Disable(GL_BLEND);
-    gl.Disable(GL_ALPHA_TEST);
-    gl.Disable(GL_FOG);
     gl.Disable(GL_CULL_FACE);
-    gl.Disable(GL_LIGHTING);
     // Bind and fully re-specify the sampling state every frame. The renderer
     // DLL's D3DTSS_MINFILTER/MIPFILTER handling calls glTexParameteri against
     // whatever texture happens to be bound, and this one is still bound from the
@@ -388,34 +390,12 @@ extern "C" void nocturne_gl_present_framebuffer(const void *pixels, int width, i
     gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
     gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 
-    // Shader quad where the driver has one, the immediate-mode quad below where
-    // it does not. Nothing selects between them per renderer: software mode
-    // reaches the screen through here too, so this path has to be right for a
-    // build with no accelerated renderer loaded at all.
+    // Every frame reaches the screen through this one quad — software mode
+    // included, since nothing else draws there. A failure here is a black window
+    // and it says so, rather than being carried by a second path that would hide
+    // a program that stopped building.
     if (!nocturne_gl_blit_quad(g_gl.framebuffer_texture)) {
-        gl.MatrixMode(GL_PROJECTION);
-        gl.PushMatrix();
-        gl.LoadIdentity();
-        gl.Ortho(0.0, 1.0, 1.0, 0.0, -1.0, 1.0);  // top-left origin, matching raster order
-        gl.MatrixMode(GL_MODELVIEW);
-        gl.PushMatrix();
-        gl.LoadIdentity();
-
-        gl.Enable(GL_TEXTURE_2D);
-        gl.TexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
-        gl.Color4f(1.0f, 1.0f, 1.0f, 1.0f);
-
-        gl.Begin(GL_TRIANGLE_STRIP);
-            gl.TexCoord2f(0.0f, 0.0f); gl.Vertex2f(0.0f, 0.0f);
-            gl.TexCoord2f(1.0f, 0.0f); gl.Vertex2f(1.0f, 0.0f);
-            gl.TexCoord2f(0.0f, 1.0f); gl.Vertex2f(0.0f, 1.0f);
-            gl.TexCoord2f(1.0f, 1.0f); gl.Vertex2f(1.0f, 1.0f);
-        gl.End();
-
-        gl.MatrixMode(GL_PROJECTION);
-        gl.PopMatrix();
-        gl.MatrixMode(GL_MODELVIEW);
-        gl.PopMatrix();
+        DLOG_RL("render", 1, 600, "gl_present: present quad unavailable — frame not drawn");
     }
 
     SDL_GL_SwapWindow(g_gl.window);
@@ -439,16 +419,23 @@ extern "C" void nocturne_gl_scene_upload(const void *pixels, int width, int heig
     }
     if (!ensure_texture(width, height, format, type)) return;
 
-    // This runs MID-FRAME: after the engine's CPU write, before the renderer
-    // DLL's draws. Unlike the present path (which runs at the frame boundary,
-    // where the DLL re-establishes state anyway) anything left changed here
-    // lands directly on the actor draws.
-    const GLbitfield saved = GL_ENABLE_BIT | GL_TEXTURE_BIT | GL_DEPTH_BUFFER_BIT |
-                             GL_COLOR_BUFFER_BIT | GL_CURRENT_BIT | GL_VIEWPORT_BIT |
-                             GL_TRANSFORM_BIT | GL_SCISSOR_BIT | GL_POLYGON_BIT |
-                             GL_LIGHTING_BIT | GL_FOG_BIT;
-    if (gl.PushAttrib != nullptr)       gl.PushAttrib(saved);
-    if (gl.PushClientAttrib != nullptr) gl.PushClientAttrib(GL_CLIENT_PIXEL_STORE_BIT);
+    // This runs MID-FRAME: after the engine's CPU write, before the renderer's
+    // draws. Unlike the present path, which runs at the frame boundary where the
+    // renderer re-states its pipeline anyway, anything left changed here lands
+    // directly on the actor draws. So read back exactly what this function is
+    // about to change, and put it back at the end.
+    GLint prev_depth_test = 0, prev_depth_mask = 0, prev_blend = 0;
+    GLint prev_cull = 0, prev_scissor = 0, prev_texture = 0;
+    GLint prev_viewport[4] = { 0, 0, 0, 0 };
+    GLint prev_unpack_alignment = 4;
+    gl.GetIntegerv(GL_DEPTH_TEST, &prev_depth_test);
+    gl.GetIntegerv(GL_DEPTH_WRITEMASK, &prev_depth_mask);
+    gl.GetIntegerv(GL_BLEND, &prev_blend);
+    gl.GetIntegerv(GL_CULL_FACE, &prev_cull);
+    gl.GetIntegerv(GL_SCISSOR_TEST, &prev_scissor);
+    gl.GetIntegerv(GL_TEXTURE_BINDING_2D, &prev_texture);
+    gl.GetIntegerv(GL_VIEWPORT, prev_viewport);
+    gl.GetIntegerv(GL_UNPACK_ALIGNMENT, &prev_unpack_alignment);
 
     const int bytes_per_pixel = bpp / 8;
     gl.PixelStorei(GL_UNPACK_ALIGNMENT, 1);
@@ -464,12 +451,9 @@ extern "C" void nocturne_gl_scene_upload(const void *pixels, int width, int heig
     gl.Disable(GL_DEPTH_TEST);
     gl.DepthMask(GL_FALSE);
     gl.Disable(GL_BLEND);
-    gl.Disable(GL_ALPHA_TEST);
-    gl.Disable(GL_FOG);
     gl.Disable(GL_CULL_FACE);
-    gl.Disable(GL_LIGHTING);
 
-    // Re-specify sampling state: the DLL's D3DTSS filter handling runs against
+    // Re-specify sampling state: the renderer's filter handling runs against
     // whatever texture is bound, and a mipmap MIN_FILTER on this single-level
     // texture would make it incomplete — GL then drops texturing silently and
     // the quad comes out flat white. Same trap as the present path.
@@ -478,37 +462,23 @@ extern "C" void nocturne_gl_scene_upload(const void *pixels, int width, int heig
     gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
     gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 
-    // Same quad, same choice as the present path. glPushAttrib above does not
-    // cover the program or the array-buffer binding, so gl_blit puts those back
-    // itself — without that, the DLL's very next draw would inherit them.
+    // Same quad as the present path. gl_blit puts back the program and the
+    // vertex array itself — without that, the renderer's very next draw would
+    // inherit them.
     if (!nocturne_gl_blit_quad(g_gl.framebuffer_texture)) {
-        gl.MatrixMode(GL_PROJECTION);
-        gl.PushMatrix();
-        gl.LoadIdentity();
-        gl.Ortho(0.0, 1.0, 1.0, 0.0, -1.0, 1.0);  // top-left origin, matching the readback flip
-        gl.MatrixMode(GL_MODELVIEW);
-        gl.PushMatrix();
-        gl.LoadIdentity();
-
-        gl.Enable(GL_TEXTURE_2D);
-        gl.TexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
-        gl.Color4f(1.0f, 1.0f, 1.0f, 1.0f);
-
-        gl.Begin(GL_TRIANGLE_STRIP);
-            gl.TexCoord2f(0.0f, 0.0f); gl.Vertex2f(0.0f, 0.0f);
-            gl.TexCoord2f(1.0f, 0.0f); gl.Vertex2f(1.0f, 0.0f);
-            gl.TexCoord2f(0.0f, 1.0f); gl.Vertex2f(0.0f, 1.0f);
-            gl.TexCoord2f(1.0f, 1.0f); gl.Vertex2f(1.0f, 1.0f);
-        gl.End();
-
-        gl.MatrixMode(GL_PROJECTION);
-        gl.PopMatrix();
-        gl.MatrixMode(GL_MODELVIEW);
-        gl.PopMatrix();
+        DLOG_RL("render", 1, 600, "gl_present: scene seed quad unavailable — target not seeded");
     }
 
-    if (gl.PopClientAttrib != nullptr) gl.PopClientAttrib();
-    if (gl.PopAttrib != nullptr)       gl.PopAttrib();
+    // The scene target stays bound: seeding it is this function's purpose and the
+    // renderer's draws follow it there.
+    gl.PixelStorei(GL_UNPACK_ALIGNMENT, prev_unpack_alignment);
+    gl.BindTexture(GL_TEXTURE_2D, (GLuint)prev_texture);
+    gl.Viewport(prev_viewport[0], prev_viewport[1], prev_viewport[2], prev_viewport[3]);
+    if (prev_scissor)    gl.Enable(GL_SCISSOR_TEST);  else gl.Disable(GL_SCISSOR_TEST);
+    if (prev_depth_test) gl.Enable(GL_DEPTH_TEST);    else gl.Disable(GL_DEPTH_TEST);
+    if (prev_blend)      gl.Enable(GL_BLEND);         else gl.Disable(GL_BLEND);
+    if (prev_cull)       gl.Enable(GL_CULL_FACE);     else gl.Disable(GL_CULL_FACE);
+    gl.DepthMask(prev_depth_mask ? GL_TRUE : GL_FALSE);
 }
 
 extern "C" void nocturne_gl_present_scene(void) {
@@ -546,29 +516,7 @@ extern "C" void nocturne_gl_present_scene(void) {
     // A render target is drawn bottom-up, unlike an uploaded CPU image, so the
     // quad samples it the other way round.
     if (!nocturne_gl_blit_quad_flipped(g_gl.scene_color)) {
-        gl.MatrixMode(GL_PROJECTION);
-        gl.PushMatrix();
-        gl.LoadIdentity();
-        gl.Ortho(0.0, 1.0, 0.0, 1.0, -1.0, 1.0);
-        gl.MatrixMode(GL_MODELVIEW);
-        gl.PushMatrix();
-        gl.LoadIdentity();
-
-        gl.Enable(GL_TEXTURE_2D);
-        gl.TexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
-        gl.Color4f(1.0f, 1.0f, 1.0f, 1.0f);
-
-        gl.Begin(GL_TRIANGLE_STRIP);
-            gl.TexCoord2f(0.0f, 0.0f); gl.Vertex2f(0.0f, 0.0f);
-            gl.TexCoord2f(1.0f, 0.0f); gl.Vertex2f(1.0f, 0.0f);
-            gl.TexCoord2f(0.0f, 1.0f); gl.Vertex2f(0.0f, 1.0f);
-            gl.TexCoord2f(1.0f, 1.0f); gl.Vertex2f(1.0f, 1.0f);
-        gl.End();
-
-        gl.MatrixMode(GL_PROJECTION);
-        gl.PopMatrix();
-        gl.MatrixMode(GL_MODELVIEW);
-        gl.PopMatrix();
+        DLOG_RL("render", 1, 600, "gl_present: scene quad unavailable — frame not drawn");
     }
 
     SDL_GL_SwapWindow(g_gl.window);

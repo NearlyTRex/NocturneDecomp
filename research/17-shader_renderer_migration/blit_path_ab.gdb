@@ -1,5 +1,8 @@
 # Did moving the present blit off glBegin change any pixels?
 #
+# KEPT AS A RECORD. It drives `nocturne_gl_blit_shader`, which a core-profile
+# build does not have, so it cannot execute as written.
+#
 # gl_present.cpp drew its full-target quad with glOrtho, an immediate-mode
 # GL_TRIANGLE_STRIP and GL_REPLACE TexEnv — the last matrix-stack and glBegin
 # users left after the draw path moved to buffer objects. gl_blit.cpp replaces it

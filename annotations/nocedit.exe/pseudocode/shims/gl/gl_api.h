@@ -44,27 +44,12 @@ struct NocturneGLApi {
     void (APIENTRY *Enable)(GLenum);
     void (APIENTRY *Disable)(GLenum);
     void (APIENTRY *BlendFunc)(GLenum, GLenum);
-    void (APIENTRY *AlphaFunc)(GLenum, GLclampf);
     void (APIENTRY *DepthFunc)(GLenum);
     void (APIENTRY *DepthMask)(GLboolean);
     void (APIENTRY *DepthRange)(GLclampd, GLclampd);
-    void (APIENTRY *ShadeModel)(GLenum);
     void (APIENTRY *CullFace)(GLenum);
     void (APIENTRY *FrontFace)(GLenum);
     void (APIENTRY *PolygonMode)(GLenum, GLenum);
-    void (APIENTRY *Fogi)(GLenum, GLint);
-    void (APIENTRY *Fogf)(GLenum, GLfloat);
-    void (APIENTRY *Fogfv)(GLenum, const GLfloat *);
-
-    // --- matrices ------------------------------------------------------------
-    void (APIENTRY *MatrixMode)(GLenum);
-    void (APIENTRY *LoadIdentity)(void);
-    void (APIENTRY *PushMatrix)(void);
-    void (APIENTRY *PopMatrix)(void);
-    void (APIENTRY *Ortho)(GLdouble, GLdouble, GLdouble, GLdouble, GLdouble, GLdouble);
-    // Screen-space D3D vertices need an exact pixel->NDC projection; building
-    // the matrix directly beats composing it out of Ortho calls.
-    void (APIENTRY *LoadMatrixf)(const GLfloat *);
 
     // --- framebuffer objects -------------------------------------------------
     // A DirectDraw back buffer is persistent memory; GL's default framebuffer
@@ -96,40 +81,14 @@ struct NocturneGLApi {
                                 GLenum, GLenum, const void *);
     void (APIENTRY *TexSubImage2D)(GLenum, GLint, GLint, GLint, GLsizei, GLsizei,
                                    GLenum, GLenum, const void *);
-    void (APIENTRY *TexEnvi)(GLenum, GLenum, GLint);
 
-    // Server/client state save+restore. The scene upload runs mid-frame, in
-    // between the engine's CPU write and the renderer DLL's draws, so anything
-    // it changes and does not put back corrupts those draws — the DLL sets some
-    // state once at init rather than per draw. Bracketing with these is what
-    // keeps the upload invisible to it.
-    void (APIENTRY *PushAttrib)(GLbitfield);
-    void (APIENTRY *PopAttrib)(void);
-    void (APIENTRY *PushClientAttrib)(GLbitfield);
-    void (APIENTRY *PopClientAttrib)(void);
-
-    // --- immediate mode (2D blit only; geometry uses arrays) -----------------
-    void (APIENTRY *Begin)(GLenum);
-    void (APIENTRY *End)(void);
-    void (APIENTRY *Color4f)(GLfloat, GLfloat, GLfloat, GLfloat);
-    void (APIENTRY *TexCoord2f)(GLfloat, GLfloat);
-    void (APIENTRY *Vertex2f)(GLfloat, GLfloat);
-
-    // --- vertex arrays (the renderer DLL's DrawIndexedPrimitive path) --------
-    void (APIENTRY *EnableClientState)(GLenum);
-    void (APIENTRY *DisableClientState)(GLenum);
-    void (APIENTRY *VertexPointer)(GLint, GLenum, GLsizei, const void *);
-    void (APIENTRY *ColorPointer)(GLint, GLenum, GLsizei, const void *);
-    void (APIENTRY *TexCoordPointer)(GLint, GLenum, GLsizei, const void *);
+    // --- drawing -------------------------------------------------------------
     void (APIENTRY *DrawElements)(GLenum, GLsizei, GLenum, const void *);
 
     // --- shaders -------------------------------------------------------------
-    // Every entry here is optional: the shader paths check for nulls and fall
-    // back to fixed function, so a driver without them still renders.
-    //
-    // The compatibility profile keeps the client-array attributes visible to
-    // GLSL as gl_Vertex / gl_Color / gl_MultiTexCoord0 / gl_SecondaryColor, so
-    // a shader can be used over a client-array DrawElements path unchanged.
+    // Every draw goes through a program, so a context without these draws
+    // nothing. They load through the optional path all the same, so a driver
+    // that lacks them is named in the log rather than failing anonymously.
     GLuint (APIENTRY *CreateShader)(GLenum);
     void   (APIENTRY *ShaderSource)(GLuint, GLsizei, const GLchar *const *, const GLint *);
     void   (APIENTRY *CompileShader)(GLuint);
@@ -151,17 +110,11 @@ struct NocturneGLApi {
     void   (APIENTRY *Uniform4f)(GLint, GLfloat, GLfloat, GLfloat, GLfloat);
     void   (APIENTRY *ActiveTexture)(GLenum);
 
-    // --- buffers and generic attributes (GL 1.5 / 2.0), all optional ---------
+    // --- buffers and generic attributes --------------------------------------
     //
-    // What carries vertices without fixed function at all: a buffer object with
-    // named attributes, and UniformMatrix4fv for a projection the shader owns.
-    // The compatibility aliases above (gl_Vertex and friends) are only the
-    // client arrays under another name, so a shader reading them is still
-    // stapled to the fixed-function pipeline; these are not.
-    //
-    // Every one is allowed to be null: the draw path checks once and keeps using
-    // client arrays if any are missing, so a driver that cannot do this still
-    // renders.
+    // What carries vertices: a buffer object with named attributes, a vertex
+    // array object recording how to read it, and UniformMatrix4fv for a
+    // projection the shader owns.
     void   (APIENTRY *GenBuffers)(GLsizei, GLuint *);
     void   (APIENTRY *DeleteBuffers)(GLsizei, const GLuint *);
     void   (APIENTRY *BindBuffer)(GLenum, GLuint);
@@ -197,16 +150,6 @@ struct NocturneGLApi {
     // hand-filtered chain uploaded level by level.
     void   (APIENTRY *GenerateMipmap)(GLenum);
 };
-
-// D3D's second (specular) vertex color. GL 1.4 / EXT_secondary_color, so unlike
-// the table above it is allowed to be null — callers must check before use and
-// fall back to dropping the specular term.
-extern void (APIENTRY *nocturne_glSecondaryColorPointer)(GLint, GLenum, GLsizei, const void *);
-
-// GL 1.4, optional. Carries D3D7's per-vertex fog factor, which buildTLVertex
-// packs into the specular ALPHA byte — the one component glSecondaryColorPointer
-// has no room for. Consumed only by the shader path, as gl_FogCoord.
-extern void (APIENTRY *nocturne_glFogCoordPointer)(GLenum, GLsizei, const void *);
 
 // The loaded table. Valid only after nocturne_gl_load_api() returns 1.
 extern struct NocturneGLApi gl;

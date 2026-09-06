@@ -29,17 +29,19 @@ the build. The tridx7 tree stays on disk as the specification, with a README bes
 | present blit | **done, bit-exact in both modes** — buffer object + shader in `gl_blit.cpp` |
 | native renderer | **done, measured** — see "The native renderer A/B" below |
 | the DX7 path | **retired** — one renderer, one row in `g_BuiltinModules` |
-| core profile | **next** — nothing needs compatibility any more |
+| core profile | **done** — GL 3.3 core, pinned; no fixed-function GL anywhere |
 
 ### Pick up here
 
-1. **The core profile.** The native renderer is already core-clean: it binds a real VAO and its
-   shaders are `#version 150 core`. What is left is outside it — the context is requested as
-   compatibility at `gl/gl_present.cpp:156`, `gl_blit.cpp` is `#version 120` with no VAO and is
-   shared with software mode, three immediate-mode fallback quads remain in `gl_present.cpp`,
-   and `gl_api.cpp` lists the fixed-function entry points as mandatory, so a missing `glBegin`
-   takes the whole GL path down including software mode.
-2. **Three artifacts found by the A/B**, none of them the renderer — see open items 7, 8, 9.
+The migration is finished. What remains are the things it found and did not fix.
+
+1. **Three artifacts found by the A/B**, none of them the renderer — see open items 7, 8, 9.
+   Item 7, the coupling between a scene render and the CPU mirror, is the only one that could
+   plausibly show in gameplay.
+2. **Per-vertex fog's default** (open item 3) — implemented, off, still wanting a measurement
+   that can see it.
+3. **The game-side defects** shaders were once expected to fix and do not: the chapel window
+   double-draw (item 1) and the blade's scrambled UVs (item 5).
 
 Do not switch renderers by writing `g_UseDirect3D` / `g_UseExternalRenderer` from gdb — that
 skips renderer init and crashes within seconds. Use the options screen.
@@ -53,7 +55,6 @@ from an env var at first use:
 |---|---|---|
 | `nocturne_trigl_vertex_fog` | `NOCTURNE_TRIGL_VERTEX_FOG` | 0 off, 1 apply D3D per-vertex fog |
 | `nocturne_trigl_debug` | `NOCTURNE_TRIGL_DEBUG` | paint one shader input: 5 texture colour, 4 vertex colour, 3 UV, 2 final alpha, 1 texture alpha |
-| `nocturne_gl_blit_shader` | `NOCTURNE_GL_BLIT_SHADER` | 0 immediate-mode present quad, 1 shader quad. Read per blit — no rebuild, so the A/B can be adjacent frames |
 
 `nocturne_trigl_stats` counts what reached the hardware, and
 `nocturne_trigl_dump_draws("/tmp/draws.txt")` writes one line per draw of the frame being built —
@@ -64,11 +65,14 @@ The DX7 path's own instruments (`nocturne_dump_render_flags`, `nocturne_gl_shade
 `nocturne_gl_lightmap_debug`) went with it; the numbers they produced are quoted throughout this
 document and recoverable from git history.
 
-Probes in this directory: `vertex_path_ab.gdb` (phase 3's exit-criterion A/B),
-`blit_same_frame_ab.gdb` (phase 4's, and the stronger design — see below),
-`blit_path_ab.gdb`, `software_reference_capture.gdb`, `vertex_fog_ab.gdb`,
-`lightmap_view_capture.gdb`, `renderer_ab_capture.gdb` (one capture of the held frame through
-whichever renderer is selected — the harness the native renderer's A/B was measured with).
+Probes in this directory that still run: `renderer_ab_capture.gdb` (one capture of the held frame
+through whichever renderer is selected — the harness the native renderer's A/B was measured
+with), `software_reference_capture.gdb`, `lightmap_view_capture.gdb`.
+
+Kept as a record of how something was measured, not runnable against this build, each saying so
+in its header: `vertex_path_ab.gdb`, `blit_same_frame_ab.gdb` (whose *design* is the reusable
+part — redraw one frame through the other path before the swap, with a clear in between),
+`blit_path_ab.gdb`, `vertex_fog_ab.gdb`.
 
 `compare_ppm.py` compares captures the way the method rules require — matched percentiles, an
 exact-match fraction, and deliberately no differing-pixels mask or paired-pixel fit.
@@ -417,10 +421,11 @@ rendering" — the CPU background was untouched because it never goes through th
    `glUseProgram`, so it stayed zero, every vertex collapsed to the origin and every triangle
    degenerated. `set_projection` now checks `glGetError` on its first calls and names the cause.
 
-### Phase 4 — present path — **DONE**, core profile — **still blocked, on something else**
+### Phase 4 — present path and core profile — **BOTH DONE**
 
-**The blit is DONE and bit-exact in both modes.** The core profile is not, and the reason
-turned out to be something other than the blit — see the ledger at the end of this section.
+**The blit is bit-exact in both modes**, and the profile is now GL 3.3 core with 3.3 pinned. The
+ledger at the end of this section is what the core profile was waiting on and how it was
+misdiagnosed twice; it is kept because the shape of that mistake is worth having on record.
 
 Blend, depth, cull and scissor stay as GL state throughout — they are pipeline state, not
 shader concerns, and moving them would be change for its own sake.
@@ -429,10 +434,9 @@ shader concerns, and moving them would be change for its own sake.
 
 | Piece | File |
 | --- | --- |
-| The quad: program, static 4-vertex buffer object, `GL_REPLACE` in two lines of GLSL | `nocedit.exe/.../shims/gl_blit.{h,cpp}` |
-| Both call sites, each with the immediate-mode quad kept as an automatic fallback | `gl_present.cpp` — `nocturne_gl_present_framebuffer`, `nocturne_gl_scene_upload` |
-| `glDrawArrays`, loaded optionally like the rest of the shader set | `gl_api.{h,cpp}` |
-| Live toggle | `nocturne_gl_blit_shader` / `NOCTURNE_GL_BLIT_SHADER`, default on |
+| The quad: program, static 4-vertex buffer object, vertex array, two lines of GLSL | `nocedit.exe/.../shims/gl/gl_blit.{h,cpp}` |
+| Its call sites | `gl_present.cpp` — `nocturne_gl_present_framebuffer`, `nocturne_gl_scene_upload`, `nocturne_gl_present_scene` |
+| `glDrawArrays` and the vertex-array calls | `gl_api.{h,cpp}` |
 
 `gl_blit` deliberately does **not** call into tridx7's `gl_shader.cpp`, even though both are in
 one binary. That program belongs to one renderer and is chosen in Graphics Options; this quad
@@ -503,17 +507,36 @@ on ONE path — so a bit-exact test is not available there; what this shows is t
 not distinguishable from the frame-to-frame motion, on the one call site where a bit-exact test
 cannot be built.
 
-#### The ledger — what actually blocks the core profile
+#### The ledger — what the core profile was waiting on
 
-Not the blit any more. Everything left in `gl_present.cpp` is either inside the fallback branch
-or is `glDisable(GL_ALPHA_TEST / GL_FOG / GL_LIGHTING)`, three enums a core profile rejects and
-which the shader path does not need.
+This was answered wrongly twice, which is why it is written down. First the blit was blamed: it
+was the last immediate mode on the way to the window, so narrowing the profile looked like a
+question about the quad. It was not — once the quad was a shader, the fallback beside it and
+three `glDisable` enums were all that remained in `gl_present.cpp`, and neither is a blocker on
+its own.
 
-The real blocker is bigger and was mis-stated before: **the context is created once at startup,
-before a renderer is chosen.** `tridx7.dll` is the fixed-function renderer and needs the
-compatibility profile for its own draws, so the profile cannot be narrowed for `trigl` without
-either taking `tridx7` away or recreating the context on a renderer switch. That is a separate
-decision, not a leftover of this phase.
+The real one was structural: **the context is created once at startup, before a renderer is
+chosen.** The decompiled DX7 renderer needed a compatibility profile for its own draws, so the
+profile could not be narrowed while it was selectable — the choice was to drop it or to recreate
+the context on a renderer switch. Retiring it settled the question, and the profile change that
+followed was four small edits.
+
+What that cost, and what it is worth knowing for the next one of these: a piece of work can be
+blocked by something no amount of looking at the blocked thing will reveal.
+
+#### What the profile change came to
+
+- `SDL_GL_CONTEXT_PROFILE_CORE` with 3.3 pinned, at `gl_present.cpp:156`.
+- The immediate-mode fallback quad gone from all three call sites, each now logging that nothing
+  was drawn rather than presenting a frame that came from somewhere else.
+- `gl_blit` on a vertex array of its own, `#version 150 core`.
+- `glPushAttrib`/`glPopAttrib` around the mid-frame scene seed replaced by reading back exactly
+  the state that function changes and putting it back.
+- The fixed-function half of `NocturneGLApi` deleted rather than made optional — immediate mode,
+  the matrix stack, `AlphaFunc`, `ShadeModel`, `Fog*`, `TexEnvi`, the attrib stack, the client
+  arrays and the two loose `glSecondaryColorPointer`/`glFogCoordPointer` globals. Every one had
+  no caller left, so a missing `glBegin` can no longer take the GL path down: there is no
+  `glBegin`.
 
 ## Risks
 
