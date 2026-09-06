@@ -567,6 +567,10 @@ void nocturne_trigl_gl_shutdown(void) {
     g_current_valid = false;
 }
 
+void nocturne_trigl_gl_invalidate_state(void) {
+    g_current_valid = false;
+}
+
 void nocturne_trigl_gl_set_target_size(int width, int height) {
     if (!g_ready || width <= 0 || height <= 0) return;
     g_target_width  = width;
@@ -708,8 +712,14 @@ void nocturne_trigl_gl_bind_texture(unsigned texture) {
             (g_current.mag_filter == NOCTURNE_TRIGL_FILTER_LINEAR) ? GL_LINEAR : GL_NEAREST;
         gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, min_filter);
         gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, mag_filter);
-        gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-        gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+        // Clamped, which is the addressing mode the engine asks for: it sets
+        // TEXTUREADDRESS to CLAMP once when the device comes up and never
+        // changes it. Repeating instead sends a coordinate that strays outside
+        // 0..1 to the opposite edge of the image rather than holding it at the
+        // near one, so a surface whose coordinates run a little past the end
+        // takes a band of some unrelated part of its own texture.
+        gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+        gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
     }
 }
 
@@ -887,6 +897,7 @@ void nocturne_trigl_gl_shutdown(void) {}
 void nocturne_trigl_gl_set_target_size(int, int) {}
 void nocturne_trigl_gl_set_fog_color(float, float, float) {}
 void nocturne_trigl_gl_apply_state(const NocturneTriglPipelineState *) {}
+void nocturne_trigl_gl_invalidate_state(void) {}
 unsigned nocturne_trigl_gl_texture(const char *, int, const unsigned *, int, int) { return 0; }
 unsigned nocturne_trigl_gl_texture_cached(const char *, int) { return 0; }
 void nocturne_trigl_gl_bind_texture(unsigned) {}

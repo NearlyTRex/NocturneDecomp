@@ -44,6 +44,14 @@ void nocturne_trigl_gl_set_target_size(int width, int height);
 // draws sharing a state costs one call each rather than a dozen.
 void nocturne_trigl_gl_apply_state(const NocturneTriglPipelineState *state);
 
+// Forget what the pipeline is believed to hold, so the next draw states all of
+// it again. Required after anything outside this file has touched the state the
+// cache describes — presenting a frame turns off depth testing, blending and
+// culling to draw its quad, and a cache that still describes the last draw
+// would skip re-enabling them and put the following frame's geometry out with
+// no depth test at all.
+void nocturne_trigl_gl_invalidate_state(void);
+
 // The colour a fully fogged fragment becomes. Components are 0..1.
 void nocturne_trigl_gl_set_fog_color(float r, float g, float b);
 

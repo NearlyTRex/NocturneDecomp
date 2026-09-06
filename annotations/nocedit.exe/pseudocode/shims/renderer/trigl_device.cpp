@@ -165,6 +165,8 @@ void nocturne_trigl_device_close(void) {
 
 int nocturne_trigl_device_set_mode(int width, int height, int bpp, void **scanlines) {
     if (!g_dev.open || width <= 0 || height <= 0) return 0;
+    const bool mode_moved =
+        (width != g_dev.width) || (height != g_dev.height) || (bpp != g_dev.bpp);
     GLenum format = 0, type = 0;
     if (!gl_format_for_bpp(bpp, &format, &type)) {
         DDRAW_LOG("trigl_device: %d bits per pixel is not a mode this renderer has", bpp);
@@ -206,12 +208,21 @@ int nocturne_trigl_device_set_mode(int width, int height, int bpp, void **scanli
 
     nocturne_trigl_gl_set_target_size(width, height);
     nocturne_gl_set_logical_size(width, height);
-    // The texture cache survives a mode change. Texture objects are independent
-    // of the target they are sampled into, and the images are RGBA8 whatever
-    // depth the mode asks for, so there is nothing about them a new mode
-    // invalidates. Dropping them here would cost a full re-expansion of every
-    // resident image the moment the resolution moves.
-    DDRAW_LOG("trigl_device: mode %dx%d at %d bpp", width, height, bpp);
+    // A resolution the engine actually moved to drops the texture cache. The
+    // cache is keyed on the engine's name for an image and the dimension it is
+    // working at, and neither of those pins the PIXELS: the engine reloads its
+    // assets around a resolution change, so a name can come back describing a
+    // different image at the same dimension. Serving the resident one then puts
+    // somebody else's texture on the geometry.
+    //
+    // Only when the mode moved. setVideoMode is re-asserted with the mode it
+    // already has often enough that dropping the cache every time would
+    // re-expand every resident image for nothing.
+    if (mode_moved) {
+        nocturne_trigl_gl_release_textures();
+    }
+    DDRAW_LOG("trigl_device: mode %dx%d at %d bpp%s", width, height, bpp,
+              mode_moved ? ", textures dropped" : "");
     return 1;
 }
 
@@ -282,6 +293,7 @@ int nocturne_trigl_device_unlock_frame(void) {
     // place the finished frame lives.
     nocturne_gl_scene_upload(g_dev.image, g_dev.width, g_dev.height,
                              g_dev.pitch, g_dev.bpp);
+    nocturne_trigl_gl_invalidate_state();
     g_dev.target_ahead = false;
     return 1;
 }
@@ -327,6 +339,7 @@ int nocturne_trigl_device_restore_screen(void) {
     // image and the picture comes back only to be overwritten.
     nocturne_gl_scene_upload(g_dev.image, g_dev.width, g_dev.height,
                              g_dev.pitch, g_dev.bpp);
+    nocturne_trigl_gl_invalidate_state();
     g_dev.target_ahead = false;
     return 1;
 }
@@ -355,6 +368,7 @@ int nocturne_trigl_device_unlock_hold_buffer(void) {
     // performs from a 640x480 hold buffer to a larger screen.
     nocturne_gl_scene_upload(g_dev.hold, kHoldWidth, kHoldHeight,
                              g_dev.hold_pitch, g_dev.bpp);
+    nocturne_trigl_gl_invalidate_state();
     g_dev.target_ahead = false;
     return 1;
 }
@@ -395,6 +409,11 @@ void nocturne_trigl_device_present(void) {
     if (g_dev.in_scene) nocturne_trigl_device_end_scene();
     nocturne_trigl_device_flush();
     nocturne_gl_present_scene();
+    // Presenting draws a quad of its own with depth testing, blending and
+    // culling turned off, and does not put them back. The cache has to be told,
+    // or it compares the next draw against a state the pipeline no longer holds
+    // and skips the call that would restore it.
+    nocturne_trigl_gl_invalidate_state();
 }
 
 // The batch is reached by the draw entry points, which live beside this.
