@@ -259,7 +259,7 @@ static int __cdecl trigl_init(HWND window, CExternalRendererBridge *interface) {
     }
     nocturne_trigl_device_set_bridge(g_bridge_valid ? &g_bridge : nullptr);
     if (!nocturne_trigl_device_open()) {
-        DDRAW_LOG("trigl: the device could not be opened");
+        DLOG("render","trigl: the device could not be opened");
         return 0;
     }
     g_r.state_valid = false;

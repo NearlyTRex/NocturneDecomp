@@ -189,7 +189,7 @@ extern "C" unsigned int nocturne_rng_sim(void)
     // refusing it would change what the game does.
     if ((rng_in_sim_frame() == 0) && (s_reported_stray_sim == 0)) {
         s_reported_stray_sim = 1;
-        DLOG_EX("netplay", "RNG: nocturne_rng_sim() called outside CGame::process - "
+        DLOG("netplay", "RNG: nocturne_rng_sim() called outside CGame::process - "
                            "the sim seed is not authoritative here, so this draw may "
                            "differ per machine");
     }
@@ -249,7 +249,7 @@ extern "C" unsigned int nocturne_rng_offframe(void)
 {
     if ((rng_is_network_game() != 0) && (s_reported_offframe == 0)) {
         s_reported_offframe = 1;
-        DLOG_EX("netplay", "RNG: the game's RNG primitives took their "
+        DLOG("netplay", "RNG: the game's RNG primitives took their "
                            "is_processing == 0 fallback during a network game - a "
                            "simulation decision made outside CGame::process draws "
                            "from the per-machine libc stream");
@@ -275,7 +275,7 @@ extern "C" void nocturne_rng_note_raw_draw(void)
 
     if ((rng_is_network_game() != 0) && (s_reported_undeclared == 0)) {
         s_reported_undeclared = 1;
-        DLOG_EX("netplay", "RNG: bare rand() called inside a sim frame - a call site "
+        DLOG("netplay", "RNG: bare rand() called inside a sim frame - a call site "
                            "that has not been routed through rng.h. If its result "
                            "reaches simulation state it is a desync source");
     }

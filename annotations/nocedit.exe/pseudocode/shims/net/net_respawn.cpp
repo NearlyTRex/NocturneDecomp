@@ -362,7 +362,7 @@ extern "C" int nocturne_net_respawn_request(void)
     s_have_pending = 1;
     respawn_broadcast();
 
-    DLOG_EX("netplay", "respawn of %d heroes scheduled for sim frame %d",
+    DLOG("netplay", "respawn of %d heroes scheduled for sim frame %d",
             hero_count, s_pending.apply_sequence);
     return 1;
 }
@@ -471,7 +471,7 @@ extern "C" void nocturne_net_respawn_apply_if_due(int sequence_number)
     }
 
     s_have_pending = 0;
-    DLOG_EX("netplay", "respawn applied on sim frame %d", sequence_number);
+    DLOG("netplay", "respawn applied on sim frame %d", sequence_number);
 }
 
 #else  /* NOCTURNE_AUTHENTIC_NETPLAY */

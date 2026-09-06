@@ -632,7 +632,7 @@ MCIERROR shim_mciSendStringA(LPCSTR lpstrCommand, LPSTR lpstrReturnString,
         }
 
         int open_rc = movie_open(filepath);
-        DLOG_EX("attract", "mci open '%s' -> %d (%dx%d fps=%.2f dur=%.1fs audio=%d)",
+        DLOG("frontend", "mci open '%s' -> %d (%dx%d fps=%.2f dur=%.1fs audio=%d)",
                 filepath, open_rc, s_movie.width, s_movie.height,
                 s_movie.fps, s_movie.duration_sec, s_movie.audio_stream_idx);
         if (open_rc < 0) {
@@ -805,7 +805,7 @@ extern "C" int mci_video_pump_frame() {
     if (s_movie.at_eof && s_movie.queue_count == 0) {
         if (s_movie.drained_ticks == 0) {
             s_movie.drained_ticks = SDL_GetTicks();
-            DLOG_EX("attract",
+            DLOG("frontend",
                     "mci drained after %ums: packets=%u presented=%u dropped=%u "
                     "read_err=%d clock=%.2f audio_dev=%d queued=%u bps=%d",
                     (unsigned)(s_movie.drained_ticks - s_movie.play_start_ticks),

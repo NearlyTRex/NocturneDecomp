@@ -106,7 +106,7 @@ int bind(_SOCKET s, const struct SOCKADDR* addr, int namelen) {
         if (bind_ip != nullptr && *bind_ip != '\0') {
             SOCKADDR local = *addr;
             local.sin_addr = (int)posix_inet_addr(bind_ip);
-            DLOG_EX("net", "bind: INADDR_ANY -> %s port %u", bind_ip,
+            DLOG("netplay", "bind: INADDR_ANY -> %s port %u", bind_ip,
                     (unsigned)ntohs(local.sin_port));
             return posix_bind((int)s, &local, (unsigned int)namelen);
         }

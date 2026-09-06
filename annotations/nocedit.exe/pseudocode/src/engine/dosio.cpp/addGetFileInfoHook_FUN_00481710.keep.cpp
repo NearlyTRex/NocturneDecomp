@@ -16,9 +16,9 @@ void __cdecl engine_dosio_cpp_addGetFileInfoHook_FUN_00481710(FileSearchHandlerF
     g_CurrentLineNumber = 83;
     core_main_c_displayErrorAndQuit_FUN_00506f10("addGetFileInfoHook - too many!");
   }
-  DLOG("addGetFileInfoHook: handler=%p, count before=%d", (void*)handler, g_NumSearchHandlers);
+  DLOG("fileio", "addGetFileInfoHook: handler=%p, count before=%d", (void*)handler, g_NumSearchHandlers);
   g_SearchHandlers[g_NumSearchHandlers] = handler;
   g_NumSearchHandlers = g_NumSearchHandlers + 1;
-  DLOG("count after=%d", g_NumSearchHandlers);
+  DLOG("fileio", "count after=%d", g_NumSearchHandlers);
   return;
 }

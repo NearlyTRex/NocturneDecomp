@@ -236,12 +236,12 @@ LAB_005131d5:
 #if NOCTURNE_ATTRACT_MOVIES
     if (nocturne_attract_tick() != 0) {
       _sprintf(attract_movie,"noc%d.avi",core_actor_cpp_getRandomInt_FUN_0040cc70(1,4));
-      DLOG_EX("attract","playing '%s'",attract_movie);
+      DLOG("frontend","playing '%s'",attract_movie);
       engine_2d_c_clearInputAndWait_FUN_00403260();
       core_sound_cpp_CSound_reset_FUN_005b39a0(g_CSoundPtr);
       nocturne_attract_pre_movie_pause();
       attract_result = wincore_winvideo_cpp_playMovie_FUN_005f4a00("video",attract_movie);
-      DLOG_EX("attract","playMovie returned %d",attract_result);
+      DLOG("frontend","playMovie returned %d",attract_result);
       core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
     }
 #endif

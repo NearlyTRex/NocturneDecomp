@@ -70,12 +70,12 @@ static void net_write_template(const char *resolved_path) {
     if (f == nullptr) {
         // Read-only install, or no system directory — nothing to do but keep
         // the built-in defaults.
-        DLOG_EX("net", "netplay.ini: could not create '%s'", resolved_path);
+        DLOG("netplay", "netplay.ini: could not create '%s'", resolved_path);
         return;
     }
     fputs(NET_INI_TEMPLATE, f);
     fclose(f);
-    DLOG_EX("net", "netplay.ini: created '%s' with the shipped defaults",
+    DLOG("netplay", "netplay.ini: created '%s' with the shipped defaults",
             resolved_path);
 }
 #endif
@@ -152,7 +152,7 @@ static void net_load(void) {
     }
     fclose(f);
 
-    DLOG_EX("net",
+    DLOG("netplay",
             "netplay.ini: bindAddress='%s' serverAddress='%s' port=%d playerName='%s'",
             s_bind_address, s_server_address, s_port, s_player_name);
 #endif

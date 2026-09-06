@@ -229,7 +229,7 @@ within seconds. Use the options screen.
 Each phase is independently testable and reuses the previous phase's plumbing.
 
 ### Phase 0 — plumbing, no behaviour change
-- `shims/gl_shader.{h,cpp}`: compile/link/uniform-cache helper, errors to `DDRAW_LOG`.
+- `shims/gl_shader.{h,cpp}`: compile/link/uniform-cache helper, errors to `DLOG("render", …)`.
 - A **pass-through** fragment shader that reproduces current fixed-function output for DLL
   draws (modulate + secondary colour + fog + alpha test).
 - Register the shader path as a second built-in renderer (see above) so it is selectable in

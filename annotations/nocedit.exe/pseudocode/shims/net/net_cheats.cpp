@@ -64,13 +64,13 @@ extern "C" void nocturne_net_cheats_announce(void)
             }
         }
     }
-    DLOG_EX("netplay", "CHEATS announce count=%d", packet.count);
+    DLOG("netplay", "CHEATS announce count=%d", packet.count);
 }
 
 extern "C" void nocturne_net_cheats_reset(void)
 {
     if (nocturne_cheats_override_active() != 0) {
-        DLOG_EX("netplay", "CHEATS override dropped");
+        DLOG("netplay", "CHEATS override dropped");
     }
     nocturne_cheats_clear_override();
 }
@@ -89,13 +89,13 @@ extern "C" int nocturne_net_cheats_on_packet(const void *packet, int packet_size
     // count. Applying a short list would silently arm the wrong lines, so the
     // guest keeps its own and lets the desync detector speak instead.
     if (in->count != NOCTURNE_CHEAT_COUNT) {
-        DLOG_EX("netplay", "CHEATS ignored: host sent %d entries, this build has %d",
+        DLOG("netplay", "CHEATS ignored: host sent %d entries, this build has %d",
                 in->count, NOCTURNE_CHEAT_COUNT);
         return 1;
     }
 
     nocturne_cheats_set_override(in->state, in->count);
-    DLOG_EX("netplay", "CHEATS adopted from host");
+    DLOG("netplay", "CHEATS adopted from host");
     return 1;
 }
 

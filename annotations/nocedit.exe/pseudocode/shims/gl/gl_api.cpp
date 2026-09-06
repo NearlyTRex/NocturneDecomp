@@ -176,7 +176,7 @@ extern "C" int nocturne_gl_load_api(void) {
                 SDL_GL_GetProcAddress("glSecondaryColorPointerEXT"));
     }
     if (nocturne_glSecondaryColorPointer == nullptr) {
-        DDRAW_LOG("gl_api: no glSecondaryColorPointer — specular term dropped");
+        DLOG("render","gl_api: no glSecondaryColorPointer — specular term dropped");
     }
 
     // Also optional. This is the channel D3D7's per-vertex fog factor needs:
@@ -193,11 +193,11 @@ extern "C" int nocturne_gl_load_api(void) {
                 SDL_GL_GetProcAddress("glFogCoordPointerEXT"));
     }
     if (nocturne_glFogCoordPointer == nullptr) {
-        DDRAW_LOG("gl_api: no glFogCoordPointer — per-vertex fog unavailable");
+        DLOG("render","gl_api: no glFogCoordPointer — per-vertex fog unavailable");
     }
 
     if (missing != nullptr) {
-        DDRAW_LOG("gl_api: failed to resolve %s — GL path unavailable", missing);
+        DLOG("render","gl_api: failed to resolve %s — GL path unavailable", missing);
         g_failed = true;
         return 0;
     }

@@ -75,7 +75,7 @@ double now_seconds() {
 
 extern "C" void nocturne_attract_set_opening_played(int played) {
     s_opening_played = played ? 1 : 0;
-    DLOG_EX("attract", "opening_played=%d", s_opening_played);
+    DLOG("frontend", "opening_played=%d", s_opening_played);
 }
 
 extern "C" void nocturne_attract_set_music_duration(float seconds) {
@@ -91,7 +91,7 @@ extern "C" void nocturne_attract_set_music_duration(float seconds) {
         s_music_deadline = 0.0;
         s_armed = 0;
     }
-    DLOG_EX("attract", "music_duration=%.2fs armed=%d (opening_played=%d)",
+    DLOG("frontend", "music_duration=%.2fs armed=%d (opening_played=%d)",
             (double)seconds, s_armed, s_opening_played);
 }
 
@@ -109,7 +109,7 @@ extern "C" int nocturne_attract_tick(void) {
     // Disarm so this fires once; the caller restarts the music and
     // CSound::configure registers a fresh duration to re-arm.
     s_armed = 0;
-    DLOG_EX("attract", "fired %.2fs after arming (deadline was %.2fs after)",
+    DLOG("frontend", "fired %.2fs after arming (deadline was %.2fs after)",
             now - s_armed_at, s_music_deadline - s_armed_at);
     s_music_deadline = 0.0;
     return 1;

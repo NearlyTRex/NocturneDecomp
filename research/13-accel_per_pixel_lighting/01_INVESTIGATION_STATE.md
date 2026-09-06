@@ -470,7 +470,7 @@ it for world geometry. Settle that before acting on it (see O4).
 2. **"The specular / overbright term is being dropped by the GL shim."** The code is present
    (`gl_ddraw.cpp` `device_DrawIndexedPrimitive`, `glSecondaryColorPointer` +
    `GL_COLOR_SUM`), and the one-time `gl_api: no glSecondaryColorPointer — specular term
-   dropped` message does **not** appear in `nocturne_ddraw.log` on this box (NVIDIA, GL 4.6).
+   dropped` message does **not** appear in `nocturne_render.log` on this box (NVIDIA, GL 4.6).
    Even if it *were* dropped, C3 shows specular cannot account for a ½ gain — it only engages
    above the point where software already clamps.
 3. **"`loadLightTable` / `buildBlendTables` are stubbed in the editor, so lighting tables are

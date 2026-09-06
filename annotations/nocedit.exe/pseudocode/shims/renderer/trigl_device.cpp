@@ -127,7 +127,7 @@ struct CExternalRendererBridge *nocturne_trigl_device_bridge(void) {
 int nocturne_trigl_device_open(void) {
     if (g_dev.open) return 1;
     if (!nocturne_gl_ensure_active()) {
-        DDRAW_LOG("trigl_device: no GL context");
+        DLOG("render","trigl_device: no GL context");
         return 0;
     }
     if (!nocturne_trigl_gl_init()) return 0;
@@ -137,7 +137,7 @@ int nocturne_trigl_device_open(void) {
     g_dev.batch_indices = (unsigned short *)malloc(
         sizeof(unsigned short) * (size_t)kBatchIndices);
     if (g_dev.batch_vertices == nullptr || g_dev.batch_indices == nullptr) {
-        DDRAW_LOG("trigl_device: could not allocate the batch");
+        DLOG("render","trigl_device: could not allocate the batch");
         return 0;
     }
     g_dev.batch.vertices        = g_dev.batch_vertices;
@@ -169,11 +169,11 @@ int nocturne_trigl_device_set_mode(int width, int height, int bpp, void **scanli
         (width != g_dev.width) || (height != g_dev.height) || (bpp != g_dev.bpp);
     GLenum format = 0, type = 0;
     if (!gl_format_for_bpp(bpp, &format, &type)) {
-        DDRAW_LOG("trigl_device: %d bits per pixel is not a mode this renderer has", bpp);
+        DLOG("render","trigl_device: %d bits per pixel is not a mode this renderer has", bpp);
         return 0;
     }
     if (!nocturne_gl_scene_target_bind(width, height)) {
-        DDRAW_LOG("trigl_device: no scene target at %dx%d", width, height);
+        DLOG("render","trigl_device: no scene target at %dx%d", width, height);
         return 0;
     }
 
@@ -190,7 +190,7 @@ int nocturne_trigl_device_set_mode(int width, int height, int bpp, void **scanli
     g_dev.hold_lines = (void **)calloc((size_t)kHoldHeight, sizeof(void *));
     if (g_dev.image == nullptr || g_dev.scanlines == nullptr ||
         g_dev.hold == nullptr || g_dev.hold_lines == nullptr) {
-        DDRAW_LOG("trigl_device: could not allocate the %dx%d image", width, height);
+        DLOG("render","trigl_device: could not allocate the %dx%d image", width, height);
         free_mode_storage();
         return 0;
     }
@@ -221,7 +221,7 @@ int nocturne_trigl_device_set_mode(int width, int height, int bpp, void **scanli
     if (mode_moved) {
         nocturne_trigl_gl_release_textures();
     }
-    DDRAW_LOG("trigl_device: mode %dx%d at %d bpp%s", width, height, bpp,
+    DLOG("render","trigl_device: mode %dx%d at %d bpp%s", width, height, bpp,
               mode_moved ? ", textures dropped" : "");
     return 1;
 }
@@ -319,7 +319,7 @@ int nocturne_trigl_device_save_screen(void) {
     g_saved_height = g_dev.height;
     g_saved_bpp    = g_dev.bpp;
     g_saved_pitch  = g_dev.pitch;
-    DDRAW_LOG("trigl_device: holding a %dx%d screen across the mode change",
+    DLOG("render","trigl_device: holding a %dx%d screen across the mode change",
               g_saved_width, g_saved_height);
     return 1;
 }
@@ -328,7 +328,7 @@ int nocturne_trigl_device_restore_screen(void) {
     if (g_saved_screen == nullptr || !g_dev.open || g_dev.image == nullptr) return 0;
     if (g_saved_width != g_dev.width || g_saved_height != g_dev.height ||
         g_saved_bpp != g_dev.bpp || g_saved_pitch != g_dev.pitch) {
-        DDRAW_LOG("trigl_device: the held screen is %dx%d at %d bpp and the mode is "
+        DLOG("render","trigl_device: the held screen is %dx%d at %d bpp and the mode is "
                   "%dx%d at %d bpp, so it no longer describes the screen",
                   g_saved_width, g_saved_height, g_saved_bpp,
                   g_dev.width, g_dev.height, g_dev.bpp);

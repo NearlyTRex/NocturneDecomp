@@ -361,7 +361,7 @@ void fill_zbuffer(DDPIXELFORMAT *pf, DWORD depth_bits) {
 
 static HRESULT gl_unsupported_stub(void *this_ptr, ...) {
     (void)this_ptr;
-    DDRAW_LOG_RL(4, 1000, "gl_ddraw: unimplemented DirectX method called");
+    DLOG_RL("render",4, 1000, "gl_ddraw: unimplemented DirectX method called");
     return DDERR_UNSUPPORTED;
 }
 
@@ -494,7 +494,7 @@ GLuint surface_depth_fbo(GLSurface *surf) {
     gl.BindFramebuffer(GL_FRAMEBUFFER, prev_fbo);
 
     if (status != GL_FRAMEBUFFER_COMPLETE) {
-        DDRAW_LOG("gl_ddraw: master Z FBO incomplete (%ux%u)",
+        DLOG("render","gl_ddraw: master Z FBO incomplete (%ux%u)",
                   (unsigned)surf->width, (unsigned)surf->height);
         gl.DeleteFramebuffers(1, &surf->depth_fbo);
         gl.DeleteRenderbuffers(1, &surf->depth_rb);
@@ -545,7 +545,7 @@ void surface_readback_from_gl(GLSurface *surf) {
     if (surf->bpp != 32 && surf->bpp != 16) {
         // Never silently skip: without the readback the 3D scene never reaches
         // the CPU buffer and the frame goes black with no other symptom.
-        DDRAW_LOG_RL(4, 500, "gl_ddraw: no readback path for %u-bit surface",
+        DLOG_RL("render",4, 500, "gl_ddraw: no readback path for %u-bit surface",
                      (unsigned)surf->bpp);
         return;
     }
@@ -660,7 +660,7 @@ static HRESULT surface_Lock(IDirectDrawSurface *this_ptr, RECT *rect,
 
     surf->locked = 1;
     if ((surf->caps & DDSCAPS_OFFSCREENPLAIN) != 0) {
-        DDRAW_LOG_RL(4, 120, "gl_ddraw: HOLD lock  base=%p pitch=%u %ux%u bpp=%u nonzero=%d/64",
+        DLOG_RL("render",4, 120, "gl_ddraw: HOLD lock  base=%p pitch=%u %ux%u bpp=%u nonzero=%d/64",
                      surf->pixels, (unsigned)surf->pitch, (unsigned)surf->width,
                      (unsigned)surf->height, (unsigned)surf->bpp,
                      surface_probe_nonzero(surf));
@@ -678,7 +678,7 @@ static HRESULT surface_Unlock(IDirectDrawSurface *this_ptr, void *unused) {
     // through the scanline pointers APIDLLlockHoldBuffer handed it. Non-zero
     // here means the write landed in this surface; zero means it went elsewhere.
     if ((surf->caps & DDSCAPS_OFFSCREENPLAIN) != 0) {
-        DDRAW_LOG_RL(4, 120, "gl_ddraw: HOLD unlock base=%p nonzero=%d/64",
+        DLOG_RL("render",4, 120, "gl_ddraw: HOLD unlock base=%p nonzero=%d/64",
                      surf->pixels, surface_probe_nonzero(surf));
     }
 
@@ -800,7 +800,7 @@ static HRESULT surface_Blt(IDirectDrawSurface *this_ptr, RECT *dest_rect,
         if (surface_blt_depth(dst, src, dest_rect)) {
             return DD_OK;
         }
-        DDRAW_LOG_RL(4, 200, "gl_ddraw: Z-buffer Blt unavailable — depth not copied");
+        DLOG_RL("render",4, 200, "gl_ddraw: Z-buffer Blt unavailable — depth not copied");
         return DD_OK;
     }
 
@@ -835,7 +835,7 @@ static HRESULT surface_Blt(IDirectDrawSurface *this_ptr, RECT *dest_rect,
         // Blt passes NULL for both rects, i.e. a stretch. nocturne_gl_scene_upload
         // draws the source across the whole scene target, which is that stretch.
         if ((dst->caps & (DDSCAPS_BACKBUFFER | DDSCAPS_PRIMARYSURFACE)) != 0) {
-            DDRAW_LOG_RL(4, 120,
+            DLOG_RL("render",4, 120,
                 "gl_ddraw: seed scene from Blt src=%ux%u bpp=%u pitch=%u caps=0x%x "
                 "-> dst=%ux%u bpp=%u caps=0x%x  src_nonzero=%d/64",
                 (unsigned)src->width, (unsigned)src->height, (unsigned)src->bpp,
@@ -1233,7 +1233,7 @@ static HRESULT device_SetRenderState(IDirect3DDevice3 *this_ptr,
             break;
 
         default:
-            DDRAW_LOG_RL(4, 500, "gl_ddraw: unhandled render state %u = %u",
+            DLOG_RL("render",4, 500, "gl_ddraw: unhandled render state %u = %u",
                          (unsigned)state, (unsigned)value);
             break;
     }
@@ -1288,7 +1288,7 @@ static HRESULT device_SetTextureStageState(IDirect3DDevice3 *this_ptr, DWORD sta
             }
                     break;
         default:
-            DDRAW_LOG_RL(4, 500, "gl_ddraw: unhandled texture stage state %u = %u",
+            DLOG_RL("render",4, 500, "gl_ddraw: unhandled texture stage state %u = %u",
                          (unsigned)state, (unsigned)value);
             break;
     }
@@ -1327,7 +1327,7 @@ static HRESULT device_DrawIndexedPrimitive(IDirect3DDevice3 *this_ptr,
     }
     if ((DWORD)primitive_type != D3DPT_TRIANGLELIST ||
         (DWORD)vertex_type != D3DFVF_TLVERTEX) {
-        DDRAW_LOG_RL(4, 200, "gl_ddraw: unexpected draw prim=%u fvf=0x%x",
+        DLOG_RL("render",4, 200, "gl_ddraw: unexpected draw prim=%u fvf=0x%x",
                      (unsigned)primitive_type, (unsigned)vertex_type);
         return DDERR_UNSUPPORTED;
     }
@@ -1643,7 +1643,7 @@ static HRESULT ddraw_QueryInterface(IUnknown *this_ptr, GUID *riid, void **ppv) 
         *ppv = dd;
         return DD_OK;
     }
-    DDRAW_LOG("gl_ddraw: QueryInterface for unknown IID %08x", (unsigned)riid->Data1);
+    DLOG("render","gl_ddraw: QueryInterface for unknown IID %08x", (unsigned)riid->Data1);
     return E_NOINTERFACE;
 }
 
@@ -1669,7 +1669,7 @@ static HRESULT ddraw_SetDisplayMode(IDirectDraw4 *this_ptr, DWORD width, DWORD h
     // it the back buffer and Z buffer are undefined after every present, which
     // is not what a DirectDraw surface does.
     nocturne_gl_scene_target_bind((int)width, (int)height);
-    DDRAW_LOG("gl_ddraw: SetDisplayMode %ux%u bpp=%u", (unsigned)width, (unsigned)height,
+    DLOG("render","gl_ddraw: SetDisplayMode %ux%u bpp=%u", (unsigned)width, (unsigned)height,
               (unsigned)bpp);
     return DD_OK;
 }
@@ -1820,7 +1820,7 @@ HRESULT DirectDrawCreate(GUID *guid, LPDIRECTDRAW *out, IUnknown *outer) {
     // Reached from APIDLLinit during startup, before the engine sets a display
     // mode — so the context may not be up yet. Bring it up rather than refusing.
     if (!nocturne_gl_ensure_active()) {
-        DDRAW_LOG("gl_ddraw: DirectDrawCreate with no GL context — refusing");
+        DLOG("render","gl_ddraw: DirectDrawCreate with no GL context — refusing");
         return DDERR_GENERIC;
     }
 
@@ -1844,7 +1844,7 @@ HRESULT DirectDrawEnumerateExA(DDENUMCALLBACKEXA *callback, void *context, DWORD
     // (NOCTURNE_GL_PRESENT=0, no window, or a failed context) the gl table is
     // all-null — report no adapters rather than calling through it.
     if (!nocturne_gl_ensure_active()) {
-        DDRAW_LOG("gl_ddraw: DirectDrawEnumerateExA with no GL context — no adapters");
+        DLOG("render","gl_ddraw: DirectDrawEnumerateExA with no GL context — no adapters");
         return DD_OK;
     }
 

@@ -10,23 +10,33 @@
 // Available from any TU that includes nocturne.h (via shims include path)
 // or directly via `#include "core/debug_log.h"`.
 //
-// Usage (default `nocturne_debug.log`):
-//   DLOG("mounted %s: %d files", filename, count);
-//   DLOG_IF(file_count > 100, "large POD: %s", name);
+// Usage — the subsystem is always the first argument, and names the file:
+//   DLOG("render", "Flip: surface=%p", surf);            // → nocturne_render.log
+//   DLOG_RL("render", 8, 1000, "draw n=%d", n);          // rate-limited variant
+//
 //   DWARN("unexpected: %s", reason);                     // warning → log + stderr
 //   DERROR("fatal: %s", detail);                         // error   → log + stderr
 //
-// Subsystem-specific logs (each gets its own file):
-//   DSND_LOG("Play: dev=%u looping=%d", dev, loop);      // → nocturne_dsound.log
-//   DDRAW_LOG("Flip: surface=%p", surf);                  // → nocturne_ddraw.log
-//   DLOG_EX("mysubsys", "anything %s", arg);              // → nocturne_mysubsys.log
+// The subsystems in use. Prefer one of these over minting a new name — the
+// value of a per-subsystem file comes from everything about a subsystem being
+// in one place, and the cache below only holds _DLOG_MAX_LOGS of them:
 //
-// Rationale: shim traces (DirectSound / DirectDraw) fire hundreds of times
-// per second and drown out game-side findFile / allocator traces in the
-// shared log. One file per subsystem keeps each stream readable.
+//   "render"    GL context/present/blit/shader, trigl device, ddraw surface
+//               emulation, builtin DLL registry, window mode
+//   "netplay"   seeds, missions, respawn, desync, RNG, cheats, config, sockets
+//   "sound"     mixer, voices, buffers, 3D attenuation
+//   "frontend"  attract movies and fullscreen bitmap screens
+//   "fileio"    POD mounts, findFile, search handlers
 //
-// DWARN/DERROR still mirror to stderr so they survive crashes before a log
-// flush or a UI error dialog can render.
+// Rationale: hot shim traces (renderer, sound) fire hundreds of times per
+// second and drown out game-side findFile / allocator traces in a shared log.
+// One file per subsystem keeps each stream readable.
+//
+// DWARN/DERROR carry no subsystem — they land in nocturne_debug.log and also
+// mirror to stderr so they survive crashes before a log flush or a UI error
+// dialog can render.
+//
+// For a conditional log, write the condition out: `if (cond) DLOG(...);`
 //
 // All output is line-buffered and flushed immediately. Thread-safe via
 // fprintf (which holds the FILE lock internally on glibc). First-call file
@@ -34,8 +44,8 @@
 // the same subsystem can cause a truncated handle to leak. This has not been
 // a problem in practice (first calls happen during single-threaded init).
 //
-// Define NOCTURNE_DISABLE_DLOG before including to compile out DLOG/DLOG_IF
-// and the subsystem variants. DWARN and DERROR always stay live.
+// Define NOCTURNE_DISABLE_DLOG before including to compile out DLOG and
+// DLOG_RL. DWARN and DERROR always stay live.
 
 #include <cstdio>
 #include <cstdarg>
@@ -75,7 +85,7 @@ inline FILE* _dlog_get_file_named(const char* subsys) {
     return f;
 }
 
-// Backward-compatible default logger → nocturne_debug.log.
+// Sink for the subsystem-less DWARN/DERROR → nocturne_debug.log.
 inline FILE* _dlog_get_file() {
     return _dlog_get_file_named("debug");
 }
@@ -110,41 +120,16 @@ inline void _dlog_print_backtrace() {
 
 #ifdef NOCTURNE_DISABLE_DLOG
 
-#define DLOG(fmt, ...) ((void)0)
-#define DLOG_IF(cond, fmt, ...) ((void)0)
-#define DLOG_EX(subsys, fmt, ...) ((void)0)
-#define DLOG_IF_EX(subsys, cond, fmt, ...) ((void)0)
-#define DSND_LOG(fmt, ...) ((void)0)
-#define DDRAW_LOG(fmt, ...) ((void)0)
-#define DLOG_RL_EX(subsys, first_n, every_n, fmt, ...) ((void)0)
-#define DLOG_RL(first_n, every_n, fmt, ...) ((void)0)
-#define DSND_LOG_RL(first_n, every_n, fmt, ...) ((void)0)
-#define DDRAW_LOG_RL(first_n, every_n, fmt, ...) ((void)0)
+#define DLOG(subsys, fmt, ...) ((void)0)
+#define DLOG_RL(subsys, first_n, every_n, fmt, ...) ((void)0)
 
 #else
 
-#define DLOG(fmt, ...) do { \
-    FILE* _f = _dlog_get_file(); \
-    if (_f) { fprintf(_f, "[%s:%d] " fmt "\n", _DLOG_FILE, __LINE__, ##__VA_ARGS__); } \
-} while(0)
-
-#define DLOG_IF(cond, fmt, ...) do { \
-    if (cond) { DLOG(fmt, ##__VA_ARGS__); } \
-} while(0)
-
 // Write to a named subsystem log: nocturne_<subsys>.log
-#define DLOG_EX(subsys, fmt, ...) do { \
+#define DLOG(subsys, fmt, ...) do { \
     FILE* _f = _dlog_get_file_named(subsys); \
     if (_f) { fprintf(_f, "[%s:%d] " fmt "\n", _DLOG_FILE, __LINE__, ##__VA_ARGS__); } \
 } while(0)
-
-#define DLOG_IF_EX(subsys, cond, fmt, ...) do { \
-    if (cond) { DLOG_EX(subsys, fmt, ##__VA_ARGS__); } \
-} while(0)
-
-// Convenience wrappers for the shim subsystems.
-#define DSND_LOG(fmt, ...)  DLOG_EX("dsound", fmt, ##__VA_ARGS__)
-#define DDRAW_LOG(fmt, ...) DLOG_EX("ddraw",  fmt, ##__VA_ARGS__)
 
 // Rate-limited log: log the first `first_n` calls, then every `every_n`-th call.
 // The tick number is prepended to the message as "#N ". Each call site has its
@@ -152,20 +137,15 @@ inline void _dlog_print_backtrace() {
 // scope per call site). Use this for hot-path traces (per-frame, per-callback)
 // that would otherwise flood the log.
 //
-// Examples:
-//   DLOG_RL(8, 1000, "block off=%u bytes=%u", off, bytes);
-//   DSND_LOG_RL(4, 200, "callback pc=%u", buf->play_cursor);
-#define DLOG_RL_EX(subsys, first_n, every_n, fmt, ...) do { \
+// Example:
+//   DLOG_RL("sound", 4, 200, "callback pc=%u", buf->play_cursor);
+#define DLOG_RL(subsys, first_n, every_n, fmt, ...) do { \
     static int _rl_tick = 0; \
     ++_rl_tick; \
     if (_rl_tick <= (first_n) || (_rl_tick % (every_n)) == 0) { \
-        DLOG_EX(subsys, "#%d " fmt, _rl_tick, ##__VA_ARGS__); \
+        DLOG(subsys, "#%d " fmt, _rl_tick, ##__VA_ARGS__); \
     } \
 } while(0)
-
-#define DLOG_RL(first_n, every_n, fmt, ...)       DLOG_RL_EX("debug",  first_n, every_n, fmt, ##__VA_ARGS__)
-#define DSND_LOG_RL(first_n, every_n, fmt, ...)   DLOG_RL_EX("dsound", first_n, every_n, fmt, ##__VA_ARGS__)
-#define DDRAW_LOG_RL(first_n, every_n, fmt, ...)  DLOG_RL_EX("ddraw",  first_n, every_n, fmt, ##__VA_ARGS__)
 
 #endif
 

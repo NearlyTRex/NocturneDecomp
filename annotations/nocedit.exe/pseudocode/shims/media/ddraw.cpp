@@ -209,7 +209,7 @@ static HRESULT ddraw_CreatePalette(IDirectDraw* this_ptr, DWORD flags,
     pal->vtable_data.Release = palette_Release;
     pal->vtable = &pal->vtable_data;
     *palette = reinterpret_cast<IDirectDrawPalette*>(pal);
-    DDRAW_LOG("CreatePalette: %p flags=0x%x", (void*)pal, (unsigned)flags);
+    DLOG("render","CreatePalette: %p flags=0x%x", (void*)pal, (unsigned)flags);
     return DD_OK;
 }
 
@@ -273,13 +273,13 @@ static HRESULT ddraw_CreateSurface(IDirectDraw* this_ptr, DDSURFACEDESC* desc,
 
     DDSurface_ShimData* surf = create_surface_shim(ddraw, width, height, bpp);
     if (!surf) {
-        DDRAW_LOG("CreateSurface: OUT_OF_MEMORY (%dx%d bpp=%d caps=0x%x)",
+        DLOG("render","CreateSurface: OUT_OF_MEMORY (%dx%d bpp=%d caps=0x%x)",
                   width, height, bpp, (unsigned)caps);
         return DDERR_OUTOFMEMORY;
     }
 
     surf->desc.ddsCaps.dwCaps = caps;
-    DDRAW_LOG("CreateSurface: %p %dx%d bpp=%d caps=0x%x flags=0x%x",
+    DLOG("render","CreateSurface: %p %dx%d bpp=%d caps=0x%x flags=0x%x",
               (void*)surf, width, height, bpp,
               (unsigned)caps, (unsigned)desc->dwFlags);
 
@@ -403,7 +403,7 @@ static HRESULT ddraw_RestoreDisplayMode(IDirectDraw* this_ptr) {
 static HRESULT ddraw_SetCooperativeLevel(IDirectDraw* this_ptr, HWND window, DWORD flags) {
     DDraw_ShimData* ddraw = reinterpret_cast<DDraw_ShimData*>(this_ptr);
     ddraw->cooperative_hwnd = window;
-    DDRAW_LOG("SetCooperativeLevel: hwnd=%p flags=0x%x (FULLSCREEN=%d EXCLUSIVE=%d)",
+    DLOG("render","SetCooperativeLevel: hwnd=%p flags=0x%x (FULLSCREEN=%d EXCLUSIVE=%d)",
               (void*)window, (unsigned)flags,
               (int)((flags & DDSCL_FULLSCREEN) != 0),
               (int)((flags & DDSCL_EXCLUSIVE) != 0));
@@ -418,7 +418,7 @@ static HRESULT ddraw_SetCooperativeLevel(IDirectDraw* this_ptr, HWND window, DWO
 
 static HRESULT ddraw_SetDisplayMode(IDirectDraw* this_ptr, DWORD width, DWORD height, DWORD bpp) {
     DDraw_ShimData* ddraw = reinterpret_cast<DDraw_ShimData*>(this_ptr);
-    DDRAW_LOG("SetDisplayMode: %ux%u bpp=%u (prev=%dx%d bpp=%d)",
+    DLOG("render","SetDisplayMode: %ux%u bpp=%u (prev=%dx%d bpp=%d)",
               (unsigned)width, (unsigned)height, (unsigned)bpp,
               ddraw->display_width, ddraw->display_height, ddraw->display_bpp);
     ddraw->display_width = width;
@@ -539,7 +539,7 @@ static HRESULT surface_Blt(IDirectDrawSurface* this_ptr, RECT* dest_rect,
     {
         int dw = dest_rect ? (dest_rect->right - dest_rect->left) : -1;
         int dh = dest_rect ? (dest_rect->bottom - dest_rect->top) : -1;
-        DDRAW_LOG_RL(8, 1000, "Blt dst=%p src=%p flags=0x%x dest=%dx%d colorfill=%d",
+        DLOG_RL("render",8, 1000, "Blt dst=%p src=%p flags=0x%x dest=%dx%d colorfill=%d",
                      (void*)dst, (void*)src_surface, (unsigned)flags,
                      dw, dh, (int)((flags & DDBLT_COLORFILL) != 0));
     }
@@ -603,7 +603,7 @@ static HRESULT surface_BltFast(IDirectDrawSurface* this_ptr, DWORD dest_x, DWORD
     {
         int sw = src_rect ? (src_rect->right - src_rect->left) : -1;
         int sh = src_rect ? (src_rect->bottom - src_rect->top) : -1;
-        DDRAW_LOG_RL(8, 1000, "BltFast dst=%p @(%u,%u) src=%p %dx%d trans=0x%x",
+        DLOG_RL("render",8, 1000, "BltFast dst=%p @(%u,%u) src=%p %dx%d trans=0x%x",
                      (void*)dst, (unsigned)dest_x, (unsigned)dest_y,
                      (void*)src_surface, sw, sh, (unsigned)trans);
     }
@@ -673,7 +673,7 @@ static HRESULT surface_Flip(IDirectDrawSurface* this_ptr,
     } else if (shim->back_buffer) {
         source = shim->back_buffer;
     }
-    DDRAW_LOG_RL(4, 300, "Flip surface=%p override=%p source=%p tex=%p flags=0x%x",
+    DLOG_RL("render",4, 300, "Flip surface=%p override=%p source=%p tex=%p flags=0x%x",
                  (void*)shim, (void*)override_surface, (void*)source,
                  (void*)(source->sdl_texture ? source->sdl_texture : shim->sdl_texture),
                  (unsigned)flags);
@@ -788,12 +788,12 @@ static HRESULT surface_Lock(IDirectDrawSurface* this_ptr, RECT* dest_rect,
     {
         int rw = dest_rect ? (dest_rect->right - dest_rect->left) : -1;
         int rh = dest_rect ? (dest_rect->bottom - dest_rect->top) : -1;
-        DDRAW_LOG_RL(8, 500, "Lock surface=%p rect=%dx%d flags=0x%x",
+        DLOG_RL("render",8, 500, "Lock surface=%p rect=%dx%d flags=0x%x",
                      (void*)shim, rw, rh, (unsigned)flags);
     }
 
     if (!shim->sdl_surface) {
-        DDRAW_LOG("  Lock FAIL: sdl_surface=NULL");
+        DLOG("render","  Lock FAIL: sdl_surface=NULL");
         return DDERR_GENERIC;
     }
 
@@ -830,7 +830,7 @@ static HRESULT surface_SetColorKey(IDirectDrawSurface* this_ptr, DWORD flags, vo
     if (color_key) {
         memcpy(&shim->src_color_key, color_key, sizeof(DDCOLORKEY));
         shim->has_color_key = 1;
-        DDRAW_LOG("SetColorKey: surface=%p flags=0x%x low=0x%x high=0x%x",
+        DLOG("render","SetColorKey: surface=%p flags=0x%x low=0x%x high=0x%x",
                   (void*)shim, (unsigned)flags,
                   (unsigned)shim->src_color_key.dwColorSpaceLowValue,
                   (unsigned)shim->src_color_key.dwColorSpaceHighValue);
@@ -840,7 +840,7 @@ static HRESULT surface_SetColorKey(IDirectDrawSurface* this_ptr, DWORD flags, vo
         }
     } else {
         shim->has_color_key = 0;
-        DDRAW_LOG("SetColorKey: surface=%p CLEAR flags=0x%x", (void*)shim, (unsigned)flags);
+        DLOG("render","SetColorKey: surface=%p CLEAR flags=0x%x", (void*)shim, (unsigned)flags);
         if (shim->sdl_surface) {
             SDL_SetColorKey(shim->sdl_surface, SDL_FALSE, 0);
         }

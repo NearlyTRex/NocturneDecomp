@@ -329,7 +329,7 @@ bool have_lightmap_entry_points() {
 GLuint compile_stage(GLenum type, const char *source, const char *label) {
     GLuint shader = gl.CreateShader(type);
     if (shader == 0) {
-        DDRAW_LOG("gl_shader: glCreateShader failed for %s", label);
+        DLOG("render","gl_shader: glCreateShader failed for %s", label);
         return 0;
     }
     gl.ShaderSource(shader, 1, &source, nullptr);
@@ -343,7 +343,7 @@ GLuint compile_stage(GLenum type, const char *source, const char *label) {
         if (gl.GetShaderInfoLog != nullptr) {
             gl.GetShaderInfoLog(shader, (GLsizei)sizeof(log), nullptr, log);
         }
-        DDRAW_LOG("gl_shader: %s failed to compile: %s", label, log);
+        DLOG("render","gl_shader: %s failed to compile: %s", label, log);
         gl.DeleteShader(shader);
         return 0;
     }
@@ -359,7 +359,7 @@ bool build_program() {
                                        : "vertex shader (client arrays)");
     if (vs == 0 && g_modern) {
         // Fall back rather than lose the shader path entirely.
-        DDRAW_LOG("gl_shader: modern vertex stage failed — retrying on client arrays");
+        DLOG("render","gl_shader: modern vertex stage failed — retrying on client arrays");
         g_modern = false;
         vs = compile_stage(GL_VERTEX_SHADER, kVertexSource, "vertex shader");
     }
@@ -373,7 +373,7 @@ bool build_program() {
 
     GLuint program = gl.CreateProgram();
     if (program == 0) {
-        DDRAW_LOG("gl_shader: glCreateProgram failed");
+        DLOG("render","gl_shader: glCreateProgram failed");
         gl.DeleteShader(vs);
         gl.DeleteShader(fs);
         return false;
@@ -406,7 +406,7 @@ bool build_program() {
         if (gl.GetProgramInfoLog != nullptr) {
             gl.GetProgramInfoLog(program, (GLsizei)sizeof(log), nullptr, log);
         }
-        DDRAW_LOG("gl_shader: link failed: %s", log);
+        DLOG("render","gl_shader: link failed: %s", log);
         if (gl.DeleteProgram != nullptr) gl.DeleteProgram(program);
         return false;
     }
@@ -443,13 +443,13 @@ bool build_program() {
             // Not just "not found": anything other than 0 means the bind above
             // did not take, and the draw would come out empty rather than wrong,
             // which is far harder to recognise. Refuse the path instead.
-            DDRAW_LOG("gl_shader: a_pos landed at %d, not 0 — falling back to client arrays",
+            DLOG("render","gl_shader: a_pos landed at %d, not 0 — falling back to client arrays",
                       (int)g_attr_pos);
             g_modern = false;
         }
     }
 
-    DDRAW_LOG("gl_shader: program linked (id=%u, %s) attrs pos=%d col=%d sec=%d uv=%d fog=%d",
+    DLOG("render","gl_shader: program linked (id=%u, %s) attrs pos=%d col=%d sec=%d uv=%d fog=%d",
               (unsigned)program,
               g_modern ? "buffer objects + generic attributes"
                        : "compatibility client arrays",
@@ -483,7 +483,7 @@ bool ensure_lookup_textures() {
     g_tex_lmtab  = make_lookup_texture();
     if (g_tex_corona == 0 || g_tex_plane == 0 ||
         g_tex_pal == 0 || g_tex_lmtab == 0) {
-        DDRAW_LOG("gl_shader: could not create the lightmap lookup textures");
+        DLOG("render","gl_shader: could not create the lightmap lookup textures");
         return false;
     }
     return true;
@@ -500,7 +500,7 @@ void build_lightmap_table(const NocturneLightingBridge *b) {
             unsigned int v = word >> 6;
             if (!g_lm_warned && ((word & 63u) != 0 || v > 255u)) {
                 g_lm_warned = true;
-                DDRAW_LOG("gl_shader: lightmap word %u at entry %d is not (v << 6) — "
+                DLOG("render","gl_shader: lightmap word %u at entry %d is not (v << 6) — "
                           "fog will be approximate", word, i);
             }
             if (v > 255u) v = 255u;
@@ -574,7 +574,7 @@ void dump_grid_pgm(const char *path, const unsigned char *rows, int pitch,
                    int used_w, int used_h) {
     FILE *f = fopen(path, "wb");
     if (f == nullptr) {
-        DDRAW_LOG("gl_shader: could not open %s for the grid dump", path);
+        DLOG("render","gl_shader: could not open %s for the grid dump", path);
         return;
     }
     fprintf(f, "P5\n%d %d\n255\n", used_w, used_h);
@@ -582,7 +582,7 @@ void dump_grid_pgm(const char *path, const unsigned char *rows, int pitch,
         fwrite(rows + (size_t)y * pitch, 1, (size_t)used_w, f);
     }
     fclose(f);
-    DDRAW_LOG("gl_shader: wrote %s (%dx%d)", path, used_w, used_h);
+    DLOG("render","gl_shader: wrote %s (%dx%d)", path, used_w, used_h);
 }
 
 void dump_grids_once(const NocturneLightingBridge *b, int used_w, int used_h) {
@@ -634,7 +634,7 @@ void log_mapping_if_changed(const NocturneLightingBridge *b,
         }
     }
 
-    DDRAW_LOG("gl_shader: lightmap map fb=%dx%d vp=%d,%d,%dx%d scale=%d shift=%d "
+    DLOG("render","gl_shader: lightmap map fb=%dx%d vp=%d,%d,%dx%d scale=%d shift=%d "
               "shake=%d,%d grid_used=%dx%d uv_scale=%.6f,%.6f uv_off=%.4f,%.4f",
               b->fb_width, b->fb_height, vp[0], vp[1], vp[2], vp[3],
               b->scale_factor, b->downscale_shift, b->shake_x, b->shake_y,
@@ -643,7 +643,7 @@ void log_mapping_if_changed(const NocturneLightingBridge *b,
         // Corona is a gain where 64 is unity; plane drives fog, saturating the
         // 512-entry table at 255. Reading near 255 across the board means the
         // fragment is being told the scene is solid fog.
-        DDRAW_LOG("gl_shader: lightmap grids plane min/mean/max=%d/%ld/%d "
+        DLOG("render","gl_shader: lightmap grids plane min/mean/max=%d/%ld/%d "
                   "corona min/mean/max=%d/%ld/%d solid=%.0f,%.0f,%.0f",
                   p_min, p_sum / count, p_max,
                   c_min, c_sum / count, c_max,
@@ -731,7 +731,7 @@ void refresh_lightmap() {
 
 extern "C" void nocturne_gl_shader_set_enabled(int enabled) {
     g_enabled = (enabled != 0);
-    DDRAW_LOG("gl_shader: shader path %s", g_enabled ? "ENABLED" : "disabled");
+    DLOG("render","gl_shader: shader path %s", g_enabled ? "ENABLED" : "disabled");
 }
 
 extern "C" int nocturne_gl_shader_active(void) {
@@ -745,15 +745,15 @@ extern "C" int nocturne_gl_shader_ensure(void) {
 
     g_tried = true;
     if (!have_entry_points()) {
-        DDRAW_LOG("gl_shader: driver has no shader entry points — staying on fixed function");
+        DLOG("render","gl_shader: driver has no shader entry points — staying on fixed function");
         return 0;
     }
     if (!build_program()) {
-        DDRAW_LOG("gl_shader: build failed — staying on fixed function");
+        DLOG("render","gl_shader: build failed — staying on fixed function");
         return 0;
     }
     if (!have_lightmap_entry_points()) {
-        DDRAW_LOG("gl_shader: no multitexture — shading without the per-pixel lightmap");
+        DLOG("render","gl_shader: no multitexture — shading without the per-pixel lightmap");
     }
     return 1;
 }
@@ -806,7 +806,7 @@ extern "C" void nocturne_gl_shader_rebuild(void) {
     g_modern  = false;
     // The buffer survives: it holds no program state, and the compatibility path
     // simply stops using it.
-    DDRAW_LOG("gl_shader: rebuild requested (force_compat=%d)",
+    DLOG("render","gl_shader: rebuild requested (force_compat=%d)",
               nocturne_gl_shader_force_compat);
 }
 
@@ -826,7 +826,7 @@ extern "C" void nocturne_gl_shader_set_projection(const float matrix[16]) {
         checks_left--;
         const GLenum err = gl.GetError();
         if (err != GL_NO_ERROR) {
-            DDRAW_LOG("gl_shader: GL error 0x%x setting the projection — is a "
+            DLOG("render","gl_shader: GL error 0x%x setting the projection — is a "
                       "program bound? uniforms go to the CURRENT program",
                       (unsigned)err);
         }
@@ -843,7 +843,7 @@ extern "C" int nocturne_gl_shader_bind_vertices(const void *base, int count,
     if (g_vbo == 0) {
         gl.GenBuffers(1, &g_vbo);
         if (g_vbo == 0) {
-            DDRAW_LOG("gl_shader: glGenBuffers failed — falling back to client arrays");
+            DLOG("render","gl_shader: glGenBuffers failed — falling back to client arrays");
             g_modern = false;
             return 0;
         }

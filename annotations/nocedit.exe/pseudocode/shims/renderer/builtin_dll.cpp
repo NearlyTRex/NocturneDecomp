@@ -96,14 +96,14 @@ extern "C" const char *nocturne_builtin_dll_next(const char *current) {
         // Logged because the Graphics Options line shows a label, not the DLL
         // name, so there is otherwise no way to tell which renderer the
         // selector has landed on.
-        DDRAW_LOG("builtin_dll: 3D API cycle \"%s\" (unknown) -> \"%s\"",
+        DLOG("render","builtin_dll: 3D API cycle \"%s\" (unknown) -> \"%s\"",
                   (current != NULL) ? current : "", g_BuiltinModules[0].dll_name);
         return g_BuiltinModules[0].dll_name;
     }
     {
         const char *next = g_BuiltinModules[(int)(module - g_BuiltinModules + 1) %
                                             g_BuiltinModuleCount].dll_name;
-        DDRAW_LOG("builtin_dll: 3D API cycle \"%s\" -> \"%s\"", module->dll_name, next);
+        DLOG("render","builtin_dll: 3D API cycle \"%s\" -> \"%s\"", module->dll_name, next);
         return next;
     }
 #else
@@ -121,7 +121,7 @@ extern "C" void *nocturne_builtin_dll_open(const char *dll_name) {
         // the LoadLibraryA the engine performs during loadExternalRenderer, so
         // it reflects what was actually loaded rather than what the menu label
         // suggests.
-        DDRAW_LOG("builtin_dll: LoadLibraryA(\"%s\") -> %s",
+        DLOG("render","builtin_dll: LoadLibraryA(\"%s\") -> %s",
                   (dll_name != NULL) ? dll_name : "(null)",
                   (module != NULL) ? "built-in module" : "NOT REGISTERED");
         return (void *)module;

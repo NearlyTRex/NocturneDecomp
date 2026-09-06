@@ -132,7 +132,7 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004e2910(CGame *this_p
       }
       engine_2d_c_clearInputAndWait_FUN_00403260();
       core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004dce70(this_ptr);
-      DLOG_EX("bitmap","showing '%s' conn=%d fire_down=%d mouse=%d",
+      DLOG("frontend","showing '%s' conn=%d fire_down=%d mouse=%d",
               this_ptr->bitmap_filename,(int)g_CNetGamePtr->connection_type,
               (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,this_ptr->key_fire),
               (int)g_MouseButtonFlags.dword);
@@ -175,7 +175,7 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004e2910(CGame *this_p
         }
       }
       }
-      DLOG_EX("bitmap","dismissed '%s'",this_ptr->bitmap_filename);
+      DLOG("frontend","dismissed '%s'",this_ptr->bitmap_filename);
       for (iVar4 = 0; iVar4 < 3; iVar4 = iVar4 + 1) {
         wincore_wddvmem_cpp_openScreenDevice_FUN_005ed580();
         engine_special_cpp_lockFrame_FUN_005b7210();

@@ -146,7 +146,7 @@ LAB_005432f5:
                   local_14->sim_frame_index;
           if (iVar1 < 1) {
 #if !NOCTURNE_AUTHENTIC_NETPLAY
-            DLOG_EX("netplay",
+            DLOG("netplay",
                     "AHEAD player=%d server_idx=%d player_idx=%d diff=%d "
                     "history=%d dt=%g",
                     local_24,

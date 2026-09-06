@@ -140,7 +140,7 @@
 //      offset from generateRandomValue. Diffed offline against the other
 //      machine's, it turns "the guest drew one more number than the host in
 //      this frame" into the name of the function that did it. Also enables the
-//      LOAD SEED and focus-actor DLOG_EX traces in the netgame and game keeps.
+//      LOAD SEED and focus-actor DLOG traces in the netgame and game keeps.
 //   0: no trace is written and no attribution is computed.
 //
 //   Separate from NOCTURNE_AUTHENTIC_RNG on purpose. That flag chooses whether

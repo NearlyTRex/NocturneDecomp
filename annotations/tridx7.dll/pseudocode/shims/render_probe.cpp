@@ -348,7 +348,7 @@ extern "C" int nocturne_dump_render_flags(const char *path) {
                           ? path : "/tmp/nocturne_render_flags.txt";
     FILE *fp = fopen(out, "w");
     if (fp == nullptr) {
-        DDRAW_LOG("render_probe: cannot open %s", out);
+        DLOG("render","render_probe: cannot open %s", out);
         return 0;
     }
 
@@ -458,7 +458,7 @@ extern "C" int nocturne_dump_render_flags(const char *path) {
     }
 
     fclose(fp);
-    DDRAW_LOG("render_probe: wrote %s (%lu frames, %lu polys, %lu verts)",
+    DLOG("render","render_probe: wrote %s (%lu frames, %lu polys, %lu verts)",
               out, g_frames, g_polygons, g_vertices);
     return 1;
 }

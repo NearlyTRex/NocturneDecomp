@@ -186,7 +186,7 @@ static float ds3d_distance_gain(const DSoundBuffer_ShimData* buf) {
     // distance clamps and the gain clamps become no-ops and the NaN comes back
     // as the gain.
     if (dist != dist || rolloff != rolloff) {
-        DSND_LOG_RL(4, 500,
+        DLOG_RL("sound",4, 500,
                     "3D state is NaN, ignoring attenuation: src=(%g,%g,%g) "
                     "listener=(%g,%g,%g) distfac=%g rolloff=%g mode=%u",
                     d3d->params.vPosition.x, d3d->params.vPosition.y,
@@ -252,7 +252,7 @@ static void dsound_register_voice(DSoundBuffer_ShimData* buf) {
     if (g_voice_count < DSOUND_MAX_VOICES) {
         g_voices[g_voice_count++] = buf;
     } else {
-        DSND_LOG("voice registry full; buffer %p will be silent", (void*)buf);
+        DLOG("sound","voice registry full; buffer %p will be silent", (void*)buf);
     }
 }
 
@@ -369,7 +369,7 @@ static void dsound_mix_callback(void* userdata, Uint8* stream, int len) {
         out[i] = (Sint16)s;
     }
 
-    DSND_LOG_RL(4, 400, "mix: voices=%d active=%d frames=%d dev=%dHz ch=%d",
+    DLOG_RL("sound",4, 400, "mix: voices=%d active=%d frames=%d dev=%dHz ch=%d",
                 g_voice_count, active, frames, dev_rate, dev_ch);
 }
 
@@ -387,7 +387,7 @@ static void dsound_ensure_device(DSound_ShimData* ds) {
     want.userdata = ds;
 
     ds->device_id = SDL_OpenAudioDevice(nullptr, 0, &want, &ds->obtained_spec, 0);
-    DSND_LOG("mixer device: dev=%u freq=%d ch=%u fmt=0x%x samples=%u",
+    DLOG("sound","mixer device: dev=%u freq=%d ch=%u fmt=0x%x samples=%u",
              (unsigned)ds->device_id, ds->obtained_spec.freq,
              (unsigned)ds->obtained_spec.channels, (unsigned)ds->obtained_spec.format,
              (unsigned)ds->obtained_spec.samples);
@@ -439,7 +439,7 @@ static HRESULT dsound_CreateSoundBuffer(LPDIRECTSOUND this_ptr, LPDSBUFFERDESC p
     int is_primary = (pcDesc->dwFlags & DSBCAPS_PRIMARYBUFFER) != 0;
     buf->is_primary = is_primary;
 
-    DSND_LOG("CreateSoundBuffer: primary=%d flags=0x%x bytes=%u fmt=tag%u ch%u rate%u bits%u",
+    DLOG("sound","CreateSoundBuffer: primary=%d flags=0x%x bytes=%u fmt=tag%u ch%u rate%u bits%u",
          is_primary, (unsigned)pcDesc->dwFlags, (unsigned)pcDesc->dwBufferBytes,
          pcDesc->lpwfxFormat ? pcDesc->lpwfxFormat->wFormatTag : 0,
          pcDesc->lpwfxFormat ? pcDesc->lpwfxFormat->nChannels : 0,
@@ -473,7 +473,7 @@ static HRESULT dsound_CreateSoundBuffer(LPDIRECTSOUND this_ptr, LPDSBUFFERDESC p
         SDL_LockAudioDevice(ds->device_id);
         dsound_register_voice(buf);
         SDL_UnlockAudioDevice(ds->device_id);
-        DSND_LOG("  secondary voice registered: %ux%ubit @%uHz (voices=%d)",
+        DLOG("sound","  secondary voice registered: %ux%ubit @%uHz (voices=%d)",
                  (unsigned)buf->format.nChannels, (unsigned)buf->format.wBitsPerSample,
                  (unsigned)buf->frequency, g_voice_count);
     }
@@ -708,7 +708,7 @@ static HRESULT dsbuf_Lock(LPDIRECTSOUNDBUFFER this_ptr, DWORD dwOffset, DWORD dw
     (void)dwFlags;
     DSoundBuffer_ShimData* buf = reinterpret_cast<DSoundBuffer_ShimData*>(this_ptr);
 
-    DSND_LOG_RL(8, 1000, "Lock dev=%u off=%u bytes=%u size=%u pc=%u flags=0x%x",
+    DLOG_RL("sound",8, 1000, "Lock dev=%u off=%u bytes=%u size=%u pc=%u flags=0x%x",
                 (unsigned)buf->device_id, (unsigned)dwOffset, (unsigned)dwBytes,
                 (unsigned)buf->buffer_size, (unsigned)buf->play_cursor, (unsigned)dwFlags);
 
@@ -741,7 +741,7 @@ static HRESULT dsbuf_Play(LPDIRECTSOUNDBUFFER this_ptr, DWORD dwReserved1,
     buf->is_playing = 1;
     buf->is_looping = (dwFlags & DSBPLAY_LOOPING) ? 1 : 0;
     buf->play_pos_frames = 0.0;
-    DSND_LOG("Play: size=%u pc=%u flags=0x%x looping=%d primary=%d shared=%d",
+    DLOG("sound","Play: size=%u pc=%u flags=0x%x looping=%d primary=%d shared=%d",
          (unsigned)buf->buffer_size, (unsigned)buf->play_cursor,
          (unsigned)dwFlags, buf->is_looping, buf->is_primary, buf->audio_data_shared);
     // The shared mixer picks this voice up on its next callback; there is no
@@ -756,7 +756,7 @@ static HRESULT dsbuf_Play(LPDIRECTSOUNDBUFFER this_ptr, DWORD dwReserved1,
 static HRESULT dsbuf_SetCurrentPosition(LPDIRECTSOUNDBUFFER this_ptr, DWORD dwNewPosition) {
     DSoundBuffer_ShimData* buf = reinterpret_cast<DSoundBuffer_ShimData*>(this_ptr);
     buf->play_cursor = buf->buffer_size ? (dwNewPosition % buf->buffer_size) : 0;
-    DSND_LOG("SetCurrentPosition: dev=%u pos=%u -> pc=%u",
+    DLOG("sound","SetCurrentPosition: dev=%u pos=%u -> pc=%u",
          (unsigned)buf->device_id, (unsigned)dwNewPosition, (unsigned)buf->play_cursor);
     return DS_OK;
 }
@@ -767,7 +767,7 @@ static HRESULT dsbuf_SetFormat(LPDIRECTSOUNDBUFFER this_ptr, LPCWAVEFORMATEX pcf
         memcpy(&buf->format, pcfxFormat, sizeof(WAVEFORMATEX));
         buf->frequency = pcfxFormat->nSamplesPerSec;
     }
-    DSND_LOG("SetFormat: primary=%d tag=%u ch=%u rate=%u bits=%u",
+    DLOG("sound","SetFormat: primary=%d tag=%u ch=%u rate=%u bits=%u",
          buf->is_primary,
          pcfxFormat ? pcfxFormat->wFormatTag : 0,
          pcfxFormat ? pcfxFormat->nChannels : 0,
@@ -778,7 +778,7 @@ static HRESULT dsbuf_SetFormat(LPDIRECTSOUNDBUFFER this_ptr, LPCWAVEFORMATEX pcf
 
 static HRESULT dsbuf_SetVolume(LPDIRECTSOUNDBUFFER this_ptr, long lVolume) {
     DSoundBuffer_ShimData* buf = reinterpret_cast<DSoundBuffer_ShimData*>(this_ptr);
-    DSND_LOG_RL(8, 100, "SetVolume buf=%p %ld -> %ld (linear %.3f)",
+    DLOG_RL("sound",8, 100, "SetVolume buf=%p %ld -> %ld (linear %.3f)",
                 (void*)buf, buf->volume, lVolume,
                 (double)(lVolume < 0 ? powf(10.0f, lVolume / 2000.0f) : 1.0f));
     buf->volume = lVolume;
@@ -819,11 +819,11 @@ static HRESULT dsbuf_Unlock(LPDIRECTSOUNDBUFFER this_ptr, LPVOID pvAudioPtr1,
         const uint8_t* p = (const uint8_t*)pvAudioPtr1;
         int nonzero = 0;
         for (unsigned i = 0; i < 16; i++) if (p[i] != 0) nonzero++;
-        DSND_LOG("Unlock#%d: bytes1=%u nonzero/16=%d head=%02x%02x %02x%02x %02x%02x %02x%02x",
+        DLOG("sound","Unlock#%d: bytes1=%u nonzero/16=%d head=%02x%02x %02x%02x %02x%02x %02x%02x",
              unlock_tick, (unsigned)dwAudioBytes1, nonzero,
              p[0], p[1], p[2], p[3], p[4], p[5], p[6], p[7]);
     } else {
-        DSND_LOG("Unlock#%d: bytes1=%u (no peek)", unlock_tick, (unsigned)dwAudioBytes1);
+        DLOG("sound","Unlock#%d: bytes1=%u (no peek)", unlock_tick, (unsigned)dwAudioBytes1);
     }
     return DS_OK;
 }

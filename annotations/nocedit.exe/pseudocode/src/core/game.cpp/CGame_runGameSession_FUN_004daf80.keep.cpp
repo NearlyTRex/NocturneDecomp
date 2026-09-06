@@ -145,7 +145,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
 #if !NOCTURNE_AUTHENTIC_NETPLAY && NOCTURNE_NETPLAY_SIM_TRACE
     if (g_CNetGamePtr->connection_type != CONNECTION_NONE &&
         0 <= g_CNetGamePtr->local_player_index) {
-      DLOG_EX("netplay",
+      DLOG("netplay",
               "PLAYING conn=%d local_idx=%d server_idx=%d history=%d process=%d",
               (int)g_CNetGamePtr->connection_type,
               g_CNetGamePtr->players[g_CNetGamePtr->local_player_index].sim_frame_index,
@@ -410,7 +410,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
           net_host_hero = g_LocalHeroIndex;
         }
 #if NOCTURNE_NETPLAY_RNG_TRACE
-        DLOG_EX("netplay",
+        DLOG("netplay",
                 "waiting %d->%d conn=%d localHero=%d area=%d death=%d own=%p host=%p focus=%p",
                 net_was_waiting,net_waiting,(int)g_CNetGamePtr->connection_type,g_LocalHeroIndex,
                 (g_HeroActors[g_LocalHeroIndex]->base).base.location.area_id,(int)EVar6,
@@ -421,7 +421,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
       if (g_CScriptPtr->focus_actor != net_dbg_focus) {
         net_dbg_focus = g_CScriptPtr->focus_actor;
 #if NOCTURNE_NETPLAY_RNG_TRACE
-        DLOG_EX("netplay","focus_actor now %p (own=%p) locked=%d speaking=%p",
+        DLOG("netplay","focus_actor now %p (own=%p) locked=%d speaking=%p",
                 (void *)net_dbg_focus,(void *)g_HeroActors[g_LocalHeroIndex],
                 g_CScriptPtr->focus_actor_locked,(void *)g_CScriptPtr->who_is_speaking);
 #endif

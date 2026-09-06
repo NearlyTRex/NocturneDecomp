@@ -64,7 +64,7 @@ LAB_0054f786:
     this_ptr->directory_entries = pCVar4;
     if (pCVar4 == (CPodDirectoryEntry *)0x0) {
 LAB_0054f6fe:
-      DLOG("FAILED to mount %s", this_ptr->filename);
+      DLOG("fileio", "FAILED to mount %s", this_ptr->filename);
       if (local_20 != (_FILE *)0x0) {
         shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_20,"..\\engine\\pod.cpp",339);
       }
@@ -257,7 +257,7 @@ LAB_0054f9a8:
   _qsort
             (this_ptr->directory_entries,this_ptr->file_count,sizeof(CPodDirectoryEntry),
              engine_pod_cpp_qsortByFilename_FUN_0054f630);
-  DLOG("mounted %s: %d files, version=%d",
+  DLOG("fileio", "mounted %s: %d files, version=%d",
        this_ptr->filename, this_ptr->file_count, this_ptr->pod_format_version);
   return 1;
 }

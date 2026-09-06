@@ -218,7 +218,7 @@ static void sync_capture(SNetPacket_SyncCheck *out, int sequence_number)
 
 #if NOCTURNE_NETPLAY_SYNC_FATAL
 // The game's own error box, raised on the first mismatch. Called after the
-// full report has gone to nocturne_netplay.log — DLOG_EX is line-buffered and
+// full report has gone to nocturne_netplay.log — DLOG is line-buffered and
 // the trace files flush per frame, so everything written up to here is on disk
 // before displayErrorAndQuit tears the process down.
 //
@@ -294,7 +294,7 @@ static void sync_report(const SNetPacket_SyncCheck *host_state,
         return;
     }
 
-    DLOG_EX("netplay",
+    DLOG("netplay",
             "DESYNC #%d at sim frame %d - %s%s(host actors=%d hash=%08x / ours=%d hash=%08x)",
             s_mismatches, own->sequence_number,
             (heroes_differ != 0) ? "heroes differ " : "heroes match ",
@@ -307,7 +307,7 @@ static void sync_report(const SNetPacket_SyncCheck *host_state,
     // since it shows up on the frame the extra draw happened rather than after
     // the resulting position has had time to separate.
     if (draws_differ != 0) {
-        DLOG_EX("netplay",
+        DLOG("netplay",
                 "  sim RNG draws differ: host %u | ours %u - simulation code is "
                 "drawing a different number of times, which is a determinism "
                 "break in the frame just simulated (see rng.h)",
@@ -318,7 +318,7 @@ static void sync_report(const SNetPacket_SyncCheck *host_state,
         if ((own->hero_area[i] != host_state->hero_area[i]) ||
             (std::memcmp(own->hero_position[i], host_state->hero_position[i],
                          sizeof(own->hero_position[i])) != 0)) {
-            DLOG_EX("netplay",
+            DLOG("netplay",
                     "  hero %d  host (%.3f, %.3f, %.3f) area %d  |  ours (%.3f, %.3f, %.3f) area %d",
                     i,
                     (double)host_state->hero_position[i][0],
@@ -343,7 +343,7 @@ static void sync_report(const SNetPacket_SyncCheck *host_state,
             (own->bucket_count[i] == host_state->bucket_count[i])) {
             continue;
         }
-        DLOG_EX("netplay", "  bucket %d differs: host %d actors hash=%08x | "
+        DLOG("netplay", "  bucket %d differs: host %d actors hash=%08x | "
                            "ours %d actors hash=%08x",
                 i, host_state->bucket_count[i], host_state->bucket_hash[i],
                 own->bucket_count[i], own->bucket_hash[i]);
@@ -355,7 +355,7 @@ static void sync_report(const SNetPacket_SyncCheck *host_state,
                 continue;
             }
             listed = listed + 1;
-            DLOG_EX("netplay", "    ours: %-24s (%.3f, %.3f, %.3f) area %d",
+            DLOG("netplay", "    ours: %-24s (%.3f, %.3f, %.3f) area %d",
                     actor->actor_name,
                     (double)actor->location.position.x,
                     (double)actor->location.position.y,

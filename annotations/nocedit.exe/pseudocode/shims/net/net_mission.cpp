@@ -89,7 +89,7 @@ static void mission_apply_seed(uint seed)
 {
     srand(seed);
     core_actor_cpp_setRandomSeed_FUN_0040cb90(seed);
-    DLOG_EX("netplay", "MISSION SEED %s random_seed=%u (0x%06x masked)",
+    DLOG("netplay", "MISSION SEED %s random_seed=%u (0x%06x masked)",
             mission_is_host() ? "(host)" : "(guest)", seed, seed & 0xffffff);
 }
 
@@ -117,7 +117,7 @@ static int mission_wait_for_announcement(void)
         }
         now = wincore_winrun_cpp_getTime_FUN_005f2dc0();
         if (deadline < now) {
-            DLOG_EX("netplay", "MISSION no announcement from the host after %d seconds",
+            DLOG("netplay", "MISSION no announcement from the host after %d seconds",
                     MISSION_WAIT_SECONDS);
             return 0;
         }
@@ -160,7 +160,7 @@ extern "C" void nocturne_net_mission_resolve(char *name, int name_size)
         // thing both machines have to agree on before they simulate — and this
         // re-covers a guest that missed the lobby's copy. See net_cheats.h.
         nocturne_net_cheats_announce();
-        DLOG_EX("netplay", "MISSION announce #%d '%s' seed=%u",
+        DLOG("netplay", "MISSION announce #%d '%s' seed=%u",
                 s_announced.serial, s_announced.mission, s_announced.seed);
         return;
     }
@@ -171,7 +171,7 @@ extern "C" void nocturne_net_mission_resolve(char *name, int name_size)
     if (s_have_announced != 0) {
         strncpy(name, s_announced.mission, (size_t)name_size - 1);
         name[name_size - 1] = '\0';
-        DLOG_EX("netplay", "MISSION follow #%d '%s'", s_announced.serial, name);
+        DLOG("netplay", "MISSION follow #%d '%s'", s_announced.serial, name);
     }
 }
 
@@ -240,7 +240,7 @@ extern "C" int nocturne_net_mission_on_packet(const void *packet, int packet_siz
     s_announced = *incoming;
     s_announced.mission[sizeof(s_announced.mission) - 1] = '\0';
     s_have_announced = 1;
-    DLOG_EX("netplay", "MISSION announced #%d '%s' seed=%u",
+    DLOG("netplay", "MISSION announced #%d '%s' seed=%u",
             s_announced.serial, s_announced.mission, s_announced.seed);
     return 1;
 }

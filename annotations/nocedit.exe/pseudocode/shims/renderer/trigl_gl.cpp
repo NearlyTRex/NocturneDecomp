@@ -218,7 +218,7 @@ bool have_entry_points() {
 GLuint compile_stage(GLenum type, const char *source, const char *label) {
     GLuint shader = gl.CreateShader(type);
     if (shader == 0) {
-        DDRAW_LOG("trigl_gl: glCreateShader failed for %s", label);
+        DLOG("render","trigl_gl: glCreateShader failed for %s", label);
         return 0;
     }
     gl.ShaderSource(shader, 1, &source, nullptr);
@@ -232,7 +232,7 @@ GLuint compile_stage(GLenum type, const char *source, const char *label) {
         if (gl.GetShaderInfoLog != nullptr) {
             gl.GetShaderInfoLog(shader, (GLsizei)sizeof(log), nullptr, log);
         }
-        DDRAW_LOG("trigl_gl: %s failed to compile: %s", label, log);
+        DLOG("render","trigl_gl: %s failed to compile: %s", label, log);
         gl.DeleteShader(shader);
         return 0;
     }
@@ -250,7 +250,7 @@ bool build_program() {
 
     GLuint program = gl.CreateProgram();
     if (program == 0) {
-        DDRAW_LOG("trigl_gl: glCreateProgram failed");
+        DLOG("render","trigl_gl: glCreateProgram failed");
         gl.DeleteShader(vs);
         gl.DeleteShader(fs);
         return false;
@@ -275,7 +275,7 @@ bool build_program() {
         if (gl.GetProgramInfoLog != nullptr) {
             gl.GetProgramInfoLog(program, (GLsizei)sizeof(log), nullptr, log);
         }
-        DDRAW_LOG("trigl_gl: link failed: %s", log);
+        DLOG("render","trigl_gl: link failed: %s", log);
         if (gl.DeleteProgram != nullptr) gl.DeleteProgram(program);
         return false;
     }
@@ -286,7 +286,7 @@ bool build_program() {
     g_attr_specular = gl.GetAttribLocation(program, "a_specular");
     g_attr_uv       = gl.GetAttribLocation(program, "a_uv");
     if (g_attr_pos != 0) {
-        DDRAW_LOG("trigl_gl: a_pos landed at %d, not 0 — refusing", (int)g_attr_pos);
+        DLOG("render","trigl_gl: a_pos landed at %d, not 0 — refusing", (int)g_attr_pos);
         if (gl.DeleteProgram != nullptr) gl.DeleteProgram(program);
         g_program = 0;
         return false;
@@ -306,7 +306,7 @@ bool build_program() {
     if (g_loc_tex >= 0) gl.Uniform1i(g_loc_tex, 0);
     gl.UseProgram(0);
 
-    DDRAW_LOG("trigl_gl: program linked (id=%u) attrs pos=%d col=%d spec=%d uv=%d",
+    DLOG("render","trigl_gl: program linked (id=%u) attrs pos=%d col=%d spec=%d uv=%d",
               (unsigned)program, (int)g_attr_pos, (int)g_attr_color,
               (int)g_attr_specular, (int)g_attr_uv);
     return true;
@@ -319,7 +319,7 @@ bool build_vertex_array() {
     gl.GenBuffers(1, &g_vbo);
     gl.GenBuffers(1, &g_ibo);
     if (g_vao == 0 || g_vbo == 0 || g_ibo == 0) {
-        DDRAW_LOG("trigl_gl: could not create the vertex array or its buffers");
+        DLOG("render","trigl_gl: could not create the vertex array or its buffers");
         return false;
     }
 
@@ -507,7 +507,7 @@ MasterDepth *ensure_master_depth(int slot, int width, int height) {
                               : (GLenum)GL_FRAMEBUFFER_COMPLETE;
     gl.BindFramebuffer(GL_FRAMEBUFFER, (GLuint)nocturne_gl_scene_fbo());
     if (status != GL_FRAMEBUFFER_COMPLETE) {
-        DDRAW_LOG("trigl_gl: master depth slot %d incomplete at %dx%d", slot, width, height);
+        DLOG("render","trigl_gl: master depth slot %d incomplete at %dx%d", slot, width, height);
         gl.DeleteFramebuffers(1, &m.fbo);
         gl.DeleteRenderbuffers(1, &m.depth);
         m.fbo = m.depth = 0;
@@ -536,7 +536,7 @@ int nocturne_trigl_gl_init(void) {
     g_tried = true;
 
     if (!have_entry_points()) {
-        DDRAW_LOG("trigl_gl: the driver is missing entry points the renderer needs");
+        DLOG("render","trigl_gl: the driver is missing entry points the renderer needs");
         return 0;
     }
     if (!build_program()) return 0;

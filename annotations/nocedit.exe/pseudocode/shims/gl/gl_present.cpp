@@ -159,11 +159,11 @@ extern "C" int nocturne_gl_init(SDL_Window *window) {
 
     g_gl.context = SDL_GL_CreateContext(window);
     if (g_gl.context == nullptr) {
-        DDRAW_LOG("gl_present: SDL_GL_CreateContext failed: %s", SDL_GetError());
+        DLOG("render","gl_present: SDL_GL_CreateContext failed: %s", SDL_GetError());
         return 0;
     }
     if (SDL_GL_MakeCurrent(window, g_gl.context) != 0) {
-        DDRAW_LOG("gl_present: SDL_GL_MakeCurrent failed: %s", SDL_GetError());
+        DLOG("render","gl_present: SDL_GL_MakeCurrent failed: %s", SDL_GetError());
         SDL_GL_DeleteContext(g_gl.context);
         g_gl.context = nullptr;
         return 0;
@@ -208,7 +208,7 @@ extern "C" int nocturne_gl_init(SDL_Window *window) {
         }
     }
 
-    DDRAW_LOG("gl_present: context up — GL_VERSION=%s GL_RENDERER=%s",
+    DLOG("render","gl_present: context up — GL_VERSION=%s GL_RENDERER=%s",
               (const char *)gl.GetString(GL_VERSION),
               (const char *)gl.GetString(GL_RENDERER));
     return 1;
@@ -267,7 +267,7 @@ extern "C" int nocturne_gl_scene_target_bind(int width, int height) {
                                GL_RENDERBUFFER, g_gl.scene_depth);
 
     if (gl.CheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE) {
-        DDRAW_LOG("gl_present: scene FBO incomplete (%dx%d) — falling back", width, height);
+        DLOG("render","gl_present: scene FBO incomplete (%dx%d) — falling back", width, height);
         gl.BindFramebuffer(GL_FRAMEBUFFER, 0);
         gl.DeleteFramebuffers(1, &g_gl.scene_fbo);
         gl.DeleteTextures(1, &g_gl.scene_color);
@@ -285,7 +285,7 @@ extern "C" int nocturne_gl_scene_target_bind(int width, int height) {
     gl.ClearDepth(1.0);
     gl.DepthMask(GL_TRUE);
     gl.Clear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    DDRAW_LOG("gl_present: scene FBO %dx%d ready", width, height);
+    DLOG("render","gl_present: scene FBO %dx%d ready", width, height);
     return 1;
 }
 
@@ -323,7 +323,7 @@ extern "C" void nocturne_gl_present_framebuffer(const void *pixels, int width, i
 
     GLenum format = 0, type = 0;
     if (!format_for_bpp(bpp, &format, &type)) {
-        DDRAW_LOG_RL(4, 300, "gl_present: unsupported bpp=%d", bpp);
+        DLOG_RL("render",4, 300, "gl_present: unsupported bpp=%d", bpp);
         return;
     }
     if (!ensure_texture(width, height, format, type)) return;
@@ -434,7 +434,7 @@ extern "C" void nocturne_gl_scene_upload(const void *pixels, int width, int heig
 
     GLenum format = 0, type = 0;
     if (!format_for_bpp(bpp, &format, &type)) {
-        DDRAW_LOG_RL(4, 300, "gl_present: scene upload unsupported bpp=%d", bpp);
+        DLOG_RL("render",4, 300, "gl_present: scene upload unsupported bpp=%d", bpp);
         return;
     }
     if (!ensure_texture(width, height, format, type)) return;

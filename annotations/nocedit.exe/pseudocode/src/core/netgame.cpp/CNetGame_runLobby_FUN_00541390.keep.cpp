@@ -193,7 +193,7 @@ LAB_005415cb:
             core_actor_cpp_setRandomSeed_FUN_0040cb90(this_ptr->random_seed);
 #if !NOCTURNE_AUTHENTIC_NETPLAY
 #if NOCTURNE_NETPLAY_RNG_TRACE
-            DLOG_EX("netplay", "LOAD SEED (host) random_seed=%u (0x%06x masked)",
+            DLOG("netplay", "LOAD SEED (host) random_seed=%u (0x%06x masked)",
                     this_ptr->random_seed, this_ptr->random_seed & 0xffffff);
 #endif
 #endif
@@ -225,7 +225,7 @@ LAB_005415cb:
         core_actor_cpp_setRandomSeed_FUN_0040cb90(this_ptr->random_seed);
 #if !NOCTURNE_AUTHENTIC_NETPLAY
 #if NOCTURNE_NETPLAY_RNG_TRACE
-        DLOG_EX("netplay", "LOAD SEED (guest) random_seed=%u (0x%06x masked)",
+        DLOG("netplay", "LOAD SEED (guest) random_seed=%u (0x%06x masked)",
                 this_ptr->random_seed, this_ptr->random_seed & 0xffffff);
 #endif
 #endif

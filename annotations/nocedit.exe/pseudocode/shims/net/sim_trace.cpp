@@ -402,7 +402,7 @@ extern "C" void nocturne_sim_trace_frame(int sequence_number)
             // what crashed the host the first time this trace ran.
             if (((victim_slot == -2) || (script_slot == -2)) && (s_reported_bad_victim == 0)) {
                 s_reported_bad_victim = 1;
-                DLOG_EX("netplay",
+                DLOG("netplay",
                         "SIMTRACE: %s has a victim field that is neither null, the script "
                         "sentinel, nor a live character - victim=%p script_victim=%p "
                         "(a stale pointer, not a desync)",

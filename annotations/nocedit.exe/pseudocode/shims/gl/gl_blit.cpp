@@ -100,7 +100,7 @@ bool have_entry_points() {
 GLuint compile_stage(GLenum type, const char *source, const char *label) {
     GLuint shader = gl.CreateShader(type);
     if (shader == 0) {
-        DDRAW_LOG("gl_blit: glCreateShader failed for %s", label);
+        DLOG("render","gl_blit: glCreateShader failed for %s", label);
         return 0;
     }
     gl.ShaderSource(shader, 1, &source, nullptr);
@@ -114,7 +114,7 @@ GLuint compile_stage(GLenum type, const char *source, const char *label) {
         if (gl.GetShaderInfoLog != nullptr) {
             gl.GetShaderInfoLog(shader, (GLsizei)sizeof(log), nullptr, log);
         }
-        DDRAW_LOG("gl_blit: %s failed to compile: %s", label, log);
+        DLOG("render","gl_blit: %s failed to compile: %s", label, log);
         gl.DeleteShader(shader);
         return 0;
     }
@@ -133,7 +133,7 @@ bool build_program() {
 
     GLuint program = gl.CreateProgram();
     if (program == 0) {
-        DDRAW_LOG("gl_blit: glCreateProgram failed");
+        DLOG("render","gl_blit: glCreateProgram failed");
         gl.DeleteShader(vs);
         gl.DeleteShader(fs);
         return false;
@@ -160,7 +160,7 @@ bool build_program() {
         if (gl.GetProgramInfoLog != nullptr) {
             gl.GetProgramInfoLog(program, (GLsizei)sizeof(log), nullptr, log);
         }
-        DDRAW_LOG("gl_blit: link failed: %s", log);
+        DLOG("render","gl_blit: link failed: %s", log);
         if (gl.DeleteProgram != nullptr) gl.DeleteProgram(program);
         return false;
     }
@@ -172,7 +172,7 @@ bool build_program() {
         // Anything other than 0 means the bind above did not take, and the blit
         // would come out empty rather than wrong — a black screen, which is a far
         // worse diagnostic than a wrong-looking one. Refuse the path instead.
-        DDRAW_LOG("gl_blit: a_pos landed at %d, not 0 — staying on fixed function",
+        DLOG("render","gl_blit: a_pos landed at %d, not 0 — staying on fixed function",
                   (int)g_attr_pos);
         if (gl.DeleteProgram != nullptr) gl.DeleteProgram(program);
         return false;
@@ -180,7 +180,7 @@ bool build_program() {
 
     gl.GenBuffers(1, &g_vbo);
     if (g_vbo == 0) {
-        DDRAW_LOG("gl_blit: glGenBuffers failed — staying on fixed function");
+        DLOG("render","gl_blit: glGenBuffers failed — staying on fixed function");
         if (gl.DeleteProgram != nullptr) gl.DeleteProgram(program);
         return false;
     }
@@ -191,7 +191,7 @@ bool build_program() {
     gl.BindBuffer(GL_ARRAY_BUFFER, 0);
 
     g_program = program;
-    DDRAW_LOG("gl_blit: program linked (id=%u) attrs pos=%d uv=%d",
+    DLOG("render","gl_blit: program linked (id=%u) attrs pos=%d uv=%d",
               (unsigned)program, (int)g_attr_pos, (int)g_attr_uv);
     return true;
 }
@@ -203,7 +203,7 @@ int blit_quad(unsigned int texture, int first) {
         if (g_tried) return 0;
         g_tried = true;
         if (!have_entry_points()) {
-            DDRAW_LOG("gl_blit: no shader/buffer entry points — blit stays on fixed function");
+            DLOG("render","gl_blit: no shader/buffer entry points — blit stays on fixed function");
             return 0;
         }
         if (!build_program()) return 0;

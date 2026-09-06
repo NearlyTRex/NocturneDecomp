@@ -69,10 +69,10 @@ extern "C" int nocturne_window_mode_get(void) {
                 kIniSection, kIniKey, NOCTURNE_WINDOW_MODE_WINDOWED, kIniPath));
         } else {
             s_mode = NOCTURNE_WINDOW_MODE_WINDOWED;
-            DLOG_EX("window", "no %s yet; defaulting to windowed", kIniPath);
+            DLOG("render", "no %s yet; defaulting to windowed", kIniPath);
         }
         s_loaded = true;
-        DLOG_EX("window", "loaded windowMode=%d (%s)", s_mode,
+        DLOG("render", "loaded windowMode=%d (%s)", s_mode,
                 nocturne_window_mode_name(s_mode));
     }
     return s_mode;
@@ -87,7 +87,7 @@ extern "C" void nocturne_window_mode_set(int mode) {
     snprintf(value, sizeof(value), "%d", mode);
     engine_ini_cpp_writeProfileString_FUN_004fba40(kIniSection, kIniKey, value, kIniPath);
 
-    DLOG_EX("window", "set windowMode=%d (%s)", mode, nocturne_window_mode_name(mode));
+    DLOG("render", "set windowMode=%d (%s)", mode, nocturne_window_mode_name(mode));
     nocturne_window_mode_apply(s_window);
 }
 
@@ -131,7 +131,7 @@ extern "C" void nocturne_window_mode_apply(SDL_Window *window) {
     const Uint32 cur = SDL_GetWindowFlags(window) & SDL_WINDOW_FULLSCREEN_DESKTOP;
     if (cur == want) return;
 
-    DLOG_EX("window", "apply mode=%d (%s) flags 0x%x -> 0x%x",
+    DLOG("render", "apply mode=%d (%s) flags 0x%x -> 0x%x",
             mode, nocturne_window_mode_name(mode), cur, want);
     SDL_SetWindowFullscreen(window, want);
     if (want == 0) {
@@ -169,7 +169,7 @@ extern "C" void nocturne_window_set_size(int width, int height) {
     SDL_GetWindowSize(s_window, &cur_w, &cur_h);
     if (cur_w == width && cur_h == height) return;
 
-    DLOG_EX("window", "resize window %dx%d -> %dx%d (render resolution unchanged)",
+    DLOG("render", "resize window %dx%d -> %dx%d (render resolution unchanged)",
             cur_w, cur_h, width, height);
     SDL_SetWindowSize(s_window, width, height);
     SDL_SetWindowPosition(s_window, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED);

@@ -19,7 +19,7 @@ void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_00543800(CNetGam
 #if !NOCTURNE_AUTHENTIC_NETPLAY && NOCTURNE_NETPLAY_SIM_TRACE
   if (0 < apply_log_budget) {
     apply_log_budget = apply_log_budget + -1;
-    DLOG_EX("netplay",
+    DLOG("netplay",
             "APPLY seq=%d conn=%d mode=%d local_idx=%d->%d process=%d dt=%g",
             sim_frame->sequence_number, (int)this_ptr->connection_type,
             (int)this_ptr->network_mode,

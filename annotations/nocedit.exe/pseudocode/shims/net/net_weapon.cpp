@@ -219,7 +219,7 @@ extern "C" void nocturne_net_weapon_apply_if_due(int sequence_number)
         // at all, WEAPON_LEAD_FRAMES is too short for this connection.
         if ((request->apply_sequence < sequence_number) && (s_reported_late == 0)) {
             s_reported_late = 1;
-            DLOG_EX("netplay",
+            DLOG("netplay",
                     "net_weapon: a selection scheduled for frame %d arrived at %d and "
                     "applied late - the machines disagreed about a weapon for %d frames. "
                     "WEAPON_LEAD_FRAMES is too short for this connection",
