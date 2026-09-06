@@ -4,14 +4,22 @@
 // KERNEL32 SHIM - POSIX/SDL implementations for Win32 kernel32 API
 // =============================================================================
 //
-// Maps kernel32 functions to POSIX equivalents:
+// Maps kernel32 functions onto what is underneath. The standard library where
+// it reaches, which is everything to do with threads, and the host's own
+// interfaces where it does not:
+//
+//   Threads:     std::thread, and std::hash of an id where Win32 wants a number
+//   Sync:        std::recursive_mutex for critical sections and Win32 mutexes,
+//                std::condition_variable for events
+//   TLS:         thread_local, one array of slots per thread
+//   Timing:      std::this_thread::sleep_for, clock_gettime for the clocks
 //   File I/O:    open/read/write/close/lseek
-//   Threading:   pthread_create/pthread_mutex
+//   Searching:   core/file_search.cpp, shared with Watcom's _findfirst
 //   Memory:      mmap/munmap for VirtualAlloc/Free, malloc for GlobalAlloc
 //   Libraries:   dlopen/dlsym/dlclose
-//   Timing:      clock_gettime(CLOCK_MONOTONIC), SDL_Delay for Sleep
-//   TLS:         pthread_key_t
-//   Sync:        pthread_mutex for critical sections, pthread_cond for events
+//
+// The last three are the ones still tied to POSIX, and the ones a port to
+// another host would have to answer. Nothing above them is.
 //
 
 #include "system/kernel32.h"
@@ -21,7 +29,15 @@
 
 #include <SDL.h>
 #include <dlfcn.h>
-#include <pthread.h>
+
+// The threading is the standard library's. The game creates exactly one thread
+// and asks for no stack size and no suspended start, which is the whole of what
+// std::thread cannot express, so nothing here needs a platform thread API.
+#include <atomic>
+#include <chrono>
+#include <condition_variable>
+#include <mutex>
+#include <thread>
 #include <sys/mman.h>
 #include <sys/stat.h>
 #include <sys/sysinfo.h>
@@ -55,22 +71,33 @@ enum HandleTag {
     HANDLE_TAG_PROC   = 0x50524F43  // 'PROC'
 };
 
+// The waitable objects, on the standard library rather than on pthreads. What
+// Win32 calls a mutex is recursive and can be waited on with a timeout, and what
+// it calls an event is a flag with a queue behind it — both of which the
+// standard library has, and neither of which is POSIX-shaped.
+//
+// These hold real objects now rather than plain bytes, so they are made with new
+// and released with delete. The malloc/free they used to use would leave the
+// mutex and the condition variable unconstructed.
 struct ThreadHandle {
     int tag;
-    pthread_t thread;
+    std::thread thread;
     DWORD exitCode;
-    int finished;
+    // Read by a waiter while the thread that sets it is still running, so it is
+    // atomic. It was a plain int being written and read by two threads with
+    // nothing between them, which is a race whether or not it ever showed.
+    std::atomic<int> finished;
 };
 
 struct MutexHandle {
     int tag;
-    pthread_mutex_t mutex;
+    std::recursive_timed_mutex mutex;
 };
 
 struct EventHandle {
     int tag;
-    pthread_mutex_t mutex;
-    pthread_cond_t cond;
+    std::mutex mutex;
+    std::condition_variable cond;
     int signaled;
     int manualReset;
 };
@@ -250,21 +277,21 @@ static BOOL shim_CloseHandle(HANDLE hObject) {
     switch (*tagPtr) {
     case HANDLE_TAG_THREAD: {
         ThreadHandle* th = (ThreadHandle*)hObject;
-        pthread_detach(th->thread);
-        free(th);
+        // Closing a thread handle on Windows drops the caller's reference and
+        // lets the thread run on. Detaching says the same thing. The handle
+        // itself is deliberately not deleted: the thread body still holds it and
+        // writes its exit code through it, and there is no way from here to know
+        // whether it has finished. One leaked handle per thread, and the game
+        // creates one.
+        if (th->thread.joinable()) th->thread.detach();
         return 1;
     }
     case HANDLE_TAG_MUTEX: {
-        MutexHandle* mh = (MutexHandle*)hObject;
-        pthread_mutex_destroy(&mh->mutex);
-        free(mh);
+        delete (MutexHandle*)hObject;
         return 1;
     }
     case HANDLE_TAG_EVENT: {
-        EventHandle* eh = (EventHandle*)hObject;
-        pthread_cond_destroy(&eh->cond);
-        pthread_mutex_destroy(&eh->mutex);
-        free(eh);
+        delete (EventHandle*)hObject;
         return 1;
     }
     case HANDLE_TAG_FIND: {
@@ -588,66 +615,45 @@ static BOOL shim_ReadConsoleInputA(HANDLE hConsoleInput, PINPUT_RECORD lpBuffer,
 // Thread Shims
 // =============================================================================
 
-struct ThreadStartInfo {
-    LPTHREAD_START_ROUTINE startAddress;
-    LPVOID parameter;
-    ThreadHandle* handle;
-};
-
-static void* thread_entry(void* arg) {
-    ThreadStartInfo* info = (ThreadStartInfo*)arg;
-    LPTHREAD_START_ROUTINE func = info->startAddress;
-    LPVOID param = info->parameter;
-    ThreadHandle* th = info->handle;
-    free(info);
-
-    DWORD exitCode = func(param);
-    th->exitCode = exitCode;
-    th->finished = 1;
-    return NULL;
-}
-
 static HANDLE shim_CreateThread(LPSECURITY_ATTRIBUTES lpThreadAttributes,
     SIZE_T dwStackSize, LPTHREAD_START_ROUTINE lpStartAddress,
     LPVOID lpParameter, DWORD dwCreationFlags, LPDWORD lpThreadId)
 {
     (void)lpThreadAttributes;
-    (void)dwCreationFlags; // CREATE_SUSPENDED not supported
+    (void)dwCreationFlags;   // CREATE_SUSPENDED not supported
+    // A stack size cannot be asked for through std::thread. The game's one call
+    // site passes zero, meaning "whatever the default is", so there is nothing
+    // to honour — and adding a threading library to carry a parameter nobody
+    // sets would be paying for it twice.
+    (void)dwStackSize;
 
-    ThreadHandle* th = (ThreadHandle*)malloc(sizeof(ThreadHandle));
+    ThreadHandle* th = new (std::nothrow) ThreadHandle();
     if (!th) { s_lastError = 8; return NULL; }
-    memset(th, 0, sizeof(ThreadHandle));
     th->tag = HANDLE_TAG_THREAD;
+    th->exitCode = 0;
+    th->finished = 0;
 
-    ThreadStartInfo* info = (ThreadStartInfo*)malloc(sizeof(ThreadStartInfo));
-    if (!info) { free(th); s_lastError = 8; return NULL; }
-    info->startAddress = lpStartAddress;
-    info->parameter = lpParameter;
-    info->handle = th;
+    // The handle is captured, so it has to outlive the thread body. Every path
+    // that releases one either joins first or detaches and leaks deliberately —
+    // see CloseHandle.
+    th->thread = std::thread([th, lpStartAddress, lpParameter]() {
+        th->exitCode = lpStartAddress(lpParameter);
+        th->finished = 1;
+    });
 
-    pthread_attr_t attr;
-    pthread_attr_init(&attr);
-    if (dwStackSize > 0) {
-        pthread_attr_setstacksize(&attr, dwStackSize);
+    if (lpThreadId) {
+        *lpThreadId = (DWORD)std::hash<std::thread::id>()(th->thread.get_id());
     }
-
-    int ret = pthread_create(&th->thread, &attr, thread_entry, info);
-    pthread_attr_destroy(&attr);
-
-    if (ret != 0) {
-        free(info);
-        free(th);
-        s_lastError = (DWORD)ret;
-        return NULL;
-    }
-
-    if (lpThreadId) *lpThreadId = (DWORD)(uintptr_t)th->thread;
     return (HANDLE)th;
 }
 
 static void shim_ExitThread(DWORD dwExitCode) {
     (void)dwExitCode;
-    pthread_exit(NULL);
+    // Win32 ends the calling thread here and unwinds nothing. The standard
+    // library has no equivalent — a thread ends by returning from its body —
+    // and the game never calls this: its one thread runs to the end of the
+    // routine it was given. Left as a no-op rather than reaching for a platform
+    // call to implement something with no caller.
 }
 
 static BOOL shim_SetThreadPriority(HANDLE hThread, int nPriority) {
@@ -663,7 +669,7 @@ static HANDLE shim_GetCurrentThread(void) {
 }
 
 static DWORD shim_GetCurrentThreadId(void) {
-    return (DWORD)(uintptr_t)pthread_self();
+    return (DWORD)std::hash<std::thread::id>()(std::this_thread::get_id());
 }
 
 // =============================================================================
@@ -676,18 +682,12 @@ static HANDLE shim_CreateMutexA(LPSECURITY_ATTRIBUTES lpMutexAttributes,
     (void)lpMutexAttributes;
     (void)lpName;
 
-    MutexHandle* mh = (MutexHandle*)malloc(sizeof(MutexHandle));
+    MutexHandle* mh = new (std::nothrow) MutexHandle();
     if (!mh) { s_lastError = 8; return NULL; }
     mh->tag = HANDLE_TAG_MUTEX;
 
-    pthread_mutexattr_t attr;
-    pthread_mutexattr_init(&attr);
-    pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_RECURSIVE);
-    pthread_mutex_init(&mh->mutex, &attr);
-    pthread_mutexattr_destroy(&attr);
-
     if (bInitialOwner) {
-        pthread_mutex_lock(&mh->mutex);
+        mh->mutex.lock();
     }
     return (HANDLE)mh;
 }
@@ -695,7 +695,7 @@ static HANDLE shim_CreateMutexA(LPSECURITY_ATTRIBUTES lpMutexAttributes,
 static BOOL shim_ReleaseMutex(HANDLE hMutex) {
     MutexHandle* mh = (MutexHandle*)hMutex;
     if (!mh || mh->tag != HANDLE_TAG_MUTEX) return 0;
-    pthread_mutex_unlock(&mh->mutex);
+    mh->mutex.unlock();
     return 1;
 }
 
@@ -705,85 +705,73 @@ static HANDLE shim_CreateEventA(LPSECURITY_ATTRIBUTES lpEventAttributes,
     (void)lpEventAttributes;
     (void)lpName;
 
-    EventHandle* eh = (EventHandle*)malloc(sizeof(EventHandle));
+    EventHandle* eh = new (std::nothrow) EventHandle();
     if (!eh) { s_lastError = 8; return NULL; }
     eh->tag = HANDLE_TAG_EVENT;
     eh->manualReset = bManualReset;
     eh->signaled = bInitialState ? 1 : 0;
-    pthread_mutex_init(&eh->mutex, NULL);
-    pthread_cond_init(&eh->cond, NULL);
     return (HANDLE)eh;
 }
 
 static BOOL shim_SetEvent(HANDLE hEvent) {
     EventHandle* eh = (EventHandle*)hEvent;
     if (!eh || eh->tag != HANDLE_TAG_EVENT) return 0;
-    pthread_mutex_lock(&eh->mutex);
-    eh->signaled = 1;
-    if (eh->manualReset)
-        pthread_cond_broadcast(&eh->cond);
-    else
-        pthread_cond_signal(&eh->cond);
-    pthread_mutex_unlock(&eh->mutex);
+    {
+        std::lock_guard<std::mutex> held(eh->mutex);
+        eh->signaled = 1;
+    }
+    // A manual-reset event stays signalled, so everyone waiting can go; an
+    // automatic one is taken by whoever wakes first, so only one is woken.
+    if (eh->manualReset) eh->cond.notify_all();
+    else                 eh->cond.notify_one();
     return 1;
 }
 
 static DWORD shim_WaitForSingleObject(HANDLE hHandle, DWORD dwMilliseconds) {
     if (!hHandle) return WIN32_WAIT_FAILED;
 
+    const std::chrono::milliseconds timeout((long long)dwMilliseconds);
+    const bool forever = (dwMilliseconds == WIN32_INFINITE);
+
     int* tagPtr = (int*)hHandle;
     if (*tagPtr == HANDLE_TAG_MUTEX) {
         MutexHandle* mh = (MutexHandle*)hHandle;
-        if (dwMilliseconds == WIN32_INFINITE) {
-            pthread_mutex_lock(&mh->mutex);
+        // Waiting on a mutex is taking it. It stays taken until ReleaseMutex,
+        // which is why this does not use a lock guard.
+        if (forever) {
+            mh->mutex.lock();
             return WIN32_WAIT_OBJECT_0;
-        } else {
-            struct timespec ts;
-            clock_gettime(CLOCK_REALTIME, &ts);
-            ts.tv_sec += dwMilliseconds / 1000;
-            ts.tv_nsec += (dwMilliseconds % 1000) * 1000000L;
-            if (ts.tv_nsec >= 1000000000L) {
-                ts.tv_sec++;
-                ts.tv_nsec -= 1000000000L;
-            }
-            int ret = pthread_mutex_timedlock(&mh->mutex, &ts);
-            return (ret == 0) ? WIN32_WAIT_OBJECT_0 : WIN32_WAIT_TIMEOUT;
         }
-    } else if (*tagPtr == HANDLE_TAG_EVENT) {
+        return mh->mutex.try_lock_for(timeout) ? WIN32_WAIT_OBJECT_0 : WIN32_WAIT_TIMEOUT;
+    }
+
+    if (*tagPtr == HANDLE_TAG_EVENT) {
         EventHandle* eh = (EventHandle*)hHandle;
-        pthread_mutex_lock(&eh->mutex);
-        if (dwMilliseconds == WIN32_INFINITE) {
-            while (!eh->signaled)
-                pthread_cond_wait(&eh->cond, &eh->mutex);
-        } else {
-            struct timespec ts;
-            clock_gettime(CLOCK_REALTIME, &ts);
-            ts.tv_sec += dwMilliseconds / 1000;
-            ts.tv_nsec += (dwMilliseconds % 1000) * 1000000L;
-            if (ts.tv_nsec >= 1000000000L) {
-                ts.tv_sec++;
-                ts.tv_nsec -= 1000000000L;
-            }
-            while (!eh->signaled) {
-                int ret = pthread_cond_timedwait(&eh->cond, &eh->mutex, &ts);
-                if (ret != 0) {
-                    pthread_mutex_unlock(&eh->mutex);
-                    return WIN32_WAIT_TIMEOUT;
-                }
-            }
+        std::unique_lock<std::mutex> held(eh->mutex);
+        if (forever) {
+            // The predicate form, which re-checks after every wake and so is not
+            // fooled by a spurious one.
+            eh->cond.wait(held, [eh]() { return eh->signaled != 0; });
+        } else if (!eh->cond.wait_for(held, timeout, [eh]() { return eh->signaled != 0; })) {
+            return WIN32_WAIT_TIMEOUT;
         }
+        // An automatic event is consumed by the wait that takes it; a
+        // manual-reset one stays signalled until ResetEvent.
         if (!eh->manualReset) eh->signaled = 0;
-        pthread_mutex_unlock(&eh->mutex);
         return WIN32_WAIT_OBJECT_0;
-    } else if (*tagPtr == HANDLE_TAG_THREAD) {
+    }
+
+    if (*tagPtr == HANDLE_TAG_THREAD) {
         ThreadHandle* th = (ThreadHandle*)hHandle;
-        if (dwMilliseconds == WIN32_INFINITE) {
-            pthread_join(th->thread, NULL);
+        if (forever) {
+            if (th->thread.joinable()) th->thread.join();
             return WIN32_WAIT_OBJECT_0;
         }
-        // Timed wait on thread not easily done; poll
-        if (th->finished) return WIN32_WAIT_OBJECT_0;
-        return WIN32_WAIT_TIMEOUT;
+        // A timed wait for a thread has no direct expression: joining cannot be
+        // given a deadline. The thread reports its own end, so this asks. It is
+        // a poll rather than a wait — the same shape as before, and the game
+        // only ever waits on its one thread without a timeout.
+        return th->finished ? WIN32_WAIT_OBJECT_0 : WIN32_WAIT_TIMEOUT;
     }
     return WIN32_WAIT_FAILED;
 }
@@ -792,16 +780,12 @@ static DWORD shim_WaitForSingleObject(HANDLE hHandle, DWORD dwMilliseconds) {
 // Critical Section Shims
 // =============================================================================
 
+// A CRITICAL_SECTION is the game's own struct, so the lock cannot live inside
+// it — it is carried in the LockSemaphore field, which is where Windows keeps
+// something of its own too. Recursive, because that is what a critical section
+// is: the thread holding one can enter it again.
 static void shim_InitializeCriticalSection(LPCRITICAL_SECTION lpCriticalSection) {
-    // Store a pthread_mutex in the CRITICAL_SECTION's LockSemaphore field
-    pthread_mutex_t* mtx = (pthread_mutex_t*)malloc(sizeof(pthread_mutex_t));
-    if (mtx) {
-        pthread_mutexattr_t attr;
-        pthread_mutexattr_init(&attr);
-        pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_RECURSIVE);
-        pthread_mutex_init(mtx, &attr);
-        pthread_mutexattr_destroy(&attr);
-    }
+    std::recursive_mutex* mtx = new (std::nothrow) std::recursive_mutex();
     lpCriticalSection->LockSemaphore = (HANDLE)mtx;
     lpCriticalSection->LockCount = -1;
     lpCriticalSection->RecursionCount = 0;
@@ -809,22 +793,21 @@ static void shim_InitializeCriticalSection(LPCRITICAL_SECTION lpCriticalSection)
 }
 
 static void shim_DeleteCriticalSection(LPCRITICAL_SECTION lpCriticalSection) {
-    pthread_mutex_t* mtx = (pthread_mutex_t*)lpCriticalSection->LockSemaphore;
+    std::recursive_mutex* mtx = (std::recursive_mutex*)lpCriticalSection->LockSemaphore;
     if (mtx) {
-        pthread_mutex_destroy(mtx);
-        free(mtx);
+        delete mtx;
         lpCriticalSection->LockSemaphore = NULL;
     }
 }
 
 static void shim_EnterCriticalSection(LPCRITICAL_SECTION lpCriticalSection) {
-    pthread_mutex_t* mtx = (pthread_mutex_t*)lpCriticalSection->LockSemaphore;
-    if (mtx) pthread_mutex_lock(mtx);
+    std::recursive_mutex* mtx = (std::recursive_mutex*)lpCriticalSection->LockSemaphore;
+    if (mtx) mtx->lock();
 }
 
 static void shim_LeaveCriticalSection(LPCRITICAL_SECTION lpCriticalSection) {
-    pthread_mutex_t* mtx = (pthread_mutex_t*)lpCriticalSection->LockSemaphore;
-    if (mtx) pthread_mutex_unlock(mtx);
+    std::recursive_mutex* mtx = (std::recursive_mutex*)lpCriticalSection->LockSemaphore;
+    if (mtx) mtx->unlock();
 }
 
 // =============================================================================
@@ -1248,38 +1231,39 @@ static BOOL shim_FileTimeToDosDateTime(FILETIME* lpFileTime, LPWORD lpFatDate, L
 // TLS Shims
 // =============================================================================
 
-// Simple TLS slot table using pthread_key_t
+// Thread-local storage. Win32 hands out an index and stores a pointer per slot
+// per thread; `thread_local` gives exactly that when the slots are an array —
+// each thread gets its own copy, created when it first touches one and released
+// with the thread, which is what pthread keys were being used to arrange.
+//
+// Which slots are in use is shared and needs a lock. What is IN a slot is not:
+// it is per thread by construction, and that is the whole point of it.
 #define MAX_TLS_SLOTS 64
-static pthread_key_t s_tlsKeys[MAX_TLS_SLOTS];
-static int s_tlsUsed[MAX_TLS_SLOTS];
-static pthread_mutex_t s_tlsMutex = PTHREAD_MUTEX_INITIALIZER;
+static bool s_tlsUsed[MAX_TLS_SLOTS];
+static std::mutex s_tlsMutex;
+static thread_local LPVOID s_tlsValues[MAX_TLS_SLOTS];
 
 static DWORD shim_TlsAlloc(void) {
-    pthread_mutex_lock(&s_tlsMutex);
+    std::lock_guard<std::mutex> held(s_tlsMutex);
     for (int i = 0; i < MAX_TLS_SLOTS; i++) {
         if (!s_tlsUsed[i]) {
-            if (pthread_key_create(&s_tlsKeys[i], NULL) == 0) {
-                s_tlsUsed[i] = 1;
-                pthread_mutex_unlock(&s_tlsMutex);
-                return (DWORD)i;
-            }
+            s_tlsUsed[i] = true;
+            return (DWORD)i;
         }
     }
-    pthread_mutex_unlock(&s_tlsMutex);
     return WIN32_TLS_OUT_OF_INDEXES;
 }
 
 static BOOL shim_TlsFree(DWORD dwTlsIndex) {
     if (dwTlsIndex >= MAX_TLS_SLOTS) return 0;
-    pthread_mutex_lock(&s_tlsMutex);
-    if (s_tlsUsed[dwTlsIndex]) {
-        pthread_key_delete(s_tlsKeys[dwTlsIndex]);
-        s_tlsUsed[dwTlsIndex] = 0;
-        pthread_mutex_unlock(&s_tlsMutex);
-        return 1;
-    }
-    pthread_mutex_unlock(&s_tlsMutex);
-    return 0;
+    std::lock_guard<std::mutex> held(s_tlsMutex);
+    if (!s_tlsUsed[dwTlsIndex]) return 0;
+    s_tlsUsed[dwTlsIndex] = false;
+    // Only this thread's copy can be cleared from here, which is the same reach
+    // pthread_key_delete had: it releases the key without touching the values
+    // other threads left behind.
+    s_tlsValues[dwTlsIndex] = NULL;
+    return 1;
 }
 
 static LPVOID shim_TlsGetValue(DWORD dwTlsIndex) {
@@ -1287,12 +1271,13 @@ static LPVOID shim_TlsGetValue(DWORD dwTlsIndex) {
         s_lastError = 0;
         return NULL;
     }
-    return pthread_getspecific(s_tlsKeys[dwTlsIndex]);
+    return s_tlsValues[dwTlsIndex];
 }
 
 static BOOL shim_TlsSetValue(DWORD dwTlsIndex, LPVOID lpTlsValue) {
     if (dwTlsIndex >= MAX_TLS_SLOTS || !s_tlsUsed[dwTlsIndex]) return 0;
-    return pthread_setspecific(s_tlsKeys[dwTlsIndex], lpTlsValue) == 0 ? 1 : 0;
+    s_tlsValues[dwTlsIndex] = lpTlsValue;
+    return 1;
 }
 
 // =============================================================================
