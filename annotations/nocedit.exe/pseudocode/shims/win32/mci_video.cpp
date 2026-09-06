@@ -408,10 +408,6 @@ static int movie_open(const char* filepath) {
 // Internal helpers — clock, decode, present
 // =============================================================================
 
-// Seconds of playback elapsed. The audio device is the reference when there is
-// one: SDL drains its queue at exactly the device rate, so bytes-consumed is
-// the same timeline the player hears, and it stops of its own accord while
-// paused. Wall clock is the silent-movie fallback.
 // Playback position in seconds, measured on the wall clock from the moment
 // "play mov" was issued.
 //
@@ -421,6 +417,13 @@ static int movie_open(const char* filepath) {
 // when the audio clock has advanced, so any hiccup in audio output stalls both.
 // Both clocks track real time anyway, and SDL paces its own queue, so the
 // wall clock keeps A/V together without the feedback loop.
+//
+// The cost of that choice is that the two only agree while the process keeps
+// up. Anything that stops the world — a debugger stepping, a breakpoint on a
+// hot path — advances the wall clock without advancing the decode, so video
+// skips to catch up and the audio queue runs dry behind it. That is the
+// picture-ahead-of-sound this shows under gdb, and it is the instrument rather
+// than the playback.
 static double movie_clock() {
     Uint32 base = s_movie.is_paused ? s_movie.pause_ticks : SDL_GetTicks();
     return (double)(base - s_movie.play_start_ticks) / 1000.0;

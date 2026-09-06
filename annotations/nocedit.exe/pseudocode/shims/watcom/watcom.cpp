@@ -18,8 +18,12 @@
 #include <cerrno>
 #include <cstdlib>
 #include <cstring>
+#include <filesystem>
+#include <system_error>
+// The descriptor-based half of Watcom's io.h — read, write, lseek, ftruncate.
+// A file descriptor is not POSIX-only: Windows' own CRT has the same calls under
+// underscored names, so this is a spelling difference rather than a port.
 #include <unistd.h>
-#include <sys/stat.h>
 
 // =============================================================================
 // Array Construction Functions
@@ -145,12 +149,30 @@ int chsize(int fd, long size) {
 char* _fullpath(char* buffer, const char* path, size_t maxlen) {
     if (buffer == 0) buffer = (char*)malloc(maxlen ? maxlen : 4096);
     if (buffer == 0) return 0;
-    if (realpath(path, buffer) == 0) { strcpy(buffer, path); }
+    // Watcom's _fullpath answers even for a path that does not exist yet, which
+    // is what the game asks it for — a place to write. weakly_canonical does
+    // the same, resolving as far as the filesystem goes and taking the rest
+    // lexically. The path is handed back unchanged if even that fails, which is
+    // what the caller was going to use anyway.
+    std::error_code ec;
+    const std::filesystem::path full =
+        std::filesystem::weakly_canonical(std::filesystem::path(path), ec);
+    const std::string text = ec ? std::string(path) : full.string();
+    const size_t room = maxlen ? maxlen : 4096;
+    if (text.size() + 1 > room) {
+        strcpy(buffer, path);
+        return buffer;
+    }
+    memcpy(buffer, text.c_str(), text.size() + 1);
     return buffer;
 }
 
 char* _getcwd(char* buffer, int size) {
-    return getcwd(buffer, size);
+    std::error_code ec;
+    const std::string here = std::filesystem::current_path(ec).string();
+    if (ec || size <= 0 || here.size() + 1 > (size_t)size) return 0;
+    memcpy(buffer, here.c_str(), here.size() + 1);
+    return buffer;
 }
 
 // =============================================================================
@@ -213,7 +235,10 @@ int _findclose(long handle_val) {
 // =============================================================================
 
 int _mkdir(const char* path) {
-    return mkdir(path, 0755);
+    std::error_code ec;
+    // Watcom answers 0 for success and -1 otherwise, including when the
+    // directory is already there.
+    return std::filesystem::create_directory(std::filesystem::path(path), ec) ? 0 : -1;
 }
 
 // =============================================================================
@@ -242,11 +267,20 @@ size_t memavl(void) {
 // =============================================================================
 
 unsigned long __getfileattr(const char* filename) {
-    struct stat st;
-    if (stat(filename, &st) != 0) return 0xFFFFFFFF;  // INVALID_FILE_ATTRIBUTES
+    std::error_code ec;
+    const std::filesystem::path path(filename);
+    const std::filesystem::file_status status = std::filesystem::status(path, ec);
+    if (ec || !std::filesystem::exists(status)) return 0xFFFFFFFF;  // INVALID_FILE_ATTRIBUTES
+
     unsigned long attrs = 0;
-    if (S_ISDIR(st.st_mode)) attrs |= 0x10;  // FILE_ATTRIBUTE_DIRECTORY
-    if (!(st.st_mode & S_IWUSR)) attrs |= 0x01;  // FILE_ATTRIBUTE_READONLY
+    if (std::filesystem::is_directory(status)) attrs |= 0x10;  // DIRECTORY
+    // Windows has one read-only bit for the file; POSIX has three write bits for
+    // three audiences. The owner's is the one that decides whether this process
+    // can write, which is the question the attribute is asked to answer.
+    if ((status.permissions() & std::filesystem::perms::owner_write) ==
+        std::filesystem::perms::none) {
+        attrs |= 0x01;  // FILE_ATTRIBUTE_READONLY
+    }
     return attrs;
 }
 

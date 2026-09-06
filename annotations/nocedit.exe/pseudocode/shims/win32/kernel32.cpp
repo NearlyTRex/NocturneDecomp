@@ -36,7 +36,9 @@
 #include <atomic>
 #include <chrono>
 #include <condition_variable>
+#include <filesystem>
 #include <mutex>
+#include <system_error>
 #include <thread>
 #include <sys/mman.h>
 #include <sys/stat.h>
@@ -349,8 +351,10 @@ static BOOL shim_FlushFileBuffers(HANDLE hFile) {
 }
 
 static BOOL shim_DeleteFileA(LPCSTR lpFileName) {
-    if (unlink(lpFileName) == 0) return 1;
-    s_lastError = (DWORD)errno;
+    std::error_code ec;
+    if (std::filesystem::remove(std::filesystem::path(lpFileName), ec)) return 1;
+    // remove answers false without an error when there was nothing to remove.
+    s_lastError = ec ? (DWORD)ec.value() : (DWORD)2;   // ERROR_FILE_NOT_FOUND
     return 0;
 }
 
@@ -364,8 +368,11 @@ static BOOL shim_CreateDirectoryA(LPCSTR lpPathName,
     LPSECURITY_ATTRIBUTES lpSecurityAttributes)
 {
     (void)lpSecurityAttributes;
-    if (mkdir(lpPathName, 0755) == 0) return 1;
-    s_lastError = (DWORD)errno;
+    std::error_code ec;
+    if (std::filesystem::create_directory(std::filesystem::path(lpPathName), ec)) return 1;
+    // create_directory answers false without an error when the directory is
+    // already there, which Win32 reports as a failure with ERROR_ALREADY_EXISTS.
+    s_lastError = ec ? (DWORD)ec.value() : (DWORD)183;
     return 0;
 }
 
@@ -460,16 +467,24 @@ static DWORD shim_GetFullPathNameA(LPCSTR lpFileName, DWORD nBufferLength,
 }
 
 static DWORD shim_GetCurrentDirectoryA(DWORD nBufferLength, LPSTR lpBuffer) {
-    if (!getcwd(lpBuffer, nBufferLength)) {
-        s_lastError = (DWORD)errno;
+    std::error_code ec;
+    const std::string here = std::filesystem::current_path(ec).string();
+    if (ec) {
+        s_lastError = (DWORD)ec.value();
         return 0;
     }
-    return (DWORD)strlen(lpBuffer);
+    // Win32 reports the length it needed when the buffer is too small and
+    // writes nothing, rather than truncating.
+    if (here.size() + 1 > (size_t)nBufferLength) return (DWORD)(here.size() + 1);
+    memcpy(lpBuffer, here.c_str(), here.size() + 1);
+    return (DWORD)here.size();
 }
 
 static BOOL shim_SetCurrentDirectoryA(LPCSTR lpPathName) {
-    if (chdir(lpPathName) == 0) return 1;
-    s_lastError = (DWORD)errno;
+    std::error_code ec;
+    std::filesystem::current_path(std::filesystem::path(lpPathName), ec);
+    if (!ec) return 1;
+    s_lastError = (DWORD)ec.value();
     return 0;
 }
 
@@ -1088,9 +1103,12 @@ static DWORD shim_GetModuleFileNameW(HMODULE hModule, LPWSTR lpFilename, DWORD n
 // =============================================================================
 
 static BOOL shim_QueryPerformanceCounter(LARGE_INTEGER* lpPerformanceCount) {
-    struct timespec ts;
-    clock_gettime(CLOCK_MONOTONIC, &ts);
-    lpPerformanceCount->QuadPart = (LONGLONG)ts.tv_sec * 1000000000LL + ts.tv_nsec;
+    // steady_clock is the one that only goes forwards. A performance counter
+    // that could step backwards when the system clock is corrected would make
+    // every elapsed-time measurement in the game briefly negative.
+    const std::chrono::nanoseconds since =
+        std::chrono::steady_clock::now().time_since_epoch();
+    lpPerformanceCount->QuadPart = (LONGLONG)since.count();
     return 1;
 }
 
