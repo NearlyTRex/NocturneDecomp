@@ -214,10 +214,18 @@ long _findfirst(const char* filespec, void* fileinfo) {
     return (long)(intptr_t)handle;
 }
 
+// -1 is what _findfirst returns when it found nothing, so it is the value most
+// likely to arrive here by mistake — from a caller that did not check, or one
+// that passed the failure straight on. It is not a handle, and dereferencing it
+// is a fault rather than a wrong answer. Zero is not a handle either.
+static bool is_find_handle(long handle_val) {
+    return handle_val != -1 && handle_val != 0;
+}
+
 int _findnext(long handle_val, void* fileinfo) {
     (void)fileinfo;
+    if (!is_find_handle(handle_val)) return -1;
     FindHandle* handle = (FindHandle*)(intptr_t)handle_val;
-    if (!handle) return -1;
 
     handle->current_index++;
     if (handle->current_index >= handle->matches.size()) return -1;
@@ -225,8 +233,8 @@ int _findnext(long handle_val, void* fileinfo) {
 }
 
 int _findclose(long handle_val) {
-    FindHandle* handle = (FindHandle*)(intptr_t)handle_val;
-    delete handle;
+    if (!is_find_handle(handle_val)) return -1;
+    delete (FindHandle*)(intptr_t)handle_val;
     return 0;
 }
 

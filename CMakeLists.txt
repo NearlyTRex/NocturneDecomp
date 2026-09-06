@@ -557,6 +557,11 @@ if(_test_sources)
         # is what makes it testable against a directory a test builds itself.
         "${NOCTURNE_SHIMS_DIR}/watcom/path.cpp"
         "${NOCTURNE_SHIMS_DIR}/core/file_search.cpp"
+        # Watcom's CRT calls about files and directories. Safe to link into a
+        # test — unlike crt.cpp beside it, this one adds names rather than taking
+        # over the C library's, so a fixture asking the filesystem something
+        # still gets the truth.
+        "${NOCTURNE_SHIMS_DIR}/watcom/watcom.cpp"
     )
     # The GL-facing sources, for the suites that test ORDER rather than answers.
     # These reach the driver, so they are deliberately outside the list above —
