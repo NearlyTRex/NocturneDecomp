@@ -15,11 +15,13 @@
 //   Timing:      std::this_thread::sleep_for, clock_gettime for the clocks
 //   File I/O:    open/read/write/close/lseek
 //   Searching:   core/file_search.cpp, shared with Watcom's _findfirst
-//   Memory:      mmap/munmap for VirtualAlloc/Free, malloc for GlobalAlloc
-//   Libraries:   dlopen/dlsym/dlclose
+//   Memory:      aligned operator new for VirtualAlloc, malloc for GlobalAlloc
+//   Libraries:   renderer/builtin_dll.cpp — compiled in, nothing is loaded
 //
-// The last three are the ones still tied to POSIX, and the ones a port to
-// another host would have to answer. Nothing above them is.
+// What is left of the host here is the descriptor-based file calls, which
+// Windows' own runtime spells the same way under underscored names, and asking
+// how much memory the machine has, which no language can. Both are marked where
+// they are.
 //
 
 #include "system/kernel32.h"
@@ -28,7 +30,6 @@
 #include "core/file_search.h"   // nocturne_find_files() — shared with _findfirst
 
 #include <SDL.h>
-#include <dlfcn.h>
 
 // The threading is the standard library's. The game creates exactly one thread
 // and asks for no stack size and no suspended start, which is the whole of what
@@ -1130,27 +1131,32 @@ static void shim_GlobalMemoryStatus(LPMEMORYSTATUS lpBuffer) {
 // Library Shims
 // =============================================================================
 
+// There is no dynamic loading here, and there is nothing to load.
+//
+// Every library the game asks for by name is a renderer — tridx7, trigl and the
+// three the shipped game offered and this build does not have — and all of them
+// are compiled in and answered from the registry in renderer/builtin_dll.cpp.
+// The game's own LoadLibrary/GetProcAddress path runs unmodified against our
+// code, which is the point of keeping these entry points at all.
+//
+// So there is no fallback to the host's loader. A name the registry does not
+// know is one this build does not have, and the answer is the same either way:
+// a DLL that is not there. Reaching for the host's loader would only ask a
+// second time, in a form no other platform spells the same, for a file nobody
+// ships. The one non-renderer name in the game, winmm.dll, never reaches here —
+// it is asked for with GetModuleHandle, and the joystick calls it goes on to
+// make are shimmed directly.
 static HMODULE shim_LoadLibraryA(LPCSTR lpLibFileName) {
-    // Compiled-in modules (decompiled renderer DLLs) resolve without touching
-    // the filesystem, so the game's LoadLibrary/GetProcAddress loader path runs
-    // unmodified against our own code. See shims/builtin_dll.h.
     void* builtin = nocturne_builtin_dll_open(lpLibFileName);
-    if (builtin) {
-        return (HMODULE)builtin;
-    }
-    void* handle = dlopen(lpLibFileName, RTLD_LAZY);
-    if (!handle) {
-        s_lastError = 126; // ERROR_MOD_NOT_FOUND
-        return NULL;
-    }
-    return (HMODULE)handle;
+    if (builtin) return (HMODULE)builtin;
+    s_lastError = 126; // ERROR_MOD_NOT_FOUND
+    return NULL;
 }
 
 static BOOL shim_FreeLibrary(HMODULE hLibModule) {
-    // Built-in modules are static data — nothing to unload.
-    if (nocturne_builtin_dll_is_handle((void*)hLibModule)) return 1;
-    if (dlclose((void*)hLibModule) == 0) return 1;
-    return 0;
+    // Built-in modules are static data — nothing to unload, and nothing else
+    // can have been loaded.
+    return nocturne_builtin_dll_is_handle((void*)hLibModule) ? 1 : 0;
 }
 
 static FARPROC shim_GetProcAddress(HMODULE hModule, LPCSTR lpProcName) {
@@ -1161,19 +1167,24 @@ static FARPROC shim_GetProcAddress(HMODULE hModule, LPCSTR lpProcName) {
         }
         return (FARPROC)proc;
     }
-    void* sym = dlsym((void*)hModule, lpProcName);
-    if (!sym) {
-        s_lastError = 127; // ERROR_PROC_NOT_FOUND
-    }
-    return (FARPROC)sym;
+    // Not a registry handle, so not a module this build has. Nothing else can
+    // have produced a handle: LoadLibrary only ever returns one of those.
+    s_lastError = 127; // ERROR_PROC_NOT_FOUND
+    return NULL;
 }
 
+// A handle for a module already loaded, which here means one of the compiled-in
+// ones. Asking about anything else answers no.
+//
+// The game asks for winmm.dll here, to look up joyGetPosEx. It has never been
+// found — the answer was no before this too — and the extended joystick read is
+// simply not used: the plain joyGetPos beside it is shimmed and is what the game
+// falls back to.
 static HMODULE shim_GetModuleHandleA(LPCSTR lpModuleName) {
-    if (!lpModuleName) {
-        // NULL = current exe
-        return (HMODULE)dlopen(NULL, RTLD_LAZY);
-    }
-    return (HMODULE)dlopen(lpModuleName, RTLD_LAZY | RTLD_NOLOAD);
+    // NULL asks for the running program itself. There is no handle for it here,
+    // and no caller wants one — the game passes a name.
+    if (!lpModuleName) return NULL;
+    return (HMODULE)nocturne_builtin_dll_open(lpModuleName);
 }
 
 static DWORD shim_GetModuleFileNameA(HMODULE hModule, LPSTR lpFilename, DWORD nSize) {

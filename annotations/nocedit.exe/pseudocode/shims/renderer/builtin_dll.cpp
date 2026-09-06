@@ -118,10 +118,13 @@ extern "C" void *nocturne_builtin_dll_open(const char *dll_name) {
     {
         const NocturneBuiltinModule *module = find_module(dll_name);
         // This is the authoritative "which renderer is live" line: it fires on
-        // the LoadLibraryA the engine performs during loadExternalRenderer, so
-        // it reflects what was actually loaded rather than what the menu label
-        // suggests.
-        DLOG("render","builtin_dll: LoadLibraryA(\"%s\") -> %s",
+        // the load the engine performs during loadExternalRenderer, so it
+        // reflects what was actually loaded rather than what the menu label
+        // suggests. GetModuleHandle asks the same question of the same registry
+        // and lands here too, so the line names the module rather than the entry
+        // point that asked — winmm.dll appearing here is the joystick asking
+        // whether it is present, and being told no.
+        DLOG("render","builtin_dll: open(\"%s\") -> %s",
                   (dll_name != NULL) ? dll_name : "(null)",
                   (module != NULL) ? "built-in module" : "NOT REGISTERED");
         return (void *)module;
