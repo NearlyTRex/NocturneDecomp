@@ -561,7 +561,10 @@ if(_test_sources)
     # link. A suite opts in by being named test_*_sequence.
     set(_test_subjects_gl
         "${NOCTURNE_SHIMS_DIR}/renderer/trigl_gl.cpp"
+        "${NOCTURNE_SHIMS_DIR}/renderer/trigl_device.cpp"
+        "${NOCTURNE_SHIMS_DIR}/renderer/trigl_exports.cpp"
         "${NOCTURNE_SHIMS_DIR}/tests/renderer/gl_recorder.cpp"
+        "${NOCTURNE_SHIMS_DIR}/tests/renderer/gl_present_support.cpp"
     )
     foreach(_test_src IN LISTS _test_sources)
         get_filename_component(_test_name "${_test_src}" NAME_WE)
@@ -572,7 +575,7 @@ if(_test_sources)
         add_executable(${_test_name} EXCLUDE_FROM_ALL "${_test_src}" ${_subjects})
         target_include_directories(${_test_name} PRIVATE
             "${NOCTURNE_SHIMS_DIR}" "${NOCTURNE_SHIMS_DIR}/tests"
-            ${SDL2_INCLUDE_DIRS})
+            "${NOCTURNE_INCLUDE_DIR}" ${SDL2_INCLUDE_DIRS})
         target_compile_features(${_test_name} PRIVATE cxx_std_17)
         target_compile_options(${_test_name} PRIVATE ${NOCTURNE_COMMON_WARNINGS})
         add_test(NAME ${_test_name} COMMAND ${_test_name})
