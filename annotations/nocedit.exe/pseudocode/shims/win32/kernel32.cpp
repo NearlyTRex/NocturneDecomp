@@ -40,9 +40,15 @@
 #include <mutex>
 #include <system_error>
 #include <thread>
-#include <sys/mman.h>
 #include <sys/stat.h>
+// How much memory the machine has is the one question with no portable answer,
+// so its header is chosen the same way its implementation is. See host_memory.
+#if defined(__linux__)
 #include <sys/sysinfo.h>
+#elif defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__) || \
+      defined(__NetBSD__)
+#include <sys/sysctl.h>
+#endif
 #include <sys/types.h>
 #include <errno.h>
 #include <fcntl.h>
@@ -882,32 +888,61 @@ static BOOL shim_DuplicateHandle(HANDLE hSourceProcessHandle, HANDLE hSourceHand
 // Memory Shims
 // =============================================================================
 
+// VirtualAlloc, as far as the language goes.
+//
+// The whole of what the game asks of it is page-aligned read-write memory, and
+// even that only from src/crt, which is not compiled — the host's own runtime is
+// linked instead. So the caller set is empty and this exists to keep the
+// function-pointer table honest.
+//
+// Three things a real VirtualAlloc does cannot be expressed portably: memory at
+// a chosen address, reserving without committing, and pages that can be
+// executed. Rather than quietly hand back something that is none of those, each
+// is refused. A silent substitution here would be the worst kind: the caller
+// asked for a guarantee and would carry on believing it had one.
+static const DWORD kPageSize = 4096;
+
 static LPVOID shim_VirtualAlloc(LPVOID lpAddress, SIZE_T dwSize,
     DWORD flAllocationType, DWORD flProtect)
 {
-    (void)flAllocationType;
-    int prot = PROT_READ | PROT_WRITE;
-    if (flProtect & 0x10) prot |= PROT_EXEC; // PAGE_EXECUTE
-    if (flProtect & 0x20) prot |= PROT_EXEC; // PAGE_EXECUTE_READ
-    if (flProtect & 0x40) prot |= PROT_EXEC; // PAGE_EXECUTE_READWRITE
-
-    int flags = MAP_PRIVATE | MAP_ANONYMOUS;
-    if (lpAddress) flags |= MAP_FIXED;
-
-    void* result = mmap(lpAddress, dwSize, prot, flags, -1, 0);
-    if (result == MAP_FAILED) {
-        s_lastError = (DWORD)errno;
+    // PAGE_EXECUTE, _READ, _READWRITE — nothing in the language grants these.
+    if (flProtect & (0x10 | 0x20 | 0x40 | 0x80)) {
+        s_lastError = 50;   // ERROR_NOT_SUPPORTED
         return NULL;
     }
+    // A specific base address is a request about the address space itself.
+    if (lpAddress != NULL) {
+        s_lastError = 50;
+        return NULL;
+    }
+    // MEM_RESERVE without MEM_COMMIT wants address space with no memory behind
+    // it, which is the same kind of request.
+    if ((flAllocationType & 0x2000) && !(flAllocationType & 0x1000)) {
+        s_lastError = 50;
+        return NULL;
+    }
+    if (dwSize == 0) { s_lastError = 87; return NULL; }   // ERROR_INVALID_PARAMETER
+
+    // Rounded up to a page and aligned to one, because callers of VirtualAlloc
+    // are entitled to both.
+    const SIZE_T rounded = ((dwSize + kPageSize - 1) / kPageSize) * kPageSize;
+    void* result = ::operator new(rounded, std::align_val_t(kPageSize),
+                                  std::nothrow);
+    if (result == NULL) {
+        s_lastError = 8;    // ERROR_NOT_ENOUGH_MEMORY
+        return NULL;
+    }
+    // VirtualAlloc hands back zeroed pages and callers rely on it.
+    memset(result, 0, rounded);
     return result;
 }
 
 static BOOL shim_VirtualFree(LPVOID lpAddress, SIZE_T dwSize, DWORD dwFreeType) {
+    (void)dwSize;
     (void)dwFreeType;
-    if (dwSize == 0) dwSize = 4096; // Minimum page
-    if (munmap(lpAddress, dwSize) == 0) return 1;
-    s_lastError = (DWORD)errno;
-    return 0;
+    if (lpAddress == NULL) return 0;
+    ::operator delete(lpAddress, std::align_val_t(kPageSize));
+    return 1;
 }
 
 static SIZE_T shim_VirtualQuery(LPCVOID lpAddress, PMEMORY_BASIC_INFORMATION lpBuffer,
@@ -963,7 +998,33 @@ static SIZE_T mem_status_clamp(unsigned long long bytes) {
 // it can sit under the 200 MB the swap warning tests against while gigabytes
 // are in fact available. MemAvailable is the kernel's own estimate of that and
 // is the honest number to judge those thresholds by. Returns 0 if unreadable.
-static unsigned long long mem_status_available_bytes(void) {
+// How much memory the machine has, which the language does not know and cannot
+// be asked. Every host answers it differently, so this is the one place in the
+// shims that selects on the platform, and it is written so that a host nobody
+// has tried still compiles and still starts the game.
+struct HostMemory {
+    unsigned long long total_phys;
+    unsigned long long avail_phys;
+    unsigned long long total_commit;   // Windows' commit limit: RAM plus backing
+    unsigned long long avail_commit;
+};
+
+// The figures used when the host cannot be asked. Not zero: the game warns that
+// it "runs best with at least 200MB free" and would say so on every start, and
+// sizes caches from these. A modest machine is the safe thing to claim to be.
+static void host_memory_fallback(HostMemory *out) {
+    out->total_phys   = 256ull * 1024 * 1024;
+    out->avail_phys   = 128ull * 1024 * 1024;
+    out->total_commit = 512ull * 1024 * 1024;
+    out->avail_commit = 512ull * 1024 * 1024;
+}
+
+#if defined(__linux__)
+
+// MemAvailable is the kernel's own estimate of what a new allocation could
+// actually get, which is a better answer than free memory: most of a healthy
+// machine's RAM is cache it would give back.
+static unsigned long long linux_available_bytes(void) {
     FILE* f = fopen("/proc/meminfo", "r");
     if (!f) return 0;
     char line[256];
@@ -978,45 +1039,91 @@ static unsigned long long mem_status_available_bytes(void) {
     return kb * 1024ull;
 }
 
+static void host_memory(HostMemory *out) {
+    struct sysinfo si;
+    if (sysinfo(&si) != 0) { host_memory_fallback(out); return; }
+
+    const unsigned long long unit = si.mem_unit ? si.mem_unit : 1;
+    out->total_phys = (unsigned long long)si.totalram * unit;
+    out->avail_phys = linux_available_bytes();
+    if (out->avail_phys == 0) {
+        out->avail_phys = ((unsigned long long)si.freeram +
+                           (unsigned long long)si.bufferram) * unit;
+    }
+    // The page-file fields are Windows' commit limit and remaining commit,
+    // which span RAM plus backing store — not the swap device alone. Match
+    // that: a swapless host would otherwise report a 0-byte page file and
+    // trip the "runs best with at least 200MB free" warning on every start.
+    out->total_commit = out->total_phys + (unsigned long long)si.totalswap * unit;
+    out->avail_commit = out->avail_phys + (unsigned long long)si.freeswap * unit;
+}
+
+#elif defined(_WIN32)
+
+// Straight through: the game is asking a Windows question and this is a
+// Windows host, so the shim is the identity.
+static void host_memory(HostMemory *out) {
+    MEMORYSTATUSEX status;
+    status.dwLength = sizeof(status);
+    if (!GlobalMemoryStatusEx(&status)) { host_memory_fallback(out); return; }
+    out->total_phys   = status.ullTotalPhys;
+    out->avail_phys   = status.ullAvailPhys;
+    out->total_commit = status.ullTotalPageFile;
+    out->avail_commit = status.ullAvailPageFile;
+}
+
+#elif defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__) || \
+      defined(__NetBSD__)
+
+// The BSDs and macOS answer through sysctl. Total is asked for directly;
+// available is not reported in a form that means the same thing, so it is left
+// as a fraction of total rather than invented more precisely than it is known.
+static void host_memory(HostMemory *out) {
+    uint64_t total = 0;
+    size_t length = sizeof(total);
+#if defined(__APPLE__)
+    const char *name = "hw.memsize";
+#else
+    const char *name = "hw.physmem";
+#endif
+    if (sysctlbyname(name, &total, &length, NULL, 0) != 0 || total == 0) {
+        host_memory_fallback(out);
+        return;
+    }
+    out->total_phys   = total;
+    out->avail_phys   = total / 2;
+    out->total_commit = total;
+    out->avail_commit = total / 2;
+}
+
+#else
+
+// A host nobody has tried yet. It compiles, it starts, and the figures say a
+// modest machine — which is the honest answer to a question this build cannot
+// ask here.
+static void host_memory(HostMemory *out) { host_memory_fallback(out); }
+
+#endif
+
 static void shim_GlobalMemoryStatus(LPMEMORYSTATUS lpBuffer) {
     if (!lpBuffer) return;
     memset(lpBuffer, 0, sizeof(_MEMORYSTATUS));
     lpBuffer->dwLength = sizeof(_MEMORYSTATUS);
 
-    unsigned long long total_phys, avail_phys, total_commit, avail_commit;
-    struct sysinfo si;
-    if (sysinfo(&si) == 0) {
-        const unsigned long long unit = si.mem_unit ? si.mem_unit : 1;
-        total_phys = (unsigned long long)si.totalram * unit;
-        avail_phys = mem_status_available_bytes();
-        if (avail_phys == 0) {
-            avail_phys = ((unsigned long long)si.freeram +
-                          (unsigned long long)si.bufferram) * unit;
-        }
-        // The page-file fields are Windows' commit limit and remaining commit,
-        // which span RAM plus backing store — not the swap device alone. Match
-        // that: a swapless host would otherwise report a 0-byte page file and
-        // trip the "runs best with at least 200MB free" warning on every start.
-        total_commit = total_phys + (unsigned long long)si.totalswap * unit;
-        avail_commit = avail_phys + (unsigned long long)si.freeswap * unit;
-    } else {
-        // The fixed figures this shim used to report unconditionally.
-        total_phys   = 256ull * 1024 * 1024;
-        avail_phys   = 128ull * 1024 * 1024;
-        total_commit = 512ull * 1024 * 1024;
-        avail_commit = 512ull * 1024 * 1024;
-    }
+    HostMemory memory;
+    host_memory(&memory);
 
-    lpBuffer->dwTotalPhys     = mem_status_clamp(total_phys);
-    lpBuffer->dwAvailPhys     = mem_status_clamp(avail_phys);
-    lpBuffer->dwTotalPageFile = mem_status_clamp(total_commit);
-    lpBuffer->dwAvailPageFile = mem_status_clamp(avail_commit);
+    lpBuffer->dwTotalPhys     = mem_status_clamp(memory.total_phys);
+    lpBuffer->dwAvailPhys     = mem_status_clamp(memory.avail_phys);
+    lpBuffer->dwTotalPageFile = mem_status_clamp(memory.total_commit);
+    lpBuffer->dwAvailPageFile = mem_status_clamp(memory.avail_commit);
     // Address space, not memory: the 2 GB user half of a 32-bit process.
     lpBuffer->dwTotalVirtual = 0x7FFFFFFF;
     lpBuffer->dwAvailVirtual = 0x7FFFFFFF;
-    lpBuffer->dwMemoryLoad = (total_phys != 0 && avail_phys < total_phys)
-        ? (DWORD)(((total_phys - avail_phys) * 100) / total_phys)
-        : 0;
+    lpBuffer->dwMemoryLoad =
+        (memory.total_phys != 0 && memory.avail_phys < memory.total_phys)
+            ? (DWORD)(((memory.total_phys - memory.avail_phys) * 100) / memory.total_phys)
+            : 0;
 }
 
 // =============================================================================
