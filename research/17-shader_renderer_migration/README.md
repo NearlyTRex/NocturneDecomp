@@ -35,8 +35,10 @@ the build. The tridx7 tree stays on disk as the specification, with a README bes
 
 The migration is finished. What remains are the things it found and did not fix.
 
-1. **Two artifacts found by the A/B** — open items 8 and 9. Item 7 turned out to be the harness
-   itself and is written up as such; read it before adding any probe that renders out of band.
+1. **Two artifacts found by the A/B**, neither a renderer fault and neither worth chasing as it
+   stands — item 8 is the engine's own mode-change path dropping actors, item 9 is one stretched
+   scanline nobody can see. Item 7 turned out to be the harness itself; read it before adding any
+   probe that renders out of band.
 2. **Per-vertex fog's default** (open item 3) — implemented, off, still wanting a measurement
    that can see it.
 3. **The game-side defects** shaders were once expected to fix and do not: the chapel window
@@ -741,17 +743,57 @@ trigl syncs only when something drew, so a gameplay path could in principle leav
 stale under the conditional gate where the unconditional one would not. Nothing observed suggests
 one does, and the 99.1% repaint makes it unlikely.
 
-### 8. The first Options entry of a run permanently drops geometry — OPEN
+### 8. The first Options entry of a run permanently drops geometry — OPEN, and almost certainly the game's own
 
 Measured in both A/B scenes: 289 draws / 4306 polygons before, 261 / 3798 after; 331 / 1170
-before, 295 / 1134 after. Stable across every later round trip, and identical for both
-renderers, so it is the engine's own state and not a renderer fault. ~12% and ~3% of the
-submitted polygons respectively, gone for the rest of the run.
+before, 295 / 1134 after. Stable across every later round trip. ~12% and ~3% of the submitted
+polygons, gone for the rest of the run.
 
-### 9. Row 765 changes on every Options round trip — OPEN
+The render-flag dumps taken either side narrow it a long way:
 
-The bottom scanline of a 768-line frame, x 605..1023, 317 pixels, deltas to 18, with the same
-renderer on both sides of the round trip. Small, reproducible, and unexplained.
+```
+  room 1   flags 0x2cd   drawPolyList2  173 -> 145 calls   polys 4203 -> 3695   verts -712
+  room 2   flags 0x2cd   drawPolygon2   180 -> 144 calls   polys 1170 -> 1134   verts -108
+```
+
+Four things follow, and together they say this is the engine's:
+
+- **One render-flag combo only** — `TEX|GOURAUD|SOLIDALPHA|ZTEST|ZWRITE|VTXRGB`, ordinary opaque
+  geometry. Every other combo and every other entry point is byte-identical across the round
+  trip, in both rooms.
+- **Whole draw calls disappear**, not polygons inside surviving draws: 28 list draws averaging 18
+  polygons in one room, 36 single triangles of exactly 3 vertices in the other. A detail or LOD
+  cut would thin the draws it kept.
+- **Not a setting.** `configureGraphicsOptions` writes `g_CurrentGraphicsBoard` and
+  `g_GraphicsCardCount` and nothing else; there is no detail or object toggle for it to change.
+- **Identical under both renderers**, so it is engine state on the mode-change path, which is
+  original game code. The shipped game changes mode through that same path, so it plausibly
+  always did this — untested against retail, and worth saying so rather than implying it was
+  measured.
+
+`geometry_drop_capture.gdb` is the next step if it is ever wanted: it dumps the per-draw texture
+list and the display list — every actor queued for render, with name and position — so a diff
+across the round trip names what left, or shows the display list unchanged and puts the loss
+downstream of it.
+
+### 9. Row 765 changes on every Options round trip — EXPLAINED, and cosmetic
+
+317 pixels on one line of a 768-line frame, deltas to 18, same renderer on both sides.
+
+It is the only destination row in the frame that can change, and the reason is the stretch. The
+engine composites at 640x480 and the result is uploaded across a 1024x768 target, so a
+destination row samples source row `y * 480/768`. The source carries a one-pixel black border:
+rows 766-767 and 0-1 of the presented frame are black, columns 0-1 likewise. Row 765 maps to
+source 478.1 — **the only row whose linear filter straddles the last content row and that
+border**. Every other row samples cleanly inside the content and comes back bit-identical.
+
+So nothing corrupts row 765. It is the one row sensitive to what sits at the very bottom edge of
+the source, and a mode change leaves that edge slightly different. Verified not to be a shift:
+matching row 765 against its own row offset by ±6 columns or ±3 rows peaks at offset zero (69%
+of pixels equal), so it is a resample of slightly different content, not displaced content.
+
+Left alone deliberately. What varies at the hold-buffer edge is real work to chase, for 18/255
+on a single line that no one can see.
 
 ## Validation assets that already exist
 
