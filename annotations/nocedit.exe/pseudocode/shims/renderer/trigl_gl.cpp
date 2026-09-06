@@ -16,6 +16,7 @@
 
 #include <stddef.h>
 #include <stdint.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -186,6 +187,14 @@ size_t g_scratch_capacity = 0;
 // nothing to repeat. Initialised to values the first apply cannot match.
 NocturneTriglPipelineState g_current;
 bool g_current_valid = false;
+
+// Bumped every time that record is abandoned. Callers keep their own view of
+// what the pipeline holds — the entry points decide whether a draw needs a new
+// state and texture before they get here — and a second record is only safe if
+// there is one thing that says when both are stale. Without it a caller whose
+// draw matches its own record returns before binding anything, and the geometry
+// goes out wearing whatever the present or the scene upload left bound.
+unsigned g_state_epoch = 0;
 
 // The target the projection was built for. A draw sets the viewport from it
 // rather than inheriting one: the presenter leaves the WINDOW's viewport
@@ -363,18 +372,28 @@ GLenum blend_factor(int factor) {
 
 // --- the texture cache -------------------------------------------------------
 //
-// The engine names a texture with 16 characters and works at one of four
-// dimensions; the same name at two dimensions is two textures, which is why the
-// original keeps four caches rather than one. Here the dimension is part of the
-// key instead.
+// A texture is identified by its name and the dimension it is used at; the same
+// name at two dimensions is two textures, which is why the original keeps four
+// caches rather than one. Here the dimension is part of the key instead.
+//
+// The name is a NUL-terminated string, not the 16 characters SMRGLTextureBasic
+// appears to declare. That record is a variable-length MRGL chunk — an 8-byte
+// header and then the name — so 16 is where Ghidra stopped, not where the name
+// ends. The original sizes its cache entries at 64 characters and compares them
+// with strcmp, which is the length that has to be honoured: comparing a fixed 16
+// bytes makes every pair of names sharing a 16-character prefix one texture, and
+// asset names share prefixes constantly. The two then alternate in the slot as
+// each refresh overwrites the other, which is seen as a texture briefly painting
+// the wrong object.
 //
 // Open addressing with linear probing. A draw looks a texture up every time it
 // changes one, so the linear scan the original does over its entries would cost
 // a string compare per cached texture per draw.
 const int kTextureSlots = 4096;
+const int kTextureNameMax = 64;   // the original's entry width
 
 struct TextureSlot {
-    char     name[16];
+    char     name[kTextureNameMax];
     int      dimension;   // 0 marks a free slot
     GLuint   texture;
     unsigned used;        // for eviction when the table fills
@@ -385,9 +404,10 @@ unsigned    g_texture_clock = 0;
 int         g_texture_count = 0;
 
 unsigned name_hash(const char *name, int dimension) {
-    // FNV-1a over the fixed 16 bytes plus the dimension.
+    // FNV-1a over the name plus the dimension. Bounded, so a record whose name
+    // is not terminated within the entry width cannot run away.
     unsigned h = 2166136261u;
-    for (int i = 0; i < 16; ++i) {
+    for (int i = 0; i < kTextureNameMax; ++i) {
         h ^= (unsigned char)name[i];
         h *= 16777619u;
         if (name[i] == '\0') break;
@@ -398,7 +418,7 @@ unsigned name_hash(const char *name, int dimension) {
 }
 
 bool same_name(const char *a, const char *b) {
-    for (int i = 0; i < 16; ++i) {
+    for (int i = 0; i < kTextureNameMax; ++i) {
         if (a[i] != b[i]) return false;
         if (a[i] == '\0') return true;
     }
@@ -457,7 +477,14 @@ TextureSlot *insert_slot(const char *name, int dimension) {
         index = (index + 1u) & (unsigned)(kTextureSlots - 1);
     }
     TextureSlot &slot = g_textures[index];
-    memcpy(slot.name, name, 16);
+    // Terminated even when the source name is not: the comparison above stops at
+    // the width, so a stored name must too.
+    int length = 0;
+    while (length < kTextureNameMax - 1 && name[length] != '\0') {
+        slot.name[length] = name[length];
+        ++length;
+    }
+    slot.name[length] = '\0';
     slot.dimension = dimension;
     slot.texture   = 0;
     ++g_texture_count;
@@ -569,7 +596,13 @@ void nocturne_trigl_gl_shutdown(void) {
 
 void nocturne_trigl_gl_invalidate_state(void) {
     g_current_valid = false;
+    ++g_state_epoch;
 }
+
+unsigned nocturne_trigl_gl_state_epoch(void) {
+    return g_state_epoch;
+}
+
 
 void nocturne_trigl_gl_set_target_size(int width, int height) {
     if (!g_ready || width <= 0 || height <= 0) return;
@@ -674,7 +707,16 @@ unsigned nocturne_trigl_gl_texture(const char *name, int dimension,
         if (slot->texture == 0) return 0;
     }
 
+    // Uploading has to bind, and this runs between draws rather than as part of
+    // one: the engine names the next texture while the polygons of the previous
+    // are still sitting in the batch, undrawn. Leaving the upload's binding in
+    // place means the flush that starts the next draw sends that pending run out
+    // wearing the image just uploaded — a whole contiguous piece of one model
+    // covered in another's, on frames that upload and gone on the next. So the
+    // binding is put back; an upload is not allowed to be a state change.
     gl.ActiveTexture(GL_TEXTURE0);
+    GLint previous = 0;
+    if (gl.GetIntegerv != nullptr) gl.GetIntegerv(GL_TEXTURE_BINDING_2D, &previous);
     gl.BindTexture(GL_TEXTURE_2D, slot->texture);
     gl.PixelStorei(GL_UNPACK_ALIGNMENT, 4);
     // The expansion produces 0xAARRGGBB words, which on a little-endian host is
@@ -689,6 +731,7 @@ unsigned nocturne_trigl_gl_texture(const char *name, int dimension,
         gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_BASE_LEVEL, 0);
         gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAX_LEVEL, 0);
     }
+    gl.BindTexture(GL_TEXTURE_2D, (GLuint)previous);
     return slot->texture;
 }
 
@@ -748,6 +791,70 @@ void nocturne_trigl_gl_release_textures(void) {
     memset(g_textures, 0, sizeof(g_textures));
     g_texture_count = 0;
     g_texture_clock = 0;
+}
+
+int nocturne_trigl_gl_dump_texture(const char *name, int dimension, const char *path) {
+    if (!g_ready || name == nullptr || gl.GetTexImage == nullptr) return 0;
+    TextureSlot *slot = find_slot(name, dimension);
+    if (slot == nullptr || slot->texture == 0) return 0;
+
+    unsigned char *pixels =
+        (unsigned char *)malloc((size_t)dimension * (size_t)dimension * 4u);
+    if (pixels == nullptr) return 0;
+
+    gl.ActiveTexture(GL_TEXTURE0);
+    GLint previous = 0;
+    gl.GetIntegerv(GL_TEXTURE_BINDING_2D, &previous);
+    gl.BindTexture(GL_TEXTURE_2D, slot->texture);
+    gl.GetTexImage(GL_TEXTURE_2D, 0, GL_RGBA, GL_UNSIGNED_BYTE, pixels);
+    gl.BindTexture(GL_TEXTURE_2D, (GLuint)previous);
+
+    FILE *fp = fopen((path != nullptr) ? path : "/tmp/trigl_texture.ppm", "wb");
+    if (fp == nullptr) {
+        free(pixels);
+        return 0;
+    }
+    // The alpha is carried in the comment rather than dropped silently: a colour
+    // key that made the wrong texels transparent looks like foreign pixels on
+    // the model, and would be invisible in an opaque dump.
+    int keyed = 0;
+    for (int i = 0; i < dimension * dimension; ++i) {
+        if (pixels[i * 4 + 3] == 0) ++keyed;
+    }
+    fprintf(fp, "P6\n# %s dim=%d transparent_texels=%d\n%d %d\n255\n",
+            name, dimension, keyed, dimension, dimension);
+    for (int i = 0; i < dimension * dimension; ++i) {
+        fwrite(&pixels[i * 4], 1, 3, fp);
+    }
+    fclose(fp);
+    free(pixels);
+    return dimension;
+}
+
+void nocturne_trigl_gl_report_textures(void *report_file) {
+    FILE *fp = (FILE *)report_file;
+    if (fp == nullptr) return;
+    fprintf(fp, "\ntexture cache: %d of %d resident\n", g_texture_count, kTextureSlots);
+    fprintf(fp, "%-6s %-40s %5s %8s %10s\n", "slot", "name", "dim", "gl", "used");
+    for (int i = 0; i < kTextureSlots; ++i) {
+        if (g_textures[i].dimension == 0) continue;
+        fprintf(fp, "%-6d %-40s %5d %8u %10u\n", i, g_textures[i].name,
+                g_textures[i].dimension, (unsigned)g_textures[i].texture,
+                g_textures[i].used);
+    }
+    // Two entries sharing a GL texture would mean the cache handed the same
+    // image to two names, which is the shape of an object wearing another
+    // object's texture. Reported rather than left to be spotted by eye.
+    for (int i = 0; i < kTextureSlots; ++i) {
+        if (g_textures[i].dimension == 0 || g_textures[i].texture == 0) continue;
+        for (int j = i + 1; j < kTextureSlots; ++j) {
+            if (g_textures[j].texture != g_textures[i].texture) continue;
+            fprintf(fp, "SHARED gl=%u between '%s'(%d) and '%s'(%d)\n",
+                    (unsigned)g_textures[i].texture, g_textures[i].name,
+                    g_textures[i].dimension, g_textures[j].name,
+                    g_textures[j].dimension);
+        }
+    }
 }
 
 int nocturne_trigl_gl_save_depth(int slot, int width, int height) {
@@ -898,10 +1005,13 @@ void nocturne_trigl_gl_set_target_size(int, int) {}
 void nocturne_trigl_gl_set_fog_color(float, float, float) {}
 void nocturne_trigl_gl_apply_state(const NocturneTriglPipelineState *) {}
 void nocturne_trigl_gl_invalidate_state(void) {}
+unsigned nocturne_trigl_gl_state_epoch(void) { return 0; }
 unsigned nocturne_trigl_gl_texture(const char *, int, const unsigned *, int, int) { return 0; }
 unsigned nocturne_trigl_gl_texture_cached(const char *, int) { return 0; }
 void nocturne_trigl_gl_bind_texture(unsigned) {}
 void nocturne_trigl_gl_release_textures(void) {}
+void nocturne_trigl_gl_report_textures(void *) {}
+int nocturne_trigl_gl_dump_texture(const char *, int, const char *) { return 0; }
 const char *nocturne_trigl_gl_renderer_name(void) { return "OpenGL"; }
 int  nocturne_trigl_gl_save_depth(int, int, int) { return 0; }
 int  nocturne_trigl_gl_restore_depth(int, int, int, int, int, int, int) { return 0; }

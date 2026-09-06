@@ -23,6 +23,7 @@
 #include "renderer/builtin_dll.h"
 #include "core/debug_log.h"
 
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -39,6 +40,10 @@ struct Renderer {
     const unsigned char *texture_palette = nullptr;
     const unsigned char *texture_opacity = nullptr;
     unsigned             texture_object  = 0;
+    // The name that produced texture_object, kept so a draw can be reported by
+    // the name the engine asked for rather than by a GL number.
+    char                 texture_name[64] = {0};
+    int                  texture_resolved_dimension = 0;
 
     // The palette an untextured draw takes its colour from, published by
     // setColorTable16 along with the pixel format the engine renders 2D in.
@@ -47,9 +52,12 @@ struct Renderer {
     int fog_red = 0, fog_green = 0, fog_blue = 0;
 
     // The state and texture the batch currently holds. A draw that differs from
-    // either has to start a new one.
+    // either has to start a new one. The epoch is what the pipeline record was
+    // worth when this was written: anything that touches GL outside the renderer
+    // abandons that record, and this view of it has to go with it.
     NocturneTriglPipelineState state;
     unsigned                   state_texture = 0;
+    unsigned                   state_epoch   = 0;
     bool                       state_valid   = false;
 
     unsigned *expanded = nullptr;
@@ -57,6 +65,50 @@ struct Renderer {
 };
 
 Renderer g_r;
+
+// --- the per-frame draw trace ------------------------------------------------
+// One entry per state/texture change, which is one GL draw. Cleared at
+// beginScene, so it describes the frame currently being built; a frame left on
+// screen with the renderer idle keeps its trace for as long as it is wanted.
+const int kDrawTraceMax = 512;
+
+struct DrawTrace {
+    char     name[64];       // the texture the engine selected for this draw
+    int      dimension;      // what it was resolved at
+    unsigned texture;        // the GL texture this draw asked for; 0 is none
+    int      textured;
+    int      blended;
+    int      polygons;
+    // Depth, because a model wearing part of its own body's picture is what a
+    // draw that never landed looks like: the geometry in front of it failed the
+    // comparison and left what was already there showing.
+    int      depth_test;
+    int      depth_write;
+    int      depth_func;
+    // The span of the image this draw actually samples, in the engine's 8.24
+    // coordinates. A model wearing part of another model's picture is either
+    // reading the wrong texture or reading the wrong part of the right one, and
+    // these separate the two without needing the image: a body panel that should
+    // sample its own corner of an atlas and instead spans the whole of it is
+    // being given coordinates that belong to something else.
+    int      u_min, u_max;
+    int      v_min, v_max;
+};
+
+DrawTrace g_draw_trace[kDrawTraceMax];
+int       g_draw_trace_count = 0;
+int       g_draw_trace_dropped = 0;
+
+void copy_texture_name(char *out, const char *name) {
+    int i = 0;
+    if (name != nullptr) {
+        while (i < 63 && name[i] != '\0') {
+            out[i] = name[i];
+            ++i;
+        }
+    }
+    out[i] = '\0';
+}
 
 // The engine builds the bridge ON ITS OWN STACK, inside loadExternalRenderer,
 // and passes a pointer to it — which dangles the moment that function returns.
@@ -145,8 +197,15 @@ void begin_draw(unsigned render_flags, NocturneTriglPipelineState *out_state) {
     nocturne_trigl_pipeline_state(&in, out_state);
 
     const unsigned texture = out_state->texture_enabled ? g_r.texture_object : 0;
+    const unsigned epoch   = nocturne_trigl_gl_state_epoch();
+    // The epoch first: presenting a frame and uploading the scene both draw with
+    // GL state and a texture of their own, and neither restores what the draws
+    // were using. A draw that matches this record but not the pipeline would
+    // otherwise return here having bound nothing, and take the image the last
+    // such upload left — which is another model's texture, applied to whichever
+    // polygons happened to follow.
     const bool changed =
-        !g_r.state_valid || texture != g_r.state_texture ||
+        !g_r.state_valid || epoch != g_r.state_epoch || texture != g_r.state_texture ||
         memcmp(out_state, &g_r.state, sizeof(*out_state)) != 0;
     if (!changed) return;
 
@@ -161,7 +220,25 @@ void begin_draw(unsigned render_flags, NocturneTriglPipelineState *out_state) {
     nocturne_trigl_gl_bind_texture(texture);
     g_r.state         = *out_state;
     g_r.state_texture = texture;
+    g_r.state_epoch   = epoch;
     g_r.state_valid   = true;
+
+    if (g_draw_trace_count < kDrawTraceMax) {
+        DrawTrace &t = g_draw_trace[g_draw_trace_count++];
+        copy_texture_name(t.name, g_r.texture_name);
+        t.dimension = g_r.texture_resolved_dimension;
+        t.texture   = texture;
+        t.textured    = out_state->texture_enabled;
+        t.blended     = out_state->blend_enabled;
+        t.depth_test  = out_state->depth_test_enabled;
+        t.depth_write = out_state->depth_write_enabled;
+        t.depth_func  = out_state->depth_func;
+        t.polygons  = 0;
+        t.u_min = t.v_min = 0x7fffffff;
+        t.u_max = t.v_max = -0x7fffffff - 1;
+    } else {
+        ++g_draw_trace_dropped;
+    }
 }
 
 // Convert and append one polygon, drawing the batch first if it cannot take it.
@@ -182,6 +259,16 @@ void submit_polygon(const NocturneTriglVertexContext *ctx,
 
     NocturneTriglStats &st = nocturne_trigl_stats;
     ++st.polygons;
+    if (g_draw_trace_count > 0) {
+        DrawTrace &t = g_draw_trace[g_draw_trace_count - 1];
+        ++t.polygons;
+        for (int i = 0; i < count; ++i) {
+            if (vertices[i].u < t.u_min) t.u_min = vertices[i].u;
+            if (vertices[i].u > t.u_max) t.u_max = vertices[i].u;
+            if (vertices[i].v < t.v_min) t.v_min = vertices[i].v;
+            if (vertices[i].v > t.v_max) t.v_max = vertices[i].v;
+        }
+    }
     const int x = vertices[0].screen_x >> 16;
     const int y = vertices[0].screen_y >> 16;
     if (x < st.screen_min_x) st.screen_min_x = x;
@@ -211,6 +298,8 @@ unsigned resolve_texture(SMRGLTextureBasic *info, int refresh) {
         return 0;
     }
     const int dimension = texture_dimension();
+    copy_texture_name(g_r.texture_name, info->texture_name);
+    g_r.texture_resolved_dimension = dimension;
     if (dimension <= 0 || dimension > kMaxTextureDimension) return 0;
 
     // Expanding is the expensive half — up to 65536 texels — and selectTexture
@@ -386,7 +475,11 @@ static void __cdecl trigl_release_display_context(HDC hdc) { (void)hdc; }
 // Frame
 // =============================================================================
 
-static int __cdecl trigl_begin_scene(void) { return nocturne_trigl_device_begin_scene(); }
+static int __cdecl trigl_begin_scene(void) {
+    g_draw_trace_count   = 0;
+    g_draw_trace_dropped = 0;
+    return nocturne_trigl_device_begin_scene();
+}
 static int __cdecl trigl_end_scene(void)   { return nocturne_trigl_device_end_scene(); }
 static int __cdecl trigl_lock_frame(void)  { return nocturne_trigl_device_lock_frame(); }
 static int __cdecl trigl_unlock_frame(void){ return nocturne_trigl_device_unlock_frame(); }
@@ -730,6 +823,43 @@ static const NocturneBuiltinExport g_TriglExports[] = {
     { "APIDLLunlockHoldBuffer",      (void *)trigl_unlock_hold_buffer },
     { "APIDLLupdateTexture",         (void *)trigl_update_texture },
 };
+
+extern "C" int nocturne_trigl_dump_draws(const char *path) {
+    FILE *fp = fopen((path != nullptr) ? path : "/tmp/trigl_draws.txt", "w");
+    if (fp == nullptr) return 0;
+
+    const NocturneTriglStats &st = nocturne_trigl_stats;
+    fprintf(fp, "draws in the frame: %d", g_draw_trace_count);
+    if (g_draw_trace_dropped != 0) {
+        fprintf(fp, " (+%d past the end of the trace)", g_draw_trace_dropped);
+    }
+    fprintf(fp, "\nrun totals: draws=%u polygons=%u untextured=%u missing_texture=%u"
+                " uploads=%u\n\n",
+            st.draws, st.polygons, st.untextured_draws, st.missing_texture_draws,
+            st.uploads);
+
+    fprintf(fp, "%-5s %-24s %5s %5s %4s %4s %3s %3s %3s %6s  %-17s %-17s\n",
+            "#", "selected texture", "dim", "gl", "tex", "blnd",
+            "zt", "zw", "zf", "polys", "u span", "v span");
+    for (int i = 0; i < g_draw_trace_count; ++i) {
+        const DrawTrace &t = g_draw_trace[i];
+        const double s = 1.0 / 16777216.0;
+        fprintf(fp, "%-5d %-24s %5d %5u %4d %4d %3d %3d %3d %6d  ", i, t.name,
+                t.dimension, t.texture, t.textured, t.blended,
+                t.depth_test, t.depth_write, t.depth_func, t.polygons);
+        if (t.polygons > 0) {
+            fprintf(fp, "%8.4f..%-8.4f %8.4f..%-8.4f",
+                    (double)t.u_min * s, (double)t.u_max * s,
+                    (double)t.v_min * s, (double)t.v_max * s);
+        }
+        if (t.textured && t.texture == 0) fprintf(fp, "  <- nothing bound");
+        fprintf(fp, "\n");
+    }
+
+    nocturne_trigl_gl_report_textures(fp);
+    fclose(fp);
+    return g_draw_trace_count;
+}
 
 extern "C" const NocturneBuiltinExport *nocturne_trigl_native_exports(int *count) {
     if (count != nullptr) {

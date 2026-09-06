@@ -32,7 +32,11 @@ void nocturne_trigl_pipeline_state(const NocturneTriglStateInput *in,
 
     // Blending and alpha testing move together: a draw that blends also drops
     // fully transparent fragments rather than paying for them, and it is the
-    // same flag that turns the texture's alpha into the fragment's.
+    // same flag that turns the texture's alpha into the fragment's. The engine
+    // really does set all three from one condition — ALPHABLENDENABLE,
+    // ALPHATESTENABLE and TEXTUREMAPBLEND (MODULATE against MODULATEALPHA) — so
+    // a draw that does not blend keeps the texture's colour and none of its
+    // alpha, and nothing is discarded.
     out->blend_enabled          = (flags & NOCTURNE_TRIGL_FLAG_BLEND) != 0;
     out->alpha_test_enabled     = out->blend_enabled;
     out->modulate_texture_alpha = out->blend_enabled;

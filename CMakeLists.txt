@@ -538,7 +538,10 @@ endif()
 # Built for the host rather than with NOCTURNE_ARCH_FLAGS. What is under test is
 # arithmetic on explicit widths, identical on both lanes, and building it -m32
 # would put the tests behind the multilib toolchain for no coverage.
+# Test sources, minus the support files a test links rather than runs. Anything
+# named gl_recorder/*_support is infrastructure and defines no main().
 file(GLOB_RECURSE _test_sources CONFIGURE_DEPENDS "${NOCTURNE_SHIMS_DIR}/tests/*.cpp")
+list(FILTER _test_sources EXCLUDE REGEX "/(gl_recorder|.*_support)\\.cpp$")
 if(_test_sources)
     enable_testing()
     # The pure renderer sources under test. Named rather than globbed: a file
@@ -550,10 +553,26 @@ if(_test_sources)
         "${NOCTURNE_SHIMS_DIR}/renderer/trigl_texture.cpp"
         "${NOCTURNE_SHIMS_DIR}/renderer/trigl_batch.cpp"
     )
+    # The GL-facing sources, for the suites that test ORDER rather than answers.
+    # These reach the driver, so they are deliberately outside the list above —
+    # they are testable only because the renderer reaches GL through one table of
+    # function pointers, which gl_recorder.cpp fills with recording stubs. It
+    # also defines that table, so gl_api.cpp (and with it SDL) stays out of the
+    # link. A suite opts in by being named test_*_sequence.
+    set(_test_subjects_gl
+        "${NOCTURNE_SHIMS_DIR}/renderer/trigl_gl.cpp"
+        "${NOCTURNE_SHIMS_DIR}/tests/renderer/gl_recorder.cpp"
+    )
     foreach(_test_src IN LISTS _test_sources)
         get_filename_component(_test_name "${_test_src}" NAME_WE)
-        add_executable(${_test_name} EXCLUDE_FROM_ALL "${_test_src}" ${_test_subjects})
-        target_include_directories(${_test_name} PRIVATE "${NOCTURNE_SHIMS_DIR}")
+        set(_subjects ${_test_subjects})
+        if(_test_name MATCHES "_sequence$")
+            list(APPEND _subjects ${_test_subjects_gl})
+        endif()
+        add_executable(${_test_name} EXCLUDE_FROM_ALL "${_test_src}" ${_subjects})
+        target_include_directories(${_test_name} PRIVATE
+            "${NOCTURNE_SHIMS_DIR}" "${NOCTURNE_SHIMS_DIR}/tests"
+            ${SDL2_INCLUDE_DIRS})
         target_compile_features(${_test_name} PRIVATE cxx_std_17)
         target_compile_options(${_test_name} PRIVATE ${NOCTURNE_COMMON_WARNINGS})
         add_test(NAME ${_test_name} COMMAND ${_test_name})

@@ -52,13 +52,19 @@ void nocturne_trigl_gl_apply_state(const NocturneTriglPipelineState *state);
 // no depth test at all.
 void nocturne_trigl_gl_invalidate_state(void);
 
+// Counts how many times the pipeline record above has been abandoned. Anything
+// that keeps its own view of what the pipeline holds must compare this and treat
+// a change as "everything differs"; see the note beside the counter.
+unsigned nocturne_trigl_gl_state_epoch(void);
+
+
 // The colour a fully fogged fragment becomes. Components are 0..1.
 void nocturne_trigl_gl_set_fog_color(float r, float g, float b);
 
 // --- textures ----------------------------------------------------------------
-// The engine identifies a texture by a 16-character name, and separately by the
-// dimension it is currently working at; the same name at two dimensions is two
-// textures. `name` need not be null-terminated within those 16 bytes.
+// The engine identifies a texture by name, and separately by the dimension it is
+// currently working at; the same name at two dimensions is two textures.
+//
 //
 // `rgba` is `dimension * dimension` words of 0xAARRGGBB from
 // nocturne_trigl_expand_texture. `refresh` re-uploads an image already cached,
@@ -74,6 +80,7 @@ unsigned nocturne_trigl_gl_texture(const char *name, int dimension,
 // caller skip expanding an image the cache already holds — the expansion is the
 // expensive half, and selectTexture is called for every state change, not once
 // per texture.
+//
 unsigned nocturne_trigl_gl_texture_cached(const char *name, int dimension);
 
 // Bind a texture id from the call above for subsequent draws. 0 unbinds.
@@ -147,6 +154,33 @@ typedef struct NocturneTriglStats {
 
 extern NocturneTriglStats nocturne_trigl_stats;
 void nocturne_trigl_stats_reset(void);
+
+// --- what each draw resolved to ----------------------------------------------
+// The counters above say how many draws went out but not what they drew with,
+// which is the question when an object is painted with another object's image.
+// This records one line per draw of the frame being built — the texture name the
+// engine selected, the dimension it was resolved at, and the GL texture that
+// ended up bound — plus the cache the lookups ran against. Both are needed: a
+// draw naming the wrong texture is a resolution fault, and a draw naming the
+// right one and still looking wrong is an upload fault.
+//
+// The ring holds one frame, cleared at beginScene. A frame held on screen with
+// the renderer idle — the pause menu, or the Options screen's redraw — can
+// therefore be interrogated at leisure from a debugger:
+//   call (int)nocturne_trigl_dump_draws("/tmp/draws.txt")
+int nocturne_trigl_dump_draws(const char *path);
+
+// Appends the texture cache to an open report. Exposed for the dump above.
+void nocturne_trigl_gl_report_textures(void *report_file);
+
+// Writes a resident texture back out as a PPM, so an image that looks wrong on
+// a model can be examined as an image. Reads it from GL rather than from the
+// engine's data, which is what distinguishes a bad upload from bad texture
+// coordinates: an image that is correct here and wrong on the model is being
+// sampled wrongly, not stored wrongly.
+//   call (int)nocturne_trigl_gl_dump_texture("STRCOAT.RAW", 256, "/tmp/t.ppm")
+// Returns the dimension written, or 0 if the name is not resident.
+int nocturne_trigl_gl_dump_texture(const char *name, int dimension, const char *path);
 
 // Whether per-vertex fog is applied. The engine supplies a fog factor on nearly
 // every vertex, but a whole-frame comparison could not separate it from

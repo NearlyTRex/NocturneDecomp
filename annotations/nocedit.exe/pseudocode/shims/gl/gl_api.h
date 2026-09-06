@@ -38,6 +38,7 @@ struct NocturneGLApi {
     void (APIENTRY *PixelStorei)(GLenum, GLint);
     void (APIENTRY *ReadBuffer)(GLenum);
     void (APIENTRY *ReadPixels)(GLint, GLint, GLsizei, GLsizei, GLenum, GLenum, void *);
+    void (APIENTRY *GetTexImage)(GLenum, GLint, GLenum, GLenum, void *);
 
     // --- state ---------------------------------------------------------------
     void (APIENTRY *Enable)(GLenum);
