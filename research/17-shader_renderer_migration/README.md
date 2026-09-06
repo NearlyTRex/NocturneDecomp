@@ -35,9 +35,8 @@ the build. The tridx7 tree stays on disk as the specification, with a README bes
 
 The migration is finished. What remains are the things it found and did not fix.
 
-1. **Three artifacts found by the A/B**, none of them the renderer — see open items 7, 8, 9.
-   Item 7, the coupling between a scene render and the CPU mirror, is the only one that could
-   plausibly show in gameplay.
+1. **Two artifacts found by the A/B** — open items 8 and 9. Item 7 turned out to be the harness
+   itself and is written up as such; read it before adding any probe that renders out of band.
 2. **Per-vertex fog's default** (open item 3) — implemented, off, still wanting a measurement
    that can see it.
 3. **The game-side defects** shaders were once expected to fix and do not: the chapel window
@@ -702,17 +701,45 @@ The shader work, the shims reorganisation and the native renderer are all commit
 `SYSTEM/nocturne.ini` rewrites `useDirect3D` on exit and stores the renderer chosen in Graphics
 Options, so a run starts wherever the last one left off.
 
-### 7. trigl's scene render is coupled to the CPU mirror — OPEN
+### 7. The CPU mirror round trip — NOT A DEFECT, and the drift it produced was the instrument
 
-With the simulation held, two `renderScene` calls with nothing between them are bit-identical,
-but a single pause-menu frame in between changes the next render: 2963-7224 pixels, deltas to
-204, concentrated on the bright blended region. `tridx7gl` in the same scene shows no such
-coupling — repeats are bit-identical across the same gap.
+The frame lives in two places: the GL scene target, where hardware geometry lands, and
+`g_dev.image`, the CPU mirror the engine draws into — `g_ScreenBufferArray` points at it and is
+never repointed. Emulating one lockable DirectDraw back buffer with two copies means
+synchronising them, and that is the whole mechanism (`trigl_device.cpp:41-73`):
 
-The mechanism is the menu frame's `lock_frame` readback refreshing the CPU image from the last
-GL render (gated on `target_ahead`), so the next scene render composites over a different
-backdrop and blended draws compound the difference. In normal play every frame redraws the scene
-completely, so this may never be visible; it is unexplained rather than shown to be harmless.
+| when | what | line |
+|---|---|---|
+| a batch is drawn | `target_ahead = true` | `:248-256` |
+| `lockFrame` | if `target_ahead`, read the target back into the mirror | `:258-286` |
+| engine 2D | written straight into the mirror | — |
+| `unlockFrame` | upload the whole mirror back over the target | `:288-299` |
+
+Both directions are load-bearing: without the readback the unlock upload erases every hardware
+draw, and without the upload the engine's 2D never reaches anything that presents.
+
+**This is not new and not trigl's.** The deleted `gl_ddraw.cpp` ran the same cycle — readback in
+`surface_Lock`, upload in `surface_Unlock` — and recorded the fact that settles the gameplay
+question: *the engine software-renders the entire static frame between the frame's first Lock and
+its 3D draws, 99.1% of pixels rewritten*, which also makes that upload the scene target's only
+full-frame clear. Nothing accumulates across frames because almost nothing survives one.
+
+The single difference is that the DX7 path read back on every Lock and trigl gates it on
+`target_ahead`. The gate is needed: an unconditional readback erases whatever was drawn since the
+last unlock, and a screen with no 3D on it — the pause menu among them — would never appear.
+
+**The measured drift was the gate meeting an out-of-band render.** With the simulation held
+nothing draws, so the mirror is never refreshed; `renderer_ab_capture.gdb` then calls
+`renderScene` from outside the engine's lock/unlock cycle, which sets the flag, so the next menu
+frame's lock folds that render into the mirror and the following render composites over it. Two
+renders inside one breakpoint hit have no frame boundary between them and are bit-identical —
+that reads as "deterministic within a frame" and actually means "the mirror moves only when a
+frame boundary passes". The game never renders out of band. The probe does.
+
+**What is left of this**, and it is narrow: the DX7 path re-synced both ways every frame where
+trigl syncs only when something drew, so a gameplay path could in principle leave the mirror
+stale under the conditional gate where the unconditional one would not. Nothing observed suggests
+one does, and the 99.1% repaint makes it unlikely.
 
 ### 8. The first Options entry of a run permanently drops geometry — OPEN
 
