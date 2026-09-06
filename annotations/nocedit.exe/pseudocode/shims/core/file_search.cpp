@@ -5,6 +5,7 @@
 // See file_search.h.
 
 #include "core/file_search.h"
+#include "core/ascii_case.h"
 
 #include <algorithm>
 #include <filesystem>
@@ -13,10 +14,6 @@
 #include <vector>
 
 namespace {
-
-char folded(char c) {
-    return (c >= 'A' && c <= 'Z') ? (char)(c - 'A' + 'a') : c;
-}
 
 // Wildcard matching without recursion. `star` remembers where the last `*` was
 // and `retry` where the name had reached when it was taken, so a `*` that
@@ -28,7 +25,8 @@ bool matches(const char *pattern, const char *name) {
     const char *retry = nullptr;
 
     while (*name != '\0') {
-        if (*pattern == '?' || folded(*pattern) == folded(*name)) {
+        if (*pattern == '?' ||
+            nocturne_ascii_lower(*pattern) == nocturne_ascii_lower(*name)) {
             ++pattern;
             ++name;
         } else if (*pattern == '*') {

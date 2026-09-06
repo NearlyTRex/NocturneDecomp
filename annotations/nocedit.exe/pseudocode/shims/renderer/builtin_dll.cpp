@@ -8,10 +8,10 @@
 #include "renderer/builtin_dll.h"
 #include "shim_config.h"
 #include "core/debug_log.h"
+#include "core/ascii_case.h"
 
 #include <stddef.h>
 #include <string.h>
-#include <strings.h>
 
 // -----------------------------------------------------------------------------
 // Export-table providers
@@ -69,7 +69,7 @@ static const NocturneBuiltinModule *find_module(const char *dll_name) {
         return NULL;
     }
     for (i = 0; i < g_BuiltinModuleCount; i++) {
-        if (strcasecmp(basename_of(dll_name), g_BuiltinModules[i].dll_name) == 0) {
+        if (nocturne_ascii_iequals(basename_of(dll_name), g_BuiltinModules[i].dll_name)) {
             return &g_BuiltinModules[i];
         }
     }

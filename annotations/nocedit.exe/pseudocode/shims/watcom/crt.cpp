@@ -15,6 +15,7 @@
 
 #include "system/crt.h"
 #include "watcom/path.h"        // watcom_resolve_fs_path() — the Windows-path shim
+#include "core/ascii_case.h"    // the one case fold, for _stricmp/_strnicmp
 #include "core/debug_log.h"
 #include "net/rng.h"            // nocturne_rng_note_raw_draw() — the rand() audit
 #include <cerrno>
@@ -68,12 +69,15 @@ int _strcmp(char* s1, char* s2) {
     return strcmp(s1, s2);
 }
 
+// The C library's versions follow the locale; these do not. In the "C" locale —
+// which is what the game has always run under — the two agree, and outside it
+// the fixed fold is the one that keeps an asset name matching itself.
 int _stricmp(char* s1, char* s2) {
-    return strcasecmp(s1, s2);
+    return nocturne_ascii_icompare(s1, s2);
 }
 
 int _strnicmp(char* s1, char* s2, size_t n) {
-    return strncasecmp(s1, s2, n);
+    return nocturne_ascii_icompare_n(s1, s2, n);
 }
 
 // ---------------------------------------------------------------------------

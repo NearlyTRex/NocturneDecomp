@@ -5,31 +5,13 @@
 // See path.h.
 
 #include "watcom/path.h"
+#include "core/ascii_case.h"
 
 #include <filesystem>
 #include <string>
 #include <system_error>
 
 namespace {
-
-// Case folding for ASCII only, deliberately. The names being matched are asset
-// filenames baked into a 1999 Windows game — ASCII throughout — and the
-// alternative, the C library's locale-sensitive folding, would answer
-// differently depending on a setting that has nothing to do with what is on
-// disk. Turkish locales fold 'I' to a dotless 'ı', which would stop ACT1.POD
-// matching act1.pod on a machine configured for Turkish and nowhere else. A
-// fixed rule is both portable and correct here.
-bool same_name_ignoring_case(const std::string &a, const std::string &b) {
-    if (a.size() != b.size()) return false;
-    for (size_t i = 0; i < a.size(); ++i) {
-        char x = a[i];
-        char y = b[i];
-        if (x >= 'A' && x <= 'Z') x = (char)(x - 'A' + 'a');
-        if (y >= 'A' && y <= 'Z') y = (char)(y - 'A' + 'a');
-        if (x != y) return false;
-    }
-    return true;
-}
 
 bool exists(const std::string &path) {
     std::error_code ignored;
@@ -49,7 +31,7 @@ std::string sibling_ignoring_case(const std::string &parent, const std::string &
     for (; it != end; it.increment(ignored)) {
         if (ignored) return std::string();
         const std::string name = it->path().filename().string();
-        if (same_name_ignoring_case(name, wanted)) return name;
+        if (nocturne_ascii_iequals(name.c_str(), wanted.c_str())) return name;
     }
     return std::string();
 }

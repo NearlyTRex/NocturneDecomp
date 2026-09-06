@@ -8,6 +8,7 @@
 #include "shim_config.h"
 
 #include "core/debug_log.h"
+#include "core/ascii_case.h"
 
 #include <cstdio>
 #include <cstdlib>
@@ -92,18 +93,18 @@ static char *net_trim(char *s) {
 }
 
 static void net_store(const char *key, const char *value) {
-    if (strcasecmp(key, "bindAddress") == 0) {
+    if (nocturne_ascii_iequals(key, "bindAddress")) {
         snprintf(s_bind_address, sizeof(s_bind_address), "%s", value);
     }
-    else if (strcasecmp(key, "serverAddress") == 0) {
+    else if (nocturne_ascii_iequals(key, "serverAddress")) {
         snprintf(s_server_address, sizeof(s_server_address), "%s", value);
     }
-    else if (strcasecmp(key, "playerName") == 0) {
+    else if (nocturne_ascii_iequals(key, "playerName")) {
         // Truncated to the game's field width here rather than at the call
         // site, so the caller can copy it without a length check.
         snprintf(s_player_name, sizeof(s_player_name), "%s", value);
     }
-    else if (strcasecmp(key, "port") == 0) {
+    else if (nocturne_ascii_iequals(key, "port")) {
         int port = atoi(value);
         // Leave s_port at 0 (meaning "use the caller's default") for anything
         // that is not a usable UDP port, rather than binding something absurd.
@@ -141,7 +142,7 @@ static void net_load(void) {
             char *end = strchr(p, ']');
             if (end == nullptr) { continue; }
             *end = '\0';
-            in_section = (strcasecmp(p + 1, NET_INI_SECTION) == 0);
+            in_section = nocturne_ascii_iequals(p + 1, NET_INI_SECTION);
             continue;
         }
         if (!in_section) { continue; }
