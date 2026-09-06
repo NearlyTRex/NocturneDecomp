@@ -39,6 +39,12 @@ namespace gl_recorder {
 struct Call {
     std::string name;
     unsigned    a = 0, b = 0, c = 0, d = 0;
+    // What the pipeline held when the call was made. Only meaningful on a draw,
+    // and recorded there because "was depth testing on when this geometry went
+    // out" cannot be answered afterwards — by then the frame has moved on.
+    int depth_test = 0;
+    int depth_write = 0;
+    int blend = 0;
 };
 
 struct State {
@@ -50,6 +56,15 @@ struct State {
 
     unsigned bound_program = 0;
     unsigned bound_vao = 0;
+
+    // The enables a draw depends on. Tracked rather than only recorded, because
+    // the faults worth catching are the ones where something outside the
+    // renderer turned one off and nothing turned it back on.
+    int depth_test = 0;
+    int depth_write = 1;
+    int blend = 0;
+    int cull = 0;
+    int scissor = 0;
 
     // Name allocators. Start at 1: zero means "none" throughout GL, and a fake
     // that handed out 0 would make "nothing bound" and "this object" identical.
@@ -64,6 +79,8 @@ struct State {
         active_unit = 0;
         memset(bound_texture, 0, sizeof(bound_texture));
         bound_program = bound_vao = 0;
+        depth_test = blend = cull = scissor = 0;
+        depth_write = 1;
         next_texture = next_buffer = next_vao = next_shader = next_program = 1;
     }
 

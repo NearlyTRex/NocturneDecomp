@@ -89,6 +89,7 @@ struct Engine {
 
 typedef int(__cdecl *InitFn)(void *, CExternalRendererBridge *);
 typedef int(__cdecl *VoidIntFn)(void);
+typedef void(__cdecl *VoidFn)(void);
 typedef int(__cdecl *SelectTextureFn)(SMRGLTextureBasic *, int, uchar *, uchar *, uchar *);
 typedef int(__cdecl *DrawPolyListFn)(SRenderVertex *, SMRGLPrimitiveQuad **, int, int);
 typedef int(__cdecl *SetVideoMode2Fn)(int, int, int, void **);
@@ -151,6 +152,17 @@ struct Frame {
     Quad quad;
 
     void begin() {
+        // Tear the renderer down before installing a fresh recorder, and in that
+        // order. The renderer keeps its own record of what the pipeline holds,
+        // in statics that outlive a test; a new recorder starts with a pipeline
+        // that holds nothing. Leaving the record standing across that boundary
+        // lets it agree with a draw about state the new pipeline never had, so
+        // the call that would set it is skipped as redundant and the test reads
+        // the previous test's leftovers. The teardown runs first because it
+        // deletes GL objects and needs the recorder that made them.
+        if (void *kill = entry("APIDLLkill")) ((VoidFn)kill)();
+        nocturne_trigl_gl_shutdown();
+
         gl_recorder::install();
         CHECK(((InitFn)entry("APIDLLinit"))(nullptr, &engine.bridge) == 1);
         ((SetVideoMode2Fn)entry("APIDLLsetVideoMode2"))(640, 480, 32, nullptr);
@@ -312,6 +324,95 @@ NOCTURNE_TEST(every_draw_has_a_program_and_a_vertex_array) {
         if (call.name != "DrawElements") continue;
         CHECK(call.c != 0);   // program
         CHECK(call.d != 0);   // vertex array
+    }
+}
+
+// -----------------------------------------------------------------------------
+// Geometry goes out under the depth state its draw asked for, across a present.
+//
+// Presenting and uploading the scene both draw with state of their own and put
+// none of it back — see gl_present_support.cpp, which misbehaves the same way on
+// purpose. A frame once went out with no depth test at all because the record of
+// what the pipeline held still said otherwise and the re-enable was skipped as
+// redundant. It does not look like a depth fault: a model shows its own far side
+// through its near one, and counting what each draw ASKS for says nothing,
+// because every draw asks correctly. Only the state at the draw answers it.
+// -----------------------------------------------------------------------------
+
+NOCTURNE_TEST(depth_survives_a_present) {
+    Frame frame;
+    std::vector<unsigned char> palette(768, 0x40);
+    std::vector<unsigned> pixels = image(64);
+    SMRGLTextureBasic wall = named("wall.raw");
+
+    frame.begin();
+    frame.select(&wall, pixels, palette);
+    frame.draw();
+
+    // The engine finishes a frame and puts it on screen. Presenting is
+    // APIDLLtoggle, not endScene — endScene only flushes — and it is the present
+    // that turns depth testing off behind the renderer's back.
+    frame.end();
+    ((VoidIntFn)entry("APIDLLtoggle"))();
+    ((VoidIntFn)entry("APIDLLbeginScene"))();
+    frame.select(&wall, pixels, palette);
+    frame.draw();
+    frame.draw();
+    frame.end();
+
+    const gl_recorder::State &log = gl_recorder::state();
+
+    // The scenario has to have happened, or the rest of this asserts nothing.
+    // Something outside the renderer must have turned depth testing off, and a
+    // draw must have gone out after it.
+    int disabled_at = -1;
+    for (int i = 0; i < (int)log.calls.size(); ++i) {
+        const gl_recorder::Call &call = log.calls[(size_t)i];
+        if (call.name == "Disable" && call.a == GL_DEPTH_TEST) disabled_at = i;
+    }
+    CHECK(disabled_at >= 0);
+
+    int draws_after = 0;
+    for (int i = disabled_at + 1; i < (int)log.calls.size(); ++i) {
+        const gl_recorder::Call &call = log.calls[(size_t)i];
+        if (call.name != "DrawElements") continue;
+        ++draws_after;
+        // kOpaque asks for depth test and depth write.
+        CHECK(call.depth_test != 0);
+        CHECK(call.depth_write != 0);
+    }
+    CHECK(draws_after >= 1);
+}
+
+NOCTURNE_TEST(depth_survives_the_frame_being_locked_and_unlocked) {
+    Frame frame;
+    std::vector<unsigned char> palette(768, 0x40);
+    std::vector<unsigned> pixels = image(64);
+    SMRGLTextureBasic wall = named("wall.raw");
+
+    frame.begin();
+    frame.select(&wall, pixels, palette);
+    frame.draw();
+
+    // The engine takes the frame to write 2D into it and hands it back. The
+    // upload that follows disturbs the same state a present does. Locking ends
+    // the scene, so drawing again means starting one — which is what the engine
+    // does, and without it the draws below are refused and assert nothing.
+    ((VoidIntFn)entry("APIDLLlockFrame"))();
+    ((VoidIntFn)entry("APIDLLunlockFrame"))();
+
+    ((VoidIntFn)entry("APIDLLbeginScene"))();
+    frame.select(&wall, pixels, palette);
+    frame.draw();
+    frame.draw();
+    frame.end();
+
+    const gl_recorder::State &log = gl_recorder::state();
+    CHECK(log.count("DrawElements") >= 1);
+    for (const gl_recorder::Call &call : log.calls) {
+        if (call.name != "DrawElements") continue;
+        CHECK(call.depth_test != 0);
+        CHECK(call.depth_write != 0);
     }
 }
 

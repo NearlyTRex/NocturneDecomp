@@ -16,6 +16,7 @@
 // which of the two it is talking to will want them separable.
 
 #include "gl/gl_present.h"
+#include "gl/gl_api.h"
 
 extern "C" {
 
@@ -23,7 +24,30 @@ int nocturne_gl_scene_target_bind(int, int) { return 1; }
 int nocturne_gl_scene_target_active(void) { return 1; }
 int nocturne_gl_ensure_active(void) { return 1; }
 void nocturne_gl_set_logical_size(int, int) {}
-void nocturne_gl_present_scene(void) {}
-void nocturne_gl_scene_upload(const void *, int, int, int, int) {}
+
+// These two leave the pipeline disturbed ON PURPOSE, because the real ones do.
+//
+// Presenting draws a quad of its own and turns off depth testing, blending,
+// culling and the scissor test to do it, and does not put them back. That is
+// not a bug to be fixed here — it is the condition the renderer has to survive,
+// and it is what a whole frame of geometry once went out with no depth test
+// behind: the renderer's record still described depth testing as enabled, the
+// next draw agreed, and the call that would have re-enabled it was skipped as
+// redundant.
+//
+// A stub that politely restored what it changed would make the tests pass
+// against a renderer that is wrong. So it misbehaves the way the thing it stands
+// in for misbehaves, and the tests assert that the renderer copes.
+void nocturne_gl_present_scene(void) {
+    gl.Disable(GL_DEPTH_TEST);
+    gl.Disable(GL_BLEND);
+    gl.Disable(GL_CULL_FACE);
+    gl.Disable(GL_SCISSOR_TEST);
+}
+
+void nocturne_gl_scene_upload(const void *, int, int, int, int) {
+    gl.Disable(GL_DEPTH_TEST);
+    gl.Disable(GL_BLEND);
+}
 
 }  // extern "C"

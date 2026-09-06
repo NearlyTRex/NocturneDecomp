@@ -9,6 +9,7 @@
 
 #include "gl_recorder.h"
 
+#include <cstdio>
 #include <cstdlib>
 
 namespace gl_recorder {
@@ -78,9 +79,13 @@ void APIENTRY r_GetIntegerv(GLenum name, GLint *out) {
 
 void APIENTRY r_DrawElements(GLenum, GLsizei count, GLenum, const void *) {
     // Recorded with what the pipeline holds, so a draw can be asked afterwards
-    // what image it actually went out with.
+    // what image it went out with and under what state.
     note("DrawElements", g_state.bound_texture[0], (unsigned)count,
          g_state.bound_program, g_state.bound_vao);
+    Call &call = g_state.calls.back();
+    call.depth_test = g_state.depth_test;
+    call.depth_write = g_state.depth_write;
+    call.blend = g_state.blend;
 }
 
 GLuint APIENTRY r_CreateShader(GLenum) {
@@ -189,11 +194,30 @@ void APIENTRY r_VertexAttribPointer(GLuint index, GLint, GLenum, GLboolean, GLsi
     note("VertexAttribPointer", index);
 }
 
-void APIENTRY r_Enable(GLenum cap) { note("Enable", (unsigned)cap); }
-void APIENTRY r_Disable(GLenum cap) { note("Disable", (unsigned)cap); }
+void set_cap(GLenum cap, int on) {
+    switch (cap) {
+        case GL_DEPTH_TEST:   g_state.depth_test = on; break;
+        case GL_BLEND:        g_state.blend = on; break;
+        case GL_CULL_FACE:    g_state.cull = on; break;
+        case GL_SCISSOR_TEST: g_state.scissor = on; break;
+        default: break;
+    }
+}
+
+void APIENTRY r_Enable(GLenum cap) {
+    set_cap(cap, 1);
+    note("Enable", (unsigned)cap);
+}
+void APIENTRY r_Disable(GLenum cap) {
+    set_cap(cap, 0);
+    note("Disable", (unsigned)cap);
+}
 void APIENTRY r_BlendFunc(GLenum s, GLenum d) { note("BlendFunc", (unsigned)s, (unsigned)d); }
 void APIENTRY r_DepthFunc(GLenum f) { note("DepthFunc", (unsigned)f); }
-void APIENTRY r_DepthMask(GLboolean on) { note("DepthMask", (unsigned)on); }
+void APIENTRY r_DepthMask(GLboolean on) {
+    g_state.depth_write = (on != 0) ? 1 : 0;
+    note("DepthMask", (unsigned)on);
+}
 void APIENTRY r_CullFace(GLenum f) { note("CullFace", (unsigned)f); }
 void APIENTRY r_FrontFace(GLenum f) { note("FrontFace", (unsigned)f); }
 void APIENTRY r_Viewport(GLint, GLint, GLsizei w, GLsizei h) {
@@ -207,12 +231,82 @@ void APIENTRY r_GenerateMipmap(GLenum) {
 GLenum APIENTRY r_GetError(void) { return GL_NO_ERROR; }
 void APIENTRY r_BindFramebuffer(GLenum, GLuint fbo) { note("BindFramebuffer", fbo); }
 
+// --- reading the target back --------------------------------------------------
+// The device mirrors the frame into a CPU image so the engine can draw its 2D
+// into it. Nothing is rendered here, so the read leaves the buffer as it found
+// it — what these tests ask about is the order of the calls around it.
+void APIENTRY r_ReadBuffer(GLenum which) { note("ReadBuffer", (unsigned)which); }
+void APIENTRY r_ReadPixels(GLint, GLint, GLsizei w, GLsizei h, GLenum, GLenum, void *) {
+    note("ReadPixels", (unsigned)w, (unsigned)h);
+}
+void APIENTRY r_GetTexImage(GLenum, GLint, GLenum, GLenum, void *) {
+    note("GetTexImage", g_state.bound_texture[g_state.active_unit]);
+}
+const GLubyte *APIENTRY r_GetString(GLenum) {
+    return (const GLubyte *)"gl_recorder";
+}
+
+void APIENTRY r_Clear(GLbitfield mask) { note("Clear", (unsigned)mask); }
+void APIENTRY r_ClearColor(GLclampf, GLclampf, GLclampf, GLclampf) { note("ClearColor"); }
+void APIENTRY r_ClearDepth(GLclampd) { note("ClearDepth"); }
+
+// --- framebuffers -------------------------------------------------------------
+// The renderer keeps one framebuffer per master-depth slot. Names are handed out
+// the same way texture names are, and completeness always answers yes: a fake
+// that reported an incomplete framebuffer would send the renderer down its
+// failure path and the test would be measuring that instead.
+void APIENTRY r_GenFramebuffers(GLsizei n, GLuint *out) {
+    for (GLsizei i = 0; i < n; ++i) out[i] = g_state.next_buffer++;
+    note("GenFramebuffers", (unsigned)n, out[0]);
+}
+void APIENTRY r_DeleteFramebuffers(GLsizei n, const GLuint *) {
+    note("DeleteFramebuffers", (unsigned)n);
+}
+GLenum APIENTRY r_CheckFramebufferStatus(GLenum) { return GL_FRAMEBUFFER_COMPLETE; }
+void APIENTRY r_GenRenderbuffers(GLsizei n, GLuint *out) {
+    for (GLsizei i = 0; i < n; ++i) out[i] = g_state.next_buffer++;
+    note("GenRenderbuffers", (unsigned)n, out[0]);
+}
+void APIENTRY r_DeleteRenderbuffers(GLsizei n, const GLuint *) {
+    note("DeleteRenderbuffers", (unsigned)n);
+}
+void APIENTRY r_BindRenderbuffer(GLenum, GLuint rb) { note("BindRenderbuffer", rb); }
+void APIENTRY r_RenderbufferStorage(GLenum, GLenum, GLsizei w, GLsizei h) {
+    note("RenderbufferStorage", (unsigned)w, (unsigned)h);
+}
+void APIENTRY r_FramebufferRenderbuffer(GLenum, GLenum, GLenum, GLuint rb) {
+    note("FramebufferRenderbuffer", rb);
+}
+void APIENTRY r_BlitFramebuffer(GLint, GLint, GLint, GLint, GLint, GLint, GLint,
+                                GLint, GLbitfield mask, GLenum) {
+    note("BlitFramebuffer", (unsigned)mask);
+}
+
 }  // namespace
 
 State &state() { return g_state; }
 
+// Called when the renderer reaches for an entry point this recorder does not
+// install. Zeroing the table instead leaves a null pointer, and calling one is a
+// segfault with no indication of which call it was or that the fake was the
+// problem rather than the renderer — a whole test run dies on a fault that looks
+// like a bug in the code under test. Every member of the table is a function
+// pointer, so all of them can be pointed here first and the real ones written
+// over the top.
+void APIENTRY r_unimplemented(void) {
+    fprintf(stderr,
+            "gl_recorder: the renderer called an entry point the recorder does "
+            "not install.\n"
+            "             Add it to install() — see the list this file keeps.\n");
+    abort();
+}
+
 void install() {
-    memset(&gl, 0, sizeof(gl));
+    // Point the whole table at the trap, then write the real ones over it.
+    void (**slots)(void) = (void (**)(void)) & gl;
+    for (size_t i = 0; i < sizeof(gl) / sizeof(*slots); ++i) {
+        slots[i] = r_unimplemented;
+    }
     g_state.reset();
 
     gl.ActiveTexture = r_ActiveTexture;
@@ -226,7 +320,25 @@ void install() {
 
     gl.GetIntegerv = r_GetIntegerv;
     gl.GetError = r_GetError;
+    gl.GetString = r_GetString;
     gl.DrawElements = r_DrawElements;
+
+    gl.ReadBuffer = r_ReadBuffer;
+    gl.ReadPixels = r_ReadPixels;
+    gl.GetTexImage = r_GetTexImage;
+    gl.Clear = r_Clear;
+    gl.ClearColor = r_ClearColor;
+    gl.ClearDepth = r_ClearDepth;
+
+    gl.GenFramebuffers = r_GenFramebuffers;
+    gl.DeleteFramebuffers = r_DeleteFramebuffers;
+    gl.CheckFramebufferStatus = r_CheckFramebufferStatus;
+    gl.GenRenderbuffers = r_GenRenderbuffers;
+    gl.DeleteRenderbuffers = r_DeleteRenderbuffers;
+    gl.BindRenderbuffer = r_BindRenderbuffer;
+    gl.RenderbufferStorage = r_RenderbufferStorage;
+    gl.FramebufferRenderbuffer = r_FramebufferRenderbuffer;
+    gl.BlitFramebuffer = r_BlitFramebuffer;
 
     gl.CreateShader = r_CreateShader;
     gl.ShaderSource = r_ShaderSource;
