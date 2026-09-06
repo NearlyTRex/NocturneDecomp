@@ -57,6 +57,12 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+// The descriptor calls behind CreateFile/ReadFile/WriteFile: read, write,
+// close, lseek, dup, ftruncate, fsync, getpid. Not a port so much as a
+// spelling — Windows' own runtime has all of them, underscored, across <io.h>
+// and <process.h>, with ftruncate as _chsize and fsync as _commit. Left as the
+// POSIX names because that is what builds here and inventing the other set
+// blind would be claiming a correctness nobody has compiled.
 #include <unistd.h>
 #include <vector>
 #include <string>

@@ -104,16 +104,22 @@ inline FILE* _dlog_get_file() {
 #  define _DLOG_HAS_ASAN 1
 #endif
 
+// Walking your own stack is not something the language offers, so this is by
+// host. A build with no way to do it still logs the warning that asked for the
+// trace — losing the trace is worth strictly less than losing the message, and
+// a host nobody has tried should not fail to compile over a diagnostic.
 #if defined(_DLOG_HAS_ASAN)
 extern "C" void __sanitizer_print_stack_trace(void);
 inline void _dlog_print_backtrace() { __sanitizer_print_stack_trace(); }
-#else
+#elif defined(__GLIBC__) || defined(__APPLE__) || defined(__FreeBSD__)
 #include <execinfo.h>
 inline void _dlog_print_backtrace() {
     void* frames[64];
     int n = backtrace(frames, 64);
     backtrace_symbols_fd(frames, n, 2 /* stderr */);
 }
+#else
+inline void _dlog_print_backtrace() {}
 #endif
 
 #define DBACKTRACE() _dlog_print_backtrace()

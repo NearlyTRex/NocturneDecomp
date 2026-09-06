@@ -19,7 +19,11 @@
 #include "core/debug_log.h"
 #include "net/rng.h"            // nocturne_rng_note_raw_draw() — the rand() audit
 #include <cerrno>
-#include <dlfcn.h>          // dlsym / RTLD_NEXT for remove()/rename() interposition
+#if !defined(_WIN32)
+// Only for taking over remove() and rename(); see the note beside them. A host
+// that accepts the game's paths as they are does not need either.
+#include <dlfcn.h>
+#endif
 // Full struct layouts for Watcom types that crt.h only forward-declares.
 // The shims bridge these to libc equivalents field-by-field.
 #include "system/stdio.h"   // _FILE  (for _FILE_to_FILE)
@@ -353,15 +357,23 @@ _FILE* _fopen(const char* filename, const char* mode) {
         fopen_text_aware(watcom_resolve_fs_path(filename).c_str(), mode));
 }
 
-// The game calls plain remove()/rename() with hard-coded Windows paths — e.g.
-// CIni::writeProfileString's temp-file swap of ".\\system\\nocturne.ini", which
-// is how every nocturne.ini setting is persisted. libc's remove/rename would
-// get the literal backslash names (not path separators on Linux) and fail
-// silently, so ini writes never landed (settings appeared not to save).
-// Interpose normalizing wrappers that run the path(s) through normalize_path
-// (\ -> /, case-insensitive component match) before delegating to the real
-// libc implementation found via RTLD_NEXT. _fopen already normalizes, so the
-// temp file is created at the same resolved path these then operate on.
+// The game calls plain remove() and rename() with hard-coded Windows paths —
+// CIni::writeProfileString's temp-file swap of ".\\system\\nocturne.ini" among
+// them, which is how every setting in that file is persisted. Given the literal
+// backslash names those fail quietly on a host where a backslash is an ordinary
+// character, and the ini writes never land: settings appear not to save.
+//
+// Unlike the rest of the file these are not new functions the game calls, they
+// are the C library's own names taken over. Both are unavoidably specific to how
+// a platform links: taking over a name is one mechanism, and reaching the
+// implementation that was taken over is another.
+//
+// It is also only necessary where the problem is. On Windows the host already
+// accepts these paths — that is where they came from — so the interposition is
+// not built there and the C library's own remove and rename are called directly,
+// which is the correct behaviour rather than a fallback.
+#if !defined(_WIN32)
+
 extern "C" int remove(const char* path) {
     using remove_fn = int (*)(const char*);
     static remove_fn real_remove = reinterpret_cast<remove_fn>(dlsym(RTLD_NEXT, "remove"));
@@ -374,6 +386,8 @@ extern "C" int rename(const char* oldpath, const char* newpath) {
     return real_rename(watcom_resolve_fs_path(oldpath).c_str(),
                        watcom_resolve_fs_path(newpath).c_str());
 }
+
+#endif  // !_WIN32
 
 int _fclose(_FILE* f) {
     if (!f) return 0;

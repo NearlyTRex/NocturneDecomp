@@ -20,9 +20,9 @@
 #include <cstring>
 #include <filesystem>
 #include <system_error>
-// The descriptor-based half of Watcom's io.h — read, write, lseek, ftruncate.
-// A file descriptor is not POSIX-only: Windows' own CRT has the same calls under
-// underscored names, so this is a spelling difference rather than a port.
+// The descriptor-based half of Watcom's io.h — here just lseek and ftruncate.
+// A file descriptor is not POSIX-only: Windows' own runtime has both, as _lseek
+// and _chsize in <io.h>, so this is a spelling difference rather than a port.
 #include <unistd.h>
 
 // =============================================================================

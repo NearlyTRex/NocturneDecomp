@@ -1,5 +1,7 @@
 #include "system/advapi32.h"
 #include <cstring>
+// getlogin_r, for GetUserName. Who is logged in is a question every host answers
+// differently — Windows has GetUserNameA, which is what this is standing in for.
 #include <unistd.h>
 
 // ---------------------------------------------------------------------------
