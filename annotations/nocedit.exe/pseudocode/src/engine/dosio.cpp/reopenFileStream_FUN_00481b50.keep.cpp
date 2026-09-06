@@ -6,7 +6,7 @@
 // Signature: void __cdecl engine_dosio_cpp_reopenFileStream_FUN_00481b50(char *directory_path,char *filename,uint mode_flags,ifstream *file_stream)
 
 #include "nocturne.h"
-#include "core/stream_compat.h"
+#include "watcom/stream_compat.h"
 
 void __cdecl engine_dosio_cpp_reopenFileStream_FUN_00481b50(char *directory_path,char *filename,uint mode_flags,ifstream *file_stream)
 

@@ -1,12 +1,16 @@
 // =============================================================================
-// SHIM INITIALIZATION - Master init for all Win32 API shims
+// SHIM INITIALIZATION - Master init for the legacy-platform API shims
 // =============================================================================
 //
 // Wires up all global function pointers to their cross-platform shim
 // implementations. Must be called before the program's WinMain entry point.
 //
+// Covers both emulation directories: win32/ and directx/. Every entry here is
+// scaffolding for an API the shipped binary imports, so this list shrinks as
+// the engine stops speaking them, and the last removal retires this file.
+//
 
-#include "core/shim_init.h"
+#include "win32/shim_init.h"
 
 #include <SDL.h>
 
@@ -19,12 +23,16 @@ static void shims_configure_sdl(void) {
 
 void shims_init_all(void) {
     shims_configure_sdl();
+
+    // win32/
     shims_init_kernel32();
     shims_init_user32();
     shims_init_wingdi();
     shims_init_mmsystem();
     shims_init_advapi32();
     shims_init_winsock();
+
+    // directx/
     shims_init_ddraw();
     shims_init_dsound();
 }

@@ -6,7 +6,7 @@
 // Signature: void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamera *this_ptr)
 
 #include "nocturne.h"
-#include "core/stream_compat.h"
+#include "watcom/stream_compat.h"
 
 void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamera *this_ptr)
 

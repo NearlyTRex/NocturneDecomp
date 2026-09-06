@@ -14,7 +14,7 @@
 #include <cstring>
 #include <string>
 
-// Defined in shims/crt.cpp — declared here rather than including
+// Defined in shims/watcom/crt.cpp — declared here rather than including
 // stream_compat.h, which needs <fstream> pulled in ahead of it.
 std::string watcom_resolve_fs_path(const char *path);
 

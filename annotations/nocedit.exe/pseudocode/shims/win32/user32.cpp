@@ -1,6 +1,6 @@
 #include "system/user32.h"
 #include "debug/dump.h"
-#include "media/mci_video.h"
+#include "win32/mci_video.h"
 #include "gl/gl_present.h"
 #include "shim_config.h"
 #include <SDL.h>

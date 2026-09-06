@@ -42,7 +42,7 @@
 // above), which means the caller itself needs a keep instead.
 
 #include "nocturne.h"
-#include "core/stream_compat.h"
+#include "watcom/stream_compat.h"
 
 // -- pure virtual dispatchers -------------------------------------------------
 

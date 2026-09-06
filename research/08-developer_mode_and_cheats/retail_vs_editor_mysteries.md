@@ -180,7 +180,7 @@ remove(filename);                 // filename == ".\\system\\nocturne.ini"
 rename(acStack_216 + 2, filename); // temp == ".\\system\\nocturne.inx"
 ```
 
-The shim layer's `normalize_path()` (`shims/crt.cpp:298`, translates `\`→`/` + case-insensitive component match) is wired into `fopen` (413), `freopen` (539), `stat` (678) and `utime` (697) — **but not `remove` or `rename`**, which fall through to libc unchanged. So:
+The shim layer's `normalize_path()` (`shims/watcom/crt.cpp:298`, translates `\`→`/` + case-insensitive component match) is wired into `fopen` (413), `freopen` (539), `stat` (678) and `utime` (697) — **but not `remove` or `rename`**, which fall through to libc unchanged. So:
 
 - The temp file is *created* via `fopen("wt")` → normalized → written correctly to `system/nocturne.inx`.
 - `remove(".\\system\\nocturne.ini")` and `rename("...nocturne.inx", "...nocturne.ini")` receive literal backslash names that don't exist on Linux, fail, and return non-zero — which the game ignores.
@@ -195,7 +195,7 @@ Net effect: on Linux *no* `nocturne.ini` setting persists (halo, subtitles, cont
 
 ### Restoration / fix plan
 
-- **Persistence (Linux port) — the actionable fix.** Add `remove`/`rename` (and siblings like `_unlink`/`unlink`) shims in `shims/crt.cpp` that route the path(s) through `normalize_path()`, mirroring the existing `fopen`/`freopen` wrappers. That makes `CIni::writeProfileString`'s temp-swap land on the real `nocturne.ini` and fixes persistence for **all** ini-backed settings at once. (Optionally also fix the temp-name off-by-one so the intermediate file is `nocturne.inix`.) This is a substrate fix, so it follows the runnable-binary goal rather than the `NOCTURNE_AUTHENTIC_*` convention.
+- **Persistence (Linux port) — the actionable fix.** Add `remove`/`rename` (and siblings like `_unlink`/`unlink`) shims in `shims/watcom/crt.cpp` that route the path(s) through `normalize_path()`, mirroring the existing `fopen`/`freopen` wrappers. That makes `CIni::writeProfileString`'s temp-swap land on the real `nocturne.ini` and fixes persistence for **all** ini-backed settings at once. (Optionally also fix the temp-name off-by-one so the intermediate file is `nocturne.inix`.) This is a substrate fix, so it follows the runnable-binary goal rather than the `NOCTURNE_AUTHENTIC_*` convention.
 - **Resolution.** There is nothing to "restore" independently — the cap is the documented §1 consequence. Anything that lets `g_UseDirect3D` stay non-zero (e.g. the `NOCTURNE_AUTHENTIC_D3D_OPTIONS=0` default, which already removes §1's per-frame clobber) plus an external renderer path would let clamps #1/#2 relax; clamp #3 still requires the backend to actually accept the larger mode.
 
 ## 5. Why does the editor ask every renderer DLL for 23 entry points that no shipped DLL has? (definitive)

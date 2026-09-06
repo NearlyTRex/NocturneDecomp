@@ -41,7 +41,7 @@
 // code.
 
 #include "system/mmsystem.h"
-#include "media/mci_video.h"
+#include "win32/mci_video.h"
 #include "gl/gl_present.h"
 #include "core/debug_log.h"
 #include <SDL.h>
@@ -60,7 +60,7 @@ extern "C" {
 #include <cstdio>
 #include <string>
 
-// Defined in shims/crt.cpp. The game hands MCI a Watcom-style path
+// Defined in shims/watcom/crt.cpp. The game hands MCI a Watcom-style path
 // ("video\\opening.avi"); the CRT _fopen shim resolves those against the real
 // filesystem ('\\' -> '/' plus case-insensitive component matching), which is
 // why playMovie's own existence check succeeds. libav's avformat_open_input

@@ -110,7 +110,7 @@ int LoadStringA(HINSTANCE hInstance, UINT uID, LPSTR lpBuffer, int cchBufferMax)
     return 0;
 }
 
-// Defined in the exe's shims/crt.cpp — see stream_compat.h.
+// Defined in the exe's shims/watcom/crt.cpp — see stream_compat.h.
 std::string watcom_resolve_fs_path(const char *path);
 
 // The DLL reads its tuning values out of .\system\render.ini (see readIniInt).

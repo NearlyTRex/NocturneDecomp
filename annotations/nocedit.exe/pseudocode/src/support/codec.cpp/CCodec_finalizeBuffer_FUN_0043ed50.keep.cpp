@@ -6,7 +6,7 @@
 // Signature: int __cdecl support_codec_cpp_CCodec_finalizeBuffer_FUN_0043ed50(CCodec *this_ptr,char *buffer_ptr,int *buffer_size_ptr)
 
 #include "nocturne.h"
-#include "core/stream_compat.h"
+#include "watcom/stream_compat.h"
 
 int __cdecl support_codec_cpp_CCodec_finalizeBuffer_FUN_0043ed50(CCodec *this_ptr,char *buffer_ptr,int *buffer_size_ptr)
 

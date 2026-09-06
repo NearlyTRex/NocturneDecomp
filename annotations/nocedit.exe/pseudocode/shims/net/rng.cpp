@@ -198,7 +198,7 @@ extern "C" unsigned int nocturne_rng_sim(void)
     rng_note_draw(__builtin_return_address(0));
 
     // Masked to 15 bits so this is range-identical to the rand() it replaces:
-    // shims/crt.cpp overrides rand() with Watcom's LCG, which returns 0..0x7FFF.
+    // shims/watcom/crt.cpp overrides rand() with Watcom's LCG, which returns 0..0x7FFF.
     return core_actor_cpp_generateRandomValue_FUN_0040cba0() & 0x7fffu;
 }
 

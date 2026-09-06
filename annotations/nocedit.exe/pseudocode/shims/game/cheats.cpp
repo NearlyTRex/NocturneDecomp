@@ -17,7 +17,7 @@
 
 #if !NOCTURNE_AUTHENTIC_CHEAT_MENU
 
-// Defined in shims/crt.cpp — the '\\'->'/' + case-insensitive resolution the
+// Defined in shims/watcom/crt.cpp — the '\\'->'/' + case-insensitive resolution the
 // CRT _fopen shim applies, so the probe below looks at the file the engine
 // will actually open.
 std::string watcom_resolve_fs_path(const char *path);

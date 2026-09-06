@@ -16,7 +16,7 @@
 #include <cstdio>
 #include <string>
 
-// Defined in shims/crt.cpp — the same '\\'->'/' + case-insensitive resolution
+// Defined in shims/watcom/crt.cpp — the same '\\'->'/' + case-insensitive resolution
 // the CRT _fopen shim applies, so the probe below looks at the file the engine
 // will actually open.
 std::string watcom_resolve_fs_path(const char *path);

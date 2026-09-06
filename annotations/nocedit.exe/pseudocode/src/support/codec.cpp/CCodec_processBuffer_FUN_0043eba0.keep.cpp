@@ -6,7 +6,7 @@
 // Signature: int __cdecl support_codec_cpp_CCodec_processBuffer_FUN_0043eba0(CCodec *this_ptr,char *input,int *input_length,char *output,int *output_length,int enable_callback)
 
 #include "nocturne.h"
-#include "core/stream_compat.h"
+#include "watcom/stream_compat.h"
 
 int __cdecl support_codec_cpp_CCodec_processBuffer_FUN_0043eba0(CCodec *this_ptr,char *input,int *input_length,char *output,int *output_length,int enable_callback)
 

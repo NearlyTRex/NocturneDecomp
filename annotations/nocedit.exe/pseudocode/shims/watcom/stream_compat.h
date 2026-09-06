@@ -67,7 +67,7 @@ inline std::ofstream &std_ofstream_from(ofstream *fs) {
 // matching), which is why getFile/_fopen work. Real std::ifstream/ofstream
 // bypass _fopen and are case-sensitive on Linux, so opening "save\\SAVE1.NOC"
 // fails when the file is save/SAVE1.noc (-> "Can't open saved game file.").
-// watcom_resolve_fs_path() (defined in shims/crt.cpp) applies the exact same
+// watcom_resolve_fs_path() (defined in shims/watcom/crt.cpp) applies the exact same
 // resolution _fopen uses. Keeps call watcom_stream_open(fs, path, mode) instead
 // of fs.open(path, mode) for any raw std:: file-stream open.
 std::string watcom_resolve_fs_path(const char *path);

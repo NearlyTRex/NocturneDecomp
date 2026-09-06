@@ -2406,7 +2406,7 @@ def generate_globals_cpp_file(globals_list, range_key=""):
 
             # DLL import function pointers: initialize to nullptr instead of
             # raw import table addresses. These are wired up at runtime by
-            # shim_init (shims/shim_init.cpp).
+            # shim_init (shims/win32/shim_init.cpp).
             if _is_import_function_pointer(base_type, global_var.get('initializer', '')):
                 comment = global_var.get('comment', '')
                 line = "%s %s = nullptr;" % (base_type, full_var_name)
@@ -2981,7 +2981,7 @@ def generate_crt_header(functions_to_process):
     lines.append("// like crt_stdio_c_fread_FUN_005fd990() to standard calls like fread().")
     lines.append("// This header provides the declarations for those standard functions.")
     lines.append("//")
-    lines.append("// Implementations are in shims/crt.cpp.")
+    lines.append("// Implementations are in shims/watcom/crt.cpp.")
     lines.append("//")
     lines.append("// =============================================================================")
     lines.append("")

@@ -73,7 +73,7 @@ passing; promote them to `.keep.*` to make them participate in the build.
 
 - `src/entry/entry.c` is replaced by the hand-written `main/main.cpp`.
 - `src/crt/*` is the decompiled Watcom C runtime, unsuitable for a modern target.
-  Linking uses system libc and libstdc++ instead, bridged via `shims/crt.cpp`.
+  Linking uses system libc and libstdc++ instead, bridged via `shims/watcom/crt.cpp`.
 
 ## Excluding individual files
 

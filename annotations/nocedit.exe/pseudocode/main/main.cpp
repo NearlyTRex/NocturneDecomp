@@ -15,7 +15,7 @@
 //
 
 #include "nocturne.h"
-#include "core/shim_init.h"
+#include "win32/shim_init.h"
 
 // Entries 0..154 are game static initializers (actor registration, vtable
 // setup, etc.). Entries 155..165 are Watcom CRT init handlers that we skip

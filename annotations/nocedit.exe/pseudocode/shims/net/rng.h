@@ -16,7 +16,7 @@
 //     starts each frame on the same number, and drift cannot accumulate across
 //     frames - only draws made *within* one frame can diverge.
 //
-//   THE LIBC STREAM - rand(), which shims/crt.cpp implements as Watcom's LCG.
+//   THE LIBC STREAM - rand(), which shims/watcom/crt.cpp implements as Watcom's LCG.
 //     CNetGame::runLobby srand()s it from the same shared seed before loading
 //     the mission, so the two machines do start together. They cannot stay
 //     together: the host draws one rand() per sim frame to *produce* the seed

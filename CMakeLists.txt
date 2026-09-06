@@ -411,12 +411,16 @@ if(NOCTURNE_BUILD_EXE)
     list(LENGTH _tridx7_libs _tridx7_lib_count)
     message(STATUS "tridx7: ${_tridx7_lib_count} object libraries")
 
-    # RECURSE: the shims are grouped into subdirectories by concern (config/,
-    # core/, win32/, media/, gl/, renderer/, net/, game/, debug/). A flat glob
-    # would drop every one of them from the build silently — nothing references
-    # a shim source by name, so the first symptom would be a link error far from
-    # the cause. Only shim_config.h stays at the root, because the generated
-    # nocturne.h includes it by bare name.
+    # RECURSE: the shims are grouped into subdirectories by responsibility.
+    # Legacy-platform emulation, deleted wholesale once the engine no longer
+    # speaks these APIs: win32/ (kernel32, user32, wingdi, mmsystem, winsock,
+    # MCI, and the shim_init that wires them), directx/ (DirectDraw,
+    # DirectSound), watcom/ (Watcom C++ runtime and CRT bridge). Ours, and
+    # permanent: core/, gl/, renderer/, net/, game/, debug/, config/. A flat
+    # glob would drop every one of them from the build silently — nothing
+    # references a shim source by name, so the first symptom would be a link
+    # error far from the cause. Only shim_config.h stays at the root, because
+    # the generated nocturne.h includes it by bare name.
     file(GLOB_RECURSE _shim_sources CONFIGURE_DEPENDS
         "${NOCTURNE_SHIMS_DIR}/*.cpp"
         "${NOCTURNE_SHIMS_DIR}/*.c"
