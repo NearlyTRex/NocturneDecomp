@@ -6,7 +6,8 @@
 # commands that make that happen.
 #
 # Quick reference:
-#   dbg.sh build                  # cmake build (picks up new .keep files via re-glob)
+#   dbg.sh build                  # cmake build (picks up new .keep files via re-glob),
+#                                 # then builds and runs the unit tests
 #   dbg.sh start                  # launch in tmux; game starts PAUSED at gdb
 #   dbg.sh cont                   # resume (game runs freely)
 #   dbg.sh restart                # stop + start (preserves probe log)
@@ -24,6 +25,7 @@
 #   NOCTURNE_DBG_SESSION    tmux session name (default: nodebug)
 #   NOCTURNE_DBG_LOG        probe log path (default: /tmp/nocturne_dbg.log)
 #   NOCTURNE_DBG_DEBUG_SH   path to build's debug.sh (default: auto-discover)
+#   NOCTURNE_DBG_TESTS      0 to skip building and running the tests on `build`
 #
 # Probe-file conventions:
 #   - Set breakpoints with `commands ... silent ... printf ... cont ... end`.
@@ -90,7 +92,20 @@ cmd="$1"; shift
 case "${cmd}" in
   build)
     touch "${PROJECT_ROOT}/cmake/skip_list.txt"
-    cmake --build "${PROJECT_ROOT}/build/exe-linux-asan" "$@"
+    _build_dir="${PROJECT_ROOT}/build/exe-linux-asan"
+    cmake --build "${_build_dir}" "$@" || exit $?
+    # The test binaries are EXCLUDE_FROM_ALL, so the build above never touches
+    # them and `ctest` afterwards runs whatever was last compiled. That is worse
+    # than having no tests: a stale binary reports a green run for code it was
+    # not built from, which is how a wrong fix once passed review here. Build
+    # them with everything else, then run them, so a green run means this tree.
+    if [ "${NOCTURNE_DBG_TESTS:-1}" != "0" ]; then
+      cmake --build "${_build_dir}" --target nocturne_tests || exit $?
+      ( cd "${_build_dir}" && ctest --output-on-failure ) || {
+        echo "dbg.sh: tests failed — the build is done, the tree is not." >&2
+        exit 1
+      }
+    fi
     ;;
 
   restart)
