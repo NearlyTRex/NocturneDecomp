@@ -10,9 +10,16 @@ what pulled this off course once already (see the struck phase 1 below).
 in software mode AND under acceleration** — bit-identical, not merely within the noise floor.
 Nothing in the migration is now unmeasured.
 
-Ships as a second selectable renderer, `trigl.dll`, in Graphics Options → 3D API, alongside
-the fixed-function `tridx7.dll`. Both are built into the exe via the built-in DLL registry
-(`shims/builtin_dll.cpp`); `tridx7.dll`'s authentic 37-export surface is untouched.
+**A renderer written directly against modern GL now exists and has passed its A/B against the
+path this migration started from.** Everything below about `trigl.dll` being tridx7's export
+table with a shader flag describes `tridx7gl.dll`; the name moved. Three renderers are
+registered in `shims/renderer/builtin_dll.cpp` so one scene can be captured through each:
+
+| module | what it is |
+|---|---|
+| `tridx7.dll` | the decompiled DX7 renderer on fixed-function GL |
+| `tridx7gl.dll` | the same, with the shader path enabled at init — what this doc calls `trigl.dll` throughout |
+| `trigl.dll` | `shims/renderer/`, ~3.7k lines, talks to GL directly and shares no code with the two above |
 
 | | state |
 |---|---|
@@ -21,22 +28,25 @@ the fixed-function `tridx7.dll`. Both are built into the exe via the built-in DL
 | transform | **done** — own `u_projection`; no matrix stack, no `ftransform()` |
 | texturing / secondary colour / alpha test | **done** — in shader since phase 0 |
 | texture stage ops | **done** — nothing to do; only `DISABLE`/`MODULATE` are ever set |
-| per-vertex fog | **implemented, default OFF** — measurement inconclusive, see phase 2 |
+| per-vertex fog | **implemented in both renderers, default OFF** — measurement inconclusive |
 | blend / depth / cull / scissor | staying as GL state, by design |
 | present blit | **done, bit-exact in both modes** — buffer object + shader in `gl_blit.cpp` |
-| core profile | still blocked, but no longer on the blit — see phase 4 |
+| native renderer | **done, measured** — see "The native renderer A/B" below |
+| retiring the DX7 path | **next** — the A/B that gates it has passed |
+| core profile | blocked only by the DX7 path still being selectable |
 
 ### Pick up here
 
-The migration itself is done and measured; what remains are choices, not unfinished work.
-
-1. **The core profile**, if it is wanted — and the blocker is not what this doc used to say.
-   See the ledger at the end of phase 4: the context is created once at startup, before a
-   renderer is chosen, so narrowing the profile means either dropping `tridx7` or recreating
-   the context on a renderer switch.
-2. **Per-vertex fog's default** (open item 3) — still the one term implemented but left off for
-   want of a measurement that can see it.
-3. **Nothing here is committed** (open item 7).
+1. **Retire the DX7 path.** Drop the `tridx7.dll` and `tridx7gl.dll` rows from
+   `g_BuiltinModules`, stop compiling the tridx7 tree, delete `gl_ddraw.cpp`,
+   `apidll_exports.cpp` and `win32_imports.cpp`. The tree stays on disk as the specification.
+2. **Then the core profile.** The native renderer is already core-clean — it binds a real VAO
+   and its shaders are `#version 150 core`. What is left is outside it: the context is
+   requested as compatibility at `gl/gl_present.cpp:156`, `gl_blit.cpp` is still `#version 120`
+   with no VAO and is shared with software mode, three immediate-mode fallback quads remain in
+   `gl_present.cpp`, and `gl_api.cpp` still lists the fixed-function entry points as mandatory,
+   so a missing `glBegin` takes the whole GL path down.
+3. **Three artifacts found by the A/B**, none of them the renderer — see open items 7, 8, 9.
 
 Do not switch renderers by writing `g_UseDirect3D` / `g_UseExternalRenderer` from gdb — that
 skips renderer init and crashes within seconds. Use the options screen.
@@ -57,7 +67,8 @@ from an env var at first use:
 Probes in this directory: `vertex_path_ab.gdb` (phase 3's exit-criterion A/B),
 `blit_same_frame_ab.gdb` (phase 4's, and the stronger design — see below),
 `blit_path_ab.gdb`, `software_reference_capture.gdb`, `vertex_fog_ab.gdb`,
-`lightmap_view_capture.gdb`.
+`lightmap_view_capture.gdb`, `renderer_ab_capture.gdb` (one capture of the held frame through
+whichever renderer is selected — the harness the native renderer's A/B was measured with).
 
 `compare_ppm.py` compares captures the way the method rules require — matched percentiles, an
 exact-match fraction, and deliberately no differing-pixels mask or paired-pixel fit.
@@ -518,6 +529,66 @@ decision, not a leftover of this phase.
 - **Driver variation** in compatibility-profile GLSL. Pin a low `#version` (120/130) and keep
   the pass-through simple.
 
+## The native renderer A/B
+
+The gate on retiring the DX7 path: capture one scene through `tridx7gl.dll` and through
+`trigl.dll` and compare. The target was agreement within the animation noise floor, not
+bit-exactness — the 16-bit texture staging is deliberately gone from the native renderer.
+
+### The method — a held frame, not two moments
+
+The 3D API selector lives on the Options screen, so switching renderers means comparing two
+moments. This build returns from Options to the **pause menu** rather than to the game
+(`NOCTURNE_AUTHENTIC_OPTIONS_RESUMES_GAME 0`), which holds the simulation, so the second
+renderer redraws the frame the first one drew and the animation leaves the comparison
+altogether. Repeat captures with no resume between them come back **bit-identical**: the noise
+floor of this comparison is 0, not the ~0.6 of a running scene.
+
+The pause backdrop is the CPU image, not a live render, so each capture asks for a real frame
+first — `renderScene(set, 0)`, then `nocturne_dump_frontbuffer` — and prints the renderer's own
+draw and polygon counters, so a capture that drew nothing reads as such instead of as agreement.
+
+**Every GL call must run from the `SDL_GL_SwapWindow` breakpoint.** `dbg.sh probe` interrupts
+with Ctrl-C, which under acceleration lands inside the GL driver most of the time; calling back
+into GL from there re-enters a driver call already in progress and the process dies with a
+SIGSEGV in `libnvidia-glcore`. Several captures may succeed first, so it presents as a random
+crash. Sourcing a probe may only set variables and arm breakpoints.
+
+**Always take a same-renderer control across the same number of round trips.** The Options round
+trip is not free (open items 9 and 10), and in the second scene below it cost *more* than the
+renderers differ by.
+
+### Results
+
+Two scenes, both with the simulation held, captures synced to `SDL_GL_SwapWindow`:
+
+```
+  room 1 — dim interior, 3798 polygons, 4 flag combos
+
+    tridx7gl vs itself, no round trip          identical 100.00%   max|d|   0
+    tridx7gl vs itself, two round trips        identical  99.96%   317 px, all on row 765
+    tridx7gl vs trigl,  one round trip         identical 100.00%   max|d|   1
+
+  room 2 — firelit, 1134 polygons, 6 flag combos incl. VTXALPHA and 117 polys of READDEST
+
+    tridx7gl vs itself, no round trip          identical 100.00%   max|d|   0
+    tridx7gl vs itself, two round trips        mean|d| 0.6907   identical 93.04%
+    tridx7gl vs trigl,  one round trip         mean|d| 0.5480   identical 93.08%
+```
+
+In room 1 the renderers differ by **5 pixels out of 786,432, each by 1** — the rest of the
+naive cross-renderer figure was 317 round-trip pixels on one scanline, and the two decompose
+exactly. In room 2 the same-renderer control is *larger* than the cross-renderer measurement,
+so the difference there is below what the measurement resolves; the percentile ladders are
+identical (`24 / 39 / 69 / 82 / 110` against `24 / 39 / 69 / 82 / 109`).
+
+Both renderers receive identical geometry — 3798 polygons in room 1, 1134 in room 2 — with the
+native renderer batching more aggressively (151 draws against 166 `glDrawElements`; 41 against
+50). A polygon count that disagreed (1170 against 1134) turned out to be the scene changing
+across the first Options entry, not the renderers disagreeing: after it, both read 1134.
+
+**The exit criterion is met.** Retiring the DX7 path is unblocked.
+
 ## OPEN ITEMS — everything left, including things outside this migration
 
 Ordered by how likely they are to be re-chased wrongly.
@@ -600,20 +671,37 @@ would be plumbing for nothing. Build it when there is a live consumer.
   vertex refs have no normal — the lighting pass's face list does not cover the render list.
   Faithful to the asm. Shaders do not fix this.
 - **A smooth-normal fix in `CDemonSet_renderEnvMapTriangles_FUN_005702b0.keep.cpp` is BUILT
-  BUT WAS NEVER TESTED.** It is in the working tree, uncommitted. Test or revert it before
-  building anything on top.
+  BUT STILL UNTESTED.** It is committed. Test or revert it before building anything on top.
 
-### 6. Uncommitted work
+### 6. Committed
 
-Everything from this session is in the working tree, nothing committed. New files:
-`shims/lighting_bridge.{h,cpp}`, `shims/gl_version.h`, `shims/gl_blit.{h,cpp}`,
-`tridx7 shims/gl_shader.{h,cpp}`, the probes and `compare_ppm.py` in `research/17`, and
-`lightmap_{plane,corona}.pgm` in the repo root (captures — do not commit those two). Modified:
-`gl_api.{h,cpp}`, `gl_ddraw.cpp`, `gl_present.cpp`, `render_probe.cpp`, `builtin_dll.cpp`,
-`apidll_exports.cpp`, `shim_config*.h`, and four `.keep.cpp` files.
+The shader work, the shims reorganisation and the native renderer are all committed. Note
+`SYSTEM/nocturne.ini` rewrites `useDirect3D` on exit and stores the renderer chosen in Graphics
+Options, so a run starts wherever the last one left off.
 
-Note `SYSTEM/nocturne.ini` rewrites `useDirect3D=0` on exit, so every run starts in software
-and acceleration has to be re-enabled from Graphics Options.
+### 7. trigl's scene render is coupled to the CPU mirror — OPEN
+
+With the simulation held, two `renderScene` calls with nothing between them are bit-identical,
+but a single pause-menu frame in between changes the next render: 2963-7224 pixels, deltas to
+204, concentrated on the bright blended region. `tridx7gl` in the same scene shows no such
+coupling — repeats are bit-identical across the same gap.
+
+The mechanism is the menu frame's `lock_frame` readback refreshing the CPU image from the last
+GL render (gated on `target_ahead`), so the next scene render composites over a different
+backdrop and blended draws compound the difference. In normal play every frame redraws the scene
+completely, so this may never be visible; it is unexplained rather than shown to be harmless.
+
+### 8. The first Options entry of a run permanently drops geometry — OPEN
+
+Measured in both A/B scenes: 289 draws / 4306 polygons before, 261 / 3798 after; 331 / 1170
+before, 295 / 1134 after. Stable across every later round trip, and identical for both
+renderers, so it is the engine's own state and not a renderer fault. ~12% and ~3% of the
+submitted polygons respectively, gone for the rest of the run.
+
+### 9. Row 765 changes on every Options round trip — OPEN
+
+The bottom scanline of a 768-line frame, x 605..1023, 317 pixels, deltas to 18, with the same
+renderer on both sides of the round trip. Small, reproducible, and unexplained.
 
 ## Validation assets that already exist
 
