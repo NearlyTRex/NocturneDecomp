@@ -577,11 +577,25 @@ if(_test_sources)
         "${NOCTURNE_SHIMS_DIR}/tests/renderer/gl_present_support.cpp"
         "${NOCTURNE_SHIMS_DIR}/tests/renderer/golden_trace_support.cpp"
     )
+    # kernel32 and the globals it wires itself into. The entry points are static;
+    # the function pointers are the interface, which is what the game calls
+    # through and what the tests drive. builtin_dll is stubbed rather than linked
+    # — the real registry holds the renderers and would bring the whole renderer
+    # tree with them, and what is under test is the loader's behaviour, not which
+    # renderers exist.
+    set(_test_subjects_win32
+        "${NOCTURNE_SHIMS_DIR}/win32/kernel32.cpp"
+        "${NOCTURNE_PSEUDOCODE_DIR}/src/globals/globals_610000.cpp"
+        "${NOCTURNE_SHIMS_DIR}/tests/win32/builtin_dll_support.cpp"
+    )
     foreach(_test_src IN LISTS _test_sources)
         get_filename_component(_test_name "${_test_src}" NAME_WE)
         set(_subjects ${_test_subjects})
         if(_test_name MATCHES "_sequence$")
             list(APPEND _subjects ${_test_subjects_gl})
+        endif()
+        if(_test_name STREQUAL "test_kernel32")
+            list(APPEND _subjects ${_test_subjects_win32})
         endif()
         add_executable(${_test_name} EXCLUDE_FROM_ALL "${_test_src}" ${_subjects})
         target_include_directories(${_test_name} PRIVATE
