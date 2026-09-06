@@ -48,7 +48,8 @@ const char *nocturne_window_mode_name(int mode);
 // the window, and again whenever the mode changes. Safe with a null window.
 void nocturne_window_mode_apply(struct SDL_Window *window);
 
-// Resize the OS window WITHOUT changing the game's render resolution.
+// Resize the OS window WITHOUT changing the game's render resolution, and
+// record that size as the one the window is meant to keep.
 //
 // This is what makes the resolution selector do something on the main menu. The
 // menu's layout is hardcoded for 640x480 (fixed drawText coordinates; only the
@@ -58,8 +59,17 @@ void nocturne_window_mode_apply(struct SDL_Window *window);
 // which does go through CGame::setGameRes, still gets a real framebuffer at the
 // selected resolution.
 //
-// No-op while fullscreen or borderless, where the window size is not ours.
+// The size is remembered even when it cannot be applied — before the window
+// exists, or while fullscreen or borderless owns the size — so it is also the
+// size windowed mode returns to. Callers pass the resolution the player chose:
+// the engine's own render resolution is not it, since the front end, the
+// opening movie and the Options screen all run at 640x480 regardless.
 void nocturne_window_set_size(int width, int height);
+
+// The size above, if one has been set. Returns 0 and touches nothing otherwise.
+// SetDisplayMode consults this so that a render-resolution change does not move
+// the window.
+int nocturne_window_preferred_size(int *width, int *height);
 
 #ifdef __cplusplus
 }

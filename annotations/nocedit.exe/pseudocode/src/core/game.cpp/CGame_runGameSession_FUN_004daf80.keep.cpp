@@ -277,11 +277,15 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
             }
             uVar9 = 0;
             iVar5 = -1;
-            pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Game paused");
-            iVar5 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                              (&local_870,pcVar10,iVar5,uVar9);
-            if (iVar5 == 1) {
+            do {
+              pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Game paused");
+              iVar5 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+                                (&local_870,pcVar10,iVar5,uVar9);
+              if (iVar5 != 1) {
+                break;
+              }
               engine_keys_cpp_CKeys_toggleInputMask_FUN_005024b0(g_CKeysPtr,0);
+              nocturne_trigl_device_save_screen();
               core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0(this_ptr);
               core_menu_cpp_showOptionsScreen_FUN_00512d30(1);
               core_game_cpp_CGame_setGameRes_FUN_004dade0(this_ptr);
@@ -293,7 +297,8 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
               if (0xf0 < g_WindowHeight) {
                 g_EditorFont = g_ThemeFont;
               }
-            }
+              nocturne_trigl_device_restore_screen();
+            } while (!NOCTURNE_AUTHENTIC_OPTIONS_RESUMES_GAME);
             if (iVar5 == 2) {
               core_game_cpp_CGame_promptLoadGame_FUN_004e36f0(this_ptr);
             }

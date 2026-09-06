@@ -425,11 +425,26 @@ static HRESULT ddraw_SetDisplayMode(IDirectDraw* this_ptr, DWORD width, DWORD he
     ddraw->display_height = height;
     ddraw->display_bpp = bpp;
 
-    // Window is sized at a scaled multiple of the game's native resolution;
-    // the renderer keeps a logical size at the native resolution so all
-    // RenderCopy calls still target the framebuffer the game drew.
+    // The renderer keeps a logical size at the render resolution so everything
+    // still targets the framebuffer the game drew, and the presenter scales
+    // that to the window.
+    //
+    // The window itself is sized to the resolution the player chose, which is
+    // not the resolution being rendered. The front end, the opening movie and
+    // the Options screen all run at 640x480 whatever the game is set to, so
+    // sizing from the render resolution makes the window shrink on the way into
+    // each of them and grow again on the way out. Only when nothing has stated
+    // a preference does the render resolution decide, which is the case for the
+    // very first mode set of a fresh profile.
     DWORD win_w = width * NOCTURNE_WINDOW_SCALE;
     DWORD win_h = height * NOCTURNE_WINDOW_SCALE;
+    {
+        int pref_w = 0, pref_h = 0;
+        if (nocturne_window_preferred_size(&pref_w, &pref_h)) {
+            win_w = (DWORD)pref_w;
+            win_h = (DWORD)pref_h;
+        }
+    }
 
     if (!ddraw->window) {
         if (g_sdlWindow) {
@@ -461,7 +476,15 @@ static HRESULT ddraw_SetDisplayMode(IDirectDraw* this_ptr, DWORD width, DWORD he
             SDL_RenderSetIntegerScale(ddraw->renderer, SDL_TRUE);
         }
     } else {
-        SDL_SetWindowSize(ddraw->window, win_w, win_h);
+        // Every mode change lands here, and most of them do not move the
+        // window at all now that its size is the player's choice rather than
+        // the render resolution. Resizing to the size it already has still
+        // costs a resize event and a visible flicker on some window managers.
+        int cur_w = 0, cur_h = 0;
+        SDL_GetWindowSize(ddraw->window, &cur_w, &cur_h);
+        if (cur_w != (int)win_w || cur_h != (int)win_h) {
+            SDL_SetWindowSize(ddraw->window, win_w, win_h);
+        }
         if (nocturne_gl_is_active()) {
             nocturne_gl_set_logical_size(width, height);
         } else {

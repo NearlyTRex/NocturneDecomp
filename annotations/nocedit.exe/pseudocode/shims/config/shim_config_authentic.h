@@ -81,7 +81,11 @@
 //      `g_UseDirect3D = 0` every frame.
 //   0: dev-friendly mode. The Graphics Options menu lets the user pick a
 //      3D renderer DLL (DirectX 5/6/7 / 3dfx) and `g_UseDirect3D` retains
-//      the choice — i.e. the working behavior the retail build had.
+//      the choice — i.e. the working behavior the retail build had. The
+//      choice also survives a restart: readIniData reads "useDirect3D" from
+//      [Graphics] and writeIniData is the only reader of that section with no
+//      matching write, so at 1 the key is never created and acceleration
+//      begins off however it was left.
 //
 //   Override with -DNOCTURNE_AUTHENTIC_D3D_OPTIONS=1 to revert to the
 //   editor build's permanently-disabled state.
@@ -862,4 +866,49 @@
 //   Override with -DNOCTURNE_AUTHENTIC_SHADER_LIGHTING=0 to apply it anyway.
 #ifndef NOCTURNE_AUTHENTIC_SHADER_LIGHTING
 #define NOCTURNE_AUTHENTIC_SHADER_LIGHTING 1
+#endif
+
+// NOCTURNE_AUTHENTIC_OPTIONS_RESUMES_GAME
+//   Whether leaving the Options screen from the pause menu returns to the game
+//   or back to the pause menu.
+//
+//   The shipped behaviour is to resume: the pause menu offers Options, Options
+//   returns, and the game is running again. That makes it impossible to change
+//   something on that screen and then look at the SAME frame, because the
+//   simulation has advanced by the time the screen is gone.
+//
+//   The 3D API selector lives on that screen, so comparing two renderers means
+//   comparing two different moments. Characters idle, breath drifts, torches
+//   flicker; every difference between the two images then mixes the renderer
+//   with the animation, and a difference map cannot separate the two. Returning
+//   to the pause menu instead holds the simulation where it was, so the second
+//   renderer redraws the frame the first one drew.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_OPTIONS_RESUMES_GAME=1.
+#ifndef NOCTURNE_AUTHENTIC_OPTIONS_RESUMES_GAME
+#define NOCTURNE_AUTHENTIC_OPTIONS_RESUMES_GAME 0
+#endif
+
+// NOCTURNE_AUTHENTIC_MENU_LIGHTING
+//   Whether the menu's moon leaves its lighting behind in the mission.
+//
+//   CMoon::render lights the moon and its bats by writing the set's own
+//   light_direction, ambient_base_quick, rendering_mode and flat_color, and
+//   restores only rendering_mode. The mission's values come from
+//   CLevelLoader::update, which runs from the load paths — CDemonSet::load,
+//   initScene, prepareAllActors, startMission — and never per frame. So once
+//   the Options screen has drawn a single moon frame, the set carries
+//   ambient_base_quick 0x2000 and light_direction (-0x4844, -0x4844, 0x4844)
+//   for the rest of the mission.
+//
+//   Static geometry is lit into its lightmap at load and does not show it;
+//   anything lit as it is drawn does.
+//
+//   1: the menu's lighting stays, as shipped.
+//   0: the moon puts back what it found, so the menu cannot change how the
+//      mission behind it is lit.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_MENU_LIGHTING=1.
+#ifndef NOCTURNE_AUTHENTIC_MENU_LIGHTING
+#define NOCTURNE_AUTHENTIC_MENU_LIGHTING 0
 #endif

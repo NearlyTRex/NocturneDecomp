@@ -21,6 +21,7 @@
 
 extern "C" int nocturne_trigl_vertex_fog = -1;
 extern "C" int nocturne_trigl_mipmaps = -1;
+extern "C" int nocturne_trigl_debug = -1;
 
 extern "C" NocturneTriglStats nocturne_trigl_stats = {};
 
@@ -38,6 +39,10 @@ extern "C" void nocturne_trigl_stats_reset(void) {
     nocturne_trigl_stats.depth_restores = 0;
     nocturne_trigl_stats.depth_rect_max_x = 0;
     nocturne_trigl_stats.depth_rect_max_y = 0;
+    nocturne_trigl_stats.texels_uploaded = 0;
+    nocturne_trigl_stats.texels_keyed = 0;
+    nocturne_trigl_stats.uploads = 0;
+    nocturne_trigl_stats.uploads_with_opacity = 0;
 }
 
 namespace {
@@ -56,6 +61,18 @@ int vertex_fog() {
         nocturne_trigl_vertex_fog = (env != nullptr) ? atoi(env) : 0;
     }
     return nocturne_trigl_vertex_fog;
+}
+
+// Reachable without a debugger, because the question it answers — is a flat
+// surface flat in the texture or flat in what modulates it — is asked of a
+// running frame, and attaching to one costs more than restarting with a
+// variable set.
+int debug_mode() {
+    if (nocturne_trigl_debug < 0) {
+        const char *env = getenv("NOCTURNE_TRIGL_DEBUG");
+        nocturne_trigl_debug = (env != nullptr) ? atoi(env) : 0;
+    }
+    return nocturne_trigl_debug;
 }
 
 // --- the program -------------------------------------------------------------
@@ -101,18 +118,25 @@ const char *kFragmentSource =
     "uniform int  u_alpha_test;\n"
     "uniform int  u_fog_enabled;\n"
     "uniform vec3 u_fog_color;\n"
+    "uniform int  u_debug;\n"
     "in vec4 v_color;\n"
     "in vec4 v_specular;\n"
     "in vec2 v_uv;\n"
     "out vec4 o_color;\n"
     "void main() {\n"
     "    vec4 c = v_color;\n"
+    "    vec4 t = vec4(1.0);\n"
     "    if (u_tex_enabled != 0) {\n"
-    "        vec4 t = texture(u_tex, v_uv);\n"
+    "        t = texture(u_tex, v_uv);\n"
     "        c.rgb *= t.rgb;\n"
     "        if (u_modulate_alpha != 0) c.a *= t.a;\n"
     "    }\n"
+    "    if (u_debug == 1) { o_color = vec4(t.a, t.a, t.a, 1.0); return; }\n"
+    "    if (u_debug == 3) { o_color = vec4(fract(v_uv), 0.0, 1.0); return; }\n"
+    "    if (u_debug == 4) { o_color = vec4(v_color.rgb, 1.0); return; }\n"
+    "    if (u_debug == 5) { o_color = vec4(t.rgb, 1.0); return; }\n"
     "    c.rgb += v_specular.rgb;\n"
+    "    if (u_debug == 2) { o_color = vec4(c.a, c.a, c.a, 1.0); return; }\n"
     "    if (u_alpha_test != 0 && c.a <= 0.0) discard;\n"
     "    if (u_fog_enabled != 0) {\n"
     "        c.rgb = mix(u_fog_color, c.rgb, clamp(v_specular.a, 0.0, 1.0));\n"
@@ -152,6 +176,7 @@ GLint g_loc_modulate_alpha = -1;
 GLint g_loc_alpha_test     = -1;
 GLint g_loc_fog_enabled    = -1;
 GLint g_loc_fog_color      = -1;
+GLint g_loc_debug          = -1;
 
 // Scratch for one batch's worth of hardware vertices.
 HardwareVertex *g_scratch = nullptr;
@@ -161,6 +186,15 @@ size_t g_scratch_capacity = 0;
 // nothing to repeat. Initialised to values the first apply cannot match.
 NocturneTriglPipelineState g_current;
 bool g_current_valid = false;
+
+// The target the projection was built for. A draw sets the viewport from it
+// rather than inheriting one: the presenter leaves the WINDOW's viewport
+// current after a swap, and the scene upload that runs mid-frame restores
+// whatever was current before it rather than the scene's. Neither is this
+// renderer's to depend on, and a viewport that disagrees with the projection
+// puts the whole scene in a corner of the target with no GL error.
+int g_target_width  = 0;
+int g_target_height = 0;
 
 float g_fog_color[3] = { 0.0f, 0.0f, 0.0f };
 bool  g_fog_color_dirty = true;
@@ -265,6 +299,7 @@ bool build_program() {
     g_loc_alpha_test     = gl.GetUniformLocation(program, "u_alpha_test");
     g_loc_fog_enabled    = gl.GetUniformLocation(program, "u_fog_enabled");
     g_loc_fog_color      = gl.GetUniformLocation(program, "u_fog_color");
+    g_loc_debug          = gl.GetUniformLocation(program, "u_debug");
 
     // The sampler never moves off unit 0, so it is set once.
     gl.UseProgram(program);
@@ -534,6 +569,8 @@ void nocturne_trigl_gl_shutdown(void) {
 
 void nocturne_trigl_gl_set_target_size(int width, int height) {
     if (!g_ready || width <= 0 || height <= 0) return;
+    g_target_width  = width;
+    g_target_height = height;
     // Pixels to clip space, column major. x grows right from 0, y grows DOWN
     // from 0 as the engine reports it, and depth arrives already normalised to
     // 0..1 where clip space wants -1..1.
@@ -595,6 +632,7 @@ void nocturne_trigl_gl_apply_state(const NocturneTriglPipelineState *state) {
     if (first || fog != (g_current.fog_enabled && vertex_fog())) {
         if (g_loc_fog_enabled >= 0) gl.Uniform1i(g_loc_fog_enabled, fog);
     }
+    if (g_loc_debug >= 0) gl.Uniform1i(g_loc_debug, debug_mode());
     if (g_fog_color_dirty && g_loc_fog_color >= 0) {
         gl.Uniform3f(g_loc_fog_color, g_fog_color[0], g_fog_color[1], g_fog_color[2]);
         g_fog_color_dirty = false;
@@ -602,6 +640,14 @@ void nocturne_trigl_gl_apply_state(const NocturneTriglPipelineState *state) {
 
     g_current = *state;
     g_current_valid = true;
+}
+
+unsigned nocturne_trigl_gl_texture_cached(const char *name, int dimension) {
+    if (!g_ready || name == nullptr || dimension <= 0) return 0;
+    TextureSlot *slot = find_slot(name, dimension);
+    if (slot == nullptr) return 0;
+    slot->used = ++g_texture_clock;
+    return slot->texture;
 }
 
 unsigned nocturne_trigl_gl_texture(const char *name, int dimension,
@@ -757,6 +803,9 @@ void nocturne_trigl_gl_release_depth(void) {
 void nocturne_trigl_gl_draw_batch(const NocturneTriglBatch *batch) {
     if (!g_ready || batch->vertex_count <= 0 || batch->index_count <= 0) return;
     if (!ensure_scratch((size_t)batch->vertex_count)) return;
+    if (g_target_width > 0 && g_target_height > 0) {
+        gl.Viewport(0, 0, g_target_width, g_target_height);
+    }
 
     // Premultiply by w so the perspective divide reproduces the engine's own
     // projection and leaves the texture coordinates perspective correct.
@@ -829,6 +878,7 @@ void nocturne_trigl_gl_draw_batch(const NocturneTriglBatch *batch) {
 
 extern "C" int nocturne_trigl_vertex_fog = 0;
 extern "C" int nocturne_trigl_mipmaps = 0;
+extern "C" int nocturne_trigl_debug = 0;
 extern "C" NocturneTriglStats nocturne_trigl_stats = {};
 extern "C" void nocturne_trigl_stats_reset(void) {}
 int  nocturne_trigl_gl_init(void) { return 0; }
@@ -838,6 +888,7 @@ void nocturne_trigl_gl_set_target_size(int, int) {}
 void nocturne_trigl_gl_set_fog_color(float, float, float) {}
 void nocturne_trigl_gl_apply_state(const NocturneTriglPipelineState *) {}
 unsigned nocturne_trigl_gl_texture(const char *, int, const unsigned *, int, int) { return 0; }
+unsigned nocturne_trigl_gl_texture_cached(const char *, int) { return 0; }
 void nocturne_trigl_gl_bind_texture(unsigned) {}
 void nocturne_trigl_gl_release_textures(void) {}
 const char *nocturne_trigl_gl_renderer_name(void) { return "OpenGL"; }

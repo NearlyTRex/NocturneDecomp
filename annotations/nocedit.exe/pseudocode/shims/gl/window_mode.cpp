@@ -36,6 +36,16 @@ bool s_loaded = false;
 // take effect without waiting for the next SetDisplayMode.
 SDL_Window *s_window = nullptr;
 
+// The size the window is meant to be, which is the resolution the player chose
+// and not the resolution the engine happens to be rendering at. The two part
+// company constantly: the front end, the opening movie and the Options screen
+// all run at 640x480 whatever the game is set to, and a mission runs at the
+// selected resolution. Sizing the window from the render resolution therefore
+// makes it jump every time the engine crosses one of those boundaries. Held
+// here so SetDisplayMode has something to size against instead.
+int s_pref_width  = 0;
+int s_pref_height = 0;
+
 int clamp_mode(int mode) {
     if (mode < 0 || mode >= NOCTURNE_WINDOW_MODE_COUNT) {
         return NOCTURNE_WINDOW_MODE_WINDOWED;
@@ -129,19 +139,32 @@ extern "C" void nocturne_window_mode_apply(SDL_Window *window) {
     }
 }
 
+extern "C" int nocturne_window_preferred_size(int *width, int *height) {
+    if (s_pref_width <= 0 || s_pref_height <= 0) return 0;
+    if (width  != nullptr) *width  = s_pref_width;
+    if (height != nullptr) *height = s_pref_height;
+    return 1;
+}
+
 extern "C" void nocturne_window_set_size(int width, int height) {
-    if (s_window == nullptr || width <= 0 || height <= 0) return;
+    if (width <= 0 || height <= 0) return;
+    // Recorded even when it cannot be applied yet. This runs before the window
+    // exists, and it runs while fullscreen owns the size; either way it is the
+    // size windowed mode should come back to.
+    s_pref_width  = width;
+    s_pref_height = height;
+
+    if (s_window == nullptr) return;
     if (nocturne_window_mode_get() != NOCTURNE_WINDOW_MODE_WINDOWED) {
         // Fullscreen/borderless own the window size; the presenter will scale
         // the render into whatever the display gave us.
         return;
     }
 
-    // Idempotent, because callers re-assert rather than track. ddraw's
-    // SetDisplayMode sizes the window to the RENDER resolution, which is right
-    // for a mission but throws away the menu's larger window; the menu therefore
-    // calls this every frame to win the size back on return. Without the early
-    // out that would be an SDL_SetWindowSize (and a resize event) per frame.
+    // Idempotent, because callers re-assert rather than track: SetDisplayMode
+    // pushes the preferred size back on every mode change, and the Options
+    // screen calls this once a frame. Without the early out that would be an
+    // SDL_SetWindowSize, and a resize event, per frame.
     int cur_w = 0, cur_h = 0;
     SDL_GetWindowSize(s_window, &cur_w, &cur_h);
     if (cur_w == width && cur_h == height) return;

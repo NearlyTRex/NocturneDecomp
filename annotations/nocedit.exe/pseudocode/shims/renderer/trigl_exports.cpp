@@ -104,11 +104,19 @@ void gather_vertex_context(unsigned effective_flags, int rhw_scale,
     // whole 3D scene lands in the top-left corner of a larger target while the
     // stretched hold buffer fills the rest, and the two disagree about where
     // everything is.
+    //
+    // The engine picks the hold buffer on the height alone — CDemonCamera's
+    // composite reads `g_WindowHeight < 0x1e1` and takes the hold path above
+    // that — so the height alone decides here too. Keying off whether the hold
+    // buffer is currently locked instead looks equivalent and is not: geometry
+    // can reach the renderer before the frame's first lock, and a redraw that
+    // composites nothing never locks at all, so the scale would come and go
+    // while the engine's own coordinate space never changed.
     ctx->screen_scale_x = 1.0f;
     ctx->screen_scale_y = 1.0f;
-    if (nocturne_trigl_device_hold_active()) {
-        const int width  = nocturne_trigl_device_width();
-        const int height = nocturne_trigl_device_height();
+    const int width  = nocturne_trigl_device_width();
+    const int height = nocturne_trigl_device_height();
+    if (height > 480) {
         if (width  > 0) ctx->screen_scale_x = (float)width  / 640.0f;
         if (height > 0) ctx->screen_scale_y = (float)height / 480.0f;
     }
@@ -205,6 +213,14 @@ unsigned resolve_texture(SMRGLTextureBasic *info, int refresh) {
     const int dimension = texture_dimension();
     if (dimension <= 0 || dimension > kMaxTextureDimension) return 0;
 
+    // Expanding is the expensive half — up to 65536 texels — and selectTexture
+    // is called for every state change rather than once per texture, so a
+    // resident image is answered without touching the pixels at all.
+    if (!refresh) {
+        const unsigned resident = nocturne_trigl_gl_texture_cached(info->texture_name, dimension);
+        if (resident != 0) return resident;
+    }
+
     if (g_r.expanded == nullptr) {
         g_r.expanded = (unsigned *)malloc(sizeof(unsigned) *
                                           (size_t)(kMaxTextureDimension * kMaxTextureDimension));
@@ -213,6 +229,15 @@ unsigned resolve_texture(SMRGLTextureBasic *info, int refresh) {
     nocturne_trigl_pack_palette(g_r.texture_palette, g_r.packed_palette);
     nocturne_trigl_expand_texture(g_r.texture_data, dimension * dimension,
                                   g_r.packed_palette, g_r.texture_opacity, g_r.expanded);
+
+    NocturneTriglStats &st = nocturne_trigl_stats;
+    ++st.uploads;
+    if (g_r.texture_opacity != nullptr) ++st.uploads_with_opacity;
+    const int texels = dimension * dimension;
+    st.texels_uploaded += (unsigned)texels;
+    for (int i = 0; i < texels; ++i) {
+        if ((g_r.expanded[i] >> 24) == 0) ++st.texels_keyed;
+    }
 
     CExternalRendererBridge *b = bridge();
     const int mipmapped = (b != nullptr) ? read_bridge(b->rendering_quality, 0) : 0;
@@ -259,6 +284,13 @@ static int g_mode_height = 0;
 static int g_mode_bpp    = 0;
 
 static int __cdecl trigl_set_video_mode(void **scanline_ptrs) {
+    // A mode change resizes the target and can rebuild what is bound, so the
+    // record of what the pipeline already holds cannot be trusted afterwards.
+    // Left standing it compares equal to the next draw's state and the bind is
+    // skipped, which draws the geometry with no texture at all.
+    g_r.state_valid    = false;
+    g_r.state_texture  = 0;
+    g_r.texture_object = 0;
     return nocturne_trigl_device_set_mode(g_mode_width, g_mode_height, g_mode_bpp,
                                           scanline_ptrs);
 }

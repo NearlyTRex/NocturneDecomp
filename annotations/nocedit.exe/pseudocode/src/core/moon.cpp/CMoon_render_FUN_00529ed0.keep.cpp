@@ -12,6 +12,14 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *this_ptr)
   float fVar1;
   CDemonSet *pCVar3;
   int iVar4;
+#if !NOCTURNE_AUTHENTIC_MENU_LIGHTING
+  const CVector3i saved_light_direction = g_CDemonSetPtr->light_direction;
+  const int saved_ambient_base = g_CDemonSetPtr->ambient_base_quick;
+  const int saved_rendering_mode = g_CDemonSetPtr->rendering_mode;
+  const int saved_flat_color_r = (g_CDemonSetPtr->flat_color).r;
+  const int saved_flat_color_g = (g_CDemonSetPtr->flat_color).g;
+  const int saved_flat_color_b = (g_CDemonSetPtr->flat_color).b;
+#endif
   int iVar6;
   uint uVar4;
   int iVar5;
@@ -146,5 +154,12 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *this_ptr)
   }
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(g_MoonAnimTextures + local_1c,0,0,48000);
   engine_3d_c_setBlendMode_FUN_00406dd0(0);
+#if !NOCTURNE_AUTHENTIC_MENU_LIGHTING
+  g_CDemonSetPtr->light_direction = saved_light_direction;
+  g_CDemonSetPtr->ambient_base_quick = saved_ambient_base;
+  g_CDemonSetPtr->rendering_mode = saved_rendering_mode;
+  core_set_cpp_CDemonSet_setFlatColor_FUN_00570ca0
+            (g_CDemonSetPtr,saved_flat_color_r,saved_flat_color_g,saved_flat_color_b);
+#endif
   return;
 }

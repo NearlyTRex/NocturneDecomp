@@ -63,11 +63,6 @@ int nocturne_trigl_device_frame_locked(void);
 int nocturne_trigl_device_lock_hold_buffer(void);
 int nocturne_trigl_device_unlock_hold_buffer(void);
 
-// Whether the engine is compositing through the hold buffer. It does so above
-// 480 lines, and while it does it submits geometry in the hold buffer's 640x480
-// space rather than the target's, so vertex positions have to be scaled up.
-int nocturne_trigl_device_hold_active(void);
-
 // Clear colour, clear depth, and the box-limited depth clear the engine uses to
 // reset a region rather than the whole buffer.
 void nocturne_trigl_device_clear_color(void);
@@ -76,6 +71,20 @@ void nocturne_trigl_device_clear_depth_box(int left, int right, int top, int bot
 
 // Present the frame.
 void nocturne_trigl_device_present(void);
+
+// --- holding a screen across a mode change -----------------------------------
+// A video mode change discards the picture. The CPU image is reallocated, the
+// engine clears the target several times on the way through, and what was on
+// screen is gone — which only matters when the caller has no way to draw it
+// again, because the simulation is standing still and nothing will redraw
+// until it moves.
+//
+// Save copies the CPU image aside; restore puts it back and pushes it to the
+// target so the two agree. Restoring into a different mode than was saved does
+// nothing, since the picture no longer describes the screen. Both return
+// non-zero on success.
+int nocturne_trigl_device_save_screen(void);
+int nocturne_trigl_device_restore_screen(void);
 
 // The engine's own pointer to what it is rendering with, published at init.
 struct CExternalRendererBridge;

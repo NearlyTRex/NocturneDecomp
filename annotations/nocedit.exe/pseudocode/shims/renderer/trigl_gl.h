@@ -62,11 +62,26 @@ unsigned nocturne_trigl_gl_texture(const char *name, int dimension,
                                    const unsigned *rgba, int mipmapped,
                                    int refresh);
 
+// Whether a texture is already resident, without uploading anything. Lets the
+// caller skip expanding an image the cache already holds — the expansion is the
+// expensive half, and selectTexture is called for every state change, not once
+// per texture.
+unsigned nocturne_trigl_gl_texture_cached(const char *name, int dimension);
+
 // Bind a texture id from the call above for subsequent draws. 0 unbinds.
 void nocturne_trigl_gl_bind_texture(unsigned texture);
 
 // Drop every cached texture, e.g. when the engine changes video mode.
 void nocturne_trigl_gl_release_textures(void);
+
+// Paints a quantity instead of the fragment, so a live frame can be asked what
+// the shader is reading rather than having it inferred from how the result
+// looks. Settable from a debugger, and resolved from NOCTURNE_TRIGL_DEBUG on
+// first use so a whole session can be started in one of these modes.
+//   -1 resolve from the environment (default 0)
+//    0 off   1 texture alpha   2 final alpha   3 texture coordinate
+//    4 vertex colour   5 texture colour
+extern int nocturne_trigl_debug;
 
 // Whether textures carry a mip chain. Off matches what the engine's own
 // renderer does — it uploads one level and samples it at every distance, so
@@ -115,6 +130,11 @@ typedef struct NocturneTriglStats {
     // on a larger target is being given in the hold buffer's space.
     unsigned depth_saves, depth_restores;
     int depth_rect_max_x, depth_rect_max_y;
+    // Texels uploaded, and how many of them the colour key made transparent.
+    // A texture whose surround should vanish and does not is either not being
+    // keyed or not being tested, and these separate the two.
+    unsigned texels_uploaded, texels_keyed;
+    unsigned uploads, uploads_with_opacity;
 } NocturneTriglStats;
 
 extern NocturneTriglStats nocturne_trigl_stats;

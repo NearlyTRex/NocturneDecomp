@@ -63,6 +63,20 @@
 // reach it through nocturne.h.
 #include "gl/window_mode.h"
 
+// Holding the screen across a video mode change, for the pause menu, which is
+// the one caller that changes mode with the simulation standing still and so
+// has nothing that would draw the picture again. Declared rather than included:
+// renderer/trigl_device.h carries the batch types with it, and no decompiled TU
+// needs those.
+#ifdef __cplusplus
+extern "C" {
+#endif
+int nocturne_trigl_device_save_screen(void);
+int nocturne_trigl_device_restore_screen(void);
+#ifdef __cplusplus
+}
+#endif
+
 // Attract-mode session state (nocturne_attract_*) — declared here so decompiled
 // TUs reach it through nocturne.h, same as the registry queries below.
 #include "game/attract.h"

@@ -57,10 +57,6 @@ struct Device {
     void         **engine_scanlines = nullptr;
     int            engine_scanline_count = 0;
 
-    // Set the first time the engine locks the hold buffer, which is how it says
-    // it is compositing at 640x480 and expects geometry in that space.
-    bool hold_active = false;
-
     bool in_scene     = false;
     bool frame_locked = false;
     bool open         = false;
@@ -204,14 +200,17 @@ int nocturne_trigl_device_set_mode(int width, int height, int bpp, void **scanli
     }
     g_dev.engine_scanlines      = scanlines;
     g_dev.engine_scanline_count = height;
-    g_dev.hold_active           = false;
     if (scanlines != nullptr) {
         memcpy(scanlines, g_dev.scanlines, (size_t)height * sizeof(void *));
     }
 
     nocturne_trigl_gl_set_target_size(width, height);
     nocturne_gl_set_logical_size(width, height);
-    nocturne_trigl_gl_release_textures();
+    // The texture cache survives a mode change. Texture objects are independent
+    // of the target they are sampled into, and the images are RGBA8 whatever
+    // depth the mode asks for, so there is nothing about them a new mode
+    // invalidates. Dropping them here would cost a full re-expansion of every
+    // resident image the moment the resolution moves.
     DDRAW_LOG("trigl_device: mode %dx%d at %d bpp", width, height, bpp);
     return 1;
 }
@@ -289,6 +288,49 @@ int nocturne_trigl_device_unlock_frame(void) {
 
 int nocturne_trigl_device_frame_locked(void) { return g_dev.frame_locked ? 1 : 0; }
 
+// The picture held across a mode change, and the mode it describes.
+static unsigned char *g_saved_screen        = nullptr;
+static int            g_saved_width         = 0;
+static int            g_saved_height        = 0;
+static int            g_saved_bpp           = 0;
+static int            g_saved_pitch         = 0;
+
+int nocturne_trigl_device_save_screen(void) {
+    if (!g_dev.open || g_dev.image == nullptr || g_dev.height <= 0) return 0;
+    const size_t bytes = (size_t)g_dev.pitch * (size_t)g_dev.height;
+    unsigned char *copy = (unsigned char *)malloc(bytes);
+    if (copy == nullptr) return 0;
+    memcpy(copy, g_dev.image, bytes);
+    free(g_saved_screen);
+    g_saved_screen = copy;
+    g_saved_width  = g_dev.width;
+    g_saved_height = g_dev.height;
+    g_saved_bpp    = g_dev.bpp;
+    g_saved_pitch  = g_dev.pitch;
+    DDRAW_LOG("trigl_device: holding a %dx%d screen across the mode change",
+              g_saved_width, g_saved_height);
+    return 1;
+}
+
+int nocturne_trigl_device_restore_screen(void) {
+    if (g_saved_screen == nullptr || !g_dev.open || g_dev.image == nullptr) return 0;
+    if (g_saved_width != g_dev.width || g_saved_height != g_dev.height ||
+        g_saved_bpp != g_dev.bpp || g_saved_pitch != g_dev.pitch) {
+        DDRAW_LOG("trigl_device: the held screen is %dx%d at %d bpp and the mode is "
+                  "%dx%d at %d bpp, so it no longer describes the screen",
+                  g_saved_width, g_saved_height, g_saved_bpp,
+                  g_dev.width, g_dev.height, g_dev.bpp);
+        return 0;
+    }
+    memcpy(g_dev.image, g_saved_screen, (size_t)g_dev.pitch * (size_t)g_dev.height);
+    // Both halves, or the next lock reads a target that disagrees with the CPU
+    // image and the picture comes back only to be overwritten.
+    nocturne_gl_scene_upload(g_dev.image, g_dev.width, g_dev.height,
+                             g_dev.pitch, g_dev.bpp);
+    g_dev.target_ahead = false;
+    return 1;
+}
+
 int nocturne_trigl_device_lock_hold_buffer(void) {
     if (!g_dev.open || g_dev.hold == nullptr) return 0;
     if (g_dev.in_scene) nocturne_trigl_device_end_scene();
@@ -300,11 +342,8 @@ int nocturne_trigl_device_lock_hold_buffer(void) {
     int rows = kHoldHeight;
     if (rows > g_dev.engine_scanline_count) rows = g_dev.engine_scanline_count;
     memcpy(g_dev.engine_scanlines, g_dev.hold_lines, (size_t)rows * sizeof(void *));
-    g_dev.hold_active = true;
     return 1;
 }
-
-int nocturne_trigl_device_hold_active(void) { return g_dev.hold_active ? 1 : 0; }
 
 int nocturne_trigl_device_unlock_hold_buffer(void) {
     if (!g_dev.open || g_dev.hold == nullptr) return 0;
@@ -383,11 +422,12 @@ int  nocturne_trigl_device_unlock_frame(void) { return 0; }
 int  nocturne_trigl_device_frame_locked(void) { return 0; }
 int  nocturne_trigl_device_lock_hold_buffer(void) { return 0; }
 int  nocturne_trigl_device_unlock_hold_buffer(void) { return 0; }
-int  nocturne_trigl_device_hold_active(void) { return 0; }
 void nocturne_trigl_device_clear_color(void) {}
 void nocturne_trigl_device_clear_depth(void) {}
 void nocturne_trigl_device_clear_depth_box(int, int, int, int) {}
 void nocturne_trigl_device_present(void) {}
+int  nocturne_trigl_device_save_screen(void) { return 0; }
+int  nocturne_trigl_device_restore_screen(void) { return 0; }
 void nocturne_trigl_device_set_bridge(struct CExternalRendererBridge *) {}
 struct CExternalRendererBridge *nocturne_trigl_device_bridge(void) { return nullptr; }
 NocturneTriglBatch *nocturne_trigl_device_batch(void) { return nullptr; }
