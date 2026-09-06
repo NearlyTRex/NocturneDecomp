@@ -552,6 +552,10 @@ if(_test_sources)
         "${NOCTURNE_SHIMS_DIR}/renderer/trigl_vertex.cpp"
         "${NOCTURNE_SHIMS_DIR}/renderer/trigl_texture.cpp"
         "${NOCTURNE_SHIMS_DIR}/renderer/trigl_batch.cpp"
+        # Reaches the filesystem but nothing else — no GL, no globals, no engine
+        # state. Its answer is a function of the path and what is on disk, which
+        # is what makes it testable against a directory a test builds itself.
+        "${NOCTURNE_SHIMS_DIR}/watcom/path.cpp"
     )
     # The GL-facing sources, for the suites that test ORDER rather than answers.
     # These reach the driver, so they are deliberately outside the list above —

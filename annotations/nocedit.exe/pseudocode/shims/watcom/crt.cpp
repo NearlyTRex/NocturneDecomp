@@ -14,6 +14,7 @@
 #endif
 
 #include "system/crt.h"
+#include "watcom/path.h"        // watcom_resolve_fs_path() — the Windows-path shim
 #include "core/debug_log.h"
 #include "net/rng.h"            // nocturne_rng_note_raw_draw() — the rand() audit
 #include <cerrno>
@@ -149,8 +150,8 @@ void makepath(char* path, const char* drive, const char* dir, const char* fname,
         // backslash. The game relies on this — it routinely passes directory
         // components without a trailing slash (e.g. a getcwd() result), and
         // without the inserted separator `dir` and `fname` fuse into one bogus
-        // name. Use '\\' to match Watcom byte for byte; normalize_path()
-        // rewrites it to '/' at open time.
+        // name. Use '\\' to match Watcom byte for byte; the path shim rewrites
+        // it to '/' at open time.
         size_t n = strlen(path);
         if (n && path[n - 1] != '\\' && path[n - 1] != '/') strcat(path, "\\");
     }
@@ -228,109 +229,15 @@ static void sync_file_flags(_FILE* f) {
 // ---------------------------------------------------------------------------
 // Path Normalization
 // ---------------------------------------------------------------------------
-// The game was built for Windows and hardcodes backslash path separators
-// plus mixed-case filenames (e.g. ".\\system\\nocturne.ini", "ACT1.POD").
-// On Linux the backslashes are literal filename characters AND the
-// filesystem is case-sensitive, so fopen fails if the on-disk case doesn't
-// match the game's expectation byte-for-byte.
-//
-// normalize_path() translates \ -> / and does a case-insensitive component-
-// by-component resolution against the real filesystem: for each path
-// segment, if the exact case doesn't exist, we scan the parent directory
-// for a case-insensitive match and substitute the real on-disk name.
-// Returns a std::string that callers pass as .c_str() to libc.
+// A path the game asks for is a Windows path: backslash separators and whatever
+// case the 1999 build happened to spell. Turning that into one the filesystem
+// will accept lives in watcom/path.cpp, which is where its tests can reach it —
+// this file replaces two dozen CRT entry points and cannot be linked into a test
+// without replacing them there too.
 
 #include <string>
 #include <sys/stat.h>
-#include <dirent.h>
-#include <strings.h>
 
-static bool path_exists(const std::string& p) {
-    struct stat st;
-    return stat(p.c_str(), &st) == 0;
-}
-
-static std::string resolve_case_insensitive(const std::string& slashed) {
-    // Fast path: if the slashed path already exists as-is, no scan needed.
-    if (slashed.empty() || path_exists(slashed)) {
-        return slashed;
-    }
-
-    // Walk segment by segment, rebuilding a known-good prefix.
-    std::string result;
-    size_t i = 0;
-    // Preserve a leading "/" or "./" so absolute/relative stays intact.
-    if (slashed[0] == '/') {
-        result = "/";
-        i = 1;
-    } else if (slashed.size() >= 2 && slashed[0] == '.' && slashed[1] == '/') {
-        result = "./";
-        i = 2;
-    }
-
-    while (i < slashed.size()) {
-        size_t next = slashed.find('/', i);
-        if (next == std::string::npos) next = slashed.size();
-        std::string component(slashed, i, next - i);
-        i = (next == slashed.size()) ? next : next + 1;
-
-        if (component.empty() || component == ".") {
-            continue;
-        }
-
-        std::string candidate = result + component;
-        if (path_exists(candidate)) {
-            result = candidate + (i < slashed.size() ? "/" : "");
-            continue;
-        }
-
-        // Exact case failed — scan the parent for a case-insensitive match.
-        std::string parent = result.empty() ? "." : result;
-        // Strip the trailing "/" for opendir(), except for pure root "/".
-        if (parent.size() > 1 && parent.back() == '/') parent.pop_back();
-        DIR* d = opendir(parent.c_str());
-        std::string matched;
-        if (d) {
-            while (struct dirent* e = readdir(d)) {
-                if (strcasecmp(e->d_name, component.c_str()) == 0) {
-                    matched = e->d_name;
-                    break;
-                }
-            }
-            closedir(d);
-        }
-        if (matched.empty()) {
-            // No match; return the best-effort path so the caller's errno
-            // carries the usual ENOENT and error paths don't change shape.
-            result += component + (i < slashed.size() ? "/" : "");
-            // Best-effort: append the rest unchanged.
-            if (i < slashed.size()) result.append(slashed, i, std::string::npos);
-            return result;
-        }
-        result += matched + (i < slashed.size() ? "/" : "");
-    }
-
-    return result;
-}
-
-static std::string normalize_path(const char* path) {
-    if (!path) return std::string();
-    std::string slashed(path);
-    for (char& c : slashed) {
-        if (c == '\\') c = '/';
-    }
-    return resolve_case_insensitive(slashed);
-}
-
-// Exposed for the reconstructed std:: file-stream keeps. std::ifstream/ofstream
-// bypass _fopen (and thus this normalization), so opening a Watcom-style
-// "save\\SAVE1.NOC" path fails on Linux on TWO counts: the backslash and the
-// case (real file is save/SAVE1.noc). stream_compat.h's watcom_stream_open()
-// calls this to apply the exact same '\\'->'/' + case-insensitive resolution
-// _fopen uses, so C++ streams resolve paths identically to getFile/_fopen.
-std::string watcom_resolve_fs_path(const char* path) {
-    return normalize_path(path);
-}
 
 // ---------------------------------------------------------------------------
 // File Manipulation
@@ -438,7 +345,8 @@ static FILE* fopen_text_aware(const char* path, const char* mode) {
 }
 
 _FILE* _fopen(const char* filename, const char* mode) {
-    return make_file_wrapper(fopen_text_aware(normalize_path(filename).c_str(), mode));
+    return make_file_wrapper(
+        fopen_text_aware(watcom_resolve_fs_path(filename).c_str(), mode));
 }
 
 // The game calls plain remove()/rename() with hard-coded Windows paths — e.g.
@@ -453,14 +361,14 @@ _FILE* _fopen(const char* filename, const char* mode) {
 extern "C" int remove(const char* path) {
     using remove_fn = int (*)(const char*);
     static remove_fn real_remove = reinterpret_cast<remove_fn>(dlsym(RTLD_NEXT, "remove"));
-    return real_remove(normalize_path(path).c_str());
+    return real_remove(watcom_resolve_fs_path(path).c_str());
 }
 
 extern "C" int rename(const char* oldpath, const char* newpath) {
     using rename_fn = int (*)(const char*, const char*);
     static rename_fn real_rename = reinterpret_cast<rename_fn>(dlsym(RTLD_NEXT, "rename"));
-    return real_rename(normalize_path(oldpath).c_str(),
-                       normalize_path(newpath).c_str());
+    return real_rename(watcom_resolve_fs_path(oldpath).c_str(),
+                       watcom_resolve_fs_path(newpath).c_str());
 }
 
 int _fclose(_FILE* f) {
@@ -586,7 +494,7 @@ int _fscanf(_FILE* f, const char* format, ...) {
 }
 
 _FILE* _freopen(const char* filename, const char* mode, _FILE* stream) {
-    FILE* fp = freopen(normalize_path(filename).c_str(),
+    FILE* fp = freopen(watcom_resolve_fs_path(filename).c_str(),
                        mode, _FILE_to_FILE(stream));
     if (!fp) return nullptr;
     // If the caller's stream was one of the game's static stream globals
@@ -728,7 +636,7 @@ size_t _strftime(char* dest_buffer, size_t buffer_size, const char* format_strin
 // Watcom buffer. Bridge the same way as _mktime/_tm.
 int getFileStat(const char* path, struct _stat* buf) {
     struct stat libc_st;
-    int rc = stat(normalize_path(path).c_str(), &libc_st);
+    int rc = stat(watcom_resolve_fs_path(path).c_str(), &libc_st);
     if (rc == 0 && buf) {
         memset(buf, 0, sizeof(*buf));
         buf->_st_dev   = libc_st.st_dev;
@@ -747,5 +655,5 @@ int getFileStat(const char* path, struct _stat* buf) {
 }
 
 int _utime(const char* path, void* times) {
-    return utime(normalize_path(path).c_str(), (struct utimbuf*)times);
+    return utime(watcom_resolve_fs_path(path).c_str(), (struct utimbuf*)times);
 }
