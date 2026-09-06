@@ -52,11 +52,10 @@ silent
 if $rab_arm != 0
 set $rab_arm = 0
 set $rab_n = $rab_n + 1
-call (int)nocturne_reset_render_flags()
 call (void)nocturne_trigl_stats_reset()
 call (void)core_set_cpp_CDemonSet_renderScene_FUN_0056c1a0(g_CDemonSetPtr, 0)
 eval "call (int)nocturne_dump_frontbuffer(\"/tmp/rab_%d.ppm\")", $rab_n
-eval "call (int)nocturne_dump_render_flags(\"/tmp/rab_%d.rf.txt\")", $rab_n
+eval "call (int)nocturne_trigl_dump_draws(\"/tmp/rab_%d.draws.txt\")", $rab_n
 printf "[rab %d] renderer=%s\n", $rab_n, g_RendererDllPath
 printf "[rab %d] trigl draws=%u polygons=%u blended=%u untextured=%u missing_tex=%u\n", $rab_n, nocturne_trigl_stats.draws, nocturne_trigl_stats.polygons, nocturne_trigl_stats.blended_draws, nocturne_trigl_stats.untextured_draws, nocturne_trigl_stats.missing_texture_draws
 end

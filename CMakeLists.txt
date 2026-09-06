@@ -61,21 +61,6 @@ set(NOCTURNE_SRC_ROOT     "${NOCTURNE_PSEUDOCODE_DIR}/src")
 set(NOCTURNE_INCLUDE_DIR  "${NOCTURNE_PSEUDOCODE_DIR}/include")
 set(NOCTURNE_SHIMS_DIR    "${NOCTURNE_PSEUDOCODE_DIR}/shims")
 
-# -----------------------------------------------------------------------------
-# tridx7.dll — the decompiled DirectX 7 renderer, compiled into the same binary.
-#
-# It keeps its OWN include tree on purpose. Both programs export a
-# system/ddraw.h declaring the same type names with different signatures
-# (DDSURFACEDESC vs DDSURFACEDESC2, and 9 other methods), and they never
-# exchange DirectDraw objects — the DLL boundary is APIDLLinit(HWND, bridge)
-# plus plain data. So the two DirectDraw implementations stay independent
-# rather than being unified in the generator.
-# -----------------------------------------------------------------------------
-set(NOCTURNE_TRIDX7_DIR "${CMAKE_SOURCE_DIR}/annotations/tridx7.dll/pseudocode"
-    CACHE PATH "Root of the exported tridx7.dll pseudocode tree")
-set(NOCTURNE_TRIDX7_SRC_ROOT    "${NOCTURNE_TRIDX7_DIR}/src")
-set(NOCTURNE_TRIDX7_INCLUDE_DIR "${NOCTURNE_TRIDX7_DIR}/include")
-set(NOCTURNE_TRIDX7_SHIMS_DIR   "${NOCTURNE_TRIDX7_DIR}/shims")
 set(NOCTURNE_MAIN_DIR     "${NOCTURNE_PSEUDOCODE_DIR}/main")
 set(NOCTURNE_CHECKS_DIR   "${NOCTURNE_PSEUDOCODE_DIR}/checks")
 
@@ -140,38 +125,6 @@ foreach(_line IN LISTS _collect_lines)
 endforeach()
 
 file(STRINGS "${NOCTURNE_GEN_DIR}/modules.txt" NOCTURNE_MODULES)
-
-# tridx7.dll source lists — a second collector pass over its own tree.
-# Scope is src/dll + src/globals only: src/crt is signature-only (the DLL's CRT
-# bodies are never compiled, the shims supply those functions), and src/dll
-# references no crt_* symbol at all, so excluding it leaves nothing undefined.
-set(NOCTURNE_TRIDX7_GEN_DIR "${CMAKE_BINARY_DIR}/generated_tridx7")
-file(MAKE_DIRECTORY "${NOCTURNE_TRIDX7_GEN_DIR}")
-
-execute_process(
-    COMMAND "${Python3_EXECUTABLE}"
-            "${CMAKE_SOURCE_DIR}/cmake/collect_sources.py"
-            --src-root     "${NOCTURNE_TRIDX7_SRC_ROOT}"
-            --out-dir      "${NOCTURNE_TRIDX7_GEN_DIR}"
-            --modules-file "${NOCTURNE_TRIDX7_GEN_DIR}/modules.txt"
-            --exclude-module crt
-    RESULT_VARIABLE _tridx7_rc
-    OUTPUT_VARIABLE _tridx7_out
-    ERROR_VARIABLE  _tridx7_err
-)
-if(NOT _tridx7_rc EQUAL 0)
-    message(FATAL_ERROR "collect_sources.py (tridx7) failed:\n${_tridx7_out}${_tridx7_err}")
-endif()
-string(STRIP "${_tridx7_out}" _tridx7_out_stripped)
-string(REPLACE "\n" ";" _tridx7_lines "${_tridx7_out_stripped}")
-foreach(_line IN LISTS _tridx7_lines)
-    string(STRIP "${_line}" _line_stripped)
-    if(_line_stripped)
-        message(STATUS "tridx7 ${_line_stripped}")
-    endif()
-endforeach()
-
-file(STRINGS "${NOCTURNE_TRIDX7_GEN_DIR}/modules.txt" NOCTURNE_TRIDX7_MODULES)
 
 # Re-run cmake if the skip list changes.
 set_property(DIRECTORY APPEND PROPERTY CMAKE_CONFIGURE_DEPENDS
@@ -340,76 +293,6 @@ if(NOCTURNE_BUILD_EXE)
         endif()
     endforeach()
 
-    # -------------------------------------------------------------------------
-    # tridx7 modules — the decompiled DX7 renderer plus its GL-backed DirectDraw.
-    #
-    # Compiled against tridx7's include tree ONLY. nocedit's include dir is
-    # deliberately absent: both trees define IDirectDrawSurface & friends with
-    # different method signatures, and a TU that saw both would be an ODR
-    # violation waiting to misbehave.
-    #
-    # Include order matters. tridx7's shims dir comes first so its nocturne.h
-    # picks up tridx7's own shim_config.h stub rather than nocedit's full one;
-    # nocedit's shims dir follows only so gl_ddraw.cpp can reach gl_api.h /
-    # gl_present.h, which are program-agnostic and pull in no DirectX headers.
-    # -------------------------------------------------------------------------
-    set(_tridx7_libs "")
-    foreach(_module IN LISTS NOCTURNE_TRIDX7_MODULES)
-        file(STRINGS "${NOCTURNE_TRIDX7_GEN_DIR}/sources_${_module}.txt" _sources)
-        if(_sources)
-            set_source_files_properties(${_sources} PROPERTIES LANGUAGE CXX)
-            add_library(nocturne_tridx7_${_module} OBJECT ${_sources})
-            target_include_directories(nocturne_tridx7_${_module} PRIVATE
-                "${NOCTURNE_TRIDX7_SHIMS_DIR}" "${NOCTURNE_TRIDX7_INCLUDE_DIR}")
-            target_compile_options(nocturne_tridx7_${_module} PRIVATE
-                ${NOCTURNE_ARCH_FLAGS} ${NOCTURNE_COMMON_WARNINGS}
-                ${NOCTURNE_SANITIZE_FLAGS})
-            target_compile_features(nocturne_tridx7_${_module} PRIVATE cxx_std_11)
-
-            # The renderer's two ddraw.dll imports carry the same C++ mangled
-            # name as the exe's own SDL-backed DirectDrawCreate, because both
-            # take a `struct IDirectDraw *` at global scope. Renaming them for
-            # this module only — the declaration in tridx7's ddraw.h and the
-            # definition in gl_ddraw.cpp are both compiled here, so they move
-            # together and the exe's shim keeps the unprefixed name.
-            target_compile_definitions(nocturne_tridx7_${_module} PRIVATE
-                DirectDrawCreate=tridx7_DirectDrawCreate
-                DirectDrawEnumerateExA=tridx7_DirectDrawEnumerateExA)
-
-            list(APPEND _tridx7_libs nocturne_tridx7_${_module})
-        endif()
-    endforeach()
-
-    # The GL-backed DirectDraw/Direct3D implementation the renderer talks to.
-    # Same include order and the same import renaming as the sources above.
-    file(GLOB _tridx7_shim_sources CONFIGURE_DEPENDS
-        "${NOCTURNE_TRIDX7_SHIMS_DIR}/*.cpp"
-    )
-    if(_tridx7_shim_sources)
-        set_source_files_properties(${_tridx7_shim_sources} PROPERTIES LANGUAGE CXX)
-        add_library(nocturne_tridx7_shims OBJECT ${_tridx7_shim_sources})
-        target_include_directories(nocturne_tridx7_shims PRIVATE
-            "${NOCTURNE_TRIDX7_SHIMS_DIR}" "${NOCTURNE_TRIDX7_INCLUDE_DIR}"
-            "${NOCTURNE_SHIMS_DIR}"
-            ${SDL2_INCLUDE_DIRS})
-        target_compile_options(nocturne_tridx7_shims PRIVATE
-            ${NOCTURNE_ARCH_FLAGS} ${NOCTURNE_COMMON_WARNINGS}
-            ${NOCTURNE_SANITIZE_FLAGS} ${SDL2_CFLAGS_OTHER})
-        target_compile_features(nocturne_tridx7_shims PRIVATE cxx_std_17)
-        target_compile_definitions(nocturne_tridx7_shims PRIVATE
-            DirectDrawCreate=tridx7_DirectDrawCreate
-            DirectDrawEnumerateExA=tridx7_DirectDrawEnumerateExA)
-        if(NOT NOCTURNE_GL_PRESENT)
-            target_compile_definitions(nocturne_tridx7_shims PRIVATE NOCTURNE_GL_PRESENT=0)
-        endif()
-        if(TARGET sdl_headers_copy)
-            add_dependencies(nocturne_tridx7_shims sdl_headers_copy)
-        endif()
-        list(APPEND _tridx7_libs nocturne_tridx7_shims)
-    endif()
-
-    list(LENGTH _tridx7_libs _tridx7_lib_count)
-    message(STATUS "tridx7: ${_tridx7_lib_count} object libraries")
 
     # RECURSE: the shims are grouped into subdirectories by responsibility.
     # Legacy-platform emulation, deleted wholesale once the engine no longer
@@ -474,9 +357,6 @@ if(NOCTURNE_BUILD_EXE)
     target_link_options(nocturne PRIVATE ${NOCTURNE_ARCH_FLAGS} ${NOCTURNE_SANITIZE_FLAGS} -no-pie)
 
     foreach(_lib IN LISTS _module_libs)
-        target_link_libraries(nocturne PRIVATE ${_lib})
-    endforeach()
-    foreach(_lib IN LISTS _tridx7_libs)
         target_link_libraries(nocturne PRIVATE ${_lib})
     endforeach()
     target_link_libraries(nocturne PRIVATE nocturne_shims

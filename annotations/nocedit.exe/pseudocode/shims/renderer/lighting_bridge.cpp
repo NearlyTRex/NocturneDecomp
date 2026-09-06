@@ -9,14 +9,16 @@
 // preparing. It copies no pixels: the grids are static arrays that live for the
 // process, so the renderer reads them in place and only the scalars are stored.
 //
-// NOT gated on NOCTURNE_AUTHENTIC_SHADER_LIGHTING, deliberately. The consumer is
-// gl_shader.cpp, which is compiled as part of tridx7 against tridx7's stub
-// shim_config.h and so cannot see nocedit's toggles at all. Compiling these
-// symbols away would leave that call unresolved at link time. The toggle lives
-// at the ONE call site instead — the update inside the composite — so under
-// NOCTURNE_AUTHENTIC_SHADER_LIGHTING nothing ever calls it, `valid` stays 0, and
-// the renderer takes the same fall-back path it takes on a driver with no
-// shader support.
+// The toggle lives at the ONE call site — the update inside the composite —
+// rather than around these definitions, so the symbols resolve whatever the
+// build believes about lighting. Under NOCTURNE_AUTHENTIC_SHADER_LIGHTING
+// nothing calls the update and `valid` stays 0.
+//
+// No renderer reads the published grid: measurement says hardware geometry
+// arrives at final brightness and the per-pixel grid is the software
+// rasterizer's own lighting mechanism (research/17, open item 2). This exists so
+// that a per-fragment lighting model can be measured against the composite
+// without rebuilding the plumbing first.
 
 #include "nocturne.h"
 

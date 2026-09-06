@@ -52,11 +52,10 @@
 // running. Separate from gl_present.h, which names SDL types.
 #include "gl/gl_version.h"
 
-// The per-pixel light/fog grid, published for the shader renderer
-// (nocturne_lighting_bridge*) — declared here so
+// The per-pixel light/fog grid (nocturne_lighting_bridge*) — declared here so
 // CDemonCamera::compositeLightmapToFramebuffer reaches it through nocturne.h.
 // Its one call site is gated on NOCTURNE_AUTHENTIC_SHADER_LIGHTING; the shim
-// itself is not, because the consumer compiles against tridx7's stub config.
+// itself is not, so the symbols resolve either way.
 #include "renderer/lighting_bridge.h"
 
 // Window mode (nocturne_window_mode_*) — declared here so decompiled TUs

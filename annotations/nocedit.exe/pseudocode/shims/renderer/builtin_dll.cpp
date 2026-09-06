@@ -18,19 +18,9 @@
 // -----------------------------------------------------------------------------
 // Each built-in DLL builds its own "APIDLL*" table beside its own sources, where
 // that program's prototypes are visible, and hands it over through one of these.
-// See annotations/tridx7.dll/pseudocode/shims/apidll_exports.cpp.
-
-extern "C" const NocturneBuiltinExport *nocturne_tridx7_exports(int *count);
-
-// tridx7gl.dll — tridx7's entry points with the shader path enabled at init.
-// Not a separate renderer implementation; registering it as its own module is
-// what puts it in the Graphics Options 3D-API cycle, making shader-vs-fixed-
-// function a runtime choice.
-extern "C" const NocturneBuiltinExport *nocturne_tridx7gl_exports(int *count);
-
-// trigl.dll — the renderer this build implements itself, in shims/renderer/.
-// It talks to OpenGL directly rather than through a Direct3D interface, and
-// shares no code with the two above.
+//
+// trigl.dll — the renderer this build implements itself, in shims/renderer/. It
+// talks to OpenGL directly rather than through a Direct3D interface.
 extern "C" const NocturneBuiltinExport *nocturne_trigl_native_exports(int *count);
 
 // -----------------------------------------------------------------------------
@@ -39,8 +29,6 @@ extern "C" const NocturneBuiltinExport *nocturne_trigl_native_exports(int *count
 // Order here is the order the Graphics Options 3D-API selector cycles through.
 
 static const NocturneBuiltinModule g_BuiltinModules[] = {
-    { "tridx7.dll",   nocturne_tridx7_exports },
-    { "tridx7gl.dll", nocturne_tridx7gl_exports },
     { "trigl.dll",    nocturne_trigl_native_exports },
     // { "tridx6.dll", nocturne_tridx6_exports },
     // { "trid3d.dll", nocturne_trid3d_exports },

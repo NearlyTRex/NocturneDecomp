@@ -10,16 +10,12 @@ what pulled this off course once already (see the struck phase 1 below).
 in software mode AND under acceleration** — bit-identical, not merely within the noise floor.
 Nothing in the migration is now unmeasured.
 
-**A renderer written directly against modern GL now exists and has passed its A/B against the
-path this migration started from.** Everything below about `trigl.dll` being tridx7's export
-table with a shader flag describes `tridx7gl.dll`; the name moved. Three renderers are
-registered in `shims/renderer/builtin_dll.cpp` so one scene can be captured through each:
-
-| module | what it is |
-|---|---|
-| `tridx7.dll` | the decompiled DX7 renderer on fixed-function GL |
-| `tridx7gl.dll` | the same, with the shader path enabled at init — what this doc calls `trigl.dll` throughout |
-| `trigl.dll` | `shims/renderer/`, ~3.7k lines, talks to GL directly and shares no code with the two above |
+**A renderer written directly against modern GL passed its A/B against the path this migration
+started from, and is now the only one the build has.** `trigl.dll` — `shims/renderer/`, ~3.7k
+lines — implements the 37 `APIDLL*` entry points against GL directly. Everything below about
+`trigl.dll` being tridx7's export table with a shader flag describes the module this doc knew as
+that name; the decompiled DX7 renderer, its GL-backed DirectDraw and its shader layer are out of
+the build. The tridx7 tree stays on disk as the specification, with a README beside it saying so.
 
 | | state |
 |---|---|
@@ -32,21 +28,18 @@ registered in `shims/renderer/builtin_dll.cpp` so one scene can be captured thro
 | blend / depth / cull / scissor | staying as GL state, by design |
 | present blit | **done, bit-exact in both modes** — buffer object + shader in `gl_blit.cpp` |
 | native renderer | **done, measured** — see "The native renderer A/B" below |
-| retiring the DX7 path | **next** — the A/B that gates it has passed |
-| core profile | blocked only by the DX7 path still being selectable |
+| the DX7 path | **retired** — one renderer, one row in `g_BuiltinModules` |
+| core profile | **next** — nothing needs compatibility any more |
 
 ### Pick up here
 
-1. **Retire the DX7 path.** Drop the `tridx7.dll` and `tridx7gl.dll` rows from
-   `g_BuiltinModules`, stop compiling the tridx7 tree, delete `gl_ddraw.cpp`,
-   `apidll_exports.cpp` and `win32_imports.cpp`. The tree stays on disk as the specification.
-2. **Then the core profile.** The native renderer is already core-clean — it binds a real VAO
-   and its shaders are `#version 150 core`. What is left is outside it: the context is
-   requested as compatibility at `gl/gl_present.cpp:156`, `gl_blit.cpp` is still `#version 120`
-   with no VAO and is shared with software mode, three immediate-mode fallback quads remain in
-   `gl_present.cpp`, and `gl_api.cpp` still lists the fixed-function entry points as mandatory,
-   so a missing `glBegin` takes the whole GL path down.
-3. **Three artifacts found by the A/B**, none of them the renderer — see open items 7, 8, 9.
+1. **The core profile.** The native renderer is already core-clean: it binds a real VAO and its
+   shaders are `#version 150 core`. What is left is outside it — the context is requested as
+   compatibility at `gl/gl_present.cpp:156`, `gl_blit.cpp` is `#version 120` with no VAO and is
+   shared with software mode, three immediate-mode fallback quads remain in `gl_present.cpp`,
+   and `gl_api.cpp` lists the fixed-function entry points as mandatory, so a missing `glBegin`
+   takes the whole GL path down including software mode.
+2. **Three artifacts found by the A/B**, none of them the renderer — see open items 7, 8, 9.
 
 Do not switch renderers by writing `g_UseDirect3D` / `g_UseExternalRenderer` from gdb — that
 skips renderer init and crashes within seconds. Use the options screen.
@@ -58,11 +51,18 @@ from an env var at first use:
 
 | symbol | env | meaning |
 |---|---|---|
-| `nocturne_gl_shader_force_compat` | — | force the client-array vertex stage; call `nocturne_gl_shader_rebuild()` after |
-| `nocturne_gl_vertex_fog` | `NOCTURNE_GL_VERTEX_FOG` | 0 off, 1 apply D3D per-vertex fog |
-| `nocturne_gl_lightmap_debug` | `NOCTURNE_GL_LIGHTMAP_DEBUG` | 0 off, 1 grid uv, 2 fog, 3 gain, 4 lightmap bypass |
+| `nocturne_trigl_vertex_fog` | `NOCTURNE_TRIGL_VERTEX_FOG` | 0 off, 1 apply D3D per-vertex fog |
+| `nocturne_trigl_debug` | `NOCTURNE_TRIGL_DEBUG` | paint one shader input: 5 texture colour, 4 vertex colour, 3 UV, 2 final alpha, 1 texture alpha |
 | `nocturne_gl_blit_shader` | `NOCTURNE_GL_BLIT_SHADER` | 0 immediate-mode present quad, 1 shader quad. Read per blit — no rebuild, so the A/B can be adjacent frames |
-| — | `NOCTURNE_GL_LIGHTMAP_DUMP` | writes `lightmap_plane.pgm` / `lightmap_corona.pgm` once |
+
+`nocturne_trigl_stats` counts what reached the hardware, and
+`nocturne_trigl_dump_draws("/tmp/draws.txt")` writes one line per draw of the frame being built —
+the texture the engine selected, the dimension it resolved at, and the GL texture that ended up
+bound. A frame held on screen with the renderer idle can be interrogated at leisure.
+
+The DX7 path's own instruments (`nocturne_dump_render_flags`, `nocturne_gl_shader_*`,
+`nocturne_gl_lightmap_debug`) went with it; the numbers they produced are quoted throughout this
+document and recoverable from git history.
 
 Probes in this directory: `vertex_path_ab.gdb` (phase 3's exit-criterion A/B),
 `blit_same_frame_ab.gdb` (phase 4's, and the stronger design — see below),
