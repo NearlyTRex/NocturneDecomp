@@ -14,7 +14,7 @@
 
 #if !NOCTURNE_AUTHENTIC_NETPLAY
 
-#define NET_MENU_ITEMS 3
+#define NET_MENU_ITEMS 2
 
 // The main menu's own start-y, so the submenu's lines land where the ones it
 // replaced on screen were.
@@ -24,7 +24,6 @@ int nocturne_net_menu_multiplayer(void)
 {
     char  host_line[256];
     char  join_line[256];
-    char  back_line[256];
     char *menu_ptrs[NET_MENU_ITEMS];
     int   selected = 0;
     int   choice;
@@ -33,7 +32,6 @@ int nocturne_net_menu_multiplayer(void)
 
     menu_ptrs[0] = host_line;
     menu_ptrs[1] = join_line;
-    menu_ptrs[2] = back_line;
 
     // The caller reached here on a RETURN that renderMenuAndGetChoice has
     // already consumed, but the key can still be down; without this the
@@ -52,11 +50,9 @@ int nocturne_net_menu_multiplayer(void)
                support_newmsg_cpp_getLocalizedString_FUN_005441f0("H O S T   G A M E"));
         strcpy(join_line,
                support_newmsg_cpp_getLocalizedString_FUN_005441f0("J O I N   G A M E"));
-        strcpy(back_line,
-               support_newmsg_cpp_getLocalizedString_FUN_005441f0("B A C K"));
 
         // An untitled menu double-spaces its lines (see renderMenuAndGetChoice),
-        // so three entries occupy six character heights. Lift the start where a
+        // so two entries occupy four character heights. Lift the start where a
         // short window would otherwise push the last line under the copyright.
         menu_ch = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_ThemeFont, 0x58);
         menu_y  = NET_MENU_START_Y;
@@ -71,9 +67,6 @@ int nocturne_net_menu_multiplayer(void)
                      menu_ptrs, NET_MENU_ITEMS, &selected, menu_y, (char *)0x0);
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
 
-        if (choice == 2) {
-            return NOCTURNE_NET_MENU_CANCEL;
-        }
         if (choice >= 0) {
             return choice;
         }

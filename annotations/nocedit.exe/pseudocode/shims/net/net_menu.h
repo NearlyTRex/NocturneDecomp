@@ -38,7 +38,7 @@ extern "C" {
 
 // Runs the multiplayer submenu until the player picks or backs out. Returns
 // NOCTURNE_NET_MENU_HOST, NOCTURNE_NET_MENU_JOIN, or NOCTURNE_NET_MENU_CANCEL
-// for Back, Escape, or a window close.
+// for Escape or a window close.
 int nocturne_net_menu_multiplayer(void);
 
 #ifdef __cplusplus

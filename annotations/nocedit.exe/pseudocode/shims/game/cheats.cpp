@@ -35,7 +35,7 @@ char kIniSection[] = "Cheats";
 #define CHEAT_PAGE_DEBUG    2
 #define CHEAT_PAGE_COUNT    3
 
-// Longest page is Weapons & ammo at twelve, plus the Back line.
+// Longest page is Weapons & ammo at twelve.
 #define CHEAT_MENU_MAX_LINES 16
 
 // The Options screen's own start-y, so a page's lines land where the ones it
@@ -721,7 +721,6 @@ void cheatsPage(int page)
     int   items[CHEAT_MENU_MAX_LINES];
     int   item_count = 0;
     int   selected   = 0;
-    int   back_line;
     int   choice;
     int   i;
 
@@ -731,8 +730,7 @@ void cheatsPage(int page)
             item_count        = item_count + 1;
         }
     }
-    back_line = item_count;
-    for (i = 0; i <= back_line; i++) {
+    for (i = 0; i < item_count; i++) {
         menu_ptrs[i] = lines[i];
     }
 
@@ -751,17 +749,11 @@ void cheatsPage(int page)
                     support_newmsg_cpp_getLocalizedString_FUN_005441f0(
                         stateLabel(items[i], effectiveState(items[i]))));
         }
-        strcpy(lines[back_line],
-               support_newmsg_cpp_getLocalizedString_FUN_005441f0((char *)"Back"));
-
         choice = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(
-                     menu_ptrs, back_line + 1, &selected, menuStartY(back_line + 1),
+                     menu_ptrs, item_count, &selected, menuStartY(item_count),
                      menuTitle(title, sizeof(title), kPageTitles[page]));
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
 
-        if (choice == back_line) {
-            return;
-        }
         // While a host is deciding, the lines are a read-out of the host's set
         // rather than a control. Changing one here would only desync the
         // session, so the toggle is inert until the override is dropped.
@@ -779,8 +771,8 @@ void cheatsPage(int page)
 
 void nocturne_cheats_menu(void)
 {
-    char  lines[CHEAT_PAGE_COUNT + 1][256];
-    char *menu_ptrs[CHEAT_PAGE_COUNT + 1];
+    char  lines[CHEAT_PAGE_COUNT][256];
+    char *menu_ptrs[CHEAT_PAGE_COUNT];
     char  title[256];
     int   selected = 0;
     int   choice;
@@ -789,7 +781,7 @@ void nocturne_cheats_menu(void)
     loadSettings();
     expireOverrideOutsideSession();
 
-    for (i = 0; i <= CHEAT_PAGE_COUNT; i++) {
+    for (i = 0; i < CHEAT_PAGE_COUNT; i++) {
         menu_ptrs[i] = lines[i];
     }
 
@@ -805,18 +797,12 @@ void nocturne_cheats_menu(void)
             strcpy(lines[i],
                    support_newmsg_cpp_getLocalizedString_FUN_005441f0(kPageTitles[i]));
         }
-        strcpy(lines[CHEAT_PAGE_COUNT],
-               support_newmsg_cpp_getLocalizedString_FUN_005441f0((char *)"Back"));
-
         choice = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(
-                     menu_ptrs, CHEAT_PAGE_COUNT + 1, &selected,
-                     menuStartY(CHEAT_PAGE_COUNT + 1),
+                     menu_ptrs, CHEAT_PAGE_COUNT, &selected,
+                     menuStartY(CHEAT_PAGE_COUNT),
                      menuTitle(title, sizeof(title), (char *)"Cheats"));
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
 
-        if (choice == CHEAT_PAGE_COUNT) {
-            return;
-        }
         if (choice >= 0) {
             cheatsPage(choice);
             engine_2d_c_clearInputAndWait_FUN_00403260();

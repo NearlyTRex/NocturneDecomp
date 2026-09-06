@@ -193,10 +193,10 @@ extern "C" {
 #define NOCTURNE_CHEAT_WEATHER_RAIN 1
 #define NOCTURNE_CHEAT_WEATHER_SNOW 2
 
-// Runs the CHEATS picker and its pages until the player backs out with Back or
-// Escape. Draws against the same moon backdrop the Options screen uses, so the
-// caller must be between CMoon::init and CMoon::free — which showOptionsScreen
-// is.
+// Runs the CHEATS picker and its pages until the player backs out with Escape,
+// as the Options screens it sits among do. Draws against the same moon backdrop
+// the Options screen uses, so the caller must be between CMoon::init and
+// CMoon::free — which showOptionsScreen is.
 void nocturne_cheats_menu(void);
 
 // -----------------------------------------------------------------------------
