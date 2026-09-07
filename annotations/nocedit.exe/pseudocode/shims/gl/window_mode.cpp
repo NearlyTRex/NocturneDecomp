@@ -53,6 +53,28 @@ int clamp_mode(int mode) {
     return mode;
 }
 
+// Push the remembered size onto the window. Windowed mode only — fullscreen
+// asks the display for a mode and borderless takes the desktop, so writing a
+// size there would either provoke a mode change or be discarded.
+//
+// Idempotent, because callers re-assert rather than track: SetDisplayMode
+// pushes the preferred size back on every mode change, and the Options screen
+// calls this once a frame. Without the early out that would be an
+// SDL_SetWindowSize, and a resize event, per frame.
+void apply_pref_size() {
+    if (s_window == nullptr) return;
+    if (s_pref_width <= 0 || s_pref_height <= 0) return;
+
+    int cur_w = 0, cur_h = 0;
+    SDL_GetWindowSize(s_window, &cur_w, &cur_h);
+    if (cur_w == s_pref_width && cur_h == s_pref_height) return;
+
+    DLOG("render", "resize window %dx%d -> %dx%d (render resolution unchanged)",
+            cur_w, cur_h, s_pref_width, s_pref_height);
+    SDL_SetWindowSize(s_window, s_pref_width, s_pref_height);
+    SDL_SetWindowPosition(s_window, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED);
+}
+
 } // namespace
 
 extern "C" int nocturne_window_mode_get(void) {
@@ -91,8 +113,12 @@ extern "C" void nocturne_window_mode_set(int mode) {
     nocturne_window_mode_apply(s_window);
 }
 
-extern "C" int nocturne_window_mode_cycle(void) {
-    int next = (nocturne_window_mode_get() + 1) % NOCTURNE_WINDOW_MODE_COUNT;
+extern "C" int nocturne_window_mode_cycle(int step) {
+    // C's % keeps the sign of the dividend, and step is -1 for a left press.
+    int next = (nocturne_window_mode_get() + step) % NOCTURNE_WINDOW_MODE_COUNT;
+    if (next < 0) {
+        next += NOCTURNE_WINDOW_MODE_COUNT;
+    }
     nocturne_window_mode_set(next);
     return next;
 }
@@ -136,6 +162,13 @@ extern "C" void nocturne_window_mode_apply(SDL_Window *window) {
     SDL_SetWindowFullscreen(window, want);
     if (want == 0) {
         SDL_SetWindowBordered(window, SDL_TRUE);
+        // SDL restores the size it was at before it went fullscreen, and that
+        // is not necessarily the resolution the player has chosen: a
+        // resolution change made while borderless or fullscreen was up is
+        // recorded and not applied, because those modes own the window size.
+        // Re-assert it, so windowed comes back at the current choice rather
+        // than the one that happened to be in force when it left.
+        apply_pref_size();
     }
 }
 
@@ -154,23 +187,11 @@ extern "C" void nocturne_window_set_size(int width, int height) {
     s_pref_width  = width;
     s_pref_height = height;
 
-    if (s_window == nullptr) return;
     if (nocturne_window_mode_get() != NOCTURNE_WINDOW_MODE_WINDOWED) {
         // Fullscreen/borderless own the window size; the presenter will scale
-        // the render into whatever the display gave us.
+        // the render into whatever the display gave us. The size is applied
+        // when the window next becomes windowed.
         return;
     }
-
-    // Idempotent, because callers re-assert rather than track: SetDisplayMode
-    // pushes the preferred size back on every mode change, and the Options
-    // screen calls this once a frame. Without the early out that would be an
-    // SDL_SetWindowSize, and a resize event, per frame.
-    int cur_w = 0, cur_h = 0;
-    SDL_GetWindowSize(s_window, &cur_w, &cur_h);
-    if (cur_w == width && cur_h == height) return;
-
-    DLOG("render", "resize window %dx%d -> %dx%d (render resolution unchanged)",
-            cur_w, cur_h, width, height);
-    SDL_SetWindowSize(s_window, width, height);
-    SDL_SetWindowPosition(s_window, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED);
+    apply_pref_size();
 }

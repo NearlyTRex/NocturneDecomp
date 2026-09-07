@@ -38,8 +38,10 @@ int nocturne_window_mode_get(void);
 // Set and persist the mode. Applies immediately if a window exists.
 void nocturne_window_mode_set(int mode);
 
-// Advance to the next mode, wrapping. Returns the new mode.
-int nocturne_window_mode_cycle(void);
+// Advance the mode by `step`, wrapping. Returns the new mode. The Options
+// screen passes -1 for a left press and +1 for right, which is how the
+// engine's own three-state lines read g_MenuLeftRightPressed.
+int nocturne_window_mode_cycle(int step);
 
 // Display name for a mode ("Windowed" / "Fullscreen" / "Borderless").
 const char *nocturne_window_mode_name(int mode);

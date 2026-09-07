@@ -321,7 +321,12 @@ LAB_00510f71:
     }
 #if NOCTURNE_WINDOW_MODE_OPTION
     if (iVar7 == window_item) {
-      nocturne_window_mode_cycle();
+      if (g_MenuLeftRightPressed == 1) {
+        nocturne_window_mode_cycle(-1);
+      }
+      else {
+        nocturne_window_mode_cycle(1);
+      }
       iVar7 = -1;   /* consumed; matches no case below */
     }
 #endif
