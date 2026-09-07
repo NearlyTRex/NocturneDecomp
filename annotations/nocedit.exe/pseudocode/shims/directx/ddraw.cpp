@@ -17,6 +17,7 @@
 
 #include "system/ddraw.h"
 #include "core/debug_log.h"
+#include "core/window_icon.h"
 #include "shim_config.h"
 #include "gl/gl_present.h"
 #include "gl/window_mode.h"
@@ -456,6 +457,7 @@ static HRESULT ddraw_SetDisplayMode(IDirectDraw* this_ptr, DWORD width, DWORD he
                                               SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
                                               win_w, win_h, flags);
             if (!ddraw->window) return DDERR_GENERIC;
+            nocturne_apply_window_icon(ddraw->window);
             ddraw->owns_window = 1;
         }
         SDL_SetWindowSize(ddraw->window, win_w, win_h);

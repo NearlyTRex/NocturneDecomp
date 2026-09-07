@@ -1,4 +1,5 @@
 #include "system/user32.h"
+#include "core/window_icon.h"
 #include "debug/dump.h"
 #include "win32/mci_video.h"
 #include "gl/gl_present.h"
@@ -344,6 +345,8 @@ static HWND shim_CreateWindowExA(DWORD dwExStyle, LPCSTR lpClassName,
         lpWindowName ? lpWindowName : "NocturneDecomp",
         SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
         nWidth, nHeight, flags);
+    // The Win32 build got its icon from the window class; we set it directly.
+    nocturne_apply_window_icon(g_sdlWindow);
     // SDL only fires SDL_WINDOWEVENT_FOCUS_GAINED on focus *changes*, never for
     // the initial show. The game's main loop blocks until WM_ACTIVATEAPP wParam=1
     // arrives, so synthesize one now.
