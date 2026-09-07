@@ -27,6 +27,7 @@
 //   "sound"     mixer, voices, buffers, 3D attenuation
 //   "frontend"  attract movies and fullscreen bitmap screens
 //   "fileio"    POD mounts, findFile, search handlers
+//   "input"     controller attach/detach, mappings, binding defaults
 //
 // Rationale: hot shim traces (renderer, sound) fire hundreds of times per
 // second and drown out game-side findFile / allocator traces in a shared log.

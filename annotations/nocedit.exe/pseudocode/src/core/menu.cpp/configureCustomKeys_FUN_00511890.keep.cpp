@@ -132,6 +132,9 @@ LAB_00511b4c:
           pCVar3->game_control = CONTROL_MODE_KEYBOARD;
         }
       }
+#if !NOCTURNE_AUTHENTIC_GAMEPAD
+      nocturne_gamepad_reseed_for_mode(g_CGamePtr);
+#endif
       break;
     case 1:
       core_menu_cpp_configureCustomKeyBindings_FUN_005138e0();

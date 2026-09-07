@@ -967,3 +967,29 @@
 #ifndef NOCTURNE_AUTHENTIC_MENU_LIGHTING
 #define NOCTURNE_AUTHENTIC_MENU_LIGHTING 0
 #endif
+
+// NOCTURNE_AUTHENTIC_GAMEPAD
+//   Which controller the game can be played with.
+//
+//   nocedit.exe reaches a pad through winmm's joyGetPos/joyGetPosEx: two axes,
+//   ten buttons, one hat, and a calibration screen to learn where the stick's
+//   centre and extents are. CGame::resetKeyState turns that into fourteen
+//   input codes — DIJ_BUTTON1..10 and DIJ_LEFT/RIGHT/UP/DOWN — and hands them
+//   to the ordinary key-binding path. It is a 1999 analogue joystick, and a
+//   controller made since then reports through it as an arbitrary subset: the
+//   face buttons usually land somewhere in the first ten, the triggers arrive
+//   as axes nothing reads, and the right stick does not exist.
+//
+//   1: authentic — the joyGetPos path, the ten buttons, the calibration
+//      screen, and the shipped gamepad defaults (fire, draw, use item and the
+//      four stick directions; everything else stays on the keyboard).
+//   0: SDL's game-controller layer instead. Every pad SDL knows, named by its
+//      own labels, with the full button set bindable, both sticks and both
+//      triggers live, no calibration step, and a default map that reaches
+//      every action. See shim_config_input.h for the knobs and gamepad.h for
+//      how the codes are laid out.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_GAMEPAD=1.
+#ifndef NOCTURNE_AUTHENTIC_GAMEPAD
+#define NOCTURNE_AUTHENTIC_GAMEPAD 0
+#endif

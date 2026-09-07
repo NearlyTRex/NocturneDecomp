@@ -13,7 +13,7 @@ void __cdecl core_game_cpp_CGame_playerControls_FUN_004dbd80(CGame *this_ptr)
   EControlMode EVar1;
   SPlayerInput *player_control;
   byte bVar5;
-  
+
   bVar5 = 0;
   if (g_ModalDialogActive != 0) {
     core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004dce70(this_ptr);
@@ -36,6 +36,9 @@ void __cdecl core_game_cpp_CGame_playerControls_FUN_004dbd80(CGame *this_ptr)
       g_CurrentLineNumber = 1832;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CGame::playerControls - unknown control type");
     }
+#if !NOCTURNE_AUTHENTIC_GAMEPAD
+    nocturne_gamepad_note_gameplay_frame();
+#endif
     memcpy(g_PrevKeyboardState,g_KeyboardState,0x258);
     g_InputResetFlag = g_MouseButtonFlags.dword;
     g_StoredCameraValue = g_CDemonSetPtr->selected_camera_index;

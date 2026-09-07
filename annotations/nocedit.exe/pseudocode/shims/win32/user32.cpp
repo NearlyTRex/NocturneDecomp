@@ -2,6 +2,7 @@
 #include "debug/dump.h"
 #include "win32/mci_video.h"
 #include "gl/gl_present.h"
+#include "game/gamepad.h"
 #include "shim_config.h"
 #include <SDL.h>
 #include <cstdio>
@@ -480,6 +481,12 @@ static BOOL shim_PeekMessageA(LPMSG lpMsg, HWND hWnd,
     // next frame's render. Treat this as the per-frame tick boundary for
     // any debug auto-dumps the user has armed.
     nocturne_auto_dump_tick();
+
+    // Same boundary samples the controller. swapBuffers calls
+    // processWindowMessages, so this runs once per presented frame in every
+    // loop the game has — the mission, each menu, each editor dialog — which
+    // is what lets a pad drive screens that only ever knew about a keyboard.
+    nocturne_gamepad_pump();
 
     // Same boundary drives movie playback. winvideo.cpp's playMovie() spends
     // the whole movie in a processWindowMessages() + Sleep(20) loop, so this

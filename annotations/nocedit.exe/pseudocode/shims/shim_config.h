@@ -18,6 +18,8 @@
 //   shim_config_video.h      window ownership, window mode, resolution and
 //                            window scale.
 //   shim_config_media.h      attract-mode movies.
+//   shim_config_input.h      controller deadzones, thresholds and menu
+//                            auto-repeat.
 //   shim_config_debug.h      the FPU trap and the gdb dump helpers.
 //
 // A flag with an authentic answer is in the first file; a flag that tunes an
@@ -34,6 +36,7 @@
 #include "config/shim_config_netplay.h"
 #include "config/shim_config_video.h"
 #include "config/shim_config_media.h"
+#include "config/shim_config_input.h"
 #include "config/shim_config_debug.h"
 
 // =============================================================================
@@ -101,6 +104,13 @@ void nocturne_trigl_envmap_pass_end(void);
 // HUD scaling (nocturne_ui_*) — declared here so the HUD TUs reach it through
 // nocturne.h.
 #include "game/ui_scale.h"
+
+// Modern controller support (nocturne_gamepad_*), reached from the game TU's
+// input path and from the menu TU's key-name and validity helpers. The pad
+// input codes it defines are reached the same way. Every entry point is inert
+// when NOCTURNE_AUTHENTIC_GAMEPAD is 1, which leaves the shipped joyGetPos
+// path in charge.
+#include "game/gamepad.h"
 
 // Netplay configuration (nocturne_net_*) — declared here so the netgame TUs
 // reach it through nocturne.h.

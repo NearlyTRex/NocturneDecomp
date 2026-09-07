@@ -62,6 +62,7 @@ char * __cdecl core_menu_cpp_getKeyDisplayName_FUN_005134e0(EInputCodeType key_c
   if (key_code == DIJ_BUTTON10) {
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Button 10");
   }
+#if NOCTURNE_AUTHENTIC_GAMEPAD
   if (key_code == DIJ_LEFT) {
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Gamepad left");
   }
@@ -74,6 +75,24 @@ char * __cdecl core_menu_cpp_getKeyDisplayName_FUN_005134e0(EInputCodeType key_c
   if (key_code == DIJ_DOWN) {
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Gamepad back");
   }
+#else
+  if (key_code == DIJ_LEFT) {
+    pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Left Stick Left");
+  }
+  if (key_code == DIJ_RIGHT) {
+    pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Left Stick Right");
+  }
+  if (key_code == DIJ_UP) {
+    pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Left Stick Forward");
+  }
+  if (key_code == DIJ_DOWN) {
+    pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Left Stick Back");
+  }
+  if (NOCTURNE_PAD_IS_CODE(key_code)) {
+    pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
+                       ((char *)nocturne_gamepad_code_name(key_code));
+  }
+#endif
   if (pcVar3 == (char *)0x0) {
     pcVar3 = wincore_winrun_cpp_getKeyName_FUN_005f3980(key_code);
   }

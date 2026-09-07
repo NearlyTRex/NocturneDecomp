@@ -51,7 +51,9 @@ void __cdecl core_menu_cpp_configureCustomKeyBindings_FUN_005138e0(void)
   bool bVar36;
   bool bVar35;
   CPickList local_a7c;
+#if NOCTURNE_AUTHENTIC_GAMEPAD
   char local_6d4 [512];
+#endif
   char acStack_4d4 [512];
   char local_2d4 [512];
   char local_d4 [200];
@@ -497,6 +499,7 @@ LAB_0051390e:
       iVar15_00 = iVar4_00 + -1;
       local_c = iVar4_00;
       switch(*g_CustomKeyPointers[iVar15_00]) {
+#if NOCTURNE_AUTHENTIC_GAMEPAD
       case 0x251:
       case 0x252:
       case 0x253:
@@ -507,6 +510,7 @@ LAB_0051390e:
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                   (g_CEditorToolsPtr,local_6d4);
         break;
+#endif
       case 0x255:
       case 0x256:
         strcpy(local_2d4, g_CustomKeyNames[iVar15_00]);
@@ -515,6 +519,9 @@ LAB_0051390e:
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,local_2d4);
         break;
       default:
+#if !NOCTURNE_AUTHENTIC_GAMEPAD
+        nocturne_gamepad_suppress_nav(1);
+#endif
         while( true ) {
           if (g_CGamePtr->game_control == CONTROL_MODE_GAMEPAD) {
             core_game_cpp_CGame_resetKeyState_FUN_004dbe60(g_CGamePtr);
@@ -539,6 +546,9 @@ LAB_00514913:
         }
         iVar4_00 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_ESCAPE);
         if (iVar4_00 != 0) {
+#if !NOCTURNE_AUTHENTIC_GAMEPAD
+          nocturne_gamepad_suppress_nav(0);
+#endif
           engine_2d_c_clearInputAndWait_FUN_00403260();
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_a7c,0);
           goto LAB_0051390e;
@@ -596,6 +606,9 @@ LAB_00514a9c:
           } while (iVar4_00 < g_CustomKeyCount);
         }
         engine_keys_cpp_CKeys_toggleInputMask_FUN_005024b0(g_CKeysPtr,0);
+#if !NOCTURNE_AUTHENTIC_GAMEPAD
+        nocturne_gamepad_suppress_nav(0);
+#endif
       }
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_a7c,0);
       goto LAB_0051390e;
