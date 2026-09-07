@@ -29,8 +29,12 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
     g_CurrentLineNumber = 141;
     core_main_c_displayErrorAndQuit_FUN_00506f10("gEdFont must be set by the application.");
   }
+#if NOCTURNE_AUTHENTIC_HUD_SCALE
   g_FontCharacterHeight = g_EditorFont->max_char_width;
   g_FontCharacterWidth = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_EditorFont,0x6a);
+#else
+  nocturne_ui_editor_metrics();
+#endif
   shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_004a0890
             (this_ptr,g_FontCharacterHeight * 0x1e,g_FontCharacterWidth * 2,dialog_title,0);
   pcVar9 = output_buffer;
@@ -49,8 +53,14 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
       strcpy(local_360,pcVar2);
       strcat(local_360,directory_path);
       engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
+#if NOCTURNE_AUTHENTIC_HUD_SCALE
       engine_font_cpp_CBitFont_drawText_FUN_004cda80
                 (g_EditorFont,local_360,g_ClipLeft,g_ClipTop,g_DialogTextColor,-1);
+#else
+      nocturne_ui_draw_text
+                (g_EditorFont,local_360,g_ClipLeft,g_ClipTop,g_DialogTextColor,-1,
+                 nocturne_ui_editor_scale());
+#endif
     }
     iVar6 = g_DialogTextColor;
     if (bVar3) {
@@ -61,9 +71,18 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
     y = g_ClipTop + g_FontCharacterWidth;
     iVar7 = g_ClipLeft;
     pcVar9 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Filename: ");
+#if NOCTURNE_AUTHENTIC_HUD_SCALE
     engine_font_cpp_CBitFont_drawText_FUN_004cda80(g_EditorFont,pcVar9,iVar7,y,iVar6,color_value);
+#else
+    nocturne_ui_draw_text(g_EditorFont,pcVar9,iVar7,y,iVar6,color_value,
+                          nocturne_ui_editor_scale());
+#endif
     pcVar9 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Filename: ");
+#if NOCTURNE_AUTHENTIC_HUD_SCALE
     iVar6 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_EditorFont,pcVar9);
+#else
+    iVar6 = nocturne_ui_text_width(g_EditorFont,pcVar9,nocturne_ui_editor_scale());
+#endif
     shape_edittool_cpp_CInputString_draw_FUN_0049d9b0
               (&local_158,iVar6 + g_ClipLeft,g_ClipTop + g_FontCharacterWidth);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();

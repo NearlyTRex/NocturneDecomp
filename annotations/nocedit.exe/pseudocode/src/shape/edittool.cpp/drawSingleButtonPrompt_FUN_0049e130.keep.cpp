@@ -27,21 +27,34 @@ void __cdecl shape_edittool_cpp_drawSingleButtonPrompt_FUN_0049e130(char *title,
     g_CurrentLineNumber = 141;
     core_main_c_displayErrorAndQuit_FUN_00506f10("gEdFont must be set by the application.");
   }
+#if NOCTURNE_AUTHENTIC_HUD_SCALE
   g_FontCharacterHeight = g_EditorFont->max_char_width;
   g_FontCharacterWidth = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_EditorFont,0x6a);
+#else
+  nocturne_ui_editor_metrics();
+#endif
   iVar1 = g_WindowHeight / 0x60;
   iVar5 = shape_edittool_cpp_calculateButtonWidth_FUN_004a68e0("Cancel");
   iVar2 = shape_edittool_cpp_calculateButtonHeight_FUN_004a6970((char *)0x0);
   iVar8 = iVar1 * 2 + iVar2;
+#if NOCTURNE_AUTHENTIC_HUD_SCALE
   local_14 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_EditorFont,title);
   iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_EditorFont,message);
+#else
+  local_14 = nocturne_ui_text_width(g_EditorFont,title,nocturne_ui_editor_scale());
+  iVar3 = nocturne_ui_text_width(g_EditorFont,message,nocturne_ui_editor_scale());
+#endif
   if (local_14 < iVar3) {
     local_14 = iVar3;
   }
   if (local_14 < iVar5) {
     local_14 = iVar5;
   }
+#if NOCTURNE_AUTHENTIC_HUD_SCALE
   iVar5 = engine_font_cpp_CBitFont_getTextHeight_FUN_004cff40(g_EditorFont,message);
+#else
+  iVar5 = nocturne_ui_text_height(g_EditorFont,message,nocturne_ui_editor_scale());
+#endif
   shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_004a0890
             (g_CEditorToolsPtr,g_FontCharacterHeight * 4 + local_14,
              iVar5 + g_FontCharacterWidth * 2 + iVar8,title,0);
@@ -61,9 +74,16 @@ void __cdecl shape_edittool_cpp_drawSingleButtonPrompt_FUN_0049e130(char *title,
     shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(g_CEditorToolsPtr);
     shape_edittool_cpp_CEditorTools_drawWindowSeparator_FUN_004a1230(g_CEditorToolsPtr,1);
     engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
+#if NOCTURNE_AUTHENTIC_HUD_SCALE
     engine_font_cpp_CBitFont_drawText_FUN_004cda80
               (g_EditorFont,message,((g_ClipLeft + g_ClipRight) - iVar3) / 2,
                (((g_ClipTop + g_ClipBottom) - iVar5) - iVar8) / 2,color,-1);
+#else
+    nocturne_ui_draw_text
+              (g_EditorFont,message,((g_ClipLeft + g_ClipRight) - iVar3) / 2,
+               (((g_ClipTop + g_ClipBottom) - iVar5) - iVar8) / 2,color,-1,
+               nocturne_ui_editor_scale());
+#endif
     shape_edittool_cpp_CEdButton_paint_FUN_004a65e0(&local_108,1);
     shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_004a1380(g_CEditorToolsPtr,0);
 #if !NOCTURNE_AUTHENTIC_NETPLAY

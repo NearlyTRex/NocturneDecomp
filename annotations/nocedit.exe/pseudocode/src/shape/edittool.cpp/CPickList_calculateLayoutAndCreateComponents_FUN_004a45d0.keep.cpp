@@ -34,10 +34,18 @@ void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN
   int local_14;
   char *pcVar2;
   char cVar1;
+#if !NOCTURNE_AUTHENTIC_HUD_SCALE
+  int ui_scale;
 
+  ui_scale = nocturne_ui_editor_scale();
+#endif
 
   this_ptr->character_width = g_FontCharacterWidth + 1;
+#if NOCTURNE_AUTHENTIC_HUD_SCALE
   this_ptr->column_padding = 8;
+#else
+  this_ptr->column_padding = 8 * ui_scale;
+#endif
   this_ptr->tab_column_count = 1;
   memset(this_ptr->tab_column_widths,0,0x28);
   local_14 = 0;
@@ -56,7 +64,11 @@ void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN
           pcVar2 = pcVar3;
         }
         *pcVar8 = '\0';
+#if NOCTURNE_AUTHENTIC_HUD_SCALE
         iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_EditorFont,local_160);
+#else
+        iVar4 = nocturne_ui_text_width(g_EditorFont,local_160,ui_scale);
+#endif
         if (this_ptr->tab_column_widths[iVar10] < iVar4) {
           this_ptr->tab_column_widths[iVar10] = iVar4;
         }

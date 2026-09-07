@@ -20,8 +20,12 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0(CEdit
     g_CurrentLineNumber = 141;
     core_main_c_displayErrorAndQuit_FUN_00506f10("gEdFont must be set by the application.");
   }
+#if NOCTURNE_AUTHENTIC_HUD_SCALE
   g_FontCharacterHeight = g_EditorFont->max_char_width;
   g_FontCharacterWidth = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_EditorFont,0x6a);
+#else
+  nocturne_ui_editor_metrics();
+#endif
   g_ActiveRenderColor = text_color;
 
   scale_int = (int)ROUND(scale_factor * 256.0f);
@@ -54,11 +58,19 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0(CEdit
     if ((g_RenderVertexBuffer[i + 1].projected_vertex.screen_x & 0x80000000U) == 0) {
       _sprintf(local_34, "%c", g_AxisLabelChars[i]);
       engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
+#if NOCTURNE_AUTHENTIC_HUD_SCALE
       engine_font_cpp_CBitFont_drawText_FUN_004cda80
                 (g_EditorFont, local_34,
                  (int)(short)((uint)g_RenderVertexBuffer[i + 1].projected_vertex.screen_x >> 0x10),
                  (int)(short)((uint)g_RenderVertexBuffer[i + 1].projected_vertex.screen_y >> 0x10),
                  g_AxisLabelTextColor, -1);
+#else
+      nocturne_ui_draw_text
+                (g_EditorFont, local_34,
+                 (int)(short)((uint)g_RenderVertexBuffer[i + 1].projected_vertex.screen_x >> 0x10),
+                 (int)(short)((uint)g_RenderVertexBuffer[i + 1].projected_vertex.screen_y >> 0x10),
+                 g_AxisLabelTextColor, -1, nocturne_ui_editor_scale());
+#endif
     }
   }
   return;

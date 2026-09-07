@@ -32,11 +32,58 @@ int nocturne_ui_scale(void) {
 #endif
 }
 
+// The goggles' own authoring size, which is not the HUD's — see ui_scale.h.
+#define GOGGLES_BASE_WIDTH  320
+#define GOGGLES_BASE_HEIGHT 240
+
+// Round to nearest, the same way nocturne_ui_scale does, so a mode sitting
+// between two multiples steps to the closer one instead of truncating down.
+static int goggles_axis_scale(int extent, int base) {
+    int scale;
+    if (extent < 1) { return 1; }
+    scale = (extent + base / 2) / base;
+    if (scale < 1) { scale = 1; }
+    if (scale > NOCTURNE_GOGGLES_MAX_SCALE) { scale = NOCTURNE_GOGGLES_MAX_SCALE; }
+    return scale;
+}
+
+int nocturne_goggles_scale_x(void) {
+    return goggles_axis_scale(g_WindowWidth, GOGGLES_BASE_WIDTH);
+}
+
+int nocturne_goggles_scale_y(void) {
+    return goggles_axis_scale(g_WindowHeight, GOGGLES_BASE_HEIGHT);
+}
+
 int nocturne_ui_text_scale_supported(void) {
     // 16 and 32bpp glyph paths are both mirrored below. 8bpp is not: it is a
     // palette-index write with no blended form, and the engine never selects it
     // for this build (setScreenResolution asks for 32, the menu offers 16/32).
     return (g_BitsPerPixel == 0x10 || g_BitsPerPixel == 0x20) ? 1 : 0;
+}
+
+// =============================================================================
+// The editor/dialog widget layer
+// =============================================================================
+
+int nocturne_ui_editor_scale(void) {
+    // Never claim a scale the glyphs cannot follow: an unscaled box around
+    // unscaled text is the shipped look, whereas a scaled box around unscaled
+    // text is just broken.
+    if (!nocturne_ui_text_scale_supported()) { return 1; }
+    return nocturne_ui_scale();
+}
+
+void nocturne_ui_editor_metrics(void) {
+    int scale = nocturne_ui_editor_scale();
+
+    if (g_EditorFont == 0) { return; }
+    // Field names as Ghidra recovered them; the engine really does take the
+    // height global from max_char_width and the width global from the height of
+    // 'j'. Reproduced as-is so this stays a scale of the shipped values.
+    g_FontCharacterHeight = g_EditorFont->max_char_width * scale;
+    g_FontCharacterWidth =
+        nocturne_ui_char_height(g_EditorFont, 0x6a, scale);
 }
 
 // =============================================================================
@@ -336,6 +383,12 @@ int nocturne_ui_text_width(struct CBitFont *font, char *text, int scale) {
     int width = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80((CBitFont *)font, text);
     if (scale < 2 || !nocturne_ui_text_scale_supported()) { return width; }
     return width * scale;
+}
+
+int nocturne_ui_text_height(struct CBitFont *font, char *text, int scale) {
+    int height = engine_font_cpp_CBitFont_getTextHeight_FUN_004cff40((CBitFont *)font, text);
+    if (scale < 2 || !nocturne_ui_text_scale_supported()) { return height; }
+    return height * scale;
 }
 
 int nocturne_ui_char_height(struct CBitFont *font, int character_code, int scale) {

@@ -1,0 +1,27 @@
+// Name: shape_edittool.cpp_CEditorTools_createCenteredDialog_FUN_0049e940
+// Address: 0049e940
+// MANUAL RECONSTRUCTION
+// Address Range: [[0049e940, 0049e9c0]]
+// Convention: __cdecl
+// Signature: void __cdecl shape_edittool_cpp_CEditorTools_createCenteredDialog_FUN_0049e940(CEditorTools *this_ptr,char *dialog_text)
+
+#include "nocturne.h"
+
+void __cdecl shape_edittool_cpp_CEditorTools_createCenteredDialog_FUN_0049e940(CEditorTools *this_ptr,char *dialog_text)
+
+{
+  if (g_EditorFont == (CBitFont *)0x0) {
+    g_CurrentFilename = "..\\shape\\edittool.cpp";
+    g_CurrentLineNumber = 141;
+    core_main_c_displayErrorAndQuit_FUN_00506f10("gEdFont must be set by the application.");
+  }
+#if NOCTURNE_AUTHENTIC_HUD_SCALE
+  g_FontCharacterHeight = g_EditorFont->max_char_width;
+  g_FontCharacterWidth = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_EditorFont,0x6a);
+#else
+  nocturne_ui_editor_metrics();
+#endif
+  shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_004a0890
+            (this_ptr,(g_WindowWidth << 2) / 5,g_FontCharacterWidth,dialog_text,0);
+  return;
+}

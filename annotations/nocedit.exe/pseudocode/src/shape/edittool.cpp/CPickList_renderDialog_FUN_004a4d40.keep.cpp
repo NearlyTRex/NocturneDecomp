@@ -24,6 +24,9 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004a4d40(CPickList *t
   int x2;
   int y2;
   char local_15c [300];
+#if !NOCTURNE_AUTHENTIC_HUD_SCALE
+  int ui_scale;
+#endif
   int local_30;
   int local_2c;
   int local_28;
@@ -34,6 +37,9 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004a4d40(CPickList *t
   char cVar1;
   char *pcVar2;
 
+#if !NOCTURNE_AUTHENTIC_HUD_SCALE
+  ui_scale = nocturne_ui_editor_scale();
+#endif
   shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(g_CEditorToolsPtr);
 #if NOCTURNE_AUTHENTIC_EDITOR_BUTTON
   shape_edittool_cpp_CEditorTools_drawWindowSeparator_FUN_004a1230(g_CEditorToolsPtr,1);
@@ -83,8 +89,13 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004a4d40(CPickList *t
             }
             *pcVar9 = '\0';
             engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
+#if NOCTURNE_AUTHENTIC_HUD_SCALE
             engine_font_cpp_CBitFont_drawText_FUN_004cda80
                       (g_EditorFont,local_15c,local_14,local_1c,local_20,-1);
+#else
+            nocturne_ui_draw_text
+                      (g_EditorFont,local_15c,local_14,local_1c,local_20,-1,ui_scale);
+#endif
             local_14 = local_14 + this_ptr->tab_column_widths[col_index];
             col_index = col_index + 1;
           } while (*pcVar7 != '\0');

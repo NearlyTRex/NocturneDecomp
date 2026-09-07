@@ -25,7 +25,7 @@ void __cdecl core_set_cpp_CDemonSet_renderGogglesView_FUN_0056c990(CDemonSet *th
   int iVar1;
   CHero *this_ptr_00;
   int iVar2;
-  
+
   this_ptr_00 = g_HeroActors[g_LocalHeroIndex];
   this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
                           (&(this_ptr_00->base).model);
@@ -78,6 +78,7 @@ void __cdecl core_set_cpp_CDemonSet_renderGogglesView_FUN_0056c990(CDemonSet *th
     iVar5 = core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80
                       (this_ptr,&local_5c,(CVector3i *)0x0);
     iVar4 = core_fire_cpp_CFireEffect_hasActiveMuzzleFlash_FUN_004c93d0(g_CFireEffectPtr);
+#if NOCTURNE_AUTHENTIC_HUD_SCALE
     if (g_WindowHeight < 0xf1) {
       iVar1 = -g_CDemonLightInstance.shadow_map_width;
       iVar2 = -g_CDemonLightInstance.shadow_map_height;
@@ -86,6 +87,10 @@ void __cdecl core_set_cpp_CDemonSet_renderGogglesView_FUN_0056c990(CDemonSet *th
       iVar1 = g_CDemonLightInstance.shadow_map_width * -2;
       iVar2 = g_CDemonLightInstance.shadow_map_height * -2;
     }
+#else
+    iVar1 = -(g_CDemonLightInstance.shadow_map_width * nocturne_goggles_scale_x());
+    iVar2 = -(g_CDemonLightInstance.shadow_map_height * nocturne_goggles_scale_y());
+#endif
     if ((g_HeroActors[g_LocalHeroIndex]->inventory).battery_charge <= 0.0) {
       engine_special_cpp_clearScreen_FUN_005b3e70();
       return;

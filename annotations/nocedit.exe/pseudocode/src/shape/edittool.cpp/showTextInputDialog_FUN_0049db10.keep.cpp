@@ -23,8 +23,6 @@ int __cdecl shape_edittool_cpp_showTextInputDialog_FUN_0049db10(char *dialog_tit
   CInputString local_320;
   CEdButton local_1e0;
   CEdButton local_fc;
-  int local_18;
-  int local_14;
   char cVar1;
   char *source_string;
   
@@ -33,8 +31,12 @@ int __cdecl shape_edittool_cpp_showTextInputDialog_FUN_0049db10(char *dialog_tit
     g_CurrentLineNumber = 141;
     core_main_c_displayErrorAndQuit_FUN_00506f10("gEdFont must be set by the application.");
   }
+#if NOCTURNE_AUTHENTIC_HUD_SCALE
   g_FontCharacterHeight = g_EditorFont->max_char_width;
   g_FontCharacterWidth = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_EditorFont,0x6a);
+#else
+  nocturne_ui_editor_metrics();
+#endif
   engine_2d_c_clearInputAndWait_FUN_00403260();
   source_string = input_buffer;
   if ((flags & 1U) == 0) {

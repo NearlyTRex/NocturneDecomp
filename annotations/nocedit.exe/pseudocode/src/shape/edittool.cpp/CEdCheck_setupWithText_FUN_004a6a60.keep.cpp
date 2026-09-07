@@ -26,14 +26,28 @@ void __cdecl shape_edittool_cpp_CEdCheck_setupWithText_FUN_004a6a60(CEdCheck *th
     g_CurrentLineNumber = 141;
     core_main_c_displayErrorAndQuit_FUN_00506f10("gEdFont must be set by the application.");
   }
+#if NOCTURNE_AUTHENTIC_HUD_SCALE
   g_FontCharacterHeight = g_EditorFont->max_char_width;
   g_FontCharacterWidth = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_EditorFont,0x6a);
+#else
+  nocturne_ui_editor_metrics();
+#endif
+#if NOCTURNE_AUTHENTIC_HUD_SCALE
   iVar2 = engine_font_cpp_CBitFont_getTextHeight_FUN_004cff40(g_EditorFont,this_ptr->checkbox_text);
+#else
+  iVar2 = nocturne_ui_text_height(g_EditorFont,this_ptr->checkbox_text,
+                                  nocturne_ui_editor_scale());
+#endif
   this_ptr->right_boundary = this_ptr->y_position + iVar2;
   iVar3 = shape_edittool_cpp_CEdCheck_calculateScaledWidth_FUN_004a6b70(this_ptr);
   iVar2 = this_ptr->x_position;
   iVar4 = shape_edittool_cpp_CEdCheck_calculateSpacing_FUN_004a6be0(this_ptr);
+#if NOCTURNE_AUTHENTIC_HUD_SCALE
   iVar5 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_EditorFont,this_ptr->checkbox_text);
+#else
+  iVar5 = nocturne_ui_text_width(g_EditorFont,this_ptr->checkbox_text,
+                                 nocturne_ui_editor_scale());
+#endif
   this_ptr->total_width = iVar2 + iVar3 + iVar4 + iVar5;
   return;
 }

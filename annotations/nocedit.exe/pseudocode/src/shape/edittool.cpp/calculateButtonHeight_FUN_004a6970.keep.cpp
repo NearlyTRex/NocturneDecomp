@@ -1,0 +1,42 @@
+// Name: shape_edittool.cpp_calculateButtonHeight_FUN_004a6970
+// Address: 004a6970
+// MANUAL RECONSTRUCTION
+// Address Range: [[004a6970, 004a69fe]]
+// Convention: __cdecl
+// Signature: int __cdecl shape_edittool_cpp_calculateButtonHeight_FUN_004a6970(char *button_text)
+
+#include "nocturne.h"
+
+int __cdecl shape_edittool_cpp_calculateButtonHeight_FUN_004a6970(char *button_text)
+
+{
+  int iVar1;
+  
+  if (g_EditorFont == (CBitFont *)0x0) {
+    g_CurrentFilename = "..\\shape\\edittool.cpp";
+    g_CurrentLineNumber = 141;
+    core_main_c_displayErrorAndQuit_FUN_00506f10("gEdFont must be set by the application.");
+  }
+#if NOCTURNE_AUTHENTIC_HUD_SCALE
+  g_FontCharacterHeight = g_EditorFont->max_char_width;
+  g_FontCharacterWidth = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_EditorFont,0x6a);
+#else
+  nocturne_ui_editor_metrics();
+#endif
+#if NOCTURNE_AUTHENTIC_HUD_SCALE
+  if (button_text == (char *)0x0) {
+    iVar1 = g_EditorFont->max_char_height;
+  }
+  else {
+    iVar1 = engine_font_cpp_CBitFont_getTextHeight_FUN_004cff40(g_EditorFont,button_text);
+  }
+#else
+  if (button_text == (char *)0x0) {
+    iVar1 = g_EditorFont->max_char_height * nocturne_ui_editor_scale();
+  }
+  else {
+    iVar1 = nocturne_ui_text_height(g_EditorFont,button_text,nocturne_ui_editor_scale());
+  }
+#endif
+  return g_WindowHeight / 0x50 + iVar1;
+}

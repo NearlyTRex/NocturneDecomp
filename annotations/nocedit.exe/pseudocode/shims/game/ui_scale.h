@@ -36,6 +36,28 @@ extern "C" {
 // and so on, capped so nothing can run away.
 int nocturne_ui_scale(void);
 
+// Integer scale for the goggles view, per axis. This one is not measured
+// against the HUD's 640x480: CDemonLight::drawShadowDepthBuffer blits the
+// shadow map 1:1 up to 320x240 and doubles past it, so the resolution
+// everything else is authored for already draws the goggles at 2x.
+//
+// The axes are counted separately because the shipped build counts them
+// separately — it tests width against 320 and height against 240 in different
+// places — and that is not academic: 320x400 is one of the nine modes in
+// g_ResolutionTable, and it is the one where the two disagree, doubling
+// vertically while staying 1:1 across. Rounding each axis to its own base
+// reproduces all nine shipped modes exactly (320x400 included) and holds the
+// same fraction of the screen above them.
+//
+// Both CDemonSet::renderGogglesView (which centres the image) and
+// drawShadowDepthBuffer (which draws it) must use these same numbers.
+int nocturne_goggles_scale_x(void);
+int nocturne_goggles_scale_y(void);
+
+// Ceiling on what those can return, so the blit can size the row-pointer array
+// it collects each source row into. Twice the HUD's own cap.
+#define NOCTURNE_GOGGLES_MAX_SCALE 8
+
 // CAlphaBitmap::display with each source pixel expanded to a scale x scale
 // block. Alpha blending, palette init and edge clipping all match the engine's.
 void nocturne_ui_blit_alpha(struct CAlphaBitmap *bitmap, int x, int y, int alpha, int scale);
@@ -56,11 +78,38 @@ int nocturne_ui_draw_text(struct CBitFont *font, char *text, int x, int y,
 
 // Scaled metrics, so callers lay out against what will actually be drawn.
 int nocturne_ui_text_width(struct CBitFont *font, char *text, int scale);
+int nocturne_ui_text_height(struct CBitFont *font, char *text, int scale);
 int nocturne_ui_char_height(struct CBitFont *font, int character_code, int scale);
 
 // Whether nocturne_ui_draw_text will honour `scale` at the current bit depth.
 // Callers use it to keep their wrap width and metrics in step with the text.
 int nocturne_ui_text_scale_supported(void);
+
+// =============================================================================
+// The editor/dialog widget layer (CPickList, CEditorTools windows, CEdButton,
+// CEdScrollBar) — the in-game pause menu among them
+// =============================================================================
+//
+// That layer measures everything in two globals, g_FontCharacterWidth and
+// g_FontCharacterHeight, which every dialog entry point recomputes from
+// g_EditorFont before doing anything else. Box size, row pitch, button extents,
+// scrollbar geometry and the mouse hit-testing that shares the same arithmetic
+// all derive from them, so setting them scaled carries the whole widget — but
+// only if the text drawn into it is scaled to match, or the box grows around
+// glyphs that stayed small.
+//
+// nocturne_ui_editor_scale() is the number to pass to nocturne_ui_draw_text and
+// friends at those call sites, so the two halves cannot drift apart.
+
+// The scale the dialog layer is running at: nocturne_ui_scale(), or 1 when the
+// bit depth has no scaled glyph path and the text could not follow.
+int nocturne_ui_editor_scale(void);
+
+// Set g_FontCharacterWidth/g_FontCharacterHeight for the current g_EditorFont
+// at that scale. Replaces the two-line recompute the dialog entry points open
+// with.
+// Safe with a null g_EditorFont — callers already fatal on that themselves.
+void nocturne_ui_editor_metrics(void);
 
 #ifdef __cplusplus
 }

@@ -31,8 +31,12 @@ void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(CEd
     g_CurrentLineNumber = 141;
     core_main_c_displayErrorAndQuit_FUN_00506f10("gEdFont must be set by the application.");
   }
+#if NOCTURNE_AUTHENTIC_HUD_SCALE
   g_FontCharacterHeight = g_EditorFont->max_char_width;
   g_FontCharacterWidth = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_EditorFont,0x6a);
+#else
+  nocturne_ui_editor_metrics();
+#endif
   if (g_WindowStackCount < 1) {
     g_CurrentFilename = "..\\shape\\edittool.cpp";
     g_CurrentLineNumber = 2183;
@@ -85,13 +89,25 @@ void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(CEd
   iVar8 = (pSVar7->rect).left;
   iVar7 = g_WindowStack[iVar3].rect.right;
   color_mode = g_TitleBarColor;
+#if NOCTURNE_AUTHENTIC_HUD_SCALE
   iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_EditorFont,text);
   engine_font_cpp_CBitFont_drawText_FUN_004cda80
             (g_EditorFont,text,((iVar8 + iVar7) - iVar4) / 2,y,color_mode,color_value);
   iVar5 = engine_font_cpp_CBitFont_getTextHeight_FUN_004cff40(g_EditorFont,text);
+#else
+  iVar4 = nocturne_ui_text_width(g_EditorFont,text,nocturne_ui_editor_scale());
+  nocturne_ui_draw_text
+            (g_EditorFont,text,((iVar8 + iVar7) - iVar4) / 2,y,color_mode,color_value,
+             nocturne_ui_editor_scale());
+  iVar5 = nocturne_ui_text_height(g_EditorFont,text,nocturne_ui_editor_scale());
+#endif
   iVar8 = g_FontCharacterWidth + iVar5;
 #if NOCTURNE_AUTHENTIC_EDITOR_BUTTON
+#if NOCTURNE_AUTHENTIC_HUD_SCALE
   iVar7 = engine_font_cpp_CBitFont_getTextHeight_FUN_004cff40(g_EditorFont,"j");
+#else
+  iVar7 = nocturne_ui_text_height(g_EditorFont,"j",nocturne_ui_editor_scale());
+#endif
   if (iVar8 < iVar7 + g_FontCharacterWidth) {
     iVar8 = iVar7 + g_FontCharacterWidth;
   }

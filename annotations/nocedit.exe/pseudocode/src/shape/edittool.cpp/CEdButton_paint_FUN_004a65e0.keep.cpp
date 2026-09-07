@@ -31,12 +31,24 @@ void __cdecl shape_edittool_cpp_CEdButton_paint_FUN_004a65e0(CEdButton *this_ptr
             (this_ptr->left,g_ClipTop,this_ptr->right,this_ptr->bottom,this_ptr->button_state);
   text = this_ptr->button_text;
   g_ClipTop = iVar9;
+#if NOCTURNE_AUTHENTIC_HUD_SCALE
   iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_EditorFont,text);
   iVar3 = engine_font_cpp_CBitFont_getTextHeight_FUN_004cff40(g_EditorFont,text);
   iVar4 = engine_font_cpp_CBitFont_getCharYOffset_FUN_004d0200(g_EditorFont,0x41);
+#else
+  iVar2 = nocturne_ui_text_width(g_EditorFont,text,nocturne_ui_editor_scale());
+  iVar3 = nocturne_ui_text_height(g_EditorFont,text,nocturne_ui_editor_scale());
+  iVar4 = engine_font_cpp_CBitFont_getCharYOffset_FUN_004d0200(g_EditorFont,0x41) *
+          nocturne_ui_editor_scale();
+#endif
   iVar10 = this_ptr->button_state + ((this_ptr->right + this_ptr->left) - iVar2) / 2;
   iVar9 = this_ptr->button_state + ((this_ptr->top + this_ptr->bottom) - (iVar3 + iVar4)) / 2;
+#if NOCTURNE_AUTHENTIC_HUD_SCALE
   engine_font_cpp_CBitFont_drawText_FUN_004cda80(g_EditorFont,text,iVar10,iVar9,g_UITextColor,-1);
+#else
+  nocturne_ui_draw_text(g_EditorFont,text,iVar10,iVar9,g_UITextColor,-1,
+                        nocturne_ui_editor_scale());
+#endif
   g_ActiveRenderColor = g_UITextColor;
   if (draw_border_flag != 0) {
     shape_edittool_cpp_drawDashedLine_FUN_0049d290
@@ -56,8 +68,13 @@ void __cdecl shape_edittool_cpp_CEdButton_paint_FUN_004a65e0(CEdButton *this_ptr
   }
   strcpy((char *)local_dc,this_ptr->button_text);
   *pbVar12 = 0;
+#if NOCTURNE_AUTHENTIC_HUD_SCALE
   iVar5 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_EditorFont,(char *)local_dc);
   uVar5 = iVar5 + g_EditorFont->char_spacing;
+#else
+  iVar5 = nocturne_ui_text_width(g_EditorFont,(char *)local_dc,nocturne_ui_editor_scale());
+  uVar5 = iVar5 + g_EditorFont->char_spacing * nocturne_ui_editor_scale();
+#endif
   bVar3 = this_ptr->button_text[0];
   uVar7 = toupper((uint)(byte)this_ptr->shortcut_key);
   if (uVar7 == bVar3) {
@@ -75,11 +92,21 @@ void __cdecl shape_edittool_cpp_CEdButton_paint_FUN_004a65e0(CEdButton *this_ptr
   shape_edittool_cpp_draw3DBorder_FUN_004a58f0
             (this_ptr->left,this_ptr->top,this_ptr->right,this_ptr->bottom,this_ptr->button_state);
   text = this_ptr->button_text;
+#if NOCTURNE_AUTHENTIC_HUD_SCALE
   iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_EditorFont,text);
   iVar3 = engine_font_cpp_CBitFont_getTextHeight_FUN_004cff40(g_EditorFont,text);
+#else
+  iVar2 = nocturne_ui_text_width(g_EditorFont,text,nocturne_ui_editor_scale());
+  iVar3 = nocturne_ui_text_height(g_EditorFont,text,nocturne_ui_editor_scale());
+#endif
   iVar10 = ((this_ptr->right + this_ptr->left) - iVar2) / 2;
   iVar9 = ((this_ptr->top + this_ptr->bottom) - iVar3) / 2;
+#if NOCTURNE_AUTHENTIC_HUD_SCALE
   engine_font_cpp_CBitFont_drawText_FUN_004cda80(g_EditorFont,text,iVar10,iVar9,g_UITextColor,-1);
+#else
+  nocturne_ui_draw_text(g_EditorFont,text,iVar10,iVar9,g_UITextColor,-1,
+                        nocturne_ui_editor_scale());
+#endif
   return;
 #endif
 }
