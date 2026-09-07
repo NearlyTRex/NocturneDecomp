@@ -468,6 +468,38 @@ the same run — two of that session's conclusions turned out to be smaller than
 
 ---
 
+### [19-resolution_and_aspect_ratio/](19-resolution_and_aspect_ratio/)
+
+What the engine can be pushed to on resolution, where the real ceilings are, and why widescreen
+is a content problem rather than a code one.
+
+| File | Description |
+|------|-------------|
+| `README.md` | The two ceilings, the two coordinate spaces, the resolution list, aspect-ratio options |
+
+**Key outcomes:**
+- **The software *rasteriser* has no resolution limit — software *mode* does.** The rasteriser
+  writes into `g_ScreenBufferArray[scanline_y]` at the native resolution and
+  `CDemonCamera::init`'s clamp sizes the lighting grid, but two renderer-owned pieces sit past
+  480 lines: `lockAndRenderToBuffer` takes the renderer's hold buffer (fatal with no renderer
+  DLL) and `compositeLightmapToFramebuffer` maps the 640x480 lighting grid to the screen
+  row-for-row. The acceleration gate is kept, and is not part of the resolution flag.
+- **`g_ResolutionTable[9]` is not the Options list** — its only reader is `initGraphicsSystem`,
+  for the 8bpp startup mode. The menu was a hardcoded `game_pixy` chain, which is why 1600x1200
+  was unreachable and 400x300 could be labelled and stepped away from but never selected.
+- **Two unguarded ceilings remain:** `g_ScreenBufferArray[1200]` and friends cap height at 1200
+  lines; `g_ReciprocalLookupTable[1600]`, indexed by *pixel span*, caps software spans at ~1598.
+  1920x1080 clears the first and fails the second — in software only.
+- **Above 480 lines two coordinate spaces coexist** (native, and the camera's 640x480 virtual
+  space that the renderer stretches). Elements that must line up have to share one. Getting this
+  wrong put the inventory description text up to 104 px off its panel, correct at 640x480 and
+  1280x1024 purely because those are where the stretch is a whole number.
+- **True widescreen is not available from the shipped backdrops** — they are fixed 640x480 8-bit
+  images and the pixels for a wider view do not exist. Pillarboxing is a contained change in the
+  presenter we own; re-rendering backdrops is a content project with an unverified premise.
+
+---
+
 ## Standalone Documents
 
 ### [ghidra_suspect_patterns.md](ghidra_suspect_patterns.md)
@@ -538,6 +570,35 @@ Ghidra source location: `~/Repositories/Ghidra/`
 ---
 
 ## Changelog
+
+### 2026-09-07
+- **`19-resolution_and_aspect_ratio/` added.** `g_ResolutionTable[9]` turned out not to be the
+  Options list at all — its only reader is `initGraphicsSystem`, for the 8bpp startup mode, and
+  the menu is a hardcoded `game_pixy` chain. That left 1600x1200 unreachable and 400x300 a
+  phantom with a label and step cases in both directions but nothing ever assigning it. Replaced
+  by one ordered table behind `NOCTURNE_AUTHENTIC_RESOLUTION_LIST`, driving label and stepping
+  from the same source.
+- **The software cap was lifted and then restored, which is the useful finding.** The rasteriser
+  really does write at native resolution, but that is not the whole path: past 480 lines
+  `CDemonCamera::lockAndRenderToBuffer` locks the *renderer's* hold buffer, and `lockHoldBuffer`
+  returns 0 with no renderer DLL — 1600x1200 in software quit at `dcamera.cpp:3639`. Removing
+  that fatal would not be enough either: `compositeLightmapToFramebuffer` walks the 640x480
+  lighting grid and the screen with one shared index, so the per-pixel lighting — which *is* the
+  software path's lighting — would cover only a corner. The acceleration gate is kept
+  unconditionally and documented as a correctness requirement rather than an authenticity choice
+- **Two unguarded ceilings documented:** height 1200 (`g_ScreenBufferArray` and two siblings,
+  filled straight off `g_WindowHeight`) and software span ~1598 (`g_ReciprocalLookupTable`,
+  indexed by pixel span). 1920x1080 clears the first and fails the second, in software only.
+- **The two coordinate spaces above 480 lines written up**, after they caused a second
+  misalignment: `NOCTURNE_AUTHENTIC_HUD_ICON_SPACE` had moved the inventory icon panel into
+  camera space and left its description text in native space, so the text sat up to 104 px off
+  the panel — correct at 640x480 and 1280x1024 only because those are where `W/640` is a whole
+  number. Also fixed the goggles view, which scales per axis because the shipped blit tests
+  width against 320 and height against 240 separately (320x400 is the mode where that matters).
+- **Widescreen assessed as a content problem.** Backdrops are fixed 640x480 8-bit paletted
+  images read at a literal size, and `loadImage` stretches to fill with no aspect handling.
+  Pillarboxing lands in the presenter we own; true widescreen needs backdrops re-rendered at a
+  wider FOV, which is **UNVERIFIED** as possible from the shipped PODs
 
 ### 2026-09-04
 - **`15-iris_fade_transition/` FIXED — the opening iris snaps onto the hero part-way through its growth.** Not a second trigger, which was the obvious suspicion: there is exactly one `beginFadeIn`, the state machine runs `1 → 2 → 0` once, and `updateFadeTransition` was verified faithful instruction by instruction against `0x4e09c0`. The cause is that `renderIrisFade` re-centres on the focus actor every frame (`CALL` at `0x4e0add`) while `calculateIrisFadeCenter` only writes the centre *while that actor is on screen* — so a hero who walks into the shot after the load moves the centre mid-growth. Measured: the centre held at `(320,240)` until 46 % of the fade, then jumped ~250 px to `(400,477)` while the disc radius was only ~296, which is why it reads as starting over. Fixed by pinning the **opening** iris (type 2) only; the closing iris still tracks the hero. After the fix, one centre change at 0 %. Deviation from an original-game defect, gated by `NOCTURNE_AUTHENTIC_IRIS_FADE`

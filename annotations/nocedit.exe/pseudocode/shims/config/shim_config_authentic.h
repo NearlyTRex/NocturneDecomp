@@ -378,6 +378,37 @@
 #define NOCTURNE_AUTHENTIC_RESOLUTION_STEP 0
 #endif
 
+// NOCTURNE_AUTHENTIC_RESOLUTION_LIST
+//   Which resolutions the Graphics Options selector offers, and whether the
+//   software renderer is allowed any of the larger ones.
+//   The shipped selector is a hardcoded chain of game_pixy comparisons that can
+//   reach six modes (320x240, 512x384, 640x480, 800x600, 1024x768, 1280x1024).
+//   It is not driven by g_ResolutionTable[9] — that table's only reader is
+//   engine/2d.c initGraphicsSystem, for the 8bpp mode the external SETUP
+//   program picked — so 1600x1200 sits in the table unreachable, and 400x300
+//   has a label and a step case in both directions while nothing ever assigns
+//   it. Everything above 640x480 is additionally gated on hardware
+//   acceleration, and the menu clamps back to 640x480 whenever acceleration is
+//   off.
+//   The acceleration gate stays, and is NOT part of this flag: software really
+//   cannot go above 480 lines. The rasteriser itself is fine — it writes
+//   scanlines straight into g_ScreenBufferArray at the native resolution — but
+//   CDemonCamera::lockAndRenderToBuffer routes the lightmap composite through
+//   the renderer's hold buffer past 480 lines, and lockHoldBuffer returns 0
+//   with no renderer DLL loaded, which is fatal. Even with that fixed,
+//   compositeLightmapToFramebuffer maps the 640x480 lighting grid onto
+//   g_ScreenBufferArray row-for-row, so the per-pixel lighting would cover only
+//   a 640x480 corner of a larger screen.
+//   1: shipped behaviour — the six-mode chain.
+//   0: dev-friendly default. One ordered table in shims/game/resolution.cpp
+//      drives both the label and the stepping, so the two cannot disagree; it
+//      adds 1600x1200 and makes 400x300 reachable. Accelerated only, as before.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_RESOLUTION_LIST=1.
+#ifndef NOCTURNE_AUTHENTIC_RESOLUTION_LIST
+#define NOCTURNE_AUTHENTIC_RESOLUTION_LIST 0
+#endif
+
 // NOCTURNE_AUTHENTIC_HUD_SCALE
 //   The in-game HUD is fixed-size 640x480 pixel art — the battery and health
 //   bitmaps, the ammo icons, and every string, since CBitFont draws glyph

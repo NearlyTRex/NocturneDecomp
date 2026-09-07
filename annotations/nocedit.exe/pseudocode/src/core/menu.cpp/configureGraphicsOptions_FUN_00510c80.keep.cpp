@@ -133,6 +133,7 @@ LAB_00510e1f:
       pCVar4->game_pixx = 0x280;
     }
 #endif
+#if NOCTURNE_AUTHENTIC_RESOLUTION_LIST
     iVar7 = g_CGamePtr->game_pixy;
     if (iVar7 == 0xf0) {
       pcVar14 = "Resolution : 320x240";
@@ -158,6 +159,10 @@ LAB_00510e1f:
     else {
       pcVar14 = "Resolution : 320x240";
     }
+#else
+    pcVar14 = (char *)nocturne_resolution_label(g_CGamePtr->game_pixx,
+                                                g_CGamePtr->game_pixy);
+#endif
     pcVar14 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(pcVar14);
     _sprintf(g_GraphicsMenuTextBuffers[0],pcVar14);
     uVar3 = g_CGamePtr->halo_mode;
@@ -335,6 +340,13 @@ LAB_00510f71:
     iVar3 = g_GraphicsCardCount;
     switch(iVar7) {
     case 0:
+#if !NOCTURNE_AUTHENTIC_RESOLUTION_LIST
+      nocturne_resolution_step(g_CGamePtr->game_pixx,g_CGamePtr->game_pixy,
+                               (g_MenuLeftRightPressed == 1) ? -1 : 1,
+                               &g_CGamePtr->game_pixx,&g_CGamePtr->game_pixy);
+      iVar6 = g_CurrentGraphicsBoard;
+      iVar3 = g_GraphicsCardCount;
+#else
       if (g_MenuLeftRightPressed == 1) {
         if (((g_CGamePtr->game_pixy == 0xf0) && (24000000 < local_1c[0])) && (bVar12)) {
           g_CGamePtr->game_pixx = 0x500;
@@ -433,6 +445,7 @@ LAB_005114dd:
           iVar3 = g_GraphicsCardCount;
         }
       }
+#endif
       break;
     case 1:
       if (g_MenuLeftRightPressed == 1) {

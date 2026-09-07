@@ -60,6 +60,10 @@
 // the DirectSound the shipped enumerator hardcodes.
 #include "core/audio_backend.h"
 
+// The Graphics Options resolution list (nocturne_resolution_*) — one ordered
+// table in place of the shipped selector's hardcoded game_pixy chain.
+#include "game/resolution.h"
+
 // The per-pixel light/fog grid (nocturne_lighting_bridge*) — declared here so
 // CDemonCamera::compositeLightmapToFramebuffer reaches it through nocturne.h.
 // Its one call site is gated on NOCTURNE_AUTHENTIC_SHADER_LIGHTING; the shim
