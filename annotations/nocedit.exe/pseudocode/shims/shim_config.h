@@ -55,6 +55,11 @@
 // running. Separate from gl_present.h, which names SDL types.
 #include "gl/gl_version.h"
 
+// Audio backend query (nocturne_audio_backend_name) — the same idea one screen
+// over: the Sound Options Device line names the host API SDL opened rather than
+// the DirectSound the shipped enumerator hardcodes.
+#include "core/audio_backend.h"
+
 // The per-pixel light/fog grid (nocturne_lighting_bridge*) — declared here so
 // CDemonCamera::compositeLightmapToFramebuffer reaches it through nocturne.h.
 // Its one call site is gated on NOCTURNE_AUTHENTIC_SHADER_LIGHTING; the shim

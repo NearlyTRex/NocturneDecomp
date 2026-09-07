@@ -92,5 +92,5 @@
 //   a pad newer than the linked SDL can be taught without rebuilding. Resolved
 //   the same way the game resolves its own data paths; absent is not an error.
 #ifndef NOCTURNE_PAD_MAPPING_FILE
-#define NOCTURNE_PAD_MAPPING_FILE ".\\system\\gamecontrollerdb.txt"
+#define NOCTURNE_PAD_MAPPING_FILE ".\\gamecontrollerdb.txt"
 #endif

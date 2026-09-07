@@ -115,6 +115,26 @@
 #define NOCTURNE_AUTHENTIC_RENDERER_DLL 0
 #endif
 
+// NOCTURNE_AUTHENTIC_SOUND_DEVICE
+//   What the Sound Options "Device : " line calls the API behind the device.
+//   The device names themselves are enumerated and are correct either way; this
+//   is only the prefix the game sprintfs around them.
+//   1: matches the shipped binary — "DirectSound: <device>", which was true on
+//      Windows and is not true here. Nothing in this build reaches DirectSound;
+//      the dsound shim mixes into an SDL audio device like everything else.
+//   0: dev-friendly default. The prefix is the host audio API SDL actually
+//      opened ("PulseAudio: <device>", "PipeWire: <device>", ...), from
+//      nocturne_audio_backend_name(). Same shape as the shipped label, with
+//      content that is true of the machine it is running on.
+//
+//   The sibling waveOut entry is untouched by this and keeps its "WavOutWrite: "
+//   prefix, which comes from the localized string table rather than from code.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_SOUND_DEVICE=1.
+#ifndef NOCTURNE_AUTHENTIC_SOUND_DEVICE
+#define NOCTURNE_AUTHENTIC_SOUND_DEVICE 0
+#endif
+
 // NOCTURNE_AUTHENTIC_MIRROR_CULL
 //   Which camera an actor's bounding box is tested against, and so whether
 //   actors appear in mirrors. CBoundingBox3D::isVisibleWithCamera projects the
