@@ -274,6 +274,25 @@ namespace {
 void nav_press(int nav) {
     g_KeyboardState[kNavCode[nav]] = '\x01';
     s_nav_ours[nav] = true;
+
+    // g_KeyboardState is only half the input the game reads. The other half is
+    // the typed-character ring, fed exclusively from WM_CHAR, and the screens
+    // that ask "has anything been pressed" ask it rather than the key state —
+    // playMovie's skip test is wasKeyPressed(), and so are the text-entry
+    // dialogs and the button prompts. Without a character in the ring a pad
+    // cannot skip a cutscene or dismiss a prompt.
+    //
+    // Only confirm and cancel enqueue one, and only the two control characters
+    // a keyboard would have produced for Return and Escape — which are already
+    // in the set the user32 shim synthesizes WM_CHAR for. The directions
+    // deliberately do not: CPickList::handleInput checks the ring BEFORE its
+    // arrow-key block and treats whatever it finds as incremental-search text,
+    // so a character per stick tick would eat the list's own navigation.
+    if (nav == kNavConfirm) {
+        wincore_winrun_cpp_enqueueInput_FUN_005f2f30(0x0d);
+    } else if (nav == kNavCancel) {
+        wincore_winrun_cpp_enqueueInput_FUN_005f2f30(0x1b);
+    }
 }
 
 void nav_release(int nav) {

@@ -43,6 +43,7 @@
 #include "system/mmsystem.h"
 #include "win32/mci_video.h"
 #include "gl/gl_present.h"
+#include "game/movie_audio.h"
 #include "core/debug_log.h"
 #include <SDL.h>
 
@@ -448,6 +449,22 @@ static void movie_queue_audio(AVFrame *src) {
                           (const uint8_t**)src->extended_data, src->nb_samples);
     if (got > 0) {
         int bytes = got * s_movie.audio_channels * 2;
+
+        // The game's own level for movies, zero while sound is muted. Silence
+        // is still QUEUED rather than skipped: the end-of-movie test is
+        // "nothing left queued", and dropping the buffers instead of zeroing
+        // them would end a muted movie as soon as the device drained.
+        const float gain = nocturne_movie_audio_gain();
+        if (gain <= 0.0f) {
+            memset(out_buf, 0, (size_t)bytes);
+        } else if (gain < 1.0f) {
+            int16_t *samples = (int16_t *)out_buf;
+            const int count = got * s_movie.audio_channels;
+            for (int i = 0; i < count; i++) {
+                samples[i] = (int16_t)((float)samples[i] * gain);
+            }
+        }
+
         if (SDL_QueueAudio(s_movie.audio_dev, out_buf, (Uint32)bytes) == 0) {
             s_movie.audio_bytes_queued += (uint64_t)bytes;
         }

@@ -46,7 +46,13 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_00511e50(void)
   int bars_per_channel;
   int bar_count;
   byte bVar15;
-  
+#if !NOCTURNE_AUTHENTIC_FMV
+  int movie_item;
+  int movie_line;
+  int movie_slot;
+  float movie_volume;
+#endif
+
   bVar15 = 0;
   local_3c[0] = 0;
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
@@ -172,6 +178,33 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_00511e50(void)
       strcpy(pcVar4,pcVar12);
       local_24 = 9;
     }
+#if !NOCTURNE_AUTHENTIC_FMV
+    movie_item = local_24;
+    movie_volume = nocturne_movie_volume_get();
+    pcVar4 = g_SoundMenuTextBuffers[movie_item];
+    if (movie_volume <= 0.0f) {
+      pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Movie Vol : Off");
+      _sprintf(pcVar4,pcVar12);
+    }
+    else {
+      pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Movie Vol : ");
+      strcpy(pcVar4,pcVar12);
+      _sprintf(local_248,"%d",(int)(movie_volume * 100.0f + 0.5f));
+      strcat(pcVar4,local_248);
+      pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("%.");
+      strcat(pcVar4,pcVar12);
+    }
+    local_24 = movie_item + 1;
+    movie_line = 4;
+    for (movie_slot = 0; movie_slot < movie_line; movie_slot = movie_slot + 1) {
+      g_SoundOptionsMenuPointers[movie_slot] = g_SoundMenuTextBuffers[movie_slot];
+    }
+    g_SoundOptionsMenuPointers[movie_line] = g_SoundMenuTextBuffers[movie_item];
+    for (movie_slot = movie_line + 1; movie_slot <= movie_item;
+         movie_slot = movie_slot + 1) {
+      g_SoundOptionsMenuPointers[movie_slot] = g_SoundMenuTextBuffers[movie_slot + -1];
+    }
+#endif
     g_AudioVisualizationCounter = g_AudioVisualizationCounter + g_GlobalDeltaTimeInt * 0x18;
     if (0x7ffff < g_AudioVisualizationCounter) {
       g_AudioVisualizationCounter = g_AudioVisualizationCounter + -0x80000;
@@ -214,6 +247,36 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_00511e50(void)
     iVar3 = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000
                       (g_SoundOptionsMenuPointers,local_24,local_3c,0xe1,pcVar4);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
+#if !NOCTURNE_AUTHENTIC_FMV
+    if (iVar3 == movie_line) {
+      movie_volume = nocturne_movie_volume_get();
+      if (g_MenuLeftRightPressed == 1) {
+        if (movie_volume <= 0.0f) {
+          movie_volume = 1.0;
+        }
+        else {
+          movie_volume = movie_volume - 0.2f;
+          if (movie_volume < 0.01f) {
+            movie_volume = 0.0;
+          }
+        }
+      }
+      else if (1.01f < movie_volume + 0.2f) {
+        movie_volume = 0.0;
+      }
+      else {
+        movie_volume = movie_volume + 0.2f;
+        if (0.98999999999999999f < movie_volume) {
+          movie_volume = 1.0;
+        }
+      }
+      nocturne_movie_volume_set(movie_volume);
+      iVar3 = -1;   /* consumed; matches no case below */
+    }
+    else if ((movie_line < iVar3) && (iVar3 <= movie_item)) {
+      iVar3 = iVar3 + -1;
+    }
+#endif
     switch(iVar3) {
     case 0:
       iVar3 = sound_sndmain_cpp_isSoundEnabled_FUN_005a96b0();

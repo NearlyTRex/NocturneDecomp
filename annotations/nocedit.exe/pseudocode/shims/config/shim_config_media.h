@@ -5,7 +5,7 @@
 // =============================================================================
 //
 // Playback that has no authentic answer, because the shipped game never did it
-// at all. One flag so far.
+// at all.
 //
 // The two media flags that DO have an authentic answer — AUTHENTIC_VOICE and
 // AUTHENTIC_FMV, both describing something the shipped build silently declined
@@ -32,4 +32,16 @@
 //   Override with -DNOCTURNE_ATTRACT_MOVIES=0.
 #ifndef NOCTURNE_ATTRACT_MOVIES
 #define NOCTURNE_ATTRACT_MOVIES 1
+#endif
+
+// NOCTURNE_MOVIE_VOLUME_DEFAULT
+//   Where the "Movie Vol" line in Sound Options starts, as a percentage, before
+//   the player has ever set it. Another addition with no authentic side: the
+//   shipped game reached movies through MCI, which carried the desktop's volume
+//   and none of the game's own, and in practice never played one at all.
+//
+//   Once the player moves the line the choice is persisted as [Sound]
+//   MovieVolume and this stops mattering.
+#ifndef NOCTURNE_MOVIE_VOLUME_DEFAULT
+#define NOCTURNE_MOVIE_VOLUME_DEFAULT 100
 #endif

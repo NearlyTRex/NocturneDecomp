@@ -105,6 +105,10 @@ void nocturne_trigl_envmap_pass_end(void);
 // nocturne.h.
 #include "game/ui_scale.h"
 
+// The level movies play at (nocturne_movie_*), reached from the menu TU for
+// the Sound Options line and from the movie decoder for the gain itself.
+#include "game/movie_audio.h"
+
 // Modern controller support (nocturne_gamepad_*), reached from the game TU's
 // input path and from the menu TU's key-name and validity helpers. The pad
 // input codes it defines are reached the same way. Every entry point is inert
