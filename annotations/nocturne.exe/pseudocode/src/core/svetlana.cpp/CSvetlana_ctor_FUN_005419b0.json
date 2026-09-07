@@ -234,7 +234,7 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "'pCVar1[1].base.base.actor_name + 8' walks 1 x sizeof(CHero) (0x1fa3c) + offsetof(base.base.actor_name) (0x0) + 0x8 = 0x1fa44, which is exactly offsetof(CColonel, head_look_euler). Ghidra had no CColonel type here and reached the field by index arithmetic; write it as ((CColonel *)pCVar1)->head_look_euler (\u00a7de-pun/\u00a712). Ambiguous: CGabriella::draw_blend, CHaystack::head_look_euler, CIcePick::sfx_handles also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "description": "'pCVar1[1].base.base.actor_name + 8' walks 1 x sizeof(CHero) (0x1fa3c) + offsetof(base.base.actor_name) (0x0) + 0x8 = 0x1fa44, which is exactly offsetof(CBaron, summon_event[8]). Ghidra had no CBaron type here and reached the field by index arithmetic; write it as ((CBaron *)pCVar1)->summon_event[8] (\u00a7de-pun/\u00a712). Ambiguous: CColonel::head_look_euler, CGabriella::draw_blend, CHaystack::head_look_euler also has a field there \u2014 confirm the real class from the .asm before rewriting.",
       "line": 10,
       "severity": "moderate",
       "text": "pCVar2 = core_cloth_cpp_CCloth_ctor_FUN_00435100((CCloth *)(pCVar1[1].base.base.actor_name + 8));",

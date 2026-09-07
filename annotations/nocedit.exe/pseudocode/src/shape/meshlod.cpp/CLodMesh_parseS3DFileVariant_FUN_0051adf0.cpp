@@ -59,7 +59,7 @@ LAB_0051ae8f:
     do {
       _fscanf(file_handle,"%[^\n]\n",local_224);
       splitpath(local_224,(char *)0x0,(char *)0x0,local_120,(char *)0x0);
-      path_buffer = this_ptr->lod_textures->textures[0].texture_name + iVar3;
+      path_buffer = this_ptr->lod_textures->texture_name + iVar3;
       iVar5 = iVar5 + 1;
       iVar3 = iVar3 + 0x48;
       makepath(path_buffer,(char *)0x0,(char *)0x0,local_120,"raw")

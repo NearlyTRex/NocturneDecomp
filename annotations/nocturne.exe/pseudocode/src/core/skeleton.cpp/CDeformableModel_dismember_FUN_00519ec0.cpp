@@ -157,8 +157,8 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_00519ec0(CDeformab
         iVar6 = core_bodypart_cpp_CBodyPart_addTexture_FUN_00417c90
                           (body_part_ptr,
                            this_ptr->texture_sets[texture_set_index].textures
-                           [*(int *)(local_2c + (int)this_ptr->index_data_ptr[lod_index])].textures
-                           [0].texture_name);
+                           [*(int *)(local_2c + (int)this_ptr->index_data_ptr[lod_index])].
+                           texture_name);
         local_20 = local_20 + 0x12;
         local_2c = local_2c + 4;
         *(int *)((int)body_part_ptr->face_texture_indices + local_28) = iVar6;
@@ -191,8 +191,8 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_00519ec0(CDeformab
         local_30 = local_30 + 4;
         iVar3 = core_bodypart_cpp_CBodyPart_addTexture_FUN_00417c90
                           (body_part_ptr,
-                           this_ptr->texture_sets[texture_set_index].textures[*piVar11].textures[0].
-                           texture_name);
+                           this_ptr->texture_sets[texture_set_index].textures[*piVar11].texture_name
+                          );
         *(int *)((int)body_part_ptr->face_texture_indices + iVar8) = iVar3;
         local_1c = local_1c + 0x3c;
         local_14 = local_14 + 1;

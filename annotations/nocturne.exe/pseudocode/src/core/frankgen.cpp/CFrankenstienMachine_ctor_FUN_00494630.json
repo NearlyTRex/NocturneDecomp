@@ -111,14 +111,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 59,
+    "complexity_score": 74,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 24,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
+      "derived_field_index_pun",
       "negative_offset"
     ],
     "total_lines": 52
@@ -251,6 +252,13 @@
       "severity": "mild",
       "text": "return (CFrankenstienMachine *)(pCVar2[-3].model_name + 0xf8);",
       "type": "negative_offset"
+    },
+    {
+      "description": "'(CKeyFramedModelInstance *)&pCVar1[1].location.area_id' walks 1 x sizeof(CDemonActor) (0x150) + offsetof(location.area_id) (0x2c) + 0x0 = 0x17c, which is exactly offsetof(CActorDestination, triggered). Ghidra had no CActorDestination type here and reached the field by index arithmetic; write it as ((CActorDestination *)pCVar1)->triggered (\u00a7de-pun/\u00a712). Ambiguous: CBarrier::effect_class_name_list[28], CBat::anim_frame, CBodyPart::faces also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 11,
+      "severity": "moderate",
+      "text": "((CKeyFramedModelInstance *)&pCVar1[1].location.area_id);",
+      "type": "derived_field_index_pun"
     }
   ],
   "vtable_info": {

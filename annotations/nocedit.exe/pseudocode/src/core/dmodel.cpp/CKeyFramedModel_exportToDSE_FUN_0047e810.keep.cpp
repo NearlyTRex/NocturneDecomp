@@ -51,7 +51,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_exportToDSE_FUN_0047e810(CKeyFramed
       }
       strcpy(g_ModelPolygonData[local_1c].texture_name,
              this_ptr->texture_list[this_ptr->poly_texture_index_list[local_1c]].
-             textures[0].texture_name);
+             texture_name);
     }
   }
   g_PartsCount = 1;

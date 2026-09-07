@@ -53,7 +53,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_00477980(CKeyF
         // Single-texture (or face-capture) path: submit the whole part at once.
         if (face_capture == 0) {
           engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(
-              g_CDemonRendererPtr2, this_ptr->texture_list[0].textures);
+              g_CDemonRendererPtr2,
+              (SMRGLTextureBasic *)&this_ptr->texture_list[0]);
         }
         core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_00570770(
             g_CDemonSetPtr, this_ptr->poly_vert_list + poly_start,
@@ -65,7 +66,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_00477980(CKeyF
           cur_tex = this_ptr->poly_texture_index_list[poly_start];
           if (prev_tex != cur_tex) {
             engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(
-                g_CDemonRendererPtr2, this_ptr->texture_list[cur_tex].textures);
+                g_CDemonRendererPtr2,
+                (SMRGLTextureBasic *)&this_ptr->texture_list[cur_tex]);
             prev_tex = cur_tex;
           }
           run_end = poly_start + 1;

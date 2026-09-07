@@ -35,7 +35,7 @@ CMansionPuzzleCircle * __cdecl core_manpuz_cpp_CMansionPuzzleCircle_ctor_FUN_005
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (&ADJ(pvVar4)->reflector_model,"mirrhack.kfm");
   pcVar2 = "headlite.raw";
-  pcVar3 = (ADJ(pvVar4)->light_texture).textures[0].texture_name;
+  pcVar3 = (ADJ(pvVar4)->light_texture).texture_name;
   do {
     cVar1 = *pcVar2;
     *pcVar3 = cVar1;

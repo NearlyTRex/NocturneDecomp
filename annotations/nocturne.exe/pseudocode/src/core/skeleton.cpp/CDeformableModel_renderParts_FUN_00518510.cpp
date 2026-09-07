@@ -191,7 +191,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderParts_FUN_00518510(CDeform
               if (fVar2 != local_68) {
                 engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
                           (g_CDemonRenderer_PTR_005ae704,
-                           local_94[*local_98].textures[(int)fVar2].textures);
+                           (SMRGLTextureBasic *)(local_94[*local_98].textures + (int)fVar2));
                 local_68 = fVar2;
               }
               core_set_cpp_CDemonSet_renderFaceListOrEnvMap_FUN_0050ded0
@@ -235,7 +235,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderParts_FUN_00518510(CDeform
                fVar2 != local_64)) {
               engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
                         (g_CDemonRenderer_PTR_005ae704,
-                         local_a4[*local_9c].textures[(int)fVar2].textures);
+                         (SMRGLTextureBasic *)(local_a4[*local_9c].textures + (int)fVar2));
               local_64 = fVar2;
             }
             core_set_cpp_CDemonSet_renderFaceListOrEnvMap_FUN_0050ded0

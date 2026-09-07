@@ -25,8 +25,7 @@ CBiggs * __cdecl core_biggs_cpp_CBiggs_dtor_FUN_00415a30(CBiggs *this_ptr,uint f
   }
   pCVar1 = core_morph_cpp_CMorph_dtor_FUN_004e0070(&this_ptr->morph,0);
   pCVar2 = core_armour_cpp_CFlame_arrdtor50_FUN_0040fe50
-                     ((CFlame *)(pCVar1[-0xc].models[1].textures[2].textures[1].texture_name + 0xc),
-                      0);
+                     ((CFlame *)(pCVar1[-0xc].models[1].textures[2].texture_name + 0x24),0);
   pSVar3 = core_armour_cpp_SFire_arrdtor50_FUN_0040fe30
                      ((SFire *)(pCVar2[-2].base.create_event + 0x10),0);
   pCVar4 = core_armour_cpp_CVector3f_arrdtor15_FUN_0040fe10

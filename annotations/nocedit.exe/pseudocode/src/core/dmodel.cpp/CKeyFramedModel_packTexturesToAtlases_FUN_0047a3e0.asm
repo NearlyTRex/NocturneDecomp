@@ -13,7 +13,7 @@
 ; float            Stack[-0xbc]:4  fStack_bc
 ; SCram            Stack[-0xb8]:116  local_b8
 ; int              Stack[-0x44]:4  iStack_44
-; SMRGLTextureLod * Stack[-0x40]:4  pSStack_40
+; SMRGLTextureModel * Stack[-0x40]:4  pSStack_40
 ; char *           Stack[-0x3c]:4  local_3c
 ; int              Stack[-0x38]:4  iStack_38
 ; char *           Stack[-0x34]:4  pcStack_34

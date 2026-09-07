@@ -11,7 +11,7 @@
 // like crt_stdio_c_fread_FUN_005fd990() to standard calls like fread().
 // This header provides the declarations for those standard functions.
 //
-// Implementations are in shims/crt.cpp.
+// Implementations are in shims/watcom/crt.cpp.
 //
 // =============================================================================
 

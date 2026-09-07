@@ -201,7 +201,7 @@ LAB_0058c613:
       do {
         local_98 = 0;
         if (0 < this_ptr->num_textures) {
-          pcVar16 = local_6c->textures[0].textures[0].texture_name;
+          pcVar16 = local_6c->textures[0].texture_name;
           do {
             splitpath
                       (pcVar16,(char *)0x0,(char *)0x0,local_818,(char *)0x0);
@@ -513,8 +513,8 @@ LAB_0058c601:
           iVar8 = 0;
           if (0 < local_2dc.lod_texture_count) {
             do {
-              strcpy(local_78->textures[iVar8].textures[0].texture_name,
-                     local_2dc.lod_textures[iVar8].textures[0].texture_name);
+              strcpy(local_78->textures[iVar8].texture_name,
+                     local_2dc.lod_textures[iVar8].texture_name);
               iVar8 = iVar8 + 1;
             } while (iVar8 < local_2dc.lod_texture_count);
           }
@@ -568,7 +568,7 @@ LAB_0058c601:
         if (0 < local_a0) {
           do {
             pcVar21 = shape_design_c_getTextureName_FUN_0046e060(local_74);
-            strcpy(local_3c->textures[local_74].textures[0].texture_name, pcVar21);
+            strcpy(local_3c->textures[local_74].texture_name, pcVar21);
             local_74 = local_74 + 1;
           } while (local_74 < local_a0);
         }

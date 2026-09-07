@@ -289,7 +289,7 @@ static int CDeformableModel_determinePartsFromS3D_else_0_check_local_388_0(CDefo
 
           iVar30 = 0;
           if (0 < this_ptr->num_textures) {
-            pcVar38 = this_ptr->texture_sets[0].textures[0].textures[0].texture_name;
+            pcVar38 = this_ptr->texture_sets[0].textures[0].texture_name;
             do {
               splitpath
                         (pcVar38,(char *)0x0,(char *)0x0,local_640,(char *)0x0);
@@ -304,8 +304,8 @@ static int CDeformableModel_determinePartsFromS3D_else_0_check_local_388_0(CDefo
               _sprintf(g_SkeleditStatusMessage,"Texture list full determining parts");
               return GOTO_LAB_0058f8e7;
             }
-            _sprintf(this_ptr->texture_sets[0].textures[this_ptr->num_textures].textures[0].
-                       texture_name,"%s.raw");
+            _sprintf(this_ptr->texture_sets[0].textures[this_ptr->num_textures].texture_name,
+                       "%s.raw");
             this_ptr->num_textures = this_ptr->num_textures + 1;
           }
           local_160 = iVar30;
@@ -1008,7 +1008,7 @@ static int CDeformableModel_determinePartsFromS3D_else_0_check_this_ptr_5_check_
                       if (iVar30 < 0) goto LAB_00591835;
                       iVar18 = 0;
                       if (0 < this_ptr->num_textures) {
-                        pcVar38 = local_a8->textures[0].textures[0].texture_name;
+                        pcVar38 = local_a8->textures[0].texture_name;
                         do {
                           splitpath
                                     (pcVar38,(char *)0x0,(char *)0x0,local_740,(char *)0x0);
@@ -1026,8 +1026,8 @@ static int CDeformableModel_determinePartsFromS3D_else_0_check_this_ptr_5_check_
                           core_main_c_displayErrorAndQuit_FUN_00506f10
                                     ("Too many model textures!");
                         }
-                        _sprintf(local_a4->textures[this_ptr->num_textures].textures[0].
-                                   texture_name,"%s.raw");
+                        _sprintf(local_a4->textures[this_ptr->num_textures].texture_name,
+                                   "%s.raw");
                         this_ptr->num_textures = this_ptr->num_textures + 1;
                       }
                       this_ptr->index_data_ptr[0]

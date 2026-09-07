@@ -71,8 +71,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_005
       pSVar4 = pCVar3->lod_info;
       pCVar3->bone_to_part_map[0] = 0;
       pCVar3 = (CDeformableModel *)pSVar4;
-    } while (pSVar4 != (SLod *)(this_ptr->texture_sets[0].textures[2].textures[2].texture_name + 8))
-    ;
+    } while (pSVar4 != (SLod *)(this_ptr->texture_sets[0].textures[2].texture_name + 0x38));
   }
   else {
     core_skeleton_cpp_CDeformableModel_captureTextures_FUN_005180a0(this_ptr);

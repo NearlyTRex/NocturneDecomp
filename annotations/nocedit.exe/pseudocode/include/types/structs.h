@@ -114,7 +114,7 @@
 #include "types/structs/SMRGLTextureBasic.h"
 #include "types/structs/SMRGLTextureList.h"
 #include "types/structs/SMRGLTextureListEntry.h"
-#include "types/structs/SMRGLTextureLod.h"
+#include "types/structs/SMRGLTextureModel.h"
 #include "types/structs/SMRGLVertex.h"
 #include "types/structs/SMRGLVertexBlock.h"
 #include "types/structs/SMemHead.h"

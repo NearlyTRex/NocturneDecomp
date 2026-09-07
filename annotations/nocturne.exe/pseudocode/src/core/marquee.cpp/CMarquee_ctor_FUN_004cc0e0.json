@@ -62,14 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 48,
-    "complexity_score": 209,
+    "complexity_score": 224,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 34,
-    "suspect_count": 16,
+    "suspect_count": 17,
     "suspect_types": [
+      "derived_field_index_pun",
       "negative_offset",
       "pointer_cast",
       "pointer_truncation"
@@ -329,6 +330,13 @@
       "severity": "moderate",
       "text": "piVar5 = (int *)((int)piVar5 + 2);",
       "type": "pointer_truncation"
+    },
+    {
+      "description": "'(CCourse *)&pCVar2[1].orient_matrix.m[1].y' walks 1 x sizeof(CDemonActor) (0x150) + offsetof(orient_matrix.m[1].y) (0x4c) + 0x0 = 0x19c, which is exactly offsetof(CActorDestination, what_event[28]). Ghidra had no CActorDestination type here and reached the field by index arithmetic; write it as ((CActorDestination *)pCVar2)->what_event[28] (\u00a7de-pun/\u00a712). Ambiguous: CBarrier::effect_class_name_list[60], CChain::texture_name[48], CCurtain::let_go_event[16] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 12,
+      "severity": "moderate",
+      "text": "pCVar3 = core_course_cpp_CCourse_ctor_FUN_0043b5d0((CCourse *)&pCVar2[1].orient_matrix.m[1].y);",
+      "type": "derived_field_index_pun"
     }
   ],
   "vtable_info": {

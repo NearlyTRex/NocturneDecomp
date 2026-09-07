@@ -179,7 +179,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CD
   iVar1 = 0;
   if (0 < this_ptr->num_textures) {
     do {
-      _fprintf(file,"%s\n",this_ptr->texture_sets[0].textures[iVar1].textures[0].texture_name);
+      _fprintf(file,"%s\n",this_ptr->texture_sets[0].textures[iVar1].texture_name);
       iVar1 = iVar1 + 1;
     } while (iVar1 < this_ptr->num_textures);
   }

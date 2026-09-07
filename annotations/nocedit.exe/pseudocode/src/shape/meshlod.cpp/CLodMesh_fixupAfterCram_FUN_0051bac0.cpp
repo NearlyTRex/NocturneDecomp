@@ -34,7 +34,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_fixupAfterCram_FUN_0051bac0(CLodMesh *th
       piVar5 = (int *)((int)this_ptr->tri_data->attribute_indices + local_20);
       if ((piVar5[0x10] == 0) && (-1 < *piVar5)) {
         iVar3 = shape_design_c_findTextureByFilename_FUN_0046dfc0
-                          (this_ptr->lod_textures[*piVar5].textures[0].texture_name);
+                          (this_ptr->lod_textures[*piVar5].texture_name);
         if (iVar3 < 0) {
           g_CurrentLineNumber = 4800;
           g_CurrentFilename = "..\\shape\\meshlod.cpp";

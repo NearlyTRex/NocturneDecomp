@@ -83,7 +83,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_00508a70(CMansionPuz
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&this_ptr->gem_model);
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&this_ptr->reflector_model);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-            (g_CDemonRendererPtr2,(this_ptr->light_texture).textures);
+            (g_CDemonRendererPtr2,(SMRGLTextureBasic *)&this_ptr->light_texture);
   pCVar8 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->panel_model);
   fVar9 = (pCVar8->bounds).min.y;
   fVar10 = (pCVar8->bounds).max.y;

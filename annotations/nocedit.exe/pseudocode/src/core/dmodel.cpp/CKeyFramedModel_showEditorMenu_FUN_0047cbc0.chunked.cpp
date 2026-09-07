@@ -123,8 +123,8 @@ typedef struct CKeyFramedModel_showEditorMenu_Ctx {
     int local_50;
     int local_4c;
     float local_48;
-    SMRGLTextureLod *local_44;
-    SMRGLTextureLod *local_40;
+    SMRGLTextureModel *local_44;
+    SMRGLTextureModel *local_40;
     int local_3c;
     int local_38;
     float local_34;
@@ -518,7 +518,7 @@ static int CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_0_check_
                     core_dmodel_cpp_CKeyFramedModel_load_FUN_00476db0(this_ptr,local_408);
                     bVar2 = true;
                     if (0 < this_ptr->texture_count) {
-                      pcVar10 = this_ptr->texture_list[0].textures[0].texture_name;
+                      pcVar10 = this_ptr->texture_list[0].texture_name;
                       do {
                         iVar12 = core_dmodel_cpp_copyTextureFiles_FUN_0047ca50
                                            (pcVar10,local_18,local_998,(char *)0x0,"art");
@@ -573,7 +573,7 @@ static int CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_0_check_
                 ;
                 iVar18 = 0;
                 if (0 < this_ptr->texture_count) {
-                  pcVar19 = this_ptr->texture_list[0].textures[0].texture_name;
+                  pcVar19 = this_ptr->texture_list[0].texture_name;
                   do {
                     iVar12 = core_dmodel_cpp_copyTextureFiles_FUN_0047ca50
                                        (pcVar19,(char *)0x0,"art",local_14,local_a98);
@@ -930,8 +930,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
     int &local_50 = ctx->local_50;
     int &local_4c = ctx->local_4c;
     float &local_48 = ctx->local_48;
-    SMRGLTextureLod *&local_44 = ctx->local_44;
-    SMRGLTextureLod *&local_40 = ctx->local_40;
+    SMRGLTextureModel *&local_44 = ctx->local_44;
+    SMRGLTextureModel *&local_40 = ctx->local_40;
     int &local_3c = ctx->local_3c;
     int &local_38 = ctx->local_38;
     float &local_34 = ctx->local_34;

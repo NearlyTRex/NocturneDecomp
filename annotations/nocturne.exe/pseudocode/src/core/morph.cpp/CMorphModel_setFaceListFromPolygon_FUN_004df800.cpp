@@ -2,13 +2,13 @@
 // Address: 004df800
 // Address Range: [[004df800, 004df9d7]]
 // Convention: __cdecl
-// Signature: void __cdecl core_morph_cpp_CMorphModel_setFaceListFromPolygon_FUN_004df800(CMorphModel *this_ptr,int part_index,SMRGLHeaderPrimitive *poly_data,int poly_stride ,SMRGLTextureLod *texture_list,int *texture_index_list,int start_face,int poly_count)
+// Signature: void __cdecl core_morph_cpp_CMorphModel_setFaceListFromPolygon_FUN_004df800(CMorphModel *this_ptr,int part_index,SMRGLHeaderPrimitive *poly_data,int poly_stride ,SMRGLTextureModel *texture_list,int *texture_index_list,int start_face,int poly_count)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_morph_cpp_CMorphModel_setFaceListFromPolygon_FUN_004df800(CMorphModel *this_ptr,int part_index,SMRGLHeaderPrimitive *poly_data,int poly_stride ,SMRGLTextureLod *texture_list,int *texture_index_list,int start_face,int poly_count)
+void __cdecl core_morph_cpp_CMorphModel_setFaceListFromPolygon_FUN_004df800(CMorphModel *this_ptr,int part_index,SMRGLHeaderPrimitive *poly_data,int poly_stride ,SMRGLTextureModel *texture_list,int *texture_index_list,int start_face,int poly_count)
 
 {
   UIntegerFloat *pUVar1;
@@ -47,7 +47,7 @@ void __cdecl core_morph_cpp_CMorphModel_setFaceListFromPolygon_FUN_004df800(CMor
     local_24 = texture_index_list;
     do {
       iVar5 = core_morph_cpp_CMorphModel_findOrAddTexture_FUN_004dfba0
-                        (this_ptr,texture_list[*local_24].textures[0].texture_name);
+                        (this_ptr,texture_list[*local_24].texture_name);
       iVar7 = 2;
       if (2 < (poly_data->base).count) {
         pSVar8 = poly_data + 1;

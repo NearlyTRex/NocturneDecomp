@@ -121,7 +121,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_saveStream_FUN_0058f120(CDeforma
       iVar2 = 0;
       if (0 < this_ptr->num_textures) {
         do {
-          _fprintf(file_handle,"%s\n",this_ptr->texture_sets[iVar1].textures[iVar2].textures[0].texture_name);
+          _fprintf(file_handle,"%s\n",this_ptr->texture_sets[iVar1].textures[iVar2].texture_name);
           iVar2 = iVar2 + 1;
         } while (iVar2 < this_ptr->num_textures);
       }

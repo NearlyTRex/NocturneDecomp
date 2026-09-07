@@ -44,15 +44,14 @@ int __cdecl core_vessel_cpp_CCryptVessel_renderTransparent_FUN_00550370(CCryptVe
     dVar5 = round((double)this_ptr->water_anim_timer);
     local_14 = (uint)ROUND(dVar5);
     pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(&this_ptr->orb_model);
-    _sprintf(pCVar2->texture_list[0].textures[0].texture_name,"BWATER%d.RAW",
-               local_14 & 0xf,uVar6);
+    _sprintf(pCVar2->texture_list[0].texture_name,"BWATER%d.RAW",local_14 & 0xf,uVar6);
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
               (g_CDemonRenderer_PTR_005ae704,48000);
   }
   else {
     pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(&this_ptr->orb_model);
     pcVar3 = "MENUCLD2.RAW";
-    pcVar4 = pCVar2->texture_list[0].textures[0].texture_name;
+    pcVar4 = pCVar2->texture_list[0].texture_name;
     do {
       cVar1 = *pcVar3;
       *pcVar4 = cVar1;

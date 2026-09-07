@@ -34,7 +34,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0(
   shape_design_c_setTextureQualityParameter_FUN_0046a8e0(0x40);
   local_24 = 0;
   if (0 < model_ptr->texture_count) {
-    local_3c = model_ptr->texture_list[0].textures[0].texture_name;
+    local_3c = model_ptr->texture_list[0].texture_name;
     do {
       iVar8 = 0x7fffffff;
       max_u = -0x7fffffff;
@@ -65,7 +65,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0(
       if (iVar8 <= max_u) {
         shape_design_c_cramTextures_FUN_0046a970(local_3c,iVar8,iVar6,max_u,iVar7);
       }
-      local_3c = local_3c + sizeof(SMRGLTextureLod);
+      local_3c = local_3c + sizeof(SMRGLTextureModel);
       local_24 = local_24 + 1;
     } while (local_24 < model_ptr->texture_count);
   }
@@ -87,7 +87,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0(
       }
       iVar4 = shape_design_c_findTextureByFilename_FUN_0046dfc0
                         (model_ptr->texture_list
-                         [model_ptr->poly_texture_index_list[iStack_30]].textures[0]
+                         [model_ptr->poly_texture_index_list[iStack_30]]
                          .texture_name);
       pSVar1 = model_ptr->poly_vert_list + iStack_30;
       if (0 < pSVar1->base.base.count) {
@@ -120,12 +120,12 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0(
   iVar4 = 0;
   model_ptr->texture_count = iVar5;
   if (0 < iVar5) {
-    pcStack_34 = model_ptr->texture_list[0].textures[0].texture_name;
+    pcStack_34 = model_ptr->texture_list[0].texture_name;
     do {
       pcVar5 = shape_design_c_getTextureName_FUN_0046e060(iVar4);
       strcpy(pcStack_34,pcVar5);
       iVar4 = iVar4 + 1;
-      pcStack_34 = pcStack_34 + sizeof(SMRGLTextureLod);
+      pcStack_34 = pcStack_34 + sizeof(SMRGLTextureModel);
     } while (iVar4 < model_ptr->texture_count);
   }
   core_dmodel_cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820(model_ptr);

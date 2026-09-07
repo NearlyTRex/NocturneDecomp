@@ -80,14 +80,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 138,
-    "complexity_score": 75,
+    "complexity_score": 90,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 11,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 50,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
+      "derived_field_index_pun",
       "raw_address_constant"
     ],
     "total_lines": 188
@@ -287,6 +288,13 @@
       "severity": "moderate",
       "text": "core_dfilter_cpp_CFilterFX_openMovie_FUN_0044c310(0x014B98EC,(char *)&pCVar3[2].orient);",
       "type": "raw_address_constant"
+    },
+    {
+      "description": "'(char *)&pCVar3[2].orient' walks 2 x sizeof(CDemonActor) (0x150) + offsetof(orient) (0x30) + 0x0 = 0x2d0, which is exactly offsetof(CAmmo, weapon_class_name[4]). Ghidra had no CAmmo type here and reached the field by index arithmetic; write it as ((CAmmo *)pCVar3)->weapon_class_name[4] (\u00a7de-pun/\u00a712). Ambiguous: CAmmoBox::weapon_class_name[4], CAnvil::drop_condition[4], CBackgroundActor::ground_type also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 32,
+      "severity": "moderate",
+      "text": "core_dfilter_cpp_CFilterFX_openMovie_FUN_0044c310(0x014B98EC,(char *)&pCVar3[2].orient);",
+      "type": "derived_field_index_pun"
     }
   ],
   "vtable_info": {

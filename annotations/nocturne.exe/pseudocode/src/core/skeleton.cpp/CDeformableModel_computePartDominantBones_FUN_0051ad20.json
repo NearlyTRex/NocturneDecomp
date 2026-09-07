@@ -58,8 +58,14 @@
       {
         "category": "undeclared_identifier",
         "column": 14,
-        "line": 81,
+        "line": 80,
         "message": "use of undeclared identifier 'operator_new'; did you mean 'operator'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 43,
+        "line": 117,
+        "message": "use of undeclared identifier '_DAT_005a1eb0'"
       },
       {
         "category": "undeclared_identifier",
@@ -76,7 +82,7 @@
       {
         "category": "undeclared_identifier",
         "column": 43,
-        "line": 120,
+        "line": 121,
         "message": "use of undeclared identifier '_DAT_005a1eb0'"
       },
       {
@@ -94,7 +100,7 @@
       {
         "category": "undeclared_identifier",
         "column": 43,
-        "line": 124,
+        "line": 125,
         "message": "use of undeclared identifier '_DAT_005a1eb0'"
       },
       {
@@ -108,12 +114,6 @@
         "column": 43,
         "line": 127,
         "message": "use of undeclared identifier '_DAT_005a1eb0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 43,
-        "line": 128,
-        "message": "use of undeclared identifier '_DAT_005a1eb0'"
       }
     ],
     "success": false,
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 384,
-    "complexity_score": 326,
+    "complexity_score": 325,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 196,
+    "pseudocode_lines": 195,
     "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
@@ -135,7 +135,7 @@
       "shadow_pointer_walk",
       "warning_overlapping_globals"
     ],
-    "total_lines": 580
+    "total_lines": 579
   },
   "cross_references": [
     {
@@ -592,7 +592,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 100,
+      "line": 99,
       "match": "(uint *)((int)local_230",
       "severity": "moderate",
       "text": "*(uint *)((int)local_230 + iVar12) = 0;",
@@ -600,7 +600,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 170,
+      "line": 169,
       "match": "(float *)((int)local_230",
       "severity": "moderate",
       "text": "if (local_230[iVar10] < *(float *)((int)local_230 + iVar12)) {",
@@ -608,7 +608,7 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_a0 != &local_58)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 125,
+      "line": 124,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&local_a0 != &local_58) {",
@@ -616,7 +616,7 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_88 != &local_7c)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 133,
+      "line": 132,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&local_88 != &local_7c) {",
@@ -624,7 +624,7 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_64 != &local_94)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 141,
+      "line": 140,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&local_64 != &local_94) {",
@@ -632,7 +632,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 109,
+      "line": 108,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "((int)&(this_ptr->tri_data_ptr[0]->vertex_indices).vertex_index_0 + local_1c);",
@@ -640,7 +640,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar9` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pSVar9->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 156,
+      "line": 155,
       "match": "pSVar9 = (T *)pSVar9->ARRAY",
       "severity": "moderate",
       "text": "pSVar9 = (SVert *)pSVar9->bone_weights;",
@@ -648,7 +648,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar11` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pSVar11->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 157,
+      "line": 156,
       "match": "pSVar11 = (T *)pSVar11->ARRAY",
       "severity": "moderate",
       "text": "pSVar11 = (SVert *)pSVar11->bone_indices;",
@@ -656,7 +656,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_2c` self-updates via pointer arithmetic on its own `tri_count` field (which decays to a pointer), `+ CONST`; `offsetof(tri_count) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `local_2c`. Replace those `local_2c->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
-      "line": 179,
+      "line": 178,
       "match": "local_2c = (T *)(local_2c->tri_count + CONST)",
       "severity": "moderate",
       "text": "local_2c = (CDeformableModel *)(local_2c->tri_count + 3);",
@@ -664,7 +664,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 194,
+      "line": 193,
       "match": "pCVar3 = (T *)pCVar3->ARRAY",
       "severity": "moderate",
       "text": "pCVar3 = (CDeformableModel *)pCVar3->lod_info;",

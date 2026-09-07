@@ -9,55 +9,62 @@
 CVampireBoss * __cdecl core_vampboss_cpp_CVampireBoss_ctor_FUN_0054c2b0(CVampireBoss *this_ptr)
 
 {
-  SMRGLTextureLod *pSVar1;
-  SMRGLTextureBasic *pSVar2;
-  CEnemy *pCVar3;
-  CDeformableModelInstance *pCVar4;
-  CCloth *pCVar5;
-  CMorph *pCVar6;
+  SMRGLTextureModel *pSVar1;
+  CEnemy *pCVar2;
+  CDeformableModelInstance *pCVar3;
+  CCloth *pCVar4;
+  CMorph *pCVar5;
   
-  pCVar3 = core_enemy_cpp_CEnemy_ctor_FUN_00479560(&this_ptr->base);
-  pCVar4 = core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0051b660
-                     ((CDeformableModelInstance *)(pCVar3 + 1));
-  pCVar5 = core_cloth_cpp_CCloth_ctor_FUN_00435100((CCloth *)(pCVar4 + 1));
-  pCVar5 = core_cloth_cpp_CCloth_ctor_FUN_00435100(pCVar5 + 1);
-  pCVar5 = core_cloth_cpp_CCloth_ctor_FUN_00435100(pCVar5 + 1);
-  pCVar6 = core_morph_cpp_CMorph_ctor_FUN_004e0050((CMorph *)(pCVar5[1].model.model_filename + 4));
-  pCVar6[-0xfa].models[0].textures[8].textures[2].base.type = (int)&g_CVampireBossVTable;
+  pCVar2 = core_enemy_cpp_CEnemy_ctor_FUN_00479560(&this_ptr->base);
+  pCVar3 = core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0051b660
+                     ((CDeformableModelInstance *)(pCVar2 + 1));
+  pCVar4 = core_cloth_cpp_CCloth_ctor_FUN_00435100((CCloth *)(pCVar3 + 1));
+  pCVar4 = core_cloth_cpp_CCloth_ctor_FUN_00435100(pCVar4 + 1);
+  pCVar4 = core_cloth_cpp_CCloth_ctor_FUN_00435100(pCVar4 + 1);
+  pCVar5 = core_morph_cpp_CMorph_ctor_FUN_004e0050((CMorph *)(pCVar4[1].model.model_filename + 4));
+  *(CEnemy_full_vtable **)(pCVar5[-0xfa].models[0].textures[8].texture_name + 0x28) =
+       &g_CVampireBossVTable;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
-            ((CDeformableModelInstance *)&pCVar6[-0xfa].models[0].textures[8].textures[2].base.count
-             ,"nosfer.dfm");
+            ((CDeformableModelInstance *)(pCVar5[-0xfa].models[0].textures[8].texture_name + 0x2c),
+             "nosfer.dfm");
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
-            ((CDeformableModelInstance *)
-             (pCVar6[-0xeb].models[1].textures[5].textures[2].texture_name + 0xc),
+            ((CDeformableModelInstance *)(pCVar5[-0xeb].models[1].textures[5].texture_name + 0x3c),
              "batboss.dfm");
-  pCVar6[-0xf7].models[1].textures[0xf].textures[2].base.count = 0x40000000;
-  pSVar1 = pCVar6[-0xf7].models[1].textures + 0xf;
-  pSVar1->textures[2].texture_name[0] = '\0';
-  pSVar1->textures[2].texture_name[1] = '\0';
-  pSVar1->textures[2].texture_name[2] = '@';
-  pSVar1->textures[2].texture_name[3] = '@';
-  pSVar2 = pCVar6[-0xf7].models[1].textures[0xf].textures;
-  pSVar2[2].texture_name[4] = '\0';
-  pSVar2[2].texture_name[5] = '\0';
-  pSVar2[2].texture_name[6] = 'H';
-  pSVar2[2].texture_name[7] = 'B';
-  pSVar2 = pCVar6[-0xf7].models[1].textures[0xf].textures;
-  pSVar2[2].texture_name[8] = '\0';
-  pSVar2[2].texture_name[9] = '\0';
-  pSVar2[2].texture_name[10] = -0x38;
-  pSVar2[2].texture_name[0xb] = 'B';
-  pCVar6[1].models[0].parts[0].vertex_count = 0;
-  pCVar6[-1].rescale_enabled = 0;
-  pCVar6[1].models[0].part_count = 0;
-  pCVar6[1].models[0].parts[1].start_vertex = 0;
-  pCVar6[1].models[0].parts[1].start_face = 0;
-  pCVar6[1].models[0].parts[2].vertex_count = 0;
-  pCVar6[1].models[0].parts[2].face_count = 0;
-  pCVar6[1].models[0].parts[1].face_count = 0;
-  pCVar6[1].models[0].parts[2].start_vertex = 0;
-  pCVar6[1].models[0].parts[0].face_count = 0x41200000;
-  pCVar6[1].models[0].parts[1].vertex_count = 1;
-  pCVar6[-0xf7].models[0].textures[9].textures[2].base.count = 0;
-  return (CVampireBoss *)&pCVar6[-0xfa].models[0].textures[4].textures[0].base.count;
+  pSVar1 = pCVar5[-0xf7].models[1].textures;
+  pSVar1[0xf].texture_name[0x2c] = '\0';
+  pSVar1[0xf].texture_name[0x2d] = '\0';
+  pSVar1[0xf].texture_name[0x2e] = '\0';
+  pSVar1[0xf].texture_name[0x2f] = '@';
+  pSVar1 = pCVar5[-0xf7].models[1].textures;
+  pSVar1[0xf].texture_name[0x30] = '\0';
+  pSVar1[0xf].texture_name[0x31] = '\0';
+  pSVar1[0xf].texture_name[0x32] = '@';
+  pSVar1[0xf].texture_name[0x33] = '@';
+  pSVar1 = pCVar5[-0xf7].models[1].textures;
+  pSVar1[0xf].texture_name[0x34] = '\0';
+  pSVar1[0xf].texture_name[0x35] = '\0';
+  pSVar1[0xf].texture_name[0x36] = 'H';
+  pSVar1[0xf].texture_name[0x37] = 'B';
+  pSVar1 = pCVar5[-0xf7].models[1].textures;
+  pSVar1[0xf].texture_name[0x38] = '\0';
+  pSVar1[0xf].texture_name[0x39] = '\0';
+  pSVar1[0xf].texture_name[0x3a] = -0x38;
+  pSVar1[0xf].texture_name[0x3b] = 'B';
+  pCVar5[1].models[0].parts[0].vertex_count = 0;
+  pCVar5[-1].rescale_enabled = 0;
+  pCVar5[1].models[0].part_count = 0;
+  pCVar5[1].models[0].parts[1].start_vertex = 0;
+  pCVar5[1].models[0].parts[1].start_face = 0;
+  pCVar5[1].models[0].parts[2].vertex_count = 0;
+  pCVar5[1].models[0].parts[2].face_count = 0;
+  pCVar5[1].models[0].parts[1].face_count = 0;
+  pCVar5[1].models[0].parts[2].start_vertex = 0;
+  pCVar5[1].models[0].parts[0].face_count = 0x41200000;
+  pCVar5[1].models[0].parts[1].vertex_count = 1;
+  pSVar1 = pCVar5[-0xf7].models[0].textures;
+  pSVar1[9].texture_name[0x2c] = '\0';
+  pSVar1[9].texture_name[0x2d] = '\0';
+  pSVar1[9].texture_name[0x2e] = '\0';
+  pSVar1[9].texture_name[0x2f] = '\0';
+  return (CVampireBoss *)&pCVar5[-0xfa].models[0].textures[4].base.count;
 }

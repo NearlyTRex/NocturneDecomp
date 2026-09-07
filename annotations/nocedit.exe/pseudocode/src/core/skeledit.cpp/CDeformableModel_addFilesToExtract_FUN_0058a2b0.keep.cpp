@@ -25,7 +25,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_addFilesToExtract_FUN_0058a2b0(C
     do {
       iVar3 = 0;
       if (0 < this_ptr->num_textures) {
-        pcVar4 = local_14->textures[0].textures[0].texture_name;
+        pcVar4 = local_14->textures[0].texture_name;
         pcVar2 = pcVar4;
         do {
           strcpy(local_2c,pcVar4);

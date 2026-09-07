@@ -13,11 +13,11 @@ CLodMesh * __cdecl shape_meshlod_cpp_CLodMesh_copyFrom_FUN_0051a8c0(CLodMesh *th
   int iVar2;
   CLodVert *pCVar3;
   CLodFace *pCVar4;
-  SMRGLTextureLod *pSVar5;
+  SMRGLTextureModel *pSVar5;
   int *piVar6;
   CLodVert *pCVar7;
   CLodFace *pCVar8;
-  SMRGLTextureLod *pSVar9;
+  SMRGLTextureModel *pSVar9;
   int *piVar10;
   byte bVar11;
   
@@ -53,14 +53,14 @@ CLodMesh * __cdecl shape_meshlod_cpp_CLodMesh_copyFrom_FUN_0051a8c0(CLodMesh *th
   pSVar9 = this_ptr->lod_textures;
   for (iVar2 = (this_ptr->lod_texture_count * 9 & 0x1fffffffU) << 1; iVar2 != 0; iVar2 = iVar2 + -1)
   {
-    pSVar9->textures[0].base.type = pSVar5->textures[0].base.type;
-    pSVar5 = (SMRGLTextureLod *)((int)pSVar5 + ((uint)bVar11 * -2 + 1) * 4);
-    pSVar9 = (SMRGLTextureLod *)((int)pSVar9 + ((uint)bVar11 * -2 + 1) * 4);
+    (pSVar9->base).type = (pSVar5->base).type;
+    pSVar5 = (SMRGLTextureModel *)((int)pSVar5 + (uint)bVar11 * -8 + 4);
+    pSVar9 = (SMRGLTextureModel *)((int)pSVar9 + (uint)bVar11 * -8 + 4);
   }
   for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *(char *)&pSVar9->textures[0].base.type = (char)pSVar5->textures[0].base.type;
-    pSVar5 = (SMRGLTextureLod *)((int)pSVar5 + (uint)bVar11 * -2 + 1);
-    pSVar9 = (SMRGLTextureLod *)((int)pSVar9 + (uint)bVar11 * -2 + 1);
+    *(char *)&(pSVar9->base).type = (char)(pSVar5->base).type;
+    pSVar5 = (SMRGLTextureModel *)((int)pSVar5 + (uint)bVar11 * -2 + 1);
+    pSVar9 = (SMRGLTextureModel *)((int)pSVar9 + (uint)bVar11 * -2 + 1);
   }
   this_ptr->active_attribute_count = source_mesh->active_attribute_count;
   this_ptr->sort_attribute_count = source_mesh->sort_attribute_count;

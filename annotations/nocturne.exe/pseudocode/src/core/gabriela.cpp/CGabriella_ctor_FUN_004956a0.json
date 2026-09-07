@@ -68,14 +68,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 55,
-    "complexity_score": 261,
+    "complexity_score": 276,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 4,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 36,
-    "suspect_count": 22,
+    "suspect_count": 23,
     "suspect_types": [
+      "derived_field_index_pun",
       "negative_offset"
     ],
     "total_lines": 91
@@ -383,6 +384,13 @@
       "severity": "mild",
       "text": "return (CGabriella *)(pCVar3[-1].vertices[0x182].bone_index + 1);",
       "type": "negative_offset"
+    },
+    {
+      "description": "'(CCloth *)&pCVar2[1].base.base.orient_matrix.m[0].y' walks 1 x sizeof(CHero) (0x1fa3c) + offsetof(base.base.orient_matrix.m[0].y) (0x40) + 0x0 = 0x1fa7c, which is exactly offsetof(CBaron, summon_event[64]). Ghidra had no CBaron type here and reached the field by index arithmetic; write it as ((CBaron *)pCVar2)->summon_event[64] (\u00a7de-pun/\u00a712). Ambiguous: CGabriella::coat_cloth also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 11,
+      "severity": "moderate",
+      "text": "((CCloth *)&pCVar2[1].base.base.orient_matrix.m[0].y);",
+      "type": "derived_field_index_pun"
     }
   ],
   "vtable_info": {

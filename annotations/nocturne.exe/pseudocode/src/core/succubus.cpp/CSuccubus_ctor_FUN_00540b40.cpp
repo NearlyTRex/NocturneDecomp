@@ -11,7 +11,7 @@ CSuccubus * __cdecl core_succubus_cpp_CSuccubus_ctor_FUN_00540b40(CSuccubus *thi
 {
   CSuccubus *pCVar1;
   char cVar2;
-  SMRGLTextureLod *pSVar3;
+  SMRGLTextureModel *pSVar3;
   float fVar4;
   float fVar5;
   CEnemy *pCVar6;
@@ -26,26 +26,31 @@ CSuccubus * __cdecl core_succubus_cpp_CSuccubus_ctor_FUN_00540b40(CSuccubus *thi
                      ((CDeformableModelInstance *)(pCVar6 + 1));
   pCVar8 = core_cloth_cpp_CClothList_ctor_FUN_00438210((CClothList *)(pCVar7 + 1));
   pCVar9 = core_morph_cpp_CMorph_ctor_FUN_004e0050((CMorph *)(pCVar8[1].filenames[0] + 0xc));
-  pCVar1 = (CSuccubus *)(pCVar9[-0x13].models[0].textures[0x12].textures[1].texture_name + 8);
-  pCVar9[-0x13].models[1].textures[1].textures[2].base.count = (int)&g_CSuccubusVTable;
+  pCVar1 = (CSuccubus *)(pCVar9[-0x13].models[0].textures[0x12].texture_name + 0x20);
+  *(CEnemy_full_vtable **)(pCVar9[-0x13].models[1].textures[1].texture_name + 0x2c) =
+       &g_CSuccubusVTable;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
-            ((CDeformableModelInstance *)
-             pCVar9[-0x13].models[1].textures[1].textures[2].texture_name,"succubus.dfm");
+            ((CDeformableModelInstance *)(pCVar9[-0x13].models[1].textures[1].texture_name + 0x30),
+             "succubus.dfm");
   pcVar10 = "hdwing.cth";
-  piVar11 = &pCVar9[-1].models[1].textures[0xe].textures[0].base.count;
+  piVar11 = &pCVar9[-1].models[1].textures[0xe].base.count;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
             ((CDeformableModelInstance *)pCVar9[-3].models[0].parts,"hotdemon.dfm");
-  pCVar9[-0xf].models[0].textures[8].textures[1].base.count = 0x3f19999a;
+  pSVar3 = pCVar9[-0xf].models[0].textures;
+  pSVar3[8].texture_name[0x14] = -0x66;
   fVar4 = 50.0f;
-  pSVar3 = pCVar9[-0xf].models[0].textures + 8;
-  pSVar3->textures[1].texture_name[0] = 'f';
+  pSVar3[8].texture_name[0x15] = -0x67;
+  pSVar3[8].texture_name[0x16] = '\x19';
+  pSVar3[8].texture_name[0x17] = '?';
+  pSVar3 = pCVar9[-0xf].models[0].textures;
+  pSVar3[8].texture_name[0x18] = 'f';
   fVar5 = 100.0f;
-  pSVar3->textures[1].texture_name[1] = 'f';
-  pSVar3->textures[1].texture_name[2] = 'f';
-  pSVar3->textures[1].texture_name[3] = '?';
-  pCVar9[-1].models[1].textures[0xe].textures[0].base.type = 1;
-  *(float *)(pCVar9[-0xf].models[0].textures[8].textures[1].texture_name + 4) = fVar4;
-  *(float *)(pCVar9[-0xf].models[0].textures[8].textures[1].texture_name + 8) = fVar5;
+  pSVar3[8].texture_name[0x19] = 'f';
+  pSVar3[8].texture_name[0x1a] = 'f';
+  pSVar3[8].texture_name[0x1b] = '?';
+  pCVar9[-1].models[1].textures[0xe].base.type = 1;
+  *(float *)(pCVar9[-0xf].models[0].textures[8].texture_name + 0x1c) = fVar4;
+  *(float *)(pCVar9[-0xf].models[0].textures[8].texture_name + 0x20) = fVar5;
   do {
     cVar2 = *pcVar10;
     *(char *)piVar11 = cVar2;

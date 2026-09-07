@@ -519,7 +519,7 @@
       "type": "pointer_cast"
     },
     {
-      "description": "'pCVar1[1].base.orient + 4' walks 1 x sizeof(CCharacter) (0xbc8c) + offsetof(base.orient) (0x30) + 0x4 = 0xbcc0, which is exactly offsetof(CHero, path_map). Ghidra had no CHero type here and reached the field by index arithmetic; write it as ((CHero *)pCVar1)->path_map (\u00a7de-pun/\u00a712).",
+      "description": "'pCVar1[1].base.orient + 4' walks 1 x sizeof(CCharacter) (0xbc8c) + offsetof(base.orient) (0x30) + 0x4 = 0xbcc0, which is exactly offsetof(CEnemy, patrol_name_pattern[16]). Ghidra had no CEnemy type here and reached the field by index arithmetic; write it as ((CEnemy *)pCVar1)->patrol_name_pattern[16] (\u00a7de-pun/\u00a712). Ambiguous: CHero::path_map also has a field there \u2014 confirm the real class from the .asm before rewriting.",
       "line": 11,
       "severity": "moderate",
       "text": "pCVar2 = core_path_cpp_CPathMap_ctor_FUN_004efd50((CPathMap *)((int)&pCVar1[1].base.orient + 4));",

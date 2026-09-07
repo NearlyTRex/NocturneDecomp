@@ -218,7 +218,7 @@ LAB_00479719:
       }
 LAB_004797c3:
       makepath
-                (this_ptr->texture_list[iVar8].textures[0].texture_name,(char *)0x0,(char *)0x0,
+                (this_ptr->texture_list[iVar8].texture_name,(char *)0x0,(char *)0x0,
                  local_3a0,"raw");
     }
     engine_special_cpp_clearScreen_FUN_005b3e70();

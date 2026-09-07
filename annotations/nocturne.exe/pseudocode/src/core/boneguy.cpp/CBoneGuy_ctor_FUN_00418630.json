@@ -682,7 +682,7 @@
       "type": "unrolled_strcpy"
     },
     {
-      "description": "'pCVar4[1].base.base.create_event + 8' walks 1 x sizeof(CEnemy) (0xbd24) + offsetof(base.base.create_event) (0x78) + 0x8 = 0xbda4, which is exactly offsetof(CBoneGuy, boxes). Ghidra had no CBoneGuy type here and reached the field by index arithmetic; write it as ((CBoneGuy *)pCVar4)->boxes (\u00a7de-pun/\u00a712).",
+      "description": "'pCVar4[1].base.base.create_event + 8' walks 1 x sizeof(CEnemy) (0xbd24) + offsetof(base.base.create_event) (0x78) + 0x8 = 0xbda4, which is exactly offsetof(CBatman, part_indices[7]). Ghidra had no CBatman type here and reached the field by index arithmetic; write it as ((CBatman *)pCVar4)->part_indices[7] (\u00a7de-pun/\u00a712). Ambiguous: CBoneGuy::boxes, CDraculaBride::rise_event[92], CMimic::attack_condition[28] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
       "line": 22,
       "severity": "moderate",
       "text": "(pCVar4[1].base.base.create_event + 8,0x14,&g_SBoneGuyBoxTypeInfo_0059aa00);",

@@ -62,19 +62,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 146,
+    "complexity_score": 141,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 51,
-    "suspect_count": 8,
+    "pseudocode_lines": 56,
+    "suspect_count": 7,
     "suspect_types": [
       "negative_offset",
       "pointer_cast",
       "pointer_truncation"
     ],
-    "total_lines": 120
+    "total_lines": 125
   },
   "cross_references": [
     {
@@ -244,15 +244,15 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 28,
+      "line": 29,
       "match": "pCVar9[-1].",
       "severity": "mild",
-      "text": "piVar11 = &pCVar9[-1].models[1].textures[0xe].textures[0].base.count;",
+      "text": "piVar11 = &pCVar9[-1].models[1].textures[0xe].base.count;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 30,
+      "line": 31,
       "match": "pCVar9[-3].",
       "severity": "mild",
       "text": "((CDeformableModelInstance *)pCVar9[-3].models[0].parts,\"hotdemon.dfm\");",
@@ -260,15 +260,15 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 39,
+      "line": 44,
       "match": "pCVar9[-1].",
       "severity": "mild",
-      "text": "pCVar9[-1].models[1].textures[0xe].textures[0].base.type = 1;",
+      "text": "pCVar9[-1].models[1].textures[0xe].base.type = 1;",
       "type": "negative_offset"
     },
     {
       "description": "Complex pointer cast",
-      "line": 50,
+      "line": 55,
       "match": "(char *)((int)piVar11",
       "severity": "moderate",
       "text": "*(char *)((int)piVar11 + 1) = cVar2;",
@@ -276,23 +276,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 51,
+      "line": 56,
       "match": "(int *)((int)piVar11",
       "severity": "moderate",
       "text": "piVar11 = (int *)((int)piVar11 + 2);",
       "type": "pointer_cast"
     },
     {
-      "description": "Pointer value `&g_CSuccubusVTable` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 23,
-      "match": "(int)&g_CSuccubusVTable",
-      "severity": "moderate",
-      "text": "pCVar9[-0x13].models[1].textures[1].textures[2].base.count = (int)&g_CSuccubusVTable;",
-      "type": "pointer_truncation"
-    },
-    {
       "description": "Pointer value `piVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 50,
+      "line": 55,
       "match": "(int)piVar11",
       "severity": "moderate",
       "text": "*(char *)((int)piVar11 + 1) = cVar2;",
@@ -300,7 +292,7 @@
     },
     {
       "description": "Pointer value `piVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 51,
+      "line": 56,
       "match": "(int)piVar11",
       "severity": "moderate",
       "text": "piVar11 = (int *)((int)piVar11 + 2);",

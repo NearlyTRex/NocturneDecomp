@@ -666,7 +666,7 @@
       "type": "unrolled_strcpy"
     },
     {
-      "description": "'pCVar2[1].create_event + 0x38' walks 1 x sizeof(CDemonActor) (0x150) + offsetof(create_event) (0x78) + 0x38 = 0x200, which is exactly offsetof(CCurtain, vertices). Ghidra had no CCurtain type here and reached the field by index arithmetic; write it as ((CCurtain *)pCVar2)->vertices (\u00a7de-pun/\u00a712).",
+      "description": "'pCVar2[1].create_event + 0x38' walks 1 x sizeof(CDemonActor) (0x150) + offsetof(create_event) (0x78) + 0x38 = 0x200, which is exactly offsetof(CBarrier, effect_class_name_list[160]). Ghidra had no CBarrier type here and reached the field by index arithmetic; write it as ((CBarrier *)pCVar2)->effect_class_name_list[160] (\u00a7de-pun/\u00a712). Ambiguous: CBodyPart::textures[5], CChain::pull_wav_name[84], CCurtain::vertices also has a field there \u2014 confirm the real class from the .asm before rewriting.",
       "line": 13,
       "severity": "moderate",
       "text": "(pCVar2[1].create_event + 0x38,1000,&g_SCurtainVertexTypeInfo_0059bd90);",

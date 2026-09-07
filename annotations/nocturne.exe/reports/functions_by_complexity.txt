@@ -2823,6 +2823,7 @@ annotations/nocturne.exe/pseudocode/src/core/health.cpp/CHealthItem_ctor_FUN_004
 annotations/nocturne.exe/pseudocode/src/core/inv.cpp/CInventory_initialize_FUN_004bef10.cpp
 annotations/nocturne.exe/pseudocode/src/core/keyactor.cpp/CKeyActor_ctor_FUN_004c3460.cpp
 annotations/nocturne.exe/pseudocode/src/engine/matrix.c/pushMatrixRelativeOffset_FUN_004ceae0.c
+annotations/nocturne.exe/pseudocode/src/core/moloch.cpp/CMoloch_dtor_FUN_004dd9f0.cpp
 annotations/nocturne.exe/pseudocode/src/engine/ncursfx.cpp/CMouse_load_FUN_004ee5a0.cpp
 annotations/nocturne.exe/pseudocode/src/cockpit/pkbitmap.cpp/CPackedBitmap_renderWithGlobalClipping_FUN_004f4310.cpp
 annotations/nocturne.exe/pseudocode/src/engine/pod.cpp/CPod_locateFile_FUN_004f9170.cpp
@@ -2856,7 +2857,6 @@ annotations/nocturne.exe/pseudocode/src/core/hpriest.cpp/CHighPriestOfGardath_ct
 annotations/nocturne.exe/pseudocode/src/core/melee.cpp/CMelee_process_FUN_004cf0c0.cpp
 annotations/nocturne.exe/pseudocode/src/core/mimic.cpp/CMimic_getCollisionType_FUN_004d5c80.cpp
 annotations/nocturne.exe/pseudocode/src/core/mission.cpp/CDemonMission_generateActorName_FUN_004d9720.cpp
-annotations/nocturne.exe/pseudocode/src/core/moloch.cpp/CMoloch_dtor_FUN_004dd9f0.cpp
 annotations/nocturne.exe/pseudocode/src/cockpit/pkbmpset.cpp/CPackedBitmapSet_alloc_FUN_004f5350.cpp
 annotations/nocturne.exe/pseudocode/src/engine/prim.c/prepareDepthBuffer_FUN_004f9870.c
 annotations/nocturne.exe/pseudocode/src/core/scat.cpp/CScat_createDefaultWeapon_FUN_004fbe80.cpp
@@ -3293,7 +3293,6 @@ annotations/nocturne.exe/pseudocode/src/core/course.cpp/CCourse_load_FUN_0043b69
 annotations/nocturne.exe/pseudocode/src/core/dcube.cpp/CDemonCubeTriangle_calculateNormalAndPlane_FUN_00448fb0.cpp
 annotations/nocturne.exe/pseudocode/src/core/enemy.cpp/CEnemy_countSameClassAttackingHero_FUN_0047a150.cpp
 annotations/nocturne.exe/pseudocode/src/core/fire.cpp/CGlassParticle_ctor_FUN_0048cb00.cpp
-annotations/nocturne.exe/pseudocode/src/core/frankgen.cpp/CFrankenstienMachine_ctor_FUN_00494630.cpp
 annotations/nocturne.exe/pseudocode/src/core/haystack.cpp/CHaystack_setup_FUN_004b3110.cpp
 annotations/nocturne.exe/pseudocode/src/engine/matrix.c/popViewport_FUN_004ce920.c
 annotations/nocturne.exe/pseudocode/src/cockpit/pkbmpset.cpp/CPackedBitmapSet_reload_FUN_004f5740.cpp
@@ -3303,6 +3302,7 @@ annotations/nocturne.exe/pseudocode/src/core/skeleton.cpp/CDeformableModel_alloc
 annotations/nocturne.exe/pseudocode/src/sound/sndmain.cpp/closeSoundDevice_FUN_005285b0.cpp
 annotations/nocturne.exe/pseudocode/src/engine/texture.cpp/ensureTextureLoaded_FUN_00545920.cpp
 annotations/nocturne.exe/pseudocode/src/wincore/winrun.cpp/drawCrosshair_FUN_00558c40.cpp
+annotations/nocturne.exe/pseudocode/src/core/biggs.cpp/CBiggs_dtor_FUN_00415a30.cpp
 annotations/nocturne.exe/pseudocode/src/shape/edittool.cpp/FUN_00477680.cpp
 annotations/nocturne.exe/pseudocode/src/core/event.cpp/FUN_00481950.cpp
 annotations/nocturne.exe/pseudocode/src/core/mmx.c/detectCPUFeatures_FUN_004d9e70.c
@@ -3320,7 +3320,6 @@ annotations/nocturne.exe/pseudocode/src/engine/3d.c/renderPolygonTexturedHardwar
 annotations/nocturne.exe/pseudocode/src/core/actor.cpp/archiveFloat_FUN_0040c880.cpp
 annotations/nocturne.exe/pseudocode/src/core/actor.cpp/archiveInteger_FUN_0040c900.cpp
 annotations/nocturne.exe/pseudocode/src/core/actor.cpp/crc32ProcessByte_FUN_0040dfc0.cpp
-annotations/nocturne.exe/pseudocode/src/core/biggs.cpp/CBiggs_dtor_FUN_00415a30.cpp
 annotations/nocturne.exe/pseudocode/src/core/bodypart.cpp/CBodyPart_renderOpaque_FUN_004161a0.cpp
 annotations/nocturne.exe/pseudocode/src/core/boneguy.cpp/hsvToRgb_FUN_00418480.cpp
 annotations/nocturne.exe/pseudocode/src/core/box.cpp/CBox_setupVelocities_FUN_0041cb40.cpp
@@ -3550,6 +3549,7 @@ annotations/nocturne.exe/pseudocode/src/core/werewolf.cpp/CWerewolf_processChain
 annotations/nocturne.exe/pseudocode/src/core/actor.cpp/adjustIndentationLevel_FUN_0040bff0.cpp
 annotations/nocturne.exe/pseudocode/src/core/colonel.cpp/CColonel_setup_FUN_00439da0.cpp
 annotations/nocturne.exe/pseudocode/src/engine/font.cpp/setShadowColor_FUN_00490ff0.cpp
+annotations/nocturne.exe/pseudocode/src/core/frankgen.cpp/CFrankenstienMachine_ctor_FUN_00494630.cpp
 annotations/nocturne.exe/pseudocode/src/core/icepick.cpp/CIcePick_setup_FUN_004b9db0.cpp
 annotations/nocturne.exe/pseudocode/src/core/inv.cpp/CInventory_cycleWeaponOfSameClass_FUN_004c0a50.cpp
 annotations/nocturne.exe/pseudocode/src/core/mirror.cpp/CMirror_setupCorners_FUN_004d6590.cpp
@@ -3565,9 +3565,9 @@ annotations/nocturne.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_getCam
 annotations/nocturne.exe/pseudocode/src/core/dstrender.cpp/renderDepthOnlyStandard_FUN_00463a79.cpp
 annotations/nocturne.exe/pseudocode/src/shape/edittool.cpp/draw3DInsetBorder_FUN_00476310.cpp
 annotations/nocturne.exe/pseudocode/src/core/event.cpp/extractParenArg_FUN_0047a650.cpp
-annotations/nocturne.exe/pseudocode/src/core/filmreel.cpp/CFilmProjector_process_FUN_00482010.cpp
 annotations/nocturne.exe/pseudocode/src/engine/font.cpp/CBitFont_getTextHeight_FUN_00492e60.cpp
 annotations/nocturne.exe/pseudocode/src/core/scat.cpp/CScat_blendLayerAction_FUN_004fcff0.cpp
+annotations/nocturne.exe/pseudocode/src/core/vampboss.cpp/CVampireBoss_ctor_FUN_0054c2b0.cpp
 annotations/nocturne.exe/pseudocode/src/core/vampboss.cpp/CVampireBoss_setup_FUN_0054c3e0.cpp
 annotations/nocturne.exe/pseudocode/src/core/xform.cpp/multiplyMatrix3x4_FUN_0055aa00.cpp
 annotations/nocturne.exe/pseudocode/src/core/bodypart.cpp/CBodyPart_renderGeometry_FUN_00416030.cpp
@@ -3610,6 +3610,7 @@ annotations/nocturne.exe/pseudocode/src/core/xform.cpp/clampClippedVertices_FUN_
 annotations/nocturne.exe/pseudocode/src/core/cloth.cpp/CCloth_saveJoinedLight_FUN_00437cc0.cpp
 annotations/nocturne.exe/pseudocode/src/shape/edittool.cpp/CEditorTools_drawCenteredWireframeCube_FUN_00473650.cpp
 annotations/nocturne.exe/pseudocode/src/core/flies.cpp/CFlies_initFly_FUN_0048f8f0.cpp
+annotations/nocturne.exe/pseudocode/src/core/passngr.cpp/CPassenger_dtor_FUN_004ef5c0.cpp
 annotations/nocturne.exe/pseudocode/src/sound/sndmain.cpp/getSfxPlaybackPosition_FUN_00526d10.cpp
 annotations/nocturne.exe/pseudocode/src/sound/sndmain.cpp/getChannelLevels_FUN_005293f0.cpp
 annotations/nocturne.exe/pseudocode/src/sound/snddx.cpp/CDirectSoundDevice_poll_FUN_0052a970.cpp
@@ -3625,7 +3626,6 @@ annotations/nocturne.exe/pseudocode/src/engine/keyframe.c/recomputeKeyFrameNorma
 annotations/nocturne.exe/pseudocode/src/core/lever.cpp/CLever_process_FUN_004c6190.cpp
 annotations/nocturne.exe/pseudocode/src/core/mimic.cpp/CMimic_dtor_FUN_004d4540.cpp
 annotations/nocturne.exe/pseudocode/src/engine/model.c/getMRGLSize_FUN_004dd520.c
-annotations/nocturne.exe/pseudocode/src/core/passngr.cpp/CPassenger_dtor_FUN_004ef5c0.cpp
 annotations/nocturne.exe/pseudocode/src/core/pendulum.cpp/CPendulum_process_FUN_004f3a20.cpp
 annotations/nocturne.exe/pseudocode/src/core/setdir.cpp/CDemonSet_FUN_00513670.cpp
 annotations/nocturne.exe/pseudocode/src/core/setdir.cpp/CDemonSet_buildVdirBoxGroups_FUN_005141f0.cpp
@@ -3675,7 +3675,6 @@ annotations/nocturne.exe/pseudocode/src/core/script.cpp/CScript_executeInitSecti
 annotations/nocturne.exe/pseudocode/src/core/setutil.cpp/C3DSLight_apply_FUN_00515350.cpp
 annotations/nocturne.exe/pseudocode/src/sound/sndmain.cpp/CSfxSample_lock_FUN_00523ba0.cpp
 annotations/nocturne.exe/pseudocode/src/core/stranger.cpp/CStranger_getCarryObjToBodyXForm_FUN_0053f210.cpp
-annotations/nocturne.exe/pseudocode/src/core/vampboss.cpp/CVampireBoss_ctor_FUN_0054c2b0.cpp
 annotations/nocturne.exe/pseudocode/src/core/vampboss.cpp/CVampireBoss_renderOpaque_FUN_0054dac0.cpp
 annotations/nocturne.exe/pseudocode/src/core/vessel.cpp/CCryptVessel_renderOpaque_FUN_00550210.cpp
 annotations/nocturne.exe/pseudocode/src/wincore/wddvmem.cpp/resetGraphicsSystem_FUN_00553190.cpp
@@ -3749,6 +3748,7 @@ annotations/nocturne.exe/pseudocode/src/core/morph.cpp/CMorphModel_addPartFromPo
 annotations/nocturne.exe/pseudocode/src/sound/mp3.cpp/CFileBitStream_readAllocationValues_FUN_004e31f0.cpp
 annotations/nocturne.exe/pseudocode/src/core/stranger.cpp/FUN_005409c0.cpp
 annotations/nocturne.exe/pseudocode/src/core/dcamera.cpp/CDemonCamera_clearFramebufferAndWorkBuffers_FUN_00447b30.cpp
+annotations/nocturne.exe/pseudocode/src/core/filmreel.cpp/CFilmProjector_process_FUN_00482010.cpp
 annotations/nocturne.exe/pseudocode/src/core/setcolid.cpp/CDemonSet_iterativeRaycast_FUN_0050fdd0.cpp
 annotations/nocturne.exe/pseudocode/src/core/simbox.cpp/CSimBox_setup_FUN_00516c60.cpp
 annotations/nocturne.exe/pseudocode/src/core/tvbat.cpp/CTVBat_ctor_FUN_0054b140.cpp
@@ -3856,6 +3856,7 @@ annotations/nocturne.exe/pseudocode/src/sound/mp3.cpp/validateLayer2AllocationTa
 annotations/nocturne.exe/pseudocode/src/core/netgame.cpp/CNetGame_ctor_FUN_004e9860.cpp
 annotations/nocturne.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_findClosestBone_FUN_0051e9e0.cpp
 annotations/nocturne.exe/pseudocode/src/sound/sndmain.cpp/CSfxSlot_kill_FUN_00525570.cpp
+annotations/nocturne.exe/pseudocode/src/core/vessel.cpp/CCryptVessel_renderTransparent_FUN_00550370.cpp
 annotations/nocturne.exe/pseudocode/src/wincore/wddvmem.cpp/allocateRenderBuffers_FUN_00552a20.cpp
 annotations/nocturne.exe/pseudocode/src/engine/zraster.c/addRasterizerEdgeWithDepth_FUN_00562740.c
 annotations/nocturne.exe/pseudocode/src/engine/3d.c/updateAnimatedTexture_FUN_00406690.c
@@ -3867,7 +3868,6 @@ annotations/nocturne.exe/pseudocode/src/core/ghoul.cpp/CGhoul_canBeAttracted_FUN
 annotations/nocturne.exe/pseudocode/src/engine/matrix.c/projectCachedPointUnchecked_FUN_004cd300.c
 annotations/nocturne.exe/pseudocode/src/core/melee.cpp/CMelee_ctor_FUN_004cec60.cpp
 annotations/nocturne.exe/pseudocode/src/sound/mp3.cpp/CFileBitStream_readBits_FUN_004e2ac0.cpp
-annotations/nocturne.exe/pseudocode/src/core/vessel.cpp/CCryptVessel_renderTransparent_FUN_00550370.cpp
 annotations/nocturne.exe/pseudocode/src/wincore/wddvmem.cpp/initializeGraphicsSystem_FUN_00552b40.cpp
 annotations/nocturne.exe/pseudocode/src/core/ammo.cpp/CAmmo_setWeaponClass_FUN_0040ed80.cpp
 annotations/nocturne.exe/pseudocode/src/core/baron.cpp/CBaron_ctor_FUN_004101d0.cpp
@@ -3885,7 +3885,6 @@ annotations/nocturne.exe/pseudocode/src/core/gargoyle.cpp/CGargoyle_setup_FUN_00
 annotations/nocturne.exe/pseudocode/src/wincore/wddvmem.cpp/convertPaletteToDirectColor_FUN_004b63f0.cpp
 annotations/nocturne.exe/pseudocode/src/cockpit/pkbitmap.cpp/CPackedBitmap_writePBMFile_FUN_004f4bb0.cpp
 annotations/nocturne.exe/pseudocode/src/core/xform.cpp/eulerToQuaternion_FUN_0055d610.cpp
-annotations/nocturne.exe/pseudocode/src/core/bat.cpp/CBat_ctor_FUN_00411a10.cpp
 annotations/nocturne.exe/pseudocode/src/cockpit/ckptutil.c/buildHardwarePalettes_FUN_0042d5c0.c
 annotations/nocturne.exe/pseudocode/src/core/cow.cpp/CZombieCow_processDismemberment_FUN_0043c360.cpp
 annotations/nocturne.exe/pseudocode/src/cockpit/drawsurf.cpp/CDrawSurface_drawCircle_FUN_0045bd50.cpp
@@ -3991,6 +3990,7 @@ annotations/nocturne.exe/pseudocode/src/core/hero.cpp/CHero_tryPushNearbyBox_FUN
 annotations/nocturne.exe/pseudocode/src/sound/mp3.cpp/CMP3Decoder_huffmanDecode_FUN_004e2ed0.cpp
 annotations/nocturne.exe/pseudocode/src/engine/3d.c/renderPolygonAdaptiveDepthOp25_FUN_004060b0.c
 annotations/nocturne.exe/pseudocode/src/core/actor.cpp/archiveDescription_FUN_0040c3a0.cpp
+annotations/nocturne.exe/pseudocode/src/core/biggs.cpp/CBiggs_ctor_FUN_00415370.cpp
 annotations/nocturne.exe/pseudocode/src/core/bride.cpp/CBride_getTargetPoint_FUN_00420eb0.cpp
 annotations/nocturne.exe/pseudocode/src/core/dfont.cpp/freeFonts_FUN_0044cc00.cpp
 annotations/nocturne.exe/pseudocode/src/cockpit/pkbitmap.cpp/CPackedBitmap_copyNoClip_FUN_004f44d0.cpp
@@ -4002,6 +4002,7 @@ annotations/nocturne.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_render
 annotations/nocturne.exe/pseudocode/src/engine/font.cpp/CBitFont_wrapText_FUN_00492f30.cpp
 annotations/nocturne.exe/pseudocode/src/core/ghoul.cpp/CGhoul_getTargetPoint_FUN_004ab110.cpp
 annotations/nocturne.exe/pseudocode/src/sound/mp3.cpp/CFileBitStream_readQuantizedSamples_FUN_004e36d0.cpp
+annotations/nocturne.exe/pseudocode/src/core/bat.cpp/CBat_ctor_FUN_00411a10.cpp
 annotations/nocturne.exe/pseudocode/src/cockpit/drawsurf.cpp/CDrawSurface_drawTextWithAlignment_FUN_0045d760.cpp
 annotations/nocturne.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_renderFullEffectsPoly_FUN_0045fce0.cpp
 annotations/nocturne.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_renderDestReadBlendPoly_FUN_0045ff20.cpp
@@ -4061,7 +4062,6 @@ annotations/nocturne.exe/pseudocode/src/core/manpuz.cpp/CMansionPuzzleCircle_pro
 annotations/nocturne.exe/pseudocode/src/engine/matrix.c/normalizeVector3DFixed_FUN_004cde10.c
 annotations/nocturne.exe/pseudocode/src/core/path.cpp/CPathMap_isLineWalkable_FUN_004f0540.cpp
 annotations/nocturne.exe/pseudocode/src/shape/spotview.cpp/CSpotView_handleInput_FUN_005342b0.cpp
-annotations/nocturne.exe/pseudocode/src/core/biggs.cpp/CBiggs_ctor_FUN_00415370.cpp
 annotations/nocturne.exe/pseudocode/src/core/chain.cpp/CChain_setup_FUN_0042b8f0.cpp
 annotations/nocturne.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_processCapturedFaces_FUN_00461db0.cpp
 annotations/nocturne.exe/pseudocode/src/shape/edittool.cpp/CEditorTools_showFileSelectionDialog_FUN_00470550.cpp
@@ -4145,12 +4145,14 @@ annotations/nocturne.exe/pseudocode/src/core/actor.cpp/rayCylinderIntersect_FUN_
 annotations/nocturne.exe/pseudocode/src/cockpit/drawsurf.cpp/CDrawSurface_drawClippedLine_FUN_0045bfb0.cpp
 annotations/nocturne.exe/pseudocode/src/cockpit/drawsurf.cpp/CDrawSurface_drawClippedDashedLine_FUN_0045c050.cpp
 annotations/nocturne.exe/pseudocode/src/core/hero.cpp/CHero_ctor_FUN_004b46d0.cpp
+annotations/nocturne.exe/pseudocode/src/core/mimic.cpp/CMimic_ctor_FUN_004d4450.cpp
 annotations/nocturne.exe/pseudocode/src/core/set.cpp/CDemonSet_FUN_0050aba0.cpp
 annotations/nocturne.exe/pseudocode/src/core/batman.cpp/CBatman_processDismemberment_FUN_004145f0.cpp
 annotations/nocturne.exe/pseudocode/src/core/motion.cpp/CMotionController_advance_FUN_004e11c0.cpp
 annotations/nocturne.exe/pseudocode/src/core/mirror.cpp/CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_004d7bd0.cpp
 annotations/nocturne.exe/pseudocode/src/core/passngr.cpp/CPassenger_setup_FUN_004ef6d0.cpp
 annotations/nocturne.exe/pseudocode/src/core/passngr.cpp/CPassenger_process_FUN_004ef890.cpp
+annotations/nocturne.exe/pseudocode/src/core/succubus.cpp/CSuccubus_ctor_FUN_00540b40.cpp
 annotations/nocturne.exe/pseudocode/src/core/werewolf.cpp/CWerewolf_renderTransparent_FUN_005576a0.cpp
 annotations/nocturne.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_setupCameraAndProjection_FUN_004607b0.cpp
 annotations/nocturne.exe/pseudocode/src/core/filmreel.cpp/CFilmProjector_ctor_FUN_00481f10.cpp
@@ -4176,7 +4178,6 @@ annotations/nocturne.exe/pseudocode/src/engine/font.cpp/CBitFont_parseCharacterM
 annotations/nocturne.exe/pseudocode/src/core/mobster.cpp/CMobster_processDismemberment_FUN_004dc2d0.cpp
 annotations/nocturne.exe/pseudocode/src/core/motion.cpp/CMotionController_render_FUN_004e22b0.cpp
 annotations/nocturne.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_blendBoneRotations_FUN_0051cfd0.cpp
-annotations/nocturne.exe/pseudocode/src/core/succubus.cpp/CSuccubus_ctor_FUN_00540b40.cpp
 annotations/nocturne.exe/pseudocode/src/engine/prim.c/setupColoredSoftwareEdge_FUN_004faa20.c
 annotations/nocturne.exe/pseudocode/src/engine/3d.c/queueSortedPolygon_FUN_00405ab0.c
 annotations/nocturne.exe/pseudocode/src/core/dcube.cpp/clipEdgeToPlane_FUN_004484c0.cpp
@@ -4193,7 +4194,6 @@ annotations/nocturne.exe/pseudocode/src/sound/snddx.cpp/CDirectSoundDevice_lockS
 annotations/nocturne.exe/pseudocode/src/sound/sndwav.cpp/enumerateWavOutDevice_FUN_0052c6c0.cpp
 annotations/nocturne.exe/pseudocode/src/core/dtri.cpp/clipLineToPlane_FUN_0046d4e0.cpp
 annotations/nocturne.exe/pseudocode/src/core/gargoyle.cpp/CGargoyle_getTargetPoints_FUN_004a8730.cpp
-annotations/nocturne.exe/pseudocode/src/core/mimic.cpp/CMimic_ctor_FUN_004d4450.cpp
 annotations/nocturne.exe/pseudocode/src/core/motion.cpp/CMotionController_advanceFrameToExitPoint_FUN_004e1bd0.cpp
 annotations/nocturne.exe/pseudocode/src/core/xform.cpp/inverse_FUN_0055bd00.cpp
 annotations/nocturne.exe/pseudocode/src/core/dracbrid.cpp/CDraculaBride_updateFreakySounds_FUN_0045b020.cpp
@@ -4267,6 +4267,7 @@ annotations/nocturne.exe/pseudocode/src/core/conveyor.cpp/CConveyor_setup_FUN_00
 annotations/nocturne.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_renderFaceList_FUN_00461720.cpp
 annotations/nocturne.exe/pseudocode/src/sound/sndmain.cpp/allocMixBuffers_FUN_00522f10.cpp
 annotations/nocturne.exe/pseudocode/src/core/dcamera.cpp/CDemonCamera_addLightmapToCorona_FUN_00444c90.cpp
+annotations/nocturne.exe/pseudocode/src/core/moloch.cpp/CMoloch_ctor_FUN_004dd930.cpp
 annotations/nocturne.exe/pseudocode/src/core/actor.cpp/CDemonActor_renderTargetPoints_FUN_0040add0.cpp
 annotations/nocturne.exe/pseudocode/src/core/box.cpp/CBoundingBox3D_isVisible_FUN_0041ceb0.cpp
 annotations/nocturne.exe/pseudocode/src/core/bride.cpp/CBride_setup_FUN_0041fc20.cpp
@@ -4293,10 +4294,8 @@ annotations/nocturne.exe/pseudocode/src/core/dcamera.cpp/renderFlatColorScanline
 annotations/nocturne.exe/pseudocode/src/engine/3d.c/computeSortedPolygonKey_FUN_004059c0.c
 annotations/nocturne.exe/pseudocode/src/core/boxactor.cpp/CLightActor_process_FUN_0041f3d0.cpp
 annotations/nocturne.exe/pseudocode/src/core/dtri.cpp/cylinderTriangleTest_FUN_0046cba0.cpp
-annotations/nocturne.exe/pseudocode/src/core/moloch.cpp/CMoloch_ctor_FUN_004dd930.cpp
 annotations/nocturne.exe/pseudocode/src/core/skeleton.cpp/CDeformableModel_exactRayTrace_FUN_0051a470.cpp
 annotations/nocturne.exe/pseudocode/src/shape/edittool.cpp/CEditorTools_updatePercentage_FUN_00471760.cpp
-annotations/nocturne.exe/pseudocode/src/core/emitter.cpp/CEmitter_ctor_FUN_004783c0.cpp
 annotations/nocturne.exe/pseudocode/src/core/fire.cpp/CBulletHole_render_FUN_00482f50.cpp
 annotations/nocturne.exe/pseudocode/src/engine/3d.c/drawLine2DFromIndices_FUN_00409210.c
 annotations/nocturne.exe/pseudocode/src/engine/3d.c/drawLine3DFromIndices_FUN_00409510.c
@@ -4375,6 +4374,7 @@ annotations/nocturne.exe/pseudocode/src/core/game.cpp/CGame_beginFadeOut_FUN_004
 annotations/nocturne.exe/pseudocode/src/engine/pcx.c/saveScreenshotGeneral_FUN_004f2990.c
 annotations/nocturne.exe/pseudocode/src/sound/snddx.cpp/CDirectSoundDevice_initPropertySet_FUN_0052a280.cpp
 annotations/nocturne.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_renderFacetList_FUN_004614b0.cpp
+annotations/nocturne.exe/pseudocode/src/core/emitter.cpp/CEmitter_ctor_FUN_004783c0.cpp
 annotations/nocturne.exe/pseudocode/src/engine/2d.c/unmapFrameBuffer_FUN_00404360.c
 annotations/nocturne.exe/pseudocode/src/core/boxactor.cpp/CBoxActor_process_FUN_0041e5e0.cpp
 annotations/nocturne.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModel_intersectRay_FUN_00453990.cpp
@@ -4388,6 +4388,7 @@ annotations/nocturne.exe/pseudocode/src/core/vehicle.cpp/CVehicle_ctor_FUN_0054e
 annotations/nocturne.exe/pseudocode/src/core/bugs.cpp/CBugs_ctor_FUN_00421040.cpp
 annotations/nocturne.exe/pseudocode/src/core/fire.cpp/CFireEffect_createBulletImpact_FUN_0048ab60.cpp
 annotations/nocturne.exe/pseudocode/src/core/netgame.cpp/CNetGame_processChatOut_FUN_004ebfd0.cpp
+annotations/nocturne.exe/pseudocode/src/core/passngr.cpp/CPassenger_ctor_FUN_004ef4e0.cpp
 annotations/nocturne.exe/pseudocode/src/core/spike.cpp/CSpike_ctor_FUN_00533020.cpp
 annotations/nocturne.exe/pseudocode/src/core/icepick.cpp/CIcePick_updateShootBlend_FUN_004ba740.cpp
 annotations/nocturne.exe/pseudocode/src/shape/edittool.cpp/CPickList_calculateLayoutAndCreateComponents_FUN_00475470.cpp
@@ -4410,12 +4411,10 @@ annotations/nocturne.exe/pseudocode/src/core/stranger.cpp/CStranger_tryDescendLa
 annotations/nocturne.exe/pseudocode/src/engine/3d.c/renderPolygonSolidLitClampedOp17_FUN_00405540.c
 annotations/nocturne.exe/pseudocode/src/core/cloth.cpp/CCloth_computeBoneTransform_FUN_00436580.cpp
 annotations/nocturne.exe/pseudocode/src/shape/edittool.cpp/CStrList_insertSortedFileRecord_FUN_00474460.cpp
-annotations/nocturne.exe/pseudocode/src/core/marquee.cpp/CMarquee_ctor_FUN_004cc0e0.cpp
 annotations/nocturne.exe/pseudocode/src/core/setdir.cpp/CDemonSet_renderVirtualDirectors_FUN_005138e0.cpp
 annotations/nocturne.exe/pseudocode/src/core/skeleton.cpp/CDeformableModel_computeBoneDominantPart_FUN_00519be0.cpp
 annotations/nocturne.exe/pseudocode/src/shape/edittool.cpp/CEditorTools_restoreWindowAndCleanup_FUN_004720c0.cpp
 annotations/nocturne.exe/pseudocode/src/core/gabriela.cpp/CGabriella_updateAimTracking_FUN_004990c0.cpp
-annotations/nocturne.exe/pseudocode/src/core/passngr.cpp/CPassenger_ctor_FUN_004ef4e0.cpp
 annotations/nocturne.exe/pseudocode/src/core/stranger.cpp/CStranger_processDamage_FUN_0053e860.cpp
 annotations/nocturne.exe/pseudocode/src/core/turret.cpp/CTurret_getBoundingBox_FUN_00549cd0.cpp
 annotations/nocturne.exe/pseudocode/src/core/marquee.cpp/CMarquee_renderTransparent_FUN_004cc5d0.cpp
@@ -4453,6 +4452,7 @@ annotations/nocturne.exe/pseudocode/src/core/stairs.cpp/CStairs_ctor_FUN_005347b
 annotations/nocturne.exe/pseudocode/src/core/setcolid.cpp/CDemonSet_raycastAgainstActors_FUN_0050ffe0.cpp
 annotations/nocturne.exe/pseudocode/src/core/dirmat.cpp/CMatrix3x3f_getEulerAngles_FUN_0044dbd0.cpp
 annotations/nocturne.exe/pseudocode/src/core/ground.cpp/CGround_load_FUN_004b14d0.cpp
+annotations/nocturne.exe/pseudocode/src/core/marquee.cpp/CMarquee_ctor_FUN_004cc0e0.cpp
 annotations/nocturne.exe/pseudocode/src/core/frankgen.cpp/CFrankenstienMachine_process_FUN_00494950.cpp
 annotations/nocturne.exe/pseudocode/src/core/dcamera.cpp/CDemonCamera_beginScene_FUN_00440290.cpp
 annotations/nocturne.exe/pseudocode/src/core/script.cpp/CScript_FUN_004febd0.cpp
@@ -4527,14 +4527,13 @@ annotations/nocturne.exe/pseudocode/src/engine/3d.c/renderPolygonAdaptiveFogText
 annotations/nocturne.exe/pseudocode/src/core/dtrace.cpp/CDemonRaytrace_testCylinderCollision_FUN_00468af0.cpp
 annotations/nocturne.exe/pseudocode/src/core/particle.cpp/CParticle_process_FUN_004ef120.cpp
 annotations/nocturne.exe/pseudocode/src/core/set.cpp/CDemonSet_FUN_0050aa70.cpp
-annotations/nocturne.exe/pseudocode/src/core/gabriela.cpp/CGabriella_ctor_FUN_004956a0.cpp
 annotations/nocturne.exe/pseudocode/src/core/dfont.cpp/initFonts_FUN_0044c560.cpp
 annotations/nocturne.exe/pseudocode/src/core/simbox.cpp/CSimBox_ctor_FUN_00516ba0.cpp
+annotations/nocturne.exe/pseudocode/src/core/morph.cpp/CMorph_getReady_FUN_004e03c0.cpp
 annotations/nocturne.exe/pseudocode/src/core/setutil.cpp/C3DSLight_renderVolumetricSphere_FUN_005159a0.cpp
 annotations/nocturne.exe/pseudocode/src/core/actor.cpp/CDemonActor_rayIntersect_FUN_0040a740.cpp
 annotations/nocturne.exe/pseudocode/src/core/flies.cpp/drawFlyPixel_FUN_0048f3c0.cpp
 annotations/nocturne.exe/pseudocode/src/core/werewolf.cpp/CWerewolf_renderEyeGlow_FUN_005570b0.cpp
-annotations/nocturne.exe/pseudocode/src/core/morph.cpp/CMorph_getReady_FUN_004e03c0.cpp
 annotations/nocturne.exe/pseudocode/src/engine/ini.cpp/CIni_getProfileString_FUN_004bd0a0.cpp
 annotations/nocturne.exe/pseudocode/src/core/weapon.cpp/CWeapon_ctor_FUN_00553d90.cpp
 annotations/nocturne.exe/pseudocode/src/engine/special.cpp/renderPerspectiveCorrectScanline16_FUN_00530322.cpp
@@ -4550,6 +4549,7 @@ annotations/nocturne.exe/pseudocode/src/core/hostage.cpp/CHostage_getCarryObjToB
 annotations/nocturne.exe/pseudocode/src/core/charactr.cpp/CCharacter_renderBurn_FUN_00426e80.cpp
 annotations/nocturne.exe/pseudocode/src/core/gabriela.cpp/CGabriella_processMotionEvents_FUN_00497410.cpp
 annotations/nocturne.exe/pseudocode/src/core/dcube.cpp/CDemonCube_rotateVertices_FUN_0044aff0.cpp
+annotations/nocturne.exe/pseudocode/src/core/gabriela.cpp/CGabriella_ctor_FUN_004956a0.cpp
 annotations/nocturne.exe/pseudocode/src/core/game.cpp/CGame_renderOverlay_FUN_0049ab50.cpp
 annotations/nocturne.exe/pseudocode/src/sound/sndmain.cpp/getSfxSample_FUN_00522480.cpp
 annotations/nocturne.exe/pseudocode/src/core/path.cpp/CPathMap_searchGrid_FUN_004f20a0.cpp
@@ -4557,8 +4557,8 @@ annotations/nocturne.exe/pseudocode/src/engine/special.cpp/renderPerspectiveCorr
 annotations/nocturne.exe/pseudocode/src/engine/fpoly.c/rasterizePolygonHardware_FUN_00494260.c
 annotations/nocturne.exe/pseudocode/src/core/skeleton.cpp/CDeformableModel_loadStream_FUN_00519280.cpp
 annotations/nocturne.exe/pseudocode/src/sound/sndmain.cpp/CSfxSample_parseConfigFile_FUN_00521e10.cpp
-annotations/nocturne.exe/pseudocode/src/core/cloth.cpp/CCloth_render_FUN_00437db0.cpp
 annotations/nocturne.exe/pseudocode/src/core/boneguy.cpp/CBoneGuy_getCarryObjToBodyXForm_FUN_004194b0.cpp
+annotations/nocturne.exe/pseudocode/src/core/cloth.cpp/CCloth_render_FUN_00437db0.cpp
 annotations/nocturne.exe/pseudocode/src/core/level.cpp/CLevelLoader_update_FUN_004c59e0.cpp
 annotations/nocturne.exe/pseudocode/src/sound/sndmain.cpp/analyzeFrequencyBand_FUN_00528e60.cpp
 annotations/nocturne.exe/pseudocode/src/core/fire.cpp/CSpark_setupRenderState_FUN_004837a0.cpp
@@ -4610,7 +4610,6 @@ annotations/nocturne.exe/pseudocode/src/wincore/winrun.cpp/winMain_FUN_00559260.
 annotations/nocturne.exe/pseudocode/src/cockpit/ckptutil.c/mmxOptimizedMemcpy_FUN_0042cff2.c
 annotations/nocturne.exe/pseudocode/src/core/fire.cpp/CFireEffect_process_FUN_0048a390.cpp
 annotations/nocturne.exe/pseudocode/src/core/fire.cpp/CFireEffect_renderDecals_FUN_0048a970.cpp
-annotations/nocturne.exe/pseudocode/src/core/skeleton.cpp/CDeformableModel_renderParts_FUN_00518510.cpp
 annotations/nocturne.exe/pseudocode/src/cockpit/ckptutil.c/optimizedMemcpy_FUN_0042cef8.c
 annotations/nocturne.exe/pseudocode/src/core/bugs.cpp/CBugs_updateBugRenderingData_FUN_00422c70.cpp
 annotations/nocturne.exe/pseudocode/src/core/bugs.cpp/CBugs_findNextSwarmVertex_FUN_00423480.cpp
@@ -4631,6 +4630,7 @@ annotations/nocturne.exe/pseudocode/src/cockpit/ckptutil.c/blitSpanBasedSpriteCl
 annotations/nocturne.exe/pseudocode/src/core/dlight.cpp/CDemonLight_renderVolumetricLightShaft_FUN_00450520.cpp
 annotations/nocturne.exe/pseudocode/src/core/actor.cpp/archivePartStatus_FUN_0040cbf0.cpp
 annotations/nocturne.exe/pseudocode/src/core/set.cpp/CDemonSet_buildDisplayList_FUN_0050d2d0.cpp
+annotations/nocturne.exe/pseudocode/src/core/skeleton.cpp/CDeformableModel_renderParts_FUN_00518510.cpp
 annotations/nocturne.exe/pseudocode/src/engine/special.cpp/initializeExternalRenderer_FUN_00530e60.cpp
 annotations/nocturne.exe/pseudocode/src/cockpit/ckptutil.c/blitSpanBasedSprite_FUN_0042d6c0.c
 annotations/nocturne.exe/pseudocode/src/core/dstrender.cpp/blendLightmapSharedU32toU32NoBiasPx1MMX_FUN_004652d0.cpp
@@ -4673,7 +4673,6 @@ annotations/nocturne.exe/pseudocode/src/core/trash.cpp/CTrash_process_FUN_00546e
 annotations/nocturne.exe/pseudocode/src/core/xform.cpp/matrixToEulerAnglesZYX_FUN_0055b6c0.cpp
 annotations/nocturne.exe/pseudocode/src/core/stranger.cpp/CStranger_renderOpaque_FUN_0053d100.cpp
 annotations/nocturne.exe/pseudocode/src/cockpit/ckptutil.c/blitDualModeSprite_FUN_0042e060.c
-annotations/nocturne.exe/pseudocode/src/core/stranger.cpp/CStranger_ctor_FUN_005350c0.cpp
 annotations/nocturne.exe/pseudocode/src/core/dpart.cpp/CDemonPart_loadFromFile_FUN_004571f0.cpp
 annotations/nocturne.exe/pseudocode/src/core/dtrace.cpp/CDemonRaytrace_cylinderGroundCheck_FUN_004687e0.cpp
 annotations/nocturne.exe/pseudocode/src/core/netgame.cpp/CNetGame_processServerFrame_FUN_004ed2d0.cpp
@@ -4692,6 +4691,7 @@ annotations/nocturne.exe/pseudocode/src/sound/snddx.cpp/CDirectSoundDevice_setMo
 annotations/nocturne.exe/pseudocode/src/core/dcamera.cpp/CDemonCamera_sampleLightingAntialiased_FUN_004425f0.cpp
 annotations/nocturne.exe/pseudocode/src/core/game.cpp/CGame_FUN_004a57c0.cpp
 annotations/nocturne.exe/pseudocode/src/core/manpuz.cpp/CMansionPuzzleCircle_setup_FUN_004c9580.cpp
+annotations/nocturne.exe/pseudocode/src/core/stranger.cpp/CStranger_ctor_FUN_005350c0.cpp
 annotations/nocturne.exe/pseudocode/src/engine/zraster.c/rasterizeTriangle_FUN_005628c0.c
 annotations/nocturne.exe/pseudocode/src/engine/3d.c/renderSortedPolygonList_FUN_00405b40.c
 annotations/nocturne.exe/pseudocode/src/core/dcamera.cpp/CDemonCamera_compositeLightmapToFramebuffer_FUN_004470f0.cpp
@@ -4859,8 +4859,8 @@ annotations/nocturne.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_clipAn
 annotations/nocturne.exe/pseudocode/src/core/mmx.c/detectIntelProcessor_FUN_004d9eac.c
 annotations/nocturne.exe/pseudocode/src/core/gore.cpp/CBloodParticle_render_FUN_004ae190.cpp
 annotations/nocturne.exe/pseudocode/src/core/dstrender.cpp/blendLightmapShared4U64toU64pBB12Px4MMX_FUN_0046556f.cpp
-annotations/nocturne.exe/pseudocode/src/core/gabriela.cpp/CGabriella_process_FUN_00495a20.cpp
 annotations/nocturne.exe/pseudocode/src/core/actor.cpp/CDemonActor_processMeleeHit_FUN_0040b300.cpp
+annotations/nocturne.exe/pseudocode/src/core/gabriela.cpp/CGabriella_process_FUN_00495a20.cpp
 annotations/nocturne.exe/pseudocode/src/core/fire.cpp/CFireball_render_FUN_00484390.cpp
 annotations/nocturne.exe/pseudocode/src/core/dstrender.cpp/verticalBlur3TapMMXStride320_FUN_00465382.cpp
 annotations/nocturne.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_blendMotion_FUN_0051c3d0.cpp

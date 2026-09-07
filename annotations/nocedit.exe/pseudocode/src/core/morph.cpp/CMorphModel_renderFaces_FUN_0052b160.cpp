@@ -34,7 +34,7 @@ void __cdecl core_morph_cpp_CMorphModel_renderFaces_FUN_0052b160(CMorphModel *th
                              base.type + iVar3);
       if (iVar1 != local_14) {
         engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-                  (g_CDemonRendererPtr2,this_ptr->textures[iVar1].textures);
+                  (g_CDemonRendererPtr2,(SMRGLTextureBasic *)(this_ptr->textures + iVar1));
         local_14 = iVar1;
       }
       prim = (SMRGLHeaderPrimitive *)

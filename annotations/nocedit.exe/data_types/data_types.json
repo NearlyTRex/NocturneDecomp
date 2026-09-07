@@ -4097,7 +4097,7 @@
       "type":"struct"
     },
     {
-      "name":"SMRGLTextureLod",
+      "name":"SMRGLTextureModel",
       "type":"struct"
     },
     {
@@ -38830,7 +38830,7 @@
           "len":21600,
           "name":"texture_list",
           "offset":292,
-          "type":"SMRGLTextureLod[300]"
+          "type":"SMRGLTextureModel[300]"
         },
         {
           "comment":"max=30",
@@ -39809,7 +39809,7 @@
           "len":4,
           "name":"lod_textures",
           "offset":20,
-          "type":"SMRGLTextureLod*"
+          "type":"SMRGLTextureModel*"
         },
         {
           "len":4,
@@ -40325,7 +40325,7 @@
           "len":72,
           "name":"light_texture",
           "offset":5312,
-          "type":"SMRGLTextureLod"
+          "type":"SMRGLTextureModel"
         },
         {
           "len":4,
@@ -41237,7 +41237,7 @@
           "len":1440,
           "name":"textures",
           "offset":104,
-          "type":"SMRGLTextureLod[20]"
+          "type":"SMRGLTextureModel[20]"
         }
       ],
       "importable":true,
@@ -58939,15 +58939,21 @@
       "desc":"",
       "fields":[
         {
-          "len":72,
-          "name":"textures",
+          "len":8,
+          "name":"base",
           "offset":0,
-          "type":"SMRGLTextureBasic[3]"
+          "type":"SMRGLHeaderBasic"
+        },
+        {
+          "len":64,
+          "name":"texture_name",
+          "offset":8,
+          "type":"char[64]"
         }
       ],
       "importable":true,
       "len":72,
-      "name":"SMRGLTextureLod",
+      "name":"SMRGLTextureModel",
       "pack":false,
       "type":"struct"
     },
@@ -60730,7 +60736,7 @@
           "len":72,
           "name":"texture_data",
           "offset":196,
-          "type":"SMRGLTextureLod"
+          "type":"SMRGLTextureModel"
         },
         {
           "len":4,
@@ -61841,7 +61847,7 @@
           "len":5760,
           "name":"textures",
           "offset":0,
-          "type":"SMRGLTextureLod[80]"
+          "type":"SMRGLTextureModel[80]"
         }
       ],
       "importable":true,

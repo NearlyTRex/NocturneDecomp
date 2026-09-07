@@ -15,8 +15,8 @@ void __cdecl core_skeledit_cpp_CDeformableModel_removeUnusedTextures_FUN_0058ec6
   int iVar6;
   int iVar4;
   int iVar5;
-  SMRGLTextureLod *local_20;
-  SMRGLTextureLod *local_1c;
+  SMRGLTextureModel *local_20;
+  SMRGLTextureModel *local_1c;
   int local_14;
 
   if (this_ptr->num_texture_sets != 1) {

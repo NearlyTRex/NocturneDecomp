@@ -120,8 +120,8 @@ void __cdecl core_skeleton_cpp_CDeformableModel_shatter_FUN_0051a780(CDeformable
           } while (iVar5 != 0xc);
           core_fire_cpp_CFireEffect_createGlassParticle_FUN_0048b1c0
                     (g_CFireEffect_PTR_005b80f0,&local_b8,&local_94,&local_88,
-                     local_2c->textures[*(int *)(iVar6 + *(int *)(local_34 + 0x90))].textures,
-                     local_1c);
+                     (SMRGLTextureBasic *)
+                     (local_2c->textures + *(int *)(iVar6 + *(int *)(local_34 + 0x90))),local_1c);
           iVar6 = iVar6 + 4;
           iVar8 = iVar8 + 0x12;
         } while (iVar6 < local_20);
@@ -172,7 +172,8 @@ void __cdecl core_skeleton_cpp_CDeformableModel_shatter_FUN_0051a780(CDeformable
             } while (iVar5 != 0xc);
             core_fire_cpp_CFireEffect_createGlassParticle_FUN_0048b1c0
                       (g_CFireEffect_PTR_005b80f0,&local_b8,&local_94,&local_88,
-                       local_28->textures[*(int *)(*(int *)(local_30 + 0x90) + local_14)].textures,
+                       (SMRGLTextureBasic *)
+                       (local_28->textures + *(int *)(*(int *)(local_30 + 0x90) + local_14)),
                        local_1c);
           }
           iVar9 = iVar9 + 0x12;

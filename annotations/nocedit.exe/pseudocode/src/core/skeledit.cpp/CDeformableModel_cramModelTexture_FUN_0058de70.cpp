@@ -30,7 +30,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_cramModelTexture_FUN_0058de70(CD
   pSVar8 = &local_98;
   local_20 = 0;
   if (0 < this_ptr->num_textures) {
-    local_24 = this_ptr->texture_sets[texture_set_index].textures[0].textures[0].texture_name;
+    local_24 = this_ptr->texture_sets[texture_set_index].textures[0].texture_name;
     do {
       uVar3 = 0x7fffffff;
       uVar4 = 0x80000001;

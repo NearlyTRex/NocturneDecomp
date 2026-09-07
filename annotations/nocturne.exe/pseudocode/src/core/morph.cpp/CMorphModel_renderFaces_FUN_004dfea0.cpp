@@ -38,7 +38,7 @@ void __cdecl core_morph_cpp_CMorphModel_renderFaces_FUN_004dfea0(CMorphModel *th
                              base.type + iVar4);
       if (iVar1 != local_18) {
         engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-                  (g_CDemonRenderer_PTR_005ae704,this_ptr->textures[iVar1].textures);
+                  (g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)(this_ptr->textures + iVar1));
         local_18 = iVar1;
       }
       poly = (SMRGLPrimitivePoly *)

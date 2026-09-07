@@ -34,7 +34,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_free_FUN_00515970(CLodMesh *this_ptr)
     shape_memdbg_cpp_debugFree_FUN_0050f460
               (this_ptr->lod_levels_ptr,"..\\shape\\meshlod.cpp",540);
   }
-  if (this_ptr->lod_textures != (SMRGLTextureLod *)0x0) {
+  if (this_ptr->lod_textures != (SMRGLTextureModel *)0x0) {
     shape_memdbg_cpp_debugFree_FUN_0050f460
               (this_ptr->lod_textures,"..\\shape\\meshlod.cpp",541);
   }

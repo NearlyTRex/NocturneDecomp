@@ -927,14 +927,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 230,
-    "complexity_score": 374,
+    "complexity_score": 389,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 22,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 214,
-    "suspect_count": 15,
+    "suspect_count": 16,
     "suspect_types": [
+      "derived_field_index_pun",
       "negative_offset",
       "pointer_truncation"
     ],
@@ -1305,6 +1306,13 @@
       "severity": "moderate",
       "text": "pCVar6[-0x155].part_visibility_flags[0xe] = (int)&g_CStrangerVTable;",
       "type": "pointer_truncation"
+    },
+    {
+      "description": "'(CKeyFramedModelInstance *)&pCVar5[1].base.base.process_disabled' walks 1 x sizeof(CHero) (0x1fa3c) + offsetof(base.base.process_disabled) (0x104) + 0x0 = 0x1fb40, which is exactly offsetof(CStranger, model). Ghidra had no CStranger type here and reached the field by index arithmetic; write it as ((CStranger *)pCVar5)->model (\u00a7de-pun/\u00a712).",
+      "line": 15,
+      "severity": "moderate",
+      "text": "((CKeyFramedModelInstance *)&pCVar5[1].base.base.process_disabled);",
+      "type": "derived_field_index_pun"
     }
   ],
   "vtable_info": {

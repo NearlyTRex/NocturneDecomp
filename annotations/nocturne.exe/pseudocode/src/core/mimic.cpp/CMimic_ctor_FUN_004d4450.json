@@ -62,20 +62,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 150,
+    "complexity_score": 139,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 70,
-    "suspect_count": 6,
+    "pseudocode_lines": 74,
+    "suspect_count": 5,
     "suspect_types": [
       "derived_field_index_pun",
       "negative_offset",
-      "pointer_truncation",
       "unrolled_strcpy"
     ],
-    "total_lines": 128
+    "total_lines": 132
   },
   "cross_references": [
     {
@@ -224,48 +223,40 @@
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 39,
-      "match": "pCVar8[-1].",
+      "match": "pCVar7[-1].",
       "severity": "mild",
-      "text": "pCVar8[-1].models[1].textures[0x13].textures[2].base.count = 0;",
+      "text": "pSVar2 = pCVar7[-1].models[1].textures;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 40,
-      "match": "pCVar8[-1].",
+      "line": 44,
+      "match": "pCVar7[-1].",
       "severity": "mild",
-      "text": "pcVar10 = pCVar8[-1].models[1].textures[0x13].textures[2].texture_name + 4;",
+      "text": "pcVar9 = pCVar7[-1].models[1].textures[0x13].texture_name + 0x34;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 41,
-      "match": "pCVar8[-1].",
+      "line": 45,
+      "match": "pCVar7[-1].",
       "severity": "mild",
-      "text": "pSVar2 = pCVar8[-1].models[1].textures + 0x13;",
+      "text": "pSVar2 = pCVar7[-1].models[1].textures;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Pointer value `&g_CMimicVTable` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 21,
-      "match": "(int)&g_CMimicVTable",
-      "severity": "moderate",
-      "text": "pCVar8[-0x5d].models[0].textures[0xc].textures[2].base.count = (int)&g_CMimicVTable;",
-      "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 46,
+      "line": 50,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
     },
     {
-      "description": "'pCVar6[1].base.base.create_event + 0x50' walks 1 x sizeof(CEnemy) (0xbd24) + offsetof(base.base.create_event) (0x78) + 0x50 = 0xbdec, which is exactly offsetof(CMimic, cloth). Ghidra had no CMimic type here and reached the field by index arithmetic; write it as ((CMimic *)pCVar6)->cloth (\u00a7de-pun/\u00a712).",
-      "line": 18,
+      "description": "'pCVar5[1].base.base.create_event + 0x50' walks 1 x sizeof(CEnemy) (0xbd24) + offsetof(base.base.create_event) (0x78) + 0x50 = 0xbdec, which is exactly offsetof(CBoneGuy, boxes[1]). Ghidra had no CBoneGuy type here and reached the field by index arithmetic; write it as ((CBoneGuy *)pCVar5)->boxes[1] (\u00a7de-pun/\u00a712). Ambiguous: CBugs::bugs[3], CDraculaBride::part_list[6], CMimic::cloth also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 17,
       "severity": "moderate",
-      "text": "((CCloth *)(pCVar6[1].base.base.create_event + 0x50));",
+      "text": "((CCloth *)(pCVar5[1].base.base.create_event + 0x50));",
       "type": "derived_field_index_pun"
     }
   ],

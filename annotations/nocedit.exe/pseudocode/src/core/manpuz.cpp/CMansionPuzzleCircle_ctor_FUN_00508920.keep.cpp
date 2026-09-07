@@ -33,7 +33,7 @@ CMansionPuzzleCircle * __cdecl core_manpuz_cpp_CMansionPuzzleCircle_ctor_FUN_005
             (&ADJ(pvVar4)->gem_model,"puzz-rec.kfm");
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (&ADJ(pvVar4)->reflector_model,"mirrhack.kfm");
-  pcVar3 = (ADJ(pvVar4)->light_texture).textures[0].texture_name;
+  pcVar3 = (ADJ(pvVar4)->light_texture).texture_name;
   strcpy(pcVar3,"headlite.raw");
   (ADJ(pvVar4)->gem_pos).z = 0.0;
   (ADJ(pvVar4)->gem_pos).y = 0.0;

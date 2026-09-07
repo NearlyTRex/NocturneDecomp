@@ -176,12 +176,12 @@
       "type": "unrolled_strcpy"
     },
     {
-      "description": "Allocation size hardcodes 0x48 == sizeof(SMRGLTextureLod). Replace the magic with sizeof(SMRGLTextureLod) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "description": "Allocation size hardcodes 0x48 == sizeof(SMRGLTextureModel). Replace the magic with sizeof(SMRGLTextureModel) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
       "line": 25,
-      "match": "(SMRGLTextureLod*) alloc stride 0x48",
+      "match": "(SMRGLTextureModel*) alloc stride 0x48",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "(SMRGLTextureLod *)shape_memdbg_cpp_debugRealloc_FUN_0050f540 (this_ptr->lod_textures,(this_ptr->lod_texture_count + 1) * 0x48, \"..\\\\shape\\\\meshlod.cpp\",2925)",
+      "text": "(SMRGLTextureModel *)shape_memdbg_cpp_debugRealloc_FUN_0050f540 (this_ptr->lod_textures,(this_ptr->lod_texture_count + 1) * 0x48, \"..\\\\shape\\\\meshlod.cpp\",2925)",
       "type": "alloc_magic_size"
     }
   ],

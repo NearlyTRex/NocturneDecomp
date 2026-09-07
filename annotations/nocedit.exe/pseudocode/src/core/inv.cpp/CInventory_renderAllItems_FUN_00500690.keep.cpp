@@ -84,7 +84,13 @@ void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_00500690(CInventory *thi
     local_58 = 0x28;
     local_48 = 8;
   }
-#if !NOCTURNE_AUTHENTIC_HUD_SCALE
+#if !NOCTURNE_AUTHENTIC_HUD_ICON_SPACE
+  local_50 = local_50 * g_WindowWidth / g_CDemonCameraInstance.framebuffer_width;
+  local_54 = local_54 * g_WindowHeight / g_CDemonCameraInstance.framebuffer_height;
+  local_58 = local_58 * g_WindowWidth / g_CDemonCameraInstance.framebuffer_width;
+  iVar8 = iVar8 * g_WindowWidth / g_CDemonCameraInstance.framebuffer_width;
+  local_48 = local_48 * g_WindowWidth / g_CDemonCameraInstance.framebuffer_width;
+#elif !NOCTURNE_AUTHENTIC_HUD_SCALE
   local_50 = local_50 * ui_scale;
   local_54 = local_54 * ui_scale;
   local_58 = local_58 * ui_scale;
@@ -262,7 +268,12 @@ LAB_005009c0:
       local_5c = 0x28;
       local_4c = 8;
     }
-#if !NOCTURNE_AUTHENTIC_HUD_SCALE
+#if !NOCTURNE_AUTHENTIC_HUD_ICON_SPACE
+    iVar3 = iVar3 * g_WindowWidth / g_CDemonCameraInstance.framebuffer_width;
+    iVar10 = iVar10 * g_WindowHeight / g_CDemonCameraInstance.framebuffer_height;
+    local_5c = local_5c * g_WindowWidth / g_CDemonCameraInstance.framebuffer_width;
+    local_4c = local_4c * g_WindowWidth / g_CDemonCameraInstance.framebuffer_width;
+#elif !NOCTURNE_AUTHENTIC_HUD_SCALE
     iVar3 = iVar3 * ui_scale;
     iVar10 = iVar10 * ui_scale;
     local_5c = local_5c * ui_scale;

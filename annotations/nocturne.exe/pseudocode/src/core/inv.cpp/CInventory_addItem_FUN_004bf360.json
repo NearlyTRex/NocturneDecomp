@@ -62,14 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1993,
-    "complexity_score": 2382,
+    "complexity_score": 2417,
     "cross_reference_count": 10,
     "function_call_count": 20,
     "global_count": 58,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 1127,
-    "suspect_count": 123,
+    "suspect_count": 126,
     "suspect_types": [
+      "derived_field_index_pun",
       "shadow_pointer_walk",
       "suspect_float",
       "unrolled_strcat",
@@ -1683,6 +1684,27 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcat"
+    },
+    {
+      "description": "'(char *)&pCVar5[2].location.area_id' walks 2 x sizeof(CDemonActor) (0x150) + offsetof(location.area_id) (0x2c) + 0x0 = 0x2cc, which is exactly offsetof(CActorPropertyList, properties[3]). Ghidra had no CActorPropertyList type here and reached the field by index arithmetic; write it as ((CActorPropertyList *)pCVar5)->properties[3] (\u00a7de-pun/\u00a712). Ambiguous: CAmmo::weapon_class_name, CAmmoBox::weapon_class_name, CAnvil::drop_condition also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 593,
+      "severity": "moderate",
+      "text": "pCVar5 = core_actor_cpp_createActorByName_FUN_0040d540((char *)&pCVar5[2].location.area_id);",
+      "type": "derived_field_index_pun"
+    },
+    {
+      "description": "'(char *)&pCVar5[2].location.area_id' walks 2 x sizeof(CDemonActor) (0x150) + offsetof(location.area_id) (0x2c) + 0x0 = 0x2cc, which is exactly offsetof(CActorPropertyList, properties[3]). Ghidra had no CActorPropertyList type here and reached the field by index arithmetic; write it as ((CActorPropertyList *)pCVar5)->properties[3] (\u00a7de-pun/\u00a712). Ambiguous: CAmmo::weapon_class_name, CAmmoBox::weapon_class_name, CAnvil::drop_condition also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 949,
+      "severity": "moderate",
+      "text": "(pcStack_2c,(char *)&pCVar5[2].location.area_id), iVar7 == 0)) &&",
+      "type": "derived_field_index_pun"
+    },
+    {
+      "description": "'(char *)&pCVar8[2].location.area_id' walks 2 x sizeof(CDemonActor) (0x150) + offsetof(location.area_id) (0x2c) + 0x0 = 0x2cc, which is exactly offsetof(CActorPropertyList, properties[3]). Ghidra had no CActorPropertyList type here and reached the field by index arithmetic; write it as ((CActorPropertyList *)pCVar8)->properties[3] (\u00a7de-pun/\u00a712). Ambiguous: CAmmo::weapon_class_name, CAmmoBox::weapon_class_name, CAnvil::drop_condition also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 1092,
+      "severity": "moderate",
+      "text": "iVar9 = _strcmp((char *)&pCVar8[2].location.area_id,pcVar11);",
+      "type": "derived_field_index_pun"
     }
   ]
 }

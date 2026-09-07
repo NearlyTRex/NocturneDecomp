@@ -445,7 +445,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
                     core_dmodel_cpp_CKeyFramedModel_load_FUN_00476db0(this_ptr,local_408);
                     bVar2 = true;
                     if (0 < this_ptr->texture_count) {
-                      pcVar10 = this_ptr->texture_list[0].textures[0].texture_name;
+                      pcVar10 = this_ptr->texture_list[0].texture_name;
                       do {
                         iVar12 = core_dmodel_cpp_copyTextureFiles_FUN_0047ca50
                                            (pcVar10,local_18,local_998,(char *)0x0,"art");
@@ -488,7 +488,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
                 core_dmodel_cpp_CKeyFramedModel_export_FUN_00478e10(this_ptr,"t:\\");
                 iVar18 = 0;
                 if (0 < this_ptr->texture_count) {
-                  pcVar19 = this_ptr->texture_list[0].textures[0].texture_name;
+                  pcVar19 = this_ptr->texture_list[0].texture_name;
                   do {
                     iVar12 = core_dmodel_cpp_copyTextureFiles_FUN_0047ca50
                                        (pcVar19,(char *)0x0,"art",local_14,local_a98);

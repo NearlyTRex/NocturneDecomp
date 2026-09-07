@@ -19,7 +19,7 @@ struct CGabriella_ptr_130068 {
     template<typename T> CGabriella_ptr_130068(T* p) : _raw((void*)p) {}
     template<typename T> CGabriella_ptr_130068& operator=(T* p) { _raw = (void*)p; return *this; }
     CGabriella* operator->() const { return (CGabriella*)_raw; }
-    CGabriella* adj() const { return (CGabriella*)((char*)_raw - offsetof(CGabriella, coat_cloth.model.texture_list[1].textures[1].texture_name[12])); }
+    CGabriella* adj() const { return (CGabriella*)((char*)_raw - offsetof(CGabriella, coat_cloth.model.texture_list[1].texture_name[36])); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

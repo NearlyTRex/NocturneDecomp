@@ -279,14 +279,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 179,
+    "complexity_score": 194,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 99,
-    "suspect_count": 7,
+    "suspect_count": 8,
     "suspect_types": [
+      "derived_field_index_pun",
       "negative_offset",
       "unrolled_strcpy"
     ],
@@ -508,6 +509,13 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "'(CKeyFramedModelInstance *)&pCVar2[1].platform_orientation_delta.y' walks 1 x sizeof(CDemonActor) (0x150) + offsetof(platform_orientation_delta.y) (0xf0) + 0x0 = 0x240, which is exactly offsetof(CChain, move_wav_name[44]). Ghidra had no CChain type here and reached the field by index arithmetic; write it as ((CChain *)pCVar2)->move_wav_name[44] (\u00a7de-pun/\u00a712). Ambiguous: CEmitter::model, CFlame::off_event[44], CTrigger::on_event[36] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 13,
+      "severity": "moderate",
+      "text": "((CKeyFramedModelInstance *)&pCVar2[1].platform_orientation_delta.y);",
+      "type": "derived_field_index_pun"
     }
   ],
   "vtable_info": {

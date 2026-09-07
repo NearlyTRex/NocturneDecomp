@@ -309,7 +309,7 @@
       "type": "pointer_cast"
     },
     {
-      "description": "'this_ptr_00[2].create_event + 0xc' walks 2 x sizeof(CDemonActor) (0x150) + offsetof(create_event) (0x78) + 0xc = 0x324, which is exactly offsetof(CBoxActor, push_sound). Ghidra had no CBoxActor type here and reached the field by index arithmetic; write it as ((CBoxActor *)this_ptr_00)->push_sound (\u00a7de-pun/\u00a712).",
+      "description": "'this_ptr_00[2].create_event + 0xc' walks 2 x sizeof(CDemonActor) (0x150) + offsetof(create_event) (0x78) + 0xc = 0x324, which is exactly offsetof(CAmmoBox, open_sound[4]). Ghidra had no CAmmoBox type here and reached the field by index arithmetic; write it as ((CAmmoBox *)this_ptr_00)->open_sound[4] (\u00a7de-pun/\u00a712). Ambiguous: CAnvil::drop_condition[88], CBat::periodic_sound[24], CBoxActor::push_sound also has a field there \u2014 confirm the real class from the .asm before rewriting.",
       "line": 76,
       "severity": "moderate",
       "text": "(this_ptr_00,this_ptr_00[2].create_event + 0xc);",

@@ -26,7 +26,7 @@ CVampireBoss * __cdecl core_vampboss_cpp_CVampireBoss_dtor_FUN_0054e370(CVampire
   }
   pCVar1 = core_morph_cpp_CMorph_dtor_FUN_004e0070(&this_ptr->morph,0);
   pCVar2 = core_cloth_cpp_CCloth_dtor_FUN_00435160
-                     ((CCloth *)&pCVar1[-0x4e].models[1].textures[0xd].textures[1].base.count,0);
+                     ((CCloth *)(pCVar1[-0x4e].models[1].textures[0xd].texture_name + 0x14),0);
   pCVar2 = core_cloth_cpp_CCloth_dtor_FUN_00435160(pCVar2 + -1,0);
   pCVar2 = core_cloth_cpp_CCloth_dtor_FUN_00435160(pCVar2 + -1,0);
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0051b6e0

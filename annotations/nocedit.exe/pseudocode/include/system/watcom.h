@@ -162,7 +162,7 @@ typedef struct _heapinfo {
 // Destruction hierarchy:
 //   __vec_delete -> __arrfini -> __arrdtor
 //
-// Implementations are in shims/watcom.cpp.
+// Implementations are in shims/watcom/watcom.cpp.
 //
 // =============================================================================
 
@@ -174,7 +174,7 @@ typedef struct _heapinfo {
 // -fsanitize=function flags every such indirect call even though the
 // indirection is safe by construction (the compiler emits matching TypeInfo).
 // WATCOM_TRAMPOLINE marks the trampoline functions (both this header's inline
-// template __arr_op and the out-of-line shims in shims/watcom.cpp) exempt
+// template __arr_op and the out-of-line shims in shims/watcom/watcom.cpp) exempt
 // from the function-type check. Keep the attribute list narrow on purpose so
 // real UBSan hits elsewhere still fire.
 #if defined(__clang__) || defined(__GNUC__)

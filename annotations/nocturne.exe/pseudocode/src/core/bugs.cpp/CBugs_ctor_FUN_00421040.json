@@ -409,7 +409,7 @@
       "type": "unrolled_strcpy"
     },
     {
-      "description": "'pCVar2[1].base.base.actor_name + 8' walks 1 x sizeof(CEnemy) (0xbd24) + offsetof(base.base.actor_name) (0x0) + 0x8 = 0xbd2c, which is exactly offsetof(CBoneGuy, pickup_cooldown). Ghidra had no CBoneGuy type here and reached the field by index arithmetic; write it as ((CBoneGuy *)pCVar2)->pickup_cooldown (\u00a7de-pun/\u00a712). Ambiguous: CBugs::bugs, CGhoul::spasm_timer, CHotDemon::dead also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "description": "'pCVar2[1].base.base.actor_name + 8' walks 1 x sizeof(CEnemy) (0xbd24) + offsetof(base.base.actor_name) (0x0) + 0x8 = 0xbd2c, which is exactly offsetof(CArmour, fall_apart_event[8]). Ghidra had no CArmour type here and reached the field by index arithmetic; write it as ((CArmour *)pCVar2)->fall_apart_event[8] (\u00a7de-pun/\u00a712). Ambiguous: CBatCreature::part_indices[2], CBatman::fall_event[8], CBoneGuy::pickup_cooldown also has a field there \u2014 confirm the real class from the .asm before rewriting.",
       "line": 14,
       "severity": "moderate",
       "text": "(pCVar2[1].base.base.actor_name + 8,400,&g_SBugTypeInfo_0059b010);",

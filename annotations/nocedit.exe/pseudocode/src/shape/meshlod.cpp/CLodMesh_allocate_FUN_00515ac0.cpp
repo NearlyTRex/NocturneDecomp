@@ -11,7 +11,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_allocate_FUN_00515ac0(CLodMesh *this_ptr
 {
   CLodVert *pCVar1;
   CLodFace *pCVar2;
-  SMRGLTextureLod *pSVar3;
+  SMRGLTextureModel *pSVar3;
   
   shape_meshlod_cpp_CLodMesh_free_FUN_00515970(this_ptr);
   this_ptr->max_vertex_count = vertex_count;
@@ -25,12 +25,12 @@ void __cdecl shape_meshlod_cpp_CLodMesh_allocate_FUN_00515ac0(CLodMesh *this_ptr
   pCVar2 = (CLodFace *)shape_memdbg_cpp_debugCalloc_FUN_0050f350
                      (this_ptr->max_tri_count,0x8c,"..\\shape\\meshlod.cpp",562);
   this_ptr->tri_data = pCVar2;
-  pSVar3 = (SMRGLTextureLod *)shape_memdbg_cpp_debugCalloc_FUN_0050f350
+  pSVar3 = (SMRGLTextureModel *)shape_memdbg_cpp_debugCalloc_FUN_0050f350
                      (this_ptr->lod_texture_count,0x48,"..\\shape\\meshlod.cpp",563);
   this_ptr->lod_textures = pSVar3;
   if ((((this_ptr->max_vertex_count < 1) || (this_ptr->vertex_data != (CLodVert *)0x0)) &&
       ((this_ptr->max_tri_count < 1 || (this_ptr->tri_data != (CLodFace *)0x0)))) &&
-     ((this_ptr->lod_texture_count < 1 || (this_ptr->lod_textures != (SMRGLTextureLod *)0x0)))) {
+     ((this_ptr->lod_texture_count < 1 || (this_ptr->lod_textures != (SMRGLTextureModel *)0x0)))) {
     return;
   }
   g_CurrentFilename = "..\\shape\\meshlod.cpp";

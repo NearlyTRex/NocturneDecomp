@@ -512,7 +512,7 @@
       "type": "unrolled_strcat"
     },
     {
-      "description": "'pCVar3[4].create_event + 0x40' walks 4 x sizeof(CDemonActor) (0x150) + offsetof(create_event) (0x78) + 0x40 = 0x5f8, which is exactly offsetof(CBoxActor, use_event). Ghidra had no CBoxActor type here and reached the field by index arithmetic; write it as ((CBoxActor *)pCVar3)->use_event (\u00a7de-pun/\u00a712).",
+      "description": "'pCVar3[4].create_event + 0x40' walks 4 x sizeof(CDemonActor) (0x150) + offsetof(create_event) (0x78) + 0x40 = 0x5f8, which is exactly offsetof(CBoxActor, use_event). Ghidra had no CBoxActor type here and reached the field by index arithmetic; write it as ((CBoxActor *)pCVar3)->use_event (\u00a7de-pun/\u00a712). Ambiguous: CGlass::texture_u[7] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
       "line": 41,
       "severity": "moderate",
       "text": "(0x01C03A10,pCVar3[4].create_event + 0x40);",

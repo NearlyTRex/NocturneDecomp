@@ -230,7 +230,7 @@
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "'pCVar4[1].actor_name + 0x1c' walks 1 x sizeof(CDemonActor) (0x150) + offsetof(actor_name) (0x0) + 0x1c = 0x16c, which is exactly offsetof(CBodyPart, vertex_count). Ghidra had no CBodyPart type here and reached the field by index arithmetic; write it as ((CBodyPart *)pCVar4)->vertex_count (\u00a7de-pun/\u00a712). Ambiguous: CChain::texture_name, CTrigger::hero_triggers_me, CWaterActor::move_sound also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "description": "'pCVar4[1].actor_name + 0x1c' walks 1 x sizeof(CDemonActor) (0x150) + offsetof(actor_name) (0x0) + 0x1c = 0x16c, which is exactly offsetof(CActorDestination, dest_class[24]). Ghidra had no CActorDestination type here and reached the field by index arithmetic; write it as ((CActorDestination *)pCVar4)->dest_class[24] (\u00a7de-pun/\u00a712). Ambiguous: CBarrier::effect_class_name_list[12], CBat::course_filename[28], CBodyPart::vertex_count also has a field there \u2014 confirm the real class from the .asm before rewriting.",
       "line": 43,
       "severity": "moderate",
       "text": "if (((pCVar4 != (CDemonActor *)0x0) && (*(int *)(pCVar4[1].actor_name + 0x1c) == 4)) &&",

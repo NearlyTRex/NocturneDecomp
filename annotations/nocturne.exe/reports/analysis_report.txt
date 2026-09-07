@@ -10,7 +10,7 @@ Total functions: 4922
 Clean functions: 2533 (51.5%)
 Functions with suspects: 2389 (48.5%)
 
-Total suspect patterns: 20955
+Total suspect patterns: 20962
 Average suspects per function: 4.26
 
 Virtual files: 203 total, 10 at 100%, 12 at 90%+
@@ -30,14 +30,14 @@ SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
   undefined_data            4085
   pointer_cast              3557
-  pointer_truncation        2886
+  pointer_truncation        2880
   unrolled_memcpy           1476
   warning_overlapping_globals 866
   stack_param               766
   unknown_field             721
   concat_reconstruction     661
   shadow_pointer_walk       544
-  unrolled_strcpy           484
+  unrolled_strcpy           485
   stack_ref                 463
   negative_offset           460
   unaffected_reg            388
@@ -62,13 +62,13 @@ SUSPECT PATTERN BREAKDOWN
   register_param            50
   self_copy_guard           40
   pointer_stride_bytecount  40
+  derived_field_index_pun   32
   bit_int_float_compare     31
   unrolled_strchr           30
   alloc_magic_size          26
   eflags_input              26
   static_object_index       25
   sign_compare_idiom        22
-  derived_field_index_pun   20
   extra_output              19
   format_string_mismatch    17
   signed_shift_global_idiom 17
@@ -174,7 +174,7 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   00434210: engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00434210 (score: 2576, suspects: 214, lines: 411)
   0047e0d0: core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d0 (score: 2549, suspects: 93, lines: 1584)
   00432cd0: engine_clipper.c_clipAndRasterize_FUN_00432cd0 (score: 2429, suspects: 180, lines: 589)
-  004bf360: core_inv.cpp_CInventory_addItem_FUN_004bf360 (score: 2382, suspects: 123, lines: 1127)
+  004bf360: core_inv.cpp_CInventory_addItem_FUN_004bf360 (score: 2417, suspects: 126, lines: 1127)
   00432210: engine_clipper.c_clipPolygonToViewFrustum_FUN_00432210 (score: 2345, suspects: 173, lines: 575)
   00473190: shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00473190 (score: 2266, suspects: 192, lines: 296)
   0051b920: core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0051b920 (score: 2261, suspects: 178, lines: 456)
@@ -225,7 +225,7 @@ FUNCTIONS BY SUSPECT TYPE
     004021a0: engine_2d.c_drawCharacterHighlighted_FUN_004021a0
     ... and 716 more
 
-  pointer_truncation (564 functions):
+  pointer_truncation (561 functions):
     00401010: engine_2d.c_initGraphicsSystem_FUN_00401010
     004012d0: engine_2d.c_drawAntialiasedCharShadow_FUN_004012d0
     004013d0: engine_2d.c_drawAntialiasedChar_FUN_004013d0
@@ -236,7 +236,7 @@ FUNCTIONS BY SUSPECT TYPE
     00402040: engine_2d.c_drawCharacterMaskedColor_FUN_00402040
     004021a0: engine_2d.c_drawCharacterHighlighted_FUN_004021a0
     004023b0: engine_2d.c_wrapTextToWidth_FUN_004023b0
-    ... and 554 more
+    ... and 551 more
 
   unrolled_memcpy (537 functions):
     004023b0: engine_2d.c_wrapTextToWidth_FUN_004023b0
@@ -600,6 +600,19 @@ FUNCTIONS BY SUSPECT TYPE
     00480950: core_event.cpp_CEventList_setActorVariable_FUN_00480950
     ... and 20 more
 
+  derived_field_index_pun (30 functions):
+    00411a10: core_bat.cpp_CBat_ctor_FUN_00411a10
+    00415d20: core_bodypart.cpp_CBodyPart_ctor_FUN_00415d20
+    00418630: core_boneguy.cpp_CBoneGuy_ctor_FUN_00418630
+    0041f310: core_boxactor.cpp_CLightActor_ctor_FUN_0041f310
+    00421040: core_bugs.cpp_CBugs_ctor_FUN_00421040
+    0043cf10: core_crossbow.cpp_CCrossbow_ctor_FUN_0043cf10
+    0043d960: core_curtain.cpp_CCurtain_ctor_FUN_0043d960
+    004783c0: core_emitter.cpp_CEmitter_ctor_FUN_004783c0
+    0047a150: core_enemy.cpp_CEnemy_countSameClassAttackingHero_FUN_0047a150
+    00482010: core_filmreel.cpp_CFilmProjector_process_FUN_00482010
+    ... and 20 more
+
   bit_int_float_compare (21 functions):
     004196b0: core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_004196b0
     00429730: core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00429730
@@ -656,19 +669,6 @@ FUNCTIONS BY SUSPECT TYPE
     004f9dd0: engine_prim.c_renderPolygonSoftware_FUN_004f9dd0
     004fa2e0: engine_prim.c_renderIndexedPolygonSoftware_FUN_004fa2e0
     ... and 1 more
-
-  derived_field_index_pun (20 functions):
-    00415d20: core_bodypart.cpp_CBodyPart_ctor_FUN_00415d20
-    00418630: core_boneguy.cpp_CBoneGuy_ctor_FUN_00418630
-    0041f310: core_boxactor.cpp_CLightActor_ctor_FUN_0041f310
-    00421040: core_bugs.cpp_CBugs_ctor_FUN_00421040
-    0043cf10: core_crossbow.cpp_CCrossbow_ctor_FUN_0043cf10
-    0043d960: core_curtain.cpp_CCurtain_ctor_FUN_0043d960
-    0047a150: core_enemy.cpp_CEnemy_countSameClassAttackingHero_FUN_0047a150
-    0048eef0: core_flies.cpp_CFlies_ctor_FUN_0048eef0
-    00494e80: core_frankgen.cpp_CFrankenstienMachine_renderOpaque_FUN_00494e80
-    004abb50: core_glass.cpp_CGlass_ctor_FUN_004abb50
-    ... and 10 more
 
   extra_output (3 functions):
     0051f080: core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_0051f080

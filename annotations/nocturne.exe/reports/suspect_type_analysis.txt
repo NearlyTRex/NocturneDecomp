@@ -6,14 +6,14 @@ SUSPECT TYPE COUNTS
 --------------------------------------------------
   undefined_data                  4085 ( 19.5%)
   pointer_cast                    3557 ( 17.0%)
-  pointer_truncation              2886 ( 13.8%)
+  pointer_truncation              2880 ( 13.7%)
   unrolled_memcpy                 1476 (  7.0%)
   warning_overlapping_globals      866 (  4.1%)
   stack_param                      766 (  3.7%)
   unknown_field                    721 (  3.4%)
   concat_reconstruction            661 (  3.2%)
   shadow_pointer_walk              544 (  2.6%)
-  unrolled_strcpy                  484 (  2.3%)
+  unrolled_strcpy                  485 (  2.3%)
   stack_ref                        463 (  2.2%)
   negative_offset                  460 (  2.2%)
   unaffected_reg                   388 (  1.9%)
@@ -38,13 +38,13 @@ SUSPECT TYPE COUNTS
   register_param                    50 (  0.2%)
   self_copy_guard                   40 (  0.2%)
   pointer_stride_bytecount          40 (  0.2%)
+  derived_field_index_pun           32 (  0.2%)
   bit_int_float_compare             31 (  0.1%)
   unrolled_strchr                   30 (  0.1%)
   alloc_magic_size                  26 (  0.1%)
   eflags_input                      26 (  0.1%)
   static_object_index               25 (  0.1%)
   sign_compare_idiom                22 (  0.1%)
-  derived_field_index_pun           20 (  0.1%)
   extra_output                      19 (  0.1%)
   format_string_mismatch            17 (  0.1%)
   signed_shift_global_idiom         17 (  0.1%)
@@ -806,7 +806,7 @@ TYPE: pointer_cast (3557 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  1303x  (int)&NAME used in byte-offset arithmetic
+  1301x  (int)&NAME used in byte-offset arithmetic
     90x  (uint *)((int)pvVar2
     86x  (uint *)((int)pvVar4
     68x  (int *)((int)g_ScreenBufferArray
@@ -1556,7 +1556,7 @@ Functions:
   wincore_winrun.cpp_winMain_FUN_00559260
 
 ====================================================================================================
-TYPE: pointer_truncation (2886 occurrences)
+TYPE: pointer_truncation (2880 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -1832,7 +1832,6 @@ Functions:
   core_melee.cpp_CMelee_playAttackHitEffects_FUN_004cefe0
   core_menu.cpp_configureSoundOptions_FUN_004d12e0
   core_menu.cpp_showMainGameMenu_FUN_004d23d0
-  core_mimic.cpp_CMimic_ctor_FUN_004d4450
   core_mimic.cpp_CMimic_processAnimation_FUN_004d4f30
   core_mimic.cpp_CMimic_renderMirrored_FUN_004d5860
   core_mimic.cpp_CMimic_setupCloth_FUN_004d5770
@@ -1845,7 +1844,6 @@ Functions:
   core_mission.cpp_CDemonMission_writeFile_FUN_004d8720
   core_mobster.cpp_CMobster_aimTommyGun_FUN_004db6f0
   core_mobster.cpp_CMobster_getCarryObjToBodyXForm_FUN_004dba70
-  core_moloch.cpp_CMoloch_ctor_FUN_004dd930
   core_moloch.cpp_CMoloch_process_FUN_004ddb20
   core_moon.cpp_CMoon_init_FUN_004de860
   core_moon.cpp_CMoon_renderJoystickCalibration_FUN_004df040
@@ -1968,7 +1966,6 @@ Functions:
   core_turret.cpp_CTurret_ctor_FUN_005494a0
   core_turret.cpp_CTurret_getBoundingBox_FUN_00549cd0
   core_turret.cpp_CTurret_process_FUN_005497f0
-  core_vampboss.cpp_CVampireBoss_ctor_FUN_0054c2b0
   core_vampboss.cpp_CVampireBoss_getCarryObjToBodyXForm_FUN_0054d8a0
   core_vampboss.cpp_CVampireBoss_process_FUN_0054c690
   core_vehicle.cpp_CVehicle_ctor_FUN_0054e5a0
@@ -4073,6 +4070,7 @@ Functions:
   core_mimic.cpp_CMimic_updatePose_FUN_004d4ba0
   core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_004d74a0
   core_mission.cpp_CDemonMission_process_FUN_004d92a0
+  core_moloch.cpp_CMoloch_ctor_FUN_004dd930
   core_morph.cpp_CMorphModel_setFaceListFromPolygon_FUN_004df800
   core_morph.cpp_CMorphModel_setFaceListFromTriangles_FUN_004df9e0
   core_morph.cpp_CMorph_getReady_FUN_004e03c0
@@ -4094,7 +4092,6 @@ Functions:
   core_netgame.cpp_CNetGame_runLobby_FUN_004eb520
   core_netgame.cpp_CNetGame_sendGameSetting_FUN_004ecf50
   core_netgame.cpp_CNetGame_syncPlayers_FUN_004ea370
-  core_passngr.cpp_CPassenger_ctor_FUN_004ef4e0
   core_passngr.cpp_CPassenger_setup_FUN_004ef6d0
   core_platfrm.cpp_CPlatform_archive_FUN_004f6fa0
   core_platfrm.cpp_CPlatform_attachActor_FUN_004f75c0
@@ -4258,11 +4255,11 @@ Functions:
   sound_sndmain.cpp_startSfx_FUN_005265a0
 
 ====================================================================================================
-TYPE: unrolled_strcpy (484 occurrences)
+TYPE: unrolled_strcpy (485 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   484x  do {
+   485x  do {
 
 Functions:
   cockpit_ckptutil.c_loadACTPaletteFile_FUN_0042d480
@@ -4669,17 +4666,17 @@ Unique patterns:
     80x  pCVar3[-1].
     57x  this_ptr_00[-1].
     30x  pCVar1[-2].
-    28x  pCVar5[-1].
     28x  pCVar1[-1].
-    23x  pCVar6[-1].
+    24x  pCVar5[-1].
+    24x  pCVar4[-1].
     23x  pCVar3[-2].
     22x  pCVar2[-2].
+    22x  pCVar6[-1].
     19x  pCVar2[-1].
-    19x  pCVar4[-1].
     16x  pCVar3[-5].
+    10x  pCVar7[-1].
      8x  pCVar2[-3].
      7x  pCVar3[-3].
-     7x  pCVar7[-1].
      6x  pCVar2[-9].
      6x  pCVar1[-3].
      6x  pSVar4[-1].
@@ -6415,6 +6412,45 @@ Functions:
   sound_sndmain.cpp_pollAndMixSfx_FUN_005294f0
 
 ====================================================================================================
+TYPE: derived_field_index_pun (32 occurrences)
+====================================================================================================
+
+Unique patterns:
+    32x  
+
+Functions:
+  core_bat.cpp_CBat_ctor_FUN_00411a10
+  core_bodypart.cpp_CBodyPart_ctor_FUN_00415d20
+  core_boneguy.cpp_CBoneGuy_ctor_FUN_00418630
+  core_boxactor.cpp_CLightActor_ctor_FUN_0041f310
+  core_bugs.cpp_CBugs_ctor_FUN_00421040
+  core_crossbow.cpp_CCrossbow_ctor_FUN_0043cf10
+  core_curtain.cpp_CCurtain_ctor_FUN_0043d960
+  core_emitter.cpp_CEmitter_ctor_FUN_004783c0
+  core_enemy.cpp_CEnemy_countSameClassAttackingHero_FUN_0047a150
+  core_filmreel.cpp_CFilmProjector_process_FUN_00482010
+  core_flies.cpp_CFlies_ctor_FUN_0048eef0
+  core_frankgen.cpp_CFrankenstienMachine_ctor_FUN_00494630
+  core_frankgen.cpp_CFrankenstienMachine_renderOpaque_FUN_00494e80
+  core_gabriela.cpp_CGabriella_ctor_FUN_004956a0
+  core_gabriela.cpp_CGabriella_process_FUN_00495a20
+  core_glass.cpp_CGlass_ctor_FUN_004abb50
+  core_hero.cpp_CHero_ctor_FUN_004b46d0
+  core_hero.cpp_CHero_stopPushingBox_FUN_004b56f0
+  core_hero.cpp_CHero_tryPushNearbyBox_FUN_004b54c0
+  core_inv.cpp_CInventory_addItem_FUN_004bf360
+  core_inv.cpp_CInventory_select_FUN_004c1580
+  core_marquee.cpp_CMarquee_ctor_FUN_004cc0e0
+  core_mimic.cpp_CMimic_ctor_FUN_004d4450
+  core_passngr.cpp_CPassenger_ctor_FUN_004ef4e0
+  core_set.cpp_CDemonSet_buildActorTypeLists_FUN_0050e6b0
+  core_stairs.cpp_CStairs_ctor_FUN_005347b0
+  core_stranger.cpp_CStranger_ctor_FUN_005350c0
+  core_svetlana.cpp_CSvetlana_ctor_FUN_005419b0
+  core_turret.cpp_CTurret_ctor_FUN_005494a0
+  core_tvbat.cpp_CTVBat_ctor_FUN_0054b140
+
+====================================================================================================
 TYPE: bit_int_float_compare (31 occurrences)
 ====================================================================================================
 
@@ -6591,35 +6627,6 @@ Functions:
   engine_prim.c_getTriangleWindingFromPackedIndices_FUN_004f9cb0
   engine_prim.c_renderIndexedPolygonSoftware_FUN_004fa2e0
   engine_prim.c_renderPolygonSoftware_FUN_004f9dd0
-
-====================================================================================================
-TYPE: derived_field_index_pun (20 occurrences)
-====================================================================================================
-
-Unique patterns:
-    20x  
-
-Functions:
-  core_bodypart.cpp_CBodyPart_ctor_FUN_00415d20
-  core_boneguy.cpp_CBoneGuy_ctor_FUN_00418630
-  core_boxactor.cpp_CLightActor_ctor_FUN_0041f310
-  core_bugs.cpp_CBugs_ctor_FUN_00421040
-  core_crossbow.cpp_CCrossbow_ctor_FUN_0043cf10
-  core_curtain.cpp_CCurtain_ctor_FUN_0043d960
-  core_enemy.cpp_CEnemy_countSameClassAttackingHero_FUN_0047a150
-  core_flies.cpp_CFlies_ctor_FUN_0048eef0
-  core_frankgen.cpp_CFrankenstienMachine_renderOpaque_FUN_00494e80
-  core_glass.cpp_CGlass_ctor_FUN_004abb50
-  core_hero.cpp_CHero_ctor_FUN_004b46d0
-  core_hero.cpp_CHero_stopPushingBox_FUN_004b56f0
-  core_hero.cpp_CHero_tryPushNearbyBox_FUN_004b54c0
-  core_inv.cpp_CInventory_select_FUN_004c1580
-  core_mimic.cpp_CMimic_ctor_FUN_004d4450
-  core_set.cpp_CDemonSet_buildActorTypeLists_FUN_0050e6b0
-  core_stairs.cpp_CStairs_ctor_FUN_005347b0
-  core_svetlana.cpp_CSvetlana_ctor_FUN_005419b0
-  core_turret.cpp_CTurret_ctor_FUN_005494a0
-  core_tvbat.cpp_CTVBat_ctor_FUN_0054b140
 
 ====================================================================================================
 TYPE: extra_output (19 occurrences)

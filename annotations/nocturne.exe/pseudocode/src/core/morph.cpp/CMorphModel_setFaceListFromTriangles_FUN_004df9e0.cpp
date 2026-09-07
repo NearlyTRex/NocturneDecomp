@@ -40,7 +40,7 @@ void __cdecl core_morph_cpp_CMorphModel_setFaceListFromTriangles_FUN_004df9e0(CM
     local_14 = iVar5 * 0x3c;
     do {
       iVar2 = core_morph_cpp_CMorphModel_findOrAddTexture_FUN_004dfba0
-                        (this_ptr,texture_sets->textures[*local_20].textures[0].texture_name);
+                        (this_ptr,texture_sets->textures[*local_20].texture_name);
       iVar5 = 0;
       *(uint *)((int)this_ptr->faces->vertices + local_14 + -0x14) = 3;
       pSVar3 = local_24;

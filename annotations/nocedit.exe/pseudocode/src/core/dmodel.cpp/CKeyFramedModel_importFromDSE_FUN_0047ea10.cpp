@@ -86,7 +86,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10(CKeyFram
       }
       iVar3 = 0;
       if (0 < this_ptr->texture_count) {
-        str1 = this_ptr->texture_list[0].textures[0].texture_name;
+        str1 = this_ptr->texture_list[0].texture_name;
         do {
           iVar7 = _stricmp(str1,local_18);
           if (iVar7 == 0) break;
@@ -100,7 +100,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10(CKeyFram
           g_CurrentLineNumber = 3653;
           core_main_c_displayErrorAndQuit_FUN_00506f10("CKeyFramedModel::exportToDSE() - Too many textures!");
         }
-        pcVar8 = this_ptr->texture_list[iVar3].textures[0].texture_name;
+        pcVar8 = this_ptr->texture_list[iVar3].texture_name;
         pcVar7 = local_18;
         do {
           cVar2 = *pcVar7;

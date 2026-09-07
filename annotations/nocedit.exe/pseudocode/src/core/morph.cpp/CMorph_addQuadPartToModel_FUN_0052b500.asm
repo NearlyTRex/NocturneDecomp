@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_morph_cpp_CMorph_addQuadPartToModel_FUN_0052b500(CMorph *this_ptr,int model_index,int vertex_count,CVector3i *vertices,int face_count ,SMRGLHeaderPrimitive *faces,SMRGLTextureLod *texture_lod,int *texture_index_list)
+; void __cdecl core_morph_cpp_CMorph_addQuadPartToModel_FUN_0052b500(CMorph *this_ptr,int model_index,int vertex_count,CVector3i *vertices,int face_count ,SMRGLHeaderPrimitive *faces,SMRGLTextureModel *texture_list,int *texture_index_list)
 ;
 ; Parameters:
 ; CMorph *         Stack[0x4]:4   this_ptr
@@ -10,7 +10,7 @@
 ; CVector3i *      Stack[0x10]:4   vertices
 ; int              Stack[0x14]:4   face_count
 ; SMRGLHeaderPrimitive * Stack[0x18]:4   faces
-; SMRGLTextureLod * Stack[0x1c]:4   texture_lod
+; SMRGLTextureModel * Stack[0x1c]:4   texture_list
 ; int *            Stack[0x20]:4   texture_index_list
 ;
 ; Called Functions:

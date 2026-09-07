@@ -214,7 +214,7 @@ LAB_005192e4:
     for (iVar1 = 0; iVar1 < this_ptr->num_texture_sets; iVar1 = iVar1 + 1) {
       for (iVar2 = 0; iVar2 < this_ptr->num_textures; iVar2 = iVar2 + 1) {
         iVar5 = _fscanf(file_handle,"%[^\n]\n",
-                           this_ptr->texture_sets[iVar1].textures[iVar2].textures[0].texture_name);
+                           this_ptr->texture_sets[iVar1].textures[iVar2].texture_name);
         if (iVar5 != 1) goto LAB_005192c1;
       }
     }

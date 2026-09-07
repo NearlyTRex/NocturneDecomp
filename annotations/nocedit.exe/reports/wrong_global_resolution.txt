@@ -12,32 +12,32 @@ SUMMARY
 ----------------------------------------------------------------------------------------------------
 
   Functions checked: 6911
-  Functions with suspicious globals: 90
-  Total suspicious global references: 146
+  Functions with suspicious globals: 96
+  Total suspicious global references: 152
 
   Most commonly misresolved globals:
     g_SfxOptions                                       13 functions
     g_KeyboardState                                    9 functions
     g_WindowHeight                                     7 functions
-    g_CDemonCameraInstance                             5 functions
+    g_CDemonCameraInstance                             6 functions
+    g_UseDirect3D                                      5 functions
     g_RenderVertexBuffer                               5 functions
     g_ColorCubeLookup                                  4 functions
     g_HeroCount                                        4 functions
     g_WindowWidth                                      4 functions
     g_CNetGamePtr                                      3 functions
     g_CKeysPtr                                         3 functions
-    g_UseDirect3D                                      3 functions
     g_ThemeFont                                        3 functions
     g_GetLastErrorFunc                                 3 functions
     g_HeroActors                                       2 functions
     g_TextureCacheInstance                             2 functions
+    g_MirrorCullCameraState                            2 functions
     g_CMoonInstance                                    2 functions
     g_VisibleCoronaGlobeCount                          2 functions
     g_CommandTemplates                                 2 functions
     g_PositiveInfinity                                 2 functions
-    g_MMXSupported                                     1 functions
 
-  .keep files with issues: 57 (these need manual review)
+  .keep files with issues: 63 (these need manual review)
   Raw .cpp files with issues: 33
 
 ====================================================================================================
@@ -245,11 +245,11 @@ core_menu.cpp_configureGraphicsOptions_FUN_00510c80  [.keep]  (2 suspicious glob
   File: core/menu.cpp
 
   g_ThemeFont
-    Used at lines: 275
+    Used at lines: 300
     NOT found in function reference list
 
   g_WindowHeight
-    Used at lines: 277, 278
+    Used at lines: 302, 303
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -302,6 +302,14 @@ core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3e0  [.keep]  (1 suspicious glo
 
   g_TextureCacheInstance
     Used at lines: 365, 366, 370, 371, 374, ...
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_dcamera.cpp_CDemonCamera_testVisibility_FUN_004544f0  [.keep]  (1 suspicious globals)
+  File: core/dcamera.cpp
+
+  g_MirrorCullCameraState
+    Used at lines: 28
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -393,6 +401,22 @@ core_game.cpp_hostNetworkGame_FUN_004e2f10  [.keep]  (1 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+core_inivar.cpp_writeIniData_FUN_004fc510  [.keep]  (1 suspicious globals)
+  File: core/inivar.cpp
+
+  g_UseDirect3D
+    Used at lines: 25
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_inv.cpp_CInventory_renderAllItems_FUN_00500690  [.keep]  (1 suspicious globals)
+  File: core/inv.cpp
+
+  g_CDemonCameraInstance
+    Used at lines: 88, 89, 90, 91, 92, ...
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 core_inv.cpp_CInventory_renderSelectedItems_FUN_00500370  [.keep]  (1 suspicious globals)
   File: core/inv.cpp
 
@@ -478,6 +502,30 @@ core_set.cpp_CDemonSet_initScene_FUN_0056aa10  [.keep]  (1 suspicious globals)
 
   g_VisibleCoronaGlobeCount
     Used at lines: 67
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_set.cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0  [.keep]  (1 suspicious globals)
+  File: core/set.cpp
+
+  g_UseDirect3D
+    Used at lines: 25
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50  [.keep]  (1 suspicious globals)
+  File: core/set.cpp
+
+  g_CDemonRendererPtr2
+    Used at lines: 128, 130
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005709e0  [.keep]  (1 suspicious globals)
+  File: core/set.cpp
+
+  g_MirrorCullCameraState
+    Used at lines: 38
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

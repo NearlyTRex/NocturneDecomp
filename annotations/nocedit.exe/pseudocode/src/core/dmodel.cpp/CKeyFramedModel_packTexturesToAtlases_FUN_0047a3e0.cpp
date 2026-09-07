@@ -29,7 +29,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0(
   float fStack_bc;
   SCram local_b8;
   int iStack_44;
-  SMRGLTextureLod *pSStack_40;
+  SMRGLTextureModel *pSStack_40;
   char *local_3c;
   int iStack_38;
   char *pcStack_34;
@@ -48,7 +48,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0(
   shape_design_c_setTextureQualityParameter_FUN_0046a8e0(0x40);
   local_24 = 0;
   if (0 < this_ptr->texture_count) {
-    local_3c = this_ptr->texture_list[0].textures[0].texture_name;
+    local_3c = this_ptr->texture_list[0].texture_name;
     do {
       iVar8 = 0x7fffffff;
       max_u = -0x7fffffff;
@@ -122,8 +122,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0(
       }
       iVar4 = shape_design_c_findTextureByFilename_FUN_0046dfc0
                         (this_ptr->texture_list
-                         [*(int *)((int)this_ptr->poly_texture_index_list + iStack_2c)].textures[0].
-                         texture_name);
+                         [*(int *)((int)this_ptr->poly_texture_index_list + iStack_2c)].texture_name
+                        );
       iVar9 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base).base.
                     type + iStack_38;
       iVar10 = 0;
@@ -163,7 +163,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0(
   iVar4 = 0;
   this_ptr->texture_count = iVar5;
   if (0 < iVar5) {
-    pcStack_34 = this_ptr->texture_list[0].textures[0].texture_name;
+    pcStack_34 = this_ptr->texture_list[0].texture_name;
     do {
       pcVar5 = shape_design_c_getTextureName_FUN_0046e060(iVar4);
       pcVar10 = pcStack_34;

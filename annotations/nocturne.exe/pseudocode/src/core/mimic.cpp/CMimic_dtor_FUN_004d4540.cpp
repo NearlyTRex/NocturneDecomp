@@ -33,7 +33,7 @@ CMimic * __cdecl core_mimic_cpp_CMimic_dtor_FUN_004d4540(CMimic *this_ptr,uint f
   this_ptr->morph_target_actor = (CDemonActor *)0x0;
   pCVar1 = core_morph_cpp_CMorph_dtor_FUN_004e0070(&this_ptr->morph,0);
   pCVar2 = core_cloth_cpp_CCloth_dtor_FUN_00435160
-                     ((CCloth *)pCVar1[-0x4e].models[1].textures[0xc].textures[2].texture_name,0);
+                     ((CCloth *)(pCVar1[-0x4e].models[1].textures[0xc].texture_name + 0x30),0);
   pCVar3 = core_armour_cpp_CFlame_arrdtor50_FUN_0040fe50
                      ((CFlame *)(pCVar2[-1].vertices[0x2ce].bone_index + 2),0);
   pSVar4 = core_armour_cpp_SFire_arrdtor50_FUN_0040fe30

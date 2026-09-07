@@ -133,7 +133,7 @@ LAB_00478e7f:
   _fprintf(file,"// texture list\n");
   iVar3 = 0;
   if (0 < this_ptr->texture_count) {
-    pcVar4 = this_ptr->texture_list[0].textures[0].texture_name;
+    pcVar4 = this_ptr->texture_list[0].texture_name;
     do {
       _fprintf(file,"%s\n",pcVar4);
       iVar3 = iVar3 + 1;

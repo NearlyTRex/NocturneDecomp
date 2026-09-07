@@ -62,14 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 102,
+    "complexity_score": 117,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 42,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
+      "derived_field_index_pun",
       "negative_offset",
       "unrolled_strcpy"
     ],
@@ -256,6 +257,13 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "'(CCourse *)&pCVar2[1].location' walks 1 x sizeof(CDemonActor) (0x150) + offsetof(location) (0x20) + 0x0 = 0x170, which is exactly offsetof(CActorDestination, dest_class[28]). Ghidra had no CActorDestination type here and reached the field by index arithmetic; write it as ((CActorDestination *)pCVar2)->dest_class[28] (\u00a7de-pun/\u00a712). Ambiguous: CBarrier::effect_class_name_list[16], CBat::course, CBodyPart::vertices also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 13,
+      "severity": "moderate",
+      "text": "pCVar3 = core_course_cpp_CCourse_ctor_FUN_0043b5d0((CCourse *)&pCVar2[1].location);",
+      "type": "derived_field_index_pun"
     }
   ],
   "vtable_info": {

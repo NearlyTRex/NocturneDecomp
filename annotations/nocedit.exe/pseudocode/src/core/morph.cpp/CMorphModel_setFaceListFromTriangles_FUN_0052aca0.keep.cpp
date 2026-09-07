@@ -38,7 +38,7 @@ void __cdecl core_morph_cpp_CMorphModel_setFaceListFromTriangles_FUN_0052aca0(CM
   start_vertex = this_ptr->parts[part_index].start_vertex;
   for (local_1c = 0; local_1c < face_count; local_1c = local_1c + 1) {
     iVar2 = core_morph_cpp_CMorphModel_findOrAddTexture_FUN_0052ae60
-                      (this_ptr,texture_sets->textures[index_data[local_1c]].textures[0].texture_name);
+                      (this_ptr,texture_sets->textures[index_data[local_1c]].texture_name);
     src = &face_data[local_1c];
     dst = &this_ptr->faces[iVar5 + local_1c];
     src_vidx = &src->vertex_indices.vertex_index_0;

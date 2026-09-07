@@ -45,7 +45,7 @@ FILES AT 50-89%
 ====================================================================================================
    86.7% | core/bat.cpp
          13/15 clean, 2 remaining
-           - core_bat.cpp_CBat_ctor_FUN_00411a10 (42 lines) [negative_offset, unrolled_strcpy]
+           - core_bat.cpp_CBat_ctor_FUN_00411a10 (42 lines) [derived_field_index_pun, negative_offset, unrolled_strcpy]
            - core_bat.cpp_CBat_getBoundingBox_FUN_00411ea0 (16 lines) [unrolled_memcpy]
    86.7% | core/battery.cpp
          13/15 clean, 2 remaining
@@ -102,7 +102,7 @@ FILES AT 50-89%
            - core_filmreel.cpp_CFilmReel_ctor_FUN_00481c30 (28 lines) [negative_offset, pointer_cast, pointer_truncation]
            - core_filmreel.cpp_CFilmReel_getBoundingBox_FUN_00481e90 (14 lines) [unrolled_memcpy]
            - core_filmreel.cpp_CFilmProjector_ctor_FUN_00481f10 (42 lines) [negative_offset, pointer_cast, pointer_truncation, unrolled_strcpy]
-           - core_filmreel.cpp_CFilmProjector_process_FUN_00482010 (50 lines) [raw_address_constant]
+           - core_filmreel.cpp_CFilmProjector_process_FUN_00482010 (50 lines) [derived_field_index_pun, raw_address_constant]
            - core_filmreel.cpp_CFilmProjector_renderOpaque_FUN_004821d0 (32 lines) [suspect_float, undefined_data]
    80.0% | core/trap.cpp
          12/15 clean, 3 remaining
@@ -273,7 +273,7 @@ FILES AT 50-89%
            - core_ladder.cpp_CLadder_cacheRelativePosition_FUN_004c46b0 (48 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
    71.4% | core/marquee.cpp
          10/14 clean, 4 remaining
-           - core_marquee.cpp_CMarquee_ctor_FUN_004cc0e0 (34 lines) [negative_offset, pointer_cast, pointer_truncation]
+           - core_marquee.cpp_CMarquee_ctor_FUN_004cc0e0 (34 lines) [derived_field_index_pun, negative_offset, pointer_cast, pointer_truncation]
            - core_marquee.cpp_CMarquee_renderLightBulb_FUN_004cc440 (83 lines) [pointer_cast, pointer_truncation, unrolled_memcpy, warning_overlapping_globals]
            - core_marquee.cpp_CMarquee_renderTransparent_FUN_004cc5d0 (112 lines) [pointer_truncation, undefined_data, unknown_field, unrolled_memcpy]
            - core_marquee.cpp_CMarquee_getBoundingBox_FUN_004cc900 (20 lines) [unrolled_memcpy]
@@ -293,7 +293,7 @@ FILES AT 50-89%
            - core_morph.cpp_CMorphModel_rotatePoints_FUN_004dfcb0 (72 lines) [pointer_cast, pointer_truncation, undefined_data, warning_overlapping_globals]
            - core_morph.cpp_CMorphModel_renderFaces_FUN_004dfea0 (47 lines) [pointer_cast, warning_overlapping_globals]
            - core_morph.cpp_CMorphModel_findNearestPoint_FUN_004dffc0 (31 lines) [pointer_cast]
-           - core_morph.cpp_CMorph_getReady_FUN_004e03c0 (150 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, unrolled_memcpy, warning_type_propagation]
+           - core_morph.cpp_CMorph_getReady_FUN_004e03c0 (148 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, unrolled_memcpy, warning_type_propagation]
    70.0% | core/dog.cpp
          7/10 clean, 3 remaining
            - core_dog.cpp_CZombieDog_process_FUN_00454750 (279 lines) [fast_sqrt_inline, undefined_data, unrolled_memset, warning_type_propagation]
@@ -338,7 +338,7 @@ FILES AT 50-89%
            - core_npc.cpp_CNPC_setRandomMotionVariant_FUN_004eedc0 (41 lines) [unrolled_strcpy]
    68.8% | core/emitter.cpp
          11/16 clean, 5 remaining
-           - core_emitter.cpp_CEmitter_ctor_FUN_004783c0 (99 lines) [negative_offset, unrolled_strcpy]
+           - core_emitter.cpp_CEmitter_ctor_FUN_004783c0 (99 lines) [derived_field_index_pun, negative_offset, unrolled_strcpy]
            - core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_004785a0 (67 lines) [self_copy_guard, unknown_field, unknown_type, unrolled_memcpy]
            - core_emitter.cpp_CEmitter_process_FUN_00478790 (253 lines) [unknown_field, unrolled_memcpy, warning_type_propagation]
            - core_emitter.cpp_CEmitter_renderOpaque_FUN_00478f80 (58 lines) [unrolled_memcpy]
@@ -516,8 +516,8 @@ FILES AT 50-89%
            - core_werewolf.cpp_CWerewolf_dtor_FUN_00557e90 (32 lines) [negative_offset]
    61.5% | core/moloch.cpp
          8/13 clean, 5 remaining
-           - core_moloch.cpp_CMoloch_ctor_FUN_004dd930 (58 lines) [negative_offset, pointer_cast, pointer_truncation, unrolled_strcpy]
-           - core_moloch.cpp_CMoloch_dtor_FUN_004dd9f0 (25 lines) [negative_offset]
+           - core_moloch.cpp_CMoloch_ctor_FUN_004dd930 (57 lines) [negative_offset, pointer_cast, shadow_pointer_walk, unrolled_strcpy]
+           - core_moloch.cpp_CMoloch_dtor_FUN_004dd9f0 (24 lines) [negative_offset]
            - core_moloch.cpp_CMoloch_process_FUN_004ddb20 (251 lines) [pointer_cast, pointer_truncation, unknown_field, unrolled_memset, warning_overlapping_globals, warning_type_propagation]
            - core_moloch.cpp_CMoloch_processAI_FUN_004de1b0 (133 lines) [unrolled_memcpy, warning_type_propagation]
            - core_moloch.cpp_CMoloch_renderOpaque_FUN_004de550 (48 lines) [warning_overlapping_globals]
@@ -572,7 +572,7 @@ FILES AT 50-89%
            - core_vessel.cpp_CCryptVessel_setup_FUN_0054fa80 (49 lines) [unrolled_memcpy]
            - core_vessel.cpp_CCryptVessel_process_FUN_0054fc60 (200 lines) [unrolled_memcpy, warning_type_propagation]
            - core_vessel.cpp_CCryptVessel_renderOpaque_FUN_00550210 (48 lines) [unknown_field]
-           - core_vessel.cpp_CCryptVessel_renderTransparent_FUN_00550370 (69 lines) [raw_address_constant, unrolled_strcpy]
+           - core_vessel.cpp_CCryptVessel_renderTransparent_FUN_00550370 (68 lines) [raw_address_constant, unrolled_strcpy]
            - core_vessel.cpp_CCryptVessel_getBoundingBox_FUN_00550670 (14 lines) [unrolled_memcpy]
            - core_vessel.cpp_CCryptVessel_dtor_FUN_005506c0 (20 lines) [negative_offset, pointer_cast, pointer_truncation]
    60.0% | core/haystack.cpp
@@ -633,11 +633,11 @@ FILES AT 50-89%
            - core_batcreat.cpp_CBatCreature_dtor_FUN_004132c0 (32 lines) [negative_offset]
    58.3% | core/biggs.cpp
          7/12 clean, 5 remaining
-           - core_biggs.cpp_CBiggs_ctor_FUN_00415370 (49 lines) [negative_offset, pointer_cast, pointer_truncation]
+           - core_biggs.cpp_CBiggs_ctor_FUN_00415370 (50 lines) [negative_offset, pointer_cast, pointer_truncation]
            - core_biggs.cpp_CBiggs_process_FUN_004154b0 (113 lines) [unrolled_memset]
            - core_biggs.cpp_CBiggs_renderOpaque_FUN_00415760 (48 lines) [warning_overlapping_globals]
            - core_biggs.cpp_CBiggs_getTargetPoints_FUN_004159c0 (14 lines) [unrolled_memcpy]
-           - core_biggs.cpp_CBiggs_dtor_FUN_00415a30 (36 lines) [negative_offset]
+           - core_biggs.cpp_CBiggs_dtor_FUN_00415a30 (35 lines) [negative_offset]
    58.3% | core/sentinel.cpp
          7/12 clean, 5 remaining
            - core_sentinel.cpp_CSentinel_setup_FUN_00505990 (48 lines) [warning_overlapping_globals]
@@ -647,7 +647,7 @@ FILES AT 50-89%
            - core_sentinel.cpp_CSentinel_dtor_FUN_00506a80 (32 lines) [negative_offset]
    58.3% | core/succubus.cpp
          7/12 clean, 5 remaining
-           - core_succubus.cpp_CSuccubus_ctor_FUN_00540b40 (51 lines) [negative_offset, pointer_cast, pointer_truncation]
+           - core_succubus.cpp_CSuccubus_ctor_FUN_00540b40 (56 lines) [negative_offset, pointer_cast, pointer_truncation]
            - core_succubus.cpp_CSuccubus_setup_FUN_00540c20 (96 lines) [warning_overlapping_globals, warning_type_propagation]
            - core_succubus.cpp_CSuccubus_process_FUN_00540f50 (298 lines) [unrolled_memcpy, unrolled_memset, unrolled_strcpy, warning_type_propagation, warning_unreachable]
            - core_succubus.cpp_CSuccubus_renderOpaque_FUN_00541640 (57 lines) [warning_overlapping_globals]
@@ -710,7 +710,7 @@ FILES AT 50-89%
            - core_chain.cpp_fastSqrt_FUN_0042cd20 (4 lines) [fast_sqrt_inline]
    57.9% | core/frankgen.cpp
          11/19 clean, 8 remaining
-           - core_frankgen.cpp_CFrankenstienMachine_ctor_FUN_00494630 (24 lines) [negative_offset]
+           - core_frankgen.cpp_CFrankenstienMachine_ctor_FUN_00494630 (24 lines) [derived_field_index_pun, negative_offset]
            - core_frankgen.cpp_CFrankenstienMachine_setup_FUN_004946c0 (104 lines) [unrolled_strcpy]
            - core_frankgen.cpp_CFrankenstienMachine_process_FUN_00494950 (150 lines) [bit_int_float_compare, unrolled_memcpy, warning_overlapping_globals]
            - core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_00494e30 (12 lines) [warning_overlapping_globals]
@@ -852,8 +852,8 @@ FILES AT 50-89%
            - core_hostage.cpp_CHostage_dtor_FUN_004b8b70 (35 lines) [negative_offset]
    55.6% | core/passngr.cpp
          5/9 clean, 4 remaining
-           - core_passngr.cpp_CPassenger_ctor_FUN_004ef4e0 (55 lines) [negative_offset, pointer_cast, pointer_truncation, shadow_pointer_walk, unrolled_strcpy]
-           - core_passngr.cpp_CPassenger_dtor_FUN_004ef5c0 (45 lines) [negative_offset]
+           - core_passngr.cpp_CPassenger_ctor_FUN_004ef4e0 (53 lines) [derived_field_index_pun, negative_offset, pointer_cast, pointer_truncation, unrolled_strcpy]
+           - core_passngr.cpp_CPassenger_dtor_FUN_004ef5c0 (44 lines) [negative_offset]
            - core_passngr.cpp_CPassenger_setup_FUN_004ef6d0 (71 lines) [shadow_pointer_walk, unrolled_memcpy, unrolled_strcpy, warning_type_propagation]
            - core_passngr.cpp_CPassenger_process_FUN_004ef890 (81 lines) [unrolled_memcpy, unrolled_memset, warning_overlapping_globals, warning_type_propagation]
    55.6% | engine/alphabit.cpp
@@ -914,7 +914,7 @@ FILES AT 50-89%
            - core_trash.cpp_CTrash_getBoundingBox_FUN_00547730 (27 lines) [unrolled_memcpy]
    54.5% | core/vampboss.cpp
          12/22 clean, 10 remaining
-           - core_vampboss.cpp_CVampireBoss_ctor_FUN_0054c2b0 (53 lines) [negative_offset, pointer_truncation]
+           - core_vampboss.cpp_CVampireBoss_ctor_FUN_0054c2b0 (60 lines) [negative_offset]
            - core_vampboss.cpp_CVampireBoss_setup_FUN_0054c3e0 (60 lines) [warning_overlapping_globals]
            - core_vampboss.cpp_CVampireBoss_process_FUN_0054c690 (605 lines) [pointer_cast, pointer_truncation, raw_address_constant, shadow_pointer_walk, unrolled_memcpy, unrolled_memset, warning_type_propagation]
            - core_vampboss.cpp_CVampireBoss_getCarryObjToBodyXForm_FUN_0054d8a0 (42 lines) [pointer_cast, pointer_truncation, unrolled_memcpy, warning_type_propagation]
@@ -1099,7 +1099,7 @@ FILES AT 50-89%
    50.8% | core/stranger.cpp
          31/61 clean, 30 remaining
            - core_stranger.cpp_getCarriedObjectVerticalOffset_FUN_00534fc0 (43 lines) [pointer_cast, pointer_truncation]
-           - core_stranger.cpp_CStranger_ctor_FUN_005350c0 (214 lines) [negative_offset, pointer_truncation]
+           - core_stranger.cpp_CStranger_ctor_FUN_005350c0 (214 lines) [derived_field_index_pun, negative_offset, pointer_truncation]
            - core_stranger.cpp_CStranger_setup_FUN_00535450 (104 lines) [unrolled_memcpy, warning_overlapping_globals]
            - core_stranger.cpp_CStranger_processFrame_FUN_00535900 (1164 lines) [bit_int_float_compare, bitcast_double_pair, stack_param, sub84_truncation, suspect_float, undefined_data, unknown_field, unrolled_memcpy, unrolled_memset]
            - core_stranger.cpp_CStranger_processMotionEvents_FUN_00537cd0 (291 lines) [stack_param, stack_ref, unaffected_reg, unresolved_funcptr, unrolled_memcpy, warning_overlapping_globals]
@@ -1498,8 +1498,8 @@ FILES BELOW 50%
            - core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_00519be0 (124 lines) [pointer_cast, shadow_pointer_walk, warning_overlapping_globals]
            - core_skeleton.cpp_CDeformableModel_dismember_FUN_00519ec0 (201 lines) [pointer_cast, pointer_stride_bytecount, pointer_truncation]
            - core_skeleton.cpp_CDeformableModel_exactRayTrace_FUN_0051a470 (88 lines) [pointer_cast, stack_ref, undefined_data, warning_overlapping_globals]
-           - core_skeleton.cpp_CDeformableModel_shatter_FUN_0051a780 (180 lines) [pointer_cast, pointer_truncation, undefined_data, unrolled_memcpy, warning_overlapping_globals]
-           - core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0051ad20 (196 lines) [pointer_cast, self_copy_guard, shadow_pointer_walk, warning_overlapping_globals]
+           - core_skeleton.cpp_CDeformableModel_shatter_FUN_0051a780 (181 lines) [pointer_cast, pointer_truncation, undefined_data, unrolled_memcpy, warning_overlapping_globals]
+           - core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0051ad20 (195 lines) [pointer_cast, self_copy_guard, shadow_pointer_walk, warning_overlapping_globals]
            - core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0051b280 (94 lines) [shadow_pointer_walk]
            - core_skeleton.cpp_CDeformableModel_computeFarthestChildBones_FUN_0051b480 (39 lines) [shadow_pointer_walk]
            - core_skeleton.cpp_CDeformableModel_findMaxWeightBone_FUN_0051b540 (46 lines) [pointer_cast, shadow_pointer_walk]
@@ -1600,9 +1600,9 @@ FILES BELOW 50%
          16/35 clean, 19 remaining
            - core_gabriela.cpp_staticInit_FUN_004954a0 (24 lines) [warning_overlapping_globals]
            - core_gabriela.cpp_flashlightBlendWeightCallback_FUN_004955c0 (13 lines) [warning_overlapping_globals]
-           - core_gabriela.cpp_CGabriella_ctor_FUN_004956a0 (36 lines) [negative_offset]
+           - core_gabriela.cpp_CGabriella_ctor_FUN_004956a0 (36 lines) [derived_field_index_pun, negative_offset]
            - core_gabriela.cpp_CGabriella_setup_FUN_004957c0 (72 lines) [warning_overlapping_globals]
-           - core_gabriela.cpp_CGabriella_process_FUN_00495a20 (709 lines) [pointer_cast, pointer_truncation, unrolled_memcpy, unrolled_memset, warning_overlapping_globals, warning_type_propagation]
+           - core_gabriela.cpp_CGabriella_process_FUN_00495a20 (709 lines) [derived_field_index_pun, pointer_cast, pointer_truncation, unrolled_memcpy, unrolled_memset, warning_overlapping_globals, warning_type_propagation]
            - core_gabriela.cpp_CGabriella_processAI_FUN_00496d10 (210 lines) [unrolled_memcpy, warning_type_propagation]
            - core_gabriela.cpp_CGabriella_processMotionEvents_FUN_00497410 (174 lines) [stack_param, stack_ref, unrolled_memcpy, warning_overlapping_globals]
            - core_gabriela.cpp_CGabriella_getTorsoCenterPosition_FUN_00497870 (28 lines) [warning_overlapping_globals]
@@ -1620,7 +1620,7 @@ FILES BELOW 50%
    45.0% | core/mimic.cpp
          9/20 clean, 11 remaining
            - core_mimic.cpp_mirrorXTransform_FUN_004d43c0 (11 lines) [warning_overlapping_globals]
-           - core_mimic.cpp_CMimic_ctor_FUN_004d4450 (70 lines) [derived_field_index_pun, negative_offset, pointer_truncation, unrolled_strcpy]
+           - core_mimic.cpp_CMimic_ctor_FUN_004d4450 (74 lines) [derived_field_index_pun, negative_offset, unrolled_strcpy]
            - core_mimic.cpp_CMimic_dtor_FUN_004d4540 (45 lines) [negative_offset]
            - core_mimic.cpp_CMimic_setup_FUN_004d4650 (144 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_ref, warning_overlapping_globals]
            - core_mimic.cpp_CMimic_updatePose_FUN_004d4ba0 (183 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, unrolled_memcpy, warning_type_propagation]
@@ -1986,7 +1986,7 @@ FILES BELOW 50%
            - core_cloth.cpp_CCloth_step_FUN_00436e80 (408 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, unrolled_memcpy, unrolled_memset, warning_overlapping_globals]
            - core_cloth.cpp_CCloth_renderBone_FUN_00437ab0 (79 lines) [pointer_cast, pointer_truncation, stack_ref, unaffected_reg, warning_overlapping_globals]
            - core_cloth.cpp_CCloth_saveJoinedLight_FUN_00437cc0 (39 lines) [pointer_truncation, shadow_pointer_walk]
-           - core_cloth.cpp_CCloth_render_FUN_00437db0 (151 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, undefined_data]
+           - core_cloth.cpp_CCloth_render_FUN_00437db0 (152 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, undefined_data]
            - core_cloth.cpp_CClothList_load_FUN_00438270 (37 lines) [shadow_pointer_walk]
            - core_cloth.cpp_CClothList_reset_FUN_00438320 (22 lines) [shadow_pointer_walk]
            - core_cloth.cpp_CClothList_add_FUN_00438390 (23 lines) [unrolled_strcpy]
@@ -2209,7 +2209,7 @@ FILES BELOW 50%
            - core_inv.cpp_CInventory_clear_FUN_004bee80 (22 lines) [warning_unreachable]
            - core_inv.cpp_CInventory_initialize_FUN_004bef10 (24 lines) [preinc_loop_idiom]
            - core_inv.cpp_loadAssets_FUN_004befa0 (67 lines) [undefined_data, warning_overlapping_globals]
-           - core_inv.cpp_CInventory_addItem_FUN_004bf360 (1127 lines) [shadow_pointer_walk, suspect_float, unrolled_strcat, unrolled_strcpy, unrolled_strlen]
+           - core_inv.cpp_CInventory_addItem_FUN_004bf360 (1127 lines) [derived_field_index_pun, shadow_pointer_walk, suspect_float, unrolled_strcat, unrolled_strcpy, unrolled_strlen]
            - core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004c0640 (38 lines) [shadow_pointer_walk, unnamed_param, unrolled_strcpy]
            - core_inv.cpp_CInventory_findItemByName_FUN_004c0710 (19 lines) [shadow_pointer_walk]
            - core_inv.cpp_CInventory_hasItemOfClass_FUN_004c0760 (19 lines) [shadow_pointer_walk]

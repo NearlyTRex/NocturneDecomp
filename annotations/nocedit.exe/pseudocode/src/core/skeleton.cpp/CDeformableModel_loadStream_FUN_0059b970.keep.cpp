@@ -210,7 +210,7 @@ LAB_0059b9d7:
     for (iVar3 = 0; iVar3 < this_ptr->num_texture_sets; iVar3 = iVar3 + 1) {
       for (local_18 = 0; local_18 < this_ptr->num_textures; local_18 = local_18 + 1) {
         iVar7 = _fscanf(file_handle,"%[^\n]\n",
-                           this_ptr->texture_sets[iVar3].textures[local_18].textures[0].texture_name
+                           this_ptr->texture_sets[iVar3].textures[local_18].texture_name
                           );
         if (iVar7 != 1) goto LAB_0059b9b4;
       }

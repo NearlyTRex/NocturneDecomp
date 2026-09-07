@@ -62,21 +62,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 84,
-    "complexity_score": 210,
+    "complexity_score": 198,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 14,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 55,
-    "suspect_count": 13,
+    "pseudocode_lines": 53,
+    "suspect_count": 12,
     "suspect_types": [
+      "derived_field_index_pun",
       "negative_offset",
       "pointer_cast",
       "pointer_truncation",
-      "shadow_pointer_walk",
       "unrolled_strcpy"
     ],
-    "total_lines": 139
+    "total_lines": 137
   },
   "cross_references": [
     {
@@ -265,15 +265,15 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 16,
+      "line": 15,
       "match": "pCVar3[-1].",
       "severity": "mild",
-      "text": "piVar6 = &pCVar3[-1].models[1].textures[0x12].textures[0].base.count;",
+      "text": "piVar6 = &pCVar3[-1].models[1].textures[0x12].base.count;",
       "type": "negative_offset"
     },
     {
       "description": "Complex pointer cast",
-      "line": 25,
+      "line": 24,
       "match": "(char *)((int)piVar6",
       "severity": "moderate",
       "text": "*(char *)((int)piVar6 + 1) = cVar1;",
@@ -281,7 +281,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 26,
+      "line": 25,
       "match": "(int *)((int)piVar6",
       "severity": "moderate",
       "text": "piVar6 = (int *)((int)piVar6 + 2);",
@@ -289,15 +289,15 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 29,
+      "line": 28,
       "match": "pCVar3[-1].",
       "severity": "mild",
-      "text": "pSVar7 = pCVar3[-1].models[1].textures[0x10].textures + 2;",
+      "text": "pcVar4 = pCVar3[-1].models[1].textures[0x10].texture_name + 0x28;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 40,
+      "line": 39,
       "match": "pCVar3[-1].",
       "severity": "mild",
       "text": "pCVar3[-1].rescale_enabled = 0;",
@@ -305,23 +305,23 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 45,
+      "line": 43,
       "match": "pCVar3[-1].",
       "severity": "mild",
-      "text": "pcVar4 = pCVar3[-1].models[1].textures[0x12].textures[1].texture_name + 4;",
+      "text": "pcVar4 = pCVar3[-1].models[1].textures[0x12].texture_name + 0x1c;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 56,
+      "line": 54,
       "match": "pCVar3[-1].",
       "severity": "mild",
-      "text": "pCVar3[-1].models[1].textures[0x12].textures[2].texture_name[0xc] = '\\0';",
+      "text": "pCVar3[-1].models[1].textures[0x12].texture_name[0x3c] = '\\0';",
       "type": "negative_offset"
     },
     {
       "description": "Pointer value `piVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 25,
+      "line": 24,
       "match": "(int)piVar6",
       "severity": "moderate",
       "text": "*(char *)((int)piVar6 + 1) = cVar1;",
@@ -329,7 +329,7 @@
     },
     {
       "description": "Pointer value `piVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 26,
+      "line": 25,
       "match": "(int)piVar6",
       "severity": "moderate",
       "text": "piVar6 = (int *)((int)piVar6 + 2);",
@@ -337,35 +337,26 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 47,
+      "line": 29,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
     },
     {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 36,
-      "match": "(int)&NAME used in byte-offset arithmetic",
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 45,
+      "match": "do {",
       "severity": "moderate",
-      "text": "*(char *)((int)&(pSVar7->base).type + 1) = cVar1;",
-      "type": "pointer_cast"
+      "text": "do {",
+      "type": "unrolled_strcpy"
     },
     {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 37,
-      "match": "(int)&NAME used in byte-offset arithmetic",
+      "description": "'(CMorph *)&pCVar2[1].base.base.scale.y' walks 1 x sizeof(CNPC) (0x1f570) + offsetof(base.base.scale.y) (0x10c) + 0x0 = 0x1f67c, which is exactly offsetof(CHostage, hero_left_me_event[32]). Ghidra had no CHostage type here and reached the field by index arithmetic; write it as ((CHostage *)pCVar2)->hero_left_me_event[32] (\u00a7de-pun/\u00a712). Ambiguous: CPassenger::morph also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 14,
       "severity": "moderate",
-      "text": "pSVar7 = (SMRGLTextureBasic *)((int)&(pSVar7->base).type + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pSVar7` self-updates by taking the address of a sibling subfield, numerically casting to `int`, then adding a small constant \u2014 the sum equals one element-size step of the array being walked. Replace `pSVar7->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 37,
-      "match": "pSVar7 = (T *)((int)&(pSVar7->FIELD).SUBFIELD + CONST)",
-      "severity": "moderate",
-      "text": "pSVar7 = (SMRGLTextureBasic *)((int)&(pSVar7->base).type + 2);",
-      "type": "shadow_pointer_walk"
+      "text": "pCVar3 = core_morph_cpp_CMorph_ctor_FUN_004e0050((CMorph *)&pCVar2[1].base.base.scale.y);",
+      "type": "derived_field_index_pun"
     }
   ],
   "vtable_info": {

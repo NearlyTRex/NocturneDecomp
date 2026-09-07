@@ -108,7 +108,7 @@
   },
   "resolved_suspects": [
     {
-      "description": "'pCVar1[1].actor_name + 0x18' walks 1 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0x18 = 0x170, which is exactly offsetof(CChain, texture_handle). Ghidra had no CChain type here and reached the field by index arithmetic; write it as ((CChain *)pCVar1)->texture_handle (\u00a7de-pun/\u00a712). Ambiguous: CStairs::collision_triangles, CTrigger::shape, CWaterActor::time_to_move_down also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "description": "'pCVar1[1].actor_name + 0x18' walks 1 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0x18 = 0x170, which is exactly offsetof(CActorDestination, dest_class[20]). Ghidra had no CActorDestination type here and reached the field by index arithmetic; write it as ((CActorDestination *)pCVar1)->dest_class[20] (\u00a7de-pun/\u00a712). Ambiguous: CBarrier::effect_class_name_list[8], CBat::course_filename[24], CChain::texture_handle also has a field there \u2014 confirm the real class from the .asm before rewriting.",
       "line": 10,
       "resolution_source": "keep",
       "severity": "moderate",

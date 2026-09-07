@@ -55,12 +55,12 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10(CKeyFram
       }
       iVar3 = 0;
       if (0 < this_ptr->texture_count) {
-        str1 = this_ptr->texture_list[0].textures[0].texture_name;
+        str1 = this_ptr->texture_list[0].texture_name;
         do {
           iVar7 = _stricmp(str1,g_ModelPolygonData[local_10].texture_name);
           if (iVar7 == 0) break;
           iVar3 = iVar3 + 1;
-          str1 = str1 + sizeof(SMRGLTextureLod);
+          str1 = str1 + sizeof(SMRGLTextureModel);
         } while (iVar3 < this_ptr->texture_count);
       }
       if (this_ptr->texture_count <= iVar3) {
@@ -69,7 +69,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10(CKeyFram
           g_CurrentLineNumber = 3653;
           core_main_c_displayErrorAndQuit_FUN_00506f10("CKeyFramedModel::exportToDSE() - Too many textures!");
         }
-        strcpy(this_ptr->texture_list[iVar3].textures[0].texture_name,
+        strcpy(this_ptr->texture_list[iVar3].texture_name,
                g_ModelPolygonData[local_10].texture_name);
         this_ptr->texture_count = this_ptr->texture_count + 1;
       }

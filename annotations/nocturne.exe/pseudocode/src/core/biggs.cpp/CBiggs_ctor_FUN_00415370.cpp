@@ -11,7 +11,7 @@ CBiggs * __cdecl core_biggs_cpp_CBiggs_ctor_FUN_00415370(CBiggs *this_ptr)
 {
   char *pcVar1;
   char cVar2;
-  SMRGLTextureBasic *pSVar3;
+  SMRGLTextureModel *pSVar3;
   float fVar4;
   float fVar5;
   CEnemy *pCVar6;
@@ -24,26 +24,27 @@ CBiggs * __cdecl core_biggs_cpp_CBiggs_ctor_FUN_00415370(CBiggs *this_ptr)
   pCVar7 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490
                      ((CKeyFramedModelInstance *)(pCVar6 + 1));
   pCVar8 = core_morph_cpp_CMorph_ctor_FUN_004e0050((CMorph *)(pCVar7[1].part_visibility_flags + 2));
-  pcVar1 = pCVar8[-0x10].models[0].textures[0xd].textures[0].texture_name;
-  pCVar8[-0x10].models[0].textures[0x11].textures[2].base.count = (int)&g_CBiggsVTable;
+  pcVar1 = pCVar8[-0x10].models[0].textures[0xd].texture_name;
+  *(CEnemy_full_vtable **)(pCVar8[-0x10].models[0].textures[0x11].texture_name + 0x2c) =
+       &g_CBiggsVTable;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
             ((CDeformableModelInstance *)
-             pCVar8[-0x10].models[0].textures[0x11].textures[2].texture_name,"biggs.dfm");
+             (pCVar8[-0x10].models[0].textures[0x11].texture_name + 0x30),"biggs.dfm");
   pcVar9 = "bigAlien";
   pCVar10 = pCVar8 + 1;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
             ((CKeyFramedModelInstance *)(pCVar8[-1].models[1].textures + 0xf),
              "question.kfm");
   fVar4 = 50.0f;
-  pSVar3 = pCVar8[-0xc].models[0].textures[2].textures;
-  pSVar3[2].texture_name[0xc] = -0x66;
+  pSVar3 = pCVar8[-0xc].models[0].textures;
+  pSVar3[2].texture_name[0x3c] = -0x66;
   fVar5 = 100.0f;
-  pSVar3[2].texture_name[0xd] = -0x67;
-  pSVar3[2].texture_name[0xe] = '\x19';
-  pSVar3[2].texture_name[0xf] = '?';
-  pCVar8[-0xc].models[0].textures[3].textures[0].base.type = 0x3f666666;
-  pCVar8[-0xc].models[0].textures[3].textures[0].base.count = (int)fVar4;
-  *(float *)pCVar8[-0xc].models[0].textures[3].textures[0].texture_name = fVar5;
+  pSVar3[2].texture_name[0x3d] = -0x67;
+  pSVar3[2].texture_name[0x3e] = '\x19';
+  pSVar3[2].texture_name[0x3f] = '?';
+  pCVar8[-0xc].models[0].textures[3].base.type = 0x3f666666;
+  pCVar8[-0xc].models[0].textures[3].base.count = (int)fVar4;
+  *(float *)pCVar8[-0xc].models[0].textures[3].texture_name = fVar5;
   do {
     cVar2 = *pcVar9;
     *(char *)&pCVar10->models[0].part_count = cVar2;

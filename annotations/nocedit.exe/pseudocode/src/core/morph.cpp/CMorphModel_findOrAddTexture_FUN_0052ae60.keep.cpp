@@ -14,7 +14,7 @@ int __cdecl core_morph_cpp_CMorphModel_findOrAddTexture_FUN_0052ae60(CMorphModel
   int iVar3;
 
   for (iVar3 = 0; iVar3 < this_ptr->num_textures; iVar3 = iVar3 + 1) {
-    iVar2 = _stricmp(this_ptr->textures[iVar3].textures[0].texture_name,filename);
+    iVar2 = _stricmp(this_ptr->textures[iVar3].texture_name,filename);
     if (iVar2 == 0) {
       return iVar3;
     }
@@ -25,7 +25,7 @@ int __cdecl core_morph_cpp_CMorphModel_findOrAddTexture_FUN_0052ae60(CMorphModel
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMorphModel::findOrAddTexture - too many textures!");
   }
   memset(this_ptr->textures + this_ptr->num_textures,0,0x48);
-  strcpy(this_ptr->textures[this_ptr->num_textures].textures[0].texture_name,filename);
+  strcpy(this_ptr->textures[this_ptr->num_textures].texture_name,filename);
   iVar3 = this_ptr->num_textures;
   this_ptr->num_textures = iVar3 + 1;
   return iVar3;

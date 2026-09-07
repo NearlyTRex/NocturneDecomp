@@ -24,7 +24,7 @@ int __cdecl core_skeledit_cpp_CDeformableModel_importTexturesS3D_FUN_0058b8e0(CD
   } while ((iVar1 != 10) || (iVar2 = iVar2 + -1, 0 < iVar2));
   iVar4 = 0;
   if (0 < this_ptr->num_textures) {
-    path_buffer = this_ptr->texture_sets[0].textures[0].textures[0].texture_name;
+    path_buffer = this_ptr->texture_sets[0].textures[0].texture_name;
     do {
       iVar3 = _fscanf(file_handle,"%[^\n]\n",local_214);
       if (iVar3 != 1) {

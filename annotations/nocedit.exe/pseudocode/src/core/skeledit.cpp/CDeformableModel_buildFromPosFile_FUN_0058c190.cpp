@@ -39,7 +39,7 @@ int __cdecl core_skeledit_cpp_CDeformableModel_buildFromPosFile_FUN_0058c190(CDe
   char *pcVar18;
   float *pfVar19;
   char *pcVar20;
-  SMRGLTextureLod *pSVar21;
+  SMRGLTextureModel *pSVar21;
   char *pcVar21;
   byte bVar22;
   byte bVar23;
@@ -249,7 +249,7 @@ LAB_0058c613:
       do {
         local_98 = 0;
         if (0 < this_ptr->num_textures) {
-          pcVar16 = local_6c->textures[0].textures[0].texture_name;
+          pcVar16 = local_6c->textures[0].texture_name;
           do {
             splitpath
                       (pcVar16,(char *)0x0,(char *)0x0,local_818,(char *)0x0);
@@ -514,9 +514,9 @@ LAB_0058c601:
       pSVar17 = pCVar15->texture_sets;
       pSVar21 = local_1f4.lod_textures + iVar5;
       for (iVar8 = 0x12; iVar8 != 0; iVar8 = iVar8 + -1) {
-        pSVar21 = (SMRGLTextureLod *)((int)pSVar21 + (uint)bVar23 * -8 + 4);
+        pSVar21 = (SMRGLTextureModel *)((int)pSVar21 + (uint)bVar23 * -8 + 4);
         pSVar17 = (STextureSet *)((int)pSVar17 + (uint)bVar23 * -8 + 4);
-        pSVar21->textures[0].base.type = pSVar17->textures[0].textures[0].base.type;
+        (pSVar21->base).type = pSVar17->textures[0].base.type;
         pSVar17 = pSVar17;
         pSVar21 = pSVar21;
       }
@@ -627,9 +627,9 @@ LAB_0058c601:
           }
           iVar8 = 0;
           if (0 < local_2dc.lod_texture_count) {
-            pcVar16 = local_78->textures[0].textures[0].texture_name;
+            pcVar16 = local_78->textures[0].texture_name;
             do {
-              pcVar18 = local_2dc.lod_textures[iVar8].textures[0].texture_name;
+              pcVar18 = local_2dc.lod_textures[iVar8].texture_name;
               iVar8 = iVar8 + 1;
               pcVar21 = pcVar16;
               do {
@@ -692,7 +692,7 @@ LAB_0058c601:
         }
         local_74 = 0;
         if (0 < local_a0) {
-          pcVar16 = local_3c->textures[0].textures[0].texture_name;
+          pcVar16 = local_3c->textures[0].texture_name;
           do {
             pcVar21 = shape_design_c_getTextureName_FUN_0046e060(local_74);
             pcVar19 = pcVar16 + 0x48;

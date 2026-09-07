@@ -39,7 +39,8 @@ void __cdecl core_cloth_cpp_CCloth_render_FUN_00437db0(CCloth *this_ptr,CDeforma
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
               (g_CDemonRenderer_PTR_005ae704,iVar10);
   }
-  engine_texture_cpp_ensureTextureLoaded_FUN_00545920((this_ptr->model).texture_list[0].textures);
+  engine_texture_cpp_ensureTextureLoaded_FUN_00545920
+            ((SMRGLTextureBasic *)(this_ptr->model).texture_list);
   if (this_ptr->double_sided == 0) {
     core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0
               (g_CDemonSet_PTR_005be368,(this_ptr->model).vertex_count,

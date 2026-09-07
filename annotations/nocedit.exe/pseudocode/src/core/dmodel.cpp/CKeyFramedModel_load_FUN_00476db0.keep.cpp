@@ -41,7 +41,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_load_FUN_00476db0(CKeyFramedModel *
   iVar2 = 0;
   if (0 < this_ptr->texture_count) {
     do {
-      this_ptr->texture_list[iVar2].textures[0].base.count = 0;
+      this_ptr->texture_list[iVar2].base.count = 0;
       iVar2 = iVar2 + 1;
     } while (iVar2 < this_ptr->texture_count);
   }

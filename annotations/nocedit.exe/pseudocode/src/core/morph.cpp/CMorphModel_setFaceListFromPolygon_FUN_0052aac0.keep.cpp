@@ -3,11 +3,11 @@
 // MANUAL RECONSTRUCTION
 // Address Range: [[0052aac0, 0052ac97] [0060a11a, 0060a1af]]
 // Convention: __cdecl
-// Signature: void __cdecl core_morph_cpp_CMorphModel_setFaceListFromPolygon_FUN_0052aac0(CMorphModel *this_ptr,int part_index,SMRGLHeaderPrimitive *poly_data,int poly_stride ,SMRGLTextureLod *texture_list,int *texture_index_list,int start_face,int poly_count)
+// Signature: void __cdecl core_morph_cpp_CMorphModel_setFaceListFromPolygon_FUN_0052aac0(CMorphModel *this_ptr,int part_index,SMRGLHeaderPrimitive *poly_data,int poly_stride ,SMRGLTextureModel *texture_list,int *texture_index_list,int start_face,int poly_count)
 
 #include "nocturne.h"
 
-void __cdecl core_morph_cpp_CMorphModel_setFaceListFromPolygon_FUN_0052aac0(CMorphModel *this_ptr,int part_index,SMRGLHeaderPrimitive *poly_data,int poly_stride ,SMRGLTextureLod *texture_list,int *texture_index_list,int start_face,int poly_count)
+void __cdecl core_morph_cpp_CMorphModel_setFaceListFromPolygon_FUN_0052aac0(CMorphModel *this_ptr,int part_index,SMRGLHeaderPrimitive *poly_data,int poly_stride ,SMRGLTextureModel *texture_list,int *texture_index_list,int start_face,int poly_count)
 
 {
   int iVar2;
@@ -36,7 +36,7 @@ void __cdecl core_morph_cpp_CMorphModel_setFaceListFromPolygon_FUN_0052aac0(CMor
   local_24 = texture_index_list;
   for (local_20 = 0; local_20 < poly_count; local_20 = local_20 + 1) {
     iVar4 = core_morph_cpp_CMorphModel_findOrAddTexture_FUN_0052ae60
-                      (this_ptr,texture_list[*local_24].textures[0].texture_name);
+                      (this_ptr,texture_list[*local_24].texture_name);
     count = (poly_data->base).count;
     if (2 < count) {
       verts = (SMRGLVertex *)(poly_data + 1);

@@ -16,10 +16,17 @@ from ghidra_annotations.annotations.pseudocode.header_compile import (
 
 
 # Shim compile flags: syntax-only check, no -m32 (shims are cross-platform,
-# and 32-bit SDL2 dev headers may not be installed)
+# and 32-bit SDL2 dev headers may not be installed).
+#
+# The standard must match what CMake gives nocturne_shims — target_compile_features
+# asks for cxx_std_17, and with CXX_EXTENSIONS on (the default) that is gnu++17.
+# The decompiled tree is gnu++11, but the shims are ours and use C++17:
+# std::filesystem in the path/file-search/kernel32 shims, std::align_val_t in the
+# Watcom runtime. Checking them at gnu++11 reports errors the real build does not
+# have.
 SHIM_COMPILE_FLAGS = [
     '-fsyntax-only',
-    '-std=gnu++11',
+    '-std=gnu++17',
     '-Wno-everything',
 ]
 
@@ -116,8 +123,17 @@ def compile_shim_file(src_path, include_dir, compiler, extra_flags, shims_dir):
             # Add the shims root to the include path: nocturne.h pulls in
             # shim_config.h, which sits there, and every other shim header is
             # named relative to it.
+            #
+            # shims/tests and NOCTURNE_TEST_DATA_DIR mirror what CMake gives the
+            # test targets: the suites include "nocturne_test.h" by bare name,
+            # and the golden-trace suites read their expectations from the source
+            # tree through that define.
+            tests_dir = os.path.join(shims_dir, 'tests')
             cmd = ([compiler] + SHIM_COMPILE_FLAGS + extra_flags +
-                   ['-I', include_dir, '-I', shims_dir, src_path])
+                   ['-I', include_dir, '-I', shims_dir, '-I', tests_dir,
+                    '-DNOCTURNE_TEST_DATA_DIR="%s"'
+                    % os.path.join(tests_dir, 'renderer', 'golden'),
+                    src_path])
         result = subprocess.run(
             cmd,
             capture_output=True,

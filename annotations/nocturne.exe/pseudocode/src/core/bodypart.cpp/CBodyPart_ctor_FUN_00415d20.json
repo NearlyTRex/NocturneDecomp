@@ -451,7 +451,7 @@
       "type": "pointer_cast"
     },
     {
-      "description": "'pCVar1[1].previous_transform_state.orientation + 4' walks 1 x sizeof(CDemonActor) (0x150) + offsetof(previous_transform_state.orientation) (0x134) + 0x4 = 0x288, which is exactly offsetof(CBodyPart, attached_models). Ghidra had no CBodyPart type here and reached the field by index arithmetic; write it as ((CBodyPart *)pCVar1)->attached_models (\u00a7de-pun/\u00a712). Ambiguous: CFlame::is_visible also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "description": "'pCVar1[1].previous_transform_state.orientation + 4' walks 1 x sizeof(CDemonActor) (0x150) + offsetof(previous_transform_state.orientation) (0x134) + 0x4 = 0x288, which is exactly offsetof(CBodyPart, attached_models). Ghidra had no CBodyPart type here and reached the field by index arithmetic; write it as ((CBodyPart *)pCVar1)->attached_models (\u00a7de-pun/\u00a712). Ambiguous: CFlame::is_visible, CTrigger::off_event[8] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
       "line": 11,
       "severity": "moderate",
       "text": "((void *)((int)&pCVar1[1].previous_transform_state.orientation + 4),3,",

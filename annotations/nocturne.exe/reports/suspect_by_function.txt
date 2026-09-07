@@ -7,7 +7,7 @@ SUMMARY
 Total functions analyzed: 4922
 Clean: 2505 (50.9%)
 With suspects: 2417
-Total suspects: 20955
+Total suspects: 20962
 
 ====================================================================================================
 cockpit_ckptutil.c_applyActPalette_FUN_0042d370 (1 suspect)
@@ -2252,9 +2252,10 @@ core_barrier.cpp_CBarrier_getCollisionType_FUN_00411860 (1 suspect)
   Line 11 [undefined_data]: iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0(DAT_00763e44,this_ptr->effect_class_name_list);
 
 ====================================================================================================
-core_bat.cpp_CBat_ctor_FUN_00411a10 (5 suspects)
+core_bat.cpp_CBat_ctor_FUN_00411a10 (6 suspects)
   File: core/bat.cpp
 ====================================================================================================
+  Line 13 [derived_field_index_pun]: pCVar3 = core_course_cpp_CCourse_ctor_FUN_0043b5d0((CCourse *)&pCVar2[1].location);
   Line 16 [negative_offset]: *(CDemonActor_vtable **)(this_ptr_00[-1].model_name + 0xd0) = &g_CBatVTable;
   Line 17 [negative_offset]: this_ptr_00[-1].model_ptr = (CKeyFramedModel *)0x0;
   Line 22 [negative_offset]: pcVar5 = this_ptr_00[-1].model_name + 0xd4;
@@ -2411,22 +2412,21 @@ core_beast.cpp_CBeast_process_FUN_004150d0 (1 suspect)
   Line 11 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
 
 ====================================================================================================
-core_biggs.cpp_CBiggs_ctor_FUN_00415370 (6 suspects)
+core_biggs.cpp_CBiggs_ctor_FUN_00415370 (5 suspects)
   File: core/biggs.cpp
 ====================================================================================================
-  Line 21 [pointer_truncation]: pCVar8[-0x10].models[0].textures[0x11].textures[2].base.count = (int)&g_CBiggsVTable;
-  Line 28 [negative_offset]: ((CKeyFramedModelInstance *)(pCVar8[-1].models[1].textures + 0xf),
-  Line 48 [pointer_truncation]: *(char *)((int)&pCVar10->models[0].part_count + 1) = cVar2;
-  Line 48 [pointer_cast]: *(char *)((int)&pCVar10->models[0].part_count + 1) = cVar2;
-  Line 49 [pointer_truncation]: pCVar10 = (CMorph *)((int)&pCVar10->models[0].part_count + 2);
-  Line 49 [pointer_cast]: pCVar10 = (CMorph *)((int)&pCVar10->models[0].part_count + 2);
+  Line 29 [negative_offset]: ((CKeyFramedModelInstance *)(pCVar8[-1].models[1].textures + 0xf),
+  Line 49 [pointer_truncation]: *(char *)((int)&pCVar10->models[0].part_count + 1) = cVar2;
+  Line 49 [pointer_cast]: *(char *)((int)&pCVar10->models[0].part_count + 1) = cVar2;
+  Line 50 [pointer_truncation]: pCVar10 = (CMorph *)((int)&pCVar10->models[0].part_count + 2);
+  Line 50 [pointer_cast]: pCVar10 = (CMorph *)((int)&pCVar10->models[0].part_count + 2);
 
 ====================================================================================================
 core_biggs.cpp_CBiggs_dtor_FUN_00415a30 (2 suspects)
   File: core/biggs.cpp
 ====================================================================================================
-  Line 24 [negative_offset]: ((SFire *)(pCVar2[-2].base.create_event + 0x10),0);
-  Line 33 [negative_offset]: ((CDemonActor *)(pCVar6[-1].part_data.visibility_flags + 9),1);
+  Line 23 [negative_offset]: ((SFire *)(pCVar2[-2].base.create_event + 0x10),0);
+  Line 32 [negative_offset]: ((CDemonActor *)(pCVar6[-1].part_data.visibility_flags + 9),1);
 
 ====================================================================================================
 core_biggs.cpp_CBiggs_getTargetPoints_FUN_004159c0 (1 suspect)
@@ -4758,17 +4758,17 @@ core_cloth.cpp_CCloth_renderBone_FUN_00437ab0 (14 suspects)
 core_cloth.cpp_CCloth_render_FUN_00437db0 (11 suspects)
   File: core/cloth.cpp
 ====================================================================================================
-  Line 51 [shadow_pointer_walk]: pCVar2 = (CCloth *)((pCVar2->model).model_filename + 4);
-  Line 94 [shadow_pointer_walk]: pCVar2 = (CCloth *)((pCVar2->model).model_filename + 4);
-  Line 115 [undefined_data]: local_18 = &DAT_0076934c;
-  Line 124 [pointer_cast]: puVar5 = (uint *)((int)pSVar8 + (uint)bVar6 * -8 + iVar9 + 0x1c);
-  Line 124 [pointer_truncation]: puVar5 = (uint *)((int)pSVar8 + (uint)bVar6 * -8 + iVar9 + 0x1c);
-  Line 125 [pointer_cast]: *(uint *)(puVar3 + 0x18) = *(uint *)((int)pSVar8 + iVar9 + 0x18);
-  Line 125 [pointer_truncation]: *(uint *)(puVar3 + 0x18) = *(uint *)((int)pSVar8 + iVar9 + 0x18);
-  Line 127 [pointer_truncation]: *(uint *)((int)(puVar3 + (uint)bVar6 * -8 + 0x1c) + ((uint)bVar6 * -2 + 1) * 4) =
-  Line 138 [undefined_data]: (g_CDemonSet_PTR_005be368,(this_ptr->model).vertex_count,local_20,&DAT_0076934c,
-  Line 142 [undefined_data]: pSVar8 = (SMRGLPrimitiveQuad *)&DAT_0076934c;
-  Line 145 [undefined_data]: pSVar8 = (SMRGLPrimitiveQuad *)&DAT_0076934c;
+  Line 52 [shadow_pointer_walk]: pCVar2 = (CCloth *)((pCVar2->model).model_filename + 4);
+  Line 95 [shadow_pointer_walk]: pCVar2 = (CCloth *)((pCVar2->model).model_filename + 4);
+  Line 116 [undefined_data]: local_18 = &DAT_0076934c;
+  Line 125 [pointer_cast]: puVar5 = (uint *)((int)pSVar8 + (uint)bVar6 * -8 + iVar9 + 0x1c);
+  Line 125 [pointer_truncation]: puVar5 = (uint *)((int)pSVar8 + (uint)bVar6 * -8 + iVar9 + 0x1c);
+  Line 126 [pointer_cast]: *(uint *)(puVar3 + 0x18) = *(uint *)((int)pSVar8 + iVar9 + 0x18);
+  Line 126 [pointer_truncation]: *(uint *)(puVar3 + 0x18) = *(uint *)((int)pSVar8 + iVar9 + 0x18);
+  Line 128 [pointer_truncation]: *(uint *)((int)(puVar3 + (uint)bVar6 * -8 + 0x1c) + ((uint)bVar6 * -2 + 1) * 4) =
+  Line 139 [undefined_data]: (g_CDemonSet_PTR_005be368,(this_ptr->model).vertex_count,local_20,&DAT_0076934c,
+  Line 143 [undefined_data]: pSVar8 = (SMRGLPrimitiveQuad *)&DAT_0076934c;
+  Line 146 [undefined_data]: pSVar8 = (SMRGLPrimitiveQuad *)&DAT_0076934c;
 
 ====================================================================================================
 core_cloth.cpp_CCloth_saveJoinedLight_FUN_00437cc0 (3 suspects)
@@ -9347,9 +9347,10 @@ core_elephant.cpp_CElephantGun_process_FUN_004777a0 (4 suspects)
   Line 31 [stack_param]: core_weapon_cpp_CWeapon_process_FUN_00554030(&this_ptr->base,in_stack_0000000c);
 
 ====================================================================================================
-core_emitter.cpp_CEmitter_ctor_FUN_004783c0 (7 suspects)
+core_emitter.cpp_CEmitter_ctor_FUN_004783c0 (8 suspects)
   File: core/emitter.cpp
 ====================================================================================================
+  Line 13 [derived_field_index_pun]: ((CKeyFramedModelInstance *)&pCVar2[1].platform_orientation_delta.y);
   Line 14 [negative_offset]: *(CDemonActor_vtable **)(this_ptr_00[-1].model_name + 0x10) = &g_CEmitterVTable;
   Line 28 [negative_offset]: pcVar4 = this_ptr_00[-1].model_name + 0x28;
   Line 33 [unrolled_strcpy]: do {
@@ -9877,11 +9878,12 @@ core_filmreel.cpp_CFilmProjector_ctor_FUN_00481f10 (8 suspects)
   Line 44 [negative_offset]: return (CFilmProjector *)(this_ptr_00[-2].model_name + 0x94);
 
 ====================================================================================================
-core_filmreel.cpp_CFilmProjector_process_FUN_00482010 (2 suspects)
+core_filmreel.cpp_CFilmProjector_process_FUN_00482010 (3 suspects)
   File: core/filmreel.cpp
 ====================================================================================================
   Line 12 [raw_address_constant]: core_dfilter_cpp_CFilterFX_openMovie_FUN_0044c310(0x014B98EC,(char *)0x0);
   Line 32 [raw_address_constant]: core_dfilter_cpp_CFilterFX_openMovie_FUN_0044c310(0x014B98EC,(char *)&pCVar3[2].orient);
+  Line 32 [derived_field_index_pun]: core_dfilter_cpp_CFilterFX_openMovie_FUN_0044c310(0x014B98EC,(char *)&pCVar3[2].orient);
 
 ====================================================================================================
 core_filmreel.cpp_CFilmProjector_renderOpaque_FUN_004821d0 (3 suspects)
@@ -11236,9 +11238,10 @@ core_flies.cpp_findFliesByFollowActor_FUN_0048fbe0 (1 suspect)
   Line 17 [pointer_cast]: (*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + iVar3),
 
 ====================================================================================================
-core_frankgen.cpp_CFrankenstienMachine_ctor_FUN_00494630 (3 suspects)
+core_frankgen.cpp_CFrankenstienMachine_ctor_FUN_00494630 (4 suspects)
   File: core/frankgen.cpp
 ====================================================================================================
+  Line 11 [derived_field_index_pun]: ((CKeyFramedModelInstance *)&pCVar1[1].location.area_id);
   Line 15 [negative_offset]: *(CDemonActor_vtable **)(pCVar2[-2].model_name + 200) = &g_CFrankenstienMachineVTable;
   Line 20 [negative_offset]: pCVar2[-2].model_name[0xd4] = '\0';
   Line 26 [negative_offset]: return (CFrankenstienMachine *)(pCVar2[-3].model_name + 0xf8);
@@ -11319,9 +11322,10 @@ core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_00499b00 (5 suspects)
   Line 51 [pointer_truncation]: pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);
 
 ====================================================================================================
-core_gabriela.cpp_CGabriella_ctor_FUN_004956a0 (22 suspects)
+core_gabriela.cpp_CGabriella_ctor_FUN_004956a0 (23 suspects)
   File: core/gabriela.cpp
 ====================================================================================================
+  Line 11 [derived_field_index_pun]: ((CCloth *)&pCVar2[1].base.base.orient_matrix.m[0].y);
   Line 12 [negative_offset]: pCVar3[-1].vertices[0x183].bone_weights[1] = (float)&g_CGabriellaVTable;
   Line 13 [negative_offset]: pCVar3[-1].locked_vertex_indices[0x381] = 0;
   Line 14 [negative_offset]: pCVar3[-1].locked_vertex_indices[0x382] = 0;
@@ -11416,7 +11420,7 @@ core_gabriela.cpp_CGabriella_processMotionEvents_FUN_00497410 (8 suspects)
   Line 136 [stack_param]: in_stack_ffffff58 = "kick1.wav";
 
 ====================================================================================================
-core_gabriela.cpp_CGabriella_process_FUN_00495a20 (7 suspects)
+core_gabriela.cpp_CGabriella_process_FUN_00495a20 (8 suspects)
   File: core/gabriela.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
@@ -11426,6 +11430,7 @@ core_gabriela.cpp_CGabriella_process_FUN_00495a20 (7 suspects)
   Line 443 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   Line 670 [pointer_truncation]: pCVar12 = (CVector3f *)((int)&pCVar13[4].orient + 4);
   Line 670 [pointer_cast]: pCVar12 = (CVector3f *)((int)&pCVar13[4].orient + 4);
+  Line 670 [derived_field_index_pun]: pCVar12 = (CVector3f *)((int)&pCVar13[4].orient + 4);
 
 ====================================================================================================
 core_gabriela.cpp_CGabriella_scoreTargetVisibility_FUN_00498de0 (1 suspect)
@@ -14045,7 +14050,7 @@ core_inivar.cpp_writeIniData_FUN_004be2d0 (1 suspect)
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 ====================================================================================================
-core_inv.cpp_CInventory_addItem_FUN_004bf360 (123 suspects)
+core_inv.cpp_CInventory_addItem_FUN_004bf360 (126 suspects)
   File: core/inv.cpp
 ====================================================================================================
   Line 51 [unrolled_strcpy]: do {
@@ -14119,6 +14124,7 @@ core_inv.cpp_CInventory_addItem_FUN_004bf360 (123 suspects)
   Line 570 [unrolled_strlen]: do {
   Line 570 [unrolled_strcat]: do {
   Line 579 [unrolled_strcpy]: do {
+  Line 593 [derived_field_index_pun]: pCVar5 = core_actor_cpp_createActorByName_FUN_0040d540((char *)&pCVar5[2].location.area_id);
   Line 596 [unrolled_strcpy]: do {
   Line 608 [unrolled_strlen]: do {
   Line 608 [unrolled_strcat]: do {
@@ -14164,12 +14170,14 @@ core_inv.cpp_CInventory_addItem_FUN_004bf360 (123 suspects)
   Line 900 [unrolled_strcat]: do {
   Line 909 [unrolled_strcpy]: do {
   Line 922 [unrolled_strcpy]: do {
+  Line 949 [derived_field_index_pun]: (pcStack_2c,(char *)&pCVar5[2].location.area_id), iVar7 == 0)) &&
   Line 959 [shadow_pointer_walk]: pCVar10 = (CInventory *)&pCVar10->owner;
   Line 977 [shadow_pointer_walk]: pCVar10 = (CInventory *)&pCVar10->owner;
   Line 998 [suspect_float]: pCVar5[4].location.position.x = 2.8026e-43;
   Line 1008 [shadow_pointer_walk]: pCVar10 = (CInventory *)&pCVar10->owner;
   Line 1070 [suspect_float]: pCVar5[4].location.position.x = 2.8026e-43;
   Line 1080 [shadow_pointer_walk]: pCStack_20 = (CInventory *)&pCStack_20->owner;
+  Line 1092 [derived_field_index_pun]: iVar9 = _strcmp((char *)&pCVar8[2].location.area_id,pcVar11);
   Line 1111 [shadow_pointer_walk]: pCStack_18 = (CInventory *)&pCStack_18->owner;
 
 ====================================================================================================
@@ -14972,9 +14980,10 @@ core_manpuz.cpp_copyPanel_FUN_004cbf30 (5 suspects)
   Line 34 [unrolled_memcpy]: (dest->world_position).x = (src->world_position).x;
 
 ====================================================================================================
-core_marquee.cpp_CMarquee_ctor_FUN_004cc0e0 (16 suspects)
+core_marquee.cpp_CMarquee_ctor_FUN_004cc0e0 (17 suspects)
   File: core/marquee.cpp
 ====================================================================================================
+  Line 12 [derived_field_index_pun]: pCVar3 = core_course_cpp_CCourse_ctor_FUN_0043b5d0((CCourse *)&pCVar2[1].orient_matrix.m[1].y);
   Line 14 [negative_offset]: pCVar3[-7].frames = (CCourseFrame *)&g_CMarqueeVTable;
   Line 15 [negative_offset]: piVar5 = &pCVar3[-7].loop;
   Line 16 [negative_offset]: pCVar3[-4].frames = (CCourseFrame *)0x41200000;
@@ -15380,15 +15389,14 @@ core_mimic.cpp_CMimic_beginMorph_FUN_004d5d00 (4 suspects)
   Line 32 [unrolled_memcpy]: (pCVar2->orient).vec.x = (pUVar1->vec).x;
 
 ====================================================================================================
-core_mimic.cpp_CMimic_ctor_FUN_004d4450 (6 suspects)
+core_mimic.cpp_CMimic_ctor_FUN_004d4450 (5 suspects)
   File: core/mimic.cpp
 ====================================================================================================
-  Line 18 [derived_field_index_pun]: ((CCloth *)(pCVar6[1].base.base.create_event + 0x50));
-  Line 21 [pointer_truncation]: pCVar8[-0x5d].models[0].textures[0xc].textures[2].base.count = (int)&g_CMimicVTable;
-  Line 39 [negative_offset]: pCVar8[-1].models[1].textures[0x13].textures[2].base.count = 0;
-  Line 40 [negative_offset]: pcVar10 = pCVar8[-1].models[1].textures[0x13].textures[2].texture_name + 4;
-  Line 41 [negative_offset]: pSVar2 = pCVar8[-1].models[1].textures + 0x13;
-  Line 46 [unrolled_strcpy]: do {
+  Line 17 [derived_field_index_pun]: ((CCloth *)(pCVar5[1].base.base.create_event + 0x50));
+  Line 39 [negative_offset]: pSVar2 = pCVar7[-1].models[1].textures;
+  Line 44 [negative_offset]: pcVar9 = pCVar7[-1].models[1].textures[0x13].texture_name + 0x34;
+  Line 45 [negative_offset]: pSVar2 = pCVar7[-1].models[1].textures;
+  Line 50 [unrolled_strcpy]: do {
 
 ====================================================================================================
 core_mimic.cpp_CMimic_dtor_FUN_004d4540 (3 suspects)
@@ -16145,25 +16153,24 @@ core_mobster.cpp_getObjectGrabPointWorld_FUN_004da070 (1 suspect)
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 ====================================================================================================
-core_moloch.cpp_CMoloch_ctor_FUN_004dd930 (10 suspects)
+core_moloch.cpp_CMoloch_ctor_FUN_004dd930 (9 suspects)
   File: core/moloch.cpp
 ====================================================================================================
-  Line 24 [negative_offset]: pcVar7 = pCVar5[-1].models[1].textures[0x11].textures[1].texture_name + 0xc;
-  Line 25 [unrolled_strcpy]: do {
-  Line 35 [negative_offset]: pSVar8 = pCVar5[-1].models[1].textures + 0x13;
-  Line 42 [pointer_truncation]: *(char *)((int)&pSVar8->textures[0].base.type + 1) = cVar1;
-  Line 42 [pointer_cast]: *(char *)((int)&pSVar8->textures[0].base.type + 1) = cVar1;
-  Line 43 [pointer_truncation]: pSVar8 = (SMRGLTextureLod *)((int)&pSVar8->textures[0].base.type + 2);
-  Line 43 [pointer_cast]: pSVar8 = (SMRGLTextureLod *)((int)&pSVar8->textures[0].base.type + 2);
-  Line 45 [negative_offset]: pSVar8 = pCVar5[-1].models[1].textures + 0x11;
-  Line 50 [negative_offset]: pSVar2 = pCVar5[-1].models[1].textures[0x11].textures;
-  Line 55 [negative_offset]: pSVar2 = pCVar5[-1].models[1].textures[0x11].textures;
+  Line 23 [negative_offset]: pcVar6 = pCVar4[-1].models[1].textures[0x11].texture_name + 0x24;
+  Line 24 [unrolled_strcpy]: do {
+  Line 34 [negative_offset]: pSVar7 = pCVar4[-1].models[1].textures + 0x13;
+  Line 41 [pointer_cast]: *(char *)((int)&(pSVar7->base).type + 1) = cVar1;
+  Line 42 [pointer_cast]: pSVar7 = (SMRGLTextureModel *)((int)&(pSVar7->base).type + 2);
+  Line 42 [shadow_pointer_walk]: pSVar7 = (SMRGLTextureModel *)((int)&(pSVar7->base).type + 2);
+  Line 44 [negative_offset]: pSVar7 = pCVar4[-1].models[1].textures;
+  Line 49 [negative_offset]: pSVar7 = pCVar4[-1].models[1].textures;
+  Line 54 [negative_offset]: pSVar7 = pCVar4[-1].models[1].textures;
 
 ====================================================================================================
 core_moloch.cpp_CMoloch_dtor_FUN_004dd9f0 (1 suspect)
   File: core/moloch.cpp
 ====================================================================================================
-  Line 19 [negative_offset]: &pCVar1[-3].models[0].textures[2].textures[0].base.count,0);
+  Line 18 [negative_offset]: ((CDeformableModelInstance *)&pCVar1[-3].models[0].textures[2].base.count,0);
 
 ====================================================================================================
 core_moloch.cpp_CMoloch_processAI_FUN_004de1b0 (4 suspects)
@@ -16440,29 +16447,29 @@ core_morph.cpp_CMorph_getReady_FUN_004e03c0 (25 suspects)
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
   Line 70 [unrolled_memcpy]: (pCVar5->max).x = pCVar3->x;
-  Line 108 [static_object_index]: local_88 = local_1c[1] - (&local_c8)[iVar7].min.y;
-  Line 110 [static_object_index]: local_84 = local_1c[2] - (&local_c8)[iVar7].min.z;
-  Line 112 [static_object_index]: local_58 = local_20->y - (&local_c8)[local_28].min.y;
-  Line 113 [static_object_index]: local_54 = local_20->z - (&local_c8)[local_28].min.z;
-  Line 116 [static_object_index]: local_40 = local_1c[1] - (&local_c8)[iVar7].min.y;
-  Line 117 [static_object_index]: local_3c = local_1c[2] - (&local_c8)[iVar7].min.z;
-  Line 119 [static_object_index]: local_70 = local_20->y - (&local_c8)[local_28].min.y;
-  Line 120 [static_object_index]: local_6c = local_20->z - (&local_c8)[local_28].min.z;
-  Line 123 [static_object_index]: local_94 = local_1c[1] - (&local_c8)[iVar7].min.y;
-  Line 124 [static_object_index]: local_90 = local_1c[2] - (&local_c8)[iVar7].min.z;
-  Line 126 [static_object_index]: local_7c = local_20->y - (&local_c8)[local_28].min.y;
-  Line 127 [pointer_cast]: local_50.x = *(float *)((int)&(pSVar1->position).x + iVar4);
-  Line 127 [static_object_index]: local_78 = local_20->z - (&local_c8)[local_28].min.z;
-  Line 128 [pointer_cast]: local_50.y = *(float *)((int)&(pSVar1->position).y + iVar4);
-  Line 129 [pointer_cast]: local_50.z = *(float *)((int)&(pSVar1->position).z + iVar4);
-  Line 140 [static_object_index]: local_50.y = local_50.y - (&local_c8)[iVar2].min.y;
-  Line 142 [pointer_cast]: *(int *)((int)&(local_14->models[0].points)->vertex_index + iVar4) = iVar6;
-  Line 142 [static_object_index]: local_50.z = (local_50.z - (&local_c8)[iVar2].min.z) * local_60;
-  Line 144 [static_object_index]: local_50.y = local_50.y + (&local_c8)[iVar7].min.y;
-  Line 145 [static_object_index]: local_50.z = local_50.z + (&local_c8)[iVar7].min.z;
-  Line 149 [pointer_cast]: local_34 = (CMorph *)((int)(local_34 + 0xffffffff) + 0x624);
-  Line 149 [pointer_truncation]: local_34 = (CMorph *)((int)(local_34 + 0xffffffff) + 0x624);
-  Line 149 [shadow_pointer_walk]: local_34 = (CMorph *)((int)(local_34 + 0xffffffff) + 0x624);
+  Line 106 [static_object_index]: local_88 = local_1c[1] - (&local_c8)[iVar7].min.y;
+  Line 108 [static_object_index]: local_84 = local_1c[2] - (&local_c8)[iVar7].min.z;
+  Line 110 [static_object_index]: local_58 = local_20->y - (&local_c8)[local_28].min.y;
+  Line 111 [static_object_index]: local_54 = local_20->z - (&local_c8)[local_28].min.z;
+  Line 114 [static_object_index]: local_40 = local_1c[1] - (&local_c8)[iVar7].min.y;
+  Line 115 [static_object_index]: local_3c = local_1c[2] - (&local_c8)[iVar7].min.z;
+  Line 117 [static_object_index]: local_70 = local_20->y - (&local_c8)[local_28].min.y;
+  Line 118 [static_object_index]: local_6c = local_20->z - (&local_c8)[local_28].min.z;
+  Line 121 [static_object_index]: local_94 = local_1c[1] - (&local_c8)[iVar7].min.y;
+  Line 122 [static_object_index]: local_90 = local_1c[2] - (&local_c8)[iVar7].min.z;
+  Line 124 [static_object_index]: local_7c = local_20->y - (&local_c8)[local_28].min.y;
+  Line 125 [pointer_cast]: local_50.x = *(float *)((int)&(pSVar1->position).x + iVar4);
+  Line 125 [static_object_index]: local_78 = local_20->z - (&local_c8)[local_28].min.z;
+  Line 126 [pointer_cast]: local_50.y = *(float *)((int)&(pSVar1->position).y + iVar4);
+  Line 127 [pointer_cast]: local_50.z = *(float *)((int)&(pSVar1->position).z + iVar4);
+  Line 138 [static_object_index]: local_50.y = local_50.y - (&local_c8)[iVar2].min.y;
+  Line 140 [pointer_cast]: *(int *)((int)&(local_14->models[0].points)->vertex_index + iVar4) = iVar6;
+  Line 140 [static_object_index]: local_50.z = (local_50.z - (&local_c8)[iVar2].min.z) * local_60;
+  Line 142 [static_object_index]: local_50.y = local_50.y + (&local_c8)[iVar7].min.y;
+  Line 143 [static_object_index]: local_50.z = local_50.z + (&local_c8)[iVar7].min.z;
+  Line 147 [pointer_cast]: local_34 = (CMorph *)((int)(local_34 + 0xffffffff) + 0x624);
+  Line 147 [pointer_truncation]: local_34 = (CMorph *)((int)(local_34 + 0xffffffff) + 0x624);
+  Line 147 [shadow_pointer_walk]: local_34 = (CMorph *)((int)(local_34 + 0xffffffff) + 0x624);
 
 ====================================================================================================
 core_morph.cpp_countTrianglesFromPolygons_FUN_004df210 (1 suspect)
@@ -17013,30 +17020,29 @@ core_particle.cpp_CParticle_setup_FUN_004ef040 (2 suspects)
   Line 21 [unrolled_memcpy]: (this_ptr->velocity).x = velocity->x;
 
 ====================================================================================================
-core_passngr.cpp_CPassenger_ctor_FUN_004ef4e0 (13 suspects)
+core_passngr.cpp_CPassenger_ctor_FUN_004ef4e0 (12 suspects)
   File: core/passngr.cpp
 ====================================================================================================
-  Line 16 [negative_offset]: piVar6 = &pCVar3[-1].models[1].textures[0x12].textures[0].base.count;
-  Line 25 [pointer_cast]: *(char *)((int)piVar6 + 1) = cVar1;
-  Line 25 [pointer_truncation]: *(char *)((int)piVar6 + 1) = cVar1;
-  Line 26 [pointer_cast]: piVar6 = (int *)((int)piVar6 + 2);
-  Line 26 [pointer_truncation]: piVar6 = (int *)((int)piVar6 + 2);
-  Line 29 [negative_offset]: pSVar7 = pCVar3[-1].models[1].textures[0x10].textures + 2;
-  Line 36 [pointer_cast]: *(char *)((int)&(pSVar7->base).type + 1) = cVar1;
-  Line 37 [pointer_cast]: pSVar7 = (SMRGLTextureBasic *)((int)&(pSVar7->base).type + 2);
-  Line 37 [shadow_pointer_walk]: pSVar7 = (SMRGLTextureBasic *)((int)&(pSVar7->base).type + 2);
-  Line 40 [negative_offset]: pCVar3[-1].rescale_enabled = 0;
-  Line 45 [negative_offset]: pcVar4 = pCVar3[-1].models[1].textures[0x12].textures[1].texture_name + 4;
-  Line 47 [unrolled_strcpy]: do {
-  Line 56 [negative_offset]: pCVar3[-1].models[1].textures[0x12].textures[2].texture_name[0xc] = '\0';
+  Line 14 [derived_field_index_pun]: pCVar3 = core_morph_cpp_CMorph_ctor_FUN_004e0050((CMorph *)&pCVar2[1].base.base.scale.y);
+  Line 15 [negative_offset]: piVar6 = &pCVar3[-1].models[1].textures[0x12].base.count;
+  Line 24 [pointer_cast]: *(char *)((int)piVar6 + 1) = cVar1;
+  Line 24 [pointer_truncation]: *(char *)((int)piVar6 + 1) = cVar1;
+  Line 25 [pointer_cast]: piVar6 = (int *)((int)piVar6 + 2);
+  Line 25 [pointer_truncation]: piVar6 = (int *)((int)piVar6 + 2);
+  Line 28 [negative_offset]: pcVar4 = pCVar3[-1].models[1].textures[0x10].texture_name + 0x28;
+  Line 29 [unrolled_strcpy]: do {
+  Line 39 [negative_offset]: pCVar3[-1].rescale_enabled = 0;
+  Line 43 [negative_offset]: pcVar4 = pCVar3[-1].models[1].textures[0x12].texture_name + 0x1c;
+  Line 45 [unrolled_strcpy]: do {
+  Line 54 [negative_offset]: pCVar3[-1].models[1].textures[0x12].texture_name[0x3c] = '\0';
 
 ====================================================================================================
 core_passngr.cpp_CPassenger_dtor_FUN_004ef5c0 (3 suspects)
   File: core/passngr.cpp
 ====================================================================================================
-  Line 31 [negative_offset]: ((CFlame *)(pCVar2[-1].height_cache_tags[0xc] + 0x39),0);
-  Line 33 [negative_offset]: ((SFire *)(pCVar3[-2].base.create_event + 0x10),0);
-  Line 42 [negative_offset]: ((CDemonActor *)(pCVar7[-1].part_data.visibility_flags + 9),1);
+  Line 30 [negative_offset]: ((CFlame *)(pCVar2[-1].height_cache_tags[0xc] + 0x39),0);
+  Line 32 [negative_offset]: ((SFire *)(pCVar3[-2].base.create_event + 0x10),0);
+  Line 41 [negative_offset]: ((CDemonActor *)(pCVar7[-1].part_data.visibility_flags + 9),1);
 
 ====================================================================================================
 core_passngr.cpp_CPassenger_process_FUN_004ef890 (4 suspects)
@@ -20664,16 +20670,16 @@ core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0051ad20 (11 sus
   File: core/skeleton.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 100 [pointer_cast]: *(uint *)((int)local_230 + iVar12) = 0;
-  Line 109 [pointer_cast]: ((int)&(this_ptr->tri_data_ptr[0]->vertex_indices).vertex_index_0 + local_1c);
-  Line 125 [self_copy_guard]: if (&local_a0 != &local_58) {
-  Line 133 [self_copy_guard]: if (&local_88 != &local_7c) {
-  Line 141 [self_copy_guard]: if (&local_64 != &local_94) {
-  Line 156 [shadow_pointer_walk]: pSVar9 = (SVert *)pSVar9->bone_weights;
-  Line 157 [shadow_pointer_walk]: pSVar11 = (SVert *)pSVar11->bone_indices;
-  Line 170 [pointer_cast]: if (local_230[iVar10] < *(float *)((int)local_230 + iVar12)) {
-  Line 179 [shadow_pointer_walk]: local_2c = (CDeformableModel *)(local_2c->tri_count + 3);
-  Line 194 [shadow_pointer_walk]: pCVar3 = (CDeformableModel *)pCVar3->lod_info;
+  Line 99 [pointer_cast]: *(uint *)((int)local_230 + iVar12) = 0;
+  Line 108 [pointer_cast]: ((int)&(this_ptr->tri_data_ptr[0]->vertex_indices).vertex_index_0 + local_1c);
+  Line 124 [self_copy_guard]: if (&local_a0 != &local_58) {
+  Line 132 [self_copy_guard]: if (&local_88 != &local_7c) {
+  Line 140 [self_copy_guard]: if (&local_64 != &local_94) {
+  Line 155 [shadow_pointer_walk]: pSVar9 = (SVert *)pSVar9->bone_weights;
+  Line 156 [shadow_pointer_walk]: pSVar11 = (SVert *)pSVar11->bone_indices;
+  Line 169 [pointer_cast]: if (local_230[iVar10] < *(float *)((int)local_230 + iVar12)) {
+  Line 178 [shadow_pointer_walk]: local_2c = (CDeformableModel *)(local_2c->tri_count + 3);
+  Line 193 [shadow_pointer_walk]: pCVar3 = (CDeformableModel *)pCVar3->lod_info;
 
 ====================================================================================================
 core_skeleton.cpp_CDeformableModel_ctor_FUN_00517b70 (42 suspects)
@@ -20741,7 +20747,7 @@ core_skeleton.cpp_CDeformableModel_dismember_FUN_00519ec0 (21 suspects)
   Line 113 [pointer_cast]: piVar11 = (int *)((int)skinned_vertices + (uint)bVar14 * -8 + 4);
   Line 134 [pointer_cast]: iVar6 = (int)&(((SMRGLPrimitiveTriangle *)(body_part_ptr->faces->vertices + -2))->base).base
   Line 137 [pointer_cast]: ((int)&(this_ptr->tri_data_ptr[lod_index]->vertex_indices).vertex_index_0 +
-  Line 153 [pointer_cast]: [*(int *)(local_2c + (int)this_ptr->index_data_ptr[lod_index])].textures
+  Line 153 [pointer_cast]: [*(int *)(local_2c + (int)this_ptr->index_data_ptr[lod_index])].
   Line 157 [pointer_cast]: *(int *)((int)body_part_ptr->face_texture_indices + local_28) = iVar6;
   Line 168 [pointer_cast]: iVar3 = (int)&(((SMRGLPrimitiveTriangle *)(body_part_ptr->faces->vertices + -2))->base).base
   Line 171 [pointer_cast]: ((int)&(this_ptr->tri_data_ptr[lod_index]->vertex_indices).vertex_index_0 +
@@ -20804,7 +20810,7 @@ core_skeleton.cpp_CDeformableModel_renderBones_FUN_00519120 (1 suspect)
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 ====================================================================================================
-core_skeleton.cpp_CDeformableModel_renderParts_FUN_00518510 (7 suspects)
+core_skeleton.cpp_CDeformableModel_renderParts_FUN_00518510 (9 suspects)
   File: core/skeleton.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
@@ -20812,8 +20818,10 @@ core_skeleton.cpp_CDeformableModel_renderParts_FUN_00518510 (7 suspects)
   Line 87 [static_uninitvar]: puVar8 = (ushort *)(local_9c[0x1f] + local_38);
   Line 140 [raw_address_constant]: iVar7 = 0x518c50;
   Line 175 [pointer_cast]: fVar2 = *(float *)(*(int *)(local_ac + 0x90) + local_40 * 4);
+  Line 187 [pointer_cast]: (SMRGLTextureBasic *)(local_94[*local_98].textures + (int)fVar2));
   Line 221 [pointer_cast]: ((int)&(this_ptr->tri_data_ptr[lod_index]->vertex_indices).vertex_index_0 +
   Line 227 [pointer_cast]: (fVar2 = *(float *)((int)this_ptr->index_data_ptr[lod_index] + (int)local_4c),
+  Line 231 [pointer_cast]: (SMRGLTextureBasic *)(local_a4[*local_9c].textures + (int)fVar2));
 
 ====================================================================================================
 core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_00518f60 (32 suspects)
@@ -20887,7 +20895,7 @@ core_skeleton.cpp_CDeformableModel_shatter_FUN_0051a780 (21 suspects)
   Line 158 [pointer_cast]: *(uint *)((int)&local_94.x + iVar6) = (uint)puVar4[3] << 8;
   Line 163 [pointer_truncation]: *(uint *)((int)&local_88.x + iVar6) = (uint)*puVar1 << 8;
   Line 163 [pointer_cast]: *(uint *)((int)&local_88.x + iVar6) = (uint)*puVar1 << 8;
-  Line 168 [pointer_cast]: local_28->textures[*(int *)(*(int *)(local_30 + 0x90) + local_14)].textures,
+  Line 169 [pointer_cast]: (local_28->textures + *(int *)(*(int *)(local_30 + 0x90) + local_14)),
 
 ====================================================================================================
 core_skeleton.cpp_CDeformableModel_skinSingleVertex_FUN_00518320 (2 suspects)
@@ -21822,9 +21830,10 @@ core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760 (133 suspects)
   Line 977 [unrolled_memcpy]: // 0053b502: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
-core_stranger.cpp_CStranger_ctor_FUN_005350c0 (15 suspects)
+core_stranger.cpp_CStranger_ctor_FUN_005350c0 (16 suspects)
   File: core/stranger.cpp
 ====================================================================================================
+  Line 15 [derived_field_index_pun]: ((CKeyFramedModelInstance *)&pCVar5[1].base.base.process_disabled);
   Line 17 [pointer_truncation]: pCVar6[-0x155].part_visibility_flags[0xe] = (int)&g_CStrangerVTable;
   Line 107 [negative_offset]: *(float *)(pCVar6[-1].model_name + 0x10) = fVar4;
   Line 116 [negative_offset]: uVar1 = *(uint *)(pCVar6[-1].model_name + 0x14);
@@ -22216,17 +22225,16 @@ core_stranger.cpp_setWindVelocity_FUN_00540a40 (1 suspect)
   Line 8 [unrolled_memcpy]: (cloth_ptr->wind_velocity).x = velocity->x;
 
 ====================================================================================================
-core_succubus.cpp_CSuccubus_ctor_FUN_00540b40 (8 suspects)
+core_succubus.cpp_CSuccubus_ctor_FUN_00540b40 (7 suspects)
   File: core/succubus.cpp
 ====================================================================================================
-  Line 23 [pointer_truncation]: pCVar9[-0x13].models[1].textures[1].textures[2].base.count = (int)&g_CSuccubusVTable;
-  Line 28 [negative_offset]: piVar11 = &pCVar9[-1].models[1].textures[0xe].textures[0].base.count;
-  Line 30 [negative_offset]: ((CDeformableModelInstance *)pCVar9[-3].models[0].parts,"hotdemon.dfm");
-  Line 39 [negative_offset]: pCVar9[-1].models[1].textures[0xe].textures[0].base.type = 1;
-  Line 50 [pointer_cast]: *(char *)((int)piVar11 + 1) = cVar2;
-  Line 50 [pointer_truncation]: *(char *)((int)piVar11 + 1) = cVar2;
-  Line 51 [pointer_cast]: piVar11 = (int *)((int)piVar11 + 2);
-  Line 51 [pointer_truncation]: piVar11 = (int *)((int)piVar11 + 2);
+  Line 29 [negative_offset]: piVar11 = &pCVar9[-1].models[1].textures[0xe].base.count;
+  Line 31 [negative_offset]: ((CDeformableModelInstance *)pCVar9[-3].models[0].parts,"hotdemon.dfm");
+  Line 44 [negative_offset]: pCVar9[-1].models[1].textures[0xe].base.type = 1;
+  Line 55 [pointer_cast]: *(char *)((int)piVar11 + 1) = cVar2;
+  Line 55 [pointer_truncation]: *(char *)((int)piVar11 + 1) = cVar2;
+  Line 56 [pointer_cast]: piVar11 = (int *)((int)piVar11 + 2);
+  Line 56 [pointer_truncation]: piVar11 = (int *)((int)piVar11 + 2);
 
 ====================================================================================================
 core_succubus.cpp_CSuccubus_dtor_FUN_00541860 (4 suspects)
@@ -22853,11 +22861,10 @@ core_vampboss.cpp_CVampireBoss_chooseDestWayPoint_FUN_0054e230 (2 suspects)
   Line 44 [shadow_pointer_walk]: pCVar10 = (CVampireBoss *)((pCVar10->base).base.base.actor_name + 4);
 
 ====================================================================================================
-core_vampboss.cpp_CVampireBoss_ctor_FUN_0054c2b0 (2 suspects)
+core_vampboss.cpp_CVampireBoss_ctor_FUN_0054c2b0 (1 suspect)
   File: core/vampboss.cpp
 ====================================================================================================
-  Line 19 [pointer_truncation]: pCVar6[-0xfa].models[0].textures[8].textures[2].base.type = (int)&g_CVampireBossVTable;
-  Line 44 [negative_offset]: pCVar6[-1].rescale_enabled = 0;
+  Line 47 [negative_offset]: pCVar5[-1].rescale_enabled = 0;
 
 ====================================================================================================
 core_vampboss.cpp_CVampireBoss_dtor_FUN_0054e370 (4 suspects)
@@ -23129,7 +23136,7 @@ core_vessel.cpp_CCryptVessel_renderTransparent_FUN_00550370 (2 suspects)
   File: core/vessel.cpp
 ====================================================================================================
   Line 36 [raw_address_constant]: uVar6 = 0x5504fe;
-  Line 49 [unrolled_strcpy]: do {
+  Line 48 [unrolled_strcpy]: do {
 
 ====================================================================================================
 core_vessel.cpp_CCryptVessel_setup_FUN_0054fa80 (2 suspects)

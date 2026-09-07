@@ -157,7 +157,7 @@ typedef _SOCKET SOCKET_FUNC(int af, int type, int protocol);
 // The CRT transform in transforms.py converts crt_wsock32_c_* calls to
 // standard winsock function names (e.g., crt_wsock32_c_recv_FUN_XXXX -> recv).
 //
-// Implementations are in shims/winsock.cpp (POSIX BSD sockets).
+// Implementations are in shims/win32/winsock.cpp (POSIX BSD sockets).
 //
 // =============================================================================
 

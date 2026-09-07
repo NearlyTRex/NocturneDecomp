@@ -73,7 +73,7 @@ LAB_0051abcf:
       if (iVar3 != 1) goto LAB_0051aab1;
       splitpath(local_234,(char *)0x0,(char *)0x0,local_130,(char *)0x0);
       makepath
-                (this_ptr->lod_textures[iVar2].textures[0].texture_name,(char *)0x0,(char *)0x0,
+                (this_ptr->lod_textures[iVar2].texture_name,(char *)0x0,(char *)0x0,
                  local_130,"raw");
     }
     iVar2 = 1;
