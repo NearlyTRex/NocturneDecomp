@@ -218,6 +218,11 @@ void APIENTRY r_DepthMask(GLboolean on) {
     g_state.depth_write = (on != 0) ? 1 : 0;
     note("DepthMask", (unsigned)on);
 }
+// The factor and units are the whole content of the call, and they are small
+// signed numbers rather than enums, so they are recorded as they are given.
+void APIENTRY r_PolygonOffset(GLfloat factor, GLfloat units) {
+    note("PolygonOffset", (unsigned)(int)factor, (unsigned)(int)units);
+}
 void APIENTRY r_CullFace(GLenum f) { note("CullFace", (unsigned)f); }
 void APIENTRY r_FrontFace(GLenum f) { note("FrontFace", (unsigned)f); }
 void APIENTRY r_Viewport(GLint, GLint, GLsizei w, GLsizei h) {
@@ -378,6 +383,7 @@ void install() {
     gl.Disable = r_Disable;
     gl.BlendFunc = r_BlendFunc;
     gl.DepthFunc = r_DepthFunc;
+    gl.PolygonOffset = r_PolygonOffset;
     gl.DepthMask = r_DepthMask;
     gl.CullFace = r_CullFace;
     gl.FrontFace = r_FrontFace;

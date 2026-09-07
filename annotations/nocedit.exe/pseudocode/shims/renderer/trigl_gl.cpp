@@ -23,6 +23,10 @@
 extern "C" int nocturne_trigl_vertex_fog = -1;
 extern "C" int nocturne_trigl_mipmaps = -1;
 extern "C" int nocturne_trigl_debug = -1;
+extern "C" int nocturne_trigl_paint_texture = 0;
+extern "C" int nocturne_trigl_paint_view = 6;
+extern "C" int nocturne_trigl_paint_depth = 0;
+extern "C" int nocturne_trigl_overlay_bias = -1;
 
 extern "C" NocturneTriglStats nocturne_trigl_stats = {};
 
@@ -62,6 +66,26 @@ int vertex_fog() {
         nocturne_trigl_vertex_fog = (env != nullptr) ? atoi(env) : 0;
     }
     return nocturne_trigl_vertex_fog;
+}
+
+// Whether a blended overlay is biased toward the viewer so it wins a tie against
+// the surface it covers. Resolved from the build's answer, overridable at runtime
+// so both can be seen in one run against one held frame.
+int overlay_bias() {
+    if (nocturne_trigl_overlay_bias < 0) {
+        const char *env = getenv("NOCTURNE_TRIGL_OVERLAY_BIAS");
+        nocturne_trigl_overlay_bias =
+            (env != nullptr) ? atoi(env) : (NOCTURNE_AUTHENTIC_OVERLAY_DEPTH ? 0 : 1);
+    }
+    return nocturne_trigl_overlay_bias;
+}
+
+// Which view the marked texture is drawn in: 6 paints it a flat colour, 7 paints
+// its coordinates, so "where does this image land" and "how does it sweep across
+// the geometry" are the same instrument asked two ways.
+int nocturne_trigl_paint_mode() {
+    const int view = nocturne_trigl_paint_view;
+    return (view == 7) ? 7 : 6;
 }
 
 // Reachable without a debugger, because the question it answers — is a flat
@@ -136,6 +160,11 @@ const char *kFragmentSource =
     "    if (u_debug == 3) { o_color = vec4(fract(v_uv), 0.0, 1.0); return; }\n"
     "    if (u_debug == 4) { o_color = vec4(v_color.rgb, 1.0); return; }\n"
     "    if (u_debug == 5) { o_color = vec4(t.rgb, 1.0); return; }\n"
+    // 6 marks one chosen texture wherever it lands, in a colour the game's own
+    // art does not contain, so which pixels a draw owns is a matter of looking
+    // rather than of reasoning about where geometry ended up.
+    "    if (u_debug == 6) { o_color = vec4(1.0, 0.0, 1.0, 1.0); return; }\n"
+    "    if (u_debug == 7) { o_color = vec4(fract(v_uv), 1.0, 1.0); return; }\n"
     "    c.rgb += v_specular.rgb;\n"
     "    if (u_debug == 2) { o_color = vec4(c.a, c.a, c.a, 1.0); return; }\n"
     "    if (u_alpha_test != 0 && c.a <= 0.0) discard;\n"
@@ -186,6 +215,7 @@ size_t g_scratch_capacity = 0;
 // The state the hardware currently has, so a run of draws sharing one costs
 // nothing to repeat. Initialised to values the first apply cannot match.
 NocturneTriglPipelineState g_current;
+bool g_overlay_biased = false;
 bool g_current_valid = false;
 
 // Bumped every time that record is abandoned. Callers keep their own view of
@@ -651,6 +681,27 @@ void nocturne_trigl_gl_apply_state(const NocturneTriglPipelineState *state) {
         gl.DepthFunc(state->depth_func == NOCTURNE_TRIGL_DEPTH_LEQUAL ? GL_LEQUAL : GL_ALWAYS);
     }
 
+    // A blended draw that also tests depth is an overlay: a pass laid over
+    // geometry already drawn at that depth, which is how the game reflects an
+    // environment map onto a surface that carries its own texture. LEQUAL is
+    // meant to let it win the tie, and it only does when both passes interpolate
+    // the same depth. They do not — the overlay covers a different mesh of the
+    // same surface — so the winner alternates per pixel and the overlay comes out
+    // hatched, which on Svetlana's blades is the black speckle that reaches the
+    // screen. A bias toward the viewer settles the tie without changing how the
+    // pass sorts against anything genuinely in front of or behind it.
+    const bool overlay = overlay_bias() && state->blend_enabled &&
+                         state->depth_test_enabled;
+    if (first || overlay != g_overlay_biased) {
+        if (overlay) {
+            gl.Enable(GL_POLYGON_OFFSET_FILL);
+            gl.PolygonOffset(-1.0f, -1.0f);
+        } else {
+            gl.Disable(GL_POLYGON_OFFSET_FILL);
+        }
+        g_overlay_biased = overlay;
+    }
+
     // Shading, texture enable, alpha test and fog are the shader's business,
     // not the pipeline's.
     gl.UseProgram(g_program);
@@ -739,6 +790,16 @@ void nocturne_trigl_gl_bind_texture(unsigned texture) {
     if (!g_ready) return;
     gl.ActiveTexture(GL_TEXTURE0);
     gl.BindTexture(GL_TEXTURE_2D, (GLuint)texture);
+    // Marking one texture is a question asked of a frame already on screen —
+    // which of these pixels came from that image — so it is chosen by the name
+    // the draw list prints rather than by rebuilding with something set. Pushed
+    // here because this is where the choice is known; the program is current by
+    // now, apply_state having run first, so the uniform lands on it.
+    if (nocturne_trigl_paint_texture != 0 && g_loc_debug >= 0) {
+        const int paint = ((unsigned)nocturne_trigl_paint_texture == texture)
+                              ? nocturne_trigl_paint_mode() : debug_mode();
+        gl.Uniform1i(g_loc_debug, paint);
+    }
     if (texture != 0) {
         // A mip filter is only asked for when there is a chain to sample. With
         // one level the minification filter is the magnification filter, which
@@ -996,6 +1057,10 @@ void nocturne_trigl_gl_draw_batch(const NocturneTriglBatch *batch) {
 extern "C" int nocturne_trigl_vertex_fog = 0;
 extern "C" int nocturne_trigl_mipmaps = 0;
 extern "C" int nocturne_trigl_debug = 0;
+extern "C" int nocturne_trigl_paint_texture = 0;
+extern "C" int nocturne_trigl_paint_view = 6;
+extern "C" int nocturne_trigl_paint_depth = 0;
+extern "C" int nocturne_trigl_overlay_bias = 0;
 extern "C" NocturneTriglStats nocturne_trigl_stats = {};
 extern "C" void nocturne_trigl_stats_reset(void) {}
 int  nocturne_trigl_gl_init(void) { return 0; }

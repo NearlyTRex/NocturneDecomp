@@ -50,6 +50,7 @@ struct NocturneGLApi {
     void (APIENTRY *CullFace)(GLenum);
     void (APIENTRY *FrontFace)(GLenum);
     void (APIENTRY *PolygonMode)(GLenum, GLenum);
+    void (APIENTRY *PolygonOffset)(GLfloat, GLfloat);
 
     // --- framebuffer objects -------------------------------------------------
     // A DirectDraw back buffer is persistent memory; GL's default framebuffer

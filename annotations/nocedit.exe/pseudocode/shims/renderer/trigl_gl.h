@@ -96,7 +96,39 @@ void nocturne_trigl_gl_release_textures(void);
 //   -1 resolve from the environment (default 0)
 //    0 off   1 texture alpha   2 final alpha   3 texture coordinate
 //    4 vertex colour   5 texture colour
+//    6, 7 are reserved for the marked texture below
 extern int nocturne_trigl_debug;
+
+// Mark one texture wherever it lands. The draw list names the GL texture behind
+// every draw, so an image whose destination is in question — an environment map
+// reflected onto geometry that also carries its own — is followed by setting its
+// number here and looking at the frame. 0 marks nothing.
+//
+// The alternative is to replace the image with a bright one, which needs the
+// texture re-uploaded and so a restart; this needs neither, and can change
+// between two captures of one held frame.
+extern int nocturne_trigl_paint_texture;
+
+// How the marked texture is shown: 6 a flat colour the game's art does not
+// contain, 7 its texture coordinates. The second answers how far across the
+// image each triangle reaches, which for an environment map is the whole
+// question.
+extern int nocturne_trigl_paint_view;
+
+// Whether the marked texture's draws skip the depth comparison. An overlay drawn
+// over geometry already at that depth either wins every pixel or is in a fight,
+// and taking the comparison away says which without changing anything else.
+//   0 leave it alone   1 let the marked draws through
+extern int nocturne_trigl_paint_depth;
+
+// Whether a blended draw that also tests depth is biased one unit toward the
+// viewer. An overlay covers a surface already drawn at that depth and is meant to
+// win the tie; it covers a different mesh of that surface, so without a bias the
+// winner alternates per pixel and the overlay comes out hatched. Settable live so
+// one run can show a held frame both ways.
+//   -1 resolve from NOCTURNE_AUTHENTIC_OVERLAY_DEPTH, then
+//      NOCTURNE_TRIGL_OVERLAY_BIAS   0 off   1 on
+extern int nocturne_trigl_overlay_bias;
 
 // Whether textures carry a mip chain. Off matches what the engine's own
 // renderer does — it uploads one level and samples it at every distance, so

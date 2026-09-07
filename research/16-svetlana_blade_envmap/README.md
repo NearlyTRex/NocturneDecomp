@@ -1,10 +1,50 @@
 # Svetlana's blades — black garbage on the sphere-mapped overlay
 
 Black artefacts on Svetlana's blades, worst around the handles, tracking the lighting.
-Present in retail. **Not fixed**, but the mechanism is now identified and most of the
-search space is closed.
+Present in retail.
 
-## CONFIRMED
+## STATE — two defects, not one
+
+**Software is fixed.** The mixed-UV-source defect described under CONFIRMED below is real,
+and the pre-pass that gives an unlit vertex a normal accumulated from the faces around it —
+`NOCTURNE_AUTHENTIC_ENVMAP_UV 0`, in `renderEnvMapTriangles`'s `.keep` — resolves it. The
+blade renders as chrome.
+
+**Accelerated is a different defect, and it is a z-fight.** Measured through the native
+renderer's own instruments rather than inferred:
+
+- The env pass reaches the hardware intact: one draw, `BACKGND.RAW`, blended, 77 polygons
+  (the 78 triangles below), `u 0.0000..0.9630`, eye z `2000..2340`. Right image, right
+  coordinate range, nothing wrong with it.
+- **The blade is drawn twice at the same depth.** One `SVETLANA_2.RAW` draw spans eye z
+  `2000..2365` — the only other draw in the frame reaching 2000. Its own texture goes down
+  first, the env map blends over it. That is how the effect is built.
+- Marking the env texture (`nocturne_trigl_paint_texture`) shows it covering both blades
+  **except for hatched patches**; marking `SVETLANA_2` shows those same patches coming
+  through unblended. The artefacts are exactly the pixels the overlay failed to win.
+- **Removing the depth comparison for the marked draws fills every hole** — coverage
+  6272 → 6831 pixels, +8.9%, and the hatching disappears completely.
+
+Both passes test and write depth with LEQUAL, so the overlay should win every tie; that it
+loses a dithered subset means the two passes' interpolated depths differ fractionally.
+
+**The renderer is faithful here.** The original maps the flags exactly as we do —
+`applyRenderState` sets ZENABLE 1, ZWRITEENABLE 1, ZFUNC 4 (LESSEQUAL) when both depth bits
+are present, and `trigl_state.cpp:63-68` reproduces that table including the ALWAYS case for
+write-without-test. So retail fights too, which is consistent with the artefacts being in
+retail. Fixing this means deliberately departing from the original, not correcting a
+transcription error.
+
+**Do not re-chase through the CPU side.** The normals, the UV branch, the face list and the
+image are all sound by the time the geometry reaches the hardware; every one of those was
+measured again here through the draw list and the marked views.
+
+Probes: `blade_envtex_mark.gdb` (mark the env map, flat and by coordinate),
+`blade_depth_test.gdb` (coverage with and without the depth comparison),
+`blade_uv_view.gdb` (four views of one held frame). All three render and capture one swap
+apart — see the note in each about why.
+
+## CONFIRMED (the software defect)
 
 **The blade's env-map overlay draws 18% of its triangles from two different sphere maps
 at once.** `renderEnvMapTriangles` chooses each vertex's UV source independently:

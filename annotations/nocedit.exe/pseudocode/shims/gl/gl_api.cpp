@@ -72,6 +72,7 @@ extern "C" int nocturne_gl_load_api(void) {
     NOCTURNE_GL_LOAD(CullFace);
     NOCTURNE_GL_LOAD(FrontFace);
     NOCTURNE_GL_LOAD(PolygonMode);
+    NOCTURNE_GL_LOAD(PolygonOffset);
 
     NOCTURNE_GL_LOAD(GenFramebuffers);
     NOCTURNE_GL_LOAD(DeleteFramebuffers);

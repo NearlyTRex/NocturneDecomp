@@ -47,6 +47,7 @@ BlendFunc
 enable depth_test
 depth write 1
 DepthFunc
+disable cap
 use program1
 Uniform1i
 Uniform1i
@@ -80,6 +81,8 @@ bind array none
 use none
 enable blend
 depth write 0
+enable cap
+PolygonOffset
 use program1
 Uniform1i
 Uniform1i

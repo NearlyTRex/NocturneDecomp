@@ -175,6 +175,36 @@
 #define NOCTURNE_AUTHENTIC_IRIS_FADE 0
 #endif
 
+// NOCTURNE_AUTHENTIC_OVERLAY_DEPTH
+//   Whether a blended overlay may lose the depth comparison to the surface it
+//   covers.
+//
+//   The game reflects an environment map onto a surface that already carries its
+//   own texture by drawing that surface twice: the texture first, the map blended
+//   over it, both at the same depth. applyRenderState gives such a draw ZENABLE 1,
+//   ZWRITEENABLE 1 and ZFUNC LESSEQUAL, which is meant to let the second pass win
+//   the tie — and does, only while both passes interpolate the same depth. The
+//   overlay covers a different mesh of the one surface, so they do not: the winner
+//   alternates per pixel and the overlay comes out hatched.
+//
+//   That is the black speckle on Svetlana's blades. Measured on the accelerated
+//   path: the environment map covers the blades except for hatched patches, the
+//   texture beneath comes through exactly there, and taking the comparison away
+//   fills every one (coverage +8.9%, hatching gone). research/16 has the captures.
+//
+//   1: as shipped, hatching included. The renderer reproduces the original's
+//      flag-to-state table exactly, so this is what retail draws.
+//   0: a blended draw that also tests depth is biased one unit toward the viewer,
+//      which settles a tie against the surface underneath and changes nothing
+//      about how the pass sorts against geometry genuinely in front or behind.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_OVERLAY_DEPTH=1, or at runtime with
+//   nocturne_trigl_overlay_bias / NOCTURNE_TRIGL_OVERLAY_BIAS, so both can be seen
+//   in one run against one held frame.
+#ifndef NOCTURNE_AUTHENTIC_OVERLAY_DEPTH
+#define NOCTURNE_AUTHENTIC_OVERLAY_DEPTH 0
+#endif
+
 // NOCTURNE_AUTHENTIC_ENVMAP_UV
 //   Whether a sphere-mapped triangle may take its UVs from two unrelated
 //   sources at once. CDemonSet::renderEnvMapTriangles derives each vertex's

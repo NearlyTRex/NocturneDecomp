@@ -93,6 +93,7 @@ struct DrawTrace {
     // being given coordinates that belong to something else.
     int      u_min, u_max;
     int      v_min, v_max;
+    int      z_min, z_max;
 };
 
 DrawTrace g_draw_trace[kDrawTraceMax];
@@ -198,6 +199,14 @@ void begin_draw(unsigned render_flags, NocturneTriglPipelineState *out_state) {
 
     const unsigned texture = out_state->texture_enabled ? g_r.texture_object : 0;
     const unsigned epoch   = nocturne_trigl_gl_state_epoch();
+    // Let the marked texture's draws through the depth comparison unconditionally.
+    // An overlay pass covers geometry already drawn at the same depth, and asking
+    // whether it is losing that comparison is a question best answered by taking
+    // the comparison away and looking at the result.
+    if (nocturne_trigl_paint_depth != 0 && nocturne_trigl_paint_texture != 0 &&
+        (unsigned)nocturne_trigl_paint_texture == texture) {
+        out_state->depth_func = NOCTURNE_TRIGL_DEPTH_ALWAYS;
+    }
     // The epoch first: presenting a frame and uploading the scene both draw with
     // GL state and a texture of their own, and neither restores what the draws
     // were using. A draw that matches this record but not the pipeline would
@@ -234,8 +243,8 @@ void begin_draw(unsigned render_flags, NocturneTriglPipelineState *out_state) {
         t.depth_write = out_state->depth_write_enabled;
         t.depth_func  = out_state->depth_func;
         t.polygons  = 0;
-        t.u_min = t.v_min = 0x7fffffff;
-        t.u_max = t.v_max = -0x7fffffff - 1;
+        t.u_min = t.v_min = t.z_min = 0x7fffffff;
+        t.u_max = t.v_max = t.z_max = -0x7fffffff - 1;
     } else {
         ++g_draw_trace_dropped;
     }
@@ -267,6 +276,14 @@ void submit_polygon(const NocturneTriglVertexContext *ctx,
             if (vertices[i].u > t.u_max) t.u_max = vertices[i].u;
             if (vertices[i].v < t.v_min) t.v_min = vertices[i].v;
             if (vertices[i].v > t.v_max) t.v_max = vertices[i].v;
+            // Eye depth, because texturing divides by it. A coordinate is
+            // carried across a triangle as u/z and recovered per pixel, so a
+            // vertex whose z approaches zero sends the recovered coordinate
+            // through the roof along the scanlines that pass near it, while the
+            // coordinates themselves and the picture they came from are sound.
+            const int z = vertices[i].transformed_z;
+            if (z < t.z_min) t.z_min = z;
+            if (z > t.z_max) t.z_max = z;
         }
     }
     const int x = vertices[0].screen_x >> 16;
@@ -838,9 +855,9 @@ extern "C" int nocturne_trigl_dump_draws(const char *path) {
             st.draws, st.polygons, st.untextured_draws, st.missing_texture_draws,
             st.uploads);
 
-    fprintf(fp, "%-5s %-24s %5s %5s %4s %4s %3s %3s %3s %6s  %-17s %-17s\n",
+    fprintf(fp, "%-5s %-24s %5s %5s %4s %4s %3s %3s %3s %6s  %-17s %-17s %-19s\n",
             "#", "selected texture", "dim", "gl", "tex", "blnd",
-            "zt", "zw", "zf", "polys", "u span", "v span");
+            "zt", "zw", "zf", "polys", "u span", "v span", "eye z");
     for (int i = 0; i < g_draw_trace_count; ++i) {
         const DrawTrace &t = g_draw_trace[i];
         const double s = 1.0 / 16777216.0;
@@ -848,9 +865,10 @@ extern "C" int nocturne_trigl_dump_draws(const char *path) {
                 t.dimension, t.texture, t.textured, t.blended,
                 t.depth_test, t.depth_write, t.depth_func, t.polygons);
         if (t.polygons > 0) {
-            fprintf(fp, "%8.4f..%-8.4f %8.4f..%-8.4f",
+            fprintf(fp, "%8.4f..%-8.4f %8.4f..%-8.4f %9d..%-9d",
                     (double)t.u_min * s, (double)t.u_max * s,
-                    (double)t.v_min * s, (double)t.v_max * s);
+                    (double)t.v_min * s, (double)t.v_max * s,
+                    t.z_min, t.z_max);
         }
         if (t.textured && t.texture == 0) fprintf(fp, "  <- nothing bound");
         fprintf(fp, "\n");
