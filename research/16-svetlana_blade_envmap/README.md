@@ -3,15 +3,32 @@
 Black artefacts on Svetlana's blades, worst around the handles, tracking the lighting.
 Present in retail.
 
-## STATE — two defects, not one
+## STATE — one defect, and a fix for it that made things worse
 
-**Software is fixed.** The mixed-UV-source defect described under CONFIRMED below is real,
-and the pre-pass that gives an unlit vertex a normal accumulated from the faces around it —
-`NOCTURNE_AUTHENTIC_ENVMAP_UV 0`, in `renderEnvMapTriangles`'s `.keep` — resolves it. The
-blade renders as chrome.
+**The defect is a depth fight, on both paths.** The mixed-UV-source mechanism described
+under CONFIRMED below is real and was measured correctly, but it is not what put black
+speckle on the blades. Two passes at one depth are.
 
-**Accelerated is a different defect, and it is a z-fight.** Measured through the native
-renderer's own instruments rather than inferred:
+**Accelerated is fixed** — the overlay is biased toward the viewer
+(`NOCTURNE_AUTHENTIC_OVERLAY_DEPTH`), so it wins its own pixels.
+
+**Software skips the overlay** (`NOCTURNE_AUTHENTIC_ENVMAP_SOFTWARE`). Its depth comes from
+the vertices of the surface underneath, which the overlay shares, so there is no per-pass
+depth to bias without reworking how it fills a span. A reflection that is absent reads as a
+surface nothing reflects in; one that is half there reads as dirt.
+
+**The old fix is deleted, and it is worth knowing why it looked like one.**
+`NOCTURNE_AUTHENTIC_ENVMAP_UV 0` halved the sphere-map coordinate, clamped what still ran
+off, and gave unlit vertices a normal accumulated from the faces around them. It did hide
+the speckle — by flattening the reflection enough that the missing pixels stopped showing.
+Clamping pins a vertex, and a triangle with two pinned corners carries one coordinate across
+the whole of it: that is the crystalline look. It also wrote into the shared
+`g_VertexNormalArray`, changing the shading of everything drawn after it (measured: 38,574
+pixels across the whole figure, not just the blade). With the fight fixed it had no caller
+left, and the flag went with it.
+
+**How the accel defect was measured**, through the renderer's own instruments rather than
+inferred:
 
 - The env pass reaches the hardware intact: one draw, `BACKGND.RAW`, blended, 77 polygons
   (the 78 triangles below), `u 0.0000..0.9630`, eye z `2000..2340`. Right image, right
@@ -38,6 +55,31 @@ transcription error.
 **Do not re-chase through the CPU side.** The normals, the UV branch, the face list and the
 image are all sound by the time the geometry reaches the hardware; every one of those was
 measured again here through the draw list and the marked views.
+
+## The faceting, which is not the same thing
+
+With the speckle gone the blade still read as cut crystal, and that is the reflection
+itself rather than a fault. The engine writes one sphere-map coordinate per vertex and the
+hardware interpolates it flat across each triangle; a direction does not interpolate that
+way, so the gradient breaks at every edge, and on a blade of some thirty-eight triangles the
+breaks are the facets. The renderer now recovers the direction in the vertex shader — where
+the engine's pair is still exact — interpolates it whole, and puts it back on the sphere per
+pixel, and samples a coarser level so a reflection of a flat night sky becomes a gradient
+rather than a patch per facet (`nocturne_trigl_envmap`, bits 1 and 2).
+
+Two readings that cost a cycle each and are worth not repeating:
+
+- **Recovering the direction in the FRAGMENT shader does nothing at all.** The third
+  component derived from an already-interpolated pair yields a unit vector by construction,
+  so renormalising returns the coordinate that was already there. Measured: zero pixels
+  changed. The recovery has to happen per vertex.
+- **The coordinate is not halved.** The engine writes `u = nx + 1/2`, so the inverse is
+  `u - 1/2`, not `2u - 1`. Inverting it as though it had been halved doubles every
+  direction, puts it outside the sphere, drives the third component to zero everywhere and
+  lights the whole surface as though every pixel were at its silhouette — uniform white.
+
+A grazing highlight and an environment invented from the direction were also tried, and
+dropped: they showed something the game's data does not contain.
 
 Probes: `blade_envtex_mark.gdb` (mark the env map, flat and by coordinate),
 `blade_depth_test.gdb` (coverage with and without the depth comparison),
