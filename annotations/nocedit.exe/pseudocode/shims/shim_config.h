@@ -77,6 +77,15 @@ extern "C" {
 int nocturne_trigl_device_save_screen(void);
 int nocturne_trigl_device_restore_screen(void);
 
+// The draws between these carry a reflection direction rather than a position in
+// an image, which only the pass emitting them knows. Reached from
+// CDemonSet::renderEnvMapTriangles and gated there on
+// NOCTURNE_AUTHENTIC_ENVMAP_SHADING. Declared rather than included for the same
+// reason as the pair above: renderer/trigl_gl.h carries the batch and pipeline
+// types with it, and no decompiled TU needs those.
+void nocturne_trigl_envmap_pass_begin(void);
+void nocturne_trigl_envmap_pass_end(void);
+
 #ifdef __cplusplus
 }
 #endif

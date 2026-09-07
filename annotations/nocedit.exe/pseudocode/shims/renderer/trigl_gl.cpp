@@ -27,6 +27,7 @@ extern "C" int nocturne_trigl_paint_texture = 0;
 extern "C" int nocturne_trigl_paint_view = 6;
 extern "C" int nocturne_trigl_paint_depth = 0;
 extern "C" int nocturne_trigl_overlay_bias = -1;
+extern "C" int nocturne_trigl_envmap = NOCTURNE_AUTHENTIC_ENVMAP_SHADING ? 0 : 3;
 
 extern "C" NocturneTriglStats nocturne_trigl_stats = {};
 
@@ -121,11 +122,27 @@ const char *kVertexSource =
     "out vec4 v_color;\n"
     "out vec4 v_specular;\n"
     "out vec2 v_uv;\n"
+    "out vec3 v_envdir;\n"
     "void main() {\n"
     "    gl_Position = u_projection * a_pos;\n"
     "    v_color     = a_color;\n"
     "    v_specular  = a_specular;\n"
     "    v_uv        = a_uv;\n"
+    // A sphere-map coordinate is a direction with its third component left out.
+    // The engine writes u = nx + 1/2 and v = 1/2 - ny, each component spanning a
+    // whole unit, so a coordinate runs off both ends of the map rather than
+    // fitting inside it. Inverting it as though it had been halved to fit — the
+    // obvious reading, and wrong — doubles every direction, puts it outside the
+    // sphere, and drives the third component to zero everywhere, which lights the
+    // whole surface as though every pixel were at its silhouette.
+    //
+    // Recovering it HERE is the other half. The pair is exact at a vertex and
+    // only at a vertex; recovering the third component after the hardware has
+    // interpolated the pair returns a unit vector by construction, and with it
+    // the coordinate that was already there. Recovered per vertex, the whole
+    // direction interpolates and a fragment can put it back on the sphere.
+    "    vec2 d      = vec2(a_uv.x - 0.5, 0.5 - a_uv.y);\n"
+    "    v_envdir    = vec3(d, sqrt(max(0.0, 1.0 - min(dot(d, d), 1.0))));\n"
     "}\n";
 
 // The specular carries two unrelated things: RGB is the light level's overflow
@@ -144,15 +161,33 @@ const char *kFragmentSource =
     "uniform int  u_fog_enabled;\n"
     "uniform vec3 u_fog_color;\n"
     "uniform int  u_debug;\n"
+    "uniform int  u_envmap;\n"
     "in vec4 v_color;\n"
     "in vec4 v_specular;\n"
     "in vec2 v_uv;\n"
+    "in vec3 v_envdir;\n"
     "out vec4 o_color;\n"
     "void main() {\n"
     "    vec4 c = v_color;\n"
     "    vec4 t = vec4(1.0);\n"
+    "    vec2 uv = v_uv;\n"
+    // The direction arrives interpolated in three components and so lands inside
+    // the sphere rather than on it; putting it back on is what a coordinate
+    // computed per vertex cannot do for itself. That is the whole of the
+    // difference between a facet and a curve here: a linearly interpolated
+    // coordinate is flat across a triangle and breaks at its edges, while a
+    // renormalised direction turns continuously through them.
+    "    if ((u_envmap & 1) != 0) {\n"
+    "        vec3 n_dir = normalize(v_envdir);\n"
+    "        uv = vec2(n_dir.x + 0.5, 0.5 - n_dir.y);\n"
+    "    }\n"
     "    if (u_tex_enabled != 0) {\n"
-    "        t = texture(u_tex, v_uv);\n"
+    // A reflection of a night sky is a large, nearly uniform region, so each
+    // facet lands on one flat patch a little different from its neighbour's.
+    // Sampling a coarser level spreads each patch into its surroundings and the
+    // steps between them become a gradient.
+    "        t = ((u_envmap & 2) != 0) ? texture(u_tex, uv, 2.5)\n"
+    "                                  : texture(u_tex, uv);\n"
     "        c.rgb *= t.rgb;\n"
     "        if (u_modulate_alpha != 0) c.a *= t.a;\n"
     "    }\n"
@@ -207,6 +242,7 @@ GLint g_loc_alpha_test     = -1;
 GLint g_loc_fog_enabled    = -1;
 GLint g_loc_fog_color      = -1;
 GLint g_loc_debug          = -1;
+GLint g_loc_envmap         = -1;
 
 // Scratch for one batch's worth of hardware vertices.
 HardwareVertex *g_scratch = nullptr;
@@ -216,6 +252,12 @@ size_t g_scratch_capacity = 0;
 // nothing to repeat. Initialised to values the first apply cannot match.
 NocturneTriglPipelineState g_current;
 bool g_overlay_biased = false;
+GLuint g_envmap_chained = 0;
+// How deep inside a reflection pass the renderer currently is.
+int g_envmap_pass = 0;
+// What the shader was last told about reflections. The program starts with the
+// uniform at zero, so a build that never marks one never states it.
+int g_envmap_mode = 0;
 bool g_current_valid = false;
 
 // Bumped every time that record is abandoned. Callers keep their own view of
@@ -339,6 +381,7 @@ bool build_program() {
     g_loc_fog_enabled    = gl.GetUniformLocation(program, "u_fog_enabled");
     g_loc_fog_color      = gl.GetUniformLocation(program, "u_fog_color");
     g_loc_debug          = gl.GetUniformLocation(program, "u_debug");
+    g_loc_envmap         = gl.GetUniformLocation(program, "u_envmap");
 
     // The sampler never moves off unit 0, so it is set once.
     gl.UseProgram(program);
@@ -781,10 +824,16 @@ unsigned nocturne_trigl_gl_texture(const char *name, int dimension,
         // finds it incomplete and the draw silently loses its texture.
         gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_BASE_LEVEL, 0);
         gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAX_LEVEL, 0);
+        // An upload takes the chain away again, so a reflection that had one has
+        // to be given it back rather than sampled as though it still had it.
+        if (slot->texture == g_envmap_chained) g_envmap_chained = 0;
     }
     gl.BindTexture(GL_TEXTURE_2D, (GLuint)previous);
     return slot->texture;
 }
+
+void nocturne_trigl_envmap_pass_begin(void) { ++g_envmap_pass; }
+void nocturne_trigl_envmap_pass_end(void)   { if (g_envmap_pass > 0) --g_envmap_pass; }
 
 void nocturne_trigl_gl_bind_texture(unsigned texture) {
     if (!g_ready) return;
@@ -800,20 +849,48 @@ void nocturne_trigl_gl_bind_texture(unsigned texture) {
                               ? nocturne_trigl_paint_mode() : debug_mode();
         gl.Uniform1i(g_loc_debug, paint);
     }
+
+    // Which draws are reflections is something only the pass emitting them knows,
+    // so it says so and this reads the answer. Pushed per bind for the same reason
+    // the mark is: this is where it is known.
+    const bool is_envmap = g_envmap_pass > 0;
+    const int envmap_mode = is_envmap ? nocturne_trigl_envmap : 0;
+    if (g_loc_envmap >= 0 && envmap_mode != g_envmap_mode) {
+        gl.Uniform1i(g_loc_envmap, envmap_mode);
+        g_envmap_mode = envmap_mode;
+    }
+    // Sampling a coarser level needs levels to sample. The upload declares one
+    // level and says so, which is what keeps an ordinary texture from coming out
+    // incomplete, so the chain is built here for the one image that wants it, and
+    // once — a captured backdrop is uploaded rarely and the id changes when it is.
+    if (is_envmap && texture != 0 && (nocturne_trigl_envmap & 2) != 0 &&
+        texture != g_envmap_chained && gl.GenerateMipmap != nullptr) {
+        gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAX_LEVEL, 1000);
+        gl.GenerateMipmap(GL_TEXTURE_2D);
+        g_envmap_chained = texture;
+        DLOG("render","trigl_gl: built a mip chain for the reflection (texture %u)",
+                  (unsigned)texture);
+    }
     if (texture != 0) {
         // A mip filter is only asked for when there is a chain to sample. With
         // one level the minification filter is the magnification filter, which
         // is what keeps a minified surface as detailed as the engine's own
         // renderer draws it.
-        const bool chained = (g_current.mip_filter == NOCTURNE_TRIGL_MIP_LINEAR) && mipmaps();
+        // A blurred reflection asks for a level that is not the base one, and a
+        // sampler with no mip filter ignores the request, so the one texture that
+        // has a chain is also the one allowed to filter across it.
+        const bool blurred = (texture == g_envmap_chained);
+        const bool chained =
+            blurred || ((g_current.mip_filter == NOCTURNE_TRIGL_MIP_LINEAR) && mipmaps());
         const GLint min_filter =
             chained
-                ? (g_current.min_filter == NOCTURNE_TRIGL_FILTER_LINEAR
+                ? (blurred || g_current.min_filter == NOCTURNE_TRIGL_FILTER_LINEAR
                        ? GL_LINEAR_MIPMAP_LINEAR : GL_NEAREST_MIPMAP_LINEAR)
                 : (g_current.min_filter == NOCTURNE_TRIGL_FILTER_LINEAR
                        ? GL_LINEAR : GL_NEAREST);
         const GLint mag_filter =
-            (g_current.mag_filter == NOCTURNE_TRIGL_FILTER_LINEAR) ? GL_LINEAR : GL_NEAREST;
+            (blurred || g_current.mag_filter == NOCTURNE_TRIGL_FILTER_LINEAR)
+                ? GL_LINEAR : GL_NEAREST;
         gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, min_filter);
         gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, mag_filter);
         // Clamped, which is the addressing mode the engine asks for: it sets
@@ -1061,6 +1138,7 @@ extern "C" int nocturne_trigl_paint_texture = 0;
 extern "C" int nocturne_trigl_paint_view = 6;
 extern "C" int nocturne_trigl_paint_depth = 0;
 extern "C" int nocturne_trigl_overlay_bias = 0;
+extern "C" int nocturne_trigl_envmap = 0;
 extern "C" NocturneTriglStats nocturne_trigl_stats = {};
 extern "C" void nocturne_trigl_stats_reset(void) {}
 int  nocturne_trigl_gl_init(void) { return 0; }
@@ -1074,6 +1152,8 @@ unsigned nocturne_trigl_gl_state_epoch(void) { return 0; }
 unsigned nocturne_trigl_gl_texture(const char *, int, const unsigned *, int, int) { return 0; }
 unsigned nocturne_trigl_gl_texture_cached(const char *, int) { return 0; }
 void nocturne_trigl_gl_bind_texture(unsigned) {}
+void nocturne_trigl_envmap_pass_begin(void) {}
+void nocturne_trigl_envmap_pass_end(void) {}
 void nocturne_trigl_gl_release_textures(void) {}
 void nocturne_trigl_gl_report_textures(void *) {}
 int nocturne_trigl_gl_dump_texture(const char *, int, const char *) { return 0; }

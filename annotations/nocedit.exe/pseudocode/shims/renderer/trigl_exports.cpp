@@ -200,9 +200,9 @@ void begin_draw(unsigned render_flags, NocturneTriglPipelineState *out_state) {
     const unsigned texture = out_state->texture_enabled ? g_r.texture_object : 0;
     const unsigned epoch   = nocturne_trigl_gl_state_epoch();
     // Let the marked texture's draws through the depth comparison unconditionally.
-    // An overlay pass covers geometry already drawn at the same depth, and asking
-    // whether it is losing that comparison is a question best answered by taking
-    // the comparison away and looking at the result.
+    // An overlay covers geometry already drawn at the same depth, and whether it is
+    // losing that comparison is answered by taking the comparison away and looking
+    // at what fills in.
     if (nocturne_trigl_paint_depth != 0 && nocturne_trigl_paint_texture != 0 &&
         (unsigned)nocturne_trigl_paint_texture == texture) {
         out_state->depth_func = NOCTURNE_TRIGL_DEPTH_ALWAYS;

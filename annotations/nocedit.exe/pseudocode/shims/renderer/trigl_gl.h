@@ -130,6 +130,30 @@ extern int nocturne_trigl_paint_depth;
 //      NOCTURNE_TRIGL_OVERLAY_BIAS   0 off   1 on
 extern int nocturne_trigl_overlay_bias;
 
+// The draws between these are reflections. The engine sphere-maps a captured
+// backdrop onto a surface by writing a coordinate per vertex, and that coordinate
+// is the reflection direction — but only the pass emitting it knows that the
+// coordinate means a direction rather than a position in an image. So the pass
+// says so, and the renderer does not have to recognise a texture by name or by
+// number to work out what it is looking at.
+//
+// Nests: a count, not a flag, so a pass inside a pass leaves the outer one intact.
+void nocturne_trigl_envmap_pass_begin(void);
+void nocturne_trigl_envmap_pass_end(void);
+
+// What a reflection gets, as bits, so either can be turned off against a running
+// frame. Both are on unless the build asks for the shipped behaviour.
+//   1  interpolate the reflection direction and put it back on the sphere per
+//      pixel, instead of interpolating the coordinate the engine computed from
+//      it. A coordinate interpolates flat across a triangle and breaks at its
+//      edges; a direction turns through them, which is the difference between a
+//      facet and a curve. The direction is recovered in the vertex shader, where
+//      the engine's pair is still exact — recovering it after interpolation
+//      returns a unit vector by construction and changes nothing.
+//   2  sample a coarser level, so a reflection of a nearly uniform night sky is
+//      a gradient rather than a flat patch per facet.
+extern int nocturne_trigl_envmap;
+
 // Whether textures carry a mip chain. Off matches what the engine's own
 // renderer does — it uploads one level and samples it at every distance, so
 // fine detail survives minification instead of being averaged away.

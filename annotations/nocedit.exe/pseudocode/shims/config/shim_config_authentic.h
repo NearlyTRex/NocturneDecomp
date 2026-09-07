@@ -175,6 +175,62 @@
 #define NOCTURNE_AUTHENTIC_IRIS_FADE 0
 #endif
 
+// NOCTURNE_AUTHENTIC_ENVMAP_SHADING
+//   Whether a reflection is only what the captured image holds.
+//
+//   The pass sphere-maps a captured backdrop onto a surface, and what it captures
+//   at night is a sky: dark, and flat enough that where a facet samples it barely
+//   matters. The surface is some thirty-eight triangles, and the engine computes
+//   one coordinate per vertex for the hardware to interpolate flat across each of
+//   them, so the reflection arrives as panels of nearly one colour with steps
+//   between them. It reads as cut crystal rather than as metal.
+//
+//   0 lets the renderer treat those draws as the reflections they are: the
+//   direction interpolated and put back on the sphere per pixel rather than the
+//   coordinate interpolated flat, a coarser level sampled so a flat patch becomes
+//   a gradient, and a highlight where the surface turns away. An invented
+//   environment — sky, ground, horizon and a moving highlight, all from the
+//   direction — is available too and off by default, since it shows something the
+//   game's own data does not contain.
+//
+//   Which terms are on is nocturne_trigl_envmap, live-settable, so a look can be
+//   judged on a frame rather than argued about. Software mode has none of this;
+//   see NOCTURNE_AUTHENTIC_ENVMAP_SOFTWARE.
+//
+//   1: only the captured image, as shipped.
+//   0: the terms above, on the draws the pass marks as reflections.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_ENVMAP_SHADING=1.
+#ifndef NOCTURNE_AUTHENTIC_ENVMAP_SHADING
+#define NOCTURNE_AUTHENTIC_ENVMAP_SHADING 0
+#endif
+
+// NOCTURNE_AUTHENTIC_ENVMAP_SOFTWARE
+//   Whether the sphere-mapped overlay is drawn when the software rasterizer is
+//   the one drawing.
+//
+//   The overlay covers a surface already drawn at the same depth, and wins its
+//   pixels only where the depth comparison lets it. The accelerated renderer
+//   settles that with a polygon offset (see NOCTURNE_AUTHENTIC_OVERLAY_DEPTH) and
+//   the reflection comes out whole. The software rasterizer has no equivalent:
+//   its depth comes from the vertices of the surface underneath, which the
+//   overlay shares, so there is no per-pass depth to bias without reworking how
+//   it fills a span. What it draws instead is the reflection with a scattering of
+//   its pixels missing, which reads as black speckle on Svetlana's blades.
+//
+//   A reflection that is absent is a surface lit as though nothing reflects in it.
+//   A reflection that is half there is a surface with dirt on it. Between two
+//   wrong pictures this takes the quieter one, and only where the renderer cannot
+//   do better.
+//
+//   1: draw it, as shipped — speckled, and what retail shows.
+//   0: skip it in software. Accelerated is unaffected either way.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_ENVMAP_SOFTWARE=1.
+#ifndef NOCTURNE_AUTHENTIC_ENVMAP_SOFTWARE
+#define NOCTURNE_AUTHENTIC_ENVMAP_SOFTWARE 0
+#endif
+
 // NOCTURNE_AUTHENTIC_OVERLAY_DEPTH
 //   Whether a blended overlay may lose the depth comparison to the surface it
 //   covers.
@@ -203,37 +259,6 @@
 //   in one run against one held frame.
 #ifndef NOCTURNE_AUTHENTIC_OVERLAY_DEPTH
 #define NOCTURNE_AUTHENTIC_OVERLAY_DEPTH 0
-#endif
-
-// NOCTURNE_AUTHENTIC_ENVMAP_UV
-//   Whether a sphere-mapped triangle may take its UVs from two unrelated
-//   sources at once. CDemonSet::renderEnvMapTriangles derives each vertex's
-//   sphere-map coordinate from the transformed normal, but falls back to the
-//   normalised direction from g_LightingReferencePosition to the vertex when
-//   skip_normal_normalization is set and every component of that normal is under
-//   1.0 — a test for "this vertex has no usable normal". CSvetlana::renderOpaque
-//   sets that flag for her whole render, and her blades are drawn again by a
-//   second pass over part_indices[0..1].
-//   Either way the direction is a unit vector scaled to +/-0xFFFF
-//   (normalizeVector3DFloat multiplies by 65535; a live normal measures
-//   ~64000-69000), and the code offsets it by 0x8000 without halving it. A
-//   sphere map spans 0..0xFFFF, so a unit direction has to map on as
-//   dir/2 + 0x8000.
-//   1: matches nocedit.exe as-shipped. The coordinates span about twice the
-//      texture. Measured on Svetlana's blade pass: u over [-34038..95760],
-//      v over [-24285..103392], 97 % of emitted vertices outside 0..0xFFFF.
-//      Everything outside wraps into unintended parts of the captured frame —
-//      and since captureTexture grabs the framebuffer rather than an authored
-//      texture, its unwritten regions are black, which is what appears on the
-//      blades.
-//   0: dev-friendly default. The direction is halved before the offset, so a
-//      unit vector covers the sphere map exactly once. This also makes the seam
-//      fixup coherent: its 0x8000 comparisons are midpoint tests, which only
-//      hold on the halved range.
-//
-//   Override with -DNOCTURNE_AUTHENTIC_ENVMAP_UV=1.
-#ifndef NOCTURNE_AUTHENTIC_ENVMAP_UV
-#define NOCTURNE_AUTHENTIC_ENVMAP_UV 0
 #endif
 
 // NOCTURNE_AUTHENTIC_MIRROR_PROJECTION
