@@ -10,11 +10,14 @@
 void __cdecl engine_console_cpp_CConsole_scrollUp_FUN_00441a80(CConsole *this_ptr)
 
 {
+#if NOCTURNE_AUTHENTIC_CONSOLE
   int iVar1;
   char *pcVar4;
   char *pcVar5;
   int iVar6;
+#endif
 
+#if NOCTURNE_AUTHENTIC_CONSOLE
   iVar6 = 0;
   pcVar5 = this_ptr->console_buffer;
   pcVar4 = this_ptr->console_buffer;
@@ -26,5 +29,8 @@ void __cdecl engine_console_cpp_CConsole_scrollUp_FUN_00441a80(CConsole *this_pt
   }
   memset
             (this_ptr->console_buffer + iVar1 * 0x50,0,this_ptr->console_width);
+#else
+  nocturne_console_scroll_up(nocturne_console_stride(),nocturne_console_capacity());
+#endif
   return;
 }

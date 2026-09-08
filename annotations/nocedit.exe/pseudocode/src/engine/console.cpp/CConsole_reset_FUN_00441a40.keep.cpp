@@ -1,0 +1,22 @@
+// Name: engine_console.cpp_CConsole_reset_FUN_00441a40
+// Address: 00441a40
+// MANUAL RECONSTRUCTION
+// Address Range: [[00441a40, 00441a7a]]
+// Convention: __cdecl
+// Signature: void __cdecl engine_console_cpp_CConsole_reset_FUN_00441a40(CConsole *this_ptr)
+
+#include "nocturne.h"
+
+void __cdecl engine_console_cpp_CConsole_reset_FUN_00441a40(CConsole *this_ptr)
+
+{
+#if NOCTURNE_AUTHENTIC_CONSOLE
+  memset(this_ptr->console_buffer,0,sizeof(this_ptr->console_buffer));
+#else
+  nocturne_console_clear();
+#endif
+  this_ptr->current_column = 0;
+  this_ptr->current_row = 0;
+  remove(g_ConsoleLogFilename);
+  return;
+}

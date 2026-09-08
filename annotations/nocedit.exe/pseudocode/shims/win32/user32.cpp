@@ -2,6 +2,7 @@
 #include "core/window_icon.h"
 #include "debug/dump.h"
 #include "win32/mci_video.h"
+#include "win32/window_message.h"
 #include "gl/gl_present.h"
 #include "game/gamepad.h"
 #include "shim_config.h"
@@ -214,6 +215,28 @@ static void translateSdlEvent(const SDL_Event& ev) {
         s_msgQueue.push(msg);
         break;
     }
+
+#if !NOCTURNE_AUTHENTIC_WINDOW_MESSAGES
+    case SDL_MOUSEWHEEL: {
+        // The shipped proc has no case for this — DirectInput of the era did
+        // not report a wheel — so it is delivered only when the extra-message
+        // hook is compiled in to receive it. See win32/window_message.h.
+        int notches = ev.wheel.y;
+        if (ev.wheel.direction == SDL_MOUSEWHEEL_FLIPPED) { notches = -notches; }
+        if (notches == 0) { break; }
+        msg.message = NOCTURNE_WM_MOUSEWHEEL;
+        // Win32 puts a signed notch count in the high word of wParam.
+        msg.wParam = (WPARAM)((unsigned int)(unsigned short)(short)
+                              (notches * NOCTURNE_WHEEL_DELTA) << 16);
+        {
+            int wx = 0, wy = 0;
+            nocturne_gl_window_to_logical(ev.wheel.mouseX, ev.wheel.mouseY, &wx, &wy);
+            msg.lParam = (wy << 16) | (wx & 0xFFFF);
+        }
+        s_msgQueue.push(msg);
+        break;
+    }
+#endif
 
     case SDL_MOUSEBUTTONDOWN:
         if (ev.button.button == SDL_BUTTON_LEFT)

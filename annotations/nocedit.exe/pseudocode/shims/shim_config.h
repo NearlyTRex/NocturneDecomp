@@ -106,9 +106,16 @@ void nocturne_trigl_envmap_pass_end(void);
 // TUs reach it through nocturne.h, same as the registry queries below.
 #include "game/attract.h"
 
-// Console scaling (nocturne_console_*) — declared here so CConsole::render
-// reaches it through nocturne.h. Inert under NOCTURNE_AUTHENTIC_CONSOLE.
-#include "game/console_scale.h"
+// Console sizing, history and glyphs (nocturne_console_*) — declared here so
+// the engine/console.cpp TUs reach it through nocturne.h. Inert under
+// NOCTURNE_AUTHENTIC_CONSOLE.
+#include "game/console.h"
+
+// The window proc's extension point for messages the shipped one never saw
+// (nocturne_window_message, the mouse wheel) — declared here so the wincore TU
+// reaches it through nocturne.h. Inert under
+// NOCTURNE_AUTHENTIC_WINDOW_MESSAGES.
+#include "win32/window_message.h"
 
 // HUD scaling (nocturne_ui_*) — declared here so the HUD TUs reach it through
 // nocturne.h.

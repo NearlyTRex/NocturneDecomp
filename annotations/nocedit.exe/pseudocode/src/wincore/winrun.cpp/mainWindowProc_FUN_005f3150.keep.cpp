@@ -24,6 +24,12 @@ LRESULT __stdcall wincore_winrun_cpp_mainWindowProc_FUN_005f3150(HWND hWnd, UINT
         }
     }
 
+#if !NOCTURNE_AUTHENTIC_WINDOW_MESSAGES
+    if (nocturne_window_message(message, (unsigned long)wParam, (long)lParam) != 0) {
+        return 0;
+    }
+#endif
+
     iVar4 = g_WindowActive;
 
     if (0x111 < message) {

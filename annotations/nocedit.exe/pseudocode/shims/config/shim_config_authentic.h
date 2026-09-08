@@ -73,6 +73,27 @@
 #define NOCTURNE_AUTHENTIC_WINDOWS 0
 #endif
 
+// NOCTURNE_AUTHENTIC_WINDOW_MESSAGES
+//   1: mainWindowProc handles exactly the message set the shipped binary
+//      handled. Anything else falls through to DefWindowProc, as it did in
+//      1999.
+//   0: dev-friendly mode. The window proc first offers each message to
+//      nocturne_window_message (shims/win32/window_message.h), which is where
+//      input the original had no concept of gets handled — currently the mouse
+//      wheel, which DirectInput of that era did not report and which the
+//      shipped proc therefore has no case for. The SDL event pump only emits
+//      those extra messages when this is 0, so with it set nothing reaches the
+//      hook and the vocabulary is unchanged.
+//
+//   Deliberately separate from NOCTURNE_AUTHENTIC_WINDOWS: that one governs
+//   focus, minimize and thread-priority behaviour, and wanting the shipped
+//   focus quirks is unrelated to wanting a scroll wheel.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_WINDOW_MESSAGES=1.
+#ifndef NOCTURNE_AUTHENTIC_WINDOW_MESSAGES
+#define NOCTURNE_AUTHENTIC_WINDOW_MESSAGES 0
+#endif
+
 // NOCTURNE_AUTHENTIC_D3D_OPTIONS
 //   1: matches nocedit.exe as-shipped — hardware acceleration is permanently
 //      off, the Graphics Options menu line shows "Acceleration disabled in
@@ -696,11 +717,22 @@
 
 // NOCTURNE_AUTHENTIC_CONSOLE
 //   1: the on-screen debug console is the binary's original 40 cols ×
-//      32 rows (280 × 352 px).
-//   0: dev-friendly mode — 80 cols × 40 rows (560 × 442 px), the
-//      largest size that fits inside a 640 × 480 window. (The buffer
-//      could hold up to 50 rows but the bounding-box draw at row 50
-//      writes past the framebuffer end.)
+//      32 rows (280 × 352 px), drawn 1x out of CConsole::console_buffer
+//      and framed by its border box.
+//   0: dev-friendly mode. The console fills the window: glyphs scale up
+//      with the framebuffer and the grid is sized to fit, so 1920 × 1080
+//      gives 137 × 49 at 2x where the shipped code gave 40 × 32 in a
+//      corner. Three departures, all in shims/game/console.{h,cpp}:
+//        - The grid belongs to the shim (256 × 200) instead of the
+//          struct's 4000-byte buffer, whose 80-byte row stride is baked
+//          into writeChar's addressing and caps the console at 80 × 50.
+//        - The write cursor is bounded by that grid rather than by the
+//          visible row count, so lines scrolling off the top are kept
+//          rather than destroyed. PageUp/PageDown page through them and
+//          End returns to the newest.
+//        - The border box is not drawn. It is laid out from the grid
+//          extent, so at any scale that does not divide the framebuffer
+//          evenly it frames the glyph cells rather than the screen.
 //
 //   Override with -DNOCTURNE_AUTHENTIC_CONSOLE=1.
 #ifndef NOCTURNE_AUTHENTIC_CONSOLE
