@@ -38,9 +38,9 @@
 ;   float g_SkyDomeVertexScale = 5
 ;   undefined4 g_LightBufferPool[13][93688]
 ;   CDemonRenderer g_CDemonRendererInstance
-;   CVector3i CVector3i_02ca0388
-;   undefined4 CVector3i_02ca0388.y
-;   undefined4 CVector3i_02ca0388.z
+;   CVector3f g_SkyDomeCenter
+;   undefined4 g_SkyDomeCenter.y
+;   undefined4 g_SkyDomeCenter.z
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
 ; Called Functions:
@@ -115,11 +115,11 @@ section .text
     XOR EDX,EDX                         ; 00490287
     MOV EAX,dword ptr [ESP + 0x58]      ; 00490289
     MOV dword ptr [0x00672360],EDX      ; 0049028d | g_SkyDomeVertexScale
-    MOV [0x02ca038c],EAX                ; 00490293 | CVector3i_02ca0388.y
+    MOV [0x02ca038c],EAX                ; 00490293 | g_SkyDomeCenter.y
     FXCH ST2                            ; 00490298
-    FSTP float ptr [0x02ca0388]         ; 0049029a | CVector3i_02ca0388
+    FSTP float ptr [0x02ca0388]         ; 0049029a | g_SkyDomeCenter
     FXCH ST2                            ; 004902a0
-    FSTP float ptr [0x02ca0390]         ; 004902a2 | CVector3i_02ca0388.z
+    FSTP float ptr [0x02ca0390]         ; 004902a2 | g_SkyDomeCenter.z
     FXCH                                ; 004902a8
     FSTP float ptr [ESP + 0x80]         ; 004902aa
     FCOMP float ptr [ESP + 0x80]        ; 004902b1
@@ -152,7 +152,7 @@ section .text
         ;   XREF to: 0049031f (CONDITIONAL_JUMP)  ; LAB_0049031f
     MOV EAX,dword ptr [ESP + 0x84]      ; 00490313
     MOV [0x00672360],EAX                ; 0049031a | g_SkyDomeVertexScale
-    PUSH 0x2ca0388                      ; 0049031f | CVector3i_02ca0388
+    PUSH 0x2ca0388                      ; 0049031f | g_SkyDomeCenter
         ;   Label: LAB_0049031f
     MOV ECX,dword ptr [0x006703ec]      ; 00490324 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 0049032a | g_CDemonRendererInstance

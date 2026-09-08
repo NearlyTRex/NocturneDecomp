@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_00463440(SMRGLSkyTexture *sky_texture,int u_coord,int v_coord,int vertex_index)
 
 {
@@ -36,7 +34,7 @@ void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_00463440(SMRGLSkyTexture
   fVar5 = (float10)fsin(fVar4);
   fVar6 = (float10)fcos((float10)local_48);
   fVar4 = (float10)fcos(fVar4);
-  fVar7 = (float10)_DAT_005b0678;
+  fVar7 = (float10)CVector3f_005b0678.x;
   fVar8 = (float10)256;
   round((double)(fVar3 * fVar7 * fVar8));
   round((double)(fVar5 * fVar7 * (float10)(double)fVar6 * fVar8));

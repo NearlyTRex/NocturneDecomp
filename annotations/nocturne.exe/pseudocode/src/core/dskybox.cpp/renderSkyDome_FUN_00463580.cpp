@@ -55,25 +55,25 @@ void __cdecl core_dskybox_cpp_renderSkyDome_FUN_00463580(SMRGLSkyTexture *sky_te
   _DAT_01b7b728 = (local_60.x + local_54.x) * fVar4;
   _DAT_01b7b730 = (local_60.z + local_54.z) * fVar4;
   local_34 = (local_54.x - local_60.x) * fVar4 * (float)1.4139999999999999;
-  _DAT_005b0678 = 0.0;
+  CVector3f_005b0678.x = 0.0;
   _DAT_01b7b72c = local_60.y;
   if (0.0 < local_34) {
-    _DAT_005b0678 = local_34;
+    CVector3f_005b0678.x = local_34;
   }
   local_2c = (local_54.y - local_60.y) * (float)1.4139999999999999;
-  if (_DAT_005b0678 < local_2c) {
-    _DAT_005b0678 = local_2c;
+  if (CVector3f_005b0678.x < local_2c) {
+    CVector3f_005b0678.x = local_2c;
   }
   local_30 = (local_54.z - local_60.z) * (float)0.5 * (float)1.4139999999999999;
-  if (_DAT_005b0678 < local_30) {
-    _DAT_005b0678 = local_30;
+  if (CVector3f_005b0678.x < local_30) {
+    CVector3f_005b0678.x = local_30;
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
             (g_CDemonRenderer_PTR_005ae704,(CVector3f *)&DAT_01b7b728);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
             (g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)&(sky_texture->base).count);
   fVar7 = (float10)fsin((float10)0.58904862253125001);
-  fVar8 = (float10)_DAT_005b0678;
+  fVar8 = (float10)CVector3f_005b0678.x;
   fVar9 = (float10)256;
   dVar10 = round((double)(fVar7 * fVar8 * fVar9));
   pCVar2 = g_CDemonRenderer_PTR_005ae704;

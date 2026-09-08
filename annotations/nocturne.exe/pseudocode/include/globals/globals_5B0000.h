@@ -17,6 +17,7 @@
 #include "types/classes/CNetGame.h"
 #include "types/classes/CPod.h"
 #include "types/classes/CSound.h"
+#include "types/classes/CVector3f.h"
 #include "types/structs/SAlphaEntry.h"
 
 // =============================================================================
@@ -61,6 +62,9 @@ extern CPod* g_CPod_PTR_005be1cc;
 
 // CSound*
 extern CSound* g_CSound_PTR_005bed68;
+
+// CVector3f
+extern CVector3f CVector3f_005b0678;
 
 // SAlphaEntry[256]
 extern SAlphaEntry g_AlphaTable[256];
@@ -257,7 +261,6 @@ extern undefined1 DAT_005be184;
 extern undefined2 DAT_005b8bdc;
 
 // undefined4
-extern undefined4 DAT_005b0680;
 extern undefined4 DAT_005b0684;
 extern undefined4 DAT_005b0688;
 extern undefined4 DAT_005b068c;

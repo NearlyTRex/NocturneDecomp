@@ -40,7 +40,7 @@
 ;   TerminatedCString s_s_raw_0059045f
 ;   TerminatedCString s_core_set_cpp_00590466
 ;   TerminatedCString s_CDemonSet_setCameraView_00590476
-;   undefined4 DAT_005b0674
+;   void* PTR_DAT_005b0674 = 01b7b4e8
 ;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
 ;   CGore* g_CGore_PTR_005b96c4 = 01c78c7c
 ;   CSound* g_CSound_PTR_005bed68 = 02dc9450
@@ -384,7 +384,7 @@ section .text
     PUSH EAX                            ; 00508c6e
     LEA EAX,[EBP + 0x161244]            ; 00508c6f
     PUSH EAX                            ; 00508c75
-    MOV EDX,dword ptr [0x005b0674]      ; 00508c76 | DAT_005b0674
+    MOV EDX,dword ptr [0x005b0674]      ; 00508c76 | PTR_DAT_005b0674
     PUSH EDX                            ; 00508c7c
     CALL core_dskybox.cpp_renderSkyDome_FUN_00463580 ; 00508c7d
         ;   XREF to: 00463580 (UNCONDITIONAL_CALL)  ; void core_dskybox.cpp_renderSkyDome_FUN_00463580(SMRGLSkyTexture * sky_texture, char * texture_name, int brightness_factor)

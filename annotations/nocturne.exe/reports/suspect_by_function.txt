@@ -7,7 +7,7 @@ SUMMARY
 Total functions analyzed: 4922
 Clean: 2505 (50.9%)
 With suspects: 2417
-Total suspects: 20962
+Total suspects: 20955
 
 ====================================================================================================
 cockpit_ckptutil.c_applyActPalette_FUN_0042d370 (1 suspect)
@@ -7671,15 +7671,14 @@ core_drone.cpp_CDrone_process_FUN_00462a60 (8 suspects)
   Line 261 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
 
 ====================================================================================================
-core_dskybox.cpp_generateSkyDomeVertex_FUN_00463440 (6 suspects)
+core_dskybox.cpp_generateSkyDomeVertex_FUN_00463440 (5 suspects)
   File: core/dskybox.cpp
 ====================================================================================================
-  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 23 [unknown_field]: local_48 = (float)v_coord * 5.1806537865363094e-315._0_4_ * (float)3.1415926535000001 *
-  Line 41 [undefined_data]: (&DAT_005c5034)[vertex_index * 0xc] = iVar1;
-  Line 42 [undefined_data]: (&DAT_005c5038)[vertex_index * 0xc] = iVar1;
-  Line 43 [undefined_data]: (&DAT_005c503c)[vertex_index * 0xc] = iVar1;
-  Line 44 [undefined_data]: (&DAT_005c5040)[vertex_index * 0xc] = 0;
+  Line 21 [unknown_field]: local_48 = (float)v_coord * 5.1806537865363094e-315._0_4_ * (float)3.1415926535000001 *
+  Line 39 [undefined_data]: (&DAT_005c5034)[vertex_index * 0xc] = iVar1;
+  Line 40 [undefined_data]: (&DAT_005c5038)[vertex_index * 0xc] = iVar1;
+  Line 41 [undefined_data]: (&DAT_005c503c)[vertex_index * 0xc] = iVar1;
+  Line 42 [undefined_data]: (&DAT_005c5040)[vertex_index * 0xc] = 0;
 
 ====================================================================================================
 core_dskybox.cpp_initializeSkyboxTexture_FUN_00463400 (1 suspect)
@@ -7710,10 +7709,11 @@ core_dskybox.cpp_renderSkyDome_FUN_00463580 (17 suspects)
   Line 146 [concat_reconstruction]: local_30 = __BITCAST_FLOAT(CONCAT13(local_30._3_1_ + '\x01',(undefined3)local_30));
 
 ====================================================================================================
-core_dskybox.cpp_staticInit_FUN_004633d0 (1 suspect)
+core_dskybox.cpp_staticInit_FUN_004633d0 (2 suspects)
   File: core/dskybox.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+  Line 7 [undefined_data]: core_dskybox_cpp_initializeSkyboxTexture_FUN_00463400((SMRGLSkyTexture *)&DAT_01b7b4e8);
 
 ====================================================================================================
 core_dstrender.cpp_alphaBlendPixelsMMX_FUN_00465f50 (19 suspects)
@@ -8306,7 +8306,7 @@ core_dstrender.cpp_renderDepthTestStatistics16xUnrolled_FUN_00464075 (1 suspect)
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 ====================================================================================================
-core_dstrender.cpp_renderPerspectiveCorrectTextured16xCached_FUN_00464200 (128 suspects)
+core_dstrender.cpp_renderPerspectiveCorrectTextured16xCached_FUN_00464200 (121 suspects)
   File: core/dstrender.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
@@ -8314,10 +8314,8 @@ core_dstrender.cpp_renderPerspectiveCorrectTextured16xCached_FUN_00464200 (128 s
   Line 39 [undefined_data]: DAT_005b06e0 = (uint *)((int)g_ScreenBufferArray[scanline_y] + uVar3 * 4);
   Line 39 [pointer_truncation]: DAT_005b06e0 = (uint *)((int)g_ScreenBufferArray[scanline_y] + uVar3 * 4);
   Line 40 [undefined_data]: DAT_005b06e8 = g_ZBufferScanlineArray[scanline_y] + uVar3;
-  Line 41 [undefined_data]: DAT_005b0680 = (pSVar14->base).u_current;
   Line 42 [undefined_data]: DAT_005b0698 = (left_edge->base).u_current;
-  Line 45 [undefined_data]: ((longlong)(int)(DAT_005b0698 - DAT_005b0680) *
-  Line 45 [undefined_data]: ((longlong)(int)(DAT_005b0698 - DAT_005b0680) *
+  Line 45 [undefined_data]: ((longlong)(int)(DAT_005b0698 - (int)CVector3f_005b0678.z) *
   Line 47 [undefined_data]: DAT_005b0684 = (pSVar14->base).v_current;
   Line 48 [undefined_data]: DAT_005b069c = (left_edge->base).v_current;
   Line 51 [undefined_data]: ((longlong)(int)(DAT_005b069c - DAT_005b0684) *
@@ -8325,118 +8323,113 @@ core_dstrender.cpp_renderPerspectiveCorrectTextured16xCached_FUN_00464200 (128 s
   Line 54 [undefined_data]: DAT_005b06a0 = (left_edge->base).depth_current;
   Line 55 [undefined_data]: DAT_005b06ac = (int)((ulonglong)
   Line 56 [undefined_data]: ((longlong)(DAT_005b06a0 - iVar1) *
-  Line 58 [undefined_data]: DAT_005b06b0 = (int)(CONCAT44(((int)DAT_005b0680 >> 0x1f) << 0x18 | DAT_005b0680 >> 8,
-  Line 58 [undefined_data]: DAT_005b06b0 = (int)(CONCAT44(((int)DAT_005b0680 >> 0x1f) << 0x18 | DAT_005b0680 >> 8,
-  Line 58 [undefined_data]: DAT_005b06b0 = (int)(CONCAT44(((int)DAT_005b0680 >> 0x1f) << 0x18 | DAT_005b0680 >> 8,
-  Line 58 [concat_reconstruction]: DAT_005b06b0 = (int)(CONCAT44(((int)DAT_005b0680 >> 0x1f) << 0x18 | DAT_005b0680 >> 8,
-  Line 59 [undefined_data]: DAT_005b0680 << 0x18) / (longlong)iVar1);
-  Line 60 [undefined_data]: DAT_005b06b4 = (int)(CONCAT44(((int)DAT_005b0684 >> 0x1f) << 0x18 | DAT_005b0684 >> 8,
-  Line 60 [undefined_data]: DAT_005b06b4 = (int)(CONCAT44(((int)DAT_005b0684 >> 0x1f) << 0x18 | DAT_005b0684 >> 8,
-  Line 60 [undefined_data]: DAT_005b06b4 = (int)(CONCAT44(((int)DAT_005b0684 >> 0x1f) << 0x18 | DAT_005b0684 >> 8,
-  Line 60 [concat_reconstruction]: DAT_005b06b4 = (int)(CONCAT44(((int)DAT_005b0684 >> 0x1f) << 0x18 | DAT_005b0684 >> 8,
-  Line 61 [undefined_data]: DAT_005b0684 << 0x18) / (longlong)iVar1);
-  Line 62 [undefined_data]: puVar17 = &DAT_005b06ec;
-  Line 63 [undefined_data]: DAT_005b0688 = iVar1;
-  Line 64 [undefined_data]: DAT_005b06e4 = iVar5;
-  Line 65 [undefined_data]: while (uVar8 = (byte)((uint)DAT_005b06b0 >> 0x10),
-  Line 65 [static_shift_too_many_bits]: DAT_005b06b0 = (int)(CONCAT44(((int)DAT_005b0680 >> 0x1f) << 0x18 | DAT_005b0680 >> 8,
-  Line 66 [undefined_data]: uVar11 = (byte)((uint)DAT_005b06b4 >> 0x10), -1 < iVar5 + -0x10) {
-  Line 67 [undefined_data]: DAT_005b068c = DAT_005b0680 + _DAT_005b06a4;
-  Line 67 [undefined_data]: DAT_005b068c = DAT_005b0680 + _DAT_005b06a4;
-  Line 67 [static_shift_too_many_bits]: DAT_005b06b4 = (int)(CONCAT44(((int)DAT_005b0684 >> 0x1f) << 0x18 | DAT_005b0684 >> 8,
-  Line 68 [undefined_data]: DAT_005b0690 = DAT_005b0684 + _DAT_005b06a8;
-  Line 68 [undefined_data]: DAT_005b0690 = DAT_005b0684 + _DAT_005b06a8;
-  Line 69 [undefined_data]: DAT_005b0694 = DAT_005b0688 + DAT_005b06ac;
-  Line 69 [undefined_data]: DAT_005b0694 = DAT_005b0688 + DAT_005b06ac;
-  Line 69 [undefined_data]: DAT_005b0694 = DAT_005b0688 + DAT_005b06ac;
-  Line 70 [undefined_data]: DAT_005b06b8 = (int)(CONCAT44(((int)DAT_005b068c >> 0x1f) << 0x18 | DAT_005b068c >> 8,
-  Line 70 [undefined_data]: DAT_005b06b8 = (int)(CONCAT44(((int)DAT_005b068c >> 0x1f) << 0x18 | DAT_005b068c >> 8,
-  Line 70 [undefined_data]: DAT_005b06b8 = (int)(CONCAT44(((int)DAT_005b068c >> 0x1f) << 0x18 | DAT_005b068c >> 8,
-  Line 70 [concat_reconstruction]: DAT_005b06b8 = (int)(CONCAT44(((int)DAT_005b068c >> 0x1f) << 0x18 | DAT_005b068c >> 8,
-  Line 71 [undefined_data]: DAT_005b068c * 0x1000000) / (longlong)DAT_005b0694);
-  Line 71 [undefined_data]: DAT_005b068c * 0x1000000) / (longlong)DAT_005b0694);
-  Line 72 [undefined_data]: DAT_005b06bc = (int)(CONCAT44(((int)DAT_005b0690 >> 0x1f) << 0x18 | DAT_005b0690 >> 8,
-  Line 72 [undefined_data]: DAT_005b06bc = (int)(CONCAT44(((int)DAT_005b0690 >> 0x1f) << 0x18 | DAT_005b0690 >> 8,
-  Line 72 [undefined_data]: DAT_005b06bc = (int)(CONCAT44(((int)DAT_005b0690 >> 0x1f) << 0x18 | DAT_005b0690 >> 8,
-  Line 72 [concat_reconstruction]: DAT_005b06bc = (int)(CONCAT44(((int)DAT_005b0690 >> 0x1f) << 0x18 | DAT_005b0690 >> 8,
-  Line 73 [undefined_data]: DAT_005b0690 * 0x1000000) / (longlong)DAT_005b0694);
-  Line 73 [undefined_data]: DAT_005b0690 * 0x1000000) / (longlong)DAT_005b0694);
-  Line 74 [undefined_data]: iVar15 = DAT_005b06b8 - DAT_005b06b0 >> 0xc;
-  Line 74 [undefined_data]: iVar15 = DAT_005b06b8 - DAT_005b06b0 >> 0xc;
-  Line 75 [undefined_data]: iVar13 = DAT_005b06bc - DAT_005b06b4 >> 0xc;
-  Line 75 [undefined_data]: iVar13 = DAT_005b06bc - DAT_005b06b4 >> 0xc;
-  Line 76 [undefined_data]: iVar6 = (DAT_005b06b0 >> 8) + iVar15;
-  Line 77 [undefined_data]: iVar9 = (DAT_005b06b4 >> 8) + iVar13;
-  Line 77 [static_shift_too_many_bits]: DAT_005b06b8 = (int)(CONCAT44(((int)DAT_005b068c >> 0x1f) << 0x18 | DAT_005b068c >> 8,
-  Line 78 [concat_reconstruction]: *puVar17 = g_Hardware32BitPalette[g_CurrentTextureData[CONCAT11(uVar11,uVar8)]];
-  Line 79 [static_shift_too_many_bits]: DAT_005b06bc = (int)(CONCAT44(((int)DAT_005b0690 >> 0x1f) << 0x18 | DAT_005b0690 >> 8,
-  Line 83 [concat_reconstruction]: [CONCAT11((char)((uint)iVar9 >> 8),(char)((uint)iVar6 >> 8))]];
-  Line 88 [concat_reconstruction]: [CONCAT11((char)((uint)iVar10 >> 8),(char)((uint)iVar7 >> 8))]];
-  Line 93 [concat_reconstruction]: [CONCAT11((char)((uint)iVar9 >> 8),(char)((uint)iVar6 >> 8))]];
-  Line 98 [concat_reconstruction]: [CONCAT11((char)((uint)iVar10 >> 8),(char)((uint)iVar7 >> 8))]];
-  Line 103 [concat_reconstruction]: [CONCAT11((char)((uint)iVar9 >> 8),(char)((uint)iVar6 >> 8))]];
-  Line 108 [concat_reconstruction]: [CONCAT11((char)((uint)iVar10 >> 8),(char)((uint)iVar7 >> 8))]];
-  Line 113 [concat_reconstruction]: [CONCAT11((char)((uint)iVar9 >> 8),(char)((uint)iVar6 >> 8))]];
-  Line 118 [concat_reconstruction]: [CONCAT11((char)((uint)iVar10 >> 8),(char)((uint)iVar7 >> 8))]];
-  Line 123 [concat_reconstruction]: [CONCAT11((char)((uint)iVar9 >> 8),(char)((uint)iVar6 >> 8))]];
-  Line 128 [concat_reconstruction]: [CONCAT11((char)((uint)iVar10 >> 8),(char)((uint)iVar7 >> 8))]];
-  Line 133 [concat_reconstruction]: [CONCAT11((char)((uint)iVar9 >> 8),(char)((uint)iVar6 >> 8))]];
-  Line 138 [concat_reconstruction]: [CONCAT11((char)((uint)iVar10 >> 8),(char)((uint)iVar7 >> 8))]];
-  Line 143 [concat_reconstruction]: [CONCAT11((char)((uint)iVar9 >> 8),(char)((uint)iVar6 >> 8))]];
-  Line 146 [concat_reconstruction]: [CONCAT11((char)((uint)iVar10 >> 8),(char)((uint)iVar7 >> 8))]];
-  Line 149 [concat_reconstruction]: [CONCAT11((char)((uint)(iVar10 + iVar13) >> 8),
-  Line 152 [undefined_data]: DAT_005b0680 = DAT_005b068c;
-  Line 152 [undefined_data]: DAT_005b0680 = DAT_005b068c;
-  Line 153 [undefined_data]: DAT_005b0684 = DAT_005b0690;
-  Line 153 [undefined_data]: DAT_005b0684 = DAT_005b0690;
-  Line 154 [undefined_data]: DAT_005b0688 = DAT_005b0694;
-  Line 154 [undefined_data]: DAT_005b0688 = DAT_005b0694;
-  Line 155 [undefined_data]: DAT_005b06b0 = DAT_005b06b8;
-  Line 155 [undefined_data]: DAT_005b06b0 = DAT_005b06b8;
-  Line 156 [undefined_data]: DAT_005b06b4 = DAT_005b06bc;
-  Line 156 [undefined_data]: DAT_005b06b4 = DAT_005b06bc;
-  Line 160 [undefined_data]: DAT_005b06b8 = (int)(CONCAT44(((int)DAT_005b0698 >> 0x1f) << 0x18 | DAT_005b0698 >> 8,
-  Line 160 [undefined_data]: DAT_005b06b8 = (int)(CONCAT44(((int)DAT_005b0698 >> 0x1f) << 0x18 | DAT_005b0698 >> 8,
-  Line 160 [undefined_data]: DAT_005b06b8 = (int)(CONCAT44(((int)DAT_005b0698 >> 0x1f) << 0x18 | DAT_005b0698 >> 8,
-  Line 160 [concat_reconstruction]: DAT_005b06b8 = (int)(CONCAT44(((int)DAT_005b0698 >> 0x1f) << 0x18 | DAT_005b0698 >> 8,
-  Line 161 [undefined_data]: DAT_005b0698 << 0x18) / (longlong)DAT_005b06a0);
-  Line 161 [undefined_data]: DAT_005b0698 << 0x18) / (longlong)DAT_005b06a0);
-  Line 162 [undefined_data]: DAT_005b06bc = (int)(CONCAT44(((int)DAT_005b069c >> 0x1f) << 0x18 | DAT_005b069c >> 8,
-  Line 162 [undefined_data]: DAT_005b06bc = (int)(CONCAT44(((int)DAT_005b069c >> 0x1f) << 0x18 | DAT_005b069c >> 8,
-  Line 162 [undefined_data]: DAT_005b06bc = (int)(CONCAT44(((int)DAT_005b069c >> 0x1f) << 0x18 | DAT_005b069c >> 8,
-  Line 162 [concat_reconstruction]: DAT_005b06bc = (int)(CONCAT44(((int)DAT_005b069c >> 0x1f) << 0x18 | DAT_005b069c >> 8,
-  Line 163 [undefined_data]: DAT_005b069c << 0x18) / (longlong)DAT_005b06a0);
-  Line 163 [undefined_data]: DAT_005b069c << 0x18) / (longlong)DAT_005b06a0);
-  Line 164 [undefined_data]: iVar6 = (int)((longlong)(DAT_005b06bc - DAT_005b06b4) *
-  Line 164 [undefined_data]: iVar6 = (int)((longlong)(DAT_005b06bc - DAT_005b06b4) *
-  Line 166 [undefined_data]: uVar16 = (uint)((longlong)(DAT_005b06b8 - DAT_005b06b0) *
-  Line 166 [undefined_data]: uVar16 = (uint)((longlong)(DAT_005b06b8 - DAT_005b06b0) *
-  Line 167 [static_shift_too_many_bits]: DAT_005b06b8 = (int)(CONCAT44(((int)DAT_005b0698 >> 0x1f) << 0x18 | DAT_005b0698 >> 8,
-  Line 169 [undefined_data]: iVar5 = (DAT_005b06b0 >> 8) + uVar16;
-  Line 169 [static_shift_too_many_bits]: DAT_005b06bc = (int)(CONCAT44(((int)DAT_005b069c >> 0x1f) << 0x18 | DAT_005b069c >> 8,
-  Line 170 [undefined_data]: iVar7 = (DAT_005b06b4 >> 8) + iVar6;
-  Line 171 [concat_reconstruction]: *puVar17 = g_Hardware32BitPalette[g_CurrentTextureData[CONCAT11(uVar11,uVar8)]];
-  Line 177 [concat_reconstruction]: [CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar5 >> 8))]];
-  Line 183 [concat_reconstruction]: [CONCAT11((char)((uint)iVar10 >> 8),(char)((uint)iVar9 >> 8))]];
-  Line 189 [concat_reconstruction]: [CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar5 >> 8))]];
-  Line 195 [concat_reconstruction]: [CONCAT11((char)((uint)iVar10 >> 8),(char)((uint)iVar9 >> 8))]];
-  Line 201 [concat_reconstruction]: [CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar5 >> 8))]];
-  Line 207 [concat_reconstruction]: [CONCAT11((char)((uint)iVar10 >> 8),(char)((uint)iVar9 >> 8))]];
-  Line 213 [concat_reconstruction]: [CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar5 >> 8))]];
-  Line 219 [concat_reconstruction]: [CONCAT11((char)((uint)iVar10 >> 8),(char)((uint)iVar9 >> 8))]];
-  Line 225 [concat_reconstruction]: [CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar5 >> 8))]]
-  Line 232 [concat_reconstruction]: [CONCAT11((char)((uint)iVar10 >> 8),
-  Line 239 [concat_reconstruction]: [CONCAT11((char)((uint)iVar7 >> 8),
-  Line 246 [concat_reconstruction]: [CONCAT11((char)((uint)iVar10 >> 8),
-  Line 253 [concat_reconstruction]: [CONCAT11((char)((uint)iVar7 >> 8),
-  Line 258 [concat_reconstruction]: [CONCAT11((char)((uint)iVar10 >> 8),
-  Line 263 [concat_reconstruction]: [CONCAT11((char)((uint)(iVar10 + iVar6) >> 8),
-  Line 282 [undefined_data]: puVar12 = &DAT_005b06ec;
-  Line 283 [undefined_data]: iVar6 = DAT_005b06ac >> 8;
-  Line 285 [undefined_data]: iVar5 = DAT_005b06e4;
-  Line 286 [undefined_data]: puVar17 = DAT_005b06e8;
-  Line 287 [undefined_data]: puVar18 = DAT_005b06e0;
-  Line 288 [undefined_data]: DAT_005b0688 = iVar1;
+  Line 58 [undefined_data]: DAT_005b06b0 = (int)(CONCAT44(((int)CVector3f_005b0678.z >> 0x1f) << 0x18 |
+  Line 58 [concat_reconstruction]: DAT_005b06b0 = (int)(CONCAT44(((int)CVector3f_005b0678.z >> 0x1f) << 0x18 |
+  Line 61 [undefined_data]: DAT_005b06b4 = (int)(CONCAT44(((int)DAT_005b0684 >> 0x1f) << 0x18 | DAT_005b0684 >> 8,
+  Line 61 [undefined_data]: DAT_005b06b4 = (int)(CONCAT44(((int)DAT_005b0684 >> 0x1f) << 0x18 | DAT_005b0684 >> 8,
+  Line 61 [undefined_data]: DAT_005b06b4 = (int)(CONCAT44(((int)DAT_005b0684 >> 0x1f) << 0x18 | DAT_005b0684 >> 8,
+  Line 61 [concat_reconstruction]: DAT_005b06b4 = (int)(CONCAT44(((int)DAT_005b0684 >> 0x1f) << 0x18 | DAT_005b0684 >> 8,
+  Line 62 [undefined_data]: DAT_005b0684 << 0x18) / (longlong)iVar1);
+  Line 63 [undefined_data]: puVar17 = &DAT_005b06ec;
+  Line 64 [undefined_data]: DAT_005b0688 = iVar1;
+  Line 65 [undefined_data]: DAT_005b06e4 = iVar5;
+  Line 65 [static_shift_too_many_bits]: DAT_005b06b0 = (int)(CONCAT44(((int)CVector3f_005b0678.z >> 0x1f) << 0x18 |
+  Line 66 [undefined_data]: while (uVar8 = (byte)((uint)DAT_005b06b0 >> 0x10),
+  Line 67 [undefined_data]: uVar11 = (byte)((uint)DAT_005b06b4 >> 0x10), -1 < iVar5 + -0x10) {
+  Line 68 [undefined_data]: DAT_005b068c = (float)((int)CVector3f_005b0678.z + _DAT_005b06a4);
+  Line 68 [static_shift_too_many_bits]: DAT_005b06b4 = (int)(CONCAT44(((int)DAT_005b0684 >> 0x1f) << 0x18 | DAT_005b0684 >> 8,
+  Line 69 [undefined_data]: DAT_005b0690 = DAT_005b0684 + _DAT_005b06a8;
+  Line 69 [undefined_data]: DAT_005b0690 = DAT_005b0684 + _DAT_005b06a8;
+  Line 70 [undefined_data]: DAT_005b0694 = DAT_005b0688 + DAT_005b06ac;
+  Line 70 [undefined_data]: DAT_005b0694 = DAT_005b0688 + DAT_005b06ac;
+  Line 70 [undefined_data]: DAT_005b0694 = DAT_005b0688 + DAT_005b06ac;
+  Line 71 [undefined_data]: DAT_005b06b8 = (int)(CONCAT44(((int)DAT_005b068c >> 0x1f) << 0x18 | (uint)DAT_005b068c >> 8,
+  Line 71 [undefined_data]: DAT_005b06b8 = (int)(CONCAT44(((int)DAT_005b068c >> 0x1f) << 0x18 | (uint)DAT_005b068c >> 8,
+  Line 71 [undefined_data]: DAT_005b06b8 = (int)(CONCAT44(((int)DAT_005b068c >> 0x1f) << 0x18 | (uint)DAT_005b068c >> 8,
+  Line 71 [concat_reconstruction]: DAT_005b06b8 = (int)(CONCAT44(((int)DAT_005b068c >> 0x1f) << 0x18 | (uint)DAT_005b068c >> 8,
+  Line 72 [undefined_data]: (int)DAT_005b068c * 0x1000000) / (longlong)DAT_005b0694);
+  Line 72 [undefined_data]: (int)DAT_005b068c * 0x1000000) / (longlong)DAT_005b0694);
+  Line 73 [undefined_data]: DAT_005b06bc = (int)(CONCAT44(((int)DAT_005b0690 >> 0x1f) << 0x18 | DAT_005b0690 >> 8,
+  Line 73 [undefined_data]: DAT_005b06bc = (int)(CONCAT44(((int)DAT_005b0690 >> 0x1f) << 0x18 | DAT_005b0690 >> 8,
+  Line 73 [undefined_data]: DAT_005b06bc = (int)(CONCAT44(((int)DAT_005b0690 >> 0x1f) << 0x18 | DAT_005b0690 >> 8,
+  Line 73 [concat_reconstruction]: DAT_005b06bc = (int)(CONCAT44(((int)DAT_005b0690 >> 0x1f) << 0x18 | DAT_005b0690 >> 8,
+  Line 74 [undefined_data]: DAT_005b0690 * 0x1000000) / (longlong)DAT_005b0694);
+  Line 74 [undefined_data]: DAT_005b0690 * 0x1000000) / (longlong)DAT_005b0694);
+  Line 75 [undefined_data]: iVar15 = DAT_005b06b8 - DAT_005b06b0 >> 0xc;
+  Line 75 [undefined_data]: iVar15 = DAT_005b06b8 - DAT_005b06b0 >> 0xc;
+  Line 76 [undefined_data]: iVar13 = DAT_005b06bc - DAT_005b06b4 >> 0xc;
+  Line 76 [undefined_data]: iVar13 = DAT_005b06bc - DAT_005b06b4 >> 0xc;
+  Line 77 [undefined_data]: iVar6 = (DAT_005b06b0 >> 8) + iVar15;
+  Line 78 [undefined_data]: iVar9 = (DAT_005b06b4 >> 8) + iVar13;
+  Line 78 [static_shift_too_many_bits]: DAT_005b06b8 = (int)(CONCAT44(((int)DAT_005b068c >> 0x1f) << 0x18 | (uint)DAT_005b068c >> 8,
+  Line 79 [concat_reconstruction]: *puVar17 = g_Hardware32BitPalette[g_CurrentTextureData[CONCAT11(uVar11,uVar8)]];
+  Line 80 [static_shift_too_many_bits]: DAT_005b06bc = (int)(CONCAT44(((int)DAT_005b0690 >> 0x1f) << 0x18 | DAT_005b0690 >> 8,
+  Line 84 [concat_reconstruction]: [CONCAT11((char)((uint)iVar9 >> 8),(char)((uint)iVar6 >> 8))]];
+  Line 89 [concat_reconstruction]: [CONCAT11((char)((uint)iVar10 >> 8),(char)((uint)iVar7 >> 8))]];
+  Line 94 [concat_reconstruction]: [CONCAT11((char)((uint)iVar9 >> 8),(char)((uint)iVar6 >> 8))]];
+  Line 99 [concat_reconstruction]: [CONCAT11((char)((uint)iVar10 >> 8),(char)((uint)iVar7 >> 8))]];
+  Line 104 [concat_reconstruction]: [CONCAT11((char)((uint)iVar9 >> 8),(char)((uint)iVar6 >> 8))]];
+  Line 109 [concat_reconstruction]: [CONCAT11((char)((uint)iVar10 >> 8),(char)((uint)iVar7 >> 8))]];
+  Line 114 [concat_reconstruction]: [CONCAT11((char)((uint)iVar9 >> 8),(char)((uint)iVar6 >> 8))]];
+  Line 119 [concat_reconstruction]: [CONCAT11((char)((uint)iVar10 >> 8),(char)((uint)iVar7 >> 8))]];
+  Line 124 [concat_reconstruction]: [CONCAT11((char)((uint)iVar9 >> 8),(char)((uint)iVar6 >> 8))]];
+  Line 129 [concat_reconstruction]: [CONCAT11((char)((uint)iVar10 >> 8),(char)((uint)iVar7 >> 8))]];
+  Line 134 [concat_reconstruction]: [CONCAT11((char)((uint)iVar9 >> 8),(char)((uint)iVar6 >> 8))]];
+  Line 139 [concat_reconstruction]: [CONCAT11((char)((uint)iVar10 >> 8),(char)((uint)iVar7 >> 8))]];
+  Line 144 [concat_reconstruction]: [CONCAT11((char)((uint)iVar9 >> 8),(char)((uint)iVar6 >> 8))]];
+  Line 147 [concat_reconstruction]: [CONCAT11((char)((uint)iVar10 >> 8),(char)((uint)iVar7 >> 8))]];
+  Line 150 [concat_reconstruction]: [CONCAT11((char)((uint)(iVar10 + iVar13) >> 8),
+  Line 153 [undefined_data]: CVector3f_005b0678.z = DAT_005b068c;
+  Line 154 [undefined_data]: DAT_005b0684 = DAT_005b0690;
+  Line 154 [undefined_data]: DAT_005b0684 = DAT_005b0690;
+  Line 155 [undefined_data]: DAT_005b0688 = DAT_005b0694;
+  Line 155 [undefined_data]: DAT_005b0688 = DAT_005b0694;
+  Line 156 [undefined_data]: DAT_005b06b0 = DAT_005b06b8;
+  Line 156 [undefined_data]: DAT_005b06b0 = DAT_005b06b8;
+  Line 157 [undefined_data]: DAT_005b06b4 = DAT_005b06bc;
+  Line 157 [undefined_data]: DAT_005b06b4 = DAT_005b06bc;
+  Line 161 [undefined_data]: DAT_005b06b8 = (int)(CONCAT44(((int)DAT_005b0698 >> 0x1f) << 0x18 | DAT_005b0698 >> 8,
+  Line 161 [undefined_data]: DAT_005b06b8 = (int)(CONCAT44(((int)DAT_005b0698 >> 0x1f) << 0x18 | DAT_005b0698 >> 8,
+  Line 161 [undefined_data]: DAT_005b06b8 = (int)(CONCAT44(((int)DAT_005b0698 >> 0x1f) << 0x18 | DAT_005b0698 >> 8,
+  Line 161 [concat_reconstruction]: DAT_005b06b8 = (int)(CONCAT44(((int)DAT_005b0698 >> 0x1f) << 0x18 | DAT_005b0698 >> 8,
+  Line 162 [undefined_data]: DAT_005b0698 << 0x18) / (longlong)DAT_005b06a0);
+  Line 162 [undefined_data]: DAT_005b0698 << 0x18) / (longlong)DAT_005b06a0);
+  Line 163 [undefined_data]: DAT_005b06bc = (int)(CONCAT44(((int)DAT_005b069c >> 0x1f) << 0x18 | DAT_005b069c >> 8,
+  Line 163 [undefined_data]: DAT_005b06bc = (int)(CONCAT44(((int)DAT_005b069c >> 0x1f) << 0x18 | DAT_005b069c >> 8,
+  Line 163 [undefined_data]: DAT_005b06bc = (int)(CONCAT44(((int)DAT_005b069c >> 0x1f) << 0x18 | DAT_005b069c >> 8,
+  Line 163 [concat_reconstruction]: DAT_005b06bc = (int)(CONCAT44(((int)DAT_005b069c >> 0x1f) << 0x18 | DAT_005b069c >> 8,
+  Line 164 [undefined_data]: DAT_005b069c << 0x18) / (longlong)DAT_005b06a0);
+  Line 164 [undefined_data]: DAT_005b069c << 0x18) / (longlong)DAT_005b06a0);
+  Line 165 [undefined_data]: iVar6 = (int)((longlong)(DAT_005b06bc - DAT_005b06b4) *
+  Line 165 [undefined_data]: iVar6 = (int)((longlong)(DAT_005b06bc - DAT_005b06b4) *
+  Line 167 [undefined_data]: uVar16 = (uint)((longlong)(DAT_005b06b8 - DAT_005b06b0) *
+  Line 167 [undefined_data]: uVar16 = (uint)((longlong)(DAT_005b06b8 - DAT_005b06b0) *
+  Line 168 [static_shift_too_many_bits]: DAT_005b06b8 = (int)(CONCAT44(((int)DAT_005b0698 >> 0x1f) << 0x18 | DAT_005b0698 >> 8,
+  Line 170 [undefined_data]: iVar5 = (DAT_005b06b0 >> 8) + uVar16;
+  Line 170 [static_shift_too_many_bits]: DAT_005b06bc = (int)(CONCAT44(((int)DAT_005b069c >> 0x1f) << 0x18 | DAT_005b069c >> 8,
+  Line 171 [undefined_data]: iVar7 = (DAT_005b06b4 >> 8) + iVar6;
+  Line 172 [concat_reconstruction]: *puVar17 = g_Hardware32BitPalette[g_CurrentTextureData[CONCAT11(uVar11,uVar8)]];
+  Line 178 [concat_reconstruction]: [CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar5 >> 8))]];
+  Line 184 [concat_reconstruction]: [CONCAT11((char)((uint)iVar10 >> 8),(char)((uint)iVar9 >> 8))]];
+  Line 190 [concat_reconstruction]: [CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar5 >> 8))]];
+  Line 196 [concat_reconstruction]: [CONCAT11((char)((uint)iVar10 >> 8),(char)((uint)iVar9 >> 8))]];
+  Line 202 [concat_reconstruction]: [CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar5 >> 8))]];
+  Line 208 [concat_reconstruction]: [CONCAT11((char)((uint)iVar10 >> 8),(char)((uint)iVar9 >> 8))]];
+  Line 214 [concat_reconstruction]: [CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar5 >> 8))]];
+  Line 220 [concat_reconstruction]: [CONCAT11((char)((uint)iVar10 >> 8),(char)((uint)iVar9 >> 8))]];
+  Line 226 [concat_reconstruction]: [CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar5 >> 8))]]
+  Line 233 [concat_reconstruction]: [CONCAT11((char)((uint)iVar10 >> 8),
+  Line 240 [concat_reconstruction]: [CONCAT11((char)((uint)iVar7 >> 8),
+  Line 247 [concat_reconstruction]: [CONCAT11((char)((uint)iVar10 >> 8),
+  Line 254 [concat_reconstruction]: [CONCAT11((char)((uint)iVar7 >> 8),
+  Line 259 [concat_reconstruction]: [CONCAT11((char)((uint)iVar10 >> 8),
+  Line 264 [concat_reconstruction]: [CONCAT11((char)((uint)(iVar10 + iVar6) >> 8),
+  Line 283 [undefined_data]: puVar12 = &DAT_005b06ec;
+  Line 284 [undefined_data]: iVar6 = DAT_005b06ac >> 8;
+  Line 286 [undefined_data]: iVar5 = DAT_005b06e4;
+  Line 287 [undefined_data]: puVar17 = DAT_005b06e8;
+  Line 288 [undefined_data]: puVar18 = DAT_005b06e0;
+  Line 289 [undefined_data]: DAT_005b0688 = iVar1;
 
 ====================================================================================================
 core_dstrender.cpp_renderScreenDepthTestInterlacedProfiled_FUN_00463ff5 (3 suspects)

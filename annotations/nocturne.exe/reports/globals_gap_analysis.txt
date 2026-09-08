@@ -2,21 +2,21 @@
 GLOBALS GAP ANALYSIS REPORT
 ================================================================================
 
-Total globals analyzed:      12958
-  Named globals:             10432
-  DAT_ globals:              2526
+Total globals analyzed:      12957
+  Named globals:             10434
+  DAT_ globals:              2523
 Gaps found:                  2049
-  With exact size bounds:    1600
-  With estimated bounds:     449
-Total gap bytes:             2,142,969,860
-  Exact gap bytes:           41,379,899
+  With exact size bounds:    1599
+  With estimated bounds:     450
+Total gap bytes:             2,142,969,867
+  Exact gap bytes:           41,379,895
 Overlaps (size <= 0):        7150
 
 --------------------------------------------------------------------------------
 GAP SIZE DISTRIBUTION
 --------------------------------------------------------------------------------
-  1-4 bytes (likely padding/alignment)          413
-  5-16 bytes (small vars)                       261
+  1-4 bytes (likely padding/alignment)          412
+  5-16 bytes (small vars)                       262
   17-64 bytes (structs/small arrays)            608
   65-256 bytes (medium data)                    295
   257-1024 bytes (large structs/arrays)         183
@@ -179,7 +179,7 @@ LARGEST GAPS (top 50)
     before: PTR_caseD_1_0040db24                     void*                at 0x0040db24
 
 --------------------------------------------------------------------------------
-ALL EXACT GAPS (1600) - size bounds are known precisely
+ALL EXACT GAPS (1599) - size bounds are known precisely
 --------------------------------------------------------------------------------
    7,372,800 bytes  at 0x00b0e608  between DAT_00b0e604                   and DAT_01216608
    6,753,148 bytes  at 0x02737ef8  between DAT_02737ef4                   and DAT_02da8a74
@@ -1177,7 +1177,7 @@ ALL EXACT GAPS (1600) - size bounds are known precisely
           16 bytes  at 0x005acea4  between g_INT_005acea0                 and g_INT_005aceb4
           16 bytes  at 0x005acf84  between g_INT_005acf80                 and g_INT_005acf94
           16 bytes  at 0x005b0650  between g_INT_005b064c                 and g_INT_005b0660
-          16 bytes  at 0x005b0664  between g_INT_005b0660                 and DAT_005b0674
+          16 bytes  at 0x005b0664  between g_INT_005b0660                 and PTR_DAT_005b0674
           16 bytes  at 0x005b9558  between DAT_005b9554                   and s_s_10_0_0_105_005b9568
           16 bytes  at 0x005b9658  between PTR_s_darkPoint_00584ead_005b9 and INT_005b9668
           16 bytes  at 0x005bac6c  between INT_005bac68                   and INT_005bac7c
@@ -1653,7 +1653,6 @@ ALL EXACT GAPS (1600) - size bounds are known precisely
            4 bytes  at 0x005ad1ec  between g_INT_005ad1e8                 and s_noCollision_005ad1f0
            4 bytes  at 0x005ad354  between g_CConsole_PTR_005ad350        and s_console_txt_005ad358
            4 bytes  at 0x005ae454  between DAT_005ae450                   and DAT_005ae458
-           4 bytes  at 0x005b067c  between DAT_005b0678                   and DAT_005b0680
            4 bytes  at 0x005b06c0  between DAT_005b06bc                   and DAT_005b06c4
            4 bytes  at 0x005b6d04  between DAT_005b6d00                   and DAT_005b6d08
            4 bytes  at 0x005b6d5c  between DAT_005b6d58                   and DAT_005b6d60

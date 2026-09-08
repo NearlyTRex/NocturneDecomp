@@ -29,7 +29,7 @@
 ;   double DOUBLE_0057df9e = 0.5
 ;   double DOUBLE_0057dfa6 = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   undefined4 DAT_005b0678
+;   CVector3f CVector3f_005b0678
 ;   undefined4 DAT_005c5034
 ;   undefined4 DAT_005c5038
 ;   undefined4 DAT_005c503c
@@ -76,7 +76,7 @@ section .text
     FCOS                                ; 00463496
     FXCH                                ; 00463498
     FCOS                                ; 0046349a
-    FLD float ptr [0x005b0678]          ; 0046349c | DAT_005b0678
+    FLD float ptr [0x005b0678]          ; 0046349c | CVector3f_005b0678
     FXCH ST4                            ; 004634a2
     FMUL ST4                            ; 004634a4
     FXCH ST2                            ; 004634a6

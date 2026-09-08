@@ -43,6 +43,13 @@ CPod* g_CPod_PTR_005be1cc = (CPod*)&g_CDemonPod_01e528d0;
 // CSound*
 CSound* g_CSound_PTR_005bed68 = (CSound*)&g_CSound_02dc9450;
 
+// CVector3f
+CVector3f CVector3f_005b0678 = {
+    .x = 5.0f,
+    .y = 0.0f,
+    .z = 0.0f
+};
+
 // SAlphaEntry[256]
 SAlphaEntry g_AlphaTable[256] = {
     {
@@ -2090,7 +2097,6 @@ undefined1 DAT_005be184 = 0x00;
 undefined2 DAT_005b8bdc = 0x0000;
 
 // undefined4
-undefined4 DAT_005b0680 = 0x00000000;
 undefined4 DAT_005b0684 = 0x00000000;
 undefined4 DAT_005b0688 = 0x00000000;
 undefined4 DAT_005b068c = 0x00000000;

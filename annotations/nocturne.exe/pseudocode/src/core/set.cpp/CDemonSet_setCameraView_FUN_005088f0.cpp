@@ -215,7 +215,7 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_005088f0(CDemonSet *this_p
   _DAT_01c038f4 = 0;
   if (this_ptr->has_sky != 0) {
     core_dskybox_cpp_renderSkyDome_FUN_00463580
-              (0x01B7B4E8,this_ptr->sky_texture_name,this_ptr->sky_brightness);
+              (PTR_DAT_005b0674,this_ptr->sky_texture_name,this_ptr->sky_brightness);
   }
   core_set_cpp_CDemonSet_renderBackgroundActors_FUN_00508750(this_ptr,1);
   core_gore_cpp_CGore_renderDecals_FUN_004afe80(g_CGore_PTR_005b96c4,1,in_stack_ffffff10);

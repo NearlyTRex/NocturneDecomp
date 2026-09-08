@@ -10,7 +10,7 @@ Total functions: 4922
 Clean functions: 2533 (51.5%)
 Functions with suspects: 2389 (48.5%)
 
-Total suspect patterns: 20962
+Total suspect patterns: 20955
 Average suspects per function: 4.26
 
 Virtual files: 203 total, 10 at 100%, 12 at 90%+
@@ -28,11 +28,11 @@ Failed: 4922
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  undefined_data            4085
+  undefined_data            4079
   pointer_cast              3557
   pointer_truncation        2880
   unrolled_memcpy           1476
-  warning_overlapping_globals 866
+  warning_overlapping_globals 865
   stack_param               766
   unknown_field             721
   concat_reconstruction     661
@@ -188,7 +188,7 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   00430630: cockpit_ckptutil.c_traceConnectedEdges_FUN_00430630 (score: 1785, suspects: 140, lines: 355)
   004d2d00: core_menu.cpp_configureCustomKeyBindings_FUN_004d2d00 (score: 1699, suspects: 76, lines: 904)
   004d12e0: core_menu.cpp_configureSoundOptions_FUN_004d12e0 (score: 1602, suspects: 74, lines: 792)
-  00464200: core_dstrender.cpp_renderPerspectiveCorrectTextured16xCached_FUN_00464200 (score: 1590, suspects: 122, lines: 345)
+  00464200: core_dstrender.cpp_renderPerspectiveCorrectTextured16xCached_FUN_00464200 (score: 1521, suspects: 115, lines: 346)
   00423f40: core_charactr.cpp_CCharacter_ctor_FUN_00423f40 (score: 1488, suspects: 138, lines: 93)
   005125a0: core_setdir.cpp_CDemonSet_FUN_005125a0 (score: 1466, suspects: 87, lines: 561)
   00497900: core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_00497900 (score: 1427, suspects: 104, lines: 352)
@@ -199,7 +199,7 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
 
-  undefined_data (688 functions):
+  undefined_data (689 functions):
     00403f50: engine_2d.c_clearInputAndWait_FUN_00403f50
     00404120: engine_2d.c_mapFrameBuffer_FUN_00404120
     00404360: engine_2d.c_unmapFrameBuffer_FUN_00404360
@@ -210,7 +210,7 @@ FUNCTIONS BY SUSPECT TYPE
     00404680: engine_3d.c_lookupLitColor_FUN_00404680
     00404730: engine_3d.c_processVertexLighting_FUN_00404730
     00404790: engine_3d.c_processTextureCoordinates_FUN_00404790
-    ... and 678 more
+    ... and 679 more
 
   pointer_cast (726 functions):
     00401010: engine_2d.c_initGraphicsSystem_FUN_00401010
@@ -251,7 +251,7 @@ FUNCTIONS BY SUSPECT TYPE
     0040a540: core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_0040a540
     ... and 527 more
 
-  warning_overlapping_globals (866 functions):
+  warning_overlapping_globals (865 functions):
     00403760: engine_2d.c_resetGraphicsSystem_FUN_00403760
     00403770: engine_2d.c_reinitializeGraphicsSystem_FUN_00403770
     00404480: engine_3d.c_initTextureCache_FUN_00404480
@@ -262,7 +262,7 @@ FUNCTIONS BY SUSPECT TYPE
     00405b40: engine_3d.c_renderSortedPolygonList_FUN_00405b40
     00405c90: engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00405c90
     00406230: engine_3d.c_renderPolygonLitAlphaPlaneMaskedOp26_FUN_00406230
-    ... and 856 more
+    ... and 855 more
 
   stack_param (102 functions):
     004013d0: engine_2d.c_drawAntialiasedChar_FUN_004013d0

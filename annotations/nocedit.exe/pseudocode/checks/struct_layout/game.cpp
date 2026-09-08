@@ -9093,11 +9093,13 @@ static_assert(__builtin_offsetof(SMRGLTextureListEntry, texture_name) == 0,
 static_assert(__builtin_offsetof(SMRGLTextureListEntry, metadata) == 16,
               "offsetof(SMRGLTextureListEntry, metadata) != 16");
 
-// ---- SMRGLTextureLod (72 bytes) ----
-static_assert(sizeof(SMRGLTextureLod) == 72,
-              "sizeof(SMRGLTextureLod) != 72");
-static_assert(__builtin_offsetof(SMRGLTextureLod, textures) == 0,
-              "offsetof(SMRGLTextureLod, textures) != 0");
+// ---- SMRGLTextureModel (72 bytes) ----
+static_assert(sizeof(SMRGLTextureModel) == 72,
+              "sizeof(SMRGLTextureModel) != 72");
+static_assert(__builtin_offsetof(SMRGLTextureModel, base) == 0,
+              "offsetof(SMRGLTextureModel, base) != 0");
+static_assert(__builtin_offsetof(SMRGLTextureModel, texture_name) == 8,
+              "offsetof(SMRGLTextureModel, texture_name) != 8");
 
 // ---- SMRGLVertex (12 bytes) ----
 static_assert(sizeof(SMRGLVertex) == 12,

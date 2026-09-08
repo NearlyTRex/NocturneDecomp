@@ -22,7 +22,7 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   undefined4 DAT_005b0674
+;   void* PTR_DAT_005b0674 = 01b7b4e8
 ;   undefined4 DAT_005be36c
 ;   undefined4 DAT_005be378
 ;   undefined4 DAT_005c1144
@@ -263,7 +263,7 @@ section .text
     PUSH EAX                            ; 00507ea7
     LEA EAX,[EBX + 0x161244]            ; 00507ea8
     PUSH EAX                            ; 00507eae
-    MOV EDX,dword ptr [0x005b0674]      ; 00507eaf | DAT_005b0674
+    MOV EDX,dword ptr [0x005b0674]      ; 00507eaf | PTR_DAT_005b0674
     PUSH EDX                            ; 00507eb5
     CALL core_dskybox.cpp_renderSkyDome_FUN_00463580 ; 00507eb6
         ;   XREF to: 00463580 (UNCONDITIONAL_CALL)  ; void core_dskybox.cpp_renderSkyDome_FUN_00463580(SMRGLSkyTexture * sky_texture, char * texture_name, int brightness_factor)

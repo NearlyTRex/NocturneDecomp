@@ -8,7 +8,7 @@
 ;   engine_drender.cpp_CDemonRenderer_renderNearPlaneTexturedPoly_FUN_0045f270 at 0045f39b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b0680
+;   undefined4 CVector3f_005b0678.z
 ;   undefined4 DAT_005b0684
 ;   undefined4 DAT_005b0688
 ;   undefined4 DAT_005b068c
@@ -56,7 +56,7 @@ section .text
     MOV dword ptr [0x005b06e8],EBP      ; 0046423f | DAT_005b06e8
     MOV EBX,dword ptr [ESI + 0x18]      ; 00464245
     MOV EAX,dword ptr [EDI + 0x18]      ; 00464248
-    MOV dword ptr [0x005b0680],EBX      ; 0046424b | DAT_005b0680
+    MOV dword ptr [0x005b0680],EBX      ; 0046424b | CVector3f_005b0678.z
     MOV [0x005b0698],EAX                ; 00464251 | DAT_005b0698
     SUB EAX,EBX                         ; 00464256
     IMUL dword ptr [ECX*0x4 + 0x1c00c84] ; 00464258 | g_ReciprocalLookupTable[1]
@@ -78,7 +78,7 @@ section .text
     IMUL dword ptr [ECX*0x4 + 0x1c00c84] ; 0046429e | g_ReciprocalLookupTable[1]
     SHL EDX,0x4                         ; 004642a5
     MOV dword ptr [0x005b06ac],EDX      ; 004642a8 | DAT_005b06ac
-    MOV EAX,[0x005b0680]                ; 004642ae | DAT_005b0680
+    MOV EAX,[0x005b0680]                ; 004642ae | CVector3f_005b0678.z
     MOV EBX,dword ptr [0x005b0688]      ; 004642b3 | DAT_005b0688
     CDQ                                 ; 004642b9
     SHLD EDX,EAX,0x18                   ; 004642ba
@@ -98,7 +98,7 @@ section .text
         ;   Label: LAB_004642ed
     JS 0x004645cf                       ; 004642f0
         ;   XREF to: 004645cf (CONDITIONAL_JUMP)  ; LAB_004645cf
-    MOV EAX,[0x005b0680]                ; 004642f6 | DAT_005b0680
+    MOV EAX,[0x005b0680]                ; 004642f6 | CVector3f_005b0678.z
     MOV EBX,dword ptr [0x005b0684]      ; 004642fb | DAT_005b0684
     MOV EDX,dword ptr [0x005b0688]      ; 00464301 | DAT_005b0688
     ADD EAX,dword ptr [0x005b06a4]      ; 00464307 | DAT_005b06a4
@@ -284,7 +284,7 @@ section .text
     MOV EDX,dword ptr [0x005b0694]      ; 0046459b | DAT_005b0694
     MOV ESI,dword ptr [0x005b06b8]      ; 004645a1 | DAT_005b06b8
     MOV EBP,dword ptr [0x005b06bc]      ; 004645a7 | DAT_005b06bc
-    MOV [0x005b0680],EAX                ; 004645ad | DAT_005b0680
+    MOV [0x005b0680],EAX                ; 004645ad | CVector3f_005b0678.z
     MOV dword ptr [0x005b0684],EBX      ; 004645b2 | DAT_005b0684
     MOV dword ptr [0x005b0688],EDX      ; 004645b8 | DAT_005b0688
     MOV dword ptr [0x005b06b0],ESI      ; 004645be | DAT_005b06b0

@@ -11,10 +11,10 @@ Failed: 4922
 ERROR CATEGORIES
 --------------------------------------------------
   other                          44501
-  undeclared_identifier           5827
+  undeclared_identifier           5822
   format_error                     387
-  type_error                       363
-  incompatible_types               345
+  type_error                       369
+  incompatible_types               344
   cast_error                       211
   syntax_error                      89
   pointer_type                      55
@@ -9870,7 +9870,7 @@ CATEGORY: other (44501 errors)
     Line 20: unknown type name 'FLOATING_SAVE_AREA'
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (5827 errors)
+CATEGORY: undeclared_identifier (5822 errors)
 ====================================================================================================
 
   engine_winfont.cpp_CWinFont_createTextBackground_FUN_005584d0
@@ -10169,6 +10169,8 @@ CATEGORY: undeclared_identifier (5827 errors)
     Line 27: use of undeclared identifier 'DAT_01b4d76c'
   engine_drender.cpp_CDemonRenderer_renderZPrepassPoly_FUN_0045ef90
     Line 29: use of undeclared identifier 'DAT_01b4d76c'
+  core_dskybox.cpp_staticInit_FUN_004633d0
+    Line 14: use of undeclared identifier 'DAT_01b7b4e8'
   core_dtri.cpp_rayTriangleFloorTest_FUN_0046d110
     Line 111: use of undeclared identifier 'DAT_01bc9968'
   core_game.cpp_CGame_processFrame_FUN_0049cc10
@@ -10737,8 +10739,6 @@ CATEGORY: undeclared_identifier (5827 errors)
     Line 30: use of undeclared identifier '_DAT_005a3788'
   core_werewolf.cpp_CWerewolf_renderEyeGlow_FUN_005570b0
     Line 88: use of undeclared identifier '_DAT_005a42d0'
-  core_dskybox.cpp_generateSkyDomeVertex_FUN_00463440
-    Line 39: use of undeclared identifier '_DAT_005b0678'
   core_dstrender.cpp_renderPerspectiveCorrectTextured16xCached_FUN_00464200
     Line 50: use of undeclared identifier '_DAT_005b06a4'
   core_dstrender.cpp_renderTexturedAlphaMMXScanline_FUN_00463b27
@@ -10935,8 +10935,6 @@ CATEGORY: undeclared_identifier (5827 errors)
     Line 18: use of undeclared identifier '_DAT_01b4d7b0'; did you mean 'DAT_005b47b0'?
   core_dskybox.cpp_renderSkyDome_FUN_00463580
     Line 55: use of undeclared identifier '_DAT_01b7b728'; did you mean 'DAT_00575728'?
-  core_dskybox.cpp_staticInit_FUN_004633d0
-    Line 15: use of undeclared identifier '_DAT_01b7b728'; did you mean 'DAT_00575728'?
   core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390
     Line 40: use of undeclared identifier '_DAT_01b7b734'
   core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0
@@ -13072,7 +13070,7 @@ CATEGORY: format_error (387 errors)
     Line 22: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
 
 ====================================================================================================
-CATEGORY: type_error (363 errors)
+CATEGORY: type_error (369 errors)
 ====================================================================================================
 
   core_actor.cpp_CDemonActor_handleFootstep_FUN_0040db50
@@ -13114,7 +13112,7 @@ CATEGORY: type_error (363 errors)
   core_dracbrid.cpp_CDraculaBride_process_FUN_00458a90
     Line 315: invalid suffix '._0_4_' on floating constant
   core_dskybox.cpp_generateSkyDomeVertex_FUN_00463440
-    Line 30: invalid suffix '._0_4_' on floating constant
+    Line 28: invalid suffix '._0_4_' on floating constant
   core_dtrace.cpp_CDemonRaytrace_cylinderGroundCheck_FUN_004687e0
     Line 50: invalid suffix '._0_4_' on floating constant
   core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0
@@ -13237,6 +13235,8 @@ CATEGORY: type_error (363 errors)
     Line 135: member reference base type 'byte[84]' (aka 'unsigned char[84]') is not a structure or union
   core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_0044f0b0
     Line 49: member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union
+  core_dskybox.cpp_renderSkyDome_FUN_00463580
+    Line 80: member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union
   core_fire.cpp_CGunFlame_render_FUN_00488580
     Line 60: member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union
   core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200
@@ -13299,7 +13299,7 @@ CATEGORY: type_error (363 errors)
     Line 54: statement requires expression of integer type ('float' invalid)
 
 ====================================================================================================
-CATEGORY: incompatible_types (345 errors)
+CATEGORY: incompatible_types (344 errors)
 ====================================================================================================
 
   core_skeleton.cpp_CSkeleton_allocMemory_FUN_005173c0
@@ -13492,8 +13492,6 @@ CATEGORY: incompatible_types (345 errors)
     Line 19: no matching function for call to 'core_dfilter_cpp_CFilterFX_openMovie_FUN_0044c310'
   core_game.cpp_CGame_process_FUN_004a6010
     Line 37: no matching function for call to 'core_dfilter_cpp_CFilterFX_process_FUN_0044c4a0'
-  core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00507c80
-    Line 67: no matching function for call to 'core_dskybox_cpp_renderSkyDome_FUN_00463580'
   core_anvil.cpp_CAnvil_process_FUN_0040f610
     Line 20: no matching function for call to 'core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30'
   core_armour.cpp_CArmour_process_FUN_0040fa20
@@ -13622,6 +13620,8 @@ CATEGORY: incompatible_types (345 errors)
     Line 67: no matching function for call to 'core_script_cpp_CScript_getLetterboxHeight_FUN_004fe710'
   core_set.cpp_CDemonSet_clear_FUN_00506ec0
     Line 20: no matching function for call to 'core_terrain_cpp_CTerrain_free_FUN_005492f0'
+  core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00507c80
+    Line 71: no matching function for call to 'core_water_cpp_CWater_calculateVisibleTiles_FUN_00550800'
   core_set.cpp_CDemonSet_loadAssets_FUN_0050d280
     Line 13: no matching function for call to 'core_water_cpp_CWater_captureTextures_FUN_005507d0'
   engine_3d.c_renderPolygonAdaptiveFogTexturedOp52_FUN_00407a20

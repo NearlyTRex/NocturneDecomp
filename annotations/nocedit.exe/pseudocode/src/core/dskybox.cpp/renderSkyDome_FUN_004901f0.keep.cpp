@@ -28,17 +28,17 @@ void __cdecl core_dskybox_cpp_renderSkyDome_FUN_004901f0(SMRGLSkyTexture *sky_te
   int local_20;
   CDemonRenderer *this_ptr;
   float fVar2;
-  
+
   strcpy(sky_texture->texture_name, texture_name);
   (sky_texture->base).type = brightness_factor;
   core_dtrace_cpp_CDemonRaytrace_getBBoxMin_FUN_00499b40(&g_CDemonRaytraceInstance,&local_60);
   core_dtrace_cpp_CDemonRaytrace_getBBoxMax_FUN_00499b70(&g_CDemonRaytraceInstance,&local_54);
   fVar2 = (float)0.5;
-  CVector3i_02ca0388.x = (int)((local_60.x + local_54.x) * fVar2);
-  CVector3i_02ca0388.z = (int)((local_60.z + local_54.z) * fVar2);
+  g_SkyDomeCenter.x = (local_60.x + local_54.x) * fVar2;
+  g_SkyDomeCenter.z = (local_60.z + local_54.z) * fVar2;
   fVar3 = (local_54.x - local_60.x) * fVar2 * (float)1.4139999999999999;
   g_SkyDomeVertexScale = 0.0;
-  CVector3i_02ca0388.y = (int)local_60.y;
+  g_SkyDomeCenter.y = local_60.y;
   if (0.0 < fVar3) {
     g_SkyDomeVertexScale = fVar3;
   }
@@ -51,7 +51,7 @@ void __cdecl core_dskybox_cpp_renderSkyDome_FUN_004901f0(SMRGLSkyTexture *sky_te
     g_SkyDomeVertexScale = fVar3;
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-            (g_CDemonRendererPtr2,(CVector3f *)&CVector3i_02ca0388);
+            (g_CDemonRendererPtr2,&g_SkyDomeCenter);
   local_b4.base.base.count = 4;
   local_b4.base.surface_normal.D.i = 0;
   local_b4.base.surface_normal.C.i = 0;

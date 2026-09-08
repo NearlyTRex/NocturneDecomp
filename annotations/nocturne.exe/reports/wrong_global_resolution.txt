@@ -12,8 +12,8 @@ SUMMARY
 ----------------------------------------------------------------------------------------------------
 
   Functions checked: 5535
-  Functions with suspicious globals: 614
-  Total suspicious global references: 1277
+  Functions with suspicious globals: 615
+  Total suspicious global references: 1278
 
   Most commonly misresolved globals:
     g_HeroActors                                       89 functions
@@ -37,7 +37,7 @@ SUMMARY
     g_CCrater_ARRAY_01c625f8                           7 functions
     DAT_01cd8b28                                       7 functions
 
-  Raw .cpp files with issues: 614
+  Raw .cpp files with issues: 615
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -4869,6 +4869,14 @@ core_drone.cpp_CDrone_getActorType_FUN_00462930  [.cpp]  (1 suspicious globals)
 
   g_CDroneActorType_01b7b4ac
     Used at lines: 12
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_dskybox.cpp_staticInit_FUN_004633d0  [.cpp]  (1 suspicious globals)
+  File: core/dskybox.cpp
+
+  DAT_01b7b4e8
+    Used at lines: 14
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

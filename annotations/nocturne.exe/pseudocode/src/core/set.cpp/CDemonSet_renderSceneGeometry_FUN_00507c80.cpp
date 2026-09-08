@@ -65,7 +65,7 @@ LAB_00507d51:
       }
       if ((this_ptr->disable_sky_rendering == 0) && (this_ptr->has_sky != 0)) {
         core_dskybox_cpp_renderSkyDome_FUN_00463580
-                  (0x01B7B4E8,this_ptr->sky_texture_name,this_ptr->sky_brightness);
+                  (PTR_DAT_005b0674,this_ptr->sky_texture_name,this_ptr->sky_brightness);
       }
       if ((this_ptr->disable_water_rendering == 0) &&
          (core_water_cpp_CWater_calculateVisibleTiles_FUN_00550800(0x02DD1210),

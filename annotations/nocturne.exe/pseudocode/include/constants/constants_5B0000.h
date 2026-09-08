@@ -405,7 +405,6 @@ static undefined1* DAT_005BEA58 = (undefined1*)s_anon_00593b8c;
 static undefined1* DAT_005BEA5C = (undefined1*)s_anon_00593b8d;
 
 // undefined4 constants
-static undefined4 DAT_005b0674 = 0x01B7B4E8;
 static undefined4 DAT_005b5d20 = 0x01000100;
 static undefined4 DAT_005b5d40 = 0x02000200;
 static undefined4 DAT_005b5d60 = 0x03000300;

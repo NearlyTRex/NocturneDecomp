@@ -4,11 +4,11 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  undefined_data                  4085 ( 19.5%)
+  undefined_data                  4079 ( 19.5%)
   pointer_cast                    3557 ( 17.0%)
   pointer_truncation              2880 ( 13.7%)
   unrolled_memcpy                 1476 (  7.0%)
-  warning_overlapping_globals      866 (  4.1%)
+  warning_overlapping_globals      865 (  4.1%)
   stack_param                      766 (  3.7%)
   unknown_field                    721 (  3.4%)
   concat_reconstruction            661 (  3.2%)
@@ -86,7 +86,7 @@ SUSPECT TYPE COUNTS
   mem_magic_size                     1 (  0.0%)
 
 ====================================================================================================
-TYPE: undefined_data (4085 occurrences)
+TYPE: undefined_data (4079 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -282,6 +282,7 @@ Functions:
   core_drone.cpp_CDrone_process_FUN_00462a60
   core_dskybox.cpp_generateSkyDomeVertex_FUN_00463440
   core_dskybox.cpp_renderSkyDome_FUN_00463580
+  core_dskybox.cpp_staticInit_FUN_004633d0
   core_dstrender.cpp_blendHBilerpLightmapSharedU64toU16pBB56Px2MMX_FUN_00465fc9
   core_dstrender.cpp_blendHBilerpLightmapSharedU64toU64pBB12Px2MMX_FUN_00464afc
   core_dstrender.cpp_blendLightmapPerPxU32toU16pBB12Px2MMX_FUN_00466930
@@ -2696,11 +2697,11 @@ Functions:
   sound_sndmain.cpp_startSfx_FUN_005265a0
 
 ====================================================================================================
-TYPE: warning_overlapping_globals (866 occurrences)
+TYPE: warning_overlapping_globals (865 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   866x  WARNING: Globals starting with
+   865x  WARNING: Globals starting with
 
 Functions:
   cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_0045cde0
@@ -2837,7 +2838,6 @@ Functions:
   core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_0045a260
   core_dracbrid.cpp_CDraculaBride_setup_FUN_00458730
   core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_0045ab40
-  core_dskybox.cpp_generateSkyDomeVertex_FUN_00463440
   core_dskybox.cpp_renderSkyDome_FUN_00463580
   core_dskybox.cpp_staticInit_FUN_004633d0
   core_dstrender.cpp_blendHBilerpLightmapSharedU64toU16pBB56Px2MMX_FUN_00465fc9

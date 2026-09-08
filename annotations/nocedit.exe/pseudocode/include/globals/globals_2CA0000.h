@@ -3,7 +3,7 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "types/classes/CDemonCube.h"
-#include "types/classes/CVector3i.h"
+#include "types/classes/CVector3f.h"
 #include "types/structs/SMRGLSkyTexture.h"
 
 // =============================================================================
@@ -13,8 +13,8 @@
 // CDemonCube*[20000]
 extern CDemonCube* g_PVSCubePointers[20000];
 
-// CVector3i
-extern CVector3i CVector3i_02ca0388;
+// CVector3f
+extern CVector3f g_SkyDomeCenter;
 
 // SMRGLSkyTexture[24]
 extern SMRGLSkyTexture g_SkyDomeTextureData[24];

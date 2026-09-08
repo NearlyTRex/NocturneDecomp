@@ -45,11 +45,11 @@ void __edi_esi_ebx core_dstrender_cpp_renderPerspectiveCorrectTextured16xCached_
   if (iVar5 != 0 && uVar3 <= uVar4 >> 0x10) {
     DAT_005b06e0 = (uint *)((int)g_ScreenBufferArray[scanline_y] + uVar3 * 4);
     DAT_005b06e8 = g_ZBufferScanlineArray[scanline_y] + uVar3;
-    DAT_005b0680 = (pSVar14->base).u_current;
+    CVector3f_005b0678.z = (float)(pSVar14->base).u_current;
     DAT_005b0698 = (left_edge->base).u_current;
     _DAT_005b06a4 =
          (int)((ulonglong)
-               ((longlong)(int)(DAT_005b0698 - DAT_005b0680) *
+               ((longlong)(int)(DAT_005b0698 - (int)CVector3f_005b0678.z) *
                (longlong)(int)g_ReciprocalLookupTable[iVar5 + 1]) >> 0x20) << 4;
     DAT_005b0684 = (pSVar14->base).v_current;
     DAT_005b069c = (left_edge->base).v_current;
@@ -62,8 +62,9 @@ void __edi_esi_ebx core_dstrender_cpp_renderPerspectiveCorrectTextured16xCached_
     DAT_005b06ac = (int)((ulonglong)
                          ((longlong)(DAT_005b06a0 - iVar1) *
                          (longlong)(int)g_ReciprocalLookupTable[iVar5 + 1]) >> 0x20) << 4;
-    DAT_005b06b0 = (int)(CONCAT44(((int)DAT_005b0680 >> 0x1f) << 0x18 | DAT_005b0680 >> 8,
-                                  DAT_005b0680 << 0x18) / (longlong)iVar1);
+    DAT_005b06b0 = (int)(CONCAT44(((int)CVector3f_005b0678.z >> 0x1f) << 0x18 |
+                                  (uint)CVector3f_005b0678.z >> 8,(int)CVector3f_005b0678.z << 0x18)
+                        / (longlong)iVar1);
     DAT_005b06b4 = (int)(CONCAT44(((int)DAT_005b0684 >> 0x1f) << 0x18 | DAT_005b0684 >> 8,
                                   DAT_005b0684 << 0x18) / (longlong)iVar1);
     puVar17 = &DAT_005b06ec;
@@ -71,11 +72,11 @@ void __edi_esi_ebx core_dstrender_cpp_renderPerspectiveCorrectTextured16xCached_
     DAT_005b06e4 = iVar5;
     while (uVar8 = (byte)((uint)DAT_005b06b0 >> 0x10),
           uVar11 = (byte)((uint)DAT_005b06b4 >> 0x10), -1 < iVar5 + -0x10) {
-      DAT_005b068c = DAT_005b0680 + _DAT_005b06a4;
+      DAT_005b068c = (float)((int)CVector3f_005b0678.z + _DAT_005b06a4);
       DAT_005b0690 = DAT_005b0684 + _DAT_005b06a8;
       DAT_005b0694 = DAT_005b0688 + DAT_005b06ac;
-      DAT_005b06b8 = (int)(CONCAT44(((int)DAT_005b068c >> 0x1f) << 0x18 | DAT_005b068c >> 8,
-                                    DAT_005b068c * 0x1000000) / (longlong)DAT_005b0694);
+      DAT_005b06b8 = (int)(CONCAT44(((int)DAT_005b068c >> 0x1f) << 0x18 | (uint)DAT_005b068c >> 8,
+                                    (int)DAT_005b068c * 0x1000000) / (longlong)DAT_005b0694);
       DAT_005b06bc = (int)(CONCAT44(((int)DAT_005b0690 >> 0x1f) << 0x18 | DAT_005b0690 >> 8,
                                     DAT_005b0690 * 0x1000000) / (longlong)DAT_005b0694);
       iVar15 = DAT_005b06b8 - DAT_005b06b0 >> 0xc;
@@ -156,7 +157,7 @@ void __edi_esi_ebx core_dstrender_cpp_renderPerspectiveCorrectTextured16xCached_
                       [CONCAT11((char)((uint)(iVar10 + iVar13) >> 8),
                                 (char)((uint)(iVar7 + iVar15) >> 8))]];
       puVar17 = puVar17 + 0x10;
-      DAT_005b0680 = DAT_005b068c;
+      CVector3f_005b0678.z = DAT_005b068c;
       DAT_005b0684 = DAT_005b0690;
       DAT_005b0688 = DAT_005b0694;
       DAT_005b06b0 = DAT_005b06b8;

@@ -5,12 +5,12 @@ FUNCTION SUSPECT BREAKDOWN
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
   0 suspects: 2533 functions
-  1 suspects: 757 functions
-  2 suspects: 374 functions
+  1 suspects: 756 functions
+  2 suspects: 375 functions
   3 suspects: 196 functions
   4 suspects: 152 functions
-  5 suspects: 126 functions
-  6 suspects: 98 functions
+  5 suspects: 127 functions
+  6 suspects: 97 functions
   7 suspects: 75 functions
   8 suspects: 67 functions
   9 suspects: 54 functions
@@ -80,8 +80,8 @@ SUSPECT COUNT DISTRIBUTION
   106 suspects: 2 functions
   112 suspects: 1 functions
   114 suspects: 1 functions
+  115 suspects: 1 functions
   120 suspects: 1 functions
-  122 suspects: 1 functions
   126 suspects: 1 functions
   133 suspects: 2 functions
   134 suspects: 1 functions
@@ -102,7 +102,7 @@ SUSPECT COUNT DISTRIBUTION
 EASY WINS: FUNCTIONS WITH 1 SUSPECT
 ========================================================================================================================
 
-  [warning_overlapping_globals] (274 functions)
+  [warning_overlapping_globals] (273 functions)
   ------------------------------------------------------------
     core_dcamera.cpp_log2Custom_FUN_004448f0           (  5 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
@@ -185,8 +185,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     wincore_winrun.cpp_clearKeypresses_FUN_00558ae0    (  8 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
     wincore_winrun.cpp_setCursorPosition_FUN_00558d60  (  8 lines)
-      /* WARNING: Globals starting with '_' overlap smaller symbol...
-    core_dskybox.cpp_staticInit_FUN_004633d0           (  9 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
     shape_edittool.cpp_CEdScrollBar_clearActiveButtonI (  9 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
@@ -1730,6 +1728,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: engine/special.cpp, Lines: 7, Types: ['warning_indirect_jump', 'warning_jumptable']
   sound_sndmain.cpp_setMemoryBudget_FUN_00527930
     File: sound/sndmain.cpp, Lines: 8, Types: ['undefined_data', 'warning_overlapping_globals']
+  core_dskybox.cpp_staticInit_FUN_004633d0
+    File: core/dskybox.cpp, Lines: 9, Types: ['undefined_data', 'warning_overlapping_globals']
   core_event.cpp_FUN_00481930
     File: core/event.cpp, Lines: 9, Types: ['stack_param']
   sound_snddx.cpp_CDirectSoundDevice_set3DListenerPos_FUN_0052

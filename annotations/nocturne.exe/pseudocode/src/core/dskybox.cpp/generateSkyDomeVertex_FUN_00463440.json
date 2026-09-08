@@ -34,38 +34,32 @@
       {
         "category": "other",
         "column": 35,
-        "line": 498,
+        "line": 497,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 498,
+        "line": 497,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 499,
+        "line": 498,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 499,
+        "line": 498,
         "message": "exponent has no digits"
       },
       {
         "category": "type_error",
         "column": 56,
-        "line": 30,
+        "line": 28,
         "message": "invalid suffix '._0_4_' on floating constant"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 20,
-        "line": 39,
-        "message": "use of undeclared identifier '_DAT_005b0678'"
       }
     ],
     "success": false,
@@ -74,19 +68,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 109,
-    "complexity_score": 117,
+    "complexity_score": 101,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 12,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 42,
-    "suspect_count": 6,
+    "pseudocode_lines": 41,
+    "suspect_count": 5,
     "suspect_types": [
       "undefined_data",
-      "unknown_field",
-      "warning_overlapping_globals"
+      "unknown_field"
     ],
-    "total_lines": 151
+    "total_lines": 150
   },
   "cross_references": [
     {
@@ -166,8 +159,8 @@
     },
     {
       "addr": "005b0678",
-      "name": "DAT_005b0678",
-      "type": "undefined4",
+      "name": "CVector3f_005b0678",
+      "type": "CVector3f",
       "value": null
     },
     {
@@ -371,7 +364,14 @@
         {
           "check_id": "ignoredReturnValue",
           "column": 3,
-          "line": 41,
+          "line": 39,
+          "message": "Return value of function round() is not used.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "ignoredReturnValue",
+          "column": 3,
+          "line": 40,
           "message": "Return value of function round() is not used.",
           "severity": "warning"
         },
@@ -379,13 +379,6 @@
           "check_id": "ignoredReturnValue",
           "column": 3,
           "line": 42,
-          "message": "Return value of function round() is not used.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "ignoredReturnValue",
-          "column": 3,
-          "line": 44,
           "message": "Return value of function round() is not used.",
           "severity": "warning"
         }
@@ -396,16 +389,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 23,
+      "line": 21,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_48 = (float)v_coord * 5.1806537865363094e-315._0_4_ * (float)3.1415926535000001 *",
@@ -413,7 +398,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 41,
+      "line": 39,
       "match": "DAT_005c5034",
       "severity": "mild",
       "text": "(&DAT_005c5034)[vertex_index * 0xc] = iVar1;",
@@ -421,7 +406,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 42,
+      "line": 40,
       "match": "DAT_005c5038",
       "severity": "mild",
       "text": "(&DAT_005c5038)[vertex_index * 0xc] = iVar1;",
@@ -429,7 +414,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 41,
       "match": "DAT_005c503c",
       "severity": "mild",
       "text": "(&DAT_005c503c)[vertex_index * 0xc] = iVar1;",
@@ -437,7 +422,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 42,
       "match": "DAT_005c5040",
       "severity": "mild",
       "text": "(&DAT_005c5040)[vertex_index * 0xc] = 0;",
