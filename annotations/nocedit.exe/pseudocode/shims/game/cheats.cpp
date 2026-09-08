@@ -526,6 +526,24 @@ void applyToEveryHero(int index, int value)
     }
 }
 
+// What the Weather line's state means to the engine. Off is not "clear skies":
+// it is the cheat standing down, so the answer is whatever the set itself asked
+// for — the same value CDemonSet::initScene hands setWeatherType — and a level
+// scripted as a storm keeps its storm.
+EWeatherType weatherTypeFor(int value)
+{
+    if (value == NOCTURNE_CHEAT_WEATHER_RAIN) {
+        return WEATHER_TYPE_RAIN;
+    }
+    if (value == NOCTURNE_CHEAT_WEATHER_SNOW) {
+        return WEATHER_TYPE_SNOW;
+    }
+    if (g_CDemonSetPtr == (CDemonSet *)0) {
+        return WEATHER_TYPE_NONE;
+    }
+    return g_CDemonSetPtr->weather_type;
+}
+
 // Applies one line's current state. The flags follow it in both directions; the
 // grants only hand something over, since there is no un-give — see cheats.h.
 void applyOne(int index, int value)
@@ -542,12 +560,14 @@ void applyOne(int index, int value)
         g_CGamePtr->gratuitous_dismemberment = value;
         break;
     case NOCTURNE_CHEAT_WEATHER:
-        // Off leaves the mission's own weather alone rather than forcing clear
-        // skies over a script that asked for a storm.
-        if ((value != NOCTURNE_CHEAT_WEATHER_OFF) && (g_CWeatherPtr != (CWeather *)0)) {
-            core_weather_cpp_CWeather_setWeatherType_FUN_005ef8c0(
-                g_CWeatherPtr,
-                value == NOCTURNE_CHEAT_WEATHER_RAIN ? WEATHER_TYPE_RAIN : WEATHER_TYPE_SNOW);
+        // Follows the line in both directions like the flags above it, so
+        // cycling back past Snow puts the weather back rather than leaving the
+        // storm running. Off is only ever reached from the menu: the mission
+        // start loop applies armed lines only, which is what leaves a set's own
+        // weather alone there.
+        if (g_CWeatherPtr != (CWeather *)0) {
+            core_weather_cpp_CWeather_setWeatherType_FUN_005ef8c0(g_CWeatherPtr,
+                                                                  weatherTypeFor(value));
         }
         break;
     case NOCTURNE_CHEAT_BIG_HEAD:

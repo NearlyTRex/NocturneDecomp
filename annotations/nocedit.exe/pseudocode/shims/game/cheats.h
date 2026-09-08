@@ -110,7 +110,11 @@
 //                 other. They are one line cycled with left/right, the way
 //                 "Flashlight halo : Off/Simple/Complex" already works. Off
 //                 means "leave the mission's own weather alone", not "force
-//                 clear" — nothing here overrides a script.
+//                 clear" — nothing here overrides a script. At mission start
+//                 that is the apply loop skipping the unarmed line; cycled to
+//                 Off in the menu it is setWeatherType back to the set's own
+//                 weather_type, so the storm the cheat started stops and one a
+//                 script started does not.
 //   Old hat       OLDHAT and BIGHEAD both swap the Stranger's head model, so
 //                 arming both would mean whichever ran last won silently.
 //                 Turning one on turns the other off.
