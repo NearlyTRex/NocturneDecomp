@@ -22,6 +22,8 @@ void __cdecl core_set_cpp_CDemonSet_initScene_FUN_0056aa10(CDemonSet *this_ptr)
   core_level_cpp_CLevelLoader_update_FUN_00504160(g_CLevelLoaderPtr,text,iVar6);
   core_dlight_cpp_resetRestoreMemoryAllocator_FUN_004729c0();
   core_dfilter_cpp_CFilterCache_free_FUN_00470000(g_CFilterCachePtr);
+  core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0
+            (&g_CDemonLightInstance,g_CDemonLightInstance.volumetric_intensity);
   g_DynamicLightCount = 0;
   this_ptr->mirror_glass_actor_count = 0;
   core_dcamera_cpp_CDemonCamera_initLookupTable_FUN_0044c0f0(&g_CDemonCameraInstance);

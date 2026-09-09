@@ -480,11 +480,18 @@
 //   under ASan) that same read is a use-after-free. Seen as CStranger::weapon
 //   still pointing at a CCrossbow that the mission delete queue destroyed
 //   earlier in the same frame, crashing in CStranger::renderOpaque.
+//   The sound mixer holds them too, and reads them from its own thread: a
+//   positional sound keeps a pointer to the emitter's position rather than a
+//   copy of it, so deleting a light gun in mid-charge left the audio thread
+//   re-reading &actor->location.position every mix.
 //   1: shipped behaviour — deleting an actor leaves every reference to it
 //      dangling and relies on the freed memory still being intact.
 //   0: deleteActor first clears the references the heroes hold to that actor
-//      (weapon in hand, both carry hands, the selected weapon/item), so the
-//      pointer is gone before the memory is.
+//      (weapon in hand, both carry hands, the selected weapon/item) and unbinds
+//      any sfx slot that tracks it, so the pointer is gone before the memory is.
+//      The sound is not cut short: the slot keeps the last position it sampled
+//      and finishes there, which is what the original produced by reading the
+//      freed bytes. See shims/game/actor_delete.h.
 //
 //   Override with -DNOCTURNE_AUTHENTIC_ACTOR_DELETE=1.
 #ifndef NOCTURNE_AUTHENTIC_ACTOR_DELETE
@@ -523,6 +530,38 @@
 //   Override with -DNOCTURNE_AUTHENTIC_HERO_WEAPON=1.
 #ifndef NOCTURNE_AUTHENTIC_HERO_WEAPON
 #define NOCTURNE_AUTHENTIC_HERO_WEAPON 0
+#endif
+
+// NOCTURNE_AUTHENTIC_PICKUP_WIELDS
+//   Whether picking a weapon up off the ground draws it.
+//
+//   CInventory::addItem ends with
+//
+//     if (weapon != NULL && this->selected_weapon == NULL)
+//         selectWeapon(this, weapon, 5, 1);
+//
+//   so a weapon collected with the slot empty is selected on the spot, and one
+//   collected while something is already held goes quietly into the pack. The
+//   binary is not consistent about it: a CMelee takes an earlier return, several
+//   lines above that block, and is never selected however empty the slot is. So
+//   the shipped game already has two rules for the same action, and which one
+//   applies depends on the class of what you walked over.
+//   1: shipped behaviour — a gun taken into an empty slot is drawn at once, a
+//      shovel or an axe is not.
+//   0: every weapon behaves the way a melee weapon already does. A pickup is
+//      collected and nothing is drawn; what the hero holds changes only when the
+//      player asks for it. One rule for the whole action rather than one per
+//      class, and a pickup during a fight no longer swaps the weapon out from
+//      under the shot the player was lining up.
+//
+//   The starting weapon is not affected either way. CHero::createDefaultWeapon
+//   and CScat::createDefaultWeapon call selectWeapon themselves after adding it,
+//   as does the hero_weapon.h replacement, so a hero still begins a mission
+//   holding something.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_PICKUP_WIELDS=1.
+#ifndef NOCTURNE_AUTHENTIC_PICKUP_WIELDS
+#define NOCTURNE_AUTHENTIC_PICKUP_WIELDS 0
 #endif
 
 // NOCTURNE_AUTHENTIC_SHEATHED_FIRE
@@ -820,7 +859,10 @@
 //   0: the Options screen carries a CHEATS entry (see shims/cheats.h), an
 //      On/Off list of eight of them. An armed line is applied when a mission
 //      starts, so a cheat can be set once rather than re-entered every reload.
-//      Typing a code still works and is unchanged.
+//      Typing a code still works and is unchanged. One of its lines, Mission
+//      warps, puts a WARPS entry on the in-mission pause menu (shims/warps.h),
+//      which reaches the scripts' own developer warps the way RAISE reaches
+//      them; this flag gates that entry too.
 //
 //   Independent of NOCTURNE_AUTHENTIC_DEV_TOOLS above: the developer-tools menu
 //   and the cheats the editor gates behind developer mode are a different

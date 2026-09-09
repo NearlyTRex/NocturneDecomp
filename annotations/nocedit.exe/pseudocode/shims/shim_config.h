@@ -140,10 +140,22 @@ void nocturne_trigl_envmap_pass_end(void);
 // main.c menu loop.
 #include "net/net_menu.h"
 
+// Clearing what the sound mixer holds when an actor is deleted
+// (nocturne_actor_delete_unbind_sounds), reached from actor.cpp's deleteActor
+// alongside the hero references it already clears. Both halves are gated by
+// NOCTURNE_AUTHENTIC_ACTOR_DELETE.
+#include "game/actor_delete.h"
+
 // The Options screen's CHEATS submenu (nocturne_cheats_menu) and the mission-
 // start application of whatever it armed (nocturne_cheats_apply), reached from
 // the menu and mission TUs. Both are no-ops under NOCTURNE_AUTHENTIC_CHEAT_MENU.
 #include "game/cheats.h"
+
+// The pause menu's WARPS entry (nocturne_warps_*): the developer warps the
+// shipped mission scripts already listen for, raised the way RAISE raises them.
+// Reached from CGame::runGameSession, shown only when the Mission warps line in
+// the cheats menu above is on, and gated by the same NOCTURNE_AUTHENTIC_CHEAT_MENU.
+#include "game/warps.h"
 
 // Host-authoritative cheats (nocturne_net_cheats_*), reached from the netgame
 // TU. A lockstep session cannot carry two cheat lists, so the host's stands in

@@ -380,8 +380,10 @@ LAB_004fe2af:
   this_ptr->item_count = this_ptr->item_count + 1;
   core_mission_cpp_CDemonMission_removeActorFromList_FUN_00523be0(pCVar3,item_actor);
   (*((item_actor->vtable)._ub)->onPickup)(item_actor,(CDemonActor *)this_ptr);
+#if NOCTURNE_AUTHENTIC_PICKUP_WIELDS
   if ((pCVar8 != (CWeapon *)0x0) && (this_ptr->selected_weapon == (CWeapon *)0x0)) {
     core_inv_cpp_CInventory_selectWeapon_FUN_004feb10(this_ptr,(CDemonActor *)pCVar8,5,1);
   }
+#endif
   return 1;
 }

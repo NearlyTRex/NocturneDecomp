@@ -46,6 +46,7 @@ void __cdecl core_actor_cpp_deleteActor_FUN_00408820(CDemonActor *actor_ptr)
         inventory->selected_item = (CDemonActor *)0x0;
       }
     }
+    nocturne_actor_delete_unbind_sounds(actor_ptr);
 #endif
     g_CurrentDebugFilename = "..\\core\\actor.cpp";
     g_CurrentDebugLine = 0x149;

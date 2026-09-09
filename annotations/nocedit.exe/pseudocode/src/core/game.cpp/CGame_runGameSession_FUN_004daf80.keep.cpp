@@ -40,6 +40,11 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
   int net_was_client;
   CDemonActor *net_dbg_focus;
 #endif
+  int quit_item;
+  int skip_item;
+#if !NOCTURNE_AUTHENTIC_CHEAT_MENU
+  int warps_item;
+#endif
 
 #if !NOCTURNE_AUTHENTIC_NETPLAY
   net_respawn_item = -1;
@@ -265,15 +270,31 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
             shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_870.base,pcVar10);
             pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Save game");
             shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_870.base,pcVar10);
+#if !NOCTURNE_AUTHENTIC_CHEAT_MENU
+            warps_item = -1;
+            if (nocturne_warps_available() != 0) {
+              pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Warps");
+              warps_item = local_870.base.item_count;
+              shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_870.base,pcVar10);
+            }
+#endif
+            quit_item = local_870.base.item_count;
             pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Quit");
             shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_870.base,pcVar10);
+            skip_item = -1;
             if (this_ptr->letterbox_mode == 1) {
+              skip_item = local_870.base.item_count;
               pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                                   ("Skip cinematic.");
               shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_870.base,pcVar10);
             }
             if (this_ptr->letterbox_mode != 0) {
               shape_edittool_cpp_CPickList_enableItem_FUN_004a5410(&local_870,3,0);
+#if !NOCTURNE_AUTHENTIC_CHEAT_MENU
+              if (warps_item != -1) {
+                shape_edittool_cpp_CPickList_enableItem_FUN_004a5410(&local_870,warps_item,0);
+              }
+#endif
             }
             uVar9 = 0;
             iVar5 = -1;
@@ -304,7 +325,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
             if (iVar5 == 3) {
               core_game_cpp_CGame_saveGame_FUN_004e0cd0(this_ptr,(char *)0x0);
             }
-            if (iVar5 == 4) {
+            if (iVar5 == quit_item) {
               pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Quit");
               iVar7 = shape_edittool_cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060
                                 (g_CEditorToolsPtr,pcVar10);
@@ -313,7 +334,13 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
                 goto LAB_004db434;
               }
             }
-            if (iVar5 == 5) {
+#if !NOCTURNE_AUTHENTIC_CHEAT_MENU
+            if ((warps_item != -1) && (iVar5 == warps_item)) {
+              nocturne_warps_menu();
+              core_set_cpp_CDemonSet_renderScene_FUN_0056c1a0(g_CDemonSetPtr,0);
+            }
+#endif
+            if ((skip_item != -1) && (iVar5 == skip_item)) {
               iVar5 = core_script_cpp_CScript_skipCinematic_FUN_005602e0(g_CScriptPtr);
               this_ptr->cutscene_skippable = (uint)(iVar5 == 0);
             }

@@ -14,7 +14,9 @@ void __cdecl core_dfilter_cpp_CDemonFilter_load_FUN_004702f0(CDemonFilter *this_
   int iVar3;
   _FILE *file;
   int iVar4;
-  
+  int old_byte_count;
+
+  old_byte_count = this_ptr->size * this_ptr->count;
   p_Var2 = engine_dosio_cpp_getFile_FUN_00481a50("art",filename,"rb");
   if (p_Var2 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\dfilter.cpp";
@@ -43,7 +45,10 @@ void __cdecl core_dfilter_cpp_CDemonFilter_load_FUN_004702f0(CDemonFilter *this_
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("CDemonFilter::load - Bad filter size %d",this_ptr->count);
   }
-  core_dfilter_cpp_CDemonFilter_allocMemory_FUN_00470260(this_ptr);
+  if ((this_ptr->data_buffer == (uchar *)0x0) ||
+      (this_ptr->size * this_ptr->count != old_byte_count)) {
+    core_dfilter_cpp_CDemonFilter_allocMemory_FUN_00470260(this_ptr);
+  }
   file = engine_dosio_cpp_getFile_FUN_00481a50("art",filename,"rb");
   if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\dfilter.cpp";

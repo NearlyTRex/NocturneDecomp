@@ -90,7 +90,28 @@ const CheatDef kCheats[NOCTURNE_CHEAT_COUNT] = {
     // has no engine flag to arm, so this is polled in place by
     // CInventory::updateInventory rather than applied at mission start.
     { (char *)"Infinite battery",         (char *)"infiniteBattery",  CHEAT_PAGE_GAMEPLAY, 2 },
+
+    // No cheat code either: the shipped way to raise an event is the RAISE
+    // dialog, which is behind developer mode and wants the name typed.
+    { (char *)"Easter eggs",              (char *)"easterEggs",       CHEAT_PAGE_GAMEPLAY, 2 },
+
+    // Puts WARPS on the pause menu. Nothing is applied from here — see the
+    // visibility-switch note in cheats.h.
+    { (char *)"Mission warps",            (char *)"missionWarps",     CHEAT_PAGE_GAMEPLAY, 2 },
 };
+
+// The event names the Easter eggs line raises at mission start, as persistent
+// events. A mission that does not read a name simply never asks for it, so the
+// whole list is armed every time rather than switched on the current set.
+//
+// EVERY ENTRY MUST BE READ BY A GUARDED SCRIPT TEST — `if (Name && !DidIt)` —
+// see the note in cheats.h. Recovered from the shipped .SCR/.MSN data with
+// scripts/Python/extract_pod.py.
+char *kEasterEggEvents[] = {
+    (char *)"EasterEggSex",
+};
+
+#define EASTER_EGG_EVENT_COUNT ((int)(sizeof(kEasterEggEvents) / sizeof(kEasterEggEvents[0])))
 
 char *kPageTitles[CHEAT_PAGE_COUNT] = {
     (char *)"Gameplay",
@@ -548,6 +569,8 @@ EWeatherType weatherTypeFor(int value)
 // grants only hand something over, since there is no un-give — see cheats.h.
 void applyOne(int index, int value)
 {
+    int i;
+
     switch (index) {
     case NOCTURNE_CHEAT_GOD_MODE:
         g_CGamePtr->god_mode_enabled = value;
@@ -619,9 +642,24 @@ void applyOne(int index, int value)
         break;
 
     case NOCTURNE_CHEAT_INF_BATTERY:
-        // Nothing to apply — updateInventory reads it through
-        // nocturne_cheat_active every frame. Listed so the switch stays a
-        // complete account of all thirty-one lines.
+    case NOCTURNE_CHEAT_WARPS:
+        // Nothing to apply — both are read where they take effect through
+        // nocturne_cheat_active: updateInventory every frame for the battery,
+        // and the pause menu as it is built for the warps. Listed so the switch
+        // stays a complete account of every line.
+        break;
+
+    case NOCTURNE_CHEAT_EASTER_EGGS:
+        // Only in the on direction: a name on this list may equally have been
+        // raised by the mission itself, and removing it would undo the player's
+        // own progress — see cheats.h. Re-arming one already present is a no-op
+        // inside addOrRemovePersistentEvent.
+        if ((value != 0) && (g_CEventListPtr != (CEventList *)0)) {
+            for (i = 0; i < EASTER_EGG_EVENT_COUNT; i++) {
+                core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_004b0330(
+                    g_CEventListPtr, kEasterEggEvents[i], 1);
+            }
+        }
         break;
 
     // The hero-scoped lines, named rather than swept up by a default: an index

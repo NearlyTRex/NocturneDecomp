@@ -12,13 +12,13 @@ int __cdecl core_filmreel_cpp_CFilmProjector_renderOpaque_FUN_004bed00(CFilmProj
 {
   CBoundingBox3D *this_ptr_00;
   int iVar1;
-  float fStack_3c;
+  CBoundingBox3D CStack_3c;
   CVector3f CStack_24;
   CVector3f CStack_18;
-  
+
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
   this_ptr_00 = (*((this_ptr->base).base.vtable._ub)->getBoundingBox)
-                          ((CDemonActor *)this_ptr,(CBoundingBox3D *)&fStack_3c);
+                          ((CDemonActor *)this_ptr,&CStack_3c);
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
   if (iVar1 == 0) {
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);
@@ -29,7 +29,7 @@ int __cdecl core_filmreel_cpp_CFilmProjector_renderOpaque_FUN_004bed00(CFilmProj
   CStack_18.y = 0.0f;
   CStack_24.x = 0.0f;
   CStack_24.z = 0.0f;
-  CStack_24.y = 0x40000000;
+  CStack_24.y = 2.0f;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
             (g_CDemonRendererPtr2,&g_ZeroVector.f,&CStack_24);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0

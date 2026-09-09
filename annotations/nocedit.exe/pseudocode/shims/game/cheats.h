@@ -119,6 +119,46 @@
 //                 arming both would mean whichever ran last won silently.
 //                 Turning one on turns the other off.
 //
+// EASTER EGGS IS NOT A FLAG BUT A LIST OF EVENT NAMES. Every other line writes
+// a CGame field or hands the hero an item. This one raises script events, which
+// is the fourth thing a shipped cheat could do and the one with no engine state
+// behind it: RAISE (developer mode only) opens a text box, runs the typed
+// string through CEventList::validateCommands and then executeCommands, so a
+// bare name is raised as an event and flagOn(x) / gameFlagOn(x) set a flag. The
+// scripts read all three the same way — CEventList::resolveVariable answers
+// true for a name in current_events, persistent_events, game_flags or timers,
+// case-insensitively.
+//
+// The line arms names from kEasterEggEvents in cheats.cpp as PERSISTENT events
+// (flagOn), not one-frame raises. A raise lives for exactly one tick:
+// CEventList::process moves the pending queue into current_events and clears
+// it, and CGame::process steps the script BEFORE that, so a raise issued from
+// here would have to land on the one script tick that reads it. A persistent
+// event stays true, and every name on the list is read by a script guarded as
+// `if (Name && !AlreadyDidIt)`, so it fires exactly once anyway. THAT GUARD IS
+// THE ENTRY REQUIREMENT: FOREST.SCR's developer warps are `if (cheatpits)
+// warpto(...)` with nothing to stop them, and arming one of those as a
+// persistent event would re-warp the player every tick, forever. Check the
+// script before adding a name.
+//
+// Off does not retract them, for the same reason the grants do not: the flag
+// may equally have been raised by the mission itself (a door the player really
+// opened), and removing it would undo the player's own progress. Turning the
+// line off only stops it being armed at the next mission start.
+//
+// Nothing here bypasses a content setting. The one shipped easter egg the list
+// arms goes through the script's own `if (isNudityEnabled())`, which reads
+// g_CGamePtr->nudity_flag — the Graphics option, forced off by quimbyFlag — so
+// with nudity off the flag is armed and the script declines it.
+//
+// MISSION WARPS IS A VISIBILITY SWITCH, NOT A CHEAT. The scripts' developer
+// warps are one-shot actions on the mission that is running, so they belong on
+// the pause menu, next to the other things that act on it, and not on a page of
+// presets armed for the mission that is about to start. This line only decides
+// whether that pause entry appears — nocturne_warps_available reads it through
+// nocturne_cheat_active, the same way Infinite battery is read. The warps
+// themselves live in warps.h.
+//
 // The ALLWEAPONS cheat's own side effects are dropped: it forces god mode on
 // and refills health, and a line reading "God mode : Off" must not be
 // contradicted by the line below it. The Debug page likewise applies its
@@ -190,7 +230,14 @@ extern "C" {
 // packet is positional. cheatsPage() collects by page rather than by range, so
 // it still appears at the end of the Gameplay page.
 #define NOCTURNE_CHEAT_INF_BATTERY      30
-#define NOCTURNE_CHEAT_COUNT            31
+// Also appended, for the same reason. Raises a list of event names rather than
+// writing an engine field — see the easter-egg note above.
+#define NOCTURNE_CHEAT_EASTER_EGGS      31
+// Appended too, and the second line with nothing to apply: it decides whether
+// the pause menu offers WARPS, so it is read where that menu is built rather
+// than written into engine state at mission start. See shims/game/warps.h.
+#define NOCTURNE_CHEAT_WARPS            32
+#define NOCTURNE_CHEAT_COUNT            33
 
 // The weather line's states, in cycle order.
 #define NOCTURNE_CHEAT_WEATHER_OFF  0
