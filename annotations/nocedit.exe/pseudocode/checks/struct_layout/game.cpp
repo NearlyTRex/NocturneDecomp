@@ -3564,8 +3564,8 @@ static_assert(__builtin_offsetof(CGame, debug_toggle_flag) == 488,
               "offsetof(CGame, debug_toggle_flag) != 488");
 static_assert(__builtin_offsetof(CGame, time_scale_factor) == 492,
               "offsetof(CGame, time_scale_factor) != 492");
-static_assert(__builtin_offsetof(CGame, scripted_sequence_active) == 496,
-              "offsetof(CGame, scripted_sequence_active) != 496");
+static_assert(__builtin_offsetof(CGame, suppress_set_geometry) == 496,
+              "offsetof(CGame, suppress_set_geometry) != 496");
 static_assert(__builtin_offsetof(CGame, render_mode) == 500,
               "offsetof(CGame, render_mode) != 500");
 static_assert(__builtin_offsetof(CGame, editor_tools_enabled) == 504,
@@ -3600,8 +3600,8 @@ static_assert(__builtin_offsetof(CGame, allow_enemy_attack_flag) == 560,
               "offsetof(CGame, allow_enemy_attack_flag) != 560");
 static_assert(__builtin_offsetof(CGame, is_loading) == 564,
               "offsetof(CGame, is_loading) != 564");
-static_assert(__builtin_offsetof(CGame, allow_hero_controls_flag) == 568,
-              "offsetof(CGame, allow_hero_controls_flag) != 568");
+static_assert(__builtin_offsetof(CGame, hero_controls_blocked) == 568,
+              "offsetof(CGame, hero_controls_blocked) != 568");
 static_assert(__builtin_offsetof(CGame, is_processing) == 572,
               "offsetof(CGame, is_processing) != 572");
 static_assert(__builtin_offsetof(CGame, goggles_active) == 576,
