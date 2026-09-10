@@ -467,7 +467,7 @@ LAB_0050064d:
                     iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
                                       (0x01C03A10,local_b4c);
                     _DAT_01e56c24 = (uint)(iVar6 == 0);
-                    g_CGame_PTR_005b9354->allow_hero_controls_flag = _DAT_01e56c24;
+                    g_CGame_PTR_005b9354->hero_controls_blocked = _DAT_01e56c24;
                   }
                 }
                 else {
@@ -1652,7 +1652,7 @@ LAB_005021b8:
                                                     pCVar4->allow_damage_flag = (uint)(iVar11 == 0);
                                                     pCVar4->allow_enemy_attack_flag =
                                                          (uint)(pCVar4->letterbox_mode == 0);
-                                                    pCVar4->allow_hero_controls_flag =
+                                                    pCVar4->hero_controls_blocked =
                                                          pCVar4->letterbox_mode;
                                                     this_ptr->saved_cmd_index = -1;
                                                     pCVar5 = g_CDemonSet_PTR_005be368;

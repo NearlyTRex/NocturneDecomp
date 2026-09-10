@@ -67,6 +67,7 @@
 // | `NOCTURNE_AUTHENTIC_OPTIONS_RESUMES_GAME` | 0 | choice | leaving Options returns to the pause menu |
 // | `NOCTURNE_AUTHENTIC_MENU_RESOLUTION` | 0 | choice | a picked resolution applies straight away |
 // | `NOCTURNE_AUTHENTIC_SAVE` | 1 | choice | saves are written as readable plain text |
+// | `NOCTURNE_AUTHENTIC_AUTOMAP` | 0 | addition | a bindable Doom-style map that fills in as you explore |
 // | `NOCTURNE_AUTHENTIC_GAMEPAD` | 0 | addition | SDL's game-controller layer instead of joyGetPos |
 // | `NOCTURNE_AUTHENTIC_WINDOW_MESSAGES` | 0 | addition | the window proc sees a mouse wheel |
 // | `NOCTURNE_AUTHENTIC_CHEAT_MENU` | 0 | addition | a CHEATS entry on Options, and WARPS on pause |
@@ -802,6 +803,32 @@
 // Additions. 1 is the absence of the feature rather than a behaviour the
 // original had, so these are the flags whose 1 side costs nothing to keep
 // faithful -- there is nothing to be faithful to.
+
+// NOCTURNE_AUTHENTIC_AUTOMAP
+//   Whether the game has a map. Neither shipped binary did — there is no map
+//   item, no map screen, and nothing in any script refers to one.
+//   1: shipped behaviour — no map.
+//   0: a bindable action opens a Doom-style line map of the level, drawn from
+//      the collision mesh and filling in as the player explores. Walls at his
+//      own storey are bright and everything else he has seen is dimmed, so
+//      changing floor does not erase what he learned. Panning, zooming and
+//      re-centring reuse his existing movement bindings, which is what makes
+//      the whole thing work on a gamepad without a second set of controls.
+//      Past a share of the level explored the fog lifts and the rest is shown.
+//
+//   What has been explored is saved, as a block appended after the save's last
+//   section. Older builds never reach it — CGame::loadGame parses sequentially
+//   against counts it already holds, its final section is one fixed-length
+//   line, and its version gate is a minimum with no upper bound — so no save
+//   version changes and saves stay loadable both ways.
+//
+//   See research/20-automap/ for the extraction rules, which are less obvious
+//   than they look, and automap.h for the API.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_AUTOMAP=1.
+#ifndef NOCTURNE_AUTHENTIC_AUTOMAP
+#define NOCTURNE_AUTHENTIC_AUTOMAP 0
+#endif
 
 // NOCTURNE_AUTHENTIC_GAMEPAD
 //   Which controller the game can be played with.

@@ -706,6 +706,126 @@ extern "C" int nocturne_dump_collision_grid(const char *path, CVector3f *pos)
 }
 
 // =============================================================================
+// World geometry — the whole collision mesh, for offline work
+// =============================================================================
+//
+// Everything CDemonRaytrace holds about the level's shape, written out so it can
+// be examined without the game running: the grid's extent and the entire
+// triangle list in world space, each with its normal and dominant axis.
+//
+// Deliberately dumb — no classification, no projection, no filtering. The point
+// is to get the mesh out intact so decisions about what counts as a wall, how to
+// handle stacked floors, and what a level looks like from above can be made and
+// re-made offline against one capture, rather than by rebuilding the game once
+// per idea.
+//
+// Sizeable: one line per triangle, so a level of 40k triangles is a few MB.
+
+extern "C" int nocturne_dump_geometry(const char *path)
+{
+    if (path == nullptr) return -1;
+    FILE *f = std::fopen(path, "w");
+    if (f == nullptr) return -1;
+
+    CDemonRaytrace *rt = &g_CDemonRaytraceInstance;
+
+    std::fprintf(f, "=== Nocturne World Geometry Dump ===\n");
+    write_timestamp(f);
+    std::fprintf(f, "\n[grid]\n");
+    std::fprintf(f, "bbox_min %.4f %.4f %.4f\n",
+                 rt->bbox_min.x, rt->bbox_min.y, rt->bbox_min.z);
+    std::fprintf(f, "bbox_max %.4f %.4f %.4f\n",
+                 rt->bbox_max.x, rt->bbox_max.y, rt->bbox_max.z);
+    std::fprintf(f, "cell_size %.4f %.4f %.4f\n",
+                 rt->cell_size.x, rt->cell_size.y, rt->cell_size.z);
+    std::fprintf(f, "grid_coord %d %d %d\n",
+                 rt->grid_coord.x, rt->grid_coord.y, rt->grid_coord.z);
+    std::fprintf(f, "triangle_count %d\n", rt->triangle_count);
+
+    // Where the hero is standing, so the offline pass can pick a height band
+    // around him and draw the floor he is actually on.
+    CDemonActor *hero = nullptr;
+    if (g_LocalHeroIndex >= 0 && g_LocalHeroIndex < 4) {
+        hero = (CDemonActor *)g_HeroActors[g_LocalHeroIndex];
+    }
+    if (hero != nullptr) {
+        std::fprintf(f, "hero %.4f %.4f %.4f area %d\n",
+                     hero->location.position.x,
+                     hero->location.position.y,
+                     hero->location.position.z,
+                     hero->location.area_id);
+    } else {
+        std::fprintf(f, "hero none\n");
+    }
+
+    // Where the triangles actually live, which is NOT where the field names
+    // suggest. CDemonRaytrace has two adjacent cube pointers:
+    //
+    //   cube_list  SVoxelCubeMetadata*  written by allocCubeList/loadBinary,
+    //              i.e. the .GEO import path. Null in a running level.
+    //   cube_data  CDemonCube*          what getCubeAt indexes and therefore
+    //              what every collision query actually reads. This is the one.
+    //
+    // A CDemonCube owns its own vertex_buffer, and its triangles are
+    // CDemonCubeTriangle = an STriangleRef holding three POINTERS into that
+    // buffer, plus a normal, plus dominant_axis. So a triangle is read by
+    // dereferencing, not by copying a vertex triple.
+    const int cubes = rt->grid_coord.x * rt->grid_coord.y * rt->grid_coord.z;
+    std::fprintf(f, "cube_count %d\n", cubes);
+    std::fprintf(f, "cube_data %s\n", rt->cube_data ? "present" : "NULL");
+    std::fprintf(f, "cube_list %s\n", rt->cube_list ? "present" : "NULL");
+
+    if (rt->cube_data == nullptr) {
+        std::fprintf(f, "\n# NO GEOMETRY RESIDENT — cube_data is null, so no\n"
+                        "# collision query has anything to read. Is a level loaded?\n");
+        std::fclose(f);
+        return 1;   // distinct from 0, so a caller can tell empty from written
+    }
+
+    int total = 0, with_tris = 0;
+    for (int i = 0; i < cubes; i++) {
+        if (rt->cube_data[i].triangle_buffer != nullptr &&
+            rt->cube_data[i].triangle_count > 0) {
+            total += rt->cube_data[i].triangle_count;
+            with_tris++;
+        }
+    }
+    std::fprintf(f, "cubes_with_triangles %d\n", with_tris);
+    std::fprintf(f, "resident_triangles %d\n", total);
+
+    // cube_index is kept so the offline pass can map a triangle back to the
+    // cell that owns it, which is the unit an explored-map would reveal.
+    // Triangles are stored per cube, so one that straddles a boundary appears
+    // in each cube it touches — the offline dedupe collapses those.
+    std::fprintf(f, "\n[triangles]\n");
+    std::fprintf(f, "# x1 y1 z1  x2 y2 z2  x3 y3 z3  nx ny nz  "
+                    "dominant_axis flags cube_index\n");
+    for (int i = 0; i < cubes; i++) {
+        const CDemonCube *c = &rt->cube_data[i];
+        if (c->triangle_buffer == nullptr) continue;
+        for (int j = 0; j < c->triangle_count; j++) {
+            const CDemonCubeTriangle *ct = &c->triangle_buffer[j];
+            const CVector3f *v0 = ct->triangle.vertices[0];
+            const CVector3f *v1 = ct->triangle.vertices[1];
+            const CVector3f *v2 = ct->triangle.vertices[2];
+            if (v0 == nullptr || v1 == nullptr || v2 == nullptr) continue;
+            std::fprintf(f,
+                "%.4f %.4f %.4f  %.4f %.4f %.4f  %.4f %.4f %.4f  "
+                "%.4f %.4f %.4f  %d %d %d\n",
+                v0->x, v0->y, v0->z,
+                v1->x, v1->y, v1->z,
+                v2->x, v2->y, v2->z,
+                ct->triangle.normal.x, ct->triangle.normal.y,
+                ct->triangle.normal.z,
+                (int)ct->dominant_axis, 0, i);
+        }
+    }
+
+    std::fclose(f);
+    return 0;
+}
+
+// =============================================================================
 // Lighting / vertex pipeline state
 // =============================================================================
 
@@ -1159,6 +1279,7 @@ extern "C" int nocturne_dump_ground_probes(const char *path, CVector3f *pos) {
 extern "C" int nocturne_dump_collision_grid(const char *path, CVector3f *pos) {
     (void)path; (void)pos; return -1;
 }
+extern "C" int nocturne_dump_geometry(const char *path) { (void)path; return -1; }
 extern "C" void nocturne_auto_capture(const char *path_template,
                                        int every_n, int max_count, int reset) {
     (void)path_template; (void)every_n; (void)max_count; (void)reset;

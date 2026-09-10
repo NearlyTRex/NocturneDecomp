@@ -15,7 +15,7 @@ void __cdecl core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_00570770(CDemonSet 
   int iVar2;
   SMRGLPrimitiveQuadIndex local_38;
   
-  if (g_CGamePtr->scripted_sequence_active == 0) {
+  if (g_CGamePtr->suppress_set_geometry == 0) {
     if ((g_CGamePtr->render_mode != 0) &&
        (iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
        iVar1 == 0)) {

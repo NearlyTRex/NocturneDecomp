@@ -29,7 +29,7 @@ CGame * __cdecl core_game_cpp_CGame_ctor_FUN_0049a650(CGame *this_ptr)
   this_ptr->subtitle_system_enabled = 0;
   this_ptr->gratuitous_dismemberment = 0;
   this_ptr->time_scale_factor = 1.0;
-  this_ptr->scripted_sequence_active = 0;
+  this_ptr->suppress_set_geometry = 0;
   this_ptr->render_mode = 0;
   this_ptr->editor_tools_enabled = 0;
   this_ptr->wait_for_keypress = 0;
@@ -50,7 +50,7 @@ CGame * __cdecl core_game_cpp_CGame_ctor_FUN_0049a650(CGame *this_ptr)
   this_ptr->allow_damage_flag = 1;
   this_ptr->allow_enemy_attack_flag = 1;
   this_ptr->is_loading = 0;
-  this_ptr->allow_hero_controls_flag = 0;
+  this_ptr->hero_controls_blocked = 0;
   this_ptr->bitmap_filename[0] = '\0';
   this_ptr->bitmap_width = 0;
   this_ptr->bitmap_height = 0;

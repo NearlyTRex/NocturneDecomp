@@ -17,7 +17,7 @@
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CGame g_CGameInstance
-;   undefined4 g_CGameInstance.scripted_sequence_active
+;   undefined4 g_CGameInstance.suppress_set_geometry
 ;   undefined4 g_CGameInstance.render_mode
 ;
 ; Called Functions:
@@ -33,7 +33,7 @@ section .text
         ;   Label: core_set.cpp_CDemonSet_renderFaceListOrEnvMap_FUN_00570870
     PUSH EBP                            ; 00570871
     MOV EAX,[0x0067b654]                ; 00570872 | g_CGameInstance | g_CGamePtr
-    CMP dword ptr [EAX + 0x1f0],0x0     ; 00570877 | g_CGameInstance.scripted_sequence_active
+    CMP dword ptr [EAX + 0x1f0],0x0     ; 00570877 | g_CGameInstance.suppress_set_geometry
     JNZ 0x005708ba                      ; 0057087e
         ;   XREF to: 005708ba (CONDITIONAL_JUMP)  ; LAB_005708ba
     CMP dword ptr [EAX + 0x1f4],0x0     ; 00570880 | g_CGameInstance.render_mode

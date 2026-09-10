@@ -84,7 +84,7 @@ const CheatDef kCheats[NOCTURNE_CHEAT_COUNT] = {
     { (char *)"Memory debug",             (char *)"memoryDebug",      CHEAT_PAGE_DEBUG,    2 }, // MEMORY
     { (char *)"Sound debug",              (char *)"soundDebug",       CHEAT_PAGE_DEBUG,    2 }, // SFXDEBUG
     { (char *)"Environment mapping",      (char *)"renderMode",       CHEAT_PAGE_DEBUG,    2 }, // T2000
-    { (char *)"Scripted sequence",        (char *)"scriptedSequence", CHEAT_PAGE_DEBUG,    2 }, // NOD3D
+    { (char *)"Hide set geometry",        (char *)"hideSetGeometry",  CHEAT_PAGE_DEBUG,    2 }, // NOD3D
 
     // No shipped cheat code of its own: the flashlight/goggles battery drain
     // has no engine flag to arm, so this is polled in place by
@@ -637,8 +637,8 @@ void applyOne(int index, int value)
     case NOCTURNE_CHEAT_RENDER_MODE:
         g_CGamePtr->render_mode = value;
         break;
-    case NOCTURNE_CHEAT_SCRIPT_SEQUENCE:
-        g_CGamePtr->scripted_sequence_active = value;
+    case NOCTURNE_CHEAT_HIDE_SET_GEOMETRY:
+        g_CGamePtr->suppress_set_geometry = value;
         break;
 
     case NOCTURNE_CHEAT_INF_BATTERY:

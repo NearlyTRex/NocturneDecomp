@@ -63,7 +63,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
   this_ptr->screen_clear_condition = 0;
   this_ptr->console_enabled = 0;
   this_ptr->time_scale_factor = 1.0;
-  this_ptr->scripted_sequence_active = 0;
+  this_ptr->suppress_set_geometry = 0;
   this_ptr->render_mode = 0;
   this_ptr->editor_tools_enabled = 0;
   this_ptr->bitmap_filename[0] = '\0';
@@ -72,7 +72,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
   this_ptr->is_processing = 0;
   this_ptr->cutscene_skippable = 0;
   this_ptr->skip_frame_render = 0;
-  this_ptr->allow_hero_controls_flag = 0;
+  this_ptr->hero_controls_blocked = 0;
   this_ptr->profile_mode = 0;
   this_ptr->show_customizable_keys = 0;
   this_ptr->goggles_active = 0;

@@ -25,6 +25,12 @@ void __cdecl core_game_cpp_CGame_processKeyboardControls_FUN_004dc3e0(CGame *thi
   float fVar2;
   float *pfVar1;
 
+#if !NOCTURNE_AUTHENTIC_AUTOMAP
+  if (nocturne_automap_owns_controls()) {
+    memset(player_control, 0, sizeof(*player_control));
+    return;
+  }
+#endif
   if (this_ptr->screen_clear_condition != 0) {
     (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIM_LBUTTON);
     (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIM_RBUTTON);

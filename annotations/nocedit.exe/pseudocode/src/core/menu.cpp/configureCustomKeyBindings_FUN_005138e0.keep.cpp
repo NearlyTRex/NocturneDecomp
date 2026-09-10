@@ -371,6 +371,19 @@ LAB_0051390e:
     g_CustomKeyPointers[g_CustomKeyCount] = piVar28;
     strcpy(pcVar32, pcVar3);
     g_CustomKeyCount = g_CustomKeyCount + 1;
+#if !NOCTURNE_AUTHENTIC_AUTOMAP
+    pcVar3 = nocturne_automap_key_label();
+    piVar28 = nocturne_automap_key_binding();
+    if (0x1d < g_CustomKeyCount) {
+      g_CurrentFilename = "..\\core\\menu.cpp";
+      g_CurrentLineNumber = 2091;
+      core_main_c_displayErrorAndQuit_FUN_00506f10("Too many custom keys!");
+    }
+    pcVar32 = g_CustomKeyNames[g_CustomKeyCount];
+    g_CustomKeyPointers[g_CustomKeyCount] = piVar28;
+    strcpy(pcVar32, pcVar3);
+    g_CustomKeyCount = g_CustomKeyCount + 1;
+#endif
     engine_special_cpp_clearScreen_FUN_005b3e70();
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_a7c);

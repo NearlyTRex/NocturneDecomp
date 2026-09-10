@@ -113,6 +113,9 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
       }
     }
     core_game_cpp_CGame_updateDT_FUN_004d7d90(this_ptr);
+#if !NOCTURNE_AUTHENTIC_AUTOMAP
+    nocturne_automap_update();
+#endif
     core_netgame_cpp_CNetGame_processServerFrame_FUN_00543150(g_CNetGamePtr);
     if (this_ptr->goggles_active == 0) {
       core_set_cpp_CDemonSet_renderStaticLights_FUN_0056be80(g_CDemonSetPtr);
@@ -144,6 +147,9 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
         core_set_cpp_CDemonSet_renderLightDebugView_FUN_0056d190(g_CDemonSetPtr);
       }
       core_game_cpp_CGame_drawScreenBorder_FUN_004d7e50(this_ptr);
+#if !NOCTURNE_AUTHENTIC_AUTOMAP
+      nocturne_automap_render();
+#endif
       if (g_MovieRecordingArmed != 0) {
         iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
         if ((iVar5 != 0) &&

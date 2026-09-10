@@ -73,6 +73,12 @@ void __cdecl core_inivar_cpp_readIniData_FUN_004fbd90(void)
             (&local_204,"keyBackup",&g_CGamePtr->key_backup);
   engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30(&local_204,"keyRun",&g_CGamePtr->key_run)
   ;
+#if !NOCTURNE_AUTHENTIC_AUTOMAP
+  engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30(&local_204,"keyMap",
+                                                 nocturne_automap_key_binding());
+  engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30(&local_204,"mapZoom",
+                                                 nocturne_automap_zoom_setting());
+#endif
   engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30
             (&local_204,"keyStrafe",&g_CGamePtr->key_strafe);
   engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30

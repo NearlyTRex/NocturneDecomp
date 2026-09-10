@@ -11,7 +11,7 @@ void __cdecl core_set_cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_00570
 {
   int iVar1;
   
-  if (g_CGamePtr->scripted_sequence_active == 0) {
+  if (g_CGamePtr->suppress_set_geometry == 0) {
     if (g_CDemonRendererPtr2->advanced_culling_enabled == 0) {
       iVar1 = 0;
       if (0 < count) {

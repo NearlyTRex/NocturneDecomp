@@ -11,7 +11,7 @@ void __cdecl core_set_cpp_CDemonSet_renderPrimitiveList_FUN_0050df40(CDemonSet *
 {
   int iVar1;
   
-  if (g_CGame_PTR_005b9354->scripted_sequence_active == 0) {
+  if (g_CGame_PTR_005b9354->suppress_set_geometry == 0) {
     if (g_CDemonRenderer_PTR_005ae704->advanced_culling_enabled == 0) {
       iVar1 = 0;
       if (0 < primitive_count) {

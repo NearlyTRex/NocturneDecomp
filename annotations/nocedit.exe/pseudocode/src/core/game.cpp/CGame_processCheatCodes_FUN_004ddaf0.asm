@@ -2716,7 +2716,7 @@ section .text
     CALL shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0 ; 004df732
         ;   XREF to: 004a00f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, int enable_range_check, ...)
     ADD ESP,0x1c                        ; 004df737
-    PUSH 0x62c3c7                       ; 004df73a | g_CheatStr_ToggleCutscene
+    PUSH 0x62c3c7                       ; 004df73a | g_CheatStr_NoD3D
         ;   Label: LAB_004df73a
     CALL support_newmsg.cpp_decryptMessage_FUN_00544270 ; 004df73f
         ;   XREF to: 00544270 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_00544270(char * encrypted_msg)

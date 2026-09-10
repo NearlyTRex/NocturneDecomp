@@ -24,7 +24,7 @@ void __cdecl core_game_cpp_CGame_playerControls_FUN_0049e7d0(CGame *this_ptr)
     core_game_cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0(this_ptr);
     return;
   }
-  if ((this_ptr->is_paused == 0) && (this_ptr->allow_hero_controls_flag == 0)) {
+  if ((this_ptr->is_paused == 0) && (this_ptr->hero_controls_blocked == 0)) {
     player_control = core_netgame_cpp_CNetGame_getMyControls_FUN_004eda40(g_CNetGame_PTR_005bdee0);
     EVar1 = this_ptr->game_control;
     if (EVar1 == CONTROL_MODE_KEYBOARD) {

@@ -145,6 +145,12 @@ void nocturne_trigl_envmap_pass_end(void);
 // the menu and mission TUs. Both are no-ops under NOCTURNE_AUTHENTIC_CHEAT_MENU.
 #include "game/cheats.h"
 
+// The automap (nocturne_automap_*), reached from the game TU for its per-frame
+// update and draw, from the set TU to rebuild when a level's geometry lands,
+// from the menu TU for its key binding, and from the save/load keeps for the
+// explored state. Every entry point is inert under NOCTURNE_AUTHENTIC_AUTOMAP.
+#include "game/automap.h"
+
 // The pause menu's WARPS entry (nocturne_warps_*): the developer warps the
 // shipped mission scripts already listen for, raised the way RAISE raises them.
 // Reached from CGame::runGameSession, shown only when the Mission warps line in

@@ -468,6 +468,37 @@ the same run — two of that session's conclusions turned out to be smaller than
 
 ---
 
+### [20-automap/](20-automap/)
+
+A Doom-style line map that fills in as the player walks: design, measured numbers, and the
+extraction rules — including the ones that look right and are not.
+
+| File | Description |
+|------|-------------|
+| `README.md` | Where the geometry is, wall/floor classification, banding, reveal, cost, tools |
+
+**Key outcomes:**
+- **Feasible — a level reads as a floorplan.** Measured on `CASTLE.geo`: curtain walls, towers,
+  courtyards and interior rooms are legible from above with no authoring work. Not obvious in
+  advance, since the game was composed as fixed camera views over pre-rendered backdrops.
+- **The geometry is in `CDemonRaytrace::cube_data`, not `cube_list` or `triangle_list`.** Two
+  adjacent cube pointers with misleading names; `cube_list` is the `.GEO` import path and is
+  NULL at runtime, so reading it concludes the level has no collision. Triangles are
+  `STriangleRef`s holding pointers into each cube's own vertex buffer, duplicated into every
+  cube they straddle.
+- **Band edges by their own height — not triangles.** Triangle-overlap drags whole storeys in
+  through stair shafts and draws phantom rooms; triangle-centre discards the cliff you are
+  standing on, because a 91-unit drop centres 45 units below your feet. One storey (~13 units
+  here), asymmetric, since the player's position is at his feet.
+- **`dominant_axis` classifies walls for free** (floors 31%), and keeping only edges used by one
+  wall triangle turns 151,222 segments into 8,503 — a wireframe into a floorplan.
+- **Reveal per 3D cell: 5.6 KB for a whole level.** Three dimensions, or a tower walked at the
+  top uncovers the hall beneath it. Persisted as a block appended after the save's last section,
+  which older builds never reach — parsing is sequential and bounded, the final section is
+  fixed-length, and the version gate is a minimum with no upper bound, so no version bump is
+  needed. Past a completion threshold the fog lifts entirely; the percentage is measured against
+  cubes holding geometry (4,579 of 46,139), since a share of all cubes would never fire.
+
 ### [19-resolution_and_aspect_ratio/](19-resolution_and_aspect_ratio/)
 
 What the engine can be pushed to on resolution, where the real ceilings are, and why widescreen
@@ -570,6 +601,17 @@ Ghidra source location: `~/Repositories/Ghidra/`
 ---
 
 ## Changelog
+
+### 2026-09-09
+- **`20-automap/` added.** A Doom-style automap is feasible: a level reads as a floorplan from
+  directly above, which was not a given for a game composed as fixed camera views over
+  pre-rendered backdrops. Two findings do most of the work. The collision geometry lives in
+  `CDemonRaytrace::cube_data`, not the identically-shaped `cube_list` beside it — that one is the
+  `.GEO` import path and is NULL at runtime, so reading it concludes the level is empty. And the
+  height filter must band *edges* by their own height: banding triangles by overlap drags whole
+  storeys in through stair shafts, while banding them by centre deletes the cliff the player is
+  standing on top of. Reveal is per 3D cell at 5.6 KB for a whole level. Tooling:
+  `nocturne_dump_geometry` and `scripts/Python/automap_preview.py`.
 
 ### 2026-09-07
 - **`19-resolution_and_aspect_ratio/` added.** `g_ResolutionTable[9]` turned out not to be the

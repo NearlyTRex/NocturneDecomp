@@ -16,7 +16,7 @@
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   undefined4 g_CDemonRendererInstance.advanced_culling_enabled
-;   undefined4 g_CGameInstance.scripted_sequence_active
+;   undefined4 g_CGameInstance.suppress_set_geometry
 ;
 ; Called Functions:
 ;   core_mirror.cpp_CMirror_renderMirroredPrimitive_FUN_005225e0
@@ -35,7 +35,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x18]      ; 00570968
     MOV EDI,dword ptr [ESP + 0x1c]      ; 0057096c
     MOV EBX,dword ptr [0x0067b654]      ; 00570970 | g_CGamePtr
-    CMP dword ptr [EBX + 0x1f0],0x0     ; 00570976 | g_CGameInstance.scripted_sequence_active
+    CMP dword ptr [EBX + 0x1f0],0x0     ; 00570976 | g_CGameInstance.suppress_set_geometry
     JNZ 0x005709b0                      ; 0057097d
         ;   XREF to: 005709b0 (CONDITIONAL_JUMP)  ; LAB_005709b0
     MOV EBX,dword ptr [0x006703ec]      ; 0057097f | g_CDemonRendererPtr2

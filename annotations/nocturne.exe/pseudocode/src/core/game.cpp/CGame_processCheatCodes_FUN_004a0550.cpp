@@ -1447,7 +1447,7 @@ LAB_004a2165:
         DAT_01c78af0 = 0;
         core_sound_cpp_CSound_playSound_FUN_0052ea40
                   (g_CSound_PTR_005bed68,(void *)0x0,"cheat-1.wav");
-        this_ptr->scripted_sequence_active = (uint)(this_ptr->scripted_sequence_active == 0);
+        this_ptr->suppress_set_geometry = (uint)(this_ptr->suppress_set_geometry == 0);
       }
       pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_004ee3f0((char *)BYTE_ARRAY_005835e1);
       iStack_178 = 0;

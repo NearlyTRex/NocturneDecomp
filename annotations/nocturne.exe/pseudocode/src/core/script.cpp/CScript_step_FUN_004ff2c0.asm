@@ -2358,7 +2358,7 @@ section .text
     MOV DL,AL                           ; 00500996
     MOV EAX,[0x005b9354]                ; 00500998 | g_CGame_PTR_005b9354
     MOV dword ptr [0x01e56c24],EDX      ; 0050099d | DAT_01e56c24
-    MOV dword ptr [EAX + 0x238],EDX     ; 005009a3 | g_CGame_01c775ec.allow_hero_controls_flag
+    MOV dword ptr [EAX + 0x238],EDX     ; 005009a3 | g_CGame_01c775ec.hero_controls_blocked
     JMP 0x004ff36b                      ; 005009a9
         ;   XREF to: 004ff36b (UNCONDITIONAL_JUMP)  ; LAB_004ff36b
     ADD ESI,0xf                         ; 005009ae
@@ -4587,7 +4587,7 @@ section .text
     AND EDX,0xff                        ; 00502472
     MOV dword ptr [EAX + 0x230],EDX     ; 00502478 | g_CGame_01c775ec.allow_enemy_attack_flag
     MOV EDX,dword ptr [EAX + 0x228]     ; 0050247e | g_CGame_01c775ec.letterbox_mode
-    MOV dword ptr [EAX + 0x238],EDX     ; 00502484 | g_CGame_01c775ec.allow_hero_controls_flag
+    MOV dword ptr [EAX + 0x238],EDX     ; 00502484 | g_CGame_01c775ec.hero_controls_blocked
     MOV dword ptr [EBX + 0x450],0xffffffff ; 0050248a
     MOV EDI,0x1                         ; 00502494
     MOV EDX,dword ptr [EAX + 0x240]     ; 00502499 | g_CGame_01c775ec.goggles_active

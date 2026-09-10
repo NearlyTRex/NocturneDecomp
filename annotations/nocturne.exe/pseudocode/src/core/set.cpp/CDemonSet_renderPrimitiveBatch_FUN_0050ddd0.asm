@@ -30,7 +30,7 @@
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CGame* g_CGame_PTR_005b9354 = 01c775ec
 ;   undefined4 DAT_01b4d738
-;   undefined4 g_CGame_01c775ec.scripted_sequence_active
+;   undefined4 g_CGame_01c775ec.suppress_set_geometry
 ;   undefined4 g_CGame_01c775ec.render_mode
 ;
 ; Called Functions:
@@ -53,7 +53,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x40]      ; 0050dddb
     MOV EDI,dword ptr [ESP + 0x44]      ; 0050dddf
     MOV EAX,[0x005b9354]                ; 0050dde3 | g_CGame_PTR_005b9354
-    CMP dword ptr [EAX + 0x1f0],0x0     ; 0050dde8 | g_CGame_01c775ec.scripted_sequence_active
+    CMP dword ptr [EAX + 0x1f0],0x0     ; 0050dde8 | g_CGame_01c775ec.suppress_set_geometry
     JNZ 0x0050de96                      ; 0050ddef
         ;   XREF to: 0050de96 (CONDITIONAL_JUMP)  ; LAB_0050de96
     CMP dword ptr [EAX + 0x1f4],0x0     ; 0050ddf5 | g_CGame_01c775ec.render_mode

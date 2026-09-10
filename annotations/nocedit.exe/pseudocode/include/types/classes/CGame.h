@@ -73,7 +73,7 @@ typedef struct CGame {
     int camera_debug_enabled; // 0x1e4
     int debug_toggle_flag; // 0x1e8
     float time_scale_factor; // 0x1ec
-    int scripted_sequence_active; // 0x1f0
+    int suppress_set_geometry; // 0x1f0
     int render_mode; // 0x1f4
     int editor_tools_enabled; // 0x1f8
     int is_paused; // 0x1fc
@@ -91,7 +91,7 @@ typedef struct CGame {
     int allow_damage_flag; // 0x22c
     int allow_enemy_attack_flag; // 0x230
     int is_loading; // 0x234
-    int allow_hero_controls_flag; // 0x238
+    int hero_controls_blocked; // 0x238
     int is_processing; // 0x23c
     int goggles_active; // 0x240
     int flashlight_active; // 0x244

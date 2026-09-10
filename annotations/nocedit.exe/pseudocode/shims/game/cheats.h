@@ -37,7 +37,7 @@
 // freeze_enemies_enabled, gratuitous_dismemberment, developer_mode_enabled,
 // event_processing_enabled, subtitle_system_enabled, screen_clear_enabled,
 // editor_tools_enabled, geometry_debug_enabled, collision_render_enabled,
-// render_mode and scripted_sequence_active — every flag on this list. Applying
+// render_mode and suppress_set_geometry — every flag on this list. Applying
 // them at the end of startMission, which is where a mission first looks ready,
 // gets them wiped before a frame draws. (This is also why typing GODGAMES and
 // then walking into the next chapter loses god mode in the shipped game: the
@@ -224,7 +224,9 @@ extern "C" {
 #define NOCTURNE_CHEAT_MEMORY_DEBUG     26
 #define NOCTURNE_CHEAT_SOUND_DEBUG      27
 #define NOCTURNE_CHEAT_RENDER_MODE      28
-#define NOCTURNE_CHEAT_SCRIPT_SEQUENCE  29
+// NOD3D. Suppresses set geometry: all five CDemonSet batch render paths open
+// with a test of the field this sets.
+#define NOCTURNE_CHEAT_HIDE_SET_GEOMETRY 29
 // Appended rather than slotted into the Gameplay run above, so adding it does
 // not renumber every cheat after it — the ini is keyed by name but the netplay
 // packet is positional. cheatsPage() collects by page rather than by range, so

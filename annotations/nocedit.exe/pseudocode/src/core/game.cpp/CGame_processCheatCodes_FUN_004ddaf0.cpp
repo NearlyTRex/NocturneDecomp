@@ -1157,7 +1157,7 @@ LAB_004df408:
                      0.01,4.0,1);
         }
       }
-      pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_ToggleCutscene);
+      pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_NoD3D);
       iVar6 = 0;
       uVar10 = 0xffffffff;
       pbVar20 = pbVar9;
@@ -1179,7 +1179,7 @@ LAB_004df408:
         g_InputHistory[1] = '\0';
         core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")
         ;
-        this_ptr->scripted_sequence_active = (uint)(this_ptr->scripted_sequence_active == 0);
+        this_ptr->suppress_set_geometry = (uint)(this_ptr->suppress_set_geometry == 0);
       }
       pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_ToggleRenderMode);
       iStack_188 = 0;

@@ -17,7 +17,7 @@
 ;   CGame* g_CGame_PTR_005b9354 = 01c775ec
 ;   undefined4 DAT_01b4d738
 ;   CGame g_CGame_01c775ec
-;   undefined4 g_CGame_01c775ec.scripted_sequence_active
+;   undefined4 g_CGame_01c775ec.suppress_set_geometry
 ;   undefined4 g_CGame_01c775ec.render_mode
 ;
 ; Called Functions:
@@ -33,7 +33,7 @@ section .text
         ;   Label: core_set.cpp_CDemonSet_renderFaceListOrEnvMap_FUN_0050ded0
     PUSH EBP                            ; 0050ded1
     MOV EAX,[0x005b9354]                ; 0050ded2 | g_CGame_PTR_005b9354 | g_CGame_01c775ec
-    CMP dword ptr [EAX + 0x1f0],0x0     ; 0050ded7 | g_CGame_01c775ec.scripted_sequence_active
+    CMP dword ptr [EAX + 0x1f0],0x0     ; 0050ded7 | g_CGame_01c775ec.suppress_set_geometry
     JNZ 0x0050df1a                      ; 0050dede
         ;   XREF to: 0050df1a (CONDITIONAL_JUMP)  ; LAB_0050df1a
     CMP dword ptr [EAX + 0x1f4],0x0     ; 0050dee0 | g_CGame_01c775ec.render_mode

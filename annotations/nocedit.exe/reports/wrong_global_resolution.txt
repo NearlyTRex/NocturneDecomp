@@ -13,7 +13,7 @@ SUMMARY
 
   Functions checked: 6911
   Functions with suspicious globals: 96
-  Total suspicious global references: 152
+  Total suspicious global references: 153
 
   Most commonly misresolved globals:
     g_SfxOptions                                       13 functions
@@ -233,11 +233,11 @@ core_game.cpp_CGame_runGameSession_FUN_004daf80  [.keep]  (2 suspicious globals)
   File: core/game.cpp
 
   g_CurrentGameTime
-    Used at lines: 188
+    Used at lines: 193
     NOT found in function reference list
 
   g_SimFrameCount
-    Used at lines: 152
+    Used at lines: 157
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -250,6 +250,18 @@ core_menu.cpp_configureGraphicsOptions_FUN_00510c80  [.keep]  (2 suspicious glob
 
   g_WindowHeight
     Used at lines: 302, 303
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_set.cpp_CDemonSet_initScene_FUN_0056aa10  [.keep]  (2 suspicious globals)
+  File: core/set.cpp
+
+  g_CDemonLightInstance
+    Used at lines: 26, 26
+    NOT found in function reference list
+
+  g_VisibleCoronaGlobeCount
+    Used at lines: 69
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -357,7 +369,7 @@ core_game.cpp_CGame_processFrame_FUN_004da100  [.keep]  (1 suspicious globals)
   File: core/game.cpp
 
   g_ColorCubeLookup
-    Used at lines: 349
+    Used at lines: 358
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -494,14 +506,6 @@ core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0056d110  [.keep]  (1 suspicious globa
 
   g_CoronaGlobes
     Used at lines: 14
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-core_set.cpp_CDemonSet_initScene_FUN_0056aa10  [.keep]  (1 suspicious globals)
-  File: core/set.cpp
-
-  g_VisibleCoronaGlobeCount
-    Used at lines: 67
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

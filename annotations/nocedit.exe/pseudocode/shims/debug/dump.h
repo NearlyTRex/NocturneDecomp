@@ -80,6 +80,15 @@ int nocturne_dump_ground_probes(const char *path, struct CVector3f *pos);
 // just the grid extent.
 int nocturne_dump_collision_grid(const char *path, struct CVector3f *pos);
 
+// World geometry — the grid's extent plus the ENTIRE collision triangle list in
+// world space, one triangle per line with its normal and dominant axis, and the
+// hero's position and area so an offline pass can pick a height band. No
+// classification or projection is done here on purpose: the mesh comes out
+// intact so that what counts as a wall, and how to handle stacked floors, can be
+// decided offline against a single capture instead of by rebuilding the game.
+// Expect a few MB on a large level.
+int nocturne_dump_geometry(const char *path);
+
 // Lighting / vertex-pipeline state — writes <path> as plain text. Captures
 // a sample of `g_VertexNormalArray` and `g_TransformedVertexArray` with
 // magnitude statistics, plus the ambient/spot/dynamic light counts and the

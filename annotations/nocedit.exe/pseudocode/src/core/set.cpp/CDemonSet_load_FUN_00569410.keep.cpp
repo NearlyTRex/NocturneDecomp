@@ -29,7 +29,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00569410(CDemonSet *this_ptr,char *
   float fVar1;
   CTerrain *this_ptr_00;
   int iVar10;
-  
+
   iVar10 = 0;
   pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Loading set");
   core_level_cpp_CLevelLoader_update_FUN_00504160(g_CLevelLoaderPtr,pcVar3,iVar10);
@@ -290,6 +290,9 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00569410(CDemonSet *this_ptr,char *
                 (&g_CDemonRaytraceInstance,pcVar4);
     }
     core_path_cpp_resetAllPathMaps_FUN_00548590();
+#if !NOCTURNE_AUTHENTIC_AUTOMAP
+    nocturne_automap_reset();
+#endif
   }
   iVar2 = 0;
   pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Loading thumbs");
