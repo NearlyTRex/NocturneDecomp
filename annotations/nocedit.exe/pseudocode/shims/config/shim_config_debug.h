@@ -10,7 +10,7 @@
 // resolves either way.
 //
 // The netplay diagnostics (SYNC_CHECK, SIM_TRACE, RNG_TRACE) are with the rest
-// of netplay in shim_config_netplay.h, and AUTHENTIC_DEV_TOOLS — which governs
+// of netplay in shim_config_netplay.h, and NOCTURNE_EDITOR_BUILD — which governs
 // the editor's own in-game developer surface rather than a debugging aid — is
 // in shim_config_authentic.h.
 //

@@ -15,7 +15,7 @@ void __cdecl shape_edittool_cpp_CEdButton_paint_FUN_004a65e0(CEdButton *this_ptr
   int iVar3;
   int iVar9;
   int iVar10;
-#if NOCTURNE_AUTHENTIC_EDITOR_BUTTON
+#if NOCTURNE_EDITOR_BUILD
   byte bVar3;
   int iVar4;
   int iVar5;

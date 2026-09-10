@@ -47,7 +47,72 @@ The retail build presumably doesn't have the line-192 clobber; it probably has t
 
 **Question:** Subtitles render correctly during cutscenes, but the voice MP3s never play. Is there a hardcoded "voices off" flag like the D3D one?
 
-**Answer (partial): no flag found, but the streaming-playback entry point is orphaned.**
+**Answer: SOLVED. They play. The trigger was never missing — it is native, one level below where it was being looked for — and what silenced MP3s specifically is a one-line streaming defect, gated as `NOCTURNE_AUTHENTIC_STREAM_LENGTH`.**
+
+**DON'T RE-CHASE:**
+
+- `loadStreamingSoundFile` having no callers. True, and irrelevant — it is a separate entry point that the dialogue path does not use. Streaming is reached through `startSfx`, which decides from the file extension. Restoring a caller for it is work with no symptom behind it.
+- A missing audio-trigger call in `CScript::step`. There isn't one to find; the trigger is in `getDialogDuration`, and it is in the original decompile.
+- A "voices off" global. There is none.
+- `NOCTURNE_AUTHENTIC_VOICE` as a gate over the dialogue call site. There is nothing there to gate — the call site is the binary's own.
+- The `.wav`-then-`.mp3` fallback in `dbLoad`, and the `.mp3` branch in `startSfx`/`getSampleInfo`. All original, all unmodified. WAVs always worked; the extension handling was never the problem.
+
+### Where the dialogue audio actually happens
+
+`core/script.cpp:CScript::getDialogDuration_FUN_0055ff00` does both halves, and both calls are in the unmodified decompile:
+
+```c
+local_28 = CSound::getSoundDuration(g_CSoundPtr, sound_name);   /* opens the file */
+...
+if (local_18 != 0) {
+    pushSfxOptions();
+    setNextSfxChannel(2);
+    this_ptr->current_sfx_handle = CSound::playSound(g_CSoundPtr, this_ptr, sound_name);
+    popSfxOptions();
+}
+```
+
+`local_18` is set when the script's sound name is not a bare number and `g_ScriptEventsEnabled == 0`, so a line with a real filename plays on channel 2 through the ordinary sfx path. `startSfx` is what notices the `.mp3` extension and turns the sample into a streaming one; nothing needs a dedicated dialogue loader.
+
+### Why MP3s specifically were silent
+
+An MP3 is streamed; a WAV is loaded whole. So a WAV's length is exact from the moment it loads, and everything below is unreachable for one — which is why WAVs always worked.
+
+A streamed sample's length is an *estimate* until the decoder runs short. `CSfxSample::pollStream` asks for a batch, gets fewer frames back, and that is how the end is discovered. It then corrects the count and stops:
+
+```
+MOV EAX,[EBX + 0x164]     ; stream_read_position
+ADD EAX,EDI               ; + frames decoded
+MOV [EBX + 0x110],EAX     ; sample_info.sample_count      005a6ba3
+```
+
+The function contains **no store to `0x128`** anywhere, so `loop_endpoints[0]` keeps the estimate it was given at load.
+
+The count is not what ends a voice. `CSfxSlot::mix` takes `loop_endpoints[loop_marker_index]`, subtracts the trigger time and divides by the resample delta to decide the last frame it will mix. So from the moment the correction lands the two disagree, and the voice is cut off early or run past its end depending on which way the estimate was wrong.
+
+The fix is one line beside the count's own correction, and because it is an addition rather than a recovered store — the asm proves the binary never had it — it is gated:
+
+```c
+if (lock_length != local_14) {
+  (this_ptr->sample_info).sample_count = this_ptr->stream_read_position + local_14;
+#if !NOCTURNE_AUTHENTIC_STREAM_LENGTH
+  this_ptr->loop_endpoints[0] = (this_ptr->sample_info).sample_count;
+#endif
+}
+```
+
+It covers streamed music as well as dialogue — anything that reaches `pollStream`.
+
+### A second fix on the same path
+
+`CSound::getSoundDuration_FUN_005b3ba0` builds a sample on the stack to read a file's header, and Ghidra typed that local as `CSampleInfo` — `0x120`, 288 bytes — then cast its address at each use:
+
+```c
+CSampleInfo local_160;
+CSfxSample_init((CSfxSample *)&local_160);
+```
+
+Both callees take a `CSfxSample`, which is `0x180` — 384 bytes, so the header read ran 96 bytes past the end of the local. The `.keep` declares the local as what the callees are given and reaches the header by name. That one is a §13 stack-slot retype, not a deviation, and takes no gate: the shipped binary was always right and only Ghidra's rendering of it was wrong.
 
 ### What we found
 
@@ -55,32 +120,15 @@ The retail build presumably doesn't have the line-192 clobber; it probably has t
 
 **MP3 playback path is wired.** `sound/sndmain.cpp:startSfx_FUN_005a8e90` (lines 117–184) detects `.mp3` extensions on incoming filenames, allocates a `CMP3Decoder`, calls `openFile`, sets `streaming_flag = 1`, and queues the sample for playback. So when *anything* calls `startSfx` with an MP3 path, the streaming pipeline runs. The full MP3 decoder in `sound/mp3.cpp` is intact.
 
-**`loadStreamingSoundFile` is orphaned.** `sound/sndmain.cpp:loadStreamingSoundFile_FUN_005a5200` is a separate, fully-implemented streaming-load function that allocates a `CMP3Decoder`, calls `openFile`, computes streaming buffer size, and stores the slot. **It has zero callers anywhere in the binary** (only its own prototype declaration in `prototypes_5A0000.h`). This looks like the dedicated dialog/cutscene streaming entry point — wired into the data side (CMP3Decoder, CSfxSample.streaming_flag, CSfxSlot tracking) but **the call site that would have invoked it during cutscene playback is missing**.
+**`loadStreamingSoundFile` is orphaned.** `sound/sndmain.cpp:loadStreamingSoundFile_FUN_005a5200` is a separate, fully-implemented streaming-load function that allocates a `CMP3Decoder`, calls `openFile`, computes streaming buffer size, and stores the slot. It has zero callers anywhere in the binary. It is **not** the dialogue path and never was — dialogue reaches streaming through `startSfx`, which makes the same decision from the file extension. Leave it orphan.
 
-**No "voices off" global flag.** Searched for `voice_*`, `speech_*`, `dialog_disabled`, `cinematic_audio` — nothing matches.
+**No "voices off" global flag.** Searched for `voice_*`, `speech_*`, `dialog_disabled`, `cinematic_audio` — nothing matches, and nothing needs to.
 
-**Subtitle render is purely visual.** `core/script.cpp:CScript::renderSubtitles_FUN_00559b20` only touches the framebuffer. It doesn't trigger audio.
+**Subtitle render is purely visual.** `core/script.cpp:CScript::renderSubtitles_FUN_00559b20` only touches the framebuffer. The audio is triggered from `getDialogDuration`, which is also what sets the speaker's `speech_timer`, so the two stay in step by construction.
 
-### Best-guess explanation
+### Still open
 
-The dialog filenames resolve to `.mp3` (since the retail data ships that way), the script-step interpreter probably calls something like `loadStreamingSoundFile` or a sibling — but **the line that does that has been compiled out of the editor build**. The dialog database is built (and subtitles render from it), but the audio-trigger call is missing.
-
-Alternative explanation we couldn't rule out: file-not-found at runtime. If the user's `sound/` POD doesn't actually contain the `.mp3` voice files (because the editor build ships only sound effects, not dialogue audio), `dbLoad` falls back to the bare-name path and `startSfx` never gets called.
-
-### What remains uncertain
-
-- **Where does the script interpreter trigger dialog audio?** We didn't trace `CScript::step` (the giant scripting interpreter) end-to-end. The trigger could be there in a form we missed, or it could be missing entirely. Worth a thorough search for any caller of `loadStreamingSoundFile` in `core/script.cpp` once that function gets analyzed in depth.
-- **Is the data even shipped?** Run the editor build with file-access logging (or `pod.ini` debug) to see whether the cutscene `.mp3`s exist in any mounted POD. If they don't, that's the real answer regardless of the call-site investigation.
-- **Did the retail build remove the orphan or did the editor build remove the caller?** Without the retail binary it's hard to say which side dropped the link.
-
-### Restoration plan — `NOCTURNE_AUTHENTIC_VOICE`
-
-The flag follows the `NOCTURNE_AUTHENTIC_*` polarity convention — `1` means "match `nocedit.exe` as-shipped" (silent cutscenes, no voice playback) and `0` (default) means "dev-friendly mode" (voices play). It's currently a placeholder — no keep file is wired to read the flag yet because the missing call site hasn't been pinned down. Two paths forward:
-
-- **Path A (preferred): find the original caller.** Investigate `core/script.cpp/CScript_step_FUN_0055a810` end-to-end (or the dialog opcode dispatch within it). Find where `dialog_entries[i].data` (the resolved filename) gets passed to a sound-system function. Compare against the retail build's behavior: a `loadStreamingSoundFile` call (or equivalent through `startSfx` with the resolved `.mp3` filename) probably belongs there. Once located, write a keep that wraps the call in `#if !NOCTURNE_AUTHENTIC_VOICE`.
-- **Path B (decoupled): add a shim helper.** Define `nocturne_play_dialog(name)` in `shims/dump.cpp` (or a new `shims/dialog.cpp`). Internally call `loadStreamingSoundFile` + `startSfx` when `!NOCTURNE_AUTHENTIC_VOICE` (dev-friendly); no-op otherwise. Have the script-step keep call this shim from wherever subtitles are queued — even if it's not at the original retail call site, the audio will play in sync with the subtitle.
-
-Default (`= 0`) plays voices. Override with `-DNOCTURNE_AUTHENTIC_VOICE=1` to revert to the shipped editor binary's silent cutscenes.
+- **Is every voice line's data present?** `dbLoad` resolves a dialogue string to `.wav`, then `.mp3`, then the bare name if neither exists. A line whose file is in no mounted POD reaches `getSoundDuration`, gets `-1`, and falls back to a duration estimated from the subtitle's length (`strlen * 0.02 + 0.4`) with no audio. That is the shipped behaviour for missing data and is not a bug, but it means "this one line is silent" is a data question, not a code one — check the POD before investigating anything.
 
 ## 3. Why does START show every `.msn` file in a flat picker instead of the curated chapter list?
 

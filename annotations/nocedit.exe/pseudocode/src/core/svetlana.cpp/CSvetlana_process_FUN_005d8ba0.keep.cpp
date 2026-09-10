@@ -122,7 +122,7 @@ switchD_005d8f77_caseD_9:
               core_hero_cpp_CHero_executeLeverPull_FUN_004f30f0(&this_ptr->base);
               goto LAB_005d9011;
             }
-#if !NOCTURNE_AUTHENTIC_SHEATHED_FIRE
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
             goto LAB_005d9011;
 #endif
           }
@@ -187,7 +187,7 @@ LAB_005d8cdd:
               (&(this_ptr->base).base.model.motion_controller,iVar3,1);
   }
 switchD_005d8f77_caseD_8:
-#if !NOCTURNE_AUTHENTIC_HERO_GRAB
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
   nocturne_hero_grab_escape(&this_ptr->base,delta_time);
 #endif
   pCVar1 = (this_ptr->base).base.grabbed_by;

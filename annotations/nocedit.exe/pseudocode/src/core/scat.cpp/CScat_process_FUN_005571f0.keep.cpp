@@ -108,7 +108,7 @@ void __cdecl core_scat_cpp_CScat_process_FUN_005571f0(CScat *this_ptr,float delt
             desired_state_index = 10;
           }
         }
-#if !NOCTURNE_AUTHENTIC_HERO_INTERACT
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
         if (((this_ptr->base).player_input.action_state.fire != 0) &&
             (this_ptr->guns_drawn == 0) &&
             ((this_ptr->base).control_type != HERO_CONTROL_AI)) {
@@ -198,7 +198,7 @@ LAB_00557637:
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
               (&(this_ptr->base).base.model.motion_controller,iVar7,1);
   }
-#if !NOCTURNE_AUTHENTIC_HERO_GRAB
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
   nocturne_hero_grab_escape(&this_ptr->base,delta_time);
 #endif
   pCVar4 = (this_ptr->base).base.grabbed_by;

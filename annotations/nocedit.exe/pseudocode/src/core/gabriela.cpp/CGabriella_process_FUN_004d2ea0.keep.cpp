@@ -154,7 +154,7 @@ void __cdecl core_gabriela_cpp_CGabriella_process_FUN_004d2ea0(CGabriella *this_
   pCVar5 = (this_ptr->base).ladder_to_climb;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.walk_step_speed * delta_time;
   if (pCVar5 == (CLadder *)0x0) {
-#if !NOCTURNE_AUTHENTIC_HERO_GRAB
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
     nocturne_hero_grab_escape(&this_ptr->base,delta_time);
 #endif
     pCVar6 = (this_ptr->base).base.grabbed_by;

@@ -196,7 +196,9 @@ LAB_005a6b5d:
         }
         if (lock_length != local_14) {
           (this_ptr->sample_info).sample_count = this_ptr->stream_read_position + local_14;
+#if !NOCTURNE_AUTHENTIC_STREAM_LENGTH
           this_ptr->loop_endpoints[0] = (this_ptr->sample_info).sample_count;
+#endif
         }
         SVar6 = SVar6 - local_14;
         iVar2 = this_ptr->stream_write_position + local_14;

@@ -5,13 +5,13 @@
 // =============================================================================
 //
 // How the window and its pixels are produced, where the choice has no authentic
-// answer: who owns the framebuffer, the window-mode option, whether the menu's
-// resolution selector applies immediately, and the window scale factor.
+// answer: who owns the framebuffer, the window-mode option, and the window scale
+// factor.
 //
 // The display flags that DO have an authentic answer are in
 // shim_config_authentic.h: AUTHENTIC_D3D_OPTIONS, AUTHENTIC_RENDERER_DLL,
-// AUTHENTIC_RESOLUTION_STEP, AUTHENTIC_HUD_SCALE, AUTHENTIC_HUD_ICON_SPACE,
-// AUTHENTIC_CONSOLE and AUTHENTIC_UI_CURSOR_WARP.
+// AUTHENTIC_RESOLUTION_LIST, AUTHENTIC_MENU_RESOLUTION, AUTHENTIC_HUD_SCALE,
+// AUTHENTIC_HUD_ICON_SPACE, AUTHENTIC_CONSOLE and AUTHENTIC_UI_CURSOR_WARP.
 //
 // Included from shim_config.h, which is what nocturne.h reaches.
 
@@ -52,27 +52,6 @@
 //   Override with -DNOCTURNE_WINDOW_MODE_OPTION=0.
 #ifndef NOCTURNE_WINDOW_MODE_OPTION
 #define NOCTURNE_WINDOW_MODE_OPTION 1
-#endif
-
-// NOCTURNE_MENU_APPLIES_RESOLUTION
-//   Another addition. In both shipped binaries the Graphics Options resolution
-//   selector only edits CGame::game_pixx/game_pixy; the sole thing that applies
-//   them is CGame::setGameRes, called from runGameSession and the editor
-//   screens — never from the menu. So picking a resolution appears to do
-//   nothing until a mission starts. That is original behaviour, not a bug.
-//   1: changing the resolution resizes the window straight away. The menu keeps
-//      RENDERING at 640x480 (its layout is hardcoded for that — fixed drawText
-//      coordinates; only the mouse-sensitivity slider reads g_WindowWidth) and
-//      the presenter scales it to fit, so nothing is mispositioned. Missions
-//      still get a real framebuffer at the selected resolution via setGameRes.
-//      Also stops the selector offering resolutions above 640x480 while
-//      hardware acceleration is off, since the menu clamps those back and the
-//      choice would silently revert.
-//   0: shipped behaviour — the selector changes nothing until a mission loads.
-//
-//   Override with -DNOCTURNE_MENU_APPLIES_RESOLUTION=0.
-#ifndef NOCTURNE_MENU_APPLIES_RESOLUTION
-#define NOCTURNE_MENU_APPLIES_RESOLUTION 1
 #endif
 
 // NOCTURNE_WINDOW_SCALE

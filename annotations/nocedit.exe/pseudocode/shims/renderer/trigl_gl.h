@@ -126,7 +126,7 @@ extern int nocturne_trigl_paint_depth;
 // win the tie; it covers a different mesh of that surface, so without a bias the
 // winner alternates per pixel and the overlay comes out hatched. Settable live so
 // one run can show a held frame both ways.
-//   -1 resolve from NOCTURNE_AUTHENTIC_OVERLAY_DEPTH, then
+//   -1 resolve from NOCTURNE_AUTHENTIC_ENVMAP_OVERLAY, then
 //      NOCTURNE_TRIGL_OVERLAY_BIAS   0 off   1 on
 extern int nocturne_trigl_overlay_bias;
 

@@ -111,7 +111,7 @@ void compute_viewport(int drawable_w, int drawable_h, int logical_w, int logical
         double scale_x = (double)drawable_w / (double)logical_w;
         double scale_y = (double)drawable_h / (double)logical_h;
         scale = (scale_x < scale_y) ? scale_x : scale_y;
-#if !(NOCTURNE_WINDOW_MODE_OPTION || NOCTURNE_MENU_APPLIES_RESOLUTION)
+#if !NOCTURNE_WINDOW_MODE_OPTION && NOCTURNE_AUTHENTIC_MENU_RESOLUTION
         // Without those features the window is always a whole multiple of the
         // game resolution, so keep the original integer-only behaviour, which
         // has no meaningful value below 1.

@@ -28,7 +28,7 @@ static char s_server_address[100];
 static char s_player_name[20];      // CNetGame::player_name is char[20]
 static int  s_port;                 // 0 until the ini names one
 
-#if NOCTURNE_NETPLAY_INI
+#if !NOCTURNE_AUTHENTIC_NET_CONFIG
 // Written out the first time the game looks for the file, so the settings are
 // discoverable without anyone having to know they exist. Every value here is
 // the one already compiled in, so a freshly created file changes nothing.
@@ -119,7 +119,7 @@ static void net_load(void) {
     s_player_name[0] = '\0';
     s_port = 0;
 
-#if NOCTURNE_NETPLAY_INI
+#if !NOCTURNE_AUTHENTIC_NET_CONFIG
     // The path is written Windows-style for consistency with the rest of the
     // game's file access; watcom_resolve_fs_path does the \ -> / translation
     // and the case-insensitive component walk, as it does for render.ini.

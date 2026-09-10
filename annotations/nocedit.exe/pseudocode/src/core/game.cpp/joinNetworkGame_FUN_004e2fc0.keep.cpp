@@ -16,7 +16,7 @@ void __cdecl core_game_cpp_joinNetworkGame_FUN_004e2fc0(void)
   uint local_10;
 
   memcpy(local_74,g_IpAddress,sizeof(local_74));
-#if NOCTURNE_NETPLAY_INI
+#if !NOCTURNE_AUTHENTIC_NET_CONFIG
   nocturne_net_reload();
   if (nocturne_net_server_address()[0] != '\0') {
     _sprintf(local_74,"%s",nocturne_net_server_address());

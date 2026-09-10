@@ -256,23 +256,28 @@ Each phase is independently testable and reuses the previous phase's plumbing.
 
 ### Phase 1 — lightmap in the DLL fragment shader  *(fixes the window + blade brightness)*
 
-**BUILT, NOT YET MEASURED.**
+**NOT THE FIX. DO NOT IMPLEMENT.** The premise — that hardware geometry misses the per-pixel
+lightmap — is wrong, and "Struck: phase 1" in the open-items section at the end of this file
+holds the measurement that settles it. The chapel window is a double draw. Nothing described
+below exists in the build.
 
 - **Exit criterion, a hard oracle:** the chapel-window region must move from
   `mean 20.53 / max 56` to approximately `19.50 / 28`, matching both our software path and
-  retail. Measurement procedure and reference numbers are in `research/12`.
+  retail. Measurement procedure and reference numbers are in `research/12`. The double-draw
+  suppression is what has to meet it.
 
-#### What shipped
+#### The design, for reference
 
-| Piece | File |
+| Piece | Where it would go |
 | --- | --- |
-| Side-channel struct + snapshot of the grids | `nocedit.exe/.../shims/lighting_bridge.{h,cpp}` |
-| The one call that publishes a frame | `CDemonCamera_compositeLightmapToFramebuffer_FUN_00453270.keep.cpp` |
-| Toggle | `NOCTURNE_AUTHENTIC_SHADER_LIGHTING` (default 0) |
-| Upload + fragment shader | `tridx7.dll/.../shims/gl_shader.cpp` |
-| Per-draw opt-in | `gl_ddraw.cpp` passes `dev->in_scene` to `begin_draw` |
+| Side-channel struct + snapshot of the grids | a shim beside the renderer, outside `CExternalRendererBridge` |
+| The one call that publishes a frame | `CDemonCamera_compositeLightmapToFramebuffer_FUN_00453270.keep.cpp`, after the blur |
+| Upload + fragment shader | `shims/renderer/trigl_gl.cpp` |
+| Per-draw opt-in | the draw path's in-scene flag |
 
-`CExternalRendererBridge` is untouched, as planned.
+`CExternalRendererBridge` stays untouched: it is the authentic nocedit↔tridx7 ABI, the engine
+already probes 60 APIDLL entry points against a DLL exporting 37, and widening that mismatch
+would deviate from the binary for a side channel only the shader path wants.
 
 #### The blend, in closed form
 
@@ -641,7 +646,7 @@ Evidence: camera fb max 85 → composite output max 22 → presented max 56; sup
 
 ### 2. Struck: phase 1, the per-pixel lightmap in the fragment shader — CLOSED, DO NOT REOPEN
 
-`NOCTURNE_AUTHENTIC_SHADER_LIGHTING` defaults to **1** (grid NOT applied). Measured, one
+The grid is not applied to hardware geometry, and there is no toggle for it. Measured, one
 static scene, captures synced to `SDL_GL_SwapWindow`, the two accelerated ones from the SAME
 frame via the debug toggle:
 
@@ -662,7 +667,12 @@ drawn through the renderer DLL carries its own per-vertex lighting and already a
 final brightness. The instinct that hardware "misses" the lightmap is wrong and cost a full
 implementation cycle.
 
-`shims/lighting_bridge.{h,cpp}` and the `0` path are retained for A/B work only.
+**There is no lighting bridge in the build.** No shim publishes the grids, nothing in
+`compositeLightmapToFramebuffer` snapshots them, and the renderer has no per-fragment lighting
+path to feed. Measuring this again means writing a consumer in `shims/renderer/trigl_gl.cpp`, a
+producer in the composite (after the blur — the grids are only valid once
+`blurCoronaBufferAndClearEdges` has run), and item 4's transport. The numbers above are the
+reason not to.
 
 ### 3. Per-vertex fog default — OPEN, needs a better measurement
 
@@ -673,10 +683,10 @@ the term touches. Worth roughly 1% whole-frame — do not spend a day on it.
 
 ### 4. `APIDLLsetLightingBridge` transport — DESIGNED AND AGREED, NOT BUILT
 
-The lighting bridge currently reaches the renderer as a direct symbol call, which only works
-because everything is compiled into one binary. The agreed design is a new optional APIDLL
-entry point: the engine pushes the struct from inside the composite (the call site becomes the
-timing contract), `trigl.dll` exports it, `tridx7.dll` does not.
+A lighting bridge reaching the renderer as a direct symbol call only works because everything
+is compiled into one binary. The agreed design is a new optional APIDLL entry point: the engine
+pushes the struct from inside the composite (the call site becomes the timing contract),
+`trigl.dll` exports it, `tridx7.dll` does not.
 
 Feasibility already checked: resolution is 60 straight-line `GetProcAddress` calls in
 `initializeExternalRenderer` (0x5b5ec0) and `loadExternalRenderer` (0x5b6750), both of which

@@ -10,7 +10,7 @@
 void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004a4d40(CPickList *this_ptr)
 
 {
-#if NOCTURNE_AUTHENTIC_EDITOR_BUTTON
+#if NOCTURNE_EDITOR_BUILD
   int iVar3;
   int iVar4;
   int iVar5;
@@ -41,7 +41,7 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004a4d40(CPickList *t
   ui_scale = nocturne_ui_editor_scale();
 #endif
   shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(g_CEditorToolsPtr);
-#if NOCTURNE_AUTHENTIC_EDITOR_BUTTON
+#if NOCTURNE_EDITOR_BUILD
   shape_edittool_cpp_CEditorTools_drawWindowSeparator_FUN_004a1230(g_CEditorToolsPtr,1);
 #endif
   local_28 = g_ClipLeft;
@@ -62,7 +62,7 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004a4d40(CPickList *t
               iVar1 = g_ConfirmedSelectionColor;
             }
             engine_2d_c_fillRectColor_FUN_00403170(local_28,local_1c,x2,y2,iVar1);
-#if NOCTURNE_AUTHENTIC_EDITOR_BUTTON
+#if NOCTURNE_EDITOR_BUILD
             if (this_ptr->selection_state == -1) {
               g_ActiveRenderColor = 0;
               shape_edittool_cpp_drawDashedLine_FUN_0049d290(local_28,local_1c,x2,y2,1);
@@ -107,7 +107,7 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004a4d40(CPickList *t
       iVar1 = g_ActiveRenderColor;
       if (0 < local_30) {
         g_ActiveRenderColor = g_PickListSeparatorColor;
-#if NOCTURNE_AUTHENTIC_EDITOR_BUTTON
+#if NOCTURNE_EDITOR_BUILD
         iVar3 = shape_edittool_cpp_calculateGridHeight_FUN_004a64b0();
         iVar4 = g_WindowHeight / 0x60;
         if (this_ptr->dialog_result == 2) {
@@ -158,6 +158,6 @@ LAB_004a4f19:
     return;
   }
   shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_004a1380
-            (g_CEditorToolsPtr,NOCTURNE_AUTHENTIC_EDITOR_BUTTON ? 0 : 1);
+            (g_CEditorToolsPtr,NOCTURNE_EDITOR_BUILD ? 0 : 1);
   return;
 }

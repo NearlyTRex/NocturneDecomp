@@ -6,7 +6,7 @@
 // Signature: int __cdecl core_main_c_enterMainGameMenu_FUN_00507a50(void)
 
 #include "nocturne.h"
-#if NOCTURNE_ATTRACT_MOVIES
+#if !NOCTURNE_AUTHENTIC_ATTRACT_MOVIES
 #include "core/debug_log.h"
 #endif
 
@@ -20,7 +20,7 @@ int __cdecl core_main_c_enterMainGameMenu_FUN_00507a50(void)
   char (*pacVar6) [256];
   int iStack_c;
   int iStack_8;
-#if NOCTURNE_ATTRACT_MOVIES
+#if !NOCTURNE_AUTHENTIC_ATTRACT_MOVIES
   char attract_movie [16];
   int attract_result;
 #endif
@@ -62,7 +62,7 @@ int __cdecl core_main_c_enterMainGameMenu_FUN_00507a50(void)
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
   do {
     core_game_cpp_CGame_updateDT_FUN_004d7d90(g_CGamePtr);
-#if NOCTURNE_MENU_APPLIES_RESOLUTION
+#if !NOCTURNE_AUTHENTIC_MENU_RESOLUTION
     nocturne_window_set_size(g_CGamePtr->game_pixx,g_CGamePtr->game_pixy);
 #endif
     core_moon_cpp_CMoon_update_FUN_00529d60(&g_CMoonInstance,g_CGamePtr->delta_time_float);
@@ -184,7 +184,7 @@ LAB_005131d5:
       sound_sndmain_cpp_setSoundEnabled_FUN_005a96c0((uint)(iVar4 == 0));
       core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
     }
-#if NOCTURNE_AUTHENTIC_DEV_TOOLS
+#if NOCTURNE_EDITOR_BUILD
     iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
     if ((iVar4 != 0) &&
        ((iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_D), iVar4 != 0 ||
@@ -233,7 +233,7 @@ LAB_005131d5:
       core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
       engine_2d_c_clearInputAndWait_FUN_00403260();
     }
-#if NOCTURNE_ATTRACT_MOVIES
+#if !NOCTURNE_AUTHENTIC_ATTRACT_MOVIES
     if (nocturne_attract_tick() != 0) {
       _sprintf(attract_movie,"noc%d.avi",core_actor_cpp_getRandomInt_FUN_0040cc70(1,4));
       DLOG("frontend","playing '%s'",attract_movie);

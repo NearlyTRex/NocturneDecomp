@@ -15,7 +15,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(CEd
   int iVar4;
   int iVar5;
   int iVar7;
-#if NOCTURNE_AUTHENTIC_EDITOR_BUTTON
+#if NOCTURNE_EDITOR_BUILD
   int iVar6;
 #endif
   SWindow *pSVar7;
@@ -45,7 +45,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(CEd
   iVar2 = g_ActiveRenderColor;
   iVar3 = g_WindowStackCount + -1;
   pSVar7 = g_WindowStack + iVar3;
-#if NOCTURNE_AUTHENTIC_EDITOR_BUTTON
+#if NOCTURNE_EDITOR_BUILD
   shape_edittool_cpp_paintWindowBackground_FUN_0049e590();
 #endif
   iVar8 = g_WindowStack[iVar3].rect.top;
@@ -57,7 +57,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(CEd
             ((pSVar7->rect).left + 1,g_WindowStack[iVar3].rect.top + 1,
              g_WindowStack[iVar3].rect.right + -2,g_WindowStack[iVar3].rect.bottom + -2,
              g_WindowContentColor,g_WindowBorderHighlightColor);
-#if NOCTURNE_AUTHENTIC_EDITOR_BUTTON
+#if NOCTURNE_EDITOR_BUILD
   g_ActiveRenderColor = g_WindowBorderShadowColor;
   engine_2d_c_drawHLine_FUN_00402ee0
             ((pSVar7->rect).left,g_WindowStack[iVar3].rect.bottom + -1,
@@ -73,7 +73,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(CEd
     return;
   }
   g_ClipTop = g_WindowStack[iVar3].rect.top;
-#if NOCTURNE_AUTHENTIC_EDITOR_BUTTON
+#if NOCTURNE_EDITOR_BUILD
   iVar8 = g_FontCharacterWidth / 2 + g_WindowStack[iVar3].rect.top + -1;
   iVar6 = g_FontCharacterWidth * 5 >> 0x1f;
   engine_2d_c_fillRectColor_FUN_00403170
@@ -84,7 +84,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(CEd
   engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
   color_value = -1;
   y = g_FontCharacterWidth / 2 + g_WindowStack[iVar3].rect.top
-      + (NOCTURNE_AUTHENTIC_EDITOR_BUTTON ? 0 : 1);
+      + (NOCTURNE_EDITOR_BUILD ? 0 : 1);
   text = g_WindowStack[iVar3].text_buffer;
   iVar8 = (pSVar7->rect).left;
   iVar7 = g_WindowStack[iVar3].rect.right;
@@ -102,7 +102,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(CEd
   iVar5 = nocturne_ui_text_height(g_EditorFont,text,nocturne_ui_editor_scale());
 #endif
   iVar8 = g_FontCharacterWidth + iVar5;
-#if NOCTURNE_AUTHENTIC_EDITOR_BUTTON
+#if NOCTURNE_EDITOR_BUILD
 #if NOCTURNE_AUTHENTIC_HUD_SCALE
   iVar7 = engine_font_cpp_CBitFont_getTextHeight_FUN_004cff40(g_EditorFont,"j");
 #else
@@ -116,7 +116,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(CEd
   iVar8 = iVar8 + g_WindowStack[iVar3].rect.top;
   engine_2d_c_drawHLine_FUN_00402ee0
             ((pSVar7->rect).left + 1,iVar8,g_WindowStack[iVar3].rect.right + -2);
-#if NOCTURNE_AUTHENTIC_EDITOR_BUTTON
+#if NOCTURNE_EDITOR_BUILD
   if (g_WindowBorderHighlightColor != g_WindowBorderShadowColor) {
     g_ActiveRenderColor = g_WindowBorderShadowColor;
     engine_2d_c_drawHLine_FUN_00402ee0

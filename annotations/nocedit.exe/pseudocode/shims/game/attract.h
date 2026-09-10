@@ -6,7 +6,8 @@
 //
 // An addition, not a reconstruction: neither shipped binary ever did this.
 // NOC1..NOC4.AVI have no call site anywhere in nocedit.exe or nocturne.exe, so
-// nothing in the original ever played them. Gated on NOCTURNE_ATTRACT_MOVIES.
+// nothing in the original ever played them. Gated on
+// NOCTURNE_AUTHENTIC_ATTRACT_MOVIES.
 //
 // The trigger is the main menu's splash music running out. CSound::configure
 // starts "splash-music-44.wav" (or the 22kHz variant on a low sample rate);

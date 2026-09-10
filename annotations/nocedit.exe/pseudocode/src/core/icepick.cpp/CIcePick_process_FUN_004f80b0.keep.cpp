@@ -131,7 +131,7 @@ LAB_004f8427:
                   core_hero_cpp_CHero_executeLeverPull_FUN_004f30f0(&this_ptr->base);
                   goto LAB_004f84cc;
                 }
-#if !NOCTURNE_AUTHENTIC_SHEATHED_FIRE
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
                 goto LAB_004f84cc;
 #endif
               }
@@ -224,7 +224,7 @@ LAB_004f8417:
               (&(this_ptr->base).base.model.motion_controller,iVar6,1);
   }
 LAB_004f81b6:
-#if !NOCTURNE_AUTHENTIC_HERO_GRAB
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
   nocturne_hero_grab_escape(&this_ptr->base,delta_time);
 #endif
   pCVar2 = (this_ptr->base).base.grabbed_by;

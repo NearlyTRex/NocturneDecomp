@@ -5,34 +5,17 @@
 // =============================================================================
 //
 // Netplay knobs that have no authentic answer, because the thing they tune is
-// an addition: the ini file, the drop timeout, and the three diagnostics.
+// an addition: the drop timeout and the three diagnostics.
 //
-// The switch that decides whether netplay is reachable at all —
-// NOCTURNE_AUTHENTIC_NETPLAY — is in shim_config_authentic.h with the other
-// fidelity flags, as is NOCTURNE_AUTHENTIC_RNG. The API headers those two gate
-// (net_config.h, net_respawn.h, net_sync.h, sim_trace.h, net_weapon.h,
-// net_sim.h, rng.h) are included from shim_config.h, not here.
+// Three netplay flags DO have an authentic answer and are in
+// shim_config_authentic.h with the other fidelity flags: AUTHENTIC_NETPLAY,
+// which decides whether netplay is reachable at all; AUTHENTIC_RNG; and
+// AUTHENTIC_NET_CONFIG, which decides whether the network parameters come from
+// system/netplay.ini or from the constants baked into the binary. The API
+// headers those gate (net_config.h, net_respawn.h, net_sync.h, sim_trace.h,
+// net_weapon.h, net_sim.h, rng.h) are included from shim_config.h, not here.
 //
 // Included from shim_config.h, which is what nocturne.h reaches.
-
-// NOCTURNE_NETPLAY_INI
-//   An addition. Every network parameter in the shipped game is a compile-time
-//   constant: UDP port 0x1ddf appears as a literal in four places, the socket
-//   binds INADDR_ANY, and the Ctrl+J prompt is pre-filled from g_IpAddress —
-//   which is baked in as an original developer's LAN address.
-//   Nothing in any menu changes them.
-//   1: those values are read from system/netplay.ini when it exists. See
-//      net_config.h for the format. bindAddress and port fall back to the
-//      shipped constant; serverAddress falls back to 127.0.0.1 instead, since
-//      the baked-in address is a developer's old LAN machine and could only
-//      ever be a wrong answer.
-//   0: the ini is never read and the built-in constants always apply, the
-//      join prompt included.
-//
-//   Override with -DNOCTURNE_NETPLAY_INI=0.
-#ifndef NOCTURNE_NETPLAY_INI
-#define NOCTURNE_NETPLAY_INI 1
-#endif
 
 // NOCTURNE_NETPLAY_TIMEOUT_SECONDS
 //   How long the host tolerates total silence from a guest before dropping it,

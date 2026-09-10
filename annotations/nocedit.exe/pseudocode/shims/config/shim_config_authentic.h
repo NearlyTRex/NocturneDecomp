@@ -6,16 +6,81 @@
 //
 // Every NOCTURNE_AUTHENTIC_* flag in the build, whatever subsystem it touches.
 // Each one answers the same question: does this build do what nocedit.exe did,
-// or the dev-friendly thing? Set every flag here to 1 for maximum fidelity to
-// the shipped binary.
+// or the thing we decided was better? 1 is always the shipped answer, so setting
+// every flag here to 1 gives maximum fidelity to the binary.
 //
 // They are gathered by that question rather than by subsystem deliberately, so
 // the fidelity of a build can be read and changed as one list. A feature's
-// remaining knobs — the ones with no authentic answer, because the feature is
-// an addition — live with that feature instead: see shim_config_netplay.h,
-// shim_config_video.h, shim_config_media.h and shim_config_debug.h.
+// remaining knobs — the ones with no authentic answer, because the feature is an
+// addition — live with that feature instead: see shim_config_netplay.h,
+// shim_config_video.h, shim_config_media.h, shim_config_input.h and
+// shim_config_debug.h.
+//
+// NOCTURNE_EDITOR_BUILD is the one flag here that is not an AUTHENTIC_ flag. Its
+// axis is which binary rather than shipped-versus-improved, so neither of its
+// values is less faithful than the other; it lives here because it is read the
+// same way and belongs in the same list.
 //
 // Included from shim_config.h, which is what nocturne.h reaches.
+//
+// -----------------------------------------------------------------------------
+// THE LIST
+// -----------------------------------------------------------------------------
+//
+// Five kinds of deviation, which is what the "why" column names. A flag's kind
+// is the honest reason its default is what it is:
+//
+//   host      the shipped behaviour depends on Win32 + DirectDraw and cannot be
+//             reproduced on SDL/Linux at all
+//   defect    the shipped binary is wrong, and the flag's doc comment carries
+//             the instruction that proves it
+//   choice    the shipped binary is not wrong; we prefer something else
+//   addition  neither binary did this
+//   binary    which of the two binaries this build is
+//
+// scripts/Python/check_authentic_flags.py checks this table against the
+// #defines below, so a row that disagrees with its flag is a failing build
+// rather than a stale comment.
+//
+// | Flag | Default | Why | What 0 does |
+// | --- | --- | --- | --- |
+// | `NOCTURNE_AUTHENTIC_FORMAT_STRINGS` | 1 | host | prints pointers at their native width on 64-bit |
+// | `NOCTURNE_AUTHENTIC_WINDOWS` | 0 | host | keeps running unfocused; the window stays put |
+// | `NOCTURNE_AUTHENTIC_UI_CURSOR_WARP` | 0 | host | no SetCursorPos warping; the cursor moves freely |
+// | `NOCTURNE_AUTHENTIC_SOUND_DEVICE` | 0 | host | the Device line names the host audio API SDL opened |
+// | `NOCTURNE_AUTHENTIC_RENDERER_DLL` | 0 | host | a compiled-in renderer loads without a file on disk |
+// | `NOCTURNE_AUTHENTIC_MIRROR_CULL` | 0 | defect | actors appear in mirrors |
+// | `NOCTURNE_AUTHENTIC_MIRROR_PROJECTION` | 0 | defect | accelerated geometry lines up with the backdrop |
+// | `NOCTURNE_AUTHENTIC_IRIS_FADE` | 0 | defect | an opening iris no longer teleports mid-growth |
+// | `NOCTURNE_AUTHENTIC_ENVMAP_OVERLAY` | 0 | defect | a reflection comes out whole rather than speckled |
+// | `NOCTURNE_AUTHENTIC_MENU_LIGHTING` | 0 | defect | the menu's moon puts back the lighting it found |
+// | `NOCTURNE_AUTHENTIC_CAMERA_SHAKE_TRACE` | 0 | defect | the shake trace prints its value and a newline |
+// | `NOCTURNE_AUTHENTIC_HUD_ICON_SPACE` | 0 | defect | inventory icons stay on screen above 640x480 |
+// | `NOCTURNE_AUTHENTIC_GOD_MODE_FALL` | 0 | defect | god mode survives a lethal-height fall |
+// | `NOCTURNE_AUTHENTIC_STREAM_LENGTH` | 0 | defect | a streamed MP3 ends where the sample actually ends |
+// | `NOCTURNE_AUTHENTIC_ACTOR_DELETE` | 0 | defect | references are cleared before the memory is freed |
+// | `NOCTURNE_AUTHENTIC_HERO_WEAPON` | 0 | defect | each hero class starts with what it can actually use |
+// | `NOCTURNE_AUTHENTIC_HERO_ACTIONS` | 0 | defect | the other eight classes can interact and escape a grab |
+// | `NOCTURNE_AUTHENTIC_CHAPTER_SELECT` | 0 | defect | START offers the chapter lists, pod.ini or no pod.ini |
+// | `NOCTURNE_AUTHENTIC_FRIENDLY_FIRE` | 0 | defect | heroes cannot damage each other in a network game |
+// | `NOCTURNE_AUTHENTIC_PICKUP_WIELDS` | 0 | choice | a pickup is never drawn without the player asking |
+// | `NOCTURNE_AUTHENTIC_OPTIONS_RESUMES_GAME` | 0 | choice | leaving Options returns to the pause menu |
+// | `NOCTURNE_AUTHENTIC_MENU_RESOLUTION` | 0 | choice | a picked resolution applies straight away |
+// | `NOCTURNE_AUTHENTIC_SAVE` | 1 | choice | saves are written as readable plain text |
+// | `NOCTURNE_AUTHENTIC_GAMEPAD` | 0 | addition | SDL's game-controller layer instead of joyGetPos |
+// | `NOCTURNE_AUTHENTIC_WINDOW_MESSAGES` | 0 | addition | the window proc sees a mouse wheel |
+// | `NOCTURNE_AUTHENTIC_CHEAT_MENU` | 0 | addition | a CHEATS entry on Options, and WARPS on pause |
+// | `NOCTURNE_AUTHENTIC_RESOLUTION_LIST` | 0 | addition | one ordered table drives label and stepping |
+// | `NOCTURNE_AUTHENTIC_HUD_SCALE` | 0 | addition | the HUD scales with the framebuffer |
+// | `NOCTURNE_AUTHENTIC_CONSOLE` | 0 | addition | the console fills the window and keeps scrollback |
+// | `NOCTURNE_AUTHENTIC_FMV` | 0 | addition | the opening movie actually plays |
+// | `NOCTURNE_AUTHENTIC_ATTRACT_MOVIES` | 0 | addition | the menu cycles NOC1..NOC4 after its music |
+// | `NOCTURNE_AUTHENTIC_ENVMAP_SHADING` | 0 | addition | reflections are shaded per pixel, not per facet |
+// | `NOCTURNE_AUTHENTIC_NETPLAY` | 0 | addition | netplay is reachable, with its fixes |
+// | `NOCTURNE_AUTHENTIC_NET_CONFIG` | 0 | addition | network parameters come from system/netplay.ini |
+// | `NOCTURNE_AUTHENTIC_RNG` | 0 | addition | every draw goes through the sim/cosmetic funnel |
+// | `NOCTURNE_EDITOR_BUILD` | 0 | binary | (default) the build presents as retail nocturne.exe |
+// | `NOCTURNE_AUTHENTIC_D3D_OPTIONS` | 0 | binary | hardware acceleration can be turned on |
 
 // NOCTURNE_AUTHENTIC_FORMAT_STRINGS
 //   Controls how pointer values are printed through the NOCTURNE_FMT_PTR /
@@ -95,41 +160,73 @@
 #endif
 
 // NOCTURNE_AUTHENTIC_D3D_OPTIONS
-//   1: matches nocedit.exe as-shipped — hardware acceleration is permanently
-//      off, the Graphics Options menu line shows "Acceleration disabled in
-//      editor", and 3D-API cycling has no effect. Two redundant hardcoded
-//      kills (in configureGraphicsOptions and on Ctrl+D entry) clobber
-//      `g_UseDirect3D = 0` every frame.
-//   0: dev-friendly mode. The Graphics Options menu lets the user pick a
-//      3D renderer DLL (DirectX 5/6/7 / 3dfx) and `g_UseDirect3D` retains
-//      the choice — i.e. the working behavior the retail build had. The
-//      choice also survives a restart: readIniData reads "useDirect3D" from
-//      [Graphics] and writeIniData is the only reader of that section with no
-//      matching write, so at 1 the key is never created and acceleration
-//      begins off however it was left.
+//   Whether hardware acceleration can be turned on at all. The editor does not
+//   merely default it off — it holds it off from four places, so no sequence of
+//   menu actions can reach an accelerated frame:
 //
-//   Override with -DNOCTURNE_AUTHENTIC_D3D_OPTIONS=1 to revert to the
-//   editor build's permanently-disabled state.
+//     initializeGameSystems       g_UseDirect3D = 0 at startup, unconditional.
+//     configureGraphicsOptions    g_UseDirect3D = 0 every time the Graphics
+//                                 Options screen is drawn, with the line
+//                                 relabelled "Acceleration disabled in editor".
+//     configureGraphicsOptions    the Acceleration selector itself sets
+//                                 g_GraphicsCardCount = 0 and g_UseDirect3D = 0,
+//                                 so the toggle can only ever turn it off.
+//     loadExternalRenderer        the load is judged by g_DLLFunctionsMissing
+//                                 rather than by whether the entry points it
+//                                 needs actually resolved — see
+//                                 NOCTURNE_AUTHENTIC_RENDERER_DLL, which is
+//                                 where the 60-against-37 entry-point mismatch
+//                                 that makes this matter is described.
+//
+//   Three "3D acceleration has been turned off!" notices on menu entry go with
+//   it, and those are additionally gated on NOCTURNE_EDITOR_BUILD: a build not
+//   presenting as the editor has no such screen to draw. That is the only
+//   coupling between the two — this flag decides the behaviour, that one the
+//   surface. It is deliberately NOT folded into NOCTURNE_EDITOR_BUILD, because
+//   an editor build that cannot accelerate cannot exercise the renderer.
+//
+//   1: as the editor shipped — acceleration permanently off, 3D-API cycling
+//      inert.
+//   0: the Graphics Options menu picks a renderer and g_UseDirect3D keeps the
+//      choice, which is what retail did. It also survives a restart: readIniData
+//      reads "useDirect3D" from [Graphics], and writeIniData is the only reader
+//      of that section with no matching write, so at 1 the key is never created
+//      and acceleration begins off however it was left.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_D3D_OPTIONS=1 to revert to the editor
+//   build's permanently-disabled state.
 #ifndef NOCTURNE_AUTHENTIC_D3D_OPTIONS
 #define NOCTURNE_AUTHENTIC_D3D_OPTIONS 0
 #endif
 
 // NOCTURNE_AUTHENTIC_RENDERER_DLL
-//   The game loads its 3D renderer as a Win32 DLL — LoadLibraryA on the name in
-//   g_RendererDllPath, then GetProcAddress for each "APIDLL*" entry point. We
-//   own both shims, so a decompiled renderer can be resolved straight out of
-//   the executable instead of a file on disk.
+//   Whether the 3D renderer has to be a file on disk. The game loads it as a
+//   Win32 DLL — LoadLibraryA on the name in g_RendererDllPath, then
+//   GetProcAddress for each "APIDLL*" entry point — and we own both of those
+//   shims, so a renderer compiled into this executable can be resolved without
+//   one.
+//
+//   That matters because the renderer this build actually uses is its own:
+//   trigl, in shims/renderer/, which is the single row in the registry's table
+//   (shims/renderer/builtin_dll.cpp). The commented-out rows beside it name the
+//   original chain — tridx6, trid3d, tri3dfx — and are what a decompiled DX-era
+//   renderer would be registered as.
+//
+//   It also matters for how a load is judged. The engine resolves 60 APIDLL
+//   entry points, and the DX7 DLL as shipped exports 37, so "did every symbol
+//   resolve" is not a usable test of whether a renderer loaded — see
+//   NOCTURNE_AUTHENTIC_D3D_OPTIONS, which gates the site that makes that call.
+//
 //   1: matches the shipped binary — LoadLibraryA always goes to dlopen, so the
 //      renderer must exist as a real loadable module on disk, and the Graphics
 //      Options "3D API" selector cycles the original hardcoded
 //      trid3d → tridx6 → tridx7 chain regardless of what this build can load.
-//   0: dev-friendly default. LoadLibraryA/GetProcAddress consult the built-in
-//      module registry first (shims/builtin_dll.{h,cpp}) and fall back to
-//      dlopen for anything not registered, so a decompiled renderer links in
-//      without shipping a .so. The 3D-API selector cycles over exactly the
-//      registered modules, so a build only ever offers renderers it can
-//      actually run. Which those are is a table row in builtin_dll.cpp — no
-//      call site names a DLL.
+//   0: LoadLibraryA/GetProcAddress consult the built-in module registry first
+//      and fall back to dlopen for anything not registered, so a compiled-in
+//      renderer links without shipping a .so. The 3D-API selector cycles over
+//      exactly the registered modules, so a build only ever offers renderers it
+//      can actually run. Which those are is a table row — no call site names a
+//      DLL.
 //
 //   Override with -DNOCTURNE_AUTHENTIC_RENDERER_DLL=1.
 #ifndef NOCTURNE_AUTHENTIC_RENDERER_DLL
@@ -236,7 +333,8 @@
 //
 //   Which terms are on is nocturne_trigl_envmap, live-settable, so a look can be
 //   judged on a frame rather than argued about. Software mode has none of this;
-//   see NOCTURNE_AUTHENTIC_ENVMAP_SOFTWARE.
+//   see NOCTURNE_AUTHENTIC_ENVMAP_OVERLAY, which is where software's answer to
+//   the same pass lives.
 //
 //   1: only the captured image, as shipped.
 //   0: the terms above, on the draws the pass marks as reflections.
@@ -246,35 +344,8 @@
 #define NOCTURNE_AUTHENTIC_ENVMAP_SHADING 0
 #endif
 
-// NOCTURNE_AUTHENTIC_ENVMAP_SOFTWARE
-//   Whether the sphere-mapped overlay is drawn when the software rasterizer is
-//   the one drawing.
-//
-//   The overlay covers a surface already drawn at the same depth, and wins its
-//   pixels only where the depth comparison lets it. The accelerated renderer
-//   settles that with a polygon offset (see NOCTURNE_AUTHENTIC_OVERLAY_DEPTH) and
-//   the reflection comes out whole. The software rasterizer has no equivalent:
-//   its depth comes from the vertices of the surface underneath, which the
-//   overlay shares, so there is no per-pass depth to bias without reworking how
-//   it fills a span. What it draws instead is the reflection with a scattering of
-//   its pixels missing, which reads as black speckle on Svetlana's blades.
-//
-//   A reflection that is absent is a surface lit as though nothing reflects in it.
-//   A reflection that is half there is a surface with dirt on it. Between two
-//   wrong pictures this takes the quieter one, and only where the renderer cannot
-//   do better.
-//
-//   1: draw it, as shipped — speckled, and what retail shows.
-//   0: skip it in software. Accelerated is unaffected either way.
-//
-//   Override with -DNOCTURNE_AUTHENTIC_ENVMAP_SOFTWARE=1.
-#ifndef NOCTURNE_AUTHENTIC_ENVMAP_SOFTWARE
-#define NOCTURNE_AUTHENTIC_ENVMAP_SOFTWARE 0
-#endif
-
-// NOCTURNE_AUTHENTIC_OVERLAY_DEPTH
-//   Whether a blended overlay may lose the depth comparison to the surface it
-//   covers.
+// NOCTURNE_AUTHENTIC_ENVMAP_OVERLAY
+//   Whether a reflection comes out speckled.
 //
 //   The game reflects an environment map onto a surface that already carries its
 //   own texture by drawing that surface twice: the texture first, the map blended
@@ -282,24 +353,40 @@
 //   ZWRITEENABLE 1 and ZFUNC LESSEQUAL, which is meant to let the second pass win
 //   the tie — and does, only while both passes interpolate the same depth. The
 //   overlay covers a different mesh of the one surface, so they do not: the winner
-//   alternates per pixel and the overlay comes out hatched.
+//   alternates per pixel and the overlay comes out hatched. That is the black
+//   speckle on Svetlana's blades.
 //
-//   That is the black speckle on Svetlana's blades. Measured on the accelerated
-//   path: the environment map covers the blades except for hatched patches, the
-//   texture beneath comes through exactly there, and taking the comparison away
-//   fills every one (coverage +8.9%, hatching gone). research/16 has the captures.
+//   One symptom, but the two renderers need different answers, which is why this
+//   is one flag over two mechanisms:
 //
-//   1: as shipped, hatching included. The renderer reproduces the original's
-//      flag-to-state table exactly, so this is what retail draws.
-//   0: a blended draw that also tests depth is biased one unit toward the viewer,
-//      which settles a tie against the surface underneath and changes nothing
-//      about how the pass sorts against geometry genuinely in front or behind.
+//     accelerated  a blended draw that also tests depth is biased one unit toward
+//                  the viewer. That settles the tie against the surface underneath
+//                  and changes nothing about how the pass sorts against geometry
+//                  genuinely in front or behind. Measured: the map covers the
+//                  blades except for hatched patches, the texture beneath comes
+//                  through exactly there, and removing the comparison fills every
+//                  one (coverage +8.9%, hatching gone). research/16 has the
+//                  captures.
+//     software     the overlay is not drawn at all. There is no equivalent bias:
+//                  its depth comes from the vertices of the surface underneath,
+//                  which the overlay shares, so there is no per-pass depth to
+//                  offset without reworking how it fills a span. A reflection
+//                  that is absent is a surface lit as though nothing reflects in
+//                  it; a reflection that is half there is a surface with dirt on
+//                  it. Between two wrong pictures this takes the quieter one, and
+//                  only where the renderer cannot do better.
 //
-//   Override with -DNOCTURNE_AUTHENTIC_OVERLAY_DEPTH=1, or at runtime with
-//   nocturne_trigl_overlay_bias / NOCTURNE_TRIGL_OVERLAY_BIAS, so both can be seen
-//   in one run against one held frame.
-#ifndef NOCTURNE_AUTHENTIC_OVERLAY_DEPTH
-#define NOCTURNE_AUTHENTIC_OVERLAY_DEPTH 0
+//   1: as shipped, speckle included. The renderer reproduces the original's
+//      flag-to-state table exactly, so this is also what retail draws.
+//   0: the reflection comes out whole under acceleration, and is skipped in
+//      software.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_ENVMAP_OVERLAY=1. The accelerated half is
+//   additionally settable at runtime through nocturne_trigl_overlay_bias /
+//   NOCTURNE_TRIGL_OVERLAY_BIAS, so both can be seen in one run against one held
+//   frame.
+#ifndef NOCTURNE_AUTHENTIC_ENVMAP_OVERLAY
+#define NOCTURNE_AUTHENTIC_ENVMAP_OVERLAY 0
 #endif
 
 // NOCTURNE_AUTHENTIC_MIRROR_PROJECTION
@@ -340,19 +427,35 @@
 #define NOCTURNE_AUTHENTIC_MIRROR_PROJECTION 0
 #endif
 
-// NOCTURNE_AUTHENTIC_VOICE
-//   1: matches nocedit.exe as-shipped — subtitles render but no voice audio
-//      plays. The streaming MP3 entry point (`loadStreamingSoundFile`) is
-//      orphan in this build; the call site that would invoke it during
-//      cutscenes is missing.
-//   0: dev-friendly mode. Cutscene dialogue plays through the streaming MP3
-//      path alongside the subtitles — i.e. the working behavior the retail
-//      build (presumably) had.
+// NOCTURNE_AUTHENTIC_STREAM_LENGTH
+//   Whether a streamed sample's end marker is corrected once its real length is
+//   known. Only MP3s are streamed — a WAV is loaded whole, so its length is
+//   exact from the start and none of this is reachable for one.
 //
-//   Override with -DNOCTURNE_AUTHENTIC_VOICE=1 to revert to silent
-//   cutscenes.
-#ifndef NOCTURNE_AUTHENTIC_VOICE
-#define NOCTURNE_AUTHENTIC_VOICE 0
+//   An MP3's length is an estimate until the decoder runs short:
+//   CSfxSample::pollStream asks for a batch, gets fewer frames back, and that is
+//   how the end is discovered. It then corrects the count —
+//
+//     MOV EAX,[EBX + 0x164]     ; stream_read_position
+//     ADD EAX,EDI               ; + frames decoded
+//     MOV [EBX + 0x110],EAX     ; sample_info.sample_count       005a6ba3
+//
+//   — and stops there. The function contains no store to 0x128 at all, so
+//   loop_endpoints[0] keeps the estimate it was given at load.
+//
+//   That matters because the count is not what ends a voice. CSfxSlot::mix takes
+//   loop_endpoints[loop_marker_index], subtracts the trigger time and divides by
+//   the resample delta to decide the last frame it will mix. So the two disagree
+//   from the moment the correction lands, and the voice is cut off early or run
+//   past its end depending on which way the estimate was wrong.
+//
+//   1: shipped behaviour — the count is corrected, the end marker is not.
+//   0: the end marker is corrected with it, so the mixer ends the voice where
+//      the sample actually ends.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_STREAM_LENGTH=1.
+#ifndef NOCTURNE_AUTHENTIC_STREAM_LENGTH
+#define NOCTURNE_AUTHENTIC_STREAM_LENGTH 0
 #endif
 
 // NOCTURNE_AUTHENTIC_FMV
@@ -381,22 +484,24 @@
 #define NOCTURNE_AUTHENTIC_FMV 0
 #endif
 
-// NOCTURNE_AUTHENTIC_RESOLUTION_STEP
-//   The Graphics Options resolution selector steps DOWN through a chain of
-//   game_pixy comparisons: 1024x768 -> 800x600 -> 640x480 -> 512x384 ->
-//   320x240, then wraps to the largest mode the card's video memory allows.
-//   That chain has no case for 1280x1024 (pixy 0x400), so from there left
-//   falls through to the chain's default and snaps straight to 320x240 — and
-//   since the wrap at 320x240 goes back to 1280x1024, the top of the list is a
-//   two-entry loop with 1024x768 and 800x600 unreachable going left. The
-//   step-UP chain is complete; only left is affected. Both shipped binaries do
-//   this (nocedit.exe: the CMP EDI,0x300 / JNZ default at 0051151b).
-//   1: shipped behaviour — left at 1280x1024 jumps to 320x240.
-//   0: left at 1280x1024 steps to 1024x768, like every other entry.
+// NOCTURNE_AUTHENTIC_ATTRACT_MOVIES
+//   Whether the main menu ever plays a movie by itself. Neither shipped binary
+//   does: NOC1..NOC4.AVI have no call site anywhere in nocedit.exe or
+//   nocturne.exe, so the four files sit in the data unreferenced.
+//   1: shipped behaviour — the menu plays nothing.
+//   0: once the opening movie has played, the menu plays a random NOC1..NOC4
+//      whenever its splash music finishes, then restarts the music, so it
+//      cycles. Arcade attract-mode behaviour.
 //
-//   Override with -DNOCTURNE_AUTHENTIC_RESOLUTION_STEP=1.
-#ifndef NOCTURNE_AUTHENTIC_RESOLUTION_STEP
-#define NOCTURNE_AUTHENTIC_RESOLUTION_STEP 0
+//   Session-only: nothing is persisted, so the opening still plays every launch
+//   and attract movies only ever follow it within the same run. Needs the movies
+//   to be where the game looks (the hardcoded "video\" directory), and is inert
+//   under NOCTURNE_AUTHENTIC_FMV, when opening.avi is missing, or while sound is
+//   muted, since no splash music means no trigger.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_ATTRACT_MOVIES=1.
+#ifndef NOCTURNE_AUTHENTIC_ATTRACT_MOVIES
+#define NOCTURNE_AUTHENTIC_ATTRACT_MOVIES 0
 #endif
 
 // NOCTURNE_AUTHENTIC_RESOLUTION_LIST
@@ -420,14 +525,45 @@
 //   compositeLightmapToFramebuffer maps the 640x480 lighting grid onto
 //   g_ScreenBufferArray row-for-row, so the per-pixel lighting would cover only
 //   a 640x480 corner of a larger screen.
-//   1: shipped behaviour — the six-mode chain.
+//   The chain is also incomplete going left. Stepping DOWN runs
+//   1024x768 -> 800x600 -> 640x480 -> 512x384 -> 320x240 and then wraps to the
+//   largest mode the card's memory allows, but there is no case for 1280x1024
+//   (pixy 0x400), so from there left falls through to the chain's default and
+//   snaps straight to 320x240. Since the wrap at 320x240 returns to 1280x1024,
+//   the top of the list is a two-entry loop with 1024x768 and 800x600
+//   unreachable going left. The step-UP chain is complete; only left is
+//   affected. Both shipped binaries do this (nocedit.exe: the CMP EDI,0x300 /
+//   JNZ default at 0051151b).
+//   1: shipped behaviour — the six-mode chain, left-step gap included.
 //   0: dev-friendly default. One ordered table in shims/game/resolution.cpp
 //      drives both the label and the stepping, so the two cannot disagree; it
-//      adds 1600x1200 and makes 400x300 reachable. Accelerated only, as before.
+//      adds 1600x1200, makes 400x300 reachable, and steps left from 1280x1024
+//      to 1024x768 like every other entry. Accelerated only, as before.
 //
 //   Override with -DNOCTURNE_AUTHENTIC_RESOLUTION_LIST=1.
 #ifndef NOCTURNE_AUTHENTIC_RESOLUTION_LIST
 #define NOCTURNE_AUTHENTIC_RESOLUTION_LIST 0
+#endif
+
+// NOCTURNE_AUTHENTIC_MENU_RESOLUTION
+//   When a resolution picked on the Graphics Options screen takes effect. In
+//   both shipped binaries the selector only edits CGame::game_pixx/game_pixy;
+//   the sole thing that applies them is CGame::setGameRes, called from
+//   runGameSession and the editor screens and never from the menu. So picking a
+//   resolution appears to do nothing until a mission starts.
+//   1: shipped behaviour — the selector changes nothing until a mission loads.
+//   0: changing the resolution resizes the window straight away. The menu keeps
+//      RENDERING at 640x480 (its layout is hardcoded for that — fixed drawText
+//      coordinates; only the mouse-sensitivity slider reads g_WindowWidth) and
+//      the presenter scales it to fit, so nothing is mispositioned. Missions
+//      still get a real framebuffer at the selected resolution via setGameRes.
+//      Also stops the selector offering resolutions above 640x480 while
+//      hardware acceleration is off, since the menu clamps those back and the
+//      choice would silently revert.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_MENU_RESOLUTION=1.
+#ifndef NOCTURNE_AUTHENTIC_MENU_RESOLUTION
+#define NOCTURNE_AUTHENTIC_MENU_RESOLUTION 0
 #endif
 
 // NOCTURNE_AUTHENTIC_HUD_SCALE
@@ -564,85 +700,69 @@
 #define NOCTURNE_AUTHENTIC_PICKUP_WIELDS 0
 #endif
 
-// NOCTURNE_AUTHENTIC_SHEATHED_FIRE
-//   With the weapon sheathed, the melee heroes treat fire as the action button:
-//   interact, open a door, talk, pull a lever. When none of those find anything
-//   the binary does not stop there - it jumps past the guard that would have
-//   suppressed the attack and swings anyway. In CSvetlana::process that is the
-//   JMP at 005d90cc landing on 005d9015, one instruction past the TEST/JZ at
-//   005d9011 that every successful interaction branches to; CIcePick and
-//   CHaystack are assembled the same way. So a hero with her blades put away
-//   still attacks with them whenever there is nothing nearby to use.
-//   It is deliberate in the original rather than a decompilation artifact, but
-//   it was never exercised: the options screen pinned the player to the
-//   Stranger, whose fire button is CStranger::handleFireButton and shares none
-//   of this.
-//   1: shipped behaviour - sheathed fire falls through to an attack.
-//   0: sheathed fire is only the action button; the attack needs the weapon
-//      drawn. Nothing else about the fire path changes.
+// NOCTURNE_AUTHENTIC_HERO_ACTIONS
+//   What the fire button does for the eight playable classes that are not the
+//   Stranger, and whether any of them can break a grab.
 //
-//   Override with -DNOCTURNE_AUTHENTIC_SHEATHED_FIRE=1.
-#ifndef NOCTURNE_AUTHENTIC_SHEATHED_FIRE
-#define NOCTURNE_AUTHENTIC_SHEATHED_FIRE 0
-#endif
-
-// NOCTURNE_AUTHENTIC_HERO_INTERACT
-//   Six of the nine playable classes reach the CHero interaction set from the
-//   fire button - tryInteract, a door, a conversation, a lever. CScat and
-//   CMoloch reach none of it: CScat::process goes from the button straight to
-//   the weapon, and CMoloch::process reads fire only to let him struggle out of
-//   a grab. Neither can open a door, pull a lever or talk to anyone, which in a
-//   mission built around levers and locked doors is a hero who cannot finish
-//   the level. The shipped game never noticed, because the options screen
-//   pinned the player to the Stranger.
-//   None of it needs animation - CHero::tryOpenDoor calls CDoor::onOpened and
-//   CHero::executeLeverPull calls CLever::activate - which is why the other
-//   five already work without the opendoor/pulllever motions that only
-//   STRANGER.SKL carries.
-//   1: shipped behaviour — Scat and Moloch cannot interact with anything.
-//   0: both reach the same interaction set the other melee heroes use, through
-//      the shared nocturne_hero_interact. Object pickup, item use and box
-//      pushing are NOT included; those sit on carry-hand state these classes do
-//      not maintain. See hero_interact.h.
+//   All three parts below have one cause and one excuse. The shipped options
+//   screen pinned the player to the Stranger, so no other class's fire path was
+//   ever exercised, and each was left in a different unfinished state. They are
+//   one flag because they are one question — is a class other than the Stranger
+//   actually playable — and because a build that wants any of them wants all of
+//   them.
 //
-//   Override with -DNOCTURNE_AUTHENTIC_HERO_INTERACT=1.
-#ifndef NOCTURNE_AUTHENTIC_HERO_INTERACT
-#define NOCTURNE_AUTHENTIC_HERO_INTERACT 0
-#endif
-
-// NOCTURNE_AUTHENTIC_HERO_GRAB
-//   Whether a held hero can break out of a grab. Eight of the nine playable
-//   classes read grabbed_by only to face the grabber, call its
-//   attractActorToward and play a struggle motion while fire is down; not one
-//   of them ever calls releaseFromGrab, so the grab ends only when the grabber
-//   decides it does. CStranger is the exception - his own grab_timer releases
-//   him after 1.5 seconds - and the shipped options screen pinned the player
-//   to him, so nobody else's inability to escape was ever reachable.
-//   It is not a survivable difference. An enemy releases on a motion event in
-//   its own animation, and CSentinel::attractActorToward moves the victim with
-//   setPositionAndOrientation, a teleport with no collision test: a sentinel
-//   that never reaches its release event drags the hero through walls and off
-//   the map, and mashing fire does nothing.
-//   Escaping bounds how long the drag lasts; it does not make the drag legal,
-//   so this covers the carry too. The other two attractActorToward are
-//   harmless - CImp's moves nobody, CCharacter's pulls horizontally only and
-//   caps the step at delta_time * 5 - while CSentinel's snaps the victim onto
-//   the midpoint of its claw bones on all three axes, uncapped. The claw point
-//   is the right destination; writing it into the position is what puts the
-//   victim on the far side of the wall, and of whatever trigger was behind it.
-//   1: shipped behaviour — only the Stranger can break a grab, and the
-//      sentinel's carry ignores the world.
-//   0: a hero of any class breaks out on the Stranger's own 1.5 second timer,
-//      through the game's own CHero::releaseFromGrab; and the sentinel reaches
-//      the same claw point through CCharacter::moveAndCollide, so the carry
-//      stops at geometry and keeps area_id right. Scripted grabs still cannot
-//      be escaped. Every hero rather than only the player's, because
-//      control_type is per-machine and gating on it breaks lockstep — see
-//      hero_grab.h.
+//     interaction   Six of the nine classes reach the CHero interaction set from
+//                   fire: tryInteract, a door, a conversation, a lever. CScat and
+//                   CMoloch reach none of it — CScat::process goes from the button
+//                   straight to the weapon, CMoloch::process reads fire only to
+//                   struggle out of a grab. In a mission built around levers and
+//                   locked doors that is a hero who cannot finish the level. None
+//                   of it needs animation: CHero::tryOpenDoor calls
+//                   CDoor::onOpened and CHero::executeLeverPull calls
+//                   CLever::activate, which is why the other five work without
+//                   the opendoor/pulllever motions only STRANGER.SKL carries.
+//     sheathed fire With the weapon put away the melee heroes treat fire as the
+//                   action button, and when nothing is found they do not stop:
+//                   the binary jumps past the guard that would have suppressed
+//                   the attack and swings anyway. In CSvetlana::process that is
+//                   the JMP at 005d90cc landing on 005d9015, one instruction past
+//                   the TEST/JZ at 005d9011 every successful interaction branches
+//                   to; CIcePick and CHaystack are assembled the same way. It is
+//                   deliberate in the original, not a decompilation artifact.
+//     grab escape   Eight classes read grabbed_by only to face the grabber, call
+//                   its attractActorToward and play a struggle motion; not one
+//                   calls releaseFromGrab, so the grab ends when the grabber says
+//                   so. Only CStranger's own grab_timer releases him, after 1.5
+//                   seconds. Not survivable: CSentinel::attractActorToward moves
+//                   the victim with setPositionAndOrientation, a teleport with no
+//                   collision test, so a sentinel that never reaches its release
+//                   event drags the hero through walls and off the map while
+//                   mashing fire does nothing. The other two are harmless —
+//                   CImp's moves nobody, CCharacter's pulls horizontally and caps
+//                   the step at delta_time * 5 — but CSentinel's snaps the victim
+//                   onto the midpoint of its claw bones on all three axes,
+//                   uncapped.
 //
-//   Override with -DNOCTURNE_AUTHENTIC_HERO_GRAB=1.
-#ifndef NOCTURNE_AUTHENTIC_HERO_GRAB
-#define NOCTURNE_AUTHENTIC_HERO_GRAB 0
+//   1: shipped behaviour — Scat and Moloch can interact with nothing, sheathed
+//      fire falls through to an attack, and only the Stranger can break a grab
+//      while the sentinel's carry ignores the world.
+//   0: Scat and Moloch reach the same interaction set the other melee heroes
+//      use, through the shared nocturne_hero_interact; sheathed fire is only the
+//      action button, and the attack needs the weapon drawn; a hero of any class
+//      breaks out on the Stranger's own 1.5 second timer through the game's own
+//      CHero::releaseFromGrab, and the sentinel reaches the same claw point
+//      through CCharacter::moveAndCollide, so the carry stops at geometry and
+//      keeps area_id right.
+//
+//      Not included: object pickup, item use and box pushing, which sit on
+//      carry-hand state these classes do not maintain; and scripted grabs, which
+//      still cannot be escaped. The grab escape is given to every hero rather
+//      than only the player's, because control_type is per-machine and gating on
+//      it breaks lockstep. See hero_interact.h and hero_grab.h.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_HERO_ACTIONS=1.
+#ifndef NOCTURNE_AUTHENTIC_HERO_ACTIONS
+#define NOCTURNE_AUTHENTIC_HERO_ACTIONS 0
 #endif
 
 // NOCTURNE_AUTHENTIC_FRIENDLY_FIRE
@@ -723,6 +843,24 @@
 #define NOCTURNE_AUTHENTIC_NETPLAY 0
 #endif
 
+// NOCTURNE_AUTHENTIC_NET_CONFIG
+//   Where the network parameters come from. Every one of them is a compile-time
+//   constant in the shipped game: UDP port 0x1ddf appears as a literal in four
+//   places, the socket binds INADDR_ANY, and the Ctrl+J prompt is pre-filled
+//   from g_IpAddress, which is baked in as an original developer's LAN address.
+//   Nothing in any menu changes them.
+//   1: shipped behaviour — the built-in constants always apply, the join prompt
+//      included, and no file is read.
+//   0: they are read from system/netplay.ini when it exists; see net_config.h
+//      for the format. bindAddress and port fall back to the shipped constant.
+//      serverAddress falls back to 127.0.0.1 instead, since the baked-in address
+//      is a developer's old LAN machine and could only ever be a wrong answer.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_NET_CONFIG=1.
+#ifndef NOCTURNE_AUTHENTIC_NET_CONFIG
+#define NOCTURNE_AUTHENTIC_NET_CONFIG 0
+#endif
+
 // NOCTURNE_AUTHENTIC_RNG
 //   1: matches the shipped binary — every random draw in the game is the
 //      verbatim rand() the binary made, from whichever stream the original
@@ -776,24 +914,6 @@
 //   Override with -DNOCTURNE_AUTHENTIC_CONSOLE=1.
 #ifndef NOCTURNE_AUTHENTIC_CONSOLE
 #define NOCTURNE_AUTHENTIC_CONSOLE 0
-#endif
-
-// NOCTURNE_AUTHENTIC_DEV_TOOLS
-//   Whether the editor's developer-tools menu (showDeveloperToolsMenu) is
-//   available: the "Developer tools" entry on the Options screen, and the
-//   Ctrl+D / Ctrl+L hotkeys on the main menu.
-//   1: available — authentic nocedit.exe editor behavior (default).
-//   0: neither the Options entry nor the hotkeys exist; the build looks like a
-//      retail player.
-//
-//   The "NON-RELEASE EDITOR BUILD" / "Press CTRL+D to access the editor menu"
-//   banner is controlled separately, by NOCTURNE_AUTHENTIC_EDITOR_BRANDING
-//   below - the two are independent, so the developer tools can stay reachable
-//   without the build announcing itself as an editor.
-//
-//   Override with -DNOCTURNE_AUTHENTIC_DEV_TOOLS=0.
-#ifndef NOCTURNE_AUTHENTIC_DEV_TOOLS
-#define NOCTURNE_AUTHENTIC_DEV_TOOLS 1
 #endif
 
 // NOCTURNE_AUTHENTIC_CAMERA_SHAKE_TRACE
@@ -864,73 +984,84 @@
 //      which reaches the scripts' own developer warps the way RAISE reaches
 //      them; this flag gates that entry too.
 //
-//   Independent of NOCTURNE_AUTHENTIC_DEV_TOOLS above: the developer-tools menu
-//   and the cheats the editor gates behind developer mode are a different
-//   feature, and "Developer mode" is one of the lines this list can arm.
+//   Independent of NOCTURNE_EDITOR_BUILD: the developer-tools menu and the
+//   cheats the editor gates behind developer mode are a different feature, and
+//   "Developer mode" is one of the lines this list can arm. The Options screen
+//   builds its entry list from both, so the two appear together in one #if
+//   there, but neither decides the other.
 //
 //   Override with -DNOCTURNE_AUTHENTIC_CHEAT_MENU=1.
 #ifndef NOCTURNE_AUTHENTIC_CHEAT_MENU
 #define NOCTURNE_AUTHENTIC_CHEAT_MENU 0
 #endif
 
-// NOCTURNE_AUTHENTIC_EDITOR_BRANDING
-//   Whether the build presents itself as Terminal Reality's internal editor.
-//   nocedit.exe says so in two places: a "NON-RELEASE EDITOR BUILD" line with
-//   "Press CTRL+D to access the editor menu" under it, drawn in the top-left
-//   corner of every menu screen by renderMenuAndGetChoice, and the window title
-//   "Nocturne Editor" that winMain passes to CreateWindowExA.
-//   1: authentic — both appear exactly as the editor shipped them.
-//   0: neither does; the window is titled "Nocturne" and the menus carry no
-//      banner. The banner advertised a keystroke that was once the only route
-//      to the developer-tools menu, and that menu is an Options entry now, so
-//      it has nothing left to tell anyone.
+// NOCTURNE_EDITOR_BUILD
+//   Which binary this build presents itself as. The only flag here on that axis
+//   rather than the shipped-versus-improved one, which is why it does not carry
+//   the AUTHENTIC_ prefix: 1 is nocedit.exe, 0 is nocturne.exe, and neither is
+//   less faithful than the other.
 //
-//   Only the window *title* changes. g_ApplicationTitle is separately the
-//   window class name and the key FindWindowA uses for the single-instance
-//   check, so it keeps its value in both modes.
+//   It covers the whole editor surface, in three parts:
 //
-//   Override with -DNOCTURNE_AUTHENTIC_EDITOR_BRANDING=1.
-#ifndef NOCTURNE_AUTHENTIC_EDITOR_BRANDING
-#define NOCTURNE_AUTHENTIC_EDITOR_BRANDING 0
-#endif
-
-// NOCTURNE_AUTHENTIC_EDITOR_BUTTON
-//   Whether a dialog is the editor's or retail's. Named for the buttons because
-//   they are the loudest part of it, but it covers the whole of what nocedit
-//   puts on a dialog that nocturne.exe does not.
+//     developer tools   The "Developer tools" entry on the Options screen and
+//                       the Ctrl+D / Ctrl+L hotkeys on the main menu, which
+//                       reach showDeveloperToolsMenu.
+//     branding          A "NON-RELEASE EDITOR BUILD" line with "Press CTRL+D to
+//                       access the editor menu" under it, drawn top-left on
+//                       every menu screen by renderMenuAndGetChoice, and the
+//                       window title "Nocturne Editor" that winMain passes to
+//                       CreateWindowExA. Only the window *title* changes:
+//                       g_ApplicationTitle is separately the window class name
+//                       and the key FindWindowA uses for the single-instance
+//                       check, so it keeps its value either way.
+//     dialogs           Everything nocedit puts on a dialog that nocturne.exe
+//                       does not. The OK/Cancel pair on a pick list — retail's
+//                       ctor sets no button text and its layout and render
+//                       (00475470, 004759d0) never touch CEdButton, so leaving
+//                       the two strings empty drops the buttons from the
+//                       measured size, the layout and the paint at once, and
+//                       every downstream user is already guarded on
+//                       ok_button_text[0] != '\0'. The strip they sit in:
+//                       drawWindowSeparator(1) above the row, and the column
+//                       rule stopped short of it rather than run to
+//                       g_ClipBottom. CEdButton::paint's additions over
+//                       retail's 00476f40 — the clip pushed to the button's
+//                       top, the label offset by button_state,
+//                       getCharYOffset('A') in the centring, a dashed focus
+//                       ring, the underlined shortcut key. The dashed ring
+//                       around the selected row. drawMousePointer's
+//                       use_clipping, 0 here against retail's 1, so the
+//                       crosshair is not confined to the dialog. The confirm
+//                       prompt's class — a CStrList through
+//                       showMultiChoiceDialog against retail's CPickList, which
+//                       gates all ~20 callers at once — and the Y/N row
+//                       shortcut that comes with it. And paintCurrentWindow's
+//                       chrome, shared by every dialog: paintWindowBackground,
+//                       the shadow lines down the right and bottom edges, the
+//                       title-bar fill behind the caption, the "j" measurement
+//                       holding the rule below a descender, the second line
+//                       making that rule a 2px bevel, and the caption one pixel
+//                       higher than retail's.
 //
-//     the OK/Cancel pair on a pick list. Retail's ctor sets no button text and
-//       its layout and render (00475470, 004759d0) never touch CEdButton, so
-//       leaving the two strings empty drops the buttons from the measured size,
-//       the layout and the paint at once - every downstream user is already
-//       guarded on ok_button_text[0] != '\0'.
-//     the strip they sit in: drawWindowSeparator(1) above the row, and the
-//       column rule stopped short of it rather than run to g_ClipBottom.
-//     CEdButton::paint's own additions over retail's 00476f40, for the dialogs
-//       that draw buttons directly - the clip pushed to the button's top, the
-//       label offset by button_state, getCharYOffset('A') in the centring, a
-//       dashed focus ring, and the underlined shortcut key.
-//     the dashed ring around the selected row.
-//     drawMousePointer's use_clipping, 0 here against retail's 1, so the
-//       crosshair is not confined to the dialog.
-//     the confirm prompt's class - a CStrList through showMultiChoiceDialog
-//       against retail's CPickList, which gates all ~20 callers at once - and
-//       the Y/N row shortcut that comes with it.
-//     paintCurrentWindow's chrome, shared by every dialog: paintWindowBackground,
-//       the shadow lines down the right and bottom edges, the title-bar fill
-//       behind the caption, the "j" measurement holding the rule below a
-//       descender, the second line making that rule a 2px bevel, and the caption
-//       one pixel higher than retail's.
+//   1: the editor, as nocedit.exe shipped it — tools reachable, banner drawn,
+//      the editor's dialogs, buttons and window chrome.
+//   0: retail. No banner, the window titled "Nocturne", no Options entry and no
+//      hotkeys, no buttons on a pick list and no strip around them, a plain
+//      highlight, a cursor clipped to the dialog, the confirm prompt a two-row
+//      list with working Y/N, retail's flat window chrome, and any button
+//      another dialog does draw uses nocturne.exe's paint, instruction for
+//      instruction.
 //
-//   1: authentic — the editor's dialogs, buttons and window chrome.
-//   0: no buttons on a pick list and no strip around them, a plain highlight, a
-//      cursor clipped to the dialog, the confirm prompt a two-row list with
-//      working Y/N, retail's flat window chrome, and any button another dialog
-//      does draw uses nocturne.exe's paint, instruction for instruction.
+//   NOT part of this: whether hardware acceleration is available. The editor
+//   kills it outright, so folding that in would make an editor build unable to
+//   accelerate — it lives on its own as NOCTURNE_AUTHENTIC_D3D_OPTIONS, which
+//   this flag gates three of the sites of but does not decide. Nor the cheats
+//   menu: NOCTURNE_AUTHENTIC_CHEAT_MENU is its own feature, and "Developer mode"
+//   is one of the lines it can arm.
 //
-//   Override with -DNOCTURNE_AUTHENTIC_EDITOR_BUTTON=1.
-#ifndef NOCTURNE_AUTHENTIC_EDITOR_BUTTON
-#define NOCTURNE_AUTHENTIC_EDITOR_BUTTON 0
+//   Override with -DNOCTURNE_EDITOR_BUILD=1.
+#ifndef NOCTURNE_EDITOR_BUILD
+#define NOCTURNE_EDITOR_BUILD 0
 #endif
 
 // NOCTURNE_AUTHENTIC_CHAPTER_SELECT
@@ -1009,45 +1140,6 @@
 #define NOCTURNE_AUTHENTIC_UI_CURSOR_WARP 0
 #endif
 
-// NOCTURNE_AUTHENTIC_SHADER_LIGHTING
-//   Whether hardware-drawn geometry receives the per-pixel light/fog grid that
-//   CDemonCamera::compositeLightmapToFramebuffer applies to the CPU image.
-//   1: DEFAULT, and the measured-correct answer — it does not. The grid is the
-//      SOFTWARE rasterizer's lighting mechanism; geometry drawn through the
-//      renderer DLL carries its own per-vertex lighting and already arrives at
-//      final brightness. Applying the grid on top darkens it a second time.
-//   0: the grid is published through shims/lighting_bridge.h and the shader
-//      renderer applies it per fragment. Kept for A/B work only — see below.
-//
-//   MEASURED, one static scene, three captures synced to SDL_GL_SwapWindow, the
-//   two accelerated ones from the SAME frame via nocturne_gl_lightmap_debug:
-//
-//                        mean    p50   p70   p90   p95   p99   max
-//     software          14.22   14.0  20.0  24.0  24.0  28.0   181
-//     accel, grid OFF   14.33   14.0  20.0  24.0  24.0  29.0   182   ratio 1.0076
-//     accel, grid ON    12.85   11.0  20.0  23.0  24.0  24.0   144   ratio 0.9035
-//
-//   Accel without the grid matches software at every percentile. This is not a
-//   scene where the grid is a no-op either: its corona grid averages 16 against
-//   64-is-unity, so the composite darkens the software image to 0.41x and the
-//   two still agree. That independently confirms research/13's earlier character
-//   -crop measurement (software 16.083 vs accel 16.471, ratio 1.024).
-//
-//   So the chapel window that motivated this (research/12, accelerated mean
-//   20.53 / max 56 against 19.50 / 28 for software and retail) is a DOUBLE-DRAW
-//   bug, not a missing lightmap: CGlass renders once CPU-side into the
-//   composite's source and again as hardware geometry. It needs the redundant
-//   draw suppressed, which is a fix on the game side, not in the renderer.
-//
-//   The 0 path is retained because it is the only way to A/B the grid against a
-//   live frame, and because a future per-fragment lighting model may want the
-//   data — nothing else in the build reads lighting_bridge.h.
-//
-//   Override with -DNOCTURNE_AUTHENTIC_SHADER_LIGHTING=0 to apply it anyway.
-#ifndef NOCTURNE_AUTHENTIC_SHADER_LIGHTING
-#define NOCTURNE_AUTHENTIC_SHADER_LIGHTING 1
-#endif
-
 // NOCTURNE_AUTHENTIC_OPTIONS_RESUMES_GAME
 //   Whether leaving the Options screen from the pause menu returns to the game
 //   or back to the pause menu.
@@ -1057,12 +1149,23 @@
 //   something on that screen and then look at the SAME frame, because the
 //   simulation has advanced by the time the screen is gone.
 //
-//   The 3D API selector lives on that screen, so comparing two renderers means
-//   comparing two different moments. Characters idle, breath drifts, torches
-//   flicker; every difference between the two images then mixes the renderer
-//   with the animation, and a difference map cannot separate the two. Returning
-//   to the pause menu instead holds the simulation where it was, so the second
-//   renderer redraws the frame the first one drew.
+//   Two reasons to prefer the pause menu. It is the ordinary expectation of a
+//   settings screen — a player who opens Options to change one thing and then
+//   wants to change a second should not have to pause again between them, and
+//   one who opened it by accident should not be returned to a running game with
+//   an enemy mid-swing.
+//
+//   It is also what makes a same-frame comparison possible. The 3D API selector
+//   lives on that screen, so comparing two renderers otherwise means comparing
+//   two different moments: characters idle, breath drifts, torches flicker, and
+//   every difference between the two images mixes the renderer with the
+//   animation past the point where a difference map can separate them. Holding
+//   the simulation where it was lets the second renderer redraw the frame the
+//   first one drew.
+//
+//   1: shipped behaviour — leaving Options resumes the game.
+//   0: leaving Options returns to the pause menu, with the simulation still
+//      held where it was.
 //
 //   Override with -DNOCTURNE_AUTHENTIC_OPTIONS_RESUMES_GAME=1.
 #ifndef NOCTURNE_AUTHENTIC_OPTIONS_RESUMES_GAME

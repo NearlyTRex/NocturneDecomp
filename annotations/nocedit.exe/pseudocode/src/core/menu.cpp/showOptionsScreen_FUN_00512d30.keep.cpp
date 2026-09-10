@@ -17,13 +17,13 @@ void __cdecl core_menu_cpp_showOptionsScreen_FUN_00512d30(int initialize_systems
   char (*pacVar4) [256];
   int local_10;
   EControlMode EVar1;
-#if NOCTURNE_AUTHENTIC_DEV_TOOLS || !NOCTURNE_AUTHENTIC_CHEAT_MENU
+#if NOCTURNE_EDITOR_BUILD || !NOCTURNE_AUTHENTIC_CHEAT_MENU
   char *menu_ptrs [8];
   int menu_count;
   int menu_ch;
   int menu_y;
 #endif
-#if NOCTURNE_AUTHENTIC_DEV_TOOLS
+#if NOCTURNE_EDITOR_BUILD
   char dev_tools_line [256];
   int dev_tools_item;
 #endif
@@ -59,7 +59,7 @@ void __cdecl core_menu_cpp_showOptionsScreen_FUN_00512d30(int initialize_systems
     _sprintf(g_OptionsMenuTextBuffers[3],pcVar1);
     g_CGamePtr->hero_number = HERO_TYPE_STRANGER;
     pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Option Menu");
-#if NOCTURNE_AUTHENTIC_DEV_TOOLS || !NOCTURNE_AUTHENTIC_CHEAT_MENU
+#if NOCTURNE_EDITOR_BUILD || !NOCTURNE_AUTHENTIC_CHEAT_MENU
     for (iVar3 = 0; iVar3 < 4; iVar3++) {
       menu_ptrs[iVar3] = g_OptionsMenuPointers[iVar3];
     }
@@ -71,7 +71,7 @@ void __cdecl core_menu_cpp_showOptionsScreen_FUN_00512d30(int initialize_systems
     menu_ptrs[cheats_item] = cheats_line;
     menu_count = menu_count + 1;
 #endif
-#if NOCTURNE_AUTHENTIC_DEV_TOOLS
+#if NOCTURNE_EDITOR_BUILD
     dev_tools_item = -1;
     if (initialize_systems == 0) {
       strcpy(dev_tools_line,
@@ -103,7 +103,7 @@ void __cdecl core_menu_cpp_showOptionsScreen_FUN_00512d30(int initialize_systems
       iVar3 = -1;   /* consumed; matches no case below */
     }
 #endif
-#if NOCTURNE_AUTHENTIC_DEV_TOOLS
+#if NOCTURNE_EDITOR_BUILD
     if ((0 <= dev_tools_item) && (iVar3 == dev_tools_item)) {
 #if NOCTURNE_AUTHENTIC_D3D_OPTIONS
       if (g_UseDirect3D != 0) {

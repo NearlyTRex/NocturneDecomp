@@ -29,7 +29,7 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetwork_FUN_0053fbc0(CNetGame *t
               (g_CEditorToolsPtr,"Can't turn off blocking mode for socket");
     return 0;
   }
-#if NOCTURNE_NETPLAY_INI
+#if !NOCTURNE_AUTHENTIC_NET_CONFIG
   iVar1 = support_trisock_cpp_bindSocket_FUN_005e1b80
                     (socket_handle,(uint16_t)nocturne_net_port(0x1ddf));
 #else

@@ -153,7 +153,7 @@ void __cdecl core_inivar_cpp_readIniData_FUN_004fbd90(void)
   engine_ini_cpp_CIniFile_readIniHeader_FUN_004fbae0(&local_204,"Editor");
   core_msnedit_cpp_CDemonMission_readIni_FUN_00537530(g_CDemonMissionPtr,&local_204);
   core_setedit_cpp_CDemonSet_readIni_FUN_00584900(g_CDemonSetPtr,&local_204);
-#if NOCTURNE_MENU_APPLIES_RESOLUTION
+#if !NOCTURNE_AUTHENTIC_MENU_RESOLUTION
   nocturne_window_set_size(g_CGamePtr->game_pixx,g_CGamePtr->game_pixy);
 #endif
   return;

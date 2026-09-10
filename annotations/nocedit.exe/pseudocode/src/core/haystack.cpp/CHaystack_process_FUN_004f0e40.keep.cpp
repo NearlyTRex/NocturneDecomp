@@ -116,7 +116,7 @@ void __cdecl core_haystack_cpp_CHaystack_process_FUN_004f0e40(CHaystack *this_pt
               core_hero_cpp_CHero_executeLeverPull_FUN_004f30f0(&this_ptr->base);
               goto LAB_004f11d6;
             }
-#if !NOCTURNE_AUTHENTIC_SHEATHED_FIRE
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
             goto LAB_004f11d6;
 #endif
           }
@@ -174,7 +174,7 @@ LAB_004f0f1c:
               (&(this_ptr->base).base.model.motion_controller,iVar6,1);
   }
 switchD_004f12ce_caseD_8:
-#if !NOCTURNE_AUTHENTIC_HERO_GRAB
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
   nocturne_hero_grab_escape(&this_ptr->base,delta_time);
 #endif
   pCVar2 = (this_ptr->base).base.grabbed_by;

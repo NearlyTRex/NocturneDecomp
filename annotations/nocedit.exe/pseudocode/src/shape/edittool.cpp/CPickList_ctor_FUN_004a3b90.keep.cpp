@@ -14,7 +14,7 @@ CPickList * __cdecl shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(CPickList *th
   CPickList_ptr_420 pCVar3;
   CPickList_ptr_476 pCVar4;
   CPickList_ptr_704 pCVar5;
-#if NOCTURNE_AUTHENTIC_EDITOR_BUTTON
+#if NOCTURNE_EDITOR_BUILD
   char *pcVar2;
 #endif
 
@@ -29,7 +29,7 @@ CPickList * __cdecl shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(CPickList *th
   ADJ(pCVar5)->enabled_array = (int *)0x0;
   ADJ(pCVar5)->hotkey_capacity = 0;
   ADJ(pCVar5)->hotkey_array = (int *)0x0;
-#if NOCTURNE_AUTHENTIC_EDITOR_BUTTON
+#if NOCTURNE_EDITOR_BUILD
   pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("OK");
   strcpy(ADJ(pCVar5)->ok_button_text,pcVar2);
   pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Cancel");

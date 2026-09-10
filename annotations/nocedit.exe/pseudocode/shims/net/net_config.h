@@ -33,7 +33,7 @@
 // The NOCTURNE_NET_BIND environment variable overrides this key, so a pair of
 // instances can be launched from one directory without two ini files.
 //
-// Gated by NOCTURNE_NETPLAY_INI in shim_config_netplay.h.
+// Gated by NOCTURNE_AUTHENTIC_NET_CONFIG in shim_config_authentic.h.
 //
 // The host-scheduled safe respawn lives next door in net_respawn.h.
 
@@ -52,7 +52,7 @@ const char *nocturne_net_bind_address(void);
 // Address to offer in the join prompt. Never blank: with no serverAddress key
 // this is 127.0.0.1, so Ctrl+J finds a host on this machine without anything
 // being configured. The address baked into the executable is a developer's old
-// LAN machine and is never offered while NOCTURNE_NETPLAY_INI is on.
+// LAN machine and is never offered while NOCTURNE_AUTHENTIC_NET_CONFIG is off.
 const char *nocturne_net_server_address(void);
 
 // Name this player appears under in the lobby, or "" to keep the game's own.

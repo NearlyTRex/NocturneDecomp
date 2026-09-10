@@ -5,24 +5,41 @@ project deviates from what the shipped binary does, the deviation is deliberate,
 switchable. That is what `NOCTURNE_AUTHENTIC_*` is for.
 
 All of them live in
-[`shims/config/shim_config_authentic.h`](../annotations/nocedit.exe/pseudocode/shims/config/shim_config_authentic.h).
+[`shims/config/shim_config_authentic.h`](../annotations/nocedit.exe/pseudocode/shims/config/shim_config_authentic.h),
+which opens with a table of every flag, its default and its kind. That table is the index; the
+doc comment beside each flag is the authority, and it explains *why*.
 
 ## The convention
 
 ```
 1 = shipped behaviour, bugs included
-0 = the dev-friendly default
+0 = the alternative
 ```
 
-Every flag defaults to `0` and can be flipped on the configure line:
+Most flags default to `0`. Two default to `1` — `FORMAT_STRINGS` and `SAVE` — and each says in
+its doc comment why the shipped answer is the one worth having.
+
+Flip any of them on the configure line:
 
 ```sh
 cmake --preset exe-linux-asan-x86_64 -DNOCTURNE_AUTHENTIC_HUD_SCALE=1
 ```
 
+`CMakeLists.txt` forwards every `NOCTURNE_AUTHENTIC_*` and `NOCTURNE_EDITOR_BUILD` set that way
+into the compile definitions of the whole build, and prints what it forwarded. Clear one again
+with `-UNOCTURNE_AUTHENTIC_HUD_SCALE` to fall back to the header's default.
+
+They are global on purpose: `shim_config.h` reaches every translation unit through `nocturne.h`,
+so a toggle that reached only some targets would leave two halves of the build disagreeing about
+what the game does. Changing one is therefore a full rebuild.
+
 Each flag carries a doc comment stating what the original did, what the alternative does, and —
 importantly — the evidence. Several cite the exact instruction that proves the shipped
 behaviour, so the claim can be rechecked rather than trusted.
+
+`NOCTURNE_EDITOR_BUILD` is the one flag in that file without the `AUTHENTIC_` prefix. Its axis
+is *which binary* — `1` is nocedit.exe, `0` is nocturne.exe — so neither value is less faithful
+than the other. It lives there because it is read the same way and belongs in the same list.
 
 ## How a gate is written
 
@@ -51,66 +68,99 @@ than repeating the `#if` at every call:
 ```
 
 Before adding a flag, check whether an existing one already covers the behaviour — extend its
-doc comment rather than minting a near-duplicate.
+doc comment rather than minting a near-duplicate. A flag earns its place by being something
+somebody would want to set on its own; two flags nobody would ever set differently are one
+flag.
 
 ## What is gated
 
-39 flags at present, grouped by what they touch.
+37 flags. The kinds below are the same ones the header's table names, and a flag's kind is the
+honest reason its default is what it is.
 
-**Presentation and resolution**
+**`host` — the shipped behaviour depends on Win32 + DirectDraw and cannot be reproduced**
 
-| Flag | Off (default) |
+| Flag | Off |
 |---|---|
-| `RESOLUTION_LIST` | one ordered table of 8 modes, driving both label and stepping |
-| `RESOLUTION_STEP` | left from 1280x1024 steps down instead of snapping to 320x240 |
-| `HUD_SCALE` | HUD bitmaps, text and the goggles scale with the framebuffer |
-| `HUD_ICON_SPACE` | inventory icon panel *and its text* live in the camera's space |
-| `WINDOWS` | windowed / fullscreen / borderless instead of exclusive fullscreen only |
-| `UI_CURSOR_WARP` | cursor handling suited to a windowed game |
+| `FORMAT_STRINGS` | pointers print at their native width on 64-bit *(defaults on)* |
+| `WINDOWS` | the game keeps running unfocused and the window stays put |
+| `UI_CURSOR_WARP` | no `SetCursorPos` warping; the cursor moves freely |
+| `SOUND_DEVICE` | the Sound Options Device line names the host audio API SDL opened |
+| `RENDERER_DLL` | a compiled-in renderer loads without a file on disk |
 
-**Renderer**
+**`defect` — the shipped binary is wrong, and the doc comment carries the instruction that proves it**
 
-| Flag | Off (default) |
+| Flag | Off |
 |---|---|
-| `RENDERER_DLL` | built-in module registry, so a compiled-in renderer loads without a file |
-| `D3D_OPTIONS` | the editor's permanently-disabled acceleration options are usable |
-| `SHADER_LIGHTING` | per-pixel light/fog grid path |
-| `ENVMAP_SHADING`, `ENVMAP_SOFTWARE` | environment-map corrections |
-| `MIRROR_CULL`, `MIRROR_PROJECTION` | actors appear in mirrors |
-| `OVERLAY_DEPTH`, `MENU_LIGHTING`, `IRIS_FADE`, `CAMERA_SHAKE_TRACE` | assorted render fixes |
-
-**Audio and video**
-
-| Flag | Off (default) |
-|---|---|
-| `SOUND_DEVICE` | the Sound Options device line names the real host audio API |
-| `VOICE`, `FMV` | speech and full-motion-video corrections |
-
-**Gameplay**
-
-| Flag | Off (default) |
-|---|---|
+| `MIRROR_CULL` | actors appear in mirrors |
+| `MIRROR_PROJECTION` | accelerated geometry lines up with the backdrop it sits on |
+| `IRIS_FADE` | an opening iris no longer teleports part-way through |
+| `ENVMAP_OVERLAY` | a reflection comes out whole rather than speckled |
+| `MENU_LIGHTING` | the menu's moon puts back the lighting it found |
+| `CAMERA_SHAKE_TRACE` | the shake trace prints its value and a newline |
+| `HUD_ICON_SPACE` | inventory icons stay on screen above 640x480 |
+| `GOD_MODE_FALL` | god mode survives a lethal-height fall |
+| `STREAM_LENGTH` | a streamed MP3 ends where the sample actually ends |
 | `ACTOR_DELETE` | references to a deleted actor are cleared before the memory is freed |
-| `HERO_WEAPON`, `HERO_INTERACT`, `HERO_GRAB`, `SHEATHED_FIRE` | hero-behaviour fixes |
-| `FRIENDLY_FIRE`, `GOD_MODE_FALL` | damage-rule corrections |
-| `SAVE`, `CHAPTER_SELECT`, `OPTIONS_RESUMES_GAME` | progression and menu flow |
+| `HERO_WEAPON` | each hero class starts holding what it can actually use |
+| `HERO_ACTIONS` | the other eight classes can interact, and can escape a grab |
+| `CHAPTER_SELECT` | START offers the chapter lists whether or not pod.ini is present |
+| `FRIENDLY_FIRE` | heroes cannot damage each other in a network game |
 
-**Netplay and determinism**
+**`choice` — the shipped binary is not wrong; we prefer something else**
 
-| Flag | Off (default) |
+| Flag | Off |
 |---|---|
-| `NETPLAY` | netplay additions active |
-| `RNG` | the RNG funnel that keeps lockstep peers in step |
+| `PICKUP_WIELDS` | a weapon picked up is never drawn without the player asking |
+| `OPTIONS_RESUMES_GAME` | leaving Options returns to the pause menu, simulation held |
+| `MENU_RESOLUTION` | a picked resolution applies straight away |
+| `SAVE` | saves are written as readable plain text *(defaults on, i.e. compressed)* |
 
-**Editor and dev tools**
+**`addition` — neither binary did this**
 
-| Flag | Off (default) |
+| Flag | Off |
 |---|---|
-| `CONSOLE`, `DEV_TOOLS`, `CHEAT_MENU`, `GAMEPAD` | additions to the dev surface |
-| `EDITOR_BRANDING`, `EDITOR_BUTTON` | editor-build UI that retail did not show |
-| `FORMAT_STRINGS` | printf-family corrections |
+| `GAMEPAD` | SDL's game-controller layer instead of 1999's joyGetPos |
+| `WINDOW_MESSAGES` | the window proc sees a mouse wheel |
+| `CHEAT_MENU` | a CHEATS entry on Options, and WARPS on the pause menu |
+| `RESOLUTION_LIST` | one ordered table drives both the label and the stepping |
+| `HUD_SCALE` | HUD bitmaps, text and the goggles scale with the framebuffer |
+| `CONSOLE` | the console fills the window and keeps scrollback |
+| `FMV` | the opening movie actually plays |
+| `ATTRACT_MOVIES` | the menu cycles NOC1..NOC4 after its splash music |
+| `ENVMAP_SHADING` | reflections are shaded per pixel rather than flat per facet |
+| `NETPLAY` | netplay is reachable, with its fixes |
+| `NET_CONFIG` | network parameters come from `system/netplay.ini` |
+| `RNG` | every draw goes through the sim/cosmetic funnel |
 
-The table above is a summary; the header is the authority, and it explains *why* in each case.
+**`binary` — which of the two binaries this build is**
+
+| Flag | Off |
+|---|---|
+| `EDITOR_BUILD` | the build presents as retail nocturne.exe — the default |
+| `D3D_OPTIONS` | hardware acceleration can be turned on |
+
+`D3D_OPTIONS` is deliberately not part of `EDITOR_BUILD`: the editor holds acceleration off from
+four places, so folding it in would leave an editor build unable to render an accelerated frame.
+
+## Keeping the list honest
+
+`scripts/Python/check_authentic_flags.py` checks five things, each because one of them got
+through review once:
+
+1. every flag has at least one gate site outside `config/`
+2. every flag referenced in the tree is defined in the header
+3. flags gated inside another flag's gate are reported for review — sometimes correct, sometimes
+   a flag that is dead at its own default
+4. this document names exactly the header's flags, and the header's index table matches its
+   `#define`s
+5. every doc comment has a `1:` line, a `0:` line and an override line
+
+Reviewed exemptions live in `scripts/Python/check_authentic_flags_skip.txt`, each with the
+reason it is one.
+
+```sh
+python3 scripts/Python/check_authentic_flags.py
+```
 
 ## When not to gate
 

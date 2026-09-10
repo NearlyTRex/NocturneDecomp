@@ -92,7 +92,7 @@ extern "C" {
 //
 // Returns 1 on the frame the hero was released, 0 otherwise. Safe to call
 // every frame whether or not the hero is grabbed, and a no-op for an AI hero,
-// for a scripted grab, and when NOCTURNE_AUTHENTIC_HERO_GRAB is 1.
+// for a scripted grab, and when NOCTURNE_AUTHENTIC_HERO_ACTIONS is 1.
 int nocturne_hero_grab_escape(struct CHero *hero, float delta_time);
 
 // Moves `victim` to the world point `world_target` through the collision
@@ -101,7 +101,7 @@ int nocturne_hero_grab_escape(struct CHero *hero, float delta_time);
 //
 // Returns 1 when it moved the victim, and 0 when it did not - a null argument,
 // a victim that is not a CCharacter and so has no moveAndCollide, or
-// NOCTURNE_AUTHENTIC_HERO_GRAB set. A caller that gets 0 should fall through
+// NOCTURNE_AUTHENTIC_HERO_ACTIONS set. A caller that gets 0 should fall through
 // to its own original write, so the shipped path stays reachable.
 int nocturne_grab_carry_move(struct CDemonActor *victim, struct CVector3f *world_target);
 

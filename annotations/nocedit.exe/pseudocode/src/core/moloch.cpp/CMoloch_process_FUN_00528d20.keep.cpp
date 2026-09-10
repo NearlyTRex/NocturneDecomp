@@ -86,7 +86,7 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch *this_ptr,floa
         }
         (this_ptr->base).player_input.action_state.draw = 0;
       }
-#if !NOCTURNE_AUTHENTIC_HERO_INTERACT
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
       if (((this_ptr->base).player_input.action_state.fire != 0) &&
           ((this_ptr->base).control_type != HERO_CONTROL_AI)) {
         if (nocturne_hero_interact(&this_ptr->base) != 0) {
@@ -127,7 +127,7 @@ LAB_00528e32:
               (&(this_ptr->base).base.model.motion_controller,uVar9,1);
   }
 LAB_00528e3a:
-#if !NOCTURNE_AUTHENTIC_HERO_GRAB
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
   nocturne_hero_grab_escape(&this_ptr->base,delta_time);
 #endif
   pCVar3 = (this_ptr->base).base.grabbed_by;

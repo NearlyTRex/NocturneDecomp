@@ -64,12 +64,6 @@
 // table in place of the shipped selector's hardcoded game_pixy chain.
 #include "game/resolution.h"
 
-// The per-pixel light/fog grid (nocturne_lighting_bridge*) — declared here so
-// CDemonCamera::compositeLightmapToFramebuffer reaches it through nocturne.h.
-// Its one call site is gated on NOCTURNE_AUTHENTIC_SHADER_LIGHTING; the shim
-// itself is not, so the symbols resolve either way.
-#include "renderer/lighting_bridge.h"
-
 // Window mode (nocturne_window_mode_*) — declared here so decompiled TUs
 // reach it through nocturne.h.
 #include "gl/window_mode.h"
@@ -178,13 +172,13 @@ void nocturne_trigl_envmap_pass_end(void);
 #include "game/hero_weapon.h"
 
 // The CHero interaction set (nocturne_hero_interact), reached from the two
-// hero classes whose fire button never had it. Gated at those call sites on
-// NOCTURNE_AUTHENTIC_HERO_INTERACT.
+// hero classes whose fire button never had it, and breaking out of a grab
+// (nocturne_hero_grab_escape), reached from the eight that never had that.
+// Both are gated at their call sites on NOCTURNE_AUTHENTIC_HERO_ACTIONS, which
+// also covers the sheathed-fire fall-through in the three melee classes — one
+// flag over the whole fire-button and grab surface of the classes the shipped
+// options screen never let anyone play.
 #include "game/hero_interact.h"
-
-// Breaking out of a grab (nocturne_hero_grab_escape), reached from the eight
-// hero classes that never had it. Gated at those call sites on
-// NOCTURNE_AUTHENTIC_HERO_GRAB.
 #include "game/hero_grab.h"
 
 // The retail Volume/Chapter picker (nocturne_chapter_pick_mission), lifted out

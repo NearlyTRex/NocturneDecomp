@@ -25,7 +25,7 @@ int __stdcall wincore_winrun_cpp_winMain_FUN_005f3680(HINSTANCE hInstance,HINSTA
   _MEMORYSTATUS memStatus;
   char *windowTitle;
 
-#if NOCTURNE_AUTHENTIC_EDITOR_BRANDING
+#if NOCTURNE_EDITOR_BUILD
   windowTitle = g_ApplicationTimerTitle;
 #else
   windowTitle = (char *)"Nocturne";

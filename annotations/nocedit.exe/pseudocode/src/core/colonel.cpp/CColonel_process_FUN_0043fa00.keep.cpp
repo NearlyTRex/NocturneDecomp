@@ -151,7 +151,7 @@ LAB_0043fad3:
               (&(this_ptr->base).base.model.motion_controller,iVar6,1);
   }
 switchD_0043fe37_caseD_5:
-#if !NOCTURNE_AUTHENTIC_HERO_GRAB
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
   nocturne_hero_grab_escape(&this_ptr->base,delta_time);
 #endif
   pCVar3 = (this_ptr->base).base.grabbed_by;

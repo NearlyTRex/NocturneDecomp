@@ -36,7 +36,7 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_00510c80(void)
   int menu_y;
   int menu_ch;
 #endif
-#if NOCTURNE_MENU_APPLIES_RESOLUTION
+#if !NOCTURNE_AUTHENTIC_MENU_RESOLUTION
   int prev_pixx;
   int prev_pixy;
 #endif
@@ -285,7 +285,7 @@ LAB_00510f71:
       iVar7 = 8;
     }
     pcVar14 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Graphic Options");
-#if NOCTURNE_MENU_APPLIES_RESOLUTION
+#if !NOCTURNE_AUTHENTIC_MENU_RESOLUTION
     prev_pixx = g_CGamePtr->game_pixx;
     prev_pixy = g_CGamePtr->game_pixy;
 #endif
@@ -315,7 +315,7 @@ LAB_00510f71:
     iVar6 = _stricmp(g_RendererDllPath,"trid3d.dll");
     pCVar4 = g_CGamePtr;
     bVar12 = iVar6 != 0;
-#if NOCTURNE_MENU_APPLIES_RESOLUTION
+#if !NOCTURNE_AUTHENTIC_MENU_RESOLUTION
     if (g_UseDirect3D == 0) {
       bVar12 = false;
     }
@@ -391,9 +391,6 @@ LAB_005114dd:
           }
           else {
             if (iVar7 == 600) goto LAB_005111c6;
-#if !NOCTURNE_AUTHENTIC_RESOLUTION_STEP
-            if (iVar7 == 0x400) goto LAB_005114a9;
-#endif
             if (iVar7 != 0x300) goto LAB_005114dd;
             g_CGamePtr->game_pixy = 600;
             pCVar4->game_pixx = 800;
@@ -612,7 +609,7 @@ LAB_005116c3:
       iVar6 = g_CurrentGraphicsBoard;
       iVar3 = g_GraphicsCardCount;
     }
-#if NOCTURNE_MENU_APPLIES_RESOLUTION
+#if !NOCTURNE_AUTHENTIC_MENU_RESOLUTION
     if ((prev_pixx != g_CGamePtr->game_pixx) || (prev_pixy != g_CGamePtr->game_pixy)) {
       nocturne_window_set_size(g_CGamePtr->game_pixx,g_CGamePtr->game_pixy);
     }

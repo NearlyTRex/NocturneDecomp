@@ -41,7 +41,7 @@ void __cdecl core_sound_cpp_CSound_configure_FUN_005b3830(CSound *this_ptr)
     iVar3 = sound_sndmain_cpp_getAudioSampleRate_FUN_005ab260();
     if (iVar3 < 0x7531) {
       sound_sndmain_cpp_startSfx_FUN_005a8e90("splash-music-22.wav");
-#if NOCTURNE_ATTRACT_MOVIES
+#if !NOCTURNE_AUTHENTIC_ATTRACT_MOVIES
       nocturne_attract_set_music_duration(
           core_sound_cpp_CSound_getSoundDuration_FUN_005b3ba0(this_ptr,"splash-music-22.wav"));
 #endif
@@ -49,7 +49,7 @@ void __cdecl core_sound_cpp_CSound_configure_FUN_005b3830(CSound *this_ptr)
       return;
     }
     sound_sndmain_cpp_startSfx_FUN_005a8e90("splash-music-44.wav");
-#if NOCTURNE_ATTRACT_MOVIES
+#if !NOCTURNE_AUTHENTIC_ATTRACT_MOVIES
     nocturne_attract_set_music_duration(
         core_sound_cpp_CSound_getSoundDuration_FUN_005b3ba0(this_ptr,"splash-music-44.wav"));
 #endif

@@ -21,7 +21,7 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0(CDemonSet
   int local_28 [6];
   longlong lVar2;
 
-#if !NOCTURNE_AUTHENTIC_ENVMAP_SOFTWARE
+#if !NOCTURNE_AUTHENTIC_ENVMAP_OVERLAY
   if (g_UseDirect3D == 0) {
     return;
   }

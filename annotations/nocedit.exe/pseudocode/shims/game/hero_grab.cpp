@@ -7,7 +7,7 @@
 #include "game/hero_grab.h"
 #include "nocturne.h"
 
-#if !NOCTURNE_AUTHENTIC_HERO_GRAB
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
 
 namespace {
 
@@ -69,11 +69,11 @@ void release_hold(CHero *hero)
 
 } // namespace
 
-#endif // !NOCTURNE_AUTHENTIC_HERO_GRAB
+#endif // !NOCTURNE_AUTHENTIC_HERO_ACTIONS
 
 extern "C" int nocturne_hero_grab_escape(CHero *hero, float delta_time)
 {
-#if NOCTURNE_AUTHENTIC_HERO_GRAB
+#if NOCTURNE_AUTHENTIC_HERO_ACTIONS
     (void)hero;
     (void)delta_time;
     return 0;
@@ -123,7 +123,7 @@ extern "C" int nocturne_hero_grab_escape(CHero *hero, float delta_time)
 
 extern "C" int nocturne_grab_carry_move(CDemonActor *victim, CVector3f *world_target)
 {
-#if NOCTURNE_AUTHENTIC_HERO_GRAB
+#if NOCTURNE_AUTHENTIC_HERO_ACTIONS
     (void)victim;
     (void)world_target;
     return 0;

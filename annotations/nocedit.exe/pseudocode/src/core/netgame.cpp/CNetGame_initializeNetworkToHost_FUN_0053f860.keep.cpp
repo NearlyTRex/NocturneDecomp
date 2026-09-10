@@ -22,7 +22,7 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToHost_FUN_0053f860(CNetG
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Initializing network to host game");
   core_netgame_cpp_CNetGame_disconnect_FUN_0053fd00(this_ptr,0);
-#if NOCTURNE_NETPLAY_INI
+#if !NOCTURNE_AUTHENTIC_NET_CONFIG
   nocturne_net_reload();
   if (nocturne_net_player_name()[0] != '\0') {
     strcpy(this_ptr->player_name,nocturne_net_player_name());
