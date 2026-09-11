@@ -711,8 +711,13 @@
 //   0: every weapon behaves the way a melee weapon already does. A pickup is
 //      collected and nothing is drawn; what the hero holds changes only when the
 //      player asks for it. One rule for the whole action rather than one per
-//      class, and a pickup during a fight no longer swaps the weapon out from
-//      under the shot the player was lining up.
+//      class, and the draw it removes is one the player then has to undo:
+//      collecting an item needs the guns put away, so a weapon that arrives
+//      drawn costs a holster press before the next thing on the floor can be
+//      taken. In a room with several weapons lying about that is one per weapon.
+//      Note that the guard above means this only ever fires into an empty slot —
+//      the shipped code never swapped a held weapon out, so that is not what is
+//      being avoided here.
 //
 //   The starting weapon is not affected either way. CHero::createDefaultWeapon
 //   and CScat::createDefaultWeapon call selectWeapon themselves after adding it,

@@ -86,7 +86,12 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
     }
     core_netgame_cpp_CNetGame_processClientFrame_FUN_005435a0(g_CNetGamePtr);
     if (this_ptr->is_paused == 0) {
-      core_game_cpp_CGame_process_FUN_004e3190(this_ptr);
+#if !NOCTURNE_AUTHENTIC_AUTOMAP
+      if (nocturne_automap_freezes_world() == 0)
+#endif
+      {
+        core_game_cpp_CGame_process_FUN_004e3190(this_ptr);
+      }
       core_sound_cpp_CSound_process_FUN_005b2fd0(g_CSoundPtr);
     }
     else {

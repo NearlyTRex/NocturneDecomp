@@ -63,10 +63,69 @@ const int kPlayerRGB[3] = { 255,  64,  48 };
 const int kHaloRGB[3]   = {  10,  10,  14 };
 const int kCoreRGB[3]   = { 255, 220, 200 };
 
-// How much the frame under the map is knocked back, as a shift. 1 is half
-// brightness: enough that the line work reads against it, not so much that the
-// player loses the scene he is standing in.
-const int kBackdropShift = 1;
+// Doors and characters. A door is asked of the engine's own lock test rather
+// than of key_mask alone, so one you are already carrying the key for reads as
+// openable -- "can I get through this" is the question being answered, not
+// "was this authored with a lock".
+const int kDoorOpenRGB[3]   = { 110, 130, 110 };
+const int kDoorFreeRGB[3]   = {  60, 220,  90 };
+const int kDoorLockedRGB[3] = { 235,  60,  55 };
+
+// Other heroes are teammates in a network game. Characters get one colour
+// between them because the engine has no friend/foe field to ask -- nothing on
+// CCharacter distinguishes a hostage from a mobster, and inventing a class list
+// here would be our fiction rather than the game's.
+const int kHeroRGB[3] = {  90, 170, 255 };
+const int kNpcRGB[3]  = { 250, 200,  60 };
+
+// One line colour per EGroundType, indexed by the enum. A wall is drawn in the
+// colour of its own material, which is carried per triangle in the owning
+// cube's ground_type_memory. These are line colours over a dimmed scene, so
+// they are bright and close in value to each other -- the material is a hint
+// on top of the drawing, and a map whose lines vary wildly in brightness reads
+// as a map with some walls more important than others.
+//
+// DEFAULT is the ordinary wall colour, since most of a level is untyped and
+// that case has to look like the map's normal line rather than a material.
+const int kGroundRGB[14][3] = {
+    { 170, 205, 235 },   // DEFAULT   -- same as kWallRGB, the ordinary line
+    { 170, 205, 235 },   // NONE      -- untyped in practice; treated the same
+    { 168, 186, 200 },   // CONCRETE
+    { 198, 168, 124 },   // DIRT
+    { 132, 208, 138 },   // GRASS
+    { 152, 186, 214 },   // METAL
+    {  96, 172, 240 },   // WATER
+    { 214, 164, 104 },   // WOOD
+    { 222, 220, 232 },   // MARBLE
+    { 164, 146, 110 },   // MUD
+    { 212, 150, 186 },   // CARPET
+    { 230, 106, 104 },   // BLOOD
+    { 150, 224, 230 },   // GLASS
+    { 186, 182, 166 },   // GRAVEL
+};
+const int kGroundTypeCount = (int)(sizeof(kGroundRGB) / sizeof(kGroundRGB[0]));
+
+// Marker radii, in unscaled screen pixels. The hero is deliberately the largest
+// of the three and carries a halo ring on top of that: at this size a one-pixel
+// difference in radius is not a difference anyone sees.
+// Sized to sit between the two: bigger and ringed against a character's flat
+// dot, smaller and coreless against the player's halo 7 / body 5 / core 2, so
+// the player is still the most prominent thing on his own map.
+const int kDoorRadius     = 3;
+const int kHeroRadius     = 4;
+const int kHeroHaloExtra  = 2;
+const int kNpcRadius      = 3;
+
+// Where a character's sight ray lands, above the feet its position records.
+// Aimed at the chest so the ray is not buried in the floor at either end.
+const float kMarkerEyeOffset = 3.0f;
+
+// How far short of a character the sight ray stops. testLineOcclusion raycasts
+// against every actor in the set, so a ray that ends ON the character it is
+// asking about is occluded BY that character and no character ever draws. Same
+// correction the reveal makes for cells, and for the same reason. Wide enough
+// to clear a character's own collision box.
+const float kMarkerPullback = 3.5f;
 
 const float kZoomMin  = 0.5f;
 const float kZoomMax  = 8.0f;
@@ -87,8 +146,9 @@ const int kMargin = 24;           // screen inset of the map window
 struct Segment {
     float x1, z1, x2, z2;
     float y;
-    int   cube;        // owning cell -- the unit the fog reveals
+    int   cube;          // owning cell -- the unit the fog reveals
     unsigned char lone;  // edge used by exactly one wall triangle
+    unsigned char ground;  // EGroundType of the wall this edge came from
 };
 
 struct Edge {
@@ -123,9 +183,6 @@ bool  g_open = false;
 bool  g_key_was_down = false;
 float g_zoom = 1.0f;
 float g_pan_x = 0.0f, g_pan_z = 0.0f;
-bool  g_follow = true;      // recentre on the player until he pans by hand
-bool  g_pan_mode = false;   // movement pans the map instead of moving the hero
-bool  g_mode_was_down = false;
 
 // M for map. Tab is the older convention but the game already uses it. The ini
 // overwrites this on load once the player has bound anything.
@@ -184,32 +241,101 @@ int pick_color(const int rgb[3], int fallback)
     return best_i;
 }
 
-// Knock the frame back under the map so the line work is not competing with a
-// lit scene. Done in place on the framebuffer, which is what every 2D path here
-// draws into anyway.
-void dim_backdrop(int x0, int y0, int x1, int y1)
+// Paint the whole frame out. The map is a screen, not an overlay: the scene
+// behind it is not context the player needs while he is reading it, and a
+// half-lit room under the line work is the thing that made it read as a HUD.
+//
+// The frame underneath is still rendered -- skipping renderScene would be
+// cheaper but reaches into renderer state this has no business touching -- so
+// this covers it rather than preventing it.
+void black_screen(void)
 {
-    if (g_BitsPerPixel == 0x20) {
-        for (int y = y0; y < y1; y++) {
-            unsigned int *row = (unsigned int *)g_ScreenBufferArray[y];
-            if (row == nullptr) continue;
-            for (int x = x0; x < x1; x++) {
-                row[x] = (row[x] >> kBackdropShift) & 0x7f7f7fu;
-            }
-        }
-    } else if (g_BitsPerPixel == 0x10) {
-        for (int y = y0; y < y1; y++) {
-            unsigned short *row = (unsigned short *)g_ScreenBufferArray[y];
-            if (row == nullptr) continue;
-            for (int x = x0; x < x1; x++) {
-                // 5:6:5, so the mask has to clear the top bit of each field
-                // rather than every eighth bit.
-                row[x] = (unsigned short)((row[x] >> kBackdropShift) & 0x7bef);
-            }
-        }
+    const int w = g_WindowWidth, h = g_WindowHeight;
+    if (w <= 0 || h <= 0) return;
+
+    // Black is 0 in all three: zero bits at 16 and 32bpp, and palette entry 0
+    // at 8bpp, which every palette in the game carries as black.
+    const int bytes = (g_BitsPerPixel == 0x20) ? 4
+                    : (g_BitsPerPixel == 0x10) ? 2
+                                               : 1;
+    for (int y = 0; y < h; y++) {
+        void *row = g_ScreenBufferArray[y];
+        if (row == nullptr) continue;
+        std::memset(row, 0, (size_t)w * (size_t)bytes);
     }
-    // 8bpp is a palette index; halving it is not a darker colour, so it is
-    // left alone rather than scrambled.
+}
+
+// Markers are filled shapes rather than outlines: at map scale an outlined
+// glyph a few pixels across is a smudge, and the map is read at a glance.
+// Colour comes from g_ActiveRenderColor, set by the caller.
+void fill_disc(int cx, int cy, int r, int x0, int y0, int x1, int y1)
+{
+    for (int dy = -r; dy <= r; dy++) {
+        const int half = (int)(std::sqrt((float)(r * r - dy * dy)) + 0.5f);
+        if (half <= 0) continue;
+        engine_2d_c_clipAndDrawLine_FUN_00402ca0(cx - half, cy + dy,
+                                                 cx + half, cy + dy,
+                                                 x0, y0, x1, y1);
+    }
+}
+
+void fill_box(int cx, int cy, int r, int x0, int y0, int x1, int y1)
+{
+    for (int dy = -r; dy <= r; dy++) {
+        engine_2d_c_clipAndDrawLine_FUN_00402ca0(cx - r, cy + dy,
+                                                 cx + r, cy + dy,
+                                                 x0, y0, x1, y1);
+    }
+}
+
+// The borrowed-control legend, shortened until it fits the screen.
+//
+// The map takes no bindings of its own for pan and zoom, so the only way the
+// player can know which of his controls do what here is to be told -- and told
+// in the names he actually bound, which getKeyDisplayName gives for pad codes
+// as well as keys. A pad makes the full line long ("Left Stick Up" six times
+// over), hence the two fallbacks rather than one line that runs off the edge.
+void build_help_line(char *out, int out_size, int ui)
+{
+    CGame *g = g_CGamePtr;
+    if (g == (CGame *)nullptr) { out[0] = '\0'; return; }
+
+    // getKeyDisplayName hands back one shared buffer, so each name has to be
+    // taken before the next call overwrites it.
+    char pan_z0[40], pan_z1[40], pan_x0[40], pan_x1[40], zin[40], zout[40], open[40];
+    strcpy(pan_z0, core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_walk));
+    strcpy(pan_z1, core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_backup));
+    strcpy(pan_x0, core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_strafe_left));
+    strcpy(pan_x1, core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_strafe_right));
+    strcpy(zin,    core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_point_up));
+    strcpy(zout,   core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_point_down));
+    strcpy(open,   core_menu_cpp_getKeyDisplayName_FUN_005134e0(g_key_binding));
+
+    const int fits = g_WindowWidth - kMargin * 2;
+
+    std::snprintf(out, (size_t)out_size, "PAN %s %s %s %s    ZOOM %s %s    CLOSE %s",
+                  pan_z0, pan_z1, pan_x0, pan_x1, zin, zout, open);
+    if (nocturne_ui_text_width(g_ThemeFont, out, ui) <= fits) return;
+
+    std::snprintf(out, (size_t)out_size, "PAN %s %s %s %s   ZOOM %s %s",
+                  pan_z0, pan_z1, pan_x0, pan_x1, zin, zout);
+    if (nocturne_ui_text_width(g_ThemeFont, out, ui) <= fits) return;
+
+    std::snprintf(out, (size_t)out_size, "LEFT PAN   RIGHT ZOOM");
+}
+
+// A hero, drawn as a ringed dot: a dark halo with the hero colour inside it,
+// the same construction as the player marker a size down. Colour alone does not
+// separate a hero from a character at map scale -- both are a few pixels of
+// flat fill and the eye reads them as the same kind of thing -- so heroes carry
+// the shape as well, which is what the player marker relies on too.
+void draw_hero_marker(int cx, int cy, int color_hero, int color_halo,
+                      int x0, int y0, int x1, int y1)
+{
+    g_ActiveRenderColor = color_halo;
+    fill_disc(cx, cy, kHeroRadius + kHeroHaloExtra, x0, y0, x1, y1);
+    g_ActiveRenderColor = color_hero;
+    fill_disc(cx, cy, kHeroRadius, x0, y0, x1, y1);
 }
 
 }  // namespace
@@ -230,7 +356,6 @@ extern "C" void nocturne_automap_reset(void)
     // level's state, and a new level is exactly when losing it would be most
     // annoying.
     g_pan_x = g_pan_z = 0.0f;
-    g_follow = true;
 
     CDemonRaytrace *rt = &g_CDemonRaytraceInstance;
     if (rt->cube_data == nullptr) return;
@@ -252,6 +377,13 @@ extern "C" void nocturne_automap_reset(void)
         const CDemonCube *cube = &rt->cube_data[c];
         if (cube->triangle_buffer == nullptr || cube->triangle_count <= 0) continue;
 
+        // ground_type_memory is a uchar[triangle_count] on the cube, indexed by
+        // the triangle's own index: allocGeometryMemory mallocs exactly
+        // triangle_count bytes for it, load and save move that many, and
+        // rayIntersectTriangles hands entry [t] back as the hit material. So a
+        // wall's material is one byte lookup beside the triangle it came from.
+        const unsigned char *ground = (const unsigned char *)cube->ground_type_memory;
+
         for (int t = 0; t < cube->triangle_count; t++) {
             const CDemonCubeTriangle *ct = &cube->triangle_buffer[t];
             if (ct->dominant_axis == 1) continue;
@@ -262,6 +394,9 @@ extern "C" void nocturne_automap_reset(void)
                                       ct->triangle.vertices[2] };
             if (v[0] == nullptr || v[1] == nullptr || v[2] == nullptr) continue;
             g_has_wall[(size_t)c] = 1;
+
+            int mat = (ground != nullptr) ? (int)ground[t] : GROUND_TYPE_DEFAULT;
+            if (mat < 0 || mat >= kGroundTypeCount) mat = GROUND_TYPE_DEFAULT;
 
             for (int e = 0; e < 3; e++) {
                 const CVector3f *a = v[e], *b = v[(e + 1) % 3];
@@ -284,6 +419,7 @@ extern "C" void nocturne_automap_reset(void)
                     s.y  = (a->y + b->y) * 0.5f;
                     s.cube = c;
                     s.lone = 1;
+                    s.ground = (unsigned char)mat;
                     g_segments.push_back(s);
                     it->second = (int)g_segments.size();   // 1-based index
                 } else {
@@ -301,6 +437,82 @@ extern "C" void nocturne_automap_reset(void)
 // ---- per-frame --------------------------------------------------------------
 
 namespace {
+
+// The cube holding a world position, by getCubeAt's own index arithmetic so a
+// cell here is the same cell the collision system means. -1 when outside.
+int cube_at(const CVector3f &p)
+{
+    CDemonRaytrace *rt = &g_CDemonRaytraceInstance;
+    if (rt->cell_size.x <= 0.0f || rt->cell_size.y <= 0.0f || rt->cell_size.z <= 0.0f) {
+        return -1;
+    }
+    const int dimx = rt->grid_coord.x, dimy = rt->grid_coord.y, dimz = rt->grid_coord.z;
+    const int x = (int)((p.x - rt->bbox_min.x) / rt->cell_size.x);
+    const int y = (int)((p.y - rt->bbox_min.y) / rt->cell_size.y);
+    const int z = (int)((p.z - rt->bbox_min.z) / rt->cell_size.z);
+    if (x < 0 || x >= dimx || y < 0 || y >= dimy || z < 0 || z >= dimz) return -1;
+    const int c = x * dimy * dimz + y * dimz + z;
+    return (c >= 0 && c < g_cube_count) ? c : -1;
+}
+
+// Can the player see this character right now? The same occlusion test the
+// reveal uses, answered per frame and never remembered -- see the marker pass
+// in the renderer for why characters do not persist the way walls do.
+//
+// The ray has to stop SHORT of the character. testLineOcclusion raycasts
+// against every actor in the set (rayVoxelGridTest, then raycastAgainstActors),
+// so a ray aimed at the character's own chest is occluded by that character and
+// the answer is always "no". Pulling the end back along the ray clears its
+// collision box while keeping everything in between, including closed doors,
+// blocking as it should.
+bool in_sight(const CVector3f &eye, const CVector3f &target)
+{
+    if (g_CDemonSetPtr == nullptr) return false;
+
+    CVector3f from = eye;
+    CVector3f to = target;
+    to.y += kMarkerEyeOffset;
+
+    const float dx = to.x - from.x, dy = to.y - from.y, dz = to.z - from.z;
+    const float len = std::sqrt(dx * dx + dy * dy + dz * dz);
+    if (len <= kMarkerPullback) {
+        // Close enough to be inside the pullback: he is standing on top of you.
+        return true;
+    }
+    const float k = (len - kMarkerPullback) / len;
+    to.x = from.x + dx * k;
+    to.y = from.y + dy * k;
+    to.z = from.z + dz * k;
+
+    return core_setcolid_cpp_CDemonSet_testLineOcclusion_FUN_00572460(
+               g_CDemonSetPtr, &from, &to) == 0;
+}
+
+// Can the player get through this door from where he is standing?
+//
+// Two separate locks, and colouring by key_mask alone misses the commoner one.
+// CHero::tryOpenNearbyDoor calls CDoor::getMoveType, which refuses outright
+// when the player is on a side the door's allowed_sides bitmask does not permit
+// ("The door is locked from the other side."), and only doors that clear THAT
+// reach the key test in CHero::tryOpenDoor. allowed_sides of 0 permits neither
+// side and is a door that never opens to the player at all.
+//
+// getMoveType itself cannot be called to find out: it plays the locked sound
+// and puts a message on screen. So its side gate is reproduced here, and the
+// key test is the real call with show_message 0, which is a pure query -- it
+// returns 1 immediately for key_mask 0 and neither prints nor plays anything.
+bool door_is_passable(CDoor *door, CHero *hero)
+{
+    CVector3f local;
+    core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10(
+        &door->base, &local, &(hero->base).base.location.position);
+
+    const int side_bit = (local.z <= 0.0f) ? 2 : 1;
+    if ((door->allowed_sides & side_bit) == 0) return false;
+
+    return core_inv_cpp_CInventory_checkHasMatchingKey_FUN_005013d0(
+               &hero->inventory, (uint)door->key_mask, 0) != 0;
+}
 
 void reveal_around(const CVector3f &p)
 {
@@ -426,10 +638,10 @@ extern "C" void nocturne_automap_update(void)
     if (key_now && !g_key_was_down) {
         g_open = !g_open;
         if (g_open) {
-            // Opens centred on the player wherever he last left the view, but
-            // at the zoom he chose: where he is, is the question he is asking;
-            // how far out he likes to see is a preference.
-            g_follow = true;
+            // Opens centred on the player, at the zoom he chose: where he is,
+            // is the question he is asking; how far out he likes to see is a
+            // preference. It does not follow him afterwards, because he does
+            // not move -- the map has the controls for as long as it is up.
             g_pan_x = p.x;
             g_pan_z = p.z;
             g_zoom = (float)g_zoom_percent * 0.01f;
@@ -443,66 +655,70 @@ extern "C" void nocturne_automap_update(void)
     CGame *g = g_CGamePtr;
     const float dt = g->delta_time_float;
 
-    // Two modes. The default is to follow the player, so the map is something
-    // he reads while still walking around -- which is what it is for. Panning
-    // is the exception, entered deliberately, and freezes him while he looks
-    // somewhere else.
-    const bool mode_now = down(g->key_draw);
-    if (mode_now && !g_mode_was_down) {
-        g_pan_mode = !g_pan_mode;
-        if (!g_pan_mode) g_follow = true;
-    }
-    g_mode_was_down = mode_now;
+    // Sticks first. The pad shim hands these over already deadzoned and
+    // rescaled to -1..1, so a gentle push pans slowly and a hard one fast --
+    // which is the whole reason to read the stick as an axis rather than
+    // through the four digital codes it also synthesises.
+    float move_x = 0.0f, move_y = 0.0f, look_x = 0.0f, look_y = 0.0f;
+    nocturne_gamepad_axes(&move_x, &move_y, &look_x, &look_y, nullptr, nullptr);
 
-    if (g_pan_mode) {
-        // Only here do the movement bindings mean the map instead of the hero.
-        float mx = 0.0f, mz = 0.0f;
-        if (down(g->key_left))   mx -= 1.0f;
-        if (down(g->key_right))  mx += 1.0f;
+    // Pan is the left stick, which on a pad IS walk/backup and strafe -- so the
+    // digital fallback reads exactly those bindings and nothing else.
+    // key_left / key_right are the right stick's other axis and must not be
+    // read here, or one stick would drive both pan and zoom.
+    //
+    // Stick y is positive downwards; on the map, down the screen is -z.
+    float mx = move_x, mz = -move_y;
+    if (mx == 0.0f) {
+        // Only when the stick is centred, so a pad's own analogue reading is
+        // never blended with the digital codes it also synthesises -- that
+        // would turn any push past the synthesis threshold into a full-speed
+        // one and throw away the analogue response.
+        if (down(g->key_strafe_left))  mx -= 1.0f;
+        if (down(g->key_strafe_right)) mx += 1.0f;
+    }
+    if (mz == 0.0f) {
         if (down(g->key_walk))   mz += 1.0f;
         if (down(g->key_backup)) mz -= 1.0f;
-
-        if (mx != 0.0f || mz != 0.0f) {
-            g_follow = false;
-            const float rate = kPanRate * dt / g_zoom;
-            g_pan_x += mx * rate;
-            g_pan_z += mz * rate;
-
-            // Held inside the level, plus a margin, so scrolling cannot wander
-            // off into empty space with nothing on screen and no clue which way
-            // back.
-            CDemonRaytrace *rt = &g_CDemonRaytraceInstance;
-            const float bx0 = rt->bbox_min.x - kPanMargin;
-            const float bx1 = rt->bbox_max.x + kPanMargin;
-            const float bz0 = rt->bbox_min.z - kPanMargin;
-            const float bz1 = rt->bbox_max.z + kPanMargin;
-            if (g_pan_x < bx0) g_pan_x = bx0;
-            if (g_pan_x > bx1) g_pan_x = bx1;
-            if (g_pan_z < bz0) g_pan_z = bz0;
-            if (g_pan_z > bz1) g_pan_z = bz1;
-        }
-    } else {
-        g_follow = true;
     }
 
-    // Zoom on the strafe bindings, so a pad reaches it without a new binding,
-    // AND on three fixed pairs, because a player who has not bound strafe would
-    // otherwise have no way to zoom at all. PageUp/PageDown are extended codes
-    // and only reachable while the input mask is wide, which it is during play;
-    // the other two pairs are not, and work regardless.
-    // The strafe bindings only mean zoom in pan mode; in follow mode the hero
-    // is still walking and they have to mean strafing.
-    const bool zoom_in  = (g_pan_mode && down(g->key_strafe_right)) ||
-                          down(DIK_EQUALS) || down(DIK_ADD) || down(DIK_PRIOR);
-    const bool zoom_out = (g_pan_mode && down(g->key_strafe_left)) ||
-                          down(DIK_MINUS) || down(DIK_SUBTRACT) || down(DIK_NEXT);
-    if (zoom_in)  g_zoom *= 1.0f + kZoomRate * dt;
-    if (zoom_out) g_zoom /= 1.0f + kZoomRate * dt;
+    if (mx != 0.0f || mz != 0.0f) {
+        // Divided by the zoom, so a pan covers the same distance on screen
+        // whatever the scale. Panning at a far-out zoom otherwise crawls.
+        const float rate = kPanRate * dt / g_zoom;
+        g_pan_x += mx * rate;
+        g_pan_z += mz * rate;
+
+        // Held inside the level, plus a margin, so scrolling cannot wander off
+        // into empty space with nothing on screen and no clue which way back.
+        CDemonRaytrace *rt = &g_CDemonRaytraceInstance;
+        const float bx0 = rt->bbox_min.x - kPanMargin;
+        const float bx1 = rt->bbox_max.x + kPanMargin;
+        const float bz0 = rt->bbox_min.z - kPanMargin;
+        const float bz1 = rt->bbox_max.z + kPanMargin;
+        if (g_pan_x < bx0) g_pan_x = bx0;
+        if (g_pan_x > bx1) g_pan_x = bx1;
+        if (g_pan_z < bz0) g_pan_z = bz0;
+        if (g_pan_z > bz1) g_pan_z = bz1;
+    }
+
+    // Zoom is the right stick, which on a pad is turn and look -- so the
+    // digital fallback is the look bindings, the half of that stick pan does
+    // not touch. Pushed up zooms in.
+    float zoom_axis = -look_y;
+    if (zoom_axis == 0.0f) {
+        if (down(g->key_point_up))   zoom_axis += 1.0f;
+        if (down(g->key_point_down)) zoom_axis -= 1.0f;
+    }
+
+    if (zoom_axis != 0.0f) {
+        // Multiplicative, so each step is the same proportion of the current
+        // scale and zooming feels even across the whole range.
+        g_zoom *= 1.0f + kZoomRate * zoom_axis * dt;
+    }
     if (g_zoom < kZoomMin) g_zoom = kZoomMin;
     if (g_zoom > kZoomMax) g_zoom = kZoomMax;
     g_zoom_percent = (int)(g_zoom * 100.0f + 0.5f);
-
-    if (g_follow) { g_pan_x = p.x; g_pan_z = p.z; }
 }
 
 // Complete means the whole map is shown, so anything short of 100 is a lie
@@ -515,11 +731,37 @@ extern "C" int nocturne_automap_explored_percent(void)
 
 extern "C" int nocturne_automap_active(void) { return g_open ? 1 : 0; }
 
-// Only pan mode takes the controls. In follow mode the map is up and the hero
-// still walks, which is the point of it.
+// The map takes the controls for as long as it is up. It is a screen, and the
+// hero standing still is half of what makes it one.
 extern "C" int nocturne_automap_owns_controls(void)
 {
-    return (g_open && g_pan_mode) ? 1 : 0;
+    return g_open ? 1 : 0;
+}
+
+// Escape belongs to the map while the map is up, so the in-mission menu is
+// never built over it. Closing here rather than leaving it to the
+// g_ModalDialogActive test in the update means the press is spent on one screen
+// instead of dismissing one and raising another in the same frame.
+extern "C" int nocturne_automap_handle_cancel(void)
+{
+    if (!g_open) return 0;
+    g_open = false;
+    return 1;
+}
+
+// The other half: the world stops. NOT in a network game, though -- the
+// simulation there is lockstep and every machine steps together, so a player
+// who opened his map and stopped calling CGame::process would desync the
+// session rather than pause it. He gets the screen; the world keeps running,
+// and he is as exposed as he would be standing still.
+extern "C" int nocturne_automap_freezes_world(void)
+{
+    if (!g_open) return 0;
+    if (g_CNetGamePtr != (CNetGame *)0x0 &&
+        g_CNetGamePtr->connection_type != CONNECTION_NONE) {
+        return 0;
+    }
+    return 1;
 }
 extern "C" int *nocturne_automap_key_binding(void) { return &g_key_binding; }
 extern "C" int *nocturne_automap_zoom_setting(void) { return &g_zoom_percent; }
@@ -539,8 +781,35 @@ extern "C" void nocturne_automap_render(void)
     if (hero == nullptr) return;
     const CVector3f p = hero->location.position;
 
-    const int x0 = kMargin, y0 = kMargin;
-    const int x1 = g_WindowWidth - kMargin, y1 = g_WindowHeight - kMargin;
+    // Both overlay lines are built and measured BEFORE the map window, because
+    // they decide how tall it is: the top and bottom insets are sized from the
+    // text so each line has a band of its own. A flat inset does not work --
+    // it is a constant and a line of text is not, so anything above UI scale 1
+    // overruns it.
+    const int ui = nocturne_ui_scale();
+
+    char title[64];
+    std::snprintf(title, sizeof(title), "MAP  %d%%%s",
+                  nocturne_automap_explored_percent(),
+                  g_complete ? "  COMPLETE" : "");
+
+    char help[192];
+    build_help_line(help, (int)sizeof(help), ui);
+
+    int title_h = nocturne_ui_text_height(g_ThemeFont, title, ui);
+    if (title_h <= 0) title_h = 12 * ui;
+    int help_h = (help[0] != '\0') ? nocturne_ui_text_height(g_ThemeFont, help, ui) : 0;
+    if (help[0] != '\0' && help_h <= 0) help_h = 12 * ui;
+
+    // Padding above and below the text inside its band.
+    const int pad = 4 * ui;
+    int top_band = title_h + pad * 2;
+    int bottom_band = (help_h > 0) ? help_h + pad * 2 : kMargin;
+    if (top_band < kMargin) top_band = kMargin;
+    if (bottom_band < kMargin) bottom_band = kMargin;
+
+    const int x0 = kMargin, y0 = top_band;
+    const int x1 = g_WindowWidth - kMargin, y1 = g_WindowHeight - bottom_band;
     if (x1 <= x0 || y1 <= y0) return;
 
     CDemonRaytrace *rt = &g_CDemonRaytraceInstance;
@@ -555,7 +824,7 @@ extern "C" void nocturne_automap_render(void)
     const float scale = fit * g_zoom;
     const int cx = x0 + w / 2, cy = y0 + h / 2;
 
-    dim_backdrop(x0, y0, x1, y1);
+    black_screen();
 
     const int color_wall   = pick_color(kWallRGB,   0xf8);
     const int color_faded  = pick_color(kFadedRGB,  0xf8);
@@ -567,20 +836,136 @@ extern "C" void nocturne_automap_render(void)
     #define AM_PX(wx) (cx + (int)(((wx) - g_pan_x) * scale))
     #define AM_PY(wz) (cy - (int)(((wz) - g_pan_z) * scale))
 
-    // The player's own storey only. Other floors were drawn dimmed at one
-    // point, and at a castle's density that is not context but clutter: enough
-    // grey boxes to read as part of the room you are in. What is off your level
-    // stays remembered and stays hidden until you are on it.
-    g_ActiveRenderColor = color_wall;
+    // Every material's line colour, resolved once. pick_color searches the
+    // whole palette, so asking it per segment would be a 256-entry scan per
+    // line drawn.
+    int ground_color[kGroundTypeCount];
+    for (int g = 0; g < kGroundTypeCount; g++) {
+        ground_color[g] = pick_color(kGroundRGB[g], color_wall);
+    }
+
+    // The player's own storey only. Drawing other floors dimmed underneath is
+    // clutter at a castle's density, not context -- enough grey boxes to read
+    // as part of the room you are in. What is off your level stays remembered
+    // and stays hidden until you are on it.
+    //
+    // Each wall draws in its own material's colour, so stone, wood, glass and
+    // water read apart without the map gaining a second layer to look through.
+    int last_color = -1;
     for (size_t i = 0; i < g_segments.size(); i++) {
         const Segment &s = g_segments[i];
         if (!g_complete && !revealed(s.cube)) continue;
         if (s.y < lo || s.y > hi) continue;
+
+        const int col = ground_color[s.ground];
+        if (col != last_color) {
+            g_ActiveRenderColor = col;
+            last_color = col;
+        }
         engine_2d_c_clipAndDrawLine_FUN_00402ca0(
             AM_PX(s.x1), AM_PY(s.z1), AM_PX(s.x2), AM_PY(s.z2),
             x0, y0, x1, y1);
     }
-    (void)color_faded;
+
+    // Doors and characters, over the line work and under the player.
+    //
+    // The two follow different rules on purpose. A door keeps to the fog, like
+    // the walls do: a door you have seen is a fact about the level and should
+    // stay on the map, which is the whole point of colouring the locked ones --
+    // it is a note to come back with a key. A character keeps to line of sight
+    // and is never remembered, because characters move: drawing one wherever
+    // you last had its room revealed would be an x-ray of the level's
+    // population rather than a map of the place.
+    if (g_CDemonSetPtr != nullptr) {
+        CVector3f eye = p;
+        eye.y += kEyeHeight;
+
+        const int color_door_open   = pick_color(kDoorOpenRGB,   color_wall);
+        const int color_door_free   = pick_color(kDoorFreeRGB,   color_wall);
+        const int color_door_locked = pick_color(kDoorLockedRGB, color_wall);
+        const int color_hero        = pick_color(kHeroRGB,       color_wall);
+        const int color_npc         = pick_color(kNpcRGB,        color_wall);
+        const int color_halo        = pick_color(kHaloRGB,       color_wall);
+
+        // Which party slots the set's actor list already accounted for.
+        bool drawn_hero[4] = { false, false, false, false };
+
+        CDemonSet *set = g_CDemonSetPtr;
+        int count = set->actor_count;
+        if (count > (int)(sizeof(set->actors) / sizeof(set->actors[0]))) {
+            count = (int)(sizeof(set->actors) / sizeof(set->actors[0]));
+        }
+
+        for (int i = 0; i < count; i++) {
+            CDemonActor *a = set->actors[i];
+            if (a == nullptr || a == hero) continue;
+
+            const CVector3f ap = a->location.position;
+            if (ap.y < lo || ap.y > hi) continue;
+
+            const int mx = AM_PX(ap.x), my = AM_PY(ap.z);
+            if (mx < x0 || mx >= x1 || my < y0 || my >= y1) continue;
+
+            CDoor *door = (CDoor *)core_actor_cpp_castToClassHash_FUN_0040c790(
+                                       a, g_CDoorClassInfo.name_hash);
+            if (door != (CDoor *)nullptr) {
+                if (!g_complete && !revealed(cube_at(ap))) continue;
+                g_ActiveRenderColor =
+                    (door->door_state != DOOR_STATE_CLOSED) ? color_door_open
+                    : door_is_passable(door, (CHero *)hero) ? color_door_free
+                                                            : color_door_locked;
+                fill_box(mx, my, kDoorRadius, x0, y0, x1, y1);
+                continue;
+            }
+
+            CCharacter *ch = (CCharacter *)core_actor_cpp_castToClassHash_FUN_0040c790(
+                                               a, g_CCharacterClassInfo.name_hash);
+            if (ch == (CCharacter *)nullptr) continue;
+            if (ch->hit_points <= 0.0f) continue;
+            if (!in_sight(eye, ap)) continue;
+
+            // Hero here means the CLASS, not the party. CMoloch, CHaystack and
+            // the rest derive from CHero and are placed in levels as ordinary
+            // actors, so this pass must NOT skip the class on the grounds that
+            // g_HeroActors covers it -- that array holds the party, and every
+            // other hero-class actor in the level would go undrawn. Anything
+            // the engine calls a hero gets the hero marker; g_HeroActors only
+            // decides which ones also need drawing when the set list missed
+            // them.
+            if (core_actor_cpp_castToClassHash_FUN_0040c790(
+                    a, g_CHeroClassInfo.name_hash) != (CDemonActor *)nullptr) {
+                for (int h = 0; h < 4; h++) {
+                    if ((CDemonActor *)g_HeroActors[h] == a) drawn_hero[h] = true;
+                }
+                draw_hero_marker(mx, my, color_hero, color_halo, x0, y0, x1, y1);
+                continue;
+            }
+
+            g_ActiveRenderColor = color_npc;
+            fill_disc(mx, my, kNpcRadius, x0, y0, x1, y1);
+        }
+
+        // Any party hero the pass above did not reach. The set's actor list is
+        // rebuilt per set from actors whose location.area_id matches the
+        // current one (CDemonMission::buildSetActorList), and a hero is not
+        // guaranteed to carry a matching one -- createOneHero's placeholder
+        // fallback sets area_id to -1 outright.
+        for (int i = 0; i < 4; i++) {
+            CHero *mate = g_HeroActors[i];
+            if (mate == (CHero *)nullptr || i == g_LocalHeroIndex) continue;
+            if (drawn_hero[i]) continue;
+            if ((mate->base).hit_points <= 0.0f) continue;
+
+            const CVector3f mp = (mate->base).base.location.position;
+            if (mp.y < lo || mp.y > hi) continue;
+
+            const int mx = AM_PX(mp.x), my = AM_PY(mp.z);
+            if (mx < x0 || mx >= x1 || my < y0 || my >= y1) continue;
+            if (!in_sight(eye, mp)) continue;
+
+            draw_hero_marker(mx, my, color_hero, color_halo, x0, y0, x1, y1);
+        }
+    }
 
     // The player last, as a filled disc with a dark halo under it and a pale
     // core. A bare dot the colour of a wall is exactly what goes missing in a
@@ -591,30 +976,33 @@ extern "C" void nocturne_automap_render(void)
         g_ActiveRenderColor = (ring == 0) ? pick_color(kHaloRGB, color_wall)
                             : (ring == 1) ? color_player
                                           : pick_color(kCoreRGB, color_player);
-        for (int dy = -r; dy <= r; dy++) {
-            const int half = (int)(std::sqrt((float)(r * r - dy * dy)) + 0.5f);
-            if (half <= 0) continue;
-            engine_2d_c_clipAndDrawLine_FUN_00402ca0(
-                hx - half, hy + dy, hx + half, hy + dy, x0, y0, x1, y1);
-        }
+        fill_disc(hx, hy, r, x0, y0, x1, y1);
     }
 
     #undef AM_PX
     #undef AM_PY
 
+    // The two overlay lines, each centred in the band reserved for it above.
     // Through the scaled path, not drawText: the engine's own is 640x480 pixel
     // art one screen pixel per art pixel, so at a real resolution the readout
     // is a few pixels tall and unreadable.
-    char line[64];
-    std::snprintf(line, sizeof(line), "MAP  %d%%%s%s",
-                  nocturne_automap_explored_percent(),
-                  g_complete ? "  COMPLETE" : "",
-                  g_pan_mode ? "  [PAN]" : "");
+    //
     // The colour is the map's own, NOT g_UITextColor: that is an editor global
-    // and reads 0 during play, which is black on a dimmed backdrop.
-    const int ui = nocturne_ui_scale();
-    nocturne_ui_draw_text(g_ThemeFont, line, x0, y0 - 12 * ui,
+    // and reads 0 during play, which is black on a black screen.
+    nocturne_ui_draw_text(g_ThemeFont, title, x0, (top_band - title_h) / 2,
                           color_wall, -1, ui);
+
+    if (help[0] != '\0') {
+        // Centred across the screen, so whichever form survived the width
+        // fallbacks sits under the middle of the map rather than trailing off
+        // one side. Drawn dim: it is a reminder, not part of the map.
+        int help_w = nocturne_ui_text_width(g_ThemeFont, help, ui);
+        int help_x = (g_WindowWidth - help_w) / 2;
+        if (help_x < 0) help_x = 0;
+        nocturne_ui_draw_text(g_ThemeFont, help, help_x,
+                              y1 + (bottom_band - help_h) / 2,
+                              color_faded, -1, ui);
+    }
 }
 
 // ---- persistence ------------------------------------------------------------
@@ -701,6 +1089,9 @@ extern "C" void nocturne_automap_render(void) {}
 extern "C" void nocturne_automap_save(void *file) { (void)file; }
 extern "C" void nocturne_automap_load(void *file) { (void)file; }
 extern "C" int  nocturne_automap_explored_percent(void) { return 0; }
+extern "C" int  nocturne_automap_owns_controls(void) { return 0; }
+extern "C" int  nocturne_automap_freezes_world(void) { return 0; }
+extern "C" int  nocturne_automap_handle_cancel(void) { return 0; }
 extern "C" int *nocturne_automap_key_binding(void) { static int none = 0; return &none; }
 extern "C" int *nocturne_automap_zoom_setting(void) { static int none = 100; return &none; }
 extern "C" char *nocturne_automap_key_label(void) { static char none[1] = ""; return none; }

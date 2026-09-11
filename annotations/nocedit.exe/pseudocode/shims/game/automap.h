@@ -32,9 +32,42 @@
 //   * Reveal is per 3D cell. Two dimensions would let a tower walked at the top
 //     uncover the hall beneath it.
 //
+//   * Wall lines are coloured by material, from CDemonCube::ground_type_memory
+//     -- a uchar[triangle_count] holding one EGroundType per triangle. Colour
+//     the LINES, not the cells beneath them: a fill reads as a second layer to
+//     look through rather than as information about the drawing.
+//
+//   * Doors follow the fog, characters follow line of sight. A door that has
+//     been seen is a fact about the level and is worth remembering, and its
+//     colour says whether the player can currently get through it. A character
+//     moves, so remembering where one was seen would draw an x-ray of the
+//     level's population rather than a map.
+//
+//   * A door has two locks. allowed_sides refuses the player from the wrong
+//     side and is the commoner one; key_mask is checked only after that passes.
+//     Colouring by key_mask alone leaves most locked doors reading as open.
+//
+//   * A sight ray must stop SHORT of the character it is asking about.
+//     testLineOcclusion raycasts against every actor, so a ray ending on a
+//     character is occluded by that character and nothing ever draws.
+//
+//   * Hero is a CLASS, not the party: CMoloch, CHaystack and the rest derive
+//     from CHero and are placed in levels as ordinary actors. Skipping the
+//     class in the actor-list pass loses all of them. g_HeroActors is swept
+//     afterwards only to top up party slots the list missed, since it is
+//     filtered by location.area_id and is not guaranteed to hold them.
+//
+//   * Colour alone does not separate a hero from a character at map scale.
+//     Heroes carry a halo ring as well, and the three marker sizes are chosen
+//     to keep the player the most prominent thing on his own map.
+//
 // Input is one bindable action, which reaches keyboard and gamepad at once: the
 // pad shim writes its codes into the same g_KeyboardState the keyboard uses, so
-// a binding is just a code and does not care which device produced it.
+// a binding is just a code and does not care which device produced it. Once the
+// map is up it takes the controls outright -- left stick pans, right stick
+// zooms, and the hero stands still -- because it is a screen rather than an
+// overlay. Sticks are read as analogue through nocturne_gamepad_axes; the
+// movement and zoom key bindings do the same job for a keyboard.
 
 #ifdef __cplusplus
 extern "C" {
@@ -53,11 +86,28 @@ void nocturne_automap_update(void);
 // Non-zero while the map is on screen.
 int nocturne_automap_active(void);
 
-// Non-zero only while the map has taken the movement controls, which is pan
-// mode alone. The default with the map open is to follow the player while he
-// keeps walking -- a map you have to stand still to read is a worse map -- so
-// this is what a control path should gate on, not nocturne_automap_active().
+// Non-zero while the map has the movement controls, which is whenever it is
+// open. The map is a screen of its own rather than an overlay: it paints out
+// the frame, the hero does not move, and the sticks drive the map instead.
 int nocturne_automap_owns_controls(void);
+
+// Offer the map a cancel press (Escape, or whatever else means "back"). Returns
+// non-zero when the map took it, which it does whenever it is open -- closing
+// itself and leaving the press consumed.
+//
+// The point is that the two screens are exclusive. Without this, Escape reaches
+// the in-mission menu while the map is up and the pick list is built on top of
+// the map, and the map would only notice on the next frame through the
+// g_ModalDialogActive test in nocturne_automap_update. One press should mean
+// one screen: the map closes, and a second press opens the menu.
+int nocturne_automap_handle_cancel(void);
+
+// Non-zero while the world should not advance -- the "pause" half of being a
+// separate screen. NOT simply the same as being open: in a network game the
+// simulation is lockstep and every machine must keep stepping, so one player
+// reading his map cannot be allowed to stop it. The policy lives here so the
+// call site is a single test.
+int nocturne_automap_freezes_world(void);
 
 // Draw. Only meaningful when nocturne_automap_active(); costs nothing otherwise.
 void nocturne_automap_render(void);
@@ -74,6 +124,24 @@ int *nocturne_automap_key_binding(void);
 // const: the engine's string type is plain char *, and the binding table copies
 // straight out of it.
 char *nocturne_automap_key_label(void);
+
+// Opening the map is the ONLY binding the map adds. Pan and zoom borrow the
+// movement bindings instead of taking virtual ones, and the map screen prints
+// which -- a control the player already knows, relabelled for the duration,
+// beats a pair of entries in Customize Keys that only mean anything on one
+// screen. It also keeps the binding table from overflowing: g_CustomKeyNames is
+// [30][40] and configureCustomKeyBindings refuses a 31st, so the map has
+// exactly one row to spend.
+//
+//   pan   key_walk / key_backup, key_strafe_left / key_strafe_right
+//   zoom  key_point_up / key_point_down
+//
+// Split that way because of what those bindings are on a pad: the left stick
+// is walk/backup and strafe, the right stick is turn and look. Taking the two
+// halves of the left stick for pan and look for zoom gives exactly "left stick
+// pans, right stick zooms" with no binding serving both. key_left / key_right
+// are deliberately unused -- they are the right stick's other axis, and reading
+// them for pan is what made the two sticks overlap.
 
 // The player's preferred zoom, as a percentage, for the ini to carry between
 // sessions. The map opens centred on the player but at whatever this holds:

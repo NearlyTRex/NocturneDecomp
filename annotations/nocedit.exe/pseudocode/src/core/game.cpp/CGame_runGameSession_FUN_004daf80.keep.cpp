@@ -209,6 +209,11 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
 #endif
       if (g_ModalDialogActive == 0) {
         iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
+#if !NOCTURNE_AUTHENTIC_AUTOMAP
+        if ((iVar7 != 0) && (nocturne_automap_handle_cancel() != 0)) {
+          iVar7 = 0;
+        }
+#endif
         if (iVar7 != 0) {
           shape_edittool_cpp_CPickList_clear_FUN_004a5770(&g_CPickList);
 #if !NOCTURNE_AUTHENTIC_NETPLAY
