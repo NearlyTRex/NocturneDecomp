@@ -84,7 +84,7 @@ update_position   // snake_case
 
 ### Required Format: `g_PascalCase`
 ```cpp
-g_PlayerHealth      // ✅ CORRECT
+g_PlayerHealth     // ✅ CORRECT
 g_GameState        // ✅ CORRECT
 g_WindowHandle     // ✅ CORRECT
 
@@ -97,8 +97,8 @@ PlayerHealth       // ❌ missing prefix
 
 ### Format: PascalCase (No Prefixes)
 ```cpp
-struct StructureName     // Plain structures
-class ClassName          // Classes
+struct StructureName    // Plain structures
+class ClassName         // Classes
 enum EnumName           // Enumerations
 typedef TypedefName     // Type definitions
 ```
