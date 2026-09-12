@@ -24,7 +24,11 @@
 # Env overrides:
 #   NOCTURNE_DBG_SESSION    tmux session name (default: nodebug)
 #   NOCTURNE_DBG_LOG        probe log path (default: /tmp/nocturne_dbg.log)
-#   NOCTURNE_DBG_DEBUG_SH   path to build's debug.sh (default: auto-discover)
+#   NOCTURNE_DBG_DEBUG_SH   path to build's debug.sh. Defaults to the 64-bit
+#                           ASan lane, build/exe-linux-asan-x86_64. This also
+#                           picks the lane `build` compiles, so the two cannot
+#                           disagree. For the 32-bit lane, point it at
+#                           build/exe-linux-asan/debug.sh.
 #   NOCTURNE_DBG_TESTS      0 to skip building and running the tests on `build`
 #
 # Probe-file conventions:
@@ -41,13 +45,15 @@ PROJECT_ROOT="$(cd -- "${SCRIPT_DIR}/../.." && pwd -P)"
 
 SESSION="${NOCTURNE_DBG_SESSION:-nodebug}"
 LOG="${NOCTURNE_DBG_LOG:-/tmp/nocturne_dbg.log}"
-DEBUG_SH="${NOCTURNE_DBG_DEBUG_SH:-${PROJECT_ROOT}/build/exe-linux-asan/debug.sh}"
+DEBUG_SH="${NOCTURNE_DBG_DEBUG_SH:-${PROJECT_ROOT}/build/exe-linux-asan-x86_64/debug.sh}"
+BUILD_DIR="$(dirname -- "${DEBUG_SH}")"
 
 usage() {
   local rc="${1:-1}"
   local out_fd=2
   [ "${rc}" = "0" ] && out_fd=1
-  sed -n '3,33p' "${BASH_SOURCE[0]}" | sed 's/^# \{0,1\}//' >&${out_fd}
+  awk 'NR < 3 { next } /^#/ { sub(/^# ?/, ""); print; next } { exit }' \
+      "${BASH_SOURCE[0]}" >&${out_fd}
   exit "${rc}"
 }
 
@@ -92,7 +98,12 @@ cmd="$1"; shift
 case "${cmd}" in
   build)
     touch "${PROJECT_ROOT}/cmake/skip_list.txt"
-    _build_dir="${PROJECT_ROOT}/build/exe-linux-asan"
+    _build_dir="${BUILD_DIR}"
+    [ -f "${_build_dir}/CMakeCache.txt" ] || {
+      echo "dbg.sh: ${_build_dir} is not a configured build dir" >&2
+      exit 1
+    }
+    echo "dbg.sh: building ${_build_dir}"
     cmake --build "${_build_dir}" "$@" || exit $?
     # The test binaries are EXCLUDE_FROM_ALL, so the build above never touches
     # them and `ctest` afterwards runs whatever was last compiled. That is worse
