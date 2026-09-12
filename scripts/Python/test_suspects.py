@@ -204,6 +204,7 @@ def run_detectors(susp, code, struct_layout_map=None,
     found.extend(susp.identify_preinc_loop_idiom(code))
     found.extend(susp.identify_loop_clobbered_constant(code))
     found.extend(susp.identify_fast_sqrt_inline(code))
+    found.extend(susp.identify_inline_exp_idiom(code))
     found.extend(susp.identify_bit_int_float_compare(code))
     found.extend(susp.identify_struct_field_overrun(code, struct_layout_map))
     found.extend(susp.identify_alloc_magic_size(code, struct_size_map))

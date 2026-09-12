@@ -127,6 +127,7 @@ When you are editing a `.keep` for any reason — creating one for a compile err
 - `preinc_loop_idiom` — §19 (Pre-increment-array-walk loop idiom). Always a Ghidra loop-decode artifact; must rewrite as a clean `for`-loop after cross-referencing the asm. The decompile is never correct as-decoded.
 - `missing_cave_copy` — §20 (Missing cave-block struct memcpy). Ghidra dropped a post-call struct copy that Watcom emitted, leaving a struct local uninitialized at runtime. Fix by passing the real source local directly or adding the missing assignment; detected via `.cpp`/`.asm` cross-check. **Candidate locals are filtered by struct size matching the asm cave-block size** — e.g. a 48-byte cave block can't be the missing copy of a 12-byte `CVector3f` local, so output buffers like `&local_vec` passed to `transformVector3x4(&out, &in, &mat)` no longer false-positive.
 - `fast_sqrt_inline`, `fast_inv_sqrt_inline` — §21 (Inline fast-(inverse-)sqrt bit-trick). Ghidra emits `(int)X` numeric cast where the asm performs a bit-cast; UB on NaN/Inf. Replace inline occurrences with calls to the existing helper functions `fastSqrt(X)` / `fastInvSqrt(X)` in a `.keep`.
+- `inline_exp_idiom` — §33 (Inline x87 `exp()`/`pow()` with the FPREM reduction dropped). `f2xm1(A - (A / B) * B)`, where the argument is arithmetically **zero** because Ghidra rendered `FPREM` without the truncation the instruction performs. What compiles is `2^trunc(x)` — a staircase in powers of two instead of an exponential — and it is silently *correct* whenever the exponent is 0, which is the common authored case. Recover the real call from the asm and write it in a `.keep`. The looser arm of the detector flags any surviving `f2xm1`/`fscale`, on the same principle as `bitcast_double`: these are compile escape hatches and should not remain in a finished reconstruction.
 - `bitcast_double_pair` — §22 (Adjacent uint locals reconstructed as a double). `__BITCAST_DOUBLE(CONCAT44(hi, lo))` over two stack-local uints almost always means Watcom split one `double` local into two 4-byte slots; merge them into a single `double` declaration in a `.keep` and pass it directly.
 - `bitcast_double` — any other use of the `__BITCAST_DOUBLE` intrinsic. The macro is a preprocessor escape hatch that lets Ghidra-split doubles compile; it should not appear in finished code. Most common remaining shape is `__BITCAST_DOUBLE(0xNNNNNNNNNNNNNNNNULL)` for a hardcoded constant — decode the 64 bits as IEEE 754 and replace with the decimal literal (`python3 -c "import struct; print(struct.unpack('<d', struct.pack('<Q', 0xN))[0])"`). The result is often a recognizable short literal (e.g. `0x400921fb54411744` is exactly `3.1415926535`); if it round-trips bit-exact, the literal is faithful.
 - `sibling_array_undersized` — Ghidra-split array detected via sibling-size mismatch. Same function has two-or-more arrays of the same struct type but the flagged one is sized smaller than its peers (e.g. `CQuaternion4f local_186c[95]` alongside `local_122c[100]` and `local_bec[100]`). Latent runtime bug: the asm drives all three arrays from one loop bound (per-bone, per-vertex, etc.), so writes overrun the smaller declaration and trip ASan as `stack-buffer-overflow`. Cross-check the asm for the actual loop bound and resize the undersized array in a `.keep` to match its siblings. The detector skips primitive-typed arrays (`char`/`int`/`float`/etc.) since size variation there is usually intentional.
@@ -1061,6 +1062,48 @@ blendBoneRotations(&(this_ptr->base).base.model, &local_6c, t, local_18,
 **Scope:** the detector reports the **field-path** shape (`(int)local.field`, `(int)local.a.b`) only. The bare-local shape (`(int)fVar4` on a mistyped `float` local used as a counter or index) has the same root cause but resolves to a Ghidra-side retype rather than a `.keep` edit, so it is deliberately not flagged. Three neighbours are owned by other detectors and are excluded: bit-pattern compares (`(int)x.f < 0x40c00001` → `bit_int_float_compare`), the fast-(inv-)sqrt magics (§21), and pointer/array roots (§27).
 
 **Eligibility:** `.keep`-layer fix, but only once the asm tells you the real value — if it doesn't, say so rather than guessing an index. The suspect needs the `.asm`, so it appears in the export report, not in `test_suspects.sh`.
+
+### 33. Inline x87 `exp()`/`pow()` with the FPREM reduction dropped (`inline_exp_idiom`)
+
+**Cause:** Watcom computes `exp()` and `pow()` inline on the x87 rather than calling a library routine. The sequence is the textbook 2^x:
+
+```
+FLD1                  ; 1.0
+FLDL2E                ; log2(e)
+FMUL ST2              ; x = log2(e) * arg
+FST  ST2              ; keep x
+FPREM                 ; frac(x)  -- remainder against the 1.0 below it
+F2XM1                 ; 2^frac(x) - 1
+FADDP                 ; 2^frac(x)
+FSCALE                ; 2^frac(x) * 2^trunc(x) == 2^x
+```
+
+`FPREM` computes `a - trunc(a / b) * b`. **Ghidra renders it without the truncation**, as a plain `a - (a / b) * b`, which for the `b == 1.0` the idiom uses is identically **zero**. So the decompile reduces to `f2xm1(0) + 1 == 1.0`, scaled by the exponent — and since `intrinsics.h` defines `fscale(y, x)` as `ldexp(y, x)`, whose exponent parameter is an `int`, what compiles is `2^trunc(x)`: a staircase in powers of two instead of a smooth exponential.
+
+A `pow()` site has `FLDLN2`/`FYL2X` in front of it for the `ln(x)` (see `dropped_fyl2x`); an `exp()` site goes straight to `FLDL2E`.
+
+**Why it survives review:** the broken form is **exactly right whenever the exponent is zero** — a decay rate of 0, a gain of 1, a scale of 1 — which is the common authored case, so the idiom sits in shipped code looking correct. Where it is wrong it produces plausible output: a value that really does fall, just in visible steps rather than a curve.
+
+**Symptoms:** anything driven by an envelope or a multiplicative ramp moves in discrete jumps — a decaying oscillation whose amplitude halves abruptly, an interval that snaps to 1/2/4/8, a pitch or scale that quantises.
+
+**Fix:** read the `FMUL` feeding `FLDL2E` for the sign and operands, then name the operation in a `.keep`:
+
+```cpp
+// BROKEN (compiles to 2^trunc(x)):
+fVar8 = (float10)1;
+fVar6 = (float10)1.4426950408889634 * fVar5 * (float10)this_ptr->decay * (float10)-1;
+fVar7 = (float10)f2xm1(fVar6 - (fVar6 / fVar8) * fVar8);
+fVar8 = (float10)fscale(fVar7 + fVar8,fVar6);
+
+// FIXED:
+fVar8 = (float10)exp(-(double)this_ptr->decay * (double)this_ptr->decay_timer);
+```
+
+Unlike the fast-(inv-)sqrt bit-trick in §21, this sequence is **full precision** on the x87, so libc `exp`/`pow` is a faithful replacement rather than an approximation swap — there is no behaviour to preserve by keeping the inline form. Drop the now-dead `float10` spill locals.
+
+**Confirmed instances:** `CPendulum::updateSwing` (×2, the swing-decay envelope and the sound gate), `CPendulum::process` (the `is_stopped` latch), `CLarva::process` (`pow(size_scale, -0.2)` sample pitch), `CWeather::update` (lightning interval growth).
+
+**Eligibility:** `.keep`-layer fix — a decompiler rendering limitation, not a type error, so no Ghidra change helps. Source-side detector, so it runs in `test_suspects.sh`.
 
 ### 28. Swapped / mistyped call arguments (`static_swapped_arguments`)
 

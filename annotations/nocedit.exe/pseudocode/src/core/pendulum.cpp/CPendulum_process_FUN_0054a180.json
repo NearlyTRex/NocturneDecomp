@@ -186,6 +186,24 @@
       "severity": "moderate",
       "text": "actor_ptr = *(CDemonActor **)((int)g_CDemonSetPtr->characters + iVar2);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Inline x87 exp() with the FPREM reduction dropped: `fVar3 - (fVar3 / fVar5) * fVar5` is identically zero, so this compiles to `fscale(1.0, x)` == `2^trunc(x)` -- a staircase in powers of two, not an exponential. It is silently correct whenever the exponent is 0. Read the FMUL feeding FLDL2E in the .asm for the sign and operands, then write the real call in a .keep, e.g. `exp(-decay * decay_timer)`.",
+      "line": 32,
+      "match": "fVar4 = (float10)f2xm1(fVar3 - (fVar3 / fVar5) * fVar5);",
+      "resolution_source": "keep",
+      "severity": "major",
+      "text": "fVar4 = (float10)f2xm1(fVar3 - (fVar3 / fVar5) * fVar5);",
+      "type": "inline_exp_idiom"
+    },
+    {
+      "description": "Raw x87 `f2xm1`/`fscale` intrinsic. These are compile escape hatches for Ghidra's rendering of an inline exp()/pow() and should not remain in a finished reconstruction; note `fscale` is `ldexp`, which truncates its exponent to `int`. Confirm the sequence against the .asm (FLDL2E / FPREM / F2XM1 / FSCALE) and name the operation in a .keep.",
+      "line": 33,
+      "match": "fVar5 = (float10)fscale(fVar4 + fVar5,fVar3);",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "fVar5 = (float10)fscale(fVar4 + fVar5,fVar3);",
+      "type": "inline_exp_idiom"
     }
   ],
   "stack_frame": {

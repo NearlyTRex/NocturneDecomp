@@ -86,16 +86,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 797,
-    "complexity_score": 559,
+    "complexity_score": 584,
     "cross_reference_count": 0,
     "function_call_count": 25,
     "global_count": 20,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 344,
-    "suspect_count": 17,
+    "suspect_count": 19,
     "suspect_types": [
       "dropped_fyl2x",
       "fast_sqrt_inline",
+      "inline_exp_idiom",
       "self_copy_guard",
       "stack_param",
       "stack_ref",
@@ -981,6 +982,22 @@
       "severity": "moderate",
       "text": "local_40 = (float)(((int)local_44 >> 1) + g_FastSqrtMagic);",
       "type": "fast_sqrt_inline"
+    },
+    {
+      "description": "Inline x87 exp() with the FPREM reduction dropped: `fVar14 - (fVar14 / fVar16) * fVar16` is identically zero, so this compiles to `fscale(1.0, x)` == `2^trunc(x)` -- a staircase in powers of two, not an exponential. It is silently correct whenever the exponent is 0. Read the FMUL feeding FLDL2E in the .asm for the sign and operands, then write the real call in a .keep, e.g. `exp(-decay * decay_timer)`.",
+      "line": 298,
+      "match": "fVar15 = (float10)f2xm1(fVar14 - (fVar14 / fVar16) * fVar16);",
+      "severity": "major",
+      "text": "fVar15 = (float10)f2xm1(fVar14 - (fVar14 / fVar16) * fVar16);",
+      "type": "inline_exp_idiom"
+    },
+    {
+      "description": "Raw x87 `f2xm1`/`fscale` intrinsic. These are compile escape hatches for Ghidra's rendering of an inline exp()/pow() and should not remain in a finished reconstruction; note `fscale` is `ldexp`, which truncates its exponent to `int`. Confirm the sequence against the .asm (FLDL2E / FPREM / F2XM1 / FSCALE) and name the operation in a .keep.",
+      "line": 299,
+      "match": "fVar16 = (float10)fscale(fVar15 + fVar16,fVar14);",
+      "severity": "moderate",
+      "text": "fVar16 = (float10)fscale(fVar15 + fVar16,fVar14);",
+      "type": "inline_exp_idiom"
     },
     {
       "description": "x87 log constant multiplied by `(this_ptr->base` in a function whose asm has 1 FYL2X. FYL2X computes st(1)*log2(st(0)); Ghidra drops it and leaves only the loaded constant, so ln(x) decompiles as 0.693*x. Read the asm and restore the logarithm in a .keep (e.g. `log(x) * 868.589` for a dB conversion). Note log2(e)*ln(2) == 1, so in a pow()-shaped site the constants cancel and the arithmetic looks innocent.",

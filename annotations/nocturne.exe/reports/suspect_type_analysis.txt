@@ -53,6 +53,7 @@ SUSPECT TYPE COUNTS
   phantom_float_to_int              12 (  0.1%)
   fast_inv_sqrt_inline              11 (  0.1%)
   static_null_pointer_redundant_check    10 (  0.0%)
+  inline_exp_idiom                  10 (  0.0%)
   static_null_pointer                9 (  0.0%)
   displaced_global_access            8 (  0.0%)
   preinc_loop_idiom                  8 (  0.0%)
@@ -6790,6 +6791,28 @@ Functions:
   core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_0046aff0
   engine_pod.cpp_CPod_init_FUN_004f8af0
   engine_prim.c_renderScanlinePolygon_FUN_004fad00
+
+====================================================================================================
+TYPE: inline_exp_idiom (10 occurrences)
+====================================================================================================
+
+Unique patterns:
+     1x  fVar15 = (float10)f2xm1(fVar14 - (fVar14 / fVar16) * fVar16);
+     1x  fVar16 = (float10)fscale(fVar15 + fVar16,fVar14);
+     1x  fVar5 = (float10)f2xm1(fVar6 - (fVar6 / fVar3) * fVar3);
+     1x  fVar3 = (float10)fscale(fVar5 + fVar3,fVar6);
+     1x  fVar4 = (float10)f2xm1(fVar6 - (fVar6 / fVar3) * fVar3);
+     1x  fVar3 = (float10)fscale(fVar4 + fVar3,fVar6);
+     1x  fVar5 = (float10)f2xm1(fVar4 - (fVar4 / fVar6) * fVar6);
+     1x  fVar6 = (float10)fscale(fVar5 + fVar6,fVar4);
+     1x  fVar8 = (float10)f2xm1(fVar7 - (fVar7 / fVar9) * fVar9);
+     1x  fVar9 = (float10)fscale(fVar8 + fVar9,fVar7);
+
+Functions:
+  core_larva.cpp_CLarva_process_FUN_004c4970
+  core_pendulum.cpp_CPendulum_process_FUN_004f3a20
+  core_pendulum.cpp_CPendulum_updateSwing_FUN_004f3430
+  core_weather.cpp_CWeather_update_FUN_00554980
 
 ====================================================================================================
 TYPE: static_null_pointer (9 occurrences)

@@ -2806,7 +2806,7 @@ core_larva.cpp_factoryFuncLarva_FUN_004c4850,004c4850,core/larva.cpp,10,0,,10
 core_larva.cpp_CLarva_getActorType_FUN_004c4870,004c4870,core/larva.cpp,4,0,,4
 core_larva.cpp_CLarva_ctor_FUN_004c4880,004c4880,core/larva.cpp,21,0,,21
 core_larva.cpp_CLarva_setup_FUN_004c4910,004c4910,core/larva.cpp,13,0,,13
-core_larva.cpp_CLarva_process_FUN_004c4970,004c4970,core/larva.cpp,344,17,dropped_fyl2x|fast_sqrt_inline|self_copy_guard|stack_param|stack_ref|unknown_type|unrolled_memcpy|unrolled_memset|warning_unreachable,559
+core_larva.cpp_CLarva_process_FUN_004c4970,004c4970,core/larva.cpp,344,19,dropped_fyl2x|fast_sqrt_inline|inline_exp_idiom|self_copy_guard|stack_param|stack_ref|unknown_type|unrolled_memcpy|unrolled_memset|warning_unreachable,584
 core_larva.cpp_CLarva_archive_FUN_004c5250,004c5250,core/larva.cpp,14,0,,14
 core_larva.cpp_CLarva_processDamage_FUN_004c5310,004c5310,core/larva.cpp,71,0,,71
 core_larva.cpp_CLarva_getTargetPoints_FUN_004c54f0,004c54f0,core/larva.cpp,14,1,unrolled_memcpy,29
@@ -3434,8 +3434,8 @@ core_pendulum.cpp_CPendulum_ctor_FUN_004f2c30,004f2c30,core/pendulum.cpp,81,8,ne
 core_pendulum.cpp_CPendulum_setup_FUN_004f2d40,004f2d40,core/pendulum.cpp,35,2,unrolled_memcpy,60
 core_pendulum.cpp_CPendulum_testCollisionWithActor_FUN_004f2e60,004f2e60,core/pendulum.cpp,135,4,unrolled_memcpy|warning_overlapping_globals,185
 core_pendulum.cpp_didPhaseCross_FUN_004f3340,004f3340,core/pendulum.cpp,26,1,warning_overlapping_globals,41
-core_pendulum.cpp_CPendulum_updateSwing_FUN_004f3430,004f3430,core/pendulum.cpp,161,13,unknown_field|unrolled_memcpy,301
-core_pendulum.cpp_CPendulum_process_FUN_004f3a20,004f3a20,core/pendulum.cpp,65,1,pointer_cast,80
+core_pendulum.cpp_CPendulum_updateSwing_FUN_004f3430,004f3430,core/pendulum.cpp,161,17,inline_exp_idiom|unknown_field|unrolled_memcpy,346
+core_pendulum.cpp_CPendulum_process_FUN_004f3a20,004f3a20,core/pendulum.cpp,65,3,inline_exp_idiom|pointer_cast,105
 core_pendulum.cpp_CPendulum_renderOpaque_FUN_004f3b90,004f3b90,core/pendulum.cpp,16,0,,16
 core_pendulum.cpp_CPendulum_getBoundingBox_FUN_004f3c00,004f3c00,core/pendulum.cpp,14,1,unrolled_memcpy,29
 core_pendulum.cpp_CPendulum_archive_FUN_004f3c50,004f3c50,core/pendulum.cpp,37,0,,37
@@ -4763,7 +4763,7 @@ core_weapon.cpp_CDemonGlobe_ctor_FUN_00554910,00554910,core/weapon.cpp,4,0,,4
 core_weapon.cpp_CDemonGlobe_dtor_FUN_00554920,00554920,core/weapon.cpp,4,0,,4
 core_weather.cpp_staticInit_FUN_00554930,00554930,core/weather.cpp,6,0,,6
 core_weather.cpp_CWeather_ctor_FUN_00554960,00554960,core/weather.cpp,5,0,,5
-core_weather.cpp_CWeather_update_FUN_00554980,00554980,core/weather.cpp,141,15,dropped_fyl2x|pointer_cast|pointer_truncation|raw_address_constant|warning_overlapping_globals,316
+core_weather.cpp_CWeather_update_FUN_00554980,00554980,core/weather.cpp,141,17,dropped_fyl2x|inline_exp_idiom|pointer_cast|pointer_truncation|raw_address_constant|warning_overlapping_globals,341
 core_weather.cpp_CWeather_createLightningStrike_FUN_00554d40,00554d40,core/weather.cpp,89,2,raw_address_constant|unrolled_memcpy,119
 core_weather.cpp_CWeather_createThunder_FUN_00554fd0,00554fd0,core/weather.cpp,12,0,,12
 core_weather.cpp_CWeather_renderParticles_FUN_00555020,00555020,core/weather.cpp,215,6,raw_address_constant|undefined_data|warning_overlapping_globals,290
@@ -5182,8 +5182,8 @@ crt_unknown.c_remove_FUN_0056bbf0,0056bbf0,crt/unknown.c,13,0,,13
 crt_io.c_tell_FUN_0056bc10,0056bc10,crt/io.c,17,3,undefined_data|unresolved_funcptr,57
 crt_iostream.cpp_streambuf_do_sputn_FUN_0056bc70,0056bc70,crt/iostream.cpp,53,8,pointer_cast|unresolved_funcptr|unrolled_memcpy,148
 crt_math.c_math_domain_error_FUN_0056bd22,0056bd22,crt/math.c,47,5,bitcast_double_pair|sub84_truncation|unknown_field,112
-crt_unknown.c_FUN_0056bdc8,0056bdc8,crt/unknown.c,13,5,fpu_register_input|warning_overlapping_globals,73
-crt_math.c_exp_FUN_0056bdd2,0056bdd2,crt/math.c,24,3,unaffected_reg|warning_overlapping_globals,64
+crt_unknown.c_FUN_0056bdc8,0056bdc8,crt/unknown.c,13,7,fpu_register_input|inline_exp_idiom|warning_overlapping_globals,98
+crt_math.c_exp_FUN_0056bdd2,0056bdd2,crt/math.c,24,5,inline_exp_idiom|unaffected_reg|warning_overlapping_globals,89
 crt_math.c_fdiv_FUN_0056be50,0056be50,crt/math.c,45,40,carry_arith_idiom|concat_reconstruction|stack_param|undefined_data|unknown_type|warning_overlapping_globals,475
 crt_math.c_function_dispatch_FUN_0056bf67,0056bf67,crt/math.c,8,5,fpu_register_input|unresolved_funcptr|warning_indirect_jump|warning_jumptable,78
 crt_unknown.c_FUN_0056bf71,0056bf71,crt/unknown.c,4,0,,4

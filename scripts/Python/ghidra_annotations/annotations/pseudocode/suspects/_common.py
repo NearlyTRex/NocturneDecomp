@@ -90,6 +90,7 @@ SUSPECT_SEVERITY = {
     'missing_cave_copy': 'moderate',
     'fast_sqrt_inline': 'moderate',
     'fast_inv_sqrt_inline': 'moderate',
+    'inline_exp_idiom': 'major',
     'bit_int_float_compare': 'moderate',
     'bitcast_double_pair': 'moderate',
     'bitcast_double': 'moderate',

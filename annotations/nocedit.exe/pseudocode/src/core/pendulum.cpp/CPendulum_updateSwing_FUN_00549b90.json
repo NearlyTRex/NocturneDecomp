@@ -223,6 +223,42 @@
       "severity": "moderate",
       "text": "(this_ptr->swing_tip_world).x = pCVar2->x;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Inline x87 exp() with the FPREM reduction dropped: `fVar6 - (fVar6 / fVar8) * fVar8` is identically zero, so this compiles to `fscale(1.0, x)` == `2^trunc(x)` -- a staircase in powers of two, not an exponential. It is silently correct whenever the exponent is 0. Read the FMUL feeding FLDL2E in the .asm for the sign and operands, then write the real call in a .keep, e.g. `exp(-decay * decay_timer)`.",
+      "line": 44,
+      "match": "fVar7 = (float10)f2xm1(fVar6 - (fVar6 / fVar8) * fVar8);",
+      "resolution_source": "keep",
+      "severity": "major",
+      "text": "fVar7 = (float10)f2xm1(fVar6 - (fVar6 / fVar8) * fVar8);",
+      "type": "inline_exp_idiom"
+    },
+    {
+      "description": "Raw x87 `f2xm1`/`fscale` intrinsic. These are compile escape hatches for Ghidra's rendering of an inline exp()/pow() and should not remain in a finished reconstruction; note `fscale` is `ldexp`, which truncates its exponent to `int`. Confirm the sequence against the .asm (FLDL2E / FPREM / F2XM1 / FSCALE) and name the operation in a .keep.",
+      "line": 45,
+      "match": "fVar8 = (float10)fscale(fVar7 + fVar8,fVar6);",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "fVar8 = (float10)fscale(fVar7 + fVar8,fVar6);",
+      "type": "inline_exp_idiom"
+    },
+    {
+      "description": "Inline x87 exp() with the FPREM reduction dropped: `fVar7 - (fVar7 / fVar8) * fVar8` is identically zero, so this compiles to `fscale(1.0, x)` == `2^trunc(x)` -- a staircase in powers of two, not an exponential. It is silently correct whenever the exponent is 0. Read the FMUL feeding FLDL2E in the .asm for the sign and operands, then write the real call in a .keep, e.g. `exp(-decay * decay_timer)`.",
+      "line": 58,
+      "match": "fVar9 = (float10)f2xm1(fVar7 - (fVar7 / fVar8) * fVar8);",
+      "resolution_source": "keep",
+      "severity": "major",
+      "text": "fVar9 = (float10)f2xm1(fVar7 - (fVar7 / fVar8) * fVar8);",
+      "type": "inline_exp_idiom"
+    },
+    {
+      "description": "Raw x87 `f2xm1`/`fscale` intrinsic. These are compile escape hatches for Ghidra's rendering of an inline exp()/pow() and should not remain in a finished reconstruction; note `fscale` is `ldexp`, which truncates its exponent to `int`. Confirm the sequence against the .asm (FLDL2E / FPREM / F2XM1 / FSCALE) and name the operation in a .keep.",
+      "line": 59,
+      "match": "fVar8 = (float10)fscale(fVar9 + fVar8,fVar7);",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "fVar8 = (float10)fscale(fVar9 + fVar8,fVar7);",
+      "type": "inline_exp_idiom"
     }
   ],
   "stack_frame": {

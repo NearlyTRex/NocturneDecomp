@@ -7,7 +7,7 @@ SUMMARY
 Total functions analyzed: 4922
 Clean: 2505 (50.9%)
 With suspects: 2417
-Total suspects: 20955
+Total suspects: 20965
 
 ====================================================================================================
 cockpit_ckptutil.c_applyActPalette_FUN_0042d370 (1 suspect)
@@ -14466,7 +14466,7 @@ core_larva.cpp_CLarva_getTargetPoints_FUN_004c54f0 (1 suspect)
   Line 13 [unrolled_memcpy]: out_points_array->x = pCVar1->x;
 
 ====================================================================================================
-core_larva.cpp_CLarva_process_FUN_004c4970 (17 suspects)
+core_larva.cpp_CLarva_process_FUN_004c4970 (19 suspects)
   File: core/larva.cpp
 ====================================================================================================
   Line 2 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x004c518e) */
@@ -14482,6 +14482,8 @@ core_larva.cpp_CLarva_process_FUN_004c4970 (17 suspects)
   Line 232 [unrolled_memcpy]: local_f8.x = pCVar9->x;
   Line 282 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   Line 296 [dropped_fyl2x]: (float10)0.6931471805599453 * (float10)(this_ptr->base).base.size_scale *
+  Line 298 [inline_exp_idiom]: fVar15 = (float10)f2xm1(fVar14 - (fVar14 / fVar16) * fVar16);
+  Line 299 [inline_exp_idiom]: fVar16 = (float10)fscale(fVar15 + fVar16,fVar14);
   Line 302 [stack_ref]: _sprintf(&stack0xfffffe10,"slime.wav @%f *%f",(double)(this_ptr->base).base.size_scale,
   Line 305 [stack_ref]: ((CDemonActor *)this_ptr,&stack0xfffffe10);
   Line 334 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
@@ -17462,9 +17464,11 @@ core_pendulum.cpp_CPendulum_getBoundingBox_FUN_004f3c00 (1 suspect)
   Line 10 [unrolled_memcpy]: (out_box->min).x = (pCVar1->min).x;
 
 ====================================================================================================
-core_pendulum.cpp_CPendulum_process_FUN_004f3a20 (1 suspect)
+core_pendulum.cpp_CPendulum_process_FUN_004f3a20 (3 suspects)
   File: core/pendulum.cpp
 ====================================================================================================
+  Line 31 [inline_exp_idiom]: fVar5 = (float10)f2xm1(fVar4 - (fVar4 / fVar6) * fVar6);
+  Line 32 [inline_exp_idiom]: fVar6 = (float10)fscale(fVar5 + fVar6,fVar4);
   Line 48 [pointer_cast]: actor_ptr = *(CDemonActor **)((int)g_CDemonSet_PTR_005be368->characters + iVar3);
 
 ====================================================================================================
@@ -17484,10 +17488,14 @@ core_pendulum.cpp_CPendulum_testCollisionWithActor_FUN_004f2e60 (4 suspects)
   Line 128 [unrolled_memcpy]: CStack_a0.x = CStack_4c.x;
 
 ====================================================================================================
-core_pendulum.cpp_CPendulum_updateSwing_FUN_004f3430 (14 suspects)
+core_pendulum.cpp_CPendulum_updateSwing_FUN_004f3430 (18 suspects)
   File: core/pendulum.cpp
 ====================================================================================================
+  Line 39 [inline_exp_idiom]: fVar5 = (float10)f2xm1(fVar6 - (fVar6 / fVar3) * fVar3);
+  Line 40 [inline_exp_idiom]: fVar3 = (float10)fscale(fVar5 + fVar3,fVar6);
   Line 46 [unrolled_memcpy]: (this_ptr->swing_tip_world).x = pCVar2->x;
+  Line 53 [inline_exp_idiom]: fVar4 = (float10)f2xm1(fVar6 - (fVar6 / fVar3) * fVar3);
+  Line 54 [inline_exp_idiom]: fVar3 = (float10)fscale(fVar4 + fVar3,fVar6);
   Line 61 [unknown_field]: local_48 = local_48 + 1.5873523201947252e-314._0_4_;
   Line 71 [unknown_field]: local_40 = local_40 + 1.5873523201947252e-314._0_4_;
   Line 74 [unknown_field]: local_40 = local_40 + 1.5873523201947252e-314._0_4_;
@@ -23449,7 +23457,7 @@ core_weather.cpp_CWeather_setOriginAndRotation_FUN_005557d0 (5 suspects)
   Line 63 [unrolled_memcpy]: pCVar2->x = local_38.x;
 
 ====================================================================================================
-core_weather.cpp_CWeather_update_FUN_00554980 (15 suspects)
+core_weather.cpp_CWeather_update_FUN_00554980 (17 suspects)
   File: core/weather.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
@@ -23467,6 +23475,8 @@ core_weather.cpp_CWeather_update_FUN_00554980 (15 suspects)
   Line 68 [pointer_cast]: local_28.z = *(float *)((int)&g_CVector3f_ARRAY_02ddfa28[0].z + iVar4);
   Line 101 [raw_address_constant]: this_ptr_00 = 0x01C03A10;
   Line 131 [dropped_fyl2x]: (float10)0.6931471805599453 * (float10)this_ptr->max_flash_interval);
+  Line 132 [inline_exp_idiom]: fVar8 = (float10)f2xm1(fVar7 - (fVar7 / fVar9) * fVar9);
+  Line 133 [inline_exp_idiom]: fVar9 = (float10)fscale(fVar8 + fVar9,fVar7);
 
 ====================================================================================================
 core_werewolf.cpp_CWerewolf_dtor_FUN_00557e90 (2 suspects)

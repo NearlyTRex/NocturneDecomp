@@ -6171,6 +6171,131 @@ def identify_fast_sqrt_inline(decompiled_code):
 
 
 
+# Watcom computes exp() inline on the x87 rather than calling a library
+# routine. The sequence is the textbook 2^x:
+#
+#     FLD1                  ; 1.0
+#     FLDL2E                ; log2(e)
+#     FMUL ST2              ; x = log2(e) * arg
+#     FST  ST2              ; keep x
+#     FPREM                 ; frac(x)   -- remainder against the 1.0 below it
+#     F2XM1                 ; 2^frac(x) - 1
+#     FADDP                 ; 2^frac(x)
+#     FSCALE                ; 2^frac(x) * 2^trunc(x) == 2^x
+#
+# FPREM computes `a - trunc(a / b) * b`. Ghidra renders it WITHOUT the
+# truncation, as a plain `a - (a / b) * b`, which for the b == 1.0 the idiom
+# uses is identically zero. The decompiled form therefore collapses to
+#
+#     f2xm1(0) + 1  ==  1.0     then     fscale(1.0, x)
+#
+# and since intrinsics.h defines `fscale(y, x)` as `ldexp(y, x)` -- whose
+# exponent parameter is an `int` -- what compiles is `2^trunc(x)`: a staircase
+# in powers of two instead of a smooth exponential.
+#
+# The failure is quiet in two ways. It is exactly right whenever the exponent
+# is zero (a decay rate of 0, a gain of 1), which is the common authored case,
+# so the idiom can sit in shipped code looking correct. And where it is wrong
+# it produces plausible-looking output -- a value that falls, just in visible
+# steps rather than a curve.
+#
+# Confirmed instances all share the shape `f2xm1(A - (A / B) * B)`:
+# CPendulum::updateSwing (x2), CPendulum::process, CLarva::process,
+# CWeather::update.
+_EXP_FPREM_ZERO_RE = re.compile(
+    r"\bf2xm1\s*\(\s*(\w+)\s*-\s*\(\s*\1\s*/\s*(\w+)\s*\)\s*\*\s*\2\s*\)")
+
+
+# Any surviving use of the raw x87 escape hatches. Same principle as
+# bitcast_double: these intrinsics exist so Ghidra output can be compiled at
+# all, and should not remain in a finished reconstruction. A repaired site
+# names the operation instead (`exp(...)`).
+_EXP_INTRINSIC_RE = re.compile(r"\b(f2xm1|fscale)\s*\(")
+
+
+# The CRT's own math primitives ARE the implementation of these operations:
+# crt_math.c_exp is where the x87 sequence belongs, and telling it to call
+# exp() would be circular. Only the catch-all arm is exempt there -- the
+# precise arm still applies, since a dropped FPREM inside exp() would be a
+# real bug in the primitive everything else depends on.
+_EXP_CRT_MATH_RE = re.compile(r"^\s*//\s*Name:\s*crt_math\w*\.c_",
+                              re.MULTILINE)
+
+
+def identify_inline_exp_idiom(decompiled_code):
+    """Detect Watcom's inline x87 exp() mis-rendered by a dropped FPREM.
+
+    Flags the `f2xm1(A - (A / B) * B)` shape specifically -- where the
+    argument is arithmetically zero because Ghidra dropped FPREM's truncation
+    -- and, more loosely, any remaining `f2xm1`/`fscale` intrinsic, which
+    should not survive into a finished .keep.
+
+    Fix in a .keep by naming the operation the asm performs, reading the sign
+    and operands off the FMUL feeding FLDL2E, e.g.
+    `exp(-decay * decay_timer)`. Unlike the fast-(inv-)sqrt bit-trick in the
+    same family, this sequence is full-precision on the x87, so libc `exp` is
+    a faithful replacement rather than an approximation swap.
+
+    Args:
+        decompiled_code: The decompiled C pseudocode string.
+
+    Returns:
+        List of suspect dicts, one per matching line.
+    """
+    suspects = []
+    if not decompiled_code:
+        return suspects
+
+    # crt_math.c owns these instructions; see _EXP_CRT_MATH_RE.
+    in_math_impl = bool(_EXP_CRT_MATH_RE.search(decompiled_code))
+
+    for i, line in _join_wrapped_statements(decompiled_code.split('\n')):
+        stripped = line.strip()
+        if stripped.startswith('//') or stripped.startswith('*'):
+            continue
+
+        match = _EXP_FPREM_ZERO_RE.search(line)
+        if match:
+            suspects.append({
+                'line': i + 1,
+                'type': 'inline_exp_idiom',
+                'match': stripped[:80],
+                'text': stripped[:120],
+                'description': (
+                    "Inline x87 exp() with the FPREM reduction dropped: "
+                    "`{arg} - ({arg} / {mod}) * {mod}` is identically zero, so "
+                    "this compiles to `fscale(1.0, x)` == `2^trunc(x)` -- a "
+                    "staircase in powers of two, not an exponential. It is "
+                    "silently correct whenever the exponent is 0. Read the "
+                    "FMUL feeding FLDL2E in the .asm for the sign and "
+                    "operands, then write the real call in a .keep, e.g. "
+                    "`exp(-decay * decay_timer)`.".format(
+                        arg=match.group(1), mod=match.group(2))),
+                'severity': 'major',
+            })
+            continue
+
+        if not in_math_impl and _EXP_INTRINSIC_RE.search(line):
+            suspects.append({
+                'line': i + 1,
+                'type': 'inline_exp_idiom',
+                'match': stripped[:80],
+                'text': stripped[:120],
+                'description': (
+                    "Raw x87 `f2xm1`/`fscale` intrinsic. These are compile "
+                    "escape hatches for Ghidra's rendering of an inline "
+                    "exp()/pow() and should not remain in a finished "
+                    "reconstruction; note `fscale` is `ldexp`, which "
+                    "truncates its exponent to `int`. Confirm the sequence "
+                    "against the .asm (FLDL2E / FPREM / F2XM1 / FSCALE) and "
+                    "name the operation in a .keep."),
+                'severity': 'moderate',
+            })
+    return suspects
+
+
+
+
 # Watcom's float-via-int-compare optimization: a float comparison like
 # `if (x >= 20.0f)` gets emitted as `CMP dword ptr [x_bytes], 0x41a00000`
 # (a single-instruction raw-bytes compare, where 0x41a00000 is the IEEE 754
@@ -7562,6 +7687,7 @@ def detect_content_suspects(code, func_globals=None, global_interval_map=None,
     found.extend(identify_preinc_loop_idiom(code))
     found.extend(identify_loop_clobbered_constant(code))
     found.extend(identify_fast_sqrt_inline(code))
+    found.extend(identify_inline_exp_idiom(code))
     found.extend(identify_bit_int_float_compare(code))
     found.extend(identify_struct_field_overrun(code, struct_layout_map))
     found.extend(identify_alloc_magic_size(code, struct_size_map))

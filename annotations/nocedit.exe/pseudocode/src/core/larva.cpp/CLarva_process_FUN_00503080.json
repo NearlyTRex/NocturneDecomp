@@ -508,6 +508,24 @@
       "type": "fast_sqrt_inline"
     },
     {
+      "description": "Inline x87 exp() with the FPREM reduction dropped: `fVar15 - (fVar15 / fVar17) * fVar17` is identically zero, so this compiles to `fscale(1.0, x)` == `2^trunc(x)` -- a staircase in powers of two, not an exponential. It is silently correct whenever the exponent is 0. Read the FMUL feeding FLDL2E in the .asm for the sign and operands, then write the real call in a .keep, e.g. `exp(-decay * decay_timer)`.",
+      "line": 289,
+      "match": "fVar16 = (float10)f2xm1(fVar15 - (fVar15 / fVar17) * fVar17);",
+      "resolution_source": "keep",
+      "severity": "major",
+      "text": "fVar16 = (float10)f2xm1(fVar15 - (fVar15 / fVar17) * fVar17);",
+      "type": "inline_exp_idiom"
+    },
+    {
+      "description": "Raw x87 `f2xm1`/`fscale` intrinsic. These are compile escape hatches for Ghidra's rendering of an inline exp()/pow() and should not remain in a finished reconstruction; note `fscale` is `ldexp`, which truncates its exponent to `int`. Confirm the sequence against the .asm (FLDL2E / FPREM / F2XM1 / FSCALE) and name the operation in a .keep.",
+      "line": 290,
+      "match": "fVar17 = (float10)fscale(fVar16 + fVar17,fVar15);",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "fVar17 = (float10)fscale(fVar16 + fVar17,fVar15);",
+      "type": "inline_exp_idiom"
+    },
+    {
       "description": "x87 log constant multiplied by `(this_ptr->base` in a function whose asm has 1 FYL2X. FYL2X computes st(1)*log2(st(0)); Ghidra drops it and leaves only the loaded constant, so ln(x) decompiles as 0.693*x. Read the asm and restore the logarithm in a .keep (e.g. `log(x) * 868.589` for a dB conversion). Note log2(e)*ln(2) == 1, so in a pow()-shaped site the constants cancel and the arithmetic looks innocent.",
       "line": 287,
       "match": "(float10)0.6931471805599453 * (float10)(this_ptr->base).base.size_scale *",

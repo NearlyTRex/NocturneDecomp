@@ -74,14 +74,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 146,
-    "complexity_score": 80,
+    "complexity_score": 105,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 11,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 65,
-    "suspect_count": 1,
+    "suspect_count": 3,
     "suspect_types": [
+      "inline_exp_idiom",
       "pointer_cast"
     ],
     "total_lines": 211
@@ -271,6 +272,22 @@
       "severity": "moderate",
       "text": "actor_ptr = *(CDemonActor **)((int)g_CDemonSet_PTR_005be368->characters + iVar3);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Inline x87 exp() with the FPREM reduction dropped: `fVar4 - (fVar4 / fVar6) * fVar6` is identically zero, so this compiles to `fscale(1.0, x)` == `2^trunc(x)` -- a staircase in powers of two, not an exponential. It is silently correct whenever the exponent is 0. Read the FMUL feeding FLDL2E in the .asm for the sign and operands, then write the real call in a .keep, e.g. `exp(-decay * decay_timer)`.",
+      "line": 31,
+      "match": "fVar5 = (float10)f2xm1(fVar4 - (fVar4 / fVar6) * fVar6);",
+      "severity": "major",
+      "text": "fVar5 = (float10)f2xm1(fVar4 - (fVar4 / fVar6) * fVar6);",
+      "type": "inline_exp_idiom"
+    },
+    {
+      "description": "Raw x87 `f2xm1`/`fscale` intrinsic. These are compile escape hatches for Ghidra's rendering of an inline exp()/pow() and should not remain in a finished reconstruction; note `fscale` is `ldexp`, which truncates its exponent to `int`. Confirm the sequence against the .asm (FLDL2E / FPREM / F2XM1 / FSCALE) and name the operation in a .keep.",
+      "line": 32,
+      "match": "fVar6 = (float10)fscale(fVar5 + fVar6,fVar4);",
+      "severity": "moderate",
+      "text": "fVar6 = (float10)fscale(fVar5 + fVar6,fVar4);",
+      "type": "inline_exp_idiom"
     }
   ],
   "vtable_info": {
