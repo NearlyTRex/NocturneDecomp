@@ -32,6 +32,18 @@
 //   * Reveal is per 3D cell. Two dimensions would let a tower walked at the top
 //     uncover the hall beneath it.
 //
+//   * The band can be raised off the player's floor. This affects the view
+//     only: the reveal follows his actual position, so raising it shows
+//     explored floors and leaves unexplored ones fogged. The player marker
+//     draws at any elevation, since it is the reference other positions are
+//     read against, and the heading indicates when the band is not his floor.
+//
+//   * The marker key replaces the heading rather than sitting beside it, and
+//     its swatches go through the same draw_marker the map uses, so a key entry
+//     stays consistent with the marker it explains. The elevation readout is
+//     appended to it: that readout is the only indication the band is not the
+//     player's floor, so the key must not displace it.
+//
 //   * Wall lines are coloured by material, from CDemonCube::ground_type_memory
 //     -- a uchar[triangle_count] holding one EGroundType per triangle. Colour
 //     the LINES, not the cells beneath them: a fill reads as a second layer to
@@ -61,13 +73,32 @@
 //     Heroes carry a halo ring as well, and the three marker sizes are chosen
 //     to keep the player the most prominent thing on his own map.
 //
+//   * Colour and shape per class come from one table, k_markers, and the lookup
+//     walks the ACTOR's own CDemonActorType::parent_type chain -- so a derived
+//     class always beats its base and the table's order does not matter.
+//     Hostility is CEnemy, a class in its own right, so it is the engine's own
+//     classification rather than a name list maintained here. Enemies take a
+//     distinct hue rather than another red: the player marker and a locked door
+//     are red already, and pick_color can collapse a third red onto them at
+//     8bpp.
+//
+//   * CBodyPart::canPickup returns Carry, the same value a rifle gives, so only
+//     the class row keeps a body part from drawing as equipment.
+//
+//   * The heading uses the level's own title from the binary --
+//     CGame::showChapterSelect's chapter lists, keyed by g_ChapterMissionFiles.
+//     NOT g_ChapterDisplayName: that holds the volume title and is written only
+//     on the chapter-select path, so a loaded save would show the wrong act.
+//     See nocturne_chapter_environment_name.
+//
 // Input is one bindable action, which reaches keyboard and gamepad at once: the
 // pad shim writes its codes into the same g_KeyboardState the keyboard uses, so
 // a binding is just a code and does not care which device produced it. Once the
 // map is up it takes the controls outright -- left stick pans, right stick
-// zooms, and the hero stands still -- because it is a screen rather than an
-// overlay. Sticks are read as analogue through nocturne_gamepad_axes; the
-// movement and zoom key bindings do the same job for a keyboard.
+// zooms, the bumpers raise and lower the view, Guide shows the marker key, and
+// the hero stands still -- because it is a screen rather than an overlay.
+// Sticks are read as analogue through nocturne_gamepad_axes; the movement and
+// look bindings do the same job for a keyboard.
 
 #ifdef __cplusplus
 extern "C" {
@@ -137,23 +168,32 @@ char *nocturne_automap_key_label(void);
 // written in, and keeps the pad code in the pad shim where the rest of them are.
 void nocturne_automap_apply_default_binding(void);
 
-// Opening the map is the ONLY binding the map adds. Pan and zoom borrow the
-// movement bindings instead of taking virtual ones, and the map screen prints
-// which -- a control the player already knows, relabelled for the duration,
-// beats a pair of entries in Customize Keys that only mean anything on one
-// screen. It also keeps the binding table from overflowing: g_CustomKeyNames is
-// [30][40] and configureCustomKeyBindings refuses a 31st, so the map has
-// exactly one row to spend.
+// Opening the map is the ONLY binding the map adds. Everything else borrows a
+// binding the player already has, and the map screen prints which -- a control
+// he already knows, relabelled for the duration, beats a set of entries in
+// Customize Keys that only mean anything on one screen. It also keeps the
+// binding table from overflowing: g_CustomKeyNames is [30][40] and
+// configureCustomKeyBindings refuses a 31st, so the map has exactly one row to
+// spend.
 //
-//   pan   key_walk / key_backup, key_strafe_left / key_strafe_right
-//   zoom  key_point_up / key_point_down
+//   pan     key_walk / key_backup, key_strafe_left / key_strafe_right
+//   zoom    key_point_up / key_point_down
+//   elev    key_next_weapon / key_prev_weapon
+//   legend  key_item_desc
 //
-// Split that way because of what those bindings are on a pad: the left stick
-// is walk/backup and strafe, the right stick is turn and look. Taking the two
-// halves of the left stick for pan and look for zoom gives exactly "left stick
-// pans, right stick zooms" with no binding serving both. key_left / key_right
-// are deliberately unused -- they are the right stick's other axis, and reading
-// them for pan is what made the two sticks overlap.
+// Chosen for what those bindings are on a pad: the left stick is walk/backup
+// and strafe, the right stick is turn and look, the bumpers cycle weapons, and
+// Guide is item description. So the two halves of the left stick pan, look
+// zooms, the bumpers step the view up and down, and Guide -- already "describe
+// what I am looking at" -- shows the marker key.
+//
+// Elevation belongs on buttons rather than an axis: sharing the right stick
+// with zoom means holding one axis to hold an altitude while the other changes
+// scale, and a button pair suits stepping through discrete floors.
+//
+// key_left / key_right are not read by this screen at all. They are the right
+// stick's other axis, and reading them here would put pan and zoom on one
+// stick.
 
 // The player's preferred zoom, as a percentage, for the ini to carry between
 // sessions. The map opens centred on the player but at whatever this holds:

@@ -47,6 +47,24 @@ extern "C" {
 // it already had in place.
 int nocturne_chapter_pick_mission(char *out, int out_size);
 
+// The localized name of the place a mission is set in -- "Castle Gaustadt" for
+// castle1.msn -- or a null pointer for a mission outside the shipped set.
+//
+// Accepts a bare root name, a filename or a path, so both
+// g_CDemonMissionPtr->mission_name ("castle1", "CHICAGO2", "Mansion") and
+// g_ChapterMissionFiles ("castle1.msn") work. Matching is case-insensitive, as
+// the engine's own name comparisons are.
+//
+// The titles are the game's own: each is a string in the binary, and the lookup
+// key is g_ChapterMissionFiles itself, so this and CGame::showChapterSelect
+// cannot disagree about which mission is which place. The returned value is the
+// quoted portion only -- the chapter number is a position in the story rather
+// than a place name.
+//
+// Not const: the engine's string type is plain char *, and callers pass the
+// result directly into drawing code that takes one.
+char *nocturne_chapter_environment_name(const char *mission_name);
+
 #ifdef __cplusplus
 }
 #endif

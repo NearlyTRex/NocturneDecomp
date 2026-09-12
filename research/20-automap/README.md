@@ -35,6 +35,26 @@ no upper bound. No version bump needed. See *Saving the reveal*.
 that hold geometry (4,579 of 46,139 on `CASTLE.geo`) — a percentage of *all* cubes would never
 fire. See *Completion reveal*.
 
+**Every level's official title is already in the binary, keyed by `g_ChapterMissionFiles`.** Do
+not invent level names, and do not read `g_ChapterDisplayName` for one — that is the volume's
+title and is stale off the chapter-select path. See *The name of the place*.
+
+**Markers are one class-keyed table and a derived class beats its base**, resolved by walking the
+actor's own `CDemonActorType::parent_type` chain. Hostility is `CEnemy`, a real class — not a
+class list of ours. See *Actors*.
+
+**Marker radii are authored sizes and every use multiplies by `nocturne_ui_scale()`.** Leaving
+them as raw pixels is why they read as too small: the text and the map scale with the mode and
+markers did not. See *Actors*.
+
+**The band can be raised off the player's floor** on the bumpers, which moves the view only — the
+reveal still follows where he walked, so it is not an x-ray. Do not move this to the right stick's
+left/right axis: that axis shares a stick with zoom, and holding one axis to hold an altitude while
+the other changes scale does not work in play. See *Reveal*.
+
+**Guide toggles a marker key in place of the heading**, with its swatches drawn through the map's
+own `draw_marker` so they cannot drift. See *The marker key*.
+
 **OPEN — the band height is tuned to one level by eye.** `--below 2 --above 11` suits
 `CASTLE.geo`. It is content-dependent and wants a second level, ideally a dungeon, before it is
 written into game code. It should also anchor to the floor under the player rather than to his
@@ -220,14 +240,100 @@ one — `createOneHero`'s placeholder fallback sets `area_id = -1` outright. So 
 is swept afterwards for any slot the list pass did not already draw, tracked by pointer identity.
 
 **Colour alone does not separate a hero from a character.** At map scale both are a few pixels of
-flat fill and the eye reads them as the same kind of thing. Heroes carry the shape too — a dark halo ring with the hero colour inside, the player marker's own
-construction one size down. Sizes are load-bearing: NPC 3 flat, hero 4 ringed to 6, player 7/5/2
-with a pale core, so the player stays the most prominent thing on his own map.
+flat fill and the eye reads them as the same kind of thing. Heroes carry the shape too — a dark
+halo ring with the hero colour inside, the player marker's own construction one size down. Sizes
+are load-bearing: NPC 5 flat, hero 7 ringed to 10, player 11/8/3 with a pale core, so the player
+stays the most prominent thing on his own map.
 
-**Characters get one colour between them.** There is no friend/foe field anywhere on `CCharacter`
-— the engine has no such concept — so heroes are separated from everything else and no further
-claim is made. A class list splitting hostages from mobsters would be our fiction, not the game's,
-and would need upkeep as classes are identified. Dead characters (`hit_points <= 0`) are skipped.
+**Marker radii are authored sizes and every use multiplies by `nocturne_ui_scale()`.** The two text
+lines scale with the display mode and the map fills the window at any resolution, so markers left as
+raw pixel counts are the only element that does not grow: at 1080p `ui` is 2, the text and the level
+both double, and a 3-pixel dot stays 3 pixels.
+
+Sizes also have to be chosen against the geometry rather than against each other. The map scales a
+whole level into the window, so a marker competes with long wall runs and large rooms before the
+differences between markers matter.
+
+Radii reach the draw calls through one pre-scaled array alongside the resolved colours, so no call
+site can omit the multiply.
+
+**Hostility is `CEnemy`, and it is the engine's own answer.** There is no friend/foe *field*
+anywhere on `CCharacter`, which is what made this look like a question with no answer — but
+`CEnemy` is a real class with its own branch of the hierarchy (`CMobster`, `CGhoul`, `CZombie` and
+the rest derive from it), so `castToClassHash(a, g_CEnemyClassInfo.name_hash)` separates hostile
+from harmless without a class list of ours to maintain. Enemies therefore get a colour of their
+own. The same test already decided their *visibility* rule — sight rather than fog — so this costs
+nothing extra.
+
+What would have been fiction is the thing not done: splitting *within* a side, hostages from
+shopkeepers, where the engine really has no opinion. Dead characters (`hit_points <= 0`) are
+skipped.
+
+**Enemies are not a second red.** The player marker and a locked door are both red already, and
+`pick_color` resolves to the nearest palette entry, so a third red lands on one of them at 8bpp and
+two different facts arrive in one colour. Hostile is magenta for that reason, not for a
+design one.
+
+**Markers come from one class-keyed table**, `k_markers` in `automap.cpp` — a class, a colour, a
+shape and a radius per row — and adding a class is adding a row. The lookup walks the *actor's* own
+`CDemonActorType::parent_type` chain outward, taking the first row any ancestor matches, so a
+derived class always beats its base and the table's own order does not matter. A row for a leaf
+class dropped in later immediately takes precedence over `CEnemy`'s for that one class.
+
+Two things stay at the call site rather than in the table, because they are facts about an actor's
+*state* and not about its class: a door's colour, which answers "can I get through this from here",
+and which visibility rule an actor follows.
+
+**Body parts are not equipment.** `CBodyPart::canPickup` returns 3 (Carry), the same answer a
+rifle gives, so a purely `canPickup`-driven map draws a severed arm as a weapon. The class row is
+what separates them — dim maroon and an X, against equipment's teal diamond. Dim on purpose: a
+body part is worth marking and is not worth the eye going to first.
+
+## The name of the place
+
+**The game already knows what every level is called, and the titles are in the binary.**
+`CGame::showChapterSelect` builds a per-volume chapter list when a volume is unlocked for chapter
+selection, and those list entries are the official titles: `Chapter 4 - 'Castle Gaustadt'`,
+`Chapter 5 - 'Water Works'`, `Chapter 2 - 'Graveyard'`. There is no need to invent names for
+levels, and inventing them would have been wrong.
+
+**The key is `g_ChapterMissionFiles[volume][chapter]`, because that is how the game itself indexes
+them.** `showChapterSelect` adds the titles in that table's order and then indexes the *same*
+`[volume][chapter]` pair to pick the mission to load, so pairing the two tables is a transcription
+rather than a guess. The counts agree exactly — 5, 7, 11, 4, 1 = 28 missions, 28 title strings,
+verified against the strings in `nocedit.exe`.
+
+| | |
+| --- | --- |
+| Volume 1 | 'Dark Reign of the Vampire King' — Your New Partner, Sentinels, Werewolf Forest, Castle Gaustadt, Dungeon |
+| Volume 2 | 'Tomb of the Underground God' — Train to Redeye, Zombie Town, Underground Mine, Hidden Entrance, Temple of the God, Epilogue, Failure |
+| Volume 3 | 'Windy City Massacre' — Headquarters, Chicago River, The Vendome, Night on the Town, Water Works, Windy City, Crescent Theater, Rooftop to Rooftop, Warehouse of Hell, Mobster Factory, Not You Again |
+| Volume 4 | 'The House on the Edge of Hell' — Headquarters, Graveyard, House of Hell, Back from Hell |
+| Volume 5 | 'Epilogue' — Headquarters |
+
+Volume 2's last entry is `Chapter X`, not a numbered one: it is the act's failure ending, which
+`showChapterSelect` lists only when `enemy.pod` is missing.
+
+**Match on the mission root name, case-insensitively.** `CDemonMission::readMissionFile` fills
+`mission_name` from the `.MSN`'s own root-name line, which is the filename stem without the
+extension — while `g_ChapterMissionFiles` carries `"castle1.msn"`. So both sides go through a stem
+strip before comparing. Case in the shipped data is inconsistent (`castle1`, `CHICAGO2`, `Mansion`,
+`HQ-ACT1`) and all 28 root names do match their filenames, so the stem is a reliable key; the
+engine's own name comparisons ignore case for the same reason.
+
+**Keep the title strings verbatim — they are `getLocalizedString` keys.** Tidying one ("Chapter 10"
+to "Chapter 10 ") silently loses its translation. The place name is then the part inside the single
+quotes, which is the game's own convention in these lines; a translation without quotes falls back
+to the whole line, which is still right and merely longer.
+
+**`g_ChapterDisplayName` is the volume, not the chapter**, and it is only written on the path
+through `showChapterSelect` — a loaded save or an editor-launched mission leaves it stale. Reading
+it instead of doing the lookup gives the act's title where the level's was wanted, sometimes the
+previous act's.
+
+Lives in `shims/game/chapter_select.cpp` rather than the map, next to the volume titles and the
+same mission table: `nocturne_chapter_environment_name(mission_name)`. The map is the first caller,
+not the owner.
 
 ## It is a screen, not an overlay
 
@@ -277,17 +383,36 @@ one screen is worse than a line on that screen saying what your existing control
 also keeps the table from overflowing — `g_CustomKeyNames` is `[30][40]` and
 `configureCustomKeyBindings` refuses a 31st, so the map has exactly one row to spend.
 
-**The split follows the sticks, and nothing serves both.**
+**Nothing serves two jobs.**
 
 | | Pad | Bindings read |
 | --- | --- | --- |
 | Pan | left stick | `key_walk` / `key_backup`, `key_strafe_left` / `key_strafe_right` |
-| Zoom | right stick | `key_point_up` / `key_point_down` |
+| Zoom | right stick, up/down | `key_point_up` / `key_point_down` |
+| Elevation | bumpers | `key_next_weapon` / `key_prev_weapon` |
+| Marker key | Guide | `key_item_desc` |
 
 That mapping is forced by what the pad defaults are: the left stick is walk/backup *and* strafe,
-the right stick is turn *and* look. So the two halves of the left stick are pan and look is zoom.
-`key_left` / `key_right` are deliberately unread — they are the right stick's other axis, and
-reading them for pan would put one stick on both jobs.
+the right stick is turn *and* look, the bumpers cycle weapons, Guide is item description. So the
+two halves of the left stick are pan, look is zoom, the bumpers step the view up and down, and
+Guide — "tell me what I am looking at" — shows the key, which is the same question asked of a
+screen with no item in hand for it to describe.
+
+**Elevation belongs on buttons, not an axis.** An axis is the wrong control for it: the right
+stick's left/right would share a stick with zoom, so holding an altitude means holding one axis
+while the other changes scale. A pair of bumpers suits stepping through discrete floors. `key_left`
+/ `key_right` are therefore unread by this screen — reading them for *pan* would put pan and zoom
+on one stick.
+
+**The collapsed help line keeps both elevation names.** The collapse exists for devices whose
+names share a prefix, which is how four pan bindings become one "Left Stick" — bumpers share
+nothing, and "LB RB" is already shorter than any collapse of it would be. The collapse test is
+therefore on pan and zoom only, and a keyboard (no shared prefixes anywhere) skips the collapsed
+level entirely and uses the full form, which is what it wants anyway.
+
+**`kHelpSegMax` is a real constraint, and `CLOSE` is pushed last.** `help_push` drops segments
+silently once the cap is reached, so a cap the fullest form can reach loses the one segment every
+fallback level must keep. The fullest form currently uses 22. Recount when adding a control.
 
 **The text decides the layout, not the other way round.** The map screen has no letterbox bars of
 its own — it blacks the whole framebuffer and insets the map — so what reads as a bar is simply
@@ -325,9 +450,67 @@ Three dimensions, not two: with a height band that follows the player, a known f
 nothing about *which storey* was seen there, and a tower walked at the top would otherwise
 uncover the hall beneath it. One bit per cube is 46,139 bits — **5.6 KB** for a whole level.
 
-**Only the player's own storey draws.** Drawing other floors dimmed underneath is clutter at a
+**Only one storey draws at a time.** Drawing other floors dimmed underneath is clutter at a
 castle's density rather than context — enough grey boxes to read as part of the room you are
-standing in. What is off your level stays remembered and stays hidden until you are on it.
+standing in.
+
+**But the band can be raised off the player's floor**, on the bumpers, so a floor he has walked can
+be looked at from a floor he is standing on. This is the answer to "I have been up there, why can I
+not see it" without giving up the one-storey rule that makes the map legible: one storey still
+draws, it just does not have to be his.
+
+**It moves the view and nothing else.** `reveal_around` is still driven by the player's real
+position, so raising the band shows what has already been earned and leaves everything else
+fogged. It is emphatically not an x-ray — the thing that would make the reveal pointless is
+letting the *view* unlock cells, and it does not.
+
+**Continuous while held, in world units, and not counted in storeys.** A storey is not a unit this
+code is entitled to count in: the band height is content-dependent and tuned to one level by eye
+(open question 1). So a held bumper moves the band at a world-unit rate and the readout is a
+signed world-unit offset — a figure read by watching it move, which needs no unit — rather than a
+floor number the level never agreed to.
+
+**Clamp it to the level's own Y bounds, relative to the player.** Otherwise the band scrolls into
+empty air with nothing drawn and no clue which way back — the same failure panning is held away
+from, and the same fix.
+
+**Say when the band is not his floor.** The player marker keeps drawing at any elevation, because
+it is what every other position on screen is read against — which means without a readout the map
+shows him standing on a floor he is not on, and reads as broken rather than as raised. The heading
+carries `ELEV +n` whenever the offset is non-zero, and its mere presence is the load-bearing part.
+
+**Elevation is not persisted, unlike the zoom.** Where the player last looked is a position inside
+one level, not a preference that means anything in the next one, and a map that opens on somebody
+else's floor reads as broken. It resets on every open.
+
+## The marker key
+
+Five marker colours and six shapes are a vocabulary, and nothing on screen was teaching it.
+
+**It stands in for the heading rather than sitting beside it.** The name and percentage are what a
+player reads once on opening; the key is what he wants precisely when he is not reading them. They
+can share the space, and the top band is already sized from its measured contents, so a key that
+needs two rows gets two rows with the map giving way — the same ordering the two text lines rely
+on.
+
+**Swatches go through `draw_marker`, the same call the map itself uses.** A key drawn with its own
+rasterizer drifts from what it is explaining the first time a colour or a shape changes. Going
+through one call means changing `k_markers` changes the key on its own.
+
+**The elevation readout rides along with the key.** It is state rather than a label, and it is the
+only thing telling the player the band is not his own floor — so a key that replaced it would take
+away the explanation for the thing most likely to confuse him. It is appended as a text-only item
+with no swatch.
+
+**The layout flows and wraps rather than using fixed columns.** Labels differ in length and the
+window can be 640 or 3840 wide, so a fixed column count either wastes most of a wide screen or
+runs off a narrow one. An item wider than the whole screen still gets its own row rather than
+being dropped.
+
+**Borrowed, not bound** — `key_item_desc`, which is Guide on a pad. Same reasoning as pan and
+zoom: `g_CustomKeyNames` is `[30][40]` and the map has one row to spend, already spent on opening
+it. Edge-triggered off its own `was_down`, primed from the button's real state when the map opens
+so a button already held is not read as a fresh press on the first frame.
 
 **The player marker draws last**, with a dark halo, and the view extent must cover the player's
 position and not merely the geometry — a player standing somewhere with no walls near him (open

@@ -10,6 +10,7 @@
 
 #if !NOCTURNE_AUTHENTIC_AUTOMAP
 
+#include "game/chapter_select.h"   // the mission's own name for where this is
 #include "nocturne.h"
 
 #include <cmath>
@@ -52,11 +53,10 @@ const float kCellPullback = 5.5f;
 // Explored share at which the fog lifts, measured against cubes holding walls.
 const int kCompletionPercent = 75;
 
-// Colours are asked of the palette rather than hardcoded as indices. plotPixel
-// masks g_ActiveRenderColor to 0..255 and looks it up in g_ColorTable16/32, so
-// which index is "red" depends entirely on the loaded palette -- guessing one
-// gets you whatever happens to live there, which is how the player marker came
-// out green.
+// Colours are requested as RGB and resolved against the palette, not written as
+// indices. plotPixel masks g_ActiveRenderColor to 0..255 and looks it up in
+// g_ColorTable16/32, so the meaning of any given index depends on the loaded
+// palette. A hardcoded index renders as whatever that palette holds there.
 const int kWallRGB[3]   = { 170, 205, 235 };
 const int kFadedRGB[3]  = {  74,  92, 116 };
 const int kPlayerRGB[3] = { 255,  64,  48 };
@@ -68,13 +68,19 @@ const int kDoorOpenRGB[3]   = { 110, 130, 110 };
 const int kDoorFreeRGB[3]   = {  60, 220,  90 };
 const int kDoorLockedRGB[3] = { 235,  60,  55 };
 
-// Character coloring
+// Character coloring. Enemies take a distinct hue rather than another red: the
+// player marker and a locked door are both red, and pick_color resolves to the
+// nearest palette entry, so a third red can collapse onto one of them at 8bpp.
 const int kHeroRGB[3]       = {  90, 170, 255 };
 const int kNpcRGB[3]        = { 250, 200,  60 };
+const int kEnemyRGB[3]      = { 255,  60, 130 };
 
-// Item coloring
+// Item coloring. Body parts are pickups but not equipment, so they take a
+// separate colour and shape. Kept deliberately dim: they are minor information
+// and should not compete with equipment for attention.
 const int kItemRGB[3]       = {  90, 235, 215 };
 const int kChestRGB[3]      = { 205, 125, 240 };
+const int kBodyPartRGB[3]   = { 150,  45,  45 };
 
 // One line colour per EGroundType, indexed by the enum. A wall is drawn in the
 // colour of its own material, which is carried per triangle in the owning
@@ -103,18 +109,29 @@ const int kGroundRGB[14][3] = {
 };
 const int kGroundTypeCount = (int)(sizeof(kGroundRGB) / sizeof(kGroundRGB[0]));
 
-// Marker radii, in unscaled screen pixels. The hero is deliberately the largest
-// of the three and carries a halo ring on top of that: at this size a one-pixel
-// difference in radius is not a difference anyone sees.
-// Sized to sit between the two: bigger and ringed against a character's flat
-// dot, smaller and coreless against the player's halo 7 / body 5 / core 2, so
-// the player is still the most prominent thing on his own map.
-const int kDoorRadius     = 3;
-const int kHeroRadius     = 4;
-const int kHeroHaloExtra  = 2;
-const int kNpcRadius      = 3;
-const int kItemRadius     = 3;
-const int kChestRadius    = 3;
+// Marker radii, authored at 640x480. Every use multiplies by
+// nocturne_ui_scale(), as the two text lines do; these are authored sizes, not
+// pixel counts. Without the multiply, markers are the only element that does
+// not grow with the display mode -- at 1080p ui is 2, so the text and the map
+// double while a 3-pixel dot stays 3 pixels.
+//
+// Sizes are chosen against the geometry, not against each other: the map scales
+// a whole level into the window, so a marker competes with long wall runs and
+// large rooms before the differences between markers matter.
+//
+// The hero is the largest of the actor markers and adds a halo ring. The player
+// marker is larger still and is the only one with a pale core, keeping it the
+// most prominent element.
+const int kDoorRadius     = 5;
+const int kHeroRadius     = 7;
+const int kHeroHaloExtra  = 3;
+const int kNpcRadius      = 5;
+const int kItemRadius     = 5;
+const int kChestRadius    = 5;
+const int kBodyPartRadius = 5;
+
+// The player marker's three rings, outermost first: dark halo, body, pale core.
+const int kPlayerRings[3] = { 11, 8, 3 };
 
 // Where a character's sight ray lands, above the feet its position records.
 // Aimed at the chest so the ray is not buried in the floor at either end.
@@ -131,6 +148,16 @@ const float kZoomMin  = 0.5f;
 const float kZoomMax  = 8.0f;
 const float kZoomRate = 2.2f;     // multiplicative, per second
 const float kPanRate  = 260.0f;   // world units per second, at zoom 1
+
+// Rate at which the drawn band is raised and lowered, in world units per
+// second. A little over two band-heights: fast enough to cross a large level's
+// vertical span (424 units on CASTLE.geo) without a long hold, slow enough to
+// stop on a chosen floor.
+//
+// Expressed in world units rather than storeys. The band height is
+// content-dependent and tuned against a single level (see research/20-automap,
+// open question 1), so a storey is not a reliable unit here.
+const float kElevateRate = 30.0f;
 
 // How far past the level's own bounds panning may go, so the edge of the map
 // can sit somewhere other than hard against the screen edge.
@@ -183,6 +210,22 @@ bool  g_open = false;
 bool  g_key_was_down = false;
 float g_zoom = 1.0f;
 float g_pan_x = 0.0f, g_pan_z = 0.0f;
+
+// Whether the marker key is showing in place of the heading. Edge-triggered off
+// its own binding, so holding the button does not flap it. Reset when the map
+// opens, along with the pan and the elevation.
+bool g_legend = false;
+bool g_legend_was_down = false;
+
+// Offset of the drawn band above the player's feet; zero is his own floor.
+//
+// Affects the view only. The reveal is driven by the player's actual position,
+// so raising this shows floors already explored and leaves unexplored ones
+// fogged -- it is not a way to see through the level.
+//
+// Not persisted, unlike the zoom: it is a position within one level rather than
+// a preference, and the map should open on the player's own floor.
+float g_elevation = 0.0f;
 
 // M for map. Tab is the older convention but the game already uses it. The ini
 // overwrites this on load once the player has bound anything.
@@ -300,18 +343,227 @@ void fill_diamond(int cx, int cy, int r, int x0, int y0, int x1, int y1)
     }
 }
 
-// A container, as a box with a lid seam across it. A door is a box too, so the
-// seam is what separates "walk through this" from "search this" at a size where
-// colour alone is one or two pixels of difference.
-void draw_chest_marker(int cx, int cy, int color_body, int color_seam,
-                       int x0, int y0, int x1, int y1)
+// Remains, as an X. Two strokes rather than a fill, so it reads as a mark on the
+// map rather than as an object standing on it.
+void fill_cross(int cx, int cy, int r, int x0, int y0, int x1, int y1)
 {
-    g_ActiveRenderColor = color_body;
-    fill_box(cx, cy, kChestRadius, x0, y0, x1, y1);
-    g_ActiveRenderColor = color_seam;
-    engine_2d_c_clipAndDrawLine_FUN_00402ca0(cx - kChestRadius, cy,
-                                             cx + kChestRadius, cy,
+    engine_2d_c_clipAndDrawLine_FUN_00402ca0(cx - r, cy - r, cx + r, cy + r,
                                              x0, y0, x1, y1);
+    engine_2d_c_clipAndDrawLine_FUN_00402ca0(cx - r, cy + r, cx + r, cy - r,
+                                             x0, y0, x1, y1);
+}
+
+// The marker vocabulary. Shape carries as much information as colour at map
+// scale, so a class selects both; adding a class means picking from this list
+// rather than writing new drawing code.
+enum MarkerShape {
+    MARK_DISC,      // a character: the default living thing
+    MARK_RING,      // a hero: a dark halo with the body inside it
+    MARK_DIAMOND,   // something to carry off
+    MARK_BOX,       // a door
+    MARK_CHEST,     // a container to search: a box with a lid seam
+    MARK_CROSS,     // remains
+};
+
+// Draw one marker. `color_halo` is used only by the shapes with a second stroke
+// (MARK_RING, MARK_CHEST); it is resolved once per frame with the other colours,
+// so passing it unconditionally costs nothing.
+void draw_marker(MarkerShape shape, int color, int color_halo,
+                 int cx, int cy, int r, int x0, int y0, int x1, int y1)
+{
+    switch (shape) {
+    case MARK_RING:
+        // A ringed dot, the player marker's construction one size down. Colour
+        // alone does not separate a hero from a character at map scale, since
+        // both are a few pixels of flat fill, so heroes carry a shape as well.
+        g_ActiveRenderColor = color_halo;
+        fill_disc(cx, cy, r + kHeroHaloExtra, x0, y0, x1, y1);
+        g_ActiveRenderColor = color;
+        fill_disc(cx, cy, r, x0, y0, x1, y1);
+        break;
+
+    case MARK_CHEST:
+        // A door is also a box, so the seam distinguishes "walk through" from
+        // "search" at a size where colour is only a pixel or two of difference.
+        g_ActiveRenderColor = color;
+        fill_box(cx, cy, r, x0, y0, x1, y1);
+        g_ActiveRenderColor = color_halo;
+        engine_2d_c_clipAndDrawLine_FUN_00402ca0(cx - r, cy, cx + r, cy,
+                                                 x0, y0, x1, y1);
+        break;
+
+    case MARK_DIAMOND:
+        g_ActiveRenderColor = color;
+        fill_diamond(cx, cy, r, x0, y0, x1, y1);
+        break;
+
+    case MARK_BOX:
+        g_ActiveRenderColor = color;
+        fill_box(cx, cy, r, x0, y0, x1, y1);
+        break;
+
+    case MARK_CROSS:
+        g_ActiveRenderColor = color;
+        fill_cross(cx, cy, r, x0, y0, x1, y1);
+        break;
+
+    case MARK_DISC:
+    default:
+        g_ActiveRenderColor = color;
+        fill_disc(cx, cy, r, x0, y0, x1, y1);
+        break;
+    }
+}
+
+// ---- what each class of actor looks like ------------------------------------
+//
+// One row per class with a marker of its own; adding a class means adding a row.
+// `type` points at the engine's own CDemonActorType for the class, so this is a
+// lookup against registered types rather than a list of class-name strings.
+//
+// Table order is not significant, and the most-derived class wins. The lookup
+// walks the actor's own type chain outward -- its class, then each base in turn
+// -- and returns the first row any of them matches. So CEnemy's row applies to a
+// CMobster without CEnemy needing to precede CCharacter here, and a row added
+// for a leaf class takes precedence over its bases automatically.
+//
+// Colour and shape only. State-dependent presentation -- a locked door's colour,
+// or whether a character is drawn from line of sight or from the fog -- stays at
+// the call site, since it is not a property of the class.
+struct MarkerStyle {
+    CDemonActorType *type;
+    const int       *rgb;
+    MarkerShape      shape;
+    int              radius;
+};
+
+const MarkerStyle k_markers[] = {
+    // Pickups. Grouped first for readability only; order is not significant.
+    { &g_CBodyPartClassInfo,  kBodyPartRGB, MARK_CROSS,   kBodyPartRadius },
+
+    // Characters. CHero is a class, not the party: CMoloch, CHaystack and the
+    // rest derive from it and are placed in levels as ordinary actors.
+    { &g_CHeroClassInfo,      kHeroRGB,     MARK_RING,    kHeroRadius     },
+    { &g_CEnemyClassInfo,     kEnemyRGB,    MARK_DISC,    kNpcRadius      },
+    { &g_CCharacterClassInfo, kNpcRGB,      MARK_DISC,    kNpcRadius      },
+};
+
+const int kMarkerCount = (int)(sizeof(k_markers) / sizeof(k_markers[0]));
+
+// ---- the marker key --------------------------------------------------------
+//
+// What each marker means, shown in place of the heading on request. Swatches are
+// drawn through the same draw_marker the map uses, so a change to a colour or a
+// shape above is reflected here without a second edit.
+//
+// Ordered by expected lookup frequency: the player and other characters, then
+// items, then doors. An `rgb` of null marks a text-only item, used by the
+// elevation readout when it shares this row.
+struct LegendItem {
+    MarkerShape shape;
+    const int  *rgb;
+    int         radius;
+    const char *label;
+};
+
+const LegendItem k_legend[] = {
+    { MARK_RING,    kPlayerRGB,     kHeroRadius,     "YOU"       },
+    { MARK_RING,    kHeroRGB,       kHeroRadius,     "ALLY"      },
+    { MARK_DISC,    kEnemyRGB,      kNpcRadius,      "ENEMY"     },
+    { MARK_DISC,    kNpcRGB,        kNpcRadius,      "NEUTRAL"   },
+    { MARK_DIAMOND, kItemRGB,       kItemRadius,     "ITEM"      },
+    { MARK_CHEST,   kChestRGB,      kChestRadius,    "SEARCH"    },
+    { MARK_CROSS,   kBodyPartRGB,   kBodyPartRadius, "REMAINS"   },
+    { MARK_BOX,     kDoorFreeRGB,   kDoorRadius,     "DOOR"      },
+    { MARK_BOX,     kDoorLockedRGB, kDoorRadius,     "LOCKED"    },
+    { MARK_BOX,     kDoorOpenRGB,   kDoorRadius,     "OPEN"      },
+};
+
+const int kLegendCount = (int)(sizeof(k_legend) / sizeof(k_legend[0]));
+
+// Room for the built-in items plus the elevation readout appended to them.
+const int kLegendMax = kLegendCount + 1;
+
+// Gaps around a key item, at 640x480 and scaled by ui like the radii are.
+const int kLegendGlyphGap = 3;    // between a swatch and its label
+const int kLegendItemGap  = 10;   // between one item and the next
+
+// Where each item starts and which row it landed on. Computed before the map
+// window so the heading band can be sized from the row count, matching the
+// ordering the two text lines rely on.
+struct LegendLayout {
+    int count;
+    int rows;
+    int row_h;
+    int x[kLegendMax];
+    int row[kLegendMax];
+    const LegendItem *item[kLegendMax];
+};
+
+// Flow the key into as many rows as it needs at the given width. Labels vary in
+// length and the window may be 640 or 3840 wide, so a fixed column count either
+// wastes a wide screen or overruns a narrow one.
+void legend_layout(LegendLayout *out, const LegendItem *extra, int ui, int avail)
+{
+    int i;
+    int pen = 0;
+
+    out->count = 0;
+    out->rows  = 1;
+
+    // Row height is the taller of the text and the largest swatch at this
+    // scale.
+    const int text_h = nocturne_ui_text_height(g_ThemeFont, (char *)"YOU", ui);
+    int glyph_h = 0;
+    for (i = 0; i < kLegendCount; i++) {
+        const int d = 2 * k_legend[i].radius * ui + 1;
+        if (d > glyph_h) { glyph_h = d; }
+    }
+    out->row_h = (text_h > glyph_h) ? text_h : glyph_h;
+    if (out->row_h <= 0) { out->row_h = 12 * ui; }
+
+    for (i = 0; i < kLegendCount + (extra != nullptr ? 1 : 0); i++) {
+        const LegendItem *it = (i < kLegendCount) ? &k_legend[i] : extra;
+        const int glyph_w = (it->rgb != nullptr)
+                                ? 2 * it->radius * ui + 1 + kLegendGlyphGap * ui
+                                : 0;
+        const int w = glyph_w +
+                      nocturne_ui_text_width(g_ThemeFont, (char *)it->label, ui);
+
+        // Wrap, but never leave a row empty: an item wider than the available
+        // width still needs placing, and gets a row to itself.
+        if (pen > 0 && pen + w > avail) {
+            out->rows++;
+            pen = 0;
+        }
+        out->item[out->count] = it;
+        out->x[out->count]    = pen;
+        out->row[out->count]  = out->rows - 1;
+        out->count++;
+        pen += w + kLegendItemGap * ui;
+    }
+}
+
+// Which row of k_markers describes this actor, or -1 for one with no marker of
+// its own. Walks the actor's type chain from its own class outward, so the
+// most-derived row wins whatever order the table is written in.
+int marker_index(CDemonActor *actor)
+{
+    CDemonActorType *type;
+    int              i;
+
+    if (actor == (CDemonActor *)nullptr) { return -1; }
+
+    type = (*((actor->vtable)._ub)->getActorType)(actor);
+    for (; type != (CDemonActorType *)nullptr; type = type->parent_type) {
+        // A class registers its hash on first construction, so a class no level
+        // has used yet reads 0. Skipped, or every unregistered row would match.
+        if (type->name_hash == 0) { continue; }
+        for (i = 0; i < kMarkerCount; i++) {
+            if (k_markers[i].type->name_hash == type->name_hash) { return i; }
+        }
+    }
+    return -1;
 }
 
 // One run of the legend. Labels and binding names are separated so the two can
@@ -322,7 +574,14 @@ struct HelpSeg {
     bool is_key;
 };
 
-const int kHelpSegMax = 16;
+// Headroom over what the fullest form uses (22: a label and its names for each
+// of pan, zoom, elevation and the legend, plus CLOSE and its name, plus the
+// separating spaces).
+//
+// help_push drops segments silently once the cap is reached, and CLOSE is pushed
+// last -- so a cap the fullest form can reach would drop the one segment every
+// fallback level must keep. Recount when adding a control.
+const int kHelpSegMax = 32;
 
 // Longest common prefix of a set of binding names, cut back to a word boundary.
 //
@@ -370,23 +629,34 @@ int build_help_segments(HelpSeg *segs, int level)
 
     // getKeyDisplayName hands back one shared buffer, so each name has to be
     // taken before the next call overwrites it.
-    char pan[4][40], zoom[2][40], open[40];
+    char pan[4][40], zoom[2][40], elev[2][40], key[40], open[40];
     strcpy(pan[0], core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_walk));
     strcpy(pan[1], core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_backup));
     strcpy(pan[2], core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_strafe_left));
     strcpy(pan[3], core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_strafe_right));
     strcpy(zoom[0], core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_point_up));
     strcpy(zoom[1], core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_point_down));
+    strcpy(elev[0], core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_next_weapon));
+    strcpy(elev[1], core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_prev_weapon));
+    strcpy(key, core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_item_desc));
     strcpy(open, core_menu_cpp_getKeyDisplayName_FUN_005134e0(g_key_binding));
 
     const int pan_shared = common_prefix_len(pan, 4);
     const int zoom_shared = common_prefix_len(zoom, 2);
+    const int elev_shared = common_prefix_len(elev, 2);
 
-    char pan_short[40], zoom_short[40];
+    char pan_short[40], zoom_short[40], elev_short[40];
     std::snprintf(pan_short, sizeof(pan_short), "%.*s", pan_shared, pan[0]);
     std::snprintf(zoom_short, sizeof(zoom_short), "%.*s", zoom_shared, zoom[0]);
+    std::snprintf(elev_short, sizeof(elev_short), "%.*s", elev_shared, elev[0]);
 
-    // A collapsed form is only offered when there is something to collapse to.
+    // A collapsed form is only offered when there is something to collapse to,
+    // which in practice means a pad. A keyboard's names share no prefix, so
+    // can_collapse is false, level 1 is skipped, and the full form is used.
+    //
+    // Elevation is not part of the test: it is on the bumpers, whose names
+    // ("LB", "RB") share no prefix and are short enough that collapsing them
+    // would save nothing.
     const bool can_collapse = (pan_shared > 0 && zoom_shared > 0);
     if (level == 1 && !can_collapse) { return 0; }
 
@@ -408,6 +678,19 @@ int build_help_segments(HelpSeg *segs, int level)
         } else {
             help_push(segs, &count, zoom_short, true);
         }
+        // Both names even in the collapsed form, unless the device does share a
+        // prefix. Two bumpers are the usual case and share none; "LB RB" is
+        // already shorter than any collapse of it.
+        help_push(segs, &count, "   ELEV ", false);
+        if (level == 0 || elev_shared == 0) {
+            help_push(segs, &count, elev[0], true);
+            help_push(segs, &count, " ", false);
+            help_push(segs, &count, elev[1], true);
+        } else {
+            help_push(segs, &count, elev_short, true);
+        }
+        help_push(segs, &count, "   LEGEND ", false);
+        help_push(segs, &count, key, true);
         help_push(segs, &count, "   ", false);
     } else if (level == 2 && pan_shared > 0) {
         help_push(segs, &count, "PAN ", false);
@@ -441,20 +724,6 @@ int build_help_fitting(HelpSeg *segs, int ui)
         if (help_segments_width(segs, count, ui) <= fits) { return count; }
     }
     return count;
-}
-
-// A hero, drawn as a ringed dot: a dark halo with the hero colour inside it,
-// the same construction as the player marker a size down. Colour alone does not
-// separate a hero from a character at map scale -- both are a few pixels of
-// flat fill and the eye reads them as the same kind of thing -- so heroes carry
-// the shape as well, which is what the player marker relies on too.
-void draw_hero_marker(int cx, int cy, int color_hero, int color_halo,
-                      int x0, int y0, int x1, int y1)
-{
-    g_ActiveRenderColor = color_halo;
-    fill_disc(cx, cy, kHeroRadius + kHeroHaloExtra, x0, y0, x1, y1);
-    g_ActiveRenderColor = color_hero;
-    fill_disc(cx, cy, kHeroRadius, x0, y0, x1, y1);
 }
 
 }  // namespace
@@ -763,6 +1032,12 @@ extern "C" void nocturne_automap_update(void)
             // not move -- the map has the controls for as long as it is up.
             g_pan_x = p.x;
             g_pan_z = p.z;
+            g_elevation = 0.0f;      // his own floor, for the same reason
+            g_legend = false;        // and the heading, not the marker key
+            // Primed from the button's real state, so one already held as the
+            // map comes up is not read as a fresh press on the first frame.
+            g_legend_was_down = (g_CGamePtr != nullptr) &&
+                                down(g_CGamePtr->key_item_desc);
             g_zoom = (float)g_zoom_percent * 0.01f;
             if (g_zoom < kZoomMin) g_zoom = kZoomMin;
             if (g_zoom > kZoomMax) g_zoom = kZoomMax;
@@ -778,13 +1053,17 @@ extern "C" void nocturne_automap_update(void)
     // rescaled to -1..1, so a gentle push pans slowly and a hard one fast --
     // which is the whole reason to read the stick as an axis rather than
     // through the four digital codes it also synthesises.
-    float move_x = 0.0f, move_y = 0.0f, look_x = 0.0f, look_y = 0.0f;
-    nocturne_gamepad_axes(&move_x, &move_y, &look_x, &look_y, nullptr, nullptr);
+    // look_x is not requested: the right stick's left/right axis drives nothing
+    // on this screen. See the key_left / key_right note below.
+    float move_x = 0.0f, move_y = 0.0f, look_y = 0.0f;
+    nocturne_gamepad_axes(&move_x, &move_y, nullptr, &look_y, nullptr, nullptr);
 
-    // Pan is the left stick, which on a pad IS walk/backup and strafe -- so the
+    // Pan is the left stick, which on a pad is walk/backup and strafe, so the
     // digital fallback reads exactly those bindings and nothing else.
-    // key_left / key_right are the right stick's other axis and must not be
-    // read here, or one stick would drive both pan and zoom.
+    //
+    // key_left / key_right are the right stick's other axis and are not read
+    // anywhere on this screen. Reading them here would put pan and zoom on the
+    // same stick.
     //
     // Stick y is positive downwards; on the map, down the screen is -z.
     float mx = move_x, mz = -move_y;
@@ -838,6 +1117,45 @@ extern "C" void nocturne_automap_update(void)
     if (g_zoom < kZoomMin) g_zoom = kZoomMin;
     if (g_zoom > kZoomMax) g_zoom = kZoomMax;
     g_zoom_percent = (int)(g_zoom * 100.0f + 0.5f);
+
+    // Elevation is the weapon-cycle pair, which on a pad is the two bumpers:
+    // next raises, previous lowers. A button pair suits stepping through floors,
+    // and it keeps elevation off the sticks: sharing the right stick with zoom
+    // means holding one axis to hold an altitude while the other changes scale.
+    //
+    // Digital only. These are buttons, so there is no axis to read and nothing
+    // to blend an analogue reading against.
+    float elev_axis = 0.0f;
+    if (down(g->key_next_weapon)) elev_axis += 1.0f;
+    if (down(g->key_prev_weapon)) elev_axis -= 1.0f;
+
+    // The marker key, on the item-description binding (Guide on a pad). The
+    // action already means "describe what I am looking at", and no item is in
+    // hand while the map is up. Borrowed rather than bound, like pan and zoom,
+    // since g_CustomKeyNames has no spare row.
+    //
+    // Edge-triggered, for the same reason the map key is.
+    const bool legend_now = down(g->key_item_desc);
+    if (legend_now && !g_legend_was_down) { g_legend = !g_legend; }
+    g_legend_was_down = legend_now;
+
+    if (elev_axis != 0.0f) {
+        g_elevation += elev_axis * kElevateRate * dt;
+
+        // Clamped to the level's vertical bounds so the band cannot leave it.
+        // Relative to the player's own height, since the offset is. At the
+        // limits the band sits on the level's top or bottom and further input
+        // does nothing, rather than scrolling into empty space with nothing
+        // drawn -- the same constraint panning applies horizontally.
+        CDemonRaytrace *rt = &g_CDemonRaytraceInstance;
+        const float lowest  = rt->bbox_min.y - p.y;
+        const float highest = rt->bbox_max.y - p.y;
+        if (g_elevation < lowest)  g_elevation = lowest;
+        if (g_elevation > highest) g_elevation = highest;
+        // Inverted or empty bounds: leave the band on the player's own floor
+        // rather than clamping to an arbitrary value.
+        if (lowest > highest) g_elevation = 0.0f;
+    }
 }
 
 // Complete means the whole map is shown, so anything short of 100 is a lie
@@ -912,13 +1230,65 @@ extern "C" void nocturne_automap_render(void)
     // overruns it.
     const int ui = nocturne_ui_scale();
 
-    char title[64];
-    std::snprintf(title, sizeof(title), "MAP  %d%%%s",
-                  nocturne_automap_explored_percent(),
-                  g_complete ? "  COMPLETE" : "");
+    // Heading: the running mission's chapter title, localized, so it matches
+    // what the story screens call the level.
+    //
+    // Falls back to "MAP" when there is no title to look up -- an editor
+    // mission, or any .MSN outside the shipped set.
+    char title[128];
+    char *place = (g_CDemonMissionPtr != (CDemonMission *)nullptr)
+                      ? nocturne_chapter_environment_name(
+                            g_CDemonMissionPtr->mission_name)
+                      : (char *)nullptr;
+
+    // Elevation readout, shown only when the band is off the player's own
+    // floor. Its presence is what distinguishes a raised view from a wrong one:
+    // the player marker keeps drawing at any elevation, so without this the map
+    // appears to show him standing on a floor he is not on.
+    //
+    // Signed world units rather than floors -- see kElevateRate for why a
+    // storey is not a reliable unit here. The value is read by watching it
+    // change, so it needs no unit label.
+    char elev[32];
+    const int elev_units = (int)(g_elevation < 0.0f ? g_elevation - 0.5f
+                                                    : g_elevation + 0.5f);
+    if (elev_units != 0) {
+        std::snprintf(elev, sizeof(elev), "ELEV %+d", elev_units);
+    } else {
+        elev[0] = '\0';
+    }
+
+    if (place != (char *)nullptr && place[0] != '\0') {
+        std::snprintf(title, sizeof(title), "%s   %d%%%s%s%s", place,
+                      nocturne_automap_explored_percent(),
+                      g_complete ? "   COMPLETE" : "",
+                      (elev[0] != '\0') ? "   " : "", elev);
+    } else {
+        std::snprintf(title, sizeof(title), "MAP  %d%%%s%s%s",
+                      nocturne_automap_explored_percent(),
+                      g_complete ? "  COMPLETE" : "",
+                      (elev[0] != '\0') ? "  " : "", elev);
+    }
 
     HelpSeg help[kHelpSegMax];
     const int help_count = build_help_fitting(help, ui);
+
+    // Padding above and below the contents of a band.
+    const int pad = 4 * ui;
+
+    // The marker key stands in for the heading. Laid out here, before the map
+    // window, for the same reason the text lines are measured here: it
+    // determines the top band's height and may need more than one row.
+    //
+    // The elevation readout is appended to it. It is state rather than a label,
+    // and replacing it would remove the only indication that the band is not
+    // the player's own floor.
+    LegendLayout legend;
+    const LegendItem elev_item = { MARK_DISC, (const int *)nullptr, 0, elev };
+    if (g_legend) {
+        legend_layout(&legend, (elev[0] != '\0') ? &elev_item : nullptr, ui,
+                      g_WindowWidth - kMargin * 2);
+    }
 
     int title_h = nocturne_ui_text_height(g_ThemeFont, title, ui);
     if (title_h <= 0) title_h = 12 * ui;
@@ -926,9 +1296,7 @@ extern "C" void nocturne_automap_render(void)
     int help_h = (help_count > 0) ? nocturne_ui_text_height(g_ThemeFont, help[0].text, ui) : 0;
     if (help_count > 0 && help_h <= 0) help_h = 12 * ui;
 
-    // Padding above and below the text inside its band.
-    const int pad = 4 * ui;
-    int top_band = title_h + pad * 2;
+    int top_band = (g_legend ? legend.rows * legend.row_h : title_h) + pad * 2;
     int bottom_band = (help_h > 0) ? help_h + pad * 2 : kMargin;
     if (top_band < kMargin) top_band = kMargin;
     if (bottom_band < kMargin) bottom_band = kMargin;
@@ -955,7 +1323,12 @@ extern "C" void nocturne_automap_render(void)
     const int color_faded  = pick_color(kFadedRGB,  0xf8);
     const int color_player = pick_color(kPlayerRGB, 0xf8);
 
-    const float lo = p.y - kBandBelow, hi = p.y + kBandAbove;
+    // The drawn band, offset by the current elevation. g_elevation is 0 on the
+    // player's own floor, so this is the unmodified band unless he has raised
+    // the view. The offset can only show what the reveal has already unlocked,
+    // since the reveal follows his position rather than the view.
+    const float eye_y = p.y + g_elevation;
+    const float lo = eye_y - kBandBelow, hi = eye_y + kBandAbove;
 
     // +Z away from the viewer, so it is flipped: a map reads north-up.
     #define AM_PX(wx) (cx + (int)(((wx) - g_pan_x) * scale))
@@ -1008,11 +1381,23 @@ extern "C" void nocturne_automap_render(void)
         const int color_door_open   = pick_color(kDoorOpenRGB,   color_wall);
         const int color_door_free   = pick_color(kDoorFreeRGB,   color_wall);
         const int color_door_locked = pick_color(kDoorLockedRGB, color_wall);
-        const int color_hero        = pick_color(kHeroRGB,       color_wall);
-        const int color_npc         = pick_color(kNpcRGB,        color_wall);
         const int color_halo        = pick_color(kHaloRGB,       color_wall);
         const int color_item        = pick_color(kItemRGB,       color_wall);
         const int color_chest       = pick_color(kChestRGB,      color_wall);
+
+        // Every class-keyed colour, resolved once. pick_color scans the whole
+        // palette, so calling it per actor would be a 256-entry search per
+        // marker drawn -- the same reason the material colours are resolved
+        // above rather than per segment.
+        //
+        // Radii come through the same array, pre-multiplied by the UI scale, so
+        // no call site below can omit it.
+        int marker_color[kMarkerCount];
+        int marker_radius[kMarkerCount];
+        for (int m = 0; m < kMarkerCount; m++) {
+            marker_color[m]  = pick_color(k_markers[m].rgb, color_wall);
+            marker_radius[m] = k_markers[m].radius * ui;
+        }
 
         // Which party slots the set's actor list already accounted for.
         bool drawn_hero[4] = { false, false, false, false };
@@ -1033,15 +1418,21 @@ extern "C" void nocturne_automap_render(void)
             const int mx = AM_PX(ap.x), my = AM_PY(ap.z);
             if (mx < x0 || mx >= x1 || my < y0 || my >= y1) continue;
 
+            // The class's colour and shape, most-derived first. State-dependent
+            // presentation is decided below: a locked door and a free one are
+            // the same class.
+            const int row = marker_index(a);
+
             CDoor *door = (CDoor *)core_actor_cpp_castToClassHash_FUN_0040c790(
                                        a, g_CDoorClassInfo.name_hash);
             if (door != (CDoor *)nullptr) {
                 if (!g_complete && !revealed(cube_at(ap))) continue;
-                g_ActiveRenderColor =
+                const int door_color =
                     (door->door_state != DOOR_STATE_CLOSED) ? color_door_open
                     : door_is_passable(door, (CHero *)hero) ? color_door_free
                                                             : color_door_locked;
-                fill_box(mx, my, kDoorRadius, x0, y0, x1, y1);
+                draw_marker(MARK_BOX, door_color, color_halo,
+                            mx, my, kDoorRadius * ui, x0, y0, x1, y1);
                 continue;
             }
 
@@ -1070,21 +1461,41 @@ extern "C" void nocturne_automap_render(void)
                 // not something the map should be telling you about.
                 if (!g_complete && !revealed(cube_at(ap))) continue;
 
-                if (kind == 1) {
-                    draw_chest_marker(mx, my, color_chest, color_halo,
-                                      x0, y0, x1, y1);
+                // A class with a marker of its own uses it. CBodyPart::canPickup
+                // returns Carry, the same value a rifle gives, so without a row
+                // body parts would draw as equipment.
+                //
+                // Anything else is drawn from what can be done with it, which is
+                // all the map knows about a class with no row: a container to
+                // search, or an item to carry off.
+                if (row >= 0) {
+                    draw_marker(k_markers[row].shape, marker_color[row],
+                                color_halo, mx, my, marker_radius[row],
+                                x0, y0, x1, y1);
+                } else if (kind == 1) {
+                    draw_marker(MARK_CHEST, color_chest, color_halo,
+                                mx, my, kChestRadius * ui, x0, y0, x1, y1);
                 } else {
-                    g_ActiveRenderColor = color_item;
-                    fill_diamond(mx, my, kItemRadius, x0, y0, x1, y1);
+                    draw_marker(MARK_DIAMOND, color_item, color_halo,
+                                mx, my, kItemRadius * ui, x0, y0, x1, y1);
                 }
                 continue;
             }
             if (ch->hit_points <= 0.0f) continue;
 
-            // CEnemy is a real class with its own branch of the hierarchy
-            // (CMobster, CGhoul and the rest), so this is the engine's own
-            // answer and not a class list of ours -- the same castToClassHash
-            // the door and hero cases above use.
+            // CEnemy is a class in its own right, with CMobster, CGhoul and the
+            // rest deriving from it, so hostility is the engine's own
+            // classification rather than a name list maintained here. Same
+            // castToClassHash the door and hero cases use.
+            //
+            // This decides the visibility rule only -- hostiles draw from line
+            // of sight, everything else from the fog. Colour comes from the
+            // table.
+            //
+            // Kept as its own is-a test rather than comparing `row` against
+            // CEnemy's row: a row added for a leaf class such as CWerewolf wins
+            // the lookup while still being an enemy, and testing the row would
+            // then apply the fog rule to it.
             const bool hostile = core_actor_cpp_castToClassHash_FUN_0040c790(
                                      a, g_CEnemyClassInfo.name_hash) != (CDemonActor *)nullptr;
             if (hostile) {
@@ -1106,12 +1517,15 @@ extern "C" void nocturne_automap_render(void)
                 for (int h = 0; h < 4; h++) {
                     if ((CDemonActor *)g_HeroActors[h] == a) drawn_hero[h] = true;
                 }
-                draw_hero_marker(mx, my, color_hero, color_halo, x0, y0, x1, y1);
-                continue;
             }
 
-            g_ActiveRenderColor = color_npc;
-            fill_disc(mx, my, kNpcRadius, x0, y0, x1, y1);
+            // Hero, enemy or neither, from the one table. A character always
+            // matches CCharacter's row at minimum, since that cast is what
+            // reached this branch.
+            if (row >= 0) {
+                draw_marker(k_markers[row].shape, marker_color[row], color_halo,
+                            mx, my, marker_radius[row], x0, y0, x1, y1);
+            }
         }
 
         // Any party hero the pass above did not reach. The set's actor list is
@@ -1134,20 +1548,31 @@ extern "C" void nocturne_automap_render(void)
             // friendly characters above.
             if (!g_complete && !revealed(cube_at(mp))) continue;
 
-            draw_hero_marker(mx, my, color_hero, color_halo, x0, y0, x1, y1);
+            // Resolved per teammate rather than reusing the local hero's row:
+            // the party is not all one class, so a row added for one hero class
+            // must not be applied to the others.
+            const int mate_row = marker_index((CDemonActor *)mate);
+            if (mate_row >= 0) {
+                draw_marker(k_markers[mate_row].shape, marker_color[mate_row],
+                            color_halo, mx, my, marker_radius[mate_row],
+                            x0, y0, x1, y1);
+            }
         }
     }
 
-    // The player last, as a filled disc with a dark halo under it and a pale
-    // core. A bare dot the colour of a wall is exactly what goes missing in a
-    // dense room, and a thin cross is barely better.
+    // The player last, as a filled disc with a dark halo beneath it and a pale
+    // core. A bare dot in the wall colour is lost in a dense room, and a thin
+    // cross is little better.
+    //
+    // Drawn at any elevation: it is the reference every other position on screen
+    // is read against. The heading's readout indicates when the band is not the
+    // player's own floor.
     const int hx = AM_PX(p.x), hy = AM_PY(p.z);
     for (int ring = 0; ring < 3; ring++) {
-        const int r = (ring == 0) ? 7 : (ring == 1) ? 5 : 2;
         g_ActiveRenderColor = (ring == 0) ? pick_color(kHaloRGB, color_wall)
                             : (ring == 1) ? color_player
                                           : pick_color(kCoreRGB, color_player);
-        fill_disc(hx, hy, r, x0, y0, x1, y1);
+        fill_disc(hx, hy, kPlayerRings[ring] * ui, x0, y0, x1, y1);
     }
 
     #undef AM_PX
@@ -1160,8 +1585,36 @@ extern "C" void nocturne_automap_render(void)
     //
     // The colour is the map's own, NOT g_UITextColor: that is an editor global
     // and reads 0 during play, which is black on a black screen.
-    nocturne_ui_draw_text(g_ThemeFont, title, x0, (top_band - title_h) / 2,
-                          color_wall, -1, ui);
+    if (g_legend) {
+        // Swatches go through draw_marker, the call the map itself uses, so a
+        // key entry stays consistent with the marker it explains. Clipped to
+        // the heading band rather than the map window: the band sits above y0,
+        // where the map starts.
+        const int band_y1 = (top_band < g_WindowHeight) ? top_band
+                                                        : g_WindowHeight;
+        const int text_h = nocturne_ui_text_height(g_ThemeFont, (char *)"YOU", ui);
+
+        for (int i = 0; i < legend.count; i++) {
+            const LegendItem *it = legend.item[i];
+            const int row_top = pad + legend.row[i] * legend.row_h;
+            int pen = x0 + legend.x[i];
+
+            if (it->rgb != (const int *)nullptr) {
+                const int r = it->radius * ui;
+                draw_marker(it->shape, pick_color(it->rgb, color_wall),
+                            pick_color(kHaloRGB, color_wall),
+                            pen + r, row_top + legend.row_h / 2, r,
+                            x0, 0, x1, band_y1);
+                pen += 2 * r + 1 + kLegendGlyphGap * ui;
+            }
+            nocturne_ui_draw_text(g_ThemeFont, (char *)it->label, pen,
+                                  row_top + (legend.row_h - text_h) / 2,
+                                  color_wall, -1, ui);
+        }
+    } else {
+        nocturne_ui_draw_text(g_ThemeFont, title, x0, (top_band - title_h) / 2,
+                              color_wall, -1, ui);
+    }
 
     if (help_count > 0) {
         // Centred across the screen, so whichever form survived the width
