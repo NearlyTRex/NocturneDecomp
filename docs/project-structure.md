@@ -6,11 +6,9 @@
 |---|---|
 | `annotations/` | Exported Ghidra state and the decompiled tree — see below |
 | `cmake/` | Toolchain files, source collection, bundled-library builds, skip list |
-| `contracts/` | GBNF grammars constraining LLM-assisted output |
 | `docs/` | This directory — how the project is built and worked on |
 | `headers/` | Watcom C/C++ 11.0 standard library headers, for typing the original |
 | `historical_annotations/` | Archived annotation exports, for tracking analysis over time |
-| `promptlib/` | Reusable prompt fragments (`core/`, `debug/`, `recipes/`, `tasks/`) |
 | `prompts/` | Task prompts — `fix_compilation.md` is the authority on `.keep` rules |
 | `research/` | Investigations and findings — see [research/README.md](../research/README.md) |
 | `scripts/` | Bash and Python automation |
