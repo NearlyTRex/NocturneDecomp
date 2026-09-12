@@ -14,10 +14,8 @@ void __cdecl core_pendulum_cpp_CPendulum_process_FUN_0054a180(CPendulum *this_pt
   int iVar1;
   CHero *left_hand_actor;
   CEnemy *pCVar2;
-  float10 fVar3;
-  float10 fVar4;
   float10 fVar5;
-  
+
   if (this_ptr->moving == 0) {
     iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,this_ptr->start_event);
@@ -33,11 +31,7 @@ void __cdecl core_pendulum_cpp_CPendulum_process_FUN_0054a180(CPendulum *this_pt
     this_ptr->decay = 1.0;
   }
   core_pendulum_cpp_CPendulum_updateSwing_FUN_00549b90(this_ptr,delta_time);
-  fVar5 = (float10)1;
-  fVar3 = (float10)1.4426950408889634 *
-          (float10)this_ptr->decay * (float10)-1 * (float10)this_ptr->decay_timer;
-  fVar4 = (float10)f2xm1(fVar3 - (fVar3 / fVar5) * fVar5);
-  fVar5 = (float10)fscale(fVar4 + fVar5,fVar3);
+  fVar5 = (float10)exp(-(double)this_ptr->decay * (double)this_ptr->decay_timer);
   if (fVar5 <= (float10)0.10000000000000001) {
     this_ptr->is_stopped = 1;
     return;

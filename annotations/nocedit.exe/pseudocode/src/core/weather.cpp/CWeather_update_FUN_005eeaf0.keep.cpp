@@ -11,13 +11,10 @@ void __cdecl core_weather_cpp_CWeather_update_FUN_005eeaf0(CWeather *this_ptr)
 
 {
   float fVar4;
-  float10 fVar5;
   float fVar6;
   int iVar7;
   float fVar10;
   int iVar5;
-  float10 fVar7;
-  float10 fVar8;
   float10 fVar9;
   float local_2c;
   CVector3f local_28;
@@ -122,12 +119,8 @@ LAB_005eeb1c:
       this_ptr->max_flash_interval = 15.0;
     }
     else {
-      fVar5 = (float10)1;
-      fVar7 = (float10)1.4426950408889634 *
-              ((float10)fVar4 * (float10)0.10000000000000001 +
-              (float10)log((double)this_ptr->max_flash_interval));
-      fVar8 = (float10)f2xm1(fVar7 - (fVar7 / fVar5) * fVar5);
-      fVar9 = (float10)fscale(fVar8 + fVar5,fVar7);
+      fVar9 = (float10)exp((double)fVar4 * 0.10000000000000001 +
+                           log((double)this_ptr->max_flash_interval));
       this_ptr->max_flash_interval = (float)fVar9;
     }
     iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(UINT_03f96b40);
