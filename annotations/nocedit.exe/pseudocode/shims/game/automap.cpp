@@ -288,40 +288,133 @@ void fill_box(int cx, int cy, int r, int x0, int y0, int x1, int y1)
     }
 }
 
-// The borrowed-control legend, shortened until it fits the screen.
+// One run of the legend. Labels and binding names are separated so the two can
+// be drawn in different colours, which is the only thing that makes a long line
+// of borrowed controls scannable.
+struct HelpSeg {
+    char text[48];
+    bool is_key;
+};
+
+const int kHelpSegMax = 16;
+
+// Longest common prefix of a set of binding names, cut back to a word boundary.
 //
-// The map takes no bindings of its own for pan and zoom, so the only way the
-// player can know which of his controls do what here is to be told -- and told
-// in the names he actually bound, which getKeyDisplayName gives for pad codes
-// as well as keys. A pad makes the full line long ("Left Stick Up" six times
-// over), hence the two fallbacks rather than one line that runs off the edge.
-void build_help_line(char *out, int out_size, int ui)
+// A device that names each direction of one control in full gives four pan
+// bindings that share a prefix, and the legend can say that once instead of
+// four times. Nothing here asks what the device is: the names come from
+// getKeyDisplayName and the saving is discovered in them. A keyboard's names
+// share nothing, so the collapse simply does not apply and the full form is
+// used -- which is the behaviour a keyboard wants anyway.
+int common_prefix_len(const char names[][40], int count)
+{
+    int n = 0;
+    bool same = true;
+
+    if (count < 2) { return 0; }
+    while (names[0][n] != '\0' && same) {
+        for (int i = 1; i < count; i++) {
+            if (names[i][n] != names[0][n]) { same = false; break; }
+        }
+        if (same) { n++; }
+    }
+    // Whole words only, and without the separating space.
+    while (n > 0 && names[0][n - 1] != ' ') { n--; }
+    while (n > 0 && names[0][n - 1] == ' ') { n--; }
+    return n;
+}
+
+void help_push(HelpSeg *segs, int *count, const char *text, bool is_key)
+{
+    if (*count >= kHelpSegMax || text[0] == '\0') { return; }
+    std::snprintf(segs[*count].text, sizeof(segs[*count].text), "%s", text);
+    segs[*count].is_key = is_key;
+    (*count)++;
+}
+
+// The borrowed-control legend at one level of detail, 0 being the fullest.
+// Every level keeps CLOSE: pan and zoom can be found by pushing things, but a
+// player who cannot find the way out is stuck looking at a map.
+int build_help_segments(HelpSeg *segs, int level)
 {
     CGame *g = g_CGamePtr;
-    if (g == (CGame *)nullptr) { out[0] = '\0'; return; }
+    int count = 0;
+
+    if (g == (CGame *)nullptr) { return 0; }
 
     // getKeyDisplayName hands back one shared buffer, so each name has to be
     // taken before the next call overwrites it.
-    char pan_z0[40], pan_z1[40], pan_x0[40], pan_x1[40], zin[40], zout[40], open[40];
-    strcpy(pan_z0, core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_walk));
-    strcpy(pan_z1, core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_backup));
-    strcpy(pan_x0, core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_strafe_left));
-    strcpy(pan_x1, core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_strafe_right));
-    strcpy(zin,    core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_point_up));
-    strcpy(zout,   core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_point_down));
-    strcpy(open,   core_menu_cpp_getKeyDisplayName_FUN_005134e0(g_key_binding));
+    char pan[4][40], zoom[2][40], open[40];
+    strcpy(pan[0], core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_walk));
+    strcpy(pan[1], core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_backup));
+    strcpy(pan[2], core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_strafe_left));
+    strcpy(pan[3], core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_strafe_right));
+    strcpy(zoom[0], core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_point_up));
+    strcpy(zoom[1], core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_point_down));
+    strcpy(open, core_menu_cpp_getKeyDisplayName_FUN_005134e0(g_key_binding));
 
+    const int pan_shared = common_prefix_len(pan, 4);
+    const int zoom_shared = common_prefix_len(zoom, 2);
+
+    char pan_short[40], zoom_short[40];
+    std::snprintf(pan_short, sizeof(pan_short), "%.*s", pan_shared, pan[0]);
+    std::snprintf(zoom_short, sizeof(zoom_short), "%.*s", zoom_shared, zoom[0]);
+
+    // A collapsed form is only offered when there is something to collapse to.
+    const bool can_collapse = (pan_shared > 0 && zoom_shared > 0);
+    if (level == 1 && !can_collapse) { return 0; }
+
+    if (level <= 1) {
+        help_push(segs, &count, "PAN ", false);
+        if (level == 0) {
+            for (int i = 0; i < 4; i++) {
+                help_push(segs, &count, pan[i], true);
+                help_push(segs, &count, " ", false);
+            }
+        } else {
+            help_push(segs, &count, pan_short, true);
+        }
+        help_push(segs, &count, "   ZOOM ", false);
+        if (level == 0) {
+            help_push(segs, &count, zoom[0], true);
+            help_push(segs, &count, " ", false);
+            help_push(segs, &count, zoom[1], true);
+        } else {
+            help_push(segs, &count, zoom_short, true);
+        }
+        help_push(segs, &count, "   ", false);
+    } else if (level == 2 && pan_shared > 0) {
+        help_push(segs, &count, "PAN ", false);
+        help_push(segs, &count, pan_short, true);
+        help_push(segs, &count, "   ", false);
+    }
+
+    help_push(segs, &count, "CLOSE ", false);
+    help_push(segs, &count, open, true);
+    return count;
+}
+
+int help_segments_width(const HelpSeg *segs, int count, int ui)
+{
+    int width = 0;
+    for (int i = 0; i < count; i++) {
+        width += nocturne_ui_text_width(g_ThemeFont, (char *)segs[i].text, ui);
+    }
+    return width;
+}
+
+// The fullest legend that fits the screen.
+int build_help_fitting(HelpSeg *segs, int ui)
+{
     const int fits = g_WindowWidth - kMargin * 2;
+    int count = 0;
 
-    std::snprintf(out, (size_t)out_size, "PAN %s %s %s %s    ZOOM %s %s    CLOSE %s",
-                  pan_z0, pan_z1, pan_x0, pan_x1, zin, zout, open);
-    if (nocturne_ui_text_width(g_ThemeFont, out, ui) <= fits) return;
-
-    std::snprintf(out, (size_t)out_size, "PAN %s %s %s %s   ZOOM %s %s",
-                  pan_z0, pan_z1, pan_x0, pan_x1, zin, zout);
-    if (nocturne_ui_text_width(g_ThemeFont, out, ui) <= fits) return;
-
-    std::snprintf(out, (size_t)out_size, "LEFT PAN   RIGHT ZOOM");
+    for (int level = 0; level <= 3; level++) {
+        count = build_help_segments(segs, level);
+        if (count == 0) { continue; }
+        if (help_segments_width(segs, count, ui) <= fits) { return count; }
+    }
+    return count;
 }
 
 // A hero, drawn as a ringed dot: a dark halo with the hero colour inside it,
@@ -764,6 +857,11 @@ extern "C" int nocturne_automap_freezes_world(void)
     return 1;
 }
 extern "C" int *nocturne_automap_key_binding(void) { return &g_key_binding; }
+
+extern "C" void nocturne_automap_apply_default_binding(void)
+{
+    g_key_binding = DIK_M;
+}
 extern "C" int *nocturne_automap_zoom_setting(void) { return &g_zoom_percent; }
 
 extern "C" char *nocturne_automap_key_label(void)
@@ -793,13 +891,14 @@ extern "C" void nocturne_automap_render(void)
                   nocturne_automap_explored_percent(),
                   g_complete ? "  COMPLETE" : "");
 
-    char help[192];
-    build_help_line(help, (int)sizeof(help), ui);
+    HelpSeg help[kHelpSegMax];
+    const int help_count = build_help_fitting(help, ui);
 
     int title_h = nocturne_ui_text_height(g_ThemeFont, title, ui);
     if (title_h <= 0) title_h = 12 * ui;
-    int help_h = (help[0] != '\0') ? nocturne_ui_text_height(g_ThemeFont, help, ui) : 0;
-    if (help[0] != '\0' && help_h <= 0) help_h = 12 * ui;
+    // One line, so any segment measures the band; the first is always a label.
+    int help_h = (help_count > 0) ? nocturne_ui_text_height(g_ThemeFont, help[0].text, ui) : 0;
+    if (help_count > 0 && help_h <= 0) help_h = 12 * ui;
 
     // Padding above and below the text inside its band.
     const int pad = 4 * ui;
@@ -992,16 +1091,21 @@ extern "C" void nocturne_automap_render(void)
     nocturne_ui_draw_text(g_ThemeFont, title, x0, (top_band - title_h) / 2,
                           color_wall, -1, ui);
 
-    if (help[0] != '\0') {
+    if (help_count > 0) {
         // Centred across the screen, so whichever form survived the width
         // fallbacks sits under the middle of the map rather than trailing off
-        // one side. Drawn dim: it is a reminder, not part of the map.
-        int help_w = nocturne_ui_text_width(g_ThemeFont, help, ui);
-        int help_x = (g_WindowWidth - help_w) / 2;
-        if (help_x < 0) help_x = 0;
-        nocturne_ui_draw_text(g_ThemeFont, help, help_x,
-                              y1 + (bottom_band - help_h) / 2,
-                              color_faded, -1, ui);
+        // one side. The labels are dim -- they are a reminder, not part of the
+        // map -- and the binding names take the map's own colour, so the thing
+        // the player is actually looking for is the thing that stands out.
+        const int help_y = y1 + (bottom_band - help_h) / 2;
+        int help_x = (g_WindowWidth - help_segments_width(help, help_count, ui)) / 2;
+        if (help_x < 0) { help_x = 0; }
+        for (int i = 0; i < help_count; i++) {
+            char *text = help[i].text;
+            nocturne_ui_draw_text(g_ThemeFont, text, help_x, help_y,
+                                  help[i].is_key ? color_wall : color_faded, -1, ui);
+            help_x += nocturne_ui_text_width(g_ThemeFont, text, ui);
+        }
     }
 }
 
@@ -1093,6 +1197,7 @@ extern "C" int  nocturne_automap_owns_controls(void) { return 0; }
 extern "C" int  nocturne_automap_freezes_world(void) { return 0; }
 extern "C" int  nocturne_automap_handle_cancel(void) { return 0; }
 extern "C" int *nocturne_automap_key_binding(void) { static int none = 0; return &none; }
+extern "C" void nocturne_automap_apply_default_binding(void) {}
 extern "C" int *nocturne_automap_zoom_setting(void) { static int none = 100; return &none; }
 extern "C" char *nocturne_automap_key_label(void) { static char none[1] = ""; return none; }
 

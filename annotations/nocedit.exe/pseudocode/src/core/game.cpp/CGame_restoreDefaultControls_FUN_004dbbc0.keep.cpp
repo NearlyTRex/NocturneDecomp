@@ -36,6 +36,9 @@ void __cdecl core_game_cpp_CGame_restoreDefaultControls_FUN_004dbbc0(CGame *this
   this_ptr->key_prev_item = 0x1b;
   this_ptr->key_item_desc = 0x35;
   this_ptr->key_next_ammo = 0x29;
+#if !NOCTURNE_AUTHENTIC_AUTOMAP
+  nocturne_automap_apply_default_binding();
+#endif
   this_ptr->invert_mouse_y_axis = 0;
   this_ptr->always_run = 0;
   this_ptr->x_mouse_sensitivity = 0x10000;

@@ -125,6 +125,18 @@ int *nocturne_automap_key_binding(void);
 // straight out of it.
 char *nocturne_automap_key_label(void);
 
+// Seed the map binding with its keyboard default, so Restore Defaults reaches
+// it like every other action. It has to be asked for separately because the
+// binding lives here rather than in the contiguous key_walk..key_next_ammo run
+// inside CGame that the generic default and reseed paths iterate; without this
+// the map is the one action Restore Defaults leaves on the previous device's
+// code.
+//
+// Called alongside CGame's own keyboard defaults. A pad overrides it afterwards
+// through nocturne_automap_key_binding(), the same order CGame's fields are
+// written in, and keeps the pad code in the pad shim where the rest of them are.
+void nocturne_automap_apply_default_binding(void);
+
 // Opening the map is the ONLY binding the map adds. Pan and zoom borrow the
 // movement bindings instead of taking virtual ones, and the map screen prints
 // which -- a control the player already knows, relabelled for the duration,

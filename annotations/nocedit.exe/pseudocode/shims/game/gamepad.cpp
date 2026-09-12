@@ -6,6 +6,7 @@
 // none of the engine has to know about it.
 
 #include "game/gamepad.h"
+#include "game/automap.h"
 #include "shim_config.h"
 #include "core/debug_log.h"
 #include "nocturne.h"
@@ -529,7 +530,18 @@ extern "C" void nocturne_gamepad_apply_defaults(CGame *game) {
     game->key_next_item   = NOCTURNE_PAD_BUTTON(SDL_CONTROLLER_BUTTON_DPAD_RIGHT);
     game->key_next_ammo   = NOCTURNE_PAD_BUTTON(SDL_CONTROLLER_BUTTON_DPAD_UP);
     game->key_weapon_5    = NOCTURNE_PAD_BUTTON(SDL_CONTROLLER_BUTTON_DPAD_DOWN);
-    game->key_item_desc   = NOCTURNE_PAD_BUTTON(SDL_CONTROLLER_BUTTON_BACK);
+    game->key_item_desc   = NOCTURNE_PAD_BUTTON(SDL_CONTROLLER_BUTTON_GUIDE);
+
+    // The map, which does not live in CGame - see automap.h. Written here with
+    // the rest of the pad defaults rather than in the automap shim, which has
+    // no SDL, and after nocturne_automap_apply_default_binding() has put the
+    // keyboard default in, exactly as CGame's own fields are overridden above.
+    //
+    // Back is the map button by convention, and it is free because item
+    // information moved to Guide. Guide is not delivered by every driver and
+    // SDL can be told to keep it; if it does not arrive, the binding is still
+    // reachable from Customize Keys like any other.
+    *nocturne_automap_key_binding() = NOCTURNE_PAD_BUTTON(SDL_CONTROLLER_BUTTON_BACK);
 
     // Reachable by cycling with the shoulders; left free for the spare buttons
     // a pad may or may not have.
@@ -581,6 +593,18 @@ extern "C" void nocturne_gamepad_reseed_for_mode(CGame *game) {
             continue;
         }
         if (is_pad_binding(fields[i])) {
+            pad_bindings++;
+        } else {
+            other_bindings++;
+        }
+    }
+
+    // The map binding is outside the run binding_fields walks, so it has to be
+    // counted by hand or a player whose only binding of a kind is the map is
+    // told he has none.
+    const int map_binding = *nocturne_automap_key_binding();
+    if (map_binding != INPUT_NONE && map_binding != 0) {
+        if (is_pad_binding(map_binding)) {
             pad_bindings++;
         } else {
             other_bindings++;
