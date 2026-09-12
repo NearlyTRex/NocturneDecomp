@@ -169,12 +169,27 @@ int *nocturne_automap_zoom_setting(void);
 // line, and the version gate is a minimum with no upper bound. So no version
 // bump is needed and older builds load new saves unharmed.
 
-// Append the current level's reveal. Safe to call with no map data.
-void nocturne_automap_save(void *file);
+// The engine's stream type, not libc's. _fopen hands back a Watcom-shaped
+// wrapper with the real libc FILE* buried in its _link field, so a _FILE* is
+// NOT a FILE* and must go through the _f* shims (or _FILE_to_FILE) rather than
+// straight into std::fprintf. Declared here rather than taking void*: the point
+// of naming the type is that passing the wrong stream stops compiling.
+struct _FILE;
 
-// Read a trailing block if one is present. EOF means "no map data", which is
-// also what a save written before this feature looks like.
-void nocturne_automap_load(void *file);
+// Append the current level's reveal. Safe to call with no map data.
+void nocturne_automap_save(struct _FILE *file);
+
+// Stage a trailing block if one is present. EOF means "no map data", which is
+// also what a save written before this feature looks like. Nothing is applied
+// here: CGame::loadGame closes the save before CDemonMission::run builds the
+// level, so at this point the grid still belongs to the level being left.
+void nocturne_automap_load(struct _FILE *file);
+
+// Apply what nocturne_automap_load staged, once the level exists. Call it after
+// CDemonMission::run. Always clears to unexplored first, so a pre-Automap save,
+// a save from another level and a missing block all land on "not walked yet"
+// rather than inheriting whatever the previous level left in memory.
+void nocturne_automap_apply_loaded(void);
 
 // ---- state ------------------------------------------------------------------
 

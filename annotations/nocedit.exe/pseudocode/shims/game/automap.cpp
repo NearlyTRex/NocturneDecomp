@@ -63,20 +63,18 @@ const int kPlayerRGB[3] = { 255,  64,  48 };
 const int kHaloRGB[3]   = {  10,  10,  14 };
 const int kCoreRGB[3]   = { 255, 220, 200 };
 
-// Doors and characters. A door is asked of the engine's own lock test rather
-// than of key_mask alone, so one you are already carrying the key for reads as
-// openable -- "can I get through this" is the question being answered, not
-// "was this authored with a lock".
+// Door coloring
 const int kDoorOpenRGB[3]   = { 110, 130, 110 };
 const int kDoorFreeRGB[3]   = {  60, 220,  90 };
 const int kDoorLockedRGB[3] = { 235,  60,  55 };
 
-// Other heroes are teammates in a network game. Characters get one colour
-// between them because the engine has no friend/foe field to ask -- nothing on
-// CCharacter distinguishes a hostage from a mobster, and inventing a class list
-// here would be our fiction rather than the game's.
-const int kHeroRGB[3] = {  90, 170, 255 };
-const int kNpcRGB[3]  = { 250, 200,  60 };
+// Character coloring
+const int kHeroRGB[3]       = {  90, 170, 255 };
+const int kNpcRGB[3]        = { 250, 200,  60 };
+
+// Item coloring
+const int kItemRGB[3]       = {  90, 235, 215 };
+const int kChestRGB[3]      = { 205, 125, 240 };
 
 // One line colour per EGroundType, indexed by the enum. A wall is drawn in the
 // colour of its own material, which is carried per triangle in the owning
@@ -115,6 +113,8 @@ const int kDoorRadius     = 3;
 const int kHeroRadius     = 4;
 const int kHeroHaloExtra  = 2;
 const int kNpcRadius      = 3;
+const int kItemRadius     = 3;
+const int kChestRadius    = 3;
 
 // Where a character's sight ray lands, above the feet its position records.
 // Aimed at the chest so the ray is not buried in the floor at either end.
@@ -286,6 +286,32 @@ void fill_box(int cx, int cy, int r, int x0, int y0, int x1, int y1)
                                                  cx + r, cy + dy,
                                                  x0, y0, x1, y1);
     }
+}
+
+// An item, as a diamond. Shape and not just colour, because the map is read at
+// a glance and a dot the size of a character's is a character until you look.
+void fill_diamond(int cx, int cy, int r, int x0, int y0, int x1, int y1)
+{
+    for (int dy = -r; dy <= r; dy++) {
+        const int half = r - ((dy < 0) ? -dy : dy);
+        engine_2d_c_clipAndDrawLine_FUN_00402ca0(cx - half, cy + dy,
+                                                 cx + half, cy + dy,
+                                                 x0, y0, x1, y1);
+    }
+}
+
+// A container, as a box with a lid seam across it. A door is a box too, so the
+// seam is what separates "walk through this" from "search this" at a size where
+// colour alone is one or two pixels of difference.
+void draw_chest_marker(int cx, int cy, int color_body, int color_seam,
+                       int x0, int y0, int x1, int y1)
+{
+    g_ActiveRenderColor = color_body;
+    fill_box(cx, cy, kChestRadius, x0, y0, x1, y1);
+    g_ActiveRenderColor = color_seam;
+    engine_2d_c_clipAndDrawLine_FUN_00402ca0(cx - kChestRadius, cy,
+                                             cx + kChestRadius, cy,
+                                             x0, y0, x1, y1);
 }
 
 // One run of the legend. Labels and binding names are separated so the two can
@@ -985,6 +1011,8 @@ extern "C" void nocturne_automap_render(void)
         const int color_hero        = pick_color(kHeroRGB,       color_wall);
         const int color_npc         = pick_color(kNpcRGB,        color_wall);
         const int color_halo        = pick_color(kHaloRGB,       color_wall);
+        const int color_item        = pick_color(kItemRGB,       color_wall);
+        const int color_chest       = pick_color(kChestRGB,      color_wall);
 
         // Which party slots the set's actor list already accounted for.
         bool drawn_hero[4] = { false, false, false, false };
@@ -1019,9 +1047,51 @@ extern "C" void nocturne_automap_render(void)
 
             CCharacter *ch = (CCharacter *)core_actor_cpp_castToClassHash_FUN_0040c790(
                                                a, g_CCharacterClassInfo.name_hash);
-            if (ch == (CCharacter *)nullptr) continue;
+            if (ch == (CCharacter *)nullptr) {
+                // Anything the hero could pick up or search, asked of the actor
+                // itself rather than matched against a list of class names.
+                // canPickup is the same query CHero's interaction path runs and
+                // is pure -- the base returns 0 after a pointer check and no
+                // override plays a sound or prints anything, unlike the door's
+                // getMoveType above. Its answer is the Pickup type enum, shared
+                // by every class that implements it: 0 Can't, 1 Rummage,
+                // 2 Inventory, 3 Carry, 4 Heavy.
+                //
+                // Rummage is a container to search (an ammo box, a rummage-type
+                // CBoxActor); Inventory and Carry are things that leave with
+                // you; Heavy is a crate you shove, which is scenery for map
+                // purposes and stays unmarked.
+                const int kind = (*((a->vtable)._ub)->canPickup)(a, hero);
+                if (kind != 1 && kind != 2 && kind != 3) continue;
+
+                // Static world objects, so they follow the same rule the walls
+                // and doors do: once the room has been explored they stay on
+                // the map. A dropped item in a room you have never entered is
+                // not something the map should be telling you about.
+                if (!g_complete && !revealed(cube_at(ap))) continue;
+
+                if (kind == 1) {
+                    draw_chest_marker(mx, my, color_chest, color_halo,
+                                      x0, y0, x1, y1);
+                } else {
+                    g_ActiveRenderColor = color_item;
+                    fill_diamond(mx, my, kItemRadius, x0, y0, x1, y1);
+                }
+                continue;
+            }
             if (ch->hit_points <= 0.0f) continue;
-            if (!in_sight(eye, ap)) continue;
+
+            // CEnemy is a real class with its own branch of the hierarchy
+            // (CMobster, CGhoul and the rest), so this is the engine's own
+            // answer and not a class list of ours -- the same castToClassHash
+            // the door and hero cases above use.
+            const bool hostile = core_actor_cpp_castToClassHash_FUN_0040c790(
+                                     a, g_CEnemyClassInfo.name_hash) != (CDemonActor *)nullptr;
+            if (hostile) {
+                if (!in_sight(eye, ap)) continue;
+            } else if (!g_complete && !revealed(cube_at(ap))) {
+                continue;
+            }
 
             // Hero here means the CLASS, not the party. CMoloch, CHaystack and
             // the rest derive from CHero and are placed in levels as ordinary
@@ -1060,7 +1130,9 @@ extern "C" void nocturne_automap_render(void)
 
             const int mx = AM_PX(mp.x), my = AM_PY(mp.z);
             if (mx < x0 || mx >= x1 || my < y0 || my >= y1) continue;
-            if (!in_sight(eye, mp)) continue;
+            // A teammate, so explored rather than in view -- same rule as the
+            // friendly characters above.
+            if (!g_complete && !revealed(cube_at(mp))) continue;
 
             draw_hero_marker(mx, my, color_hero, color_halo, x0, y0, x1, y1);
         }
@@ -1120,57 +1192,101 @@ extern "C" void nocturne_automap_render(void)
 // Run-length encoded rather than raw bits: 5.6 KB of hex would swamp a save
 // that is otherwise readable, and runs of unexplored space compress to nothing.
 
-extern "C" void nocturne_automap_save(void *file)
+extern "C" void nocturne_automap_save(_FILE *f)
 {
-    FILE *f = (FILE *)file;
     if (f == nullptr || g_cube_count == 0) return;
 
     CDemonRaytrace *rt = &g_CDemonRaytraceInstance;
-    std::fprintf(f, "Automap\n");
-    std::fprintf(f, "%s\n", g_CDemonSetInstance.geometry_filename);
-    std::fprintf(f, "%d,%d,%d,%d\n", rt->grid_coord.x, rt->grid_coord.y,
-                 rt->grid_coord.z, g_complete ? 1 : 0);
+    _fprintf(f, "Automap\n");
+    _fprintf(f, "%s\n", g_CDemonSetInstance.geometry_filename);
+    _fprintf(f, "%d,%d,%d,%d\n", rt->grid_coord.x, rt->grid_coord.y,
+             rt->grid_coord.z, g_complete ? 1 : 0);
 
     int runs = 0;
     for (int c = 0; c < g_cube_count; ) {
         const bool v = revealed(c);
         int n = 0;
         while (c + n < g_cube_count && revealed(c + n) == v) n++;
-        std::fprintf(f, "%d ", n);
+        _fprintf(f, "%d ", n);
         c += n;
-        if (++runs % 20 == 0) std::fprintf(f, "\n");
+        if (++runs % 20 == 0) _fprintf(f, "\n");
     }
-    std::fprintf(f, "\n");
+    _fprintf(f, "\n");
 }
 
-extern "C" void nocturne_automap_load(void *file)
+// Reading is split in two because the save file is closed before the level it
+// describes exists. CGame::loadGame parses its sections, closes the file, and
+// only then calls CDemonMission::run, which reaches CDemonSet::load and the
+// reset that rebuilds this grid -- so anything applied at parse time is either
+// wiped by that reset or matched against the OUTGOING level's dimensions. The
+// block is therefore staged here and applied once the level is up.
+struct PendingMap {
+    bool valid;
+    char geo[64];
+    int  gx, gy, gz;
+    int  complete;
+    std::vector<int> runs;
+};
+
+PendingMap g_pending;
+
+extern "C" void nocturne_automap_load(_FILE *f)
 {
-    FILE *f = (FILE *)file;
-    if (f == nullptr || g_cube_count == 0) return;
+    // Cleared on every read, so a save with no block cannot be handed the
+    // previous save's staged data.
+    g_pending.valid = false;
+    g_pending.runs.clear();
+
+    if (f == nullptr) { return; }
 
     char tag[64];
-    if (std::fscanf(f, "%63s\n", tag) != 1) return;      // EOF: no map data
-    if (std::strcmp(tag, "Automap") != 0) return;
+    if (_fscanf(f, "%63s\n", tag) != 1) { return; }   // EOF: pre-Automap save
+    if (std::strcmp(tag, "Automap") != 0) { return; }
 
-    char geo[64];
-    if (std::fscanf(f, "%63s\n", geo) != 1) return;
+    if (_fscanf(f, "%63s\n", g_pending.geo) != 1) { return; }
+    if (_fscanf(f, "%d,%d,%d,%d\n", &g_pending.gx, &g_pending.gy,
+                &g_pending.gz, &g_pending.complete) != 4) {
+        return;
+    }
 
-    int gx = 0, gy = 0, gz = 0, done = 0;
-    if (std::fscanf(f, "%d,%d,%d,%d\n", &gx, &gy, &gz, &done) != 4) return;
+    int n = 0;
+    while (_fscanf(f, "%d", &n) == 1) {
+        g_pending.runs.push_back(n);
+    }
+    g_pending.valid = true;
+}
+
+extern "C" void nocturne_automap_apply_loaded(void)
+{
+    // Unexplored first, always. A save written before the block existed, a save
+    // from another level, and a corrupt block all mean the same thing: this
+    // level has not been walked. Leaving the previous state in place is what
+    // made a reloaded save look already-explored.
+    std::fill(g_revealed.begin(), g_revealed.end(), 0);
+    g_complete = false;
+
+    const bool staged = g_pending.valid;
+    PendingMap p;
+    if (staged) { p = g_pending; }
+    g_pending.valid = false;
+    g_pending.runs.clear();
+
+    if (!staged || g_cube_count == 0) { recount_explored(); return; }
 
     // A changed .GEO invalidates cleanly rather than smearing one level's
     // explored cells over another's grid.
     CDemonRaytrace *rt = &g_CDemonRaytraceInstance;
-    if (gx != rt->grid_coord.x || gy != rt->grid_coord.y ||
-        gz != rt->grid_coord.z ||
-        std::strcmp(geo, g_CDemonSetInstance.geometry_filename) != 0) {
+    if (p.gx != rt->grid_coord.x || p.gy != rt->grid_coord.y ||
+        p.gz != rt->grid_coord.z ||
+        std::strcmp(p.geo, g_CDemonSetInstance.geometry_filename) != 0) {
+        recount_explored();
         return;
     }
 
-    std::fill(g_revealed.begin(), g_revealed.end(), 0);
     bool v = false;
-    int c = 0, n = 0;
-    while (c < g_cube_count && std::fscanf(f, "%d", &n) == 1) {
+    int c = 0;
+    for (size_t r = 0; r < p.runs.size() && c < g_cube_count; r++) {
+        const int n = p.runs[r];
         if (v) {
             for (int i = 0; i < n && c + i < g_cube_count; i++) {
                 const int k = c + i;
@@ -1180,7 +1296,7 @@ extern "C" void nocturne_automap_load(void *file)
         c += n;
         v = !v;
     }
-    g_complete = (done != 0);
+    g_complete = (p.complete != 0);
     recount_explored();
 }
 
@@ -1190,8 +1306,9 @@ extern "C" void nocturne_automap_reset(void) {}
 extern "C" void nocturne_automap_update(void) {}
 extern "C" int  nocturne_automap_active(void) { return 0; }
 extern "C" void nocturne_automap_render(void) {}
-extern "C" void nocturne_automap_save(void *file) { (void)file; }
-extern "C" void nocturne_automap_load(void *file) { (void)file; }
+extern "C" void nocturne_automap_save(_FILE *file) { (void)file; }
+extern "C" void nocturne_automap_load(_FILE *file) { (void)file; }
+extern "C" void nocturne_automap_apply_loaded(void) {}
 extern "C" int  nocturne_automap_explored_percent(void) { return 0; }
 extern "C" int  nocturne_automap_owns_controls(void) { return 0; }
 extern "C" int  nocturne_automap_freezes_world(void) { return 0; }

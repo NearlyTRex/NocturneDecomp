@@ -44,7 +44,7 @@ void __cdecl core_game_cpp_CGame_loadGame_FUN_004e12b0(CGame *this_ptr,char *sav
   float *local_1c;
   long local_18;
   int local_14;
-  
+
   bVar11 = 0;
   remove("save\\$$SAVE$$.TMP");
   this_ptr->is_loading = 1;
@@ -272,11 +272,17 @@ LAB_004e14f5:
         if (8 < local_34) {
           core_set_cpp_CDemonSet_loadStateInfo_FUN_00571230(g_CDemonSetPtr,file_handle);
         }
+#if !NOCTURNE_AUTHENTIC_AUTOMAP
+        nocturne_automap_load(file_handle);
+#endif
         shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\core\\game.cpp",3724);
         if (load_mode == 0) {
           return;
         }
         core_mission_cpp_CDemonMission_run_FUN_00524420(g_CDemonMissionPtr);
+#if !NOCTURNE_AUTHENTIC_AUTOMAP
+        nocturne_automap_apply_loaded();
+#endif
         if (this_ptr->need_chapter_reload == 0) goto LAB_004e17ac;
         save_filename = local_20;
         this_ptr->need_chapter_reload = 0;

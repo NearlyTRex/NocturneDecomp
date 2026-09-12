@@ -114,6 +114,9 @@ void __cdecl core_game_cpp_CGame_saveGame_FUN_004e0cd0(CGame *this_ptr,char *sav
              (double)this_ptr->total_game_time,this_ptr->damageable_enemy_count,
              this_ptr->total_kill_count);
   core_set_cpp_CDemonSet_saveStateInfo_FUN_005711b0(g_CDemonSetPtr,file);
+#if !NOCTURNE_AUTHENTIC_AUTOMAP
+  nocturne_automap_save(file);
+#endif
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\game.cpp",3408);
   g_IncludeCommentsWhenWriting = 0;
   if (local_14 != 0) {
