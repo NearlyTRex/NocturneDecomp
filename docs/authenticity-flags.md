@@ -105,6 +105,7 @@ honest reason its default is what it is.
 | `HERO_ACTIONS` | the other eight classes can interact, and can escape a grab |
 | `CHAPTER_SELECT` | START offers the chapter lists whether or not pod.ini is present |
 | `FRIENDLY_FIRE` | heroes cannot damage each other in a network game |
+| `INPUT_REPEAT` | a held button starts an action once instead of restarting it every frame |
 
 **`choice` — the shipped binary is not wrong; we prefer something else**
 
@@ -119,6 +120,7 @@ honest reason its default is what it is.
 
 | Flag | Off |
 |---|---|
+| `AUTOMAP` | a bindable Doom-style map that fills in as you explore |
 | `GAMEPAD` | SDL's game-controller layer instead of 1999's joyGetPos |
 | `WINDOW_MESSAGES` | the window proc sees a mouse wheel |
 | `CHEAT_MENU` | a CHEATS entry on Options, and WARPS on the pause menu |

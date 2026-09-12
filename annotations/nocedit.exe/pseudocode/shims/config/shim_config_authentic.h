@@ -61,6 +61,7 @@
 // | `NOCTURNE_AUTHENTIC_ACTOR_DELETE` | 0 | defect | references are cleared before the memory is freed |
 // | `NOCTURNE_AUTHENTIC_HERO_WEAPON` | 0 | defect | each hero class starts with what it can actually use |
 // | `NOCTURNE_AUTHENTIC_HERO_ACTIONS` | 0 | defect | the other eight classes can interact and escape a grab |
+// | `NOCTURNE_AUTHENTIC_INPUT_REPEAT` | 0 | defect | a held button starts an action once instead of every frame |
 // | `NOCTURNE_AUTHENTIC_CHAPTER_SELECT` | 0 | defect | START offers the chapter lists, pod.ini or no pod.ini |
 // | `NOCTURNE_AUTHENTIC_FRIENDLY_FIRE` | 0 | defect | heroes cannot damage each other in a network game |
 // | `NOCTURNE_AUTHENTIC_PICKUP_WIELDS` | 0 | choice | a pickup is never drawn without the player asking |
@@ -634,6 +635,61 @@
 //   Override with -DNOCTURNE_AUTHENTIC_HERO_ACTIONS=1.
 #ifndef NOCTURNE_AUTHENTIC_HERO_ACTIONS
 #define NOCTURNE_AUTHENTIC_HERO_ACTIONS 0
+#endif
+
+// NOCTURNE_AUTHENTIC_INPUT_REPEAT
+//   Two places where holding a button restarts an action every frame instead of
+//   starting it once. Both are the Stranger's own button handlers, so unlike
+//   NOCTURNE_AUTHENTIC_HERO_ACTIONS above these are reached in ordinary play,
+//   and both get worse the higher the frame rate goes: the repeat rate IS the
+//   frame rate, so what was rough on period hardware is a buzz at 60fps and
+//   above.
+//
+//   PUSHING A BOX. CStranger::handleActionButton dispatches the action button
+//   through a chain of attempts, and every branch that succeeds ends by clearing
+//   player_input.action_state.fire — consuming the press so a held button does
+//   not re-enter. The push-box branch is the one that does not:
+//
+//       if (tryPushNearbyBox(hero)) { setDesiredState(mc, 6, 1); return; }
+//
+//   Confirmed missing in the binary, not dropped by the decompiler: the asm at
+//   LAB_005c5db0 has no `MOV [EBX + 0xbe38], 0` where its siblings do.
+//
+//   It is self-sustaining rather than merely noisy. setDesiredState calls
+//   findAndStartTransition unconditionally when force_immediate is set, so
+//   re-entering with the same state index restarts the transition and the push
+//   state's blend weight never climbs off zero -- and CStranger::processFrame
+//   ends the push on exactly that test:
+//
+//       if (getStateBlendWeight(mc, 6) <= 0.0) stopPushingBox(hero);
+//
+//   stopPushingBox calls killSfx and clears pushed_object, so the next frame
+//   acquires the box again and replays its push sound from the top. The visible
+//   result is a shove animation and a scraping sound both restarting every
+//   frame for as long as the button is held, and a box that never moves.
+//
+//   FIRING AN EMPTY WEAPON. Holding fire with no ammunition retriggers the
+//   dry-fire click every frame. CWeapon::fire is the single ammunition test for
+//   all six weapon classes and returns 0 when empty; each subclass then plays
+//   its own click ("45-dry-!.wav", "shotgun-noammo.wav") and returns. Nothing
+//   on that path advances any timer, and the gates in
+//   CStranger::handleFireButton -- kickback, recoil, isReadyToFire -- are all
+//   still satisfied next frame because a shot that did not happen moved none of
+//   them. Holding the trigger is meant to keep firing, so the handler
+//   deliberately does not consume the press; it is the failure path that is
+//   missing a rate limit rather than the input handling.
+//
+//   1: shipped behaviour — both actions restart at the frame rate.
+//   0: the push-box branch consumes the press like its siblings, and a failed
+//      fire arms CWeapon::fire_cooldown_timer so the click cannot retrigger
+//      until it expires. That timer is the engine's own: CWeapon::ctor zeroes
+//      it, CWeapon::process counts it down, CWeapon::isReadyToFire is the gate
+//      that reads it, and nothing in the shipped binary ever sets it, so this
+//      uses the mechanism as built rather than adding state.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_INPUT_REPEAT=1.
+#ifndef NOCTURNE_AUTHENTIC_INPUT_REPEAT
+#define NOCTURNE_AUTHENTIC_INPUT_REPEAT 0
 #endif
 
 // NOCTURNE_AUTHENTIC_CHAPTER_SELECT
