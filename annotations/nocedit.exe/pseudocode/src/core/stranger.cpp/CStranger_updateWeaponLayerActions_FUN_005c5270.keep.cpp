@@ -39,7 +39,7 @@ void __cdecl core_stranger_cpp_CStranger_updateWeaponLayerActions_FUN_005c5270(C
   CWeapon *local_1c;
   float fVar3;
   CDemonActor *pCVar2;
-  
+
   if (((this_ptr->base).base.layer_action_index == 0xe) &&
      ((this_ptr->base).base.carry_hands[1].carry_actor == (CDemonActor *)0x0)) {
     (this_ptr->base).base.layer_action_t = 0.0;
@@ -50,6 +50,11 @@ void __cdecl core_stranger_cpp_CStranger_updateWeaponLayerActions_FUN_005c5270(C
   if ((this_ptr->base).nearby_interactive_actor == (CDemonActor *)0x0) {
     if (this_ptr->guns_drawn != 0) {
       pCVar4 = (this_ptr->base).base.carry_hands[1].carry_actor;
+#if !NOCTURNE_AUTHENTIC_PICKUP_WIELDS
+      if (this_ptr->action_pending == 1) {
+        pCVar4 = (CDemonActor *)0x0;
+      }
+#endif
       if (pCVar4 == (CDemonActor *)0x0) {
         local_1c = (this_ptr->base).inventory.selected_weapon;
       }

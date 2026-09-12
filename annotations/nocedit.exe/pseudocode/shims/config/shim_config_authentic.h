@@ -719,6 +719,22 @@
 //      the shipped code never swapped a held weapon out, so that is not what is
 //      being avoided here.
 //
+//   The selection above is only half of it, and the quieter half. A weapon being
+//   picked up sits in carry_hands[1] for the length of the animation, and
+//   CStranger::updateWeaponLayerActions reads that hand ahead of the inventory:
+//   with the guns out it casts whatever is held to CWeapon and wields it on the
+//   spot, several frames before addItem is ever reached. That path never touches
+//   selected_weapon, so the guard above cannot see it, and it fires whatever the
+//   slot already holds — including over a weapon the player is carrying. It is
+//   the one that is actually visible, and the one a report of "it drew the gun I
+//   just picked up" is almost always about.
+//
+//   0 gates both: the hand is ignored while action_pending is 1, the state whose
+//   terminal action is addCarriedItemToInventory, so a pickup changes nothing
+//   about what is held. A carry hand reached any other way — an item taken out
+//   to place, or dynamite drawn to throw, which arrives through
+//   CHero::findItemUseTarget with target_actor set — still selects normally.
+//
 //   The starting weapon is not affected either way. CHero::createDefaultWeapon
 //   and CScat::createDefaultWeapon call selectWeapon themselves after adding it,
 //   as does the hero_weapon.h replacement, so a hero still begins a mission
