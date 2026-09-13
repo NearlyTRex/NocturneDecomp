@@ -3465,7 +3465,7 @@ def identify_signed_shift_global_idiom(decompiled_code):
     cast operands but misses globals (their type isn't resolvable without
     `-I`). The eligible rewrite is identical to `static_shift_too_many_bits`:
     `x / N` or `ABS(x)` (see the `static_shift_too_many_bits` entry in
-    fix_compilation.md).
+    docs/decompiler-artifacts.md).
 
     One suspect per line (deduped), located at the shift line.
 
@@ -3495,7 +3495,7 @@ def identify_signed_shift_global_idiom(decompiled_code):
                 'cppcheck misses on globals (unresolved type without -I). '
                 'Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl '
                 'INT_MIN); see the static_shift_too_many_bits notes in '
-                'fix_compilation.md.'),
+                'docs/decompiler-artifacts.md.'),
             'severity': 'moderate',
         })
     return suspects
@@ -4784,7 +4784,7 @@ def identify_shadow_pointer_walk(decompiled_code):
 #
 # Fix in a `.keep`: introduce a real contiguous vector local, write all 3
 # components to it (recover any dropped writes from the .asm), pass
-# `&real_local`. See section 26 of fix_compilation.md.
+# `&real_local`. See §26 of docs/decompiler-artifacts.md.
 #
 # Base is restricted to a *bare* local identifier (`&local_168.y`): Ghidra only
 # omits the field name when the local itself is typed as a standalone vector, so
@@ -6564,7 +6564,7 @@ def identify_alloc_magic_size(code, struct_size_map=None):
     On the 32-bit matching build these are correct, but at 64-bit a struct that
     contains a pointer grows and a pointer itself becomes 8 bytes, so the magic
     stride is silently wrong. Using sizeof(T) keeps the size correct across
-    layout and word-size changes (fix_compilation.md §17/§18; a 64-bit item like
+    layout and word-size changes (docs/decompiler-artifacts.md §17/§18; a 64-bit item like
     pointer_truncation §27).
 
     Detection is type-resolved via the inline cast on the allocation, so it only

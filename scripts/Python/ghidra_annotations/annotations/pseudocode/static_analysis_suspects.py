@@ -114,7 +114,7 @@ WHITELIST = {
     # Signed shift-by-(bit-width-1) — Watcom's signed-divide-by-power-of-2
     # (`(x + (x>>0x1f)*-N) ... >> M`) and branchless-abs (`(x ^ x>>0x1f) - x>>0x1f`)
     # idioms. Faithful but UB-flagged; the eligible rewrite is `x / N` and
-    # `ABS(x)` respectively (see fix_compilation.md).
+    # `ABS(x)` respectively (see docs/decompiler-artifacts.md).
     ('cppcheck', 'shiftTooManyBitsSigned'): {
         'type': 'static_shift_too_many_bits',
         'match': 'Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)',
@@ -131,7 +131,7 @@ WHITELIST = {
 
     # Integer assigned to a pointer (non-portable) — raw-address / pointer-as-int
     # writes (e.g. rule-array byte-offset stores); often a mistyped local or a
-    # hardcoded address for a known global (fix_compilation.md §11).
+    # hardcoded address for a known global (docs/decompiler-artifacts.md §11).
     ('cppcheck', 'AssignmentIntegerToAddress'): {
         'type': 'static_int_to_address',
         'match': 'Cppcheck: integer assigned to pointer (non-portable)',
@@ -194,7 +194,7 @@ WHITELIST = {
 
 
 # Sanctioned float<->int bit-cast helpers: the fast (inverse-)sqrt magic-number
-# approximations (see fix_compilation.md §21). Their `*(int *)&x` / `*(float *)&b`
+# approximations (see docs/decompiler-artifacts.md §21). Their `*(int *)&x` / `*(float *)&b`
 # reinterpret casts are intentional and bit-exact, so cppcheck's invalidPointerCast
 # on them is a false positive and is NOT promoted to a suspect. These globals
 # uniquely identify the helper bodies (inline occurrences elsewhere are still
@@ -288,7 +288,7 @@ def _float_loop_is_genuine(asm_path):
     and returns True if any back-edge body contains an x87 FPU compare. That
     means the binary really drives the loop with floating-point control flow, so
     a clang-tidy `cert-flp30-c` float-induction finding is faithful to Watcom
-    (fix_compilation.md §static_float_loop_induction) and should not be promoted.
+    (docs/decompiler-artifacts.md §static_float_loop_induction) and should not be promoted.
 
     Returns False on any uncertainty (missing/unparseable asm, no back-edge, no
     FPU compare inside a back-edge) so we err toward keeping the flag rather than

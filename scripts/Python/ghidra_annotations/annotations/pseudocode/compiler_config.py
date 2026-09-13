@@ -28,7 +28,7 @@ DEFAULT_COMPILER = 'clang++'
 # - -Wtautological-compare: always-true/false comparisons (wrong signedness annotation)
 # - -Werror=sometimes-uninitialized: a local read on some path with no assignment on
 #   that path. Almost always Ghidra splitting one reused register into two locals and
-#   failing to initialize one of them (see fix_compilation.md §13) — the asm reaches the
+#   failing to initialize one of them (see docs/decompiler-artifacts.md §13) — the asm reaches the
 #   read with the register provably holding a known value. Compiles clean, then feeds
 #   garbage downstream (e.g. CScat::updateWeaponState passed stack junk as a bone index).
 #   Promoted to an error because the resulting bug surfaces far from its cause.

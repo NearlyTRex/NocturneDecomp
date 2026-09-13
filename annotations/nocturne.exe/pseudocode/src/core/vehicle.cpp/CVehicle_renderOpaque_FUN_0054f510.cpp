@@ -13,7 +13,7 @@ int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_0054f510(CVehicle *this_p
   int iVar2;
   CVector3f *pCVar3;
   CKeyFramedModelInstance *this_ptr_00;
-  CVector3f *position;
+  CVector3f *euler_angles;
   int in_stack_0000000c;
   CBoundingBox3D local_60;
   CVector3f CStack_48;
@@ -37,11 +37,11 @@ int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_0054f510(CVehicle *this_p
       if (0 < this_ptr->tire_count) {
         this_ptr_00 = &this_ptr->tires[0].model;
         pCStack_14 = &this_ptr->tires[0].spin_angle;
-        position = &this_ptr->tires[0].runtime_rotation;
+        euler_angles = &this_ptr->tires[0].runtime_rotation;
         pCVar3 = &this_ptr->tires[0].runtime_position;
         do {
           engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
-                    (g_CDemonRenderer_PTR_005ae704,position,pCVar3);
+                    (g_CDemonRenderer_PTR_005ae704,euler_angles,pCVar3);
           engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
                     (g_CDemonRenderer_PTR_005ae704,pCStack_14,(CVector3f *)0x0);
           core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
@@ -50,7 +50,7 @@ int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_0054f510(CVehicle *this_p
           engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
           iVar2 = iVar2 + 1;
           pCVar3 = (CVector3f *)&pCVar3[0x24].y;
-          position = (CVector3f *)&position[0x24].y;
+          euler_angles = (CVector3f *)&euler_angles[0x24].y;
           this_ptr_00 = (CKeyFramedModelInstance *)(this_ptr_00[1].part_visibility_flags + 0xe);
         } while (iVar2 < *(int *)(in_stack_0000000c + 0x930));
       }

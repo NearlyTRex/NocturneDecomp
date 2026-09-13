@@ -12,7 +12,7 @@ int __cdecl core_bodypart_cpp_CBodyPart_renderOpaque_FUN_004161a0(CBodyPart *thi
   SBodyPartModel *pSVar1;
   CBoundingBox3D *this_ptr_00;
   int iVar2;
-  CVector3f *position;
+  CVector3f *euler_angles;
   CBoundingBox3D local_20;
   SBodyPartModel *pSStack_8;
   
@@ -32,14 +32,14 @@ int __cdecl core_bodypart_cpp_CBodyPart_renderOpaque_FUN_004161a0(CBodyPart *thi
       if (0 < this_ptr->attached_model_count) {
         pSStack_8 = this_ptr->attached_models;
         pSVar1 = this_ptr->attached_models;
-        position = &this_ptr->attached_models[0].position;
+        euler_angles = &this_ptr->attached_models[0].euler_angles;
         do {
           engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
-                    (g_CDemonRenderer_PTR_005ae704,position,&pSStack_8[iVar2].scale);
+                    (g_CDemonRenderer_PTR_005ae704,euler_angles,&pSStack_8[iVar2].position_offset);
           core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
                     (&pSVar1->model,0.0,-1);
           iVar2 = iVar2 + 1;
-          position = (CVector3f *)&position[0x21].z;
+          euler_angles = (CVector3f *)&euler_angles[0x21].z;
           pSVar1 = (SBodyPartModel *)(&pSVar1->model + 1);
           engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
         } while (iVar2 < this_ptr->attached_model_count);

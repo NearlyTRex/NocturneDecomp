@@ -119,13 +119,13 @@ void __cdecl core_bodypart_cpp_CBodyPart_applyRotation_FUN_0041a630(CBodyPart *t
   local_1c = 0;
   if (0 < this_ptr->attached_model_count) {
     do {
-      pCVar20 = (CVector3f *)&this_ptr->attached_models[local_1c];
+      pCVar20 = &this_ptr->attached_models[local_1c].position_offset;
       pCVar19 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
                           (&local_a4,&local_58,pCVar20);
       if (pCVar20 != pCVar19) {
         *pCVar20 = *pCVar19;
       }
-      euler_angles_01 = pCVar20 + 1;
+      euler_angles_01 = &this_ptr->attached_models[local_1c].euler_angles;
       core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
                 (&local_194,&g_ZeroVector.f,euler_angles_01);
       core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_194,&local_134,&local_1c4);

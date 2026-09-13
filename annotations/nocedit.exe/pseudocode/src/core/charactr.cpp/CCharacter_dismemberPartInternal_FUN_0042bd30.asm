@@ -197,7 +197,7 @@ section .text
     MOV EDI,dword ptr [EBP + 0x8a]      ; 0042beda
     PUSH EDI                            ; 0042bee0
     CALL core_bodypart.cpp_CBodyPart_addAttachedModel_FUN_0041add0 ; 0042bee1
-        ;   XREF to: 0041add0 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_addAttachedModel_FUN_0041add0(CBodyPart * this_ptr, char * model_name, CVector3f * scale, CVector3f * position)
+        ;   XREF to: 0041add0 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_addAttachedModel_FUN_0041add0(CBodyPart * this_ptr, char * model_name, CVector3f * position_offset, CVector3f * euler_angles)
     ADD ESP,0x10                        ; 0042bee6
     JMP 0x0042bdcb                      ; 0042bee9
         ;   XREF to: 0042bdcb (UNCONDITIONAL_JUMP)  ; LAB_0042bdcb

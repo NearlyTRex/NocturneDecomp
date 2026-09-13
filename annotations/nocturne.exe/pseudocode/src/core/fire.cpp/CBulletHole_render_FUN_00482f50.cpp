@@ -11,7 +11,7 @@
 void __cdecl core_fire_cpp_CBulletHole_render_FUN_00482f50(CBulletHole *this_ptr)
 
 {
-  CVector3f *rotation;
+  CVector3f *translation;
   CVector3i local_70;
   CVector3i local_64;
   uint local_58;
@@ -26,14 +26,14 @@ void __cdecl core_fire_cpp_CBulletHole_render_FUN_00482f50(CBulletHole *this_ptr
   if (this_ptr->actor_ptr == (CDemonActor *)0x0) {
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
               (g_CDemonRenderer_PTR_005ae704,&this_ptr->position);
-    rotation = (CVector3f *)0x0;
+    translation = (CVector3f *)0x0;
   }
   else {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(this_ptr->actor_ptr);
-    rotation = &this_ptr->transformed_pos;
+    translation = &this_ptr->transformed_pos;
   }
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
-            (g_CDemonRenderer_PTR_005ae704,&this_ptr->euler_angles,rotation);
+            (g_CDemonRenderer_PTR_005ae704,&this_ptr->euler_angles,translation);
   _DAT_005c505c = (this_ptr->texture_index & 1U) * 0x800000;
   local_50 = 0;
   DAT_005c502c = _DAT_005c505c + 0x80000;

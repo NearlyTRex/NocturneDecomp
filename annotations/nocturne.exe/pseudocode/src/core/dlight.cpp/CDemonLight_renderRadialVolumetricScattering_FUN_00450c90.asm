@@ -120,7 +120,7 @@ section .text
     MOV EBX,dword ptr [0x005ae704]      ; 00450ce3 | g_CDemonRenderer_PTR_005ae704
     PUSH EBX                            ; 00450ce9 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 ; 00450cea
-        ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
+        ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * euler_angles, CVector3f * translation)
     ADD ESP,0xc                         ; 00450cef
     PUSH 0x5ae458                       ; 00450cf2 | DAT_005ae458
     MOV ESI,dword ptr [0x005ae704]      ; 00450cf7 | g_CDemonRenderer_PTR_005ae704

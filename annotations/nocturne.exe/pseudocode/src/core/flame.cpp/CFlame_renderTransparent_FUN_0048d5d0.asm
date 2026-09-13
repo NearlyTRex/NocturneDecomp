@@ -471,7 +471,7 @@ section .text
     MOV dword ptr [ESP + 0xd0],EDX      ; 0048db8a
     MOV dword ptr [ESP + 0xd8],EDX      ; 0048db91
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 ; 0048db98
-        ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
+        ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * euler_angles, CVector3f * translation)
     ADD ESP,0xc                         ; 0048db9d
     PUSH 0x3f828f5c                     ; 0048dba0
     PUSH 0x3f7ae148                     ; 0048dba5

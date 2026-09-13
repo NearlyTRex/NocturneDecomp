@@ -143,7 +143,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_applyRotation_FUN_0041a630(CBodyPart *t
   }
   local_1c = 0;
   if (0 < this_ptr->attached_model_count) {
-    pCVar20 = &this_ptr->attached_models[0].scale;
+    pCVar20 = &this_ptr->attached_models[0].position_offset;
     do {
       pCVar19 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
                           (&local_a4,&local_58,pCVar20);

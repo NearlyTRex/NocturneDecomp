@@ -177,7 +177,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_applyRotation_FUN_00417320(CBodyPart *t
   }
   local_40 = 0;
   if (0 < this_ptr->attached_model_count) {
-    pCVar12 = &this_ptr->attached_models[0].scale;
+    pCVar12 = &this_ptr->attached_models[0].position_offset;
     do {
       pCVar13 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0
                           (&CStack_c8,&local_7c,pCVar12);

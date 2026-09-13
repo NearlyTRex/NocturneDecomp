@@ -433,7 +433,7 @@ section .text
     PUSH EDX                            ; 004c2a18 | g_CDemonRendererInstance
     FSTP float ptr [ESP + 0x12c]        ; 004c2a19
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 004c2a20
-        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
+        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3f * euler_angles, CVector3f * translation)
     ADD ESP,0xc                         ; 004c2a25
     MOV EDX,dword ptr [0x006703ec]      ; 004c2a28 | g_CDemonRendererPtr2
     MOV EAX,dword ptr [ESP + 0x2e8]     ; 004c2a2e
@@ -675,7 +675,7 @@ section .text
     MOV EAX,[0x006703ec]                ; 004c2dab | g_CDemonRendererPtr2
     PUSH EAX                            ; 004c2db0 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 004c2db1
-        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
+        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3f * euler_angles, CVector3f * translation)
     FLDZ                                ; 004c2db6
     FLD float ptr [ESI + 0x3c]          ; 004c2db8
     MOV ECX,0x8                         ; 004c2dbb
@@ -1185,7 +1185,7 @@ section .text
     MOV ECX,dword ptr [0x006703ec]      ; 004c351e | g_CDemonRendererPtr2
     PUSH ECX                            ; 004c3524 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 004c3525
-        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
+        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3f * euler_angles, CVector3f * translation)
     ADD ESP,0xc                         ; 004c352a
     PUSH 0x67a83c                       ; 004c352d | g_FireEffectReticle
     MOV EBX,dword ptr [0x006703ec]      ; 004c3532 | g_CDemonRendererPtr2

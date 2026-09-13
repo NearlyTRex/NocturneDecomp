@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 19,
+    "complexity_score": 20,
     "cross_reference_count": 62,
     "function_call_count": 2,
     "global_count": 3,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 19,
+    "pseudocode_lines": 20,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 146
+    "total_lines": 147
   },
   "cross_references": [
     {
@@ -401,7 +401,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0",
-    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer *this_ptr,CVector3f *position,CVector3f *rotation)"
+    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer *this_ptr,CVector3f *euler_angles,CVector3f *translation)"
   },
   "function_calls": [
     {
@@ -610,14 +610,14 @@
       },
       {
         "is_param": true,
-        "name": "position",
+        "name": "euler_angles",
         "offset": 8,
         "size": 4,
         "type": "CVector3f *"
       },
       {
         "is_param": true,
-        "name": "rotation",
+        "name": "translation",
         "offset": 12,
         "size": 4,
         "type": "CVector3f *"

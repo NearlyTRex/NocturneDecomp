@@ -18,7 +18,7 @@
 # Every other case is left untouched — a `.keep.cpp` remains the escape
 # hatch if a case slips through.
 #
-# See `prompts/fix_compilation.md` §16 for background and the hand-fix
+# See `docs/decompiler-artifacts.md` §16 for background and the hand-fix
 # pattern; see `reports/adjacency_sentinel_rewrites.md` for the per-export
 # log of every rewrite this transform applied.
 
@@ -240,7 +240,7 @@ def transform_adjacency_sentinels(code, func_name=None):
             # disagree), but the derived form survives a pool RESIZE — arrays
             # get grown for higher video resolutions / larger caches, and a
             # baked literal only re-syncs on the next full re-export. See
-            # prompts/fix_compilation.md §18a.
+            # docs/decompiler-artifacts.md §18a.
             #
             # Safe unconditionally here: _ARRAY_TYPE_RE only admits pools with
             # an explicit bound (never `extern T g_X[]`), and the element type
@@ -293,7 +293,7 @@ def write_rewrite_report(reports_dir):
     lines.append('')
     lines.append('Loops auto-rewritten by the exporter. Watcom\'s end-of-array sentinel')
     lines.append('was the next named global in the original binary; our linker reorders')
-    lines.append('globals so the sentinel never matches. See `prompts/fix_compilation.md` §16.')
+    lines.append('globals so the sentinel never matches. See `docs/decompiler-artifacts.md` §16.')
     lines.append('')
     lines.append('## Summary')
     lines.append('')

@@ -62,17 +62,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 89,
+    "complexity_score": 90,
     "cross_reference_count": 55,
     "function_call_count": 2,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 44,
+    "pseudocode_lines": 45,
     "suspect_count": 4,
     "suspect_types": [
       "raw_address_constant"
     ],
-    "total_lines": 171
+    "total_lines": 172
   },
   "cross_references": [
     {
@@ -416,7 +416,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0",
-    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer *this_ptr,CVector3f *position,CVector3f *rotation)"
+    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer *this_ptr,CVector3f *euler_angles,CVector3f *translation)"
   },
   "function_calls": [
     {
@@ -635,14 +635,14 @@
       },
       {
         "is_param": true,
-        "name": "position",
+        "name": "euler_angles",
         "offset": 8,
         "size": 4,
         "type": "CVector3f *"
       },
       {
         "is_param": true,
-        "name": "rotation",
+        "name": "translation",
         "offset": 12,
         "size": 4,
         "type": "CVector3f *"
@@ -657,7 +657,7 @@
         {
           "check_id": "ignoredReturnValue",
           "column": 3,
-          "line": 41,
+          "line": 42,
           "message": "Return value of function round() is not used.",
           "severity": "warning"
         }
@@ -677,7 +677,7 @@
     },
     {
       "description": "Raw hex address 0x460aea assigned to bare local `iVar6`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar6` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 20,
+      "line": 21,
       "match": "0x460aea",
       "severity": "moderate",
       "text": "iVar6 = 0x460aea;",
@@ -685,7 +685,7 @@
     },
     {
       "description": "Raw hex address 0x460b04 assigned to bare local `iVar5`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar5` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 23,
+      "line": 24,
       "match": "0x460b04",
       "severity": "moderate",
       "text": "iVar5 = 0x460b04;",
@@ -693,7 +693,7 @@
     },
     {
       "description": "Raw hex address 0x460bb8 assigned to bare local `iVar7`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar7` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 42,
+      "line": 43,
       "match": "0x460bb8",
       "severity": "moderate",
       "text": "iVar7 = 0x460bb8;",

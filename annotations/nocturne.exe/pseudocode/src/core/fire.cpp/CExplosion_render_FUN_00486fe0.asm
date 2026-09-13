@@ -120,7 +120,7 @@ section .text
     MOV EBP,dword ptr [0x005ae704]      ; 00487069 | g_CDemonRenderer_PTR_005ae704
     PUSH EBP                            ; 0048706f | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 ; 00487070
-        ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
+        ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * euler_angles, CVector3f * translation)
     FLD float ptr [ESI + 0x10]          ; 00487075
     FMUL double ptr [0x0058122c]        ; 00487078 | DOUBLE_0058122c
     FLD float ptr [ESI + 0x10]          ; 0048707e

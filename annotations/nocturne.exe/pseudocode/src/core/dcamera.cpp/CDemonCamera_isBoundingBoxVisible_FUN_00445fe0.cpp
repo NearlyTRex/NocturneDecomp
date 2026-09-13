@@ -21,8 +21,8 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00445fe0(CDem
   double dVar10;
   double dVar11;
   double dVar12;
-  CVector3f *position_00;
-  CVector3f *rotation;
+  CVector3f *euler_angles;
+  CVector3f *translation;
   CVector3i local_114;
   float local_108;
   float local_104;
@@ -86,11 +86,11 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00445fe0(CDem
   iVar8 = (this_ptr->source_matrix).m[1].y;
   dVar10 = round((double)(((this_ptr->position).x - position->x) * fVar7));
   iVar6 = (this_ptr->source_matrix).m[1].z;
-  rotation = (CVector3f *)0x446099;
+  translation = (CVector3f *)0x446099;
   g_TransformMatrix.m[1].y = iVar8;
   dVar11 = round((double)((fVar3 - fVar4) * fVar7));
   iVar8 = (this_ptr->source_matrix).m[2].x;
-  position_00 = (CVector3f *)0x4460ab;
+  euler_angles = (CVector3f *)0x4460ab;
   g_TransformMatrix.m[1].z = iVar6;
   dVar12 = round((double)((fVar2 - fVar5) * fVar7));
   g_TransformMatrix.m[2].y = (this_ptr->source_matrix).m[2].y;
@@ -100,7 +100,7 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00445fe0(CDem
   g_RelativeZ = (int)ROUND(dVar12);
   g_TransformMatrix.m[2].x = iVar8;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
-            (g_CDemonRenderer_PTR_005ae704,position_00,rotation);
+            (g_CDemonRenderer_PTR_005ae704,euler_angles,translation);
   local_74 = bbox_max->x;
   local_70 = bbox_min->y;
   local_5c = bbox_max->z;

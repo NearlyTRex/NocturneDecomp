@@ -92,7 +92,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_bodypart.cpp_CBodyPart_addAttachedModel_FUN_00417ac0",
-    "signature": "void __cdecl core_bodypart_cpp_CBodyPart_addAttachedModel_FUN_00417ac0(CBodyPart *this_ptr,char *model_name,CVector3f *scale,CVector3f *position)"
+    "signature": "void __cdecl core_bodypart_cpp_CBodyPart_addAttachedModel_FUN_00417ac0(CBodyPart *this_ptr,char *model_name,CVector3f *position_offset,CVector3f *euler_angles)"
   },
   "function_calls": [
     {
@@ -180,14 +180,14 @@
       },
       {
         "is_param": true,
-        "name": "scale",
+        "name": "position_offset",
         "offset": 12,
         "size": 4,
         "type": "CVector3f *"
       },
       {
         "is_param": true,
-        "name": "position",
+        "name": "euler_angles",
         "offset": 16,
         "size": 4,
         "type": "CVector3f *"
@@ -200,7 +200,7 @@
       "line": 18,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "pCVar2[1].x = position->x;",
+      "text": "pCVar2[1].x = euler_angles->x;",
       "type": "unrolled_memcpy"
     }
   ]

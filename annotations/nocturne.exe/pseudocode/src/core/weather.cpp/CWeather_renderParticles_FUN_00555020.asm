@@ -247,7 +247,7 @@ section .text
     MOV EDX,dword ptr [0x005ae704]      ; 005551f2 | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 005551f8 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 ; 005551f9
-        ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
+        ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * euler_angles, CVector3f * translation)
     ADD ESP,0xc                         ; 005551fe
     LEA EBX,[ESP + 0x74]                ; 00555201
     MOV EAX,ESI                         ; 00555205
@@ -519,7 +519,7 @@ section .text
     PUSH EDX                            ; 005555d5 | DAT_01b4d738
     XOR EBX,EBX                         ; 005555d6
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 ; 005555d8
-        ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
+        ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * euler_angles, CVector3f * translation)
     MOV ECX,0x3e4ccccd                  ; 005555dd
     LEA EAX,[ESP + 0x44]                ; 005555e2
     ADD ESP,0xc                         ; 005555e6

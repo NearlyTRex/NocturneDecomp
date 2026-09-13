@@ -13,8 +13,8 @@ int __cdecl core_bugs_cpp_CBugs_renderOpaque_FUN_00421540(CBugs *this_ptr)
 {
   int iVar1;
   CBoundingBox3D *this_ptr_00;
-  CVector3f *rotation;
-  CVector3f *position;
+  CVector3f *translation;
+  CVector3f *euler_angles;
   int in_stack_00000008;
   CBoundingBox3D local_44;
   CVector3f CStack_2c;
@@ -37,15 +37,15 @@ int __cdecl core_bugs_cpp_CBugs_renderOpaque_FUN_00421540(CBugs *this_ptr)
         if (0 < this_ptr->count) {
           pCStack_10 = this_ptr->models;
           pSStack_c = this_ptr->bugs;
-          position = &this_ptr->bugs[0].orientation;
-          rotation = &this_ptr->bugs[0].position;
+          euler_angles = &this_ptr->bugs[0].orientation;
+          translation = &this_ptr->bugs[0].position;
           do {
             pSStack_8 = pSStack_c + iVar1;
             engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
-                      (g_CDemonRenderer_PTR_005ae704,position,rotation);
-            CStack_20.x = (this_ptr->base).base.base.location.position.x + rotation->x;
-            CStack_20.y = (this_ptr->base).base.base.location.position.y + rotation->y;
-            CStack_20.z = (this_ptr->base).base.base.location.position.z + rotation->z;
+                      (g_CDemonRenderer_PTR_005ae704,euler_angles,translation);
+            CStack_20.x = (this_ptr->base).base.base.location.position.x + translation->x;
+            CStack_20.y = (this_ptr->base).base.base.location.position.y + translation->y;
+            CStack_20.z = (this_ptr->base).base.base.location.position.z + translation->z;
             if (&CStack_2c != &CStack_20) {
               CStack_2c.x = CStack_20.x;
               CStack_2c.y = CStack_20.y;
@@ -58,9 +58,9 @@ int __cdecl core_bugs_cpp_CBugs_renderOpaque_FUN_00421540(CBugs *this_ptr)
             core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
                       (pCStack_10 + pSStack_8->model_index,0.0,0x2e7);
             engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
-            position = (CVector3f *)&position[5].y;
+            euler_angles = (CVector3f *)&euler_angles[5].y;
             iVar1 = iVar1 + 1;
-            rotation = (CVector3f *)&rotation[5].y;
+            translation = (CVector3f *)&translation[5].y;
           } while (iVar1 < *(int *)(in_stack_00000008 + 0xbd28));
         }
         core_set_cpp_CDemonSet_cacheMirrorLighting_FUN_0050e370

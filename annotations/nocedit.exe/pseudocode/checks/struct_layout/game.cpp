@@ -7694,10 +7694,10 @@ static_assert(__builtin_offsetof(SBodyPartFire, flame) == 12,
 // ---- SBodyPartModel (404 bytes) ----
 static_assert(sizeof(SBodyPartModel) == 404,
               "sizeof(SBodyPartModel) != 404");
-static_assert(__builtin_offsetof(SBodyPartModel, scale) == 0,
-              "offsetof(SBodyPartModel, scale) != 0");
-static_assert(__builtin_offsetof(SBodyPartModel, position) == 12,
-              "offsetof(SBodyPartModel, position) != 12");
+static_assert(__builtin_offsetof(SBodyPartModel, position_offset) == 0,
+              "offsetof(SBodyPartModel, position_offset) != 0");
+static_assert(__builtin_offsetof(SBodyPartModel, euler_angles) == 12,
+              "offsetof(SBodyPartModel, euler_angles) != 12");
 static_assert(__builtin_offsetof(SBodyPartModel, model) == 24,
               "offsetof(SBodyPartModel, model) != 24");
 

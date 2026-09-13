@@ -193,7 +193,7 @@ CDemonActor * __cdecl core_bodypart_cpp_CBodyPart_getCarrier_FUN_00416d30(CBodyP
 void __cdecl core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_00416d40(CBodyPart *this_ptr);
 void __cdecl core_bodypart_cpp_CBodyPart_applyRotation_FUN_00417320(CBodyPart *this_ptr,CVector3f *euler_angles);
 void __cdecl core_bodypart_cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_00417730(CBodyPart *this_ptr,CVector3i *out_bbox_min,CVector3i *out_bbox_max);
-void __cdecl core_bodypart_cpp_CBodyPart_addAttachedModel_FUN_00417ac0(CBodyPart *this_ptr,char *model_name,CVector3f *scale,CVector3f *position);
+void __cdecl core_bodypart_cpp_CBodyPart_addAttachedModel_FUN_00417ac0(CBodyPart *this_ptr,char *model_name,CVector3f *position_offset,CVector3f *euler_angles);
 void __cdecl core_bodypart_cpp_CBodyPart_addFire_FUN_00417b40(CBodyPart *this_ptr,CVector3f *position);
 int __cdecl core_bodypart_cpp_CBodyPart_addTexture_FUN_00417c90(CBodyPart *this_ptr,char *texture_name);
 void __cdecl core_bodypart_cpp_CBodyPart_setupPhysicsBox_FUN_00417d70(CBodyPart *this_ptr);

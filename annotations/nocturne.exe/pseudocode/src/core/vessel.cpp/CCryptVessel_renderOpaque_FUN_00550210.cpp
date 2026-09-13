@@ -9,7 +9,7 @@
 int __cdecl core_vessel_cpp_CCryptVessel_renderOpaque_FUN_00550210(CCryptVessel *this_ptr)
 
 {
-  UOrientationVector *position;
+  UOrientationVector *euler_angles;
   CDemonRenderer *this_ptr_00;
   CBoundingBox3D *this_ptr_01;
   int iVar1;
@@ -19,9 +19,9 @@ int __cdecl core_vessel_cpp_CCryptVessel_renderOpaque_FUN_00550210(CCryptVessel 
   
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
             (g_CDemonRenderer_PTR_005ae704,&(this_ptr->base).location.position);
-  position = &(this_ptr->base).orient;
+  euler_angles = &(this_ptr->base).orient;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
-            (g_CDemonRenderer_PTR_005ae704,&position->vec,(CVector3f *)0x0);
+            (g_CDemonRenderer_PTR_005ae704,&euler_angles->vec,(CVector3f *)0x0);
   this_ptr_01 = (*((this_ptr->base).vtable._ub)->getBoundingBox)
                           (&this_ptr->base,(CBoundingBox3D *)(auStack_34 + 4));
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(this_ptr_01);
@@ -32,7 +32,7 @@ int __cdecl core_vessel_cpp_CCryptVessel_renderOpaque_FUN_00550210(CCryptVessel 
     return this_ptr->is_visible;
   }
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
-            (g_CDemonRenderer_PTR_005ae704,&position->vec,(CVector3f *)0x0);
+            (g_CDemonRenderer_PTR_005ae704,&euler_angles->vec,(CVector3f *)0x0);
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
             (g_CDemonRenderer_PTR_005ae704,0xffff);
   if ((this_ptr->state == 3) ||

@@ -2,28 +2,29 @@
 // Address: 0048c4f0
 // Address Range: [[0048c4f0, 0048c621]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer *this_ptr,CVector3f *position,CVector3f *rotation)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer *this_ptr,CVector3f *euler_angles,CVector3f *translation)
 
 #include "nocturne.h"
 
 /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
-void __cdecl engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer *this_ptr,CVector3f *position,CVector3f *rotation)
+void __cdecl engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer *this_ptr,CVector3f *euler_angles,CVector3f *translation)
 
 {
-  if (rotation == (CVector3f *)0x0) {
+  if (translation == (CVector3f *)0x0) {
     engine_matrix_c_matrixPushAndTransform_FUN_0050cee0
-              ((int)ROUND(ROUND((double)position->x * 0.31830988619288902 * 32768)),
-               (int)ROUND(ROUND((double)position->z * 0.31830988619288902 * 32768)),
-               (int)ROUND(ROUND((double)position->y * 0.31830988619288902 * 32768)),0,0,0);
+              ((int)ROUND(ROUND((double)euler_angles->x * 0.31830988619288902 * 32768)),
+               (int)ROUND(ROUND((double)euler_angles->z * 0.31830988619288902 * 32768)),
+               (int)ROUND(ROUND((double)euler_angles->y * 0.31830988619288902 * 32768)),0,0,0)
+    ;
     return;
   }
   engine_matrix_c_matrixPushAndTransform_FUN_0050cee0
-            ((int)ROUND(ROUND((double)position->x * 0.31830988619288902 * 32768)),
-             (int)ROUND(ROUND((double)position->z * 0.31830988619288902 * 32768)),
-             (int)ROUND(ROUND((double)position->y * 0.31830988619288902 * 32768)),
-             (int)ROUND(ROUND((double)rotation->x * 256)),
-             (int)ROUND(ROUND((double)rotation->y * 256)),
-             (int)ROUND(ROUND((double)rotation->z * 256)));
+            ((int)ROUND(ROUND((double)euler_angles->x * 0.31830988619288902 * 32768)),
+             (int)ROUND(ROUND((double)euler_angles->z * 0.31830988619288902 * 32768)),
+             (int)ROUND(ROUND((double)euler_angles->y * 0.31830988619288902 * 32768)),
+             (int)ROUND(ROUND((double)translation->x * 256)),
+             (int)ROUND(ROUND((double)translation->y * 256)),
+             (int)ROUND(ROUND((double)translation->z * 256)));
   return;
 }

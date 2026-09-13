@@ -121,7 +121,7 @@ section .text
     MOV EAX,[0x006703ec]                ; 004c5139 | g_CDemonRendererPtr2
     PUSH EAX                            ; 004c513e | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 004c513f
-        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
+        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3f * euler_angles, CVector3f * translation)
     FLD float ptr [0x0065dcc4]          ; 004c5144 | FLOAT_0065dcc4
     FLD ST0                             ; 004c514a
     FSUB float ptr [ESI]                ; 004c514c

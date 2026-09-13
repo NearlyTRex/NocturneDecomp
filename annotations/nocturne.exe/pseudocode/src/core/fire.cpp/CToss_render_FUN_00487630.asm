@@ -49,7 +49,7 @@ section .text
     MOV ECX,dword ptr [0x005ae704]      ; 00487665 | g_CDemonRenderer_PTR_005ae704
     PUSH ECX                            ; 0048766b | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 ; 0048766c
-        ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
+        ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * euler_angles, CVector3f * translation)
     ADD ESP,0xc                         ; 00487671
     PUSH -0x1                           ; 00487674
     ADD EBX,0x4                         ; 00487676

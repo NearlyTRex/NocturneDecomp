@@ -316,7 +316,7 @@ section .text
     PUSH EBX                            ; 004515b2 | DAT_01b4d738
     MOV dword ptr [EBP + 0x3e],ESI      ; 004515b3
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 ; 004515b6
-        ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
+        ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * euler_angles, CVector3f * translation)
     ADD ESP,0xc                         ; 004515bb
     MOV EAX,dword ptr [EBP + 0x92]      ; 004515be
         ;   Label: LAB_004515be

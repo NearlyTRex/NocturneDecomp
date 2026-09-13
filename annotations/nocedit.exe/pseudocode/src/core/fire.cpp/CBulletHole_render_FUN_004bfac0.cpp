@@ -18,19 +18,19 @@ void __cdecl core_fire_cpp_CBulletHole_render_FUN_004bfac0(CBulletHole *this_ptr
   CVector3f local_34;
   CVector3i local_28;
   CVector3i local_1c;
-  CVector3i *rotation;
+  CVector3f *rotation;
   
   if (this_ptr->actor_ptr == (CDemonActor *)0x0) {
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
               (g_CDemonRendererPtr2,&this_ptr->position);
-    rotation = (CVector3i *)0x0;
+    rotation = (CVector3f *)0x0;
   }
   else {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(this_ptr->actor_ptr);
-    rotation = (CVector3i *)&this_ptr->transformed_pos;
+    rotation = &this_ptr->transformed_pos;
   }
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr2,&this_ptr->euler_angles,(CVector3f *)rotation);
+            (g_CDemonRendererPtr2,&this_ptr->euler_angles,rotation);
   iVar2 = (this_ptr->texture_index & 1U) * 0x800000;
   g_RenderVertexBuffer[0].u = iVar2 + 0x80000;
   iVar1 = (this_ptr->texture_index & 2U) * 0x400000;

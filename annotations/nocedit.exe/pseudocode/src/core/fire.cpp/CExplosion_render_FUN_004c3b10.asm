@@ -104,7 +104,7 @@ section .text
     MOV EBP,dword ptr [0x006703ec]      ; 004c3b99 | g_CDemonRendererPtr2
     PUSH EBP                            ; 004c3b9f | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 004c3ba0
-        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
+        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3f * euler_angles, CVector3f * translation)
     FLD float ptr [ESI + 0x10]          ; 004c3ba5
     FMUL double ptr [0x00629dc3]        ; 004c3ba8 | DOUBLE_00629dc3
     FLD float ptr [ESI + 0x10]          ; 004c3bae

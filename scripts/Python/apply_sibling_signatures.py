@@ -37,7 +37,7 @@ A transfer file is a batch of entries verified against the target binary's own
 assembly during an analysis session. It is DISPOSABLE machine input: written,
 applied, deleted. It is not a record of anything -- the decisions live in the
 session's analysis and in the Ghidra database. The format, the guards, and the
-workflow are specified in prompts/disassembly_prompt.md ("Transfer Files"),
+workflow are specified in docs/sibling-binaries.md ("Transfer files"),
 which is the permanent artifact; pass any path with --ledger.
 
 Because each entry carries evidence rather than a heuristic, this source is

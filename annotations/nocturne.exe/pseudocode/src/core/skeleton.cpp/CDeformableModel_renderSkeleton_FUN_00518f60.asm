@@ -179,7 +179,7 @@ section .text
     MOV EDI,dword ptr [0x005ae704]      ; 005190c2 | g_CDemonRenderer_PTR_005ae704
     PUSH EDI                            ; 005190c8 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 ; 005190c9
-        ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
+        ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * euler_angles, CVector3f * translation)
     ADD ESP,0xc                         ; 005190ce
     PUSH 0xff                           ; 005190d1
     MOV EAX,[0x005b6d50]                ; 005190d6 | g_CEditorTools_PTR_005b6d50

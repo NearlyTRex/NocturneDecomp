@@ -2453,7 +2453,7 @@ core_biggs.cpp_CBiggs_renderOpaque_FUN_00415760 (1 suspect)
 core_bodypart.cpp_CBodyPart_addAttachedModel_FUN_00417ac0 (1 suspect)
   File: core/bodypart.cpp
 ====================================================================================================
-  Line 18 [unrolled_memcpy]: pCVar2[1].x = position->x;
+  Line 18 [unrolled_memcpy]: pCVar2[1].x = euler_angles->x;
 
 ====================================================================================================
 core_bodypart.cpp_CBodyPart_addFire_FUN_00417b40 (3 suspects)
@@ -2738,7 +2738,7 @@ core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00416030 (2 suspects)
 core_bodypart.cpp_CBodyPart_renderOpaque_FUN_004161a0 (1 suspect)
   File: core/bodypart.cpp
 ====================================================================================================
-  Line 35 [shadow_pointer_walk]: position = (CVector3f *)&position[0x21].z;
+  Line 35 [shadow_pointer_walk]: euler_angles = (CVector3f *)&euler_angles[0x21].z;
 
 ====================================================================================================
 core_bodypart.cpp_CBodyPart_setCounts_FUN_00415ee0 (3 suspects)
@@ -3573,8 +3573,8 @@ core_bugs.cpp_CBugs_renderOpaque_FUN_00421540 (7 suspects)
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
   Line 11 [stack_param]: int in_stack_00000008;
   Line 43 [unrolled_memcpy]: CStack_2c.x = CStack_20.x;
-  Line 54 [shadow_pointer_walk]: position = (CVector3f *)&position[5].y;
-  Line 56 [shadow_pointer_walk]: rotation = (CVector3f *)&rotation[5].y;
+  Line 54 [shadow_pointer_walk]: euler_angles = (CVector3f *)&euler_angles[5].y;
+  Line 56 [shadow_pointer_walk]: translation = (CVector3f *)&translation[5].y;
   Line 57 [stack_param]: } while (iVar1 < *(int *)(in_stack_00000008 + 0xbd28));
   Line 64 [static_uninitvar]: } while (iVar1 < *(int *)(in_stack_00000008 + 0xbd28));
 
@@ -4117,7 +4117,7 @@ core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00427eb0 (8 suspects)
   Line 38 [pointer_truncation]: pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar7 * -2 + 1) * 4);
   Line 39 [pointer_cast]: pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);
   Line 39 [pointer_truncation]: pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);
-  Line 46 [undefined_data]: (body_part,&DAT_0076595c,&local_30,position);
+  Line 46 [undefined_data]: (body_part,&DAT_0076595c,&local_30,euler_angles);
   Line 73 [shadow_pointer_walk]: pCVar4 = (CCharacter *)&(pCVar4->base).orient_matrix.m[0].z;
   Line 135 [unrolled_memcpy]: // 00428027: MOVSD.REP ES:EDI,ESI
 
@@ -23046,7 +23046,7 @@ core_vehicle.cpp_CVehicle_renderOpaque_FUN_0054f510 (9 suspects)
 ====================================================================================================
   Line 10 [stack_param]: int in_stack_0000000c;
   Line 45 [shadow_pointer_walk]: pCVar3 = (CVector3f *)&pCVar3[0x24].y;
-  Line 46 [shadow_pointer_walk]: position = (CVector3f *)&position[0x24].y;
+  Line 46 [shadow_pointer_walk]: euler_angles = (CVector3f *)&euler_angles[0x24].y;
   Line 47 [pointer_cast]: this_ptr_00 = (CKeyFramedModelInstance *)(this_ptr_00[1].part_visibility_flags + 0xe);
   Line 47 [shadow_pointer_walk]: this_ptr_00 = (CKeyFramedModelInstance *)(this_ptr_00[1].part_visibility_flags + 0xe);
   Line 48 [stack_param]: } while (iVar2 < *(int *)(in_stack_0000000c + 0x930));
@@ -26932,9 +26932,9 @@ engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 (4 suspects)
   File: engine/drender.cpp
 ====================================================================================================
   Line 18 [raw_address_constant]: iVar7 = 0x460ae3;
-  Line 20 [raw_address_constant]: iVar6 = 0x460aea;
-  Line 23 [raw_address_constant]: iVar5 = 0x460b04;
-  Line 42 [raw_address_constant]: iVar7 = 0x460bb8;
+  Line 21 [raw_address_constant]: iVar6 = 0x460aea;
+  Line 24 [raw_address_constant]: iVar5 = 0x460b04;
+  Line 43 [raw_address_constant]: iVar7 = 0x460bb8;
 
 ====================================================================================================
 engine_drender.cpp_CDemonRenderer_calculateProjectionFactor_FUN_00460e20 (1 suspect)

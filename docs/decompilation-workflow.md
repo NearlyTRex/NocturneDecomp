@@ -1,9 +1,9 @@
 # Decompilation workflow
 
 How a function goes from raw Ghidra output to source that compiles and is faithful to the
-assembly. [`prompts/fix_compilation.md`](../prompts/fix_compilation.md) is the full authority —
-error-pattern catalogue, suspect types, and the reasoning for each rule. This is the shape of
-the loop.
+assembly. This is the shape of the loop;
+[decompiler-artifacts.md](decompiler-artifacts.md) is the catalogue of what goes wrong and the
+rewrite for each, and [keep-files.md](keep-files.md) is the detail on writing the reconstruction.
 
 ## The rules that matter most
 
@@ -59,9 +59,9 @@ places where the output does not mean what it appears to. Roughly:
 - **Portability** — pointers truncated through `int`, which is exact on the 32-bit lane and a
   hard error on the 64-bit one.
 
-Each has a numbered section in `fix_compilation.md` with the recognition pattern and the
-rewrite. When a rewrite would change what the shipped binary does, it is *exempt* — noted, not
-fixed.
+Each has a numbered section in [decompiler-artifacts.md](decompiler-artifacts.md) with the
+recognition pattern and the rewrite, indexed by the detector id that reports it. When a rewrite
+would change what the shipped binary does, it is *exempt* — noted, not fixed.
 
 ## Reference variants
 
@@ -73,10 +73,14 @@ Generated beside each function, never compiled:
 | `.byval.cpp` | Watcom by-value struct passing the decompiler fumbled. Port faithfully |
 | `.chunked.cpp` | A large function split into a context struct and helpers, for comprehension only |
 
+[keep-files.md](keep-files.md#reference-variants) covers what to do with each when promoting one
+into a `.keep`.
+
 ## When to walk away
 
 Some functions are mangled past the point where a `.keep` would be reconstruction rather than
 fiction — pervasive `in_stack_*` pseudo-parameters, `CONCAT44`/`SUB84` throughout, control flow
 that makes no structural sense. If more than roughly a third of the body would have to be
 rewritten, it needs Ghidra-side work or manual reverse engineering first. Say which function and
-why, and move on.
+why, and move on. The full list of symptoms is in
+[keep-files.md](keep-files.md#when-to-walk-away).

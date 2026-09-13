@@ -32,10 +32,11 @@ int __cdecl core_bodypart_cpp_CBodyPart_renderOpaque_FUN_004194b0(CBodyPart *thi
       iVar1 = 0;
       if (0 < this_ptr->attached_model_count) {
         pSVar1 = (SBodyPartModel *)&this_ptr->attached_models[0].model;
-        position = &this_ptr->attached_models[0].position;
+        position = &this_ptr->attached_models[0].euler_angles;
         do {
           engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                    (g_CDemonRendererPtr2,position,&this_ptr->attached_models[iVar1].scale);
+                    (g_CDemonRendererPtr2,position,&this_ptr->attached_models[iVar1].position_offset
+                    );
           core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
                     ((CKeyFramedModelInstance *)pSVar1,0.0,-1);
           iVar1 = iVar1 + 1;

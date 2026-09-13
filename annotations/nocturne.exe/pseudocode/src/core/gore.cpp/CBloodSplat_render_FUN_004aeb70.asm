@@ -138,7 +138,7 @@ section .text
     PUSH EBP                            ; 004aec35 | DAT_01b4d738
     LEA EBX,[ESP + 0x24]                ; 004aec36
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 ; 004aec3a
-        ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
+        ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * euler_angles, CVector3f * translation)
     MOV EAX,0xbf000000                  ; 004aec3f
     MOV EDX,dword ptr [0x005ae704]      ; 004aec44 | g_CDemonRenderer_PTR_005ae704
     ADD ESP,0xc                         ; 004aec4a

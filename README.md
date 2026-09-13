@@ -102,6 +102,11 @@ multiarch desktop are in **[docs/building.md](docs/building.md)**.
 | [building.md](docs/building.md) | Presets, prerequisites, build commands |
 | [project-structure.md](docs/project-structure.md) | What every directory is for |
 | [decompilation-workflow.md](docs/decompilation-workflow.md) | Raw Ghidra output to clean, compiling source |
+| [decompiler-artifacts.md](docs/decompiler-artifacts.md) | What Ghidra gets wrong on this binary, and the rewrite for each |
+| [keep-files.md](docs/keep-files.md) | Writing a `.keep` reconstruction |
+| [annotation_format.md](docs/annotation_format.md) | Naming and typing conventions |
+| [watcom-abi.md](docs/watcom-abi.md) | Calling conventions, stack frames, struct layout |
+| [sibling-binaries.md](docs/sibling-binaries.md) | What transfers between the editor and game builds |
 | [shims.md](docs/shims.md) | The compatibility layer and the renderer |
 | [authenticity-flags.md](docs/authenticity-flags.md) | How deviations from the shipped binary are gated |
 | [debugging.md](docs/debugging.md) | gdb tooling, probe patterns, dump helpers |
@@ -111,8 +116,8 @@ multiarch desktop are in **[docs/building.md](docs/building.md)**.
 Ghidra decompiler fixes this project needed, and the bug hunts with their measurements and
 findings. The index there is the map.
 
-**[prompts/fix_compilation.md](prompts/fix_compilation.md)** — the authority on `.keep` files:
-the error-pattern catalogue, every suspect type, and the reasoning behind each rule.
+**[docs/decompiler-artifacts.md](docs/decompiler-artifacts.md)** — the artifact catalogue: every
+suspect type, the recognition pattern, and the rewrite, indexed by the detector id that reports it.
 
 ## Contributing
 

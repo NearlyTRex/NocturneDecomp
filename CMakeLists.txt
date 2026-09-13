@@ -177,7 +177,7 @@ set(NOCTURNE_COMMON_WARNINGS
     -Wreturn-type
     -Wtautological-compare
     # Ghidra splitting one reused register into two locals and leaving one
-    # uninitialized (fix_compilation.md §13) — an error because the garbage it
+    # uninitialized (docs/decompiler-artifacts.md §13) — an error because the garbage it
     # feeds downstream surfaces far from its cause. Deliberately not the broader
     # -Wuninitialized, which also fires on in_ST0/in_ST1 x87 phantoms (a missing
     # CUSTOM_STORAGE signature in Ghidra, not a code defect).

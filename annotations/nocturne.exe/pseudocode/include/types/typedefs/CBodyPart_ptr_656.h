@@ -19,7 +19,7 @@ struct CBodyPart_ptr_656 {
     template<typename T> CBodyPart_ptr_656(T* p) : _raw((void*)p) {}
     template<typename T> CBodyPart_ptr_656& operator=(T* p) { _raw = (void*)p; return *this; }
     CBodyPart* operator->() const { return (CBodyPart*)_raw; }
-    CBodyPart* adj() const { return (CBodyPart*)((char*)_raw - offsetof(CBodyPart, attached_models[0].scale.z)); }
+    CBodyPart* adj() const { return (CBodyPart*)((char*)_raw - offsetof(CBodyPart, attached_models[0].position_offset.z)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

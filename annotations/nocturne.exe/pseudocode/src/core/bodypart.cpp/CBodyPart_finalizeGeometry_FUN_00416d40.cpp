@@ -88,10 +88,10 @@ void __cdecl core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_00416d40(CBodyPart
     if (0 < this_ptr->attached_model_count) {
       pSVar3 = this_ptr->attached_models;
       do {
-        (pSVar3->scale).x = (pSVar3->scale).x + local_6c.x;
-        (pSVar3->scale).y = (pSVar3->scale).y + local_6c.y;
+        (pSVar3->position_offset).x = (pSVar3->position_offset).x + local_6c.x;
+        (pSVar3->position_offset).y = (pSVar3->position_offset).y + local_6c.y;
         iVar7 = iVar7 + 1;
-        (pSVar3->scale).z = (pSVar3->scale).z + local_6c.z;
+        (pSVar3->position_offset).z = (pSVar3->position_offset).z + local_6c.z;
         pSVar3 = pSVar3 + 1;
       } while (iVar7 < this_ptr->attached_model_count);
     }

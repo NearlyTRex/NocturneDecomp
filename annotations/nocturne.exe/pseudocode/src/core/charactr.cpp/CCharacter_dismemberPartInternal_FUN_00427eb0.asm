@@ -202,7 +202,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x8a]      ; 0042804d
     PUSH EAX                            ; 00428053
     CALL core_bodypart.cpp_CBodyPart_addAttachedModel_FUN_00417ac0 ; 00428054
-        ;   XREF to: 00417ac0 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_addAttachedModel_FUN_00417ac0(CBodyPart * this_ptr, char * model_name, CVector3f * scale, CVector3f * position)
+        ;   XREF to: 00417ac0 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_addAttachedModel_FUN_00417ac0(CBodyPart * this_ptr, char * model_name, CVector3f * position_offset, CVector3f * euler_angles)
     ADD ESP,0x10                        ; 00428059
     JMP 0x00427f4b                      ; 0042805c
         ;   XREF to: 00427f4b (UNCONDITIONAL_JUMP)  ; LAB_00427f4b

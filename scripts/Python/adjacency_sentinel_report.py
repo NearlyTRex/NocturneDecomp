@@ -380,7 +380,7 @@ def main():
     report.append('')
     report.append('Loops in the decompiled pseudocode that exit when a pointer reaches the address of the *next named global* in the original binary. These rely on the original-binary memory layout; our linker places globals arbitrarily, so the sentinel never matches and the loop walks past the pool.')
     report.append('')
-    report.append('See `prompts/fix_compilation.md` §16 for the fix pattern.')
+    report.append('See `docs/decompiler-artifacts.md` §16 for the fix pattern.')
     report.append('')
     report.append('## Summary')
     report.append('')
