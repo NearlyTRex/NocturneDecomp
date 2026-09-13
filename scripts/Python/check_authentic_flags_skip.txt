@@ -1,0 +1,62 @@
+# Exemptions for check_authentic_flags.py.
+#
+# Two kinds, one per line:
+#
+#   ungated:<FLAG>            check 1 -- no gate site outside config/, and that
+#                             is correct
+#   nested:<relpath>:<FLAG>   check 3 -- this gate sits inside another flag's
+#                             gate, and that is correct
+#
+# Every entry needs a reason above it. An unexplained exemption is how a dead
+# flag survives a review, which is the thing this linter exists to stop.
+
+# ---- check 1: ungated -------------------------------------------------------
+
+# FORMAT_STRINGS is consumed inside the header itself, to resolve the
+# NOCTURNE_FMT_PTR / NOCTURNE_ARG_PTR pair. Those two reach seven .keep files,
+# so the flag is live -- it just has no #if of its own outside config/. A flag
+# of this shape is exempt only for as long as the macros it resolves are still
+# consumed; when nothing reaches them, the flag is dead and so is this entry.
+ungated:NOCTURNE_AUTHENTIC_FORMAT_STRINGS
+
+# ---- check 3: nested -------------------------------------------------------
+
+# Scat's second weapon in a network game. HERO_WEAPON decides what each hero
+# class starts holding; the pistol Scat additionally gains is netplay-only,
+# because its reserve has to be restored after each shot (ammunition pickup runs
+# through CStranger's machinery alone). So the inner gate is a genuine subset of
+# the outer one, as HERO_WEAPON's doc comment states.
+nested:annotations/nocedit.exe/pseudocode/src/core/mission.cpp/CDemonMission_createOneHero_FUN_00524920.keep.cpp:NOCTURNE_AUTHENTIC_HERO_WEAPON
+
+# Scaling the label of a button only the editor draws. The outer gate selects
+# nocedit's button-paint path; the inner one chooses between the engine's own
+# text measurement and the scaled shim for the label inside it. Both branches of
+# both gates are present, so each flag is honoured -- HUD_SCALE simply has
+# nothing to scale in a build that draws no editor buttons.
+nested:annotations/nocedit.exe/pseudocode/src/shape/edittool.cpp/CEdButton_paint_FUN_004a65e0.keep.cpp:NOCTURNE_AUTHENTIC_HUD_SCALE
+nested:annotations/nocedit.exe/pseudocode/src/shape/edittool.cpp/CEditorTools_paintCurrentWindow_FUN_004a0f80.keep.cpp:NOCTURNE_AUTHENTIC_HUD_SCALE
+
+# The editor's "3D acceleration has been turned off!" screens. D3D_OPTIONS
+# decides whether acceleration is killed at all; these three sites are the
+# notices the editor puts up on menu entry when it finds it on, and a build that
+# is not presenting as the editor has no such screen to draw. So EDITOR_BUILD
+# selects the surface and D3D_OPTIONS the behaviour -- deliberately separate,
+# because folding acceleration into the editor identity would leave an editor
+# build unable to accelerate.
+nested:annotations/nocedit.exe/pseudocode/src/core/menu.cpp/showMainGameMenu_FUN_00512f40.keep.cpp:NOCTURNE_AUTHENTIC_D3D_OPTIONS
+nested:annotations/nocedit.exe/pseudocode/src/core/menu.cpp/showOptionsScreen_FUN_00512d30.keep.cpp:NOCTURNE_AUTHENTIC_D3D_OPTIONS
+nested:annotations/nocedit.exe/pseudocode/src/core/main.c/enterMainGameMenu_FUN_00507a50.keep.c:NOCTURNE_AUTHENTIC_D3D_OPTIONS
+
+# The Options screen's entry list. Both flags can add a line to it, so the outer
+# `#if EDITOR_BUILD || !CHEAT_MENU` asks only "does this build need the dynamic
+# array at all"; the two inner gates then add their own line independently.
+# Neither flag decides the other, which is what CHEAT_MENU's doc comment says.
+nested:annotations/nocedit.exe/pseudocode/src/core/menu.cpp/showOptionsScreen_FUN_00512d30.keep.cpp:NOCTURNE_AUTHENTIC_CHEAT_MENU
+nested:annotations/nocedit.exe/pseudocode/src/core/menu.cpp/showOptionsScreen_FUN_00512d30.keep.cpp:NOCTURNE_EDITOR_BUILD
+
+# Where the pickup help text is drawn. ITEM_HELP_POSITION picks the anchor,
+# bottom or top; the outer HUD_SCALE decides whether the 4px inset it is offset
+# by is scaled. The nesting is only because `ui_scale` is declared inside
+# HUD_SCALE's own gate, so the unscaled arm cannot name it -- both arms of both
+# flags are present and neither decides the other.
+nested:annotations/nocedit.exe/pseudocode/src/core/inv.cpp/CInventory_renderAllItems_FUN_00500690.keep.cpp:NOCTURNE_AUTHENTIC_ITEM_HELP_POSITION
