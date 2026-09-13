@@ -106,6 +106,9 @@ honest reason its default is what it is.
 | `CHAPTER_SELECT` | START offers the chapter lists whether or not pod.ini is present |
 | `FRIENDLY_FIRE` | heroes cannot damage each other in a network game |
 | `INPUT_REPEAT` | a held button starts an action once instead of restarting it every frame |
+| `ITEM_HELP_POSITION` | the pickup help text does not sit on top of the pickup name |
+| `DEATH_MESSAGE_POSITION` | the death banner is centred, clear of the message line |
+| `TEXT_RENDER_ALPHA` | 2D text blends at its own alpha, not the last pass's leftover |
 
 **`choice` — the shipped binary is not wrong; we prefer something else**
 

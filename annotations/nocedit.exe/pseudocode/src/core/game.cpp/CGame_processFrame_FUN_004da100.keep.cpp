@@ -29,6 +29,8 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
   int iVar14;
   CSfxSample local_62c;
   int death_message_y;
+  int death_message_h;
+  int death_scale;
   char death_message[64];
   char local_3dc [256];
   char local_2dc [256];
@@ -235,6 +237,9 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
           g_MovieRecordingActive = 0;
         }
       }
+#if !NOCTURNE_AUTHENTIC_TEXT_RENDER_ALPHA
+      engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
+#endif
       core_script_cpp_CScript_renderSubtitles_FUN_00559b20(g_CScriptPtr);
       core_game_cpp_CGame_renderOverlay_FUN_004d8040(this_ptr);
       core_game_cpp_CGame_renderIrisFade_FUN_004e0aa0(this_ptr);
@@ -339,12 +344,25 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
       }
 #endif
       if (EVar15 == DEATH_STATE_DEAD) {
-        death_message_y = g_WindowHeight + g_MediumFont->max_char_height * -2;
+#if NOCTURNE_AUTHENTIC_HUD_SCALE
+        death_scale = 1;
+#else
+        death_scale = nocturne_ui_text_scale_supported() ? nocturne_ui_scale() : 1;
+#endif
+        death_message_h = g_MediumFont->max_char_height * death_scale;
+#if NOCTURNE_AUTHENTIC_DEATH_MESSAGE_POSITION
+        death_message_y = g_WindowHeight - death_message_h * 2;
+#else
+        death_message_y = (g_WindowHeight - death_message_h) / 4;
+#endif
+#if !NOCTURNE_AUTHENTIC_TEXT_RENDER_ALPHA
+        engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
+#endif
 #if !NOCTURNE_AUTHENTIC_NETPLAY
         if (g_CNetGamePtr->connection_type == CONNECTION_CLIENT) {
           pcVar16 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                               ("Waiting for the host to bring you into the game.");
-          death_message_y = g_MediumFont->max_char_height * 2;
+          death_message_y = death_message_h * 2;
         }
         else {
           pcVar16 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
@@ -355,9 +373,17 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
                             ("You're dead.  Game over.");
 #endif
         strcpy(death_message, pcVar16);
+#if NOCTURNE_AUTHENTIC_HUD_SCALE
         engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0
                   (g_MediumFont,0,g_WindowWidth,death_message_y,
                    (uint)g_ColorCubeLookup[0x7c00],0,death_message);
+#else
+        nocturne_ui_draw_text
+                  (g_MediumFont,death_message,
+                   ((g_WindowWidth + 1) -
+                    nocturne_ui_text_width(g_MediumFont,death_message,death_scale)) / 2,
+                   death_message_y,(uint)g_ColorCubeLookup[0x7c00],0,death_scale);
+#endif
       }
       if (this_ptr->show_customizable_keys != 0) {
         core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(this_ptr);

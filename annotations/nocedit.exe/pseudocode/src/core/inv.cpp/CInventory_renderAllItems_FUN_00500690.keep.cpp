@@ -429,13 +429,22 @@ LAB_005009c0:
                       (local_18,this_ptr->message_text,g_InventoryWrappedTextLines3[0],10,0x100,
                        (g_WindowWidth - iVar3) + -4);
     iVar10 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(local_18,0x58);
+#if NOCTURNE_AUTHENTIC_ITEM_HELP_POSITION
     iVar5 = (g_WindowHeight + -4) - iVar10 * iVar3;
+#else
+    iVar5 = core_script_cpp_CScript_getLetterboxHeight_FUN_00559ac0(g_CScriptPtr) + 4;
+#endif
 #else
     iVar3 = engine_font_cpp_CBitFont_wrapText_FUN_004d0010
                       (local_18,this_ptr->message_text,g_InventoryWrappedTextLines3[0],10,0x100,
                        ((g_WindowWidth - iVar3) + -4 * ui_scale) / ui_scale);
     iVar10 = nocturne_ui_char_height(local_18,0x58,ui_scale);
+#if NOCTURNE_AUTHENTIC_ITEM_HELP_POSITION
     iVar5 = (g_WindowHeight + -4 * ui_scale) - iVar10 * iVar3;
+#else
+    iVar5 = core_script_cpp_CScript_getLetterboxHeight_FUN_00559ac0(g_CScriptPtr) +
+            4 * ui_scale;
+#endif
 #endif
     if (((g_MicroFont != local_18) || (g_MessageCount == 0)) && (iVar11 = 0, 0 < iVar3)) {
       pacVar12 = g_InventoryWrappedTextLines3;

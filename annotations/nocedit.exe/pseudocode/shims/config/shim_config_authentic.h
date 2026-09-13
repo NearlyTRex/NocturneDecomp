@@ -62,6 +62,9 @@
 // | `NOCTURNE_AUTHENTIC_HERO_WEAPON` | 0 | defect | each hero class starts with what it can actually use |
 // | `NOCTURNE_AUTHENTIC_HERO_ACTIONS` | 0 | defect | the other eight classes can interact and escape a grab |
 // | `NOCTURNE_AUTHENTIC_INPUT_REPEAT` | 0 | defect | a held button starts an action once instead of every frame |
+// | `NOCTURNE_AUTHENTIC_ITEM_HELP_POSITION` | 0 | defect | the pickup help text does not sit on top of the pickup name |
+// | `NOCTURNE_AUTHENTIC_DEATH_MESSAGE_POSITION` | 0 | defect | the death banner is centred, clear of the message line |
+// | `NOCTURNE_AUTHENTIC_TEXT_RENDER_ALPHA` | 0 | defect | 2D text blends at its own alpha, not the last pass's leftover |
 // | `NOCTURNE_AUTHENTIC_CHAPTER_SELECT` | 0 | defect | START offers the chapter lists, pod.ini or no pod.ini |
 // | `NOCTURNE_AUTHENTIC_FRIENDLY_FIRE` | 0 | defect | heroes cannot damage each other in a network game |
 // | `NOCTURNE_AUTHENTIC_PICKUP_WIELDS` | 0 | choice | a pickup is never drawn without the player asking |
@@ -690,6 +693,151 @@
 //   Override with -DNOCTURNE_AUTHENTIC_INPUT_REPEAT=1.
 #ifndef NOCTURNE_AUTHENTIC_INPUT_REPEAT
 #define NOCTURNE_AUTHENTIC_INPUT_REPEAT 0
+#endif
+
+// NOCTURNE_AUTHENTIC_ITEM_HELP_POSITION
+//   Where the pickup tutorial text is drawn. Picking an item up raises two
+//   overlays at once, and CInventory::addItem fills both from the same place:
+//
+//       CGame::displayMessage(game, "You've found : <item>", 10.0);
+//       strcpy(inv->message_text, <how to use the item>);
+//
+//   They are drawn by different owners, and both anchor to the BOTTOM of the
+//   screen. CGame::renderOverlay centres the short name a character height
+//   above the bottom, clearing the letterbox bar:
+//
+//       y = (g_WindowHeight - lines * charH) - letterbox - charH   ; 004d84c4
+//
+//   while CInventory::renderAllItems left-aligns the long sentence flush to it:
+//
+//       y = (g_WindowHeight - 4) - charH * lines                   ; 00500f6d
+//
+//   Confirmed in the binary, not a decompiler artifact: both expressions read
+//   g_WindowHeight at those addresses and subtract from it. Nothing reserves a
+//   band for the other, so the two collide whenever the sentence needs more
+//   than one line -- which is most of them, since its wrap width is reduced by
+//   the inventory panel on the right and the text names two or three keys.
+//   The name is in the larger font and loses.
+//
+//   1: shipped behaviour -- the help sentence overprints the item name.
+//   0: the help sentence moves to the top of the screen, below the letterbox
+//      bar. Nothing else in the HUD claims the top left: renderAllItems draws
+//      the ammo readout, icon panel and battery along the bottom, subtitles
+//      are centred in the lower half, and the health bar is top RIGHT, beyond
+//      the wrap width the sentence already used.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_ITEM_HELP_POSITION=1.
+#ifndef NOCTURNE_AUTHENTIC_ITEM_HELP_POSITION
+#define NOCTURNE_AUTHENTIC_ITEM_HELP_POSITION 0
+#endif
+
+// NOCTURNE_AUTHENTIC_DEATH_MESSAGE_POSITION
+//   Where "You're dead.  Game over." is drawn. CGame::processFrame anchors the
+//   banner two character heights off the bottom, centred across the window:
+//
+//       y = g_WindowHeight - 2 * g_MediumFont->max_char_height   ; 004daa7a
+//       drawTextCenterInBounds(g_MediumFont, 0, g_WindowWidth, y, ...)
+//
+//   CGame::renderOverlay puts CGame::displayMessage's line in the same place,
+//   also centred, one character height off the bottom less the letterbox bar.
+//   g_MediumFont (nocfont.raw) and g_ThemeFont (menufont.raw) are the engine's
+//   two large faces and are close in height, so the two land on top of each
+//   other. Whatever raised the message wins on wall-clock -- "You have used :
+//   <item>." runs 5s from CInventory::select, a pickup name 10s -- but the
+//   banner is drawn last in the frame, after renderSubtitles and renderOverlay,
+//   so it paints over the message rather than the other way round.
+//
+//   1: shipped behaviour -- the banner overprints the message line.
+//   0: the banner sits a quarter of the way down the window, clear of the
+//      message line, the subtitles and the rest of the bottom HUD -- and clear
+//      of the "Game Over" menu, which is the other thing on screen at the only
+//      moment the banner is drawn. CGame::runGameSession raises that menu the
+//      instant the session loop exits on a dead hero:
+//
+//          CPickList_ctor(&list); add("Load game"); add("Quit");
+//          CPickList::displayChoicesAndWaitForInput(&list, "Game Over", ...)
+//
+//      and its loop is handleDialogInput / renderDialog / swapBuffers with no
+//      frame render in it, so what the dialog paints over is the frozen last
+//      frame -- banner included. The dialog is a CEditorTools::createCenteredModal
+//      like every other pick list, so it is centred on g_WindowHeight / 2 and
+//      reaches above that by half its content height plus a border and half a
+//      title bar; a vertically centred banner lands inside that band and is
+//      covered. Centring is therefore only clear of the HUD, not of the one
+//      screen the banner shares. A quarter down clears both, and the menu
+//      cannot be the thing that moves -- createCenteredModal is shared with
+//      every pick list in the game and the editor.
+//
+//   Separate from the netplay client's "Waiting for the host to bring you into
+//   the game.", which the same draw puts at the TOP and which this flag leaves
+//   alone -- it never overlapped anything.
+//
+//   Size is NOCTURNE_AUTHENTIC_HUD_SCALE's business rather than this flag's:
+//   the banner is one of the draws that was never routed through the scaled
+//   text path, so at 1x it is the shipped pixel size and above that it grows
+//   with the framebuffer like the rest of the HUD.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_DEATH_MESSAGE_POSITION=1.
+#ifndef NOCTURNE_AUTHENTIC_DEATH_MESSAGE_POSITION
+#define NOCTURNE_AUTHENTIC_DEATH_MESSAGE_POSITION 0
+#endif
+
+// NOCTURNE_AUTHENTIC_TEXT_RENDER_ALPHA
+//   Whether 2D text inherits the 3D renderer's leftover alpha. The font's
+//   blend routine scales every glyph's coverage by a global the 3D pass owns:
+//
+//       render_color = g_CurrentRenderColor;                    ; 004ce240
+//       alpha        = (coverage * render_byte) >> 8;
+//       mixed        = text_byte * alpha + dst_byte * (0xff - alpha);
+//
+//   g_CurrentRenderColor is written only by engine/3d.c setRenderAlpha, which
+//   CDemonRenderer::setRenderAlpha calls on behalf of whichever actor is being
+//   drawn -- 0x808080 for a bullet-hole decal, 0xd1d1d1 for glass, 0xbbbbbb
+//   for Svetlana -- with renderOpaqueActors resetting it to 0xffffff between
+//   actors. Nothing resets it before the 2D pass, so a glyph is blended at
+//   whatever alpha the last actor of that frame happened to leave behind, and
+//   with a low value the text mixes into the scene instead of over it.
+//
+//   Measured on the death banner, which is the easiest place to see it: over
+//   30 captured frames the scene was byte-identical (two sample patches held
+//   96 and 110 in every frame) while the banner's red fell 189 -> 87 and then
+//   snapped back to 189 the moment the actor responsible stopped rendering.
+//   It reads as the text fading out and popping back at full colour. Any text
+//   drawn while an alpha-blended actor is on screen is affected the same way;
+//   the banner only makes it obvious because it sits still for four seconds.
+//
+//   The 3D pass is not the only source. The 2D pass clobbers the same globals
+//   on the way through, and the two writers ahead of the death banner are both
+//   FADING ones that never restore full opacity:
+//
+//       CInventory::renderAllItems  setRenderAlpha(message_display_timer * 65535)
+//       CGame::renderOverlay        setRenderAlpha(message_timer * 65535)
+//
+//   renderOverlay only sets 0xffff inside its g_OverlayDisplayTimer block and
+//   renderSubtitles only when a subtitle is actually up, so neither is a
+//   reliable reset. So one reset before the 2D pass is not enough for the
+//   banner: renderOverlay runs after it and re-clobbers. The banner needs its
+//   own reset immediately ahead of its draw, which is where the second gate in
+//   CGame::processFrame sits.
+//
+//   Resetting means calling setRenderAlpha, not assigning the colour. The two
+//   glyph paths in CBitFont::drawCharacter read DIFFERENT globals -- the 16bpp
+//   path multiplies by g_CurrentAlphaValue directly, the 32bpp path goes
+//   through drawAlphaBlendedPixels, which reads g_CurrentRenderColor -- and
+//   setRenderAlpha is what keeps the pair consistent: it shifts its argument
+//   down 8, clamps to 0xff into g_CurrentAlphaValue, then replicates that into
+//   g_CurrentRenderColor. Writing g_CurrentRenderColor = 0xffffff on its own
+//   fixes 32bpp and leaves 16bpp reading a stale g_CurrentAlphaValue.
+//
+//   1: shipped behaviour -- glyph alpha follows the last write, 3D or 2D.
+//   0: full opacity is restored before the 2D pass and again immediately
+//      before the death banner, so subtitles, overlay text and the banner
+//      blend at their own alpha. The 3D pass is unaffected: every actor sets
+//      the value it wants on the way in, so nothing downstream reads a reset.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_TEXT_RENDER_ALPHA=1.
+#ifndef NOCTURNE_AUTHENTIC_TEXT_RENDER_ALPHA
+#define NOCTURNE_AUTHENTIC_TEXT_RENDER_ALPHA 0
 #endif
 
 // NOCTURNE_AUTHENTIC_CHAPTER_SELECT

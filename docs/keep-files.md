@@ -41,6 +41,28 @@ include `nocturne.h`.
 
 Match the original extension. A `.c` gets a `.keep.c`; do not upgrade it to `.keep.cpp`.
 
+## Ghidra intrinsics
+
+`system/intrinsics.h` defines the constructs Ghidra emits that are not C. They exist so the raw
+output compiles at all:
+
+| Intrinsic | Meaning |
+|---|---|
+| `CONCAT44(hi, lo)` | Assemble two 32-bit values into a 64-bit one |
+| `SUB84(val, offset)` | Extract 4 bytes from an 8-byte value at a byte offset |
+| `__BITCAST_DOUBLE(uint64)` | Reinterpret 64 bits as `double` |
+| `__BITCAST_UINT64(double)` | Reinterpret a `double` as 64 bits |
+| `ADJ(ptr)` | Adjust an offset pointer back to its base struct |
+| `CARRY4(a, b)`, `SBORROW4(a, b)`, `SCARRY4(a, b)` | Carry / borrow / overflow detection |
+| `ZEXT14(x)`, `ZEXT48(x)` | Zero extension |
+
+Most of them are **compile escape hatches, not finished code**. `__BITCAST_DOUBLE` and the
+carry/borrow family in particular each have a reduction in
+[decompiler-artifacts.md](decompiler-artifacts.md) and should not survive into a completed
+reconstruction. `CONCAT44`/`SUB84` around a printf-family call collapse to one `double`
+([§3](decompiler-artifacts.md#3--format-string-errors)); pervasive through a body, they are a
+walk-away signal instead.
+
 ## Fidelity
 
 **The signature is immutable.** Name, calling convention, parameter list and return type come from
@@ -67,6 +89,27 @@ Within that, these are explicitly *not* off-limits:
 
 Fix the declaration to match what the assembly uses, rather than papering over it with a `(T *)&`
 cast that hides the mismatch.
+
+### What is a Ghidra fix instead
+
+A `.keep` is the right answer for a **decompiler limitation** — split doubles, MOVSD artifacts, ADJ
+quirks, format-string splitting, a mistranslated loop. It is the wrong answer for a wrong type,
+because the type is in the database and every function that touches it is wrong the same way.
+
+Any of these is a Ghidra-side fix, and the useful output is a precise statement of what to change:
+
+- **Wrong global type** — a global typed `float` that is really a `float *`, or an `int` that is
+  really a struct pointer.
+- **Wrong return type** — commonly a function returning some pointer type when it returns `void`,
+  because Ghidra inferred a return from EAX being live at `RET` while no caller uses it.
+- **Wrong parameter types, parameter count, or calling convention.**
+- **Wrong struct field type or layout** — a field typed `int` that the asm loads with `FLD`, or a
+  struct with the wrong size or alignment.
+- **Wrong calling convention on a vtable entry** — this drifts ESP tracking for the rest of the
+  function, so the damage extends well past the call.
+- **A missing or wrong function pointer type** — a vtable slot typed `int` rather than a pointer.
+
+The function gets skipped and named, rather than worked around.
 
 ### Declarations
 
