@@ -898,6 +898,9 @@ LAB_005bd5e6:
           if (local_2bc.damage_amount > 100.0f) {
             local_74 = 1;
             local_2bc.damage_amount = 9999.0;
+#if !NOCTURNE_AUTHENTIC_FATAL_FALL_HEAL
+            local_2bc.damage_type = DAMAGE_TYPE_FALL;
+#endif
           }
           pCVar11 = (this_ptr->base).base.base.vtable._uc;
           (this_ptr->base).invincibility_timer = 0.0;

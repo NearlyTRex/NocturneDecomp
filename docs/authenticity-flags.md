@@ -74,7 +74,7 @@ flag.
 
 ## What is gated
 
-37 flags. The kinds below are the same ones the header's table names, and a flag's kind is the
+44 toggles. The kinds below are the same ones the header's table names, and a flag's kind is the
 honest reason its default is what it is.
 
 **`host` — the shipped behaviour depends on Win32 + DirectDraw and cannot be reproduced**
@@ -99,6 +99,7 @@ honest reason its default is what it is.
 | `CAMERA_SHAKE_TRACE` | the shake trace prints its value and a newline |
 | `HUD_ICON_SPACE` | inventory icons stay on screen above 640x480 |
 | `GOD_MODE_FALL` | god mode survives a lethal-height fall |
+| `FATAL_FALL_HEAL` | a fall that was already fatal does not spend a health item to no effect |
 | `STREAM_LENGTH` | a streamed MP3 ends where the sample actually ends |
 | `ACTOR_DELETE` | references to a deleted actor are cleared before the memory is freed |
 | `HERO_WEAPON` | each hero class starts holding what it can actually use |
@@ -109,6 +110,7 @@ honest reason its default is what it is.
 | `ITEM_HELP_POSITION` | the pickup help text does not sit on top of the pickup name |
 | `DEATH_MESSAGE_POSITION` | the death banner is centred, clear of the message line |
 | `TEXT_RENDER_ALPHA` | 2D text blends at its own alpha, not the last pass's leftover |
+| `BOTTOMLESS_FALL` | a fall out of the world kills at once, rather than on whatever geometry it happens to strike |
 
 **`choice` — the shipped binary is not wrong; we prefer something else**
 

@@ -57,6 +57,7 @@
 // | `NOCTURNE_AUTHENTIC_CAMERA_SHAKE_TRACE` | 0 | defect | the shake trace prints its value and a newline |
 // | `NOCTURNE_AUTHENTIC_HUD_ICON_SPACE` | 0 | defect | inventory icons stay on screen above 640x480 |
 // | `NOCTURNE_AUTHENTIC_GOD_MODE_FALL` | 0 | defect | god mode survives a lethal-height fall |
+// | `NOCTURNE_AUTHENTIC_FATAL_FALL_HEAL` | 0 | defect | an already-fatal fall does not spend a health item |
 // | `NOCTURNE_AUTHENTIC_STREAM_LENGTH` | 0 | defect | a streamed MP3 ends where the sample actually ends |
 // | `NOCTURNE_AUTHENTIC_ACTOR_DELETE` | 0 | defect | references are cleared before the memory is freed |
 // | `NOCTURNE_AUTHENTIC_HERO_WEAPON` | 0 | defect | each hero class starts with what it can actually use |
@@ -65,6 +66,7 @@
 // | `NOCTURNE_AUTHENTIC_ITEM_HELP_POSITION` | 0 | defect | the pickup help text does not sit on top of the pickup name |
 // | `NOCTURNE_AUTHENTIC_DEATH_MESSAGE_POSITION` | 0 | defect | the death banner is centred, clear of the message line |
 // | `NOCTURNE_AUTHENTIC_TEXT_RENDER_ALPHA` | 0 | defect | 2D text blends at its own alpha, not the last pass's leftover |
+// | `NOCTURNE_AUTHENTIC_BOTTOMLESS_FALL` | 0 | defect | a fall out of the world kills at once, not on chance geometry |
 // | `NOCTURNE_AUTHENTIC_CHAPTER_SELECT` | 0 | defect | START offers the chapter lists, pod.ini or no pod.ini |
 // | `NOCTURNE_AUTHENTIC_FRIENDLY_FIRE` | 0 | defect | heroes cannot damage each other in a network game |
 // | `NOCTURNE_AUTHENTIC_PICKUP_WIELDS` | 0 | choice | a pickup is never drawn without the player asking |
@@ -482,6 +484,46 @@
 #define NOCTURNE_AUTHENTIC_GOD_MODE_FALL 0
 #endif
 
+// NOCTURNE_AUTHENTIC_FATAL_FALL_HEAL
+//   Whether a fall that was already fatal still spends a health item.
+//
+//   The Auto Use Health option (Options, `autoUseHealth` in the ini, off by
+//   default) has exactly one consumer: CStranger::processDamage spends an
+//   inventory item to pull the hero back from a killing blow, under
+//
+//       if (auto_use_health && 0xb < damage_type && hit_points <= 0.0)
+//
+//   The landing handler in CStranger::processFrame latches a fall as fatal
+//   before dealing it (see NOCTURNE_AUTHENTIC_GOD_MODE_FALL for the latch), and
+//   the damage it deals carries the DAMAGE_TYPE_IMMUNE that SDamageInfo::ctor
+//   leaves in place — 0x64, which clears that `0xb <` test. So the rescue fires
+//   on a landing it cannot rescue: the item is consumed, hit_points comes back
+//   above zero, and the latch then takes the death branch regardless. The hero
+//   dies in the fatal-fall animation displaying the health bar the item just
+//   refilled, one item poorer for it.
+//
+//   Only the fatal branch is affected. A survivable fall keeps DAMAGE_TYPE_
+//   IMMUNE, so a landing that merely takes the hero to zero is still rescued —
+//   that is the option working as intended.
+//
+//   1: authentic — a fatal fall spends an item and shows partial health on a
+//      corpse.
+//   0: the fatal branch deals DAMAGE_TYPE_FALL instead, which fails the
+//      `0xb <` test. No item is spent, hit_points stays at 0, and the death
+//      branch is reached on hit_points alone rather than on the latch.
+//      DAMAGE_TYPE_FALL takes the same inert path through
+//      CCharacter::processDamage's type dispatch as IMMUNE does: no explode,
+//      shatter, dismember, decal or stagger.
+//
+//   Independent of GOD_MODE_FALL, which shares the branch: god mode zeroes
+//   damage_amount whatever the type carries, so that flag's latch-clearing
+//   still decides whether a prevented landing kills.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_FATAL_FALL_HEAL=1.
+#ifndef NOCTURNE_AUTHENTIC_FATAL_FALL_HEAL
+#define NOCTURNE_AUTHENTIC_FATAL_FALL_HEAL 0
+#endif
+
 // NOCTURNE_AUTHENTIC_STREAM_LENGTH
 //   Whether a streamed sample's end marker is corrected once its real length is
 //   known. Only MP3s are streamed — a WAV is loaded whole, so its length is
@@ -838,6 +880,81 @@
 //   Override with -DNOCTURNE_AUTHENTIC_TEXT_RENDER_ALPHA=1.
 #ifndef NOCTURNE_AUTHENTIC_TEXT_RENDER_ALPHA
 #define NOCTURNE_AUTHENTIC_TEXT_RENDER_ALPHA 0
+#endif
+
+// NOCTURNE_AUTHENTIC_BOTTOMLESS_FALL
+//   What happens to a character who falls out of the world. Death is gated
+//   entirely on landing: CStranger::processFrame runs its fatal-landing branch
+//   only under `if (is_on_ground != 0)`, and is_on_ground is set by
+//
+//       if (position.y < closest_distance_threshold + 0.1f) is_on_ground = 1;
+//
+//   With no floor beneath him the ground query never reports one, so nothing
+//   in that chain fires -- no 9999 damage, no motion state 0x12, and so
+//   CCharacter::getDeathState (which reads the *animation state name*, not
+//   health) never returns DEAD and CGame::runGameSession never starts its
+//   four-second game-over timer.
+//
+//   Measured on a pit fall: the ground query returns a phantom floor that
+//   trails the hero down -- `threshold - y` held between -9.7 and -8.7 for the
+//   whole descent, where standing on real ground gives exactly 0.0 -- which
+//   makes the landing test `y < y - 9` false by construction. The collision
+//   grid spanned y -239.6..184.8; the hero fell to y -1759.6, some 1520 units
+//   past the bottom of it, before clipping stray geometry and coming to rest.
+//   At the 16 Hz sim rate that is roughly 36 seconds of falling before the
+//   game acknowledges anything.
+//
+//   Only CStranger and CZombie implement fall damage at all. Every other
+//   character -- CSvetlana, CScat and the rest -- has no landing branch, so
+//   nothing gates them even after they hit something.
+//
+//   1: shipped behaviour -- a fall out of the world resolves whenever the
+//      character happens to strike geometry, or never.
+//   0: once a character is below the collision grid, nothing beneath him can
+//      ever stop him, so the fall is resolved immediately: full damage through
+//      the class's own processDamage, motion state 0x12, and fall-?.wav. The
+//      hook is in CCharacter::process, which every character class calls, so
+//      the classes that never had a landing branch are covered too, and the
+//      vtable dispatch gives each one its own damage handling and sound.
+//      Guarded on the grid being loaded -- cube_data present and a
+//      non-degenerate bbox -- so a level with no collision cannot trip it.
+//      Note the grid-level `triangle_count` is NOT a usable liveness test:
+//      it reads 0 throughout normal play (the triangles hang off each cube,
+//      which is where the debug dumpers read them from), so guarding on it
+//      disables the check entirely.
+//
+//      The hook runs every frame the character is below the grid, so it has to
+//      land its damage on the first call and then stop. Three details in the
+//      hero damage paths decide whether it does:
+//
+//      - The damage carries DAMAGE_TYPE_FALL rather than the DAMAGE_TYPE_IMMUNE
+//        that SDamageInfo::ctor leaves in place. CStranger::processDamage gates
+//        two things on `0xb < damage_type` -- the invincibility early-return,
+//        and the auto-health rescue that puts hit_points back above zero after
+//        a fatal hit. A fall out of the world is not survivable and not worth a
+//        health item, so neither applies. DAMAGE_TYPE_FALL takes the same inert
+//        path through CCharacter::processDamage's type dispatch as IMMUNE did:
+//        no explode, shatter, dismember, decal or stagger.
+//      - CHero::invincibility_timer is cleared before the call, as
+//        CStranger::processFrame's own fatal-landing branch does.
+//        CSvetlana::processDamage gates on `ABS(invincibility_timer) != 0.0`
+//        without consulting damage_type, and re-arms it to 3.0f on every call,
+//        so a per-frame hook that did not clear it would block its own damage
+//        for as long as the character kept falling.
+//      - The motion state and the sound follow only when hit_points has reached
+//        0, matching the landing branch's `hit_points <= 0.0 || fatal` gate, so
+//        fall-?.wav marks a death rather than an attempt.
+//
+//      Re-entry is bounded by hit_points alone: every death path clamps it to
+//      exactly 0, which fails the `0.0 < hit_points` guard for good. The motion
+//      controller's state_index cannot serve as that latch -- it holds the
+//      *desired* state, which the character's own per-frame logic overwrites,
+//      and getCurrentMotion lags it by however long the transition runs, or
+//      indefinitely when the current motion has no transition to 0x12.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_BOTTOMLESS_FALL=1.
+#ifndef NOCTURNE_AUTHENTIC_BOTTOMLESS_FALL
+#define NOCTURNE_AUTHENTIC_BOTTOMLESS_FALL 0
 #endif
 
 // NOCTURNE_AUTHENTIC_CHAPTER_SELECT
