@@ -214,6 +214,15 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
           iVar7 = 0;
         }
 #endif
+#if !NOCTURNE_AUTHENTIC_DEATH_FADE_SKIP
+        if (iVar7 != 0) {
+          EVar6 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
+                            (&g_HeroActors[g_LocalHeroIndex]->base);
+          if (1 < (int)EVar6) {
+            iVar7 = 0;
+          }
+        }
+#endif
         if (iVar7 != 0) {
           shape_edittool_cpp_CPickList_clear_FUN_004a5770(&g_CPickList);
 #if !NOCTURNE_AUTHENTIC_NETPLAY

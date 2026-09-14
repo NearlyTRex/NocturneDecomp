@@ -52,6 +52,7 @@
 // | `NOCTURNE_AUTHENTIC_MIRROR_CULL` | 0 | defect | actors appear in mirrors |
 // | `NOCTURNE_AUTHENTIC_MIRROR_PROJECTION` | 0 | defect | accelerated geometry lines up with the backdrop |
 // | `NOCTURNE_AUTHENTIC_IRIS_FADE` | 0 | defect | an opening iris no longer teleports mid-growth |
+// | `NOCTURNE_AUTHENTIC_DEATH_FADE_SKIP` | 0 | defect | ESC no longer cuts the closing death iris short |
 // | `NOCTURNE_AUTHENTIC_ENVMAP_OVERLAY` | 0 | defect | a reflection comes out whole rather than speckled |
 // | `NOCTURNE_AUTHENTIC_MENU_LIGHTING` | 0 | defect | the menu's moon puts back the lighting it found |
 // | `NOCTURNE_AUTHENTIC_CAMERA_SHAKE_TRACE` | 0 | defect | the shake trace prints its value and a newline |
@@ -339,6 +340,54 @@
 //   Override with -DNOCTURNE_AUTHENTIC_IRIS_FADE=1.
 #ifndef NOCTURNE_AUTHENTIC_IRIS_FADE
 #define NOCTURNE_AUTHENTIC_IRIS_FADE 0
+#endif
+
+// NOCTURNE_AUTHENTIC_DEATH_FADE_SKIP
+//   What ESC does while the hero is dead and the closing iris is still running.
+//
+//   CGame::runGameSession reads ESC to raise the pause menu, and the first thing
+//   that path does is refuse it to a dead player:
+//
+//       iVar7 = getAndClearKeyState(DIK_ESCAPE);
+//       if (iVar7 != 0) {
+//           CPickList::clear(&g_CPickList);
+//           EVar6 = getDeathState(hero);
+//           if (1 < (int)EVar6) goto LAB_004db434;   // DEATH_STATE_DEAD is 2
+//           ... the pause menu is built past here ...
+//
+//   LAB_004db434 is the session's exit, and it runs the "Game Over" pick list of
+//   "Load game" and "Quit". So ESC pressed after death does not pause: it leaves
+//   the session at once.
+//
+//   The death sequence it cuts short is the one in the same loop -- four seconds
+//   on `local_14`, then beginFadeOut and a close driven by
+//   CGame::updateFadeTransition until the type reaches 5 and CGame::fadeIn
+//   reports it settled. updateFadeTransition is reached only through
+//   CGame::process, which CGame::processFrame skips once the loop has been left,
+//   so the iris keeps whatever radius it had and never finishes. Measured on a
+//   death interrupted part-way: g_IrisFadeType 3, g_IrisFadeRadius 595.05, still
+//   3 and 595.05 seconds later, with nothing left running to move it.
+//
+//   1: shipped behaviour -- ESC after death ends the session on the spot, and if
+//      the iris had started it freezes part-closed behind the Game Over menu.
+//   0: ESC is inert from the moment the hero reads DEAD, the way the automap's
+//      cancel swallows it a few lines above, so the four-second wait and the
+//      close both run and the session exits on its own into the same Game Over
+//      menu.
+//
+//   The whole dead window is covered rather than only the closing iris, because
+//   the two are one sequence: for the first four seconds g_IrisFadeType is still
+//   0, and CGame::fadeIn reports an idle iris as settled, so a test on the fade
+//   alone would leave the banner's own window behaving as before.
+//
+//   Scoped to ESC. The death branch also takes RETURN as an explicit skip, which
+//   reads as deliberate rather than as a guard that fires early. It is left
+//   alone, and it is also what keeps the sequence escapable: nothing else can
+//   end it early once ESC stops doing so.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_DEATH_FADE_SKIP=1.
+#ifndef NOCTURNE_AUTHENTIC_DEATH_FADE_SKIP
+#define NOCTURNE_AUTHENTIC_DEATH_FADE_SKIP 0
 #endif
 
 // NOCTURNE_AUTHENTIC_ENVMAP_OVERLAY

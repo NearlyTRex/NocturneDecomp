@@ -255,6 +255,16 @@ CDemonActor *local_hero(void) {
     return (CDemonActor *)g_HeroActors[g_LocalHeroIndex];
 }
 
+// Whether the hero is dying or dead. Through the vtable rather than
+// CCharacter::getDeathState directly: ten classes override it, CStranger among
+// them, so the base would answer for the wrong one.
+bool hero_is_down(CDemonActor *hero) {
+    if (hero == nullptr) return false;
+    CCharacter_full_vtable *vt = hero->vtable._uc;
+    if (vt == nullptr) return false;
+    return (*(vt->_uc).getDeathState)((CCharacter *)hero) != DEATH_STATE_ALIVE;
+}
+
 // Nearest palette entry to a colour, in whatever mode the game is running.
 // Resolved on use rather than at load, because the palette is not populated
 // until a scene is.
@@ -1012,10 +1022,15 @@ extern "C" void nocturne_automap_update(void)
     // The test is CGame::playerControls' own. hero_controls_blocked is set from
     // the allowHeroControls script command, which stores the negation of its
     // argument, so non-zero is what "the player is not driving" looks like.
+    // Death is not part of that test and has to be its own: hero_controls_blocked
+    // is the script's allowHeroControls, which a death never touches, so without
+    // this the map opens over the dying animation, the "You're dead" banner and
+    // the closing iris -- and stays open into the Game Over menu.
     CGame *gate = g_CGamePtr;
-    if (gate != nullptr &&
-        (g_ModalDialogActive != 0 || gate->is_paused != 0 ||
-         gate->hero_controls_blocked != 0)) {
+    if (hero_is_down(hero) ||
+        (gate != nullptr &&
+         (g_ModalDialogActive != 0 || gate->is_paused != 0 ||
+          gate->hero_controls_blocked != 0))) {
         g_open = false;
         g_key_was_down = down(g_key_binding);   // so releasing does not reopen
         return;

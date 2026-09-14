@@ -74,7 +74,7 @@ flag.
 
 ## What is gated
 
-44 toggles. The kinds below are the same ones the header's table names, and a flag's kind is the
+45 toggles. The kinds below are the same ones the header's table names, and a flag's kind is the
 honest reason its default is what it is.
 
 **`host` — the shipped behaviour depends on Win32 + DirectDraw and cannot be reproduced**
@@ -94,6 +94,7 @@ honest reason its default is what it is.
 | `MIRROR_CULL` | actors appear in mirrors |
 | `MIRROR_PROJECTION` | accelerated geometry lines up with the backdrop it sits on |
 | `IRIS_FADE` | an opening iris no longer teleports part-way through |
+| `DEATH_FADE_SKIP` | ESC no longer cuts the closing death iris short and jumps to Game Over |
 | `ENVMAP_OVERLAY` | a reflection comes out whole rather than speckled |
 | `MENU_LIGHTING` | the menu's moon puts back the lighting it found |
 | `CAMERA_SHAKE_TRACE` | the shake trace prints its value and a newline |
