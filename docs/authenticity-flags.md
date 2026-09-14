@@ -74,7 +74,7 @@ flag.
 
 ## What is gated
 
-45 toggles. The kinds below are the same ones the header's table names, and a flag's kind is the
+48 toggles. The kinds below are the same ones the header's table names, and a flag's kind is the
 honest reason its default is what it is.
 
 **`host` — the shipped behaviour depends on Win32 + DirectDraw and cannot be reproduced**
@@ -99,6 +99,8 @@ honest reason its default is what it is.
 | `MENU_LIGHTING` | the menu's moon puts back the lighting it found |
 | `CAMERA_SHAKE_TRACE` | the shake trace prints its value and a newline |
 | `HUD_ICON_SPACE` | inventory icons stay on screen above 640x480 |
+| `FOG_PLANE_SCALE` | fog covers the view at modes whose camera grid is not 320 wide |
+| `MODAL_FIT` | a modal too wide for the screen is clamped rather than pushed off both edges |
 | `GOD_MODE_FALL` | god mode survives a lethal-height fall |
 | `FATAL_FALL_HEAL` | a fall that was already fatal does not spend a health item to no effect |
 | `STREAM_LENGTH` | a streamed MP3 ends where the sample actually ends |
@@ -120,6 +122,7 @@ honest reason its default is what it is.
 | `PICKUP_WIELDS` | a weapon picked up is never drawn without the player asking |
 | `OPTIONS_RESUMES_GAME` | leaving Options returns to the pause menu, simulation held |
 | `MENU_RESOLUTION` | a picked resolution applies straight away |
+| `CONFIRM_PROMPTS` | no bracketed hotkey letters, and a short form when the long one will not fit |
 | `SAVE` | saves are written as readable plain text *(defaults on, i.e. compressed)* |
 
 **`addition` — neither binary did this**

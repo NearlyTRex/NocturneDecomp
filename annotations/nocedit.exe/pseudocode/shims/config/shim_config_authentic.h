@@ -57,6 +57,7 @@
 // | `NOCTURNE_AUTHENTIC_MENU_LIGHTING` | 0 | defect | the menu's moon puts back the lighting it found |
 // | `NOCTURNE_AUTHENTIC_CAMERA_SHAKE_TRACE` | 0 | defect | the shake trace prints its value and a newline |
 // | `NOCTURNE_AUTHENTIC_HUD_ICON_SPACE` | 0 | defect | inventory icons stay on screen above 640x480 |
+// | `NOCTURNE_AUTHENTIC_FOG_PLANE_SCALE` | 0 | defect | the fog plane is resampled onto the camera grid, not cropped to it |
 // | `NOCTURNE_AUTHENTIC_MODAL_FIT` | 0 | defect | a modal too wide for the screen is clamped, not pushed off both edges |
 // | `NOCTURNE_AUTHENTIC_GOD_MODE_FALL` | 0 | defect | god mode survives a lethal-height fall |
 // | `NOCTURNE_AUTHENTIC_FATAL_FALL_HEAL` | 0 | defect | an already-fatal fall does not spend a health item |
@@ -503,6 +504,48 @@
 //   Override with -DNOCTURNE_AUTHENTIC_HUD_ICON_SPACE=1.
 #ifndef NOCTURNE_AUTHENTIC_HUD_ICON_SPACE
 #define NOCTURNE_AUTHENTIC_HUD_ICON_SPACE 0
+#endif
+
+// NOCTURNE_AUTHENTIC_FOG_PLANE_SCALE
+//   Whether the fog plane is cropped onto the camera's grid or resampled onto it.
+//
+//   Fog planes are authored 320x240, and CDemonCamera::processCorona takes the
+//   whole image across without regard to the camera:
+//
+//       _memcpy(&g_CameraPlaneWorkBuffer, g_CameraImageDecompressBuffer, 0x12c00);
+//
+//   0x12c00 is 76800, which is 320*240. CDemonCamera::compositeLightmapToFramebuffer
+//   then samples the result at grid coordinates, which run 0..display_width-1.
+//
+//   CDemonCamera::init derives that grid by halving the camera framebuffer until
+//   it is no wider than 320, so display_width is 320 at both 320x240 and 640x480
+//   -- and at every mode above 480 lines, since those clamp to a 640x480 camera
+//   first. Where the image and the grid are the same size a copy and a resample
+//   are the same operation. Where they differ the image is cropped: at 400x300
+//   the grid is 200x150, so the left 200 columns and top 150 rows are stretched
+//   over the whole screen and the rest is never shown.
+//
+//   Measured at 400x300: the work buffer holds content out to column 319 while
+//   the composite reads only 0..199. At 640x480 the same row ends at 319 with
+//   the grid 320 wide, so nothing is left over.
+//
+//   It shows through holes in the floor, because that is where no geometry
+//   covers the fog -- which is why it reads as a misplaced background rather
+//   than as fog being wrong everywhere.
+//
+//   1: shipped behaviour -- the plane is copied whole and cropped to the grid.
+//   0: the plane is point-sampled onto the grid, so it covers the view at any
+//      mode. A 320x240 grid still takes the original memcpy, so the two modes
+//      that were already correct stay byte-identical.
+//
+//   Nearest rather than bilinear: it reduces to the identity at 320x240, which
+//   keeps the working modes provably unchanged, and fog is a low-frequency
+//   gradient that gains little from interpolation.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_FOG_PLANE_SCALE=1.
+#ifndef NOCTURNE_AUTHENTIC_FOG_PLANE_SCALE
+#define NOCTURNE_AUTHENTIC_FOG_PLANE_SCALE 0
+#endif
 
 // NOCTURNE_AUTHENTIC_MODAL_FIT
 //   Where a modal goes when its contents are wider than the screen.
