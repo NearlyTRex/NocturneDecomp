@@ -57,6 +57,7 @@
 // | `NOCTURNE_AUTHENTIC_MENU_LIGHTING` | 0 | defect | the menu's moon puts back the lighting it found |
 // | `NOCTURNE_AUTHENTIC_CAMERA_SHAKE_TRACE` | 0 | defect | the shake trace prints its value and a newline |
 // | `NOCTURNE_AUTHENTIC_HUD_ICON_SPACE` | 0 | defect | inventory icons stay on screen above 640x480 |
+// | `NOCTURNE_AUTHENTIC_MODAL_FIT` | 0 | defect | a modal too wide for the screen is clamped, not pushed off both edges |
 // | `NOCTURNE_AUTHENTIC_GOD_MODE_FALL` | 0 | defect | god mode survives a lethal-height fall |
 // | `NOCTURNE_AUTHENTIC_FATAL_FALL_HEAL` | 0 | defect | an already-fatal fall does not spend a health item |
 // | `NOCTURNE_AUTHENTIC_STREAM_LENGTH` | 0 | defect | a streamed MP3 ends where the sample actually ends |
@@ -72,6 +73,7 @@
 // | `NOCTURNE_AUTHENTIC_FRIENDLY_FIRE` | 0 | defect | heroes cannot damage each other in a network game |
 // | `NOCTURNE_AUTHENTIC_PICKUP_WIELDS` | 0 | choice | a pickup is never drawn without the player asking |
 // | `NOCTURNE_AUTHENTIC_OPTIONS_RESUMES_GAME` | 0 | choice | leaving Options returns to the pause menu |
+// | `NOCTURNE_AUTHENTIC_CONFIRM_PROMPTS` | 0 | choice | no bracketed hotkey letters, and a short form when the long one will not fit |
 // | `NOCTURNE_AUTHENTIC_MENU_RESOLUTION` | 0 | choice | a picked resolution applies straight away |
 // | `NOCTURNE_AUTHENTIC_SAVE` | 1 | choice | saves are written as readable plain text |
 // | `NOCTURNE_AUTHENTIC_AUTOMAP` | 0 | addition | a bindable Doom-style map that fills in as you explore |
@@ -501,6 +503,80 @@
 //   Override with -DNOCTURNE_AUTHENTIC_HUD_ICON_SPACE=1.
 #ifndef NOCTURNE_AUTHENTIC_HUD_ICON_SPACE
 #define NOCTURNE_AUTHENTIC_HUD_ICON_SPACE 0
+
+// NOCTURNE_AUTHENTIC_MODAL_FIT
+//   Where a modal goes when its contents are wider than the screen.
+//
+//   CEditorTools::createCenteredModal centres by subtraction and derives the far
+//   edge from the near one:
+//
+//       left  = (g_WindowWidth  - min_width)  / 2;
+//       top   = (g_WindowHeight - min_height) / 2;
+//       createModalWindow(left, top, g_WindowWidth - left, g_WindowHeight - top, ...);
+//
+//   With min_width past g_WindowWidth the left edge is negative, and because the
+//   right edge is g_WindowWidth - left it runs the same distance past the other
+//   side, so the window is off-screen at both ends and only createModalWindow's
+//   clamp of the clip rect brings it back.
+//
+//   A pick list then rebuilds its layout from that clipped rect rather than from
+//   what it asked for -- CPickList::calculateLayoutAndCreateComponents recomputes
+//   column_count from (g_ClipRight - g_ClipLeft) + 1 and then divides the width
+//   back out into total_content_width -- so the column silently narrows while the
+//   item is still drawn at its full measured width. CBitFont::drawCharacter drops
+//   glyphs outside the clip rect, so the row is cut off at the window edge and
+//   reads as text overflowing its button.
+//
+//   The confirm dialog is where it shows, because its choices are the longest
+//   strings any pick list carries: "[Y]es, I know what I'm doing and I hate these
+//   annoying prompts." is 62 characters, wider than a 320-pixel screen even at
+//   editor scale 1, which is already the floor at that resolution.
+//
+//   1: shipped behaviour -- the modal is positioned past both screen edges and
+//      the clip rect is what decides where it actually lands.
+//   0: the requested size is clamped to the screen first, so the window is whole
+//      and centred.
+//
+//   Clamping places the window correctly; it does not make an over-long string
+//   fit inside it. Text that is wider than the screen at scale 1 still has to be
+//   wrapped, truncated or shortened at its source.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_MODAL_FIT=1.
+#ifndef NOCTURNE_AUTHENTIC_MODAL_FIT
+#define NOCTURNE_AUTHENTIC_MODAL_FIT 0
+#endif
+
+// NOCTURNE_AUTHENTIC_CONFIRM_PROMPTS
+//   The wording of the two choices in the destructive-action confirm dialog.
+//
+//   CEditorTools::showDestructiveActionConfirmDialog offers
+//
+//       "[Y]es, I know what I'm doing and I hate these annoying prompts."
+//       "[N]o, please, I didn't mean to do it!"
+//
+//   The bracketed letter is decoration: the keys are bound separately, by
+//   CPickList::setItemHotKey over the localized string "yn", so removing the
+//   brackets costs the dialog nothing.
+//
+//   The length does cost something. At 62 characters the first choice is wider
+//   than a 320-pixel screen even at editor scale 1, which is the floor at that
+//   resolution, so the row is cut off at the window edge and reads as text
+//   spilling out of its button. NOCTURNE_AUTHENTIC_MODAL_FIT places the window
+//   correctly but cannot make an over-long string fit inside it.
+//
+//   1: shipped behaviour -- the bracketed letters, and the long form at every
+//      resolution.
+//   0: no brackets, and a short form substituted whenever the long one measures
+//      wider than the screen. The test is calculateButtonWidth, which is already
+//      scale-aware, so it follows the editor scale rather than a hardcoded
+//      resolution and answers for a translated string too.
+//
+//   Both forms go through getLocalizedString, so the short pair can be
+//   translated like any other line rather than being pinned to English.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_CONFIRM_PROMPTS=1.
+#ifndef NOCTURNE_AUTHENTIC_CONFIRM_PROMPTS
+#define NOCTURNE_AUTHENTIC_CONFIRM_PROMPTS 0
 #endif
 
 // NOCTURNE_AUTHENTIC_GOD_MODE_FALL

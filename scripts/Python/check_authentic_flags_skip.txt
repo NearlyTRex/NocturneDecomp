@@ -60,3 +60,11 @@ nested:annotations/nocedit.exe/pseudocode/src/core/menu.cpp/showOptionsScreen_FU
 # HUD_SCALE's own gate, so the unscaled arm cannot name it -- both arms of both
 # flags are present and neither decides the other.
 nested:annotations/nocedit.exe/pseudocode/src/core/inv.cpp/CInventory_renderAllItems_FUN_00500690.keep.cpp:NOCTURNE_AUTHENTIC_ITEM_HELP_POSITION
+
+# The wording of the confirm dialog's two choices. The two builds do not share a
+# dialog: the editor puts the choices through showMultiChoiceDialog as CStrList
+# entries prefixed with '^', the game builds a CPickList and binds hotkeys from
+# the localized string "yn". CONFIRM_PROMPTS is about the CPickList strings, so
+# it has nothing to say inside the editor arm and sits in the other one. Both
+# arms of both flags are present; neither decides the other.
+nested:annotations/nocedit.exe/pseudocode/src/shape/edittool.cpp/CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060.keep.cpp:NOCTURNE_AUTHENTIC_CONFIRM_PROMPTS

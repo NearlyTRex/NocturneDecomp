@@ -32,11 +32,27 @@ int __cdecl shape_edittool_cpp_CEditorTools_showDestructiveActionConfirmDialog_F
   shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_18,0);
 #else
   shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_18);
+#if NOCTURNE_AUTHENTIC_CONFIRM_PROMPTS
   pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                      ("[Y]es, I know what I'm doing and I hate these annoying prompts.");
+#else
+  pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
+                     ("Yes, I know what I'm doing and I hate these annoying prompts.");
+  if (g_WindowWidth < shape_edittool_cpp_calculateButtonWidth_FUN_004a68e0(pcVar2)) {
+    pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Yes, I'm sure.");
+  }
+#endif
   shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_18.base,pcVar2);
+#if NOCTURNE_AUTHENTIC_CONFIRM_PROMPTS
   pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                      ("[N]o, please, I didn't mean to do it!");
+#else
+  pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
+                     ("No, please, I didn't mean to do it!");
+  if (g_WindowWidth < shape_edittool_cpp_calculateButtonWidth_FUN_004a68e0(pcVar2)) {
+    pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("No, go back.");
+  }
+#endif
   shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_18.base,pcVar2);
   pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("yn");
   for (iVar3 = 0;
