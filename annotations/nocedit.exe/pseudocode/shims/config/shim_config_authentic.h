@@ -1164,7 +1164,7 @@
 //   line, and its version gate is a minimum with no upper bound — so no save
 //   version changes and saves stay loadable both ways.
 //
-//   See research/20-automap/ for the extraction rules, which are less obvious
+//   See research/19-automap/ for the extraction rules, which are less obvious
 //   than they look, and automap.h for the API.
 //
 //   Override with -DNOCTURNE_AUTHENTIC_AUTOMAP=1.

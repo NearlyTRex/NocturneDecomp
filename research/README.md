@@ -468,7 +468,36 @@ the same run — two of that session's conclusions turned out to be smaller than
 
 ---
 
-### [20-automap/](20-automap/)
+### [18-resolution_and_aspect_ratio/](18-resolution_and_aspect_ratio/)
+
+What the engine can be pushed to on resolution, where the real ceilings are, and why widescreen
+is a content problem rather than a code one.
+
+| File | Description |
+|------|-------------|
+| `README.md` | The two ceilings, the two coordinate spaces, the resolution list, aspect-ratio options |
+
+**Key outcomes:**
+- **The software *rasteriser* has no resolution limit — software *mode* does.** The rasteriser
+  writes into `g_ScreenBufferArray[scanline_y]` at the native resolution and
+  `CDemonCamera::init`'s clamp sizes the lighting grid, but two renderer-owned pieces sit past
+  480 lines: `lockAndRenderToBuffer` takes the renderer's hold buffer (fatal with no renderer
+  DLL) and `compositeLightmapToFramebuffer` maps the 640x480 lighting grid to the screen
+  row-for-row. The acceleration gate is kept, and is not part of the resolution flag.
+- **`g_ResolutionTable[9]` is not the Options list** — its only reader is `initGraphicsSystem`,
+  for the 8bpp startup mode. The menu was a hardcoded `game_pixy` chain, which is why 1600x1200
+  was unreachable and 400x300 could be labelled and stepped away from but never selected.
+- **Two unguarded ceilings remain:** `g_ScreenBufferArray[1200]` and friends cap height at 1200
+  lines; `g_ReciprocalLookupTable[1600]`, indexed by *pixel span*, caps software spans at ~1598.
+  1920x1080 clears the first and fails the second — in software only.
+- **Above 480 lines two coordinate spaces coexist** (native, and the camera's 640x480 virtual
+  space that the renderer stretches). Elements that must line up have to share one. Getting this
+  wrong put the inventory description text up to 104 px off its panel, correct at 640x480 and
+  1280x1024 purely because those are where the stretch is a whole number.
+- **True widescreen is not available from the shipped backdrops** — they are fixed 640x480 8-bit
+  images and the pixels for a wider view do not exist. Pillarboxing is a contained change in the
+  presenter we own; re-rendering backdrops is a content project with an unverified premise.
+### [19-automap/](19-automap/)
 
 A Doom-style line map that fills in as the player walks: design, measured numbers, and the
 extraction rules — including the ones that look right and are not.
@@ -499,35 +528,45 @@ extraction rules — including the ones that look right and are not.
   needed. Past a completion threshold the fog lifts entirely; the percentage is measured against
   cubes holding geometry (4,579 of 46,139), since a share of all cubes would never fire.
 
-### [19-resolution_and_aspect_ratio/](19-resolution_and_aspect_ratio/)
+### [20-overlay_accumulation/](20-overlay_accumulation/)
 
-What the engine can be pushed to on resolution, where the real ceilings are, and why widescreen
-is a content problem rather than a code one.
+Why blended 2D thickens on frames that draw no geometry: a dirty bit that lied, the readback it
+suppressed, and the six wrong explanations that fit the same evidence.
 
 | File | Description |
 |------|-------------|
-| `README.md` | The two ceilings, the two coordinate spaces, the resolution list, aspect-ratio options |
+| `README.md` | The cause, why it presents as weight, the measurements, the dead ends |
+| `death_banner_probe.gdb` | Banner draws per frame, position, scene renders per frame |
+| `frame_order_probe.gdb` | Ordered trace of renderScene, flushes, lock, 2D and uploads |
+| `banner_frame_probe.gdb` | Per banner frame: uploads, geometry flushes, `target_ahead` at lock |
+| `which_buffer_probe.gdb` | Whether the banner lands in the CPU image or the hold buffer |
+| `verify_probe.gdb` | That banner frames read back, and the screen backup still sees the composite |
+| `hazard_probe.gdb` | 2D drawn in the window the correction widens, which a readback would erase |
 
 **Key outcomes:**
-- **The software *rasteriser* has no resolution limit — software *mode* does.** The rasteriser
-  writes into `g_ScreenBufferArray[scanline_y]` at the native resolution and
-  `CDemonCamera::init`'s clamp sizes the lighting grid, but two renderer-owned pieces sit past
-  480 lines: `lockAndRenderToBuffer` takes the renderer's hold buffer (fatal with no renderer
-  DLL) and `compositeLightmapToFramebuffer` maps the 640x480 lighting grid to the screen
-  row-for-row. The acceleration gate is kept, and is not part of the resolution flag.
-- **`g_ResolutionTable[9]` is not the Options list** — its only reader is `initGraphicsSystem`,
-  for the 8bpp startup mode. The menu was a hardcoded `game_pixy` chain, which is why 1600x1200
-  was unreachable and 400x300 could be labelled and stepped away from but never selected.
-- **Two unguarded ceilings remain:** `g_ScreenBufferArray[1200]` and friends cap height at 1200
-  lines; `g_ReciprocalLookupTable[1600]`, indexed by *pixel span*, caps software spans at ~1598.
-  1920x1080 clears the first and fails the second — in software only.
-- **Above 480 lines two coordinate spaces coexist** (native, and the camera's 640x480 virtual
-  space that the renderer stretches). Elements that must line up have to share one. Getting this
-  wrong put the inventory description text up to 104 px off its panel, correct at 640x480 and
-  1280x1024 purely because those are where the stretch is a whole number.
-- **True widescreen is not available from the shipped backdrops** — they are fixed 640x480 8-bit
-  images and the pixels for a wider view do not exist. Pillarboxing is a contained change in the
-  presenter we own; re-rendering backdrops is a content project with an unverified premise.
+- **`unlock_hold_buffer` broke the `target_ahead` invariant.** It uploads `g_dev.hold`,
+  stretched, into the scene target while leaving `g_dev.image` untouched, so the target does hold
+  content the image does not — but it reported otherwise. `lock_frame` reads that flag to decide
+  whether to read the target back, so the lock skipped its readback and the image kept the
+  previous frame's composite for the engine to draw over.
+- **The glyph blend reads its destination**, so drawing the same text over itself is not
+  idempotent — solid interiors replace identically while antialiased edges darken. Weight, not
+  brightness, is the signature.
+- **The trigger is a camera cut that submits no geometry**, since a geometry flush would have
+  set the flag anyway. Measured across 248 consecutive banner frames: `geom_flushes=0` and
+  `lock_target_ahead=0` on every one; 263 frames read `lock_target_ahead=1` once the invariant
+  is restored, with the screen backup behind the first modal still keeping the composite.
+- **3D and 2D never interleave within a frame** — all geometry precedes the lock, all 2D
+  follows it, so the target holds the scene alone between the hold upload and the first flush.
+- **Nothing uses the window the correction widens.** A readback that now happens could only
+  erase 2D drawn between `unlockHoldBuffer` and the next `lockFrame`; across menus, pause,
+  options and play that window was entered 782 times with 0 draws inside it. Below 481 lines the
+  hold path is never taken at all, and on any frame with geometry the flag was already set, so
+  both are unchanged by construction.
+- **Seven dead ends are recorded with their measurements**, including keeping a separate 3D-only
+  snapshot to rebase from, which reconstructs something the pipeline already had, and layer
+  separation, which would work but is not needed.
+
 
 ---
 
@@ -603,7 +642,7 @@ Ghidra source location: `~/Repositories/Ghidra/`
 ## Changelog
 
 ### 2026-09-09
-- **`20-automap/` added.** A Doom-style automap is feasible: a level reads as a floorplan from
+- **`19-automap/` added.** A Doom-style automap is feasible: a level reads as a floorplan from
   directly above, which was not a given for a game composed as fixed camera views over
   pre-rendered backdrops. Two findings do most of the work. The collision geometry lives in
   `CDemonRaytrace::cube_data`, not the identically-shaped `cube_list` beside it — that one is the
@@ -614,7 +653,7 @@ Ghidra source location: `~/Repositories/Ghidra/`
   `nocturne_dump_geometry` and `scripts/Python/automap_preview.py`.
 
 ### 2026-09-07
-- **`19-resolution_and_aspect_ratio/` added.** `g_ResolutionTable[9]` turned out not to be the
+- **`18-resolution_and_aspect_ratio/` added.** `g_ResolutionTable[9]` turned out not to be the
   Options list at all — its only reader is `initGraphicsSystem`, for the 8bpp startup mode, and
   the menu is a hardcoded `game_pixy` chain. That left 1600x1200 unreachable and 400x300 a
   phantom with a label and step cases in both directions but nothing ever assigning it. Replaced

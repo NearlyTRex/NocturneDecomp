@@ -369,7 +369,13 @@ int nocturne_trigl_device_unlock_hold_buffer(void) {
     nocturne_gl_scene_upload(g_dev.hold, kHoldWidth, kHoldHeight,
                              g_dev.hold_pitch, g_dev.bpp);
     nocturne_trigl_gl_invalidate_state();
-    g_dev.target_ahead = false;
+    // The target is ahead: this upload came from the hold buffer, so the
+    // stretched scene now in the target is content the full-resolution image
+    // does not hold. The other two upload sites send g_dev.image itself and
+    // leave the pair in agreement, but this one does not, and a lock that
+    // skips its readback here keeps a composite the engine has already
+    // replaced — including the 2D drawn over it on the previous frame.
+    g_dev.target_ahead = true;
     return 1;
 }
 

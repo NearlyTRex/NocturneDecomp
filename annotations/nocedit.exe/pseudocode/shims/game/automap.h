@@ -9,7 +9,7 @@
 // their own beyond the one that draws.
 //
 // The design, the measured numbers behind it, and the extraction rules that
-// look right and are not, are in research/20-automap/README.md. The short
+// look right and are not, are in research/19-automap/README.md. The short
 // version, because getting any of these wrong produces a map that looks
 // plausible and lies:
 //

@@ -2,7 +2,7 @@
 // AUTOMAP — implementation
 // =============================================================================
 //
-// See automap.h for the contract and research/20-automap/ for why the rules are
+// See automap.h for the contract and research/19-automap/ for why the rules are
 // what they are.
 
 #include "game/automap.h"
@@ -155,7 +155,7 @@ const float kPanRate  = 260.0f;   // world units per second, at zoom 1
 // stop on a chosen floor.
 //
 // Expressed in world units rather than storeys. The band height is
-// content-dependent and tuned against a single level (see research/20-automap,
+// content-dependent and tuned against a single level (see research/19-automap,
 // open question 1), so a storey is not a reliable unit here.
 const float kElevateRate = 30.0f;
 

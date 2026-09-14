@@ -44,7 +44,7 @@ game's own renderer interface directly against modern GL.
 
 See [research/17-shader_renderer_migration/](../research/17-shader_renderer_migration/) for how
 that migration was verified, and
-[research/19-resolution_and_aspect_ratio/](../research/19-resolution_and_aspect_ratio/) for the
+[research/18-resolution_and_aspect_ratio/](../research/18-resolution_and_aspect_ratio/) for the
 two coordinate spaces the renderer works in.
 
 ## Conventions
