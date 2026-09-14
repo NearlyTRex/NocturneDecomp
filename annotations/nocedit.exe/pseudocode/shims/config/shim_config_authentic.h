@@ -59,6 +59,8 @@
 // | `NOCTURNE_AUTHENTIC_HUD_ICON_SPACE` | 0 | defect | inventory icons stay on screen above 640x480 |
 // | `NOCTURNE_AUTHENTIC_FOG_PLANE_SCALE` | 0 | defect | the fog plane is resampled onto the camera grid, not cropped to it |
 // | `NOCTURNE_AUTHENTIC_MODAL_FIT` | 0 | defect | a modal too wide for the screen is clamped, not pushed off both edges |
+// | `NOCTURNE_AUTHENTIC_BURN_BONE_COUNT` | 0 | defect | a burning character can reach fully-burned and die |
+// | `NOCTURNE_AUTHENTIC_BURN_LOOP_SOUND` | 0 | defect | the on-fire loop stops when the fire does |
 // | `NOCTURNE_AUTHENTIC_GOD_MODE_FALL` | 0 | defect | god mode survives a lethal-height fall |
 // | `NOCTURNE_AUTHENTIC_FATAL_FALL_HEAL` | 0 | defect | an already-fatal fall does not spend a health item |
 // | `NOCTURNE_AUTHENTIC_STREAM_LENGTH` | 0 | defect | a streamed MP3 ends where the sample actually ends |
@@ -620,6 +622,90 @@
 //   Override with -DNOCTURNE_AUTHENTIC_CONFIRM_PROMPTS=1.
 #ifndef NOCTURNE_AUTHENTIC_CONFIRM_PROMPTS
 #define NOCTURNE_AUTHENTIC_CONFIRM_PROMPTS 0
+#endif
+
+// NOCTURNE_AUTHENTIC_BURN_BONE_COUNT
+//   How CCharacter::processFire decides a burning character is fully consumed.
+//
+//   It counts bones that are "done" and compares the total against the bone
+//   count, but each bone is tested three times and every test increments:
+//
+//       if (65535 <= g_BoneBurnIntensity[b])                   iVar6++;   // burnt through
+//       if (farthest_child_bone[b] == -1)                      iVar6++;   // leaf bone
+//       if (visibility_flags[bone_to_part_map[b]] == 0)        iVar6++;   // hidden part
+//       ...
+//       if (iVar6 == bone_count) { burn_alpha = 1.0; is_fully_burned = 1; }
+//
+//   The three are independent in the binary, not an else-if chain: at 0042a935
+//   the failing branch and the fall-through after the INC at 0042a937 both land
+//   on 0042a938, and the same shape repeats for the second test. So one bone can
+//   contribute up to three, and the comparison at 0042a992 is a strict CMP/JNZ.
+//
+//   A model whose bones are largely leaves, or that has hidden parts, therefore
+//   overshoots bone_count before the count can equal it, the equality never
+//   holds, is_fully_burned is never set, and the character burns indefinitely
+//   without dying.
+//
+//   Counting once is necessary but not sufficient, because the budget is also
+//   too small. Each fire adds size * 65535 / 3 to its bone, so a bone needs its
+//   own fire to burn through, and fire_count is capped at the length of
+//   CCharacter::flames -- 50. Every bone that is neither a leaf nor on a hidden
+//   part must therefore hold one, and a model with more than 50 of them can
+//   never reach bone_count however long it burns. Measured on a Sentinel:
+//   71 bones, 14 leaves, 0 hidden, so 57 need fire against a cap of 50. A
+//   Batman resolves at 38 fires and dies normally, which is the whole
+//   difference between enemies that burn to death and enemies that do not.
+//
+//   fire_count only ever rises -- it is set to 0 in the constructor and
+//   incremented in spawnFireOnBone, and nothing decrements it -- so a character
+//   that cannot reach is_fully_burned has no other way to stop burning.
+//
+//   CCharacter::renderBurn carries a second copy of the same count and can set
+//   is_fully_burned from it as well, with two conditions rather than three and
+//   the same independent increments -- at 0042ae16 the failing branch and the
+//   fall-through after the INC at 0042ae18 both land on 0042ae19. It is counted
+//   once there too. Resolution of a burn the budget cannot finish stays in
+//   processFire, so the two do not race to end the same burn.
+//
+//   1: shipped behaviour -- three increments per bone against a strict equality,
+//      and no exit for a model the flame budget cannot cover.
+//   0: each bone counts once if any of the three makes it done, and a burn that
+//      provably cannot finish is resolved rather than left running. The second
+//      test is false for any model the budget does cover, so enemies that
+//      already burn to death are unaffected.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_BURN_BONE_COUNT=1.
+#ifndef NOCTURNE_AUTHENTIC_BURN_BONE_COUNT
+#define NOCTURNE_AUTHENTIC_BURN_BONE_COUNT 0
+#endif
+
+// NOCTURNE_AUTHENTIC_BURN_LOOP_SOUND
+//   What stops "character-onfire-loop.wav" once a character stops burning.
+//
+//   CCharacter::processFire starts the loop while fire_count is positive and
+//   keeps it alive by restarting whenever the handle stops answering:
+//
+//       if (setSfxVolume(sfx_handle, vol) == 0) {
+//           sfx_handle = playAmbientSound("character-onfire-loop.wav");
+//       }
+//
+//   The only killSfx sits in the other arm, reached when is_fully_burned is set
+//   and burn_alpha has counted below zero -- the fall-apart path. Any other way
+//   out of burning leaves the handle playing: the fire going out on its own, or
+//   the character dying of something else while alight. The loop is an ambient
+//   sound positioned on the actor, so it goes on crackling where the body fell.
+//
+//   NOCTURNE_AUTHENTIC_BURN_BONE_COUNT makes this more likely to be heard, since
+//   a character that can never become fully burned can never reach the one path
+//   that stops the sound.
+//
+//   1: shipped behaviour -- only the fall-apart path stops the loop.
+//   0: the loop is also stopped when fire_count reaches zero, which is the other
+//      way a character stops being on fire.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_BURN_LOOP_SOUND=1.
+#ifndef NOCTURNE_AUTHENTIC_BURN_LOOP_SOUND
+#define NOCTURNE_AUTHENTIC_BURN_LOOP_SOUND 0
 #endif
 
 // NOCTURNE_AUTHENTIC_GOD_MODE_FALL

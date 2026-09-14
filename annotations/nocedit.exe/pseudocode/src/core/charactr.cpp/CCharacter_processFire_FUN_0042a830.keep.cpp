@@ -29,11 +29,14 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042a830(CCharacter *t
   int local_30;
   int local_2c;
   int local_28;
+#if !NOCTURNE_AUTHENTIC_BURN_BONE_COUNT
+  int bones_off_the_skin;
+#endif
   SFire *local_20;
   float fVar1;
   CDeformableModelInstance *this_ptr_00;
   float fVar2;
-  
+
   this_ptr_00 = &this_ptr->model;
   skeleton = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr_00);
   if (this_ptr->is_fully_burned == 0) {
@@ -55,7 +58,9 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042a830(CCharacter *t
         } while (iVar6 < this_ptr->fire_count);
       }
       iVar6 = 0;
+      bones_off_the_skin = 0;
       for (local_2c = 0; local_2c < pCVar3->bone_count; local_2c++) {
+#if NOCTURNE_AUTHENTIC_BURN_BONE_COUNT
         if ((float)65535 <= g_BoneBurnIntensity[local_2c]) {
           iVar6 = iVar6 + 1;
         }
@@ -68,11 +73,33 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042a830(CCharacter *t
             [pCVar7->bone_to_part_map[local_2c]] == 0) {
           iVar6 = iVar6 + 1;
         }
+#else
+        pCVar7 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
+                           (&this_ptr->model);
+        if ((pCVar4->farthest_child_bone[local_2c] == -1) ||
+            ((this_ptr->model).part_data.visibility_flags
+             [pCVar7->bone_to_part_map[local_2c]] == 0)) {
+          iVar6 = iVar6 + 1;
+          bones_off_the_skin = bones_off_the_skin + 1;
+        }
+        else if ((float)65535 <= g_BoneBurnIntensity[local_2c]) {
+          iVar6 = iVar6 + 1;
+        }
+#endif
       }
       if (iVar6 == pCVar3->bone_count) {
         this_ptr->burn_alpha = 1.0;
         this_ptr->is_fully_burned = 1;
       }
+#if !NOCTURNE_AUTHENTIC_BURN_BONE_COUNT
+      else if ((this_ptr->fire_count ==
+                (int)(sizeof(this_ptr->flames) / sizeof(this_ptr->flames[0]))) &&
+               ((int)(sizeof(this_ptr->flames) / sizeof(this_ptr->flames[0])) <
+                pCVar3->bone_count - bones_off_the_skin)) {
+        this_ptr->burn_alpha = 1.0;
+        this_ptr->is_fully_burned = 1;
+      }
+#endif
       fVar3 = (float)this_ptr->fire_count * (float)0.59999999999999998 * (float)0.02 +
               (float)0.40000000000000002;
       iVar6 = sound_sndmain_cpp_setSfxVolume_FUN_005a9ae0(this_ptr->sfx_handle,fVar3);
@@ -85,6 +112,12 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042a830(CCharacter *t
         sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
       }
     }
+#if !NOCTURNE_AUTHENTIC_BURN_LOOP_SOUND
+    else if (this_ptr->sfx_handle != 0) {
+      sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handle);
+      this_ptr->sfx_handle = 0;
+    }
+#endif
   }
   else {
     fVar1 = this_ptr->burn_alpha - delta_time;

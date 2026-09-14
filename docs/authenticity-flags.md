@@ -74,7 +74,7 @@ flag.
 
 ## What is gated
 
-48 toggles. The kinds below are the same ones the header's table names, and a flag's kind is the
+50 toggles. The kinds below are the same ones the header's table names, and a flag's kind is the
 honest reason its default is what it is.
 
 **`host` — the shipped behaviour depends on Win32 + DirectDraw and cannot be reproduced**
@@ -101,6 +101,8 @@ honest reason its default is what it is.
 | `HUD_ICON_SPACE` | inventory icons stay on screen above 640x480 |
 | `FOG_PLANE_SCALE` | fog covers the view at modes whose camera grid is not 320 wide |
 | `MODAL_FIT` | a modal too wide for the screen is clamped rather than pushed off both edges |
+| `BURN_BONE_COUNT` | a burning character can reach fully-burned and die instead of burning forever |
+| `BURN_LOOP_SOUND` | the on-fire crackle stops when the fire does |
 | `GOD_MODE_FALL` | god mode survives a lethal-height fall |
 | `FATAL_FALL_HEAL` | a fall that was already fatal does not spend a health item to no effect |
 | `STREAM_LENGTH` | a streamed MP3 ends where the sample actually ends |

@@ -56,12 +56,19 @@ void __cdecl core_charactr_cpp_CCharacter_renderBurn_FUN_0042ad00(CCharacter *th
   }
   iVar2 = 0;
   for (iVar1 = 0; iVar1 < pCVar6->bone_count; iVar1++) {
+#if NOCTURNE_AUTHENTIC_BURN_BONE_COUNT
     if ((float)65535 <= g_BoneBurnIntensity[iVar1]) {
       iVar2 = iVar2 + 1;
     }
     if (pCVar7->farthest_child_bone[iVar1] == -1) {
       iVar2 = iVar2 + 1;
     }
+#else
+    if (((float)65535 <= g_BoneBurnIntensity[iVar1]) ||
+        (pCVar7->farthest_child_bone[iVar1] == -1)) {
+      iVar2 = iVar2 + 1;
+    }
+#endif
   }
   if (iVar2 == pCVar6->bone_count) {
     this_ptr->burn_alpha = 1.0;
