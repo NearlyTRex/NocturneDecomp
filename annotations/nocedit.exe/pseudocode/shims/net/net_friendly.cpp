@@ -22,7 +22,7 @@ int actor_is_hero(CDemonActor *actor)
 
 } // namespace
 
-extern "C" int nocturne_net_friendly_fire_block(CCharacter *victim, SDamageInfo *damage_info)
+extern "C" int nocturne_net_friendly_fire_blocked(CCharacter *victim, SDamageInfo *damage_info)
 {
 #if NOCTURNE_AUTHENTIC_FRIENDLY_FIRE
     (void)victim;
@@ -36,9 +36,6 @@ extern "C" int nocturne_net_friendly_fire_block(CCharacter *victim, SDamageInfo 
         g_CNetGamePtr->connection_type == CONNECTION_NONE) {
         return 0;
     }
-    if (damage_info->damage_amount <= 0.0f) {
-        return 0;
-    }
     if (actor_is_hero(&victim->base) == 0) {
         return 0;
     }
@@ -48,7 +45,25 @@ extern "C" int nocturne_net_friendly_fire_block(CCharacter *victim, SDamageInfo 
         actor_is_hero(damage_info->wielder) == 0) {
         return 0;
     }
+    return 1;
+#endif
+}
 
+extern "C" int nocturne_net_friendly_fire_block(CCharacter *victim, SDamageInfo *damage_info)
+{
+#if NOCTURNE_AUTHENTIC_FRIENDLY_FIRE
+    (void)victim;
+    (void)damage_info;
+    return 0;
+#else
+    // A hit already carrying no damage has nothing to block, and saying so
+    // keeps a god-mode or invincibility hit on the path it would have taken.
+    if (damage_info == (SDamageInfo *)0x0 || damage_info->damage_amount <= 0.0f) {
+        return 0;
+    }
+    if (nocturne_net_friendly_fire_blocked(victim, damage_info) == 0) {
+        return 0;
+    }
     damage_info->damage_amount = 0.0f;
     return 1;
 #endif

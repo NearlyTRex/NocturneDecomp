@@ -56,10 +56,71 @@
 // big_hat_cheat is the one flag the prologue does *not* clear, which is why
 // apply zeroes it by hand; see the big-head note below.
 //
-// WHY THREE PAGES. renderMenuAndGetChoice draws from one fixed start-y and does
+// WHY FIVE PAGES. renderMenuAndGetChoice draws from one fixed start-y and does
 // not scroll, so a list has a hard ceiling of about thirteen lines at 640x480.
-// Thirty presets do not fit on one screen, so CHEATS is a picker over Gameplay,
-// Weapons & ammo and Debug, each of which does.
+// The presets do not fit on one screen, so CHEATS is a picker over Gameplay,
+// Guns & ammo, Melee weapons, Items and Debug, each of which does.
+//
+// The two weapon pages each open with an "all" line covering the rest of that
+// page, which is what the shipped WINBLOWS did for the guns. The guns line is
+// that cheat unchanged; the melee line has no shipped counterpart and simply
+// grants every row below it.
+//
+// WHAT IS ON THE ITEMS PAGE. The health items, one line per kind the game has
+// a name for, plus the two carried items with no other home and the Baron
+// summon. Health is the reason the page exists: CHealthItem is one class with a
+// model, a use count and an HP figure, and the acts place 38 different tunings
+// of it, so a player has no way to see what the kinds are or to try one they
+// missed. Each line here is a real placement from the shipped data at its most
+// generous shipped tuning — the numbers are in kHealthItems in cheats.cpp, with
+// the actor each was read from.
+//
+// Batteries are deliberately not on it. CInventory::updateInventory recharges
+// the flashlight on its own, so a spare battery is a slower way of asking for
+// the Infinite battery line that is already on the Gameplay page.
+//
+// MELEE WEAPONS ARE DATA, NOT CLASSES. Every gun the shipped cheats hand out is
+// its own actor class — CShotgun, CCrossbow, CTommyGun — so giveHeroWeapon can
+// name one and createActorByName's factory table does the rest. The melee
+// weapons are not: there is a single CMelee class, and the axes, the shovel,
+// the spear, the stake and the holy weapon are all instances of it, told apart
+// only by the properties a set file gives them. A bare createActorByName
+// ("CMelee") therefore builds none of them — it builds the constructor's
+// defaults, which are melee.kfm, 10-15 damage, thrust only, and
+// can_go_in_inventory 0, i.e. an unnamed object the hero cannot carry.
+//
+// So these lines carry the properties themselves, in kMeleeWeapons in
+// cheats.cpp: one entry per weapon, transcribed from the CMelee blocks in the
+// shipped ACT1-ACT5 PODs, applied to a fresh CMelee before setup() runs. What
+// a cheat hands over is the weapon the level designers built, not an
+// approximation of it.
+//
+// Two details of the transcription are deliberate. can_go_in_inventory is
+// forced to 1: the shovel and the spear carry 0 in the data, which is what
+// makes them props you swing and drop rather than inventory items, and a weapon
+// granted into the inventory has to be one. And the sound names come from the
+// instances that spell them correctly — one of the two AX.KFM blocks in ACT1
+// asks for "ace-wood?.wav", which no sound in SOUND.POD is called.
+//
+// Guarded on the model name rather than on the class, since hasItemOfClass
+// ("CMelee") would answer yes for any of them and the first one granted would
+// block the rest.
+//
+// THE MODEL IS THE ITEM'S IDENTITY. CInventory::getItemDisplayName and its
+// description counterpart both look the carried model up in itemlist.txt by
+// name, and a model with no row there shows in the inventory as the literal
+// string "Add to dict: <model>". So a weapon here is only as nameable as its
+// model, and the labels below are the names that file already gives them
+// rather than anything invented.
+//
+// That decides the spear. ACT4's "Melee-Spear" overrides the model to
+// POLEARM1.KFM, which has no row — it does not need one, because that actor
+// also carries can_go_in_inventory 0 and so never reaches an inventory in the
+// shipped game. The row for a spear is against melee.kfm, the model
+// CMelee's own constructor installs, and the rest of that constructor's
+// defaults — thrust only, 10 to 15, dismember 0.5 — are the ACT4 spear's
+// numbers exactly. The spear is the class default with an art swap on one
+// placement, so this grants the model the game can name.
 //
 // WHICH FIFTEEN ARE MISSING, AND WHY. A preset has to be a piece of state that
 // can be *held*. The rest of the catalogue cannot be armed in advance:
@@ -159,6 +220,28 @@
 // nocturne_cheat_active, the same way Infinite battery is read. The warps
 // themselves live in warps.h.
 //
+// TWO CLASSES CARRY A CONSTRUCTOR MODEL THE DICTIONARY DOES NOT KNOW. Every
+// placement of them in the acts overrides the model, so the default is never
+// seen in a shipped game and was free to go stale. A cheat builds one straight
+// from the constructor, which is the only thing that ever displays it — and
+// itemlist.txt has no row for either, so both arrive in the inventory as the
+// literal string "Add to dict: <model>". The grants name a model instead:
+//
+//   CBaronWeapon  sets no model at all and inherits CWeapon's gat.kfm, which
+//                 itemlist.txt calls "Pistol - 45 caliber. Stranger's
+//                 favorite." — so SATURDAY as shipped hands over a second
+//                 pistol, indistinguishable from the real one. Granted as
+//                 a2s2-pouch.kfm, "Scat's Magic Powder - A component of the
+//                 spell to summon Baron Samedi", the only thing in the shipped
+//                 files that names what the weapon is. It sits on the Items
+//                 page for the same reason.
+//   CGasMask      sets gasmask.kfm; the one placement in ACT2 overrides it to
+//                 A2S3-GASMASK.KFM, which is the row the dictionary has.
+//
+// Every other model any line here can put in an inventory does resolve — the
+// eight gun classes, the ammo, the key, the seven melee weapons and the five
+// health items were all checked against itemlist.txt.
+//
 // The ALLWEAPONS cheat's own side effects are dropped: it forces god mode on
 // and refills health, and a line reading "God mode : Off" must not be
 // contradicted by the line below it. The Debug page likewise applies its
@@ -187,59 +270,88 @@
 extern "C" {
 #endif
 
-// Menu order, which is also ini order and apply order. The first thirty are
-// grouped by page in index order; anything appended later carries its page in
-// the table instead, since cheatsPage() selects on that rather than on a range.
+// Menu order, which is also ini order, apply order and the order the states go
+// on the wire. Each run below is one page, in the order the page shows them;
+// cheatsPage() gathers a page by the page field in the table rather than by an
+// index range, so the two only have to agree, not be the same thing.
 //
+// ON RENUMBERING. The ini is keyed by name, so settings follow a line wherever
+// it moves. The netplay packet is positional, but it carries its own length and
+// a guest refuses a set whose count is not this build's — so a renumber cannot
+// silently misapply a host's cheats to the wrong lines, it can only stand the
+// override down between builds that disagree. Both ends already have to be the
+// same build for a lockstep session. Renumber deliberately, all at once, rather
+// than appending a line onto the wrong page to avoid it.
+
 // Gameplay.
 #define NOCTURNE_CHEAT_GOD_MODE          0
 #define NOCTURNE_CHEAT_FREEZE            1
 #define NOCTURNE_CHEAT_DISMEMBER         2
-#define NOCTURNE_CHEAT_FLAMING_AMMO      3
-#define NOCTURNE_CHEAT_WEATHER           4   // three states, see below
-#define NOCTURNE_CHEAT_BIG_HEAD          5
-#define NOCTURNE_CHEAT_OLD_HAT           6
-#define NOCTURNE_CHEAT_SKELETON_KEY      7
-#define NOCTURNE_CHEAT_GAS_MASK          8
-// Weapons & ammo.
-#define NOCTURNE_CHEAT_ALL_WEAPONS       9
-#define NOCTURNE_CHEAT_SHOTGUN          10
-#define NOCTURNE_CHEAT_CROSSBOW         11
-#define NOCTURNE_CHEAT_DYNAMITE         12
-#define NOCTURNE_CHEAT_FLAME_THROWER    13
-#define NOCTURNE_CHEAT_TOMMY_GUN        14
-#define NOCTURNE_CHEAT_ELEPHANT_GUN     15
-#define NOCTURNE_CHEAT_LIGHT_GUN        16
-#define NOCTURNE_CHEAT_BARON            17
-#define NOCTURNE_CHEAT_SILVER_AMMO      18
-#define NOCTURNE_CHEAT_LITHIUM_AMMO     19
-#define NOCTURNE_CHEAT_MERCURY_AMMO     20
+#define NOCTURNE_CHEAT_WEATHER           3   // three states, see below
+#define NOCTURNE_CHEAT_BIG_HEAD          4
+#define NOCTURNE_CHEAT_OLD_HAT           5
+// No shipped cheat code of its own: the flashlight/goggles battery drain has no
+// engine flag to arm, so this is polled in place by CInventory::updateInventory
+// rather than applied at mission start.
+#define NOCTURNE_CHEAT_INF_BATTERY       6
+// No cheat code either: the shipped way to raise an event is the RAISE dialog,
+// which is behind developer mode and wants the name typed.
+#define NOCTURNE_CHEAT_EASTER_EGGS       7
+
+// Guns & ammo. The "all" line leads its page, the way the shipped WINBLOWS
+// stands in for the whole list.
+#define NOCTURNE_CHEAT_ALL_GUNS          8
+#define NOCTURNE_CHEAT_SHOTGUN           9
+#define NOCTURNE_CHEAT_CROSSBOW         10
+#define NOCTURNE_CHEAT_DYNAMITE         11
+#define NOCTURNE_CHEAT_FLAME_THROWER    12
+#define NOCTURNE_CHEAT_TOMMY_GUN        13
+#define NOCTURNE_CHEAT_ELEPHANT_GUN     14
+#define NOCTURNE_CHEAT_LIGHT_GUN        15
+#define NOCTURNE_CHEAT_FLAMING_AMMO     16
+#define NOCTURNE_CHEAT_SILVER_AMMO      17
+#define NOCTURNE_CHEAT_LITHIUM_AMMO     18
+#define NOCTURNE_CHEAT_MERCURY_AMMO     19
+
+// Melee weapons, each named for the model it carries, since that is what the
+// inventory keys its own name and description off.
+#define NOCTURNE_CHEAT_ALL_MELEE           20
+#define NOCTURNE_CHEAT_MELEE_WOODSMANS_AXE 21   // ax.kfm
+#define NOCTURNE_CHEAT_MELEE_AXE           22   // axe1.kfm
+#define NOCTURNE_CHEAT_MELEE_BLADED        23   // tort1.kfm
+#define NOCTURNE_CHEAT_MELEE_SHOVEL        24   // shoveit.kfm
+#define NOCTURNE_CHEAT_MELEE_SPEAR         25   // melee.kfm
+#define NOCTURNE_CHEAT_MELEE_STAKE         26   // stakelong.kfm
+#define NOCTURNE_CHEAT_MELEE_RELIC         27   // holyitem.kfm
+
+// Items. The health items lead, one line per kind the game actually names.
+#define NOCTURNE_CHEAT_ITEM_TONIC        28   // a1-bottle.kfm
+#define NOCTURNE_CHEAT_ITEM_DOCBAG       29   // a3-docbag.kfm
+#define NOCTURNE_CHEAT_ITEM_SCOTCH       30   // a3-bottle.kfm
+#define NOCTURNE_CHEAT_ITEM_HIRAM_KIT    31   // health_hirambag.kfm
+#define NOCTURNE_CHEAT_ITEM_CANDY        32   // candy.kfm
+#define NOCTURNE_CHEAT_ITEM_SKELETON_KEY 33
+#define NOCTURNE_CHEAT_ITEM_GAS_MASK     34
+#define NOCTURNE_CHEAT_ITEM_BARON        35   // a2s2-pouch.kfm
+
 // Debug. Developer mode leads, so the flat apply loop sets it before the codes
 // the shipped binary gates behind it.
-#define NOCTURNE_CHEAT_DEV_MODE         21
-#define NOCTURNE_CHEAT_GEOMETRY_DEBUG   22
-#define NOCTURNE_CHEAT_COLLISION_DEBUG  23
-#define NOCTURNE_CHEAT_EVENT_DEBUG      24
-#define NOCTURNE_CHEAT_SCRIPT_DEBUG     25
-#define NOCTURNE_CHEAT_MEMORY_DEBUG     26
-#define NOCTURNE_CHEAT_SOUND_DEBUG      27
-#define NOCTURNE_CHEAT_RENDER_MODE      28
+#define NOCTURNE_CHEAT_DEV_MODE         36
+#define NOCTURNE_CHEAT_GEOMETRY_DEBUG   37
+#define NOCTURNE_CHEAT_COLLISION_DEBUG  38
+#define NOCTURNE_CHEAT_EVENT_DEBUG      39
+#define NOCTURNE_CHEAT_SCRIPT_DEBUG     40
+#define NOCTURNE_CHEAT_MEMORY_DEBUG     41
+#define NOCTURNE_CHEAT_SOUND_DEBUG      42
+#define NOCTURNE_CHEAT_RENDER_MODE      43
 // NOD3D. Suppresses set geometry: all five CDemonSet batch render paths open
 // with a test of the field this sets.
-#define NOCTURNE_CHEAT_HIDE_SET_GEOMETRY 29
-// Appended rather than slotted into the Gameplay run above, so adding it does
-// not renumber every cheat after it — the ini is keyed by name but the netplay
-// packet is positional. cheatsPage() collects by page rather than by range, so
-// it still appears at the end of the Gameplay page.
-#define NOCTURNE_CHEAT_INF_BATTERY      30
-// Also appended, for the same reason. Raises a list of event names rather than
-// writing an engine field — see the easter-egg note above.
-#define NOCTURNE_CHEAT_EASTER_EGGS      31
-// Appended too, and the second line with nothing to apply: it decides whether
-// the pause menu offers WARPS, so it is read where that menu is built rather
-// than written into engine state at mission start. See shims/game/warps.h.
-#define NOCTURNE_CHEAT_WARPS            32
-#define NOCTURNE_CHEAT_COUNT            33
+#define NOCTURNE_CHEAT_HIDE_SET_GEOMETRY 44
+// Nothing to apply: it decides whether the pause menu offers WARPS, so it is
+// read where that menu is built rather than written into engine state at
+// mission start. See shims/game/warps.h.
+#define NOCTURNE_CHEAT_WARPS            45
+#define NOCTURNE_CHEAT_COUNT            46
 
 // The weather line's states, in cycle order.
 #define NOCTURNE_CHEAT_WEATHER_OFF  0

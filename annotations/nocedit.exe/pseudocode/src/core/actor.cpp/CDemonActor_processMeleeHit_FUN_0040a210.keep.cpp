@@ -48,6 +48,7 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor 
   CDemonActor *carrier;
   CDemonActor *current_actor;
 
+  current_actor = (CDemonActor *)0x0;
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
             (this_ptr,"..\\core\\actor.cpp",1514);
   is_raycast = (hit_type == 1);
@@ -251,7 +252,12 @@ LAB_0040a3e0:
       // Character raycast: process damage with impact direction = ray velocity (mag 10).
       else if (((carrier == (CDemonActor *)0x0) ||
                (iVar4 = (*(((pCVar3->base).vtable._uc)->_uc).canWalk)(pCVar3), iVar4 == 0)) ||
+#if NOCTURNE_AUTHENTIC_FRIENDLY_FIRE
               (iVar4 = core_actor_cpp_isOfClass_FUN_0040c6d0(current_actor,"CHero"),
+#else
+              (iVar4 = core_actor_cpp_isOfClass_FUN_0040c6d0
+                                 (g_CDemonSetPtr->collision_actor,"CHero"),
+#endif
               iVar4 == 0)) {
         core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_218);
         local_218.hit_part_index = g_CDemonSetPtr->collision_part_index;
@@ -269,8 +275,13 @@ LAB_0040a3e0:
                   (&pCVar3->base,&local_218.impact_direction,
                    &g_CDemonSetPtr->collision_impact_position);
         (*(((pCVar3->base).vtable._uc)->_uc).processDamage)(pCVar3,&local_218);
-        (*((this_ptr->vtable)._ub)->playAttackHitEffects)
-                  (this_ptr,hit_type,&local_218,&pCVar3->base);
+#if !NOCTURNE_AUTHENTIC_FRIENDLY_FIRE
+        if (nocturne_net_friendly_fire_blocked(pCVar3,&local_218) == 0)
+#endif
+        {
+          (*((this_ptr->vtable)._ub)->playAttackHitEffects)
+                    (this_ptr,hit_type,&local_218,&pCVar3->base);
+        }
         core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0
                   (g_CDemonSetPtr,g_CDemonSetPtr->collision_actor);
       }

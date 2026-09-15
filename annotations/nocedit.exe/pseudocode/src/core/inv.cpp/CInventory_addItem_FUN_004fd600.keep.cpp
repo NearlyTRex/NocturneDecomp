@@ -299,6 +299,34 @@ LAB_004fe2af:
               core_actor_cpp_castToClassHash_FUN_0040c790
                         ((CDemonActor *)pCVar8,g_CMeleeClassInfo.name_hash);
     if (pCVar11 != (CMelee *)0x0) {
+#if !NOCTURNE_AUTHENTIC_MELEE_PICKUP
+      {
+        CKeyFramedModelInstance *incoming_model;
+        int melee_idx;
+        incoming_model = core_inv_cpp_getItemModel_FUN_004fcda0(item_actor);
+        for (melee_idx = 0; melee_idx < this_ptr->item_count; melee_idx++) {
+          CDemonActor *held = this_ptr->items[melee_idx];
+          CKeyFramedModelInstance *held_model;
+          if (held == (CDemonActor *)0x0) {
+            continue;
+          }
+          if (core_actor_cpp_castToClassHash_FUN_0040c790(held,g_CMeleeClassInfo.name_hash) ==
+              (CDemonActor *)0x0) {
+            continue;
+          }
+          held_model = core_inv_cpp_getItemModel_FUN_004fcda0(held);
+          if ((held_model == (CKeyFramedModelInstance *)0x0) ||
+              (incoming_model == (CKeyFramedModelInstance *)0x0)) {
+            continue;
+          }
+          if (_stricmp(held_model->model_name,incoming_model->model_name) == 0) {
+            core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0
+                      (g_CDemonMissionPtr,item_actor,1);
+            return 1;
+          }
+        }
+      }
+#endif
       this_ptr->items[this_ptr->item_count] = item_actor;
       pCVar3 = g_CDemonMissionPtr;
       this_ptr->item_count = this_ptr->item_count + 1;

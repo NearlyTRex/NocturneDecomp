@@ -30,7 +30,9 @@ The cheat name (and the in-game message it displays) tells you what each one doe
 
 ## Reaching them without typing
 
-Typing the code is how the shipped binary offered these, and it still works. A build with `NOCTURNE_AUTHENTIC_CHEAT_MENU=0` also carries an **Options > CHEATS** screen — three pages (Gameplay, Weapons & ammo, Debug) of On/Off lines, persisted in `[Cheats]` in `system/nocturne.ini` and applied at `CDemonMission::startMission`. Thirty of the forty-five are presets there; `shims/cheats.h` lists the fifteen that cannot be (dialog prompts, one-shot actions, stopwatches and cycles) and why.
+Typing the code is how the shipped binary offered these, and it still works. A build with `NOCTURNE_AUTHENTIC_CHEAT_MENU=0` also carries an **Options > CHEATS** screen — four pages (Gameplay, Weapons & ammo, Melee weapons, Debug) of On/Off lines, persisted in `[Cheats]` in `system/nocturne.ini` and applied at `CDemonMission::startMission`. Thirty of the forty-five are presets there; `shims/cheats.h` lists the fifteen that cannot be (dialog prompts, one-shot actions, stopwatches and cycles) and why.
+
+The Melee weapons page has no shipped counterpart: the typed catalogue hands out guns only, and every melee weapon in the game is one `CMelee` class distinguished by set-file properties rather than a class of its own. Its seven lines carry those properties, transcribed from the `CMelee` blocks in the act PODs; the table is `kMeleeWeapons` in `shims/game/cheats.cpp`.
 
 ## Cheat-input control flow
 

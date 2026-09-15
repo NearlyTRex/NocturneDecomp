@@ -1,7 +1,7 @@
 #pragma once
 
 // =============================================================================
-// ATTRACT MOVIES — play a cutscene when the menu's splash music runs out
+// ATTRACT MOVIES — play a cutscene at a wrap of the menu's splash music
 // =============================================================================
 //
 // An addition, not a reconstruction: neither shipped binary ever did this.
@@ -9,11 +9,18 @@
 // nothing in the original ever played them. Gated on
 // NOCTURNE_AUTHENTIC_ATTRACT_MOVIES.
 //
-// The trigger is the main menu's splash music running out. CSound::configure
-// starts "splash-music-44.wav" (or the 22kHz variant on a low sample rate);
-// its keep also looks up that sample's length via CSound::getSoundDuration and
-// registers it here, and enterMainGameMenu ticks the countdown down with the
-// frame delta it already computes.
+// The trigger is the main menu's splash music reaching the end of a pass with
+// the main menu on screen. CSound::configure starts "splash-music-44.wav" (or
+// the 22kHz variant on a low sample rate); its keep also looks up that sample's
+// length via CSound::getSoundDuration and registers it here, and
+// enterMainGameMenu ticks this once a frame.
+//
+// The track loops — SOUND\SPLASH-MUSIC-44.SFX holds the single word "loop",
+// which is what CSfxSample::parseConfigFile reads to point loop_destinations[0]
+// back at the start of the sample — so it runs for as long as the menu is up
+// and its end comes round once per pass. Each of those is an opportunity, not a
+// deadline: one that arrives while a submenu or a dialog has the screen goes
+// unused, and the wait moves to the end of the pass now playing.
 //
 // Why a countdown rather than asking whether the sound is still playing:
 // isSfxPlaying() only reports whether the handle still owns a mixer slot, and
@@ -24,9 +31,9 @@
 // after 6000+ polls). The sample's own duration is the only honest answer
 // available from the menu.
 //
-// This module holds only the session state — the ints and float that would
-// otherwise need new game globals (generator/Ghidra territory). All the game
-// calls stay in the keeps.
+// This module holds only the session state — the scalars that would otherwise
+// need new game globals (generator/Ghidra territory). All the game calls stay
+// in the keeps.
 //
 // Nothing persists. The opening plays every launch as it always did; attract
 // movies only ever follow it within the same session.
@@ -42,22 +49,30 @@ extern "C" {
 void nocturne_attract_set_opening_played(int played);
 
 // CSound::configure, with the length in seconds of the splash music it just
-// started (CSound::getSoundDuration on the same filename). Starts/restarts the
-// countdown. A value <= 0 — which is what getSoundDuration returns as -1.0 when
-// the sample cannot be found — disarms the trigger instead of firing instantly.
+// started (CSound::getSoundDuration on the same filename). This is one pass of
+// the loop, so it sets both when the first end arrives and how far apart the
+// ones after it are. A value <= 0 — which is what getSoundDuration returns as
+// -1.0 when the sample cannot be found — disarms the trigger instead of firing
+// instantly.
 void nocturne_attract_set_music_duration(float seconds);
 
-// Called once per main-menu frame. Returns 1 on the frame the music is due to
-// have ended; the caller should play one attract movie and then restart the
-// music (CSound::reset followed by CSound::configure, the same pairing the menu
-// already uses around submenus), which re-arms this for the next cycle. Returns
-// 1 at most once per cycle.
+// Called once per main-menu frame. Returns 1 on the frame a pass of the music
+// ends with the main menu on screen for it; the caller should play one attract
+// movie and then restart the music (CSound::reset followed by CSound::configure,
+// the same pairing the menu already uses around submenus), which re-arms this
+// for the next cycle. Returns 1 at most once per cycle.
 //
-// Takes no frame delta. It used to accumulate one, and that desynced it from
-// the music whenever a blocking screen ran between two menu frames - the music
-// plays on through showOptionsScreen while the menu loop that would have ticked
-// the countdown is not running. The deadline is measured against a monotonic
-// clock instead, so the two cannot drift apart. See attract.cpp.
+// The window is the end of a pass *and* the main menu being the thing in front
+// of the player. The track loops, so a pass that ends while a submenu or a
+// dialog has the screen is simply not a chance to show a movie: the music wraps
+// and plays on, this waits for the end of the pass now running, and someone who
+// spends five minutes in the options screen comes back to the music still
+// going and a movie at its next end. Blocking screens are told from menu frames
+// by the distance between consecutive calls — menu frames are milliseconds
+// apart, a screen that blocks the loop is not.
+//
+// Takes no frame delta: the deadline is a point on a monotonic clock, so it
+// cannot drift against the music. See attract.cpp.
 int nocturne_attract_tick(void);
 
 // Holds a short silence, to be called after CSound::reset has stopped the music

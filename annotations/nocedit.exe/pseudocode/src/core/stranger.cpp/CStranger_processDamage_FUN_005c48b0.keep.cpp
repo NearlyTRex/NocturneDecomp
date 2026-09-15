@@ -31,7 +31,9 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_005c48b0(CStranger *t
   }
   core_hero_cpp_CHero_stopNearbyInteraction_FUN_004f3580(&this_ptr->base);
 #if !NOCTURNE_AUTHENTIC_FRIENDLY_FIRE
-  nocturne_net_friendly_fire_block(&(this_ptr->base).base,damage_info);
+  if (nocturne_net_friendly_fire_block(&(this_ptr->base).base,damage_info) != 0) {
+    return;
+  }
 #endif
   if ((0.0 < (this_ptr->base).invincibility_timer) && (0xb < (int)damage_info->damage_type)) {
     damage_info->damage_amount = 0.0;

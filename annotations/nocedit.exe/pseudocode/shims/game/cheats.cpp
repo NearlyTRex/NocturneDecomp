@@ -29,13 +29,15 @@ namespace {
 char kIniPath[]    = ".\\system\\nocturne.ini";
 char kIniSection[] = "Cheats";
 
-// Pages, in picker order. Each is a contiguous run of the cheat indexes.
+// Pages, in picker order.
 #define CHEAT_PAGE_GAMEPLAY 0
-#define CHEAT_PAGE_WEAPONS  1
-#define CHEAT_PAGE_DEBUG    2
-#define CHEAT_PAGE_COUNT    3
+#define CHEAT_PAGE_GUNS     1
+#define CHEAT_PAGE_MELEE    2
+#define CHEAT_PAGE_ITEMS    3
+#define CHEAT_PAGE_DEBUG    4
+#define CHEAT_PAGE_COUNT    5
 
-// Longest page is Weapons & ammo at twelve.
+// Longest page is Guns & ammo at twelve.
 #define CHEAT_MENU_MAX_LINES 16
 
 // The Options screen's own start-y, so a page's lines land where the ones it
@@ -56,25 +58,49 @@ const CheatDef kCheats[NOCTURNE_CHEAT_COUNT] = {
     { (char *)"God mode",                 (char *)"godMode",          CHEAT_PAGE_GAMEPLAY, 2 }, // GODGAMES
     { (char *)"Freeze enemies",           (char *)"freezeEnemies",    CHEAT_PAGE_GAMEPLAY, 2 }, // FREEZER
     { (char *)"Gratuitous dismemberment", (char *)"dismemberment",    CHEAT_PAGE_GAMEPLAY, 2 }, // GOREMODE
-    { (char *)"Flaming ammo",             (char *)"flamingAmmo",      CHEAT_PAGE_GAMEPLAY, 2 }, // BURNINGSTAKE
     { (char *)"Weather",                  (char *)"weather",          CHEAT_PAGE_GAMEPLAY, 3 }, // THUNDERSTORM / SNOWSTORM
     { (char *)"Big head",                 (char *)"bigHead",          CHEAT_PAGE_GAMEPLAY, 2 }, // BIGHEAD
     { (char *)"Old hat",                  (char *)"oldHat",           CHEAT_PAGE_GAMEPLAY, 2 }, // OLDHAT
-    { (char *)"Skeleton key",             (char *)"skeletonKey",      CHEAT_PAGE_GAMEPLAY, 2 }, // SKELETONKEY
-    { (char *)"Gas mask",                 (char *)"gasMask",          CHEAT_PAGE_GAMEPLAY, 2 }, // IFARTED
+    { (char *)"Infinite battery",         (char *)"infiniteBattery",  CHEAT_PAGE_GAMEPLAY, 2 },
+    { (char *)"Easter eggs",              (char *)"easterEggs",       CHEAT_PAGE_GAMEPLAY, 2 },
 
-    { (char *)"All weapons",              (char *)"allWeapons",       CHEAT_PAGE_WEAPONS,  2 }, // WINBLOWS
-    { (char *)"Shotgun",                  (char *)"shotgun",          CHEAT_PAGE_WEAPONS,  2 }, // GUNRACK
-    { (char *)"Crossbow",                 (char *)"crossbow",         CHEAT_PAGE_WEAPONS,  2 }, // STAKEGUN
-    { (char *)"Dynamite",                 (char *)"dynamite",         CHEAT_PAGE_WEAPONS,  2 }, // BLOWME
-    { (char *)"Flame thrower",            (char *)"flameThrower",     CHEAT_PAGE_WEAPONS,  2 }, // FTHROWER
-    { (char *)"Tommy gun",                (char *)"tommyGun",         CHEAT_PAGE_WEAPONS,  2 }, // MACHINEGUN
-    { (char *)"Elephant gun",             (char *)"elephantGun",      CHEAT_PAGE_WEAPONS,  2 }, // ELEGUN
-    { (char *)"Radiance emitter",         (char *)"lightGun",         CHEAT_PAGE_WEAPONS,  2 }, // LITEGUN
-    { (char *)"Summon the baron",         (char *)"baronWeapon",      CHEAT_PAGE_WEAPONS,  2 }, // SATURDAY
-    { (char *)"Silver ammo",              (char *)"silverAmmo",       CHEAT_PAGE_WEAPONS,  2 }, // SILVER
-    { (char *)"Lithium ammo",             (char *)"lithiumAmmo",      CHEAT_PAGE_WEAPONS,  2 }, // AQUA
-    { (char *)"Mercury ammo",             (char *)"mercuryAmmo",      CHEAT_PAGE_WEAPONS,  2 }, // MERCURY
+    { (char *)"All guns",                 (char *)"allWeapons",       CHEAT_PAGE_GUNS,     2 }, // WINBLOWS
+    { (char *)"Shotgun",                  (char *)"shotgun",          CHEAT_PAGE_GUNS,     2 }, // GUNRACK
+    { (char *)"Crossbow",                 (char *)"crossbow",         CHEAT_PAGE_GUNS,     2 }, // STAKEGUN
+    { (char *)"Dynamite",                 (char *)"dynamite",         CHEAT_PAGE_GUNS,     2 }, // BLOWME
+    { (char *)"Flame thrower",            (char *)"flameThrower",     CHEAT_PAGE_GUNS,     2 }, // FTHROWER
+    { (char *)"Tommy gun",                (char *)"tommyGun",         CHEAT_PAGE_GUNS,     2 }, // MACHINEGUN
+    { (char *)"Elephant gun",             (char *)"elephantGun",      CHEAT_PAGE_GUNS,     2 }, // ELEGUN
+    { (char *)"Radiance emitter",         (char *)"lightGun",         CHEAT_PAGE_GUNS,     2 }, // LITEGUN
+    { (char *)"Flaming ammo",             (char *)"flamingAmmo",      CHEAT_PAGE_GUNS,     2 }, // BURNINGSTAKE
+    { (char *)"Silver ammo",              (char *)"silverAmmo",       CHEAT_PAGE_GUNS,     2 }, // SILVER
+    { (char *)"Lithium ammo",             (char *)"lithiumAmmo",      CHEAT_PAGE_GUNS,     2 }, // AQUA
+    { (char *)"Mercury ammo",             (char *)"mercuryAmmo",      CHEAT_PAGE_GUNS,     2 }, // MERCURY
+
+    // No shipped cheat code for any of these: the typed catalogue hands out
+    // guns only. The properties they are built from are in kMeleeWeapons, in
+    // the same order. Each label is the name itemlist.txt gives that weapon's
+    // model, so a line reads the same as the inventory entry it produces.
+    { (char *)"All melee weapons",        (char *)"allMelee",          CHEAT_PAGE_MELEE,   2 },
+    { (char *)"Woodsman's Axe",           (char *)"meleeWoodsmansAxe", CHEAT_PAGE_MELEE,   2 },
+    { (char *)"Axe",                      (char *)"meleeAxe",          CHEAT_PAGE_MELEE,    2 },
+    { (char *)"Bladed Weapon",            (char *)"meleeBladed",       CHEAT_PAGE_MELEE,    2 },
+    { (char *)"Shovel",                   (char *)"meleeShovel",       CHEAT_PAGE_MELEE,    2 },
+    { (char *)"Spear",                    (char *)"meleeSpear",        CHEAT_PAGE_MELEE,    2 },
+    { (char *)"Wooden stake",             (char *)"meleeStake",        CHEAT_PAGE_MELEE,    2 },
+    { (char *)"Holy Relic",               (char *)"meleeRelic",        CHEAT_PAGE_MELEE,    2 },
+
+    // Health, one line per kind itemlist.txt names; the figures are in
+    // kHealthItems. Then the two carried items, and the Baron summon — see the
+    // items note in cheats.h for why that is here and not among the guns.
+    { (char *)"Restorative Tonic",        (char *)"itemTonic",        CHEAT_PAGE_ITEMS,    2 },
+    { (char *)"Doctor's bag",             (char *)"itemDocBag",       CHEAT_PAGE_ITEMS,    2 },
+    { (char *)"Bottle of Scotch",         (char *)"itemScotch",       CHEAT_PAGE_ITEMS,    2 },
+    { (char *)"Hiram's Medical Kit",      (char *)"itemHiramKit",     CHEAT_PAGE_ITEMS,    2 },
+    { (char *)"Candy bar",                (char *)"itemCandy",        CHEAT_PAGE_ITEMS,    2 },
+    { (char *)"Skeleton key",             (char *)"skeletonKey",      CHEAT_PAGE_ITEMS,    2 }, // SKELETONKEY
+    { (char *)"Gas mask",                 (char *)"gasMask",          CHEAT_PAGE_ITEMS,    2 }, // IFARTED
+    { (char *)"Scat's Magic Powder",      (char *)"baronWeapon",      CHEAT_PAGE_ITEMS,    2 }, // SATURDAY
 
     { (char *)"Developer mode",           (char *)"developerMode",    CHEAT_PAGE_DEBUG,    2 }, // GOLDMODE
     { (char *)"Geometry debug",           (char *)"geometryDebug",    CHEAT_PAGE_DEBUG,    2 }, // PORTER
@@ -86,19 +112,120 @@ const CheatDef kCheats[NOCTURNE_CHEAT_COUNT] = {
     { (char *)"Environment mapping",      (char *)"renderMode",       CHEAT_PAGE_DEBUG,    2 }, // T2000
     { (char *)"Hide set geometry",        (char *)"hideSetGeometry",  CHEAT_PAGE_DEBUG,    2 }, // NOD3D
 
-    // No shipped cheat code of its own: the flashlight/goggles battery drain
-    // has no engine flag to arm, so this is polled in place by
-    // CInventory::updateInventory rather than applied at mission start.
-    { (char *)"Infinite battery",         (char *)"infiniteBattery",  CHEAT_PAGE_GAMEPLAY, 2 },
-
-    // No cheat code either: the shipped way to raise an event is the RAISE
-    // dialog, which is behind developer mode and wants the name typed.
-    { (char *)"Easter eggs",              (char *)"easterEggs",       CHEAT_PAGE_GAMEPLAY, 2 },
-
     // Puts WARPS on the pause menu. Nothing is applied from here — see the
     // visibility-switch note in cheats.h.
-    { (char *)"Mission warps",            (char *)"missionWarps",     CHEAT_PAGE_GAMEPLAY, 2 },
+    { (char *)"Mission warps",            (char *)"missionWarps",     CHEAT_PAGE_DEBUG,    2 },
 };
+
+// One CHealthItem, as a set file describes one: a model, a number of uses and
+// the HP each use restores (capped at the hero's 100 by CHealthItem::useItem).
+struct HealthDef {
+    int   cheat;
+    char *model;
+    int   use_count;
+    float hp_restored;
+};
+
+// One row per kind itemlist.txt has a name for, at the most generous tuning
+// that kind is placed at anywhere in the shipped acts — the actor that tuning
+// was read from is named in each comment. Nothing here is invented: every pair
+// of numbers is one a player could already have picked up.
+const HealthDef kHealthItems[] = {
+    // ACT1 "HealthItem3". The tonic is placed nine times across ACT1 at eight
+    // different tunings; this is the longest-lasting of them.
+    { NOCTURNE_CHEAT_ITEM_TONIC,     (char *)"a1-bottle.kfm",        8,  40.0f },
+
+    // ACT3 "Chic3HealthItem9". The doctor's bag has five models across the
+    // acts under one name; this is the model with the best tuning.
+    { NOCTURNE_CHEAT_ITEM_DOCBAG,    (char *)"a3-docbag.kfm",       10,  50.0f },
+
+    // ACT3 "HealthItem3" — a full heal, which is what the scotch is placed as.
+    { NOCTURNE_CHEAT_ITEM_SCOTCH,    (char *)"a3-bottle.kfm",        1, 100.0f },
+
+    // ACT2 "HealthItem0". One placement, one tuning.
+    { NOCTURNE_CHEAT_ITEM_HIRAM_KIT, (char *)"health_hirambag.kfm",  5,  40.0f },
+
+    // ACT3 "Candybar0". Left as weak as it ships — it is the joke pickup, and
+    // a candy bar that heals like a doctor's bag stops being the joke.
+    { NOCTURNE_CHEAT_ITEM_CANDY,     (char *)"candy.kfm",            1,  10.0f },
+};
+
+#define HEALTH_ITEM_COUNT ((int)(sizeof(kHealthItems) / sizeof(kHealthItems[0])))
+
+static_assert(HEALTH_ITEM_COUNT ==
+                  NOCTURNE_CHEAT_ITEM_CANDY - NOCTURNE_CHEAT_ITEM_TONIC + 1,
+              "kHealthItems needs one row per health cheat line");
+
+// Models granted in place of a constructor default that itemlist.txt has no row
+// for. A class whose every shipped placement overrides the model never shows the
+// default, so the default was free to go stale — and a cheat that builds one
+// straight from the constructor is the only thing that ever displays it. See the
+// model note in cheats.h.
+char kBaronModel[]   = "a2s2-pouch.kfm";   // CBaronWeapon inherits CWeapon's gat.kfm
+char kGasMaskModel[] = "a2s3-gasmask.kfm"; // CGasMask's own default is gasmask.kfm
+
+// One CMelee, as a set file describes one. See the melee note in cheats.h for
+// why a class name is not enough and where these numbers come from.
+struct MeleeDef {
+    int   cheat;                 // the NOCTURNE_CHEAT_MELEE_* line that grants it
+    char *model;                 // modelName, loaded by CKeyFramedModelInstance
+    int   allowed_attack_types;  // 1 thrust, 2 swing, 3 both
+    float strength_lo;
+    float strength_hi;
+    float dismember_prob;
+    int   damage_type;           // g_MeleeDamageTypePairs: 0 Generic, 1 Holy, 2 Wood
+    char *thrust_hit_character_sound;
+    char *swing_hit_character_sound;
+    char *hit_other_sound;
+};
+
+// Transcribed from the CMelee blocks in the shipped act PODs, read with
+// scripts/Python/extract_pod.py. The actor each row is taken from is named in
+// its comment; where the same model appears more than once with different
+// numbers, the row says which instance was taken and what the others hold.
+const MeleeDef kMeleeWeapons[] = {
+    // ACT1 "MeleeAxe" / "CheatMeleeAxe0".
+    { NOCTURNE_CHEAT_MELEE_WOODSMANS_AXE, (char *)"AX.KFM",      2, 15.0f, 30.0f, 0.5f, 0,
+      (char *)"shovel?.wav",  (char *)"axe-meat?.wav", (char *)"axe-wood?.wav" },
+
+    // ACT2 "Melee-Axe". ACT4 carries the same model as "MeleeAxe" at 10-25 and
+    // a 0.7 dismember chance; this is the harder-hitting of the two.
+    { NOCTURNE_CHEAT_MELEE_AXE,         (char *)"AXE1.KFM",      2, 15.0f, 50.0f, 0.9f, 0,
+      (char *)"shovel?.wav",  (char *)"axe-meat?.wav", (char *)"axe-wood?.wav" },
+
+    // ACT4 "Melee-Axe" — the torture-chamber model, a third axe in the data
+    // under the same actor name as the one above.
+    { NOCTURNE_CHEAT_MELEE_BLADED,      (char *)"TORT1.KFM",     2, 10.0f, 15.0f, 0.5f, 0,
+      (char *)"axe-meat?.wav", (char *)"axe-meat?.wav", (char *)"axe-wood?.wav" },
+
+    // ACT2 "Melee-Shovel". The heaviest melee weapon in the game by some way,
+    // and the only one the data lets swing and thrust.
+    { NOCTURNE_CHEAT_MELEE_SHOVEL,      (char *)"SHOVEIT.KFM",   3, 60.0f, 80.0f, 0.5f, 0,
+      (char *)"shovel?.wav",  (char *)"shvl-f?.wav",   (char *)"shvl-s?.wav" },
+
+    // ACT4 "Melee-Spear", on the model itemlist.txt names rather than the
+    // POLEARM1.KFM that actor swaps in — see the model note in cheats.h. The
+    // numbers are the same either way; they are also CMelee's own defaults.
+    { NOCTURNE_CHEAT_MELEE_SPEAR,       (char *)"melee.kfm",     1, 10.0f, 15.0f, 0.5f, 0,
+      (char *)"shovel?.wav",  (char *)"shvl-f?.wav",   (char *)"shvl-s?.wav" },
+
+    // ACT1 "MeleeStake". Wood damage, and the only melee weapon that carries a
+    // damage type the vampires read.
+    { NOCTURNE_CHEAT_MELEE_STAKE,       (char *)"STAKELONG.KFM", 1, 10.0f, 15.0f, 0.1f, 2,
+      (char *)"shvl-s?.wav",  (char *)"shvl-s?.wav",   (char *)"shvl-s?.wav" },
+
+    // ACT1 "MeleeSuperweapon" / "CheatMeleeSuperWeapon". Holy damage.
+    { NOCTURNE_CHEAT_MELEE_RELIC,       (char *)"HOLYITEM.KFM",  1, 15.0f, 50.0f, 0.7f, 1,
+      (char *)"shovel?.wav",  (char *)"shvl-f?.wav",   (char *)"shvl-s?.wav" },
+};
+
+#define MELEE_WEAPON_COUNT ((int)(sizeof(kMeleeWeapons) / sizeof(kMeleeWeapons[0])))
+
+// A line with no row would draw and toggle and save to the ini while granting
+// nothing, which is the one failure here that looks like nothing at all.
+static_assert(MELEE_WEAPON_COUNT ==
+                  NOCTURNE_CHEAT_MELEE_RELIC - NOCTURNE_CHEAT_MELEE_WOODSMANS_AXE + 1,
+              "kMeleeWeapons needs one row per melee cheat line");
 
 // The event names the Easter eggs line raises at mission start, as persistent
 // events. A mission that does not read a name simply never asks for it, so the
@@ -115,7 +242,9 @@ char *kEasterEggEvents[] = {
 
 char *kPageTitles[CHEAT_PAGE_COUNT] = {
     (char *)"Gameplay",
-    (char *)"Weapons & Ammo",
+    (char *)"Guns & Ammo",
+    (char *)"Melee Weapons",
+    (char *)"Items",
     (char *)"Debug",
 };
 
@@ -220,7 +349,10 @@ CHero *localHero(void)
 // from the first shot. These are those two functions with the hero passed in,
 // so applyOne can arm every hero in index order and both machines build the
 // same world. Faithful otherwise, down to the 500-round load.
-void giveWeaponTo(CHero *hero, char *class_name)
+// `model` names the model to install in place of the class's own, or is null to
+// keep whatever the constructor set. It has to land before setup(), which is
+// what builds the physics box from the model that is loaded by then.
+void giveWeaponTo(CHero *hero, char *class_name, char *model)
 {
     CDemonActor *actor;
     CWeapon     *weapon;
@@ -229,14 +361,139 @@ void giveWeaponTo(CHero *hero, char *class_name)
         return;
     }
     actor = core_actor_cpp_createActorByName_FUN_0040c430(class_name);
-    core_mission_cpp_CDemonMission_generateActorName_FUN_00524700(g_CDemonMissionPtr, actor);
-    (*((actor->vtable)._ub)->setup)(actor);
     weapon = (CWeapon *)core_actor_cpp_castToClassHash_FUN_0040c790(
                             actor, g_CWeaponClassInfo.name_hash);
     if (weapon == (CWeapon *)0) {
         return;                                   // not a weapon class; leave it
     }
+    if (model != (char *)0) {
+        core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(&weapon->model, model);
+    }
+    core_mission_cpp_CDemonMission_generateActorName_FUN_00524700(g_CDemonMissionPtr, actor);
+    (*((actor->vtable)._ub)->setup)(actor);
     weapon->ammo_count = 500;
+    (*((actor->vtable)._ub)->pickup)(actor, (CDemonActor *)hero);
+    core_inv_cpp_CInventory_addItem_FUN_004fd600(&hero->inventory, actor, 0);
+}
+
+const HealthDef *healthDefFor(int cheat)
+{
+    int i;
+
+    for (i = 0; i < HEALTH_ITEM_COUNT; i++) {
+        if (kHealthItems[i].cheat == cheat) {
+            return &kHealthItems[i];
+        }
+    }
+    return (const HealthDef *)0;
+}
+
+// Every health item is a CHealthItem and every melee weapon a CMelee, so
+// hasItemOfClass would let the first one granted block all the others. The
+// model name is what tells them apart — and it is what the inventory itself
+// keys on, through the same getItemModel used here.
+int hasItemWithModel(CInventory *inventory, char *model)
+{
+    int i;
+
+    for (i = 0; i < inventory->item_count; i++) {
+        CDemonActor             *item = inventory->items[i];
+        CKeyFramedModelInstance *item_model;
+
+        if (item == (CDemonActor *)0) {
+            continue;
+        }
+        item_model = core_inv_cpp_getItemModel_FUN_004fcda0(item);
+        if (item_model == (CKeyFramedModelInstance *)0) {
+            continue;
+        }
+        if (_stricmp(item_model->model_name, model) == 0) {
+            return 1;
+        }
+    }
+    return 0;
+}
+
+void giveHealthTo(CHero *hero, const HealthDef *def)
+{
+    CHealthItem *item;
+
+    if (def == (const HealthDef *)0) {
+        return;
+    }
+    if (hasItemWithModel(&hero->inventory, def->model) != 0) {
+        return;
+    }
+    item = (CHealthItem *)core_actor_cpp_createActorByName_FUN_0040c430((char *)"CHealthItem");
+    item = (CHealthItem *)core_actor_cpp_castToClassHash_FUN_0040c790(
+                              &item->base, g_CHealthItemClassInfo.name_hash);
+    if (item == (CHealthItem *)0) {
+        return;
+    }
+    core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(&item->model, def->model);
+    item->use_count   = def->use_count;
+    item->hp_restored = def->hp_restored;
+
+    core_mission_cpp_CDemonMission_generateActorName_FUN_00524700(g_CDemonMissionPtr, &item->base);
+    (*((item->base).vtable._ub)->setup)(&item->base);
+    core_inv_cpp_CInventory_addItem_FUN_004fd600(&hero->inventory, &item->base, 0);
+}
+
+const MeleeDef *meleeDefFor(int cheat)
+{
+    int i;
+
+    for (i = 0; i < MELEE_WEAPON_COUNT; i++) {
+        if (kMeleeWeapons[i].cheat == cheat) {
+            return &kMeleeWeapons[i];
+        }
+    }
+    return (const MeleeDef *)0;
+}
+
+// giveWeaponTo for a weapon that has no class of its own — see the melee note
+// in cheats.h. The shape of it is the same, with the set-file properties
+// written in between: they have to land before setup(), which is what builds
+// the physics box from the model that is loaded by then, and setModelName
+// reloads the model instance.
+//
+// No 500-round load, unlike giveWeaponTo: a CMelee has no ammunition, and the
+// constructor and every instance in the data leave ammo_count at 0.
+void giveMeleeTo(CHero *hero, const MeleeDef *def)
+{
+    CDemonActor *actor;
+    CMelee      *melee;
+
+    if (def == (const MeleeDef *)0) {
+        return;
+    }
+    if (hasItemWithModel(&hero->inventory, def->model) != 0) {
+        return;
+    }
+    actor = core_actor_cpp_createActorByName_FUN_0040c430((char *)"CMelee");
+    melee = (CMelee *)core_actor_cpp_castToClassHash_FUN_0040c790(
+                          actor, g_CMeleeClassInfo.name_hash);
+    if (melee == (CMelee *)0) {
+        return;
+    }
+
+    core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(
+        &(melee->base).model, def->model);
+    melee->allowed_attack_types = def->allowed_attack_types;
+    melee->strength_lo          = def->strength_lo;
+    melee->strength_hi          = def->strength_hi;
+    melee->dismember_prob       = def->dismember_prob;
+    melee->ammo_type            = def->damage_type;
+    // Forced on: the shovel and the spear ship with this clear, which is what
+    // makes them props rather than inventory items, and this one is going into
+    // an inventory.
+    melee->can_go_in_inventory  = 1;
+    strcpy(melee->thrust_hit_character_sound, def->thrust_hit_character_sound);
+    strcpy(melee->swing_hit_character_sound,  def->swing_hit_character_sound);
+    strcpy(melee->hit_other_sound,            def->hit_other_sound);
+
+    core_mission_cpp_CDemonMission_generateActorName_FUN_00524700(g_CDemonMissionPtr, actor);
+    (*((actor->vtable)._ub)->setup)(actor);
     (*((actor->vtable)._ub)->pickup)(actor, (CDemonActor *)hero);
     core_inv_cpp_CInventory_addItem_FUN_004fd600(&hero->inventory, actor, 0);
 }
@@ -296,17 +553,28 @@ void giveAmmoTo(CHero *hero, char *weapon_class, EAmmoType ammo_type)
 // see cheats.h. The baron is deliberately not in it: WINBLOWS did not grant it.
 void giveAllWeapons(CHero *hero)
 {
-    giveAmmoTo(hero, (char *)"CGun", AMMO_TYPE_SILVER);
-    giveAmmoTo(hero, (char *)"CGun", AMMO_TYPE_LITHIUM);
-    giveAmmoTo(hero, (char *)"CGun", AMMO_TYPE_MERCURY);
-    giveWeaponTo(hero, (char *)"CShotgun");
-    giveWeaponTo(hero, (char *)"CCrossbow");
-    giveAmmoTo(hero, (char *)"CCrossbow", AMMO_TYPE_HOLY);
-    giveWeaponTo(hero, (char *)"CDynamite");
-    giveWeaponTo(hero, (char *)"CFlameThrower");
-    giveWeaponTo(hero, (char *)"CTommyGun");
-    giveWeaponTo(hero, (char *)"CElephantGun");
-    giveWeaponTo(hero, (char *)"CLightGun");
+    giveAmmoTo(hero,    (char *)"CGun",             AMMO_TYPE_SILVER);
+    giveAmmoTo(hero,    (char *)"CGun",             AMMO_TYPE_LITHIUM);
+    giveAmmoTo(hero,    (char *)"CGun",             AMMO_TYPE_MERCURY);
+    giveWeaponTo(hero,  (char *)"CShotgun",         (char *)0);
+    giveWeaponTo(hero,  (char *)"CCrossbow",        (char *)0);
+    giveAmmoTo(hero,    (char *)"CCrossbow",        AMMO_TYPE_HOLY);
+    giveWeaponTo(hero,  (char *)"CDynamite",        (char *)0);
+    giveWeaponTo(hero,  (char *)"CFlameThrower",    (char *)0);
+    giveWeaponTo(hero,  (char *)"CTommyGun",        (char *)0);
+    giveWeaponTo(hero,  (char *)"CElephantGun",     (char *)0);
+    giveWeaponTo(hero,  (char *)"CLightGun",        (char *)0);
+}
+
+// The melee counterpart of the line above: every row of kMeleeWeapons, each
+// guarded against a second copy inside giveMeleeTo.
+void giveAllMelee(CHero *hero)
+{
+    int i;
+
+    for (i = 0; i < MELEE_WEAPON_COUNT; i++) {
+        giveMeleeTo(hero, &kMeleeWeapons[i]);
+    }
 }
 
 // The shipped SKELETONKEY cheat, guard and all — it is the one grant the
@@ -344,6 +612,12 @@ void giveGasMask(CHero *hero)
     if (mask == (CGasMask *)0) {
         return;
     }
+    // The constructor's own "gasmask.kfm" has no itemlist.txt row, so an
+    // inventory holding one shows the literal "Add to dict: gasmask.kfm". The
+    // model with the row is the one the single shipped placement overrides to,
+    // and it is the only gas mask a player ever sees.
+    core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(
+        &mask->model, kGasMaskModel);
     core_mission_cpp_CDemonMission_generateActorName_FUN_00524700(g_CDemonMissionPtr, &mask->base);
     (*((mask->base).vtable._ub)->setup)(&mask->base);
     core_inv_cpp_CInventory_addItem_FUN_004fd600(&hero->inventory, &mask->base, 0);
@@ -501,38 +775,38 @@ void applyToEveryHero(int index, int value)
         case NOCTURNE_CHEAT_GOD_MODE:
             if (value != 0) { (hero->base).hit_points = 100.0f; }
             break;
-        case NOCTURNE_CHEAT_SKELETON_KEY:
+        case NOCTURNE_CHEAT_ITEM_SKELETON_KEY:
             if (value != 0) { giveSkeletonKey(hero); }
             break;
-        case NOCTURNE_CHEAT_GAS_MASK:
+        case NOCTURNE_CHEAT_ITEM_GAS_MASK:
             if (value != 0) { giveGasMask(hero); }
             break;
-        case NOCTURNE_CHEAT_ALL_WEAPONS:
+        case NOCTURNE_CHEAT_ALL_GUNS:
             if (value != 0) { giveAllWeapons(hero); }
             break;
         case NOCTURNE_CHEAT_SHOTGUN:
-            if (value != 0) { giveWeaponTo(hero, (char *)"CShotgun"); }
+            if (value != 0) { giveWeaponTo(hero, (char *)"CShotgun", (char *)0); }
             break;
         case NOCTURNE_CHEAT_CROSSBOW:
-            if (value != 0) { giveWeaponTo(hero, (char *)"CCrossbow"); }
+            if (value != 0) { giveWeaponTo(hero, (char *)"CCrossbow", (char *)0); }
             break;
         case NOCTURNE_CHEAT_DYNAMITE:
-            if (value != 0) { giveWeaponTo(hero, (char *)"CDynamite"); }
+            if (value != 0) { giveWeaponTo(hero, (char *)"CDynamite", (char *)0); }
             break;
         case NOCTURNE_CHEAT_FLAME_THROWER:
-            if (value != 0) { giveWeaponTo(hero, (char *)"CFlameThrower"); }
+            if (value != 0) { giveWeaponTo(hero, (char *)"CFlameThrower", (char *)0); }
             break;
         case NOCTURNE_CHEAT_TOMMY_GUN:
-            if (value != 0) { giveWeaponTo(hero, (char *)"CTommyGun"); }
+            if (value != 0) { giveWeaponTo(hero, (char *)"CTommyGun", (char *)0); }
             break;
         case NOCTURNE_CHEAT_ELEPHANT_GUN:
-            if (value != 0) { giveWeaponTo(hero, (char *)"CElephantGun"); }
+            if (value != 0) { giveWeaponTo(hero, (char *)"CElephantGun", (char *)0); }
             break;
         case NOCTURNE_CHEAT_LIGHT_GUN:
-            if (value != 0) { giveWeaponTo(hero, (char *)"CLightGun"); }
+            if (value != 0) { giveWeaponTo(hero, (char *)"CLightGun", (char *)0); }
             break;
-        case NOCTURNE_CHEAT_BARON:
-            if (value != 0) { giveWeaponTo(hero, (char *)"CBaronWeapon"); }
+        case NOCTURNE_CHEAT_ITEM_BARON:
+            if (value != 0) { giveWeaponTo(hero, (char *)"CBaronWeapon", kBaronModel); }
             break;
         case NOCTURNE_CHEAT_SILVER_AMMO:
             if (value != 0) { giveAmmoTo(hero, (char *)"CGun", AMMO_TYPE_SILVER); }
@@ -542,6 +816,31 @@ void applyToEveryHero(int index, int value)
             break;
         case NOCTURNE_CHEAT_MERCURY_AMMO:
             if (value != 0) { giveAmmoTo(hero, (char *)"CGun", AMMO_TYPE_MERCURY); }
+            break;
+
+        case NOCTURNE_CHEAT_ALL_MELEE:
+            if (value != 0) { giveAllMelee(hero); }
+            break;
+
+        // All one class, so they share a grant and are told apart by the row
+        // meleeDefFor hands back.
+        case NOCTURNE_CHEAT_MELEE_WOODSMANS_AXE:
+        case NOCTURNE_CHEAT_MELEE_AXE:
+        case NOCTURNE_CHEAT_MELEE_BLADED:
+        case NOCTURNE_CHEAT_MELEE_SHOVEL:
+        case NOCTURNE_CHEAT_MELEE_SPEAR:
+        case NOCTURNE_CHEAT_MELEE_STAKE:
+        case NOCTURNE_CHEAT_MELEE_RELIC:
+            if (value != 0) { giveMeleeTo(hero, meleeDefFor(index)); }
+            break;
+
+        // Likewise one class, told apart by the row healthDefFor hands back.
+        case NOCTURNE_CHEAT_ITEM_TONIC:
+        case NOCTURNE_CHEAT_ITEM_DOCBAG:
+        case NOCTURNE_CHEAT_ITEM_SCOTCH:
+        case NOCTURNE_CHEAT_ITEM_HIRAM_KIT:
+        case NOCTURNE_CHEAT_ITEM_CANDY:
+            if (value != 0) { giveHealthTo(hero, healthDefFor(index)); }
             break;
         }
     }
@@ -666,9 +965,9 @@ void applyOne(int index, int value)
     // with no case here does nothing, visibly, instead of being handed to a
     // hero loop that has no case for it either.
     case NOCTURNE_CHEAT_FLAMING_AMMO:
-    case NOCTURNE_CHEAT_SKELETON_KEY:
-    case NOCTURNE_CHEAT_GAS_MASK:
-    case NOCTURNE_CHEAT_ALL_WEAPONS:
+    case NOCTURNE_CHEAT_ITEM_SKELETON_KEY:
+    case NOCTURNE_CHEAT_ITEM_GAS_MASK:
+    case NOCTURNE_CHEAT_ALL_GUNS:
     case NOCTURNE_CHEAT_SHOTGUN:
     case NOCTURNE_CHEAT_CROSSBOW:
     case NOCTURNE_CHEAT_DYNAMITE:
@@ -676,10 +975,23 @@ void applyOne(int index, int value)
     case NOCTURNE_CHEAT_TOMMY_GUN:
     case NOCTURNE_CHEAT_ELEPHANT_GUN:
     case NOCTURNE_CHEAT_LIGHT_GUN:
-    case NOCTURNE_CHEAT_BARON:
+    case NOCTURNE_CHEAT_ITEM_BARON:
     case NOCTURNE_CHEAT_SILVER_AMMO:
     case NOCTURNE_CHEAT_LITHIUM_AMMO:
     case NOCTURNE_CHEAT_MERCURY_AMMO:
+    case NOCTURNE_CHEAT_ALL_MELEE:
+    case NOCTURNE_CHEAT_MELEE_WOODSMANS_AXE:
+    case NOCTURNE_CHEAT_MELEE_AXE:
+    case NOCTURNE_CHEAT_MELEE_BLADED:
+    case NOCTURNE_CHEAT_MELEE_SHOVEL:
+    case NOCTURNE_CHEAT_MELEE_SPEAR:
+    case NOCTURNE_CHEAT_MELEE_STAKE:
+    case NOCTURNE_CHEAT_MELEE_RELIC:
+    case NOCTURNE_CHEAT_ITEM_TONIC:
+    case NOCTURNE_CHEAT_ITEM_DOCBAG:
+    case NOCTURNE_CHEAT_ITEM_SCOTCH:
+    case NOCTURNE_CHEAT_ITEM_HIRAM_KIT:
+    case NOCTURNE_CHEAT_ITEM_CANDY:
         applyToEveryHero(index, value);
         break;
     }

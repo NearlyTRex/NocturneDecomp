@@ -15,7 +15,9 @@ void __cdecl core_colonel_cpp_CColonel_processDamage_FUN_004404b0(CColonel *this
   SMotion *pSVar2;
 
 #if !NOCTURNE_AUTHENTIC_FRIENDLY_FIRE
-  nocturne_net_friendly_fire_block(&(this_ptr->base).base,damage_info);
+  if (nocturne_net_friendly_fire_block(&(this_ptr->base).base,damage_info) != 0) {
+    return;
+  }
 #endif
   if (ABS((this_ptr->base).invincibility_timer) != 0.0) {
     damage_info->damage_amount = 0.0;

@@ -20,7 +20,9 @@ void __cdecl core_gabriela_cpp_CGabriella_processDamage_FUN_004d6b30(CGabriella 
   int force_immediate;
 
 #if !NOCTURNE_AUTHENTIC_FRIENDLY_FIRE
-  nocturne_net_friendly_fire_block(&(this_ptr->base).base,damage_info);
+  if (nocturne_net_friendly_fire_block(&(this_ptr->base).base,damage_info) != 0) {
+    return;
+  }
 #endif
   if (ABS((this_ptr->base).invincibility_timer) != 0.0) {
     damage_info->damage_amount = 0.0;

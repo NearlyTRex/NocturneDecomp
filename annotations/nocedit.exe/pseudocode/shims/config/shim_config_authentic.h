@@ -74,6 +74,7 @@
 // | `NOCTURNE_AUTHENTIC_BOTTOMLESS_FALL` | 0 | defect | a fall out of the world kills at once, not on chance geometry |
 // | `NOCTURNE_AUTHENTIC_CHAPTER_SELECT` | 0 | defect | START offers the chapter lists, pod.ini or no pod.ini |
 // | `NOCTURNE_AUTHENTIC_FRIENDLY_FIRE` | 0 | defect | heroes cannot damage each other in a network game |
+// | `NOCTURNE_AUTHENTIC_MELEE_PICKUP` | 0 | defect | a melee weapon already held does not take a second slot |
 // | `NOCTURNE_AUTHENTIC_PICKUP_WIELDS` | 0 | choice | a pickup is never drawn without the player asking |
 // | `NOCTURNE_AUTHENTIC_OPTIONS_RESUMES_GAME` | 0 | choice | leaving Options returns to the pause menu |
 // | `NOCTURNE_AUTHENTIC_CONFIRM_PROMPTS` | 0 | choice | no bracketed hotkey letters, and a short form when the long one will not fit |
@@ -1257,6 +1258,52 @@
 //   Override with -DNOCTURNE_AUTHENTIC_FRIENDLY_FIRE=1.
 #ifndef NOCTURNE_AUTHENTIC_FRIENDLY_FIRE
 #define NOCTURNE_AUTHENTIC_FRIENDLY_FIRE 0
+#endif
+
+// NOCTURNE_AUTHENTIC_MELEE_PICKUP
+//   Whether picking up a melee weapon already in the inventory fills a second
+//   slot with it.
+//
+//   CInventory::addItem handles a CWeapon two ways. Anything that is not a
+//   CMelee is checked against what is already held: the loop compares
+//   getActorClassName on both and the two ammo_types, and on a match folds the
+//   incoming weapon into the held one, prints "Found same weapon, increasing
+//   ammoCount" and destroys it. A second shotgun tops up the first.
+//
+//   The CMelee test sits ahead of that and returns before it is reached:
+//
+//       items[item_count++] = item_actor;
+//       markActorToDelete(mission, item_actor, 0);
+//       onPickup(item_actor, this);
+//       return 1;
+//
+//   The carve-out is deliberate, because the scan it skips could not be used
+//   here — every melee weapon's class name is "CMelee", so comparing class
+//   names would fold an axe into a stake. What is missing is a comparison that
+//   does distinguish them. Without one, nothing about a melee weapon is ever
+//   compared against the inventory, and every pickup appends: two axes off the
+//   same rack are two entries reading the same name, the same description and
+//   the same icon, with no way to tell which is selected.
+//
+//   1: authentic — every melee pickup takes another slot.
+//   0: the CMelee branch scans first, on the model name rather than the class
+//      name, which is also what the inventory itself keys an item's name,
+//      description and icon off (CInventory::getItemDisplayName through
+//      getItemModel). A pickup whose model is already held is discarded with
+//      markActorToDelete(mission, actor, 1), the disposal the merge above uses;
+//      the held weapon is kept, as it is there. Melee weapons with different
+//      models are unaffected, so a hero still carries an axe and a stake.
+//
+//   Model is not a perfect proxy for identity: the acts place axe1.kfm at
+//   15-50 damage with a 0.9 dismember chance in ACT2 and at 10-25 with 0.7 in
+//   ACT4, and the inventory carries across a chapter. Keeping the held weapon
+//   means the first of those two a hero meets is the one it keeps. The
+//   alternative is holding both, which is what the shipped game does, and the
+//   two are indistinguishable on screen.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_MELEE_PICKUP=1.
+#ifndef NOCTURNE_AUTHENTIC_MELEE_PICKUP
+#define NOCTURNE_AUTHENTIC_MELEE_PICKUP 0
 #endif
 
 // =============================================================================
