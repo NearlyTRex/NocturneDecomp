@@ -16,7 +16,7 @@ int __cdecl core_skeleton_cpp_CDeformableModel_selectLOD_FUN_0059ce40(CDeformabl
   int iVar2;
   int *piVar3;
   
-  iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
+  iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2);
   if (iVar1 == 0) {
     iVar2 = 0;
     if (1 < this_ptr->num_lods) {

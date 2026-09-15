@@ -45,7 +45,7 @@
 ;   crt_math.c_round_FUN_005fe6b0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
-;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
+;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0
 ;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640
 ;   engine_drender.cpp_CDemonRenderer_renderVertexAlphaPoly_FUN_0048bba0
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50
@@ -89,8 +89,8 @@ section .text
         ;   XREF to: 00509dea (CONDITIONAL_JUMP)  ; LAB_00509dea
     MOV EBX,dword ptr [0x006703ec]      ; 00509da4 | g_CDemonRendererPtr2
     PUSH EBX                            ; 00509daa | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 00509dab
-        ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(CDemonRenderer * this_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0 ; 00509dab
+        ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00509db0
     TEST EAX,EAX                        ; 00509db3
     JNZ 0x00509dea                      ; 00509db5
@@ -161,8 +161,8 @@ section .text
     ADD ESP,0x10                        ; 00509e7c
     MOV ECX,dword ptr [0x006703ec]      ; 00509e7f | g_CDemonRendererPtr2
     PUSH ECX                            ; 00509e85 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 00509e86
-        ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(CDemonRenderer * this_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0 ; 00509e86
+        ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00509e8b
     TEST EAX,EAX                        ; 00509e8e
     JNZ 0x0050a1ad                      ; 00509e90

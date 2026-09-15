@@ -71,7 +71,7 @@ void __cdecl core_fire_cpp_CFireball_render_FUN_004c0e70(CFireball *this_ptr)
   }
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
   if ((iVar7 != 0) &&
-     (iVar7 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
+     (iVar7 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2),
      iVar7 == 0)) {
     g_RenderVertexBuffer[0].u = 0x80000;
     g_RenderVertexBuffer[0].v = 0xf80000;

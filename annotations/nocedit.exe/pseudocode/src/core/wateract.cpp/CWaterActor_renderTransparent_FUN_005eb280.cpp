@@ -21,7 +21,7 @@ int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_005eb280(CWaterA
   CBoundingBox3D CStack_24;
   int iStack_c;
   
-  iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
+  iVar3 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2);
   if (iVar3 == 0) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);
     this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_24);

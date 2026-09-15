@@ -68,10 +68,10 @@ LAB_005ac012:
       engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30(ini_file,"Channels",&local_2c);
       engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30(ini_file,"Hz",&local_28);
       sound_sndmain_cpp_setSoundOutputMode_FUN_005ab170(local_24,local_2c,local_28);
-      local_20 = sound_sndmain_cpp_isSoundEnabled_FUN_005a96b0();
+      local_20 = sound_sndmain_cpp_isSoundMuted_FUN_005a96b0();
       engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30(ini_file,"Mute",&local_20);
       iVar4 = 0;
-      sound_sndmain_cpp_setSoundEnabled_FUN_005a96c0(local_20);
+      sound_sndmain_cpp_setSoundMuted_FUN_005a96c0(local_20);
       if (0 < g_MaxSoundChannels) {
         do {
           _sprintf(local_94,"SfxChannel%dEnabled",iVar4);

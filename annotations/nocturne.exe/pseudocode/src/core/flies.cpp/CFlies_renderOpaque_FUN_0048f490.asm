@@ -32,7 +32,7 @@
 ;   core_spline.cpp_computeSplineBasis_FUN_00533ce0
 ;   core_spline.cpp_evaluateSplinePoint3D_FUN_00533f10
 ;   crt_math.c_round_FUN_00563a30
-;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
+;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090
 ;   engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0045f460
 ;   engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_00460f20
 ;   engine_prim.c_replaceWWithDepth_FUN_004f99d0
@@ -53,8 +53,8 @@ section .text
     AND ESP,0xfffffff8                  ; 0048f49c
     MOV EDX,dword ptr [0x005ae704]      ; 0048f49f | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 0048f4a5 | DAT_01b4d738
-    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 0048f4a6
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090 ; 0048f4a6
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0048f4ab
     TEST EAX,EAX                        ; 0048f4ae
     JZ 0x0048f4bb                       ; 0048f4b0

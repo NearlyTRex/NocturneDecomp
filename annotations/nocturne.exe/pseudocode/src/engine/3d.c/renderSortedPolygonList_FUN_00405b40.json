@@ -92,13 +92,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 148,
-    "complexity_score": 391,
+    "complexity_score": 381,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 86,
-    "suspect_count": 28,
+    "suspect_count": 27,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -181,8 +181,8 @@
     },
     {
       "addr": "006b0278",
-      "name": "DAT_006b0278",
-      "type": "undefined4",
+      "name": "g_TexturesDisabled",
+      "type": "int",
       "value": null
     },
     {
@@ -330,14 +330,6 @@
       "severity": "moderate",
       "text": "engine_3d_c_queueSortedPolygon_FUN_00405ab0(primitive_00,owner_block,unaff_EDI);",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 47,
-      "match": "DAT_006b0278",
-      "severity": "mild",
-      "text": "if (DAT_006b0278 == 0) {",
-      "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",

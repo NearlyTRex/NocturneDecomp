@@ -51,7 +51,7 @@
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
 ;   engine_drender.cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0045f090
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050
-;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
+;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090
 ;   engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
 ;   ... and 10 more
@@ -120,15 +120,15 @@ section .text
     PUSH ECX                            ; 00512629 | DAT_01b4d738
     MOV dword ptr [ESP + 0x23c],EAX     ; 0051262a
     MOV dword ptr [0x01c02594],EDX      ; 00512631 | g_UseExternalRenderer
-    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 00512637
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090 ; 00512637
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0051263c
     PUSH 0x0                            ; 0051263f
     MOV EBX,dword ptr [0x005ae704]      ; 00512641 | g_CDemonRenderer_PTR_005ae704
     PUSH EBX                            ; 00512647 | DAT_01b4d738
     MOV dword ptr [ESP + 0x244],EAX     ; 00512648
-    CALL engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_00461070 ; 0051264f
-        ;   XREF to: 00461070 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_00461070(CDemonRenderer * this_ptr, int value)
+    CALL engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_00461070 ; 0051264f
+        ;   XREF to: 00461070 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_00461070(CDemonRenderer * this_ptr, int value)
     ADD ESP,0x8                         ; 00512654
     PUSH 0x30                           ; 00512657
     PUSH 0x40                           ; 00512659
@@ -366,8 +366,8 @@ section .text
     PUSH EBX                            ; 005129b7
     MOV ESI,dword ptr [0x005ae704]      ; 005129b8 | g_CDemonRenderer_PTR_005ae704
     PUSH ESI                            ; 005129be | DAT_01b4d738
-    CALL engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_00461070 ; 005129bf
-        ;   XREF to: 00461070 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_00461070(CDemonRenderer * this_ptr, int value)
+    CALL engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_00461070 ; 005129bf
+        ;   XREF to: 00461070 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_00461070(CDemonRenderer * this_ptr, int value)
     ADD ESP,0x8                         ; 005129c4
     MOV EAX,dword ptr [ESP + 0x238]     ; 005129c7
     MOV EDX,dword ptr [EBP + 0x14]      ; 005129ce

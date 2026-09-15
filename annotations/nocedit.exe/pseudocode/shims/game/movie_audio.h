@@ -18,12 +18,8 @@
 // would mean the Dialog slider silently governing the music in a movie.
 //
 // The global mute still applies on top — CGame::processHotkeys' F5 / Ctrl-M and
-// the "Sound : Muted" line both go through g_SoundEnabled, and a movie that
+// the "Sound : Muted" line both go through g_SoundMuted, and a movie that
 // kept playing through a mute is the complaint that started this.
-//
-// Note g_SoundEnabled's polarity: isSoundEnabled() returns NON-ZERO when sound
-// is MUTED. playSfxInternal returns early on non-zero and the mute hotkey sets
-// it to 1 while calling CSound::shutdown. The name reads the other way round.
 //
 // Persistence rides on the game's own INI, the same way the window mode does:
 // CIni::writeProfileString is a read-modify-write, so a key added from outside

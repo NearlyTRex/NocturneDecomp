@@ -41,8 +41,8 @@ void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00574910(CZThumb *this
     _fread(this_ptr->zbuffer_data,this_ptr->width * this_ptr->height,4,file_handle);
     return;
   }
-  value = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
-  engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_0048cac0(g_CDemonRendererPtr2,0);
+  value = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2);
+  engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_0048cac0(g_CDemonRendererPtr2,0);
   iVar1 = this_ptr->height;
   if (g_ZBufferScanlineArrayBackup[0] != (uint *)0x0) {
     g_CurrentFilename = "..\\core\\setdir.cpp";
@@ -81,6 +81,6 @@ void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00574910(CZThumb *this
     } while (iVar3 < iVar1 * 4);
   }
   g_ZBufferScanlineArrayBackup[0] = (uint *)0x0;
-  engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_0048cac0(g_CDemonRendererPtr2,value);
+  engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_0048cac0(g_CDemonRendererPtr2,value);
   return;
 }

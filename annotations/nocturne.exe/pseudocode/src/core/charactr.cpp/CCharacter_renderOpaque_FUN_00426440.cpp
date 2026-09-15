@@ -29,7 +29,7 @@ int __cdecl core_charactr_cpp_CCharacter_renderOpaque_FUN_00426440(CCharacter *t
       this_ptr->was_rendered_opaque = 1;
       core_charactr_cpp_CCharacter_renderCharacter_FUN_00425c20(this_ptr);
       if (_DAT_01cd4318 != 0) {
-        iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090
+        iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090
                           (g_CDemonRenderer_PTR_005ae704);
         if (iVar2 == 0) {
           core_motion_cpp_CMotionController_render_FUN_004e22b0

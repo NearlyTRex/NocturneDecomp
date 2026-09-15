@@ -34,8 +34,8 @@
 ;   crt_watcom.c__memset_FUN_004b19d0
 ;   engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0048c890
 ;   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
-;   engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_0048cac0
 ;   engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0048c650
+;   engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0048cac0
 ;   engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200
 ;
 ; *****************************************************************************
@@ -153,8 +153,8 @@ section .text
     PUSH 0x1                            ; 00472be9
     MOV EBX,dword ptr [0x006703ec]      ; 00472beb | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EBX                            ; 00472bf1 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_0048cac0 ; 00472bf2
-        ;   XREF to: 0048cac0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_0048cac0(CDemonRenderer * this_ptr, int value)
+    CALL engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0048cac0 ; 00472bf2
+        ;   XREF to: 0048cac0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0048cac0(CDemonRenderer * this_ptr, int value)
     ADD ESP,0x8                         ; 00472bf7
     MOV ESI,dword ptr [ESP + 0x18]      ; 00472bfa
     TEST ESI,ESI                        ; 00472bfe

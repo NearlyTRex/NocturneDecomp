@@ -13,7 +13,7 @@
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
+;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0
 ;
 ; *****************************************************************************
 
@@ -27,8 +27,8 @@ section .text
         ;   XREF to: 004f4b85 (CONDITIONAL_JUMP)  ; LAB_004f4b85
     MOV ECX,dword ptr [0x006703ec]      ; 004f4b4e | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 004f4b54 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 004f4b55
-        ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(CDemonRenderer * this_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0 ; 004f4b55
+        ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 004f4b5a
     TEST EAX,EAX                        ; 004f4b5d
     JZ 0x004f4b85                       ; 004f4b5f

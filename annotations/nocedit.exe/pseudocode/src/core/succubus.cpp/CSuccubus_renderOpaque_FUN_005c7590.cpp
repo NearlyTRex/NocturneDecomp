@@ -53,7 +53,7 @@ int __cdecl core_succubus_cpp_CSuccubus_renderOpaque_FUN_005c7590(CSuccubus *thi
         core_cloth_cpp_CClothList_render_FUN_0043c320(&this_ptr->hotdemon_cloth_list,model_ptr);
       }
       if ((INT_02f43978 != 0) &&
-         (iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
+         (iVar3 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2),
          iVar3 == 0)) {
         core_motion_cpp_CMotionController_render_FUN_0052e700
                   (&(this_ptr->base).base.model.motion_controller,(CDemonActor *)this_ptr);

@@ -49,7 +49,7 @@ void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_004210b0(CBoundingBox3D *thi
   fVar4 = (this_ptr->max).x * 256.0f;
   fVar5 = (this_ptr->max).y * 256.0f;
   fVar6 = (this_ptr->max).z * 256.0f;
-  pvVar2 = (void *)engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2)
+  pvVar2 = (void *)engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2)
   ;
   pCVar1 = g_CDemonRendererPtr2;
   if (pvVar2 == (void *)0x0) {

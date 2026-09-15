@@ -18,7 +18,7 @@ void __cdecl core_weapon_cpp_CWeapon_fireProjectile_FUN_00554750(CWeapon *this_p
   CVector3f local_28;
   CVector3f local_1c;
   
-  iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
+  iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
   ;
   if (iVar1 != 0) {
     return;

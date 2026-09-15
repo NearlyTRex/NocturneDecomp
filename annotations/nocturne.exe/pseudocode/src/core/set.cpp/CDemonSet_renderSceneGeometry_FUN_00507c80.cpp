@@ -47,7 +47,7 @@ LAB_00507d02:
                &this_ptr->cameras[this_ptr->selected_camera_index].pvs_list);
   }
 LAB_00507d51:
-  iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
+  iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
   ;
   if (iVar1 == 0) {
     if (g_UseExternalRenderer == 0) {

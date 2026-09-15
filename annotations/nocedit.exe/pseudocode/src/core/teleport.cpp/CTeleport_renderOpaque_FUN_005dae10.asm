@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940
-;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
+;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
     MOV ECX,dword ptr [0x006703ec]      ; 005dae1e | g_CDemonRendererInstance | g_CDemonRendererPtr2
         ;   Label: LAB_005dae1e
     PUSH ECX                            ; 005dae24 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 005dae25
-        ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(CDemonRenderer * this_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0 ; 005dae25
+        ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 005dae2a
     TEST EAX,EAX                        ; 005dae2d
     JNZ 0x005dae1b                      ; 005dae2f

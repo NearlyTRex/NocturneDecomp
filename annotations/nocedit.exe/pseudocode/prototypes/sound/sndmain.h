@@ -327,13 +327,13 @@ uint __cdecl startSfxTrackedDoublePosition(char *filename,CVector3d *position_so
 // Address: 005a9660
 int __cdecl isSfxPlaying(uint sfx_handle);
 
-// Original: sound_sndmain.cpp_isSoundEnabled_FUN_005a96b0
+// Original: sound_sndmain.cpp_isSoundMuted_FUN_005a96b0
 // Address: 005a96b0
-int __cdecl isSoundEnabled(void);
+int __cdecl isSoundMuted(void);
 
-// Original: sound_sndmain.cpp_setSoundEnabled_FUN_005a96c0
+// Original: sound_sndmain.cpp_setSoundMuted_FUN_005a96c0
 // Address: 005a96c0
-int __cdecl setSoundEnabled(int enable);
+int __cdecl setSoundMuted(int muted);
 
 // Original: sound_sndmain.cpp_getSfxSampleInfo_FUN_005a96e0
 // Address: 005a96e0

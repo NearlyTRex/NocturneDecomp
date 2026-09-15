@@ -31,7 +31,7 @@
 ;   undefined4 DAT_005c5038
 ;   undefined4 DAT_005c503c
 ;   undefined4 DAT_005c5040
-;   undefined4 DAT_006b0278
+;   int g_TexturesDisabled
 ;   undefined4 DAT_006b0280
 ;   int g_UseExternalRenderer
 ;   ... and 9 more
@@ -105,7 +105,7 @@ section .text
     TEST EBX,EBX                        ; 004fb410
     JZ 0x004fb86f                       ; 004fb412
         ;   XREF to: 004fb86f (CONDITIONAL_JUMP)  ; LAB_004fb86f
-    CMP dword ptr [0x006b0278],0x0      ; 004fb418 | DAT_006b0278
+    CMP dword ptr [0x006b0278],0x0      ; 004fb418 | g_TexturesDisabled
     JNZ 0x004fb86f                      ; 004fb41f
         ;   XREF to: 004fb86f (CONDITIONAL_JUMP)  ; LAB_004fb86f
     MOV EBX,dword ptr [ESP + 0x70]      ; 004fb425

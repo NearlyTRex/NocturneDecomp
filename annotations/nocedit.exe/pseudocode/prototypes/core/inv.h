@@ -15,9 +15,9 @@ CKeyFramedModelInstance * __cdecl getItemModel(CDemonActor *actor_ptr);
 // Address: 004fcf00
 char * __cdecl getItemDisplayName(CDemonActor *actor_ptr);
 
-// Original: core_inv.cpp_getItemIconName_FUN_004fcf70
+// Original: core_inv.cpp_getItemDescription_FUN_004fcf70
 // Address: 004fcf70
-char * __cdecl getItemIconName(CDemonActor *actor_ptr);
+char * __cdecl getItemDescription(CDemonActor *actor_ptr);
 
 // Original: core_inv.cpp_loadItem_FUN_004fcfe0
 // Address: 004fcfe0

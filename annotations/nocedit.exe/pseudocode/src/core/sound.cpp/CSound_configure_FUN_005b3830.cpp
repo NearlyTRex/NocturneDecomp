@@ -26,7 +26,7 @@ void __cdecl core_sound_cpp_CSound_configure_FUN_005b3830(CSound *this_ptr)
   if (1.0f < fVar2) {
     sound_sndmain_cpp_setSfxChannelVol_FUN_005a9cf0(2,1.0f);
   }
-  iVar2 = sound_sndmain_cpp_isSoundEnabled_FUN_005a96b0();
+  iVar2 = sound_sndmain_cpp_isSoundMuted_FUN_005a96b0();
   if (iVar2 == 0) {
     core_sound_cpp_CSound_reset_FUN_005b39a0(this_ptr);
     sound_sndmain_cpp_set3DListenerOrientRight_FUN_005ab6e0(0.0,0.0,0.0);

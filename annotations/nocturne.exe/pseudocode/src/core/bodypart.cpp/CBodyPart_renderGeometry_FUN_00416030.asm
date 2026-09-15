@@ -27,7 +27,7 @@
 ;   core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050
-;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
+;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090
 ;   engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0045f460
 ;   engine_drender.cpp_CDemonRenderer_renderTriangleBatch_FUN_004613d0
 ;
@@ -73,8 +73,8 @@ section .text
         ;   XREF to: 004160aa (CONDITIONAL_JUMP)  ; LAB_004160aa
     MOV EBP,dword ptr [0x005ae704]      ; 00416097 | g_CDemonRenderer_PTR_005ae704
     PUSH EBP                            ; 0041609d | DAT_01b4d738
-    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 0041609e
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090 ; 0041609e
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 004160a3
     TEST EAX,EAX                        ; 004160a6
     JZ 0x0041610e                       ; 004160a8
@@ -82,8 +82,8 @@ section .text
     MOV ECX,dword ptr [0x005ae704]      ; 004160aa | g_CDemonRenderer_PTR_005ae704
         ;   Label: LAB_004160aa
     PUSH ECX                            ; 004160b0 | DAT_01b4d738
-    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 004160b1
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090 ; 004160b1
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 004160b6
     TEST EAX,EAX                        ; 004160b9
     JNZ 0x004160d3                      ; 004160bb

@@ -37,7 +37,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_renderBackground_FUN_00419610(CBodyPart
     iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_01);
     if ((iVar1 != 0) &&
        ((this_ptr->transparent_geometry_flag == 0 ||
-        (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
+        (iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2),
         iVar2 != 0)))) {
       core_bodypart_cpp_CBodyPart_renderGeometry_FUN_00419340(this_ptr,-1);
     }

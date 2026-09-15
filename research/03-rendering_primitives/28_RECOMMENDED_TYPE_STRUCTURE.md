@@ -344,7 +344,7 @@ void renderBasicTextured(CDemonRenderer* this_ptr, SPrimitive* polygon_info) {
     if (this_ptr->plane_culling_enabled == 0 ||
         isVisiblePlane(&polygon_info->surface_normal)) {
 
-        if (this_ptr->face_count == 0) {
+        if (this_ptr->shadow_pass_active == 0) {
             g_RenderStateFlags = RENDER_TEXTURE_BASE;
             g_ScanlineRenderFunc = renderSolidColorDepth16xUnrolled;
         } else {
@@ -372,7 +372,7 @@ void renderBasicTextured(CDemonRenderer* this_ptr,
     if (this_ptr->plane_culling_enabled == 0 ||
         isVisiblePlane(&primitive->surface_normal)) {
 
-        if (this_ptr->face_count == 0) {
+        if (this_ptr->shadow_pass_active == 0) {
             g_RenderStateFlags = RENDER_TEXTURE_BASE;
             g_ScanlineRenderFunc = renderSolidColorDepth16xUnrolled;
         } else {

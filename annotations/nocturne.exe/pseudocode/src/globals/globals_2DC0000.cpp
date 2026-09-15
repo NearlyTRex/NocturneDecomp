@@ -154,6 +154,7 @@ HWND g_StoredWindowHandle = {};
 STrainNoise g_STrainNoise_ARRAY_02dc9ca4[10] = {};
 
 // int
+int g_SoundMuted = {};
 int g_UseDirect3D = {};
 int g_RendererCardIndex = {};
 int g_AGPTextureMode = {};

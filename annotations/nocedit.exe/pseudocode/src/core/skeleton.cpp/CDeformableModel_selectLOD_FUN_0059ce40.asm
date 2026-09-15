@@ -18,7 +18,7 @@
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_00420840
 ;   crt_math.c_round_FUN_005fe6b0
-;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
+;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0
 ;
 ; *****************************************************************************
 
@@ -31,8 +31,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x14]      ; 0059ce45
     MOV EDX,dword ptr [0x006703ec]      ; 0059ce49 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 0059ce4f | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 0059ce50
-        ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(CDemonRenderer * this_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0 ; 0059ce50
+        ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0059ce55
     TEST EAX,EAX                        ; 0059ce58
     JNZ 0x0059ce67                      ; 0059ce5a

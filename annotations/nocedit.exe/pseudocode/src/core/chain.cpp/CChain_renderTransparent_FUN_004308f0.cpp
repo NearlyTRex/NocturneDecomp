@@ -30,7 +30,7 @@ int __cdecl core_chain_cpp_CChain_renderTransparent_FUN_004308f0(CChain *this_pt
   CDemonRenderer *pCVar2;
   int *piVar1;
   
-  iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
+  iVar3 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2);
   if (iVar3 == 0) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);
     this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_90);

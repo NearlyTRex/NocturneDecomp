@@ -344,14 +344,14 @@ section .text
     TEST EAX,EAX                        ; 004d26a9
     JZ 0x004d26d3                       ; 004d26ab
         ;   XREF to: 004d26d3 (CONDITIONAL_JUMP)  ; LAB_004d26d3
-    CALL sound_sndmain.cpp_isSoundEnabled_FUN_00526ca0 ; 004d26ad
-        ;   XREF to: 00526ca0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSoundEnabled_FUN_00526ca0()
+    CALL sound_sndmain.cpp_isSoundMuted_FUN_00526ca0 ; 004d26ad
+        ;   XREF to: 00526ca0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSoundMuted_FUN_00526ca0()
     TEST EAX,EAX                        ; 004d26b2
     SETZ AL                             ; 004d26b4
     AND EAX,0xff                        ; 004d26b7
     PUSH EAX                            ; 004d26bc
-    CALL sound_sndmain.cpp_setSoundEnabled_FUN_00526cb0 ; 004d26bd
-        ;   XREF to: 00526cb0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSoundEnabled_FUN_00526cb0(int enable)
+    CALL sound_sndmain.cpp_setSoundMuted_FUN_00526cb0 ; 004d26bd
+        ;   XREF to: 00526cb0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSoundMuted_FUN_00526cb0(int enable)
     ADD ESP,0x4                         ; 004d26c2
     MOV EAX,[0x005bed68]                ; 004d26c5 | g_CSound_PTR_005bed68
     PUSH EAX                            ; 004d26ca

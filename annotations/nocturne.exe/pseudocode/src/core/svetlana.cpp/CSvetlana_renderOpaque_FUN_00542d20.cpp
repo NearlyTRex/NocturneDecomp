@@ -32,7 +32,7 @@ int __cdecl core_svetlana_cpp_CSvetlana_renderOpaque_FUN_00542d20(CSvetlana *thi
     iVar4 = iVar3;
   } while (iVar3 < 0x1e);
   iVar4 = core_charactr_cpp_CCharacter_renderOpaque_FUN_00426440((CCharacter *)this_ptr);
-  iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
+  iVar3 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
   ;
   if ((iVar3 == 0) && (_DAT_01c038f4 < 0x4000)) {
     pCVar5 = this_ptr;

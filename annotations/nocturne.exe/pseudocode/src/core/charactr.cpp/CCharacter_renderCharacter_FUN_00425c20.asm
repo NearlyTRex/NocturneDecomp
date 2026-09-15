@@ -31,7 +31,7 @@
 ;   core_charactr.cpp_CCharacter_renderEthereal_FUN_004270e0
 ;   core_cloth.cpp_CClothList_render_FUN_004385a0
 ;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_0051d9d0
-;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
+;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090
 ;
 ; *****************************************************************************
 
@@ -48,8 +48,8 @@ section .text
     MOV ECX,dword ptr [0x005ae704]      ; 00425c30 | g_CDemonRenderer_PTR_005ae704
         ;   Label: LAB_00425c30
     PUSH ECX                            ; 00425c36 | DAT_01b4d738
-    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 00425c37
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090 ; 00425c37
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00425c3c
     TEST EAX,EAX                        ; 00425c3f
     JNZ 0x00425c6b                      ; 00425c41

@@ -421,7 +421,7 @@ extern int g_SfxLastSlot;
 extern int g_LastSampleAccessIndex;
 extern int g_SoundBusyFlag;
 extern int g_HasHardware3DSound;
-extern int g_SoundEnabled;
+extern int g_SoundMuted;
 extern int g_MixBufferReadIndex;
 extern int g_MixBufferWriteIndex;
 extern int g_MixBufferSize;

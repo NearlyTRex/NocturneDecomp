@@ -11,7 +11,7 @@ struct SRenderVertex;
 #pragma pack(push, 1)
 typedef struct CDemonRenderer {
     struct SRenderVertex* vertex_buffer_ptr; // 0x0
-    int face_count; // 0x4
+    int shadow_pass_active; // 0x4
     int projection_mode; // 0x8
     int plane_culling_enabled; // 0xc
     int face_capture_enabled; // 0x10

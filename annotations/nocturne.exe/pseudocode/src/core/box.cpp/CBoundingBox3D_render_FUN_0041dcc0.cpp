@@ -50,7 +50,7 @@ void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_0041dcc0(CBoundingBox3D *thi
   local_10 = (int)ROUND((this_ptr->max).x * _DAT_0059aa80);
   local_c = (int)ROUND((this_ptr->max).y * _DAT_0059aa80);
   local_8.i = (int)ROUND((this_ptr->max).z * _DAT_0059aa80);
-  puVar2 = (uchar *)engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090
+  puVar2 = (uchar *)engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090
                               (g_CDemonRenderer_PTR_005ae704);
   pCVar1 = g_CDemonRenderer_PTR_005ae704;
   if (puVar2 == (uchar *)0x0) {

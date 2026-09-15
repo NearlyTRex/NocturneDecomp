@@ -87,7 +87,7 @@
 ;   crt_math.c_round_FUN_005fe6b0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0
-;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
+;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0
 ;   engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0048a8a0
 ;   engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00
 ;   engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_0048c970
@@ -106,8 +106,8 @@ section .text
     AND ESP,0xfffffff8                  ; 0059abfc
     MOV EDX,dword ptr [0x006703ec]      ; 0059abff | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 0059ac05 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 0059ac06
-        ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(CDemonRenderer * this_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0 ; 0059ac06
+        ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0059ac0b
     MOV dword ptr [ESP + 0xac],EAX      ; 0059ac0e
     MOV EAX,dword ptr [EBP + 0x18]      ; 0059ac15

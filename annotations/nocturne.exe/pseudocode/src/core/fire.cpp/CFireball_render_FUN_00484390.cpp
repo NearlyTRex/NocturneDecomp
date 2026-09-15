@@ -83,7 +83,7 @@ void __cdecl core_fire_cpp_CFireball_render_FUN_00484390(CFireball *this_ptr)
   }
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
   if ((iVar5 != 0) &&
-     (iVar5 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090
+     (iVar5 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090
                         (g_CDemonRenderer_PTR_005ae704), iVar5 == 0)) {
     DAT_005c502c = 0x80000;
     _DAT_005c5030 = 0xf80000;

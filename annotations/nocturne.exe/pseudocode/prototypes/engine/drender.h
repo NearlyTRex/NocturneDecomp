@@ -255,13 +255,13 @@ void __cdecl CDemonRenderer::setRenderAlphaNormalized(CDemonRenderer *this_ptr,f
 // Address: 00461050
 void __cdecl CDemonRenderer::enableFaceCapture(CDemonRenderer *this_ptr,int enabled);
 
-// Original: engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_00461070
+// Original: engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_00461070
 // Address: 00461070
-void __cdecl CDemonRenderer::setFaceCount(CDemonRenderer *this_ptr,int value);
+void __cdecl CDemonRenderer::setShadowPass(CDemonRenderer *this_ptr,int value);
 
-// Original: engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
+// Original: engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090
 // Address: 00461090
-int __cdecl CDemonRenderer::getFaceCount(CDemonRenderer *this_ptr);
+int __cdecl CDemonRenderer::isShadowPass(CDemonRenderer *this_ptr);
 
 // Original: engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0
 // Address: 004610a0

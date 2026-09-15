@@ -53,7 +53,7 @@ void __cdecl core_dlight_cpp_CDemonLight_beginBackgroundScene_FUN_0044e830(CDemo
         iVar3 = iVar3 + 4;
       } while (iVar2 < this_ptr->shadow_map_height);
     }
-    engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_00461070(g_CDemonRenderer_PTR_005ae704,1);
+    engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_00461070(g_CDemonRenderer_PTR_005ae704,1);
   }
   return;
 }

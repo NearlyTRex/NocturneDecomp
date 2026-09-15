@@ -49,7 +49,7 @@
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
 ;   crt_math.c_round_FUN_005fe6b0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
-;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
+;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0
 ;   engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10
 ;   engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0
 ;   engine_special.cpp_transformAndProjectPoint_FUN_005b575c
@@ -81,8 +81,8 @@ section .text
     MOV ECX,dword ptr [0x006703ec]      ; 005e00f3 | g_CDemonRendererInstance | g_CDemonRendererPtr2
         ;   Label: LAB_005e00f3
     PUSH ECX                            ; 005e00f9 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 005e00fa
-        ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(CDemonRenderer * this_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0 ; 005e00fa
+        ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 005e00ff
     TEST EAX,EAX                        ; 005e0102
     JNZ 0x005e00ea                      ; 005e0104

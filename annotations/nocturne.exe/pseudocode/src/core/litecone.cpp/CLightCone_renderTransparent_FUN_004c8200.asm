@@ -17,7 +17,7 @@
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0
 ;   core_dlight.cpp_renderConeLightGeometry_FUN_00451b70
-;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
+;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090
 ;
 ; *****************************************************************************
 
@@ -38,8 +38,8 @@ section .text
     MOV ECX,dword ptr [0x005ae704]      ; 004c8218 | g_CDemonRenderer_PTR_005ae704
         ;   Label: LAB_004c8218
     PUSH ECX                            ; 004c821e | DAT_01b4d738
-    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 004c821f
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090 ; 004c821f
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 004c8224
     TEST EAX,EAX                        ; 004c8227
     JNZ 0x004c8211                      ; 004c8229

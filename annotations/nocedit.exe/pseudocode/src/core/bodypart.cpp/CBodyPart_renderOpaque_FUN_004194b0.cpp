@@ -25,7 +25,7 @@ int __cdecl core_bodypart_cpp_CBodyPart_renderOpaque_FUN_004194b0(CBodyPart *thi
     this_ptr->is_visible = iVar2;
     if (iVar2 != 0) {
       if ((this_ptr->transparent_geometry_flag == 0) ||
-         (iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
+         (iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2),
          iVar1 != 0)) {
         core_bodypart_cpp_CBodyPart_renderGeometry_FUN_00419340(this_ptr,-1);
       }

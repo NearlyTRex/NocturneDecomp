@@ -13,7 +13,7 @@ void __cdecl core_set_cpp_CDemonSet_renderFaceListOrEnvMap_FUN_00570870(CDemonSe
   
   if (g_CGamePtr->suppress_set_geometry == 0) {
     if (g_CGamePtr->render_mode != 0) {
-      iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
+      iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2);
       if (iVar1 == 0) {
         core_set_cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0(this_ptr,faces,count,0xffff);
         return;

@@ -46,7 +46,7 @@ LAB_0056a1fb:
                &this_ptr->cameras[this_ptr->selected_camera_index].pvs_count,
                &this_ptr->cameras[this_ptr->selected_camera_index].pvs_list);
   }
-  iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
+  iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2);
   if (iVar1 == 0) {
     if (g_UseExternalRenderer == 0) {
       core_set_cpp_CDemonSet_buildMirrorList_FUN_00570b70(this_ptr);

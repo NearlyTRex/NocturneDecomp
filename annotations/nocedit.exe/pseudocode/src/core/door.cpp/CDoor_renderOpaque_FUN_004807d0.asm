@@ -31,7 +31,7 @@
 ;   core_box.cpp_CBoundingBox3D_render_FUN_004210b0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
 ;   core_door.cpp_CDoor_reposition_FUN_0047fd20
-;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
+;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0
 ;   shape_edittool.cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0
 ;
 ; *****************************************************************************
@@ -81,8 +81,8 @@ section .text
         ;   XREF to: 004809c5 (CONDITIONAL_JUMP)  ; LAB_004809c5
     MOV ESI,dword ptr [0x006703ec]      ; 00480828 | g_CDemonRendererPtr2
     PUSH ESI                            ; 0048082e | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 0048082f
-        ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(CDemonRenderer * this_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0 ; 0048082f
+        ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00480834
     TEST EAX,EAX                        ; 00480837
     JZ 0x004809c5                       ; 00480839
@@ -111,8 +111,8 @@ section .text
         ;   XREF to: 004809bc (CONDITIONAL_JUMP)  ; LAB_004809bc
     MOV ECX,dword ptr [0x006703ec]      ; 0048087a | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 00480880 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 00480881
-        ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(CDemonRenderer * this_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0 ; 00480881
+        ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00480886
     TEST EAX,EAX                        ; 00480889
     JNZ 0x004809bc                      ; 0048088b

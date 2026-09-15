@@ -38,7 +38,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_00477980(CKeyF
     }
     iVar9 = -1;
     iVar8 = 0;
-    iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
+    iVar4 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2);
     local_24 = 0;
     if (0 < this_ptr->part_count) {
       local_1c = this_ptr;

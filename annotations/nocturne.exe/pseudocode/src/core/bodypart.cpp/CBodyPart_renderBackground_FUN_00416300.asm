@@ -24,7 +24,7 @@
 ;   core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00416030
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0
 ;   engine_console.cpp_CConsole_printf_FUN_0043ac60
-;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
+;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090
 ;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0
 ;
 ; *****************************************************************************
@@ -129,8 +129,8 @@ section .text
     MOV EBP,dword ptr [0x005ae704]      ; 00416411 | g_CDemonRenderer_PTR_005ae704
         ;   Label: LAB_00416411
     PUSH EBP                            ; 00416417 | DAT_01b4d738
-    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 00416418
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090 ; 00416418
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0041641d
     TEST EAX,EAX                        ; 00416420
     JNZ 0x004163a3                      ; 00416422

@@ -20,7 +20,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedFace_FUN_0048b030(C
               (this_ptr,&face->vertex_indices,render_flags);
     return;
   }
-  if ((this_ptr->face_count == 0) && (this_ptr->skip_uv_extraction == 0)) {
+  if ((this_ptr->shadow_pass_active == 0) && (this_ptr->skip_uv_extraction == 0)) {
     uVar2 = face->vertex_indices.vertex_index_0;
     this_ptr->vertex_buffer_ptr[uVar2].u = (uint)face->u_coord_0 << 8;
     this_ptr->vertex_buffer_ptr[uVar2].v = (uint)face->v_coord_0 << 8;
@@ -34,7 +34,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedFace_FUN_0048b030(C
   g_VertexIndexBuffer[0] = (int)(face->vertex_indices).vertex_index_0;
   g_VertexIndexBuffer[1] = (int)(face->vertex_indices).vertex_index_1;
   g_VertexIndexBuffer[2] = (int)(face->vertex_indices).vertex_index_2;
-  if (this_ptr->face_count == 0) {
+  if (this_ptr->shadow_pass_active == 0) {
     if (g_BitsPerPixel == 0x20) {
       g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline32_FUN_005b4031;
     }

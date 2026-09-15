@@ -28,7 +28,7 @@
 ;   undefined4 DAT_005c5030
 ;   undefined4 DAT_005c5034
 ;   undefined4 DAT_005c5040
-;   undefined4 DAT_006b0278
+;   int g_TexturesDisabled
 ;   undefined4 DAT_006b0280
 ;   int g_UseExternalRenderer
 ;   int g_ProcessorType
@@ -101,7 +101,7 @@ section .text
     TEST EBX,EBX                        ; 004fa360
     JZ 0x004fa429                       ; 004fa362
         ;   XREF to: 004fa429 (CONDITIONAL_JUMP)  ; LAB_004fa429
-    CMP dword ptr [0x006b0278],0x0      ; 004fa368 | DAT_006b0278
+    CMP dword ptr [0x006b0278],0x0      ; 004fa368 | g_TexturesDisabled
     JNZ 0x004fa429                      ; 004fa36f
         ;   XREF to: 004fa429 (CONDITIONAL_JUMP)  ; LAB_004fa429
     MOV EBX,dword ptr [ESP + 0x6c]      ; 004fa375

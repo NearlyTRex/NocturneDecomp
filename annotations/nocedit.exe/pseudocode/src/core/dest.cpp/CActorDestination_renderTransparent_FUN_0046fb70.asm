@@ -31,7 +31,7 @@
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
+;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
 ;
 ; *****************************************************************************
@@ -58,8 +58,8 @@ section .text
     MOV ECX,dword ptr [0x006703ec]      ; 0046fb8e | g_CDemonRendererInstance | g_CDemonRendererPtr2
         ;   Label: LAB_0046fb8e
     PUSH ECX                            ; 0046fb94 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 0046fb95
-        ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(CDemonRenderer * this_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0 ; 0046fb95
+        ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0046fb9a
     TEST EAX,EAX                        ; 0046fb9d
     JNZ 0x0046fb85                      ; 0046fb9f

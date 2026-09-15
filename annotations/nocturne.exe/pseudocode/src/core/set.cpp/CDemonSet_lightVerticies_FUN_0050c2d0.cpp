@@ -86,7 +86,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet *this_
     core_main_c_displayErrorAndQuit_FUN_004c8440
               ("CDemonSet::lightVerticies - tried to light %d vertices, but GLOBAL_VERTEX_COUNT = %d",vertex_count,20000);
   }
-  iVar5 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
+  iVar5 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
   ;
   if (iVar5 == 0) {
     iVar5 = this_ptr->lighting_quality_mode;

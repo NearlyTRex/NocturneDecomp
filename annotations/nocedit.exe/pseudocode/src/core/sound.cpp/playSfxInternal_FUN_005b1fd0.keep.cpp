@@ -38,7 +38,7 @@ uint __cdecl core_sound_cpp_playSfxInternal_FUN_005b1fd0(void *user_data,char *s
   float local_1c;
   float local_18;
   
-  iVar2 = sound_sndmain_cpp_isSoundEnabled_FUN_005a96b0();
+  iVar2 = sound_sndmain_cpp_isSoundMuted_FUN_005a96b0();
   if (iVar2 != 0) {
     return 0;
   }

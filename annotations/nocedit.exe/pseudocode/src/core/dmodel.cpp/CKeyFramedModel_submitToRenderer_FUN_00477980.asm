@@ -26,7 +26,7 @@
 ;   core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_00570770
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0
-;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
+;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0
 ;   engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0
 ;   engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00
 ;
@@ -63,8 +63,8 @@ section .text
     PUSH EDX                            ; 004779c9 | g_CDemonRendererInstance
     MOV EDI,0xffffffff                  ; 004779ca
     XOR EBP,EBP                         ; 004779cf
-    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 004779d1
-        ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(CDemonRenderer * this_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0 ; 004779d1
+        ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 004779d6
     MOV EBX,dword ptr [ESI + 0x5584]    ; 004779d9
     MOV dword ptr [ESP + 0x10],EAX      ; 004779df

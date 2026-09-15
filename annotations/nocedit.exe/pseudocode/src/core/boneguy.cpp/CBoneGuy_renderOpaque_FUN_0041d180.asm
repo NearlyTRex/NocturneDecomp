@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0
-;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
+;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0
 ;
 ; *****************************************************************************
 
@@ -21,8 +21,8 @@ section .text
     MOV EDX,dword ptr [0x006703ec]      ; 0041d180 | g_CDemonRendererInstance | g_CDemonRendererPtr2
         ;   Label: core_boneguy.cpp_CBoneGuy_renderOpaque_FUN_0041d180
     PUSH EDX                            ; 0041d186 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 0041d187
-        ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(CDemonRenderer * this_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0 ; 0041d187
+        ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0041d18c
     TEST EAX,EAX                        ; 0041d18f
     JNZ 0x0041d194                      ; 0041d191

@@ -188,14 +188,14 @@ LAB_00500870:
     if ((iVar3 == 0) &&
        (iVar3 = core_inv_cpp_CInventory_isWeaponInCategory_FUN_004ffe70
                           (this_ptr,&this_ptr->selected_weapon->base,1), iVar3 == 0)) {
-      pcVar13 = core_inv_cpp_getItemIconName_FUN_004fcf70(&this_ptr->selected_weapon->base);
+      pcVar13 = core_inv_cpp_getItemDescription_FUN_004fcf70(&this_ptr->selected_weapon->base);
       pcVar7 = core_inv_cpp_getItemDisplayName_FUN_004fcf00(&this_ptr->selected_weapon->base);
       uVar13 = CONCAT44(pcVar13,pcVar7);
       pcVar13 = "%s\n\n%s";
       goto LAB_005008cd;
     }
     pcVar13 = core_inv_cpp_getItemDisplayName_FUN_004fcf00(&this_ptr->ammo_ptr->base);
-    pcVar7 = core_inv_cpp_getItemIconName_FUN_004fcf70(&this_ptr->selected_weapon->base);
+    pcVar7 = core_inv_cpp_getItemDescription_FUN_004fcf70(&this_ptr->selected_weapon->base);
     uVar13 = CONCAT44(pcVar13,pcVar7);
     pcVar13 = core_inv_cpp_getItemDisplayName_FUN_004fcf00(&this_ptr->selected_weapon->base);
     _sprintf(local_178,"%s\n\n%s %s",pcVar13,uVar13);
@@ -222,7 +222,7 @@ LAB_00500870:
     } while (cVar1 != '\0');
   }
   else {
-    pcVar5 = core_inv_cpp_getItemIconName_FUN_004fcf70(&this_ptr->selected_weapon->base);
+    pcVar5 = core_inv_cpp_getItemDescription_FUN_004fcf70(&this_ptr->selected_weapon->base);
     pcVar6 = core_inv_cpp_getItemDisplayName_FUN_004fcf00(&this_ptr->selected_weapon->base);
     uVar13 = CONCAT44(pcVar5,pcVar6);
     pcVar13 = "%s\n\n%s";
@@ -282,7 +282,7 @@ LAB_005009c0:
                  (g_WindowHeight - local_4c) - iVar5,0xf8,0);
     }
     if (this_ptr->render_mode_flag != 0) {
-      core_inv_cpp_getItemIconName_FUN_004fcf70(this_ptr->selected_item);
+      core_inv_cpp_getItemDescription_FUN_004fcf70(this_ptr->selected_item);
       pcVar13 = core_inv_cpp_getItemDisplayName_FUN_004fcf00(this_ptr->selected_item);
       _sprintf(local_578,"%s\n\n%s",pcVar13);
       iVar5 = engine_font_cpp_CBitFont_wrapText_FUN_004d0010

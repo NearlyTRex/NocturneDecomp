@@ -28,17 +28,17 @@ void __cdecl core_glass_cpp_CGlass_renderBrokenGlass_FUN_004ac7c0(CGlass *this_p
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(&this_ptr->base);
     return;
   }
-  iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
+  iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
   ;
   if (iVar2 == 0) {
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
               (g_CDemonRenderer_PTR_005ae704,&this_ptr->broken_texture);
   }
   else {
-    engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_00461070(g_CDemonRenderer_PTR_005ae704,0);
+    engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_00461070(g_CDemonRenderer_PTR_005ae704,0);
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
               (g_CDemonRenderer_PTR_005ae704,&this_ptr->broken_texture);
-    engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_00461070(g_CDemonRenderer_PTR_005ae704,1);
+    engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_00461070(g_CDemonRenderer_PTR_005ae704,1);
   }
   iVar2 = 0;
   if (0 < this_ptr->broken_vertex_count) {

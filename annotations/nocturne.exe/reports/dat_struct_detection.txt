@@ -2,12 +2,12 @@
 DAT_ STRUCT/ARRAY DETECTION REPORT
 ================================================================================
 
-Total DAT_ globals found: 2203
+Total DAT_ globals found: 2201
 Filtered out (inside named data): 320
 Immediate constants (not real globals): 61
-Real globals remaining: 2142
+Real globals remaining: 2140
 Clusters detected: 204
-DAT_ globals in clusters: 2068
+DAT_ globals in clusters: 2066
 
 Classification summary:
   unknown              71 clusters
@@ -636,32 +636,33 @@ MEDIUM CONFIDENCE (66 clusters)
       0x02dc9f2c  DAT_02dc9f2c  undefined4
       ... +33 more
 
-  0x02dc8318 - 0x02dc84c0  (38 items, 424 bytes span)
+  0x02dc8318 - 0x02dc84c0  (37 items, 424 bytes span)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
-    Reason: 8 groups of 3 consecutive ints found
-    Referenced by: 57 functions
+    Reason: 7 groups of 3 consecutive ints found
+    Referenced by: 55 functions
+     near: g_SoundMuted (int) at -12
       0x02dc8318  DAT_02dc8318  undefined4
       0x02dc831c  DAT_02dc831c  undefined4
       0x02dc8320  DAT_02dc8320  undefined4
-      0x02dc8324  DAT_02dc8324  undefined4
       0x02dc8328  DAT_02dc8328  undefined4
       0x02dc832c  DAT_02dc832c  undefined4
-      ... +32 more
+      0x02dc8330  DAT_02dc8330  undefined4 [float]
+      ... +31 more
 
-  0x006b023c - 0x006b02f8  (34 items, 188 bytes span)
+  0x006b023c - 0x006b02f8  (33 items, 188 bytes span)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
     Reason: 10 groups of 3 consecutive ints found
-    Referenced by: 57 functions
-     near: g_FontGlyphPtrs[33] (undefined4) at +892
+    Referenced by: 54 functions
+     near: g_TexturesDisabled (int) at -60
       0x006b023c  DAT_006b023c  undefined4
       0x006b0240  DAT_006b0240  undefined4
       0x006b0244  DAT_006b0244  undefined4
       0x006b0248  DAT_006b0248  undefined4
       0x006b024c  DAT_006b024c  undefined4
       0x006b0250  DAT_006b0250  undefined4
-      ... +28 more
+      ... +27 more
 
   0x01bcddc8 - 0x01bcdefc  (33 items, 308 bytes span)
     Classification: vector_groups

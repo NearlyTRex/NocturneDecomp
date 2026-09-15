@@ -107,13 +107,13 @@ LAB_0049f9d8:
       iVar4 != 0 &&
       (iVar4 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_M),
       iVar4 != 0)))) {
-    iVar4 = sound_sndmain_cpp_isSoundEnabled_FUN_00526ca0();
+    iVar4 = sound_sndmain_cpp_isSoundMuted_FUN_00526ca0();
     if (iVar4 == 0) {
       core_sound_cpp_CSound_shutdown_FUN_0052df90(g_CSound_PTR_005bed68);
-      sound_sndmain_cpp_setSoundEnabled_FUN_00526cb0(1);
+      sound_sndmain_cpp_setSoundMuted_FUN_00526cb0(1);
     }
     else {
-      sound_sndmain_cpp_setSoundEnabled_FUN_00526cb0(0);
+      sound_sndmain_cpp_setSoundMuted_FUN_00526cb0(0);
       core_sound_cpp_CSound_init_FUN_0052ddf0(g_CSound_PTR_005bed68);
     }
   }

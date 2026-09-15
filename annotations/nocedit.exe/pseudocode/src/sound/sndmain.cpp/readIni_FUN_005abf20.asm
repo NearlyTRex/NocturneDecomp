@@ -229,8 +229,8 @@ section .text
     CALL sound_sndmain.cpp_setSoundOutputMode_FUN_005ab170 ; 005ac0fd
         ;   XREF to: 005ab170 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSoundOutputMode_FUN_005ab170(int bits_per_sample, int channels, int sample_rate)
     ADD ESP,0xc                         ; 005ac102
-    CALL sound_sndmain.cpp_isSoundEnabled_FUN_005a96b0 ; 005ac105
-        ;   XREF to: 005a96b0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSoundEnabled_FUN_005a96b0()
+    CALL sound_sndmain.cpp_isSoundMuted_FUN_005a96b0 ; 005ac105
+        ;   XREF to: 005a96b0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSoundMuted_FUN_005a96b0()
     MOV dword ptr [ESP + 0x394],EAX     ; 005ac10a
     LEA EAX,[ESP + 0x394]               ; 005ac111
     PUSH EAX                            ; 005ac118
@@ -242,8 +242,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x394]     ; 005ac127
     PUSH EDI                            ; 005ac12e
     XOR EBX,EBX                         ; 005ac12f
-    CALL sound_sndmain.cpp_setSoundEnabled_FUN_005a96c0 ; 005ac131
-        ;   XREF to: 005a96c0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSoundEnabled_FUN_005a96c0(int enable)
+    CALL sound_sndmain.cpp_setSoundMuted_FUN_005a96c0 ; 005ac131
+        ;   XREF to: 005a96c0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSoundMuted_FUN_005a96c0(int muted)
     MOV EAX,[0x00681b10]                ; 005ac136 | g_MaxSoundChannels
     ADD ESP,0x4                         ; 005ac13b
     TEST EAX,EAX                        ; 005ac13e

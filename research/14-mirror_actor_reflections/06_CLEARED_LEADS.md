@@ -71,7 +71,7 @@ assembly.
   the min/max midpoint computation and its `FXCH`/`FMUL` ordering, the
   `local_20 += local_14/10/c` fold at `0x4205f9..0x420623`,
   `transformAndProjectPoint(out=local_74, in=local_44)`, the `CMP ESI,0xfde8 / JLE` reject
-  (`65000 < g_PerspectiveReciprocal`), and the `face_count != 0` → `isVisibleWithShadow`
+  (`65000 < g_PerspectiveReciprocal`), and the `shadow_pass_active != 0` → `isVisibleWithShadow`
   branch. The `.keep`'s two edits — a dead self-copy guard removal and
   `(int)g_CurrentSceneCamera` → `0` inside `if (g_CurrentSceneCamera == 0)` — are both
   exactly equivalent (`MOV [g_PerspectiveReciprocal], ECX` with `ECX == 0`).

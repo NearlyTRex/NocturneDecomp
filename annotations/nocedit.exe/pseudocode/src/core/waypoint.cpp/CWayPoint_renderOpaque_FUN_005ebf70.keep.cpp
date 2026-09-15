@@ -31,7 +31,7 @@ int __cdecl core_waypoint_cpp_CWayPoint_renderOpaque_FUN_005ebf70(CWayPoint *thi
   CWayPoint *this_ptr_00;
 
   if (((g_CDemonMissionPtr->is_in_editor != 0) &&
-      (iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
+      (iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2),
       iVar1 == 0)) &&
      (pCVar1 = (CWayPoint *)
                core_actor_cpp_castToClassHash_FUN_0040c790

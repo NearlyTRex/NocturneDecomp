@@ -57,7 +57,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderParts_FUN_00518510(CDeform
   int local_18;
   int local_14;
   
-  local_84 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090
+  local_84 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090
                        (g_CDemonRenderer_PTR_005ae704);
   local_80 = this_ptr->lod_info[lod_index].shadow_only_flag;
   if (local_80 != 0) {

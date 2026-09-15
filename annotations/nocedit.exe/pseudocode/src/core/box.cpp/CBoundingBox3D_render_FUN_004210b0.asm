@@ -34,7 +34,7 @@
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_getCorner_FUN_004202b0
 ;   core_set.cpp_CDemonSet_rotateVerticies_FUN_0056e7c0
-;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
+;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0
 ;   engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10
 ;   engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0
 ;   engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00
@@ -122,8 +122,8 @@ section .text
     FISTP dword ptr [EBX + 0x8]         ; 004211a2
     MOV EDI,dword ptr [0x006703ec]      ; 004211a5 | g_CDemonRendererPtr2
     PUSH EDI                            ; 004211ab | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 004211ac
-        ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(CDemonRenderer * this_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0 ; 004211ac
+        ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 004211b1
     TEST EAX,EAX                        ; 004211b4
     JNZ 0x004212ab                      ; 004211b6

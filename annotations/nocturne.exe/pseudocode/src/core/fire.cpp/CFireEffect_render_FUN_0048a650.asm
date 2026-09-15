@@ -131,8 +131,8 @@ section .text
         ;   XREF to: 0048a6f0 (CONDITIONAL_JUMP)  ; LAB_0048a6f0
     MOV EAX,[0x005ae704]                ; 0048a701 | g_CDemonRenderer_PTR_005ae704
     PUSH EAX                            ; 0048a706 | DAT_01b4d738
-    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 0048a707
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090 ; 0048a707
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0048a70c
     TEST EAX,EAX                        ; 0048a70f
     JNZ 0x0048a94c                      ; 0048a711

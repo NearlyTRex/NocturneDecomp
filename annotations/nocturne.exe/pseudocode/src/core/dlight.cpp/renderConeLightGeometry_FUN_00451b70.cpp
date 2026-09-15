@@ -49,7 +49,7 @@ void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_00451b70(CVector3f *pos
   int local_18;
   
   local_c0.base.count = (int)fov;
-  iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
+  iVar4 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
   ;
   if (iVar4 != 0) {
     return;

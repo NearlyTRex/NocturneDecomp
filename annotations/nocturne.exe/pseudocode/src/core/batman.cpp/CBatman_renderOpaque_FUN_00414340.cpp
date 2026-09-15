@@ -24,7 +24,7 @@ int __cdecl core_batman_cpp_CBatman_renderOpaque_FUN_00414340(CBatman *this_ptr)
     (this_ptr->base).base.was_rendered_opaque = 0;
   }
   if (((this_ptr->mist_state != 2) &&
-      (((iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090
+      (((iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090
                            (g_CDemonRenderer_PTR_005ae704), iVar2 == 0 ||
         (this_ptr->mist_state == 0)) && (iVar1 == 0)))) &&
      ((this_ptr->base).base.render_active == 0)) {
@@ -68,7 +68,7 @@ int __cdecl core_batman_cpp_CBatman_renderOpaque_FUN_00414340(CBatman *this_ptr)
         }
       }
       if ((_DAT_01cd4318 != 0) &&
-         (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090
+         (iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090
                             (g_CDemonRenderer_PTR_005ae704), iVar2 == 0)) {
         core_motion_cpp_CMotionController_render_FUN_004e22b0
                   (&(this_ptr->base).base.model.motion_controller,(CDemonActor *)this_ptr);

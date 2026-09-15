@@ -23,7 +23,7 @@
 ;   core_dlight.cpp_renderConeLightGeometry_FUN_00451b70
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
-;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
+;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090
 ;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0
 ;
 ; *****************************************************************************
@@ -62,8 +62,8 @@ section .text
         ;   XREF to: 0054f5b0 (CONDITIONAL_JUMP)  ; LAB_0054f5b0
     MOV EBX,dword ptr [0x005ae704]      ; 0054f561 | g_CDemonRenderer_PTR_005ae704
     PUSH EBX                            ; 0054f567 | DAT_01b4d738
-    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 0054f568
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090 ; 0054f568
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0054f56d
     TEST EAX,EAX                        ; 0054f570
     JZ 0x0054f5da                       ; 0054f572
@@ -175,8 +175,8 @@ section .text
     MOV ESI,dword ptr [0x005ae704]      ; 0054f6a7 | g_CDemonRenderer_PTR_005ae704
         ;   Label: LAB_0054f6a7
     PUSH ESI                            ; 0054f6ad | DAT_01b4d738
-    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 0054f6ae
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090 ; 0054f6ae
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0054f6b3
     TEST EAX,EAX                        ; 0054f6b6
     JNZ 0x0054f5ce                      ; 0054f6b8

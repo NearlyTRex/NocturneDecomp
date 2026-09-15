@@ -171,7 +171,7 @@ void renderBasicTextured(CDemonRenderer* this_ptr, SPrimitive* polygon_info) {
         isVisiblePlane(&polygon_info->surface_normal)) {
 
         // Set render state based on pass
-        if (this_ptr->face_count == 0) {
+        if (this_ptr->shadow_pass_active == 0) {
             g_RenderStateFlags = RENDER_TEXTURE_BASE;
             g_ScanlineRenderFunc = renderSolidColorDepth16xUnrolled;
         } else {

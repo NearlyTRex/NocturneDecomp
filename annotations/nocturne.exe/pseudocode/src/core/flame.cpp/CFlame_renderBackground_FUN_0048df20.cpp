@@ -26,7 +26,7 @@ void __cdecl core_flame_cpp_CFlame_renderBackground_FUN_0048df20(CFlame *this_pt
   this_ptr_00 = g_CDemonRenderer_PTR_005ae704;
   this_ptr->render_corona = 0;
   this_ptr->do_visibility_check = 0;
-  iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(this_ptr_00);
+  iVar4 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090(this_ptr_00);
   if ((iVar4 == 0) && (layer_flag != 0)) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(&this_ptr->base);
     this_ptr_01 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_38);

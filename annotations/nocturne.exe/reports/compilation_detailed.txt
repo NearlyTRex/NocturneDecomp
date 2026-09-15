@@ -11,7 +11,7 @@ Failed: 4922
 ERROR CATEGORIES
 --------------------------------------------------
   other                          44501
-  undeclared_identifier           5822
+  undeclared_identifier           5820
   format_error                     387
   type_error                       369
   incompatible_types               344
@@ -4490,9 +4490,9 @@ CATEGORY: other (44501 errors)
     Line 20: unknown type name 'FLOATING_SAVE_AREA'
   core_inv.cpp_freeInventory_FUN_004bf270
     Line 20: unknown type name 'FLOATING_SAVE_AREA'
-  core_inv.cpp_getItemDisplayName_FUN_004beca0
+  core_inv.cpp_getItemDescription_FUN_004bed10
     Line 20: unknown type name 'FLOATING_SAVE_AREA'
-  core_inv.cpp_getItemIconName_FUN_004bed10
+  core_inv.cpp_getItemDisplayName_FUN_004beca0
     Line 20: unknown type name 'FLOATING_SAVE_AREA'
   core_inv.cpp_getItemModel_FUN_004beb40
     Line 20: unknown type name 'FLOATING_SAVE_AREA'
@@ -8062,7 +8062,7 @@ CATEGORY: other (44501 errors)
     Line 20: unknown type name 'FLOATING_SAVE_AREA'
   engine_drender.cpp_CDemonRenderer_getCameraRotationRadians_FUN_00460db0
     Line 20: unknown type name 'FLOATING_SAVE_AREA'
-  engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
+  engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090
     Line 20: unknown type name 'FLOATING_SAVE_AREA'
   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0
     Line 20: unknown type name 'FLOATING_SAVE_AREA'
@@ -8150,8 +8150,6 @@ CATEGORY: other (44501 errors)
     Line 20: unknown type name 'FLOATING_SAVE_AREA'
   engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_00460f10
     Line 20: unknown type name 'FLOATING_SAVE_AREA'
-  engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_00461070
-    Line 20: unknown type name 'FLOATING_SAVE_AREA'
   engine_drender.cpp_CDemonRenderer_setLightDirection_FUN_00460c70
     Line 20: unknown type name 'FLOATING_SAVE_AREA'
   engine_drender.cpp_CDemonRenderer_setLightIntensity_FUN_00460c40
@@ -8171,6 +8169,8 @@ CATEGORY: other (44501 errors)
   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
     Line 20: unknown type name 'FLOATING_SAVE_AREA'
   engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00460fb0
+    Line 20: unknown type name 'FLOATING_SAVE_AREA'
+  engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_00461070
     Line 20: unknown type name 'FLOATING_SAVE_AREA'
   engine_drender.cpp_CDemonRenderer_setTextureCaptureMode_FUN_004619f0
     Line 20: unknown type name 'FLOATING_SAVE_AREA'
@@ -9410,7 +9410,7 @@ CATEGORY: other (44501 errors)
     Line 20: unknown type name 'FLOATING_SAVE_AREA'
   sound_sndmain.cpp_isSoundBusy_FUN_00528490
     Line 20: unknown type name 'FLOATING_SAVE_AREA'
-  sound_sndmain.cpp_isSoundEnabled_FUN_00526ca0
+  sound_sndmain.cpp_isSoundMuted_FUN_00526ca0
     Line 20: unknown type name 'FLOATING_SAVE_AREA'
   sound_sndmain.cpp_isSoundSystemActive_FUN_00528480
     Line 20: unknown type name 'FLOATING_SAVE_AREA'
@@ -9534,7 +9534,7 @@ CATEGORY: other (44501 errors)
     Line 20: unknown type name 'FLOATING_SAVE_AREA'
   sound_sndmain.cpp_setSfxVolume_FUN_005270d0
     Line 20: unknown type name 'FLOATING_SAVE_AREA'
-  sound_sndmain.cpp_setSoundEnabled_FUN_00526cb0
+  sound_sndmain.cpp_setSoundMuted_FUN_00526cb0
     Line 20: unknown type name 'FLOATING_SAVE_AREA'
   sound_sndmain.cpp_setSoundOutputMode_FUN_005280c0
     Line 20: unknown type name 'FLOATING_SAVE_AREA'
@@ -9870,7 +9870,7 @@ CATEGORY: other (44501 errors)
     Line 20: unknown type name 'FLOATING_SAVE_AREA'
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (5822 errors)
+CATEGORY: undeclared_identifier (5820 errors)
 ====================================================================================================
 
   engine_winfont.cpp_CWinFont_createTextBackground_FUN_005584d0
@@ -11365,9 +11365,9 @@ CATEGORY: undeclared_identifier (5822 errors)
     Line 24: use of undeclared identifier '_DAT_01cae30c'
   core_inivar.cpp_writeIniData_FUN_004be2d0
     Line 35: use of undeclared identifier '_DAT_01cae37c'
-  core_inv.cpp_getItemDisplayName_FUN_004beca0
+  core_inv.cpp_getItemDescription_FUN_004bed10
     Line 22: use of undeclared identifier '_DAT_01cb03d0'
-  core_inv.cpp_getItemIconName_FUN_004bed10
+  core_inv.cpp_getItemDisplayName_FUN_004beca0
     Line 22: use of undeclared identifier '_DAT_01cb03d0'
   core_inv.cpp_CInventory_renderAllItems_FUN_004c2470
     Line 72: use of undeclared identifier '_DAT_01cc30a0'
@@ -11753,16 +11753,14 @@ CATEGORY: undeclared_identifier (5822 errors)
     Line 28: use of undeclared identifier '_DAT_02dc8318'
   sound_sndmain.cpp_setSfxVolume_FUN_005270d0
     Line 24: use of undeclared identifier '_DAT_02dc8318'
+  sound_sndmain.cpp_setSoundMuted_FUN_00526cb0
+    Line 21: use of undeclared identifier '_DAT_02dc8318'
   sound_sndmain.cpp_setSoundOutputMode_FUN_005280c0
     Line 26: use of undeclared identifier '_DAT_02dc8318'
   sound_sndmain.cpp_isSoundBusy_FUN_00528490
     Line 20: use of undeclared identifier '_DAT_02dc831c'
   sound_sndmain.cpp_hasHardware3DSound_FUN_005284f0
     Line 20: use of undeclared identifier '_DAT_02dc8320'
-  sound_sndmain.cpp_isSoundEnabled_FUN_00526ca0
-    Line 14: use of undeclared identifier '_DAT_02dc8324'
-  sound_sndmain.cpp_setSoundEnabled_FUN_00526cb0
-    Line 16: use of undeclared identifier '_DAT_02dc8324'
   sound_sndmain.cpp_allocMixBuffers_FUN_00522f10
     Line 21: use of undeclared identifier '_DAT_02dc8330'
   sound_sndmain.cpp_analyzeFrequencyBand_FUN_00528e60
@@ -13994,7 +13992,7 @@ CATEGORY: syntax_error (89 errors)
     Line 29: expected expression
   sound_sndmain.cpp_setSfxVolume_FUN_005270d0
     Line 25: expected expression
-  sound_sndmain.cpp_setSoundEnabled_FUN_00526cb0
+  sound_sndmain.cpp_setSoundMuted_FUN_00526cb0
     Line 22: expected expression
   sound_sndmain.cpp_setSoundOutputMode_FUN_005280c0
     Line 27: expected expression

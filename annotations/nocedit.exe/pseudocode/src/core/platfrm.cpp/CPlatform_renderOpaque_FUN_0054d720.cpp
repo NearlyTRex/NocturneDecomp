@@ -32,12 +32,12 @@ int __cdecl core_platfrm_cpp_CPlatform_renderOpaque_FUN_0054d720(CPlatform *this
   CLocation *pCVar1;
   CPlatform *pCVar2;
   
-  iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
+  iVar3 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2);
   if ((iVar3 != 0) && (this_ptr->plot_in_shadow_flag == 0)) {
     return 0;
   }
   if ((2 < this_ptr->one_shot) &&
-     (iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
+     (iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2),
      iVar1 == 0)) {
     return 0;
   }
@@ -45,7 +45,7 @@ int __cdecl core_platfrm_cpp_CPlatform_renderOpaque_FUN_0054d720(CPlatform *this
         (g_CDemonMissionPtr->is_in_editor == 0)) &&
        (this_ptr->state != (PLATFORM_STATE_TYPE_WTF|PLATFORM_STATE_TYPE_AT_END))) &&
       ((this_ptr->state != 4 && (this_ptr->rendered_in_background != 0)))) &&
-     (iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
+     (iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2),
      iVar1 == 0)) {
     return 0;
   }
@@ -54,7 +54,7 @@ int __cdecl core_platfrm_cpp_CPlatform_renderOpaque_FUN_0054d720(CPlatform *this
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(pCVar4);
   if (iVar1 != 0) {
     if (this_ptr->plot_as_box_in_shadow != 0) {
-      iVar5 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
+      iVar5 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2);
       if (iVar5 != 0) {
         this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_6c);
         core_box_cpp_CBoundingBox3D_render_FUN_004210b0(this_ptr_00);
@@ -67,7 +67,7 @@ int __cdecl core_platfrm_cpp_CPlatform_renderOpaque_FUN_0054d720(CPlatform *this
 LAB_0054d802:
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base);
   if (((g_CDemonMissionPtr->is_in_editor != 0) &&
-      (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
+      (iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2),
       iVar2 == 0)) &&
      ((pCVar2 = (CPlatform *)g_CDemonMissionPtr->selected_actor, this_ptr == pCVar2 &&
       (pCVar2->course_filename[0] == '\0')))) {

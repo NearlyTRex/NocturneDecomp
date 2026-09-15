@@ -56,7 +56,7 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_0048d5d0(CFlame *this_pt
   
   bVar6 = 0;
   if (((this_ptr->flame_state != 0) || (g_CDemonMission_PTR_005baf90->is_in_editor != 0)) &&
-     (iVar5 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090
+     (iVar5 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090
                         (g_CDemonRenderer_PTR_005ae704), iVar5 == 0)) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(&this_ptr->base);
     if (this_ptr->do_visibility_check != 0) {

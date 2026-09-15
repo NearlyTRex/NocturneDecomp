@@ -66,7 +66,7 @@ void __cdecl engine_prim_c_renderIndexedPolygonAdvanced_FUN_004fb390(int *vertex
     }
   }
   g_RenderedTriangleCount = g_RenderedTriangleCount + 1;
-  if ((g_UseExternalRenderer == 0) || (DAT_006b0278 != 0)) {
+  if ((g_UseExternalRenderer == 0) || (g_TexturesDisabled != 0)) {
     switch(g_VertexPreprocessMode) {
     case 1:
       iVar5 = 0;

@@ -30,7 +30,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderNearPlaneTexturedPoly_FUN_0
       } while (iVar3 < (poly->base).base.count);
     }
     if (((local_14 & 0x80000000) == 0) || ((local_14 & 0x1f) == 0)) {
-      if ((this_ptr->face_count == 0) && (this_ptr->skip_uv_extraction == 0)) {
+      if ((this_ptr->shadow_pass_active == 0) && (this_ptr->skip_uv_extraction == 0)) {
         iVar5 = 0;
         if (0 < (poly->base).base.count) {
           do {
@@ -41,7 +41,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderNearPlaneTexturedPoly_FUN_0
           } while (iVar5 < (poly->base).base.count);
         }
       }
-      if (this_ptr->face_count == 0) {
+      if (this_ptr->shadow_pass_active == 0) {
         g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE);
         g_VertexPreprocessMode = PREPROCESS_NEAR_PLANE_CORRECT;
         g_ScanlineRenderFunc =

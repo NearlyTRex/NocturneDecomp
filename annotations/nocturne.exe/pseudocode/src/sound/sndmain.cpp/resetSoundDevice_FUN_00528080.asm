@@ -11,7 +11,7 @@
 ;   core_sound.cpp_CSound_shutdown_FUN_0052df90 at 0052dfd4
 ;   sound_sndmain.cpp_closeSoundDevice_FUN_005285b0 at 005285b2
 ;   sound_sndmain.cpp_enableSoundSystem_FUN_00527e40 at 00527e6e
-;   sound_sndmain.cpp_setSoundEnabled_FUN_00526cb0 at 00526cbb
+;   sound_sndmain.cpp_setSoundMuted_FUN_00526cb0 at 00526cbb
 ;   sound_sndmain.cpp_shutdownSoundSystem_FUN_00527e10 at 00527e24
 ;
 ; Referenced Globals:

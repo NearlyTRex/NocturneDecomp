@@ -84,7 +84,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderParts_FUN_0059abf0(CDeform
   SRenderVertex *pSVar1;
   float fVar3;
   
-  iVar12 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
+  iVar12 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2);
   iVar1 = this_ptr->lod_info[lod_index].shadow_only_flag;
   if (iVar1 != 0) {
     render_flags = render_flags & 0xfffffffe;

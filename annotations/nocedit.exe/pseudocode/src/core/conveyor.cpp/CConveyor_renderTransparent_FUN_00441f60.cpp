@@ -14,7 +14,7 @@ int __cdecl core_conveyor_cpp_CConveyor_renderTransparent_FUN_00441f60(CConveyor
   CBoundingBox3D CStack_20;
   
   if (g_CDemonMissionPtr->is_in_editor != 0) {
-    iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
+    iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2);
     if (iVar1 == 0) {
       core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
       this_ptr_00 = (*((this_ptr->base).base.vtable._ub)->getBoundingBox)

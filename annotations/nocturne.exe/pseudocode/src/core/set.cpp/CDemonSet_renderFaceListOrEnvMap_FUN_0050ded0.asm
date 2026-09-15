@@ -22,7 +22,7 @@
 ;
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_renderEnvMapTriangles_FUN_0050d910
-;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
+;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090
 ;   engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_00461720
 ;
 ; *****************************************************************************
@@ -41,8 +41,8 @@ section .text
         ;   XREF to: 0050defc (CONDITIONAL_JUMP)  ; LAB_0050defc
     MOV EBX,dword ptr [0x005ae704]      ; 0050dee9 | g_CDemonRenderer_PTR_005ae704
     PUSH EBX                            ; 0050deef | DAT_01b4d738
-    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 0050def0
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090 ; 0050def0
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0050def5
     TEST EAX,EAX                        ; 0050def8
     JZ 0x0050df1d                       ; 0050defa

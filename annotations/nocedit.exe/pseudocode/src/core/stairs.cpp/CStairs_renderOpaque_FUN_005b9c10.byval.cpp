@@ -20,7 +20,7 @@ __asm {
     LAB_005b9c2c:
         mov ECX,dword ptr [g_CDemonRendererPtr2]
         push ECX
-        call engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
+        call engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0
         add ESP,0x4
         test EAX,EAX
         jnz LAB_005b9c22

@@ -202,6 +202,7 @@ extern HWND g_StoredWindowHandle;
 extern STrainNoise g_STrainNoise_ARRAY_02dc9ca4[10];
 
 // int
+extern int g_SoundMuted;
 extern int g_UseDirect3D;
 extern int g_RendererCardIndex;
 extern int g_AGPTextureMode;

@@ -178,15 +178,15 @@ section .text
     TEST EAX,EAX                        ; 0049fa7d
     JZ 0x0049faa6                       ; 0049fa7f
         ;   XREF to: 0049faa6 (CONDITIONAL_JUMP)  ; LAB_0049faa6
-    CALL sound_sndmain.cpp_isSoundEnabled_FUN_00526ca0 ; 0049fa81
-        ;   XREF to: 00526ca0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSoundEnabled_FUN_00526ca0()
+    CALL sound_sndmain.cpp_isSoundMuted_FUN_00526ca0 ; 0049fa81
+        ;   XREF to: 00526ca0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSoundMuted_FUN_00526ca0()
         ;   Label: LAB_0049fa81
     TEST EAX,EAX                        ; 0049fa86
     JZ 0x0049ff00                       ; 0049fa88
         ;   XREF to: 0049ff00 (CONDITIONAL_JUMP)  ; LAB_0049ff00
     PUSH 0x0                            ; 0049fa8e
-    CALL sound_sndmain.cpp_setSoundEnabled_FUN_00526cb0 ; 0049fa90
-        ;   XREF to: 00526cb0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSoundEnabled_FUN_00526cb0(int enable)
+    CALL sound_sndmain.cpp_setSoundMuted_FUN_00526cb0 ; 0049fa90
+        ;   XREF to: 00526cb0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSoundMuted_FUN_00526cb0(int enable)
     ADD ESP,0x4                         ; 0049fa95
     MOV EAX,[0x005bed68]                ; 0049fa98 | g_CSound_PTR_005bed68
     PUSH EAX                            ; 0049fa9d
@@ -609,8 +609,8 @@ section .text
         ;   XREF to: 0052df90 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_shutdown_FUN_0052df90(CSound * this_ptr)
     ADD ESP,0x4                         ; 0049ff0c
     PUSH 0x1                            ; 0049ff0f
-    CALL sound_sndmain.cpp_setSoundEnabled_FUN_00526cb0 ; 0049ff11
-        ;   XREF to: 00526cb0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSoundEnabled_FUN_00526cb0(int enable)
+    CALL sound_sndmain.cpp_setSoundMuted_FUN_00526cb0 ; 0049ff11
+        ;   XREF to: 00526cb0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSoundMuted_FUN_00526cb0(int enable)
     JMP 0x0049faa3                      ; 0049ff16
         ;   XREF to: 0049faa3 (UNCONDITIONAL_JUMP)  ; LAB_0049faa3
     PUSH 0xf0                           ; 0049ff1b

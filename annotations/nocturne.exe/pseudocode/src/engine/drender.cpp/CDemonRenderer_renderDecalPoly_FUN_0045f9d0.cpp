@@ -16,7 +16,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderDecalPoly_FUN_0045f9d0(CDem
   
   if ((this_ptr->plane_culling_enabled == 0) ||
      (iVar2 = engine_3d_c_isVisiblePlane_FUN_00404610(&(poly->base).surface_normal), iVar2 != 0)) {
-    if (this_ptr->face_count == 0) {
+    if (this_ptr->shadow_pass_active == 0) {
       if (0 < (poly->base).base.count) {
         iVar4 = 0;
         iVar2 = 0;
@@ -47,7 +47,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderDecalPoly_FUN_0045f9d0(CDem
         } while (iVar2 < (poly->base).base.count);
       }
     }
-    if (this_ptr->face_count == 0) {
+    if (this_ptr->shadow_pass_active == 0) {
       g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_DEPTH_TEST);
       g_VertexPreprocessMode = 6;
       g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrender_cpp_renderTexturedDecalMMXScanline_FUN_004649dd;

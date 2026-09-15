@@ -142,7 +142,7 @@ void renderBasicTextured(CDemonRenderer* this_ptr, SPrimitive* prim) {
     }
 
     // Set render state
-    if (this_ptr->face_count == 0) {
+    if (this_ptr->shadow_pass_active == 0) {
         g_RenderStateFlags = RENDER_TEXTURE_BASE;
         g_ScanlineRenderFunc = renderSolidColorDepth16xUnrolled;
     } else {
@@ -186,7 +186,7 @@ void renderMaximumQuality(CDemonRenderer* this_ptr, SPrimitive* prim) {
 
     if (/* not completely clipped */) {
         // Set render state based on pass
-        if (this_ptr->face_count == 0) {
+        if (this_ptr->shadow_pass_active == 0) {
             if (g_BitsPerPixel == 32) {
                 g_ScanlineRenderFunc = renderMMXPerspectiveScanline32;
             } else {

@@ -19,9 +19,9 @@ char * __cdecl core_inv_cpp_getItemDisplayName_FUN_004fcf00(CDemonActor *actor_p
   pCVar1 = core_inv_cpp_getItemModel_FUN_004fcda0(actor_ptr);
   if (0 < g_ItemDefinitionCount) {
     do {
-      iVar2 = _stricmp(pCVar1->model_name,str2->string1);
+      iVar2 = _stricmp(pCVar1->model_name,str2->model_name);
       if (iVar2 == 0) {
-        return str2->string2;
+        return str2->display_name;
       }
       iVar3 = iVar3 + 1;
       str2 = str2 + 1;

@@ -1,0 +1,33 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void __cdecl engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_00461070(CDemonRenderer *this_ptr,int value)
+;
+; Parameters:
+; CDemonRenderer * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   value
+;
+; XREF[8]:
+;   core_dlight.cpp_CDemonLight_beginBackgroundScene_FUN_0044e830 at 0044e8e9
+;   core_dlight.cpp_CDemonLight_beginScene_FUN_0044e470 at 0044e5e2
+;   core_dlight.cpp_CDemonLight_endBackgroundScene_FUN_0044e920 at 0044e962
+;   core_dlight.cpp_CDemonLight_endScene_FUN_0044e720 at 0044e793
+;   core_glass.cpp_CGlass_renderBrokenGlass_FUN_004ac7c0 at 004ac82b
+;   core_setdir.cpp_CDemonSet_FUN_005125a0 at 0051264f
+;   core_setdir.cpp_CDemonSet_FUN_00513720 at 00513743
+;   engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190 at 0045f1e1
+;
+; Referenced Globals:
+;   int g_TexturesDisabled
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EAX,dword ptr [ESP + 0x8]       ; 00461070
+        ;   Label: engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_00461070
+    MOV EDX,dword ptr [ESP + 0x4]       ; 00461074
+    MOV [0x006b0278],EAX                ; 00461078 | g_TexturesDisabled
+    MOV dword ptr [EDX + 0x4],EAX       ; 0046107d
+    RET                                 ; 00461080
+

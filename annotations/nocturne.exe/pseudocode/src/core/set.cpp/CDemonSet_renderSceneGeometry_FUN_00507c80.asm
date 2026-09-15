@@ -46,7 +46,7 @@
 ;   core_terrain.cpp_CTerrain_render_FUN_00549310
 ;   core_water.cpp_CWater_calculateVisibleTiles_FUN_00550800
 ;   core_water.cpp_CWater_render_FUN_00550cb0
-;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
+;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
 ;   ... and 2 more
 ;
@@ -128,8 +128,8 @@ section .text
     MOV EAX,[0x005ae704]                ; 00507d51 | g_CDemonRenderer_PTR_005ae704
         ;   Label: LAB_00507d51
     PUSH EAX                            ; 00507d56 | DAT_01b4d738
-    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 00507d57
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090 ; 00507d57
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00507d5c
     TEST EAX,EAX                        ; 00507d5f
     JNZ 0x00507ef1                      ; 00507d61

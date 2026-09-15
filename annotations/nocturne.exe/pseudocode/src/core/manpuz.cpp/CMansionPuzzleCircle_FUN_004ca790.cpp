@@ -50,7 +50,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_004ca790(CMansionPuzzleCir
             (&this_ptr->gem_model,0.0,-1);
   core_set_cpp_CDemonSet_setFlatColor_FUN_0050e340(g_CDemonSet_PTR_005be368,0x10000,0x10000,0x10000)
   ;
-  iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
+  iVar4 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
   ;
   if ((iVar4 == 0) &&
      ((((float)0.01 < (pSVar5->hum_color).r ||

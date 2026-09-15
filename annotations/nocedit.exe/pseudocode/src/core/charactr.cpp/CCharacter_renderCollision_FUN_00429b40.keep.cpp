@@ -44,7 +44,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00429b40(CCharacte
   float fVar1;
   
   local_e8.base.surface_normal.A.i =
-       engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
+       engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2);
   if (local_e8.base.surface_normal.A.i != 0) {
     return;
   }

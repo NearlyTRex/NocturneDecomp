@@ -15,7 +15,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderAlphaBlendedFace_FUN_0045f8
   ushort uVar2;
   SInputFace *pSVar3;
   
-  if ((this_ptr->face_count == 0) && (this_ptr->skip_uv_extraction == 0)) {
+  if ((this_ptr->shadow_pass_active == 0) && (this_ptr->skip_uv_extraction == 0)) {
     pSVar3 = face;
     do {
       uVar2 = (pSVar3->vertex_indices).vertex_index_0;
@@ -28,7 +28,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderAlphaBlendedFace_FUN_0045f8
   _DAT_01b4d76c = (uint)(face->vertex_indices).vertex_index_0;
   _DAT_01b4d770 = (uint)(face->vertex_indices).vertex_index_1;
   _DAT_01b4d774 = (uint)(face->vertex_indices).vertex_index_2;
-  if (this_ptr->face_count == 0) {
+  if (this_ptr->shadow_pass_active == 0) {
     if (g_BitsPerPixel == 0x20) {
       g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0052f031;
     }

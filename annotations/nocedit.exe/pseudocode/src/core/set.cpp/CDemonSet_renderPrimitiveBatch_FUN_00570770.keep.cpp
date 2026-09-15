@@ -17,7 +17,7 @@ void __cdecl core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_00570770(CDemonSet 
   
   if (g_CGamePtr->suppress_set_geometry == 0) {
     if ((g_CGamePtr->render_mode != 0) &&
-       (iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
+       (iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2),
        iVar1 == 0)) {
       core_set_cpp_CDemonSet_renderEnvMapBatchQuad_FUN_00570010
                 (this_ptr,&primitive_array->base,primitive_count,0xffff);

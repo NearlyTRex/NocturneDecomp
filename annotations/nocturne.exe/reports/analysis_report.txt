@@ -7,10 +7,10 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 4922
-Clean functions: 2533 (51.5%)
-Functions with suspects: 2389 (48.5%)
+Clean functions: 2535 (51.5%)
+Functions with suspects: 2387 (48.5%)
 
-Total suspect patterns: 20965
+Total suspect patterns: 20947
 Average suspects per function: 4.26
 
 Virtual files: 203 total, 10 at 100%, 12 at 90%+
@@ -28,11 +28,11 @@ Failed: 4922
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  undefined_data            4079
+  undefined_data            4062
   pointer_cast              3557
   pointer_truncation        2880
   unrolled_memcpy           1476
-  warning_overlapping_globals 865
+  warning_overlapping_globals 864
   stack_param               766
   unknown_field             721
   concat_reconstruction     661
@@ -162,7 +162,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   00414e60: core_battery.cpp_CBattery_process_FUN_00414e60 (4 lines)
   00414f40: core_battery.cpp_CBattery_getCollisionType_FUN_00414f40 (4 lines)
   00415040: core_beast.cpp_CBeast_getActorType_FUN_00415040 (4 lines)
-  ... and 2483 more
+  ... and 2485 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -174,9 +174,9 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   004accf0: core_glass.cpp_CGlass_createShatterParticles_FUN_004accf0 (score: 2610, suspects: 221, lines: 390)
   00434210: engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00434210 (score: 2576, suspects: 214, lines: 411)
   0047e0d0: core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d0 (score: 2549, suspects: 93, lines: 1584)
-  00432cd0: engine_clipper.c_clipAndRasterize_FUN_00432cd0 (score: 2429, suspects: 180, lines: 589)
+  00432cd0: engine_clipper.c_clipAndRasterize_FUN_00432cd0 (score: 2419, suspects: 179, lines: 589)
   004bf360: core_inv.cpp_CInventory_addItem_FUN_004bf360 (score: 2417, suspects: 126, lines: 1127)
-  00432210: engine_clipper.c_clipPolygonToViewFrustum_FUN_00432210 (score: 2345, suspects: 173, lines: 575)
+  00432210: engine_clipper.c_clipPolygonToViewFrustum_FUN_00432210 (score: 2335, suspects: 172, lines: 575)
   00473190: shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00473190 (score: 2266, suspects: 192, lines: 296)
   0051b920: core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0051b920 (score: 2261, suspects: 178, lines: 456)
   0052f823: engine_special.cpp_renderMMXPerspectiveScanline16_FUN_0052f823 (score: 2042, suspects: 142, lines: 587)
@@ -200,7 +200,7 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
 
-  undefined_data (689 functions):
+  undefined_data (687 functions):
     00403f50: engine_2d.c_clearInputAndWait_FUN_00403f50
     00404120: engine_2d.c_mapFrameBuffer_FUN_00404120
     00404360: engine_2d.c_unmapFrameBuffer_FUN_00404360
@@ -211,7 +211,7 @@ FUNCTIONS BY SUSPECT TYPE
     00404680: engine_3d.c_lookupLitColor_FUN_00404680
     00404730: engine_3d.c_processVertexLighting_FUN_00404730
     00404790: engine_3d.c_processTextureCoordinates_FUN_00404790
-    ... and 679 more
+    ... and 677 more
 
   pointer_cast (726 functions):
     00401010: engine_2d.c_initGraphicsSystem_FUN_00401010
@@ -252,7 +252,7 @@ FUNCTIONS BY SUSPECT TYPE
     0040a540: core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_0040a540
     ... and 527 more
 
-  warning_overlapping_globals (865 functions):
+  warning_overlapping_globals (864 functions):
     00403760: engine_2d.c_resetGraphicsSystem_FUN_00403760
     00403770: engine_2d.c_reinitializeGraphicsSystem_FUN_00403770
     00404480: engine_3d.c_initTextureCache_FUN_00404480
@@ -263,7 +263,7 @@ FUNCTIONS BY SUSPECT TYPE
     00405b40: engine_3d.c_renderSortedPolygonList_FUN_00405b40
     00405c90: engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00405c90
     00406230: engine_3d.c_renderPolygonLitAlphaPlaneMaskedOp26_FUN_00406230
-    ... and 855 more
+    ... and 854 more
 
   stack_param (102 functions):
     004013d0: engine_2d.c_drawAntialiasedChar_FUN_004013d0

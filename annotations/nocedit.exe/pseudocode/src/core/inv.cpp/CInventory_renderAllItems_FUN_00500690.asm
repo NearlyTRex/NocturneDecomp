@@ -66,8 +66,8 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
 ;   core_actor.cpp_isOfClass_FUN_0040c6d0
 ;   core_inv.cpp_CInventory_isWeaponInCategory_FUN_004ffe70
+;   core_inv.cpp_getItemDescription_FUN_004fcf70
 ;   core_inv.cpp_getItemDisplayName_FUN_004fcf00
-;   core_inv.cpp_getItemIconName_FUN_004fcf70
 ;   core_inv.cpp_loadAssets_FUN_004fd220
 ;   crt_math.c_round_FUN_005fe6b0
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
@@ -241,8 +241,8 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 005008a2
     MOV EDX,dword ptr [EAX + 0x330]     ; 005008a5
     PUSH EDX                            ; 005008ab
-    CALL core_inv.cpp_getItemIconName_FUN_004fcf70 ; 005008ac
-        ;   XREF to: 004fcf70 (UNCONDITIONAL_CALL)  ; char * core_inv.cpp_getItemIconName_FUN_004fcf70(CDemonActor * actor_ptr)
+    CALL core_inv.cpp_getItemDescription_FUN_004fcf70 ; 005008ac
+        ;   XREF to: 004fcf70 (UNCONDITIONAL_CALL)  ; char * core_inv.cpp_getItemDescription_FUN_004fcf70(CDemonActor * actor_ptr)
     ADD ESP,0x4                         ; 005008b1
     PUSH EAX                            ; 005008b4
     MOV EAX,dword ptr [EBP + 0x14]      ; 005008b5
@@ -465,8 +465,8 @@ section .text
         ;   XREF to: 00500ca0 (CONDITIONAL_JUMP)  ; LAB_00500ca0
     MOV ECX,dword ptr [EAX + 0x334]     ; 00500b8d
     PUSH ECX                            ; 00500b93
-    CALL core_inv.cpp_getItemIconName_FUN_004fcf70 ; 00500b94
-        ;   XREF to: 004fcf70 (UNCONDITIONAL_CALL)  ; char * core_inv.cpp_getItemIconName_FUN_004fcf70(CDemonActor * actor_ptr)
+    CALL core_inv.cpp_getItemDescription_FUN_004fcf70 ; 00500b94
+        ;   XREF to: 004fcf70 (UNCONDITIONAL_CALL)  ; char * core_inv.cpp_getItemDescription_FUN_004fcf70(CDemonActor * actor_ptr)
     ADD ESP,0x4                         ; 00500b99
     PUSH EAX                            ; 00500b9c
     MOV EAX,dword ptr [EBP + 0x14]      ; 00500b9d
@@ -1062,8 +1062,8 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 005012be
     MOV ESI,dword ptr [EAX + 0x330]     ; 005012c1
     PUSH ESI                            ; 005012c7
-    CALL core_inv.cpp_getItemIconName_FUN_004fcf70 ; 005012c8
-        ;   XREF to: 004fcf70 (UNCONDITIONAL_CALL)  ; char * core_inv.cpp_getItemIconName_FUN_004fcf70(CDemonActor * actor_ptr)
+    CALL core_inv.cpp_getItemDescription_FUN_004fcf70 ; 005012c8
+        ;   XREF to: 004fcf70 (UNCONDITIONAL_CALL)  ; char * core_inv.cpp_getItemDescription_FUN_004fcf70(CDemonActor * actor_ptr)
     ADD ESP,0x4                         ; 005012cd
     PUSH EAX                            ; 005012d0
     MOV EAX,dword ptr [EBP + 0x14]      ; 005012d1
@@ -1112,8 +1112,8 @@ section .text
         ;   Label: LAB_00501336
     MOV EDX,dword ptr [EAX + 0x330]     ; 00501339
     PUSH EDX                            ; 0050133f
-    CALL core_inv.cpp_getItemIconName_FUN_004fcf70 ; 00501340
-        ;   XREF to: 004fcf70 (UNCONDITIONAL_CALL)  ; char * core_inv.cpp_getItemIconName_FUN_004fcf70(CDemonActor * actor_ptr)
+    CALL core_inv.cpp_getItemDescription_FUN_004fcf70 ; 00501340
+        ;   XREF to: 004fcf70 (UNCONDITIONAL_CALL)  ; char * core_inv.cpp_getItemDescription_FUN_004fcf70(CDemonActor * actor_ptr)
     ADD ESP,0x4                         ; 00501345
     PUSH EAX                            ; 00501348
     MOV EAX,dword ptr [EBP + 0x14]      ; 00501349

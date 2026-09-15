@@ -18,7 +18,7 @@
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
-;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
+;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090
 ;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
 ;
@@ -49,8 +49,8 @@ section .text
     MOV ECX,dword ptr [0x005ae704]      ; 0041ea2b | g_CDemonRenderer_PTR_005ae704
         ;   Label: LAB_0041ea2b
     PUSH ECX                            ; 0041ea31 | DAT_01b4d738
-    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 0041ea32
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090 ; 0041ea32
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0041ea37
     TEST EAX,EAX                        ; 0041ea3a
     JNZ 0x0041ea47                      ; 0041ea3c
@@ -116,8 +116,8 @@ section .text
     MOV EBP,dword ptr [0x005ae704]      ; 0041eace | g_CDemonRenderer_PTR_005ae704
         ;   Label: LAB_0041eace
     PUSH EBP                            ; 0041ead4 | DAT_01b4d738
-    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 0041ead5
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090 ; 0041ead5
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0041eada
     TEST EAX,EAX                        ; 0041eadd
     JZ 0x0041ea54                       ; 0041eadf

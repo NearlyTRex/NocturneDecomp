@@ -13,15 +13,33 @@ accesses and vtable calls will be wrong.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Total resolution calls found:  338
-  Type mismatches found:         0
+  Total resolution calls found:  339
+  Type mismatches found:         1
   Unresolved (indirect variable): 17
 
   Calls by function:
-    castToClassHash                265 calls
+    castToClassHash                266 calls
     createActorByName              7 calls
     getActor                       35 calls
     resolveActorByName             31 calls
+
+  Mismatches by expected class:
+    CMelee                    1 mismatches
+
+  Mismatches by actual cast type:
+    CDemonActor               1 times (should be: CMelee)
+
+====================================================================================================
+DETAILED FINDINGS
+====================================================================================================
+
+--------------------------------------------------------------------------------
+  core/inv.cpp/CInventory_addItem_FUN_004fd600.keep.cpp
+--------------------------------------------------------------------------------
+
+  Line 313: castToClassHash()
+    Expected class: CMelee               (CMelee -> CWeapon -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
 
 ====================================================================================================
 UNRESOLVED CALLS (class identity passed via variable)
@@ -91,13 +109,13 @@ Manual inspection is needed to determine the expected class.
     254:                 (pCVar5_00->base).ammo_count = 200;
     255:               }
 
-  Line 325: castToClassHash()
-    323:             pCVar9->ammo_count = pCVar9->ammo_count + pCVar8->ammo_count;
-    324:             pCVar6 = (CTommyGun *)
-    325:                      core_actor_cpp_castToClassHash_FUN_0040c790((CDemonActor *)pCVar9,uVar4);
-    326:             if ((pCVar6 != (CTommyGun *)0x0) && (200 < (pCVar6->base).ammo_count)) {
-    327:               (pCVar6->base).ammo_count = 200;
-    328:             }
+  Line 353: castToClassHash()
+    351:             pCVar9->ammo_count = pCVar9->ammo_count + pCVar8->ammo_count;
+    352:             pCVar6 = (CTommyGun *)
+    353:                      core_actor_cpp_castToClassHash_FUN_0040c790((CDemonActor *)pCVar9,uVar4);
+    354:             if ((pCVar6 != (CTommyGun *)0x0) && (200 < (pCVar6->base).ammo_count)) {
+    355:               (pCVar6->base).ammo_count = 200;
+    356:             }
 
   Line 140: createActorByName()
     138:       pCVar15 = (CAmmo *)core_actor_cpp_castToClassHash_FUN_0040c790
@@ -115,13 +133,13 @@ Manual inspection is needed to determine the expected class.
     268:       (*((pCVar5_02->vtable)._ub)->setup)(pCVar5_02);
     269:       ((CWeapon *)pCVar5_02)->ammo_count = pCStack_24->ammo_count;
 
-  Line 352: createActorByName()
-    350:             pcVar20 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90
-    351:                                 ((CDemonActor *)pCVar8);
-    352:             pCVar5_02 = core_actor_cpp_createActorByName_FUN_0040c430(pcVar20);
-    353:             core_mission_cpp_CDemonMission_generateActorName_FUN_00524700
-    354:                       (g_CDemonMissionPtr,pCVar5_02);
-    355:             (*((pCVar5_02->vtable)._ub)->setup)(pCVar5_02);
+  Line 380: createActorByName()
+    378:             pcVar20 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90
+    379:                                 ((CDemonActor *)pCVar8);
+    380:             pCVar5_02 = core_actor_cpp_createActorByName_FUN_0040c430(pcVar20);
+    381:             core_mission_cpp_CDemonMission_generateActorName_FUN_00524700
+    382:                       (g_CDemonMissionPtr,pCVar5_02);
+    383:             (*((pCVar5_02->vtable)._ub)->setup)(pCVar5_02);
 
 --------------------------------------------------------------------------------
   core/inv.cpp/CInventory_load_FUN_004ff400.keep.cpp

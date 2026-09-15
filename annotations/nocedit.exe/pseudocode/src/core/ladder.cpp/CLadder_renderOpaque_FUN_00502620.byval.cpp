@@ -35,7 +35,7 @@ __asm {
         jz LAB_0050287f
         mov ESI,dword ptr [g_CDemonRendererPtr2]
         push ESI
-        call engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
+        call engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0
         add ESP,0x4
         test EAX,EAX
         jnz LAB_0050287f

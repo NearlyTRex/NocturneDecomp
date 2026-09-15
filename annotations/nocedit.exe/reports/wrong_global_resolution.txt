@@ -13,18 +13,18 @@ SUMMARY
 
   Functions checked: 6911
   Functions with suspicious globals: 96
-  Total suspicious global references: 153
+  Total suspicious global references: 156
 
   Most commonly misresolved globals:
     g_SfxOptions                                       13 functions
     g_KeyboardState                                    9 functions
     g_WindowHeight                                     7 functions
     g_CDemonCameraInstance                             6 functions
+    g_WindowWidth                                      5 functions
     g_UseDirect3D                                      5 functions
     g_RenderVertexBuffer                               5 functions
     g_ColorCubeLookup                                  4 functions
     g_HeroCount                                        4 functions
-    g_WindowWidth                                      4 functions
     g_CNetGamePtr                                      3 functions
     g_CKeysPtr                                         3 functions
     g_ThemeFont                                        3 functions
@@ -32,10 +32,10 @@ SUMMARY
     g_HeroActors                                       2 functions
     g_TextureCacheInstance                             2 functions
     g_MirrorCullCameraState                            2 functions
+    g_CScriptPtr                                       2 functions
     g_CMoonInstance                                    2 functions
     g_VisibleCoronaGlobeCount                          2 functions
     g_CommandTemplates                                 2 functions
-    g_PositiveInfinity                                 2 functions
 
   .keep files with issues: 63 (these need manual review)
   Raw .cpp files with issues: 33
@@ -217,6 +217,18 @@ core_menu.cpp_showOptionsScreen_FUN_00512d30  [.keep]  (3 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+core_charactr.cpp_CCharacter_process_FUN_00429870  [.keep]  (2 suspicious globals)
+  File: core/charactr.cpp
+
+  g_CDemonRaytraceInstance
+    Used at lines: 26, 27, 27, 29
+    NOT found in function reference list
+
+  g_CNetGamePtr
+    Used at lines: 71, 72
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 core_game.cpp_CGame_beginFadeOut_FUN_004e0960  [.keep]  (2 suspicious globals)
   File: core/game.cpp
 
@@ -238,6 +250,18 @@ core_game.cpp_CGame_runGameSession_FUN_004daf80  [.keep]  (2 suspicious globals)
 
   g_SimFrameCount
     Used at lines: 157
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_inv.cpp_CInventory_renderAllItems_FUN_00500690  [.keep]  (2 suspicious globals)
+  File: core/inv.cpp
+
+  g_CDemonCameraInstance
+    Used at lines: 88, 89, 90, 91, 92, ...
+    NOT found in function reference list
+
+  g_CScriptPtr
+    Used at lines: 435, 445
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -301,11 +325,15 @@ shape_design.c_showFacetPartEditor_FUN_0045f1d0  [.keep]  (2 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_charactr.cpp_CCharacter_process_FUN_00429870  [.keep]  (1 suspicious globals)
-  File: core/charactr.cpp
+shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060  [.keep]  (2 suspicious globals)
+  File: shape/edittool.cpp
 
-  g_CNetGamePtr
-    Used at lines: 46, 47
+  g_ConfirmationMessageBuffer
+    Used at lines: 24, 31, 63
+    NOT found in function reference list
+
+  g_WindowWidth
+    Used at lines: 41, 52
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -369,7 +397,7 @@ core_game.cpp_CGame_processFrame_FUN_004da100  [.keep]  (1 suspicious globals)
   File: core/game.cpp
 
   g_ColorCubeLookup
-    Used at lines: 360
+    Used at lines: 379, 385
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -418,14 +446,6 @@ core_inivar.cpp_writeIniData_FUN_004fc510  [.keep]  (1 suspicious globals)
 
   g_UseDirect3D
     Used at lines: 25
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-core_inv.cpp_CInventory_renderAllItems_FUN_00500690  [.keep]  (1 suspicious globals)
-  File: core/inv.cpp
-
-  g_CDemonCameraInstance
-    Used at lines: 88, 89, 90, 91, 92, ...
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -653,14 +673,6 @@ shape_design.c_showPointEditor_FUN_0045c6c0  [.keep]  (1 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060  [.keep]  (1 suspicious globals)
-  File: shape/edittool.cpp
-
-  g_ConfirmationMessageBuffer
-    Used at lines: 24, 31, 47
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
 shape_meshlod.cpp_CLodMesh_replayLodGeneration_FUN_005173f0  [.keep]  (1 suspicious globals)
   File: shape/meshlod.cpp
 
@@ -805,7 +817,7 @@ engine_keys.cpp_clearKeypresses_FUN_00502450  [.cpp]  (3 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-sound_sndmain.cpp_setSoundEnabled_FUN_005a96c0  [.cpp]  (2 suspicious globals)
+sound_sndmain.cpp_setSoundMuted_FUN_005a96c0  [.cpp]  (2 suspicious globals)
   File: sound/sndmain.cpp
 
   g_CSoundDevicePtr

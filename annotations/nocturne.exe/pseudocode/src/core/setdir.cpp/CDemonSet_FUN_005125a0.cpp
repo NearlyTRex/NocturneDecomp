@@ -127,8 +127,8 @@ LAB_0051260f:
   this_ptr->camera_switch_cooldown = 0.0;
   local_b8 = g_UseExternalRenderer;
   g_UseExternalRenderer = 0;
-  local_b4 = (float)engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(this_ptr_01);
-  engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_00461070(g_CDemonRenderer_PTR_005ae704,0);
+  local_b4 = (float)engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090(this_ptr_01);
+  engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_00461070(g_CDemonRenderer_PTR_005ae704,0);
   engine_drender_cpp_CDemonRenderer_pushViewport_FUN_00460e40
             (g_CDemonRenderer_PTR_005ae704,0,0,0x40,0x30);
   uVar12 = 0;
@@ -249,7 +249,7 @@ LAB_0051260f:
         iVar13 = iVar6;
       } while (iVar6 != 0xc0);
       engine_drender_cpp_CDemonRenderer_popViewport_FUN_00460e70(g_CDemonRenderer_PTR_005ae704);
-      engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_00461070
+      engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_00461070
                 (g_CDemonRenderer_PTR_005ae704,(int)local_b4);
       g_UseExternalRenderer = local_b8;
       if (this_ptr->camera_count <= _DAT_020875f4) {

@@ -682,7 +682,7 @@ typedef struct SVertexListInfo {
 // Main 3D renderer state
 typedef struct CDemonRenderer {
     int field_0;                     // Unknown field
-    int face_count;                  // Number of faces
+    int shadow_pass_active;          // Depth-only shadow pass; also mirrored in g_TexturesDisabled
     int projection_mode;             // Projection type
     int plane_culling_enabled;       // Plane culling flag
     int face_capture_enabled;        // Face capture flag

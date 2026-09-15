@@ -14,7 +14,7 @@
 ;   undefined4 DAT_006b0260
 ;   undefined4 DAT_006b0264
 ;   undefined4 DAT_006b0274
-;   undefined4 DAT_006b0278
+;   int g_TexturesDisabled
 ;   undefined4 DAT_006b029c
 ;   undefined4 DAT_006b02a0
 ;   int g_ActiveRenderColor
@@ -50,7 +50,7 @@ section .text
     JZ 0x00407c96                       ; 00407a3e
         ;   XREF to: 00407c96 (CONDITIONAL_JUMP)  ; LAB_00407c96
     PUSH EBX                            ; 00407a44
-    MOV EDX,dword ptr [0x006b0278]      ; 00407a45 | DAT_006b0278
+    MOV EDX,dword ptr [0x006b0278]      ; 00407a45 | g_TexturesDisabled
     MOV EBP,dword ptr [0x006b0264]      ; 00407a4b | DAT_006b0264
     TEST EDX,EDX                        ; 00407a51
     JZ 0x00407b14                       ; 00407a53

@@ -52,7 +52,7 @@ int __cdecl core_trigger_cpp_CTrigger_renderTransparent_FUN_005e00d0(CTrigger *t
   CDemonRenderer *pCVar2;
   
   if ((g_CDemonMissionPtr->is_in_editor == 0) ||
-     (iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
+     (iVar3 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2),
      iVar3 != 0)) {
     return 0;
   }

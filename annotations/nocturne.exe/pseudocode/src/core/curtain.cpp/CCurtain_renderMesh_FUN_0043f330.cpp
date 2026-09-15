@@ -29,7 +29,7 @@ int __cdecl core_curtain_cpp_CCurtain_renderMesh_FUN_0043f330(CCurtain *this_ptr
   this_ptr_00 = g_CDemonRenderer_PTR_005ae704;
   if (iStack_c == 0) goto LAB_0043f5f0;
   this_ptr->is_visible = 1;
-  iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(this_ptr_00);
+  iVar3 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090(this_ptr_00);
   if (((iVar3 != 0) && (this_ptr->cinched_top != 0)) && (this_ptr->needs_update == 0)) {
     pCVar2 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_24);
     core_box_cpp_CBoundingBox3D_render_FUN_0041dcc0(pCVar2);

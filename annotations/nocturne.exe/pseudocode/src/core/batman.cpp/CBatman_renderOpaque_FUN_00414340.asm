@@ -23,7 +23,7 @@
 ;   core_motion.cpp_CMotionController_render_FUN_004e22b0
 ;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_0051d9d0
 ;   engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_004613b0
-;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
+;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090
 ;   engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_00461db0
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00461000
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlphaNormalized_FUN_00461020
@@ -70,8 +70,8 @@ section .text
     MOV EDI,dword ptr [0x005ae704]      ; 0041437e | g_CDemonRenderer_PTR_005ae704
         ;   Label: LAB_0041437e
     PUSH EDI                            ; 00414384 | DAT_01b4d738
-    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 00414385
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090 ; 00414385
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0041438a
     TEST EAX,EAX                        ; 0041438d
     JZ 0x0041439a                       ; 0041438f
@@ -121,8 +121,8 @@ section .text
         ;   XREF to: 00414428 (CONDITIONAL_JUMP)  ; LAB_00414428
     MOV ECX,dword ptr [0x005ae704]      ; 004143f8 | g_CDemonRenderer_PTR_005ae704
     PUSH ECX                            ; 004143fe | DAT_01b4d738
-    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 004143ff
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090 ; 004143ff
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00414404
     TEST EAX,EAX                        ; 00414407
     JNZ 0x00414428                      ; 00414409

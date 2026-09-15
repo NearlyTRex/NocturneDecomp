@@ -16,7 +16,7 @@ int __cdecl engine_drender_cpp_CDemonRenderer_depthTest_FUN_0048dc50(CDemonRende
   if ((int)((vertex_ptr->projected_vertex).screen_x & -0x80000000) != 0) {
     return 0;
   }
-  if (this_ptr->face_count == 0) {
+  if (this_ptr->shadow_pass_active == 0) {
     engine_prim_c_replaceWWithDepth_FUN_00552110(vertex_ptr,1);
   }
   iVar1 = (vertex_ptr->projected_vertex).screen_x >> 0x10;
@@ -25,14 +25,21 @@ int __cdecl engine_drender_cpp_CDemonRenderer_depthTest_FUN_0048dc50(CDemonRende
       (iVar2 < 0) || (g_WindowHeight <= iVar2)) {
     return 0;
   }
-  if (this_ptr->face_count == 0) {
+  if (this_ptr->shadow_pass_active == 0) {
     if ((vertex_ptr->projected_vertex).transformed_z < (int)g_ZBufferScanlineArray[iVar2][iVar1]) {
       return 0;
     }
   }
+#if NOCTURNE_AUTHENTIC_SHADOW_DEPTH_READ
   else if ((vertex_ptr->projected_vertex).transformed_z <
            ((int *)g_ScreenBufferArray[iVar2])[iVar1]) {
     return 0;
   }
+#else
+  else if ((vertex_ptr->projected_vertex).transformed_z <
+           (int)((ushort *)g_ScreenBufferArray[iVar2])[iVar1]) {
+    return 0;
+  }
+#endif
   return 1;
 }

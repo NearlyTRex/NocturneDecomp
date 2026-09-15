@@ -26,7 +26,7 @@ void __cdecl core_motion_cpp_CMotionController_render_FUN_0052e700(CMotionContro
   SRenderVertex *pSVar2;
   
   if ((INT_02f43978 != 0) &&
-     (iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
+     (iVar3 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2),
      iVar3 == 0)) {
     pCVar3 = (*((actor->vtable)._ub)->getBoundingBox)(actor,&local_44);
     local_2c.x = (int)ROUND(256.0f * 0.0);

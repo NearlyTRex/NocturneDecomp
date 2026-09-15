@@ -85,7 +85,7 @@ void __cdecl core_dpart_cpp_setupTriangleEdgeInterpolation_FUN_00457640(SSoftwar
     *(uint *)(iVar2 + 0x1b4cd64) =
          (vertex_a->base).depth_gradient +
          ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-    if (DAT_006b0278 == 0) {
+    if (g_TexturesDisabled == 0) {
       lVar1 = (longlong)iVar7 * (longlong)((pSVar6->base).x_gradient - (vertex_a->base).x_gradient);
       uVar5 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
       *(uint *)(iVar2 + 0x1b4cd60) = uVar5;

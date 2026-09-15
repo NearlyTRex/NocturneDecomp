@@ -22,7 +22,7 @@ int __cdecl core_emitter_cpp_CEmitter_renderOpaque_FUN_004a8860(CEmitter *this_p
   CVector3f *pCVar2;
   UOrientationVector *orientation;
   
-  iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
+  iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2);
   if (iVar1 == 0) {
     if ((this_ptr->emitter_type == 3) && (this_ptr->emitter_state != 0)) {
       core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
@@ -52,7 +52,7 @@ int __cdecl core_emitter_cpp_CEmitter_renderOpaque_FUN_004a8860(CEmitter *this_p
       return 1;
     }
     if (g_CDemonMissionPtr->is_in_editor != 0) {
-      iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
+      iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2);
       if (iVar2 == 0) {
         core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(&this_ptr->base,0xfb);
         if ((((this_ptr->emitter_type == 3) && (g_SlewTargetMode != 0)) &&

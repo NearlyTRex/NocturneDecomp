@@ -19,7 +19,7 @@
 ; Referenced Globals:
 ;   void* switchdataD_004facd8 = 004fae11
 ;   int INT_005b7644 = 0x1
-;   undefined4 DAT_006b0278
+;   int g_TexturesDisabled
 ;   undefined4 DAT_006b0280
 ;   SProjectionParams g_Projection
 ;   undefined4 g_Projection.neg_half_height_fixed
@@ -146,7 +146,7 @@ section .text
     TEST ECX,ECX                        ; 004fadef
     JZ 0x004fae00                       ; 004fadf1
         ;   XREF to: 004fae00 (CONDITIONAL_JUMP)  ; LAB_004fae00
-    CMP dword ptr [0x006b0278],0x0      ; 004fadf3 | DAT_006b0278
+    CMP dword ptr [0x006b0278],0x0      ; 004fadf3 | g_TexturesDisabled
     JZ 0x004fafc8                       ; 004fadfa
         ;   XREF to: 004fafc8 (CONDITIONAL_JUMP)  ; LAB_004fafc8
     MOV EAX,[0x01c039a4]                ; 004fae00 | g_VertexPreprocessMode

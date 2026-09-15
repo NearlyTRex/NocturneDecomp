@@ -18,7 +18,7 @@ int __cdecl core_dest_cpp_CActorDestination_renderTransparent_FUN_0046fb70(CActo
   CBoundingBox3D local_24;
   
   if (g_CDemonMissionPtr->is_in_editor != 0) {
-    iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
+    iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2);
     if (iVar1 == 0) {
       if (this_ptr->dest_actor != (CDemonActor *)0x0) {
         iVar2 = core_actor_cpp_isOfClass_FUN_0040c6d0(this_ptr->dest_actor,"CBoxActor");

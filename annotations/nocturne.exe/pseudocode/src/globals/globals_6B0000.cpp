@@ -4,6 +4,9 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x6B0000
 // =============================================================================
 
+// int
+int g_TexturesDisabled = {};
+
 // undefined4
 undefined4 DAT_006b023c = {};
 undefined4 DAT_006b0240 = {};
@@ -20,7 +23,6 @@ undefined4 DAT_006b0268 = {};
 undefined4 DAT_006b026c = {};
 undefined4 DAT_006b0270 = {};
 undefined4 DAT_006b0274 = {};
-undefined4 DAT_006b0278 = {};
 undefined4 DAT_006b027c = {};
 undefined4 DAT_006b0280 = {};
 undefined4 DAT_006b0288 = {};

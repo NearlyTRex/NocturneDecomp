@@ -2555,8 +2555,8 @@ annotations/nocedit.exe/pseudocode/src/core/inv.cpp/clampWeaponAmmoCount_FUN_004
 annotations/nocedit.exe/pseudocode/src/core/inv.cpp/drawItemIconBackground_FUN_005001e0.cpp
 annotations/nocedit.exe/pseudocode/src/core/inv.cpp/drawWeaponIconBackground_FUN_00500050.cpp
 annotations/nocedit.exe/pseudocode/src/core/inv.cpp/freeInventory_FUN_004fd510.cpp
+annotations/nocedit.exe/pseudocode/src/core/inv.cpp/getItemDescription_FUN_004fcf70.cpp
 annotations/nocedit.exe/pseudocode/src/core/inv.cpp/getItemDisplayName_FUN_004fcf00.cpp
-annotations/nocedit.exe/pseudocode/src/core/inv.cpp/getItemIconName_FUN_004fcf70.cpp
 annotations/nocedit.exe/pseudocode/src/core/inv.cpp/getItemModel_FUN_004fcda0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/inv.cpp/loadAssets_FUN_004fd220.cpp
 annotations/nocedit.exe/pseudocode/src/core/inv.cpp/loadItem_FUN_004fcfe0.keep.cpp
@@ -4804,7 +4804,7 @@ annotations/nocedit.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_getCame
 annotations/nocedit.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_getCameraOriginWorld_FUN_0048c780.keep.cpp
 annotations/nocedit.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_getCameraRotationFixed_FUN_0048c7e0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_getCameraRotationRadians_FUN_0048c800.keep.cpp
-annotations/nocedit.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_getFaceCount_FUN_0048cae0.cpp
+annotations/nocedit.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_isShadowPass_FUN_0048cae0.cpp
 annotations/nocedit.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_matrixPop_FUN_0048c640.cpp
 annotations/nocedit.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_matrixPush_FUN_0048c630.cpp
 annotations/nocedit.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_popViewport_FUN_0048c8c0.cpp
@@ -4850,7 +4850,6 @@ annotations/nocedit.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_setCame
 annotations/nocedit.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_setCameraOrigin_FUN_0048c130.cpp
 annotations/nocedit.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_setCameraRotationFromPoint_FUN_0048c1b0.cpp
 annotations/nocedit.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_setCurrentPolygonColor_FUN_0048c960.cpp
-annotations/nocedit.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_setFaceCount_FUN_0048cac0.cpp
 annotations/nocedit.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_setLightDirection_FUN_0048c6c0.cpp
 annotations/nocedit.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_setLightIntensity_FUN_0048c690.keep.cpp
 annotations/nocedit.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0.cpp
@@ -4861,6 +4860,7 @@ annotations/nocedit.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_setRGBA
 annotations/nocedit.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_setRenderAlphaNormalized_FUN_0048ca70.keep.cpp
 annotations/nocedit.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_setRenderAlpha_FUN_0048ca60.cpp
 annotations/nocedit.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_setRenderingState_FUN_0048ca00.cpp
+annotations/nocedit.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_setShadowPass_FUN_0048cac0.cpp
 annotations/nocedit.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0.cpp
 annotations/nocedit.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_setupCameraAndProjection_FUN_0048c200.keep.cpp
 annotations/nocedit.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_setupCameraAndViewport_FUN_0048dcc0.keep.cpp
@@ -6187,7 +6187,7 @@ annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/isSampleLoaded_FUN_005a
 annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/isSfxChannelEnabled_FUN_005a9ea0.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/isSfxPlaying_FUN_005a9660.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/isSoundBusy_FUN_005ab540.cpp
-annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/isSoundEnabled_FUN_005a96b0.cpp
+annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/isSoundMuted_FUN_005a96b0.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/isSoundSystemActive_FUN_005ab530.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/isStreamableFile_FUN_005a5180.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/isWithinListenerRadius_FUN_005aa290.cpp
@@ -6257,7 +6257,7 @@ annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/setSfxTrackedFloatVeloc
 annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/setSfxUserData_FUN_005a9ba0.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/setSfxVelocity_FUN_005a9970.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/setSfxVolume_FUN_005a9ae0.cpp
-annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/setSoundEnabled_FUN_005a96c0.cpp
+annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/setSoundMuted_FUN_005a96c0.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/setSoundOutputMode_FUN_005ab170.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/shutdownSoundSystem_FUN_005aaeb0.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/startNonPositionalSfx_FUN_005a9550.cpp

@@ -148,8 +148,8 @@ section .text
         ;   XREF to: 004d137a (CONDITIONAL_JUMP)  ; LAB_004d137a
     POP EDI                             ; 004d1392
         ;   Label: LAB_004d1392
-    CALL sound_sndmain.cpp_isSoundEnabled_FUN_00526ca0 ; 004d1393
-        ;   XREF to: 00526ca0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSoundEnabled_FUN_00526ca0()
+    CALL sound_sndmain.cpp_isSoundMuted_FUN_00526ca0 ; 004d1393
+        ;   XREF to: 00526ca0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSoundMuted_FUN_00526ca0()
     TEST EAX,EAX                        ; 004d1398
     JNZ 0x004d1bac                      ; 004d139a
         ;   XREF to: 004d1bac (CONDITIONAL_JUMP)  ; LAB_004d1bac
@@ -914,18 +914,18 @@ section .text
         ;   XREF to: 004d1b8d (CONDITIONAL_JUMP)  ; default
     JMP dword ptr [EBX*0x4 + 0x4d12b0]  ; 004d1b57 | caseD_0 | caseD_1 | caseD_2
         ;   Label: switchD
-    CALL sound_sndmain.cpp_isSoundEnabled_FUN_00526ca0 ; 004d1b5e
-        ;   XREF to: 00526ca0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSoundEnabled_FUN_00526ca0()
+    CALL sound_sndmain.cpp_isSoundMuted_FUN_00526ca0 ; 004d1b5e
+        ;   XREF to: 00526ca0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSoundMuted_FUN_00526ca0()
         ;   Label: caseD_0
     TEST EAX,EAX                        ; 004d1b63
     SETZ AL                             ; 004d1b65
     AND EAX,0xff                        ; 004d1b68
     PUSH EAX                            ; 004d1b6d
-    CALL sound_sndmain.cpp_setSoundEnabled_FUN_00526cb0 ; 004d1b6e
-        ;   XREF to: 00526cb0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSoundEnabled_FUN_00526cb0(int enable)
+    CALL sound_sndmain.cpp_setSoundMuted_FUN_00526cb0 ; 004d1b6e
+        ;   XREF to: 00526cb0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSoundMuted_FUN_00526cb0(int enable)
     ADD ESP,0x4                         ; 004d1b73
-    CALL sound_sndmain.cpp_isSoundEnabled_FUN_00526ca0 ; 004d1b76
-        ;   XREF to: 00526ca0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSoundEnabled_FUN_00526ca0()
+    CALL sound_sndmain.cpp_isSoundMuted_FUN_00526ca0 ; 004d1b76
+        ;   XREF to: 00526ca0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSoundMuted_FUN_00526ca0()
     TEST EAX,EAX                        ; 004d1b7b
     JNZ 0x004d1b8d                      ; 004d1b7d
         ;   XREF to: 004d1b8d (CONDITIONAL_JUMP)  ; default

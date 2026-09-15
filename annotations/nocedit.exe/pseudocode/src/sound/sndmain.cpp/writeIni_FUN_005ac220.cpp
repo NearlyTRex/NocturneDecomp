@@ -57,7 +57,7 @@ void __cdecl sound_sndmain_cpp_writeIni_FUN_005ac220(CIniFile *ini_file)
   engine_ini_cpp_CIniFile_setInteger_FUN_004fbc90(ini_file,"HwMixingEnabled",iVar3);
   local_14 = sound_sndmain_cpp_getMaxSwLatency_FUN_005abea0();
   engine_ini_cpp_CIniFile_setFloatValue_FUN_004fbd30(ini_file,"MaxSwLatency",local_14);
-  iVar3 = sound_sndmain_cpp_isSoundEnabled_FUN_005a96b0();
+  iVar3 = sound_sndmain_cpp_isSoundMuted_FUN_005a96b0();
   channel_index = 0;
   engine_ini_cpp_CIniFile_setInteger_FUN_004fbc90(ini_file,"Mute",iVar3);
   if (0 < g_MaxSoundChannels) {

@@ -31,7 +31,7 @@ int __cdecl core_door_cpp_CDoor_renderOpaque_FUN_004807d0(CDoor *this_ptr)
   iVar3 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(pCVar2);
   if (iVar3 != 0) {
     if (this_ptr->plot_as_box_in_shadow != 0) {
-      iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
+      iVar4 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2);
       if (iVar4 != 0) {
         this_ptr_01 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_44);
         core_box_cpp_CBoundingBox3D_render_FUN_004210b0(this_ptr_01);
@@ -44,7 +44,7 @@ int __cdecl core_door_cpp_CDoor_renderOpaque_FUN_004807d0(CDoor *this_ptr)
 LAB_0048085a:
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base);
   if ((iVar3 != 0) && (g_CDemonMissionPtr->is_in_editor != 0)) {
-    iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
+    iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2);
     if ((iVar1 == 0) &&
        (this_ptr_00 = (CDoor *)g_CDemonMissionPtr->selected_actor, this_ptr == this_ptr_00)) {
       fVar1 = this_ptr_00->param;

@@ -38,7 +38,7 @@ int __cdecl core_tvbat_cpp_CTVBat_renderOpaque_FUN_005e4d80(CTVBat *this_ptr)
   }
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);
   if (g_CDemonMissionPtr->is_in_editor != 0) {
-    iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
+    iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2);
     if ((iVar1 == 0) && (this_ptr == (CTVBat *)g_CDemonMissionPtr->selected_actor)) {
       engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
                 (g_CDemonRendererPtr2,&((CTVBat *)g_CDemonMissionPtr->selected_actor)->home_pos);

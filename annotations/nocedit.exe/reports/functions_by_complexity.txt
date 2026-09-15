@@ -149,7 +149,7 @@ annotations/nocedit.exe/pseudocode/src/core/dracbrid.cpp/CDraculaBride_getActorT
 annotations/nocedit.exe/pseudocode/src/cockpit/drawsurf.cpp/getDashLength_FUN_00488a90.cpp
 annotations/nocedit.exe/pseudocode/src/cockpit/drawsurf.cpp/getDashAnimationThreshold_FUN_00488aa0.cpp
 annotations/nocedit.exe/pseudocode/src/cockpit/drawsurf.cpp/getFontMaxWidth_FUN_0048a6a0.cpp
-annotations/nocedit.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_getFaceCount_FUN_0048cae0.cpp
+annotations/nocedit.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_isShadowPass_FUN_0048cae0.cpp
 annotations/nocedit.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_getAlphaMask_FUN_0048ce00.cpp
 annotations/nocedit.exe/pseudocode/src/core/drip.cpp/CDrip_getActorType_FUN_0048dff0.cpp
 annotations/nocedit.exe/pseudocode/src/core/drip.cpp/CDrip_getCollisionType_FUN_0048e820.cpp
@@ -387,7 +387,7 @@ annotations/nocedit.exe/pseudocode/src/core/slew.cpp/CSlew_free_FUN_005a20a0.cpp
 annotations/nocedit.exe/pseudocode/src/core/smiley.cpp/CSmiley_getActorType_FUN_005a2420.cpp
 annotations/nocedit.exe/pseudocode/src/core/smiley.cpp/CSmiley_reset_FUN_005a3280.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/returnZero_FUN_005a8cf0.cpp
-annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/isSoundEnabled_FUN_005a96b0.cpp
+annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/isSoundMuted_FUN_005a96b0.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/getAudioBitDepth_FUN_005ab250.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/getAudioSampleRate_FUN_005ab260.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/getAudioChannelCount_FUN_005ab270.cpp
@@ -949,7 +949,7 @@ annotations/nocedit.exe/pseudocode/src/cockpit/drawsurf.cpp/CDrawSurface_drawTex
 annotations/nocedit.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_setProjectionScaleSimple_FUN_0048c670.keep.cpp
 annotations/nocedit.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_setRenderAlpha_FUN_0048ca60.cpp
 annotations/nocedit.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_enableFaceCapture_FUN_0048caa0.cpp
-annotations/nocedit.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_setFaceCount_FUN_0048cac0.cpp
+annotations/nocedit.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_setShadowPass_FUN_0048cac0.cpp
 annotations/nocedit.exe/pseudocode/src/core/dtrace.cpp/CVector3f_arrdtor20000_FUN_0049a410.cpp
 annotations/nocedit.exe/pseudocode/src/core/dtri.cpp/CDemonTriangle_arrdtor8_FUN_0049cd20.cpp
 annotations/nocedit.exe/pseudocode/src/core/dynamite.cpp/CDynamite_getDamage_FUN_0049cee0.cpp
@@ -1027,7 +1027,6 @@ annotations/nocedit.exe/pseudocode/src/core/hpriest.cpp/CHighPriestOfGardath_arc
 annotations/nocedit.exe/pseudocode/src/core/hpriest.cpp/CHighPriestOfGardath_processDamage_FUN_004f7c50.cpp
 annotations/nocedit.exe/pseudocode/src/engine/ini.cpp/getProfileString_FUN_004fb960.cpp
 annotations/nocedit.exe/pseudocode/src/engine/ini.cpp/CIniFile_ctor_FUN_004fba70.cpp
-annotations/nocedit.exe/pseudocode/src/core/inv.cpp/loadItem_FUN_004fcfe0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/keyactor.cpp/CKeyActor_setup_FUN_005016f0.cpp
 annotations/nocedit.exe/pseudocode/src/core/keyactor.cpp/CKeyActor_addFilesToExtract_FUN_00501990.cpp
 annotations/nocedit.exe/pseudocode/src/engine/keys.cpp/CKeys_getInputKey_FUN_00502460.cpp
@@ -1362,6 +1361,7 @@ annotations/nocedit.exe/pseudocode/src/core/imp.cpp/CImp_getCollisionType_FUN_00
 annotations/nocedit.exe/pseudocode/src/core/imp.cpp/CImp_addFilesToExtract_FUN_004fb150.cpp
 annotations/nocedit.exe/pseudocode/src/engine/ini.cpp/CIniFile_setInteger_FUN_004fbc90.cpp
 annotations/nocedit.exe/pseudocode/src/engine/ini.cpp/CIniFile_setFloatValue_FUN_004fbd30.cpp
+annotations/nocedit.exe/pseudocode/src/core/inv.cpp/loadItem_FUN_004fcfe0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/engine/keys.cpp/CKeys_getAndClearKeyState_FUN_00502430.cpp
 annotations/nocedit.exe/pseudocode/src/engine/keys.cpp/clearKeypresses_FUN_00502450.cpp
 annotations/nocedit.exe/pseudocode/src/core/ladder.cpp/staticInit_FUN_005024d0.cpp
@@ -3187,7 +3187,7 @@ annotations/nocedit.exe/pseudocode/src/core/skeleton.cpp/CDeformableModel_calcul
 annotations/nocedit.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_accumulateScaledRootMotion_FUN_005a0c90.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/findFreeSfxSample_FUN_005a4400.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/isStreamableFile_FUN_005a5180.cpp
-annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/setSoundEnabled_FUN_005a96c0.cpp
+annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/setSoundMuted_FUN_005a96c0.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/setSfxTrackedFloatVelocity_FUN_005a9a00.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/setSfxTrackedDoubleVelocity_FUN_005a9a70.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/set3DListenerOrient_FUN_005aa0a0.cpp
@@ -3514,7 +3514,7 @@ annotations/nocedit.exe/pseudocode/src/core/hero.cpp/CHero_reset_FUN_004f3b20.ke
 annotations/nocedit.exe/pseudocode/src/core/hero.cpp/CHeroPlaceholder_renderTransparent_FUN_004f3c90.cpp
 annotations/nocedit.exe/pseudocode/src/engine/ini.cpp/CIniFile_readIniHeader_FUN_004fbae0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/inv.cpp/getItemDisplayName_FUN_004fcf00.cpp
-annotations/nocedit.exe/pseudocode/src/core/inv.cpp/getItemIconName_FUN_004fcf70.cpp
+annotations/nocedit.exe/pseudocode/src/core/inv.cpp/getItemDescription_FUN_004fcf70.cpp
 annotations/nocedit.exe/pseudocode/src/core/inv.cpp/CInventory_setupItems_FUN_004ff780.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/ladder.cpp/CLadder_ctor_FUN_00502540.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/lever.cpp/CLever_renderOpaque_FUN_00504cf0.cpp

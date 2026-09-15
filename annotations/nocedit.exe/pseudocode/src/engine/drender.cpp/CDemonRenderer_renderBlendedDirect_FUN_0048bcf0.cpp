@@ -26,7 +26,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0048bcf0(
       } while (iVar3 < (prim->base).count);
     }
     if (((uVar2 & 0x80000000) == 0) || ((uVar2 & 0x1f) == 0)) {
-      if (this_ptr->face_count == 0) {
+      if (this_ptr->shadow_pass_active == 0) {
         if (g_BitsPerPixel == 0x20) {
           g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline32_FUN_005b4031;
         }

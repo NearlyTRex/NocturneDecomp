@@ -24,7 +24,7 @@
 ;   core_morph.cpp_CMorph_updateModelFromDeformable_FUN_0052b600
 ;   core_morph.cpp_CMorph_updateModelFromKeyframed_FUN_0052b640
 ;   core_motion.cpp_CMotionController_render_FUN_0052e700
-;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
+;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0
 ;
 ; *****************************************************************************
 
@@ -105,8 +105,8 @@ section .text
         ;   XREF to: 00418a9f (CONDITIONAL_JUMP)  ; LAB_00418a9f
     MOV EBP,dword ptr [0x006703ec]      ; 00418a6f | g_CDemonRendererPtr2
     PUSH EBP                            ; 00418a75 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 00418a76
-        ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(CDemonRenderer * this_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0 ; 00418a76
+        ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00418a7b
     TEST EAX,EAX                        ; 00418a7e
     JNZ 0x00418a9f                      ; 00418a80

@@ -30,7 +30,7 @@
 ;   core_dcamera.cpp_CDemonCamera_resetSceneCamera_FUN_00440270
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70
-;   engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_00461070
+;   engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_00461070
 ;
 ; *****************************************************************************
 
@@ -84,8 +84,8 @@ section .text
         ;   Label: LAB_0044e78a
     MOV EDX,dword ptr [0x005ae704]      ; 0044e78c | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 0044e792 | DAT_01b4d738
-    CALL engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_00461070 ; 0044e793
-        ;   XREF to: 00461070 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_00461070(CDemonRenderer * this_ptr, int value)
+    CALL engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_00461070 ; 0044e793
+        ;   XREF to: 00461070 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_00461070(CDemonRenderer * this_ptr, int value)
     ADD ESP,0x8                         ; 0044e798
     MOV ECX,dword ptr [0x005ae704]      ; 0044e79b | g_CDemonRenderer_PTR_005ae704
     PUSH ECX                            ; 0044e7a1 | DAT_01b4d738

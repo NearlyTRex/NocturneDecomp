@@ -15,7 +15,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAdaptiveFogTexturedOp52_F
   
   iVar1 = engine_3d_c_isVisiblePlane_FUN_00404610(&prim->surface_normal);
   if (iVar1 != 0) {
-    if (DAT_006b0278 == 0) {
+    if (g_TexturesDisabled == 0) {
       if (DAT_006b0274 == 0) {
         if (g_MMXSupported == 0) {
           if (g_BitsPerPixel == 0x20) {

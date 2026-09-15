@@ -21,7 +21,7 @@
 ;
 ; Referenced Globals:
 ;   int INT_005b7644 = 0x1
-;   undefined4 DAT_006b0278
+;   int g_TexturesDisabled
 ;   undefined4 DAT_006b0280
 ;   undefined4 DAT_01b4d1fc
 ;   undefined4 DAT_01b4d768
@@ -130,7 +130,7 @@ section .text
     TEST EBX,EBX                        ; 005629a9
     JZ 0x005629ba                       ; 005629ab
         ;   XREF to: 005629ba (CONDITIONAL_JUMP)  ; LAB_005629ba
-    CMP dword ptr [0x006b0278],0x0      ; 005629ad | DAT_006b0278
+    CMP dword ptr [0x006b0278],0x0      ; 005629ad | g_TexturesDisabled
     JZ 0x00562b9f                       ; 005629b4
         ;   XREF to: 00562b9f (CONDITIONAL_JUMP)  ; LAB_00562b9f
     MOV EAX,[0x01c039a4]                ; 005629ba | g_VertexPreprocessMode

@@ -10,7 +10,7 @@
 ;   int INT_005acab0 = 0x1
 ;   int g_BitsPerPixel = 0x8
 ;   undefined4 DAT_006b0260
-;   undefined4 DAT_006b0278
+;   int g_TexturesDisabled
 ;   int g_ActiveRenderColor
 ;   int g_CurrentLightingValue
 ;   MainScanlineFunc* g_ScanlineRenderFunc
@@ -44,7 +44,7 @@ section .text
     TEST EAX,EAX                        ; 004060cd
     JZ 0x00406148                       ; 004060cf
         ;   XREF to: 00406148 (CONDITIONAL_JUMP)  ; LAB_00406148
-    CMP dword ptr [0x006b0278],0x0      ; 004060d1 | DAT_006b0278
+    CMP dword ptr [0x006b0278],0x0      ; 004060d1 | g_TexturesDisabled
     JZ 0x0040617f                       ; 004060d8
         ;   XREF to: 0040617f (CONDITIONAL_JUMP)  ; LAB_0040617f
     CMP dword ptr [0x01c03948],0x0      ; 004060de | g_MMXSupported

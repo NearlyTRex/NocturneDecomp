@@ -16,7 +16,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderCharacter_FUN_00429aa0(CCharacte
               (&this_ptr->model,-1,0xffffffff,1,0);
     core_cloth_cpp_CClothList_render_FUN_0043c320(&this_ptr->cloth_list,&this_ptr->model);
   }
-  iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
+  iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2);
   if (iVar1 == 0) {
     if (this_ptr->is_ethereal == 0) {
       core_charactr_cpp_CCharacter_renderBurn_FUN_0042ad00(this_ptr);

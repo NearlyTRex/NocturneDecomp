@@ -33,7 +33,7 @@ int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderOpaque_FUN_004c9be0(CMans
       iVar2 = iVar2 + 1;
     } while (iVar2 < 0xc);
     if ((g_CDemonMission_PTR_005baf90->is_in_editor != 0) &&
-       (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090
+       (iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090
                           (g_CDemonRenderer_PTR_005ae704), iVar2 == 0)) {
       iVar2 = 0;
       do {

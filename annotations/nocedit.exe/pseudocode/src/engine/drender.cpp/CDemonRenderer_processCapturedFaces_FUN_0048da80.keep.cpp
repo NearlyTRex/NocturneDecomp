@@ -16,7 +16,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80
   int iVar6;
   QSORT_COMPARATOR_FUNC *compar;
   
-  if (this_ptr->face_count == 0) {
+  if (this_ptr->shadow_pass_active == 0) {
     if (0 < g_CaptureFaceCount) {
       iVar3 = 0;
       do {

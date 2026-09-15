@@ -12,7 +12,7 @@ int __cdecl core_teleport_cpp_CTeleport_renderOpaque_FUN_005dae10(CTeleport *thi
   int iVar1;
   
   if (g_CDemonMissionPtr->is_in_editor != 0) {
-    iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
+    iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2);
     if (iVar1 == 0) {
       core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(&this_ptr->base,0xfb);
       return 0;

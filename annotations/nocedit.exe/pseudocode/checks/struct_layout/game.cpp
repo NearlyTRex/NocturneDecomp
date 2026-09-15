@@ -2350,8 +2350,8 @@ static_assert(sizeof(CDemonRenderer) == 44,
               "sizeof(CDemonRenderer) != 44");
 static_assert(__builtin_offsetof(CDemonRenderer, vertex_buffer_ptr) == 0,
               "offsetof(CDemonRenderer, vertex_buffer_ptr) != 0");
-static_assert(__builtin_offsetof(CDemonRenderer, face_count) == 4,
-              "offsetof(CDemonRenderer, face_count) != 4");
+static_assert(__builtin_offsetof(CDemonRenderer, shadow_pass_active) == 4,
+              "offsetof(CDemonRenderer, shadow_pass_active) != 4");
 static_assert(__builtin_offsetof(CDemonRenderer, projection_mode) == 8,
               "offsetof(CDemonRenderer, projection_mode) != 8");
 static_assert(__builtin_offsetof(CDemonRenderer, plane_culling_enabled) == 12,
@@ -8726,12 +8726,12 @@ static_assert(__builtin_offsetof(SIntersectXZCylinder, intersect_z) == 88,
 // ---- SInventoryItemInfo (768 bytes) ----
 static_assert(sizeof(SInventoryItemInfo) == 768,
               "sizeof(SInventoryItemInfo) != 768");
-static_assert(__builtin_offsetof(SInventoryItemInfo, string1) == 0,
-              "offsetof(SInventoryItemInfo, string1) != 0");
-static_assert(__builtin_offsetof(SInventoryItemInfo, string2) == 256,
-              "offsetof(SInventoryItemInfo, string2) != 256");
-static_assert(__builtin_offsetof(SInventoryItemInfo, string3) == 512,
-              "offsetof(SInventoryItemInfo, string3) != 512");
+static_assert(__builtin_offsetof(SInventoryItemInfo, model_name) == 0,
+              "offsetof(SInventoryItemInfo, model_name) != 0");
+static_assert(__builtin_offsetof(SInventoryItemInfo, display_name) == 256,
+              "offsetof(SInventoryItemInfo, display_name) != 256");
+static_assert(__builtin_offsetof(SInventoryItemInfo, description) == 512,
+              "offsetof(SInventoryItemInfo, description) != 512");
 
 // ---- SLaserInfo (84 bytes) ----
 static_assert(sizeof(SLaserInfo) == 84,

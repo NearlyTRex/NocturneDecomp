@@ -21,7 +21,7 @@ int __cdecl core_svetlana_cpp_CSvetlana_renderOpaque_FUN_005d9bc0(CSvetlana *thi
     local_84[iVar3] = (this_ptr->base).base.model.part_data.visibility_flags[iVar3];
   }
   iVar4 = core_charactr_cpp_CCharacter_renderOpaque_FUN_0042a2c0((CCharacter *)this_ptr);
-  iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
+  iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2);
   if ((iVar1 == 0) && (g_PerspectiveReciprocal < 0x4000)) {
     for (iVar1 = 0; iVar1 < 0x1e; iVar1 = iVar1 + 1) {
       (this_ptr->base).base.model.part_data.visibility_flags[iVar1] = 0;

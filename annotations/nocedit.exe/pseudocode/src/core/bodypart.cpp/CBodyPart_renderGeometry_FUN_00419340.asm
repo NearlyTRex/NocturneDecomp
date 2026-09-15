@@ -26,7 +26,7 @@
 ;   core_set.cpp_CDemonSet_rotateVerticies_FUN_0056e7c0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0
-;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
+;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0
 ;   engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0048aeb0
 ;   engine_drender.cpp_CDemonRenderer_renderTriangleBatch_FUN_0048ce20
 ;
@@ -72,8 +72,8 @@ section .text
         ;   XREF to: 004193ba (CONDITIONAL_JUMP)  ; LAB_004193ba
     MOV EBP,dword ptr [0x006703ec]      ; 004193a7 | g_CDemonRendererPtr2
     PUSH EBP                            ; 004193ad | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 004193ae
-        ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(CDemonRenderer * this_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0 ; 004193ae
+        ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 004193b3
     TEST EAX,EAX                        ; 004193b6
     JZ 0x0041941e                       ; 004193b8
@@ -81,8 +81,8 @@ section .text
     MOV ECX,dword ptr [0x006703ec]      ; 004193ba | g_CDemonRendererInstance | g_CDemonRendererPtr2
         ;   Label: LAB_004193ba
     PUSH ECX                            ; 004193c0 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 004193c1
-        ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(CDemonRenderer * this_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0 ; 004193c1
+        ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 004193c6
     TEST EAX,EAX                        ; 004193c9
     JNZ 0x004193e3                      ; 004193cb

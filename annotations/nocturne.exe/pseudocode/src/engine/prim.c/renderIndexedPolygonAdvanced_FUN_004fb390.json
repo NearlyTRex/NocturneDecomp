@@ -122,13 +122,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 743,
-    "complexity_score": 628,
+    "complexity_score": 618,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 24,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 338,
-    "suspect_count": 28,
+    "suspect_count": 27,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
@@ -267,8 +267,8 @@
     },
     {
       "addr": "006b0278",
-      "name": "DAT_006b0278",
-      "type": "undefined4",
+      "name": "g_TexturesDisabled",
+      "type": "int",
       "value": null
     },
     {
@@ -533,14 +533,6 @@
       "match": "DAT_005c5014",
       "severity": "mild",
       "text": "(SRenderVertex *)(&DAT_005c5014 + piVar6[2] * 0xc));",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 62,
-      "match": "DAT_006b0278",
-      "severity": "mild",
-      "text": "if ((g_UseExternalRenderer == 0) || (DAT_006b0278 != 0)) {",
       "type": "undefined_data"
     },
     {

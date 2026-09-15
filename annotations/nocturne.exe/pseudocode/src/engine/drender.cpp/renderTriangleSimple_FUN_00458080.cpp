@@ -40,7 +40,7 @@ void __cdecl engine_drender_cpp_renderTriangleSimple_FUN_00458080(CVector3i *ver
     return;
   }
   g_RenderedTriangleCount = g_RenderedTriangleCount + 1;
-  if ((g_UseExternalRenderer == 0) || (DAT_006b0278 != 0)) {
+  if ((g_UseExternalRenderer == 0) || (g_TexturesDisabled != 0)) {
     if (g_VertexPreprocessMode != 0) {
       if ((uint)g_VertexPreprocessMode < 2) {
         iVar3 = 0;

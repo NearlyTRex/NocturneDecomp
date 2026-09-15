@@ -79,8 +79,8 @@ LAB_0057523f:
   this_ptr->camera_switch_cooldown = 0.0;
   local_48 = g_UseExternalRenderer;
   g_UseExternalRenderer = 0;
-  local_44 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(this_ptr_01);
-  engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_0048cac0(g_CDemonRendererPtr2,0);
+  local_44 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(this_ptr_01);
+  engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_0048cac0(g_CDemonRendererPtr2,0);
   (*((actor->vtable)._ub)->getBoundingBox)(actor,&CStack_c4);
   for (uVar11 = 0; (int)uVar11 < 8; uVar11 = uVar11 + 1) {
     pCVar3 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
@@ -262,7 +262,7 @@ LAB_0057523f:
     } while (iVar7 < iVar12);
   }
   g_ZBufferScanlineArrayBackup[0] = (uint *)0x0;
-  engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_0048cac0(g_CDemonRendererPtr2,local_44);
+  engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_0048cac0(g_CDemonRendererPtr2,local_44);
   g_UseExternalRenderer = local_48;
   if (this_ptr->camera_count <= g_VDCameraIndex) {
     iVar12 = -1;

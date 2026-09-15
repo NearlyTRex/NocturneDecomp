@@ -86,15 +86,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 59,
+    "complexity_score": 44,
     "cross_reference_count": 13,
     "function_call_count": 5,
     "global_count": 5,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 29,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "warning_overlapping_globals"
     ],
     "total_lines": 112
@@ -221,8 +220,8 @@
   "globals": [
     {
       "addr": "006b0278",
-      "name": "DAT_006b0278",
-      "type": "undefined4",
+      "name": "g_TexturesDisabled",
+      "type": "int",
       "value": null
     },
     {
@@ -419,14 +418,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_006b0278",
-      "severity": "mild",
-      "text": "if ((DAT_006b0278 == 0) && (texture->texture_name[0] != '\\0')) {",
-      "type": "undefined_data"
     }
   ],
   "vtable_info": {

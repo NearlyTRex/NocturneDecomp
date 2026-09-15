@@ -51,7 +51,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderSortedPolygonList_FUN_00405b40(S
     iVar7 = (primitive_00->base).type;
   }
   if (INT_005acaac != 0) {
-    if (DAT_006b0278 == 0) {
+    if (g_TexturesDisabled == 0) {
       iVar4 = 0;
       _qsort
                 (&DAT_006b415c,(SIZE_T)DAT_006b0268,4,

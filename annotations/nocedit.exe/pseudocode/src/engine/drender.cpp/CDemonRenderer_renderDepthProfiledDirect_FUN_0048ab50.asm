@@ -26,7 +26,7 @@
 ; Called Functions:
 ;   engine_3d.c_isVisiblePlane_FUN_00403950
 ;   engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740
-;   engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_0048cac0
+;   engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0048cac0
 ;
 ; *****************************************************************************
 
@@ -63,8 +63,8 @@ section .text
         ;   XREF to: 0048abae (CONDITIONAL_JUMP)  ; LAB_0048abae
     PUSH 0x1                            ; 0048aba3
     PUSH EBX                            ; 0048aba5
-    CALL engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_0048cac0 ; 0048aba6
-        ;   XREF to: 0048cac0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_0048cac0(CDemonRenderer * this_ptr, int value)
+    CALL engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0048cac0 ; 0048aba6
+        ;   XREF to: 0048cac0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0048cac0(CDemonRenderer * this_ptr, int value)
     ADD ESP,0x8                         ; 0048abab
     LEA EAX,[ESI + 0x18]                ; 0048abae
         ;   Label: LAB_0048abae
@@ -81,8 +81,8 @@ section .text
         ;   XREF to: 0048abd3 (CONDITIONAL_JUMP)  ; LAB_0048abd3
     PUSH EBP                            ; 0048abc9
     PUSH EBX                            ; 0048abca
-    CALL engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_0048cac0 ; 0048abcb
-        ;   XREF to: 0048cac0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_0048cac0(CDemonRenderer * this_ptr, int value)
+    CALL engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0048cac0 ; 0048abcb
+        ;   XREF to: 0048cac0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0048cac0(CDemonRenderer * this_ptr, int value)
     ADD ESP,0x8                         ; 0048abd0
     MOV EAX,[0x02c6d5a4]                ; 0048abd3 | g_RenderPixelCounter
         ;   Label: LAB_0048abd3

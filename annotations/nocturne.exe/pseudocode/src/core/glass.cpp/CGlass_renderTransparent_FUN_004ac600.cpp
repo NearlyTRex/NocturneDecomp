@@ -24,7 +24,7 @@ int __cdecl core_glass_cpp_CGlass_renderTransparent_FUN_004ac600(CGlass *this_pt
   int iStack_10;
   
   if ((((this_ptr->background_flag == 0) && (this_ptr->opacity != 0)) && (this_ptr->shattered == 0))
-     && (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090
+     && (iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090
                            (g_CDemonRenderer_PTR_005ae704), iVar2 == 0)) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(&this_ptr->base);
     this_ptr_01 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_28);

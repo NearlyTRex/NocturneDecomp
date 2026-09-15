@@ -16,6 +16,6 @@ CDemonRenderer * __cdecl engine_drender_cpp_CDemonRenderer_ctor_FUN_0048a6c0(CDe
   this_ptr->alpha_mask = 0;
   this_ptr->texture_capture_enabled = 0;
   this_ptr->skip_uv_extraction = 0;
-  this_ptr->face_count = 0;
+  this_ptr->shadow_pass_active = 0;
   return this_ptr;
 }

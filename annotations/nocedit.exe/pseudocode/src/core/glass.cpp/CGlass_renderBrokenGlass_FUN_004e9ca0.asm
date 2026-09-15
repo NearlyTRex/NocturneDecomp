@@ -20,10 +20,10 @@
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
-;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
+;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0
 ;   engine_drender.cpp_CDemonRenderer_renderSolidTexturedPoly_FUN_0048b550
-;   engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_0048cac0
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
+;   engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0048cac0
 ;   engine_special.cpp_transformAndProjectPoint_FUN_005b575c
 ;
 ; *****************************************************************************
@@ -58,8 +58,8 @@ section .text
     PUSH EBX                            ; 004e9cdc
     MOV EBX,dword ptr [0x006703ec]      ; 004e9cdd | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EBX                            ; 004e9ce3 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 004e9ce4
-        ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(CDemonRenderer * this_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0 ; 004e9ce4
+        ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 004e9ce9
     MOV EBX,dword ptr [ESP + 0x38]      ; 004e9cec
     ADD EBX,0x374                       ; 004e9cf0
@@ -69,8 +69,8 @@ section .text
     PUSH 0x0                            ; 004e9cfe
     MOV EDI,dword ptr [0x006703ec]      ; 004e9d00 | g_CDemonRendererPtr2
     PUSH EDI                            ; 004e9d06 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_0048cac0 ; 004e9d07
-        ;   XREF to: 0048cac0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_0048cac0(CDemonRenderer * this_ptr, int value)
+    CALL engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0048cac0 ; 004e9d07
+        ;   XREF to: 0048cac0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0048cac0(CDemonRenderer * this_ptr, int value)
     ADD ESP,0x8                         ; 004e9d0c
     PUSH EBX                            ; 004e9d0f
     MOV EBP,dword ptr [0x006703ec]      ; 004e9d10 | g_CDemonRendererPtr2
@@ -81,8 +81,8 @@ section .text
     PUSH 0x1                            ; 004e9d1f
     MOV EAX,[0x006703ec]                ; 004e9d21 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EAX                            ; 004e9d26 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_0048cac0 ; 004e9d27
-        ;   XREF to: 0048cac0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_0048cac0(CDemonRenderer * this_ptr, int value)
+    CALL engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0048cac0 ; 004e9d27
+        ;   XREF to: 0048cac0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0048cac0(CDemonRenderer * this_ptr, int value)
     ADD ESP,0x8                         ; 004e9d2c
         ;   Label: LAB_004e9d2c
     MOV EAX,dword ptr [ESP + 0x38]      ; 004e9d2f

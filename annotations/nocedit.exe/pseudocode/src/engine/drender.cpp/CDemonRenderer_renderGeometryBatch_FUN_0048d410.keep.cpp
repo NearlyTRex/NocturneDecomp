@@ -24,7 +24,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410(
     g_CurrentLineNumber = 2666;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't capture this type of face!");
   }
-  if (this_ptr->face_count == 0) {
+  if (this_ptr->shadow_pass_active == 0) {
     if (render_mode == 0xc0) {
       g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrender_cpp_renderDepthOnlyReversed_FUN_004906e9;
     }
@@ -58,7 +58,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410(
           } while (iVar4 < vertices_per_face);
         }
         if ((this_ptr->face_capture_enabled == 0) &&
-           (((this_ptr->face_count != 0 && ((g_RenderStateFlags.dword & RENDER_TEX_ENABLE) == 0)) ||
+           (((this_ptr->shadow_pass_active != 0 && ((g_RenderStateFlags.dword & RENDER_TEX_ENABLE) == 0)) ||
             ((g_RenderStateFlags.dword & (RENDER_TEX_ENABLE | RENDER_FOG_COLOR)) == 0)))) {
           core_xform_cpp_transformAndClipGeometry_FUN_005f8550(iVar4,local_68);
           if (2 < g_ClippedVertexCount) {

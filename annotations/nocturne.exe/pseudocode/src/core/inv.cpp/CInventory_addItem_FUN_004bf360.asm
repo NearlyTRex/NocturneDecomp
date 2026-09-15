@@ -47,8 +47,8 @@
 ;   core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80
 ;   core_game.cpp_CGame_displayMessage_FUN_0049aa30
 ;   core_inv.cpp_CInventory_selectWeapon_FUN_004c0850
+;   core_inv.cpp_getItemDescription_FUN_004bed10
 ;   core_inv.cpp_getItemDisplayName_FUN_004beca0
-;   core_inv.cpp_getItemIconName_FUN_004bed10
 ;   core_menu.cpp_getKeyDisplayName_FUN_004d2900
 ;   core_mission.cpp_CDemonMission_FUN_004d8cd0
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720
@@ -125,8 +125,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x33c]     ; 004bf427
     PUSH EBX                            ; 004bf42e
     MOV dword ptr [ESP + 0x304],EAX     ; 004bf42f
-    CALL core_inv.cpp_getItemIconName_FUN_004bed10 ; 004bf436
-        ;   XREF to: 004bed10 (UNCONDITIONAL_CALL)  ; char * core_inv.cpp_getItemIconName_FUN_004bed10(CDemonActor * actor_ptr)
+    CALL core_inv.cpp_getItemDescription_FUN_004bed10 ; 004bf436
+        ;   XREF to: 004bed10 (UNCONDITIONAL_CALL)  ; char * core_inv.cpp_getItemDescription_FUN_004bed10(CDemonActor * actor_ptr)
     ADD ESP,0x4                         ; 004bf43b
     MOV ESI,dword ptr [0x007641f4]      ; 004bf43e | g_CAmmoActorType_007641bc.name_hash
     PUSH ESI                            ; 004bf444

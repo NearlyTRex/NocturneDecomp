@@ -7,6 +7,9 @@
 // GLOBAL VARIABLES - Range 0x6B0000
 // =============================================================================
 
+// int
+extern int g_TexturesDisabled;
+
 // undefined4
 extern undefined4 DAT_006b023c;
 extern undefined4 DAT_006b0240;
@@ -23,7 +26,6 @@ extern undefined4 DAT_006b0268;
 extern undefined4 DAT_006b026c;
 extern undefined4 DAT_006b0270;
 extern undefined4 DAT_006b0274;
-extern undefined4 DAT_006b0278;
 extern undefined4 DAT_006b027c;
 extern undefined4 DAT_006b0280;
 extern undefined4 DAT_006b0288;

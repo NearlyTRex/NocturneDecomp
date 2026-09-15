@@ -101,7 +101,7 @@ section .text
     CMP dword ptr [0x01c02594],0x0      ; 00432266 | g_UseExternalRenderer
     JZ 0x00432384                       ; 0043226d
         ;   XREF to: 00432384 (CONDITIONAL_JUMP)  ; LAB_00432384
-    CMP dword ptr [0x006b0278],0x0      ; 00432273 | DAT_006b0278
+    CMP dword ptr [0x006b0278],0x0      ; 00432273 | g_TexturesDisabled
     JNZ 0x00432384                      ; 0043227a
         ;   XREF to: 00432384 (CONDITIONAL_JUMP)  ; LAB_00432384
     XOR EAX,EAX                         ; 00432280

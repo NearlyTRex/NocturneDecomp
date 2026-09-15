@@ -51,7 +51,7 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004bf360(CInventory *this_ptr,CD
   if ((((CHero *)this_ptr->owner == g_HeroActors[g_LocalHeroIndex]) && (show_tutorial_message != 0))
      && (g_CGame_PTR_005b9354->letterbox_mode == 0)) {
     pcStack_34 = core_inv_cpp_getItemDisplayName_FUN_004beca0(item_actor);
-    core_inv_cpp_getItemIconName_FUN_004bed10(item_actor);
+    core_inv_cpp_getItemDescription_FUN_004bed10(item_actor);
     pCVar5 = core_actor_cpp_castToClassHash_FUN_0040d890
                        (item_actor,g_CAmmoActorType_007641bc.name_hash);
     pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("You've found : ");

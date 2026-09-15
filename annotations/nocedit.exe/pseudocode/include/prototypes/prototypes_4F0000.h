@@ -250,7 +250,7 @@ void __cdecl core_inivar_cpp_writeIniData_FUN_004fc510(void);
 void __cdecl core_inv_cpp_staticInit_FUN_004fcc30(void);
 CKeyFramedModelInstance * __cdecl core_inv_cpp_getItemModel_FUN_004fcda0(CDemonActor *actor_ptr);
 char * __cdecl core_inv_cpp_getItemDisplayName_FUN_004fcf00(CDemonActor *actor_ptr);
-char * __cdecl core_inv_cpp_getItemIconName_FUN_004fcf70(CDemonActor *actor_ptr);
+char * __cdecl core_inv_cpp_getItemDescription_FUN_004fcf70(CDemonActor *actor_ptr);
 int __cdecl core_inv_cpp_loadItem_FUN_004fcfe0(SInventoryItemInfo *item_info,_FILE *file_handle);
 CInventory * __cdecl core_inv_cpp_CInventory_ctor_FUN_004fd020(CInventory *this_ptr);
 CInventory * __cdecl core_inv_cpp_CInventory_dtor_FUN_004fd0c0(CInventory *this_ptr,uint flags);

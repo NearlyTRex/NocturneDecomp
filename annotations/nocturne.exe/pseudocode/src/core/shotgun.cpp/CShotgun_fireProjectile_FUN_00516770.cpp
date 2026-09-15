@@ -23,7 +23,7 @@ void __cdecl core_shotgun_cpp_CShotgun_fireProjectile_FUN_00516770(CShotgun *thi
   CVector3f CStack_2c;
   CVector3f CStack_20;
   
-  iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
+  iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
   ;
   if (iVar2 != 0) {
     return;

@@ -69,7 +69,7 @@
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   crt_stdio.c_sscanf_FUN_00566b5c
 ;   engine_console.cpp_CConsole_printf_FUN_0043ac60
-;   sound_sndmain.cpp_isSoundEnabled_FUN_00526ca0
+;   sound_sndmain.cpp_isSoundMuted_FUN_00526ca0
 ;   sound_sndmain.cpp_popSfxOptions_FUN_005263c0
 ;   sound_sndmain.cpp_pushSfxOptions_FUN_00526340
 ;   sound_sndmain.cpp_setNextSfxBaseFrequency_FUN_00526120
@@ -92,8 +92,8 @@ section .text
     MOV EBP,ESP                         ; 0052d124
     SUB ESP,0x168                       ; 0052d126
     AND ESP,0xfffffff8                  ; 0052d12c
-    CALL sound_sndmain.cpp_isSoundEnabled_FUN_00526ca0 ; 0052d12f
-        ;   XREF to: 00526ca0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSoundEnabled_FUN_00526ca0()
+    CALL sound_sndmain.cpp_isSoundMuted_FUN_00526ca0 ; 0052d12f
+        ;   XREF to: 00526ca0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSoundMuted_FUN_00526ca0()
     TEST EAX,EAX                        ; 0052d134
     JNZ 0x0052d36f                      ; 0052d136
         ;   XREF to: 0052d36f (CONDITIONAL_JUMP)  ; LAB_0052d36f

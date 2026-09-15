@@ -13,7 +13,7 @@
 ;   int INT_005acaac = 0x1
 ;   undefined4 DAT_006b0264
 ;   undefined4 DAT_006b0268
-;   undefined4 DAT_006b0278
+;   int g_TexturesDisabled
 ;   undefined4 DAT_006b0288
 ;   undefined4 DAT_006b415c
 ;   undefined4 DAT_006b4160
@@ -75,7 +75,7 @@ section .text
         ;   Label: LAB_00405b84
     JZ 0x00405bd0                       ; 00405b8b
         ;   XREF to: 00405bd0 (CONDITIONAL_JUMP)  ; LAB_00405bd0
-    MOV ESI,dword ptr [0x006b0278]      ; 00405b8d | DAT_006b0278
+    MOV ESI,dword ptr [0x006b0278]      ; 00405b8d | g_TexturesDisabled
     TEST ESI,ESI                        ; 00405b93
     JZ 0x00405bf2                       ; 00405b95
         ;   XREF to: 00405bf2 (CONDITIONAL_JUMP)  ; LAB_00405bf2

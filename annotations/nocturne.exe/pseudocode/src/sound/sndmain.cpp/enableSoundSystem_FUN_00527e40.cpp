@@ -20,7 +20,7 @@ int __cdecl sound_sndmain_cpp_enableSoundSystem_FUN_00527e40(void)
   if (uVar2 == 0) {
     return 0;
   }
-  iVar3 = sound_sndmain_cpp_isSoundEnabled_FUN_00526ca0();
+  iVar3 = sound_sndmain_cpp_isSoundMuted_FUN_00526ca0();
   if (iVar3 != 0) {
     iVar3 = sound_sndmain_cpp_resetSoundDevice_FUN_00528080();
     return iVar3;

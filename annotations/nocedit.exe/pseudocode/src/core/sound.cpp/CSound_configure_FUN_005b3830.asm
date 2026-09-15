@@ -23,7 +23,7 @@
 ;   sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0
 ;   sound_sndmain.cpp_getAudioSampleRate_FUN_005ab260
 ;   sound_sndmain.cpp_getSfxChannelVol_FUN_005a9d90
-;   sound_sndmain.cpp_isSoundEnabled_FUN_005a96b0
+;   sound_sndmain.cpp_isSoundMuted_FUN_005a96b0
 ;   sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
 ;   sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
 ;   sound_sndmain.cpp_set3DListenerOrient_FUN_005aa0a0
@@ -86,8 +86,8 @@ section .text
     CALL sound_sndmain.cpp_setSfxChannelVol_FUN_005a9cf0 ; 005b38a6
         ;   XREF to: 005a9cf0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setSfxChannelVol_FUN_005a9cf0(int channel_index, float volume)
     ADD ESP,0x8                         ; 005b38ab
-    CALL sound_sndmain.cpp_isSoundEnabled_FUN_005a96b0 ; 005b38ae
-        ;   XREF to: 005a96b0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSoundEnabled_FUN_005a96b0()
+    CALL sound_sndmain.cpp_isSoundMuted_FUN_005a96b0 ; 005b38ae
+        ;   XREF to: 005a96b0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSoundMuted_FUN_005a96b0()
         ;   Label: LAB_005b38ae
     TEST EAX,EAX                        ; 005b38b3
     JNZ 0x005b396f                      ; 005b38b5

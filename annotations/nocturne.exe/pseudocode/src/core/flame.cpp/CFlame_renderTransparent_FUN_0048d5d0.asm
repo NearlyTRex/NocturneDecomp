@@ -45,7 +45,7 @@
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0
 ;   engine_drender.cpp_CDemonRenderer_getCameraRotationFixed_FUN_00460d90
 ;   engine_drender.cpp_CDemonRenderer_getCameraRotationRadians_FUN_00460db0
-;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
+;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090
 ;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0
 ;   engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0
 ;   ... and 4 more
@@ -75,8 +75,8 @@ section .text
     MOV EBX,dword ptr [0x005ae704]      ; 0048d5fe | g_CDemonRenderer_PTR_005ae704
         ;   Label: LAB_0048d5fe
     PUSH EBX                            ; 0048d604 | DAT_01b4d738
-    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 0048d605
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090 ; 0048d605
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0048d60a
     TEST EAX,EAX                        ; 0048d60d
     JNZ 0x0048d5f3                      ; 0048d60f

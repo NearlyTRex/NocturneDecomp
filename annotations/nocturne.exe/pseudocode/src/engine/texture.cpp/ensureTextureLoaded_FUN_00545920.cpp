@@ -14,7 +14,7 @@ SMRGLHeaderExtended * __cdecl engine_texture_cpp_ensureTextureLoaded_FUN_0054592
   int texture_index;
   bool bVar1;
   
-  if ((DAT_006b0278 == 0) && (texture->texture_name[0] != '\0')) {
+  if ((g_TexturesDisabled == 0) && (texture->texture_name[0] != '\0')) {
     texture_index =
          engine_texture_cpp_CTextureCache_findTexture_FUN_00545390
                    (_DAT_02dd0f84,(texture->base).count & 0xffff,texture->texture_name);

@@ -23,7 +23,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_0048d170(CDemo
   if (this_ptr->texture_capture_enabled == 0) {
     if (((this_ptr->face_capture_enabled == 0) && (this_ptr->plane_culling_enabled == 0)) &&
        (g_CullingMode != 0)) {
-      if (this_ptr->face_count == 0) {
+      if (this_ptr->shadow_pass_active == 0) {
         if (g_BitsPerPixel == 0x20) {
           g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline32_FUN_005b4031;
         }

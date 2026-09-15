@@ -22,8 +22,8 @@ void __cdecl core_setdir_cpp_CDemonSet_FUN_00513720(CDemonSet *this_ptr)
   CVector3f *local_14;
   
   bVar7 = 0;
-  engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(g_CDemonRenderer_PTR_005ae704);
-  engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_00461070(g_CDemonRenderer_PTR_005ae704,0);
+  engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090(g_CDemonRenderer_PTR_005ae704);
+  engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_00461070(g_CDemonRenderer_PTR_005ae704,0);
   engine_drender_cpp_CDemonRenderer_pushViewport_FUN_00460e40
             (g_CDemonRenderer_PTR_005ae704,0,0,0x40,0x30);
   iVar4 = 0;
@@ -68,7 +68,7 @@ void __cdecl core_setdir_cpp_CDemonSet_FUN_00513720(CDemonSet *this_ptr)
     } while (iVar4 < this_ptr->camera_count);
   }
   engine_drender_cpp_CDemonRenderer_popViewport_FUN_00460e70(g_CDemonRenderer_PTR_005ae704);
-  engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_00461070
+  engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_00461070
             (g_CDemonRenderer_PTR_005ae704,(int)local_20);
   return;
 }

@@ -20,7 +20,7 @@ int __cdecl engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045
       return 0;
     }
   }
-  if (this_ptr->face_count == 0) {
+  if (this_ptr->shadow_pass_active == 0) {
     g_RenderStateFlags.dword = (RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE);
     g_VertexPreprocessMode = 6;
     g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrender_cpp_renderDepthInterlacedProfiled_FUN_00463f77;
@@ -30,14 +30,14 @@ int __cdecl engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045
     g_VertexPreprocessMode = 0;
     g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrender_cpp_renderScreenDepthTestInterlacedProfiled_FUN_00463ff5;
   }
-  iVar1 = this_ptr->face_count;
+  iVar1 = this_ptr->shadow_pass_active;
   if (g_UseExternalRenderer != 0) {
-    engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_00461070(this_ptr,1);
+    engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_00461070(this_ptr,1);
   }
   engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80
             (this_ptr,(prim->base).count,(int *)(prim + 1));
   if (g_UseExternalRenderer != 0) {
-    engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_00461070(this_ptr,iVar1);
+    engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_00461070(this_ptr,iVar1);
   }
   return (uint)(INT_005ae708 <= _DAT_01b4d764);
 }

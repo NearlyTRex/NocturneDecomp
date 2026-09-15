@@ -24,7 +24,7 @@
 ;   core_motion.cpp_CMotionController_render_FUN_0052e700
 ;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
 ;   engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00
-;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
+;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0
 ;   engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlphaNormalized_FUN_0048ca70
@@ -71,8 +71,8 @@ section .text
     MOV EDI,dword ptr [0x006703ec]      ; 00485c1e | g_CDemonRendererPtr2
         ;   Label: LAB_00485c1e
     PUSH EDI                            ; 00485c24 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 00485c25
-        ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(CDemonRenderer * this_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0 ; 00485c25
+        ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00485c2a
     TEST EAX,EAX                        ; 00485c2d
     JZ 0x00485c3a                       ; 00485c2f
@@ -119,8 +119,8 @@ section .text
         ;   XREF to: 00485cc7 (CONDITIONAL_JUMP)  ; LAB_00485cc7
     MOV EDI,dword ptr [0x006703ec]      ; 00485c97 | g_CDemonRendererPtr2
     PUSH EDI                            ; 00485c9d | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 00485c9e
-        ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(CDemonRenderer * this_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0 ; 00485c9e
+        ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00485ca3
     TEST EAX,EAX                        ; 00485ca6
     JNZ 0x00485cc7                      ; 00485ca8

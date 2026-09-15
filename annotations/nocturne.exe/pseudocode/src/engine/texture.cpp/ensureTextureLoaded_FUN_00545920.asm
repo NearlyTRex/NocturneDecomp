@@ -20,7 +20,7 @@
 ;   ... and 3 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006b0278
+;   int g_TexturesDisabled
 ;   SRGBColorPalette* g_CurrentPalette
 ;   int g_UseExternalRenderer
 ;   undefined4 DAT_02dd0f80
@@ -42,7 +42,7 @@ section .text
     PUSH EDI                            ; 00545921
     PUSH EBP                            ; 00545922
     MOV EBX,dword ptr [ESP + 0x10]      ; 00545923
-    MOV EDX,dword ptr [0x006b0278]      ; 00545927 | DAT_006b0278
+    MOV EDX,dword ptr [0x006b0278]      ; 00545927 | g_TexturesDisabled
     LEA EAX,[EBX + 0x18]                ; 0054592d
     XOR EDI,EDI                         ; 00545930
     TEST EDX,EDX                        ; 00545932

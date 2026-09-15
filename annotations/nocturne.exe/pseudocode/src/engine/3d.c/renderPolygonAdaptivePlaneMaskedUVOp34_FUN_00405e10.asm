@@ -12,7 +12,7 @@
 ;   undefined4 DAT_005c5030
 ;   undefined4 DAT_006b0260
 ;   undefined4 DAT_006b0274
-;   undefined4 DAT_006b0278
+;   int g_TexturesDisabled
 ;   undefined4 DAT_006b029c
 ;   undefined4 DAT_006b02a0
 ;   int g_ActiveRenderColor
@@ -48,7 +48,7 @@ section .text
         ;   XREF to: 00405fef (CONDITIONAL_JUMP)  ; LAB_00405fef
     PUSH EDI                            ; 00405e2d
     PUSH EBX                            ; 00405e2e
-    CMP dword ptr [0x006b0278],0x0      ; 00405e2f | DAT_006b0278
+    CMP dword ptr [0x006b0278],0x0      ; 00405e2f | g_TexturesDisabled
     JZ 0x00405ed5                       ; 00405e36
         ;   XREF to: 00405ed5 (CONDITIONAL_JUMP)  ; LAB_00405ed5
     CMP dword ptr [0x01c03948],0x0      ; 00405e3c | g_MMXSupported

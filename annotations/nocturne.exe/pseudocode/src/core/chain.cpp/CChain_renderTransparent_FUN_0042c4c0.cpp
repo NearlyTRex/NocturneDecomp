@@ -33,7 +33,7 @@ int __cdecl core_chain_cpp_CChain_renderTransparent_FUN_0042c4c0(CChain *this_pt
   CVector3i CStack_24;
   CVector3i CStack_18;
   
-  iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
+  iVar3 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
   ;
   if (iVar3 == 0) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(&this_ptr->base);

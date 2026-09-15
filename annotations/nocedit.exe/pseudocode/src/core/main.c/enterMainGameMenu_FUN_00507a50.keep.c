@@ -180,8 +180,8 @@ LAB_005131d5:
     iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
     if ((iVar4 != 0) &&
        (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_M), iVar4 != 0)) {
-      iVar4 = sound_sndmain_cpp_isSoundEnabled_FUN_005a96b0();
-      sound_sndmain_cpp_setSoundEnabled_FUN_005a96c0((uint)(iVar4 == 0));
+      iVar4 = sound_sndmain_cpp_isSoundMuted_FUN_005a96b0();
+      sound_sndmain_cpp_setSoundMuted_FUN_005a96c0((uint)(iVar4 == 0));
       core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
     }
 #if NOCTURNE_EDITOR_BUILD

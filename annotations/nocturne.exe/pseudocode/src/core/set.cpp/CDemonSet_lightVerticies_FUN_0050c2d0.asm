@@ -108,7 +108,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_set.cpp_CDemonSet_lightVertexColor_FUN_0050b7f0
 ;   crt_memory.c_memset_FUN_00563cc0
-;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
+;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090
 ;
 ; *****************************************************************************
 
@@ -139,8 +139,8 @@ section .text
     MOV EDI,dword ptr [0x005ae704]      ; 0050c313 | g_CDemonRenderer_PTR_005ae704
         ;   Label: LAB_0050c313
     PUSH EDI                            ; 0050c319 | DAT_01b4d738
-    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 0050c31a
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090 ; 0050c31a
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0050c31f
     TEST EAX,EAX                        ; 0050c322
     JNZ 0x0050c390                      ; 0050c324

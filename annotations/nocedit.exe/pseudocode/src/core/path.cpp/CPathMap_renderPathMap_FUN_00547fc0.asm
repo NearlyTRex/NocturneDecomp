@@ -53,7 +53,7 @@
 ; Called Functions:
 ;   crt_math.c_round_FUN_005fe6b0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
-;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
+;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
 ;   engine_drender.cpp_CDemonRenderer_renderVertexAlphaPoly_FUN_0048bba0
 ;   engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0
@@ -73,8 +73,8 @@ section .text
     AND ESP,0xfffffff8                  ; 00547fc9
     MOV EDX,dword ptr [0x006703ec]      ; 00547fcc | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 00547fd2 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 00547fd3
-        ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(CDemonRenderer * this_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0 ; 00547fd3
+        ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00547fd8
     TEST EAX,EAX                        ; 00547fdb
     JZ 0x00547fe6                       ; 00547fdd

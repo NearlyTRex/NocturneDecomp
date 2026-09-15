@@ -95,7 +95,7 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_00511e50(void)
       *(char *)((int)pacVar11 + 1) = cVar2;
       pacVar11 = (char (*) [256])((int)pacVar11 + 2);
     } while (cVar2 != '\0');
-    iVar3 = sound_sndmain_cpp_isSoundEnabled_FUN_005a96b0();
+    iVar3 = sound_sndmain_cpp_isSoundMuted_FUN_005a96b0();
     if (iVar3 == 0) {
       pcVar4 = "On";
     }
@@ -537,9 +537,9 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_00511e50(void)
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     switch(iVar3) {
     case 0:
-      iVar3 = sound_sndmain_cpp_isSoundEnabled_FUN_005a96b0();
-      sound_sndmain_cpp_setSoundEnabled_FUN_005a96c0((uint)(iVar3 == 0));
-      iVar3 = sound_sndmain_cpp_isSoundEnabled_FUN_005a96b0();
+      iVar3 = sound_sndmain_cpp_isSoundMuted_FUN_005a96b0();
+      sound_sndmain_cpp_setSoundMuted_FUN_005a96c0((uint)(iVar3 == 0));
+      iVar3 = sound_sndmain_cpp_isSoundMuted_FUN_005a96b0();
       if (iVar3 == 0) goto LAB_005126f5;
       break;
     case 1:

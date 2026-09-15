@@ -8,8 +8,8 @@
 ;
 ; XREF[3]:
 ;   core_inv.cpp_CInventory_renderItemModel_FUN_004fee00 at 004feed9
+;   core_inv.cpp_getItemDescription_FUN_004fcf70 at 004fcf81
 ;   core_inv.cpp_getItemDisplayName_FUN_004fcf00 at 004fcf11
-;   core_inv.cpp_getItemIconName_FUN_004fcf70 at 004fcf81
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CWeapon_006302fa

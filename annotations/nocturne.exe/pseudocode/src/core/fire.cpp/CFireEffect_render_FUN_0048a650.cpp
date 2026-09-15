@@ -64,7 +64,7 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_0048a650(CFireEffect *this_ptr
     (*((this_ptr_02->base).vtable)->render)(&this_ptr_02->base);
     this_ptr_02 = this_ptr_02 + 1;
   } while (this_ptr_02 != (CShell *)&DAT_01c69610);
-  iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
+  iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
   ;
   if (iVar2 == 0) {
     core_set_cpp_CDemonSet_setLightingParameters_FUN_0050adc0

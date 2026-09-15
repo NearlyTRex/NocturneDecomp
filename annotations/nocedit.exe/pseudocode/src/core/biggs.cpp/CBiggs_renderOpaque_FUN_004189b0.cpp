@@ -44,7 +44,7 @@ int __cdecl core_biggs_cpp_CBiggs_renderOpaque_FUN_004189b0(CBiggs *this_ptr)
       core_morph_cpp_CMorph_render_FUN_0052bae0(this_ptr_00,this_ptr->morph_timer / 4.0f);
     }
     if (INT_02f43978 != 0) {
-      iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
+      iVar3 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2);
       if (iVar3 == 0) {
         core_motion_cpp_CMotionController_render_FUN_0052e700
                   (&(this_ptr->base).base.model.motion_controller,(CDemonActor *)this_ptr);

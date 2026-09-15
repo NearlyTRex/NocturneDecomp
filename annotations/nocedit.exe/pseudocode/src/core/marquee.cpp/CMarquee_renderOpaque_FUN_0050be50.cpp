@@ -13,7 +13,7 @@ int __cdecl core_marquee_cpp_CMarquee_renderOpaque_FUN_0050be50(CMarquee *this_p
   CBoundingBox3D *this_ptr_00;
   CBoundingBox3D CStack_1c;
   
-  iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
+  iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2);
   if (iVar1 != 0) {
     return 0;
   }

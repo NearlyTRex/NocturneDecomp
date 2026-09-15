@@ -40,7 +40,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_00453170(CKeyF
                 (g_CDemonRenderer_PTR_005ae704,0);
     }
     iVar9 = -1;
-    iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090
+    iVar4 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090
                       (g_CDemonRenderer_PTR_005ae704);
     local_24 = 0;
     if (0 < this_ptr->part_count) {

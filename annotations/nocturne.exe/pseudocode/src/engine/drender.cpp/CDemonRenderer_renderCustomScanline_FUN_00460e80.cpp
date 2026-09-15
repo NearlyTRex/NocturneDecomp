@@ -12,7 +12,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_00460e80
   int iVar1;
   
   if (this_ptr->plane_culling_enabled == 0) {
-    if (this_ptr->face_count != 0) {
+    if (this_ptr->shadow_pass_active != 0) {
       return;
     }
   }
@@ -21,7 +21,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_00460e80
     if (iVar1 == 0) {
       return;
     }
-    if (this_ptr->face_count != 0) {
+    if (this_ptr->shadow_pass_active != 0) {
       return;
     }
   }

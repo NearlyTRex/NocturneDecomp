@@ -29,7 +29,7 @@ void __cdecl core_cloth_cpp_CCloth_render_FUN_00437db0(CCloth *this_ptr,CDeforma
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(g_CDemonRenderer_PTR_005ae704,1);
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
             (g_CDemonRenderer_PTR_005ae704,0xffff);
-  engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(g_CDemonRenderer_PTR_005ae704);
+  engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090(g_CDemonRenderer_PTR_005ae704);
   dVar7 = round((double)(this_ptr->transparency * (float)65535));
   iVar10 = (int)ROUND(dVar7);
   if (iVar10 < 1000) {

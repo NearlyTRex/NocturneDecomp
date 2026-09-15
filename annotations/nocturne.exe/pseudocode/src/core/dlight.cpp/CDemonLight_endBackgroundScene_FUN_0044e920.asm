@@ -21,7 +21,7 @@
 ;   undefined4 g_ScreenBufferArray[1]+1
 ;
 ; Called Functions:
-;   engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_00461070
+;   engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_00461070
 ;
 ; *****************************************************************************
 
@@ -54,8 +54,8 @@ section .text
     PUSH EDX                            ; 0044e95a
     MOV EBX,dword ptr [0x005ae704]      ; 0044e95b | g_CDemonRenderer_PTR_005ae704
     PUSH EBX                            ; 0044e961 | DAT_01b4d738
-    CALL engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_00461070 ; 0044e962
-        ;   XREF to: 00461070 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_00461070(CDemonRenderer * this_ptr, int value)
+    CALL engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_00461070 ; 0044e962
+        ;   XREF to: 00461070 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_00461070(CDemonRenderer * this_ptr, int value)
     ADD ESP,0x8                         ; 0044e967
     POP EBX                             ; 0044e96a
     POP ESI                             ; 0044e96b

@@ -28,7 +28,7 @@
 ;   undefined4 DAT_005c501c
 ;   undefined4 DAT_005c5024
 ;   undefined4 DAT_005c5028
-;   undefined4 DAT_006b0278
+;   int g_TexturesDisabled
 ;   undefined4 DAT_006b0280
 ;   undefined4 DAT_01b4cd30
 ;   undefined4 DAT_01b4cd34
@@ -72,7 +72,7 @@ section .text
     TEST EBX,EBX                        ; 004580b7
     JZ 0x00458408                       ; 004580b9
         ;   XREF to: 00458408 (CONDITIONAL_JUMP)  ; LAB_00458408
-    MOV ESI,dword ptr [0x006b0278]      ; 004580bf | DAT_006b0278
+    MOV ESI,dword ptr [0x006b0278]      ; 004580bf | g_TexturesDisabled
     TEST ESI,ESI                        ; 004580c5
     JNZ 0x00458408                      ; 004580c7
         ;   XREF to: 00458408 (CONDITIONAL_JUMP)  ; LAB_00458408

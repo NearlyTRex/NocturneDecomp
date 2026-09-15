@@ -4,11 +4,11 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  undefined_data                  4079 ( 19.5%)
+  undefined_data                  4062 ( 19.4%)
   pointer_cast                    3557 ( 17.0%)
   pointer_truncation              2880 ( 13.7%)
   unrolled_memcpy                 1476 (  7.0%)
-  warning_overlapping_globals      865 (  4.1%)
+  warning_overlapping_globals      864 (  4.1%)
   stack_param                      766 (  3.7%)
   unknown_field                    721 (  3.4%)
   concat_reconstruction            661 (  3.2%)
@@ -87,7 +87,7 @@ SUSPECT TYPE COUNTS
   mem_magic_size                     1 (  0.0%)
 
 ====================================================================================================
-TYPE: undefined_data (4079 occurrences)
+TYPE: undefined_data (4062 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -638,7 +638,6 @@ Functions:
   engine_drender.cpp_CDemonRenderer_renderVertexAlphaPoly_FUN_00460150
   engine_drender.cpp_CDemonRenderer_renderZPrepassPoly_FUN_0045ef90
   engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_00460f10
-  engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_00461070
   engine_drender.cpp_CDemonRenderer_setProjectionScaleSimple_FUN_00460c20
   engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_00460c00
   engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_004607b0
@@ -692,7 +691,6 @@ Functions:
   engine_prim.c_setupBasicSoftwareEdge_FUN_004f9460
   engine_prim.c_setupColoredSoftwareEdge_FUN_004faa20
   engine_prim.c_setupSoftwareEdgeWithZMode_FUN_004f9620
-  engine_texture.cpp_ensureTextureLoaded_FUN_00545920
   engine_texture.cpp_getCurrentTexture_FUN_00545ad0
   engine_winfont.cpp_CWinFont_dtor_FUN_00558000
   engine_zraster.c_addRasterizerEdgeWithDepth_FUN_00562740
@@ -2698,11 +2696,11 @@ Functions:
   sound_sndmain.cpp_startSfx_FUN_005265a0
 
 ====================================================================================================
-TYPE: warning_overlapping_globals (865 occurrences)
+TYPE: warning_overlapping_globals (864 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   865x  WARNING: Globals starting with
+   864x  WARNING: Globals starting with
 
 Functions:
   cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_0045cde0
@@ -3040,8 +3038,8 @@ Functions:
   core_inv.cpp_CInventory_renderAllItems_FUN_004c2470
   core_inv.cpp_CInventory_renderItemModel_FUN_004c0b40
   core_inv.cpp_CInventory_renderSelectedItems_FUN_004c2150
+  core_inv.cpp_getItemDescription_FUN_004bed10
   core_inv.cpp_getItemDisplayName_FUN_004beca0
-  core_inv.cpp_getItemIconName_FUN_004bed10
   core_inv.cpp_loadAssets_FUN_004befa0
   core_level.cpp_CLevelLoader_update_FUN_004c59e0
   core_lever.cpp_CLever_getHandlePosition_FUN_004c6640
@@ -3485,7 +3483,6 @@ Functions:
   sound_sndmain.cpp_hasHardware3DSound_FUN_005284f0
   sound_sndmain.cpp_initializeSoundDevice_FUN_00528500
   sound_sndmain.cpp_isSoundBusy_FUN_00528490
-  sound_sndmain.cpp_isSoundEnabled_FUN_00526ca0
   sound_sndmain.cpp_isSoundSystemActive_FUN_00528480
   sound_sndmain.cpp_isWithinListenerRadius_FUN_00527880
   sound_sndmain.cpp_killSoundThread_FUN_00528780
@@ -3527,7 +3524,7 @@ Functions:
   sound_sndmain.cpp_setSfxTrackedFloatVelocity_FUN_00526ff0
   sound_sndmain.cpp_setSfxVelocity_FUN_00526f60
   sound_sndmain.cpp_setSfxVolume_FUN_005270d0
-  sound_sndmain.cpp_setSoundEnabled_FUN_00526cb0
+  sound_sndmain.cpp_setSoundMuted_FUN_00526cb0
   sound_sndmain.cpp_setSoundOutputMode_FUN_005280c0
   sound_sndmain.cpp_shutdownSoundSystem_FUN_00527e10
   sound_sndmain.cpp_startSfx_FUN_005265a0
@@ -5637,7 +5634,7 @@ Functions:
   sound_sndmain.cpp_setSfxTrackedFloatVelocity_FUN_00526ff0
   sound_sndmain.cpp_setSfxVelocity_FUN_00526f60
   sound_sndmain.cpp_setSfxVolume_FUN_005270d0
-  sound_sndmain.cpp_setSoundEnabled_FUN_00526cb0
+  sound_sndmain.cpp_setSoundMuted_FUN_00526cb0
   sound_sndmain.cpp_setSoundOutputMode_FUN_005280c0
   sound_sndmain.cpp_startSfx_FUN_005265a0
   wincore_winrun.cpp_getJoystickState_FUN_00559eb0

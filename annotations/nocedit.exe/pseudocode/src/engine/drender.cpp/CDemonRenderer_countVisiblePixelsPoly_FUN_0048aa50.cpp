@@ -36,7 +36,7 @@ int __cdecl engine_drender_cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0048aa5
     } while (iVar2 < (poly->base).base.count);
   }
   if (((local_14 & 0x80000000) == 0) || ((local_14 & 0x1f) == 0)) {
-    if (this_ptr->face_count == 0) {
+    if (this_ptr->shadow_pass_active == 0) {
       g_RenderStateFlags.dword = (RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE);
       g_VertexPreprocessMode = PREPROCESS_W_DEPTH_REPLACEMENT;
       g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrender_cpp_renderDepthTestStatistics16xUnrolled_FUN_00490d35;

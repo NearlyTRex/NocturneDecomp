@@ -37,7 +37,7 @@ void __cdecl engine_drender_cpp_renderTriangleTextured_FUN_00457a00(int *vertex_
     return;
   }
   g_RenderedTriangleCount = g_RenderedTriangleCount + 1;
-  if ((g_UseExternalRenderer == 0) || (DAT_006b0278 != 0)) {
+  if ((g_UseExternalRenderer == 0) || (g_TexturesDisabled != 0)) {
     _DAT_01b4cd30 = 0;
     _DAT_01b4d1b8 = 0;
     local_24 = 0;
@@ -110,7 +110,7 @@ void __cdecl engine_drender_cpp_renderTriangleTextured_FUN_00457a00(int *vertex_
           lVar1 = (longlong)(int)uVar9 * (longlong)(int)uVar3;
           *(uint *)(iVar4 + 0x1b4cd64) =
                puVar8[0xb] + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-          if (DAT_006b0278 == 0) {
+          if (g_TexturesDisabled == 0) {
             lVar1 = (longlong)iVar5 * (longlong)(int)(local_1c[3] - puVar8[3]);
             uVar3 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
             *(uint *)(iVar4 + 0x1b4cd60) = uVar3;

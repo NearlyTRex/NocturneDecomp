@@ -23,7 +23,7 @@ int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_00551c00(CWaterA
   CBoundingBox3D local_24;
   int iStack_c;
   
-  iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
+  iVar3 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
   ;
   if (iVar3 == 0) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(&this_ptr->base);

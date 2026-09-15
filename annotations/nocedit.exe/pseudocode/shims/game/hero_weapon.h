@@ -46,7 +46,7 @@
 //
 // WHERE THE SLOT'S TEXT COMES FROM
 //
-// getItemDisplayName and getItemIconName look the weapon's CKeyFramedModel-
+// getItemDisplayName and getItemDescription look the weapon's CKeyFramedModel-
 // Instance model name up in ITEMLIST.TXT (ENGLISH.POD), and return that row's
 // name and description; a model with no row prints as "Add to dict: <model>".
 // So naming a weapon is a matter of choosing a model whose row already reads

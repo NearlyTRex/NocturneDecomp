@@ -30,6 +30,9 @@ extern CGround g_CGround_01cadf80;
 // CHero*[4]
 extern CHero* g_HeroActors[4];
 
+// char[256]
+extern char g_CHAR_ARRAY_01cae480[256];
+
 // int
 extern int g_LocalHeroIndex;
 

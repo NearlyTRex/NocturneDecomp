@@ -2,7 +2,7 @@
 
 Loops auto-rewritten by the exporter. Watcom's end-of-array sentinel
 was the next named global in the original binary; our linker reorders
-globals so the sentinel never matches. See `prompts/fix_compilation.md` §16.
+globals so the sentinel never matches. See `docs/decompiler-artifacts.md` §16.
 
 ## Summary
 

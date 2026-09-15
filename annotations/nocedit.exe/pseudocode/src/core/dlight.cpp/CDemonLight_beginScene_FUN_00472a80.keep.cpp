@@ -59,7 +59,7 @@ void __cdecl core_dlight_cpp_CDemonLight_beginScene_FUN_00472a80(CDemonLight *th
     } while (iVar2 < this_ptr->shadow_map_height);
   }
   core_dcamera_cpp_CDemonCamera_updateTransformMatrices_FUN_0044d1c0(&this_ptr->base);
-  engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_0048cac0(g_CDemonRendererPtr2,1);
+  engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_0048cac0(g_CDemonRendererPtr2,1);
   if (skip_clear_buffers == 0) {
     g_RasterizerDepthBias = skip_clear_buffers;
     return;

@@ -28,7 +28,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
-;   engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_00461070
+;   engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_00461070
 ;
 ; *****************************************************************************
 
@@ -98,8 +98,8 @@ section .text
         ;   Label: LAB_0044e8e0
     MOV EBP,dword ptr [0x005ae704]      ; 0044e8e2 | g_CDemonRenderer_PTR_005ae704
     PUSH EBP                            ; 0044e8e8 | DAT_01b4d738
-    CALL engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_00461070 ; 0044e8e9
-        ;   XREF to: 00461070 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_00461070(CDemonRenderer * this_ptr, int value)
+    CALL engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_00461070 ; 0044e8e9
+        ;   XREF to: 00461070 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_00461070(CDemonRenderer * this_ptr, int value)
     ADD ESP,0x8                         ; 0044e8ee
     POP EBP                             ; 0044e8f1
         ;   Label: LAB_0044e8f1

@@ -90,8 +90,8 @@ section .text
     MOV EBP,ESP                         ; 005b1fd4
     SUB ESP,0x16c                       ; 005b1fd6
     AND ESP,0xfffffff8                  ; 005b1fdc
-    CALL sound_sndmain.cpp_isSoundEnabled_FUN_005a96b0 ; 005b1fdf
-        ;   XREF to: 005a96b0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSoundEnabled_FUN_005a96b0()
+    CALL sound_sndmain.cpp_isSoundMuted_FUN_005a96b0 ; 005b1fdf
+        ;   XREF to: 005a96b0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSoundMuted_FUN_005a96b0()
     TEST EAX,EAX                        ; 005b1fe4
     JNZ 0x005b2224                      ; 005b1fe6
         ;   XREF to: 005b2224 (CONDITIONAL_JUMP)  ; LAB_005b2224

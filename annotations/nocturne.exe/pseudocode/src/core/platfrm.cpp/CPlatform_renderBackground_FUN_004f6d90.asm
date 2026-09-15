@@ -26,7 +26,7 @@
 ;   core_dcamera.cpp_CDemonCamera_getFogValueAtPosition_FUN_004475a0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30
-;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
+;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090
 ;
 ; *****************************************************************************
 
@@ -39,8 +39,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x30]      ; 004f6d95
     MOV EDX,dword ptr [0x005ae704]      ; 004f6d99 | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 004f6d9f | DAT_01b4d738
-    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 004f6da0
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090 ; 004f6da0
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 004f6da5
     TEST EAX,EAX                        ; 004f6da8
     JNZ 0x004f6dde                      ; 004f6daa
@@ -95,8 +95,8 @@ section .text
         ;   Label: LAB_004f6e18
     MOV EDI,dword ptr [0x005ae704]      ; 004f6e19 | g_CDemonRenderer_PTR_005ae704
     PUSH EDI                            ; 004f6e1f | DAT_01b4d738
-    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 004f6e20
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090 ; 004f6e20
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 004f6e25
     TEST EAX,EAX                        ; 004f6e28
     JNZ 0x004f6e43                      ; 004f6e2a
@@ -129,8 +129,8 @@ section .text
         ;   XREF to: 004f6f29 (CONDITIONAL_JUMP)  ; LAB_004f6f29
     MOV EDX,dword ptr [0x005ae704]      ; 004f6e7e | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 004f6e84 | DAT_01b4d738
-    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 004f6e85
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090 ; 004f6e85
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 004f6e8a
     TEST EAX,EAX                        ; 004f6e8d
     JNZ 0x004f6f29                      ; 004f6e8f

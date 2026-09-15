@@ -69,7 +69,7 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_00511e50(void)
     core_moon_cpp_CMoon_render_FUN_00529ed0(&g_CMoonInstance);
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Sound : ");
     strcpy(g_SoundMenuTextBuffers[0],pcVar3);
-    iVar3 = sound_sndmain_cpp_isSoundEnabled_FUN_005a96b0();
+    iVar3 = sound_sndmain_cpp_isSoundMuted_FUN_005a96b0();
     if (iVar3 == 0) {
       pcVar4 = "On";
     }
@@ -279,9 +279,9 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_00511e50(void)
 #endif
     switch(iVar3) {
     case 0:
-      iVar3 = sound_sndmain_cpp_isSoundEnabled_FUN_005a96b0();
-      sound_sndmain_cpp_setSoundEnabled_FUN_005a96c0((uint)(iVar3 == 0));
-      iVar3 = sound_sndmain_cpp_isSoundEnabled_FUN_005a96b0();
+      iVar3 = sound_sndmain_cpp_isSoundMuted_FUN_005a96b0();
+      sound_sndmain_cpp_setSoundMuted_FUN_005a96c0((uint)(iVar3 == 0));
+      iVar3 = sound_sndmain_cpp_isSoundMuted_FUN_005a96b0();
       if (iVar3 == 0) goto LAB_005126f5;
       break;
     case 1:

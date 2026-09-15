@@ -15,11 +15,11 @@ int __cdecl core_platfrm_cpp_CPlatform_renderOpaque_FUN_004f6c60(CPlatform *this
   CBoundingBox3D CStack_40;
   CBoundingBox3D local_28;
   
-  iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
+  iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
   ;
   if ((iVar1 == 0) || (this_ptr->plot_in_shadow_flag != 0)) {
     if ((2 < this_ptr->one_shot) &&
-       (iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090
+       (iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090
                           (g_CDemonRenderer_PTR_005ae704), iVar1 == 0)) {
       return 0;
     }
@@ -27,7 +27,7 @@ int __cdecl core_platfrm_cpp_CPlatform_renderOpaque_FUN_004f6c60(CPlatform *this
          (this_ptr->state != (PLATFORM_STATE_TYPE_WTF|PLATFORM_STATE_TYPE_AT_END))) &&
         (this_ptr->state != 4)) &&
        ((this_ptr->rendered_in_background != 0 &&
-        (iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090
+        (iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090
                            (g_CDemonRenderer_PTR_005ae704), iVar1 == 0)))) {
       return 0;
     }
@@ -42,7 +42,7 @@ LAB_004f6d5e:
         core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(&this_ptr->base);
         return iVar1;
       }
-      iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090
+      iVar3 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090
                         (g_CDemonRenderer_PTR_005ae704);
       if (iVar3 == 0) goto LAB_004f6d5e;
       pCVar2 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_40);

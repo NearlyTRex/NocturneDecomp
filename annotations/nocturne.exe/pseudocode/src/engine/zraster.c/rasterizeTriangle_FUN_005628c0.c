@@ -56,7 +56,7 @@ void __cdecl engine_zraster_c_rasterizeTriangle_FUN_005628c0(SRenderVertex *vert
     return;
   }
   g_RenderedTriangleCount = g_RenderedTriangleCount + 1;
-  if ((g_UseExternalRenderer != 0) && (DAT_006b0278 == 0)) {
+  if ((g_UseExternalRenderer != 0) && (g_TexturesDisabled == 0)) {
     engine_special_cpp_drawPolygon_FUN_00532620(vertex_buffer,vertex_count,g_RenderStateFlags.dword)
     ;
     return;

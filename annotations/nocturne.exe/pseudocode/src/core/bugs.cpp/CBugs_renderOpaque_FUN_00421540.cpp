@@ -25,7 +25,7 @@ int __cdecl core_bugs_cpp_CBugs_renderOpaque_FUN_00421540(CBugs *this_ptr)
   SBug *pSStack_8;
   
   if ((this_ptr->base).base.render_active == 0) {
-    iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090
+    iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090
                       (g_CDemonRenderer_PTR_005ae704);
     if (iVar1 == 0) {
       core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20((CDemonActor *)this_ptr);

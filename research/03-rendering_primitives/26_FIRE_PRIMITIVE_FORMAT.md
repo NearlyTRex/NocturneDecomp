@@ -138,7 +138,7 @@ void renderMaximumQuality(CDemonRenderer* this_ptr, SPrimitive* polygon_info) {
 
         if (/* not completely off-screen */) {
             // Set render state based on pass
-            if (this_ptr->face_count == 0) {
+            if (this_ptr->shadow_pass_active == 0) {
                 g_ScanlineRenderFunc = renderMMXPerspectiveScanline;
                 g_RenderStateFlags = RENDER_ENGINE_CORE_MAXIMUM;
             } else {

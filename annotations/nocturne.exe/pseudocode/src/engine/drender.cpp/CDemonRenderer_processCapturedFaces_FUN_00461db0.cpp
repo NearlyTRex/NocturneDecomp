@@ -19,7 +19,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_00461db0
   int iVar6;
   code *compar;
   
-  if (this_ptr->face_count == 0) {
+  if (this_ptr->shadow_pass_active == 0) {
     if (0 < (int)_DAT_01b4d7ac) {
       puVar4 = &DAT_01b4d7b4;
       iVar6 = _DAT_01b4d7ac * 4;

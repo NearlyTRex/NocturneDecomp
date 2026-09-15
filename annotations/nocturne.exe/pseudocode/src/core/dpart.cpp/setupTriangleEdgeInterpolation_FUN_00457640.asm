@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006b0278
+;   int g_TexturesDisabled
 ;   undefined4 DAT_01b4cd30
 ;   undefined4 DAT_01b4cd34
 ;   undefined4 DAT_01b4d1b4
@@ -161,7 +161,7 @@ section .text
     MOV EAX,dword ptr [ESI + 0x2c]      ; 004577ac
     ADD EAX,EDX                         ; 004577af
     MOV dword ptr [ECX + 0x30],EAX      ; 004577b1
-    CMP dword ptr [0x006b0278],0x0      ; 004577b4 | DAT_006b0278
+    CMP dword ptr [0x006b0278],0x0      ; 004577b4 | g_TexturesDisabled
     JZ 0x00457867                       ; 004577bb
         ;   XREF to: 00457867 (CONDITIONAL_JUMP)  ; LAB_00457867
     MOV EAX,dword ptr [EBP + 0x8]       ; 004577c1

@@ -45,7 +45,7 @@ void __cdecl core_path_cpp_CPathMap_renderPathMap_FUN_004f18c0(CPathMap *this_pt
   int local_14;
   
   bVar9 = 0;
-  iVar8 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
+  iVar8 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
   ;
   if (iVar8 != 0) {
     return;

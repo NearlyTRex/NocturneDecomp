@@ -11,6 +11,7 @@ int __cdecl core_inv_cpp_loadItem_FUN_004fcfe0(SInventoryItemInfo *item_info,_FI
 {
   int iVar1;
   
-  iVar1 = _fscanf(file_handle,"\"%[^\"]\", \"%[^\"]\", \"%[^\"]\"\n",item_info,item_info->string2,item_info->string3);
+  iVar1 = _fscanf(file_handle,"\"%[^\"]\", \"%[^\"]\", \"%[^\"]\"\n",item_info,item_info->display_name,
+                     item_info->description);
   return (uint)(iVar1 == 3);
 }

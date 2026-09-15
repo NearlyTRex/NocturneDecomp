@@ -26,7 +26,7 @@
 ; Called Functions:
 ;   core_gore.cpp_CBloodParticle_setupRenderState_FUN_004ae0a0
 ;   core_set.cpp_CDemonSet_setLightingParameters_FUN_0050adc0
-;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
+;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090
 ;
 ; *****************************************************************************
 
@@ -51,8 +51,8 @@ section .text
     MOV ECX,dword ptr [0x005ae704]      ; 004afe19 | g_CDemonRenderer_PTR_005ae704
         ;   Label: LAB_004afe19
     PUSH ECX                            ; 004afe1f | DAT_01b4d738
-    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 004afe20
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090 ; 004afe20
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 004afe25
     TEST EAX,EAX                        ; 004afe28
     JNZ 0x004afe13                      ; 004afe2a

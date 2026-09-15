@@ -47,7 +47,7 @@
 ;   sound_sndmain.cpp_getSoundDeviceInfo_FUN_005282c0
 ;   sound_sndmain.cpp_isHardwareMixingEnabled_FUN_005284e0
 ;   sound_sndmain.cpp_isSfxChannelEnabled_FUN_00527490
-;   sound_sndmain.cpp_isSoundEnabled_FUN_00526ca0
+;   sound_sndmain.cpp_isSoundMuted_FUN_00526ca0
 ;
 ; *****************************************************************************
 
@@ -155,8 +155,8 @@ section .text
     CALL engine_ini.cpp_CIniFile_setFloatValue_FUN_004bdb20 ; 00528d97
         ;   XREF to: 004bdb20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setFloatValue_FUN_004bdb20(CIniFile * this_ptr, char * key, float value)
     ADD ESP,0xc                         ; 00528d9c
-    CALL sound_sndmain.cpp_isSoundEnabled_FUN_00526ca0 ; 00528d9f
-        ;   XREF to: 00526ca0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSoundEnabled_FUN_00526ca0()
+    CALL sound_sndmain.cpp_isSoundMuted_FUN_00526ca0 ; 00528d9f
+        ;   XREF to: 00526ca0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSoundMuted_FUN_00526ca0()
     PUSH EAX                            ; 00528da4
     PUSH 0x593ab9                       ; 00528da5 | = "Mute"
     PUSH EBP                            ; 00528daa

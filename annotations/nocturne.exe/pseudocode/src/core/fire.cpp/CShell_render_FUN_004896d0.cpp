@@ -24,7 +24,7 @@ void __cdecl core_fire_cpp_CShell_render_FUN_004896d0(CShell *this_ptr)
     iVar1 = engine_drender_cpp_CDemonRenderer_depthTest_FUN_00461f80
                       (g_CDemonRenderer_PTR_005ae704,vertex_ptr);
     if (iVar1 != 0) {
-      iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090
+      iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090
                         (g_CDemonRenderer_PTR_005ae704);
       if (iVar1 == 0) {
         core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670

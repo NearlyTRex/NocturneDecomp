@@ -63,7 +63,7 @@ void __cdecl core_dlight_cpp_CDemonLight_beginScene_FUN_0044e470(CDemonLight *th
     } while (iVar2 < this_ptr->shadow_map_height);
   }
   core_dcamera_cpp_CDemonCamera_updateTransformMatrices_FUN_00440fe0(&this_ptr->base);
-  engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_00461070(g_CDemonRenderer_PTR_005ae704,1);
+  engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_00461070(g_CDemonRenderer_PTR_005ae704,1);
   if (skip_clear_buffers == 0) {
     _DAT_01b4d1fc = skip_clear_buffers;
     return;

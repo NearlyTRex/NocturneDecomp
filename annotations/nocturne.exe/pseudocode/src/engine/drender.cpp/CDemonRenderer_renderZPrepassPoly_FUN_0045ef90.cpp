@@ -39,10 +39,10 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderZPrepassPoly_FUN_0045ef90(C
     }
     if (((local_14 & 0x80000000) == 0) || ((local_14 & 0x1f) == 0)) {
       iVar4 = this_ptr->face_capture_enabled;
-      if ((iVar4 != 0) && (this_ptr->face_count != 0)) {
+      if ((iVar4 != 0) && (this_ptr->shadow_pass_active != 0)) {
         this_ptr->face_capture_enabled = local_18;
       }
-      if (this_ptr->face_count == 0) {
+      if (this_ptr->shadow_pass_active == 0) {
         g_RenderStateFlags.dword = (RENDER_LIGHTING_COLOR | RENDER_DEPTH_WRITE);
         g_VertexPreprocessMode = 6;
         g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrender_cpp_renderZBufferFill16xUnrolled_FUN_00463c42;

@@ -30,7 +30,7 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(CBoundingBox3D *t
   if ((iVar1 == -1) || (iVar1 == 0)) {
     return 0;
   }
-  iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
+  iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
   ;
   if (iVar1 == 0) {
     local_44 = (this_ptr->min).x + (this_ptr->max).x;

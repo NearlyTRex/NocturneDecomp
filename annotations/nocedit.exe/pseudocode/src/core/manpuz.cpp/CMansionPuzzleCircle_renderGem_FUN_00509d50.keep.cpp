@@ -28,7 +28,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderGem_FUN_00509d50(CMansio
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
             (g_CDemonRendererPtr2,&pSVar4->rotation,&pSVar4->position);
   if ((g_CDemonMissionPtr->is_in_editor != 0) &&
-     (iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
+     (iVar3 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2),
      iVar3 == 0)) {
     if (g_MansionPuzzleSlewType == 2) {
       shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(g_CEditorToolsPtr);
@@ -42,7 +42,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderGem_FUN_00509d50(CMansio
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
             (&this_ptr->gem_model,0.0,-1);
   core_set_cpp_CDemonSet_setFlatColor_FUN_00570ca0(g_CDemonSetPtr,0x10000,0x10000,0x10000);
-  iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
+  iVar4 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2);
   if ((iVar4 == 0) &&
      ((((float)0.01 < (pSVar4->hum_color).r ||
        ((float)0.01 < (pSVar4->hum_color).g)) ||

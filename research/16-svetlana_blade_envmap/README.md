@@ -215,7 +215,7 @@ divergence in the blend arithmetic to look for.
 ```c
 g_CDemonSetPtr->skip_normal_normalization = 1;      // for her whole render
 ... CCharacter::renderOpaque(this)                  // pass 1, the normal character
-if (getFaceCount() == 0 && g_PerspectiveReciprocal < 0x4000) {
+if (isShadowPass() == 0 && g_PerspectiveReciprocal < 0x4000) {
     ... clear all visibility flags, set only part_indices[0] and [1] ...
     g_CGamePtr->render_mode = 2;
     setBlendMode(renderer, 0);

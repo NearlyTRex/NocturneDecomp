@@ -299,13 +299,13 @@ uint __cdecl startSfx(char *filename);
 // Address: 00526c50
 int __cdecl isSfxPlaying(uint sfx_handle);
 
-// Original: sound_sndmain.cpp_isSoundEnabled_FUN_00526ca0
+// Original: sound_sndmain.cpp_isSoundMuted_FUN_00526ca0
 // Address: 00526ca0
-int __cdecl isSoundEnabled(void);
+int __cdecl isSoundMuted(void);
 
-// Original: sound_sndmain.cpp_setSoundEnabled_FUN_00526cb0
+// Original: sound_sndmain.cpp_setSoundMuted_FUN_00526cb0
 // Address: 00526cb0
-int __cdecl setSoundEnabled(int enable);
+int __cdecl setSoundMuted(int enable);
 
 // Original: sound_sndmain.cpp_getSfxSampleInfo_FUN_00526cd0
 // Address: 00526cd0

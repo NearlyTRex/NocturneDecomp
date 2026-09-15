@@ -34,7 +34,7 @@ void __cdecl core_lightgun_cpp_CLightGun_fireProjectile_FUN_004c7ca0(CLightGun *
   float fStack_1c;
   int iStack_18;
   
-  iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
+  iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
   ;
   if (iVar2 == 0) {
     input_local_point =

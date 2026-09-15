@@ -42,7 +42,7 @@ int __cdecl core_moloch_cpp_CMoloch_renderOpaque_FUN_00529750(CMoloch *this_ptr)
                   (this_ptr_00,this_ptr->morph_timer / 2.0f);
       }
       if (INT_02f43978 != 0) {
-        iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
+        iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2);
         if (iVar2 == 0) {
           core_motion_cpp_CMotionController_render_FUN_0052e700
                     (&(this_ptr->base).base.model.motion_controller,(CDemonActor *)this_ptr);

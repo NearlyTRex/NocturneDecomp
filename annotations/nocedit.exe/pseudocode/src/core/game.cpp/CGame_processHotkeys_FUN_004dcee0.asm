@@ -175,15 +175,15 @@ section .text
     TEST EAX,EAX                        ; 004dd01d
     JZ 0x004dd047                       ; 004dd01f
         ;   XREF to: 004dd047 (CONDITIONAL_JUMP)  ; LAB_004dd047
-    CALL sound_sndmain.cpp_isSoundEnabled_FUN_005a96b0 ; 004dd021
-        ;   XREF to: 005a96b0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSoundEnabled_FUN_005a96b0()
+    CALL sound_sndmain.cpp_isSoundMuted_FUN_005a96b0 ; 004dd021
+        ;   XREF to: 005a96b0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSoundMuted_FUN_005a96b0()
         ;   Label: LAB_004dd021
     TEST EAX,EAX                        ; 004dd026
     JZ 0x004dd489                       ; 004dd028
         ;   XREF to: 004dd489 (CONDITIONAL_JUMP)  ; LAB_004dd489
     PUSH 0x0                            ; 004dd02e
-    CALL sound_sndmain.cpp_setSoundEnabled_FUN_005a96c0 ; 004dd030
-        ;   XREF to: 005a96c0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSoundEnabled_FUN_005a96c0(int enable)
+    CALL sound_sndmain.cpp_setSoundMuted_FUN_005a96c0 ; 004dd030
+        ;   XREF to: 005a96c0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSoundMuted_FUN_005a96c0(int muted)
     ADD ESP,0x4                         ; 004dd035
     MOV ECX,dword ptr [0x00681ef8]      ; 004dd038 | g_CSoundInstance | g_CSoundPtr
     PUSH ECX                            ; 004dd03e | g_CSoundInstance
@@ -599,8 +599,8 @@ section .text
         ;   XREF to: 005b2f70 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_shutdown_FUN_005b2f70(CSound * this_ptr)
     ADD ESP,0x4                         ; 004dd495
     PUSH 0x1                            ; 004dd498
-    CALL sound_sndmain.cpp_setSoundEnabled_FUN_005a96c0 ; 004dd49a
-        ;   XREF to: 005a96c0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSoundEnabled_FUN_005a96c0(int enable)
+    CALL sound_sndmain.cpp_setSoundMuted_FUN_005a96c0 ; 004dd49a
+        ;   XREF to: 005a96c0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSoundMuted_FUN_005a96c0(int muted)
     JMP 0x004dd044                      ; 004dd49f
         ;   XREF to: 004dd044 (UNCONDITIONAL_JUMP)  ; LAB_004dd044
     PUSH 0xf0                           ; 004dd4a4

@@ -413,8 +413,8 @@ section .text
         ;   XREF to: 0053d4f2 (CONDITIONAL_JUMP)  ; LAB_0053d4f2
     MOV EDI,dword ptr [0x005ae704]      ; 0053d4c7 | g_CDemonRenderer_PTR_005ae704
     PUSH EDI                            ; 0053d4cd | DAT_01b4d738
-    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 0053d4ce
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090 ; 0053d4ce
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0053d4d3
     TEST EAX,EAX                        ; 0053d4d6
     JNZ 0x0053d4f2                      ; 0053d4d8

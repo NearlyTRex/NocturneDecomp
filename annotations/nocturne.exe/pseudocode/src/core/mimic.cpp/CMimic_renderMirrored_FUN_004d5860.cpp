@@ -82,7 +82,7 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_004d5860(CMimic *this_ptr)
         }
         core_charactr_cpp_CCharacter_renderAttachedModels_FUN_004265a0((CCharacter *)this_ptr);
         if ((_DAT_01cd4318 != 0) &&
-           (iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090
+           (iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090
                               (g_CDemonRenderer_PTR_005ae704), iVar1 == 0)) {
           this_ptr_00 = &(this_ptr->base).base.model;
           core_motion_cpp_CMotionController_render_FUN_004e22b0

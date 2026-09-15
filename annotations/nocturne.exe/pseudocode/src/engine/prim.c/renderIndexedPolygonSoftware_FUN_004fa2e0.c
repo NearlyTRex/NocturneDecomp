@@ -66,7 +66,7 @@ void __cdecl engine_prim_c_renderIndexedPolygonSoftware_FUN_004fa2e0(int *vertex
     }
   }
   g_RenderedTriangleCount = g_RenderedTriangleCount + 1;
-  if ((g_UseExternalRenderer == 0) || (DAT_006b0278 != 0)) {
+  if ((g_UseExternalRenderer == 0) || (g_TexturesDisabled != 0)) {
     _DAT_01e52ef0 = 0;
     _DAT_01e52a68 = 0;
     local_1c = 0;

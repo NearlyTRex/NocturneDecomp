@@ -77,7 +77,7 @@ void __cdecl engine_clipper_c_clipAndRasterize_FUN_00432cd0(int vertex_count,int
     }
     else {
       if (iVar12 == 0) {
-        if ((g_UseExternalRenderer != 0) && (DAT_006b0278 == 0)) {
+        if ((g_UseExternalRenderer != 0) && (g_TexturesDisabled == 0)) {
           iVar8 = 0;
           if (0 < vertex_count) {
             do {

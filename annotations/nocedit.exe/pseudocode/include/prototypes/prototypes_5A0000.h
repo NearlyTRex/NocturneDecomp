@@ -187,8 +187,8 @@ uint __cdecl sound_sndmain_cpp_startSfxAtStaticPosition_FUN_005a9580(char *filen
 uint __cdecl sound_sndmain_cpp_startSfxTrackedFloatPosition_FUN_005a95e0(char *filename,CVector3f *position_source_ptr);
 uint __cdecl sound_sndmain_cpp_startSfxTrackedDoublePosition_FUN_005a9620(char *filename,CVector3d *position_source_ptr);
 int __cdecl sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(uint sfx_handle);
-int __cdecl sound_sndmain_cpp_isSoundEnabled_FUN_005a96b0(void);
-int __cdecl sound_sndmain_cpp_setSoundEnabled_FUN_005a96c0(int enable);
+int __cdecl sound_sndmain_cpp_isSoundMuted_FUN_005a96b0(void);
+int __cdecl sound_sndmain_cpp_setSoundMuted_FUN_005a96c0(int muted);
 int __cdecl sound_sndmain_cpp_getSfxSampleInfo_FUN_005a96e0(uint sfx_handle,CSfxSample *output_buffer);
 double __cdecl sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(uint sfx_handle,uint output_format);
 int __cdecl sound_sndmain_cpp_getSfxOptions_FUN_005a97e0(uint sfx_handle,CSfxOptions *output_options);

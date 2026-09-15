@@ -13,7 +13,7 @@ void __cdecl core_set_cpp_CDemonSet_renderFaceBatchOrEnvMap_FUN_00570700(CDemonS
   
   if (g_CGamePtr->suppress_set_geometry == 0) {
     if (g_CGamePtr->render_mode != 0) {
-      iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
+      iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2);
       if (iVar1 == 0) {
         core_set_cpp_CDemonSet_renderEnvMapBatchTri_FUN_0056ffe0(this_ptr,prims,count,0xffff);
         return;

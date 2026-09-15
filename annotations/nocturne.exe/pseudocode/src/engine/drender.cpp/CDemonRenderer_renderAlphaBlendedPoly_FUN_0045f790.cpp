@@ -16,7 +16,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0045f7
   
   if ((this_ptr->plane_culling_enabled == 0) ||
      (iVar4 = engine_3d_c_isVisiblePlane_FUN_00404610(&(poly->base).surface_normal), iVar4 != 0)) {
-    if (this_ptr->face_count == 0) {
+    if (this_ptr->shadow_pass_active == 0) {
       if (0 < (poly->base).base.count) {
         iVar2 = 0;
         iVar4 = 0;
@@ -47,7 +47,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0045f7
         } while (iVar4 < (poly->base).base.count);
       }
     }
-    if (this_ptr->face_count == 0) {
+    if (this_ptr->shadow_pass_active == 0) {
       if (g_BitsPerPixel == 0x20) {
         g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0052f031;
       }

@@ -212,7 +212,7 @@ LAB_005c33d7:
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);
   }
   if ((((this_ptr->base).base.model.part_data.visibility_flags[g_StrangerIndices[0x16]] == 0) &&
-      (iVar5 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
+      (iVar5 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2),
       iVar5 == 0)) && (0 < (this_ptr->base).base.cloth_list.count)) {
     core_cloth_cpp_CClothList_reset_FUN_0043c070(&(this_ptr->base).base.cloth_list);
   }

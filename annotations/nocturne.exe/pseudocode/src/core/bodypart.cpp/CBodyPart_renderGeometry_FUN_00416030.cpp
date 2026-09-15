@@ -21,9 +21,9 @@ void __cdecl core_bodypart_cpp_CBodyPart_renderGeometry_FUN_00416030(CBodyPart *
             (g_CDemonSet_PTR_005be368,this_ptr->vertex_count,this_ptr->tri_count,this_ptr->faces,
              this_ptr->vertices,3,this_ptr->normals);
   if ((this_ptr->texture_count == 1) ||
-     (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090
+     (iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090
                         (g_CDemonRenderer_PTR_005ae704), iVar2 != 0)) {
-    iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090
+    iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090
                       (g_CDemonRenderer_PTR_005ae704);
     if (iVar2 == 0) {
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0

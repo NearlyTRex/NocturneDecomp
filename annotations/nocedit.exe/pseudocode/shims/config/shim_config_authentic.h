@@ -75,6 +75,7 @@
 // | `NOCTURNE_AUTHENTIC_CHAPTER_SELECT` | 0 | defect | START offers the chapter lists, pod.ini or no pod.ini |
 // | `NOCTURNE_AUTHENTIC_FRIENDLY_FIRE` | 0 | defect | heroes cannot damage each other in a network game |
 // | `NOCTURNE_AUTHENTIC_MELEE_PICKUP` | 0 | defect | a melee weapon already held does not take a second slot |
+// | `NOCTURNE_AUTHENTIC_SHADOW_DEPTH_READ` | 0 | defect | the shadow-pass depth test reads the width it was written at |
 // | `NOCTURNE_AUTHENTIC_PICKUP_WIELDS` | 0 | choice | a pickup is never drawn without the player asking |
 // | `NOCTURNE_AUTHENTIC_OPTIONS_RESUMES_GAME` | 0 | choice | leaving Options returns to the pause menu |
 // | `NOCTURNE_AUTHENTIC_CONFIRM_PROMPTS` | 0 | choice | no bracketed hotkey letters, and a short form when the long one will not fit |
@@ -1304,6 +1305,48 @@
 //   Override with -DNOCTURNE_AUTHENTIC_MELEE_PICKUP=1.
 #ifndef NOCTURNE_AUTHENTIC_MELEE_PICKUP
 #define NOCTURNE_AUTHENTIC_MELEE_PICKUP 0
+#endif
+
+// NOCTURNE_AUTHENTIC_SHADOW_DEPTH_READ
+//   How wide an element CDemonRenderer::depthTest reads during a shadow pass.
+//
+//   depthTest picks its depth buffer on CDemonRenderer::shadow_pass_active,
+//   which setShadowPass writes alongside g_TexturesDisabled;
+//   CDemonLight::beginScene and beginBackgroundScene set it and the matching
+//   endScene clears it. Clear, it reads
+//   g_ZBufferScanlineArray, whose rows are laid out render_width * 4 apart and
+//   whose elements are 32 bits. Set, it reads g_ScreenBufferArray, whose rows
+//   CDemonLight::beginScene has just repointed at that light's shadow buffer:
+//
+//       saved_screen_buffer_rows[y] = g_ScreenBufferArray[y];
+//       g_ScreenBufferArray[y] = shadow_depth_buffer + shadow_map_width * y;
+//
+//   shadow_depth_buffer is a ushort *. CDemonLight::init allocates it as
+//   shadow_map_width * shadow_map_height * 2 + 0x210 and the clear memsets
+//   width * height * 2; renderDepthOnlyStandard, the span writer that fills it,
+//   indexes it as (ushort *)g_ScreenBufferArray[y] + x and stores
+//   depth_current >> 8; CDemonLight::drawShadowDepthBuffer reads it back at a
+//   shadow_map_width stride. Every other party to the buffer treats it as 16
+//   bits per pixel.
+//
+//   depthTest reads it as 32. It therefore takes four bytes from byte offset
+//   4x where two were written at 2x: the wrong pixel, as a pair of adjacent
+//   depths spliced into one value, and past the end of the row for any x above
+//   half the width. On the last row that leaves the allocation — the 0x210 of
+//   slack on the end absorbs it only up to a shadow map about 266 wide.
+//
+//   The comparison either side of the read is not affected. Edge setup seeds
+//   depth_current as transformed_z * 0x100 minus the bias, and the writer
+//   stores that >> 8, so what lands in the buffer is in the same units as the
+//   transformed_z depthTest compares it against.
+//
+//   1: authentic — 32 bits, wrong pixel, and a read off the end of the buffer
+//      on a shadow map wider than about 266.
+//   0: 16 bits, which is the element renderDepthOnlyStandard wrote.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_SHADOW_DEPTH_READ=1.
+#ifndef NOCTURNE_AUTHENTIC_SHADOW_DEPTH_READ
+#define NOCTURNE_AUTHENTIC_SHADOW_DEPTH_READ 0
 #endif
 
 // =============================================================================

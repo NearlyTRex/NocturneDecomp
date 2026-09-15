@@ -42,7 +42,7 @@
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 ;   core_fire.cpp_CFireEffect_createLaserCone_FUN_004c7f20
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004c79d0
-;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
+;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0
 ;
 ; *****************************************************************************
 
@@ -59,8 +59,8 @@ section .text
     MOV ESI,dword ptr [EBP + 0x14]      ; 005066bf
     MOV EDX,dword ptr [0x006703ec]      ; 005066c2 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 005066c8 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 005066c9
-        ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(CDemonRenderer * this_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0 ; 005066c9
+        ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 005066ce
     TEST EAX,EAX                        ; 005066d1
     JZ 0x005066f1                       ; 005066d3

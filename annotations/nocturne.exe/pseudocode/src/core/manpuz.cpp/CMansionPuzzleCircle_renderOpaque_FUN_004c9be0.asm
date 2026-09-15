@@ -25,7 +25,7 @@
 ;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_004ca710
 ;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_004ca790
 ;   core_manpuz.cpp_CMansionPuzzleCircle_renderReflector_FUN_004cabf0
-;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
+;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090
 ;   engine_special.cpp_transformAndProjectPoint_FUN_0053075c
 ;
 ; *****************************************************************************
@@ -134,8 +134,8 @@ section .text
     MOV ECX,dword ptr [0x005ae704]      ; 004c9cc4 | g_CDemonRenderer_PTR_005ae704
         ;   Label: LAB_004c9cc4
     PUSH ECX                            ; 004c9cca | DAT_01b4d738
-    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 004c9ccb
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090 ; 004c9ccb
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 004c9cd0
     TEST EAX,EAX                        ; 004c9cd3
     JNZ 0x004c9ca0                      ; 004c9cd5

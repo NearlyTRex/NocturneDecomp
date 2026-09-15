@@ -220,7 +220,7 @@ LAB_0053d387:
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60((CDemonActor *)this_ptr);
   }
   if ((((this_ptr->base).base.model.part_data.visibility_flags[_DAT_02dc9fa8] == 0) &&
-      (iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090
+      (iVar4 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090
                          (g_CDemonRenderer_PTR_005ae704), iVar4 == 0)) &&
      (0 < (this_ptr->base).base.cloth_list.count)) {
     core_cloth_cpp_CClothList_reset_FUN_00438320(&(this_ptr->base).base.cloth_list);

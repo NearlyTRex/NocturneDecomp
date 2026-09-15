@@ -33,7 +33,7 @@
 ;   undefined4 DAT_005c5038
 ;   undefined4 DAT_005c503c
 ;   undefined4 DAT_005c5040
-;   undefined4 DAT_006b0278
+;   int g_TexturesDisabled
 ;   undefined4 DAT_006b0280
 ;   undefined4 DAT_01b4cd30
 ;   undefined4 DAT_01b4cd34
@@ -67,7 +67,7 @@ section .text
     TEST EBX,EBX                        ; 00457a33
     JZ 0x00457aff                       ; 00457a35
         ;   XREF to: 00457aff (CONDITIONAL_JUMP)  ; LAB_00457aff
-    CMP dword ptr [0x006b0278],0x0      ; 00457a3b | DAT_006b0278
+    CMP dword ptr [0x006b0278],0x0      ; 00457a3b | g_TexturesDisabled
     JNZ 0x00457aff                      ; 00457a42
         ;   XREF to: 00457aff (CONDITIONAL_JUMP)  ; LAB_00457aff
     MOV ECX,dword ptr [ESP + 0x74]      ; 00457a48
@@ -486,7 +486,7 @@ section .text
     MOV EAX,dword ptr [ESI + 0x2c]      ; 00457edb | DAT_005c5040
     ADD EAX,EDX                         ; 00457ede
     MOV dword ptr [ECX + 0x30],EAX      ; 00457ee0
-    CMP dword ptr [0x006b0278],0x0      ; 00457ee3 | DAT_006b0278
+    CMP dword ptr [0x006b0278],0x0      ; 00457ee3 | g_TexturesDisabled
     JZ 0x00457fae                       ; 00457eea
         ;   XREF to: 00457fae (CONDITIONAL_JUMP)  ; LAB_00457fae
     MOV EAX,dword ptr [ESP + 0x50]      ; 00457ef0

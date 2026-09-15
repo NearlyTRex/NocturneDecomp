@@ -81,8 +81,7 @@ extern "C" void nocturne_movie_volume_set(float volume) {
 }
 
 extern "C" float nocturne_movie_audio_gain(void) {
-    // Non-zero means MUTED — see the note in movie_audio.h.
-    if (sound_sndmain_cpp_isSoundEnabled_FUN_005a96b0() != 0) {
+    if (sound_sndmain_cpp_isSoundMuted_FUN_005a96b0() != 0) {
         return 0.0f;
     }
     return nocturne_movie_volume_get();

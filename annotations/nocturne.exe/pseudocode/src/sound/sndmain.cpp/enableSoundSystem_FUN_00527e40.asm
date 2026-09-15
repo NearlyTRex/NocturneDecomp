@@ -30,7 +30,7 @@
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_00563cc0
 ;   sound_sndmain.cpp_isSoundBusy_FUN_00528490
-;   sound_sndmain.cpp_isSoundEnabled_FUN_00526ca0
+;   sound_sndmain.cpp_isSoundMuted_FUN_00526ca0
 ;   sound_sndmain.cpp_isSoundSystemActive_FUN_00528480
 ;   sound_sndmain.cpp_lockSound_FUN_00528800
 ;   sound_sndmain.cpp_resetSoundDevice_FUN_00528080
@@ -57,8 +57,8 @@ section .text
     POP ESI                             ; 00527e4f
     POP EBX                             ; 00527e50
     RET                                 ; 00527e51
-    CALL sound_sndmain.cpp_isSoundEnabled_FUN_00526ca0 ; 00527e52
-        ;   XREF to: 00526ca0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSoundEnabled_FUN_00526ca0()
+    CALL sound_sndmain.cpp_isSoundMuted_FUN_00526ca0 ; 00527e52
+        ;   XREF to: 00526ca0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSoundMuted_FUN_00526ca0()
         ;   Label: LAB_00527e52
     TEST EAX,EAX                        ; 00527e57
     JNZ 0x00527e6e                      ; 00527e59

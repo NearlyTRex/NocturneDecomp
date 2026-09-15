@@ -73,7 +73,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_00432210(int vertex_co
   }
   else {
     if (uVar13 == 0) {
-      if ((g_UseExternalRenderer == 0) || (DAT_006b0278 != 0)) {
+      if ((g_UseExternalRenderer == 0) || (g_TexturesDisabled != 0)) {
         DAT_00766c70 = vertex_count;
         local_18 = 0;
         if (0 < vertex_count) {
