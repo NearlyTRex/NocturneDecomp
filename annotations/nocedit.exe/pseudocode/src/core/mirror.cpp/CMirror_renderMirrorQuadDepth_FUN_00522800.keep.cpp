@@ -16,7 +16,7 @@ void __cdecl core_mirror_cpp_CMirror_renderMirrorQuadDepth_FUN_00522800(CMirror 
   CVector3i local_34;
   CVector3i local_28;
   CVector3i local_1c;
-  
+
   local_34.x = (int)ROUND((this_ptr->reflection).corner1.x * 256.0f);
   local_34.y = (int)ROUND((this_ptr->reflection).corner1.y * 256.0f);
   local_34.z = (int)ROUND((this_ptr->reflection).corner1.z * 256.0f);
@@ -47,6 +47,17 @@ void __cdecl core_mirror_cpp_CMirror_renderMirrorQuadDepth_FUN_00522800(CMirror 
          g_CDemonRendererPtr2->vertex_buffer_ptr[iVar2].projected_vertex.transformed_z << 4;
     g_CDemonRendererPtr2->vertex_buffer_ptr[iVar2].projected_vertex.inv_z =
          (int)((uint)g_CDemonRendererPtr2->vertex_buffer_ptr[iVar2].projected_vertex.inv_z >> 4);
+#if !NOCTURNE_AUTHENTIC_MIRROR_DEPTH_WINDOW
+    if ((g_CDemonRendererPtr2->vertex_buffer_ptr[iVar2].projected_vertex.screen_x & 0x80000000U) !=
+        0) {
+      if (0 < g_CDemonRendererPtr2->vertex_buffer_ptr[iVar2].projected_vertex.transformed_z) {
+        g_CDemonRendererPtr2->vertex_buffer_ptr[iVar2].projected_vertex.inv_z =
+             (int)(0x7fffffff /
+                   (longlong)g_CDemonRendererPtr2->vertex_buffer_ptr[iVar2].projected_vertex.
+                             transformed_z);
+      }
+    }
+#endif
     iVar2 = iVar2 + 1;
   } while (iVar2 != 4);
   SStack_88.base.base.count = 4;

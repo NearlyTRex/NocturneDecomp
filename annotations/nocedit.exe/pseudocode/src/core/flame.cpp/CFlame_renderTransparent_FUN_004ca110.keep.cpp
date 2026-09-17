@@ -43,7 +43,7 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
   float fVar3;
   float fVar2;
   int iVar1;
-  
+
   if (((this_ptr->flame_state != 0) || (g_CDemonMissionPtr->is_in_editor != 0)) &&
      (iVar5 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2),
      iVar5 == 0)) {
@@ -67,6 +67,7 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
     if ((this_ptr->is_visible != 0) && (this_ptr->which_flame != 3)) {
       engine_drender_cpp_CDemonRenderer_getCameraRotationFixed_FUN_0048c7e0
                 (g_CDemonRendererPtr2,&CStack_64);
+      CStack_58 = CStack_64;
       CStack_58.x = 0;
       CStack_58.y = 0;
       engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0

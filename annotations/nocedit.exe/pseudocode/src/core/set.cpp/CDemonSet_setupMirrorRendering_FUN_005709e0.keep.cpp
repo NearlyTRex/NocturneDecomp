@@ -15,6 +15,10 @@ void __cdecl core_set_cpp_CDemonSet_setupMirrorRendering_FUN_005709e0(CDemonSet 
   CVector3f afStack_2c;
   CVector3f local_20;
 
+#if !NOCTURNE_AUTHENTIC_MIRROR_PROJECTION
+  engine_drender_cpp_CDemonRenderer_getCameraAndViewportState_FUN_0048de20
+            (g_CDemonRendererPtr2,&g_MirrorSceneCameraState);
+#endif
   pUVar1 = (UVector3 *)
            engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_0048c780
                      (g_CDemonRendererPtr2,&local_20);
@@ -27,9 +31,13 @@ void __cdecl core_set_cpp_CDemonSet_setupMirrorRendering_FUN_005709e0(CDemonSet 
   if (pCVar2 != &g_SavedCameraRotation) {
     g_SavedCameraRotation = *pCVar2;
   }
+#if NOCTURNE_AUTHENTIC_MIRROR_PROJECTION
   g_SavedProjectionFactor =
        engine_drender_cpp_CDemonRenderer_calculateProjectionFactor_FUN_0048c870
                  (g_CDemonRendererPtr2);
+#else
+  g_SavedProjectionFactor = nocturne_mirror_projection_factor();
+#endif
   core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0
             (&(this_ptr->mirror_glass_actors[mirror_index]->mirror).reflection,
              &g_SavedCameraOrigin.f,&g_SavedCameraRotation,g_SavedProjectionFactor);

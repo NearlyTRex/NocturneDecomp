@@ -1,9 +1,18 @@
-# Horizontal geometry displacement in mirror rooms under acceleration — DIAGNOSED
+# A mirror pass sampled at the wrong field of view — FIXED
 
-A separate defect from the reflection cull, with nothing to do with
-`NOCTURNE_AUTHENTIC_MIRROR_CULL`. Diagnosed live; not yet fixed.
+One cause with two faces, separate from the reflection cull and unrelated to
+`NOCTURNE_AUTHENTIC_MIRROR_CULL`. Both are gated by
+`NOCTURNE_AUTHENTIC_MIRROR_PROJECTION`.
 
-## The symptom
+**This is an editor defect.** `nocedit.exe`'s `CDemonCamera::beginBackgroundScene`
+(`0x44cc70`) pushes a viewport for the editor's framebuffer; retail `nocturne.exe`'s
+(`0x440b20`) swaps the screen-buffer rows and the colour format and returns, pushing
+nothing. Retail therefore has neither symptom, and **screenshots from `nocturne.exe` are
+not a reference for how `nocedit.exe` should look**.
+
+## The symptoms
+
+Accelerated — geometry displaced against the backdrop:
 
 - Doors and walls on the **left and right** of the screen do not line up with where the
   pre-rendered backdrop paints them. The centre of the screen is fine.
@@ -11,7 +20,15 @@ A separate defect from the reflection cull, with nothing to do with
   wrong, not the world.
 - **The mirror itself looks correct.**
 - **Only mirror rooms**, and within them only **some camera angles**.
-- **Only with the external renderer active.**
+
+Software — the reflection itself is wrong:
+
+- The reflected room is drawn scaled about the screen centre, so it overhangs one edge of
+  the glass and falls short of the other.
+- Where it falls short, the depth window `CMirror::renderMirrorQuadDepth` punched keeps
+  its near-infinite depth, and every later mirror pass in `CDemonSet::renderScene` —
+  actors, gore, fire, bloom quads, glow sprites, coronas — draws there unoccluded.
+- A free-standing background actor appears twice, one copy pulled toward the centre.
 
 ## CONFIRMED cause
 
@@ -90,27 +107,54 @@ predicts.
    [bake tag=1 ext=0] pscale=49152 -> (-891, 0, -87376)    restore now exact, stable
 ```
 
-Two differences carry the whole result: software issues **one** geometry pass, not two, so
-nothing inherits the clobber; and once `g_ProjectionScale` converges to `49152` the mirror
-save/restore round trip is exact. The defect is a room-setup transient that only the
-accel-only second pass can capture and freeze.
+Software issues **one** geometry pass, not two, so nothing inherits the clobber — which is
+why the *displacement* is accel-only.
 
-## Fix candidates (none applied yet)
+## Why software is not off the hook
 
-1. **Restore the state instead of rebuilding it.** Have `setupMirrorRendering` /
-   `restoreCameraAfterMirror` use `getCameraAndViewportState` / `setupCameraAndViewport`
-   (all 21 fields) rather than the origin/rotation/projection-factor triple. Smallest
-   conceptual change, fixes the root cause, but deviates from the shipped code.
-2. **Re-establish the scene camera between the two passes** in `setCameraView`, before the
-   `if (g_UseExternalRenderer != 0)` geometry pass. Most targeted; leaves the mirror code
-   alone.
-3. **Find why `g_ProjectionScale` is still the default at room-setup time.** The clobber is
-   only harmful because the projection has not converged when `setupMirrorRendering`
-   samples it. If the scene FOV is supposed to be installed before `setCameraView` reaches
-   its mirror loop, that ordering is the real bug and (1)/(2) are workarounds.
+The sampled factor is not only what `restoreCameraAfterMirror` rebuilds from.
+`setupMirrorRendering` passes it to `CMirrorReflection::setupMirrorReflection` as
+`projection_scale`, which stores it and calls `setupMirrorCamera` — `setProjectionScale`
+then `setupCameraAndProjection`. **The reflected pass's own camera is baked from it too**,
+and putting the scene camera back afterwards cannot undo a reflection already drawn at the
+wrong field of view.
 
-Prefer (3) if the ordering turns out to be a reconstruction artefact; otherwise (2) behind
-a `NOCTURNE_AUTHENTIC_*` gate per project convention.
+Only `renderSceneGeometry` sits inside the window. The four per-actor mirror loops in
+`renderScene` run after `endBackgroundScene` has closed it, so they sample the camera's own
+field of view. Measured live, one frame, filtering on `enable_flag == 1` to isolate the
+scene-geometry call:
+
+```
+MIRRORCAM g_ProjectionScale=65536 (0x10000)  implied_fov=18.0
+   -> reflection.projection_scale=18.000000   g_ProjectionScale=65536   reflected ROOM
+   -> reflection.projection_scale=28.000191   g_ProjectionScale=42130   reflected ACTORS
+```
+
+The reflected room and the reflected actors are drawn through different cameras in the same
+frame. Accelerated rendering hides this because the second `renderSceneGeometry` redraws
+the room outside the window; software has no second pass, and `saveZBufferScanlines` bakes
+the first one for the life of the camera angle.
+
+## The fix
+
+Both halves sit behind `NOCTURNE_AUTHENTIC_MIRROR_PROJECTION`.
+
+1. **Restore the state instead of rebuilding it.** `setupMirrorRendering` saves the
+   renderer's whole camera and viewport state into `g_MirrorSceneCameraState` and
+   `restoreCameraAfterMirror` writes it back, rather than rebuilding from the
+   origin/rotation/projection-factor triple. This is what stops the accelerated second pass
+   inheriting a clobbered matrix.
+2. **Sample the factor over the stacked scale.** `nocturne_mirror_projection_factor`
+   (`shims/game/mirror_projection.h`) computes `calculateProjectionFactor`'s
+   `18 * 65536 / scale` over `g_ViewportStack_ProjectionScale[g_ViewportStackIndex - 1]`
+   when the live scale is still the `0x10000` `pushViewport` wrote. This is what makes the
+   mirror's own camera match the scene's.
+
+The guard on (2) has to be the live scale sitting at `0x10000`, **not** merely that a
+viewport is pushed. A viewport is also pushed during the per-actor mirror passes, but by
+then a camera has set a real scale and re-baked from it; preferring the stacked entry there
+builds those cameras at four times the field of view and throws the reflected actors off
+the glass entirely.
 
 ## Established, do not re-derive
 

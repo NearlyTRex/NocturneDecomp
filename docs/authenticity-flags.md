@@ -92,7 +92,8 @@ honest reason its default is what it is.
 | Flag | Off |
 |---|---|
 | `MIRROR_CULL` | actors appear in mirrors |
-| `MIRROR_PROJECTION` | accelerated geometry lines up with the backdrop it sits on |
+| `MIRROR_PROJECTION` | a mirror pass leaves the scene camera as it found it, so nothing after it is drawn at the wrong field of view |
+| `MIRROR_DEPTH_WINDOW` | a mirror that reaches past the edge of the screen opens its depth window to a real depth at every corner |
 | `IRIS_FADE` | an opening iris no longer teleports part-way through |
 | `DEATH_FADE_SKIP` | ESC no longer cuts the closing death iris short and jumps to Game Over |
 | `ENVMAP_OVERLAY` | a reflection comes out whole rather than speckled |

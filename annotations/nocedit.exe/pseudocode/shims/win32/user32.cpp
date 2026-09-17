@@ -1,6 +1,5 @@
 #include "system/user32.h"
 #include "core/window_icon.h"
-#include "debug/dump.h"
 #include "win32/mci_video.h"
 #include "win32/window_message.h"
 #include "gl/gl_present.h"
@@ -129,31 +128,6 @@ static uint32_t winExtendedKeyFlag(SDL_Scancode sc) {
     }
 }
 
-// Returns true if the key was consumed by a debug hotkey and should NOT be
-// forwarded to the game. F7 and F8 toggle continuous actor-state dumps for
-// the player and Svetlana respectively. The engine doesn't bind these in its
-// hotkey/cheat tables (see CGame::processHotkeys / processCheatCodes), so
-// swallowing them here doesn't change gameplay.
-static bool handleDebugHotkey(const SDL_Event& ev) {
-    if (ev.type != SDL_KEYDOWN || ev.key.repeat) return false;
-    switch (ev.key.keysym.scancode) {
-        case SDL_SCANCODE_F7: {
-            int r = nocturne_auto_dump_toggle_player();
-            std::fprintf(stderr, "[hotkey] F7 player dump %s\n",
-                         r == 1 ? "ARMED" : r == 0 ? "disarmed" : "no actor");
-            return true;
-        }
-        case SDL_SCANCODE_F8: {
-            int r = nocturne_auto_dump_toggle_svetlana();
-            std::fprintf(stderr, "[hotkey] F8 svetlana dump %s\n",
-                         r == 1 ? "ARMED" : r == 0 ? "disarmed" : "no actor");
-            return true;
-        }
-        default:
-            return false;
-    }
-}
-
 // Apply the SHIFT modifier to a base ASCII character the way a US keyboard
 // would. The shim synthesizes WM_CHAR from SDL_KEYDOWN (it never enables
 // SDL_TEXTINPUT), and SDL's keysym.sym is the *unshifted* symbol, so without
@@ -188,15 +162,6 @@ static char winShiftChar(char ch) {
 }
 
 static void translateSdlEvent(const SDL_Event& ev) {
-    if (handleDebugHotkey(ev)) return;
-    // Suppress the matching KEYUP too so the game never sees half a press
-    // for a hotkey we consumed.
-    if (ev.type == SDL_KEYUP &&
-        (ev.key.keysym.scancode == SDL_SCANCODE_F7 ||
-         ev.key.keysym.scancode == SDL_SCANCODE_F8)) {
-        return;
-    }
-
     MSG msg;
     memset(&msg, 0, sizeof(msg));
     msg.hwnd = (HWND)(intptr_t)g_sdlWindow;
@@ -504,11 +469,7 @@ static BOOL shim_PeekMessageA(LPMSG lpMsg, HWND hWnd,
         return 1;
     }
     // Queue empty — game's message-pump loop will exit and proceed to the
-    // next frame's render. Treat this as the per-frame tick boundary for
-    // any debug auto-dumps the user has armed.
-    nocturne_auto_dump_tick();
-
-    // Same boundary samples the controller. swapBuffers calls
+    // next frame's render. This boundary samples the controller. swapBuffers calls
     // processWindowMessages, so this runs once per presented frame in every
     // loop the game has — the mission, each menu, each editor dialog — which
     // is what lets a pad drive screens that only ever knew about a keyboard.

@@ -1017,70 +1017,19 @@ HRESULT DirectDrawCreate(GUID* lpGUID, LPDIRECTDRAW* lplpDD, IUnknown* pUnkOuter
 }
 
 // =============================================================================
-// Front-buffer dump (debug) — what the user actually sees on screen
+// Presenting renderer — accessor
 // =============================================================================
 //
-// Declared in shims/dump.h. Reads back the presented image straight from the
-// SDL renderer, so it captures the final, post-everything frame (mirror passes,
-// HUD, present-time copy all included) regardless of where in the frame it is
-// called — unlike nocturne_dump_screenshot which reads the mid-render
-// g_BackBuffer. Output is a PPM at the renderer's output size (which includes
-// any integer up-scaling of the 640x480 logical surface).
+// g_ddraw_shim is file-static because nothing outside this file drives the
+// surface chain. The renderer itself is needed by callers that read the
+// presented image back, so hand that out alone.
 
-#include "debug/dump.h"
-#include <cstdio>
-
-extern "C" int nocturne_dump_frontbuffer(const char *path)
+extern "C" SDL_Renderer *nocturne_ddraw_present_renderer(void)
 {
-#if NOCTURNE_DUMP_TOOLS
-    if (path == nullptr) {
-        return -1;
+    if (g_ddraw_shim == nullptr) {
+        return nullptr;
     }
-
-    int w = 0, h = 0;
-    unsigned char *buf = nullptr;
-
-    if (nocturne_gl_is_active()) {
-        // GL owns the window; read the finished frame back out of the context.
-        // Already flipped to top-down and packed RGB24 — same shape as below.
-        if (nocturne_gl_read_front(&buf, &w, &h) != 0) {
-            return -1;
-        }
-    } else {
-        if (g_ddraw_shim == nullptr || g_ddraw_shim->renderer == nullptr) {
-            return -1;
-        }
-        SDL_Renderer *renderer = g_ddraw_shim->renderer;
-        if (SDL_GetRendererOutputSize(renderer, &w, &h) != 0 || w <= 0 || h <= 0) {
-            return -1;
-        }
-        buf = (unsigned char *)malloc((size_t)w * 3 * (size_t)h);
-        if (buf == nullptr) {
-            return -1;
-        }
-        // SDL_PIXELFORMAT_RGB24 yields bytes in R,G,B order — exactly PPM order.
-        if (SDL_RenderReadPixels(renderer, nullptr, SDL_PIXELFORMAT_RGB24, buf,
-                                 (int)((size_t)w * 3)) != 0) {
-            free(buf);
-            return -1;
-        }
-    }
-
-    const size_t row_bytes = (size_t)w * 3;
-    FILE *f = std::fopen(path, "wb");
-    if (f == nullptr) {
-        free(buf);
-        return -1;
-    }
-    std::fprintf(f, "P6\n%d %d\n255\n", w, h);
-    std::fwrite(buf, 1, row_bytes * (size_t)h, f);
-    std::fclose(f);
-    free(buf);
-    return 0;
-#else
-    (void)path;
-    return -1;
-#endif
+    return g_ddraw_shim->renderer;
 }
 
 // =============================================================================

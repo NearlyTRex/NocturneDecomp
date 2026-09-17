@@ -11,6 +11,8 @@
 #if NOCTURNE_DUMP_TOOLS
 
 #include "nocturne.h"
+#include "gl/gl_present.h"
+#include <SDL2/SDL.h>
 #include <cmath>
 #include <cstdio>
 #include <cstring>
@@ -1265,6 +1267,442 @@ extern "C" int nocturne_auto_dump_toggle_svetlana(void)
     return toggle_slot(1, "/tmp/auto_dump_svetlana_%05d.txt", find_svetlana_actor());
 }
 
+extern "C" void nocturne_dump_stream_pcm(const char *sample_name, const short *pcm, int frames,
+                                         int num_channels, int bit_depth, int sample_rate)
+{
+    const char *dir;
+    char        raw_path[512];
+    char        txt_path[512];
+    char        leaf[256];
+    FILE       *raw;
+    int         i;
+
+    dir = getenv("NOCTURNE_DUMP_STREAM_PCM");
+    if (dir == (const char *)0 || dir[0] == '\0') {
+        return;
+    }
+    if (sample_name == (const char *)0 || pcm == (const short *)0 || frames <= 0) {
+        return;
+    }
+
+    // The sample name is a filename from the POD; keep the stem and drop any
+    // directory part so it cannot escape the dump directory.
+    snprintf(leaf, sizeof(leaf), "%s", sample_name);
+    for (i = 0; leaf[i] != '\0'; i++) {
+        if (leaf[i] == '/' || leaf[i] == '\\' || leaf[i] == ':') {
+            leaf[i] = '_';
+        }
+    }
+
+    snprintf(raw_path, sizeof(raw_path), "%s/%s.raw", dir, leaf);
+    snprintf(txt_path, sizeof(txt_path), "%s/%s.txt", dir, leaf);
+
+    // Written once per sample, not per batch: the first batch creates it, and
+    // the "a" below then appends the rest of the stream to the raw file.
+    if (fopen(raw_path, "rb") == (FILE *)0) {
+        FILE *txt = fopen(txt_path, "w");
+        if (txt != (FILE *)0) {
+            fprintf(txt, "name=%s\nchannels=%d\nbits=%d\nrate=%d\n",
+                    sample_name, num_channels, bit_depth, sample_rate);
+            fclose(txt);
+        }
+    }
+
+    raw = fopen(raw_path, "ab");
+    if (raw == (FILE *)0) {
+        return;
+    }
+    fwrite(pcm, (size_t)(bit_depth / 8) * (size_t)num_channels, (size_t)frames, raw);
+    fclose(raw);
+}
+
+// =============================================================================
+// Actor creation gates
+// =============================================================================
+
+// Names are fixed-width and not guaranteed terminated; copy through a bounded
+// buffer before printing one.
+static void copy_fixed_name(char *dest, size_t dest_size, const char *src, size_t src_size)
+{
+    size_t n = src_size < dest_size - 1 ? src_size : dest_size - 1;
+    std::memcpy(dest, src, n);
+    dest[n] = '\0';
+}
+
+static void write_event_block(FILE *f, const char *label, const SEventNameBlock *block)
+{
+    std::fprintf(f, "%s: count=%d\n", label, block->count);
+    int count = block->count;
+    if (count < 0) {
+        std::fprintf(f, "  <negative count>\n");
+        return;
+    }
+    if (count > 100) {
+        std::fprintf(f, "  <count exceeds the 100-entry array; listing the first 100>\n");
+        count = 100;
+    }
+    for (int i = 0; i < count; i++) {
+        char name[33];
+        copy_fixed_name(name, sizeof(name), block->names[i], 32);
+        std::fprintf(f, "  [%3d] %s\n", i, name);
+    }
+}
+
+// Is this actor in the set's active list? That list is what the gate feeds,
+// so an actor present here was admitted by it.
+static int actor_in_active_set(const CDemonActor *actor)
+{
+    int count = g_CDemonSetInstance.actor_count;
+    if (count > 2000) count = 2000;
+    for (int i = 0; i < count; i++) {
+        if (g_CDemonSetInstance.actors[i] == actor) {
+            return 1;
+        }
+    }
+    return 0;
+}
+
+extern "C" int nocturne_dump_create_gates(const char *path)
+{
+    if (path == nullptr) {
+        return -1;
+    }
+
+    FILE *f = std::fopen(path, "w");
+    if (f == nullptr) {
+        return -1;
+    }
+
+    std::fprintf(f, "=== Nocturne Actor Creation Gate Dump ===\n");
+    std::fprintf(f, "file: %s\n", path);
+    write_timestamp(f);
+    std::fprintf(f, "\n");
+
+    CDemonMission *mission = g_CDemonMissionPtr;
+    if (mission == nullptr) {
+        std::fprintf(f, "<no mission>\n");
+        std::fclose(f);
+        return 0;
+    }
+
+    std::fprintf(f, "current_set_index: %d\n", mission->current_set_index);
+    std::fprintf(f, "is_in_editor:      %d\n", mission->is_in_editor);
+    std::fprintf(f, "actors_prepared:   %d\n", mission->actors_prepared);
+    std::fprintf(f, "active set count:  %d\n", g_CDemonSetInstance.actor_count);
+    std::fprintf(f, "\n");
+
+    // lifecycle_state: 0 = not created, 1 = created, 2 = destroyed.
+    // "cond" is what evaluateCondition answers for create_event right now;
+    // it is only consulted when create_event is non-empty and not "none".
+    std::fprintf(f, "%-32s  %4s  %5s  %6s  %4s  %8s  %s\n",
+                 "actor", "area", "state", "inset", "cond", "prob", "create_event");
+    std::fprintf(f, "--------------------------------  ----  -----  ------  ----  --------  ------------\n");
+
+    int total = 0;
+    int gated = 0;
+    for (CDemonActor *a = mission->first_actor; a != nullptr; a = a->next_actor) {
+        total++;
+
+        // The gate ignores an empty create_event and the literal "none", so
+        // only the rest carry a decision worth recording.
+        if (a->create_event[0] == '\0') {
+            continue;
+        }
+        if (strcasecmp(a->create_event, "none") == 0) {
+            continue;
+        }
+        gated++;
+
+        char name[33];
+        copy_fixed_name(name, sizeof(name), a->actor_name, 32);
+
+        int cond = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0(
+                       g_CEventListPtr, a->create_event);
+
+        std::fprintf(f, "%-32s  %4d  %5d  %6d  %4d  %8.3f  \"%s\"\n",
+                     name,
+                     a->location.area_id,
+                     (int)a->lifecycle_state,
+                     actor_in_active_set(a),
+                     cond,
+                     (double)a->create_prob,
+                     a->create_event);
+    }
+
+    std::fprintf(f, "\n");
+    std::fprintf(f, "actors in mission: %d\n", total);
+    std::fprintf(f, "with a gating create_event: %d\n", gated);
+    std::fprintf(f, "\n");
+
+    CEventList *events = g_CEventListPtr;
+    if (events == nullptr) {
+        std::fprintf(f, "<no event list>\n");
+        std::fclose(f);
+        return 0;
+    }
+
+    std::fprintf(f, "--- event containers ---\n");
+    // resolveVariable searches current_events, persistent_events, game_flags
+    // and timers. The staging block holds what raise() has appended since the
+    // last CEventList::process, and is not one of them.
+    write_event_block(f, "staging (events)", &events->events);
+    write_event_block(f, "current_events", &events->current_events);
+    write_event_block(f, "game_flags", &events->game_flags);
+    write_event_block(f, "persistent_events", &events->persistent_events);
+
+    std::fprintf(f, "timers: count=%d\n", events->timers.count);
+    int timer_count = events->timers.count;
+    if (timer_count > 0) {
+        if (timer_count > 100) timer_count = 100;
+        for (int i = 0; i < timer_count; i++) {
+            char name[33];
+            copy_fixed_name(name, sizeof(name), events->timers.names[i], 32);
+            std::fprintf(f, "  [%3d] %-32s %.3f\n", i, name,
+                         (double)events->timers.durations[i]);
+        }
+    }
+
+    std::fclose(f);
+    return 0;
+}
+
+// =============================================================================
+// Flame visibility
+// =============================================================================
+
+extern "C" int nocturne_dump_flame_visibility(const char *path)
+{
+    if (path == nullptr) {
+        return -1;
+    }
+
+    FILE *f = std::fopen(path, "w");
+    if (f == nullptr) {
+        return -1;
+    }
+
+    std::fprintf(f, "=== Nocturne Flame Visibility Dump ===\n");
+    std::fprintf(f, "file: %s\n", path);
+    write_timestamp(f);
+    std::fprintf(f, "\n");
+
+    CDemonMission *mission = g_CDemonMissionPtr;
+    if (mission == nullptr) {
+        std::fprintf(f, "<no mission>\n");
+        std::fclose(f);
+        return 0;
+    }
+
+    std::fprintf(f, "current_set_index:    %d\n", mission->current_set_index);
+    std::fprintf(f, "active set count:     %d\n", g_CDemonSetInstance.actor_count);
+    std::fprintf(f, "sorted_render_actors: %d\n", g_CDemonSetInstance.sorted_render_actor_count);
+    std::fprintf(f, "g_ProjectionScale:    %d\n", g_ProjectionScale);
+    std::fprintf(f, "g_TransformMatrix col0: %d, %d, %d\n",
+                 g_TransformMatrix.m[0].x, g_TransformMatrix.m[1].x, g_TransformMatrix.m[2].x);
+    std::fprintf(f, "\n");
+
+    // The re-test below goes through CBoundingBox3D::isVisible, which writes
+    // both of these; put back what the frame had.
+    int saved_perspective = g_PerspectiveReciprocal;
+    int saved_solid_color = g_SolidColorMode;
+
+    std::fprintf(f, "%-20s  %5s  %5s  %4s  %6s  %5s  %4s  %4s  %-22s  %s\n",
+                 "flame", "state", "check", "vis", "fresh", "frust", "wf", "gscl",
+                 "position", "bbox(min..max)");
+    std::fprintf(f, "--------------------  -----  -----  ----  ------  -----  ----  ----  "
+                    "----------------------  ------------------------------\n");
+
+    int count = 0;
+    for (CDemonActor *a = mission->first_actor; a != nullptr; a = a->next_actor) {
+        CFlame *flame = (CFlame *)core_actor_cpp_castToClassHash_FUN_0040c790(
+                            a, g_CFlameClassInfo.name_hash);
+        if (flame == nullptr) {
+            continue;
+        }
+        count++;
+
+        char name[33];
+        copy_fixed_name(name, sizeof(name), a->actor_name, 32);
+
+        // Same bracket renderBackground uses, so the re-test sees the matrix it
+        // would have seen there rather than whatever the actor transform left.
+        CBoundingBox3D scratch;
+        core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&flame->base);
+        CBoundingBox3D *box = (*((flame->base).vtable._ub)->getBoundingBox)(&flame->base, &scratch);
+        int fresh_frustum = core_box_cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420680(box);
+        int fresh_visible = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(box);
+        core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&flame->base);
+
+        char posbuf[64];
+        std::snprintf(posbuf, sizeof(posbuf), "(%.2f,%.2f,%.2f)",
+                      a->location.position.x, a->location.position.y, a->location.position.z);
+        char boxbuf[96];
+        std::snprintf(boxbuf, sizeof(boxbuf), "(%.2f,%.2f,%.2f)..(%.2f,%.2f,%.2f)",
+                      box->min.x, box->min.y, box->min.z,
+                      box->max.x, box->max.y, box->max.z);
+
+        std::fprintf(f, "%-20s  %5d  %5d  %4d  %6d  %5d  %4d  %4.1f  %-22s  %s\n",
+                     name,
+                     flame->flame_state,
+                     flame->do_visibility_check,
+                     flame->is_visible,
+                     fresh_visible,
+                     fresh_frustum,
+                     flame->which_flame,
+                     (double)flame->globe_scalar,
+                     posbuf,
+                     boxbuf);
+    }
+
+    g_PerspectiveReciprocal = saved_perspective;
+    g_SolidColorMode = saved_solid_color;
+
+    std::fprintf(f, "\nflames in mission: %d\n", count);
+    std::fprintf(f, "\n");
+    std::fprintf(f, "state = flame_state (0 = off, nothing renders)\n");
+    std::fprintf(f, "check = do_visibility_check (0 = verdict frozen by renderBackground)\n");
+    std::fprintf(f, "vis   = stored is_visible, the field that gates the sprite quad\n");
+    std::fprintf(f, "fresh = CBoundingBox3D::isVisible re-run now\n");
+    std::fprintf(f, "frust = CBoundingBox3D::isVisibleWithCamera re-run now (the first gate)\n");
+    std::fprintf(f, "wf/gscl = whichFlame and globeScalar from the set record\n");
+
+    std::fclose(f);
+    return 0;
+}
+
+// =============================================================================
+// Flame draw trace
+// =============================================================================
+
+static FILE *g_flame_draw_file = nullptr;
+static int   g_flame_draw_rows = 0;
+
+extern "C" void nocturne_probe_flame_draw_arm(const char *path, int rows)
+{
+    if (g_flame_draw_file != nullptr) {
+        std::fclose(g_flame_draw_file);
+        g_flame_draw_file = nullptr;
+    }
+    g_flame_draw_rows = 0;
+    if (path == nullptr || rows <= 0) {
+        return;
+    }
+    g_flame_draw_file = std::fopen(path, "w");
+    if (g_flame_draw_file == nullptr) {
+        return;
+    }
+    g_flame_draw_rows = rows;
+    std::fprintf(g_flame_draw_file, "=== Nocturne Flame Draw Trace ===\n");
+    write_timestamp(g_flame_draw_file);
+    std::fprintf(g_flame_draw_file,
+                 "\nalpha = (0xffff - fog), halved for whichFlame 1; 0xffff is opaque.\n");
+    std::fprintf(g_flame_draw_file,
+                 "A flame that is never drawn writes no row at all.\n\n");
+    std::fprintf(g_flame_draw_file, "%-20s  %7s  %7s  %6s   %s\n",
+                 "flame", "fog", "alpha", "alpha%", "quad screen x,y (v0..v3)");
+    std::fprintf(g_flame_draw_file,
+                 "--------------------  -------  -------  ------   "
+                 "--------------------------------------------\n");
+}
+
+extern "C" void nocturne_probe_flame_draw(const char *name, int fog, int alpha)
+{
+    if (g_flame_draw_file == nullptr || g_flame_draw_rows <= 0) {
+        return;
+    }
+
+    // screen_x/screen_y are 16.16 fixed; report pixels. transformed_z decides
+    // whether a vertex is in front of the camera at all, which is what tells a
+    // clamped projection apart from a merely off-screen one.
+    char quad[200];
+    quad[0] = '\0';
+    SRenderVertex *vb = g_CDemonRendererPtr2 ? g_CDemonRendererPtr2->vertex_buffer_ptr : nullptr;
+    if (vb != nullptr) {
+        int n = 0;
+        for (int i = 0; i < 4; i++) {
+            n += std::snprintf(quad + n, sizeof(quad) - (size_t)n, "(%.1f,%.1f z=%d)%s",
+                               vb[i].projected_vertex.screen_x / 65536.0,
+                               vb[i].projected_vertex.screen_y / 65536.0,
+                               vb[i].projected_vertex.transformed_z,
+                               i == 3 ? "" : " ");
+            if (n < 0 || (size_t)n >= sizeof(quad)) {
+                break;
+            }
+        }
+    }
+
+    char leaf[33];
+    copy_fixed_name(leaf, sizeof(leaf), name, 32);
+
+    std::fprintf(g_flame_draw_file, "%-20s  %7d  %7d  %5.1f%%   %s\n",
+                 leaf, fog, alpha, (double)alpha * 100.0 / 65535.0, quad);
+
+    g_flame_draw_rows--;
+    if (g_flame_draw_rows == 0) {
+        std::fprintf(g_flame_draw_file, "\n<row budget spent; probe disarmed>\n");
+        std::fclose(g_flame_draw_file);
+        g_flame_draw_file = nullptr;
+    }
+}
+
+// =============================================================================
+// Front buffer — what is actually on screen
+// =============================================================================
+//
+// Reads back the presented image rather than the mid-render g_BackBuffer that
+// nocturne_dump_screenshot samples, so it captures the finished frame whenever
+// it is called. Output is a PPM at the presenting surface's size, which
+// includes any integer up-scaling of the 640x480 logical one.
+
+extern "C" SDL_Renderer *nocturne_ddraw_present_renderer(void);
+
+extern "C" int nocturne_dump_frontbuffer(const char *path)
+{
+    if (path == nullptr) {
+        return -1;
+    }
+
+    int w = 0, h = 0;
+    unsigned char *buf = nullptr;
+
+    if (nocturne_gl_is_active()) {
+        // GL owns the window; read the finished frame out of the context.
+        // Already top-down and packed RGB24, the same shape as below.
+        if (nocturne_gl_read_front(&buf, &w, &h) != 0) {
+            return -1;
+        }
+    } else {
+        SDL_Renderer *renderer = nocturne_ddraw_present_renderer();
+        if (renderer == nullptr) {
+            return -1;
+        }
+        if (SDL_GetRendererOutputSize(renderer, &w, &h) != 0 || w <= 0 || h <= 0) {
+            return -1;
+        }
+        buf = (unsigned char *)malloc((size_t)w * 3 * (size_t)h);
+        if (buf == nullptr) {
+            return -1;
+        }
+        // SDL_PIXELFORMAT_RGB24 is R,G,B order — exactly PPM order.
+        if (SDL_RenderReadPixels(renderer, nullptr, SDL_PIXELFORMAT_RGB24, buf,
+                                 (int)((size_t)w * 3)) != 0) {
+            free(buf);
+            return -1;
+        }
+    }
+
+    FILE *f = std::fopen(path, "wb");
+    if (f == nullptr) {
+        free(buf);
+        return -1;
+    }
+    std::fprintf(f, "P6\n%d %d\n255\n", w, h);
+    std::fwrite(buf, 1, (size_t)w * 3 * (size_t)h, f);
+    std::fclose(f);
+    free(buf);
+    return 0;
+}
+
 #else  // NOCTURNE_DUMP_TOOLS == 0
 
 extern "C" int nocturne_dump_screenshot(const char *path)   { (void)path; return -1; }
@@ -1296,5 +1734,19 @@ extern "C" int  nocturne_auto_dump_is_armed(int slot) { (void)slot; return 0; }
 extern "C" void nocturne_auto_dump_tick(void) {}
 extern "C" int  nocturne_auto_dump_toggle_player(void)   { return -1; }
 extern "C" int  nocturne_auto_dump_toggle_svetlana(void) { return -1; }
+extern "C" void nocturne_dump_stream_pcm(const char *sample_name, const short *pcm, int frames,
+                                         int num_channels, int bit_depth, int sample_rate) {
+    (void)sample_name; (void)pcm; (void)frames;
+    (void)num_channels; (void)bit_depth; (void)sample_rate;
+}
+extern "C" int nocturne_dump_create_gates(const char *path) { (void)path; return -1; }
+extern "C" int nocturne_dump_flame_visibility(const char *path) { (void)path; return -1; }
+extern "C" void nocturne_probe_flame_draw_arm(const char *path, int rows) {
+    (void)path; (void)rows;
+}
+extern "C" void nocturne_probe_flame_draw(const char *name, int fog, int alpha) {
+    (void)name; (void)fog; (void)alpha;
+}
+extern "C" int nocturne_dump_frontbuffer(const char *path) { (void)path; return -1; }
 
 #endif

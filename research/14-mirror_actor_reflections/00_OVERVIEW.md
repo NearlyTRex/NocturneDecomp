@@ -63,8 +63,17 @@ The remaining deviation is structural, not numerical: two sites (a capture in
 `setupMirrorRendering`, a use in `testVisibility`) where the shipped code had one
 self-contained swap.
 
-## Separate open defect
+## Separate defect, also fixed
 
-Under hardware acceleration, mirror rooms show a horizontal displacement between the
-pre-rendered backdrop and the 3D geometry. Unrelated to the cull gate.
+A mirror pass samples its field of view while `beginBackgroundScene` has a viewport pushed,
+so it gets the default 18 rather than the camera's. Under acceleration that displaces
+geometry against the backdrop; under software it scales the reflected room off the glass
+and leaves the mirror's depth window open. Unrelated to the cull gate.
 See `07_ACCEL_DISPLACEMENT.md`.
+
+## Which binary is the reference
+
+`nocedit.exe`. The two binaries differ here: `beginBackgroundScene` pushes a viewport in
+the editor (`0x44cc70`) and not in retail (`0x440b20`), so `nocturne.exe` has neither
+symptom. A `nocturne.exe` screenshot is not evidence about how `nocedit.exe` should look,
+and treating one as such has cost this investigation time more than once.

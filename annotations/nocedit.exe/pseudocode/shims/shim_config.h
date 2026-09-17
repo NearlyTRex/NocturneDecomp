@@ -241,3 +241,10 @@ void nocturne_trigl_envmap_pass_end(void);
 // than through the actor transform its caller pushed. Declares nothing when
 // NOCTURNE_AUTHENTIC_MIRROR_CULL is 1.
 #include "game/mirror_cull.h"
+
+// The other saved camera state (g_MirrorSceneCameraState), shared by
+// CDemonSet::setupMirrorRendering and CDemonSet::restoreCameraAfterMirror, so
+// the scene camera is put back after a reflected pass rather than rebuilt from
+// a field of view sampled while a pushed viewport had reset it. Declares
+// nothing when NOCTURNE_AUTHENTIC_MIRROR_PROJECTION is 1.
+#include "game/mirror_projection.h"

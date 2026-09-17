@@ -51,6 +51,7 @@
 // | `NOCTURNE_AUTHENTIC_RENDERER_DLL` | 0 | host | a compiled-in renderer loads without a file on disk |
 // | `NOCTURNE_AUTHENTIC_MIRROR_CULL` | 0 | defect | actors appear in mirrors |
 // | `NOCTURNE_AUTHENTIC_MIRROR_PROJECTION` | 0 | defect | accelerated geometry lines up with the backdrop |
+// | `NOCTURNE_AUTHENTIC_MIRROR_DEPTH_WINDOW` | 0 | defect | a part-off-screen mirror opens its depth window to a real depth |
 // | `NOCTURNE_AUTHENTIC_IRIS_FADE` | 0 | defect | an opening iris no longer teleports mid-growth |
 // | `NOCTURNE_AUTHENTIC_DEATH_FADE_SKIP` | 0 | defect | ESC no longer cuts the closing death iris short |
 // | `NOCTURNE_AUTHENTIC_ENVMAP_OVERLAY` | 0 | defect | a reflection comes out whole rather than speckled |
@@ -289,41 +290,93 @@
 #endif
 
 // NOCTURNE_AUTHENTIC_MIRROR_PROJECTION
-//   Whether accelerated static geometry is drawn through the same projection as
-//   the pre-rendered backdrop it is composited over. CDemonSet::setCameraView
-//   builds a camera angle by rendering the room's geometry once into the
-//   background buffer, loading the backdrop art over it, and then — only when an
-//   external renderer is active — rendering that geometry a second time for the
-//   accelerated pipeline. The viewport stack straddles the two passes, and
-//   pushViewport resets g_ProjectionScale to 0x10000 while leaving
-//   g_TransformMatrix alone (the stack carries the camera scalars, not the
-//   derived matrices), so between the push and the next bake the global and the
-//   matrix disagree by design. Pass 1's mirror loop then bakes the matrix from
-//   that transient value — setupMirrorRendering samples it through
-//   calculateProjectionFactor, restoreCameraAfterMirror installs it — and
-//   popViewport restores the real scale without re-baking. Pass 2 inherits the
-//   matrix built for the default field of view.
-//   1: matches nocedit.exe as-shipped, and retail nocturne.exe, which carries
-//      the identical second pass (0x5088f0) and the identical
-//      pushViewport reset (0x4ce8e1, MOV ECX,0x10000). In a mirror room, at any
-//      camera angle where buildMirrorList found a visible mirror, the
-//      accelerated geometry is drawn at the default field of view while the
-//      backdrop was drawn at the camera's. Measured as a uniform 4/3 on
-//      g_TransformMatrix columns 0 and 1 with column 2 byte-identical: doors and
-//      walls sit away from the backdrop toward the left and right of the screen,
-//      worsening with distance from centre, and never self-correct because
-//      setCameraView runs once per camera angle. Collision is unaffected.
-//   0: dev-friendly default. Re-establishes the scene camera after
-//      endBackgroundScene, before the accelerated pass. popViewport has by then
-//      restored g_ProjectionScale, the clip window, the camera origin and the
-//      rotation, so the only stale state left is the matrix pair, and one bake
-//      from the restored rotation rebuilds both. Software rendering is untouched
-//      — it issues no second pass, and its own copy of the transient converges
-//      after the first frames.
+//   Whether a reflected pass leaves the scene camera as it found it.
+//   CDemonSet::restoreCameraAfterMirror does not restore a camera, it rebuilds
+//   one from three loose globals that setupMirrorRendering sampled: an origin, a
+//   rotation, and a field of view read back through calculateProjectionFactor as
+//   18 * 65536 / g_ProjectionScale. That round trip is an exact involution, so
+//   nothing is lost in it; what goes wrong is when it is sampled. pushViewport
+//   stacks g_ProjectionScale and resets the live global to 0x10000 without
+//   re-baking g_TransformMatrix — the stack carries the camera scalars, not the
+//   matrices derived from them — so between the push and the next bake the
+//   global and the matrix disagree by design, and CDemonCamera::beginBackgroundScene
+//   opens exactly such a window around the pass that builds a camera angle. A
+//   mirror pass inside it samples the default field of view instead of the
+//   camera's, and the rebuild bakes g_TransformMatrix from it, scaling columns 0
+//   and 1 by 0x100000000/g_ProjectionScale and leaving column 2 alone.
+//   popViewport then restores the scale without re-baking, so the matrix stays
+//   wrong until something else bakes it.
+//   The same sample also builds the mirror's own camera, through
+//   setupMirrorReflection and setupMirrorCamera. Only renderSceneGeometry sits
+//   inside the window, so the reflected room is drawn at 18 while the per-actor
+//   mirror loops in renderScene use the camera's own, and the room lands scaled
+//   off the glass. Where it no longer covers renderMirrorQuadDepth's depth
+//   window, that punch's near-infinite depth survives and every later mirror
+//   pass draws there unoccluded.
+//   1: matches nocedit.exe as-shipped. Retail nocturne.exe does NOT carry this:
+//      its beginBackgroundScene (0x440b20) pushes no viewport, so nothing opens
+//      a window around its mirror pass. It does carry the identical second pass
+//      (0x5088f0) and pushViewport reset (0x4ce8e1, MOV ECX,0x10000).
+//      In a mirror room, at any camera angle where
+//      buildMirrorList found a visible mirror, everything drawn after the mirror
+//      pass is scaled about the centre of the screen by 18/fov and never
+//      self-corrects, because setCameraView runs once per camera angle.
+//      Static geometry shifts against the backdrop it is composited over: doors
+//      and walls sit away from it toward the left and right, worsening with
+//      distance from centre. A free-standing background actor instead appears
+//      TWICE, because setCameraView draws background actors three times
+//      (0056b3e4, 0056b445, 0056b493) and only the last is outside the window —
+//      one copy lands correctly and the other is pulled toward the centre.
+//      Measured in the ACT3 speakeasy against camera speak12, fov 28.000151: two
+//      chairs independently at 0.648 and 0.635 of their correct offset from
+//      screen centre, against 18/28.000151 = 0.643 predicted. Collision is
+//      unaffected. Under software rendering the reflected room is scaled the
+//      same way and stays that way, since no second pass follows to redraw it.
+//   0: dev-friendly default. setupMirrorRendering saves the renderer's whole
+//      camera and viewport state before installing the mirror's, and
+//      restoreCameraAfterMirror writes that state back instead of rebuilding
+//      from the sampled field of view. getCameraAndViewportState carries the
+//      transform matrix, its inverse and the projection scale, so the pass is
+//      bracketed exactly and the transient disagreement is reproduced rather
+//      than collapsed — nothing is re-baked, and no call site has to know which
+//      field of view was in force. The saved state lives in
+//      shims/game/mirror_projection.h. setupMirrorRendering also samples the
+//      field of view over the stacked scale rather than the 0x10000 left live,
+//      so the mirror's own camera is built at the camera's field of view and
+//      the reflected room registers with the glass.
 //
 //   Override with -DNOCTURNE_AUTHENTIC_MIRROR_PROJECTION=1.
 #ifndef NOCTURNE_AUTHENTIC_MIRROR_PROJECTION
 #define NOCTURNE_AUTHENTIC_MIRROR_PROJECTION 0
+#endif
+
+// NOCTURNE_AUTHENTIC_MIRROR_DEPTH_WINDOW
+//   Whether a mirror's depth window is opened from a real depth at every corner.
+//   CMirror::renderMirrorQuadDepth transforms the four glass corners, scales
+//   transformed_x/y/z by 16 and inv_z by 1/16 — the same screen position at
+//   sixteen times the distance — and rasterises the quad with depth replacement
+//   and no depth test, so the reflection can be drawn into the hole it leaves.
+//   The depth interpolated across that hole comes from inv_z.
+//   transformPoint only writes inv_z on its unclipped exit (0x5b5b36); a corner
+//   outside the frustum takes the branch at 0x5b5b2f, which stores a clip
+//   outcode into screen_x and returns, leaving inv_z holding whatever the
+//   previous primitive put in that vertex-buffer slot.
+//   1: matches nocedit.exe and retail nocturne.exe, which carry the same
+//      transformPoint. Whenever a mirror is large enough or close enough to
+//      reach past an edge of the screen, the window's depth is interpolated
+//      through a leftover at the clipped corners. The leftover is whatever was
+//      last projected, so the error is neither bounded nor stable: too far and
+//      the window admits reflections it should have cut off, too near and it
+//      rejects reflections that belong in the glass.
+//   0: dev-friendly default. A corner whose screen_x carries a clip outcode has
+//      its inv_z recomputed as 0x7fffffff / transformed_z — transformPoint's own
+//      formula, over the already-scaled depth — so every corner describes the
+//      glass at sixteen times its distance. Corners that are on screen keep the
+//      shipped shift, so a fully visible mirror is unchanged.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_MIRROR_DEPTH_WINDOW=1.
+#ifndef NOCTURNE_AUTHENTIC_MIRROR_DEPTH_WINDOW
+#define NOCTURNE_AUTHENTIC_MIRROR_DEPTH_WINDOW 0
 #endif
 
 // NOCTURNE_AUTHENTIC_IRIS_FADE
