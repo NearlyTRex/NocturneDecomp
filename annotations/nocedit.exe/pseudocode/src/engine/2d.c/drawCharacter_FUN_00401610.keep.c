@@ -26,7 +26,7 @@ int __cdecl engine_2d_c_drawCharacter_FUN_00401610(int char_code,int x_pos,int y
   int iVar13;
   uchar uVar2;
   byte bVar1;
-  
+
   uVar11 = (uint)g_FontTable[char_code + -0x20].width;
   if ((((x_pos < g_ClipLeft) || (y_pos < g_ClipTop)) || ((int)((g_ClipRight + 1) - uVar11) < x_pos))
      || (g_ClipBottom + -10 < y_pos)) {
@@ -47,7 +47,7 @@ int __cdecl engine_2d_c_drawCharacter_FUN_00401610(int char_code,int x_pos,int y
             uVar2 = *puVar3;
             puVar3 = puVar3 + 1;
             iVar3 = iVar3 + 1;
-            *puVar8 = uVar2;
+            puVar8[-1] = uVar2;
             puVar7 = puVar8;
           } while (iVar3 < (int)uVar11);
         }

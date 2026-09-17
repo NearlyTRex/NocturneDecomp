@@ -54,9 +54,9 @@ SUSPECT TYPE COUNTS
   fast_inv_sqrt_inline              11 (  0.1%)
   static_null_pointer_redundant_check    10 (  0.0%)
   inline_exp_idiom                  10 (  0.0%)
+  preinc_loop_idiom                  9 (  0.0%)
   static_null_pointer                9 (  0.0%)
   displaced_global_access            8 (  0.0%)
-  preinc_loop_idiom                  8 (  0.0%)
   static_integer_division            7 (  0.0%)
   unresolved_register                7 (  0.0%)
   param_count_too_many               6 (  0.0%)
@@ -6812,6 +6812,24 @@ Functions:
   core_weather.cpp_CWeather_update_FUN_00554980
 
 ====================================================================================================
+TYPE: preinc_loop_idiom (9 occurrences)
+====================================================================================================
+
+Unique patterns:
+     9x  do { advance(var via &field or +N); var[K]/arr[0]... store; ...}
+
+Functions:
+  core_charactr.cpp_CCharacter_ctor_FUN_00423f40
+  core_fire.cpp_CCrater_activate_FUN_004876d0
+  core_hero.cpp_CHero_reset_FUN_004b5ec0
+  core_inv.cpp_CInventory_initialize_FUN_004bef10
+  core_skeleton.cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_0051dcb0
+  core_skeleton.cpp_CDeformableModelInstance_showAllParts_FUN_0051dc90
+  engine_ini.cpp_CIni_writeProfileString_FUN_004bd480
+  engine_texture.cpp_CTextureCache_ctor_FUN_00544de0
+  sound_sndmain.cpp_startSfx_FUN_005265a0
+
+====================================================================================================
 TYPE: static_null_pointer (9 occurrences)
 ====================================================================================================
 
@@ -6847,23 +6865,6 @@ Functions:
   core_set.cpp_CDemonSet_FUN_0050aa70
   engine_3d.c_dispatchMRGLToRenderer_FUN_00408fc0
   engine_3d.c_queueSortedPolygon_FUN_00405ab0
-
-====================================================================================================
-TYPE: preinc_loop_idiom (8 occurrences)
-====================================================================================================
-
-Unique patterns:
-     8x  do { advance(var via &field or +N); var[K]/arr[0]... store; ...}
-
-Functions:
-  core_charactr.cpp_CCharacter_ctor_FUN_00423f40
-  core_fire.cpp_CCrater_activate_FUN_004876d0
-  core_hero.cpp_CHero_reset_FUN_004b5ec0
-  core_inv.cpp_CInventory_initialize_FUN_004bef10
-  core_skeleton.cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_0051dcb0
-  core_skeleton.cpp_CDeformableModelInstance_showAllParts_FUN_0051dc90
-  engine_texture.cpp_CTextureCache_ctor_FUN_00544de0
-  sound_sndmain.cpp_startSfx_FUN_005265a0
 
 ====================================================================================================
 TYPE: static_integer_division (7 occurrences)

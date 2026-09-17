@@ -431,7 +431,7 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Ghidra pre-increment-array-walk loop artifact on `iVar2` (per-iteration advance via struct-field/pointer arithmetic \u2014 single-var `iVar2 = iVar2;` self-assign or two-var `tmp = &iVar2->field; iVar2 = tmp;` ping-pong \u2014 plus a constant-index store on `iVar2`). The stride/sentinel are baked from the original struct layout, so it overruns on any layout change (e.g. the 64-bit port). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
+      "description": "Ghidra pre-increment-array-walk loop artifact on `iVar2` (per-iteration advance via struct-field/pointer arithmetic \u2014 single-var `iVar2 = iVar2;` self-assign, two-var `tmp = &iVar2->field; iVar2 = tmp;` ping-pong, or a bare `iVar2 = iVar2 + N;` advance followed by a `*iVar2 =` store \u2014 plus a constant-index store on `iVar2`). Watcom's advance-then-displaced-store (`ADD reg,N` / store `[reg + -N]`) loses the displacement here, so every store lands one element late and the first is never written. The stride/sentinel are baked from the original struct layout, so it overruns on any layout change (e.g. the 64-bit port). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
       "line": 132,
       "match": "do { advance(var via &field or +N); var[K]/arr[0]... store; ...}",
       "resolution_source": "keep",
@@ -440,7 +440,7 @@
       "type": "preinc_loop_idiom"
     },
     {
-      "description": "Ghidra pre-increment-array-walk loop artifact on `iVar2` (per-iteration advance via struct-field/pointer arithmetic \u2014 single-var `iVar2 = iVar2;` self-assign or two-var `tmp = &iVar2->field; iVar2 = tmp;` ping-pong \u2014 plus a constant-index store on `iVar2`). The stride/sentinel are baked from the original struct layout, so it overruns on any layout change (e.g. the 64-bit port). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
+      "description": "Ghidra pre-increment-array-walk loop artifact on `iVar2` (per-iteration advance via struct-field/pointer arithmetic \u2014 single-var `iVar2 = iVar2;` self-assign, two-var `tmp = &iVar2->field; iVar2 = tmp;` ping-pong, or a bare `iVar2 = iVar2 + N;` advance followed by a `*iVar2 =` store \u2014 plus a constant-index store on `iVar2`). Watcom's advance-then-displaced-store (`ADD reg,N` / store `[reg + -N]`) loses the displacement here, so every store lands one element late and the first is never written. The stride/sentinel are baked from the original struct layout, so it overruns on any layout change (e.g. the 64-bit port). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
       "line": 135,
       "match": "do { advance(var via &field or +N); var[K]/arr[0]... store; ...}",
       "resolution_source": "keep",

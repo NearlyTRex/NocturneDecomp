@@ -10,7 +10,7 @@ Total functions: 4922
 Clean functions: 2535 (51.5%)
 Functions with suspects: 2387 (48.5%)
 
-Total suspect patterns: 20947
+Total suspect patterns: 20948
 Average suspects per function: 4.26
 
 Virtual files: 203 total, 10 at 100%, 12 at 90%+
@@ -78,9 +78,9 @@ SUSPECT PATTERN BREAKDOWN
   fast_inv_sqrt_inline      11
   static_null_pointer_redundant_check 10
   inline_exp_idiom          10
+  preinc_loop_idiom         9
   static_null_pointer       9
   displaced_global_access   8
-  preinc_loop_idiom         8
   static_integer_division   7
   unresolved_register       7
   param_count_too_many      6
@@ -733,6 +733,17 @@ FUNCTIONS BY SUSPECT TYPE
     004f3a20: core_pendulum.cpp_CPendulum_process_FUN_004f3a20
     00554980: core_weather.cpp_CWeather_update_FUN_00554980
 
+  preinc_loop_idiom (9 functions):
+    00423f40: core_charactr.cpp_CCharacter_ctor_FUN_00423f40
+    004876d0: core_fire.cpp_CCrater_activate_FUN_004876d0
+    004b5ec0: core_hero.cpp_CHero_reset_FUN_004b5ec0
+    004bd480: engine_ini.cpp_CIni_writeProfileString_FUN_004bd480
+    004bef10: core_inv.cpp_CInventory_initialize_FUN_004bef10
+    0051dc90: core_skeleton.cpp_CDeformableModelInstance_showAllParts_FUN_0051dc90
+    0051dcb0: core_skeleton.cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_0051dcb0
+    005265a0: sound_sndmain.cpp_startSfx_FUN_005265a0
+    00544de0: engine_texture.cpp_CTextureCache_ctor_FUN_00544de0
+
   static_null_pointer (0 functions):
 
   displaced_global_access (8 functions):
@@ -744,16 +755,6 @@ FUNCTIONS BY SUSPECT TYPE
     00426e80: core_charactr.cpp_CCharacter_renderBurn_FUN_00426e80
     004f1c90: core_path.cpp_getOrCreatePathMap_FUN_004f1c90
     0050aa70: core_set.cpp_CDemonSet_FUN_0050aa70
-
-  preinc_loop_idiom (8 functions):
-    00423f40: core_charactr.cpp_CCharacter_ctor_FUN_00423f40
-    004876d0: core_fire.cpp_CCrater_activate_FUN_004876d0
-    004b5ec0: core_hero.cpp_CHero_reset_FUN_004b5ec0
-    004bef10: core_inv.cpp_CInventory_initialize_FUN_004bef10
-    0051dc90: core_skeleton.cpp_CDeformableModelInstance_showAllParts_FUN_0051dc90
-    0051dcb0: core_skeleton.cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_0051dcb0
-    005265a0: sound_sndmain.cpp_startSfx_FUN_005265a0
-    00544de0: engine_texture.cpp_CTextureCache_ctor_FUN_00544de0
 
   static_integer_division (0 functions):
 

@@ -43,7 +43,7 @@ int __cdecl core_setedit_cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0(CDemo
   int local_18;
   int local_14;
   int iVar1;
-  
+
   local_9c = -1;
   iVar2 = -1;
   if (0x1df < g_WindowHeight) {
@@ -120,7 +120,7 @@ LAB_00577d41:
                           puVar8 = puVar8 + 1;
                           uVar5 = ((uint *)g_ThumbnailImageBuffer)[iVar10 / 4];
                           iVar10 = iVar10 + 4;
-                          *puVar8 = g_ColorCubeLookup
+                          puVar8[-1] = g_ColorCubeLookup
                                     [((uVar5 & 0xff) >> 3) * 0x400 +
                                      ((uVar5 >> 8 & 0xff) >> 3) * 0x20 +
                                      ((uVar5 >> 0x10 & 0xff) >> 3)];
@@ -142,7 +142,7 @@ LAB_00577d41:
                           iVar8 = iVar8 + 4;
                           uVar4 = engine_font_cpp_packPixelScaled_FUN_004d1110
                                             (uVar5 & 0xff,uVar5 >> 8 & 0xff,uVar5 >> 0x10 & 0xff);
-                          *puVar3 = (short)uVar4;
+                          puVar3[-1] = (short)uVar4;
                         } while (iVar8 != local_28);
                         local_2c = local_2c + 4;
                         local_14 = local_14 + 0x100;
@@ -161,7 +161,7 @@ LAB_00577d41:
                           iVar8 = iVar8 + 4;
                           uVar5 = engine_font_cpp_packPixelNative_FUN_004d1170
                                             (uVar5 & 0xff,uVar5 >> 8 & 0xff,uVar5 >> 0x10 & 0xff);
-                          *puVar5 = uVar5;
+                          puVar5[-1] = uVar5;
                         } while (iVar8 != local_30);
                         local_24 = local_24 + 4;
                         local_1c = local_1c + 0x100;

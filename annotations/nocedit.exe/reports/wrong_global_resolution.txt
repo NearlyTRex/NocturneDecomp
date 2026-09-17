@@ -13,7 +13,7 @@ SUMMARY
 
   Functions checked: 6911
   Functions with suspicious globals: 96
-  Total suspicious global references: 156
+  Total suspicious global references: 157
 
   Most commonly misresolved globals:
     g_SfxOptions                                       13 functions
@@ -289,6 +289,18 @@ core_set.cpp_CDemonSet_initScene_FUN_0056aa10  [.keep]  (2 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005709e0  [.keep]  (2 suspicious globals)
+  File: core/set.cpp
+
+  g_MirrorCullCameraState
+    Used at lines: 46
+    NOT found in function reference list
+
+  g_MirrorSceneCameraState
+    Used at lines: 20
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 engine_2d.c_plotPixel_FUN_00401140  [.keep]  (2 suspicious globals)
   File: engine/2d.c
 
@@ -537,19 +549,11 @@ core_set.cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0  [.keep]  (1 suspiciou
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50  [.keep]  (1 suspicious globals)
+core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_00570af0  [.keep]  (1 suspicious globals)
   File: core/set.cpp
 
-  g_CDemonRendererPtr2
-    Used at lines: 128, 130
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005709e0  [.keep]  (1 suspicious globals)
-  File: core/set.cpp
-
-  g_MirrorCullCameraState
-    Used at lines: 38
+  g_MirrorSceneCameraState
+    Used at lines: 22
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

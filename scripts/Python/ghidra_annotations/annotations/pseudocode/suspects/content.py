@@ -5862,10 +5862,24 @@ def identify_preinc_loop_idiom(decompiled_code):
                        and _PREINC_DEREF_STORE_RE.match(b2).group(1) == candidate
                        for b2 in preloop):
                     continue
-                if any(_PREINC_DEREF_STORE_RE.match(b2)
-                       and _PREINC_DEREF_STORE_RE.match(b2).group(1) == candidate
-                       for b2 in body_lines[idx + 1:]):
-                    var = candidate
+                # The store has to be in the same block as the advance. Scanning
+                # the whole remaining body would pair an advance inside a nested
+                # loop with a store after that loop closes — which is the
+                # ordinary store-then-advance walk plus a trailing terminator,
+                # not this artifact. Track depth from the advance and stop once
+                # the enclosing block ends.
+                depth = 0
+                for b2 in body_lines[idx + 1:]:
+                    depth += b2.count("{") - b2.count("}")
+                    if depth < 0:
+                        break
+                    if depth != 0:
+                        continue
+                    sm = _PREINC_DEREF_STORE_RE.match(b2)
+                    if sm and sm.group(1) == candidate:
+                        var = candidate
+                        break
+                if var is not None:
                     break
         if var is None:
             continue

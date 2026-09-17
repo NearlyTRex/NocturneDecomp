@@ -80,7 +80,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showCameraEditor_FUN_0057e7c0(CDemonSet 
   CEditorTools *this_ptr_00;
   int *ptr;
   byte bVar3;
-  
+
   bVar19 = 0;
   core_setedit_cpp_CDemonSet_loadOrBuildThumbnails_FUN_00576da0(this_ptr,0);
   pCVar9 = this_ptr->cameras;
@@ -257,16 +257,16 @@ LAB_0057eb3b:
         local_1c = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                              (&local_12b0,"Clone which camera",-1,0);
         if (-1 < local_1c) {
-          pbVar12 = abStack_4be;
+          pbVar12 = abStack_4be + 2;
           pCVar15 = local_44 + local_1c;
           do {
-            pbVar12 = pbVar12 + 2;
             bVar3 = pCVar15->name[0];
             *pbVar12 = bVar3;
             if (bVar3 == 0) break;
             bVar4 = pCVar15->name[1];
             pCVar15 = (C3DSCamera *)(pCVar15->name + 2);
             pbVar12[1] = bVar4;
+            pbVar12 = pbVar12 + 2;
           } while (bVar4 != 0);
           uVar6 = strlen((char *)(abStack_4be + 2));
           iVar11 = uVar6 - 1;

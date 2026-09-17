@@ -19,7 +19,7 @@ void __cdecl core_setedit_cpp_blitThumbnailToScreen32_FUN_00577330(int thumbnail
   int local_1c;
   int local_18;
   int local_14;
-  
+
   local_14 = 0;
   local_1c = screen_row << 2;
   local_18 = thumbnail_index * 0x3000;
@@ -41,7 +41,7 @@ void __cdecl core_setedit_cpp_blitThumbnailToScreen32_FUN_00577330(int thumbnail
         uVar5 = (uVar1 & 0xff) << 0x10 | uVar4 << 8;
       }
       iVar2 = iVar2 + 4;
-      *puVar1 = uVar5 | uVar3;
+      puVar1[-1] = uVar5 | uVar3;
     } while (iVar2 != local_18);
     local_1c = local_1c + 4;
     local_14 = local_14 + 1;

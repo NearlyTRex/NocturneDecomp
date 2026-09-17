@@ -29,7 +29,7 @@ void __cdecl core_setedit_cpp_blitThumbnailToScreen_FUN_00577430(int thumbnail_i
   int local_1c;
   ushort *local_14;
   uint uVar1;
-  
+
   if ((((-1 < screen_x) && (-1 < screen_row)) && (screen_x + 0x40 <= g_WindowWidth)) &&
      (screen_row + 0x30 <= g_WindowHeight)) {
     iVar2 = thumbnail_index * 0x3000;
@@ -45,7 +45,7 @@ void __cdecl core_setedit_cpp_blitThumbnailToScreen_FUN_00577430(int thumbnail_i
           puVar3 = puVar3 + 1;
           uVar2 = ((uint *)g_ThumbnailImageBuffer)[iVar1 / 4];
           iVar1 = iVar1 + 4;
-          *puVar3 = g_ColorCubeLookup
+          puVar3[-1] = g_ColorCubeLookup
                     [((uVar2 >> 8 & 0xff) >> 3) * 0x20 + ((uVar2 & 0xff) >> 3) * 0x400 +
                      ((uVar2 >> 0x10 & 0xff) >> 3)];
         } while (iVar1 != local_54);
@@ -58,10 +58,9 @@ void __cdecl core_setedit_cpp_blitThumbnailToScreen_FUN_00577430(int thumbnail_i
       local_20 = 0;
       local_34 = local_54;
       do {
-        local_14 = (ushort *)((uchar *)g_ScreenBufferArray[local_50 / 4] + screen_x * 2);
+        local_14 = (ushort *)((uchar *)g_ScreenBufferArray[local_50 / 4] + screen_x * 2) + 1;
         iVar5 = iVar2 + local_20 * 0x100;
         do {
-          local_14 = local_14 + 1;
           uVar1 = ((uint *)g_ThumbnailImageBuffer)[iVar5 / 4];
           *local_14 = (ushort)((uVar1 & 0xff) / (uint)g_RedScaleFactor <<
                               (g_RedBitPosition.bytes[0] & 0x1f)) |
@@ -69,6 +68,7 @@ void __cdecl core_setedit_cpp_blitThumbnailToScreen_FUN_00577430(int thumbnail_i
                               (g_GreenBitPosition.bytes[0] & 0x1f)) |
                       (ushort)((uVar1 >> 0x10 & 0xff) / (uint)g_BlueScaleFactor <<
                               (g_BlueBitPosition.bytes[0] & 0x1f));
+          local_14 = local_14 + 1;
           iVar5 = iVar5 + 4;
         } while (iVar5 != local_34);
         local_50 = local_50 + 4;
@@ -97,7 +97,7 @@ void __cdecl core_setedit_cpp_blitThumbnailToScreen_FUN_00577430(int thumbnail_i
             uVar2 = uVar7 << 8 | (uVar2 & 0xff) << 0x10 | uVar6;
           }
           iVar1 = iVar1 + 4;
-          *puVar4 = uVar2;
+          puVar4[-1] = uVar2;
         } while (iVar1 != local_2c);
         local_28 = local_28 + 4;
         local_24 = local_24 + 1;

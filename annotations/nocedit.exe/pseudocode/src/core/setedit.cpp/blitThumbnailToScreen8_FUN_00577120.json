@@ -128,6 +128,24 @@
       "severity": "moderate",
       "text": "puVar3 = (uchar *)(*(int *)((int)g_ScreenBufferArray + local_1c) + screen_x);",
       "type": "pointer_truncation"
+    },
+    {
+      "description": "Ghidra pre-increment-array-walk loop artifact on `puVar3` (per-iteration advance via struct-field/pointer arithmetic \u2014 single-var `puVar3 = puVar3;` self-assign, two-var `tmp = &puVar3->field; puVar3 = tmp;` ping-pong, or a bare `puVar3 = puVar3 + N;` advance followed by a `*puVar3 =` store \u2014 plus a constant-index store on `puVar3`). Watcom's advance-then-displaced-store (`ADD reg,N` / store `[reg + -N]`) loses the displacement here, so every store lands one element late and the first is never written. The stride/sentinel are baked from the original struct layout, so it overruns on any layout change (e.g. the 64-bit port). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
+      "line": 15,
+      "match": "do { advance(var via &field or +N); var[K]/arr[0]... store; ...}",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "preinc_loop_idiom"
+    },
+    {
+      "description": "Ghidra pre-increment-array-walk loop artifact on `puVar3` (per-iteration advance via struct-field/pointer arithmetic \u2014 single-var `puVar3 = puVar3;` self-assign, two-var `tmp = &puVar3->field; puVar3 = tmp;` ping-pong, or a bare `puVar3 = puVar3 + N;` advance followed by a `*puVar3 =` store \u2014 plus a constant-index store on `puVar3`). Watcom's advance-then-displaced-store (`ADD reg,N` / store `[reg + -N]`) loses the displacement here, so every store lands one element late and the first is never written. The stride/sentinel are baked from the original struct layout, so it overruns on any layout change (e.g. the 64-bit port). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
+      "line": 19,
+      "match": "do { advance(var via &field or +N); var[K]/arr[0]... store; ...}",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "preinc_loop_idiom"
     }
   ],
   "stack_frame": {

@@ -441,6 +441,60 @@
       "severity": "moderate",
       "text": "local_88 = (CDemonSet *)&local_88->cameras[0].enabled;",
       "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Ghidra pre-increment-array-walk loop artifact on `puVar8` (per-iteration advance via struct-field/pointer arithmetic \u2014 single-var `puVar8 = puVar8;` self-assign, two-var `tmp = &puVar8->field; puVar8 = tmp;` ping-pong, or a bare `puVar8 = puVar8 + N;` advance followed by a `*puVar8 =` store \u2014 plus a constant-index store on `puVar8`). Watcom's advance-then-displaced-store (`ADD reg,N` / store `[reg + -N]`) loses the displacement here, so every store lands one element late and the first is never written. The stride/sentinel are baked from the original struct layout, so it overruns on any layout change (e.g. the 64-bit port). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
+      "line": 116,
+      "match": "do { advance(var via &field or +N); var[K]/arr[0]... store; ...}",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "preinc_loop_idiom"
+    },
+    {
+      "description": "Ghidra pre-increment-array-walk loop artifact on `puVar8` (per-iteration advance via struct-field/pointer arithmetic \u2014 single-var `puVar8 = puVar8;` self-assign, two-var `tmp = &puVar8->field; puVar8 = tmp;` ping-pong, or a bare `puVar8 = puVar8 + N;` advance followed by a `*puVar8 =` store \u2014 plus a constant-index store on `puVar8`). Watcom's advance-then-displaced-store (`ADD reg,N` / store `[reg + -N]`) loses the displacement here, so every store lands one element late and the first is never written. The stride/sentinel are baked from the original struct layout, so it overruns on any layout change (e.g. the 64-bit port). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
+      "line": 119,
+      "match": "do { advance(var via &field or +N); var[K]/arr[0]... store; ...}",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "preinc_loop_idiom"
+    },
+    {
+      "description": "Ghidra pre-increment-array-walk loop artifact on `puVar3` (per-iteration advance via struct-field/pointer arithmetic \u2014 single-var `puVar3 = puVar3;` self-assign, two-var `tmp = &puVar3->field; puVar3 = tmp;` ping-pong, or a bare `puVar3 = puVar3 + N;` advance followed by a `*puVar3 =` store \u2014 plus a constant-index store on `puVar3`). Watcom's advance-then-displaced-store (`ADD reg,N` / store `[reg + -N]`) loses the displacement here, so every store lands one element late and the first is never written. The stride/sentinel are baked from the original struct layout, so it overruns on any layout change (e.g. the 64-bit port). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
+      "line": 136,
+      "match": "do { advance(var via &field or +N); var[K]/arr[0]... store; ...}",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "preinc_loop_idiom"
+    },
+    {
+      "description": "Ghidra pre-increment-array-walk loop artifact on `puVar3` (per-iteration advance via struct-field/pointer arithmetic \u2014 single-var `puVar3 = puVar3;` self-assign, two-var `tmp = &puVar3->field; puVar3 = tmp;` ping-pong, or a bare `puVar3 = puVar3 + N;` advance followed by a `*puVar3 =` store \u2014 plus a constant-index store on `puVar3`). Watcom's advance-then-displaced-store (`ADD reg,N` / store `[reg + -N]`) loses the displacement here, so every store lands one element late and the first is never written. The stride/sentinel are baked from the original struct layout, so it overruns on any layout change (e.g. the 64-bit port). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
+      "line": 140,
+      "match": "do { advance(var via &field or +N); var[K]/arr[0]... store; ...}",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "preinc_loop_idiom"
+    },
+    {
+      "description": "Ghidra pre-increment-array-walk loop artifact on `puVar5` (per-iteration advance via struct-field/pointer arithmetic \u2014 single-var `puVar5 = puVar5;` self-assign, two-var `tmp = &puVar5->field; puVar5 = tmp;` ping-pong, or a bare `puVar5 = puVar5 + N;` advance followed by a `*puVar5 =` store \u2014 plus a constant-index store on `puVar5`). Watcom's advance-then-displaced-store (`ADD reg,N` / store `[reg + -N]`) loses the displacement here, so every store lands one element late and the first is never written. The stride/sentinel are baked from the original struct layout, so it overruns on any layout change (e.g. the 64-bit port). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
+      "line": 156,
+      "match": "do { advance(var via &field or +N); var[K]/arr[0]... store; ...}",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "preinc_loop_idiom"
+    },
+    {
+      "description": "Ghidra pre-increment-array-walk loop artifact on `puVar5` (per-iteration advance via struct-field/pointer arithmetic \u2014 single-var `puVar5 = puVar5;` self-assign, two-var `tmp = &puVar5->field; puVar5 = tmp;` ping-pong, or a bare `puVar5 = puVar5 + N;` advance followed by a `*puVar5 =` store \u2014 plus a constant-index store on `puVar5`). Watcom's advance-then-displaced-store (`ADD reg,N` / store `[reg + -N]`) loses the displacement here, so every store lands one element late and the first is never written. The stride/sentinel are baked from the original struct layout, so it overruns on any layout change (e.g. the 64-bit port). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
+      "line": 160,
+      "match": "do { advance(var via &field or +N); var[K]/arr[0]... store; ...}",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "preinc_loop_idiom"
     }
   ],
   "stack_frame": {

@@ -16,7 +16,7 @@ void __cdecl core_setedit_cpp_blitThumbnailToScreen8_FUN_00577120(int thumbnail_
   int local_18;
   int local_14;
   uint uVar1;
-  
+
   local_14 = 0;
   local_1c = screen_row << 2;
   local_18 = thumbnail_index * 0x3000;
@@ -28,7 +28,7 @@ void __cdecl core_setedit_cpp_blitThumbnailToScreen8_FUN_00577120(int thumbnail_
       puVar3 = puVar3 + 1;
       uVar1 = ((uint *)g_ThumbnailImageBuffer)[iVar2 / 4];
       iVar2 = iVar2 + 4;
-      *puVar3 = g_ColorCubeLookup
+      puVar3[-1] = g_ColorCubeLookup
                 [((uVar1 >> 0x10 & 0xff) >> 3) +
                  ((uVar1 & 0xff) >> 3) * 0x400 + ((uVar1 >> 8 & 0xff) >> 3) * 0x20];
     } while (iVar2 != local_18);

@@ -30,7 +30,7 @@ int __cdecl core_setedit_cpp_blitThumbnailStripAndHitTest_FUN_00577730(int start
   int local_1c;
   ushort *local_14;
   int iVar1;
-  
+
   for (iVar5 = screen_x; iVar5 < screen_x + thumbnail_count * 0x40; iVar5 = iVar5 + 0x40) {
     if ((((-1 < iVar5) && (-1 < screen_y)) && (iVar5 + 0x40 <= g_WindowWidth)) &&
        (screen_y + 0x30 <= g_WindowHeight)) {
@@ -49,7 +49,7 @@ int __cdecl core_setedit_cpp_blitThumbnailStripAndHitTest_FUN_00577730(int start
             puVar2 = puVar2 + 1;
             uVar1 = ((uint *)g_ThumbnailImageBuffer)[iVar6 / 4];
             iVar6 = iVar6 + 4;
-            *puVar2 = g_ColorCubeLookup
+            puVar2[-1] = g_ColorCubeLookup
                       [((uVar1 & 0xff) >> 3) * 0x400 + ((uVar1 >> 8 & 0xff) >> 3) * 0x20 +
                        ((uVar1 >> 0x10 & 0xff) >> 3)];
           } while (iVar6 != local_30);
@@ -61,10 +61,9 @@ int __cdecl core_setedit_cpp_blitThumbnailStripAndHitTest_FUN_00577730(int start
       else if (g_BitsPerPixel == 0x10) {
         local_2c = local_34;
         do {
-          local_14 = (ushort *)((uchar *)g_ScreenBufferArray[local_64 / 4] + iVar5 * 2);
+          local_14 = (ushort *)((uchar *)g_ScreenBufferArray[local_64 / 4] + iVar5 * 2) + 1;
           iVar2 = local_24;
           do {
-            local_14 = local_14 + 1;
             uVar1 = ((uint *)g_ThumbnailImageBuffer)[iVar2 / 4];
             *local_14 = (ushort)((uVar1 >> 0x10 & 0xff) / (uint)g_BlueScaleFactor <<
                                 (g_BlueBitPosition.bytes[0] & 0x1f)) |
@@ -72,6 +71,7 @@ int __cdecl core_setedit_cpp_blitThumbnailStripAndHitTest_FUN_00577730(int start
                                 (g_RedBitPosition.bytes[0] & 0x1f)) |
                         (ushort)((uVar1 >> 8 & 0xff) / (uint)g_GreenScaleFactor <<
                                 (g_GreenBitPosition.bytes[0] & 0x1f));
+            local_14 = local_14 + 1;
             iVar2 = iVar2 + 4;
           } while (iVar2 != local_2c);
           local_64 = local_64 + 4;
@@ -99,7 +99,7 @@ int __cdecl core_setedit_cpp_blitThumbnailStripAndHitTest_FUN_00577730(int start
               uVar7 = (uVar1 & 0xff) << 0x10 | uVar8 << 8;
             }
             iVar2 = iVar2 + 4;
-            *puVar3 = uVar7 | uVar4;
+            puVar3[-1] = uVar7 | uVar4;
           } while (iVar2 != local_34);
           local_28 = local_28 + 4;
           local_20 = local_20 + 0x100;

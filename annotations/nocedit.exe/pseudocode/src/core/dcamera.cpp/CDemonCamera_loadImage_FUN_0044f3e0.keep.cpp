@@ -83,7 +83,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_0044f3e0(CDemonCamera *
   byte bVar1;
   int local_64;
   int local_3c;
-  
+
   strcpy(local_144, filename);
   pcVar22 = local_144;
   pcVar10 = strchr(pcVar22, '.');
@@ -227,7 +227,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_0044f3e0(CDemonCamera *
           do {
             piVar27 = piVar27 + 1;
             local_94 = local_94 + 1;
-            *piVar27 = ((g_CameraConvertedPalette[*pbVar7] & 0xfcfcfc) >> 2) +
+            piVar27[-1] = ((g_CameraConvertedPalette[*pbVar7] & 0xfcfcfc) >> 2) +
                        ((g_CameraConvertedPalette[pbVar7[1]] & 0xfcfcfc) >> 2) +
                        ((g_CameraConvertedPalette[pbVar7[0x280]] & 0xfcfcfc) >> 2) +
                        ((g_CameraConvertedPalette[pbVar7[0x281]] & 0xfcfcfc) >> 2);
