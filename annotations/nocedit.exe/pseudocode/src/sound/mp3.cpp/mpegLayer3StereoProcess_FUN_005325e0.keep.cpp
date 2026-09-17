@@ -672,7 +672,12 @@ LAB_005327f7:
   else {
     // Mono input: copy channel 0 input → channel 0 output. Channel 1 stays at
     // the zero we just wrote. The inner walk uses pre-increment + byte-stride
-    // pointer compare, which is how Watcom emitted this loop.
+    // pointer compare, which is how Watcom emitted this loop: the cursor is
+    // advanced first and the store is displaced back by one element
+    // (ADD EDX,0x4 / FSTP [EDX + -0x4] at 0053347a), so the element written is
+    // the one the cursor pointed at on entry. Writing through the advanced
+    // cursor instead shifts every coefficient one slot late and leaves the
+    // first unwritten.
     iVar11 = 0;
     local_54 = (float *)output_samples;
     pfVar10 = (float *)input_lr_samples;
@@ -684,7 +689,7 @@ LAB_005327f7:
         pfVar11 = pfVar11 + 1;
         pfVar4 = *pafVar6;
         pafVar6 = (float (*) [18])(*pafVar6 + 1);
-        *pfVar11 = *pfVar4;
+        pfVar11[-1] = *pfVar4;
       } while (pafVar6 != (float (*) [18])pfVar10);
       iVar11 = iVar11 + 1;
       local_54 = local_54 + 0x12;

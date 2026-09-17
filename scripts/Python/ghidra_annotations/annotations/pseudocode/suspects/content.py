@@ -5683,6 +5683,15 @@ _PREINC_INDEX_STORE_RE = re.compile(
     r"^\s*(\w+)\s*\[\s*(?:0x[0-9a-fA-F]+|\d+)\s*\]\s*=")
 
 
+# Store through a bare dereference of the advanced walker: `*pX = ...;`. This is
+# the same constant-index-0 store as `pX[0] = ...`, written the way Ghidra emits
+# it when the index folds away. Watcom's advance-then-displaced-store idiom
+# (`ADD reg,N` / `MOV [reg + -N]`) loses the displacement in the decompile, so
+# the store lands one element past where the asm puts it.
+_PREINC_DEREF_STORE_RE = re.compile(
+    r"^\s*\*\s*(\w+)\s*=")
+
+
 # --- Two-variable ping-pong advance form ---------------------------------
 # Instead of the single-variable `pX = (T *)&pX->field; ...; pX = pX;` shape,
 # Watcom/Ghidra sometimes split the pre-increment across a temporary:
@@ -5824,6 +5833,40 @@ def identify_preinc_loop_idiom(decompiled_code):
                 if paired:
                     var = base_var
                     break
+        # (c) Advance with no marker at all: `pX = pX + N;` and a later store
+        #     through a bare `*pX`, where the loop condition tests something
+        #     else. Nothing pairs the advance to the store, so forms (a) and (b)
+        #     both miss it — but writing through a pointer advanced earlier in
+        #     the same body still leaves the first element unwritten and pushes
+        #     every store one slot late. Requires the store to follow the
+        #     advance, and the walker to be absent from the while condition, so
+        #     an ordinary `while (p != end)` walk is not flagged. A `*pX = ...`
+        #     store just before the loop is also disqualifying: that is the
+        #     legitimate prime-then-advance shape, where element 0 is written
+        #     outside the loop and the body fills 1..n-1.
+        if var is None:
+            while_cond = ""
+            for bl in reversed(body_lines):
+                if "while" in bl:
+                    while_cond = bl
+                    break
+            preloop = lines[max(0, i - 12):i]
+            for idx, bl in enumerate(body_lines):
+                m = _PREINC_ADVANCE_PTRARITH_RE.match(bl)
+                if not m:
+                    continue
+                candidate = m.group(1)
+                if re.search(r"\b%s\b" % re.escape(candidate), while_cond):
+                    continue
+                if any(_PREINC_DEREF_STORE_RE.match(b2)
+                       and _PREINC_DEREF_STORE_RE.match(b2).group(1) == candidate
+                       for b2 in preloop):
+                    continue
+                if any(_PREINC_DEREF_STORE_RE.match(b2)
+                       and _PREINC_DEREF_STORE_RE.match(b2).group(1) == candidate
+                       for b2 in body_lines[idx + 1:]):
+                    var = candidate
+                    break
         if var is None:
             continue
         has_array0 = any(
@@ -5833,7 +5876,11 @@ def identify_preinc_loop_idiom(decompiled_code):
             _PREINC_INDEX_STORE_RE.match(bl)
             and _PREINC_INDEX_STORE_RE.match(bl).group(1) == var
             for bl in body_lines)
-        if not (has_array0 or has_index_store
+        has_deref_store = any(
+            _PREINC_DEREF_STORE_RE.match(bl)
+            and _PREINC_DEREF_STORE_RE.match(bl).group(1) == var
+            for bl in body_lines)
+        if not (has_array0 or has_index_store or has_deref_store
                 or _preinc_const_index_store_on(body_lines, var)):
             continue
         suspects.append({
@@ -5844,9 +5891,13 @@ def identify_preinc_loop_idiom(decompiled_code):
             'description': (
                 "Ghidra pre-increment-array-walk loop artifact on `{var}` "
                 "(per-iteration advance via struct-field/pointer arithmetic — "
-                "single-var `{var} = {var};` self-assign or two-var `tmp = "
-                "&{var}->field; {var} = tmp;` ping-pong — plus a constant-index "
-                "store on `{var}`). The stride/sentinel are baked from the "
+                "single-var `{var} = {var};` self-assign, two-var `tmp = "
+                "&{var}->field; {var} = tmp;` ping-pong, or a bare `{var} = "
+                "{var} + N;` advance followed by a `*{var} =` store — plus a "
+                "constant-index store on `{var}`). Watcom's advance-then-"
+                "displaced-store (`ADD reg,N` / store `[reg + -N]`) loses the "
+                "displacement here, so every store lands one element late and "
+                "the first is never written. The stride/sentinel are baked from the "
                 "original struct layout, so it overruns on any layout change "
                 "(e.g. the 64-bit port). Always wrong as-decoded; cross-reference "
                 ".asm and rewrite as a straightforward for-loop in a .keep "
