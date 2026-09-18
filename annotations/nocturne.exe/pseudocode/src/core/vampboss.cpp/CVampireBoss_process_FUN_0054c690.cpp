@@ -609,7 +609,7 @@ LAB_0054cc7f:
   if ((pSVar9->state_index != 2) && (g_CGame_PTR_005b9354->letterbox_mode == 0)) {
     core_game_cpp_CGame_setStatusDisplay_FUN_004a3ab0
               (g_CGame_PTR_005b9354,(this_ptr->base).base.descriptive_name,
-               (int)((this_ptr->base).base.hit_points / (this_ptr->base).base.max_hit_points),0.5);
+               (this_ptr->base).base.hit_points / (this_ptr->base).base.max_hit_points,0.5);
     return;
   }
   return;

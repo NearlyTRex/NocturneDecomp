@@ -51,11 +51,13 @@ void __cdecl core_menu_cpp_configureCustomKeyBindings_FUN_005138e0(void)
   bool bVar36;
   bool bVar35;
   CPickList local_a7c;
-#if NOCTURNE_AUTHENTIC_GAMEPAD
+#if NOCTURNE_AUTHENTIC_GAMEPAD && NOCTURNE_AUTHENTIC_CONTROL_SETUP
   char local_6d4 [512];
 #endif
   char acStack_4d4 [512];
+#if NOCTURNE_AUTHENTIC_CONTROL_SETUP
   char local_2d4 [512];
+#endif
   char local_d4 [200];
   int local_c;
   uint window_flags;
@@ -512,7 +514,7 @@ LAB_0051390e:
       iVar15_00 = iVar4_00 + -1;
       local_c = iVar4_00;
       switch(*g_CustomKeyPointers[iVar15_00]) {
-#if NOCTURNE_AUTHENTIC_GAMEPAD
+#if NOCTURNE_AUTHENTIC_GAMEPAD && NOCTURNE_AUTHENTIC_CONTROL_SETUP
       case 0x251:
       case 0x252:
       case 0x253:
@@ -524,6 +526,7 @@ LAB_0051390e:
                   (g_CEditorToolsPtr,local_6d4);
         break;
 #endif
+#if NOCTURNE_AUTHENTIC_CONTROL_SETUP
       case 0x255:
       case 0x256:
         strcpy(local_2d4, g_CustomKeyNames[iVar15_00]);
@@ -531,6 +534,7 @@ LAB_0051390e:
                             (" is assigned to the mouse.  Can't assign a key."));
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,local_2d4);
         break;
+#endif
       default:
 #if !NOCTURNE_AUTHENTIC_GAMEPAD
         nocturne_gamepad_suppress_nav(1);

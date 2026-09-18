@@ -1215,6 +1215,15 @@ extern "C" int nocturne_automap_freezes_world(void)
     }
     return 1;
 }
+// See automap.h. Only the laser pool needs this: it is the one piece of the
+// effect state that renderScene writes and process clears, so freezing process
+// alone leaves it growing. Everything else CFireEffect::process touches is
+// advanced there and read there, and stopping both is what freezing means.
+extern "C" void nocturne_automap_clear_frame_effects(void)
+{
+    g_LaserBeamActiveCount = 0;
+}
+
 extern "C" int *nocturne_automap_key_binding(void) { return &g_key_binding; }
 
 extern "C" void nocturne_automap_apply_default_binding(void)
@@ -1780,6 +1789,7 @@ extern "C" void nocturne_automap_apply_loaded(void) {}
 extern "C" int  nocturne_automap_explored_percent(void) { return 0; }
 extern "C" int  nocturne_automap_owns_controls(void) { return 0; }
 extern "C" int  nocturne_automap_freezes_world(void) { return 0; }
+extern "C" void nocturne_automap_clear_frame_effects(void) {}
 extern "C" int  nocturne_automap_handle_cancel(void) { return 0; }
 extern "C" int *nocturne_automap_key_binding(void) { static int none = 0; return &none; }
 extern "C" void nocturne_automap_apply_default_binding(void) {}

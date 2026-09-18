@@ -174,7 +174,7 @@ section .text
     MOV ESI,dword ptr [0x0067b654]      ; 0042c4e3 | g_CGamePtr
     PUSH ESI                            ; 0042c4e9 | g_CGameInstance
     CALL core_game.cpp_CGame_setStatusDisplay_FUN_004e0bf0 ; 0042c4ea
-        ;   XREF to: 004e0bf0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_setStatusDisplay_FUN_004e0bf0(CGame * this_ptr, char * name, int value, float duration)
+        ;   XREF to: 004e0bf0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_setStatusDisplay_FUN_004e0bf0(CGame * this_ptr, char * name, float value, float duration)
     ADD ESP,0x10                        ; 0042c4ef
     FLD float ptr [EBX + 0x243c]        ; 0042c4f2
         ;   Label: LAB_0042c4f2

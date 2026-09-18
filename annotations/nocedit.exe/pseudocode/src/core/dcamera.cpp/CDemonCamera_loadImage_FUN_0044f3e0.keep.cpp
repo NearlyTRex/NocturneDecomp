@@ -53,6 +53,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_0044f3e0(CDemonCamera *
   int local_8c;
   uint *local_88;
   uint local_84;
+  uint filter_divisor;
   int local_80;
   int local_7c;
   uint local_78;
@@ -290,15 +291,23 @@ void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_0044f3e0(CDemonCamera *
                 local_70 = uVar2 >> 0x10 & 0xff;
                 local_74 = uVar2 >> 8 & 0xff;
                 local_50 = local_74 * uVar20;
+#if NOCTURNE_AUTHENTIC_BACKDROP_FILTER
+                filter_divisor = local_84;
+#else
+                filter_divisor = (iVar2 + uVar20 + iVar9 + uVar30) * 2;
+                if (filter_divisor == 0) {
+                  filter_divisor = 1;
+                }
+#endif
                 uVar7 = ((uVar7 & 0xff) * iVar9 + (uVar7 & 0xff) * iVar2 +
                          (uVar5 & 0xff) * uVar20 + (uVar5 & 0xff) * iVar9 +
                          (uVar6 & 0xff) * iVar2 + (uVar6 & 0xff) * uVar30 +
-                        local_78 * uVar30 + local_78 * uVar20) / local_84;
+                        local_78 * uVar30 + local_78 * uVar20) / filter_divisor;
                 uVar5 = (uVar17 * iVar9 + uVar17 * iVar2 + uVar19 * uVar20 + uVar19 * iVar9 +
-                         local_54 + uVar29 * uVar30 + local_74 * uVar30 + local_50) / local_84;
+                         local_54 + uVar29 * uVar30 + local_74 * uVar30 + local_50) / filter_divisor;
                 uVar6 = (uVar9 * iVar9 + uVar9 * iVar2 + iVar9 * uVar10 + uVar10 * uVar20 +
                          uVar11 * uVar30 + uVar11 * iVar2 + local_70 * uVar30 + uVar20 * local_70) /
-                        local_84;
+                        filter_divisor;
                 if (0xff < uVar7) {
                   uVar7 = 0xff;
                 }

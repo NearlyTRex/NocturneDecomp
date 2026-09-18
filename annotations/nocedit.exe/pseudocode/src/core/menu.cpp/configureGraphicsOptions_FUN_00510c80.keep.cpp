@@ -343,6 +343,7 @@ LAB_00510f71:
 #if !NOCTURNE_AUTHENTIC_RESOLUTION_LIST
       nocturne_resolution_step(g_CGamePtr->game_pixx,g_CGamePtr->game_pixy,
                                (g_MenuLeftRightPressed == 1) ? -1 : 1,
+                               bVar12 ? 0 : 0x1e0,
                                &g_CGamePtr->game_pixx,&g_CGamePtr->game_pixy);
       iVar6 = g_CurrentGraphicsBoard;
       iVar3 = g_GraphicsCardCount;

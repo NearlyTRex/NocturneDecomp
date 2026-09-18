@@ -38,8 +38,8 @@ int __cdecl core_charactr_cpp_CCharacter_process_FUN_00429870(CCharacter *this_p
   }
   if (this_ptr->health_bar_mode == 2) {
     core_game_cpp_CGame_setStatusDisplay_FUN_004e0bf0
-              (g_CGamePtr,this_ptr->descriptive_name,
-               (int)(this_ptr->hit_points / this_ptr->max_hit_points),2.0);
+              (g_CGamePtr,this_ptr->descriptive_name,this_ptr->hit_points / this_ptr->max_hit_points
+               ,2.0);
   }
   if (this_ptr->render_active == 0) {
     if (this_ptr->closest_distance_threshold == 9999.0f) {

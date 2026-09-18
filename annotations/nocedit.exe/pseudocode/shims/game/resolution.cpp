@@ -50,20 +50,29 @@ int nocturne_resolution_index_of(int width, int height) {
 }
 
 int nocturne_resolution_step(int current_width, int current_height, int step,
-                             int *out_width, int *out_height) {
+                             int max_height, int *out_width, int *out_height) {
     int index;
+    int last;
 
     if (kModeCount < 1) { return 0; }
+
+    // The largest mode the caller will take. Everything past it is unreachable
+    // as far as the stepping is concerned, so it is not a mode the selector can
+    // land on even for one frame.
+    last = kModeCount - 1;
+    if (max_height > 0) {
+        while (last > 0 && kModes[last].height > max_height) { --last; }
+    }
 
     index = nocturne_resolution_index_of(current_width, current_height);
     if (index < 0) {
         // Not one of ours — an old INI, or the 400x300 the shipped chain could
-        // land on but never leave cleanly. Snap to the nearest by height, then
-        // step from there, so one keypress does something sensible instead of
+        // land on but never leave cleanly. Snap to the nearest by height rather
+        // than stepping, so one keypress does something sensible instead of
         // dropping to the smallest mode.
         int best = 0;
         int best_delta = -1;
-        for (int i = 0; i < kModeCount; ++i) {
+        for (int i = 0; i <= last; ++i) {
             int delta = kModes[i].height - current_height;
             if (delta < 0) { delta = -delta; }
             if (best_delta < 0 || delta < best_delta) {
@@ -73,12 +82,17 @@ int nocturne_resolution_step(int current_width, int current_height, int step,
         }
         index = best;
     }
+    else if (index > last) {
+        // In the table but above the ceiling, which an INI can arrange. Snap
+        // into range, the same way an unknown mode does.
+        index = last;
+    }
     else {
         index = index + (step < 0 ? -1 : 1);
         // Wrap at both ends, the way the shipped chain wrapped from its
         // smallest mode back to the largest the card would allow.
-        if (index < 0) { index = kModeCount - 1; }
-        if (index >= kModeCount) { index = 0; }
+        if (index < 0) { index = last; }
+        if (index > last) { index = 0; }
     }
 
     if (out_width) { *out_width = kModes[index].width; }

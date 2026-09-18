@@ -59,9 +59,18 @@ int nocturne_resolution_index_of(int width, int height);
 // say) snaps to the nearest by height rather than falling through to the
 // smallest, which is what the shipped chain's default case did.
 //
+// `max_height` is the tallest mode the caller will accept, or 0 for no limit.
+// Without it the selector steps onto a mode the caller then has to refuse: the
+// Options screen clamps anything past 480 lines back to 640x480 while
+// acceleration is off, but it clamps on the NEXT pass, so the refused mode has
+// already been stored and, with NOCTURNE_AUTHENTIC_MENU_RESOLUTION off,
+// already resized the window. Wrapping inside the reachable range instead means
+// right from the largest software mode reaches the smallest, and nothing is
+// ever selected only to be taken back.
+//
 // Returns 1 and writes the new mode, or 0 if the table is empty.
 int nocturne_resolution_step(int current_width, int current_height, int step,
-                             int *out_width, int *out_height);
+                             int max_height, int *out_width, int *out_height);
 
 // "Resolution : 1024x768" for the Options line, built into static storage.
 // Never null, so the caller can hand it straight to the localiser.

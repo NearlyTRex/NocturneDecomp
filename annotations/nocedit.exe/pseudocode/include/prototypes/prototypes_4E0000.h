@@ -46,7 +46,7 @@ void __cdecl core_game_cpp_CGame_renderIrisFade_FUN_004e0aa0(CGame *this_ptr);
 uint __cdecl core_game_cpp_CGame_fadeIn_FUN_004e0b90(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_resetWeaponSwitchTimers_FUN_004e0bb0(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_resetInventoryDisplayTimer_FUN_004e0bd0(CGame *this_ptr);
-void __cdecl core_game_cpp_CGame_setStatusDisplay_FUN_004e0bf0(CGame *this_ptr,char *name,int value,float duration);
+void __cdecl core_game_cpp_CGame_setStatusDisplay_FUN_004e0bf0(CGame *this_ptr,char *name,float value,float duration);
 void __cdecl core_game_cpp_CGame_saveGame_FUN_004e0cd0(CGame *this_ptr,char *save_filename);
 void __cdecl core_game_cpp_CGame_loadGame_FUN_004e12b0(CGame *this_ptr,char *save_filename,int load_mode);
 void __cdecl core_game_cpp_disableUnavailableChapters_FUN_004e1c30(CPickList *pick_list,int chapter_index);

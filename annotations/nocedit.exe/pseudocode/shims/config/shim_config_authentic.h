@@ -59,6 +59,9 @@
 // | `NOCTURNE_AUTHENTIC_CAMERA_SHAKE_TRACE` | 0 | defect | the shake trace prints its value and a newline |
 // | `NOCTURNE_AUTHENTIC_HUD_ICON_SPACE` | 0 | defect | inventory icons stay on screen above 640x480 |
 // | `NOCTURNE_AUTHENTIC_FOG_PLANE_SCALE` | 0 | defect | the fog plane is resampled onto the camera grid, not cropped to it |
+// | `NOCTURNE_AUTHENTIC_BACKDROP_FILTER` | 0 | defect | a rescaled backdrop keeps its own brightness |
+// | `NOCTURNE_AUTHENTIC_CONTROL_SETUP` | 0 | defect | picking a control type leaves you able to play with it |
+// | `NOCTURNE_AUTHENTIC_FLASHLIGHT_DRAW` | 0 | defect | the flashlight key does nothing where it cannot light |
 // | `NOCTURNE_AUTHENTIC_MODAL_FIT` | 0 | defect | a modal too wide for the screen is clamped, not pushed off both edges |
 // | `NOCTURNE_AUTHENTIC_BURN_BONE_COUNT` | 0 | defect | a burning character can reach fully-burned and die |
 // | `NOCTURNE_AUTHENTIC_BURN_LOOP_SOUND` | 0 | defect | the on-fire loop stops when the fire does |
@@ -602,6 +605,128 @@
 //   Override with -DNOCTURNE_AUTHENTIC_FOG_PLANE_SCALE=1.
 #ifndef NOCTURNE_AUTHENTIC_FOG_PLANE_SCALE
 #define NOCTURNE_AUTHENTIC_FOG_PLANE_SCALE 0
+#endif
+
+// NOCTURNE_AUTHENTIC_BACKDROP_FILTER
+//   Whether a backdrop rescaled to the camera framebuffer keeps its brightness.
+//
+//   Backdrops are 640x480. CDemonCamera::loadImage has a path for each case:
+//   a 2x2 box average at 240 lines, a 1:1 copy at 480, and a general 2x2 filter
+//   for anything else below 481. CDemonCamera::init clamps the camera to 480,
+//   so the general path runs at exactly two of the modes the selector offers --
+//   400x300 and 512x384 -- and 512x384 is in the shipped chain.
+//
+//   That path weights each of the four taps by an x weight PLUS a y weight
+//   rather than by their product, so the eight terms come to
+//   2 * ((255 - fx) + fx_end + (255 - fy) + fy_end), which changes from pixel to
+//   pixel. It then divides by 307200 * 512 / (fb_w * fb_h), which is constant.
+//   The quotient is therefore a gain the filter invents, and the backdrop is
+//   drawn at that gain.
+//
+//   Replayed over a flat source:
+//
+//       400x300   divisor 1310   gain 0.46 .. 1.24, 36% of pixels clip
+//       512x384   divisor  800   gain 1.585 everywhere
+//
+//   At 400x300 the source step is 640*256/400 = 409.6, so the fraction repeats
+//   every 5 columns and every 5 rows: a period-5 grid of light and dark cells
+//   over the whole backdrop. Only the backdrop, since actors are geometry drawn
+//   after it. At 512x384 the step is a whole 320, the gain never varies, and the
+//   image is uniformly 1.585x -- washed out rather than patterned.
+//
+//   1: shipped behaviour -- cross-hatching at 400x300, a blown-out backdrop at
+//      512x384.
+//   0: the same eight products, divided by the weight actually applied. A flat
+//      source comes out flat by construction, at any mode. The filter keeps its
+//      original shape, so this corrects the brightness and not the taps; it is
+//      still a wide blur that never reduces to a single source texel, which for
+//      a 1.6x downscale is reasonable. The 240-line and 480-line paths do not
+//      go near this and are untouched.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_BACKDROP_FILTER=1.
+#ifndef NOCTURNE_AUTHENTIC_BACKDROP_FILTER
+#define NOCTURNE_AUTHENTIC_BACKDROP_FILTER 0
+#endif
+
+// NOCTURNE_AUTHENTIC_CONTROL_SETUP
+//   What picking a control type on the Controls screen leaves you with.
+//
+//   Two shipped behaviours combine into a dead end.
+//
+//   menu.cpp configureCustomKeyBindings switches on a binding's CURRENT code
+//   before it will prompt for a new one. Mouse codes (0x255, 0x256) and, on the
+//   joystick build, buttons 1-4 (0x251..0x254) are answered with
+//   "<name> is assigned to the mouse.  Can't assign a key." and the row is
+//   dropped. The row keeps the code that got it refused, so the refusal never
+//   lifts -- nothing in the screen can move that binding back onto a key.
+//
+//   And changing the control type only changes the type. CGame::game_control is
+//   stepped and nothing reseeds the bindings, so the codes from the previous
+//   type stay. CGame::restoreDefaultControls, the one thing that writes a mode's
+//   defaults, is reachable only from Restore defaults.
+//
+//   Together: pick a type whose defaults were never applied and the rows still
+//   hold the old type's codes; where those are mouse or joystick codes the
+//   screen refuses to change them, and with every row refused it accepts
+//   nothing but Escape.
+//
+//   1: shipped behaviour -- device-assigned rows refuse, permanently, and a
+//      change of control type reseeds nothing.
+//   0: the refusing labels are dropped, so any row reaches the capture path;
+//      and a change of control type applies that type's defaults, so the
+//      bindings always match the device selected.
+//
+//   The cost of reseeding is that stepping the control type replaces custom
+//   bindings -- the setting is a left/right cycle, so passing through a type
+//   costs the same as landing on it. That is the trade for never landing on a
+//   type you cannot play with.
+//
+//   The capture only ever reads codes the input layer reports, and the mouse
+//   AXIS codes are not among them -- they are only ever written as defaults --
+//   so moving a row off 0x255/0x256 is one-way within the screen. Restoring
+//   defaults, or reselecting the type, puts them back.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_CONTROL_SETUP=1.
+#ifndef NOCTURNE_AUTHENTIC_CONTROL_SETUP
+#define NOCTURNE_AUTHENTIC_CONTROL_SETUP 0
+#endif
+
+// NOCTURNE_AUTHENTIC_FLASHLIGHT_DRAW
+//   What the flashlight key does when the weapon it is mounted on is away.
+//
+//   The light belongs to the weapon -- CWeapon::process only lights while the
+//   weapon is WEAPON_STATE_IN_HAND -- so CStranger::processFrame draws the
+//   weapon as a side effect of switching the light on, and CStranger::drawWeapon
+//   switches the light off whenever the weapon is put away.
+//
+//   Missions that do not want the player armed hold that with a script idle
+//   loop, e.g. HQ-ACT1.SCR:
+//
+//       idle
+//       if (isweapondrawn($))
+//           holsterweapon($, true)
+//
+//   Pressing the light key there sets flashlight_active and guns_drawn and
+//   plays flashlit.wav; the next script step sees isWeaponDrawn and calls
+//   holsterWeapon, which reaches CStranger::drawWeapon, which clears the light
+//   and plays flashlit.wav again. Two clicks and a frame of light, every press,
+//   in a mission that was never going to allow it. The script is asking about
+//   weapons; what it caught was a torch.
+//
+//   1: shipped behaviour -- the key draws the weapon to light it, and a scripted
+//      holster clicks on its way past.
+//   0: the key does nothing unless the weapon is already out, so a mission that
+//      refuses the weapon refuses the light silently; and a holster the player
+//      did not ask for clears the light without a click. The player's own
+//      holster still clicks -- that path is in CStranger::processFrame and is
+//      not touched.
+//
+//   The trade is that the key no longer draws the weapon for you: with the
+//   weapon away it takes a draw first, where before one press did both.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_FLASHLIGHT_DRAW=1.
+#ifndef NOCTURNE_AUTHENTIC_FLASHLIGHT_DRAW
+#define NOCTURNE_AUTHENTIC_FLASHLIGHT_DRAW 0
 #endif
 
 // NOCTURNE_AUTHENTIC_MODAL_FIT

@@ -2,11 +2,11 @@
 // Address: 004a3ab0
 // Address Range: [[004a3ab0, 004a3b8c]]
 // Convention: __cdecl
-// Signature: void __cdecl core_game_cpp_CGame_setStatusDisplay_FUN_004a3ab0(CGame *this_ptr,char *name,int value,float duration)
+// Signature: void __cdecl core_game_cpp_CGame_setStatusDisplay_FUN_004a3ab0(CGame *this_ptr,char *name,float value,float duration)
 
 #include "nocturne.h"
 
-void __cdecl core_game_cpp_CGame_setStatusDisplay_FUN_004a3ab0(CGame *this_ptr,char *name,int value,float duration)
+void __cdecl core_game_cpp_CGame_setStatusDisplay_FUN_004a3ab0(CGame *this_ptr,char *name,float value,float duration)
 
 {
   char cVar1;
@@ -21,7 +21,7 @@ void __cdecl core_game_cpp_CGame_setStatusDisplay_FUN_004a3ab0(CGame *this_ptr,c
       do {
         iVar2 = _stricmp(*pacVar4,name);
         if (iVar2 == 0) {
-          this_ptr->status_bar_values[iVar3] = (float)value;
+          this_ptr->status_bar_values[iVar3] = value;
           this_ptr->status_bar_timers[iVar3] = duration;
           return;
         }
@@ -40,7 +40,7 @@ void __cdecl core_game_cpp_CGame_setStatusDisplay_FUN_004a3ab0(CGame *this_ptr,c
         (*pacVar4)[1] = cVar1;
         pacVar4 = (char (*) [256])(*pacVar4 + 2);
       } while (cVar1 != '\0');
-      this_ptr->status_bar_values[this_ptr->status_display_count] = (float)value;
+      this_ptr->status_bar_values[this_ptr->status_display_count] = value;
       this_ptr->status_bar_timers[this_ptr->status_display_count] = duration;
       this_ptr->status_display_count = this_ptr->status_display_count + 1;
       return;

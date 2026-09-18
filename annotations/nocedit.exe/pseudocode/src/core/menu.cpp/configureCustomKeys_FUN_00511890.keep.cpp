@@ -135,6 +135,9 @@ LAB_00511b4c:
 #if !NOCTURNE_AUTHENTIC_GAMEPAD
       nocturne_gamepad_reseed_for_mode(g_CGamePtr);
 #endif
+#if !NOCTURNE_AUTHENTIC_CONTROL_SETUP
+      core_game_cpp_CGame_restoreDefaultControls_FUN_004dbbc0(g_CGamePtr);
+#endif
       break;
     case 1:
       core_menu_cpp_configureCustomKeyBindings_FUN_005138e0();

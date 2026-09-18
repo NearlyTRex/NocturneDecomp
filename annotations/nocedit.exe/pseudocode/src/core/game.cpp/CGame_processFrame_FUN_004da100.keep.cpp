@@ -94,6 +94,11 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
       {
         core_game_cpp_CGame_process_FUN_004e3190(this_ptr);
       }
+#if !NOCTURNE_AUTHENTIC_AUTOMAP
+      else {
+        nocturne_automap_clear_frame_effects();
+      }
+#endif
       core_sound_cpp_CSound_process_FUN_005b2fd0(g_CSoundPtr);
     }
     else {

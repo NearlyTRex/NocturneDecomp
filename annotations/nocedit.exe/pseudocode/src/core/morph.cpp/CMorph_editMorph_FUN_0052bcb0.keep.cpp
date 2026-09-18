@@ -3,11 +3,11 @@
 // MANUAL RECONSTRUCTION
 // Address Range: [[0052bcb0, 0052ca8d]]
 // Convention: __cdecl
-// Signature: void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *morph)
+// Signature: void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *morph)
+void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *this_ptr)
 
 {
   float fVar1;
@@ -54,7 +54,7 @@ void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *morph)
   CDeformableModelInstance *local_28;
   int local_24;
   int local_8;
-  CSpotView *this_ptr;
+  CSpotView *this_ptr_01;
   CPickList *picklist;
   int selected_idx;
   int paired_vertex_idx;
@@ -79,9 +79,9 @@ void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *morph)
       local_8c[1] = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
                               (local_4db8 + 1);
       __arrinit(local_4a8,0x14,&g_SMorphControlPointTypeInfo);
-      this_ptr = g_CSpotViewPtr;
+      this_ptr_01 = g_CSpotViewPtr;
       g_CDemonSetPtr->lighting_quality_mode = 1;
-      shape_spotview_cpp_CSpotView_reset_FUN_005b9620(this_ptr,0x1f);
+      shape_spotview_cpp_CSpotView_reset_FUN_005b9620(this_ptr_01,0x1f);
       core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
       g_MouseButtonFlags.dword = 0;
       local_6c = -1;
@@ -290,11 +290,11 @@ void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *morph)
           core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80(local_4db8 + 1);
           core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(local_4db8);
           core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(local_4db8 + 1);
-          core_morph_cpp_CMorph_setupModelFromDeformable_FUN_0052b430(morph,0,local_4db8);
-          core_morph_cpp_CMorph_setupModelFromDeformable_FUN_0052b430(morph,1,local_4db8 + 1);
-          core_morph_cpp_CMorph_getReady_FUN_0052b680(morph);
-          core_morph_cpp_CMorph_previewMorph_FUN_0052ca90(morph,local_4db8);
-          core_morph_cpp_CMorph_free_FUN_0052b350(morph);
+          core_morph_cpp_CMorph_setupModelFromDeformable_FUN_0052b430(this_ptr,0,local_4db8);
+          core_morph_cpp_CMorph_setupModelFromDeformable_FUN_0052b430(this_ptr,1,local_4db8 + 1);
+          core_morph_cpp_CMorph_getReady_FUN_0052b680(this_ptr);
+          core_morph_cpp_CMorph_previewMorph_FUN_0052ca90(this_ptr,local_4db8);
+          core_morph_cpp_CMorph_free_FUN_0052b350(this_ptr);
         }
         iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_M);
         if (iVar4 != 0) {

@@ -82,7 +82,7 @@ LAB_00428579:
   if ((this_ptr->health_bar_mode == 1) && ((CHero *)this_ptr != g_HeroActors[g_LocalHeroIndex])) {
     core_game_cpp_CGame_setStatusDisplay_FUN_004a3ab0
               (g_CGame_PTR_005b9354,this_ptr->descriptive_name,
-               (int)(this_ptr->hit_points / this_ptr->max_hit_points),5.0);
+               this_ptr->hit_points / this_ptr->max_hit_points,5.0);
   }
   if (0.0 < this_ptr->hit_points) {
     return;

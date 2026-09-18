@@ -1555,7 +1555,7 @@ section .text
     PUSH EBX                            ; 005e6b6b
     PUSH EAX                            ; 005e6b6c | g_CGameInstance
     CALL core_game.cpp_CGame_setStatusDisplay_FUN_004e0bf0 ; 005e6b6d
-        ;   XREF to: 004e0bf0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_setStatusDisplay_FUN_004e0bf0(CGame * this_ptr, char * name, int value, float duration)
+        ;   XREF to: 004e0bf0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_setStatusDisplay_FUN_004e0bf0(CGame * this_ptr, char * name, float value, float duration)
     ADD ESP,0x10                        ; 005e6b72
     MOV ESP,EBP                         ; 005e6b75
     POP EBP                             ; 005e6b77

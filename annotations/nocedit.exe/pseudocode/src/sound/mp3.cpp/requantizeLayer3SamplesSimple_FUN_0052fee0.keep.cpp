@@ -3,11 +3,11 @@
 // MANUAL RECONSTRUCTION
 // Address Range: [[0052fee0, 005301ac]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_mp3_cpp_requantizeLayer3SamplesSimple_FUN_0052fee0(int *scalefactor_indices,uint *quantized_samples,float *dequantized_output,SMpegFrame *frame_info)
+// Signature: void __cdecl sound_mp3_cpp_requantizeLayer3SamplesSimple_FUN_0052fee0(int *scalefactor_indices,uint *quantized_samples,float *dequantized_output,SMpegFrame *frame)
 
 #include "nocturne.h"
 
-void __cdecl sound_mp3_cpp_requantizeLayer3SamplesSimple_FUN_0052fee0(int *scalefactor_indices,uint *quantized_samples,float *dequantized_output,SMpegFrame *frame_info)
+void __cdecl sound_mp3_cpp_requantizeLayer3SamplesSimple_FUN_0052fee0(int *scalefactor_indices,uint *quantized_samples,float *dequantized_output,SMpegFrame *frame)
 
 {
   byte bVar2;
@@ -25,9 +25,9 @@ void __cdecl sound_mp3_cpp_requantizeLayer3SamplesSimple_FUN_0052fee0(int *scale
   float *local_18;
   int iVar1;
 
-  iVar1 = frame_info->channel_count;
-  iVar2 = frame_info->sblimit;
-  local_58 = frame_info->allocation_entries;
+  iVar1 = frame->channel_count;
+  iVar2 = frame->sblimit;
+  local_58 = frame->allocation_entries;
   if (0 < iVar2) {
     local_54 = 0;
     do {

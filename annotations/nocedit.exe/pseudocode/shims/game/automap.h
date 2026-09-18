@@ -140,6 +140,18 @@ int nocturne_automap_handle_cancel(void);
 // call site is a single test.
 int nocturne_automap_freezes_world(void);
 
+// Clear the per-frame effect scratch that CGame::process would have cleared.
+// Call it on the frames the freeze above skips that call.
+//
+// CDemonSet::renderScene runs whether the world advances or not, and the laser
+// tracers it emits are appended to a fixed pool by CFireEffect::createLaser*.
+// Nothing consumes that pool -- its only reset is the first line of
+// CFireEffect::process, which the freeze skips -- so a laser in view stacks one
+// more copy of itself on the same path every frame until it hits the 64-entry
+// cap. They are drawn additively, so the frame the map closes on renders the
+// whole stack at once and the beam flashes.
+void nocturne_automap_clear_frame_effects(void);
+
 // Draw. Only meaningful when nocturne_automap_active(); costs nothing otherwise.
 void nocturne_automap_render(void);
 

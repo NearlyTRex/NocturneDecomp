@@ -201,7 +201,7 @@ void __cdecl CGame::resetInventoryDisplayTimer(CGame *this_ptr);
 
 // Original: core_game.cpp_CGame_setStatusDisplay_FUN_004a3ab0
 // Address: 004a3ab0
-void __cdecl CGame::setStatusDisplay(CGame *this_ptr,char *name,int value,float duration);
+void __cdecl CGame::setStatusDisplay(CGame *this_ptr,char *name,float value,float duration);
 
 // Original: core_game.cpp_CGame_FUN_004a3b90
 // Address: 004a3b90

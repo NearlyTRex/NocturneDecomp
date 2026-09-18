@@ -116,7 +116,7 @@ section .text
     MOV EBX,dword ptr [0x0067b654]      ; 00429943 | g_CGameInstance | g_CGamePtr
     PUSH EBX                            ; 00429949 | g_CGameInstance
     CALL core_game.cpp_CGame_setStatusDisplay_FUN_004e0bf0 ; 0042994a
-        ;   XREF to: 004e0bf0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_setStatusDisplay_FUN_004e0bf0(CGame * this_ptr, char * name, int value, float duration)
+        ;   XREF to: 004e0bf0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_setStatusDisplay_FUN_004e0bf0(CGame * this_ptr, char * name, float value, float duration)
     ADD ESP,0x10                        ; 0042994f
     CMP dword ptr [ESI + 0x240c],0x0    ; 00429952
         ;   Label: LAB_00429952

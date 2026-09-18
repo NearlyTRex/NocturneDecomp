@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_game_cpp_CGame_setStatusDisplay_FUN_004a3ab0(CGame *this_ptr,char *name,int value,float duration)
+; void __cdecl core_game_cpp_CGame_setStatusDisplay_FUN_004a3ab0(CGame *this_ptr,char *name,float value,float duration)
 ;
 ; Parameters:
 ; CGame *          Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   name
-; int              Stack[0xc]:4   value
+; float            Stack[0xc]:4   value
 ; float            Stack[0x10]:4   duration
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14

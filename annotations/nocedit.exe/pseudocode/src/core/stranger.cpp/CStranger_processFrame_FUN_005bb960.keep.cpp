@@ -990,7 +990,11 @@ LAB_005bc1a6:
     }
     if ((((this_ptr->base).player_input.action_state.light != 0) &&
         (pCVar10 = (this_ptr->base).inventory.selected_weapon, pCVar10 != (CWeapon *)0x0)) &&
-       (pCVar10->can_attach_light != 0)) {
+       (pCVar10->can_attach_light != 0)
+#if !NOCTURNE_AUTHENTIC_FLASHLIGHT_DRAW
+       && (this_ptr->guns_drawn != 0)
+#endif
+       ) {
       uVar23 = (uint)(g_CGamePtr->flashlight_active == 0);
       g_CGamePtr->flashlight_active = uVar23;
       if (uVar23 != 0) {

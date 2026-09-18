@@ -47,7 +47,7 @@ void __cdecl core_game_cpp_CGame_renderIrisFade_FUN_004a3960(CGame *this_ptr);
 uint __cdecl core_game_cpp_CGame_fadeIn_FUN_004a3a50(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_resetWeaponSwitchTimers_FUN_004a3a70(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_resetInventoryDisplayTimer_FUN_004a3a90(CGame *this_ptr);
-void __cdecl core_game_cpp_CGame_setStatusDisplay_FUN_004a3ab0(CGame *this_ptr,char *name,int value,float duration);
+void __cdecl core_game_cpp_CGame_setStatusDisplay_FUN_004a3ab0(CGame *this_ptr,char *name,float value,float duration);
 void __cdecl core_game_cpp_CGame_FUN_004a3b90(CGame *this_ptr,char *save_filename);
 void __cdecl core_game_cpp_CGame_FUN_004a4170(CGame *this_ptr,char *save_filename,int load_mode);
 void __cdecl core_game_cpp_CGame_FUN_004a4b50(CGame *this_ptr,int select_mode);
