@@ -41,8 +41,9 @@ The migration is finished. What remains are the things it found and did not fix.
    probe that renders out of band.
 2. **Per-vertex fog's default** (open item 3) — implemented, off, still wanting a measurement
    that can see it.
-3. **The game-side defects** shaders were once expected to fix and do not: the chapel window
-   double-draw (item 1) and the blade's scrambled UVs (item 5).
+3. **The game-side defect** shaders were once expected to fix and do not: the chapel window
+   double-draw (item 1). The blade (item 5) was expected here too and has since been fixed in
+   `research/16` — as a depth fight, not a renderer or UV problem.
 
 Do not switch renderers by writing `g_UseDirect3D` / `g_UseExternalRenderer` from gdb — that
 skips renderer init and crashes within seconds. Use the options screen.
@@ -126,17 +127,17 @@ struck phase 1 below.
 |---|---|
 | chapel window ~2x over-bright under acceleration (`research/12`) | **NO** — it is a double-draw of `CGlass`, a game-side fix |
 | Svetlana blade over-brightness | **NO** — same mistaken premise |
-| Svetlana blade scrambled UVs — 14/78 triangles mixing bone-normal and eye-direction sources (`research/16`) | **no** (unchanged) |
+| Svetlana blade black speckle (`research/16`) | **no** — and not the UVs either: a depth fight between the overlay and the surface under it, fixed there |
 | hardware geometry missing the per-pixel lightmap | **not a defect** — hardware carries its own per-vertex lighting |
 | D3D7 per-vertex fog, dropped entirely because GL's secondary colour is 3 components | **yes** — fixed function structurally cannot carry it |
 
 The honest summary: the shader path's value is the migration itself plus capabilities fixed
 function cannot express, not the rendering bugs that motivated starting it.
 
-The blade UV defect is computed on the CPU in `renderEnvMapTriangles` before anything reaches
-the renderer: 8–12 % of vertex references have no normal because the lighting pass's face
-list does not cover the render list. No shader can invent a missing vertex normal. That one
-needs a game-side fix regardless.
+The blade was later traced to a **depth fight** rather than to its UVs, and fixed in
+`research/16` — the overlay and the surface under it are drawn at the same depth, and the
+overlay loses a dithered subset of its own pixels. The mixed-UV-source finding recorded here is
+real and is not the defect. Nothing about it was a renderer fault either way.
 
 ## The core idea
 

@@ -20,7 +20,7 @@ Initial analysis of the binary's class hierarchy and file organization.
 
 | File | Description |
 |------|-------------|
-| `actor_hierarchy.txt` | Game object inheritance tree |
+| `actor_hierarchy.txt` / `.json` | Game object inheritance tree, readable and machine-readable |
 | `classes.txt` | Class name enumeration |
 | `files.txt` | Source file mapping |
 | `structures.txt` | Key data structure definitions |
@@ -76,13 +76,20 @@ Complete analysis of MP3 decoding and DirectSound integration.
 | `mp3_audio_system_analysis.md` | Full technical analysis |
 | `QUICK_REFERENCE.md` | Developer quick reference |
 | `sound_structures_analysis.md` | Audio structure definitions |
+| `decode_mp3_offline.gdb` | Decodes a file through the game's own decoder with no audio device, for bit-comparison against a reference decoder |
 
 **Key Findings:**
 - MP3 decoder outputs 16-bit PCM (standard WAV format)
 - Two playback modes: full decode and streaming
 - Replaceable with modern libraries (dr_mp3, minimp3)
 
-**Status:** Complete
+**The decoder was distorting every MP3, and it was our transcription.** Not MPEG-1 specific and
+not a DSP difference — the reconstruction of `mpegLayer3StereoProcess`'s mono path wrote through
+an advanced cursor where Watcom stores through it displaced back by one element
+(`ADD EDX,0x4` / `FSTP [EDX + -0x4]` at `0x0053347a`). Every coefficient landed one slot late
+and the first was never written. Now bit-accurate against a reference decode.
+
+**Status:** Complete — analysis, plus one reconstruction defect found and fixed
 
 ---
 
@@ -175,7 +182,8 @@ camera, geometry, collision, profile, single-step), all 44 encrypted typed-cheat
 | `runtime_debug_flags.md` | `CGame` debug flags + hotkey table + `g_ModalDialogActive` (input-suppression gate during pick-list pop-up dialogs) |
 | `cheats.md` | All 45 cheats by category (cleartext recovered via `decrypt_cheats.py`) |
 | `developer_tools_menu.md` | The `Ctrl+D` main-menu shortcut into the editor menu (mission play, shape/set/skeletal/mission editors, POD file manager, etc.) — gated by a one-shot license agreement |
-| `retail_vs_editor_mysteries.md` | Open mysteries about retail-vs-editor build differences (D3D disabled in options, missing cutscene voice, flat `.msn` picker vs curated chapter list, 640×480 resolution cap + non-persisting graphics options) — investigation notes with definitive vs partial labels |
+| `retail_vs_editor_mysteries.md` | Retail-vs-editor build differences, with definitive vs partial labels: D3D disabled in options, cutscene voices (**SOLVED** — they play; a one-line streaming defect silenced MP3s, gated as `NOCTURNE_AUTHENTIC_STREAM_LENGTH`), flat `.msn` picker vs curated chapter list, 640×480 cap + non-persisting graphics options, and the 23 `APIDLL*` entry points no shipped DLL has |
+| `script_event_flags.md` | The second debug surface: developer warps and event flags in the mission data rather than the binary, and the one easter egg. Includes the `[Graphics] nudityFlag` / `quimbyFlag` content switch |
 | `cut_content.md` | Features whose code exists in the binary but were never UI-exposed in *any* shipped Nocturne build (cut, not editor-gated). |
 | `ini_settings.md` | Full `nocturne.ini` (5 sections), plus `RENDER.INI`, `pod.ini`, and `skeledit.ini` formats |
 
@@ -186,13 +194,13 @@ camera, geometry, collision, profile, single-step), all 44 encrypted typed-cheat
 
 ### [09-flashlight_lighting_investigation/](09-flashlight_lighting_investigation/)
 
-Open investigation into the flashlight / set spot-light failing to illuminate world geometry
-(and the volumetric cone rendering as discrete circles instead of the original's smooth colorful
-glow). Ground-truthed against the original `nocedit.exe` run under Wine.
+The flashlight / set spot-light failing to illuminate world geometry, and the volumetric cone
+rendering as discrete circles instead of the original's smooth colorful glow. Ground-truthed
+against the original `nocedit.exe` run under Wine. The first is fixed; the second is not.
 
 | File | Description |
 |------|-------------|
-| `01_INVESTIGATION_STATE.md` | Resumable state: symptom + Wine reference shots, full lighting pipeline map (FUN addresses/files), confirmed fixes, open root cause, next steps, and gdb/capstone probe recipes |
+| `01_INVESTIGATION_STATE.md` | The lighting pipeline map (FUN addresses/files), what was ruled out, the Wine reference shots, and gdb/capstone probe recipes |
 
 **Key outcomes so far:**
 - Rasterizer `-O2` per-file build fix (the Debug `-O0` was the framerate stutter)
@@ -200,7 +208,18 @@ glow). Ground-truthed against the original `nocedit.exe` run under Wine.
 - Ghidra fix: `transformMirrorVertex` signature → `CVector3i*` (FISTP-proven)
 - `missing_cave_copy` detector widened 16→12 bytes (now catches `CVector3i`/`CVector3f` caves)
 
-**Status:** OPEN - root cause (garbage/stale vertex normals; whether the flashlight is gathered) not yet nailed
+**Root cause of the lighting half** — `CDemonCamera::precomputeNormals` carried the same §20
+defect in a form the detector then missed: a `CVector3i` copy truncated to
+`local_60.z = local_84.z` where the asm cave block at `0x0060a0a0` copies all three fields. With
+`.x`/`.y` left stale every entry in `g_PrecomputedWorldPositions` was garbage, so
+`precomputeLight` projected all geometry into a corner of the shadow map and no dynamic light
+produced extents. The source does the full copy now, and the detector grew a partial-cave-copy
+pass for the truncated shape.
+
+The document is the trail that narrowed it, not a description of the current build.
+
+**Status:** the flashlight lights geometry; the volumetric cone still renders as a stepped
+pyramid instead of a smooth halo
 
 ---
 
@@ -257,6 +276,7 @@ symptom report.
 | `altfocus_dirtyrect_probe.gdb` | spot-light shadow-map dirty-rect accounting |
 | `altfocus_pixel_capture.gdb` | periodic frontbuffer capture |
 | `altfocus_transient_burst.gdb` | 14 consecutive frames per apply — found Bug 2a |
+| (+13 more) | Per-stage lightmap, occlusion, extent and focus-burst probes; the blend oracle (`blend_oracle_dump.gdb`, `composite_inputs_dump.gdb`, `verify_blend.py`); hardware-draw suppression |
 
 **Key outcomes:**
 - Bug 1 **fixed** — `setCameraView` made the current camera its own previous-best, so the
@@ -292,6 +312,11 @@ blitted pre-rendered backdrop never goes through that path, which is exactly why
 geometry looked wrong. Fixed by enabling GL fog only when
 `FOGENABLE != 0 && FOGTABLEMODE != NONE`.
 
+**That file is gone.** The GL-backed DirectDraw retired with the DX7 path on 2026-09-06;
+`trigl` derives `fog_enabled` from a render-state flag in `trigl_state.cpp` and never sees
+D3D's two fog registers, so the fall-through cannot recur in this shape. The measurements below
+stand — they are what established that the hardware path is designed to match software.
+
 Verified on the interior office scene (character crop means): software `16.08`, accel with the
 bug `13.11` (0.815), accel fixed `16.47` (1.024). The residual `+2.4 %` is *expected* — a
 single-pixel trace independently predicts hardware is ~2 % brighter than software for identical
@@ -304,8 +329,10 @@ inputs (`texel*(cw>>7)/255` vs `texel*cw/32768`).
   `02-.../RENDER_STATE_FLAGS_VERIFIED.md`
 - Retail vs editor ruled out: the whole APIDLL bridge and the `renderPolygon*Op*` table are
   **byte-identical**; the "const-change" diffs there are only `g_CurrentLineNumber`
-- `render_probe` in tridx7's shims (gdb-dumpable) reports what reaches the hardware: flag
-  combos, per-texture vertex light, and per-batch GL state
+- `render_probe` in tridx7's shims reported what reached the hardware — flag combos, per-texture
+  vertex light, per-batch GL state. It went with the DX7 path; `trigl` carries its own
+  instruments (`nocturne_trigl_paint_texture`, `shims/debug/dump.h`), and the `render_probe_*.txt`
+  dumps here are the output of the retired one
 - **Still open (minor):** the per-vertex fog D3D *did* intend is dropped — `buildTLVertex` packs
   it into the specular alpha and the GL path passes only 3 components to
   `glSecondaryColorPointer`. Now a fidelity gap rather than a bug.
@@ -337,7 +364,9 @@ clipped away by the mirror's own clip planes.
 | `04_FAILED_AND_PARTIAL_FIXES.md` | Two fixes that looked correct and were not, and what each one falsified |
 | `05_MEASUREMENT_AND_SOLUTION.md` | The instrumented diagnosis, the fix, and its before/after verification |
 | `06_CLEARED_LEADS.md` | Everything audited against asm and found faithful, with the evidence, plus the open questions |
+| `07_ACCEL_DISPLACEMENT.md` | A separate, **editor-only** defect: a mirror pass sampled at the wrong field of view. FIXED |
 | `mirror_cull_probe.gdb` | The gdb probe used for the measurements — source it with `scripts/Bash/dbg.sh probe` |
+| (+12 more `.gdb`) | Actor admission and positions, cull box, clip ratio, baked depth, projection factor, camera switch |
 
 **Root cause** — two causes stacked. `CDemonCamera::testVisibility` (`0x4544f0`) installs
 `g_BackgroundSavedCameraState` before rasterising an actor's bounding box, which during a
@@ -360,11 +389,23 @@ fail to 743 pass / 4 fail across a full 360° turn.
 - The 5 mirror clip planes proven correct: `sizeof(CMirrorReflection)=0x94` plus path
   offsets `{0x04,0x14,0x24,0x34,0x44}` = `CMirror::clip_planes[0..4]`
 
-**Caveat:** the fix makes reflections work but is **not** demonstrated to match retail —
+**A second, unrelated mirror defect — also fixed.** `07_ACCEL_DISPLACEMENT.md`: one cause with
+two faces, gated by `NOCTURNE_AUTHENTIC_MIRROR_PROJECTION`. `CDemonSet::setCameraView` renders
+the room's static geometry twice under acceleration, and the second call inherits a projection
+matrix the first call's mirror loop destroyed. Accelerated, geometry at the left and right of
+the screen stops lining up with the backdrop while collision stays correct; in software the
+reflection is drawn scaled about the screen centre, leaving part of the depth window
+`renderMirrorQuadDepth` punched at its near-infinite value, so every later mirror pass draws
+there unoccluded — which is how a free-standing background actor comes out twice.
+**This one is editor-only**: `nocedit.exe`'s `beginBackgroundScene` pushes a viewport, retail's
+swaps buffer rows and returns. Screenshots from `nocturne.exe` are not a reference for how
+`nocedit.exe` should look here.
+
+**Caveat:** the cull fix makes reflections work but is **not** demonstrated to match retail —
 retail has no camera swap at all, and how it tolerates the pushed actor transform is
 still unexplained (open question 1 in `06_CLEARED_LEADS.md`).
 
-**Status:** FIXED (deviation, not a faithful reconstruction)
+**Status:** FIXED, both defects (deviations, not faithful reconstructions)
 
 ---
 
@@ -378,6 +419,7 @@ centred on the main character as he walks into the shot.
 | `README.md` | State machine, cause, measurements, fix |
 | `iris_fade_probe.gdb` | every `beginFadeIn`/`beginFadeOut` with a backtrace, plus type transitions |
 | `iris_jump_probe.gdb` | every centre change during a fade, with radius and percentage |
+| `death_pause_probe.gdb` | which of `runGameSession`'s three death exits is taken, and in what iris state |
 
 **Key outcomes:**
 - Not a second trigger — exactly one `beginFadeIn`, state machine `1 → 2 → 0` once, and
@@ -400,71 +442,97 @@ Present in retail and in **both** software and accelerated rendering.
 
 | File | Description |
 |------|-------------|
-| `README.md` | Mechanism, the measured dead leads, method traps |
-| `blade_mixed_triangle_probe.gdb` | the mixed-UV-source triangle count — the headline measurement |
+| `README.md` | The depth fight, the fix that made things worse, the measured dead leads, method traps |
+| `blade_mixed_triangle_probe.gdb` | the mixed-UV-source triangle count |
 | `blade_zero_slots_probe.gdb` | which blade vertices leave the lighting pass unwritten |
 | `blade_normal_writer_probe.gdb` | watchpoint reporting who writes a normal slot |
 | `blade_scratch_clobber_probe.gdb` | traces the nonzero normal population across the frame |
-| (+29 more) | DLL-side emit probes, software-mode probes, earlier bisects |
+| `blade_depth_test.gdb` | the depth comparison removed for the marked draws — the headline measurement |
+| (+32 more) | DLL-side emit probes, software-mode probes, earlier bisects |
 
-**Key outcomes:**
-- `renderEnvMapTriangles` picks each vertex's UV source independently — bone normal if any
-  component reaches 1.0, else eye direction. **14 of 78 triangles mix the two**, so they
-  interpolate across an arbitrary span of the env map. Bit-stable frame to frame, and
-  faithful to the asm (plain 0-based `base + index*12`, no §15 offset).
-- Branch-B vertices read **exactly 0.0** because they are **never lit**: the covering
-  `lightVerticies` call (538 verts, 1208 triangles) references none of them, while the env
-  pass renders them. **8–12 % of the env pass's vertex references have no normal**, because
-  the list it renders is not the list that was lit — the body is lit at `lod_index=2` while
-  the env pass draws `part_indices[0..1]`.
-- The env map is legitimately near-black: `g_EnvMapTexture` is a static `"BACKGND.RAW"`
-  never written anywhere, measured 38.1 % pure black and 92.2 % luma<32. Dark blades are
-  the correct result of reflecting it.
+**Root cause** — **a depth fight, on both paths.** The blade is drawn twice at the same depth:
+its own `SVETLANA_2.RAW` texture first, the `BACKGND.RAW` env map blended over it, both spanning
+eye z `2000..2365`. Both passes test and write depth with LEQUAL, so the overlay should win
+every tie; it loses a dithered subset because the two passes' interpolated depths differ
+fractionally. The artefacts are exactly the pixels the overlay failed to win — removing the
+depth comparison for the marked draws fills every hole, coverage `6272 → 6831` (+8.9%).
+
+The renderer is faithful here: `applyRenderState` sets ZENABLE/ZWRITEENABLE/ZFUNC LESSEQUAL and
+`trigl_state.cpp` reproduces that table, so retail fights too. Fixing it is a deliberate
+departure, not a corrected transcription.
+
+**Accelerated is fixed** — the overlay is biased toward the viewer, so it wins its own pixels.
+**Software skips the overlay**: its depth comes from the vertices of the surface underneath,
+which the overlay shares, so there is no per-pass depth to bias. Both behind
+`NOCTURNE_AUTHENTIC_ENVMAP_OVERLAY`.
+
+**Other outcomes:**
+- **The mixed-UV-source mechanism is real, was measured correctly, and is not the defect.**
+  `renderEnvMapTriangles` picks each vertex's UV source independently and 14 of 78 triangles mix
+  the two; the env pass also renders vertices the covering `lightVerticies` call never lit.
+  Both hold up. Neither is what put black speckle on the blades.
+- **The old fix is deleted.** `NOCTURNE_AUTHENTIC_ENVMAP_UV` halved the sphere-map coordinate
+  and clamped the overflow; it hid the speckle by flattening the reflection until the missing
+  pixels stopped showing, and it wrote into the shared `g_VertexNormalArray`, changing the
+  shading of everything drawn after it (38,574 pixels across the whole figure). With the fight
+  fixed it had no caller left.
+- The env map is legitimately near-black: `g_EnvMapTexture` is a static `"BACKGND.RAW"` never
+  written anywhere, measured 38.1 % pure black and 92.2 % luma<32.
 - Four big leads **measured dead**: out-of-range indices, shared-scratch clobbering (so
   splitting `g_VertexNormalArray` would change nothing), a float/int pun, and the earlier
   "software is clean, remainder is accel-only" claim.
 - Unrelated shim bug found and fixed on the way: the GL shim dropped
   `D3DRENDERSTATE_TEXTUREADDRESS = CLAMP`, leaving every texture on `GL_REPEAT`.
 
-**Status:** OPEN — mechanism measured end to end (unlit vertices from a lighting/render
-face-list mismatch); what remains is why the two lists differ, and which of two fixes to take
+**Do not re-chase through the CPU side** — the normals, the UV branch, the face list and the
+image are all sound by the time the geometry reaches the hardware.
+
+**Status:** SOLVED — accelerated fixed, software skips the overlay, both gated
 
 ---
 
 ### [17-shader_renderer_migration/](17-shader_renderer_migration/)
 
 Moving the GL shim off fixed function onto shaders, so the graphics can later be improved with
-modern techniques. Ships as a second selectable renderer, `trigl.dll`, in Graphics Options →
-3D API, beside the fixed-function `tridx7.dll`; `tridx7.dll`'s authentic 37-export surface is
-untouched, and the new renderer is one row in the built-in DLL registry.
+modern techniques.
 
-**The draw path is off fixed function and verified pixel-neutral; the present blit is not.**
-Vertex submission now goes through a streaming buffer object with named generic attributes and
-its own `u_projection` — replacing `gl_Vertex`/`gl_Color`/`ftransform()`, which were only the
-compatibility profile's names for the client arrays and matrix stack the shader was supposed to
-be replacing. Exit criterion was a same-scene A/B of both vertex paths, flipped live: every
-matched percentile `1.0000`, `mean|d| 0.614` against a `0.56–0.82` noise floor. Remaining on
-the fixed-function ledger: the present blit in `gl_present.cpp` (`glOrtho`, immediate mode,
-`TexEnv`), and the compatibility context itself, which is blocked on it.
+| File | Description |
+|------|-------------|
+| `README.md` | State table, the native renderer A/B, open items with a DON'T-RE-CHASE list, the measurement rules |
+| `renderer_ab_capture.gdb` | the two renderers captured on a held frame |
+| `blit_same_frame_ab.gdb` | both present paths on one frame, before the swap |
+| `vertex_path_ab.gdb` / `vertex_fog_ab.gdb` | the vertex-submission and per-vertex-fog A/Bs |
+| `software_reference_capture.gdb` / `lightmap_view_capture.gdb` | software reference frames, lightmap views |
+| `geometry_drop_capture.gdb` | the mode-change path dropping actors |
+| `compare_ppm.py` | percentile/mean comparison for the captures |
 
-**The main result of the first working session is a correction.** The migration was expected to
+**The migration is finished.** Draw path and present blit are both off fixed function and
+verified **bit-identical**, in software mode and under acceleration — not merely inside the
+noise floor. The context is GL 3.3 core with no fixed-function GL anywhere.
+
+**It ended somewhere it did not start.** `trigl` — `shims/renderer/`, ~3.7k lines — implements
+the 37 `APIDLL*` entry points directly against modern GL, passed its A/B against the path the
+migration began from, and is now **the only renderer in the build**. The decompiled DX7
+renderer, its GL-backed DirectDraw and the shader layer built on them are out of the build;
+the tridx7 tree stays on disk as the specification.
+
+**The main result of the first working session was a correction.** The migration was expected to
 fix the chapel window (`12-camera_switch_lighting_flip/`) by applying the per-pixel light/fog
 grid to hardware geometry. That was built, measured, and reverted: accel *without* the grid
 matches software at every percentile (`14.33` vs `14.22`, ratio `1.0076`), while applying it
 darkens to `0.41x`. The grid is the **software rasterizer's** lighting mechanism — geometry
 drawn through the renderer DLL carries its own per-vertex lighting and already arrives at final
-brightness. So the window is a **double-draw** of `CGlass`, needing a game-side fix, and
-`NOCTURNE_AUTHENTIC_SHADER_LIGHTING` defaults to 1 (grid not applied). Do not reopen this.
+brightness. So the window is a **double-draw** of `CGlass`, needing a game-side fix. The flag
+that existed to A/B this is gone along with the bridge it published, since there is no longer a
+second path to compare. Do not reopen this.
 
 What the shader path *can* do that fixed function structurally cannot: D3D7's per-vertex fog,
 which `buildTLVertex` packs into the specular **alpha** byte and GL's 3-component secondary
 colour therefore drops entirely — set on 94.4% of vertices at mean 126/255. Implemented and
 defaulted off, because the A/B could not separate it from animation drift.
 
-The README there is the handoff: state table, open items with a DON'T-RE-CHASE list, the live
-debug toggles, and the measurement rules this work depends on (capture only synced to
-`SDL_GL_SwapWindow`; never compare across scenes or resolutions; establish the noise floor in
-the same run — two of that session's conclusions turned out to be smaller than it).
+**Status:** COMPLETE — what remains are things it found and did not fix: the per-vertex fog
+default, and two game-side defects it was expected to fix and does not
 
 ---
 
@@ -475,7 +543,12 @@ is a content problem rather than a code one.
 
 | File | Description |
 |------|-------------|
-| `README.md` | The two ceilings, the two coordinate spaces, the resolution list, aspect-ratio options |
+| `README.md` | The two ceilings, the two coordinate spaces, text inside a box, the resolution list, aspect-ratio options |
+| `camera_geometry_probe.gdb` | what geometry the camera derives for a mode, and which height conditionals fire |
+| `present_filter_probe.gdb` | whether the window is the same size as what is rendered into it |
+| `fog_plane_probe.gdb` | the fog plane against the camera grid |
+| `corona_extent_probe.gdb` | `g_CoronaLeftExtent`, whose two producers disagree about the sentinel |
+| `burn_probe.gdb` | why a character can never reach `is_fully_burned` |
 
 **Key outcomes:**
 - **The software *rasteriser* has no resolution limit — software *mode* does.** The rasteriser
@@ -494,9 +567,18 @@ is a content problem rather than a code one.
   space that the renderer stretches). Elements that must line up have to share one. Getting this
   wrong put the inventory description text up to 104 px off its panel, correct at 640x480 and
   1280x1024 purely because those are where the stretch is a whole number.
+- **Text inside a box takes its box's stretch, truncated, and is clipped to the box.** Position
+  needs the exact fractional stretch; size needs its floor, because glyph bitmaps cannot be
+  resampled — two of the five fonts are 1-bit. Rounding to nearest overshoots at 1024x768 and
+  1600x1200 and also divides the wrap width, so the block gains lines as it gains height and
+  leaves the panel or the letterbox bar. Verified over all 94 item descriptions and all 1082
+  subtitle lines at 10 modes.
 - **True widescreen is not available from the shipped backdrops** — they are fixed 640x480 8-bit
   images and the pixels for a wider view do not exist. Pillarboxing is a contained change in the
   presenter we own; re-rendering backdrops is a content project with an unverified premise.
+
+---
+
 ### [19-automap/](19-automap/)
 
 A Doom-style line map that fills in as the player walks: design, measured numbers, and the
@@ -527,6 +609,8 @@ extraction rules — including the ones that look right and are not.
   fixed-length, and the version gate is a minimum with no upper bound, so no version bump is
   needed. Past a completion threshold the fog lifts entirely; the percentage is measured against
   cubes holding geometry (4,579 of 46,139), since a share of all cubes would never fire.
+
+---
 
 ### [20-overlay_accumulation/](20-overlay_accumulation/)
 
@@ -636,10 +720,106 @@ Ghidra source location: `~/Repositories/Ghidra/`
 | tridx7 render API + bridge | [11-tridx7_3d_renderer_dll/apidll_signatures_and_bridge.md](11-tridx7_3d_renderer_dll/apidll_signatures_and_bridge.md) |
 | How mirror reflection works | [14-mirror_actor_reflections/01_HOW_MIRRORS_WORK.md](14-mirror_actor_reflections/01_HOW_MIRRORS_WORK.md) |
 | Compare the two binaries | [14-mirror_actor_reflections/02_RULING_OUT_THE_PIPELINE.md](14-mirror_actor_reflections/02_RULING_OUT_THE_PIPELINE.md) |
+| Geometry misaligned against the backdrop | [14-mirror_actor_reflections/07_ACCEL_DISPLACEMENT.md](14-mirror_actor_reflections/07_ACCEL_DISPLACEMENT.md) |
+| The renderer, and how it was verified | [17-shader_renderer_migration/README.md](17-shader_renderer_migration/README.md) |
+| Resolution, HUD scaling, widescreen | [18-resolution_and_aspect_ratio/README.md](18-resolution_and_aspect_ratio/README.md) |
+| Developer warps and mission event flags | [08-developer_mode_and_cheats/script_event_flags.md](08-developer_mode_and_cheats/script_event_flags.md) |
 
 ---
 
 ## Changelog
+
+### 2026-09-17
+- **Text that lives in a box now takes the box's own stretch, truncated, and is clipped to it**
+  (`18-resolution_and_aspect_ratio/`). `nocturne_ui_scale()` rounds `H/480` to nearest, which
+  returns 2 at 1024x768 (true stretch 1.6) and 3 at 1600x1200 (2.5); the inflated scale also
+  divides the wrap width, so the block gained lines as it gained height and left its container.
+  Measured over the shipped text — 94 rows of `ITEMLIST.TXT`, 1082 subtitle lines in
+  `ENGLISH.POD`'s `WORLD/*.TXT` — 10 of 94 item descriptions overflowed the panel at 1024x768,
+  and 135 of 1082 subtitles left the letterbox bar there with 108 more at 1600x1200. The shipped
+  build never overflows at any mode, so both were regressions from HUD scaling rather than
+  original defects. Truncating instead is what fixes it: at a scale no larger than the
+  container's stretch the block is no larger *relative to the box* than at 640x480, where it
+  fits. 0 escapes at every mode afterwards
+- **A fractional glyph blitter was built for this first, and reverted.** It sized correctly but
+  looked wrong at 800x600 (5/4) and 1024x768 (8/5), the two ratios closest to 1, because
+  resampling duplicates some rows and columns and not others — visible as stems of uneven
+  thickness on `fnte_pfd`, which is 1-bit art with no coverage ramp (3 palette indices, against
+  164–256 for `nocsmall`/`nocfont`/`menufont`). A font ladder that matches each container with a
+  larger engine font at a whole scale was then measured and also rejected: it fits everywhere
+  and stays crisp, but changes typeface between resolutions and reads worse than smaller text.
+  **Neither is worth re-chasing**
+- **Both blocks are clipped to their box.** The clip never fires on the layouts above; it is for
+  a box that shrinks under the text, which the letterbox bar does every time it animates. At
+  16:9 the 1.85:1 target leaves a 14–21 px strip, so the clip falls back to the screen rather
+  than slicing the subtitle. `CScript::renderSubtitles` reads `g_ClipTop` at `0x00559bf2` and
+  writes it back at `0x00559d34` without touching it in between — the shipped build clipped here
+  and the body of it was lost, which is why subtitles overflow in retail too
+- **Corrected in `18-.../README.md`:** its icon-space table was computed with the compiled-in
+  `g_InventoryWidth = 0xD0` (208). `DATA/INVSIZE.TXT` says `240,96` and `loadAssets` reads it
+  before anything draws, so every number in that table was wrong
+
+### 2026-09-16
+- **`16-svetlana_blade_envmap/` SOLVED — the blade artefacts are a depth fight, not the UVs.**
+  The blade is drawn twice at the same depth: its own texture, then the env map blended over it,
+  both spanning eye z `2000..2365`. Both passes test and write LEQUAL, so the overlay should win
+  every tie; it loses a dithered subset because the two interpolated depths differ fractionally,
+  and the artefacts are exactly the pixels it failed to win — removing the depth comparison for
+  the marked draws fills every hole, `6272 → 6831` pixels (+8.9%). Accelerated is fixed by
+  biasing the overlay toward the viewer; software skips the overlay, since its depth comes from
+  the vertices of the surface underneath and there is no per-pass depth to bias. Both behind
+  `NOCTURNE_AUTHENTIC_ENVMAP_OVERLAY`. **The mixed-UV-source mechanism recorded here on
+  2026-09-04 is real and was measured correctly — it is simply not the defect**
+- **The old blade fix is deleted, and why it looked like one is worth keeping.**
+  `NOCTURNE_AUTHENTIC_ENVMAP_UV` halved the sphere-map coordinate and clamped the overflow; it
+  hid the speckle by flattening the reflection until the missing pixels stopped showing, and it
+  wrote into the shared `g_VertexNormalArray`, changing the shading of everything drawn after it
+  — 38,574 pixels across the whole figure, not just the blade
+- **`14-mirror_actor_reflections/07_ACCEL_DISPLACEMENT.md` added — FIXED.** A second, unrelated
+  mirror defect: `CDemonSet::setCameraView` renders the static room twice under acceleration and
+  the second call inherits a projection matrix the first call's mirror loop destroyed. Geometry
+  at the screen edges stops lining up with the backdrop while collision stays correct; in
+  software the reflection is drawn scaled about the screen centre, leaving part of the depth
+  window `renderMirrorQuadDepth` punched at its near-infinite value so every later mirror pass
+  draws there unoccluded — which is how a free-standing background actor comes out twice. Gated
+  by `NOCTURNE_AUTHENTIC_MIRROR_PROJECTION`. **Editor-only**: `nocedit.exe`'s
+  `beginBackgroundScene` pushes a viewport, retail's swaps buffer rows and returns, so
+  `nocturne.exe` screenshots are not a reference for `nocedit.exe` here
+- **Every MP3 was being decoded wrong, and it was our transcription.** Not MPEG-1 specific and
+  not a DSP difference: the mono path of `mpegLayer3StereoProcess` stored through an advanced
+  cursor where Watcom stores through it displaced back by one element (`ADD EDX,0x4` /
+  `FSTP [EDX + -0x4]` at `0x0053347a`), so every coefficient landed one slot late and the first
+  was never written. Now bit-accurate against a reference decode; `decode_mp3_offline.gdb` runs
+  the game's own decoder with no audio device for that comparison. The suspect detector was
+  widened to catch the pre-increment-plus-displaced-store shape
+
+### 2026-09-14
+- **`NOCTURNE_AUTHENTIC_SHADOW_DEPTH_READ`** — the shadow pass's depth test read the buffer at a
+  different width from the one it was written at
+- **`NOCTURNE_AUTHENTIC_MELEE_PICKUP`** — picking up a melee weapon already held took a second
+  inventory slot
+
+### 2026-09-13
+- **`20-overlay_accumulation/` added — blended 2D thickened on frames that drew no geometry.**
+  `unlock_hold_buffer` uploads `g_dev.hold` into the scene target while leaving `g_dev.image`
+  untouched, so the target holds content the image does not — but it reported otherwise, and
+  `lock_frame` reads that flag to decide whether to read the target back. The lock skipped its
+  readback and the image kept the previous frame's composite for the engine to draw over. The
+  glyph blend reads its destination, so drawing the same text over itself is not idempotent:
+  solid interiors replace identically while antialiased edges darken, which is why it presents
+  as weight rather than brightness. Measured across 248 consecutive banner frames, then 263 with
+  the invariant restored. Nothing uses the window the correction widens: 782 entries, 0 draws
+  inside it. Seven dead ends recorded with their measurements
+
+### 2026-09-09 (flags)
+- **The authenticity flags were refactored, which renamed and removed several.** Anything citing
+  a flag by name from before this date needs checking against
+  `shims/config/shim_config_authentic.h`. `NOCTURNE_AUTHENTIC_OVERLAY_DEPTH` and
+  `NOCTURNE_AUTHENTIC_ENVMAP_SOFTWARE` merged into `NOCTURNE_AUTHENTIC_ENVMAP_OVERLAY`;
+  `NOCTURNE_AUTHENTIC_RESOLUTION_STEP` folded into `NOCTURNE_AUTHENTIC_RESOLUTION_LIST`;
+  `NOCTURNE_AUTHENTIC_VOICE`, `NOCTURNE_AUTHENTIC_DEV_TOOLS`, `NOCTURNE_AUTHENTIC_ENVMAP_UV` and
+  `NOCTURNE_AUTHENTIC_SHADER_LIGHTING` are gone, the last along with the `lighting_bridge`
+  it published
 
 ### 2026-09-09
 - **`19-automap/` added.** A Doom-style automap is feasible: a level reads as a floorplan from
@@ -680,6 +860,14 @@ Ghidra source location: `~/Repositories/Ghidra/`
   images read at a literal size, and `loadImage` stretches to fill with no aspect handling.
   Pillarboxing lands in the presenter we own; true widescreen needs backdrops re-rendered at a
   wider FOV, which is **UNVERIFIED** as possible from the shipped PODs
+
+### 2026-09-06
+- **One renderer.** `trigl` — `shims/renderer/`, ~3.7k lines against GL directly — replaced the
+  decompiled DX7 renderer, its GL-backed DirectDraw and the shader layer built on them, after
+  passing its A/B against the path the shader migration started from. The tridx7 tree stays on
+  disk as the specification, with a README beside it saying so. With the present blit also
+  bit-exact in both modes, `17-shader_renderer_migration/` is complete and nothing in it is
+  unmeasured
 
 ### 2026-09-04
 - **`15-iris_fade_transition/` FIXED — the opening iris snaps onto the hero part-way through its growth.** Not a second trigger, which was the obvious suspicion: there is exactly one `beginFadeIn`, the state machine runs `1 → 2 → 0` once, and `updateFadeTransition` was verified faithful instruction by instruction against `0x4e09c0`. The cause is that `renderIrisFade` re-centres on the focus actor every frame (`CALL` at `0x4e0add`) while `calculateIrisFadeCenter` only writes the centre *while that actor is on screen* — so a hero who walks into the shot after the load moves the centre mid-growth. Measured: the centre held at `(320,240)` until 46 % of the fade, then jumped ~250 px to `(400,477)` while the disc radius was only ~296, which is why it reads as starting over. Fixed by pinning the **opening** iris (type 2) only; the closing iris still tracks the hero. After the fix, one centre change at 0 %. Deviation from an original-game defect, gated by `NOCTURNE_AUTHENTIC_IRIS_FADE`
@@ -735,6 +923,29 @@ Ghidra source location: `~/Repositories/Ghidra/`
 ### 2026-07-14
 - Added `11-tridx7_3d_renderer_dll/`: applied 27/37 `APIDLL*` export signatures to `tridx7.dll` from nocedit's `g_APIDLL_*` funcdefs (`apply_apidll_signatures.py`), derived the 3 nocedit-untyped exports from DLL asm, and verified `CExternalRendererBridge` against the DLL — size/layout confirmed (35 dwords), with 3 mislabeled fields and 11 DLL-unreferenced fields flagged
 - Added `10-tridx7_crt_identification/` to the indexes: 248 statically-linked MSVC CRT functions named + 200 signatured with snake_case params; catalog (`crt_functions.md`/`.tsv`) + tooling (`name_crt_functions.py`, `apply_crt_signatures.py`, `extract_crt_catalog.py`)
+
+### 2026-07-05
+- **Environmental lighting and shadows had never worked, on either architecture, and the cause
+  was one truncated struct copy.** `CDemonCamera::precomputeNormals` carried
+  `local_60.z = local_84.z` where the asm cave block at `0x0060a0a0` copies a whole `CVector3i`.
+  `local_84` is `screenToWorldCoord`'s output and `local_60` feeds `screenToWorldTransform`,
+  which reads `.x`/`.y` for the inverse projection — so with those left stale every entry in
+  `g_PrecomputedWorldPositions` was garbage, `precomputeLight` projected all geometry into a
+  corner of the shadow map, and no dynamic light ever produced extents. Verified live:
+  `precomputeLight visible` 0 → 120686, corona light buffer max 14 → 162, lighting and shadows
+  matching the Wine reference
+- **The §20 detector had a shape it could not see.** It models a missing cave copy as a *fully*
+  dropped one — a local assigned once and passed by address — but this copy survived as a single
+  field, so the local looked alive. `identify_missing_cave_copy` grew a partial-cave-copy pass
+  for `A.F = B.F` where `A` is cave-eligible, matches an asm cave block by size, is passed by
+  address, and has no other field write. Flags the original, clean on the fix, 0 false positives
+  across 6006 functions
+- **A 2026-07-04 conclusion was disproved the next day and should not be re-chased.**
+  "`gatherVisibleLights` branch 2 rejects everything" was a sampling artefact — the light counts
+  were read at moments they happened to be 0. That gather, `isBoundingBoxVisible`,
+  `transformAndProjectPoint`, `intersectAABB` and the attenuation math are all faithful
+- **This is the lighting half of `09-flashlight_lighting_investigation/`**, whose remaining
+  symptom is the volumetric cone drawing as a stepped pyramid rather than a smooth halo
 
 ### 2026-05-27
 - Added `09-flashlight_lighting_investigation/` (open): flashlight/set spot-light not lighting world geometry + volumetric cone as discrete circles, ground-truthed vs the original under Wine. Along the way: rasterizer `-O2` per-file build fix (Debug `-O0` was the stutter), §20 cave-copy fix in `calculateSpatialLighting`, `transformMirrorVertex`→`CVector3i*` Ghidra retype, and widened the `missing_cave_copy` detector 16→12 bytes (280→300 flags, regression-gated)

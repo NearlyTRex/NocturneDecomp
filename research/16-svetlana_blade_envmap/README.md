@@ -9,13 +9,14 @@ Present in retail.
 under CONFIRMED below is real and was measured correctly, but it is not what put black
 speckle on the blades. Two passes at one depth are.
 
-**Accelerated is fixed** — the overlay is biased toward the viewer
-(`NOCTURNE_AUTHENTIC_OVERLAY_DEPTH`), so it wins its own pixels.
+Both halves are gated by `NOCTURNE_AUTHENTIC_ENVMAP_OVERLAY`.
 
-**Software skips the overlay** (`NOCTURNE_AUTHENTIC_ENVMAP_SOFTWARE`). Its depth comes from
-the vertices of the surface underneath, which the overlay shares, so there is no per-pass
-depth to bias without reworking how it fills a span. A reflection that is absent reads as a
-surface nothing reflects in; one that is half there reads as dirt.
+**Accelerated is fixed** — the overlay is biased toward the viewer, so it wins its own pixels.
+
+**Software skips the overlay.** Its depth comes from the vertices of the surface underneath,
+which the overlay shares, so there is no per-pass depth to bias without reworking how it fills
+a span. A reflection that is absent reads as a surface nothing reflects in; one that is half
+there reads as dirt.
 
 **The old fix is deleted, and it is worth knowing why it looked like one.**
 `NOCTURNE_AUTHENTIC_ENVMAP_UV 0` halved the sphere-map coordinate, clamped what still ran
@@ -259,9 +260,10 @@ Neither is the reported artefact.
    | halved | -319 .. 65356 | 4153 .. 68123 | **1.2%** |
    | halved + clamped | 283 .. 56803 | 263 .. 15608 | **0.00%** |
 
-   Both are behind `NOCTURNE_AUTHENTIC_ENVMAP_UV` (default 0). Note the clamp makes the seam
-   fixup unreachable — that is a behaviour change worth revisiting if the fixup turns out to
-   matter.
+   The halving and the clamp were behind `NOCTURNE_AUTHENTIC_ENVMAP_UV`, which is deleted —
+   see STATE. The measurements above stand; what they do not do is fix the artefact, and the
+   clamp also made the seam fixup unreachable. The seam-fixup signedness correction in (1) is
+   a reconstruction fix and is unconditional.
 
 ## Unrelated shim bug found and fixed
 

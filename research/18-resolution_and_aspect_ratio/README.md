@@ -18,7 +18,9 @@ Eight modes, including 1600x1200 and a reachable 400x300. Accelerated only: the 
 gate is a correctness requirement and is **not** part of that flag.
 
 **The HUD and the goggles scale with the framebuffer.** `nocturne_ui_scale()` and the goggles'
-own per-axis scale, gated by `NOCTURNE_AUTHENTIC_HUD_SCALE`.
+own per-axis scale, gated by `NOCTURNE_AUTHENTIC_HUD_SCALE`. Text inside a box — the inventory
+description, the subtitles — takes its box's stretch truncated to a whole number instead, and is
+clipped to the box; see *The two coordinate spaces → text inside a box*.
 
 **OPEN — anything above 1200 lines or 1598 pixels wide overruns a fixed array.** Two of them,
 both unguarded. Neither is hit by any mode currently offered. See *The two ceilings*.
@@ -51,8 +53,15 @@ widescreen is not possible from the shipped backdrops; see *Aspect ratio*.
   "The rasteriser is native" is true and is not sufficient: without the gate, 1600x1200 in
   software quits on `lockHoldBuffer` at `dcamera.cpp:3639`, and removing that fatal still leaves
   the lighting in a 640x480 corner.
-- **The inventory description text is not a HUD-scale problem.** It is the icon-space mapping —
-  see *The two coordinate spaces*.
+- **Text in a box takes the box's stretch, not the HUD scale, and truncates it.** Both halves
+  matter and they are separate bugs: a position mapped through the HUD scale lands off the
+  panel, and a size rounded up grows the block out of it. See *The two coordinate spaces → text
+  inside a box*.
+- **The font ladder does not close the 1x gap at 800x600 and 1024x768.** Matching the container
+  with a larger engine font at a whole scale was measured and works arithmetically, but it
+  changes typeface between resolutions and looks worse than the smaller text.
+- **Fractional glyph scaling is not an option.** Two of the five fonts are 1-bit, and resampling
+  them at a ratio just above 1 takes stems off letters. Whole scales only.
 - **400x300 is not a missing label.** It has a label and a step case in both directions in the
   shipped chain; what it never has is anything assigning `game_pixy = 300`.
 
@@ -176,37 +185,68 @@ So above 480 lines there are two spaces at once:
 
 Geometry in the virtual space is stretched to the screen by the renderer. Anything drawn by the
 CPU is not. **Two elements that must line up have to be in the same space**, and the inventory
-panel is where that bites:
+panel is where that bites: `NOCTURNE_AUTHENTIC_HUD_ICON_SPACE` puts the icon panel in camera
+space so it does not land off-screen above 640x480, while the description text on it is
+`CBitFont` output and therefore native.
 
-- `NOCTURNE_AUTHENTIC_HUD_ICON_SPACE` puts the icon panel in camera space, so it does not land
-  off-screen above 640x480. The description text beside it is `CBitFont` output, so it is in
-  native space.
-- Offsetting that text by `g_InventoryWidth * nocturne_ui_scale()` (integer) puts it against a
-  panel scaled by `W/640` (fractional). Those agree only where the stretch is a whole number,
-  which is why 640x480 and 1280x1024 look right and nothing else does. The offsets have to be
-  mapped through the panel's own stretch instead.
+### Text inside a box
 
-Measured, with `g_InventoryWidth = 0xD0` (208):
+Two blocks of text live inside a container that grows by a fractional factor, and they are the
+only places where the integer HUD scale is the wrong number:
 
-| Mode | panel left edge | text left, HUD-scaled | text left, stretch-mapped |
+| Block | Container | Container's stretch |
+|---|---|---|
+| inventory description | the icon panel, camera-space geometry | `g_WindowWidth / framebuffer_width` |
+| subtitles | the letterbox bar | `(g_WindowHeight - g_WindowWidth * 100 / 185) / 2`, i.e. `0.1396 * H` at 4:3 |
+
+**Position takes the container's exact stretch; size takes its floor.** Those are different
+numbers and both are needed. A position mapped through anything but the panel's own stretch
+lands off the panel — offsetting by `g_InventoryWidth * nocturne_ui_scale()` against a panel
+scaled by `W / framebuffer_width` agrees only where the stretch is a whole number. A *size*
+cannot be fractional at all: `CBitFont` draws glyph bitmaps, and resampling them at a ratio just
+above 1 duplicates some rows and columns and not others, which on `fnte_pfd` — 1-bit art, no
+coverage ramp — reads as stems of uneven thickness rather than as scaling.
+
+Truncating the size is what keeps the block in its box. At a scale no larger than the
+container's stretch, the block is no larger *relative to the box* than it was at 640x480, where
+it fits; so it fits everywhere. Rounding to nearest does not: it returns 2 at 1024x768 (stretch
+1.6) and 3 at 1600x1200 (2.5), and the inflated scale also divides the wrap width, so the block
+gains lines as it gains height.
+
+Measured with `g_InventoryWidth = 240`, `g_InventoryHeight = 96` (`DATA/INVSIZE.TXT`, which
+overrides the compiled-in `0xD0 x 0x60`):
+
+| Mode | panel, screen px | panel stretch | text scale |
 |---|---|---|---|
-| 320x200 | 69 | 112 | 70 |
-| 320x240 | 112 | 112 | 112 |
-| 320x400 | 195 | 112 | 196 |
-| 512x384 | 304 | 304 | 304 |
-| 640x480 | 432 | 432 | 432 |
-| 800x600 | 540 | **592** | 540 |
-| 1024x768 | 691 | **608** | 692 |
-| 1280x1024 | 864 | 864 | 864 |
-| 1600x1200 | 1080 | **976** | 1080 |
+| 320x240 | 240x96 | 1.00 | 1 |
+| 512x384 | 240x96 | 1.00 | 1 |
+| 640x480 | 240x96 | 1.00 | 1 |
+| 800x600 | 300x120 | 1.25 | 1 |
+| 1024x768 | 384x153 | 1.60 | 1 |
+| 1280x1024 | 480x204 | 2.00 | 2 |
+| 1600x1200 | 600x240 | 2.50 | 2 |
 
-640x480 and 1280x1024 agree by coincidence — those are the modes where `W/640` is exactly 1 and
-2. The residual 1px on three modes is integer-division rounding between the two expressions.
+Below 480 lines the camera framebuffer is not clamped, so the panel and the screen share one
+space and the stretch is 1.
 
-**Text size remains the integer HUD scale**, because `CBitFont` draws glyph bitmaps and cannot
-scale fractionally. At 800x600 the text sits on the panel correctly but is 1x where 1.25x would
-be ideal. Closing that needs either a fractional glyph blitter or a panel snapped to integer
-stretches.
+Replayed over the shipped text — all 94 rows of `ITEMLIST.TXT` and all 1082 subtitle lines in
+`ENGLISH.POD`'s `WORLD/*.TXT` — no block leaves its box at any of those modes, and the line
+count is the same at every one, because the layout is the 640x480 layout scaled.
+
+The cost is that 800x600 and 1024x768 draw at 1x, the size the game ships at, rather than
+filling the larger panel. The engine's five bitmap fonts were measured as a way to close that
+(`micro`/`fnte_pfd` 1-bit, `nocsmall`/`nocfont`/`menufont` with a coverage ramp, pitches 7/11/
+13/16/20 px) — every resolution can be matched to within 10% by some font at a whole scale, but
+the typeface then changes between resolutions and the result reads worse than the smaller text.
+**Do not re-chase the font ladder.**
+
+Both blocks are also clipped to their box. The clip never fires on the layouts above; it is
+there for a box that shrinks under the text, which the letterbox bar does every time it animates
+in or out. Where the bar is too small to hold the block at all — 16:9, where the 1.85:1 target
+leaves a strip 14–21 px tall — the clip falls back to the screen, since there is no box to stay
+inside. `CScript::renderSubtitles` reads `g_ClipTop` into a stack slot at `0x00559bf2` and
+writes it back at `0x00559d34` without ever modifying it, so the shipped build clipped here too
+and lost the body of it.
 
 ## The resolution list
 
@@ -224,9 +264,10 @@ A third property of the chain is correct and stays: everything above 640x480 is 
 acceleration, and the menu clamps back to 640x480 while acceleration is off. That gate is load
 bearing — see *What actually caps software*.
 
-There is also a shipped stepping bug covered by `NOCTURNE_AUTHENTIC_RESOLUTION_STEP`: left from
-1280x1024 falls through the chain's default and snaps to 320x240, making the top of the list a
-two-entry loop.
+There is also a shipped stepping bug, covered by the same flag rather than one of its own: left
+from 1280x1024 falls through the chain's default and snaps to 320x240, making the top of the
+list a two-entry loop. Both shipped binaries do this — in `nocedit.exe` it is the missing
+`CMP EDI,0x300` case, so the `JNZ` at `0x0051151b` takes the default.
 
 `NOCTURNE_AUTHENTIC_RESOLUTION_LIST = 0` replaces both the label and the stepping with one
 ordered table in `shims/game/resolution.cpp`:
@@ -316,10 +357,13 @@ room geometry at backdrop quality. Confirm that before anyone plans around it.
 
 | Flag | 0 (default) | 1 (shipped) |
 |---|---|---|
-| `NOCTURNE_AUTHENTIC_RESOLUTION_LIST` | one table, 8 modes | hardcoded chain, 6 modes |
-| `NOCTURNE_AUTHENTIC_RESOLUTION_STEP` | left from 1280x1024 steps to 1024x768 | left from 1280x1024 snaps to 320x240 |
-| `NOCTURNE_AUTHENTIC_HUD_SCALE` | HUD and goggles scale with the framebuffer | one screen pixel per art pixel |
+| `NOCTURNE_AUTHENTIC_RESOLUTION_LIST` | one table, 8 modes, and left from 1280x1024 steps to 1024x768 | hardcoded chain, 6 modes, and left from 1280x1024 snaps to 320x240 |
+| `NOCTURNE_AUTHENTIC_MENU_RESOLUTION` | a picked resolution resizes the window at once | the selector only edits `game_pixx`/`game_pixy`; nothing applies them until a mission loads |
+| `NOCTURNE_AUTHENTIC_HUD_SCALE` | HUD and goggles scale with the framebuffer; boxed text takes its box's stretch and is clipped to it | one screen pixel per art pixel |
 | `NOCTURNE_AUTHENTIC_HUD_ICON_SPACE` | icon panel *and its text* in camera space | both in native pixels; icons invisible above 640x480 |
+
+The shipped left-step gap is part of `NOCTURNE_AUTHENTIC_RESOLUTION_LIST`; it does not have a
+flag of its own.
 
 ## Key symbols
 

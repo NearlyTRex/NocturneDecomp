@@ -1,6 +1,20 @@
 # Flashlight / set-light geometry-lighting bug — investigation state
 
-Status: **OPEN** — two real bugs: (A) the flashlight doesn't light static world geometry — its per-frame contribution doesn't reach the rendered static world (narrowed; fix site not yet found); (B) the cone renders as a stepped pyramid instead of a smooth halo. Started 2026-05-27. Resumable investigation log.
+Status: **(A) FIXED, (B) open.**
+
+**(A) The flashlight now lights static world geometry.** The cause was not in the gather or the
+attenuation math, both of which this log clears correctly. `CDemonCamera::precomputeNormals`
+carried `local_60.z = local_84.z` where the asm cave block at `0x0060a0a0` copies a whole
+`CVector3i`. `local_84` is `screenToWorldCoord`'s output; `local_60` feeds
+`screenToWorldTransform`, which reads `.x`/`.y` for the inverse projection. With those stale,
+every entry in `g_PrecomputedWorldPositions` was garbage, `precomputeLight` projected all
+geometry into a corner of the shadow map, and no dynamic light produced extents — so nothing
+lit and nothing cast a shadow, on either architecture. The source does the full copy now.
+
+**(B) The cone still renders as a stepped pyramid** rather than a smooth halo. Unchanged below.
+
+Everything under *Symptom* onward predates the (A) fix. Read it as the trail that narrowed the
+problem, not as a description of the current build.
 
 ## Symptom
 
