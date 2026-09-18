@@ -24,9 +24,8 @@ void __cdecl core_script_cpp_CScript_renderSubtitles_FUN_00559b20(CScript *this_
   int iVar1;
   int iVar2;
 #if !NOCTURNE_AUTHENTIC_HUD_SCALE
-  int ui_scale;
-
-  ui_scale = nocturne_ui_scale();
+  int bar_scale;
+  int full_letterbox;
 #endif
 
   if (g_CGamePtr->letterbox_mode == 0) {
@@ -68,10 +67,17 @@ void __cdecl core_script_cpp_CScript_renderSubtitles_FUN_00559b20(CScript *this_
                        (g_WindowWidth * 9) / 10);
     iVar6 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(this_ptr_00,0x58);
 #else
-    iVar5 = engine_font_cpp_CBitFont_wrapText_FUN_004d0010
+    bar_scale = nocturne_ui_box_scale(g_WindowHeight,0x1e0);
+    iVar5 = nocturne_ui_wrap_to_width
                       (this_ptr_00,this_ptr->current_message,g_ScriptSubtitleLines[0],10,0x400,
-                       ((g_WindowWidth * 9) / 10) / ui_scale);
-    iVar6 = nocturne_ui_char_height(this_ptr_00,0x58,ui_scale);
+                       (g_WindowWidth * 9) / 10,bar_scale,&iVar6);
+    full_letterbox = (g_WindowHeight - (g_WindowWidth * 100) / 0xb9) / 2;
+    if ((0 < iVar4) && (iVar6 * iVar5 <= full_letterbox)) {
+      nocturne_ui_push_clip(0,g_WindowHeight - iVar4,g_WindowWidth + -1,g_WindowHeight + -1);
+    }
+    else {
+      nocturne_ui_push_clip(0,0,g_WindowWidth + -1,g_WindowHeight + -1);
+    }
 #endif
     y = ((iVar3 * 2 - iVar4) - iVar6 * iVar5) / 2;
     iVar8 = iVar3 - iVar6 * iVar5;
@@ -89,14 +95,17 @@ void __cdecl core_script_cpp_CScript_renderSubtitles_FUN_00559b20(CScript *this_
         engine_font_cpp_CBitFont_drawText_FUN_004cda80
                   (this_ptr_00,*text,(iVar1 - iVar7) / 2,y,0xf8,0);
 #else
-        iVar7 = nocturne_ui_text_width(this_ptr_00,*text,ui_scale);
+        iVar7 = nocturne_ui_text_width(this_ptr_00,*text,bar_scale);
         iVar3 = iVar3 + 1;
-        nocturne_ui_draw_text(this_ptr_00,*text,(iVar1 - iVar7) / 2,y,0xf8,0,ui_scale);
+        nocturne_ui_draw_text(this_ptr_00,*text,(iVar1 - iVar7) / 2,y,0xf8,0,bar_scale);
 #endif
         text = text + 1;
         y = y + iVar6;
       } while (iVar3 < iVar5);
     }
+#if !NOCTURNE_AUTHENTIC_HUD_SCALE
+    nocturne_ui_pop_clip();
+#endif
   }
   g_ClipTop = iVar2;
   return;

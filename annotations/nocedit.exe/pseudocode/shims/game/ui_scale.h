@@ -86,6 +86,46 @@ int nocturne_ui_char_height(struct CBitFont *font, int character_code, int scale
 int nocturne_ui_text_scale_supported(void);
 
 // =============================================================================
+// Text that has to sit inside a box
+// =============================================================================
+//
+// nocturne_ui_scale suits elements the layout places against a screen edge, but
+// two text blocks live inside a container that grows by a FRACTIONAL factor:
+// the inventory description sits on a camera-space panel the renderer stretches
+// by g_WindowWidth / framebuffer_width, and the subtitles sit in the letterbox
+// bar, which is (g_WindowHeight - g_WindowWidth * 100 / 185) / 2. Rounding to
+// nearest overshoots both at 1024x768 (stretch 1.6) and 1600x1200 (2.5), and
+// the inflated scale also narrows the wrap width, so the block gains lines as
+// it gains height and runs out of its box.
+//
+// Truncating instead is what keeps it in. A scale at or under the container's
+// stretch leaves the block no taller, relative to the box, than it was at
+// 640x480 — where it fits — so it fits at every mode. Glyphs stay whole pixels:
+// these fonts are small, and two of the five (fnte_pfd, micro) are 1-bit, so a
+// fractional scale shows as stems of uneven thickness rather than as resampling.
+
+// The largest whole scale that does not exceed a container stretched num/den,
+// clamped to [1, UI_MAX_SCALE] and to 1 where the bit depth has no scaled glyph
+// path. Pass it to the drawing and metric calls above.
+int nocturne_ui_box_scale(int num, int den);
+
+// CBitFont::wrapText against a box `box_width` screen pixels wide, for text that
+// will be drawn at `scale`. Wraps in glyph units, and returns the line count
+// with the line advance in screen pixels written to *line_pitch, so the wrap
+// width and the metrics cannot drift apart from the text.
+int nocturne_ui_wrap_to_width(struct CBitFont *font, char *text,
+                              char *lines, int max_lines, int line_stride,
+                              int box_width, int scale, int *line_pitch);
+
+// The 2D clip rectangle (g_ClipLeft/Top/Right/Bottom), intersected with what is
+// already set and restored by the matching pop. Text drawn between the two
+// cannot paint outside the rectangle whatever the layout arithmetic produces —
+// the backstop for a box that shrinks under the text, which the letterbox bar
+// does every time it animates in or out.
+void nocturne_ui_push_clip(int left, int top, int right, int bottom);
+void nocturne_ui_pop_clip(void);
+
+// =============================================================================
 // The editor/dialog widget layer (CPickList, CEditorTools windows, CEdButton,
 // CEdScrollBar) — the in-game pause menu among them
 // =============================================================================

@@ -1696,6 +1696,12 @@
 //      framebuffer height (1 at 480 and 600, 2 at 768 through 1080, ...), so
 //      they keep the size relative to the screen that they had at 640x480.
 //      Exact at scale 1, so 640x480 is unchanged.
+//      Text inside a box — the inventory description on its camera-space
+//      panel, the subtitles in the letterbox bar — truncates its scale to the
+//      box's own stretch rather than rounding, since rounding up at 1024x768
+//      and 1600x1200 grows the block out of the box. Both are also clipped to
+//      their box, which is what holds the subtitles inside a bar that is still
+//      animating in.
 //
 //   Override with -DNOCTURNE_AUTHENTIC_HUD_SCALE=1.
 #ifndef NOCTURNE_AUTHENTIC_HUD_SCALE

@@ -355,6 +355,38 @@ static int ui_draw_char(CBitFont *font, int character_code, int x, int y,
     return advance;
 }
 
+// A ratio the glyph paths can honour: never a reduction, never past the cap the
+// integer scaler uses, and 1:1 at a bit depth with no scaled glyph path so the
+// caller's metrics follow the text into the engine's own routine.
+int nocturne_ui_box_scale(int num, int den) {
+    int scale;
+
+    if (den < 1 || num < 1) { return 1; }
+    if (!nocturne_ui_text_scale_supported()) { return 1; }
+    // Truncate: a scale above the container's own stretch is what pushes the
+    // block out of it.
+    scale = num / den;
+    if (scale < 1) { scale = 1; }
+    if (scale > UI_MAX_SCALE) { scale = UI_MAX_SCALE; }
+    return scale;
+}
+
+int nocturne_ui_wrap_to_width(struct CBitFont *font, char *text,
+                              char *lines, int max_lines, int line_stride,
+                              int box_width, int scale, int *line_pitch) {
+    int wrap_width;
+
+    if (scale < 1) { scale = 1; }
+    // wrapText measures unscaled glyphs, so the box has to be expressed in the
+    // same units.
+    wrap_width = box_width / scale;
+    if (line_pitch != 0) {
+        *line_pitch = nocturne_ui_char_height(font, 0x58, scale);
+    }
+    return engine_font_cpp_CBitFont_wrapText_FUN_004d0010((CBitFont *)font, text, lines,
+                                                          max_lines, line_stride, wrap_width);
+}
+
 int nocturne_ui_draw_text(struct CBitFont *bit_font, char *text, int x, int y,
                           int color_mode, int color_value, int scale) {
     CBitFont *font = (CBitFont *)bit_font;
@@ -396,4 +428,37 @@ int nocturne_ui_char_height(struct CBitFont *font, int character_code, int scale
                                                                      character_code);
     if (scale < 2 || !nocturne_ui_text_scale_supported()) { return height; }
     return height * scale;
+}
+
+// =============================================================================
+// Clip rectangle
+// =============================================================================
+
+#define UI_CLIP_STACK_MAX 4
+
+static int ui_clip_saved[UI_CLIP_STACK_MAX][4];
+static int ui_clip_depth = 0;
+
+void nocturne_ui_push_clip(int left, int top, int right, int bottom) {
+    if (ui_clip_depth >= UI_CLIP_STACK_MAX) { return; }
+    ui_clip_saved[ui_clip_depth][0] = g_ClipLeft;
+    ui_clip_saved[ui_clip_depth][1] = g_ClipTop;
+    ui_clip_saved[ui_clip_depth][2] = g_ClipRight;
+    ui_clip_saved[ui_clip_depth][3] = g_ClipBottom;
+    ui_clip_depth = ui_clip_depth + 1;
+
+    // Intersect: a push can only ever narrow what is already in force.
+    if (left > g_ClipLeft) { g_ClipLeft = left; }
+    if (top > g_ClipTop) { g_ClipTop = top; }
+    if (right < g_ClipRight) { g_ClipRight = right; }
+    if (bottom < g_ClipBottom) { g_ClipBottom = bottom; }
+}
+
+void nocturne_ui_pop_clip(void) {
+    if (ui_clip_depth < 1) { return; }
+    ui_clip_depth = ui_clip_depth - 1;
+    g_ClipLeft = ui_clip_saved[ui_clip_depth][0];
+    g_ClipTop = ui_clip_saved[ui_clip_depth][1];
+    g_ClipRight = ui_clip_saved[ui_clip_depth][2];
+    g_ClipBottom = ui_clip_saved[ui_clip_depth][3];
 }

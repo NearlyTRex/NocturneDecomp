@@ -51,8 +51,19 @@ void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_00500690(CInventory *thi
   byte bVar11;
 #if !NOCTURNE_AUTHENTIC_HUD_SCALE
   int ui_scale;
+  int panel_num;
+  int panel_den;
+  int panel_scale;
 
   ui_scale = nocturne_ui_scale();
+#if !NOCTURNE_AUTHENTIC_HUD_ICON_SPACE
+  panel_num = g_WindowWidth;
+  panel_den = g_CDemonCameraInstance.framebuffer_width;
+#else
+  panel_num = ui_scale;
+  panel_den = 1;
+#endif
+  panel_scale = nocturne_ui_box_scale(panel_num,panel_den);
 #endif
   bVar11 = 0;
   if (g_CGamePtr->letterbox_mode != 0) {
@@ -234,13 +245,15 @@ LAB_005008cd:
                      local_50 - local_58);
   iVar10 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(local_44,0x58);
 #else
-  iVar3 = engine_font_cpp_CBitFont_wrapText_FUN_004d0010
+  iVar3 = nocturne_ui_wrap_to_width
                     (local_44,local_178,g_InventoryWrappedTextLines[0],10,0x100,
-                     (local_50 - local_58) / ui_scale);
-  iVar10 = nocturne_ui_char_height(local_44,0x58,ui_scale);
+                     local_50 - local_58,panel_scale,&iVar10);
 #endif
   iVar5 = g_WindowWidth - local_50;
   iVar11 = (g_WindowHeight - local_54) + local_48;
+#if !NOCTURNE_AUTHENTIC_HUD_SCALE
+  nocturne_ui_push_clip(iVar5,g_WindowHeight - local_54,g_WindowWidth + -1,g_WindowHeight + -1);
+#endif
   iVar9 = 0;
   if (0 < iVar3) {
     pacVar12 = g_InventoryWrappedTextLines;
@@ -250,12 +263,15 @@ LAB_005008cd:
       engine_font_cpp_CBitFont_drawText_FUN_004cda80
                 (local_44,*pacVar12,local_48 + iVar5,iVar11,0xf8,0);
 #else
-      nocturne_ui_draw_text(local_44,*pacVar12,local_48 + iVar5,iVar11,0xf8,0,ui_scale);
+      nocturne_ui_draw_text(local_44,*pacVar12,local_48 + iVar5,iVar11,0xf8,0,panel_scale);
 #endif
       pacVar12 = pacVar12 + 1;
       iVar11 = iVar11 + iVar10;
     } while (iVar9 < iVar3);
   }
+#if !NOCTURNE_AUTHENTIC_HUD_SCALE
+  nocturne_ui_pop_clip();
+#endif
 LAB_005009c0:
   if ((this_ptr->selected_item != (CDemonActor *)0x0) && (0.0 < this_ptr->item_highlight_timer)) {
     local_5c = 0x70;
@@ -327,13 +343,15 @@ LAB_005009c0:
                          iVar3 - local_5c);
       iVar11 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(local_44,0x58);
 #else
-      iVar5 = engine_font_cpp_CBitFont_wrapText_FUN_004d0010
+      iVar5 = nocturne_ui_wrap_to_width
                         (local_44,local_578,g_InventoryWrappedTextLines2[0],10,0x100,
-                         (iVar3 - local_5c) / ui_scale);
-      iVar11 = nocturne_ui_char_height(local_44,0x58,ui_scale);
+                         iVar3 - local_5c,panel_scale,&iVar11);
 #endif
       y = (g_WindowHeight - iVar10) + local_4c;
       iVar3 = g_WindowWidth - iVar3;
+#if !NOCTURNE_AUTHENTIC_HUD_SCALE
+      nocturne_ui_push_clip(iVar3,g_WindowHeight - iVar10,g_WindowWidth + -1,g_WindowHeight + -1);
+#endif
       iVar10 = 0;
       if (0 < iVar5) {
         pacVar12 = g_InventoryWrappedTextLines2;
@@ -343,12 +361,15 @@ LAB_005009c0:
           engine_font_cpp_CBitFont_drawText_FUN_004cda80
                     (local_44,*pacVar12,local_4c + iVar3,y,0xf8,0);
 #else
-          nocturne_ui_draw_text(local_44,*pacVar12,local_4c + iVar3,y,0xf8,0,ui_scale);
+          nocturne_ui_draw_text(local_44,*pacVar12,local_4c + iVar3,y,0xf8,0,panel_scale);
 #endif
           pacVar12 = pacVar12 + 1;
           y = y + iVar11;
         } while (iVar10 < iVar5);
       }
+#if !NOCTURNE_AUTHENTIC_HUD_SCALE
+      nocturne_ui_pop_clip();
+#endif
     }
   }
   iVar3 = g_WindowHeight;
