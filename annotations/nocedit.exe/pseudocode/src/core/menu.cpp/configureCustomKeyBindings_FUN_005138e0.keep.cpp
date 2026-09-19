@@ -632,5 +632,8 @@ LAB_00514a9c:
     }
     core_game_cpp_CGame_restoreDefaultControls_FUN_004dbbc0(g_CGamePtr);
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_a7c,0);
+#if !NOCTURNE_AUTHENTIC_CONTROL_SETUP
+    return;
+#endif
   } while( true );
 }

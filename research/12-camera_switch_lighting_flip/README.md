@@ -2,6 +2,8 @@
 
 Three bugs shared one symptom report: "ambient lighting sometimes goes much lower or
 brighter when the static camera angle changes". Bug 1 and Bug 2a are fixed; Bug 2b is open.
+Bug 3, a one-frame shadow loss on the way back from the pause menu, reached the same
+document because it presents the same way; its cause is unrelated and it is fixed.
 
 > **Provenance.** The original notes for this chapter were never committed — the directory
 > existed but was empty and untracked, and `research/13-accel_per_pixel_lighting` referred
@@ -558,6 +560,85 @@ Next moves, roughly in order of cost:
   dip and "the window is too bright in general" are different claims and only the first is
   measured.
 
+## Bug 3 — one-frame shadow loss on the way back from the pause menu. FIXED.
+
+Separate cause from 2a and 2b, and reproducible on demand rather than only across an
+alt-tab, which is what made it tractable: a save point standing in a doorway, pause →
+Options → back, and the light through the doorway loses its shadows for one frame and
+reads flat and bright before settling.
+
+### The invariant
+
+`CDemonSet::renderScene` ends by calling `CDemonLight::restoreDirtyRegions` for every spot
+light, which blits the light's master Z buffer back over its shadow map and resets
+`rect_array_count`. That wipes the actor occluders rendered into the map. What puts them
+back is `CDemonSet::renderStaticLights`, and `CGame::processFrame` runs the two in a fixed
+order:
+
+```c
+renderScene(g_CDemonSetPtr, 1);   // consumes the maps
+CGame::process(this_ptr);         // advances the simulation
+renderStaticLights(g_CDemonSetPtr);  // repopulates them for the NEXT frame
+```
+
+So between frames the maps are populated, and every render is preceded by a repopulate.
+
+`renderScene(set, 0)` is self-contained instead: the `skip_prerender == 0` block calls
+`renderStaticLights` at the top of the function, so one call is repopulate → render → wipe.
+That is why the editor's redraw loops are safe — `editGore`, `positionLight`,
+`computeCameraFog` and `rebuildAllFogAndPVS` call it once per iteration, and each wipe is
+covered by the next iteration's repopulate. `editActorsInSet` uses the other valid shape,
+`renderScene(set, 1)` followed by an explicit `renderStaticLights`.
+
+### The defect
+
+The pause menu's redraw on the way back from Options and from Warps calls
+`renderScene(set, 0)` **once** and returns to `processFrame`, whose render is not preceded
+by a repopulate. The maps are therefore wiped when the next frame draws, every spot light
+renders with static geometry only, and the frame after that repopulates and it reverts.
+
+Fixed by restoring the invariant at both sites in `CGame::runGameSession` — the redraw is
+followed by `renderStaticLights`, which is what `processFrame` would have done.
+
+### Measured
+
+Castle-doorway save, accelerated, three spot lights, counters cleared per frame.
+
+| arm | result |
+|---|---|
+| repaint suppressed entirely (`return` from `renderScene` when `skip_prerender == 0`) | flicker gone; stale buffer shows through under the menu, which is what the redraw exists to prevent |
+| repaint forced to `skip_prerender = 1` | flicker **unchanged** — the wipe happens either way |
+| repaint's `restoreDirtyRegions` suppressed (3 calls, one per spot light) | flicker gone |
+| `renderStaticLights` added after the repaint | flicker gone, redraw intact |
+
+That the second arm fails is the discriminating result: it rules out everything in the
+prerender and pins the carrier to the trailing wipe.
+
+### Eliminated for this bug — do not re-chase
+
+Each measured against the live repro, not reasoned about.
+
+1. **The prerender's light teardown.** `g_DynamicLightCount = 0` and
+   `g_CoronaGlobeCount = 0` look like Bug 2a's shape, but this scene runs `dyn=0 corona=0`
+   in the steady state and `dyn=0` on the repaint frame too — `addDynamicLight` does not
+   take. Nothing to tear down.
+2. **A missing or unbalanced lightmap bake.** `addLightmapToCorona` / `processCorona` /
+   `restoreDirtyRegions` counts are `3 / 1 / 3` on every frame from the repaint onward,
+   i.e. balanced. The `restore=9 precomp=3` window that appears once is `setCameraView`'s,
+   and the Warps path shows the same flicker without calling `setCameraView` at all.
+3. **The display-list size.** `sorted_render_actor_count` is 53 at the repaint against 6 on
+   a steady frame, which looks damning and is not the cause — `renderStaticLights` rebuilds
+   per light internally. Forcing `skip_prerender = 1` removes that difference and the
+   flicker survives.
+
+### What it says about 2b
+
+Only that `renderScene`'s trailing restore is paired with a *later* repopulate rather than
+being inert, so any analysis that treats a lone restore as balanced is wrong. It does not
+explain 2b: the focus-regain path reaches `renderStaticLights` through `setCameraView`, so
+the maps are populated when the next frame draws, and 2b's surface is the rose window's
+backdrop bake rather than a shadow map.
+
 ## Probes in this directory
 
 | file | what it captures |
@@ -574,6 +655,8 @@ Next moves, roughly in order of cost:
 | `altfocus_extent_probe.gdb` | the light's per-scanline projection extents — empty-span count and total span, per frame |
 | `altfocus_accel_compose_probe.gdb` | renderSceneGeometry / renderBackgroundActors counts per frame, split inside vs outside the camera apply |
 | `altfocus_lightmap_apply_probe.gdb` | **addLightmapToCorona / processCorona / restoreDirtyRegions counts per frame** — the one that found the 3-restores-to-1-apply imbalance |
+| `menureturn_bake_probe.gdb` | Bug 3 — the same counts plus the prerender flag across a pause-menu round trip |
+| `menureturn_restore_ab.gdb` | Bug 3 — **suppresses one half of the redraw's lightmap pair**; the arm that pinned the carrier to the trailing wipe |
 
 The dump probe exists to solve an observer problem worth remembering: reporting which
 lighting state is on screen requires alt-tabbing away, which changes the state. Anything

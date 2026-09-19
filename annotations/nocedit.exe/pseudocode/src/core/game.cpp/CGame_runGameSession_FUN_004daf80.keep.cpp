@@ -331,7 +331,10 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
               if (0xf0 < g_WindowHeight) {
                 g_EditorFont = g_ThemeFont;
               }
+#if !NOCTURNE_AUTHENTIC_OPTIONS_RESUMES_GAME
               core_set_cpp_CDemonSet_renderScene_FUN_0056c1a0(g_CDemonSetPtr,0);
+              core_set_cpp_CDemonSet_renderStaticLights_FUN_0056be80(g_CDemonSetPtr);
+#endif
             } while (!NOCTURNE_AUTHENTIC_OPTIONS_RESUMES_GAME);
             if (iVar5 == 2) {
               core_game_cpp_CGame_promptLoadGame_FUN_004e36f0(this_ptr);
@@ -352,6 +355,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
             if ((warps_item != -1) && (iVar5 == warps_item)) {
               nocturne_warps_menu();
               core_set_cpp_CDemonSet_renderScene_FUN_0056c1a0(g_CDemonSetPtr,0);
+              core_set_cpp_CDemonSet_renderStaticLights_FUN_0056be80(g_CDemonSetPtr);
             }
 #endif
             if ((skip_item != -1) && (iVar5 == skip_item)) {

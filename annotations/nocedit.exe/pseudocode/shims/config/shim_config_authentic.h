@@ -670,11 +670,19 @@
 //   screen refuses to change them, and with every row refused it accepts
 //   nothing but Escape.
 //
-//   1: shipped behaviour -- device-assigned rows refuse, permanently, and a
-//      change of control type reseeds nothing.
+//   The one way out of that, Restore defaults, is itself hard to tell from a
+//   no-op. It is row 0 of the same pick list, and choosing it applies the
+//   defaults and then rebuilds the screen at the row the cursor was on -- row 0.
+//   Enter restores again. On a set already at its defaults nothing on screen
+//   changes either, so the screen reads as refusing to close.
+//
+//   1: shipped behaviour -- device-assigned rows refuse, permanently; a change
+//      of control type reseeds nothing; and Restore defaults reopens the screen
+//      on itself.
 //   0: the refusing labels are dropped, so any row reaches the capture path;
-//      and a change of control type applies that type's defaults, so the
-//      bindings always match the device selected.
+//      a change of control type applies that type's defaults, so the bindings
+//      always match the device selected; and Restore defaults returns to
+//      Control Options, which is both the acknowledgement and the way out.
 //
 //   The cost of reseeding is that stepping the control type replaces custom
 //   bindings -- the setting is a left/right cycle, so passing through a type

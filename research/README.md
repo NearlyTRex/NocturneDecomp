@@ -264,11 +264,12 @@ catalogued with snake_case parameters.
 ### [12-camera_switch_lighting_flip/](12-camera_switch_lighting_flip/)
 
 Scene lighting changing when the game window gains or loses focus. Two bugs behind one
-symptom report.
+symptom report, plus a third — a one-frame shadow loss on the way back from the pause
+menu — that presents the same way and has a separate, settled cause.
 
 | File | Description |
 |------|-------------|
-| `README.md` | Both bugs, the eliminated list, and where Bug 2 stands |
+| `README.md` | All three bugs, the eliminated lists, and where Bug 2b stands |
 | `altfocus_lighting_probe.gdb` | projection + `CDemonSet` lighting gates per camera apply |
 | `altfocus_lighting_dump.gdb` | automatic numbered lighting-state dumps after each apply |
 | `altfocus_restore_probe.gdb` | focus transitions against camera applies |
@@ -276,7 +277,8 @@ symptom report.
 | `altfocus_dirtyrect_probe.gdb` | spot-light shadow-map dirty-rect accounting |
 | `altfocus_pixel_capture.gdb` | periodic frontbuffer capture |
 | `altfocus_transient_burst.gdb` | 14 consecutive frames per apply — found Bug 2a |
-| (+13 more) | Per-stage lightmap, occlusion, extent and focus-burst probes; the blend oracle (`blend_oracle_dump.gdb`, `composite_inputs_dump.gdb`, `verify_blend.py`); hardware-draw suppression |
+| `menureturn_restore_ab.gdb` | suppresses half the redraw's lightmap pair — found Bug 3 |
+| (+14 more) | Per-stage lightmap, occlusion, extent and focus-burst probes; the menu-return bake counter; the blend oracle (`blend_oracle_dump.gdb`, `composite_inputs_dump.gdb`, `verify_blend.py`); hardware-draw suppression |
 
 **Key outcomes:**
 - Bug 1 **fixed** — `setCameraView` made the current camera its own previous-best, so the

@@ -61,6 +61,13 @@ nested:annotations/nocedit.exe/pseudocode/src/core/menu.cpp/showOptionsScreen_FU
 # flags are present and neither decides the other.
 nested:annotations/nocedit.exe/pseudocode/src/core/inv.cpp/CInventory_renderAllItems_FUN_00500690.keep.cpp:NOCTURNE_AUTHENTIC_ITEM_HELP_POSITION
 
+# Which space the icon panel is measured in. HUD_ICON_SPACE's own site is the
+# unnested one in CInventory::renderSelectedItems; here it only picks the
+# numerator and denominator handed to nocturne_ui_box_scale, and that call
+# exists solely in HUD_SCALE's scaled arm. Both arms of both flags are present;
+# HUD_SCALE=1 simply leaves no scaled panel for the inner flag to place.
+nested:annotations/nocedit.exe/pseudocode/src/core/inv.cpp/CInventory_renderAllItems_FUN_00500690.keep.cpp:NOCTURNE_AUTHENTIC_HUD_ICON_SPACE
+
 # The wording of the confirm dialog's two choices. The two builds do not share a
 # dialog: the editor puts the choices through showMultiChoiceDialog as CStrList
 # entries prefixed with '^', the game builds a CPickList and binds hotkeys from
