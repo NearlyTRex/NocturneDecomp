@@ -149,15 +149,24 @@ const float kZoomMax  = 8.0f;
 const float kZoomRate = 2.2f;     // multiplicative, per second
 const float kPanRate  = 260.0f;   // world units per second, at zoom 1
 
-// Rate at which the drawn band is raised and lowered, in world units per
-// second. A little over two band-heights: fast enough to cross a large level's
-// vertical span (424 units on CASTLE.geo) without a long hold, slow enough to
-// stop on a chosen floor.
+// Visibility of the storeys the band does not cover, 0 leaving them unlit and 1
+// drawing them as brightly as the band itself. Held at half, where they read as
+// context under the current floor rather than as part of the room the player is
+// standing in, and swept between the two by the triggers.
 //
-// Expressed in world units rather than storeys. The band height is
-// content-dependent and tuned against a single level (see research/19-automap,
-// open question 1), so a storey is not a reliable unit here.
-const float kElevateRate = 30.0f;
+// It scales the line colour rather than selecting a second palette entry, so a
+// dimmed wall keeps its material's hue and the floor fill stays one drawing
+// instead of gaining a layer to look through.
+const float kDimDefault = 0.5f;
+const float kDimRate    = 0.9f;   // full sweep in a little over a second
+
+// Below this a trigger counts as released. nocturne_gamepad_axes hands the
+// triggers over raw -- the radial deadzone is for the sticks, which have a
+// negative half, and a trigger does not -- so a resting one can report a little
+// above zero and would otherwise creep the setting on its own.
+// NOCTURNE_PAD_TRIGGER_THRESHOLD is not the figure for this: that is where a
+// trigger counts as a digital press, and an analogue sweep starts long before.
+const float kDimDeadzone = 0.08f;
 
 // How far past the level's own bounds panning may go, so the edge of the map
 // can sit somewhere other than hard against the screen edge.
@@ -208,24 +217,20 @@ bool g_complete = false;
 
 bool  g_open = false;
 bool  g_key_was_down = false;
+bool  g_recentre_was_down = false;
 float g_zoom = 1.0f;
 float g_pan_x = 0.0f, g_pan_z = 0.0f;
 
+// Visibility of the storeys outside the drawn band. A preference rather than a
+// position, so it survives closing the map, and it is not written to the ini --
+// the one map setting the ini carries is the zoom.
+float g_other_dim = kDimDefault;
+
 // Whether the marker key is showing in place of the heading. Edge-triggered off
 // its own binding, so holding the button does not flap it. Reset when the map
-// opens, along with the pan and the elevation.
+// opens, along with the pan.
 bool g_legend = false;
 bool g_legend_was_down = false;
-
-// Offset of the drawn band above the player's feet; zero is his own floor.
-//
-// Affects the view only. The reveal is driven by the player's actual position,
-// so raising this shows floors already explored and leaves unexplored ones
-// fogged -- it is not a way to see through the level.
-//
-// Not persisted, unlike the zoom: it is a position within one level rather than
-// a preference, and the map should open on the player's own floor.
-float g_elevation = 0.0f;
 
 // M for map. Tab is the older convention but the game already uses it. The ini
 // overwrites this on load once the player has bound anything.
@@ -258,11 +263,32 @@ CDemonActor *local_hero(void) {
 // Whether the hero is dying or dead. Through the vtable rather than
 // CCharacter::getDeathState directly: ten classes override it, CStranger among
 // them, so the base would answer for the wrong one.
+//
+// Hit points are consulted as well, because getDeathState does not read them:
+// it compares the motion controller's current state NAME against "DIE" and
+// "DEAD", so a death whose animation state is named anything else answers
+// ALIVE for as long as that state is playing. A fatal fall is one such -- it
+// drives the controller to state 0x12 and leaves the hero at or below zero --
+// and a map that believes him alive stays open through the death and is still
+// the last thing painted when the Game Over list is drawn over it.
+//
+// strangerCannotDie is asked first, because it is the mission script saying
+// this hero does not die: CStranger::getDeathState answers ALIVE on it
+// regardless of the controller, and a hero held at zero in such a mission is
+// still playing.
 bool hero_is_down(CDemonActor *hero) {
     if (hero == nullptr) return false;
     CCharacter_full_vtable *vt = hero->vtable._uc;
     if (vt == nullptr) return false;
-    return (*(vt->_uc).getDeathState)((CCharacter *)hero) != DEATH_STATE_ALIVE;
+    if ((*(vt->_uc).getDeathState)((CCharacter *)hero) != DEATH_STATE_ALIVE) {
+        return true;
+    }
+    if (g_CEventListPtr != (CEventList *)nullptr &&
+        core_event_cpp_CEventList_evaluateCondition_FUN_004adca0(
+            g_CEventListPtr, (char *)"strangerCannotDie") != 0) {
+        return false;
+    }
+    return ((CCharacter *)hero)->hit_points <= 0.0f;
 }
 
 // Nearest palette entry to a colour, in whatever mode the game is running.
@@ -467,8 +493,7 @@ const int kMarkerCount = (int)(sizeof(k_markers) / sizeof(k_markers[0]));
 // shape above is reflected here without a second edit.
 //
 // Ordered by expected lookup frequency: the player and other characters, then
-// items, then doors. An `rgb` of null marks a text-only item, used by the
-// elevation readout when it shares this row.
+// items, then doors.
 struct LegendItem {
     MarkerShape shape;
     const int  *rgb;
@@ -491,9 +516,6 @@ const LegendItem k_legend[] = {
 
 const int kLegendCount = (int)(sizeof(k_legend) / sizeof(k_legend[0]));
 
-// Room for the built-in items plus the elevation readout appended to them.
-const int kLegendMax = kLegendCount + 1;
-
 // Gaps around a key item, at 640x480 and scaled by ui like the radii are.
 const int kLegendGlyphGap = 3;    // between a swatch and its label
 const int kLegendItemGap  = 10;   // between one item and the next
@@ -505,15 +527,15 @@ struct LegendLayout {
     int count;
     int rows;
     int row_h;
-    int x[kLegendMax];
-    int row[kLegendMax];
-    const LegendItem *item[kLegendMax];
+    int x[kLegendCount];
+    int row[kLegendCount];
+    const LegendItem *item[kLegendCount];
 };
 
 // Flow the key into as many rows as it needs at the given width. Labels vary in
 // length and the window may be 640 or 3840 wide, so a fixed column count either
 // wastes a wide screen or overruns a narrow one.
-void legend_layout(LegendLayout *out, const LegendItem *extra, int ui, int avail)
+void legend_layout(LegendLayout *out, int ui, int avail)
 {
     int i;
     int pen = 0;
@@ -532,11 +554,9 @@ void legend_layout(LegendLayout *out, const LegendItem *extra, int ui, int avail
     out->row_h = (text_h > glyph_h) ? text_h : glyph_h;
     if (out->row_h <= 0) { out->row_h = 12 * ui; }
 
-    for (i = 0; i < kLegendCount + (extra != nullptr ? 1 : 0); i++) {
-        const LegendItem *it = (i < kLegendCount) ? &k_legend[i] : extra;
-        const int glyph_w = (it->rgb != nullptr)
-                                ? 2 * it->radius * ui + 1 + kLegendGlyphGap * ui
-                                : 0;
+    for (i = 0; i < kLegendCount; i++) {
+        const LegendItem *it = &k_legend[i];
+        const int glyph_w = 2 * it->radius * ui + 1 + kLegendGlyphGap * ui;
         const int w = glyph_w +
                       nocturne_ui_text_width(g_ThemeFont, (char *)it->label, ui);
 
@@ -552,6 +572,45 @@ void legend_layout(LegendLayout *out, const LegendItem *extra, int ui, int avail
         out->count++;
         pen += w + kLegendItemGap * ui;
     }
+}
+
+// ---- fitting the overlay text ----------------------------------------------
+//
+// The two overlay blocks are the one part of this screen whose constraint is
+// width, and nocturne_ui_scale answers a question about height: it is
+// round(g_WindowHeight / 480), so it steps in whole integers as the mode gets
+// taller while the width the text must fit into grows continuously. Each step
+// costs a block half or a third of its room at once, and a 4:3 mode's width
+// does not grow fast enough to pay that back before the next step.
+//
+// Measured in unscaled font pixels, (g_WindowWidth - 2 * kMargin) / scale:
+//
+//   640x480    scale 1    592
+//   800x600    scale 1    752   <- the most room any mode has
+//   1024x768   scale 2    488   <- less than 640x480, on a larger screen
+//   1280x1024  scale 2    616
+//   1600x1200  scale 3    517
+//
+// So every mode above 800x600 has less room for text than 800x600 does, and the
+// sequence is not even monotonic. A block sized at the HUD scale therefore wraps
+// on every large mode and on none of the small ones, which reads as the text
+// growing rather than the room shrinking.
+//
+// Each block takes the largest scale at or below the HUD's that lays it out on
+// one row. Self-limiting rather than a fixed reduction: a block that fits at the
+// HUD scale keeps it, and one that does not gives up as little as it can -- at
+// 1600x1200 a line that overflows at 3 usually fits at 2 rather than dropping to
+// 1. When even scale 1 needs two rows the HUD scale is kept and the block wraps,
+// since small *and* wrapped is worse than either alone.
+
+int legend_fitting_scale(int ui, int avail)
+{
+    LegendLayout probe;
+    for (int scale = ui; scale >= 1; scale--) {
+        legend_layout(&probe, scale, avail);
+        if (probe.rows <= 1) { return scale; }
+    }
+    return ui;
 }
 
 // Which row of k_markers describes this actor, or -1 for one with no marker of
@@ -576,22 +635,32 @@ int marker_index(CDemonActor *actor)
     return -1;
 }
 
-// One run of the legend. Labels and binding names are separated so the two can
-// be drawn in different colours, which is the only thing that makes a long line
-// of borrowed controls scannable.
+// One run of the borrowed-control legend. Labels and binding names are separated
+// so the two can be drawn in different colours, which is the only thing that
+// makes a long line of borrowed controls scannable.
+//
+// `starts_control` marks the label that opens a control. It is where a row may
+// break and where the gap between two controls goes, so a control's label is
+// never left on one row with its binding names on the next.
 struct HelpSeg {
     char text[48];
     bool is_key;
+    bool starts_control;
 };
 
-// Headroom over what the fullest form uses (22: a label and its names for each
-// of pan, zoom, elevation and the legend, plus CLOSE and its name, plus the
-// separating spaces).
+// Headroom over what the full line uses: 22, being a label and its names for
+// each of pan, zoom, the other floors, recentring, the legend and CLOSE, plus
+// the spaces inside a control that has more than one name.
 //
-// help_push drops segments silently once the cap is reached, and CLOSE is pushed
-// last -- so a cap the fullest form can reach would drop the one segment every
-// fallback level must keep. Recount when adding a control.
-const int kHelpSegMax = 32;
+// help_push drops segments silently once the cap is reached, so a cap the line
+// can reach loses controls off the end without saying so. Recount when adding
+// one.
+const int kHelpSegMax = 40;
+
+// Gap between two controls sharing a row, at 640x480 and scaled by ui. A pixel
+// gap rather than spaces in the label, so a control that starts a row starts at
+// the row's own left edge.
+const int kHelpControlGap = 14;
 
 // Longest common prefix of a set of binding names, cut back to a word boundary.
 //
@@ -619,18 +688,46 @@ int common_prefix_len(const char names[][40], int count)
     return n;
 }
 
-void help_push(HelpSeg *segs, int *count, const char *text, bool is_key)
+void help_push(HelpSeg *segs, int *count, const char *text, bool is_key,
+               bool starts_control)
 {
     if (*count >= kHelpSegMax || text[0] == '\0') { return; }
     std::snprintf(segs[*count].text, sizeof(segs[*count].text), "%s", text);
     segs[*count].is_key = is_key;
+    segs[*count].starts_control = starts_control;
     (*count)++;
 }
 
-// The borrowed-control legend at one level of detail, 0 being the fullest.
-// Every level keeps CLOSE: pan and zoom can be found by pushing things, but a
-// player who cannot find the way out is stuck looking at a map.
-int build_help_segments(HelpSeg *segs, int level)
+// One borrowed control: its label, then the binding names that drive it.
+//
+// Two or more names collapse to the prefix they share when there is one --
+// which is how a pad's four pan bindings become a single "Left Stick". Names
+// that share nothing print in full, since there is no shorter true form of
+// "LB RB", and a keyboard shares nothing anywhere, which is the behaviour a
+// keyboard wants.
+void help_push_control(HelpSeg *segs, int *count, const char *label,
+                       const char names[][40], int name_count)
+{
+    help_push(segs, count, label, false, true);
+
+    const int shared = common_prefix_len(names, name_count);
+    if (shared > 0) {
+        char shortened[40];
+        std::snprintf(shortened, sizeof(shortened), "%.*s", shared, names[0]);
+        help_push(segs, count, shortened, true, false);
+        return;
+    }
+    for (int i = 0; i < name_count; i++) {
+        if (i > 0) { help_push(segs, count, " ", false, false); }
+        help_push(segs, count, names[i], true, false);
+    }
+}
+
+// Every borrowed control, in full. Nothing is dropped for width -- the layout
+// wraps instead, so a 640x480 screen gets the same controls a 3840 one does
+// over however many rows it takes. A line that drops controls to fit hides the
+// ones a player is least likely to guess, which is the wrong end to lose.
+int build_help_segments(HelpSeg *segs)
 {
     CGame *g = g_CGamePtr;
     int count = 0;
@@ -639,101 +736,94 @@ int build_help_segments(HelpSeg *segs, int level)
 
     // getKeyDisplayName hands back one shared buffer, so each name has to be
     // taken before the next call overwrites it.
-    char pan[4][40], zoom[2][40], elev[2][40], key[40], open[40];
+    char pan[4][40], zoom[2][40], floors[2][40];
+    char centre[1][40], key[1][40], open[1][40];
     strcpy(pan[0], core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_walk));
     strcpy(pan[1], core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_backup));
     strcpy(pan[2], core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_strafe_left));
     strcpy(pan[3], core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_strafe_right));
-    strcpy(zoom[0], core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_point_up));
-    strcpy(zoom[1], core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_point_down));
-    strcpy(elev[0], core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_next_weapon));
-    strcpy(elev[1], core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_prev_weapon));
-    strcpy(key, core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_item_desc));
-    strcpy(open, core_menu_cpp_getKeyDisplayName_FUN_005134e0(g_key_binding));
+    strcpy(zoom[0], core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_next_weapon));
+    strcpy(zoom[1], core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_prev_weapon));
+    strcpy(floors[0], core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_fire));
+    strcpy(floors[1], core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_draw));
+    strcpy(centre[0], core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_run));
+    strcpy(key[0], core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_item_desc));
+    strcpy(open[0], core_menu_cpp_getKeyDisplayName_FUN_005134e0(g_key_binding));
 
-    const int pan_shared = common_prefix_len(pan, 4);
-    const int zoom_shared = common_prefix_len(zoom, 2);
-    const int elev_shared = common_prefix_len(elev, 2);
+    help_push_control(segs, &count, "PAN ",    pan,    4);
+    help_push_control(segs, &count, "ZOOM ",   zoom,   2);
+    help_push_control(segs, &count, "FLOORS ", floors, 2);
+    help_push_control(segs, &count, "CENTRE ", centre, 1);
+    help_push_control(segs, &count, "LEGEND ", key,    1);
+    help_push_control(segs, &count, "CLOSE ",  open,   1);
+    return count;
+}
 
-    char pan_short[40], zoom_short[40], elev_short[40];
-    std::snprintf(pan_short, sizeof(pan_short), "%.*s", pan_shared, pan[0]);
-    std::snprintf(zoom_short, sizeof(zoom_short), "%.*s", zoom_shared, zoom[0]);
-    std::snprintf(elev_short, sizeof(elev_short), "%.*s", elev_shared, elev[0]);
+// Where each segment lands once the controls are wrapped to the width.
+struct HelpLayout {
+    int rows;
+    int row[kHelpSegMax];
+    int x[kHelpSegMax];
+};
 
-    // A collapsed form is only offered when there is something to collapse to,
-    // which in practice means a pad. A keyboard's names share no prefix, so
-    // can_collapse is false, level 1 is skipped, and the full form is used.
-    //
-    // Elevation is not part of the test: it is on the bumpers, whose names
-    // ("LB", "RB") share no prefix and are short enough that collapsing them
-    // would save nothing.
-    const bool can_collapse = (pan_shared > 0 && zoom_shared > 0);
-    if (level == 1 && !can_collapse) { return 0; }
+// Flow the controls into as many rows as they need, breaking only between
+// controls so a label never ends a row with its binding names starting the
+// next. Each row is centred on its own width, and a control wider than the
+// whole screen still gets a row rather than being dropped.
+void help_layout(HelpLayout *out, const HelpSeg *segs, int count, int ui,
+                 int avail)
+{
+    int i;
+    int pen = 0;
 
-    if (level <= 1) {
-        help_push(segs, &count, "PAN ", false);
-        if (level == 0) {
-            for (int i = 0; i < 4; i++) {
-                help_push(segs, &count, pan[i], true);
-                help_push(segs, &count, " ", false);
+    out->rows = (count > 0) ? 1 : 0;
+
+    for (i = 0; i < count; i++) {
+        if (segs[i].starts_control && i > 0) {
+            // Width of the control opening here, so the decision to wrap is
+            // made once for the whole of it rather than part way through.
+            int w = 0;
+            int j;
+            for (j = i; j < count && (j == i || !segs[j].starts_control); j++) {
+                w += nocturne_ui_text_width(g_ThemeFont, (char *)segs[j].text, ui);
             }
-        } else {
-            help_push(segs, &count, pan_short, true);
+            if (pen + kHelpControlGap * ui + w > avail) {
+                out->rows++;
+                pen = 0;
+            } else {
+                pen += kHelpControlGap * ui;
+            }
         }
-        help_push(segs, &count, "   ZOOM ", false);
-        if (level == 0) {
-            help_push(segs, &count, zoom[0], true);
-            help_push(segs, &count, " ", false);
-            help_push(segs, &count, zoom[1], true);
-        } else {
-            help_push(segs, &count, zoom_short, true);
-        }
-        // Both names even in the collapsed form, unless the device does share a
-        // prefix. Two bumpers are the usual case and share none; "LB RB" is
-        // already shorter than any collapse of it.
-        help_push(segs, &count, "   ELEV ", false);
-        if (level == 0 || elev_shared == 0) {
-            help_push(segs, &count, elev[0], true);
-            help_push(segs, &count, " ", false);
-            help_push(segs, &count, elev[1], true);
-        } else {
-            help_push(segs, &count, elev_short, true);
-        }
-        help_push(segs, &count, "   LEGEND ", false);
-        help_push(segs, &count, key, true);
-        help_push(segs, &count, "   ", false);
-    } else if (level == 2 && pan_shared > 0) {
-        help_push(segs, &count, "PAN ", false);
-        help_push(segs, &count, pan_short, true);
-        help_push(segs, &count, "   ", false);
+        out->row[i] = out->rows - 1;
+        out->x[i]   = pen;
+        pen += nocturne_ui_text_width(g_ThemeFont, (char *)segs[i].text, ui);
     }
 
-    help_push(segs, &count, "CLOSE ", false);
-    help_push(segs, &count, open, true);
-    return count;
+    // Centre each row on its own width. Done as a second pass because a row's
+    // width is not known until the row after it has begun.
+    for (i = 0; i < count; ) {
+        int end = i;
+        int width;
+        int shift;
+        while (end < count && out->row[end] == out->row[i]) { end++; }
+        width = out->x[end - 1] +
+                nocturne_ui_text_width(g_ThemeFont, (char *)segs[end - 1].text, ui);
+        shift = (avail - width) / 2;
+        if (shift < 0) { shift = 0; }
+        for (; i < end; i++) { out->x[i] += shift; }
+    }
 }
 
-int help_segments_width(const HelpSeg *segs, int count, int ui)
+// See the note above legend_fitting_scale for why the block is not simply drawn
+// at the HUD scale.
+int help_fitting_scale(const HelpSeg *segs, int count, int ui, int avail)
 {
-    int width = 0;
-    for (int i = 0; i < count; i++) {
-        width += nocturne_ui_text_width(g_ThemeFont, (char *)segs[i].text, ui);
+    HelpLayout probe;
+    for (int scale = ui; scale >= 1; scale--) {
+        help_layout(&probe, segs, count, scale, avail);
+        if (probe.rows <= 1) { return scale; }
     }
-    return width;
-}
-
-// The fullest legend that fits the screen.
-int build_help_fitting(HelpSeg *segs, int ui)
-{
-    const int fits = g_WindowWidth - kMargin * 2;
-    int count = 0;
-
-    for (int level = 0; level <= 3; level++) {
-        count = build_help_segments(segs, level);
-        if (count == 0) { continue; }
-        if (help_segments_width(segs, count, ui) <= fits) { return count; }
-    }
-    return count;
+    return ui;
 }
 
 }  // namespace
@@ -750,6 +840,7 @@ extern "C" void nocturne_automap_reset(void)
     g_complete = false;
     g_open = false;
     g_key_was_down = false;
+    g_recentre_was_down = false;
     // Zoom is deliberately NOT reset: it is the player's preference, not this
     // level's state, and a new level is exactly when losing it would be most
     // annoying.
@@ -1005,9 +1096,13 @@ void recount_explored(void)
 
 extern "C" void nocturne_automap_update(void)
 {
-    if (g_cube_count == 0) return;
+    // An open map is closed rather than left standing when there is nothing to
+    // service it with. Both of these mean the session is being torn down around
+    // it, and a map still open at that point is the last thing painted and
+    // stays under whatever screen is drawn next.
+    if (g_cube_count == 0) { g_open = false; return; }
     CDemonActor *hero = local_hero();
-    if (hero == nullptr) return;
+    if (hero == nullptr) { g_open = false; return; }
 
     const CVector3f p = hero->location.position;
     reveal_around(p);
@@ -1047,12 +1142,13 @@ extern "C" void nocturne_automap_update(void)
             // not move -- the map has the controls for as long as it is up.
             g_pan_x = p.x;
             g_pan_z = p.z;
-            g_elevation = 0.0f;      // his own floor, for the same reason
             g_legend = false;        // and the heading, not the marker key
             // Primed from the button's real state, so one already held as the
             // map comes up is not read as a fresh press on the first frame.
             g_legend_was_down = (g_CGamePtr != nullptr) &&
                                 down(g_CGamePtr->key_item_desc);
+            g_recentre_was_down = (g_CGamePtr != nullptr) &&
+                                  down(g_CGamePtr->key_run);
             g_zoom = (float)g_zoom_percent * 0.01f;
             if (g_zoom < kZoomMin) g_zoom = kZoomMin;
             if (g_zoom > kZoomMax) g_zoom = kZoomMax;
@@ -1064,21 +1160,24 @@ extern "C" void nocturne_automap_update(void)
     CGame *g = g_CGamePtr;
     const float dt = g->delta_time_float;
 
-    // Sticks first. The pad shim hands these over already deadzoned and
+    // Analogue first. The pad shim hands the sticks over already deadzoned and
     // rescaled to -1..1, so a gentle push pans slowly and a hard one fast --
-    // which is the whole reason to read the stick as an axis rather than
-    // through the four digital codes it also synthesises.
-    // look_x is not requested: the right stick's left/right axis drives nothing
-    // on this screen. See the key_left / key_right note below.
-    float move_x = 0.0f, move_y = 0.0f, look_y = 0.0f;
-    nocturne_gamepad_axes(&move_x, &move_y, nullptr, &look_y, nullptr, nullptr);
+    // which is the whole reason to read a stick as an axis rather than through
+    // the four digital codes it also synthesises. The triggers come over raw.
+    //
+    // Neither right-stick axis is requested: nothing on this screen reads one.
+    float move_x = 0.0f, move_y = 0.0f;
+    float trig_l = 0.0f, trig_r = 0.0f;
+    nocturne_gamepad_axes(&move_x, &move_y, nullptr, nullptr, &trig_l, &trig_r);
+    if (trig_l < kDimDeadzone) trig_l = 0.0f;
+    if (trig_r < kDimDeadzone) trig_r = 0.0f;
 
     // Pan is the left stick, which on a pad is walk/backup and strafe, so the
     // digital fallback reads exactly those bindings and nothing else.
     //
-    // key_left / key_right are the right stick's other axis and are not read
-    // anywhere on this screen. Reading them here would put pan and zoom on the
-    // same stick.
+    // key_left / key_right and key_point_up / key_point_down are the right
+    // stick's two axes, and key_next_ammo / key_weapon_5 are the d-pad's
+    // vertical pair. None of them is read anywhere on this screen.
     //
     // Stick y is positive downwards; on the map, down the screen is -z.
     float mx = move_x, mz = -move_y;
@@ -1115,14 +1214,26 @@ extern "C" void nocturne_automap_update(void)
         if (g_pan_z > bz1) g_pan_z = bz1;
     }
 
-    // Zoom is the right stick, which on a pad is turn and look -- so the
-    // digital fallback is the look bindings, the half of that stick pan does
-    // not touch. Pushed up zooms in.
-    float zoom_axis = -look_y;
-    if (zoom_axis == 0.0f) {
-        if (down(g->key_point_up))   zoom_axis += 1.0f;
-        if (down(g->key_point_down)) zoom_axis -= 1.0f;
+    // Recentre the view on the hero, on key_run -- the left stick's own button
+    // on a pad, which puts it under the thumb that moved the view away.
+    //
+    // Pan only. Elevation has a control of its own, and the question this
+    // answers is where the hero is on the floor being looked at.
+    const bool recentre_now = down(g->key_run);
+    if (recentre_now && !g_recentre_was_down) {
+        g_pan_x = p.x;
+        g_pan_z = p.z;
     }
+    g_recentre_was_down = recentre_now;
+
+    // Zoom is the weapon-cycle pair, the two bumpers on a pad: next zooms in,
+    // previous zooms out.
+    //
+    // Digital only. These are buttons, so there is no axis to read and nothing
+    // to blend an analogue reading against.
+    float zoom_axis = 0.0f;
+    if (down(g->key_next_weapon)) zoom_axis += 1.0f;
+    if (down(g->key_prev_weapon)) zoom_axis -= 1.0f;
 
     if (zoom_axis != 0.0f) {
         // Multiplicative, so each step is the same proportion of the current
@@ -1133,16 +1244,24 @@ extern "C" void nocturne_automap_update(void)
     if (g_zoom > kZoomMax) g_zoom = kZoomMax;
     g_zoom_percent = (int)(g_zoom * 100.0f + 0.5f);
 
-    // Elevation is the weapon-cycle pair, which on a pad is the two bumpers:
-    // next raises, previous lowers. A button pair suits stepping through floors,
-    // and it keeps elevation off the sticks: sharing the right stick with zoom
-    // means holding one axis to hold an altitude while the other changes scale.
+    // How brightly the storeys outside the band draw, on key_fire and key_draw
+    // -- the two triggers on a pad. Right brings the other floors up to the
+    // band's own brightness, left takes them down to unlit.
     //
-    // Digital only. These are buttons, so there is no axis to read and nothing
-    // to blend an analogue reading against.
-    float elev_axis = 0.0f;
-    if (down(g->key_next_weapon)) elev_axis += 1.0f;
-    if (down(g->key_prev_weapon)) elev_axis -= 1.0f;
+    // Analogue, so a part-pulled trigger sweeps slowly, with the digital codes
+    // consulted only when both triggers read released. The pad synthesises
+    // those codes from the same axes past its own press threshold, so blending
+    // the two would turn any pull past that point into a full-speed one.
+    float dim_axis = trig_r - trig_l;
+    if (dim_axis == 0.0f) {
+        if (down(g->key_fire)) dim_axis += 1.0f;
+        if (down(g->key_draw)) dim_axis -= 1.0f;
+    }
+    if (dim_axis != 0.0f) {
+        g_other_dim += dim_axis * kDimRate * dt;
+        if (g_other_dim < 0.0f) g_other_dim = 0.0f;
+        if (g_other_dim > 1.0f) g_other_dim = 1.0f;
+    }
 
     // The marker key, on the item-description binding (Guide on a pad). The
     // action already means "describe what I am looking at", and no item is in
@@ -1153,24 +1272,6 @@ extern "C" void nocturne_automap_update(void)
     const bool legend_now = down(g->key_item_desc);
     if (legend_now && !g_legend_was_down) { g_legend = !g_legend; }
     g_legend_was_down = legend_now;
-
-    if (elev_axis != 0.0f) {
-        g_elevation += elev_axis * kElevateRate * dt;
-
-        // Clamped to the level's vertical bounds so the band cannot leave it.
-        // Relative to the player's own height, since the offset is. At the
-        // limits the band sits on the level's top or bottom and further input
-        // does nothing, rather than scrolling into empty space with nothing
-        // drawn -- the same constraint panning applies horizontally.
-        CDemonRaytrace *rt = &g_CDemonRaytraceInstance;
-        const float lowest  = rt->bbox_min.y - p.y;
-        const float highest = rt->bbox_max.y - p.y;
-        if (g_elevation < lowest)  g_elevation = lowest;
-        if (g_elevation > highest) g_elevation = highest;
-        // Inverted or empty bounds: leave the band on the player's own floor
-        // rather than clamping to an arbitrary value.
-        if (lowest > highest) g_elevation = 0.0f;
-    }
 }
 
 // Complete means the whole map is shown, so anything short of 100 is a lie
@@ -1265,63 +1366,53 @@ extern "C" void nocturne_automap_render(void)
                             g_CDemonMissionPtr->mission_name)
                       : (char *)nullptr;
 
-    // Elevation readout, shown only when the band is off the player's own
-    // floor. Its presence is what distinguishes a raised view from a wrong one:
-    // the player marker keeps drawing at any elevation, so without this the map
-    // appears to show him standing on a floor he is not on.
-    //
-    // Signed world units rather than floors -- see kElevateRate for why a
-    // storey is not a reliable unit here. The value is read by watching it
-    // change, so it needs no unit label.
-    char elev[32];
-    const int elev_units = (int)(g_elevation < 0.0f ? g_elevation - 0.5f
-                                                    : g_elevation + 0.5f);
-    if (elev_units != 0) {
-        std::snprintf(elev, sizeof(elev), "ELEV %+d", elev_units);
-    } else {
-        elev[0] = '\0';
-    }
-
     if (place != (char *)nullptr && place[0] != '\0') {
-        std::snprintf(title, sizeof(title), "%s   %d%%%s%s%s", place,
+        std::snprintf(title, sizeof(title), "%s   %d%%%s", place,
                       nocturne_automap_explored_percent(),
-                      g_complete ? "   COMPLETE" : "",
-                      (elev[0] != '\0') ? "   " : "", elev);
+                      g_complete ? "   COMPLETE" : "");
     } else {
-        std::snprintf(title, sizeof(title), "MAP  %d%%%s%s%s",
+        std::snprintf(title, sizeof(title), "MAP  %d%%%s",
                       nocturne_automap_explored_percent(),
-                      g_complete ? "  COMPLETE" : "",
-                      (elev[0] != '\0') ? "  " : "", elev);
+                      g_complete ? "  COMPLETE" : "");
     }
-
-    HelpSeg help[kHelpSegMax];
-    const int help_count = build_help_fitting(help, ui);
 
     // Padding above and below the contents of a band.
     const int pad = 4 * ui;
 
-    // The marker key stands in for the heading. Laid out here, before the map
-    // window, for the same reason the text lines are measured here: it
-    // determines the top band's height and may need more than one row.
-    //
-    // The elevation readout is appended to it. It is state rather than a label,
-    // and replacing it would remove the only indication that the band is not
-    // the player's own floor.
+    // Both bands are laid out here, before the map window, because both decide
+    // how tall they are and the map takes whatever is left. Each can need more
+    // than one row.
+    // Each at the largest scale that keeps it on one row, which is not always
+    // the HUD's -- see legend_fitting_scale. The title is not fitted down: it is
+    // a few words and fits at every mode's HUD scale.
+    const int avail = g_WindowWidth - kMargin * 2;
+
+    HelpSeg help[kHelpSegMax];
+    HelpLayout help_rows;
+    int help_ui = ui;
+    const int help_count = build_help_segments(help);
+    if (help_count > 0) {
+        help_ui = help_fitting_scale(help, help_count, ui, avail);
+        help_layout(&help_rows, help, help_count, help_ui, avail);
+    }
+
     LegendLayout legend;
-    const LegendItem elev_item = { MARK_DISC, (const int *)nullptr, 0, elev };
+    int legend_ui = ui;
     if (g_legend) {
-        legend_layout(&legend, (elev[0] != '\0') ? &elev_item : nullptr, ui,
-                      g_WindowWidth - kMargin * 2);
+        legend_ui = legend_fitting_scale(ui, avail);
+        legend_layout(&legend, legend_ui, avail);
     }
 
     int title_h = nocturne_ui_text_height(g_ThemeFont, title, ui);
     if (title_h <= 0) title_h = 12 * ui;
-    // One line, so any segment measures the band; the first is always a label.
-    int help_h = (help_count > 0) ? nocturne_ui_text_height(g_ThemeFont, help[0].text, ui) : 0;
-    if (help_count > 0 && help_h <= 0) help_h = 12 * ui;
+    // Any segment measures a row; the first is always a label.
+    int help_h = (help_count > 0)
+                     ? nocturne_ui_text_height(g_ThemeFont, help[0].text, help_ui)
+                     : 0;
+    if (help_count > 0 && help_h <= 0) help_h = 12 * help_ui;
 
     int top_band = (g_legend ? legend.rows * legend.row_h : title_h) + pad * 2;
-    int bottom_band = (help_h > 0) ? help_h + pad * 2 : kMargin;
+    int bottom_band = (help_h > 0) ? help_h * help_rows.rows + pad * 2 : kMargin;
     if (top_band < kMargin) top_band = kMargin;
     if (bottom_band < kMargin) bottom_band = kMargin;
 
@@ -1347,12 +1438,9 @@ extern "C" void nocturne_automap_render(void)
     const int color_faded  = pick_color(kFadedRGB,  0xf8);
     const int color_player = pick_color(kPlayerRGB, 0xf8);
 
-    // The drawn band, offset by the current elevation. g_elevation is 0 on the
-    // player's own floor, so this is the unmodified band unless he has raised
-    // the view. The offset can only show what the reveal has already unlocked,
-    // since the reveal follows his position rather than the view.
-    const float eye_y = p.y + g_elevation;
-    const float lo = eye_y - kBandBelow, hi = eye_y + kBandAbove;
+    // The drawn band. It is the player's own floor and nothing moves it: every
+    // other storey is reachable by brightening it instead.
+    const float lo = p.y - kBandBelow, hi = p.y + kBandAbove;
 
     // +Z away from the viewer, so it is flipped: a map reads north-up.
     #define AM_PX(wx) (cx + (int)(((wx) - g_pan_x) * scale))
@@ -1362,18 +1450,49 @@ extern "C" void nocturne_automap_render(void)
     // whole palette, so asking it per segment would be a 256-entry scan per
     // line drawn.
     int ground_color[kGroundTypeCount];
+    int ground_dim[kGroundTypeCount];
     for (int g = 0; g < kGroundTypeCount; g++) {
         ground_color[g] = pick_color(kGroundRGB[g], color_wall);
+        const int rgb[3] = { (int)((float)kGroundRGB[g][0] * g_other_dim + 0.5f),
+                             (int)((float)kGroundRGB[g][1] * g_other_dim + 0.5f),
+                             (int)((float)kGroundRGB[g][2] * g_other_dim + 0.5f) };
+        ground_dim[g] = pick_color(rgb, color_faded);
     }
 
-    // The player's own storey only. Drawing other floors dimmed underneath is
-    // clutter at a castle's density, not context -- enough grey boxes to read
-    // as part of the room you are in. What is off your level stays remembered
-    // and stays hidden until you are on it.
+    int last_color = -1;
+
+    // The storeys the band does not cover, first and dimmed, so the floor the
+    // band is on draws over them and stays the brightest thing on the map.
+    //
+    // They keep to the fog like everything else -- an unwalked cell is unlit at
+    // any brightness -- so this shows what has already been earned from another
+    // floor rather than reading the level through it.
+    //
+    // At zero they are not drawn at all, which is the one storey the map was
+    // built around; at one they draw in their own material's full colour and
+    // the whole level reads at once. The scaling is on the colour rather than a
+    // second palette entry, so a wall keeps its material's hue as it fades.
+    if (g_other_dim > 0.0f) {
+        for (size_t i = 0; i < g_segments.size(); i++) {
+            const Segment &s = g_segments[i];
+            if (!g_complete && !revealed(s.cube)) continue;
+            if (s.y >= lo && s.y <= hi) continue;
+
+            const int col = ground_dim[s.ground];
+            if (col != last_color) {
+                g_ActiveRenderColor = col;
+                last_color = col;
+            }
+            engine_2d_c_clipAndDrawLine_FUN_00402ca0(
+                AM_PX(s.x1), AM_PY(s.z1), AM_PX(s.x2), AM_PY(s.z2),
+                x0, y0, x1, y1);
+        }
+    }
+
+    // The band's own storey, at full brightness.
     //
     // Each wall draws in its own material's colour, so stone, wood, glass and
     // water read apart without the map gaining a second layer to look through.
-    int last_color = -1;
     for (size_t i = 0; i < g_segments.size(); i++) {
         const Segment &s = g_segments[i];
         if (!g_complete && !revealed(s.cube)) continue;
@@ -1586,11 +1705,8 @@ extern "C" void nocturne_automap_render(void)
 
     // The player last, as a filled disc with a dark halo beneath it and a pale
     // core. A bare dot in the wall colour is lost in a dense room, and a thin
-    // cross is little better.
-    //
-    // Drawn at any elevation: it is the reference every other position on screen
-    // is read against. The heading's readout indicates when the band is not the
-    // player's own floor.
+    // cross is little better. It is the reference every other position on
+    // screen is read against.
     const int hx = AM_PX(p.x), hy = AM_PY(p.z);
     for (int ring = 0; ring < 3; ring++) {
         g_ActiveRenderColor = (ring == 0) ? pick_color(kHaloRGB, color_wall)
@@ -1616,24 +1732,27 @@ extern "C" void nocturne_automap_render(void)
         // where the map starts.
         const int band_y1 = (top_band < g_WindowHeight) ? top_band
                                                         : g_WindowHeight;
-        const int text_h = nocturne_ui_text_height(g_ThemeFont, (char *)"YOU", ui);
+        // legend_ui throughout, matching the scale the layout was measured at.
+        // The swatch radii take it too: a key drawn at the HUD scale beside text
+        // fitted down to the width would not be the vocabulary it is explaining.
+        const int text_h = nocturne_ui_text_height(g_ThemeFont, (char *)"YOU",
+                                                   legend_ui);
 
         for (int i = 0; i < legend.count; i++) {
             const LegendItem *it = legend.item[i];
             const int row_top = pad + legend.row[i] * legend.row_h;
+            const int r = it->radius * legend_ui;
             int pen = x0 + legend.x[i];
 
-            if (it->rgb != (const int *)nullptr) {
-                const int r = it->radius * ui;
-                draw_marker(it->shape, pick_color(it->rgb, color_wall),
-                            pick_color(kHaloRGB, color_wall),
-                            pen + r, row_top + legend.row_h / 2, r,
-                            x0, 0, x1, band_y1);
-                pen += 2 * r + 1 + kLegendGlyphGap * ui;
-            }
+            draw_marker(it->shape, pick_color(it->rgb, color_wall),
+                        pick_color(kHaloRGB, color_wall),
+                        pen + r, row_top + legend.row_h / 2, r,
+                        x0, 0, x1, band_y1);
+            pen += 2 * r + 1 + kLegendGlyphGap * legend_ui;
+
             nocturne_ui_draw_text(g_ThemeFont, (char *)it->label, pen,
                                   row_top + (legend.row_h - text_h) / 2,
-                                  color_wall, -1, ui);
+                                  color_wall, -1, legend_ui);
         }
     } else {
         nocturne_ui_draw_text(g_ThemeFont, title, x0, (top_band - title_h) / 2,
@@ -1641,19 +1760,18 @@ extern "C" void nocturne_automap_render(void)
     }
 
     if (help_count > 0) {
-        // Centred across the screen, so whichever form survived the width
-        // fallbacks sits under the middle of the map rather than trailing off
-        // one side. The labels are dim -- they are a reminder, not part of the
-        // map -- and the binding names take the map's own colour, so the thing
-        // the player is actually looking for is the thing that stands out.
-        const int help_y = y1 + (bottom_band - help_h) / 2;
-        int help_x = (g_WindowWidth - help_segments_width(help, help_count, ui)) / 2;
-        if (help_x < 0) { help_x = 0; }
+        // Each row centred on its own width, so the block sits under the middle
+        // of the map rather than trailing off one side. The labels are dim --
+        // they are a reminder, not part of the map -- and the binding names take
+        // the map's own colour, so the thing the player is actually looking for
+        // is the thing that stands out.
+        const int help_y = y1 + (bottom_band - help_h * help_rows.rows) / 2;
         for (int i = 0; i < help_count; i++) {
             char *text = help[i].text;
-            nocturne_ui_draw_text(g_ThemeFont, text, help_x, help_y,
-                                  help[i].is_key ? color_wall : color_faded, -1, ui);
-            help_x += nocturne_ui_text_width(g_ThemeFont, text, ui);
+            nocturne_ui_draw_text(g_ThemeFont, text, x0 + help_rows.x[i],
+                                  help_y + help_rows.row[i] * help_h,
+                                  help[i].is_key ? color_wall : color_faded, -1,
+                                  help_ui);
         }
     }
 }

@@ -47,10 +47,16 @@ class list of ours. See *Actors*.
 them as raw pixels is why they read as too small: the text and the map scale with the mode and
 markers did not. See *Actors*.
 
-**The band can be raised off the player's floor** on the bumpers, which moves the view only — the
-reveal still follows where he walked, so it is not an x-ray. Do not move this to the right stick's
-left/right axis: that axis shares a stick with zoom, and holding one axis to hold an altitude while
-the other changes scale does not work in play. See *Reveal*.
+**The band does not move — the other storeys brighten instead.** One storey is drawn at full
+strength and it is always the player's own; the rest draw underneath on a trigger-swept dimmer
+that rests at half. Both reach the same question, "what is on the floor above", and only this one
+keeps the player's position readable while it is answered. They still obey the fog, so it is not
+an x-ray. See *Reveal*.
+
+**`getDeathState` does not read hit points**, so a death whose motion state is not named `DIE` or
+`DEAD` reads as alive — a fatal fall among them. The map tests both, or it stays open through the
+death and is still the last thing painted under the Game Over list. `strangerCannotDie` wins over
+the hit-point test. See *It is a screen, not an overlay*.
 
 **Guide toggles a marker key in place of the heading**, with its swatches drawn through the map's
 own `draw_marker` so they cannot drift. See *The marker key*.
@@ -350,10 +356,14 @@ into. `nocturne_automap_owns_controls` is simply "is it open", and
 does not follow the player either — he cannot move, so there is nothing to follow. It opens centred
 on him and stays where it is put.
 
-**Left stick pans, right stick zooms**, read as analogue through `nocturne_gamepad_axes` so a
+**Left stick pans, bumpers zoom**, the stick read as analogue through `nocturne_gamepad_axes` so a
 gentle push pans slowly — see *One binding* below for which bindings each borrows and why they
 cannot overlap. Pan is divided by the zoom, so a push moves the same distance on screen at any
 scale; zoom is multiplicative, so each step is the same proportion of the current scale.
+
+**The left stick's button recentres on the hero.** It sits under the thumb that moved the view
+away, and it is the one control that undoes panning without asking the player to find his way back
+by hand.
 
 **The world stops — except in a network game.** `CGame::process` is skipped while the map is open,
 which is the "pause" half of being a screen. That cannot apply to netplay: the simulation is
@@ -369,6 +379,25 @@ constructed over the map, and a second press opens it. Leaving it to the `g_Moda
 test in `nocturne_automap_update` is not enough on its own: that runs a frame later, so the menu
 would be raised in the same press that dismissed the map. The gamepad reaches this for free, since
 Start already synthesises `DIK_ESCAPE`.
+
+**A dead hero closes the map, and `getDeathState` alone does not detect one.** The map must be shut
+before the death sequence, or it is still the last thing painted when the Game Over list is drawn —
+that list runs its own loop outside `CGame::processFrame`, so nothing repaints the scene under it
+and nothing calls `nocturne_automap_update` to notice.
+
+`CCharacter::getDeathState` answers by comparing the motion controller's current state *name*
+against `"DIE"` and `"DEAD"`. State names are level data, so a death whose animation state is named
+anything else reads as `DEATH_STATE_ALIVE` for as long as it plays. A fatal fall is one such: the
+landing in `CStranger::processFrame` drives the controller to state `0x12` and leaves the hero at
+or below zero hit points. Hit points are therefore tested as well.
+
+`strangerCannotDie` is asked first and wins. `CStranger::getDeathState` answers ALIVE on that
+condition whatever the controller says, and a mission that sets it means it — a hero held at zero
+there is still playing, and closing his map would be wrong.
+
+**The same applies to having nothing to service the map with.** A null local hero or an empty cube
+grid closes it rather than leaving it standing: both mean the session is being torn down around it,
+which is the same trap from the other end.
 
 **Do not reuse `CGame::is_paused` for this.** Despite the name it is the developer slew flag: the
 `else` branch of the same test drives the hero from `CSlew::processInput`, so setting it would fly
@@ -388,40 +417,67 @@ also keeps the table from overflowing — `g_CustomKeyNames` is `[30][40]` and
 | | Pad | Bindings read |
 | --- | --- | --- |
 | Pan | left stick | `key_walk` / `key_backup`, `key_strafe_left` / `key_strafe_right` |
-| Zoom | right stick, up/down | `key_point_up` / `key_point_down` |
-| Elevation | bumpers | `key_next_weapon` / `key_prev_weapon` |
+| Recentre | left stick button | `key_run` |
+| Zoom | bumpers | `key_next_weapon` / `key_prev_weapon` |
+| Other floors | triggers | `key_fire` / `key_draw` |
 | Marker key | Guide | `key_item_desc` |
 
-That mapping is forced by what the pad defaults are: the left stick is walk/backup *and* strafe,
-the right stick is turn *and* look, the bumpers cycle weapons, Guide is item description. So the
-two halves of the left stick are pan, look is zoom, the bumpers step the view up and down, and
-Guide — "tell me what I am looking at" — shows the key, which is the same question asked of a
-screen with no item in hand for it to describe.
+That mapping follows what the pad defaults are: the left stick is walk/backup *and* strafe, its
+button is run, the bumpers cycle weapons, the triggers are fire and draw, and Guide is item
+description. So the two halves of the left stick are pan, its button recentres, the bumpers zoom,
+the triggers sweep the other floors between unlit and full, and Guide — "tell me what I am looking
+at" — shows the key, which is the same question asked of a screen with no item in hand for it to
+describe.
 
-**Elevation belongs on buttons, not an axis.** An axis is the wrong control for it: the right
-stick's left/right would share a stick with zoom, so holding an altitude means holding one axis
-while the other changes scale. A pair of bumpers suits stepping through discrete floors. `key_left`
-/ `key_right` are therefore unread by this screen — reading them for *pan* would put pan and zoom
-on one stick.
+**The d-pad and both right-stick axes are read nowhere here.** `key_next_ammo`, `key_weapon_5`,
+`key_left` / `key_right` and `key_point_up` / `key_point_down` are all untouched by this screen,
+which is five controls left free on a pad that has none of them spare in play.
 
-**The collapsed help line keeps both elevation names.** The collapse exists for devices whose
-names share a prefix, which is how four pan bindings become one "Left Stick" — bumpers share
-nothing, and "LB RB" is already shorter than any collapse of it would be. The collapse test is
-therefore on pan and zoom only, and a keyboard (no shared prefixes anywhere) skips the collapsed
-level entirely and uses the full form, which is what it wants anyway.
+**Zoom belongs on buttons, not an axis.** A scale is held once set, and holding one on a stick
+means holding the stick for as long as you are reading the map.
 
-**`kHelpSegMax` is a real constraint, and `CLOSE` is pushed last.** `help_push` drops segments
-silently once the cap is reached, so a cap the fullest form can reach loses the one segment every
-fallback level must keep. The fullest form currently uses 22. Recount when adding a control.
+**Other-floor brightness is the one control an axis does suit**, because it is a level dialled in
+rather than a position held, and the triggers report it analogue. They are read raw rather than
+through the radial deadzone — a trigger has no negative half — with a small floor of their own, or
+a resting trigger creeps the setting. `NOCTURNE_PAD_TRIGGER_THRESHOLD` is not that floor: it is
+where a trigger counts as a digital *press*, and an analogue sweep starts long before. The digital
+codes the pad synthesises past that threshold are consulted only when both triggers read released,
+for the same reason the sticks' are.
+
+**The help line wraps; it never drops a control to fit.** Six controls do not fit one 640-pixel row
+at any sane font size, and a ladder of progressively shorter forms answers that by hiding controls —
+which takes them in the order they were written rather than the order a player could guess, so the
+newest and least discoverable go first. A keyboard makes it worse still: none of its binding names
+share a prefix, so every form that exists to collapse them is skipped and the ladder runs out at
+`CLOSE` alone.
+
+Wrapping has none of that. The controls flow into as many rows as the width needs, each row centred
+on its own width, and the bottom band is sized from the row count exactly as the top band is sized
+from the legend's. Every screen shows every control.
+
+**Rows break between controls, never inside one.** Each control's label carries the break point and
+the gap that separates it from the one before, so a label is never stranded at the end of a row with
+its binding names starting the next. The gap is pixels rather than spaces in the label, or a control
+that begins a row would begin it indented. A control wider than the whole screen still gets a row of
+its own rather than being dropped — the same rule the legend follows.
+
+**Names still collapse to a shared prefix**, which is how a pad's four pan bindings become a single
+"Left Stick". That is now purely for reading rather than for fit: bumpers and triggers share
+nothing, and "LB RB" has no shorter true form, while a keyboard shares nothing anywhere and prints
+in full, which is what a keyboard wants.
+
+**`kHelpSegMax` is a real constraint.** `help_push` drops segments silently once the cap is reached,
+so a cap the line can reach loses controls off the end without saying so. The full line currently
+uses 22. Recount when adding a control.
 
 **The text decides the layout, not the other way round.** The map screen has no letterbox bars of
 its own — it blacks the whole framebuffer and insets the map — so what reads as a bar is simply
 that inset, and it has to be tall enough for the text that sits in it.
 
-Both overlay lines are therefore built and measured *before* the map window is computed, and the
-top and bottom insets are `text height + 2 × padding` (floored at the 24px side margin). Each line
-is then centred in its own band. The map scales into whatever is left, which is correct: it is the
-map that should give way to the text, since the text is fixed-size and the map is not.
+Both overlay blocks are therefore built and measured *before* the map window is computed, and the
+top and bottom insets are `row height × rows + 2 × padding` (floored at the 24px side margin). Each
+block is then centred in its own band. The map scales into whatever is left, which is correct: it is
+the map that should give way to the text, since the text is fixed-size and the map is not.
 
 Three things this rules out, each of which puts text off screen or on top of the map: a fixed
 offset outside the map window, since the margin is a constant and the text is not; a
@@ -432,8 +488,38 @@ than.
 
 `nocturne_ui_text_height` and `nocturne_ui_text_width` give the real figures and already account
 for whether scaling is honoured at the current bit depth, so what they report is what will be
-drawn. The help line also falls back through two shorter forms when the full one is wider than the
-screen, which a pad makes likely — six names reading "Left Stick Up" and the like.
+drawn. Both blocks wrap on those figures rather than on a character count, which is the only thing
+that works for a bitmap font whose widths are data.
+
+**The overlay text is not drawn at the HUD scale, but at the largest scale that keeps it on one
+row.** `nocturne_ui_scale` is `round(g_WindowHeight / 480)`: it answers a question about height and
+steps in whole integers, while the width the text has to fit into grows continuously. Each step
+costs a block half or a third of its room at once, and a 4:3 mode's width does not grow fast enough
+to pay that back before the next step. In unscaled font pixels, the room a block has is
+`(g_WindowWidth − 2 × kMargin) / scale` — `kMargin` is a flat 24 and is not scaled:
+
+| Mode | Scale | Usable px | Budget |
+| --- | --- | --- | --- |
+| 640×480 | 1 | 592 | 592 |
+| 800×600 | 1 | 752 | **752** |
+| 1024×768 | 2 | 976 | **488** |
+| 1280×1024 | 2 | 1232 | 616 |
+| 1600×1200 | 3 | 1552 | 517 |
+
+800×600 has the most room of any mode, because 600 still rounds down to scale 1. Every larger mode
+has less, 1024×768 has less than 640×480 does, and the sequence is not monotonic. A block sized at
+the HUD scale therefore wraps on every large mode and none of the small ones, which reads as the
+text growing rather than the room shrinking.
+
+The choice is self-limiting: a block that fits at the HUD scale keeps it, and one that does not
+gives up as little as it can — at 1600×1200 a line that overflows at 3 usually fits at 2 rather
+than dropping to 1. When even scale 1 needs two rows the HUD scale is kept and the block wraps,
+since small *and* wrapped is worse than either alone. The marker key's swatch radii follow its
+chosen scale too: a key drawn at the HUD scale beside text fitted down to the width is not the
+vocabulary it is explaining.
+
+The title is not fitted down. It is a few words and fits at every mode's HUD scale, and the map
+screen is better for having one thing on it at the size the rest of the HUD uses.
 
 **Analogue wins where it exists.** The digital bindings are only consulted when the corresponding
 stick axis reads zero. Blending them would let any push past the pad's own digital-synthesis
@@ -450,38 +536,37 @@ Three dimensions, not two: with a height band that follows the player, a known f
 nothing about *which storey* was seen there, and a tower walked at the top would otherwise
 uncover the hall beneath it. One bit per cube is 46,139 bits — **5.6 KB** for a whole level.
 
-**Only one storey draws at a time.** Drawing other floors dimmed underneath is clutter at a
-castle's density rather than context — enough grey boxes to read as part of the room you are
-standing in.
+**One storey is the bright one, and the rest fade under it.** The band draws at full brightness;
+every other storey draws first, in its own material's colour scaled toward black, so the floor
+being read stays the most prominent thing on the map. At a castle's density the other floors at
+full strength are enough grey boxes to read as part of the room you are standing in, which is why
+the scale is a control rather than a constant — the triggers sweep it, and it rests at half.
 
-**But the band can be raised off the player's floor**, on the bumpers, so a floor he has walked can
-be looked at from a floor he is standing on. This is the answer to "I have been up there, why can I
-not see it" without giving up the one-storey rule that makes the map legible: one storey still
-draws, it just does not have to be his.
+The scaling is on the line colour, not a second palette entry, so a wall keeps its material's hue
+as it fades and the map gains no second layer to look through. At zero the map is the single storey
+it was designed around; at one the whole explored level reads at once. Neither extreme is
+degenerate, which is the point of exposing it.
 
-**It moves the view and nothing else.** `reveal_around` is still driven by the player's real
-position, so raising the band shows what has already been earned and leaves everything else
-fogged. It is emphatically not an x-ray — the thing that would make the reveal pointless is
-letting the *view* unlock cells, and it does not.
+**The band never leaves the player's floor.** Brightening the other storeys answers "I have been up
+there, why can I not see it" without moving the one thing every position on the map is read
+against. A band that can be raised answers the same question and costs the player his own location:
+his marker keeps drawing wherever the band is, so the map shows him standing on a floor he is not
+on, and needs a readout on the heading to say so before it reads as raised rather than broken.
+Nothing here has to say anything — the bright storey is always his.
 
-**Continuous while held, in world units, and not counted in storeys.** A storey is not a unit this
-code is entitled to count in: the band height is content-dependent and tuned to one level by eye
-(open question 1). So a held bumper moves the band at a world-unit rate and the readout is a
-signed world-unit offset — a figure read by watching it move, which needs no unit — rather than a
-floor number the level never agreed to.
+It also removes the whole question of how far the band may travel and what stops it, which the
+raytrace grid cannot answer: `bbox_min.y` / `bbox_max.y` are sized to contain the level and are
+mostly empty air, so a clamp against them barely limits anything and the band scrolls into nothing
+drawn.
 
-**Clamp it to the level's own Y bounds, relative to the player.** Otherwise the band scrolls into
-empty air with nothing drawn and no clue which way back — the same failure panning is held away
-from, and the same fix.
+**Brightness moves the view and nothing else.** `reveal_around` is driven by the player's real
+position, so a raised dimmer shows what has already been earned and leaves everything else fogged.
+It is emphatically not an x-ray — the thing that would make the reveal pointless is letting the
+*view* unlock cells, and it does not. An unwalked cell is unlit at any brightness.
 
-**Say when the band is not his floor.** The player marker keeps drawing at any elevation, because
-it is what every other position on screen is read against — which means without a readout the map
-shows him standing on a floor he is not on, and reads as broken rather than as raised. The heading
-carries `ELEV +n` whenever the offset is non-zero, and its mere presence is the load-bearing part.
-
-**Elevation is not persisted, unlike the zoom.** Where the player last looked is a position inside
-one level, not a preference that means anything in the next one, and a map that opens on somebody
-else's floor reads as broken. It resets on every open.
+**The brightness survives closing the map, and stops there.** It is a preference like the zoom
+rather than a position within a level — but the zoom is the one map setting the ini carries, and
+this one is left to the session.
 
 ## The marker key
 
@@ -497,10 +582,8 @@ on.
 rasterizer drifts from what it is explaining the first time a colour or a shape changes. Going
 through one call means changing `k_markers` changes the key on its own.
 
-**The elevation readout rides along with the key.** It is state rather than a label, and it is the
-only thing telling the player the band is not his own floor — so a key that replaced it would take
-away the explanation for the thing most likely to confuse him. It is appended as a text-only item
-with no swatch.
+**Every item carries a swatch**, because every one of them explains a marker. Nothing else shares
+this row, so the key is a table of one kind of thing rather than a heading with state attached.
 
 **The layout flows and wraps rather than using fixed columns.** Labels differ in length and the
 window can be 640 or 3840 wide, so a fixed column count either wastes most of a wide screen or

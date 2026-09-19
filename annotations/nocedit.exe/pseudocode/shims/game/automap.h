@@ -32,17 +32,16 @@
 //   * Reveal is per 3D cell. Two dimensions would let a tower walked at the top
 //     uncover the hall beneath it.
 //
-//   * The band can be raised off the player's floor. This affects the view
-//     only: the reveal follows his actual position, so raising it shows
-//     explored floors and leaves unexplored ones fogged. The player marker
-//     draws at any elevation, since it is the reference other positions are
-//     read against, and the heading indicates when the band is not his floor.
+//   * The band is the player's own floor and nothing moves it. The storeys
+//     outside it draw underneath at an adjustable brightness, held at half, so
+//     another floor is reached by bringing it up rather than by moving the
+//     band onto it. They keep to the fog like everything else, so this is
+//     context rather than an x-ray. At zero the map is the one storey it was
+//     designed around; at one the whole explored level reads at once.
 //
 //   * The marker key replaces the heading rather than sitting beside it, and
 //     its swatches go through the same draw_marker the map uses, so a key entry
-//     stays consistent with the marker it explains. The elevation readout is
-//     appended to it: that readout is the only indication the band is not the
-//     player's floor, so the key must not displace it.
+//     stays consistent with the marker it explains.
 //
 //   * Wall lines are coloured by material, from CDemonCube::ground_type_memory
 //     -- a uchar[triangle_count] holding one EGroundType per triangle. Colour
@@ -94,11 +93,12 @@
 // Input is one bindable action, which reaches keyboard and gamepad at once: the
 // pad shim writes its codes into the same g_KeyboardState the keyboard uses, so
 // a binding is just a code and does not care which device produced it. Once the
-// map is up it takes the controls outright -- left stick pans, right stick
-// zooms, the bumpers raise and lower the view, Guide shows the marker key, and
-// the hero stands still -- because it is a screen rather than an overlay.
-// Sticks are read as analogue through nocturne_gamepad_axes; the movement and
-// look bindings do the same job for a keyboard.
+// map is up it takes the controls outright -- left stick pans, the bumpers
+// zoom, the triggers bring the other floors up and down, the left stick's
+// button recentres on the hero, Guide shows the marker key, and the hero stands
+// still -- because it is a screen rather than an overlay. The left stick and the triggers are read as analogue
+// through nocturne_gamepad_axes; the corresponding bindings do the same job for
+// a keyboard.
 
 #ifdef __cplusplus
 extern "C" {
@@ -189,23 +189,26 @@ void nocturne_automap_apply_default_binding(void);
 // spend.
 //
 //   pan     key_walk / key_backup, key_strafe_left / key_strafe_right
-//   zoom    key_point_up / key_point_down
-//   elev    key_next_weapon / key_prev_weapon
+//   zoom    key_next_weapon / key_prev_weapon
+//   floors  key_fire / key_draw
+//   centre  key_run
 //   legend  key_item_desc
 //
 // Chosen for what those bindings are on a pad: the left stick is walk/backup
-// and strafe, the right stick is turn and look, the bumpers cycle weapons, and
-// Guide is item description. So the two halves of the left stick pan, look
-// zooms, the bumpers step the view up and down, and Guide -- already "describe
-// what I am looking at" -- shows the marker key.
+// and strafe, the bumpers cycle weapons, the triggers are fire and draw, the
+// left stick's button is run, and Guide is item description. So the two halves
+// of the left stick pan, the bumpers zoom, the triggers sweep the other floors
+// between unlit and full, the stick button recentres on the hero, and Guide --
+// already "describe what I am looking at" -- shows the marker key.
 //
-// Elevation belongs on buttons rather than an axis: sharing the right stick
-// with zoom means holding one axis to hold an altitude while the other changes
-// scale, and a button pair suits stepping through discrete floors.
+// Zoom is a button pair because a scale is held once set, and holding one on a
+// stick means holding the stick. The other-floor brightness is the one setting
+// an axis does suit, since it is a level to be dialled in rather than a
+// position to be held, and the triggers report it analogue.
 //
-// key_left / key_right are not read by this screen at all. They are the right
-// stick's other axis, and reading them here would put pan and zoom on one
-// stick.
+// The d-pad and both right-stick axes are read nowhere on this screen:
+// key_next_ammo, key_weapon_5, key_left / key_right and key_point_up /
+// key_point_down are all unused here.
 
 // The player's preferred zoom, as a percentage, for the ini to carry between
 // sessions. The map opens centred on the player but at whatever this holds:
