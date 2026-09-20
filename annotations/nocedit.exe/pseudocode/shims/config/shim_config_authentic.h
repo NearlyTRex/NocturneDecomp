@@ -86,6 +86,9 @@
 // | `NOCTURNE_AUTHENTIC_MENU_RESOLUTION` | 0 | choice | a picked resolution applies straight away |
 // | `NOCTURNE_AUTHENTIC_SAVE` | 1 | choice | saves are written as readable plain text |
 // | `NOCTURNE_AUTHENTIC_AUTOMAP` | 0 | addition | a bindable Doom-style map that fills in as you explore |
+// | `NOCTURNE_AUTHENTIC_SAVE_SLOTS` | 0 | addition | saves are picked from a slot list, not typed |
+// | `NOCTURNE_AUTHENTIC_SINGLE_PLAYER_MENU` | 0 | addition | START becomes PLAY, with Start and Load behind it |
+// | `NOCTURNE_AUTHENTIC_AUTOSAVE` | 0 | addition | AUTO.NOC is written at a cutscene end and a mission start |
 // | `NOCTURNE_AUTHENTIC_GAMEPAD` | 0 | addition | SDL's game-controller layer instead of joyGetPos |
 // | `NOCTURNE_AUTHENTIC_WINDOW_MESSAGES` | 0 | addition | the window proc sees a mouse wheel |
 // | `NOCTURNE_AUTHENTIC_CHEAT_MENU` | 0 | addition | a CHEATS entry on Options, and WARPS on pause |
@@ -1700,6 +1703,88 @@
 //   Override with -DNOCTURNE_AUTHENTIC_AUTOMAP=1.
 #ifndef NOCTURNE_AUTHENTIC_AUTOMAP
 #define NOCTURNE_AUTHENTIC_AUTOMAP 0
+#endif
+
+// NOCTURNE_AUTHENTIC_SAVE_SLOTS
+//   How a save is named and chosen, and how the main menu is arranged.
+//   1: shipped behaviour — CGame::saveGame opens showFilenameInputDialog, a
+//      CInputString field the player types a name into, and CGame::loadGame
+//      and CGame::promptLoadGame open showFileSelectionDialog, a list of bare
+//      save\*.noc filenames. The main menu is START / OPTIONS / LOAD / QUIT.
+//   0: saving picks a slot from a CPickList instead of naming a file — a
+//      NEW SAVE row that takes the lowest unused SLOTnn, the existing slots
+//      newest-first, and the autosave held at the top. Loading gets the same
+//      rows. Each row carries the place the save is set in, the date it was
+//      written and the play time, read out of the save itself.
+//
+//   This is the picker only. Where the main menu offers Load is
+//   NOCTURNE_AUTHENTIC_SINGLE_PLAYER_MENU's business, and the two are
+//   independent: either menu shape reaches whichever picker this selects.
+//
+//   Typing is the only way the shipped game can name a save, so a machine with
+//   no keyboard can load but never save. Everything here is a CPickList, which
+//   shims/game/gamepad.cpp already drives through g_KeyboardState, so the pad
+//   needs no work of its own — see gamepad.h.
+//
+//   Holding CTRL while choosing Save or Load still opens the shipped dialogs,
+//   the same gesture that turns the main menu's START into
+//   showFileSelectionDialog over world\*.msn.
+//
+//   No save-file format changes: a slot is a filename and nothing else, so a
+//   save written either way loads either way. See save_slots.h.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_SAVE_SLOTS=1.
+#ifndef NOCTURNE_AUTHENTIC_SAVE_SLOTS
+#define NOCTURNE_AUTHENTIC_SAVE_SLOTS 0
+#endif
+
+// NOCTURNE_AUTHENTIC_SINGLE_PLAYER_MENU
+//   How the main menu is arranged.
+//   1: shipped behaviour — START / OPTIONS / LOAD / QUIT, four entries, with
+//      START going straight to CGame::showChapterSelect.
+//   0: START becomes PLAY and opens a submenu holding Start and Load, so the
+//      single-player entries sit together rather than either side of Options.
+//      Load leaves the main menu, which therefore keeps its count.
+//
+//   The submenu is the one NOCTURNE_AUTHENTIC_NETPLAY's MULTIPLAYER entry
+//   already uses — same backdrop, same start-y, same Escape handling — so the
+//   two read as a pair rather than as two different kinds of menu.
+//
+//   Whether the submenu also offers Continue is NOCTURNE_AUTHENTIC_AUTOSAVE's
+//   decision, not this flag's: Continue resumes the most recent save, which is
+//   a promise the game can only keep if it has been making saves on its own.
+//   With autosave off the submenu is Start and Load, and the player picks the
+//   save they meant from the list.
+//
+//   Independent of NOCTURNE_AUTHENTIC_SAVE_SLOTS, which decides what Load and
+//   Save then put on screen.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_SINGLE_PLAYER_MENU=1.
+#ifndef NOCTURNE_AUTHENTIC_SINGLE_PLAYER_MENU
+#define NOCTURNE_AUTHENTIC_SINGLE_PLAYER_MENU 0
+#endif
+
+// NOCTURNE_AUTHENTIC_AUTOSAVE
+//   Whether the game saves on its own. Neither shipped binary did: every write
+//   to save\ comes from CTRL+S, F2, F6 or the pause menu's Save game.
+//   1: shipped behaviour — nothing is written unless the player asks.
+//   0: save\AUTO.NOC is written when the game leaves a cinematic
+//      (CGame::letterbox_mode dropping to 0) and when a mission starts that
+//      was not reached by loading a save. One file, overwritten each time, and
+//      the slot list refuses a manual save into it.
+//
+//   This also decides whether the single-player submenu offers Continue, since
+//   Continue resumes the most recent save and is only worth offering to a game
+//   that makes them by itself. See NOCTURNE_AUTHENTIC_SINGLE_PLAYER_MENU.
+//
+//   Never in a network session: CGame::saveGame writes one machine's world,
+//   and restoring it on one peer of a lockstep session would desync it.
+//
+//   Separate from SAVE_SLOTS because each is worth wanting without the other.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_AUTOSAVE=1.
+#ifndef NOCTURNE_AUTHENTIC_AUTOSAVE
+#define NOCTURNE_AUTHENTIC_AUTOSAVE 0
 #endif
 
 // NOCTURNE_AUTHENTIC_GAMEPAD

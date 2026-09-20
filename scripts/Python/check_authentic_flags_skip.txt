@@ -75,3 +75,21 @@ nested:annotations/nocedit.exe/pseudocode/src/core/inv.cpp/CInventory_renderAllI
 # it has nothing to say inside the editor arm and sits in the other one. Both
 # arms of both flags are present; neither decides the other.
 nested:annotations/nocedit.exe/pseudocode/src/shape/edittool.cpp/CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060.keep.cpp:NOCTURNE_AUTHENTIC_CONFIRM_PROMPTS
+
+# Whether the single-player submenu offers Continue. SINGLE_PLAYER_MENU decides
+# whether there is a submenu at all; AUTOSAVE decides whether Continue is one of
+# its entries, because Continue resumes the most recent save and only a game
+# that writes them by itself can promise one is there. Both arms of both flags
+# are present; with no submenu there is simply no entry for the inner flag to
+# add or withhold.
+nested:annotations/nocedit.exe/pseudocode/shims/game/save_slots.cpp:NOCTURNE_AUTHENTIC_AUTOSAVE
+nested:annotations/nocedit.exe/pseudocode/src/core/main.c/enterMainGameMenu_FUN_00507a50.keep.c:NOCTURNE_AUTHENTIC_AUTOSAVE
+
+# The main menu is assembled entry by entry because NETPLAY adds MULTIPLAYER and
+# SINGLE_PLAYER_MENU removes LOAD. The outer gate is the OR of the two: it picks
+# the assembled list over the shipped fixed four, and is therefore true whenever
+# either flag is off. Each inner gate is then that flag's own arm within the
+# assembly. Both arms of both flags are present and neither decides the other;
+# the nesting is the assembly existing at all.
+nested:annotations/nocedit.exe/pseudocode/src/core/main.c/enterMainGameMenu_FUN_00507a50.keep.c:NOCTURNE_AUTHENTIC_NETPLAY
+nested:annotations/nocedit.exe/pseudocode/src/core/main.c/enterMainGameMenu_FUN_00507a50.keep.c:NOCTURNE_AUTHENTIC_SINGLE_PLAYER_MENU

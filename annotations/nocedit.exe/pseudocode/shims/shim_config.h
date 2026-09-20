@@ -187,6 +187,13 @@ void nocturne_trigl_envmap_pass_end(void);
 #include "game/hero_interact.h"
 #include "game/hero_grab.h"
 
+// The slot save/load UI (nocturne_save_pick_slot, nocturne_load_pick_slot,
+// nocturne_save_continue_target) and the autosave (nocturne_autosave_poll),
+// reached from the save and load keeps, the main menu TU and the mission loop.
+// The pickers are inert under NOCTURNE_AUTHENTIC_SAVE_SLOTS and the poll under
+// NOCTURNE_AUTHENTIC_AUTOSAVE, which are separate flags.
+#include "game/save_slots.h"
+
 // The retail Volume/Chapter picker (nocturne_chapter_pick_mission), lifted out
 // of CGame::showChapterSelect so the multiplayer host can offer the same choice
 // its START menu does. Reached from the game TU; gated at that call site on

@@ -49,6 +49,14 @@ void __cdecl core_game_cpp_CGame_saveGame_FUN_004e0cd0(CGame *this_ptr,char *sav
   output_buffer = local_558;
   pcVar6 = local_558;
   if (save_filename == (char *)0x0) {
+#if !NOCTURNE_AUTHENTIC_SAVE_SLOTS
+    if ((*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL) == 0) {
+      if (nocturne_save_pick_slot(local_558,sizeof(local_558)) == 0) {
+        return;
+      }
+      goto LAB_have_filename;
+    }
+#endif
     flags = 1;
     file_extension = "noc";
     directory_path = "save";
@@ -64,6 +72,9 @@ void __cdecl core_game_cpp_CGame_saveGame_FUN_004e0cd0(CGame *this_ptr,char *sav
   else {
     strcpy(local_558, save_filename);
   }
+#if !NOCTURNE_AUTHENTIC_SAVE_SLOTS
+LAB_have_filename:
+#endif
   _mkdir("save");
 #if NOCTURNE_AUTHENTIC_SAVE
   local_14 = 1;

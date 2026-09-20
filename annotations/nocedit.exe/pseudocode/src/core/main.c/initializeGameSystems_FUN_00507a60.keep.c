@@ -148,6 +148,9 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(int argc,char **argv
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
   engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540(&loading_bitmap,0);
   core_sound_cpp_CSound_findAllSoundFiles_FUN_005b2d00(g_CSoundPtr);
+#if !NOCTURNE_AUTHENTIC_SAVE_SLOTS
+  nocturne_save_slots_prewarm();
+#endif
   core_mission_cpp_CDemonMission_reset_FUN_00522c80(g_CDemonMissionPtr);
   for (iVar9 = 0; iVar9 < 8; iVar9++) {
     core_dfilter_cpp_CDemonFilter_init_FUN_004705a0(

@@ -104,6 +104,9 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
   this_ptr->collision_render_enabled = 0;
   g_ModalDialogActive = 0;
   this_ptr->developer_mode_enabled = 0;
+#if !NOCTURNE_AUTHENTIC_AUTOSAVE
+  nocturne_autosave_session_start();
+#endif
   core_game_cpp_CGame_setGameRes_FUN_004dade0(this_ptr);
   pcVar2 = getenv("VELOCITY");
   if (pcVar2 != (char *)0x0) {
@@ -171,6 +174,9 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
       }
       engine_keys_cpp_CKeys_toggleInputMask_FUN_005024b0(g_CKeysPtr,iVar5);
       core_game_cpp_CGame_processHotkeys_FUN_004dcee0(this_ptr);
+#if !NOCTURNE_AUTHENTIC_AUTOSAVE
+      nocturne_autosave_poll(this_ptr);
+#endif
       core_game_cpp_CGame_updateStatusDisplays_FUN_004d85a0(this_ptr);
       core_game_cpp_CGame_processFudge_FUN_004d8750(this_ptr);
       core_game_cpp_CGame_playerControls_FUN_004dbd80(this_ptr);

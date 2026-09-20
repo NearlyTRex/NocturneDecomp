@@ -32,13 +32,22 @@ void __cdecl core_game_cpp_CGame_promptLoadGame_FUN_004e36f0(CGame *this_ptr)
   else {
     local_210[0] = '\0';
   }
-  output_filename = local_210;
-  unknown = 1;
-  target_filename = "*.noc";
-  directory = "save";
-  pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Select file to load");
-  iVar3 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
-                    (g_CEditorToolsPtr,pcVar5,directory,target_filename,output_filename,unknown);
+#if !NOCTURNE_AUTHENTIC_SAVE_SLOTS
+  iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
+  if (iVar3 == 0) {
+    iVar3 = nocturne_load_pick_slot(local_210,sizeof(local_210));
+  }
+  else
+#endif
+  {
+    output_filename = local_210;
+    unknown = 1;
+    target_filename = "*.noc";
+    directory = "save";
+    pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Select file to load");
+    iVar3 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
+                      (g_CEditorToolsPtr,pcVar5,directory,target_filename,output_filename,unknown);
+  }
   if (iVar3 == 0) {
     return;
   }
