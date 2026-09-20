@@ -5,11 +5,11 @@
 
 // Original: crt_io.c_getFileStat_FUN_00565dc0
 // Address: 00565dc0
-int __cdecl getFileStat(char *filename,_stat *file_info);
+int __cdecl getFileStat(char *filename,WatcomStat *file_info);
 
 // Original: crt_io.c__utime_FUN_00565dc6
 // Address: 00565dc6
-int __cdecl ::utime(char *filename,_utimbuf *timestamps);
+int __cdecl ::utime(char *filename,WatcomUtimbuf *timestamps);
 
 // Original: crt_io.c_chdir_FUN_00566570
 // Address: 00566570
@@ -41,11 +41,11 @@ uint __watcallStack analyze::file_type(uint open_flags,char *filename);
 
 // Original: crt_io.c_getFileStat_FUN_0056c864
 // Address: 0056c864
-int __cdecl getFileStat(char *filename,_stat *file_info);
+int __cdecl getFileStat(char *filename,WatcomStat *file_info);
 
 // Original: crt_io.c__utime_FUN_0056cb60
 // Address: 0056cb60
-int __cdecl ::utime(char *filename,_utimbuf *timestamps);
+int __cdecl ::utime(char *filename,WatcomUtimbuf *timestamps);
 
 // Original: crt_io.c_IsSpecialDevice_FUN_005705c0
 // Address: 005705c0

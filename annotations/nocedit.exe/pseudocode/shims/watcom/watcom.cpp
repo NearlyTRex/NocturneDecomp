@@ -23,7 +23,11 @@
 // The descriptor-based half of Watcom's io.h — here just lseek and ftruncate.
 // A file descriptor is not POSIX-only: Windows' own runtime has both, as _lseek
 // and _chsize in <io.h>, so this is a spelling difference rather than a port.
+#if defined(_WIN32)
+#include <io.h>
+#else
 #include <unistd.h>
+#endif
 
 // =============================================================================
 // Array Construction Functions
@@ -143,7 +147,13 @@ long tell(int fd) {
 }
 
 int chsize(int fd, long size) {
+    // Watcom's own name for this was chsize, and so is Windows' — the POSIX
+    // spelling is the odd one out. <io.h> has no ftruncate to call.
+#if defined(_WIN32)
+    return _chsize(fd, size);
+#else
     return ftruncate(fd, size);
+#endif
 }
 
 char* _fullpath(char* buffer, const char* path, size_t maxlen) {
@@ -257,7 +267,7 @@ int _heapchk(void) {
     return 0;  // _HEAPOK
 }
 
-int _heapwalk(struct _heapinfo* entry) {
+int _heapwalk(struct WatcomHeapInfo* entry) {
     (void)entry;
     return 4;  // _HEAPEND
 }
@@ -296,9 +306,14 @@ unsigned long __set_errno(void) {
     return 0;
 }
 
+// Watcom's accessor for the per-thread errno slot. Windows' own runtime exports
+// it under this exact name and meaning — its <errno.h> defines errno as
+// (*_errno()) — so defining it here as well would be a duplicate symbol.
+#if !defined(_WIN32)
 int* _errno(void) {
     return &errno;
 }
+#endif
 
 // =============================================================================
 // Static Destructor Registration

@@ -7,7 +7,7 @@
 ; CEditorTools *   Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   output_buffer
 ; Local Variables:
-; _heapinfo        Stack[-0x28]:14  _Stack_28
+; WatcomHeapInfo   Stack[-0x28]:14  _Stack_28
 ; int              Stack[-0x18]:4  local_18
 ;
 ; XREF[4]:
@@ -54,7 +54,7 @@ section .text
         ;   Label: LAB_004a25ac
     PUSH EAX                            ; 004a25ae
     CALL crt_heap.c__heapwalk_FUN_006012c0 ; 004a25af
-        ;   XREF to: 006012c0 (UNCONDITIONAL_CALL)  ; int crt_heap.c__heapwalk_FUN_006012c0(_heapinfo * heap_info)
+        ;   XREF to: 006012c0 (UNCONDITIONAL_CALL)  ; int crt_heap.c__heapwalk_FUN_006012c0(WatcomHeapInfo * heap_info)
     ADD ESP,0x4                         ; 004a25b4
     TEST EAX,EAX                        ; 004a25b7
     JZ 0x004a25f5                       ; 004a25b9

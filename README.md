@@ -26,13 +26,13 @@ SIMD loops, x87 FPU idioms, hand-rolled asm) is ported to equivalent scalar or s
 C/C++, so the result builds on any target the toolchain supports rather than 32-bit x86 alone.
 The `.mmx.*` variants in the tree are reference captures of the original intent, never compiled.
 
-**Builds and runs as 64-bit, as well as 32-bit.** The native 64-bit lane is the default one and
-needs no multilib toolchain, which also makes the sanitizers easy to run. Getting there meant
-removing the pointer-width assumptions the original was full of — pointers truncated through
-`int`, allocation sizes and serialisation written against a 4-byte pointer — so those are now
-flagged as suspects and fixed as they are found. The 32-bit lane remains the *layout-faithful*
-one: struct offsets there match the shipped binary exactly, and the generated layout assertions
-are guarded to only run when pointers are 4 bytes wide.
+**Builds and runs as 64-bit.** Getting there meant removing the pointer-width assumptions the
+original was full of — pointers truncated through `int`, allocation sizes and serialisation
+written against a 4-byte pointer — so those are now flagged as suspects and fixed as they are
+found. There was a 32-bit lane once, layout-faithful down to the struct offset; it was retired
+because it was the only thing in the repository that needed an i386 multilib toolchain. The
+generated layout assertions that encode that 32-bit layout are still in the tree, guarded to
+run only when pointers are 4 bytes wide.
 
 **No game data is included.** The repository contains reverse-engineered documentation,
 annotations and source. Binaries, assets and data files are gitignored and are never required to
@@ -86,12 +86,14 @@ BADSPACEBASE, etc.).*
 ./run.sh            # launch it
 ```
 
-The default is a native 64-bit build with AddressSanitizer and UBSan, which needs no multilib
-toolchain. A 32-bit lane matching the original's pointer width and struct layout is also
-available, along with syntax-only presets that never link.
+The default is a native 64-bit build with AddressSanitizer and UBSan. Syntax-only presets that
+never link are available too, and need nothing beyond clang, cmake, ninja and python.
 
-Full prerequisites, the preset table, and an important warning about `*-dev:i386` packages on a
-multiarch desktop are in **[docs/building.md](docs/building.md)**.
+64-bit Windows builds two ways: `exe-windows-x86_64` cross-compiles a `nocturne.exe` from Linux,
+and `exe-windows-msys2` builds one natively on Windows under MSYS2. Both are opt-in and neither
+is looked for by any other preset, so a plain clone on either platform is unaffected.
+
+Full prerequisites and the preset table are in **[docs/building.md](docs/building.md)**.
 
 ## Documentation
 

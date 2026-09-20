@@ -57,7 +57,7 @@ section .text
         ;   Label: LAB_004736ec
     PUSH EAX                            ; 004736ee
     CALL crt_heap.c__heapwalk_FUN_00566b90 ; 004736ef
-        ;   XREF to: 00566b90 (UNCONDITIONAL_CALL)  ; int crt_heap.c__heapwalk_FUN_00566b90(_heapinfo * heap_info)
+        ;   XREF to: 00566b90 (UNCONDITIONAL_CALL)  ; int crt_heap.c__heapwalk_FUN_00566b90(WatcomHeapInfo * heap_info)
     ADD ESP,0x4                         ; 004736f4
     TEST EAX,EAX                        ; 004736f7
     JZ 0x00473735                       ; 004736f9

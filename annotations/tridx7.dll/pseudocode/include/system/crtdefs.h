@@ -113,10 +113,6 @@ typedef struct localeinfo_struct {
 } __attribute__((aligned(4))) localeinfo_struct;
 #pragma pack(pop)
 
-// Typedef: time_t
-// Signed Long Integer (compiler-specific size)
-typedef long time_t;
-
 // Typedef: wctype_t
 // Unsigned Short Integer (compiler-specific size)
 typedef ushort wctype_t;

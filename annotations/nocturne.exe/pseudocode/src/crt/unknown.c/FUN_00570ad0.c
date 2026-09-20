@@ -12,7 +12,7 @@ int FUN_00570ad0(char *param_1,uint *param_2,uint param_3)
   int iVar1;
   uint uVar2;
   uint uVar3;
-  _stat _Stack_50;
+  WatcomStat WStack_50;
   
   uVar2 = *param_2;
   if ((uVar2 & 3) == 3) {
@@ -44,7 +44,7 @@ int FUN_00570ad0(char *param_1,uint *param_2,uint param_3)
     uVar3 = uVar3 | 0x200;
   }
   if ((((uVar2 & 0x40) != 0) && ((uVar3 | 0x20) != 0)) &&
-     (iVar1 = getFileStat(param_1,&_Stack_50), iVar1 != -1)) {
+     (iVar1 = getFileStat(param_1,&WStack_50), iVar1 != -1)) {
     return -1;
   }
   uVar2 = param_3 & 0x7000;

@@ -3146,16 +3146,17 @@ def generate_crt_header(functions_to_process):
     lines.append("}")
     lines.append("")
 
-    # Add stat/utime headers (functions use _stat/_utime names from Watcom CRT)
+    # File status / timestamps. No host <sys/stat.h> or <utime.h> here: both
+    # prototypes below are satisfied by our own types -- WatcomStat comes from
+    # system/watcom.h and _utime takes a void* -- so the host headers were only
+    # ever supplying names nothing used. They also actively collide on Windows,
+    # where <sys/stat.h> carries `#define _stat _stat64i32` and <utime.h> its
+    # own _utimbuf.
     lines.append("// ---------------------------------------------------------------------------")
     lines.append("// File Status / Timestamps")
     lines.append("// ---------------------------------------------------------------------------")
     lines.append("")
-    lines.append("#include <sys/stat.h>")
-    lines.append("#include <sys/types.h>")
-    lines.append("#include <utime.h>")
-    lines.append("")
-    lines.append("extern int getFileStat(const char* path, struct _stat* buf);")
+    lines.append("extern int getFileStat(const char* path, struct WatcomStat* buf);")
     lines.append("extern int _utime(const char* path, void* times);")
     lines.append("")
 

@@ -286,8 +286,24 @@ static inline uint32_t __BITCAST_UINT32(float val) {
 // Note: The returned pointer points to static storage that is overwritten
 // by subsequent calls. Copy the values if you need to preserve them.
 
-#if defined(_MSC_VER)
+#if defined(_MSC_VER) || defined(_WIN32)
+// mingw's <intrin.h> includes <cpuid.h> itself, so the register-named
+// macros have to be out of the way here too -- same reason as the arm
+// below, one header further back. MSVC has no <cpuid.h> and does not
+// care either way.
+#pragma push_macro("__eax")
+#pragma push_macro("__ebx")
+#pragma push_macro("__ecx")
+#pragma push_macro("__edx")
+#undef __eax
+#undef __ebx
+#undef __ecx
+#undef __edx
 #include <intrin.h>
+#pragma pop_macro("__eax")
+#pragma pop_macro("__ebx")
+#pragma pop_macro("__ecx")
+#pragma pop_macro("__edx")
 static inline int* _cpuid_intrinsic(int leaf) {
     static int _cpuid_regs[4];
     __cpuid(_cpuid_regs, leaf);

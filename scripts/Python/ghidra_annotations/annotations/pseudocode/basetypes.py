@@ -66,14 +66,20 @@ def get_libc_provided_types():
     includes <stddef.h>, <stdint.h> and <stdarg.h>, so the names stay in scope
     everywhere and simply resolve to the toolchain's target-correct definitions.
 
-    NOT included here, deliberately:
-      time_t   — emitted as `typedef long time_t`, which is already correct on
-                 both lanes (4 bytes at -m32, 8 at LP64) and does not collide.
-                 Skipping it would require pulling in <time.h>, so leave it.
+    time_t was excluded here for a long time, on the grounds that `typedef long
+    time_t` is right on both Linux lanes (4 bytes at -m32, 8 at LP64) and
+    collides with nothing. That reasoning held only for glibc. Every Windows CRT
+    defines time_t as __time64_t — a long long — so on the mingw lanes the
+    typedef is a hard "redefinition with different types" in every translation
+    unit, and it is in nocturne.h, so that is all of them. It follows the target
+    like the rest of this list, and basetypes.h includes <time.h> for it.
     """
     return {
         # Pointer-width integers — <stdint.h>
         'intptr_t', 'uintptr_t',
+        # Calendar time — <time.h>. `long` on glibc, `long long` on any Windows
+        # CRT; re-emitting it breaks the mingw lanes outright.
+        'time_t',
         # Object sizes and differences — <stddef.h>
         'size_t', 'ssize_t', 'ptrdiff_t',
         # Variadic argument list — <stdarg.h>. On x86-64 SysV this is a 24-byte

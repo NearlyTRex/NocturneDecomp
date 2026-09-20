@@ -5,7 +5,7 @@
 
 // Original: crt_heap.c__heapwalk_FUN_00566b90
 // Address: 00566b90
-int __cdecl ::heapwalk(_heapinfo *heap_info);
+int __cdecl ::heapwalk(WatcomHeapInfo *heap_info);
 
 // Original: crt_heap.c_AllocateFromFreeList_FUN_00568b00
 // Address: 00568b00

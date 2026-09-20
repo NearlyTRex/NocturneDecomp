@@ -58,7 +58,7 @@ section .text
     PUSH EAX                            ; 00456845
     PUSH ESI                            ; 00456846
     CALL crt_io.c_getFileStat_FUN_00565dc0 ; 00456847
-        ;   XREF to: 00565dc0 (UNCONDITIONAL_CALL)  ; int crt_io.c_getFileStat_FUN_00565dc0(char * filename, _stat * file_info)
+        ;   XREF to: 00565dc0 (UNCONDITIONAL_CALL)  ; int crt_io.c_getFileStat_FUN_00565dc0(char * filename, WatcomStat * file_info)
     ADD ESP,0x8                         ; 0045684c
     TEST EAX,EAX                        ; 0045684f
     JNZ 0x00456818                      ; 00456851

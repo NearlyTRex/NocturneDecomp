@@ -87,11 +87,45 @@ typedef struct WatcomDestructorFlags {
 } WatcomDestructorFlags;
 #pragma pack(pop)
 
+// Structure: WatcomHeapInfo
+#pragma pack(push, 1)
+typedef struct WatcomHeapInfo {
+    void* _pentry;
+    ushort _segment;
+    SIZE_T _size;
+    int _useflag;
+} WatcomHeapInfo;
+#pragma pack(pop)
+
 // Structure: WatcomInheritanceLayout
 typedef struct WatcomInheritanceLayout {
     struct WatcomTypeInfo* base_type;
     int offset_to_base;
 } WatcomInheritanceLayout;
+
+// Structure: WatcomStat
+#pragma pack(push, 1)
+typedef struct WatcomStat {
+    int _st_dev;
+    uint _st_ino;
+    ushort _st_mode;
+    short _st_nlink;
+    ulong _st_uid;
+    short _st_gid;
+    int _st_rdev;
+    long _st_size;
+    time_t _st_atime;
+    time_t _st_mtime;
+    time_t _st_ctime;
+    time_t _st_btime;
+    ulong _st_attr;
+    ulong _st_archivedID;
+    ulong _st_updatedID;
+    ushort _st_inheritedRightsMask;
+    uchar _st_originatingNameSpace;
+    uchar _st_name[13];
+} WatcomStat;
+#pragma pack(pop)
 
 // Structure: WatcomStaticDestructorNode
 typedef struct WatcomStaticDestructorNode {
@@ -132,22 +166,20 @@ typedef struct WatcomTypeInfo {
     char* class_name;
 } WatcomTypeInfo;
 
+// Structure: WatcomUtimbuf
+#pragma pack(push, 1)
+typedef struct WatcomUtimbuf {
+    time_t actime;
+    time_t modtime;
+} WatcomUtimbuf;
+#pragma pack(pop)
+
 // Structure: WatcomVirtualBaseDescriptor
 #pragma pack(push, 1)
 typedef struct WatcomVirtualBaseDescriptor {
     int flags;
     int offset_to_vbase;
 } WatcomVirtualBaseDescriptor;
-#pragma pack(pop)
-
-// Structure: _heapinfo
-#pragma pack(push, 1)
-typedef struct _heapinfo {
-    void* _pentry;
-    ushort _segment;
-    SIZE_T _size;
-    int _useflag;
-} _heapinfo;
 #pragma pack(pop)
 
 // =============================================================================
@@ -302,11 +334,11 @@ extern int _mkdir(const char* path);
 #define _FREEENTRY    1
 #endif
 
-// _heapinfo - forward declaration (full definition from Ghidra types)
-struct _heapinfo;
+// WatcomHeapInfo - forward declaration (full definition from Ghidra types)
+struct WatcomHeapInfo;
 
 extern int _heapchk(void);
-extern int _heapwalk(struct _heapinfo* entry);
+extern int _heapwalk(struct WatcomHeapInfo* entry);
 extern size_t _memmax(void);
 extern size_t memavl(void);
 

@@ -11,8 +11,8 @@ int __cdecl engine_dosio_cpp_copyFileTimestamp_FUN_00481910(char *source_file,ui
 {
   int iVar1;
   int iVar2;
-  _stat _Stack_50;
-  _utimbuf local_8;
+  WatcomStat _Stack_50;
+  WatcomUtimbuf local_8;
   
   local_8.actime = modtime;
   local_8.modtime = modtime;

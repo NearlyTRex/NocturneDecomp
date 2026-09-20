@@ -5,13 +5,11 @@
 #include "system/excpt.h"
 #include "system/fstream.h"
 #include "system/iostream.h"
-#include "system/stat.h"
 #include "system/stdarg.h"
 #include "system/stdio.h"
 #include "system/stdlib.h"
 #include "system/strstream.h"
 #include "system/time.h"
-#include "system/utime.h"
 #include "system/watcom.h"
 #include "system/winbase.h"
 #include "system/windef.h"
@@ -155,8 +153,8 @@ void * __cdecl crt_memory_c_calloc_FUN_00565c50(SIZE_T count,SIZE_T size);
 float10 __fpustack_safe crt_math_c_asin_FUN_00565c76(float10 sine_value);
 double __fpustack_safe crt_math_c_acos_FUN_00565ca4(double x);
 char * __cdecl crt_stdlib_c__fullpath_FUN_00565d00(char *buffer,char *path,SIZE_T buffer_size);
-int __cdecl crt_io_c_getFileStat_FUN_00565dc0(char *filename,_stat *file_info);
-int __cdecl crt_io_c__utime_FUN_00565dc6(char *filename,_utimbuf *timestamps);
+int __cdecl crt_io_c_getFileStat_FUN_00565dc0(char *filename,WatcomStat *file_info);
+int __cdecl crt_io_c__utime_FUN_00565dc6(char *filename,WatcomUtimbuf *timestamps);
 DWORD __cdecl engine_dosio_cpp_setReadonlyAttribute_FUN_00565dd0(char *filename,DWORD file_attributes);
 int __cdecl crt_ctype_c_toupper_FUN_00565e20(int c);
 int __cdecl crt_watcom_c__mkdir_FUN_00565e40(char *path);
@@ -186,7 +184,7 @@ int __cdecl crt_unknown_c_string_getc_FUN_00566af0(scanf_state_t *state);
 int __cdecl crt_unknown_c_string_ungetc_FUN_00566b18(int ch,scanf_state_t *state);
 int __cdecl crt_unknown_c_vsscanf_FUN_00566b20(char *str,char *format,va_list_t args);
 int __cdecl crt_stdio_c_sscanf_FUN_00566b5c(char *str,char *format,...) __attribute__((format(scanf, 2, 3)));
-int __cdecl crt_heap_c__heapwalk_FUN_00566b90(_heapinfo *heap_info);
+int __cdecl crt_heap_c__heapwalk_FUN_00566b90(WatcomHeapInfo *heap_info);
 int __cdecl crt_unknown_c_heapWalk_FUN_00566ba0(HeapState *heap_state_ptr,Heap *heap_ptr);
 int __cdecl crt_unknown_c_heapCheck_FUN_00566c44(void *heap_state_ptr);
 void crt_unknown_c_FUN_00566c6c(void);
@@ -407,8 +405,8 @@ void crt_unknown_c_FUN_0056c6b8(DWORD param_1,int param_2);
 int __cdecl crt_errno_c_convertWindowsErrorToErrno_FUN_0056c6d0(DWORD windows_error);
 DWORD __cdecl crt_errno_c___set_errno_FUN_0056c73c(void);
 uint __watcallStack crt_io_c_analyze_file_type_FUN_0056c750(uint open_flags,char *filename);
-int __cdecl crt_io_c_getFileStat_FUN_0056c864(char *filename,_stat *file_info);
-int __cdecl crt_io_c__utime_FUN_0056cb60(char *filename,_utimbuf *timestamps);
+int __cdecl crt_io_c_getFileStat_FUN_0056c864(char *filename,WatcomStat *file_info);
+int __cdecl crt_io_c__utime_FUN_0056cb60(char *filename,WatcomUtimbuf *timestamps);
 DWORD __cdecl crt_file_c___getfileattr_FUN_0056cce0(char *filename);
 int crt_unknown_c_FUN_0056cd52(int param_1);
 int crt_unknown_c_FUN_0056cd9b(int param_1,undefined4 param_2,uint param_3,undefined4 param_4);

@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl crt_io_c_getFileStat_FUN_0056c864(char *filename,_stat *file_info)
+; int __cdecl crt_io_c_getFileStat_FUN_0056c864(char *filename,WatcomStat *file_info)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename
-; _stat *          Stack[0x8]:4   file_info
+; WatcomStat *     Stack[0x8]:4   file_info
 ; Local Variables:
 ; undefined4       Stack[-0x368]:4  local_368
 ; undefined        Stack[-0x364]:1  local_364

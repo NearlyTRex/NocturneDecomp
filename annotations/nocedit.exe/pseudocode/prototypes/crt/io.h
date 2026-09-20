@@ -5,11 +5,11 @@
 
 // Original: crt_io.c_getFileStat_FUN_00600c18
 // Address: 00600c18
-int __cdecl getFileStat(char *filename,_stat *file_info);
+int __cdecl getFileStat(char *filename,WatcomStat *file_info);
 
 // Original: crt_io.c__utime_FUN_00600c1e
 // Address: 00600c1e
-int __cdecl ::utime(char *filename,_utimbuf *timestamps);
+int __cdecl ::utime(char *filename,WatcomUtimbuf *timestamps);
 
 // Original: crt_io.c_chsize_FUN_00600cf0
 // Address: 00600cf0
@@ -57,11 +57,11 @@ uint __watcallStack analyze::file_type(uint open_flags,char *filename);
 
 // Original: crt_io.c_getFileStat_FUN_00607e64
 // Address: 00607e64
-int __cdecl getFileStat(char *filename,_stat *file_info);
+int __cdecl getFileStat(char *filename,WatcomStat *file_info);
 
 // Original: crt_io.c__utime_FUN_00608160
 // Address: 00608160
-int __cdecl ::utime(char *filename,_utimbuf *timestamps);
+int __cdecl ::utime(char *filename,WatcomUtimbuf *timestamps);
 
 // Original: crt_io.c_extend_file_for_append_FUN_00608410
 // Address: 00608410

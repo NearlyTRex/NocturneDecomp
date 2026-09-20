@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl crt_io_c__utime_FUN_0056cb60(char *filename,_utimbuf *timestamps)
+; int __cdecl crt_io_c__utime_FUN_0056cb60(char *filename,WatcomUtimbuf *timestamps)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename
-; _utimbuf *       Stack[0x8]:4   timestamps
+; WatcomUtimbuf *  Stack[0x8]:4   timestamps
 ;
 ; XREF[1]:
 ;   crt_io.c__utime_FUN_00565dc6 at 00565dc6

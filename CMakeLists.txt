@@ -13,7 +13,7 @@ cmake_minimum_required(VERSION 3.20)
 #
 # Pick one or both:
 #   cmake -B build -DNOCTURNE_BUILD_CHECK=ON -DNOCTURNE_BUILD_EXE=ON \
-#         --toolchain cmake/toolchains/linux-i686.cmake
+#         --toolchain cmake/toolchains/linux-x86_64.cmake
 #   cmake --build build --target nocturne_check
 #   cmake --build build --target nocturne
 # -----------------------------------------------------------------------------
@@ -23,7 +23,7 @@ project(NocturneDecomp LANGUAGES C CXX)
 option(NOCTURNE_BUILD_CHECK "Build syntax-only verification target" ON)
 option(NOCTURNE_BUILD_EXE   "Build full linked executable"          OFF)
 option(NOCTURNE_ASAN
-    "Enable AddressSanitizer + UBSan on the exe build (requires 32-bit sanitizer runtime)"
+    "Enable AddressSanitizer + UBSan on the exe build"
     OFF)
 # Who owns the window's pixels. ON (default) creates a GL context and presents
 # the 2D back buffer as a textured quad, which is what lets a decompiled 3D
@@ -94,16 +94,13 @@ set(NOCTURNE_CHECKS_DIR   "${NOCTURNE_PSEUDOCODE_DIR}/checks")
 find_package(Python3 REQUIRED COMPONENTS Interpreter)
 
 # SDL2 / SDL2_ttf / FFmpeg — consumed by the DirectDraw/DirectSound/kernel32
-# and mci_video shims. Required only when linking the exe; the check-linux
-# preset skips the shims.
+# and mci_video shims. Required only when linking the exe; the check presets
+# skip the shims.
 #
-# Both lanes (32-bit i686 and native 64-bit x86_64) build these from source via
-# cmake/bundledlibs.cmake. The Ubuntu `*-dev:i386` packages drag in a
-# conflicting i386 -dev chain that apt resolves by removing the amd64 desktop,
-# so the 32-bit lane can't use them; we build the 64-bit lane the same way so
-# both lanes are reproducible and don't depend on whatever SDL the host has.
-# The source build sets the same SDL2_*/SDL2TTF_*/FFMPEG_* variables pkg-config
-# did, so the rest of this file is unchanged.
+# Built from source via cmake/bundledlibs.cmake rather than taken from system
+# pkg-config, so a build does not depend on whichever SDL the host happens to
+# have. The source build sets the same SDL2_*/SDL2TTF_*/FFMPEG_* variables
+# pkg-config did, so the rest of this file is unchanged.
 set(NOCTURNE_FFMPEG_DEP "")
 if(NOCTURNE_BUILD_EXE)
     include("${CMAKE_SOURCE_DIR}/cmake/bundledlibs.cmake")
@@ -184,17 +181,6 @@ set(NOCTURNE_COMMON_WARNINGS
     -Werror=sometimes-uninitialized
 )
 
-# Target arch flag. The decomp is natively 32-bit (-m32, matches the original
-# binary's pointer width / struct layout), selected by the linux-i686 toolchain.
-# The linux-x86_64 toolchain (CMAKE_SYSTEM_PROCESSOR x86_64) builds native 64-bit
-# with no multilib — leave this empty there so no -m32 leaks onto the command
-# line. Used by both the syntax-check command and the exe target options below.
-if(CMAKE_SYSTEM_PROCESSOR STREQUAL "x86_64")
-    set(NOCTURNE_ARCH_FLAGS "")
-else()
-    set(NOCTURNE_ARCH_FLAGS -m32)
-endif()
-
 set(NOCTURNE_INCLUDE_FLAGS
     -I "${NOCTURNE_INCLUDE_DIR}"
     -I "${NOCTURNE_SHIMS_DIR}"
@@ -225,7 +211,7 @@ if(NOCTURNE_BUILD_CHECK)
             add_custom_command(
                 OUTPUT  "${_stamp}"
                 COMMAND "${CMAKE_CXX_COMPILER}"
-                        ${NOCTURNE_ARCH_FLAGS} -fsyntax-only -std=gnu++11
+                        -fsyntax-only -std=gnu++11
                         -x c++
                         ${NOCTURNE_COMMON_WARNINGS}
                         ${NOCTURNE_INCLUDE_FLAGS}
@@ -282,7 +268,7 @@ if(NOCTURNE_BUILD_EXE)
             target_include_directories(nocturne_${_module} PRIVATE
                 "${NOCTURNE_INCLUDE_DIR}" "${NOCTURNE_SHIMS_DIR}")
             target_compile_options(nocturne_${_module} PRIVATE
-                ${NOCTURNE_ARCH_FLAGS} ${NOCTURNE_COMMON_WARNINGS}
+                ${NOCTURNE_COMMON_WARNINGS}
                 ${NOCTURNE_SANITIZE_FLAGS})
             target_compile_features(nocturne_${_module} PRIVATE cxx_std_17)
 
@@ -339,6 +325,15 @@ if(NOCTURNE_BUILD_EXE)
     # file defines a main(), so leaving them in here would collide with the
     # game's at link time.
     list(FILTER _shim_sources EXCLUDE REGEX "/shims/tests/")
+    # One socket backend, chosen by platform: winsock_posix.c over BSD sockets,
+    # winsock_win32.c over Winsock. Both define the same eighteen posix_* entry
+    # points that winsock.cpp calls, so compiling both is a duplicate-symbol
+    # link error rather than a preference.
+    if(WIN32)
+        list(FILTER _shim_sources EXCLUDE REGEX "/win32/winsock_posix\\.c$")
+    else()
+        list(FILTER _shim_sources EXCLUDE REGEX "/win32/winsock_win32\\.c$")
+    endif()
     set_source_files_properties(${_shim_sources} PROPERTIES LANGUAGE CXX)
 
     # -------------------------------------------------------------------------
@@ -414,7 +409,7 @@ if(NOCTURNE_BUILD_EXE)
         target_compile_definitions(nocturne_shims PRIVATE NOCTURNE_ICON_FROM_EXE=1)
     endif()
     target_compile_options(nocturne_shims PRIVATE
-        ${NOCTURNE_ARCH_FLAGS} ${NOCTURNE_COMMON_WARNINGS}
+        ${NOCTURNE_COMMON_WARNINGS}
         ${NOCTURNE_SANITIZE_FLAGS}
         ${SDL2_CFLAGS_OTHER} ${SDL2TTF_CFLAGS_OTHER} ${FFMPEG_CFLAGS_OTHER})
     target_compile_features(nocturne_shims PRIVATE cxx_std_17)
@@ -443,20 +438,70 @@ if(NOCTURNE_BUILD_EXE)
         "${NOCTURNE_INCLUDE_DIR}" "${NOCTURNE_SHIMS_DIR}"
         ${SDL2_INCLUDE_DIRS} ${SDL2TTF_INCLUDE_DIRS} ${FFMPEG_INCLUDE_DIRS})
     target_compile_options(nocturne PRIVATE
-        ${NOCTURNE_ARCH_FLAGS} ${NOCTURNE_COMMON_WARNINGS}
+        ${NOCTURNE_COMMON_WARNINGS}
         ${NOCTURNE_SANITIZE_FLAGS}
         ${SDL2_CFLAGS_OTHER} ${SDL2TTF_CFLAGS_OTHER} ${FFMPEG_CFLAGS_OTHER})
-    # -no-pie: ffmpeg's 32-bit inline asm (e.g. lpc_init.o) emits absolute
-    # R_386_32 relocations into .text that aren't PIC-safe even with ffmpeg's
-    # --enable-pic. In a PIE those become runtime text relocations (DT_TEXTREL),
-    # which ld warns about; linking non-PIE resolves them at link time instead.
-    target_link_options(nocturne PRIVATE ${NOCTURNE_ARCH_FLAGS} ${NOCTURNE_SANITIZE_FLAGS} -no-pie)
+    target_link_options(nocturne PRIVATE ${NOCTURNE_SANITIZE_FLAGS})
 
     foreach(_lib IN LISTS _module_libs)
         target_link_libraries(nocturne PRIVATE ${_lib})
     endforeach()
     target_link_libraries(nocturne PRIVATE nocturne_shims
         ${SDL2_LIBRARIES} ${SDL2TTF_LIBRARIES} ${FFMPEG_LIBRARIES})
+    if(WIN32)
+        # ws2_32 backs winsock_win32.c. The rest are what the kernel32 shim
+        # reaches for once its POSIX arms give way to the Win32 ones: winmm for
+        # the multimedia timer, version and imagehlp for the module queries.
+        target_link_libraries(nocturne PRIVATE ws2_32 winmm version)
+
+        # SDL2 and SDL2_ttf are built shared, and a PE resolves its imports from
+        # the directory the exe sits in. Put them there so the build output is
+        # something that runs when copied to a Windows machine, rather than
+        # something that needs a DLL hunt first. FFmpeg is static, so it needs
+        # nothing staged.
+        add_custom_command(TARGET nocturne POST_BUILD
+            COMMAND "${CMAKE_COMMAND}" -E copy_if_different
+                    "$<TARGET_FILE:SDL2::SDL2>" "$<TARGET_FILE:SDL2_ttf::SDL2_ttf>"
+                    "$<TARGET_FILE_DIR:nocturne>"
+            COMMENT "Staging SDL DLLs beside nocturne.exe"
+            VERBATIM)
+
+        # The C++ runtime DLLs. Cross-compiling they come out of the Debian
+        # sysroot, which no Windows machine has, so they have to travel with the
+        # exe. Building natively under MSYS2 they are already installed and on
+        # PATH inside that shell — but only inside it, so they are staged there
+        # too and the output directory means the same thing on both lanes: a
+        # folder that runs.
+        if(CMAKE_CROSSCOMPILING)
+            set(_rt_search_dirs
+                "/usr/lib/gcc/${NOCTURNE_WIN_TRIPLE}/*-posix"
+                "${NOCTURNE_WIN_SYSROOT}/lib")
+        else()
+            # Wherever this clang came from — /ucrt64/bin under MSYS2.
+            get_filename_component(_rt_bindir "${CMAKE_CXX_COMPILER}" DIRECTORY)
+            set(_rt_search_dirs "${_rt_bindir}")
+        endif()
+
+        foreach(_rt_dll libstdc++-6.dll libwinpthread-1.dll libgcc_s_seh-1.dll)
+            set(_rt_found "")
+            foreach(_rt_dir IN LISTS _rt_search_dirs)
+                if(NOT _rt_found)
+                    file(GLOB_RECURSE _rt_found "${_rt_dir}/${_rt_dll}")
+                endif()
+            endforeach()
+            if(_rt_found)
+                list(GET _rt_found 0 _rt_src)
+                add_custom_command(TARGET nocturne POST_BUILD
+                    COMMAND "${CMAKE_COMMAND}" -E copy_if_different
+                            "${_rt_src}" "$<TARGET_FILE_DIR:nocturne>"
+                    VERBATIM)
+            else()
+                message(STATUS "windows lane: ${_rt_dll} not found — copy it "
+                               "beside the exe by hand if the build does not "
+                               "start on a machine without the toolchain")
+            endif()
+        endforeach()
+    endif()
 
     # -------------------------------------------------------------------------
     # run.sh — launcher that sets sanitizer-friendly env defaults (symbolizer
@@ -511,9 +556,6 @@ endif()
 # is decoded. Those files take no GL and read no global, so a test needs neither
 # a context nor a window and runs anywhere.
 #
-# Built for the host rather than with NOCTURNE_ARCH_FLAGS. What is under test is
-# arithmetic on explicit widths, identical on both lanes, and building it -m32
-# would put the tests behind the multilib toolchain for no coverage.
 # Test sources, minus the support files a test links rather than runs. Anything
 # named gl_recorder/*_support is infrastructure and defines no main().
 file(GLOB_RECURSE _test_sources CONFIGURE_DEPENDS "${NOCTURNE_SHIMS_DIR}/tests/*.cpp")

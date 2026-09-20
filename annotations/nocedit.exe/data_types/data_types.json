@@ -5321,6 +5321,10 @@
       "type":"struct"
     },
     {
+      "name":"WatcomHeapInfo",
+      "type":"struct"
+    },
+    {
       "name":"WatcomInheritanceLayout",
       "type":"struct"
     },
@@ -5877,10 +5881,6 @@
       "type":"struct"
     },
     {
-      "name":"_heapinfo",
-      "type":"struct"
-    },
-    {
       "name":"_struct_19",
       "type":"struct"
     },
@@ -6401,15 +6401,15 @@
       "type":"typedef"
     },
     {
+      "name":"WatcomStat",
+      "type":"struct"
+    },
+    {
+      "name":"WatcomUtimbuf",
+      "type":"struct"
+    },
+    {
       "name":"_find_t",
-      "type":"struct"
-    },
-    {
-      "name":"_stat",
-      "type":"struct"
-    },
-    {
-      "name":"_utimbuf",
       "type":"struct"
     },
     {
@@ -24942,42 +24942,6 @@
       "type":"struct"
     },
     {
-      "alig":1,
-      "cat":"/Nocturne/Struct/System/watcom.h",
-      "desc":"",
-      "fields":[
-        {
-          "len":4,
-          "name":"_pentry",
-          "offset":0,
-          "type":"void*"
-        },
-        {
-          "len":2,
-          "name":"_segment",
-          "offset":4,
-          "type":"ushort"
-        },
-        {
-          "len":4,
-          "name":"_size",
-          "offset":6,
-          "type":"SIZE_T"
-        },
-        {
-          "len":4,
-          "name":"_useflag",
-          "offset":10,
-          "type":"int"
-        }
-      ],
-      "importable":true,
-      "len":14,
-      "name":"_heapinfo",
-      "pack":false,
-      "type":"struct"
-    },
-    {
       "alig":4,
       "cat":"/Nocturne/Struct/System/wincon.h",
       "desc":"",
@@ -25698,126 +25662,6 @@
       "type":"struct"
     },
     {
-      "alig":1,
-      "cat":"/Nocturne/Struct/System/stat.h",
-      "desc":"",
-      "fields":[
-        {
-          "len":4,
-          "name":"_st_dev",
-          "offset":0,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"_st_ino",
-          "offset":4,
-          "type":"uint"
-        },
-        {
-          "len":2,
-          "name":"_st_mode",
-          "offset":8,
-          "type":"ushort"
-        },
-        {
-          "len":2,
-          "name":"_st_nlink",
-          "offset":10,
-          "type":"short"
-        },
-        {
-          "len":4,
-          "name":"_st_uid",
-          "offset":12,
-          "type":"ulong"
-        },
-        {
-          "len":2,
-          "name":"_st_gid",
-          "offset":16,
-          "type":"short"
-        },
-        {
-          "len":4,
-          "name":"_st_rdev",
-          "offset":18,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"_st_size",
-          "offset":22,
-          "type":"long"
-        },
-        {
-          "len":4,
-          "name":"_st_atime",
-          "offset":26,
-          "type":"time_t"
-        },
-        {
-          "len":4,
-          "name":"_st_mtime",
-          "offset":30,
-          "type":"time_t"
-        },
-        {
-          "len":4,
-          "name":"_st_ctime",
-          "offset":34,
-          "type":"time_t"
-        },
-        {
-          "len":4,
-          "name":"_st_btime",
-          "offset":38,
-          "type":"time_t"
-        },
-        {
-          "len":4,
-          "name":"_st_attr",
-          "offset":42,
-          "type":"ulong"
-        },
-        {
-          "len":4,
-          "name":"_st_archivedID",
-          "offset":46,
-          "type":"ulong"
-        },
-        {
-          "len":4,
-          "name":"_st_updatedID",
-          "offset":50,
-          "type":"ulong"
-        },
-        {
-          "len":2,
-          "name":"_st_inheritedRightsMask",
-          "offset":54,
-          "type":"ushort"
-        },
-        {
-          "len":1,
-          "name":"_st_originatingNameSpace",
-          "offset":56,
-          "type":"uchar"
-        },
-        {
-          "len":13,
-          "name":"_st_name",
-          "offset":57,
-          "type":"uchar[13]"
-        }
-      ],
-      "importable":true,
-      "len":70,
-      "name":"_stat",
-      "pack":false,
-      "type":"struct"
-    },
-    {
       "alig":4,
       "cat":"/Nocturne/Struct/System/winnt.h",
       "desc":"",
@@ -26090,30 +25934,6 @@
       "importable":true,
       "len":8,
       "name":"_uintx2",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":1,
-      "cat":"/Nocturne/Struct/System/utime.h",
-      "desc":"",
-      "fields":[
-        {
-          "len":4,
-          "name":"actime",
-          "offset":0,
-          "type":"time_t"
-        },
-        {
-          "len":4,
-          "name":"modtime",
-          "offset":4,
-          "type":"time_t"
-        }
-      ],
-      "importable":true,
-      "len":8,
-      "name":"_utimbuf",
       "pack":false,
       "type":"struct"
     },
@@ -64365,6 +64185,42 @@
       "type":"struct"
     },
     {
+      "alig":1,
+      "cat":"/Nocturne/Struct/System/watcom.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"_pentry",
+          "offset":0,
+          "type":"void*"
+        },
+        {
+          "len":2,
+          "name":"_segment",
+          "offset":4,
+          "type":"ushort"
+        },
+        {
+          "len":4,
+          "name":"_size",
+          "offset":6,
+          "type":"SIZE_T"
+        },
+        {
+          "len":4,
+          "name":"_useflag",
+          "offset":10,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":14,
+      "name":"WatcomHeapInfo",
+      "pack":false,
+      "type":"struct"
+    },
+    {
       "alig":4,
       "cat":"/Nocturne/Struct/System/watcom.h",
       "desc":"",
@@ -64385,6 +64241,126 @@
       "importable":true,
       "len":8,
       "name":"WatcomInheritanceLayout",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/System/watcom.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"_st_dev",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"_st_ino",
+          "offset":4,
+          "type":"uint"
+        },
+        {
+          "len":2,
+          "name":"_st_mode",
+          "offset":8,
+          "type":"ushort"
+        },
+        {
+          "len":2,
+          "name":"_st_nlink",
+          "offset":10,
+          "type":"short"
+        },
+        {
+          "len":4,
+          "name":"_st_uid",
+          "offset":12,
+          "type":"ulong"
+        },
+        {
+          "len":2,
+          "name":"_st_gid",
+          "offset":16,
+          "type":"short"
+        },
+        {
+          "len":4,
+          "name":"_st_rdev",
+          "offset":18,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"_st_size",
+          "offset":22,
+          "type":"long"
+        },
+        {
+          "len":4,
+          "name":"_st_atime",
+          "offset":26,
+          "type":"time_t"
+        },
+        {
+          "len":4,
+          "name":"_st_mtime",
+          "offset":30,
+          "type":"time_t"
+        },
+        {
+          "len":4,
+          "name":"_st_ctime",
+          "offset":34,
+          "type":"time_t"
+        },
+        {
+          "len":4,
+          "name":"_st_btime",
+          "offset":38,
+          "type":"time_t"
+        },
+        {
+          "len":4,
+          "name":"_st_attr",
+          "offset":42,
+          "type":"ulong"
+        },
+        {
+          "len":4,
+          "name":"_st_archivedID",
+          "offset":46,
+          "type":"ulong"
+        },
+        {
+          "len":4,
+          "name":"_st_updatedID",
+          "offset":50,
+          "type":"ulong"
+        },
+        {
+          "len":2,
+          "name":"_st_inheritedRightsMask",
+          "offset":54,
+          "type":"ushort"
+        },
+        {
+          "len":1,
+          "name":"_st_originatingNameSpace",
+          "offset":56,
+          "type":"uchar"
+        },
+        {
+          "len":13,
+          "name":"_st_name",
+          "offset":57,
+          "type":"uchar[13]"
+        }
+      ],
+      "importable":true,
+      "len":70,
+      "name":"WatcomStat",
       "pack":false,
       "type":"struct"
     },
@@ -64547,6 +64523,30 @@
       "importable":true,
       "len":24,
       "name":"WatcomTypeInfo",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/System/watcom.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"actime",
+          "offset":0,
+          "type":"time_t"
+        },
+        {
+          "len":4,
+          "name":"modtime",
+          "offset":4,
+          "type":"time_t"
+        }
+      ],
+      "importable":true,
+      "len":8,
+      "name":"WatcomUtimbuf",
       "pack":false,
       "type":"struct"
     },

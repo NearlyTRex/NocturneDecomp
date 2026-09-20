@@ -5,23 +5,18 @@
 # work BEFORE cmake has ever run, so it lives at the repo root and is
 # hand-maintained.
 #
-# Default preset is `exe-linux-asan-x86_64` (native 64-bit ASan, no multilib).
-# Now that the 64-bit port links and runs, this is the default lane for finding
-# and fixing the remaining bugs. Override via the first arg or the BUILD_PRESET
-# env var:
+# Default preset is `exe-linux-asan-x86_64` (native 64-bit ASan). Override via
+# the first arg or the BUILD_PRESET env var:
 #
 #   ./build.sh                     # build exe-linux-asan-x86_64 (default, 64-bit ASan)
 #   ./build.sh exe-linux-x86_64    # build the non-ASan 64-bit exe
 #   ./build.sh check-linux-x86_64  # fast 64-bit syntax-check lane
-#   ./build.sh exe-linux-asan      # 32-bit binary-matching ASan lane (needs i386 multilib)
-#   ./build.sh exe-linux           # non-ASan 32-bit exe
-#   ./build.sh check-linux         # syntax-check only (32-bit)
-#   BUILD_PRESET=exe-linux ./build.sh
+#   BUILD_PRESET=exe-linux-x86_64 ./build.sh
 #
 # Extra args after the preset get passed through to cmake --build:
 #
-#   ./build.sh exe-linux-asan -j 4
-#   ./build.sh exe-linux-asan --target nocturne_globals
+#   ./build.sh exe-linux-asan-x86_64 -j 4
+#   ./build.sh exe-linux-asan-x86_64 --target nocturne_globals
 #
 # Re-glob trigger: collect_sources.py runs at cmake-configure time, so newly
 # added .keep.cpp files don't enter the ninja graph unless cmake reconfigures.

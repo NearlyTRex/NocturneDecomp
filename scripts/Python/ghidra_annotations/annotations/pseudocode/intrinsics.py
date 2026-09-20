@@ -528,8 +528,30 @@ def generate_intrinsics_header():
     lines.append("// Note: The returned pointer points to static storage that is overwritten")
     lines.append("// by subsequent calls. Copy the values if you need to preserve them.")
     lines.append("")
-    lines.append("#if defined(_MSC_VER)")
+    # Windows takes the <intrin.h> arm whatever the compiler. mingw ships that
+    # header too, with the same two-argument __cpuid(int[4], int), and SDL
+    # includes it -- so on a mingw build both headers land in one TU. Taking
+    # the gcc arm there defines __cpuid as a five-argument function-like macro
+    # first, which then rewrites <intrin.h>'s own declaration of it and fails
+    # inside psdk_inc/intrin-impl.h, a long way from the cause.
+    lines.append("#if defined(_MSC_VER) || defined(_WIN32)")
+    lines.append("// mingw's <intrin.h> includes <cpuid.h> itself, so the register-named")
+    lines.append("// macros have to be out of the way here too -- same reason as the arm")
+    lines.append("// below, one header further back. MSVC has no <cpuid.h> and does not")
+    lines.append("// care either way.")
+    lines.append("#pragma push_macro(\"__eax\")")
+    lines.append("#pragma push_macro(\"__ebx\")")
+    lines.append("#pragma push_macro(\"__ecx\")")
+    lines.append("#pragma push_macro(\"__edx\")")
+    lines.append("#undef __eax")
+    lines.append("#undef __ebx")
+    lines.append("#undef __ecx")
+    lines.append("#undef __edx")
     lines.append("#include <intrin.h>")
+    lines.append("#pragma pop_macro(\"__eax\")")
+    lines.append("#pragma pop_macro(\"__ebx\")")
+    lines.append("#pragma pop_macro(\"__ecx\")")
+    lines.append("#pragma pop_macro(\"__edx\")")
     lines.append("static inline int* _cpuid_intrinsic(int leaf) {")
     lines.append("    static int _cpuid_regs[4];")
     lines.append("    __cpuid(_cpuid_regs, leaf);")

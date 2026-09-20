@@ -2,7 +2,12 @@
 #include <cstring>
 // getlogin_r, for GetUserName. Who is logged in is a question every host answers
 // differently — Windows has GetUserNameA, which is what this is standing in for.
+// On Windows itself the environment answers instead: the real GetUserNameA is
+// the function being defined here, so calling it would be calling ourselves.
+#include <cstdlib>
+#if !defined(_WIN32)
 #include <unistd.h>
+#endif
 
 // ---------------------------------------------------------------------------
 // Globals (function pointers wired by shims_init_advapi32)
@@ -24,7 +29,17 @@
 static BOOL shim_GetUserNameA(char* lpBuffer, DWORD* pcbBuffer) {
     if (!lpBuffer || !pcbBuffer) return 0;
     char buf[256];
-    if (getlogin_r(buf, sizeof(buf)) == 0) {
+#if defined(_WIN32)
+    const char* who = getenv("USERNAME");
+    const bool named = who != nullptr;
+    if (named) {
+        strncpy(buf, who, sizeof(buf) - 1);
+        buf[sizeof(buf) - 1] = '\0';
+    }
+#else
+    const bool named = getlogin_r(buf, sizeof(buf)) == 0;
+#endif
+    if (named) {
         DWORD len = (DWORD)strlen(buf) + 1;
         if (len > *pcbBuffer) {
             *pcbBuffer = len;

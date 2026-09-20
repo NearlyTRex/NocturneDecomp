@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl crt_io_c_getFileStat_FUN_00600c18(char *filename,_stat *file_info)
+; int __cdecl crt_io_c_getFileStat_FUN_00600c18(char *filename,WatcomStat *file_info)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename
-; _stat *          Stack[0x8]:4   file_info
+; WatcomStat *     Stack[0x8]:4   file_info
 ;
 ; XREF[2]:
 ;   engine_dosio.cpp_copyFileTimestamp_FUN_00481910 at 00481927

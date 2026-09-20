@@ -27,8 +27,7 @@
 #   NOCTURNE_DBG_DEBUG_SH   path to build's debug.sh. Defaults to the 64-bit
 #                           ASan lane, build/exe-linux-asan-x86_64. This also
 #                           picks the lane `build` compiles, so the two cannot
-#                           disagree. For the 32-bit lane, point it at
-#                           build/exe-linux-asan/debug.sh.
+#                           disagree.
 #   NOCTURNE_DBG_TESTS      0 to skip building and running the tests on `build`
 #
 # Probe-file conventions:
@@ -131,7 +130,7 @@ case "${cmd}" in
     fi
     [ -x "${DEBUG_SH}" ] || {
       echo "dbg.sh: ${DEBUG_SH} not found or not executable" >&2
-      echo "        build the exe-linux-asan target first" >&2
+      echo "        build the exe-linux-asan-x86_64 target first" >&2
       exit 1
     }
     breaks=""

@@ -152,10 +152,6 @@ inline void _qsort(void* base, size_t num, size_t size, CompFunc compar) {
 // File Status / Timestamps
 // ---------------------------------------------------------------------------
 
-#include <sys/stat.h>
-#include <sys/types.h>
-#include <utime.h>
-
-extern int getFileStat(const char* path, struct _stat* buf);
+extern int getFileStat(const char* path, struct WatcomStat* buf);
 extern int _utime(const char* path, void* times);
 

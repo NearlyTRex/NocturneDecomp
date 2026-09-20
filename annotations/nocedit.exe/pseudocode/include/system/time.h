@@ -32,7 +32,3 @@ typedef struct dst_rule {
     int rule_type;
 } dst_rule;
 
-// Typedef: time_t
-// Signed Long Integer (compiler-specific size)
-typedef long time_t;
-

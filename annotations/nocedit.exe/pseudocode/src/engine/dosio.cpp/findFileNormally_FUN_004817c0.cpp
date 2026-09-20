@@ -15,7 +15,7 @@ int __cdecl engine_dosio_cpp_findFileNormally_FUN_004817c0(SFoundFileInfo *info)
   char *pcVar3;
   char *pcVar4;
   char local_14c [256];
-  _stat local_4c;
+  WatcomStat local_4c;
   char cVar1;
   
   if ((info != (SFoundFileInfo *)0x0) && (info->found_path[0] != '\0')) {

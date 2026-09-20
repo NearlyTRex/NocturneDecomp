@@ -60,10 +60,62 @@
 // The descriptor calls behind CreateFile/ReadFile/WriteFile: read, write,
 // close, lseek, dup, ftruncate, fsync, getpid. Not a port so much as a
 // spelling — Windows' own runtime has all of them, underscored, across <io.h>
-// and <process.h>, with ftruncate as _chsize and fsync as _commit. Left as the
-// POSIX names because that is what builds here and inventing the other set
-// blind would be claiming a correctness nobody has compiled.
+// and <process.h>, with ftruncate as _chsize and fsync as _commit.
+//
+// Most of them need no translation at all: <io.h> declares read, write, close,
+// lseek and dup under those exact names. Only the two the comment above names
+// differ, and they are spelled out at their call sites. The headers are named
+// directly rather than through mingw's courtesy <unistd.h>, so that what this
+// depends on is what the target actually documents.
+#if defined(_WIN32)
+#include <io.h>
+#include <process.h>
+#else
 #include <unistd.h>
+#endif
+// The reentrant broken-down-time calls, and the UTC offset that goes with them.
+// Windows' runtime spells the first two _s with the arguments the other way
+// round, and its struct tm has no tm_gmtoff — there the offset is a process-wide
+// setting read through _get_timezone, with the daylight part carried separately.
+#if defined(_WIN32)
+static inline struct tm* localtime_r(const time_t* timer, struct tm* out) {
+    return localtime_s(out, timer) == 0 ? out : NULL;
+}
+static inline struct tm* gmtime_r(const time_t* timer, struct tm* out) {
+    return gmtime_s(out, timer) == 0 ? out : NULL;
+}
+static inline time_t timegm(struct tm* tm_buf) {
+    return _mkgmtime(tm_buf);
+}
+// Read the offset off the two readings of the same fields rather than out of
+// the CRT's timezone globals: _get_timezone/_get_dstbias are UCRT-only, and the
+// cross lane targets msvcrt. mktime reads the fields as local and _mkgmtime as
+// UTC, so their difference is the offset, with DST already in it via tm_isdst.
+// Both mutate what they are handed, hence the copies.
+static inline long tm_utc_offset(const struct tm* tm_buf) {
+    struct tm as_local = *tm_buf;
+    struct tm as_utc = *tm_buf;
+    const time_t local = mktime(&as_local);
+    const time_t utc = _mkgmtime(&as_utc);
+    if (local == (time_t)-1 || utc == (time_t)-1) return 0;
+    return (long)(utc - local);
+}
+// _putenv_s is the whole of the environment interface Windows offers: an empty
+// value is how it removes a name, and it always overwrites, which is the only
+// mode either caller here asks for.
+static inline int setenv(const char* name, const char* value, int overwrite) {
+    (void)overwrite;
+    return _putenv_s(name, value);
+}
+static inline int unsetenv(const char* name) {
+    return _putenv_s(name, "");
+}
+#else
+static inline long tm_utc_offset(const struct tm* tm_buf) {
+    return tm_buf->tm_gmtoff;
+}
+#endif
+
 #include <vector>
 #include <string>
 #include <wchar.h>
@@ -244,6 +296,16 @@ static HANDLE shim_CreateFileA(LPCSTR lpFileName, DWORD dwDesiredAccess,
         break;
     }
 
+    // CreateFile has no text mode; the Windows CRT's descriptor layer does, and
+    // it defaults to on. Left alone it would strip CR from every read and
+    // double it on every write, and stop a read at the first 0x1A — which on
+    // the .POD archives this opens means silent corruption rather than an
+    // error. O_BINARY turns the translation off; it does not exist on POSIX,
+    // where there is nothing to turn off.
+#if defined(O_BINARY)
+    flags |= O_BINARY;
+#endif
+
     int fd = open(lpFileName, flags, 0666);
     if (fd < 0) {
         s_lastError = (DWORD)errno;
@@ -354,13 +416,21 @@ static BOOL shim_SetEndOfFile(HANDLE hFile) {
     int fd = HANDLE_TO_FD(hFile);
     off_t pos = lseek(fd, 0, SEEK_CUR);
     if (pos == (off_t)-1) { s_lastError = (DWORD)errno; return 0; }
+#if defined(_WIN32)
+    if (_chsize(fd, (long)pos) != 0) { s_lastError = (DWORD)errno; return 0; }
+#else
     if (ftruncate(fd, pos) != 0) { s_lastError = (DWORD)errno; return 0; }
+#endif
     return 1;
 }
 
 static BOOL shim_FlushFileBuffers(HANDLE hFile) {
     int fd = HANDLE_TO_FD(hFile);
+#if defined(_WIN32)
+    return _commit(fd) == 0 ? 1 : 0;
+#else
     return fsync(fd) == 0 ? 1 : 0;
+#endif
 }
 
 static BOOL shim_DeleteFileA(LPCSTR lpFileName) {
@@ -451,7 +521,13 @@ static DWORD shim_GetFileType(HANDLE hFile) {
     if (fstat(fd, &st) != 0) return 0;
     if (S_ISREG(st.st_mode)) return WIN32_FILE_TYPE_DISK;
     if (S_ISCHR(st.st_mode)) return WIN32_FILE_TYPE_CHAR;
+    // No S_ISSOCK on Windows: a socket is never a stat-able filesystem object
+    // there, so the macro does not exist and the case cannot arise.
+#if defined(S_ISSOCK)
     if (S_ISFIFO(st.st_mode) || S_ISSOCK(st.st_mode)) return WIN32_FILE_TYPE_PIPE;
+#else
+    if (S_ISFIFO(st.st_mode)) return WIN32_FILE_TYPE_PIPE;
+#endif
     return WIN32_FILE_TYPE_DISK;
 }
 
@@ -459,7 +535,14 @@ static DWORD shim_GetFullPathNameA(LPCSTR lpFileName, DWORD nBufferLength,
     LPSTR lpBuffer, LPSTR* lpFilePart)
 {
     char resolved[4096];
+    // _fullpath is realpath with one difference that matters here: it does not
+    // require the file to exist, so the not-found branch below is dead on
+    // Windows and only fires for a malformed path. Both return NULL on failure.
+#if defined(_WIN32)
+    if (!_fullpath(resolved, lpFileName, sizeof(resolved))) {
+#else
     if (!realpath(lpFileName, resolved)) {
+#endif
         // If file doesn't exist, just copy the input
         strncpy(lpBuffer, lpFileName, nBufferLength);
         lpBuffer[nBufferLength - 1] = '\0';
@@ -1067,10 +1150,30 @@ static void host_memory(HostMemory *out) {
 
 #elif defined(_WIN32)
 
+// Declared here rather than included. <windows.h> would bring its own DWORD,
+// HANDLE and MEMORYSTATUS, and system/kernel32.h has already defined all three
+// with the layouts the decompiled binary expects — the two sets cannot coexist
+// in one TU. One struct and one import is a smaller thing to own than that
+// collision, and the layout is fixed ABI.
+extern "C" {
+struct NOC_MEMORYSTATUSEX {
+    DWORD              dwLength;
+    DWORD              dwMemoryLoad;
+    unsigned long long ullTotalPhys;
+    unsigned long long ullAvailPhys;
+    unsigned long long ullTotalPageFile;
+    unsigned long long ullAvailPageFile;
+    unsigned long long ullTotalVirtual;
+    unsigned long long ullAvailVirtual;
+    unsigned long long ullAvailExtendedVirtual;
+};
+__declspec(dllimport) int __stdcall GlobalMemoryStatusEx(NOC_MEMORYSTATUSEX *);
+}
+
 // Straight through: the game is asking a Windows question and this is a
 // Windows host, so the shim is the identity.
 static void host_memory(HostMemory *out) {
-    MEMORYSTATUSEX status;
+    NOC_MEMORYSTATUSEX status;
     status.dwLength = sizeof(status);
     if (!GlobalMemoryStatusEx(&status)) { host_memory_fallback(out); return; }
     out->total_phys   = status.ullTotalPhys;
@@ -1193,9 +1296,26 @@ static HMODULE shim_GetModuleHandleA(LPCSTR lpModuleName) {
     return (HMODULE)nocturne_builtin_dll_open(lpModuleName);
 }
 
+// The path of the running program, without a NUL. /proc/self/exe is Linux's
+// answer; Windows' runtime holds it in _pgmptr, which is what the real
+// GetModuleFileNameA would hand back and needs no Win32 header to read.
+static ssize_t host_program_path(char* out, size_t cap) {
+    if (cap == 0) return -1;
+#if defined(_WIN32)
+    const char* path = _pgmptr;
+    if (!path) return -1;
+    size_t len = strlen(path);
+    if (len > cap - 1) len = cap - 1;
+    memcpy(out, path, len);
+    return (ssize_t)len;
+#else
+    return readlink("/proc/self/exe", out, cap - 1);
+#endif
+}
+
 static DWORD shim_GetModuleFileNameA(HMODULE hModule, LPSTR lpFilename, DWORD nSize) {
     (void)hModule;
-    ssize_t len = readlink("/proc/self/exe", lpFilename, nSize - 1);
+    ssize_t len = host_program_path(lpFilename, nSize);
     if (len < 0) {
         if (nSize > 0) lpFilename[0] = '\0';
         return 0;
@@ -1207,7 +1327,7 @@ static DWORD shim_GetModuleFileNameA(HMODULE hModule, LPSTR lpFilename, DWORD nS
 static DWORD shim_GetModuleFileNameW(HMODULE hModule, LPWSTR lpFilename, DWORD nSize) {
     (void)hModule;
     char buf[4096];
-    ssize_t len = readlink("/proc/self/exe", buf, sizeof(buf) - 1);
+    ssize_t len = host_program_path(buf, sizeof(buf));
     if (len < 0) {
         if (nSize > 0) lpFilename[0] = L'\0';
         return 0;
@@ -1264,7 +1384,7 @@ static DWORD shim_GetTimeZoneInformation(LPTIME_ZONE_INFORMATION lpTimeZoneInfor
     time_t now = time(NULL);
     struct tm tm_buf;
     localtime_r(&now, &tm_buf);
-    lpTimeZoneInformation->Bias = (LONG)(-(tm_buf.tm_gmtoff / 60));
+    lpTimeZoneInformation->Bias = (LONG)(-(tm_utc_offset(&tm_buf) / 60));
     return 0; // TIME_ZONE_ID_UNKNOWN
 }
 
@@ -1284,7 +1404,7 @@ static BOOL shim_FileTimeToLocalFileTime(FILETIME* lpFileTime, LPFILETIME lpLoca
     struct tm tm_buf;
     localtime_r(&ts.tv_sec, &tm_buf);
     // Recompute with local offset
-    time_t local = ts.tv_sec + tm_buf.tm_gmtoff;
+    time_t local = ts.tv_sec + tm_utc_offset(&tm_buf);
     ts.tv_sec = local;
     timespec_to_filetime(&ts, lpLocalFileTime);
     return 1;
@@ -1295,7 +1415,7 @@ static BOOL shim_LocalFileTimeToFileTime(FILETIME* lpLocalFileTime, LPFILETIME l
     filetime_to_timespec(lpLocalFileTime, &ts);
     struct tm tm_buf;
     localtime_r(&ts.tv_sec, &tm_buf);
-    time_t utc = ts.tv_sec - tm_buf.tm_gmtoff;
+    time_t utc = ts.tv_sec - tm_utc_offset(&tm_buf);
     ts.tv_sec = utc;
     timespec_to_filetime(&ts, lpFileTime);
     return 1;
@@ -1456,6 +1576,24 @@ static LONGVAL shim_UnhandledExceptionFilter(struct _EXCEPTION_POINTERS* Excepti
 static LPSTR shim_GetCommandLineA(void) {
     static char cmdline[4096] = "";
     if (cmdline[0] == '\0') {
+#if defined(_WIN32)
+        // The real GetCommandLineA is the function being shimmed, so it cannot
+        // be the source. __argv is the same argument vector the CRT built from
+        // the command line before main ran, which is as close as this gets
+        // without <windows.h>. Joining with spaces loses the original quoting,
+        // exactly as the /proc path below does.
+        size_t used = 0;
+        for (int i = 0; i < __argc && used + 1 < sizeof(cmdline); i++) {
+            const char* arg = __argv[i];
+            if (used) cmdline[used++] = ' ';
+            size_t room = sizeof(cmdline) - used - 1;
+            size_t len  = strlen(arg);
+            if (len > room) len = room;
+            memcpy(cmdline + used, arg, len);
+            used += len;
+        }
+        cmdline[used] = '\0';
+#else
         // Read from /proc/self/cmdline
         int fd = open("/proc/self/cmdline", O_RDONLY);
         if (fd >= 0) {
@@ -1469,6 +1607,7 @@ static LPSTR shim_GetCommandLineA(void) {
                 cmdline[n] = '\0';
             }
         }
+#endif
     }
     return cmdline;
 }

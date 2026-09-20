@@ -15,7 +15,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004736
   uint uVar4;
   char *pcVar5;
   int iVar6;
-  _heapinfo local_28;
+  WatcomHeapInfo local_28;
   int local_18;
   
   iVar3 = 0;

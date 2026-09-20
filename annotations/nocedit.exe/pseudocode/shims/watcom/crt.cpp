@@ -26,9 +26,9 @@
 #endif
 // Full struct layouts for Watcom types that crt.h only forward-declares.
 // The shims bridge these to libc equivalents field-by-field.
-#include "system/stdio.h"   // _FILE  (for _FILE_to_FILE)
-#include "system/stat.h"    // _stat  (for getFileStat)
-#include "system/time.h"    // _tm    (for _mktime/_localtime)
+#include "system/stdio.h"   // _FILE       (for _FILE_to_FILE)
+#include "system/watcom.h"  // WatcomStat  (for getFileStat)
+#include "system/time.h"    // _tm         (for _mktime/_localtime)
 
 // ---------------------------------------------------------------------------
 // rand() — Watcom/Win32 semantics
@@ -245,6 +245,15 @@ static void sync_file_flags(_FILE* f) {
 
 #include <string>
 #include <sys/stat.h>
+// utime() and struct utimbuf, for _utime below. Windows keeps both in
+// <sys/utime.h>; it spells them _utime/_utimbuf but provides the unprefixed
+// names too. These belong here rather than in the generated system/crt.h,
+// which declares _utime as taking a void* and so needs neither.
+#if defined(_WIN32)
+#include <sys/utime.h>
+#else
+#include <utime.h>
+#endif
 
 
 // ---------------------------------------------------------------------------
@@ -284,6 +293,18 @@ static _FILE* make_file_wrapper(FILE* fp) {
 // externally would be wrong. In practice the game only seeks text files
 // via rewind() or offsets returned from ftell() on the same stream, which
 // both round-trip correctly through the underlying fseeko.
+// None of that is needed on Windows, where the CRT still does the translation
+// this layer exists to imitate — and fopencookie is glibc's, so it could not be
+// built there anyway. Passing the mode string through unaltered, 't' included,
+// gets the behaviour from the runtime that originally defined it.
+#if defined(_WIN32)
+
+static FILE* fopen_text_aware(const char* path, const char* mode) {
+    return fopen(path, mode);
+}
+
+#else
+
 static bool mode_is_text(const char* mode) {
     if (!mode) return false;
     for (const char* p = mode; *p; ++p) {
@@ -351,6 +372,8 @@ static FILE* fopen_text_aware(const char* path, const char* mode) {
     setvbuf(cooked, nullptr, _IONBF, 0);
     return cooked;
 }
+
+#endif  // !_WIN32
 
 _FILE* _fopen(const char* filename, const char* mode) {
     return make_file_wrapper(
@@ -649,25 +672,28 @@ size_t _strftime(char* dest_buffer, size_t buffer_size, const char* format_strin
 // File Status / Timestamps
 // ---------------------------------------------------------------------------
 
-// Watcom _stat is 70 bytes; glibc struct stat is 88 on 32-bit. ASan's
+// WatcomStat is 70 bytes; glibc struct stat is 88 on 32-bit. ASan's
 // stat interceptor writes the full 88 bytes, overflowing the 70-byte
 // Watcom buffer. Bridge the same way as _mktime/_tm.
-int getFileStat(const char* path, struct _stat* buf) {
+int getFileStat(const char* path, struct WatcomStat* buf) {
     struct stat libc_st;
     int rc = stat(watcom_resolve_fs_path(path).c_str(), &libc_st);
     if (rc == 0 && buf) {
         memset(buf, 0, sizeof(*buf));
-        buf->_st_dev   = libc_st.st_dev;
-        buf->_st_ino   = libc_st.st_ino;
-        buf->_st_mode  = libc_st.st_mode;
-        buf->_st_nlink = libc_st.st_nlink;
-        buf->_st_uid   = libc_st.st_uid;
-        buf->_st_gid   = libc_st.st_gid;
-        buf->_st_rdev  = libc_st.st_rdev;
-        buf->_st_size  = libc_st.st_size;
-        buf->_st_atime = libc_st.st_atime;
-        buf->_st_mtime = libc_st.st_mtime;
-        buf->_st_ctime = libc_st.st_ctime;
+        // Every field narrows: the host's are 64-bit where Watcom's are 16 or
+        // 32, and they differ again between hosts. Spelled out so the loss is
+        // visible rather than left to an implicit conversion.
+        buf->_st_dev   = (int)libc_st.st_dev;
+        buf->_st_ino   = (uint)libc_st.st_ino;
+        buf->_st_mode  = (ushort)libc_st.st_mode;
+        buf->_st_nlink = (short)libc_st.st_nlink;
+        buf->_st_uid   = (ulong)libc_st.st_uid;
+        buf->_st_gid   = (short)libc_st.st_gid;
+        buf->_st_rdev  = (int)libc_st.st_rdev;
+        buf->_st_size  = (long)libc_st.st_size;
+        buf->_st_atime = (time_t)libc_st.st_atime;
+        buf->_st_mtime = (time_t)libc_st.st_mtime;
+        buf->_st_ctime = (time_t)libc_st.st_ctime;
     }
     return rc;
 }

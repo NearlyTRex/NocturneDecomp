@@ -2,11 +2,11 @@
 // Address: 00600c1e
 // Address Range: [[00600c1e, 00600c22]]
 // Convention: __cdecl
-// Signature: int __cdecl crt_io_c__utime_FUN_00600c1e(char *filename,_utimbuf *timestamps)
+// Signature: int __cdecl crt_io_c__utime_FUN_00600c1e(char *filename,WatcomUtimbuf *timestamps)
 
 #include "nocturne.h"
 
-int __cdecl _utime(char *filename,_utimbuf *timestamps)
+int __cdecl _utime(char *filename,WatcomUtimbuf *timestamps)
 
 {
   int iVar1;

@@ -119,7 +119,7 @@ These are off-the-shelf tools that can run on the `.keep` files (and the raw `.c
 
 ### 11. AddressSanitizer / UBSan (runtime validation)
 
-**Status:** Wired up behind the `NOCTURNE_ASAN` CMake option (preset `exe-linux-asan`). `build/<preset>/run.sh` is generated at configure time with sanitizer-friendly env defaults and execs the binary.
+**Status:** Wired up behind the `NOCTURNE_ASAN` CMake option (preset `exe-linux-asan-x86_64`). `build/<preset>/run.sh` is generated at configure time with sanitizer-friendly env defaults and execs the binary.
 
 **What it catches:** Runtime memory errors — out-of-bounds access, stack buffer overflow, use-after-free, undefined behavior (signed overflow, null dereference, type punning violations, wrong-type dynamic casts, misaligned loads, out-of-range enum stores).
 

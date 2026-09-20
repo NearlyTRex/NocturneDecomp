@@ -10,15 +10,15 @@ int __cdecl engine_dosio_cpp_copyFileTimestamp_FUN_00456950(char *source_file,ui
 
 {
   int iVar1;
-  _stat _Stack_50;
-  _utimbuf _Stack_8;
+  WatcomStat WStack_50;
+  WatcomUtimbuf WStack_8;
   
-  _Stack_8.actime = modtime;
-  _Stack_8.modtime = modtime;
-  iVar1 = getFileStat(source_file,&_Stack_50);
+  WStack_8.actime = modtime;
+  WStack_8.modtime = modtime;
+  iVar1 = getFileStat(source_file,&WStack_50);
   if (iVar1 == 0) {
-    _Stack_8.actime = _Stack_50._st_atime;
+    WStack_8.actime = WStack_50._st_atime;
   }
-  iVar1 = _utime(source_file,&_Stack_8);
+  iVar1 = _utime(source_file,&WStack_8);
   return (uint)(iVar1 == 0);
 }

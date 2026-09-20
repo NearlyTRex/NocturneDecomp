@@ -2,11 +2,11 @@
 // Address: 00565dc0
 // Address Range: [[00565dc0, 00565dc4]]
 // Convention: __cdecl
-// Signature: int __cdecl crt_io_c_getFileStat_FUN_00565dc0(char *filename,_stat *file_info)
+// Signature: int __cdecl crt_io_c_getFileStat_FUN_00565dc0(char *filename,WatcomStat *file_info)
 
 #include "nocturne.h"
 
-int __cdecl getFileStat(char *filename,_stat *file_info)
+int __cdecl getFileStat(char *filename,WatcomStat *file_info)
 
 {
   bool bVar1;

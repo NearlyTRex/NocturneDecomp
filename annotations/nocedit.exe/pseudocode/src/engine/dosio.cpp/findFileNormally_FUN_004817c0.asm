@@ -7,7 +7,7 @@
 ; SFoundFileInfo * Stack[0x4]:4   info
 ; Local Variables:
 ; char[256]        Stack[-0x14c]:256  local_14c
-; _stat            Stack[-0x4c]:70  local_4c
+; WatcomStat       Stack[-0x4c]:70  local_4c
 ;
 ; XREF[14]:
 ;   core_fileman.cpp_preprocessMusicFiles_FUN_004bd750 at 004bd7cf
@@ -61,7 +61,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 004817fb
     PUSH EAX                            ; 004817ff
     CALL crt_io.c_getFileStat_FUN_00600c18 ; 00481800
-        ;   XREF to: 00600c18 (UNCONDITIONAL_CALL)  ; int crt_io.c_getFileStat_FUN_00600c18(char * filename, _stat * file_info)
+        ;   XREF to: 00600c18 (UNCONDITIONAL_CALL)  ; int crt_io.c_getFileStat_FUN_00600c18(char * filename, WatcomStat * file_info)
     ADD ESP,0x8                         ; 00481805
     TEST EAX,EAX                        ; 00481808
     JNZ 0x004817d7                      ; 0048180a

@@ -13,7 +13,7 @@ int __cdecl engine_dosio_cpp_findFileNormally_FUN_004817c0(SFoundFileInfo *info)
   int iVar2;
   int iVar3;
   char local_14c [256];
-  _stat local_4c;
+  WatcomStat local_4c;
 
   if ((info != (SFoundFileInfo *)0x0) && (info->found_path[0] != '\0')) {
     iVar2 = engine_dosio_cpp_getFullPath_FUN_004820c0(local_14c,info->found_path);

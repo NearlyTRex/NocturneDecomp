@@ -11,6 +11,17 @@
 #include <stdint.h>  // for intptr_t/uintptr_t (pointer-width types)
 #include <stdbool.h>  // for bool
 #include <stdarg.h>  // for va_list (24-byte __va_list_tag[1] on x86-64)
+#include <time.h>  // for time_t (long on glibc, long long on any Windows CRT)
+
+// The Watcom convention macros below blank `__edx`, which is also the name of
+// a local in clang's <cpuid.h>. Anything pulling <intrin.h> after this point
+// (SDL_cpuinfo.h does) would then fail to parse it, so parse it here first and
+// let its include guard absorb the later inclusion. On Windows the entry point
+// must be <intrin.h>, not <cpuid.h>: including <cpuid.h> alone defines a 5-arg
+// `__cpuid` macro that rewrites mingw's own `void __cpuid(int[4], int)`.
+#if defined(_WIN32)
+#include <intrin.h>
+#endif
 
 // =============================================================================
 // Integer width model: Win32 LLP64 (NOT the host's data model)

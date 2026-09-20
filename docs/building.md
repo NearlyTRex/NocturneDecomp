@@ -11,35 +11,37 @@ pseudocode. See [`cmake/README.md`](../cmake/README.md) for the full reference.
 ```
 
 `build.sh` defaults to **`exe-linux-asan-x86_64`** — native 64-bit with AddressSanitizer and
-UBSan, no multilib required. Override with the first argument or `BUILD_PRESET`:
+UBSan. Override with the first argument or `BUILD_PRESET`:
 
 ```sh
-./build.sh exe-linux
-BUILD_PRESET=check-linux ./build.sh
+./build.sh exe-linux-x86_64
+BUILD_PRESET=check-linux-x86_64 ./build.sh
 ```
 
 ## Presets
 
-| Preset | Arch | What it does |
+| Preset | Target | What it does |
 |---|---|---|
-| `check-linux` | 32-bit | per-file `-fsyntax-only`; no link, no shims, no SDL |
-| `exe-linux` | 32-bit | full executable |
-| `exe-linux-asan` | 32-bit | full executable + ASan/UBSan |
-| `check-linux-x86_64` | native 64-bit | syntax check |
+| `check-linux-x86_64` | native 64-bit | per-file `-fsyntax-only`; no link, no shims, no SDL |
 | `exe-linux-x86_64` | native 64-bit | full executable |
 | `exe-linux-asan-x86_64` | native 64-bit | full executable + ASan/UBSan — **the default** |
+| `check-windows-x86_64` | Windows 64-bit | syntax check against the Windows target, from Linux |
+| `exe-windows-x86_64` | Windows 64-bit | `nocturne.exe`, cross-compiled from Linux — **needs a cross toolchain** |
+| `check-windows-msys2` | Windows 64-bit | syntax check, run **on** Windows under MSYS2 |
+| `exe-windows-msys2` | Windows 64-bit | `nocturne.exe`, built **on** Windows under MSYS2 |
 
-Both lanes build and run. The **32-bit** lane is the layout-faithful one: pointer width and
-struct offsets match the shipped binary, and the generated assertions in `pseudocode/checks/`
-are `#if __SIZEOF_POINTER__ == 4` guarded so they only verify that layout where it applies. The
-**64-bit** lane needs no multilib toolchain, which makes the sanitizers far easier to run, and
-is where most day-to-day work happens.
+**Everything is 64-bit.** There was once a 32-bit lane, matching the shipped binary's pointer
+width and struct offsets exactly, but it has been removed: it was the only thing that needed an
+i386 multilib toolchain, and keeping it meant every contributor paid for a layout check that the
+generated assertions already describe. Those assertions live in `pseudocode/checks/` and are
+`#if __SIZEOF_POINTER__ == 4` guarded, so they are simply inert now rather than wrong — the
+32-bit layout they encode is still the documented ground truth for what the original did.
 
 Building 64-bit meant removing the pointer-width assumptions the original was written on —
 pointers truncated through `int`, allocation sizes and file serialisation written against a
 4-byte pointer. Those shapes are flagged by the suspect detectors (`pointer_truncation` and
 friends) and fixed as they surface, so the 64-bit lane doubles as a correctness check on
-assumptions the 32-bit build would never catch.
+assumptions a 32-bit build would never catch.
 
 ## Prerequisites
 
@@ -50,34 +52,94 @@ assumptions the 32-bit build would never catch.
 sudo apt install cmake clang ninja-build pkg-config python3
 ```
 
-For the 32-bit lanes, add the multilib runtime:
+That is the whole list for the Linux presets — no multilib, no `:i386` packages, and SDL2,
+SDL2_ttf and FFmpeg are built from source rather than taken from the system.
+
+### Windows cross-compilation
+
+The Windows lane is **opt-in and needs nothing from a normal clone.** No other preset looks for
+a cross compiler, so if you are not building for Windows you can skip this section entirely.
 
 ```sh
-sudo apt install libc6-dev-i386 libstdc++-dev:i386
+sudo apt install g++-mingw-w64-x86-64
 ```
+
+It is the `g++` package and not `mingw-w64-x86-64-dev` because the shims are C++17 — the header
+-only package has no target `libstdc++` for `std::thread` and `std::filesystem` to come from.
+These are architecture-independent packages with no `:i386` component, so unlike the multilib
+warning below they do not disturb an amd64 desktop.
+
+`clang` does the compiling; the mingw packages supply the sysroot, the target C++ runtime and
+`binutils` for FFmpeg's cross build. clang is not a preference but the only option: the warning
+set is clang's, and `-Werror=sometimes-uninitialized` — the one that catches Ghidra splitting a
+reused register into two locals — makes gcc stop with *no option `-Wsometimes-uninitialized`*.
+Driving `x86_64-w64-mingw32-g++` would mean reworking that set first.
+
+**This lane cross-compiles from Linux.** It produces a Windows binary on a Linux host, using
+Linux packages; it is not the lane a Windows user runs. For that see *Building on Windows* below.
+
+```sh
+cmake --preset exe-windows-x86_64
+cmake --build --preset exe-windows-x86_64
+```
+
+Configuring without the toolchain installed stops immediately and names the package, rather
+than failing thousands of files later on a missing `<windows.h>`.
+
+The build stages `SDL2.dll`, `SDL2_ttf.dll` and the target `libstdc++`/`libwinpthread` beside
+`nocturne.exe`, so the output directory is something that runs when copied to a Windows machine.
+FFmpeg is linked statically.
+
+The lane builds `nocturne.exe` and can run the syntax check. It does **not** give you the test
+binaries in a runnable form: they would cross-compile to PEs that `ctest` cannot execute on the
+Linux host. Run the test suite from a Linux preset.
+
+### Building on Windows
+
+If you cloned the repository on Windows, use `exe-windows-msys2` instead. It targets the same
+platform as the cross lane and compiles the same code; only the toolchain differs.
+
+Install [MSYS2](https://www.msys2.org/), then from the **UCRT64** shell (`ucrt64.exe`):
+
+```sh
+pacman -S --needed mingw-w64-ucrt-x86_64-clang mingw-w64-ucrt-x86_64-cmake \
+                   mingw-w64-ucrt-x86_64-ninja mingw-w64-ucrt-x86_64-python \
+                   git make diffutils pkgconf
+
+cmake --preset exe-windows-msys2
+cmake --build --preset exe-windows-msys2
+```
+
+`make`, `diffutils` and `pkgconf` are MSYS2-side packages that FFmpeg's autotools build needs;
+the rest are the ucrt64 toolchain. Configure from the UCRT64 shell specifically — `cmd.exe` and
+PowerShell have neither the toolchain nor the `sh` that FFmpeg's `configure` requires, and the
+preset stops with that message if `MSYSTEM` is unset.
+
+**UCRT64 rather than CLANG64 or MINGW64.** UCRT64's clang links libstdc++, the same C++ runtime
+the cross lane produces, so the two Windows binaries agree on standard-library behaviour.
+CLANG64 would substitute libc++ and quietly make them different builds. Configuring from another
+environment warns rather than stops, since it may well work.
+
+Unlike the cross lane, this one can run the test suite: `ctest --test-dir build/exe-windows-msys2`.
+
+**64-bit only, deliberately.** `include/system/basetypes.h` defines `__stdcall` and `__fastcall`
+to nothing, which is what lets the decompiled sources compile on a SysV host at all. On 32-bit
+Windows those keywords select a real and different ABI, so blanking them there would silently
+mis-call anything declared with one; on x86_64 there is a single calling convention and the
+keywords are already ignored.
 
 ### SDL2, SDL2_ttf and FFmpeg
 
 The shims consume these to provide a cross-platform substrate for the game's Windows APIs.
-**Both lanes build them from source** via `cmake/bundledlibs.cmake`, fetched and built at
+**Every lane builds them from source** via `cmake/bundledlibs.cmake`, fetched and built at
 configure/build time and cached afterwards. The first `exe-*` configure takes a few minutes,
 FFmpeg dominating.
 
-> **Do not `apt install libsdl2-dev:i386`** (or the other `*-dev:i386` libraries). On a
-> multiarch amd64 desktop, apt resolves the i386 `-dev` dependency chain by **removing the amd64
-> desktop** — cinnamon, xorg, network-manager, clang-tidy. The source-build path exists
-> specifically to avoid this.
-
-Only the co-installable i386 **runtime** libraries are needed for the 32-bit lane; source-built
-SDL2 `dlopen`s them at run time:
-
-```sh
-sudo apt install libx11-6:i386 libxext6:i386 libxrandr2:i386 libxcursor1:i386 \
-                 libxi6:i386 libxfixes3:i386 libxss1:i386 libxkbcommon0:i386 \
-                 libgl1:i386 libegl1:i386 libdrm2:i386 \
-                 libwayland-client0:i386 libwayland-egl1:i386 libwayland-cursor0:i386 \
-                 libpulse0:i386 libasound2:i386
-```
+Source-built SDL2 `dlopen`s the host's X11 and audio libraries at run time, under their
+unversioned sonames. Those symlinks ship in the `-dev` packages rather than the runtime ones, so
+the build recreates any that are missing into a `sdl-compat/` directory and the generated
+`run.sh`/`debug.sh` put it on `LD_LIBRARY_PATH`. A normal desktop already has them; without
+them SDL falls back to the headless `offscreen` driver and no window appears.
 
 ### Readable sanitizer output
 
@@ -88,24 +150,24 @@ Without it the generated `run.sh` still works, but reports fall back to bare add
 sudo apt install llvm
 ```
 
-The `check-linux` presets are dependency-free beyond the core toolchain — they never link the
+The `check-*` presets are dependency-free beyond the core toolchain — they never link the
 shims, so they pull in neither SDL2 nor FFmpeg.
 
 ## Build commands
 
 ```sh
 # Syntax-only verification across the whole decompiled tree
-cmake --preset check-linux
-cmake --build --preset check-linux
+cmake --preset check-linux-x86_64
+cmake --build --preset check-linux-x86_64
 
 # Full executable
-cmake --preset exe-linux
-cmake --build --preset exe-linux
+cmake --preset exe-linux-x86_64
+cmake --build --preset exe-linux-x86_64
 
 # With sanitizers, plus the generated launcher
-cmake --preset exe-linux-asan
-cmake --build --preset exe-linux-asan
-./build/exe-linux-asan/run.sh
+cmake --preset exe-linux-asan-x86_64
+cmake --build --preset exe-linux-asan-x86_64
+./build/exe-linux-asan-x86_64/run.sh
 ```
 
 Each `exe-*` build directory gets a generated `run.sh` (sanitizer env defaults, symbolizer path)

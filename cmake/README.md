@@ -11,32 +11,27 @@ Two top-level targets drive the build:
 
 ```sh
 # Syntax-only (reproduces the clang++ verification milestone)
-cmake --preset check-linux
-cmake --build --preset check-linux
+cmake --preset check-linux-x86_64
+cmake --build --preset check-linux-x86_64
 
-# Full executable (32-bit Linux ELF, links against modern libc/libstdc++)
-cmake --preset exe-linux
-cmake --build --preset exe-linux
+# Full executable (64-bit Linux ELF, links against modern libc/libstdc++)
+cmake --preset exe-linux-x86_64
+cmake --build --preset exe-linux-x86_64
 
 # Same exe, with AddressSanitizer + UBSan
-cmake --preset exe-linux-asan
-cmake --build --preset exe-linux-asan
+cmake --preset exe-linux-asan-x86_64
+cmake --build --preset exe-linux-asan-x86_64
 ```
 
 ## AddressSanitizer / UBSan
 
 Enable with `-DNOCTURNE_ASAN=ON` on any `exe` configure, or use the
-`exe-linux-asan` preset. Flags applied to compile and link of every
+`exe-linux-asan-x86_64` preset. Flags applied to compile and link of every
 exe-side target: `-fsanitize=address,undefined -fno-omit-frame-pointer
 -fno-sanitize-recover=all`.
 
-**Runtime prerequisite:** the 32-bit sanitizer runtime. On Debian/Ubuntu
-with the matching clang version:
-
-```sh
-sudo dpkg --add-architecture i386
-sudo apt install libc6-dbg:i386 libstdc++6:i386 libclang-rt-dev:i386
-```
+The sanitizer runtime is the host's own, so a native clang install needs
+nothing extra.
 
 Without it, link fails with `cannot find -lclang_rt.asan-i386`. Point at
 the installed runtime with `LDFLAGS="-L/usr/lib/clang/<version>/lib/linux"`
@@ -82,8 +77,11 @@ rule formats. Changes trigger a reconfigure automatically.
 
 ## Toolchains
 
-- `cmake/toolchains/linux-i686.cmake` — clang/clang++ with `-m32 -mmmx -fasm-blocks`.
-  Flags mirror `scripts/Python/ghidra_annotations/annotations/pseudocode/compiler_config.py`.
+- `cmake/toolchains/linux-x86_64.cmake` — native clang/clang++.
+- `cmake/toolchains/windows-x86_64.cmake` — clang targeting `x86_64-w64-mingw32`,
+  cross-compiling a PE from Linux.
+- `cmake/toolchains/windows-msys2.cmake` — the same PE target, built on Windows
+  under MSYS2 UCRT64.
 
-Adding a new platform (e.g. MinGW PE, macOS) means adding another toolchain
-file here. Nothing in the top-level `CMakeLists.txt` is Linux-specific.
+Adding a new platform (e.g. macOS) means adding another toolchain file here.
+Nothing in the top-level `CMakeLists.txt` is Linux-specific.

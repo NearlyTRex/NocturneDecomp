@@ -1,14 +1,11 @@
 # -----------------------------------------------------------------------------
 # bundledlibs.cmake — build SDL2, SDL2_ttf, and FFmpeg from source for the exe
-# lane, on BOTH the 32-bit (linux-i686) and native 64-bit (linux-x86_64) targets.
+# lane, on both the native Linux target and the two Windows ones.
 #
-# Why source instead of apt: the Ubuntu `libsdl2-dev:i386` / `libavcodec-dev:i386`
-# packages drag in a conflicting i386 `-dev` chain that apt resolves by REMOVING
-# the amd64 desktop, so the 32-bit lane must build from source. We build the
-# 64-bit lane the same way rather than off system pkg-config: it makes the two
-# lanes reproducible and identical, and avoids depending on whichever SDL the
-# host happens to have (this host, for instance, ships only a source-built SDL3,
-# so `pkg_check_modules(sdl2 REQUIRED)` there would fail configure).
+# Why source instead of apt: it makes every lane reproducible and identical, and
+# avoids depending on whichever SDL the host happens to have (this host, for
+# instance, ships only a source-built SDL3, so `pkg_check_modules(sdl2 REQUIRED)`
+# there would fail configure).
 #
 # This module reproduces the variable contract that pkg_check_modules() set:
 #   SDL2_INCLUDE_DIRS / SDL2_CFLAGS_OTHER / SDL2_LIBRARIES
@@ -16,26 +13,26 @@
 #   FFMPEG_INCLUDE_DIRS / FFMPEG_CFLAGS_OTHER / FFMPEG_LIBRARIES
 # so the rest of CMakeLists.txt consumes them unchanged.
 #
-# Target arch is inherited automatically for the CMake sub-builds (SDL2 /
-# SDL2_ttf): the linux-i686 toolchain puts -m32 in CMAKE_C/CXX_FLAGS_INIT and
-# the linux-x86_64 toolchain omits it, so each FetchContent sub-build compiles
-# for the right word size. FFmpeg (autotools, not CMake) gets the arch passed
-# explicitly below, keyed off CMAKE_SYSTEM_PROCESSOR.
+# The CMake sub-builds (SDL2 / SDL2_ttf) inherit the target from the toolchain's
+# CMAKE_C/CXX_FLAGS_INIT. FFmpeg (autotools, not CMake) has to be told, and gets
+# the arch passed explicitly below.
 # -----------------------------------------------------------------------------
 
 include(FetchContent)
 include(ExternalProject)
 
-# Arch split: the x86_64 toolchain sets CMAKE_SYSTEM_PROCESSOR=x86_64, the i686
-# one sets i686. Everything arch-specific below keys off this one flag.
-if(CMAKE_SYSTEM_PROCESSOR STREQUAL "x86_64")
-    set(_noc_arch64    TRUE)
-    set(_noc_multiarch "x86_64-linux-gnu")
-    set(_noc_ff_arch   "x86_64")
+# Every supported lane is x86-64: native Linux, the mingw-w64 cross, and MSYS2.
+set(_noc_multiarch "x86_64-linux-gnu")
+set(_noc_ff_arch   "x86_64")
+
+# Which host the sub-builds are told they are targeting. The two CMake ones
+# (SDL2, SDL2_ttf) inherit it from the toolchain and need nothing here; FFmpeg
+# configures itself with autotools and has to be told, along with the cross
+# prefix its own build tools are found under.
+if(WIN32)
+    set(_noc_ff_os "mingw32")
 else()
-    set(_noc_arch64    FALSE)
-    set(_noc_multiarch "i386-linux-gnu")
-    set(_noc_ff_arch   "x86_32")
+    set(_noc_ff_os "linux")
 endif()
 
 # Pin to the versions Ubuntu 24.04 shipped, so behavior matches the apt path
@@ -132,31 +129,32 @@ endif()
 # ----------------------------------------------------------------------------
 # Runtime dlopen compat shim.
 # SDL2's X11 and ALSA/Pulse backends dlopen the UNVERSIONED soname (libX11.so,
-# libpulse.so, ...). On the 32-bit lane the unversioned symlinks ship only in
-# the -dev:i386 packages we deliberately don't install (multilib hazard), so
-# the dlopen fails and SDL silently falls back to the headless "offscreen" video
-# driver → no window. Recreate the unversioned symlinks in a build-local dir and
-# put that dir on LD_LIBRARY_PATH (via the launchers) so the dlopens resolve
-# with no system change. On the 64-bit lane the host desktop usually already has
-# the unversioned symlinks, but recreating them from the arch's runtime libdir
-# is harmless and keeps both lanes identical.
+# libpulse.so, ...), which ships in the -dev packages rather than the runtime
+# ones. Where they are missing the dlopen fails and SDL silently falls back to
+# the headless "offscreen" video driver → no window. Recreate the unversioned
+# symlinks in a build-local dir and put that dir on LD_LIBRARY_PATH (via the
+# launchers) so the dlopens resolve with no system change. A desktop host
+# usually has them already, in which case this just reproduces what is there.
 #
-# The dir is named "i386-compat" on both lanes because the run/debug launcher
-# templates check for that literal path; the name is cosmetic (it just holds
-# symlinks), so it is left arch-neutral-by-name to avoid forking the launchers.
-set(_sdl_compat_dir "${CMAKE_BINARY_DIR}/i386-compat")
-file(MAKE_DIRECTORY "${_sdl_compat_dir}")
-set(_runtime_libdir "/usr/lib/${_noc_multiarch}")
-foreach(_soname X11 Xext Xcursor Xi Xfixes Xrandr Xss pulse asound)
-    file(GLOB _versioned "${_runtime_libdir}/lib${_soname}.so.[0-9]*")
-    if(_versioned)
-        list(SORT _versioned)
-        list(GET _versioned 0 _target)   # soname (e.g. libX11.so.6) sorts before libX11.so.6.4.0
-        file(CREATE_LINK "${_target}" "${_sdl_compat_dir}/lib${_soname}.so" SYMBOLIC)
-    else()
-        message(STATUS "bundledlibs: no ${_noc_multiarch} runtime lib for lib${_soname}.so (backend will be unavailable)")
-    endif()
-endforeach()
+# None of this applies to the Windows lanes. There the video and audio backends
+# are GDI/Direct3D and WASAPI/DirectSound, all of them system DLLs resolved by
+# name with no versioned-soname convention to work around, so the whole
+# mechanism is skipped rather than given a Windows spelling.
+if(NOT WIN32)
+    set(_sdl_compat_dir "${CMAKE_BINARY_DIR}/sdl-compat")
+    file(MAKE_DIRECTORY "${_sdl_compat_dir}")
+    set(_runtime_libdir "/usr/lib/${_noc_multiarch}")
+    foreach(_soname X11 Xext Xcursor Xi Xfixes Xrandr Xss pulse asound)
+        file(GLOB _versioned "${_runtime_libdir}/lib${_soname}.so.[0-9]*")
+        if(_versioned)
+            list(SORT _versioned)
+            list(GET _versioned 0 _target)   # soname (e.g. libX11.so.6) sorts before libX11.so.6.4.0
+            file(CREATE_LINK "${_target}" "${_sdl_compat_dir}/lib${_soname}.so" SYMBOLIC)
+        else()
+            message(STATUS "bundledlibs: no ${_noc_multiarch} runtime lib for lib${_soname}.so (backend will be unavailable)")
+        endif()
+    endforeach()
+endif()
 
 # The shims include <SDL.h> / <SDL_ttf.h> (no SDL2/ prefix), and SDL2's headers
 # live across the source tree plus a generated-config dir. Forward the targets'
@@ -181,21 +179,51 @@ set(_ff_root    "${CMAKE_BINARY_DIR}/ffmpeg")
 set(_ff_install "${_ff_root}/install")
 set(_ff_libdir  "${_ff_install}/lib")
 
-# Base configure args shared by both arches; --arch is keyed off the target.
-set(_ff_configure
-    <SOURCE_DIR>/configure
-    --prefix=<INSTALL_DIR>
+# Base configure args shared by every lane; --arch and --target-os are keyed
+# off the target.
+set(_ff_args
     --cc=clang --ld=clang
-    --arch=${_noc_ff_arch} --target-os=linux
+    --arch=${_noc_ff_arch} --target-os=${_noc_ff_os}
     --enable-static --disable-shared --enable-pic
     --disable-programs --disable-doc --disable-network --disable-debug
     --disable-x86asm
     --disable-zlib --disable-bzlib --disable-lzma --disable-iconv
     --disable-libxcb --disable-sdl2 --disable-autodetect)
-# The 32-bit lane cross-compiles with -m32; the native 64-bit lane needs no
-# arch flag (clang defaults to the host word size).
-if(NOT _noc_arch64)
-    list(APPEND _ff_configure --extra-cflags=-m32 --extra-ldflags=-m32)
+if(WIN32 AND CMAKE_CROSSCOMPILING)
+    # configure builds and runs small probe programs to decide what the target
+    # supports. Cross-compiling, it cannot run them, so --enable-cross-compile
+    # switches it to compile-only probes. The target triple has to reach clang
+    # through --extra-cflags as well: --cc names the driver but not what it
+    # should aim at, and a bare `clang` would happily probe the host.
+    #
+    # ar/nm/ranlib come from binutils-mingw-w64, pulled in alongside the
+    # compiler. They are named explicitly because the host's own would produce
+    # archives with the wrong object format.
+    list(APPEND _ff_args
+        --enable-cross-compile
+        --cross-prefix=${NOCTURNE_WIN_TRIPLE}-
+        --ar=${NOCTURNE_WIN_TRIPLE}-ar
+        --nm=${NOCTURNE_WIN_TRIPLE}-nm
+        --ranlib=${NOCTURNE_WIN_TRIPLE}-ranlib
+        --extra-cflags=--target=${NOCTURNE_WIN_TRIPLE}
+        --extra-ldflags=--target=${NOCTURNE_WIN_TRIPLE})
+endif()
+
+# How configure gets invoked. FFmpeg's is a shell script, and on the two Linux
+# -hosted lanes it runs directly off its shebang.
+#
+# Building natively under MSYS2 it cannot. CMake substitutes <SOURCE_DIR> and
+# <INSTALL_DIR> as native Windows paths (C:/...), and configure is a POSIX
+# script that reads a --prefix of that shape as a relative path with a stray
+# colon. The wrapper runs them through cygpath first, which is the one thing
+# that has to happen before configure sees them.
+if(WIN32 AND NOT CMAKE_CROSSCOMPILING)
+    set(_ff_configure
+        sh "${CMAKE_CURRENT_LIST_DIR}/ffmpeg_configure_msys2.sh"
+        <SOURCE_DIR> <INSTALL_DIR> ${_ff_args})
+else()
+    set(_ff_configure
+        <SOURCE_DIR>/configure --prefix=<INSTALL_DIR> ${_ff_args})
 endif()
 
 ExternalProject_Add(ffmpeg_ext
@@ -229,8 +257,18 @@ set(FFMPEG_LIBRARIES
     "${_ff_libdir}/libavcodec.a"
     "${_ff_libdir}/libswscale.a"
     "${_ff_libdir}/libswresample.a"
-    "${_ff_libdir}/libavutil.a"
-    m pthread)
+    "${_ff_libdir}/libavutil.a")
+if(WIN32)
+    # No -lm: the mingw runtime has the math functions in libmsvcrt, and there
+    # is no separate libm to ask for. Threading comes from libwinpthread, which
+    # the posix-model runtime links by default, so it is not named either.
+    # bcrypt is avutil's: it is where BCryptGenRandom lives, which is how
+    # av_get_random_seed seeds itself on this target.
+    list(APPEND FFMPEG_LIBRARIES bcrypt)
+else()
+    # -lm for the math FFmpeg uses; pthread for its threading.
+    list(APPEND FFMPEG_LIBRARIES m pthread)
+endif()
 
 # Re-exported to CMakeLists so it can add_dependencies() the consuming targets
 # on ffmpeg_ext (headers must exist before the shim TU compiles).

@@ -4,6 +4,10 @@
  * as C++ (which the CMake shim target does via LANGUAGE CXX). winsock.cpp
  * declares these inside its own extern "C" block, so linkage must match. */
 
+/* Compiles to nothing on Windows, where winsock_win32.c is the backend and
+ * none of these headers exist. See the note at the top of that file. */
+#if !defined(_WIN32)
+
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <sys/ioctl.h>
@@ -103,3 +107,5 @@ struct servent* posix_getservbyport(int port, const char* proto) {
 #ifdef __cplusplus
 } /* extern "C" */
 #endif
+
+#endif /* !_WIN32 */

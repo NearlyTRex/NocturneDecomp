@@ -5,7 +5,7 @@
 # annotations/nocedit.exe/pseudocode/checks/struct_layout/ from the current
 # annotations/nocedit.exe/data_types/data_types.json. This path matches
 # NOCTURNE_CHECKS_DIR in CMakeLists.txt, so regenerated files are picked up
-# by `cmake --build --preset check-linux` and the exe builds automatically.
+# by `cmake --build --preset check-linux-x86_64` and the exe builds automatically.
 #
 # The output is committed reference material (not a build artifact) — re-run
 # this whenever data_types.json changes in a way that affects struct sizes or

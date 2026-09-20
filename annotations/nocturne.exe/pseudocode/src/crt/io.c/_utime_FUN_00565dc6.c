@@ -2,11 +2,11 @@
 // Address: 00565dc6
 // Address Range: [[00565dc6, 00565dca]]
 // Convention: __cdecl
-// Signature: int __cdecl crt_io_c__utime_FUN_00565dc6(char *filename,_utimbuf *timestamps)
+// Signature: int __cdecl crt_io_c__utime_FUN_00565dc6(char *filename,WatcomUtimbuf *timestamps)
 
 #include "nocturne.h"
 
-int __cdecl _utime(char *filename,_utimbuf *timestamps)
+int __cdecl _utime(char *filename,WatcomUtimbuf *timestamps)
 
 {
   HANDLE hFile;
@@ -33,9 +33,9 @@ int __cdecl _utime(char *filename,_utimbuf *timestamps)
       DVar1 = __set_errno();
       return DVar1;
     }
-    if (timestamps == (_utimbuf *)0x0) {
+    if (timestamps == (WatcomUtimbuf *)0x0) {
       auStack_18._0_4_ = _time((time_t *)0x0);
-      timestamps = (_utimbuf *)auStack_18;
+      timestamps = (WatcomUtimbuf *)auStack_18;
       auStack_18._4_4_ = auStack_18._0_4_;
     }
     p_Var3 = _localtime(&timestamps->modtime);
