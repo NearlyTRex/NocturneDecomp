@@ -49,6 +49,7 @@
 // | `NOCTURNE_AUTHENTIC_UI_CURSOR_WARP` | 0 | host | no SetCursorPos warping; the cursor moves freely |
 // | `NOCTURNE_AUTHENTIC_SOUND_DEVICE` | 0 | host | the Device line names the host audio API SDL opened |
 // | `NOCTURNE_AUTHENTIC_RENDERER_DLL` | 0 | host | a compiled-in renderer loads without a file on disk |
+// | `NOCTURNE_AUTHENTIC_HEAP_REPORT` | 0 | host | the memory line reports the host allocator, not an unwalkable heap |
 // | `NOCTURNE_AUTHENTIC_MIRROR_CULL` | 0 | defect | actors appear in mirrors |
 // | `NOCTURNE_AUTHENTIC_MIRROR_PROJECTION` | 0 | defect | accelerated geometry lines up with the backdrop |
 // | `NOCTURNE_AUTHENTIC_MIRROR_DEPTH_WINDOW` | 0 | defect | a part-off-screen mirror opens its depth window to a real depth |
@@ -76,6 +77,7 @@
 // | `NOCTURNE_AUTHENTIC_DEATH_MESSAGE_POSITION` | 0 | defect | the death banner is centred, clear of the message line |
 // | `NOCTURNE_AUTHENTIC_TEXT_RENDER_ALPHA` | 0 | defect | 2D text blends at its own alpha, not the last pass's leftover |
 // | `NOCTURNE_AUTHENTIC_BOTTOMLESS_FALL` | 0 | defect | a fall out of the world kills at once, not on chance geometry |
+// | `NOCTURNE_AUTHENTIC_FILE_TIME` | 0 | defect | a file written under daylight saving is dated its own hour |
 // | `NOCTURNE_AUTHENTIC_CHAPTER_SELECT` | 0 | defect | START offers the chapter lists, pod.ini or no pod.ini |
 // | `NOCTURNE_AUTHENTIC_FRIENDLY_FIRE` | 0 | defect | heroes cannot damage each other in a network game |
 // | `NOCTURNE_AUTHENTIC_MELEE_PICKUP` | 0 | defect | a melee weapon already held does not take a second slot |
@@ -1737,6 +1739,54 @@
 //   Override with -DNOCTURNE_AUTHENTIC_SAVE_SLOTS=1.
 #ifndef NOCTURNE_AUTHENTIC_SAVE_SLOTS
 #define NOCTURNE_AUTHENTIC_SAVE_SLOTS 0
+#endif
+
+// NOCTURNE_AUTHENTIC_HEAP_REPORT
+//   What the memory line in CEditorTools::displayMemoryDiagnostics reports —
+//   the line the console prints at session start, the debug overlay shows, and
+//   the developer tools menu writes to memdump.txt.
+//   1: shipped behaviour — walk the Watcom heap with _heapwalk and print the
+//      free block count, their total and the largest.
+//   0: report what the host allocator can be asked for: bytes in use, bytes
+//      free, and the number of free chunks.
+//
+//   _heapwalk enumerates the Watcom runtime's own heap. The game allocates
+//   through the C library here and that heap has no portable walk, so the shim
+//   in shims/watcom/watcom.cpp returns _HEAPEND straight away. The shipped code
+//   prints its figures only when the walk found at least one free block, so
+//   with a walk that finds none the line reads "Heap is empty." every time,
+//   whatever the game is doing — the numbers are not wrong, they are absent.
+//
+//   The fields differ because the shipped ones describe free blocks in a heap
+//   that is not there. See shims/core/heap_report.h.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_HEAP_REPORT=1.
+#ifndef NOCTURNE_AUTHENTIC_HEAP_REPORT
+#define NOCTURNE_AUTHENTIC_HEAP_REPORT 0
+#endif
+
+// NOCTURNE_AUTHENTIC_FILE_TIME
+//   The timestamp CFileFinder reports for a file, which is what every file
+//   dialog dates its rows from and what the save list shows.
+//   1: shipped behaviour — CFileFinder::convertStruct fills a tm from
+//      FileTimeToLocalFileTime + FileTimeToSystemTime, sets tm_isdst to 0, and
+//      calls mktime. The fields are already local wall-clock time, so calling
+//      them standard time makes mktime re-apply the standard offset: any file
+//      written while daylight saving is in force reads one hour late.
+//   0: tm_isdst is -1, so mktime works the offset out from the date.
+//
+//   The shipped store is the XOR EAX,EAX / MOV [ESP+0x20],EAX at 0x00481ef7 —
+//   offset 0x20 of the tm is tm_isdst — so this is the binary's own defect
+//   rather than a reconstruction slip. Measured against a file written at
+//   13:22 in a -0700 daylight zone: tm_isdst 0 yields a stamp 3600s late and
+//   the row reads 02:22 PM; -1 yields the file's own time exactly.
+//
+//   Outside daylight saving the two agree, which is why it reads correct for
+//   half the year.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_FILE_TIME=1.
+#ifndef NOCTURNE_AUTHENTIC_FILE_TIME
+#define NOCTURNE_AUTHENTIC_FILE_TIME 0
 #endif
 
 // NOCTURNE_AUTHENTIC_GOGGLE_LOOK

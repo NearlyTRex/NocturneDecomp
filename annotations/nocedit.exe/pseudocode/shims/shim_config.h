@@ -187,6 +187,12 @@ void nocturne_trigl_envmap_pass_end(void);
 #include "game/hero_interact.h"
 #include "game/hero_grab.h"
 
+// The memory line (nocturne_heap_report), reached from
+// CEditorTools::displayMemoryDiagnostics. Gated there on
+// NOCTURNE_AUTHENTIC_HEAP_REPORT; the shipped _heapwalk cannot see the host's
+// heap, so without this the line only ever says "Heap is empty."
+#include "core/heap_report.h"
+
 // The slot save/load UI (nocturne_save_pick_slot, nocturne_load_pick_slot,
 // nocturne_save_continue_target) and the autosave (nocturne_autosave_poll),
 // reached from the save and load keeps, the main menu TU and the mission loop.

@@ -17,7 +17,10 @@ void __cdecl shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004a25
   int iVar6;
   WatcomHeapInfo _Stack_28;
 
-
+#if !NOCTURNE_AUTHENTIC_HEAP_REPORT
+  nocturne_heap_report(output_buffer,0x100);
+  return;
+#endif
   iVar3 = 0;
   iVar6 = 0;
   uVar4 = 0;

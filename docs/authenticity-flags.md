@@ -74,7 +74,7 @@ flag.
 
 ## What is gated
 
-60 toggles. The kinds below are the same ones the header's table names, and a flag's kind is the
+62 toggles. The kinds below are the same ones the header's table names, and a flag's kind is the
 honest reason its default is what it is.
 
 **`host` — the shipped behaviour depends on Win32 + DirectDraw and cannot be reproduced**
@@ -86,6 +86,7 @@ honest reason its default is what it is.
 | `UI_CURSOR_WARP` | no `SetCursorPos` warping; the cursor moves freely |
 | `SOUND_DEVICE` | the Sound Options Device line names the host audio API SDL opened |
 | `RENDERER_DLL` | a compiled-in renderer loads without a file on disk |
+| `HEAP_REPORT` | the memory line reports the host allocator, since the Watcom heap it walks is not there |
 
 **`defect` — the shipped binary is wrong, and the doc comment carries the instruction that proves it**
 
@@ -122,6 +123,7 @@ honest reason its default is what it is.
 | `DEATH_MESSAGE_POSITION` | the death banner is centred, clear of the message line |
 | `TEXT_RENDER_ALPHA` | 2D text blends at its own alpha, not the last pass's leftover |
 | `BOTTOMLESS_FALL` | a fall out of the world kills at once, rather than on whatever geometry it happens to strike |
+| `FILE_TIME` | a file written while daylight saving is in force is dated with its own hour |
 
 **`choice` — the shipped binary is not wrong; we prefer something else**
 
