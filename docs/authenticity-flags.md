@@ -74,7 +74,7 @@ flag.
 
 ## What is gated
 
-59 toggles. The kinds below are the same ones the header's table names, and a flag's kind is the
+60 toggles. The kinds below are the same ones the header's table names, and a flag's kind is the
 honest reason its default is what it is.
 
 **`host` — the shipped behaviour depends on Win32 + DirectDraw and cannot be reproduced**
@@ -138,6 +138,7 @@ honest reason its default is what it is.
 | Flag | Off |
 |---|---|
 | `AUTOMAP` | a bindable Doom-style map that fills in as you explore |
+| `GOGGLE_LOOK` | the goggle view looks up and down with empty hands, not only with a gun drawn |
 | `SAVE_SLOTS` | saves are picked from a slot list instead of typed |
 | `SINGLE_PLAYER_MENU` | START becomes PLAY, with Start and Load behind it |
 | `AUTOSAVE` | `AUTO.NOC` is written when a cutscene ends and when a mission starts, and the single-player submenu offers Continue |

@@ -95,7 +95,7 @@ void __cdecl core_stranger_cpp_CStranger_updateProceduralAnimation_FUN_005be520(
   CVector3f local_58;
   CVector3f local_4c;
   CDeformableModel_MotionBlendWeightFunc *blend_callback;
-  
+
   local_1f08 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
                          (&(this_ptr->base).base.model.motion_controller,0);
   if (this_ptr->turn_blend_weight < 0.15f) {
@@ -443,9 +443,13 @@ LAB_005be7a1:
     local_88.y = 0.0;
     local_88.z = 0.0;
     local_88.x = 0.0;
+#if NOCTURNE_AUTHENTIC_GOGGLE_LOOK
     if ((this_ptr->guns_drawn != 0) && (this_ptr->weapon != (CWeapon *)0x0)) {
       local_88.x = (this_ptr->right_arm_aim).target_pitch;
     }
+#else
+    local_88.x = (this_ptr->right_arm_aim).target_pitch;
+#endif
     blend_callback = core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0;
     fVar15 = 1.0;
     iVar16 = g_StrangerIndices[0];

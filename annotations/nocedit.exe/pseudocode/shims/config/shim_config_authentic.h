@@ -86,6 +86,7 @@
 // | `NOCTURNE_AUTHENTIC_MENU_RESOLUTION` | 0 | choice | a picked resolution applies straight away |
 // | `NOCTURNE_AUTHENTIC_SAVE` | 1 | choice | saves are written as readable plain text |
 // | `NOCTURNE_AUTHENTIC_AUTOMAP` | 0 | addition | a bindable Doom-style map that fills in as you explore |
+// | `NOCTURNE_AUTHENTIC_GOGGLE_LOOK` | 0 | addition | the goggle view looks up and down with empty hands |
 // | `NOCTURNE_AUTHENTIC_SAVE_SLOTS` | 0 | addition | saves are picked from a slot list, not typed |
 // | `NOCTURNE_AUTHENTIC_SINGLE_PLAYER_MENU` | 0 | addition | START becomes PLAY, with Start and Load behind it |
 // | `NOCTURNE_AUTHENTIC_AUTOSAVE` | 0 | addition | AUTO.NOC is written at a cutscene end and a mission start |
@@ -1736,6 +1737,47 @@
 //   Override with -DNOCTURNE_AUTHENTIC_SAVE_SLOTS=1.
 #ifndef NOCTURNE_AUTHENTIC_SAVE_SLOTS
 #define NOCTURNE_AUTHENTIC_SAVE_SLOTS 0
+#endif
+
+// NOCTURNE_AUTHENTIC_GOGGLE_LOOK
+//   Whether the infrared goggles can be looked around with empty hands.
+//   1: shipped behaviour — the goggle view pitches with the aim only while a
+//      gun is drawn. Holstered or empty-handed it is pinned to the horizon and
+//      look input up and down does nothing. With a gun drawn it keeps pitching
+//      after the player is dead, through the death animation and Game Over.
+//   0: look drives the goggle view whatever the hands are holding, and stops
+//      when the player dies.
+//
+//   Two things produce the shipped behaviour, and both have to move.
+//   CStranger::autoAimAtThreat returns early with no weapon, after setting
+//   SArmAimData::aim_pitch and ::target_pitch to zero, so
+//   SPlayerInput::look_up_down_speed is never integrated and there is no pitch
+//   to show. CStranger::updateProceduralAnimation then blends that pitch into
+//   the head bone only when `guns_drawn` and a weapon are both set — and the
+//   head bone is the goggle camera, since CDemonSet::renderGogglesView builds
+//   the view from the "Bip01 Head" world matrix.
+//
+//   Only the pitch is gated. Turning already works empty-handed, because the
+//   goggle view's yaw is the hero's own facing plus a head yaw the shipped code
+//   leaves at zero, and turning is ordinary locomotion.
+//
+//   Both input paths already deliver the axis: CGame::processMouseControls
+//   writes look_up_down_speed whatever is held, and so does the pad shim's
+//   nocturne_gamepad_apply_analog. This is a consumer that drops it.
+//
+//   Death is part of this flag's remit rather than a flag of its own, because
+//   the shipped build stops the pitch at death only by accident. Nothing in the
+//   player's own aim path reads the player's death state — CGame::playerControls
+//   keeps feeding input, `guns_drawn` is never cleared by dying, and
+//   CStranger::autoAimAtThreat only ever asks a *threat* whether it is alive.
+//   What stops the view is the empty-handed early return, so a player who dies
+//   with a gun drawn can pitch the goggle view through Game Over in the shipped
+//   build too. Restoring the empty-handed case without also stopping at death
+//   would turn a rarely-met shipped defect into the normal one.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_GOGGLE_LOOK=1.
+#ifndef NOCTURNE_AUTHENTIC_GOGGLE_LOOK
+#define NOCTURNE_AUTHENTIC_GOGGLE_LOOK 0
 #endif
 
 // NOCTURNE_AUTHENTIC_SINGLE_PLAYER_MENU

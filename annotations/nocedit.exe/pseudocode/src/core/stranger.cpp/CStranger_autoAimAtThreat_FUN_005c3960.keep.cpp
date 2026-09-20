@@ -57,7 +57,11 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_005c3960(CStranger 
   CDemonActor *this_ptr_00;
   float fVar2;
   double dVar3;
-  
+#if !NOCTURNE_AUTHENTIC_GOGGLE_LOOK
+  float fLookDelta;
+  EDeathState EVar9;
+#endif
+
   local_24 = &this_ptr->left_arm_aim;
   if (hand_index == 1) {
     local_24 = &this_ptr->right_arm_aim;
@@ -71,9 +75,14 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_005c3960(CStranger 
       uVar4 = (*((this_ptr_00->vtable)._ub)->getAllowedMeleeAttackTypes)(this_ptr_00);
     }
     if ((uVar4 & 4) == 0) {
-      local_24->target_pitch = 0.0;
-      local_24->aim_pitch = 0.0;
-      return;
+#if !NOCTURNE_AUTHENTIC_GOGGLE_LOOK
+      if (g_CGamePtr->goggles_active == 0)
+#endif
+      {
+        local_24->target_pitch = 0.0;
+        local_24->aim_pitch = 0.0;
+        return;
+      }
     }
     local_48 = 3;
   }
@@ -101,8 +110,21 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_005c3960(CStranger 
       local_30 = -0.5235988;
     }
   }
+#if NOCTURNE_AUTHENTIC_GOGGLE_LOOK
   fVar3 = (this_ptr->base).player_input.look_up_down_speed * (float)3.1415926535000001 *
           (float)2 * delta_time + local_24->aim_pitch;
+#else
+  fLookDelta = (this_ptr->base).player_input.look_up_down_speed;
+  if (g_CGamePtr->goggles_active != 0) {
+    EVar9 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)
+                      ((CCharacter *)this_ptr);
+    if (EVar9 != DEATH_STATE_ALIVE) {
+      fLookDelta = 0.0;
+    }
+  }
+  fVar3 = fLookDelta * (float)3.1415926535000001 * (float)2 * delta_time +
+          local_24->aim_pitch;
+#endif
   local_24->aim_yaw = 0.0;
   local_24->aim_pitch = fVar3;
   if (fVar3 < -1.047198f) {
