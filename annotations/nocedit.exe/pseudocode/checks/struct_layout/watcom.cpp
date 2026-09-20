@@ -2,7 +2,7 @@
 // DO NOT EDIT BY HAND. Re-run the generator after updating types.
 //
 // Category: watcom
-// Structs : 15
+// Structs : 17
 
 #include "nocturne.h"
 
@@ -113,6 +113,18 @@ static_assert(sizeof(WatcomDestructorFlags) == 48,
 static_assert(__builtin_offsetof(WatcomDestructorFlags, bits) == 0,
               "offsetof(WatcomDestructorFlags, bits) != 0");
 
+// ---- WatcomHeapInfo (14 bytes) ----
+static_assert(sizeof(WatcomHeapInfo) == 14,
+              "sizeof(WatcomHeapInfo) != 14");
+static_assert(__builtin_offsetof(WatcomHeapInfo, _pentry) == 0,
+              "offsetof(WatcomHeapInfo, _pentry) != 0");
+static_assert(__builtin_offsetof(WatcomHeapInfo, _segment) == 4,
+              "offsetof(WatcomHeapInfo, _segment) != 4");
+static_assert(__builtin_offsetof(WatcomHeapInfo, _size) == 6,
+              "offsetof(WatcomHeapInfo, _size) != 6");
+static_assert(__builtin_offsetof(WatcomHeapInfo, _useflag) == 10,
+              "offsetof(WatcomHeapInfo, _useflag) != 10");
+
 // ---- WatcomInheritanceLayout (8 bytes) ----
 static_assert(sizeof(WatcomInheritanceLayout) == 8,
               "sizeof(WatcomInheritanceLayout) != 8");
@@ -120,6 +132,46 @@ static_assert(__builtin_offsetof(WatcomInheritanceLayout, base_type) == 0,
               "offsetof(WatcomInheritanceLayout, base_type) != 0");
 static_assert(__builtin_offsetof(WatcomInheritanceLayout, offset_to_base) == 4,
               "offsetof(WatcomInheritanceLayout, offset_to_base) != 4");
+
+// ---- WatcomStat (70 bytes) ----
+static_assert(sizeof(WatcomStat) == 70,
+              "sizeof(WatcomStat) != 70");
+static_assert(__builtin_offsetof(WatcomStat, _st_dev) == 0,
+              "offsetof(WatcomStat, _st_dev) != 0");
+static_assert(__builtin_offsetof(WatcomStat, _st_ino) == 4,
+              "offsetof(WatcomStat, _st_ino) != 4");
+static_assert(__builtin_offsetof(WatcomStat, _st_mode) == 8,
+              "offsetof(WatcomStat, _st_mode) != 8");
+static_assert(__builtin_offsetof(WatcomStat, _st_nlink) == 10,
+              "offsetof(WatcomStat, _st_nlink) != 10");
+static_assert(__builtin_offsetof(WatcomStat, _st_uid) == 12,
+              "offsetof(WatcomStat, _st_uid) != 12");
+static_assert(__builtin_offsetof(WatcomStat, _st_gid) == 16,
+              "offsetof(WatcomStat, _st_gid) != 16");
+static_assert(__builtin_offsetof(WatcomStat, _st_rdev) == 18,
+              "offsetof(WatcomStat, _st_rdev) != 18");
+static_assert(__builtin_offsetof(WatcomStat, _st_size) == 22,
+              "offsetof(WatcomStat, _st_size) != 22");
+static_assert(__builtin_offsetof(WatcomStat, _st_atime) == 26,
+              "offsetof(WatcomStat, _st_atime) != 26");
+static_assert(__builtin_offsetof(WatcomStat, _st_mtime) == 30,
+              "offsetof(WatcomStat, _st_mtime) != 30");
+static_assert(__builtin_offsetof(WatcomStat, _st_ctime) == 34,
+              "offsetof(WatcomStat, _st_ctime) != 34");
+static_assert(__builtin_offsetof(WatcomStat, _st_btime) == 38,
+              "offsetof(WatcomStat, _st_btime) != 38");
+static_assert(__builtin_offsetof(WatcomStat, _st_attr) == 42,
+              "offsetof(WatcomStat, _st_attr) != 42");
+static_assert(__builtin_offsetof(WatcomStat, _st_archivedID) == 46,
+              "offsetof(WatcomStat, _st_archivedID) != 46");
+static_assert(__builtin_offsetof(WatcomStat, _st_updatedID) == 50,
+              "offsetof(WatcomStat, _st_updatedID) != 50");
+static_assert(__builtin_offsetof(WatcomStat, _st_inheritedRightsMask) == 54,
+              "offsetof(WatcomStat, _st_inheritedRightsMask) != 54");
+static_assert(__builtin_offsetof(WatcomStat, _st_originatingNameSpace) == 56,
+              "offsetof(WatcomStat, _st_originatingNameSpace) != 56");
+static_assert(__builtin_offsetof(WatcomStat, _st_name) == 57,
+              "offsetof(WatcomStat, _st_name) != 57");
 
 // ---- WatcomStaticDestructorNode (16 bytes) ----
 static_assert(sizeof(WatcomStaticDestructorNode) == 16,
@@ -175,6 +227,14 @@ static_assert(__builtin_offsetof(WatcomTypeInfo, instance_size) == 16,
 static_assert(__builtin_offsetof(WatcomTypeInfo, class_name) == 20,
               "offsetof(WatcomTypeInfo, class_name) != 20");
 
+// ---- WatcomUtimbuf (8 bytes) ----
+static_assert(sizeof(WatcomUtimbuf) == 8,
+              "sizeof(WatcomUtimbuf) != 8");
+static_assert(__builtin_offsetof(WatcomUtimbuf, actime) == 0,
+              "offsetof(WatcomUtimbuf, actime) != 0");
+static_assert(__builtin_offsetof(WatcomUtimbuf, modtime) == 4,
+              "offsetof(WatcomUtimbuf, modtime) != 4");
+
 // ---- WatcomVirtualBaseDescriptor (8 bytes) ----
 static_assert(sizeof(WatcomVirtualBaseDescriptor) == 8,
               "sizeof(WatcomVirtualBaseDescriptor) != 8");
@@ -182,18 +242,6 @@ static_assert(__builtin_offsetof(WatcomVirtualBaseDescriptor, flags) == 0,
               "offsetof(WatcomVirtualBaseDescriptor, flags) != 0");
 static_assert(__builtin_offsetof(WatcomVirtualBaseDescriptor, offset_to_vbase) == 4,
               "offsetof(WatcomVirtualBaseDescriptor, offset_to_vbase) != 4");
-
-// ---- _heapinfo (14 bytes) ----
-static_assert(sizeof(_heapinfo) == 14,
-              "sizeof(_heapinfo) != 14");
-static_assert(__builtin_offsetof(_heapinfo, _pentry) == 0,
-              "offsetof(_heapinfo, _pentry) != 0");
-static_assert(__builtin_offsetof(_heapinfo, _segment) == 4,
-              "offsetof(_heapinfo, _segment) != 4");
-static_assert(__builtin_offsetof(_heapinfo, _size) == 6,
-              "offsetof(_heapinfo, _size) != 6");
-static_assert(__builtin_offsetof(_heapinfo, _useflag) == 10,
-              "offsetof(_heapinfo, _useflag) != 10");
 
 } // namespace
 
