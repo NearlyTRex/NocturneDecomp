@@ -380,7 +380,7 @@ section .text
         ;   XREF to: 005a8cb0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0()
     JMP 0x004e4119                      ; 004e43bc
         ;   XREF to: 004e4119 (UNCONDITIONAL_JUMP)  ; LAB_004e4119
-    CMP dword ptr [0x02fa8cd0],0x0      ; 004e43c1 | g_MessageCount
+    CMP dword ptr [0x02fa8cd0],0x0      ; 004e43c1 | g_UseOSFonts
         ;   Label: LAB_004e43c1
     JZ 0x004e43d4                       ; 004e43c8
         ;   XREF to: 004e43d4 (CONDITIONAL_JUMP)  ; LAB_004e43d4

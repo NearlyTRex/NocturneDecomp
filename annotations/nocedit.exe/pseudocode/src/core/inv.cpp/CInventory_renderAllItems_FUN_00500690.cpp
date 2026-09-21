@@ -362,7 +362,7 @@ LAB_005009c0:
                        (g_WindowWidth - iVar3) + -4);
     iVar10 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(local_18,0x58);
     iVar5 = (g_WindowHeight + -4) - iVar10 * iVar3;
-    if (((g_MicroFont != local_18) || (g_MessageCount == 0)) && (iVar11 = 0, 0 < iVar3)) {
+    if (((g_MicroFont != local_18) || (g_UseOSFonts == 0)) && (iVar11 = 0, 0 < iVar3)) {
       pacVar12 = g_InventoryWrappedTextLines3;
       do {
         iVar11 = iVar11 + 1;

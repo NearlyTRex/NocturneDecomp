@@ -3696,7 +3696,7 @@ static char g_LicenseAgreement[14616] = {
 };
 
 // char[2] constants
-static char g_MenuVersionText[2] = {(char)0x99, (char)0x00};
+static char g_MenuTrademarkGlyph[2] = {(char)0x99, (char)0x00};
 
 // double constants
 static double g_InventoryRandPiFactor = 3.1415926535000001;

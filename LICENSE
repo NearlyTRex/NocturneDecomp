@@ -1,0 +1,56 @@
+NocturneDecomp
+==============
+
+This repository holds three kinds of content, and only the first is licensed
+here. The distinction is not a formality: a decompilation cannot grant rights
+over the work it was derived from.
+
+
+What this licence covers
+------------------------
+
+The original work in this repository — everything written for this project
+rather than recovered from a binary:
+
+    annotations/nocedit.exe/pseudocode/shims/    the compatibility layer
+    annotations/nocedit.exe/pseudocode/main/     the hand-written entry point
+    cmake/                                       toolchains and build logic
+    scripts/                                     the Bash and Python tooling
+    docs/                                        the project documentation
+    research/                                    the investigations and findings
+    spec/                                        the Watcom processor specs
+    CMakeLists.txt, CMakePresets.json, build.sh, run.sh, debug.sh
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND
+FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+
+(This is the BSD Zero Clause Licence, SPDX identifier 0BSD.)
+
+
+What it does not cover
+----------------------
+
+**The reconstructed source.** Everything under `annotations/*/pseudocode/src/`,
+together with the exported headers, disassembly, type data and reports beside
+it, is derived from the original Nocturne binaries. It describes someone else's
+copyrighted program, and no licence granted here extends to it. The contributors
+to this project hold no rights in that material and grant none.
+
+**Game data.** The PODs, backdrops, models, sounds, video and the original
+executables are not in this repository, are not required to build it, and are
+not distributed with it. A release archive contains the engine; whoever runs it
+supplies their own copy of the game.
+
+What this project is for
+------------------------
+
+Understanding the engine and getting it running on modern systems. It is a
+research and preservation effort and is not a way to obtain the game.

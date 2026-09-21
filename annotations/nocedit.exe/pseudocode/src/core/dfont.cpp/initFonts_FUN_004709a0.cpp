@@ -143,7 +143,7 @@ void __cdecl core_dfont_cpp_initFonts_FUN_004709a0(void)
   g_MicroFont->shadow_offset_x = 1;
   pCVar2->shadow_offset_y = 1;
   engine_font_cpp_CBitFont_setFontReady_FUN_004d0290(pCVar2,1);
-  if (g_MessageCount == 0) {
+  if (g_UseOSFonts == 0) {
     return;
   }
   pCVar3 = (CWinFont *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x13c,"..\\core\\dfont.cpp",164);

@@ -771,7 +771,7 @@ section .text
     CMP EDX,dword ptr [ESP + 0x670]     ; 00500f7e
     JNZ 0x00500f90                      ; 00500f85
         ;   XREF to: 00500f90 (CONDITIONAL_JUMP)  ; LAB_00500f90
-    CMP dword ptr [0x02fa8cd0],0x0      ; 00500f87 | g_MessageCount
+    CMP dword ptr [0x02fa8cd0],0x0      ; 00500f87 | g_UseOSFonts
     JNZ 0x00500fe0                      ; 00500f8e
         ;   XREF to: 00500fe0 (CONDITIONAL_JUMP)  ; LAB_00500fe0
     MOV ESI,dword ptr [ESP + 0x66c]     ; 00500f90

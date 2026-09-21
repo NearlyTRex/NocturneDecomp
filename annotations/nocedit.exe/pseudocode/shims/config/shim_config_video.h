@@ -54,6 +54,55 @@
 #define NOCTURNE_WINDOW_MODE_OPTION 1
 #endif
 
+// NOCTURNE_OS_FONT_OPTION
+//   An ADDITION, with no authentic side to be on the wrong side of: the choice
+//   exists in the shipped binary already, it simply has no way to be made.
+//
+//   The engine can draw text two ways. Normally it blits glyphs out of the
+//   bitmap sheets (fnte_pfd.RAW and friends); when one global is non-zero,
+//   CGame::initFonts instead builds CWinFont objects over the OS font named by
+//   g_OSFontName, and CBitFont::drawText dispatches to those. Nothing in either
+//   shipped binary ever writes that global — every reference is a read — so the
+//   second path is unreachable and always has been. It is presumably what a
+//   localisation needing glyphs outside the sheets would have used.
+//   1: a "Text : Auto/Bitmap/System" line on the Graphics Options screen,
+//      persisted to the INI as [Graphics] osFont and read back by initFonts at
+//      startup.
+//   0: off — nothing writes the global from here and the message file's answer
+//      is the only one, which is what both shipped binaries do.
+//
+//   AUTO IS THE DEFAULT AND WRITES NOTHING. The global does have a writer:
+//   CSupport::readMessageFile parses it out of msglist.txt, field two, with the
+//   OS font's name in field three. That is how a localisation whose glyphs are
+//   not in the bitmap sheets asks for system text. readMessageFile runs before
+//   initFonts, so an unconditional override here would defeat exactly the
+//   mechanism this switch is exposing. Bitmap and System are overrides; Auto
+//   leaves the message file's answer alone.
+//
+//   The shipped POD carries no msglist.txt, so readMessageFile returns before
+//   reading anything and Auto means bitmap sheets in practice.
+//
+//   APPLIED AT STARTUP, NOT ON SELECTION. The global is read once, by
+//   initFonts, which is where the CWinFont objects are allocated; setting it
+//   later changes a variable nothing re-reads. Switching live would mean
+//   freeFonts() + initFonts() from inside the Options screen, which is drawing
+//   through g_EditorFont and g_ThemeFont at the time, so the menu line says the
+//   choice takes effect next launch.
+//
+//   The system path degrades safely: CBitFont::drawText checks CFont::drawText's
+//   return and, on -1, clears win_font_enabled and redraws through the bitmap
+//   sheet. A system font that cannot be opened therefore looks like today
+//   rather than like missing text.
+//
+//   The extra menu line is carried in the same local pointer array the window
+//   mode option uses, for the same reason: the engine's
+//   g_GraphicsMenuTextPointers is exactly 9 entries.
+//
+//   Override with -DNOCTURNE_OS_FONT_OPTION=0.
+#ifndef NOCTURNE_OS_FONT_OPTION
+#define NOCTURNE_OS_FONT_OPTION 1
+#endif
+
 // NOCTURNE_WINDOW_SCALE
 //   Integer scale factor applied to the SDL window only. The game still
 //   renders internally at its native resolution (640x480) and SDL stretches

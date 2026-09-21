@@ -59,9 +59,16 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
   engine_console_cpp_CConsole_reset_FUN_00441a40(g_CConsolePtr);
   engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"Nocturne is alive and kicking\n")
   ;
+#if NOCTURNE_AUTHENTIC_BUILD_STAMP
   engine_console_cpp_CConsole_printf_FUN_00441890
             (g_CConsolePtr,"game.cpp built on %s %s\n\n","Jan 10 2000",
              "12:05:01");
+#else
+  engine_console_cpp_CConsole_printf_FUN_00441890
+            (g_CConsolePtr,"game.cpp built on %s\n",nocturne_version_built());
+  engine_console_cpp_CConsole_printf_FUN_00441890
+            (g_CConsolePtr,"%s\n\n",nocturne_version_line());
+#endif
   engine_console_cpp_CConsole_printf_FUN_00441890
             (g_CConsolePtr,"System RAM: %d\n",g_TotalPhysicalMemory);
   bVar3 = true;

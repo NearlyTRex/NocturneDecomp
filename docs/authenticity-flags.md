@@ -74,7 +74,7 @@ flag.
 
 ## What is gated
 
-62 toggles. The kinds below are the same ones the header's table names, and a flag's kind is the
+64 toggles. The kinds below are the same ones the header's table names, and a flag's kind is the
 honest reason its default is what it is.
 
 **`host` — the shipped behaviour depends on Win32 + DirectDraw and cannot be reproduced**
@@ -134,6 +134,7 @@ honest reason its default is what it is.
 | `MENU_RESOLUTION` | a picked resolution applies straight away |
 | `CONFIRM_PROMPTS` | no bracketed hotkey letters, and a short form when the long one will not fit |
 | `SAVE` | saves are written as readable plain text *(defaults on, i.e. compressed)* |
+| `BUILD_STAMP` | the console banner carries this build's date and version, not Terminal Reality's |
 
 **`addition` — neither binary did this**
 
@@ -141,6 +142,7 @@ honest reason its default is what it is.
 |---|---|
 | `AUTOMAP` | a bindable Doom-style map that fills in as you explore |
 | `GOGGLE_LOOK` | the goggle view looks up and down with empty hands, not only with a gun drawn |
+| `MENU_VERSION` | the menu carries a line naming this build, alongside everything it already drew |
 | `SAVE_SLOTS` | saves are picked from a slot list instead of typed |
 | `SINGLE_PLAYER_MENU` | START becomes PLAY, with Start and Load behind it |
 | `AUTOSAVE` | `AUTO.NOC` is written when a cutscene ends and when a mission starts, and the single-player submenu offers Continue |

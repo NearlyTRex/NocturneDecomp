@@ -1,0 +1,102 @@
+name: release
+
+# Tag-driven. `git tag v0.1.0 && git push --tags` builds both lanes and attaches
+# the archives to a draft release; the draft is published by hand, so a bad
+# build can be discarded without an announcement going out.
+#
+# The version in the tag and the version in CMakeLists.txt are checked against
+# each other before anything is built — the two drifting is the one mistake this
+# workflow can catch for free.
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      preset:
+        description: "Build one preset without tagging"
+        required: false
+        default: exe-linux-x86_64
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      # Both lanes run to completion: if the Windows cross build breaks, the
+      # Linux archive is still worth having and the log says which half failed.
+      fail-fast: false
+      matrix:
+        include:
+          - preset: exe-linux-x86_64
+            cross: false
+          - preset: exe-windows-x86_64
+            cross: true
+          - preset: exe-linux-vanilla-x86_64
+            cross: false
+          - preset: exe-windows-vanilla-x86_64
+            cross: true
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # git describe needs the tags and enough history to count commits
+          # against them; a shallow checkout reports a bare hash.
+          fetch-depth: 0
+
+      - name: Install the toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cmake clang ninja-build pkg-config python3 zip
+          if [ "${{ matrix.cross }}" = "true" ]; then
+            sudo apt-get install -y g++-mingw-w64-x86-64
+          fi
+
+      - name: Check the tag against CMakeLists.txt
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: |
+          tag="${GITHUB_REF_NAME#v}"
+          project="$(sed -n 's/^project(NocturneDecomp VERSION \([0-9.]*\).*/\1/p' CMakeLists.txt)"
+          if [ "${tag}" != "${project}" ]; then
+            echo "tag ${GITHUB_REF_NAME} does not match project version ${project}" >&2
+            exit 1
+          fi
+          echo "building ${project}"
+
+      # SDL2 and SDL2_ttf are fetched from git and FFmpeg is an ExternalProject
+      # configure+make, so a cold build is most of the wall clock. The key is
+      # the pinned tags in bundledlibs.cmake: the cache is only valid while
+      # those are unchanged.
+      - name: Cache the bundled dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            build/${{ matrix.preset }}/_deps
+            build/${{ matrix.preset }}/ffmpeg
+          key: deps-${{ matrix.preset }}-${{ hashFiles('cmake/bundledlibs.cmake') }}
+
+      - name: Build and package
+        run: ./scripts/Bash/package_release.sh "${{ matrix.preset }}"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nocturne-${{ matrix.preset }}
+          path: dist/*
+          if-no-files-found: error
+
+  publish:
+    needs: build
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: dist
+          merge-multiple: true
+
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*
+          draft: true
+          generate_release_notes: true

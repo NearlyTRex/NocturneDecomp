@@ -8,6 +8,7 @@ project is built and worked on.
 | Document | What it covers |
 |---|---|
 | [building.md](building.md) | Presets, prerequisites, the multilib hazard, build commands |
+| [releasing.md](releasing.md) | Where the version lives, cutting a tagged release, what an archive holds |
 | [project-structure.md](project-structure.md) | What every top-level directory is for |
 | [decompilation-workflow.md](decompilation-workflow.md) | How a function goes from raw Ghidra output to compiling, clean source |
 | [decompiler-artifacts.md](decompiler-artifacts.md) | Catalogue of what Ghidra gets wrong on this binary, and the rewrite for each |

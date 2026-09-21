@@ -370,7 +370,7 @@ section .text
     MOV dword ptr [EAX + 0x3180],0x1    ; 00470dc4
     CALL engine_font.cpp_CBitFont_setFontReady_FUN_004d0290 ; 00470dce
         ;   XREF to: 004d0290 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_setFontReady_FUN_004d0290(CBitFont * this_ptr, int value)
-    MOV EBP,dword ptr [0x02fa8cd0]      ; 00470dd3 | g_MessageCount
+    MOV EBP,dword ptr [0x02fa8cd0]      ; 00470dd3 | g_UseOSFonts
     ADD ESP,0x8                         ; 00470dd9
     TEST EBP,EBP                        ; 00470ddc
     JNZ 0x00470ebd                      ; 00470dde

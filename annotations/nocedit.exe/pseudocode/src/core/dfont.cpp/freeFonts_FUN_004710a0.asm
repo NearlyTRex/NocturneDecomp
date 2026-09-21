@@ -149,7 +149,7 @@ section .text
     ADD ESP,0x4                         ; 004711ef
     XOR EBX,EBX                         ; 004711f2
         ;   Label: LAB_004711f2
-    MOV ESI,dword ptr [0x02fa8cd0]      ; 004711f4 | g_MessageCount
+    MOV ESI,dword ptr [0x02fa8cd0]      ; 004711f4 | g_UseOSFonts
     MOV dword ptr [0x020a572c],EBX      ; 004711fa | g_MicroFont
     TEST ESI,ESI                        ; 00471200
     JZ 0x004712ca                       ; 00471202

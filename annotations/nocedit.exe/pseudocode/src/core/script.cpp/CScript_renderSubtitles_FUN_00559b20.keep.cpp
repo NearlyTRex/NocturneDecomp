@@ -58,7 +58,7 @@ void __cdecl core_script_cpp_CScript_renderSubtitles_FUN_00559b20(CScript *this_
     if (g_WindowHeight < 0x1e0) {
       this_ptr_00 = g_TinyFont;
     }
-    if ((g_WindowHeight < 0x180) && (this_ptr_00 = g_MicroFont, g_MessageCount != 0)) {
+    if ((g_WindowHeight < 0x180) && (this_ptr_00 = g_MicroFont, g_UseOSFonts != 0)) {
       this_ptr_00 = g_SmallEditorFont;
     }
 #if NOCTURNE_AUTHENTIC_HUD_SCALE

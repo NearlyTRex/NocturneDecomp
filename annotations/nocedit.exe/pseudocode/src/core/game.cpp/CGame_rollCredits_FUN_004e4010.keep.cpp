@@ -102,7 +102,7 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004e4010(CGame *this_ptr)
       if ((local_20 != 0) &&
          (iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(local_20), iVar4 == 0)) {
 LAB_004e43c1:
-        if (g_MessageCount != 0) {
+        if (g_UseOSFonts != 0) {
           this_ptr_00->win_font_enabled = 1;
         }
         sound_sndmain_cpp_resetSoundDevice_FUN_005ab130();

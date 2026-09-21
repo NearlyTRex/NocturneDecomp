@@ -187,6 +187,17 @@ void nocturne_trigl_envmap_pass_end(void);
 #include "game/hero_interact.h"
 #include "game/hero_grab.h"
 
+// Which of the engine's two text paths is used (nocturne_os_font_*), reached
+// from CGame::initFonts to apply the stored choice and from the menu TU for the
+// Graphics Options line. Inert under NOCTURNE_OS_FONT_OPTION=0.
+#include "core/os_font.h"
+
+// What this build calls itself (nocturne_version*), reached from the entry
+// point for --version and from the game TU for the console banner and the menu
+// corner. Not gated: a build always knows its own version, and only where it is
+// shown on the shipped menu screen is a deviation.
+#include "core/version.h"
+
 // The memory line (nocturne_heap_report), reached from
 // CEditorTools::displayMemoryDiagnostics. Gated there on
 // NOCTURNE_AUTHENTIC_HEAP_REPORT; the shipped _heapwalk cannot see the host's

@@ -58,7 +58,9 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042a830(CCharacter *t
         } while (iVar6 < this_ptr->fire_count);
       }
       iVar6 = 0;
+#if !NOCTURNE_AUTHENTIC_BURN_BONE_COUNT
       bones_off_the_skin = 0;
+#endif
       for (local_2c = 0; local_2c < pCVar3->bone_count; local_2c++) {
 #if NOCTURNE_AUTHENTIC_BURN_BONE_COUNT
         if ((float)65535 <= g_BoneBurnIntensity[local_2c]) {

@@ -18,7 +18,7 @@ cmake_minimum_required(VERSION 3.20)
 #   cmake --build build --target nocturne
 # -----------------------------------------------------------------------------
 
-project(NocturneDecomp LANGUAGES C CXX)
+project(NocturneDecomp VERSION 0.1.0 LANGUAGES C CXX)
 
 option(NOCTURNE_BUILD_CHECK "Build syntax-only verification target" ON)
 option(NOCTURNE_BUILD_EXE   "Build full linked executable"          OFF)
@@ -64,6 +64,13 @@ endif()
 # halves of the build disagreeing about what the game does. Changing one is
 # therefore a full rebuild, which is the honest cost of a switch that every
 # translation unit can see.
+# A vanilla build answers every toggle the way the shipped game did, so it has
+# to populate the cache before the forwarding loop reads it.
+option(NOCTURNE_VANILLA "Set every authenticity toggle to the shipped behaviour" OFF)
+if(NOCTURNE_VANILLA)
+    include("${CMAKE_SOURCE_DIR}/cmake/vanilla.cmake")
+endif()
+
 get_cmake_property(_nocturne_cache_vars CACHE_VARIABLES)
 set(_nocturne_authentic_defs "")
 foreach(_var IN LISTS _nocturne_cache_vars)
@@ -113,6 +120,39 @@ endif()
 # -----------------------------------------------------------------------------
 set(NOCTURNE_GEN_DIR "${CMAKE_BINARY_DIR}/generated")
 file(MAKE_DIRECTORY "${NOCTURNE_GEN_DIR}")
+
+# -----------------------------------------------------------------------------
+# Version header, rewritten on every build so `git describe` cannot go stale.
+# Only shims/core/version.cpp includes it, so a new commit recompiles one file.
+# -----------------------------------------------------------------------------
+set(NOCTURNE_VERSION_HEADER "${NOCTURNE_GEN_DIR}/nocturne_version.h")
+if(DEFINED NOCTURNE_BUILD_TAG)
+    set(_version_build_tag "${NOCTURNE_BUILD_TAG}")
+else()
+    set(_version_build_tag "${CMAKE_SYSTEM_NAME}-${CMAKE_SYSTEM_PROCESSOR}")
+endif()
+add_custom_target(nocturne_version ALL
+    COMMAND "${CMAKE_COMMAND}"
+            -DVERSION=${PROJECT_VERSION}
+            -DSOURCE_DIR=${CMAKE_SOURCE_DIR}
+            -DOUT=${NOCTURNE_VERSION_HEADER}
+            -DTEMPLATE=${CMAKE_SOURCE_DIR}/cmake/nocturne_version.h.in
+            -DBUILD_TAG=${_version_build_tag}
+            -P "${CMAKE_SOURCE_DIR}/cmake/write_version.cmake"
+    BYPRODUCTS "${NOCTURNE_VERSION_HEADER}"
+    COMMENT "Stamping version ${PROJECT_VERSION}"
+    VERBATIM)
+# The header must exist before the first compile, not merely before the first
+# build — a fresh configure has no generated/ contents yet and the dependency
+# below only orders the two, it does not create the file.
+execute_process(COMMAND "${CMAKE_COMMAND}"
+        -DVERSION=${PROJECT_VERSION}
+        -DSOURCE_DIR=${CMAKE_SOURCE_DIR}
+        -DOUT=${NOCTURNE_VERSION_HEADER}
+        -DTEMPLATE=${CMAKE_SOURCE_DIR}/cmake/nocturne_version.h.in
+        -DBUILD_TAG=${_version_build_tag}
+        -P "${CMAKE_SOURCE_DIR}/cmake/write_version.cmake")
+message(STATUS "version: ${PROJECT_VERSION} (${_version_build_tag})")
 
 # Entry/ is always replaced by the hand-written pseudocode/main/ module.
 # Crt/ is excluded — we link against a modern C/C++ runtime.
@@ -400,12 +440,18 @@ if(NOCTURNE_BUILD_EXE)
     endif()
 
     add_library(nocturne_shims OBJECT ${_shim_sources})
+    # NOCTURNE_GEN_DIR unconditionally: shims/core/version.cpp reads the
+    # generated version header whether or not the icon was extracted.
     target_include_directories(nocturne_shims PRIVATE
-        "${NOCTURNE_INCLUDE_DIR}" "${NOCTURNE_SHIMS_DIR}"
+        "${NOCTURNE_INCLUDE_DIR}" "${NOCTURNE_SHIMS_DIR}" "${NOCTURNE_GEN_DIR}"
         ${SDL2_INCLUDE_DIRS} ${SDL2TTF_INCLUDE_DIRS} ${FFMPEG_INCLUDE_DIRS})
+    add_dependencies(nocturne_shims nocturne_version)
+    # Tells shims/core/version.cpp the generated header is on its include path.
+    # Without it that file falls back to placeholder strings, which is what the
+    # export tool's standalone shim compile check gets — it has no build tree.
+    target_compile_definitions(nocturne_shims PRIVATE NOCTURNE_VERSION_GENERATED=1)
     if(TARGET nocturne_icon)
         add_dependencies(nocturne_shims nocturne_icon)
-        target_include_directories(nocturne_shims PRIVATE "${NOCTURNE_GEN_DIR}")
         target_compile_definitions(nocturne_shims PRIVATE NOCTURNE_ICON_FROM_EXE=1)
     endif()
     target_compile_options(nocturne_shims PRIVATE
@@ -442,6 +488,16 @@ if(NOCTURNE_BUILD_EXE)
         ${NOCTURNE_SANITIZE_FLAGS}
         ${SDL2_CFLAGS_OTHER} ${SDL2TTF_CFLAGS_OTHER} ${FFMPEG_CFLAGS_OTHER})
     target_link_options(nocturne PRIVATE ${NOCTURNE_SANITIZE_FLAGS})
+    if(NOT WIN32)
+        # SDL2 and SDL2_ttf are built here as shared objects, and the link
+        # records their absolute paths inside the build tree. That is right for
+        # running from build/, and useless once the binary is copied anywhere
+        # else -- a release archive would carry a runpath naming a directory on
+        # the machine that built it. $ORIGIN is appended rather than replacing
+        # it, so the build tree keeps working and an archive that ships the .so
+        # beside the binary finds them there.
+        target_link_options(nocturne PRIVATE "-Wl,-rpath,$ORIGIN")
+    endif()
 
     foreach(_lib IN LISTS _module_libs)
         target_link_libraries(nocturne PRIVATE ${_lib})

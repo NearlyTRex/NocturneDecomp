@@ -54,7 +54,7 @@ void __cdecl core_dfont_cpp_freeFonts_FUN_004710a0(void)
     shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(pCVar1);
   }
   g_MicroFont = (CBitFont *)0x0;
-  if (g_MessageCount != 0) {
+  if (g_UseOSFonts != 0) {
     g_CurrentDebugLine = 0xd5;
     g_CurrentDebugFilename = "..\\core\\dfont.cpp";
     if (g_MediumWinFont != (CWinFont *)0x0) {

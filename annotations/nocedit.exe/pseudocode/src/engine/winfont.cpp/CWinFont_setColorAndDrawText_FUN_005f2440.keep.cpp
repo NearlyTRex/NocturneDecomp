@@ -25,14 +25,25 @@ void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFo
   int pcStack_1c;
   COLORREF CStack_18;
   ushort uVar2;
-  
+
   if (((foreground_color != this_ptr->cached_foreground_color) ||
       (background_color != this_ptr->cached_background_color)) ||
      (iVar7 = _strcmp(this_ptr->text_cache,text_string), iVar7 != 0)) {
     this_ptr->cached_foreground_color = foreground_color;
     this_ptr->cached_background_color = background_color;
+    CStack_18 = 0;
     if (foreground_color < 0) {
-      engine_font_cpp_getDefaultTextColor_FUN_004ce220();
+      CStack_24 = engine_font_cpp_getDefaultTextColor_FUN_004ce220();
+    }
+    else {
+      CStack_24 = (COLORREF)g_SourcePaletteData[foreground_color * 3] |
+                  ((COLORREF)g_SourcePaletteData[foreground_color * 3 + 1] << 8) |
+                  ((COLORREF)g_SourcePaletteData[foreground_color * 3 + 2] << 0x10);
+    }
+    if (background_color != -1) {
+      CStack_18 = (COLORREF)g_SourcePaletteData[background_color * 3] |
+                  ((COLORREF)g_SourcePaletteData[background_color * 3 + 1] << 8) |
+                  ((COLORREF)g_SourcePaletteData[background_color * 3 + 2] << 0x10);
     }
     strcpy(this_ptr->text_cache,text_string);
     iVar3 = (*((this_ptr->base).vtable)->getStringWidth)(&this_ptr->base,text_string);

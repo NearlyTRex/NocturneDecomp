@@ -77,7 +77,7 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(char **menu_text_a
     } while (local_20 < menu_count);
   }
   engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
-  if (g_MessageCount == 0) {
+  if (g_UseOSFonts == 0) {
     iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80
                       (g_SmallEditorFont,"Nocturne 1999 Terminal Reality Inc.  Patent Pending.");
     iVar4 = engine_font_cpp_CBitFont_getTextHeight_FUN_004cff40
@@ -95,7 +95,11 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(char **menu_text_a
             (g_SmallEditorFont,pcVar7,0x27f - iVar3,0x1df - iVar4,0xf8,0);
   engine_3d_c_setRenderAlpha_FUN_00406d80(0x8000);
   engine_font_cpp_CBitFont_drawText_FUN_004cda80
-            (g_SmallEditorFont,g_MenuVersionText,0x206,99,0xf8,0);
+            (g_SmallEditorFont,g_MenuTrademarkGlyph,0x206,99,0xf8,0);
+#if !NOCTURNE_AUTHENTIC_MENU_VERSION
+  engine_font_cpp_CBitFont_drawText_FUN_004cda80
+            (g_SmallEditorFont,(char *)nocturne_version_short(),4,0x1df - iVar4,0xf8,0);
+#endif
   engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
 #if NOCTURNE_EDITOR_BUILD
   engine_font_cpp_CBitFont_drawText_FUN_004cda80

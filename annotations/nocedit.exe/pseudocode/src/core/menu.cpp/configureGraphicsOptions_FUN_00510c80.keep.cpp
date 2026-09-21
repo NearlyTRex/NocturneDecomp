@@ -29,12 +29,19 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_00510c80(void)
   int local_1c [3];
   CGame *pCVar2;
   int iVar3;
-#if NOCTURNE_WINDOW_MODE_OPTION
-  char *menu_ptrs [10];
-  char window_line [256];
-  int window_item;
+#if NOCTURNE_WINDOW_MODE_OPTION || NOCTURNE_OS_FONT_OPTION
+  char *menu_ptrs [12];
+  int extra_count;
   int menu_y;
   int menu_ch;
+#endif
+#if NOCTURNE_WINDOW_MODE_OPTION
+  char window_line [256];
+  int window_item;
+#endif
+#if NOCTURNE_OS_FONT_OPTION
+  char os_font_line [256];
+  int os_font_item;
 #endif
 #if !NOCTURNE_AUTHENTIC_MENU_RESOLUTION
   int prev_pixx;
@@ -289,24 +296,35 @@ LAB_00510f71:
     prev_pixx = g_CGamePtr->game_pixx;
     prev_pixy = g_CGamePtr->game_pixy;
 #endif
-#if NOCTURNE_WINDOW_MODE_OPTION
+#if NOCTURNE_WINDOW_MODE_OPTION || NOCTURNE_OS_FONT_OPTION
     for (iVar4 = 0; iVar4 < iVar7; iVar4++) {
       menu_ptrs[iVar4] = g_GraphicsMenuTextPointers[iVar4];
     }
+    extra_count = iVar7;
+#if NOCTURNE_OS_FONT_OPTION
+    _sprintf(os_font_line,"Text : %s",
+             nocturne_os_font_name(nocturne_os_font_get()));
+    os_font_item = extra_count;
+    menu_ptrs[extra_count] = os_font_line;
+    extra_count = extra_count + 1;
+#endif
+#if NOCTURNE_WINDOW_MODE_OPTION
     _sprintf(window_line,"Window : %s",
              nocturne_window_mode_name(nocturne_window_mode_get()));
-    window_item = iVar7;
-    menu_ptrs[window_item] = window_line;
+    window_item = extra_count;
+    menu_ptrs[extra_count] = window_line;
+    extra_count = extra_count + 1;
+#endif
     menu_ch = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_ThemeFont,0x58);
     menu_y = 0xfa;
-    if (g_WindowHeight < menu_y + (window_item + 4) * menu_ch) {
-      menu_y = g_WindowHeight - (window_item + 4) * menu_ch;
+    if (g_WindowHeight < menu_y + (extra_count + 3) * menu_ch) {
+      menu_y = g_WindowHeight - (extra_count + 3) * menu_ch;
     }
     if (menu_y < 0) {
       menu_y = 0;
     }
     iVar7 = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000
-                      (menu_ptrs,window_item + 1,&local_20,menu_y,pcVar14);
+                      (menu_ptrs,extra_count,&local_20,menu_y,pcVar14);
 #else
     iVar7 = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000
                       (g_GraphicsMenuTextPointers,iVar7,&local_20,0xfa,pcVar14);
@@ -324,6 +342,17 @@ LAB_00510f71:
       g_CGamePtr->game_pixy = 0x1e0;
       pCVar4->game_pixx = 0x280;
     }
+#if NOCTURNE_OS_FONT_OPTION
+    if (iVar7 == os_font_item) {
+      if (g_MenuLeftRightPressed == 1) {
+        nocturne_os_font_cycle(-1);
+      }
+      else {
+        nocturne_os_font_cycle(1);
+      }
+      iVar7 = -1;   /* consumed; matches no case below */
+    }
+#endif
 #if NOCTURNE_WINDOW_MODE_OPTION
     if (iVar7 == window_item) {
       if (g_MenuLeftRightPressed == 1) {

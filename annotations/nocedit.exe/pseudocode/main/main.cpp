@@ -17,6 +17,9 @@
 #include "nocturne.h"
 #include "win32/shim_init.h"
 
+#include <cstdio>
+#include <cstring>
+
 // Entries 0..154 are game static initializers (actor registration, vtable
 // setup, etc.). Entries 155..165 are Watcom CRT init handlers that we skip
 // since we link against a modern C/C++ runtime.
@@ -30,8 +33,25 @@ static void runStaticInitializers(void)
     }
 }
 
+// --version answers before anything is initialized: a bug report should be able
+// to get the build's identity out of a binary that cannot open a window, load a
+// POD or reach a GL context.
+static int wantsVersion(int argc, char** argv)
+{
+    for (int i = 1; i < argc; i++) {
+        if (argv[i] == nullptr) continue;
+        if (strcmp(argv[i], "--version") == 0 || strcmp(argv[i], "-v") == 0) return 1;
+    }
+    return 0;
+}
+
 int main(int argc, char** argv)
 {
+    if (wantsVersion(argc, argv)) {
+        printf("%s\n", nocturne_version_line());
+        return 0;
+    }
+
     shims_init_all();
     runStaticInitializers();
 

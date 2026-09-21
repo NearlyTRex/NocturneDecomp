@@ -14,7 +14,7 @@
 //
 // The OS-font path (CWinFont, SDL_ttf-backed through the wingdi shim) would
 // have solved the text half by itself, but initFonts only builds those fonts
-// when g_MessageCount is non-zero, i.e. when msglist.txt is present. It is not
+// when g_UseOSFonts is non-zero, i.e. when msglist.txt is present. It is not
 // in the shipped POD, so every glyph on screen is a bitmap and scaling has to
 // happen at blit time.
 //

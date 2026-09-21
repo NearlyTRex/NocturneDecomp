@@ -38,6 +38,12 @@ run only when pointers are 4 bytes wide.
 annotations and source. Binaries, assets and data files are gitignored and are never required to
 build.
 
+**Licensed in two halves, because a decompilation cannot license what it was derived from.** The
+original work here — the shims, the build system, the tooling, the docs and the research — is
+0BSD, which is to say use it for anything without conditions. The reconstructed source under
+`annotations/*/pseudocode/src/` describes someone else's copyrighted program and is not covered:
+no rights in it are held here and none are granted. See [LICENSE](LICENSE).
+
 ## Status
 
 **Active research — the decompiled game builds and plays on Linux.**

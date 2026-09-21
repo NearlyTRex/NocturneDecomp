@@ -86,6 +86,44 @@ static const char* s_fallback_font_paths[] = {
     nullptr
 };
 
+// The engine's text is CP1252 — the ANSI codepage GDI rendered it with on
+// Windows. SDL_ttf's TTF_*Text_* entry points read their input as Latin-1,
+// which agrees with CP1252 over 0x00..0x7F and 0xA0..0xFF and disagrees over
+// 0x80..0x9F, where Latin-1 has unassigned C1 controls and CP1252 has the
+// punctuation and symbols. The menu's trademark glyph is one of those: byte
+// 0x99, which is U+2122 in CP1252 and a control in Latin-1, so rendering it as
+// Latin-1 produces nothing.
+//
+// Converting to UTF-8 and using the TTF_*UTF8_* entry points instead puts every
+// byte through the codepage the text was written in.
+static const unsigned short kCp1252High[32] = {
+    0x20AC, 0x0081, 0x201A, 0x0192, 0x201E, 0x2026, 0x2020, 0x2021,
+    0x02C6, 0x2030, 0x0160, 0x2039, 0x0152, 0x008D, 0x017D, 0x008F,
+    0x0090, 0x2018, 0x2019, 0x201C, 0x201D, 0x2022, 0x2013, 0x2014,
+    0x02DC, 0x2122, 0x0161, 0x203A, 0x0153, 0x009D, 0x017E, 0x0178
+};
+
+// Writes at most out_size-1 bytes plus a terminator. A UTF-8 code point from
+// this table is never more than three bytes, so the worst case is 3x the input.
+static void cp1252_to_utf8(const char* in, int in_len, char* out, size_t out_size) {
+    size_t o = 0;
+    for (int i = 0; i < in_len && o + 4 < out_size; i++) {
+        unsigned char ch = (unsigned char)in[i];
+        unsigned int cp = (ch >= 0x80 && ch <= 0x9F) ? kCp1252High[ch - 0x80] : ch;
+        if (cp < 0x80) {
+            out[o++] = (char)cp;
+        } else if (cp < 0x800) {
+            out[o++] = (char)(0xC0 | (cp >> 6));
+            out[o++] = (char)(0x80 | (cp & 0x3F));
+        } else {
+            out[o++] = (char)(0xE0 | (cp >> 12));
+            out[o++] = (char)(0x80 | ((cp >> 6) & 0x3F));
+            out[o++] = (char)(0x80 | (cp & 0x3F));
+        }
+    }
+    out[o] = '\0';
+}
+
 static TTF_Font* open_fallback_font(int height) {
     if (height < 0) height = -height;
     if (height == 0) height = 14;
@@ -172,6 +210,17 @@ static HBITMAP shim_CreateDIBSection(HDC hdc, BITMAPINFO* pbmi, UINT usage,
     bmp->width = width;
     bmp->height = height;
     bmp->bpp = bpp;
+
+    // Start the section at the caller's transparency key rather than at zero.
+    // CWinFont::createTextBackground means to fill it magenta itself, but the
+    // Rectangle it issues is (0, -top, right, 0) with `top` and `right` read
+    // before they are assigned a few lines further down — zero after the reset
+    // that precedes it — so the rectangle is empty and fills nothing. A section
+    // left black then has no key pixels at all, and the whole box is copied to
+    // the screen. Magenta here is what the blit expects to skip: SDL_MapRGB
+    // gives 0x7c1f in 5-5-5 and 0x00ff00ff at 32bpp, the two values
+    // CWinFont::setColorAndDrawText tests against.
+    SDL_FillRect(surface, nullptr, SDL_MapRGB(surface->format, 255, 0, 255));
 
     if (ppvBits) *ppvBits = surface->pixels;
 
@@ -263,8 +312,12 @@ static BOOL shim_GetTextExtentPoint32A(HDC hdc, LPCSTR lpString, int c,
         memcpy(buf, lpString, len);
         buf[len] = '\0';
 
+        // Same codepage as the render, or the extent and the glyphs disagree.
+        char utf8[sizeof(buf) * 3 + 1];
+        cp1252_to_utf8(buf, len, utf8, sizeof(utf8));
+
         int w = 0, h = 0;
-        TTF_SizeText(dc->font->ttf_font, buf, &w, &h);
+        TTF_SizeUTF8(dc->font->ttf_font, utf8, &w, &h);
         psizl->cx = w;
         psizl->cy = h;
     }
@@ -371,7 +424,18 @@ static BOOL shim_TextOutA(HDC hdc, int x, int y, LPCSTR lpString, int c) {
     fg.b = (Uint8)((dc->text_color >> 16) & 0xFF);
     fg.a = 255;
 
-    SDL_Surface* text_surface = TTF_RenderText_Blended(dc->font->ttf_font, buf, fg);
+    // Solid, not Blended. The caller composites this DIB onto the screen by
+    // testing each pixel against an exact transparency key — 0x7c1f at 16bpp,
+    // 0x00ff00ff at 32bpp, both magenta — and copying everything that does not
+    // match (CWinFont::setColorAndDrawText). Antialiased output has no exact
+    // background: every edge pixel is a blend between the glyph and the magenta
+    // behind it, fails the equality, and is copied, so the text arrives inside
+    // a solid block of its own fringe. Solid renders hard-edged with a colour
+    // key, which is the shape the equality test was written for.
+    char utf8[sizeof(buf) * 3 + 1];
+    cp1252_to_utf8(buf, len, utf8, sizeof(utf8));
+
+    SDL_Surface* text_surface = TTF_RenderUTF8_Solid(dc->font->ttf_font, utf8, fg);
     if (!text_surface) return 1;
 
     // Blit text onto the DC's bitmap surface
@@ -380,6 +444,22 @@ static BOOL shim_TextOutA(HDC hdc, int x, int y, LPCSTR lpString, int c) {
     dst_rect.y = y;
     dst_rect.w = text_surface->w;
     dst_rect.h = text_surface->h;
+
+    // OPAQUE means the text cell is painted with the background colour first,
+    // which is how GDI makes each string erase whatever was drawn there before.
+    // CWinFont relies on it: it sets OPAQUE and a magenta background once, then
+    // reuses one DIB for every string it ever draws — CWinFont::create-
+    // TextBackground reallocates only when the section is too small, so without
+    // this each string is laid over the last and the section fills with
+    // overlapping glyphs.
+    if (dc->bk_mode == 2) {
+        SDL_Rect clear_rect = dst_rect;
+        SDL_FillRect(dc->bitmap->surface, &clear_rect,
+                     SDL_MapRGB(dc->bitmap->surface->format,
+                                (Uint8)(dc->bk_color & 0xFF),
+                                (Uint8)((dc->bk_color >> 8) & 0xFF),
+                                (Uint8)((dc->bk_color >> 16) & 0xFF)));
+    }
 
     SDL_BlitSurface(text_surface, nullptr, dc->bitmap->surface, &dst_rect);
     SDL_FreeSurface(text_surface);

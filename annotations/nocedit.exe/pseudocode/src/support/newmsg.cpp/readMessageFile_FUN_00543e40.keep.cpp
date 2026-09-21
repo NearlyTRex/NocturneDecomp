@@ -37,7 +37,7 @@ void __cdecl support_newmsg_cpp_readMessageFile_FUN_00543e40(char *message_file)
   _fgets(local_31c,0xff,file_handle);
   _fscanf(file_handle,"%d\n",&local_1c);
   _fgets(local_31c,0xff,file_handle);
-  _fscanf(file_handle,"%d\n",&g_MessageCount);
+  _fscanf(file_handle,"%d\n",&g_UseOSFonts);
   if (local_1c != 0) {
     g_CurrentFilename = "..\\support\\newmsg.cpp";
     g_CurrentLineNumber = 84;

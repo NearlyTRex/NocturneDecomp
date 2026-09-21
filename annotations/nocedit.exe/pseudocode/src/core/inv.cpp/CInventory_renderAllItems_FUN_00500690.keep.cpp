@@ -467,7 +467,7 @@ LAB_005009c0:
             4 * ui_scale;
 #endif
 #endif
-    if (((g_MicroFont != local_18) || (g_MessageCount == 0)) && (iVar11 = 0, 0 < iVar3)) {
+    if (((g_MicroFont != local_18) || (g_UseOSFonts == 0)) && (iVar11 = 0, 0 < iVar3)) {
       pacVar12 = g_InventoryWrappedTextLines3;
       do {
         iVar11 = iVar11 + 1;

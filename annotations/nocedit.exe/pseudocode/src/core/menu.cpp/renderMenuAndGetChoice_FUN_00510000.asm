@@ -24,7 +24,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_Nocturne_c_1999_Terminal_00636547
 ;   TerminatedCString s_Nocturne_1999_Terminal_R_00636580
-;   char[2] g_MenuVersionText
+;   char[2] g_MenuTrademarkGlyph
 ;   TerminatedCString s_NON_RELEASE_EDITOR_BUILD_006365b8
 ;   TerminatedCString s_Press_CTRL_D_to_access_t_006365d1
 ;   CKeys* g_CKeysPtr = 02dcd7d4
@@ -34,7 +34,7 @@
 ;   CMoon g_CMoonInstance
 ;   int g_MenuLeftRightPressed
 ;   int g_MenuInputHappened
-;   int g_MessageCount
+;   int g_UseOSFonts
 ;
 ; Called Functions:
 ;   core_moon.cpp_CMoon_isAnimationFirstHalf_FUN_0052a3f0
@@ -187,7 +187,7 @@ section .text
         ;   Label: LAB_00510162
     CALL engine_3d.c_setRenderAlpha_FUN_00406d80 ; 00510167
         ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
-    MOV ESI,dword ptr [0x02fa8cd0]      ; 0051016c | g_MessageCount
+    MOV ESI,dword ptr [0x02fa8cd0]      ; 0051016c | g_UseOSFonts
     ADD ESP,0x4                         ; 00510172
     TEST ESI,ESI                        ; 00510175
     JZ 0x00510387                       ; 00510177
@@ -228,7 +228,7 @@ section .text
     PUSH 0xf8                           ; 005101e1
     PUSH 0x63                           ; 005101e6
     PUSH 0x206                          ; 005101e8
-    PUSH 0x6365b6                       ; 005101ed | g_MenuVersionText
+    PUSH 0x6365b6                       ; 005101ed | g_MenuTrademarkGlyph
     MOV ESI,dword ptr [0x020a5724]      ; 005101f2 | g_SmallEditorFont
     PUSH ESI                            ; 005101f8
     CALL engine_font.cpp_CBitFont_drawText_FUN_004cda80 ; 005101f9

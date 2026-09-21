@@ -22,7 +22,7 @@
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.subtitle_mode
 ;   undefined4 g_CGameInstance.letterbox_mode
-;   int g_MessageCount
+;   int g_UseOSFonts
 ;   int g_PreviousLetterboxMode
 ;   char[10][1024] g_ScriptSubtitleLines
 ;   ... and 2 more
@@ -147,7 +147,7 @@ section .text
         ;   Label: LAB_00559c35
     JGE 0x00559c54                      ; 00559c3f
         ;   XREF to: 00559c54 (CONDITIONAL_JUMP)  ; LAB_00559c54
-    CMP dword ptr [0x02fa8cd0],0x0      ; 00559c41 | g_MessageCount
+    CMP dword ptr [0x02fa8cd0],0x0      ; 00559c41 | g_UseOSFonts
     JZ 0x00559d66                       ; 00559c48
         ;   XREF to: 00559d66 (CONDITIONAL_JUMP)  ; LAB_00559d66
     MOV EBP,dword ptr [0x020a5724]      ; 00559c4e | g_SmallEditorFont

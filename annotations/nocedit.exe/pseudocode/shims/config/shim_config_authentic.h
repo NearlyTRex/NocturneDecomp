@@ -87,8 +87,10 @@
 // | `NOCTURNE_AUTHENTIC_CONFIRM_PROMPTS` | 0 | choice | no bracketed hotkey letters, and a short form when the long one will not fit |
 // | `NOCTURNE_AUTHENTIC_MENU_RESOLUTION` | 0 | choice | a picked resolution applies straight away |
 // | `NOCTURNE_AUTHENTIC_SAVE` | 1 | choice | saves are written as readable plain text |
+// | `NOCTURNE_AUTHENTIC_BUILD_STAMP` | 0 | choice | the console banner dates this build, not Terminal Reality's |
 // | `NOCTURNE_AUTHENTIC_AUTOMAP` | 0 | addition | a bindable Doom-style map that fills in as you explore |
 // | `NOCTURNE_AUTHENTIC_GOGGLE_LOOK` | 0 | addition | the goggle view looks up and down with empty hands |
+// | `NOCTURNE_AUTHENTIC_MENU_VERSION` | 0 | addition | the menu carries a line naming this build |
 // | `NOCTURNE_AUTHENTIC_SAVE_SLOTS` | 0 | addition | saves are picked from a slot list, not typed |
 // | `NOCTURNE_AUTHENTIC_SINGLE_PLAYER_MENU` | 0 | addition | START becomes PLAY, with Start and Load behind it |
 // | `NOCTURNE_AUTHENTIC_AUTOSAVE` | 0 | addition | AUTO.NOC is written at a cutscene end and a mission start |
@@ -1787,6 +1789,50 @@
 //   Override with -DNOCTURNE_AUTHENTIC_FILE_TIME=1.
 #ifndef NOCTURNE_AUTHENTIC_FILE_TIME
 #define NOCTURNE_AUTHENTIC_FILE_TIME 0
+#endif
+
+// NOCTURNE_AUTHENTIC_BUILD_STAMP
+//   What the console banner says this build is. CGame::runGameSession prints it
+//   at session start, under "Nocturne is alive and kicking".
+//   1: shipped behaviour — "game.cpp built on Jan 10 2000 12:05:01", the two
+//      strings literally in the binary, and nothing else. They record when
+//      Terminal Reality compiled game.cpp, which is a fact about their build
+//      and says nothing about this one.
+//   0: when this binary was compiled, and which version it is.
+//
+//   The date is __DATE__/__TIME__ from shims/core/version.cpp — the same kind
+//   of thing the shipped line held, the moment one translation unit was
+//   compiled rather than the moment the link finished. That file is recompiled
+//   whenever the generated version header changes, which is every commit.
+//
+//   This is the console line only. --version is not gated: a build always
+//   knows its own identity, and a bug report that cannot get it out of the
+//   binary is worse than an unfaithful console banner. Where the same line is
+//   painted on the menu screen is NOCTURNE_AUTHENTIC_MENU_VERSION's business.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_BUILD_STAMP=1.
+#ifndef NOCTURNE_AUTHENTIC_BUILD_STAMP
+#define NOCTURNE_AUTHENTIC_BUILD_STAMP 0
+#endif
+
+// NOCTURNE_AUTHENTIC_MENU_VERSION
+//   What the menu corner says. renderMenuAndGetChoice draws g_MenuVersionText
+//   at x 0x206, y 99, under the copyright line.
+//   1: shipped behaviour — nothing on the menu names the build.
+//   0: the build's version and `git describe` in the bottom left, facing the
+//      copyright notice in the bottom right: same baseline, opposite margin.
+//
+//   Nothing shipped is replaced: the line is drawn in addition to what the menu
+//   already draws, and the trademark glyph at x 0x206, y 99 is untouched.
+//
+//   A release someone is playing should be able to say which build it is
+//   without being started under a debugger. The same identity also reaches the
+//   console and --version, and neither of those is gated; this flag is only
+//   about putting a line on the shipped menu screen.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_MENU_VERSION=1.
+#ifndef NOCTURNE_AUTHENTIC_MENU_VERSION
+#define NOCTURNE_AUTHENTIC_MENU_VERSION 0
 #endif
 
 // NOCTURNE_AUTHENTIC_GOGGLE_LOOK
