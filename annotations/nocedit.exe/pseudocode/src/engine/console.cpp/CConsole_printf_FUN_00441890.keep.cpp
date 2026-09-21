@@ -17,6 +17,11 @@ void __cdecl engine_console_cpp_CConsole_printf_FUN_00441890(CConsole *this_ptr,
   char local_1014 [4096];
   va_list_t local_14;
 
+#if !NOCTURNE_AUTHENTIC_CONSOLE
+  nocturne_console_layout(this_ptr->screen_x,this_ptr->screen_y,NOCTURNE_CONSOLE_MAX_COLS,
+                          NOCTURNE_CONSOLE_MAX_ROWS,(int *)0,
+                          &this_ptr->console_width,&this_ptr->console_height);
+#endif
   VA_START_T(local_14, format);
   _vsprintf(local_1014,format,local_14);
   iVar3 = 0;
