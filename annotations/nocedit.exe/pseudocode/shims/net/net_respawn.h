@@ -103,6 +103,24 @@ int nocturne_net_respawn_available(void);
 // and no cameras at all.
 int nocturne_net_respawn_world_area(void);
 
+// 1 when this hero is in the world and may therefore be drawn.
+//
+// CDemonSet::buildDisplayList puts the local hero in sorted_render_actors[0]
+// unconditionally, bypassing the active set every other actor is filtered
+// through. That is sound in the game it was written for: the local hero is the
+// one the camera follows and is always on screen, so there was nothing to ask.
+//
+// A guest whose hero is still held carries area_id -1 and is absent from the
+// set, but the forced slot draws it regardless — so the guest sees its own
+// character standing unanimated on the mission's start placeholder for as long
+// as it spectates. The host never sees it, because that hero is neither in the
+// host's set nor the host's local hero.
+//
+// Null, or held out of the world, is 0. Outside a network game this is exactly
+// the null test the shipped code already made, so single player is unchanged.
+struct CHero;
+int nocturne_net_respawn_hero_in_world(struct CHero *hero);
+
 // Host action. Chooses the spots, schedules them, and broadcasts. Returns 1 if
 // a respawn was scheduled, 0 if the request could not be honoured.
 int nocturne_net_respawn_request(void);

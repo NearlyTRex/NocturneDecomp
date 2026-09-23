@@ -785,6 +785,46 @@ overrun the small declaration and trip ASan as `stack-buffer-overflow`. Cross-ch
 real bound and resize to match the siblings. Primitive-typed arrays are skipped — size variation
 there is usually intentional.
 
+### §34 — Stale enumerator name in a `.keep`
+
+A source line names an enumerator; the binary holds a number. Nothing but the enum definition in the
+Ghidra database ties the two together, and that definition changes. When two enumerators swap values
+— `EDamageType` held `SHATTER = 4` / `FALL_APART = 5` and holds `FALL_APART = 4` / `SHATTER = 5` —
+the regenerated `.cpp` follows, because the decompiler prints whichever enumerator carries the
+constant it read out of the instruction. A `.keep` is frozen text and does not.
+
+The old name is still declared, so it compiles; the value the function stores or compares has
+changed. A struct field renamed at a stable offset is the loud form of this — the compiler rejects
+the old member name and the build stops. An enumerator rename is the quiet form.
+
+```cpp
+// stale — the asm has CMP EAX,0x4 at 0042c40e, and 4 is now FALL_APART
+if (EVar5 < DAMAGE_TYPE_SHATTER) {
+// correct
+if (EVar5 < DAMAGE_TYPE_FALL_APART) {
+```
+
+`stale_enum_name` compares the keep against the regenerated `.cpp` beside it, which is the one
+artifact guaranteed to agree with the current database. It fires when the keep names an enumerator
+the `.cpp` does not *and* the `.cpp` names another enumerator of the same enum that the keep does
+not. Both directions are required: de-punning a raw store introduces a name the `.cpp` never had,
+and that alone is ordinary keep work.
+
+A finding means the keep and the database disagree. Which one is wrong is settled by the immediate at
+the matching instruction — if it is the `.cpp`'s value the keep is stale, and if it is the keep's
+then the enum is wrong in Ghidra and that is where it gets fixed.
+
+Asm immediates cannot drive this check on their own: in a function of any size nearly every small
+integer appears somewhere in the listing, so "the value is present" says nothing about the site in
+question. `CCharacter::processDamage` carries an unrelated `CMP dword ptr [ESI + 0x28],0x5`, which
+alone makes 5 look live.
+
+**Not covered:** a site the exporter renders without naming the enum at all — a punned raw store
+(`*(undefined4 *)(auStack + 0x24) = 4`) that the keep de-punned into a named field.
+`CDemonSet::processActors` is one. Such a site is also invisible in a diff of the export, for the
+same reason, so a keep that de-puns a store into an enum-typed field has to be checked by reading
+the immediate.
+
 ### §23 — Dead self-copy guard
 
 The original source wrote `if (&dst != &src) dst = src;` to guard a struct copy against aliasing,

@@ -119,6 +119,7 @@ SUSPECT_SEVERITY = {
     'derived_field_index_pun': 'moderate',
     'partial_struct_copy': 'moderate',
     'phantom_float_to_int': 'moderate',
+    'stale_enum_name': 'major',
 }
 
 

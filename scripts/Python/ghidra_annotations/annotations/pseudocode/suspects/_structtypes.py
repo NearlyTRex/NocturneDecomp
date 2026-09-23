@@ -36,6 +36,9 @@ _struct_layout_cache = {}
 _struct_size_cache = {}
 
 
+_enum_value_cache = {}
+
+
 
 _SFO_ACCESS_RE = re.compile(r'\b([A-Za-z_]\w*)\s*(?:->|\.)\s*([A-Za-z_]\w*)\s*\[')
 
@@ -203,6 +206,51 @@ def get_struct_size_map(pseudocode_src_dir):
     if path not in _struct_size_cache:
         _struct_size_cache[path] = build_struct_size_map(path) if path else {}
     return _struct_size_cache[path]
+
+
+
+
+def build_enum_value_map(data_types_path):
+    """Parse data_types.json into a per-enum enumerator -> value map.
+
+    Returns dict: enum_name -> {enumerator_name: int value}. Used by
+    identify_enum_value_asm_mismatch to check that the enumerator a source line
+    names still carries the constant the binary uses there. Returns {} if the
+    file is missing or unreadable.
+    """
+    try:
+        with open(data_types_path) as f:
+            data = json.load(f)
+    except (IOError, ValueError):
+        return {}
+    enums = {}
+    for entry in data.get('enums', []):
+        name = entry.get('name')
+        members = {}
+        for member in entry.get('values') or ():
+            mname = member.get('name')
+            mval = member.get('val')
+            if mname is None or not isinstance(mval, int):
+                continue
+            members[mname] = mval
+        if name and members:
+            enums[name] = members
+    return enums
+
+
+
+
+def get_enum_value_map(pseudocode_src_dir):
+    """Cached enum name -> {enumerator: value} map, located like get_struct_layout_map."""
+    base = pseudocode_src_dir
+    while base and os.path.basename(base) != 'pseudocode':
+        base = os.path.dirname(base)
+    path = None
+    if base:
+        path = os.path.join(os.path.dirname(base), 'data_types', 'data_types.json')
+    if path not in _enum_value_cache:
+        _enum_value_cache[path] = build_enum_value_map(path) if path else {}
+    return _enum_value_cache[path]
 
 
 

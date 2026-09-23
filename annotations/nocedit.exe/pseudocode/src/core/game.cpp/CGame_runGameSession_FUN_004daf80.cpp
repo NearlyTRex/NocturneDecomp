@@ -70,7 +70,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
   this_ptr->bitmap_width = 0;
   this_ptr->bitmap_height = 0;
   this_ptr->is_processing = 0;
-  this_ptr->cutscene_skippable = 0;
+  this_ptr->cinematic_skip_in_progress = 0;
   this_ptr->skip_frame_render = 0;
   this_ptr->hero_controls_blocked = 0;
   this_ptr->profile_mode = 0;
@@ -148,7 +148,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
       core_game_cpp_CGame_updateStatusDisplays_FUN_004d85a0(this_ptr);
       core_game_cpp_CGame_processFudge_FUN_004d8750(this_ptr);
       core_game_cpp_CGame_playerControls_FUN_004dbd80(this_ptr);
-      if ((((this_ptr->is_game_active != 0) && (this_ptr->cutscene_skippable == 0)) &&
+      if ((((this_ptr->is_game_active != 0) && (this_ptr->cinematic_skip_in_progress == 0)) &&
           (g_CNetGamePtr->has_pending_sim_frame == 0)) && (this_ptr->goggles_active == 0)) {
         iVar5 = core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
                           (g_CDemonSetPtr,g_CScriptPtr->focus_actor,
@@ -253,10 +253,10 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
             }
             if (iVar5 == 5) {
               iVar5 = core_script_cpp_CScript_skipCinematic_FUN_005602e0(g_CScriptPtr);
-              this_ptr->cutscene_skippable = (uint)(iVar5 == 0);
+              this_ptr->cinematic_skip_in_progress = (uint)(iVar5 == 0);
             }
             engine_2d_c_clearInputAndWait_FUN_00403260();
-            if (this_ptr->cutscene_skippable == 0) {
+            if (this_ptr->cinematic_skip_in_progress == 0) {
               core_sound_cpp_CSound_init_FUN_005b2dd0(g_CSoundPtr);
             }
             g_HeroActors[g_LocalHeroIndex]->aim_mode = this_ptr->aim_mode;
@@ -281,8 +281,8 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
           goto LAB_004db434;
         }
       }
-      if (((this_ptr->cutscene_skippable == 0) && (g_CNetGamePtr->has_pending_sim_frame == 0)) &&
-         (iVar5 == 0)) {
+      if (((this_ptr->cinematic_skip_in_progress == 0) &&
+          (g_CNetGamePtr->has_pending_sim_frame == 0)) && (iVar5 == 0)) {
         if (g_UseExternalRenderer == 0) {
           wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
           this_ptr->frame_counter = this_ptr->frame_counter + 1;

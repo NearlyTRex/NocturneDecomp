@@ -151,9 +151,27 @@ def _sibling_asm(path):
         return ''
 
 
+def _regenerated_cpp(path):
+    """Read the exported .cpp beside a .keep, or '' when `path` is not a keep.
+
+    The regenerated .cpp is the one artifact guaranteed to agree with the
+    current Ghidra database, which is what stale_enum_name compares the keep
+    against.
+    """
+    for suffix in ('.keep.cpp', '.keep.c'):
+        if path.endswith(suffix):
+            sibling = path[:-len(suffix)] + suffix[len('.keep'):]
+            try:
+                with open(sibling, 'r') as f:
+                    return f.read()
+            except (IOError, OSError):
+                return ''
+    return ''
+
+
 def run_detectors(susp, code, struct_layout_map=None,
                   global_interval_map=None, struct_size_map=None,
-                  asm_code=None):
+                  asm_code=None, enum_value_map=None, cpp_code=None):
     """Run the source-text-only content detectors on `code`.
 
     Mirrors detect_content_suspects() but with no func_globals / func_calls —
@@ -219,6 +237,9 @@ def run_detectors(susp, code, struct_layout_map=None,
         code, struct_layout_map, struct_size_map))
     if asm_code:
         found.extend(susp.identify_dropped_fyl2x(code, asm_code))
+    if cpp_code:
+        found.extend(susp.identify_stale_enum_name(
+            code, cpp_code, enum_value_map))
     return found
 
 
@@ -336,8 +357,9 @@ def main(argv=None):
 
     susp = _load_suspects_module()
 
-    # Struct layout/size maps for the type-aware detectors, resolved per file
-    # from the binary that owns it (annotations/<exe>/data_types.json).
+    # Struct layout/size and enum value maps for the type-aware detectors,
+    # resolved per file from the binary that owns it
+    # (annotations/<exe>/data_types.json).
     #
     # These must NOT be shared across binaries. The siblings reuse struct names
     # with different layouts, and tridx7 doesn't define the game types at all,
@@ -370,7 +392,8 @@ def main(argv=None):
                 dt = (pref or cands or [None])[0]
             _dt_cache[exe] = (
                 (susp.build_struct_layout_map(dt),
-                 susp.build_struct_size_map(dt)) if dt else ({}, {}))
+                 susp.build_struct_size_map(dt),
+                 susp.build_enum_value_map(dt)) if dt else ({}, {}, {}))
         return _dt_cache[exe]
 
     # Global pointer types for the pointer_truncation detector, parsed from the
@@ -386,10 +409,11 @@ def main(argv=None):
             continue
         with open(path, 'r') as f:
             code = f.read()
-        struct_layout_map, struct_size_map = _maps_for(path)
+        struct_layout_map, struct_size_map, enum_value_map = _maps_for(path)
         suspects = run_detectors(susp, code, struct_layout_map,
                                  global_interval_map, struct_size_map,
-                                 _sibling_asm(path))
+                                 _sibling_asm(path), enum_value_map,
+                                 _regenerated_cpp(path))
 
         cppcheck_diags = []
         if not args.no_cppcheck:

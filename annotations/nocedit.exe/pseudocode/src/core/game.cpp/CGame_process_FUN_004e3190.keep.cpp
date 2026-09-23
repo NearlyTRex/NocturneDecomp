@@ -61,9 +61,9 @@ void __cdecl core_game_cpp_CGame_process_FUN_004e3190(CGame *this_ptr)
                1000) / (double)g_CGamePtr->delta_time_float);
   }
   this_ptr_00 = g_CSoundPtr;
-  if (this_ptr->cutscene_skippable != 0) {
+  if (this_ptr->cinematic_skip_in_progress != 0) {
     if (this_ptr->letterbox_mode == 0) {
-      this_ptr->cutscene_skippable = 0;
+      this_ptr->cinematic_skip_in_progress = 0;
       core_sound_cpp_CSound_init_FUN_005b2dd0(this_ptr_00);
       core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
                 (g_CDemonSetPtr,g_CScriptPtr->focus_actor,2);

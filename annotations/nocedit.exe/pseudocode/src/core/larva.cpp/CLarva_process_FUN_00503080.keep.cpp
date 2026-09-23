@@ -256,7 +256,11 @@ LAB_00503184:
     if (iVar7 == 0) {
       fVar17 = (float10)pow((double)(this_ptr->base).base.size_scale,
                             -0.20000000000000001);
+#if NOCTURNE_AUTHENTIC_RNG
       local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.99,1.01);
+#else
+      local_14 = nocturne_rng_fx_range(0.99,1.01);
+#endif
       _sprintf
                 (acStack_sprintf,"slime.wav @%f *%f",(double)(this_ptr->base).base.size_scale,
                  (double)(local_14 * (float)fVar17));

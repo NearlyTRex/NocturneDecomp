@@ -34,7 +34,7 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004e2910(CGame *this_p
     return;
   }
   pcVar10 = this_ptr->bitmap_filename;
-  this_ptr->cutscene_skippable = 0;
+  this_ptr->cinematic_skip_in_progress = 0;
   iVar2 = engine_dosio_cpp_getFileSize_FUN_00481880("art",pcVar10);
   if (iVar2 < 0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740

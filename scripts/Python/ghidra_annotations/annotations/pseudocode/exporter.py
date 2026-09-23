@@ -80,7 +80,8 @@ from ghidra_annotations.annotations.pseudocode.suspects import (
     identify_unrolled_memcpy_blocks, extract_unreachable_block_addrs,
     identify_phantom_float_to_int,
     identify_dropped_fyl2x,
-    get_struct_layout_map, get_struct_size_map
+    identify_stale_enum_name,
+    get_struct_layout_map, get_struct_size_map, get_enum_value_map
 )
 from ghidra_annotations.annotations.pseudocode.stack_patterns import (
     summarize_stack_patterns
@@ -639,6 +640,14 @@ def process_python_only(result, pseudocode_src_dir, constants_map,
                 get_struct_layout_map(pseudocode_src_dir))
             dropped_fyl2x_suspects_keep = identify_dropped_fyl2x(
                 keep_source, result.assembly_code)
+            # Enumerators the keep names that the freshly decompiled .cpp no
+            # longer does — an enum whose values moved under frozen keep text.
+            # Keep-side only: the .cpp is the reference it is compared against,
+            # so there is no cpp-side counterpart and every finding lands in the
+            # keep-introduced set below.
+            stale_enum_suspects_keep = identify_stale_enum_name(
+                keep_source, decompiled_code,
+                get_enum_value_map(pseudocode_src_dir))
 
             def _key(s):
                 return (s.get('type'), s.get('match'))
@@ -653,7 +662,8 @@ def process_python_only(result, pseudocode_src_dir, constants_map,
             tracked_keep = (list(content_suspects_keep)
                             + list(cave_copy_suspects_keep)
                             + list(phantom_f2i_suspects_keep)
-                            + list(dropped_fyl2x_suspects_keep))
+                            + list(dropped_fyl2x_suspects_keep)
+                            + list(stale_enum_suspects_keep))
 
             cpp_counts = {}
             for s in tracked_cpp:

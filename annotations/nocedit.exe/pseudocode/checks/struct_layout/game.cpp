@@ -3544,8 +3544,8 @@ static_assert(__builtin_offsetof(CGame, aim_mode) == 196,
               "offsetof(CGame, aim_mode) != 196");
 static_assert(__builtin_offsetof(CGame, auto_use_health) == 200,
               "offsetof(CGame, auto_use_health) != 200");
-static_assert(__builtin_offsetof(CGame, cutscene_skippable) == 204,
-              "offsetof(CGame, cutscene_skippable) != 204");
+static_assert(__builtin_offsetof(CGame, cinematic_skip_in_progress) == 204,
+              "offsetof(CGame, cinematic_skip_in_progress) != 204");
 static_assert(__builtin_offsetof(CGame, debug_info_string) == 208,
               "offsetof(CGame, debug_info_string) != 208");
 static_assert(__builtin_offsetof(CGame, god_mode_enabled) == 464,

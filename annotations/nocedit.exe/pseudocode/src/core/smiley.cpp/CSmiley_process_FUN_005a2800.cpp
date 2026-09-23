@@ -135,7 +135,7 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_005a2800(CSmiley *this_ptr,floa
         }
         else {
           core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_118);
-          local_118.damage_type = DAMAGE_TYPE_SHATTER;
+          local_118.damage_type = DAMAGE_TYPE_FALL_APART;
           pCVar6 = (this_ptr->base).victim;
           (*(((pCVar6->base).vtable._uc)->_uc).processDamage)(pCVar6,&local_118);
         }

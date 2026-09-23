@@ -2210,13 +2210,18 @@
 //          with "allocSimFrame - sim history list full". Such a join is now
 //          refused properly, with the status the client already knows how to
 //          report ("Connection refused - already in the game").
-//      Mode 0 also adds two things the shipped game never had:
+//      Mode 0 also adds three things the shipped game never had:
 //        - A host-only pause-menu item that respawns the other players
 //          somewhere safe and on camera. See net_respawn.h.
 //        - A lobby hero selector for guests, since hero_number was seeded once
 //          from the ini and never written again, so two machines sharing an
 //          ini both arrived as the same character. The lobby also names the
 //          hero instead of printing its number. See net_hero.h.
+//        - A way to skip a cinematic. The shipped skip is an item on the full
+//          pause menu, and CGame::runGameSession never builds that menu in a
+//          network game, so no network player could reach it. Both players
+//          press fire to agree, the host names the sim frame, and every
+//          machine skips on it. See net_skip.h.
 //
 //   Override with -DNOCTURNE_AUTHENTIC_NETPLAY=1 to revert to authentic
 //   shipped behavior.

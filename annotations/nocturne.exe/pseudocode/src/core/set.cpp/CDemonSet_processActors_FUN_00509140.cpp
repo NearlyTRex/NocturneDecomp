@@ -151,7 +151,7 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_00509140(CDemonSet *this_p
                              &CStack_64,(float *)damage_info);
           if (iVar8 != 0) {
             core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0((SDamageInfo *)&stack0xffffff60);
-            EStack_70 = DAMAGE_TYPE_SHATTER;
+            EStack_70 = DAMAGE_TYPE_FALL_APART;
             if (aCStack_94 != &CStack_64) {
               aCStack_94[0].x = CStack_64.x;
               aCStack_94[0].y = CStack_64.y;

@@ -35,14 +35,14 @@ void __cdecl core_charactr_cpp_CCharacter_processDamage_FUN_0042c3c0(CCharacter 
   }
   EVar5 = damage_info->damage_type;
   if (EVar5 < DAMAGE_TYPE_ELECTROCUTE) {
-    if (EVar5 < DAMAGE_TYPE_SHATTER) {
+    if (EVar5 < DAMAGE_TYPE_FALL_APART) {
       if (EVar5 == DAMAGE_TYPE_EXPLODE) {
         core_charactr_cpp_CCharacter_explode_FUN_0042b930
                   (this_ptr,impact_point,damage_info->impact_force);
       }
       goto LAB_0042c429;
     }
-    if (DAMAGE_TYPE_SHATTER < EVar5) {
+    if (DAMAGE_TYPE_FALL_APART < EVar5) {
       core_charactr_cpp_CCharacter_shatter_FUN_0042b8e0(this_ptr);
       goto LAB_0042c429;
     }

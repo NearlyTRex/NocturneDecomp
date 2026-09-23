@@ -30,7 +30,7 @@ void __cdecl core_game_cpp_CGame_processHotkeys_FUN_0049f930(CGame *this_ptr)
   if (_DAT_01c78420 != 0) {
     return;
   }
-  if (this_ptr->cutscene_skippable == 0) {
+  if (this_ptr->cinematic_skip_in_progress == 0) {
     if ((((this_ptr->developer_mode_enabled != 0) &&
          (iVar4 = (*g_CKeys_PTR_005bac64->vtable->getKeyState)(g_CKeys_PTR_005bac64,DIK_LCONTROL),
          iVar4 != 0)) &&

@@ -154,7 +154,7 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_0054eae0(CVehicle *this_ptr,f
            (local_a0.min.z <= CStack_64.z + SStack_c8.cylinder_radius)))))) {
         if (CStack_64.z - SStack_c8.cylinder_radius <= local_a0.max.z) {
           core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(&SStack_104);
-          SStack_104.damage_type = DAMAGE_TYPE_SHATTER;
+          SStack_104.damage_type = DAMAGE_TYPE_FALL_APART;
           SStack_104.damage_amount = 999.0;
           (*(((pCVar7->base).vtable._uc)->_uc).processDamage)(pCVar7,&SStack_104);
         }

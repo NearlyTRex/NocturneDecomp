@@ -326,7 +326,11 @@ LAB_004f9c99:
                 uVar7 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                                   ((CDemonActor *)this_ptr,"imp-laugh?.wav");
                 this_ptr->sfx_handles[0] = uVar7;
+#if NOCTURNE_AUTHENTIC_RNG
                 fVar15 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(10.0,20.0);
+#else
+                fVar15 = nocturne_rng_fx_range(10.0,20.0);
+#endif
                 this_ptr->laugh_timer = fVar15;
               }
             }
@@ -350,7 +354,11 @@ LAB_004f9c99:
           uVar7 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                             ((CDemonActor *)this_ptr,"imp-laugh?.wav");
           this_ptr->sfx_handles[0] = uVar7;
+#if NOCTURNE_AUTHENTIC_RNG
           fVar15 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(10.0,20.0);
+#else
+          fVar15 = nocturne_rng_fx_range(10.0,20.0);
+#endif
           this_ptr->laugh_timer = fVar15;
         }
       }

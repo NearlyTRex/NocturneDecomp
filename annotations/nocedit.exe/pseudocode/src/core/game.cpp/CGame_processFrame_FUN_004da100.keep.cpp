@@ -75,7 +75,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
   }
   this_ptr_00 = g_CNetGamePtr;
   g_RenderedTriangleCount = 0;
-  if ((this_ptr->cutscene_skippable == 0) && (g_CNetGamePtr->has_pending_sim_frame == 0)) {
+  if ((this_ptr->cinematic_skip_in_progress == 0) && (g_CNetGamePtr->has_pending_sim_frame == 0)) {
     if (g_UseExternalRenderer != 0) {
       wincore_wddvmem_cpp_openScreenDevice_FUN_005ed580();
       local_40 = 1;
@@ -413,7 +413,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
     this_ptr->is_paused = 0;
     core_netgame_cpp_CNetGame_processClientFrame_FUN_005435a0(this_ptr_00);
     core_game_cpp_CGame_process_FUN_004e3190(this_ptr);
-    if (this_ptr->cutscene_skippable == 0) {
+    if (this_ptr->cinematic_skip_in_progress == 0) {
       core_game_cpp_CGame_updateDT_FUN_004d7d90(this_ptr);
     }
     else {

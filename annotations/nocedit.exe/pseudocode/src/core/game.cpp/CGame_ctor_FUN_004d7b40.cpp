@@ -46,7 +46,7 @@ CGame * __cdecl core_game_cpp_CGame_ctor_FUN_004d7b40(CGame *this_ptr)
   this_ptr->debug_fudge_step = 1.0;
   this_ptr->gamma = 0x10000;
   this_ptr->letterbox_mode = 0;
-  this_ptr->cutscene_skippable = 0;
+  this_ptr->cinematic_skip_in_progress = 0;
   this_ptr->allow_damage_flag = 1;
   this_ptr->allow_enemy_attack_flag = 1;
   this_ptr->is_loading = 0;

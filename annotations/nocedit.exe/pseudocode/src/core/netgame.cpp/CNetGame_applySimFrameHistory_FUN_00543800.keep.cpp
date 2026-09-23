@@ -43,6 +43,7 @@ void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_00543800(CNetGam
 #if !NOCTURNE_AUTHENTIC_NETPLAY
   nocturne_net_respawn_apply_if_due(sim_frame->sequence_number);
   nocturne_net_weapon_apply_if_due(sim_frame->sequence_number);
+  nocturne_net_skip_apply_if_due(sim_frame->sequence_number);
   nocturne_net_sync_check(sim_frame->sequence_number);
 #endif
   return;

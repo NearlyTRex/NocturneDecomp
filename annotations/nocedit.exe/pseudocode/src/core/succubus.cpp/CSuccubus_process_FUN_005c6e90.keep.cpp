@@ -46,7 +46,7 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_pt
   CCloth *pCVar4;
   float fVar7;
   CDemonMission *pCVar8;
-  
+
   iVar9 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar9 == 0) {
     return;
@@ -269,7 +269,11 @@ LAB_005c6fd0:
     if ((iVar12 == 0) &&
        (fVar4 = this_ptr->ambient_sfx_cooldown - delta_time, this_ptr->ambient_sfx_cooldown = fVar4,
        fVar4 < 0.0)) {
+#if NOCTURNE_AUTHENTIC_RNG
       local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(5.0,10.0);
+#else
+      local_14 = nocturne_rng_fx_range(5.0,10.0);
+#endif
       pCVar6 = (this_ptr->base).base.base.vtable._ub;
       this_ptr->ambient_sfx_cooldown = local_14;
       uVar12 = (*pCVar6->playSound)((CDemonActor *)this_ptr,"succubus-horny-?.wav");

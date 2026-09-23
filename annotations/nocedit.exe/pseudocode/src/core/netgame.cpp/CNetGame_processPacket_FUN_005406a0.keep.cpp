@@ -375,6 +375,17 @@ LAB_00541015:
        (uVar2 == this_ptr->server_player_index)) {
       nocturne_net_cheats_on_packet(packet,(packet->header).size + 3);
     }
+    break;
+  case NOCTURNE_NET_PACKET_SKIP_VOTE:
+    if (-1 < (int)uVar2) {
+      nocturne_net_skip_on_vote(packet,(packet->header).size + 3);
+    }
+    break;
+  case NOCTURNE_NET_PACKET_SKIP_COMMIT:
+    if ((this_ptr->connection_type == CONNECTION_CLIENT) &&
+       (uVar2 == this_ptr->server_player_index)) {
+      nocturne_net_skip_on_commit(packet,(packet->header).size + 3);
+    }
 #endif
   }
   return;

@@ -63,7 +63,7 @@ typedef struct CGame {
     EHeroType hero_number; // 0xc0
     EAimMode aim_mode; // 0xc4
     int auto_use_health; // 0xc8
-    int cutscene_skippable; // 0xcc
+    int cinematic_skip_in_progress; // 0xcc
     char debug_info_string[256]; // 0xd0
     int god_mode_enabled; // 0x1d0
     int freeze_enemies_enabled; // 0x1d4

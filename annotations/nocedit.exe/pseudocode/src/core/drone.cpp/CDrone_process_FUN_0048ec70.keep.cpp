@@ -46,7 +46,7 @@ void __cdecl core_drone_cpp_CDrone_process_FUN_0048ec70(CDrone *this_ptr,float d
   float fVar10;
   float fVar11;
   float local_18;
-  
+
   iVar4 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar4 == 0) {
     sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handles[1]);
@@ -224,7 +224,11 @@ switchD_0048f284_caseD_3:
     if (iVar5 == 0) {
       sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
       iVar5 = 2;
+#if NOCTURNE_AUTHENTIC_RNG
       local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.0,1.0);
+#else
+      local_14 = nocturne_rng_fx_range(0.0,1.0);
+#endif
       sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005a8be0((double)local_14,iVar5);
       uVar9 = (*((this_ptr->base).base.base.vtable._ub)->playAmbientSound)
                         ((CDemonActor *)this_ptr,"slime.wav");

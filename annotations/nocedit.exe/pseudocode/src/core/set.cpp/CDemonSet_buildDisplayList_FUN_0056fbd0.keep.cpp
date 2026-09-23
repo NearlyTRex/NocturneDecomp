@@ -120,7 +120,11 @@ LAB_0056fc73:
             (g_SetDisplayListSortBuffer,g_SetDisplayListCount,8,
              core_set_cpp_qsortByDisplayListEntry_FUN_0056fba0);
   iVar1 = g_SetDisplayListCount;
+#if NOCTURNE_AUTHENTIC_NETPLAY
   if (g_HeroActors[g_LocalHeroIndex] == (CHero *)0x0) {
+#else
+  if (nocturne_net_respawn_hero_in_world(g_HeroActors[g_LocalHeroIndex]) == 0) {
+#endif
     for (iVar3 = 0; iVar3 < g_SetDisplayListCount; iVar3 = iVar3 + 1) {
       this_ptr->sorted_render_actors[iVar3] = g_SetDisplayListSortBuffer[iVar3].actor;
     }

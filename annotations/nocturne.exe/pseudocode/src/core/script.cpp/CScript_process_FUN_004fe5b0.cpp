@@ -21,7 +21,7 @@ void __cdecl core_script_cpp_CScript_process_FUN_004fe5b0(CScript *this_ptr)
   
   _DAT_01e56418 = 0;
   if ((0 < this_ptr->parsed_line_count) && (this_ptr->parsed_lines != (SScriptLine *)0x0)) {
-    if (g_CGame_PTR_005b9354->cutscene_skippable != 0) {
+    if (g_CGame_PTR_005b9354->cinematic_skip_in_progress != 0) {
       this_ptr->script_state = 0;
     }
     iVar4 = 0;

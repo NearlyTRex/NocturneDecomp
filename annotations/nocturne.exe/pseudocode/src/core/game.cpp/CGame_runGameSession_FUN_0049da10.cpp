@@ -67,7 +67,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(CGame *this_ptr)
   this_ptr->bitmap_width = 0;
   this_ptr->bitmap_height = 0;
   this_ptr->is_processing = 0;
-  this_ptr->cutscene_skippable = 0;
+  this_ptr->cinematic_skip_in_progress = 0;
   this_ptr->skip_frame_render = 0;
   this_ptr->hero_controls_blocked = 0;
   this_ptr->profile_mode = 0;
@@ -146,7 +146,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(CGame *this_ptr)
       core_game_cpp_CGame_updateStatusDisplays_FUN_0049b0b0(this_ptr);
       core_game_cpp_CGame_processFudge_FUN_0049b260(this_ptr);
       core_game_cpp_CGame_playerControls_FUN_0049e7d0(this_ptr);
-      if ((((this_ptr->is_game_active != 0) && (this_ptr->cutscene_skippable == 0)) &&
+      if ((((this_ptr->is_game_active != 0) && (this_ptr->cinematic_skip_in_progress == 0)) &&
           (g_CNetGame_PTR_005bdee0->has_pending_sim_frame == 0)) && (this_ptr->goggles_active == 0))
       {
         iVar3 = core_setdir_cpp_CDemonSet_FUN_005125a0
@@ -251,10 +251,10 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(CGame *this_ptr)
             }
             if (iVar3 == 5) {
               iVar3 = core_script_cpp_CScript_skipCinematic_FUN_00504d90(0x01E56DA0);
-              this_ptr->cutscene_skippable = (uint)(iVar3 == 0);
+              this_ptr->cinematic_skip_in_progress = (uint)(iVar3 == 0);
             }
             engine_2d_c_clearInputAndWait_FUN_00403f50();
-            if (this_ptr->cutscene_skippable == 0) {
+            if (this_ptr->cinematic_skip_in_progress == 0) {
               core_sound_cpp_CSound_init_FUN_0052ddf0(g_CSound_PTR_005bed68);
               engine_force_cpp_CForceFeedback_processEvent_FUN_004940d0
                         (g_CForceFeedback_PTR_005b9284);
@@ -281,7 +281,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(CGame *this_ptr)
           goto LAB_0049dec1;
         }
       }
-      if ((this_ptr->cutscene_skippable == 0) &&
+      if ((this_ptr->cinematic_skip_in_progress == 0) &&
          (g_CNetGame_PTR_005bdee0->has_pending_sim_frame == 0)) {
         wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
         this_ptr->frame_counter = this_ptr->frame_counter + 1;

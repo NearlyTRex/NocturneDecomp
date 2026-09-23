@@ -18,7 +18,7 @@
 ;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
 ;   CGame* g_CGame_PTR_005b9354 = 01c775ec
 ;   CGame g_CGame_01c775ec
-;   undefined4 g_CGame_01c775ec.cutscene_skippable
+;   undefined4 g_CGame_01c775ec.cinematic_skip_in_progress
 ;   undefined4 DAT_01e56418
 ;   undefined4 DAT_01e56420
 ;   undefined4 DAT_01e56c24
@@ -54,7 +54,7 @@ section .text
     JZ 0x004fe64e                       ; 004fe5d7
         ;   XREF to: 004fe64e (CONDITIONAL_JUMP)  ; LAB_004fe64e
     MOV EAX,[0x005b9354]                ; 004fe5dd | g_CGame_PTR_005b9354
-    CMP dword ptr [EAX + 0xcc],0x0      ; 004fe5e2 | g_CGame_01c775ec.cutscene_skippable
+    CMP dword ptr [EAX + 0xcc],0x0      ; 004fe5e2 | g_CGame_01c775ec.cinematic_skip_in_progress
     JZ 0x004fe5ee                       ; 004fe5e9
         ;   XREF to: 004fe5ee (CONDITIONAL_JUMP)  ; LAB_004fe5ee
     MOV dword ptr [EBX + 0x18],EDX      ; 004fe5eb

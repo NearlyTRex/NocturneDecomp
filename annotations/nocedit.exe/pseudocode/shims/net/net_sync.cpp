@@ -386,6 +386,7 @@ extern "C" void nocturne_net_sync_reset(void)
     nocturne_rng_reset();
     nocturne_sim_trace_reset();
     nocturne_net_weapon_reset();
+    nocturne_net_skip_reset();
 }
 
 extern "C" void nocturne_net_sync_check(int sequence_number)

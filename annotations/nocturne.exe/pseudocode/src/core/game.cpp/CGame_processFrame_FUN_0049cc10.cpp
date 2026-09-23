@@ -74,12 +74,12 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_0049cc10(CGame *this_ptr)
   }
   this_ptr_00 = g_CNetGame_PTR_005bdee0;
   g_RenderedTriangleCount = 0;
-  if ((this_ptr->cutscene_skippable != 0) || (g_CNetGame_PTR_005bdee0->has_pending_sim_frame != 0))
-  {
+  if ((this_ptr->cinematic_skip_in_progress != 0) ||
+     (g_CNetGame_PTR_005bdee0->has_pending_sim_frame != 0)) {
     this_ptr->is_paused = 0;
     core_netgame_cpp_CNetGame_processClientFrame_FUN_004ed720(this_ptr_00);
     core_game_cpp_CGame_process_FUN_004a6010(this_ptr);
-    if (this_ptr->cutscene_skippable == 0) {
+    if (this_ptr->cinematic_skip_in_progress == 0) {
       core_game_cpp_CGame_updateDT_FUN_0049a8a0(this_ptr);
     }
     else {

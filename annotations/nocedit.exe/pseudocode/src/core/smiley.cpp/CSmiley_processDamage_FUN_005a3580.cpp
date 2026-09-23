@@ -20,7 +20,7 @@ void __cdecl core_smiley_cpp_CSmiley_processDamage_FUN_005a3580(CSmiley *this_pt
     return;
   }
   EVar1 = damage_info->damage_type;
-  if (EVar1 == DAMAGE_TYPE_SHATTER) {
+  if (EVar1 == DAMAGE_TYPE_FALL_APART) {
     damage_info->damage_type = DAMAGE_TYPE_IMMUNE;
   }
   else if (((int)EVar1 < 0xc) || (EVar1 == DAMAGE_TYPE_PIERCING)) goto LAB_005a35b4;

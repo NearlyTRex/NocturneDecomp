@@ -229,7 +229,10 @@ copies ([§31](decompiler-artifacts.md#31--partial-struct-copy)).
 
 **Carrying stale workarounds.** Raw `ADJ(ptr)->field` writes from before the exporter's `adj()`
 fix; `(float *)&` casts papering over stack-slot reuse that has since been retyped upstream. These
-were right once and are now noise, or actively wrong.
+were right once and are now noise, or actively wrong. An enumerator name is one of these and does
+not announce itself: it still compiles after the enum's values move, and only the `.cpp` beside it
+shows the disagreement
+([§34](decompiler-artifacts.md#34--stale-enumerator-name-in-a-keep)).
 
 Say which of the three it is before editing, so the choice between updating minimally, rewriting to
 drop obsolete workarounds, and deleting outright is made deliberately.

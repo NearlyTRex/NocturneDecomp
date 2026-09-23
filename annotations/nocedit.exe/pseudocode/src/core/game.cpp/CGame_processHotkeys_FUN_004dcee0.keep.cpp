@@ -24,7 +24,10 @@ void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004dcee0(CGame *this_ptr)
   int iStack_30;
 
   if (g_ModalDialogActive == 0) {
-    if (this_ptr->cutscene_skippable == 0) {
+    if (this_ptr->cinematic_skip_in_progress == 0) {
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+      nocturne_net_skip_poll();
+#endif
       if ((((this_ptr->developer_mode_enabled != 0) &&
            (iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL), iVar4 != 0)) &&
           (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_E), iVar4 != 0)) &&

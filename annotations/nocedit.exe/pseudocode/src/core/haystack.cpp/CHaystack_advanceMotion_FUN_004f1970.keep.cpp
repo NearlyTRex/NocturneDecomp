@@ -12,7 +12,7 @@ void __cdecl core_haystack_cpp_CHaystack_advanceMotion_FUN_004f1970(CHaystack *t
 {
   int iVar1;
   int iVar2;
-  
+
   do {
     iVar1 = core_motion_cpp_CMotionController_advance_FUN_0052d610
                       (&(this_ptr->base).base.model.motion_controller,&delta_time);
@@ -46,7 +46,11 @@ LAB_004f19bc:
                         ((double)(this_ptr->base).base.base.location.position.x,
                          (double)(this_ptr->base).base.base.location.position.y,
                          (double)(this_ptr->base).base.base.location.position.z,40.0);
+#if NOCTURNE_AUTHENTIC_RNG
       if ((iVar2 != 0) && (iVar2 = core_actor_cpp_randomChance_FUN_0040cd10(0.4), iVar2 != 0)) {
+#else
+      if ((iVar2 != 0) && (iVar2 = nocturne_rng_fx_chance(0.4), iVar2 != 0)) {
+#endif
         (*((this_ptr->base).base.base.vtable._ub)->playSound)
                   ((CDemonActor *)this_ptr,"box-punch?.wav");
       }

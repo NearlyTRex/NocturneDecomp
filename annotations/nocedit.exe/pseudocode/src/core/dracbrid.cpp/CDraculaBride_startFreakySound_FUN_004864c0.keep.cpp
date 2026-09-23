@@ -43,7 +43,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_004864c0(CDrac
   float local_24;
   CVector3f local_20;
   int bone_index;
-  
+
   fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(1.0,7.0);
   this_ptr->freaky_timer = fVar2;
   iVar1 = sound_sndmain_cpp_isSoundBusy_FUN_005ab540();
@@ -65,12 +65,21 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_004864c0(CDrac
         local_2c = pSVar5->control_points[1].x;
         local_28 = pSVar5->control_points[1].y;
         local_24 = pSVar5->control_points[1].z;
+#if NOCTURNE_AUTHENTIC_RNG
         fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-5.0,5.0);
         local_2c = fVar2 + local_2c;
         fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-2.0,2.0);
         local_28 = fVar2 + local_28;
         fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-5.0,5.0);
         local_6c = fVar2 + local_24;
+#else
+        fVar2 = nocturne_rng_fx_range(-5.0,5.0);
+        local_2c = fVar2 + local_2c;
+        fVar2 = nocturne_rng_fx_range(-2.0,2.0);
+        local_28 = fVar2 + local_28;
+        fVar2 = nocturne_rng_fx_range(-5.0,5.0);
+        local_6c = fVar2 + local_24;
+#endif
         local_74 = local_2c;
         local_70 = local_28;
         if (pSVar5->control_points != (CVector3f *)&local_74) {
@@ -82,12 +91,21 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_004864c0(CDrac
         fVar6 = pSVar5->control_points[1].y;
         fVar1 = pSVar5->control_points[1].z;
         local_24 = local_6c;
+#if NOCTURNE_AUTHENTIC_RNG
         fVar5 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-5.0,5.0);
         fVar5 = fVar5 + fVar2;
         fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-2.0,2.0);
         fVar2 = fVar2 + fVar6;
         fVar6 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-5.0,5.0);
         local_54 = fVar6 + fVar1;
+#else
+        fVar5 = nocturne_rng_fx_range(-5.0,5.0);
+        fVar5 = fVar5 + fVar2;
+        fVar2 = nocturne_rng_fx_range(-2.0,2.0);
+        fVar2 = fVar2 + fVar6;
+        fVar6 = nocturne_rng_fx_range(-5.0,5.0);
+        local_54 = fVar6 + fVar1;
+#endif
         if (pSVar5->control_points + 2 != (CVector3f *)&local_5c) {
           pSVar5->control_points[2].x = fVar5;
           pSVar5->control_points[2].y = fVar2;
@@ -98,12 +116,21 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_004864c0(CDrac
         local_60 = g_CDemonCameraInstance.base.position.f.z;
         local_5c = fVar5;
         local_58 = fVar2;
+#if NOCTURNE_AUTHENTIC_RNG
         fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-5.0,5.0);
         local_68 = fVar2 + local_68;
         fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-2.0,2.0);
         local_64 = fVar2 + local_64;
         fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-5.0,5.0);
         local_60 = fVar2 + local_60;
+#else
+        fVar2 = nocturne_rng_fx_range(-5.0,5.0);
+        local_68 = fVar2 + local_68;
+        fVar2 = nocturne_rng_fx_range(-2.0,2.0);
+        local_64 = fVar2 + local_64;
+        fVar2 = nocturne_rng_fx_range(-5.0,5.0);
+        local_60 = fVar2 + local_60;
+#endif
         local_38 = local_68;
         local_34 = local_64;
         if (pSVar5->control_points + 3 != (CVector3f *)&local_38) {

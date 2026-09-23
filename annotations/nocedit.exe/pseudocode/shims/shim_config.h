@@ -248,6 +248,11 @@ void nocturne_trigl_envmap_pass_end(void);
 // as the shipped code did.
 #include "net/net_weapon.h"
 
+// Agreed cinematic skip (nocturne_net_skip_*), reached from CGame::processHotkeys
+// and the netgame TU. The shipped skip lives in the full pause menu, which a
+// network game never builds.
+#include "net/net_skip.h"
+
 // Deterministic hero selection for simulation code (nocturne_net_sim_*). Unlike
 // the two above this is NOT gated on NOCTURNE_AUTHENTIC_NETPLAY: it returns the
 // local hero unchanged outside a network game, so the AI call sites can use it

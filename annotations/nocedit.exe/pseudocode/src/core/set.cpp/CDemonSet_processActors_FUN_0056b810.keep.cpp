@@ -129,7 +129,7 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet *this_p
           if (iVar3 != 0) {
             core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_a0);
             local_a0.damage_amount = fStack_48;
-            local_a0.damage_type = DAMAGE_TYPE_SHATTER;
+            local_a0.damage_type = DAMAGE_TYPE_FALL_APART;
             local_a0.impact_point = CStack_58;
             (*(((this_ptr_01->base).vtable._uc)->_uc).processDamage)(this_ptr_01,&local_a0);
           }

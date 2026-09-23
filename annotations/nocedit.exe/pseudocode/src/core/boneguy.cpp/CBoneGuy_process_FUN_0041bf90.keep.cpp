@@ -60,7 +60,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
   CCharacter *pCVar5;
   float fVar6;
   CVector3f *pCVar3;
-  
+
   iVar7 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                     (g_CEventListPtr,this_ptr->death_event);
   if (iVar7 != 0) {
@@ -383,7 +383,11 @@ LAB_0041c60c:
     }
     sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
     iVar11 = 2;
+#if NOCTURNE_AUTHENTIC_RNG
     local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.0,1.0);
+#else
+    local_14 = nocturne_rng_fx_range(0.0,1.0);
+#endif
     sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005a8be0((double)local_14,iVar11);
     uVar12 = (*((this_ptr->base).base.base.vtable._ub)->playAmbientSound)
                        ((CDemonActor *)this_ptr,"boneGuy-walkloop.wav");

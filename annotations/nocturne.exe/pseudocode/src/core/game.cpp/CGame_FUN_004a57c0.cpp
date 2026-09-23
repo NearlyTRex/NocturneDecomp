@@ -39,7 +39,7 @@ void __cdecl core_game_cpp_CGame_FUN_004a57c0(CGame *this_ptr)
     return;
   }
   pcVar9 = this_ptr->bitmap_filename;
-  this_ptr->cutscene_skippable = 0;
+  this_ptr->cinematic_skip_in_progress = 0;
   iVar2 = engine_dosio_cpp_getFileSize_FUN_004568c0("art",pcVar9);
   if (iVar2 < 0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0

@@ -7859,3 +7859,177 @@ def identify_format_string_mismatch(decompiled_code, func_calls=None):
                 suspects.append(suspect)
 
     return suspects
+
+
+
+
+# =============================================================================
+# stale_enum_name — an enumerator that no longer means what it did
+# =============================================================================
+# A source line names an enumerator; the binary holds a number. Nothing but the
+# enum definition in the Ghidra database ties the two together, and that
+# definition changes.
+#
+# When two enumerators swap values — EDamageType held SHATTER=4 / FALL_APART=5
+# and holds FALL_APART=4 / SHATTER=5 — the regenerated .cpp follows the
+# database, because the decompiler prints whichever enumerator carries the
+# constant it read out of the instruction. A .keep is frozen text and does not:
+# it still spells the name that used to carry that constant. The name is still
+# declared, so it compiles; every other detector reports clean; the value the
+# function stores or compares has changed.
+#
+# A struct field renamed at a stable offset is the loud form of this — the
+# compiler rejects the old member name and the build stops. An enumerator rename
+# is the quiet form.
+#
+# The evidence is the regenerated .cpp sitting beside the keep, which is the one
+# artifact guaranteed to agree with the current database. Asm immediates do not
+# work here: in a function of any size nearly every small integer appears
+# somewhere in the listing, so "the value is present" says nothing about the
+# site in question.
+#
+# Confirmed instances (the EDamageType swap, all at value 4):
+#   CCharacter::processDamage   two inequality sites, CMP EAX,0x4 @ 0042c40e
+#   CSmiley::process            MOV EDX,0x4 @ 005a29bb
+#   CVehicle::process           MOV ECX,0x4 @ 005e82bb
+#
+# Not covered: a site the exporter renders without naming the enum at all, as a
+# punned raw store (`*(undefined4 *)(auStack + 0x24) = 4`) that the keep
+# de-punned into a named field. CDemonSet::processActors is one, and it is also
+# invisible in a diff of the export for the same reason. A keep that de-puns a
+# store is the one place this has to be checked by reading the immediate.
+
+_ENUM_IDENT_RE = re.compile(r'\b[A-Za-z_]\w*\b')
+
+
+_ENUM_BLOCK_COMMENT_RE = re.compile(r'/\*.*?\*/', re.DOTALL)
+
+
+_ENUM_LINE_COMMENT_RE = re.compile(r'//[^\n]*')
+
+
+def _blank_nonnewline(match):
+    return re.sub(r'[^\n]', ' ', match.group(0))
+
+
+def _strip_c_comments(code):
+    """Blank out comments, preserving line structure.
+
+    An enumerator only counts where it is code: a keep's header block describes
+    what the function does and may name an enum in prose, and a name mentioned
+    there is not a reference to it. Newlines inside a block comment are kept so
+    line numbers still match the file.
+    """
+    code = _ENUM_BLOCK_COMMENT_RE.sub(_blank_nonnewline, code)
+    return _ENUM_LINE_COMMENT_RE.sub(_blank_nonnewline, code)
+
+
+def _enum_reverse_index(enum_map):
+    """Map enumerator name -> (enum name, value), dropping ambiguous names.
+
+    A name declared in two enums with two different values cannot be attributed
+    to one value, so it is left out rather than guessed at.
+    """
+    index = {}
+    for enum_name, members in enum_map.items():
+        for mname, mval in members.items():
+            prior = index.get(mname)
+            if prior is None:
+                index[mname] = (enum_name, mval)
+            elif prior[1] != mval:
+                index[mname] = None
+    return {name: hit for name, hit in index.items() if hit is not None}
+
+
+def _enums_named_in(code, reverse):
+    """Group the enumerators a comment-stripped source text names by their enum.
+
+    Returns dict: enum name -> set of enumerator names.
+    """
+    named = {}
+    for ident in _ENUM_IDENT_RE.findall(code):
+        hit = reverse.get(ident)
+        if hit is not None:
+            named.setdefault(hit[0], set()).add(ident)
+    return named
+
+
+def identify_stale_enum_name(keep_code, cpp_code, enum_map):
+    """Detect a keep naming an enumerator the regenerated .cpp no longer names.
+
+    Flags an enumerator only when, for its enum, the keep names it and the .cpp
+    does not, *and* the .cpp names some enumerator of that same enum that the
+    keep does not. A one-sided difference is ordinary keep work — de-punning a
+    raw store introduces a name the .cpp never had — so both directions are
+    required, which is the shape a swapped or renamed value leaves behind.
+
+    Reports against the keep's line numbers. A finding means the keep and the
+    database disagree; which of the two is wrong is settled by the immediate in
+    the .asm. When the keep proves right, the enum is wrong in Ghidra and that
+    is where it gets fixed.
+
+    Args:
+        keep_code: The .keep source text.
+        cpp_code: The regenerated .cpp text for the same function.
+        enum_map: enum name -> {enumerator: value}, from build_enum_value_map().
+
+    Returns:
+        List of suspect dicts, one per stale reference line.
+    """
+    suspects = []
+    if not keep_code or not cpp_code or not enum_map:
+        return suspects
+
+    reverse = _enum_reverse_index(enum_map)
+    if not reverse:
+        return suspects
+
+    keep_stripped = _strip_c_comments(keep_code)
+    keep_named = _enums_named_in(keep_stripped, reverse)
+    if not keep_named:
+        return suspects
+    cpp_named = _enums_named_in(_strip_c_comments(cpp_code), reverse)
+
+    # Per enum, the names only the keep has and the names only the .cpp has.
+    stale = {}
+    for enum_name, keep_names in keep_named.items():
+        cpp_names = cpp_named.get(enum_name, set())
+        keep_only = keep_names - cpp_names
+        cpp_only = cpp_names - keep_names
+        if keep_only and cpp_only:
+            for name in keep_only:
+                stale[name] = (enum_name, sorted(cpp_only))
+
+    if not stale:
+        return suspects
+
+    original_lines = keep_code.split('\n')
+    for idx, code_line in enumerate(keep_stripped.split('\n'), start=1):
+        if not code_line.strip():
+            continue
+        stripped = original_lines[idx - 1].strip()
+        for ident in sorted(set(_ENUM_IDENT_RE.findall(code_line))):
+            if ident not in stale:
+                continue
+            enum_name, cpp_only = stale[ident]
+            members = enum_map[enum_name]
+            suspects.append({
+                'line': idx,
+                'type': 'stale_enum_name',
+                'match': stripped[:120],
+                'text': stripped[:200],
+                'description': (
+                    'This keep names `%s` (%s = %d); the regenerated .cpp for '
+                    'the same function names %s instead and never names `%s`. '
+                    'The enum definition moved under this keep, so the name '
+                    'still compiles but carries a different constant. Read the '
+                    'immediate in the .asm: if it is the .cpp\'s value the keep '
+                    'is stale, and if it is this one the enum is wrong in '
+                    'Ghidra.' % (
+                        ident, enum_name, members[ident],
+                        ', '.join('`%s` = %d' % (n, members[n])
+                                  for n in cpp_only),
+                        ident)),
+                'severity': 'major',
+            })
+    return suspects
