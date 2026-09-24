@@ -124,7 +124,7 @@ void __cdecl core_shotgun_cpp_CShotgun_process_FUN_00515db0(CShotgun *this_ptr,f
 int __cdecl core_shotgun_cpp_CShotgun_fire_FUN_00515ea0(CShotgun *this_ptr);
 void __cdecl core_shotgun_cpp_CShotgun_onFired_FUN_00516620(CShotgun *this_ptr);
 float __cdecl core_shotgun_cpp_CShotgun_getDamage_FUN_00516730(CShotgun *this_ptr);
-void __cdecl core_shotgun_cpp_CShotgun_fireProjectile_FUN_00516770(CShotgun *this_ptr);
+void __cdecl core_shotgun_cpp_CShotgun_renderAimBeam_FUN_00516770(CShotgun *this_ptr);
 CShotgun * __cdecl core_shotgun_cpp_CShotgun_dtor_FUN_00516960(CShotgun *this_ptr,uint flags);
 void __cdecl core_shovel_cpp_staticInit_FUN_005169b0(void);
 CShovel * __cdecl core_shovel_cpp_factoryFuncShovel_FUN_005169e0(void);
@@ -132,7 +132,7 @@ CDemonActorType * __cdecl core_shovel_cpp_CShovel_getActorType_FUN_00516a00(CSho
 CShovel * __cdecl core_shovel_cpp_CShovel_ctor_FUN_00516a10(CShovel *this_ptr);
 int __cdecl core_shovel_cpp_CShovel_fire_FUN_00516a90(CShovel *this_ptr);
 float __cdecl core_shovel_cpp_CShovel_getDamage_FUN_00516ab0(CShovel *this_ptr);
-void __cdecl core_shovel_cpp_CShovel_fireProjectile_FUN_00516ae0(CShovel *this_ptr);
+void __cdecl core_shovel_cpp_CShovel_renderAimBeam_FUN_00516ae0(CShovel *this_ptr);
 CShovel * __cdecl core_shovel_cpp_CShovel_dtor_FUN_00516af0(CShovel *this_ptr,uint flags);
 void __cdecl core_simbox_cpp_staticInit_FUN_00516b40(void);
 CSimBox * __cdecl core_simbox_cpp_factoryFuncSimBox_FUN_00516b70(void);

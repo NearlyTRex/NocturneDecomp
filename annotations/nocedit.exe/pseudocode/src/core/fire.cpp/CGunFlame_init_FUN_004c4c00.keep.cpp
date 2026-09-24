@@ -22,9 +22,9 @@ void __cdecl core_fire_cpp_CGunFlame_init_FUN_004c4c00(CGunFlame *this_ptr)
   float fVar3;
   CFlameCan *this_ptr_01;
   
-  for (iVar4 = 0; iVar4 < g_CharactersOnFireCount; iVar4 = iVar4 + 1) {
-    this_ptr_02 = g_CharactersOnFire[iVar4];
-    if (((this_ptr->flame_type == 2) || (this_ptr_02->show_in_editor != 0)) &&
+  for (iVar4 = 0; iVar4 < g_GunFlameCandidateCount; iVar4 = iVar4 + 1) {
+    this_ptr_02 = g_GunFlameCandidates[iVar4];
+    if (((this_ptr->flame_type == 2) || (this_ptr_02->gun_flame_ignitable != 0)) &&
        (fVar4 = (this_ptr_02->base).location.position.x - (this_ptr->position).x,
        fVar6 = (this_ptr_02->base).location.position.y - (this_ptr->position).y,
        fVar5 = (this_ptr_02->base).location.position.z - (this_ptr->position).z,

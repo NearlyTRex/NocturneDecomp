@@ -58,6 +58,12 @@ extern "C" {
 //   <seq> <slot> <name> pos=... area=... hp=... mstate=... victim=... ...
 //       one per character, every frame - the AI state that names a desync.
 //
+//   <seq> <slot>F fire=<n> bones=<hash> size=<f> burned=<0|1> alpha=<f>
+//       after a character's line, only while it is burning.
+//   <seq> <slot>W weapon=<x,y,z> orient=<x,y,z>
+//       after a CStranger's, CScat's or CGabriella's line, while it holds a
+//       weapon.
+//
 //   <seq> A <index> <name> pos=... area=...
 //       one per ACTOR, but only when its position or area changed since this
 //       machine last printed it.
@@ -84,6 +90,36 @@ extern "C" {
 // event differ" but "at which frame did each machine first emit it" - which is
 // what scripts/Python/netplay_trace_diff.py reports.
 void nocturne_sim_trace_frame(int sequence_number);
+
+// One line per damage event, from the entry of CCharacter::processDamage:
+//
+//   <seq> D <target> type=<n> amount=<f> hp=<f> from=<slot>(<name>)
+//
+// The frame and actor pass above say a character stopped existing; they cannot
+// say why, because the result of a dismemberment (one character gone, a dozen
+// actors created) looks identical whether the hit landed one frame early on one
+// machine or landed on only one machine at all. Diff the D lines to tell those
+// apart: same target, same type, same amount on both, different <seq>, means a
+// phase error in when damage resolves rather than divergent damage.
+//
+// `hp` is read before the branch, so it is the health the hit was applied to.
+//
+// Covers CCharacter::processDamage only, which is the base of forty overrides.
+// A class that dismembers in its own override is invisible here — see the body
+// part probe below, which is the one that cannot be bypassed.
+void nocturne_sim_trace_damage(struct CCharacter *target, struct SDamageInfo *info);
+
+// One line per body part, from inside createBodyPart:
+//
+//   <seq> B <name> pos=<x>,<y>,<z> from=<source actor>
+//
+// createBodyPart is the single funnel for every dismemberment in the game, so
+// unlike the damage probe this sees all of them regardless of which class drove
+// it. A dismemberment emits about a dozen of these on one frame, which makes the
+// burst itself the thing to compare: the same burst a frame apart on the two
+// machines is a phase error in when the dismemberment resolves, and a burst on
+// one machine alone is real divergence.
+void nocturne_sim_trace_bodypart(struct CDemonActor *part, struct CDemonActor *source);
 
 // Called from CGame::process so the header above can report how many times the
 // simulation has actually run, and with what delta time.

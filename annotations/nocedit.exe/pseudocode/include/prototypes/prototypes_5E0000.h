@@ -302,7 +302,7 @@ int __cdecl core_weapon_cpp_CWeapon_fire_FUN_005ee6e0(CWeapon *this_ptr);
 int __cdecl core_weapon_cpp_CWeapon_isReadyToFire_FUN_005ee710(CWeapon *this_ptr);
 float __cdecl core_weapon_cpp_CWeapon_getDamage_FUN_005ee730(CWeapon *this_ptr);
 void __cdecl core_weapon_cpp_CWeapon_setupPhysicsBox_FUN_005ee740(CWeapon *this_ptr);
-void __cdecl core_weapon_cpp_CWeapon_fireProjectile_FUN_005ee830(CWeapon *this_ptr);
+void __cdecl core_weapon_cpp_CWeapon_renderAimBeam_FUN_005ee830(CWeapon *this_ptr);
 void __cdecl core_weapon_cpp_CWeapon_onFired_FUN_005ee860(CWeapon *this_ptr);
 void __cdecl core_weapon_cpp_CWeapon_getPropertyList_FUN_005ee9f0(CWeapon *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_weapon_cpp_CWeapon_addFilesToExtract_FUN_005eea60(CWeapon *this_ptr,_FILE *file_handle);

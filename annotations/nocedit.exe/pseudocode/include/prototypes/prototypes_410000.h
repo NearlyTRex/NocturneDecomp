@@ -185,7 +185,7 @@ void __cdecl core_baron_cpp_CBaronWeapon_process_FUN_00413dc0(CBaronWeapon *this
 void __cdecl core_baron_cpp_CBaronWeapon_renderOpaque_FUN_00413de0(CBaronWeapon *this_ptr);
 int __cdecl core_baron_cpp_CBaronWeapon_fire_FUN_00413df0(CBaronWeapon *this_ptr);
 int __cdecl core_baron_cpp_CBaronWeapon_isReadyToFire_FUN_00413e30(CBaronWeapon *this_ptr);
-void __cdecl core_baron_cpp_CBaronWeapon_fireProjectile_FUN_00413e60(CBaronWeapon *this_ptr);
+void __cdecl core_baron_cpp_CBaronWeapon_renderAimBeam_FUN_00413e60(CBaronWeapon *this_ptr);
 void __cdecl core_baron_cpp_CBaronWeapon_setWeaponState_FUN_00413e90(CBaronWeapon *this_ptr,int weapon_state);
 void __cdecl core_baron_cpp_CBaronWeapon_findOrCreateBaron_FUN_00413f20(CBaronWeapon *this_ptr);
 void __cdecl core_baron_cpp_CBaron_onActorDeleted_FUN_00413ff0(CBaron *this_ptr,CDemonActor *deleted_actor);

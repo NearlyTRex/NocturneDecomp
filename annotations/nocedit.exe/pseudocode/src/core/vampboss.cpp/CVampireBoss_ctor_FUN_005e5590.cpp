@@ -42,6 +42,6 @@ CVampireBoss * __cdecl core_vampboss_cpp_CVampireBoss_ctor_FUN_005e5590(CVampire
   ADJ(pCVar8)->follow_result = 0;
   ADJ(pCVar8)->flee_timer = 10.0;
   ADJ(pCVar8)->bat_ai_state = 1;
-  ADJ(pCVar8)->base.base.show_in_editor = 0;
+  ADJ(pCVar8)->base.base.gun_flame_ignitable = 0;
   return ADJ(pCVar8);
 }

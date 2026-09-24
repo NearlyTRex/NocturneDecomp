@@ -27,7 +27,7 @@ void __cdecl core_fire_cpp_CGunFlame_init_FUN_004880d0(CGunFlame *this_ptr)
     local_20 = 0;
     do {
       this_ptr_00 = *(CCharacter **)(&DAT_01c09e0c + local_20);
-      if (((this_ptr->flame_type == 2) || (this_ptr_00->show_in_editor != 0)) &&
+      if (((this_ptr->flame_type == 2) || (this_ptr_00->gun_flame_ignitable != 0)) &&
          (fVar1 = (this_ptr_00->base).location.position.x - (this_ptr->position).x,
          fVar3 = (this_ptr_00->base).location.position.y - (this_ptr->position).y,
          fVar2 = (this_ptr_00->base).location.position.z - (this_ptr->position).z,

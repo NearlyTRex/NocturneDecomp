@@ -11,8 +11,8 @@
 ;   TerminatedCString s_core_fire_cpp_00629ee1
 ;   TerminatedCString s_CGunFlame_initProcess_to_00629ef2
 ;   CDemonSet* g_CDemonSetPtr = 03114278
-;   int g_CharactersOnFireCount
-;   CCharacter*[50] g_CharactersOnFire
+;   int g_GunFlameCandidateCount
+;   CCharacter*[50] g_GunFlameCandidates
 ;   int g_FlameCanCount
 ;   CFlameCan*[150] g_FlameCans
 ;   undefined4 g_CFlameCanClassInfo.name_hash
@@ -41,7 +41,7 @@ section .text
     XOR EDX,EDX                         ; 004c4b04
     XOR EDI,EDI                         ; 004c4b06
     XOR ESI,ESI                         ; 004c4b08
-    MOV dword ptr [0x02d13eb4],EDX      ; 004c4b0a | g_CharactersOnFireCount
+    MOV dword ptr [0x02d13eb4],EDX      ; 004c4b0a | g_GunFlameCandidateCount
     MOV EBX,dword ptr [0x006810c8]      ; 004c4b10 | g_CDemonSetPtr
         ;   Label: LAB_004c4b10
     CMP EDI,dword ptr [EBX + 0x14f098]  ; 004c4b16 | g_CDemonSetInstance.character_count
@@ -78,14 +78,14 @@ section .text
     TEST EAX,EAX                        ; 004c4b6a
     JZ 0x004c4b8c                       ; 004c4b6c
         ;   XREF to: 004c4b8c (CONDITIONAL_JUMP)  ; LAB_004c4b8c
-    CMP dword ptr [0x02d13eb4],0x32     ; 004c4b6e | g_CharactersOnFireCount
+    CMP dword ptr [0x02d13eb4],0x32     ; 004c4b6e | g_GunFlameCandidateCount
     JGE 0x004c4b95                      ; 004c4b75
         ;   XREF to: 004c4b95 (CONDITIONAL_JUMP)  ; LAB_004c4b95
-    MOV EAX,[0x02d13eb4]                ; 004c4b77 | g_CharactersOnFireCount
+    MOV EAX,[0x02d13eb4]                ; 004c4b77 | g_GunFlameCandidateCount
         ;   Label: LAB_004c4b77
     LEA ECX,[EAX + 0x1]                 ; 004c4b7c
-    MOV dword ptr [EAX*0x4 + 0x2d13eb8],EBX ; 004c4b7f | g_CharactersOnFire
-    MOV dword ptr [0x02d13eb4],ECX      ; 004c4b86 | g_CharactersOnFireCount
+    MOV dword ptr [EAX*0x4 + 0x2d13eb8],EBX ; 004c4b7f | g_GunFlameCandidates
+    MOV dword ptr [0x02d13eb4],ECX      ; 004c4b86 | g_GunFlameCandidateCount
     INC EDI                             ; 004c4b8c
         ;   Label: LAB_004c4b8c
     ADD ESI,0x4                         ; 004c4b8d

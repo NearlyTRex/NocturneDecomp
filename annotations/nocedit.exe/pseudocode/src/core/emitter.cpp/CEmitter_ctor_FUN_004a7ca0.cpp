@@ -61,6 +61,6 @@ CEmitter * __cdecl core_emitter_cpp_CEmitter_ctor_FUN_004a7ca0(CEmitter *this_pt
   ADJ(this_ptr_00)->dest_actor = (CDemonActor *)0x0;
   ADJ(this_ptr_00)->wav_name[0] = '\0';
   ADJ(this_ptr_00)->sfx_type = 1;
-  ADJ(this_ptr_00)->was_active = 0;
+  ADJ(this_ptr_00)->was_on_screen = 0;
   return ADJ(this_ptr_00);
 }

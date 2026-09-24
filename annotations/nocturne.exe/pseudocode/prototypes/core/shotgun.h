@@ -35,9 +35,9 @@ void __cdecl CShotgun::onFired(CShotgun *this_ptr);
 // Address: 00516730
 float __cdecl CShotgun::getDamage(CShotgun *this_ptr);
 
-// Original: core_shotgun.cpp_CShotgun_fireProjectile_FUN_00516770
+// Original: core_shotgun.cpp_CShotgun_renderAimBeam_FUN_00516770
 // Address: 00516770
-void __cdecl CShotgun::fireProjectile(CShotgun *this_ptr);
+void __cdecl CShotgun::renderAimBeam(CShotgun *this_ptr);
 
 // Original: core_shotgun.cpp_CShotgun_dtor_FUN_00516960
 // Address: 00516960

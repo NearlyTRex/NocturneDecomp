@@ -166,7 +166,7 @@ int __cdecl core_lightgun_cpp_CLightGun_canSeeTarget_FUN_004c70a0(CLightGun *thi
 int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_004c71a0(CLightGun *this_ptr);
 void __cdecl core_lightgun_cpp_CLightGun_process_FUN_004c79a0(CLightGun *this_ptr,float delta_time);
 float __cdecl core_lightgun_cpp_CLightGun_getDamage_FUN_004c7c60(CLightGun *this_ptr);
-void __cdecl core_lightgun_cpp_CLightGun_fireProjectile_FUN_004c7ca0(CLightGun *this_ptr);
+void __cdecl core_lightgun_cpp_CLightGun_renderAimBeam_FUN_004c7ca0(CLightGun *this_ptr);
 CLightGun * __cdecl core_lightgun_cpp_CLightGun_dtor_FUN_004c8040(CLightGun *this_ptr,uint flags);
 void __cdecl core_litecone_cpp_staticInit_FUN_004c8090(void);
 CLightCone * __cdecl core_litecone_cpp_factoryFuncLightCone_FUN_004c80c0(void);
@@ -296,7 +296,7 @@ CMelee * __cdecl core_melee_cpp_CMelee_ctor_FUN_004cec60(CMelee *this_ptr);
 void __cdecl core_melee_cpp_CMelee_archive_FUN_004cedb0(CMelee *this_ptr);
 int __cdecl core_melee_cpp_CMelee_fire_FUN_004ceed0(CMelee *this_ptr);
 float __cdecl core_melee_cpp_CMelee_getDamage_FUN_004cef00(CMelee *this_ptr);
-void __cdecl core_melee_cpp_CMelee_fireProjectile_FUN_004cef30(CMelee *this_ptr);
+void __cdecl core_melee_cpp_CMelee_renderAimBeam_FUN_004cef30(CMelee *this_ptr);
 int __cdecl core_melee_cpp_CMelee_canPickup_FUN_004cef40(CMelee *this_ptr,CDemonActor *picker);
 int __cdecl core_melee_cpp_CMelee_getAllowedMeleeAttackTypes_FUN_004cef70(CMelee *this_ptr);
 void __cdecl core_melee_cpp_CMelee_fillAttackDamageInfo_FUN_004cef80(CMelee *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim);

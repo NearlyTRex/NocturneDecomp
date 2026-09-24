@@ -1757,10 +1757,6 @@
       "type":"function_definition"
     },
     {
-      "name":"CWeapon_fireProjectile",
-      "type":"function_definition"
-    },
-    {
       "name":"CWeapon_getDamage",
       "type":"function_definition"
     },
@@ -1774,6 +1770,10 @@
     },
     {
       "name":"CWeapon_onFired",
+      "type":"function_definition"
+    },
+    {
+      "name":"CWeapon_renderAimBeam",
       "type":"function_definition"
     },
     {
@@ -15404,20 +15404,6 @@
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
-      "name":"CWeapon_fireProjectile",
-      "parameters":[
-        {
-          "name":"this_ptr",
-          "type":"CWeapon*"
-        }
-      ],
-      "return_type":"void",
-      "type":"function_definition"
-    },
-    {
-      "calling_convention":"__cdecl",
-      "cat":"/Nocturne/FunctionDefinition/Game",
-      "importable":true,
       "name":"CWeapon_getDamage",
       "parameters":[
         {
@@ -15465,6 +15451,20 @@
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
       "name":"CWeapon_onFired",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CWeapon*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CWeapon_renderAimBeam",
       "parameters":[
         {
           "name":"this_ptr",
@@ -23281,7 +23281,7 @@
         },
         {
           "len":4,
-          "name":"show_in_editor",
+          "name":"gun_flame_ignitable",
           "offset":9756,
           "type":"int"
         },
@@ -28362,7 +28362,7 @@
         },
         {
           "len":4,
-          "name":"was_active",
+          "name":"was_on_screen",
           "offset":1156,
           "type":"int"
         },
@@ -40950,9 +40950,9 @@
         },
         {
           "len":4,
-          "name":"fireProjectile",
+          "name":"renderAimBeam",
           "offset":24,
-          "type":"CWeapon_fireProjectile*"
+          "type":"CWeapon_renderAimBeam*"
         },
         {
           "len":4,

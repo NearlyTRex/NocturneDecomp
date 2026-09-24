@@ -1118,7 +1118,7 @@ core_gore.cpp_CBloodParticle_setupRenderState_FUN_004ae0a0  [.cpp] [Cppcheck (qu
   Line   61: [uninitvar] Uninitialized variable: local_60
 
 ----------------------------------------------------------------------------------------------------
-core_lightgun.cpp_CLightGun_fireProjectile_FUN_004c7ca0  [.cpp] [Cppcheck (quick)]
+core_lightgun.cpp_CLightGun_renderAimBeam_FUN_004c7ca0  [.cpp] [Cppcheck (quick)]
   File: core/lightgun.cpp  (3 diagnostics)
 
   Line   60: [uninitvar] Uninitialized variable: fStack_2c
@@ -1412,7 +1412,7 @@ core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_00468d00  [.cpp] [Cppcheck (qu
   Line   73: [uninitvar] Uninitialized variable: local_48
 
 ----------------------------------------------------------------------------------------------------
-core_elephant.cpp_CElephantGun_fireProjectile_FUN_00478120  [.cpp] [Cppcheck (quick)]
+core_elephant.cpp_CElephantGun_renderAimBeam_FUN_00478120  [.cpp] [Cppcheck (quick)]
   File: core/elephant.cpp  (2 diagnostics)
 
   Line   51: [uninitvar] Uninitialized variable: fStack_48
@@ -1559,18 +1559,18 @@ core_setdir.cpp_FUN_005143b0  [.cpp] [Cppcheck (quick)]
   Line   17: [uninitvar] Uninitialized variable: in_stack_00000008
 
 ----------------------------------------------------------------------------------------------------
-core_shotgun.cpp_CShotgun_fireProjectile_FUN_00516770  [.cpp] [Cppcheck (quick)]
-  File: core/shotgun.cpp  (2 diagnostics)
-
-  Line   51: [uninitvar] Uninitialized variable: fStack_48
-  Line   51: [uninitvar] Uninitialized variable: fStack_4c
-
-----------------------------------------------------------------------------------------------------
 core_shotgun.cpp_CShotgun_fire_FUN_00515ea0  [.cpp] [Cppcheck (quick)]
   File: core/shotgun.cpp  (2 diagnostics)
 
   Line  147: [legacyUninitvar] Uninitialized variable: in_stack_fffffec4
   Line  151: [legacyUninitvar] Uninitialized variable: pCStack_2c
+
+----------------------------------------------------------------------------------------------------
+core_shotgun.cpp_CShotgun_renderAimBeam_FUN_00516770  [.cpp] [Cppcheck (quick)]
+  File: core/shotgun.cpp  (2 diagnostics)
+
+  Line   51: [uninitvar] Uninitialized variable: fStack_48
+  Line   51: [uninitvar] Uninitialized variable: fStack_4c
 
 ----------------------------------------------------------------------------------------------------
 core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromVertices_FUN_0051de60  [.cpp] [Cppcheck (quick)]

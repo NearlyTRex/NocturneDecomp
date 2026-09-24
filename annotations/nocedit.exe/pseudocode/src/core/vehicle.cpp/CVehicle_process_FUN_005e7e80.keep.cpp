@@ -164,7 +164,16 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr,f
       }
     }
   }
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+  // is_visible comes from this machine's renderOpaque, and this block spawns
+  // actors and draws from the sim stream. In a network game the respawn is
+  // decided by distance to sim_target alone.
+  if ((((this_ptr->is_visible != 0) &&
+        ((g_CNetGamePtr == (CNetGame *)0x0) ||
+         (g_CNetGamePtr->connection_type == CONNECTION_NONE))) ||
+#else
   if (((this_ptr->is_visible != 0) ||
+#endif
       (pCVar8 = sim_target,
       fVar6 = (this_ptr->base).location.position.x - (pCVar8->base).base.location.position.x,
       fVar7 = (this_ptr->base).location.position.y - (pCVar8->base).base.location.position.y,

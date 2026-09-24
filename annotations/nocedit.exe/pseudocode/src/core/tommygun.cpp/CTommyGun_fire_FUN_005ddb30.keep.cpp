@@ -48,7 +48,7 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_005ddb30(CTommyGun *this_ptr)
   CWeapon_full_vtable *pCVar2;
   float fVar1;
   CDemonSet *this_ptr_00;
-  
+
   fVar1 = (this_ptr->base).fire_cooldown_timer;
   this_ptr->fire_frames_remaining = 2;
   if (0.0 < fVar1) {
@@ -206,8 +206,13 @@ LAB_005ddd4e:
         CStack_e4.x = 5.0;
         CStack_e4.y = 6.0;
         CStack_e4.z = -6.0;
+#if NOCTURNE_AUTHENTIC_RNG
         CStack_90.x = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-0.3926991,0.3926991);
         CStack_90.y = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-0.3926991,0.3926991);
+#else
+        CStack_90.x = nocturne_rng_fx_range(-0.3926991,0.3926991);
+        CStack_90.y = nocturne_rng_fx_range(-0.3926991,0.3926991);
+#endif
         CStack_90.z = 0.0;
         core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(&CStack_10c,&CStack_90);
         pCVar7 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0

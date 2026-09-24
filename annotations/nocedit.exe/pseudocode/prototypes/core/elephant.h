@@ -35,9 +35,9 @@ void __cdecl CElephantGun::onFired(CElephantGun *this_ptr);
 // Address: 004a79b0
 float __cdecl CElephantGun::getDamage(CElephantGun *this_ptr);
 
-// Original: core_elephant.cpp_CElephantGun_fireProjectile_FUN_004a79f0
+// Original: core_elephant.cpp_CElephantGun_renderAimBeam_FUN_004a79f0
 // Address: 004a79f0
-void __cdecl CElephantGun::fireProjectile(CElephantGun *this_ptr);
+void __cdecl CElephantGun::renderAimBeam(CElephantGun *this_ptr);
 
 // Original: core_elephant.cpp_CElephantGun_dtor_FUN_004a7be0
 // Address: 004a7be0

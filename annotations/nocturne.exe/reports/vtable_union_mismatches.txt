@@ -53,16 +53,16 @@ DETAILED FINDINGS
     CTurret_fire_FUN_0054ab10                           this_ptr on CTurret          used _uc, need _uw  canWalk -> getMuzzlePoint
     CTurret_fire_FUN_0054ab10                           this_ptr on CTurret          used _uc, need _uw  getGrabbed -> getDamage
     CTurret_fire_FUN_0054ab10                           this_ptr on CTurret          used _uc, need _uw  getGrabbed -> getDamage
-    CTurret_process_FUN_005497f0                        this_ptr on CTurret          used _uc, need _uw  releaseFromGrab -> fireProjectile
+    CTurret_process_FUN_005497f0                        this_ptr on CTurret          used _uc, need _uw  releaseFromGrab -> renderAimBeam
     CTurret_updateInteraction_FUN_0054a890              this_ptr on CTurret          used _uc, need _uw  isGrabbable -> fire
     CTurret_updatePatrol_FUN_0054a920                   this_ptr on CTurret          used _uc, need _uw  isGrabbable -> fire
     CTurret_updateTargeting_FUN_0054a110                this_ptr on CTurret          used _uc, need _uw  isGrabbable -> fire
 
   core/lightgun.cpp (5)
-    CLightGun_fireProjectile_FUN_004c7ca0               this_ptr on CLightGun        used _uc, need _uw  canWalk -> getMuzzlePoint
     CLightGun_fire_FUN_004c71a0                         this_ptr on CLightGun        used _uc, need _uw  canWalk -> getMuzzlePoint
     CLightGun_fire_FUN_004c71a0                         this_ptr on CLightGun        used _uc, need _uw  getGrabbed -> getDamage
     CLightGun_isLightVulnerable_FUN_004c6f50            this_ptr on CLightGun        used _uc, need _uw  canWalk -> getMuzzlePoint
+    CLightGun_renderAimBeam_FUN_004c7ca0                this_ptr on CLightGun        used _uc, need _uw  canWalk -> getMuzzlePoint
     CLightGun_updateBeamLight_FUN_004c6ff0              this_ptr on CLightGun        used _uc, need _uw  canWalk -> getMuzzlePoint
 
   core/crossbow.cpp (4)
@@ -72,21 +72,21 @@ DETAILED FINDINGS
     CCrossbow_process_FUN_0043cfd0                      this_ptr on CCrossbow        used _uc, need _uw  canWalk -> getMuzzlePoint
 
   core/elephant.cpp (4)
-    CElephantGun_fireProjectile_FUN_00478120            this_ptr on CElephantGun     used _uc, need _uw  canWalk -> getMuzzlePoint
     CElephantGun_fire_FUN_00477890                      this_ptr on CElephantGun     used _uc, need _uw  canWalk -> getMuzzlePoint
     CElephantGun_fire_FUN_00477890                      this_ptr on CElephantGun     used _uc, need _uw  getGrabbed -> getDamage
     CElephantGun_process_FUN_004777a0                   this_ptr on CElephantGun     used _uc, need _uw  canWalk -> getMuzzlePoint
+    CElephantGun_renderAimBeam_FUN_00478120             this_ptr on CElephantGun     used _uc, need _uw  canWalk -> getMuzzlePoint
 
   core/shotgun.cpp (4)
-    CShotgun_fireProjectile_FUN_00516770                this_ptr on CShotgun         used _uc, need _uw  canWalk -> getMuzzlePoint
     CShotgun_fire_FUN_00515ea0                          this_ptr on CShotgun         used _uc, need _uw  canWalk -> getMuzzlePoint
     CShotgun_fire_FUN_00515ea0                          this_ptr on CShotgun         used _uc, need _uw  getGrabbed -> getDamage
     CShotgun_process_FUN_00515db0                       this_ptr on CShotgun         used _uc, need _uw  canWalk -> getMuzzlePoint
+    CShotgun_renderAimBeam_FUN_00516770                 this_ptr on CShotgun         used _uc, need _uw  canWalk -> getMuzzlePoint
 
   core/weapon.cpp (4)
-    CWeapon_fireProjectile_FUN_00554750                 this_ptr on CWeapon          used _uc, need _uw  canWalk -> getMuzzlePoint
     CWeapon_onDropped_FUN_00554310                      this_ptr on CWeapon          used _uc, need _uw  kill -> setWeaponState
     CWeapon_process_FUN_00554030                        this_ptr on CWeapon          used _uc, need _uw  getGrabber -> updateLighting
+    CWeapon_renderAimBeam_FUN_00554750                  this_ptr on CWeapon          used _uc, need _uw  canWalk -> getMuzzlePoint
     CWeapon_updateLighting_FUN_005543c0                 this_ptr on CWeapon          used _uc, need _uw  canWalk -> getMuzzlePoint
 
   core/gun.cpp (3)
@@ -122,7 +122,7 @@ OFFSET COLLISION REFERENCE
   0xf8      isGrabbable                     fire                          
   0xfc      canBeGrabbed                    isReadyToFire                 
   0x100     getGrabbed                      getDamage                     
-  0x104     releaseFromGrab                 fireProjectile                
+  0x104     releaseFromGrab                 renderAimBeam                 
   0x108     getGrabber                      updateLighting                
   0x10c     releaseVictim                   -                             
   0x110     onVictimLost                    -                             

@@ -31,9 +31,9 @@ int __cdecl CMelee::fire(CMelee *this_ptr);
 // Address: 004cef00
 float __cdecl CMelee::getDamage(CMelee *this_ptr);
 
-// Original: core_melee.cpp_CMelee_fireProjectile_FUN_004cef30
+// Original: core_melee.cpp_CMelee_renderAimBeam_FUN_004cef30
 // Address: 004cef30
-void __cdecl CMelee::fireProjectile(CMelee *this_ptr);
+void __cdecl CMelee::renderAimBeam(CMelee *this_ptr);
 
 // Original: core_melee.cpp_CMelee_canPickup_FUN_004cef40
 // Address: 004cef40

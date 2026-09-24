@@ -63,5 +63,8 @@ CBodyPart * __cdecl core_bodypart_cpp_createBodyPart_FUN_00418e10(CVector3f *pos
   (this_ptr_00->base).is_transparent = is_transparent;
   this_ptr_00->transparent_geometry_flag = is_transparent;
   this_ptr_00->blood_type = blood_type;
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+  nocturne_sim_trace_bodypart(&this_ptr_00->base,scale_source);
+#endif
   return this_ptr_00;
 }

@@ -34,6 +34,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
 #endif
 #if !NOCTURNE_AUTHENTIC_NETPLAY
   int net_respawn_item;
+  int net_skip_item;
   int net_waiting;
   int net_was_waiting;
   int net_host_hero;
@@ -48,6 +49,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
 
 #if !NOCTURNE_AUTHENTIC_NETPLAY
   net_respawn_item = -1;
+  net_skip_item = -1;
   net_waiting = 0;
   net_was_waiting = 0;
   net_host_hero = 0;
@@ -240,6 +242,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
           shape_edittool_cpp_CPickList_clear_FUN_004a5770(&g_CPickList);
 #if !NOCTURNE_AUTHENTIC_NETPLAY
           net_respawn_item = -1;
+          net_skip_item = -1;
 #endif
           this_ptr->wait_for_keypress = 0;
           EVar6 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
@@ -254,6 +257,14 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
             pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                                 ("Leave network game");
             shape_edittool_cpp_CStrList_add_FUN_004a2b80(&g_CPickList.base,pcVar10);
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+            if (nocturne_net_skip_vote_available() != 0) {
+              pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
+                                  ((char *)nocturne_net_skip_vote_label());
+              net_skip_item = g_CPickList.base.item_count;
+              shape_edittool_cpp_CStrList_add_FUN_004a2b80(&g_CPickList.base,pcVar10);
+            }
+#endif
             pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Return to game");
             shape_edittool_cpp_CStrList_add_FUN_004a2b80(&g_CPickList.base,pcVar10);
             uVar9 = 1;
@@ -273,6 +284,12 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
               pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                                   ("Respawn players near me");
               net_respawn_item = g_CPickList.base.item_count;
+              shape_edittool_cpp_CStrList_add_FUN_004a2b80(&g_CPickList.base,pcVar10);
+            }
+            if (nocturne_net_skip_vote_available() != 0) {
+              pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
+                                  ((char *)nocturne_net_skip_vote_label());
+              net_skip_item = g_CPickList.base.item_count;
               shape_edittool_cpp_CStrList_add_FUN_004a2b80(&g_CPickList.base,pcVar10);
             }
 #endif
@@ -403,6 +420,10 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
         if ((iVar4 == net_respawn_item) && (iVar4 != -2)) {
           nocturne_net_respawn_request();
           net_respawn_item = -1;
+        }
+        if ((-1 < net_skip_item) && (iVar4 == net_skip_item)) {
+          nocturne_net_skip_toggle_vote();
+          net_skip_item = -1;
         }
 #endif
         if (iVar4 == 0) {

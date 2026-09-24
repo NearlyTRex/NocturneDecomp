@@ -462,3 +462,17 @@ void nocturne_ui_pop_clip(void) {
     g_ClipRight = ui_clip_saved[ui_clip_depth][2];
     g_ClipBottom = ui_clip_saved[ui_clip_depth][3];
 }
+
+void nocturne_ui_push_screen_clip(void) {
+    if (ui_clip_depth >= UI_CLIP_STACK_MAX) { return; }
+    ui_clip_saved[ui_clip_depth][0] = g_ClipLeft;
+    ui_clip_saved[ui_clip_depth][1] = g_ClipTop;
+    ui_clip_saved[ui_clip_depth][2] = g_ClipRight;
+    ui_clip_saved[ui_clip_depth][3] = g_ClipBottom;
+    ui_clip_depth = ui_clip_depth + 1;
+
+    g_ClipLeft = 0;
+    g_ClipTop = 0;
+    g_ClipRight = g_WindowWidth - 1;
+    g_ClipBottom = g_WindowHeight - 1;
+}

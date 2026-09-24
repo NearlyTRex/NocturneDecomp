@@ -65,7 +65,7 @@ typedef struct CCharacter {
     float speech_timer; // 0x2618
     float size_scale; // 0x261c
     int was_rendered_opaque; // 0x2620
-    int show_in_editor; // 0x2624
+    int gun_flame_ignitable; // 0x2624
     int layer_action_count; // 0x2628
     SLayerAction layer_actions[20]; // 0x262c
     int layer_action_index; // 0x2a8c

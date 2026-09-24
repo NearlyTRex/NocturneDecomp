@@ -27,9 +27,9 @@ int __cdecl CDynamite::fire(CDynamite *this_ptr);
 // Address: 0049cee0
 float __cdecl CDynamite::getDamage(CDynamite *this_ptr);
 
-// Original: core_dynamite.cpp_CDynamite_fireProjectile_FUN_0049cf10
+// Original: core_dynamite.cpp_CDynamite_renderAimBeam_FUN_0049cf10
 // Address: 0049cf10
-void __cdecl CDynamite::fireProjectile(CDynamite *this_ptr);
+void __cdecl CDynamite::renderAimBeam(CDynamite *this_ptr);
 
 // Original: core_dynamite.cpp_CDynamite_lightFuse_FUN_0049cf20
 // Address: 0049cf20

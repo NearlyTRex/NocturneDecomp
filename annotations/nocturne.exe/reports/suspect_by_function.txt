@@ -9262,14 +9262,6 @@ core_elephant.cpp_CElephantGun_ctor_FUN_00477710 (1 suspect)
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 ====================================================================================================
-core_elephant.cpp_CElephantGun_fireProjectile_FUN_00478120 (3 suspects)
-  File: core/elephant.cpp
-====================================================================================================
-  Line 39 [self_copy_guard]: if (&fStack_50 != &fStack_38) {
-  Line 51 [static_uninitvar]: fVar1 = SQRT(fStack_48 * fStack_48 + fStack_50 * fStack_50 + fStack_4c * fStack_4c);
-  Line 51 [static_uninitvar]: fVar1 = SQRT(fStack_48 * fStack_48 + fStack_50 * fStack_50 + fStack_4c * fStack_4c);
-
-====================================================================================================
 core_elephant.cpp_CElephantGun_fire_FUN_00477890 (49 suspects)
   File: core/elephant.cpp
 ====================================================================================================
@@ -9337,6 +9329,14 @@ core_elephant.cpp_CElephantGun_process_FUN_004777a0 (4 suspects)
   Line 16 [stack_ref]: if ((float *)&stack0x00000000 != &g_CDemonLight_01c74640.base.rotation_matrix.m[1].y) {
   Line 17 [unrolled_memcpy]: g_CDemonLight_01c74640.base.position.x = CStack_1c.x;
   Line 31 [stack_param]: core_weapon_cpp_CWeapon_process_FUN_00554030(&this_ptr->base,in_stack_0000000c);
+
+====================================================================================================
+core_elephant.cpp_CElephantGun_renderAimBeam_FUN_00478120 (3 suspects)
+  File: core/elephant.cpp
+====================================================================================================
+  Line 39 [self_copy_guard]: if (&fStack_50 != &fStack_38) {
+  Line 51 [static_uninitvar]: fVar1 = SQRT(fStack_48 * fStack_48 + fStack_50 * fStack_50 + fStack_4c * fStack_4c);
+  Line 51 [static_uninitvar]: fVar1 = SQRT(fStack_48 * fStack_48 + fStack_50 * fStack_50 + fStack_4c * fStack_4c);
 
 ====================================================================================================
 core_emitter.cpp_CEmitter_ctor_FUN_004783c0 (8 suspects)
@@ -14558,17 +14558,6 @@ core_lever.cpp_CLever_setup_FUN_004c6110 (1 suspect)
   Line 17 [unrolled_strcpy]: do {
 
 ====================================================================================================
-core_lightgun.cpp_CLightGun_fireProjectile_FUN_004c7ca0 (6 suspects)
-  File: core/lightgun.cpp
-====================================================================================================
-  Line 48 [self_copy_guard]: if (&fStack_34 != &fStack_58) {
-  Line 60 [static_uninitvar]: fVar1 = SQRT(fStack_2c * fStack_2c + fStack_34 * fStack_34 + fStack_30 * fStack_30);
-  Line 60 [static_uninitvar]: fVar1 = SQRT(fStack_2c * fStack_2c + fStack_34 * fStack_34 + fStack_30 * fStack_30);
-  Line 60 [static_uninitvar]: fVar1 = SQRT(fStack_2c * fStack_2c + fStack_34 * fStack_34 + fStack_30 * fStack_30);
-  Line 82 [unrolled_memcpy]: CStack_88.x = CStack_4c.x;
-  Line 101 [self_copy_guard]: if (&fStack_70 != &fStack_7c) {
-
-====================================================================================================
 core_lightgun.cpp_CLightGun_fire_FUN_004c71a0 (20 suspects)
   File: core/lightgun.cpp
 ====================================================================================================
@@ -14599,6 +14588,17 @@ core_lightgun.cpp_CLightGun_process_FUN_004c79a0 (2 suspects)
 ====================================================================================================
   Line 59 [raw_address_constant]: (0x014B8DE8,"lgunmask.raw",0);
   Line 62 [raw_address_constant]: core_weather_cpp_CWeather_createLightningStrike_FUN_00554d40(0x02DDF9F0,0.1,0);
+
+====================================================================================================
+core_lightgun.cpp_CLightGun_renderAimBeam_FUN_004c7ca0 (6 suspects)
+  File: core/lightgun.cpp
+====================================================================================================
+  Line 48 [self_copy_guard]: if (&fStack_34 != &fStack_58) {
+  Line 60 [static_uninitvar]: fVar1 = SQRT(fStack_2c * fStack_2c + fStack_34 * fStack_34 + fStack_30 * fStack_30);
+  Line 60 [static_uninitvar]: fVar1 = SQRT(fStack_2c * fStack_2c + fStack_34 * fStack_34 + fStack_30 * fStack_30);
+  Line 60 [static_uninitvar]: fVar1 = SQRT(fStack_2c * fStack_2c + fStack_34 * fStack_34 + fStack_30 * fStack_30);
+  Line 82 [unrolled_memcpy]: CStack_88.x = CStack_4c.x;
+  Line 101 [self_copy_guard]: if (&fStack_70 != &fStack_7c) {
 
 ====================================================================================================
 core_lightgun.cpp_CLightGun_updateBeamLight_FUN_004c6ff0 (5 suspects)
@@ -19841,14 +19841,6 @@ core_shotgun.cpp_CShotgun_ctor_FUN_00515d20 (1 suspect)
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 ====================================================================================================
-core_shotgun.cpp_CShotgun_fireProjectile_FUN_00516770 (3 suspects)
-  File: core/shotgun.cpp
-====================================================================================================
-  Line 39 [self_copy_guard]: if (&fStack_50 != &fStack_38) {
-  Line 51 [static_uninitvar]: fVar1 = SQRT(fStack_48 * fStack_48 + fStack_50 * fStack_50 + fStack_4c * fStack_4c);
-  Line 51 [static_uninitvar]: fVar1 = SQRT(fStack_48 * fStack_48 + fStack_50 * fStack_50 + fStack_4c * fStack_4c);
-
-====================================================================================================
 core_shotgun.cpp_CShotgun_fire_FUN_00515ea0 (46 suspects)
   File: core/shotgun.cpp
 ====================================================================================================
@@ -19913,6 +19905,14 @@ core_shotgun.cpp_CShotgun_process_FUN_00515db0 (4 suspects)
   Line 16 [stack_ref]: if ((float *)&stack0x00000000 != &g_CDemonLight_01c74640.base.rotation_matrix.m[1].y) {
   Line 17 [unrolled_memcpy]: g_CDemonLight_01c74640.base.position.x = CStack_1c.x;
   Line 31 [stack_param]: core_weapon_cpp_CWeapon_process_FUN_00554030(&this_ptr->base,in_stack_0000000c);
+
+====================================================================================================
+core_shotgun.cpp_CShotgun_renderAimBeam_FUN_00516770 (3 suspects)
+  File: core/shotgun.cpp
+====================================================================================================
+  Line 39 [self_copy_guard]: if (&fStack_50 != &fStack_38) {
+  Line 51 [static_uninitvar]: fVar1 = SQRT(fStack_48 * fStack_48 + fStack_50 * fStack_50 + fStack_4c * fStack_4c);
+  Line 51 [static_uninitvar]: fVar1 = SQRT(fStack_48 * fStack_48 + fStack_50 * fStack_50 + fStack_4c * fStack_4c);
 
 ====================================================================================================
 core_simbox.cpp_CSimBox_ctor_FUN_00516ba0 (21 suspects)
@@ -23374,13 +23374,6 @@ core_weapon.cpp_CWeapon_dtor_FUN_00553ea0 (1 suspect)
   Line 18 [negative_offset]: ((CDemonActor *)&pCVar1[-2].scrape_points[4].raytrace_normal.y,1);
 
 ====================================================================================================
-core_weapon.cpp_CWeapon_fireProjectile_FUN_00554750 (2 suspects)
-  File: core/weapon.cpp
-====================================================================================================
-  Line 35 [unrolled_memcpy]: local_94.color.r = (this_ptr->muzzle_flash_color).r;
-  Line 42 [unrolled_memcpy]: local_e8.intensity = local_94.intensity;
-
-====================================================================================================
 core_weapon.cpp_CWeapon_getBoundingBox_FUN_00553fe0 (1 suspect)
   File: core/weapon.cpp
 ====================================================================================================
@@ -23404,6 +23397,13 @@ core_weapon.cpp_CWeapon_process_FUN_00554030 (2 suspects)
 ====================================================================================================
   Line 22 [unrolled_memcpy]: (this_ptr->base).location.position.x = (this_ptr->physics_box).position.x;
   Line 28 [unrolled_memcpy]: (pUVar1->vec).x = pCVar2->x;
+
+====================================================================================================
+core_weapon.cpp_CWeapon_renderAimBeam_FUN_00554750 (2 suspects)
+  File: core/weapon.cpp
+====================================================================================================
+  Line 35 [unrolled_memcpy]: local_94.color.r = (this_ptr->muzzle_flash_color).r;
+  Line 42 [unrolled_memcpy]: local_e8.intensity = local_94.intensity;
 
 ====================================================================================================
 core_weapon.cpp_CWeapon_setupPhysicsBox_FUN_00554660 (1 suspect)

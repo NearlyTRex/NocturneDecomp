@@ -263,7 +263,7 @@ CFlameThrower * __cdecl core_flamegun_cpp_CFlameThrower_ctor_FUN_004cb880(CFlame
 int __cdecl core_flamegun_cpp_CFlameThrower_fire_FUN_004cb920(CFlameThrower *this_ptr);
 void __cdecl core_flamegun_cpp_CFlameThrower_process_FUN_004cb9b0(CFlameThrower *this_ptr,float delta_time);
 float __cdecl core_flamegun_cpp_CFlameThrower_getDamage_FUN_004cbab0(CFlameThrower *this_ptr);
-void __cdecl core_flamegun_cpp_CFlameThrower_fireProjectile_FUN_004cbad0(CFlameThrower *this_ptr);
+void __cdecl core_flamegun_cpp_CFlameThrower_renderAimBeam_FUN_004cbad0(CFlameThrower *this_ptr);
 float __cdecl core_flamegun_cpp_CFlameThrower_getDamageAlt_FUN_004cbad1(CFlameThrower *this_ptr);
 CFlameThrower * __cdecl core_flamegun_cpp_CFlameThrower_dtor_FUN_004cbb00(CFlameThrower *this_ptr,uint flags);
 void __cdecl core_flashlit_cpp_staticInit_FUN_004cbb50(void);

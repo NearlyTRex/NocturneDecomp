@@ -19,7 +19,7 @@ void __cdecl core_emitter_cpp_CEmitter_renderBackground_FUN_004790f0(CEmitter *t
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(&this_ptr->base);
   this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_1c);
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(this_ptr_00);
-  this_ptr->was_active = iVar1;
+  this_ptr->was_on_screen = iVar1;
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(&this_ptr->base);
   return;
 }

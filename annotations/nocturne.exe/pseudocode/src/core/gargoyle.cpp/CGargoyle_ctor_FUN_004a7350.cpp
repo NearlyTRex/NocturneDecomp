@@ -35,7 +35,7 @@ CGargoyle * __cdecl core_gargoyle_cpp_CGargoyle_ctor_FUN_004a7350(CGargoyle *thi
   pCVar3->returning_home = 0;
   fVar2 = 100.0f;
   pCVar3->petrify_timer = 0.0;
-  (pCVar3->base).base.show_in_editor = 0;
+  (pCVar3->base).base.gun_flame_ignitable = 0;
   (pCVar3->base).base.ai_detection_range_min = fVar1;
   (pCVar3->base).base.ai_detection_range_max = fVar2;
   return pCVar3;

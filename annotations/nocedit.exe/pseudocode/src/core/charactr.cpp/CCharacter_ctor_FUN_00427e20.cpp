@@ -89,7 +89,7 @@ CCharacter * __cdecl core_charactr_cpp_CCharacter_ctor_FUN_00427e20(CCharacter *
   ADJ(pvVar4)->layer_action_count = 0;
   ADJ(pvVar4)->layer_action_index = 0;
   ADJ(pvVar4)->layer_action_t = 0.0;
-  ADJ(pvVar4)->show_in_editor = 1;
+  ADJ(pvVar4)->gun_flame_ignitable = 1;
   ADJ(pvVar4)->health_bar_mode = 0;
   ADJ(pvVar4)->descriptive_name[0] = '\0';
   ADJ(pvVar4)->smoke_emit_timer = 0.0;

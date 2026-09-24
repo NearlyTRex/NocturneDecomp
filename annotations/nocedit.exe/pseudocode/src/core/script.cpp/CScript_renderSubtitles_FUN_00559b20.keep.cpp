@@ -47,13 +47,28 @@ void __cdecl core_script_cpp_CScript_renderSubtitles_FUN_00559b20(CScript *this_
   }
   iVar4 = core_script_cpp_CScript_getLetterboxHeight_FUN_00559ac0(this_ptr);
   if (0 < iVar4) {
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+    if (g_ModalDialogActive != 0) {
+      nocturne_ui_push_screen_clip();
+    }
+#endif
     if (g_PreviousLetterboxMode != 2) {
       engine_2d_c_fillRectColor_FUN_00403170(0,0,iVar1 + -1,iVar4 + -1,0);
     }
     engine_2d_c_fillRectColor_FUN_00403170(0,iVar3 - iVar4,iVar1 + -1,iVar3 + -1,0);
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+    if (g_ModalDialogActive != 0) {
+      nocturne_ui_pop_clip();
+    }
+#endif
   }
   iVar2 = g_ClipTop;
   if ((this_ptr->current_message[0] != '\0') && (g_CGamePtr->subtitle_mode != 0)) {
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+    if (g_ModalDialogActive != 0) {
+      nocturne_ui_push_screen_clip();
+    }
+#endif
     this_ptr_00 = g_MediumFont;
     if (g_WindowHeight < 0x1e0) {
       this_ptr_00 = g_TinyFont;
@@ -105,6 +120,11 @@ void __cdecl core_script_cpp_CScript_renderSubtitles_FUN_00559b20(CScript *this_
     }
 #if !NOCTURNE_AUTHENTIC_HUD_SCALE
     nocturne_ui_pop_clip();
+#endif
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+    if (g_ModalDialogActive != 0) {
+      nocturne_ui_pop_clip();
+    }
 #endif
   }
   g_ClipTop = iVar2;

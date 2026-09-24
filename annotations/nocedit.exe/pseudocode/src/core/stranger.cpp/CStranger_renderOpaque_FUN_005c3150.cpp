@@ -140,16 +140,14 @@ switchD_005c331f_caseD_3:
      ((this_ptr->base).base.layer_action_index == 8)) {
     bVar4 = true;
 LAB_005c336f:
-    (*(((((CCharacter *)this_ptr->weapon)->base).vtable._uc)->_uc).releaseFromGrab)
-              ((CCharacter *)this_ptr->weapon);
+    (*(((this_ptr->weapon->base).vtable._uw)->_uw).renderAimBeam)(this_ptr->weapon);
   }
   else if (bVar4) goto LAB_005c336f;
   if (this_ptr->weapon->weapon_type == WEAPON_TYPE_GUN) {
     core_stranger_cpp_CStranger_updateWeaponPosition_FUN_005c06b0(this_ptr,1);
     (*((this_ptr->weapon->base).vtable._ub)->renderOpaque)(&this_ptr->weapon->base);
     if (bVar4) {
-      (*(((((CCharacter *)this_ptr->weapon)->base).vtable._uc)->_uc).releaseFromGrab)
-                ((CCharacter *)this_ptr->weapon);
+      (*(((this_ptr->weapon->base).vtable._uw)->_uw).renderAimBeam)(this_ptr->weapon);
     }
   }
   core_stranger_cpp_CStranger_updateWeaponPosition_FUN_005c06b0(this_ptr,0);

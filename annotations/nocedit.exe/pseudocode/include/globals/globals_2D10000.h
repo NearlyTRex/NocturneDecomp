@@ -19,7 +19,7 @@
 // =============================================================================
 
 // CCharacter*[50]
-extern CCharacter* g_CharactersOnFire[50];
+extern CCharacter* g_GunFlameCandidates[50];
 
 // CDemonActorType
 extern CDemonActorType g_CFilmReelClassInfo;
@@ -70,7 +70,7 @@ extern char g_VersionControlDirectory[264];
 extern int g_AuditRecordCount;
 extern int g_TextureAnimCounter2;
 extern int g_TextureAnimCounter1;
-extern int g_CharactersOnFireCount;
+extern int g_GunFlameCandidateCount;
 extern int g_FlameCanCount;
 extern int g_SmokeParticleAllocIndex;
 

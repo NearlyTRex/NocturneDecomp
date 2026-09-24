@@ -32,7 +32,7 @@ CTVBat * __cdecl core_tvbat_cpp_CTVBat_ctor_FUN_005e3ef0(CTVBat *this_ptr)
   ADJ(this_ptr_00)->follow_orders = 0;
   ADJ(this_ptr_00)->attack_timer = 0.0;
   ADJ(this_ptr_00)->state = 0;
-  ADJ(this_ptr_00)->base.base.show_in_editor = 0;
+  ADJ(this_ptr_00)->base.base.gun_flame_ignitable = 0;
   ADJ(this_ptr_00)->boss_actor = (CDemonActor *)0x0;
   ADJ(this_ptr_00)->periodic_sound[0] = '\0';
   ADJ(this_ptr_00)->periodic_sound_timer_min = 15.0;

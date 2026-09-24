@@ -33,7 +33,7 @@ typedef struct CEmitter {
     float emit_period; // 0x43c
     float state_timer; // 0x440
     CDemonGlobe globe; // 0x444
-    int was_active; // 0x484
+    int was_on_screen; // 0x484
     int prev_emitter_state; // 0x488
 } CEmitter;
 #pragma pack(pop)

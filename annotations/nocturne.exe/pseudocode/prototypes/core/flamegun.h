@@ -31,9 +31,9 @@ void __cdecl CFlameThrower::process(CFlameThrower *this_ptr,float delta_time);
 // Address: 0048ec60
 float __cdecl CFlameThrower::getDamage(CFlameThrower *this_ptr);
 
-// Original: core_flamegun.cpp_CFlameThrower_fireProjectile_FUN_0048ec80
+// Original: core_flamegun.cpp_CFlameThrower_renderAimBeam_FUN_0048ec80
 // Address: 0048ec80
-void __cdecl CFlameThrower::fireProjectile(CFlameThrower *this_ptr);
+void __cdecl CFlameThrower::renderAimBeam(CFlameThrower *this_ptr);
 
 // Original: core_flamegun.cpp_CFlameThrower_dtor_FUN_0048ecb0
 // Address: 0048ecb0

@@ -40,7 +40,7 @@ CHero * __cdecl core_hero_cpp_CHero_ctor_FUN_004f2340(CHero *this_ptr)
   ADJ(pCVar3)->is_wearing_gas_mask = 0;
   core_hero_cpp_CHero_createDefaultWeapon_FUN_004f2a30(this_ptr_00);
   ADJ(pCVar3)->ai_task = HERO_TASK_KILL;
-  ADJ(pCVar3)->base.show_in_editor = 0;
+  ADJ(pCVar3)->base.gun_flame_ignitable = 0;
   ADJ(pCVar3)->base.health_bar_mode = 1;
   return this_ptr_00;
 }

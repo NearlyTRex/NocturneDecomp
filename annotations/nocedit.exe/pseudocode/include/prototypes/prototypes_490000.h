@@ -145,7 +145,7 @@ CDemonActorType * __cdecl core_dynamite_cpp_CDynamite_getActorType_FUN_0049cdb0(
 CDynamite * __cdecl core_dynamite_cpp_CDynamite_ctor_FUN_0049cdc0(CDynamite *this_ptr);
 int __cdecl core_dynamite_cpp_CDynamite_fire_FUN_0049ce70(CDynamite *this_ptr);
 float __cdecl core_dynamite_cpp_CDynamite_getDamage_FUN_0049cee0(CDynamite *this_ptr);
-void __cdecl core_dynamite_cpp_CDynamite_fireProjectile_FUN_0049cf10(CDynamite *this_ptr);
+void __cdecl core_dynamite_cpp_CDynamite_renderAimBeam_FUN_0049cf10(CDynamite *this_ptr);
 void __cdecl core_dynamite_cpp_CDynamite_lightFuse_FUN_0049cf20(CDynamite *this_ptr);
 int __cdecl core_dynamite_cpp_CDynamite_isFuseLit_FUN_0049cf70(CDynamite *this_ptr);
 int __cdecl core_dynamite_cpp_CDynamite_isFuseBurnedOut_FUN_0049cf90(CDynamite *this_ptr);

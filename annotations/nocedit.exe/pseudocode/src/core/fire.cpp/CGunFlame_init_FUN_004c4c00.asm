@@ -16,9 +16,9 @@
 ; Referenced Globals:
 ;   float FLOAT_00629f23 = 25
 ;   double DOUBLE_00629f2b = 25
-;   int g_CharactersOnFireCount
-;   CCharacter*[50] g_CharactersOnFire
-;   undefined4 g_CharactersOnFire[1]
+;   int g_GunFlameCandidateCount
+;   CCharacter*[50] g_GunFlameCandidates
+;   undefined4 g_GunFlameCandidates[1]
 ;   int g_FlameCanCount
 ;   CFlameCan*[150] g_FlameCans
 ;   undefined4 g_FlameCans[1]
@@ -41,7 +41,7 @@ section .text
     MOV EBP,ESP                         ; 004c4c04
     SUB ESP,0x2c                        ; 004c4c06
     AND ESP,0xfffffff8                  ; 004c4c09
-    MOV EDX,dword ptr [0x02d13eb4]      ; 004c4c0c | g_CharactersOnFireCount
+    MOV EDX,dword ptr [0x02d13eb4]      ; 004c4c0c | g_GunFlameCandidateCount
     XOR EDI,EDI                         ; 004c4c12
     TEST EDX,EDX                        ; 004c4c14
     JLE 0x004c4c5e                      ; 004c4c16
@@ -53,7 +53,7 @@ section .text
         ;   Label: LAB_004c4c22
     MOV EBX,dword ptr [ESP + 0x20]      ; 004c4c25
     MOV EDX,dword ptr [EAX + 0x20]      ; 004c4c29
-    MOV EBX,dword ptr [EBX + 0x2d13eb8] ; 004c4c2c | g_CharactersOnFire | g_CharactersOnFire[1]
+    MOV EBX,dword ptr [EBX + 0x2d13eb8] ; 004c4c2c | g_GunFlameCandidates | g_GunFlameCandidates[1]
     CMP EDX,0x2                         ; 004c4c32
     JZ 0x004c4cc3                       ; 004c4c35
         ;   XREF to: 004c4cc3 (CONDITIONAL_JUMP)  ; LAB_004c4cc3
@@ -62,7 +62,7 @@ section .text
         ;   XREF to: 004c4cc3 (CONDITIONAL_JUMP)  ; LAB_004c4cc3
     MOV ECX,dword ptr [ESP + 0x20]      ; 004c4c48
         ;   Label: LAB_004c4c48
-    MOV EBX,dword ptr [0x02d13eb4]      ; 004c4c4c | g_CharactersOnFireCount
+    MOV EBX,dword ptr [0x02d13eb4]      ; 004c4c4c | g_GunFlameCandidateCount
     ADD ECX,0x4                         ; 004c4c52
     INC EDI                             ; 004c4c55
     MOV dword ptr [ESP + 0x20],ECX      ; 004c4c56

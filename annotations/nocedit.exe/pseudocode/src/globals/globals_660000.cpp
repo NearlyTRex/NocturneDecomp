@@ -4095,7 +4095,7 @@ CWeapon_full_vtable g_CLightGunVTable = {
         .fire = (CWeapon_fire *)core_lightgun_cpp_CLightGun_fire_FUN_00505c70,
         .isReadyToFire = (CWeapon_isReadyToFire *)core_weapon_cpp_CWeapon_isReadyToFire_FUN_005ee710,
         .getDamage = (CWeapon_getDamage *)core_lightgun_cpp_CLightGun_getDamage_FUN_00506670,
-        .fireProjectile = (CWeapon_fireProjectile *)core_lightgun_cpp_CLightGun_fireProjectile_FUN_005066b0,
+        .renderAimBeam = (CWeapon_renderAimBeam *)core_lightgun_cpp_CLightGun_renderAimBeam_FUN_005066b0,
         .updateLighting = (CWeapon_updateLighting *)core_weapon_cpp_CWeapon_updateLighting_FUN_005ee4a0
     }
 };
@@ -4168,7 +4168,7 @@ CWeapon_full_vtable g_CMeleeVTable = {
         .fire = (CWeapon_fire *)core_melee_cpp_CMelee_fire_FUN_0050ea40,
         .isReadyToFire = (CWeapon_isReadyToFire *)core_weapon_cpp_CWeapon_isReadyToFire_FUN_005ee710,
         .getDamage = (CWeapon_getDamage *)core_melee_cpp_CMelee_getDamage_FUN_0050ea70,
-        .fireProjectile = (CWeapon_fireProjectile *)core_melee_cpp_CMelee_fireProjectile_FUN_0050eaa0,
+        .renderAimBeam = (CWeapon_renderAimBeam *)core_melee_cpp_CMelee_renderAimBeam_FUN_0050eaa0,
         .updateLighting = (CWeapon_updateLighting *)core_weapon_cpp_CWeapon_updateLighting_FUN_005ee4a0
     }
 };
@@ -4241,7 +4241,7 @@ CWeapon_full_vtable g_CShotgunVTable = {
         .fire = (CWeapon_fire *)core_shotgun_cpp_CShotgun_fire_FUN_00588060,
         .isReadyToFire = (CWeapon_isReadyToFire *)core_weapon_cpp_CWeapon_isReadyToFire_FUN_005ee710,
         .getDamage = (CWeapon_getDamage *)core_shotgun_cpp_CShotgun_getDamage_FUN_005888b0,
-        .fireProjectile = (CWeapon_fireProjectile *)core_shotgun_cpp_CShotgun_fireProjectile_FUN_005888f0,
+        .renderAimBeam = (CWeapon_renderAimBeam *)core_shotgun_cpp_CShotgun_renderAimBeam_FUN_005888f0,
         .updateLighting = (CWeapon_updateLighting *)core_weapon_cpp_CWeapon_updateLighting_FUN_005ee4a0
     }
 };
@@ -4314,7 +4314,7 @@ CWeapon_full_vtable g_CShovelVTable = {
         .fire = (CWeapon_fire *)core_shovel_cpp_CShovel_fire_FUN_00588c20,
         .isReadyToFire = (CWeapon_isReadyToFire *)core_weapon_cpp_CWeapon_isReadyToFire_FUN_005ee710,
         .getDamage = (CWeapon_getDamage *)core_shovel_cpp_CShovel_getDamage_FUN_00588c40,
-        .fireProjectile = (CWeapon_fireProjectile *)core_shovel_cpp_CShovel_fireProjectile_FUN_00588c70,
+        .renderAimBeam = (CWeapon_renderAimBeam *)core_shovel_cpp_CShovel_renderAimBeam_FUN_00588c70,
         .updateLighting = (CWeapon_updateLighting *)core_weapon_cpp_CWeapon_updateLighting_FUN_005ee4a0
     }
 };
@@ -4387,7 +4387,7 @@ CWeapon_full_vtable g_CTommyGunVTable = {
         .fire = (CWeapon_fire *)core_tommygun_cpp_CTommyGun_fire_FUN_005ddb30,
         .isReadyToFire = (CWeapon_isReadyToFire *)core_weapon_cpp_CWeapon_isReadyToFire_FUN_005ee710,
         .getDamage = (CWeapon_getDamage *)core_tommygun_cpp_CTommyGun_getDamage_FUN_005de330,
-        .fireProjectile = (CWeapon_fireProjectile *)core_weapon_cpp_CWeapon_fireProjectile_FUN_005ee830,
+        .renderAimBeam = (CWeapon_renderAimBeam *)core_weapon_cpp_CWeapon_renderAimBeam_FUN_005ee830,
         .updateLighting = (CWeapon_updateLighting *)core_weapon_cpp_CWeapon_updateLighting_FUN_005ee4a0
     }
 };
@@ -4460,7 +4460,7 @@ CWeapon_full_vtable g_CTurretVTable = {
         .fire = (CWeapon_fire *)core_turret_cpp_CTurret_fire_FUN_005e3750,
         .isReadyToFire = (CWeapon_isReadyToFire *)core_weapon_cpp_CWeapon_isReadyToFire_FUN_005ee710,
         .getDamage = (CWeapon_getDamage *)core_turret_cpp_CTurret_getDamage_FUN_005e36f0,
-        .fireProjectile = (CWeapon_fireProjectile *)core_weapon_cpp_CWeapon_fireProjectile_FUN_005ee830,
+        .renderAimBeam = (CWeapon_renderAimBeam *)core_weapon_cpp_CWeapon_renderAimBeam_FUN_005ee830,
         .updateLighting = (CWeapon_updateLighting *)core_weapon_cpp_CWeapon_updateLighting_FUN_005ee4a0
     }
 };
@@ -4533,7 +4533,7 @@ CWeapon_full_vtable g_CWeaponVTable = {
         .fire = (CWeapon_fire *)core_weapon_cpp_CWeapon_fire_FUN_005ee6e0,
         .isReadyToFire = (CWeapon_isReadyToFire *)core_weapon_cpp_CWeapon_isReadyToFire_FUN_005ee710,
         .getDamage = (CWeapon_getDamage *)core_weapon_cpp_CWeapon_getDamage_FUN_005ee730,
-        .fireProjectile = (CWeapon_fireProjectile *)core_weapon_cpp_CWeapon_fireProjectile_FUN_005ee830,
+        .renderAimBeam = (CWeapon_renderAimBeam *)core_weapon_cpp_CWeapon_renderAimBeam_FUN_005ee830,
         .updateLighting = (CWeapon_updateLighting *)core_weapon_cpp_CWeapon_updateLighting_FUN_005ee4a0
     }
 };

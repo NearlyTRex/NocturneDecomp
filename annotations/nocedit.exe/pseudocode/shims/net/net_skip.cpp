@@ -9,7 +9,6 @@
 #include "nocturne.h"
 #include "core/debug_log.h"
 
-#include <cstdio>
 #include <cstring>
 
 #if !NOCTURNE_AUTHENTIC_NETPLAY
@@ -99,20 +98,12 @@ static void skip_notice(const char *text)
         SKIP_NOTICE_SECONDS);
 }
 
-// Named once when a skippable cinematic starts, because nothing else on screen
-// says the option is there. The binding is whatever this player set, and
-// getKeyDisplayName covers all three control schemes - it routes a pad code
-// through nocturne_gamepad_code_name, so a player on a pad is told the button
-// their pad actually calls it rather than a keyboard name they cannot press.
+// Said once when a skippable cinematic starts, because nothing else on screen
+// says the option is there. It names no control: the vote is cast from the
+// Escape dialog, which every control scheme already reaches.
 static void skip_announce_control(void)
 {
-    char message[128];
-
-    std::snprintf(message, sizeof(message), "%s: %s",
-                  support_newmsg_cpp_getLocalizedString_FUN_005441f0((char *)"Skip cinematic"),
-                  core_menu_cpp_getKeyDisplayName_FUN_005134e0(
-                      (EInputCodeType)g_CGamePtr->key_fire));
-    core_game_cpp_CGame_displayMessage_FUN_004d7f20(g_CGamePtr, message, SKIP_NOTICE_SECONDS);
+    skip_notice("This cinematic can be skipped - see the pause menu");
 }
 
 static void skip_broadcast(SNetPacketHeader *packet)
@@ -201,7 +192,6 @@ extern "C" void nocturne_net_skip_poll(void)
     CNetGame *net_game;
     int       label;
     int       local_index;
-    int       pressed;
 
     if (skip_is_network_game() == 0) {
         skip_clear_votes();
@@ -233,25 +223,10 @@ extern "C" void nocturne_net_skip_poll(void)
         return;
     }
 
-    // The key toggles. A request already committed cannot be taken back - the
-    // frame is set and the other machines are counting on it - so the control
-    // goes quiet once the host has scheduled the skip.
-    if (s_commit_pending == 0) {
-        pressed = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr, g_CGamePtr->key_fire);
-        if (pressed != 0) {
-            s_local_voted        = (s_local_voted == 0) ? 1 : 0;
-            s_votes[local_index] = s_local_voted;
-            if (s_local_voted == 0) {
-                skip_notice("Skip request withdrawn");
-            }
-            else if (skip_everyone_voted() == 0) {
-                skip_notice("Skip requested - waiting for the other player");
-            }
-        }
-    }
-
-    // An answer, not a change, sent every frame: that is what lets the key
+    // An answer, not a change, sent every frame: that is what lets the menu
     // withdraw one, and it heals a dropped or reordered datagram without acks.
+    // This machine's own answer is set from the pause menu — see
+    // nocturne_net_skip_toggle_vote — and this is the only thing that carries it.
     skip_send_vote(label, s_local_voted);
 
     if (net_game->connection_type == CONNECTION_HOST) {
@@ -264,6 +239,76 @@ extern "C" void nocturne_net_skip_poll(void)
         if (s_commit_pending != 0) {
             skip_send_commit();
         }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// The pause menu's entry
+// -----------------------------------------------------------------------------
+
+// s_table_label is what poll() last saw, so it is only current while poll() is
+// running. It stops while the Escape dialog is up — CGame::processHotkeys sits
+// behind a g_ModalDialogActive guard — which is exactly when these three are
+// called, so they read the cinematic directly rather than trusting the table.
+// The label still has to match: a cinematic that ended while the dialog was open
+// leaves a table belonging to a scene that is over.
+static int skip_menu_label(void)
+{
+    int label;
+
+    if (skip_is_network_game() == 0) {
+        return -2;
+    }
+    label = skip_current_label();
+    if ((label == -2) || (label != s_table_label)) {
+        return -2;
+    }
+    return label;
+}
+
+extern "C" int nocturne_net_skip_vote_available(void)
+{
+    int local_index;
+
+    if (skip_menu_label() == -2) {
+        return 0;
+    }
+    // Scheduled already: the frame is set and the other machines are counting on
+    // it, so there is nothing left to answer.
+    if (s_commit_pending != 0) {
+        return 0;
+    }
+    local_index = g_CNetGamePtr->local_player_index;
+    if ((local_index < 0) || (SKIP_MAX_PLAYERS <= local_index)) {
+        return 0;
+    }
+    return 1;
+}
+
+extern "C" const char *nocturne_net_skip_vote_label(void)
+{
+    return (s_local_voted != 0) ? "Withdraw skip vote." : "Vote to skip cinematic.";
+}
+
+extern "C" void nocturne_net_skip_toggle_vote(void)
+{
+    int local_index;
+
+    // Re-checked rather than assumed: the caller decided to draw the entry on an
+    // earlier frame, and the cinematic may have ended since.
+    if (nocturne_net_skip_vote_available() == 0) {
+        return;
+    }
+    local_index = g_CNetGamePtr->local_player_index;
+
+    s_local_voted        = (s_local_voted == 0) ? 1 : 0;
+    s_votes[local_index] = s_local_voted;
+
+    if (s_local_voted == 0) {
+        skip_notice("Skip request withdrawn");
+    }
+    else if (skip_everyone_voted() == 0) {
+        skip_notice("Skip requested - waiting for the other player");
     }
 }
 
@@ -286,12 +331,12 @@ extern "C" int nocturne_net_skip_on_vote(const void *packet, int packet_size)
     }
 
     // Told once, when their answer turns from no to yes: nobody would know to
-    // press anything otherwise, and a skip that needs both players is a request
-    // to the other one. A withdrawal is silent - it asks for nothing - but it
-    // arms the notice again, so pressing a second time still reaches them.
+    // answer otherwise, and a skip that needs both players is a request to the
+    // other one. A withdrawal is silent - it asks for nothing - but it arms the
+    // notice again, so asking a second time still reaches them.
     if ((incoming->wants_skip != 0) && (s_votes[incoming->voter_player] == 0) &&
         (s_local_voted == 0)) {
-        skip_notice("The other player wants to skip - press fire to agree");
+        skip_notice("The other player wants to skip - agree from the pause menu");
     }
     s_votes[incoming->voter_player] = (incoming->wants_skip != 0) ? 1 : 0;
     return 1;

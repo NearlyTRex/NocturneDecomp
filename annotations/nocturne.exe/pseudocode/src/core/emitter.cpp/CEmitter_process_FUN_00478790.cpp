@@ -47,7 +47,7 @@ void __cdecl core_emitter_cpp_CEmitter_process_FUN_00478790(CEmitter *this_ptr,f
   float local_28;
   float local_14;
   
-  iVar8 = this_ptr->was_active;
+  iVar8 = this_ptr->was_on_screen;
   iVar4 = _strcmp(this_ptr->event_on,"none");
   if ((iVar4 != 0) &&
      (iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30

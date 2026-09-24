@@ -50,6 +50,10 @@ static unsigned int s_last_flag_fingerprint = 0;
 static int   s_process_calls = 0;
 static float s_last_delta_time = 0.0f;
 
+// The frame the trace is currently on, so a probe firing from inside that frame
+// can tag its line with the same number the F/A/E lines carry.
+static int   s_last_sequence = 0;
+
 // Truncate once per run and append from then on. nocturne_sim_trace_reset
 // closes the file at every mission start, and reopening with "w" threw away
 // everything before the transition — on a host that moved to a second mission
@@ -129,6 +133,68 @@ static const char *trace_slot_name(int slot)
         return "<null>";
     }
     return character->base.actor_name;
+}
+
+// The weapon a character carries, for the classes that can hold a gun:
+// CStranger and CScat keep it in a field of their own, CGabriella uses the
+// inventory's selection. Memoised by vtable for
+// the reason given at sync_is_cosmetic in net_sync.cpp - castToClassHash per
+// character per frame is enough to trip the host's lockstep guard.
+#define TRACE_CLASS_CACHE 128
+
+#define TRACE_ARMED_NONE      0
+#define TRACE_ARMED_STRANGER  1
+#define TRACE_ARMED_SCAT      2
+#define TRACE_ARMED_GABRIELLA 3
+
+static void *s_armed_vtable[TRACE_CLASS_CACHE];
+static char  s_armed_kind[TRACE_CLASS_CACHE];
+static int   s_armed_count = 0;
+
+static CWeapon *trace_weapon(CCharacter *character)
+{
+    void *vtable = (void *)character->base.vtable._ub;
+    int   kind   = TRACE_ARMED_NONE;
+    int   i;
+
+    for (i = 0; i < s_armed_count; i++) {
+        if (s_armed_vtable[i] == vtable) {
+            break;
+        }
+    }
+    if (i < s_armed_count) {
+        kind = (int)s_armed_kind[i];
+    }
+    else {
+        if (core_actor_cpp_castToClassHash_FUN_0040c790(
+                &character->base, g_CStrangerClassInfo.name_hash) != (CDemonActor *)0x0) {
+            kind = TRACE_ARMED_STRANGER;
+        }
+        else if (core_actor_cpp_castToClassHash_FUN_0040c790(
+                     &character->base, g_CScatClassInfo.name_hash) != (CDemonActor *)0x0) {
+            kind = TRACE_ARMED_SCAT;
+        }
+        else if (core_actor_cpp_castToClassHash_FUN_0040c790(
+                     &character->base, g_CGabriellaClassInfo.name_hash) != (CDemonActor *)0x0) {
+            kind = TRACE_ARMED_GABRIELLA;
+        }
+        if (s_armed_count < TRACE_CLASS_CACHE) {
+            s_armed_vtable[s_armed_count] = vtable;
+            s_armed_kind[s_armed_count]   = (char)kind;
+            s_armed_count++;
+        }
+    }
+
+    if (kind == TRACE_ARMED_STRANGER) {
+        return ((CStranger *)character)->weapon;
+    }
+    if (kind == TRACE_ARMED_SCAT) {
+        return ((CScat *)character)->weapon_actor;
+    }
+    if (kind == TRACE_ARMED_GABRIELLA) {
+        return ((CGabriella *)character)->base.inventory.selected_weapon;
+    }
+    return (CWeapon *)0x0;
 }
 
 extern "C" void nocturne_sim_trace_reset(void)
@@ -338,11 +404,98 @@ extern "C" int nocturne_sim_trace_process_calls(void)
     return s_process_calls;
 }
 
+// Every damage event, at the point it is applied rather than after its result has
+// settled into a position. A dismemberment removes a character and creates a
+// dozen actors, so by the time the next frame's character pass runs, a hit that
+// landed one frame apart on the two machines and a hit that landed on only one of
+// them look the same. This says which it was, and on what frame.
+//
+// Deliberately at entry to CCharacter::processDamage: the damage type decides
+// which of explode/dismember/shatter runs, so recording it before the branch is
+// what distinguishes "the same hit, one frame late" from "a different hit".
+extern "C" void nocturne_sim_trace_damage(CCharacter *target, SDamageInfo *info)
+{
+    CNetGame *net_game = g_CNetGamePtr;
+    FILE     *out;
+    int       slot;
+
+    if ((net_game == (CNetGame *)0x0) || (net_game->network_mode != NET_MODE_PLAYING)) {
+        return;
+    }
+    if ((target == (CCharacter *)0x0) || (info == (SDamageInfo *)0x0) ||
+        (g_CDemonSetPtr == (CDemonSet *)0x0)) {
+        return;
+    }
+
+    out = trace_file();
+    if (out == (FILE *)0) {
+        return;
+    }
+
+    // Same no-deref rule as the victim field: the attacker slot may hold the
+    // 32-bit -1 sentinel, so it is named by matching the pointer against the
+    // set's own list rather than by reading through it. trace_victim_slot only
+    // ever compares, which is why an actor pointer may be handed to it.
+    slot = trace_victim_slot((CCharacter *)info->attacker);
+
+    // Not flushed here. A firefight applies damage many times in a frame — a
+    // shotgun resolves per pellet, and every decal is its own call — so a flush
+    // per event is a syscall per hit on the frame path, which is the cost that
+    // makes the host fall behind its own guard. The frame writer flushes, so a
+    // line lands at the end of the frame after the one that wrote it.
+    std::fprintf(out, "%d D %-24s type=%d amount=%.9g hp=%.9g from=%d(%s)\n",
+                 s_last_sequence, target->base.actor_name,
+                 (int)info->damage_type, (double)info->damage_amount,
+                 (double)target->hit_points, slot, trace_slot_name(slot));
+}
+
+// Every body part, at the point it enters the actor list. This is the funnel all
+// sixteen dismemberment paths pass through, and the reason it is instrumented
+// here rather than at the damage that caused it: processDamage is a vtable entry
+// with forty overrides, and a class that dismembers in its own override —
+// CGhoul::processDamage calls CGhoul::processDismemberment before it subtracts
+// hit_points, and never chains to CCharacter::processDamage — reaches none of the
+// base implementation. A probe on the base therefore sees nothing for the classes
+// that matter, while this one cannot be bypassed.
+//
+// A dismemberment creates about a dozen parts at once, so the count on a frame is
+// as much of the signal as the names: one machine emitting a burst a frame before
+// the other is the phase error, and one emitting a burst alone is divergence.
+extern "C" void nocturne_sim_trace_bodypart(CDemonActor *part, CDemonActor *source)
+{
+    CNetGame *net_game = g_CNetGamePtr;
+    FILE     *out;
+
+    if ((net_game == (CNetGame *)0x0) || (net_game->network_mode != NET_MODE_PLAYING)) {
+        return;
+    }
+    if (part == (CDemonActor *)0x0) {
+        return;
+    }
+
+    out = trace_file();
+    if (out == (FILE *)0) {
+        return;
+    }
+
+    // Not flushed: see the damage probe. The frame writer carries it.
+    std::fprintf(out, "%d B %-24s pos=%.9g,%.9g,%.9g from=%s\n",
+                 s_last_sequence, part->actor_name,
+                 (double)part->location.position.x,
+                 (double)part->location.position.y,
+                 (double)part->location.position.z,
+                 (source != (CDemonActor *)0x0) ? source->actor_name : "-");
+}
+
 extern "C" void nocturne_sim_trace_frame(int sequence_number)
 {
     CNetGame *net_game = g_CNetGamePtr;
     FILE     *out;
     int       i;
+
+    // Held for the damage probe, which fires from inside the frame and has no
+    // sequence number of its own to quote.
+    s_last_sequence = sequence_number;
 
     if ((net_game == (CNetGame *)0x0) || (net_game->network_mode != NET_MODE_PLAYING)) {
         return;
@@ -379,6 +532,10 @@ extern "C" void nocturne_sim_trace_frame(int sequence_number)
         int          script_slot    = -1;
         int          in_combat      = -1;
         float        search_timer   = 0.0f;
+        unsigned int fire_bones     = 0;
+        float        fire_size      = 0.0f;
+        CWeapon     *weapon;
+        int          f;
 
         if (character == (CCharacter *)0x0) {
             std::fprintf(out, "%d %04d (null)\n", sequence_number, i);
@@ -428,6 +585,34 @@ extern "C" void nocturne_sim_trace_frame(int sequence_number)
                      victim_slot, trace_slot_name(victim_slot),
                      script_slot, trace_slot_name(script_slot),
                      in_combat, (double)search_timer);
+
+        // Burning kills without a damage call: CGunFlame::init ignites by
+        // proximity and CCharacter::processFire dismembers once every bone has
+        // burned out. The bone fingerprint separates a different ignition from
+        // a different burn rate.
+        for (f = 0; f < character->fire_count; f++) {
+            fire_bones = fire_bones * 31u + (unsigned int)character->fires[f].bone_index;
+            fire_size  = fire_size + character->fires[f].size;
+        }
+        if ((character->fire_count != 0) || (character->is_fully_burned != 0)) {
+            std::fprintf(out, "%d %04dF fire=%d bones=%08x size=%.9g burned=%d alpha=%.9g\n",
+                         sequence_number, i, character->fire_count, fire_bones,
+                         (double)fire_size, character->is_fully_burned,
+                         (double)character->burn_alpha);
+        }
+
+        // The weapon's world position is where a shot or a flame starts.
+        weapon = trace_weapon(character);
+        if (weapon != (CWeapon *)0x0) {
+            std::fprintf(out, "%d %04dW weapon=%.9g,%.9g,%.9g orient=%.9g,%.9g,%.9g\n",
+                         sequence_number, i,
+                         (double)weapon->base.location.position.x,
+                         (double)weapon->base.location.position.y,
+                         (double)weapon->base.location.position.z,
+                         (double)weapon->base.orient.vec.x,
+                         (double)weapon->base.orient.vec.y,
+                         (double)weapon->base.orient.vec.z);
+        }
     }
 
     trace_actor_changes(out, sequence_number);
@@ -439,6 +624,8 @@ extern "C" void nocturne_sim_trace_frame(int sequence_number)
 #else  /* disabled */
 
 extern "C" void nocturne_sim_trace_frame(int) {}
+extern "C" void nocturne_sim_trace_damage(CCharacter *, SDamageInfo *) {}
+extern "C" void nocturne_sim_trace_bodypart(CDemonActor *, CDemonActor *) {}
 extern "C" void nocturne_sim_trace_reset(void) {}
 extern "C" void nocturne_sim_trace_note_process(float) {}
 extern "C" int  nocturne_sim_trace_process_calls(void) { return 0; }

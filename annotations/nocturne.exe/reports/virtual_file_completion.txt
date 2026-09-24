@@ -329,7 +329,7 @@ FILES AT 50-89%
            - core_lightgun.cpp_CLightGun_updateBeamLight_FUN_004c6ff0 (25 lines) [stack_ref, unaffected_reg]
            - core_lightgun.cpp_CLightGun_fire_FUN_004c71a0 (230 lines) [pointer_cast, sub84_truncation, unknown_field, unresolved_funcptr]
            - core_lightgun.cpp_CLightGun_process_FUN_004c79a0 (73 lines) [raw_address_constant]
-           - core_lightgun.cpp_CLightGun_fireProjectile_FUN_004c7ca0 (116 lines) [self_copy_guard, unrolled_memcpy]
+           - core_lightgun.cpp_CLightGun_renderAimBeam_FUN_004c7ca0 (116 lines) [self_copy_guard, unrolled_memcpy]
    69.2% | core/npc.cpp
          9/13 clean, 4 remaining
            - core_npc.cpp_CNPC_dtor_FUN_004b68c0 (34 lines) [negative_offset]
@@ -352,7 +352,7 @@ FILES AT 50-89%
            - core_weapon.cpp_CWeapon_onDropped_FUN_00554310 (30 lines) [stack_param, stack_ref, unrolled_memcpy]
            - core_weapon.cpp_CWeapon_updateLighting_FUN_005543c0 (51 lines) [stack_param, stack_ref, unaffected_reg, undefined_data, unknown_field, warning_overlapping_globals]
            - core_weapon.cpp_CWeapon_setupPhysicsBox_FUN_00554660 (30 lines) [undefined_data]
-           - core_weapon.cpp_CWeapon_fireProjectile_FUN_00554750 (65 lines) [unrolled_memcpy]
+           - core_weapon.cpp_CWeapon_renderAimBeam_FUN_00554750 (65 lines) [unrolled_memcpy]
    66.7% | core/crossbow.cpp
          8/12 clean, 4 remaining
            - core_crossbow.cpp_CCrossbow_ctor_FUN_0043cf10 (39 lines) [derived_field_index_pun, negative_offset, pointer_truncation]
@@ -1143,7 +1143,7 @@ FILES AT 50-89%
            - core_elephant.cpp_CElephantGun_process_FUN_004777a0 (30 lines) [stack_param, stack_ref, unrolled_memcpy]
            - core_elephant.cpp_CElephantGun_fire_FUN_00477890 (250 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, stack_param, stack_ref, suspect_float, unknown_field, unresolved_funcptr, unresolved_register, unrolled_memcpy]
            - core_elephant.cpp_CElephantGun_onFired_FUN_00477fd0 (34 lines) [unrolled_memcpy]
-           - core_elephant.cpp_CElephantGun_fireProjectile_FUN_00478120 (62 lines) [self_copy_guard]
+           - core_elephant.cpp_CElephantGun_renderAimBeam_FUN_00478120 (62 lines) [self_copy_guard]
    50.0% | core/fire.cpp
          91/182 clean, 91 remaining
            - core_fire.cpp_CSmokeParticle_setupRenderState_FUN_00482680 (57 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_ref, undefined_data, unrolled_memcpy, warning_overlapping_globals]
@@ -1266,7 +1266,7 @@ FILES AT 50-89%
            - core_shotgun.cpp_CShotgun_process_FUN_00515db0 (30 lines) [stack_param, stack_ref, unrolled_memcpy]
            - core_shotgun.cpp_CShotgun_fire_FUN_00515ea0 (255 lines) [pointer_cast, pointer_truncation, stack_param, stack_ref, suspect_float, unknown_field, unresolved_funcptr, unresolved_register, unrolled_memcpy]
            - core_shotgun.cpp_CShotgun_onFired_FUN_00516620 (38 lines) [unrolled_memcpy]
-           - core_shotgun.cpp_CShotgun_fireProjectile_FUN_00516770 (62 lines) [self_copy_guard]
+           - core_shotgun.cpp_CShotgun_renderAimBeam_FUN_00516770 (62 lines) [self_copy_guard]
    50.0% | core/sound.cpp
          20/40 clean, 20 remaining
            - core_sound.cpp_filterSoundFilesByPattern_FUN_0052c930 (41 lines) [unrolled_strcpy, warning_overlapping_globals]

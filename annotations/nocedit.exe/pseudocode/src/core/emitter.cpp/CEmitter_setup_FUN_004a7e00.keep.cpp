@@ -23,7 +23,7 @@ void __cdecl core_emitter_cpp_CEmitter_setup_FUN_004a7e00(CEmitter *this_ptr)
 #endif
   }
   this_ptr->sfx_handle = 0;
-  this_ptr->was_active = 0;
+  this_ptr->was_on_screen = 0;
   this_ptr->prev_emitter_state = this_ptr->emitter_state;
   return;
 }

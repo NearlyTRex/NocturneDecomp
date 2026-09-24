@@ -49,7 +49,15 @@ void __cdecl core_emitter_cpp_CEmitter_process_FUN_004a8070(CEmitter *this_ptr,f
 #else
   sim_target = nocturne_net_sim_target_for((CDemonActor *)this_ptr);
 #endif
-  iVar8 = this_ptr->was_active;
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+  iVar8 = this_ptr->was_on_screen;
+  if ((g_CNetGamePtr != (CNetGame *)0x0) &&
+      (g_CNetGamePtr->connection_type != CONNECTION_NONE)) {
+    iVar8 = 1;
+  }
+#else
+  iVar8 = this_ptr->was_on_screen;
+#endif
   iVar4 = _strcmp(this_ptr->event_on,"none");
   if ((iVar4 != 0) &&
      (iVar9 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0

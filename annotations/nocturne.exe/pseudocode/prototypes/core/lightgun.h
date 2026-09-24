@@ -47,9 +47,9 @@ void __cdecl CLightGun::process(CLightGun *this_ptr,float delta_time);
 // Address: 004c7c60
 float __cdecl CLightGun::getDamage(CLightGun *this_ptr);
 
-// Original: core_lightgun.cpp_CLightGun_fireProjectile_FUN_004c7ca0
+// Original: core_lightgun.cpp_CLightGun_renderAimBeam_FUN_004c7ca0
 // Address: 004c7ca0
-void __cdecl CLightGun::fireProjectile(CLightGun *this_ptr);
+void __cdecl CLightGun::renderAimBeam(CLightGun *this_ptr);
 
 // Original: core_lightgun.cpp_CLightGun_dtor_FUN_004c8040
 // Address: 004c8040

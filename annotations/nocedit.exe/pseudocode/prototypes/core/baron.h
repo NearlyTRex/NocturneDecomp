@@ -99,9 +99,9 @@ int __cdecl CBaronWeapon::fire(CBaronWeapon *this_ptr);
 // Address: 00413e30
 int __cdecl CBaronWeapon::isReadyToFire(CBaronWeapon *this_ptr);
 
-// Original: core_baron.cpp_CBaronWeapon_fireProjectile_FUN_00413e60
+// Original: core_baron.cpp_CBaronWeapon_renderAimBeam_FUN_00413e60
 // Address: 00413e60
-void __cdecl CBaronWeapon::fireProjectile(CBaronWeapon *this_ptr);
+void __cdecl CBaronWeapon::renderAimBeam(CBaronWeapon *this_ptr);
 
 // Original: core_baron.cpp_CBaronWeapon_setWeaponState_FUN_00413e90
 // Address: 00413e90

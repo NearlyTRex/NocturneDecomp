@@ -33,8 +33,7 @@ int __cdecl core_scat_cpp_CScat_renderOpaque_FUN_00557df0(CScat *this_ptr)
       fVar3 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840
                         ((CCharacter *)this_ptr,iVar2);
       if ((float)0.94999999999999996 < fVar3) {
-        (*(((((CCharacter *)this_ptr->weapon_actor)->base).vtable._uc)->_uc).releaseFromGrab)
-                  ((CCharacter *)this_ptr->weapon_actor);
+        (*(((this_ptr->weapon_actor->base).vtable._uw)->_uw).renderAimBeam)(this_ptr->weapon_actor);
         return 1;
       }
       return 1;

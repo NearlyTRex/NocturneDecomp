@@ -125,6 +125,14 @@ int nocturne_ui_wrap_to_width(struct CBitFont *font, char *text,
 void nocturne_ui_push_clip(int left, int top, int right, int bottom);
 void nocturne_ui_pop_clip(void);
 
+// The whole screen, ignoring what is already in force, popped by the matching
+// nocturne_ui_pop_clip. For drawing that belongs to the frame rather than to
+// whatever window is on the stack: CEditorTools::createModalWindow narrows the
+// clip to a dialog's rect and leaves it there until the dialog is dismissed, so
+// a frame-driven dialog clips everything the game draws underneath it for as
+// long as it is up. The push above cannot express this — it only ever narrows.
+void nocturne_ui_push_screen_clip(void);
+
 // =============================================================================
 // The editor/dialog widget layer (CPickList, CEditorTools windows, CEdButton,
 // CEdScrollBar) — the in-game pause menu among them

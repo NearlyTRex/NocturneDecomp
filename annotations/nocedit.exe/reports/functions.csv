@@ -473,7 +473,7 @@ core_baron.cpp_CBaronWeapon_process_FUN_00413dc0,00413dc0,core/baron.cpp,6,0,,6
 core_baron.cpp_CBaronWeapon_renderOpaque_FUN_00413de0,00413de0,core/baron.cpp,5,0,,5
 core_baron.cpp_CBaronWeapon_fire_FUN_00413df0,00413df0,core/baron.cpp,9,0,,9
 core_baron.cpp_CBaronWeapon_isReadyToFire_FUN_00413e30,00413e30,core/baron.cpp,22,0,,22
-core_baron.cpp_CBaronWeapon_fireProjectile_FUN_00413e60,00413e60,core/baron.cpp,4,0,,4
+core_baron.cpp_CBaronWeapon_renderAimBeam_FUN_00413e60,00413e60,core/baron.cpp,4,0,,4
 core_baron.cpp_CBaronWeapon_setWeaponState_FUN_00413e90,00413e90,core/baron.cpp,20,0,,20
 core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00413f20,00413f20,core/baron.cpp,35,0,,35
 core_baron.cpp_CBaron_onActorDeleted_FUN_00413ff0,00413ff0,core/baron.cpp,5,0,,5
@@ -2163,7 +2163,7 @@ core_dynamite.cpp_CDynamite_getActorType_FUN_0049cdb0,0049cdb0,core/dynamite.cpp
 core_dynamite.cpp_CDynamite_ctor_FUN_0049cdc0,0049cdc0,core/dynamite.cpp,22,0,,22
 core_dynamite.cpp_CDynamite_fire_FUN_0049ce70,0049ce70,core/dynamite.cpp,17,0,,17
 core_dynamite.cpp_CDynamite_getDamage_FUN_0049cee0,0049cee0,core/dynamite.cpp,6,0,,6
-core_dynamite.cpp_CDynamite_fireProjectile_FUN_0049cf10,0049cf10,core/dynamite.cpp,4,0,,4
+core_dynamite.cpp_CDynamite_renderAimBeam_FUN_0049cf10,0049cf10,core/dynamite.cpp,4,0,,4
 core_dynamite.cpp_CDynamite_lightFuse_FUN_0049cf20,0049cf20,core/dynamite.cpp,10,0,,10
 core_dynamite.cpp_CDynamite_isFuseLit_FUN_0049cf70,0049cf70,core/dynamite.cpp,7,0,,7
 core_dynamite.cpp_CDynamite_isFuseBurnedOut_FUN_0049cf90,0049cf90,core/dynamite.cpp,4,0,,4
@@ -2328,7 +2328,7 @@ core_elephant.cpp_CElephantGun_process_FUN_004a7070,004a7070,core/elephant.cpp,3
 core_elephant.cpp_CElephantGun_fire_FUN_004a7160,004a7160,core/elephant.cpp,214,0,,214
 core_elephant.cpp_CElephantGun_onFired_FUN_004a78a0,004a78a0,core/elephant.cpp,33,0,,33
 core_elephant.cpp_CElephantGun_getDamage_FUN_004a79b0,004a79b0,core/elephant.cpp,9,0,,9
-core_elephant.cpp_CElephantGun_fireProjectile_FUN_004a79f0,004a79f0,core/elephant.cpp,63,0,,63
+core_elephant.cpp_CElephantGun_renderAimBeam_FUN_004a79f0,004a79f0,core/elephant.cpp,63,0,,63
 core_elephant.cpp_CElephantGun_dtor_FUN_004a7be0,004a7be0,core/elephant.cpp,16,0,,16
 core_emitter.cpp_staticInit_FUN_004a7c30,004a7c30,core/emitter.cpp,8,0,,8
 core_emitter.cpp_factoryFuncEmitter_FUN_004a7c60,004a7c60,core/emitter.cpp,10,0,,10
@@ -2763,7 +2763,7 @@ core_flamegun.cpp_CFlameThrower_ctor_FUN_004cb880,004cb880,core/flamegun.cpp,22,
 core_flamegun.cpp_CFlameThrower_fire_FUN_004cb920,004cb920,core/flamegun.cpp,25,0,,25
 core_flamegun.cpp_CFlameThrower_process_FUN_004cb9b0,004cb9b0,core/flamegun.cpp,38,0,,38
 core_flamegun.cpp_CFlameThrower_getDamage_FUN_004cbab0,004cbab0,core/flamegun.cpp,9,0,,9
-core_flamegun.cpp_CFlameThrower_fireProjectile_FUN_004cbad0,004cbad0,core/flamegun.cpp,4,0,,4
+core_flamegun.cpp_CFlameThrower_renderAimBeam_FUN_004cbad0,004cbad0,core/flamegun.cpp,4,0,,4
 core_flamegun.cpp_CFlameThrower_getDamageAlt_FUN_004cbad1,004cbad1,core/flamegun.cpp,6,0,,6
 core_flamegun.cpp_CFlameThrower_dtor_FUN_004cbb00,004cbb00,core/flamegun.cpp,16,0,,16
 core_flashlit.cpp_staticInit_FUN_004cbb50,004cbb50,core/flashlit.cpp,8,0,,8
@@ -3497,7 +3497,7 @@ core_lightgun.cpp_CLightGun_canSeeTarget_FUN_00505b70,00505b70,core/lightgun.cpp
 core_lightgun.cpp_CLightGun_fire_FUN_00505c70,00505c70,core/lightgun.cpp,210,0,,210
 core_lightgun.cpp_CLightGun_process_FUN_00506450,00506450,core/lightgun.cpp,57,0,,57
 core_lightgun.cpp_CLightGun_getDamage_FUN_00506670,00506670,core/lightgun.cpp,9,0,,9
-core_lightgun.cpp_CLightGun_fireProjectile_FUN_005066b0,005066b0,core/lightgun.cpp,120,0,,120
+core_lightgun.cpp_CLightGun_renderAimBeam_FUN_005066b0,005066b0,core/lightgun.cpp,120,0,,120
 core_lightgun.cpp_CLightGun_addFilesToExtract_FUN_005066f0,005066f0,core/lightgun.cpp,4,0,,4
 core_lightgun.cpp_CLightGun_dtor_FUN_00506a50,00506a50,core/lightgun.cpp,16,0,,16
 core_litecone.cpp_staticInit_FUN_00506aa0,00506aa0,core/litecone.cpp,8,0,,8
@@ -3640,7 +3640,7 @@ core_melee.cpp_CMelee_ctor_FUN_0050e7d0,0050e7d0,core/melee.cpp,64,0,,64
 core_melee.cpp_CMelee_archive_FUN_0050e920,0050e920,core/melee.cpp,33,0,,33
 core_melee.cpp_CMelee_fire_FUN_0050ea40,0050ea40,core/melee.cpp,7,0,,7
 core_melee.cpp_CMelee_getDamage_FUN_0050ea70,0050ea70,core/melee.cpp,7,0,,7
-core_melee.cpp_CMelee_fireProjectile_FUN_0050eaa0,0050eaa0,core/melee.cpp,4,0,,4
+core_melee.cpp_CMelee_renderAimBeam_FUN_0050eaa0,0050eaa0,core/melee.cpp,4,0,,4
 core_melee.cpp_CMelee_canPickup_FUN_0050eab0,0050eab0,core/melee.cpp,11,0,,11
 core_melee.cpp_CMelee_getAllowedMeleeAttackTypes_FUN_0050eae0,0050eae0,core/melee.cpp,4,0,,4
 core_melee.cpp_CMelee_fillAttackDamageInfo_FUN_0050eaf0,0050eaf0,core/melee.cpp,11,0,,11
@@ -4547,7 +4547,7 @@ core_scat.cpp_CScat_process_FUN_005571f0,005571f0,core/scat.cpp,311,0,,311
 core_scat.cpp_CScat_updateAI_FUN_005578e0,005578e0,core/scat.cpp,158,0,,158
 core_scat.cpp_CScat_advanceMotionWithGrabDamage_FUN_00557d20,00557d20,core/scat.cpp,27,0,,27
 core_scat.cpp_CScat_archive_FUN_00557db0,00557db0,core/scat.cpp,5,0,,5
-core_scat.cpp_CScat_renderOpaque_FUN_00557df0,00557df0,core/scat.cpp,35,0,,35
+core_scat.cpp_CScat_renderOpaque_FUN_00557df0,00557df0,core/scat.cpp,34,0,,34
 core_scat.cpp_CScat_processDamage_FUN_00557ea0,00557ea0,core/scat.cpp,57,0,,57
 core_scat.cpp_CScat_isWeaponDrawn_FUN_00557ff0,00557ff0,core/scat.cpp,4,0,,4
 core_scat.cpp_CScat_drawWeapon_FUN_00558000,00558000,core/scat.cpp,5,0,,5
@@ -4938,7 +4938,7 @@ core_shotgun.cpp_CShotgun_process_FUN_00587f70,00587f70,core/shotgun.cpp,30,0,,3
 core_shotgun.cpp_CShotgun_fire_FUN_00588060,00588060,core/shotgun.cpp,218,0,,218
 core_shotgun.cpp_CShotgun_onFired_FUN_005887a0,005887a0,core/shotgun.cpp,37,0,,37
 core_shotgun.cpp_CShotgun_getDamage_FUN_005888b0,005888b0,core/shotgun.cpp,9,0,,9
-core_shotgun.cpp_CShotgun_fireProjectile_FUN_005888f0,005888f0,core/shotgun.cpp,63,0,,63
+core_shotgun.cpp_CShotgun_renderAimBeam_FUN_005888f0,005888f0,core/shotgun.cpp,63,0,,63
 core_shotgun.cpp_CShotgun_dtor_FUN_00588ae0,00588ae0,core/shotgun.cpp,16,0,,16
 core_shovel.cpp_staticInit_FUN_00588b30,00588b30,core/shovel.cpp,7,0,,7
 core_shovel.cpp_factoryFuncShovel_FUN_00588b60,00588b60,core/shovel.cpp,10,0,,10
@@ -4946,7 +4946,7 @@ core_shovel.cpp_CShovel_getActorType_FUN_00588b90,00588b90,core/shovel.cpp,4,0,,
 core_shovel.cpp_CShovel_ctor_FUN_00588ba0,00588ba0,core/shovel.cpp,17,0,,17
 core_shovel.cpp_CShovel_fire_FUN_00588c20,00588c20,core/shovel.cpp,6,0,,6
 core_shovel.cpp_CShovel_getDamage_FUN_00588c40,00588c40,core/shovel.cpp,6,0,,6
-core_shovel.cpp_CShovel_fireProjectile_FUN_00588c70,00588c70,core/shovel.cpp,4,0,,4
+core_shovel.cpp_CShovel_renderAimBeam_FUN_00588c70,00588c70,core/shovel.cpp,4,0,,4
 core_shovel.cpp_CShovel_dtor_FUN_00588c80,00588c80,core/shovel.cpp,16,0,,16
 core_simbox.cpp_staticInit_FUN_00588cd0,00588cd0,core/simbox.cpp,7,0,,7
 core_simbox.cpp_factoryFuncSimBox_FUN_00588d00,00588d00,core/simbox.cpp,10,0,,10
@@ -5627,7 +5627,7 @@ core_stranger.cpp_CStranger_tryClimbLadder_FUN_005c1fe0,005c1fe0,core/stranger.c
 core_stranger.cpp_CStranger_tryDescendLadder_FUN_005c2400,005c2400,core/stranger.cpp,135,0,,135
 core_stranger.cpp_CStranger_tryPlaceObject_FUN_005c2850,005c2850,core/stranger.cpp,260,0,,260
 core_stranger.cpp_CStranger_archive_FUN_005c2fe0,005c2fe0,core/stranger.cpp,41,0,,41
-core_stranger.cpp_CStranger_renderOpaque_FUN_005c3150,005c3150,core/stranger.cpp,210,0,,210
+core_stranger.cpp_CStranger_renderOpaque_FUN_005c3150,005c3150,core/stranger.cpp,208,0,,208
 core_stranger.cpp_CStranger_renderTransparent_FUN_005c3710,005c3710,core/stranger.cpp,11,0,,11
 core_stranger.cpp_adjustAimAngleForOffset_FUN_005c3750,005c3750,core/stranger.cpp,22,0,,22
 core_stranger.cpp_calculateAimAnglesWithOffset_FUN_005c37e0,005c37e0,core/stranger.cpp,46,0,,46
@@ -6271,7 +6271,7 @@ core_weapon.cpp_CWeapon_fire_FUN_005ee6e0,005ee6e0,core/weapon.cpp,8,0,,8
 core_weapon.cpp_CWeapon_isReadyToFire_FUN_005ee710,005ee710,core/weapon.cpp,4,0,,4
 core_weapon.cpp_CWeapon_getDamage_FUN_005ee730,005ee730,core/weapon.cpp,4,0,,4
 core_weapon.cpp_CWeapon_setupPhysicsBox_FUN_005ee740,005ee740,core/weapon.cpp,30,0,,30
-core_weapon.cpp_CWeapon_fireProjectile_FUN_005ee830,005ee830,core/weapon.cpp,63,0,,63
+core_weapon.cpp_CWeapon_renderAimBeam_FUN_005ee830,005ee830,core/weapon.cpp,63,0,,63
 core_weapon.cpp_CWeapon_onFired_FUN_005ee860,005ee860,core/weapon.cpp,4,0,,4
 core_weapon.cpp_CWeapon_getPropertyList_FUN_005ee9f0,005ee9f0,core/weapon.cpp,16,0,,16
 core_weapon.cpp_CWeapon_addFilesToExtract_FUN_005eea60,005eea60,core/weapon.cpp,6,0,,6

@@ -26,6 +26,9 @@ void __cdecl core_charactr_cpp_CCharacter_processDamage_FUN_0042c3c0(CCharacter 
   if (damage_info->damage_amount <= 0.0) {
     return;
   }
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+  nocturne_sim_trace_damage(this_ptr,damage_info);
+#endif
   fVar2 = (damage_info->impact_point).y;
   fVar3 = (damage_info->impact_point).x;
   fVar4 = (damage_info->impact_point).z;

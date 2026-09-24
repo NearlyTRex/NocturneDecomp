@@ -26,11 +26,11 @@ void __cdecl core_fire_cpp_CGunFlame_init_FUN_004c4c00(CGunFlame *this_ptr)
   CFlameCan *this_ptr_01;
   
   iVar4 = 0;
-  if (0 < g_CharactersOnFireCount) {
+  if (0 < g_GunFlameCandidateCount) {
     local_20 = 0;
     do {
-      this_ptr_02 = *(CCharacter **)((int)g_CharactersOnFire + local_20);
-      if (((this_ptr->flame_type == 2) || (this_ptr_02->show_in_editor != 0)) &&
+      this_ptr_02 = *(CCharacter **)((int)g_GunFlameCandidates + local_20);
+      if (((this_ptr->flame_type == 2) || (this_ptr_02->gun_flame_ignitable != 0)) &&
          (fVar4 = (this_ptr_02->base).location.position.x - (this_ptr->position).x,
          fVar6 = (this_ptr_02->base).location.position.y - (this_ptr->position).y,
          fVar5 = (this_ptr_02->base).location.position.z - (this_ptr->position).z,
@@ -43,7 +43,7 @@ void __cdecl core_fire_cpp_CGunFlame_init_FUN_004c4c00(CGunFlame *this_ptr)
       }
       local_20 = local_20 + 4;
       iVar4 = iVar4 + 1;
-    } while (iVar4 < g_CharactersOnFireCount);
+    } while (iVar4 < g_GunFlameCandidateCount);
   }
   iVar7 = 0;
   if (0 < g_FlameCanCount) {

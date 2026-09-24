@@ -17,7 +17,7 @@ void __cdecl core_fire_cpp_initProcess_FUN_004c4b00(void)
   int iVar4;
   int iVar5;
   
-  g_CharactersOnFireCount = 0;
+  g_GunFlameCandidateCount = 0;
   for (iVar5 = 0; iVar5 < g_CDemonSetPtr->character_count; iVar5 = iVar5 + 1) {
     this_ptr = g_CDemonSetPtr->characters[iVar5];
     EVar1 = (*(((this_ptr->base).vtable._uc)->_uc).getDeathState)(this_ptr);
@@ -25,13 +25,13 @@ void __cdecl core_fire_cpp_initProcess_FUN_004c4b00(void)
       iVar2 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004f2220
                         (&(this_ptr->base).location.position,50.0);
       if (iVar2 != 0) {
-        if (0x31 < g_CharactersOnFireCount) {
+        if (0x31 < g_GunFlameCandidateCount) {
           g_CurrentFilename = "..\\core\\fire.cpp";
           g_CurrentLineNumber = 3343;
           core_main_c_displayErrorAndQuit_FUN_00506f10("CGunFlame::initProcess - too many characters!");
         }
-        g_CharactersOnFire[g_CharactersOnFireCount] = this_ptr;
-        g_CharactersOnFireCount = g_CharactersOnFireCount + 1;
+        g_GunFlameCandidates[g_GunFlameCandidateCount] = this_ptr;
+        g_GunFlameCandidateCount = g_GunFlameCandidateCount + 1;
       }
     }
   }

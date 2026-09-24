@@ -142,7 +142,7 @@ LAB_005e24c7:
     core_main_c_displayErrorAndQuit_FUN_00506f10("CTurret::process - invalid state");
   }
   if (-1 < (this_ptr->base).muzzle_flash_color.r) {
-    (*(((this_ptr->base).base.vtable._uw)->_uw).fireProjectile)(&this_ptr->base);
+    (*(((this_ptr->base).base.vtable._uw)->_uw).renderAimBeam)(&this_ptr->base);
   }
   fVar2 = (this_ptr->base).fire_cooldown_timer;
   iVar5 = this_ptr->fire_sound_frames;

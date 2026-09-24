@@ -146,7 +146,7 @@ void __cdecl core_elephant_cpp_CElephantGun_process_FUN_004777a0(CElephantGun *t
 int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_00477890(CElephantGun *this_ptr);
 void __cdecl core_elephant_cpp_CElephantGun_onFired_FUN_00477fd0(CElephantGun *this_ptr);
 float __cdecl core_elephant_cpp_CElephantGun_getDamage_FUN_004780e0(CElephantGun *this_ptr);
-void __cdecl core_elephant_cpp_CElephantGun_fireProjectile_FUN_00478120(CElephantGun *this_ptr);
+void __cdecl core_elephant_cpp_CElephantGun_renderAimBeam_FUN_00478120(CElephantGun *this_ptr);
 CElephantGun * __cdecl core_elephant_cpp_CElephantGun_dtor_FUN_00478310(CElephantGun *this_ptr,uint flags);
 void __cdecl core_emitter_cpp_staticInit_FUN_00478360(void);
 CEmitter * __cdecl core_emitter_cpp_factoryFuncEmitter_FUN_00478390(void);

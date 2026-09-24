@@ -21,7 +21,7 @@ CNPC * __cdecl core_npc_cpp_CNPC_ctor_FUN_005447e0(CNPC *this_ptr)
   ADJ(pCVar2)->base.collision_cylinder_top = -999.0;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&ADJ(pCVar2)->base.model,"priest.dfm");
-  ADJ(pCVar2)->base.show_in_editor = 0;
+  ADJ(pCVar2)->base.gun_flame_ignitable = 0;
   ADJ(pCVar2)->shoot_me = 0;
   ADJ(pCVar2)->pool_me = 0;
   return ADJ(pCVar2);

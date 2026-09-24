@@ -11,6 +11,14 @@
 // "Skip cinematic." item — and with it every way to skip — exists in single
 // player alone.
 //
+// The skip is offered in the same place here: an entry in the abort/leave dialog,
+// in both the host and the client branch, which is where a network game's Escape
+// key already goes. That dialog is driven a frame at a time through
+// CPickList::handleDialogInput rather than the blocking
+// displayChoicesAndWaitForInput the single-player menu uses, so the simulation
+// keeps running underneath it and lockstep is never stalled by one player reading
+// their own menu.
+//
 // WHAT A SKIP ACTUALLY IS. The menu item runs two different mechanisms behind
 // one action, and which one it gets depends on the script:
 //
@@ -36,8 +44,8 @@
 //
 // A vote is a LEVEL, not an edge: it carries whether that player wants to skip
 // right now, and every machine broadcasts its own answer every frame for the
-// length of a skippable cinematic. That is what makes pressing the key a second
-// time able to withdraw the request — a withdrawal is just the same packet
+// length of a skippable cinematic. That is what makes selecting the entry a
+// second time able to withdraw the request — a withdrawal is just the same packet
 // carrying zero — and it costs nothing in reliability, since state re-sent every
 // frame heals a dropped or reordered datagram without acks or serials. The
 // commit is re-sent the same way while it is still in the future, because the
@@ -46,7 +54,7 @@
 //
 // The withdrawal window closes when the last player agrees: the host commits on
 // the frame it sees every answer set, and a commit already scheduled is not
-// recalled. So the press that completes the agreement is the confirmation, and
+// recalled. So the answer that completes the agreement is the confirmation, and
 // only a player still waiting on someone else can take theirs back.
 //
 // WHY is_processing IS RAISED OVER THE SKIP. CScript::step reaches randomness
@@ -84,17 +92,33 @@
 extern "C" {
 #endif
 
-// Reads the skip control, keeps this machine's answer and any pending commit on
-// the wire, and — on the host — issues the commit once every player has agreed.
-// Called once per frame from CGame::processHotkeys, which is already inside that
-// function's "no modal dialog, no skip in progress" guard.
+// Keeps this machine's answer and any pending commit on the wire, and — on the
+// host — issues the commit once every player has agreed. Called once per frame
+// from CGame::processHotkeys, which is already inside that function's "no modal
+// dialog, no skip in progress" guard.
 //
-// The control is the player's own fire key, and it toggles: press to ask, press
-// again to take it back. Hero controls are dead for the length of a cinematic —
-// CGame::playerControls skips the whole keyboard pass while hero_controls_blocked
-// is set, and the letterBox command sets it — so the binding carries no gameplay
-// meaning here, and it is already what dismisses a full-screen picture.
+// It reads no control of its own. The vote is cast from the network pause menu
+// instead, through the three entry points below: the shipped game's own way to
+// skip is a pause-menu item, and a menu entry needs no binding, collides with no
+// gameplay action, and reads the same on a keyboard as on a pad. See
+// nocturne_net_skip_vote_available.
 void nocturne_net_skip_poll(void);
+
+// The network pause menu's skip entry. CGame::runGameSession offers it in both
+// the host and the client branch of the Escape dialog — a commit needs every
+// player's answer, so every player needs somewhere to give one.
+//
+// Available only while this machine is in a skippable cinematic and the host has
+// not already scheduled the skip: once the frame is set the other machines are
+// counting on it, so the answer can no longer be taken back.
+//
+// The label reflects what selecting it would do, because the entry is a toggle
+// and the dialog closes behind it: asking, then reopening the menu, offers the
+// withdrawal. The string is returned untranslated, for the caller to pass
+// through getLocalizedString like the entries around it.
+int         nocturne_net_skip_vote_available(void);
+const char *nocturne_net_skip_vote_label(void);
+void        nocturne_net_skip_toggle_vote(void);
 
 // Feeds one received packet to this module. Returns 1 when it was one of ours
 // and has been consumed. Reached from CNetGame::processPacket.

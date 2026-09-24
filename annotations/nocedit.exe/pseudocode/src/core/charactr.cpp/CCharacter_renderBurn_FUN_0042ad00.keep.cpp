@@ -25,7 +25,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderBurn_FUN_0042ad00(CCharacter *th
   float fVar4;
   int iVar3;
   float fVar5;
-  
+
   if (this_ptr->fire_count == 0) {
     return;
   }
@@ -70,7 +70,13 @@ void __cdecl core_charactr_cpp_CCharacter_renderBurn_FUN_0042ad00(CCharacter *th
     }
 #endif
   }
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+  if ((iVar2 == pCVar6->bone_count) &&
+      ((g_CNetGamePtr == (CNetGame *)0x0) ||
+       (g_CNetGamePtr->connection_type == CONNECTION_NONE))) {
+#else
   if (iVar2 == pCVar6->bone_count) {
+#endif
     this_ptr->burn_alpha = 1.0;
     this_ptr->is_fully_burned = 1;
   }

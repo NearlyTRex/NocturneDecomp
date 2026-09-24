@@ -72,7 +72,7 @@ void __cdecl core_baron_cpp_CBaronWeapon_process_FUN_004113d0(CBaronWeapon *this
 void __cdecl core_baron_cpp_CBaronWeapon_renderOpaque_FUN_004113f0(CBaronWeapon *this_ptr);
 int __cdecl core_baron_cpp_CBaronWeapon_fire_FUN_00411400(CBaronWeapon *this_ptr);
 int __cdecl core_baron_cpp_CBaronWeapon_isReadyToFire_FUN_00411440(CBaronWeapon *this_ptr);
-void __cdecl core_baron_cpp_CBaronWeapon_fireProjectile_FUN_00411470(CBaronWeapon *this_ptr);
+void __cdecl core_baron_cpp_CBaronWeapon_renderAimBeam_FUN_00411470(CBaronWeapon *this_ptr);
 void __cdecl core_baron_cpp_CBaronWeapon_setWeaponState_FUN_004114a0(CBaronWeapon *this_ptr,int weapon_state);
 void __cdecl core_baron_cpp_CBaronWeapon_findOrCreateBaron_FUN_00411530(CBaronWeapon *this_ptr);
 ECollisionType __cdecl core_baron_cpp_CBaron_getCollisionType_FUN_00411600(CBaron *this_ptr,SCollisionInfo *collision_info);

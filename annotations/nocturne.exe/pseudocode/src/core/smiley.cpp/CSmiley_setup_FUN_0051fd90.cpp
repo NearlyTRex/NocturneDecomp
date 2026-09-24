@@ -102,6 +102,6 @@ void __cdecl core_smiley_cpp_CSmiley_setup_FUN_0051fd90(CSmiley *this_ptr)
     return;
   }
   this_ptr->model_variant = 3;
-  (this_ptr->base).base.show_in_editor = 0;
+  (this_ptr->base).base.gun_flame_ignitable = 0;
   return;
 }

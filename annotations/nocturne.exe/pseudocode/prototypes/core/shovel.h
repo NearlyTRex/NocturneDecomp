@@ -27,9 +27,9 @@ int __cdecl CShovel::fire(CShovel *this_ptr);
 // Address: 00516ab0
 float __cdecl CShovel::getDamage(CShovel *this_ptr);
 
-// Original: core_shovel.cpp_CShovel_fireProjectile_FUN_00516ae0
+// Original: core_shovel.cpp_CShovel_renderAimBeam_FUN_00516ae0
 // Address: 00516ae0
-void __cdecl CShovel::fireProjectile(CShovel *this_ptr);
+void __cdecl CShovel::renderAimBeam(CShovel *this_ptr);
 
 // Original: core_shovel.cpp_CShovel_dtor_FUN_00516af0
 // Address: 00516af0

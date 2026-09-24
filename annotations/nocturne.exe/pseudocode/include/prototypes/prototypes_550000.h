@@ -126,7 +126,7 @@ int __cdecl core_weapon_cpp_CWeapon_fire_FUN_00554600(CWeapon *this_ptr);
 int __cdecl core_weapon_cpp_CWeapon_isReadyToFire_FUN_00554630(CWeapon *this_ptr);
 float __cdecl core_weapon_cpp_CWeapon_getDamage_FUN_00554650(CWeapon *this_ptr);
 void __cdecl core_weapon_cpp_CWeapon_setupPhysicsBox_FUN_00554660(CWeapon *this_ptr);
-void __cdecl core_weapon_cpp_CWeapon_fireProjectile_FUN_00554750(CWeapon *this_ptr);
+void __cdecl core_weapon_cpp_CWeapon_renderAimBeam_FUN_00554750(CWeapon *this_ptr);
 void __cdecl core_weapon_cpp_CWeapon_onFired_FUN_00554780(CWeapon *this_ptr);
 CDemonGlobe * __cdecl core_weapon_cpp_CDemonGlobe_ctor_FUN_00554910(CDemonGlobe *this_ptr);
 CDemonGlobe * __cdecl core_weapon_cpp_CDemonGlobe_dtor_FUN_00554920(CDemonGlobe *this_ptr,uint flags);

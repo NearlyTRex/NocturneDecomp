@@ -5,7 +5,7 @@
 // =============================================================================
 
 // CCharacter*[50]
-CCharacter* g_CharactersOnFire[50] = {};
+CCharacter* g_GunFlameCandidates[50] = {};
 
 // CDemonActorType
 CDemonActorType g_CFilmReelClassInfo = {};
@@ -56,7 +56,7 @@ char g_VersionControlDirectory[264] = {};
 int g_AuditRecordCount = {};
 int g_TextureAnimCounter2 = {};
 int g_TextureAnimCounter1 = {};
-int g_CharactersOnFireCount = {};
+int g_GunFlameCandidateCount = {};
 int g_FlameCanCount = {};
 int g_SmokeParticleAllocIndex = {};
 

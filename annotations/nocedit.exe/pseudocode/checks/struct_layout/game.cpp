@@ -1040,8 +1040,8 @@ static_assert(__builtin_offsetof(CCharacter, size_scale) == 9756,
               "offsetof(CCharacter, size_scale) != 9756");
 static_assert(__builtin_offsetof(CCharacter, was_rendered_opaque) == 9760,
               "offsetof(CCharacter, was_rendered_opaque) != 9760");
-static_assert(__builtin_offsetof(CCharacter, show_in_editor) == 9764,
-              "offsetof(CCharacter, show_in_editor) != 9764");
+static_assert(__builtin_offsetof(CCharacter, gun_flame_ignitable) == 9764,
+              "offsetof(CCharacter, gun_flame_ignitable) != 9764");
 static_assert(__builtin_offsetof(CCharacter, layer_action_count) == 9768,
               "offsetof(CCharacter, layer_action_count) != 9768");
 static_assert(__builtin_offsetof(CCharacter, layer_actions) == 9772,
@@ -2892,8 +2892,8 @@ static_assert(__builtin_offsetof(CEmitter, state_timer) == 1096,
               "offsetof(CEmitter, state_timer) != 1096");
 static_assert(__builtin_offsetof(CEmitter, globe) == 1100,
               "offsetof(CEmitter, globe) != 1100");
-static_assert(__builtin_offsetof(CEmitter, was_active) == 1164,
-              "offsetof(CEmitter, was_active) != 1164");
+static_assert(__builtin_offsetof(CEmitter, was_on_screen) == 1164,
+              "offsetof(CEmitter, was_on_screen) != 1164");
 static_assert(__builtin_offsetof(CEmitter, prev_emitter_state) == 1168,
               "offsetof(CEmitter, prev_emitter_state) != 1168");
 
@@ -7414,8 +7414,8 @@ static_assert(__builtin_offsetof(CWeapon_vtable, isReadyToFire) == 16,
               "offsetof(CWeapon_vtable, isReadyToFire) != 16");
 static_assert(__builtin_offsetof(CWeapon_vtable, getDamage) == 20,
               "offsetof(CWeapon_vtable, getDamage) != 20");
-static_assert(__builtin_offsetof(CWeapon_vtable, fireProjectile) == 24,
-              "offsetof(CWeapon_vtable, fireProjectile) != 24");
+static_assert(__builtin_offsetof(CWeapon_vtable, renderAimBeam) == 24,
+              "offsetof(CWeapon_vtable, renderAimBeam) != 24");
 static_assert(__builtin_offsetof(CWeapon_vtable, updateLighting) == 28,
               "offsetof(CWeapon_vtable, updateLighting) != 28");
 

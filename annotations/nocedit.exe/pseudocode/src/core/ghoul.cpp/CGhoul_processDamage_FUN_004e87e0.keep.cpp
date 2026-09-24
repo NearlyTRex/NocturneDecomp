@@ -30,6 +30,9 @@ void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004e87e0(CGhoul *this_ptr,S
   CLocation *pCVar1;
   char *motion_name;
   
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+  nocturne_sim_trace_damage(&(this_ptr->base).base,damage_info);
+#endif
   sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handles[0]);
   if ((this_ptr->dark_waypoint != (CDemonActor *)0x0) &&
      (pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0

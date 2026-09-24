@@ -34,7 +34,7 @@ int __cdecl core_gabriela_cpp_CGabriella_renderOpaque_FUN_004d6140(CGabriella *t
         fVar3 = (pCVar5->toss_velocity).z, 0.0 < SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1)
         )))) {
       pCVar4 = (this_ptr->base).inventory.selected_weapon;
-      (*(((pCVar4->base).vtable._uw)->_uw).fireProjectile)(pCVar4);
+      (*(((pCVar4->base).vtable._uw)->_uw).renderAimBeam)(pCVar4);
       return iVar5;
     }
   }

@@ -21,7 +21,7 @@ CImp * __cdecl core_imp_cpp_CImp_ctor_FUN_004f98a0(CImp *this_ptr)
   (pCVar3->base).base.collision_cylinder_height = 0.6;
   fVar2 = 100.0f;
   (pCVar3->base).base.collision_cylinder_radius = 0.5;
-  (pCVar3->base).base.show_in_editor = 0;
+  (pCVar3->base).base.gun_flame_ignitable = 0;
   (pCVar3->base).base.ai_detection_range_min = fVar1;
   (pCVar3->base).base.ai_detection_range_max = fVar2;
   return pCVar3;
