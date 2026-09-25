@@ -646,6 +646,10 @@ extern "C" int nocturne_gamepad_apply_analog(CGame *game, SPlayerInput *input) {
     if (game == (CGame *)0x0 || input == (SPlayerInput *)0x0 || s_pad == nullptr) {
         return 0;
     }
+    // processKeyboardControls has already cleared the input for the map.
+    if (nocturne_automap_owns_controls()) {
+        return 1;
+    }
 
     float move_x = 0.0f, move_y = 0.0f, look_x = 0.0f, look_y = 0.0f;
     nocturne_gamepad_axes(&move_x, &move_y, &look_x, &look_y, (float *)0, (float *)0);

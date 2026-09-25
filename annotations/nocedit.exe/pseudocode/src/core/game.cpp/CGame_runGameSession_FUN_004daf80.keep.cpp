@@ -39,6 +39,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
   int net_was_waiting;
   int net_host_hero;
   int net_was_client;
+  int net_was_host;
   CDemonActor *net_dbg_focus;
 #endif
   int quit_item;
@@ -55,6 +56,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
   net_host_hero = 0;
   net_dbg_focus = (CDemonActor *)0x0;
   net_was_client = g_CNetGamePtr->connection_type == CONNECTION_CLIENT;
+  net_was_host = g_CNetGamePtr->connection_type == CONNECTION_HOST;
 #endif
   local_14 = 0.0;
   local_1c = 0;
@@ -507,6 +509,17 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
       }
       net_was_waiting = net_waiting;
 #endif
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+      if ((EVar6 == DEATH_STATE_DEAD) && (net_was_host != 0)) {
+        iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_RETURN);
+        local_14 = local_14 + this_ptr->delta_time_float;
+        if ((iVar5 != 0) || ((float)4 < local_14)) {
+          local_14 = 0.0;
+          if (nocturne_net_host_death_menu() == 0) goto LAB_004db434;
+        }
+      }
+      else
+#endif
       if (EVar6 == DEATH_STATE_DEAD) {
         iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_RETURN);
         if (iVar5 != 0) goto LAB_004db434;
@@ -547,9 +560,16 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
 LAB_004db434:
   EVar5 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
                     (&g_HeroActors[g_LocalHeroIndex]->base);
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+  if ((EVar5 == DEATH_STATE_DEAD) && (net_was_host != 0) && (local_1c == 0) &&
+      (this_ptr->need_chapter_reload == 0) &&
+      (g_CNetGamePtr->connection_type == CONNECTION_HOST)) {
+    core_netgame_cpp_CNetGame_disconnect_FUN_0053fd00(g_CNetGamePtr,1);
+  }
+#endif
   if ((EVar5 == DEATH_STATE_DEAD) && (this_ptr->need_chapter_reload == 0)
 #if !NOCTURNE_AUTHENTIC_NETPLAY
-      && (net_was_client == 0)
+      && (net_was_client == 0) && (net_was_host == 0)
 #endif
      ) {
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_4c8);

@@ -85,7 +85,8 @@ void __cdecl shape_edittool_cpp_drawSingleButtonPrompt_FUN_0049e130(char *title,
                nocturne_ui_editor_scale());
 #endif
     shape_edittool_cpp_CEdButton_paint_FUN_004a65e0(&local_108,1);
-    shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_004a1380(g_CEditorToolsPtr,0);
+    shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_004a1380
+              (g_CEditorToolsPtr,NOCTURNE_EDITOR_BUILD ? 0 : 1);
 #if !NOCTURNE_AUTHENTIC_NETPLAY
     nocturne_net_keepalive();
 #endif

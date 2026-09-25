@@ -90,7 +90,7 @@ void nocturne_net_respawn_note_placeholder(float x, float y, float z, int area_i
 void nocturne_net_respawn_clear_placeholder(void);
 
 // 1 when the pause menu should offer the respawn item: a host, in a running
-// network game, with at least one other player.
+// network game, with at least one other player, outside a cinematic.
 int nocturne_net_respawn_available(void);
 
 // The area_id whose set should be loaded: the local hero's, or — while that
@@ -133,6 +133,13 @@ int nocturne_net_respawn_on_packet(const void *packet, int packet_size);
 // CNetGame::applySimFrameHistory. Re-broadcasts a pending respawn while it is
 // still in the future, and applies it on the frame it was scheduled for.
 void nocturne_net_respawn_apply_if_due(int sequence_number);
+
+// The host's game over in a network game, shown from inside the session loop
+// so the session survives it. "Continue" requests a respawn, which revives
+// every downed hero including the host; "Quit" ends the network game, which
+// releases the guests. The single-player list's "Load game" is not offered:
+// a network session has no saves. Returns 1 to carry on, 0 after quitting.
+int nocturne_net_host_death_menu(void);
 
 #ifdef __cplusplus
 }

@@ -223,7 +223,8 @@ int __cdecl shape_edittool_cpp_showMultiChoiceDialog_FUN_0049e9d0(CStrList *str_
         pCVar16 = pCVar16 + 1;
       } while (iVar10 < iVar2);
     }
-    shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_004a1380(g_CEditorToolsPtr,0);
+    shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_004a1380
+              (g_CEditorToolsPtr,NOCTURNE_EDITOR_BUILD ? 0 : 1);
 #if !NOCTURNE_AUTHENTIC_NETPLAY
     nocturne_net_keepalive();
 #endif

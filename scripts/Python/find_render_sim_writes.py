@@ -47,6 +47,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 FUNC_FILE = re.compile(r'^(?P<name>.+)_FUN_(?P<addr>[0-9a-f]{8})(?P<keep>\.keep)?\.(?:cpp|c)$')
 CALL = re.compile(r'\b\w+_FUN_([0-9a-f]{8})\s*\(')
 VCALL_SETTER = re.compile(r'->\s*(set[A-Z]\w*)\s*\)\s*\(')
+VCALL = re.compile(r'(?:->|\.)\s*([a-z]\w*)\s*\)\s*\(')
 FIELD_DEF = re.compile(r'^\s+[\w\s\*]+?\**\s*\b(\w+)(?:\[[^\]]*\])*;\s*//\s*0x[0-9a-f]+')
 STRUCT_DEF = re.compile(r'^typedef\s+(?:struct|union)\s+(\w+)')
 
@@ -188,12 +189,24 @@ def sim_side(funcs, pattern, roots, render):
     (the render side and the off-sim set). Virtual dispatch is invisible here,
     which is why the per-class process/AI/damage methods are roots by name."""
     rx = re.compile(pattern)
+    by_method = defaultdict(list)
+    for a, f in funcs.items():
+        if f['name'] != f['method']:
+            by_method[f['method']].append(a)
     todo = [a for a, f in funcs.items()
             if (rx.search(f['method']) or f['name'] in roots) and a not in render]
     seen = set(todo)
+    slots = set()
     while todo:
         a = todo.pop()
-        for callee in CALL.findall(funcs[a]['body']):
+        body = funcs[a]['body']
+        callees = set(CALL.findall(body))
+        # A virtual call reaches every override of that slot name.
+        for slot in VCALL.findall(body):
+            if slot not in slots:
+                slots.add(slot)
+                callees.update(by_method.get(slot, ()))
+        for callee in callees:
             if callee in funcs and callee not in seen and callee not in render:
                 seen.add(callee)
                 todo.append(callee)

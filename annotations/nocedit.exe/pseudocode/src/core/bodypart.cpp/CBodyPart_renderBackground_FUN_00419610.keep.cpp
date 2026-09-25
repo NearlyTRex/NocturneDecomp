@@ -16,8 +16,14 @@ void __cdecl core_bodypart_cpp_CBodyPart_renderBackground_FUN_00419610(CBodyPart
   int iVar2;
   CBoundingBox3D local_20;
   CConsole *this_ptr_00;
-  
+
   if (this_ptr->render_in_background == 0) {
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+    if ((g_CNetGamePtr != (CNetGame *)0x0) &&
+        (g_CNetGamePtr->connection_type != CONNECTION_NONE)) {
+      return;
+    }
+#endif
     if ((((layer_flag != 0) && (this_ptr->carried_by_actor == (CDemonActor *)0x0)) &&
         ((this_ptr->physics_box).is_valid == 0)) &&
        (iVar3 = (*((this_ptr->base).vtable._ub)->getAllowedMeleeAttackTypes)(&this_ptr->base),
