@@ -419,7 +419,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
 #endif
         }
 #if !NOCTURNE_AUTHENTIC_NETPLAY
-        if ((iVar4 == net_respawn_item) && (iVar4 != -2)) {
+        if ((-1 < net_respawn_item) && (iVar4 == net_respawn_item)) {
           nocturne_net_respawn_request();
           net_respawn_item = -1;
         }
