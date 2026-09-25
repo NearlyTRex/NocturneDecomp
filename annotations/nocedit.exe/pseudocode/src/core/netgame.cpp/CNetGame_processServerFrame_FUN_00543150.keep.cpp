@@ -133,6 +133,11 @@ LAB_005432f5:
     if (0 < this_ptr->player_count) {
       do {
         pSVar4->player_input[iVar1] = this_ptr->players[iVar1].player_input;
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+        if (iVar1 != this_ptr->local_player_index) {
+          nocturne_net_input_decode(iVar1,&pSVar4->player_input[iVar1]);
+        }
+#endif
         iVar1 = iVar1 + 1;
       } while (iVar1 < this_ptr->player_count);
     }

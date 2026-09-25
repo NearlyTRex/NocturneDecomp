@@ -253,6 +253,11 @@ void nocturne_trigl_envmap_pass_end(void);
 // as the shipped code did.
 #include "net/net_weapon.h"
 
+// Guest button presses counted rather than pulsed on the wire
+// (nocturne_net_input_*), reached from CGame::playerControls and the netgame
+// TU. Gated at those call sites on NOCTURNE_AUTHENTIC_NETPLAY.
+#include "net/net_input.h"
+
 // Agreed cinematic skip (nocturne_net_skip_*), reached from CGame::processHotkeys
 // and the netgame TU. The shipped skip lives in the full pause menu, which a
 // network game never builds.

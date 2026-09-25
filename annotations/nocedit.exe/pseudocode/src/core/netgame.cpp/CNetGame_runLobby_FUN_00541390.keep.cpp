@@ -38,6 +38,7 @@ int __cdecl core_netgame_cpp_CNetGame_runLobby_FUN_00541390(CNetGame *this_ptr)
 #if !NOCTURNE_AUTHENTIC_NETPLAY
     nocturne_net_hero_forget_host_view();
     nocturne_net_cheats_reset();
+    nocturne_net_input_reset();
     saved_input_key_mask = g_InputKeyMask;
     engine_keys_cpp_CKeys_toggleInputMask_FUN_005024b0(g_CKeysPtr,1);
 #endif

@@ -52,6 +52,14 @@
 #define NOCTURNE_PAD_TRIGGER_THRESHOLD 0.35f
 #endif
 
+// NOCTURNE_PAD_TRIGGER_RELEASE
+//   Trigger pull below which a pressed trigger reads as released. Lower than
+//   the press threshold so a trigger resting near it does not flicker between
+//   the two, which the draw binding turns into a string of toggles.
+#ifndef NOCTURNE_PAD_TRIGGER_RELEASE
+#define NOCTURNE_PAD_TRIGGER_RELEASE 0.20f
+#endif
+
 // NOCTURNE_PAD_TURN_RATE / NOCTURNE_PAD_LOOK_RATE
 //   Full-deflection right-stick turn and look speeds, in the units
 //   SPlayerInput carries. CGame::processKeyboardControls ramps a held key to

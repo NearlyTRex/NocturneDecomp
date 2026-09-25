@@ -2240,6 +2240,12 @@
 //          inventory carries over. Hero 0, the host's, is now kept on every
 //          machine and carried as in single player, revived if it was down;
 //          guests are still built fresh.
+//        - The host copies a guest's latest input sample into every sim frame
+//          it builds until the next one arrives, so the one-frame pulses
+//          (use_item, light, draw, jump) landed twice or not at all: a draw
+//          that toggled straight back, a press that was lost. Guests send a
+//          running press count instead and the host turns each increase into
+//          one pulse. See net_input.h.
 //      Mode 0 also adds three things the shipped game never had:
 //        - A host-only pause-menu item that respawns the other players
 //          somewhere safe and on camera. See net_respawn.h.

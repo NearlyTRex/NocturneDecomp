@@ -39,6 +39,9 @@ void __cdecl core_game_cpp_CGame_playerControls_FUN_004dbd80(CGame *this_ptr)
 #if !NOCTURNE_AUTHENTIC_GAMEPAD
     nocturne_gamepad_note_gameplay_frame();
 #endif
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+    nocturne_net_input_note_local(player_control);
+#endif
     memcpy(g_PrevKeyboardState,g_KeyboardState,0x258);
     g_InputResetFlag = g_MouseButtonFlags.dword;
     g_StoredCameraValue = g_CDemonSetPtr->selected_camera_index;

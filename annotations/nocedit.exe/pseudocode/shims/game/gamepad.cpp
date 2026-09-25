@@ -92,6 +92,14 @@ void apply_edge(int code, int slot, bool now) {
     s_prev[slot] = now;
 }
 
+// A trigger as a button, with hysteresis: pressed at the press threshold,
+// released only below the lower release threshold.
+bool trigger_down(int code, float pull) {
+    const float threshold = s_prev[pad_slot(code)] ? NOCTURNE_PAD_TRIGGER_RELEASE
+                                                   : NOCTURNE_PAD_TRIGGER_THRESHOLD;
+    return pull >= threshold;
+}
+
 // Radial deadzone with the live range rescaled to 0..1, so a stick starts
 // moving the hero from a standstill rather than from the deadzone edge.
 void deadzone(float raw_x, float raw_y, float *out_x, float *out_y) {
@@ -383,9 +391,9 @@ extern "C" void nocturne_gamepad_pump(void) {
     // Triggers and the right stick, thresholded so they can be bound as
     // buttons. The analogue values stay available to the movement path.
     apply_edge(NOCTURNE_PAD_LTRIGGER, pad_slot(NOCTURNE_PAD_LTRIGGER),
-               trigger_l >= NOCTURNE_PAD_TRIGGER_THRESHOLD);
+               trigger_down(NOCTURNE_PAD_LTRIGGER, trigger_l));
     apply_edge(NOCTURNE_PAD_RTRIGGER, pad_slot(NOCTURNE_PAD_RTRIGGER),
-               trigger_r >= NOCTURNE_PAD_TRIGGER_THRESHOLD);
+               trigger_down(NOCTURNE_PAD_RTRIGGER, trigger_r));
     apply_edge(NOCTURNE_PAD_RSTICK_LEFT, pad_slot(NOCTURNE_PAD_RSTICK_LEFT),
                look_x <= -NOCTURNE_PAD_MOVE_THRESHOLD);
     apply_edge(NOCTURNE_PAD_RSTICK_RIGHT, pad_slot(NOCTURNE_PAD_RSTICK_RIGHT),

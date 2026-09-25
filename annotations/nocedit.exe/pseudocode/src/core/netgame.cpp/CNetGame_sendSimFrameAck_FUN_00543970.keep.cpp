@@ -38,6 +38,9 @@ void __cdecl core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_00543970(CNetGame *th
   local_48.sim_frame_index = this_ptr->players[this_ptr->local_player_index].sim_frame_index;
   iVar1 = this_ptr->local_player_index;
   local_48.player_input = this_ptr->players[iVar1].player_input;
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+  nocturne_net_input_encode(&local_48.player_input);
+#endif
   core_netgame_cpp_CNetGame_send_FUN_005411c0
             (this_ptr,this_ptr->server_player_index,&local_48.header);
   UINT_02f7c8c8 = g_CurrentGameTime;
