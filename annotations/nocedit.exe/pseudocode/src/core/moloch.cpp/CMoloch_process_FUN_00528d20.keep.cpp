@@ -45,6 +45,9 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch *this_ptr,floa
   if (iVar6 == 0) {
     return;
   }
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+  nocturne_hero_items_process(&this_ptr->base);
+#endif
   fVar4 = (this_ptr->base).invincibility_timer - delta_time;
   (this_ptr->base).invincibility_timer = fVar4;
   if (fVar4 < 0.0) {

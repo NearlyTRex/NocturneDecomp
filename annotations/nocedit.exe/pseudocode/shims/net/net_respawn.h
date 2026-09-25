@@ -134,6 +134,14 @@ int nocturne_net_respawn_on_packet(const void *packet, int packet_size);
 // still in the future, and applies it on the frame it was scheduled for.
 void nocturne_net_respawn_apply_if_due(int sequence_number);
 
+// Brings a dead hero back where it stands: restores hit_points to
+// max_hit_points, undoes a destroying death, and forces STAND so the motion
+// controller stops wanting the death state. Returns 1 if the hero was dead and
+// is now revived, 0 if it was alive and nothing changed. Used by the respawn
+// apply above and by CDemonMission::createHeros for a hero carried into the
+// next mission.
+int nocturne_net_respawn_revive(struct CHero *hero);
+
 // The host's game over in a network game, shown from inside the session loop
 // so the session survives it. "Continue" requests a respawn, which revives
 // every downed hero including the host; "Quit" ends the network game, which

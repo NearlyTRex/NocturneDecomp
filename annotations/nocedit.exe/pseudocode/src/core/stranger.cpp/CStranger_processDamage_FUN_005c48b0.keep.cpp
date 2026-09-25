@@ -20,7 +20,7 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_005c48b0(CStranger *t
   uint uVar3;
   CCharacter_full_vtable *pCVar1;
   CConsole *this_ptr_01;
-  CGame *pCVar2;
+  int auto_use_health;
   float random_value;
 
   if (g_CGamePtr->god_mode_enabled != 0) {
@@ -44,10 +44,14 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_005c48b0(CStranger *t
   if (iVar3 != 0) {
     (this_ptr->base).invincibility_timer = 0.15;
   }
-  pCVar2 = g_CGamePtr;
+#if NOCTURNE_AUTHENTIC_NETPLAY
+  auto_use_health = g_CGamePtr->auto_use_health;
+#else
+  auto_use_health = nocturne_net_cheats_auto_use_health();
+#endif
   (this_ptr->base).base.hit_points = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   this_ptr_01 = g_CConsolePtr;
-  if (((pCVar2->auto_use_health != 0) && (0xb < (int)damage_info->damage_type)) &&
+  if (((auto_use_health != 0) && (0xb < (int)damage_info->damage_type)) &&
      ((this_ptr->base).base.hit_points <= 0.0)) {
     (this_ptr->base).base.hit_points = 0.0;
     engine_console_cpp_CConsole_printf_FUN_00441890(this_ptr_01,"Using auto health\n");
@@ -128,7 +132,11 @@ LAB_005c4be2:
   }
 LAB_005c4ae0:
   if (0.0 < damage_info->damage_amount) {
+#if NOCTURNE_AUTHENTIC_NETPLAY
     core_game_cpp_CGame_resetInventoryDisplayTimer_FUN_004e0bd0(g_CGamePtr);
+#else
+    core_inv_cpp_CInventory_resetInventoryDisplayTimer_FUN_00500020(&(this_ptr->base).inventory);
+#endif
   }
   core_charactr_cpp_CCharacter_processDamage_FUN_0042c3c0((CCharacter *)this_ptr,damage_info);
   return;

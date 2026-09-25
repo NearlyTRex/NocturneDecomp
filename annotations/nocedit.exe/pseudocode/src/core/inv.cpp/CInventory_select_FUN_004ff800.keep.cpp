@@ -18,6 +18,7 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004ff800(CInventory *this_ptr,CDe
   char *pcVar5;
   CGasMask *pCVar5;
   CBoxActor *pCVar6;
+  CHero *user;
   char *pcVar8;
   char local_114 [256];
 
@@ -58,7 +59,16 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004ff800(CInventory *this_ptr,CDe
         g_CurrentLineNumber = 1481;
         core_main_c_displayErrorAndQuit_FUN_00506f10("CInventory::select - Catch 22");
       }
-      if ((float)98 < (g_HeroActors[g_LocalHeroIndex]->base).hit_points) {
+#if NOCTURNE_AUTHENTIC_NETPLAY
+      user = g_HeroActors[g_LocalHeroIndex];
+#else
+      user = (CHero *)this_ptr->owner;
+#endif
+#if NOCTURNE_AUTHENTIC_HERO_ACTIONS
+      if ((float)98 < (user->base).hit_points) {
+#else
+      if ((float)0.98 * (user->base).max_hit_points < (user->base).hit_points) {
+#endif
         return 1;
       }
       pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("You have used : ");
@@ -67,9 +77,11 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004ff800(CInventory *this_ptr,CDe
       strcat(local_114,pcVar5);
       pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(".");
       strcat(local_114,pcVar8);
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+      if (user == g_HeroActors[g_LocalHeroIndex])
+#endif
       core_game_cpp_CGame_displayMessage_FUN_004d7f20(g_CGamePtr,local_114,5.0);
-      iVar3 = core_health_cpp_CHealthItem_useItem_FUN_004f1fd0
-                        (this_ptr_00,&g_HeroActors[g_LocalHeroIndex]->base);
+      iVar3 = core_health_cpp_CHealthItem_useItem_FUN_004f1fd0(this_ptr_00,&user->base);
       if (iVar3 < 1) {
         core_inv_cpp_CInventory_removeItem_FUN_004fea70(this_ptr,actor_ptr,1);
         return 1;

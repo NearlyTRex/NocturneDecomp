@@ -41,6 +41,9 @@ void __cdecl core_haystack_cpp_CHaystack_process_FUN_004f0e40(CHaystack *this_pt
   if (iVar5 == 0) {
     return;
   }
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+  nocturne_hero_items_process(&this_ptr->base);
+#endif
   if ((this_ptr->base).control_type == HERO_CONTROL_AI) {
     core_haystack_cpp_CHaystack_updateAI_FUN_004f13f0(this_ptr,delta_time);
   }

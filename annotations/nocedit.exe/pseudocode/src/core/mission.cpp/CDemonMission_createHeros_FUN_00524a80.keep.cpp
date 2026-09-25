@@ -39,9 +39,18 @@ int __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_00524a80(CDemonMissio
     iVar4 = 0;
     if (0 < g_HeroCount) {
       do {
+#if NOCTURNE_AUTHENTIC_NETPLAY
         iVar1 = core_mission_cpp_CDemonMission_createOneHero_FUN_00524920
                           (this_ptr,iVar4,g_CNetGamePtr->players[iVar4].hero_number,
                            (CCharacter *)0x0);
+#else
+        iVar1 = core_mission_cpp_CDemonMission_createOneHero_FUN_00524920
+                          (this_ptr,iVar4,g_CNetGamePtr->players[iVar4].hero_number,
+                           (iVar4 == 0) ? existing_hero : (CCharacter *)0x0);
+        if ((iVar1 != 0) && (iVar4 == 0) && (existing_hero != (CCharacter *)0x0)) {
+          nocturne_net_respawn_revive(g_HeroActors[0]);
+        }
+#endif
         if (iVar1 == 0) {
           return 0;
         }

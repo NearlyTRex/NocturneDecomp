@@ -71,7 +71,7 @@
 // | `NOCTURNE_AUTHENTIC_STREAM_LENGTH` | 0 | defect | a streamed MP3 ends where the sample actually ends |
 // | `NOCTURNE_AUTHENTIC_ACTOR_DELETE` | 0 | defect | references are cleared before the memory is freed |
 // | `NOCTURNE_AUTHENTIC_HERO_WEAPON` | 0 | defect | each hero class starts with what it can actually use |
-// | `NOCTURNE_AUTHENTIC_HERO_ACTIONS` | 0 | defect | the other eight classes can interact and escape a grab |
+// | `NOCTURNE_AUTHENTIC_HERO_ACTIONS` | 0 | defect | the other eight classes can interact, escape a grab and use health items |
 // | `NOCTURNE_AUTHENTIC_INPUT_REPEAT` | 0 | defect | a held button starts an action once instead of every frame |
 // | `NOCTURNE_AUTHENTIC_ITEM_HELP_POSITION` | 0 | defect | the pickup help text does not sit on top of the pickup name |
 // | `NOCTURNE_AUTHENTIC_DEATH_MESSAGE_POSITION` | 0 | defect | the death banner is centred, clear of the message line |
@@ -1109,23 +1109,40 @@
 //                   the step at delta_time * 5 — but CSentinel's snaps the victim
 //                   onto the midpoint of its claw bones on all three axes,
 //                   uncapped.
+//     health items  Using a health item, autoUseHealth and the health bar on
+//                   damage are CStranger's alone (CStranger::processFrame and
+//                   ::processDamage). Only CStranger, CScat and CIcePick tick
+//                   CInventory::updateInventory, so for the rest the HUD timers
+//                   never run down. CIcePick::ctor sets hit_points to 300 and
+//                   leaves max_hit_points at 100, and the health code assumes a
+//                   maximum of 100 throughout: the HUD figure fills from
+//                   hit_points * 0.01, CHealthItem::useItem caps at 100,
+//                   CInventory::select refuses an item above 98, and the typed
+//                   god-mode and health cheats set 100.
 //
 //   1: shipped behaviour — Scat and Moloch can interact with nothing, sheathed
-//      fire falls through to an attack, and only the Stranger can break a grab
-//      while the sentinel's carry ignores the world.
+//      fire falls through to an attack, only the Stranger can break a grab
+//      while the sentinel's carry ignores the world, and only the Stranger can
+//      use a health item or sees his health bar when hit.
 //   0: Scat and Moloch reach the same interaction set the other melee heroes
 //      use, through the shared nocturne_hero_interact; sheathed fire is only the
 //      action button, and the attack needs the weapon drawn; a hero of any class
 //      breaks out on the Stranger's own 1.5 second timer through the game's own
 //      CHero::releaseFromGrab, and the sentinel reaches the same claw point
 //      through CCharacter::moveAndCollide, so the carry stops at geometry and
-//      keeps area_id right.
+//      keeps area_id right. Every player hero spends a selected health item on
+//      use_item, is rescued by autoUseHealth under the Stranger's test, shows
+//      its health bar when hit, and has its inventory ticked. IcePick's maximum
+//      is 300, and every one of those sites works from the hero's own
+//      max_hit_points: the figure fills as a fraction of it, items cap at it,
+//      select refuses above 98% of it, and the cheats restore it.
 //
-//      Not included: object pickup, item use and box pushing, which sit on
-//      carry-hand state these classes do not maintain; and scripted grabs, which
-//      still cannot be escaped. The grab escape is given to every hero rather
-//      than only the player's, because control_type is per-machine and gating on
-//      it breaks lockstep. See hero_interact.h and hero_grab.h.
+//      Not included: object pickup, using items other than health, and box
+//      pushing, which sit on carry-hand state these classes do not maintain;
+//      and scripted grabs, which still cannot be escaped. The grab escape is
+//      given to every hero rather than only the player's, because control_type
+//      is per-machine and gating on it breaks lockstep. See hero_interact.h,
+//      hero_grab.h and hero_items.h.
 //
 //   Override with -DNOCTURNE_AUTHENTIC_HERO_ACTIONS=1.
 #ifndef NOCTURNE_AUTHENTIC_HERO_ACTIONS
@@ -2210,6 +2227,19 @@
 //          with "allocSimFrame - sim history list full". Such a join is now
 //          refused properly, with the status the client already knows how to
 //          report ("Connection refused - already in the game").
+//        - Health handling assumes the hero it runs for is the local one.
+//          CInventory::select heals g_HeroActors[g_LocalHeroIndex] (the load
+//          at 004ff9d2) whoever owns the item, and CGame::resetInventory-
+//          DisplayTimer restarts the local hero's health bar whoever was hit.
+//          Both now act on the inventory's owner. autoUseHealth is an ini
+//          option read for every hero on every machine, so the host's value
+//          travels with the cheat announcement. See net_cheats.h.
+//        - CDemonMission::run keeps the local hero across a mission
+//          transition, but createHeros builds every network hero fresh, so
+//          the kept hero is orphaned on every machine and nobody's health or
+//          inventory carries over. Hero 0, the host's, is now kept on every
+//          machine and carried as in single player, revived if it was down;
+//          guests are still built fresh.
 //      Mode 0 also adds three things the shipped game never had:
 //        - A host-only pause-menu item that respawns the other players
 //          somewhere safe and on camera. See net_respawn.h.

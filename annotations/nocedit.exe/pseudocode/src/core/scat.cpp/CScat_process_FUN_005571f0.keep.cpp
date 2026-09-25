@@ -48,6 +48,9 @@ void __cdecl core_scat_cpp_CScat_process_FUN_005571f0(CScat *this_ptr,float delt
   if (iVar10 == 0) {
     return;
   }
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+  nocturne_hero_items_process(&this_ptr->base);
+#endif
   (this_ptr->base).base.turn_speed = delta_time * (float)12.566370614;
   if (pCVar9->letterbox_mode != 0) {
     (this_ptr->base).base.turn_speed = (this_ptr->base).base.turn_speed * (float)0.33333333333333298;

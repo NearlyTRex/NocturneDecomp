@@ -482,6 +482,82 @@ static void respawn_sample_safe(int sequence_number)
     s_have_safe  = 1;
 }
 
+extern "C" int nocturne_net_respawn_revive(CHero *hero)
+{
+    int          destroyed;
+    int          stand_state;
+    CMotionList *motion_list;
+
+    if (hero == (CHero *)0x0) {
+        return 0;
+    }
+
+    // Ordinary death does not destroy a hero — CCharacter::getDeathState reads
+    // the motion controller's current state name, so "dead" is just the DEAD
+    // animation playing over a zeroed hit_points. Putting both back is the
+    // whole revive.
+    //
+    // One death is not ordinary. CTentacle::process swallows its victim by
+    // setting that actor's lifecycle_state to ACTOR_DESTROYED, and
+    // CDemonMission::buildActiveSetActorList only ever admits ACTOR_CREATED
+    // — so the hero leaves the world for good while still sitting on the
+    // mission's actor list, invisible and unprocessed, and no amount of
+    // health or animation brings it back. It also bypasses processDamage
+    // entirely, so such a hero can be destroyed with its health intact and
+    // the test below would not even look at it.
+    destroyed = ((hero->base).base.lifecycle_state == ACTOR_DESTROYED) ? 1 : 0;
+    if (destroyed != 0) {
+        (hero->base).base.lifecycle_state = ACTOR_CREATED;
+
+        // Two of the three destroying deaths also take the model apart.
+        // CCharacter::dismember detaches every part in turn and
+        // CDeformableModelInstance::dismemberPart clears each one's
+        // visibility flag, so a hero brought back from that would stand up
+        // invisible. CCharacter::shatter only reads those flags — it uses
+        // them to choose which parts become debris — so its model is intact
+        // and this is a no-op there, as it is for the tentacle.
+        //
+        // This is how the engine reassembles a character: CBoneGuy::process
+        // calls the same function when it puts itself back together after
+        // being blown apart. The detached CBodyPart actors need no cleanup
+        // here — unlike the bone guy's, they are not tracked, and
+        // CBodyPart::process destroys each one on its own.
+        core_skeleton_cpp_CDeformableModelInstance_showAllParts_FUN_005a0410(
+            &(hero->base).model);
+    }
+    if (((hero->base).hit_points > 0.0f) && (destroyed == 0)) {
+        return 0;
+    }
+
+    (hero->base).hit_points = (hero->base).max_hit_points;
+    core_motion_cpp_CMotionController_jumpToMotion_FUN_0052dde0
+        (&(hero->base).model.motion_controller, 0, 0.0f);
+
+    // Dying is a DESIRED state, not just an animation: every death path
+    // ends in setDesiredState with a death state, and the controller
+    // keeps that in state_index. jumpToMotion above only moves
+    // current_motion_index, so on its own it leaves the controller
+    // still wanting to be dead — CMotionController::advance finds a
+    // transition back and the hero plays the death again and drops.
+    // Worse, that second death costs no health, so nothing here would
+    // fire on a later respawn and it would only move the body.
+    //
+    // Forcing STAND is how the engine gets a hero out of a stuck state
+    // elsewhere; CHero::releaseFromGrab does exactly this. The index is
+    // looked up rather than passed by name because the byName form asks
+    // findStateIndex to quit the process when the state is missing, and
+    // a revive must not be able to end the session.
+    motion_list = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
+        (&(hero->base).model.motion_controller);
+    stand_state = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0
+        (motion_list, (char *)"STAND", 0);
+    if (0 <= stand_state) {
+        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+            (&(hero->base).model.motion_controller, stand_state, 1);
+    }
+    return 1;
+}
+
 extern "C" void nocturne_net_respawn_apply_if_due(int sequence_number)
 {
     int i;
@@ -505,10 +581,7 @@ extern "C" void nocturne_net_respawn_apply_if_due(int sequence_number)
         CHero    *hero = g_HeroActors[i];
         CVector3f position;
         CVector3f orient;
-        int          destroyed;
-        int          revived = 0;
-        int          stand_state;
-        CMotionList *motion_list;
+        int       revived;
 
         if (hero == (CHero *)0x0) {
             continue;
@@ -520,70 +593,9 @@ extern "C" void nocturne_net_respawn_apply_if_due(int sequence_number)
         orient.y   = s_pending.orient[1];
         orient.z   = s_pending.orient[2];
 
-        // Arcade continue. Ordinary death does not destroy a hero —
-        // CCharacter::getDeathState reads the motion controller's current state
-        // name, so "dead" is just the DEAD animation playing over a zeroed
-        // hit_points. Putting both back is the whole revive, and doing it here
-        // means it lands on the same sim frame on every machine, exactly like
-        // the move.
-        //
-        // One death is not ordinary. CTentacle::process swallows its victim by
-        // setting that actor's lifecycle_state to ACTOR_DESTROYED, and
-        // CDemonMission::buildActiveSetActorList only ever admits ACTOR_CREATED
-        // — so the hero leaves the world for good while still sitting on the
-        // mission's actor list, invisible and unprocessed, and no amount of
-        // health or animation brings it back. It also bypasses processDamage
-        // entirely, so such a hero can be destroyed with its health intact and
-        // the test below would not even look at it.
-        destroyed = ((hero->base).base.lifecycle_state == ACTOR_DESTROYED) ? 1 : 0;
-        if (destroyed != 0) {
-            (hero->base).base.lifecycle_state = ACTOR_CREATED;
-
-            // Two of the three destroying deaths also take the model apart.
-            // CCharacter::dismember detaches every part in turn and
-            // CDeformableModelInstance::dismemberPart clears each one's
-            // visibility flag, so a hero brought back from that would stand up
-            // invisible. CCharacter::shatter only reads those flags — it uses
-            // them to choose which parts become debris — so its model is intact
-            // and this is a no-op there, as it is for the tentacle.
-            //
-            // This is how the engine reassembles a character: CBoneGuy::process
-            // calls the same function when it puts itself back together after
-            // being blown apart. The detached CBodyPart actors need no cleanup
-            // here — unlike the bone guy's, they are not tracked, and
-            // CBodyPart::process destroys each one on its own.
-            core_skeleton_cpp_CDeformableModelInstance_showAllParts_FUN_005a0410(
-                &(hero->base).model);
-        }
-        if (((hero->base).hit_points <= 0.0f) || (destroyed != 0)) {
-            revived = 1;
-            (hero->base).hit_points = (hero->base).max_hit_points;
-            core_motion_cpp_CMotionController_jumpToMotion_FUN_0052dde0
-                (&(hero->base).model.motion_controller, 0, 0.0f);
-
-            // Dying is a DESIRED state, not just an animation: every death path
-            // ends in setDesiredState with a death state, and the controller
-            // keeps that in state_index. jumpToMotion above only moves
-            // current_motion_index, so on its own it leaves the controller
-            // still wanting to be dead — CMotionController::advance finds a
-            // transition back and the hero plays the death again and drops.
-            // Worse, that second death costs no health, so nothing here would
-            // fire on a later respawn and it would only move the body.
-            //
-            // Forcing STAND is how the engine gets a hero out of a stuck state
-            // elsewhere; CHero::releaseFromGrab does exactly this. The index is
-            // looked up rather than passed by name because the byName form asks
-            // findStateIndex to quit the process when the state is missing, and
-            // a respawn must not be able to end the session.
-            motion_list = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
-                (&(hero->base).model.motion_controller);
-            stand_state = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0
-                (motion_list, (char *)"STAND", 0);
-            if (0 <= stand_state) {
-                core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (&(hero->base).model.motion_controller, stand_state, 1);
-            }
-        }
+        // Arcade continue, applied on the same sim frame on every machine,
+        // exactly like the move.
+        revived = nocturne_net_respawn_revive(hero);
 
         // Whatever had hold of the hero does not still have hold of him
         // somewhere else. CHero::releaseFromGrab forces STAND when a GETGRABBED
@@ -689,6 +701,7 @@ extern "C" int  nocturne_net_respawn_hero_in_world(CHero *hero)
 extern "C" int  nocturne_net_respawn_request(void) { return 0; }
 extern "C" int  nocturne_net_respawn_on_packet(const void *, int) { return 0; }
 extern "C" void nocturne_net_respawn_apply_if_due(int) {}
+extern "C" int  nocturne_net_respawn_revive(CHero *) { return 0; }
 extern "C" int  nocturne_net_host_death_menu(void) { return 0; }
 
 #endif /* NOCTURNE_AUTHENTIC_NETPLAY */

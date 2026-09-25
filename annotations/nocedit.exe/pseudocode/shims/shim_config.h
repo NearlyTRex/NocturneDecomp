@@ -187,6 +187,11 @@ void nocturne_trigl_envmap_pass_end(void);
 #include "game/hero_interact.h"
 #include "game/hero_grab.h"
 
+// Health-item use, auto-use and the health bar on damage (nocturne_hero_items_*),
+// reached from the process and processDamage of the classes that had none of
+// it. Gated at those call sites on NOCTURNE_AUTHENTIC_HERO_ACTIONS.
+#include "game/hero_items.h"
+
 // Which of the engine's two text paths is used (nocturne_os_font_*), reached
 // from CGame::initFonts to apply the stored choice and from the menu TU for the
 // Graphics Options line. Inert under NOCTURNE_OS_FONT_OPTION=0.

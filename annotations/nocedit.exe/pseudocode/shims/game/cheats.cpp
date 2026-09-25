@@ -773,7 +773,7 @@ void applyToEveryHero(int index, int value)
         // Grants: there is no un-give, so an off line just stops handing them
         // out. Each is guarded inside against handing out a second one.
         case NOCTURNE_CHEAT_GOD_MODE:
-            if (value != 0) { (hero->base).hit_points = 100.0f; }
+            if (value != 0) { (hero->base).hit_points = (hero->base).max_hit_points; }
             break;
         case NOCTURNE_CHEAT_ITEM_SKELETON_KEY:
             if (value != 0) { giveSkeletonKey(hero); }

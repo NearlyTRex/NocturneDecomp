@@ -11,7 +11,7 @@ CIcePick * __cdecl core_icepick_cpp_CIcePick_ctor_FUN_004f7df0(CIcePick *this_pt
 
 {
   CIcePick *pCVar1;
-  
+
   pCVar1 = (CIcePick *)core_hero_cpp_CHero_ctor_FUN_004f2340(&this_ptr->base);
   (pCVar1->base).base.base.vtable._ub = &g_CIcePickVTable._ub;
   pCVar1->guns_drawn = 0;
@@ -23,5 +23,8 @@ CIcePick * __cdecl core_icepick_cpp_CIcePick_ctor_FUN_004f7df0(CIcePick *this_pt
   pCVar1->is_armed = 0;
   pCVar1->pending_pickup_target = (CDemonActor *)0x0;
   (pCVar1->base).base.hit_points = 300.0;
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+  (pCVar1->base).base.max_hit_points = 300.0;
+#endif
   return pCVar1;
 }

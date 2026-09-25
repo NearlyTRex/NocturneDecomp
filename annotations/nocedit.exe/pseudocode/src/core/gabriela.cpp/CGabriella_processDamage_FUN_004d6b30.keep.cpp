@@ -37,6 +37,9 @@ void __cdecl core_gabriela_cpp_CGabriella_processDamage_FUN_004d6b30(CGabriella 
   fVar4 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   this_ptr_01 = &(this_ptr->base).base.model;
   (this_ptr->base).base.hit_points = fVar4;
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+  fVar4 = nocturne_hero_items_damage_taken(&this_ptr->base,damage_info);
+#endif
   if (0.0 < fVar4) {
     if (0.0 < damage_info->damage_amount) {
       if ((this_ptr->base).ladder_to_climb == (CLadder *)0x0) {
@@ -78,7 +81,11 @@ void __cdecl core_gabriela_cpp_CGabriella_processDamage_FUN_004d6b30(CGabriella 
     core_charactr_cpp_CCharacter_processDamage_FUN_0042c3c0((CCharacter *)this_ptr,damage_info);
     return;
   }
+#if NOCTURNE_AUTHENTIC_NETPLAY
   core_game_cpp_CGame_resetInventoryDisplayTimer_FUN_004e0bd0(g_CGamePtr);
+#else
+  core_inv_cpp_CInventory_resetInventoryDisplayTimer_FUN_00500020(&(this_ptr->base).inventory);
+#endif
   core_charactr_cpp_CCharacter_processDamage_FUN_0042c3c0((CCharacter *)this_ptr,damage_info);
   return;
 }

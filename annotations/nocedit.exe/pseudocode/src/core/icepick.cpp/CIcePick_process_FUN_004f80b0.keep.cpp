@@ -48,6 +48,9 @@ void __cdecl core_icepick_cpp_CIcePick_process_FUN_004f80b0(CIcePick *this_ptr,f
   if ((this_ptr->base).ai_task == HERO_TASK_SUSPEND) {
     return;
   }
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+  nocturne_hero_items_process(&this_ptr->base);
+#endif
   if ((this_ptr->base).control_type == HERO_CONTROL_AI) {
     core_icepick_cpp_CIcePick_processAI_FUN_004f8c70(this_ptr,delta_time);
   }

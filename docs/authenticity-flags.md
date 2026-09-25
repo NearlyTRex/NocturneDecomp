@@ -113,7 +113,7 @@ honest reason its default is what it is.
 | `STREAM_LENGTH` | a streamed MP3 ends where the sample actually ends |
 | `ACTOR_DELETE` | references to a deleted actor are cleared before the memory is freed |
 | `HERO_WEAPON` | each hero class starts holding what it can actually use |
-| `HERO_ACTIONS` | the other eight classes can interact, and can escape a grab |
+| `HERO_ACTIONS` | the other eight classes can interact, escape a grab and use health items |
 | `CHAPTER_SELECT` | START offers the chapter lists whether or not pod.ini is present |
 | `FRIENDLY_FIRE` | heroes cannot damage each other in a network game |
 | `MELEE_PICKUP` | a melee weapon you already carry does not fill a second inventory slot |

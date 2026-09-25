@@ -22,8 +22,12 @@ typedef struct SNetPacket_Cheats {
     SNetPacketHeader header;                    // 0x0
     int   count;                                // 0x5  how many bytes are real
     unsigned char state[NOCTURNE_CHEAT_COUNT];  // 0x9  one per cheat
+    int   auto_use_health;                      //      the host's CGame::auto_use_health
 } SNetPacket_Cheats;
 #pragma pack(pop)
+
+// The host's autoUseHealth as last announced, or -1 before any announcement.
+static int s_host_auto_use_health = -1;
 
 // Same reasoning as the mission announcement: one datagram can be lost, three
 // at each of two points cannot realistically all be.
@@ -56,6 +60,7 @@ extern "C" void nocturne_net_cheats_announce(void)
     packet.header.type = (ENetPacketType)NOCTURNE_NET_PACKET_CHEATS;
     packet.header.size = sizeof(SNetPacket_Cheats);
     packet.count       = nocturne_cheats_pack(packet.state, (int)sizeof(packet.state));
+    packet.auto_use_health = g_CGamePtr->auto_use_health;
 
     for (repeat = 0; repeat < CHEATS_SEND_REPEATS; repeat++) {
         for (i = 0; i < net_game->player_count; i++) {
@@ -64,7 +69,8 @@ extern "C" void nocturne_net_cheats_announce(void)
             }
         }
     }
-    DLOG("netplay", "CHEATS announce count=%d", packet.count);
+    DLOG("netplay", "CHEATS announce count=%d auto_use_health=%d",
+            packet.count, packet.auto_use_health);
 }
 
 extern "C" void nocturne_net_cheats_reset(void)
@@ -73,6 +79,15 @@ extern "C" void nocturne_net_cheats_reset(void)
         DLOG("netplay", "CHEATS override dropped");
     }
     nocturne_cheats_clear_override();
+    s_host_auto_use_health = -1;
+}
+
+extern "C" int nocturne_net_cheats_auto_use_health(void)
+{
+    if (cheats_is_network_game() && (cheats_is_host() == 0) && (0 <= s_host_auto_use_health)) {
+        return s_host_auto_use_health;
+    }
+    return g_CGamePtr->auto_use_health;
 }
 
 extern "C" int nocturne_net_cheats_on_packet(const void *packet, int packet_size)
@@ -85,6 +100,9 @@ extern "C" int nocturne_net_cheats_on_packet(const void *packet, int packet_size
     if (in->header.type != (ENetPacketType)NOCTURNE_NET_PACKET_CHEATS) {
         return 0;
     }
+    // Not part of the cheat table, so a table mismatch below does not void it.
+    s_host_auto_use_health = (in->auto_use_health != 0);
+
     // A host built against a different cheat table would send a different
     // count. Applying a short list would silently arm the wrong lines, so the
     // guest keeps its own and lets the desync detector speak instead.
@@ -114,6 +132,11 @@ extern "C" int nocturne_net_cheats_on_packet(const void *packet, int packet_size
     (void)packet;
     (void)packet_size;
     return 0;
+}
+
+extern "C" int nocturne_net_cheats_auto_use_health(void)
+{
+    return g_CGamePtr->auto_use_health;
 }
 
 #endif

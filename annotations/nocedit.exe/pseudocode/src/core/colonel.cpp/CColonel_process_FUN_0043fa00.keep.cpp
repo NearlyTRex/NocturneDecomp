@@ -40,6 +40,9 @@ void __cdecl core_colonel_cpp_CColonel_process_FUN_0043fa00(CColonel *this_ptr,f
   if (iVar5 == 0) {
     return;
   }
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+  nocturne_hero_items_process(&this_ptr->base);
+#endif
   fVar10 = (this_ptr->base).invincibility_timer - delta_time;
   (this_ptr->base).invincibility_timer = fVar10;
   if (fVar10 < 0.0) {

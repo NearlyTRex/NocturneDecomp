@@ -450,7 +450,12 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
           fVar21 = 5.0;
           pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("God mode enabled");
           core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar8,fVar21);
+#if NOCTURNE_AUTHENTIC_HERO_ACTIONS
           (g_HeroActors[g_LocalHeroIndex]->base).hit_points = 100.0;
+#else
+          (g_HeroActors[g_LocalHeroIndex]->base).hit_points =
+               (g_HeroActors[g_LocalHeroIndex]->base).max_hit_points;
+#endif
         }
         core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")
         ;
@@ -673,7 +678,11 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         iVar6 = g_LocalHeroIndex;
         this_ptr->god_mode_enabled = 1;
         this_ptr_00 = g_CSoundPtr;
+#if NOCTURNE_AUTHENTIC_HERO_ACTIONS
         (g_HeroActors[iVar6]->base).hit_points = 100.0;
+#else
+        (g_HeroActors[iVar6]->base).hit_points = (g_HeroActors[iVar6]->base).max_hit_points;
+#endif
         core_sound_cpp_CSound_playSound_FUN_005b3a20(this_ptr_00,(void *)0x0,"cheat-1.wav")
         ;
       }
@@ -1164,7 +1173,12 @@ LAB_004df408:
       if (iStack_100 == uVar10) {
         fVar21 = 5.0;
         g_InputHistory[1] = '\0';
+#if NOCTURNE_AUTHENTIC_HERO_ACTIONS
         (g_HeroActors[g_LocalHeroIndex]->base).hit_points = 100.0;
+#else
+        (g_HeroActors[g_LocalHeroIndex]->base).hit_points =
+             (g_HeroActors[g_LocalHeroIndex]->base).max_hit_points;
+#endif
         pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Health restored.");
         core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar8,fVar21);
       }

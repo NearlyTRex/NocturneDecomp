@@ -33,6 +33,9 @@ void __cdecl core_scat_cpp_CScat_processDamage_FUN_00557ea0(CScat *this_ptr,SDam
   fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   this_ptr_00 = &(this_ptr->base).base.model;
   (this_ptr->base).base.hit_points = fVar1;
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+  fVar1 = nocturne_hero_items_damage_taken(&this_ptr->base,damage_info);
+#endif
   if (0.0 < fVar1) {
     if (damage_info->damage_amount <= 0.0) {
       core_charactr_cpp_CCharacter_processDamage_FUN_0042c3c0((CCharacter *)this_ptr,damage_info);

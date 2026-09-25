@@ -38,7 +38,11 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_00524420(CDemonMission *this
     g_PendingMissionName[0] = '\0';
     core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_00524120(this_ptr);
     iVar1 = core_game_cpp_CGame_runGameSession_FUN_004daf80(g_CGamePtr);
+#if NOCTURNE_AUTHENTIC_NETPLAY
     this_ptr_00 = g_HeroActors[g_LocalHeroIndex];
+#else
+    this_ptr_00 = g_HeroActors[0];
+#endif
     core_mission_cpp_CDemonMission_removeActorFromList_FUN_00523be0
               (this_ptr,(CDemonActor *)this_ptr_00);
     (*(((this_ptr_00->base).base.vtable._uh)->_uh).reset)(this_ptr_00);

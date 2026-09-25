@@ -403,7 +403,12 @@ LAB_005009c0:
     if (local_67c < 1.0) {
       local_64 = (int)ROUND(ROUND(local_67c * 65535.0f));
     }
+#if NOCTURNE_AUTHENTIC_HERO_ACTIONS
     local_680 = (g_HeroActors[g_LocalHeroIndex]->base).hit_points * (float)0.01;
+#else
+    local_680 = (g_HeroActors[g_LocalHeroIndex]->base).hit_points /
+                (g_HeroActors[g_LocalHeroIndex]->base).max_hit_points;
+#endif
     if (local_680 < 0.0) {
       local_680 = 0.0;
     }

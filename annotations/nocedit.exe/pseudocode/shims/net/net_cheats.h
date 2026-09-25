@@ -74,6 +74,14 @@ void nocturne_net_cheats_reset(void);
 // Returns nonzero when it was one. Reached from CNetGame::processPacket.
 int nocturne_net_cheats_on_packet(const void *packet, int packet_size);
 
+// The autoUseHealth option the simulation should obey. It is an ini setting,
+// so two machines can disagree, and CStranger::processDamage reads it for every
+// hero: a host with it on spends a guest's item that the guest's own machine
+// does not. The announcement carries the host's value alongside the cheat list;
+// a guest that has received one returns it, and everyone else, single player
+// included, returns their own g_CGamePtr->auto_use_health.
+int nocturne_net_cheats_auto_use_health(void);
+
 #ifdef __cplusplus
 }
 #endif

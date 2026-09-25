@@ -75,6 +75,9 @@ void __cdecl core_gabriela_cpp_CGabriella_process_FUN_004d2ea0(CGabriella *this_
   if (iVar10 == 0) {
     return;
   }
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+  nocturne_hero_items_process(&this_ptr->base);
+#endif
   if ((this_ptr->base).control_type == HERO_CONTROL_AI) {
     core_gabriela_cpp_CGabriella_processAI_FUN_004d4190(this_ptr,delta_time);
   }
