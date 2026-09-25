@@ -13,11 +13,12 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from ghidra.app.decompiler import DecompileCallback
 from ghidra.program.model.pcode import HighFunction
 from ghidra_annotations.util import make_dirs
-from ghidra_annotations.util.log import log_info
+from ghidra_annotations.util.log import log_info, log_warning
 from ghidra_annotations.annotations import is_function_external
 
 from ghidra_annotations.annotations.pseudocode.parallel import (
-    DecompilerThreadLocal, DecompileWorker, DEFAULT_NUM_THREADS, PROCESS_BATCH_SIZE
+    DecompilerThreadLocal, DecompileWorker, DEFAULT_NUM_THREADS, PROCESS_BATCH_SIZE,
+    dispose_decompilers
 )
 from ghidra_annotations.annotations.pseudocode.output import write_batched_files
 from ghidra_annotations.annotations.pseudocode.strings import build_string_map
@@ -1285,9 +1286,15 @@ def export_pseudocode(currentProgram, path, strict=False, deep_analysis=False):
     # Clear decompiler fixes registry now that decompilation is done
     if decompiler_fixes_count > 0:
         clear_decompiler_fixes(fixes_interface)
+    log_info("Disposed %d decompiler interfaces" % dispose_decompilers())
 
-    log_info("Decompilation complete: %d succeeded, %d failed" % (
-        len(decompile_results), len(decompile_errors)))
+    refused =[r for r in decompile_results
+               if r.raw_decompiled_code.startswith("// Decompilation failed")]
+    log_info("Decompilation complete: %d succeeded, %d failed, %d refused by decompiler" % (
+        len(decompile_results) - len(refused), len(decompile_errors), len(refused)))
+    for r in refused[:5]:
+        log_warning("Decompiler refused %s: %s" % (
+            r.func_name, r.raw_decompiled_code.splitlines()[-1]))
 
     # =========================================================================
     # BUILD PROTOTYPES FROM DECOMPILATION RESULTS

@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_scat_cpp_CScat_scoreAimTarget_FUN_00558cf0(CScat *this_ptr,CDemonActor *target,int hand_index)
+; float __cdecl core_scat_cpp_CScat_scoreAimTarget_FUN_00558cf0(CScat *this_ptr,CDemonActor *target,int is_current_target)
 ;
 ; Parameters:
 ; CScat *          Stack[0x4]:4   this_ptr
 ; CDemonActor *    Stack[0x8]:4   target
-; int              Stack[0xc]:4   hand_index
+; int              Stack[0xc]:4   is_current_target
 ; Local Variables:
 ; CVector3f[10]    Stack[-0xf8]:120  local_f8
 ; CBoundingBox3D   Stack[-0x80]:24  CStack_80

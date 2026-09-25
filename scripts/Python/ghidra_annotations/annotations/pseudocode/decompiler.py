@@ -73,6 +73,12 @@ def extract_signature_from_decompiled_code(decompiled_code):
     return signature
 
 
+def _failure_stub(res):
+    """Stub for a failed decompile, keeping the decompiler's reason."""
+    msg = (res.getErrorMessage() or "").strip().replace("\n", " ")
+    return "// Decompilation failed or timed out\n// Reason: %s\n" % (msg or "(none given)")
+
+
 def decompile_function_raw(interface, func, symbol_table, string_map, timeout=60):
     """Decompile a function and return raw code with minimal processing.
 
@@ -95,7 +101,7 @@ def decompile_function_raw(interface, func, symbol_table, string_map, timeout=60
     # === JAVA-HEAVY: Main decompilation (GIL released during this call) ===
     res = interface.decompileFunction(func, timeout, ConsoleTaskMonitor())
     if not res.decompileCompleted():
-        return "// Decompilation failed or timed out\n"
+        return _failure_stub(res)
 
     # Basic string replacement (relatively light Python work)
     decompiled_code = res.getDecompiledFunction().getC()
@@ -126,7 +132,7 @@ def generate_decompilation_code(interface, func, symbol_table, string_map, timeo
 
     res = interface.decompileFunction(func, timeout, ConsoleTaskMonitor())
     if not res.decompileCompleted():
-        return "// Decompilation failed or timed out\n"
+        return _failure_stub(res)
 
     decompiled_code = res.getDecompiledFunction().getC()
 

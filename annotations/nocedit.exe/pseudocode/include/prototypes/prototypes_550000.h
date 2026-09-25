@@ -138,7 +138,7 @@ void __cdecl core_scat_cpp_CScat_updateWeaponState_FUN_00558060(CScat *this_ptr,
 void __cdecl core_scat_cpp_CScat_blendLayerAction_FUN_005582c0(CScat *this_ptr);
 void __cdecl core_scat_cpp_CScat_blendAimBones_FUN_005584a0(CScat *this_ptr,int hand_index);
 void __cdecl core_scat_cpp_CScat_updateAiming_FUN_00558720(CScat *this_ptr,float delta_time,int is_holstered);
-int __cdecl core_scat_cpp_CScat_scoreAimTarget_FUN_00558cf0(CScat *this_ptr,CDemonActor *target,int hand_index);
+float __cdecl core_scat_cpp_CScat_scoreAimTarget_FUN_00558cf0(CScat *this_ptr,CDemonActor *target,int is_current_target);
 void __cdecl core_scat_cpp_CScat_updateWeaponAttachment_FUN_00558fd0(CScat *this_ptr);
 void __cdecl core_scat_cpp_CScat_onActorDeleted_FUN_00559100(CScat *this_ptr,CDemonActor *deleted_actor);
 void __cdecl core_scat_cpp_CScat_getPropertyList_FUN_00559120(CScat *this_ptr,CActorPropertyList *property_list);

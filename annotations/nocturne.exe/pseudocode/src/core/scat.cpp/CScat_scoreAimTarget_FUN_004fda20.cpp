@@ -2,13 +2,13 @@
 // Address: 004fda20
 // Address Range: [[004fda20, 004fdcf0]]
 // Convention: __cdecl
-// Signature: int __cdecl core_scat_cpp_CScat_scoreAimTarget_FUN_004fda20(CScat *this_ptr,CDemonActor *target,int hand_index)
+// Signature: float __cdecl core_scat_cpp_CScat_scoreAimTarget_FUN_004fda20(CScat *this_ptr,CDemonActor *target,int is_current_target)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 
-int __cdecl core_scat_cpp_CScat_scoreAimTarget_FUN_004fda20(CScat *this_ptr,CDemonActor *target,int hand_index)
+float __cdecl core_scat_cpp_CScat_scoreAimTarget_FUN_004fda20(CScat *this_ptr,CDemonActor *target,int is_current_target)
 
 {
   float fVar1;
@@ -51,26 +51,26 @@ int __cdecl core_scat_cpp_CScat_scoreAimTarget_FUN_004fda20(CScat *this_ptr,CDem
     pCVar5 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(&CStack_68,&CStack_50)
     ;
     fVar1 = pCVar5->y;
-    if (hand_index == 0) {
+    if (is_current_target == 0) {
       if ((float)30 < fVar2) {
-        return -0x40800000;
+        return -1.0;
       }
       if (fVar1 < (float)-0.78149070982587099) {
-        return -0x40800000;
+        return -1.0;
       }
       if (1.56298141965174 < (double)fVar1) {
-        return -0x40800000;
+        return -1.0;
       }
     }
     else {
       if ((float)35 < fVar2) {
-        return -0x40800000;
+        return -1.0;
       }
       if (fVar1 < (float)-0.78539816337500001) {
-        return -0x40800000;
+        return -1.0;
       }
       if (1.57079632675 < (double)fVar1) {
-        return -0x40800000;
+        return -1.0;
       }
     }
     pCVar6 = (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
@@ -93,8 +93,8 @@ int __cdecl core_scat_cpp_CScat_scoreAimTarget_FUN_004fda20(CScat *this_ptr,CDem
     fStack_14 = fStack_1c;
     core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
     if ((fStack_1c <= 1.0) && (target == g_CDemonSet_PTR_005be368->collision_actor)) {
-      return (int)fStack_20;
+      return fStack_20;
     }
   }
-  return -0x40800000;
+  return -1.0;
 }

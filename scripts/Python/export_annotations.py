@@ -424,6 +424,13 @@ Available categories:
                 traceback.print_exc()
                 exit_code = 1
                 ok = False
+            finally:
+                # A failed export skips the exporter's own cleanup; never let
+                # one program's decompiler processes outlive it.
+                from ghidra_annotations.annotations.pseudocode.parallel import dispose_decompilers
+                leaked = dispose_decompilers()
+                if leaked:
+                    print("Disposed %d leftover decompiler interfaces for '%s'" % (leaked, name))
             if ok:
                 exported_ok.append(name)
     except Exception as e:

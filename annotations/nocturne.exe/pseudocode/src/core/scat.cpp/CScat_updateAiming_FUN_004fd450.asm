@@ -261,7 +261,7 @@ section .text
     PUSH EBX                            ; 004fd745
     PUSH ESI                            ; 004fd746
     CALL core_scat.cpp_CScat_scoreAimTarget_FUN_004fda20 ; 004fd747
-        ;   XREF to: 004fda20 (UNCONDITIONAL_CALL)  ; int core_scat.cpp_CScat_scoreAimTarget_FUN_004fda20(CScat * this_ptr, CDemonActor * target, int hand_index)
+        ;   XREF to: 004fda20 (UNCONDITIONAL_CALL)  ; float core_scat.cpp_CScat_scoreAimTarget_FUN_004fda20(CScat * this_ptr, CDemonActor * target, int is_current_target)
     MOV dword ptr [ESP + 0x134],EAX     ; 004fd74c
     FLD float ptr [ESP + 0x134]         ; 004fd753
     ADD ESP,0xc                         ; 004fd75a

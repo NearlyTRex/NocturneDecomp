@@ -33,7 +33,7 @@ void __cdecl core_scat_cpp_CScat_updateAiming_FUN_00558720(CScat *this_ptr,float
   float local_24;
   int local_20;
   CDemonActor *target;
-  
+
   this_ptr->aim_converged = 0;
   if ((is_holstered == 0) &&
      (pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
@@ -64,8 +64,8 @@ void __cdecl core_scat_cpp_CScat_updateAiming_FUN_00558720(CScat *this_ptr,float
     local_24 = 1e+30;
     for (local_20 = 0; local_20 < g_CDemonSetPtr->actor_count; local_20 = local_20 + 1) {
       target = g_CDemonSetPtr->actors[local_20];
-      fVar2 = (float)core_scat_cpp_CScat_scoreAimTarget_FUN_00558cf0
-                               (this_ptr,target,(uint)(target == this_ptr->aim_target));
+      fVar2 = core_scat_cpp_CScat_scoreAimTarget_FUN_00558cf0
+                        (this_ptr,target,(uint)(target == this_ptr->aim_target));
       if ((0.0 <= fVar2) && (fVar2 < local_24)) {
         local_28 = target;
         local_24 = fVar2;
@@ -82,7 +82,13 @@ void __cdecl core_scat_cpp_CScat_updateAiming_FUN_00558720(CScat *this_ptr,float
     }
     goto LAB_005587bd;
   }
-  if (this_ptr->aim_target == (CDemonActor *)0x0) goto LAB_005587bd;
+  if (this_ptr->aim_target == (CDemonActor *)0x0) {
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+    local_13c = 0.0;
+    local_2c = 0.0;
+#endif
+    goto LAB_005587bd;
+  }
   __arrinit(local_138,10,&g_CVectorTypeInfo);
   iVar3 = (*((this_ptr->aim_target->vtable)._ub)->getTargetPoints)(this_ptr->aim_target,local_138);
   if (iVar3 < 1) {

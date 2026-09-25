@@ -220,7 +220,7 @@ void __cdecl core_scat_cpp_CScat_updateWeaponState_FUN_004fcd90(CScat *this_ptr,
 void __cdecl core_scat_cpp_CScat_blendLayerAction_FUN_004fcff0(CScat *this_ptr);
 void __cdecl core_scat_cpp_CScat_blendAimBones_FUN_004fd1d0(CScat *this_ptr,int hand_index);
 void __cdecl core_scat_cpp_CScat_updateAiming_FUN_004fd450(CScat *this_ptr,float delta_time,int is_holstered);
-int __cdecl core_scat_cpp_CScat_scoreAimTarget_FUN_004fda20(CScat *this_ptr,CDemonActor *target,int hand_index);
+float __cdecl core_scat_cpp_CScat_scoreAimTarget_FUN_004fda20(CScat *this_ptr,CDemonActor *target,int is_current_target);
 void __cdecl core_scat_cpp_CScat_FUN_004fdd00(CScat *this_ptr);
 CScat * __cdecl core_scat_cpp_CScat_dtor_FUN_004fde30(CScat *this_ptr,uint flags);
 void __cdecl core_script_cpp_staticInit_FUN_004fde80(void);

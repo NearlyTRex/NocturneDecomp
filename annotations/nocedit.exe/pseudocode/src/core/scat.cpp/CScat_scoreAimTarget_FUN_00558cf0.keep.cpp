@@ -3,11 +3,11 @@
 // MANUAL RECONSTRUCTION
 // Address Range: [[00558cf0, 00558fc0]]
 // Convention: __cdecl
-// Signature: int __cdecl core_scat_cpp_CScat_scoreAimTarget_FUN_00558cf0(CScat *this_ptr,CDemonActor *target,int hand_index)
+// Signature: float __cdecl core_scat_cpp_CScat_scoreAimTarget_FUN_00558cf0(CScat *this_ptr,CDemonActor *target,int is_current_target)
 
 #include "nocturne.h"
 
-int __cdecl core_scat_cpp_CScat_scoreAimTarget_FUN_00558cf0(CScat *this_ptr,CDemonActor *target,int hand_index)
+float __cdecl core_scat_cpp_CScat_scoreAimTarget_FUN_00558cf0(CScat *this_ptr,CDemonActor *target,int is_current_target)
 
 {
   float fVar3;
@@ -40,26 +40,26 @@ int __cdecl core_scat_cpp_CScat_scoreAimTarget_FUN_00558cf0(CScat *this_ptr,CDem
     pCVar5 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&CStack_68,&CStack_50)
     ;
     fVar1 = pCVar5->y;
-    if (hand_index == 0) {
+    if (is_current_target == 0) {
       if ((float)30 < fVar3) {
-        return -0x40800000;
+        return -1.0;
       }
       if (fVar1 < (float)-0.78149070982587099) {
-        return -0x40800000;
+        return -1.0;
       }
       if (1.56298141965174 < (double)fVar1) {
-        return -0x40800000;
+        return -1.0;
       }
     }
     else {
       if ((float)35 < fVar3) {
-        return -0x40800000;
+        return -1.0;
       }
       if (fVar1 < (float)-0.78539816337500001) {
-        return -0x40800000;
+        return -1.0;
       }
       if (1.57079632675 < (double)fVar1) {
-        return -0x40800000;
+        return -1.0;
       }
     }
     pCVar6 = (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
@@ -76,8 +76,8 @@ int __cdecl core_scat_cpp_CScat_scoreAimTarget_FUN_00558cf0(CScat *this_ptr,CDem
     fVar4 = core_setcolid_cpp_CDemonSet_raycast_FUN_00572530(g_CDemonSetPtr,&CStack_5c,&CStack_44);
     core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
     if ((fVar4 <= 1.0) && (target == g_CDemonSetPtr->collision_actor)) {
-      return (int)fVar3;
+      return fVar3;
     }
   }
-  return -0x40800000;
+  return -1.0;
 }

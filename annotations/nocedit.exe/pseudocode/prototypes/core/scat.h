@@ -81,7 +81,7 @@ void __cdecl CScat::updateAiming(CScat *this_ptr,float delta_time,int is_holster
 
 // Original: core_scat.cpp_CScat_scoreAimTarget_FUN_00558cf0
 // Address: 00558cf0
-int __cdecl CScat::scoreAimTarget(CScat *this_ptr,CDemonActor *target,int hand_index);
+float __cdecl CScat::scoreAimTarget(CScat *this_ptr,CDemonActor *target,int is_current_target);
 
 // Original: core_scat.cpp_CScat_updateWeaponAttachment_FUN_00558fd0
 // Address: 00558fd0

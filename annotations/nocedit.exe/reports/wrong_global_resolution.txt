@@ -12,14 +12,14 @@ SUMMARY
 ----------------------------------------------------------------------------------------------------
 
   Functions checked: 6911
-  Functions with suspicious globals: 104
-  Total suspicious global references: 166
+  Functions with suspicious globals: 105
+  Total suspicious global references: 167
 
   Most commonly misresolved globals:
     g_SfxOptions                                       13 functions
     g_KeyboardState                                    9 functions
+    g_CNetGamePtr                                      7 functions
     g_WindowHeight                                     7 functions
-    g_CNetGamePtr                                      6 functions
     g_CDemonCameraInstance                             6 functions
     g_CKeysPtr                                         6 functions
     g_WindowWidth                                      5 functions
@@ -37,7 +37,7 @@ SUMMARY
     g_CGamePtr                                         2 functions
     g_CMoonInstance                                    2 functions
 
-  .keep files with issues: 71 (these need manual review)
+  .keep files with issues: 72 (these need manual review)
   Raw .cpp files with issues: 33
 
 ====================================================================================================
@@ -249,11 +249,11 @@ core_game.cpp_CGame_runGameSession_FUN_004daf80  [.keep]  (2 suspicious globals)
   File: core/game.cpp
 
   g_CurrentGameTime
-    Used at lines: 208
+    Used at lines: 210
     NOT found in function reference list
 
   g_SimFrameCount
-    Used at lines: 169
+    Used at lines: 171
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -265,7 +265,7 @@ core_inv.cpp_CInventory_renderAllItems_FUN_00500690  [.keep]  (2 suspicious glob
     NOT found in function reference list
 
   g_CScriptPtr
-    Used at lines: 456, 466
+    Used at lines: 461, 471
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -353,11 +353,19 @@ shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060 
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+core_bodypart.cpp_CBodyPart_renderBackground_FUN_00419610  [.keep]  (1 suspicious globals)
+  File: core/bodypart.cpp
+
+  g_CNetGamePtr
+    Used at lines: 22, 23
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 core_charactr.cpp_CCharacter_renderBurn_FUN_0042ad00  [.keep]  (1 suspicious globals)
   File: core/charactr.cpp
 
   g_CNetGamePtr
-    Used at lines: 78, 79
+    Used at lines: 75, 76
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -389,7 +397,7 @@ core_emitter.cpp_CEmitter_process_FUN_004a8070  [.keep]  (1 suspicious globals)
   File: core/emitter.cpp
 
   g_CNetGamePtr
-    Used at lines: 57, 58
+    Used at lines: 54, 55
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -549,7 +557,7 @@ core_netgame.cpp_CNetGame_runLobby_FUN_00541390  [.keep]  (1 suspicious globals)
   File: core/netgame.cpp
 
   g_InputKeyMask
-    Used at lines: 41, 321
+    Used at lines: 42, 322
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -565,7 +573,7 @@ core_script.cpp_CScript_renderSubtitles_FUN_00559b20  [.keep]  (1 suspicious glo
   File: core/script.cpp
 
   g_ModalDialogActive
-    Used at lines: 57, 66, 79, 136
+    Used at lines: 51, 60, 68, 125
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

@@ -116,7 +116,29 @@ class DecompilerThreadLocal:
                 interface.setOptions(DecompileOptions())
                 interface.openProgram(self.currentProgram)
                 self._local.interface = interface
+                with _open_interfaces_lock:
+                    _open_interfaces.append(interface)
         return self._local.interface
+
+
+# Every DecompInterface opened above owns a native decompiler process. Worker
+# threads exit without closing theirs, so they are tracked here and disposed
+# explicitly; otherwise each program in an --all-programs run leaks a pool.
+_open_interfaces = []
+_open_interfaces_lock = threading.Lock()
+
+
+def dispose_decompilers():
+    """Dispose every interface opened by DecompilerThreadLocal. Returns the count."""
+    with _open_interfaces_lock:
+        interfaces = list(_open_interfaces)
+        del _open_interfaces[:]
+    for interface in interfaces:
+        try:
+            interface.dispose()
+        except Exception:
+            pass
+    return len(interfaces)
 
 
 class DecompileResult:

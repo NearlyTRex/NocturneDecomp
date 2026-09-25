@@ -1119,6 +1119,10 @@
 //                   hit_points * 0.01, CHealthItem::useItem caps at 100,
 //                   CInventory::select refuses an item above 98, and the typed
 //                   god-mode and health cheats set 100.
+//     Scat's aim    CScat::updateAiming in auto-aim mode seeds its desired
+//                   angles from the current ones, so when the target dies or the
+//                   weapon is holstered the aim holds where it was. Only firing
+//                   with no target snaps it back to centre.
 //
 //   1: shipped behaviour — Scat and Moloch can interact with nothing, sheathed
 //      fire falls through to an attack, only the Stranger can break a grab
@@ -1135,7 +1139,8 @@
 //      its health bar when hit, and has its inventory ticked. IcePick's maximum
 //      is 300, and every one of those sites works from the hero's own
 //      max_hit_points: the figure fills as a fraction of it, items cap at it,
-//      select refuses above 98% of it, and the cheats restore it.
+//      select refuses above 98% of it, and the cheats restore it. Scat's auto
+//      aim eases back to centre at its normal turn rate once it has no target.
 //
 //      Not included: object pickup, using items other than health, and box
 //      pushing, which sit on carry-hand state these classes do not maintain;
