@@ -202,6 +202,11 @@ void nocturne_trigl_envmap_pass_end(void);
 // Graphics Options line. Inert under NOCTURNE_OS_FONT_OPTION=0.
 #include "core/os_font.h"
 
+// The dialog widgets' font (nocturne_menu_font*), chosen on the Graphics
+// Options screen and asked for wherever the game would set g_ThemeFont. Gated
+// at those sites on NOCTURNE_AUTHENTIC_MENU_FONT.
+#include "core/menu_font.h"
+
 // What this build calls itself (nocturne_version*), reached from the entry
 // point for --version and from the game TU for the console banner and the menu
 // corner. Not gated: a build always knows its own version, and only where it is

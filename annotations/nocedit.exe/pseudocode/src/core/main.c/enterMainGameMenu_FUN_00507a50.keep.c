@@ -49,6 +49,12 @@ int __cdecl core_main_c_enterMainGameMenu_FUN_00507a50(void)
   if (g_WindowHeight < 0x1e0) {
     return 1;
   }
+#if !NOCTURNE_AUTHENTIC_MENU_FONT
+  if ((g_ThemeFont != (CBitFont *)0x0) &&
+      ((g_CDemonMissionPtr == (CDemonMission *)0x0) || (g_CDemonMissionPtr->is_in_editor == 0))) {
+    g_EditorFont = nocturne_menu_font();
+  }
+#endif
   if ((g_UseDirect3D == 0) && (0x1e0 < g_CGamePtr->game_pixy)) {
     g_CGamePtr->game_pixy = 0x1e0;
     pCVar2->game_pixx = 0x280;

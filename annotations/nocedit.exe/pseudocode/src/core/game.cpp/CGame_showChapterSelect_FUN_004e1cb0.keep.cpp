@@ -46,7 +46,11 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame *this_ptr,
   this_ptr->total_play_time = 0.0;
   this_ptr->is_loading = 0;
   local_1c = g_EditorFont;
+#if NOCTURNE_AUTHENTIC_MENU_FONT
   g_EditorFont = g_ThemeFont;
+#else
+  g_EditorFont = nocturne_menu_font();
+#endif
   p_Var3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                      ("pod.ini",(char *)0x0,"rt","..\\core\\game.cpp",3818);
   if (p_Var3 != (_FILE *)0x0) {

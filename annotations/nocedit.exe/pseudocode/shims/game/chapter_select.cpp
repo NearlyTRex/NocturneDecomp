@@ -7,7 +7,45 @@
 #include "game/chapter_select.h"
 #include "nocturne.h"
 
+#include <cstdio>
+#include <string>
+
+std::string watcom_resolve_fs_path(const char *path);
+
 namespace {
+
+// The Epilogue's index in the tables below. It is the last volume, so leaving
+// it off the list shifts no other entry.
+#define CHAPTER_EPILOGUE_VOLUME 4
+
+// CGame::showChapterSelect lists the Epilogue only once all four acts have
+// been finished, which the game records as these values under [Game] in
+// nocturne.ini.
+int epilogue_unlocked(void)
+{
+    static char ini_path[] = ".\\system\\nocturne.ini";
+    static char section[]  = "Game";
+    static char key[]      = "Act1Code";
+    static const int codes[4] = { 0x331, 0x3cc, 0x3ac, 0xd6 };
+    std::string resolved;
+    FILE *probe;
+    int act;
+
+    // CIni::getProfileString quits the process when the file is missing.
+    resolved = watcom_resolve_fs_path(ini_path);
+    probe = fopen(resolved.c_str(), "rb");
+    if (probe == nullptr) {
+        return 0;
+    }
+    fclose(probe);
+    for (act = 0; act < 4; act++) {
+        key[3] = (char)('1' + act);
+        if (engine_ini_cpp_getProfileInteger_FUN_004fb9a0(section, key, 0, ini_path) != codes[act]) {
+            return 0;
+        }
+    }
+    return 1;
+}
 
 // The Volume titles, in g_ChapterMissionFiles order. The only strings needed:
 // the chapters within a volume are never listed, for the same reason
@@ -152,11 +190,18 @@ extern "C" int nocturne_chapter_pick_mission(char *out, int out_size)
     // showChapterSelect swaps the theme font in around its pick lists; match it
     // so this looks like the menu it is standing in for.
     saved_font = g_EditorFont;
+#if NOCTURNE_AUTHENTIC_MENU_FONT
     g_EditorFont = g_ThemeFont;
+#else
+    g_EditorFont = nocturne_menu_font();
+#endif
 
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&list);
     playable = 0;
     for (i = 0; i < CHAPTER_VOLUME_COUNT; i++) {
+        if ((i == CHAPTER_EPILOGUE_VOLUME) && (epilogue_unlocked() == 0)) {
+            continue;
+        }
         title = support_newmsg_cpp_getLocalizedString_FUN_005441f0((char *)k_volume_names[i]);
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&list.base, (char *)title);
         // Chapter 0 specifically, because chapter 0 is what starting this

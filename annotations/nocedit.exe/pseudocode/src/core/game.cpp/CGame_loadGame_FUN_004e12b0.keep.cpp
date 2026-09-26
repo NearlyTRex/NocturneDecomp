@@ -60,7 +60,11 @@ void __cdecl core_game_cpp_CGame_loadGame_FUN_004e12b0(CGame *this_ptr,char *sav
   }
   local_3c = g_EditorFont;
   if (load_mode != 0) {
+#if NOCTURNE_AUTHENTIC_MENU_FONT
     g_EditorFont = g_ThemeFont;
+#else
+    g_EditorFont = nocturne_menu_font();
+#endif
   }
   local_20 = this_ptr->chapter_reload_filename;
   local_2c = &this_ptr->total_kill_count;
@@ -145,6 +149,9 @@ LAB_004e14f5:
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                              ("Can't open saved game file.");
           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar7);
+#if !NOCTURNE_AUTHENTIC_MENU_FONT
+          g_EditorFont = local_3c;
+#endif
           return;
         }
         watcom_stream_open(ofs, "save\\$$SAVE$$.TMP", std::ios::out | std::ios::binary | std::ios::trunc);
@@ -152,6 +159,9 @@ LAB_004e14f5:
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                              ("Can't create temp file to load saved game file.");
           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar7);
+#if !NOCTURNE_AUTHENTIC_MENU_FONT
+          g_EditorFont = local_3c;
+#endif
           return;
         }
         support_codec_cpp_CLZWDecompress_ctor_FUN_0043f490(&local_6c,0x8000,8);
@@ -167,6 +177,9 @@ LAB_004e14f5:
           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar7);
           support_codec_cpp_CLZWDictionary_dtor_FUN_0043edf0(&local_6c.lzw_dict,0);
           support_codec_cpp_CCodec_dtor_FUN_0043e9b0(&local_6c.base,1);
+#if !NOCTURNE_AUTHENTIC_MENU_FONT
+          g_EditorFont = local_3c;
+#endif
           return;
         }
         file_handle = shape_memdbg_cpp_openFile_FUN_0050f7a0

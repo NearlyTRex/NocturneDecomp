@@ -361,7 +361,11 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
                         (g_CDemonSetPtr,g_CDemonSetPtr->selected_camera_index);
               g_EditorFont = g_SmallEditorFont;
               if (0xf0 < g_WindowHeight) {
+#if NOCTURNE_AUTHENTIC_MENU_FONT
                 g_EditorFont = g_ThemeFont;
+#else
+                g_EditorFont = nocturne_menu_font();
+#endif
               }
 #if !NOCTURNE_AUTHENTIC_OPTIONS_RESUMES_GAME
               core_set_cpp_CDemonSet_renderScene_FUN_0056c1a0(g_CDemonSetPtr,0);

@@ -78,6 +78,7 @@
 // | `NOCTURNE_AUTHENTIC_TEXT_RENDER_ALPHA` | 0 | defect | 2D text blends at its own alpha, not the last pass's leftover |
 // | `NOCTURNE_AUTHENTIC_BOTTOMLESS_FALL` | 0 | defect | a fall out of the world kills at once, not on chance geometry |
 // | `NOCTURNE_AUTHENTIC_FILE_TIME` | 0 | defect | a file written under daylight saving is dated its own hour |
+// | `NOCTURNE_AUTHENTIC_MENU_FONT` | 0 | defect | menus use the game's dialog font from the first launch |
 // | `NOCTURNE_AUTHENTIC_CHAPTER_SELECT` | 0 | defect | START offers the chapter lists, pod.ini or no pod.ini |
 // | `NOCTURNE_AUTHENTIC_FRIENDLY_FIRE` | 0 | defect | heroes cannot damage each other in a network game |
 // | `NOCTURNE_AUTHENTIC_MELEE_PICKUP` | 0 | defect | a melee weapon already held does not take a second slot |
@@ -1830,6 +1831,28 @@
 //   Override with -DNOCTURNE_AUTHENTIC_FILE_TIME=1.
 #ifndef NOCTURNE_AUTHENTIC_FILE_TIME
 #define NOCTURNE_AUTHENTIC_FILE_TIME 0
+#endif
+
+// NOCTURNE_AUTHENTIC_MENU_FONT
+//   The dialog widgets (pick lists, the pause menu) draw in g_EditorFont.
+//   initFonts leaves it on g_SmallEditorFont; outside the editor the game's own
+//   code switches it to g_ThemeFont (setScreenResolutionAndDisplayFangs, the
+//   pause menu's return from Options, chapter select, load), but the first of
+//   those to stick is the end of a game session. So every list before the first
+//   mission ends is drawn in the small font and holds more rows, and every one
+//   after is drawn in the theme font.
+//   1: shipped behaviour — small until the first session ends.
+//   0: enterMainGameMenu applies the same rule on entry, so the first menu
+//      already uses the theme font. CGame::loadGame also puts back the font it
+//      found on its three error exits, as its cancel and success paths do. And
+//      Graphics Options gains a "Menu text : Large/Small" line
+//      (core/menu_font.h): every one of those sites asks it rather than naming
+//      g_ThemeFont, so Small gives the small font everywhere. Large, the
+//      default, is the theme font.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_MENU_FONT=1.
+#ifndef NOCTURNE_AUTHENTIC_MENU_FONT
+#define NOCTURNE_AUTHENTIC_MENU_FONT 0
 #endif
 
 // NOCTURNE_AUTHENTIC_BUILD_STAMP

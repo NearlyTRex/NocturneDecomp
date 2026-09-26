@@ -11,6 +11,16 @@ void __cdecl core_game_cpp_hostNetworkGame_FUN_004e2f10(void)
 
 {
   int iVar1;
+#if !NOCTURNE_AUTHENTIC_CHAPTER_SELECT
+  char picked_mission [sizeof(g_CNetGamePtr->mission_name)];
+  int use_file_dialog;
+
+  use_file_dialog = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
+  if ((use_file_dialog == 0) &&
+      (nocturne_chapter_pick_mission(picked_mission,(int)sizeof(picked_mission)) == 0)) {
+    return;
+  }
+#endif
 
   iVar1 = core_netgame_cpp_CNetGame_initializeNetworkToHost_FUN_0053f860(g_CNetGamePtr);
   if (iVar1 != 0) {
@@ -19,16 +29,14 @@ void __cdecl core_game_cpp_hostNetworkGame_FUN_004e2f10(void)
                       (g_CEditorToolsPtr,"Select mission to play","world",
                        "*.msn",g_CNetGamePtr->mission_name,0);
 #else
-    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
-    if (iVar1 != 0) {
+    if (use_file_dialog != 0) {
       iVar1 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                         (g_CEditorToolsPtr,"Select mission to play","world",
                          "*.msn",g_CNetGamePtr->mission_name,0);
     }
     else {
-      iVar1 = nocturne_chapter_pick_mission
-                        (g_CNetGamePtr->mission_name,
-                         (int)sizeof(g_CNetGamePtr->mission_name));
+      strcpy(g_CNetGamePtr->mission_name,picked_mission);
+      iVar1 = 1;
     }
 #endif
     if (iVar1 != 0) {

@@ -29,7 +29,7 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_00510c80(void)
   int local_1c [3];
   CGame *pCVar2;
   int iVar3;
-#if NOCTURNE_WINDOW_MODE_OPTION || NOCTURNE_OS_FONT_OPTION
+#if NOCTURNE_WINDOW_MODE_OPTION || NOCTURNE_OS_FONT_OPTION || !NOCTURNE_AUTHENTIC_MENU_FONT
   char *menu_ptrs [12];
   int extra_count;
   int menu_y;
@@ -42,6 +42,10 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_00510c80(void)
 #if NOCTURNE_OS_FONT_OPTION
   char os_font_line [256];
   int os_font_item;
+#endif
+#if !NOCTURNE_AUTHENTIC_MENU_FONT
+  char menu_font_line [256];
+  int menu_font_item;
 #endif
 #if !NOCTURNE_AUTHENTIC_MENU_RESOLUTION
   int prev_pixx;
@@ -296,7 +300,7 @@ LAB_00510f71:
     prev_pixx = g_CGamePtr->game_pixx;
     prev_pixy = g_CGamePtr->game_pixy;
 #endif
-#if NOCTURNE_WINDOW_MODE_OPTION || NOCTURNE_OS_FONT_OPTION
+#if NOCTURNE_WINDOW_MODE_OPTION || NOCTURNE_OS_FONT_OPTION || !NOCTURNE_AUTHENTIC_MENU_FONT
     for (iVar4 = 0; iVar4 < iVar7; iVar4++) {
       menu_ptrs[iVar4] = g_GraphicsMenuTextPointers[iVar4];
     }
@@ -313,6 +317,13 @@ LAB_00510f71:
              nocturne_window_mode_name(nocturne_window_mode_get()));
     window_item = extra_count;
     menu_ptrs[extra_count] = window_line;
+    extra_count = extra_count + 1;
+#endif
+#if !NOCTURNE_AUTHENTIC_MENU_FONT
+    _sprintf(menu_font_line,"Menu text : %s",
+             nocturne_menu_font_name(nocturne_menu_font_get()));
+    menu_font_item = extra_count;
+    menu_ptrs[extra_count] = menu_font_line;
     extra_count = extra_count + 1;
 #endif
     menu_ch = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_ThemeFont,0x58);
@@ -360,6 +371,17 @@ LAB_00510f71:
       }
       else {
         nocturne_window_mode_cycle(1);
+      }
+      iVar7 = -1;   /* consumed; matches no case below */
+    }
+#endif
+#if !NOCTURNE_AUTHENTIC_MENU_FONT
+    if (iVar7 == menu_font_item) {
+      nocturne_menu_font_cycle(g_MenuLeftRightPressed == 1 ? -1 : 1);
+      if ((0xf0 < g_WindowHeight) &&
+          ((g_CDemonMissionPtr == (CDemonMission *)0x0) ||
+           (g_CDemonMissionPtr->is_in_editor == 0))) {
+        g_EditorFont = nocturne_menu_font();
       }
       iVar7 = -1;   /* consumed; matches no case below */
     }

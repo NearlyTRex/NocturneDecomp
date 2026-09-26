@@ -124,6 +124,7 @@ honest reason its default is what it is.
 | `TEXT_RENDER_ALPHA` | 2D text blends at its own alpha, not the last pass's leftover |
 | `BOTTOMLESS_FALL` | a fall out of the world kills at once, rather than on whatever geometry it happens to strike |
 | `FILE_TIME` | a file written while daylight saving is in force is dated with its own hour |
+| `MENU_FONT` | menus use one dialog font from the first launch, not only after a mission, chosen on Graphics Options (Menu text: Large/Small) |
 
 **`choice` — the shipped binary is not wrong; we prefer something else**
 
