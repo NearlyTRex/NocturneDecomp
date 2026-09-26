@@ -752,6 +752,47 @@ void bigHeadSetScale(int on)
 // give player 0 a shotgun while the guest gives it to player 1, and the two
 // worlds part on the first shot. g_HeroCount is 1 in single player, so this is
 // the same one hero it always was.
+#if !NOCTURNE_AUTHENTIC_HERO_WEAPON
+// What a line hands over, for the per-class test in hero_weapon.h.
+EHeroItemKind itemKindFor(int index)
+{
+    switch (index) {
+    case NOCTURNE_CHEAT_ALL_GUNS:
+    case NOCTURNE_CHEAT_SHOTGUN:
+    case NOCTURNE_CHEAT_CROSSBOW:
+    case NOCTURNE_CHEAT_DYNAMITE:
+    case NOCTURNE_CHEAT_FLAME_THROWER:
+    case NOCTURNE_CHEAT_TOMMY_GUN:
+    case NOCTURNE_CHEAT_ELEPHANT_GUN:
+    case NOCTURNE_CHEAT_LIGHT_GUN:
+    case NOCTURNE_CHEAT_ITEM_BARON:
+    case NOCTURNE_CHEAT_SILVER_AMMO:
+    case NOCTURNE_CHEAT_LITHIUM_AMMO:
+    case NOCTURNE_CHEAT_MERCURY_AMMO:
+        return HERO_ITEM_GUN;
+    case NOCTURNE_CHEAT_ALL_MELEE:
+    case NOCTURNE_CHEAT_MELEE_WOODSMANS_AXE:
+    case NOCTURNE_CHEAT_MELEE_AXE:
+    case NOCTURNE_CHEAT_MELEE_BLADED:
+    case NOCTURNE_CHEAT_MELEE_SHOVEL:
+    case NOCTURNE_CHEAT_MELEE_SPEAR:
+    case NOCTURNE_CHEAT_MELEE_STAKE:
+    case NOCTURNE_CHEAT_MELEE_RELIC:
+        return HERO_ITEM_MELEE;
+    case NOCTURNE_CHEAT_ITEM_GAS_MASK:
+        return HERO_ITEM_GAS_MASK;
+    case NOCTURNE_CHEAT_ITEM_TONIC:
+    case NOCTURNE_CHEAT_ITEM_DOCBAG:
+    case NOCTURNE_CHEAT_ITEM_SCOTCH:
+    case NOCTURNE_CHEAT_ITEM_HIRAM_KIT:
+    case NOCTURNE_CHEAT_ITEM_CANDY:
+        return HERO_ITEM_HEALTH;
+    default:
+        return HERO_ITEM_OTHER;
+    }
+}
+#endif
+
 void applyToEveryHero(int index, int value)
 {
     int h;
@@ -762,6 +803,12 @@ void applyToEveryHero(int index, int value)
         if (hero == (CHero *)0) {
             continue;
         }
+#if !NOCTURNE_AUTHENTIC_HERO_WEAPON
+        // The class decides, so every machine skips the same heroes.
+        if (nocturne_hero_can_hold_kind(hero, itemKindFor(index)) == 0) {
+            continue;
+        }
+#endif
         switch (index) {
         // Not a grant but a state on a weapon already in the inventory, so it
         // follows the line in both directions — switching it off puts the

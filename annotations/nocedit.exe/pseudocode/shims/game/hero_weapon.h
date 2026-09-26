@@ -60,6 +60,25 @@
 
 struct CHero;
 struct CWeapon;
+struct CDemonActor;
+
+// What a player hero may hold, by class:
+//
+//   Stranger          everything
+//   Scat, Gabriella   guns, their ammo, dynamite and the Baron. No melee: they
+//                     fire through the selected weapon and CMelee::fire is an
+//                     assert. No gas mask: only CStranger puts it on.
+//   everyone else     health items only
+//
+// Keys and other plain items are open to every class, since doors and events
+// test them on any hero. NPCs are never restricted.
+typedef enum EHeroItemKind {
+    HERO_ITEM_OTHER,
+    HERO_ITEM_HEALTH,
+    HERO_ITEM_GUN,
+    HERO_ITEM_MELEE,
+    HERO_ITEM_GAS_MASK
+} EHeroItemKind;
 
 #ifdef __cplusplus
 extern "C" {
@@ -93,6 +112,23 @@ void nocturne_hero_default_weapon(struct CHero *hero, int hero_type);
 // pistol - the Baron summon reaches the same call site and has no ammunition
 // concept to restore.
 void nocturne_hero_reload_extra_gun(struct CHero *hero, struct CWeapon *weapon);
+
+// Whether the hero may hold an item of this kind, per the table above.
+int nocturne_hero_can_hold_kind(struct CHero *hero, EHeroItemKind kind);
+
+// The same test for an item actor that already exists, e.g. one in the world.
+int nocturne_hero_can_hold_item(struct CHero *hero, struct CDemonActor *item);
+
+// Name (description == 0) or description for a hero weapon model that has no
+// ITEMLIST.TXT row, or null. getItemDisplayName and getItemDescription ask this
+// only after the file's own rows miss. Gabriella's gabgun.kfm is the one case.
+char *nocturne_hero_item_text(const char *model_name, int description);
+
+// Returns every weapon the hero is not holding to the inventory state. A weapon
+// left IN_HAND keeps working: the Baron stays summoned. Gabriella sets the
+// state of the selected weapon only, so switching away from the Baron never
+// dismissed him. Call once a frame, before the selected weapon is updated.
+void nocturne_hero_stow_unselected_weapons(struct CHero *hero);
 
 #ifdef __cplusplus
 }

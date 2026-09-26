@@ -62,6 +62,11 @@ int __cdecl core_gabriela_cpp_CGabriella_findAndPickupNearbyObject_FUN_004d5870(
   local_24 = 4.0;
   for (local_18 = 0; local_18 < g_CDemonSetPtr->actor_count; local_18 = local_18 + 1) {
     pCVar1 = g_CDemonSetPtr->actors[local_18];
+#if !NOCTURNE_AUTHENTIC_HERO_WEAPON
+    if (nocturne_hero_can_hold_item(&this_ptr->base,pCVar1) == 0) {
+      continue;
+    }
+#endif
     pCVar4 = (*((pCVar1->vtable)._ub)->getCarrier)(pCVar1);
     if (pCVar4 == (CDemonActor *)0x0) {
       uVar9 = (*((pCVar1->vtable)._ub)->canPickup)(pCVar1,(CDemonActor *)this_ptr);

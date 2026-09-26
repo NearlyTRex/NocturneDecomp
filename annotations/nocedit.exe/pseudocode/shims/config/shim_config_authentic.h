@@ -70,7 +70,7 @@
 // | `NOCTURNE_AUTHENTIC_FATAL_FALL_HEAL` | 0 | defect | an already-fatal fall does not spend a health item |
 // | `NOCTURNE_AUTHENTIC_STREAM_LENGTH` | 0 | defect | a streamed MP3 ends where the sample actually ends |
 // | `NOCTURNE_AUTHENTIC_ACTOR_DELETE` | 0 | defect | references are cleared before the memory is freed |
-// | `NOCTURNE_AUTHENTIC_HERO_WEAPON` | 0 | defect | each hero class starts with what it can actually use |
+// | `NOCTURNE_AUTHENTIC_HERO_WEAPON` | 0 | defect | each hero class starts with, and only holds, what it can actually use |
 // | `NOCTURNE_AUTHENTIC_HERO_ACTIONS` | 0 | defect | the other eight classes can interact, escape a grab and use health items |
 // | `NOCTURNE_AUTHENTIC_INPUT_REPEAT` | 0 | defect | a held button starts an action once instead of every frame |
 // | `NOCTURNE_AUTHENTIC_ITEM_HELP_POSITION` | 0 | defect | the pickup help text does not sit on top of the pickup name |
@@ -1061,6 +1061,11 @@
 //      shot: collecting ammunition runs through the pickup machinery, which is
 //      CStranger's alone, so a finite magazine would be spent permanently the
 //      first time it emptied.
+//      Player heroes are also kept from holding what their class cannot use,
+//      both from the cheat menu and from Gabriella's own pickups: Scat and
+//      Gabriella take guns but no melee weapon (CMelee::fire is an assert) and
+//      no gas mask; the melee classes take health items only. The table is in
+//      hero_weapon.h.
 //
 //   Override with -DNOCTURNE_AUTHENTIC_HERO_WEAPON=1.
 #ifndef NOCTURNE_AUTHENTIC_HERO_WEAPON
@@ -1123,6 +1128,9 @@
 //                   angles from the current ones, so when the target dies or the
 //                   weapon is holstered the aim holds where it was. Only firing
 //                   with no target snaps it back to centre.
+//     weapon switch CGabriella::updateWeaponPosition sets the state of the
+//                   selected weapon only, so a weapon switched away from stays
+//                   IN_HAND. For the Baron that leaves him summoned.
 //
 //   1: shipped behaviour — Scat and Moloch can interact with nothing, sheathed
 //      fire falls through to an attack, only the Stranger can break a grab
@@ -1141,6 +1149,7 @@
 //      max_hit_points: the figure fills as a fraction of it, items cap at it,
 //      select refuses above 98% of it, and the cheats restore it. Scat's auto
 //      aim eases back to centre at its normal turn rate once it has no target.
+//      Gabriella stows the weapon she switched away from, as Scat does.
 //
 //      Not included: object pickup, using items other than health, and box
 //      pushing, which sit on carry-hand state these classes do not maintain;

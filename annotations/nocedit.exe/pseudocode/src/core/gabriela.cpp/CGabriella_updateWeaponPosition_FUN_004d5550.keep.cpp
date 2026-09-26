@@ -38,6 +38,9 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponPosition_FUN_004d5550(CGab
   CWeapon *pCVar1;
   CMatrix3x4f *matrix_b;
   
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+  nocturne_hero_stow_unselected_weapons(&this_ptr->base);
+#endif
   core_charactr_cpp_CCharacter_updateCarriedObjects_FUN_0042d090((CCharacter *)this_ptr,delta_time);
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
             (&local_34c,&(this_ptr->base).base.base.location.position,

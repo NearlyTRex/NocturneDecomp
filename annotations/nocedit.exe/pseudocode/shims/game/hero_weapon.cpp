@@ -234,3 +234,126 @@ extern "C" void nocturne_hero_default_weapon(CHero *hero, int hero_type)
         hero_add_pistol(hero);
     }
 }
+
+static int hero_is_player(CHero *hero)
+{
+    int i;
+
+    for (i = 0; (i < 4) && (i < g_HeroCount); i++) {
+        if (g_HeroActors[i] == hero) {
+            return 1;
+        }
+    }
+    return 0;
+}
+
+static int hero_is_class(CHero *hero, uint name_hash)
+{
+    return core_actor_cpp_castToClassHash_FUN_0040c790((CDemonActor *)hero, name_hash) !=
+           (CDemonActor *)0x0;
+}
+
+static int item_is_class(CDemonActor *item, uint name_hash)
+{
+    return core_actor_cpp_castToClassHash_FUN_0040c790(item, name_hash) != (CDemonActor *)0x0;
+}
+
+extern "C" int nocturne_hero_can_hold_kind(CHero *hero, EHeroItemKind kind)
+{
+    if ((hero == (CHero *)0x0) || (hero_is_player(hero) == 0)) {
+        return 1;
+    }
+    if ((kind == HERO_ITEM_OTHER) || (kind == HERO_ITEM_HEALTH)) {
+        return 1;
+    }
+    if (hero_is_class(hero, g_CStrangerClassInfo.name_hash) != 0) {
+        return 1;
+    }
+    if ((hero_is_class(hero, g_CScatClassInfo.name_hash) != 0) ||
+        (hero_is_class(hero, g_CGabriellaClassInfo.name_hash) != 0)) {
+        return kind == HERO_ITEM_GUN;
+    }
+    return 0;
+}
+
+extern "C" int nocturne_hero_can_hold_item(CHero *hero, CDemonActor *item)
+{
+    EHeroItemKind kind;
+
+    if (item == (CDemonActor *)0x0) {
+        return 1;
+    }
+    // Both melee classes are CWeapons, so they are tested before the guns.
+    // CShovel is not a CMelee, but its fire() does nothing either.
+    if (item_is_class(item, g_CHealthItemClassInfo.name_hash) != 0) {
+        kind = HERO_ITEM_HEALTH;
+    }
+    else if ((item_is_class(item, g_CMeleeClassInfo.name_hash) != 0) ||
+             (item_is_class(item, g_CShovelClassInfo.name_hash) != 0)) {
+        kind = HERO_ITEM_MELEE;
+    }
+    else if (item_is_class(item, g_CGasMaskClassInfo.name_hash) != 0) {
+        kind = HERO_ITEM_GAS_MASK;
+    }
+    else if ((item_is_class(item, g_CWeaponClassInfo.name_hash) != 0) ||
+             (item_is_class(item, g_CAmmoClassInfo.name_hash) != 0) ||
+             (item_is_class(item, g_CAmmoBoxClassInfo.name_hash) != 0)) {
+        kind = HERO_ITEM_GUN;
+    }
+    else {
+        kind = HERO_ITEM_OTHER;
+    }
+    return nocturne_hero_can_hold_kind(hero, kind);
+}
+
+typedef struct SHeroItemText {
+    const char *model_name;
+    const char *name;
+    const char *description;
+} SHeroItemText;
+
+// CGabriella::ctor gives her pistol this model, which ITEMLIST.TXT never
+// listed because she was cut before the text was written.
+static const SHeroItemText k_hero_item_text[] = {
+    { "gabgun.kfm", "Gabriella's Pistol", "Her own sidearm.  Takes ordinary pistol rounds." },
+};
+
+extern "C" char *nocturne_hero_item_text(const char *model_name, int description)
+{
+    int i;
+
+    if (model_name == (const char *)0x0) {
+        return (char *)0x0;
+    }
+    for (i = 0; i < (int)(sizeof(k_hero_item_text) / sizeof(k_hero_item_text[0])); i++) {
+        if (_stricmp((char *)model_name, (char *)k_hero_item_text[i].model_name) == 0) {
+            return (char *)(description != 0 ? k_hero_item_text[i].description
+                                             : k_hero_item_text[i].name);
+        }
+    }
+    return (char *)0x0;
+}
+
+extern "C" void nocturne_hero_stow_unselected_weapons(CHero *hero)
+{
+    CInventory *inventory;
+    CWeapon *weapon;
+    int i;
+
+    if (hero == (CHero *)0x0) {
+        return;
+    }
+    inventory = &hero->inventory;
+    for (i = 0; i < inventory->item_count; i++) {
+        if (inventory->items[i] == (CDemonActor *)0x0) {
+            continue;
+        }
+        weapon = (CWeapon *)core_actor_cpp_castToClassHash_FUN_0040c790
+                                   (inventory->items[i], g_CWeaponClassInfo.name_hash);
+        if ((weapon == (CWeapon *)0x0) || (weapon == inventory->selected_weapon) ||
+            (weapon->weapon_state != WEAPON_STATE_IN_HAND)) {
+            continue;
+        }
+        (*(((weapon->base).vtable._uw)->_uw).setWeaponState)(weapon, WEAPON_STATE_IN_INVENTORY);
+    }
+}
