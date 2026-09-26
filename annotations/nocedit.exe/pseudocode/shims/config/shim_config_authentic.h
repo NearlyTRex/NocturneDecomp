@@ -1124,7 +1124,8 @@
 //                   never run down. CIcePick::ctor sets hit_points to 300 and
 //                   leaves max_hit_points at 100, and the health code assumes a
 //                   maximum of 100 throughout: the HUD figure fills from
-//                   hit_points * 0.01, CHealthItem::useItem caps at 100,
+//                   hit_points * 0.01, CHealthItem::useItem adds hp_restored as
+//                   flat HP (the inventory prints it as a percentage) and caps at 100,
 //                   CInventory::select refuses an item above 98, and the typed
 //                   god-mode and health cheats set 100.
 //     Scat's aim    CScat::updateAiming in auto-aim mode seeds its desired
@@ -1154,7 +1155,8 @@
 //      use_item, is rescued by autoUseHealth under the Stranger's test, shows
 //      its health bar when hit, and has its inventory ticked. IcePick's maximum
 //      is 300, and every one of those sites works from the hero's own
-//      max_hit_points: the figure fills as a fraction of it, items cap at it,
+//      max_hit_points: the figure fills as a fraction of it, items restore
+//      hp_restored percent of it and cap at it,
 //      select refuses above 98% of it, and the cheats restore it. Scat's auto
 //      aim eases back to centre at its normal turn rate once it has no target.
 //      Gabriella stows the weapon she switched away from, as Scat does, and

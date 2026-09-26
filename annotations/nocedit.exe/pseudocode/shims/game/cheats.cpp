@@ -118,7 +118,8 @@ const CheatDef kCheats[NOCTURNE_CHEAT_COUNT] = {
 };
 
 // One CHealthItem, as a set file describes one: a model, a number of uses and
-// the HP each use restores (capped at the hero's 100 by CHealthItem::useItem).
+// the health each use restores, which CHealthItem::useItem reads as HP or as a
+// percentage of max_hit_points depending on NOCTURNE_AUTHENTIC_HERO_ACTIONS.
 struct HealthDef {
     int   cheat;
     char *model;

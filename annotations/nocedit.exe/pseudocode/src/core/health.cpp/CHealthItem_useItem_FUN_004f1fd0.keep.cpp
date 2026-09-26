@@ -13,7 +13,11 @@ int __cdecl core_health_cpp_CHealthItem_useItem_FUN_004f1fd0(CHealthItem *this_p
   float fVar1;
 
   if (0 < this_ptr->use_count) {
+#if NOCTURNE_AUTHENTIC_HERO_ACTIONS
     fVar1 = this_ptr->hp_restored + user->hit_points;
+#else
+    fVar1 = this_ptr->hp_restored * user->max_hit_points / (float)100 + user->hit_points;
+#endif
     user->hit_points = fVar1;
 #if NOCTURNE_AUTHENTIC_HERO_ACTIONS
     if ((float)100 < fVar1) {
