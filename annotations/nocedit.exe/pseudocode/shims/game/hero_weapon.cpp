@@ -49,9 +49,8 @@ static const SHeroWeapon k_hero_weapon[] = {
     // No attack at all - his fire button reaches the interaction set and the
     // struggle-out-of-a-grab state, and sets no attack state anywhere.
     { HERO_WEAPON_NONE,   (const char *)0x0,  0 },  // HERO_TYPE_COLONEL
-    // No attack either; CMoloch::process reads walk, backup and draw, and draw
-    // starts the morph. The amulet is his sigil rather than a weapon, which is
-    // the honest thing for the slot to name when there is nothing to fire.
+    // The amulet names his two buttons: draw morphs, fire strikes as the demon.
+    // See hero_moloch.h.
     { HERO_WEAPON_MELEE,  "AMULET.KFM",       0 },  // HERO_TYPE_MOLOCH
 };
 
@@ -233,6 +232,9 @@ extern "C" void nocturne_hero_default_weapon(CHero *hero, int hero_type)
     if (entry->net_extra_gun != 0 && hero_is_network_game() != 0) {
         hero_add_pistol(hero);
     }
+    if (hero_type == HERO_TYPE_MOLOCH) {
+        nocturne_moloch_setup_items(hero);
+    }
 }
 
 static int hero_is_player(CHero *hero)
@@ -307,26 +309,35 @@ extern "C" int nocturne_hero_can_hold_item(CHero *hero, CDemonActor *item)
 }
 
 typedef struct SHeroItemText {
-    const char *model_name;
+    int         by_actor_name;  // key is the actor name, else the model name
+    const char *key;
     const char *name;
     const char *description;
 } SHeroItemText;
 
-// CGabriella::ctor gives her pistol this model, which ITEMLIST.TXT never
-// listed because she was cut before the text was written.
 static const SHeroItemText k_hero_item_text[] = {
-    { "gabgun.kfm", "Gabriella's Pistol", "Her own sidearm.  Takes ordinary pistol rounds." },
+    // Moloch's slot item (hero_moloch.h), explaining his two buttons.
+    { 1, NOCTURNE_MOLOCH_AMULET_NAME, "Moloch's Amulet",
+         "Draw to change between man and demon.  Fire to strike as the demon." },
+    // CGabriella::ctor gives her pistol this model, which ITEMLIST.TXT never
+    // listed because she was cut before the text was written.
+    { 0, "gabgun.kfm", "Gabriella's Pistol", "Her own sidearm.  Takes ordinary pistol rounds." },
 };
 
-extern "C" char *nocturne_hero_item_text(const char *model_name, int description)
+extern "C" char *nocturne_hero_item_text(CDemonActor *item, const char *model_name, int description)
 {
+    const char *key;
     int i;
 
-    if (model_name == (const char *)0x0) {
-        return (char *)0x0;
-    }
     for (i = 0; i < (int)(sizeof(k_hero_item_text) / sizeof(k_hero_item_text[0])); i++) {
-        if (_stricmp((char *)model_name, (char *)k_hero_item_text[i].model_name) == 0) {
+        if (k_hero_item_text[i].by_actor_name != 0) {
+            key = (item != (CDemonActor *)0x0) ? item->actor_name : (const char *)0x0;
+        }
+        else {
+            key = model_name;
+        }
+        if ((key != (const char *)0x0) &&
+            (_stricmp((char *)key, (char *)k_hero_item_text[i].key) == 0)) {
             return (char *)(description != 0 ? k_hero_item_text[i].description
                                              : k_hero_item_text[i].name);
         }

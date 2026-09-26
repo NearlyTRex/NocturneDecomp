@@ -1055,7 +1055,9 @@
 //      for the two such weapons the shipped game could reach (a CLightGun by
 //      class, a CMelee by category 3) but not for CBaronWeapon, which is
 //      neither - so Scat's summon printed the 20 rounds of type 0 that
-//      CWeapon::ctor left on it and that nothing reads or decrements.
+//      CWeapon::ctor left on it and that nothing reads or decrements. The
+//      same goes for CShovel, which the melee classes' slot items and Moloch's
+//      amulet are built as.
 //      In a network game Scat also gains a pistol as a second weapon, with the
 //      Baron keeping the starting selection. Its reserve is restored after each
 //      shot: collecting ammunition runs through the pickup machinery, which is
@@ -1155,7 +1157,9 @@
 //      select refuses above 98% of it, and the cheats restore it. Scat's auto
 //      aim eases back to centre at its normal turn rate once it has no target.
 //      Gabriella stows the weapon she switched away from, as Scat does, and
-//      holds her aim while fire is held on a continuous weapon.
+//      holds her aim while fire is held on a continuous weapon. Moloch's fire
+//      strikes in demon form, alternating two of his unused attack motions
+//      (hero_moloch.h).
 //
 //      Not included: object pickup, using items other than health, and box
 //      pushing, which sit on carry-hand state these classes do not maintain;

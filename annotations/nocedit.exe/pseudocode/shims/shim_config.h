@@ -192,6 +192,11 @@ void nocturne_trigl_envmap_pass_end(void);
 // it. Gated at those call sites on NOCTURNE_AUTHENTIC_HERO_ACTIONS.
 #include "game/hero_items.h"
 
+// Moloch's attacks (nocturne_moloch_*): fire strikes in demon form, draw still
+// morphs. Gated at the CMoloch::process call sites on
+// NOCTURNE_AUTHENTIC_HERO_ACTIONS.
+#include "game/hero_moloch.h"
+
 // Which of the engine's two text paths is used (nocturne_os_font_*), reached
 // from CGame::initFonts to apply the stored choice and from the menu TU for the
 // Graphics Options line. Inert under NOCTURNE_OS_FONT_OPTION=0.

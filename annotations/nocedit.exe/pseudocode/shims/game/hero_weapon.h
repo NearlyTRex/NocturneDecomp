@@ -119,10 +119,11 @@ int nocturne_hero_can_hold_kind(struct CHero *hero, EHeroItemKind kind);
 // The same test for an item actor that already exists, e.g. one in the world.
 int nocturne_hero_can_hold_item(struct CHero *hero, struct CDemonActor *item);
 
-// Name (description == 0) or description for a hero weapon model that has no
-// ITEMLIST.TXT row, or null. getItemDisplayName and getItemDescription ask this
-// only after the file's own rows miss. Gabriella's gabgun.kfm is the one case.
-char *nocturne_hero_item_text(const char *model_name, int description);
+// Name (description == 0) or description for a hero's own slot item, or null.
+// getItemDisplayName and getItemDescription ask this before ITEMLIST.TXT. The
+// actor name is matched first (Moloch's amulet, whose own row does not explain
+// his buttons), then the model (Gabriella's gabgun.kfm, which has no row).
+char *nocturne_hero_item_text(struct CDemonActor *item, const char *model_name, int description);
 
 // Returns every weapon the hero is not holding to the inventory state. A weapon
 // left IN_HAND keeps working: the Baron stays summoned. Gabriella sets the

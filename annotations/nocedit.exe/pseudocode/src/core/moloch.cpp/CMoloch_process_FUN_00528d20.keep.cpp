@@ -37,6 +37,10 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch *this_ptr,floa
   float fVar4;
   CGame *pCVar5;
   CVector3f *pCVar1;
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+  int attack_prev_state;
+  float attack_prev_frame;
+#endif
 
   if ((this_ptr->base).ai_task == HERO_TASK_SUSPEND) {
     return;
@@ -57,11 +61,19 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch *this_ptr,floa
   (this_ptr->base).base.model.accumulated_root_motion.y = 0.0f;
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0f;
   local_1b14 = delta_time;
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+  attack_prev_state = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                        (&(this_ptr->base).base.model.motion_controller)->state_index;
+  attack_prev_frame = (this_ptr->base).base.model.motion_controller.current_frame_number;
+#endif
   while (pCVar5 = g_CGamePtr, 0.0 < local_1b14) {
     iVar8 = core_motion_cpp_CMotionController_advance_FUN_0052d610
                       (&(this_ptr->base).base.model.motion_controller,&local_1b14);
     core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,iVar8);
   }
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+  nocturne_moloch_attack_hit(this_ptr,attack_prev_state,attack_prev_frame);
+#endif
   fVar7 = (float)12.566370614;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
   (this_ptr->base).base.turn_speed = delta_time * fVar7;
@@ -84,7 +96,11 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch *this_ptr,floa
         uVar9 = 2;
       }
       if ((this_ptr->base).player_input.action_state.draw != 0) {
-        if (this_ptr->morphing == 0) {
+        if ((this_ptr->morphing == 0)
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+            && (nocturne_moloch_is_attacking(this_ptr) == 0)
+#endif
+           ) {
           core_moloch_cpp_CMoloch_startMorph_FUN_00529900(this_ptr);
         }
         (this_ptr->base).player_input.action_state.draw = 0;
@@ -96,6 +112,7 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch *this_ptr,floa
           (this_ptr->base).player_input.action_state.fire = 0;
         }
       }
+      uVar9 = nocturne_moloch_fire(this_ptr,uVar9);
 #endif
       (this_ptr->base).base.turn_angle_accumulator =
            (this_ptr->base).player_input.turn_speed * (this_ptr->base).base.turn_speed;
@@ -197,6 +214,11 @@ LAB_00528f8e:
   (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr);
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr,delta_time);
   if (this_ptr->morphing == 0) {
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+    if (nocturne_moloch_is_attacking(this_ptr) != 0) {
+      return;
+    }
+#endif
     if (this_ptr->in_human_form == 0) {
       iVar8 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                         (g_CEventListPtr,this_ptr->demon_to_human_condition);
