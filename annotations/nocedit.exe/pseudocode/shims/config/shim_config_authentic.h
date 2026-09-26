@@ -1131,6 +1131,11 @@
 //     weapon switch CGabriella::updateWeaponPosition sets the state of the
 //                   selected weapon only, so a weapon switched away from stays
 //                   IN_HAND. For the Baron that leaves him summoned.
+//     held fire     CGabriella::updateAimTracking, in auto aim with no target,
+//                   drops aim_weight on every frame fire_state is not 2, and
+//                   canFireWeapon needs it at 1. A weapon that keeps fire held
+//                   (tommy gun, flame thrower, light gun) fires every other
+//                   frame and her arm bobs with the weight.
 //
 //   1: shipped behaviour — Scat and Moloch can interact with nothing, sheathed
 //      fire falls through to an attack, only the Stranger can break a grab
@@ -1149,7 +1154,8 @@
 //      max_hit_points: the figure fills as a fraction of it, items cap at it,
 //      select refuses above 98% of it, and the cheats restore it. Scat's auto
 //      aim eases back to centre at its normal turn rate once it has no target.
-//      Gabriella stows the weapon she switched away from, as Scat does.
+//      Gabriella stows the weapon she switched away from, as Scat does, and
+//      holds her aim while fire is held on a continuous weapon.
 //
 //      Not included: object pickup, using items other than health, and box
 //      pushing, which sit on carry-hand state these classes do not maintain;

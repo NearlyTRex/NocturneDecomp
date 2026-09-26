@@ -74,6 +74,11 @@ void __cdecl core_gabriela_cpp_CGabriella_updateAimTracking_FUN_004d6540(CGabrie
     }
     else if (this_ptr->aim_target == (CDemonActor *)0x0) {
       if (0.0 < this_ptr->fire_cooldown_timer) goto LAB_004d65dd;
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+      if (((this_ptr->base).player_input.action_state.fire != 0) &&
+         ((this_ptr->base).inventory.selected_weapon != (CWeapon *)0x0) &&
+         (((this_ptr->base).inventory.selected_weapon)->fire_cooldown != 0)) goto LAB_004d65dd;
+#endif
       fVar3 = this_ptr->aim_weight - delta_time / 0.3f;
     }
     else {

@@ -481,7 +481,11 @@ LAB_004d3cb4:
     }
     if ((fVar10 <= 0.64f + (float)-0.14999999999999999) &&
        (0.64f + (float)-0.14999999999999999 < this_ptr->draw_blend)) {
+#if NOCTURNE_AUTHENTIC_NETPLAY
       core_game_cpp_CGame_resetWeaponSwitchTimers_FUN_004e0bb0(g_CGamePtr);
+#else
+      core_inv_cpp_CInventory_resetWeaponSwitchTimers_FUN_004fffa0(&(this_ptr->base).inventory,0);
+#endif
       sound_name = "draw-f.wav @ 1.5";
 LAB_004d33ec:
       (*((this_ptr->base).base.base.vtable._ub)->playSound)((CDemonActor *)this_ptr,sound_name);
