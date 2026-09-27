@@ -74,14 +74,24 @@ translation unit, so a single binary cannot carry both sets.
 
 ## Cutting a release
 
-1. Bump `project(NocturneDecomp VERSION ...)` and commit.
-2. Tag it: `git tag v0.1.0 && git push --tags`.
-3. The `release` workflow builds four lanes — `exe-linux-x86_64`, `exe-windows-x86_64` and the
-   two vanilla ones — and attaches the archives to a **draft** release. Check them, then publish
-   by hand.
+1. **Actions → Prepare Release → Run workflow**, with `patch`, `minor`, `major` or an exact
+   `x.y.z`. It bumps `project(NocturneDecomp VERSION ...)` on a `release/vX.Y.Z` branch and opens
+   a pull request.
+2. **Merge it.** The `Release` workflow sees a version with no tag yet, builds four lanes —
+   `exe-linux-x86_64`, `exe-windows-x86_64` and the two vanilla ones — tags the merge commit, and
+   attaches the archives and a `SHA256SUMS.txt` to a **draft** release.
+3. **Check the draft, then publish it by hand.** It becomes the *Latest* release on publishing.
 
-The workflow refuses a tag whose version does not match `CMakeLists.txt`. That is the one way
-the two can drift, and it is worth catching before a build runs.
+The notes open with [`.github/release-notes.md`](../.github/release-notes.md), which says what
+each archive is and that no game data is included, followed by GitHub's generated notes. Edit
+the draft to add anything specific to the release.
+
+A push that doesn't change the version finds its tag already there and builds nothing, so the
+version in `CMakeLists.txt` and the tag cannot drift apart.
+
+The workflows come from the shared
+[NearlyTRex/Workflows](https://github.com/NearlyTRex/Workflows) library; see its README for how
+`release-check`, `cpp-build` and `release` fit together.
 
 ## Building an archive locally
 
