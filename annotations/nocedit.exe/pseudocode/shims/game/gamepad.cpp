@@ -335,9 +335,10 @@ void nav_repeating(int nav, bool now, uint32_t now_ms) {
     }
 }
 
-// Confirm and cancel: one action per press, however long it is held.
-void nav_once(int nav, bool now) {
-    if (!now) {
+// Confirm and cancel: one action per press, however long it is held. A press
+// that begins while navigation is not allowed is consumed there and never fires.
+void nav_once(int nav, bool down, bool allowed) {
+    if (!down) {
         if (s_nav_held[nav]) {
             nav_release(nav);
         }
@@ -346,7 +347,9 @@ void nav_once(int nav, bool now) {
     }
     if (!s_nav_held[nav]) {
         s_nav_held[nav] = true;
-        nav_press(nav);
+        if (allowed) {
+            nav_press(nav);
+        }
     }
 }
 
@@ -437,9 +440,10 @@ extern "C" void nocturne_gamepad_pump(void) {
     nav_repeating(kNavDown,  ui && (button_down(SDL_CONTROLLER_BUTTON_DPAD_DOWN)  || move_y >=  NOCTURNE_PAD_MOVE_THRESHOLD), now_ms);
     nav_repeating(kNavLeft,  ui && (button_down(SDL_CONTROLLER_BUTTON_DPAD_LEFT)  || move_x <= -NOCTURNE_PAD_MOVE_THRESHOLD), now_ms);
     nav_repeating(kNavRight, ui && (button_down(SDL_CONTROLLER_BUTTON_DPAD_RIGHT) || move_x >=  NOCTURNE_PAD_MOVE_THRESHOLD), now_ms);
-    nav_once(kNavConfirm, ui && button_down(SDL_CONTROLLER_BUTTON_A));
-    nav_once(kNavCancel,  nav_ok && (button_down(SDL_CONTROLLER_BUTTON_START) ||
-                                     (ui && button_down(SDL_CONTROLLER_BUTTON_B))));
+    const bool start_down = button_down(SDL_CONTROLLER_BUTTON_START);
+    nav_once(kNavConfirm, button_down(SDL_CONTROLLER_BUTTON_A), ui);
+    nav_once(kNavCancel, start_down || button_down(SDL_CONTROLLER_BUTTON_B),
+             nav_ok && (start_down || ui));
 }
 
 // ---------------------------------------------------------------------------
