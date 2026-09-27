@@ -2,11 +2,11 @@
 // Address: 00419bf0
 // Address Range: [[00419bf0, 00419c11]]
 // Convention: __cdecl
-// Signature: void __cdecl core_boneguy_cpp_CBoneGuy_renderOpaque_FUN_00419bf0(CBoneGuy *this_ptr)
+// Signature: int __cdecl core_boneguy_cpp_CBoneGuy_renderOpaque_FUN_00419bf0(CBoneGuy *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_boneguy_cpp_CBoneGuy_renderOpaque_FUN_00419bf0(CBoneGuy *this_ptr)
+int __cdecl core_boneguy_cpp_CBoneGuy_renderOpaque_FUN_00419bf0(CBoneGuy *this_ptr)
 
 {
   int iVar1;
@@ -14,8 +14,8 @@ void __cdecl core_boneguy_cpp_CBoneGuy_renderOpaque_FUN_00419bf0(CBoneGuy *this_
   iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
   ;
   if (iVar1 == 0) {
-    return;
+    return 0;
   }
-  core_charactr_cpp_CCharacter_renderOpaque_FUN_00426440((CCharacter *)this_ptr);
-  return;
+  iVar1 = core_charactr_cpp_CCharacter_renderOpaque_FUN_00426440((CCharacter *)this_ptr);
+  return iVar1;
 }

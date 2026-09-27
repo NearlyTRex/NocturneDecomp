@@ -89,7 +89,7 @@ void __cdecl CBaronWeapon::process(CBaronWeapon *this_ptr,float delta_time);
 
 // Original: core_baron.cpp_CBaronWeapon_renderOpaque_FUN_00413de0
 // Address: 00413de0
-void __cdecl CBaronWeapon::renderOpaque(CBaronWeapon *this_ptr);
+int __cdecl CBaronWeapon::renderOpaque(CBaronWeapon *this_ptr);
 
 // Original: core_baron.cpp_CBaronWeapon_fire_FUN_00413df0
 // Address: 00413df0

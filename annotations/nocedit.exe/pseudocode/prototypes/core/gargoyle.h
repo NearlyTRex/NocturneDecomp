@@ -33,7 +33,7 @@ void __cdecl CGargoyle::process(CGargoyle *this_ptr,float delta_time);
 
 // Original: core_gargoyle.cpp_CGargoyle_renderOpaque_FUN_004e53f0
 // Address: 004e53f0
-void __cdecl CGargoyle::renderOpaque(CGargoyle *this_ptr);
+int __cdecl CGargoyle::renderOpaque(CGargoyle *this_ptr);
 
 // Original: core_gargoyle.cpp_CGargoyle_archive_FUN_004e5470
 // Address: 004e5470

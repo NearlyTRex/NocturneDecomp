@@ -41,7 +41,7 @@
 
 void __cdecl core_colonel_cpp_CColonel_processMotionEvents_FUN_00440430(CColonel *this_ptr,float delta_time);
 void __cdecl core_colonel_cpp_CColonel_archive_FUN_00440490(CColonel *this_ptr);
-void __cdecl core_colonel_cpp_CColonel_renderOpaque_FUN_004404a0(CColonel *this_ptr);
+int __cdecl core_colonel_cpp_CColonel_renderOpaque_FUN_004404a0(CColonel *this_ptr);
 void __cdecl core_colonel_cpp_CColonel_processDamage_FUN_004404b0(CColonel *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_colonel_cpp_CColonel_isWeaponDrawn_FUN_004405d0(CColonel *this_ptr);
 void __cdecl core_colonel_cpp_CColonel_drawWeapon_FUN_004405e0(CColonel *this_ptr,int drawn);

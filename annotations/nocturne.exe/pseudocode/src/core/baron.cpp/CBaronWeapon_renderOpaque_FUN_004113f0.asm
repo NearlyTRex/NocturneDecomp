@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_baron_cpp_CBaronWeapon_renderOpaque_FUN_004113f0(CBaronWeapon *this_ptr)
+; int __cdecl core_baron_cpp_CBaronWeapon_renderOpaque_FUN_004113f0(CBaronWeapon *this_ptr)
 ;
 ; Parameters:
 ; CBaronWeapon *   Stack[0x4]:4   this_ptr

@@ -176,7 +176,7 @@ void __cdecl core_colonel_cpp_CColonel_process_FUN_00439f50(CColonel *this_ptr,f
 void __cdecl core_colonel_cpp_CColonel_processAI_FUN_0043a470(CColonel *this_ptr,float delta_time);
 void __cdecl core_colonel_cpp_CColonel_processMotionEvents_FUN_0043a980(CColonel *this_ptr,float delta_time);
 void __cdecl core_colonel_cpp_CColonel_archive_FUN_0043a9e0(CColonel *this_ptr);
-void __cdecl core_colonel_cpp_CColonel_renderOpaque_FUN_0043a9f0(CColonel *this_ptr);
+int __cdecl core_colonel_cpp_CColonel_renderOpaque_FUN_0043a9f0(CColonel *this_ptr);
 void __cdecl core_colonel_cpp_CColonel_processDamage_FUN_0043aa00(CColonel *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_colonel_cpp_CColonel_isWeaponDrawn_FUN_0043ab20(CColonel *this_ptr);
 void __cdecl core_colonel_cpp_CColonel_drawWeapon_FUN_0043ab30(CColonel *this_ptr,int drawn);

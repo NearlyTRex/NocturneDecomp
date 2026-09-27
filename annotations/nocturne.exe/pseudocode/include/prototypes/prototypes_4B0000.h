@@ -128,7 +128,7 @@ void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004b3880(CHaystack *this_p
 void __cdecl core_haystack_cpp_CHaystack_advanceMotion_FUN_004b3e00(CHaystack *this_ptr,float delta_time);
 void __cdecl core_haystack_cpp_CHaystack_checkMeleeHit_FUN_004b3f40(CHaystack *this_ptr,int bone_index);
 void __cdecl core_haystack_cpp_CHaystack_archive_FUN_004b3fe0(CHaystack *this_ptr);
-void __cdecl core_haystack_cpp_CHaystack_renderOpaque_FUN_004b3ff0(CHaystack *this_ptr);
+int __cdecl core_haystack_cpp_CHaystack_renderOpaque_FUN_004b3ff0(CHaystack *this_ptr);
 void __cdecl core_haystack_cpp_CHaystack_processDamage_FUN_004b4000(CHaystack *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_haystack_cpp_CHaystack_isWeaponDrawn_FUN_004b4120(CHaystack *this_ptr);
 void __cdecl core_haystack_cpp_CHaystack_drawWeapon_FUN_004b4130(CHaystack *this_ptr,int drawn);
@@ -254,7 +254,7 @@ void __cdecl core_icepick_cpp_CIcePick_processAI_FUN_004baba0(CIcePick *this_ptr
 void __cdecl core_icepick_cpp_CIcePick_processMotionEvents_FUN_004bb2d0(CIcePick *this_ptr,float delta_time);
 void __cdecl core_icepick_cpp_CIcePick_performMeleeAttack_FUN_004bb3c0(CIcePick *this_ptr,int bone_index);
 void __cdecl core_icepick_cpp_CIcePick_archive_FUN_004bb4c0(CIcePick *this_ptr);
-void __cdecl core_icepick_cpp_CIcePick_renderOpaque_FUN_004bb4d0(CIcePick *this_ptr);
+int __cdecl core_icepick_cpp_CIcePick_renderOpaque_FUN_004bb4d0(CIcePick *this_ptr);
 void __cdecl core_icepick_cpp_CIcePick_processDamage_FUN_004bb4e0(CIcePick *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_icepick_cpp_CIcePick_isWeaponDrawn_FUN_004bb690(CIcePick *this_ptr);
 void __cdecl core_icepick_cpp_CIcePick_drawWeapon_FUN_004bb6a0(CIcePick *this_ptr,int drawn);

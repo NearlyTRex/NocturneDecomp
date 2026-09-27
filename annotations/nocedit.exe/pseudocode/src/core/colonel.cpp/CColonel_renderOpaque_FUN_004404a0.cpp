@@ -2,13 +2,15 @@
 // Address: 004404a0
 // Address Range: [[004404a0, 004404ad]]
 // Convention: __cdecl
-// Signature: void __cdecl core_colonel_cpp_CColonel_renderOpaque_FUN_004404a0(CColonel *this_ptr)
+// Signature: int __cdecl core_colonel_cpp_CColonel_renderOpaque_FUN_004404a0(CColonel *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_colonel_cpp_CColonel_renderOpaque_FUN_004404a0(CColonel *this_ptr)
+int __cdecl core_colonel_cpp_CColonel_renderOpaque_FUN_004404a0(CColonel *this_ptr)
 
 {
-  core_charactr_cpp_CCharacter_renderOpaque_FUN_0042a2c0((CCharacter *)this_ptr);
-  return;
+  int iVar1;
+  
+  iVar1 = core_charactr_cpp_CCharacter_renderOpaque_FUN_0042a2c0((CCharacter *)this_ptr);
+  return iVar1;
 }

@@ -53,7 +53,7 @@ int __cdecl CBoneGuy::updatePickupBehavior(CBoneGuy *this_ptr,float delta_time);
 
 // Original: core_boneguy.cpp_CBoneGuy_renderOpaque_FUN_00419bf0
 // Address: 00419bf0
-void __cdecl CBoneGuy::renderOpaque(CBoneGuy *this_ptr);
+int __cdecl CBoneGuy::renderOpaque(CBoneGuy *this_ptr);
 
 // Original: core_boneguy.cpp_CBoneGuy_renderTransparent_FUN_00419c20
 // Address: 00419c20

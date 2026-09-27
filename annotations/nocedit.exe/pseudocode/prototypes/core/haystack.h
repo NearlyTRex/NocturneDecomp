@@ -45,7 +45,7 @@ void __cdecl CHaystack::archive(CHaystack *this_ptr);
 
 // Original: core_haystack.cpp_CHaystack_renderOpaque_FUN_004f1b60
 // Address: 004f1b60
-void __cdecl CHaystack::renderOpaque(CHaystack *this_ptr);
+int __cdecl CHaystack::renderOpaque(CHaystack *this_ptr);
 
 // Original: core_haystack.cpp_CHaystack_processDamage_FUN_004f1b70
 // Address: 004f1b70

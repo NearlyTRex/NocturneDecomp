@@ -41,7 +41,7 @@ void __cdecl CColonel::archive(CColonel *this_ptr);
 
 // Original: core_colonel.cpp_CColonel_renderOpaque_FUN_004404a0
 // Address: 004404a0
-void __cdecl CColonel::renderOpaque(CColonel *this_ptr);
+int __cdecl CColonel::renderOpaque(CColonel *this_ptr);
 
 // Original: core_colonel.cpp_CColonel_processDamage_FUN_004404b0
 // Address: 004404b0

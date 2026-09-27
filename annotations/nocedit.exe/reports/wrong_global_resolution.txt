@@ -13,7 +13,7 @@ SUMMARY
 
   Functions checked: 6911
   Functions with suspicious globals: 105
-  Total suspicious global references: 167
+  Total suspicious global references: 171
 
   Most commonly misresolved globals:
     g_SfxOptions                                       13 functions
@@ -35,7 +35,7 @@ SUMMARY
     g_CScriptPtr                                       2 functions
     g_ModalDialogActive                                2 functions
     g_CGamePtr                                         2 functions
-    g_CMoonInstance                                    2 functions
+    g_CDemonMissionPtr                                 2 functions
 
   .keep files with issues: 72 (these need manual review)
   Raw .cpp files with issues: 33
@@ -45,75 +45,83 @@ DETAILED FINDINGS
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-core_main.c_enterMainGameMenu_FUN_00507a50  [.keep]  (17 suspicious globals)
+core_main.c_enterMainGameMenu_FUN_00507a50  [.keep]  (19 suspicious globals)
   File: core/main.c
 
   g_CDemonFileManagerInstance
-    Used at lines: 287
+    Used at lines: 293
+    NOT found in function reference list
+
+  g_CDemonMissionPtr
+    Used at lines: 54, 54
     NOT found in function reference list
 
   g_CEditorToolsPtr
-    Used at lines: 229
+    Used at lines: 235
     NOT found in function reference list
 
   g_CGamePtr
-    Used at lines: 48, 52, 53, 74, 76, ...
+    Used at lines: 48, 58, 59, 80, 82, ...
     NOT found in function reference list
 
   g_CKeysPtr
-    Used at lines: 196, 196, 198, 198, 199, ...
+    Used at lines: 202, 202, 204, 204, 205, ...
     NOT found in function reference list
 
   g_CMoonInstance
-    Used at lines: 72, 80, 81, 194, 213, ...
+    Used at lines: 78, 86, 87, 200, 219, ...
     NOT found in function reference list
 
   g_CSoundPtr
-    Used at lines: 169, 171, 174, 176, 195, ...
+    Used at lines: 175, 177, 180, 182, 201, ...
+    NOT found in function reference list
+
+  g_EditorFont
+    Used at lines: 55
     NOT found in function reference list
 
   g_InputDisabled
-    Used at lines: 252
+    Used at lines: 258
     NOT found in function reference list
 
   g_MainMenuTextBuffers
-    Used at lines: 83, 86, 89, 91, 93, ...
+    Used at lines: 89, 92, 95, 97, 99, ...
     NOT found in function reference list
 
   g_MenuBitmapFilenames
-    Used at lines: 60
-    NOT found in function reference list
-
-  g_MenuBitmaps
-    Used at lines: 56
-    NOT found in function reference list
-
-  g_MenuBlurLeft
-    Used at lines: 65
-    NOT found in function reference list
-
-  g_MenuBlurMiddle
     Used at lines: 66
     NOT found in function reference list
 
+  g_MenuBitmaps
+    Used at lines: 62
+    NOT found in function reference list
+
+  g_MenuBlurLeft
+    Used at lines: 71
+    NOT found in function reference list
+
+  g_MenuBlurMiddle
+    Used at lines: 72
+    NOT found in function reference list
+
   g_MenuBlurRight
-    Used at lines: 67
+    Used at lines: 73
     NOT found in function reference list
 
   g_MenuTextPointers
-    Used at lines: 98, 103, 108, 119, 124, ...
+    Used at lines: 104, 109, 114, 125, 130, ...
     NOT found in function reference list
 
   g_ThemeFont
-    Used at lines: 130
+    Used at lines: 53, 136
     NOT found in function reference list
 
   g_UseDirect3D
-    Used at lines: 52, 268, 276
+    Used at lines: 58, 274, 282
     NOT found in function reference list
 
   g_WindowHeight
-    Used at lines: 49, 132, 133
+    Used at lines: 49, 138, 139
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -166,6 +174,26 @@ core_game.cpp_calculateIrisFadeCenter_FUN_004e09a0  [.keep]  (5 suspicious globa
 
   g_WindowWidth
     Used at lines: 49
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_menu.cpp_configureGraphicsOptions_FUN_00510c80  [.keep]  (4 suspicious globals)
+  File: core/menu.cpp
+
+  g_CDemonMissionPtr
+    Used at lines: 382, 383
+    NOT found in function reference list
+
+  g_EditorFont
+    Used at lines: 384
+    NOT found in function reference list
+
+  g_ThemeFont
+    Used at lines: 329
+    NOT found in function reference list
+
+  g_WindowHeight
+    Used at lines: 331, 332, 381
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -265,19 +293,7 @@ core_inv.cpp_CInventory_renderAllItems_FUN_00500690  [.keep]  (2 suspicious glob
     NOT found in function reference list
 
   g_CScriptPtr
-    Used at lines: 461, 471
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-core_menu.cpp_configureGraphicsOptions_FUN_00510c80  [.keep]  (2 suspicious globals)
-  File: core/menu.cpp
-
-  g_ThemeFont
-    Used at lines: 318
-    NOT found in function reference list
-
-  g_WindowHeight
-    Used at lines: 320, 321
+    Used at lines: 465, 475
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -437,7 +453,7 @@ core_game.cpp_CGame_loadGame_FUN_004e12b0  [.keep]  (1 suspicious globals)
   File: core/game.cpp
 
   g_CKeysPtr
-    Used at lines: 75, 75
+    Used at lines: 79, 79
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -501,7 +517,7 @@ core_game.cpp_hostNetworkGame_FUN_004e2f10  [.keep]  (1 suspicious globals)
   File: core/game.cpp
 
   g_CKeysPtr
-    Used at lines: 22, 22
+    Used at lines: 18, 18
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

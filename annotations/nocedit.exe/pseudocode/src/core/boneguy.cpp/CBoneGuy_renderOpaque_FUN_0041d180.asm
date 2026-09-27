@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_boneguy_cpp_CBoneGuy_renderOpaque_FUN_0041d180(CBoneGuy *this_ptr)
+; int __cdecl core_boneguy_cpp_CBoneGuy_renderOpaque_FUN_0041d180(CBoneGuy *this_ptr)
 ;
 ; Parameters:
 ; CBoneGuy *       Stack[0x4]:4   this_ptr

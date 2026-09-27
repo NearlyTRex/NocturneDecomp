@@ -61,7 +61,7 @@ void __cdecl CIcePick::archive(CIcePick *this_ptr);
 
 // Original: core_icepick.cpp_CIcePick_renderOpaque_FUN_004bb4d0
 // Address: 004bb4d0
-void __cdecl CIcePick::renderOpaque(CIcePick *this_ptr);
+int __cdecl CIcePick::renderOpaque(CIcePick *this_ptr);
 
 // Original: core_icepick.cpp_CIcePick_processDamage_FUN_004bb4e0
 // Address: 004bb4e0

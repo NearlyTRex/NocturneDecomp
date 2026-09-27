@@ -182,7 +182,7 @@ CDemonActorType * __cdecl core_baron_cpp_CBaronWeapon_getActorType_FUN_00413d30(
 CBaronWeapon * __cdecl core_baron_cpp_CBaronWeapon_ctor_FUN_00413d40(CBaronWeapon *this_ptr);
 void __cdecl core_baron_cpp_CBaronWeapon_setup_FUN_00413da0(CBaronWeapon *this_ptr);
 void __cdecl core_baron_cpp_CBaronWeapon_process_FUN_00413dc0(CBaronWeapon *this_ptr,float delta_time);
-void __cdecl core_baron_cpp_CBaronWeapon_renderOpaque_FUN_00413de0(CBaronWeapon *this_ptr);
+int __cdecl core_baron_cpp_CBaronWeapon_renderOpaque_FUN_00413de0(CBaronWeapon *this_ptr);
 int __cdecl core_baron_cpp_CBaronWeapon_fire_FUN_00413df0(CBaronWeapon *this_ptr);
 int __cdecl core_baron_cpp_CBaronWeapon_isReadyToFire_FUN_00413e30(CBaronWeapon *this_ptr);
 void __cdecl core_baron_cpp_CBaronWeapon_renderAimBeam_FUN_00413e60(CBaronWeapon *this_ptr);
@@ -357,7 +357,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_setup_FUN_0041bd90(CBoneGuy *this_ptr);
 void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,float delta_time);
 void __stack2_esi core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40(CBoneGuy *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 int __cdecl core_boneguy_cpp_CBoneGuy_updatePickupBehavior_FUN_0041cc40(CBoneGuy *this_ptr,float delta_time);
-void __cdecl core_boneguy_cpp_CBoneGuy_renderOpaque_FUN_0041d180(CBoneGuy *this_ptr);
+int __cdecl core_boneguy_cpp_CBoneGuy_renderOpaque_FUN_0041d180(CBoneGuy *this_ptr);
 int __cdecl core_boneguy_cpp_CBoneGuy_renderTransparent_FUN_0041d1b0(CBoneGuy *this_ptr);
 void __cdecl core_boneguy_cpp_CBoneGuy_archive_FUN_0041d270(CBoneGuy *this_ptr);
 void __cdecl core_boneguy_cpp_CBoneGuy_reset_FUN_0041d4c0(CBoneGuy *this_ptr);

@@ -258,6 +258,16 @@ _CPPCHECK_ARGS = [
     '--suppress=unmatchedSuppression',
 ]
 
+def _load_config_defines_module():
+    spec = importlib.util.spec_from_file_location(
+        '_config_defines', os.path.join(PSEUDOCODE_DIR, 'config_defines.py'))
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+
+_config_defines = _load_config_defines_module()
+
 # Matches the template above. Same shape as parse_cppcheck_output() in
 # static_analysis.py — duplicated here so we don't import that module
 # (it pulls in Ghidra-side dependencies).
@@ -274,9 +284,12 @@ def run_cppcheck_quick(cpp_path, timeout=60):
     failure (timeout, missing binary, no output), returns ([], error_msg).
     Caller silently skips when cppcheck isn't installed.
     """
+    pseudocode_dir = _config_defines.pseudocode_dir_for(cpp_path)
+    defines = (_config_defines.config_define_flags(pseudocode_dir)
+               if pseudocode_dir else [])
     try:
         proc = subprocess.run(
-            ['cppcheck'] + _CPPCHECK_ARGS + [cpp_path],
+            ['cppcheck'] + _CPPCHECK_ARGS + defines + [cpp_path],
             capture_output=True, text=True, timeout=timeout,
         )
     except FileNotFoundError:

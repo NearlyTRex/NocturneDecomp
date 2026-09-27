@@ -18,6 +18,9 @@ from ghidra_annotations.annotations.pseudocode.compiler_config import (
 from ghidra_annotations.annotations.pseudocode.function_compile import (
     strip_ansi_codes, normalize_quotes, normalize_path_in_message
 )
+from ghidra_annotations.annotations.pseudocode.config_defines import (
+    config_define_flags
+)
 
 
 # =============================================================================
@@ -370,6 +373,7 @@ def run_cppcheck(cpp_path, include_dir, timeout=120, repo_dir=None, deep=False):
             '--suppress=preprocessorErrorDirective',
             '--suppress=unmatchedSuppression',
         ]
+        cmd += config_define_flags(os.path.dirname(include_dir))
         if deep:
             # Deep mode: include headers for full type resolution (slow)
             cmd += ['-I', include_dir]
@@ -451,6 +455,7 @@ def run_cppcheck_batch(cpp_paths, include_dir, num_threads=8, timeout=None,
             '-I', include_dir,
             '--file-list=%s' % filelist_path,
         ]
+        cmd += config_define_flags(os.path.dirname(include_dir))
 
         proc = subprocess.run(cmd, capture_output=True, text=True,
                               timeout=timeout)

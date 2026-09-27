@@ -69,7 +69,7 @@ CGargoyle * __cdecl core_gargoyle_cpp_CGargoyle_ctor_FUN_004a7350(CGargoyle *thi
 void __cdecl core_gargoyle_cpp_CGargoyle_setup_FUN_004a7450(CGargoyle *this_ptr);
 int __cdecl core_gargoyle_cpp_CGargoyle_shouldMove_FUN_004a7710(CGargoyle *this_ptr);
 void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004a7870(CGargoyle *this_ptr,float delta_time);
-void __cdecl core_gargoyle_cpp_CGargoyle_renderOpaque_FUN_004a8260(CGargoyle *this_ptr);
+int __cdecl core_gargoyle_cpp_CGargoyle_renderOpaque_FUN_004a8260(CGargoyle *this_ptr);
 void __cdecl core_gargoyle_cpp_CGargoyle_archive_FUN_004a8270(CGargoyle *this_ptr);
 void __cdecl core_gargoyle_cpp_CGargoyle_processDismemberment_FUN_004a8330(CGargoyle *this_ptr,SDamageInfo *damage_info);
 void __cdecl core_gargoyle_cpp_CGargoyle_processDamage_FUN_004a85d0(CGargoyle *this_ptr,SDamageInfo *damage_info);
