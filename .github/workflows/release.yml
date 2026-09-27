@@ -41,13 +41,21 @@ jobs:
       # Linux archive is still worth having and the log says which half failed.
       fail-fast: false
       matrix:
+        # SDL compiles its X11/Wayland/audio backends only when their headers
+        # are present; bundledlibs.cmake fails the configure without them.
         include:
           - preset: exe-linux-x86_64
-            packages: ""
+            packages: >-
+              libx11-dev libxext-dev libxcursor-dev libxi-dev libxfixes-dev
+              libxrandr-dev libxss-dev libwayland-dev libxkbcommon-dev
+              wayland-protocols libpulse-dev libasound2-dev
           - preset: exe-windows-x86_64
             packages: g++-mingw-w64-x86-64
           - preset: exe-linux-vanilla-x86_64
-            packages: ""
+            packages: >-
+              libx11-dev libxext-dev libxcursor-dev libxi-dev libxfixes-dev
+              libxrandr-dev libxss-dev libwayland-dev libxkbcommon-dev
+              wayland-protocols libpulse-dev libasound2-dev
           - preset: exe-windows-vanilla-x86_64
             packages: g++-mingw-w64-x86-64
     with:

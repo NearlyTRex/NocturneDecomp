@@ -52,6 +52,17 @@ assumptions a 32-bit build would never catch.
 sudo apt install cmake clang ninja-build pkg-config python3
 ```
 
+**Display and audio headers (Linux `exe-*` presets):** SDL2 compiles its X11, Wayland,
+PulseAudio and ALSA backends only when their headers are present at configure time. Without
+them it builds with just the headless drivers, so configure stops with an error rather than
+produce a binary that opens no window and plays no sound.
+
+```sh
+sudo apt install libx11-dev libxext-dev libxcursor-dev libxi-dev libxfixes-dev \
+    libxrandr-dev libxss-dev libwayland-dev libxkbcommon-dev wayland-protocols \
+    libpulse-dev libasound2-dev
+```
+
 That is the whole list for the Linux presets — no multilib, no `:i386` packages, and SDL2,
 SDL2_ttf and FFmpeg are built from source rather than taken from the system.
 
