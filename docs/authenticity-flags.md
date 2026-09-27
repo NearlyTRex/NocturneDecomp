@@ -74,7 +74,7 @@ flag.
 
 ## What is gated
 
-64 toggles. The kinds below are the same ones the header's table names, and a flag's kind is the
+65 toggles. The kinds below are the same ones the header's table names, and a flag's kind is the
 honest reason its default is what it is.
 
 **`host` — the shipped behaviour depends on Win32 + DirectDraw and cannot be reproduced**
@@ -118,6 +118,7 @@ honest reason its default is what it is.
 | `FRIENDLY_FIRE` | heroes cannot damage each other in a network game |
 | `MELEE_PICKUP` | a melee weapon you already carry does not fill a second inventory slot |
 | `SHADOW_DEPTH_READ` | the shadow-pass depth test reads the 16-bit value the span writer actually wrote |
+| `BODY_PART_BAKE` | a settled body part stays on screen until a background bake draws it, instead of vanishing under a light |
 | `INPUT_REPEAT` | a held button starts an action once instead of restarting it every frame |
 | `ITEM_HELP_POSITION` | the pickup help text does not sit on top of the pickup name |
 | `DEATH_MESSAGE_POSITION` | the death banner is centred, clear of the message line |

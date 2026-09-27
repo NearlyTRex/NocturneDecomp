@@ -36,6 +36,11 @@ void __cdecl core_bodypart_cpp_CBodyPart_renderBackground_FUN_00419610(CBodyPart
       return;
     }
   }
+#if !NOCTURNE_AUTHENTIC_BODY_PART_BAKE
+  if ((this_ptr->render_in_background == 1) && (layer_flag == 0)) {
+    return;
+  }
+#endif
   if ((this_ptr->render_in_background != 1) || ((this_ptr->physics_box).is_valid == 0)) {
     this_ptr->render_in_background = 2;
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);

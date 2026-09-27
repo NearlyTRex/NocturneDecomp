@@ -83,6 +83,7 @@
 // | `NOCTURNE_AUTHENTIC_FRIENDLY_FIRE` | 0 | defect | heroes cannot damage each other in a network game |
 // | `NOCTURNE_AUTHENTIC_MELEE_PICKUP` | 0 | defect | a melee weapon already held does not take a second slot |
 // | `NOCTURNE_AUTHENTIC_SHADOW_DEPTH_READ` | 0 | defect | the shadow-pass depth test reads the width it was written at |
+// | `NOCTURNE_AUTHENTIC_BODY_PART_BAKE` | 0 | defect | a settled body part goes into the background only through a background bake |
 // | `NOCTURNE_AUTHENTIC_PICKUP_WIELDS` | 0 | choice | a pickup is never drawn without the player asking |
 // | `NOCTURNE_AUTHENTIC_OPTIONS_RESUMES_GAME` | 0 | choice | leaving Options returns to the pause menu |
 // | `NOCTURNE_AUTHENTIC_CONFIRM_PROMPTS` | 0 | choice | no bracketed hotkey letters, and a short form when the long one will not fit |
@@ -1585,6 +1586,27 @@
 //   Override with -DNOCTURNE_AUTHENTIC_SHADOW_DEPTH_READ=1.
 #ifndef NOCTURNE_AUTHENTIC_SHADOW_DEPTH_READ
 #define NOCTURNE_AUTHENTIC_SHADOW_DEPTH_READ 0
+#endif
+
+// NOCTURNE_AUTHENTIC_BODY_PART_BAKE
+//   When a dismembered CBodyPart stops being drawn per frame.
+//
+//   dismemberPartInternal creates the part with render_in_background = 1.
+//   Once its physics box settles, CBodyPart::renderBackground sets it to 2 on
+//   its next call whatever layer_flag is (0041964c..00419664; only the 0 -> 1
+//   step tests layer_flag), and renderOpaque skips any part at 2. When that
+//   call is a dynamic light's shadow pass (renderStaticLights passes
+//   layer_flag 0), the part is drawn into the light's shadow map and never
+//   into the camera image, so it vanishes the next time its pixels are
+//   repainted - under a flashlight at once - until setCameraView bakes it.
+//
+//   1: shipped behaviour - any renderBackground call moves a settled part to 2.
+//   0: only a call with layer_flag set does; any other pass leaves the part at
+//      1, where renderOpaque keeps drawing it.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_BODY_PART_BAKE=1.
+#ifndef NOCTURNE_AUTHENTIC_BODY_PART_BAKE
+#define NOCTURNE_AUTHENTIC_BODY_PART_BAKE 0
 #endif
 
 // =============================================================================
