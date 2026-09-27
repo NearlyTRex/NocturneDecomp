@@ -9,14 +9,16 @@ permissions: {}
 
 concurrency:
   group: ci-${{ github.ref }}
-  cancel-in-progress: true
+  # Only pull requests: a newer push supersedes their run. On main every run
+  # finishes, since each push's secret scan covers only that push's commits.
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   # The native lane, with the unit tests. The Windows lanes cross-compile to PEs
   # that cannot run here, so they are built only on release.
   build:
     name: Build (exe-linux-x86_64)
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@189a9c599b51396d09f95469f00b561da645ded1 # v0.2.7
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@4fe68c91984dd09dea6988fd603b128bc3f44ff7 # v0.2.9
     permissions:
       contents: read
     with:
@@ -38,6 +40,8 @@ jobs:
       # About 7,400 translation units: ccache recompiles only the ones a
       # commit touched, instead of all of them on every run.
       ccache: true
+      # One build fills 500M, so ccache evicted as it went and kept only the tail.
+      ccache-max-size: 2G
       # Shared by the CI build and the release build of the same preset.
       cache-key: exe-linux-x86_64
       # The test binaries are EXCLUDE_FROM_ALL, and ctest only runs what is
@@ -50,7 +54,7 @@ jobs:
 
   lint:
     name: Lint
-    uses: NearlyTRex/Workflows/.github/workflows/lint.yml@189a9c599b51396d09f95469f00b561da645ded1 # v0.2.7
+    uses: NearlyTRex/Workflows/.github/workflows/lint.yml@4fe68c91984dd09dea6988fd603b128bc3f44ff7 # v0.2.9
     permissions:
       contents: read
     with:
@@ -58,3 +62,5 @@ jobs:
       # of formatting-only edits. Code-fence checking goes with it; turn both on
       # once the notes are cleaned up.
       markdown: false
+      # Decompiled code keeps the original's shape; don't format-check it.
+      clang-format: false
