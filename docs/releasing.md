@@ -28,6 +28,17 @@ what keeps a new commit from rebuilding the whole tree.
 NocturneDecomp 0.1.0 (v0.1.0-12-gae024d0-dirty), exe-linux-x86_64
 ```
 
+A release build names its release exactly:
+
+```sh
+./nocturne --version
+NocturneDecomp 0.1.0 (v0.1.0), exe-linux-x86_64
+```
+
+The `Release` workflow only creates the tag after the archives are built, so each build tags its
+own checkout first, locally and never pushed, with the same tag on the same commit. Without that,
+`git describe` would find no tag and stamp a bare commit hash, which is what v0.1.0 shipped with.
+
 `--version` answers before any initialisation, so it works on a binary that cannot open a
 window or find the game data. The same line goes to the console at session start, next to the
 shipped `game.cpp built on` banner, so it is in every `nocturne_debug.log` anyone sends.
@@ -79,7 +90,8 @@ translation unit, so a single binary cannot carry both sets.
    a pull request.
 2. **Merge it.** The `Release` workflow sees a version with no tag yet, builds four lanes —
    `exe-linux-x86_64`, `exe-windows-x86_64` and the two vanilla ones — tags the merge commit, and
-   attaches the archives and a `SHA256SUMS.txt` to a **draft** release.
+   attaches the archives and a `SHA256SUMS.txt` to a **draft** release. Don't tag it yourself:
+   a tag that already exists tells the workflow the version is released, and it builds nothing.
 3. **Check the draft, then publish it by hand.** It becomes the *Latest* release on publishing.
 
 The notes open with [`.github/release-notes.md`](../.github/release-notes.md), which says what
@@ -114,9 +126,9 @@ The executable, the shared libraries it needs, `LICENSE`, `gamecontrollerdb.txt`
 licence, `README.md`, and a `VERSION.txt` that is the binary's own `--version` output — so an
 unpacked directory can still say what it is.
 
-**No game data.** The PODs, `BACKDROP/`, `MODELS/` and the original executables are not in the
-repository and are not redistributable. An archive holds the engine; whoever runs it supplies
-their own copy of the game, which is the arrangement the build has always had.
+**No game data.** The PODs and the original executables are not in the repository and are not
+redistributable. An archive holds the engine; whoever runs it supplies their own copy of the
+game, which is the arrangement the build has always had.
 
 ## The runpath, and why it is `$ORIGIN`
 

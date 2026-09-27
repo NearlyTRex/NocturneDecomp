@@ -15,7 +15,7 @@ permissions: {}
 jobs:
   check:
     name: Check
-    uses: NearlyTRex/Workflows/.github/workflows/lint.yml@d3438cd6128cd821327a5b1708c300354bc0e20d # v0.2.5
+    uses: NearlyTRex/Workflows/.github/workflows/lint.yml@0dd8e56278d822277ecd6fd06f12b24c3814d84f # v0.2.6
     permissions:
       contents: read
     with:
@@ -23,7 +23,7 @@ jobs:
 
   pending:
     name: Pending
-    uses: NearlyTRex/Workflows/.github/workflows/release-check.yml@d3438cd6128cd821327a5b1708c300354bc0e20d # v0.2.5
+    uses: NearlyTRex/Workflows/.github/workflows/release-check.yml@0dd8e56278d822277ecd6fd06f12b24c3814d84f # v0.2.6
     permissions:
       contents: read
     with:
@@ -33,7 +33,7 @@ jobs:
     name: Package (${{ matrix.preset }})
     needs: pending
     if: needs.pending.outputs.pending == 'true'
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@d3438cd6128cd821327a5b1708c300354bc0e20d # v0.2.5
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@0dd8e56278d822277ecd6fd06f12b24c3814d84f # v0.2.6
     permissions:
       contents: read
     strategy:
@@ -59,8 +59,15 @@ jobs:
         build/${{ matrix.preset }}/_deps
         build/${{ matrix.preset }}/ffmpeg
       cache-key-files: cmake/bundledlibs.cmake
+      # About 7,400 translation units: ccache recompiles only the ones a
+      # commit touched, instead of all of them on every run.
+      ccache: true
       # Shared by the CI build and the release build of the same preset.
       cache-key: ${{ matrix.preset }}
+      # The Release job tags this commit only after the builds, so tag it here
+      # too (locally, never pushed), or git describe stamps a bare hash into the
+      # binary instead of the release it is.
+      local-tag: ${{ needs.pending.outputs.tag }}
       build-command: ./scripts/Bash/package_release.sh "${{ matrix.preset }}"
       artifact: nocturne-${{ matrix.preset }}
       artifact-path: dist/*
@@ -68,7 +75,7 @@ jobs:
   release:
     name: Release
     needs: [check, package]
-    uses: NearlyTRex/Workflows/.github/workflows/release.yml@d3438cd6128cd821327a5b1708c300354bc0e20d # v0.2.5
+    uses: NearlyTRex/Workflows/.github/workflows/release.yml@0dd8e56278d822277ecd6fd06f12b24c3814d84f # v0.2.6
     permissions:
       contents: write
     with:
