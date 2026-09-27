@@ -4,7 +4,7 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 81,
     "complexity_score": 39,
@@ -142,6 +142,16 @@
     },
     "pcode_op_count": 362
   },
+  "resolved_suspects": [
+    {
+      "description": "'g_PathfindingVisited[0][iVar4]' indexes row 0 of a multi-dimensional array with a flattened offset (iVar4 is copied from local_18, which is stepped by 0x64): out of bounds past the first row. Split it back into real indices, and take the base from the .asm - the named [0] element is Ghidra's guess and may be an adjacent global (\u00a735).",
+      "line": 23,
+      "resolution_source": "keep",
+      "severity": "major",
+      "text": "_sprintf(local_11c,\"%s\",g_DirectionCharacters[(byte)g_PathfindingVisited[0][iVar4]])",
+      "type": "flattened_array_index"
+    }
+  ],
   "stack_frame": {
     "frame_size": 292,
     "local_size": 288,

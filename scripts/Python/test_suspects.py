@@ -235,6 +235,7 @@ def run_detectors(susp, code, struct_layout_map=None,
         code, struct_layout_map))
     found.extend(susp.identify_derived_field_index_pun(
         code, struct_layout_map, struct_size_map))
+    found.extend(susp.identify_flattened_array_index(code))
     if asm_code:
         found.extend(susp.identify_dropped_fyl2x(code, asm_code))
     if cpp_code:

@@ -117,6 +117,7 @@ SUSPECT_SEVERITY = {
     'pointer_stride_bytecount': 'moderate',
     'stale_struct_offset_64bit': 'moderate',
     'derived_field_index_pun': 'moderate',
+    'flattened_array_index': 'major',
     'partial_struct_copy': 'moderate',
     'phantom_float_to_int': 'moderate',
     'stale_enum_name': 'major',

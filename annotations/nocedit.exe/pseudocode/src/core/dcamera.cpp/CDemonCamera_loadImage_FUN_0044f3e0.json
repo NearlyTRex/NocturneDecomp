@@ -986,6 +986,30 @@
       "type": "preinc_loop_idiom"
     },
     {
+      "description": "'g_CameraImageDecompressBuffer[0].pixels[0][iVar2]' indexes row 0 of a multi-dimensional array with a flattened offset (iVar2 is stepped by 0x100, 0x140 and copied from local_40, which is stepped by 0x140): out of bounds past the first row. Split it back into real indices, and take the base from the .asm - the named [0] element is Ghidra's guess and may be an adjacent global (\u00a735).",
+      "line": 233,
+      "resolution_source": "keep",
+      "severity": "major",
+      "text": "g_CameraImageDecompressBuffer[0].pixels[0][iVar2] = cVar4;",
+      "type": "flattened_array_index"
+    },
+    {
+      "description": "'g_CameraImageDecompressBuffer[0].pixels[0][iVar16]' indexes row 0 of a multi-dimensional array with a flattened offset (iVar16 is stepped by 0x12c00): out of bounds past the first row. Split it back into real indices, and take the base from the .asm - the named [0] element is Ghidra's guess and may be an adjacent global (\u00a735).",
+      "line": 473,
+      "resolution_source": "keep",
+      "severity": "major",
+      "text": "g_CameraImageDecompressBuffer[0].pixels[0][iVar16] =",
+      "type": "flattened_array_index"
+    },
+    {
+      "description": "'g_CameraImageDecompressBuffer[0].pixels[0][iVar8]' indexes row 0 of a multi-dimensional array with a flattened offset (iVar8 is multiplied by 0x140 and stepped by 0x12c00): out of bounds past the first row. Split it back into real indices, and take the base from the .asm - the named [0] element is Ghidra's guess and may be an adjacent global (\u00a735).",
+      "line": 474,
+      "resolution_source": "keep",
+      "severity": "major",
+      "text": "g_CameraImageDecompressBuffer[0].pixels[0][iVar8];",
+      "type": "flattened_array_index"
+    },
+    {
       "description": "Watcom inline memcpy (REP MOVSD at 0044fa93, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
       "line": 535,
       "match": "MOVSD.REP",

@@ -211,6 +211,14 @@
       "type": "self_copy_guard"
     },
     {
+      "description": "'this_ptr->voxel_buffer1->voxels[0][local_10]' indexes row 0 of a multi-dimensional array with a flattened offset (local_10 is copied from local_1c, which is stepped by 0x8): out of bounds past the first row. Split it back into real indices, and take the base from the .asm - the named [0] element is Ghidra's guess and may be an adjacent global (\u00a735).",
+      "line": 65,
+      "resolution_source": "keep",
+      "severity": "major",
+      "text": "this_ptr->voxel_buffer1->voxels[0][local_10] = '\\0';",
+      "type": "flattened_array_index"
+    },
+    {
       "description": "Watcom inline memcpy (REP MOVSD at 00457e5f, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
       "line": 127,
       "match": "MOVSD.REP",

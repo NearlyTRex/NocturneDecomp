@@ -145,6 +145,16 @@
     },
     "pcode_op_count": 307
   },
+  "resolved_suspects": [
+    {
+      "description": "'g_CoronaBlurWorkBuffer[0][iVar1]' indexes row 0 of a multi-dimensional array with a flattened offset (iVar1 is stepped by 0x140): out of bounds past the first row. Split it back into real indices, and take the base from the .asm - the named [0] element is Ghidra's guess and may be an adjacent global (\u00a735).",
+      "line": 26,
+      "resolution_source": "keep",
+      "severity": "major",
+      "text": "g_CoronaBlurWorkBuffer[0][iVar1] = '\\0';",
+      "type": "flattened_array_index"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,

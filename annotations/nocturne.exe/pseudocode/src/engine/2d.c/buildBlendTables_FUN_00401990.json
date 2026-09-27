@@ -62,14 +62,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 192,
-    "complexity_score": 87,
+    "complexity_score": 132,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "clean",
     "pseudocode_lines": 87,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 4,
+    "suspect_types": [
+      "flattened_array_index"
+    ],
     "total_lines": 279
   },
   "cross_references": [
@@ -254,5 +256,34 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "'g_BlendTableAvg[0][local_14]' indexes row 0 of a multi-dimensional array with a flattened offset (local_14 is copied from local_34, which is stepped by 0x100): out of bounds past the first row. Split it back into real indices, and take the base from the .asm - the named [0] element is Ghidra's guess and may be an adjacent global (\u00a735).",
+      "line": 55,
+      "severity": "major",
+      "text": "g_BlendTableAvg[0][local_14] =",
+      "type": "flattened_array_index"
+    },
+    {
+      "description": "'g_BlendTableAdd[0][local_10]' indexes row 0 of a multi-dimensional array with a flattened offset (local_10 is copied from local_34, which is stepped by 0x100): out of bounds past the first row. Split it back into real indices, and take the base from the .asm - the named [0] element is Ghidra's guess and may be an adjacent global (\u00a735).",
+      "line": 70,
+      "severity": "major",
+      "text": "g_BlendTableAdd[0][local_10] =",
+      "type": "flattened_array_index"
+    },
+    {
+      "description": "'g_BlendTableAdd[0][iVar10]' indexes row 0 of a multi-dimensional array with a flattened offset (iVar10 is stepped by 0x100): out of bounds past the first row. Split it back into real indices, and take the base from the .asm - the named [0] element is Ghidra's guess and may be an adjacent global (\u00a735).",
+      "line": 83,
+      "severity": "major",
+      "text": "g_BlendTableAdd[0][iVar10] = uVar4;",
+      "type": "flattened_array_index"
+    },
+    {
+      "description": "'g_BlendTableAvg[0][iVar10]' indexes row 0 of a multi-dimensional array with a flattened offset (iVar10 is stepped by 0x100): out of bounds past the first row. Split it back into real indices, and take the base from the .asm - the named [0] element is Ghidra's guess and may be an adjacent global (\u00a735).",
+      "line": 84,
+      "severity": "major",
+      "text": "g_BlendTableAvg[0][iVar10] = uVar4;",
+      "type": "flattened_array_index"
+    }
+  ]
 }

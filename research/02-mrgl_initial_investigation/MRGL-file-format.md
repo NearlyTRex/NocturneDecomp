@@ -357,7 +357,6 @@ The `g_MRGLBlockHandlerTable` contains diverse function types, all unified by th
 | **Error Handling** | Invalid blocks | `badMRGLStruct` |
 
 This design enables a **complete graphics pipeline** to be expressed as a sequence of MRGL blocks, each dispatched to specialized handlers while maintaining efficient block-to-block navigation.
-```
 
 ## Memory Management
 

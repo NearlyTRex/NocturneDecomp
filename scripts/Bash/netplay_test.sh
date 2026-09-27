@@ -68,6 +68,8 @@ find "${RUN_DIR}" -maxdepth 1 -type l -delete
 for entry in "${REPO_ROOT}"/* "${REPO_ROOT}"/.[!.]*; do
     [[ -e "${entry}" ]] || continue
     base="$(basename "${entry}")"
+    # '$$UNDO$$.TMP' below is a literal file name, not an expansion.
+    # shellcheck disable=SC2016
     case "${base}" in
         SYSTEM|save|build|.git)     continue ;;
         nocturne_*.log)             continue ;;

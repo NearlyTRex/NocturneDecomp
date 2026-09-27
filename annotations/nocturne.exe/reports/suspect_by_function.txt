@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 4922
-Clean: 2507 (50.9%)
-With suspects: 2415
-Total suspects: 20948
+Clean: 2506 (50.9%)
+With suspects: 2416
+Total suspects: 20952
 
 ====================================================================================================
 cockpit_ckptutil.c_applyActPalette_FUN_0042d370 (1 suspect)
@@ -24310,6 +24310,15 @@ core_zombie.cpp_CZombie_setup_FUN_0055ec20 (1 suspect)
   File: core/zombie.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
+
+====================================================================================================
+engine_2d.c_buildBlendTables_FUN_00401990 (4 suspects)
+  File: engine/2d.c
+====================================================================================================
+  Line 55 [flattened_array_index]: g_BlendTableAvg[0][local_14] =
+  Line 70 [flattened_array_index]: g_BlendTableAdd[0][local_10] =
+  Line 83 [flattened_array_index]: g_BlendTableAdd[0][iVar10] = uVar4;
+  Line 84 [flattened_array_index]: g_BlendTableAvg[0][iVar10] = uVar4;
 
 ====================================================================================================
 engine_2d.c_buildColorLookupTable_FUN_00403570 (1 suspect)

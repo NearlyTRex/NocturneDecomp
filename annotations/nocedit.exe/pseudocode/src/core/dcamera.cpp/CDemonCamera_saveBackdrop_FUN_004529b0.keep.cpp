@@ -21,26 +21,16 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamer
   int iVar4;
   int iVar6;
   char *pcVar7;
-  int iVar8;
   CVector3i *end_pos;
-  int iVar9;
   char local_274 [256];
   char local_f8 [100];
   CLZWCompress local_94;
   CVector3i local_5c;
   int local_4c;
-  int local_44;
-  int local_40;
-  int local_38;
   int local_2c;
   int local_28;
-  int local_24;
   int local_18;
-  int local_48;
-  int local_20;
-  int local_1c;
-  int local_14;
-  
+
   g_BackdropSaveActive = 1;
   g_ImageProcessingState1 = 0;
   g_ImageProcessingState2 = 0;
@@ -76,8 +66,6 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamer
     support_codec_cpp_CLZWCompress_init_FUN_0043f320(&local_94);
     local_18 = 0;
     if (0 < g_ImageBytesPerPixel) {
-      local_44 = 0;
-      local_40 = -0x12c00;
       do {
         core_dcamera_cpp_updateFogScrollOffset_FUN_0044bfb0(&g_CameraFogGrid,local_18,0);
         for (local_28 = 1; local_28 < this_ptr->display_height; local_28 = local_28 + 1) {
@@ -105,24 +93,15 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamer
         core_dcamera_cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00453020(this_ptr,local_18);
         local_2c = 0;
         if (0 < this_ptr->display_height) {
-          local_1c = local_40;
-          local_48 = local_40;
-          local_24 = 0;
-          local_20 = local_44;
-          local_38 = local_44;
           do {
             iVar3 = 0;
             iVar4 = 0;
             if (0 < this_ptr->display_width) {
-              local_14 = local_24;
-              iVar8 = local_24;
-              iVar9 = local_38;
               do {
-                uVar2 = (uint)(byte)g_CameraImageDecompressBuffer[0].pixels[0]
-                                    [local_44 + local_24 + iVar3];
+                uVar2 = (uint)(byte)g_CameraImageDecompressBuffer[local_18].pixels[local_2c][iVar3];
                 if (0 < local_18) {
-                  uVar2 = uVar2 - (byte)g_CameraImageDecompressBuffer[0].pixels[0]
-                                        [local_40 + local_24 + iVar3];
+                  uVar2 = uVar2 - (byte)g_CameraImageDecompressBuffer[local_18 - 1]
+                                        .pixels[local_2c][iVar3];
                 }
                 iVar2 = ((int)uVar2 >> 2) - iVar4;
                 if (iVar2 < -0x20) {
@@ -131,21 +110,17 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamer
                 else if (0x3f < iVar2) {
                   iVar2 = 0x3f;
                 }
-                g_CameraPlaneWorkBuffer.pixels[0][iVar8] = (char)iVar2;
+                g_CameraPlaneWorkBuffer.pixels[local_2c][iVar3] = (char)iVar2;
                 iVar4 = iVar2 + iVar4;
                 cVar4 = (char)iVar4 * '\x04';
                 if (0 < local_18) {
-                  cVar4 = cVar4 + g_CameraImageDecompressBuffer[0].pixels[0]
-                                  [local_40 + local_24 + iVar3];
+                  cVar4 = cVar4 + g_CameraImageDecompressBuffer[local_18 - 1]
+                                  .pixels[local_2c][iVar3];
                 }
-                g_CameraImageDecompressBuffer[0].pixels[0][iVar9] = cVar4;
-                iVar8 = iVar8 + 1;
+                g_CameraImageDecompressBuffer[local_18].pixels[local_2c][iVar3] = cVar4;
                 iVar3 = iVar3 + 1;
-                iVar9 = iVar9 + 1;
               } while (iVar3 < this_ptr->display_width);
             }
-            local_24 = local_24 + 0x140;
-            local_38 = local_38 + 0x140;
             local_2c = local_2c + 1;
           } while (local_2c < this_ptr->display_height);
         }
@@ -170,8 +145,6 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamer
           core_main_c_displayErrorAndQuit_FUN_00506f10("Error writing compressed file %s",local_f8)
           ;
         }
-        local_44 = local_44 + 0x12c00;
-        local_40 = local_40 + 0x12c00;
         local_18 = local_18 + 1;
       } while (local_18 < g_ImageBytesPerPixel);
     }

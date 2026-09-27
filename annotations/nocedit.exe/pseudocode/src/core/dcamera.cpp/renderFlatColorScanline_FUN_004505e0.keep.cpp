@@ -13,7 +13,6 @@ void __cdecl core_dcamera_cpp_renderFlatColorScanline_FUN_004505e0(int scanline_
   char cVar2;
   int iVar1;
   int iVar3;
-  int iVar4;
   char *pcVar5;
   uint uVar6;
   SSoftwareEdge *pSVar7;
@@ -61,13 +60,10 @@ void __cdecl core_dcamera_cpp_renderFlatColorScanline_FUN_004505e0(int scanline_
     else {
       bVar1 = g_CameraDownscaleIterations.bytes[0] & 0x1f;
       for (; iVar11 < iVar1; iVar11 = iVar11 + 1) {
-        if ((*local_14 < (uint)(iVar2 >> 8)) && (iVar8 = 0, 0 < g_ImageBytesPerPixel)) {
-          iVar4 = iVar9 * 0x140 + iVar11;
-          do {
-            iVar4 = iVar4 + 0x12c00;
-            iVar8 = iVar8 + 1;
-            g_CameraImageDecompressBuffer[0].pixels[0][iVar4] = cVar2;
-          } while (iVar8 < g_ImageBytesPerPixel);
+        if (*local_14 < (uint)(iVar2 >> 8)) {
+          for (iVar8 = 0; iVar8 < g_ImageBytesPerPixel; iVar8 = iVar8 + 1) {
+            g_CameraImageDecompressBuffer[iVar8].pixels[iVar9][iVar11] = cVar2;
+          }
         }
         local_14 = local_14 + (1 << bVar1);
         iVar2 = iVar2 + iVar3;

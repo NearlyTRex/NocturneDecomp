@@ -7410,6 +7410,155 @@ def identify_derived_field_index_pun(code, struct_layout_map=None,
     return suspects
 
 
+# `NAME...[0][VAR]` — a zero leading index followed by a variable one.
+_FLAT_INDEX_RE = re.compile(
+    r'\b([A-Za-z_]\w*(?:\[\w+\])?(?:(?:\.|->)\w+(?:\[\w+\])?)*)'
+    r'\[0\]\[([A-Za-z_]\w*)\]')
+_INT_LIT = r'(0x[0-9a-fA-F]+|\d+)'
+
+
+def _self_steps(code, var):
+    """Constants added to VAR itself (`VAR = VAR + K;` or `VAR += K;`)."""
+    v = re.escape(var)
+    steps = set()
+    for m in re.finditer(r'\b%s\s*=\s*%s\s*\+\s*%s\s*;' % (v, v, _INT_LIT),
+                         code):
+        steps.add(int(m.group(1), 0))
+    for m in re.finditer(r'\b%s\s*\+=\s*%s\s*;' % (v, _INT_LIT), code):
+        steps.add(int(m.group(1), 0))
+    return steps
+
+
+def _is_pure_counter(code, var):
+    """True if every assignment to VAR is a literal, a name, or `VAR + K`.
+
+    Rules out a reused stack slot, which also holds call results and other
+    unrelated values.
+    """
+    v = re.escape(var)
+    simple = re.compile(r'\s*(?:%s|[A-Za-z_]\w*|%s\s*\+\s*%s)\s*$'
+                        % (_INT_LIT, v, _INT_LIT))
+    for m in re.finditer(r'\b%s\s*=(?!=)([^;]*);' % v, code):
+        if not simple.match(m.group(1)):
+            return False
+    return True
+
+
+def _flat_index_evidence(code, var):
+    """Constants that build VAR as a flattened index, or None.
+
+    Returns (row_strides, big_steps, row_copies): multipliers applied to
+    another term in an assignment to VAR, constants of at least 0x100 added to
+    VAR itself, and {SRC: strides} for a `VAR = SRC;` column cursor stepped by
+    1 whose SRC is a row base stepped by a larger constant.
+    """
+    v = re.escape(var)
+    rows, steps, copies = set(), set(), {}
+    for m in re.finditer(r'\b%s\s*=\s*([^;]+);' % v, code):
+        rhs = m.group(1)
+        for k in re.findall(r'\*\s*%s(?!\w)|(?<!\w)%s\s*\*'
+                            % (_INT_LIT, _INT_LIT), rhs):
+            lit = k[0] or k[1]
+            val = int(lit, 0)
+            if val >= 2:
+                rows.add(val)
+        for k in re.findall(r'\b%s\s*\+\s*%s\b' % (v, _INT_LIT), rhs):
+            val = int(k, 0)
+            if val >= 0x100:
+                steps.add(val)
+    for m in re.finditer(r'\b%s\s*\+=\s*%s\s*;' % (v, _INT_LIT), code):
+        val = int(m.group(1), 0)
+        if val >= 0x100:
+            steps.add(val)
+    # `col = row_base; ... col = col + 1; ... row_base = row_base + 0x140;`
+    if 1 in _self_steps(code, var):
+        for m in re.finditer(r'\b%s\s*=\s*([A-Za-z_]\w*)\s*;' % v, code):
+            src = m.group(1)
+            if src == var or not _is_pure_counter(code, src):
+                continue
+            strides = {k for k in _self_steps(code, src) if k >= 2}
+            if strides:
+                copies.setdefault(src, set()).update(strides)
+    if not rows and not steps and not copies:
+        return None
+    return rows, steps, copies
+
+
+def identify_flattened_array_index(code):
+    """Flag `ARRAY[0][VAR]` where VAR is a flattened row-major index.
+
+    Ghidra reaches a multi-dimensional array, or a run of adjacent array
+    elements, the way the instruction does: one base address plus one byte
+    offset. It then names the base as element [0] and hangs the whole offset on
+    the innermost index, so a write to plane k, row y, column x of
+    `SFogImagePlane g_CameraImageDecompressBuffer[16]` (char pixels[240][320])
+    comes out as
+
+        iVar4 = iVar9 * 0x140 + iVar11;
+        iVar4 = iVar4 + 0x12c00;
+        g_CameraImageDecompressBuffer[0].pixels[0][iVar4] = cVar2;
+
+    It compiles and is out of bounds of `pixels[0]` for every row past the
+    first. The named base is also only Ghidra's guess at the start of the
+    walk: in renderFlatColorScanline the asm base is the global before it, so
+    the keep wrote one plane too far.
+
+    Fires on `[0][VAR]` only when VAR is assigned in the function with a row
+    multiplier (`y * 0x140`) or a whole-row-or-larger step (`VAR + 0x12c00`),
+    or when VAR is a column cursor (`VAR = SRC;` then `VAR + 1`) copied from a
+    row base SRC that steps by a larger constant (`SRC + 8`, `SRC + 0x140`).
+    A plain `m[0][i]` counting loop has none of these.
+
+    Args:
+        code: source text.
+
+    Returns:
+        List of suspect dicts (type flattened_array_index).
+    """
+    suspects = []
+    if not code:
+        return suspects
+    evidence_cache = {}
+    for lineno, line in enumerate(code.split('\n'), 1):
+        stripped = line.strip()
+        if (stripped.startswith('//') or stripped.startswith('/*')
+                or stripped.startswith('*')):
+            continue
+        for m in _FLAT_INDEX_RE.finditer(line):
+            path, var = m.group(1), m.group(2)
+            if var not in evidence_cache:
+                evidence_cache[var] = _flat_index_evidence(code, var)
+            ev = evidence_cache[var]
+            if not ev:
+                continue
+            rows, steps, copies = ev
+            parts = []
+            if rows:
+                parts.append('multiplied by %s' % ', '.join(
+                    '0x%x' % r for r in sorted(rows)))
+            if steps:
+                parts.append('stepped by %s' % ', '.join(
+                    '0x%x' % s for s in sorted(steps)))
+            for src in sorted(copies):
+                parts.append('copied from %s, which is stepped by %s' % (
+                    src, ', '.join('0x%x' % s for s in sorted(copies[src]))))
+            suspects.append({
+                'type': 'flattened_array_index',
+                'line': lineno,
+                'text': stripped[:200],
+                'description': (
+                    "'%s[0][%s]' indexes row 0 of a multi-dimensional array "
+                    "with a flattened offset (%s is %s): out of bounds past "
+                    "the first row. Split it back into real indices, and take "
+                    "the base from the .asm - the named [0] element is "
+                    "Ghidra's guess and may be an adjacent global (§35)."
+                    % (path, var, var, ' and '.join(parts))),
+                'severity': SUSPECT_SEVERITY.get(
+                    'flattened_array_index', 'major'),
+            })
+    return suspects
+
+
 def identify_mem_magic_size(code, struct_layout_map=None, struct_size_map=None):
     """Flag memcpy/memmove/memset whose byte size hardcodes sizeof(an unstable T).
 
@@ -7763,6 +7912,7 @@ def detect_content_suspects(code, func_globals=None, global_interval_map=None,
     found.extend(identify_stale_struct_offset_64bit(code, struct_layout_map))
     found.extend(identify_derived_field_index_pun(
         code, struct_layout_map, struct_size_map))
+    found.extend(identify_flattened_array_index(code))
     return found
 
 

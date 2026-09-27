@@ -31,7 +31,7 @@
 set -u
 
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
-cd "${SCRIPT_DIR}"
+cd "${SCRIPT_DIR}" || exit 1
 
 PRESET="${1:-${BUILD_PRESET:-exe-linux-asan-x86_64}}"
 [ $# -ge 1 ] && shift

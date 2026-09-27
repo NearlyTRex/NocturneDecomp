@@ -6,7 +6,7 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 203
 Total functions: 4922
-Clean functions: 2535 (51.5%)
+Clean functions: 2534 (51.5%)
 Files at 100%: 10
 Files at 90%+: 12
 Files at 50%+: 139
@@ -1316,51 +1316,6 @@ Total: 127 files
 ====================================================================================================
 FILES BELOW 50%
 ====================================================================================================
-   48.2% | engine/2d.c
-         40/83 clean, 43 remaining
-           - engine_2d.c_initGraphicsSystem_FUN_00401010 (78 lines) [pointer_cast, pointer_truncation, raw_address_constant]
-           - engine_2d.c_drawAntialiasedCharShadow_FUN_004012d0 (46 lines) [pointer_cast, pointer_truncation]
-           - engine_2d.c_drawAntialiasedChar_FUN_004013d0 (36 lines) [pointer_cast, pointer_truncation, stack_param]
-           - engine_2d.c_drawAntialiasedString_FUN_004014a0 (28 lines) [unrolled_strlen]
-           - engine_2d.c_getAntialiasedStringWidth_FUN_004014f0 (30 lines) [unrolled_strlen]
-           - engine_2d.c_plotPixel_FUN_00401530 (13 lines) [pointer_cast, pointer_truncation]
-           - engine_2d.c_plotPixelWithDepth_FUN_00401680 (21 lines) [pointer_cast, pointer_truncation]
-           - engine_2d.c_drawLine3D_FUN_00401710 (62 lines) [unaffected_reg]
-           - engine_2d.c_findBestPaletteMatch_FUN_00401850 (39 lines) [pointer_cast, unaffected_reg]
-           - engine_2d.c_drawCharacter_FUN_00401c40 (85 lines) [pointer_cast, pointer_truncation]
-           - engine_2d.c_getStringWidth_FUN_00401ed0 (36 lines) [unrolled_strlen]
-           - engine_2d.c_drawCharacterMasked_FUN_00401f30 (64 lines) [pointer_cast, pointer_truncation]
-           - engine_2d.c_drawCharacterMaskedColor_FUN_00402040 (74 lines) [pointer_cast, pointer_truncation]
-           - engine_2d.c_drawCharacterHighlighted_FUN_004021a0 (56 lines) [pointer_cast, pointer_truncation]
-           - engine_2d.c_drawTextWrapped_FUN_00402290 (42 lines) [unrolled_strlen]
-           - engine_2d.c_drawTextMultiline_FUN_00402320 (34 lines) [unrolled_strlen]
-           - engine_2d.c_wrapTextToWidth_FUN_004023b0 (73 lines) [pointer_truncation, unrolled_memcpy, unrolled_strcpy]
-           - engine_2d.c_drawTextWrappedColor_FUN_004024e0 (42 lines) [unrolled_strlen]
-           - engine_2d.c_drawTextMultilineColor_FUN_00402570 (34 lines) [unrolled_strlen]
-           - engine_2d.c_drawStringMasked_FUN_00402660 (30 lines) [unrolled_strlen]
-           - engine_2d.c_drawString_FUN_004026b0 (30 lines) [unrolled_strlen]
-           - engine_2d.c_drawStringHighlighted_FUN_00402710 (30 lines) [unrolled_strlen]
-           - engine_2d.c_drawTextFormatted_FUN_00402780 (10 lines) [stack_ref]
-           - engine_2d.c_drawTextRightAlignedFormatted_FUN_00402840 (10 lines) [stack_ref]
-           - engine_2d.c_drawTextCenteredAtFormatted_FUN_00402910 (10 lines) [stack_ref]
-           - engine_2d.c_drawTextCenteredFormatted_FUN_004029f0 (10 lines) [stack_ref]
-           - engine_2d.c_drawTextColorFormatted_FUN_00402af0 (10 lines) [stack_ref]
-           - engine_2d.c_drawTextRightAlignedColorFormatted_FUN_00402bb0 (10 lines) [stack_ref]
-           - engine_2d.c_drawTextCenteredAtColorFormatted_FUN_00402c80 (10 lines) [stack_ref]
-           - engine_2d.c_drawTextCenteredColorFormatted_FUN_00402d60 (10 lines) [stack_ref]
-           - engine_2d.c_buildFogTable_FUN_00402e90 (68 lines) [raw_address_constant, unaffected_reg]
-           - engine_2d.c_buildLightTable_FUN_004031a0 (64 lines) [raw_address_constant, warning_unreachable]
-           - engine_2d.c_buildColorLookupTable_FUN_00403570 (48 lines) [pointer_cast]
-           - engine_2d.c_loadOrBuildColorMap_FUN_00403630 (52 lines) [unrolled_strchr, unrolled_strcpy]
-           - engine_2d.c_resetGraphicsSystem_FUN_00403760 (68 lines) [warning_overlapping_globals]
-           - engine_2d.c_reinitializeGraphicsSystem_FUN_00403770 (33 lines) [warning_overlapping_globals]
-           - engine_2d.c_clipAndDrawLine_FUN_00403990 (102 lines) [unaffected_reg]
-           - engine_2d.c_drawHLine_FUN_00403bd0 (56 lines) [pointer_cast, pointer_truncation]
-           - engine_2d.c_drawVLine_FUN_00403ce0 (56 lines) [pointer_cast, pointer_truncation]
-           - engine_2d.c_clearInputAndWait_FUN_00403f50 (28 lines) [undefined_data]
-           - engine_2d.c_getInputWithPrompt_FUN_00403fb0 (39 lines) [unknown_field]
-           - engine_2d.c_mapFrameBuffer_FUN_00404120 (66 lines) [pointer_cast, pointer_truncation, undefined_data]
-           - engine_2d.c_unmapFrameBuffer_FUN_00404360 (30 lines) [pointer_cast, pointer_truncation, undefined_data]
    48.1% | shape/edittool.cpp
          64/133 clean, 69 remaining
            - shape_edittool.cpp_initEditorFontMetrics_FUN_0046f000 (12 lines) [warning_overlapping_globals]
@@ -1476,6 +1431,52 @@ FILES BELOW 50%
            - core_boneguy.cpp_CBoneGuy_explode_FUN_0041a0f0 (89 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, stack_alignment_array, unrolled_memcpy, warning_type_propagation]
            - core_boneguy.cpp_CBoneGuy_beginRecombine_FUN_0041a310 (48 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, stack_alignment_array, unrolled_memcpy, warning_type_propagation]
            - core_boneguy.cpp_CBoneGuy_dtor_FUN_0041a400 (34 lines) [negative_offset]
+   47.0% | engine/2d.c
+         39/83 clean, 44 remaining
+           - engine_2d.c_initGraphicsSystem_FUN_00401010 (78 lines) [pointer_cast, pointer_truncation, raw_address_constant]
+           - engine_2d.c_drawAntialiasedCharShadow_FUN_004012d0 (46 lines) [pointer_cast, pointer_truncation]
+           - engine_2d.c_drawAntialiasedChar_FUN_004013d0 (36 lines) [pointer_cast, pointer_truncation, stack_param]
+           - engine_2d.c_drawAntialiasedString_FUN_004014a0 (28 lines) [unrolled_strlen]
+           - engine_2d.c_getAntialiasedStringWidth_FUN_004014f0 (30 lines) [unrolled_strlen]
+           - engine_2d.c_plotPixel_FUN_00401530 (13 lines) [pointer_cast, pointer_truncation]
+           - engine_2d.c_plotPixelWithDepth_FUN_00401680 (21 lines) [pointer_cast, pointer_truncation]
+           - engine_2d.c_drawLine3D_FUN_00401710 (62 lines) [unaffected_reg]
+           - engine_2d.c_findBestPaletteMatch_FUN_00401850 (39 lines) [pointer_cast, unaffected_reg]
+           - engine_2d.c_buildBlendTables_FUN_00401990 (87 lines) [flattened_array_index]
+           - engine_2d.c_drawCharacter_FUN_00401c40 (85 lines) [pointer_cast, pointer_truncation]
+           - engine_2d.c_getStringWidth_FUN_00401ed0 (36 lines) [unrolled_strlen]
+           - engine_2d.c_drawCharacterMasked_FUN_00401f30 (64 lines) [pointer_cast, pointer_truncation]
+           - engine_2d.c_drawCharacterMaskedColor_FUN_00402040 (74 lines) [pointer_cast, pointer_truncation]
+           - engine_2d.c_drawCharacterHighlighted_FUN_004021a0 (56 lines) [pointer_cast, pointer_truncation]
+           - engine_2d.c_drawTextWrapped_FUN_00402290 (42 lines) [unrolled_strlen]
+           - engine_2d.c_drawTextMultiline_FUN_00402320 (34 lines) [unrolled_strlen]
+           - engine_2d.c_wrapTextToWidth_FUN_004023b0 (73 lines) [pointer_truncation, unrolled_memcpy, unrolled_strcpy]
+           - engine_2d.c_drawTextWrappedColor_FUN_004024e0 (42 lines) [unrolled_strlen]
+           - engine_2d.c_drawTextMultilineColor_FUN_00402570 (34 lines) [unrolled_strlen]
+           - engine_2d.c_drawStringMasked_FUN_00402660 (30 lines) [unrolled_strlen]
+           - engine_2d.c_drawString_FUN_004026b0 (30 lines) [unrolled_strlen]
+           - engine_2d.c_drawStringHighlighted_FUN_00402710 (30 lines) [unrolled_strlen]
+           - engine_2d.c_drawTextFormatted_FUN_00402780 (10 lines) [stack_ref]
+           - engine_2d.c_drawTextRightAlignedFormatted_FUN_00402840 (10 lines) [stack_ref]
+           - engine_2d.c_drawTextCenteredAtFormatted_FUN_00402910 (10 lines) [stack_ref]
+           - engine_2d.c_drawTextCenteredFormatted_FUN_004029f0 (10 lines) [stack_ref]
+           - engine_2d.c_drawTextColorFormatted_FUN_00402af0 (10 lines) [stack_ref]
+           - engine_2d.c_drawTextRightAlignedColorFormatted_FUN_00402bb0 (10 lines) [stack_ref]
+           - engine_2d.c_drawTextCenteredAtColorFormatted_FUN_00402c80 (10 lines) [stack_ref]
+           - engine_2d.c_drawTextCenteredColorFormatted_FUN_00402d60 (10 lines) [stack_ref]
+           - engine_2d.c_buildFogTable_FUN_00402e90 (68 lines) [raw_address_constant, unaffected_reg]
+           - engine_2d.c_buildLightTable_FUN_004031a0 (64 lines) [raw_address_constant, warning_unreachable]
+           - engine_2d.c_buildColorLookupTable_FUN_00403570 (48 lines) [pointer_cast]
+           - engine_2d.c_loadOrBuildColorMap_FUN_00403630 (52 lines) [unrolled_strchr, unrolled_strcpy]
+           - engine_2d.c_resetGraphicsSystem_FUN_00403760 (68 lines) [warning_overlapping_globals]
+           - engine_2d.c_reinitializeGraphicsSystem_FUN_00403770 (33 lines) [warning_overlapping_globals]
+           - engine_2d.c_clipAndDrawLine_FUN_00403990 (102 lines) [unaffected_reg]
+           - engine_2d.c_drawHLine_FUN_00403bd0 (56 lines) [pointer_cast, pointer_truncation]
+           - engine_2d.c_drawVLine_FUN_00403ce0 (56 lines) [pointer_cast, pointer_truncation]
+           - engine_2d.c_clearInputAndWait_FUN_00403f50 (28 lines) [undefined_data]
+           - engine_2d.c_getInputWithPrompt_FUN_00403fb0 (39 lines) [unknown_field]
+           - engine_2d.c_mapFrameBuffer_FUN_00404120 (66 lines) [pointer_cast, pointer_truncation, undefined_data]
+           - engine_2d.c_unmapFrameBuffer_FUN_00404360 (30 lines) [pointer_cast, pointer_truncation, undefined_data]
    47.0% | core/skeleton.cpp
          54/115 clean, 61 remaining
            - core_skeleton.cpp_CSkeleton_FUN_005174e0 (16 lines) [negative_offset]

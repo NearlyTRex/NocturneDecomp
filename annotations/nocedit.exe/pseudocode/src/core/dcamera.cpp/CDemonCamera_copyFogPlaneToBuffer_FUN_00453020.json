@@ -194,6 +194,22 @@
       "severity": "moderate",
       "text": "*(byte *)((int)&g_CameraPlaneWorkBuffer + iVar1);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "'g_CameraImageDecompressBuffer[0].pixels[0][iVar5]' indexes row 0 of a multi-dimensional array with a flattened offset (iVar5 is multiplied by 0x12c00 and stepped by 0x140): out of bounds past the first row. Split it back into real indices, and take the base from the .asm - the named [0] element is Ghidra's guess and may be an adjacent global (\u00a735).",
+      "line": 29,
+      "resolution_source": "keep",
+      "severity": "major",
+      "text": "g_CameraImageDecompressBuffer[0].pixels[0][iVar5] = g_CameraPlaneWorkBuffer.pixels[iVar4][0];",
+      "type": "flattened_array_index"
+    },
+    {
+      "description": "'g_CameraPlaneWorkBuffer.pixels[0][iVar5]' indexes row 0 of a multi-dimensional array with a flattened offset (iVar5 is multiplied by 0x12c00 and stepped by 0x140): out of bounds past the first row. Split it back into real indices, and take the base from the .asm - the named [0] element is Ghidra's guess and may be an adjacent global (\u00a735).",
+      "line": 39,
+      "resolution_source": "keep",
+      "severity": "major",
+      "text": "g_CameraImageDecompressBuffer[0].pixels[0][iVar4 + 1] = g_CameraPlaneWorkBuffer.pixels[0][iVar5]",
+      "type": "flattened_array_index"
     }
   ],
   "stack_frame": {

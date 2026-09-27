@@ -7,10 +7,10 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 4922
-Clean functions: 2535 (51.5%)
-Functions with suspects: 2387 (48.5%)
+Clean functions: 2534 (51.5%)
+Functions with suspects: 2388 (48.5%)
 
-Total suspect patterns: 20948
+Total suspect patterns: 20952
 Average suspects per function: 4.26
 
 Virtual files: 203 total, 10 at 100%, 12 at 90%+
@@ -87,6 +87,7 @@ SUSPECT PATTERN BREAKDOWN
   fnstsw_flag_artifact      5
   unknown_type              5
   static_identical_inner_condition 5
+  flattened_array_index     4
   static_array_oob_cond     4
   undefined_type            4
   dropped_loop_counter      3
@@ -162,7 +163,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   00414e60: core_battery.cpp_CBattery_process_FUN_00414e60 (4 lines)
   00414f40: core_battery.cpp_CBattery_getCollisionType_FUN_00414f40 (4 lines)
   00415040: core_beast.cpp_CBeast_getActorType_FUN_00415040 (4 lines)
-  ... and 2485 more
+  ... and 2484 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -784,6 +785,9 @@ FUNCTIONS BY SUSPECT TYPE
     004c4970: core_larva.cpp_CLarva_process_FUN_004c4970
 
   static_identical_inner_condition (0 functions):
+
+  flattened_array_index (1 functions):
+    00401990: engine_2d.c_buildBlendTables_FUN_00401990
 
   static_array_oob_cond (0 functions):
 

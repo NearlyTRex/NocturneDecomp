@@ -27,6 +27,7 @@ mechanical rewrites.
 | `unrolled_strcpy` / `_memcpy` / `_memset` / `_strlen` / `_strcat` / `_strchr` | [§17](#17--unrolled-stringmemory-copies) | `.keep` |
 | `pointer_cast` | [§13](#13--stack-slot-reuse), or [§17](#17--unrolled-stringmemory-copies) inside a countdown loop | `.keep` |
 | `wrong_global`, `displaced_global_access` | [§15](#15--wrong-global-from-watcom-1-based-indexing) | `.keep` |
+| `flattened_array_index` | [§35](#35--flattened-index-on-element-0) | `.keep` |
 | `raw_address_constant` | [§11](#11--hardcoded-addresses-for-known-globals) | `.keep` |
 | `suspicious_cast` | [§1](#1--pointer-to-float-cast) / [§7](#7--cannot-cast-from-float-to-pointer) | `.keep` |
 | `sub84_truncation`, `double_reconstruction` | [§2](#2--double-return-splitting) / [§3](#3--format-string-errors) | `.keep` (localized only) |
@@ -379,6 +380,33 @@ int _chk[(int)(sizeof(g_TextureSurfaces) / sizeof(g_TextureSurfaces[0])) == 4096
 The one exception: if the asm bound provably does *not* equal the element count, that mismatch is
 the finding. The declaration is probably wrong, or the loop really is a partial pass. Do not make
 the numbers agree by construction.
+
+### §35 — Flattened index on element 0
+
+A walk across rows of a multi-dimensional array, or across adjacent array elements, is one base
+address plus one byte offset in the instruction. Ghidra names the base as element `[0]` and hangs
+the whole offset on the innermost index:
+
+```cpp
+// flattened — out of bounds of pixels[0] past the first row
+iVar4 = iVar9 * 0x140 + iVar11;
+iVar4 = iVar4 + 0x12c00;
+g_CameraImageDecompressBuffer[0].pixels[0][iVar4] = cVar2;
+// correct
+g_CameraImageDecompressBuffer[k].pixels[iVar9][iVar11] = cVar2;
+```
+
+The named `[0]` is Ghidra's choice of symbol for the base, not necessarily the base. In
+`renderFlatColorScanline` the asm starts from `g_CameraPlaneWorkBuffer` (`0x013da778`) and steps a
+plane before each write, landing on `g_CameraImageDecompressBuffer[0]` first; the flattened form
+started one plane later and wrote planes 1..n instead of 0..n−1. Recover the indices from the
+strides and take the base from the `.asm`.
+
+`flattened_array_index` fires on `[0][VAR]` when `VAR` is assigned in the function with a row
+multiplier or a step of 0x100 or more, or when `VAR` is a column cursor (`VAR = SRC;`, stepped by 1)
+copied from a row base `SRC` stepped by a larger constant. `SRC` must be a pure counter, assigned
+only literals, names or its own steps; a reused stack slot that also holds call results does not
+count. A counting loop over `m[0][i]` has none of these.
 
 ## Collapsed operations
 
