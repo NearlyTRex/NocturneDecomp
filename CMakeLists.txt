@@ -47,6 +47,13 @@ if(NOCTURNE_USE_CCACHE)
         message(STATUS "ccache: ${CCACHE_PROGRAM}")
         set(CMAKE_C_COMPILER_LAUNCHER   "${CCACHE_PROGRAM}")
         set(CMAKE_CXX_COMPILER_LAUNCHER "${CCACHE_PROGRAM}")
+        # Clang stamps each precompiled header with the time it was built, so a
+        # rebuilt nocturne.h PCH never matches the last one and every file that
+        # includes it misses the cache. Without the stamp the PCH is
+        # reproducible. ccache must also be told to accept PCH use at all; see
+        # "ccache" in docs/building.md.
+        add_compile_options(
+            "$<$<OR:$<COMPILE_LANG_AND_ID:C,Clang>,$<COMPILE_LANG_AND_ID:CXX,Clang>>:-Xclang=-fno-pch-timestamp>")
     else()
         message(STATUS "ccache: not found (install with apt/brew for faster rebuilds)")
     endif()
