@@ -26,7 +26,8 @@ jobs:
         cmake clang ninja-build pkg-config python3
         libx11-dev libxext-dev libxcursor-dev libxi-dev libxfixes-dev
         libxrandr-dev libxss-dev libwayland-dev libxkbcommon-dev
-        wayland-protocols libpulse-dev libasound2-dev
+        wayland-protocols libegl-dev libdecor-0-dev libpulse-dev
+        libasound2-dev
       # SDL2 and SDL2_ttf are fetched from git and FFmpeg is built from source,
       # so a cold build is most of the wall clock. The pinned tags in
       # bundledlibs.cmake decide when the cache is stale.

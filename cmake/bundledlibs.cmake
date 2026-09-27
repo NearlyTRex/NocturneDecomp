@@ -124,11 +124,12 @@ FetchContent_MakeAvailable(sdl2 sdl2_ttf)
 # it opens an invisible offscreen window and plays into the dummy device. Fail
 # here instead of shipping that.
 if(NOT WIN32)
-    file(GLOB _sdl_config_h "${sdl2_BINARY_DIR}/include-config-*/SDL2/SDL_config.h")
-    if(NOT _sdl_config_h)
-        message(FATAL_ERROR "bundledlibs: SDL_config.h not found under ${sdl2_BINARY_DIR}")
+    # SDL_config.h itself is written at generate time, after this runs; the
+    # intermediate carries the same #defines and exists by the end of configure.
+    set(_sdl_config_h "${sdl2_BINARY_DIR}/SDL_config.h.intermediate")
+    if(NOT EXISTS "${_sdl_config_h}")
+        message(FATAL_ERROR "bundledlibs: ${_sdl_config_h} not found")
     endif()
-    list(GET _sdl_config_h 0 _sdl_config_h)
     file(STRINGS "${_sdl_config_h}" _sdl_drivers
          REGEX "^#define SDL_(VIDEO|AUDIO)_DRIVER_(X11|WAYLAND|PULSEAUDIO|ALSA|PIPEWIRE) 1")
     if(NOT _sdl_drivers MATCHES "VIDEO_DRIVER_(X11|WAYLAND)")
@@ -136,7 +137,7 @@ if(NOT WIN32)
             "video driver, so the game would open no window. Install the headers "
             "(libx11-dev libxext-dev libxcursor-dev libxi-dev libxfixes-dev "
             "libxrandr-dev libxss-dev libwayland-dev libxkbcommon-dev "
-            "wayland-protocols) and delete ${sdl2_BINARY_DIR}.")
+            "wayland-protocols libegl-dev libdecor-0-dev) and delete ${sdl2_BINARY_DIR}.")
     endif()
     if(NOT _sdl_drivers MATCHES "AUDIO_DRIVER_(PULSEAUDIO|ALSA|PIPEWIRE)")
         message(FATAL_ERROR "bundledlibs: SDL2 was configured without a PulseAudio, "

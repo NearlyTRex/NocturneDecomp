@@ -60,7 +60,7 @@ produce a binary that opens no window and plays no sound.
 ```sh
 sudo apt install libx11-dev libxext-dev libxcursor-dev libxi-dev libxfixes-dev \
     libxrandr-dev libxss-dev libwayland-dev libxkbcommon-dev wayland-protocols \
-    libpulse-dev libasound2-dev
+    libegl-dev libdecor-0-dev libpulse-dev libasound2-dev
 ```
 
 That is the whole list for the Linux presets — no multilib, no `:i386` packages, and SDL2,
