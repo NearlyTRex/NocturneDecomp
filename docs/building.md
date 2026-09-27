@@ -52,6 +52,17 @@ assumptions a 32-bit build would never catch.
 sudo apt install cmake clang ninja-build pkg-config python3
 ```
 
+**Display and audio headers (Linux `exe-*` presets):** SDL2 compiles its X11, Wayland,
+PulseAudio and ALSA backends only when their headers are present at configure time. Without
+them it builds with just the headless drivers, so configure stops with an error rather than
+produce a binary that opens no window and plays no sound.
+
+```sh
+sudo apt install libx11-dev libxext-dev libxcursor-dev libxi-dev libxfixes-dev \
+    libxrandr-dev libxss-dev libwayland-dev libxkbcommon-dev wayland-protocols \
+    libegl-dev libdecor-0-dev libpulse-dev libasound2-dev
+```
+
 That is the whole list for the Linux presets — no multilib, no `:i386` packages, and SDL2,
 SDL2_ttf and FFmpeg are built from source rather than taken from the system.
 
@@ -209,3 +220,27 @@ provides the entry point, and linking uses the system C/C++ runtime bridged thro
 
 Any `NOCTURNE_AUTHENTIC_*` flag can also be set on the configure line to restore a shipped
 behaviour — see [authenticity-flags.md](authenticity-flags.md).
+
+## ccache
+
+Every decompiled file is compiled against a precompiled `nocturne.h`, and by default ccache
+refuses to cache a compile that uses a precompiled header. Two things make those compiles
+cacheable:
+
+- **ccache sloppiness**, so it accepts the precompiled header:
+
+  ```sh
+  ccache --set-config sloppiness=pch_defines,time_macros,include_file_mtime,include_file_ctime
+  ```
+
+  CI sets the same through the Workflows library's `cpp-build`.
+- **A reproducible precompiled header.** Clang stamps a `.pch` with the time it was built, so a
+  rebuilt one never matches the last. With ccache on, `CMakeLists.txt` passes
+  `-fno-pch-timestamp` to clang to leave the stamp out.
+
+`time_macros` lets a cached object keep an old `__DATE__`/`__TIME__`. The only file using them,
+`shims/core/version.cpp`, also includes the version header regenerated on every commit, so it is
+never a hit across commits and its build date stays current.
+
+`ccache --show-stats --verbose` breaks the calls down by reason, including any still rejected as
+`could not use precompiled header`.

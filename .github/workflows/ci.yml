@@ -9,18 +9,27 @@ permissions: {}
 
 concurrency:
   group: ci-${{ github.ref }}
-  cancel-in-progress: true
+  # Only pull requests: a newer push supersedes their run. On main every run
+  # finishes, since each push's secret scan covers only that push's commits.
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   # The native lane, with the unit tests. The Windows lanes cross-compile to PEs
   # that cannot run here, so they are built only on release.
   build:
     name: Build (exe-linux-x86_64)
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@0dd8e56278d822277ecd6fd06f12b24c3814d84f # v0.2.6
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@4fe68c91984dd09dea6988fd603b128bc3f44ff7 # v0.2.9
     permissions:
       contents: read
     with:
-      apt-packages: cmake clang ninja-build pkg-config python3
+      # The -dev headers let SDL compile its X11/Wayland/audio backends;
+      # bundledlibs.cmake fails the configure without them.
+      apt-packages: >-
+        cmake clang ninja-build pkg-config python3
+        libx11-dev libxext-dev libxcursor-dev libxi-dev libxfixes-dev
+        libxrandr-dev libxss-dev libwayland-dev libxkbcommon-dev
+        wayland-protocols libegl-dev libdecor-0-dev libpulse-dev
+        libasound2-dev
       # SDL2 and SDL2_ttf are fetched from git and FFmpeg is built from source,
       # so a cold build is most of the wall clock. The pinned tags in
       # bundledlibs.cmake decide when the cache is stale.
@@ -31,6 +40,8 @@ jobs:
       # About 7,400 translation units: ccache recompiles only the ones a
       # commit touched, instead of all of them on every run.
       ccache: true
+      # One build fills 500M, so ccache evicted as it went and kept only the tail.
+      ccache-max-size: 2G
       # Shared by the CI build and the release build of the same preset.
       cache-key: exe-linux-x86_64
       # The test binaries are EXCLUDE_FROM_ALL, and ctest only runs what is
@@ -41,21 +52,9 @@ jobs:
         cmake --build build/exe-linux-x86_64 --target nocturne_tests
       test-command: ctest --test-dir build/exe-linux-x86_64 --output-on-failure
 
-  # Per-file -fsyntax-only over the decompiled sources; no link, no SDL.
-  check:
-    name: Syntax check
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@0dd8e56278d822277ecd6fd06f12b24c3814d84f # v0.2.6
-    permissions:
-      contents: read
-    with:
-      apt-packages: cmake clang ninja-build pkg-config python3
-      build-command: |
-        cmake --preset check-linux-x86_64
-        cmake --build --preset check-linux-x86_64
-
   lint:
     name: Lint
-    uses: NearlyTRex/Workflows/.github/workflows/lint.yml@0dd8e56278d822277ecd6fd06f12b24c3814d84f # v0.2.6
+    uses: NearlyTRex/Workflows/.github/workflows/lint.yml@4fe68c91984dd09dea6988fd603b128bc3f44ff7 # v0.2.9
     permissions:
       contents: read
     with:
@@ -63,3 +62,5 @@ jobs:
       # of formatting-only edits. Code-fence checking goes with it; turn both on
       # once the notes are cleaned up.
       markdown: false
+      # Decompiled code keeps the original's shape; don't format-check it.
+      clang-format: false

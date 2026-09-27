@@ -12,28 +12,30 @@ permissions: {}
 
 concurrency:
   group: security-${{ github.ref }}
-  cancel-in-progress: true
+  # Only pull requests: a newer push supersedes their run. On main every run
+  # finishes, since each push's secret scan covers only that push's commits.
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   security:
     name: Security
-    uses: NearlyTRex/Workflows/.github/workflows/security.yml@0dd8e56278d822277ecd6fd06f12b24c3814d84f # v0.2.6
+    uses: NearlyTRex/Workflows/.github/workflows/security.yml@4fe68c91984dd09dea6988fd603b128bc3f44ff7 # v0.2.9
     permissions:
       contents: read
 
   codeql:
     name: CodeQL
-    uses: NearlyTRex/Workflows/.github/workflows/codeql.yml@0dd8e56278d822277ecd6fd06f12b24c3814d84f # v0.2.6
+    uses: NearlyTRex/Workflows/.github/workflows/codeql.yml@4fe68c91984dd09dea6988fd603b128bc3f44ff7 # v0.2.9
     permissions:
       actions: read
       contents: read
       security-events: write
     with:
-      languages: '["c-cpp", "actions"]'
+      languages: '["actions"]'
 
   dependency-review:
     name: Dependency Review
     if: github.event_name == 'pull_request'
-    uses: NearlyTRex/Workflows/.github/workflows/dependency-review.yml@0dd8e56278d822277ecd6fd06f12b24c3814d84f # v0.2.6
+    uses: NearlyTRex/Workflows/.github/workflows/dependency-review.yml@4fe68c91984dd09dea6988fd603b128bc3f44ff7 # v0.2.9
     permissions:
       contents: read

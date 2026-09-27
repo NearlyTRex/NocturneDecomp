@@ -1,0 +1,31 @@
+# gitleaks configuration, read by the Security workflow's gitleaks scan.
+#
+# The default rules are kept in full; this only allows patterns that are known
+# not to be secrets. Each is as narrow as it can be, because a real key pasted
+# into an annotation or a script is exactly what the scan is meant to catch.
+#
+# Run locally (it scans all history, so it takes a few minutes):
+#   docker run --rm -v "$PWD:/repo" -w /repo zricethezav/gitleaks:latest \
+#       git --redact --no-banner .
+
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Ghidra labels for strings in the game binaries"
+# Ghidra names a string s_<its text>_<address>, so the game's "3D API: DirectX 6"
+# string becomes s_3D_API_:_DirectX_6_0058884e. generic-api-key sees "API"
+# followed by a hex-looking tail and reports a key. The shape is a lowercase
+# s_, the string's text, then an 8-digit hex address.
+regexTarget = "line"
+regexes = [
+  '''"s_[A-Za-z0-9_:.%-]*_[0-9a-f]{8}"''',
+]
+
+[[allowlists]]
+description = "Prose that generic-api-key reads as an assignment"
+regexTarget = "line"
+regexes = [
+  # A comment in scripts/Python/analyze_local_type_mismatches.py.
+  '''4-byte accesses = CQuaternion4f or CVector4f''',
+]
