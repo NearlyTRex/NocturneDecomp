@@ -1,0 +1,23 @@
+name: Prepare Release
+
+# Bumps the version and opens a PR. Merging it lets release.yml tag and publish.
+on:
+  workflow_dispatch:
+    inputs:
+      bump:
+        description: patch, minor, major, or an exact version like 1.4.0
+        required: true
+        default: patch
+
+permissions: {}
+
+jobs:
+  prepare:
+    name: Prepare
+    uses: NearlyTRex/Workflows/.github/workflows/prepare-release.yml@d3438cd6128cd821327a5b1708c300354bc0e20d # v0.2.5
+    permissions:
+      contents: write
+      pull-requests: write
+    with:
+      bump: ${{ inputs.bump }}
+      version-file: CMakeLists.txt

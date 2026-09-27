@@ -1,0 +1,14 @@
+version: 2
+
+# Weekly, grouped, and 7 days behind upstream releases so a compromised release
+# has time to be caught before it is proposed here.
+updates:
+  - package-ecosystem: github-actions
+    directories: ["/"]
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
+    groups:
+      actions:
+        patterns: ["*"]

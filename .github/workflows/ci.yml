@@ -1,0 +1,62 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions: {}
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # The native lane, with the unit tests. The Windows lanes cross-compile to PEs
+  # that cannot run here, so they are built only on release.
+  build:
+    name: Build (exe-linux-x86_64)
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@d3438cd6128cd821327a5b1708c300354bc0e20d # v0.2.5
+    permissions:
+      contents: read
+    with:
+      apt-packages: cmake clang ninja-build pkg-config python3
+      # SDL2 and SDL2_ttf are fetched from git and FFmpeg is built from source,
+      # so a cold build is most of the wall clock. The pinned tags in
+      # bundledlibs.cmake decide when the cache is stale.
+      cache-paths: |
+        build/exe-linux-x86_64/_deps
+        build/exe-linux-x86_64/ffmpeg
+      cache-key-files: cmake/bundledlibs.cmake
+      # Shared by the CI build and the release build of the same preset.
+      cache-key: exe-linux-x86_64
+      # The test binaries are EXCLUDE_FROM_ALL, and ctest only runs what is
+      # already built, so they are built explicitly (see docs/testing.md).
+      build-command: |
+        cmake --preset exe-linux-x86_64
+        cmake --build --preset exe-linux-x86_64
+        cmake --build build/exe-linux-x86_64 --target nocturne_tests
+      test-command: ctest --test-dir build/exe-linux-x86_64 --output-on-failure
+
+  # Per-file -fsyntax-only over the decompiled sources; no link, no SDL.
+  check:
+    name: Syntax check
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@d3438cd6128cd821327a5b1708c300354bc0e20d # v0.2.5
+    permissions:
+      contents: read
+    with:
+      apt-packages: cmake clang ninja-build pkg-config python3
+      build-command: |
+        cmake --preset check-linux-x86_64
+        cmake --build --preset check-linux-x86_64
+
+  lint:
+    name: Lint
+    uses: NearlyTRex/Workflows/.github/workflows/lint.yml@d3438cd6128cd821327a5b1708c300354bc0e20d # v0.2.5
+    permissions:
+      contents: read
+    with:
+      # The research notes predate the Markdown rules and would need thousands
+      # of formatting-only edits. Code-fence checking goes with it; turn both on
+      # once the notes are cleaned up.
+      markdown: false
