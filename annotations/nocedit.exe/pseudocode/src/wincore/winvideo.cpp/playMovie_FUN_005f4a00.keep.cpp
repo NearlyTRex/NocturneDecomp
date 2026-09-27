@@ -27,9 +27,6 @@ int __cdecl wincore_winvideo_cpp_playMovie_FUN_005f4a00(char *directory_path,cha
   HWND pHVar7;
   byte bVar2;
 
-#if NOCTURNE_AUTHENTIC_FMV
-  return 0;
-#endif
   _sprintf(local_74,"%s\\%s",directory_path,movie_filename);
   file_ptr = shape_memdbg_cpp_openFile_FUN_0050f7a0
                        (local_74,(char *)0x0,"rb","..\\wincore\\winvideo.cpp",302);

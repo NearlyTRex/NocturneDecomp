@@ -154,7 +154,7 @@ honest reason its default is what it is.
 | `RESOLUTION_LIST` | one ordered table drives both the label and the stepping |
 | `HUD_SCALE` | HUD bitmaps, text and the goggles scale with the framebuffer |
 | `CONSOLE` | the console fills the window and keeps scrollback |
-| `FMV` | the opening movie actually plays |
+| `FMV` | Sound Options has a Movie Vol line; the opening movie plays either way |
 | `ATTRACT_MOVIES` | the menu cycles NOC1..NOC4 after its splash music |
 | `ENVMAP_SHADING` | reflections are shaded per pixel rather than flat per facet |
 | `NETPLAY` | netplay is reachable, with its fixes |

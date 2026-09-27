@@ -20,13 +20,13 @@
 #             is compiled in, and UI_CURSOR_WARP's SetCursorPos becomes an
 #             SDL warp that drags the pointer away every frame. A vanilla build
 #             nobody can run is not a faithful one.
-#   binary    0 — EDITOR_BUILD picks *which* binary this is, and neither value
-#             is less faithful than the other. Vanilla is the retail game, so
-#             the editor presentation is off.
+#   binary    0 — these pick *which* binary this is, and 1 is always nocedit.exe.
+#             Vanilla is retail nocturne.exe, so all of them are off: no editor
+#             presentation, and acceleration can be turned on.
 #
 # An explicit -D on the configure line still wins: these are plain cache entries
-# without FORCE, so `-DNOCTURNE_VANILLA=ON -DNOCTURNE_AUTHENTIC_FMV=0` is a
-# vanilla build that still plays the intro movie.
+# without FORCE, so `-DNOCTURNE_VANILLA=ON -DNOCTURNE_AUTHENTIC_AUTOMAP=0` is a
+# vanilla build that still has the automap.
 
 set(_vanilla_header
     "${CMAKE_SOURCE_DIR}/annotations/nocedit.exe/pseudocode/shims/config/shim_config_authentic.h")
@@ -46,14 +46,14 @@ endif()
 
 set(_vanilla_authentic "")
 set(_vanilla_host "")
-set(_vanilla_editor "")
+set(_vanilla_retail "")
 foreach(_line IN LISTS _vanilla_lines)
     string(REGEX MATCH "NOCTURNE_(AUTHENTIC_[A-Z0-9_]+|EDITOR_BUILD)" _name "${_line}")
     string(REGEX REPLACE "^// \\| `[^`]+` \\| [01] \\| ([a-z]+) \\|.*$" "\\1" _kind "${_line}")
 
-    if(_name STREQUAL "NOCTURNE_EDITOR_BUILD")
-        set(${_name} 0 CACHE STRING "vanilla: retail presentation")
-        list(APPEND _vanilla_editor "${_name}")
+    if(_kind STREQUAL "binary")
+        set(${_name} 0 CACHE STRING "vanilla: retail nocturne.exe")
+        list(APPEND _vanilla_retail "${_name}")
     elseif(_kind STREQUAL "host")
         list(APPEND _vanilla_host "${_name}")
     else()

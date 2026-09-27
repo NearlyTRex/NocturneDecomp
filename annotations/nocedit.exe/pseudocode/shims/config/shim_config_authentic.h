@@ -102,7 +102,7 @@
 // | `NOCTURNE_AUTHENTIC_RESOLUTION_LIST` | 0 | addition | one ordered table drives label and stepping |
 // | `NOCTURNE_AUTHENTIC_HUD_SCALE` | 0 | addition | the HUD scales with the framebuffer |
 // | `NOCTURNE_AUTHENTIC_CONSOLE` | 0 | addition | the console fills the window and keeps scrollback |
-// | `NOCTURNE_AUTHENTIC_FMV` | 0 | addition | the opening movie actually plays |
+// | `NOCTURNE_AUTHENTIC_FMV` | 0 | addition | Sound Options has a Movie Vol line |
 // | `NOCTURNE_AUTHENTIC_ATTRACT_MOVIES` | 0 | addition | the menu cycles NOC1..NOC4 after its music |
 // | `NOCTURNE_AUTHENTIC_ENVMAP_SHADING` | 0 | addition | reflections are shaded per pixel, not per facet |
 // | `NOCTURNE_AUTHENTIC_NETPLAY` | 0 | addition | netplay is reachable, with its fixes |
@@ -2177,27 +2177,16 @@
 #endif
 
 // NOCTURNE_AUTHENTIC_FMV
-//   Controls the opening full-motion video (winvideo.cpp's playMovie).
-//   1: matches both shipped binaries — no movie ever plays. The call is there
-//      and unconditional (initializeGameSystems does
-//      playMovie("video", "opening.avi") with no guard), but it asks for
-//      video\opening.avi while the shipped data puts the movies in AVI\, so
-//      playMovie's own fopen existence check fails and it returns 0. The
-//      failure is silent: the only user-visible error ("Unable to open .AVI!")
-//      sits behind the MCI open, which that early return never reaches.
-//      The rest of the module is dead too — openMovie, toggleMoviePlayback and
-//      positionMovieWindow have no callers in either binary, and NOC1..NOC4.AVI
-//      are never referenced at all.
-//   0: dev-friendly default. playMovie runs for real, and the MCI shim
-//      (shims/mci_video.cpp) decodes the AVI through libav and presents it on
-//      the same path the engine's 2D back buffer uses, with audio. Note this
-//      only reaches the movie if the file is actually where the game looks for
-//      it — the hardcoded "video\" directory, not the shipped AVI\ one. This
-//      toggle deliberately does not rewrite that path; staging the file is a
-//      data question, not a code one.
+//   Whether movies get a level of their own. The opening movie itself is not
+//   gated: both binaries call playMovie("video", "opening.avi") unconditionally
+//   from initializeGameSystems, and it plays whenever video\opening.avi exists,
+//   decoded by the MCI shim (shims/mci_video.cpp). NOC1..NOC4.AVI are a
+//   separate question — see NOCTURNE_AUTHENTIC_ATTRACT_MOVIES.
+//   1: shipped behaviour — MCI mixed movies at the desktop's volume, so there
+//      is no Movie Vol line and a movie plays at its mastered level.
+//   0: a "Movie Vol" line in Sound Options, persisted as [Sound] MovieVolume.
 //
-//   Override with -DNOCTURNE_AUTHENTIC_FMV=1 to restore the shipped
-//   never-plays behaviour even with the movie staged correctly.
+//   Override with -DNOCTURNE_AUTHENTIC_FMV=1.
 #ifndef NOCTURNE_AUTHENTIC_FMV
 #define NOCTURNE_AUTHENTIC_FMV 0
 #endif
@@ -2214,8 +2203,8 @@
 //   Session-only: nothing is persisted, so the opening still plays every launch
 //   and attract movies only ever follow it within the same run. Needs the movies
 //   to be where the game looks (the hardcoded "video\" directory), and is inert
-//   under NOCTURNE_AUTHENTIC_FMV, when opening.avi is missing, or while sound is
-//   muted, since no splash music means no trigger.
+//   when opening.avi is missing, or while sound is muted, since no splash music
+//   means no trigger.
 //
 //   Override with -DNOCTURNE_AUTHENTIC_ATTRACT_MOVIES=1.
 #ifndef NOCTURNE_AUTHENTIC_ATTRACT_MOVIES
