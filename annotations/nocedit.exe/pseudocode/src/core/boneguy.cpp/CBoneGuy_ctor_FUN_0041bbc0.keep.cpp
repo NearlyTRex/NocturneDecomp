@@ -38,7 +38,7 @@ CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_ctor_FUN_0041bbc0(CBoneGuy *this_pt
   ADJ(dest)->base.base.ai_detection_range_max = fVar3;
   strcpy(pcVar6, "boneguydie");
   ADJ(dest)->box_count = 0;
-  memset(dest,0,0x5a0);
+  memset(ADJ(dest)->boxes,0,sizeof(ADJ(dest)->boxes));
   iVar4 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,0xff);
   ADJ(dest)->search_timer = 0.0;
   ADJ(dest)->pickup_cooldown = 0.0;

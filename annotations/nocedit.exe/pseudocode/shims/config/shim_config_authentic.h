@@ -91,7 +91,7 @@
 // | `NOCTURNE_AUTHENTIC_SAVE` | 1 | choice | saves are written as readable plain text |
 // | `NOCTURNE_AUTHENTIC_BUILD_STAMP` | 0 | choice | the console banner dates this build, not Terminal Reality's |
 // | `NOCTURNE_AUTHENTIC_AUTOMAP` | 0 | addition | a bindable Doom-style map that fills in as you explore |
-// | `NOCTURNE_AUTHENTIC_GOGGLE_LOOK` | 0 | addition | the goggle view looks up and down with empty hands |
+// | `NOCTURNE_AUTHENTIC_GOGGLE_LOOK` | 0 | addition | the goggle view looks up and down with empty hands, for every hero |
 // | `NOCTURNE_AUTHENTIC_MENU_VERSION` | 0 | addition | the menu carries a line naming this build |
 // | `NOCTURNE_AUTHENTIC_SAVE_SLOTS` | 0 | addition | saves are picked from a slot list, not typed |
 // | `NOCTURNE_AUTHENTIC_SINGLE_PLAYER_MENU` | 0 | addition | START becomes PLAY, with Start and Load behind it |
@@ -1940,6 +1940,9 @@
 //   the head bone only when `guns_drawn` and a weapon are both set — and the
 //   head bone is the goggle camera, since CDemonSet::renderGogglesView builds
 //   the view from the "Bip01 Head" world matrix.
+//
+//   The other eight heroes never pitch the head bone at all, so at 0 they get
+//   the same pitch on the goggle camera alone — see shims/game/goggle_look.h.
 //
 //   Only the pitch is gated. Turning already works empty-handed, because the
 //   goggle view's yaw is the hero's own facing plus a head yaw the shipped code

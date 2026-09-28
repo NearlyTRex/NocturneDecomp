@@ -250,6 +250,9 @@ LAB_004dc4e9:
   if (iVar5 != 0) {
     uVar5 = (uint)(this_ptr->goggles_active == 0);
     this_ptr->goggles_active = uVar5;
+#if !NOCTURNE_AUTHENTIC_GOGGLE_LOOK
+    nocturne_goggle_look_reset();
+#endif
     if (((uVar5 == 0) || (this_ptr_01 = g_HeroActors[g_LocalHeroIndex], this_ptr_01 == (CHero *)0x0)
         ) || (EVar6 = (*(((this_ptr_01->base).base.vtable._uc)->_uc).getDeathState)
                                 (&this_ptr_01->base), EVar6 == DEATH_STATE_ALIVE)) {

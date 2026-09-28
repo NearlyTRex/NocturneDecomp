@@ -119,6 +119,15 @@ void nocturne_trigl_envmap_pass_end(void);
 // the Sound Options line and from the movie decoder for the gain itself.
 #include "game/movie_audio.h"
 
+// Goggle-camera pitch for the heroes other than CStranger
+// (nocturne_goggle_look_*), reached from the set and game TUs. Inert under
+// NOCTURNE_AUTHENTIC_GOGGLE_LOOK.
+#include "game/goggle_look.h"
+
+// Stale registry entries dropped between missions (nocturne_mission_purge_*),
+// reached from the mission TU. Inert under NOCTURNE_AUTHENTIC_NETPLAY.
+#include "game/mission_purge.h"
+
 // Modern controller support (nocturne_gamepad_*), reached from the game TU's
 // input path and from the menu TU's key-name and validity helpers. The pad
 // input codes it defines are reached the same way. Every entry point is inert

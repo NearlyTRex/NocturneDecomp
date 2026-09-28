@@ -217,6 +217,15 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "memset size hardcodes 0x5a0 == the whole boxes field (20 x SBoneGuyBox), which the dest names. It is an array of SBoneGuyBox, which contains a pointer, so it grows once pointers are 8 bytes and memset covers only its leading 0x5a0 bytes. Use sizeof(<path>->boxes) (\u00a717/\u00a718).",
+      "line": 48,
+      "match": "memset(dest) size 0x5a0 == sizeof(SBoneGuyBox[20])",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "memset(dest,0,0x5a0)",
+      "type": "mem_magic_size"
     }
   ],
   "stack_frame": {

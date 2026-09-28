@@ -83,6 +83,8 @@ static int s_reported_stray_sim  = 0;
 
 #if NOCTURNE_NETPLAY_RNG_TRACE
 
+static int rng_is_network_game(void);
+
 static FILE *s_draw_log     = (FILE *)0;
 static int   s_draw_failed  = 0;
 static int   s_frame        = -1;
@@ -115,8 +117,10 @@ static void rng_note_draw(void *caller)
 
     s_draw_index = s_draw_index + 1;
 
-    if (s_frame < 0) {
-        return;                 // before the first applied sim frame
+    // Before the first applied sim frame, only a network game's mission load is
+    // logged (as frame -1): its draws count towards frame 0's fingerprint.
+    if ((s_frame < 0) && (rng_is_network_game() == 0)) {
+        return;
     }
     out = rng_draw_log();
     if (out == (FILE *)0) {

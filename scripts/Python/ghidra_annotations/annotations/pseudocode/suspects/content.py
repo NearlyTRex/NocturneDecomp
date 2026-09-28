@@ -7559,6 +7559,36 @@ def identify_flattened_array_index(code):
     return suspects
 
 
+# An adjusted-pointer typedef: `CBoneGuy_ptr_48956` points at byte 48956 of a
+# CBoneGuy (the name carries the typedef's base and component_offset).
+_MEM_ADJ_PTR_TYPE_RE = re.compile(r'^([A-Za-z_]\w*?)_ptr_(\d+)$')
+
+
+def _mem_array_field(operand, var_types, layout):
+    """The array field `operand` names, as (field, element type), or None.
+
+    Two forms: a path ending in an unsubscripted array field (`this->boxes`),
+    and a bare adjusted-pointer local (`dest`, declared `CBoneGuy_ptr_48956`),
+    which names the field at that offset.
+    """
+    p = re.sub(r'\s+', '', operand or '')
+    adj = _MEM_ADJ_PTR_TYPE_RE.match(var_types.get(p, ''))
+    if adj:
+        owner, offset = adj.group(1), int(adj.group(2))
+        for fl in layout.get(owner, ()):
+            if fl.get('offset') == offset and fl.get('n'):
+                return fl, fl.get('type')
+        return None
+    m = re.match(r'^&?(.*?)(->|\.)([A-Za-z_]\w*)$', p)
+    if not m:
+        return None
+    owner = resolve_access_path_type(m.group(1), var_types, layout)
+    for fl in layout.get(owner, ()) if owner else ():
+        if fl.get('name') == m.group(3) and fl.get('n'):
+            return fl, fl.get('type')
+    return None
+
+
 def identify_mem_magic_size(code, struct_layout_map=None, struct_size_map=None):
     """Flag memcpy/memmove/memset whose byte size hardcodes sizeof(an unstable T).
 
@@ -7640,18 +7670,47 @@ def identify_mem_magic_size(code, struct_layout_map=None, struct_size_map=None):
 
         hit = None
         for role, operand in operands:
+            # A whole array field: the literal is its full 32-bit extent.
+            arr = _mem_array_field(operand, var_types, struct_layout_map)
+            if (arr and (arr[0].get('is_ptr') or arr[1] in unstable)
+                    and arr[0].get('len') in consts):
+                hit = (role, arr[1], arr[0]['len'], arr[0])
+                break
             t = resolve_access_path_type(operand, var_types, struct_layout_map)
             if not t or t not in unstable:
                 continue
             tsize = struct_size_map.get(t)
             if tsize is None or tsize not in consts:
                 continue
-            hit = (role, t, tsize)
+            hit = (role, t, tsize, None)
             break
         if hit is None:
             continue
 
-        role, t, tsize = hit
+        role, t, tsize, field = hit
+        if field is not None:
+            elem = t + ' *' * field.get('stars', 0)
+            why = ('an array of pointers' if field.get('is_ptr') else
+                   'an array of %s, which contains a pointer' % t)
+            desc = (
+                "%s size hardcodes 0x%x == the whole %s field (%d x %s), which "
+                "the %s names. It is %s, so it grows once pointers are 8 bytes "
+                "and %s covers only its leading 0x%x bytes. Use "
+                "sizeof(<path>->%s) (§17/§18)."
+                % (fn, tsize, field['name'], field['n'], elem, role, why, fn,
+                   tsize, field['name']))
+            line_no = code.count('\n', 0, m.start()) + 1
+            snippet = re.sub(r'\s+', ' ', m.group(0)[:-1] + call).strip()
+            suspects.append({
+                'line': line_no,
+                'type': 'mem_magic_size',
+                'match': '%s(%s) size 0x%x == sizeof(%s[%d])' % (
+                    fn, role, tsize, elem, field['n']),
+                'text': snippet[:200],
+                'description': desc,
+                'severity': SUSPECT_SEVERITY.get('mem_magic_size', 'moderate'),
+            })
+            continue
         desc = (
             "%s size hardcodes 0x%x == sizeof(%s), whose %s resolves to that "
             "struct. %s is 64-bit-unstable (contains a pointer), so the struct "

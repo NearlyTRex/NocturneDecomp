@@ -76,7 +76,9 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_005c3960(CStranger 
     }
     if ((uVar4 & 4) == 0) {
 #if !NOCTURNE_AUTHENTIC_GOGGLE_LOOK
-      if (g_CGamePtr->goggles_active == 0)
+      if ((g_CGamePtr->goggles_active == 0) ||
+          ((g_CNetGamePtr != (CNetGame *)0x0) &&
+           (g_CNetGamePtr->connection_type != CONNECTION_NONE)))
 #endif
       {
         local_24->target_pitch = 0.0;
