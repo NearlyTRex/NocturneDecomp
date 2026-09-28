@@ -50,6 +50,14 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(int argc,char **argv
   g_RenderingMode = 4;
   core_flattn_cpp_doNothing_FUN_004cbce0();
   core_inivar_cpp_readIniData_FUN_004fbd90();
+#if !NOCTURNE_AUTHENTIC_RENDERER_DLL
+  if (nocturne_builtin_dll_available(g_RendererDllPath) == 0) {
+    pcVar8 = (char *)nocturne_builtin_dll_next(g_RendererDllPath);
+    if (pcVar8 != (char *)0x0) {
+      strcpy(g_RendererDllPath,pcVar8);
+    }
+  }
+#endif
   g_AGPTextureMode = 2;
   engine_pod_cpp_CPod_init_FUN_00550c30((CPod *)g_CDemonPodPtr);
   DLOG("fileio", "registering search handlers (count before=%d)", g_NumSearchHandlers);

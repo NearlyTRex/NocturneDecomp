@@ -6,10 +6,9 @@
 //
 // An addition with no authentic side. The shipped game handed movies to MCI,
 // which mixed them at the desktop's volume and knew nothing about the game's
-// own settings — and in practice never played one at all, since playMovie asks
-// for video\opening.avi while the data ships the movies in AVI\ (see
-// NOCTURNE_AUTHENTIC_FMV). So an FMV played at whatever level the file was
-// mastered at, through a mute the rest of the game respected.
+// own settings. So the opening movie played at whatever level the file was
+// mastered at, through a mute the rest of the game respected. The line below is
+// gated on NOCTURNE_AUTHENTIC_FMV.
 //
 // This gives movies a level of their own, on the "Movie Vol" line in Sound
 // Options, persisted as [Sound] MovieVolume. It is deliberately not one of the
@@ -42,7 +41,7 @@ void nocturne_movie_volume_set(float volume);
 // The gain to actually apply to movie audio: the level above, or 0 when sound
 // is muted. This is what the movie decoder multiplies its samples by; it is
 // separate from the level so that muting does not overwrite the player's
-// chosen volume.
+// chosen volume. Always 1 under NOCTURNE_AUTHENTIC_FMV.
 float nocturne_movie_audio_gain(void);
 
 #ifdef __cplusplus

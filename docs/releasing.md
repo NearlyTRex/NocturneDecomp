@@ -55,7 +55,7 @@ included.
 
 ```sh
 cmake --preset exe-linux-vanilla-x86_64
--- vanilla: 56 toggles set to the shipped behaviour
+-- vanilla: 58 toggles set to the shipped behaviour
 -- vanilla: 6 left at their defaults (host): FORMAT_STRINGS, WINDOWS,
    UI_CURSOR_WARP, SOUND_DEVICE, RENDERER_DLL, HEAP_REPORT
 ```
@@ -69,7 +69,7 @@ cmake --preset exe-linux-vanilla-x86_64
 | `choice` | 1 | the shipped answer rather than the one we prefer |
 | `addition` | 1 | the feature absent, since the shipped game had none of it |
 | `host` | default | at 1 these ask for a Windows that is not there |
-| `binary` | 0 | `EDITOR_BUILD` picks *which* binary; vanilla is the retail game |
+| `binary` | 0 | these pick *which* binary; vanilla is retail nocturne.exe, acceleration included |
 
 Reading the kinds instead of listing names means a toggle added later is authentic in vanilla the
 moment it exists, with nobody having to remember this file. The `host` exceptions are not a
@@ -77,8 +77,11 @@ matter of taste: `RENDERER_DLL` at 1 wants the renderer as a file on disk when i
 in, and `UI_CURSOR_WARP` at 1 turns `SetCursorPos` into an SDL warp that drags the pointer away
 every frame. A vanilla build nobody can run would not be a faithful one.
 
-An explicit `-D` still wins, so `-DNOCTURNE_VANILLA=ON -DNOCTURNE_AUTHENTIC_FMV=0` is a vanilla
-build that still plays the intro movie.
+An explicit `-D` still wins, so `-DNOCTURNE_VANILLA=ON -DNOCTURNE_AUTHENTIC_AUTOMAP=0` is a
+vanilla build that still has the automap.
+
+Both lanes play the opening movie when `video/opening.avi` is present, as retail did; the
+renderer starts on a built-in one (trigl) rather than the shipped default `trid3d.dll`.
 
 **Two binaries, not one switch.** The toggles are compile-time and `shim_config.h` reaches every
 translation unit, so a single binary cannot carry both sets.

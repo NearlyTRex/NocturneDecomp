@@ -13,6 +13,14 @@
 #   ./build.sh check-linux-x86_64  # fast 64-bit syntax-check lane
 #   BUILD_PRESET=exe-linux-x86_64 ./build.sh
 #
+# --vanilla (or VANILLA=1) builds the vanilla lane of that preset instead. A
+# preset with a vanilla twin in CMakePresets.json (exe-linux-x86_64 ->
+# exe-linux-vanilla-x86_64) uses it; any other is configured into
+# build/<preset>-vanilla with -DNOCTURNE_VANILLA=ON:
+#
+#   ./build.sh --vanilla                    # build/exe-linux-asan-x86_64-vanilla
+#   ./build.sh --vanilla exe-linux-x86_64   # the exe-linux-vanilla-x86_64 preset
+#
 # Extra args after the preset get passed through to cmake --build:
 #
 #   ./build.sh exe-linux-asan-x86_64 -j 4
@@ -33,10 +41,31 @@ set -u
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
 cd "${SCRIPT_DIR}" || exit 1
 
+VANILLA="${VANILLA:-0}"
+if [[ "${1:-}" == "--vanilla" ]]; then
+    VANILLA=1
+    shift
+fi
+
 PRESET="${1:-${BUILD_PRESET:-exe-linux-asan-x86_64}}"
 [ $# -ge 1 ] && shift
 
 BUILD_DIR="${SCRIPT_DIR}/build/${PRESET}"
+CONFIGURE_ARGS=()
+
+if [[ "${VANILLA}" == "1" && "${PRESET}" != *vanilla* ]]; then
+    twin="${PRESET%-x86_64}-vanilla-x86_64"
+    if [[ "${PRESET}" == *-x86_64 ]] &&
+       grep -q "\"name\": \"${twin}\"" "${SCRIPT_DIR}/CMakePresets.json"; then
+        PRESET="${twin}"
+        BUILD_DIR="${SCRIPT_DIR}/build/${PRESET}"
+    else
+        BUILD_DIR="${SCRIPT_DIR}/build/${PRESET}-vanilla"
+        CONFIGURE_ARGS=(-B "${BUILD_DIR}" -DNOCTURNE_VANILLA=ON
+                        "-DNOCTURNE_BUILD_TAG=${PRESET}-vanilla")
+    fi
+    echo "build.sh: vanilla lane -> ${BUILD_DIR#"${SCRIPT_DIR}"/}"
+fi
 
 # Regenerate committed test/check artifacts before the build globs them in.
 # Every scripts/Bash/regen_*.sh is run in turn (currently the struct-layout
@@ -55,7 +84,7 @@ fi
 # First-time configure — skipped if the build tree already exists.
 if [[ ! -d "${BUILD_DIR}" ]]; then
     echo "build.sh: configuring preset '${PRESET}' (first run)"
-    cmake --preset "${PRESET}" || exit $?
+    cmake --preset "${PRESET}" "${CONFIGURE_ARGS[@]}" || exit $?
 fi
 
 # Force a re-glob so newly added .keep.cpp / .keep.c files end up in the ninja

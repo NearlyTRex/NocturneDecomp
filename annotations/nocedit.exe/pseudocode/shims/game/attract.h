@@ -44,8 +44,8 @@ extern "C" {
 
 // initializeGameSystems, with playMovie's return value: non-zero if the opening
 // actually played this launch. Attract movies stay disarmed until it has, so a
-// build with NOCTURNE_AUTHENTIC_FMV=1 (or a missing opening.avi) gets no movies
-// at all rather than skipping straight to the cutscenes.
+// missing opening.avi means no movies at all rather than skipping straight to
+// the cutscenes.
 void nocturne_attract_set_opening_played(int played);
 
 // CSound::configure, with the length in seconds of the splash music it just
