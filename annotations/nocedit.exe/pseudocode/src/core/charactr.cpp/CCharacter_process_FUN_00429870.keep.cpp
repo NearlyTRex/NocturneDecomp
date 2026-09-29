@@ -35,7 +35,9 @@ int __cdecl core_charactr_cpp_CCharacter_process_FUN_00429870(CCharacter *this_p
       ((CHero *)this_ptr)->invincibility_timer = 0.0f;
     }
     (*(((this_ptr->base).vtable._uc)->_uc).processDamage)(this_ptr,&fall_damage);
-    if (this_ptr->hit_points <= 0.0) {
+    if ((this_ptr->hit_points <= 0.0) &&
+        (core_actor_cpp_castToClassHash_FUN_0040c790
+                   ((CDemonActor *)this_ptr,g_CStrangerClassInfo.name_hash) != (CDemonActor *)0x0)) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 (&this_ptr->model.motion_controller,0x12,1);
       (*((this_ptr->base).vtable._ub)->playSound)((CDemonActor *)this_ptr,"fall-?.wav");
