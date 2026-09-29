@@ -20,6 +20,9 @@
 // This adds a host-only pause-menu action that picks a spot that is
 //   - standing on real ground (the collision query returns a height, not NaN),
 //   - level with the host's own footing, so nobody is dropped down a shaft,
+//   - on the host's side of every wall: a clear voxel line from the host's
+//     footing at waist height, since the floor beyond a hallway wall passes
+//     the tests above and the camera frustum does not occlude,
 //   - inside the current static camera's frustum, scored towards the middle of
 //     frame so the player lands where the camera is actually aimed,
 //   - clear of the other heroes,
