@@ -233,6 +233,15 @@
       "severity": "moderate",
       "text": "piVar1 = *(int **)((int)g_RenderBufferSortArray + local_10);",
       "type": "pointer_truncation"
+    },
+    {
+      "description": "_qsort element width is the literal 4 instead of sizeof(*base). If the elements are pointers or hold one, the sort walks misaligned elements on the 64-bit build.",
+      "line": 29,
+      "match": "_qsort",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "_qsort",
+      "type": "pointer_stride_bytecount"
     }
   ],
   "stack_frame": {

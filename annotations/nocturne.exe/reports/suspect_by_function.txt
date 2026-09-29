@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 4922
-Clean: 2506 (50.9%)
-With suspects: 2416
-Total suspects: 20952
+Clean: 2505 (50.9%)
+With suspects: 2417
+Total suspects: 20956
 
 ====================================================================================================
 cockpit_ckptutil.c_applyActPalette_FUN_0042d370 (1 suspect)
@@ -18363,7 +18363,7 @@ core_set.cpp_CDemonSet_buildActorTypeLists_FUN_0050e6b0 (3 suspects)
   Line 58 [shadow_pointer_walk]: pCVar6 = (CDemonSet *)pCVar6->cameras;
 
 ====================================================================================================
-core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2d0 (20 suspects)
+core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2d0 (21 suspects)
   File: core/set.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
@@ -18381,6 +18381,7 @@ core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2d0 (20 suspects)
   Line 96 [static_legacy_uninitvar]: (fStack_50 - fStack_5c) * (fStack_50 - fStack_5c) +
   Line 97 [static_legacy_uninitvar]: (fStack_54 - (float)auStack_64._4_4_) * (fStack_54 - (float)auStack_64._4_4_) +
   Line 98 [static_legacy_uninitvar]: (fStack_58 - (float)auStack_64._0_4_) * (fStack_58 - (float)auStack_64._0_4_);
+  Line 99 [pointer_stride_bytecount]: _qsort
   Line 100 [undefined_data]: (&DAT_02080434,_DAT_02080430,8,core_set_cpp_qsortByDisplayListEntry_FUN_0050d2a0);
   Line 109 [undefined_data]: puVar1 = (uint *)(&DAT_02080434 + iVar7);
   Line 113 [shadow_pointer_walk]: pCVar6 = (CDemonSet *)pCVar6->cameras;
@@ -25450,7 +25451,7 @@ engine_3d.c_renderRotatedMRGLSubChain_FUN_00404b10 (2 suspects)
   Line 205 [pointer_cast]: ((SMRGLHeaderExtended *)((int)&(primitive->base).type + (primitive->base).count));
 
 ====================================================================================================
-engine_3d.c_renderSortedPolygonList_FUN_00405b40 (27 suspects)
+engine_3d.c_renderSortedPolygonList_FUN_00405b40 (28 suspects)
   File: engine/3d.c
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
@@ -25459,6 +25460,7 @@ engine_3d.c_renderSortedPolygonList_FUN_00405b40 (27 suspects)
   Line 30 [unaffected_reg]: unaff_EDI = primitive_00;
   Line 36 [unaffected_reg]: engine_3d_c_queueSortedPolygon_FUN_00405ab0(primitive_00,owner_block,unaff_EDI);
   Line 42 [pointer_cast]: ((int)&(primitive_00->base).type + (int)&(primitive->base).type);
+  Line 49 [pointer_stride_bytecount]: _qsort
   Line 50 [undefined_data]: (&DAT_006b415c,(SIZE_T)DAT_006b0268,4,
   Line 50 [undefined_data]: (&DAT_006b415c,(SIZE_T)DAT_006b0268,4,
   Line 54 [undefined_data]: primitive = DAT_006b0268;
@@ -27087,13 +27089,14 @@ engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00 (2 su
   Line 13 [suspect_float]: CStack_18.w = 6.432123e-39;
 
 ====================================================================================================
-engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_00461db0 (5 suspects)
+engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_00461db0 (6 suspects)
   File: engine/drender.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
   Line 13 [unresolved_funcptr]: code *compar;
   Line 17 [undefined_data]: puVar4 = &DAT_01b4d7b4;
   Line 21 [raw_address_pointer_store]: *(byte **)(iVar3 + 0x1b748b4) = puVar4;
+  Line 32 [pointer_stride_bytecount]: _qsort((void *)0x1b748b4,_DAT_01b4d7ac,4,compar);
   Line 42 [raw_address_pointer_store]: iVar2 = **(int **)(iVar5 + 0x1b748b4);
 
 ====================================================================================================
@@ -30109,6 +30112,12 @@ shape_edittool.cpp_CStrList_setStringAt_FUN_00474230 (3 suspects)
   Line 17 [undefined_data]: new_string = &DAT_0057ed1b;
   Line 21 [unrolled_strlen]: do {
   Line 35 [unrolled_strcpy]: do {
+
+====================================================================================================
+shape_edittool.cpp_CStrList_sort_FUN_00474010 (1 suspect)
+  File: shape/edittool.cpp
+====================================================================================================
+  Line 11 [pointer_stride_bytecount]: _qsort
 
 ====================================================================================================
 shape_edittool.cpp_FUN_00470230 (13 suspects)

@@ -115,6 +115,7 @@ SUSPECT_SEVERITY = {
     'mem_magic_size': 'moderate',
     'raw_address_pointer_store': 'moderate',
     'pointer_stride_bytecount': 'moderate',
+    'null_member_upcast': 'major',
     'stale_struct_offset_64bit': 'moderate',
     'derived_field_index_pun': 'moderate',
     'flattened_array_index': 'major',

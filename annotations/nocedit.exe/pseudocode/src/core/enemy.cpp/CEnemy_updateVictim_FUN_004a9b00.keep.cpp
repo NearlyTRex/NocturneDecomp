@@ -109,9 +109,11 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00(CEnemy *this_ptr,fl
           return;
         }
         g_EnemyVictimCandidateDistances[iVar11] = 1e+30;
+#if NOCTURNE_AUTHENTIC_ENEMY_RETAIN
         if (pCVar1 == target) {
           this_ptr->victim = target;
         }
+#endif
       }
     }
     else {

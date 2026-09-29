@@ -588,7 +588,7 @@ LAB_004d344b:
     if ((1.0 < fVar10) &&
        (pCVar14 = (CBoxActor *)
                   core_actor_cpp_castToClassHash_FUN_0040c790
-                            (&((this_ptr->base).pushed_object)->base,g_CBoxActorClassInfo.name_hash)
+                            ((CDemonActor *)(this_ptr->base).pushed_object,g_CBoxActorClassInfo.name_hash)
        , pCVar14 != (CBoxActor *)0x0)) {
       core_gabriela_cpp_CGabriella_getTorsoCenterPosition_FUN_004d4cf0(this_ptr,&local_7c);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -607,7 +607,7 @@ LAB_004d344b:
   if (this_ptr->fire_state == 3) {
     pCVar15 = (CDynamite *)
               core_actor_cpp_castToClassHash_FUN_0040c790
-                        (&((this_ptr->base).inventory.selected_weapon)->base,
+                        ((CDemonActor *)(this_ptr->base).inventory.selected_weapon,
                          g_CDynamiteClassInfo.name_hash);
     if (pCVar15 != (CDynamite *)0x0) {
       if ((this_ptr->base).player_input.action_state.fire == 0) {

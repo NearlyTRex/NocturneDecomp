@@ -147,7 +147,7 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
     ;
     pCVar4 = (CCharacter *)
              core_actor_cpp_castToClassHash_FUN_0040c790
-                       (&this_ptr->look_at_candidate->base,g_CCharacterClassInfo.name_hash);
+                       ((CDemonActor *)this_ptr->look_at_candidate,g_CCharacterClassInfo.name_hash);
     if (pCVar4 == (CCharacter *)0x0) {
       g_CurrentFilename = "..\\core\\charactr.cpp";
       g_CurrentLineNumber = 3488;

@@ -623,6 +623,24 @@
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
       "type": "unrolled_memset"
+    },
+    {
+      "description": "core_actor_cpp_castToClassHash_FUN_0040c790 is passed as &((this_ptr->base).pushed_object)->base, member access through a pointer that may be NULL here. The callee accepts NULL; pass (CDemonActor *)(this_ptr->base).pushed_object instead (\u00a736).",
+      "line": 610,
+      "match": "(this_ptr->base).pushed_object",
+      "resolution_source": "keep",
+      "severity": "major",
+      "text": "(&((this_ptr->base).pushed_object)->base,g_CBoxActorClassInfo.name_hash)",
+      "type": "null_member_upcast"
+    },
+    {
+      "description": "core_actor_cpp_castToClassHash_FUN_0040c790 is passed as &((this_ptr->base).inventory.selected_weapon)->base, member access through a pointer that may be NULL here. The callee accepts NULL; pass (CDemonActor *)(this_ptr->base).inventory.selected_weapon instead (\u00a736).",
+      "line": 629,
+      "match": "(this_ptr->base).inventory.selected_weapon",
+      "resolution_source": "keep",
+      "severity": "major",
+      "text": "(&((this_ptr->base).inventory.selected_weapon)->base,",
+      "type": "null_member_upcast"
     }
   ],
   "stack_frame": {

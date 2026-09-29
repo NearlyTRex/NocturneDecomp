@@ -104,14 +104,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 104,
-    "complexity_score": 124,
+    "complexity_score": 139,
     "cross_reference_count": 7,
     "function_call_count": 4,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 54,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
+      "pointer_stride_bytecount",
       "raw_address_pointer_store",
       "undefined_data",
       "unresolved_funcptr",
@@ -391,6 +392,14 @@
       "severity": "moderate",
       "text": "iVar2 = **(int **)(iVar5 + 0x1b748b4);",
       "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "_qsort element width is the literal 4 instead of sizeof(*base). If the elements are pointers or hold one, the sort walks misaligned elements on the 64-bit build.",
+      "line": 32,
+      "match": "_qsort",
+      "severity": "moderate",
+      "text": "_qsort((void *)0x1b748b4,_DAT_01b4d7ac,4,compar);",
+      "type": "pointer_stride_bytecount"
     }
   ]
 }

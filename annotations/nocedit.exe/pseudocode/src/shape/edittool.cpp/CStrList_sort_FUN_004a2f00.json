@@ -4,7 +4,7 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 45,
     "complexity_score": 14,
@@ -103,6 +103,17 @@
     },
     "pcode_op_count": 182
   },
+  "resolved_suspects": [
+    {
+      "description": "_qsort element width is the literal 4 instead of sizeof(*base). If the elements are pointers or hold one, the sort walks misaligned elements on the 64-bit build.",
+      "line": 11,
+      "match": "_qsort",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "_qsort",
+      "type": "pointer_stride_bytecount"
+    }
+  ],
   "stack_frame": {
     "frame_size": 16,
     "local_size": 4,

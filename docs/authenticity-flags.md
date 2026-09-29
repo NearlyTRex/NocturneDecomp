@@ -74,7 +74,7 @@ flag.
 
 ## What is gated
 
-68 toggles. The kinds below are the same ones the header's table names, and a flag's kind is the
+69 toggles. The kinds below are the same ones the header's table names, and a flag's kind is the
 honest reason its default is what it is.
 
 **`host` — the shipped behaviour depends on Win32 + DirectDraw and cannot be reproduced**
@@ -138,6 +138,7 @@ honest reason its default is what it is.
 | `CONFIRM_PROMPTS` | no bracketed hotkey letters, and a short form when the long one will not fit |
 | `SAVE` | saves are written as readable plain text *(defaults on, i.e. compressed)* |
 | `BUILD_STAMP` | the console banner carries this build's date and version, not Terminal Reality's |
+| `ENEMY_RETAIN` | an enemy drops a victim it can neither see nor path to, instead of tracking them through floors |
 
 **`addition` — neither binary did this**
 

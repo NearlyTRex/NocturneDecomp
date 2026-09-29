@@ -353,6 +353,33 @@
       "severity": "moderate",
       "text": "if ((((int)fVar9 < 0x3f28f5c3) && (0x3f28f5c2 < (int)(this_ptr->base).base.layer_action_t)) &&",
       "type": "bit_int_float_compare"
+    },
+    {
+      "description": "core_actor_cpp_castToClassHash_FUN_0040c790 is passed as &(this_ptr->weapon)->base, member access through a pointer that may be NULL here. The callee accepts NULL; pass (CDemonActor *)this_ptr->weapon instead (\u00a736).",
+      "line": 204,
+      "match": "this_ptr->weapon",
+      "resolution_source": "keep",
+      "severity": "major",
+      "text": "(&this_ptr->weapon->base,g_CDynamiteClassInfo.name_hash);",
+      "type": "null_member_upcast"
+    },
+    {
+      "description": "core_actor_cpp_castToClassHash_FUN_0040c790 is passed as &(this_ptr->weapon)->base, member access through a pointer that may be NULL here. The callee accepts NULL; pass (CDemonActor *)this_ptr->weapon instead (\u00a736).",
+      "line": 219,
+      "match": "this_ptr->weapon",
+      "resolution_source": "keep",
+      "severity": "major",
+      "text": "(&this_ptr->weapon->base,g_CDynamiteClassInfo.name_hash);",
+      "type": "null_member_upcast"
+    },
+    {
+      "description": "core_actor_cpp_isOfClass_FUN_0040c6d0 is passed as &(this_ptr->weapon)->base, member access through a pointer that may be NULL here. The callee accepts NULL; pass (CDemonActor *)this_ptr->weapon instead (\u00a736).",
+      "line": 246,
+      "match": "this_ptr->weapon",
+      "resolution_source": "keep",
+      "severity": "major",
+      "text": "(iVar8 = core_actor_cpp_isOfClass_FUN_0040c6d0(&this_ptr->weapon->base,\"CShotgun\")",
+      "type": "null_member_upcast"
     }
   ],
   "stack_frame": {

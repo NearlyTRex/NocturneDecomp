@@ -87,7 +87,7 @@ void __cdecl shape_design_c_vertexReducer_FUN_00467850(float tolerance,float ang
         base[local_34 * 2 + 1] = local_34;
       }
       _qsort
-                (base,g_VertexCount,8,shape_design_c_qsortByVertexX_FUN_004676f0);
+                (base,g_VertexCount,2 * sizeof(*base),shape_design_c_qsortByVertexX_FUN_004676f0);
       if (bVar9) {
         local_14 = (int *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
                              (g_VertexCount << 2,"..\\shape\\design.c",8412);
@@ -141,7 +141,7 @@ LAB_00467ba8:
 LAB_00467b49:
       }
       _qsort
-                (base,g_VertexCount,8,shape_design_c_qsortByOriginalIndex_FUN_004677c0);
+                (base,g_VertexCount,2 * sizeof(*base),shape_design_c_qsortByOriginalIndex_FUN_004677c0);
       for (local_34 = 0; local_34 < g_PolygonCount; local_34 = local_34 + 1) {
         for (local_30 = 0; local_30 < (int)g_ModelPolygonData[local_34].vertex_indices_count;
             local_30 = local_30 + 1) {

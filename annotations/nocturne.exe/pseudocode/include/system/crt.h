@@ -140,12 +140,13 @@ extern size_t _strftime(char* dest_buffer, size_t buffer_size, const char* forma
 //
 // Templated to accept any comparator function pointer type, since Ghidra
 // types comparators with specific param types (e.g., int(SFace**, SFace**))
-// instead of the generic int(void*, void*) that qsort expects.
+// instead of the generic int(void*, void*) that qsort expects. Every such
+// comparator takes two pointers and returns int, so the cast is ABI-safe.
 //
 
 template<typename CompFunc>
 inline void _qsort(void* base, size_t num, size_t size, CompFunc compar) {
-    (void)base; (void)num; (void)size; (void)compar;
+    qsort(base, num, size, reinterpret_cast<int (*)(const void*, const void*)>(compar));
 }
 
 // ---------------------------------------------------------------------------

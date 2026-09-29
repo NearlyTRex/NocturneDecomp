@@ -484,6 +484,15 @@
       "severity": "moderate",
       "text": "(CTommyGun *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x584,\"..\\\\core\\\\vehicle.cpp\",350)",
       "type": "alloc_magic_size"
+    },
+    {
+      "description": "core_actor_cpp_castToClassHash_FUN_0040c790 is passed as &(pCVar12)->base, member access through a pointer that may be NULL here. The callee accepts NULL; pass (CDemonActor *)pCVar12 instead (\u00a736).",
+      "line": 142,
+      "match": "pCVar12",
+      "resolution_source": "keep",
+      "severity": "major",
+      "text": "(&pCVar12->base,g_CMobsterClassInfo.name_hash);",
+      "type": "null_member_upcast"
     }
   ],
   "stack_frame": {

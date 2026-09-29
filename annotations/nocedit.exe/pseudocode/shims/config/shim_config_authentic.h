@@ -91,6 +91,7 @@
 // | `NOCTURNE_AUTHENTIC_MENU_RESOLUTION` | 0 | choice | a picked resolution applies straight away |
 // | `NOCTURNE_AUTHENTIC_SAVE` | 1 | choice | saves are written as readable plain text |
 // | `NOCTURNE_AUTHENTIC_BUILD_STAMP` | 0 | choice | the console banner dates this build, not Terminal Reality's |
+// | `NOCTURNE_AUTHENTIC_ENEMY_RETAIN` | 0 | choice | an enemy drops a victim it can neither see nor path to |
 // | `NOCTURNE_AUTHENTIC_AUTOMAP` | 0 | addition | a bindable Doom-style map that fills in as you explore |
 // | `NOCTURNE_AUTHENTIC_GOGGLE_LOOK` | 0 | addition | the goggle view looks up and down with empty hands, for every hero |
 // | `NOCTURNE_AUTHENTIC_HERO_LOOK_AIM` | 0 | addition | Scat's aim follows look input under auto-aim until a target takes it |
@@ -1922,6 +1923,25 @@
 //   Override with -DNOCTURNE_AUTHENTIC_BUILD_STAMP=1.
 #ifndef NOCTURNE_AUTHENTIC_BUILD_STAMP
 #define NOCTURNE_AUTHENTIC_BUILD_STAMP 0
+#endif
+
+// NOCTURNE_AUTHENTIC_ENEMY_RETAIN
+//   Whether an enemy keeps a victim it can neither see nor reach.
+//
+//   CEnemy::updateVictim takes the nearest candidate it can see, else one its
+//   path map reaches. When both fail for the victim it already had, it keeps
+//   that victim anyway (CMP against the previous victim at 0x004a9d57, store at
+//   0x004a9d65). The candidate filter allows |dy| up to victimHeight, which the
+//   ACT4 skeletons set to 36, so a skeleton holds a hero two floors away, walks
+//   to their x/z, and swings at the ceiling or floor between them. Its attack
+//   range is horizontal only.
+//
+//   1: the enemy keeps the victim, as shipped.
+//   0: the enemy drops it and returns to patrol until it sees or reaches one.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_ENEMY_RETAIN=1.
+#ifndef NOCTURNE_AUTHENTIC_ENEMY_RETAIN
+#define NOCTURNE_AUTHENTIC_ENEMY_RETAIN 0
 #endif
 
 // NOCTURNE_AUTHENTIC_MENU_VERSION

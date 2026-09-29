@@ -134,10 +134,11 @@ def _sibling_asm(path):
     """Read the .asm that sits beside a .cpp/.c/.keep.cpp, or '' if absent.
 
     Most asm-side detectors are decompiler-state-dependent and deliberately
-    excluded here, but dropped_fyl2x is not: it only uses the asm as a yes/no
-    gate ("does this function compute FYL2X at all"), and what it flags is
-    fixable in the keep. Reading the committed .asm makes it usable during keep
-    work instead of only at export time.
+    excluded here, but dropped_fyl2x and missing_cave_copy are not: each uses
+    the asm only as a gate ("does this function compute FYL2X", "does it hold a
+    cave block of this size"), and what it flags is fixable in the keep.
+    Reading the committed .asm makes them usable during keep work instead of
+    only at export time.
     """
     base = path
     for suffix in ('.keep.cpp', '.keep.c', '.cpp', '.c'):
@@ -231,6 +232,7 @@ def run_detectors(susp, code, struct_layout_map=None,
     found.extend(susp.identify_mem_magic_size(
         code, struct_layout_map, struct_size_map))
     found.extend(susp.identify_pointer_stride_bytecount(code))
+    found.extend(susp.identify_null_member_upcast(code))
     found.extend(susp.identify_stale_struct_offset_64bit(
         code, struct_layout_map))
     found.extend(susp.identify_derived_field_index_pun(
@@ -238,6 +240,7 @@ def run_detectors(susp, code, struct_layout_map=None,
     found.extend(susp.identify_flattened_array_index(code))
     if asm_code:
         found.extend(susp.identify_dropped_fyl2x(code, asm_code))
+        found.extend(susp.identify_missing_cave_copy(code, asm_code))
     if cpp_code:
         found.extend(susp.identify_stale_enum_name(
             code, cpp_code, enum_value_map))

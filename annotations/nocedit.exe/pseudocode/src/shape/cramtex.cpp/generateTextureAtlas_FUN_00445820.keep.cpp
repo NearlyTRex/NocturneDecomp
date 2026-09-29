@@ -51,7 +51,7 @@ void __cdecl shape_cramtex_cpp_generateTextureAtlas_FUN_00445820(int acceptable_
 #endif
   srand(0x16);
   _qsort
-            (g_CramSortedTextureEntries,g_CramTextureCount,0x4c,
+            (g_CramSortedTextureEntries,g_CramTextureCount,sizeof(*g_CramSortedTextureEntries),
              shape_cramtex_cpp_qsortByLargestDimension_FUN_004457f0);
   iVar12 = 0;
   g_CramTotalPixelArea = 0;

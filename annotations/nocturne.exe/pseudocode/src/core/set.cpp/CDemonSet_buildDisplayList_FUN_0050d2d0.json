@@ -122,15 +122,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 300,
-    "complexity_score": 332,
+    "complexity_score": 347,
     "cross_reference_count": 5,
     "function_call_count": 7,
     "global_count": 25,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 142,
-    "suspect_count": 16,
+    "suspect_count": 17,
     "suspect_types": [
       "pointer_cast",
+      "pointer_stride_bytecount",
       "shadow_pointer_walk",
       "stack_ref",
       "undefined_data",
@@ -732,6 +733,14 @@
       "severity": "moderate",
       "text": "pCVar6 = (CDemonSet *)pCVar6->cameras;",
       "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "_qsort element width is the literal 8 instead of sizeof(*base). If the elements are pointers or hold one, the sort walks misaligned elements on the 64-bit build.",
+      "line": 99,
+      "match": "_qsort",
+      "severity": "moderate",
+      "text": "_qsort",
+      "type": "pointer_stride_bytecount"
     },
     {
       "description": "Uninitialized variable: fStack_5c",

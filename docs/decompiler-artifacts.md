@@ -48,6 +48,7 @@ mechanical rewrites.
 | `partial_struct_copy` | [§31](#31--partial-struct-copy) | `.keep` |
 | `phantom_float_to_int` | [§32](#32--phantom-floatint-conversion) | `.keep` |
 | `pointer_truncation` | [§27](#27--pointer-truncation-via-intuint-cast) | `.keep`, or Ghidra if the operand is a mistyped offset |
+| `null_member_upcast` | [§36](#36--upcast-spelled-as-member-access-on-a-null-pointer) | `.keep` |
 | `static_shift_too_many_bits` | [Flag-math idioms](#flag-math-idioms) | `.keep` |
 | `static_self_assignment` | dead `pX = pX;` — delete, or fix the whole [§19](#19--pre-increment-array-walk-loop) loop | `.keep` |
 | `static_int_to_address` | [§12](#12--byte-buffers-and-primitive-walkers-that-are-really-structs) / [§13](#13--stack-slot-reuse) / [§11](#11--hardcoded-addresses-for-known-globals) / [§15](#15--wrong-global-from-watcom-1-based-indexing) | triage |
@@ -907,6 +908,25 @@ is not flagged — unless the subscripted field is itself pointer-typed, which i
 
 See [64-bit portable forms](keep-files.md#64-bit-portable-forms) for when to prefer the wide form
 generally.
+
+### §36 — Upcast spelled as member access on a null pointer
+
+Ghidra writes a derived-to-`CDemonActor` upcast as the address of the embedded base,
+`&(ptr)->base`. The binary just passes `ptr`, since `base` sits at offset 0.
+`castToClassHash`, `isOfClassHash` and `isOfClass` all return 0/NULL for a NULL actor, and the
+game relies on that, so `ptr` is often NULL there. `&(ptr)->base` on a NULL `ptr` is undefined
+behaviour, and UBSan halts the default build on it ("member access within null pointer").
+
+```cpp
+castToClassHash(&((this_ptr->base).pushed_object)->base, hash);          // broken
+castToClassHash((CDemonActor *)(this_ptr->base).pushed_object, hash);    // fixed
+```
+
+`null_member_upcast` flags that argument shape into the three helpers. It skips `this_ptr`, and
+skips any site where code that must run first NULL-tests the pointer or dereferences it: the
+call's own statement, enclosing conditions, an `else` branch, and early-exit
+`if (ptr == NULL) return;` guards. It does not skip a test in a sibling block that closed before
+the call. The cast form is correct at every site, so a false positive costs only a rewrite.
 
 ## Static-analysis review flags
 

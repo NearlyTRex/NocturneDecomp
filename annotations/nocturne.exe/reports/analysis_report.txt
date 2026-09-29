@@ -7,10 +7,10 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 4922
-Clean functions: 2534 (51.5%)
-Functions with suspects: 2388 (48.5%)
+Clean functions: 2533 (51.5%)
+Functions with suspects: 2389 (48.5%)
 
-Total suspect patterns: 20952
+Total suspect patterns: 20956
 Average suspects per function: 4.26
 
 Virtual files: 203 total, 10 at 100%, 12 at 90%+
@@ -60,8 +60,8 @@ SUSPECT PATTERN BREAKDOWN
   carry_arith_idiom         77
   warning_unreachable       67
   register_param            50
+  pointer_stride_bytecount  44
   self_copy_guard           40
-  pointer_stride_bytecount  40
   derived_field_index_pun   32
   bit_int_float_compare     31
   unrolled_strchr           30
@@ -163,7 +163,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   00414e60: core_battery.cpp_CBattery_process_FUN_00414e60 (4 lines)
   00414f40: core_battery.cpp_CBattery_getCollisionType_FUN_00414f40 (4 lines)
   00415040: core_beast.cpp_CBeast_getActorType_FUN_00415040 (4 lines)
-  ... and 2484 more
+  ... and 2483 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -576,6 +576,19 @@ FUNCTIONS BY SUSPECT TYPE
     004d9eac: core_mmx.c_detectIntelProcessor_FUN_004d9eac
     00530716: engine_special.cpp_renderScanlineSwapped_FUN_00530716
 
+  pointer_stride_bytecount (34 functions):
+    00405b40: engine_3d.c_renderSortedPolygonList_FUN_00405b40
+    00416d40: core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00416d40
+    00453620: core_dmodel.cpp_CKeyFramedModel_calcNormals_FUN_00453620
+    0045d310: cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_0045d310
+    00461db0: engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_00461db0
+    00473f10: shape_edittool.cpp_CStrList_remove_FUN_00473f10
+    00474010: shape_edittool.cpp_CStrList_sort_FUN_00474010
+    0047aa50: core_event.cpp_CEventList_process_FUN_0047aa50
+    004802e0: core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_004802e0
+    00480420: core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_00480420
+    ... and 24 more
+
   self_copy_guard (24 functions):
     0040b300: core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040b300
     0041ceb0: core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0
@@ -588,19 +601,6 @@ FUNCTIONS BY SUSPECT TYPE
     00468d00: core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_00468d00
     00478120: core_elephant.cpp_CElephantGun_renderAimBeam_FUN_00478120
     ... and 14 more
-
-  pointer_stride_bytecount (30 functions):
-    00416d40: core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00416d40
-    00453620: core_dmodel.cpp_CKeyFramedModel_calcNormals_FUN_00453620
-    0045d310: cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_0045d310
-    00473f10: shape_edittool.cpp_CStrList_remove_FUN_00473f10
-    0047aa50: core_event.cpp_CEventList_process_FUN_0047aa50
-    004802e0: core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_004802e0
-    00480420: core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_00480420
-    00480550: core_event.cpp_CEventList_setTimerEvent_FUN_00480550
-    004806d0: core_event.cpp_CEventList_setCounter_FUN_004806d0
-    00480950: core_event.cpp_CEventList_setActorVariable_FUN_00480950
-    ... and 20 more
 
   derived_field_index_pun (30 functions):
     00411a10: core_bat.cpp_CBat_ctor_FUN_00411a10

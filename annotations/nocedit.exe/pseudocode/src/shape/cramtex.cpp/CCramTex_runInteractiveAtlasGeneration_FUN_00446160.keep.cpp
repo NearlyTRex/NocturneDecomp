@@ -153,7 +153,7 @@ LAB_004461b1:
         ppSVar15 = ppSVar15 + 1;
       } while (iVar20 < (int)local_a8);
       _qsort
-                (local_3c,local_a8,4,shape_cramtex_cpp_qsortRectanglesByActiveFlag_FUN_00446140);
+                (local_3c,local_a8,sizeof(*local_3c),shape_cramtex_cpp_qsortRectanglesByActiveFlag_FUN_00446140);
     }
     iVar29 = 0;
     ppSVar31 = local_3c;

@@ -473,6 +473,15 @@
       "type": "shadow_pointer_walk"
     },
     {
+      "description": "_qsort element width is the literal 8 instead of sizeof(*base). If the elements are pointers or hold one, the sort walks misaligned elements on the 64-bit build.",
+      "line": 123,
+      "match": "_qsort",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "_qsort",
+      "type": "pointer_stride_bytecount"
+    },
+    {
       "description": "Compiler displaced index base: [reg*8 + 0x3342b48] lands in g_VertexNormalArray but intended target is g_SetDisplayListCount at 0x3342b4c (displaced by 4 bytes)",
       "displaced_from": "g_VertexNormalArray",
       "displacement": "0x3342b48",

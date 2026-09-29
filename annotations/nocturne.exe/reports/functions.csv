@@ -117,7 +117,7 @@ engine_3d.c_computeSortedPolygonKey_FUN_004059c0,004059c0,engine/3d.c,28,14,unde
 engine_3d.c_compareSortedPolygonDepth_FUN_00405a60,00405a60,engine/3d.c,14,0,,14
 engine_3d.c_queueSortedPolygon_FUN_00405ab0,00405ab0,engine/3d.c,18,12,displaced_global_access|undefined_data,148
 engine_3d.c_flushSortedPolygons_FUN_00405b30,00405b30,engine/3d.c,5,0,,5
-engine_3d.c_renderSortedPolygonList_FUN_00405b40,00405b40,engine/3d.c,86,27,pointer_cast|pointer_truncation|unaffected_reg|undefined_data|warning_overlapping_globals,381
+engine_3d.c_renderSortedPolygonList_FUN_00405b40,00405b40,engine/3d.c,86,28,pointer_cast|pointer_stride_bytecount|pointer_truncation|unaffected_reg|undefined_data|warning_overlapping_globals,396
 engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00405c90,00405c90,engine/3d.c,51,11,pointer_cast|pointer_truncation|shadow_pointer_walk|undefined_data|warning_overlapping_globals,186
 engine_3d.c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_00405e10,00405e10,engine/3d.c,91,11,pointer_cast|pointer_truncation|shadow_pointer_walk|undefined_data,221
 engine_3d.c_renderPolygonLitNearPlaneOp35_FUN_00406010,00406010,engine/3d.c,26,0,,26
@@ -1572,7 +1572,7 @@ engine_drender.cpp_CDemonRenderer_processQuadPrimitive_FUN_00461ad0,00461ad0,eng
 engine_drender.cpp_CDemonRenderer_captureFace_FUN_00461bd0,00461bd0,engine/drender.cpp,68,4,pointer_cast|undefined_data|warning_overlapping_globals,123
 engine_drender.cpp_qsortByCapturedFaceDepthAscending_FUN_00461d50,00461d50,engine/drender.cpp,10,0,,10
 engine_drender.cpp_qsortByCapturedFaceDepthDescending_FUN_00461d80,00461d80,engine/drender.cpp,10,0,,10
-engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_00461db0,00461db0,engine/drender.cpp,54,5,raw_address_pointer_store|undefined_data|unresolved_funcptr|warning_overlapping_globals,124
+engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_00461db0,00461db0,engine/drender.cpp,54,6,pointer_stride_bytecount|raw_address_pointer_store|undefined_data|unresolved_funcptr|warning_overlapping_globals,139
 engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0,00461eb0,engine/drender.cpp,33,2,unrolled_strcpy|warning_overlapping_globals,63
 engine_drender.cpp_CDemonRenderer_updateTexture_FUN_00461f60,00461f60,engine/drender.cpp,5,0,,5
 engine_drender.cpp_CDemonRenderer_depthTest_FUN_00461f80,00461f80,engine/drender.cpp,23,2,pointer_cast|pointer_truncation,53
@@ -1782,7 +1782,7 @@ shape_edittool.cpp_CStrList_removeAt_FUN_00473ef0,00473ef0,shape/edittool.cpp,5,
 shape_edittool.cpp_CStrList_remove_FUN_00473f10,00473f10,shape/edittool.cpp,26,2,pointer_cast|pointer_stride_bytecount,56
 shape_edittool.cpp_CStrList_sortAll_FUN_00473fd0,00473fd0,shape/edittool.cpp,5,0,,5
 shape_edittool.cpp_qsortByString_FUN_00473ff0,00473ff0,shape/edittool.cpp,6,0,,6
-shape_edittool.cpp_CStrList_sort_FUN_00474010,00474010,shape/edittool.cpp,14,0,,14
+shape_edittool.cpp_CStrList_sort_FUN_00474010,00474010,shape/edittool.cpp,14,1,pointer_stride_bytecount,29
 shape_edittool.cpp_CStrList_getStringAt_FUN_00474080,00474080,shape/edittool.cpp,4,0,,4
 shape_edittool.cpp_CStrList_getFieldAt_FUN_00474090,00474090,shape/edittool.cpp,35,0,,35
 shape_edittool.cpp_CStrList_findString_FUN_00474140,00474140,shape/edittool.cpp,20,0,,20
@@ -3684,7 +3684,7 @@ core_set.cpp_CDemonSet_process_FUN_0050d040,0050d040,core/set.cpp,60,3,undefined
 core_set.cpp_CDemonSet_getReverbPresetAtPosition_FUN_0050d1c0,0050d1c0,core/set.cpp,29,3,pointer_cast|pointer_truncation|shadow_pointer_walk,74
 core_set.cpp_CDemonSet_loadAssets_FUN_0050d280,0050d280,core/set.cpp,6,1,raw_address_constant,21
 core_set.cpp_qsortByDisplayListEntry_FUN_0050d2a0,0050d2a0,core/set.cpp,10,0,,10
-core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2d0,0050d2d0,core/set.cpp,142,16,pointer_cast|shadow_pointer_walk|stack_ref|undefined_data|unknown_field|warning_overlapping_globals,332
+core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2d0,0050d2d0,core/set.cpp,142,17,pointer_cast|pointer_stride_bytecount|shadow_pointer_walk|stack_ref|undefined_data|unknown_field|warning_overlapping_globals,347
 core_set.cpp_CDemonSet_renderEnvMapBatchTri_FUN_0050d640,0050d640,core/set.cpp,5,0,,5
 core_set.cpp_CDemonSet_renderEnvMapBatchQuad_FUN_0050d670,0050d670,core/set.cpp,5,0,,5
 core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_0050d6a0,0050d6a0,core/set.cpp,113,43,pointer_cast|pointer_truncation|undefined_data|unrolled_memcpy|warning_overlapping_globals,568

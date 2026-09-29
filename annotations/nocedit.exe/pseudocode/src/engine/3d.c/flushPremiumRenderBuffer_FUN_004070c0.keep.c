@@ -20,7 +20,7 @@ void __cdecl engine_3d_c_flushPremiumRenderBuffer_FUN_004070c0(void)
       g_RenderBufferSortArray[iVar2] = g_RenderBufferPool + iVar2;
     }
     _qsort
-              (g_RenderBufferSortArray,g_RenderBufferCount,4,
+              (g_RenderBufferSortArray,g_RenderBufferCount,sizeof(*g_RenderBufferSortArray),
                engine_3d_c_qsortByRenderDepth_FUN_00407080);
     if (g_MMXSupported == 0) {
       if (g_BitsPerPixel == 0x20) {

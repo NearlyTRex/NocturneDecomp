@@ -30,7 +30,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80
     else {
       compar = (QSORT_COMPARATOR_FUNC *)engine_drender_cpp_qsortByCapturedFaceDepthAscending_FUN_0048da20;
     }
-    _qsort(g_CapturedFacePointers,g_CaptureFaceCount,4,compar);
+    _qsort(g_CapturedFacePointers,g_CaptureFaceCount,sizeof(*g_CapturedFacePointers),compar);
     this_ptr->texture_capture_enabled = 0;
     if (this_ptr->face_capture_enabled != 0) {
       engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(this_ptr,1);

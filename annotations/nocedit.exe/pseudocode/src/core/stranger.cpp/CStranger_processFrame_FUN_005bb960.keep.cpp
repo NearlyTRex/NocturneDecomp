@@ -1066,7 +1066,7 @@ LAB_005bc1a6:
     if ((1.0 < fVar17) &&
        (pCVar19 = (CBoxActor *)
                   core_actor_cpp_castToClassHash_FUN_0040c790
-                            (&((this_ptr->base).pushed_object)->base,g_CBoxActorClassInfo.name_hash)
+                            ((CDemonActor *)(this_ptr->base).pushed_object,g_CBoxActorClassInfo.name_hash)
        , pCVar19 != (CBoxActor *)0x0)) {
       core_stranger_cpp_CStranger_getHandsMidpoint_FUN_005be490(this_ptr,local_14c);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0

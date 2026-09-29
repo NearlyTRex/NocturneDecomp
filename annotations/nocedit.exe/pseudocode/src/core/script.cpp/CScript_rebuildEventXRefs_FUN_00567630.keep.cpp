@@ -27,7 +27,7 @@ void __cdecl core_script_cpp_CScript_rebuildEventXRefs_FUN_00567630(CScript *thi
   }
   core_msnedit_cpp_CDemonMission_buildScriptCrossReferences_FUN_0053ea30(g_CDemonMissionPtr);
   _qsort
-            (this_ptr->xref_entries,this_ptr->xref_count,0x114,
+            (this_ptr->xref_entries,this_ptr->xref_count,sizeof(*this_ptr->xref_entries),
              core_script_cpp_compareEventXRefs_FUN_005675a0);
   return;
 }
