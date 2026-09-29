@@ -70,8 +70,9 @@ extern "C" {
 #endif
 
 // Nonzero when the host has announced a mission change this machine has not
-// acted on yet. CGame::runGameSession polls this so a guest leaves its session
-// even when its own script never raised mission_ended.
+// acted on yet, and this machine has simulated every frame the host did before
+// leaving. CGame::runGameSession polls this so a guest leaves its session even
+// when its own script never raised mission_ended, and on the same sim frame.
 int nocturne_net_mission_pending(void);
 
 // Settles which mission both machines are about to load, and writes it into

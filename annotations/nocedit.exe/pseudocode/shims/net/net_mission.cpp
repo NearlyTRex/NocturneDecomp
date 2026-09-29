@@ -21,8 +21,9 @@ typedef struct SNetPacket_MissionChange {
     SNetPacketHeader header;                       // 0x0
     uint  seed;                                    // 0x5
     int   serial;                                  // 0x9  which transition
-    char  mission[NOCTURNE_NET_MISSION_NAME_MAX];  // 0xd
-} SNetPacket_MissionChange;                        // 0x4d
+    int   end_frame;                               // 0xd  host's sim_frame_index on leaving
+    char  mission[NOCTURNE_NET_MISSION_NAME_MAX];  // 0x11
+} SNetPacket_MissionChange;                        // 0x51
 #pragma pack(pop)
 
 static SNetPacket_MissionChange s_announced;
@@ -42,6 +43,10 @@ static int s_acted_serial = 0;
 // mission over the same seconds.
 #define MISSION_WAIT_SECONDS 10
 
+// getTime's unit: g_CurrentGameTime advances by getTime() / 0x12 and runs at
+// 65536 per second.
+#define MISSION_GETTIME_PER_SECOND (0x12 * 65536)
+
 // -----------------------------------------------------------------------------
 
 static int mission_is_network_game(void)
@@ -56,6 +61,60 @@ static int mission_is_host(void)
             (g_CNetGamePtr->connection_type == CONNECTION_HOST));
 }
 
+// The frames a guest still needs to reach end_frame. processServerFrame
+// re-sends unacknowledged frames on every pass, but the host stops calling it
+// once its script ends the mission, so a guest that lost one of the last few
+// would never catch up.
+static void mission_send_final_frames(int player)
+{
+    CNetGame *net_game = g_CNetGamePtr;
+    SNetPacket_SimFrame packet;
+    int i;
+
+    for (i = 0; i < g_SimFrameCount; i++) {
+        if ((g_SimFrameHistory[i].sequence_number < net_game->players[player].sim_frame_index) ||
+            (s_announced.end_frame <= g_SimFrameHistory[i].sequence_number)) {
+            continue;
+        }
+        std::memset(&packet, 0, sizeof(packet));
+        packet.header.size = sizeof(SNetPacket_SimFrame);
+        packet.header.type = PACKET_SIM_FRAME;
+        packet.frame       = g_SimFrameHistory[i];
+        core_netgame_cpp_CNetGame_send_FUN_005411c0(net_game, player, &packet.header);
+    }
+}
+
+// Removes every history entry from `first` on.
+static void mission_drop_frames_from(int first)
+{
+    int i = 0;
+
+    while (i < g_SimFrameCount) {
+        if (g_SimFrameHistory[i].sequence_number < first) {
+            i = i + 1;
+            continue;
+        }
+        g_SimFrameCount = g_SimFrameCount - 1;
+        memmove(&g_SimFrameHistory[i], &g_SimFrameHistory[i + 1],
+                (g_SimFrameCount - i) * sizeof(*g_SimFrameHistory));
+    }
+}
+
+// CGame::processFrame runs CGame::process for frame N and then, on the host,
+// processServerFrame, which applies N+1 for the next pass. runGameSession
+// checks mission_ended between passes, so the host leaves with N+1 applied and
+// never simulated; a guest applies and simulates in the same pass and leaves
+// with nothing extra. Unwinding that frame starts both machines' next mission
+// on the same sequence number.
+static void mission_unwind_unsimulated_frame(void)
+{
+    CNetGame *net_game = g_CNetGamePtr;
+    SNetPlayer *own = &net_game->players[net_game->local_player_index];
+
+    own->sim_frame_index = own->sim_frame_index - 1;
+    mission_drop_frames_from(own->sim_frame_index);
+}
+
 static void mission_broadcast(void)
 {
     CNetGame *net_game = g_CNetGamePtr;
@@ -65,6 +124,7 @@ static void mission_broadcast(void)
     for (repeat = 0; repeat < MISSION_SEND_REPEATS; repeat++) {
         for (i = 0; i < net_game->player_count; i++) {
             if (i != net_game->local_player_index) {
+                mission_send_final_frames(i);
                 core_netgame_cpp_CNetGame_send_FUN_005411c0(net_game, i, &s_announced.header);
             }
         }
@@ -98,25 +158,28 @@ static void mission_apply_seed(uint seed)
 // wait — the host is off loading and this machine has nothing else to do.
 static int mission_wait_for_announcement(void)
 {
-    int deadline;
-    int now;
+    int start;
+    uint elapsed;
     int pressed;
 
-    deadline = wincore_winrun_cpp_getTime_FUN_005f2dc0() + (MISSION_WAIT_SECONDS * 1000);
+    start = wincore_winrun_cpp_getTime_FUN_005f2dc0();
     while (s_have_announced == 0) {
         engine_special_cpp_clearScreen_FUN_005b3e70();
         engine_2d_c_drawText_FUN_00401fd0
             ((char *)"Waiting for the host to choose the next mission...", 0, 0xb);
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
         core_netgame_cpp_CNetGame_receivePackets_FUN_005405b0(g_CNetGamePtr);
+        if (s_have_announced != 0) {
+            break;
+        }
 
         pressed = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr, DIK_ESCAPE);
         if (pressed != 0) {
             engine_2d_c_clearInputAndWait_FUN_00403260();
             return 0;
         }
-        now = wincore_winrun_cpp_getTime_FUN_005f2dc0();
-        if (deadline < now) {
+        elapsed = (uint)wincore_winrun_cpp_getTime_FUN_005f2dc0() - (uint)start;
+        if ((uint)(MISSION_WAIT_SECONDS * MISSION_GETTIME_PER_SECOND) < elapsed) {
             DLOG("netplay", "MISSION no announcement from the host after %d seconds",
                     MISSION_WAIT_SECONDS);
             return 0;
@@ -127,12 +190,21 @@ static int mission_wait_for_announcement(void)
 
 // -----------------------------------------------------------------------------
 
+// A guest runs behind the host, so the announcement can arrive before the guest
+// has simulated the frame that ended the host's mission. Leaving then would
+// skip it and start the next mission behind the host.
 extern "C" int nocturne_net_mission_pending(void)
 {
+    CNetGame *net_game = g_CNetGamePtr;
+
     if (mission_is_network_game() == 0) {
         return 0;
     }
-    return ((s_have_announced != 0) && (s_acted_serial < s_announced.serial));
+    if ((s_have_announced == 0) || (s_announced.serial <= s_acted_serial)) {
+        return 0;
+    }
+    return (s_announced.end_frame <=
+            net_game->players[net_game->local_player_index].sim_frame_index);
 }
 
 extern "C" void nocturne_net_mission_resolve(char *name, int name_size)
@@ -145,6 +217,7 @@ extern "C" void nocturne_net_mission_resolve(char *name, int name_size)
     }
 
     if (mission_is_host()) {
+        mission_unwind_unsimulated_frame();
         s_serial = s_serial + 1;
 
         std::memset(&s_announced, 0, sizeof(s_announced));
@@ -152,6 +225,8 @@ extern "C" void nocturne_net_mission_resolve(char *name, int name_size)
         s_announced.header.size = sizeof(SNetPacket_MissionChange);
         s_announced.seed        = nocturne_rng_seed();
         s_announced.serial      = s_serial;
+        s_announced.end_frame   =
+            g_CNetGamePtr->players[g_CNetGamePtr->local_player_index].sim_frame_index;
         strncpy(s_announced.mission, name, sizeof(s_announced.mission) - 1);
         s_have_announced = 1;
 
@@ -160,8 +235,9 @@ extern "C" void nocturne_net_mission_resolve(char *name, int name_size)
         // thing both machines have to agree on before they simulate — and this
         // re-covers a guest that missed the lobby's copy. See net_cheats.h.
         nocturne_net_cheats_announce();
-        DLOG("netplay", "MISSION announce #%d '%s' seed=%u",
-                s_announced.serial, s_announced.mission, s_announced.seed);
+        DLOG("netplay", "MISSION announce #%d '%s' seed=%u end_frame=%d",
+                s_announced.serial, s_announced.mission, s_announced.seed,
+                s_announced.end_frame);
         return;
     }
 
@@ -196,6 +272,10 @@ extern "C" int nocturne_net_mission_begin(void)
     if (core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(g_CNetGamePtr, 1) == 0) {
         return 0;
     }
+    DLOG("netplay", "MISSION begin %s sim_idx=%d end_frame=%d",
+            mission_is_host() ? "(host)" : "(guest)",
+            g_CNetGamePtr->players[g_CNetGamePtr->local_player_index].sim_frame_index,
+            s_announced.end_frame);
 
     // Same two generators the lobby seeds, in the same order, for the same
     // reason: the mission load and everything startMission does run outside
@@ -209,10 +289,21 @@ extern "C" int nocturne_net_mission_begin(void)
 
 extern "C" int nocturne_net_mission_finish(void)
 {
+    CNetGame *net_game = g_CNetGamePtr;
+
     if (mission_is_network_game() == 0) {
         return 1;
     }
-    return core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(g_CNetGamePtr, 2);
+    if (core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(net_game, 2) == 0) {
+        return 0;
+    }
+    // The host sent its unsimulated frame before unwinding it, and would send
+    // a fresh frame under the same sequence number once play starts. Drop the
+    // stale copy so a guest cannot apply it first.
+    if (mission_is_host() == 0) {
+        mission_drop_frames_from(net_game->players[net_game->local_player_index].sim_frame_index);
+    }
+    return 1;
 }
 
 extern "C" int nocturne_net_mission_skip_prompt(void)
@@ -240,8 +331,14 @@ extern "C" int nocturne_net_mission_on_packet(const void *packet, int packet_siz
     s_announced = *incoming;
     s_announced.mission[sizeof(s_announced.mission) - 1] = '\0';
     s_have_announced = 1;
-    DLOG("netplay", "MISSION announced #%d '%s' seed=%u",
-            s_announced.serial, s_announced.mission, s_announced.seed);
+    // The guest keeps simulating up to end_frame while the host already waits
+    // at syncPlayers(1), and answers each stage request with its own
+    // local_sync_stage - still 4 from the mission it is finishing, which would
+    // carry the host through every barrier without it.
+    mission_reset_sync_stages();
+    DLOG("netplay", "MISSION announced #%d '%s' seed=%u end_frame=%d",
+            s_announced.serial, s_announced.mission, s_announced.seed,
+            s_announced.end_frame);
     return 1;
 }
 
