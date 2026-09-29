@@ -85,6 +85,14 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(CCharacter *th
     if ((fVar8 <= fVar5) && (fVar8 = fVar5, fVar9 < fVar5)) {
       fVar8 = fVar9;
     }
+#if !NOCTURNE_AUTHENTIC_WALK_TURN
+    fVar8 = fVar8 *
+            nocturne_walk_turn_scale
+                      ((this_ptr->walk_to_target != (CDemonActor *)0x0) ||
+                       (this_ptr->door_target != (CDoor *)0x0),
+                       core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
+                                 (local_74.y - (this_ptr->base).orient.vec.y));
+#endif
     *pfVar1 = *pfVar1 + fVar8;
     fVar7 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                       (local_74.y - (this_ptr->base).orient.vec.y);

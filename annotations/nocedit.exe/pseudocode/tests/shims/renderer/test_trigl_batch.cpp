@@ -7,7 +7,7 @@
 // and walks the remaining edge — is checked directly, because index arithmetic
 // that is wrong by one still produces triangles and still draws something.
 
-#include "tests/nocturne_test.h"
+#include "nocturne_test.h"
 #include "renderer/trigl_batch.h"
 
 #include <string>

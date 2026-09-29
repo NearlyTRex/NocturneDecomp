@@ -33,7 +33,7 @@ def delete_pseudocode(currentProgram, path):
 
     # Paths (relative to pseudocode/) to skip during cleanup — hand-written
     # or generated outside the exporter pipeline. May be nested.
-    protected_paths = {'shims', 'main', 'checks'}
+    protected_paths = {'shims', 'main', 'checks', 'tests'}
 
     def _is_protected(rel):
         rel = rel.replace(os.sep, '/')

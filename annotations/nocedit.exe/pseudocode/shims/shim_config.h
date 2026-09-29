@@ -156,6 +156,10 @@ void nocturne_trigl_envmap_pass_end(void);
 // explored state. Every entry point is inert under NOCTURNE_AUTHENTIC_AUTOMAP.
 #include "game/automap.h"
 
+// The forward-step scale for scripted walks (nocturne_walk_turn_scale), reached
+// from CCharacter::walkToPoint and gated there by NOCTURNE_AUTHENTIC_WALK_TURN.
+#include "game/walk_turn.h"
+
 // The pause menu's WARPS entry (nocturne_warps_*): the developer warps the
 // shipped mission scripts already listen for, raised the way RAISE raises them.
 // Reached from CGame::runGameSession, shown only when the Mission warps line in

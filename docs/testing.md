@@ -15,9 +15,33 @@ The test binaries are `EXCLUDE_FROM_ALL`, so an ordinary build does not pay for 
 `ctest` only runs what is already built, which means **building the target first is not
 optional**. A stale test binary will report a green run against code you have since changed.
 
+`ctest -L <suite>` runs one suite.
+
+## Adding tests
+
+Tests live in `pseudocode/tests/`, which mirrors `pseudocode/`: the test for
+`shims/core/file_search.cpp` is `tests/shims/core/test_file_search.cpp`. Any directory there
+with a `CMakeLists.txt` is a suite and is found automatically; each `test_*.cpp` in it is one
+test binary, also found automatically, named by its path (`shims/core/test_file_search`). A
+suite names the code it links:
+
+```cmake
+nocturne_test_suite(shims_core
+    SUBJECTS                     # relative to pseudocode/
+        shims/core/file_search.cpp
+        src/some/annotated.cpp
+    SUPPORT helper.cpp           # test-side files with no main(), relative to the suite
+)
+```
+
+`TESTS`, `EXCLUDE` and `DEFINITIONS` cover the rest; see
+[`cmake/nocturne_tests.cmake`](../cmake/nocturne_tests.cmake). Subjects are named rather than
+globbed: a file that pulls in GL or engine globals should be noticed when it is added. The
+globs are `CONFIGURE_DEPENDS`, so a new test or suite is picked up by the next build.
+
 ## The harness
 
-[`shims/tests/nocturne_test.h`](../annotations/nocedit.exe/pseudocode/shims/tests/nocturne_test.h)
+[`tests/nocturne_test.h`](../annotations/nocedit.exe/pseudocode/tests/nocturne_test.h)
 — header-only, no external dependency, deliberately:
 
 ```c
@@ -43,10 +67,12 @@ macros and a runner. This is those two things.
 
 | Suite | Subject |
 |---|---|
-| `core/` | ASCII case handling, file search |
-| `watcom/` | Watcom CRT I/O and path resolution |
-| `win32/` | `kernel32` entry points and the built-in DLL registry |
-| `renderer/` | `trigl` batching, state, texture, vertex handling, and golden traces |
+| `shims_core` | ASCII case handling, file search |
+| `shims_game` | Walk turning |
+| `shims_watcom` | Watcom CRT I/O and path resolution |
+| `shims_win32` | `kernel32` entry points and the built-in DLL registry |
+| `shims_renderer` | `trigl` batching, state, texture, vertex handling |
+| `shims_renderer_gl` | `trigl` GL call sequences and golden traces (`test_*_sequence.cpp`) |
 
 The renderer suites are the interesting ones. They test **order**, not just answers: the
 renderer reaches GL through a single table of function pointers, which `gl_recorder.cpp` fills

@@ -111,6 +111,7 @@
 // | `NOCTURNE_AUTHENTIC_NETPLAY` | 0 | addition | netplay is reachable, with its fixes |
 // | `NOCTURNE_AUTHENTIC_NET_CONFIG` | 0 | addition | network parameters come from system/netplay.ini |
 // | `NOCTURNE_AUTHENTIC_RNG` | 0 | addition | every draw goes through the sim/cosmetic funnel |
+// | `NOCTURNE_AUTHENTIC_WALK_TURN` | 0 | addition | a scripted walk slows to turn instead of arcing into doorframes |
 // | `NOCTURNE_EDITOR_BUILD` | 0 | binary | (default) the build presents as retail nocturne.exe |
 // | `NOCTURNE_AUTHENTIC_D3D_OPTIONS` | 0 | binary | hardware acceleration can be turned on |
 
@@ -2432,6 +2433,25 @@
 //   Override with -DNOCTURNE_AUTHENTIC_RNG=1 to revert to the shipped draws.
 #ifndef NOCTURNE_AUTHENTIC_RNG
 #define NOCTURNE_AUTHENTIC_RNG 0
+#endif
+
+// NOCTURNE_AUTHENTIC_WALK_TURN
+//   Whether a scripted walk slows down to turn.
+//
+//   CCharacter::walkToPoint moves a path-following character forward at full
+//   walk speed every step while turning it toward the path heading at no more
+//   than turn_speed, so at a doorway it arcs into the frame before it has
+//   turned. Cutscene walks have no stuck recovery unless the script set a
+//   timeout, so a character caught there stays caught.
+//
+//   1: full speed whatever the heading, as shipped.
+//   0: while a walk_to_target or door_target is set, the forward step scales
+//      from full at 30 degrees off the heading to a stop at 90
+//      (shims/game/walk_turn.cpp). Enemy pursuit is unchanged.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_WALK_TURN=1.
+#ifndef NOCTURNE_AUTHENTIC_WALK_TURN
+#define NOCTURNE_AUTHENTIC_WALK_TURN 0
 #endif
 
 // =============================================================================

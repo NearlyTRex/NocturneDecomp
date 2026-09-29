@@ -74,7 +74,7 @@ flag.
 
 ## What is gated
 
-69 toggles. The kinds below are the same ones the header's table names, and a flag's kind is the
+70 toggles. The kinds below are the same ones the header's table names, and a flag's kind is the
 honest reason its default is what it is.
 
 **`host` — the shipped behaviour depends on Win32 + DirectDraw and cannot be reproduced**
@@ -163,6 +163,7 @@ honest reason its default is what it is.
 | `NETPLAY` | netplay is reachable, with its fixes |
 | `NET_CONFIG` | network parameters come from `system/netplay.ini` |
 | `RNG` | every draw goes through the sim/cosmetic funnel |
+| `WALK_TURN` | a scripted walk slows to turn instead of arcing into doorframes |
 
 **`binary` — which of the two binaries this build is**
 
