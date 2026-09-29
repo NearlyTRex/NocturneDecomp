@@ -92,6 +92,7 @@
 // | `NOCTURNE_AUTHENTIC_BUILD_STAMP` | 0 | choice | the console banner dates this build, not Terminal Reality's |
 // | `NOCTURNE_AUTHENTIC_AUTOMAP` | 0 | addition | a bindable Doom-style map that fills in as you explore |
 // | `NOCTURNE_AUTHENTIC_GOGGLE_LOOK` | 0 | addition | the goggle view looks up and down with empty hands, for every hero |
+// | `NOCTURNE_AUTHENTIC_HERO_LOOK_AIM` | 0 | addition | Scat's aim follows look input under auto-aim until a target takes it |
 // | `NOCTURNE_AUTHENTIC_MENU_VERSION` | 0 | addition | the menu carries a line naming this build |
 // | `NOCTURNE_AUTHENTIC_SAVE_SLOTS` | 0 | addition | saves are picked from a slot list, not typed |
 // | `NOCTURNE_AUTHENTIC_SINGLE_PLAYER_MENU` | 0 | addition | START becomes PLAY, with Start and Load behind it |
@@ -1965,6 +1966,22 @@
 //   Override with -DNOCTURNE_AUTHENTIC_GOGGLE_LOOK=1.
 #ifndef NOCTURNE_AUTHENTIC_GOGGLE_LOOK
 #define NOCTURNE_AUTHENTIC_GOGGLE_LOOK 0
+#endif
+
+// NOCTURNE_AUTHENTIC_HERO_LOOK_AIM
+//   Whether Scat can aim with look input while auto-aim is on.
+//   CStranger::autoAimAtThreat integrates look_up_down_speed into the aim in
+//   every aim mode, and auto-aim only overrides it once a threat is found.
+//   CScat::updateAiming integrates it only for manual aim; under auto-aim with
+//   no target the pitch holds where it was, and firing with no target snaps it
+//   to level.
+//   1: shipped behaviour.
+//   0: with no target, auto-aim follows look input as the Stranger's does, at
+//      CScat's own rate and limits. A target still takes the aim.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_HERO_LOOK_AIM=1.
+#ifndef NOCTURNE_AUTHENTIC_HERO_LOOK_AIM
+#define NOCTURNE_AUTHENTIC_HERO_LOOK_AIM 0
 #endif
 
 // NOCTURNE_AUTHENTIC_SINGLE_PLAYER_MENU

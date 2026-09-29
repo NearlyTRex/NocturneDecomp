@@ -19,7 +19,7 @@ void __cdecl core_mission_cpp_CDemonMission_removeAllActors_FUN_00523f50(CDemonM
     pCVar1 = this_ptr->first_actor;
   }
 #if !NOCTURNE_AUTHENTIC_NETPLAY
-  nocturne_mission_purge_leftovers();
+  nocturne_net_pathcache_rewind();
 #endif
   core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(this_ptr);
   this_ptr_00 = g_CDemonSetPtr;

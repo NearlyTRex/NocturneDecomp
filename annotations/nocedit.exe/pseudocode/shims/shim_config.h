@@ -124,10 +124,6 @@ void nocturne_trigl_envmap_pass_end(void);
 // NOCTURNE_AUTHENTIC_GOGGLE_LOOK.
 #include "game/goggle_look.h"
 
-// Stale registry entries dropped between missions (nocturne_mission_purge_*),
-// reached from the mission TU. Inert under NOCTURNE_AUTHENTIC_NETPLAY.
-#include "game/mission_purge.h"
-
 // Modern controller support (nocturne_gamepad_*), reached from the game TU's
 // input path and from the menu TU's key-name and validity helpers. The pad
 // input codes it defines are reached the same way. Every entry point is inert
@@ -281,6 +277,10 @@ void nocturne_trigl_envmap_pass_end(void);
 // and the netgame TU. The shipped skip lives in the full pause menu, which a
 // network game never builds.
 #include "net/net_skip.h"
+
+// The path-map cache rewound at each mission start (nocturne_net_pathcache_*),
+// reached from the mission TU. Inert under NOCTURNE_AUTHENTIC_NETPLAY.
+#include "net/net_pathcache.h"
 
 // Deterministic hero selection for simulation code (nocturne_net_sim_*). Unlike
 // the two above this is NOT gated on NOCTURNE_AUTHENTIC_NETPLAY: it returns the

@@ -39,8 +39,7 @@ void __cdecl core_set_cpp_CDemonSet_renderGogglesView_FUN_0056c990(CDemonSet *th
             ((CDemonActor *)this_ptr_00,&local_2c,input_local_point);
   core_xform_cpp_matrixToEulerAngles_FUN_005f5690(matrix,&local_38);
 #if !NOCTURNE_AUTHENTIC_GOGGLE_LOOK
-  local_38.x = local_38.x +
-               nocturne_goggle_look_pitch(this_ptr_00,g_CGamePtr->delta_time_float);
+  local_38.x = local_38.x + nocturne_goggle_look_pitch(this_ptr_00);
 #endif
   local_20.z = 0.0;
   local_20.x = local_38.x + (float)0.261799387791667;

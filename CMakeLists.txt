@@ -78,10 +78,11 @@ if(NOCTURNE_VANILLA)
     include("${CMAKE_SOURCE_DIR}/cmake/vanilla.cmake")
 endif()
 
+# The netplay trace switches ride along so the dev preset can turn them on.
 get_cmake_property(_nocturne_cache_vars CACHE_VARIABLES)
 set(_nocturne_authentic_defs "")
 foreach(_var IN LISTS _nocturne_cache_vars)
-    if(_var MATCHES "^NOCTURNE_(AUTHENTIC_[A-Z0-9_]+|EDITOR_BUILD)$")
+    if(_var MATCHES "^NOCTURNE_(AUTHENTIC_[A-Z0-9_]+|EDITOR_BUILD|NETPLAY_(RNG|SIM)_TRACE)$")
         list(APPEND _nocturne_authentic_defs "${_var}=${${_var}}")
     endif()
 endforeach()

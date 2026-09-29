@@ -21,11 +21,16 @@ extern "C" {
 
 struct CHero;
 
-// Extra goggle-camera pitch, in radians, for `hero` this frame: look input
-// integrated over `delta_time`, frozen once the hero is dead. Zero for a
-// CStranger, whose head bone already carries its pitch — except empty-handed
-// in a network game, where CStranger::autoAimAtThreat keeps it level.
-float nocturne_goggle_look_pitch(struct CHero *hero, float delta_time);
+// Once per sim frame, from CGame::process: integrates the local hero's look
+// input over `delta_time` while the goggles are on, frozen once the hero is
+// dead. Per sim frame rather than per render, so a netplay guest that applies
+// several frames per render still turns at full speed.
+void nocturne_goggle_look_tick(float delta_time);
+
+// Extra goggle-camera pitch, in radians, for `hero`. Zero for a CStranger,
+// whose head bone already carries its pitch — except empty-handed in a network
+// game, where CStranger::autoAimAtThreat keeps it level.
+float nocturne_goggle_look_pitch(struct CHero *hero);
 
 // Level the view again. Called whenever the goggles are toggled.
 void nocturne_goggle_look_reset(void);

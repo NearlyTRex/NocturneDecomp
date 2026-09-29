@@ -110,11 +110,11 @@
 //
 //   Only writes during a network game in NET_MODE_PLAYING, so single player and
 //   the menus cost nothing — but expect a few MB per minute while playing.
-//   Turn it off once the desync it is chasing has been found.
 //
-//   Override with -DNOCTURNE_NETPLAY_SIM_TRACE=0.
+//   Off by default; the dev preset (exe-linux-asan-x86_64) turns it on, so
+//   release archives write no trace. Set with -DNOCTURNE_NETPLAY_SIM_TRACE=1.
 #ifndef NOCTURNE_NETPLAY_SIM_TRACE
-#define NOCTURNE_NETPLAY_SIM_TRACE 1
+#define NOCTURNE_NETPLAY_SIM_TRACE 0
 #endif
 
 // NOCTURNE_NETPLAY_RNG_TRACE
@@ -133,7 +133,8 @@
 //   set this, NOCTURNE_NETPLAY_SIM_TRACE and NOCTURNE_NETPLAY_SYNC_CHECK to 0
 //   for a netplay build that keeps every fix and writes no diagnostic files.
 //
-//   Override with -DNOCTURNE_NETPLAY_RNG_TRACE=0.
+//   Off by default; the dev preset (exe-linux-asan-x86_64) turns it on, so
+//   release archives write no trace. Set with -DNOCTURNE_NETPLAY_RNG_TRACE=1.
 #ifndef NOCTURNE_NETPLAY_RNG_TRACE
-#define NOCTURNE_NETPLAY_RNG_TRACE 1
+#define NOCTURNE_NETPLAY_RNG_TRACE 0
 #endif

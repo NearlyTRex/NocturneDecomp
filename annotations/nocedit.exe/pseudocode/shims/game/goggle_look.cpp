@@ -26,16 +26,22 @@ bool stranger_pitch_suppressed(CStranger *stranger) {
            ((*((carried->vtable)._ub)->getAllowedMeleeAttackTypes)(carried) & 4) == 0;
 }
 
-} // namespace
-
-extern "C" float nocturne_goggle_look_pitch(CHero *hero, float delta_time) {
+// Whether the goggle camera needs our pitch for `hero`.
+bool wants_pitch(CHero *hero) {
     if (hero == nullptr) {
-        return 0.0f;
+        return false;
     }
     CStranger *stranger = (CStranger *)core_actor_cpp_castToClassHash_FUN_0040c790(
         &(hero->base).base, g_CStrangerClassInfo.name_hash);
-    if (stranger != nullptr && !stranger_pitch_suppressed(stranger)) {
-        return 0.0f;
+    return stranger == nullptr || stranger_pitch_suppressed(stranger);
+}
+
+} // namespace
+
+extern "C" void nocturne_goggle_look_tick(float delta_time) {
+    CHero *hero = g_HeroActors[g_LocalHeroIndex];
+    if ((g_CGamePtr->goggles_active == 0) || !wants_pitch(hero)) {
+        return;
     }
     if (hero != s_hero) {
         s_hero = hero;
@@ -50,7 +56,10 @@ extern "C" float nocturne_goggle_look_pitch(CHero *hero, float delta_time) {
             s_pitch = kPitchMax;
         }
     }
-    return s_pitch;
+}
+
+extern "C" float nocturne_goggle_look_pitch(CHero *hero) {
+    return (wants_pitch(hero) && hero == s_hero) ? s_pitch : 0.0f;
 }
 
 extern "C" void nocturne_goggle_look_reset(void) {
