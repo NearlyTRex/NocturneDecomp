@@ -74,7 +74,7 @@ flag.
 
 ## What is gated
 
-65 toggles. The kinds below are the same ones the header's table names, and a flag's kind is the
+68 toggles. The kinds below are the same ones the header's table names, and a flag's kind is the
 honest reason its default is what it is.
 
 **`host` — the shipped behaviour depends on Win32 + DirectDraw and cannot be reproduced**
@@ -99,6 +99,7 @@ honest reason its default is what it is.
 | `DEATH_FADE_SKIP` | ESC no longer cuts the closing death iris short and jumps to Game Over |
 | `ENVMAP_OVERLAY` | a reflection comes out whole rather than speckled |
 | `MENU_LIGHTING` | the menu's moon puts back the lighting it found |
+| `MENU_BAT_WRAP` | a menu bat does not flash across the moon as its path wraps |
 | `CAMERA_SHAKE_TRACE` | the shake trace prints its value and a newline |
 | `HUD_ICON_SPACE` | inventory icons stay on screen above 640x480 |
 | `FOG_PLANE_SCALE` | fog covers the view at modes whose camera grid is not 320 wide |

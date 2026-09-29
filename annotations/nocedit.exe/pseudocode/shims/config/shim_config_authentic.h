@@ -57,6 +57,7 @@
 // | `NOCTURNE_AUTHENTIC_DEATH_FADE_SKIP` | 0 | defect | ESC no longer cuts the closing death iris short |
 // | `NOCTURNE_AUTHENTIC_ENVMAP_OVERLAY` | 0 | defect | a reflection comes out whole rather than speckled |
 // | `NOCTURNE_AUTHENTIC_MENU_LIGHTING` | 0 | defect | the menu's moon puts back the lighting it found |
+// | `NOCTURNE_AUTHENTIC_MENU_BAT_WRAP` | 0 | defect | a menu bat does not flash across the moon as its path wraps |
 // | `NOCTURNE_AUTHENTIC_CAMERA_SHAKE_TRACE` | 0 | defect | the shake trace prints its value and a newline |
 // | `NOCTURNE_AUTHENTIC_HUD_ICON_SPACE` | 0 | defect | inventory icons stay on screen above 640x480 |
 // | `NOCTURNE_AUTHENTIC_FOG_PLANE_SCALE` | 0 | defect | the fog plane is resampled onto the camera grid, not cropped to it |
@@ -531,6 +532,25 @@
 //   Override with -DNOCTURNE_AUTHENTIC_MENU_LIGHTING=1.
 #ifndef NOCTURNE_AUTHENTIC_MENU_LIGHTING
 #define NOCTURNE_AUTHENTIC_MENU_LIGHTING 0
+#endif
+
+// NOCTURNE_AUTHENTIC_MENU_BAT_WRAP
+//   Whether a menu bat is drawn on the segment that closes its path.
+//
+//   menu1.pth, menu2.pth and menu3.pth are flagged loop=1 but are open: each
+//   starts beside the camera (z 0..11) and ends far out (z 179..191). On a
+//   looped course CCourse::interpolate wraps the next frame to 0 past the last
+//   one (INC EDI / CMP EDI,ECX / JL, else XOR EDI,EDI at 0x004427d8), so for
+//   a position in [len-1, len) the bat is lerped straight from the far end back
+//   to the camera. That is one path unit, a frame or two at the bats' speed of
+//   20 units a second: a bat appears in front of the moon and is gone.
+//
+//   1: the bat is drawn across the closing segment, as shipped.
+//   0: the bat is not drawn there; it reappears at the start of its path.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_MENU_BAT_WRAP=1.
+#ifndef NOCTURNE_AUTHENTIC_MENU_BAT_WRAP
+#define NOCTURNE_AUTHENTIC_MENU_BAT_WRAP 0
 #endif
 
 // NOCTURNE_AUTHENTIC_CAMERA_SHAKE_TRACE
