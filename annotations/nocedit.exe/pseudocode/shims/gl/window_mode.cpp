@@ -159,6 +159,13 @@ extern "C" void nocturne_window_mode_apply(SDL_Window *window) {
 
     DLOG("render", "apply mode=%d (%s) flags 0x%x -> 0x%x",
             mode, nocturne_window_mode_name(mode), cur, want);
+    // Switching straight between exclusive and desktop fullscreen asks the
+    // backend to change the display mode and the window geometry while the
+    // window stays fullscreen, which not every video driver or window manager
+    // completes. Leave fullscreen first so the new kind starts from a window.
+    if (cur != 0 && want != 0) {
+        SDL_SetWindowFullscreen(window, 0);
+    }
     SDL_SetWindowFullscreen(window, want);
     if (want == 0) {
         SDL_SetWindowBordered(window, SDL_TRUE);
@@ -170,6 +177,14 @@ extern "C" void nocturne_window_mode_apply(SDL_Window *window) {
         // than the one that happened to be in force when it left.
         apply_pref_size();
     }
+
+    int win_w = 0, win_h = 0, draw_w = 0, draw_h = 0;
+    SDL_DisplayMode display_mode = {};
+    SDL_GetWindowSize(window, &win_w, &win_h);
+    SDL_GL_GetDrawableSize(window, &draw_w, &draw_h);
+    SDL_GetCurrentDisplayMode(SDL_GetWindowDisplayIndex(window), &display_mode);
+    DLOG("render", "applied mode=%d: window %dx%d drawable %dx%d display %dx%d",
+            mode, win_w, win_h, draw_w, draw_h, display_mode.w, display_mode.h);
 }
 
 extern "C" int nocturne_window_preferred_size(int *width, int *height) {
