@@ -8,6 +8,7 @@
 #include "nocturne.h"
 
 #include <chrono>
+#include <cstring>
 
 namespace {
 
@@ -29,16 +30,18 @@ struct ReentryGuard {
     ~ReentryGuard() { s_in_keepalive = 0; }
 };
 
-// How long a full-screen picture stays up in a network game, in seconds. Long
-// enough to read a bulletin board, short enough that a player who has already
-// read it is not left drumming their fingers - it cannot be dismissed early,
-// because an early dismissal is per-machine and that is the behaviour being
-// replaced.
+// How long a held screen stays up in a network game, in seconds. Long enough to
+// read a bulletin board. It cannot be dismissed early, because an early
+// dismissal is per-machine and that is the behaviour being replaced.
 const double k_hold_seconds = 10.0;
 
 // Measured on the clock, not on frame deltas: the loop this bounds does not run
 // the frame counter, and the menu countdown in attract.cpp had exactly that bug.
 double s_hold_deadline = 0.0;
+
+// The sim frame built before the held screen went up and not yet simulated, whose
+// inputs nocturne_net_hold_end discards. -1 when none is pending.
+int s_stale_sequence = -1;
 
 double now_seconds() {
     using namespace std::chrono;
@@ -90,4 +93,54 @@ extern "C" void nocturne_net_hold_begin(void)
 extern "C" int nocturne_net_hold_active(void)
 {
     return now_seconds() < s_hold_deadline ? 1 : 0;
+}
+
+extern "C" void nocturne_net_hold_end(void)
+{
+    CNetGame *net = g_CNetGamePtr;
+    int own_index;
+    int i;
+
+    if (net == (CNetGame *)0x0 || net->connection_type == CONNECTION_NONE) {
+        return;
+    }
+    if (net->local_player_index < 0 || net->player_count <= net->local_player_index) {
+        return;
+    }
+    own_index = net->players[net->local_player_index].sim_frame_index;
+
+    if (net->connection_type != CONNECTION_HOST) {
+        s_stale_sequence = own_index;
+        return;
+    }
+
+    // The host applied the frame before the screen went up; clear it where it
+    // landed and in the history a guest may still be fed from.
+    s_stale_sequence = own_index - 1;
+    for (i = 0; i < g_HeroCount; i++) {
+        if (g_HeroActors[i] != (CHero *)0x0) {
+            std::memset(&g_HeroActors[i]->player_input, 0, sizeof(SPlayerInput));
+        }
+    }
+    for (i = 0; i < g_SimFrameCount; i++) {
+        if (g_SimFrameHistory[i].sequence_number == s_stale_sequence) {
+            std::memset(g_SimFrameHistory[i].player_input, 0,
+                        sizeof(g_SimFrameHistory[i].player_input));
+        }
+    }
+}
+
+extern "C" void nocturne_net_hold_apply_if_due(int sequence_number)
+{
+    int i;
+
+    if (sequence_number != s_stale_sequence) {
+        return;
+    }
+    s_stale_sequence = -1;
+    for (i = 0; i < g_HeroCount; i++) {
+        if (g_HeroActors[i] != (CHero *)0x0) {
+            std::memset(&g_HeroActors[i]->player_input, 0, sizeof(SPlayerInput));
+        }
+    }
 }
