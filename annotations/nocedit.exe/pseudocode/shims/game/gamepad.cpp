@@ -120,8 +120,16 @@ void deadzone(float raw_x, float raw_y, float *out_x, float *out_y) {
     *out_y = raw_y * gain;
 }
 
+// SDL reports the pad's state to every process that opened it, focused or not,
+// so two copies of the game on one machine would both act on one press. The
+// keyboard and mouse arrive as window events and only reach the focused window;
+// the pad reads as released anywhere else, to match.
+bool pad_readable() {
+    return s_pad != nullptr && SDL_GetKeyboardFocus() != nullptr;
+}
+
 float axis_unit(SDL_GameControllerAxis axis) {
-    if (s_pad == nullptr) {
+    if (!pad_readable()) {
         return 0.0f;
     }
     const int raw = SDL_GameControllerGetAxis(s_pad, axis);
@@ -354,7 +362,7 @@ void nav_once(int nav, bool down, bool allowed) {
 }
 
 bool button_down(SDL_GameControllerButton button) {
-    return s_pad != nullptr && SDL_GameControllerGetButton(s_pad, button) != 0;
+    return pad_readable() && SDL_GameControllerGetButton(s_pad, button) != 0;
 }
 
 } // namespace
