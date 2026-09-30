@@ -162,6 +162,42 @@ static int hero_is_network_game(void)
 // so he still starts a mission summoning and reaches the pistol by cycling
 // weapons - which nocturne_net_weapon_request already keeps in step across
 // machines.
+// The pistol each hero was given, so the top-up leaves any other gun alone.
+// Replaced whenever the hero is re-created.
+#define HERO_EXTRA_GUN_SLOTS 8
+static struct {
+    const CHero *hero;
+    const CWeapon *weapon;
+} s_extra_guns[HERO_EXTRA_GUN_SLOTS];
+
+static void remember_extra_gun(const CHero *hero, const CWeapon *weapon)
+{
+    int free_slot = -1;
+    for (int i = 0; i < HERO_EXTRA_GUN_SLOTS; i++) {
+        if (s_extra_guns[i].hero == hero) {
+            s_extra_guns[i].weapon = weapon;
+            return;
+        }
+        if (free_slot < 0 && s_extra_guns[i].hero == (CHero *)0x0) {
+            free_slot = i;
+        }
+    }
+    if (free_slot >= 0) {
+        s_extra_guns[free_slot].hero = hero;
+        s_extra_guns[free_slot].weapon = weapon;
+    }
+}
+
+static int is_extra_gun(const CHero *hero, const CWeapon *weapon)
+{
+    for (int i = 0; i < HERO_EXTRA_GUN_SLOTS; i++) {
+        if (s_extra_guns[i].hero == hero) {
+            return s_extra_guns[i].weapon == weapon;
+        }
+    }
+    return 0;
+}
+
 static void hero_add_pistol(CHero *hero)
 {
     CDemonActor *actor_ptr;
@@ -177,6 +213,7 @@ static void hero_add_pistol(CHero *hero)
     weapon->ammo_count = HERO_EXTRA_GUN_AMMO;
     core_inv_cpp_CInventory_addItem_FUN_004fd600
               (&hero->inventory, (CDemonActor *)weapon, 0);
+    remember_extra_gun(hero, weapon);
 }
 
 extern "C" void nocturne_hero_reload_extra_gun(CHero *hero, CWeapon *weapon)
@@ -187,10 +224,9 @@ extern "C" void nocturne_hero_reload_extra_gun(CHero *hero, CWeapon *weapon)
     if (hero_is_network_game() == 0) {
         return;
     }
-    // Only the pistol handed out above. The Baron summon reaches this too and
-    // must not be touched - it has no ammunition concept at all, and the HUD is
-    // told not to draw one for it.
-    if (weapon->weapon_type != WEAPON_TYPE_GUN) {
+    // Only the pistol handed out above: not the Baron, and not a gun the hero
+    // picked up or got from a cheat.
+    if (is_extra_gun(hero, weapon) == 0) {
         return;
     }
     // CWeapon::fire is the single decrement in the engine - `if (ammo_count > 0)

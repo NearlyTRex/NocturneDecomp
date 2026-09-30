@@ -113,6 +113,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
   this_ptr->flashlight_active = 0;
 #if !NOCTURNE_AUTHENTIC_NETPLAY
   nocturne_hero_light_reset();
+  nocturne_baron_reset();
   net_target_stale = 0;
 #endif
   this_ptr->player_hit_flag = 0;

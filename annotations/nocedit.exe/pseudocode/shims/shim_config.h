@@ -129,6 +129,10 @@ void nocturne_trigl_envmap_pass_end(void);
 // NOCTURNE_AUTHENTIC_NETPLAY.
 #include "game/hero_light.h"
 
+// One Baron per Baron weapon (nocturne_baron_*), reached from the baron and
+// game TUs. Inert under NOCTURNE_AUTHENTIC_NETPLAY.
+#include "game/hero_baron.h"
+
 // Modern controller support (nocturne_gamepad_*), reached from the game TU's
 // input path and from the menu TU's key-name and validity helpers. The pad
 // input codes it defines are reached the same way. Every entry point is inert

@@ -1163,7 +1163,9 @@
 //                   drops aim_weight on every frame fire_state is not 2, and
 //                   canFireWeapon needs it at 1. A weapon that keeps fire held
 //                   (tommy gun, flame thrower, light gun) fires every other
-//                   frame and her arm bobs with the weight.
+//                   frame and her arm bobs with the weight. CScat::process
+//                   clears fire after every shot, which suits its AI (one
+//                   fire per shot) but makes a player press again each time.
 //
 //   1: shipped behaviour — Scat and Moloch can interact with nothing, sheathed
 //      fire falls through to an attack, only the Stranger can break a grab
@@ -1184,7 +1186,8 @@
 //      select refuses above 98% of it, and the cheats restore it. Scat's auto
 //      aim eases back to centre at its normal turn rate once it has no target.
 //      Gabriella stows the weapon she switched away from, as Scat does, and
-//      holds her aim while fire is held on a continuous weapon. Moloch's fire
+//      holds her aim while fire is held on a continuous weapon. A player's
+//      Scat keeps firing while fire is held; his AI is unchanged. Moloch's fire
 //      strikes in demon form, alternating two of his unused attack motions
 //      (hero_moloch.h).
 //
