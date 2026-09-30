@@ -81,8 +81,10 @@ if [[ "${SKIP_REGEN:-0}" != "1" ]]; then
     done
 fi
 
-# First-time configure — skipped if the build tree already exists.
-if [[ ! -d "${BUILD_DIR}" ]]; then
+# First-time configure — skipped once the tree has been configured. Test the
+# CMake cache, not the directory: CI restores _deps/ffmpeg into an otherwise
+# empty build dir.
+if [[ ! -f "${BUILD_DIR}/CMakeCache.txt" ]]; then
     echo "build.sh: configuring preset '${PRESET}' (first run)"
     cmake --preset "${PRESET}" "${CONFIGURE_ARGS[@]}" || exit $?
 fi
