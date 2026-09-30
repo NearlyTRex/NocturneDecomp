@@ -1,5 +1,10 @@
 # NocturneDecomp
 
+[![CI](https://github.com/NearlyTRex/NocturneDecomp/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/NearlyTRex/NocturneDecomp/actions/workflows/ci.yml)
+[![Security](https://github.com/NearlyTRex/NocturneDecomp/actions/workflows/security.yml/badge.svg?branch=main)](https://github.com/NearlyTRex/NocturneDecomp/actions/workflows/security.yml)
+[![Latest release](https://img.shields.io/github/v/release/NearlyTRex/NocturneDecomp)](https://github.com/NearlyTRex/NocturneDecomp/releases/latest)
+[![License: 0BSD (original work)](https://img.shields.io/badge/license-0BSD%20(original%20work)-blue)](LICENSE)
+
 A work-in-progress reverse engineering and decompilation project for the 1999 game **Nocturne**,
 aimed at understanding its engine and getting it running on modern systems.
 
