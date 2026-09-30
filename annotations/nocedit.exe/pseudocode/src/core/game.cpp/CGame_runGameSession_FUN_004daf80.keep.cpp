@@ -41,6 +41,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
   int net_was_client;
   int net_was_host;
   CDemonActor *net_dbg_focus;
+  int net_target_stale;
 #endif
   int quit_item;
   int skip_item;
@@ -112,6 +113,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
   this_ptr->flashlight_active = 0;
 #if !NOCTURNE_AUTHENTIC_NETPLAY
   nocturne_hero_light_reset();
+  net_target_stale = 0;
 #endif
   this_ptr->player_hit_flag = 0;
   this_ptr->geometry_debug_enabled = 0;
@@ -205,6 +207,12 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
         g_CScriptPtr->focus_actor_changed = 0;
       }
       iVar5 = 0;
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+      if ((this_ptr->cinematic_skip_in_progress == 0) &&
+          (g_CNetGamePtr->has_pending_sim_frame == 0)) {
+        net_target_stale = 0;  // processFrame renders this time
+      }
+#endif
       core_game_cpp_CGame_processFrame_FUN_004da100(this_ptr);
 #if !NOCTURNE_AUTHENTIC_NETPLAY
       if ((g_CNetGamePtr->connection_type == CONNECTION_CLIENT) &&
@@ -440,8 +448,13 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
           goto LAB_004db434;
         }
       }
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+      if (((this_ptr->cinematic_skip_in_progress == 0) && (g_CNetGamePtr->has_pending_sim_frame == 0)) &&
+         (iVar5 == 0) && (net_target_stale == 0)) {
+#else
       if (((this_ptr->cinematic_skip_in_progress == 0) && (g_CNetGamePtr->has_pending_sim_frame == 0)) &&
          (iVar5 == 0)) {
+#endif
         if (g_UseExternalRenderer == 0) {
           wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
           this_ptr->frame_counter = this_ptr->frame_counter + 1;
@@ -467,6 +480,9 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
                   (g_CDemonSetPtr,g_CDemonSetPtr->selected_camera_index);
         g_CDemonSetPtr->previous_best_camera_index = saved_pb_index;
         g_CDemonSetPtr->previous_best_camera_timer = saved_pb_timer;
+#endif
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+        net_target_stale = 1;
 #endif
       }
       EVar6 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)

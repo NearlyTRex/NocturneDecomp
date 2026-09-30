@@ -22,6 +22,7 @@
 #include "renderer/trigl_vertex.h"
 #include "renderer/builtin_dll.h"
 #include "core/debug_log.h"
+#include "debug/focus_trace.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -412,7 +413,9 @@ static int __cdecl trigl_set_video_mode2(int width, int height, int bits_per_pix
 static int __cdecl trigl_restore_video_mode(void) { return 1; }
 
 static int __cdecl trigl_toggle(void) {
+    NOCTURNE_FOCUS_TRACE_EVENT("toggle");
     nocturne_trigl_device_present();
+    NOCTURNE_FOCUS_TRACE_PRESENTED();
     return 1;
 }
 
@@ -493,19 +496,31 @@ static void __cdecl trigl_release_display_context(HDC hdc) { (void)hdc; }
 // =============================================================================
 
 static int __cdecl trigl_begin_scene(void) {
+    NOCTURNE_FOCUS_TRACE_EVENT("beginScene");
     g_draw_trace_count   = 0;
     g_draw_trace_dropped = 0;
     return nocturne_trigl_device_begin_scene();
 }
-static int __cdecl trigl_end_scene(void)   { return nocturne_trigl_device_end_scene(); }
-static int __cdecl trigl_lock_frame(void)  { return nocturne_trigl_device_lock_frame(); }
-static int __cdecl trigl_unlock_frame(void){ return nocturne_trigl_device_unlock_frame(); }
+static int __cdecl trigl_end_scene(void) {
+    NOCTURNE_FOCUS_TRACE_EVENT("endScene");
+    return nocturne_trigl_device_end_scene();
+}
+static int __cdecl trigl_lock_frame(void) {
+    NOCTURNE_FOCUS_TRACE_EVENT("lockFrame");
+    return nocturne_trigl_device_lock_frame();
+}
+static int __cdecl trigl_unlock_frame(void) {
+    NOCTURNE_FOCUS_TRACE_EVENT("unlockFrame");
+    return nocturne_trigl_device_unlock_frame();
+}
 
 static int __cdecl trigl_lock_hold_buffer(void) {
+    NOCTURNE_FOCUS_TRACE_EVENT("lockHoldBuffer");
     return nocturne_trigl_device_lock_hold_buffer();
 }
 
 static int __cdecl trigl_unlock_hold_buffer(void) {
+    NOCTURNE_FOCUS_TRACE_EVENT("unlockHoldBuffer");
     return nocturne_trigl_device_unlock_hold_buffer();
 }
 
@@ -514,16 +529,19 @@ static int __cdecl trigl_unlock_hold_buffer(void) {
 // =============================================================================
 
 static int __cdecl trigl_clear(void) {
+    NOCTURNE_FOCUS_TRACE_EVENT("clear");
     nocturne_trigl_device_clear_color();
     return 1;
 }
 
 static int __cdecl trigl_clear_z_buffer(void) {
+    NOCTURNE_FOCUS_TRACE_EVENT("clearZBuffer");
     nocturne_trigl_device_clear_depth();
     return 1;
 }
 
 static int __cdecl trigl_clear_z_box(int left, int right, int top, int bottom) {
+    NOCTURNE_FOCUS_TRACE_EVENT("clearZBox");
     nocturne_trigl_device_clear_depth_box(left, right, top, bottom);
     return 1;
 }
@@ -531,6 +549,7 @@ static int __cdecl trigl_clear_z_box(int left, int right, int top, int bottom) {
 // The engine renders the static world once, keeps its depth in a numbered slot,
 // and restores that region instead of clearing on the frames that follow.
 static int __cdecl trigl_master_z_buffer(int slot) {
+    NOCTURNE_FOCUS_TRACE_EVENT("masterZBuffer");
     nocturne_trigl_device_flush();
     return nocturne_trigl_gl_save_depth(slot, nocturne_trigl_device_width(),
                                         nocturne_trigl_device_height());
@@ -540,6 +559,7 @@ static int __cdecl trigl_master_z_buffer(int slot) {
 // it. Read against the body, the first is the SLOT and the remaining four are
 // the rectangle, whose right and bottom edges are inclusive.
 static int __cdecl trigl_restore_z_buffer(int slot, int left, int top, int right, int bottom) {
+    NOCTURNE_FOCUS_TRACE_EVENT("restoreZBuffer");
     nocturne_trigl_device_flush();
     // The rectangle is in the TARGET's space, not the 640x480 one the engine
     // submits geometry in while it composites through the hold buffer. Measured:
