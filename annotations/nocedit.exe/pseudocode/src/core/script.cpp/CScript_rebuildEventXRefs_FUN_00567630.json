@@ -223,6 +223,15 @@
       "severity": "moderate",
       "text": "puVar1 = (uint *)((int)&this_ptr->parsed_lines->text + iVar2);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "_qsort element width is the literal 0x114 instead of sizeof(*base). If the elements are pointers or hold one, the sort walks misaligned elements on the 64-bit build.",
+      "line": 25,
+      "match": "_qsort",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "_qsort",
+      "type": "pointer_stride_bytecount"
     }
   ],
   "stack_frame": {

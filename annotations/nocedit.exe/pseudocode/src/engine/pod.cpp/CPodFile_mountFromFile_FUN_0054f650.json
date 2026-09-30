@@ -999,6 +999,15 @@
       "severity": "moderate",
       "text": "(CPodDirectoryEntry *)shape_memdbg_cpp_debugMalloc_FUN_0050f250 (this_ptr->file_count * 0x14,\"..\\\\engine\\\\pod.cpp\",522)",
       "type": "alloc_magic_size"
+    },
+    {
+      "description": "_qsort element width is the literal 0x14 instead of sizeof(*base). If the elements are pointers or hold one, the sort walks misaligned elements on the 64-bit build.",
+      "line": 367,
+      "match": "_qsort",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "_qsort",
+      "type": "pointer_stride_bytecount"
     }
   ],
   "stack_frame": {

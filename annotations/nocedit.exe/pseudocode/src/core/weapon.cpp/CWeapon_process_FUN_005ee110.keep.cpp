@@ -13,7 +13,9 @@ void __cdecl core_weapon_cpp_CWeapon_process_FUN_005ee110(CWeapon *this_ptr,floa
   UOrientationVector *pUVar1;
   CVector3f *pCVar2;
   float fVar3;
-  
+  int lit;
+  CDemonLight *light;
+
   if ((0.0 < this_ptr->fire_cooldown_timer) &&
      (fVar3 = this_ptr->fire_cooldown_timer - delta_time, this_ptr->fire_cooldown_timer = fVar3,
      fVar3 < 0.0)) {
@@ -36,11 +38,18 @@ void __cdecl core_weapon_cpp_CWeapon_process_FUN_005ee110(CWeapon *this_ptr,floa
     }
   }
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base);
-  if ((((CHero *)this_ptr->carried_by_actor == g_HeroActors[g_LocalHeroIndex]) &&
-      (g_CGamePtr->flashlight_active != 0)) && (this_ptr->can_attach_light != 0)) {
+#if NOCTURNE_AUTHENTIC_NETPLAY
+  lit = ((CHero *)this_ptr->carried_by_actor == g_HeroActors[g_LocalHeroIndex]) &&
+        (g_CGamePtr->flashlight_active != 0);
+  light = &g_CDemonLightInstance;
+#else
+  lit = nocturne_hero_flashlight_lit(this_ptr->carried_by_actor);
+  light = lit ? nocturne_hero_light((CHero *)this_ptr->carried_by_actor) : &g_CDemonLightInstance;
+#endif
+  if (lit && (this_ptr->can_attach_light != 0)) {
     (*(((this_ptr->base).vtable._uw)->_uw).updateLighting)(this_ptr);
-    if (0.0 < g_CDemonLightInstance.volumetric_intensity) {
-      core_set_cpp_CDemonSet_addDynamicLight_FUN_0056d090(g_CDemonSetPtr,&g_CDemonLightInstance);
+    if (0.0 < light->volumetric_intensity) {
+      core_set_cpp_CDemonSet_addDynamicLight_FUN_0056d090(g_CDemonSetPtr,light);
       return;
     }
   }

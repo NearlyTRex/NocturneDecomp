@@ -117,7 +117,7 @@ LAB_0056fc73:
     } while (local_24 < this_ptr->renderable_actor_count);
   }
   _qsort
-            (g_SetDisplayListSortBuffer,g_SetDisplayListCount,8,
+            (g_SetDisplayListSortBuffer,g_SetDisplayListCount,sizeof(*g_SetDisplayListSortBuffer),
              core_set_cpp_qsortByDisplayListEntry_FUN_0056fba0);
   iVar1 = g_SetDisplayListCount;
 #if NOCTURNE_AUTHENTIC_NETPLAY

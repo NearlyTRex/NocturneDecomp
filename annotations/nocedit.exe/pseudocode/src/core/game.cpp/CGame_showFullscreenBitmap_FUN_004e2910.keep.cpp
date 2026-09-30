@@ -132,8 +132,10 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004e2910(CGame *this_p
       }
       engine_2d_c_clearInputAndWait_FUN_00403260();
       core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004dce70(this_ptr);
-      DLOG("frontend","showing '%s' conn=%d fire_down=%d mouse=%d",
+      DLOG("frontend","showing '%s' conn=%d sim_idx=%d fire_down=%d mouse=%d",
               this_ptr->bitmap_filename,(int)g_CNetGamePtr->connection_type,
+              (g_CNetGamePtr->local_player_index < 0) ? -1 :
+              g_CNetGamePtr->players[g_CNetGamePtr->local_player_index].sim_frame_index,
               (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,this_ptr->key_fire),
               (int)g_MouseButtonFlags.dword);
 #if !NOCTURNE_AUTHENTIC_NETPLAY
@@ -143,6 +145,7 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004e2910(CGame *this_p
           nocturne_net_keepalive();
           wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
         } while (nocturne_net_hold_active() != 0);
+        nocturne_net_hold_end();
         engine_2d_c_clearInputAndWait_FUN_00403260();
         while ((g_MouseButtonFlags.dword != 0) ||
               (iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,this_ptr->key_fire),

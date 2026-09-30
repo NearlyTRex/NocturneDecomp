@@ -33,6 +33,10 @@ void __cdecl core_scat_cpp_CScat_updateAiming_FUN_00558720(CScat *this_ptr,float
   float local_24;
   int local_20;
   CDemonActor *target;
+#if !NOCTURNE_AUTHENTIC_HERO_LOOK_AIM
+  float look_pitch;
+  int look_aim;
+#endif
 
   this_ptr->aim_converged = 0;
   if ((is_holstered == 0) &&
@@ -56,6 +60,17 @@ void __cdecl core_scat_cpp_CScat_updateAiming_FUN_00558720(CScat *this_ptr,float
     local_2c = 0.0;
     goto LAB_005587bd;
   }
+#if !NOCTURNE_AUTHENTIC_HERO_LOOK_AIM
+  look_aim = ((this_ptr->base).control_type != HERO_CONTROL_AI);
+  look_pitch = (this_ptr->base).player_input.look_up_down_speed * (float)3.1415926535000001 *
+               (float)2 * delta_time + this_ptr->aim_pitch;
+  if (look_pitch < -1.570796f) {
+    look_pitch = -1.5707964;
+  }
+  if (1.5707964 < look_pitch) {
+    look_pitch = 1.5707964;
+  }
+#endif
   if ((this_ptr->guns_drawn == 0) || (is_holstered != 0)) {
     this_ptr->aim_target = (CDemonActor *)0x0;
   }
@@ -75,6 +90,14 @@ void __cdecl core_scat_cpp_CScat_updateAiming_FUN_00558720(CScat *this_ptr,float
   }
   if ((this_ptr->base).player_input.action_state.fire != 0) {
     if (this_ptr->aim_target == (CDemonActor *)0x0) {
+#if !NOCTURNE_AUTHENTIC_HERO_LOOK_AIM
+      if (look_aim != 0) {
+        this_ptr->aim_yaw = 0.0;
+        local_13c = look_pitch;
+        local_2c = 0.0;
+        goto LAB_005587bd;
+      }
+#endif
       this_ptr->aim_yaw = 0.0;
       this_ptr->aim_pitch = this_ptr->aim_yaw;
       local_13c = this_ptr->aim_pitch;
@@ -83,6 +106,13 @@ void __cdecl core_scat_cpp_CScat_updateAiming_FUN_00558720(CScat *this_ptr,float
     goto LAB_005587bd;
   }
   if (this_ptr->aim_target == (CDemonActor *)0x0) {
+#if !NOCTURNE_AUTHENTIC_HERO_LOOK_AIM
+    if (look_aim != 0) {
+      local_13c = look_pitch;
+      local_2c = 0.0;
+      goto LAB_005587bd;
+    }
+#endif
 #if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
     local_13c = 0.0;
     local_2c = 0.0;

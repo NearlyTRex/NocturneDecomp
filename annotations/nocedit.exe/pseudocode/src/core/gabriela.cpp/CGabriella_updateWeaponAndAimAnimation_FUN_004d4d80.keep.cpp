@@ -69,7 +69,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d
                  local_28;
     }
     iVar2 = core_actor_cpp_isOfClass_FUN_0040c6d0
-                      (&((this_ptr->base).inventory.selected_weapon)->base,"CGun");
+                      ((CDemonActor *)(this_ptr->base).inventory.selected_weapon,"CGun");
     if (iVar2 == 0) {
       if ((float)0.001 < local_28) {
         local_24 = this_ptr->draw_blend;

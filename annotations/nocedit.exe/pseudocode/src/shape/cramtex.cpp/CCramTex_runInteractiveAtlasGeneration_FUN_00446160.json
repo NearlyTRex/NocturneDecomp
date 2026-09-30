@@ -1104,6 +1104,15 @@
       "severity": "moderate",
       "text": "*(int *)((int)&g_CramSortedTextureEntries[0].working_width + iVar32))) {",
       "type": "pointer_cast"
+    },
+    {
+      "description": "_qsort element width is the literal 4 instead of sizeof(*base). If the elements are pointers or hold one, the sort walks misaligned elements on the 64-bit build.",
+      "line": 149,
+      "match": "_qsort",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "_qsort",
+      "type": "pointer_stride_bytecount"
     }
   ],
   "stack_frame": {

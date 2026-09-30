@@ -377,6 +377,15 @@
       "type": "unrolled_memcpy"
     },
     {
+      "description": "core_actor_cpp_isOfClass_FUN_0040c6d0 is passed as &((this_ptr->base).inventory.selected_weapon)->base, member access through a pointer that may be NULL here. The callee accepts NULL; pass (CDemonActor *)(this_ptr->base).inventory.selected_weapon instead (\u00a736).",
+      "line": 86,
+      "match": "(this_ptr->base).inventory.selected_weapon",
+      "resolution_source": "keep",
+      "severity": "major",
+      "text": "(&((this_ptr->base).inventory.selected_weapon)->base,\"CGun\");",
+      "type": "null_member_upcast"
+    },
+    {
       "description": "Struct-type local `local_1f4` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
       "line": 19,
       "match": "CQuaternion4f local_1f4; ... f(&local_1f4, ...);",

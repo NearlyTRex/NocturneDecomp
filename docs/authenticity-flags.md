@@ -74,7 +74,7 @@ flag.
 
 ## What is gated
 
-65 toggles. The kinds below are the same ones the header's table names, and a flag's kind is the
+70 toggles. The kinds below are the same ones the header's table names, and a flag's kind is the
 honest reason its default is what it is.
 
 **`host` — the shipped behaviour depends on Win32 + DirectDraw and cannot be reproduced**
@@ -99,6 +99,7 @@ honest reason its default is what it is.
 | `DEATH_FADE_SKIP` | ESC no longer cuts the closing death iris short and jumps to Game Over |
 | `ENVMAP_OVERLAY` | a reflection comes out whole rather than speckled |
 | `MENU_LIGHTING` | the menu's moon puts back the lighting it found |
+| `MENU_BAT_WRAP` | a menu bat does not flash across the moon as its path wraps |
 | `CAMERA_SHAKE_TRACE` | the shake trace prints its value and a newline |
 | `HUD_ICON_SPACE` | inventory icons stay on screen above 640x480 |
 | `FOG_PLANE_SCALE` | fog covers the view at modes whose camera grid is not 320 wide |
@@ -137,13 +138,15 @@ honest reason its default is what it is.
 | `CONFIRM_PROMPTS` | no bracketed hotkey letters, and a short form when the long one will not fit |
 | `SAVE` | saves are written as readable plain text *(defaults on, i.e. compressed)* |
 | `BUILD_STAMP` | the console banner carries this build's date and version, not Terminal Reality's |
+| `ENEMY_RETAIN` | an enemy drops a victim it can neither see nor path to, instead of tracking them through floors |
 
 **`addition` — neither binary did this**
 
 | Flag | Off |
 |---|---|
 | `AUTOMAP` | a bindable Doom-style map that fills in as you explore |
-| `GOGGLE_LOOK` | the goggle view looks up and down with empty hands, not only with a gun drawn |
+| `GOGGLE_LOOK` | the goggle view looks up and down with empty hands, not only with a gun drawn, and for every hero rather than only the Stranger |
+| `HERO_LOOK_AIM` | Scat's aim follows look input under auto-aim until a target takes it, as the Stranger's does |
 | `MENU_VERSION` | the menu carries a line naming this build, alongside everything it already drew |
 | `SAVE_SLOTS` | saves are picked from a slot list instead of typed |
 | `SINGLE_PLAYER_MENU` | START becomes PLAY, with Start and Load behind it |
@@ -160,6 +163,7 @@ honest reason its default is what it is.
 | `NETPLAY` | netplay is reachable, with its fixes |
 | `NET_CONFIG` | network parameters come from `system/netplay.ini` |
 | `RNG` | every draw goes through the sim/cosmetic funnel |
+| `WALK_TURN` | a scripted walk slows to turn instead of arcing into doorframes |
 
 **`binary` — which of the two binaries this build is**
 

@@ -13,12 +13,12 @@ SUMMARY
 
   Functions checked: 6911
   Functions with suspicious globals: 105
-  Total suspicious global references: 171
+  Total suspicious global references: 173
 
   Most commonly misresolved globals:
     g_SfxOptions                                       13 functions
     g_KeyboardState                                    9 functions
-    g_CNetGamePtr                                      7 functions
+    g_CNetGamePtr                                      8 functions
     g_WindowHeight                                     7 functions
     g_CDemonCameraInstance                             6 functions
     g_CKeysPtr                                         6 functions
@@ -297,6 +297,18 @@ core_inv.cpp_CInventory_renderAllItems_FUN_00500690  [.keep]  (2 suspicious glob
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+core_main.c_initializeGameSystems_FUN_00507a60  [.keep]  (2 suspicious globals)
+  File: core/main.c
+
+  g_NumSearchHandlers
+    Used at lines: 63, 66
+    NOT found in function reference list
+
+  g_RendererDllPath
+    Used at lines: 54, 55, 57
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 core_set.cpp_CDemonSet_initScene_FUN_0056aa10  [.keep]  (2 suspicious globals)
   File: core/set.cpp
 
@@ -318,6 +330,18 @@ core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005709e0  [.keep]  (2 suspicious
 
   g_MirrorSceneCameraState
     Used at lines: 20
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_stranger.cpp_CStranger_autoAimAtThreat_FUN_005c3960  [.keep]  (2 suspicious globals)
+  File: core/stranger.cpp
+
+  g_CGamePtr
+    Used at lines: 79, 120
+    NOT found in function reference list
+
+  g_CNetGamePtr
+    Used at lines: 80, 81
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -421,7 +445,7 @@ core_enemy.cpp_CEnemy_updateVictim_FUN_004a9b00  [.keep]  (1 suspicious globals)
   File: core/enemy.cpp
 
   g_ScriptSentinelActor
-    Used at lines: 130
+    Used at lines: 132
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -537,14 +561,6 @@ core_inv.cpp_CInventory_renderSelectedItems_FUN_00500370  [.keep]  (1 suspicious
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_main.c_initializeGameSystems_FUN_00507a60  [.keep]  (1 suspicious globals)
-  File: core/main.c
-
-  g_NumSearchHandlers
-    Used at lines: 55, 58
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
 core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_00522310  [.keep]  (1 suspicious globals)
   File: core/mirror.cpp
 
@@ -646,14 +662,6 @@ core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0  [.keep]  (1 s
 
   g_ColorCubeLookup
     Used at lines: 493
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-core_stranger.cpp_CStranger_autoAimAtThreat_FUN_005c3960  [.keep]  (1 suspicious globals)
-  File: core/stranger.cpp
-
-  g_CGamePtr
-    Used at lines: 79, 118
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

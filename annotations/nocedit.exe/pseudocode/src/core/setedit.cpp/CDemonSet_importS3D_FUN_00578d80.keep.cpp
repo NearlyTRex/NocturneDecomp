@@ -441,15 +441,17 @@ LAB_00579173:
             pCVar10->orient = local_2478.orient;
           }
           memcpy(&pCVar10->fov,&local_2478.fov,0xc);
-          memcpy(pCVar10->visible_flags,local_2478.visible_flags,0xfa);
+          memcpy(pCVar10->visible_flags,local_2478.visible_flags,sizeof(pCVar10->visible_flags));
           pCVar10->camera_light_bounds[0] = local_2478.camera_light_bounds[0];
           pCVar10->color = local_2478.color;
           memcpy(&pCVar10->atten_start,&local_2478.atten_start,0x24);
-          memcpy(pCVar10->filter_names,local_2478.filter_names,0x500);
-          memcpy(pCVar10->filter_durations,local_2478.filter_durations,0x80);
-          memcpy(pCVar10->filter_indices,local_2478.filter_indices,0x80);
+          memcpy(pCVar10->filter_names,local_2478.filter_names,sizeof(pCVar10->filter_names));
+          memcpy(pCVar10->filter_durations,local_2478.filter_durations,
+                 sizeof(pCVar10->filter_durations));
+          memcpy(pCVar10->filter_indices,local_2478.filter_indices,
+                 sizeof(pCVar10->filter_indices));
           memcpy(&pCVar10->move_filter,&local_2478.move_filter,0x1c);
-          memcpy(pCVar10->filters,local_2478.filters,0x80);
+          memcpy(pCVar10->filters,local_2478.filters,sizeof(pCVar10->filters));
           pCVar10->current_filter_frame = local_2478.current_filter_frame;
           pCVar10->filter_frame_elapsed = local_2478.filter_frame_elapsed;
           this_ptr->light_count = this_ptr->light_count + 1;

@@ -123,6 +123,12 @@ void __cdecl core_game_cpp_CGame_process_FUN_004e3190(CGame *this_ptr)
   core_weather_cpp_CWeather_update_FUN_005eeaf0(g_CWeatherPtr);
   core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(this_ptr);
   core_set_cpp_CDemonSet_processActors_FUN_0056b810(g_CDemonSetPtr);
+#if !NOCTURNE_AUTHENTIC_GOGGLE_LOOK
+  nocturne_goggle_look_tick(this_ptr->delta_time_float);
+#endif
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+  nocturne_hero_goggles_publish();
+#endif
   if (g_CGamePtr->profile_mode == 1) {
     g_ProfileStartTime = wincore_winrun_cpp_getTime_FUN_005f2dc0();
   }

@@ -7,7 +7,7 @@
 // replaces that rule rather than adding to it. Both are checked directly as
 // well as against an oracle transliterated from expandTextureAndBuildMips.
 
-#include "tests/nocturne_test.h"
+#include "nocturne_test.h"
 #include "renderer/trigl_texture.h"
 
 #include <string>

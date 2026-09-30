@@ -108,9 +108,8 @@ void nocturne_hero_default_weapon(struct CHero *hero, int hero_type);
 // therefore spent permanently the first time it runs out, leaving a weapon that
 // only plays CGun's dry click.
 //
-// Does nothing outside a network game, and nothing for a weapon that is not the
-// pistol - the Baron summon reaches the same call site and has no ammunition
-// concept to restore.
+// Does nothing outside a network game, and nothing for any weapon but that
+// pistol: the Baron, or another gun the hero picked up, keeps its own count.
 void nocturne_hero_reload_extra_gun(struct CHero *hero, struct CWeapon *weapon);
 
 // Whether the hero may hold an item of this kind, per the table above.

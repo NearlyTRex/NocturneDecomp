@@ -24,7 +24,7 @@ void __cdecl core_stranger_cpp_CStranger_processFrame_FUN_005bb960(CStranger *th
   CCharacter_full_vtable *pCVar11;
   float fVar12;
   bool bVar13;
-  CGame *pCVar14;
+  int *flashlight;
   CBoundingBox3D *pCVar15;
   CVector3f *pCVar16;
   float fVar17;
@@ -973,7 +973,11 @@ LAB_005bc1a6:
   (this_ptr->pending_velocity).z = 0.0;
   (this_ptr->pending_velocity).y = (this_ptr->pending_velocity).z;
   (this_ptr->pending_velocity).x = (this_ptr->pending_velocity).y;
-  pCVar14 = g_CGamePtr;
+#if NOCTURNE_AUTHENTIC_NETPLAY
+  flashlight = &g_CGamePtr->flashlight_active;
+#else
+  flashlight = nocturne_hero_flashlight(&this_ptr->base);
+#endif
   if (local_1c != 0) {
     if ((this_ptr->base).player_input.action_state.draw != 0) {
       if (this_ptr->guns_drawn == 0) {
@@ -981,8 +985,8 @@ LAB_005bc1a6:
       }
       else {
         this_ptr->guns_drawn = 0;
-        if (pCVar14->flashlight_active != 0) {
-          pCVar14->flashlight_active = 0;
+        if (*flashlight != 0) {
+          *flashlight = 0;
           (*((this_ptr->base).base.base.vtable._ub)->playSound)
                     ((CDemonActor *)this_ptr,"flashlit.wav");
         }
@@ -995,8 +999,8 @@ LAB_005bc1a6:
        && (this_ptr->guns_drawn != 0)
 #endif
        ) {
-      uVar23 = (uint)(g_CGamePtr->flashlight_active == 0);
-      g_CGamePtr->flashlight_active = uVar23;
+      uVar23 = (uint)(*flashlight == 0);
+      *flashlight = uVar23;
       if (uVar23 != 0) {
         this_ptr->guns_drawn = 1;
       }
@@ -1006,10 +1010,10 @@ LAB_005bc1a6:
   }
   pCVar10 = (this_ptr->base).inventory.selected_weapon;
   if (pCVar10 == (CWeapon *)0x0) {
-    g_CGamePtr->flashlight_active = 0;
+    *flashlight = 0;
   }
   else if (pCVar10->can_attach_light == 0) {
-    g_CGamePtr->flashlight_active = 0;
+    *flashlight = 0;
   }
   if (local_24 != 0) {
     core_stranger_cpp_CStranger_updateWeaponLayerActions_FUN_005c5270(this_ptr,delta_time);
@@ -1066,7 +1070,7 @@ LAB_005bc1a6:
     if ((1.0 < fVar17) &&
        (pCVar19 = (CBoxActor *)
                   core_actor_cpp_castToClassHash_FUN_0040c790
-                            (&((this_ptr->base).pushed_object)->base,g_CBoxActorClassInfo.name_hash)
+                            ((CDemonActor *)(this_ptr->base).pushed_object,g_CBoxActorClassInfo.name_hash)
        , pCVar19 != (CBoxActor *)0x0)) {
       core_stranger_cpp_CStranger_getHandsMidpoint_FUN_005be490(this_ptr,local_14c);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0

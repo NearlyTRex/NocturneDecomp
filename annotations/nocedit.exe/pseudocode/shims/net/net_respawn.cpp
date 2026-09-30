@@ -42,6 +42,11 @@ static const float k_ring_radius[] = { 2.0f, 3.0f, 4.5f, 6.0f };
 #define RESPAWN_RING_COUNT ((int)(sizeof(k_ring_radius) / sizeof(k_ring_radius[0])))
 #define RESPAWN_RING_STEPS 16
 
+// Height above each footing at which the host-to-candidate line is traced. The
+// rings reach past a hallway's walls, and the floor beyond one passes every
+// other test, so a candidate the host cannot see at waist height is rejected.
+#define RESPAWN_LINE_HEIGHT 1.5f
+
 #pragma pack(push, 1)
 typedef struct SNetPacket_HeroRespawn {
     SNetPacketHeader header;                  // 0x0
@@ -168,6 +173,18 @@ static int respawn_screen_offset(const CVector3f *p, float *out_offset)
 // Spot selection
 // =============================================================================
 
+// 1 when nothing solid lies between the two footings at RESPAWN_LINE_HEIGHT.
+static int respawn_clear_line(const CVector3f *from, const CVector3f *to)
+{
+    CVector3f start = *from;
+    CVector3f end   = *to;
+
+    start.y = start.y + RESPAWN_LINE_HEIGHT;
+    end.y   = end.y + RESPAWN_LINE_HEIGHT;
+    return core_setcolid_cpp_CDemonSet_testVoxelRaycast_FUN_00572510
+               (g_CDemonSetPtr, &start, &end) == 0;
+}
+
 static int respawn_too_close(const CVector3f *candidate,
                              const CVector3f *taken, int taken_count)
 {
@@ -200,6 +217,7 @@ static int respawn_find_spot(const CVector3f *anchor, float anchor_ground,
         for (step = 0; step < RESPAWN_RING_STEPS; step++) {
             float angle = (float)step * (6.2831853f / (float)RESPAWN_RING_STEPS);
             CVector3f candidate;
+            CVector3f footing;
             float ground_y;
             float offset;
             float score;
@@ -218,6 +236,11 @@ static int respawn_find_spot(const CVector3f *anchor, float anchor_ground,
 
             if (respawn_too_close(&candidate, taken, taken_count) != 0) {
                 continue;
+            }
+            footing   = *anchor;
+            footing.y = anchor_ground;
+            if (respawn_clear_line(&footing, &candidate) == 0) {
+                continue;                       // behind a wall from the host
             }
             if (respawn_screen_offset(&candidate, &offset) == 0) {
                 continue;                       // behind or outside the camera
@@ -388,20 +411,23 @@ extern "C" int nocturne_net_respawn_request(void)
     s_pending.orient[2]   = (anchor->base).base.orient.vec.z;
 
     for (i = 0; i < hero_count; i++) {
-        CHero    *hero = g_HeroActors[i];
-        CVector3f spot;
+        CHero      *hero = g_HeroActors[i];
+        CVector3f   spot;
+        const char *source = "ring";
 
         if (hero == (CHero *)0x0) {
             continue;
         }
         if ((i == anchor_index) || ((anchor_index < 0) && (i == g_LocalHeroIndex))) {
-            spot = anchor_pos;
+            spot   = anchor_pos;
+            source = "anchor";
         }
         else if (respawn_find_spot(&anchor_pos, anchor_ground,
                                    taken, taken_count, &spot) == 0) {
             if ((i == g_LocalHeroIndex) && (s_have_safe != 0)) {
                 spot              = s_safe_pos;
                 s_pending.area_id = s_safe_area;
+                source            = "safe";
             }
             // Nothing near the anchor qualified. The mission's own placeholder
             // is the one spot a designer placed a hero on, so it is the safest
@@ -409,11 +435,15 @@ extern "C" int nocturne_net_respawn_request(void)
             else if (s_have_placeholder != 0) {
                 spot              = s_placeholder_pos;
                 s_pending.area_id = s_placeholder_area;
+                source            = "placeholder";
             }
             else {
-                spot = anchor_pos;
+                spot   = anchor_pos;
+                source = "anchor";
             }
         }
+        DLOG("netplay", "respawn hero %d at (%.2f, %.2f, %.2f) from %s, anchor (%.2f, %.2f, %.2f)",
+                i, spot.x, spot.y, spot.z, source, anchor_pos.x, anchor_pos.y, anchor_pos.z);
 
         taken[taken_count] = spot;
         taken_count        = taken_count + 1;

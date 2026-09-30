@@ -59,6 +59,8 @@ extern "C" {
 #define NOCTURNE_NET_WEAPON_SELECT 0   // CInventory::selectWeapon(category, dir)
 #define NOCTURNE_NET_WEAPON_ITEM   1   // CInventory::selectItem(dir)
 #define NOCTURNE_NET_WEAPON_AMMO   2   // CInventory::cycleWeaponOfSameClass(dir)
+#define NOCTURNE_NET_WEAPON_GOGGLES 3  // goggles on (dir 1) or off (dir 0), for
+                                       // the battery; see hero_light.h
 
 // The local player pressed a weapon/item key. Outside a network game this
 // applies the selection immediately and behaves exactly as the shipped code

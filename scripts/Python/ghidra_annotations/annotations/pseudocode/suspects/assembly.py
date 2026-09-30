@@ -390,6 +390,11 @@ def _find_cave_copy_blocks(asm_code):
     consec = 0
     sizes = []
     for line in asm_code.split("\n"):
+        # Comment-only lines (`; Label: LAB_...` after a jump target's first
+        # instruction, XREF notes) do not break a run. A cave is always a jump
+        # target, so without this every 12-byte cave copy splits at 1 + 5 lines.
+        if line.lstrip().startswith(';'):
+            continue
         if _CAVE_SRC_RE.search(line) or _CAVE_DST_RE.search(line):
             consec += 1
         else:

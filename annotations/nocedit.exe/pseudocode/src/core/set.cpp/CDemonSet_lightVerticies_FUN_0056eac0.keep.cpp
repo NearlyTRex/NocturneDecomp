@@ -86,6 +86,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
                   local_16c.y = g_RenderVertexBuffer[local_44].projected_vertex.transformed_y;
                   local_16c.z = g_RenderVertexBuffer[local_44].projected_vertex.transformed_z;
                   core_set_cpp_transformToWorldSpace_FUN_0056e890(&local_16c,&local_154);
+                  local_160 = local_154;
                   core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
                             (this_ptr,&local_160,(CVector3i *)0x0,local_44,0);
                   g_RenderVertexBuffer[local_44].a = g_PerspectiveReciprocal;
@@ -414,6 +415,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
             local_10c.y = g_RenderVertexBuffer[local_40].projected_vertex.transformed_y;
             local_10c.z = g_RenderVertexBuffer[local_40].projected_vertex.transformed_z;
             core_set_cpp_transformToWorldSpace_FUN_0056e890(&local_10c,&local_148);
+            local_178 = local_148;
             core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
                       (this_ptr,&local_178,(CVector3i *)0x0,local_40,0);
             g_RenderVertexBuffer[local_40].a = g_PerspectiveReciprocal;

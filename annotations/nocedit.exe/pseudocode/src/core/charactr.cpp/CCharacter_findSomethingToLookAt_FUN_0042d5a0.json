@@ -376,6 +376,15 @@
       "severity": "moderate",
       "text": "(int)fVar6 < 0x44610001)) &&",
       "type": "bit_int_float_compare"
+    },
+    {
+      "description": "core_actor_cpp_castToClassHash_FUN_0040c790 is passed as &(this_ptr->look_at_candidate)->base, member access through a pointer that may be NULL here. The callee accepts NULL; pass (CDemonActor *)this_ptr->look_at_candidate instead (\u00a736).",
+      "line": 150,
+      "match": "this_ptr->look_at_candidate",
+      "resolution_source": "keep",
+      "severity": "major",
+      "text": "(&this_ptr->look_at_candidate->base,g_CCharacterClassInfo.name_hash);",
+      "type": "null_member_upcast"
     }
   ],
   "stack_frame": {

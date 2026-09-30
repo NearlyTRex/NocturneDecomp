@@ -78,10 +78,11 @@ if(NOCTURNE_VANILLA)
     include("${CMAKE_SOURCE_DIR}/cmake/vanilla.cmake")
 endif()
 
+# The netplay trace switches ride along so the dev preset can turn them on.
 get_cmake_property(_nocturne_cache_vars CACHE_VARIABLES)
 set(_nocturne_authentic_defs "")
 foreach(_var IN LISTS _nocturne_cache_vars)
-    if(_var MATCHES "^NOCTURNE_(AUTHENTIC_[A-Z0-9_]+|EDITOR_BUILD)$")
+    if(_var MATCHES "^NOCTURNE_(AUTHENTIC_[A-Z0-9_]+|EDITOR_BUILD|NETPLAY_(RNG|SIM)_TRACE)$")
         list(APPEND _nocturne_authentic_defs "${_var}=${${_var}}")
     endif()
 endforeach()
@@ -101,6 +102,7 @@ set(NOCTURNE_SKIP_LIST "${CMAKE_SOURCE_DIR}/cmake/skip_list.txt"
 set(NOCTURNE_SRC_ROOT     "${NOCTURNE_PSEUDOCODE_DIR}/src")
 set(NOCTURNE_INCLUDE_DIR  "${NOCTURNE_PSEUDOCODE_DIR}/include")
 set(NOCTURNE_SHIMS_DIR    "${NOCTURNE_PSEUDOCODE_DIR}/shims")
+set(NOCTURNE_TESTS_DIR    "${NOCTURNE_PSEUDOCODE_DIR}/tests")
 
 set(NOCTURNE_MAIN_DIR     "${NOCTURNE_PSEUDOCODE_DIR}/main")
 set(NOCTURNE_CHECKS_DIR   "${NOCTURNE_PSEUDOCODE_DIR}/checks")
@@ -368,10 +370,6 @@ if(NOCTURNE_BUILD_EXE)
         "${NOCTURNE_SHIMS_DIR}/*.cpp"
         "${NOCTURNE_SHIMS_DIR}/*.c"
     )
-    # shims/tests/ is built by the nocturne_tests target instead. Every test
-    # file defines a main(), so leaving them in here would collide with the
-    # game's at link time.
-    list(FILTER _shim_sources EXCLUDE REGEX "/shims/tests/")
     # One socket backend, chosen by platform: winsock_posix.c over BSD sockets,
     # winsock_win32.c over Winsock. Both define the same eighteen posix_* entry
     # points that winsock.cpp calls, so compiling both is a duplicate-symbol
@@ -614,88 +612,22 @@ endif()
 # Target: nocturne_tests  (ctest)
 # =============================================================================
 #
-# Unit tests for the parts of the renderer that decide something: how a draw's
-# render flags become pipeline state, how a vertex is converted, how a texture
-# is decoded. Those files take no GL and read no global, so a test needs neither
-# a context nor a window and runs anywhere.
+# Unit tests over the shims and the annotated code. pseudocode/tests/ mirrors
+# pseudocode/; any directory in it with a CMakeLists.txt is a suite, found here
+# without being listed, and each test_*.cpp in it is a test binary. See
+# cmake/nocturne_tests.cmake.
 #
-# Test sources, minus the support files a test links rather than runs. Anything
-# named gl_recorder/*_support is infrastructure and defines no main().
-file(GLOB_RECURSE _test_sources CONFIGURE_DEPENDS "${NOCTURNE_SHIMS_DIR}/tests/*.cpp")
-list(FILTER _test_sources EXCLUDE REGEX "/(gl_recorder|.*_support)\\.cpp$")
-if(_test_sources)
-    enable_testing()
-    # The pure renderer sources under test. Named rather than globbed: a file
-    # that reaches GL or a global does not belong here, and having to add it by
-    # hand is the point at which that gets noticed.
-    set(_test_subjects
-        "${NOCTURNE_SHIMS_DIR}/renderer/trigl_state.cpp"
-        "${NOCTURNE_SHIMS_DIR}/renderer/trigl_vertex.cpp"
-        "${NOCTURNE_SHIMS_DIR}/renderer/trigl_texture.cpp"
-        "${NOCTURNE_SHIMS_DIR}/renderer/trigl_batch.cpp"
-        # Reaches the filesystem but nothing else — no GL, no globals, no engine
-        # state. Its answer is a function of the path and what is on disk, which
-        # is what makes it testable against a directory a test builds itself.
-        "${NOCTURNE_SHIMS_DIR}/watcom/path.cpp"
-        "${NOCTURNE_SHIMS_DIR}/core/file_search.cpp"
-        # Watcom's CRT calls about files and directories. Safe to link into a
-        # test — unlike crt.cpp beside it, this one adds names rather than taking
-        # over the C library's, so a fixture asking the filesystem something
-        # still gets the truth.
-        "${NOCTURNE_SHIMS_DIR}/watcom/watcom.cpp"
-    )
-    # The GL-facing sources, for the suites that test ORDER rather than answers.
-    # These reach the driver, so they are deliberately outside the list above —
-    # they are testable only because the renderer reaches GL through one table of
-    # function pointers, which gl_recorder.cpp fills with recording stubs. It
-    # also defines that table, so gl_api.cpp (and with it SDL) stays out of the
-    # link. A suite opts in by being named test_*_sequence.
-    set(_test_subjects_gl
-        "${NOCTURNE_SHIMS_DIR}/renderer/trigl_gl.cpp"
-        "${NOCTURNE_SHIMS_DIR}/renderer/trigl_device.cpp"
-        "${NOCTURNE_SHIMS_DIR}/renderer/trigl_exports.cpp"
-        "${NOCTURNE_SHIMS_DIR}/tests/renderer/gl_recorder.cpp"
-        "${NOCTURNE_SHIMS_DIR}/tests/renderer/gl_present_support.cpp"
-        "${NOCTURNE_SHIMS_DIR}/tests/renderer/golden_trace_support.cpp"
-    )
-    # kernel32 and the globals it wires itself into. The entry points are static;
-    # the function pointers are the interface, which is what the game calls
-    # through and what the tests drive. builtin_dll is stubbed rather than linked
-    # — the real registry holds the renderers and would bring the whole renderer
-    # tree with them, and what is under test is the loader's behaviour, not which
-    # renderers exist.
-    set(_test_subjects_win32
-        "${NOCTURNE_SHIMS_DIR}/win32/kernel32.cpp"
-        "${NOCTURNE_PSEUDOCODE_DIR}/src/globals/globals_610000.cpp"
-        "${NOCTURNE_SHIMS_DIR}/tests/win32/builtin_dll_support.cpp"
-    )
-    foreach(_test_src IN LISTS _test_sources)
-        get_filename_component(_test_name "${_test_src}" NAME_WE)
-        set(_subjects ${_test_subjects})
-        if(_test_name MATCHES "_sequence$")
-            list(APPEND _subjects ${_test_subjects_gl})
-        endif()
-        if(_test_name STREQUAL "test_kernel32")
-            list(APPEND _subjects ${_test_subjects_win32})
-        endif()
-        add_executable(${_test_name} EXCLUDE_FROM_ALL "${_test_src}" ${_subjects})
-        target_include_directories(${_test_name} PRIVATE
-            "${NOCTURNE_SHIMS_DIR}" "${NOCTURNE_SHIMS_DIR}/tests"
-            "${NOCTURNE_INCLUDE_DIR}" ${SDL2_INCLUDE_DIRS})
-        target_compile_features(${_test_name} PRIVATE cxx_std_17)
-        target_compile_options(${_test_name} PRIVATE ${NOCTURNE_COMMON_WARNINGS})
-        # Where a test's recorded expectations live. A golden file is only useful
-        # if it is read from the source tree and can be regenerated in place, so
-        # a changed one shows up as a reviewable diff rather than as a rebuilt
-        # copy nobody sees.
-        target_compile_definitions(${_test_name} PRIVATE
-            NOCTURNE_TEST_DATA_DIR="${NOCTURNE_SHIMS_DIR}/tests/renderer/golden")
-        add_test(NAME ${_test_name} COMMAND ${_test_name})
-        list(APPEND _test_targets ${_test_name})
-    endforeach()
-    # `ctest` only runs what is already built, and the tests are EXCLUDE_FROM_ALL
-    # so an ordinary build does not pay for them. This target builds them all.
-    add_custom_target(nocturne_tests DEPENDS ${_test_targets})
-    list(LENGTH _test_targets _test_count)
-    message(STATUS "nocturne_tests: ${_test_count} test binaries")
-endif()
+# The binaries are EXCLUDE_FROM_ALL so an ordinary build does not pay for them,
+# and `ctest` only runs what is already built. This target builds them all.
+include("${CMAKE_SOURCE_DIR}/cmake/nocturne_tests.cmake")
+enable_testing()
+add_custom_target(nocturne_tests)
+file(GLOB_RECURSE _test_suites CONFIGURE_DEPENDS "${NOCTURNE_TESTS_DIR}/CMakeLists.txt")
+foreach(_suite_list IN LISTS _test_suites)
+    get_filename_component(_suite_dir "${_suite_list}" DIRECTORY)
+    file(RELATIVE_PATH _suite_rel "${NOCTURNE_TESTS_DIR}" "${_suite_dir}")
+    add_subdirectory("${_suite_dir}" "${CMAKE_BINARY_DIR}/tests/${_suite_rel}")
+endforeach()
+get_property(_test_targets GLOBAL PROPERTY NOCTURNE_TEST_TARGETS)
+list(LENGTH _test_targets _test_count)
+message(STATUS "nocturne_tests: ${_test_count} test binaries")

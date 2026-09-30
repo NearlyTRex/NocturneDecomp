@@ -249,7 +249,17 @@ LAB_004dc4e9:
   iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_infrared);
   if (iVar5 != 0) {
     uVar5 = (uint)(this_ptr->goggles_active == 0);
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+    if ((uVar5 != 0) && (g_CNetGamePtr->connection_type == CONNECTION_CLIENT) &&
+        (g_HeroActors[g_LocalHeroIndex] != (CHero *)0x0) &&
+        ((g_HeroActors[g_LocalHeroIndex]->base).base.location.area_id < 0)) {
+      return;
+    }
+#endif
     this_ptr->goggles_active = uVar5;
+#if !NOCTURNE_AUTHENTIC_GOGGLE_LOOK
+    nocturne_goggle_look_reset();
+#endif
     if (((uVar5 == 0) || (this_ptr_01 = g_HeroActors[g_LocalHeroIndex], this_ptr_01 == (CHero *)0x0)
         ) || (EVar6 = (*(((this_ptr_01->base).base.vtable._uc)->_uc).getDeathState)
                                 (&this_ptr_01->base), EVar6 == DEATH_STATE_ALIVE)) {

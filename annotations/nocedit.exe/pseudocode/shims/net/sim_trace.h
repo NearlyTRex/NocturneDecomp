@@ -53,7 +53,7 @@ extern "C" {
 // process counts CGame::process calls, so a machine simulating more frames than
 // it applied shows up as a widening gap against the sequence number.
 //
-// Two kinds of body line follow the header:
+// Body lines follow the header:
 //
 //   <seq> <slot> <name> pos=... area=... hp=... mstate=... victim=... ...
 //       one per character, every frame - the AI state that names a desync.
@@ -63,6 +63,11 @@ extern "C" {
 //   <seq> <slot>W weapon=<x,y,z> orient=<x,y,z>
 //       after a CStranger's, CScat's or CGabriella's line, while it holds a
 //       weapon.
+//
+//   <seq> H<index> <name> in_draw=<0|1> in_fire=<0|1> drawn=<n> wshare=<index>
+//       one per hero, every frame. drawn is guns_drawn, -1 for a class without
+//       it; wshare names another hero holding the same selected weapon, -1 when
+//       none.
 //
 //   <seq> A <index> <name> pos=... area=...
 //       one per ACTOR, but only when its position or area changed since this

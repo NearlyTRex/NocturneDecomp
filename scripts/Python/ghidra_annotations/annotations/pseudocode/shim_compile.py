@@ -123,17 +123,8 @@ def compile_shim_file(src_path, include_dir, compiler, extra_flags, shims_dir):
             # Add the shims root to the include path: nocturne.h pulls in
             # shim_config.h, which sits there, and every other shim header is
             # named relative to it.
-            #
-            # shims/tests and NOCTURNE_TEST_DATA_DIR mirror what CMake gives the
-            # test targets: the suites include "nocturne_test.h" by bare name,
-            # and the golden-trace suites read their expectations from the source
-            # tree through that define.
-            tests_dir = os.path.join(shims_dir, 'tests')
             cmd = ([compiler] + SHIM_COMPILE_FLAGS + extra_flags +
-                   ['-I', include_dir, '-I', shims_dir, '-I', tests_dir,
-                    '-DNOCTURNE_TEST_DATA_DIR="%s"'
-                    % os.path.join(tests_dir, 'renderer', 'golden'),
-                    src_path])
+                   ['-I', include_dir, '-I', shims_dir, src_path])
         result = subprocess.run(
             cmd,
             capture_output=True,

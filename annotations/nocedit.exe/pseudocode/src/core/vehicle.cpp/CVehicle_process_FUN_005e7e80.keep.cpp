@@ -134,7 +134,7 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr,f
     pCVar12 = g_CDemonSetPtr->characters[iVar17];
     pCVar11 = (CMobster *)
               core_actor_cpp_castToClassHash_FUN_0040c790
-                        (&pCVar12->base,g_CMobsterClassInfo.name_hash);
+                        ((CDemonActor *)pCVar12,g_CMobsterClassInfo.name_hash);
     if ((pCVar11 == (CMobster *)0x0) || (this_ptr != (CVehicle *)pCVar11->vehicle)) {
       core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&SStack_c8);
       EVar12 = (*((pCVar12->base).vtable._ub)->getCollisionType)(&pCVar12->base,&SStack_c8);

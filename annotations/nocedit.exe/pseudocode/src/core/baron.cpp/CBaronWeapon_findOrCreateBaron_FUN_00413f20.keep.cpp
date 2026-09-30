@@ -21,6 +21,11 @@ void __cdecl core_baron_cpp_CBaronWeapon_findOrCreateBaron_FUN_00413f20(CBaronWe
                core_actor_cpp_castToClassHash_FUN_0040c790
                          (g_CDemonSetPtr->actors[iVar1],
                           g_CBaronClassInfo.name_hash);
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+      if ((pCVar1 != (CBaron *)0x0) && (nocturne_baron_claimed_by_other(this_ptr,pCVar1) != 0)) {
+        pCVar1 = (CBaron *)0x0;
+      }
+#endif
       this_ptr->baron = pCVar1;
       if (pCVar1 != (CBaron *)0x0) break;
     }
@@ -36,8 +41,14 @@ void __cdecl core_baron_cpp_CBaronWeapon_findOrCreateBaron_FUN_00413f20(CBaronWe
       (*((this_ptr->baron->base).base.base.vtable._ub)->setPositionAndOrientation)
                 ((CDemonActor *)this_ptr->baron,&(this_ptr->base).base.location.position,
                  (CVector3f *)&(this_ptr->base).base.orient);
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+      nocturne_baron_claim(this_ptr,this_ptr->baron);
+#endif
       return;
     }
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+    nocturne_baron_claim(this_ptr,this_ptr->baron);
+#endif
   }
   return;
 }

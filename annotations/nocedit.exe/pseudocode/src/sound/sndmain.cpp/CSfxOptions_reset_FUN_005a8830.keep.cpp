@@ -27,7 +27,7 @@ void __cdecl sound_sndmain_cpp_CSfxOptions_reset_FUN_005a8830(CSfxOptions *this_
   dVar1 = (this_ptr->velocity).y;
   (this_ptr->position).x = (this_ptr->position).y;
   (this_ptr->velocity).x = dVar1;
-  memset(this_ptr->userdata,0,8);
+  memset(this_ptr->userdata,0,sizeof(this_ptr->userdata));
   this_ptr->trigger_time = 0.0;
   this_ptr->trigger_id = 0;
   dVar1 = -1;

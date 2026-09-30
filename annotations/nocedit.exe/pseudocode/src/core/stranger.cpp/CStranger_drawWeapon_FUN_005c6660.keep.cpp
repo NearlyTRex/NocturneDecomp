@@ -10,9 +10,16 @@
 void __cdecl core_stranger_cpp_CStranger_drawWeapon_FUN_005c6660(CStranger *this_ptr,int drawn)
 
 {
+  int *flashlight;
+
+#if NOCTURNE_AUTHENTIC_NETPLAY
+  flashlight = &g_CGamePtr->flashlight_active;
+#else
+  flashlight = nocturne_hero_flashlight(&this_ptr->base);
+#endif
   this_ptr->guns_drawn = drawn;
-  if ((drawn == 0) && (g_CGamePtr->flashlight_active != 0)) {
-    g_CGamePtr->flashlight_active = 0;
+  if ((drawn == 0) && (*flashlight != 0)) {
+    *flashlight = 0;
 #if NOCTURNE_AUTHENTIC_FLASHLIGHT_DRAW
     (*((this_ptr->base).base.base.vtable._ub)->playSound)
               ((CDemonActor *)this_ptr,"flashlit.wav");

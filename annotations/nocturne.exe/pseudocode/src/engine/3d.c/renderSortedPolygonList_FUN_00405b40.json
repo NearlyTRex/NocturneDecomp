@@ -92,15 +92,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 148,
-    "complexity_score": 381,
+    "complexity_score": 396,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 86,
-    "suspect_count": 27,
+    "suspect_count": 28,
     "suspect_types": [
       "pointer_cast",
+      "pointer_stride_bytecount",
       "pointer_truncation",
       "unaffected_reg",
       "undefined_data",
@@ -506,6 +507,14 @@
       "severity": "moderate",
       "text": "piVar1 = (int *)((int)&DAT_006b415c + iVar4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "_qsort element width is the literal 4 instead of sizeof(*base). If the elements are pointers or hold one, the sort walks misaligned elements on the 64-bit build.",
+      "line": 49,
+      "match": "_qsort",
+      "severity": "moderate",
+      "text": "_qsort",
+      "type": "pointer_stride_bytecount"
     }
   ]
 }

@@ -151,6 +151,36 @@ static void *s_armed_vtable[TRACE_CLASS_CACHE];
 static char  s_armed_kind[TRACE_CLASS_CACHE];
 static int   s_armed_count = 0;
 
+// guns_drawn is declared per class rather than on CHero, so each owner is asked
+// in turn. -1 for a hero class that has no such field.
+static int trace_guns_drawn(CHero *hero)
+{
+    CDemonActor *actor = (CDemonActor *)hero;
+    CDemonActor *cast;
+
+    if ((cast = core_actor_cpp_castToClassHash_FUN_0040c790(
+             actor, g_CStrangerClassInfo.name_hash)) != (CDemonActor *)0x0) {
+        return ((CStranger *)cast)->guns_drawn;
+    }
+    if ((cast = core_actor_cpp_castToClassHash_FUN_0040c790(
+             actor, g_CScatClassInfo.name_hash)) != (CDemonActor *)0x0) {
+        return ((CScat *)cast)->guns_drawn;
+    }
+    if ((cast = core_actor_cpp_castToClassHash_FUN_0040c790(
+             actor, g_CColonelClassInfo.name_hash)) != (CDemonActor *)0x0) {
+        return ((CColonel *)cast)->guns_drawn;
+    }
+    if ((cast = core_actor_cpp_castToClassHash_FUN_0040c790(
+             actor, g_CHaystackClassInfo.name_hash)) != (CDemonActor *)0x0) {
+        return ((CHaystack *)cast)->guns_drawn;
+    }
+    if ((cast = core_actor_cpp_castToClassHash_FUN_0040c790(
+             actor, g_CIcePickClassInfo.name_hash)) != (CDemonActor *)0x0) {
+        return ((CIcePick *)cast)->guns_drawn;
+    }
+    return -1;
+}
+
 static CWeapon *trace_weapon(CCharacter *character)
 {
     void *vtable = (void *)character->base.vtable._ub;
@@ -613,6 +643,31 @@ extern "C" void nocturne_sim_trace_frame(int sequence_number)
                          (double)weapon->base.orient.vec.y,
                          (double)weapon->base.orient.vec.z);
         }
+    }
+
+    // One line per hero: the draw and fire inputs this frame applies, and the
+    // weapon state they act on. A hero whose weapon state changes on a frame
+    // where neither its own input nor an E line explains it is the lead.
+    for (i = 0; i < g_HeroCount; i++) {
+        CHero *hero = g_HeroActors[i];
+        int    shared = -1;
+        int    j;
+
+        if (hero == (CHero *)0x0) {
+            continue;
+        }
+        for (j = 0; j < g_HeroCount; j++) {
+            if ((j != i) && (g_HeroActors[j] != (CHero *)0x0) &&
+                (hero->inventory.selected_weapon != (CWeapon *)0x0) &&
+                (g_HeroActors[j]->inventory.selected_weapon == hero->inventory.selected_weapon)) {
+                shared = j;
+            }
+        }
+        std::fprintf(out, "%d H%d %-24s in_draw=%d in_fire=%d drawn=%d wshare=%d\n",
+                     sequence_number, i, hero->base.base.actor_name,
+                     (hero->player_input.action_state).draw,
+                     (hero->player_input.action_state).fire,
+                     trace_guns_drawn(hero), shared);
     }
 
     trace_actor_changes(out, sequence_number);

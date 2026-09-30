@@ -57,6 +57,7 @@
 // | `NOCTURNE_AUTHENTIC_DEATH_FADE_SKIP` | 0 | defect | ESC no longer cuts the closing death iris short |
 // | `NOCTURNE_AUTHENTIC_ENVMAP_OVERLAY` | 0 | defect | a reflection comes out whole rather than speckled |
 // | `NOCTURNE_AUTHENTIC_MENU_LIGHTING` | 0 | defect | the menu's moon puts back the lighting it found |
+// | `NOCTURNE_AUTHENTIC_MENU_BAT_WRAP` | 0 | defect | a menu bat does not flash across the moon as its path wraps |
 // | `NOCTURNE_AUTHENTIC_CAMERA_SHAKE_TRACE` | 0 | defect | the shake trace prints its value and a newline |
 // | `NOCTURNE_AUTHENTIC_HUD_ICON_SPACE` | 0 | defect | inventory icons stay on screen above 640x480 |
 // | `NOCTURNE_AUTHENTIC_FOG_PLANE_SCALE` | 0 | defect | the fog plane is resampled onto the camera grid, not cropped to it |
@@ -90,8 +91,10 @@
 // | `NOCTURNE_AUTHENTIC_MENU_RESOLUTION` | 0 | choice | a picked resolution applies straight away |
 // | `NOCTURNE_AUTHENTIC_SAVE` | 1 | choice | saves are written as readable plain text |
 // | `NOCTURNE_AUTHENTIC_BUILD_STAMP` | 0 | choice | the console banner dates this build, not Terminal Reality's |
+// | `NOCTURNE_AUTHENTIC_ENEMY_RETAIN` | 0 | choice | an enemy drops a victim it can neither see nor path to |
 // | `NOCTURNE_AUTHENTIC_AUTOMAP` | 0 | addition | a bindable Doom-style map that fills in as you explore |
-// | `NOCTURNE_AUTHENTIC_GOGGLE_LOOK` | 0 | addition | the goggle view looks up and down with empty hands |
+// | `NOCTURNE_AUTHENTIC_GOGGLE_LOOK` | 0 | addition | the goggle view looks up and down with empty hands, for every hero |
+// | `NOCTURNE_AUTHENTIC_HERO_LOOK_AIM` | 0 | addition | Scat's aim follows look input under auto-aim until a target takes it |
 // | `NOCTURNE_AUTHENTIC_MENU_VERSION` | 0 | addition | the menu carries a line naming this build |
 // | `NOCTURNE_AUTHENTIC_SAVE_SLOTS` | 0 | addition | saves are picked from a slot list, not typed |
 // | `NOCTURNE_AUTHENTIC_SINGLE_PLAYER_MENU` | 0 | addition | START becomes PLAY, with Start and Load behind it |
@@ -108,6 +111,7 @@
 // | `NOCTURNE_AUTHENTIC_NETPLAY` | 0 | addition | netplay is reachable, with its fixes |
 // | `NOCTURNE_AUTHENTIC_NET_CONFIG` | 0 | addition | network parameters come from system/netplay.ini |
 // | `NOCTURNE_AUTHENTIC_RNG` | 0 | addition | every draw goes through the sim/cosmetic funnel |
+// | `NOCTURNE_AUTHENTIC_WALK_TURN` | 0 | addition | a scripted walk slows to turn instead of arcing into doorframes |
 // | `NOCTURNE_EDITOR_BUILD` | 0 | binary | (default) the build presents as retail nocturne.exe |
 // | `NOCTURNE_AUTHENTIC_D3D_OPTIONS` | 0 | binary | hardware acceleration can be turned on |
 
@@ -530,6 +534,25 @@
 //   Override with -DNOCTURNE_AUTHENTIC_MENU_LIGHTING=1.
 #ifndef NOCTURNE_AUTHENTIC_MENU_LIGHTING
 #define NOCTURNE_AUTHENTIC_MENU_LIGHTING 0
+#endif
+
+// NOCTURNE_AUTHENTIC_MENU_BAT_WRAP
+//   Whether a menu bat is drawn on the segment that closes its path.
+//
+//   menu1.pth, menu2.pth and menu3.pth are flagged loop=1 but are open: each
+//   starts beside the camera (z 0..11) and ends far out (z 179..191). On a
+//   looped course CCourse::interpolate wraps the next frame to 0 past the last
+//   one (INC EDI / CMP EDI,ECX / JL, else XOR EDI,EDI at 0x004427d8), so for
+//   a position in [len-1, len) the bat is lerped straight from the far end back
+//   to the camera. That is one path unit, a frame or two at the bats' speed of
+//   20 units a second: a bat appears in front of the moon and is gone.
+//
+//   1: the bat is drawn across the closing segment, as shipped.
+//   0: the bat is not drawn there; it reappears at the start of its path.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_MENU_BAT_WRAP=1.
+#ifndef NOCTURNE_AUTHENTIC_MENU_BAT_WRAP
+#define NOCTURNE_AUTHENTIC_MENU_BAT_WRAP 0
 #endif
 
 // NOCTURNE_AUTHENTIC_CAMERA_SHAKE_TRACE
@@ -1140,7 +1163,9 @@
 //                   drops aim_weight on every frame fire_state is not 2, and
 //                   canFireWeapon needs it at 1. A weapon that keeps fire held
 //                   (tommy gun, flame thrower, light gun) fires every other
-//                   frame and her arm bobs with the weight.
+//                   frame and her arm bobs with the weight. CScat::process
+//                   clears fire after every shot, which suits its AI (one
+//                   fire per shot) but makes a player press again each time.
 //
 //   1: shipped behaviour — Scat and Moloch can interact with nothing, sheathed
 //      fire falls through to an attack, only the Stranger can break a grab
@@ -1161,7 +1186,8 @@
 //      select refuses above 98% of it, and the cheats restore it. Scat's auto
 //      aim eases back to centre at its normal turn rate once it has no target.
 //      Gabriella stows the weapon she switched away from, as Scat does, and
-//      holds her aim while fire is held on a continuous weapon. Moloch's fire
+//      holds her aim while fire is held on a continuous weapon. A player's
+//      Scat keeps firing while fire is held; his AI is unchanged. Moloch's fire
 //      strikes in demon form, alternating two of his unused attack motions
 //      (hero_moloch.h).
 //
@@ -1903,6 +1929,25 @@
 #define NOCTURNE_AUTHENTIC_BUILD_STAMP 0
 #endif
 
+// NOCTURNE_AUTHENTIC_ENEMY_RETAIN
+//   Whether an enemy keeps a victim it can neither see nor reach.
+//
+//   CEnemy::updateVictim takes the nearest candidate it can see, else one its
+//   path map reaches. When both fail for the victim it already had, it keeps
+//   that victim anyway (CMP against the previous victim at 0x004a9d57, store at
+//   0x004a9d65). The candidate filter allows |dy| up to victimHeight, which the
+//   ACT4 skeletons set to 36, so a skeleton holds a hero two floors away, walks
+//   to their x/z, and swings at the ceiling or floor between them. Its attack
+//   range is horizontal only.
+//
+//   1: the enemy keeps the victim, as shipped.
+//   0: the enemy drops it and returns to patrol until it sees or reaches one.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_ENEMY_RETAIN=1.
+#ifndef NOCTURNE_AUTHENTIC_ENEMY_RETAIN
+#define NOCTURNE_AUTHENTIC_ENEMY_RETAIN 0
+#endif
+
 // NOCTURNE_AUTHENTIC_MENU_VERSION
 //   What the menu corner says. renderMenuAndGetChoice draws g_MenuVersionText
 //   at x 0x206, y 99, under the copyright line.
@@ -1941,6 +1986,9 @@
 //   head bone is the goggle camera, since CDemonSet::renderGogglesView builds
 //   the view from the "Bip01 Head" world matrix.
 //
+//   The other eight heroes never pitch the head bone at all, so at 0 they get
+//   the same pitch on the goggle camera alone — see shims/game/goggle_look.h.
+//
 //   Only the pitch is gated. Turning already works empty-handed, because the
 //   goggle view's yaw is the hero's own facing plus a head yaw the shipped code
 //   leaves at zero, and turning is ordinary locomotion.
@@ -1962,6 +2010,22 @@
 //   Override with -DNOCTURNE_AUTHENTIC_GOGGLE_LOOK=1.
 #ifndef NOCTURNE_AUTHENTIC_GOGGLE_LOOK
 #define NOCTURNE_AUTHENTIC_GOGGLE_LOOK 0
+#endif
+
+// NOCTURNE_AUTHENTIC_HERO_LOOK_AIM
+//   Whether Scat can aim with look input while auto-aim is on.
+//   CStranger::autoAimAtThreat integrates look_up_down_speed into the aim in
+//   every aim mode, and auto-aim only overrides it once a threat is found.
+//   CScat::updateAiming integrates it only for manual aim; under auto-aim with
+//   no target the pitch holds where it was, and firing with no target snaps it
+//   to level.
+//   1: shipped behaviour.
+//   0: with no target, auto-aim follows look input as the Stranger's does, at
+//      CScat's own rate and limits. A target still takes the aim.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_HERO_LOOK_AIM=1.
+#ifndef NOCTURNE_AUTHENTIC_HERO_LOOK_AIM
+#define NOCTURNE_AUTHENTIC_HERO_LOOK_AIM 0
 #endif
 
 // NOCTURNE_AUTHENTIC_SINGLE_PLAYER_MENU
@@ -2294,6 +2358,12 @@
 //          Both now act on the inventory's owner. autoUseHealth is an ini
 //          option read for every hero on every machine, so the host's value
 //          travels with the cheat announcement. See net_cheats.h.
+//        - The flashlight, its beam and the goggles existed once, for the
+//          local hero. A second Stranger without a light-capable weapon
+//          cleared the first one's light every frame, nobody saw another
+//          player's beam, and every battery drained off the local player's
+//          flashlight and goggles. Each hero now has its own. See
+//          hero_light.h.
 //        - CDemonMission::run keeps the local hero across a mission
 //          transition, but createHeros builds every network hero fresh, so
 //          the kept hero is orphaned on every machine and nobody's health or
@@ -2372,6 +2442,25 @@
 //   Override with -DNOCTURNE_AUTHENTIC_RNG=1 to revert to the shipped draws.
 #ifndef NOCTURNE_AUTHENTIC_RNG
 #define NOCTURNE_AUTHENTIC_RNG 0
+#endif
+
+// NOCTURNE_AUTHENTIC_WALK_TURN
+//   Whether a scripted walk slows down to turn.
+//
+//   CCharacter::walkToPoint moves a path-following character forward at full
+//   walk speed every step while turning it toward the path heading at no more
+//   than turn_speed, so at a doorway it arcs into the frame before it has
+//   turned. Cutscene walks have no stuck recovery unless the script set a
+//   timeout, so a character caught there stays caught.
+//
+//   1: full speed whatever the heading, as shipped.
+//   0: while a walk_to_target or door_target is set, the forward step scales
+//      from full at 30 degrees off the heading to a stop at 90
+//      (shims/game/walk_turn.cpp). Enemy pursuit is unchanged.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_WALK_TURN=1.
+#ifndef NOCTURNE_AUTHENTIC_WALK_TURN
+#define NOCTURNE_AUTHENTIC_WALK_TURN 0
 #endif
 
 // =============================================================================

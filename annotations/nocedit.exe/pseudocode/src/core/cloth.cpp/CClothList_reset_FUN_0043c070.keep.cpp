@@ -26,7 +26,7 @@ void __cdecl core_cloth_cpp_CClothList_reset_FUN_0043c070(CClothList *this_ptr)
     } while (iVar2 < this_ptr->count);
   }
   this_ptr->count = 0;
-  memset(this_ptr->filenames,0,400);
-  memset(this_ptr->cloths,0,0x28);
+  memset(this_ptr->filenames,0,sizeof(this_ptr->filenames));
+  memset(this_ptr->cloths,0,sizeof(this_ptr->cloths));
   return;
 }

@@ -72,6 +72,10 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *this_ptr)
     iVar5 = 0;
     do {
       if (0.0 <= g_MoonBats[iVar5].course_position) {
+#if !NOCTURNE_AUTHENTIC_MENU_BAT_WRAP
+        if (g_MoonBats[iVar5].course_position <=
+            (float)(g_MoonBatCourses[g_MoonBats[iVar5].course_index].len + -1)) {
+#endif
         core_course_cpp_CCourse_evaluate_FUN_00442710
                   (g_MoonBatCourses + g_MoonBats[iVar5].course_index,
                    g_MoonBats[iVar5].course_position,&local_44,&local_50);
@@ -88,6 +92,9 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *this_ptr)
                    (int)ROUND(ROUND(g_MoonBats[iVar5].animation_frame)),
                    (CKeyFramedModelInstance *)0x0,-1);
         engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
+#if !NOCTURNE_AUTHENTIC_MENU_BAT_WRAP
+        }
+#endif
         fVar1 = g_MoonBats[iVar5].course_position /
                 (float)g_MoonBatCourses[g_MoonBats[iVar5].course_index].len;
         if ((float)0.5 <= fVar1) {

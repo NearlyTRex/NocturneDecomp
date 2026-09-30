@@ -1277,6 +1277,15 @@
       "type": "bit_int_float_compare"
     },
     {
+      "description": "core_actor_cpp_castToClassHash_FUN_0040c790 is passed as &((this_ptr->base).pushed_object)->base, member access through a pointer that may be NULL here. The callee accepts NULL; pass (CDemonActor *)(this_ptr->base).pushed_object instead (\u00a736).",
+      "line": 1093,
+      "match": "(this_ptr->base).pushed_object",
+      "resolution_source": "keep",
+      "severity": "major",
+      "text": "(&((this_ptr->base).pushed_object)->base,g_CBoxActorClassInfo.name_hash)",
+      "type": "null_member_upcast"
+    },
+    {
       "description": "`(int)local_280.distance_max` numerically converts float field `local_280.distance_max` to an integer, but this function's `.asm` contains no `FIST`/`FISTP` \u2014 the binary never performs a float-to-int conversion here, so the cast is fabricated. Ghidra lost the real integer (usually a local or global it dropped) and reached for a float field sharing the stack slot. See \u00a732 \u2014 recover the true value from the asm; do not keep the cast.",
       "line": 597,
       "match": "(int)local_280.distance_max",

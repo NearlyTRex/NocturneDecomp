@@ -4,6 +4,7 @@
 #include "win32/window_message.h"
 #include "gl/gl_present.h"
 #include "game/gamepad.h"
+#include "debug/focus_trace.h"
 #include "shim_config.h"
 #include <SDL.h>
 #include <cstdio>
@@ -274,6 +275,7 @@ static void translateSdlEvent(const SDL_Event& ev) {
 
     case SDL_WINDOWEVENT:
         if (ev.window.event == SDL_WINDOWEVENT_FOCUS_GAINED) {
+            nocturne_focus_trace_arm();
             msg.message = 0x001C; // WM_ACTIVATEAPP
             msg.wParam = 1;
             s_msgQueue.push(msg);

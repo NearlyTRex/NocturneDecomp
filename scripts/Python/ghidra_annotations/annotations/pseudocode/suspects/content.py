@@ -7559,6 +7559,36 @@ def identify_flattened_array_index(code):
     return suspects
 
 
+# An adjusted-pointer typedef: `CBoneGuy_ptr_48956` points at byte 48956 of a
+# CBoneGuy (the name carries the typedef's base and component_offset).
+_MEM_ADJ_PTR_TYPE_RE = re.compile(r'^([A-Za-z_]\w*?)_ptr_(\d+)$')
+
+
+def _mem_array_field(operand, var_types, layout):
+    """The array field `operand` names, as (field, element type), or None.
+
+    Two forms: a path ending in an unsubscripted array field (`this->boxes`),
+    and a bare adjusted-pointer local (`dest`, declared `CBoneGuy_ptr_48956`),
+    which names the field at that offset.
+    """
+    p = re.sub(r'\s+', '', operand or '')
+    adj = _MEM_ADJ_PTR_TYPE_RE.match(var_types.get(p, ''))
+    if adj:
+        owner, offset = adj.group(1), int(adj.group(2))
+        for fl in layout.get(owner, ()):
+            if fl.get('offset') == offset and fl.get('n'):
+                return fl, fl.get('type')
+        return None
+    m = re.match(r'^&?(.*?)(->|\.)([A-Za-z_]\w*)$', p)
+    if not m:
+        return None
+    owner = resolve_access_path_type(m.group(1), var_types, layout)
+    for fl in layout.get(owner, ()) if owner else ():
+        if fl.get('name') == m.group(3) and fl.get('n'):
+            return fl, fl.get('type')
+    return None
+
+
 def identify_mem_magic_size(code, struct_layout_map=None, struct_size_map=None):
     """Flag memcpy/memmove/memset whose byte size hardcodes sizeof(an unstable T).
 
@@ -7640,18 +7670,47 @@ def identify_mem_magic_size(code, struct_layout_map=None, struct_size_map=None):
 
         hit = None
         for role, operand in operands:
+            # A whole array field: the literal is its full 32-bit extent.
+            arr = _mem_array_field(operand, var_types, struct_layout_map)
+            if (arr and (arr[0].get('is_ptr') or arr[1] in unstable)
+                    and arr[0].get('len') in consts):
+                hit = (role, arr[1], arr[0]['len'], arr[0])
+                break
             t = resolve_access_path_type(operand, var_types, struct_layout_map)
             if not t or t not in unstable:
                 continue
             tsize = struct_size_map.get(t)
             if tsize is None or tsize not in consts:
                 continue
-            hit = (role, t, tsize)
+            hit = (role, t, tsize, None)
             break
         if hit is None:
             continue
 
-        role, t, tsize = hit
+        role, t, tsize, field = hit
+        if field is not None:
+            elem = t + ' *' * field.get('stars', 0)
+            why = ('an array of pointers' if field.get('is_ptr') else
+                   'an array of %s, which contains a pointer' % t)
+            desc = (
+                "%s size hardcodes 0x%x == the whole %s field (%d x %s), which "
+                "the %s names. It is %s, so it grows once pointers are 8 bytes "
+                "and %s covers only its leading 0x%x bytes. Use "
+                "sizeof(<path>->%s) (§17/§18)."
+                % (fn, tsize, field['name'], field['n'], elem, role, why, fn,
+                   tsize, field['name']))
+            line_no = code.count('\n', 0, m.start()) + 1
+            snippet = re.sub(r'\s+', ' ', m.group(0)[:-1] + call).strip()
+            suspects.append({
+                'line': line_no,
+                'type': 'mem_magic_size',
+                'match': '%s(%s) size 0x%x == sizeof(%s[%d])' % (
+                    fn, role, tsize, elem, field['n']),
+                'text': snippet[:200],
+                'description': desc,
+                'severity': SUSPECT_SEVERITY.get('mem_magic_size', 'moderate'),
+            })
+            continue
         desc = (
             "%s size hardcodes 0x%x == sizeof(%s), whose %s resolves to that "
             "struct. %s is 64-bit-unstable (contains a pointer), so the struct "
@@ -7697,6 +7756,30 @@ _TRAILING_STRIDE_RE = re.compile(
 _ANY_TRAILING_STRIDE_RE = re.compile(
     r'^(.*?)(?:\*\s*(0[xX][0-9a-fA-F]+|\d+)|<<\s*(\d+))\s*$')
 _MEMFN_CALL_RE = re.compile(r'\b(memcpy|memmove|memset)\s*(?=\()')
+# Sort/search calls and the index of their element-width argument.
+_SORTFN_CALL_RE = re.compile(r'\b(_?qsort|_?bsearch)\s*(?=\()')
+_SORTFN_WIDTH_INDEX = {'qsort': 2, 'bsearch': 3}
+# A width argument that is a bare integer literal, e.g. `4`, `8`, `0x14`.
+_LITERAL_WIDTH_RE = re.compile(r'^(?:0[xX][0-9a-fA-F]+|\d+)$')
+
+
+def _split_call_args(decompiled_code, m):
+    """Return the top-level arguments of the call whose name ends at m.end()."""
+    paren = _extract_balanced_parens(decompiled_code[m.end():])
+    if not paren:
+        return None
+    inner = paren[1:-1]
+    args, depth, start = [], 0, 0
+    for i, ch in enumerate(inner):
+        if ch in '([':
+            depth += 1
+        elif ch in ')]':
+            depth -= 1
+        elif ch == ',' and depth == 0:
+            args.append(inner[start:i])
+            start = i + 1
+    args.append(inner[start:])
+    return args
 
 
 def _memfn_size_args(decompiled_code):
@@ -7706,24 +7789,22 @@ def _memfn_size_args(decompiled_code):
     top-level commas to isolate the trailing (size) argument.
     """
     for m in _MEMFN_CALL_RE.finditer(decompiled_code):
-        paren = _extract_balanced_parens(decompiled_code[m.end():])
-        if not paren:
-            continue
-        inner = paren[1:-1]
-        args, depth, start = [], 0, 0
-        for i, ch in enumerate(inner):
-            if ch in '([':
-                depth += 1
-            elif ch in ')]':
-                depth -= 1
-            elif ch == ',' and depth == 0:
-                args.append(inner[start:i])
-                start = i + 1
-        args.append(inner[start:])
-        if len(args) < 3:
+        args = _split_call_args(decompiled_code, m)
+        if not args or len(args) < 3:
             continue
         line_no = decompiled_code[:m.start()].count('\n') + 1
         yield line_no, m, args[-1].strip()
+
+
+def _sortfn_width_args(decompiled_code):
+    """Yield (line_no, match_obj, width_arg) for each qsort/bsearch call."""
+    for m in _SORTFN_CALL_RE.finditer(decompiled_code):
+        index = _SORTFN_WIDTH_INDEX[m.group(1).lstrip('_')]
+        args = _split_call_args(decompiled_code, m)
+        if not args or len(args) <= index:
+            continue
+        line_no = decompiled_code[:m.start()].count('\n') + 1
+        yield line_no, m, args[index].strip()
 
 
 def _stride_base_and_mult(size_arg):
@@ -7764,6 +7845,10 @@ def identify_pointer_stride_bytecount(decompiled_code):
     to name. Such a base always carries a `* 2` (16bpp) sibling, so a base seen
     with both `* 2` and `* 4` is skipped. A genuine pointer array is never copied
     at half-stride, so this never masks a real bug.
+
+    The element-width argument of qsort/bsearch is checked too: a literal there
+    (`_qsort(ptrs, n, 4, cmp)`) is the same baked stride, and on a pointer or
+    pointer-holding array it sorts misaligned elements on 64-bit.
 
     Args:
         decompiled_code: The decompiled C pseudocode string.
@@ -7823,6 +7908,182 @@ def identify_pointer_stride_bytecount(decompiled_code):
                 'pointer_stride_bytecount', 'moderate'),
         })
 
+    # Pass 4: qsort/bsearch element widths given as a literal.
+    for line_no, m, width_arg in _sortfn_width_args(decompiled_code):
+        if not _LITERAL_WIDTH_RE.match(width_arg):
+            continue
+        if line_no in seen:
+            continue
+        seen.add(line_no)
+        stripped = decompiled_code.split('\n')[line_no - 1].strip()
+        suspects.append({
+            'line': line_no,
+            'type': 'pointer_stride_bytecount',
+            'match': m.group(1),
+            'text': stripped[:200],
+            'description': (
+                '%s element width is the literal %s instead of sizeof(*base). '
+                'If the elements are pointers or hold one, the sort walks '
+                'misaligned elements on the 64-bit build.' % (
+                    m.group(1), width_arg)),
+            'severity': SUSPECT_SEVERITY.get(
+                'pointer_stride_bytecount', 'moderate'),
+        })
+
+    return suspects
+
+
+# Class-test helpers that return 0/NULL for a NULL actor. The binary passes a
+# derived pointer straight in (its base sits at offset 0), so NULL is a normal
+# input for all three.
+_NULL_TOLERANT_ACTOR_FNS = (
+    'core_actor_cpp_castToClassHash_FUN_0040c790',
+    'core_actor_cpp_isOfClassHash_FUN_0040c760',
+    'core_actor_cpp_isOfClass_FUN_0040c6d0',
+)
+_NULL_TOLERANT_CALL_RE = re.compile(
+    r'\b(%s)\s*\(' % '|'.join(_NULL_TOLERANT_ACTOR_FNS))
+def _strip_wrapping_parens(expr):
+    """Remove parens that wrap the whole of `expr`, e.g. `((a).b)` -> `(a).b`."""
+    expr = expr.strip()
+    while expr.startswith('(') and expr.endswith(')'):
+        depth = 0
+        for i, ch in enumerate(expr):
+            depth += (ch == '(') - (ch == ')')
+            if depth == 0 and i < len(expr) - 1:
+                return expr
+        expr = expr[1:-1].strip()
+    return expr
+
+
+def _member_upcast_operand(arg):
+    """`X` for an argument spelled `&X->base`, `&(X)->base` or `&((X)->base)`."""
+    arg = re.sub(r'\s+', ' ', arg.strip())
+    if not arg.startswith('&'):
+        return None
+    inner = _strip_wrapping_parens(arg[1:])
+    m = re.match(r'^(.+?)\s*->\s*base$', inner, re.S)
+    if not m:
+        return None
+    return _strip_wrapping_parens(m.group(1))
+
+
+def _first_call_arg(code, start):
+    """The text of the first argument of a call whose '(' ends at `start`."""
+    depth = 0
+    for i in range(start, len(code)):
+        ch = code[i]
+        if ch in '([':
+            depth += 1
+        elif ch in ')]':
+            if depth == 0:
+                return code[start:i]
+            depth -= 1
+        elif ch == ',' and depth == 0:
+            return code[start:i]
+    return None
+
+
+def _dominating_text(code, end):
+    """The source before `end` with every block closed before `end` removed.
+
+    A closed block takes its `if (...)`/`while (...)` header with it, unless an
+    `else` follows (the else branch runs under that test) or the block ends in
+    return/break/continue/goto (code after it runs only when the test failed,
+    as in `if (p == NULL) { return; }`). What is left is
+    the enclosing blocks' statements and conditions up to the call, which is
+    what must have run before it (gotos aside).
+    """
+    stack = [[]]
+    prefix = code[:end]
+    for i, ch in enumerate(prefix):
+        if ch == '{':
+            stack.append([])
+        elif ch == '}':
+            if len(stack) > 1:
+                body = ''.join(stack.pop())
+                exits = re.search(r'\b(?:return|break|continue|goto)\b[^;]*;\s*$', body)
+                if not exits and not re.match(r'\s*else\b', prefix[i + 1:]):
+                    parent = ''.join(stack[-1])
+                    cut = max(parent.rfind(';'), parent.rfind('\x00'))
+                    stack[-1] = list(parent[:cut + 1]) + ['\x00']
+        else:
+            stack[-1].append(ch)
+    return ''.join(''.join(part) for part in stack)
+
+
+def _expr_pattern(expr):
+    """Regex for `expr` tolerating whitespace and one layer of wrapping parens."""
+    tokens = re.findall(r'\w+|->|\S', expr)
+    body = r'\s*'.join(re.escape(t) for t in tokens)
+    return r'(?:\(\s*%s\s*\)|%s)' % (body, body)
+
+
+def _is_known_non_null(text, expr):
+    """True if `text` NULL-tests `expr` or dereferences it (or a local copy)."""
+    pat = _expr_pattern(expr)
+    null_rhs = r'(?:\(\s*[\w\s*]+\*\s*\)\s*)?0(?:x0)?\b'
+    if re.search(pat + r'\s*[!=]=\s*' + null_rhs, text):
+        return True
+    if re.search(null_rhs + r'\s*[!=]=\s*' + pat, text):
+        return True
+    names = [pat]
+    for m in re.finditer(r'\b([A-Za-z_]\w*)\s*=\s*(?:\([^;()]*\*\s*\)\s*)?' + pat + r'\s*;',
+                         text):
+        names.append(re.escape(m.group(1)))
+    for name in names:
+        for m in re.finditer(r'(?:\(\s*)*' + name + r'\s*\)*\s*->', text):
+            i = m.start() - 1
+            while i >= 0 and text[i] in ' \t\n(':
+                i -= 1
+            if i < 0 or text[i] != '&':
+                return True
+    return False
+
+
+def identify_null_member_upcast(decompiled_code):
+    """Flag `&(ptr)->base` passed to a NULL-tolerant actor class test.
+
+    castToClassHash, isOfClassHash and isOfClass all return 0/NULL for a NULL
+    actor, and the binary relies on that: it passes the derived pointer as-is.
+    Ghidra spells the upcast as member access, `&(ptr)->base`, which is
+    undefined behaviour when ptr is NULL; UBSan halts the default build on it
+    ("member access within null pointer"). The rewrite is `(CDemonActor *)ptr`.
+
+    Suppressed when ptr is `this_ptr`, or when code that must run first tests
+    ptr against NULL or dereferences it (directly or through a local copy).
+
+    Args:
+        decompiled_code: The decompiled C pseudocode string.
+
+    Returns:
+        List of suspect dicts (type null_member_upcast).
+    """
+    suspects = []
+    if not decompiled_code:
+        return suspects
+    lines = decompiled_code.split('\n')
+    for m in _NULL_TOLERANT_CALL_RE.finditer(decompiled_code):
+        arg = _first_call_arg(decompiled_code, m.end())
+        if arg is None:
+            continue
+        expr = _member_upcast_operand(arg)
+        if expr is None or expr == 'this_ptr':
+            continue
+        if _is_known_non_null(_dominating_text(decompiled_code, m.start()), expr):
+            continue
+        line_no = decompiled_code.count('\n', 0, m.end() + len(arg)) + 1
+        suspects.append({
+            'line': line_no,
+            'type': 'null_member_upcast',
+            'match': expr,
+            'text': lines[line_no - 1].strip()[:200],
+            'description': (
+                '%s is passed as &(%s)->base, member access through a pointer '
+                'that may be NULL here. The callee accepts NULL; pass '
+                '(CDemonActor *)%s instead (§36).' % (m.group(1), expr, expr)),
+            'severity': SUSPECT_SEVERITY.get('null_member_upcast', 'major'),
+        })
     return suspects
 
 
@@ -7909,6 +8170,7 @@ def detect_content_suspects(code, func_globals=None, global_interval_map=None,
     found.extend(identify_mem_magic_size(
         code, struct_layout_map, struct_size_map))
     found.extend(identify_pointer_stride_bytecount(code))
+    found.extend(identify_null_member_upcast(code))
     found.extend(identify_stale_struct_offset_64bit(code, struct_layout_map))
     found.extend(identify_derived_field_index_pun(
         code, struct_layout_map, struct_size_map))

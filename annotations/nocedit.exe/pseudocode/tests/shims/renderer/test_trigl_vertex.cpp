@@ -8,7 +8,7 @@
 // because an oracle copied from the same reading of the source would agree with
 // a wrong scale as readily as with a right one.
 
-#include "tests/nocturne_test.h"
+#include "nocturne_test.h"
 #include "renderer/trigl_vertex.h"
 
 #include <string>
