@@ -103,6 +103,9 @@ static void weapon_apply(int hero_index, int action, int category, int direction
     else if (action == NOCTURNE_NET_WEAPON_AMMO) {
         core_inv_cpp_CInventory_cycleWeaponOfSameClass_FUN_004fed10(&hero->inventory, direction);
     }
+    else if (action == NOCTURNE_NET_WEAPON_GOGGLES) {
+        nocturne_hero_goggles_set(hero, direction);
+    }
 }
 
 static void weapon_broadcast(const SNetPacket_WeaponSelect *request)
@@ -238,6 +241,7 @@ extern "C" void nocturne_net_weapon_reset(void)
     s_next_serial   = 1;
     s_reported_late = 0;
     std::memset(s_highest_serial, 0, sizeof(s_highest_serial));
+    nocturne_hero_goggles_reset();
 }
 
 #else  /* authentic: the shipped behaviour, local and immediate */

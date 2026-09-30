@@ -2355,6 +2355,12 @@
 //          Both now act on the inventory's owner. autoUseHealth is an ini
 //          option read for every hero on every machine, so the host's value
 //          travels with the cheat announcement. See net_cheats.h.
+//        - The flashlight, its beam and the goggles existed once, for the
+//          local hero. A second Stranger without a light-capable weapon
+//          cleared the first one's light every frame, nobody saw another
+//          player's beam, and every battery drained off the local player's
+//          flashlight and goggles. Each hero now has its own. See
+//          hero_light.h.
 //        - CDemonMission::run keeps the local hero across a mission
 //          transition, but createHeros builds every network hero fresh, so
 //          the kept hero is orphaned on every machine and nobody's health or

@@ -385,6 +385,13 @@ void nocturne_trigl_device_clear_color(void) {
     // Colour only: the depth buffer has its own clear, and the engine calls
     // them separately because it often keeps depth across a colour clear.
     gl.Clear(GL_COLOR_BUFFER_BIT);
+    // While locked the CPU image is the frame (unlock uploads it over the
+    // target), so it has to be cleared too.
+    if (g_dev.frame_locked && g_dev.image != nullptr) {
+        memset(g_dev.image, 0, (size_t)g_dev.pitch * (size_t)g_dev.height);
+        g_dev.target_ahead = false;
+        return;
+    }
     g_dev.target_ahead = true;
 }
 

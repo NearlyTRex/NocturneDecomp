@@ -124,6 +124,11 @@ void nocturne_trigl_envmap_pass_end(void);
 // NOCTURNE_AUTHENTIC_GOGGLE_LOOK.
 #include "game/goggle_look.h"
 
+// Flashlight, beam, goggles and battery per hero (nocturne_hero_*), reached
+// from the stranger, weapon, inv, set and game TUs. Inert under
+// NOCTURNE_AUTHENTIC_NETPLAY.
+#include "game/hero_light.h"
+
 // Modern controller support (nocturne_gamepad_*), reached from the game TU's
 // input path and from the menu TU's key-name and validity helpers. The pad
 // input codes it defines are reached the same way. Every entry point is inert

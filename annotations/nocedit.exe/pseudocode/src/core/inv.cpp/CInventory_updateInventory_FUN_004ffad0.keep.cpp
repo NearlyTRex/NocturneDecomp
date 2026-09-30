@@ -34,7 +34,12 @@ void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004ffad0(CInventory *th
     }
     this_ptr->cached_ammo_count = this_ptr->selected_weapon->ammo_count;
   }
+#if NOCTURNE_AUTHENTIC_NETPLAY
   if ((g_CGamePtr->flashlight_active == 0) && (g_CGamePtr->goggles_active == 0)) {
+#else
+  if ((*nocturne_hero_flashlight((CHero *)this_ptr->owner) == 0) &&
+      (nocturne_hero_goggles((CHero *)this_ptr->owner) == 0)) {
+#endif
     local_20 = 1.0 / 120.0f;
     iVar5 = 0;
     if (0 < this_ptr->item_count) {

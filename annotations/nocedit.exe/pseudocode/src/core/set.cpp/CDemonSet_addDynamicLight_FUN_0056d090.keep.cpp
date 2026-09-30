@@ -18,6 +18,11 @@ void __cdecl core_set_cpp_CDemonSet_addDynamicLight_FUN_0056d090(CDemonSet *this
         return;
       }
     }
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+    if ((3 < g_DynamicLightCount) && (nocturne_hero_light_make_room(light) == 0)) {
+      return;
+    }
+#endif
     if (3 < g_DynamicLightCount) {
       g_CurrentFilename = "..\\core\\set.cpp";
       g_CurrentLineNumber = 2255;

@@ -110,6 +110,9 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
   this_ptr->show_customizable_keys = 0;
   this_ptr->goggles_active = 0;
   this_ptr->flashlight_active = 0;
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+  nocturne_hero_light_reset();
+#endif
   this_ptr->player_hit_flag = 0;
   this_ptr->geometry_debug_enabled = 0;
   this_ptr->collision_render_enabled = 0;
