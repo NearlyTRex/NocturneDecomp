@@ -153,12 +153,22 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
         _sprintf(g_ScreenshotFilename,"demon%d.pcx",INT_02d82568);
         engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(g_ScreenshotFilename);
       }
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+      if (g_ModalDialogActive != 0) {
+        nocturne_ui_push_screen_clip();
+      }
+#endif
       core_inv_cpp_CInventory_renderAllItems_FUN_00500690
                 (&g_HeroActors[g_LocalHeroIndex]->inventory);
       if (this_ptr->screen_clear_enabled != 0) {
         core_set_cpp_CDemonSet_renderLightDebugView_FUN_0056d190(g_CDemonSetPtr);
       }
       core_game_cpp_CGame_drawScreenBorder_FUN_004d7e50(this_ptr);
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+      if (g_ModalDialogActive != 0) {
+        nocturne_ui_pop_clip();
+      }
+#endif
 #if !NOCTURNE_AUTHENTIC_AUTOMAP
       nocturne_automap_render();
 #endif
