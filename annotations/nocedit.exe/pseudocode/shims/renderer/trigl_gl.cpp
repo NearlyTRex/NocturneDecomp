@@ -64,7 +64,7 @@ int mipmaps() {
 int vertex_fog() {
     if (nocturne_trigl_vertex_fog < 0) {
         const char *env = getenv("NOCTURNE_TRIGL_VERTEX_FOG");
-        nocturne_trigl_vertex_fog = (env != nullptr) ? atoi(env) : 0;
+        nocturne_trigl_vertex_fog = (env != nullptr) ? atoi(env) : 1;
     }
     return nocturne_trigl_vertex_fog;
 }

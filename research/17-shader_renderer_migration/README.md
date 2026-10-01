@@ -24,7 +24,7 @@ the build. The tridx7 tree stays on disk as the specification, with a README bes
 | transform | **done** — own `u_projection`; no matrix stack, no `ftransform()` |
 | texturing / secondary colour / alpha test | **done** — in shader since phase 0 |
 | texture stage ops | **done** — nothing to do; only `DISABLE`/`MODULATE` are ever set |
-| per-vertex fog | **implemented in both renderers, default OFF** — measurement inconclusive |
+| per-vertex fog | **done, default ON** — settled by a fog-edge actor, see open item 3 |
 | blend / depth / cull / scissor | staying as GL state, by design |
 | present blit | **done, bit-exact in both modes** — buffer object + shader in `gl_blit.cpp` |
 | native renderer | **done, measured** — see "The native renderer A/B" below |
@@ -39,9 +39,7 @@ The migration is finished. What remains are the things it found and did not fix.
    stands — item 8 is the engine's own mode-change path dropping actors, item 9 is one stretched
    scanline nobody can see. Item 7 turned out to be the harness itself; read it before adding any
    probe that renders out of band.
-2. **Per-vertex fog's default** (open item 3) — implemented, off, still wanting a measurement
-   that can see it.
-3. **The game-side defect** shaders were once expected to fix and do not: the chapel window
+2. **The game-side defect** shaders were once expected to fix and do not: the chapel window
    double-draw (item 1). The blade (item 5) was expected here too and has since been fixed in
    `research/16` — as a depth fight, not a renderer or UV problem.
 
@@ -354,7 +352,7 @@ filtering — real texture state, not a shader concern.
 **Alpha test** was already `discard` from phase 0; the remaining `glAlphaFunc` call is
 suspended around shaded draws, so this is cosmetic duplication, not a defect.
 
-**Per-vertex fog — implemented, default OFF pending a measurement that can see it.**
+**Per-vertex fog — default ON.**
 `buildTLVertex` (0x100044b0) computes
 
 ```c
@@ -379,12 +377,8 @@ Measured against software on one scene:
   accel, fog ON     14.321       1.0098
 ```
 
-Inconclusive: consecutive-frame animation noise is `mean|d| 0.732` and the A/B difference is
-`0.702`, so the captures (12 frames apart) cannot separate the term from drift. On the 15.1% of
-pixels it touches, software sits *between* the two and marginally nearer "on" (0.398 vs 0.490).
-Left off, because matching software is the determinism goal and off matches it exactly
-whole-frame. Revisit in a genuinely foggy scene with captures 2 frames apart —
-`NOCTURNE_GL_VERTEX_FOG` / `nocturne_gl_vertex_fog`.
+The whole-frame A/B cannot separate the term from animation drift (effect `mean|d| 0.702`,
+noise floor `0.732`). An actor at the fog limit does: see open item 3.
 
 ### Phase 3 — leave fixed-function vertex submission — **DONE**
 
@@ -675,12 +669,17 @@ producer in the composite (after the blur — the grids are only valid once
 `blurCoronaBufferAndClearEdges` has run), and item 4's transport. The numbers above are the
 reason not to.
 
-### 3. Per-vertex fog default — OPEN, needs a better measurement
+### 3. Per-vertex fog default — SETTLED, ON
 
-Implemented and correct per the D3D7 spec; default off. The A/B could not separate it from
-animation drift (effect `mean|d| 0.702`, noise floor `0.732`, captures 12 frames apart).
-To settle it: a genuinely foggy scene, captures **2 frames apart**, and compare on the pixels
-the term touches. Worth roughly 1% whole-frame — do not spend a day on it.
+An actor near the fog limit is drawn with a fog factor of about 5/255. With the term dropped it
+renders unfogged. `CBoundingBox3D::isVisible` culls an actor once its fog value exceeds
+`65000`, and the animated fog grid moves that value across the limit. So a stationary
+actor at the edge is drawn for one fog phase after every `setCameraView` (camera switch or
+focus-regain re-apply), then latches out of `buildDisplayList` until the next apply.
+
+Measured case: `DeadSentinel`, a dormant `CGhoul` in the alley of the sentinels mission
+(cam 65), drawn at fog value 64000 for frames 0–13 after each apply. It was visible on accel
+with fog off; it is invisible on software, and on accel with fog on.
 
 ### 4. `APIDLLsetLightingBridge` transport — DESIGNED AND AGREED, NOT BUILT
 

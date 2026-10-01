@@ -85,6 +85,7 @@
 // | `NOCTURNE_AUTHENTIC_MELEE_PICKUP` | 0 | defect | a melee weapon already held does not take a second slot |
 // | `NOCTURNE_AUTHENTIC_SHADOW_DEPTH_READ` | 0 | defect | the shadow-pass depth test reads the width it was written at |
 // | `NOCTURNE_AUTHENTIC_BODY_PART_BAKE` | 0 | defect | a settled body part goes into the background only through a background bake |
+// | `NOCTURNE_AUTHENTIC_MOTION_TWEEN_INIT` | 0 | defect | a new animation controller starts with no stale transition to reverse |
 // | `NOCTURNE_AUTHENTIC_PICKUP_WIELDS` | 0 | choice | a pickup is never drawn without the player asking |
 // | `NOCTURNE_AUTHENTIC_OPTIONS_RESUMES_GAME` | 0 | choice | leaving Options returns to the pause menu |
 // | `NOCTURNE_AUTHENTIC_CONFIRM_PROMPTS` | 0 | choice | no bracketed hotkey letters, and a short form when the long one will not fit |
@@ -1633,6 +1634,27 @@
 //   Override with -DNOCTURNE_AUTHENTIC_BODY_PART_BAKE=1.
 #ifndef NOCTURNE_AUTHENTIC_BODY_PART_BAKE
 #define NOCTURNE_AUTHENTIC_BODY_PART_BAKE 0
+#endif
+
+// NOCTURNE_AUTHENTIC_MOTION_TWEEN_INIT
+//   CMotionController's tween fields before its first tween.
+//
+//   The ctor (0052d570), reset and clearTweenState write +0x0..+0x8, +0xc,
+//   +0x14, +0x28, +0x2c, +0x30 and +0x50; tween_speed, tween_target_motion,
+//   tween_target_frame, tween_direction and tween_set_new_state (+0x10..+0x24
+//   less +0x14) are never written, and debugMalloc does not clear. A
+//   MOTION_CMD_WAIT_EXIT transition sets in_transition without starting a
+//   tween, after which setDesiredState reverses the transition when
+//   tween_direction reads 0, swapping current_motion_index with whatever
+//   tween_target_motion holds.
+//
+//   1: shipped behaviour - the fields hold whatever the heap held.
+//   0: the ctor zeroes them, with tween_direction 1, the value every finished
+//      tween leaves, so there is nothing to reverse.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_MOTION_TWEEN_INIT=1.
+#ifndef NOCTURNE_AUTHENTIC_MOTION_TWEEN_INIT
+#define NOCTURNE_AUTHENTIC_MOTION_TWEEN_INIT 0
 #endif
 
 // =============================================================================

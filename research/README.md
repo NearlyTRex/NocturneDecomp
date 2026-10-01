@@ -335,9 +335,8 @@ inputs (`texel*(cw>>7)/255` vs `texel*cw/32768`).
   vertex light, per-batch GL state. It went with the DX7 path; `trigl` carries its own
   instruments (`nocturne_trigl_paint_texture`, `shims/debug/dump.h`), and the `render_probe_*.txt`
   dumps here are the output of the retired one
-- **Still open (minor):** the per-vertex fog D3D *did* intend is dropped — `buildTLVertex` packs
-  it into the specular alpha and the GL path passes only 3 components to
-  `glSecondaryColorPointer`. Now a fidelity gap rather than a bug.
+- The per-vertex fog D3D *did* intend — `buildTLVertex` packs it into the specular alpha — is
+  applied by `trigl`'s shader; see `17-shader_renderer_migration/`.
 
 **Measurement lessons** (all three produced wrong conclusions before being caught):
 - Never least-squares fit on a *differing-pixels mask* — it makes an 18 % effect look like 2×.
@@ -530,11 +529,11 @@ second path to compare. Do not reopen this.
 
 What the shader path *can* do that fixed function structurally cannot: D3D7's per-vertex fog,
 which `buildTLVertex` packs into the specular **alpha** byte and GL's 3-component secondary
-colour therefore drops entirely — set on 94.4% of vertices at mean 126/255. Implemented and
-defaulted off, because the A/B could not separate it from animation drift.
+colour therefore drops entirely — set on 94.4% of vertices at mean 126/255. On by default: without
+it, a stationary actor at the fog limit flashes into view for ~13 frames after every camera apply
+(a dormant ghoul in the sentinels mission alley).
 
-**Status:** COMPLETE — what remains are things it found and did not fix: the per-vertex fog
-default, and two game-side defects it was expected to fix and does not
+**Status:** COMPLETE — what remains are two game-side defects it was expected to fix and does not
 
 ---
 
