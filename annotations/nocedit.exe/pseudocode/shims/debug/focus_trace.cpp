@@ -14,7 +14,10 @@
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
+#if defined(__GLIBC__) || defined(__APPLE__) || defined(__FreeBSD__)
 #include <execinfo.h>
+#define FOCUS_HAS_EXECINFO 1
+#endif
 
 namespace {
 
@@ -38,10 +41,12 @@ unsigned delta(unsigned now, unsigned *last)
 
 void log_backtrace(void)
 {
+#if FOCUS_HAS_EXECINFO
     void *frames[24];
     int n = backtrace(frames, 24);
     fflush(s_log);
     backtrace_symbols_fd(frames, n, fileno(s_log));
+#endif
 }
 
 } // namespace
