@@ -86,6 +86,7 @@
 // | `NOCTURNE_AUTHENTIC_SHADOW_DEPTH_READ` | 0 | defect | the shadow-pass depth test reads the width it was written at |
 // | `NOCTURNE_AUTHENTIC_BODY_PART_BAKE` | 0 | defect | a settled body part goes into the background only through a background bake |
 // | `NOCTURNE_AUTHENTIC_MOTION_TWEEN_INIT` | 0 | defect | a new animation controller starts with no stale transition to reverse |
+// | `NOCTURNE_AUTHENTIC_HW_SFX_FALLOFF` | 0 | defect | hardware-mixed positional sounds fall off as the software mixer's do |
 // | `NOCTURNE_AUTHENTIC_PICKUP_WIELDS` | 0 | choice | a pickup is never drawn without the player asking |
 // | `NOCTURNE_AUTHENTIC_OPTIONS_RESUMES_GAME` | 0 | choice | leaving Options returns to the pause menu |
 // | `NOCTURNE_AUTHENTIC_CONFIRM_PROMPTS` | 0 | choice | no bracketed hotkey letters, and a short form when the long one will not fit |
@@ -1655,6 +1656,28 @@
 //   Override with -DNOCTURNE_AUTHENTIC_MOTION_TWEEN_INIT=1.
 #ifndef NOCTURNE_AUTHENTIC_MOTION_TWEEN_INIT
 #define NOCTURNE_AUTHENTIC_MOTION_TWEEN_INIT 0
+#endif
+
+// NOCTURNE_AUTHENTIC_HW_SFX_FALLOFF
+//   How loud a positional sound is under hardware mixing.
+//
+//   The software mixer (CSfxSlot::computeChannelVolumes) plays a positional
+//   sound at chvol * ref / clamp(d, min_distance, max_distance). Under hardware
+//   mixing, CDirectSoundDevice::setSfxPos loads reference_distance (+0x100) and
+//   max_distance (+0x108) but never min_distance (+0x104) (005af7cd..005af7e0),
+//   passes ref * chvol as DirectSound's min distance, and divides the channel
+//   volume out of SetVolume (FDIV ST0,ST0 at 005afa20). A sound whose
+//   min_distance exceeds ref * chvol plays louder than in software; the pier
+//   loop PIER59.WAV (ref 40, min 66.67, chvol 0.25) does so about 3x at 22 units.
+//
+//   1: shipped behaviour - min distance ref * chvol, unit volume.
+//   0: min_distance and max_distance as DirectSound's distances, with
+//      chvol * ref / min_distance as the volume, which reproduces the software
+//      curve wherever that level does not exceed 0 dB.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_HW_SFX_FALLOFF=1.
+#ifndef NOCTURNE_AUTHENTIC_HW_SFX_FALLOFF
+#define NOCTURNE_AUTHENTIC_HW_SFX_FALLOFF 0
 #endif
 
 // =============================================================================

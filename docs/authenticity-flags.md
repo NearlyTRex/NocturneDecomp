@@ -74,7 +74,7 @@ flag.
 
 ## What is gated
 
-71 toggles. The kinds below are the same ones the header's table names, and a flag's kind is the
+72 toggles. The kinds below are the same ones the header's table names, and a flag's kind is the
 honest reason its default is what it is.
 
 **`host` — the shipped behaviour depends on Win32 + DirectDraw and cannot be reproduced**
@@ -121,6 +121,7 @@ honest reason its default is what it is.
 | `SHADOW_DEPTH_READ` | the shadow-pass depth test reads the 16-bit value the span writer actually wrote |
 | `BODY_PART_BAKE` | a settled body part stays on screen until a background bake draws it, instead of vanishing under a light |
 | `MOTION_TWEEN_INIT` | a new animation controller starts with no stale transition to reverse |
+| `HW_SFX_FALLOFF` | hardware-mixed positional sounds fall off as the software mixer's do |
 | `INPUT_REPEAT` | a held button starts an action once instead of restarting it every frame |
 | `ITEM_HELP_POSITION` | the pickup help text does not sit on top of the pickup name |
 | `DEATH_MESSAGE_POSITION` | the death banner is centred, clear of the message line |
