@@ -63,7 +63,7 @@
 // | `NOCTURNE_AUTHENTIC_FOG_PLANE_SCALE` | 0 | defect | the fog plane is resampled onto the camera grid, not cropped to it |
 // | `NOCTURNE_AUTHENTIC_BACKDROP_FILTER` | 0 | defect | a rescaled backdrop keeps its own brightness |
 // | `NOCTURNE_AUTHENTIC_CONTROL_SETUP` | 0 | defect | picking a control type leaves you able to play with it |
-// | `NOCTURNE_AUTHENTIC_FLASHLIGHT_DRAW` | 0 | defect | the flashlight key does nothing where it cannot light |
+// | `NOCTURNE_AUTHENTIC_FLASHLIGHT_DRAW` | 0 | defect | at HQ neither the draw nor the flashlight key brings the weapon out |
 // | `NOCTURNE_AUTHENTIC_MODAL_FIT` | 0 | defect | a modal too wide for the screen is clamped, not pushed off both edges |
 // | `NOCTURNE_AUTHENTIC_BURN_BONE_COUNT` | 0 | defect | a burning character can reach fully-burned and die |
 // | `NOCTURNE_AUTHENTIC_BURN_LOOP_SOUND` | 0 | defect | the on-fire loop stops when the fire does |
@@ -758,16 +758,17 @@
 //   in a mission that was never going to allow it. The script is asking about
 //   weapons; what it caught was a torch.
 //
+//   The HQ missions (every root name starting "HQ-") hold the weapon away this
+//   way for their whole length; elsewhere it is only ever a cutscene's holster.
+//
 //   1: shipped behaviour -- the key draws the weapon to light it, and a scripted
 //      holster clicks on its way past.
-//   0: the key does nothing unless the weapon is already out, so a mission that
-//      refuses the weapon refuses the light silently; and a holster the player
-//      did not ask for clears the light without a click. The player's own
-//      holster still clicks -- that path is in CStranger::processFrame and is
-//      not touched.
-//
-//   The trade is that the key no longer draws the weapon for you: with the
-//   weapon away it takes a draw first, where before one press did both.
+//   0: in an HQ mission CGame::playerControls drops the draw and flashlight
+//      requests before the hero or netplay sees them (shims/game/hq_weapon.h),
+//      so no key brings the weapon out, for host and guest alike. Elsewhere the
+//      key draws the weapon as shipped. A holster the player did not ask for
+//      clears the light without a click; the player's own holster still clicks
+//      -- that path is in CStranger::processFrame and is not touched.
 //
 //   Override with -DNOCTURNE_AUTHENTIC_FLASHLIGHT_DRAW=1.
 #ifndef NOCTURNE_AUTHENTIC_FLASHLIGHT_DRAW

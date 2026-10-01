@@ -163,6 +163,11 @@ void nocturne_trigl_envmap_pass_end(void);
 // CGame::processFrame after the HUD. Inert under NOCTURNE_AUTHENTIC_CHEAT_MENU.
 #include "game/perf_overlay.h"
 
+// The HQ missions' refusal of the draw and flashlight keys
+// (nocturne_hq_filter_input), applied in CGame::playerControls. Gated by
+// NOCTURNE_AUTHENTIC_FLASHLIGHT_DRAW.
+#include "game/hq_weapon.h"
+
 // The automap (nocturne_automap_*), reached from the game TU for its per-frame
 // update and draw, from the set TU to rebuild when a level's geometry lands,
 // from the menu TU for its key binding, and from the save/load keeps for the

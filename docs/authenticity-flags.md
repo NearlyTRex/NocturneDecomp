@@ -105,7 +105,7 @@ honest reason its default is what it is.
 | `FOG_PLANE_SCALE` | fog covers the view at modes whose camera grid is not 320 wide |
 | `BACKDROP_FILTER` | a backdrop rescaled to the camera framebuffer keeps its own brightness |
 | `CONTROL_SETUP` | picking a control type leaves you with bindings that type can produce |
-| `FLASHLIGHT_DRAW` | the light key does nothing where the weapon it is mounted on cannot be out |
+| `FLASHLIGHT_DRAW` | in the HQ missions neither the draw nor the flashlight key brings the weapon out; elsewhere the flashlight key draws it as shipped |
 | `MODAL_FIT` | a modal too wide for the screen is clamped rather than pushed off both edges |
 | `BURN_BONE_COUNT` | a burning character can reach fully-burned and die instead of burning forever |
 | `BURN_LOOP_SOUND` | the on-fire crackle stops when the fire does |
