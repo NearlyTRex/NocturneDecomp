@@ -74,7 +74,7 @@ flag.
 
 ## What is gated
 
-72 toggles. The kinds below are the same ones the header's table names, and a flag's kind is the
+74 toggles. The kinds below are the same ones the header's table names, and a flag's kind is the
 honest reason its default is what it is.
 
 **`host` — the shipped behaviour depends on Win32 + DirectDraw and cannot be reproduced**
@@ -158,6 +158,8 @@ honest reason its default is what it is.
 | `CHEAT_MENU` | a CHEATS entry on Options, and WARPS on the pause menu |
 | `RESOLUTION_LIST` | one ordered table drives both the label and the stepping |
 | `HUD_SCALE` | HUD bitmaps, text and the goggles scale with the framebuffer |
+| `WINDOW_MODE` | Graphics Options picks windowed, fullscreen or borderless; on, the game is always fullscreen |
+| `OS_FONT` | Graphics Options can pick bitmap or system text |
 | `CONSOLE` | the console fills the window and keeps scrollback |
 | `FMV` | Sound Options has a Movie Vol line; the opening movie plays either way |
 | `ATTRACT_MOVIES` | the menu cycles NOC1..NOC4 after its splash music |

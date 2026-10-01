@@ -159,6 +159,10 @@ void nocturne_trigl_envmap_pass_end(void);
 // the menu and mission TUs. Both are no-ops under NOCTURNE_AUTHENTIC_CHEAT_MENU.
 #include "game/cheats.h"
 
+// The Debug page's frame-rate readout (nocturne_perf_overlay_render), drawn from
+// CGame::processFrame after the HUD. Inert under NOCTURNE_AUTHENTIC_CHEAT_MENU.
+#include "game/perf_overlay.h"
+
 // The automap (nocturne_automap_*), reached from the game TU for its per-frame
 // update and draw, from the set TU to rebuild when a level's geometry lands,
 // from the menu TU for its key binding, and from the save/load keeps for the
@@ -217,7 +221,7 @@ void nocturne_trigl_envmap_pass_end(void);
 
 // Which of the engine's two text paths is used (nocturne_os_font_*), reached
 // from CGame::initFonts to apply the stored choice and from the menu TU for the
-// Graphics Options line. Inert under NOCTURNE_OS_FONT_OPTION=0.
+// Graphics Options line. Inert under NOCTURNE_AUTHENTIC_OS_FONT=1.
 #include "core/os_font.h"
 
 // The dialog widgets' font (nocturne_menu_font*), chosen on the Graphics

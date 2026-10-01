@@ -29,17 +29,17 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_00510c80(void)
   int local_1c [3];
   CGame *pCVar2;
   int iVar3;
-#if NOCTURNE_WINDOW_MODE_OPTION || NOCTURNE_OS_FONT_OPTION || !NOCTURNE_AUTHENTIC_MENU_FONT
+#if !NOCTURNE_AUTHENTIC_WINDOW_MODE || !NOCTURNE_AUTHENTIC_OS_FONT || !NOCTURNE_AUTHENTIC_MENU_FONT
   char *menu_ptrs [12];
   int extra_count;
   int menu_y;
   int menu_ch;
 #endif
-#if NOCTURNE_WINDOW_MODE_OPTION
+#if !NOCTURNE_AUTHENTIC_WINDOW_MODE
   char window_line [256];
   int window_item;
 #endif
-#if NOCTURNE_OS_FONT_OPTION
+#if !NOCTURNE_AUTHENTIC_OS_FONT
   char os_font_line [256];
   int os_font_item;
 #endif
@@ -300,19 +300,19 @@ LAB_00510f71:
     prev_pixx = g_CGamePtr->game_pixx;
     prev_pixy = g_CGamePtr->game_pixy;
 #endif
-#if NOCTURNE_WINDOW_MODE_OPTION || NOCTURNE_OS_FONT_OPTION || !NOCTURNE_AUTHENTIC_MENU_FONT
+#if !NOCTURNE_AUTHENTIC_WINDOW_MODE || !NOCTURNE_AUTHENTIC_OS_FONT || !NOCTURNE_AUTHENTIC_MENU_FONT
     for (iVar4 = 0; iVar4 < iVar7; iVar4++) {
       menu_ptrs[iVar4] = g_GraphicsMenuTextPointers[iVar4];
     }
     extra_count = iVar7;
-#if NOCTURNE_OS_FONT_OPTION
+#if !NOCTURNE_AUTHENTIC_OS_FONT
     _sprintf(os_font_line,"Text : %s",
              nocturne_os_font_name(nocturne_os_font_get()));
     os_font_item = extra_count;
     menu_ptrs[extra_count] = os_font_line;
     extra_count = extra_count + 1;
 #endif
-#if NOCTURNE_WINDOW_MODE_OPTION
+#if !NOCTURNE_AUTHENTIC_WINDOW_MODE
     _sprintf(window_line,"Window : %s",
              nocturne_window_mode_name(nocturne_window_mode_get()));
     window_item = extra_count;
@@ -353,7 +353,7 @@ LAB_00510f71:
       g_CGamePtr->game_pixy = 0x1e0;
       pCVar4->game_pixx = 0x280;
     }
-#if NOCTURNE_OS_FONT_OPTION
+#if !NOCTURNE_AUTHENTIC_OS_FONT
     if (iVar7 == os_font_item) {
       if (g_MenuLeftRightPressed == 1) {
         nocturne_os_font_cycle(-1);
@@ -364,7 +364,7 @@ LAB_00510f71:
       iVar7 = -1;   /* consumed; matches no case below */
     }
 #endif
-#if NOCTURNE_WINDOW_MODE_OPTION
+#if !NOCTURNE_AUTHENTIC_WINDOW_MODE
     if (iVar7 == window_item) {
       if (g_MenuLeftRightPressed == 1) {
         nocturne_window_mode_cycle(-1);

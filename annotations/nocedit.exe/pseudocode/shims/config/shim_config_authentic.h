@@ -106,6 +106,8 @@
 // | `NOCTURNE_AUTHENTIC_CHEAT_MENU` | 0 | addition | a CHEATS entry on Options, and WARPS on pause |
 // | `NOCTURNE_AUTHENTIC_RESOLUTION_LIST` | 0 | addition | one ordered table drives label and stepping |
 // | `NOCTURNE_AUTHENTIC_HUD_SCALE` | 0 | addition | the HUD scales with the framebuffer |
+// | `NOCTURNE_AUTHENTIC_WINDOW_MODE` | 0 | addition | Graphics Options picks windowed, fullscreen or borderless |
+// | `NOCTURNE_AUTHENTIC_OS_FONT` | 0 | addition | Graphics Options can pick bitmap or system text |
 // | `NOCTURNE_AUTHENTIC_CONSOLE` | 0 | addition | the console fills the window and keeps scrollback |
 // | `NOCTURNE_AUTHENTIC_FMV` | 0 | addition | Sound Options has a Movie Vol line |
 // | `NOCTURNE_AUTHENTIC_ATTRACT_MOVIES` | 0 | addition | the menu cycles NOC1..NOC4 after its music |
@@ -2259,6 +2261,56 @@
 //   Override with -DNOCTURNE_AUTHENTIC_HUD_SCALE=1.
 #ifndef NOCTURNE_AUTHENTIC_HUD_SCALE
 #define NOCTURNE_AUTHENTIC_HUD_SCALE 0
+#endif
+
+// NOCTURNE_AUTHENTIC_WINDOW_MODE
+//   The original is DirectDraw exclusive fullscreen only: it asks for
+//   DDSCL_FULLSCREEN and has no concept of a window mode.
+//   1: shipped behaviour - the window is always fullscreen at the game's
+//      resolution, and Graphics Options has no window line.
+//   0: a "Window : Windowed/Fullscreen/Borderless" line on the Graphics Options
+//      screen, applied immediately and persisted to the INI as
+//      [Graphics] windowMode.
+//
+//   The extra menu line is carried in a local pointer array inside the keep,
+//   because the engine's g_GraphicsMenuTextPointers/Buffers globals are exactly
+//   9 entries and resizing them would be a generator change.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_WINDOW_MODE=1.
+#ifndef NOCTURNE_AUTHENTIC_WINDOW_MODE
+#define NOCTURNE_AUTHENTIC_WINDOW_MODE 0
+#endif
+
+// NOCTURNE_AUTHENTIC_OS_FONT
+//   The engine can draw text two ways. Normally it blits glyphs out of the
+//   bitmap sheets (fnte_pfd.RAW and friends); when one global is non-zero,
+//   CGame::initFonts instead builds CWinFont objects over the OS font named by
+//   g_OSFontName, and CBitFont::drawText dispatches to those. The only writer
+//   of that global in either shipped binary is CSupport::readMessageFile, from
+//   msglist.txt field two, and the shipped POD carries no msglist.txt.
+//   1: shipped behaviour - the message file's answer is the only one, which in
+//      practice means the bitmap sheets.
+//   0: a "Text : Auto/Bitmap/System" line on the Graphics Options screen,
+//      persisted to the INI as [Graphics] osFont and read back by initFonts at
+//      startup.
+//
+//   AUTO IS THE DEFAULT AND WRITES NOTHING. readMessageFile runs before
+//   initFonts, so an unconditional override would defeat the message file's
+//   choice. Bitmap and System are overrides; Auto leaves it alone.
+//
+//   APPLIED AT STARTUP, NOT ON SELECTION. The global is read once, by
+//   initFonts, which allocates the CWinFont objects. Switching live would mean
+//   freeFonts() + initFonts() from inside the Options screen, which is drawing
+//   through g_EditorFont and g_ThemeFont at the time, so the menu line says the
+//   choice takes effect next launch.
+//
+//   The system path degrades safely: CBitFont::drawText checks CFont::drawText's
+//   return and, on -1, clears win_font_enabled and redraws through the bitmap
+//   sheet.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_OS_FONT=1.
+#ifndef NOCTURNE_AUTHENTIC_OS_FONT
+#define NOCTURNE_AUTHENTIC_OS_FONT 0
 #endif
 
 // NOCTURNE_AUTHENTIC_CONSOLE

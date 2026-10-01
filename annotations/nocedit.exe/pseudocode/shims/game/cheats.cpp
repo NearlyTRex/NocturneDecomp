@@ -115,6 +115,7 @@ const CheatDef kCheats[NOCTURNE_CHEAT_COUNT] = {
     // Puts WARPS on the pause menu. Nothing is applied from here — see the
     // visibility-switch note in cheats.h.
     { (char *)"Mission warps",            (char *)"missionWarps",     CHEAT_PAGE_DEBUG,    2 },
+    { (char *)"FPS counter",              (char *)"perfStats",        CHEAT_PAGE_DEBUG,    2 },
 };
 
 // One CHealthItem, as a set file describes one: a model, a number of uses and
@@ -990,9 +991,10 @@ void applyOne(int index, int value)
 
     case NOCTURNE_CHEAT_INF_BATTERY:
     case NOCTURNE_CHEAT_WARPS:
-        // Nothing to apply — both are read where they take effect through
-        // nocturne_cheat_active: updateInventory every frame for the battery,
-        // and the pause menu as it is built for the warps. Listed so the switch
+    case NOCTURNE_CHEAT_PERF_STATS:
+        // Nothing to apply — each is read where it takes effect: updateInventory
+        // every frame for the battery, the pause menu as it is built for the
+        // warps, and the frame-rate overlay as it draws. Listed so the switch
         // stays a complete account of every line.
         break;
 
@@ -1278,6 +1280,15 @@ int nocturne_cheat_active(int index)
     return effectiveState(index);
 }
 
+int nocturne_cheat_local(int index)
+{
+    if ((index < 0) || (NOCTURNE_CHEAT_COUNT <= index)) {
+        return 0;
+    }
+    loadSettings();
+    return s_state[index];
+}
+
 int nocturne_cheats_pack(unsigned char *out, int out_size)
 {
     int i;
@@ -1338,6 +1349,12 @@ void nocturne_cheats_apply(void)
 }
 
 int nocturne_cheat_active(int index)
+{
+    (void)index;
+    return 0;
+}
+
+int nocturne_cheat_local(int index)
 {
     (void)index;
     return 0;

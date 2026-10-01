@@ -2,7 +2,7 @@
 // OS FONT — implementation
 // =============================================================================
 //
-// See os_font.h, and NOCTURNE_OS_FONT_OPTION in config/shim_config_video.h.
+// See os_font.h, and NOCTURNE_AUTHENTIC_OS_FONT in config/shim_config_authentic.h.
 
 #include "core/os_font.h"
 #include "shim_config.h"
@@ -17,7 +17,7 @@
 // engine will actually open.
 std::string watcom_resolve_fs_path(const char *path);
 
-#if NOCTURNE_OS_FONT_OPTION
+#if !NOCTURNE_AUTHENTIC_OS_FONT
 
 namespace {
 
@@ -112,4 +112,4 @@ extern "C" int         nocturne_os_font_cycle(int)       { return NOCTURNE_OS_FO
 extern "C" const char *nocturne_os_font_name(int)        { return "Auto"; }
 extern "C" void        nocturne_os_font_apply(void)      { }
 
-#endif // NOCTURNE_OS_FONT_OPTION
+#endif // !NOCTURNE_AUTHENTIC_OS_FONT

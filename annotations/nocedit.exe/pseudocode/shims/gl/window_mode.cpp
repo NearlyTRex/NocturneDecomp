@@ -78,6 +78,10 @@ void apply_pref_size() {
 } // namespace
 
 extern "C" int nocturne_window_mode_get(void) {
+#if NOCTURNE_AUTHENTIC_WINDOW_MODE
+    // DDSCL_FULLSCREEN | DDSCL_EXCLUSIVE is the only mode the shipped game has.
+    return NOCTURNE_WINDOW_MODE_FULLSCREEN;
+#endif
     if (!s_loaded) {
         // CIni::getProfileString has NO initialised-guard: if it cannot open the
         // file it calls displayErrorAndQuit("Unable to open input") and takes the
