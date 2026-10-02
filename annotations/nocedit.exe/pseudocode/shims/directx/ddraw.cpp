@@ -384,7 +384,6 @@ static HRESULT ddraw_Initialize(IDirectDraw* this_ptr, GUID* guid) {
 static HRESULT ddraw_RestoreDisplayMode(IDirectDraw* this_ptr) {
     DDraw_ShimData* ddraw = reinterpret_cast<DDraw_ShimData*>(this_ptr);
     if (ddraw->window) {
-#if NOCTURNE_WINDOW_MODE_OPTION
         // DirectDraw's RestoreDisplayMode undoes SetDisplayMode's *display mode*
         // change; it is not a request to become a window. Forcing windowed here
         // silently overrode the user's setting, and the engine calls this from
@@ -394,9 +393,6 @@ static HRESULT ddraw_RestoreDisplayMode(IDirectDraw* this_ptr) {
         // entering a mission, and only looked right again once the menu
         // re-applied it. Re-assert the user's choice instead.
         nocturne_window_mode_apply(ddraw->window);
-#else
-        SDL_SetWindowFullscreen(ddraw->window, 0);
-#endif
     }
     return DD_OK;
 }
@@ -495,11 +491,9 @@ static HRESULT ddraw_SetDisplayMode(IDirectDraw* this_ptr, DWORD width, DWORD he
         }
     }
 
-#if NOCTURNE_WINDOW_MODE_OPTION
     // Push the user's window mode after sizing, so windowed mode gets the new
     // size and fullscreen/borderless override it.
     nocturne_window_mode_apply(ddraw->window);
-#endif
 
     // Window was created hidden by user32/ddraw to suppress a flash at the
     // default size; reveal it now that we're at the real game resolution.

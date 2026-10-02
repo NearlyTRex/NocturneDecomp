@@ -172,6 +172,9 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
 #if !NOCTURNE_AUTHENTIC_AUTOMAP
       nocturne_automap_render();
 #endif
+#if !NOCTURNE_AUTHENTIC_CHEAT_MENU
+      nocturne_perf_overlay_render();
+#endif
       if (g_MovieRecordingArmed != 0) {
         iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
         if ((iVar5 != 0) &&

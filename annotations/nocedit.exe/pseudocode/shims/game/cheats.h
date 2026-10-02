@@ -351,7 +351,9 @@ extern "C" {
 // read where that menu is built rather than written into engine state at
 // mission start. See shims/game/warps.h.
 #define NOCTURNE_CHEAT_WARPS            45
-#define NOCTURNE_CHEAT_COUNT            46
+// Nothing to apply: a frame-rate readout drawn by shims/game/perf_overlay.h.
+#define NOCTURNE_CHEAT_PERF_STATS       46
+#define NOCTURNE_CHEAT_COUNT            47
 
 // The weather line's states, in cycle order.
 #define NOCTURNE_CHEAT_WEATHER_OFF  0
@@ -399,6 +401,10 @@ int nocturne_cheats_override_active(void);
 // CInventory::updateInventory, which computes the discharge inline. Cheap
 // enough for a per-frame call: a bounds check and an array read.
 int nocturne_cheat_active(int index);
+
+// This machine's own setting for one line, ignoring a host's override. For a
+// line that only changes what this machine displays, where a host has no say.
+int nocturne_cheat_local(int index);
 
 // Applies every armed cheat to the mission that is about to run. Called from
 // CGame::runGameSession, just after the prologue that clears the flags — see

@@ -63,7 +63,7 @@
 // | `NOCTURNE_AUTHENTIC_FOG_PLANE_SCALE` | 0 | defect | the fog plane is resampled onto the camera grid, not cropped to it |
 // | `NOCTURNE_AUTHENTIC_BACKDROP_FILTER` | 0 | defect | a rescaled backdrop keeps its own brightness |
 // | `NOCTURNE_AUTHENTIC_CONTROL_SETUP` | 0 | defect | picking a control type leaves you able to play with it |
-// | `NOCTURNE_AUTHENTIC_FLASHLIGHT_DRAW` | 0 | defect | the flashlight key does nothing where it cannot light |
+// | `NOCTURNE_AUTHENTIC_FLASHLIGHT_DRAW` | 0 | defect | at HQ neither the draw nor the flashlight key brings the weapon out |
 // | `NOCTURNE_AUTHENTIC_MODAL_FIT` | 0 | defect | a modal too wide for the screen is clamped, not pushed off both edges |
 // | `NOCTURNE_AUTHENTIC_BURN_BONE_COUNT` | 0 | defect | a burning character can reach fully-burned and die |
 // | `NOCTURNE_AUTHENTIC_BURN_LOOP_SOUND` | 0 | defect | the on-fire loop stops when the fire does |
@@ -85,6 +85,8 @@
 // | `NOCTURNE_AUTHENTIC_MELEE_PICKUP` | 0 | defect | a melee weapon already held does not take a second slot |
 // | `NOCTURNE_AUTHENTIC_SHADOW_DEPTH_READ` | 0 | defect | the shadow-pass depth test reads the width it was written at |
 // | `NOCTURNE_AUTHENTIC_BODY_PART_BAKE` | 0 | defect | a settled body part goes into the background only through a background bake |
+// | `NOCTURNE_AUTHENTIC_MOTION_TWEEN_INIT` | 0 | defect | a new animation controller starts with no stale transition to reverse |
+// | `NOCTURNE_AUTHENTIC_HW_SFX_FALLOFF` | 0 | defect | hardware-mixed positional sounds fall off as the software mixer's do |
 // | `NOCTURNE_AUTHENTIC_PICKUP_WIELDS` | 0 | choice | a pickup is never drawn without the player asking |
 // | `NOCTURNE_AUTHENTIC_OPTIONS_RESUMES_GAME` | 0 | choice | leaving Options returns to the pause menu |
 // | `NOCTURNE_AUTHENTIC_CONFIRM_PROMPTS` | 0 | choice | no bracketed hotkey letters, and a short form when the long one will not fit |
@@ -104,6 +106,8 @@
 // | `NOCTURNE_AUTHENTIC_CHEAT_MENU` | 0 | addition | a CHEATS entry on Options, and WARPS on pause |
 // | `NOCTURNE_AUTHENTIC_RESOLUTION_LIST` | 0 | addition | one ordered table drives label and stepping |
 // | `NOCTURNE_AUTHENTIC_HUD_SCALE` | 0 | addition | the HUD scales with the framebuffer |
+// | `NOCTURNE_AUTHENTIC_WINDOW_MODE` | 0 | addition | Graphics Options picks windowed, fullscreen or borderless |
+// | `NOCTURNE_AUTHENTIC_OS_FONT` | 0 | addition | Graphics Options can pick bitmap or system text |
 // | `NOCTURNE_AUTHENTIC_CONSOLE` | 0 | addition | the console fills the window and keeps scrollback |
 // | `NOCTURNE_AUTHENTIC_FMV` | 0 | addition | Sound Options has a Movie Vol line |
 // | `NOCTURNE_AUTHENTIC_ATTRACT_MOVIES` | 0 | addition | the menu cycles NOC1..NOC4 after its music |
@@ -754,16 +758,17 @@
 //   in a mission that was never going to allow it. The script is asking about
 //   weapons; what it caught was a torch.
 //
+//   The HQ missions (every root name starting "HQ-") hold the weapon away this
+//   way for their whole length; elsewhere it is only ever a cutscene's holster.
+//
 //   1: shipped behaviour -- the key draws the weapon to light it, and a scripted
 //      holster clicks on its way past.
-//   0: the key does nothing unless the weapon is already out, so a mission that
-//      refuses the weapon refuses the light silently; and a holster the player
-//      did not ask for clears the light without a click. The player's own
-//      holster still clicks -- that path is in CStranger::processFrame and is
-//      not touched.
-//
-//   The trade is that the key no longer draws the weapon for you: with the
-//   weapon away it takes a draw first, where before one press did both.
+//   0: in an HQ mission CGame::playerControls drops the draw and flashlight
+//      requests before the hero or netplay sees them (shims/game/hq_weapon.h),
+//      so no key brings the weapon out, for host and guest alike. Elsewhere the
+//      key draws the weapon as shipped. A holster the player did not ask for
+//      clears the light without a click; the player's own holster still clicks
+//      -- that path is in CStranger::processFrame and is not touched.
 //
 //   Override with -DNOCTURNE_AUTHENTIC_FLASHLIGHT_DRAW=1.
 #ifndef NOCTURNE_AUTHENTIC_FLASHLIGHT_DRAW
@@ -1635,6 +1640,49 @@
 #define NOCTURNE_AUTHENTIC_BODY_PART_BAKE 0
 #endif
 
+// NOCTURNE_AUTHENTIC_MOTION_TWEEN_INIT
+//   CMotionController's tween fields before its first tween.
+//
+//   The ctor (0052d570), reset and clearTweenState write +0x0..+0x8, +0xc,
+//   +0x14, +0x28, +0x2c, +0x30 and +0x50; tween_speed, tween_target_motion,
+//   tween_target_frame, tween_direction and tween_set_new_state (+0x10..+0x24
+//   less +0x14) are never written, and debugMalloc does not clear. A
+//   MOTION_CMD_WAIT_EXIT transition sets in_transition without starting a
+//   tween, after which setDesiredState reverses the transition when
+//   tween_direction reads 0, swapping current_motion_index with whatever
+//   tween_target_motion holds.
+//
+//   1: shipped behaviour - the fields hold whatever the heap held.
+//   0: the ctor zeroes them, with tween_direction 1, the value every finished
+//      tween leaves, so there is nothing to reverse.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_MOTION_TWEEN_INIT=1.
+#ifndef NOCTURNE_AUTHENTIC_MOTION_TWEEN_INIT
+#define NOCTURNE_AUTHENTIC_MOTION_TWEEN_INIT 0
+#endif
+
+// NOCTURNE_AUTHENTIC_HW_SFX_FALLOFF
+//   How loud a positional sound is under hardware mixing.
+//
+//   The software mixer (CSfxSlot::computeChannelVolumes) plays a positional
+//   sound at chvol * ref / clamp(d, min_distance, max_distance). Under hardware
+//   mixing, CDirectSoundDevice::setSfxPos loads reference_distance (+0x100) and
+//   max_distance (+0x108) but never min_distance (+0x104) (005af7cd..005af7e0),
+//   passes ref * chvol as DirectSound's min distance, and divides the channel
+//   volume out of SetVolume (FDIV ST0,ST0 at 005afa20). A sound whose
+//   min_distance exceeds ref * chvol plays louder than in software; the pier
+//   loop PIER59.WAV (ref 40, min 66.67, chvol 0.25) does so about 3x at 22 units.
+//
+//   1: shipped behaviour - min distance ref * chvol, unit volume.
+//   0: min_distance and max_distance as DirectSound's distances, with
+//      chvol * ref / min_distance as the volume, which reproduces the software
+//      curve wherever that level does not exceed 0 dB.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_HW_SFX_FALLOFF=1.
+#ifndef NOCTURNE_AUTHENTIC_HW_SFX_FALLOFF
+#define NOCTURNE_AUTHENTIC_HW_SFX_FALLOFF 0
+#endif
+
 // =============================================================================
 // C. THE SHIPPED BINARY IS NOT WRONG, WE PREFER OTHERWISE
 // =============================================================================
@@ -2214,6 +2262,56 @@
 //   Override with -DNOCTURNE_AUTHENTIC_HUD_SCALE=1.
 #ifndef NOCTURNE_AUTHENTIC_HUD_SCALE
 #define NOCTURNE_AUTHENTIC_HUD_SCALE 0
+#endif
+
+// NOCTURNE_AUTHENTIC_WINDOW_MODE
+//   The original is DirectDraw exclusive fullscreen only: it asks for
+//   DDSCL_FULLSCREEN and has no concept of a window mode.
+//   1: shipped behaviour - the window is always fullscreen at the game's
+//      resolution, and Graphics Options has no window line.
+//   0: a "Window : Windowed/Fullscreen/Borderless" line on the Graphics Options
+//      screen, applied immediately and persisted to the INI as
+//      [Graphics] windowMode.
+//
+//   The extra menu line is carried in a local pointer array inside the keep,
+//   because the engine's g_GraphicsMenuTextPointers/Buffers globals are exactly
+//   9 entries and resizing them would be a generator change.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_WINDOW_MODE=1.
+#ifndef NOCTURNE_AUTHENTIC_WINDOW_MODE
+#define NOCTURNE_AUTHENTIC_WINDOW_MODE 0
+#endif
+
+// NOCTURNE_AUTHENTIC_OS_FONT
+//   The engine can draw text two ways. Normally it blits glyphs out of the
+//   bitmap sheets (fnte_pfd.RAW and friends); when one global is non-zero,
+//   CGame::initFonts instead builds CWinFont objects over the OS font named by
+//   g_OSFontName, and CBitFont::drawText dispatches to those. The only writer
+//   of that global in either shipped binary is CSupport::readMessageFile, from
+//   msglist.txt field two, and the shipped POD carries no msglist.txt.
+//   1: shipped behaviour - the message file's answer is the only one, which in
+//      practice means the bitmap sheets.
+//   0: a "Text : Auto/Bitmap/System" line on the Graphics Options screen,
+//      persisted to the INI as [Graphics] osFont and read back by initFonts at
+//      startup.
+//
+//   AUTO IS THE DEFAULT AND WRITES NOTHING. readMessageFile runs before
+//   initFonts, so an unconditional override would defeat the message file's
+//   choice. Bitmap and System are overrides; Auto leaves it alone.
+//
+//   APPLIED AT STARTUP, NOT ON SELECTION. The global is read once, by
+//   initFonts, which allocates the CWinFont objects. Switching live would mean
+//   freeFonts() + initFonts() from inside the Options screen, which is drawing
+//   through g_EditorFont and g_ThemeFont at the time, so the menu line says the
+//   choice takes effect next launch.
+//
+//   The system path degrades safely: CBitFont::drawText checks CFont::drawText's
+//   return and, on -1, clears win_font_enabled and redraws through the bitmap
+//   sheet.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_OS_FONT=1.
+#ifndef NOCTURNE_AUTHENTIC_OS_FONT
+#define NOCTURNE_AUTHENTIC_OS_FONT 0
 #endif
 
 // NOCTURNE_AUTHENTIC_CONSOLE

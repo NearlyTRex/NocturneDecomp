@@ -4,7 +4,7 @@
 // OS FONT — which of the engine's two text paths is used
 // =============================================================================
 //
-// Gated by NOCTURNE_OS_FONT_OPTION, which carries the reasoning; the short
+// Gated by NOCTURNE_AUTHENTIC_OS_FONT, which carries the reasoning; the short
 // version is that the engine has always been able to draw text through OS fonts
 // instead of its bitmap sheets, and nothing in either shipped binary ever turns
 // that on.

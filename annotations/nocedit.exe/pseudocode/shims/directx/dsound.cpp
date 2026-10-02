@@ -88,7 +88,6 @@ struct DSoundBuffer_ShimData {
     Uint8* audio_data;
     DWORD buffer_size;
     DWORD play_cursor;
-    DWORD write_cursor;
     SDL_AudioDeviceID device_id;
     int is_playing;
     int is_looping;
@@ -150,8 +149,10 @@ static DSound3DListener_ShimData* g_ds3d_listener = nullptr;
 // DirectSound's model: no attenuation within flMinDistance, then falloff scaled
 // by the listener's rolloff factor, and no further attenuation past
 // flMaxDistance:
-//     d    = clamp(|listener - source| * distanceFactor, min, max)
+//     d    = clamp(|listener - source|, min, max)
 //     gain = (min / d) ^ rolloff
+// Positions and min/max distances share the application's vector unit, so the
+// listener's distance factor (metres per unit, 0.3048 here) does not enter.
 static float ds3d_distance_gain(const DSoundBuffer_ShimData* buf) {
     const DSound3DBuffer_ShimData* d3d = buf ? buf->d3d : nullptr;
     if (d3d == nullptr) return 1.0f;
@@ -161,13 +162,11 @@ static float ds3d_distance_gain(const DSoundBuffer_ShimData* buf) {
     if (d3d->params.dwMode == 2) return 1.0f;
 
     float lx = 0.0f, ly = 0.0f, lz = 0.0f;
-    float distance_factor = 1.0f, rolloff = 1.0f;
+    float rolloff = 1.0f;
     if (g_ds3d_listener != nullptr) {
         lx = g_ds3d_listener->params.vPosition.x;
         ly = g_ds3d_listener->params.vPosition.y;
         lz = g_ds3d_listener->params.vPosition.z;
-        if (g_ds3d_listener->params.flDistanceFactor > 0.0f)
-            distance_factor = g_ds3d_listener->params.flDistanceFactor;
         rolloff = g_ds3d_listener->params.flRolloffFactor;
     }
 
@@ -179,7 +178,7 @@ static float ds3d_distance_gain(const DSoundBuffer_ShimData* buf) {
     const float dy = d3d->params.vPosition.y - ly;
     const float dz = d3d->params.vPosition.z - lz;
 
-    float dist = sqrtf(dx * dx + dy * dy + dz * dz) * distance_factor;
+    float dist = sqrtf(dx * dx + dy * dy + dz * dz);
 
     // A NaN coordinate at either end, or a NaN rolloff, would sail through
     // everything below: NaN compares false against everything, so both the
@@ -188,10 +187,10 @@ static float ds3d_distance_gain(const DSoundBuffer_ShimData* buf) {
     if (dist != dist || rolloff != rolloff) {
         DLOG_RL("sound",4, 500,
                     "3D state is NaN, ignoring attenuation: src=(%g,%g,%g) "
-                    "listener=(%g,%g,%g) distfac=%g rolloff=%g mode=%u",
+                    "listener=(%g,%g,%g) rolloff=%g mode=%u",
                     d3d->params.vPosition.x, d3d->params.vPosition.y,
                     d3d->params.vPosition.z, lx, ly, lz,
-                    distance_factor, rolloff, d3d->params.dwMode);
+                    rolloff, d3d->params.dwMode);
         return 1.0f;
     }
 
@@ -655,7 +654,10 @@ static HRESULT dsbuf_GetCurrentPosition(LPDIRECTSOUNDBUFFER this_ptr,
                                           LPDWORD pdwPlay, LPDWORD pdwWrite) {
     DSoundBuffer_ShimData* buf = reinterpret_cast<DSoundBuffer_ShimData*>(this_ptr);
     if (pdwPlay) *pdwPlay = buf->play_cursor;
-    if (pdwWrite) *pdwWrite = buf->write_cursor;
+    // The mixer copies a buffer's samples out as the device callback runs, so
+    // nothing past the play cursor is committed yet: the safe write point is
+    // the play cursor itself.
+    if (pdwWrite) *pdwWrite = buf->play_cursor;
     return DS_OK;
 }
 

@@ -74,7 +74,7 @@ flag.
 
 ## What is gated
 
-70 toggles. The kinds below are the same ones the header's table names, and a flag's kind is the
+74 toggles. The kinds below are the same ones the header's table names, and a flag's kind is the
 honest reason its default is what it is.
 
 **`host` — the shipped behaviour depends on Win32 + DirectDraw and cannot be reproduced**
@@ -105,7 +105,7 @@ honest reason its default is what it is.
 | `FOG_PLANE_SCALE` | fog covers the view at modes whose camera grid is not 320 wide |
 | `BACKDROP_FILTER` | a backdrop rescaled to the camera framebuffer keeps its own brightness |
 | `CONTROL_SETUP` | picking a control type leaves you with bindings that type can produce |
-| `FLASHLIGHT_DRAW` | the light key does nothing where the weapon it is mounted on cannot be out |
+| `FLASHLIGHT_DRAW` | in the HQ missions neither the draw nor the flashlight key brings the weapon out; elsewhere the flashlight key draws it as shipped |
 | `MODAL_FIT` | a modal too wide for the screen is clamped rather than pushed off both edges |
 | `BURN_BONE_COUNT` | a burning character can reach fully-burned and die instead of burning forever |
 | `BURN_LOOP_SOUND` | the on-fire crackle stops when the fire does |
@@ -120,6 +120,8 @@ honest reason its default is what it is.
 | `MELEE_PICKUP` | a melee weapon you already carry does not fill a second inventory slot |
 | `SHADOW_DEPTH_READ` | the shadow-pass depth test reads the 16-bit value the span writer actually wrote |
 | `BODY_PART_BAKE` | a settled body part stays on screen until a background bake draws it, instead of vanishing under a light |
+| `MOTION_TWEEN_INIT` | a new animation controller starts with no stale transition to reverse |
+| `HW_SFX_FALLOFF` | hardware-mixed positional sounds fall off as the software mixer's do |
 | `INPUT_REPEAT` | a held button starts an action once instead of restarting it every frame |
 | `ITEM_HELP_POSITION` | the pickup help text does not sit on top of the pickup name |
 | `DEATH_MESSAGE_POSITION` | the death banner is centred, clear of the message line |
@@ -156,6 +158,8 @@ honest reason its default is what it is.
 | `CHEAT_MENU` | a CHEATS entry on Options, and WARPS on the pause menu |
 | `RESOLUTION_LIST` | one ordered table drives both the label and the stepping |
 | `HUD_SCALE` | HUD bitmaps, text and the goggles scale with the framebuffer |
+| `WINDOW_MODE` | Graphics Options picks windowed, fullscreen or borderless; on, the game is always fullscreen |
+| `OS_FONT` | Graphics Options can pick bitmap or system text |
 | `CONSOLE` | the console fills the window and keeps scrollback |
 | `FMV` | Sound Options has a Movie Vol line; the opening movie plays either way |
 | `ATTRACT_MOVIES` | the menu cycles NOC1..NOC4 after its splash music |

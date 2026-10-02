@@ -256,7 +256,8 @@ pixels that also differ between the neighbours (i.e. rejecting motion) leaves **
 0.355 % of the frame** — and the mask is a **solid filled disc over the rose window**.
 Everything else surviving is thin silhouette outlines on the two characters and the smoke
 puffs, which is residual idle animation, not lighting. So it is **one surface**, not
-"specific surfaces"; the earlier "a body on the ground" was most likely motion edges too.
+"specific surfaces". A body on the ground appearing after an apply is a separate effect, likely an
+actor at the fog limit drawn without per-vertex fog (`17-shader_renderer_migration/`, open item 3).
 
 **Direction — the flash frame is the DIM one.** Steady renders the window as vivid
 stained glass (max 56); for that single frame it renders washed out and unlit (max 39).

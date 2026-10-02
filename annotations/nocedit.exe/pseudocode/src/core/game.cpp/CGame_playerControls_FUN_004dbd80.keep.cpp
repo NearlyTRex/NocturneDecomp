@@ -36,6 +36,9 @@ void __cdecl core_game_cpp_CGame_playerControls_FUN_004dbd80(CGame *this_ptr)
       g_CurrentLineNumber = 1832;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CGame::playerControls - unknown control type");
     }
+#if !NOCTURNE_AUTHENTIC_FLASHLIGHT_DRAW
+    nocturne_hq_filter_input(player_control);
+#endif
 #if !NOCTURNE_AUTHENTIC_GAMEPAD
     nocturne_gamepad_note_gameplay_frame();
 #endif

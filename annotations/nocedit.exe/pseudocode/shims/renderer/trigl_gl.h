@@ -238,10 +238,9 @@ void nocturne_trigl_gl_report_textures(void *report_file);
 // Returns the dimension written, or 0 if the name is not resident.
 int nocturne_trigl_gl_dump_texture(const char *name, int dimension, const char *path);
 
-// Whether per-vertex fog is applied. The engine supplies a fog factor on nearly
-// every vertex, but a whole-frame comparison could not separate it from
-// animation drift, so it is off until a measurement can see it.
-//   -1 resolve from NOCTURNE_TRIGL_VERTEX_FOG (default 0)   0 off   1 on
+// Whether per-vertex fog is applied, as tridx7's buildTLVertex does. Without it
+// an actor drawn at the fog limit appears unfogged instead of in fog colour.
+//   -1 resolve from NOCTURNE_TRIGL_VERTEX_FOG (default 1)   0 off   1 on
 extern int nocturne_trigl_vertex_fog;
 
 #ifdef __cplusplus

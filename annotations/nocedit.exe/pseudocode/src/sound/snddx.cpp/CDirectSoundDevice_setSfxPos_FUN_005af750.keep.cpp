@@ -55,6 +55,14 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setSfxPos_FUN_005af750(CDirectSou
     local_28 = slot->max_distance;
     fVar2 = sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90((slot->options).channel_index);
     local_cb8 = fVar2;
+#if !NOCTURNE_AUTHENTIC_HW_SFX_FALLOFF
+    if ((((slot->options).flags & 1) == 0) && (0.0 < slot->min_distance)) {
+      local_cb8 = (fVar2 * slot->reference_distance) / slot->min_distance;
+      local_2c = slot->min_distance;
+      local_28 = slot->max_distance;
+    }
+    else
+#endif
     if ((((slot->options).flags & 1) == 0) && (0.0 < fVar2)) {
       local_cb8 = fVar2 / fVar2;
       local_2c = local_2c * fVar2;
