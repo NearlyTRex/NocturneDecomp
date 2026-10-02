@@ -116,6 +116,9 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
   nocturne_baron_reset();
   net_target_stale = 0;
 #endif
+#if !NOCTURNE_AUTHENTIC_HELPER_DEATH
+  nocturne_helper_death_reset();
+#endif
   this_ptr->player_hit_flag = 0;
   this_ptr->geometry_debug_enabled = 0;
   this_ptr->collision_render_enabled = 0;
@@ -589,6 +592,12 @@ LAB_004db434:
       (this_ptr->need_chapter_reload == 0) &&
       (g_CNetGamePtr->connection_type == CONNECTION_HOST)) {
     core_netgame_cpp_CNetGame_disconnect_FUN_0053fd00(g_CNetGamePtr,1);
+  }
+#endif
+#if !NOCTURNE_AUTHENTIC_HELPER_DEATH
+  if (nocturne_helper_death_game_over() != 0) {
+    EVar5 = DEATH_STATE_DEAD;
+    local_1c = 0;
   }
 #endif
   if ((EVar5 == DEATH_STATE_DEAD) && (this_ptr->need_chapter_reload == 0)

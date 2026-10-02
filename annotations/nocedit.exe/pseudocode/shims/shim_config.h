@@ -168,6 +168,11 @@ void nocturne_trigl_envmap_pass_end(void);
 // Gated by NOCTURNE_AUTHENTIC_LIGHT_FILTER_LOAD.
 #include "game/light_filter_load.h"
 
+// A helper's death ending on Game Over with the hero held still
+// (nocturne_helper_death_*), reached from script.cpp's step, game.cpp's
+// runGameSession and playerControls. Gated by NOCTURNE_AUTHENTIC_HELPER_DEATH.
+#include "game/helper_death.h"
+
 // The Options screen's CHEATS submenu (nocturne_cheats_menu) and the mission-
 // start application of whatever it armed (nocturne_cheats_apply), reached from
 // the menu and mission TUs. Both are no-ops under NOCTURNE_AUTHENTIC_CHEAT_MENU.

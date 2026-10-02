@@ -92,6 +92,7 @@
 // | `NOCTURNE_AUTHENTIC_CUE_RETRIGGER` | 0 | defect | a script music cue does not stack copies of itself while it plays |
 // | `NOCTURNE_AUTHENTIC_GOGGLES_OFF_FRAME` | 0 | defect | a cutscene that switches the goggles off does not flash the untextured room |
 // | `NOCTURNE_AUTHENTIC_LIGHT_FILTER_LOAD` | 0 | defect | the HQ projector keeps its briefing slides after a save load |
+// | `NOCTURNE_AUTHENTIC_HELPER_DEATH` | 0 | defect | a companion's death holds the hero still and ends on Game Over |
 // | `NOCTURNE_AUTHENTIC_PICKUP_WIELDS` | 0 | choice | a pickup is never drawn without the player asking |
 // | `NOCTURNE_AUTHENTIC_OPTIONS_RESUMES_GAME` | 0 | choice | leaving Options returns to the pause menu |
 // | `NOCTURNE_AUTHENTIC_CONFIRM_PROMPTS` | 0 | choice | no bracketed hotkey letters, and a short form when the long one will not fit |
@@ -1768,6 +1769,27 @@
 //   Override with -DNOCTURNE_AUTHENTIC_LIGHT_FILTER_LOAD=1.
 #ifndef NOCTURNE_AUTHENTIC_LIGHT_FILTER_LOAD
 #define NOCTURNE_AUTHENTIC_LIGHT_FILTER_LOAD 0
+#endif
+
+// NOCTURNE_AUTHENTIC_HELPER_DEATH
+//   What happens when a companion the mission needs (Svetlana in ACT1, Scat in
+//   ACT2, Icepick in ACT3) dies.
+//
+//   The script focuses on the body, waits, fades out and runs "end", which only
+//   sets CScript::mission_ended. runGameSession offers the Game Over menu only
+//   for a dead hero, so the game drops to the main menu. While the script
+//   waits its main loop is stopped, the drowning and pit checks with it, and
+//   the hero can walk anywhere unharmed.
+//
+//   1: shipped behaviour - the player can roam, then lands on the main menu.
+//   0: the hero is held still while the script camera is on a dead character
+//      other than a player hero, and a session ended by "end" closes on the
+//      Game Over menu.
+//      See shims/game/helper_death.h.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_HELPER_DEATH=1.
+#ifndef NOCTURNE_AUTHENTIC_HELPER_DEATH
+#define NOCTURNE_AUTHENTIC_HELPER_DEATH 0
 #endif
 
 // =============================================================================

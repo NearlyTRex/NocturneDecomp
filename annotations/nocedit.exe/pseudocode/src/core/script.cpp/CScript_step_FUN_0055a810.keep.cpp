@@ -1081,6 +1081,9 @@ LAB_0055cd52:
                                                   if (g_ScriptEventsEnabled == 0) {
                                                     local_114 = g_ScriptEventsEnabled;
                                                     this_ptr->mission_ended = 1;
+#if !NOCTURNE_AUTHENTIC_HELPER_DEATH
+                                                    nocturne_helper_death_note_end();
+#endif
                                                   }
                                                   }
                                                   else {

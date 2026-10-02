@@ -127,6 +127,7 @@ honest reason its default is what it is.
 | `CUE_RETRIGGER` | a script music cue does not stack copies of itself while it plays, as ACT1's river drowning did |
 | `GOGGLES_OFF_FRAME` | a cutscene that switches the goggles off draws its first frame instead of presenting the untextured background bake |
 | `LIGHT_FILTER_LOAD` | the HQ projector keeps the briefing slides its script added when a save is loaded, instead of showing one image throughout |
+| `HELPER_DEATH` | when a companion the mission needs dies, the hero is held still through the death sequence and the game ends on the Game Over menu instead of dropping to the main menu |
 | `INPUT_REPEAT` | a held button starts an action once instead of restarting it every frame |
 | `ITEM_HELP_POSITION` | the pickup help text does not sit on top of the pickup name |
 | `DEATH_MESSAGE_POSITION` | the death banner is centred, clear of the message line |
