@@ -17,6 +17,7 @@
 #include <cstdio>
 #include <cstring>
 #include <unordered_map>
+#include <utility>
 #include <vector>
 
 namespace {
@@ -255,6 +256,12 @@ inline bool down(int code) {
            g_KeyboardState[code] != '\0';
 }
 
+// A keyboard binding: every DIK code, extended ones included, sits below the
+// pad shim's first code, and joystick codes sit above it.
+inline bool keyboard_code(int code) {
+    return code >= 0 && code < NOCTURNE_PAD_BUTTON_BASE;
+}
+
 CDemonActor *local_hero(void) {
     if (g_LocalHeroIndex < 0 || g_LocalHeroIndex >= 4) return nullptr;
     return (CDemonActor *)g_HeroActors[g_LocalHeroIndex];
@@ -389,6 +396,70 @@ void fill_cross(int cx, int cy, int r, int x0, int y0, int x1, int y1)
                                              x0, y0, x1, y1);
 }
 
+// Scanline fill of a triangle in screen space.
+void fill_triangle(float ax, float ay, float bx, float by, float qx, float qy,
+                   int x0, int y0, int x1, int y1)
+{
+    // Sort by y so a is the top vertex and q the bottom.
+    if (by < ay) { std::swap(ax, bx); std::swap(ay, by); }
+    if (qy < ay) { std::swap(ax, qx); std::swap(ay, qy); }
+    if (qy < by) { std::swap(bx, qx); std::swap(by, qy); }
+    if (qy - ay < 0.5f) return;
+
+    for (int y = (int)std::ceil(ay); y <= (int)std::floor(qy); y++) {
+        const float fy = (float)y;
+        // The long edge a..q spans every row; the short side is a..b above b
+        // and b..q below it.
+        const float xl = ax + (qx - ax) * (fy - ay) / (qy - ay);
+        float xs;
+        if (fy < by) {
+            xs = (by - ay < 1e-4f) ? bx : ax + (bx - ax) * (fy - ay) / (by - ay);
+        } else {
+            xs = (qy - by < 1e-4f) ? bx : bx + (qx - bx) * (fy - by) / (qy - by);
+        }
+        int l = (int)std::lround(xl), r = (int)std::lround(xs);
+        if (l > r) std::swap(l, r);
+        engine_2d_c_clipAndDrawLine_FUN_00402ca0(l, y, r, y, x0, y0, x1, y1);
+    }
+}
+
+// The direction an actor faces, as a unit vector on screen. A character's
+// forward is its local +z -- CGabriella::process steps her off a ladder by
+// transformVector({0, 0.5, 4}) -- so the engine's own transformVector supplies
+// it and no angle convention is assumed here. Screen y runs against world z,
+// as AM_PY maps it. False when the facing is vertical and has no direction on
+// the floor.
+bool screen_facing(CDemonActor *actor, float *sx, float *sy)
+{
+    CVector3f ahead = { 0.0f, 0.0f, 1.0f };
+    CVector3f world;
+    core_actor_cpp_CDemonActor_transformVector_FUN_00408e80(actor, &world, &ahead);
+    const float len = std::sqrt(world.x * world.x + world.z * world.z);
+    if (len < 1e-3f) return false;
+    *sx =  world.x / len;
+    *sy = -world.z / len;
+    return true;
+}
+
+// A wedge pointing the way a character faces, drawn before its marker so the
+// marker covers the base and only the point shows. `r_outer` is the marker's
+// outermost radius, so the point clears a halo as well as a body.
+void draw_facing(CDemonActor *actor, int color, int cx, int cy, int r_outer,
+                 int x0, int y0, int x1, int y1)
+{
+    float dx, dy;
+    if (!screen_facing(actor, &dx, &dy)) return;
+    const float r    = (float)r_outer;
+    const float tip  = r * 1.9f;
+    const float back = r * 0.2f;
+    const float half = r * 0.75f;
+    g_ActiveRenderColor = color;
+    fill_triangle(cx + dx * tip, cy + dy * tip,
+                  cx + dx * back - dy * half, cy + dy * back + dx * half,
+                  cx + dx * back + dy * half, cy + dy * back - dx * half,
+                  x0, y0, x1, y1);
+}
+
 // The marker vocabulary. Shape carries as much information as colour at map
 // scale, so a class selects both; adding a class means picking from this list
 // rather than writing new drawing code.
@@ -449,6 +520,12 @@ void draw_marker(MarkerShape shape, int color, int color_halo,
         fill_disc(cx, cy, r, x0, y0, x1, y1);
         break;
     }
+}
+
+// How far a marker reaches from its centre, halo included.
+int marker_outer_radius(MarkerShape shape, int r)
+{
+    return (shape == MARK_RING) ? r + kHeroHaloExtra : r;
 }
 
 // ---- what each class of actor looks like ------------------------------------
@@ -740,8 +817,13 @@ int build_help_segments(HelpSeg *segs)
     char centre[1][40], key[1][40], open[1][40];
     strcpy(pan[0], core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_walk));
     strcpy(pan[1], core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_backup));
-    strcpy(pan[2], core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_strafe_left));
-    strcpy(pan[3], core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_strafe_right));
+    // Sideways pan is named by the turn keys on a keyboard, where they are the
+    // arrows beside walk/backup; strafe still pans but is not listed.
+    const bool turn_pans = keyboard_code(g->key_left) && keyboard_code(g->key_right);
+    strcpy(pan[2], core_menu_cpp_getKeyDisplayName_FUN_005134e0(
+                       turn_pans ? g->key_left : g->key_strafe_left));
+    strcpy(pan[3], core_menu_cpp_getKeyDisplayName_FUN_005134e0(
+                       turn_pans ? g->key_right : g->key_strafe_right));
     strcpy(zoom[0], core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_next_weapon));
     strcpy(zoom[1], core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_prev_weapon));
     strcpy(floors[0], core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_fire));
@@ -1173,11 +1255,13 @@ extern "C" void nocturne_automap_update(void)
     if (trig_r < kDimDeadzone) trig_r = 0.0f;
 
     // Pan is the left stick, which on a pad is walk/backup and strafe, so the
-    // digital fallback reads exactly those bindings and nothing else.
+    // digital fallback reads those bindings. On a keyboard the turn keys pan
+    // sideways as well, since their defaults are the Left/Right arrows beside
+    // walk/backup's Up/Down; a pad's turn is the right stick, which stays unread.
     //
-    // key_left / key_right and key_point_up / key_point_down are the right
-    // stick's two axes, and key_next_ammo / key_weapon_5 are the d-pad's
-    // vertical pair. None of them is read anywhere on this screen.
+    // key_point_up / key_point_down are the right stick's vertical axis, and
+    // key_next_ammo / key_weapon_5 are the d-pad's vertical pair. None of them
+    // is read anywhere on this screen.
     //
     // Stick y is positive downwards; on the map, down the screen is -z.
     float mx = move_x, mz = -move_y;
@@ -1188,6 +1272,10 @@ extern "C" void nocturne_automap_update(void)
         // one and throw away the analogue response.
         if (down(g->key_strafe_left))  mx -= 1.0f;
         if (down(g->key_strafe_right)) mx += 1.0f;
+        if (mx == 0.0f && keyboard_code(g->key_left) && keyboard_code(g->key_right)) {
+            if (down(g->key_left))  mx -= 1.0f;
+            if (down(g->key_right)) mx += 1.0f;
+        }
     }
     if (mz == 0.0f) {
         if (down(g->key_walk))   mz += 1.0f;
@@ -1666,6 +1754,9 @@ extern "C" void nocturne_automap_render(void)
             // matches CCharacter's row at minimum, since that cast is what
             // reached this branch.
             if (row >= 0) {
+                draw_facing(a, marker_color[row], mx, my,
+                            marker_outer_radius(k_markers[row].shape, marker_radius[row]),
+                            x0, y0, x1, y1);
                 draw_marker(k_markers[row].shape, marker_color[row], color_halo,
                             mx, my, marker_radius[row], x0, y0, x1, y1);
             }
@@ -1696,6 +1787,10 @@ extern "C" void nocturne_automap_render(void)
             // must not be applied to the others.
             const int mate_row = marker_index((CDemonActor *)mate);
             if (mate_row >= 0) {
+                draw_facing((CDemonActor *)mate, marker_color[mate_row], mx, my,
+                            marker_outer_radius(k_markers[mate_row].shape,
+                                                marker_radius[mate_row]),
+                            x0, y0, x1, y1);
                 draw_marker(k_markers[mate_row].shape, marker_color[mate_row],
                             color_halo, mx, my, marker_radius[mate_row],
                             x0, y0, x1, y1);
@@ -1708,6 +1803,7 @@ extern "C" void nocturne_automap_render(void)
     // cross is little better. It is the reference every other position on
     // screen is read against.
     const int hx = AM_PX(p.x), hy = AM_PY(p.z);
+    draw_facing(hero, color_player, hx, hy, kPlayerRings[0] * ui, x0, y0, x1, y1);
     for (int ring = 0; ring < 3; ring++) {
         g_ActiveRenderColor = (ring == 0) ? pick_color(kHaloRGB, color_wall)
                             : (ring == 1) ? color_player

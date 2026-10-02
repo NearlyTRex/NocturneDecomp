@@ -81,6 +81,11 @@
 //     are red already, and pick_color can collapse a third red onto them at
 //     8bpp.
 //
+//   * Every living character, the player included, carries a wedge pointing
+//     the way it faces. Facing is the actor's local +z through its own
+//     transformVector, the direction CGabriella::process steps off a ladder,
+//     rather than an angle read out of orient with an assumed convention.
+//
 //   * CBodyPart::canPickup returns Carry, the same value a rifle gives, so only
 //     the class row keeps a body part from drawing as equipment.
 //
@@ -188,7 +193,8 @@ void nocturne_automap_apply_default_binding(void);
 // configureCustomKeyBindings refuses a 31st, so the map has exactly one row to
 // spend.
 //
-//   pan     key_walk / key_backup, key_strafe_left / key_strafe_right
+//   pan     key_walk / key_backup, key_strafe_left / key_strafe_right, and
+//           key_left / key_right when those are keyboard keys (the arrows)
 //   zoom    key_next_weapon / key_prev_weapon
 //   floors  key_fire / key_draw
 //   centre  key_run
@@ -207,8 +213,8 @@ void nocturne_automap_apply_default_binding(void);
 // position to be held, and the triggers report it analogue.
 //
 // The d-pad and both right-stick axes are read nowhere on this screen:
-// key_next_ammo, key_weapon_5, key_left / key_right and key_point_up /
-// key_point_down are all unused here.
+// key_next_ammo, key_weapon_5 and key_point_up / key_point_down are unused,
+// and key_left / key_right are read only when bound to keyboard keys.
 
 // The player's preferred zoom, as a percentage, for the ini to carry between
 // sessions. The map opens centred on the player but at whatever this holds:
