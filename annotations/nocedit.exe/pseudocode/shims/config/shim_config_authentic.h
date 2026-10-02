@@ -90,6 +90,7 @@
 // | `NOCTURNE_AUTHENTIC_MOTION_TWEEN_INIT` | 0 | defect | a new animation controller starts with no stale transition to reverse |
 // | `NOCTURNE_AUTHENTIC_HW_SFX_FALLOFF` | 0 | defect | hardware-mixed positional sounds fall off as the software mixer's do |
 // | `NOCTURNE_AUTHENTIC_CUE_RETRIGGER` | 0 | defect | a script music cue does not stack copies of itself while it plays |
+// | `NOCTURNE_AUTHENTIC_GOGGLES_OFF_FRAME` | 0 | defect | a cutscene that switches the goggles off does not flash the untextured room |
 // | `NOCTURNE_AUTHENTIC_PICKUP_WIELDS` | 0 | choice | a pickup is never drawn without the player asking |
 // | `NOCTURNE_AUTHENTIC_OPTIONS_RESUMES_GAME` | 0 | choice | leaving Options returns to the pause menu |
 // | `NOCTURNE_AUTHENTIC_CONFIRM_PROMPTS` | 0 | choice | no bracketed hotkey letters, and a short form when the long one will not fit |
@@ -1727,6 +1728,25 @@
 //   Override with -DNOCTURNE_AUTHENTIC_CUE_RETRIGGER=1.
 #ifndef NOCTURNE_AUTHENTIC_CUE_RETRIGGER
 #define NOCTURNE_AUTHENTIC_CUE_RETRIGGER 0
+#endif
+
+// NOCTURNE_AUTHENTIC_GOGGLES_OFF_FRAME
+//   What is drawn on the frame the goggles switch off mid-frame.
+//
+//   CGame::processFrame draws the world in one of two places: renderScene
+//   before CGame::process if goggles_active is clear, renderGogglesView after
+//   it if set. A letterboxed cutscene starting in CScript::step clears
+//   goggles_active and runs evaluateVirtualDirector, which bakes the new
+//   camera's background, between the two tests. Neither draw runs, and the
+//   frame presents the bare bake: the room untextured, with no actors.
+//
+//   1: shipped behaviour - nothing is drawn that frame.
+//   0: a frame that starts in goggles and ends out of them runs renderScene
+//      after CGame::process, ahead of renderStaticLights as usual.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_GOGGLES_OFF_FRAME=1.
+#ifndef NOCTURNE_AUTHENTIC_GOGGLES_OFF_FRAME
+#define NOCTURNE_AUTHENTIC_GOGGLES_OFF_FRAME 0
 #endif
 
 // =============================================================================
