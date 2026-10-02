@@ -91,6 +91,7 @@
 // | `NOCTURNE_AUTHENTIC_HW_SFX_FALLOFF` | 0 | defect | hardware-mixed positional sounds fall off as the software mixer's do |
 // | `NOCTURNE_AUTHENTIC_CUE_RETRIGGER` | 0 | defect | a script music cue does not stack copies of itself while it plays |
 // | `NOCTURNE_AUTHENTIC_GOGGLES_OFF_FRAME` | 0 | defect | a cutscene that switches the goggles off does not flash the untextured room |
+// | `NOCTURNE_AUTHENTIC_LIGHT_FILTER_LOAD` | 0 | defect | the HQ projector keeps its briefing slides after a save load |
 // | `NOCTURNE_AUTHENTIC_PICKUP_WIELDS` | 0 | choice | a pickup is never drawn without the player asking |
 // | `NOCTURNE_AUTHENTIC_OPTIONS_RESUMES_GAME` | 0 | choice | leaving Options returns to the pause menu |
 // | `NOCTURNE_AUTHENTIC_CONFIRM_PROMPTS` | 0 | choice | no bracketed hotkey letters, and a short form when the long one will not fit |
@@ -1747,6 +1748,26 @@
 //   Override with -DNOCTURNE_AUTHENTIC_GOGGLES_OFF_FRAME=1.
 #ifndef NOCTURNE_AUTHENTIC_GOGGLES_OFF_FRAME
 #define NOCTURNE_AUTHENTIC_GOGGLES_OFF_FRAME 0
+#endif
+
+// NOCTURNE_AUTHENTIC_LIGHT_FILTER_LOAD
+//   Whether light filters a script added survive a save load.
+//
+//   Each HQ script (HQ-ACT1, 3, 4, 4B, 5) opens by appending its briefing
+//   slides to the "projector" light with addLightFilter. Loading a save runs
+//   startMission, whose loadSet re-reads the .SET and leaves the light with the
+//   one filter HQ.SET ships; the save records only each light's on/off state,
+//   and the opening lines do not run again. Every advanceLightFilter then wraps
+//   on that one filter, so the briefing shows a single image throughout.
+//
+//   1: shipped behaviour - the slides are lost on a load.
+//   0: after CScript::loadState, the addLightFilter lines of the script's
+//      opening run that lie before the restored position are applied again,
+//      giving the filter list a fresh start builds.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_LIGHT_FILTER_LOAD=1.
+#ifndef NOCTURNE_AUTHENTIC_LIGHT_FILTER_LOAD
+#define NOCTURNE_AUTHENTIC_LIGHT_FILTER_LOAD 0
 #endif
 
 // =============================================================================

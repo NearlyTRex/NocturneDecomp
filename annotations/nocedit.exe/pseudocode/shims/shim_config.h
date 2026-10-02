@@ -163,6 +163,11 @@ void nocturne_trigl_envmap_pass_end(void);
 // from snddx.cpp's allocateSfx. Gated by NOCTURNE_AUTHENTIC_SOUND_ERROR_LOG.
 #include "game/sound_report.h"
 
+// Re-applying a script's opening addLightFilter lines after a save load
+// (nocturne_light_filter_load_replay), reached from game.cpp's loadGame.
+// Gated by NOCTURNE_AUTHENTIC_LIGHT_FILTER_LOAD.
+#include "game/light_filter_load.h"
+
 // The Options screen's CHEATS submenu (nocturne_cheats_menu) and the mission-
 // start application of whatever it armed (nocturne_cheats_apply), reached from
 // the menu and mission TUs. Both are no-ops under NOCTURNE_AUTHENTIC_CHEAT_MENU.
