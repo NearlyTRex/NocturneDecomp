@@ -12,13 +12,13 @@ SUMMARY
 ----------------------------------------------------------------------------------------------------
 
   Functions checked: 6911
-  Functions with suspicious globals: 105
-  Total suspicious global references: 173
+  Functions with suspicious globals: 106
+  Total suspicious global references: 176
 
   Most commonly misresolved globals:
     g_SfxOptions                                       13 functions
+    g_CNetGamePtr                                      9 functions
     g_KeyboardState                                    9 functions
-    g_CNetGamePtr                                      8 functions
     g_WindowHeight                                     7 functions
     g_CDemonCameraInstance                             6 functions
     g_CKeysPtr                                         6 functions
@@ -27,17 +27,17 @@ SUMMARY
     g_RenderVertexBuffer                               5 functions
     g_ColorCubeLookup                                  4 functions
     g_HeroCount                                        4 functions
+    g_ModalDialogActive                                3 functions
     g_ThemeFont                                        3 functions
     g_GetLastErrorFunc                                 3 functions
     g_HeroActors                                       2 functions
+    g_CStrangerClassInfo                               2 functions
     g_TextureCacheInstance                             2 functions
     g_MirrorCullCameraState                            2 functions
     g_CScriptPtr                                       2 functions
-    g_ModalDialogActive                                2 functions
     g_CGamePtr                                         2 functions
-    g_CDemonMissionPtr                                 2 functions
 
-  .keep files with issues: 72 (these need manual review)
+  .keep files with issues: 73 (these need manual review)
   Raw .cpp files with issues: 33
 
 ====================================================================================================
@@ -233,6 +233,22 @@ core_actor.cpp_deleteActor_FUN_00408820  [.keep]  (3 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+core_charactr.cpp_CCharacter_process_FUN_00429870  [.keep]  (3 suspicious globals)
+  File: core/charactr.cpp
+
+  g_CDemonRaytraceInstance
+    Used at lines: 26, 27, 27, 29
+    NOT found in function reference list
+
+  g_CNetGamePtr
+    Used at lines: 73, 74
+    NOT found in function reference list
+
+  g_CStrangerClassInfo
+    Used at lines: 40
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 core_menu.cpp_showOptionsScreen_FUN_00512d30  [.keep]  (3 suspicious globals)
   File: core/menu.cpp
 
@@ -249,18 +265,6 @@ core_menu.cpp_showOptionsScreen_FUN_00512d30  [.keep]  (3 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_charactr.cpp_CCharacter_process_FUN_00429870  [.keep]  (2 suspicious globals)
-  File: core/charactr.cpp
-
-  g_CDemonRaytraceInstance
-    Used at lines: 26, 27, 27, 29
-    NOT found in function reference list
-
-  g_CNetGamePtr
-    Used at lines: 71, 72
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
 core_game.cpp_CGame_beginFadeOut_FUN_004e0960  [.keep]  (2 suspicious globals)
   File: core/game.cpp
 
@@ -273,15 +277,27 @@ core_game.cpp_CGame_beginFadeOut_FUN_004e0960  [.keep]  (2 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+core_game.cpp_CGame_processFrame_FUN_004da100  [.keep]  (2 suspicious globals)
+  File: core/game.cpp
+
+  g_ColorCubeLookup
+    Used at lines: 397, 403
+    NOT found in function reference list
+
+  g_ModalDialogActive
+    Used at lines: 157, 168
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 core_game.cpp_CGame_runGameSession_FUN_004daf80  [.keep]  (2 suspicious globals)
   File: core/game.cpp
 
   g_CurrentGameTime
-    Used at lines: 210
+    Used at lines: 222
     NOT found in function reference list
 
   g_SimFrameCount
-    Used at lines: 171
+    Used at lines: 177
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -481,19 +497,19 @@ core_game.cpp_CGame_loadGame_FUN_004e12b0  [.keep]  (1 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_game.cpp_CGame_processFrame_FUN_004da100  [.keep]  (1 suspicious globals)
-  File: core/game.cpp
-
-  g_ColorCubeLookup
-    Used at lines: 384, 390
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
 core_game.cpp_CGame_processHotkeys_FUN_004dcee0  [.keep]  (1 suspicious globals)
   File: core/game.cpp
 
   g_CNetGamePtr
     Used at lines: 130
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_game.cpp_CGame_processKeyboardControls_FUN_004dc3e0  [.keep]  (1 suspicious globals)
+  File: core/game.cpp
+
+  g_CNetGamePtr
+    Used at lines: 253
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -533,7 +549,7 @@ core_game.cpp_CGame_showFullscreenBitmap_FUN_004e2910  [.keep]  (1 suspicious gl
   File: core/game.cpp
 
   g_CNetGamePtr
-    Used at lines: 136, 140
+    Used at lines: 136, 137, 138, 138, 142
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
