@@ -219,6 +219,11 @@ void nocturne_trigl_envmap_pass_end(void);
 // it. Gated at those call sites on NOCTURNE_AUTHENTIC_HERO_ACTIONS.
 #include "game/hero_items.h"
 
+// Name lookup that also sees carried items (nocturne_find_actor_or_carried_item),
+// reached from CDemonMission::generateUniqueActorName and gated there on
+// NOCTURNE_AUTHENTIC_ITEM_NAMES.
+#include "game/item_names.h"
+
 // Moloch's attacks (nocturne_moloch_*): fire strikes in demon form, draw still
 // morphs. Gated at the CMoloch::process call sites on
 // NOCTURNE_AUTHENTIC_HERO_ACTIONS.

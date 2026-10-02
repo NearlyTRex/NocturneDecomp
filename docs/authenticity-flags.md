@@ -74,7 +74,7 @@ flag.
 
 ## What is gated
 
-74 toggles. The kinds below are the same ones the header's table names, and a flag's kind is the
+75 toggles. The kinds below are the same ones the header's table names, and a flag's kind is the
 honest reason its default is what it is.
 
 **`host` — the shipped behaviour depends on Win32 + DirectDraw and cannot be reproduced**
@@ -118,6 +118,7 @@ honest reason its default is what it is.
 | `CHAPTER_SELECT` | START offers the chapter lists whether or not pod.ini is present |
 | `FRIENDLY_FIRE` | heroes cannot damage each other in a network game |
 | `MELEE_PICKUP` | a melee weapon you already carry does not fill a second inventory slot |
+| `ITEM_NAMES` | a new actor is never named after an item a hero carries, so a save holds no duplicate names |
 | `SHADOW_DEPTH_READ` | the shadow-pass depth test reads the 16-bit value the span writer actually wrote |
 | `BODY_PART_BAKE` | a settled body part stays on screen until a background bake draws it, instead of vanishing under a light |
 | `MOTION_TWEEN_INIT` | a new animation controller starts with no stale transition to reverse |

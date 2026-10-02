@@ -32,7 +32,11 @@ void __cdecl core_mission_cpp_CDemonMission_generateUniqueActorName_FUN_00524660
   do {
     iVar5 = iVar5 + 1;
     _sprintf(out_buf,"%s%d",base_name,iVar5);
+#if NOCTURNE_AUTHENTIC_ITEM_NAMES
     pCVar3 = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030(this_ptr,out_buf);
+#else
+    pCVar3 = nocturne_find_actor_or_carried_item(this_ptr,out_buf);
+#endif
   } while (pCVar3 != (CDemonActor *)0x0);
   return;
 }

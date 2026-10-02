@@ -83,6 +83,7 @@
 // | `NOCTURNE_AUTHENTIC_CHAPTER_SELECT` | 0 | defect | START offers the chapter lists, pod.ini or no pod.ini |
 // | `NOCTURNE_AUTHENTIC_FRIENDLY_FIRE` | 0 | defect | heroes cannot damage each other in a network game |
 // | `NOCTURNE_AUTHENTIC_MELEE_PICKUP` | 0 | defect | a melee weapon already held does not take a second slot |
+// | `NOCTURNE_AUTHENTIC_ITEM_NAMES` | 0 | defect | a new actor is never named after an item a hero carries |
 // | `NOCTURNE_AUTHENTIC_SHADOW_DEPTH_READ` | 0 | defect | the shadow-pass depth test reads the width it was written at |
 // | `NOCTURNE_AUTHENTIC_BODY_PART_BAKE` | 0 | defect | a settled body part goes into the background only through a background bake |
 // | `NOCTURNE_AUTHENTIC_MOTION_TWEEN_INIT` | 0 | defect | a new animation controller starts with no stale transition to reverse |
@@ -1575,6 +1576,26 @@
 //   Override with -DNOCTURNE_AUTHENTIC_MELEE_PICKUP=1.
 #ifndef NOCTURNE_AUTHENTIC_MELEE_PICKUP
 #define NOCTURNE_AUTHENTIC_MELEE_PICKUP 0
+#endif
+
+// NOCTURNE_AUTHENTIC_ITEM_NAMES
+//   Whether a generated actor name can repeat the name of a carried item.
+//
+//   CDemonMission::generateUniqueActorName tests each candidate with
+//   findActorByName (CALL at 005246c4), which walks only the mission's actor
+//   list. Inventory items are not on that list — CDemonMission::writeFile saves
+//   them as a separate inventory section — so every weapon a cheat or pickup
+//   adds gets the same name as the one already carried: seven CMelee all
+//   "Melee0". A save then holds duplicate names, and loadActor resolves a
+//   reference such as the hero's weapon to whichever comes first.
+//
+//   1: authentic — candidates are checked against the actor list only.
+//   0: candidates are also checked against every CHero's inventory, the set
+//      writeFile saves, so each carried item keeps a distinct name.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_ITEM_NAMES=1.
+#ifndef NOCTURNE_AUTHENTIC_ITEM_NAMES
+#define NOCTURNE_AUTHENTIC_ITEM_NAMES 0
 #endif
 
 // NOCTURNE_AUTHENTIC_SHADOW_DEPTH_READ
