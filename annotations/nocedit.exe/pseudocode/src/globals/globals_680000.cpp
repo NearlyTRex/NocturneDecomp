@@ -6,10 +6,6 @@
 
 // BYTE
 BYTE g_WindowsMinorVersion = 0;
-BYTE g_InitHandlerStatusStart = 0;
-BYTE g_InitHandlerPriorityStart = 0x40;
-BYTE g_ExitHandlerTableStart = 0;
-BYTE g_ExitHandlerPriorityEnd = 0x1;
 
 // CDemonPod*
 CDemonPod* g_CDemonPodPtr = (CDemonPod*)&g_CDemonPodInstance;
@@ -89,15 +85,16 @@ Heap* g_SecondaryHeap = nullptr;
 // IS_SPECIAL_DEVICE_FUNC*
 IS_SPECIAL_DEVICE_FUNC* g_IsSpecialDeviceFuncPtr = nullptr;
 
-// RUNTIME_HANDLER_FUNC*
-RUNTIME_HANDLER_FUNC* g_FirstInitHandler = (RUNTIME_HANDLER_FUNC*)core_actor_cpp_staticInit_FUN_00408320;
-RUNTIME_HANDLER_FUNC* g_FirstExitHandler = nullptr; // DAT_005fde93
-
 // RuntimeHandlerEntry
 RuntimeHandlerEntry g_ExitHandlerTableEnd = {};
 
-// RuntimeHandlerEntry[166]
-RuntimeHandlerEntry g_InitHandlers[166] = {
+// RuntimeHandlerEntry[167]
+RuntimeHandlerEntry g_InitHandlers[167] = {
+    {
+        .status = 0x00,
+        .priority = 0x40,
+        .func = (RUNTIME_HANDLER_FUNC *)core_actor_cpp_staticInit_FUN_00408320
+    },
     {
         .status = 0x00,
         .priority = 0x40,
@@ -930,8 +927,13 @@ RuntimeHandlerEntry g_InitHandlers[166] = {
     }
 };
 
-// RuntimeHandlerEntry[6]
-RuntimeHandlerEntry g_ExitHandlers[6] = {
+// RuntimeHandlerEntry[7]
+RuntimeHandlerEntry g_ExitHandlers[7] = {
+    {
+        .status = 0x00,
+        .priority = 0x01,
+        .func = (RUNTIME_HANDLER_FUNC *)0x005FDE93
+    },
     {
         .status = 0x00,
         .priority = 0x28,

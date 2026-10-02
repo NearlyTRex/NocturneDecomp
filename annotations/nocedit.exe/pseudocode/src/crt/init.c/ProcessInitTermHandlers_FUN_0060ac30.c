@@ -14,19 +14,20 @@ void __cdecl ProcessInitTermHandlers(int max_priority)
   BYTE *pBVar3;
   
   while( true ) {
-    pBVar1 = &g_InitHandlerStatusStart;
-    pBVar3 = &g_ExitHandlerTableStart;
+    pBVar1 = &g_InitHandlers[0].status;
+    pBVar3 = &g_ExitHandlers[0].status;
     bVar2 = (byte)max_priority;
     do {
-      if ((*pBVar1 != '\x02') && (pBVar1[1] <= bVar2)) {
-        bVar2 = pBVar1[1];
+      if ((((RuntimeHandlerEntry *)pBVar1)->status != '\x02') &&
+         (((RuntimeHandlerEntry *)pBVar1)->priority <= bVar2)) {
+        bVar2 = ((RuntimeHandlerEntry *)pBVar1)->priority;
         pBVar3 = pBVar1;
       }
-      pBVar1 = pBVar1 + 6;
-    } while (pBVar1 < &g_ExitHandlerTableStart);
-    if (pBVar3 == &g_ExitHandlerTableStart) break;
-    invokeRuntimeHandler((RUNTIME_HANDLER_FUNC **)(pBVar3 + 2));
-    *pBVar3 = '\x02';
+      pBVar1 = (BYTE *)((int)pBVar1 + 6);
+    } while (pBVar1 != g_InitHandlers + sizeof(g_InitHandlers) / sizeof(g_InitHandlers[0]));
+    if ((RuntimeHandlerEntry *)pBVar3 == g_ExitHandlers) break;
+    invokeRuntimeHandler(&((RuntimeHandlerEntry *)pBVar3)->func);
+    ((RuntimeHandlerEntry *)pBVar3)->status = '\x02';
   }
   return;
 }

@@ -2,15 +2,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 22,
+    "complexity_score": 53,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 8,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 22,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 69
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 23,
+    "suspect_count": 2,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation"
+    ],
+    "total_lines": 70
   },
   "cross_references": [
     {
@@ -48,26 +51,26 @@
   "globals": [
     {
       "addr": "0068572e",
-      "name": "g_InitHandlerStatusStart",
-      "type": "BYTE",
-      "value": "\u0000"
+      "name": "g_InitHandlers",
+      "type": "RuntimeHandlerEntry[167]",
+      "value": null
     },
     {
       "addr": "0068572f",
-      "name": "g_InitHandlerPriorityStart",
-      "type": "BYTE",
-      "value": "@"
+      "name": "g_InitHandlers[0].priority",
+      "type": "undefined4",
+      "value": null
     },
     {
       "addr": "00685730",
-      "name": "g_FirstInitHandler",
-      "type": "RUNTIME_HANDLER_FUNC*",
-      "value": "00408320"
+      "name": "g_InitHandlers[0].func",
+      "type": "undefined4",
+      "value": null
     },
     {
       "addr": "00685734",
-      "name": "g_InitHandlers",
-      "type": "RuntimeHandlerEntry[166]",
+      "name": "g_InitHandlers[1].status",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -84,15 +87,15 @@
     },
     {
       "addr": "00685b18",
-      "name": "g_ExitHandlerTableStart",
-      "type": "BYTE",
-      "value": "\u0000"
+      "name": "g_ExitHandlers",
+      "type": "RuntimeHandlerEntry[7]",
+      "value": null
     },
     {
       "addr": "00685b1a",
-      "name": "g_FirstExitHandler",
-      "type": "RUNTIME_HANDLER_FUNC*",
-      "value": "005fde93"
+      "name": "g_ExitHandlers[0].func",
+      "type": "undefined4",
+      "value": null
     }
   ],
   "param_estimates": {
@@ -171,5 +174,22 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 19,
+      "match": "(BYTE *)((int)pBVar1",
+      "severity": "moderate",
+      "text": "pBVar1 = (BYTE *)((int)pBVar1 + 6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `pBVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 19,
+      "match": "(int)pBVar1",
+      "severity": "moderate",
+      "text": "pBVar1 = (BYTE *)((int)pBVar1 + 6);",
+      "type": "pointer_truncation"
+    }
+  ]
 }

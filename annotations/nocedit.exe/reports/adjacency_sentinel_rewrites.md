@@ -6,8 +6,8 @@ globals so the sentinel never matches. See `docs/decompiler-artifacts.md` §16.
 
 ## Summary
 
-- Rewrites applied: **71**
-- Functions touched: **25**
+- Rewrites applied: **73**
+- Functions touched: **27**
 - Pools indexed: **492**
 - Adjacency pairs in lookup: **492**
 
@@ -249,6 +249,18 @@ globals so the sentinel never matches. See `docs/decompiler-artifacts.md` §16.
 - Pool `g_WaterTextures` sentinel `g_WaterRenderQuad` (count 16)
   - Before: `while ((SMRGLPrimitiveQuad *)texture != &g_WaterRenderQuad)`
   - After:  `while (texture != g_WaterTextures + sizeof(g_WaterTextures) / sizeof(g_WaterTextures[0]))`
+
+### `crt_exit.c_ProcessExitHandlers_FUN_0060ac88`
+
+- Pool `g_ExitHandlers` sentinel `g_ExitHandlerTableEnd` (count 7)
+  - Before: `while (pBVar1 < &g_ExitHandlerTableEnd)`
+  - After:  `while (pBVar1 != g_ExitHandlers + sizeof(g_ExitHandlers) / sizeof(g_ExitHandlers[0]))`
+
+### `crt_init.c_ProcessInitTermHandlers_FUN_0060ac30`
+
+- Pool `g_InitHandlers` sentinel `g_ExitHandlers` (count 167)
+  - Before: `while (pBVar1 < g_ExitHandlers)`
+  - After:  `while (pBVar1 != g_InitHandlers + sizeof(g_InitHandlers) / sizeof(g_InitHandlers[0]))`
 
 ### `sound_sndmain.cpp_closeSoundDevice_FUN_005ab660`
 
