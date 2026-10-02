@@ -42,8 +42,12 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_allocateSfx_FUN_005af410(CDirectS
     pIVar1 = g_DirectSoundHardwareSfxBuffers[iVar7];
   }
   if (0x1e < iVar7) {
+#if NOCTURNE_AUTHENTIC_SOUND_ERROR_LOG
     engine_console_cpp_CConsole_printf_FUN_00441890
               (g_CConsolePtr,"DirectSoundDevice::allocateSfx - no free buffers\n");
+#else
+    nocturne_sound_report_no_free_buffers(sample_buffer_id);
+#endif
     return 0;
   }
   pIVar2 = g_DirectSoundHardwareSfxBuffers[iVar7];

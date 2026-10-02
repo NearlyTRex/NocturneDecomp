@@ -141,9 +141,14 @@ uint __cdecl core_sound_cpp_playSfxInternal_FUN_005b1fd0(void *user_data,char *s
       iVar2 = shape_edittool_cpp_CStrList_findString_FUN_004a3030(&g_MissingSoundsList,local_114);
       if (iVar2 < 0) {
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&g_MissingSoundsList,local_114);
+#if NOCTURNE_AUTHENTIC_SOUND_ERROR_LOG
         file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                          ("\\\\q\\xfer\\fletch\\missingwavs.txt",(char *)0x0,"at",
                           "..\\core\\sound.cpp",385);
+#else
+        file = shape_memdbg_cpp_openFile_FUN_0050f7a0
+                         ("missingwavs.txt",(char *)0x0,"at","..\\core\\sound.cpp",385);
+#endif
         if (file != (_FILE *)0x0) {
           _fprintf(file,"----------------------------------------------------------------\n");
           _time(&local_28);

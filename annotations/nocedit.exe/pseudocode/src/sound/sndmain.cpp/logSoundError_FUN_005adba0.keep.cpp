@@ -26,9 +26,14 @@ void __cdecl sound_sndmain_cpp_logSoundError_FUN_005adba0(char *format,...)
   _vsprintf(local_528,format,local_10);
   VA_END_T(local_10);
   engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"%s\n",local_528);
+#if NOCTURNE_AUTHENTIC_SOUND_ERROR_LOG
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                    ("\\\\q\\xfer\\fletch\\sounderr.txt",(char *)0x0,"at",
                     "..\\sound\\sndmain.cpp",6254);
+#else
+  file = shape_memdbg_cpp_openFile_FUN_0050f7a0
+                   ("sounderr.txt",(char *)0x0,"at","..\\sound\\sndmain.cpp",6254);
+#endif
   if (file == (_FILE *)0x0) {
     return;
   }

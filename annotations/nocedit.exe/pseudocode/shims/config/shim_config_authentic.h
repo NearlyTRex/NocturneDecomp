@@ -50,6 +50,7 @@
 // | `NOCTURNE_AUTHENTIC_SOUND_DEVICE` | 0 | host | the Device line names the host audio API SDL opened |
 // | `NOCTURNE_AUTHENTIC_RENDERER_DLL` | 0 | host | a compiled-in renderer loads without a file on disk |
 // | `NOCTURNE_AUTHENTIC_HEAP_REPORT` | 0 | host | the memory line reports the host allocator, not an unwalkable heap |
+// | `NOCTURNE_AUTHENTIC_SOUND_ERROR_LOG` | 0 | host | sound error and missing-wav reports go to local files, not a studio share |
 // | `NOCTURNE_AUTHENTIC_MIRROR_CULL` | 0 | defect | actors appear in mirrors |
 // | `NOCTURNE_AUTHENTIC_MIRROR_PROJECTION` | 0 | defect | accelerated geometry lines up with the backdrop |
 // | `NOCTURNE_AUTHENTIC_MIRROR_DEPTH_WINDOW` | 0 | defect | a part-off-screen mirror opens its depth window to a real depth |
@@ -88,6 +89,7 @@
 // | `NOCTURNE_AUTHENTIC_BODY_PART_BAKE` | 0 | defect | a settled body part goes into the background only through a background bake |
 // | `NOCTURNE_AUTHENTIC_MOTION_TWEEN_INIT` | 0 | defect | a new animation controller starts with no stale transition to reverse |
 // | `NOCTURNE_AUTHENTIC_HW_SFX_FALLOFF` | 0 | defect | hardware-mixed positional sounds fall off as the software mixer's do |
+// | `NOCTURNE_AUTHENTIC_CUE_RETRIGGER` | 0 | defect | a script music cue does not stack copies of itself while it plays |
 // | `NOCTURNE_AUTHENTIC_PICKUP_WIELDS` | 0 | choice | a pickup is never drawn without the player asking |
 // | `NOCTURNE_AUTHENTIC_OPTIONS_RESUMES_GAME` | 0 | choice | leaving Options returns to the pause menu |
 // | `NOCTURNE_AUTHENTIC_CONFIRM_PROMPTS` | 0 | choice | no bracketed hotkey letters, and a short form when the long one will not fit |
@@ -1704,6 +1706,29 @@
 #define NOCTURNE_AUTHENTIC_HW_SFX_FALLOFF 0
 #endif
 
+// NOCTURNE_AUTHENTIC_CUE_RETRIGGER
+//   Whether a script playSfx of a "cue" sound starts again while it is playing.
+//
+//   A level script re-runs every pass, and its conditions stay true for as long
+//   as a trigger is occupied. ACT1's river block
+//
+//       if (Drown)
+//           killcharacter($, drown)
+//           playsfx(cue52.wav)
+//
+//   keeps firing while the drowned hero lies in TriggerDrownRiver. kill returns
+//   early once the hero is dying; playSfx has no such guard, and startSfx takes
+//   a fresh slot every call, so the sting stacks dozens deep.
+//
+//   1: shipped behaviour - every pass starts another copy.
+//   0: a cue whose last start from a script is still playing is not restarted;
+//      the script's handle name is bound to the copy already playing.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_CUE_RETRIGGER=1.
+#ifndef NOCTURNE_AUTHENTIC_CUE_RETRIGGER
+#define NOCTURNE_AUTHENTIC_CUE_RETRIGGER 0
+#endif
+
 // =============================================================================
 // C. THE SHIPPED BINARY IS NOT WRONG, WE PREFER OTHERWISE
 // =============================================================================
@@ -1926,6 +1951,27 @@
 //   Override with -DNOCTURNE_AUTHENTIC_HEAP_REPORT=1.
 #ifndef NOCTURNE_AUTHENTIC_HEAP_REPORT
 #define NOCTURNE_AUTHENTIC_HEAP_REPORT 0
+#endif
+
+// NOCTURNE_AUTHENTIC_SOUND_ERROR_LOG
+//   Where the sound system's error reports are written, and how much the
+//   console says.
+//   1: shipped behaviour — logSoundError appends each message, with the time,
+//      user, machine and sound device, to \\q\xfer\fletch\sounderr.txt, and
+//      playSfxInternal appends each missing wav name to
+//      \\q\xfer\fletch\missingwavs.txt. allocateSfx prints only "no free
+//      buffers".
+//   0: the same reports are appended to sounderr.txt and missingwavs.txt in
+//      the game directory, and allocateSfx's console line names the sample it
+//      could not play and what holds the 30 hardware sfx buffers.
+//
+//   Both paths are a share on Terminal Reality's network. The open fails
+//   anywhere else and each report is dropped, leaving only the console line.
+//   See shims/game/sound_report.h.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_SOUND_ERROR_LOG=1.
+#ifndef NOCTURNE_AUTHENTIC_SOUND_ERROR_LOG
+#define NOCTURNE_AUTHENTIC_SOUND_ERROR_LOG 0
 #endif
 
 // NOCTURNE_AUTHENTIC_FILE_TIME

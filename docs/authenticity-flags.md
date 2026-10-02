@@ -87,6 +87,7 @@ honest reason its default is what it is.
 | `SOUND_DEVICE` | the Sound Options Device line names the host audio API SDL opened |
 | `RENDERER_DLL` | a compiled-in renderer loads without a file on disk |
 | `HEAP_REPORT` | the memory line reports the host allocator, since the Watcom heap it walks is not there |
+| `SOUND_ERROR_LOG` | sound error and missing-wav reports are written to `sounderr.txt` and `missingwavs.txt` in the game directory, since the network share they were written to is not there, and a "no free buffers" console line names the sound and what holds the buffers |
 
 **`defect` — the shipped binary is wrong, and the doc comment carries the instruction that proves it**
 
@@ -123,6 +124,7 @@ honest reason its default is what it is.
 | `BODY_PART_BAKE` | a settled body part stays on screen until a background bake draws it, instead of vanishing under a light |
 | `MOTION_TWEEN_INIT` | a new animation controller starts with no stale transition to reverse |
 | `HW_SFX_FALLOFF` | hardware-mixed positional sounds fall off as the software mixer's do |
+| `CUE_RETRIGGER` | a script music cue does not stack copies of itself while it plays, as ACT1's river drowning did |
 | `INPUT_REPEAT` | a held button starts an action once instead of restarting it every frame |
 | `ITEM_HELP_POSITION` | the pickup help text does not sit on top of the pickup name |
 | `DEATH_MESSAGE_POSITION` | the death banner is centred, clear of the message line |

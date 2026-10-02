@@ -154,6 +154,15 @@ void nocturne_trigl_envmap_pass_end(void);
 // NOCTURNE_AUTHENTIC_ACTOR_DELETE.
 #include "game/actor_delete.h"
 
+// The playSfx command's guard against restarting a music cue that is still
+// playing (nocturne_script_cue_*), reached from event.cpp's executeCommand.
+// Gated by NOCTURNE_AUTHENTIC_CUE_RETRIGGER.
+#include "game/script_cue.h"
+
+// The detailed sound error console lines (nocturne_sound_report_*), reached
+// from snddx.cpp's allocateSfx. Gated by NOCTURNE_AUTHENTIC_SOUND_ERROR_LOG.
+#include "game/sound_report.h"
+
 // The Options screen's CHEATS submenu (nocturne_cheats_menu) and the mission-
 // start application of whatever it armed (nocturne_cheats_apply), reached from
 // the menu and mission TUs. Both are no-ops under NOCTURNE_AUTHENTIC_CHEAT_MENU.

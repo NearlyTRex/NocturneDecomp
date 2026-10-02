@@ -971,12 +971,24 @@ LAB_004aaf38:
                                           iVar2 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_005a9ea0
                                                             (1);
                                           if (iVar2 != 0) {
+#if NOCTURNE_AUTHENTIC_CUE_RETRIGGER
                                             sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
                                             sound_sndmain_cpp_setNextSfxChannel_FUN_005a8af0(1);
                                             uVar14 = core_sound_cpp_CSound_playSound_FUN_005b3a20
                                                                (g_CSoundPtr,this_ptr,local_13ad + 1)
                                             ;
                                             sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
+#else
+                                            uVar14 = nocturne_script_cue_playing(local_13ad + 1);
+                                            if (uVar14 == 0) {
+                                              sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
+                                              sound_sndmain_cpp_setNextSfxChannel_FUN_005a8af0(1);
+                                              uVar14 = core_sound_cpp_CSound_playSound_FUN_005b3a20
+                                                                 (g_CSoundPtr,this_ptr,local_13ad + 1);
+                                              sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
+                                              nocturne_script_cue_started(local_13ad + 1,uVar14);
+                                            }
+#endif
                                             if (local_b15[1] != '\0') {
                                               core_event_cpp_CEventList_setSfxHandle_FUN_004b0c80
                                                         (this_ptr,local_b15 + 1,uVar14);
