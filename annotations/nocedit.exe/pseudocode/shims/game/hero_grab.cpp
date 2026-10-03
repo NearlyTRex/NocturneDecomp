@@ -25,7 +25,97 @@ const float k_hold_seconds = 1.5f;
 struct SGrabHold {
     CHero *hero;
     float held_for;
+    int escaping;   // the escape motion has been asked for
 };
+
+// Past this, a hero not yet in GETGRABBED is put there directly; the class's
+// own locomotion requests can otherwise keep reversing the tween in.
+const float k_snap_seconds = 0.3f;
+
+// The longest the escape motion is waited for before the hero is let go
+// regardless. Gabriella's ESCAPEGRAB routes only from "gab hug loop", which
+// "gab hug begin" reaches after 2.5 seconds.
+const float k_escape_limit_seconds = 3.0f;
+
+CMotionController *controller(CHero *hero)
+{
+    return &(hero->base).model.motion_controller;
+}
+
+int find_state(CHero *hero, const char *name)
+{
+    return core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0
+        (controller(hero)->motion_list_ptr, (char *)name, 0);
+}
+
+SMotion *current_motion(CHero *hero)
+{
+    return core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(controller(hero));
+}
+
+float state_weight(CHero *hero, int state)
+{
+    if (state < 0) {
+        return 0.0f;
+    }
+    return core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
+        (controller(hero), state);
+}
+
+// Whether the current motion has a route to `state`. A desired state with no
+// route is never taken.
+int has_route(SMotion *motion, int state)
+{
+    for (int i = 0; i < motion->transition_count; i++) {
+        if (motion->transitions[i].desired_state == state) {
+            return 1;
+        }
+    }
+    return 0;
+}
+
+void request(CHero *hero, int state)
+{
+    if (controller(hero)->state_index != state) {
+        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+            (controller(hero), state, 1);
+    }
+}
+
+// CHero::getGrabbed asks for GETGRABBED once, and from a motion with no route
+// to it (a run, for most classes) the request is dropped and the hero is
+// carried off still running. Go through STAND, which every locomotion motion
+// reaches, and if the class keeps steering elsewhere, jump.
+void steer_into_grabbed(CHero *hero, int grabbed_state, float held_for)
+{
+    CMotionList *list;
+    SMotion *motion;
+    int i;
+
+    motion = current_motion(hero);
+    if ((motion->state_index == grabbed_state) || (0.0f <= controller(hero)->tween_progress)) {
+        return;
+    }
+    if (k_snap_seconds <= held_for) {
+        list = controller(hero)->motion_list_ptr;
+        for (i = 0; i < list->motion_count; i++) {
+            if (list->motions[i].state_index == grabbed_state) {
+                core_motion_cpp_CMotionController_jumpToMotion_FUN_0052dde0
+                    (controller(hero), i, 0.0f);
+                core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                    (controller(hero), grabbed_state, 0);
+                return;
+            }
+        }
+        return;
+    }
+    if (has_route(motion, grabbed_state) != 0) {
+        request(hero, grabbed_state);
+    }
+    else {
+        request(hero, find_state(hero, "STAND"));
+    }
+}
 
 SGrabHold g_holds[8];
 
@@ -50,6 +140,7 @@ SGrabHold *find_hold(CHero *hero)
     if (first_free != (SGrabHold *)0x0) {
         first_free->hero = hero;
         first_free->held_for = 0.0f;
+        first_free->escaping = 0;
     }
     return first_free;
 }
@@ -62,6 +153,7 @@ void release_hold(CHero *hero)
         if (g_holds[i].hero == hero) {
             g_holds[i].hero = (CHero *)0x0;
             g_holds[i].held_for = 0.0f;
+            g_holds[i].escaping = 0;
             return;
         }
     }
@@ -79,6 +171,8 @@ extern "C" int nocturne_hero_grab_escape(CHero *hero, float delta_time)
     return 0;
 #else
     SGrabHold *hold;
+    int grabbed_state;
+    int escape_state;
 
     if (hero == (CHero *)0x0) {
         return 0;
@@ -108,7 +202,38 @@ extern "C" int nocturne_hero_grab_escape(CHero *hero, float delta_time)
         return 0;
     }
     hold->held_for = hold->held_for + delta_time;
-    if (hold->held_for < k_hold_seconds) {
+
+    grabbed_state = find_state(hero, "GETGRABBED");
+    if (grabbed_state >= 0) {
+        // The escape is timed here, so the press the class would have spent
+        // asking for its struggle motion is spent instead. Left in, that
+        // request lands on the steering below and reverses its tween.
+        hero->player_input.action_state.fire = 0;
+        escape_state = find_state(hero, "ESCAPEGRAB");
+        if (escape_state < 0) {
+            escape_state = find_state(hero, "PUSHOFF");
+        }
+        if (hold->escaping == 0) {
+            if (hold->held_for < k_hold_seconds) {
+                steer_into_grabbed(hero, grabbed_state, hold->held_for);
+                return 0;
+            }
+            if ((escape_state >= 0) && (0.0f < state_weight(hero, grabbed_state))) {
+                hold->escaping = 1;
+            }
+        }
+        // CStranger's own escape: ask for the escape motion, and let go once
+        // neither it nor GETGRABBED is blended in, so a signal that hits the
+        // grabber (Gabriella's kick, signal 6; Scat's 5 damage, signal 100)
+        // finds it still holding on.
+        if ((hold->escaping != 0) &&
+            (hold->held_for < k_hold_seconds + k_escape_limit_seconds) &&
+            (0.0f < state_weight(hero, grabbed_state) + state_weight(hero, escape_state))) {
+            request(hero, escape_state);
+            return 0;
+        }
+    }
+    else if (hold->held_for < k_hold_seconds) {
         return 0;
     }
 
@@ -119,6 +244,24 @@ extern "C" int nocturne_hero_grab_escape(CHero *hero, float delta_time)
     (*(((hero->base).base.vtable._uc)->_uc).releaseFromGrab)(&hero->base);
     return 1;
 #endif
+}
+
+extern "C" int nocturne_svetlana_get_grabbed(CHero *svetlana, CDemonActor *grabber,
+                                             int grab_type)
+{
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+    // g_HeroActors is the same set on every machine, so this is a lockstep test.
+    for (int i = 0; (i < 4) && (i < g_HeroCount); i++) {
+        if (g_HeroActors[i] == svetlana) {
+            return core_hero_cpp_CHero_getGrabbed_FUN_004f28d0(svetlana, grabber, grab_type);
+        }
+    }
+#else
+    (void)svetlana;
+    (void)grabber;
+    (void)grab_type;
+#endif
+    return 0;
 }
 
 extern "C" int nocturne_grab_carry_move(CDemonActor *victim, CVector3f *world_target)

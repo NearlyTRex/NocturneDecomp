@@ -53,14 +53,20 @@
 // correctly, and every POD is mounted at startup, which means any row in that
 // file is reachable from any act. Nothing here adds or edits game data.
 //
-// A class that attacks with nothing - Haystack, who strikes from the L and R
-// Hand bones, and Colonel, whose fire button only lets him struggle out of a
-// grab - is left with an empty slot rather than a weapon it does not have. A
-// class the shipped game already equips correctly is left alone entirely.
+// A class that fights bare-handed - Haystack and IcePick, who strike from their
+// hand bones - is left with an empty slot rather than a weapon it does not
+// have, so the weapon selector offers nothing. The Colonel, whose skeleton has
+// draw and shoot motions and whose code never fires anything, is given a pistol
+// of his own (hero_colonel.h). A class the shipped game already equips
+// correctly is left alone entirely.
 
 struct CHero;
 struct CWeapon;
 struct CDemonActor;
+
+// The actor name of the Colonel's pistol. Its slot text and its bottomless
+// reserve are both keyed on it.
+#define NOCTURNE_COLONEL_SIDEARM_NAME "Colonel_sidearm"
 
 // What a player hero may hold, by class:
 //
@@ -68,7 +74,8 @@ struct CDemonActor;
 //   Scat, Gabriella   guns, their ammo, dynamite and the Baron. No melee: they
 //                     fire through the selected weapon and CMelee::fire is an
 //                     assert. No gas mask: only CStranger puts it on.
-//   everyone else     health items only
+//   everyone else     health items only. The Colonel's sidearm is installed
+//                     directly, so it is the one gun he holds.
 //
 // Keys and other plain items are open to every class, since doors and events
 // test them on any hero. NPCs are never restricted.
@@ -110,6 +117,8 @@ void nocturne_hero_default_weapon(struct CHero *hero, int hero_type);
 //
 // Does nothing outside a network game, and nothing for any weapon but that
 // pistol: the Baron, or another gun the hero picked up, keeps its own count.
+// The Colonel's sidearm is the exception: it is topped up in any game, being
+// the only weapon he has.
 void nocturne_hero_reload_extra_gun(struct CHero *hero, struct CWeapon *weapon);
 
 // Whether the hero may hold an item of this kind, per the table above.

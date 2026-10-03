@@ -253,6 +253,11 @@ void nocturne_trigl_envmap_pass_end(void);
 // NOCTURNE_AUTHENTIC_HERO_ACTIONS.
 #include "game/hero_moloch.h"
 
+// The Colonel's pistol (nocturne_colonel_*): draw, fire, the hand it is carried
+// in and its draw. Gated at the CColonel::process and renderOpaque call sites
+// on NOCTURNE_AUTHENTIC_HERO_ACTIONS.
+#include "game/hero_colonel.h"
+
 // Gabriella's action-button pickup and kick, strafe selection and strafe
 // playback rate (nocturne_hero_gabriella_*). Gated at the CGabriella::process call sites on
 // NOCTURNE_AUTHENTIC_HERO_ACTIONS.

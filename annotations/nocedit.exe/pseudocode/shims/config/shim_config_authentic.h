@@ -1086,7 +1086,9 @@
 //   to the Stranger, for whom a CGun is right.
 //   1: shipped behaviour — every hero starts with the pistol.
 //   0: CDemonMission::createOneHero gives each newly built player hero what its
-//      class actually attacks with, or nothing when it attacks bare-handed.
+//      class actually attacks with, or nothing when it attacks bare-handed
+//      (Haystack and IcePick). The Colonel gets a pistol of his own, which
+//      HERO_ACTIONS lets him draw and fire, with a reserve that never runs out.
 //      Inventory contents only; no fire path and no damage changes. NPCs of the
 //      same classes are untouched, and a hero carried over from a previous
 //      mission keeps the inventory it earned. See hero_weapon.h for the models
@@ -1201,7 +1203,12 @@
 //      use, through the shared nocturne_hero_interact; sheathed fire is only the
 //      action button, and the attack needs the weapon drawn; a hero of any class
 //      breaks out on the Stranger's own 1.5 second timer through the game's own
-//      CHero::releaseFromGrab, and the sentinel reaches the same claw point
+//      CHero::releaseFromGrab, playing its skeleton's GETGRABBED while held and
+//      its ESCAPEGRAB or PUSHOFF on the way out (the Colonel's struggle asked
+//      for state 9, DRAW, rather than his PUSHOFF at 0x0b); a player Svetlana
+//      can be grabbed at all, where CSvetlana::getGrabbed refuses every grab
+//      (her NPC still does); and the sentinel
+//      reaches the same claw point
 //      through CCharacter::moveAndCollide, so the carry stops at geometry and
 //      keeps area_id right. Every player hero spends a selected health item on
 //      use_item, is rescued by autoUseHealth under the Stranger's test, shows
@@ -1220,7 +1227,11 @@
 //      (hero_gabriella.h). A player's
 //      Scat keeps firing while fire is held; his AI is unchanged. Moloch's fire
 //      strikes in demon form, alternating two of his unused attack motions
-//      (hero_moloch.h).
+//      (hero_moloch.h). The Colonel's draw and fire play his unused "draw" and
+//      "shoot" motions (holstering plays "draw" backwards) and fire the pistol
+//      HERO_WEAPON gives him; his arm aims it at the nearest enemy in front of
+//      him, or level with look up/down, with Scat's laser sight
+//      (hero_colonel.h).
 //
 //      Not included: object pickup for classes other than Gabriella, using
 //      items other than health, and box pushing, which sit on carry-hand state

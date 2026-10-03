@@ -46,6 +46,16 @@ Only the Stranger and Gabriella have interaction motions. The other classes open
 doors and pull levers through `nocturne_hero_interact` with no animation
 (`shims/game/hero_interact.h`).
 
+**Grabs.** `CHero_getGrabbed_FUN_004f28d0` asks for GETGRABBED by name, once, and
+`CHero_canBeGrabbed_FUN_004f2890` refuses a skeleton without it, so Baron and Moloch
+cannot be grabbed. Neither can Svetlana, though her skeleton has GETGRABBED and
+PUSHOFF: `CSvetlana_getGrabbed_FUN_005d9ec0` overrides the slot with `return 0`. Most skeletons route to GETGRABBED only from STAND or a fighting
+stance (the Colonel's only from STAND), so a hero grabbed mid-run keeps running. The
+way out is ESCAPEGRAB in GABRIELA.SKL and STRANGER.SKL and PUSHOFF in the others, in
+every case routed only from GETGRABBED. Only the Stranger's code times an escape;
+`NOCTURNE_AUTHENTIC_HERO_ACTIONS` gives the other classes the same sequence by state
+name (`shims/game/hero_grab.h`).
+
 ## Signal values
 
 | Value | Meaning |
@@ -116,14 +126,17 @@ The only hero with a jump and a fall. `CStranger::processFrame` drives it:
 STAND holds the 17 layered `draw_*` motions (holsters, coat pocket, shotgun, tommy,
 flamethrower, toss, spear, crate, gas mask) as well as "stand". AXEPICKUPWALL and
 AXESWING are states with no motions and no routes. SITGES1–3 have motions but no
-route in.
+route in, and nothing in the shipped game plays them.
 
 ### Svetlana
 
 LONGJUMP and CASTLEJUMP are scripted jumps: the mission scripts ask for them with
 `setModelState`, and her own code never does, so there is no player jump. EXAMINE
 (kneel), BOW, HEADACHE and the sitting conversations are asked for the same way.
-DRAW, THROW, BIGTHROW and STANDTOSIT have motions and no route in.
+SITLOOP is reached only because HQ-ACT1.MSN places her in "sitloop"; the script's
+`setModelState(Svetlana, SITLOOP)` there would otherwise be dropped, since STAND has
+no route to it. DRAW, THROW, BIGTHROW and STANDTOSIT have motions and no route in,
+and nothing in the shipped game plays them.
 
 ### Scat
 
@@ -134,13 +147,20 @@ motions and the two layered draw motions all sit in STAND.
 ### Baron
 
 STAND, WALK, BACKUP and RUN, an attack, two rises and GOAWAY (signal 110 unsummons
-him). TEST holds twelve motions with no route in, script captures by their names.
+him). TEST holds twelve motions with no route in, script captures by their names. The
+state is never entered: the ACT2 scripts play eight of the motions as gestures
+(bscrp001–004, 006–008, 010). "BScrp005", "BScrp009", "dead" and "riseup" are never
+played.
 
 ### IcePick
 
 PICKUPGUN and THROWGUN are the only interaction motions, routed from locomotion.
-SHOOT has a motion and no route; DRAW has neither. PICKUPWAIST, BENDBARS and
-DOUBLESPRAY route from STAND; "pickupwaist" emits no signal, so it picks nothing up.
+SHOOT has a motion and no route; DRAW has neither. The SHOOT state is never entered,
+but `CIcePick_updateShootBlend_FUN_004f8810` layers frame 0 of "shoot" from Spine1 up
+as an aiming pose, easing it in while he holds a gun he picked up (`is_armed`) with it
+drawn. PICKUPWAIST, BENDBARS and DOUBLESPRAY route from STAND; "pickupwaist" emits no
+signal, so it picks nothing up. He fights from his hand bones and never reads the
+inventory; `NOCTURNE_AUTHENTIC_HERO_WEAPON` gives a player IcePick an empty weapon slot.
 
 ### Haystack
 
@@ -150,7 +170,11 @@ MEDITATE. DRAW has no motion.
 ### Colonel
 
 No signals anywhere, not even footsteps. DRAW and SHOOT have motions and no route
-in.
+in, and nothing in the shipped game plays them: `CColonel_process_FUN_0043fa00` only
+toggles `guns_drawn` on draw and swallows fire once it is set. Its grab struggle asks
+for state 9, which is DRAW, not PUSHOFF (0x0b), so it never plays either.
+`NOCTURNE_AUTHENTIC_HERO_ACTIONS` jumps to "draw" and "shoot" and fires the pistol
+`NOCTURNE_AUTHENTIC_HERO_WEAPON` gives him (`shims/game/hero_colonel.h`).
 
 ### Moloch
 
@@ -431,11 +455,30 @@ code or script can enter it. A state with no motions shows "—".
 | `0x07` SITTINGDOWN | "sit", "sittingdown", "getup" | STAND |  |
 | `0x08` SCRIPT01 | "script01" | STAND |  |
 
-## Open questions
+## States with no route in
 
-- Whether the states with no route in ("nothing") are reached at all. None of the
-  175 `setModelState` calls in the shipped scripts names one; the scripts' requests
-  are for routed states (Svetlana's LONGJUMP, CASTLEJUMP, EXAMINE, BOW, HEADACHE,
-  SITCONVO*, Moloch's KNEEL). Direct jumps from code (`jumpToMotion`,
-  `jumpToMotionByName`) and script commands other than `setModelState` were not
-  audited.
+A motion plays without a route in four ways, and the shipped game uses none of them
+to enter a hero state marked **nothing** above.
+
+| Way in | What it does | Hero uses in the shipped game |
+|---|---|---|
+| Code: `jumpToMotion`, `jumpToMotionByName` | Jumps the controller to a motion, no tween | Motion 0 for a hero carried into a mission (`CDemonMission_createOneHero_FUN_00524920`), "stand" on `CStranger_reset_FUN_005c6750`, and Moloch's morph onto the same-named motion in his other skeleton |
+| Script: `slamModelToMotion(actor, motion)` | `jumpToMotion` to the named motion at frame 0, then asks for that motion's state | Only routed motions: the Stranger's stand, layonground and ladderuploop, Svetlana's stand and run |
+| Script: `gesture(actor, motion)` | `CCharacter_initGesture_FUN_0042d390`: blends the motion once over the bones below `gesture_branch_root`, eased in and out to a peak weight of 0.85. The state is not entered | Baron's TEST motions (see Baron); IcePick's attack3, pickupwaist and bendbars; Svetlana's convo1–9 and bow; Scat's talks; Moloch's converse; the Stranger's pickupwaist and rummage |
+| Mission record: the "motion state" block | The actor starts in the saved motion | Svetlana's "sitloop" in HQ-ACT1.MSN. Every other placed hero starts in stand, Moloch also in elevator and Scat also in dead |
+
+So, per state:
+
+| Class | State | Reached by |
+|---|---|---|
+| Stranger | SITGES1–3 | nothing |
+| Svetlana | DRAW, THROW, BIGTHROW, STANDTOSIT | nothing |
+| Baron | TEST | never entered; eight of its motions play as script gestures |
+| IcePick | SHOOT | never entered; "shoot" frame 0 is the layered aiming pose |
+| Colonel | DRAW, SHOOT | nothing in the shipped game; jumped to by `shims/game/hero_colonel.h` |
+
+The audit covers every `jumpToMotion` and `jumpToMotionByName` call site, the
+`setModelState`, `slamModelToMotion` and `gesture` calls in the shipped `.SCR` and
+`.MSN` files of every POD (commented-out lines excluded), the event and `CScript`
+command sets (no other command
+names a motion or a state), and the starting motion of every placed hero-class actor.

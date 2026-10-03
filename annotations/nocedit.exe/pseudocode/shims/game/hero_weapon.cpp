@@ -13,7 +13,8 @@ enum {
     HERO_WEAPON_KEEP,     // the class already ends up with the right weapon
     HERO_WEAPON_MELEE,    // swap it for a melee weapon carrying the named model
     HERO_WEAPON_NONE,     // drop it; this class attacks with nothing
-    HERO_WEAPON_RENAME    // keep the weapon, give it the named model
+    HERO_WEAPON_RENAME,   // keep the weapon, give it the named model
+    HERO_WEAPON_SIDEARM   // replace it with the Colonel's own, bottomless pistol
 };
 
 typedef struct SHeroWeapon {
@@ -42,13 +43,15 @@ static const SHeroWeapon k_hero_weapon[] = {
     { HERO_WEAPON_RENAME, "a2s2-pouch.kfm",   1 },  // HERO_TYPE_SCAT
     // Not offered by the lobby, and CBaron attacks with his hands regardless.
     { HERO_WEAPON_KEEP,   (const char *)0x0,  0 },  // HERO_TYPE_BARON
-    // CIcePick::performMeleeAttack, also from the hand bones. "Bladed Weapon".
-    { HERO_WEAPON_MELEE,  "tort2.kfm",        0 },  // HERO_TYPE_ICEPICK
+    // CIcePick::performMeleeAttack strikes from the hand bones, as Haystack's
+    // punches do, and never reads the inventory.
+    { HERO_WEAPON_NONE,   (const char *)0x0,  0 },  // HERO_TYPE_ICEPICK
     // Punches: CHaystack::checkMeleeHit is driven from the L and R Hand bones.
     { HERO_WEAPON_NONE,   (const char *)0x0,  0 },  // HERO_TYPE_HAYSTACK
-    // No attack at all - his fire button reaches the interaction set and the
-    // struggle-out-of-a-grab state, and sets no attack state anywhere.
-    { HERO_WEAPON_NONE,   (const char *)0x0,  0 },  // HERO_TYPE_COLONEL
+    // COLONEL.SKL has draw and shoot motions that nothing plays, and his fire
+    // button reaches nothing once guns_drawn is set. The pistol gives that
+    // button something to fire; hero_colonel.h plays the motions.
+    { HERO_WEAPON_SIDEARM, (const char *)0x0, 0 },  // HERO_TYPE_COLONEL
     // The amulet names his two buttons: draw morphs, fire strikes as the demon.
     // See hero_moloch.h.
     { HERO_WEAPON_MELEE,  "AMULET.KFM",       0 },  // HERO_TYPE_MOLOCH
@@ -216,9 +219,39 @@ static void hero_add_pistol(CHero *hero)
     remember_extra_gun(hero, weapon);
 }
 
+// The Colonel's pistol replaces the CHero one outright. It is a CGun like the
+// Stranger's, carrying the same gat.kfm (ITEMLIST.TXT has no other pistol), and
+// its actor name is what gives it a slot text of its own and what marks it
+// bottomless. The name survives a save, where a pointer would not.
+static void hero_install_sidearm(CHero *hero)
+{
+    CDemonActor *actor_ptr;
+    CWeapon *weapon;
+
+    hero_reset_inventory(hero);
+    actor_ptr = core_actor_cpp_createActorByName_FUN_0040c430((char *)"CGun");
+    weapon = (CWeapon *)core_actor_cpp_castToClassHash_FUN_0040c790
+                                  (actor_ptr, g_CWeaponClassInfo.name_hash);
+    if (weapon == (CWeapon *)0x0) {
+        return;
+    }
+    strcpy(weapon->base.actor_name, NOCTURNE_COLONEL_SIDEARM_NAME);
+    weapon->ammo_count = HERO_EXTRA_GUN_AMMO;
+    core_inv_cpp_CInventory_addItem_FUN_004fd600
+              (&hero->inventory, (CDemonActor *)weapon, 0);
+    core_inv_cpp_CInventory_selectWeapon_FUN_004feb10
+              (&hero->inventory, (CDemonActor *)0x0, 5, 1);
+}
+
 extern "C" void nocturne_hero_reload_extra_gun(CHero *hero, CWeapon *weapon)
 {
     if (hero == (CHero *)0x0 || weapon == (CWeapon *)0x0) {
+        return;
+    }
+    // The Colonel's pistol is bottomless in any game: he has no way to collect
+    // ammunition either, and it is the only weapon he has.
+    if (_stricmp(weapon->base.actor_name, (char *)NOCTURNE_COLONEL_SIDEARM_NAME) == 0) {
+        weapon->ammo_count = HERO_EXTRA_GUN_AMMO;
         return;
     }
     if (hero_is_network_game() == 0) {
@@ -258,6 +291,9 @@ extern "C" void nocturne_hero_default_weapon(CHero *hero, int hero_type)
         break;
     case HERO_WEAPON_RENAME:
         hero_rename_weapon(hero, entry->item_model_name);
+        break;
+    case HERO_WEAPON_SIDEARM:
+        hero_install_sidearm(hero);
         break;
     default:
         break;
@@ -355,6 +391,10 @@ static const SHeroItemText k_hero_item_text[] = {
     // Moloch's slot item (hero_moloch.h), explaining his two buttons.
     { 1, NOCTURNE_MOLOCH_AMULET_NAME, "Moloch's Amulet",
          "Draw to change between man and demon.  Fire to strike as the demon." },
+    // The Colonel's pistol (hero_colonel.h). Matched by actor name ahead of its
+    // gat.kfm row, which describes the Stranger's.
+    { 1, NOCTURNE_COLONEL_SIDEARM_NAME, "Colonel's Sidearm",
+         "His service pistol.  It never runs dry." },
     // CGabriella::ctor gives her pistol this model, which ITEMLIST.TXT never
     // listed because she was cut before the text was written.
     { 0, "gabgun.kfm", "Gabriella's Pistol", "Her own sidearm.  Takes ordinary pistol rounds." },
