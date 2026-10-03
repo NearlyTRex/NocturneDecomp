@@ -98,6 +98,8 @@ struct CHero *nocturne_net_sim_leader_hero(void);
 //
 // This covers setup only. A subclass making the same test from ::process would
 // need the same treatment at that call site; IcePick makes it nowhere else.
+// IcePick's setup keep also skips the widening in a network game, since the
+// 1.5 radius blocks steep stairs; the substitution keeps the test consistent.
 
 // Substitutes the local-hero index for the duration of one actor's setup, if
 // that actor is one of the heroes. Returns the previous g_LocalHeroIndex to
