@@ -30,8 +30,8 @@
 // What is deliberately NOT here: object pickup, item use and box pushing. Those
 // are held in CStranger (tryPickupObject, handleActionButton, tryPlaceObject,
 // processPickupComplete) around carry-hand state that the other classes do not
-// maintain, and CGabriella's partial version is her own. Adding them is a
-// bigger piece of work than routing a call.
+// maintain, and CGabriella's version is her own (see hero_gabriella.h). Adding
+// them is a bigger piece of work than routing a call.
 
 struct CHero;
 

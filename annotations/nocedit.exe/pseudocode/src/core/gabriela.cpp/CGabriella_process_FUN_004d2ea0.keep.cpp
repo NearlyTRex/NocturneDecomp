@@ -92,7 +92,11 @@ void __cdecl core_gabriela_cpp_CGabriella_process_FUN_004d2ea0(CGabriella *this_
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   (this_ptr->base).base.model.accumulated_root_motion.y = 0.0;
   (this_ptr->base).base.model.accumulated_root_motion.x = 0.0;
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+  nocturne_hero_gabriella_process_motion(this_ptr,delta_time);
+#else
   core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004d4890(this_ptr,delta_time);
+#endif
   is_holstering = (uint)((this_ptr->base).base.hit_points <= 0.0);
   if ((this_ptr->base).base.grabbed_by != (CDemonActor *)0x0) {
     is_holstering = 1;
@@ -241,6 +245,9 @@ LAB_004d3af9:
                 if ((this_ptr->base).player_input.action_state.backup != 0) {
                   iVar17 = 3;
                 }
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+                iVar17 = nocturne_hero_gabriella_strafe_state(this_ptr,iVar17);
+#endif
                 fVar3 = (this_ptr->base).base.walk_step_speed;
                 fVar4 = (this_ptr->base).base.position_delta.x;
                 pCVar4 = &(this_ptr->base).base.model;
@@ -533,6 +540,11 @@ LAB_004d344b:
   if (((fVar10 <= 0.0) && (this_ptr->fire_cooldown_timer = 0.0, is_holstering == 0)) &&
      (((this_ptr->base).player_input.action_state.fire != 0 && (this_ptr->fire_state == 0)))) {
     if (this_ptr->weapon_state_flags == 0) {
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+      if ((this_ptr->draw_blend <= 0.0) && (nocturne_hero_gabriella_pickup(this_ptr) != 0)) {
+      }
+      else
+#endif
       if ((this_ptr->draw_blend <= 0.0) &&
          (iVar17 = core_hero_cpp_CHero_tryInteract_FUN_004f2af0(&this_ptr->base), iVar17 == 0)) {
         iVar17 = core_hero_cpp_CHero_tryOpenNearbyDoor_FUN_004f2d70(&this_ptr->base);
@@ -555,7 +567,13 @@ LAB_004d344b:
           if (iVar17 == 0) {
             iVar17 = core_hero_cpp_CHero_tryPullLever_FUN_004f2f50(&this_ptr->base);
             if (iVar17 == 0) {
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+              if (core_gabriela_cpp_CGabriella_tryClimbLadder_FUN_004d5c60(this_ptr) == 0) {
+                nocturne_hero_gabriella_kick(this_ptr);
+              }
+#else
               core_gabriela_cpp_CGabriella_tryClimbLadder_FUN_004d5c60(this_ptr);
+#endif
             }
             else {
               core_hero_cpp_CHero_executeLeverPull_FUN_004f30f0(&this_ptr->base);

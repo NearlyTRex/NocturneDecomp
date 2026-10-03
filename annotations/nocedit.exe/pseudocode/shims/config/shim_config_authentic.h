@@ -1181,6 +1181,16 @@
 //                   frame and her arm bobs with the weight. CScat::process
 //                   clears fire after every shot, which suits its AI (one
 //                   fire per shot) but makes a player press again each time.
+//     pickup button CGabriella picks up and rummages through her own
+//                   findAndPickupNearbyObject, but only from use_item; every
+//                   other class picks up from the action button.
+//     strafing      GABRIELA.SKL authors STRAFE_L and STRAFE_R, and
+//                   CGabriella::process moves her by their blend weights, but
+//                   nothing ever selects them from strafe input. Their 3 s
+//                   loop steps at a sixth of the Stranger's rate while she
+//                   moves at his speed.
+//     unarmed kick  GABRIELA.SKL authors "gab kick door open", a left-leg kick
+//                   in state KICK_DOOR, and nothing ever asks for it.
 //
 //   1: shipped behaviour — Scat and Moloch can interact with nothing, sheathed
 //      fire falls through to an attack, only the Stranger can break a grab
@@ -1201,17 +1211,23 @@
 //      select refuses above 98% of it, and the cheats restore it. Scat's auto
 //      aim eases back to centre at its normal turn rate once it has no target.
 //      Gabriella stows the weapon she switched away from, as Scat does, and
-//      holds her aim while fire is held on a continuous weapon. A player's
+//      holds her aim while fire is held on a continuous weapon, and her
+//      action button tries her own pickup first; she strafes on the
+//      Stranger's test, with the strafe played at twice its authored rate; with
+//      her weapon away and nothing else to act on, the action button kicks an
+//      enemy in reach in front of her for 10-15 damage and a short shove
+//      (hero_gabriella.h). A player's
 //      Scat keeps firing while fire is held; his AI is unchanged. Moloch's fire
 //      strikes in demon form, alternating two of his unused attack motions
 //      (hero_moloch.h).
 //
-//      Not included: object pickup, using items other than health, and box
-//      pushing, which sit on carry-hand state these classes do not maintain;
+//      Not included: object pickup for classes other than Gabriella, using
+//      items other than health, and box pushing, which sit on carry-hand state
+//      these classes do not maintain;
 //      and scripted grabs, which still cannot be escaped. The grab escape is
 //      given to every hero rather than only the player's, because control_type
 //      is per-machine and gating on it breaks lockstep. See hero_interact.h,
-//      hero_grab.h and hero_items.h.
+//      hero_grab.h, hero_items.h and hero_gabriella.h.
 //
 //   Override with -DNOCTURNE_AUTHENTIC_HERO_ACTIONS=1.
 #ifndef NOCTURNE_AUTHENTIC_HERO_ACTIONS
@@ -2195,15 +2211,17 @@
 #endif
 
 // NOCTURNE_AUTHENTIC_HERO_LOOK_AIM
-//   Whether Scat can aim with look input while auto-aim is on.
+//   Whether Scat and Gabriella can aim with look input while auto-aim is on.
 //   CStranger::autoAimAtThreat integrates look_up_down_speed into the aim in
 //   every aim mode, and auto-aim only overrides it once a threat is found.
 //   CScat::updateAiming integrates it only for manual aim; under auto-aim with
 //   no target the pitch holds where it was, and firing with no target snaps it
-//   to level.
+//   to level. CGabriella::updateAimTracking is built the same way, except that
+//   with no target her aim weight runs down and the pitch returns to level.
 //   1: shipped behaviour.
-//   0: with no target, auto-aim follows look input as the Stranger's does, at
-//      CScat's own rate and limits. A target still takes the aim.
+//   0: with no target and the weapon drawn, auto-aim follows look input as the
+//      Stranger's does, at each class's own manual-aim rate and limits. A
+//      target still takes the aim.
 //
 //   Override with -DNOCTURNE_AUTHENTIC_HERO_LOOK_AIM=1.
 #ifndef NOCTURNE_AUTHENTIC_HERO_LOOK_AIM

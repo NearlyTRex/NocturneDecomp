@@ -248,6 +248,11 @@ void nocturne_trigl_envmap_pass_end(void);
 // NOCTURNE_AUTHENTIC_HERO_ACTIONS.
 #include "game/hero_moloch.h"
 
+// Gabriella's action-button pickup and kick, strafe selection and strafe
+// playback rate (nocturne_hero_gabriella_*). Gated at the CGabriella::process call sites on
+// NOCTURNE_AUTHENTIC_HERO_ACTIONS.
+#include "game/hero_gabriella.h"
+
 // Which of the engine's two text paths is used (nocturne_os_font_*), reached
 // from CGame::initFonts to apply the stored choice and from the menu TU for the
 // Graphics Options line. Inert under NOCTURNE_AUTHENTIC_OS_FONT=1.
