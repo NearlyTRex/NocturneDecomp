@@ -17,7 +17,7 @@ void __stack2_esi core_charactr_cpp_CCharacter_getCarryObjToBodyXForm_FUN_004294
   bVar3 = 0;
   core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00
             (&this_ptr->carry_hands[hand_index].initial_carry_transform,
-             (this_ptr->model).bone_transform.bone_world_matrices +
+             (this_ptr->model).bone_transform.bone_model_matrices +
              this_ptr->carry_hands[hand_index].bone_index,&local_38);
   pCVar2 = &local_38;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {

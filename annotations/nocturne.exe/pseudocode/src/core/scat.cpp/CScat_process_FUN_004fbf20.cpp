@@ -248,7 +248,7 @@ LAB_004fc367:
     core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000((CDemonActor *)this_ptr);
     pCVar7 = (CCharacter *)(this_ptr->base).base.grabbed_by;
     pCVar8 = (pCVar7->base).vtable._uc;
-    pCVar13 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
+    pCVar13 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
                         (&(this_ptr->base).base.model,&CStack_20,0);
     iVar12 = (*(pCVar8->_uc).attractActorToward)(pCVar7,(CDemonActor *)this_ptr,pCVar13);
     if (iVar12 == 0) {

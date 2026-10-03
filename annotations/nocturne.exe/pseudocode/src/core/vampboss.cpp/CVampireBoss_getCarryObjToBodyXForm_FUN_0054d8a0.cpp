@@ -41,7 +41,7 @@ void __stack2_esi core_vampboss_cpp_CVampireBoss_getCarryObjToBodyXForm_FUN_0054
   }
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(&local_78,&local_3c,&local_24);
   core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00
-            (&local_78,(this_ptr->base).base.model.bone_transform.bone_world_matrices + iVar1,
+            (&local_78,(this_ptr->base).base.model.bone_transform.bone_model_matrices + iVar1,
              &local_a8);
   pCVar2 = &local_a8;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {

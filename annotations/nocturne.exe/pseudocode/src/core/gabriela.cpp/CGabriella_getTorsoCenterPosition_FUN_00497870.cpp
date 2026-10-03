@@ -23,9 +23,9 @@ CVector3f * __cdecl core_gabriela_cpp_CGabriella_getTorsoCenterPosition_FUN_0049
   CVector3f local_18;
   
   this_ptr_00 = &(this_ptr->base).base.model;
-  pCVar6 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
+  pCVar6 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
                      (this_ptr_00,local_30,_DAT_01c713dc);
-  pCVar7 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
+  pCVar7 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
                      (this_ptr_00,&local_18,_DAT_01c713d8);
   fVar5 = 0.5f;
   fVar1 = pCVar7->y;

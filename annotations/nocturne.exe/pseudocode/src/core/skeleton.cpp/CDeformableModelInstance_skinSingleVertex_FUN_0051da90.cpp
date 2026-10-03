@@ -13,7 +13,7 @@ CVector3f * __cdecl core_skeleton_cpp_CDeformableModelInstance_skinSingleVertex_
   CVector3f *output_pos_00;
   CMatrix3x4f *bone_matrices;
   
-  bone_matrices = (this_ptr->bone_transform).bone_world_matrices;
+  bone_matrices = (this_ptr->bone_transform).bone_model_matrices;
   output_pos_00 = output_pos;
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(this_ptr);
   core_skeleton_cpp_CDeformableModel_skinSingleVertex_FUN_00518320

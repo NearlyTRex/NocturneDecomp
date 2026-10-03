@@ -16,7 +16,7 @@
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0051cfd0
-;   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
+;   core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
 ;   core_xform.cpp_multiplyQuaternion_FUN_0055d130
@@ -54,8 +54,8 @@ section .text
     LEA EAX,[ESP + 0xa0]                ; 0051d693
     PUSH EAX                            ; 0051d69a
     PUSH EBX                            ; 0051d69b
-    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0 ; 0051d69c
-        ;   XREF to: 0051d2a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0 ; 0051d69c
+        ;   XREF to: 0051d2a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     FLD float ptr [ESI]                 ; 0051d6a1
     FSUB float ptr [EAX]                ; 0051d6a3
     ADD ESP,0xc                         ; 0051d6a5

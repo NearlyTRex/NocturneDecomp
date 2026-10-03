@@ -64,7 +64,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponPosition_FUN_004980d0(CGab
     core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00
               (&local_22c,
                (CMatrix3x4f *)
-               (this_ptr->base).base.model.bone_transform.bone_world_matrices[_DAT_01c713c0].m,
+               (this_ptr->base).base.model.bone_transform.bone_model_matrices[_DAT_01c713c0].m,
                &local_1cc);
     pCVar9 = &local_1cc;
     pCVar7 = &local_1fc;
@@ -81,7 +81,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponPosition_FUN_004980d0(CGab
     (*(((pCVar1->base).vtable._uc)->_uc).kill)(pCVar1,2,in_stack_fffffc54,in_stack_fffffc58);
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
               (&local_13c,&CVector3f_01c71364,(CVector3f *)&DAT_02dd1184);
-    matrix_b = (this_ptr->base).base.model.bone_transform.bone_world_matrices[_DAT_01c713dc].m;
+    matrix_b = (this_ptr->base).base.model.bone_transform.bone_model_matrices[_DAT_01c713dc].m;
     pCVar10 = &local_13c;
     core_xform_cpp_buildRotationX_FUN_0055c730(1.5707964,&local_16c);
     pCVar9 = &local_28c;

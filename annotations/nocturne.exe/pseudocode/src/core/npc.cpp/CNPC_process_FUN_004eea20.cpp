@@ -50,7 +50,7 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_004eea20(CNPC *this_ptr,float delta_t
   EVar7 = (*(((this_ptr->base).base.vtable._uc)->_uc).getDeathState)(&this_ptr->base);
   if ((((1 < (int)EVar7) && ((this_ptr->base).base.lifecycle_state == ACTOR_CREATED)) &&
       (this_ptr->pool_me == 0)) && ((this_ptr->base).base.standing_platform == (CPlatform *)0x0)) {
-    pCVar8 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
+    pCVar8 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
                        (pCVar1,&CStack_48,0);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
               ((CDemonActor *)this_ptr,&CStack_30,pCVar8);

@@ -99,8 +99,8 @@
       ]
     ],
     "convention": "__cdecl",
-    "name": "core_skeleton.cpp_computeBoneWorldMatrices_FUN_0051f1d0",
-    "signature": "void __cdecl core_skeleton_cpp_computeBoneWorldMatrices_FUN_0051f1d0(SPose *bone_data,CDeformableModelInstance *instance_ptr)"
+    "name": "core_skeleton.cpp_computeBoneModelMatrices_FUN_0051f1d0",
+    "signature": "void __cdecl core_skeleton_cpp_computeBoneModelMatrices_FUN_0051f1d0(SPose *bone_data,CDeformableModelInstance *instance_ptr)"
   },
   "function_calls": [
     {
@@ -299,147 +299,147 @@
   },
   "suspects": [
     {
-      "description": "Pointer value `&bone_data->bone_world_matrices[0].m[0].w` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&bone_data->bone_model_matrices[0].m[0].w` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 34,
-      "match": "(int)&bone_data->bone_world_matrices[0].m[0].w",
+      "match": "(int)&bone_data->bone_model_matrices[0].m[0].w",
       "severity": "moderate",
-      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[0].w + local_24) =",
+      "text": "*(float *)((int)&bone_data->bone_model_matrices[0].m[0].w + local_24) =",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&bone_data->bone_world_matrices[0].m[0].w` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&bone_data->bone_model_matrices[0].m[0].w` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 36,
-      "match": "(int)&bone_data->bone_world_matrices[0].m[0].w",
+      "match": "(int)&bone_data->bone_model_matrices[0].m[0].w",
       "severity": "moderate",
-      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[0].w + local_24);",
+      "text": "*(float *)((int)&bone_data->bone_model_matrices[0].m[0].w + local_24);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&bone_data->bone_world_matrices[0].m[0].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&bone_data->bone_model_matrices[0].m[0].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 37,
-      "match": "(int)&bone_data->bone_world_matrices[0].m[0].x",
+      "match": "(int)&bone_data->bone_model_matrices[0].m[0].x",
       "severity": "moderate",
-      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[0].x + local_24) =",
+      "text": "*(float *)((int)&bone_data->bone_model_matrices[0].m[0].x + local_24) =",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&bone_data->bone_world_matrices[0].m[0].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&bone_data->bone_model_matrices[0].m[0].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 39,
-      "match": "(int)&bone_data->bone_world_matrices[0].m[0].x",
+      "match": "(int)&bone_data->bone_model_matrices[0].m[0].x",
       "severity": "moderate",
-      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[0].x + local_24);",
+      "text": "*(float *)((int)&bone_data->bone_model_matrices[0].m[0].x + local_24);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&bone_data->bone_world_matrices[0].m[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&bone_data->bone_model_matrices[0].m[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 40,
-      "match": "(int)&bone_data->bone_world_matrices[0].m[0].y",
+      "match": "(int)&bone_data->bone_model_matrices[0].m[0].y",
       "severity": "moderate",
-      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[0].y + local_24) =",
+      "text": "*(float *)((int)&bone_data->bone_model_matrices[0].m[0].y + local_24) =",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&bone_data->bone_world_matrices[0].m[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&bone_data->bone_model_matrices[0].m[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 42,
-      "match": "(int)&bone_data->bone_world_matrices[0].m[0].y",
+      "match": "(int)&bone_data->bone_model_matrices[0].m[0].y",
       "severity": "moderate",
-      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[0].y + local_24);",
+      "text": "*(float *)((int)&bone_data->bone_model_matrices[0].m[0].y + local_24);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&bone_data->bone_world_matrices[0].m[1].w` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&bone_data->bone_model_matrices[0].m[1].w` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 43,
-      "match": "(int)&bone_data->bone_world_matrices[0].m[1].w",
+      "match": "(int)&bone_data->bone_model_matrices[0].m[1].w",
       "severity": "moderate",
-      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[1].w + local_24) =",
+      "text": "*(float *)((int)&bone_data->bone_model_matrices[0].m[1].w + local_24) =",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&bone_data->bone_world_matrices[0].m[1].w` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&bone_data->bone_model_matrices[0].m[1].w` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 45,
-      "match": "(int)&bone_data->bone_world_matrices[0].m[1].w",
+      "match": "(int)&bone_data->bone_model_matrices[0].m[1].w",
       "severity": "moderate",
-      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[1].w + local_24);",
+      "text": "*(float *)((int)&bone_data->bone_model_matrices[0].m[1].w + local_24);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&bone_data->bone_world_matrices[0].m[1].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&bone_data->bone_model_matrices[0].m[1].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 46,
-      "match": "(int)&bone_data->bone_world_matrices[0].m[1].x",
+      "match": "(int)&bone_data->bone_model_matrices[0].m[1].x",
       "severity": "moderate",
-      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[1].x + local_24) =",
+      "text": "*(float *)((int)&bone_data->bone_model_matrices[0].m[1].x + local_24) =",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&bone_data->bone_world_matrices[0].m[1].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&bone_data->bone_model_matrices[0].m[1].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 48,
-      "match": "(int)&bone_data->bone_world_matrices[0].m[1].x",
+      "match": "(int)&bone_data->bone_model_matrices[0].m[1].x",
       "severity": "moderate",
-      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[1].x + local_24);",
+      "text": "*(float *)((int)&bone_data->bone_model_matrices[0].m[1].x + local_24);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&bone_data->bone_world_matrices[0].m[1].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&bone_data->bone_model_matrices[0].m[1].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 49,
-      "match": "(int)&bone_data->bone_world_matrices[0].m[1].y",
+      "match": "(int)&bone_data->bone_model_matrices[0].m[1].y",
       "severity": "moderate",
-      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[1].y + local_24) =",
+      "text": "*(float *)((int)&bone_data->bone_model_matrices[0].m[1].y + local_24) =",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&bone_data->bone_world_matrices[0].m[1].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&bone_data->bone_model_matrices[0].m[1].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 51,
-      "match": "(int)&bone_data->bone_world_matrices[0].m[1].y",
+      "match": "(int)&bone_data->bone_model_matrices[0].m[1].y",
       "severity": "moderate",
-      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[1].y + local_24);",
+      "text": "*(float *)((int)&bone_data->bone_model_matrices[0].m[1].y + local_24);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&bone_data->bone_world_matrices[0].m[2].w` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&bone_data->bone_model_matrices[0].m[2].w` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 52,
-      "match": "(int)&bone_data->bone_world_matrices[0].m[2].w",
+      "match": "(int)&bone_data->bone_model_matrices[0].m[2].w",
       "severity": "moderate",
-      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[2].w + local_24) =",
+      "text": "*(float *)((int)&bone_data->bone_model_matrices[0].m[2].w + local_24) =",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&bone_data->bone_world_matrices[0].m[2].w` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&bone_data->bone_model_matrices[0].m[2].w` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 54,
-      "match": "(int)&bone_data->bone_world_matrices[0].m[2].w",
+      "match": "(int)&bone_data->bone_model_matrices[0].m[2].w",
       "severity": "moderate",
-      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[2].w + local_24);",
+      "text": "*(float *)((int)&bone_data->bone_model_matrices[0].m[2].w + local_24);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&bone_data->bone_world_matrices[0].m[2].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&bone_data->bone_model_matrices[0].m[2].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 55,
-      "match": "(int)&bone_data->bone_world_matrices[0].m[2].x",
+      "match": "(int)&bone_data->bone_model_matrices[0].m[2].x",
       "severity": "moderate",
-      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[2].x + local_24) =",
+      "text": "*(float *)((int)&bone_data->bone_model_matrices[0].m[2].x + local_24) =",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&bone_data->bone_world_matrices[0].m[2].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&bone_data->bone_model_matrices[0].m[2].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 57,
-      "match": "(int)&bone_data->bone_world_matrices[0].m[2].x",
+      "match": "(int)&bone_data->bone_model_matrices[0].m[2].x",
       "severity": "moderate",
-      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[2].x + local_24);",
+      "text": "*(float *)((int)&bone_data->bone_model_matrices[0].m[2].x + local_24);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&bone_data->bone_world_matrices[0].m[2].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&bone_data->bone_model_matrices[0].m[2].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 58,
-      "match": "(int)&bone_data->bone_world_matrices[0].m[2].y",
+      "match": "(int)&bone_data->bone_model_matrices[0].m[2].y",
       "severity": "moderate",
-      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[2].y + local_24) =",
+      "text": "*(float *)((int)&bone_data->bone_model_matrices[0].m[2].y + local_24) =",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&bone_data->bone_world_matrices[0].m[2].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&bone_data->bone_model_matrices[0].m[2].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 60,
-      "match": "(int)&bone_data->bone_world_matrices[0].m[2].y",
+      "match": "(int)&bone_data->bone_model_matrices[0].m[2].y",
       "severity": "moderate",
-      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[2].y + local_24);",
+      "text": "*(float *)((int)&bone_data->bone_model_matrices[0].m[2].y + local_24);",
       "type": "pointer_truncation"
     },
     {
@@ -479,7 +479,7 @@
       "line": 34,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[0].w + local_24) =",
+      "text": "*(float *)((int)&bone_data->bone_model_matrices[0].m[0].w + local_24) =",
       "type": "pointer_cast"
     },
     {
@@ -487,7 +487,7 @@
       "line": 36,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[0].w + local_24);",
+      "text": "*(float *)((int)&bone_data->bone_model_matrices[0].m[0].w + local_24);",
       "type": "pointer_cast"
     },
     {
@@ -495,7 +495,7 @@
       "line": 37,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[0].x + local_24) =",
+      "text": "*(float *)((int)&bone_data->bone_model_matrices[0].m[0].x + local_24) =",
       "type": "pointer_cast"
     },
     {
@@ -503,7 +503,7 @@
       "line": 39,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[0].x + local_24);",
+      "text": "*(float *)((int)&bone_data->bone_model_matrices[0].m[0].x + local_24);",
       "type": "pointer_cast"
     },
     {
@@ -511,7 +511,7 @@
       "line": 40,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[0].y + local_24) =",
+      "text": "*(float *)((int)&bone_data->bone_model_matrices[0].m[0].y + local_24) =",
       "type": "pointer_cast"
     },
     {
@@ -519,7 +519,7 @@
       "line": 42,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[0].y + local_24);",
+      "text": "*(float *)((int)&bone_data->bone_model_matrices[0].m[0].y + local_24);",
       "type": "pointer_cast"
     },
     {
@@ -527,7 +527,7 @@
       "line": 43,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[1].w + local_24) =",
+      "text": "*(float *)((int)&bone_data->bone_model_matrices[0].m[1].w + local_24) =",
       "type": "pointer_cast"
     },
     {
@@ -535,7 +535,7 @@
       "line": 45,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[1].w + local_24);",
+      "text": "*(float *)((int)&bone_data->bone_model_matrices[0].m[1].w + local_24);",
       "type": "pointer_cast"
     },
     {
@@ -543,7 +543,7 @@
       "line": 46,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[1].x + local_24) =",
+      "text": "*(float *)((int)&bone_data->bone_model_matrices[0].m[1].x + local_24) =",
       "type": "pointer_cast"
     },
     {
@@ -551,7 +551,7 @@
       "line": 48,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[1].x + local_24);",
+      "text": "*(float *)((int)&bone_data->bone_model_matrices[0].m[1].x + local_24);",
       "type": "pointer_cast"
     },
     {
@@ -559,7 +559,7 @@
       "line": 49,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[1].y + local_24) =",
+      "text": "*(float *)((int)&bone_data->bone_model_matrices[0].m[1].y + local_24) =",
       "type": "pointer_cast"
     },
     {
@@ -567,7 +567,7 @@
       "line": 51,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[1].y + local_24);",
+      "text": "*(float *)((int)&bone_data->bone_model_matrices[0].m[1].y + local_24);",
       "type": "pointer_cast"
     },
     {
@@ -575,7 +575,7 @@
       "line": 52,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[2].w + local_24) =",
+      "text": "*(float *)((int)&bone_data->bone_model_matrices[0].m[2].w + local_24) =",
       "type": "pointer_cast"
     },
     {
@@ -583,7 +583,7 @@
       "line": 54,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[2].w + local_24);",
+      "text": "*(float *)((int)&bone_data->bone_model_matrices[0].m[2].w + local_24);",
       "type": "pointer_cast"
     },
     {
@@ -591,7 +591,7 @@
       "line": 55,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[2].x + local_24) =",
+      "text": "*(float *)((int)&bone_data->bone_model_matrices[0].m[2].x + local_24) =",
       "type": "pointer_cast"
     },
     {
@@ -599,7 +599,7 @@
       "line": 57,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[2].x + local_24);",
+      "text": "*(float *)((int)&bone_data->bone_model_matrices[0].m[2].x + local_24);",
       "type": "pointer_cast"
     },
     {
@@ -607,7 +607,7 @@
       "line": 58,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[2].y + local_24) =",
+      "text": "*(float *)((int)&bone_data->bone_model_matrices[0].m[2].y + local_24) =",
       "type": "pointer_cast"
     },
     {
@@ -615,7 +615,7 @@
       "line": 60,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[2].y + local_24);",
+      "text": "*(float *)((int)&bone_data->bone_model_matrices[0].m[2].y + local_24);",
       "type": "pointer_cast"
     },
     {

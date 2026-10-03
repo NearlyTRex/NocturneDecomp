@@ -12,7 +12,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_renderBones_FUN_0051f060
   CDeformableModel *this_ptr_00;
   CMatrix3x4f *bone_matrices;
   
-  bone_matrices = (this_ptr->bone_transform).bone_world_matrices;
+  bone_matrices = (this_ptr->bone_transform).bone_model_matrices;
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(this_ptr);
   core_skeleton_cpp_CDeformableModel_renderBones_FUN_00519120(this_ptr_00,bone_matrices);
   return;

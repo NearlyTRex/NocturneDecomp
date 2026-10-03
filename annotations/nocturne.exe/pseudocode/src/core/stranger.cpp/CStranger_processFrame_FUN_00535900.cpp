@@ -574,7 +574,7 @@ LAB_0053713f:
           pCStack_18 = (CCharacter *)(this_ptr->base).base.grabbed_by;
           pCStack_84 = (pCStack_18->base).vtable._uc;
           pCStack_34 = &(this_ptr->base).base.model;
-          pCVar16 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
+          pCVar16 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
                               (pCStack_34,aCStack_14c,0);
           iVar21 = (*(pCStack_84->_uc).attractActorToward)
                              (pCStack_18,(CDemonActor *)this_ptr,pCVar16);

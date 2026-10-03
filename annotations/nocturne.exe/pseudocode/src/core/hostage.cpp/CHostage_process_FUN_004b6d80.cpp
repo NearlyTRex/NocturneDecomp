@@ -528,7 +528,7 @@ LAB_004b7672:
     core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000((CDemonActor *)this_ptr);
     pCVar17 = (CCharacter *)(this_ptr->base).base.grabbed_by;
     pCVar5 = (pCVar17->base).vtable._uc;
-    pCVar15 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
+    pCVar15 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
                         (&(this_ptr->base).base.model,&local_98,0);
     iVar12 = (*(pCVar5->_uc).attractActorToward)(pCVar17,(CDemonActor *)this_ptr,pCVar15);
     if (iVar12 == 0) {
@@ -557,7 +557,7 @@ switchD_004b7b39_default:
     this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(pCVar2);
     iVar12 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_00,bone_name,iVar12);
     if (-1 < iVar12) {
-      pCVar15 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
+      pCVar15 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
                           (pCVar2,&local_bc,iVar12);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                 ((CDemonActor *)this_ptr,&local_158,pCVar15);

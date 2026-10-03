@@ -20,7 +20,7 @@ CVector3f * __cdecl core_ghoul_cpp_CGhoul_getTargetPoint_FUN_004ab110(CGhoul *th
   CVector3f local_1c;
   
   bVar4 = 0;
-  core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0
+  core_skeleton_cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_0051d0a0
             (&(this_ptr->base).base.model,_DAT_01c78c14,&local_4c);
   pCVar2 = &local_4c;
   pCVar3 = &local_7c;

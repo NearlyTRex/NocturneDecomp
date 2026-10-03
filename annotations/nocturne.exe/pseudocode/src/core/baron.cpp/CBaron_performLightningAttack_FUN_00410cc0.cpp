@@ -76,13 +76,13 @@ void __cdecl core_baron_cpp_CBaron_performLightningAttack_FUN_00410cc0(CBaron *t
     }
     pCVar1 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                        (&CStack_64,(CVector3f *)&DAT_02dd1184,
-                        (this_ptr->base).base.model.bone_transform.bone_world_matrices +
+                        (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                         DAT_0076431c);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
               ((CDemonActor *)this_ptr,&CStack_70,pCVar1);
     pCVar1 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                        (&CStack_88,(CVector3f *)&DAT_02dd1184,
-                        (this_ptr->base).base.model.bone_transform.bone_world_matrices +
+                        (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                         DAT_00764320);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
               ((CDemonActor *)this_ptr,&CStack_34,pCVar1);

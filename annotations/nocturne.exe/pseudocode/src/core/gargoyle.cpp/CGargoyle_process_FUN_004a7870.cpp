@@ -274,7 +274,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004a7870(CGargoyle *this_pt
       local_14 = local_104.damage_amount;
       pCVar7 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                          (&local_8c,(CVector3f *)&DAT_02dd1184,
-                          (this_ptr->base).base.model.bone_transform.bone_world_matrices +
+                          (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                           _DAT_01c78b20);
       pCVar7 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                          ((CDemonActor *)this_ptr,&local_bc,pCVar7);

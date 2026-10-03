@@ -19,7 +19,7 @@ int __cdecl core_batman_cpp_CBatman_getTargetPoints_FUN_00414b40(CBatman *this_p
   CVector3f local_1c;
   
   iVar2 = 1;
-  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
+  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
                      (&(this_ptr->base).base.model,&local_1c,DAT_00764608);
   if (out_points_array != pCVar1) {
     out_points_array->x = pCVar1->x;
@@ -27,7 +27,7 @@ int __cdecl core_batman_cpp_CBatman_getTargetPoints_FUN_00414b40(CBatman *this_p
     out_points_array->z = pCVar1->z;
   }
   if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[6]] != 0) {
-    pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
+    pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
                        (&(this_ptr->base).base.model,&local_28,DAT_0076462c);
     if (out_points_array + 1 != pCVar1) {
       out_points_array[1].x = pCVar1->x;
@@ -39,7 +39,7 @@ int __cdecl core_batman_cpp_CBatman_getTargetPoints_FUN_00414b40(CBatman *this_p
   if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[1]] == 0) {
     return iVar2;
   }
-  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
+  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
                      (&(this_ptr->base).base.model,&local_34,DAT_00764634);
   pCVar3 = out_points_array + iVar2;
   if (pCVar3 != pCVar1) {

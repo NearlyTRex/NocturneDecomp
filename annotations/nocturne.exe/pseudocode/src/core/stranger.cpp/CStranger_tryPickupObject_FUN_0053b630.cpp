@@ -220,9 +220,9 @@ LAB_0053b782:
         format = "Picking up %s off ground\n";
       }
       else {
-        core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
+        core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
                   (pCVar1,&CStack_b8,_DAT_02dc9f88);
-        core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
+        core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
                   (pCVar1,&CStack_ac,_DAT_02dc9f60);
         fStack_60 = CStack_b8.y - CStack_ac.y;
         fStack_64 = CStack_b8.x - CStack_ac.x;

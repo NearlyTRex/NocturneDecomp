@@ -27,7 +27,7 @@ void __cdecl core_chain_cpp_CChain_setup_FUN_0042b8f0(CChain *this_ptr)
   float local_28;
   
   core_actor_cpp_CDemonActor_setup_FUN_00409fc0(&this_ptr->base);
-  if (this_ptr->target != (CDemonActor *)0x0) {
+  if (this_ptr->target != (CCharacter *)0x0) {
     pCVar9 = core_chain_cpp_CChain_getTargetBoneWorldPosition_FUN_0042b890(this_ptr,&CStack_3c);
     pCVar1 = &(this_ptr->base).location;
     fVar2 = pCVar9->x;

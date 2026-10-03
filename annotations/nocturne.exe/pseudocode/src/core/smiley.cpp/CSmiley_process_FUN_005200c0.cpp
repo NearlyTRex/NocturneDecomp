@@ -246,7 +246,7 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_005200c0(CSmiley *this_ptr,floa
         local_14 = local_190.damage_amount;
         pCVar10 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                             (&local_b8,(CVector3f *)&DAT_02dd1184,
-                             (this_ptr->base).base.model.bone_transform.bone_world_matrices +
+                             (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                              _DAT_02da8a7c);
         pCVar10 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                             ((CDemonActor *)this_ptr,&local_dc,pCVar10);
@@ -256,7 +256,7 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_005200c0(CSmiley *this_ptr,floa
     case 8:
       if (((this_ptr->base).pool_me == 0) &&
          ((this_ptr->base).base.base.standing_platform == (CPlatform *)0x0)) {
-        pCVar10 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
+        pCVar10 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
                             (pCVar2,local_40,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                   ((CDemonActor *)this_ptr,&local_4c,pCVar10);
@@ -282,7 +282,7 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_005200c0(CSmiley *this_ptr,floa
           local_14 = local_154.damage_amount;
           pCVar10 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                               (&local_88,(CVector3f *)&DAT_02dd1184,
-                               (this_ptr->base).base.model.bone_transform.bone_world_matrices +
+                               (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                                _DAT_02da8a7c);
           pCVar10 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                               ((CDemonActor *)this_ptr,&local_d0,pCVar10);

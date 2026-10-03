@@ -65,7 +65,7 @@ void __cdecl core_mimic_cpp_CMimic_processAnimation_FUN_004d4f30(CMimic *this_pt
   float local_14;
   
   bVar12 = 0;
-  pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
+  pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
                      (&(g_HeroActors[g_LocalHeroIndex]->base).model,&local_10c,0);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
             ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],&local_94,pCVar4);
@@ -94,7 +94,7 @@ void __cdecl core_mimic_cpp_CMimic_processAnimation_FUN_004d4f30(CMimic *this_pt
         if (SQRT(local_70.z * local_70.z + local_70.x * local_70.x + local_70.y * local_70.y) <
             (1.0 - ABS(local_14) * (float)0.63661977238577705) * (float)25 +
             (float)30) {
-          core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0
+          core_skeleton_cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_0051d0a0
                     (local_18,_DAT_01cc9094,&local_1a8);
           local_4c.y = 0.7;
           pCVar9 = &local_1a8;
@@ -193,7 +193,7 @@ LAB_004d4fed:
             if (1.0 <= local_38) {
               local_24 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(7.0,15.0);
               local_14 = local_24;
-              core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
+              core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
                         (local_18,&local_ac,_DAT_01cc90b4);
               local_ac.x._3_1_ = local_ac.x._3_1_ ^ 0x80;
               core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(&local_1e4);
@@ -220,7 +220,7 @@ LAB_004d4fed:
       }
       if (((this_ptr->base).pool_me == 0) &&
          ((this_ptr->base).base.base.standing_platform == (CPlatform *)0x0)) {
-        pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
+        pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
                            (local_18,&local_a0,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                   ((CDemonActor *)this_ptr,&local_7c,pCVar4);
@@ -263,7 +263,7 @@ LAB_004d5024:
     if (uVar7 != 0) {
       if (uVar7 < 2) {
         if ((this_ptr->base).base.is_on_ground != 0) {
-          core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
+          core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
                     (pCVar13,&local_c4,_DAT_01cc90b0);
           local_c4.x._3_1_ = local_c4.x._3_1_ ^ 0x80;
           (*((this_ptr->base).base.base.vtable._ub)->processFootstepAtOffset)
@@ -271,7 +271,7 @@ LAB_004d5024:
         }
       }
       else if ((uVar7 == 7) && ((this_ptr->base).base.is_on_ground != 0)) {
-        core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
+        core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
                   (pCVar13,&local_100,_DAT_01cc90b4);
         local_100.x._3_1_ = local_100.x._3_1_ ^ 0x80;
         (*((this_ptr->base).base.base.vtable._ub)->processFootstepAtOffset)

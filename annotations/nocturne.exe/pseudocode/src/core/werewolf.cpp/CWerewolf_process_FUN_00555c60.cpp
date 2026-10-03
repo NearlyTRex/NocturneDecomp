@@ -119,7 +119,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_00555c60(CWerewolf *this_pt
       core_charactr_cpp_CCharacter_processMotion_FUN_0042add0((CCharacter *)this_ptr,uVar7);
     }
     else if (uVar7 < 0xb) {
-      pCVar8 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
+      pCVar8 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
                          (pCVar1,&local_158,this_ptr->bone_indices[3]);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                 ((CDemonActor *)this_ptr,&local_98,pCVar8);
@@ -168,7 +168,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_00555c60(CWerewolf *this_pt
       pCVar8 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                          (&local_e0,(CVector3f *)&DAT_02dd1184,
                           (CMatrix3x4f *)
-                          (this_ptr->base).base.model.bone_transform.bone_world_matrices
+                          (this_ptr->base).base.model.bone_transform.bone_model_matrices
                           [this_ptr->bone_indices[3]].m);
       pCVar8 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                          ((CDemonActor *)this_ptr,&local_140,pCVar8);
@@ -182,7 +182,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_00555c60(CWerewolf *this_pt
       pCVar8 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                          (&local_d4,(CVector3f *)&DAT_02dd1184,
                           (CMatrix3x4f *)
-                          (this_ptr->base).base.model.bone_transform.bone_world_matrices
+                          (this_ptr->base).base.model.bone_transform.bone_model_matrices
                           [this_ptr->bone_indices[2]].m);
       pCVar8 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                          ((CDemonActor *)this_ptr,&local_188,pCVar8);
@@ -196,7 +196,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_00555c60(CWerewolf *this_pt
       pCVar8 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                          (&local_17c,(CVector3f *)&DAT_02dd1184,
                           (CMatrix3x4f *)
-                          (this_ptr->base).base.model.bone_transform.bone_world_matrices
+                          (this_ptr->base).base.model.bone_transform.bone_model_matrices
                           [this_ptr->bone_indices[1]].m);
       pCVar8 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                          ((CDemonActor *)this_ptr,&local_a4,pCVar8);
@@ -214,7 +214,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_00555c60(CWerewolf *this_pt
             pCVar8 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                                (&local_74,(CVector3f *)&DAT_02dd1184,
                                 (CMatrix3x4f *)
-                                (this_ptr->base).base.model.bone_transform.bone_world_matrices
+                                (this_ptr->base).base.model.bone_transform.bone_model_matrices
                                 [this_ptr->bone_indices[1]].m);
             pCVar8 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                                ((CDemonActor *)this_ptr,&local_14c,pCVar8);
@@ -465,7 +465,7 @@ LAB_005567aa:
         pCVar8 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                            (&local_11c,(CVector3f *)&DAT_02dd1184,
                             (CMatrix3x4f *)
-                            (this_ptr->base).base.model.bone_transform.bone_world_matrices
+                            (this_ptr->base).base.model.bone_transform.bone_model_matrices
                             [this_ptr->bone_indices[2]].m);
         pCVar8 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                            ((CDemonActor *)this_ptr,&local_164,pCVar8);
@@ -484,7 +484,7 @@ LAB_005567aa:
         if (8 < local_18) {
           if (((local_18 == 0xd) && ((this_ptr->base).pool_me == 0)) &&
              ((this_ptr->base).base.base.standing_platform == (CPlatform *)0x0)) {
-            pCVar8 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
+            pCVar8 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
                                (pCVar1,&local_1ac,0);
             core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                       ((CDemonActor *)this_ptr,&local_1b8,pCVar8);
@@ -504,7 +504,7 @@ LAB_005567aa:
           pCVar8 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                              (&local_1d0,(CVector3f *)&DAT_02dd1184,
                               (CMatrix3x4f *)
-                              (this_ptr->base).base.model.bone_transform.bone_world_matrices
+                              (this_ptr->base).base.model.bone_transform.bone_model_matrices
                               [this_ptr->bone_indices[3]].m);
           pCVar8 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                              ((CDemonActor *)this_ptr,&local_8c,pCVar8);
@@ -515,7 +515,7 @@ LAB_005567aa:
           pCVar8 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                              (&local_68,(CVector3f *)&DAT_02dd1184,
                               (CMatrix3x4f *)
-                              (this_ptr->base).base.model.bone_transform.bone_world_matrices
+                              (this_ptr->base).base.model.bone_transform.bone_model_matrices
                               [this_ptr->bone_indices[2]].m);
           pCVar8 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                              ((CDemonActor *)this_ptr,&local_5c,pCVar8);
@@ -526,7 +526,7 @@ LAB_005567aa:
           pCVar8 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                              (&local_1a0,(CVector3f *)&DAT_02dd1184,
                               (CMatrix3x4f *)
-                              (this_ptr->base).base.model.bone_transform.bone_world_matrices
+                              (this_ptr->base).base.model.bone_transform.bone_model_matrices
                               [this_ptr->bone_indices[1]].m);
           pCVar8 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                              ((CDemonActor *)this_ptr,&local_c8,pCVar8);
@@ -552,7 +552,7 @@ LAB_0055637f:
           pCVar8 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                              (&local_1f4,(CVector3f *)&DAT_02dd1184,
                               (CMatrix3x4f *)
-                              (this_ptr->base).base.model.bone_transform.bone_world_matrices
+                              (this_ptr->base).base.model.bone_transform.bone_model_matrices
                               [this_ptr->bone_indices[3]].m);
           pCVar8 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                              ((CDemonActor *)this_ptr,&local_50,pCVar8);

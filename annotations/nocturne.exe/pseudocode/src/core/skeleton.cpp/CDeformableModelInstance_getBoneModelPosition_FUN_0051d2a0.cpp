@@ -1,12 +1,12 @@
-// Name: core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
+// Name: core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
 // Address: 0051d2a0
 // Address Range: [[0051d2a0, 0051d373]]
 // Convention: __cdecl
-// Signature: CVector3f * __cdecl core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0(CDeformableModelInstance *this_ptr,CVector3f *out_position,int bone_index)
+// Signature: CVector3f * __cdecl core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0(CDeformableModelInstance *this_ptr,CVector3f *out_position,int bone_index)
 
 #include "nocturne.h"
 
-CVector3f * __cdecl core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0(CDeformableModelInstance *this_ptr,CVector3f *out_position,int bone_index)
+CVector3f * __cdecl core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0(CDeformableModelInstance *this_ptr,CVector3f *out_position,int bone_index)
 
 {
   CVector3f *input_vector;
@@ -34,7 +34,7 @@ CVector3f * __cdecl core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosit
     out_position->z = input_vector->z + (this_ptr->bone_transform).pose_data.root_position.z;
     return out_position;
   }
-  core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0
+  core_skeleton_cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_0051d0a0
             (this_ptr,iVar2,&local_40);
   pCVar3 = &local_40;
   pCVar4 = &local_70;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_skeleton_cpp_computeBoneWorldMatrices_FUN_0051f1d0(SPose *bone_data,CDeformableModelInstance *instance_ptr)
+; void __cdecl core_skeleton_cpp_computeBoneModelMatrices_FUN_0051f1d0(SPose *bone_data,CDeformableModelInstance *instance_ptr)
 ;
 ; Parameters:
 ; SPose *          Stack[0x4]:4   bone_data
@@ -33,7 +33,7 @@
 section .text
 
     PUSH EBX                            ; 0051f1d0
-        ;   Label: core_skeleton.cpp_computeBoneWorldMatrices_FUN_0051f1d0
+        ;   Label: core_skeleton.cpp_computeBoneModelMatrices_FUN_0051f1d0
     PUSH ESI                            ; 0051f1d1
     PUSH EDI                            ; 0051f1d2
     PUSH EBP                            ; 0051f1d3

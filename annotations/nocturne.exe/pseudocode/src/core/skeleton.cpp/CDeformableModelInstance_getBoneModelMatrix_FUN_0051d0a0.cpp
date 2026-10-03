@@ -1,12 +1,12 @@
-// Name: core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0
+// Name: core_skeleton.cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_0051d0a0
 // Address: 0051d0a0
 // Address Range: [[0051d0a0, 0051d29c]]
 // Convention: __stack2_esi
-// Signature: CMatrix3x4f * __stack2_esi core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0(CDeformableModelInstance *this_ptr,int bone_index,CMatrix3x4f *out_matrix)
+// Signature: CMatrix3x4f * __stack2_esi core_skeleton_cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_0051d0a0(CDeformableModelInstance *this_ptr,int bone_index,CMatrix3x4f *out_matrix)
 
 #include "nocturne.h"
 
-CMatrix3x4f * __stack2_esi core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0(CDeformableModelInstance *this_ptr,int bone_index,CMatrix3x4f *out_matrix)
+CMatrix3x4f * __stack2_esi core_skeleton_cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_0051d0a0(CDeformableModelInstance *this_ptr,int bone_index,CMatrix3x4f *out_matrix)
 
 {
   CSkeleton *pCVar1;
@@ -43,7 +43,7 @@ CMatrix3x4f * __stack2_esi core_skeleton_cpp_CDeformableModelInstance_getBoneWor
            this_ptr->transformed_vertices[bone_index].z;
     }
     else {
-      core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0
+      core_skeleton_cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_0051d0a0
                 (this_ptr,iVar2,&local_ac);
       pCVar3 = &local_ac;
       pCVar4 = &local_4c;

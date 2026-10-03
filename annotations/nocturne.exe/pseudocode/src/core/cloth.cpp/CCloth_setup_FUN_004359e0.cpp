@@ -208,7 +208,7 @@ void __cdecl core_cloth_cpp_CCloth_setup_FUN_004359e0(CCloth *this_ptr,CVector3f
     core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0051d3c0(model_ptr);
     local_2c = 0;
     if (0 < this_ptr->locked_vertex_count) {
-      local_74 = (model_ptr->bone_transform).bone_world_matrices;
+      local_74 = (model_ptr->bone_transform).bone_model_matrices;
       local_80 = this_ptr->vertices;
       local_48 = this_ptr;
       do {
@@ -289,7 +289,7 @@ void __cdecl core_cloth_cpp_CCloth_setup_FUN_004359e0(CCloth *this_ptr,CVector3f
     }
     local_90 = 0;
     if (0 < this_ptr->locked_vertex_count) {
-      local_58 = (model_ptr->bone_transform).bone_world_matrices;
+      local_58 = (model_ptr->bone_transform).bone_model_matrices;
       local_68 = this_ptr->vertices;
       local_38 = 0;
       local_34 = this_ptr;

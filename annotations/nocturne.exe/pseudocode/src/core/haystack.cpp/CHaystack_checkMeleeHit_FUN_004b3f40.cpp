@@ -18,7 +18,7 @@ void __cdecl core_haystack_cpp_CHaystack_checkMeleeHit_FUN_004b3f40(CHaystack *t
   CVector3f local_1c;
   
   input_local_point =
-       core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
+       core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
                  (&(this_ptr->base).base.model,&local_28,bone_index);
   iVar2 = 0;
   iVar1 = 0;

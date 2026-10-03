@@ -43,7 +43,7 @@ void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_00429010(CCharacter 
     pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
   }
   core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00
-            ((this_ptr->model).bone_transform.bone_world_matrices + pSVar2->bone_index,&local_a0,
+            ((this_ptr->model).bone_transform.bone_model_matrices + pSVar2->bone_index,&local_a0,
              &local_40);
   pCVar3 = &local_40;
   pCVar4 = &local_70;

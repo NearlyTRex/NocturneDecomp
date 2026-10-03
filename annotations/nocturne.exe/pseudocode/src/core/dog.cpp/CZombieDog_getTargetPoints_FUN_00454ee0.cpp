@@ -12,7 +12,7 @@ int __cdecl core_dog_cpp_CZombieDog_getTargetPoints_FUN_00454ee0(CZombieDog *thi
   CVector3f *pCVar1;
   CVector3f local_10;
   
-  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
+  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
                      (&(this_ptr->base).base.model,&local_10,this_ptr->bone_indices[0]);
   if (out_points_array == pCVar1) {
     return 1;

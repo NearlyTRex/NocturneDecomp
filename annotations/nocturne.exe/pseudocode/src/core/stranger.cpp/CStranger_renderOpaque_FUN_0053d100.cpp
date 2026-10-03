@@ -62,7 +62,7 @@ int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_0053d100(CStranger *thi
     core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00
               (&local_16c,
                (CMatrix3x4f *)
-               (this_ptr->base).base.model.bone_transform.bone_world_matrices[_DAT_02dc9f50].m,
+               (this_ptr->base).base.model.bone_transform.bone_model_matrices[_DAT_02dc9f50].m,
                (CMatrix3x4f *)&stack0xfffffdd4);
     pfVar6 = (float *)&stack0xfffffdd4;
     pCVar5 = &local_13c;
@@ -184,7 +184,7 @@ LAB_0053d387:
       core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00
                 (&local_1cc,
                  (CMatrix3x4f *)
-                 (this_ptr->base).base.model.bone_transform.bone_world_matrices[_DAT_02dc9f50].m,
+                 (this_ptr->base).base.model.bone_transform.bone_model_matrices[_DAT_02dc9f50].m,
                  &local_10c);
       pCVar5 = &local_10c;
     }
@@ -200,7 +200,7 @@ LAB_0053d387:
       core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00
                 (&local_1fc,
                  (CMatrix3x4f *)
-                 (this_ptr->base).base.model.bone_transform.bone_world_matrices[_DAT_02dc9f88].m,
+                 (this_ptr->base).base.model.bone_transform.bone_model_matrices[_DAT_02dc9f88].m,
                  &local_19c);
       pCVar5 = &local_19c;
     }

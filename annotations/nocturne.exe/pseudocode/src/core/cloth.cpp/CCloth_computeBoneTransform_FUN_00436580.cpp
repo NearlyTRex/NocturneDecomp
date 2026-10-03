@@ -28,7 +28,7 @@ void __cdecl core_cloth_cpp_CCloth_computeBoneTransform_FUN_00436580(CCloth *thi
   
   bVar6 = 0;
   core_xform_cpp_inverse_FUN_0055bd00
-            ((model_ptr->bone_transform).bone_world_matrices +
+            ((model_ptr->bone_transform).bone_model_matrices +
              this_ptr->collide_bones[bone_index].parent_bone_index,&local_48);
   pCVar3 = &local_48;
   pCVar4 = &local_78;

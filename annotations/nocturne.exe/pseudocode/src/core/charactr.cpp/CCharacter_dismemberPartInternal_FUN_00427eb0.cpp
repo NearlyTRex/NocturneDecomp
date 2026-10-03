@@ -32,7 +32,7 @@ void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_00427eb0(CCh
               (&this_ptr->model,body_part,part_index);
     local_14 = 0;
     if (0 < this_ptr->damage_decal_count) {
-      local_18 = (this_ptr->model).bone_transform.bone_world_matrices;
+      local_18 = (this_ptr->model).bone_transform.bone_model_matrices;
       pSVar1 = this_ptr->damage_decals;
       do {
         if (part_index == pSVar1->part_index) {
@@ -63,7 +63,7 @@ void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_00427eb0(CCh
         if ((part_index == pSVar2->bone_part) && (-1 < pSVar2->bone_index)) {
           core_xform_cpp_transformVector3x4_FUN_0055a8b0
                     (&local_24,&pSVar2->offset,
-                     (this_ptr->model).bone_transform.bone_world_matrices + pSVar2->bone_index);
+                     (this_ptr->model).bone_transform.bone_model_matrices + pSVar2->bone_index);
           core_bodypart_cpp_CBodyPart_addFire_FUN_00417b40(body_part,&local_24);
         }
         iVar3 = iVar3 + 1;

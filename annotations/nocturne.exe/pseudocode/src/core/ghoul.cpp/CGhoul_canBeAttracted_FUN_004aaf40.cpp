@@ -43,9 +43,9 @@ int __cdecl core_ghoul_cpp_CGhoul_canBeAttracted_FUN_004aaf40(CGhoul *this_ptr,C
   if (local_10 <= 0.0) {
     return 0;
   }
-  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
+  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
                      (this_ptr_00,&local_40,_DAT_01c78c18);
-  pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
+  pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
                      (this_ptr_00,&local_88,_DAT_01c78c20);
   local_34 = pCVar2->x + pCVar1->x;
   local_30 = pCVar2->y + pCVar1->y;
@@ -53,9 +53,9 @@ int __cdecl core_ghoul_cpp_CGhoul_canBeAttracted_FUN_004aaf40(CGhoul *this_ptr,C
   local_2c = pCVar2->z + pCVar1->z;
   local_54 = local_30 * 0.5f;
   local_50 = local_2c * 0.5f;
-  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
+  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
                      (this_ptr_00,&local_94,_DAT_01c78c1c);
-  pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
+  pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
                      (this_ptr_00,&local_4c,_DAT_01c78c24);
   local_7c = pCVar2->x + pCVar1->x;
   local_78 = pCVar2->y + pCVar1->y;

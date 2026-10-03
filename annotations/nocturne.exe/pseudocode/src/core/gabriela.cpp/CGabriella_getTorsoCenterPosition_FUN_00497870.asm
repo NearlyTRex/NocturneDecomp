@@ -22,7 +22,7 @@
 ;   undefined4 DAT_01c713dc
 ;
 ; Called Functions:
-;   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
+;   core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
 ;
 ; *****************************************************************************
 
@@ -41,8 +41,8 @@ section .text
     PUSH EAX                            ; 00497889
     ADD EDI,0x150                       ; 0049788a
     PUSH EDI                            ; 00497890
-    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0 ; 00497891
-        ;   XREF to: 0051d2a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0 ; 00497891
+        ;   XREF to: 0051d2a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     ADD ESP,0xc                         ; 00497896
     MOV ECX,dword ptr [0x01c713d8]      ; 00497899 | DAT_01c713d8
     PUSH ECX                            ; 0049789f
@@ -50,8 +50,8 @@ section .text
     LEA EAX,[ESP + 0x1c]                ; 004978a2
     PUSH EAX                            ; 004978a6
     PUSH EDI                            ; 004978a7
-    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0 ; 004978a8
-        ;   XREF to: 0051d2a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0 ; 004978a8
+        ;   XREF to: 0051d2a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     FLD float ptr [EAX]                 ; 004978ad
     FADD float ptr [EBX]                ; 004978af
     ADD ESP,0xc                         ; 004978b1

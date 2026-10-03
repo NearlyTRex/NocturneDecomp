@@ -17,7 +17,7 @@
 ;   undefined4 DAT_01c78c14
 ;
 ; Called Functions:
-;   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0
+;   core_skeleton.cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_0051d0a0
 ;   core_xform.cpp_transformVector3x4_FUN_0055a8b0
 ;
 ; *****************************************************************************
@@ -39,8 +39,8 @@ section .text
     PUSH ESI                            ; 004ab12c
     LEA ESI,[EBP + -0x3c]               ; 004ab12d
     LEA EDI,[EBP + -0x6c]               ; 004ab130
-    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0 ; 004ab133
-        ;   XREF to: 0051d0a0 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0(CDeformableModelInstance * this_ptr, int bone_index, CMatrix3x4f * out_matrix)
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_0051d0a0 ; 004ab133
+        ;   XREF to: 0051d0a0 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_skeleton.cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_0051d0a0(CDeformableModelInstance * this_ptr, int bone_index, CMatrix3x4f * out_matrix)
     MOV ECX,0xc                         ; 004ab138
     LEA ESI,[EBP + -0x3c]               ; 004ab13d
     MOVSD.REP ES:EDI,ESI                ; 004ab140

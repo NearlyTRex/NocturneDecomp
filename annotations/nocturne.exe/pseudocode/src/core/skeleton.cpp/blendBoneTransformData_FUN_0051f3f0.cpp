@@ -74,6 +74,6 @@ void __cdecl core_skeleton_cpp_blendBoneTransformData_FUN_0051f3f0(SPose *result
       pSVar1 = (SPose *)&(pSVar1->pose_data).bone_rotations[0].x;
     } while (iVar2 < local_1c->bone_count);
   }
-  core_skeleton_cpp_computeBoneWorldMatrices_FUN_0051f1d0(result_pose,instance_ptr);
+  core_skeleton_cpp_computeBoneModelMatrices_FUN_0051f1d0(result_pose,instance_ptr);
   return;
 }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CMatrix3x4f * __stack2_esi core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0(CDeformableModelInstance *this_ptr,int bone_index,CMatrix3x4f *out_matrix)
+; CMatrix3x4f * __stack2_esi core_skeleton_cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_0051d0a0(CDeformableModelInstance *this_ptr,int bone_index,CMatrix3x4f *out_matrix)
 ;
 ; Parameters:
 ; CDeformableModelInstance * Stack[0x4]:4   this_ptr
@@ -31,7 +31,7 @@
 ;   core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_00499b00 at 00499beb
 ;   core_ghoul.cpp_CGhoul_getTargetPoint_FUN_004ab110 at 004ab133
 ;   core_mimic.cpp_CMimic_processAnimation_FUN_004d4f30 at 004d51d4
-;   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0 at 0051d346
+;   core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0 at 0051d346
 ;   core_zombie.cpp_CZombie_renderTransparent_FUN_00561940 at 00561983
 ;
 ; Called Functions:
@@ -45,7 +45,7 @@
 section .text
 
     PUSH EBX                            ; 0051d0a0
-        ;   Label: core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0
+        ;   Label: core_skeleton.cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_0051d0a0
     PUSH EDI                            ; 0051d0a1
     PUSH EBP                            ; 0051d0a2
     SUB ESP,0xa0                        ; 0051d0a3
@@ -74,8 +74,8 @@ section .text
     PUSH EBX                            ; 0051d0fe
     LEA ESI,[ESP + 0x8]                 ; 0051d0ff
     LEA EDI,[ESP + 0x68]                ; 0051d103
-    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0 ; 0051d107
-        ;   XREF to: 0051d0a0 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0(CDeformableModelInstance * this_ptr, int bone_index, CMatrix3x4f * out_matrix)
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_0051d0a0 ; 0051d107
+        ;   XREF to: 0051d0a0 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_skeleton.cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_0051d0a0(CDeformableModelInstance * this_ptr, int bone_index, CMatrix3x4f * out_matrix)
     MOV ECX,0xc                         ; 0051d10c
     LEA ESI,[ESP + 0x8]                 ; 0051d111
     ADD ESP,0x8                         ; 0051d115

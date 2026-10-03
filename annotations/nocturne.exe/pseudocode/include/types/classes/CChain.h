@@ -1,5 +1,8 @@
 #pragma once
 
+// Forward declarations
+struct CCharacter;
+
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CDemonActor.h"
@@ -13,7 +16,7 @@ typedef struct CChain {
     int vertex_count; // 0x150
     float chain_length; // 0x154
     float segment_length; // 0x158
-    struct CDemonActor* target; // 0x15c
+    struct CCharacter* target; // 0x15c
     int target_bone; // 0x160
     int texture_size; // 0x164
     int texture_handle; // 0x168
