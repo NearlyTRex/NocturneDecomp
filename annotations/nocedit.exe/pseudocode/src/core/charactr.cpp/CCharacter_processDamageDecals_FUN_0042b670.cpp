@@ -29,7 +29,7 @@ void __cdecl core_charactr_cpp_CCharacter_processDamageDecals_FUN_0042b670(CChar
       if ((this_ptr->model).part_data.visibility_flags[pSVar2->part_index] != 0) {
         iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(0.1);
         if (iVar1 != 0) {
-          matrix = (this_ptr->model).bone_transform.bone_world_matrices + pSVar2->bone_index;
+          matrix = (this_ptr->model).bone_transform.bone_model_matrices + pSVar2->bone_index;
           local_2c.x = 0.0;
           local_2c.y = 0.0;
           local_2c.z = -0.2;

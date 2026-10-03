@@ -14,7 +14,7 @@ void __stack2_esi core_charactr_cpp_CCharacter_getCarryObjToBodyXForm_FUN_0042d3
 
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
             (&this_ptr->carry_hands[hand_index].initial_carry_transform,
-             (this_ptr->model).bone_transform.bone_world_matrices +
+             (this_ptr->model).bone_transform.bone_model_matrices +
              this_ptr->carry_hands[hand_index].bone_index,&local_38);
   *out_matrix = local_38;
   return;

@@ -25,7 +25,7 @@ CChain * __cdecl core_chain_cpp_CChain_ctor_FUN_0042fb80(CChain *this_ptr)
   ADJ(pvVar2)->gravity = 32.0;
   pcVar2 = "CHAINLINK.RAW";
   ADJ(pvVar2)->dampen = 0.9;
-  ADJ(pvVar2)->target = (CDemonActor *)0x0;
+  ADJ(pvVar2)->target = (CCharacter *)0x0;
   pcVar3 = ADJ(pvVar2)->texture_name;
   ADJ(pvVar2)->target_bone = 0;
   do {

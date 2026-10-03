@@ -33,7 +33,7 @@
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
-;   core_skeleton.cpp_computeBoneWorldMatrices_FUN_005a1950
+;   core_skeleton.cpp_computeBoneModelMatrices_FUN_005a1950
 ;
 ; *****************************************************************************
 
@@ -72,8 +72,8 @@ section .text
     PUSH EAX                            ; 005a090a
     MOV EBP,0xffffffff                  ; 005a090b
     XOR ESI,ESI                         ; 005a0910
-    CALL core_skeleton.cpp_computeBoneWorldMatrices_FUN_005a1950 ; 005a0912
-        ;   XREF to: 005a1950 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_computeBoneWorldMatrices_FUN_005a1950(SPose * bone_data, CDeformableModelInstance * instance_ptr)
+    CALL core_skeleton.cpp_computeBoneModelMatrices_FUN_005a1950 ; 005a0912
+        ;   XREF to: 005a1950 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_computeBoneModelMatrices_FUN_005a1950(SPose * bone_data, CDeformableModelInstance * instance_ptr)
     ADD ESP,0x8                         ; 005a0917
     MOV EAX,0x7149f2ca                  ; 005a091a
     MOV EDX,dword ptr [ESP + 0x3578]    ; 005a091f
@@ -98,8 +98,8 @@ section .text
     PUSH EDI                            ; 005a0964
     LEA EAX,[ESP + 0x4]                 ; 005a0965
     PUSH EAX                            ; 005a0969
-    CALL core_skeleton.cpp_computeBoneWorldMatrices_FUN_005a1950 ; 005a096a
-        ;   XREF to: 005a1950 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_computeBoneWorldMatrices_FUN_005a1950(SPose * bone_data, CDeformableModelInstance * instance_ptr)
+    CALL core_skeleton.cpp_computeBoneModelMatrices_FUN_005a1950 ; 005a096a
+        ;   XREF to: 005a1950 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_computeBoneModelMatrices_FUN_005a1950(SPose * bone_data, CDeformableModelInstance * instance_ptr)
     ADD ESP,0x8                         ; 005a096f
     XOR EAX,EAX                         ; 005a0972
     XOR ECX,ECX                         ; 005a0974

@@ -256,9 +256,9 @@ void desired_aim(CColonel *colonel, CWeapon *weapon, SColonelAim *aim,
     }
     core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
         ((CDemonActor *)colonel, &local, &world);
-    // Despite its name this returns the bone in the actor's own frame;
-    // CScat::updateAiming subtracts it from a worldToLocalPoint result.
-    core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+    // In the actor's own frame, as the worldToLocalPoint result it is
+    // subtracted from; CScat::updateAiming does the same.
+    core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0059fa20
         (&(colonel->base).base.model, &shoulder, g_ColonelIndices[kRightUpperArmBone]);
     direction.x = local.x - shoulder.x;
     direction.y = local.y - shoulder.y;
@@ -314,7 +314,7 @@ void aim_euler(CColonel *colonel, SColonelAim *aim, CVector3f *out)
 }
 
 // The pistol's grip on the right hand, in world space: CScat::updateWeaponAttachment's
-// grip on the same Biped bone. bone_world_matrices are in the actor's own frame,
+// grip on the same Biped bone. bone_model_matrices are in the actor's own frame,
 // so the body's transform goes on last.
 void grip_world(CColonel *colonel, CMatrix3x4f *world)
 {
@@ -334,7 +334,7 @@ void grip_world(CColonel *colonel, CMatrix3x4f *world)
         (&grip, &grip_position, &grip_euler);
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
         (&grip,
-         (colonel->base).base.model.bone_transform.bone_world_matrices +
+         (colonel->base).base.model.bone_transform.bone_model_matrices +
              g_ColonelIndices[kRightHandBone],
          &hand);
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
@@ -373,8 +373,8 @@ void point_gun_at_shot(CColonel *colonel, CWeapon *weapon, SColonelAim *aim)
     CVector3f direction;
     CVector3f euler;
 
-    // From where the drawn pistol is, not getBoneCachedWorldPosition: that reads
-    // bone_world_matrices too, and so is in the actor's frame, not the world's.
+    // From where the drawn pistol is. getBoneCachedModelPosition would give the
+    // hand in the actor's own frame, not the world's.
     grip_world(colonel, &grip);
     core_xform_cpp_getTranslation_FUN_005f6110(&grip, &hand);
     target = find_target(colonel, aim);

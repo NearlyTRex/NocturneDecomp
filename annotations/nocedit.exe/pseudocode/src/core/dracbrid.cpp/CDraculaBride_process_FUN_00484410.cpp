@@ -286,7 +286,7 @@ LAB_004848f9:
     local_14 = local_28c.damage_amount;
     pCVar13 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                         (&local_b8,&g_ZeroVector.f,
-                         (this_ptr->base).base.model.bone_transform.bone_world_matrices +
+                         (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                          g_DraculaBrideIndices[0]);
     pCVar13 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                         ((CDemonActor *)this_ptr,&local_100,pCVar13);
@@ -303,7 +303,7 @@ LAB_004848f9:
     local_14 = local_304.damage_amount;
     pCVar13 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                         (&local_184,&g_ZeroVector.f,
-                         (this_ptr->base).base.model.bone_transform.bone_world_matrices +
+                         (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                          g_DraculaBrideIndices[0]);
     pCVar13 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                         ((CDemonActor *)this_ptr,&local_4c,pCVar13);
@@ -311,7 +311,7 @@ LAB_004848f9:
     break;
   case 7:
     if (this_ptr->exploded == 0) {
-      pCVar13 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+      pCVar13 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0059fb00
                           (&(this_ptr->base).base.model,&local_d0,g_DraculaBrideIndices[7]);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)this_ptr,&local_f4,pCVar13);
@@ -519,7 +519,7 @@ LAB_004852f8:
   case 0x11:
     if (((this_ptr->base).pool_me != 0) ||
        ((this_ptr->base).base.base.standing_platform != (CPlatform *)0x0)) break;
-    pCVar13 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+    pCVar13 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0059fa20
                         (&(this_ptr->base).base.model,&local_1b4,0);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
               ((CDemonActor *)this_ptr,&local_1cc,pCVar13);
@@ -545,7 +545,7 @@ LAB_004852f8:
     local_14 = local_2c8.damage_amount;
     pCVar13 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                         (&local_13c,&g_ZeroVector.f,
-                         (this_ptr->base).base.model.bone_transform.bone_world_matrices +
+                         (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                          g_DraculaBrideIndices[0]);
     pCVar13 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                         ((CDemonActor *)this_ptr,&local_94,pCVar13);
@@ -562,7 +562,7 @@ LAB_004852f8:
     local_14 = local_214.damage_amount;
     pCVar13 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                         (&local_88,&g_ZeroVector.f,
-                         (this_ptr->base).base.model.bone_transform.bone_world_matrices +
+                         (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                          g_DraculaBrideIndices[0]);
     pCVar13 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                         ((CDemonActor *)this_ptr,&local_16c,pCVar13);
@@ -579,7 +579,7 @@ LAB_004852f8:
     local_14 = local_250.damage_amount;
     pCVar12 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                         (&local_1c0,&g_ZeroVector.f,
-                         (this_ptr->base).base.model.bone_transform.bone_world_matrices +
+                         (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                          g_DraculaBrideIndices[2]);
     pCVar13 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                         ((CDemonActor *)this_ptr,&local_154,pCVar12);
@@ -615,7 +615,7 @@ LAB_004852f8:
       if (0 < pCVar11->bone_count) {
         local_24 = local_2c;
         do {
-          pCVar13 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+          pCVar13 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0059fb00
                               (local_24,&local_64,iVar10);
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                     ((CDemonActor *)this_ptr,&local_118,pCVar13);
@@ -680,7 +680,7 @@ LAB_004852f8:
       local_20 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(pCVar5);
       if (0 < local_20->bone_count) {
         do {
-          pCVar13 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+          pCVar13 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0059fb00
                               (pCVar5,&local_10c,iVar10);
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                     ((CDemonActor *)this_ptr,&local_130,pCVar13);

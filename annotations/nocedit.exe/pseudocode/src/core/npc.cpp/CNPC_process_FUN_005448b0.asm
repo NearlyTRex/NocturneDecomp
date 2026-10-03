@@ -50,7 +50,7 @@
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 ;   core_motion.cpp_CMotionController_setDesiredStateByName_FUN_0052db90
 ;   core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0
-;   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+;   core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0059fa20
 ;   ... and 2 more
 ;
 ; *****************************************************************************
@@ -139,8 +139,8 @@ section .text
     LEA EAX,[ESP + 0x14]                ; 0054495a
     PUSH EAX                            ; 0054495e
     PUSH ESI                            ; 0054495f
-    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20 ; 00544960
-        ;   XREF to: 0059fa20 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0059fa20 ; 00544960
+        ;   XREF to: 0059fa20 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0059fa20(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     ADD ESP,0xc                         ; 00544965
     PUSH EAX                            ; 00544968
     LEA EAX,[ESP + 0x2c]                ; 00544969

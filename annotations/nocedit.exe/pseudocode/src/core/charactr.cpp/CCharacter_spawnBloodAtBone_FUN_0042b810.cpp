@@ -19,7 +19,7 @@ void __cdecl core_charactr_cpp_CCharacter_spawnBloodAtBone_FUN_0042b810(CCharact
     iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(chance);
     if (iVar1 != 0) {
       input_local_point =
-           core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+           core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0059fb00
                      (&this_ptr->model,&local_1c,bone_index);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 (&this_ptr->base,&local_28,input_local_point);

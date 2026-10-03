@@ -147,7 +147,7 @@ void __cdecl core_cloth_cpp_CCloth_step_FUN_0043abb0(CCloth *this_ptr,CVector3f 
           do {
             pCVar4 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                                (&local_9c,local_28,
-                                (model_ptr->bone_transform).bone_world_matrices +
+                                (model_ptr->bone_transform).bone_model_matrices +
                                 local_30->bone_index[0]);
             local_174 = pCVar4->x * *pfVar9;
             local_170 = pCVar4->y * *pfVar9;

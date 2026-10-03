@@ -17,13 +17,13 @@ CMatrix3x4f * __stack_esi core_tentacle_cpp_CTentacle_computeGripBoneMatrix_FUN_
   CMatrix3x4f local_3c;
   
   core_xform_cpp_lerpMatrix3x4_FUN_005f7140
-            ((this_ptr->base).base.model.bone_transform.bone_world_matrices + g_TentacleIndices[0],
-             (this_ptr->base).base.model.bone_transform.bone_world_matrices + g_TentacleIndices[1],
+            ((this_ptr->base).base.model.bone_transform.bone_model_matrices + g_TentacleIndices[0],
+             (this_ptr->base).base.model.bone_transform.bone_model_matrices + g_TentacleIndices[1],
              0.5,&local_6c);
   local_cc = local_6c;
   core_xform_cpp_lerpMatrix3x4_FUN_005f7140
-            ((this_ptr->base).base.model.bone_transform.bone_world_matrices + g_TentacleIndices[2],
-             (this_ptr->base).base.model.bone_transform.bone_world_matrices + g_TentacleIndices[3],
+            ((this_ptr->base).base.model.bone_transform.bone_model_matrices + g_TentacleIndices[2],
+             (this_ptr->base).base.model.bone_transform.bone_model_matrices + g_TentacleIndices[3],
              0.5,&local_fc);
   local_9c = local_fc;
   core_xform_cpp_lerpMatrix3x4_FUN_005f7140(&local_cc,&local_9c,0.5,&local_3c);

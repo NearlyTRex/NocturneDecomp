@@ -196,7 +196,7 @@ LAB_00528e3a:
     }
     this_ptr_01 = (CCharacter *)(this_ptr->base).base.grabbed_by;
     pCVar6 = (this_ptr_01->base).vtable._uc;
-    pCVar9 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+    pCVar9 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0059fb00
                        (&(this_ptr->base).base.model,&local_44,0);
     iVar8 = (*(pCVar6->_uc).attractActorToward)(this_ptr_01,(CDemonActor *)this_ptr,pCVar9);
     if (iVar8 == 0) {

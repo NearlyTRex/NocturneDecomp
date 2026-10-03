@@ -15,10 +15,9 @@ CVector3f * __cdecl core_chain_cpp_CChain_getTargetBoneWorldPosition_FUN_0042fcc
   input_local_point =
        core_xform_cpp_transformVector3x4_FUN_005f4dc0
                  (&local_14,&g_ZeroVector.f,
-                  (CMatrix3x4f *)
-                  (this_ptr->target[0xb].footstep_sound_code + this_ptr->target_bone * 0x30 + -0xc))
-  ;
+                  (this_ptr->target->model).bone_transform.bone_model_matrices +
+                  this_ptr->target_bone);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-            (this_ptr->target,out_point,input_local_point);
+            (&this_ptr->target->base,out_point,input_local_point);
   return out_point;
 }

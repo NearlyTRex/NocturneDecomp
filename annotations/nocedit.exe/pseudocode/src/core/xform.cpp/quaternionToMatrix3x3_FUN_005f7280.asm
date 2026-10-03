@@ -9,8 +9,8 @@
 ;
 ; XREF[7]:
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40 at 0059fba8
-;   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820 at 0059f8f5
-;   core_skeleton.cpp_computeBoneWorldMatrices_FUN_005a1950 at 005a19c3
+;   core_skeleton.cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_0059f820 at 0059f8f5
+;   core_skeleton.cpp_computeBoneModelMatrices_FUN_005a1950 at 005a19c3
 ;   core_xform.cpp_lerpMatrix3x4_FUN_005f7140 at 005f721c
 ;   core_xform.cpp_quaternionToEulerAnglesZYX_FUN_005f7af0 at 005f7b02
 ;   core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0 at 005f7ad2

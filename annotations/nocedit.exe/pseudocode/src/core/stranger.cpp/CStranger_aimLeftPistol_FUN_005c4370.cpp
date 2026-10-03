@@ -76,7 +76,7 @@ void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_005c4370(CStranger *t
     CStack_90.y = CStack_b4.y;
     CStack_90.z = CStack_b4.z;
   }
-  core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+  core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0059fa20
             (&(this_ptr->base).base.model,&CStack_6c,bone_index);
   core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
             ((CDemonActor *)this_ptr,&CStack_60,&CStack_90);

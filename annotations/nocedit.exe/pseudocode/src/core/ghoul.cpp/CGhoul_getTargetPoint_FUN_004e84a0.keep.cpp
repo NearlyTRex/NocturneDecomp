@@ -13,7 +13,7 @@ CVector3f * __cdecl core_ghoul_cpp_CGhoul_getTargetPoint_FUN_004e84a0(CGhoul *th
   CMatrix3x4f local_4c;
   CVector3f local_1c;
 
-  core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820
+  core_skeleton_cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_0059f820
             (&(this_ptr->base).base.model,g_GhoulIndices[0],&local_4c);
   local_1c.y = 0.7;
   local_1c.x = 0.0;

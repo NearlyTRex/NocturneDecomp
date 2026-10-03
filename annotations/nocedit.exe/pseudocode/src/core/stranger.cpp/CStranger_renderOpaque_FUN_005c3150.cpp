@@ -58,7 +58,7 @@ int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_005c3150(CStranger *thi
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
               (&local_16c,
                (CMatrix3x4f *)
-               (this_ptr->base).base.model.bone_transform.bone_world_matrices[g_StrangerIndices[0]].
+               (this_ptr->base).base.model.bone_transform.bone_model_matrices[g_StrangerIndices[0]].
                m,(CMatrix3x4f *)&stack0xfffffdd4);
     core_xform_cpp_getTranslation_FUN_005f6110(&local_13c,&local_ac);
     core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_13c,&local_94);
@@ -168,7 +168,7 @@ LAB_005c33d7:
       core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
                 (&local_1cc,
                  (CMatrix3x4f *)
-                 (this_ptr->base).base.model.bone_transform.bone_world_matrices
+                 (this_ptr->base).base.model.bone_transform.bone_model_matrices
                  [g_StrangerIndices[0]].m,&local_10c);
       pCVar7 = &local_10c;
     }
@@ -184,7 +184,7 @@ LAB_005c33d7:
       core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
                 (&local_1fc,
                  (CMatrix3x4f *)
-                 (this_ptr->base).base.model.bone_transform.bone_world_matrices
+                 (this_ptr->base).base.model.bone_transform.bone_model_matrices
                  [g_StrangerIndices[0xe]].m,&local_19c);
       pCVar7 = &local_19c;
     }

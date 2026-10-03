@@ -48,7 +48,7 @@ LAB_005bdd85:
             if (bone_index == 7) {
               iVar5 = g_StrangerIndices[8];
             }
-            core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+            core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0059fa20
                       (this_ptr_04,&local_5c,iVar5);
             this_ptr_05 = (this_ptr->base).ladder_to_climb;
             if (this_ptr_05 == (CLadder *)0x0) {
@@ -175,7 +175,7 @@ LAB_005bde44:
                                 ((this_ptr->base).base.grabbed_by,g_CEnemyClassInfo.name_hash);
         local_18 = this_ptr_03;
         if (this_ptr_03 != (CEnemy *)0x0) {
-          pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+          pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0059fa20
                              (this_ptr_04,&local_44,g_StrangerIndices[0xc]);
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                     ((CDemonActor *)this_ptr,local_38,pCVar4);

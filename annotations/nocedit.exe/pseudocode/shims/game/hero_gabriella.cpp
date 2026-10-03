@@ -283,7 +283,7 @@ void land_kick(CGabriella *gabriella)
     if (bone_index < 0) {
         return;
     }
-    bone_point = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+    bone_point = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0059fb00
                      (model, &local_point, bone_index);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
         ((CDemonActor *)gabriella, &foot, bone_point);

@@ -21,49 +21,49 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FU
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
   iVar3 = 0;
   if (0 < pCVar3->bone_count) {
-    pCVar1 = (this_ptr->bone_transform).bone_world_matrices;
+    pCVar1 = (this_ptr->bone_transform).bone_model_matrices;
     local_1c = (this_ptr->bone_transform).pose_data.bone_rotations;
     local_24 = pCVar1;
     do {
       core_xform_cpp_quaternionToMatrix3x3_FUN_005f7280(local_24,local_1c);
       if ((this_ptr->bone_transform).bone_scales[iVar3] != 1.0) {
-        (this_ptr->bone_transform).bone_world_matrices[iVar3].m[0].w =
+        (this_ptr->bone_transform).bone_model_matrices[iVar3].m[0].w =
              (this_ptr->bone_transform).bone_scales[iVar3] *
-             (this_ptr->bone_transform).bone_world_matrices[iVar3].m[0].w;
-        (this_ptr->bone_transform).bone_world_matrices[iVar3].m[0].x =
+             (this_ptr->bone_transform).bone_model_matrices[iVar3].m[0].w;
+        (this_ptr->bone_transform).bone_model_matrices[iVar3].m[0].x =
              (this_ptr->bone_transform).bone_scales[iVar3] *
-             (this_ptr->bone_transform).bone_world_matrices[iVar3].m[0].x;
-        (this_ptr->bone_transform).bone_world_matrices[iVar3].m[0].y =
+             (this_ptr->bone_transform).bone_model_matrices[iVar3].m[0].x;
+        (this_ptr->bone_transform).bone_model_matrices[iVar3].m[0].y =
              (this_ptr->bone_transform).bone_scales[iVar3] *
-             (this_ptr->bone_transform).bone_world_matrices[iVar3].m[0].y;
-        (this_ptr->bone_transform).bone_world_matrices[iVar3].m[1].w =
+             (this_ptr->bone_transform).bone_model_matrices[iVar3].m[0].y;
+        (this_ptr->bone_transform).bone_model_matrices[iVar3].m[1].w =
              (this_ptr->bone_transform).bone_scales[iVar3] *
-             (this_ptr->bone_transform).bone_world_matrices[iVar3].m[1].w;
-        (this_ptr->bone_transform).bone_world_matrices[iVar3].m[1].x =
+             (this_ptr->bone_transform).bone_model_matrices[iVar3].m[1].w;
+        (this_ptr->bone_transform).bone_model_matrices[iVar3].m[1].x =
              (this_ptr->bone_transform).bone_scales[iVar3] *
-             (this_ptr->bone_transform).bone_world_matrices[iVar3].m[1].x;
-        (this_ptr->bone_transform).bone_world_matrices[iVar3].m[1].y =
+             (this_ptr->bone_transform).bone_model_matrices[iVar3].m[1].x;
+        (this_ptr->bone_transform).bone_model_matrices[iVar3].m[1].y =
              (this_ptr->bone_transform).bone_scales[iVar3] *
-             (this_ptr->bone_transform).bone_world_matrices[iVar3].m[1].y;
-        (this_ptr->bone_transform).bone_world_matrices[iVar3].m[2].w =
+             (this_ptr->bone_transform).bone_model_matrices[iVar3].m[1].y;
+        (this_ptr->bone_transform).bone_model_matrices[iVar3].m[2].w =
              (this_ptr->bone_transform).bone_scales[iVar3] *
-             (this_ptr->bone_transform).bone_world_matrices[iVar3].m[2].w;
-        (this_ptr->bone_transform).bone_world_matrices[iVar3].m[2].x =
+             (this_ptr->bone_transform).bone_model_matrices[iVar3].m[2].w;
+        (this_ptr->bone_transform).bone_model_matrices[iVar3].m[2].x =
              (this_ptr->bone_transform).bone_scales[iVar3] *
-             (this_ptr->bone_transform).bone_world_matrices[iVar3].m[2].x;
-        (this_ptr->bone_transform).bone_world_matrices[iVar3].m[2].y =
+             (this_ptr->bone_transform).bone_model_matrices[iVar3].m[2].x;
+        (this_ptr->bone_transform).bone_model_matrices[iVar3].m[2].y =
              (this_ptr->bone_transform).bone_scales[iVar3] *
-             (this_ptr->bone_transform).bone_world_matrices[iVar3].m[2].y;
+             (this_ptr->bone_transform).bone_model_matrices[iVar3].m[2].y;
       }
       iVar1 = pCVar3->bone_list[iVar3].parent_index;
       if (iVar1 < 0) {
-        (this_ptr->bone_transform).bone_world_matrices[iVar3].m[0].z =
+        (this_ptr->bone_transform).bone_model_matrices[iVar3].m[0].z =
              this_ptr->transformed_vertices[iVar3].x +
              (this_ptr->bone_transform).pose_data.root_position.x;
-        (this_ptr->bone_transform).bone_world_matrices[iVar3].m[1].z =
+        (this_ptr->bone_transform).bone_model_matrices[iVar3].m[1].z =
              this_ptr->transformed_vertices[iVar3].y +
              (this_ptr->bone_transform).pose_data.root_position.y;
-        (this_ptr->bone_transform).bone_world_matrices[iVar3].m[2].z =
+        (this_ptr->bone_transform).bone_model_matrices[iVar3].m[2].z =
              this_ptr->transformed_vertices[iVar3].z +
              (this_ptr->bone_transform).pose_data.root_position.z;
       }
@@ -71,9 +71,9 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FU
         core_xform_cpp_transformVector3x4_FUN_005f4dc0
                   (&CStack_3c,&this_ptr->transformed_vertices[iVar3],
                    pCVar1 + iVar1);
-        (this_ptr->bone_transform).bone_world_matrices[iVar3].m[0].z = CStack_3c.x;
-        (this_ptr->bone_transform).bone_world_matrices[iVar3].m[1].z = CStack_3c.y;
-        (this_ptr->bone_transform).bone_world_matrices[iVar3].m[2].z = CStack_3c.z;
+        (this_ptr->bone_transform).bone_model_matrices[iVar3].m[0].z = CStack_3c.x;
+        (this_ptr->bone_transform).bone_model_matrices[iVar3].m[1].z = CStack_3c.y;
+        (this_ptr->bone_transform).bone_model_matrices[iVar3].m[2].z = CStack_3c.z;
       }
       iVar3 = iVar3 + 1;
       local_24 = local_24 + 1;

@@ -21,9 +21,9 @@ CVector3f * __cdecl core_stranger_cpp_CStranger_getHandsMidpoint_FUN_005be490(CS
   float fVar3;
   
   this_ptr_00 = &(this_ptr->base).base.model;
-  pCVar6 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+  pCVar6 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0059fa20
                      (this_ptr_00,local_30,g_StrangerIndices[0xe]);
-  pCVar7 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+  pCVar7 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0059fa20
                      (this_ptr_00,&local_18,g_StrangerIndices[0xd]);
   fVar5 = 0.5f;
   fVar1 = pCVar7->y;

@@ -51,12 +51,12 @@ void __cdecl core_svetlana_cpp_CSvetlana_performBladeAttack_FUN_005d9a10(CSvetla
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't find svetlana's parent bone");
   }
   this_ptr_00 = &(this_ptr->base).base.model;
-  pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+  pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0059fb00
                      (this_ptr_00,&local_30,bone_index);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
             ((CDemonActor *)this_ptr,&local_24,pCVar2);
   input_local_point =
-       core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+       core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0059fb00
                  (this_ptr_00,&local_48,local_18);
   iVar6 = 0;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0

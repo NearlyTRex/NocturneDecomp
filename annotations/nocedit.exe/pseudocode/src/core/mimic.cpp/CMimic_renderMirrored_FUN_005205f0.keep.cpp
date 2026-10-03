@@ -58,7 +58,7 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_005205f0(CMimic *this_ptr)
                     (&local_c4,&local_40,&local_28);
           core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
                     (&local_c4,
-                     (this_ptr->base).base.model.bone_transform.bone_world_matrices +
+                     (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                      g_MimicIndices[0],&local_94);
           core_xform_cpp_getTranslation_FUN_005f6110(&local_94,&local_4c);
           core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_94,&local_34);

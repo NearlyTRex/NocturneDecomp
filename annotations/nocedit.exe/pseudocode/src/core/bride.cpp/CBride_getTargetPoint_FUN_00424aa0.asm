@@ -15,7 +15,7 @@
 ;   int[11] g_BrideIndices
 ;
 ; Called Functions:
-;   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820
+;   core_skeleton.cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_0059f820
 ;   core_xform.cpp_transformVector3x4_FUN_005f4dc0
 ;
 ; *****************************************************************************
@@ -37,8 +37,8 @@ section .text
     PUSH ESI                            ; 00424abc
     LEA ESI,[EBP + -0x3c]               ; 00424abd
     LEA EDI,[EBP + -0x6c]               ; 00424ac0
-    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820 ; 00424ac3
-        ;   XREF to: 0059f820 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820(CDeformableModelInstance * this_ptr, int bone_index, CMatrix3x4f * out_matrix)
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_0059f820 ; 00424ac3
+        ;   XREF to: 0059f820 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_skeleton.cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_0059f820(CDeformableModelInstance * this_ptr, int bone_index, CMatrix3x4f * out_matrix)
     JMP 0x03fc47ee                      ; 00424ac8
         ;   XREF to: 03fc47ee (UNCONDITIONAL_JUMP)  ; LAB_03fc47ee
     ADD ESP,0x8                         ; 00424ad2

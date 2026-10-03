@@ -25,7 +25,7 @@ int __cdecl core_zombie_cpp_CZombie_getTargetPoints_FUN_005fc720(CZombie *this_p
   CDeformableModelInstance *this_ptr_00;
   int bone_index;
   
-  core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+  core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0059fb00
             (&(this_ptr->base).base.model,&local_30,this_ptr->bone_indices[9]);
   if (&local_30 != out_points_array) {
     out_points_array->x = local_30.x;
@@ -42,7 +42,7 @@ int __cdecl core_zombie_cpp_CZombie_getTargetPoints_FUN_005fc720(CZombie *this_p
         bone_index = this_ptr->bone_indices[5];
         pCVar3 = &local_24;
 LAB_005fc7ac:
-        pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+        pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0059fb00
                            (this_ptr_00,pCVar3,bone_index);
         if (&local_48 != pCVar3) {
           local_48.x = pCVar3->x;
@@ -70,7 +70,7 @@ LAB_005fc82e:
       break;
     case 2:
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[6]] != 0) {
-        pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+        pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0059fb00
                            (this_ptr_00,&local_3c,this_ptr->bone_indices[0]);
         pCVar2 = out_points_array + iVar3;
         if (pCVar2 != pCVar3) {
@@ -83,7 +83,7 @@ LAB_005fc82e:
       break;
     case 3:
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[5]] != 0) {
-        pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+        pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0059fb00
                            (this_ptr_00,&local_60,this_ptr->bone_indices[10]);
         pCVar3 = out_points_array + iVar3;
         if (pCVar3 != pCVar1) {

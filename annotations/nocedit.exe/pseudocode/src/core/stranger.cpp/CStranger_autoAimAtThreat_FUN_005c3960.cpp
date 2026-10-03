@@ -149,7 +149,7 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_005c3960(CStranger 
     }
     this_ptr_01 = &(this_ptr->base).base.model;
     if (local_48 == 0) {
-      pCVar6 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+      pCVar6 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0059fa20
                          (this_ptr_01,&CStack_a0,iVar4);
       if (&CStack_100 != pCVar6) {
         CStack_100.x = pCVar6->x;
@@ -158,7 +158,7 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_005c3960(CStranger 
       }
     }
     else {
-      pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+      pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0059fa20
                          (this_ptr_01,&CStack_c4,iVar2);
       if (&CStack_100 != pCVar1) {
         CStack_100.x = pCVar1->x;

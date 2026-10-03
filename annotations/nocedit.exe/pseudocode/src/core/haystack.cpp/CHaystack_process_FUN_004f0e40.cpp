@@ -242,7 +242,7 @@ switchD_004f12ce_caseD_8:
     }
     this_ptr_00 = (CCharacter *)(this_ptr->base).base.grabbed_by;
     pCVar5 = (this_ptr_00->base).vtable._uc;
-    pCVar7 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+    pCVar7 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0059fb00
                        (&(this_ptr->base).base.model,&local_48,0);
     iVar6 = (*(pCVar5->_uc).attractActorToward)(this_ptr_00,(CDemonActor *)this_ptr,pCVar7);
     if (iVar6 == 0) {

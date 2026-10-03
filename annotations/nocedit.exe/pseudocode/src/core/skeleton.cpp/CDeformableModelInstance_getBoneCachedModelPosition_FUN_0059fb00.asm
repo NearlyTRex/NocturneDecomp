@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CVector3f * __cdecl core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00(CDeformableModelInstance *this_ptr,CVector3f *out_position,int bone_index)
+; CVector3f * __cdecl core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0059fb00(CDeformableModelInstance *this_ptr,CVector3f *out_position,int bone_index)
 ;
 ; Parameters:
 ; CDeformableModelInstance * Stack[0x4]:4   this_ptr
@@ -26,7 +26,7 @@
 section .text
 
     MOV EDX,dword ptr [ESP + 0x8]       ; 0059fb00
-        ;   Label: core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+        ;   Label: core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0059fb00
     MOV ECX,dword ptr [ESP + 0xc]       ; 0059fb04
     LEA EAX,[ECX*0x4 + 0x0]             ; 0059fb08
     SUB EAX,ECX                         ; 0059fb0f

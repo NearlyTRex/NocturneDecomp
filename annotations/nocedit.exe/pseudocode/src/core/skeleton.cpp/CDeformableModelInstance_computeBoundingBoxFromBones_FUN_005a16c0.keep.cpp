@@ -30,7 +30,7 @@ CBoundingBox3D * __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBound
   local_1c = 0;
   if (0 < iVar1) {
     local_20 = (CBoundingBox3D *)&this_ptr_01->bbox_pool[0].max;
-    local_14 = (this_ptr->bone_transform).bone_world_matrices;
+    local_14 = (this_ptr->bone_transform).bone_model_matrices;
     do {
       if (this_ptr_01->bone_flags[local_1c] == 2) {
         corner_index = 0;

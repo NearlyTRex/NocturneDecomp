@@ -20,7 +20,7 @@ void __cdecl core_icepick_cpp_CIcePick_performMeleeAttack_FUN_004f9490(CIcePick 
   CIcePick *this_ptr_00;
   
   input_local_point =
-       core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+       core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0059fb00
                  (&(this_ptr->base).base.model,&local_24,bone_index);
   iVar3 = 0;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0

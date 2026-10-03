@@ -28,8 +28,8 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_005
     (this_ptr->bone_transform).pose_data.bone_rotations[iVar5] =
          (bone_transform->pose_data).bone_rotations[iVar5];
     (this_ptr->bone_transform).bone_scales[iVar5] = bone_transform->bone_scales[iVar5];
-    (this_ptr->bone_transform).bone_world_matrices[iVar5] =
-         bone_transform->bone_world_matrices[iVar5];
+    (this_ptr->bone_transform).bone_model_matrices[iVar5] =
+         bone_transform->bone_model_matrices[iVar5];
   }
   this_ptr->cached_skinned_lod_index = -1;
   return;

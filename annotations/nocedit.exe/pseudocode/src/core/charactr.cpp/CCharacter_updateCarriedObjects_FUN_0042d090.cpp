@@ -44,7 +44,7 @@ void __cdecl core_charactr_cpp_CCharacter_updateCarriedObjects_FUN_0042d090(CCha
   local_28 = (int)&(this_ptr->base).orient;
   local_24 = (int)&(this_ptr->base).location;
   local_18 = (CVector3f *)0x0;
-  local_20 = (int)(this_ptr->model).bone_transform.bone_world_matrices;
+  local_20 = (int)(this_ptr->model).bone_transform.bone_model_matrices;
   pCVar4 = (CVector3f *)this_ptr->carry_hands;
   do {
     if (pCVar4->z != 0.0) {

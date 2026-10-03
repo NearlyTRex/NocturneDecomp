@@ -62,14 +62,14 @@ void __stack2_esi core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40(
   local_6c.y = 0.209;
   pCVar1 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                      (&local_78,&local_6c,
-                      (this_ptr->base).base.model.bone_transform.bone_world_matrices + iVar3);
+                      (this_ptr->base).base.model.bone_transform.bone_model_matrices + iVar3);
   if (&local_18 != pCVar1) {
     local_18.x = pCVar1->x;
     local_18.y = pCVar1->y;
     local_18.z = pCVar1->z;
   }
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
-            (&local_120,(this_ptr->base).base.model.bone_transform.bone_world_matrices + iVar3,
+            (&local_120,(this_ptr->base).base.model.bone_transform.bone_model_matrices + iVar3,
              &local_c0);
   local_f0.m[0].z = local_c0.m[0].z;
   local_f0.m[1].z = local_c0.m[1].z;

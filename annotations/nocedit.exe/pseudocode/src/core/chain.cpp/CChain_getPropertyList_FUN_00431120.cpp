@@ -17,8 +17,8 @@ void __cdecl core_chain_cpp_CChain_getPropertyList_FUN_00431120(CChain *this_ptr
             (property_list,"Chain length",&this_ptr->chain_length,
              (CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addChoice_FUN_0040e350
-            (property_list,"Actor to chain",&this_ptr->target,1,"CCharacter",
-             (CActorPropertyValidatorFunc *)0x0);
+            (property_list,"Actor to chain",(CDemonActor **)&this_ptr->target,1,
+             "CCharacter",(CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addInt_FUN_0040e1e0
             (property_list,"Bone to lock on",&this_ptr->target_bone,
              (CActorPropertyValidatorFunc *)0x0);

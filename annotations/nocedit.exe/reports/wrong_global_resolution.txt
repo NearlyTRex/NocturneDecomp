@@ -12,12 +12,12 @@ SUMMARY
 ----------------------------------------------------------------------------------------------------
 
   Functions checked: 6911
-  Functions with suspicious globals: 106
-  Total suspicious global references: 176
+  Functions with suspicious globals: 107
+  Total suspicious global references: 178
 
   Most commonly misresolved globals:
     g_SfxOptions                                       13 functions
-    g_CNetGamePtr                                      9 functions
+    g_CNetGamePtr                                      10 functions
     g_KeyboardState                                    9 functions
     g_WindowHeight                                     7 functions
     g_CDemonCameraInstance                             6 functions
@@ -35,9 +35,9 @@ SUMMARY
     g_TextureCacheInstance                             2 functions
     g_MirrorCullCameraState                            2 functions
     g_CScriptPtr                                       2 functions
-    g_CGamePtr                                         2 functions
+    g_SimFrameCount                                    2 functions
 
-  .keep files with issues: 73 (these need manual review)
+  .keep files with issues: 74 (these need manual review)
   Raw .cpp files with issues: 33
 
 ====================================================================================================
@@ -241,7 +241,7 @@ core_charactr.cpp_CCharacter_process_FUN_00429870  [.keep]  (3 suspicious global
     NOT found in function reference list
 
   g_CNetGamePtr
-    Used at lines: 73, 74
+    Used at lines: 76, 77
     NOT found in function reference list
 
   g_CStrangerClassInfo
@@ -281,11 +281,11 @@ core_game.cpp_CGame_processFrame_FUN_004da100  [.keep]  (2 suspicious globals)
   File: core/game.cpp
 
   g_ColorCubeLookup
-    Used at lines: 397, 403
+    Used at lines: 408, 414
     NOT found in function reference list
 
   g_ModalDialogActive
-    Used at lines: 157, 168
+    Used at lines: 168, 179
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -293,11 +293,11 @@ core_game.cpp_CGame_runGameSession_FUN_004daf80  [.keep]  (2 suspicious globals)
   File: core/game.cpp
 
   g_CurrentGameTime
-    Used at lines: 222
+    Used at lines: 225
     NOT found in function reference list
 
   g_SimFrameCount
-    Used at lines: 177
+    Used at lines: 180
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -322,6 +322,18 @@ core_main.c_initializeGameSystems_FUN_00507a60  [.keep]  (2 suspicious globals)
 
   g_RendererDllPath
     Used at lines: 54, 55, 57
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_netgame.cpp_CNetGame_runLobby_FUN_00541390  [.keep]  (2 suspicious globals)
+  File: core/netgame.cpp
+
+  g_InputKeyMask
+    Used at lines: 42, 325
+    NOT found in function reference list
+
+  g_SimFrameCount
+    Used at lines: 157
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -477,7 +489,7 @@ core_event.cpp_CEventList_executeCommand_FUN_004aacc0  [.keep]  (1 suspicious gl
   File: core/event.cpp
 
   g_HeroCount
-    Used at lines: 765
+    Used at lines: 767
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -525,7 +537,7 @@ core_game.cpp_CGame_renderOverlay_FUN_004d8040  [.keep]  (1 suspicious globals)
   File: core/game.cpp
 
   g_CDemonCameraInstance
-    Used at lines: 45, 50
+    Used at lines: 46, 51
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -558,6 +570,14 @@ core_game.cpp_hostNetworkGame_FUN_004e2f10  [.keep]  (1 suspicious globals)
 
   g_CKeysPtr
     Used at lines: 18, 18
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_icepick.cpp_CIcePick_setup_FUN_004f7e80  [.keep]  (1 suspicious globals)
+  File: core/icepick.cpp
+
+  g_CNetGamePtr
+    Used at lines: 66
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -601,14 +621,6 @@ core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150  [.keep]  (1 suspiciou
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_netgame.cpp_CNetGame_runLobby_FUN_00541390  [.keep]  (1 suspicious globals)
-  File: core/netgame.cpp
-
-  g_InputKeyMask
-    Used at lines: 42, 322
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
 core_script.cpp_CScript_parseActionTemplate_FUN_00567490  [.keep]  (1 suspicious globals)
   File: core/script.cpp
 
@@ -629,7 +641,7 @@ core_script.cpp_CScript_step_FUN_0055a810  [.keep]  (1 suspicious globals)
   File: core/script.cpp
 
   g_HeroCount
-    Used at lines: 2035
+    Used at lines: 2038
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

@@ -52,7 +52,7 @@ void __cdecl core_charactr_cpp_CCharacter_processSmoking_FUN_0042ea40(CCharacter
           input_local_point =
                core_xform_cpp_transformVector3x4_FUN_005f4dc0
                          (&local_58,&local_64,
-                          (this_ptr->model).bone_transform.bone_world_matrices + iVar3);
+                          (this_ptr->model).bone_transform.bone_model_matrices + iVar3);
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                     (&this_ptr->base,&local_34,input_local_point);
           core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
@@ -72,7 +72,7 @@ void __cdecl core_charactr_cpp_CCharacter_processSmoking_FUN_0042ea40(CCharacter
           local_40.z = 0.5;
           pCVar5 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                              (&local_70,&local_40,
-                              (this_ptr->model).bone_transform.bone_world_matrices + iVar4);
+                              (this_ptr->model).bone_transform.bone_model_matrices + iVar4);
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                     (&this_ptr->base,&local_28,pCVar5);
           iVar3 = core_setcolid_cpp_CDemonSet_isPointInWater_FUN_00574580(g_CDemonSetPtr,&local_28);

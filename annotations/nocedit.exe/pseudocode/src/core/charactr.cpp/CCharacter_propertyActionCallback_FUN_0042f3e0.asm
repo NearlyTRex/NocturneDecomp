@@ -50,7 +50,7 @@
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_0042cdb0
 ;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090
 ;   core_mission.cpp_CDemonMission_findActorByName_FUN_00524030
-;   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+;   core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0059fa20
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
@@ -281,8 +281,8 @@ section .text
     PUSH EAX                            ; 0042f666
     MOV ECX,dword ptr [ESP + 0x90c]     ; 0042f667
     PUSH ECX                            ; 0042f66e
-    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20 ; 0042f66f
-        ;   XREF to: 0059fa20 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0059fa20 ; 0042f66f
+        ;   XREF to: 0059fa20 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0059fa20(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     ADD ESP,0xc                         ; 0042f674
     PUSH EAX                            ; 0042f677
     LEA EAX,[ESP + 0x8e4]               ; 0042f678

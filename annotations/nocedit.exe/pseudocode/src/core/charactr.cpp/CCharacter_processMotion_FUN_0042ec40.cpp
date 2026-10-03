@@ -38,7 +38,7 @@ int __cdecl core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40(CCharacter *
       if (-1 < bone_index) {
         fVar6 = 1.0;
         pCVar1 = (this_ptr->base).vtable._ub;
-        pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+        pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0059fa20
                            (this_ptr_00,&local_3c,bone_index);
         uVar5 = (*pCVar1->processFootstepAtOffset)(&this_ptr->base,pCVar3,fVar6);
         return uVar5;
@@ -54,7 +54,7 @@ int __cdecl core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40(CCharacter *
       if (-1 < bone_index) {
         fVar10 = 1.0;
         pCVar4 = (this_ptr->base).vtable._ub;
-        pCVar7 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+        pCVar7 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0059fa20
                            (this_ptr_00,&local_18,bone_index);
         uVar5 = (*pCVar4->processFootstepAtOffset)(&this_ptr->base,pCVar7,fVar10);
         return uVar5;
@@ -72,7 +72,7 @@ int __cdecl core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40(CCharacter *
         if (-1 < bone_index) {
           fVar10 = 1.7;
           pCVar4 = (this_ptr->base).vtable._ub;
-          pCVar7 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+          pCVar7 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0059fa20
                              (this_ptr_00,&local_24,bone_index);
           uVar5 = (*pCVar4->processFootstepAtOffset)(&this_ptr->base,pCVar7,fVar10);
           return uVar5;
@@ -92,7 +92,7 @@ int __cdecl core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40(CCharacter *
         if (-1 < bone_index) {
           fVar10 = 1.7;
           pCVar4 = (this_ptr->base).vtable._ub;
-          pCVar7 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+          pCVar7 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0059fa20
                              (this_ptr_00,&local_30,bone_index);
           uVar5 = (*pCVar4->processFootstepAtOffset)(&this_ptr->base,pCVar7,fVar10);
           return uVar5;

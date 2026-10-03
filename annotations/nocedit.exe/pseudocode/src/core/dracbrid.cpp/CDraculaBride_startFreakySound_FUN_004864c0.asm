@@ -59,7 +59,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
-;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0059fb00
 ;   core_sound.cpp_CSound_findRandomSoundFile_FUN_005b1ed0
 ;   core_spline.cpp_computeSplineBasis_FUN_005b90a0
 ;   core_spline.cpp_evaluateSplinePoint3D_FUN_005b92d0
@@ -129,8 +129,8 @@ section .text
     PUSH EAX                            ; 0048653d
     LEA EAX,[EBP + 0x158]               ; 0048653e
     PUSH EAX                            ; 00486544
-    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00 ; 00486545
-        ;   XREF to: 0059fb00 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0059fb00 ; 00486545
+        ;   XREF to: 0059fb00 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0059fb00(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     ADD ESP,0xc                         ; 0048654a
     PUSH EAX                            ; 0048654d
     LEA EAX,[ESP + 0x128]               ; 0048654e

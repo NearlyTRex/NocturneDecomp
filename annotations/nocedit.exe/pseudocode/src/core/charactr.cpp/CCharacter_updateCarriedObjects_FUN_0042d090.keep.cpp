@@ -32,7 +32,7 @@ void __cdecl core_charactr_cpp_CCharacter_updateCarriedObjects_FUN_0042d090(CCha
   orient_ptr = &(this_ptr->base).orient;
   location_ptr = &(this_ptr->base).location;
   hand_index = 0;
-  bone_matrices = (this_ptr->model).bone_transform.bone_world_matrices;
+  bone_matrices = (this_ptr->model).bone_transform.bone_model_matrices;
   hand = this_ptr->carry_hands;
   do {
     if (hand->carry_actor != (CDemonActor *)0x0) {

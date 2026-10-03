@@ -27,7 +27,7 @@ void __cdecl core_cloth_cpp_CCloth_computeBoneTransform_FUN_0043a2b0(CCloth *thi
   CVector3f local_18;
   
   core_xform_cpp_inverse_FUN_005f6210
-            ((model_ptr->bone_transform).bone_world_matrices +
+            ((model_ptr->bone_transform).bone_model_matrices +
              this_ptr->collide_bones[bone_index].parent_bone_index,&local_48);
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
             (&local_78,&this_ptr->collide_bones[bone_index].world_matrix,&local_d8);

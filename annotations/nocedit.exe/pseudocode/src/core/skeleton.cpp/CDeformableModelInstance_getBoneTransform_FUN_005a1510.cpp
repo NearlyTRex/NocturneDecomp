@@ -57,30 +57,30 @@ SPose * __cdecl core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_
       local_c->bone_scales[0] = (this_ptr->bone_transform).bone_scales[0];
       this_ptr = (CDeformableModelInstance *)&(this_ptr->motion_controller).current_motion_index;
       bone_transform = (SPose *)&(bone_transform->pose_data).bone_rotations[0].x;
-      pSVar3->bone_world_matrices[0].m[0].w =
-           (local_10->bone_transform).bone_world_matrices[0].m[0].w;
-      pSVar3->bone_world_matrices[0].m[0].x =
-           (local_10->bone_transform).bone_world_matrices[0].m[0].x;
-      pSVar3->bone_world_matrices[0].m[0].y =
-           (local_10->bone_transform).bone_world_matrices[0].m[0].y;
-      pSVar3->bone_world_matrices[0].m[0].z =
-           (local_10->bone_transform).bone_world_matrices[0].m[0].z;
-      pSVar3->bone_world_matrices[0].m[1].w =
-           (local_10->bone_transform).bone_world_matrices[0].m[1].w;
-      pSVar3->bone_world_matrices[0].m[1].x =
-           (local_10->bone_transform).bone_world_matrices[0].m[1].x;
-      pSVar3->bone_world_matrices[0].m[1].y =
-           (local_10->bone_transform).bone_world_matrices[0].m[1].y;
-      pSVar3->bone_world_matrices[0].m[1].z =
-           (local_10->bone_transform).bone_world_matrices[0].m[1].z;
-      pSVar3->bone_world_matrices[0].m[2].w =
-           (local_10->bone_transform).bone_world_matrices[0].m[2].w;
-      pSVar3->bone_world_matrices[0].m[2].x =
-           (local_10->bone_transform).bone_world_matrices[0].m[2].x;
-      pSVar3->bone_world_matrices[0].m[2].y =
-           (local_10->bone_transform).bone_world_matrices[0].m[2].y;
-      pSVar3->bone_world_matrices[0].m[2].z =
-           (local_10->bone_transform).bone_world_matrices[0].m[2].z;
+      pSVar3->bone_model_matrices[0].m[0].w =
+           (local_10->bone_transform).bone_model_matrices[0].m[0].w;
+      pSVar3->bone_model_matrices[0].m[0].x =
+           (local_10->bone_transform).bone_model_matrices[0].m[0].x;
+      pSVar3->bone_model_matrices[0].m[0].y =
+           (local_10->bone_transform).bone_model_matrices[0].m[0].y;
+      pSVar3->bone_model_matrices[0].m[0].z =
+           (local_10->bone_transform).bone_model_matrices[0].m[0].z;
+      pSVar3->bone_model_matrices[0].m[1].w =
+           (local_10->bone_transform).bone_model_matrices[0].m[1].w;
+      pSVar3->bone_model_matrices[0].m[1].x =
+           (local_10->bone_transform).bone_model_matrices[0].m[1].x;
+      pSVar3->bone_model_matrices[0].m[1].y =
+           (local_10->bone_transform).bone_model_matrices[0].m[1].y;
+      pSVar3->bone_model_matrices[0].m[1].z =
+           (local_10->bone_transform).bone_model_matrices[0].m[1].z;
+      pSVar3->bone_model_matrices[0].m[2].w =
+           (local_10->bone_transform).bone_model_matrices[0].m[2].w;
+      pSVar3->bone_model_matrices[0].m[2].x =
+           (local_10->bone_transform).bone_model_matrices[0].m[2].x;
+      pSVar3->bone_model_matrices[0].m[2].y =
+           (local_10->bone_transform).bone_model_matrices[0].m[2].y;
+      pSVar3->bone_model_matrices[0].m[2].z =
+           (local_10->bone_transform).bone_model_matrices[0].m[2].z;
       iVar5 = iVar5 + 1;
       local_10 = (CDeformableModelInstance *)(local_10->motion_controller).current_motion_name;
       local_c = (SPose *)&(local_c->pose_data).root_position.y;

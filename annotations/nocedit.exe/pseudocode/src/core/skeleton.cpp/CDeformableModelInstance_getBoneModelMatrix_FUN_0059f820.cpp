@@ -1,21 +1,27 @@
-// Name: core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820
+// Name: core_skeleton.cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_0059f820
 // Address: 0059f820
-// MANUAL RECONSTRUCTION
 // Address Range: [[0059f820, 0059fa1c] [03fc4d24, 03fc4de4]]
 // Convention: __stack2_esi
-// Signature: CMatrix3x4f * __stack2_esi core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820(CDeformableModelInstance *this_ptr,int bone_index,CMatrix3x4f *out_matrix)
+// Signature: CMatrix3x4f * __stack2_esi core_skeleton_cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_0059f820(CDeformableModelInstance *this_ptr,int bone_index,CMatrix3x4f *out_matrix)
 
 #include "nocturne.h"
 
-CMatrix3x4f * __stack2_esi core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820(CDeformableModelInstance *this_ptr,int bone_index,CMatrix3x4f *out_matrix)
+CMatrix3x4f * __stack2_esi core_skeleton_cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_0059f820(CDeformableModelInstance *this_ptr,int bone_index,CMatrix3x4f *out_matrix)
 
 {
   int bone_index_00;
   CSkeleton *pCVar1;
+  int iVar2;
+  CMatrix3x4f *pCVar3;
+  float *pfVar4;
+  CMatrix3x4f *pCVar5;
+  byte bVar6;
   CMatrix3x4f local_ac;
   CMatrix3x4f local_7c;
+  CMatrix3x4f local_4c;
   CVector3f local_1c;
-
+  int local_10;
+  
   if (bone_index < 0) {
     core_xform_cpp_setRotationScaleIdentity_FUN_005f5190(&local_7c);
     local_7c.m[0].z = (this_ptr->bone_transform).pose_data.root_position.x;
@@ -37,10 +43,10 @@ CMatrix3x4f * __stack2_esi core_skeleton_cpp_CDeformableModelInstance_getBoneWor
            this_ptr->transformed_vertices[bone_index].z;
     }
     else {
-      core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820
+      core_skeleton_cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_0059f820
                 (this_ptr,bone_index_00,&local_ac);
       core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                (&local_1c,this_ptr->transformed_vertices + bone_index,&local_ac);
+                (&local_1c,this_ptr->transformed_vertices + bone_index,&local_4c);
       local_7c.m[0].z = local_1c.x;
       local_7c.m[1].z = local_1c.y;
       local_7c.m[2].z = local_1c.z;
@@ -59,6 +65,17 @@ CMatrix3x4f * __stack2_esi core_skeleton_cpp_CDeformableModelInstance_getBoneWor
       local_7c.m[2].y = local_7c.m[2].y * (this_ptr->bone_transform).bone_scales[bone_index];
     }
   }
-  *out_matrix = local_7c;
+  out_matrix->m[0].w = local_7c.m[0].w;
+  out_matrix->m[0].x = local_7c.m[0].x;
+  out_matrix->m[0].y = local_7c.m[0].y;
+  out_matrix->m[0].z = local_7c.m[0].z;
+  out_matrix->m[1].w = local_7c.m[1].w;
+  out_matrix->m[1].x = local_7c.m[1].x;
+  out_matrix->m[1].y = local_7c.m[1].y;
+  out_matrix->m[1].z = local_7c.m[1].z;
+  out_matrix->m[2].w = local_7c.m[2].w;
+  out_matrix->m[2].x = local_7c.m[2].x;
+  out_matrix->m[2].y = local_7c.m[2].y;
+  out_matrix->m[2].z = local_7c.m[2].z;
   return out_matrix;
 }

@@ -25,7 +25,7 @@ int __cdecl core_werewolf_cpp_CWerewolf_renderTransparent_FUN_005f1820(CWerewolf
   if (this_ptr->eye_glow_phase <= (float)0.80000000000000004) {
     if ((this_ptr->base).base.was_rendered_opaque != 0) {
       core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
-      pCVar1 = (this_ptr->base).base.model.bone_transform.bone_world_matrices +
+      pCVar1 = (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                this_ptr->bone_indices[4];
       local_50 = *pCVar1;
       core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_50,&local_14);

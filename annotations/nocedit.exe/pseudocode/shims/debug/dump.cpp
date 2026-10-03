@@ -453,12 +453,12 @@ static void dump_character_fields(FILE *f, CCharacter *c)
     dn[100] = '\0';
     std::fprintf(f, "descriptive_name: %s\n", dn);
 
-    // Skeleton root pose. The renderer multiplies world-space verts by
-    // bone_world_matrices[i] for each skinned vertex. If the actor's
+    // Skeleton root pose. The renderer multiplies model-space verts by
+    // bone_model_matrices[i] for each skinned vertex. If the actor's
     // orient_matrix rotates per frame but the root bone matrix doesn't,
-    // the body will appear visually static. bone_world_matrices[0] is the
+    // the body will appear visually static. bone_model_matrices[0] is the
     // root bone — usually the pelvis or hips.
-    CMatrix3x4f &root = c->model.bone_transform.bone_world_matrices[0];
+    CMatrix3x4f &root = c->model.bone_transform.bone_model_matrices[0];
     std::fprintf(f, "root_pose_position: (%.4f, %.4f, %.4f)\n",
                  c->model.bone_transform.pose_data.root_position.x,
                  c->model.bone_transform.pose_data.root_position.y,

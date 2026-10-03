@@ -522,7 +522,7 @@ LAB_005bd19f:
           this_ptr_00 = (CCharacter *)(this_ptr->base).base.grabbed_by;
           pCVar11 = (this_ptr_00->base).vtable._uc;
           local_30 = &(this_ptr->base).base.model;
-          pCVar16 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+          pCVar16 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0059fb00
                               (local_30,&local_ec,0);
           iVar20 = (*(pCVar11->_uc).attractActorToward)(this_ptr_00,(CDemonActor *)this_ptr,pCVar16)
           ;
