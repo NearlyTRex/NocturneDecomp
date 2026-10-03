@@ -319,6 +319,10 @@ void nocturne_trigl_envmap_pass_end(void);
 // outside a network game.
 #include "net/net_camera.h"
 
+// Leaving a network game without waiting on the disconnect handshake
+// (nocturne_net_disconnect_notify), reached from CNetGame::disconnect.
+#include "net/net_disconnect.h"
+
 // Guest button presses counted rather than pulsed on the wire
 // (nocturne_net_input_*), reached from CGame::playerControls and the netgame
 // TU. Gated at those call sites on NOCTURNE_AUTHENTIC_NETPLAY.
