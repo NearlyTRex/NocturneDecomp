@@ -1,7 +1,7 @@
 // Name: core_stranger.cpp_CStranger_processMotionEvents_FUN_005bdd20
 // Address: 005bdd20
 // MANUAL RECONSTRUCTION
-// Address Range: [[005bdd20, 005be191] [005be262, 005be428]]
+// Address Range: [[005bdd20, 005be428]]
 // Convention: __cdecl
 // Signature: void __cdecl core_stranger_cpp_CStranger_processMotionEvents_FUN_005bdd20(CStranger *this_ptr,float delta_time)
 

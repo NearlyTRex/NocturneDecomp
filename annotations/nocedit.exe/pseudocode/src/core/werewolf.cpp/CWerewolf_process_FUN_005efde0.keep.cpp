@@ -1,7 +1,7 @@
 // Name: core_werewolf.cpp_CWerewolf_process_FUN_005efde0
 // Address: 005efde0
 // MANUAL RECONSTRUCTION
-// Address Range: [[005efde0, 005efee6] [005eff1e, 005f02e4] [005f0456, 005f0535] [005f05a4, 005f05ff] [005f0704, 005f0721] [005f07c7, 005f1095] [005f10fe, 005f1195]]
+// Address Range: [[005efde0, 005f1195]]
 // Convention: __cdecl
 // Signature: void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_ptr,float delta_time)
 
@@ -194,7 +194,9 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
         if (2 < uVar5) {
           if (sim_target != (CHero *)(this_ptr->base).victim) {
             core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_320);
-            core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(7.0,15.0);
+            local_320.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(7.0,15.0);
+            local_320.attacker = (CDemonActor *)this_ptr;
+            local_320.wielder = (CDemonActor *)this_ptr;
             pSVar22 = &local_320;
             fVar16 = 0.4;
             pCVar18 = core_xform_cpp_transformVector3x4_FUN_005f4dc0

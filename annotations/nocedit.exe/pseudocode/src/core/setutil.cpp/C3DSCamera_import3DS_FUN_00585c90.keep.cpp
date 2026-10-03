@@ -1,9 +1,7 @@
 // Name: core_setutil.cpp_C3DSCamera_import3DS_FUN_00585c90
 // Address: 00585c90
 // MANUAL RECONSTRUCTION
-// Address Range: [[00585c90, 00585d2b]]
-// NOTE: Ghidra's function end address is wrong — actual code extends to 00585feb.
-// The .asm file is truncated; fscanf calls and the lens switch table are past 00585d2b.
+// Address Range: [[00585c90, 00585fef]]
 // Convention: __cdecl
 // Signature: void __cdecl core_setutil_cpp_C3DSCamera_import3DS_FUN_00585c90(C3DSCamera *this_ptr,_FILE *file_handle)
 
@@ -18,8 +16,8 @@ void __cdecl core_setutil_cpp_C3DSCamera_import3DS_FUN_00585c90(C3DSCamera *this
   float10 fVar7;
   float10 fVar6;
   float10 fVar8;
-  uint uStack_240;
-  char local_23c [255];
+  float fStack_240;
+  char local_23c [256];
   char acStack_13c [256];
   float fStack_30;
   float fStack_2c;
@@ -32,14 +30,15 @@ void __cdecl core_setutil_cpp_C3DSCamera_import3DS_FUN_00585c90(C3DSCamera *this
   if (0 < iVar3) {
     local_23c[iVar3 - 1] = '\0';
   }
+  local_23c[0xff] = '\0';
   strcpy(this_ptr->name,local_23c);
   _fscanf(file_handle,"%f,%f,%f\n",&(this_ptr->position).x,&(this_ptr->position).y,
              &(this_ptr->position).z);
   _fscanf(file_handle,"%f,%f,%f\n",&fStack_30,&fStack_2c,&fStack_28);
-  _fscanf(file_handle,"%f\n",(float *)&uStack_240);
   _fscanf(file_handle,"%f\n",&fStack_1c);
+  _fscanf(file_handle,"%f\n",&fStack_240);
   _fscanf(file_handle,"%f\n",&this_ptr->projection_scale);
-  uStack_18 = (uint)ROUND(ROUND(uStack_240));
+  uStack_18 = (uint)ROUND((double)fStack_240);
   if (uStack_18 < 0x2e) {
     if (uStack_18 < 0x17) {
       if (9 < uStack_18) {
@@ -105,7 +104,7 @@ void __cdecl core_setutil_cpp_C3DSCamera_import3DS_FUN_00585c90(C3DSCamera *this
     }
   }
   _sprintf
-            (acStack_13c,"Warning! Camera %s has unknown lens : %f",this_ptr->name,(double)uStack_240);
+            (acStack_13c,"Warning! Camera %s has unknown lens : %f",this_ptr->name,(double)fStack_240);
   engine_special_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_drawText_FUN_00401fd0(acStack_13c,0,0);
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();

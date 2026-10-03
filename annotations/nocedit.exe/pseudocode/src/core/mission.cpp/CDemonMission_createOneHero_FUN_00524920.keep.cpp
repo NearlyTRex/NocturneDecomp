@@ -1,7 +1,7 @@
 // Name: core_mission.cpp_CDemonMission_createOneHero_FUN_00524920
 // Address: 00524920
 // MANUAL RECONSTRUCTION
-// Address Range: [[00524920, 00524a7a]]
+// Address Range: [[00524920, 00524a7e]]
 // Convention: __cdecl
 // Signature: int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_00524920(CDemonMission *this_ptr,int index,int hero_type,CCharacter *existing_actor)
 

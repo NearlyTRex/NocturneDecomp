@@ -1,7 +1,7 @@
 // Name: shape_superopt.cpp_CComplexPolygon_splitToConvex_FUN_005c84c0
 // Address: 005c84c0
 // MANUAL RECONSTRUCTION
-// Address Range: [[005c84c0, 005c8b48]]
+// Address Range: [[005c84c0, 005c8b45]]
 // Convention: __cdecl
 // Signature: int __cdecl shape_superopt_cpp_CComplexPolygon_splitToConvex_FUN_005c84c0(CComplexPolygon *this_ptr)
 

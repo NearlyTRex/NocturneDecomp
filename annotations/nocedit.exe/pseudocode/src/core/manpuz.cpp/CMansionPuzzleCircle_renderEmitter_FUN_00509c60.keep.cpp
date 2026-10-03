@@ -1,7 +1,7 @@
 // Name: core_manpuz.cpp_CMansionPuzzleCircle_renderEmitter_FUN_00509c60
 // Address: 00509c60
 // MANUAL RECONSTRUCTION
-// Address Range: [[00509c60, 00509d12] [00509d3a, 00509d4c]]
+// Address Range: [[00509c60, 00509d4c]]
 // Convention: __cdecl
 // Signature: void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderEmitter_FUN_00509c60(CMansionPuzzleCircle *this_ptr,int panel_index)
 
@@ -16,6 +16,9 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderEmitter_FUN_00509c60(CMa
   local_1c.y = ((float)panel_index * 0.5235988f);
   local_1c.x = 0.0f;
   local_1c.z = 0.0f;
+  local_28.x = 0.0f;
+  local_28.y = 0.0f;
+  local_28.z = this_ptr->panel_radius;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
             (g_CDemonRendererPtr2,&local_1c,(CVector3f *)0x0);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0

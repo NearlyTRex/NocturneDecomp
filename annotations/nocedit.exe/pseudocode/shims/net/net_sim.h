@@ -115,7 +115,7 @@ void nocturne_net_sim_end_hero_setup(int saved_local_hero_index);
 // builds the same one. Outside a network game it is the local hero, which is
 // the shipped behaviour.
 //
-// CMimic::updatePose copies the source's bone rotations, world matrices and
+// CMimic::updatePose copies the source's bone rotations, model matrices and
 // transformed vertices into the mimic index by index, and memcpys the source's
 // cloth vertex list into the mimic's. Both are only meaningful — and the cloth
 // copy only in bounds — when the two carry the same skeleton and the same

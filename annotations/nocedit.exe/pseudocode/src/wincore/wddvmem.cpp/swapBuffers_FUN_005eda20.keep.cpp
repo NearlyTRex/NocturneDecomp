@@ -1,6 +1,9 @@
 // Name: wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
 // Address: 005eda20
 // MANUAL RECONSTRUCTION
+// Address Range: [[005eda20, 005edc4e]]
+// Convention: __cdecl
+// Signature: void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_005eda20(void)
 // Copies the back buffer to the display surface and flips.
 // Three code paths: external renderer, software rendering (32->24 bpp
 // conversion via g_ScreenBufferArray), and DirectDraw Lock/memcpy/Unlock.
