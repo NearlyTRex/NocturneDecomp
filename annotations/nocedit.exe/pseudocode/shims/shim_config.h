@@ -238,6 +238,11 @@ void nocturne_trigl_envmap_pass_end(void);
 // it. Gated at those call sites on NOCTURNE_AUTHENTIC_HERO_ACTIONS.
 #include "game/hero_items.h"
 
+// Status bars sized by a hero's maximum health (nocturne_status_bar_*), noted
+// from CCharacter::process and processDamage and read by CGame::renderOverlay.
+// Gated at those call sites on NOCTURNE_AUTHENTIC_STATUS_BAR_WIDTH.
+#include "game/status_bar.h"
+
 // Name lookup that also sees carried items (nocturne_find_actor_or_carried_item),
 // reached from CDemonMission::generateUniqueActorName and gated there on
 // NOCTURNE_AUTHENTIC_ITEM_NAMES.

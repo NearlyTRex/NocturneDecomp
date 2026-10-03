@@ -112,6 +112,7 @@
 // | `NOCTURNE_AUTHENTIC_CHEAT_MENU` | 0 | addition | a CHEATS entry on Options, and WARPS on pause |
 // | `NOCTURNE_AUTHENTIC_RESOLUTION_LIST` | 0 | addition | one ordered table drives label and stepping |
 // | `NOCTURNE_AUTHENTIC_HUD_SCALE` | 0 | addition | the HUD scales with the framebuffer |
+// | `NOCTURNE_AUTHENTIC_STATUS_BAR_WIDTH` | 0 | addition | a hero's status bar is as long as its maximum health |
 // | `NOCTURNE_AUTHENTIC_WINDOW_MODE` | 0 | addition | Graphics Options picks windowed, fullscreen or borderless |
 // | `NOCTURNE_AUTHENTIC_OS_FONT` | 0 | addition | Graphics Options can pick bitmap or system text |
 // | `NOCTURNE_AUTHENTIC_CONSOLE` | 0 | addition | the console fills the window and keeps scrollback |
@@ -2414,6 +2415,22 @@
 //   Override with -DNOCTURNE_AUTHENTIC_HUD_SCALE=1.
 #ifndef NOCTURNE_AUTHENTIC_HUD_SCALE
 #define NOCTURNE_AUTHENTIC_HUD_SCALE 0
+#endif
+
+// NOCTURNE_AUTHENTIC_STATUS_BAR_WIDTH
+//   The bars CGame::renderOverlay stacks at the bottom left (another network
+//   player when hit, a companion, a hostage, the vampire boss) carry only a
+//   fill fraction, and every one is a quarter of the screen wide.
+//   1: shipped behaviour — every bar is the same width, whatever the
+//      character's maximum health.
+//   0: a hero's bar (any CHero: another player, or a companion) is
+//      max_hit_points / 100 of that width, so IcePick's 300 draws three times
+//      a Stranger's 100, clamped to the screen. Other bars are unchanged.
+//      See shims/game/status_bar.h.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_STATUS_BAR_WIDTH=1.
+#ifndef NOCTURNE_AUTHENTIC_STATUS_BAR_WIDTH
+#define NOCTURNE_AUTHENTIC_STATUS_BAR_WIDTH 0
 #endif
 
 // NOCTURNE_AUTHENTIC_WINDOW_MODE

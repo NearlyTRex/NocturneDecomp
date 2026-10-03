@@ -164,6 +164,7 @@ honest reason its default is what it is.
 | `CHEAT_MENU` | a CHEATS entry on Options, and WARPS on the pause menu |
 | `RESOLUTION_LIST` | one ordered table drives both the label and the stepping |
 | `HUD_SCALE` | HUD bitmaps, text and the goggles scale with the framebuffer |
+| `STATUS_BAR_WIDTH` | another player's or a companion's status bar is as long as its maximum health, 100 being the shipped width |
 | `WINDOW_MODE` | Graphics Options picks windowed, fullscreen or borderless; on, the game is always fullscreen |
 | `OS_FONT` | Graphics Options can pick bitmap or system text |
 | `CONSOLE` | the console fills the window and keeps scrollback |

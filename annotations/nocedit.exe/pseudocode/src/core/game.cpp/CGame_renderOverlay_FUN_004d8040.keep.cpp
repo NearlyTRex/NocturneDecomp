@@ -30,7 +30,8 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004d8040(CGame *this_ptr)
   int local_20;
   char (*local_1c) [256];
   float fVar1;
-  
+  int bar_right;
+
   iVar9 = g_WindowHeight;
   iVar1 = g_WindowWidth;
   if (ABS(this_ptr->message_timer) != 0.0) {
@@ -113,8 +114,13 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004d8040(CGame *this_ptr)
         if (fVar1 < (float)0.34999999999999998) {
           iVar10 = 1;
         }
-        engine_2d_c_fillRectWithBorder_FUN_00403200(iVar8,iVar2,iVar1,iVar9,0,0);
-        iVar6 = (int)ROUND(ROUND((float)((iVar1 - iVar8) + 1) * fVar1));
+#if NOCTURNE_AUTHENTIC_STATUS_BAR_WIDTH
+        bar_right = iVar1;
+#else
+        bar_right = nocturne_status_bar_right(*local_1c,iVar8,iVar1);
+#endif
+        engine_2d_c_fillRectWithBorder_FUN_00403200(iVar8,iVar2,bar_right,iVar9,0,0);
+        iVar6 = (int)ROUND(ROUND((float)((bar_right - iVar8) + 1) * fVar1));
         if (0 < iVar6) {
           engine_2d_c_fillRectColor_FUN_00403170(iVar8,iVar2,iVar6 + iVar8,iVar9,iVar10);
         }

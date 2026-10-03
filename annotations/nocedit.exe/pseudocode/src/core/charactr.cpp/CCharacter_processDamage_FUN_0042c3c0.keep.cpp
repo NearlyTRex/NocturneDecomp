@@ -87,6 +87,9 @@ LAB_0042c429:
     core_game_cpp_CGame_setStatusDisplay_FUN_004e0bf0
               (g_CGamePtr,this_ptr->descriptive_name,
                this_ptr->hit_points / this_ptr->max_hit_points,5.0);
+#if !NOCTURNE_AUTHENTIC_STATUS_BAR_WIDTH
+    nocturne_status_bar_note(this_ptr);
+#endif
   }
   if (0.0 < this_ptr->hit_points) {
     return;
