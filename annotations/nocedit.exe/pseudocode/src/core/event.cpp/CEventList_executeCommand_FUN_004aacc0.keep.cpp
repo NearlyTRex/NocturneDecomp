@@ -760,7 +760,9 @@ LAB_004aaf38:
                                             (&this_ptr_01->base,local_90,(CVector3f *)0x0,-1.0);
                                 }
 #else
-                                if (local_f0 != 0) {
+                                if ((local_f0 != 0) &&
+                                   ((g_CNetGamePtr->connection_type == CONNECTION_NONE) ||
+                                    (nocturne_net_sim_trigger_hero() == (CHero *)0x0))) {
                                   int hero_i;
                                   for (hero_i = 0; hero_i < g_HeroCount; hero_i = hero_i + 1) {
                                     this_ptr_01 = g_HeroActors[hero_i];
@@ -769,6 +771,11 @@ LAB_004aaf38:
                                                 (&this_ptr_01->base,local_90,(CVector3f *)0x0,-1.0);
                                     }
                                   }
+                                }
+                                else if (local_f0 != 0) {
+                                  this_ptr_01 = nocturne_net_sim_trigger_hero();
+                                  (*(((this_ptr_01->base).base.vtable._uc)->_uc).kill)
+                                            (&this_ptr_01->base,local_90,(CVector3f *)0x0,-1.0);
                                 }
 #endif
                               }

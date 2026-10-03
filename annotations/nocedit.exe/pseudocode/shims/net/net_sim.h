@@ -128,6 +128,30 @@ void nocturne_net_sim_end_hero_setup(int saved_local_hero_index);
 // enemy and follows whoever is nearest.
 struct CHero *nocturne_net_sim_mimic_hero(void);
 
+// "WHICH HERO DOES THIS SCRIPT MEAN?"
+//
+// killHero(type) kills g_HeroActors[g_LocalHeroIndex], and the shipped build
+// refuses it in a network game. Every use in the shipped missions is a CTrigger
+// death zone — a ravine, a well, spikes — either as the trigger's own onName or
+// through a flag the trigger raises and the mission script then tests. The hero
+// that should die is the one that set the trigger off.
+//
+// CTrigger::process records that hero, by index, whenever it runs its on-event,
+// and killHero kills it alone. Triggers are simulation code, so every machine
+// records the same index. With no record yet this mission, killHero falls back
+// to every hero.
+
+// Records the hero a trigger's on-event is about. A non-hero actor, or null,
+// leaves the record unchanged. Does nothing outside a network game.
+void nocturne_net_sim_note_trigger_hero(struct CDemonActor *actor);
+
+// The recorded hero, or null if there is none.
+struct CHero *nocturne_net_sim_trigger_hero(void);
+
+// Clears the record. Called from CDemonMission::removeAllActors, so a record
+// never outlives its mission and a fresh process matches one that has played.
+void nocturne_net_sim_forget_trigger_hero(void);
+
 // Simulation code must not call rand() directly either — that is the other half
 // of the same problem, and it lives in rng.h (nocturne_rng_sim).
 

@@ -472,6 +472,10 @@
 //   alone, and it is also what keeps the sequence escapable: nothing else can
 //   end it early once ESC stops doing so.
 //
+//   A network guest is exempt. Its death never ends the session -- it waits for
+//   the host to revive it -- and ESC is the only way to its "Leave network game"
+//   dialog, which the session loop already offers a dead guest.
+//
 //   Override with -DNOCTURNE_AUTHENTIC_DEATH_FADE_SKIP=1.
 #ifndef NOCTURNE_AUTHENTIC_DEATH_FADE_SKIP
 #define NOCTURNE_AUTHENTIC_DEATH_FADE_SKIP 0

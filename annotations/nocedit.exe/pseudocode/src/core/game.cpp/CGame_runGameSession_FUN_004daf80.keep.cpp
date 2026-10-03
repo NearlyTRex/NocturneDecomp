@@ -247,7 +247,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
         }
 #endif
 #if !NOCTURNE_AUTHENTIC_DEATH_FADE_SKIP
-        if (iVar7 != 0) {
+        if ((iVar7 != 0) && (g_CNetGamePtr->connection_type != CONNECTION_CLIENT)) {
           EVar6 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
                             (&g_HeroActors[g_LocalHeroIndex]->base);
           if (1 < (int)EVar6) {

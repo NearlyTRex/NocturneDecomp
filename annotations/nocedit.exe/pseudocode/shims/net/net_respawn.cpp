@@ -337,6 +337,11 @@ extern "C" int nocturne_net_respawn_hero_in_world(CHero *hero)
         (g_CNetGamePtr->connection_type == CONNECTION_NONE)) {
         return 1;
     }
+    // A hero that exploded or was dismembered is ACTOR_DESTROYED: its body is
+    // the detached parts now, and drawing the hero too freezes it in place.
+    if ((hero->base).base.lifecycle_state == ACTOR_DESTROYED) {
+        return 0;
+    }
     return (0 <= (hero->base).base.location.area_id) ? 1 : 0;
 }
 
