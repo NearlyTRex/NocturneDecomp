@@ -153,6 +153,9 @@ LAB_005415cb:
           iVar6 = iVar6 + 1;
         } while (iVar6 < this_ptr->player_count);
       }
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+      g_SimFrameCount = 0;
+#endif
       this_ptr->has_pending_sim_frame = 0;
       if (this_ptr->connection_type == CONNECTION_HOST) {
         this_ptr->players[this_ptr->local_player_index].player_id = INT_02f7c8c4;

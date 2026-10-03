@@ -370,6 +370,11 @@ LAB_00541015:
       nocturne_net_weapon_on_packet(packet,(packet->header).size + 3);
     }
     break;
+  case NOCTURNE_NET_PACKET_CAMERA:
+    if (-1 < (int)uVar2) {
+      nocturne_net_camera_on_packet(packet,(packet->header).size + 3);
+    }
+    break;
   case NOCTURNE_NET_PACKET_CHEATS:
     if ((this_ptr->connection_type == CONNECTION_CLIENT) &&
        (uVar2 == this_ptr->server_player_index)) {
