@@ -77,11 +77,41 @@
 // CDynamite::lightFuse - so the stick leaves her hand with fuse_timer -1,
 // CFireEffect::createToss clamps that to 0.0001 and the toss explodes on its
 // first tick, where it left her hand. The fuse is lit on the first frame of the
-// charge. It burns 3.5 s and the charge releases itself at 2 s, so a throw
-// always carries at least 1.5 s.
+// charge, and it burns 3.5 s.
 //
-// A fuse that burns out in her hand anyway - she holstered or was grabbed with
-// the stick lit - is dropped at her feet with no velocity, as
+// The throw follows the Stranger's rules. CStranger::autoAimAtThreat gives his
+// dynamite no auto-aim target and no yaw: look input moves the aim between 60
+// degrees up and 70 degrees down, and the throw goes along a pitch that eases
+// after it at half pi a second, with no lift, so a level aim throws flat. His
+// charge runs from 10 at 25 a second to 70 and holds there while fire is held.
+// Hers aims the same way, and her charge stops at 70 rather than releasing
+// itself at 60; a stick held until the fuse burns out is dropped.
+//
+// He carries the stick at his side and shows no aim until the fuse is lit.
+// Her aim weight carries both her raised arm and her head and body turning to
+// the aim, so with dynamite it rises only through the charge and the throw:
+// drawn and idle, her arm follows her walk and stand with the stick in hand,
+// and look input moves nothing visible. After a throw he plays his draw to
+// take the next stick. She reaches to her hip with the frame of her draw
+// motion where it takes the weapon from there, without the draw and holster
+// sounds: the hand goes to her hip with the thrown stick hidden and comes back
+// with the next. With none left, the empty hand shows no stick. Fire reads as
+// released until a stick is in hand, so a held button cannot light one early.
+//
+// She shouldered the stick like a rifle and threw it flat. Her pose function
+// gives every weapon that is not a CGun the two-handed long-gun pose, so dynamite
+// takes the one-armed pistol pose instead. Over it, the charge raises her right
+// arm in front of her to above the shoulder, and the release swings it forward
+// and down to a follow-through, with the stick leaving her hand partway
+// through: the throw waits in fire_state 2 until the arm reaches the release
+// point. The arm is placed the way her pistol aim places it, pointed along a
+// pitch, so the swing is a sweep of that pitch, and it fades with her draw
+// blend, so holstering lowers it. Holstering also cancels the wind-up and the
+// swing; fire_state stays 2 with the weapon away, and a stick still owed a
+// throw swings again when she redraws.
+//
+// A fuse that burns out in her hand - she held the charge, holstered or was
+// grabbed with the stick lit - is dropped at her feet with no velocity, as
 // CStranger::processWeaponTick drops his.
 //
 // While she charges, the throw is previewed with the Stranger's arc:
@@ -129,9 +159,46 @@ void nocturne_hero_gabriella_process_motion(struct CGabriella *gabriella, float 
 void nocturne_hero_gabriella_charge_dynamite(struct CGabriella *gabriella,
                                              struct CDynamite *dynamite);
 
-// From CGabriella::process after the selected weapon's process: drops a stick
-// whose fuse burned out in her hand.
-void nocturne_hero_gabriella_dynamite_tick(struct CGabriella *gabriella);
+// From CGabriella::process after the selected weapon's process: steps the
+// wind-up and swing, and drops a stick whose fuse burned out in her hand.
+void nocturne_hero_gabriella_dynamite_tick(struct CGabriella *gabriella, float delta_time);
+
+// Nonzero when her selected weapon is dynamite. CGabriella::updateWeaponAndAimAnimation
+// gives it her one-armed CGun pose rather than the two-handed one, and
+// CGabriella::updateAimTracking keeps look input out of its aim.
+int nocturne_hero_gabriella_holds_dynamite(struct CGabriella *gabriella);
+
+// From the top of CGabriella::updateAimTracking: with dynamite selected, aims
+// as CStranger::autoAimAtThreat aims his throw and returns 1, so the function
+// returns; otherwise 0.
+int nocturne_hero_gabriella_dynamite_aim(struct CGabriella *gabriella, float delta_time,
+                                         int is_holstering);
+
+// From CGabriella::process once canFireWeapon passes: 1 when the throw may go.
+// For dynamite thrown by a player, the first call starts the swing and the
+// stick goes when the arm reaches its release point; any other weapon, and an
+// NPC, fires at once.
+int nocturne_hero_gabriella_throw_ready(struct CGabriella *gabriella);
+
+// From the end of CGabriella::updateWeaponAndAimAnimation: the throwing arm's
+// wind-up or swing, over the pose the function has built.
+void nocturne_hero_gabriella_pose_throw(struct CGabriella *gabriella);
+
+// From CGabriella::process in place of its draw_blend step: while she fetches
+// the next stick after a throw, drives draw_blend through the holster and back
+// without the draw and holster sounds, and returns 1; otherwise 0.
+int nocturne_hero_gabriella_refetch_dynamite(struct CGabriella *gabriella, float delta_time);
+
+// From CGabriella::updateWeaponAndAimAnimation's one-armed pose: while she
+// fetches the next stick, sets the draw motion's weight and marker to reach
+// straight to her hip and back, and returns 1; otherwise 0.
+int nocturne_hero_gabriella_refetch_pose(struct CGabriella *gabriella, float *weight,
+                                         float *marker);
+
+// From CGabriella::renderOpaque before it draws the selected weapon: nonzero
+// while dynamite is in her hand with no stick in it - thrown and not yet
+// replaced, or none left.
+int nocturne_hero_gabriella_weapon_hidden(struct CGabriella *gabriella);
 
 // From CGabriella::renderOpaque in place of CDynamite::renderAimBeam: the
 // throw's arc from the stick to the first thing it would hit.

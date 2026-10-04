@@ -50,7 +50,12 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d
   CDeformableModel_MotionBlendWeightFunc *blend_callback;
   float fVar1;
   CDeformableModel_MotionBlendWeightFunc *pcVar12;
-  
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+  int refetch;
+  float refetch_weight;
+  float refetch_marker;
+#endif
+
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
             (&(this_ptr->base).base.model);
   local_78.x = this_ptr->aim_pitch;
@@ -70,6 +75,11 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d
     }
     iVar2 = core_actor_cpp_isOfClass_FUN_0040c6d0
                       ((CDemonActor *)(this_ptr->base).inventory.selected_weapon,"CGun");
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+    if ((iVar2 == 0) && (nocturne_hero_gabriella_holds_dynamite(this_ptr) != 0)) {
+      iVar2 = 1;
+    }
+#endif
     if (iVar2 == 0) {
       if ((float)0.001 < local_28) {
         local_24 = this_ptr->draw_blend;
@@ -153,6 +163,12 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d
       pfVar2[1] = local_1c4.x;
       pfVar2[2] = local_1c4.y;
       pfVar2[3] = local_1c4.z;
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+      refetch = nocturne_hero_gabriella_refetch_pose(this_ptr,&refetch_weight,&refetch_marker);
+      if (refetch != 0) {
+        local_28 = refetch_weight;
+      }
+#endif
       if ((float)0.001 < local_28) {
         local_20 = this_ptr->draw_blend;
         if (0.82f < local_20) {
@@ -165,6 +181,11 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d
         if (1.0 < local_20) {
           local_20 = 1.0;
         }
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+        if (refetch != 0) {
+          local_20 = refetch_marker;
+        }
+#endif
         pCVar1 = &(this_ptr->base).base.model;
         fVar3 = core_motion_cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
                           (&pCVar1->motion_controller,g_GabriellaIndices[0xd],local_20);
@@ -205,6 +226,9 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d
       }
     }
   }
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+  nocturne_hero_gabriella_pose_throw(this_ptr);
+#endif
   if (local_78.x < -1.22173f) {
     local_78.x = -1.2217305;
   }

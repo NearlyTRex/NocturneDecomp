@@ -48,6 +48,11 @@ void __cdecl core_gabriela_cpp_CGabriella_updateAimTracking_FUN_004d6540(CGabrie
      ) {
     is_holstering = 1;
   }
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+  if (nocturne_hero_gabriella_dynamite_aim(this_ptr,delta_time,is_holstering) != 0) {
+    return;
+  }
+#endif
 #if !NOCTURNE_AUTHENTIC_HERO_LOOK_AIM
   look_aim = (((this_ptr->base).control_type != HERO_CONTROL_AI) &&
               (this_ptr->weapon_state_flags != 0) && (is_holstering == 0));

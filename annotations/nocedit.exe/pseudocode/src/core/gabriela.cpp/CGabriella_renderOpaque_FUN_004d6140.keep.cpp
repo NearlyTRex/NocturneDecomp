@@ -24,6 +24,11 @@ int __cdecl core_gabriela_cpp_CGabriella_renderOpaque_FUN_004d6140(CGabriella *t
     ;
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
     pCVar4 = (this_ptr->base).inventory.selected_weapon;
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+    if (nocturne_hero_gabriella_weapon_hidden(this_ptr) != 0) {
+      return iVar5;
+    }
+#endif
     if (((pCVar4 != (CWeapon *)0x0) &&
         ((*((pCVar4->base).vtable._ub)->renderOpaque)(&pCVar4->base),
         (float)0.90000000000000002 < this_ptr->draw_blend)) &&

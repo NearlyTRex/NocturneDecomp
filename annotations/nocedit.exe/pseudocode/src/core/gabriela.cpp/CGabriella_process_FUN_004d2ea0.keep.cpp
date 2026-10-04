@@ -466,6 +466,11 @@ LAB_004d3cb4:
       this_ptr->holster_blend = 1.0;
     }
   }
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+  if (nocturne_hero_gabriella_refetch_dynamite(this_ptr,delta_time) != 0) {
+  }
+  else
+#endif
   if ((this_ptr->weapon_state_flags & 2) == 0) {
     fVar10 = this_ptr->draw_blend;
     fVar11 = fVar10 - delta_time / 1.2f;
@@ -637,11 +642,17 @@ LAB_004d344b:
       else {
         fVar10 = delta_time * (float)25 + this_ptr->dynamite_charge_power;
         this_ptr->dynamite_charge_power = fVar10;
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+        if (70.0f < fVar10) {
+          this_ptr->dynamite_charge_power = 70.0f;
+        }
+#else
         if (60.0f < fVar10) {
           (this_ptr->base).player_input.action_state.fire = 0;
           this_ptr->fire_state = 2;
           this_ptr->dynamite_charge_power = 60.0f;
         }
+#endif
       }
       local_e8.x = this_ptr->aim_pitch;
       local_e8.z = 0.0;
@@ -663,6 +674,11 @@ LAB_004d344b:
 LAB_004d363a:
     this_ptr->dynamite_charge_power = 10.0f;
     iVar17 = core_gabriela_cpp_CGabriella_canFireWeapon_FUN_004d5f70(this_ptr);
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+    if ((iVar17 != 0) && (nocturne_hero_gabriella_throw_ready(this_ptr) == 0)) {
+      iVar17 = 0;
+    }
+#endif
     if (iVar17 == 0) goto LAB_004d4152;
     this_ptr->fire_state = 1;
   }
@@ -688,7 +704,7 @@ LAB_004d368e:
   this_ptr_01 = (this_ptr->base).inventory.selected_weapon;
   (*((this_ptr_01->base).vtable._ub)->process)(&this_ptr_01->base,delta_time);
 #if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
-  nocturne_hero_gabriella_dynamite_tick(this_ptr);
+  nocturne_hero_gabriella_dynamite_tick(this_ptr,delta_time);
 #endif
   if ((((this_ptr->base).inventory.selected_weapon)->base).is_transparent == 0) {
     return;

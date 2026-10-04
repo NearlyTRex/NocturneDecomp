@@ -1226,8 +1226,9 @@
 //      her weapon away and nothing else to act on, the action button kicks an
 //      enemy in reach in front of her for 10-15 damage and a short shove;
 //      her dynamite charge lights the fuse, which her code never did, so the
-//      stick no longer explodes as it leaves her hand, and the charge shows
-//      the Stranger's throw arc (hero_gabriella.h). A player's
+//      stick no longer explodes as it leaves her hand; she aims and charges
+//      the throw by the Stranger's rules, throws it one-armed overhand, and
+//      the charge shows his throw arc (hero_gabriella.h). A player's
 //      Scat keeps firing while fire is held; his AI is unchanged. Moloch's fire
 //      strikes in demon form, alternating two of his unused attack motions
 //      (hero_moloch.h). The Colonel's draw and fire layer his unused "draw" and
