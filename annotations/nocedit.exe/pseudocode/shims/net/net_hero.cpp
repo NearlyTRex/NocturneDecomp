@@ -25,13 +25,15 @@ static const char *const k_hero_names[] = {
 
 #define HERO_NAME_COUNT ((int)(sizeof(k_hero_names) / sizeof(k_hero_names[0])))
 
-// Which of them the lobby will hand out. Baron is excluded. The entry stays in
-// the name table so a hero_number that arrives as Baron over the wire still
-// prints as one rather than as "?" — this gates the selector, not the game.
+// Which of them the lobby will hand out. Only guests have a selector, so this
+// is the guest roster: the Stranger is the host's hero and Baron is excluded.
+// Both entries stay in the name table so a hero_number that arrives as either
+// over the wire still prints rather than as "?" — this gates the selector, not
+// the game.
 static const char k_hero_selectable[HERO_NAME_COUNT] = {
     1,  // HERO_TYPE_GABRIELLA
     1,  // HERO_TYPE_SVETLANA
-    1,  // HERO_TYPE_STRANGER
+    0,  // HERO_TYPE_STRANGER
     1,  // HERO_TYPE_SCAT
     0,  // HERO_TYPE_BARON
     1,  // HERO_TYPE_ICEPICK
@@ -99,4 +101,15 @@ int nocturne_net_hero_cycle(int hero_type, int direction)
         }
     }
     return hero_type;
+}
+
+int nocturne_net_hero_guest_default(int hero_type)
+{
+    if (hero_type >= 0 && hero_type < HERO_NAME_COUNT &&
+        k_hero_selectable[hero_type] != 0) {
+        return hero_type;
+    }
+    // Stepping forward from one before the first entry lands on the first
+    // selectable hero.
+    return nocturne_net_hero_cycle(HERO_NAME_COUNT - 1, 1);
 }

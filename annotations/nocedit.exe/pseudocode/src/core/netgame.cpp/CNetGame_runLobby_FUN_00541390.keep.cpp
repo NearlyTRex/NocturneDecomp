@@ -299,7 +299,15 @@ LAB_005415cb:
         if (iVar6 != 0) {
           hero_cycle_dir = 1;
         }
+        iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD6);
+        if (iVar6 != 0) {
+          hero_cycle_dir = 1;
+        }
         iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_LEFT);
+        if (iVar6 != 0) {
+          hero_cycle_dir = -1;
+        }
+        iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD4);
         if (iVar6 != 0) {
           hero_cycle_dir = -1;
         }
