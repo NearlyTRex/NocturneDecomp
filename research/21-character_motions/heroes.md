@@ -173,8 +173,10 @@ No signals anywhere, not even footsteps. DRAW and SHOOT have motions and no rout
 in, and nothing in the shipped game plays them: `CColonel_process_FUN_0043fa00` only
 toggles `guns_drawn` on draw and swallows fire once it is set. Its grab struggle asks
 for state 9, which is DRAW, not PUSHOFF (0x0b), so it never plays either.
-`NOCTURNE_AUTHENTIC_HERO_ACTIONS` jumps to "draw" and "shoot" and fires the pistol
-`NOCTURNE_AUTHENTIC_HERO_WEAPON` gives him (`shims/game/hero_colonel.h`).
+`NOCTURNE_AUTHENTIC_HERO_ACTIONS` layers "draw" and "shoot" from Spine2 up and fires
+the pistol `NOCTURNE_AUTHENTIC_HERO_WEAPON` gives him (`shims/game/hero_colonel.h`).
+Entering either state would stop him: neither has root motion, and his process reads
+walk input only in STAND, WALK, RUN and BACKUP.
 
 ### Moloch
 
@@ -475,7 +477,7 @@ So, per state:
 | Svetlana | DRAW, THROW, BIGTHROW, STANDTOSIT | nothing |
 | Baron | TEST | never entered; eight of its motions play as script gestures |
 | IcePick | SHOOT | never entered; "shoot" frame 0 is the layered aiming pose |
-| Colonel | DRAW, SHOOT | nothing in the shipped game; jumped to by `shims/game/hero_colonel.h` |
+| Colonel | DRAW, SHOOT | never entered; `shims/game/hero_colonel.h` plays both motions as upper-body layers |
 
 The audit covers every `jumpToMotion` and `jumpToMotionByName` call site, the
 `setModelState`, `slamModelToMotion` and `gesture` calls in the shipped `.SCR` and

@@ -71,11 +71,12 @@ struct CDemonActor;
 // What a player hero may hold, by class:
 //
 //   Stranger          everything
-//   Scat, Gabriella   guns, their ammo, dynamite and the Baron. No melee: they
-//                     fire through the selected weapon and CMelee::fire is an
+//   Gabriella         guns, their ammo, dynamite and the Baron. No melee: she
+//                     fires through the selected weapon and CMelee::fire is an
 //                     assert. No gas mask: only CStranger puts it on.
-//   everyone else     health items only. The Colonel's sidearm is installed
-//                     directly, so it is the one gun he holds.
+//   everyone else     health items only. Scat's Baron and network pistol and
+//                     the Colonel's sidearm are installed directly, so they
+//                     are the only weapons those two hold.
 //
 // Keys and other plain items are open to every class, since doors and events
 // test them on any hero. NPCs are never restricted.

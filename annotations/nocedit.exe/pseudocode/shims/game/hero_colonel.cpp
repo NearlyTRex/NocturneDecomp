@@ -20,10 +20,13 @@ namespace {
 const int kRightUpperArmBone = 4;
 const int kRightForeArmBone = 6;
 const int kRightHandBone = 0xe;
+const int kSpine2Bone = 0xf;
 
-// COLONEL.SKL state indices.
-const int kStateDraw = 9;
-const int kStateShoot = 10;
+// The last COLONEL.SKL locomotion state: STAND, WALK, RUN, BACKUP.
+const int kLastLocomotionState = 3;
+
+// A layer clock that is not running.
+const float kLayerIdle = -1.0f;
 
 // CScat::scoreAimTarget's reach: a new target within 30, the current one kept
 // out to 35. The cone is the Colonel's own: 30 degrees either side, 35 to keep.
@@ -44,10 +47,6 @@ const float kAimWeightRate = 4.0f;
 // CScat::renderOpaque and CStranger::renderOpaque test their layer weight.
 const float kAimReadyWeight = 0.95f;
 
-// "draw" exits to STAND at frame 17. Holstering plays it backwards from just
-// short of there, so the forward advance never reaches the exit.
-const float kHolsterStartFrame = 15.0f;
-
 struct SColonelAim {
     CColonel *colonel;
     float aim_yaw;       // relative to his facing
@@ -55,6 +54,8 @@ struct SColonelAim {
     float look_pitch;    // from look input, when there is no target
     float weight;        // how far the arm is raised onto the aim
     int   holstering;    // "draw" is playing backwards
+    float draw_frame;    // frame of the "draw" layer, or kLayerIdle
+    float shoot_frame;   // frame of the "shoot" layer, or kLayerIdle
     // Compared by address only, against the live character list; never read
     // through, so a deleted target cannot be touched.
     const CCharacter *target;
@@ -99,6 +100,8 @@ SColonelAim *aim_state(CColonel *colonel)
     first_free->look_pitch = 0.0f;
     first_free->weight = 0.0f;
     first_free->holstering = 0;
+    first_free->draw_frame = kLayerIdle;
+    first_free->shoot_frame = kLayerIdle;
     first_free->target = (const CCharacter *)0x0;
     return first_free;
 }
@@ -126,10 +129,46 @@ int current_state(CColonel *colonel)
         ->state_index;
 }
 
-void jump_to(CColonel *colonel, const char *motion_name, float frame)
+int motion_index(CColonel *colonel, const char *motion_name)
 {
-    core_motion_cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0
-        (controller(colonel), (char *)motion_name, frame);
+    return core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460
+        (core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0(controller(colonel)),
+         (char *)motion_name, 1);
+}
+
+const SMotion *motion_at(CColonel *colonel, int index)
+{
+    return &controller(colonel)->motion_list_ptr->motions[index];
+}
+
+// Poses `motion_name` at `frame` from Spine2 up, over whatever the controller
+// played this frame, as CIcePick::updateShootBlend layers "shoot" from Spine1.
+// The legs are left on the locomotion motion, so he keeps walking.
+void layer_motion(CColonel *colonel, const char *motion_name, float frame)
+{
+    core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
+        (&(colonel->base).base.model, motion_index(colonel, motion_name), frame, 1.0f,
+         g_ColonelIndices[kSpine2Bone], core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0);
+}
+
+// Steps a layer clock by `direction` frames per frame of the motion's own fps.
+// Returns kLayerIdle once it runs off either end.
+float advance_layer(CColonel *colonel, const char *motion_name, float frame,
+                    float direction, float delta_time)
+{
+    const SMotion *motion;
+
+    motion = motion_at(colonel, motion_index(colonel, motion_name));
+    frame = frame + direction * motion->fps * delta_time;
+    if ((frame < 0.0f) || ((float)(motion->frame_count - 1) < frame)) {
+        return kLayerIdle;
+    }
+    return frame;
+}
+
+float last_frame(CColonel *colonel, const char *motion_name)
+{
+    return (float)(motion_at(colonel, motion_index(colonel, motion_name))->frame_count - 1);
 }
 
 float approach(float value, float target, float step)
@@ -392,82 +431,62 @@ void point_gun_at_shot(CColonel *colonel, CWeapon *weapon, SColonelAim *aim)
 
 } // namespace
 
-extern "C" void nocturne_colonel_draw(CColonel *colonel)
+extern "C" int nocturne_colonel_draw(CColonel *colonel)
 {
     CWeapon *weapon;
     SColonelAim *aim;
 
     if (colonel == (CColonel *)0x0) {
-        return;
+        return 0;
     }
     weapon = sidearm(colonel);
     if (weapon == (CWeapon *)0x0) {
-        return;
+        return 0;
     }
     aim = aim_state(colonel);
+    aim->shoot_frame = kLayerIdle;
     if (colonel->guns_drawn != 0) {
         (*(((weapon->base).vtable._uw)->_uw).setWeaponState)(weapon, WEAPON_STATE_IN_HAND);
+        // A draw that interrupts a holster picks up where the holster got to.
+        if ((aim->holstering == 0) || (aim->draw_frame == kLayerIdle)) {
+            aim->draw_frame = 0.0f;
+        }
         aim->holstering = 0;
-        jump_to(colonel, "draw", 0.0f);
     }
     else {
         // The pistol stays in hand until "draw" has played back to its start.
+        if (aim->draw_frame == kLayerIdle) {
+            aim->draw_frame = last_frame(colonel, "draw");
+        }
         aim->holstering = 1;
         aim->weight = 0.0f;
-        jump_to(colonel, "draw", kHolsterStartFrame);
     }
+    return 1;
 }
 
 extern "C" int nocturne_colonel_fire(CColonel *colonel)
 {
     CWeapon *weapon;
+    SColonelAim *aim;
 
     if ((colonel == (CColonel *)0x0) || (colonel->guns_drawn == 0)) {
         return 0;
     }
     weapon = sidearm(colonel);
-    if ((weapon == (CWeapon *)0x0) ||
+    if (weapon == (CWeapon *)0x0) {
+        return 0;
+    }
+    aim = aim_state(colonel);
+    // One shot per "shoot", and none until "draw" has finished.
+    if ((aim->draw_frame != kLayerIdle) || (aim->shoot_frame != kLayerIdle) ||
         ((*(((weapon->base).vtable._uw)->_uw).isReadyToFire)(weapon) == 0)) {
         return 0;
     }
-    point_gun_at_shot(colonel, weapon, aim_state(colonel));
+    point_gun_at_shot(colonel, weapon, aim);
     (*(((weapon->base).vtable._uw)->_uw).fire)(weapon);
     nocturne_hero_reload_extra_gun(&colonel->base, weapon);
-    jump_to(colonel, "shoot", 0.0f);
+    aim->shoot_frame = 0.0f;
     return 1;
-}
-
-extern "C" void nocturne_colonel_pre_animate(CColonel *colonel, float delta_time)
-{
-    CMotionController *motion;
-    SColonelAim *aim;
-    float frame;
-
-    if ((colonel == (CColonel *)0x0) || (sidearm(colonel) == (CWeapon *)0x0)) {
-        return;
-    }
-    aim = aim_state(colonel);
-    if (aim->holstering == 0) {
-        return;
-    }
-    // Anything that took him out of "draw" - a grab, a death - ends it.
-    if (current_state(colonel) != kStateDraw) {
-        aim->holstering = 0;
-        return;
-    }
-    motion = controller(colonel);
-    // The controller has already stepped the frame forward this tick; take
-    // that step back and one more.
-    frame = motion->current_frame_number -
-            2.0f * delta_time *
-                core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(motion)->fps;
-    if (0.0f < frame) {
-        motion->current_frame_number = frame;
-        return;
-    }
-    aim->holstering = 0;
-    jump_to(colonel, "stand", 0.0f);
-    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(motion, 0, 0);
 }
 
 extern "C" void nocturne_colonel_update_gun(CColonel *colonel, float delta_time)
@@ -479,6 +498,7 @@ extern "C" void nocturne_colonel_update_gun(CColonel *colonel, float delta_time)
     float wanted_pitch;
     float step;
     int state;
+    int locomotion;
 
     if (colonel == (CColonel *)0x0) {
         return;
@@ -489,6 +509,25 @@ extern "C" void nocturne_colonel_update_gun(CColonel *colonel, float delta_time)
     }
     aim = aim_state(colonel);
     state = current_state(colonel);
+    locomotion = (state <= kLastLocomotionState);
+
+    // The layers ride on locomotion only; a grab or a death plays whole.
+    if (aim->draw_frame != kLayerIdle) {
+        if (locomotion != 0) {
+            layer_motion(colonel, "draw", aim->draw_frame);
+        }
+        aim->draw_frame = advance_layer(colonel, "draw", aim->draw_frame,
+                                        (aim->holstering != 0) ? -1.0f : 1.0f, delta_time);
+        if (aim->draw_frame == kLayerIdle) {
+            aim->holstering = 0;
+        }
+    }
+    if (aim->shoot_frame != kLayerIdle) {
+        if (locomotion != 0) {
+            layer_motion(colonel, "shoot", aim->shoot_frame);
+        }
+        aim->shoot_frame = advance_layer(colonel, "shoot", aim->shoot_frame, 1.0f, delta_time);
+    }
 
     if (colonel->guns_drawn != 0) {
         aim->look_pitch += (colonel->base).player_input.look_up_down_speed * kLookPitchRate *
@@ -507,7 +546,7 @@ extern "C" void nocturne_colonel_update_gun(CColonel *colonel, float delta_time)
     // Raised while the pistol is out and he is standing, moving or shooting;
     // lowered for "draw", a hit, a grab.
     wanted_weight = 0.0f;
-    if ((colonel->guns_drawn != 0) && ((state <= 3) || (state == kStateShoot))) {
+    if ((colonel->guns_drawn != 0) && (locomotion != 0) && (aim->draw_frame == kLayerIdle)) {
         wanted_weight = 1.0f;
     }
     aim->weight = approach(aim->weight, wanted_weight, kAimWeightRate * delta_time);
@@ -548,9 +587,8 @@ extern "C" void nocturne_colonel_render_gun(CColonel *colonel)
 
 #else
 
-extern "C" void nocturne_colonel_draw(CColonel *) {}
+extern "C" int nocturne_colonel_draw(CColonel *) { return 0; }
 extern "C" int nocturne_colonel_fire(CColonel *) { return 0; }
-extern "C" void nocturne_colonel_pre_animate(CColonel *, float) {}
 extern "C" void nocturne_colonel_update_gun(CColonel *, float) {}
 extern "C" void nocturne_colonel_render_gun(CColonel *) {}
 

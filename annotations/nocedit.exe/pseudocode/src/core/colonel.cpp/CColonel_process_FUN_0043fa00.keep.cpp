@@ -85,10 +85,14 @@ void __cdecl core_colonel_cpp_CColonel_process_FUN_0043fa00(CColonel *this_ptr,f
         if ((this_ptr->base).player_input.action_state.draw != 0) {
           iVar9 = this_ptr->guns_drawn;
           (this_ptr->base).player_input.action_state.draw = 0;
+#if NOCTURNE_AUTHENTIC_HERO_ACTIONS
           iVar6 = 0;
+#endif
           this_ptr->guns_drawn = (uint)(iVar9 == 0);
 #if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
-          nocturne_colonel_draw(this_ptr);
+          if (nocturne_colonel_draw(this_ptr) == 0) {
+            iVar6 = 0;
+          }
 #endif
         }
         if ((this_ptr->base).player_input.action_state.fire != 0) {
@@ -231,9 +235,6 @@ LAB_0043fc01:
 LAB_0043fc14:
   core_charactr_cpp_CCharacter_preProcess_FUN_00429820((CCharacter *)this_ptr);
   pCVar2 = &(this_ptr->base).base.model;
-#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
-  nocturne_colonel_pre_animate(this_ptr,delta_time);
-#endif
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(pCVar2);
 #if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
   nocturne_colonel_update_gun(this_ptr,delta_time);

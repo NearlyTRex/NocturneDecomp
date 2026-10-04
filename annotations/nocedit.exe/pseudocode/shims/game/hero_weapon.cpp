@@ -343,8 +343,7 @@ extern "C" int nocturne_hero_can_hold_kind(CHero *hero, EHeroItemKind kind)
     if (hero_is_class(hero, g_CStrangerClassInfo.name_hash) != 0) {
         return 1;
     }
-    if ((hero_is_class(hero, g_CScatClassInfo.name_hash) != 0) ||
-        (hero_is_class(hero, g_CGabriellaClassInfo.name_hash) != 0)) {
+    if (hero_is_class(hero, g_CGabriellaClassInfo.name_hash) != 0) {
         return kind == HERO_ITEM_GUN;
     }
     return 0;

@@ -1107,10 +1107,11 @@
 //      CStranger's alone, so a finite magazine would be spent permanently the
 //      first time it emptied.
 //      Player heroes are also kept from holding what their class cannot use,
-//      both from the cheat menu and from Gabriella's own pickups: Scat and
-//      Gabriella take guns but no melee weapon (CMelee::fire is an assert) and
-//      no gas mask; the melee classes take health items only. The table is in
-//      hero_weapon.h.
+//      both from the cheat menu and from Gabriella's own pickups: Gabriella
+//      takes guns but no melee weapon (CMelee::fire is an assert) and no gas
+//      mask; every other class but the Stranger takes health items only, so
+//      Scat and the Colonel keep just the weapons installed for them. The
+//      table is in hero_weapon.h.
 //
 //   Override with -DNOCTURNE_AUTHENTIC_HERO_WEAPON=1.
 #ifndef NOCTURNE_AUTHENTIC_HERO_WEAPON
