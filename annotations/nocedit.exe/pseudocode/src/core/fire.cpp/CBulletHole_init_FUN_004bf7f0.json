@@ -189,6 +189,15 @@
       "severity": "moderate",
       "text": "(this_ptr->actor_local_space).x = pCVar1->x;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Struct-type local `local_ac` (CMatrix3x4f) is only ever read - every use is a read-only argument - and is never written, while `local_7c` (CMatrix3x4f) is written by a call and never read, and the `.asm` has a CMatrix3x4f-sized cave-block struct copy. Ghidra dropped the `local_ac = local_7c;` copy, so `local_ac` is uninitialised at runtime. See \u00a720 - restore the copy, or read `local_7c` directly.",
+      "line": 17,
+      "match": "CMatrix3x4f local_ac; read-only, never written; local_7c written, never read (expected local_ac = local_7c;)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CMatrix3x4f local_ac;",
+      "type": "missing_cave_copy"
     }
   ],
   "stack_frame": {

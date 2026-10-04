@@ -828,8 +828,9 @@ joined_r0x0055f6da:
                                               }
                                               local_11c = local_11c + local_60;
                                               if (0.0 < local_3f80) {
-                                                local_3f80 = local_3f80 * (float)3.1415926535000001 *
-                                                             (float)0.0055555555555555497;
+                                                local_3f80 = (float)((double)local_3f80 *
+                                                                     3.1415926535000001 *
+                                                                     0.005555555555555555);
                                                 fVar7 =
                                                   core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10
                                                             (-local_3f80,local_3f80);

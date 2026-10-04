@@ -654,6 +654,21 @@ multiply(&local_78,  &world, &local_d8);    multiply(&local_48, &world, &local_d
 inverse(&local_138, &local_108);            inverse(&local_d8, &local_108);
 ```
 
+A single dropped copy breaks the pairing: the destination is read, often several times, so it is
+not "passed once", and only the dead source remains. The detector also flags that shape — one
+dead output beside a same-typed local that is never written and whose every use is a read-only
+argument (a position other than the callee's returned output):
+
+```cpp
+// broken                                       // fixed — restore the copy
+getBoneModelMatrix(&model, bone, &local_c4);    getBoneModelMatrix(&model, bone, &local_c4);
+                                                local_f4 = local_c4;
+transformVector3x4(&out, &offset, &local_f4);   transformVector3x4(&out, &offset, &local_f4);
+```
+
+A function with no `.keep` compiles its raw export, so this is a live bug there too, not only in
+reconstructions (`CZombie::renderTransparent` and `CBulletHole::init` were both this shape).
+
 On the original Windows build the uninitialised bytes were zero often enough that the game's own
 defences (`inverse()` finding `det == 0` and bailing as "Singular matrix") mostly stayed quiet. On
 Linux with a different stack layout they are arbitrary — the determinant lands anywhere, and the

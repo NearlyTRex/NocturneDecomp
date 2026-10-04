@@ -26,7 +26,7 @@ void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_004219e0(CBoxActor *this_pt
   SDamageInfo local_cc;
   CBoundingBox3D local_cc_bbox;
   CVector3f local_6c;
-  CVector3f local_60;
+  CVector3f old_position;
   float local_30;
   float local_2c;
   double local_28;
@@ -40,7 +40,7 @@ void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_004219e0(CBoxActor *this_pt
   float fVar2;
   float fVar3;
   int local_18;
-  
+
   pCVar6 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->model);
   fVar8 = (float)pCVar6->frame_count;
   fVar5 = this_ptr->fps + this_ptr->anim_frame;
@@ -92,9 +92,7 @@ void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_004219e0(CBoxActor *this_pt
     }
   }
   if ((this_ptr->carrier_actor == (CDemonActor *)0x0) && (0.0 < this_ptr->weight_in_pounds)) {
-    local_6c.y = (this_ptr->base).location.position.x;
-    local_6c.z = (this_ptr->base).location.position.y;
-    local_60.x = (this_ptr->base).location.position.z;
+    old_position = (this_ptr->base).location.position;
     core_box_cpp_CBox_process_FUN_0041e2f0(&this_ptr->physics_box,delta_time);
     pUVar2 = &(this_ptr->base).orient;
     pCVar3 = &(this_ptr->physics_box).orientation;
@@ -127,7 +125,7 @@ void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_004219e0(CBoxActor *this_pt
       local_cc.attacker = &this_ptr->base;
       local_cc.wielder = &this_ptr->base;
       core_setcolid_cpp_CDemonSet_notifyDamageListeners_FUN_005742b0
-                (g_CDemonSetPtr,&local_60,&actor_position_00->position,&local_cc);
+                (g_CDemonSetPtr,&old_position,&actor_position_00->position,&local_cc);
       return;
     }
   }

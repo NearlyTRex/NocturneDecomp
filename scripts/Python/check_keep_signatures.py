@@ -141,6 +141,40 @@ def check_keep(keep_path, base, checks):
     return problems
 
 
+def collect(src_root, checks=CHECKS):
+    """Check every .keep under src_root.
+
+    Returns ([(keep_path, [(check, message), ...]), ...], keeps_checked), listing
+    only the .keep files with something to report. The exporter's keep-sync
+    report calls this directly.
+    """
+    results = []
+    keeps_seen = 0
+    for keep_path, base in find_keeps(src_root):
+        keeps_seen += 1
+        problems = check_keep(keep_path, base, checks)
+        if problems:
+            results.append((keep_path, problems))
+    return results, keeps_seen
+
+
+def format_report(results, keeps_seen, checks=CHECKS, relative_to=ROOT, summary_only=False):
+    """The text the command line prints and the exporter writes."""
+    totals = {check: 0 for check in CHECKS}
+    lines = []
+    for keep_path, problems in results:
+        if not summary_only:
+            lines.append(os.path.relpath(keep_path, relative_to))
+        for check, message in problems:
+            totals[check] += 1
+            if not summary_only:
+                lines.append('    %-10s  %s' % (check, message))
+    lines.append('%d .keep files checked: %s' % (
+        keeps_seen,
+        ', '.join('%d %s' % (totals[c], c) for c in CHECKS if c in checks)))
+    return '\n'.join(lines) + '\n'
+
+
 def main():
     parser = argparse.ArgumentParser(
         description='Check every .keep against the export beside it (read-only).')
@@ -154,29 +188,19 @@ def main():
     args = parser.parse_args()
 
     programs = PROGRAMS if args.program == 'all' else (args.program,)
-    totals = {check: 0 for check in CHECKS}
+    results = []
     keeps_seen = 0
-
     for program in programs:
         src_root = os.path.join(ROOT, 'annotations', program, 'pseudocode', 'src')
         if not os.path.isdir(src_root):
             continue
-        for keep_path, base in find_keeps(src_root):
-            keeps_seen += 1
-            problems = check_keep(keep_path, base, args.check)
-            if not problems:
-                continue
-            if not args.summary:
-                print(os.path.relpath(keep_path, ROOT))
-            for check, message in problems:
-                totals[check] += 1
-                if not args.summary:
-                    print('    %-10s  %s' % (check, message))
+        program_results, program_seen = collect(src_root, args.check)
+        results.extend(program_results)
+        keeps_seen += program_seen
 
-    print('%d .keep files checked: %s' % (
-        keeps_seen,
-        ', '.join('%d %s' % (totals[c], c) for c in CHECKS if c in args.check)))
-    return 1 if any(totals.values()) else 0
+    report = format_report(results, keeps_seen, args.check, ROOT, summary_only=args.summary)
+    sys.stdout.write(report)
+    return 1 if results else 0
 
 
 if __name__ == '__main__':

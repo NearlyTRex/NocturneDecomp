@@ -12,21 +12,21 @@ SUMMARY
 ----------------------------------------------------------------------------------------------------
 
   Functions checked: 6911
-  Functions with suspicious globals: 107
-  Total suspicious global references: 178
+  Functions with suspicious globals: 105
+  Total suspicious global references: 176
 
   Most commonly misresolved globals:
     g_SfxOptions                                       13 functions
     g_CNetGamePtr                                      10 functions
     g_KeyboardState                                    9 functions
     g_WindowHeight                                     7 functions
-    g_CDemonCameraInstance                             6 functions
     g_CKeysPtr                                         6 functions
     g_WindowWidth                                      5 functions
     g_UseDirect3D                                      5 functions
     g_RenderVertexBuffer                               5 functions
     g_ColorCubeLookup                                  4 functions
     g_HeroCount                                        4 functions
+    g_CDemonCameraInstance                             4 functions
     g_ModalDialogActive                                3 functions
     g_ThemeFont                                        3 functions
     g_GetLastErrorFunc                                 3 functions
@@ -37,7 +37,7 @@ SUMMARY
     g_CScriptPtr                                       2 functions
     g_SimFrameCount                                    2 functions
 
-  .keep files with issues: 74 (these need manual review)
+  .keep files with issues: 72 (these need manual review)
   Raw .cpp files with issues: 33
 
 ====================================================================================================
@@ -493,14 +493,6 @@ core_event.cpp_CEventList_executeCommand_FUN_004aacc0  [.keep]  (1 suspicious gl
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_game.cpp_CGame_finishAct_FUN_004e3b90  [.keep]  (1 suspicious globals)
-  File: core/game.cpp
-
-  g_CDemonCameraInstance
-    Used at lines: 40
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
 core_game.cpp_CGame_loadGame_FUN_004e12b0  [.keep]  (1 suspicious globals)
   File: core/game.cpp
 
@@ -530,14 +522,6 @@ core_game.cpp_CGame_promptLoadGame_FUN_004e36f0  [.keep]  (1 suspicious globals)
 
   g_CKeysPtr
     Used at lines: 36, 36
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-core_game.cpp_CGame_renderOverlay_FUN_004d8040  [.keep]  (1 suspicious globals)
-  File: core/game.cpp
-
-  g_CDemonCameraInstance
-    Used at lines: 46, 51
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -641,7 +625,7 @@ core_script.cpp_CScript_step_FUN_0055a810  [.keep]  (1 suspicious globals)
   File: core/script.cpp
 
   g_HeroCount
-    Used at lines: 2038
+    Used at lines: 2039
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

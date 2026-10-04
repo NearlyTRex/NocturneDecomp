@@ -110,6 +110,17 @@
     },
     "pcode_op_count": 611
   },
+  "resolved_suspects": [
+    {
+      "description": "Struct-type local `local_f4` (CMatrix3x4f) is only ever read - every use is a read-only argument - and is never written, while `local_c4` (CMatrix3x4f) is written by a call and never read, and the `.asm` has a CMatrix3x4f-sized cave-block struct copy. Ghidra dropped the `local_f4 = local_c4;` copy, so `local_f4` is uninitialised at runtime. See \u00a720 - restore the copy, or read `local_c4` directly.",
+      "line": 11,
+      "match": "CMatrix3x4f local_f4; read-only, never written; local_c4 written, never read (expected local_f4 = local_c4;)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CMatrix3x4f local_f4;",
+      "type": "missing_cave_copy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 252,
     "local_size": 248,

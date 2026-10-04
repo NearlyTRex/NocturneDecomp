@@ -59,6 +59,7 @@ void __cdecl core_fire_cpp_CBulletHole_init_FUN_004bf7f0(CBulletHole *this_ptr,C
               (&local_dc,&(this_ptr->actor_ptr->location).position,
                &(this_ptr->actor_ptr->orient).vec);
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_10c,&local_dc,&local_7c);
+    local_ac = local_7c;
     pCVar2 = core_xform_cpp_getTranslation_FUN_005f6110(&local_ac,&local_40);
     if (&this_ptr->transformed_pos != pCVar2) {
       this_ptr->transformed_pos = *pCVar2;
