@@ -140,6 +140,10 @@ char *nocturne_hero_item_text(struct CDemonActor *item, const char *model_name, 
 // dismissed him. Call once a frame, before the selected weapon is updated.
 void nocturne_hero_stow_unselected_weapons(struct CHero *hero);
 
+// Whether working `weapon` after a shot ejects a shell through its onFired: the
+// shotgun, and the elephant gun unless NOCTURNE_AUTHENTIC_ELEPHANT_GUN_SHELL.
+int nocturne_weapon_ejects_shell(struct CWeapon *weapon);
+
 #ifdef __cplusplus
 }
 #endif

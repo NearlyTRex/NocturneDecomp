@@ -524,6 +524,237 @@ extern "C" void nocturne_hero_gabriella_render_throw_arc(CGabriella *gabriella, 
 }
 
 // =============================================================================
+// Weapon switch
+// =============================================================================
+
+namespace {
+
+// draw_blend at which a switch swaps weapons: her hand is at her hip, where the
+// weapon is placed below kWeaponAtHip, and it is under the 0.49 at which
+// CGabriella::process plays the draw sound, so the draw back up plays it.
+const float kSwitchAt = 0.45f;
+
+struct SSwitch {
+    CWeapon *in_hand;   // the weapon her own code works with
+    CWeapon *chosen;    // the inventory's selection, kept while in_hand stands in
+    int      held;      // in_hand is standing in for the selection
+    int      switching;
+    int      redraw;    // she was drawn when the switch began
+};
+
+SSwitch s_switch[4];
+
+// Her switch, or null for a Gabriella who is not a player hero, who swaps at
+// once as she always did.
+SSwitch *switch_state(CGabriella *gabriella)
+{
+    int slot = hero_slot((CDemonActor *)gabriella);
+
+    return (slot < 0) ? (SSwitch *)0x0 : &s_switch[slot];
+}
+
+// By pointer only: `weapon` may be stale from an earlier mission.
+int in_inventory(CGabriella *gabriella, CWeapon *weapon)
+{
+    CInventory *inventory = &(gabriella->base).inventory;
+    int i;
+
+    if (weapon == (CWeapon *)0x0) {
+        return 0;
+    }
+    for (i = 0; i < inventory->item_count; i++) {
+        if (inventory->items[i] == &weapon->base) {
+            return 1;
+        }
+    }
+    return 0;
+}
+
+} // namespace
+
+extern "C" void nocturne_hero_gabriella_hold_weapon(CGabriella *gabriella)
+{
+    SSwitch *s;
+
+    if (gabriella == (CGabriella *)0x0) {
+        return;
+    }
+    s = switch_state(gabriella);
+    if ((s == (SSwitch *)0x0) || (s->held != 0)) {
+        return;
+    }
+    s->chosen = (gabriella->base).inventory.selected_weapon;
+    if ((s->in_hand != s->chosen) && (in_inventory(gabriella, s->in_hand) != 0)) {
+        (gabriella->base).inventory.selected_weapon = s->in_hand;
+        s->held = 1;
+    }
+}
+
+extern "C" void nocturne_hero_gabriella_release_weapon(CGabriella *gabriella)
+{
+    SSwitch *s;
+
+    if (gabriella == (CGabriella *)0x0) {
+        return;
+    }
+    s = switch_state(gabriella);
+    if ((s == (SSwitch *)0x0) || (s->held == 0)) {
+        return;
+    }
+    (gabriella->base).inventory.selected_weapon = s->chosen;
+    s->held = 0;
+}
+
+extern "C" void nocturne_hero_gabriella_switch_weapon(CGabriella *gabriella)
+{
+    SSwitch *s;
+
+    if (gabriella == (CGabriella *)0x0) {
+        return;
+    }
+    s = switch_state(gabriella);
+    if (s == (SSwitch *)0x0) {
+        return;
+    }
+    if (s->in_hand == s->chosen) {
+        s->switching = 0;
+        return;
+    }
+    if ((in_inventory(gabriella, s->in_hand) == 0) || (gabriella->draw_blend <= kSwitchAt)) {
+        // Nothing in hand to put away, or her hand is at her hip: take the
+        // new weapon, and draw it if she was drawn.
+        s->in_hand = s->chosen;
+        (gabriella->base).inventory.selected_weapon = s->chosen;
+        s->held = 0;
+        if ((s->switching != 0) && (s->redraw != 0)) {
+            gabriella->weapon_state_flags = gabriella->weapon_state_flags | 2;
+        }
+        s->switching = 0;
+        return;
+    }
+    if (s->switching == 0) {
+        s->switching = 1;
+        s->redraw = (gabriella->weapon_state_flags & 2) != 0;
+    }
+    // Holster the weapon in hand, as her draw button does.
+    gabriella->weapon_state_flags = gabriella->weapon_state_flags & ~3;
+}
+
+// =============================================================================
+// Firing
+// =============================================================================
+
+namespace {
+
+// CWeapon::fire_mode of a pump or break action: the shotgun and elephant gun.
+const int kFirePump = 2;
+
+// The Stranger's pump-action shot plays draw_shotGunRecoil, which he cannot
+// fire through, and ejects the shell at 0.6 of it (the elephant gun's only
+// under NOCTURNE_AUTHENTIC_ELEPHANT_GUN_SHELL 0). Hers waits as long, without
+// the motion. Tune in play.
+const float kPumpSeconds = 0.8f;
+const float kPumpShellAt = 0.6f;
+
+struct SPump {
+    CWeapon *weapon;    // the weapon being pumped
+    float    elapsed;   // seconds since the shot; kPumpSeconds or more is done
+    int      ejected;
+};
+
+SPump s_pump[4];
+
+SPump *pump_state(CGabriella *gabriella)
+{
+    int slot = hero_slot((CDemonActor *)gabriella);
+
+    return (slot < 0) ? (SPump *)0x0 : &s_pump[slot];
+}
+
+} // namespace
+
+extern "C" void nocturne_hero_gabriella_fired(CGabriella *gabriella)
+{
+    CWeapon *weapon;
+    SPump *p;
+
+    if (gabriella == (CGabriella *)0x0) {
+        return;
+    }
+    weapon = (gabriella->base).inventory.selected_weapon;
+    p = pump_state(gabriella);
+    if ((p == (SPump *)0x0) || (weapon == (CWeapon *)0x0) || (weapon->fire_mode != kFirePump)) {
+        return;
+    }
+    p->weapon = weapon;
+    p->elapsed = 0.0f;
+    p->ejected = 0;
+    // Her long-gun recoil, which tryFireWeapon gives only a fire_mode 1 shot.
+    gabriella->fire_cooldown_timer = 1.0f;
+}
+
+extern "C" int nocturne_hero_gabriella_keep_pending_shot(CGabriella *gabriella)
+{
+    CWeapon *weapon;
+
+    if ((gabriella == (CGabriella *)0x0) || (hero_slot((CDemonActor *)gabriella) < 0)) {
+        return 1;
+    }
+    weapon = (gabriella->base).inventory.selected_weapon;
+    if ((weapon == (CWeapon *)0x0) ||
+        (core_actor_cpp_castToClassHash_FUN_0040c790(&weapon->base, g_CDynamiteClassInfo.name_hash)
+         != (CDemonActor *)0x0)) {
+        return 1;
+    }
+    // Waiting on her draw or aim, the shot is kept, as it always was. Waiting on
+    // the weapon's own refire, it is dropped: the Stranger fires only on a frame
+    // the weapon is ready and fire is held, so a press that ends before then
+    // fires nothing, and one still held fires as soon as the weapon is ready.
+    return (*(((weapon->base).vtable._uw)->_uw).isReadyToFire)(weapon) != 0;
+}
+
+extern "C" int nocturne_hero_gabriella_pumping(CGabriella *gabriella)
+{
+    const SPump *p;
+
+    if (gabriella == (CGabriella *)0x0) {
+        return 0;
+    }
+    p = pump_state(gabriella);
+    return (p != (SPump *)0x0) && (p->weapon != (CWeapon *)0x0) &&
+           (p->weapon == (gabriella->base).inventory.selected_weapon);
+}
+
+extern "C" void nocturne_hero_gabriella_fire_tick(CGabriella *gabriella, float delta_time)
+{
+    SPump *p;
+
+    if (gabriella == (CGabriella *)0x0) {
+        return;
+    }
+    p = pump_state(gabriella);
+    if ((p == (SPump *)0x0) || (p->weapon == (CWeapon *)0x0)) {
+        return;
+    }
+    // A switch away abandons the pump.
+    if (p->weapon != (gabriella->base).inventory.selected_weapon) {
+        p->weapon = (CWeapon *)0x0;
+        return;
+    }
+    p->elapsed = p->elapsed + delta_time;
+    if ((p->ejected == 0) && (kPumpSeconds * kPumpShellAt <= p->elapsed)) {
+        // As CStranger::updateWeaponLayerActions does.
+        p->ejected = 1;
+        if (nocturne_weapon_ejects_shell(p->weapon) != 0) {
+            (*(((p->weapon->base).vtable._uw)->_uw).onFired)(p->weapon);
+        }
+    }
+    if (kPumpSeconds <= p->elapsed) {
+        p->weapon = (CWeapon *)0x0;
+    }
+}
+
+// =============================================================================
 // One press, one action
 // =============================================================================
 
@@ -545,10 +776,10 @@ void use_press(CGabriella *gabriella, int slot)
 }
 
 // Start of her frame, before anything reads fire. A press that is still held
-// once used reads as released, and so does one held through a draw: action and
-// fire share the button, and the held action press would otherwise shoot the
-// moment the draw completes. Nor may a press light a stick she does not have
-// in hand yet.
+// once used reads as released, and so does one held through a draw or a
+// holster: action and fire share the button, and the held press would
+// otherwise shoot the moment the draw completes, or act once the weapon is
+// away. Nor may a press light a stick she does not have in hand yet.
 void filter_press(CGabriella *gabriella, int slot)
 {
     SPlayerInput *input = &(gabriella->base).player_input;
@@ -560,7 +791,8 @@ void filter_press(CGabriella *gabriella, int slot)
         s_press_used[slot] = 0;
         return;
     }
-    if ((gabriella->weapon_state_flags == 0) && (input->action_state.draw != 0)) {
+    if ((gabriella->weapon_state_flags == 0) &&
+        ((input->action_state.draw != 0) || (0.0f < gabriella->draw_blend))) {
         s_press_used[slot] = 1;
     }
     if (empty_handed(gabriella) != 0) {

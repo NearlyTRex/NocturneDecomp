@@ -47,6 +47,9 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponPosition_FUN_004d5550(CGab
              &(this_ptr->base).base.base.orient.vec);
   if (this_ptr->draw_blend < 0.64f) {
     pCVar4 = (this_ptr->base).inventory.selected_weapon;
+#if !NOCTURNE_AUTHENTIC_HELD_WEAPON_STATE
+    if (pCVar4->weapon_state != WEAPON_STATE_IN_INVENTORY)
+#endif
     (*(((pCVar4->base).vtable._uw)->_uw).setWeaponState)(pCVar4,1);
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
               (&local_22c,&UNION_UVector3_02d7b820.f,&UNION_UVector3_02d7b82c.f);
@@ -60,6 +63,9 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponPosition_FUN_004d5550(CGab
   }
   else {
     pCVar1 = (this_ptr->base).inventory.selected_weapon;
+#if !NOCTURNE_AUTHENTIC_HELD_WEAPON_STATE
+    if (pCVar1->weapon_state != WEAPON_STATE_IN_HAND)
+#endif
     (*(((pCVar1->base).vtable._uw)->_uw).setWeaponState)(pCVar1,2);
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
               (&local_13c,&UNION_UVector3_02d7b814.f,&g_ZeroVector.f);

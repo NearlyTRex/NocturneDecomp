@@ -84,6 +84,8 @@
 // | `NOCTURNE_AUTHENTIC_CHAPTER_SELECT` | 0 | defect | START offers the chapter lists, pod.ini or no pod.ini |
 // | `NOCTURNE_AUTHENTIC_FRIENDLY_FIRE` | 0 | defect | heroes cannot damage each other in a network game |
 // | `NOCTURNE_AUTHENTIC_MELEE_PICKUP` | 0 | defect | a melee weapon already held does not take a second slot |
+// | `NOCTURNE_AUTHENTIC_ELEPHANT_GUN_SHELL` | 0 | defect | the elephant gun ejects a shell after a shot, as the shotgun does |
+// | `NOCTURNE_AUTHENTIC_HELD_WEAPON_STATE` | 0 | defect | Gabriella's tommy gun keeps its firing loop; her weapon state is set only when it changes |
 // | `NOCTURNE_AUTHENTIC_ITEM_NAMES` | 0 | defect | a new actor is never named after an item a hero carries |
 // | `NOCTURNE_AUTHENTIC_SHADOW_DEPTH_READ` | 0 | defect | the shadow-pass depth test reads the width it was written at |
 // | `NOCTURNE_AUTHENTIC_BODY_PART_BAKE` | 0 | defect | a settled body part goes into the background only through a background bake |
@@ -1618,6 +1620,64 @@
 //   Override with -DNOCTURNE_AUTHENTIC_MELEE_PICKUP=1.
 #ifndef NOCTURNE_AUTHENTIC_MELEE_PICKUP
 #define NOCTURNE_AUTHENTIC_MELEE_PICKUP 0
+#endif
+
+// NOCTURNE_AUTHENTIC_ELEPHANT_GUN_SHELL
+//   Whether the elephant gun ejects a shell when it is worked after a shot.
+//
+//   The shotgun and the elephant gun are both fire_mode 2 and weapon_type
+//   SHOTGUN, so after either one fires the Stranger plays the same layer action,
+//   draw_shotGunRecoil. Partway through it, CStranger::updateWeaponLayerActions
+//   works the weapon by class name:
+//
+//       if (t crossed 0.6 && isOfClass(weapon, "CShotgun"))
+//           weapon->onFired();
+//
+//   CElephantGun derives from CWeapon, not CShotgun, so the elephant gun goes
+//   through the motion and never ejects. Its onFired is as complete as the
+//   shotgun's - it throws shell.kfm and plays "sh-cock.wav" - and that call is
+//   the binary's only caller of any onFired, so it never runs. sh-cock.wav
+//   never shipped either: SOUND.POD's audit log names SH-COCK.WAV, but none of
+//   its 732 files is that, and playing it reports "Can't find wav".
+//
+//   1: authentic — only the shotgun ejects a shell.
+//   0: the elephant gun ejects one at the same point, for the Stranger and for
+//      Gabriella (hero_gabriella.h), and cocks with the shotgun's
+//      shotgun-cock.wav.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_ELEPHANT_GUN_SHELL=1.
+#ifndef NOCTURNE_AUTHENTIC_ELEPHANT_GUN_SHELL
+#define NOCTURNE_AUTHENTIC_ELEPHANT_GUN_SHELL 0
+#endif
+
+// NOCTURNE_AUTHENTIC_HELD_WEAPON_STATE
+//   Whether Gabriella re-sets her weapon's state every frame.
+//
+//   CGabriella::updateWeaponPosition places the selected weapon at her hip or
+//   in her hand each frame, and with it calls the weapon's setWeaponState - 1
+//   below a draw_blend of 0.64, 2 above - every frame, whether or not the
+//   state changed. The Stranger calls it only as he draws or holsters
+//   (CStranger::updateWeaponLayerActions). Three weapons do more than store
+//   the state:
+//
+//       CTommyGun::setWeaponState   killSfx(sfx_handles[0])
+//       CMelee::setWeaponState      blood_spurt_count = 0
+//       CBaronWeapon::setWeaponState  attach or detach the Baron
+//
+//   So her tommy gun's firing loop, m-gun1.wav, is killed the frame after
+//   CTommyGun::process starts it: each shot plays only the start of the
+//   sample, restarted twice per shot, and never reaches the m-gun-t.wav tail
+//   that process plays when firing stops - muffled beside the Stranger's.
+//   The Baron is re-attached to her every frame, and a melee weapon's blood
+//   never builds up - she holds one only under NOCTURNE_AUTHENTIC_HERO_WEAPON
+//   1, which lets a player Gabriella pick one up, or as an NPC.
+//
+//   1: authentic — the state is set every frame.
+//   0: it is set only when it changes.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_HELD_WEAPON_STATE=1.
+#ifndef NOCTURNE_AUTHENTIC_HELD_WEAPON_STATE
+#define NOCTURNE_AUTHENTIC_HELD_WEAPON_STATE 0
 #endif
 
 // NOCTURNE_AUTHENTIC_ITEM_NAMES

@@ -241,8 +241,12 @@ joined_r0x005c57cf:
       break;
     case 8:
       if (((fVar9 < 0.6f) && (0.6f <= (this_ptr->base).base.layer_action_t)) &&
+#if NOCTURNE_AUTHENTIC_ELEPHANT_GUN_SHELL
          (iVar8 = core_actor_cpp_isOfClass_FUN_0040c6d0((CDemonActor *)this_ptr->weapon,"CShotgun")
          , iVar8 != 0)) {
+#else
+         (nocturne_weapon_ejects_shell(this_ptr->weapon) != 0)) {
+#endif
         (*(((this_ptr->weapon->base).vtable._uw)->_uw).onFired)(this_ptr->weapon);
       }
       break;

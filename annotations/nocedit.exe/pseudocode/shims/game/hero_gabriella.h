@@ -122,6 +122,40 @@
 // CDynamite::renderAimBeam is empty. Her toss_velocity grows with the charge, so
 // the arc lengthens as fire is held. It writes nothing the simulation reads.
 //
+// A SWITCH SWAPS THE WEAPON IN HER HAND
+//
+// Her code works only with inventory.selected_weapon, so a new selection was in
+// her hand at once. The Stranger keeps the weapon in his hand apart from the
+// selection and, when they differ, holsters it and draws the new one. Hers
+// does the same: a player Gabriella's own process and render see the weapon
+// in her hand in selected_weapon, and everything else - the HUD, the
+// inventory's cycling - sees the selection. A new selection while she is drawn
+// holsters the weapon in hand; when her hand reaches her hip the new one takes
+// its place and she draws it, with the holster and draw sounds. Holstered, the
+// swap is immediate, as before.
+//
+// FIRE AS THE STRANGER FIRES
+//
+// The Stranger never clears fire after a shot: held, his weapon fires again as
+// soon as it is ready, after his 0.2 s recoil, and for the shotgun after
+// draw_shotGunRecoil, which ejects the shell at 0.6 of its length. Her shot
+// cleared fire for every weapon but the continuous ones, so in single player a
+// held button fired once; in a network game the clear lasts one frame (see ONE
+// PRESS, ONE ACTION), and a held button fired again. Her pistol's recoil is
+// 0.2 s too, but tryFireWeapon gives a pump action (fire_mode 2) no wait at
+// all, so a tap could fire the shotgun twice. Her shot no longer clears fire,
+// so holding repeats in either game; a pump-action shot gets her long-gun
+// recoil and a pump time in which no shot starts, and ejects its shell partway
+// through it as his does: the shotgun's, and the elephant gun's under
+// NOCTURNE_AUTHENTIC_ELEPHANT_GUN_SHELL 0. A press held through a holster reads
+// as released, so it does not act once the weapon is away.
+//
+// A press that finds her weapon still in its own refire - the crossbow's is
+// 0.666 s - left fire_state pending, and the shot went by itself when the
+// refire ended, after the button was let go; in a network game a tap lasts
+// several frames, so one tap fired twice. That pending shot is now dropped,
+// and a held button fires again as soon as the weapon is ready.
+//
 // Gated by NOCTURNE_AUTHENTIC_HERO_ACTIONS at the call sites.
 
 struct CGabriella;
@@ -204,6 +238,35 @@ int nocturne_hero_gabriella_weapon_hidden(struct CGabriella *gabriella);
 // throw's arc from the stick to the first thing it would hit.
 void nocturne_hero_gabriella_render_throw_arc(struct CGabriella *gabriella,
                                               struct CDynamite *dynamite);
+
+// Around CGabriella::process, renderOpaque and renderTransparent: hold puts the
+// weapon in her hand in inventory.selected_weapon for her own code, release
+// puts the selection back. Release must run on every exit after hold.
+void nocturne_hero_gabriella_hold_weapon(struct CGabriella *gabriella);
+void nocturne_hero_gabriella_release_weapon(struct CGabriella *gabriella);
+
+// From CGabriella::process before its draw_blend step, between hold and
+// release: holsters the weapon in her hand when the selection differs, and
+// swaps in the selection once her hand is at her hip, drawing it if she was
+// drawn.
+void nocturne_hero_gabriella_switch_weapon(struct CGabriella *gabriella);
+
+// From CGabriella::tryFireWeapon after a shot: starts the pump of a pump-action
+// weapon, with her long-gun recoil.
+void nocturne_hero_gabriella_fired(struct CGabriella *gabriella);
+
+// From CGabriella::process when canFireWeapon refuses a pending shot: nonzero to
+// keep it pending (her draw or aim is not ready, or it is a throw), 0 to drop
+// it because the weapon's own refire is not.
+int nocturne_hero_gabriella_keep_pending_shot(struct CGabriella *gabriella);
+
+// From CGabriella::process with the fire test: nonzero while the pump runs, so
+// no new shot starts.
+int nocturne_hero_gabriella_pumping(struct CGabriella *gabriella);
+
+// From CGabriella::process after the selected weapon's process: steps the pump
+// and ejects the shell partway through it.
+void nocturne_hero_gabriella_fire_tick(struct CGabriella *gabriella, float delta_time);
 
 #ifdef __cplusplus
 }

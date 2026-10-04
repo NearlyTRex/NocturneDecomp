@@ -76,6 +76,7 @@ void __cdecl core_gabriela_cpp_CGabriella_process_FUN_004d2ea0(CGabriella *this_
     return;
   }
 #if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+  nocturne_hero_gabriella_hold_weapon(this_ptr);
   nocturne_hero_items_process(&this_ptr->base);
 #endif
   if ((this_ptr->base).control_type == HERO_CONTROL_AI) {
@@ -467,6 +468,7 @@ LAB_004d3cb4:
     }
   }
 #if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+  nocturne_hero_gabriella_switch_weapon(this_ptr);
   if (nocturne_hero_gabriella_refetch_dynamite(this_ptr,delta_time) != 0) {
   }
   else
@@ -543,7 +545,11 @@ LAB_004d344b:
   fVar10 = this_ptr->fire_cooldown_timer - delta_time / 0.2f;
   this_ptr->fire_cooldown_timer = fVar10;
   if (((fVar10 <= 0.0) && (this_ptr->fire_cooldown_timer = 0.0, is_holstering == 0)) &&
-     (((this_ptr->base).player_input.action_state.fire != 0 && (this_ptr->fire_state == 0)))) {
+     (((this_ptr->base).player_input.action_state.fire != 0 && (this_ptr->fire_state == 0)))
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+     && (nocturne_hero_gabriella_pumping(this_ptr) == 0)
+#endif
+     ) {
     if (this_ptr->weapon_state_flags == 0) {
 #if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
       if ((this_ptr->draw_blend <= 0.0) && (nocturne_hero_gabriella_pickup(this_ptr) != 0)) {
@@ -678,6 +684,9 @@ LAB_004d363a:
     if ((iVar17 != 0) && (nocturne_hero_gabriella_throw_ready(this_ptr) == 0)) {
       iVar17 = 0;
     }
+    if ((iVar17 == 0) && (nocturne_hero_gabriella_keep_pending_shot(this_ptr) == 0)) {
+      this_ptr->fire_state = 0;
+    }
 #endif
     if (iVar17 == 0) goto LAB_004d4152;
     this_ptr->fire_state = 1;
@@ -690,9 +699,11 @@ LAB_004d4152:
   }
   this_ptr->fire_state = 0;
   core_gabriela_cpp_CGabriella_tryFireWeapon_FUN_004d5fe0(this_ptr);
+#if NOCTURNE_AUTHENTIC_HERO_ACTIONS
   if (((this_ptr->base).inventory.selected_weapon)->fire_cooldown == 0.0) {
     (this_ptr->base).player_input.action_state.fire = 0;
   }
+#endif
 LAB_004d368e:
   EVar15 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr);
   if (EVar15 != DEATH_STATE_DEAD) {
@@ -705,10 +716,17 @@ LAB_004d368e:
   (*((this_ptr_01->base).vtable._ub)->process)(&this_ptr_01->base,delta_time);
 #if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
   nocturne_hero_gabriella_dynamite_tick(this_ptr,delta_time);
+  nocturne_hero_gabriella_fire_tick(this_ptr,delta_time);
 #endif
   if ((((this_ptr->base).inventory.selected_weapon)->base).is_transparent == 0) {
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+    nocturne_hero_gabriella_release_weapon(this_ptr);
+#endif
     return;
   }
   (this_ptr->base).base.base.is_transparent = 1;
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+  nocturne_hero_gabriella_release_weapon(this_ptr);
+#endif
   return;
 }

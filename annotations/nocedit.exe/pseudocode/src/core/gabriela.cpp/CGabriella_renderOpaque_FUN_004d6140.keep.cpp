@@ -23,9 +23,13 @@ int __cdecl core_gabriela_cpp_CGabriella_renderOpaque_FUN_004d6140(CGabriella *t
     core_cloth_cpp_CCloth_render_FUN_0043bae0(&this_ptr->coat_cloth,(CDeformableModelInstance *)0x0)
     ;
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+    nocturne_hero_gabriella_hold_weapon(this_ptr);
+#endif
     pCVar4 = (this_ptr->base).inventory.selected_weapon;
 #if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
     if (nocturne_hero_gabriella_weapon_hidden(this_ptr) != 0) {
+      nocturne_hero_gabriella_release_weapon(this_ptr);
       return iVar5;
     }
 #endif
@@ -42,13 +46,20 @@ int __cdecl core_gabriela_cpp_CGabriella_renderOpaque_FUN_004d6140(CGabriella *t
 #if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
       if (pCVar5 != (CDynamite *)0x0) {
         nocturne_hero_gabriella_render_throw_arc(this_ptr,pCVar5);
+        nocturne_hero_gabriella_release_weapon(this_ptr);
         return iVar5;
       }
 #endif
       pCVar4 = (this_ptr->base).inventory.selected_weapon;
       (*(((pCVar4->base).vtable._uw)->_uw).renderAimBeam)(pCVar4);
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+      nocturne_hero_gabriella_release_weapon(this_ptr);
+#endif
       return iVar5;
     }
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+    nocturne_hero_gabriella_release_weapon(this_ptr);
+#endif
   }
   return iVar5;
 }

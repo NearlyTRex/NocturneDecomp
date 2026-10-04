@@ -443,3 +443,19 @@ extern "C" void nocturne_hero_stow_unselected_weapons(CHero *hero)
         (*(((weapon->base).vtable._uw)->_uw).setWeaponState)(weapon, WEAPON_STATE_IN_INVENTORY);
     }
 }
+
+extern "C" int nocturne_weapon_ejects_shell(CWeapon *weapon)
+{
+    if (weapon == (CWeapon *)0x0) {
+        return 0;
+    }
+    if (core_actor_cpp_isOfClass_FUN_0040c6d0(&weapon->base, (char *)"CShotgun") != 0) {
+        return 1;
+    }
+#if !NOCTURNE_AUTHENTIC_ELEPHANT_GUN_SHELL
+    if (core_actor_cpp_isOfClass_FUN_0040c6d0(&weapon->base, (char *)"CElephantGun") != 0) {
+        return 1;
+    }
+#endif
+    return 0;
+}
