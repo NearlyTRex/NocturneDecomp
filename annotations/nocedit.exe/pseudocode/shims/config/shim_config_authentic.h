@@ -1224,12 +1224,15 @@
 //      action button tries her own pickup first; she strafes on the
 //      Stranger's test, with the strafe played at twice its authored rate; with
 //      her weapon away and nothing else to act on, the action button kicks an
-//      enemy in reach in front of her for 10-15 damage and a short shove
-//      (hero_gabriella.h). A player's
+//      enemy in reach in front of her for 10-15 damage and a short shove;
+//      her dynamite charge lights the fuse, which her code never did, so the
+//      stick no longer explodes as it leaves her hand, and the charge shows
+//      the Stranger's throw arc (hero_gabriella.h). A player's
 //      Scat keeps firing while fire is held; his AI is unchanged. Moloch's fire
 //      strikes in demon form, alternating two of his unused attack motions
-//      (hero_moloch.h). The Colonel's draw and fire play his unused "draw" and
-//      "shoot" motions (holstering plays "draw" backwards) and fire the pistol
+//      (hero_moloch.h). The Colonel's draw and fire layer his unused "draw" and
+//      "shoot" motions over his upper body, so he keeps moving (holstering
+//      plays "draw" backwards), and fire the pistol
 //      HERO_WEAPON gives him; his arm aims it at the nearest enemy in front of
 //      him, or level with look up/down, with Scat's laser sight
 //      (hero_colonel.h).

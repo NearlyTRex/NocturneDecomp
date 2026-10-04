@@ -628,6 +628,9 @@ LAB_004d344b:
                         ((CDemonActor *)(this_ptr->base).inventory.selected_weapon,
                          g_CDynamiteClassInfo.name_hash);
     if (pCVar15 != (CDynamite *)0x0) {
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+      nocturne_hero_gabriella_charge_dynamite(this_ptr,pCVar15);
+#endif
       if ((this_ptr->base).player_input.action_state.fire == 0) {
         this_ptr->fire_state = 2;
       }
@@ -684,6 +687,9 @@ LAB_004d368e:
   }
   this_ptr_01 = (this_ptr->base).inventory.selected_weapon;
   (*((this_ptr_01->base).vtable._ub)->process)(&this_ptr_01->base,delta_time);
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+  nocturne_hero_gabriella_dynamite_tick(this_ptr);
+#endif
   if ((((this_ptr->base).inventory.selected_weapon)->base).is_transparent == 0) {
     return;
   }

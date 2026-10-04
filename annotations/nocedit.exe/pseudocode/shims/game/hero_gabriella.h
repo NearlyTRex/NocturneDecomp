@@ -67,9 +67,35 @@
 // Every decision reads motion state, player_input or lockstep positions, which
 // every machine shares, so a network game stays in lockstep.
 //
+// DYNAMITE IS THROWN UNLIT
+//
+// CGabriella::process has a complete charged throw: while fire is held with a
+// CDynamite drawn it raises dynamite_charge_power from 10 to 60 at 25 a second,
+// keeps the stick's toss_velocity along her aim pitch at that speed, and throws
+// on release through CDynamite::fire. Nothing in her code lights the fuse -
+// CStranger::updateWeaponLayerActions is the binary's only caller of
+// CDynamite::lightFuse - so the stick leaves her hand with fuse_timer -1,
+// CFireEffect::createToss clamps that to 0.0001 and the toss explodes on its
+// first tick, where it left her hand. The fuse is lit on the first frame of the
+// charge. It burns 3.5 s and the charge releases itself at 2 s, so a throw
+// always carries at least 1.5 s.
+//
+// A fuse that burns out in her hand anyway - she holstered or was grabbed with
+// the stick lit - is dropped at her feet with no velocity, as
+// CStranger::processWeaponTick drops his.
+//
+// While she charges, the throw is previewed with the Stranger's arc:
+// CStranger::renderOpaque steps the throw through CDemonSet::iterativeRaycast
+// and draws it to the first hit with CFireEffect::createLaserPath. Her
+// renderOpaque already calls the selected weapon's renderAimBeam at exactly that
+// moment - a CDynamite drawn, with a nonzero toss_velocity - but
+// CDynamite::renderAimBeam is empty. Her toss_velocity grows with the charge, so
+// the arc lengthens as fire is held. It writes nothing the simulation reads.
+//
 // Gated by NOCTURNE_AUTHENTIC_HERO_ACTIONS at the call sites.
 
 struct CGabriella;
+struct CDynamite;
 
 #ifdef __cplusplus
 extern "C" {
@@ -97,6 +123,20 @@ int nocturne_hero_gabriella_kick(struct CGabriella *gabriella);
 // STRAFE_R plays untweened), lands the kick when it crosses its hit frame, and
 // steps her active shoves.
 void nocturne_hero_gabriella_process_motion(struct CGabriella *gabriella, float delta_time);
+
+// From CGabriella::process on each frame of a dynamite charge (fire_state 3):
+// lights the stick's fuse if it is not lit and the stick has a throw left.
+void nocturne_hero_gabriella_charge_dynamite(struct CGabriella *gabriella,
+                                             struct CDynamite *dynamite);
+
+// From CGabriella::process after the selected weapon's process: drops a stick
+// whose fuse burned out in her hand.
+void nocturne_hero_gabriella_dynamite_tick(struct CGabriella *gabriella);
+
+// From CGabriella::renderOpaque in place of CDynamite::renderAimBeam: the
+// throw's arc from the stick to the first thing it would hit.
+void nocturne_hero_gabriella_render_throw_arc(struct CGabriella *gabriella,
+                                              struct CDynamite *dynamite);
 
 #ifdef __cplusplus
 }

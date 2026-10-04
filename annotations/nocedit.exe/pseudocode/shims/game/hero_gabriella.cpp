@@ -457,3 +457,67 @@ extern "C" void nocturne_hero_gabriella_process_motion(CGabriella *gabriella, fl
         }
     }
 }
+
+extern "C" void nocturne_hero_gabriella_charge_dynamite(CGabriella *gabriella, CDynamite *dynamite)
+{
+    if ((gabriella == (CGabriella *)0x0) || (dynamite == (CDynamite *)0x0)) {
+        return;
+    }
+    // An empty stick stays unlit: CWeapon::fire refuses it, so nothing would
+    // carry the fuse away and it would burn out in her hand.
+    if ((dynamite->base.ammo_count <= 0) ||
+        (core_dynamite_cpp_CDynamite_isFuseLit_FUN_0049cf70(dynamite) != 0)) {
+        return;
+    }
+    core_dynamite_cpp_CDynamite_lightFuse_FUN_0049cf20(dynamite);
+}
+
+extern "C" void nocturne_hero_gabriella_dynamite_tick(CGabriella *gabriella)
+{
+    CDynamite *dynamite;
+
+    if (gabriella == (CGabriella *)0x0) {
+        return;
+    }
+    dynamite = (CDynamite *)core_actor_cpp_castToClassHash_FUN_0040c790
+                   ((CDemonActor *)(gabriella->base).inventory.selected_weapon,
+                    g_CDynamiteClassInfo.name_hash);
+    if ((dynamite == (CDynamite *)0x0) ||
+        (core_dynamite_cpp_CDynamite_isFuseBurnedOut_FUN_0049cf90(dynamite) == 0)) {
+        return;
+    }
+    // CStranger::processWeaponTick's drop: no velocity, so the toss explodes
+    // where the stick is. fire() puts the fuse back to unlit only when it
+    // throws; the reset after it keeps a refused throw from retrying.
+    memset(&dynamite->toss_velocity, 0, sizeof(dynamite->toss_velocity));
+    (*(((dynamite->base.base.vtable._uw)->_uw).fire))((CWeapon *)dynamite);
+    dynamite->fuse_timer = -1.0f;
+    gabriella->fire_state = 0;
+    gabriella->dynamite_charge_power = 10.0f;
+}
+
+extern "C" void nocturne_hero_gabriella_render_throw_arc(CGabriella *gabriella, CDynamite *dynamite)
+{
+    CVector3f *start_pos;
+    float hit_time;
+
+    if ((gabriella == (CGabriella *)0x0) || (dynamite == (CDynamite *)0x0)) {
+        return;
+    }
+    // toss_velocity is already in world space: CGabriella::process transforms
+    // it by her orientation when she charges.
+    start_pos = &dynamite->base.base.location.position;
+    core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
+    core_setcolid_cpp_CDemonSet_setRayType_FUN_00574230(g_CDemonSetPtr, 1);
+    core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr, (CDemonActor *)gabriella);
+    core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr, (CDemonActor *)dynamite);
+    hit_time = core_setcolid_cpp_CDemonSet_iterativeRaycast_FUN_00572800
+                   (g_CDemonSetPtr, start_pos, &dynamite->toss_velocity);
+    if (hit_time < 0.0f) {
+        hit_time = 10.0f;
+    }
+    core_fire_cpp_CFireEffect_createLaserPath_FUN_004c7f80
+        (g_CFireEffectPtr, start_pos, &dynamite->toss_velocity, 1.0f, 1.0f,
+         &g_CDemonSetPtr->collision_normal, hit_time, 0xff, 0, 0);
+    core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
+}
