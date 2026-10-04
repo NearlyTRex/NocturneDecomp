@@ -17,11 +17,14 @@ void __cdecl core_lightgun_cpp_CLightGun_process_FUN_00506450(CLightGun *this_pt
   CDemonFilter *filter_ptr;
   uint uVar3;
   float base_frequency;
+  CDemonLight *light;
 
 #if NOCTURNE_AUTHENTIC_NETPLAY
   sim_target = g_HeroActors[g_LocalHeroIndex];
+  light = &g_CDemonLightInstance;
 #else
   sim_target = nocturne_net_sim_target_for((CDemonActor *)this_ptr);
+  light = nocturne_hero_light((CHero *)(this_ptr->base).carried_by_actor);
 #endif
   core_weapon_cpp_CWeapon_process_FUN_005ee110(&this_ptr->base,delta_time);
   fVar1 = core_inv_cpp_CInventory_calculateTotalBatteryCharge_FUN_004ffda0
@@ -54,16 +57,16 @@ void __cdecl core_lightgun_cpp_CLightGun_process_FUN_00506450(CLightGun *this_pt
     }
     core_lightgun_cpp_CLightGun_updateBeamLight_FUN_00505ac0(this_ptr);
     if (this_ptr->fire_flash_pending == 0) {
-      g_CDemonLightInstance.antialiasing_enabled = 0;
+      light->antialiasing_enabled = 0;
     }
     else {
-      g_CDemonLightInstance.antialiasing_enabled = 1;
+      light->antialiasing_enabled = 1;
       filter_ptr = core_dfilter_cpp_CFilterCache_getFilter_FUN_00470060
                              (g_CFilterCachePtr,"lgunmask.raw",0);
-      core_dlight_cpp_CDemonLight_applyFilter_FUN_00474770(&g_CDemonLightInstance,filter_ptr,0,0,0);
+      core_dlight_cpp_CDemonLight_applyFilter_FUN_00474770(light,filter_ptr,0,0,0);
       core_weather_cpp_CWeather_createLightningStrike_FUN_005eeeb0(g_CWeatherPtr,0.1,0);
     }
-    core_set_cpp_CDemonSet_addDynamicLight_FUN_0056d090(g_CDemonSetPtr,&g_CDemonLightInstance);
+    core_set_cpp_CDemonSet_addDynamicLight_FUN_0056d090(g_CDemonSetPtr,light);
     this_ptr->fire_flash_pending = 0;
     return;
   }
