@@ -247,7 +247,7 @@ LAB_004d3af9:
                   iVar17 = 3;
                 }
 #if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
-                iVar17 = nocturne_hero_gabriella_strafe_state(this_ptr,iVar17);
+                iVar17 = nocturne_hero_gabriella_locomotion_state(this_ptr,iVar17);
 #endif
                 fVar3 = (this_ptr->base).base.walk_step_speed;
                 fVar4 = (this_ptr->base).base.position_delta.x;
@@ -331,6 +331,9 @@ LAB_004d3af9:
     core_hero_cpp_CHero_stopPushingBox_FUN_004f3350(&this_ptr->base);
   }
   else {
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+    if (nocturne_hero_gabriella_ladder_tick(this_ptr,delta_time) == 0) goto LAB_004d320e;
+#endif
     pCVar16 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                         (&((this_ptr->base).ladder_to_climb)->base,&local_130,&pCVar5->ladder_size);
     if ((this_ptr->base).base.base.location.position.y <= pCVar16->y) goto LAB_004d321d;
@@ -579,7 +582,7 @@ LAB_004d344b:
             iVar17 = core_hero_cpp_CHero_tryPullLever_FUN_004f2f50(&this_ptr->base);
             if (iVar17 == 0) {
 #if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
-              if (core_gabriela_cpp_CGabriella_tryClimbLadder_FUN_004d5c60(this_ptr) == 0) {
+              if (nocturne_hero_gabriella_climb(this_ptr) == 0) {
                 nocturne_hero_gabriella_kick(this_ptr);
               }
 #else

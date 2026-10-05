@@ -4,11 +4,11 @@
 // GABRIELLA AS A PLAYER HERO
 // =============================================================================
 //
-// An addition, not a reconstruction. GABRIELA.SKL authors a pickup, a rummage
-// and both strafes, and CGabriella's code handles them, but the shipped game
-// never let a player reach them properly. Everything here is built on her motion
-// routes, which research/21-character_motions/heroes.md lists: a state asked for
-// from a motion with no route to it is never taken.
+// An addition, not a reconstruction. GABRIELA.SKL authors a pickup, a rummage,
+// both strafes and turns in place, and CGabriella's code handles them, but the
+// shipped game never let a player reach them properly. Everything here is built
+// on her motion routes, which research/21-character_motions/heroes.md lists: a
+// state asked for from a motion with no route to it is never taken.
 //
 // PICKUP IS ON THE WRONG BUTTON
 //
@@ -38,6 +38,52 @@
 // faster without changing how far she moves. It applies only while a strafe plays
 // on its own: during a crossfade the other motion's root motion accumulates too,
 // and scaling it would move her. Neither strafe motion emits signals.
+//
+// TURNS IN PLACE ARE NEVER SELECTED
+//
+// GABRIELA.SKL authors TURN_LEFT and TURN_RIGHT, 11-frame steps that route from
+// STAND and into each other, and CGabriella::process handles them as locomotion
+// and applies none of their root motion, but nothing asks for either: turning
+// on the spot rotated "gab pause". For a player, turn input alone, with no
+// walk or strafe, held for 0.15 s, now asks for the turn whose sign matches it
+// (a positive turn_speed raises her yaw, which CStranger::updateTurnBlending
+// answers with "turnrstart"); a shorter tap only rotates her, as before. A
+// press still waiting for an action keeps her in STAND, where every action
+// starts.
+//
+// A step is not a loop: it starts with her upper body twisted 20 degrees into
+// the turn and untwists as the feet step, and its exit crossfades to "gab
+// pause" over 0.3 s. Asking for the turn again from there cuts that crossfade
+// short, since findAndStartTransition clears any tween it replaces, and the
+// pose jumps. While the turn lasts, each step instead crossfades from its last
+// frame before the exit to its own first frame, pose to pose, over 0.2 s, and
+// then plays in full, at 0.8 of its authored rate. No new state is asked for
+// during any crossfade out of a step; it waits the crossfade out.
+//
+// THE LADDER
+//
+// CGabriella::tryClimbLadder sets ladder_to_climb and places her on the ladder,
+// then asks for LADDER, which only STAND routes into. Pressed while she walked or
+// ran, the request was dropped and ladder_to_climb stayed set; with it set,
+// CGabriella::process reads no movement input, applies her root motion without
+// collision and waits for her to pass the ladder's top, so she ran on through the
+// world. CStranger::processFrame lets go of his ladder as soon as his ladder state
+// has no weight, and hers now does the same. A climb starts only from STAND; a
+// press made while she is moving holds her in STAND for up to half a second and
+// starts the climb when she gets there.
+//
+// Her test took a ladder only within 0.3 units of its centre line and with her
+// aimed within 10 degrees of it, measured both ways. The test is
+// CStranger::tryClimbLadder's: within 4 units of the ladder's plane, up to 1 unit
+// past either side of its bounding box, facing along it within 15 degrees and
+// toward it. Her own height band and either face of the ladder are kept. Her
+// placement, 2 units out on the centre line facing the ladder, is eased over half
+// a second as his is, rather than snapped.
+//
+// "gab ladder" is 216 frames at 45 fps: a 130-frame mount that climbs 1.5 units,
+// then a loop from frame 130 that climbs 2 units in 1.9 s. The Stranger's
+// "ladderuploop" climbs 2 units in 1.1 s. Her climb is root motion, so the motion
+// rate below raises her speed and her limbs' together, to about his.
 //
 // AN UNARMED KICK
 //
@@ -171,10 +217,23 @@ extern "C" {
 int nocturne_hero_gabriella_pickup(struct CGabriella *gabriella);
 
 // The locomotion state to ask for, given the one CGabriella::process chose from
-// walk, run and backup (0 for none of them): STRAFE_L or STRAFE_R from strafe
-// input when the current motion can route there, STAND when it cannot, otherwise
-// `chosen_state` unchanged.
-int nocturne_hero_gabriella_strafe_state(struct CGabriella *gabriella, int chosen_state);
+// walk, run and backup (0 for none of them): STAND while a climb press waits for
+// her to stand; STRAFE_L or STRAFE_R from strafe input when the current motion
+// can route there, STAND when it cannot; TURN_LEFT or TURN_RIGHT from turn input
+// alone from STAND or a turn; otherwise `chosen_state` unchanged.
+int nocturne_hero_gabriella_locomotion_state(struct CGabriella *gabriella, int chosen_state);
+
+// Replaces CGabriella::tryClimbLadder in her action-button chain: starts the
+// climb on a ladder in reach when she stands, or holds the press while she
+// settles into STAND. Returns nonzero and consumes the press when either
+// happened. An NPC gets CGabriella::tryClimbLadder.
+int nocturne_hero_gabriella_climb(struct CGabriella *gabriella);
+
+// From CGabriella::process each frame ladder_to_climb is set, before its
+// top-of-ladder test: eases her onto the ladder and returns 1, or, when LADDER
+// is neither playing nor being crossfaded into, clears ladder_to_climb and
+// returns 0, and she is put back in STAND.
+int nocturne_hero_gabriella_ladder_tick(struct CGabriella *gabriella, float delta_time);
 
 // The end of her action-button chain, when nothing else acted: starts the kick if
 // she stands and an enemy is in reach in front. Returns nonzero and consumes the
@@ -183,9 +242,12 @@ int nocturne_hero_gabriella_kick(struct CGabriella *gabriella);
 
 // Replaces CGabriella::process's call to processMotionEvents, which is the first
 // thing in her frame to read fire. Clears a used or draw-crossing press, advances
-// her motion with the strafe rate applied (NOCTURNE_GABRIELLA_STRAFE_RATE while STRAFE_L or
-// STRAFE_R plays untweened), lands the kick when it crosses its hit frame, and
-// steps her active shoves.
+// her motion with the strafe, ladder and turn rates applied
+// (NOCTURNE_GABRIELLA_STRAFE_RATE while STRAFE_L or STRAFE_R plays untweened,
+// NOCTURNE_GABRIELLA_LADDER_RATE while LADDER does, NOCTURNE_GABRIELLA_TURN_RATE
+// while a turn step does), chains turn steps, lands the kick when it crosses its
+// hit frame, steps her active shoves, and starts a held climb or kick once she
+// stands.
 void nocturne_hero_gabriella_process_motion(struct CGabriella *gabriella, float delta_time);
 
 // From CGabriella::process on each frame of a dynamite charge (fire_state 3):
@@ -273,3 +335,5 @@ void nocturne_hero_gabriella_fire_tick(struct CGabriella *gabriella, float delta
 #endif
 
 #define NOCTURNE_GABRIELLA_STRAFE_RATE 2.0f
+#define NOCTURNE_GABRIELLA_LADDER_RATE 1.75f
+#define NOCTURNE_GABRIELLA_TURN_RATE   0.8f

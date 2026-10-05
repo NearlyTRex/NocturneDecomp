@@ -155,7 +155,7 @@ honest reason its default is what it is.
 | Flag | Off |
 |---|---|
 | `AUTOMAP` | a bindable Doom-style map that fills in as you explore |
-| `GOGGLE_LOOK` | the goggle view looks up and down with empty hands, not only with a gun drawn, and for every hero rather than only the Stranger |
+| `GOGGLE_LOOK` | the goggle view looks up and down with empty hands, not only with a gun drawn, and for every hero rather than only the Stranger; every hero's goggle view is held level as the Stranger's is, rather than swaying with the head's animation |
 | `HERO_LOOK_AIM` | Scat's aim follows look input under auto-aim until a target takes it, as the Stranger's does |
 | `MENU_VERSION` | the menu carries a line naming this build, alongside everything it already drew |
 | `SAVE_SLOTS` | saves are picked from a slot list instead of typed |

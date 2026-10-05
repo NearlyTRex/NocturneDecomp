@@ -14,11 +14,14 @@
 namespace {
 
 // GABRIELA.SKL's state list.
-const uint kStand    = 0x00;
-const uint kWalk     = 0x01;
-const uint kKickDoor = 0x13;
-const uint kStrafeL  = 0x14;
-const uint kStrafeR  = 0x15;
+const uint kStand     = 0x00;
+const uint kWalk      = 0x01;
+const uint kTurnLeft  = 0x10;
+const uint kTurnRight = 0x11;
+const uint kKickDoor  = 0x13;
+const uint kStrafeL   = 0x14;
+const uint kStrafeR   = 0x15;
+const uint kLadder    = 0x16;
 
 float clamp(float x, float lo, float hi)
 {
@@ -1079,10 +1082,236 @@ float motion_rate(CGabriella *gabriella)
     if ((current == kStrafeL) || (current == kStrafeR)) {
         return NOCTURNE_GABRIELLA_STRAFE_RATE;
     }
+    if (current == kLadder) {
+        return NOCTURNE_GABRIELLA_LADDER_RATE;
+    }
+    if ((current == kTurnLeft) || (current == kTurnRight)) {
+        return NOCTURNE_GABRIELLA_TURN_RATE;
+    }
     return 1.0f;
 }
 
 } // namespace
+
+// =============================================================================
+// Ladder
+// =============================================================================
+
+namespace {
+
+// Which ladders she can take: CStranger::tryClimbLadder's window, with her own
+// height band and either face of the ladder, as CGabriella::tryClimbLadder
+// allows. Within kLadderReach of its plane, no more than kLadderSideSlack past
+// either side of its bounding box, facing along its axis within 15 degrees and
+// toward it.
+const float kLadderHeightBand = 5.0f;
+const float kLadderReach      = 4.0f;
+const float kLadderSideSlack  = 1.0f;
+const float kLadderFacingCos  = 0.96592582629f;    // cos 15 degrees
+
+// Where she climbs from, in the ladder's frame: CGabriella::tryClimbLadder's
+// (0, 0, +-2). She is eased there and turned to face the ladder over this long
+// rather than snapped.
+const float kLadderStandOff      = 2.0f;
+const float kLadderBlendSeconds  = 0.5f;
+
+// A press made while she settles into STAND waits this long for her.
+const float kClimbBufferSeconds = 0.5f;
+
+struct SLadderBlend {
+    CVector3f offset;       // world distance still to cover
+    float     facing;       // yaw to reach
+    float     remaining;    // seconds; 0 when done
+};
+
+// Per hero slot.
+SLadderBlend s_ladder_blend[4];
+float        s_climb_buffer[4];
+
+// The first ladder she may take, and which face of it she is on (1 in front,
+// -1 behind).
+CLadder *find_ladder(CGabriella *gabriella, float *side)
+{
+    CVector3f       *position = &(gabriella->base).base.base.location.position;
+    CMatrix3x3f     *orient = &(gabriella->base).base.base.orient_matrix;
+    CBoundingBox3D   box;
+    CVector3f        local;
+    CVector3f        ahead;
+    CLadder         *ladder;
+    float            facing_dot;
+    int              i;
+
+    for (i = 0; i < g_CDemonSetPtr->actor_count; i++) {
+        ladder = (CLadder *)core_actor_cpp_castToClassHash_FUN_0040c790
+                     (g_CDemonSetPtr->actors[i], g_CLadderClassInfo.name_hash);
+        if (ladder == (CLadder *)0x0) {
+            continue;
+        }
+        if (std::fabs(position->y - (ladder->base).location.position.y) > kLadderHeightBand) {
+            continue;
+        }
+        core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+            (&ladder->base, &local, position);
+        if (std::fabs(local.z) > kLadderReach) {
+            continue;
+        }
+        (*((ladder->base).vtable._ub)->getBoundingBox)(&ladder->base, &box);
+        if ((local.x > box.max.x + kLadderSideSlack) ||
+            (local.x < box.min.x - kLadderSideSlack)) {
+            continue;
+        }
+        facing_dot = orient->m[0].z * (ladder->base).orient_matrix.m[0].z +
+                     orient->m[1].z * (ladder->base).orient_matrix.m[1].z +
+                     orient->m[2].z * (ladder->base).orient_matrix.m[2].z;
+        if (std::fabs(facing_dot) < kLadderFacingCos) {
+            continue;
+        }
+        core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+            ((CDemonActor *)gabriella, &ahead, &(ladder->base).location.position);
+        if (ahead.z <= 0.0f) {
+            continue;
+        }
+        *side = (local.z < 0.0f) ? -1.0f : 1.0f;
+        return ladder;
+    }
+    return (CLadder *)0x0;
+}
+
+// Puts her on `ladder`: CGabriella::tryClimbLadder's request and placement,
+// with the placement eased by ladder_tick.
+void start_climb(CGabriella *gabriella, int slot, CLadder *ladder, float side)
+{
+    CVector3f    *position = &(gabriella->base).base.base.location.position;
+    SLadderBlend *blend = &s_ladder_blend[slot];
+    CVector3f     stand_off;
+    CVector3f     target;
+    CVector3f     to_ladder;
+    CVector3f     angles;
+
+    (gabriella->base).ladder_to_climb = ladder;
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+        (&(gabriella->base).base.model.motion_controller, (int)kLadder, 1);
+    stand_off.x = 0.0f;
+    stand_off.y = 0.0f;
+    stand_off.z = kLadderStandOff * side;
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(&ladder->base, &target, &stand_off);
+    to_ladder.x = (ladder->base).location.position.x - target.x;
+    to_ladder.y = (ladder->base).location.position.y - target.y;
+    to_ladder.z = (ladder->base).location.position.z - target.z;
+    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&angles, &to_ladder);
+    blend->offset.x = target.x - position->x;
+    blend->offset.y = target.y - position->y;
+    blend->offset.z = target.z - position->z;
+    blend->facing = angles.y;
+    blend->remaining = kLadderBlendSeconds;
+}
+
+// Starts the climb if she stands, on the ground and free, with her weapon away,
+// by a ladder she may take.
+int try_start_climb(CGabriella *gabriella, int slot)
+{
+    CHero   *hero = &gabriella->base;
+    CLadder *ladder;
+    float    side;
+
+    if (((hero->base).is_on_ground == 0) || ((hero->base).grabbed_by != (CDemonActor *)0x0) ||
+        (hero->ladder_to_climb != (CLadder *)0x0) || (current_state(gabriella) != kStand) ||
+        (gabriella->weapon_state_flags != 0) || (0.0f < gabriella->draw_blend)) {
+        return 0;
+    }
+    ladder = find_ladder(gabriella, &side);
+    if (ladder == (CLadder *)0x0) {
+        return 0;
+    }
+    start_climb(gabriella, slot, ladder, side);
+    return 1;
+}
+
+// Whether LADDER is playing or being crossfaded into.
+int on_ladder_motion(CGabriella *gabriella)
+{
+    CMotionController *controller = &(gabriella->base).base.model.motion_controller;
+
+    if (0.0f < core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
+                   (controller, (int)kLadder)) {
+        return 1;
+    }
+    return (controller->in_transition != (SMotionTransition *)0x0) &&
+           (controller->in_transition->desired_state == (int)kLadder);
+}
+
+} // namespace
+
+extern "C" int nocturne_hero_gabriella_climb(CGabriella *gabriella)
+{
+    float side;
+    int   slot;
+
+    if (gabriella == (CGabriella *)0x0) {
+        return 0;
+    }
+    slot = hero_slot((CDemonActor *)gabriella);
+    if (slot < 0) {
+        return core_gabriela_cpp_CGabriella_tryClimbLadder_FUN_004d5c60(gabriella);
+    }
+    if (try_start_climb(gabriella, slot) != 0) {
+        s_climb_buffer[slot] = 0.0f;
+    }
+    else if (((gabriella->base).base.is_on_ground != 0) &&
+             ((gabriella->base).ladder_to_climb == (CLadder *)0x0) &&
+             (find_ladder(gabriella, &side) != (CLadder *)0x0)) {
+        // Not standing yet: hold the press until she is.
+        s_climb_buffer[slot] = kClimbBufferSeconds;
+    }
+    else {
+        return 0;
+    }
+    use_press(gabriella, slot);
+    return 1;
+}
+
+extern "C" int nocturne_hero_gabriella_ladder_tick(CGabriella *gabriella, float delta_time)
+{
+    SLadderBlend *blend;
+    float         step;
+    int           slot;
+
+    if (gabriella == (CGabriella *)0x0) {
+        return 1;
+    }
+    slot = hero_slot((CDemonActor *)gabriella);
+    if (on_ladder_motion(gabriella) == 0) {
+        (gabriella->base).ladder_to_climb = (CLadder *)0x0;
+        if (slot >= 0) {
+            s_ladder_blend[slot].remaining = 0.0f;
+        }
+        return 0;
+    }
+    if ((slot < 0) || (s_ladder_blend[slot].remaining <= 0.0f)) {
+        return 1;
+    }
+    // CStranger::processFrame's ladder ease: cover the share of what is left
+    // that this frame is of the time left.
+    blend = &s_ladder_blend[slot];
+    if (blend->remaining <= delta_time) {
+        step = 1.0f;
+        blend->remaining = 0.0f;
+    }
+    else {
+        step = delta_time / blend->remaining;
+        blend->remaining = blend->remaining - delta_time;
+    }
+    (gabriella->base).base.base.location.position.x += blend->offset.x * step;
+    (gabriella->base).base.base.location.position.y += blend->offset.y * step;
+    (gabriella->base).base.base.location.position.z += blend->offset.z * step;
+    blend->offset.x = blend->offset.x * (1.0f - step);
+    blend->offset.y = blend->offset.y * (1.0f - step);
+    blend->offset.z = blend->offset.z * (1.0f - step);
+    (gabriella->base).base.turn_angle_accumulator =
+        core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
+            (blend->facing - (gabriella->base).base.base.orient.vec.y) * step;
+    return 1;
+}
 
 extern "C" int nocturne_hero_gabriella_pickup(CGabriella *gabriella)
 {
@@ -1107,16 +1336,98 @@ extern "C" int nocturne_hero_gabriella_pickup(CGabriella *gabriella)
     return 1;
 }
 
-extern "C" int nocturne_hero_gabriella_strafe_state(CGabriella *gabriella, int chosen_state)
+// =============================================================================
+// Turning in place
+// =============================================================================
+
+namespace {
+
+// Turn input must last this long before a step starts, so a tap only rotates
+// her, as before.
+const float kTurnHoldSeconds = 0.15f;
+
+// While the turn lasts, a step is followed by the next from this many frames
+// before its exit: its pose crossfades to the step's first frame over
+// kTurnChainTween seconds with neither advancing (tweenPoseToPose), and the
+// step then plays in full, rather than going through its own exit to "gab
+// pause".
+const float kTurnChainFrames = 1.0f;
+const float kTurnChainTween  = 0.2f;
+
+// Per hero slot: seconds turn input has lasted.
+float s_turn_held[4];
+
+// The turn state her turn input asks for, or STAND (0) for none.
+uint turn_wanted(CGabriella *gabriella, int slot)
 {
+    const SPlayerInput *input = &(gabriella->base).player_input;
+
+    if ((slot < 0) || (s_turn_held[slot] < kTurnHoldSeconds) ||
+        (input->action_state.fire != 0) || (std::fabs(input->turn_speed) <= 0.01f)) {
+        return kStand;
+    }
+    return (input->turn_speed < 0.0f) ? kTurnLeft : kTurnRight;
+}
+
+// Before her motion advances by `motion_delta` seconds: once a step nears its
+// exit with the same turn still wanted, crossfades into the step's start.
+void chain_turn(CGabriella *gabriella, int slot, float motion_delta)
+{
+    CMotionController *controller = &(gabriella->base).base.model.motion_controller;
+    SMotionTransition  next;
+    SMotion           *motion;
+    uint               current;
+
+    current = current_state(gabriella);
+    if (((current != kTurnLeft) && (current != kTurnRight)) ||
+        (0.0f <= controller->tween_progress) || (turn_wanted(gabriella, slot) != current)) {
+        return;
+    }
+    motion = &controller->motion_list_ptr->motions[controller->current_motion_index];
+    if (controller->current_frame_number + motion_delta * motion->fps <
+        (float)motion->exit_forward_from_frame - kTurnChainFrames) {
+        return;
+    }
+    next.desired_state = (int)current;
+    next.cmd = MOTION_CMD_TWEEN;
+    next.to_motion_number = controller->current_motion_index;
+    next.to_frame_number = 0.0f;
+    next.tween_time = kTurnChainTween;
+    next.set_new_state_as_desired = 0;
+    core_motion_cpp_CMotionController_startTransition_FUN_0052dbc0(controller, &next);
+}
+
+} // namespace
+
+extern "C" int nocturne_hero_gabriella_locomotion_state(CGabriella *gabriella, int chosen_state)
+{
+    SPlayerInput *input;
     float strafe_speed;
     uint  wanted;
     uint  current;
+    int   slot;
 
-    if ((gabriella == (CGabriella *)0x0) || (chosen_state != 0)) {
+    if (gabriella == (CGabriella *)0x0) {
         return chosen_state;
     }
-    strafe_speed = (gabriella->base).player_input.strafe_speed;
+    slot = hero_slot((CDemonActor *)gabriella);
+    current = current_state(gabriella);
+    // A request made during a crossfade out of a step restarts the crossfade
+    // from nothing (findAndStartTransition clears it), and the pose jumps. The
+    // request waits for the crossfade, at most kTurnChainTween or the step's
+    // own 0.3 s.
+    if (((current == kTurnLeft) || (current == kTurnRight)) &&
+        (0.0f <= (gabriella->base).base.model.motion_controller.tween_progress)) {
+        return (int)current;
+    }
+    if ((slot >= 0) && (0.0f < s_climb_buffer[slot])) {
+        return (int)kStand;
+    }
+    if (chosen_state != 0) {
+        return chosen_state;
+    }
+    input = &(gabriella->base).player_input;
+    strafe_speed = input->strafe_speed;
     if (strafe_speed < -0.01f) {
         wanted = kStrafeL;
     }
@@ -1124,9 +1435,13 @@ extern "C" int nocturne_hero_gabriella_strafe_state(CGabriella *gabriella, int c
         wanted = kStrafeR;
     }
     else {
-        return chosen_state;
+        // Turning in place, for a player. A press still waiting for an action
+        // holds her in STAND, where every action starts.
+        if ((current != kStand) && (current != kTurnLeft) && (current != kTurnRight)) {
+            return chosen_state;
+        }
+        return (int)turn_wanted(gabriella, slot);
     }
-    current = current_state(gabriella);
     if ((current != kStand) && (current != kWalk) && (current != wanted)) {
         return (int)kStand;
     }
@@ -1173,6 +1488,16 @@ extern "C" void nocturne_hero_gabriella_process_motion(CGabriella *gabriella, fl
     prev_state = current_state(gabriella);
     prev_frame = controller->current_frame_number;
 
+    if (slot >= 0) {
+        if (std::fabs((gabriella->base).player_input.turn_speed) <= 0.01f) {
+            s_turn_held[slot] = 0.0f;
+        }
+        else {
+            s_turn_held[slot] = s_turn_held[slot] + delta_time;
+        }
+        chain_turn(gabriella, slot, delta_time * motion_rate(gabriella));
+    }
+
     core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004d4890
         (gabriella, delta_time * motion_rate(gabriella));
 
@@ -1180,6 +1505,13 @@ extern "C" void nocturne_hero_gabriella_process_motion(CGabriella *gabriella, fl
         land_kick(gabriella);
     }
     step_shoves(gabriella, delta_time);
+
+    if ((slot >= 0) && (0.0f < s_climb_buffer[slot])) {
+        s_climb_buffer[slot] = s_climb_buffer[slot] - delta_time;
+        if (try_start_climb(gabriella, slot) != 0) {
+            s_climb_buffer[slot] = 0.0f;
+        }
+    }
 
     // A buffered press fires once she stands, if her weapon is still away.
     if ((slot >= 0) && (0.0f < s_kick_buffer[slot])) {

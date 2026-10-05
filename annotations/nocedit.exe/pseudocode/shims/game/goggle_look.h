@@ -13,6 +13,19 @@
 // camera-only and kept out of the actor: goggles_active is one machine's state,
 // and anything it gated in the sim would desync lockstep netplay.
 //
+// THE HEAD IS LEVEL
+//
+// With the goggles on, CStranger::updateProceduralAnimation sets his head
+// bone's model-space rotation to his aim pitch alone, so his idle and turn
+// animations never move the view. The other heroes' heads keep their
+// animation, and their goggle view sways with every idle, swings with every
+// step, and points where the head does (Gabriella's idle head is turned 13
+// degrees). Their goggle camera is built from the head bone's matrix with the
+// rotation replaced by a level one and its position kept - what CStranger's
+// pinned head gives, since a bone's model matrix takes its rotation from that
+// bone alone and its position from its parents. Their look pitch is applied
+// on top, as before.
+//
 // Gated by NOCTURNE_AUTHENTIC_GOGGLE_LOOK at the call sites.
 
 #ifdef __cplusplus
@@ -20,6 +33,13 @@ extern "C" {
 #endif
 
 struct CHero;
+struct CMatrix3x4f;
+
+// The matrix the goggle camera is built from, given `hero`'s head bone matrix:
+// `head` for a CStranger, which levels its own head; for any other class,
+// `level` filled with a level rotation at the head bone's scale and position.
+struct CMatrix3x4f *nocturne_goggle_head_matrix(struct CHero *hero, struct CMatrix3x4f *head,
+                                                struct CMatrix3x4f *level);
 
 // Once per sim frame, from CGame::process: integrates the local hero's look
 // input over `delta_time` while the goggles are on, frozen once the hero is

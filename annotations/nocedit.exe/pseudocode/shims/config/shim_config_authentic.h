@@ -103,7 +103,7 @@
 // | `NOCTURNE_AUTHENTIC_BUILD_STAMP` | 0 | choice | the console banner dates this build, not Terminal Reality's |
 // | `NOCTURNE_AUTHENTIC_ENEMY_RETAIN` | 0 | choice | an enemy drops a victim it can neither see nor path to |
 // | `NOCTURNE_AUTHENTIC_AUTOMAP` | 0 | addition | a bindable Doom-style map that fills in as you explore |
-// | `NOCTURNE_AUTHENTIC_GOGGLE_LOOK` | 0 | addition | the goggle view looks up and down with empty hands, for every hero |
+// | `NOCTURNE_AUTHENTIC_GOGGLE_LOOK` | 0 | addition | the goggle view looks up and down with empty hands, for every hero, and is held level as the Stranger's is |
 // | `NOCTURNE_AUTHENTIC_HERO_LOOK_AIM` | 0 | addition | Scat's aim follows look input under auto-aim until a target takes it |
 // | `NOCTURNE_AUTHENTIC_MENU_VERSION` | 0 | addition | the menu carries a line naming this build |
 // | `NOCTURNE_AUTHENTIC_SAVE_SLOTS` | 0 | addition | saves are picked from a slot list, not typed |
@@ -1197,6 +1197,13 @@
 //                   moves at his speed.
 //     unarmed kick  GABRIELA.SKL authors "gab kick door open", a left-leg kick
 //                   in state KICK_DOOR, and nothing ever asks for it.
+//     turning       GABRIELA.SKL authors TURN_LEFT and TURN_RIGHT, and
+//                   nothing ever asks for them.
+//     ladders       CGabriella::tryClimbLadder asks for LADDER from any
+//                   state but only STAND routes there; pressed while moving,
+//                   she keeps ladder_to_climb and runs on without collision.
+//                   It takes a ladder only within 0.3 units of its centre
+//                   line, and her climb is about half the Stranger's speed.
 //
 //   1: shipped behaviour — Scat and Moloch can interact with nothing, sheathed
 //      fire falls through to an attack, only the Stranger can break a grab
@@ -1227,6 +1234,9 @@
 //      Stranger's test, with the strafe played at twice its authored rate; with
 //      her weapon away and nothing else to act on, the action button kicks an
 //      enemy in reach in front of her for 10-15 damage and a short shove;
+//      she steps through her turn motions when turning in place; she takes a
+//      ladder on the Stranger's test, only from STAND, lets go of one whose
+//      state never started, and climbs at 1.75 times her authored rate;
 //      her dynamite charge lights the fuse, which her code never did, so the
 //      stick no longer explodes as it leaves her hand; she aims and charges
 //      the throw by the Stranger's rules, throws it one-armed overhand, and
@@ -2244,13 +2254,17 @@
 #endif
 
 // NOCTURNE_AUTHENTIC_GOGGLE_LOOK
-//   Whether the infrared goggles can be looked around with empty hands.
+//   Whether the infrared goggles can be looked around with empty hands, and
+//   whether every hero's goggle view is held level as the Stranger's is.
 //   1: shipped behaviour — the goggle view pitches with the aim only while a
 //      gun is drawn. Holstered or empty-handed it is pinned to the horizon and
 //      look input up and down does nothing. With a gun drawn it keeps pitching
 //      after the player is dead, through the death animation and Game Over.
+//      For every hero but the Stranger it follows the head bone's animation,
+//      swaying with the idle and swinging with each step.
 //   0: look drives the goggle view whatever the hands are holding, and stops
-//      when the player dies.
+//      when the player dies. Every hero's goggle view is level and faces
+//      where the hero does, as the Stranger's does (goggle_look.h).
 //
 //   Two things produce the shipped behaviour, and both have to move.
 //   CStranger::autoAimAtThreat returns early with no weapon, after setting
@@ -2264,9 +2278,10 @@
 //   The other eight heroes never pitch the head bone at all, so at 0 they get
 //   the same pitch on the goggle camera alone — see shims/game/goggle_look.h.
 //
-//   Only the pitch is gated. Turning already works empty-handed, because the
-//   goggle view's yaw is the hero's own facing plus a head yaw the shipped code
-//   leaves at zero, and turning is ordinary locomotion.
+//   Turning already works empty-handed: the goggle view's yaw is the hero's
+//   own facing plus the head bone's yaw, and turning is ordinary locomotion.
+//   The Stranger's head yaw is zero with the goggles on; every other hero's is
+//   whatever its animation gives, which at 0 is levelled in the camera alone.
 //
 //   Both input paths already deliver the axis: CGame::processMouseControls
 //   writes look_up_down_speed whatever is held, and so does the pad shim's

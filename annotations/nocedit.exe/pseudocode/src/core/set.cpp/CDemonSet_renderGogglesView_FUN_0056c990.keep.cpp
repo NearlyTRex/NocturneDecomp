@@ -22,6 +22,9 @@ void __cdecl core_set_cpp_CDemonSet_renderGogglesView_FUN_0056c990(CDemonSet *th
   CVector3f local_38;
   CVector3f local_2c;
   CVector3f local_20;
+#if !NOCTURNE_AUTHENTIC_GOGGLE_LOOK
+  CMatrix3x4f level_head;
+#endif
   int iVar1;
   CHero *this_ptr_00;
   int iVar2;
@@ -31,6 +34,9 @@ void __cdecl core_set_cpp_CDemonSet_renderGogglesView_FUN_0056c990(CDemonSet *th
                           (&(this_ptr_00->base).model);
   iVar3 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_02,"Bip01 Head",0);
   matrix = (this_ptr_00->base).model.bone_transform.bone_model_matrices + iVar3;
+#if !NOCTURNE_AUTHENTIC_GOGGLE_LOOK
+  matrix = nocturne_goggle_head_matrix(this_ptr_00,matrix,&level_head);
+#endif
   local_44.y = 0.338;
   local_44.x = 0.0;
   local_44.z = 0.75;

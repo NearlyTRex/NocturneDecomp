@@ -95,6 +95,18 @@ IcePick's attack3 (101 and 102 at f18, 101 lost).
   their blend weights. The Stranger's loop in 0.47 s (21 at 45 fps) and move him by
   root motion at about 1.8 units/s, so the two travel alike while her legs step at a
   sixth of his rate.
+- **TURN_LEFT and TURN_RIGHT are never asked for.** `CGabriella::process` treats
+  them as locomotion and applies none of their root motion, but turning on the
+  spot only rotates "gab pause".
+- **Her ladder is up only, and slow.** "gab ladder" (216 frames at 45 fps) is a
+  130-frame mount climbing 1.5 units, then a loop from frame 130 climbing 2 units
+  in 1.9 s; the Stranger's "ladderuploop" climbs 2 units in 1.1 s. There is no
+  down motion and no descend code. `CGabriella::tryClimbLadder` places her and
+  sets `ladder_to_climb` before asking for LADDER, which only STAND routes to;
+  pressed while moving, the request is dropped and `process`, which reads no
+  input and applies root motion without collision while `ladder_to_climb` is
+  set, carries her on through the world. The Stranger's `processFrame` drops his
+  ladder when its state has no weight.
 - **KICK_DOOR is unused in the shipped game**: no signal, and nothing in the code
   or the shipped scripts asks for state 0x13. It is a left-leg kick: the thigh
   peaks at frame 19 and the knee straightens at 22–24, before the exit at 29.
@@ -103,8 +115,11 @@ IcePick's attack3 (101 and 102 at f18, 101 lost).
   pitch is procedural.
 - `NOCTURNE_AUTHENTIC_HERO_ACTIONS` puts her pickup on the action button (STAND
   only) and selects her strafes, asking for STAND first when no route exists and
-  playing them at twice their authored rate, and turns KICK_DOOR into an unarmed
-  kick with a frame-based hit from her left foot (`shims/game/hero_gabriella.h`).
+  playing them at twice their authored rate, asks for her turns from turn input
+  alone, turns KICK_DOOR into an unarmed kick with a frame-based hit from her
+  left foot, and gives her ladder the Stranger's acceptance test, a STAND-only
+  start, his let-go, and 1.75 times its authored rate
+  (`shims/game/hero_gabriella.h`).
 
 ### Stranger
 
