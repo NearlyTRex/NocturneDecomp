@@ -24,6 +24,8 @@ int __cdecl core_gabriela_cpp_CGabriella_renderOpaque_FUN_004d6140(CGabriella *t
     ;
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
 #if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+    nocturne_hero_gabriella_render_mask(this_ptr);
+    nocturne_hero_gabriella_render_carry_arc(this_ptr);
     nocturne_hero_gabriella_hold_weapon(this_ptr);
 #endif
     pCVar4 = (this_ptr->base).inventory.selected_weapon;

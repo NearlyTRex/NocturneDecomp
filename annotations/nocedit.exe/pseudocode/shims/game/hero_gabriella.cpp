@@ -208,29 +208,53 @@ float drawn_weight(const CGabriella *gabriella)
 }
 
 // Her pistol aim's arm placement, CGabriella::updateWeaponAndAimAnimation's
-// CGun branch, with the throw's pitch in place of her aim's: the right arm
-// turned to point along (pitch, yaw), down the arm by
-// weaponDrawBlendWeightCallback.
-void point_throwing_arm(CGabriella *gabriella, float pitch, float weight)
+// CGun branch: the orientation that points her right arm along (pitch, yaw).
+void right_arm_rotation(float pitch, float yaw, CQuaternion4f *arm)
 {
     CQuaternion4f turn_z;
     CQuaternion4f turn_y;
     CQuaternion4f arm_out;
     CQuaternion4f aim;
-    CQuaternion4f arm;
     CVector3f euler;
 
     core_xform_cpp_quaternionFromAngleZ_FUN_005f7a30(-1.5707964f, &turn_z);
     core_xform_cpp_quaternionFromAngleY_FUN_005f79f0(-1.5707964f, &turn_y);
     core_xform_cpp_multiplyQuaternion_FUN_005f7640(&turn_y, &turn_z, &arm_out);
     euler.x = pitch;
-    euler.y = clamp(gabriella->aim_yaw, -1.7453293f, 1.7453293f);
+    euler.y = yaw;
     euler.z = 0.0f;
     core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&euler, &aim);
-    core_xform_cpp_multiplyQuaternion_FUN_005f7640(&arm_out, &aim, &arm);
+    core_xform_cpp_multiplyQuaternion_FUN_005f7640(&arm_out, &aim, arm);
+}
+
+// Turns `bone` and the bones below it to `arm`, down the arm by
+// weaponDrawBlendWeightCallback.
+void blend_arm(CGabriella *gabriella, CQuaternion4f *arm, float weight, int bone)
+{
     core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
-        (&(gabriella->base).base.model, &arm, weight, g_GabriellaIndices[4],
+        (&(gabriella->base).base.model, arm, weight, bone,
          core_gabriela_cpp_weaponDrawBlendWeightCallback_FUN_004d29f0);
+}
+
+// The right arm pointed along the throw's pitch and her aim's yaw.
+void point_throwing_arm(CGabriella *gabriella, float pitch, float weight)
+{
+    CQuaternion4f arm;
+
+    right_arm_rotation(pitch, clamp(gabriella->aim_yaw, -1.7453293f, 1.7453293f), &arm);
+    blend_arm(gabriella, &arm, weight, g_GabriellaIndices[4]);
+}
+
+// The left arm pointed along `pitch`, straight ahead: the right arm's
+// orientation reflected through her centre plane.
+void point_left_arm(CGabriella *gabriella, float pitch, float weight)
+{
+    CQuaternion4f arm;
+
+    right_arm_rotation(pitch, 0.0f, &arm);
+    arm.y = -arm.y;
+    arm.z = -arm.z;
+    blend_arm(gabriella, &arm, weight, g_GabriellaIndices[3]);
 }
 
 // One frame of the wind-up, swing and fetch, with dynamite selected.
@@ -807,6 +831,538 @@ void filter_press(CGabriella *gabriella, int slot)
 }
 
 } // namespace
+
+// =============================================================================
+// Carried objects
+// =============================================================================
+
+namespace {
+
+const uint kPickupCarry = 0x04;
+const uint kPutDown     = 0x05;
+
+// CStranger::tryThrowDynamite and updateWeaponLayerActions: the throw's speed
+// starts at 10 and rises at 25 a second to 70 while the button is held.
+const float kCarryThrowStart = 10.0f;
+const float kCarryThrowRate  = 25.0f;
+const float kCarryThrowMax   = 70.0f;
+
+// A put-down pressed while she moves waits this long for her to stand.
+const float kPutDownBufferSeconds = 0.5f;
+
+struct SCarryThrow {
+    int    charging;
+    float  power;
+    float  target_pitch;    // the look-driven aim
+    float  pitch;           // eases after it; the throw goes along this
+    SThrow arm;             // the left arm's wind-up and swing
+};
+
+// Per hero slot.
+SCarryThrow s_carry_throw[4];
+float       s_put_down_buffer[4];
+
+// What her left hand carries that she may let go of: anything but her flashlight.
+CDemonActor *carried_object(CGabriella *gabriella)
+{
+    CDemonActor *carried = (gabriella->base).base.carry_hands[0].carry_actor;
+
+    if ((carried == (CDemonActor *)0x0) ||
+        (core_actor_cpp_castToClassHash_FUN_0040c790(carried, g_CLightActorClassInfo.name_hash) !=
+         (void *)0x0)) {
+        return (CDemonActor *)0x0;
+    }
+    return carried;
+}
+
+int is_throwable(CDemonActor *object)
+{
+    return ((*((object->vtable)._ub)->getAllowedMeleeAttackTypes)(object) & 4) != 0;
+}
+
+int can_act(CGabriella *gabriella)
+{
+    const CCharacter *self = &(gabriella->base).base;
+
+    return (self->grabbed_by == (CDemonActor *)0x0) && (0.0f < self->hit_points);
+}
+
+// CStranger::tryPlaceObject's free-floor test, from the object in her hand:
+// nothing within 1.5 units ahead of it, ground there within 1 unit of her
+// feet, and no crate within 2.
+int floor_takes(CGabriella *gabriella, CDemonActor *object)
+{
+    CDemonActor *self = (CDemonActor *)gabriella;
+    CVector3f unit;
+    CVector3f ahead;
+    CVector3f step;
+    CVector3f probe;
+    float x;
+    float z;
+    float feet;
+    float ground;
+    float dx;
+    float dy;
+    float dz;
+    int i;
+
+    core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr, self);
+    core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr, object);
+    unit.x = 0.0f;
+    unit.y = 0.0f;
+    unit.z = 1.0f;
+    core_actor_cpp_CDemonActor_transformVector_FUN_00408e80(self, &ahead, &unit);
+    x = (object->location).position.x + ahead.x;
+    z = (object->location).position.z + ahead.z;
+    feet = (self->location).position.y;
+    unit.z = 1.5f;
+    core_actor_cpp_CDemonActor_transformVector_FUN_00408e80(self, &step, &unit);
+    if (core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00573470
+            (g_CDemonSetPtr, x, z, step.x, step.z, 1.0f, 0.1f, 3.0f) < 1.0f) {
+        core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
+        return 0;
+    }
+    probe.x = x + step.x;
+    probe.y = feet + step.y;
+    probe.z = z + step.z;
+    ground = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
+                 (g_CDemonSetPtr, &probe, 0.5f);
+    core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
+    if (1.0f < std::fabs(ground - feet)) {
+        return 0;
+    }
+    for (i = 0; i < g_CDemonSetPtr->actor_count; i++) {
+        CDemonActor *crate = (CDemonActor *)core_actor_cpp_castToClassHash_FUN_0040c790
+            (g_CDemonSetPtr->actors[i], g_CCrateClassInfo.name_hash);
+
+        if (crate == (CDemonActor *)0x0) {
+            continue;
+        }
+        dx = (crate->location).position.x - x;
+        dy = (crate->location).position.y - feet;
+        dz = (crate->location).position.z - z;
+        if (std::sqrt(dx * dx + dy * dy + dz * dz) < 2.0f) {
+            return 0;
+        }
+    }
+    return 1;
+}
+
+// Asks for PUTDOWN if she stands on the ground and the floor takes what she carries.
+int try_start_put_down(CGabriella *gabriella)
+{
+    CDemonActor *object = carried_object(gabriella);
+
+    if ((object == (CDemonActor *)0x0) || ((gabriella->base).base.is_on_ground == 0) ||
+        (can_act(gabriella) == 0) || (current_state(gabriella) != kStand) ||
+        (floor_takes(gabriella, object) == 0)) {
+        return 0;
+    }
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+        (&(gabriella->base).base.model.motion_controller, (int)kPutDown, 1);
+    return 1;
+}
+
+SCarryThrow *carry_throw_state(CGabriella *gabriella)
+{
+    int slot = hero_slot((CDemonActor *)gabriella);
+
+    return (slot < 0) ? (SCarryThrow *)0x0 : &s_carry_throw[slot];
+}
+
+// CStranger::getThrowDirection, with her throw's pitch and speed, in her
+// local space.
+void carry_throw_direction(const SCarryThrow *t, CVector3f *direction)
+{
+    CMatrix3x3f rotation;
+    CVector3f euler;
+    CVector3f speed;
+
+    euler.x = t->pitch;
+    euler.y = 0.0f;
+    euler.z = 0.0f;
+    core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(&rotation, &euler);
+    speed.x = 0.0f;
+    speed.y = 0.0f;
+    speed.z = t->power;
+    core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0(&rotation, direction, &speed);
+}
+
+// dropCarriedObject takes the direction in her local space.
+void release_carried(CGabriella *gabriella, const SCarryThrow *t)
+{
+    CVector3f direction;
+
+    if (carried_object(gabriella) == (CDemonActor *)0x0) {
+        return;
+    }
+    carry_throw_direction(t, &direction);
+    (*((((gabriella->base).base.base.vtable._uc)->_uc).dropCarriedObject))
+        ((CCharacter *)gabriella, 0, &direction);
+}
+
+// One frame of a carried throw: the charge while the button is held, then the
+// swing, which lets go of the object as the arm passes kReleasePitch.
+void step_carry_throw(CGabriella *gabriella, SCarryThrow *t, float delta_time)
+{
+    const SPlayerInput *input = &(gabriella->base).player_input;
+    SThrow *arm = &t->arm;
+    float step;
+
+    if (t->charging != 0) {
+        if ((carried_object(gabriella) == (CDemonActor *)0x0) || (can_act(gabriella) == 0)) {
+            t->charging = 0;
+        }
+        else if (input->action_state.fire != 0) {
+            t->power = t->power + kCarryThrowRate * delta_time;
+            if (kCarryThrowMax < t->power) {
+                t->power = kCarryThrowMax;
+            }
+            arm->windup = clamp01(arm->windup + kWindupRate * delta_time);
+        }
+        else {
+            t->charging = 0;
+            arm->swinging = 1;
+            arm->swing_t = 0.0f;
+            arm->swing_from = arm->windup;
+            arm->released = 0;
+            arm->windup = 0.0f;
+        }
+    }
+    else if (arm->swinging == 0) {
+        arm->windup = clamp01(arm->windup - kWindupRate * delta_time);
+    }
+
+    if ((t->charging != 0) || (arm->swinging != 0)) {
+        // nocturne_hero_gabriella_dynamite_aim's look-driven pitch.
+        t->target_pitch = clamp(input->look_up_down_speed * 3.1415927f * 2.0f * delta_time +
+                                    t->target_pitch,
+                                kThrowAimUp, kThrowAimDown);
+        step = delta_time * kThrowAimRate;
+        t->pitch = approach(t->pitch, t->target_pitch, step);
+    }
+
+    if (arm->swinging != 0) {
+        arm->swing_t = arm->swing_t + delta_time;
+        if ((arm->released == 0) && (kReleasePitch <= swing_pitch(arm))) {
+            arm->released = 1;
+            if (can_act(gabriella) != 0) {
+                release_carried(gabriella, t);
+            }
+        }
+        if (kSwingSeconds <= arm->swing_t) {
+            arm->swinging = 0;
+        }
+    }
+}
+
+} // namespace
+
+extern "C" int nocturne_hero_gabriella_throw_carried(CGabriella *gabriella)
+{
+    SCarryThrow *t;
+    CDemonActor *object;
+    uint state;
+
+    if (gabriella == (CGabriella *)0x0) {
+        return 0;
+    }
+    t = carry_throw_state(gabriella);
+    if (t == (SCarryThrow *)0x0) {
+        return 0;
+    }
+    if ((t->charging != 0) || ((t->arm.swinging != 0) && (t->arm.released == 0))) {
+        return 1;
+    }
+    object = carried_object(gabriella);
+    if ((object == (CDemonActor *)0x0) || (is_throwable(object) == 0) || (can_act(gabriella) == 0)) {
+        return 0;
+    }
+    // Not while the pickup or put-down is still under way.
+    state = current_state(gabriella);
+    if ((state == kPickupCarry) || (state == kPutDown)) {
+        return 0;
+    }
+    t->charging = 1;
+    t->power = kCarryThrowStart;
+    t->target_pitch = 0.0f;
+    t->pitch = 0.0f;
+    t->arm.swinging = 0;
+    t->arm.released = 0;
+    return 1;
+}
+
+extern "C" void nocturne_hero_gabriella_render_carry_arc(CGabriella *gabriella)
+{
+    const SCarryThrow *t;
+    CDemonActor *object;
+    CVector3f *start_pos;
+    CVector3f local;
+    CVector3f velocity;
+    float hit_time;
+
+    if (gabriella == (CGabriella *)0x0) {
+        return;
+    }
+    t = carry_throw_state(gabriella);
+    object = carried_object(gabriella);
+    // CStranger::renderOpaque draws it once his arm is fully in the toss pose.
+    if ((t == (const SCarryThrow *)0x0) || (t->charging == 0) || (t->arm.windup <= 0.99f) ||
+        (object == (CDemonActor *)0x0)) {
+        return;
+    }
+    start_pos = &(object->location).position;
+    carry_throw_direction(t, &local);
+    core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
+        ((CDemonActor *)gabriella, &velocity, &local);
+    core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
+    core_setcolid_cpp_CDemonSet_setRayType_FUN_00574230(g_CDemonSetPtr, 1);
+    core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr, (CDemonActor *)gabriella);
+    core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr, object);
+    hit_time = core_setcolid_cpp_CDemonSet_iterativeRaycast_FUN_00572800
+                   (g_CDemonSetPtr, start_pos, &velocity);
+    if (hit_time < 0.0f) {
+        hit_time = 10.0f;
+    }
+    core_fire_cpp_CFireEffect_createLaserPath_FUN_004c7f80
+        (g_CFireEffectPtr, start_pos, &velocity, 1.0f, 1.0f,
+         &g_CDemonSetPtr->collision_normal, hit_time, 0xff, 0, 0);
+    core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
+}
+
+extern "C" int nocturne_hero_gabriella_put_down(CGabriella *gabriella)
+{
+    CDemonActor *object;
+    int slot;
+
+    if (gabriella == (CGabriella *)0x0) {
+        return 0;
+    }
+    slot = hero_slot((CDemonActor *)gabriella);
+    object = carried_object(gabriella);
+    if ((slot < 0) || (object == (CDemonActor *)0x0)) {
+        return 0;
+    }
+    if (try_start_put_down(gabriella) != 0) {
+        s_put_down_buffer[slot] = 0.0f;
+    }
+    else if (((gabriella->base).base.is_on_ground != 0) && (can_act(gabriella) != 0) &&
+             (current_state(gabriella) != kPutDown) && (floor_takes(gabriella, object) != 0)) {
+        // Not standing yet: hold the press until she is.
+        s_put_down_buffer[slot] = kPutDownBufferSeconds;
+    }
+    else {
+        return 0;
+    }
+    use_press(gabriella, slot);
+    return 1;
+}
+
+extern "C" void nocturne_hero_gabriella_use_item(CGabriella *gabriella)
+{
+    CHero *hero;
+
+    if (gabriella == (CGabriella *)0x0) {
+        return;
+    }
+    hero = &gabriella->base;
+    if ((hero->player_input).action_state.use_item == 0) {
+        return;
+    }
+    if (hero_slot((CDemonActor *)gabriella) < 0) {
+        if (core_gabriela_cpp_CGabriella_findAndPickupNearbyObject_FUN_004d5870(gabriella) == 0) {
+            core_gabriela_cpp_CGabriella_tryThrowObject_FUN_004d6050(gabriella);
+        }
+        return;
+    }
+    if (can_act(gabriella) != 0) {
+        core_hero_cpp_CHero_tryUseSelectedItem_FUN_004f3760(hero);
+    }
+}
+
+// =============================================================================
+// Gas mask
+// =============================================================================
+
+namespace {
+
+// How long her hand takes to reach her face, and to come back down.
+const float kMaskRaiseSeconds = 0.5f;
+const float kMaskLowerSeconds = 0.4f;
+
+// The reach, in right_arm_rotation's angles: the upper arm down and across her
+// body, the forearm folded up to her face. Values to tune in play.
+const float kMaskUpperPitch   = 0.9f;
+const float kMaskUpperYaw     = 0.7f;
+const float kMaskForearmPitch = -1.3f;
+const float kMaskForearmYaw   = 1.4f;
+
+// The mask's placement on her head and in her right hand, as
+// CStranger::renderOpaque places his: a position and euler angles in the
+// bone's frame. His values, except that on her smaller head the mask sits
+// kMaskOnHeadScale of his distance from the head bone.
+const float kMaskOnHeadScale = 0.8f;
+const CVector3f kMaskOnHeadPosition  = { 0.00604827f * kMaskOnHeadScale,
+                                         0.283614f * kMaskOnHeadScale,
+                                         0.537644f * kMaskOnHeadScale };
+const CVector3f kMaskOnHeadAngles    = { -0.140457f, -3.0786f, 0.0f };
+const CVector3f kMaskInHandPosition  = { 0.512623f, -0.0202601f, 0.130713f };
+const CVector3f kMaskInHandAngles    = { 1.16195f, 0.368073f, 0.0489636f };
+
+struct SMaskArm {
+    float reach;    // 0 at her side, 1 at her face
+    int   moving;
+    int   raising;
+};
+
+// Per hero slot.
+SMaskArm s_mask_arm[4];
+
+// The inventory's gas mask: CInventory::select stores it in light_gun_ptr.
+CGasMask *inventory_mask(CGabriella *gabriella)
+{
+    return (CGasMask *)core_actor_cpp_castToClassHash_FUN_0040c790
+        ((CDemonActor *)(gabriella->base).inventory.light_gun_ptr, g_CGasMaskClassInfo.name_hash);
+}
+
+// CInventory::select's toggle, which CGasMask keeps in `carrier`.
+int mask_wanted(CGabriella *gabriella)
+{
+    CGasMask *mask = inventory_mask(gabriella);
+
+    return (mask != (CGasMask *)0x0) && (mask->carrier != (CDemonActor *)0x0);
+}
+
+} // namespace
+
+extern "C" void nocturne_hero_gabriella_mask_tick(CGabriella *gabriella, float delta_time)
+{
+    SMaskArm *m;
+    int *wearing;
+    int wanted;
+    int slot;
+
+    if (gabriella == (CGabriella *)0x0) {
+        return;
+    }
+    slot = hero_slot((CDemonActor *)gabriella);
+    if (slot < 0) {
+        return;
+    }
+    m = &s_mask_arm[slot];
+    wearing = &(gabriella->base).is_wearing_gas_mask;
+    wanted = mask_wanted(gabriella);
+
+    if (m->moving == 0) {
+        // The arm waits for her weapon to be away entirely.
+        if ((((wanted != 0) && (*wearing != 2)) || ((wanted == 0) && (*wearing != 0))) &&
+            (gabriella->weapon_state_flags == 0) && (gabriella->draw_blend <= 0.0f)) {
+            m->moving = 1;
+            m->raising = 1;
+            if ((*wearing == 0) && (wanted != 0)) {
+                *wearing = 1;
+            }
+        }
+    }
+    else if (m->raising != 0) {
+        m->reach = m->reach + delta_time / kMaskRaiseSeconds;
+        if (1.0f <= m->reach) {
+            m->reach = 1.0f;
+            m->raising = 0;
+            *wearing = (wanted != 0) ? 2 : 1;
+        }
+    }
+    else {
+        m->reach = m->reach - delta_time / kMaskLowerSeconds;
+        if (m->reach <= 0.0f) {
+            m->reach = 0.0f;
+            m->moving = 0;
+            if (*wearing < 2) {
+                *wearing = (wanted != 0) ? 1 : 0;
+            }
+        }
+    }
+    if (m->moving != 0) {
+        (gabriella->base).player_input.action_state.draw = 0;
+    }
+}
+
+extern "C" void nocturne_hero_gabriella_pose_arms(CGabriella *gabriella)
+{
+    const SCarryThrow *t;
+    const SMaskArm *m;
+    CQuaternion4f arm;
+    float weight;
+    int slot;
+
+    if (gabriella == (CGabriella *)0x0) {
+        return;
+    }
+    slot = hero_slot((CDemonActor *)gabriella);
+    if (slot < 0) {
+        return;
+    }
+    t = &s_carry_throw[slot];
+    if (t->arm.swinging != 0) {
+        point_left_arm(gabriella, swing_pitch(&t->arm), swing_weight(&t->arm));
+    }
+    else if (0.0f < t->arm.windup) {
+        point_left_arm(gabriella, kWindupPitch, t->arm.windup);
+    }
+
+    m = &s_mask_arm[slot];
+    if (m->reach <= 0.0f) {
+        return;
+    }
+    weight = smoothstep01(m->reach);
+    right_arm_rotation(kMaskUpperPitch, kMaskUpperYaw, &arm);
+    blend_arm(gabriella, &arm, weight, g_GabriellaIndices[4]);
+    right_arm_rotation(kMaskForearmPitch, kMaskForearmYaw, &arm);
+    blend_arm(gabriella, &arm, weight, g_GabriellaIndices[6]);
+}
+
+extern "C" void nocturne_hero_gabriella_render_mask(CGabriella *gabriella)
+{
+    CDemonActor *self = (CDemonActor *)gabriella;
+    CGasMask *mask;
+    CVector3f position;
+    CVector3f angles;
+    CMatrix3x4f offset;
+    CMatrix3x4f placed;
+    int wearing;
+    int bone;
+
+    if (gabriella == (CGabriella *)0x0) {
+        return;
+    }
+    wearing = (gabriella->base).is_wearing_gas_mask;
+    mask = inventory_mask(gabriella);
+    if ((wearing == 0) || (mask == (CGasMask *)0x0)) {
+        return;
+    }
+    if (wearing == 2) {
+        position = kMaskOnHeadPosition;
+        angles = kMaskOnHeadAngles;
+        bone = g_GabriellaIndices[0];
+    }
+    else {
+        position = kMaskInHandPosition;
+        angles = kMaskInHandAngles;
+        bone = g_GabriellaIndices[0x11];
+    }
+    core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(self);
+    core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0(&offset, &position, &angles);
+    core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
+        (&offset, &(gabriella->base).base.model.bone_transform.bone_model_matrices[bone], &placed);
+    core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&placed, &angles);
+    core_xform_cpp_getTranslation_FUN_005f6110(&placed, &position);
+    engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
+        (g_CDemonRendererPtr2, &angles, &position);
+    core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
+        (&mask->model, 0.0f, -1);
+    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
+    core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(self);
+}
 
 // =============================================================================
 // Pickup, strafe, kick
@@ -1420,7 +1976,7 @@ extern "C" int nocturne_hero_gabriella_locomotion_state(CGabriella *gabriella, i
         (0.0f <= (gabriella->base).base.model.motion_controller.tween_progress)) {
         return (int)current;
     }
-    if ((slot >= 0) && (0.0f < s_climb_buffer[slot])) {
+    if ((slot >= 0) && ((0.0f < s_climb_buffer[slot]) || (0.0f < s_put_down_buffer[slot]))) {
         return (int)kStand;
     }
     if (chosen_state != 0) {
@@ -1519,6 +2075,17 @@ extern "C" void nocturne_hero_gabriella_process_motion(CGabriella *gabriella, fl
         if ((gabriella->weapon_state_flags == 0) && (gabriella->draw_blend <= 0.0f) &&
             (try_start_kick(gabriella) != 0)) {
             s_kick_buffer[slot] = 0.0f;
+        }
+    }
+
+    if (slot >= 0) {
+        step_carry_throw(gabriella, &s_carry_throw[slot], delta_time);
+        if (0.0f < s_put_down_buffer[slot]) {
+            s_put_down_buffer[slot] = s_put_down_buffer[slot] - delta_time;
+            if ((carried_object(gabriella) == (CDemonActor *)0x0) ||
+                (try_start_put_down(gabriella) != 0)) {
+                s_put_down_buffer[slot] = 0.0f;
+            }
         }
     }
 }

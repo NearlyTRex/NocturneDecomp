@@ -73,7 +73,9 @@ struct CDemonActor;
 //   Stranger          everything
 //   Gabriella         guns, their ammo, dynamite and the Baron. No melee: she
 //                     fires through the selected weapon and CMelee::fire is an
-//                     assert. No gas mask: only CStranger puts it on.
+//                     assert. The gas mask only with NOCTURNE_AUTHENTIC_HERO_ACTIONS
+//                     0, whose hero_gabriella.h puts it on her; otherwise only
+//                     CStranger can.
 //   everyone else     health items only. Scat's Baron and network pistol and
 //                     the Colonel's sidearm are installed directly, so they
 //                     are the only weapons those two hold.

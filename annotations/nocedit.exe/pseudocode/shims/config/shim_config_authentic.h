@@ -1241,7 +1241,11 @@
 //      her dynamite charge lights the fuse, which her code never did, so the
 //      stick no longer explodes as it leaves her hand; she aims and charges
 //      the throw by the Stranger's rules, throws it one-armed overhand, and
-//      the charge shows his throw arc (hero_gabriella.h). A player's
+//      the charge shows his throw arc; her action button throws a
+//      throwable carried object by his rules and puts anything else she
+//      carries down on his floor test; her use_item uses the selected item,
+//      as his does; and she can pick up and wear the gas mask, her arm posed
+//      to her face in place of his motions (hero_gabriella.h). A player's
 //      Scat keeps firing while fire is held; his AI is unchanged. Moloch's fire
 //      strikes in demon form, alternating two of his unused attack motions
 //      (hero_moloch.h). The Colonel's draw and fire layer his unused "draw" and
@@ -1252,7 +1256,8 @@
 //      (hero_colonel.h).
 //
 //      Not included: object pickup for classes other than Gabriella, using
-//      items other than health, and box pushing, which sit on carry-hand state
+//      items other than health for classes other than Gabriella, and box
+//      pushing, which sit on carry-hand state
 //      these classes do not maintain;
 //      and scripted grabs, which still cannot be escaped. The grab escape is
 //      given to every hero rather than only the player's, because control_type

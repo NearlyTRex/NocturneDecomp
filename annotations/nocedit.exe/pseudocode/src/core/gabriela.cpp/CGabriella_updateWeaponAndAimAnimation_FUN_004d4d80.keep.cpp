@@ -228,6 +228,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d
   }
 #if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
   nocturne_hero_gabriella_pose_throw(this_ptr);
+  nocturne_hero_gabriella_pose_arms(this_ptr);
 #endif
   if (local_78.x < -1.22173f) {
     local_78.x = -1.2217305;

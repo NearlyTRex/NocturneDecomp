@@ -202,6 +202,55 @@
 // several frames, so one tap fired twice. That pending shot is now dropped,
 // and a held button fires again as soon as the weapon is ready.
 //
+// A CARRIED PART IS PUT DOWN OR THROWN
+//
+// Her only way to let go of a carried object was CGabriella::tryThrowObject,
+// which despite its name asks for PUTDOWN and never throws, called from use_item
+// alone. The Stranger does both from the action button, and so does she now.
+// CStranger::tryThrowDynamite comes first, drawn or not: a carried object whose
+// getAllowedMeleeAttackTypes has bit 4 (a box under 1 by 1, its long side
+// between 1 and 2) charges from 10 at 25 a second to 70 while the button is
+// held and is thrown on release, dropCarriedObject with that speed along the
+// throw's pitch. Look input moves the pitch as it moves her dynamite's. With
+// her weapon away, anything else she carries is put down when
+// CStranger::tryPlaceObject's free-floor test passes - nothing within 1.5 units
+// ahead of the object, ground under that point within 1 unit of her feet, no
+// crate within 2 - through PUTDOWN, whose signal already drops it. Only STAND
+// routes to PUTDOWN, so a press made while she moves holds her in STAND for up
+// to half a second, as the climb does. Her flashlight is a carried CLightActor
+// and is never let go of this way.
+//
+// She has no throw motion. Her left arm, which carries, takes the dynamite
+// throw's wind-up and swing, mirrored, and the object leaves her hand at the
+// same release point. While the charge holds her arm fully back, the throw is
+// previewed with the Stranger's arc, as her dynamite's is. The Stranger's place
+// onto a CActorDestination is not
+// ported: every destination in the shipped missions takes a named prop, never
+// a body part. Nor is his swing of a long part as a melee weapon.
+//
+// USE_ITEM USES THE SELECTED ITEM
+//
+// CStranger::processFrame sends use_item to CHero::tryUseSelectedItem and
+// nothing else. A player Gabriella's use_item does the same, in place of her
+// pickup-or-put-down, so the gas mask and an inventory item's use event work
+// for her. A Gabriella who is not a player keeps her shipped branch.
+//
+// THE GAS MASK
+//
+// CInventory::select toggles a selected gas mask and makes it the inventory's
+// mask; CStranger::updateWeaponLayerActions then moves CHero::is_wearing_gas_mask
+// through 0 (away), 1 (in hand) and 2 (on the face) as his layered motions
+// carry his hand to his coat pocket and to his face, and CStranger::renderOpaque
+// draws the mask in his right hand or on his head. The mission scripts'
+// iswearinggasmask asks only for 2 on the local hero, whatever its class. Her
+// skeleton has neither motion, so her right arm is posed procedurally: it rises
+// to her face, and lowers again, with the same transitions - on reaching her
+// face the field becomes 2 if the mask is wanted and 1 if not, and on reaching
+// her side, from 1, it becomes 1 or 0. The mask is drawn in her right hand or
+// on her head at offsets of her own. Her weapon cannot be drawn while the arm
+// moves, and CHero::tryUseSelectedItem already refuses the mask while it is.
+// The pose and both offsets are approximate and want tuning in play.
+//
 // Gated by NOCTURNE_AUTHENTIC_HERO_ACTIONS at the call sites.
 
 struct CGabriella;
@@ -246,8 +295,8 @@ int nocturne_hero_gabriella_kick(struct CGabriella *gabriella);
 // (NOCTURNE_GABRIELLA_STRAFE_RATE while STRAFE_L or STRAFE_R plays untweened,
 // NOCTURNE_GABRIELLA_LADDER_RATE while LADDER does, NOCTURNE_GABRIELLA_TURN_RATE
 // while a turn step does), chains turn steps, lands the kick when it crosses its
-// hit frame, steps her active shoves, and starts a held climb or kick once she
-// stands.
+// hit frame, steps her active shoves, steps a carried throw's charge and swing,
+// and starts a held climb, kick or put-down once she stands.
 void nocturne_hero_gabriella_process_motion(struct CGabriella *gabriella, float delta_time);
 
 // From CGabriella::process on each frame of a dynamite charge (fire_state 3):
@@ -325,6 +374,37 @@ int nocturne_hero_gabriella_keep_pending_shot(struct CGabriella *gabriella);
 // From CGabriella::process with the fire test: nonzero while the pump runs, so
 // no new shot starts.
 int nocturne_hero_gabriella_pumping(struct CGabriella *gabriella);
+
+// From CGabriella::process's fire test, ahead of her weapon: starts the charge
+// of a throwable carried object, and returns nonzero while a charge or the
+// swing before its release holds the press. 0 for anything else.
+int nocturne_hero_gabriella_throw_carried(struct CGabriella *gabriella);
+
+// Her action-button chain, ahead of the pickup: puts down a carried object
+// when the floor ahead takes it, or holds the press while she settles into
+// STAND. Returns nonzero and consumes the press when either happened.
+int nocturne_hero_gabriella_put_down(struct CGabriella *gabriella);
+
+// From the end of CGabriella::updateWeaponAndAimAnimation: the left arm's
+// wind-up or swing for a carried throw, and the right arm's reach to her face
+// for the gas mask.
+void nocturne_hero_gabriella_pose_arms(struct CGabriella *gabriella);
+
+// In place of CGabriella::process's use_item branch: a player's press goes to
+// CHero::tryUseSelectedItem; anyone else gets the shipped pickup or put-down.
+void nocturne_hero_gabriella_use_item(struct CGabriella *gabriella);
+
+// From CGabriella::process after preProcess, before her draw is read: steps
+// the gas mask's arm and is_wearing_gas_mask, and clears a draw press while
+// the arm moves.
+void nocturne_hero_gabriella_mask_tick(struct CGabriella *gabriella, float delta_time);
+
+// From CGabriella::renderOpaque: the gas mask in her hand or on her head.
+void nocturne_hero_gabriella_render_mask(struct CGabriella *gabriella);
+
+// From CGabriella::renderOpaque: CStranger::renderOpaque's throw arc, from a
+// carried object along its throw, while the charge holds her arm fully back.
+void nocturne_hero_gabriella_render_carry_arc(struct CGabriella *gabriella);
 
 // From CGabriella::process after the selected weapon's process: steps the pump
 // and ejects the shell partway through it.

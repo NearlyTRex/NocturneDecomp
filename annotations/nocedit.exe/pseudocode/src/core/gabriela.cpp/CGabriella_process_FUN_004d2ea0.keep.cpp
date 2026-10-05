@@ -263,11 +263,15 @@ LAB_004d3af9:
                   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                             (&pCVar4->motion_controller,iVar17,1);
                 }
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+                nocturne_hero_gabriella_use_item(this_ptr);
+#else
                 if (((this_ptr->base).player_input.action_state.use_item != 0) &&
                    (iVar17 = core_gabriela_cpp_CGabriella_findAndPickupNearbyObject_FUN_004d5870
                                        (this_ptr), iVar17 == 0)) {
                   core_gabriela_cpp_CGabriella_tryThrowObject_FUN_004d6050(this_ptr);
                 }
+#endif
               }
             }
           }
@@ -421,6 +425,9 @@ LAB_004d3cb4:
     pCVar16->x = 0.0;
   }
   core_charactr_cpp_CCharacter_preProcess_FUN_00429820((CCharacter *)this_ptr);
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+  nocturne_hero_gabriella_mask_tick(this_ptr,delta_time);
+#endif
   if (((is_holstering == 0) && ((this_ptr->base).player_input.action_state.draw != 0)) &&
      ((this_ptr->base).inventory.selected_weapon != (CWeapon *)0x0)) {
     bVar6 = (byte)this_ptr->weapon_state_flags;
@@ -553,9 +560,16 @@ LAB_004d344b:
      && (nocturne_hero_gabriella_pumping(this_ptr) == 0)
 #endif
      ) {
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+    if (nocturne_hero_gabriella_throw_carried(this_ptr) != 0) {
+    }
+    else
+#endif
     if (this_ptr->weapon_state_flags == 0) {
 #if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
-      if ((this_ptr->draw_blend <= 0.0) && (nocturne_hero_gabriella_pickup(this_ptr) != 0)) {
+      if ((this_ptr->draw_blend <= 0.0) &&
+          ((nocturne_hero_gabriella_put_down(this_ptr) != 0) ||
+           (nocturne_hero_gabriella_pickup(this_ptr) != 0))) {
       }
       else
 #endif
