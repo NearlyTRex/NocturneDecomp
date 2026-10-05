@@ -334,6 +334,10 @@ void nocturne_trigl_envmap_pass_end(void);
 // outside a network game.
 #include "net/net_camera.h"
 
+// Dev traces of per-machine netplay state (nocturne_net_trace_*), reached from
+// the game TU. Empty unless NOCTURNE_NETPLAY_RNG_TRACE is on.
+#include "debug/net_trace.h"
+
 // Leaving a network game without waiting on the disconnect handshake
 // (nocturne_net_disconnect_notify), reached from CNetGame::disconnect.
 #include "net/net_disconnect.h"

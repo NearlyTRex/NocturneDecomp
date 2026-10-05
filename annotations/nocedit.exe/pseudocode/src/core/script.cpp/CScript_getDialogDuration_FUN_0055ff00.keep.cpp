@@ -50,10 +50,25 @@ float __cdecl core_script_cpp_CScript_getDialogDuration_FUN_0055ff00(CScript *th
     return -1.0;
   }
   this_ptr->last_speaker = (CDemonActor *)pCVar2;
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+  {
+    CDemonActor *focus_target = this_ptr->who_is_speaking;
+    if ((g_CNetGamePtr->connection_type != CONNECTION_NONE) &&
+        (focus_target == (CDemonActor *)g_HeroActors[0]) &&
+        (g_HeroActors[g_LocalHeroIndex] != (CHero *)0x0)) {
+      focus_target = (CDemonActor *)g_HeroActors[g_LocalHeroIndex];
+    }
+    if ((this_ptr->focus_actor_locked == 0) && (focus_target != this_ptr->focus_actor)) {
+      this_ptr->focus_actor_changed = 1;
+      this_ptr->focus_actor = focus_target;
+    }
+  }
+#else
   if ((this_ptr->focus_actor_locked == 0) && (this_ptr->who_is_speaking != this_ptr->focus_actor)) {
     this_ptr->focus_actor_changed = 1;
     this_ptr->focus_actor = this_ptr->who_is_speaking;
   }
+#endif
   if (g_ScriptEventsEnabled == 0) {
     strcpy(this_ptr->current_message,dialog_text);
     if (this_ptr->who_is_speaking != (CDemonActor *)0x0) {

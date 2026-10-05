@@ -40,7 +40,6 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
   int net_host_hero;
   int net_was_client;
   int net_was_host;
-  CDemonActor *net_dbg_focus;
   int net_target_stale;
 #endif
   int quit_item;
@@ -55,7 +54,6 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
   net_waiting = 0;
   net_was_waiting = 0;
   net_host_hero = 0;
-  net_dbg_focus = (CDemonActor *)0x0;
   net_was_client = g_CNetGamePtr->connection_type == CONNECTION_CLIENT;
   net_was_host = g_CNetGamePtr->connection_type == CONNECTION_HOST;
 #endif
@@ -210,6 +208,11 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
         }
         g_CScriptPtr->focus_actor_changed = 0;
       }
+#if !NOCTURNE_AUTHENTIC_GOGGLES_CAMERA_HOLD
+      if ((this_ptr->is_game_active != 0) && (this_ptr->goggles_active != 0)) {
+        nocturne_goggles_camera_hold_tick(g_CDemonSetPtr,this_ptr->delta_time_float);
+      }
+#endif
       iVar5 = 0;
 #if !NOCTURNE_AUTHENTIC_NETPLAY
       if ((this_ptr->cinematic_skip_in_progress == 0) &&
@@ -512,28 +515,9 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
         g_CScriptPtr->focus_actor = (CDemonActor *)g_HeroActors[g_LocalHeroIndex];
         g_CScriptPtr->focus_actor_changed = 1;
       }
-      if (net_waiting != net_was_waiting) {
-        net_host_hero = g_CNetGamePtr->server_player_index;
-        if ((net_host_hero < 0) || (3 < net_host_hero)) {
-          net_host_hero = g_LocalHeroIndex;
-        }
 #if NOCTURNE_NETPLAY_RNG_TRACE
-        DLOG("netplay",
-                "waiting %d->%d conn=%d localHero=%d area=%d death=%d own=%p host=%p focus=%p",
-                net_was_waiting,net_waiting,(int)g_CNetGamePtr->connection_type,g_LocalHeroIndex,
-                (g_HeroActors[g_LocalHeroIndex]->base).base.location.area_id,(int)EVar6,
-                (void *)g_HeroActors[g_LocalHeroIndex],(void *)g_HeroActors[net_host_hero],
-                (void *)g_CScriptPtr->focus_actor);
+      nocturne_net_trace_view(net_was_waiting,net_waiting,(int)EVar6);
 #endif
-      }
-      if (g_CScriptPtr->focus_actor != net_dbg_focus) {
-        net_dbg_focus = g_CScriptPtr->focus_actor;
-#if NOCTURNE_NETPLAY_RNG_TRACE
-        DLOG("netplay","focus_actor now %p (own=%p) locked=%d speaking=%p",
-                (void *)net_dbg_focus,(void *)g_HeroActors[g_LocalHeroIndex],
-                g_CScriptPtr->focus_actor_locked,(void *)g_CScriptPtr->who_is_speaking);
-#endif
-      }
       net_was_waiting = net_waiting;
 #endif
 #if !NOCTURNE_AUTHENTIC_NETPLAY

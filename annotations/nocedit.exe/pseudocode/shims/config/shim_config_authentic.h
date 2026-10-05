@@ -93,6 +93,7 @@
 // | `NOCTURNE_AUTHENTIC_HW_SFX_FALLOFF` | 0 | defect | hardware-mixed positional sounds fall off as the software mixer's do |
 // | `NOCTURNE_AUTHENTIC_CUE_RETRIGGER` | 0 | defect | a script music cue does not stack copies of itself while it plays |
 // | `NOCTURNE_AUTHENTIC_GOGGLES_OFF_FRAME` | 0 | defect | a cutscene that switches the goggles off does not flash the untextured room |
+// | `NOCTURNE_AUTHENTIC_GOGGLES_CAMERA_HOLD` | 0 | defect | a script's timed camera hold runs out while the goggles are on |
 // | `NOCTURNE_AUTHENTIC_LIGHT_FILTER_LOAD` | 0 | defect | the HQ projector keeps its briefing slides after a save load |
 // | `NOCTURNE_AUTHENTIC_HELPER_DEATH` | 0 | defect | a companion's death holds the hero still and ends on Game Over |
 // | `NOCTURNE_AUTHENTIC_PICKUP_WIELDS` | 0 | choice | a pickup is never drawn without the player asking |
@@ -1856,6 +1857,27 @@
 //   Override with -DNOCTURNE_AUTHENTIC_GOGGLES_OFF_FRAME=1.
 #ifndef NOCTURNE_AUTHENTIC_GOGGLES_OFF_FRAME
 #define NOCTURNE_AUTHENTIC_GOGGLES_OFF_FRAME 0
+#endif
+
+// NOCTURNE_AUTHENTIC_GOGGLES_CAMERA_HOLD
+//   Whether a script's timed camera hold runs out while the goggles are on.
+//
+//   switchCamera(name, seconds) holds the view on a camera through
+//   CDemonSet::setPendingCamera, and only evaluateVirtualDirector counts the
+//   hold down. CGame::runGameSession does not run the director while the
+//   goggles are on, so a hold set then waits, whole, for them to come off.
+//   CASTLE1.SCR's ghoul spook holds cas2 for 3 s; set off with the goggles on,
+//   it cuts the view to cas2 for 3 s whenever they next come off, wherever the
+//   player is by then. In a network game the script runs on every machine, so
+//   one player's spook does this to the other.
+//
+//   1: shipped behaviour - the hold waits out the goggles.
+//   0: the hold counts down on every frame the goggles skip the director
+//      (goggle_look.h).
+//
+//   Override with -DNOCTURNE_AUTHENTIC_GOGGLES_CAMERA_HOLD=1.
+#ifndef NOCTURNE_AUTHENTIC_GOGGLES_CAMERA_HOLD
+#define NOCTURNE_AUTHENTIC_GOGGLES_CAMERA_HOLD 0
 #endif
 
 // NOCTURNE_AUTHENTIC_LIGHT_FILTER_LOAD
