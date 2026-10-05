@@ -255,17 +255,17 @@ void __cdecl CDeformableModelInstance::copyBoneRotations(CDeformableModelInstanc
 // Address: 0059f750
 void __cdecl CDeformableModelInstance::blendBoneRotations(CDeformableModelInstance *this_ptr,CQuaternion4f *source_quaternions,float blend_weight,int bone_index,CDeformableModel_MotionBlendWeightFunc *blend_callback);
 
-// Original: core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820
+// Original: core_skeleton.cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_0059f820
 // Address: 0059f820
-CMatrix3x4f * __stack2_esi CDeformableModelInstance::getBoneWorldMatrix(CDeformableModelInstance *this_ptr,int bone_index,CMatrix3x4f *out_matrix);
+CMatrix3x4f * __stack2_esi CDeformableModelInstance::getBoneModelMatrix(CDeformableModelInstance *this_ptr,int bone_index,CMatrix3x4f *out_matrix);
 
-// Original: core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+// Original: core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0059fa20
 // Address: 0059fa20
-CVector3f * __cdecl CDeformableModelInstance::getBoneWorldPosition(CDeformableModelInstance *this_ptr,CVector3f *out_position,int bone_index);
+CVector3f * __cdecl CDeformableModelInstance::getBoneModelPosition(CDeformableModelInstance *this_ptr,CVector3f *out_position,int bone_index);
 
-// Original: core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+// Original: core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0059fb00
 // Address: 0059fb00
-CVector3f * __cdecl CDeformableModelInstance::getBoneCachedWorldPosition(CDeformableModelInstance *this_ptr,CVector3f *out_position,int bone_index);
+CVector3f * __cdecl CDeformableModelInstance::getBoneCachedModelPosition(CDeformableModelInstance *this_ptr,CVector3f *out_position,int bone_index);
 
 // Original: core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
 // Address: 0059fb40
@@ -415,9 +415,9 @@ void __cdecl CDeformableModelInstance::renderBones(CDeformableModelInstance *thi
 // Address: 005a1800
 void __cdecl CDeformableModelInstance::computeCylindricalUVs(CDeformableModelInstance *this_ptr,int u_offset,int v_offset);
 
-// Original: core_skeleton.cpp_computeBoneWorldMatrices_FUN_005a1950
+// Original: core_skeleton.cpp_computeBoneModelMatrices_FUN_005a1950
 // Address: 005a1950
-void __cdecl computeBoneWorldMatrices(SPose *bone_data,CDeformableModelInstance *instance_ptr);
+void __cdecl computeBoneModelMatrices(SPose *bone_data,CDeformableModelInstance *instance_ptr);
 
 // Original: core_skeleton.cpp_blendBoneTransformData_FUN_005a1b70
 // Address: 005a1b70

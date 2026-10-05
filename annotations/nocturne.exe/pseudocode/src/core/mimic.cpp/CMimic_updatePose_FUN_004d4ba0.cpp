@@ -73,8 +73,8 @@ void __cdecl core_mimic_cpp_CMimic_updatePose_FUN_004d4ba0(CMimic *this_ptr)
     *pfVar21 = *pfVar16;
     *pfVar22 = pfVar16[(uint)bVar24 * -2 + 1];
     pfVar22[(uint)bVar24 * -2 + 1] = (pfVar16 + (uint)bVar24 * -2 + 1)[(uint)bVar24 * -2 + 1];
-    pCVar19 = (g_HeroActors[iVar4]->base).model.bone_transform.bone_world_matrices + iVar6;
-    pCVar18 = (local_14->base).base.model.bone_transform.bone_world_matrices;
+    pCVar19 = (g_HeroActors[iVar4]->base).model.bone_transform.bone_model_matrices + iVar6;
+    pCVar18 = (local_14->base).base.model.bone_transform.bone_model_matrices;
     for (iVar10 = 0xc; iVar10 != 0; iVar10 = iVar10 + -1) {
       pCVar18->m[0].w = pCVar19->m[0].w;
       pCVar19 = (CMatrix3x4f *)((int)pCVar19 + ((uint)bVar24 * -2 + 1) * 4);

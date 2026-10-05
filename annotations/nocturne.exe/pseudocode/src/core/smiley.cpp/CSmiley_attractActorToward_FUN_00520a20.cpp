@@ -28,7 +28,7 @@ int __cdecl core_smiley_cpp_CSmiley_attractActorToward_FUN_00520a20(CSmiley *thi
   input_local_point =
        core_xform_cpp_transformVector3x4_FUN_0055a8b0
                  (&CStack_14,(CVector3f *)&DAT_02dd1184,
-                  (this_ptr->base).base.model.bone_transform.bone_world_matrices + _DAT_02da8a7c);
+                  (this_ptr->base).base.model.bone_transform.bone_model_matrices + _DAT_02da8a7c);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
             ((CDemonActor *)this_ptr,&CStack_20,input_local_point);
   CStack_20.y = CStack_20.y + -4.0f;

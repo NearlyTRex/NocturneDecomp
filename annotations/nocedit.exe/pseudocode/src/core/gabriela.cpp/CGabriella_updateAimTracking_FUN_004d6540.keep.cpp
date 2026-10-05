@@ -37,13 +37,34 @@ void __cdecl core_gabriela_cpp_CGabriella_updateAimTracking_FUN_004d6540(CGabrie
   float fVar1;
   CDemonActor *target_actor;
   float fVar2;
-  
+#if !NOCTURNE_AUTHENTIC_HERO_LOOK_AIM
+  float look_pitch;
+  int look_aim;
+#endif
+
   if ((is_holstering == 0) &&
      (pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                          (&(this_ptr->base).base.model.motion_controller), pSVar3->state_index == 2)
      ) {
     is_holstering = 1;
   }
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+  if (nocturne_hero_gabriella_dynamite_aim(this_ptr,delta_time,is_holstering) != 0) {
+    return;
+  }
+#endif
+#if !NOCTURNE_AUTHENTIC_HERO_LOOK_AIM
+  look_aim = (((this_ptr->base).control_type != HERO_CONTROL_AI) &&
+              (this_ptr->weapon_state_flags != 0) && (is_holstering == 0));
+  look_pitch = (this_ptr->base).player_input.look_up_down_speed * (float)3.1415926535000001 *
+               (float)2 * delta_time + this_ptr->target_aim_pitch;
+  if (look_pitch < -1.570796f) {
+    look_pitch = -1.5707964;
+  }
+  if (1.5707964 < look_pitch) {
+    look_pitch = 1.5707964;
+  }
+#endif
   if (((this_ptr->base).aim_mode == AIM_MODE_AUTO) ||
      ((this_ptr->base).control_type == HERO_CONTROL_AI)) {
     if ((this_ptr->weapon_state_flags == 0) || (is_holstering != 0)) {
@@ -64,6 +85,13 @@ void __cdecl core_gabriela_cpp_CGabriella_updateAimTracking_FUN_004d6540(CGabrie
       this_ptr->aim_target = local_28;
     }
     if (this_ptr->fire_state == 2) {
+#if !NOCTURNE_AUTHENTIC_HERO_LOOK_AIM
+      if ((this_ptr->aim_target == (CDemonActor *)0x0) && (look_aim != 0)) {
+        this_ptr->target_aim_pitch = look_pitch;
+        this_ptr->target_aim_yaw = 0.0;
+      }
+      else
+#endif
       if (this_ptr->aim_target == (CDemonActor *)0x0) {
         this_ptr->aim_yaw = 0.0;
         this_ptr->aim_pitch = 0.0;
@@ -72,6 +100,13 @@ void __cdecl core_gabriela_cpp_CGabriella_updateAimTracking_FUN_004d6540(CGabrie
       }
       fVar3 = delta_time / (0.3f * (float)0.5) + this_ptr->aim_weight;
     }
+#if !NOCTURNE_AUTHENTIC_HERO_LOOK_AIM
+    else if ((this_ptr->aim_target == (CDemonActor *)0x0) && (look_aim != 0)) {
+      this_ptr->target_aim_pitch = look_pitch;
+      this_ptr->target_aim_yaw = 0.0;
+      fVar3 = delta_time / 0.3f + this_ptr->aim_weight;
+    }
+#endif
     else if (this_ptr->aim_target == (CDemonActor *)0x0) {
       if (0.0 < this_ptr->fire_cooldown_timer) goto LAB_004d65dd;
 #if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
@@ -110,7 +145,7 @@ LAB_004d6841:
                          (this_ptr->aim_target,&CStack_68,&CStack_50);
       core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                 ((CDemonActor *)this_ptr,&CStack_74,pCVar5);
-      pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+      pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0059fa20
                          (&(this_ptr->base).base.model,&CStack_80,g_GabriellaIndices[6]);
       CStack_98.x = CStack_74.x - pCVar4->x;
       CStack_98.y = CStack_74.y - pCVar4->y;

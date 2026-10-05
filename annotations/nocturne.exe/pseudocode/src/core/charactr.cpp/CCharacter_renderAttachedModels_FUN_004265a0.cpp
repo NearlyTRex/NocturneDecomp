@@ -24,7 +24,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderAttachedModels_FUN_004265a0(CCha
   bVar6 = 0;
   iVar3 = 0;
   if (0 < this_ptr->damage_decal_count) {
-    local_14 = (this_ptr->model).bone_transform.bone_world_matrices;
+    local_14 = (this_ptr->model).bone_transform.bone_model_matrices;
     pSVar2 = this_ptr->damage_decals;
     do {
       if ((this_ptr->model).part_data.visibility_flags[pSVar2->part_index] != 0) {

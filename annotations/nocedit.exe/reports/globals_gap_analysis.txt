@@ -2,14 +2,14 @@
 GLOBALS GAP ANALYSIS REPORT
 ================================================================================
 
-Total globals analyzed:      19521
-  Named globals:             19510
+Total globals analyzed:      19514
+  Named globals:             19503
   DAT_ globals:              11
-Gaps found:                  2342
-  With exact size bounds:    1308
+Gaps found:                  2341
+  With exact size bounds:    1307
   With estimated bounds:     1034
-Total gap bytes:             48,439,780
-  Exact gap bytes:           12,436,691
+Total gap bytes:             48,439,788
+  Exact gap bytes:           12,436,695
 Overlaps (size <= 0):        13337
 
 --------------------------------------------------------------------------------
@@ -19,7 +19,7 @@ GAP SIZE DISTRIBUTION
   5-16 bytes (small vars)                       552
   17-64 bytes (structs/small arrays)            573
   65-256 bytes (medium data)                    252
-  257-1024 bytes (large structs/arrays)         191
+  257-1024 bytes (large structs/arrays)         190
   1-4 KB                                        94
   4-64 KB                                       149
   64+ KB                                        48
@@ -179,7 +179,7 @@ LARGEST GAPS (top 50)
     before: g_CDemonPodInstance                      CDemonPod            at 0x030e5090
 
 --------------------------------------------------------------------------------
-ALL EXACT GAPS (1308) - size bounds are known precisely
+ALL EXACT GAPS (1307) - size bounds are known precisely
 --------------------------------------------------------------------------------
    4,185,048 bytes  at 0x00002428  between DAT_00002424                   and IMAGE_DOS_HEADER_00400000
    3,350,789 bytes  at 0x00ff0103  between g_ColorMagenta                 and g_CoronaLightCache
@@ -283,9 +283,9 @@ ALL EXACT GAPS (1308) - size bounds are known precisely
        5,648 bytes  at 0x0067eb60  between g_Layer3ScalefactorBandCounts  and g_HuffmanTableSources
        5,444 bytes  at 0x00602884  between SUB_00602880                   and SUB_00603dc8
        5,444 bytes  at 0x0060d0fc  between switchdataD_0060d0f8           and SUB_0060e640
+       5,304 bytes  at 0x032758f4  between g_CDemonCameraInstance.base.po and g_MasterLightCount
        5,276 bytes  at 0x005647d4  between switchdataD_005647d0           and switchdataD_00565c70
        5,064 bytes  at 0x00411aa0  between switchdataD_00411a9c           and switchdataD_00412e68
-       4,992 bytes  at 0x03275a2c  between g_ScreenHeightForFonts         and g_MasterLightCount
        4,892 bytes  at 0x00608994  between SUB_00608990                   and CAVE_cave_00609f20
        4,860 bytes  at 0x02d7c3f4  between g_ActStatsTextBuffer1+0x100    and g_ActStatsTextBuffer2
        4,860 bytes  at 0x02d7d7f4  between g_ActStatsTextBuffer2+0x100    and g_CDemonLightInstance
@@ -437,7 +437,6 @@ ALL EXACT GAPS (1308) - size bounds are known precisely
          308 bytes  at 0x00435f14  between PTR_caseD_3_00435f10           and switchdataD_00436048
          308 bytes  at 0x00436058  between PTR_caseD_3_00436054           and switchdataD_0043618c
          308 bytes  at 0x00464f10  between switchdataD_00464f0c           and switchdataD_00465044
-         308 bytes  at 0x032758f4  between g_CDemonCameraInstance.base.po and g_ScreenHeightForFonts
          304 bytes  at 0x004376f8  between PTR_caseD_3_004376f4           and PTR_caseD_1_00437828
          300 bytes  at 0x0043619c  between PTR_caseD_3_00436198           and switchdataD_004362c8
          300 bytes  at 0x00437980  between PTR_caseD_3_0043797c           and PTR_caseD_1_00437aac
@@ -1488,7 +1487,7 @@ ALL EXACT GAPS (1308) - size bounds are known precisely
            1 bytes  at 0x00644107  between s_imer_00644103                and s_Counter_00644108
            1 bytes  at 0x00649c01  between s_e_00649bfd                   and FLOAT_00649c02
            1 bytes  at 0x0064accb  between s_BATCH_0064acc4+3             and s_Enter_number_of_256x256__006
-           1 bytes  at 0x0068572d  between g_ShiftJIS_TrailByteTable      and g_InitHandlerStatusStart
+           1 bytes  at 0x0068572d  between g_ShiftJIS_TrailByteTable      and g_InitHandlers
 
 --------------------------------------------------------------------------------
 OVERLAPS (13337) - next global starts inside previous

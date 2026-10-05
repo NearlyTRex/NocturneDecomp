@@ -37,6 +37,10 @@ void __cdecl core_elephant_cpp_CElephantGun_onFired_FUN_004a78a0(CElephantGun *t
   core_fire_cpp_CFireEffect_createShell_FUN_004c91e0
             (g_CFireEffectPtr,&(this_ptr->base).base.location.position,
              &(this_ptr->base).base.orient.vec,&local_38,model_ptr);
+#if NOCTURNE_AUTHENTIC_ELEPHANT_GUN_SHELL
   (*((this_ptr->base).base.vtable._ub)->playSound)((CDemonActor *)this_ptr,"sh-cock.wav");
+#else
+  (*((this_ptr->base).base.vtable._ub)->playSound)((CDemonActor *)this_ptr,"shotgun-cock.wav");
+#endif
   return;
 }

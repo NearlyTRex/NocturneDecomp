@@ -20,6 +20,7 @@ void __cdecl core_mission_cpp_CDemonMission_removeAllActors_FUN_00523f50(CDemonM
   }
 #if !NOCTURNE_AUTHENTIC_NETPLAY
   nocturne_net_pathcache_rewind();
+  nocturne_net_sim_forget_trigger_hero();
 #endif
   core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(this_ptr);
   this_ptr_00 = g_CDemonSetPtr;

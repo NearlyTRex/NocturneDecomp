@@ -154,6 +154,25 @@ void nocturne_trigl_envmap_pass_end(void);
 // NOCTURNE_AUTHENTIC_ACTOR_DELETE.
 #include "game/actor_delete.h"
 
+// The playSfx command's guard against restarting a music cue that is still
+// playing (nocturne_script_cue_*), reached from event.cpp's executeCommand.
+// Gated by NOCTURNE_AUTHENTIC_CUE_RETRIGGER.
+#include "game/script_cue.h"
+
+// The detailed sound error console lines (nocturne_sound_report_*), reached
+// from snddx.cpp's allocateSfx. Gated by NOCTURNE_AUTHENTIC_SOUND_ERROR_LOG.
+#include "game/sound_report.h"
+
+// Re-applying a script's opening addLightFilter lines after a save load
+// (nocturne_light_filter_load_replay), reached from game.cpp's loadGame.
+// Gated by NOCTURNE_AUTHENTIC_LIGHT_FILTER_LOAD.
+#include "game/light_filter_load.h"
+
+// A helper's death ending on Game Over with the hero held still
+// (nocturne_helper_death_*), reached from script.cpp's step, game.cpp's
+// runGameSession and playerControls. Gated by NOCTURNE_AUTHENTIC_HELPER_DEATH.
+#include "game/helper_death.h"
+
 // The Options screen's CHEATS submenu (nocturne_cheats_menu) and the mission-
 // start application of whatever it armed (nocturne_cheats_apply), reached from
 // the menu and mission TUs. Both are no-ops under NOCTURNE_AUTHENTIC_CHEAT_MENU.
@@ -219,10 +238,30 @@ void nocturne_trigl_envmap_pass_end(void);
 // it. Gated at those call sites on NOCTURNE_AUTHENTIC_HERO_ACTIONS.
 #include "game/hero_items.h"
 
+// Status bars sized by a hero's maximum health (nocturne_status_bar_*), noted
+// from CCharacter::process and processDamage and read by CGame::renderOverlay.
+// Gated at those call sites on NOCTURNE_AUTHENTIC_STATUS_BAR_WIDTH.
+#include "game/status_bar.h"
+
+// Name lookup that also sees carried items (nocturne_find_actor_or_carried_item),
+// reached from CDemonMission::generateUniqueActorName and gated there on
+// NOCTURNE_AUTHENTIC_ITEM_NAMES.
+#include "game/item_names.h"
+
 // Moloch's attacks (nocturne_moloch_*): fire strikes in demon form, draw still
 // morphs. Gated at the CMoloch::process call sites on
 // NOCTURNE_AUTHENTIC_HERO_ACTIONS.
 #include "game/hero_moloch.h"
+
+// The Colonel's pistol (nocturne_colonel_*): draw, fire, the hand it is carried
+// in and its draw. Gated at the CColonel::process and renderOpaque call sites
+// on NOCTURNE_AUTHENTIC_HERO_ACTIONS.
+#include "game/hero_colonel.h"
+
+// Gabriella's action-button pickup and kick, strafe selection and strafe
+// playback rate (nocturne_hero_gabriella_*). Gated at the CGabriella::process call sites on
+// NOCTURNE_AUTHENTIC_HERO_ACTIONS.
+#include "game/hero_gabriella.h"
 
 // Which of the engine's two text paths is used (nocturne_os_font_*), reached
 // from CGame::initFonts to apply the stored choice and from the menu TU for the
@@ -289,6 +328,19 @@ void nocturne_trigl_envmap_pass_end(void);
 // game every entry point applies the selection immediately and locally, exactly
 // as the shipped code did.
 #include "net/net_weapon.h"
+
+// The synchronised camera behind the isCurrentCamera script atom
+// (nocturne_net_camera_*), reached from the event TU and the netgame TU. Inert
+// outside a network game.
+#include "net/net_camera.h"
+
+// Dev traces of per-machine netplay state (nocturne_net_trace_*), reached from
+// the game TU. Empty unless NOCTURNE_NETPLAY_RNG_TRACE is on.
+#include "debug/net_trace.h"
+
+// Leaving a network game without waiting on the disconnect handshake
+// (nocturne_net_disconnect_notify), reached from CNetGame::disconnect.
+#include "net/net_disconnect.h"
 
 // Guest button presses counted rather than pulsed on the wire
 // (nocturne_net_input_*), reached from CGame::playerControls and the netgame

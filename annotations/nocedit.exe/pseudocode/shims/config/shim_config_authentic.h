@@ -50,6 +50,7 @@
 // | `NOCTURNE_AUTHENTIC_SOUND_DEVICE` | 0 | host | the Device line names the host audio API SDL opened |
 // | `NOCTURNE_AUTHENTIC_RENDERER_DLL` | 0 | host | a compiled-in renderer loads without a file on disk |
 // | `NOCTURNE_AUTHENTIC_HEAP_REPORT` | 0 | host | the memory line reports the host allocator, not an unwalkable heap |
+// | `NOCTURNE_AUTHENTIC_SOUND_ERROR_LOG` | 0 | host | sound error and missing-wav reports go to local files, not a studio share |
 // | `NOCTURNE_AUTHENTIC_MIRROR_CULL` | 0 | defect | actors appear in mirrors |
 // | `NOCTURNE_AUTHENTIC_MIRROR_PROJECTION` | 0 | defect | accelerated geometry lines up with the backdrop |
 // | `NOCTURNE_AUTHENTIC_MIRROR_DEPTH_WINDOW` | 0 | defect | a part-off-screen mirror opens its depth window to a real depth |
@@ -83,10 +84,18 @@
 // | `NOCTURNE_AUTHENTIC_CHAPTER_SELECT` | 0 | defect | START offers the chapter lists, pod.ini or no pod.ini |
 // | `NOCTURNE_AUTHENTIC_FRIENDLY_FIRE` | 0 | defect | heroes cannot damage each other in a network game |
 // | `NOCTURNE_AUTHENTIC_MELEE_PICKUP` | 0 | defect | a melee weapon already held does not take a second slot |
+// | `NOCTURNE_AUTHENTIC_ELEPHANT_GUN_SHELL` | 0 | defect | the elephant gun ejects a shell after a shot, as the shotgun does |
+// | `NOCTURNE_AUTHENTIC_HELD_WEAPON_STATE` | 0 | defect | Gabriella's tommy gun keeps its firing loop; her weapon state is set only when it changes |
+// | `NOCTURNE_AUTHENTIC_ITEM_NAMES` | 0 | defect | a new actor is never named after an item a hero carries |
 // | `NOCTURNE_AUTHENTIC_SHADOW_DEPTH_READ` | 0 | defect | the shadow-pass depth test reads the width it was written at |
 // | `NOCTURNE_AUTHENTIC_BODY_PART_BAKE` | 0 | defect | a settled body part goes into the background only through a background bake |
 // | `NOCTURNE_AUTHENTIC_MOTION_TWEEN_INIT` | 0 | defect | a new animation controller starts with no stale transition to reverse |
 // | `NOCTURNE_AUTHENTIC_HW_SFX_FALLOFF` | 0 | defect | hardware-mixed positional sounds fall off as the software mixer's do |
+// | `NOCTURNE_AUTHENTIC_CUE_RETRIGGER` | 0 | defect | a script music cue does not stack copies of itself while it plays |
+// | `NOCTURNE_AUTHENTIC_GOGGLES_OFF_FRAME` | 0 | defect | a cutscene that switches the goggles off does not flash the untextured room |
+// | `NOCTURNE_AUTHENTIC_GOGGLES_CAMERA_HOLD` | 0 | defect | a script's timed camera hold runs out while the goggles are on |
+// | `NOCTURNE_AUTHENTIC_LIGHT_FILTER_LOAD` | 0 | defect | the HQ projector keeps its briefing slides after a save load |
+// | `NOCTURNE_AUTHENTIC_HELPER_DEATH` | 0 | defect | a companion's death holds the hero still and ends on Game Over |
 // | `NOCTURNE_AUTHENTIC_PICKUP_WIELDS` | 0 | choice | a pickup is never drawn without the player asking |
 // | `NOCTURNE_AUTHENTIC_OPTIONS_RESUMES_GAME` | 0 | choice | leaving Options returns to the pause menu |
 // | `NOCTURNE_AUTHENTIC_CONFIRM_PROMPTS` | 0 | choice | no bracketed hotkey letters, and a short form when the long one will not fit |
@@ -95,7 +104,7 @@
 // | `NOCTURNE_AUTHENTIC_BUILD_STAMP` | 0 | choice | the console banner dates this build, not Terminal Reality's |
 // | `NOCTURNE_AUTHENTIC_ENEMY_RETAIN` | 0 | choice | an enemy drops a victim it can neither see nor path to |
 // | `NOCTURNE_AUTHENTIC_AUTOMAP` | 0 | addition | a bindable Doom-style map that fills in as you explore |
-// | `NOCTURNE_AUTHENTIC_GOGGLE_LOOK` | 0 | addition | the goggle view looks up and down with empty hands, for every hero |
+// | `NOCTURNE_AUTHENTIC_GOGGLE_LOOK` | 0 | addition | the goggle view looks up and down with empty hands, for every hero, and is held level as the Stranger's is |
 // | `NOCTURNE_AUTHENTIC_HERO_LOOK_AIM` | 0 | addition | Scat's aim follows look input under auto-aim until a target takes it |
 // | `NOCTURNE_AUTHENTIC_MENU_VERSION` | 0 | addition | the menu carries a line naming this build |
 // | `NOCTURNE_AUTHENTIC_SAVE_SLOTS` | 0 | addition | saves are picked from a slot list, not typed |
@@ -106,6 +115,7 @@
 // | `NOCTURNE_AUTHENTIC_CHEAT_MENU` | 0 | addition | a CHEATS entry on Options, and WARPS on pause |
 // | `NOCTURNE_AUTHENTIC_RESOLUTION_LIST` | 0 | addition | one ordered table drives label and stepping |
 // | `NOCTURNE_AUTHENTIC_HUD_SCALE` | 0 | addition | the HUD scales with the framebuffer |
+// | `NOCTURNE_AUTHENTIC_STATUS_BAR_WIDTH` | 0 | addition | a hero's status bar is as long as its maximum health |
 // | `NOCTURNE_AUTHENTIC_WINDOW_MODE` | 0 | addition | Graphics Options picks windowed, fullscreen or borderless |
 // | `NOCTURNE_AUTHENTIC_OS_FONT` | 0 | addition | Graphics Options can pick bitmap or system text |
 // | `NOCTURNE_AUTHENTIC_CONSOLE` | 0 | addition | the console fills the window and keeps scrollback |
@@ -465,6 +475,10 @@
 //   reads as deliberate rather than as a guard that fires early. It is left
 //   alone, and it is also what keeps the sequence escapable: nothing else can
 //   end it early once ESC stops doing so.
+//
+//   A network guest is exempt. Its death never ends the session -- it waits for
+//   the host to revive it -- and ESC is the only way to its "Leave network game"
+//   dialog, which the session loop already offers a dead guest.
 //
 //   Override with -DNOCTURNE_AUTHENTIC_DEATH_FADE_SKIP=1.
 #ifndef NOCTURNE_AUTHENTIC_DEATH_FADE_SKIP
@@ -1075,7 +1089,9 @@
 //   to the Stranger, for whom a CGun is right.
 //   1: shipped behaviour — every hero starts with the pistol.
 //   0: CDemonMission::createOneHero gives each newly built player hero what its
-//      class actually attacks with, or nothing when it attacks bare-handed.
+//      class actually attacks with, or nothing when it attacks bare-handed
+//      (Haystack and IcePick). The Colonel gets a pistol of his own, which
+//      HERO_ACTIONS lets him draw and fire, with a reserve that never runs out.
 //      Inventory contents only; no fire path and no damage changes. NPCs of the
 //      same classes are untouched, and a hero carried over from a previous
 //      mission keeps the inventory it earned. See hero_weapon.h for the models
@@ -1094,10 +1110,11 @@
 //      CStranger's alone, so a finite magazine would be spent permanently the
 //      first time it emptied.
 //      Player heroes are also kept from holding what their class cannot use,
-//      both from the cheat menu and from Gabriella's own pickups: Scat and
-//      Gabriella take guns but no melee weapon (CMelee::fire is an assert) and
-//      no gas mask; the melee classes take health items only. The table is in
-//      hero_weapon.h.
+//      both from the cheat menu and from Gabriella's own pickups: Gabriella
+//      takes guns but no melee weapon (CMelee::fire is an assert) and no gas
+//      mask; every other class but the Stranger takes health items only, so
+//      Scat and the Colonel keep just the weapons installed for them. The
+//      table is in hero_weapon.h.
 //
 //   Override with -DNOCTURNE_AUTHENTIC_HERO_WEAPON=1.
 #ifndef NOCTURNE_AUTHENTIC_HERO_WEAPON
@@ -1171,6 +1188,23 @@
 //                   frame and her arm bobs with the weight. CScat::process
 //                   clears fire after every shot, which suits its AI (one
 //                   fire per shot) but makes a player press again each time.
+//     pickup button CGabriella picks up and rummages through her own
+//                   findAndPickupNearbyObject, but only from use_item; every
+//                   other class picks up from the action button.
+//     strafing      GABRIELA.SKL authors STRAFE_L and STRAFE_R, and
+//                   CGabriella::process moves her by their blend weights, but
+//                   nothing ever selects them from strafe input. Their 3 s
+//                   loop steps at a sixth of the Stranger's rate while she
+//                   moves at his speed.
+//     unarmed kick  GABRIELA.SKL authors "gab kick door open", a left-leg kick
+//                   in state KICK_DOOR, and nothing ever asks for it.
+//     turning       GABRIELA.SKL authors TURN_LEFT and TURN_RIGHT, and
+//                   nothing ever asks for them.
+//     ladders       CGabriella::tryClimbLadder asks for LADDER from any
+//                   state but only STAND routes there; pressed while moving,
+//                   she keeps ladder_to_climb and runs on without collision.
+//                   It takes a ladder only within 0.3 units of its centre
+//                   line, and her climb is about half the Stranger's speed.
 //
 //   1: shipped behaviour — Scat and Moloch can interact with nothing, sheathed
 //      fire falls through to an attack, only the Stranger can break a grab
@@ -1180,7 +1214,12 @@
 //      use, through the shared nocturne_hero_interact; sheathed fire is only the
 //      action button, and the attack needs the weapon drawn; a hero of any class
 //      breaks out on the Stranger's own 1.5 second timer through the game's own
-//      CHero::releaseFromGrab, and the sentinel reaches the same claw point
+//      CHero::releaseFromGrab, playing its skeleton's GETGRABBED while held and
+//      its ESCAPEGRAB or PUSHOFF on the way out (the Colonel's struggle asked
+//      for state 9, DRAW, rather than his PUSHOFF at 0x0b); a player Svetlana
+//      can be grabbed at all, where CSvetlana::getGrabbed refuses every grab
+//      (her NPC still does); and the sentinel
+//      reaches the same claw point
 //      through CCharacter::moveAndCollide, so the carry stops at geometry and
 //      keeps area_id right. Every player hero spends a selected health item on
 //      use_item, is rescued by autoUseHealth under the Stranger's test, shows
@@ -1191,17 +1230,39 @@
 //      select refuses above 98% of it, and the cheats restore it. Scat's auto
 //      aim eases back to centre at its normal turn rate once it has no target.
 //      Gabriella stows the weapon she switched away from, as Scat does, and
-//      holds her aim while fire is held on a continuous weapon. A player's
+//      holds her aim while fire is held on a continuous weapon, and her
+//      action button tries her own pickup first; she strafes on the
+//      Stranger's test, with the strafe played at twice its authored rate; with
+//      her weapon away and nothing else to act on, the action button kicks an
+//      enemy in reach in front of her for 10-15 damage and a short shove;
+//      she steps through her turn motions when turning in place; she takes a
+//      ladder on the Stranger's test, only from STAND, lets go of one whose
+//      state never started, and climbs at 1.75 times her authored rate;
+//      her dynamite charge lights the fuse, which her code never did, so the
+//      stick no longer explodes as it leaves her hand; she aims and charges
+//      the throw by the Stranger's rules, throws it one-armed overhand, and
+//      the charge shows his throw arc; her action button throws a
+//      throwable carried object by his rules and puts anything else she
+//      carries down on his floor test; her use_item uses the selected item,
+//      as his does; and she can pick up and wear the gas mask, her arm posed
+//      to her face in place of his motions (hero_gabriella.h). A player's
 //      Scat keeps firing while fire is held; his AI is unchanged. Moloch's fire
 //      strikes in demon form, alternating two of his unused attack motions
-//      (hero_moloch.h).
+//      (hero_moloch.h). The Colonel's draw and fire layer his unused "draw" and
+//      "shoot" motions over his upper body, so he keeps moving (holstering
+//      plays "draw" backwards), and fire the pistol
+//      HERO_WEAPON gives him; his arm aims it at the nearest enemy in front of
+//      him, or level with look up/down, with Scat's laser sight
+//      (hero_colonel.h).
 //
-//      Not included: object pickup, using items other than health, and box
-//      pushing, which sit on carry-hand state these classes do not maintain;
+//      Not included: object pickup for classes other than Gabriella, using
+//      items other than health for classes other than Gabriella, and box
+//      pushing, which sit on carry-hand state
+//      these classes do not maintain;
 //      and scripted grabs, which still cannot be escaped. The grab escape is
 //      given to every hero rather than only the player's, because control_type
 //      is per-machine and gating on it breaks lockstep. See hero_interact.h,
-//      hero_grab.h and hero_items.h.
+//      hero_grab.h, hero_items.h and hero_gabriella.h.
 //
 //   Override with -DNOCTURNE_AUTHENTIC_HERO_ACTIONS=1.
 #ifndef NOCTURNE_AUTHENTIC_HERO_ACTIONS
@@ -1577,6 +1638,84 @@
 #define NOCTURNE_AUTHENTIC_MELEE_PICKUP 0
 #endif
 
+// NOCTURNE_AUTHENTIC_ELEPHANT_GUN_SHELL
+//   Whether the elephant gun ejects a shell when it is worked after a shot.
+//
+//   The shotgun and the elephant gun are both fire_mode 2 and weapon_type
+//   SHOTGUN, so after either one fires the Stranger plays the same layer action,
+//   draw_shotGunRecoil. Partway through it, CStranger::updateWeaponLayerActions
+//   works the weapon by class name:
+//
+//       if (t crossed 0.6 && isOfClass(weapon, "CShotgun"))
+//           weapon->onFired();
+//
+//   CElephantGun derives from CWeapon, not CShotgun, so the elephant gun goes
+//   through the motion and never ejects. Its onFired is as complete as the
+//   shotgun's - it throws shell.kfm and plays "sh-cock.wav" - and that call is
+//   the binary's only caller of any onFired, so it never runs. sh-cock.wav
+//   never shipped either: SOUND.POD's audit log names SH-COCK.WAV, but none of
+//   its 732 files is that, and playing it reports "Can't find wav".
+//
+//   1: authentic — only the shotgun ejects a shell.
+//   0: the elephant gun ejects one at the same point, for the Stranger and for
+//      Gabriella (hero_gabriella.h), and cocks with the shotgun's
+//      shotgun-cock.wav.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_ELEPHANT_GUN_SHELL=1.
+#ifndef NOCTURNE_AUTHENTIC_ELEPHANT_GUN_SHELL
+#define NOCTURNE_AUTHENTIC_ELEPHANT_GUN_SHELL 0
+#endif
+
+// NOCTURNE_AUTHENTIC_HELD_WEAPON_STATE
+//   Whether Gabriella re-sets her weapon's state every frame.
+//
+//   CGabriella::updateWeaponPosition places the selected weapon at her hip or
+//   in her hand each frame, and with it calls the weapon's setWeaponState - 1
+//   below a draw_blend of 0.64, 2 above - every frame, whether or not the
+//   state changed. The Stranger calls it only as he draws or holsters
+//   (CStranger::updateWeaponLayerActions). Three weapons do more than store
+//   the state:
+//
+//       CTommyGun::setWeaponState   killSfx(sfx_handles[0])
+//       CMelee::setWeaponState      blood_spurt_count = 0
+//       CBaronWeapon::setWeaponState  attach or detach the Baron
+//
+//   So her tommy gun's firing loop, m-gun1.wav, is killed the frame after
+//   CTommyGun::process starts it: each shot plays only the start of the
+//   sample, restarted twice per shot, and never reaches the m-gun-t.wav tail
+//   that process plays when firing stops - muffled beside the Stranger's.
+//   The Baron is re-attached to her every frame, and a melee weapon's blood
+//   never builds up - she holds one only under NOCTURNE_AUTHENTIC_HERO_WEAPON
+//   1, which lets a player Gabriella pick one up, or as an NPC.
+//
+//   1: authentic — the state is set every frame.
+//   0: it is set only when it changes.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_HELD_WEAPON_STATE=1.
+#ifndef NOCTURNE_AUTHENTIC_HELD_WEAPON_STATE
+#define NOCTURNE_AUTHENTIC_HELD_WEAPON_STATE 0
+#endif
+
+// NOCTURNE_AUTHENTIC_ITEM_NAMES
+//   Whether a generated actor name can repeat the name of a carried item.
+//
+//   CDemonMission::generateUniqueActorName tests each candidate with
+//   findActorByName (CALL at 005246c4), which walks only the mission's actor
+//   list. Inventory items are not on that list — CDemonMission::writeFile saves
+//   them as a separate inventory section — so every weapon a cheat or pickup
+//   adds gets the same name as the one already carried: seven CMelee all
+//   "Melee0". A save then holds duplicate names, and loadActor resolves a
+//   reference such as the hero's weapon to whichever comes first.
+//
+//   1: authentic — candidates are checked against the actor list only.
+//   0: candidates are also checked against every CHero's inventory, the set
+//      writeFile saves, so each carried item keeps a distinct name.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_ITEM_NAMES=1.
+#ifndef NOCTURNE_AUTHENTIC_ITEM_NAMES
+#define NOCTURNE_AUTHENTIC_ITEM_NAMES 0
+#endif
+
 // NOCTURNE_AUTHENTIC_SHADOW_DEPTH_READ
 //   How wide an element CDemonRenderer::depthTest reads during a shadow pass.
 //
@@ -1681,6 +1820,110 @@
 //   Override with -DNOCTURNE_AUTHENTIC_HW_SFX_FALLOFF=1.
 #ifndef NOCTURNE_AUTHENTIC_HW_SFX_FALLOFF
 #define NOCTURNE_AUTHENTIC_HW_SFX_FALLOFF 0
+#endif
+
+// NOCTURNE_AUTHENTIC_CUE_RETRIGGER
+//   Whether a script playSfx of a "cue" sound starts again while it is playing.
+//
+//   A level script re-runs every pass, and its conditions stay true for as long
+//   as a trigger is occupied. ACT1's river block
+//
+//       if (Drown)
+//           killcharacter($, drown)
+//           playsfx(cue52.wav)
+//
+//   keeps firing while the drowned hero lies in TriggerDrownRiver. kill returns
+//   early once the hero is dying; playSfx has no such guard, and startSfx takes
+//   a fresh slot every call, so the sting stacks dozens deep.
+//
+//   1: shipped behaviour - every pass starts another copy.
+//   0: a cue whose last start from a script is still playing is not restarted;
+//      the script's handle name is bound to the copy already playing.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_CUE_RETRIGGER=1.
+#ifndef NOCTURNE_AUTHENTIC_CUE_RETRIGGER
+#define NOCTURNE_AUTHENTIC_CUE_RETRIGGER 0
+#endif
+
+// NOCTURNE_AUTHENTIC_GOGGLES_OFF_FRAME
+//   What is drawn on the frame the goggles switch off mid-frame.
+//
+//   CGame::processFrame draws the world in one of two places: renderScene
+//   before CGame::process if goggles_active is clear, renderGogglesView after
+//   it if set. A letterboxed cutscene starting in CScript::step clears
+//   goggles_active and runs evaluateVirtualDirector, which bakes the new
+//   camera's background, between the two tests. Neither draw runs, and the
+//   frame presents the bare bake: the room untextured, with no actors.
+//
+//   1: shipped behaviour - nothing is drawn that frame.
+//   0: a frame that starts in goggles and ends out of them runs renderScene
+//      after CGame::process, ahead of renderStaticLights as usual.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_GOGGLES_OFF_FRAME=1.
+#ifndef NOCTURNE_AUTHENTIC_GOGGLES_OFF_FRAME
+#define NOCTURNE_AUTHENTIC_GOGGLES_OFF_FRAME 0
+#endif
+
+// NOCTURNE_AUTHENTIC_GOGGLES_CAMERA_HOLD
+//   Whether a script's timed camera hold runs out while the goggles are on.
+//
+//   switchCamera(name, seconds) holds the view on a camera through
+//   CDemonSet::setPendingCamera, and only evaluateVirtualDirector counts the
+//   hold down. CGame::runGameSession does not run the director while the
+//   goggles are on, so a hold set then waits, whole, for them to come off.
+//   CASTLE1.SCR's ghoul spook holds cas2 for 3 s; set off with the goggles on,
+//   it cuts the view to cas2 for 3 s whenever they next come off, wherever the
+//   player is by then. In a network game the script runs on every machine, so
+//   one player's spook does this to the other.
+//
+//   1: shipped behaviour - the hold waits out the goggles.
+//   0: the hold counts down on every frame the goggles skip the director
+//      (goggle_look.h).
+//
+//   Override with -DNOCTURNE_AUTHENTIC_GOGGLES_CAMERA_HOLD=1.
+#ifndef NOCTURNE_AUTHENTIC_GOGGLES_CAMERA_HOLD
+#define NOCTURNE_AUTHENTIC_GOGGLES_CAMERA_HOLD 0
+#endif
+
+// NOCTURNE_AUTHENTIC_LIGHT_FILTER_LOAD
+//   Whether light filters a script added survive a save load.
+//
+//   Each HQ script (HQ-ACT1, 3, 4, 4B, 5) opens by appending its briefing
+//   slides to the "projector" light with addLightFilter. Loading a save runs
+//   startMission, whose loadSet re-reads the .SET and leaves the light with the
+//   one filter HQ.SET ships; the save records only each light's on/off state,
+//   and the opening lines do not run again. Every advanceLightFilter then wraps
+//   on that one filter, so the briefing shows a single image throughout.
+//
+//   1: shipped behaviour - the slides are lost on a load.
+//   0: after CScript::loadState, the addLightFilter lines of the script's
+//      opening run that lie before the restored position are applied again,
+//      giving the filter list a fresh start builds.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_LIGHT_FILTER_LOAD=1.
+#ifndef NOCTURNE_AUTHENTIC_LIGHT_FILTER_LOAD
+#define NOCTURNE_AUTHENTIC_LIGHT_FILTER_LOAD 0
+#endif
+
+// NOCTURNE_AUTHENTIC_HELPER_DEATH
+//   What happens when a companion the mission needs (Svetlana in ACT1, Scat in
+//   ACT2, Icepick in ACT3) dies.
+//
+//   The script focuses on the body, waits, fades out and runs "end", which only
+//   sets CScript::mission_ended. runGameSession offers the Game Over menu only
+//   for a dead hero, so the game drops to the main menu. While the script
+//   waits its main loop is stopped, the drowning and pit checks with it, and
+//   the hero can walk anywhere unharmed.
+//
+//   1: shipped behaviour - the player can roam, then lands on the main menu.
+//   0: the hero is held still while the script camera is on a dead character
+//      other than a player hero, and a session ended by "end" closes on the
+//      Game Over menu.
+//      See shims/game/helper_death.h.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_HELPER_DEATH=1.
+#ifndef NOCTURNE_AUTHENTIC_HELPER_DEATH
+#define NOCTURNE_AUTHENTIC_HELPER_DEATH 0
 #endif
 
 // =============================================================================
@@ -1907,6 +2150,27 @@
 #define NOCTURNE_AUTHENTIC_HEAP_REPORT 0
 #endif
 
+// NOCTURNE_AUTHENTIC_SOUND_ERROR_LOG
+//   Where the sound system's error reports are written, and how much the
+//   console says.
+//   1: shipped behaviour — logSoundError appends each message, with the time,
+//      user, machine and sound device, to \\q\xfer\fletch\sounderr.txt, and
+//      playSfxInternal appends each missing wav name to
+//      \\q\xfer\fletch\missingwavs.txt. allocateSfx prints only "no free
+//      buffers".
+//   0: the same reports are appended to sounderr.txt and missingwavs.txt in
+//      the game directory, and allocateSfx's console line names the sample it
+//      could not play and what holds the 30 hardware sfx buffers.
+//
+//   Both paths are a share on Terminal Reality's network. The open fails
+//   anywhere else and each report is dropped, leaving only the console line.
+//   See shims/game/sound_report.h.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_SOUND_ERROR_LOG=1.
+#ifndef NOCTURNE_AUTHENTIC_SOUND_ERROR_LOG
+#define NOCTURNE_AUTHENTIC_SOUND_ERROR_LOG 0
+#endif
+
 // NOCTURNE_AUTHENTIC_FILE_TIME
 //   The timestamp CFileFinder reports for a file, which is what every file
 //   dialog dates its rows from and what the save list shows.
@@ -2017,13 +2281,17 @@
 #endif
 
 // NOCTURNE_AUTHENTIC_GOGGLE_LOOK
-//   Whether the infrared goggles can be looked around with empty hands.
+//   Whether the infrared goggles can be looked around with empty hands, and
+//   whether every hero's goggle view is held level as the Stranger's is.
 //   1: shipped behaviour — the goggle view pitches with the aim only while a
 //      gun is drawn. Holstered or empty-handed it is pinned to the horizon and
 //      look input up and down does nothing. With a gun drawn it keeps pitching
 //      after the player is dead, through the death animation and Game Over.
+//      For every hero but the Stranger it follows the head bone's animation,
+//      swaying with the idle and swinging with each step.
 //   0: look drives the goggle view whatever the hands are holding, and stops
-//      when the player dies.
+//      when the player dies. Every hero's goggle view is level and faces
+//      where the hero does, as the Stranger's does (goggle_look.h).
 //
 //   Two things produce the shipped behaviour, and both have to move.
 //   CStranger::autoAimAtThreat returns early with no weapon, after setting
@@ -2037,9 +2305,10 @@
 //   The other eight heroes never pitch the head bone at all, so at 0 they get
 //   the same pitch on the goggle camera alone — see shims/game/goggle_look.h.
 //
-//   Only the pitch is gated. Turning already works empty-handed, because the
-//   goggle view's yaw is the hero's own facing plus a head yaw the shipped code
-//   leaves at zero, and turning is ordinary locomotion.
+//   Turning already works empty-handed: the goggle view's yaw is the hero's
+//   own facing plus the head bone's yaw, and turning is ordinary locomotion.
+//   The Stranger's head yaw is zero with the goggles on; every other hero's is
+//   whatever its animation gives, which at 0 is levelled in the camera alone.
 //
 //   Both input paths already deliver the axis: CGame::processMouseControls
 //   writes look_up_down_speed whatever is held, and so does the pad shim's
@@ -2061,15 +2330,17 @@
 #endif
 
 // NOCTURNE_AUTHENTIC_HERO_LOOK_AIM
-//   Whether Scat can aim with look input while auto-aim is on.
+//   Whether Scat and Gabriella can aim with look input while auto-aim is on.
 //   CStranger::autoAimAtThreat integrates look_up_down_speed into the aim in
 //   every aim mode, and auto-aim only overrides it once a threat is found.
 //   CScat::updateAiming integrates it only for manual aim; under auto-aim with
 //   no target the pitch holds where it was, and firing with no target snaps it
-//   to level.
+//   to level. CGabriella::updateAimTracking is built the same way, except that
+//   with no target her aim weight runs down and the pitch returns to level.
 //   1: shipped behaviour.
-//   0: with no target, auto-aim follows look input as the Stranger's does, at
-//      CScat's own rate and limits. A target still takes the aim.
+//   0: with no target and the weapon drawn, auto-aim follows look input as the
+//      Stranger's does, at each class's own manual-aim rate and limits. A
+//      target still takes the aim.
 //
 //   Override with -DNOCTURNE_AUTHENTIC_HERO_LOOK_AIM=1.
 #ifndef NOCTURNE_AUTHENTIC_HERO_LOOK_AIM
@@ -2262,6 +2533,22 @@
 //   Override with -DNOCTURNE_AUTHENTIC_HUD_SCALE=1.
 #ifndef NOCTURNE_AUTHENTIC_HUD_SCALE
 #define NOCTURNE_AUTHENTIC_HUD_SCALE 0
+#endif
+
+// NOCTURNE_AUTHENTIC_STATUS_BAR_WIDTH
+//   The bars CGame::renderOverlay stacks at the bottom left (another network
+//   player when hit, a companion, a hostage, the vampire boss) carry only a
+//   fill fraction, and every one is a quarter of the screen wide.
+//   1: shipped behaviour — every bar is the same width, whatever the
+//      character's maximum health.
+//   0: a hero's bar (any CHero: another player, or a companion) is
+//      max_hit_points / 100 of that width, so IcePick's 300 draws three times
+//      a Stranger's 100, clamped to the screen. Other bars are unchanged.
+//      See shims/game/status_bar.h.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_STATUS_BAR_WIDTH=1.
+#ifndef NOCTURNE_AUTHENTIC_STATUS_BAR_WIDTH
+#define NOCTURNE_AUTHENTIC_STATUS_BAR_WIDTH 0
 #endif
 
 // NOCTURNE_AUTHENTIC_WINDOW_MODE

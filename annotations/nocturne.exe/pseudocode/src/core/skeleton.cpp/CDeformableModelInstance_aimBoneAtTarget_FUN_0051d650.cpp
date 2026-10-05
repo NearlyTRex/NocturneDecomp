@@ -33,7 +33,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0051
     return;
   }
   core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(this_ptr);
-  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
+  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
                      (this_ptr,&CStack_14,bone_index);
   CStack_2c.x = target_position->x - pCVar1->x;
   CStack_2c.y = target_position->y - pCVar1->y;

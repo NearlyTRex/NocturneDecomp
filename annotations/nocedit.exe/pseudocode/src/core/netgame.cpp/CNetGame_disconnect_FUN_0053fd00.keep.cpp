@@ -22,7 +22,12 @@ void __cdecl core_netgame_cpp_CNetGame_disconnect_FUN_0053fd00(CNetGame *this_pt
   float local_2c;
   float local_28;
   float local_24;
-  
+
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+  if (perform_handshake != 0) {
+    nocturne_net_disconnect_notify(this_ptr);
+  }
+#else
   if (perform_handshake != 0) {
     if (this_ptr->connection_type == CONNECTION_CLIENT) {
       shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
@@ -177,6 +182,7 @@ LAB_00540097:
       }
     }
   }
+#endif
   this_ptr->network_mode = NET_MODE_DISCONNECTED;
   this_ptr->local_player_index = -1;
   this_ptr->server_player_index = -1;

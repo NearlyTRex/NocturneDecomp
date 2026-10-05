@@ -124,7 +124,7 @@ void __cdecl core_charactr_cpp_CCharacter_addDamageDecal_FUN_00427310(CCharacter
     core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80
               (&local_10c,&(this_ptr->base).location.position,&(this_ptr->base).orient.vec);
     core_xform_cpp_inverse_FUN_0055bd00
-              ((this_ptr->model).bone_transform.bone_world_matrices + local_18->bone_index,
+              ((this_ptr->model).bone_transform.bone_model_matrices + local_18->bone_index,
                &local_2ec);
     pCVar5 = &local_22c;
     pCVar4 = &local_2ec;

@@ -119,14 +119,14 @@ void __stack2_esi core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0(CZ
   }
   pCVar3 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                      (output_vector,pCVar1,
-                      (this_ptr->base).base.model.bone_transform.bone_world_matrices + iVar3);
+                      (this_ptr->base).base.model.bone_transform.bone_model_matrices + iVar3);
   if (&local_40 != pCVar3) {
     local_40.x = pCVar3->x;
     local_40.y = pCVar3->y;
     local_40.z = pCVar3->z;
   }
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
-            (&local_16c,(this_ptr->base).base.model.bone_transform.bone_world_matrices + iVar3,
+            (&local_16c,(this_ptr->base).base.model.bone_transform.bone_model_matrices + iVar3,
              &local_13c);
   local_10c.m[0].z = local_13c.m[0].z;
   local_10c.m[1].z = local_13c.m[1].z;

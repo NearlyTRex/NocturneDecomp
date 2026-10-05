@@ -10,7 +10,7 @@
 ; CVector3f        Stack[-0x10]:12  local_10
 ;
 ; Called Functions:
-;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0059fb00
 ;
 ; *****************************************************************************
 
@@ -26,8 +26,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x1c]      ; 004183bf
     ADD EAX,0x158                       ; 004183c3
     PUSH EAX                            ; 004183c8
-    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00 ; 004183c9
-        ;   XREF to: 0059fb00 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0059fb00 ; 004183c9
+        ;   XREF to: 0059fb00 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0059fb00(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     ADD ESP,0xc                         ; 004183ce
     CMP EBX,EAX                         ; 004183d1
     JNZ 0x004183df                      ; 004183d3

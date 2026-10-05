@@ -285,7 +285,7 @@ section .text
         ;   Label: LAB_005b1bbe
     MOV EBX,0x1                         ; 005b1bc5
     MOV dword ptr [ESP + 0x158],EAX     ; 005b1bca
-    MOV EDX,dword ptr [0x03275a28]      ; 005b1bd1 | g_ScreenHeightForFonts
+    MOV EDX,dword ptr [0x03275a28]      ; 005b1bd1 | g_CDemonCameraInstance.framebuffer_width
         ;   Label: LAB_005b1bd1
     IMUL EDX,EBX                        ; 005b1bd7
     MOV EAX,EDX                         ; 005b1bda

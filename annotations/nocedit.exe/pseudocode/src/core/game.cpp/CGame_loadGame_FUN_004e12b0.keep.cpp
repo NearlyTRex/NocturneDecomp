@@ -258,6 +258,9 @@ LAB_004e14f5:
         if (iVar2 == 0) goto LAB_004e17ac;
         core_event_cpp_CEventList_loadState_FUN_004b0fc0(g_CEventListPtr,file_handle);
         core_script_cpp_CScript_loadState_FUN_00560820(g_CScriptPtr,file_handle);
+#if !NOCTURNE_AUTHENTIC_LIGHT_FILTER_LOAD
+        nocturne_light_filter_load_replay(g_CScriptPtr);
+#endif
         if (local_34 < 4) {
           core_gore_cpp_CGore_reset_FUN_004ed760(g_CGorePtr);
         }

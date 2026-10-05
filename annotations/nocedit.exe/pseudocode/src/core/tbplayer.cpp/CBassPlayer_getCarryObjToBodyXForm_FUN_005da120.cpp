@@ -43,7 +43,7 @@ void __stack2_esi core_tbplayer_cpp_CBassPlayer_getCarryObjToBodyXForm_FUN_005da
   }
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0(&local_78,&local_3c,&local_24);
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
-            (&local_78,(this_ptr->base).base.model.bone_transform.bone_world_matrices + iVar2,
+            (&local_78,(this_ptr->base).base.model.bone_transform.bone_model_matrices + iVar2,
              &local_a8);
   out_matrix->m[0].w = local_a8.m[0].w;
   out_matrix->m[0].x = local_a8.m[0].x;

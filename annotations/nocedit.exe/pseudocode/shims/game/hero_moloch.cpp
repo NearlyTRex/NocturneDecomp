@@ -73,7 +73,7 @@ int strike_from(CMoloch *moloch, CCharacter *target, const char *bone_name)
     if (bone_index < 0) {
         return 0;
     }
-    bone_point = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+    bone_point = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0059fb00
                            (model, &local_point, bone_index);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
               ((CDemonActor *)moloch, &world_point, bone_point);

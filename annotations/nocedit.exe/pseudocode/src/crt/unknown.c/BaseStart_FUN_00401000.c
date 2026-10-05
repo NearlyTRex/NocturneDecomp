@@ -1,12 +1,12 @@
 // Name: crt_unknown.c_BaseStart_FUN_00401000
 // Address: 00401000
 // Address Range: [[00401000, 00401000]]
-// Convention: unknown
-// Signature: void crt_unknown_c_BaseStart_FUN_00401000(void)
+// Convention: __cdecl
+// Signature: void __cdecl crt_unknown_c_BaseStart_FUN_00401000(void)
 
 #include "nocturne.h"
 
-void BaseStart(void)
+void __cdecl BaseStart(void)
 
 {
   code *pcVar1;

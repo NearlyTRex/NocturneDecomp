@@ -1,6 +1,9 @@
 // Name: engine_special.cpp_presentToExternalRenderer_FUN_005b7c30
 // Address: 005b7c30
 // MANUAL RECONSTRUCTION
+// Address Range: [[005b7c30, 005b7cfb]]
+// Convention: __cdecl
+// Signature: void __cdecl engine_special_cpp_presentToExternalRenderer_FUN_005b7c30(int skip_buffer_copy)
 // Copies back buffer to screen buffer array (scanline by scanline) and
 // presents via external renderer API. Copy is rep movsd + rep movsb.
 

@@ -126,7 +126,7 @@ LAB_004fd81b:
                      (this_ptr->aim_target,&CStack_6c,&CStack_60);
   core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
             ((CDemonActor *)this_ptr,&CStack_9c,pCVar4);
-  pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
+  pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
                      (&(this_ptr->base).base.model,&CStack_a8,_DAT_01e533a0);
   CStack_84.x = CStack_9c.x - pCVar4->x;
   CStack_84.y = CStack_9c.y - pCVar4->y;

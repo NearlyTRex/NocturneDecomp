@@ -1,6 +1,9 @@
 // Name: engine_colquant.c_doubleMax_FUN_00441790
 // Address: 00441790
 // MANUAL RECONSTRUCTION
+// Address Range: [[00441790, 004417d6]]
+// Convention: __cdecl
+// Signature: double __cdecl engine_colquant_c_doubleMax_FUN_00441790(double a,double b)
 
 #include "nocturne.h"
 

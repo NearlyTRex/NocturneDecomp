@@ -212,7 +212,7 @@ void __cdecl core_gabriela_cpp_CGabriella_process_FUN_00495a20(CGabriella *this_
       }
       local_54 = (CCharacter *)(this_ptr->base).base.grabbed_by;
       local_14 = (local_54->base).vtable._uc;
-      pCVar11 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
+      pCVar11 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
                           (&(this_ptr->base).base.model,&local_13c,0);
       iVar10 = (*(local_14->_uc).attractActorToward)(local_54,(CDemonActor *)this_ptr,pCVar11);
       if (iVar10 == 0) {

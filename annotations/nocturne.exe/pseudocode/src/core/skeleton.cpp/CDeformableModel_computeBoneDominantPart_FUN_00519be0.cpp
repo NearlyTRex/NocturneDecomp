@@ -58,7 +58,7 @@ int __cdecl core_skeleton_cpp_CDeformableModel_computeBoneDominantPart_FUN_00519
     core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0051b800(pCVar1);
     core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0051d3c0(pCVar1);
     core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_0051da50(pCVar1,0);
-    core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
+    core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
               (pCVar1,&local_6c,bone_index);
     local_38 = 0;
     if (0 < this_ptr->num_parts) {

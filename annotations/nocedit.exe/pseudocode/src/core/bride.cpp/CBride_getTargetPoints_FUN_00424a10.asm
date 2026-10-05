@@ -15,7 +15,7 @@
 ;   undefined4 g_BrideIndices[9]
 ;
 ; Called Functions:
-;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0059fb00
 ;
 ; *****************************************************************************
 
@@ -39,8 +39,8 @@ section .text
     LEA EDX,[ESP + 0x14]                ; 00424a3f
     PUSH EDX                            ; 00424a43
     PUSH EAX                            ; 00424a44
-    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00 ; 00424a45
-        ;   XREF to: 0059fb00 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0059fb00 ; 00424a45
+        ;   XREF to: 0059fb00 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0059fb00(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     ADD ESP,0xc                         ; 00424a4a
     CMP EBX,EAX                         ; 00424a4d
     JZ 0x00424a61                       ; 00424a4f
@@ -63,8 +63,8 @@ section .text
     LEA EDX,[ESP + 0x4]                 ; 00424a73
     PUSH EDX                            ; 00424a77
     PUSH EAX                            ; 00424a78
-    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00 ; 00424a79
-        ;   XREF to: 0059fb00 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0059fb00 ; 00424a79
+        ;   XREF to: 0059fb00 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0059fb00(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     ADD ESP,0xc                         ; 00424a7e
     CMP EBX,EAX                         ; 00424a81
     JZ 0x00424a95                       ; 00424a83

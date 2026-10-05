@@ -1,7 +1,7 @@
 // Name: core_script.cpp_CScript_step_FUN_0055a810
 // Address: 0055a810
 // MANUAL RECONSTRUCTION
-// Address Range: [[0055a810, 0055c9e6] [0055ca7e, 0055fef3]]
+// Address Range: [[0055a810, 0055fef3]]
 // Convention: __cdecl
 // Signature: int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,float *time_remaining)
 
@@ -828,8 +828,9 @@ joined_r0x0055f6da:
                                               }
                                               local_11c = local_11c + local_60;
                                               if (0.0 < local_3f80) {
-                                                local_3f80 = local_3f80 * (float)3.1415926535000001 *
-                                                             (float)0.0055555555555555497;
+                                                local_3f80 = (float)((double)local_3f80 *
+                                                                     3.1415926535000001 *
+                                                                     0.005555555555555555);
                                                 fVar7 =
                                                   core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10
                                                             (-local_3f80,local_3f80);
@@ -1081,6 +1082,9 @@ LAB_0055cd52:
                                                   if (g_ScriptEventsEnabled == 0) {
                                                     local_114 = g_ScriptEventsEnabled;
                                                     this_ptr->mission_ended = 1;
+#if !NOCTURNE_AUTHENTIC_HELPER_DEATH
+                                                    nocturne_helper_death_note_end();
+#endif
                                                   }
                                                   }
                                                   else {

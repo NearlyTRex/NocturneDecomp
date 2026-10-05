@@ -46,7 +46,7 @@ void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_00497410(CGabr
       if (iVar2 == 7) {
         bone_index = _DAT_01c713b8;
       }
-      core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
+      core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
                 (this_ptr_00,(CVector3f *)local_58,bone_index);
       this_ptr_01 = (this_ptr->base).ladder_to_climb;
       if (this_ptr_01 == (CLadder *)0x0) {
@@ -117,7 +117,7 @@ void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_00497410(CGabr
                               );
       local_1c = this_ptr_02;
       if (this_ptr_02 != (CCharacter *)0x0) {
-        pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
+        pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
                            (this_ptr_00,(CVector3f *)(auStack_48 + 8),_DAT_01c713c8);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                   ((CDemonActor *)this_ptr,(CVector3f *)local_64,pCVar4);

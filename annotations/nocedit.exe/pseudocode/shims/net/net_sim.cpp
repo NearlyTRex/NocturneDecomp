@@ -11,6 +11,9 @@
 
 #define SIM_MAX_HEROES 4
 
+// See net_sim.h, "WHICH HERO DOES THIS SCRIPT MEAN?". -1 is no record.
+static int s_trigger_hero_index = -1;
+
 // A hero held out of the world carries a negative area (createOneHero), and a
 // dead one should not be what an enemy paths toward while a live one is
 // available. Both tests read lockstep state, so every machine agrees.
@@ -138,4 +141,32 @@ extern "C" int nocturne_net_sim_begin_hero_setup(CDemonActor *actor)
 extern "C" void nocturne_net_sim_end_hero_setup(int saved_local_hero_index)
 {
     g_LocalHeroIndex = saved_local_hero_index;
+}
+
+extern "C" void nocturne_net_sim_note_trigger_hero(CDemonActor *actor)
+{
+    int i;
+
+    if ((actor == (CDemonActor *)0x0) || (sim_is_network_game() == 0)) {
+        return;
+    }
+    for (i = 0; (i < SIM_MAX_HEROES) && (i < g_HeroCount); i++) {
+        if ((CDemonActor *)g_HeroActors[i] == actor) {
+            s_trigger_hero_index = i;
+            return;
+        }
+    }
+}
+
+extern "C" CHero *nocturne_net_sim_trigger_hero(void)
+{
+    if ((s_trigger_hero_index < 0) || (g_HeroCount <= s_trigger_hero_index)) {
+        return (CHero *)0x0;
+    }
+    return g_HeroActors[s_trigger_hero_index];
+}
+
+extern "C" void nocturne_net_sim_forget_trigger_hero(void)
+{
+    s_trigger_hero_index = -1;
 }

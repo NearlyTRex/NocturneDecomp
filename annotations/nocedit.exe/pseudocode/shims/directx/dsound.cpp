@@ -311,7 +311,10 @@ static void mix_voice(DSoundBuffer_ShimData* buf, int* acc, int frames,
             if (buf->is_looping) {
                 pos = fmod(pos, (double)total_frames);
             } else {
+                // A non-looping buffer that plays out stops with its cursor
+                // back at 0, so a later Play starts it again from the top.
                 buf->is_playing = 0;
+                pos = 0.0;
                 break;
             }
         }
@@ -740,9 +743,14 @@ static HRESULT dsbuf_Play(LPDIRECTSOUNDBUFFER this_ptr, DWORD dwReserved1,
                            DWORD dwPriority, DWORD dwFlags) {
     (void)dwReserved1; (void)dwPriority;
     DSoundBuffer_ShimData* buf = reinterpret_cast<DSoundBuffer_ShimData*>(this_ptr);
-    buf->is_playing = 1;
+    // Play never moves the cursor. On a playing buffer it only changes the
+    // looping flag; a stopped one resumes where Stop, SetCurrentPosition or
+    // the end of the buffer left it.
+    SDL_AudioDeviceID dev = buf->dsound ? buf->dsound->device_id : 0;
+    SDL_LockAudioDevice(dev);
     buf->is_looping = (dwFlags & DSBPLAY_LOOPING) ? 1 : 0;
-    buf->play_pos_frames = 0.0;
+    buf->is_playing = 1;
+    SDL_UnlockAudioDevice(dev);
     DLOG("sound","Play: size=%u pc=%u flags=0x%x looping=%d primary=%d shared=%d",
          (unsigned)buf->buffer_size, (unsigned)buf->play_cursor,
          (unsigned)dwFlags, buf->is_looping, buf->is_primary, buf->audio_data_shared);
@@ -757,7 +765,18 @@ static HRESULT dsbuf_Play(LPDIRECTSOUNDBUFFER this_ptr, DWORD dwReserved1,
 
 static HRESULT dsbuf_SetCurrentPosition(LPDIRECTSOUNDBUFFER this_ptr, DWORD dwNewPosition) {
     DSoundBuffer_ShimData* buf = reinterpret_cast<DSoundBuffer_ShimData*>(this_ptr);
-    buf->play_cursor = buf->buffer_size ? (dwNewPosition % buf->buffer_size) : 0;
+    // The mixer reads play_pos_frames, so that is the position that has to
+    // move; play_cursor is only what it reports back. Under the audio lock,
+    // since the mixer writes its own position back at the end of each pass.
+    const DWORD frame_bytes = (DWORD)((buf->format.nChannels ? buf->format.nChannels : 1) *
+                                      ((buf->format.wBitsPerSample == 8) ? 1 : 2));
+    DWORD pos = buf->buffer_size ? (dwNewPosition % buf->buffer_size) : 0;
+    pos -= pos % frame_bytes;
+    SDL_AudioDeviceID dev = buf->dsound ? buf->dsound->device_id : 0;
+    SDL_LockAudioDevice(dev);
+    buf->play_cursor = pos;
+    buf->play_pos_frames = (double)(pos / frame_bytes);
+    SDL_UnlockAudioDevice(dev);
     DLOG("sound","SetCurrentPosition: dev=%u pos=%u -> pc=%u",
          (unsigned)buf->device_id, (unsigned)dwNewPosition, (unsigned)buf->play_cursor);
     return DS_OK;

@@ -824,7 +824,91 @@ def identify_missing_cave_copy(decompiled_code, assembly_code):
                 "copy `{d} = {s};`.").format(d=dst, s=src, t=type_name, f=dfield),
             'severity': 'moderate',
         })
+    # Quinary pass: ONE dropped copy. The primary pass needs two dead locals so
+    # a lone output param cannot flag a function; a single dropped copy leaves
+    # only one - its source, written by a call and never read - while the
+    # destination is read (possibly several times) and so is not "passed once".
+    # Flag it when the dead source has a same-typed partner that is never
+    # assigned and whose every use is a read-only argument (a position other
+    # than the callee's returned output). Canonical: CZombie::renderTransparent
+    # - getBoneModelMatrix(.., &local_c4); cave 03fc3940 copies it to local_f4;
+    # three transformVector3x4(.., .., &local_f4) read a never-written matrix.
+    if len(candidates) == 1:
+        flagged_lines = {s['line'] for s in suspects}
+        src_line, src_type, src_var = candidates[0]
+        for decl_line, type_name, var_name in decls:
+            if (type_name != src_type or var_name == src_var
+                    or (decl_line + 1) in flagged_lines):
+                continue
+            if not _is_read_only_struct_local(lines, decl_line, var_name,
+                                              callee_out_arg):
+                continue
+            suspects.append({
+                'line': decl_line + 1,
+                'type': 'missing_cave_copy',
+                'match': "{t} {d}; read-only, never written; {s} written, "
+                         "never read (expected {d} = {s};)".format(
+                             t=type_name, d=var_name, s=src_var),
+                'text': lines[decl_line].strip()[:120],
+                'description': (
+                    "Struct-type local `{d}` ({t}) is only ever read - every use "
+                    "is a read-only argument - and is never written, while "
+                    "`{s}` ({t}) is written by a call and never read, and the "
+                    "`.asm` has a {t}-sized cave-block struct copy. Ghidra "
+                    "dropped the `{d} = {s};` copy, so `{d}` is uninitialised at "
+                    "runtime. See §20 - restore the copy, or read `{s}` "
+                    "directly.").format(d=var_name, s=src_var, t=type_name),
+                'severity': 'moderate',
+            })
     return suspects
+
+
+def _is_read_only_struct_local(lines, decl_line, var_name, callee_out_arg):
+    """True when every use of `var_name` is `&var_name` passed as a top-level
+    argument of a known `_FUN_` call at a position other than that callee's
+    returned-output argument, and it is never assigned. A use the scanner can
+    not classify (unknown callee, bare use, field access) makes it False."""
+    var_re = re.compile(r"\b" + re.escape(var_name) + r"\b")
+    addr_re = re.compile(r"^\s*&\s*" + re.escape(var_name) + r"\s*$")
+    call_re = re.compile(r"([\w:]*_FUN_([0-9a-fA-F]+))\s*\(")
+    uses = 0
+    for idx, line in enumerate(lines):
+        if idx == decl_line or not var_re.search(line):
+            continue
+        start, end = idx, idx
+        while start > 0:
+            prev = lines[start - 1].rstrip()
+            if not prev or prev.endswith((';', '{', '}', ':')):
+                break
+            start -= 1
+        while end < len(lines) - 1 and ';' not in lines[end]:
+            end += 1
+        stmt = " ".join(lines[k].strip() for k in range(start, end + 1))
+        occurrences = len(var_re.findall(stmt))
+        read_only = 0
+        for cm in call_re.finditer(stmt):
+            out_arg = callee_out_arg.get(cm.group(2))
+            open_paren = cm.end() - 1
+            depth, close_paren = 0, -1
+            for k in range(open_paren, len(stmt)):
+                if stmt[k] == '(':
+                    depth += 1
+                elif stmt[k] == ')':
+                    depth -= 1
+                    if depth == 0:
+                        close_paren = k
+                        break
+            if close_paren < 0:
+                continue
+            for pos, arg in enumerate(_split_top_level(stmt[open_paren + 1:close_paren])):
+                if addr_re.match(arg):
+                    if out_arg is None or out_arg == pos:
+                        return False
+                    read_only += 1
+        if read_only != occurrences:
+            return False
+        uses += occurrences
+    return uses > 0
 
 
 

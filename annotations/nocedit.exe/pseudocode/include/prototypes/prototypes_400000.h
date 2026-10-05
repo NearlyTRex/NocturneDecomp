@@ -51,7 +51,7 @@
 // FUNCTION PROTOTYPES - Range 0x400000
 // =============================================================================
 
-void crt_unknown_c_BaseStart_FUN_00401000(void);
+void __cdecl crt_unknown_c_BaseStart_FUN_00401000(void);
 void __cdecl engine_2d_c_initGraphicsSystem_FUN_00401010(void);
 void __cdecl engine_2d_c_cleanupGraphicsSystem_FUN_00401130(void);
 void __cdecl engine_2d_c_plotPixel_FUN_00401140(int x,int y);

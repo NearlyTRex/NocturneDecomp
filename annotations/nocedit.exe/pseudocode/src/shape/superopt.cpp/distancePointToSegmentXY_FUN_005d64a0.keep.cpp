@@ -1,6 +1,7 @@
 // Name: shape_superopt.cpp_distancePointToSegmentXY_FUN_005d64a0
 // Address: 005d64a0
-// Address Range: [[005d64a0, 005d64f7]]
+// MANUAL RECONSTRUCTION
+// Address Range: [[005d64a0, 005d64f7] [00604f0e, 00604f30]]
 // Convention: __cdecl
 // Signature: double __cdecl shape_superopt_cpp_distancePointToSegmentXY_FUN_005d64a0(CVector3d *segStart,CVector3d *segEnd,CVector3d *point)
 

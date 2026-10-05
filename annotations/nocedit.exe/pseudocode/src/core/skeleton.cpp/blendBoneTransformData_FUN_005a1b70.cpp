@@ -67,6 +67,6 @@ void __cdecl core_skeleton_cpp_blendBoneTransformData_FUN_005a1b70(SPose *result
       pCVar1 = (CVector3f *)&pCVar1[1].y;
     } while (iVar2 < pCVar2->bone_count);
   }
-  core_skeleton_cpp_computeBoneWorldMatrices_FUN_005a1950(result_pose,instance_ptr);
+  core_skeleton_cpp_computeBoneModelMatrices_FUN_005a1950(result_pose,instance_ptr);
   return;
 }

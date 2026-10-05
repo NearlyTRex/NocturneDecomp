@@ -74,7 +74,7 @@ flag.
 
 ## What is gated
 
-74 toggles. The kinds below are the same ones the header's table names, and a flag's kind is the
+75 toggles. The kinds below are the same ones the header's table names, and a flag's kind is the
 honest reason its default is what it is.
 
 **`host` — the shipped behaviour depends on Win32 + DirectDraw and cannot be reproduced**
@@ -87,6 +87,7 @@ honest reason its default is what it is.
 | `SOUND_DEVICE` | the Sound Options Device line names the host audio API SDL opened |
 | `RENDERER_DLL` | a compiled-in renderer loads without a file on disk |
 | `HEAP_REPORT` | the memory line reports the host allocator, since the Watcom heap it walks is not there |
+| `SOUND_ERROR_LOG` | sound error and missing-wav reports are written to `sounderr.txt` and `missingwavs.txt` in the game directory, since the network share they were written to is not there, and a "no free buffers" console line names the sound and what holds the buffers |
 
 **`defect` — the shipped binary is wrong, and the doc comment carries the instruction that proves it**
 
@@ -118,10 +119,18 @@ honest reason its default is what it is.
 | `CHAPTER_SELECT` | START offers the chapter lists whether or not pod.ini is present |
 | `FRIENDLY_FIRE` | heroes cannot damage each other in a network game |
 | `MELEE_PICKUP` | a melee weapon you already carry does not fill a second inventory slot |
+| `ELEPHANT_GUN_SHELL` | the elephant gun ejects a shell and cocks after a shot, as the shotgun does |
+| `HELD_WEAPON_STATE` | Gabriella's tommy gun sounds like the Stranger's instead of a muffled restart each shot, and the Baron is not re-attached to her every frame |
+| `ITEM_NAMES` | a new actor is never named after an item a hero carries, so a save holds no duplicate names |
 | `SHADOW_DEPTH_READ` | the shadow-pass depth test reads the 16-bit value the span writer actually wrote |
 | `BODY_PART_BAKE` | a settled body part stays on screen until a background bake draws it, instead of vanishing under a light |
 | `MOTION_TWEEN_INIT` | a new animation controller starts with no stale transition to reverse |
 | `HW_SFX_FALLOFF` | hardware-mixed positional sounds fall off as the software mixer's do |
+| `CUE_RETRIGGER` | a script music cue does not stack copies of itself while it plays, as ACT1's river drowning did |
+| `GOGGLES_OFF_FRAME` | a cutscene that switches the goggles off draws its first frame instead of presenting the untextured background bake |
+| `GOGGLES_CAMERA_HOLD` | a script's timed camera hold (a scare cut such as CASTLE1's ghoul spook) runs out while the goggles are on, instead of cutting the view away when they next come off |
+| `LIGHT_FILTER_LOAD` | the HQ projector keeps the briefing slides its script added when a save is loaded, instead of showing one image throughout |
+| `HELPER_DEATH` | when a companion the mission needs dies, the hero is held still through the death sequence and the game ends on the Game Over menu instead of dropping to the main menu |
 | `INPUT_REPEAT` | a held button starts an action once instead of restarting it every frame |
 | `ITEM_HELP_POSITION` | the pickup help text does not sit on top of the pickup name |
 | `DEATH_MESSAGE_POSITION` | the death banner is centred, clear of the message line |
@@ -147,7 +156,7 @@ honest reason its default is what it is.
 | Flag | Off |
 |---|---|
 | `AUTOMAP` | a bindable Doom-style map that fills in as you explore |
-| `GOGGLE_LOOK` | the goggle view looks up and down with empty hands, not only with a gun drawn, and for every hero rather than only the Stranger |
+| `GOGGLE_LOOK` | the goggle view looks up and down with empty hands, not only with a gun drawn, and for every hero rather than only the Stranger; every hero's goggle view is held level as the Stranger's is, rather than swaying with the head's animation |
 | `HERO_LOOK_AIM` | Scat's aim follows look input under auto-aim until a target takes it, as the Stranger's does |
 | `MENU_VERSION` | the menu carries a line naming this build, alongside everything it already drew |
 | `SAVE_SLOTS` | saves are picked from a slot list instead of typed |
@@ -158,6 +167,7 @@ honest reason its default is what it is.
 | `CHEAT_MENU` | a CHEATS entry on Options, and WARPS on the pause menu |
 | `RESOLUTION_LIST` | one ordered table drives both the label and the stepping |
 | `HUD_SCALE` | HUD bitmaps, text and the goggles scale with the framebuffer |
+| `STATUS_BAR_WIDTH` | another player's or a companion's status bar is as long as its maximum health, 100 being the shipped width |
 | `WINDOW_MODE` | Graphics Options picks windowed, fullscreen or borderless; on, the game is always fullscreen |
 | `OS_FONT` | Graphics Options can pick bitmap or system text |
 | `CONSOLE` | the console fills the window and keeps scrollback |

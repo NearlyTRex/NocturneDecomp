@@ -213,6 +213,9 @@ switchD_005dfb63_default:
     this_ptr->triggering_actor = (CDemonActor *)0x0;
     return;
   }
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+  nocturne_net_sim_note_trigger_hero(this_ptr->triggering_actor);
+#endif
   core_event_cpp_CEventList_executeCommands_FUN_004aabe0(g_CEventListPtr,this_ptr->on_event);
   return;
 }

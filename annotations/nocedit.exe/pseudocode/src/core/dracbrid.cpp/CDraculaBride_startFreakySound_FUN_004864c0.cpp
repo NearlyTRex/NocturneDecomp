@@ -58,7 +58,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_004864c0(CDrac
       bone_index = g_DraculaBrideIndices[0];
       if (iVar2 == 0) {
         pSVar5->t = 0.0;
-        pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+        pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0059fb00
                            (&(this_ptr->base).base.model,&local_44,bone_index);
         pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                            ((CDemonActor *)this_ptr,&local_50,pCVar3);

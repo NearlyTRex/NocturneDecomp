@@ -366,13 +366,13 @@ section .text
     ADD ESP,0x4                         ; 004d8436
     MOV EAX,[0x020a5720]                ; 004d8439 | g_ThemeFont
     MOV dword ptr [ESP + 0x138],EAX     ; 004d843e
-    MOV EAX,[0x03275a28]                ; 004d8445 | g_ScreenHeightForFonts
+    MOV EAX,[0x03275a28]                ; 004d8445 | g_CDemonCameraInstance.framebuffer_width
     CMP EAX,0x1e0                       ; 004d844a
     JGE 0x004d845d                      ; 004d844f
         ;   XREF to: 004d845d (CONDITIONAL_JUMP)  ; LAB_004d845d
     MOV EAX,[0x020a5724]                ; 004d8451 | g_SmallEditorFont
     MOV dword ptr [ESP + 0x138],EAX     ; 004d8456
-    MOV EDX,dword ptr [0x03275a28]      ; 004d845d | g_ScreenHeightForFonts
+    MOV EDX,dword ptr [0x03275a28]      ; 004d845d | g_CDemonCameraInstance.framebuffer_width
         ;   Label: LAB_004d845d
     LEA EAX,[EDX*0x8 + 0x0]             ; 004d8463
     ADD EDX,EAX                         ; 004d846a

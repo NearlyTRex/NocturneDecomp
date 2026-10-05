@@ -42,7 +42,7 @@
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_004e1890
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_0051e350
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0
-;   core_skeleton.cpp_computeBoneWorldMatrices_FUN_0051f1d0
+;   core_skeleton.cpp_computeBoneModelMatrices_FUN_0051f1d0
 ;
 ; *****************************************************************************
 
@@ -81,8 +81,8 @@ section .text
     PUSH EAX                            ; 0051e18a
     MOV EBP,0xffffffff                  ; 0051e18b
     XOR ESI,ESI                         ; 0051e190
-    CALL core_skeleton.cpp_computeBoneWorldMatrices_FUN_0051f1d0 ; 0051e192
-        ;   XREF to: 0051f1d0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_computeBoneWorldMatrices_FUN_0051f1d0(SPose * bone_data, CDeformableModelInstance * instance_ptr)
+    CALL core_skeleton.cpp_computeBoneModelMatrices_FUN_0051f1d0 ; 0051e192
+        ;   XREF to: 0051f1d0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_computeBoneModelMatrices_FUN_0051f1d0(SPose * bone_data, CDeformableModelInstance * instance_ptr)
     ADD ESP,0x8                         ; 0051e197
     MOV EAX,0x7149f2ca                  ; 0051e19a
     MOV EDX,dword ptr [ESP + 0x3578]    ; 0051e19f
@@ -107,8 +107,8 @@ section .text
     PUSH EDI                            ; 0051e1e4
     LEA EAX,[ESP + 0x4]                 ; 0051e1e5
     PUSH EAX                            ; 0051e1e9
-    CALL core_skeleton.cpp_computeBoneWorldMatrices_FUN_0051f1d0 ; 0051e1ea
-        ;   XREF to: 0051f1d0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_computeBoneWorldMatrices_FUN_0051f1d0(SPose * bone_data, CDeformableModelInstance * instance_ptr)
+    CALL core_skeleton.cpp_computeBoneModelMatrices_FUN_0051f1d0 ; 0051e1ea
+        ;   XREF to: 0051f1d0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_computeBoneModelMatrices_FUN_0051f1d0(SPose * bone_data, CDeformableModelInstance * instance_ptr)
     ADD ESP,0x8                         ; 0051e1ef
     XOR EAX,EAX                         ; 0051e1f2
     XOR ECX,ECX                         ; 0051e1f4

@@ -30,7 +30,7 @@ void __cdecl core_gabriela_cpp_CGabriella_binarySearchClavicleBlend_FUN_00499b00
   bVar6 = 0;
   pCVar2 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_0051ed90(pCVar2,&local_1b44);
-  core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
+  core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
             (pCVar2,&local_30,blend_bone_index);
   local_30.y = local_30.y + -0.3f;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -48,7 +48,7 @@ void __cdecl core_gabriela_cpp_CGabriella_binarySearchClavicleBlend_FUN_00499b00
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
               (pCVar2,0,0.0,*clavicle_blend,blend_bone_index,
                core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650);
-    core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0
+    core_skeleton_cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_0051d0a0
               (pCVar2,probe_bone_index,&local_78);
     pCVar4 = &local_78;
     pCVar5 = &local_a8;

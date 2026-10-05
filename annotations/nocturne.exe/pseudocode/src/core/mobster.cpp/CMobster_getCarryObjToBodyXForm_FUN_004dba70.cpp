@@ -89,7 +89,7 @@ void __stack2_esi core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_004dba70(
   }
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(&local_d8,&local_60,&local_30);
   core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00
-            (&local_d8,(this_ptr->base).base.model.bone_transform.bone_world_matrices + iVar2,
+            (&local_d8,(this_ptr->base).base.model.bone_transform.bone_model_matrices + iVar2,
              &local_a8);
   pCVar3 = &local_a8;
   for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {

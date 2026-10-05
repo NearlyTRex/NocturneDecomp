@@ -1,5 +1,6 @@
 // Name: core_ladder.cpp_CLadder_processInEditor_FUN_00502d00
 // Address: 00502d00
+// MANUAL RECONSTRUCTION
 // Address Range: [[00502d00, 00502e4e]]
 // Convention: __cdecl
 // Signature: void __cdecl core_ladder_cpp_CLadder_processInEditor_FUN_00502d00(CLadder *this_ptr)

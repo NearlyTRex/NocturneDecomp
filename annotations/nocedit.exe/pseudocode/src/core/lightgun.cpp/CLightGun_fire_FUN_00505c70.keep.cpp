@@ -154,7 +154,12 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_00505c70(CLightGun *this_ptr)
          iVar3 != 0)))))) {
       (*((this_ptr_03->base).vtable._ub)->getBoundingBox)(&this_ptr_03->base,&CStack_d8);
       iVar3 = core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180
+#if NOCTURNE_AUTHENTIC_NETPLAY
                         (&g_CDemonLightInstance.base,&(this_ptr_03->base).location.position,
+#else
+                        (&nocturne_hero_light((CHero *)(this_ptr->base).carried_by_actor)->base,
+                         &(this_ptr_03->base).location.position,
+#endif
                          &(this_ptr_03->base).orient.vec,&CStack_d8.min,&CStack_d8.max);
       if (iVar3 != 0) {
         engine_console_cpp_CConsole_printf_FUN_00441890

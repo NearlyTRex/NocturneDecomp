@@ -46,7 +46,7 @@
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040df00
 ;   core_gabriela.cpp_CGabriella_scoreTargetVisibility_FUN_00498de0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660
-;   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
+;   core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
 ;   crt_memory.c___arrinit_FUN_005644a7
 ;
@@ -304,8 +304,8 @@ section .text
     PUSH EAX                            ; 00499407
     LEA EAX,[EBX + 0x150]               ; 00499408
     PUSH EAX                            ; 0049940e
-    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0 ; 0049940f
-        ;   XREF to: 0051d2a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0 ; 0049940f
+        ;   XREF to: 0051d2a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     ADD ESP,0xc                         ; 00499414
     FLD float ptr [ESP + 0xc4]          ; 00499417
     FSUB float ptr [EAX]                ; 0049941e

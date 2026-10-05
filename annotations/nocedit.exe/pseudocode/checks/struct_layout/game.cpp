@@ -9850,8 +9850,8 @@ static_assert(__builtin_offsetof(SPose, pose_data) == 0,
               "offsetof(SPose, pose_data) != 0");
 static_assert(__builtin_offsetof(SPose, bone_scales) == 1612,
               "offsetof(SPose, bone_scales) != 1612");
-static_assert(__builtin_offsetof(SPose, bone_world_matrices) == 2012,
-              "offsetof(SPose, bone_world_matrices) != 2012");
+static_assert(__builtin_offsetof(SPose, bone_model_matrices) == 2012,
+              "offsetof(SPose, bone_model_matrices) != 2012");
 
 // ---- SPoseData (1612 bytes) ----
 static_assert(sizeof(SPoseData) == 1612,

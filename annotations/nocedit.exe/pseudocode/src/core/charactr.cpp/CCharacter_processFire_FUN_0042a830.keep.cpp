@@ -139,7 +139,7 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042a830(CCharacter *t
         (this_ptr->base).is_transparent = 1;
         pCVar6 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                            (&local_5c,&pSVar10->offset,
-                            (this_ptr->model).bone_transform.bone_world_matrices +
+                            (this_ptr->model).bone_transform.bone_model_matrices +
                             pSVar10->bone_index);
         pCVar8 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                            (&this_ptr->base,&local_68,pCVar6);

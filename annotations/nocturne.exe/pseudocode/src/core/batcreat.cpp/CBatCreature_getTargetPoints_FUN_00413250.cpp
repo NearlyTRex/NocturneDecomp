@@ -12,7 +12,7 @@ int __cdecl core_batcreat_cpp_CBatCreature_getTargetPoints_FUN_00413250(CBatCrea
   CVector3f *pCVar1;
   CVector3f local_14;
   
-  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
+  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
                      (&(this_ptr->base).base.model,&local_14,DAT_0076459c);
   if (out_points_array == pCVar1) {
     return 1;

@@ -5,6 +5,8 @@
 #include "game/goggle_look.h"
 #include "nocturne.h"
 
+#include <cmath>
+
 namespace {
 
 // CStranger::autoAimAtThreat's aim_pitch limits.
@@ -64,4 +66,34 @@ extern "C" float nocturne_goggle_look_pitch(CHero *hero) {
 
 extern "C" void nocturne_goggle_look_reset(void) {
     s_pitch = 0.0f;
+}
+
+extern "C" void nocturne_goggles_camera_hold_tick(CDemonSet *set, float delta_time) {
+    if (set == nullptr || set->camera_switch_cooldown <= 0.0f) {
+        return;
+    }
+    set->camera_switch_cooldown = set->camera_switch_cooldown - delta_time;
+    if (set->camera_switch_cooldown <= 0.0f) {
+        set->camera_switch_cooldown = 0.0f;
+    }
+}
+
+extern "C" CMatrix3x4f *nocturne_goggle_head_matrix(CHero *hero, CMatrix3x4f *head,
+                                                    CMatrix3x4f *level) {
+    if (hero == nullptr || core_actor_cpp_castToClassHash_FUN_0040c790(
+                               &(hero->base).base, g_CStrangerClassInfo.name_hash) != nullptr) {
+        return head;
+    }
+    // Rotation in w, x, y of each row and position in z, as
+    // CDeformableModelInstance::computeBoneTransforms lays them out; the bone's
+    // scale multiplies the rotation, so it is each rotation column's length.
+    const float scale = std::sqrt(head->m[0].w * head->m[0].w + head->m[1].w * head->m[1].w +
+                                  head->m[2].w * head->m[2].w);
+    for (int row = 0; row < 3; row++) {
+        level->m[row].w = (row == 0) ? scale : 0.0f;
+        level->m[row].x = (row == 1) ? scale : 0.0f;
+        level->m[row].y = (row == 2) ? scale : 0.0f;
+        level->m[row].z = head->m[row].z;
+    }
+    return level;
 }

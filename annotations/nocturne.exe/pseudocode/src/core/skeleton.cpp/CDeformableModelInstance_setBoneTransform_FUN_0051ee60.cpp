@@ -57,8 +57,8 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_005
       (local_c->bone_transform).bone_scales[0] = bone_transform->bone_scales[0];
       bone_transform = (SPose *)&(bone_transform->pose_data).root_position.y;
       pCVar6 = (CDeformableModelInstance *)&(pCVar6->motion_controller).tween_speed;
-      pCVar9 = local_10->bone_world_matrices;
-      pCVar12 = (pCVar3->bone_transform).bone_world_matrices;
+      pCVar9 = local_10->bone_model_matrices;
+      pCVar12 = (pCVar3->bone_transform).bone_model_matrices;
       for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
         pCVar12->m[0].w = pCVar9->m[0].w;
         pCVar9 = (CMatrix3x4f *)((int)pCVar9 + (uint)bVar13 * -8 + 4);

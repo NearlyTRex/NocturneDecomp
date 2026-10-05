@@ -15,7 +15,14 @@
 //            without a light-capable weapon cleared the first one's light
 //            every frame.
 //   beam     CWeapon::process lights only the local hero's weapon, so nobody
-//            sees another player's flashlight.
+//            sees another player's flashlight. And the shotgun's and elephant
+//            gun's aim cone - renderAimBeam sets muzzle_flash_active every
+//            frame they are drawn, and process then lights it - is lit through
+//            g_CDemonLightInstance, so another player's drawn shotgun moved the
+//            local player's flashlight beam to its muzzle every frame. The
+//            light gun's beam did the same while in hand, and its fire tests
+//            what the beam covers through that light's camera, whose matrix
+//            CDemonLight::beginScene computes when the light is drawn.
 //   battery  CInventory::updateInventory drains every hero's battery off the
 //            two globals, i.e. off whatever the local player is doing.
 //

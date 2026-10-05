@@ -249,7 +249,7 @@ LAB_00557637:
     core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10((CDemonActor *)this_ptr);
     this_ptr_00 = (CCharacter *)(this_ptr->base).base.grabbed_by;
     pCVar5 = (this_ptr_00->base).vtable._uc;
-    pCVar8 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+    pCVar8 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0059fb00
                        (&(this_ptr->base).base.model,&local_34,0);
     iVar7 = (*(pCVar5->_uc).attractActorToward)(this_ptr_00,(CDemonActor *)this_ptr,pCVar8);
     if (iVar7 == 0) {

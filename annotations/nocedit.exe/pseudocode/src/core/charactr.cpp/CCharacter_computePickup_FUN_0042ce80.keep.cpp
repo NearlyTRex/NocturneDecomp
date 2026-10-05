@@ -30,7 +30,7 @@ void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_0042ce80(CCharacter 
             (&local_d0,&(this_ptr->base).location.position,&(this_ptr->base).orient.vec);
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_d0,&local_100,&local_130);
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
-            ((this_ptr->model).bone_transform.bone_world_matrices + pSVar2->bone_index,&local_130,
+            ((this_ptr->model).bone_transform.bone_model_matrices + pSVar2->bone_index,&local_130,
              &local_40);
   core_xform_cpp_inverse_FUN_005f6210(&local_40,&local_160);
   pSVar2->initial_carry_transform = local_160;

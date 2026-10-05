@@ -135,7 +135,7 @@ void __cdecl core_scat_cpp_CScat_updateAiming_FUN_00558720(CScat *this_ptr,float
                      (this_ptr->aim_target,&CStack_6c,&CStack_60);
   core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
             ((CDemonActor *)this_ptr,&CStack_9c,pCVar4);
-  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0059fa20
                      (&(this_ptr->base).base.model,&CStack_a8,g_ScatIndices[6]);
   CStack_84.x = CStack_9c.x - pCVar1->x;
   CStack_84.y = CStack_9c.y - pCVar1->y;

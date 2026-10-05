@@ -652,6 +652,38 @@ suppressed, and the six wrong explanations that fit the same evidence.
   snapshot to rebase from, which reconstructs something the pipeline already had, and layer
   separation, which would work but is not needed.
 
+---
+
+### [21-character_motions/](21-character_motions/)
+
+How characters animate: the motion-list half of a `.SKL` skeleton — states, motions,
+transitions, signals, markers — what each field does at runtime, and what each character has.
+Dump any skeleton with `scripts/Python/dump_skl_motions.py`.
+
+| File | Description |
+|------|-------------|
+| `README.md` | Index and key facts |
+| `format.md` | File layout, transition commands, desired state and keepState, signals, markers, root motion |
+| `heroes.md` | The nine playable classes: capability matrix, signal values, per-hero notes, every state with its motions and routes |
+
+**Key outcomes:**
+- **An unrouted desired state is silently never taken.** Transitions are looked up only in the
+  current motion's list; with no entry the request stays pending while the motion loops.
+  Gabriella's pickup, rummage, door, push and ladder route only from STAND, so the shipped
+  `use_item` pickup, which also fires while walking, snaps her onto the object and then does
+  nothing.
+- **Signals are where animation drives the game** — pickups, doors, levers, melee hits and
+  footsteps happen in each class's signal handler, not where the motion was chosen. Two signals
+  on one frame fire only the last listed; Svetlana's PushOff and IcePick's attack3 each lose one.
+- **Only the Stranger and Gabriella have interaction motions.** The other seven have none, and
+  Colonel's skeleton emits no signals at all, not even footsteps.
+- **Only the Stranger can jump or fall**, through a start/middle/land/end chain whose middle
+  signal sets the upward velocity; the fatal-landing state is an alias with no motion, landing
+  in DIE. Svetlana's two jumps are asked for by mission scripts only.
+- **Layered draw/shoot motions are never played by the controller**; the class poses them by
+  marker position. KICK_DOOR is authored for Gabriella and never asked for in the shipped
+  game.
+
 
 ---
 

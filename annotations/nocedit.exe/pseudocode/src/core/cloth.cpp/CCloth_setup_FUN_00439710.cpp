@@ -237,7 +237,7 @@ void __cdecl core_cloth_cpp_CCloth_setup_FUN_00439710(CCloth *this_ptr,CVector3f
                 ) {
               pCVar10 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                                   (&local_c0,pCVar8,
-                                   (model_ptr->bone_transform).bone_world_matrices + puVar24[1]);
+                                   (model_ptr->bone_transform).bone_model_matrices + puVar24[1]);
               puVar24 = puVar24 + 1;
               pCVar8 = pCVar8 + 1;
               local_cc = local_cc + pCVar10->x * *(float *)puVar21;
@@ -318,7 +318,7 @@ void __cdecl core_cloth_cpp_CCloth_setup_FUN_00439710(CCloth *this_ptr,CVector3f
                 iVar14 = iVar14 + 1) {
               pCVar7 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                                  (&local_d8,pCVar8,
-                                  (model_ptr->bone_transform).bone_world_matrices +
+                                  (model_ptr->bone_transform).bone_model_matrices +
                                   *(byte *)((int)pfVar17 + 1));
               pfVar17 = (float *)((int)pfVar17 + 1);
               pCVar8 = pCVar8 + 1;

@@ -76,7 +76,7 @@ void __cdecl core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_0042a520(CCharacte
       local_2c = local_18 + 1;
       iVar11 = 0;
       if (0 < local_2c) {
-        local_40 = (this_ptr->model).bone_transform.bone_world_matrices;
+        local_40 = (this_ptr->model).bone_transform.bone_model_matrices;
         local_3c = this_ptr->flames;
         local_38 = this_ptr->fires;
         local_30 = &this_ptr->model;

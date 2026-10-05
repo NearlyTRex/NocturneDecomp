@@ -120,7 +120,7 @@ void __cdecl core_cloth_cpp_CCloth_step_FUN_00436e80(CCloth *this_ptr,CVector3f 
   if (model_ptr != (CDeformableModelInstance *)0x0) {
     local_40 = 0;
     if (0 < this_ptr->locked_vertex_count) {
-      local_38 = (model_ptr->bone_transform).bone_world_matrices;
+      local_38 = (model_ptr->bone_transform).bone_model_matrices;
       local_1c = this_ptr->vertices;
       local_48 = this_ptr;
       do {

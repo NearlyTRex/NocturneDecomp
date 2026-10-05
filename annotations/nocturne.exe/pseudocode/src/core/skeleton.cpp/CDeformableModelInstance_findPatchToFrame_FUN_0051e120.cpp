@@ -44,7 +44,7 @@ int __cdecl core_skeleton_cpp_CDeformableModelInstance_findPatchToFrame_FUN_0051
   core_skeleton_cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_0051e350
             (this_ptr,source_motion_index,source_frame,&local_1afc);
   iVar7 = 0;
-  core_skeleton_cpp_computeBoneWorldMatrices_FUN_0051f1d0(&local_1afc,this_ptr);
+  core_skeleton_cpp_computeBoneModelMatrices_FUN_0051f1d0(&local_1afc,this_ptr);
   local_24 = -1;
   local_1c = 1e+30;
   if (0 < local_20) {
@@ -52,13 +52,13 @@ int __cdecl core_skeleton_cpp_CDeformableModelInstance_findPatchToFrame_FUN_0051
       local_14 = iVar7;
       core_skeleton_cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_0051e350
                 (this_ptr,target_motion_index,(float)iVar7,&local_3598);
-      core_skeleton_cpp_computeBoneWorldMatrices_FUN_0051f1d0(&local_3598,this_ptr);
+      core_skeleton_cpp_computeBoneModelMatrices_FUN_0051f1d0(&local_3598,this_ptr);
       iVar5 = 0;
       local_18 = 0.0;
       if (0 < iVar1) {
         local_18 = 0.0;
-        pCVar4 = local_3598.bone_world_matrices;
-        pCVar6 = local_1afc.bone_world_matrices;
+        pCVar4 = local_3598.bone_model_matrices;
+        pCVar6 = local_1afc.bone_model_matrices;
         do {
           local_54 = pCVar4->m[0].z;
           local_50 = pCVar4->m[1].z;

@@ -88,14 +88,14 @@ void __cdecl core_stranger_cpp_CStranger_setup_FUN_005bb4b0(CStranger *this_ptr)
   iVar6 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(pCVar3,pcVar5,iVar6);
   core_skeleton_cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0059e070
             (this_ptr_03,iVar6,22.0);
-  pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+  pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0059fa20
                      (this_ptr_03,&local_18,g_StrangerIndices[0xe]);
   if (&this_ptr->ref_r_hand_bone_pos != pCVar2) {
     (this_ptr->ref_r_hand_bone_pos).x = pCVar2->x;
     (this_ptr->ref_r_hand_bone_pos).y = pCVar2->y;
     (this_ptr->ref_r_hand_bone_pos).z = pCVar2->z;
   }
-  pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+  pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0059fa20
                      (&(this_ptr->base).base.model,&local_24,g_StrangerIndices[4]);
   if (&this_ptr->ref_r_upperarm_bone_pos != pCVar4) {
     (this_ptr->ref_r_upperarm_bone_pos).x = pCVar4->x;

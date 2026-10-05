@@ -173,7 +173,7 @@ void __cdecl core_stranger_cpp_CStranger_updateProceduralAnimation_FUN_005be520(
     fVar15 = pCVar2->x;
     fVar5 = *pfVar4;
     fVar6 = *pfVar3;
-    core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+    core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0059fa20
               (pCVar1,&local_184,g_StrangerIndices[4]);
     local_190.x = fVar15 - local_184.x;
     local_190.y = fVar5 - local_184.y;
@@ -209,7 +209,7 @@ LAB_0060cb6a:
     fVar15 = pCVar2->x;
     fVar5 = *pfVar4;
     fVar6 = *pfVar3;
-    core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+    core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0059fa20
               (pCVar1,&local_b8,g_StrangerIndices[4]);
     local_70.x = fVar15 - local_b8.x;
     local_70.y = fVar5 - local_b8.y;
@@ -263,7 +263,7 @@ LAB_0060cb6a:
         fVar15 = (this_ptr->carry_object_world_center).x;
         fVar5 = (this_ptr->carry_object_world_center).y;
         fVar6 = (this_ptr->carry_object_world_center).z;
-        core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+        core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0059fa20
                   (&(this_ptr->base).base.model,&local_94,g_StrangerIndices[4]);
         fVar15 = fVar15 - local_94.x;
         fVar5 = fVar5 - local_94.y;
@@ -370,7 +370,7 @@ LAB_0060cb6a:
               local_1ef0 = 0.0;
             }
             pCVar1 = &(this_ptr->base).base.model;
-            core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+            core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0059fa20
                       (pCVar1,&local_16c,g_StrangerIndices[4]);
             fVar14 = (float10)fpatan((float10)local_16c.y -
                                      (float10)(this_ptr->carry_object_world_center).y,
@@ -408,7 +408,7 @@ LAB_0060cb6a:
         if (local_1edc < 0.0) {
           local_1edc = 0.0;
         }
-        core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+        core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0059fa20
                   (&(this_ptr->base).base.model,&local_c4,g_StrangerIndices[4]);
         fVar15 = (this_ptr->carry_object_world_center).y;
         fVar5 = (this_ptr->carry_object_bbox).max.y;
@@ -465,7 +465,7 @@ LAB_0060cb6a:
     CStack_13c.z = (this_ptr->base).target_position.z + pCVar7->z;
     core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
               ((CDemonActor *)this_ptr,&CStack_124,&CStack_13c);
-    core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+    core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0059fa20
               (&(this_ptr->base).base.model,&CStack_dc,g_StrangerIndices[4]);
     CStack_f4.x = CStack_124.x - CStack_dc.x;
     CStack_f4.y = CStack_124.y - CStack_dc.y;

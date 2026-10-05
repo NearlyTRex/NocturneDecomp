@@ -1,5 +1,6 @@
 // Name: core_gore.cpp_CBloodPool_save_FUN_004ed1c0
 // Address: 004ed1c0
+// MANUAL RECONSTRUCTION
 // Address Range: [[004ed1c0, 004ed235]]
 // Convention: __cdecl
 // Signature: int __cdecl core_gore_cpp_CBloodPool_save_FUN_004ed1c0(CBloodPool *this_ptr,_FILE *file_handle)

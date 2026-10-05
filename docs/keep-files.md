@@ -220,6 +220,13 @@ before touching it. Three things it may be:
 fixed bug. If the current raw output compiles and is correct, the `.keep` is obsolete and should be
 deleted — that is a good outcome, not a lost edit.
 
+Every export writes `reports/keep_sync.txt`, listing each `.keep` the export has left out of step:
+orphaned by a rename (no `.cpp`/`.c` beside it, so the raw export is compiled instead), a
+definition that no longer matches the export's `// Signature:`, or a header line the export has
+changed. A changed `// Address Range:` is the one to read closely: the function now covers bytes
+the `.keep` was written without, so check the new addresses in the `.asm` before updating the
+line. `scripts/Python/check_keep_signatures.py` runs the same check by hand.
+
 **Compiling but harbouring a runtime trap.** It was written to make the function build, and the
 logic it carried over is itself an artifact that compiles cleanly and misbehaves. Specifically
 check for adjacency-sentinel loops ([§16](decompiler-artifacts.md#16--adjacency-sentinel-init-loops)),

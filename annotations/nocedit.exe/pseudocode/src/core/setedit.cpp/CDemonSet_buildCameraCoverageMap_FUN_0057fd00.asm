@@ -36,7 +36,7 @@
 ;   int g_CurrentLineNumber
 ;   int g_CurrentDebugLine
 ;   CDemonCamera g_CDemonCameraInstance
-;   undefined4 g_ScreenHeightForFonts
+;   undefined4 g_CDemonCameraInstance.framebuffer_width
 ;   undefined4 g_CDemonCameraInstance.framebuffer_height
 ;
 ; Called Functions:
@@ -80,7 +80,7 @@ section .text
     CALL crt_memory.c_memset_FUN_005fde40 ; 0057fd28
         ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
     MOV EBX,dword ptr [0x03275a2c]      ; 0057fd2d | g_CDemonCameraInstance.framebuffer_height
-    MOV EAX,[0x03275a28]                ; 0057fd33 | g_ScreenHeightForFonts
+    MOV EAX,[0x03275a28]                ; 0057fd33 | g_CDemonCameraInstance.framebuffer_width
     IMUL EBX,EAX                        ; 0057fd38
     ADD ESP,0xc                         ; 0057fd3b
     LEA EAX,[EBX*0x4 + 0x0]             ; 0057fd3e
@@ -109,7 +109,7 @@ section .text
     MOV dword ptr [EBP + -0x8],ESI      ; 0057fd7d
     MOV EDI,dword ptr [EBP + -0x8]      ; 0057fd80
         ;   Label: LAB_0057fd80
-    CMP EDI,dword ptr [0x03275a28]      ; 0057fd83 | g_ScreenHeightForFonts
+    CMP EDI,dword ptr [0x03275a28]      ; 0057fd83 | g_CDemonCameraInstance.framebuffer_width
     JL 0x0057fdb5                       ; 0057fd89
         ;   XREF to: 0057fdb5 (CONDITIONAL_JUMP)  ; LAB_0057fdb5
     INC dword ptr [EBP + -0xc]          ; 0057fd8b
@@ -268,7 +268,7 @@ section .text
     JGE 0x0057fe54                      ; 0057ff1a
         ;   XREF to: 0057fe54 (CONDITIONAL_JUMP)  ; LAB_0057fe54
     XOR EBX,EBX                         ; 0057ff20
-    MOV EAX,[0x03275a28]                ; 0057ff22 | g_ScreenHeightForFonts
+    MOV EAX,[0x03275a28]                ; 0057ff22 | g_CDemonCameraInstance.framebuffer_width
     CMP EBX,EAX                         ; 0057ff27
     JL 0x0057ff2e                       ; 0057ff29
         ;   XREF to: 0057ff2e (CONDITIONAL_JUMP)  ; LAB_0057ff2e
@@ -299,7 +299,7 @@ section .text
     INC EBX                             ; 0057ff5c
         ;   Label: LAB_0057ff5c
     ADD ESI,0xc                         ; 0057ff5d
-    MOV EAX,[0x03275a28]                ; 0057ff60 | g_ScreenHeightForFonts
+    MOV EAX,[0x03275a28]                ; 0057ff60 | g_CDemonCameraInstance.framebuffer_width
     CMP EBX,EAX                         ; 0057ff65
     JL 0x0057ff2e                       ; 0057ff67
         ;   XREF to: 0057ff2e (CONDITIONAL_JUMP)  ; LAB_0057ff2e

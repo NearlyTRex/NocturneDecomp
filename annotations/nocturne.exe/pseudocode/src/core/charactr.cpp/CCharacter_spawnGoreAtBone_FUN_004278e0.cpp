@@ -20,7 +20,7 @@ void __cdecl core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_004278e0(CCharacte
     iVar1 = core_actor_cpp_randomChance_FUN_0040dea0(chance);
     if (iVar1 != 0) {
       input_local_point =
-           core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
+           core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
                      (&this_ptr->model,&local_28,bone_index);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                 (&this_ptr->base,&local_10,input_local_point);

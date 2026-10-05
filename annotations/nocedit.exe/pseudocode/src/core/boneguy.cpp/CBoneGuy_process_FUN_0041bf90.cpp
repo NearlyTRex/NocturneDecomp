@@ -298,7 +298,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
       local_14 = local_180.damage_amount;
       pCVar12 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                           (&local_94,&g_ZeroVector.f,
-                           (this_ptr->base).base.model.bone_transform.bone_world_matrices +
+                           (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                            g_BoneGuyIndices[0]);
       pCVar12 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                           ((CDemonActor *)this_ptr,&local_e8,pCVar12);

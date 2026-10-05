@@ -40,10 +40,6 @@
 
 // BYTE
 extern BYTE g_WindowsMinorVersion;
-extern BYTE g_InitHandlerStatusStart;
-extern BYTE g_InitHandlerPriorityStart;
-extern BYTE g_ExitHandlerTableStart;
-extern BYTE g_ExitHandlerPriorityEnd;
 
 // CDemonPod*
 extern CDemonPod* g_CDemonPodPtr;
@@ -115,18 +111,14 @@ extern Heap* g_SecondaryHeap;
 // IS_SPECIAL_DEVICE_FUNC*
 extern IS_SPECIAL_DEVICE_FUNC* g_IsSpecialDeviceFuncPtr;
 
-// RUNTIME_HANDLER_FUNC*
-extern RUNTIME_HANDLER_FUNC* g_FirstInitHandler;
-extern RUNTIME_HANDLER_FUNC* g_FirstExitHandler;
-
 // RuntimeHandlerEntry
 extern RuntimeHandlerEntry g_ExitHandlerTableEnd;
 
-// RuntimeHandlerEntry[166]
-extern RuntimeHandlerEntry g_InitHandlers[166];
+// RuntimeHandlerEntry[167]
+extern RuntimeHandlerEntry g_InitHandlers[167];
 
-// RuntimeHandlerEntry[6]
-extern RuntimeHandlerEntry g_ExitHandlers[6];
+// RuntimeHandlerEntry[7]
+extern RuntimeHandlerEntry g_ExitHandlers[7];
 
 // SAlphaEntry[256]
 extern SAlphaEntry g_AlphaTable[256];

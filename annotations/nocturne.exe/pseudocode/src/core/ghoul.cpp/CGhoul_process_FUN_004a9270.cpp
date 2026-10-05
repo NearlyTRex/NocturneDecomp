@@ -274,7 +274,7 @@ LAB_004a96cf:
       if (iVar7 == 0xc) {
         iVar9 = _DAT_01c78c1c;
       }
-      pCVar12 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
+      pCVar12 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
                           ((CDeformableModelInstance *)local_18,&local_1e0,iVar9);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                 ((CDemonActor *)this_ptr,&local_1d4,pCVar12);
@@ -290,7 +290,7 @@ LAB_004a96cf:
     case 0xd:
       core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0
                 ((CDeformableModelInstance *)pCVar11);
-      pCVar12 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
+      pCVar12 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
                           ((CDeformableModelInstance *)pCVar11,&local_1b0,_DAT_01c78c14);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                 ((CDemonActor *)this_ptr,&local_228,pCVar12);
@@ -310,7 +310,7 @@ LAB_004a96cf:
     case 0x10:
       core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0
                 ((CDeformableModelInstance *)pCVar11);
-      pCVar12 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
+      pCVar12 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
                           ((CDeformableModelInstance *)pCVar11,&local_1ec,_DAT_01c78c14);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                 ((CDemonActor *)this_ptr,&local_15c,pCVar12);
@@ -600,7 +600,7 @@ LAB_004aa6a3:
               local_e0 = 0.0;
               pCVar11 = (*((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._ub)->getPathMap)
                                   ((CDemonActor *)g_HeroActors[g_LocalHeroIndex]);
-              pCVar12 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
+              pCVar12 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
                                   (&(g_HeroActors[g_LocalHeroIndex]->base).model,&local_198,0);
               pCVar12 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                                   ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],&local_150,pCVar12)
@@ -673,7 +673,7 @@ LAB_004aa1e6:
               pCVar12 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                                   (&local_114,&CVector3f_01c78bcc,
                                    (CMatrix3x4f *)
-                                   (this_ptr->base).base.model.bone_transform.bone_world_matrices
+                                   (this_ptr->base).base.model.bone_transform.bone_model_matrices
                                    [_DAT_01c78c1c].m);
               pCVar12 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                                   ((CDemonActor *)this_ptr,&local_1bc,pCVar12);
@@ -697,7 +697,7 @@ LAB_004aa1e6:
     case 10:
       if ((((this_ptr->base).pool_me == 0) && (this_ptr->lives_left < 1)) &&
          ((this_ptr->base).base.base.standing_platform == (CPlatform *)0x0)) {
-        pCVar12 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
+        pCVar12 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
                             ((CDeformableModelInstance *)pCVar11,&local_12c,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                   ((CDemonActor *)this_ptr,&local_108,pCVar12);
@@ -871,7 +871,7 @@ LAB_004aaa0a:
             pCVar12 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                                 (local_210,&CVector3f_01c78bc0,
                                  (CMatrix3x4f *)
-                                 (this_ptr->base).base.model.bone_transform.bone_world_matrices
+                                 (this_ptr->base).base.model.bone_transform.bone_model_matrices
                                  [_DAT_01c78c18].m);
             pCVar12 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                                 ((CDemonActor *)this_ptr,&local_21c,pCVar12);
@@ -915,7 +915,7 @@ LAB_004aaa0a:
       pCVar24 = (CVector3f *)0x40400000;
       pCVar3 = (this_ptr->base).victim;
       pCVar11 = (*((pCVar3->base).vtable._ub)->getPathMap)(&pCVar3->base);
-      pCVar12 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
+      pCVar12 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
                           (&((this_ptr->base).victim)->model,&local_1a4,0);
       pCVar12 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                           (&((this_ptr->base).victim)->base,&local_144,pCVar12);

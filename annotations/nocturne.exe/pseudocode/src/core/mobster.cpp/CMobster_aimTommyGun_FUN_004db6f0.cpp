@@ -61,7 +61,7 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_004db6f0(CMobster *this_p
       }
       pCVar4 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                          (&local_50,(CVector3f *)&DAT_02dd1184,
-                          (this_ptr->base).base.model.bone_transform.bone_world_matrices +
+                          (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                           _DAT_01ccdbb0);
       pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                          ((CDemonActor *)this_ptr,&local_44,pCVar4);

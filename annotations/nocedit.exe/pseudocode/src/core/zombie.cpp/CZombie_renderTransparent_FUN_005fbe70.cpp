@@ -30,7 +30,7 @@ int __cdecl core_zombie_cpp_CZombie_renderTransparent_FUN_005fbe70(CZombie *this
   CVector3f local_1c;
   
   if (((this_ptr->base).base.was_rendered_opaque != 0) && (this_ptr->is_miner_zombie != 0)) {
-    core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820
+    core_skeleton_cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_0059f820
               (&(this_ptr->base).base.model,this_ptr->bone_indices[0],&local_c4);
     local_70.y = 0.5;
     local_70.z = 0.5;

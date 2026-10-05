@@ -146,7 +146,7 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0053d910(CStranger 
     }
     this_ptr_01 = &(this_ptr->base).base.model;
     if (local_48 == WEAPON_TYPE_GUN) {
-      pCVar6 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
+      pCVar6 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
                          (this_ptr_01,&CStack_a0,iVar10);
       if (&CStack_100 != pCVar6) {
         CStack_100.x = pCVar6->x;
@@ -155,7 +155,7 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0053d910(CStranger 
       }
     }
     else {
-      pCVar6 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
+      pCVar6 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
                          (this_ptr_01,&CStack_c4,iVar9);
       if (&CStack_100 != pCVar6) {
         CStack_100.x = pCVar6->x;

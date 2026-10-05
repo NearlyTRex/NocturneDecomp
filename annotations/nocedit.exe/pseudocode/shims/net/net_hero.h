@@ -46,6 +46,12 @@ const char *nocturne_net_hero_name(int hero_type);
 // refuses to land on it.
 int nocturne_net_hero_cycle(int hero_type, int direction);
 
+// The hero a guest enters the lobby as: `hero_type` (the ini's heroNumber) when
+// the selector offers it, otherwise the first hero it does. showOptionsScreen
+// sets hero_number to the Stranger and the ini saves it, so an ordinary ini
+// would otherwise bring every guest in as a hero the selector cannot reach.
+int nocturne_net_hero_guest_default(int hero_type);
+
 // The host's view of the local player's hero.
 //
 // A guest keeps its own hero_number across an incoming game-settings packet —

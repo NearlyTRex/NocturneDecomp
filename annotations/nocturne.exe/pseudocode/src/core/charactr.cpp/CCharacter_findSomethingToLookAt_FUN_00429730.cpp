@@ -72,7 +72,7 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00429730(CCh
             CStack_ec.y = CStack_ec.y + 5.3619766690650802e-315._0_4_;
           }
           else {
-            pCVar5 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
+            pCVar5 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
                                (&pCVar4->model,&CStack_80,0);
             pCVar5 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                                (&pCVar4->base,&CStack_68,pCVar5);
@@ -174,7 +174,7 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00429730(CCh
       CStack_74.y = CStack_74.y + 5.3619766690650802e-315._0_4_;
     }
     else {
-      pCVar5 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
+      pCVar5 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
                          (&pCVar4->model,&CStack_38,0);
       pCVar5 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                          ((CDemonActor *)pCVar4,&CStack_98,pCVar5);

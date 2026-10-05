@@ -1,7 +1,7 @@
 // Name: core_mimic.cpp_CMimic_renderMirrored_FUN_005205f0
 // Address: 005205f0
 // MANUAL RECONSTRUCTION
-// Address Range: [[005205f0, 005207fe] [00520802, 0052084b] [03fc4298, 03fc42f7]]
+// Address Range: [[005205f0, 00520863] [03fc4298, 03fc42f7]]
 // Convention: __cdecl
 // Signature: int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_005205f0(CMimic *this_ptr)
 
@@ -58,7 +58,7 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_005205f0(CMimic *this_ptr)
                     (&local_c4,&local_40,&local_28);
           core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
                     (&local_c4,
-                     (this_ptr->base).base.model.bone_transform.bone_world_matrices +
+                     (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                      g_MimicIndices[0],&local_94);
           core_xform_cpp_getTranslation_FUN_005f6110(&local_94,&local_4c);
           core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_94,&local_34);

@@ -18,27 +18,27 @@ int __cdecl core_sentinel_cpp_CSentinel_getTargetPoints_FUN_00568dd0(CSentinel *
   CVector3f local_28;
   CVector3f local_1c;
   
-  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0059fb00
                      (&(this_ptr->base).base.model,&local_34,g_SentinelIndices[0]);
   if (out_points_array != pCVar1) {
     *out_points_array = *pCVar1;
   }
-  pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+  pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0059fb00
                      (&(this_ptr->base).base.model,&local_28,g_SentinelIndices[5]);
   if (out_points_array + 1 != pCVar2) {
     out_points_array[1] = *pCVar2;
   }
-  pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+  pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0059fb00
                      (&(this_ptr->base).base.model,&local_1c,g_SentinelIndices[6]);
   if (out_points_array + 2 != pCVar2) {
     out_points_array[2] = *pCVar2;
   }
-  pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+  pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0059fb00
                      (&(this_ptr->base).base.model,&local_40,g_SentinelIndices[9]);
   if (out_points_array + 3 != pCVar2) {
     out_points_array[3] = *pCVar2;
   }
-  pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+  pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0059fb00
                      (&(this_ptr->base).base.model,&local_4c,g_SentinelIndices[0xb]);
   if (out_points_array + 4 != pCVar2) {
     out_points_array[4] = *pCVar2;

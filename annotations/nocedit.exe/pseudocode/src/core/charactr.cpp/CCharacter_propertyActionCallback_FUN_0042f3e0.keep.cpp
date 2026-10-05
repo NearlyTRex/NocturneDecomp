@@ -101,7 +101,7 @@ LAB_0042f571:
         name = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_930.base,iVar9);
         pCVar4 = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030
                            (g_CDemonMissionPtr,name);
-        pCVar5 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+        pCVar5 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0059fa20
                            (&this_ptr_00->model,&CStack_44,
                             this_ptr_00->carry_hands[iVar4].bone_index);
         pCVar7 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0

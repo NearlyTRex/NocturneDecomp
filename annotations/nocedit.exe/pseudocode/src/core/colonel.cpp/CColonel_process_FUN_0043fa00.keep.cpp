@@ -85,8 +85,15 @@ void __cdecl core_colonel_cpp_CColonel_process_FUN_0043fa00(CColonel *this_ptr,f
         if ((this_ptr->base).player_input.action_state.draw != 0) {
           iVar9 = this_ptr->guns_drawn;
           (this_ptr->base).player_input.action_state.draw = 0;
+#if NOCTURNE_AUTHENTIC_HERO_ACTIONS
           iVar6 = 0;
+#endif
           this_ptr->guns_drawn = (uint)(iVar9 == 0);
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+          if (nocturne_colonel_draw(this_ptr) == 0) {
+            iVar6 = 0;
+          }
+#endif
         }
         if ((this_ptr->base).player_input.action_state.fire != 0) {
           bVar4 = true;
@@ -111,6 +118,9 @@ void __cdecl core_colonel_cpp_CColonel_process_FUN_0043fa00(CColonel *this_ptr,f
 LAB_0043fd60:
             if (!bVar4) goto LAB_0043fd6e;
           }
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+          nocturne_colonel_fire(this_ptr);
+#endif
           (this_ptr->base).player_input.action_state.fire = 0;
         }
 LAB_0043fd6e:
@@ -202,7 +212,7 @@ switchD_0043fe37_caseD_5:
     }
     this_ptr_00 = (CCharacter *)(this_ptr->base).base.grabbed_by;
     pCVar4 = (this_ptr_00->base).vtable._uc;
-    pCVar7 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+    pCVar7 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0059fb00
                        (&(this_ptr->base).base.model,&local_74,0);
     iVar6 = (*(pCVar4->_uc).attractActorToward)(this_ptr_00,(CDemonActor *)this_ptr,pCVar7);
     if (iVar6 == 0) {
@@ -213,7 +223,11 @@ LAB_0043fc01:
     else {
       if ((this_ptr->base).base.grabbed_by == (CDemonActor *)0x0) goto LAB_0043fc01;
       if ((this_ptr->base).player_input.action_state.fire == 0) goto LAB_0043fc14;
+#if NOCTURNE_AUTHENTIC_HERO_ACTIONS
       iVar6 = 9;
+#else
+      iVar6 = 0xb;
+#endif
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
               (&(this_ptr->base).base.model.motion_controller,iVar6,1);
@@ -222,6 +236,9 @@ LAB_0043fc14:
   core_charactr_cpp_CCharacter_preProcess_FUN_00429820((CCharacter *)this_ptr);
   pCVar2 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(pCVar2);
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+  nocturne_colonel_update_gun(this_ptr,delta_time);
+#endif
   EVar7 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr);
   if (EVar7 == DEATH_STATE_ALIVE) {
     blend_callback = core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0;

@@ -27,7 +27,7 @@
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0
-;   core_skeleton.cpp_computeBoneWorldMatrices_FUN_0051f1d0
+;   core_skeleton.cpp_computeBoneModelMatrices_FUN_0051f1d0
 ;   core_xform.cpp_slerpQuaternion_FUN_0055d2d0
 ;
 ; *****************************************************************************
@@ -159,8 +159,8 @@ section .text
     PUSH ECX                            ; 0051f544
     MOV EBX,dword ptr [ESP + 0x5c]      ; 0051f545
     PUSH EBX                            ; 0051f549
-    CALL core_skeleton.cpp_computeBoneWorldMatrices_FUN_0051f1d0 ; 0051f54a
-        ;   XREF to: 0051f1d0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_computeBoneWorldMatrices_FUN_0051f1d0(SPose * bone_data, CDeformableModelInstance * instance_ptr)
+    CALL core_skeleton.cpp_computeBoneModelMatrices_FUN_0051f1d0 ; 0051f54a
+        ;   XREF to: 0051f1d0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_computeBoneModelMatrices_FUN_0051f1d0(SPose * bone_data, CDeformableModelInstance * instance_ptr)
     ADD ESP,0x8                         ; 0051f54f
     ADD ESP,0x44                        ; 0051f552
     POP EBP                             ; 0051f555

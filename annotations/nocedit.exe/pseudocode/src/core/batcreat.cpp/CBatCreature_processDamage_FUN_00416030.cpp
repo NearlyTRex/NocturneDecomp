@@ -37,7 +37,7 @@ void __cdecl core_batcreat_cpp_CBatCreature_processDamage_FUN_00416030(CBatCreat
   }
   if (damage_info->damage_type == DAMAGE_TYPE_BURN) {
     input_local_point =
-         core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+         core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0059fb00
                    (&(this_ptr->base).base.model,&local_3c,0);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
               ((CDemonActor *)this_ptr,&local_24,input_local_point);

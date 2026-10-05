@@ -1,7 +1,7 @@
 // Name: core_fire.cpp_CMuzzleFlash_render_FUN_004c1a30
 // Address: 004c1a30
 // MANUAL RECONSTRUCTION
-// Address Range: [[004c1a30, 004c1a79]]
+// Address Range: [[004c1a30, 004c1bd1]]
 // Convention: __cdecl
 // Signature: void __cdecl core_fire_cpp_CMuzzleFlash_render_FUN_004c1a30(CMuzzleFlash *this_ptr)
 
@@ -41,13 +41,15 @@ void __cdecl core_fire_cpp_CMuzzleFlash_render_FUN_004c1a30(CMuzzleFlash *this_p
             (&g_FireEffectGunFlashModel,0.0,99);
   local_1c.x = 0.0;
   local_1c.y = 0.0;
-  local_1c.z = 1.5707963;
+  local_1c.z = 1.5707964;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
             (g_CDemonRendererPtr2,&local_1c,(CVector3f *)0x0);
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
             (&g_FireEffectGunFlashModel,0.0,99);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
-  local_30.z = 0.7853981;
+  local_30.x = 0.0;
+  local_30.y = 0.0;
+  local_30.z = 0.7853982;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
             (g_CDemonRendererPtr2,&local_30,(CVector3f *)0x0);
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20

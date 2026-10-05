@@ -251,7 +251,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00413800(CBatman *this_ptr,floa
       local_14 = local_188.damage_amount;
       pCVar10 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                           (&local_104,(CVector3f *)&DAT_02dd1184,
-                           (this_ptr->base).base.model.bone_transform.bone_world_matrices +
+                           (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                            DAT_00764610);
       pCVar10 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                           ((CDemonActor *)this_ptr,&local_f8,pCVar10);
@@ -261,7 +261,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00413800(CBatman *this_ptr,floa
     case 8:
       if (((this_ptr->base).pool_me == 0) &&
          ((this_ptr->base).base.base.standing_platform == (CPlatform *)0x0)) {
-        pCVar10 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
+        pCVar10 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
                             (pCVar2,&local_ec,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                   ((CDemonActor *)this_ptr,&local_74,pCVar10);
@@ -316,7 +316,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00413800(CBatman *this_ptr,floa
         local_20 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(pCVar2);
         if (0 < local_20->bone_count) {
           do {
-            pCVar10 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
+            pCVar10 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
                                 (pCVar2,&local_11c,iVar6);
             core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                       ((CDemonActor *)this_ptr,&local_14c,pCVar10);
@@ -380,7 +380,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00413800(CBatman *this_ptr,floa
         local_24 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(pCVar2);
         if (0 < local_24->bone_count) {
           do {
-            pCVar10 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
+            pCVar10 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
                                 (pCVar2,&local_128,iVar6);
             core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                       ((CDemonActor *)this_ptr,&local_134,pCVar10);

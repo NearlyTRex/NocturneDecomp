@@ -196,7 +196,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_0041fe40(CBride *this_ptr,float d
                 local_14 = local_140.damage_amount;
                 pCVar6 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                                    (&local_a4,&CVector3f_00764ae4,
-                                    (this_ptr->base).base.model.bone_transform.bone_world_matrices +
+                                    (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                                     DAT_00764b30);
                 pCVar6 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                                    ((CDemonActor *)this_ptr,&local_68,pCVar6);
@@ -216,7 +216,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_0041fe40(CBride *this_ptr,float d
               local_14 = local_1f4.damage_amount;
               pCVar6 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                                  (&local_e0,&CVector3f_00764ae4,
-                                  (this_ptr->base).base.model.bone_transform.bone_world_matrices +
+                                  (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                                   DAT_00764b34);
               pCVar6 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                                  ((CDemonActor *)this_ptr,&local_f8,pCVar6);
@@ -263,7 +263,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_0041fe40(CBride *this_ptr,float d
                 local_14 = local_17c.damage_amount;
                 pCVar6 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                                    (&local_80,&CVector3f_00764ae4,
-                                    (this_ptr->base).base.model.bone_transform.bone_world_matrices +
+                                    (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                                     DAT_00764b34);
                 pCVar6 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                                    ((CDemonActor *)this_ptr,&local_b0,pCVar6);
@@ -288,7 +288,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_0041fe40(CBride *this_ptr,float d
                 local_14 = local_1b8.damage_amount;
                 pCVar6 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                                    (&local_98,&CVector3f_00764ae4,
-                                    (this_ptr->base).base.model.bone_transform.bone_world_matrices +
+                                    (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                                     DAT_00764b30);
                 pCVar6 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                                    ((CDemonActor *)this_ptr,&local_74,pCVar6);
@@ -305,7 +305,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_0041fe40(CBride *this_ptr,float d
       }
     }
     else if ((uVar8 == 0xe) && ((this_ptr->base).pool_me == 0)) {
-      pCVar6 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
+      pCVar6 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
                          (pCVar1,&local_c8,0);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                 ((CDemonActor *)this_ptr,&local_d4,pCVar6);

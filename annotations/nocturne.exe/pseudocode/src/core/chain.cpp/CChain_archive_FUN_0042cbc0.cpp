@@ -12,7 +12,7 @@ void __cdecl core_chain_cpp_CChain_archive_FUN_0042cbc0(CChain *this_ptr)
   core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(&this_ptr->base);
   core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->vertex_count,"vertexCount");
   core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->chain_length,"chainLength");
-  core_actor_cpp_archiveActor_FUN_0040c980(&this_ptr->target,"target");
+  core_actor_cpp_archiveActor_FUN_0040c980((CDemonActor **)&this_ptr->target,"target");
   core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->target_bone,"targetBone");
   core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->weight,"weight");
   core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->dampen,"dampen");

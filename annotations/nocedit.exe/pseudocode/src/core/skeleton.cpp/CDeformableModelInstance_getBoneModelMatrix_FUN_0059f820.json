@@ -1,0 +1,306 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "compile_source": "keep.cpp",
+  "complexity": {
+    "assembly_lines": 209,
+    "complexity_score": 71,
+    "cross_reference_count": 6,
+    "function_call_count": 4,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 71,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 280
+  },
+  "cross_references": [
+    {
+      "addr": "00424aa0",
+      "from_addr": "00424ac3",
+      "name": "core_bride.cpp_CBride_getTargetPoint_FUN_00424aa0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d6f80",
+      "from_addr": "004d706b",
+      "name": "core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004d6f80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e84a0",
+      "from_addr": "004e84c3",
+      "name": "core_ghoul.cpp_CGhoul_getTargetPoint_FUN_004e84a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0051fcc0",
+      "from_addr": "0051ff64",
+      "name": "core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059fa20",
+      "from_addr": "0059fac6",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0059fa20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005fbe70",
+      "from_addr": "005fbeb3",
+      "name": "core_zombie.cpp_CZombie_renderTransparent_FUN_005fbe70",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0059f820",
+    "address_range": [
+      [
+        "0059f820",
+        "0059fa1c"
+      ],
+      [
+        "03fc4d24",
+        "03fc4de4"
+      ]
+    ],
+    "convention": "__stack2_esi",
+    "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_0059f820",
+    "signature": "CMatrix3x4f * __stack2_esi core_skeleton_cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_0059f820(CDeformableModelInstance *this_ptr,int bone_index,CMatrix3x4f *out_matrix)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a0820",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820"
+    },
+    {
+      "addr": "005f7280",
+      "is_variadic": false,
+      "name": "core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280"
+    },
+    {
+      "addr": "005f5190",
+      "is_variadic": false,
+      "name": "core_xform.cpp_setRotationScaleIdentity_FUN_005f5190"
+    },
+    {
+      "addr": "005f4dc0",
+      "is_variadic": false,
+      "name": "core_xform.cpp_transformVector3x4_FUN_005f4dc0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 6,
+    "call_sites": [
+      {
+        "call_addr": "00424ac3",
+        "call_type": "direct",
+        "caller": "core_bride.cpp_CBride_getTargetPoint_FUN_00424aa0",
+        "estimated_params": 3,
+        "instructions_analyzed": 9,
+        "method": "push_count",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004e84c3",
+        "call_type": "direct",
+        "caller": "core_ghoul.cpp_CGhoul_getTargetPoint_FUN_004e84a0",
+        "estimated_params": 3,
+        "instructions_analyzed": 9,
+        "method": "push_count",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0059fac6",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0059fa20",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004d706b",
+        "call_type": "direct",
+        "caller": "core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004d6f80",
+        "estimated_params": 3,
+        "instructions_analyzed": 7,
+        "method": "push_count",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005fbeb3",
+        "call_type": "direct",
+        "caller": "core_zombie.cpp_CZombie_renderTransparent_FUN_005fbe70",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0051ff64",
+        "call_type": "direct",
+        "caller": "core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 8,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.445652173913044,
+    "instruction_count": 184,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 16,
+      "BRANCH": 7,
+      "CALL": 5,
+      "CBRANCH": 3,
+      "COPY": 374,
+      "FLOAT2FLOAT": 36,
+      "FLOAT_ADD": 3,
+      "FLOAT_MULT": 9,
+      "INT_ADD": 135,
+      "INT_AND": 82,
+      "INT_CARRY": 14,
+      "INT_EQUAL": 51,
+      "INT_LEFT": 6,
+      "INT_LESS": 4,
+      "INT_MULT": 6,
+      "INT_NOTEQUAL": 8,
+      "INT_OR": 15,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 14,
+      "INT_SLESS": 30,
+      "INT_SUB": 24,
+      "INT_XOR": 5,
+      "LOAD": 66,
+      "POPCOUNT": 24,
+      "RETURN": 1,
+      "STORE": 60
+    },
+    "pcode_op_count": 1002
+  },
+  "resolved_suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (12 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 61,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "out_matrix->m[0].w = local_7c.m[0].w;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Struct-type local `local_ac` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 2 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 12,
+      "match": "CMatrix3x4f local_ac; ... f(&local_ac, ...);",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CMatrix3x4f local_ac;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `local_4c` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 2 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 14,
+      "match": "CMatrix3x4f local_4c; ... f(&local_4c, ...);",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CMatrix3x4f local_4c;",
+      "type": "missing_cave_copy"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 184,
+    "local_size": 176,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_ac",
+        "offset": -172,
+        "size": 48,
+        "type": "CMatrix3x4f"
+      },
+      {
+        "is_param": false,
+        "name": "local_7c",
+        "offset": -124,
+        "size": 48,
+        "type": "CMatrix3x4f"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 48,
+        "type": "CMatrix3x4f"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModelInstance *"
+      },
+      {
+        "is_param": true,
+        "name": "bone_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

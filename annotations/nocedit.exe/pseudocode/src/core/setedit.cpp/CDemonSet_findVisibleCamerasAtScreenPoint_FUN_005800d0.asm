@@ -22,7 +22,7 @@
 ;
 ; Referenced Globals:
 ;   CDemonCamera g_CDemonCameraInstance
-;   undefined4 g_ScreenHeightForFonts
+;   undefined4 g_CDemonCameraInstance.framebuffer_width
 ;   undefined4 g_CDemonCameraInstance.framebuffer_height
 ;
 ; Called Functions:
@@ -49,7 +49,7 @@ section .text
     CMP ESI,0x1                         ; 005800e8
     JL 0x00580101                       ; 005800eb
         ;   XREF to: 00580101 (CONDITIONAL_JUMP)  ; LAB_00580101
-    MOV EAX,[0x03275a28]                ; 005800ed | g_ScreenHeightForFonts
+    MOV EAX,[0x03275a28]                ; 005800ed | g_CDemonCameraInstance.framebuffer_width
     DEC EAX                             ; 005800f2
     CMP EBX,EAX                         ; 005800f3
     JG 0x00580101                       ; 005800f5

@@ -51,14 +51,23 @@
 // hold of gets out too, which is the right answer for the same reason it is
 // for the player: nothing in the world should be held forever.
 //
-// NOT reproduced from CStranger: the blend-weight test on motion states 0x22
-// and 0x23. Those are raw indices into the Stranger's own motion list and mean
-// nothing in another skeleton; the observable behaviour they produce - out
-// after 1.5 seconds - is what is kept. CHero::releaseFromGrab already does the
-// motion-side cleanup by name, forcing STAND when a GETGRABBED state is still
-// blended in, so the release is as clean here as it is for him.
+// THE MOTIONS. CStranger, at 1.5 seconds, asks for ESCAPEGRAB (his 0x23) and
+// lets go only once neither it nor GETGRABBED (0x22) is blended in, so the
+// kick in "hugFrontEnd" lands on a grabber that is still holding him. The same
+// is done here by state name rather than by his raw indices: GETGRABBED, then
+// ESCAPEGRAB or, in the skeletons that call it that, PUSHOFF. Gabriella,
+// Svetlana, Scat, IcePick, Haystack and the Colonel carry both. Baron and
+// Moloch have no GETGRABBED, so CHero::canBeGrabbed refuses them outright.
 //
-// The fire button is left doing exactly what each class already had it do.
+// Getting into GETGRABBED needs help too. CHero::getGrabbed asks for it once,
+// and most classes route to it only from STAND or a fighting stance - the
+// Colonel from STAND alone - so a hero grabbed mid-run kept running in the
+// grabber's claws. The hero is steered through STAND, and put into the state
+// directly if the class's own locomotion keeps turning it away.
+//
+// While held, the fire press is consumed here. Each class asked for its
+// struggle motion from it, and that request would reverse the steering's
+// tween; the escape is on the timer, as the Stranger's is.
 
 // THE CARRY ITSELF. Breaking out bounds how long the drag lasts; it does not
 // make the drag legal. Every attractActorToward moves the victim by writing a
@@ -85,15 +94,24 @@ struct CVector3f;
 extern "C" {
 #endif
 
-// Advances the hold timer for `hero` and breaks the grab when it has run long
-// enough. Call once per frame from the hero's process, immediately before it
-// reads grabbed_by: on release grabbed_by is cleared, so the class's own
-// "not grabbed" branch picks the frame up and no other code has to change.
+// Advances the hold timer for `hero`, steers it into GETGRABBED, plays the
+// escape motion once it has been held long enough and breaks the grab when that
+// motion is done. Call once per frame from the hero's process, immediately
+// before it reads grabbed_by: on release grabbed_by is cleared, so the class's
+// own "not grabbed" branch picks the frame up and no other code has to change.
 //
 // Returns 1 on the frame the hero was released, 0 otherwise. Safe to call
 // every frame whether or not the hero is grabbed, and a no-op for an AI hero,
 // for a scripted grab, and when NOCTURNE_AUTHENTIC_HERO_ACTIONS is 1.
 int nocturne_hero_grab_escape(struct CHero *hero, float delta_time);
+
+// CSvetlana::getGrabbed is `return 0`: she refuses every grab, though SVETLANA.SKL
+// has GETGRABBED and PUSHOFF and CSvetlana::process handles grabbed_by like every
+// other class. That keeps the ACT1 escort from being carried off, and is kept
+// for her as an NPC. A player Svetlana is grabbed through CHero::getGrabbed like
+// the rest. Returns what the vtable slot returns: 1 when the grab took.
+int nocturne_svetlana_get_grabbed(struct CHero *svetlana, struct CDemonActor *grabber,
+                                  int grab_type);
 
 // Moves `victim` to the world point `world_target` through the collision
 // system rather than by writing the position. Call it from an

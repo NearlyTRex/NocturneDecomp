@@ -28,7 +28,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderAttachedModels_FUN_0042a420(CCha
       if ((this_ptr->model).part_data.visibility_flags[pSVar2->part_index] != 0) {
         core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
                   (&pSVar2->transform,
-                   (this_ptr->model).bone_transform.bone_world_matrices + pSVar2->bone_index,
+                   (this_ptr->model).bone_transform.bone_model_matrices + pSVar2->bone_index,
                    &local_8c);
         local_5c.m[0].z = local_8c.m[0].z;
         local_5c.m[1].z = local_8c.m[1].z;

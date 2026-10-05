@@ -5,7 +5,7 @@
 
 // Original: crt_unknown.c_BaseStart_FUN_00401000
 // Address: 00401000
-void BaseStart(void);
+void __cdecl BaseStart(void);
 
 // Original: crt_unknown.c_FUN_00600990
 // Address: 00600990

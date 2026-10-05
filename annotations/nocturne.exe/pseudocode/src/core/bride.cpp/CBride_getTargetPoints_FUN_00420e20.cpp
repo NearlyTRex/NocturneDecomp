@@ -18,7 +18,7 @@ int __cdecl core_bride_cpp_CBride_getTargetPoints_FUN_00420e20(CBride *this_ptr,
   
   this_ptr_00 = &(this_ptr->base).base.model;
   if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[8]] != 0) {
-    pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
+    pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
                        (this_ptr_00,&local_10,DAT_00764b2c);
     if (out_points_array != pCVar1) {
       out_points_array->x = pCVar1->x;
@@ -27,7 +27,7 @@ int __cdecl core_bride_cpp_CBride_getTargetPoints_FUN_00420e20(CBride *this_ptr,
     }
     return 1;
   }
-  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
+  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
                      (this_ptr_00,&local_1c,DAT_00764b50);
   if (out_points_array != pCVar1) {
     out_points_array->x = pCVar1->x;

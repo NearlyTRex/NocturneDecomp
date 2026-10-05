@@ -59,7 +59,7 @@ void __stack2_esi core_tbplayer_cpp_CDrummer_getCarryObjToBodyXForm_FUN_005da370
 LAB_005da42c:
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0(&local_90,&local_18,&local_3c);
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
-            (&local_90,(this_ptr->base).base.model.bone_transform.bone_world_matrices + iVar2,
+            (&local_90,(this_ptr->base).base.model.bone_transform.bone_model_matrices + iVar2,
              &local_c0);
   out_matrix->m[0].w = local_c0.m[0].w;
   out_matrix->m[0].x = local_c0.m[0].x;

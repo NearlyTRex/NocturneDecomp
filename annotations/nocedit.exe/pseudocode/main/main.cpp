@@ -20,12 +20,12 @@
 #include <cstdio>
 #include <cstring>
 
-// Entries 0..154 are game static initializers (actor registration, vtable
-// setup, etc.). Entries 155..165 are Watcom CRT init handlers that we skip
-// since we link against a modern C/C++ runtime.
+// Entries 0..155 are game static initializers (actor registration, vtable
+// setup, etc.); entry 0 registers CDemonActor. Entries 156..166 are Watcom CRT
+// init handlers that we skip since we link against a modern C/C++ runtime.
 static void runStaticInitializers(void)
 {
-    for (int i = 0; i < 155; i++) {
+    for (int i = 0; i < 156; i++) {
         if (g_InitHandlers[i].func != (RUNTIME_HANDLER_FUNC *)0) {
             g_InitHandlers[i].func();
             g_InitHandlers[i].status = 0x02;

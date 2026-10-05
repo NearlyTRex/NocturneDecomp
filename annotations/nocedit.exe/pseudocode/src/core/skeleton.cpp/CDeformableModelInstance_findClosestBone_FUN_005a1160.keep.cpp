@@ -38,7 +38,7 @@ int __cdecl core_skeleton_cpp_CDeformableModelInstance_findClosestBone_FUN_005a1
   local_40 = 1e+30;
   local_4c = 0;
   if (0 < pCVar13->bone_count) {
-    pCVar14 = (this_ptr->bone_transform).bone_world_matrices;
+    pCVar14 = (this_ptr->bone_transform).bone_model_matrices;
     pCVar15 = pCVar14;
     do {
       iVar1 = pCVar13->bone_list[iVar16].parent_index;

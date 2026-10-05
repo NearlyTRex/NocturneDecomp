@@ -20195,24 +20195,24 @@ core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005
 core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0051d3c0 (28 suspects)
   File: core/skeleton.cpp
 ====================================================================================================
-  Line 34 [pointer_cast]: *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[0].w + local_28) =
-  Line 36 [pointer_cast]: *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[0].w + local_28);
-  Line 37 [pointer_cast]: *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[0].x + local_28) =
-  Line 39 [pointer_cast]: *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[0].x + local_28);
-  Line 40 [pointer_cast]: *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[0].y + local_28) =
-  Line 42 [pointer_cast]: *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[0].y + local_28);
-  Line 43 [pointer_cast]: *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[1].w + local_28) =
-  Line 45 [pointer_cast]: *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[1].w + local_28);
-  Line 46 [pointer_cast]: *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[1].x + local_28) =
-  Line 48 [pointer_cast]: *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[1].x + local_28);
-  Line 49 [pointer_cast]: *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[1].y + local_28) =
-  Line 51 [pointer_cast]: *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[1].y + local_28);
-  Line 52 [pointer_cast]: *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[2].w + local_28) =
-  Line 54 [pointer_cast]: *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[2].w + local_28);
-  Line 55 [pointer_cast]: *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[2].x + local_28) =
-  Line 57 [pointer_cast]: *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[2].x + local_28);
-  Line 58 [pointer_cast]: *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[2].y + local_28) =
-  Line 60 [pointer_cast]: *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[2].y + local_28);
+  Line 34 [pointer_cast]: *(float *)((int)&(this_ptr->bone_transform).bone_model_matrices[0].m[0].w + local_28) =
+  Line 36 [pointer_cast]: *(float *)((int)&(this_ptr->bone_transform).bone_model_matrices[0].m[0].w + local_28);
+  Line 37 [pointer_cast]: *(float *)((int)&(this_ptr->bone_transform).bone_model_matrices[0].m[0].x + local_28) =
+  Line 39 [pointer_cast]: *(float *)((int)&(this_ptr->bone_transform).bone_model_matrices[0].m[0].x + local_28);
+  Line 40 [pointer_cast]: *(float *)((int)&(this_ptr->bone_transform).bone_model_matrices[0].m[0].y + local_28) =
+  Line 42 [pointer_cast]: *(float *)((int)&(this_ptr->bone_transform).bone_model_matrices[0].m[0].y + local_28);
+  Line 43 [pointer_cast]: *(float *)((int)&(this_ptr->bone_transform).bone_model_matrices[0].m[1].w + local_28) =
+  Line 45 [pointer_cast]: *(float *)((int)&(this_ptr->bone_transform).bone_model_matrices[0].m[1].w + local_28);
+  Line 46 [pointer_cast]: *(float *)((int)&(this_ptr->bone_transform).bone_model_matrices[0].m[1].x + local_28) =
+  Line 48 [pointer_cast]: *(float *)((int)&(this_ptr->bone_transform).bone_model_matrices[0].m[1].x + local_28);
+  Line 49 [pointer_cast]: *(float *)((int)&(this_ptr->bone_transform).bone_model_matrices[0].m[1].y + local_28) =
+  Line 51 [pointer_cast]: *(float *)((int)&(this_ptr->bone_transform).bone_model_matrices[0].m[1].y + local_28);
+  Line 52 [pointer_cast]: *(float *)((int)&(this_ptr->bone_transform).bone_model_matrices[0].m[2].w + local_28) =
+  Line 54 [pointer_cast]: *(float *)((int)&(this_ptr->bone_transform).bone_model_matrices[0].m[2].w + local_28);
+  Line 55 [pointer_cast]: *(float *)((int)&(this_ptr->bone_transform).bone_model_matrices[0].m[2].x + local_28) =
+  Line 57 [pointer_cast]: *(float *)((int)&(this_ptr->bone_transform).bone_model_matrices[0].m[2].x + local_28);
+  Line 58 [pointer_cast]: *(float *)((int)&(this_ptr->bone_transform).bone_model_matrices[0].m[2].y + local_28) =
+  Line 60 [pointer_cast]: *(float *)((int)&(this_ptr->bone_transform).bone_model_matrices[0].m[2].y + local_28);
   Line 65 [pointer_truncation]: *(float *)((int)&this_ptr->transformed_vertices[0].x + local_18) +
   Line 65 [pointer_cast]: *(float *)((int)&this_ptr->transformed_vertices[0].x + local_18) +
   Line 68 [pointer_truncation]: *(float *)((int)&this_ptr->transformed_vertices[0].y + local_18) +
@@ -20316,6 +20316,35 @@ core_skeleton.cpp_CDeformableModelInstance_findClosestBone_FUN_0051e9e0 (1 suspe
   Line 80 [shadow_pointer_walk]: local_3c = (CSkeleton *)((local_3c->motion_list).state_names[1] + 2);
 
 ====================================================================================================
+core_skeleton.cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_0051d0a0 (13 suspects)
+  File: core/skeleton.cpp
+====================================================================================================
+  Line 43 [unrolled_memcpy]: for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
+  Line 45 [pointer_cast]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
+  Line 45 [pointer_truncation]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
+  Line 46 [pointer_cast]: pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
+  Line 46 [pointer_truncation]: pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
+  Line 49 [pointer_truncation]: (&local_1c,(CVector3f *)((int)&this_ptr->transformed_vertices[0].x + local_10),
+  Line 49 [pointer_cast]: (&local_1c,(CVector3f *)((int)&this_ptr->transformed_vertices[0].x + local_10),
+  Line 71 [unrolled_memcpy]: for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
+  Line 73 [pointer_cast]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
+  Line 73 [pointer_truncation]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
+  Line 74 [pointer_cast]: pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
+  Line 74 [pointer_truncation]: pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
+  Line 75 [unrolled_memcpy]: // 0051d1a0: MOVSD.REP ES:EDI,ESI
+
+====================================================================================================
+core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0 (6 suspects)
+  File: core/skeleton.cpp
+====================================================================================================
+  Line 16 [unrolled_memcpy]: out_position->x = (this_ptr->bone_transform).pose_data.root_position.x;
+  Line 34 [unrolled_memcpy]: for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
+  Line 36 [pointer_cast]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
+  Line 36 [pointer_truncation]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
+  Line 37 [pointer_cast]: pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
+  Line 37 [pointer_truncation]: pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
+
+====================================================================================================
 core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_0051ed90 (16 suspects)
   File: core/skeleton.cpp
 ====================================================================================================
@@ -20335,35 +20364,6 @@ core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_0051ed90 (16 sus
   Line 63 [shadow_pointer_walk]: local_c = (SPose *)&(local_c->pose_data).root_position.y;
   Line 64 [shadow_pointer_walk]: local_14 = (CDeformableModelInstance *)&(local_14->motion_controller).tween_speed;
   Line 66 [pointer_truncation]: } while (iVar6 < (int)pSVar1);
-
-====================================================================================================
-core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0 (13 suspects)
-  File: core/skeleton.cpp
-====================================================================================================
-  Line 43 [unrolled_memcpy]: for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-  Line 45 [pointer_cast]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
-  Line 45 [pointer_truncation]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
-  Line 46 [pointer_cast]: pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
-  Line 46 [pointer_truncation]: pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
-  Line 49 [pointer_truncation]: (&local_1c,(CVector3f *)((int)&this_ptr->transformed_vertices[0].x + local_10),
-  Line 49 [pointer_cast]: (&local_1c,(CVector3f *)((int)&this_ptr->transformed_vertices[0].x + local_10),
-  Line 71 [unrolled_memcpy]: for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-  Line 73 [pointer_cast]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
-  Line 73 [pointer_truncation]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
-  Line 74 [pointer_cast]: pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
-  Line 74 [pointer_truncation]: pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
-  Line 75 [unrolled_memcpy]: // 0051d1a0: MOVSD.REP ES:EDI,ESI
-
-====================================================================================================
-core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0 (6 suspects)
-  File: core/skeleton.cpp
-====================================================================================================
-  Line 16 [unrolled_memcpy]: out_position->x = (this_ptr->bone_transform).pose_data.root_position.x;
-  Line 34 [unrolled_memcpy]: for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-  Line 36 [pointer_cast]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
-  Line 36 [pointer_truncation]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
-  Line 37 [pointer_cast]: pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
-  Line 37 [pointer_truncation]: pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
 
 ====================================================================================================
 core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_0051e590 (8 suspects)
@@ -20987,45 +20987,45 @@ core_skeleton.cpp_blendBoneTransformData_FUN_0051f3f0 (8 suspects)
   Line 67 [shadow_pointer_walk]: pSVar1 = (SPose *)&(pSVar1->pose_data).bone_rotations[0].x;
 
 ====================================================================================================
-core_skeleton.cpp_computeBoneWorldMatrices_FUN_0051f1d0 (47 suspects)
+core_skeleton.cpp_computeBoneModelMatrices_FUN_0051f1d0 (47 suspects)
   File: core/skeleton.cpp
 ====================================================================================================
-  Line 34 [pointer_truncation]: *(float *)((int)&bone_data->bone_world_matrices[0].m[0].w + local_24) =
-  Line 34 [pointer_cast]: *(float *)((int)&bone_data->bone_world_matrices[0].m[0].w + local_24) =
-  Line 36 [pointer_truncation]: *(float *)((int)&bone_data->bone_world_matrices[0].m[0].w + local_24);
-  Line 36 [pointer_cast]: *(float *)((int)&bone_data->bone_world_matrices[0].m[0].w + local_24);
-  Line 37 [pointer_truncation]: *(float *)((int)&bone_data->bone_world_matrices[0].m[0].x + local_24) =
-  Line 37 [pointer_cast]: *(float *)((int)&bone_data->bone_world_matrices[0].m[0].x + local_24) =
-  Line 39 [pointer_truncation]: *(float *)((int)&bone_data->bone_world_matrices[0].m[0].x + local_24);
-  Line 39 [pointer_cast]: *(float *)((int)&bone_data->bone_world_matrices[0].m[0].x + local_24);
-  Line 40 [pointer_truncation]: *(float *)((int)&bone_data->bone_world_matrices[0].m[0].y + local_24) =
-  Line 40 [pointer_cast]: *(float *)((int)&bone_data->bone_world_matrices[0].m[0].y + local_24) =
-  Line 42 [pointer_truncation]: *(float *)((int)&bone_data->bone_world_matrices[0].m[0].y + local_24);
-  Line 42 [pointer_cast]: *(float *)((int)&bone_data->bone_world_matrices[0].m[0].y + local_24);
-  Line 43 [pointer_truncation]: *(float *)((int)&bone_data->bone_world_matrices[0].m[1].w + local_24) =
-  Line 43 [pointer_cast]: *(float *)((int)&bone_data->bone_world_matrices[0].m[1].w + local_24) =
-  Line 45 [pointer_truncation]: *(float *)((int)&bone_data->bone_world_matrices[0].m[1].w + local_24);
-  Line 45 [pointer_cast]: *(float *)((int)&bone_data->bone_world_matrices[0].m[1].w + local_24);
-  Line 46 [pointer_truncation]: *(float *)((int)&bone_data->bone_world_matrices[0].m[1].x + local_24) =
-  Line 46 [pointer_cast]: *(float *)((int)&bone_data->bone_world_matrices[0].m[1].x + local_24) =
-  Line 48 [pointer_truncation]: *(float *)((int)&bone_data->bone_world_matrices[0].m[1].x + local_24);
-  Line 48 [pointer_cast]: *(float *)((int)&bone_data->bone_world_matrices[0].m[1].x + local_24);
-  Line 49 [pointer_truncation]: *(float *)((int)&bone_data->bone_world_matrices[0].m[1].y + local_24) =
-  Line 49 [pointer_cast]: *(float *)((int)&bone_data->bone_world_matrices[0].m[1].y + local_24) =
-  Line 51 [pointer_truncation]: *(float *)((int)&bone_data->bone_world_matrices[0].m[1].y + local_24);
-  Line 51 [pointer_cast]: *(float *)((int)&bone_data->bone_world_matrices[0].m[1].y + local_24);
-  Line 52 [pointer_truncation]: *(float *)((int)&bone_data->bone_world_matrices[0].m[2].w + local_24) =
-  Line 52 [pointer_cast]: *(float *)((int)&bone_data->bone_world_matrices[0].m[2].w + local_24) =
-  Line 54 [pointer_truncation]: *(float *)((int)&bone_data->bone_world_matrices[0].m[2].w + local_24);
-  Line 54 [pointer_cast]: *(float *)((int)&bone_data->bone_world_matrices[0].m[2].w + local_24);
-  Line 55 [pointer_truncation]: *(float *)((int)&bone_data->bone_world_matrices[0].m[2].x + local_24) =
-  Line 55 [pointer_cast]: *(float *)((int)&bone_data->bone_world_matrices[0].m[2].x + local_24) =
-  Line 57 [pointer_truncation]: *(float *)((int)&bone_data->bone_world_matrices[0].m[2].x + local_24);
-  Line 57 [pointer_cast]: *(float *)((int)&bone_data->bone_world_matrices[0].m[2].x + local_24);
-  Line 58 [pointer_truncation]: *(float *)((int)&bone_data->bone_world_matrices[0].m[2].y + local_24) =
-  Line 58 [pointer_cast]: *(float *)((int)&bone_data->bone_world_matrices[0].m[2].y + local_24) =
-  Line 60 [pointer_truncation]: *(float *)((int)&bone_data->bone_world_matrices[0].m[2].y + local_24);
-  Line 60 [pointer_cast]: *(float *)((int)&bone_data->bone_world_matrices[0].m[2].y + local_24);
+  Line 34 [pointer_truncation]: *(float *)((int)&bone_data->bone_model_matrices[0].m[0].w + local_24) =
+  Line 34 [pointer_cast]: *(float *)((int)&bone_data->bone_model_matrices[0].m[0].w + local_24) =
+  Line 36 [pointer_truncation]: *(float *)((int)&bone_data->bone_model_matrices[0].m[0].w + local_24);
+  Line 36 [pointer_cast]: *(float *)((int)&bone_data->bone_model_matrices[0].m[0].w + local_24);
+  Line 37 [pointer_truncation]: *(float *)((int)&bone_data->bone_model_matrices[0].m[0].x + local_24) =
+  Line 37 [pointer_cast]: *(float *)((int)&bone_data->bone_model_matrices[0].m[0].x + local_24) =
+  Line 39 [pointer_truncation]: *(float *)((int)&bone_data->bone_model_matrices[0].m[0].x + local_24);
+  Line 39 [pointer_cast]: *(float *)((int)&bone_data->bone_model_matrices[0].m[0].x + local_24);
+  Line 40 [pointer_truncation]: *(float *)((int)&bone_data->bone_model_matrices[0].m[0].y + local_24) =
+  Line 40 [pointer_cast]: *(float *)((int)&bone_data->bone_model_matrices[0].m[0].y + local_24) =
+  Line 42 [pointer_truncation]: *(float *)((int)&bone_data->bone_model_matrices[0].m[0].y + local_24);
+  Line 42 [pointer_cast]: *(float *)((int)&bone_data->bone_model_matrices[0].m[0].y + local_24);
+  Line 43 [pointer_truncation]: *(float *)((int)&bone_data->bone_model_matrices[0].m[1].w + local_24) =
+  Line 43 [pointer_cast]: *(float *)((int)&bone_data->bone_model_matrices[0].m[1].w + local_24) =
+  Line 45 [pointer_truncation]: *(float *)((int)&bone_data->bone_model_matrices[0].m[1].w + local_24);
+  Line 45 [pointer_cast]: *(float *)((int)&bone_data->bone_model_matrices[0].m[1].w + local_24);
+  Line 46 [pointer_truncation]: *(float *)((int)&bone_data->bone_model_matrices[0].m[1].x + local_24) =
+  Line 46 [pointer_cast]: *(float *)((int)&bone_data->bone_model_matrices[0].m[1].x + local_24) =
+  Line 48 [pointer_truncation]: *(float *)((int)&bone_data->bone_model_matrices[0].m[1].x + local_24);
+  Line 48 [pointer_cast]: *(float *)((int)&bone_data->bone_model_matrices[0].m[1].x + local_24);
+  Line 49 [pointer_truncation]: *(float *)((int)&bone_data->bone_model_matrices[0].m[1].y + local_24) =
+  Line 49 [pointer_cast]: *(float *)((int)&bone_data->bone_model_matrices[0].m[1].y + local_24) =
+  Line 51 [pointer_truncation]: *(float *)((int)&bone_data->bone_model_matrices[0].m[1].y + local_24);
+  Line 51 [pointer_cast]: *(float *)((int)&bone_data->bone_model_matrices[0].m[1].y + local_24);
+  Line 52 [pointer_truncation]: *(float *)((int)&bone_data->bone_model_matrices[0].m[2].w + local_24) =
+  Line 52 [pointer_cast]: *(float *)((int)&bone_data->bone_model_matrices[0].m[2].w + local_24) =
+  Line 54 [pointer_truncation]: *(float *)((int)&bone_data->bone_model_matrices[0].m[2].w + local_24);
+  Line 54 [pointer_cast]: *(float *)((int)&bone_data->bone_model_matrices[0].m[2].w + local_24);
+  Line 55 [pointer_truncation]: *(float *)((int)&bone_data->bone_model_matrices[0].m[2].x + local_24) =
+  Line 55 [pointer_cast]: *(float *)((int)&bone_data->bone_model_matrices[0].m[2].x + local_24) =
+  Line 57 [pointer_truncation]: *(float *)((int)&bone_data->bone_model_matrices[0].m[2].x + local_24);
+  Line 57 [pointer_cast]: *(float *)((int)&bone_data->bone_model_matrices[0].m[2].x + local_24);
+  Line 58 [pointer_truncation]: *(float *)((int)&bone_data->bone_model_matrices[0].m[2].y + local_24) =
+  Line 58 [pointer_cast]: *(float *)((int)&bone_data->bone_model_matrices[0].m[2].y + local_24) =
+  Line 60 [pointer_truncation]: *(float *)((int)&bone_data->bone_model_matrices[0].m[2].y + local_24);
+  Line 60 [pointer_cast]: *(float *)((int)&bone_data->bone_model_matrices[0].m[2].y + local_24);
   Line 65 [pointer_truncation]: *(float *)((int)&instance_ptr->transformed_vertices[0].x + iVar3) +
   Line 65 [pointer_cast]: *(float *)((int)&instance_ptr->transformed_vertices[0].x + iVar3) +
   Line 68 [pointer_truncation]: *(float *)((int)&instance_ptr->transformed_vertices[0].y + iVar3) +

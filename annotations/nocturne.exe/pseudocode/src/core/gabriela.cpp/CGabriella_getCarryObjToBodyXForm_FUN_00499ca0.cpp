@@ -100,7 +100,7 @@ LAB_00499f65:
     core_xform_cpp_setIdentityMatrix3x4_FUN_0055abf0(&CStack_d0);
   }
   core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00
-            (&CStack_d0,(this_ptr->base).base.model.bone_transform.bone_world_matrices + local_10,
+            (&CStack_d0,(this_ptr->base).base.model.bone_transform.bone_model_matrices + local_10,
              &CStack_130);
   pCVar4 = &CStack_130;
   pCVar5 = &CStack_d0;
@@ -143,7 +143,7 @@ LAB_00499d1a:
     local_34.z = 0.0;
   }
   core_xform_cpp_transformVector3x4InPlace_FUN_0055a910
-            (&local_34,(this_ptr->base).base.model.bone_transform.bone_world_matrices + local_10);
+            (&local_34,(this_ptr->base).base.model.bone_transform.bone_model_matrices + local_10);
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(&local_160,&local_34,&local_58);
   pCVar2 = core_xform_cpp_transformVector3x4_FUN_0055a8b0(&local_70,&local_1c,&local_160);
   local_40 = local_34.x - pCVar2->x;

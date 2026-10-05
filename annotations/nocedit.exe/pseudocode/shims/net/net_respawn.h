@@ -119,7 +119,13 @@ int nocturne_net_respawn_world_area(void);
 // as it spectates. The host never sees it, because that hero is neither in the
 // host's set nor the host's local hero.
 //
-// Null, or held out of the world, is 0. Outside a network game this is exactly
+// The same slot draws a hero that has been destroyed. CCharacter::dismember —
+// which an explosion runs — breaks the body into detached parts and marks the
+// actor ACTOR_DESTROYED, dropping it from the active set, so it is neither
+// processed nor drawn there any more. The forced slot still draws it, frozen in
+// its last pose, on top of the parts.
+//
+// Null, held out of the world, or destroyed is 0. Outside a network game this is exactly
 // the null test the shipped code already made, so single player is unchanged.
 struct CHero;
 int nocturne_net_respawn_hero_in_world(struct CHero *hero);

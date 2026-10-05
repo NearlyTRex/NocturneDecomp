@@ -45,7 +45,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
 ;   core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0059ddc0
-;   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+;   core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0059fa20
 ;   core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480
 ;   core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80
 ;   core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0
@@ -131,8 +131,8 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 0059c3a8
     PUSH EAX                            ; 0059c3ac
     PUSH EBX                            ; 0059c3ad
-    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20 ; 0059c3ae
-        ;   XREF to: 0059fa20 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0059fa20 ; 0059c3ae
+        ;   XREF to: 0059fa20 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0059fa20(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     ADD ESP,0xc                         ; 0059c3b3
     MOV EAX,dword ptr [ESP + 0x74]      ; 0059c3b6
     XOR ECX,ECX                         ; 0059c3ba

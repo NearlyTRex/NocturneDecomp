@@ -283,7 +283,7 @@ LAB_004158fb:
       local_14 = local_13c.damage_amount;
       pCVar6 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                          (&local_ac,&g_ZeroVector.f,
-                          (this_ptr->base).base.model.bone_transform.bone_world_matrices +
+                          (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                           g_BatCreatureIndices[2]);
       pCVar6 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                          ((CDemonActor *)this_ptr,&local_40,pCVar6);
@@ -292,7 +292,7 @@ LAB_004158fb:
     case 8:
       if (((this_ptr->base).pool_me == 0) &&
          ((this_ptr->base).base.base.standing_platform == (CPlatform *)0x0)) {
-        pCVar7 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+        pCVar7 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0059fa20
                            (this_ptr_01,&local_4c,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                   ((CDemonActor *)this_ptr,&local_100,pCVar7);

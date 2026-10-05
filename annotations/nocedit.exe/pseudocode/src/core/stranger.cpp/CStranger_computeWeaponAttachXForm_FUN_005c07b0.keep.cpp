@@ -118,7 +118,7 @@ CMatrix3x4f * __stack3_esi core_stranger_cpp_CStranger_computeWeaponAttachXForm_
                         (carried_actor,g_CWeaponClassInfo.name_hash);
   if (local_180_weapon != (CWeapon *)0x0) {
     iVar12 = local_180_weapon->weapon_type;
-    pCVar15 = (this_ptr->base).base.model.bone_transform.bone_world_matrices + iVar1;
+    pCVar15 = (this_ptr->base).base.model.bone_transform.bone_model_matrices + iVar1;
     if (iVar12 == 1) {
       local_a8.z = 0.969617;
       local_a8.x = 0.191601;
@@ -266,11 +266,11 @@ CMatrix3x4f * __stack3_esi core_stranger_cpp_CStranger_computeWeaponAttachXForm_
   if ((this_ptr->base).base.layer_action_index == 0xe) {
     pCVar13 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                         (&local_d8,&g_ZeroVector.f,
-                         (this_ptr->base).base.model.bone_transform.bone_world_matrices +
+                         (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                          g_StrangerIndices[0xe]);
     pCVar4 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                        (&local_90,&g_ZeroVector.f,
-                        (this_ptr->base).base.model.bone_transform.bone_world_matrices +
+                        (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                         g_StrangerIndices[0xd]);
     fVar11 = (pCVar4->x + pCVar13->x) * 0.5f;
     fVar2 = (pCVar4->y + pCVar13->y) * 0.5f;
@@ -318,7 +318,7 @@ LAB_005c1504:
           core_xform_cpp_setIdentityMatrix3x4_FUN_005f5100(&local_45c);
         }
         core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
-                  (&local_45c,(this_ptr->base).base.model.bone_transform.bone_world_matrices + iVar1
+                  (&local_45c,(this_ptr->base).base.model.bone_transform.bone_model_matrices + iVar1
                    ,&local_48c);
         pCVar13 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690
                             (&local_45c,&local_3c);
@@ -358,7 +358,7 @@ LAB_005c10ab:
     local_15c.y = -0.133049;
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
               (&local_cfc,&local_120,&local_15c);
-    pCVar15 = (this_ptr->base).base.model.bone_transform.bone_world_matrices + iVar1;
+    pCVar15 = (this_ptr->base).base.model.bone_transform.bone_model_matrices + iVar1;
     fVar11 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840
                        ((CCharacter *)this_ptr,0);
     core_xform_cpp_lerpMatrix3x4_FUN_005f7140(&local_d2c,&local_cfc,1.0 - fVar11,&local_84c);
@@ -394,7 +394,7 @@ LAB_005c10ab:
     local_e4.z = 0.0;
   }
   core_xform_cpp_transformVector3x4InPlace_FUN_005f4e20
-            (&local_e4,(this_ptr->base).base.model.bone_transform.bone_world_matrices + iVar1);
+            (&local_e4,(this_ptr->base).base.model.bone_transform.bone_model_matrices + iVar1);
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0(&local_a5c,&local_e4,&local_84);
   pCVar15 = &local_a5c;
   pCVar13 = core_xform_cpp_transformVector3x4_FUN_005f4dc0

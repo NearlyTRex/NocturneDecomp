@@ -155,7 +155,7 @@ void __cdecl core_zombie_cpp_CZombie_process_FUN_0055ef50(CZombie *this_ptr,floa
   pCVar3 = (CCharacter *)(this_ptr->base).base.grabbed_by;
   if (pCVar3 != (CCharacter *)0x0) {
     pCVar4 = (pCVar3->base).vtable._uc;
-    pCVar10 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
+    pCVar10 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
                         (&(this_ptr->base).base.model,&local_1d0,0);
     iVar6 = (*(pCVar4->_uc).attractActorToward)(pCVar3,(CDemonActor *)this_ptr,pCVar10);
     if (iVar6 != 0) {
@@ -246,7 +246,7 @@ LAB_0055f021:
         goto LAB_0055efe4;
       }
       if ((this_ptr->base).victim != (CCharacter *)0x0) {
-        pCVar10 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
+        pCVar10 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
                             (local_20,&local_29c,this_ptr->bone_indices[0]);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                   ((CDemonActor *)this_ptr,&local_248,pCVar10);
@@ -394,7 +394,7 @@ LAB_0055f021:
                   ((CDemonActor *)this_ptr,"fall-?.wav");
       }
       else if (uVar8 == 0x29a) {
-        pCVar10 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
+        pCVar10 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
                             (pCVar2,&local_11c,this_ptr->bone_indices[0]);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                   ((CDemonActor *)this_ptr,&local_104,pCVar10);
@@ -714,7 +714,7 @@ LAB_00560776:
     else if (uVar8 < 9) {
       if (((this_ptr->base).pool_me == 0) &&
          ((this_ptr->base).base.base.standing_platform == (CPlatform *)0x0)) {
-        pCVar10 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
+        pCVar10 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
                             (pCVar2,&local_a4,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                   ((CDemonActor *)this_ptr,&local_1c4,pCVar10);

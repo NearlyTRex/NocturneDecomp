@@ -468,7 +468,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
     case 5:
       if (((this_ptr->base).pool_me == 0) &&
          ((this_ptr->base).base.base.standing_platform == (CPlatform *)0x0)) {
-        pCVar22 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+        pCVar22 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0059fa20
                             (pCVar6,&local_4c,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                   ((CDemonActor *)this_ptr,&local_c4,pCVar22);
@@ -487,7 +487,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
         fVar16 = 0.4;
         pCVar13 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                             (&local_118,&g_ZeroVector.f,
-                             (this_ptr->base).base.model.bone_transform.bone_world_matrices +
+                             (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                              g_MobsterIndices[1]);
         pCVar22 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                             ((CDemonActor *)this_ptr,&local_100,pCVar13);
@@ -500,7 +500,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
         fVar24 = 0.4;
         pCVar22 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                             (&local_94,&g_ZeroVector.f,
-                             (this_ptr->base).base.model.bone_transform.bone_world_matrices +
+                             (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                              g_MobsterIndices[2]);
         pCVar22 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                             ((CDemonActor *)this_ptr,&local_dc,pCVar22);

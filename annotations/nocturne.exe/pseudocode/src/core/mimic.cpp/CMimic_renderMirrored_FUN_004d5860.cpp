@@ -63,7 +63,7 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_004d5860(CMimic *this_ptr)
                     (&local_c4,&local_40,&local_28);
           core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00
                     (&local_c4,
-                     (this_ptr->base).base.model.bone_transform.bone_world_matrices + _DAT_01cc9094,
+                     (this_ptr->base).base.model.bone_transform.bone_model_matrices + _DAT_01cc9094,
                      (CMatrix3x4f *)&stack0xffffff0c);
           pfVar2 = (float *)&stack0xffffff0c;
           pCVar3 = &local_94;

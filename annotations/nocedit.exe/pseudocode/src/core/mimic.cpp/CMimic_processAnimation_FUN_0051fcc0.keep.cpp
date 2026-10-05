@@ -1,7 +1,7 @@
 // Name: core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc0
 // Address: 0051fcc0
 // MANUAL RECONSTRUCTION
-// Address Range: [[0051fcc0, 00520203] [0052029d, 005204f8]]
+// Address Range: [[0051fcc0, 005204f8]]
 // Convention: __cdecl
 // Signature: void __cdecl core_mimic_cpp_CMimic_processAnimation_FUN_0051fcc0(CMimic *this_ptr,float delta_time)
 
@@ -61,7 +61,7 @@ void __cdecl core_mimic_cpp_CMimic_processAnimation_FUN_0051fcc0(CMimic *this_pt
 #else
   sim_target = nocturne_net_sim_target_for((CDemonActor *)this_ptr);
 #endif
-  pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+  pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0059fa20
                      (&(sim_target->base).model,&local_10c,0);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
             ((CDemonActor *)sim_target,&local_94,pCVar4);
@@ -90,7 +90,7 @@ void __cdecl core_mimic_cpp_CMimic_processAnimation_FUN_0051fcc0(CMimic *this_pt
         if (SQRT(local_70.z * local_70.z + local_70.x * local_70.x + local_70.y * local_70.y) <
             (1.0 - ABS(fVar6) * (float)0.63661977238577705) * (float)25 +
             (float)30) {
-          core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820
+          core_skeleton_cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_0059f820
                     (pCVar1,g_MimicIndices[0],&local_1a8);
           local_4c.y = 0.7;
           local_178 = local_1a8;
@@ -179,7 +179,7 @@ LAB_0051fd7d:
             local_1c = 2.5f;
             if (1.0 <= fVar6) {
               fVar6 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(7.0,15.0);
-              core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+              core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0059fb00
                         (pCVar1,&local_ac,g_MimicIndices[8]);
               local_ac.x = -local_ac.x;
               core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_1e4);
@@ -205,7 +205,7 @@ LAB_0051fd7d:
       }
       if (((this_ptr->base).pool_me == 0) &&
          ((this_ptr->base).base.base.standing_platform == (CPlatform *)0x0)) {
-        pCVar5 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+        pCVar5 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0059fa20
                            (pCVar1,&local_a0,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                   ((CDemonActor *)this_ptr,&local_7c,pCVar5);
@@ -246,7 +246,7 @@ LAB_0051fdb4:
     if (uVar7 != 0) {
       if (uVar7 < 2) {
         if ((this_ptr->base).base.is_on_ground != 0) {
-          core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+          core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0059fa20
                     (pCVar1,&local_c4,g_MimicIndices[7]);
           local_c4.x = -local_c4.x;
           (*((this_ptr->base).base.base.vtable._ub)->processFootstepAtOffset)
@@ -254,7 +254,7 @@ LAB_0051fdb4:
         }
       }
       else if ((uVar7 == 7) && ((this_ptr->base).base.is_on_ground != 0)) {
-        core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+        core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0059fa20
                   (pCVar1,&local_100,g_MimicIndices[8]);
         local_100.x = -local_100.x;
         (*((this_ptr->base).base.base.vtable._ub)->processFootstepAtOffset)

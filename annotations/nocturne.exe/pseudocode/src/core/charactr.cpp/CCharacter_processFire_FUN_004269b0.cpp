@@ -119,7 +119,7 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_004269b0(CCharacter *t
   }
   local_28 = 0;
   if (0 < this_ptr->fire_count) {
-    local_40 = (this_ptr->model).bone_transform.bone_world_matrices;
+    local_40 = (this_ptr->model).bone_transform.bone_model_matrices;
     local_48 = this_ptr->flames;
     pSVar10 = this_ptr->fires;
     local_24 = this_ptr;

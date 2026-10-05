@@ -79,35 +79,35 @@ void __cdecl core_mimic_cpp_CMimic_updatePose_FUN_0051f930(CMimic *this_ptr)
     (pCVar15->base).base.model.bone_transform.pose_data.bone_rotations[0].y = pfVar1[2];
     (pCVar15->base).base.model.bone_transform.pose_data.bone_rotations[0].z = pfVar1[3];
     pCVar5 = g_HeroActors[iVar5];
-    (local_14->base).base.model.bone_transform.bone_world_matrices[0].m[0].w =
-         (pCVar5->base).model.bone_transform.bone_world_matrices[iVar7].m[0].w;
-    (local_14->base).base.model.bone_transform.bone_world_matrices[0].m[0].x =
-         (pCVar5->base).model.bone_transform.bone_world_matrices[iVar7].m[0].x;
-    (local_14->base).base.model.bone_transform.bone_world_matrices[0].m[0].y =
-         (pCVar5->base).model.bone_transform.bone_world_matrices[iVar7].m[0].y;
-    (local_14->base).base.model.bone_transform.bone_world_matrices[0].m[0].z =
-         (pCVar5->base).model.bone_transform.bone_world_matrices[iVar7].m[0].z;
-    (local_14->base).base.model.bone_transform.bone_world_matrices[0].m[1].w =
-         (pCVar5->base).model.bone_transform.bone_world_matrices[iVar7].m[1].w;
-    *(float *)((int)((local_14->base).base.model.bone_transform.bone_world_matrices[0].m + 1) + 4) =
-         *(float *)((int)((pCVar5->base).model.bone_transform.bone_world_matrices[iVar7].m + 1) + 4)
+    (local_14->base).base.model.bone_transform.bone_model_matrices[0].m[0].w =
+         (pCVar5->base).model.bone_transform.bone_model_matrices[iVar7].m[0].w;
+    (local_14->base).base.model.bone_transform.bone_model_matrices[0].m[0].x =
+         (pCVar5->base).model.bone_transform.bone_model_matrices[iVar7].m[0].x;
+    (local_14->base).base.model.bone_transform.bone_model_matrices[0].m[0].y =
+         (pCVar5->base).model.bone_transform.bone_model_matrices[iVar7].m[0].y;
+    (local_14->base).base.model.bone_transform.bone_model_matrices[0].m[0].z =
+         (pCVar5->base).model.bone_transform.bone_model_matrices[iVar7].m[0].z;
+    (local_14->base).base.model.bone_transform.bone_model_matrices[0].m[1].w =
+         (pCVar5->base).model.bone_transform.bone_model_matrices[iVar7].m[1].w;
+    *(float *)((int)((local_14->base).base.model.bone_transform.bone_model_matrices[0].m + 1) + 4) =
+         *(float *)((int)((pCVar5->base).model.bone_transform.bone_model_matrices[iVar7].m + 1) + 4)
     ;
-    *(float *)((int)((local_14->base).base.model.bone_transform.bone_world_matrices[0].m + 1) + 8) =
-         *(float *)((int)((pCVar5->base).model.bone_transform.bone_world_matrices[iVar7].m + 1) + 8)
+    *(float *)((int)((local_14->base).base.model.bone_transform.bone_model_matrices[0].m + 1) + 8) =
+         *(float *)((int)((pCVar5->base).model.bone_transform.bone_model_matrices[iVar7].m + 1) + 8)
     ;
-    *(float *)((int)((local_14->base).base.model.bone_transform.bone_world_matrices[0].m + 1) + 0xc)
-         = *(float *)((int)((pCVar5->base).model.bone_transform.bone_world_matrices[iVar7].m + 1) +
+    *(float *)((int)((local_14->base).base.model.bone_transform.bone_model_matrices[0].m + 1) + 0xc)
+         = *(float *)((int)((pCVar5->base).model.bone_transform.bone_model_matrices[iVar7].m + 1) +
                      0xc);
-    (local_14->base).base.model.bone_transform.bone_world_matrices[0].m[2].w =
-         (pCVar5->base).model.bone_transform.bone_world_matrices[iVar7].m[2].w;
-    *(float *)((int)((local_14->base).base.model.bone_transform.bone_world_matrices[0].m + 2) + 4) =
-         *(float *)((int)((pCVar5->base).model.bone_transform.bone_world_matrices[iVar7].m + 2) + 4)
+    (local_14->base).base.model.bone_transform.bone_model_matrices[0].m[2].w =
+         (pCVar5->base).model.bone_transform.bone_model_matrices[iVar7].m[2].w;
+    *(float *)((int)((local_14->base).base.model.bone_transform.bone_model_matrices[0].m + 2) + 4) =
+         *(float *)((int)((pCVar5->base).model.bone_transform.bone_model_matrices[iVar7].m + 2) + 4)
     ;
-    *(float *)((int)((local_14->base).base.model.bone_transform.bone_world_matrices[0].m + 2) + 8) =
-         *(float *)((int)((pCVar5->base).model.bone_transform.bone_world_matrices[iVar7].m + 2) + 8)
+    *(float *)((int)((local_14->base).base.model.bone_transform.bone_model_matrices[0].m + 2) + 8) =
+         *(float *)((int)((pCVar5->base).model.bone_transform.bone_model_matrices[iVar7].m + 2) + 8)
     ;
-    *(float *)((int)((local_14->base).base.model.bone_transform.bone_world_matrices[0].m + 2) + 0xc)
-         = *(float *)((int)((pCVar5->base).model.bone_transform.bone_world_matrices[iVar7].m + 2) +
+    *(float *)((int)((local_14->base).base.model.bone_transform.bone_model_matrices[0].m + 2) + 0xc)
+         = *(float *)((int)((pCVar5->base).model.bone_transform.bone_model_matrices[iVar7].m + 2) +
                      0xc);
     pCVar12 = (g_HeroActors[iVar5]->base).model.transformed_vertices + iVar7;
     if (pCVar7 != pCVar12) {

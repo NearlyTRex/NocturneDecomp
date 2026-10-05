@@ -428,6 +428,12 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
               return -1;
             }
             local_e0 = 0;
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+            if (nocturne_net_camera_active() != 0) {
+              local_e0 = nocturne_net_camera_is_current(local_8bc);
+            }
+            else
+#endif
             if ((-1 < g_CDemonSetPtr->selected_camera_index) &&
                (iVar3 = _stricmp
                                   (g_CDemonSetPtr->cameras[g_CDemonSetPtr->selected_camera_index].
