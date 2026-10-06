@@ -736,7 +736,7 @@ LAB_00500e2e:
                                       }
                                       if (this_ptr->dialog_wav_time < 0.0) {
                                         local_14 = 
-                                                  core_script_cpp_CScript_getDialogDuration_FUN_005049b0
+                                                  core_script_cpp_CScript_startDialogLine_FUN_005049b0
                                                             (this_ptr,local_e4,local_570,local_104);
                                         this_ptr->dialog_wav_time = local_14;
                                         if (this_ptr->dialog_wav_time < 0.0) {
@@ -797,7 +797,7 @@ LAB_00500e2e:
                                           } while (cVar2 != '\0');
                                         }
                                         local_14 = 
-                                                  core_script_cpp_CScript_getDialogDuration_FUN_005049b0
+                                                  core_script_cpp_CScript_startDialogLine_FUN_005049b0
                                                             (this_ptr,local_f8,local_444,local_f4);
                                         this_ptr->dialog_wav_time = local_14;
                                         fVar7 = this_ptr->dialog_wav_time;
@@ -2228,7 +2228,7 @@ LAB_00503106:
                                                   core_script_cpp_skipWhitespace_FUN_004fe070
                                                             (local_3978 + local_84);
                                                   local_14 = 
-                                                  core_script_cpp_CScript_getDialogDuration_FUN_005049b0
+                                                  core_script_cpp_CScript_startDialogLine_FUN_005049b0
                                                             (this_ptr,local_2eec,local_12cc,pcVar18)
                                                   ;
                                                   this_ptr->dialog_wav_time = local_14;
@@ -2922,7 +2922,7 @@ LAB_00503b62:
                                                   core_script_cpp_skipWhitespace_FUN_004fe070
                                                             (local_3b6c + local_38);
                                                   local_14 = 
-                                                  core_script_cpp_CScript_getDialogDuration_FUN_005049b0
+                                                  core_script_cpp_CScript_startDialogLine_FUN_005049b0
                                                             (this_ptr,local_15ec,local_21a4,pcVar18)
                                                   ;
                                                   this_ptr->dialog_wav_time = local_14;

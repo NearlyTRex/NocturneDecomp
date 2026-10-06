@@ -229,6 +229,19 @@ extern "C" void nocturne_net_camera_reset(void)
     }
 }
 
+extern "C" CDemonActor *nocturne_net_camera_focus_actor(CDemonActor *target) {
+    if (g_CNetGamePtr == nullptr || g_CNetGamePtr->connection_type == CONNECTION_NONE ||
+        g_HeroActors[g_LocalHeroIndex] == nullptr) {
+        return target;
+    }
+    for (int i = 0; i < g_HeroCount && i < 4; i++) {
+        if (target != nullptr && (CDemonActor *)g_HeroActors[i] == target) {
+            return (CDemonActor *)g_HeroActors[g_LocalHeroIndex];
+        }
+    }
+    return target;
+}
+
 #else
 
 extern "C" int  nocturne_net_camera_active(void)                    { return 0; }
@@ -236,5 +249,6 @@ extern "C" int  nocturne_net_camera_is_current(const char *)        { return 0; 
 extern "C" int  nocturne_net_camera_on_packet(const void *, int)    { return 0; }
 extern "C" void nocturne_net_camera_apply_if_due(int)               {}
 extern "C" void nocturne_net_camera_reset(void)                     {}
+extern "C" CDemonActor *nocturne_net_camera_focus_actor(CDemonActor *target) { return target; }
 
 #endif

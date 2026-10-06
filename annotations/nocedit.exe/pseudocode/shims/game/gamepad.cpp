@@ -250,6 +250,13 @@ extern "C" void nocturne_gamepad_init(void) {
     }
     s_inited = true;
 
+    // pad_readable does the focus gating. SDL's own background filter keeps
+    // only axis motion toward an axis's recorded rest value, and SDL 2.30
+    // re-records a trigger's rest from its first motion when that lands near
+    // mid-travel; an unfocused copy then drops the release and keeps the
+    // trigger half-pulled, which reads as a held trigger on the next focus.
+    SDL_SetHint(SDL_HINT_JOYSTICK_ALLOW_BACKGROUND_EVENTS, "1");
+
     if (SDL_InitSubSystem(SDL_INIT_GAMECONTROLLER) != 0) {
         DLOG("input", "no game-controller subsystem: %s", SDL_GetError());
         return;

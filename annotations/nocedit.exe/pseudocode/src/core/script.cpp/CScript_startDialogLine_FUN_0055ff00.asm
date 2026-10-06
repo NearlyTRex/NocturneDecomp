@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float __cdecl core_script_cpp_CScript_getDialogDuration_FUN_0055ff00(CScript *this_ptr,char *actor_specifier,char *sound_name,char *dialog_text)
+; float __cdecl core_script_cpp_CScript_startDialogLine_FUN_0055ff00(CScript *this_ptr,char *actor_specifier,char *sound_name,char *dialog_text)
 ;
 ; Parameters:
 ; CScript *        Stack[0x4]:4   this_ptr
@@ -45,7 +45,7 @@
 section .text
 
     PUSH EBX                            ; 0055ff00
-        ;   Label: core_script.cpp_CScript_getDialogDuration_FUN_0055ff00
+        ;   Label: core_script.cpp_CScript_startDialogLine_FUN_0055ff00
     PUSH ESI                            ; 0055ff01
     PUSH EDI                            ; 0055ff02
     PUSH EBP                            ; 0055ff03

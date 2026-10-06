@@ -12,12 +12,12 @@ SUMMARY
 ----------------------------------------------------------------------------------------------------
 
   Functions checked: 6911
-  Functions with suspicious globals: 105
-  Total suspicious global references: 176
+  Functions with suspicious globals: 106
+  Total suspicious global references: 179
 
   Most commonly misresolved globals:
     g_SfxOptions                                       13 functions
-    g_CNetGamePtr                                      10 functions
+    g_CNetGamePtr                                      11 functions
     g_KeyboardState                                    9 functions
     g_WindowHeight                                     7 functions
     g_CKeysPtr                                         6 functions
@@ -27,17 +27,17 @@ SUMMARY
     g_ColorCubeLookup                                  4 functions
     g_HeroCount                                        4 functions
     g_CDemonCameraInstance                             4 functions
+    g_HeroActors                                       3 functions
     g_ModalDialogActive                                3 functions
     g_ThemeFont                                        3 functions
     g_GetLastErrorFunc                                 3 functions
-    g_HeroActors                                       2 functions
     g_CStrangerClassInfo                               2 functions
     g_TextureCacheInstance                             2 functions
     g_MirrorCullCameraState                            2 functions
     g_CScriptPtr                                       2 functions
     g_SimFrameCount                                    2 functions
 
-  .keep files with issues: 72 (these need manual review)
+  .keep files with issues: 73 (these need manual review)
   Raw .cpp files with issues: 33
 
 ====================================================================================================
@@ -265,6 +265,22 @@ core_menu.cpp_showOptionsScreen_FUN_00512d30  [.keep]  (3 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+core_script.cpp_CScript_startDialogLine_FUN_0055ff00  [.keep]  (3 suspicious globals)
+  File: core/script.cpp
+
+  g_CNetGamePtr
+    Used at lines: 61
+    NOT found in function reference list
+
+  g_HeroActors
+    Used at lines: 62, 63, 64
+    NOT found in function reference list
+
+  g_LocalHeroIndex
+    Used at lines: 63, 64
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 core_game.cpp_CGame_beginFadeOut_FUN_004e0960  [.keep]  (2 suspicious globals)
   File: core/game.cpp
 
@@ -293,11 +309,11 @@ core_game.cpp_CGame_runGameSession_FUN_004daf80  [.keep]  (2 suspicious globals)
   File: core/game.cpp
 
   g_CurrentGameTime
-    Used at lines: 225
+    Used at lines: 228
     NOT found in function reference list
 
   g_SimFrameCount
-    Used at lines: 180
+    Used at lines: 178
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -329,7 +345,7 @@ core_netgame.cpp_CNetGame_runLobby_FUN_00541390  [.keep]  (2 suspicious globals)
   File: core/netgame.cpp
 
   g_InputKeyMask
-    Used at lines: 42, 325
+    Used at lines: 42, 333
     NOT found in function reference list
 
   g_SimFrameCount

@@ -50,6 +50,14 @@ void nocturne_net_camera_apply_if_due(int sequence_number);
 // net resets when a mission is torn down.
 void nocturne_net_camera_reset(void);
 
+struct CDemonActor;
+
+// The actor a script's focus on `target` means on this machine. Every player
+// watches their own hero, so in a network game a focus on any player hero -
+// `$`, which can be any of them, or a hero by name - becomes this machine's
+// hero; any other target is returned unchanged.
+struct CDemonActor *nocturne_net_camera_focus_actor(struct CDemonActor *target);
+
 #ifdef __cplusplus
 }
 #endif

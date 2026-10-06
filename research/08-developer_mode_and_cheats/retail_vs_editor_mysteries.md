@@ -52,14 +52,14 @@ The retail build presumably doesn't have the line-192 clobber; it probably has t
 **DON'T RE-CHASE:**
 
 - `loadStreamingSoundFile` having no callers. True, and irrelevant — it is a separate entry point that the dialogue path does not use. Streaming is reached through `startSfx`, which decides from the file extension. Restoring a caller for it is work with no symptom behind it.
-- A missing audio-trigger call in `CScript::step`. There isn't one to find; the trigger is in `getDialogDuration`, and it is in the original decompile.
+- A missing audio-trigger call in `CScript::step`. There isn't one to find; the trigger is in `startDialogLine`, and it is in the original decompile.
 - A "voices off" global. There is none.
 - `NOCTURNE_AUTHENTIC_VOICE` as a gate over the dialogue call site. There is nothing there to gate — the call site is the binary's own.
 - The `.wav`-then-`.mp3` fallback in `dbLoad`, and the `.mp3` branch in `startSfx`/`getSampleInfo`. All original, all unmodified. WAVs always worked; the extension handling was never the problem.
 
 ### Where the dialogue audio actually happens
 
-`core/script.cpp:CScript::getDialogDuration_FUN_0055ff00` does both halves, and both calls are in the unmodified decompile:
+`core/script.cpp:CScript::startDialogLine_FUN_0055ff00` does both halves, and both calls are in the unmodified decompile:
 
 ```c
 local_28 = CSound::getSoundDuration(g_CSoundPtr, sound_name);   /* opens the file */
@@ -124,7 +124,7 @@ Both callees take a `CSfxSample`, which is `0x180` — 384 bytes, so the header 
 
 **No "voices off" global flag.** Searched for `voice_*`, `speech_*`, `dialog_disabled`, `cinematic_audio` — nothing matches, and nothing needs to.
 
-**Subtitle render is purely visual.** `core/script.cpp:CScript::renderSubtitles_FUN_00559b20` only touches the framebuffer. The audio is triggered from `getDialogDuration`, which is also what sets the speaker's `speech_timer`, so the two stay in step by construction.
+**Subtitle render is purely visual.** `core/script.cpp:CScript::renderSubtitles_FUN_00559b20` only touches the framebuffer. The audio is triggered from `startDialogLine`, which is also what sets the speaker's `speech_timer`, so the two stay in step by construction.
 
 ### Still open
 

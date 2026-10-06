@@ -129,6 +129,11 @@ void nocturne_trigl_envmap_pass_end(void);
 // NOCTURNE_AUTHENTIC_NETPLAY.
 #include "game/hero_light.h"
 
+// The light button for hero classes that never read it, switching the gun-
+// mounted flashlight (nocturne_gun_flashlight_*), reached from netgame.cpp's
+// applySimFrameHistory. Gated by NOCTURNE_AUTHENTIC_HERO_ACTIONS.
+#include "game/gun_flashlight.h"
+
 // One Baron per Baron weapon (nocturne_baron_*), reached from the baron and
 // game TUs. Inert under NOCTURNE_AUTHENTIC_NETPLAY.
 #include "game/hero_baron.h"
@@ -158,6 +163,11 @@ void nocturne_trigl_envmap_pass_end(void);
 // playing (nocturne_script_cue_*), reached from event.cpp's executeCommand.
 // Gated by NOCTURNE_AUTHENTIC_CUE_RETRIGGER.
 #include "game/script_cue.h"
+
+// Caption and sound replacements for dialogue lines spoken by a hero they were
+// not recorded for (nocturne_dialogue_*), reached from script.cpp's
+// startDialogLine. Gated by NOCTURNE_AUTHENTIC_NETPLAY.
+#include "game/dialogue_override.h"
 
 // The detailed sound error console lines (nocturne_sound_report_*), reached
 // from snddx.cpp's allocateSfx. Gated by NOCTURNE_AUTHENTIC_SOUND_ERROR_LOG.

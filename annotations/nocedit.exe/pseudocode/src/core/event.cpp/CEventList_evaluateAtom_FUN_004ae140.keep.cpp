@@ -874,6 +874,11 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
                             }
                             else {
                               local_e0 = (uint)(pCVar7->is_wearing_gas_mask == 2);
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+                              if (nocturne_net_sim_gas_spares(pCVar7) != 0) {
+                                local_e0 = 1;
+                              }
+#endif
                               *parse_position = *parse_position + local_1c;
                             }
                           }

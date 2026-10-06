@@ -43,7 +43,7 @@ CDemonActor * __cdecl core_event_cpp_resolveActorByName_FUN_004aa400(char *name,
       actor_ptr = (CDemonActor *)g_HeroActors[g_LocalHeroIndex];
     }
     else {
-      actor_ptr = (CDemonActor *)g_HeroActors[0];
+      actor_ptr = (CDemonActor *)nocturne_net_sim_script_hero();
     }
 #endif
   }

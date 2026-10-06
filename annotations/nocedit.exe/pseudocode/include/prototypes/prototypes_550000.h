@@ -168,5 +168,5 @@ char * __cdecl core_script_cpp_CScript_validateSyntax_FUN_0055a4b0(CScript *this
 void __cdecl core_script_cpp_CScript_initRuntime_FUN_0055a540(CScript *this_ptr);
 void __cdecl core_script_cpp_CScript_executeInitSection_FUN_0055a6c0(CScript *this_ptr);
 int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,float *time_remaining);
-float __cdecl core_script_cpp_CScript_getDialogDuration_FUN_0055ff00(CScript *this_ptr,char *actor_specifier,char *sound_name,char *dialog_text);
+float __cdecl core_script_cpp_CScript_startDialogLine_FUN_0055ff00(CScript *this_ptr,char *actor_specifier,char *sound_name,char *dialog_text);
 

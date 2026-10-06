@@ -26,7 +26,11 @@
 //   - inside the current static camera's frustum, scored towards the middle of
 //     frame so the player lands where the camera is actually aimed,
 //   - clear of the other heroes,
-// and falls back to the mission's authored placeholder spot — the one position
+//   - outside any script hazard volume a revived hero would die in again
+//     (ACT2's gas room, by nocturne_net_sim_spot_in_gas),
+// then to the host's last footing alive on floor outside a hazard, for any
+// hero clear of the anchor and the others, and falls back to the mission's
+// authored placeholder spot — the one position
 // a designer signed off on — when no candidate qualifies.
 //
 // The same action doubles as an arcade continue: a hero that is dead when the

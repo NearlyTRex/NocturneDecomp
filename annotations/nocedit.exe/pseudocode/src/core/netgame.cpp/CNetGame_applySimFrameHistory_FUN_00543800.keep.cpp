@@ -41,6 +41,7 @@ void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_00543800(CNetGam
   }
   this_ptr->players[this_ptr->local_player_index].sim_frame_index = sim_frame->sequence_number + 1;
 #if !NOCTURNE_AUTHENTIC_NETPLAY
+  nocturne_gun_flashlight_apply_inputs();
   nocturne_net_respawn_apply_if_due(sim_frame->sequence_number);
   nocturne_net_weapon_apply_if_due(sim_frame->sequence_number);
   nocturne_net_camera_apply_if_due(sim_frame->sequence_number);

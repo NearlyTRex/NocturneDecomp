@@ -19,7 +19,7 @@
 ;   core_mission.cpp_CDemonMission_generateUniqueActorName_FUN_00524660 at 005246e4
 ;   core_script.cpp_CCmdParm_getCharacterByContext_FUN_005627f0 at 0056280e
 ;   core_script.cpp_CScript_collectLabels_FUN_00566fa0 at 00566fdc
-;   core_script.cpp_CScript_getDialogDuration_FUN_0055ff00 at 0055ff79
+;   core_script.cpp_CScript_startDialogLine_FUN_0055ff00 at 0055ff79
 ;   ... and 37 more
 ;
 ; Called Functions:

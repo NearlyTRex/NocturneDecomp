@@ -265,6 +265,13 @@ extern "C" {
 // one started.
 int nocturne_hero_gabriella_pickup(struct CGabriella *gabriella);
 
+// How far above or below her reach point CGabriella::findAndPickupNearbyObject
+// takes an object. Hers is 2 units, which leaves items on a table or shelf out
+// of reach - the dynamite in MINE's gas room sits 2.2 to 2.6 above her - where
+// CStranger::tryPickupObject takes them within 5. A player Gabriella, who
+// plays the Stranger's missions, takes his 5; any other keeps 2.
+float nocturne_hero_gabriella_pickup_reach(struct CGabriella *gabriella);
+
 // The locomotion state to ask for, given the one CGabriella::process chose from
 // walk, run and backup (0 for none of them): STAND while a climb press waits for
 // her to stand; STRAFE_L or STRAFE_R from strafe input when the current motion
