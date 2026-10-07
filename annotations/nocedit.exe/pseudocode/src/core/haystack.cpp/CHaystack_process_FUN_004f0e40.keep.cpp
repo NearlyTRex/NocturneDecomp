@@ -42,7 +42,7 @@ void __cdecl core_haystack_cpp_CHaystack_process_FUN_004f0e40(CHaystack *this_pt
     return;
   }
 #if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
-  nocturne_hero_items_process(&this_ptr->base);
+  nocturne_hero_frame(&this_ptr->base,delta_time);
 #endif
   if ((this_ptr->base).control_type == HERO_CONTROL_AI) {
     core_haystack_cpp_CHaystack_updateAI_FUN_004f13f0(this_ptr,delta_time);
@@ -207,7 +207,11 @@ switchD_004f12ce_caseD_8:
     local_3c.x = local_3c.x + (this_ptr->base).base.velocity.x * delta_time;
     local_3c.y = local_3c.y + (this_ptr->base).base.velocity.y * delta_time;
     local_3c.z = local_3c.z + delta_time * (this_ptr->base).base.velocity.z;
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+    nocturne_hero_fall_move(&this_ptr->base,&local_3c);
+#else
     core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40((CCharacter *)this_ptr,&local_3c);
+#endif
   }
   else {
     if ((this_ptr->base).base.grabbed_type == 0) {

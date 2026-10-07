@@ -49,7 +49,7 @@ void __cdecl core_scat_cpp_CScat_process_FUN_005571f0(CScat *this_ptr,float delt
     return;
   }
 #if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
-  nocturne_hero_items_process(&this_ptr->base);
+  nocturne_hero_frame(&this_ptr->base,delta_time);
 #endif
   (this_ptr->base).base.turn_speed = delta_time * (float)12.566370614;
   if (pCVar9->letterbox_mode != 0) {
@@ -112,12 +112,8 @@ void __cdecl core_scat_cpp_CScat_process_FUN_005571f0(CScat *this_ptr,float delt
           }
         }
 #if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
-        if (((this_ptr->base).player_input.action_state.fire != 0) &&
-            (this_ptr->guns_drawn == 0) &&
-            ((this_ptr->base).control_type != HERO_CONTROL_AI)) {
-          if (nocturne_hero_interact(&this_ptr->base) != 0) {
-            (this_ptr->base).player_input.action_state.fire = 0;
-          }
+        if (this_ptr->guns_drawn == 0) {
+          nocturne_hero_fire_interact(&this_ptr->base);
         }
 #endif
         if (((((this_ptr->base).player_input.action_state.fire != 0) && (this_ptr->guns_drawn != 0))
@@ -228,7 +224,11 @@ LAB_00557637:
     local_4c.x = fVar9 + fVar2 + (this_ptr->base).base.velocity.x * delta_time;
     local_4c.y = fVar3 + fVar4 + (this_ptr->base).base.velocity.y * delta_time;
     local_4c.z = fVar5 + fVar6 + delta_time * (this_ptr->base).base.velocity.z;
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+    nocturne_hero_fall_move(&this_ptr->base,&local_4c);
+#else
     core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40((CCharacter *)this_ptr,&local_4c);
+#endif
   }
   else {
     pCVar11 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10

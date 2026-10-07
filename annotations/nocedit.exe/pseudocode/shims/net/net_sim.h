@@ -182,7 +182,9 @@ void nocturne_net_sim_forget_trigger_hero(void);
 // The room's two dbSay lines are the Stranger's recordings; spoken by another
 // hero they take a caption from game/dialogue_override.h and play no sound.
 
-// The hero `$` means in a network game.
+// The hero `$` means: the local hero outside a network game, as shipped, and
+// the choice above in one. Both resolvers call it — CScript's getActor and
+// CEventList's resolveActorByName.
 struct CHero *nocturne_net_sim_script_hero(void);
 
 // Nonzero when iswearinggasmask must pass for `hero` whatever its mask: a

@@ -13,7 +13,7 @@ Neither is a limit on the picture. What does limit software is two renderer-owne
 480 lines — see *What actually caps software*. Software above 640x480 is not viable.
 
 **The resolution list is one table.** Gated by `NOCTURNE_AUTHENTIC_RESOLUTION_LIST`;
-`shims/game/resolution.{h,cpp}` drives both the label and the stepping so they cannot disagree.
+`shims/gl/resolution.{h,cpp}` drives both the label and the stepping so they cannot disagree.
 Eight modes, including 1600x1200 and a reachable 400x300. Accelerated only: the acceleration
 gate is a correctness requirement and is **not** part of that flag.
 
@@ -270,7 +270,7 @@ list a two-entry loop. Both shipped binaries do this — in `nocedit.exe` it is 
 `CMP EDI,0x300` case, so the `JNZ` at `0x0051151b` takes the default.
 
 `NOCTURNE_AUTHENTIC_RESOLUTION_LIST = 0` replaces both the label and the stepping with one
-ordered table in `shims/game/resolution.cpp`:
+ordered table in `shims/gl/resolution.cpp`:
 
 ```
 320x240  400x300  512x384  640x480  800x600  1024x768  1280x1024  1600x1200

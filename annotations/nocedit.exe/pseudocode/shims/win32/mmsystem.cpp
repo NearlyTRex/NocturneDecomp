@@ -83,9 +83,7 @@ static MMRESULT shim_joyGetPos(unsigned int uJoyID, LPJOYINFO pji) {
 }
 
 // MCI functions are implemented in mci_video.cpp (libav-backed AVI playback)
-extern MCIERROR shim_mciSendStringA(LPCSTR lpstrCommand, LPSTR lpstrReturnString,
-                                     UINT uReturnLength, HWND hwndCallback);
-extern BOOL shim_mciGetErrorStringA(MCIERROR mcierr, LPSTR pszText, UINT cchText);
+#include "win32/mci_video.h"
 
 static MMRESULT shim_timeBeginPeriod(unsigned int uPeriod) {
     return TIMERR_NOERROR;

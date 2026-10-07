@@ -4,7 +4,7 @@
 //
 // See ui_scale.h for why the HUD needs this at all.
 
-#include "game/ui_scale.h"
+#include "core/ui_scale.h"
 #include "shim_config.h"
 
 #include "nocturne.h"
@@ -17,18 +17,23 @@
 // and a glyph a few dozen, so this covers UI_MAX_SCALE with room to spare.
 #define UI_ROW_MAX 4096
 
+// How many times `base` fits `extent`, rounded to nearest rather than
+// truncated — so 768 and 720 lines step up to 2 instead of sitting at 1 with
+// the HUD half the size it should be — and held to [1, max].
+static int round_scale(int extent, int base, int max) {
+    int scale;
+    if (extent < 1) { return 1; }
+    scale = (extent + base / 2) / base;
+    if (scale < 1) { scale = 1; }
+    if (scale > max) { scale = max; }
+    return scale;
+}
+
 int nocturne_ui_scale(void) {
 #if NOCTURNE_AUTHENTIC_HUD_SCALE
     return 1;
 #else
-    int scale;
-    if (g_WindowHeight < 1) { return 1; }
-    // Round to nearest rather than truncating, so 768 and 720 step up to 2
-    // instead of sitting at 1 with the HUD half the size it should be.
-    scale = (g_WindowHeight + UI_BASE_HEIGHT / 2) / UI_BASE_HEIGHT;
-    if (scale < 1) { scale = 1; }
-    if (scale > UI_MAX_SCALE) { scale = UI_MAX_SCALE; }
-    return scale;
+    return round_scale(g_WindowHeight, UI_BASE_HEIGHT, UI_MAX_SCALE);
 #endif
 }
 
@@ -36,23 +41,12 @@ int nocturne_ui_scale(void) {
 #define GOGGLES_BASE_WIDTH  320
 #define GOGGLES_BASE_HEIGHT 240
 
-// Round to nearest, the same way nocturne_ui_scale does, so a mode sitting
-// between two multiples steps to the closer one instead of truncating down.
-static int goggles_axis_scale(int extent, int base) {
-    int scale;
-    if (extent < 1) { return 1; }
-    scale = (extent + base / 2) / base;
-    if (scale < 1) { scale = 1; }
-    if (scale > NOCTURNE_GOGGLES_MAX_SCALE) { scale = NOCTURNE_GOGGLES_MAX_SCALE; }
-    return scale;
+int nocturne_ui_goggles_scale_x(void) {
+    return round_scale(g_WindowWidth, GOGGLES_BASE_WIDTH, NOCTURNE_GOGGLES_MAX_SCALE);
 }
 
-int nocturne_goggles_scale_x(void) {
-    return goggles_axis_scale(g_WindowWidth, GOGGLES_BASE_WIDTH);
-}
-
-int nocturne_goggles_scale_y(void) {
-    return goggles_axis_scale(g_WindowHeight, GOGGLES_BASE_HEIGHT);
+int nocturne_ui_goggles_scale_y(void) {
+    return round_scale(g_WindowHeight, GOGGLES_BASE_HEIGHT, NOCTURNE_GOGGLES_MAX_SCALE);
 }
 
 int nocturne_ui_text_scale_supported(void) {

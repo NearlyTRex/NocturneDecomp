@@ -11,8 +11,10 @@
 #include "renderer/trigl_gl.h"
 #include "renderer/trigl_vertex.h"
 #include "gl/gl_api.h"
+#include "gl/gl_program.h"
 #include "gl/gl_present.h"
 #include "core/debug_log.h"
+#include "core/fnv1a.h"
 
 #include <stddef.h>
 #include <stdint.h>
@@ -296,82 +298,17 @@ bool have_entry_points() {
            gl.ActiveTexture != nullptr && gl.DrawElements != nullptr;
 }
 
-GLuint compile_stage(GLenum type, const char *source, const char *label) {
-    GLuint shader = gl.CreateShader(type);
-    if (shader == 0) {
-        DLOG("render","trigl_gl: glCreateShader failed for %s", label);
-        return 0;
-    }
-    gl.ShaderSource(shader, 1, &source, nullptr);
-    gl.CompileShader(shader);
-
-    GLint ok = 0;
-    gl.GetShaderiv(shader, GL_COMPILE_STATUS, &ok);
-    if (!ok) {
-        char log[1024];
-        log[0] = '\0';
-        if (gl.GetShaderInfoLog != nullptr) {
-            gl.GetShaderInfoLog(shader, (GLsizei)sizeof(log), nullptr, log);
-        }
-        DLOG("render","trigl_gl: %s failed to compile: %s", label, log);
-        gl.DeleteShader(shader);
-        return 0;
-    }
-    return shader;
-}
-
 bool build_program() {
-    GLuint vs = compile_stage(GL_VERTEX_SHADER, kVertexSource, "vertex shader");
-    if (vs == 0) return false;
-    GLuint fs = compile_stage(GL_FRAGMENT_SHADER, kFragmentSource, "fragment shader");
-    if (fs == 0) {
-        gl.DeleteShader(vs);
-        return false;
-    }
-
-    GLuint program = gl.CreateProgram();
+    GLuint program = nocturne_gl_build_program(kVertexSource, kFragmentSource, "trigl_gl");
     if (program == 0) {
-        DLOG("render","trigl_gl: glCreateProgram failed");
-        gl.DeleteShader(vs);
-        gl.DeleteShader(fs);
-        return false;
-    }
-    gl.AttachShader(program, vs);
-    gl.AttachShader(program, fs);
-    // Position on attribute 0. In a compatibility context attribute 0 aliases
-    // gl_Vertex, and a draw with neither it nor the fixed-function vertex array
-    // enabled renders nothing at all, silently and with no GL error.
-    if (gl.BindAttribLocation != nullptr) {
-        gl.BindAttribLocation(program, 0, "a_pos");
-    }
-    gl.LinkProgram(program);
-    gl.DeleteShader(vs);
-    gl.DeleteShader(fs);
-
-    GLint linked = 0;
-    gl.GetProgramiv(program, GL_LINK_STATUS, &linked);
-    if (!linked) {
-        char log[1024];
-        log[0] = '\0';
-        if (gl.GetProgramInfoLog != nullptr) {
-            gl.GetProgramInfoLog(program, (GLsizei)sizeof(log), nullptr, log);
-        }
-        DLOG("render","trigl_gl: link failed: %s", log);
-        if (gl.DeleteProgram != nullptr) gl.DeleteProgram(program);
         return false;
     }
 
     g_program       = program;
-    g_attr_pos      = gl.GetAttribLocation(program, "a_pos");
+    g_attr_pos      = 0;                      // pinned by nocturne_gl_build_program
     g_attr_color    = gl.GetAttribLocation(program, "a_color");
     g_attr_specular = gl.GetAttribLocation(program, "a_specular");
     g_attr_uv       = gl.GetAttribLocation(program, "a_uv");
-    if (g_attr_pos != 0) {
-        DLOG("render","trigl_gl: a_pos landed at %d, not 0 — refusing", (int)g_attr_pos);
-        if (gl.DeleteProgram != nullptr) gl.DeleteProgram(program);
-        g_program = 0;
-        return false;
-    }
 
     g_loc_projection     = gl.GetUniformLocation(program, "u_projection");
     g_loc_tex            = gl.GetUniformLocation(program, "u_tex");
@@ -479,15 +416,12 @@ int         g_texture_count = 0;
 unsigned name_hash(const char *name, int dimension) {
     // FNV-1a over the name plus the dimension. Bounded, so a record whose name
     // is not terminated within the entry width cannot run away.
-    unsigned h = 2166136261u;
+    unsigned h = NOCTURNE_FNV1A_BASIS;
     for (int i = 0; i < kTextureNameMax; ++i) {
-        h ^= (unsigned char)name[i];
-        h *= 16777619u;
+        h = nocturne_fnv1a_step(h, (unsigned char)name[i]);
         if (name[i] == '\0') break;
     }
-    h ^= (unsigned)dimension;
-    h *= 16777619u;
-    return h;
+    return (h ^ (unsigned)dimension) * 16777619u;
 }
 
 bool same_name(const char *a, const char *b) {

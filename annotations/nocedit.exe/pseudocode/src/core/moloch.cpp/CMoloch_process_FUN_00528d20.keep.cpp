@@ -50,7 +50,7 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch *this_ptr,floa
     return;
   }
 #if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
-  nocturne_hero_items_process(&this_ptr->base);
+  nocturne_hero_frame(&this_ptr->base,delta_time);
 #endif
   fVar4 = (this_ptr->base).invincibility_timer - delta_time;
   (this_ptr->base).invincibility_timer = fVar4;
@@ -106,12 +106,7 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch *this_ptr,floa
         (this_ptr->base).player_input.action_state.draw = 0;
       }
 #if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
-      if (((this_ptr->base).player_input.action_state.fire != 0) &&
-          ((this_ptr->base).control_type != HERO_CONTROL_AI)) {
-        if (nocturne_hero_interact(&this_ptr->base) != 0) {
-          (this_ptr->base).player_input.action_state.fire = 0;
-        }
-      }
+      nocturne_hero_fire_interact(&this_ptr->base);
       uVar9 = nocturne_moloch_fire(this_ptr,uVar9);
 #endif
       (this_ptr->base).base.turn_angle_accumulator =

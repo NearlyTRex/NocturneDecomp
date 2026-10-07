@@ -41,9 +41,6 @@
 // generates inside the lead window.
 #define WEAPON_MAX_PENDING 16
 
-// Matches the player table the shipped protocol supports.
-#define WEAPON_MAX_PLAYERS 4
-
 #pragma pack(push, 1)
 typedef struct SNetPacket_WeaponSelect {
     SNetPacketHeader header;         // 0x0
@@ -63,7 +60,7 @@ static int s_pending_count = 0;
 // Highest serial seen from each origin. A re-broadcast carries a serial we have
 // already taken, so it is dropped; a first copy that was lost still arrives
 // with a serial above the mark and is accepted.
-static int s_highest_serial[WEAPON_MAX_PLAYERS];
+static int s_highest_serial[NOCTURNE_HERO_SLOTS];
 
 // Our own outgoing serial.
 static int s_next_serial = 1;
@@ -72,20 +69,13 @@ static int s_reported_late = 0;
 
 // -----------------------------------------------------------------------------
 
-static int weapon_is_network_game(void)
-{
-    return ((g_CNetGamePtr != (CNetGame *)0x0) &&
-            (g_CNetGamePtr->connection_type != CONNECTION_NONE) &&
-            (g_CNetGamePtr->network_mode == NET_MODE_PLAYING));
-}
-
 // The selection itself. Deliberately the only place that touches an inventory,
 // so the local and remote paths cannot drift apart.
 static void weapon_apply(int hero_index, int action, int category, int direction)
 {
     CHero *hero;
 
-    if ((hero_index < 0) || (WEAPON_MAX_PLAYERS <= hero_index)) {
+    if ((hero_index < 0) || (NOCTURNE_HERO_SLOTS <= hero_index)) {
         return;
     }
     hero = g_HeroActors[hero_index];
@@ -110,15 +100,7 @@ static void weapon_apply(int hero_index, int action, int category, int direction
 
 static void weapon_broadcast(const SNetPacket_WeaponSelect *request)
 {
-    CNetGame *net_game = g_CNetGamePtr;
-    int       i;
-
-    for (i = 0; i < net_game->player_count; i++) {
-        if (i != net_game->local_player_index) {
-            core_netgame_cpp_CNetGame_send_FUN_005411c0(
-                net_game, i, (SNetPacketHeader *)&request->header);
-        }
-    }
+    nocturne_net_session_broadcast((SNetPacketHeader *)&request->header);
 }
 
 static void weapon_queue(const SNetPacket_WeaponSelect *request)
@@ -142,22 +124,17 @@ extern "C" void nocturne_net_weapon_apply_local(int action, int category, int di
 extern "C" void nocturne_net_weapon_request(int action, int category, int direction)
 {
     SNetPacket_WeaponSelect request;
-    CNetGame               *net_game;
 
-    if (weapon_is_network_game() == 0) {
+    if (nocturne_net_session_playing() == 0) {
         // Single player, the lobby, or a mission not yet running: behave
         // exactly as the shipped code did, immediately and locally.
         weapon_apply(g_LocalHeroIndex, action, category, direction);
         return;
     }
 
-    net_game = g_CNetGamePtr;
-    std::memset(&request, 0, sizeof(request));
-    request.header.size     = sizeof(SNetPacket_WeaponSelect);
-    request.header.type     = (ENetPacketType)NOCTURNE_NET_PACKET_WEAPON;
-    request.apply_sequence  =
-        net_game->players[net_game->local_player_index].sim_frame_index + WEAPON_LEAD_FRAMES;
-    request.origin_player   = net_game->local_player_index;
+    nocturne_net_packet_init(&request, (int)sizeof(request), NOCTURNE_NET_PACKET_WEAPON);
+    request.apply_sequence  = nocturne_net_session_local_frame() + WEAPON_LEAD_FRAMES;
+    request.origin_player   = g_CNetGamePtr->local_player_index;
     request.serial          = s_next_serial;
     request.hero_index      = g_LocalHeroIndex;
     request.action          = action;
@@ -175,13 +152,11 @@ extern "C" int nocturne_net_weapon_on_packet(const void *packet, int packet_size
 {
     const SNetPacket_WeaponSelect *incoming = (const SNetPacket_WeaponSelect *)packet;
 
-    if ((packet == (const void *)0x0) || (packet_size < (int)sizeof(SNetPacket_WeaponSelect))) {
+    if (nocturne_net_packet_is(packet, packet_size, NOCTURNE_NET_PACKET_WEAPON,
+                               (int)sizeof(SNetPacket_WeaponSelect)) == 0) {
         return 0;
     }
-    if (incoming->header.type != (ENetPacketType)NOCTURNE_NET_PACKET_WEAPON) {
-        return 0;
-    }
-    if ((incoming->origin_player < 0) || (WEAPON_MAX_PLAYERS <= incoming->origin_player)) {
+    if ((incoming->origin_player < 0) || (NOCTURNE_HERO_SLOTS <= incoming->origin_player)) {
         return 1;               // ours by type, but not addressable - consumed
     }
 

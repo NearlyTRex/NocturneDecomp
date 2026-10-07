@@ -56,9 +56,7 @@
 
 struct CVector3f;
 
-// The packet type. 0x11 and 0x12 are taken by net_sync and net_weapon; the
-// shipped protocol's own types stop at PACKET_PLAYER_INPUT (0x10).
-#define NOCTURNE_NET_PACKET_MISSION 0x13
+// The packet type is NOCTURNE_NET_PACKET_MISSION (net_packets.h).
 
 // Mission filenames are "castle1.msn" and the like. g_PendingMissionName is
 // sized far larger, but nothing that fits in a .msn directory listing comes

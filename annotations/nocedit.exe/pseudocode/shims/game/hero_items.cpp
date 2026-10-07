@@ -3,18 +3,6 @@
 
 namespace {
 
-int is_player_hero(CHero *hero)
-{
-    int i;
-
-    for (i = 0; (i < 4) && (i < g_HeroCount); i++) {
-        if (g_HeroActors[i] == hero) {
-            return 1;
-        }
-    }
-    return 0;
-}
-
 // CScat::process and CIcePick::process already call updateInventory.
 int ticks_own_inventory(CHero *hero)
 {
@@ -40,7 +28,7 @@ extern "C" void nocturne_hero_items_process(CHero *hero)
     CDemonActor *selected;
     EDeathState death_state;
 
-    if ((hero == (CHero *)0x0) || (is_player_hero(hero) == 0)) {
+    if ((hero == (CHero *)0x0) || (nocturne_hero_is_player(hero) == 0)) {
         return;
     }
     if (ticks_own_inventory(hero) == 0) {
@@ -65,7 +53,7 @@ extern "C" void nocturne_hero_items_process(CHero *hero)
 
 extern "C" float nocturne_hero_items_damage_taken(CHero *hero, SDamageInfo *damage_info)
 {
-    if (is_player_hero(hero) == 0) {
+    if (nocturne_hero_is_player(hero) == 0) {
         return (hero->base).hit_points;
     }
 

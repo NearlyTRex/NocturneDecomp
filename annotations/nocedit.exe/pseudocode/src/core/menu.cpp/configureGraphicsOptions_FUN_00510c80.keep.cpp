@@ -33,7 +33,6 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_00510c80(void)
   char *menu_ptrs [12];
   int extra_count;
   int menu_y;
-  int menu_ch;
 #endif
 #if !NOCTURNE_AUTHENTIC_WINDOW_MODE
   char window_line [256];
@@ -326,14 +325,7 @@ LAB_00510f71:
     menu_ptrs[extra_count] = menu_font_line;
     extra_count = extra_count + 1;
 #endif
-    menu_ch = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_ThemeFont,0x58);
-    menu_y = 0xfa;
-    if (g_WindowHeight < menu_y + (extra_count + 3) * menu_ch) {
-      menu_y = g_WindowHeight - (extra_count + 3) * menu_ch;
-    }
-    if (menu_y < 0) {
-      menu_y = 0;
-    }
+    menu_y = nocturne_menu_start_y(extra_count + 3);
     iVar7 = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000
                       (menu_ptrs,extra_count,&local_20,menu_y,pcVar14);
 #else
@@ -533,20 +525,8 @@ LAB_0051164c:
       g_UseDirect3D = 0;
       iVar3 = g_GraphicsCardCount;
 #else
-      // The shipped editor hardcodes both of these to 0 here, so the
-      // Acceleration line can only ever turn acceleration *off* — the third
-      // kill alongside the per-frame clobber and the Ctrl+D one. Make it the
-      // real toggle the retail build had.
       if (g_UseDirect3D == 0) {
-        // Selecting a renderer this build cannot load would fail immediately,
-        // so snap to an available one first. Which those are comes from the
-        // built-in module registry; no DLL is named here.
-        if (nocturne_builtin_dll_available(g_RendererDllPath) == 0) {
-          pcVar14 = (char *)nocturne_builtin_dll_next(g_RendererDllPath);
-          if (pcVar14 != (char *)0x0) {
-            strcpy(g_RendererDllPath,pcVar14);
-          }
-        }
+        nocturne_builtin_dll_snap(g_RendererDllPath);
         g_UseDirect3D = 1;
         engine_special_cpp_kill_FUN_005b71e0();
         engine_special_cpp_loadExternalRenderer_FUN_005b6750(0);
@@ -555,8 +535,6 @@ LAB_0051164c:
         g_UseDirect3D = 0;
         engine_special_cpp_kill_FUN_005b71e0();
       }
-      // loadExternalRenderer clears g_UseDirect3D if the load or validate
-      // failed, so re-read it rather than assuming the toggle stuck.
       if (g_UseDirect3D == 0) {
         g_GraphicsCardCount = 0;
       }
@@ -573,13 +551,7 @@ LAB_0051164c:
     case 3:
       if (g_GraphicsCardVendorIDs[g_CurrentGraphicsBoard] != 0x121a) {
 #if !NOCTURNE_AUTHENTIC_RENDERER_DLL
-        // Cycle only over renderers this build has compiled in, so the selector
-        // can never land on a DLL we can't load. The set is the module table in
-        // shims/builtin_dll.cpp — nothing is named here.
-        pcVar14 = (char *)nocturne_builtin_dll_next(g_RendererDllPath);
-        if (pcVar14 != (char *)0x0) {
-          strcpy(g_RendererDllPath,pcVar14);
-        }
+        nocturne_builtin_dll_step(g_RendererDllPath);
 #else
         iVar7 = _stricmp(g_RendererDllPath,"trid3d.dll");
         if (iVar7 == 0) {

@@ -19,8 +19,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_renderBackground_FUN_00419610(CBodyPart
 
   if (this_ptr->render_in_background == 0) {
 #if !NOCTURNE_AUTHENTIC_NETPLAY
-    if ((g_CNetGamePtr != (CNetGame *)0x0) &&
-        (g_CNetGamePtr->connection_type != CONNECTION_NONE)) {
+    if (nocturne_net_session_active() != 0) {
       return;
     }
 #endif

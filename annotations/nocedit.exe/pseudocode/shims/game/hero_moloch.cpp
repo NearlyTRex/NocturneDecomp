@@ -30,7 +30,7 @@ const float kClawRadius = 1.0f;
 
 // Which attack each player hero throws next. Indexed by hero slot, which every
 // machine shares.
-unsigned char s_next_attack[4];
+unsigned char s_next_attack[NOCTURNE_HERO_SLOTS];
 
 int is_attack_state(int state)
 {
@@ -44,39 +44,16 @@ int is_attack_state(int state)
     return 0;
 }
 
-int hero_slot(CHero *hero)
-{
-    int i;
-
-    for (i = 0; (i < 4) && (i < g_HeroCount); i++) {
-        if (g_HeroActors[i] == hero) {
-            return i;
-        }
-    }
-    return -1;
-}
-
 // CHaystack::checkMeleeHit, from a bone found by name so it survives the morph
 // re-initialising the model. Returns whether anyone was hit.
 int strike_from(CMoloch *moloch, CCharacter *target, const char *bone_name)
 {
-    CDeformableModelInstance *model = &(moloch->base).base.model;
-    CSkeleton *skeleton;
-    int bone_index;
-    CVector3f local_point;
     CVector3f world_point;
-    CVector3f *bone_point;
     SDamageInfo damage;
 
-    skeleton = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(model);
-    bone_index = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(skeleton, (char *)bone_name, 1);
-    if (bone_index < 0) {
+    if (nocturne_hero_bone_world(&(moloch->base).base, bone_name, &world_point) == 0) {
         return 0;
     }
-    bone_point = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0059fb00
-                           (model, &local_point, bone_index);
-    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-              ((CDemonActor *)moloch, &world_point, bone_point);
 
     core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&damage);
     damage.damage_amount = kClawDamage;
@@ -105,19 +82,6 @@ void strike(CMoloch *moloch)
 }
 
 } // namespace
-
-extern "C" void nocturne_moloch_setup_items(CHero *hero)
-{
-    CWeapon *amulet;
-
-    if (hero == (CHero *)0x0) {
-        return;
-    }
-    amulet = (hero->inventory).selected_weapon;
-    if (amulet != (CWeapon *)0x0) {
-        strcpy((amulet->base).actor_name, NOCTURNE_MOLOCH_AMULET_NAME);
-    }
-}
 
 extern "C" unsigned int nocturne_moloch_fire(CMoloch *moloch, unsigned int desired_state)
 {
@@ -158,7 +122,7 @@ extern "C" unsigned int nocturne_moloch_fire(CMoloch *moloch, unsigned int desir
     }
     // Fire is left set, so holding it swings again when this blow ends.
 
-    slot = hero_slot(hero);
+    slot = nocturne_hero_slot(hero);
     if (slot < 0) {
         return kAttackStates[0];
     }
@@ -169,35 +133,99 @@ extern "C" unsigned int nocturne_moloch_fire(CMoloch *moloch, unsigned int desir
 
 extern "C" void nocturne_moloch_attack_hit(CMoloch *moloch, int prev_state, float prev_frame)
 {
-    CMotionController *controller;
-    SMotion *motion;
-    float frame;
+    CCharacter *character;
+    int state;
     float hit_frame;
-    int crossed;
 
     if ((moloch == (CMoloch *)0x0) || (moloch->in_human_form != 0)) {
         return;
     }
-    controller = &(moloch->base).base.model.motion_controller;
-    motion = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(controller);
-    if (motion->state_index == MOLOCH_STATE_PUNCH) {
+    character = &(moloch->base).base;
+    state = nocturne_hero_motion_state(character);
+    if (state == MOLOCH_STATE_PUNCH) {
         hit_frame = kPunchHitFrame;
     }
-    else if (motion->state_index == MOLOCH_STATE_OVERHEADSMASH) {
+    else if (state == MOLOCH_STATE_OVERHEADSMASH) {
         hit_frame = kSmashHitFrame;
     }
     else {
         return;
     }
-    frame = controller->current_frame_number;
-    if ((prev_state != motion->state_index) || (frame < prev_frame)) {
-        crossed = hit_frame <= frame;                  // the motion started this frame
-    }
-    else {
-        crossed = (prev_frame < hit_frame) && (hit_frame <= frame);
-    }
-    if (crossed != 0) {
+    if (nocturne_hero_motion_crossed(character, state, prev_state, prev_frame, hit_frame) != 0) {
         strike(moloch);
+    }
+}
+
+namespace {
+
+// CMoloch's processDamage slot. The NPC goes straight to the inherited
+// CCharacter::processDamage, as shipped.
+void moloch_process_damage(CCharacter *character, SDamageInfo *damage_info)
+{
+    CHero *hero = (CHero *)character;
+
+    if (nocturne_hero_slot(hero) < 0) {
+        core_charactr_cpp_CCharacter_processDamage_FUN_0042c3c0(character, damage_info);
+        return;
+    }
+#if !NOCTURNE_AUTHENTIC_FRIENDLY_FIRE
+    if (nocturne_net_friendly_fire_block(character, damage_info) != 0) {
+        return;
+    }
+#endif
+
+    // CCharacter::processDamage's dispatch: EXPLODE explodes, FALL_APART and
+    // CHOPPED dismember, SHATTER shatters.
+    if ((damage_info->damage_type == DAMAGE_TYPE_EXPLODE) ||
+        (damage_info->damage_type == DAMAGE_TYPE_FALL_APART) ||
+        (damage_info->damage_type == DAMAGE_TYPE_SHATTER) ||
+        (damage_info->damage_type == DAMAGE_TYPE_CHOPPED)) {
+        damage_info->damage_type = DAMAGE_TYPE_GENERIC;
+    }
+
+    // The other heroes' processDamage prologue.
+    if ((hero->invincibility_timer != 0.0f) || (g_CGamePtr->god_mode_enabled != 0) ||
+        (g_CGamePtr->allow_damage_flag == 0)) {
+        damage_info->damage_amount = 0.0f;
+    }
+    if (0.0f < damage_info->damage_amount) {
+        hero->invincibility_timer = 0.5f;
+        character->hit_points = character->hit_points - damage_info->damage_amount;
+        if (character->hit_points < MOLOCH_MIN_HIT_POINTS) {
+            character->hit_points = MOLOCH_MIN_HIT_POINTS;
+        }
+        nocturne_hero_items_damage_taken(hero, damage_info);
+    }
+    core_charactr_cpp_CCharacter_processDamage_FUN_0042c3c0(character, damage_info);
+}
+
+// g_CMolochVTable with processDamage replaced. Copied on first use, after
+// static initialisation has filled the original.
+CHero_full_vtable s_moloch_vtable;
+int s_moloch_vtable_ready = 0;
+
+} // namespace
+
+extern "C" void nocturne_moloch_install_vtable(CMoloch *moloch)
+{
+    if (s_moloch_vtable_ready == 0) {
+        s_moloch_vtable = g_CMolochVTable;
+        s_moloch_vtable._uc.processDamage = (CCharacter_processDamage *)moloch_process_damage;
+        s_moloch_vtable_ready = 1;
+    }
+    (moloch->base).base.base.vtable._ub = &s_moloch_vtable._ub;
+}
+
+extern "C" void nocturne_moloch_regenerate(CMoloch *moloch, float delta_time)
+{
+    CCharacter *character = &(moloch->base).base;
+
+    if ((nocturne_hero_slot(&moloch->base) < 0) || (character->max_hit_points <= character->hit_points)) {
+        return;
+    }
+    character->hit_points = character->hit_points + delta_time * MOLOCH_REGEN_PER_SECOND;
+    if (character->max_hit_points < character->hit_points) {
+        character->hit_points = character->max_hit_points;
     }
 }
 

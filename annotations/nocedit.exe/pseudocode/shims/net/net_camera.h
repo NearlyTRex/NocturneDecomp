@@ -24,8 +24,7 @@
 //
 // Gated by NOCTURNE_AUTHENTIC_NETPLAY.
 
-// Packet type, after NOCTURNE_NET_PACKET_SKIP_COMMIT.
-#define NOCTURNE_NET_PACKET_CAMERA 0x18
+// The packet type is NOCTURNE_NET_PACKET_CAMERA (net_packets.h).
 
 #ifdef __cplusplus
 extern "C" {

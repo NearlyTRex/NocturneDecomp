@@ -62,14 +62,9 @@ void __cdecl core_scat_cpp_CScat_updateAiming_FUN_00558720(CScat *this_ptr,float
   }
 #if !NOCTURNE_AUTHENTIC_HERO_LOOK_AIM
   look_aim = ((this_ptr->base).control_type != HERO_CONTROL_AI);
-  look_pitch = (this_ptr->base).player_input.look_up_down_speed * (float)3.1415926535000001 *
-               (float)2 * delta_time + this_ptr->aim_pitch;
-  if (look_pitch < -1.570796f) {
-    look_pitch = -1.5707964;
-  }
-  if (1.5707964 < look_pitch) {
-    look_pitch = 1.5707964;
-  }
+  look_pitch = nocturne_hero_look_pitch(this_ptr->aim_pitch,
+                                        (this_ptr->base).player_input.look_up_down_speed,
+                                        delta_time, -1.5707964f, 1.5707964f);
 #endif
   if ((this_ptr->guns_drawn == 0) || (is_holstered != 0)) {
     this_ptr->aim_target = (CDemonActor *)0x0;

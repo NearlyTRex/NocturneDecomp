@@ -23,9 +23,6 @@ struct SPlayerInput;
 extern "C" {
 #endif
 
-// Nonzero while the loaded mission is an HQ mission.
-int nocturne_mission_is_hq(void);
-
 // Clears the draw and flashlight requests from `input` in an HQ mission.
 void nocturne_hq_filter_input(struct SPlayerInput *input);
 

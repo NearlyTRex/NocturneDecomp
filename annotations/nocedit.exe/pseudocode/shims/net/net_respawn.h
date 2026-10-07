@@ -70,17 +70,10 @@
 // re-sent every frame until it is due, because the transport is UDP and a lost
 // respawn would be a desync rather than a dropped update.
 //
-// The packet type is 0x15. The shipped protocol's own types stop at
-// PACKET_PLAYER_INPUT (0x10), and 0x11 to 0x14 are taken by net_sync,
-// net_weapon, net_mission and net_cheats. PACKET_UNUSED (0xE) is deliberately
-// NOT used: it is a gap inside the shipped enum's range, and leaving it alone
-// keeps the reconstruction's own numbering intact and every addition in one
-// contiguous block above it.
+// The packet type is NOCTURNE_NET_PACKET_RESPAWN (net_packets.h).
 //
 // Gated by NOCTURNE_AUTHENTIC_NETPLAY in shim_config_authentic.h: with authentic netplay
 // on, every entry point here compiles to nothing.
-
-#define NOCTURNE_NET_PACKET_RESPAWN 0x15
 
 #ifdef __cplusplus
 extern "C" {
@@ -136,7 +129,13 @@ int nocturne_net_respawn_hero_in_world(struct CHero *hero);
 
 // Host action. Chooses the spots, schedules them, and broadcasts. Returns 1 if
 // a respawn was scheduled, 0 if the request could not be honoured.
-int nocturne_net_respawn_request(void);
+//
+// With include_guests set every hero is moved and revived — the pause menu's
+// item, the one way a held guest is brought in. With it clear only the host's
+// own hero is, and every guest stays as it is: held, dead or alive. The packet
+// carries a mask of the heroes it moves, so the apply on each machine skips
+// the rest.
+int nocturne_net_respawn_request(int include_guests);
 
 // Feeds one received packet of type NOCTURNE_NET_PACKET_RESPAWN to this module.
 // Returns 1 if it was a respawn packet and has been consumed.
@@ -147,17 +146,10 @@ int nocturne_net_respawn_on_packet(const void *packet, int packet_size);
 // still in the future, and applies it on the frame it was scheduled for.
 void nocturne_net_respawn_apply_if_due(int sequence_number);
 
-// Brings a dead hero back where it stands: restores hit_points to
-// max_hit_points, undoes a destroying death, and forces STAND so the motion
-// controller stops wanting the death state. Returns 1 if the hero was dead and
-// is now revived, 0 if it was alive and nothing changed. Used by the respawn
-// apply above and by CDemonMission::createHeros for a hero carried into the
-// next mission.
-int nocturne_net_respawn_revive(struct CHero *hero);
-
 // The host's game over in a network game, shown from inside the session loop
-// so the session survives it. "Continue" requests a respawn, which revives
-// every downed hero including the host; "Quit" ends the network game, which
+// so the session survives it. "Continue" requests a respawn of the host alone;
+// a guest held out of the world or lying dead stays that way until the host
+// picks the pause menu's respawn item. "Quit" ends the network game, which
 // releases the guests. The single-player list's "Load game" is not offered:
 // a network session has no saves. Returns 1 to carry on, 0 after quitting.
 int nocturne_net_host_death_menu(void);

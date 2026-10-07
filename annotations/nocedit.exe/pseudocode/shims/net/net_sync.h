@@ -49,10 +49,7 @@
 // still never corrects: stopping is not a repair, it is the report arriving on
 // time.
 
-// One past PACKET_PLAYER_INPUT (0x10), the last type the shipped game assigns.
-// Declared here rather than added to ENetPacketType, which is generated from
-// Ghidra and is not ours to extend.
-#define NOCTURNE_NET_PACKET_SYNC_CHECK 0x11
+// The packet type is NOCTURNE_NET_PACKET_SYNC_CHECK (net_packets.h).
 
 #ifdef __cplusplus
 extern "C" {

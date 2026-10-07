@@ -64,9 +64,11 @@ struct CHero;
 struct CWeapon;
 struct CDemonActor;
 
-// The actor name of the Colonel's pistol. Its slot text and its bottomless
-// reserve are both keyed on it.
+// Actor names that give a hero's weapon a slot text of its own (see
+// nocturne_hero_item_text). The Colonel's bottomless reserve is keyed on his
+// too. Names survive a save, where a pointer would not.
 #define NOCTURNE_COLONEL_SIDEARM_NAME "Colonel_sidearm"
+#define NOCTURNE_MOLOCH_AMULET_NAME   "Moloch_amulet"
 
 // What a player hero may hold, by class:
 //
@@ -124,6 +126,14 @@ void nocturne_hero_default_weapon(struct CHero *hero, int hero_type);
 // the only weapon he has.
 void nocturne_hero_reload_extra_gun(struct CHero *hero, struct CWeapon *weapon);
 
+// 1 when `weapon` is the Colonel's pistol.
+int nocturne_hero_weapon_is_sidearm(struct CWeapon *weapon);
+
+// 1 when the HUD should show no ammunition for `weapon`, beyond the melee
+// category CInventory::renderAllItems already tests: Scat's CBaronWeapon and
+// the CShovel the melee heroes are given, neither of which uses ammunition.
+int nocturne_hero_weapon_hides_ammo(struct CWeapon *weapon);
+
 // Whether the hero may hold an item of this kind, per the table above.
 int nocturne_hero_can_hold_kind(struct CHero *hero, EHeroItemKind kind);
 
@@ -142,9 +152,16 @@ char *nocturne_hero_item_text(struct CDemonActor *item, const char *model_name, 
 // dismissed him. Call once a frame, before the selected weapon is updated.
 void nocturne_hero_stow_unselected_weapons(struct CHero *hero);
 
+// Returns `weapon` to the inventory state if it is IN_HAND and `hero` is a
+// player hero. CScat::updateWeaponState, deselecting the Baron while Scat
+// stands, forgets him without that call (00558222: the STAND branch clears
+// weapon_actor and nothing else), so the Baron stays summoned beside whatever
+// Scat draws next. An NPC Scat keeps the shipped behaviour.
+void nocturne_hero_put_away_weapon(struct CHero *hero, struct CWeapon *weapon);
+
 // Whether working `weapon` after a shot ejects a shell through its onFired: the
 // shotgun, and the elephant gun unless NOCTURNE_AUTHENTIC_ELEPHANT_GUN_SHELL.
-int nocturne_weapon_ejects_shell(struct CWeapon *weapon);
+int nocturne_hero_weapon_ejects_shell(struct CWeapon *weapon);
 
 #ifdef __cplusplus
 }

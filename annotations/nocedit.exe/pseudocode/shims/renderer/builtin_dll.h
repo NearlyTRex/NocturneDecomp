@@ -68,6 +68,14 @@ int nocturne_builtin_dll_available(const char *dll_name);
 // null only when nothing at all is registered.
 const char *nocturne_builtin_dll_next(const char *current);
 
+// Writes into `path` (g_RendererDllPath) the next registered DLL after it:
+// the Graphics Options "3D API" step. Unchanged when nothing is registered.
+void nocturne_builtin_dll_step(char *path);
+
+// Leaves `path` alone when it names a registered DLL, and otherwise steps it to
+// one: selecting a renderer this build cannot load would fail immediately.
+void nocturne_builtin_dll_snap(char *path);
+
 // LoadLibraryA / GetProcAddress / FreeLibrary backing. `open` returns an opaque
 // non-null handle (or null if unregistered); `is_handle` distinguishes it from
 // a real dlopen handle so the shims know which path to take on teardown.

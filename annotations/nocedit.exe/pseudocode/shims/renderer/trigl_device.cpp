@@ -12,6 +12,7 @@
 #include "renderer/trigl_gl.h"
 #include "renderer/trigl_batch.h"
 #include "gl/gl_api.h"
+#include "gl/gl_pixels.h"
 #include "gl/gl_present.h"
 #include "core/debug_log.h"
 
@@ -92,27 +93,6 @@ void free_mode_storage() {
     g_dev.engine_scanline_count = 0;
 }
 
-bool gl_format_for_bpp(int bpp, GLenum *format, GLenum *type) {
-    switch (bpp) {
-        case 16: *format = GL_RGB;  *type = GL_UNSIGNED_SHORT_5_6_5; return true;
-        case 32: *format = GL_BGRA; *type = GL_UNSIGNED_BYTE;        return true;
-        default: return false;
-    }
-}
-
-// GL reads a target bottom-up; the engine addresses its image top-down.
-void flip_rows(unsigned char *base, int pitch, int rows) {
-    unsigned char *scratch = (unsigned char *)malloc((size_t)pitch);
-    if (scratch == nullptr) return;
-    for (int y = 0; y < rows / 2; ++y) {
-        unsigned char *top    = base + (size_t)y * (size_t)pitch;
-        unsigned char *bottom = base + (size_t)(rows - 1 - y) * (size_t)pitch;
-        memcpy(scratch, top, (size_t)pitch);
-        memcpy(top, bottom, (size_t)pitch);
-        memcpy(bottom, scratch, (size_t)pitch);
-    }
-    free(scratch);
-}
 
 }  // namespace
 
@@ -168,7 +148,7 @@ int nocturne_trigl_device_set_mode(int width, int height, int bpp, void **scanli
     const bool mode_moved =
         (width != g_dev.width) || (height != g_dev.height) || (bpp != g_dev.bpp);
     GLenum format = 0, type = 0;
-    if (!gl_format_for_bpp(bpp, &format, &type)) {
+    if (!nocturne_gl_format_for_bpp(bpp, &format, &type)) {
         DLOG("render","trigl_device: %d bits per pixel is not a mode this renderer has", bpp);
         return 0;
     }
@@ -268,7 +248,7 @@ int nocturne_trigl_device_lock_frame(void) {
     }
 
     GLenum format = 0, type = 0;
-    if (!gl_format_for_bpp(g_dev.bpp, &format, &type)) return 0;
+    if (!nocturne_gl_format_for_bpp(g_dev.bpp, &format, &type)) return 0;
 
     gl.PixelStorei(GL_PACK_ALIGNMENT, 1);
     gl.PixelStorei(GL_PACK_ROW_LENGTH, g_dev.pitch / (g_dev.bpp / 8));
@@ -278,7 +258,7 @@ int nocturne_trigl_device_lock_frame(void) {
     gl.ReadPixels(0, 0, (GLsizei)g_dev.width, (GLsizei)g_dev.height, format, type,
                   g_dev.image);
     gl.PixelStorei(GL_PACK_ROW_LENGTH, 0);
-    flip_rows(g_dev.image, g_dev.pitch, g_dev.height);
+    nocturne_gl_flip_rows(g_dev.image, g_dev.pitch, g_dev.height);
 
     g_dev.target_ahead = false;
     g_dev.frame_locked = true;
@@ -299,50 +279,6 @@ int nocturne_trigl_device_unlock_frame(void) {
 }
 
 int nocturne_trigl_device_frame_locked(void) { return g_dev.frame_locked ? 1 : 0; }
-
-// The picture held across a mode change, and the mode it describes.
-static unsigned char *g_saved_screen        = nullptr;
-static int            g_saved_width         = 0;
-static int            g_saved_height        = 0;
-static int            g_saved_bpp           = 0;
-static int            g_saved_pitch         = 0;
-
-int nocturne_trigl_device_save_screen(void) {
-    if (!g_dev.open || g_dev.image == nullptr || g_dev.height <= 0) return 0;
-    const size_t bytes = (size_t)g_dev.pitch * (size_t)g_dev.height;
-    unsigned char *copy = (unsigned char *)malloc(bytes);
-    if (copy == nullptr) return 0;
-    memcpy(copy, g_dev.image, bytes);
-    free(g_saved_screen);
-    g_saved_screen = copy;
-    g_saved_width  = g_dev.width;
-    g_saved_height = g_dev.height;
-    g_saved_bpp    = g_dev.bpp;
-    g_saved_pitch  = g_dev.pitch;
-    DLOG("render","trigl_device: holding a %dx%d screen across the mode change",
-              g_saved_width, g_saved_height);
-    return 1;
-}
-
-int nocturne_trigl_device_restore_screen(void) {
-    if (g_saved_screen == nullptr || !g_dev.open || g_dev.image == nullptr) return 0;
-    if (g_saved_width != g_dev.width || g_saved_height != g_dev.height ||
-        g_saved_bpp != g_dev.bpp || g_saved_pitch != g_dev.pitch) {
-        DLOG("render","trigl_device: the held screen is %dx%d at %d bpp and the mode is "
-                  "%dx%d at %d bpp, so it no longer describes the screen",
-                  g_saved_width, g_saved_height, g_saved_bpp,
-                  g_dev.width, g_dev.height, g_dev.bpp);
-        return 0;
-    }
-    memcpy(g_dev.image, g_saved_screen, (size_t)g_dev.pitch * (size_t)g_dev.height);
-    // Both halves, or the next lock reads a target that disagrees with the CPU
-    // image and the picture comes back only to be overwritten.
-    nocturne_gl_scene_upload(g_dev.image, g_dev.width, g_dev.height,
-                             g_dev.pitch, g_dev.bpp);
-    nocturne_trigl_gl_invalidate_state();
-    g_dev.target_ahead = false;
-    return 1;
-}
 
 int nocturne_trigl_device_lock_hold_buffer(void) {
     if (!g_dev.open || g_dev.hold == nullptr) return 0;
@@ -458,8 +394,6 @@ void nocturne_trigl_device_clear_color(void) {}
 void nocturne_trigl_device_clear_depth(void) {}
 void nocturne_trigl_device_clear_depth_box(int, int, int, int) {}
 void nocturne_trigl_device_present(void) {}
-int  nocturne_trigl_device_save_screen(void) { return 0; }
-int  nocturne_trigl_device_restore_screen(void) { return 0; }
 void nocturne_trigl_device_set_bridge(struct CExternalRendererBridge *) {}
 struct CExternalRendererBridge *nocturne_trigl_device_bridge(void) { return nullptr; }
 NocturneTriglBatch *nocturne_trigl_device_batch(void) { return nullptr; }

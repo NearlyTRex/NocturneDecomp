@@ -50,8 +50,7 @@ void __cdecl core_mimic_cpp_CMimic_setup_FUN_0051f3e0(CMimic *this_ptr)
             (&(this_ptr->base).base.model,model_name);
   pCVar1 = &(this_ptr->base).base.model;
 #if !NOCTURNE_AUTHENTIC_NETPLAY
-  if ((g_CNetGamePtr->connection_type != CONNECTION_NONE) &&
-      (mirror_hero != (CHero *)0x0)) {
+  if ((nocturne_net_session_active() != 0) && (mirror_hero != (CHero *)0x0)) {
     strcpy(saved_motion_name,
            (this_ptr->base).base.model.motion_controller.current_motion_name);
     (this_ptr->base).base.model.motion_controller.current_motion_name[0] = '\0';
@@ -106,8 +105,8 @@ void __cdecl core_mimic_cpp_CMimic_setup_FUN_0051f3e0(CMimic *this_ptr)
   core_enemy_cpp_CEnemy_setup_FUN_004a9650(&this_ptr->base);
   cloth_name = "strcoat.cth";
 #if !NOCTURNE_AUTHENTIC_NETPLAY
-  if (((g_CNetGamePtr->connection_type != CONNECTION_NONE) &&
-       (mirror_hero != (CHero *)0x0)) && (0 < (mirror_hero->base).cloth_list.count)) {
+  if (((nocturne_net_session_active() != 0) && (mirror_hero != (CHero *)0x0)) &&
+      (0 < (mirror_hero->base).cloth_list.count)) {
     cloth_name = (mirror_hero->base).cloth_list.filenames[0];
   }
 #endif

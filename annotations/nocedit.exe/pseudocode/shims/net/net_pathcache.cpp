@@ -12,8 +12,7 @@ extern "C" void nocturne_net_pathcache_rewind(void)
 {
     int i;
 
-    if ((g_CNetGamePtr == (CNetGame *)0x0) ||
-        (g_CNetGamePtr->connection_type == CONNECTION_NONE)) {
+    if (nocturne_net_session_active() == 0) {
         return;
     }
 

@@ -7,7 +7,8 @@
 #include "net/net_keepalive.h"
 #include "nocturne.h"
 
-#include <chrono>
+#include "core/clock.h"
+
 #include <cstring>
 
 namespace {
@@ -43,9 +44,12 @@ double s_hold_deadline = 0.0;
 // inputs nocturne_net_hold_end discards. -1 when none is pending.
 int s_stale_sequence = -1;
 
-double now_seconds() {
-    using namespace std::chrono;
-    return duration<double>(steady_clock::now().time_since_epoch()).count();
+void clear_hero_inputs() {
+    for (int i = 0; i < g_HeroCount; i++) {
+        if (g_HeroActors[i] != (CHero *)0x0) {
+            std::memset(&g_HeroActors[i]->player_input, 0, sizeof(SPlayerInput));
+        }
+    }
 }
 
 } // namespace
@@ -60,7 +64,7 @@ extern "C" void nocturne_net_keepalive(void)
     }
 
     net = g_CNetGamePtr;
-    if (net == (CNetGame *)0x0 || net->connection_type == CONNECTION_NONE) {
+    if (nocturne_net_session_active() == 0) {
         return;
     }
 
@@ -87,12 +91,12 @@ extern "C" void nocturne_net_keepalive(void)
 
 extern "C" void nocturne_net_hold_begin(void)
 {
-    s_hold_deadline = now_seconds() + k_hold_seconds;
+    s_hold_deadline = nocturne_now_seconds() + k_hold_seconds;
 }
 
 extern "C" int nocturne_net_hold_active(void)
 {
-    return now_seconds() < s_hold_deadline ? 1 : 0;
+    return nocturne_now_seconds() < s_hold_deadline ? 1 : 0;
 }
 
 extern "C" void nocturne_net_hold_end(void)
@@ -101,15 +105,15 @@ extern "C" void nocturne_net_hold_end(void)
     int own_index;
     int i;
 
-    if (net == (CNetGame *)0x0 || net->connection_type == CONNECTION_NONE) {
+    if (nocturne_net_session_active() == 0) {
         return;
     }
     if (net->local_player_index < 0 || net->player_count <= net->local_player_index) {
         return;
     }
-    own_index = net->players[net->local_player_index].sim_frame_index;
+    own_index = nocturne_net_session_local_frame();
 
-    if (net->connection_type != CONNECTION_HOST) {
+    if (nocturne_net_session_is_host() == 0) {
         s_stale_sequence = own_index;
         return;
     }
@@ -117,11 +121,7 @@ extern "C" void nocturne_net_hold_end(void)
     // The host applied the frame before the screen went up; clear it where it
     // landed and in the history a guest may still be fed from.
     s_stale_sequence = own_index - 1;
-    for (i = 0; i < g_HeroCount; i++) {
-        if (g_HeroActors[i] != (CHero *)0x0) {
-            std::memset(&g_HeroActors[i]->player_input, 0, sizeof(SPlayerInput));
-        }
-    }
+    clear_hero_inputs();
     for (i = 0; i < g_SimFrameCount; i++) {
         if (g_SimFrameHistory[i].sequence_number == s_stale_sequence) {
             std::memset(g_SimFrameHistory[i].player_input, 0,
@@ -132,15 +132,9 @@ extern "C" void nocturne_net_hold_end(void)
 
 extern "C" void nocturne_net_hold_apply_if_due(int sequence_number)
 {
-    int i;
-
     if (sequence_number != s_stale_sequence) {
         return;
     }
     s_stale_sequence = -1;
-    for (i = 0; i < g_HeroCount; i++) {
-        if (g_HeroActors[i] != (CHero *)0x0) {
-            std::memset(&g_HeroActors[i]->player_input, 0, sizeof(SPlayerInput));
-        }
-    }
+    clear_hero_inputs();
 }

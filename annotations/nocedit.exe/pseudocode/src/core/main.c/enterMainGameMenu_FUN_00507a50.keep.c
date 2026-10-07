@@ -27,7 +27,6 @@ int __cdecl core_main_c_enterMainGameMenu_FUN_00507a50(void)
 #if !NOCTURNE_AUTHENTIC_NETPLAY || !NOCTURNE_AUTHENTIC_SINGLE_PLAYER_MENU
   char *menu_ptrs [8];
   int menu_count;
-  int menu_ch;
   int menu_y;
   int start_item;
   int options_item;
@@ -133,14 +132,7 @@ int __cdecl core_main_c_enterMainGameMenu_FUN_00507a50(void)
     quit_item = menu_count;
     menu_ptrs[menu_count] = g_MenuTextPointers[3];
     menu_count = menu_count + 1;
-    menu_ch = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_ThemeFont,0x58);
-    menu_y = 0xfa;
-    if (g_WindowHeight < menu_y + (menu_count * 2 + 1) * menu_ch) {
-      menu_y = g_WindowHeight - (menu_count * 2 + 1) * menu_ch;
-    }
-    if (menu_y < 0) {
-      menu_y = 0;
-    }
+    menu_y = nocturne_menu_start_y(NOCTURNE_MENU_ROWS_UNTITLED(menu_count));
     iVar4 = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000
                       (menu_ptrs,menu_count,&iStack_c,menu_y,0);
 #endif
@@ -294,20 +286,7 @@ LAB_005131d5:
       core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
     }
 #if !NOCTURNE_AUTHENTIC_NETPLAY
-    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
-    if ((iVar4 != 0) &&
-       (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_H), iVar4 != 0)) {
-      core_sound_cpp_CSound_reset_FUN_005b39a0(g_CSoundPtr);
-      core_game_cpp_hostNetworkGame_FUN_004e2f10();
-      core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
-    }
-    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
-    if ((iVar4 != 0) &&
-       (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_J), iVar4 != 0)) {
-      core_sound_cpp_CSound_reset_FUN_005b39a0(g_CSoundPtr);
-      core_game_cpp_joinNetworkGame_FUN_004e2fc0();
-      core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
-    }
+    nocturne_net_menu_hotkeys();
 #endif
     if (iStack_8 != 0) {
       iStack_8 = 0;

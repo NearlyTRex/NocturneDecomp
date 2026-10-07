@@ -35,9 +35,8 @@ const float kKeepTargetRange = 35.0f;
 const float kAimConeTangent = 0.577350f;
 const float kKeepConeTangent = 0.700208f;
 
-// CScat::updateAiming's turn rate, and IcePick's look-pitch rate and limit.
+// CScat::updateAiming's turn rate, and IcePick's look-pitch limit.
 const float kAimTurnRate = 3.1415927f * 1.5f;
-const float kLookPitchRate = 3.1415927f * 2.0f;
 const float kLookPitchLimit = 0.7853982f;
 
 // How fast the arm comes up to the aim, and goes back down, per second.
@@ -111,11 +110,7 @@ CWeapon *sidearm(CColonel *colonel)
     CWeapon *weapon;
 
     weapon = (colonel->base).inventory.selected_weapon;
-    if ((weapon == (CWeapon *)0x0) ||
-        (_stricmp(weapon->base.actor_name, (char *)NOCTURNE_COLONEL_SIDEARM_NAME) != 0)) {
-        return (CWeapon *)0x0;
-    }
-    return weapon;
+    return (nocturne_hero_weapon_is_sidearm(weapon) != 0) ? weapon : (CWeapon *)0x0;
 }
 
 CMotionController *controller(CColonel *colonel)
@@ -125,8 +120,7 @@ CMotionController *controller(CColonel *colonel)
 
 int current_state(CColonel *colonel)
 {
-    return core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(controller(colonel))
-        ->state_index;
+    return nocturne_hero_motion_state(&(colonel->base).base);
 }
 
 int motion_index(CColonel *colonel, const char *motion_name)
@@ -171,16 +165,6 @@ float last_frame(CColonel *colonel, const char *motion_name)
     return (float)(motion_at(colonel, motion_index(colonel, motion_name))->frame_count - 1);
 }
 
-float approach(float value, float target, float step)
-{
-    if (value < target - step) {
-        return value + step;
-    }
-    if (target + step < value) {
-        return value - step;
-    }
-    return target;
-}
 
 // Where on `target` to shoot, in world space: its first target point. Zero
 // when it offers none, which is CDemonActor's default and what anything not
@@ -530,14 +514,9 @@ extern "C" void nocturne_colonel_update_gun(CColonel *colonel, float delta_time)
     }
 
     if (colonel->guns_drawn != 0) {
-        aim->look_pitch += (colonel->base).player_input.look_up_down_speed * kLookPitchRate *
-                           delta_time;
-        if (kLookPitchLimit < aim->look_pitch) {
-            aim->look_pitch = kLookPitchLimit;
-        }
-        if (aim->look_pitch < -kLookPitchLimit) {
-            aim->look_pitch = -kLookPitchLimit;
-        }
+        aim->look_pitch = nocturne_hero_look_pitch(aim->look_pitch,
+                                                   (colonel->base).player_input.look_up_down_speed,
+                                                   delta_time, -kLookPitchLimit, kLookPitchLimit);
     }
     else {
         aim->look_pitch = 0.0f;
@@ -549,18 +528,75 @@ extern "C" void nocturne_colonel_update_gun(CColonel *colonel, float delta_time)
     if ((colonel->guns_drawn != 0) && (locomotion != 0) && (aim->draw_frame == kLayerIdle)) {
         wanted_weight = 1.0f;
     }
-    aim->weight = approach(aim->weight, wanted_weight, kAimWeightRate * delta_time);
+    aim->weight = nocturne_hero_approach(aim->weight, wanted_weight, kAimWeightRate * delta_time);
 
     desired_aim(colonel, weapon, aim, &wanted_yaw, &wanted_pitch);
     step = kAimTurnRate * delta_time;
-    aim->aim_yaw = approach(aim->aim_yaw, wanted_yaw, step);
-    aim->aim_pitch = approach(aim->aim_pitch, wanted_pitch, step);
+    aim->aim_yaw = nocturne_hero_approach(aim->aim_yaw, wanted_yaw, step);
+    aim->aim_pitch = nocturne_hero_approach(aim->aim_pitch, wanted_pitch, step);
 
     if (0.0f < aim->weight) {
         blend_arm_onto_aim(colonel, aim);
     }
     place_gun(colonel, weapon, aim);
     (*((weapon->base).vtable._ub)->process)(&weapon->base, delta_time);
+}
+
+namespace {
+
+// The push-off deals Gabriella's escape kick (NOCTURNE_HERO_ESCAPE_KICK_*).
+// Reach is all the way round him, since a group grabs from every side.
+const float kPushReach         = 2.0f;
+const float kPushHeightBand    = 2.0f;
+const float kPushShoveDistance = 3.0f;
+
+// A live enemy in the set within kPushReach of him.
+int in_push_reach(CColonel *colonel, CCharacter *target)
+{
+    CVector3f local;
+    float distance;
+
+    if (nocturne_hero_melee_target(target) == 0) {
+        return 0;
+    }
+    distance = nocturne_hero_melee_edge_distance((CDemonActor *)colonel, target, &local);
+    return (std::fabs(local.y) <= kPushHeightBand) && (distance <= kPushReach);
+}
+
+} // namespace
+
+extern "C" int nocturne_colonel_death_state(CColonel *colonel, int shipped_state)
+{
+    if ((colonel == (CColonel *)0x0) || (nocturne_hero_is_player(colonel) == 0)) {
+        return shipped_state;
+    }
+    // COLONEL.SKL's DIE (7) and DEAD (8).
+    return nocturne_hero_motion_find_state(&(colonel->base).base,
+                                           (shipped_state == 6) ? "DEAD" : "DIE");
+}
+
+extern "C" void nocturne_colonel_push_off(CColonel *colonel)
+{
+    float amount;
+    int i;
+
+    if ((colonel == (CColonel *)0x0) || (nocturne_hero_is_player(colonel) == 0)) {
+        return;
+    }
+
+    // One draw per push-off, from the simulation stream.
+    amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(NOCTURNE_HERO_ESCAPE_KICK_MIN,
+                                                                 NOCTURNE_HERO_ESCAPE_KICK_MAX);
+    for (i = 0; i < g_CDemonSetPtr->character_count; i++) {
+        CCharacter *target = g_CDemonSetPtr->characters[i];
+
+        if (in_push_reach(colonel, target) == 0) {
+            continue;
+        }
+        nocturne_hero_melee_hit(&(colonel->base).base, target,
+                                &(colonel->base).base.base.location.position, amount);
+        nocturne_hero_shove_start(&colonel->base, target, kPushShoveDistance);
+    }
 }
 
 extern "C" void nocturne_colonel_render_gun(CColonel *colonel)
@@ -591,5 +627,7 @@ extern "C" int nocturne_colonel_draw(CColonel *) { return 0; }
 extern "C" int nocturne_colonel_fire(CColonel *) { return 0; }
 extern "C" void nocturne_colonel_update_gun(CColonel *, float) {}
 extern "C" void nocturne_colonel_render_gun(CColonel *) {}
+extern "C" int nocturne_colonel_death_state(CColonel *, int shipped_state) { return shipped_state; }
+extern "C" void nocturne_colonel_push_off(CColonel *) {}
 
 #endif // !NOCTURNE_AUTHENTIC_HERO_ACTIONS

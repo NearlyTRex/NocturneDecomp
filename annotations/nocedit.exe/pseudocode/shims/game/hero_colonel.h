@@ -41,6 +41,21 @@
 // Gated at the CColonel::process and renderOpaque call sites on
 // NOCTURNE_AUTHENTIC_HERO_ACTIONS.
 
+//
+// DYING. CColonel::processDamage asks for state 5 on a killing blow and
+// guards on 5 and 6 (PUSH 0x5 at 00440570, CMP 0x5 / 0x6 above it). In
+// COLONEL.SKL those are DAMAGE2 and DAMAGE3; DIE is 7 and DEAD 8. So a
+// killed Colonel flinches, returns to STAND at 0 hit points, and
+// CCharacter::getDeathState, which reads the state name, never reports him
+// dying. A player's Colonel is sent to DIE instead; the NPC is left as
+// shipped.
+//
+// THE PUSH-OFF. COLONEL.SKL's "pushoff" carries no signals, so breaking out
+// of a grab (hero_grab.h) hurts nobody and leaves every enemy where it
+// stood, ready to grab him again. When a player's Colonel breaks free, every
+// enemy within reach of him, the grabber included, takes the 10-15 damage of
+// Gabriella's escape kick and is shoved back (hero_shove.h).
+
 struct CColonel;
 
 #ifdef __cplusplus
@@ -64,6 +79,15 @@ void nocturne_colonel_update_gun(struct CColonel *colonel, float delta_time);
 // From CColonel::renderOpaque once the character has drawn: the pistol, and
 // its laser sight once the arm is on the aim.
 void nocturne_colonel_render_gun(struct CColonel *colonel);
+
+// From CColonel::processDamage: the state to use where the shipped code uses
+// `shipped_state` (5, its dying state, or 6, its dead state). A player's
+// Colonel gets COLONEL.SKL's DIE or DEAD; anything else gets `shipped_state`.
+int nocturne_colonel_death_state(struct CColonel *colonel, int shipped_state);
+
+// From CColonel::process when nocturne_hero_grab_escape has just released
+// him: hits and shoves back every enemy within reach.
+void nocturne_colonel_push_off(struct CColonel *colonel);
 
 #ifdef __cplusplus
 }

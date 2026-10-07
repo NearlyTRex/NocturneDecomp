@@ -4,7 +4,7 @@
 // See resolution.h for what the shipped selector could reach and why this
 // exists.
 
-#include "game/resolution.h"
+#include "gl/resolution.h"
 
 #include <cstdio>
 

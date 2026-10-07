@@ -16,6 +16,7 @@
 #include <cstring>
 
 #include "system/ddraw.h"
+#include "directx/ddraw.h"
 #include "core/debug_log.h"
 #include "core/window_icon.h"
 #include "shim_config.h"
@@ -658,6 +659,20 @@ static HRESULT surface_EnumOverlayZOrders(IDirectDrawSurface* this_ptr, DWORD fl
     return DD_OK;
 }
 
+// Puts `surface` on screen: through GL when it owns the window, otherwise by
+// streaming it into `texture` on the SDL renderer.
+static void present_surface(SDL_Surface* surface, SDL_Texture* texture, DDraw_ShimData* ddraw) {
+    if (nocturne_gl_is_active()) {
+        nocturne_gl_present_framebuffer(surface->pixels, surface->w, surface->h,
+                                        surface->pitch, surface->format->BitsPerPixel);
+    } else if (texture && ddraw && ddraw->renderer) {
+        SDL_UpdateTexture(texture, nullptr, surface->pixels, surface->pitch);
+        SDL_RenderClear(ddraw->renderer);
+        SDL_RenderCopy(ddraw->renderer, texture, nullptr, nullptr);
+        SDL_RenderPresent(ddraw->renderer);
+    }
+}
+
 static HRESULT surface_Flip(IDirectDrawSurface* this_ptr,
                              IDirectDrawSurface* override_surface, DWORD flags) {
     (void)flags;
@@ -674,21 +689,10 @@ static HRESULT surface_Flip(IDirectDrawSurface* this_ptr,
                  (void*)(source->sdl_texture ? source->sdl_texture : shim->sdl_texture),
                  (unsigned)flags);
 
-    // Update the texture from the surface pixels and present
-    if (source->sdl_surface && nocturne_gl_is_active()) {
-        nocturne_gl_present_framebuffer(source->sdl_surface->pixels,
-                                        source->sdl_surface->w, source->sdl_surface->h,
-                                        source->sdl_surface->pitch,
-                                        source->sdl_surface->format->BitsPerPixel);
-    } else if (source->sdl_surface && shim->ddraw && shim->ddraw->renderer) {
-        SDL_Texture* tex = source->sdl_texture ? source->sdl_texture : shim->sdl_texture;
-        if (tex) {
-            SDL_UpdateTexture(tex, nullptr, source->sdl_surface->pixels,
-                             source->sdl_surface->pitch);
-            SDL_RenderClear(shim->ddraw->renderer);
-            SDL_RenderCopy(shim->ddraw->renderer, tex, nullptr, nullptr);
-            SDL_RenderPresent(shim->ddraw->renderer);
-        }
+    if (source->sdl_surface) {
+        present_surface(source->sdl_surface,
+                        source->sdl_texture ? source->sdl_texture : shim->sdl_texture,
+                        shim->ddraw);
     }
 
     return DD_OK;
@@ -864,18 +868,9 @@ static HRESULT surface_Unlock(IDirectDrawSurface* this_ptr, void* surface_ptr) {
         }
         shim->is_locked = 0;
 
-        // For primary surface, update the texture after unlock
-        if (shim->is_primary && nocturne_gl_is_active()) {
-            nocturne_gl_present_framebuffer(shim->sdl_surface->pixels,
-                                            shim->sdl_surface->w, shim->sdl_surface->h,
-                                            shim->sdl_surface->pitch,
-                                            shim->sdl_surface->format->BitsPerPixel);
-        } else if (shim->is_primary && shim->sdl_texture && shim->ddraw && shim->ddraw->renderer) {
-            SDL_UpdateTexture(shim->sdl_texture, nullptr,
-                             shim->sdl_surface->pixels, shim->sdl_surface->pitch);
-            SDL_RenderClear(shim->ddraw->renderer);
-            SDL_RenderCopy(shim->ddraw->renderer, shim->sdl_texture, nullptr, nullptr);
-            SDL_RenderPresent(shim->ddraw->renderer);
+        // A primary surface is the screen, so unlocking it presents.
+        if (shim->is_primary) {
+            present_surface(shim->sdl_surface, shim->sdl_texture, shim->ddraw);
         }
     }
 

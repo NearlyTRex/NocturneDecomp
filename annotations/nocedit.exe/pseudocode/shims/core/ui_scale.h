@@ -51,8 +51,8 @@ int nocturne_ui_scale(void);
 //
 // Both CDemonSet::renderGogglesView (which centres the image) and
 // drawShadowDepthBuffer (which draws it) must use these same numbers.
-int nocturne_goggles_scale_x(void);
-int nocturne_goggles_scale_y(void);
+int nocturne_ui_goggles_scale_x(void);
+int nocturne_ui_goggles_scale_y(void);
 
 // Ceiling on what those can return, so the blit can size the row-pointer array
 // it collects each source row into. Twice the HUD's own cap.

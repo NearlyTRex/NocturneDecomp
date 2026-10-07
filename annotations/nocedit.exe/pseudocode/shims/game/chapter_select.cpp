@@ -5,12 +5,9 @@
 // See chapter_select.h for what this is and where the names come from.
 
 #include "game/chapter_select.h"
+#include "core/ini_setting.h"
+#include "watcom/path.h"
 #include "nocturne.h"
-
-#include <cstdio>
-#include <string>
-
-std::string watcom_resolve_fs_path(const char *path);
 
 namespace {
 
@@ -23,24 +20,13 @@ namespace {
 // nocturne.ini.
 int epilogue_unlocked(void)
 {
-    static char ini_path[] = ".\\system\\nocturne.ini";
-    static char section[]  = "Game";
-    static char key[]      = "Act1Code";
     static const int codes[4] = { 0x331, 0x3cc, 0x3ac, 0xd6 };
-    std::string resolved;
-    FILE *probe;
+    char key[] = "Act1Code";
     int act;
 
-    // CIni::getProfileString quits the process when the file is missing.
-    resolved = watcom_resolve_fs_path(ini_path);
-    probe = fopen(resolved.c_str(), "rb");
-    if (probe == nullptr) {
-        return 0;
-    }
-    fclose(probe);
     for (act = 0; act < 4; act++) {
         key[3] = (char)('1' + act);
-        if (engine_ini_cpp_getProfileInteger_FUN_004fb9a0(section, key, 0, ini_path) != codes[act]) {
+        if (nocturne_ini_get_int("Game", key, 0) != codes[act]) {
             return 0;
         }
     }
@@ -158,12 +144,7 @@ void mission_stem(const char *name, char *out, int out_size)
     }
 
     // Last separator wins, so "world\castle1.msn" and "castle1.msn" agree.
-    start = name;
-    for (i = 0; name[i] != '\0'; i++) {
-        if (name[i] == '\\' || name[i] == '/') {
-            start = &name[i + 1];
-        }
-    }
+    start = watcom_path_leaf(name);
 
     for (i = 0; i < out_size - 1 && start[i] != '\0' && start[i] != '.'; i++) {
         out[i] = start[i];

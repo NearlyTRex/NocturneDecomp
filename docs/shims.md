@@ -18,12 +18,12 @@ APIs. The rest is permanent.
 | `win32/` | `kernel32`, `user32`, `wingdi`, `mmsystem`, `winsock`, MCI video, and the `shim_init` that wires them |
 | `directx/` | DirectDraw and DirectSound, SDL2-backed |
 | `watcom/` | Watcom C++ runtime and CRT bridge |
-| `renderer/` | `trigl` — our own renderer, and the built-in DLL registry |
-| `gl/` | GL context, present/blit, window mode, GL version query |
-| `core/` | Logging, file search, FPU trap, window icon, audio backend name |
-| `game/` | Additions that live at the game layer — UI scale, resolution list, gamepad, cheats, chapter select, hero interactions |
-| `net/` | Netplay: lockstep simulation, RNG funnel, sync, respawn, menus |
-| `debug/` | In-process dump tools |
+| `renderer/` | `trigl` — our own renderer, the built-in DLL registry, and the mirror pass's camera state |
+| `gl/` | GL context, present/blit, shader programs, window mode, resolution list, GL version query |
+| `core/` | Logging, file search, FPU trap, window icon, audio backend name, ini settings, menu screens, fonts, UI scale, console |
+| `game/` | Additions that live at the game layer — gamepad, cheats, chapter select, hero interactions |
+| `net/` | Netplay: session state, packets, lockstep simulation, RNG funnel, sync, respawn, menus |
+| `debug/` | In-process dump tools, sound error reports, frame-rate overlay |
 | `config/` | The flag headers — see [authenticity-flags.md](authenticity-flags.md) |
 | `tests/` | Unit tests — see [testing.md](testing.md) |
 

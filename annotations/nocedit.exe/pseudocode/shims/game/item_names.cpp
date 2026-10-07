@@ -1,8 +1,8 @@
 #include "game/item_names.h"
 #include "nocturne.h"
 
-extern "C" CDemonActor *nocturne_find_actor_or_carried_item(CDemonMission *mission,
-                                                            const char *name)
+extern "C" CDemonActor *nocturne_item_names_find_actor(CDemonMission *mission,
+                                                       const char *name)
 {
     CDemonActor *actor;
     CHero *hero;

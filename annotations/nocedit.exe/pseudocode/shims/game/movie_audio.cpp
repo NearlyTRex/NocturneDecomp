@@ -8,26 +8,15 @@
 #include "game/movie_audio.h"
 #include "shim_config.h"
 #include "core/debug_log.h"
+#include "core/ini_setting.h"
 
-// Reaches engine_ini_cpp_getProfileInteger / _writeProfileString, which operate
-// on the engine's g_CIniInstance, and the mute state.
+// Reaches the mute state.
 #include "nocturne.h"
-
-#include <cstdio>
-#include <string>
-
-// Defined in shims/watcom/crt.cpp — the same '\\'->'/' + case-insensitive
-// resolution the CRT _fopen shim applies, so the probe below looks at the file
-// the engine will actually open.
-std::string watcom_resolve_fs_path(const char *path);
 
 namespace {
 
-// Same path inivar.cpp uses. Kept as non-const buffers because the engine's INI
-// accessors take char* rather than const char*.
-char kIniPath[] = ".\\system\\nocturne.ini";
-char kIniSection[] = "Sound";
-char kIniKey[] = "MovieVolume";
+const char kIniSection[] = "Sound";
+const char kIniKey[] = "MovieVolume";
 
 // Stored as a percentage, matching how the Sound Options lines are shown and
 // keeping the INI value readable.
@@ -44,21 +33,12 @@ int clamp_percent(int percent) {
 
 extern "C" float nocturne_movie_volume_get(void) {
     if (!s_loaded) {
-        // CIni::getProfileString has NO initialised-guard: if it cannot open
-        // the file it calls displayErrorAndQuit("Unable to open input") and
-        // takes the process with it. Check the file is really there rather
-        // than trusting init order.
-        std::string resolved = watcom_resolve_fs_path(kIniPath);
-        FILE *probe = fopen(resolved.c_str(), "rb");
-        if (probe != nullptr) {
-            fclose(probe);
-            s_percent = clamp_percent(engine_ini_cpp_getProfileInteger_FUN_004fb9a0(
-                kIniSection, kIniKey, NOCTURNE_MOVIE_VOLUME_DEFAULT, kIniPath));
-        } else {
-            s_percent = NOCTURNE_MOVIE_VOLUME_DEFAULT;
+        if (nocturne_ini_exists() == 0) {
             DLOG("frontend", "no %s yet; movie volume defaults to %d%%",
-                 kIniPath, s_percent);
+                 NOCTURNE_INI_PATH, NOCTURNE_MOVIE_VOLUME_DEFAULT);
         }
+        s_percent = clamp_percent(nocturne_ini_get_int(kIniSection, kIniKey,
+                                                       NOCTURNE_MOVIE_VOLUME_DEFAULT));
         s_loaded = true;
         DLOG("frontend", "loaded MovieVolume=%d%%", s_percent);
     }
@@ -73,9 +53,7 @@ extern "C" void nocturne_movie_volume_set(float volume) {
     s_percent = percent;
     s_loaded = true;
 
-    char value[16];
-    snprintf(value, sizeof(value), "%d", percent);
-    engine_ini_cpp_writeProfileString_FUN_004fba40(kIniSection, kIniKey, value, kIniPath);
+    nocturne_ini_set_int(kIniSection, kIniKey, percent);
 
     DLOG("frontend", "set MovieVolume=%d%%", percent);
 }

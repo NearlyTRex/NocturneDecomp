@@ -9,23 +9,17 @@
 
 namespace {
 
-// CStranger::autoAimAtThreat's aim_pitch limits.
-const float kPitchMin = -1.047198f;
-const float kPitchMax = 1.22173f;
-
 float s_pitch = 0.0f;
 CHero *s_hero = nullptr;
 
 // Whether CStranger::autoAimAtThreat left this Stranger's pitch at zero because
 // its hands are empty — which, in a network game, it does whatever the goggles.
 bool stranger_pitch_suppressed(CStranger *stranger) {
-    if (g_CNetGamePtr == nullptr || g_CNetGamePtr->connection_type == CONNECTION_NONE ||
-        stranger->weapon != nullptr) {
+    if (nocturne_net_session_active() == 0 || stranger->weapon != nullptr) {
         return false;
     }
     CDemonActor *carried = stranger->base.base.carry_hands[1].carry_actor;
-    return carried == nullptr ||
-           ((*((carried->vtable)._ub)->getAllowedMeleeAttackTypes)(carried) & 4) == 0;
+    return carried == nullptr || nocturne_hero_is_throwable(carried) == 0;
 }
 
 // Whether the goggle camera needs our pitch for `hero`.
@@ -50,13 +44,9 @@ extern "C" void nocturne_goggle_look_tick(float delta_time) {
         s_pitch = 0.0f;
     }
     if ((*(((hero->base).base.vtable._uc)->_uc).getDeathState)(&hero->base) == DEATH_STATE_ALIVE) {
-        s_pitch += hero->player_input.look_up_down_speed * 3.1415926535f * 2.0f * delta_time;
-        if (s_pitch < kPitchMin) {
-            s_pitch = kPitchMin;
-        }
-        if (kPitchMax < s_pitch) {
-            s_pitch = kPitchMax;
-        }
+        s_pitch = nocturne_hero_look_pitch(s_pitch, hero->player_input.look_up_down_speed,
+                                           delta_time, NOCTURNE_STRANGER_PITCH_UP,
+                                           NOCTURNE_STRANGER_PITCH_DOWN);
     }
 }
 
@@ -66,16 +56,6 @@ extern "C" float nocturne_goggle_look_pitch(CHero *hero) {
 
 extern "C" void nocturne_goggle_look_reset(void) {
     s_pitch = 0.0f;
-}
-
-extern "C" void nocturne_goggles_camera_hold_tick(CDemonSet *set, float delta_time) {
-    if (set == nullptr || set->camera_switch_cooldown <= 0.0f) {
-        return;
-    }
-    set->camera_switch_cooldown = set->camera_switch_cooldown - delta_time;
-    if (set->camera_switch_cooldown <= 0.0f) {
-        set->camera_switch_cooldown = 0.0f;
-    }
 }
 
 extern "C" CMatrix3x4f *nocturne_goggle_head_matrix(CHero *hero, CMatrix3x4f *head,

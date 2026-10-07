@@ -5,21 +5,15 @@
 // See menu_font.h. Stored the way core/os_font.cpp stores its line.
 
 #include "core/menu_font.h"
+#include "core/ini_setting.h"
 #include "shim_config.h"
 
 #include "nocturne.h"
 
-#include <cstdio>
-#include <string>
-
-std::string watcom_resolve_fs_path(const char *path);
-
 namespace {
 
-// The engine's INI accessors take char*, not const char*.
-char kIniPath[]    = ".\\system\\nocturne.ini";
-char kIniSection[] = "Graphics";
-char kIniKey[]     = "menuFont";
+const char kIniSection[] = "Graphics";
+const char kIniKey[]     = "menuFont";
 
 int  s_mode   = NOCTURNE_MENU_FONT_LARGE;
 bool s_loaded = false;
@@ -35,15 +29,7 @@ int clamp_mode(int mode)
 extern "C" int nocturne_menu_font_get(void)
 {
     if (!s_loaded) {
-        // CIni::getProfileString quits the process when it cannot open the
-        // file, so make sure it is there first.
-        std::string resolved = watcom_resolve_fs_path(kIniPath);
-        FILE *probe = fopen(resolved.c_str(), "rb");
-        if (probe != nullptr) {
-            fclose(probe);
-            s_mode = clamp_mode(engine_ini_cpp_getProfileInteger_FUN_004fb9a0(
-                kIniSection, kIniKey, NOCTURNE_MENU_FONT_LARGE, kIniPath));
-        }
+        s_mode = clamp_mode(nocturne_ini_get_int(kIniSection, kIniKey, s_mode));
         s_loaded = true;
     }
     return s_mode;
@@ -51,15 +37,8 @@ extern "C" int nocturne_menu_font_get(void)
 
 extern "C" int nocturne_menu_font_cycle(int step)
 {
-    char value[16];
-    int next = (nocturne_menu_font_get() + step) % NOCTURNE_MENU_FONT_COUNT;
-
-    if (next < 0) {
-        next += NOCTURNE_MENU_FONT_COUNT;
-    }
-    s_mode = next;
-    snprintf(value, sizeof(value), "%d", s_mode);
-    engine_ini_cpp_writeProfileString_FUN_004fba40(kIniSection, kIniKey, value, kIniPath);
+    s_mode = nocturne_ini_cycle(nocturne_menu_font_get(), step, NOCTURNE_MENU_FONT_COUNT);
+    nocturne_ini_set_int(kIniSection, kIniKey, s_mode);
     return s_mode;
 }
 

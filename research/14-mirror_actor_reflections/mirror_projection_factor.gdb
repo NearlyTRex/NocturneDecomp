@@ -10,7 +10,7 @@
 # CDemonCamera::beginBackgroundScene opens exactly such a window around the pass
 # that renders the mirror. Sampled inside it, calculateProjectionFactor returns
 # 18 * 65536 / 0x10000 = 18 -- the default field of view rather than the
-# camera's. See shims/game/mirror_projection.h, which documents the same window
+# camera's. See shims/renderer/mirror_projection.h, which documents the same window
 # on the restore side.
 #
 # A mirror camera built at the wrong field of view cannot agree with the scene

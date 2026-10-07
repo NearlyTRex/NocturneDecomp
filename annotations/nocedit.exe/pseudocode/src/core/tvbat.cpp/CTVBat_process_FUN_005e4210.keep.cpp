@@ -198,7 +198,7 @@ LAB_005e4342:
     }
     pCVar10 = g_HeroActors[g_LocalHeroIndex];
 #else
-    if (g_CNetGamePtr->connection_type == CONNECTION_NONE) {
+    if (nocturne_net_session_active() == 0) {
       pCVar10 = g_HeroActors[g_LocalHeroIndex];
     }
     else {

@@ -9,8 +9,6 @@
 
 #include "nocturne.h"
 
-#define SIM_MAX_HEROES 4
-
 // See net_sim.h, "WHICH HERO DOES THIS SCRIPT MEAN?". -1 is no record.
 static int s_trigger_hero_index = -1;
 
@@ -30,26 +28,18 @@ static int sim_hero_is_targetable(CHero *hero)
 
 static CHero *sim_local_hero(void)
 {
-    if ((g_LocalHeroIndex < 0) || (SIM_MAX_HEROES <= g_LocalHeroIndex)) {
-        return (CHero *)0x0;
-    }
-    return g_HeroActors[g_LocalHeroIndex];
+    return nocturne_hero_local();
 }
 
-static int sim_is_network_game(void)
-{
-    return ((g_CNetGamePtr != (CNetGame *)0x0) &&
-            (g_CNetGamePtr->connection_type != CONNECTION_NONE));
-}
 
 extern "C" CHero *nocturne_net_sim_leader_hero(void)
 {
     int i;
 
-    if (sim_is_network_game() == 0) {
+    if (nocturne_net_session_active() == 0) {
         return sim_local_hero();
     }
-    for (i = 0; i < SIM_MAX_HEROES; i++) {
+    for (i = 0; i < NOCTURNE_HERO_SLOTS; i++) {
         if (sim_hero_is_targetable(g_HeroActors[i]) != 0) {
             return g_HeroActors[i];
         }
@@ -62,7 +52,7 @@ extern "C" CHero *nocturne_net_sim_leader_hero(void)
 // updatePose match by construction whichever hero it is.
 extern "C" CHero *nocturne_net_sim_mimic_hero(void)
 {
-    if (sim_is_network_game() == 0) {
+    if (nocturne_net_session_active() == 0) {
         // Single player mirrors the player, exactly as shipped.
         return sim_local_hero();
     }
@@ -83,14 +73,14 @@ extern "C" CHero *nocturne_net_sim_target_hero(const CVector3f *from)
     float  best_distance = 0.0f;
     int    i;
 
-    if (sim_is_network_game() == 0) {
+    if (nocturne_net_session_active() == 0) {
         return sim_local_hero();
     }
     if (from == (const CVector3f *)0x0) {
         return nocturne_net_sim_leader_hero();
     }
 
-    for (i = 0; i < SIM_MAX_HEROES; i++) {
+    for (i = 0; i < NOCTURNE_HERO_SLOTS; i++) {
         CHero *hero = g_HeroActors[i];
         float  dx;
         float  dy;
@@ -124,16 +114,14 @@ extern "C" CHero *nocturne_net_sim_target_hero(const CVector3f *from)
 extern "C" int nocturne_net_sim_begin_hero_setup(CDemonActor *actor)
 {
     int saved = g_LocalHeroIndex;
-    int i;
+    int slot;
 
-    if ((actor == (CDemonActor *)0x0) || (sim_is_network_game() == 0)) {
+    if (nocturne_net_session_active() == 0) {
         return saved;
     }
-    for (i = 0; (i < SIM_MAX_HEROES) && (i < g_HeroCount); i++) {
-        if ((CDemonActor *)g_HeroActors[i] == actor) {
-            g_LocalHeroIndex = i;
-            break;
-        }
+    slot = nocturne_hero_slot(actor);
+    if (0 <= slot) {
+        g_LocalHeroIndex = slot;
     }
     return saved;
 }
@@ -145,16 +133,14 @@ extern "C" void nocturne_net_sim_end_hero_setup(int saved_local_hero_index)
 
 extern "C" void nocturne_net_sim_note_trigger_hero(CDemonActor *actor)
 {
-    int i;
+    int slot;
 
-    if ((actor == (CDemonActor *)0x0) || (sim_is_network_game() == 0)) {
+    if (nocturne_net_session_active() == 0) {
         return;
     }
-    for (i = 0; (i < SIM_MAX_HEROES) && (i < g_HeroCount); i++) {
-        if ((CDemonActor *)g_HeroActors[i] == actor) {
-            s_trigger_hero_index = i;
-            return;
-        }
+    slot = nocturne_hero_slot(actor);
+    if (0 <= slot) {
+        s_trigger_hero_index = slot;
     }
 }
 
@@ -224,7 +210,7 @@ static int sim_unmasked_hero_in_gas(void)
 {
     int i;
 
-    for (i = 0; (i < SIM_MAX_HEROES) && (i < g_HeroCount); i++) {
+    for (i = 0; (i < NOCTURNE_HERO_SLOTS) && (i < g_HeroCount); i++) {
         if (sim_hero_breathes_gas(g_HeroActors[i]) != 0) {
             return i;
         }
@@ -237,6 +223,9 @@ extern "C" CHero *nocturne_net_sim_script_hero(void)
     int choking;
     int i;
 
+    if (nocturne_net_session_active() == 0) {
+        return g_HeroActors[g_LocalHeroIndex];
+    }
     choking = sim_gas_choking();
     if (((choking != 0) || (sim_gas_escaping() != 0)) &&
         (0 <= s_gas_hero_index) && (s_gas_hero_index < g_HeroCount)) {
@@ -255,7 +244,7 @@ extern "C" CHero *nocturne_net_sim_script_hero(void)
 
 extern "C" int nocturne_net_sim_gas_spares(CHero *hero)
 {
-    if ((sim_is_network_game() == 0) || (hero == (CHero *)0x0)) {
+    if ((nocturne_net_session_active() == 0) || (hero == (CHero *)0x0)) {
         return 0;
     }
     if ((hero->base).hit_points <= 0.0f) {
@@ -307,7 +296,7 @@ extern "C" void nocturne_net_sim_gas_tick(void)
     char escape[] = "Escape";
     CHero *hero;
 
-    if ((sim_is_network_game() == 0) || (g_CEventListPtr == (CEventList *)0x0) ||
+    if ((nocturne_net_session_active() == 0) || (g_CEventListPtr == (CEventList *)0x0) ||
         (sim_gas_choking() == 0) || (s_gas_hero_index < 0) ||
         (g_HeroCount <= s_gas_hero_index)) {
         return;

@@ -11,6 +11,7 @@
 #include "nocturne.h"
 
 #include "core/debug_log.h"
+#include "core/fnv1a.h"
 
 #include <cstdio>
 #include <cstring>
@@ -315,13 +316,9 @@ static void trace_event_changes(FILE *out, int sequence_number)
     // ahead of the server" guard, so it is worth paying attention to here.)
     flags_moved = 0;
     {
-        unsigned int fingerprint = 2166136261u;
-        const char  *bytes       = (const char *)(event_list->game_flags).names;
-        int          n           = count * 32;
+        unsigned int fingerprint =
+            nocturne_fnv1a(NOCTURNE_FNV1A_BASIS, (event_list->game_flags).names, count * 32);
 
-        for (i = 0; i < n; i++) {
-            fingerprint = (fingerprint ^ (unsigned int)(unsigned char)bytes[i]) * 16777619u;
-        }
         fingerprint = fingerprint ^ (unsigned int)count;
         if (fingerprint != s_last_flag_fingerprint) {
             s_last_flag_fingerprint = fingerprint;

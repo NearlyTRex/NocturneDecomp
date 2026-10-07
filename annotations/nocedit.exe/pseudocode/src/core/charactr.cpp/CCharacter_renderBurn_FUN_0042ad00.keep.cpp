@@ -71,9 +71,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderBurn_FUN_0042ad00(CCharacter *th
 #endif
   }
 #if !NOCTURNE_AUTHENTIC_NETPLAY
-  if ((iVar2 == pCVar6->bone_count) &&
-      ((g_CNetGamePtr == (CNetGame *)0x0) ||
-       (g_CNetGamePtr->connection_type == CONNECTION_NONE))) {
+  if ((iVar2 == pCVar6->bone_count) && (nocturne_net_session_active() == 0)) {
 #else
   if (iVar2 == pCVar6->bone_count) {
 #endif

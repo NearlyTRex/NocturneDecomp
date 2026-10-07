@@ -17,32 +17,9 @@ int __cdecl core_charactr_cpp_CCharacter_process_FUN_00429870(CCharacter *this_p
   CScript *this_ptr_00;
   float fVar1;
   CPlatform *pCVar2;
-#if !NOCTURNE_AUTHENTIC_BOTTOMLESS_FALL
-  SDamageInfo fall_damage;
-  int is_hero;
-#endif
 
 #if !NOCTURNE_AUTHENTIC_BOTTOMLESS_FALL
-  if (((g_CDemonRaytraceInstance.cube_data != (CDemonCube *)0x0) &&
-      ((g_CDemonRaytraceInstance.bbox_min).y < (g_CDemonRaytraceInstance.bbox_max).y)) &&
-     (((this_ptr->base).location.position.y <
-       (g_CDemonRaytraceInstance.bbox_min).y - 32.0f) && (0.0 < this_ptr->hit_points))) {
-    core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&fall_damage);
-    fall_damage.damage_amount = 9999.0;
-    fall_damage.damage_type = DAMAGE_TYPE_FALL;
-    is_hero = core_actor_cpp_isOfClass_FUN_0040c6d0(&this_ptr->base,"CHero");
-    if (is_hero != 0) {
-      ((CHero *)this_ptr)->invincibility_timer = 0.0f;
-    }
-    (*(((this_ptr->base).vtable._uc)->_uc).processDamage)(this_ptr,&fall_damage);
-    if ((this_ptr->hit_points <= 0.0) &&
-        (core_actor_cpp_castToClassHash_FUN_0040c790
-                   ((CDemonActor *)this_ptr,g_CStrangerClassInfo.name_hash) != (CDemonActor *)0x0)) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                (&this_ptr->model.motion_controller,0x12,1);
-      (*((this_ptr->base).vtable._ub)->playSound)((CDemonActor *)this_ptr,"fall-?.wav");
-    }
-  }
+  nocturne_fall_out_of_world(this_ptr);
 #endif
 
   fVar2 = this_ptr->sound_cooldown - delta_time;
@@ -72,9 +49,7 @@ int __cdecl core_charactr_cpp_CCharacter_process_FUN_00429870(CCharacter *this_p
 #endif
   }
 #if !NOCTURNE_AUTHENTIC_NETPLAY
-  if ((this_ptr->render_active == 0) ||
-     ((g_CNetGamePtr != (CNetGame *)0x0) &&
-      (g_CNetGamePtr->connection_type != CONNECTION_NONE))) {
+  if ((this_ptr->render_active == 0) || (nocturne_net_session_active() != 0)) {
 #else
   if (this_ptr->render_active == 0) {
 #endif

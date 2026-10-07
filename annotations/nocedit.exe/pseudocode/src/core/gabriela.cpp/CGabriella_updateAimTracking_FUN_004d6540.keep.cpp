@@ -56,14 +56,9 @@ void __cdecl core_gabriela_cpp_CGabriella_updateAimTracking_FUN_004d6540(CGabrie
 #if !NOCTURNE_AUTHENTIC_HERO_LOOK_AIM
   look_aim = (((this_ptr->base).control_type != HERO_CONTROL_AI) &&
               (this_ptr->weapon_state_flags != 0) && (is_holstering == 0));
-  look_pitch = (this_ptr->base).player_input.look_up_down_speed * (float)3.1415926535000001 *
-               (float)2 * delta_time + this_ptr->target_aim_pitch;
-  if (look_pitch < -1.570796f) {
-    look_pitch = -1.5707964;
-  }
-  if (1.5707964 < look_pitch) {
-    look_pitch = 1.5707964;
-  }
+  look_pitch = nocturne_hero_look_pitch(this_ptr->target_aim_pitch,
+                                        (this_ptr->base).player_input.look_up_down_speed,
+                                        delta_time, -1.5707964f, 1.5707964f);
 #endif
   if (((this_ptr->base).aim_mode == AIM_MODE_AUTO) ||
      ((this_ptr->base).control_type == HERO_CONTROL_AI)) {

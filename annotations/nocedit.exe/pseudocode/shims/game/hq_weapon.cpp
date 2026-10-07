@@ -6,7 +6,8 @@
 #include "core/ascii_case.h"
 #include "nocturne.h"
 
-extern "C" int nocturne_mission_is_hq(void)
+// Nonzero while the loaded mission is an HQ mission.
+static int mission_is_hq(void)
 {
     if (g_CDemonMissionPtr == (CDemonMission *)0) {
         return 0;
@@ -16,7 +17,7 @@ extern "C" int nocturne_mission_is_hq(void)
 
 extern "C" void nocturne_hq_filter_input(struct SPlayerInput *input)
 {
-    if ((input == (SPlayerInput *)0) || (nocturne_mission_is_hq() == 0)) {
+    if ((input == (SPlayerInput *)0) || (mission_is_hq() == 0)) {
         return;
     }
     input->action_state.draw = 0;

@@ -49,7 +49,7 @@ void __cdecl core_icepick_cpp_CIcePick_process_FUN_004f80b0(CIcePick *this_ptr,f
     return;
   }
 #if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
-  nocturne_hero_items_process(&this_ptr->base);
+  nocturne_hero_frame(&this_ptr->base,delta_time);
 #endif
   if ((this_ptr->base).control_type == HERO_CONTROL_AI) {
     core_icepick_cpp_CIcePick_processAI_FUN_004f8c70(this_ptr,delta_time);
@@ -243,7 +243,11 @@ LAB_004f81b6:
                          (this_ptr->base).base.position_delta.y;
     local_38.z = fVar5 + delta_time * (this_ptr->base).base.velocity.z +
                          (this_ptr->base).base.position_delta.z;
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+    nocturne_hero_fall_move(&this_ptr->base,&local_38);
+#else
     core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40((CCharacter *)this_ptr,&local_38);
+#endif
     goto LAB_004f82f8;
   }
   if ((this_ptr->base).base.grabbed_type == 0) {

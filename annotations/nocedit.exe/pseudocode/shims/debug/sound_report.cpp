@@ -2,7 +2,7 @@
 // SOUND ERROR REPORTS — implementation
 // =============================================================================
 
-#include "game/sound_report.h"
+#include "debug/sound_report.h"
 #include "core/ascii_case.h"
 #include "shim_config.h"
 

@@ -4,9 +4,9 @@
 // REFERENCES TO A DELETED ACTOR
 // =============================================================================
 //
-// The other half of NOCTURNE_AUTHENTIC_ACTOR_DELETE. deleteActor already clears
+// NOCTURNE_AUTHENTIC_ACTOR_DELETE, from deleteActor before it frees the actor:
 // what the heroes hold - weapon in hand, both carry hands, the selected weapon
-// and item - and this clears what the sound mixer holds.
+// and item - and what the sound mixer holds.
 //
 // A positional sound does not copy the emitter's position; it keeps a pointer to
 // it. CDemonActor::playSound passes &actor->location.position straight through
@@ -50,6 +50,10 @@ extern "C" {
 // the emitter in userdata[0]) - the latter covers a sound bound to some other
 // field of the same actor. A no-op when no slot refers to it.
 void nocturne_actor_delete_unbind_sounds(struct CDemonActor *actor);
+
+// Clears what the player heroes hold that is `actor`: the Stranger's weapon in
+// hand, both carry hands, and the inventory's selected weapon and item.
+void nocturne_actor_delete_unbind_heroes(struct CDemonActor *actor);
 
 #ifdef __cplusplus
 }

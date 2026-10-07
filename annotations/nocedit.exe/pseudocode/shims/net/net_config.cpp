@@ -7,17 +7,16 @@
 #include "net/net_config.h"
 #include "shim_config.h"
 
+#include "nocturne.h"
+
 #include "core/debug_log.h"
 #include "core/ascii_case.h"
+#include "watcom/path.h"
 
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
 #include <string>
-
-// Defined in shims/watcom/crt.cpp — declared here rather than including
-// stream_compat.h, which needs <fstream> pulled in ahead of it.
-std::string watcom_resolve_fs_path(const char *path);
 
 #define NET_INI_PATH    "system\\netplay.ini"
 #define NET_INI_SECTION "Network"
@@ -203,4 +202,11 @@ const char *nocturne_net_player_name(void) {
 int nocturne_net_port(int game_default) {
     net_ensure_loaded();
     return (s_port != 0) ? s_port : game_default;
+}
+
+int nocturne_net_apply_config(CNetGame *net_game, int game_default_port) {
+    if (nocturne_net_player_name()[0] != '\0') {
+        strcpy(net_game->player_name, nocturne_net_player_name());
+    }
+    return nocturne_net_port(game_default_port);
 }

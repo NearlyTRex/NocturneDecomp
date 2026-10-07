@@ -120,12 +120,7 @@ void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_00500690(CInventory *thi
                       (this_ptr,&this_ptr->selected_weapon->base,3);
 #if !NOCTURNE_AUTHENTIC_HERO_WEAPON
     if (iVar3 == 0) {
-      iVar3 = core_actor_cpp_isOfClass_FUN_0040c6d0
-                        (&this_ptr->selected_weapon->base,"CBaronWeapon");
-    }
-    if (iVar3 == 0) {
-      iVar3 = core_actor_cpp_isOfClass_FUN_0040c6d0
-                        (&this_ptr->selected_weapon->base,"CShovel");
+      iVar3 = nocturne_hero_weapon_hides_ammo(this_ptr->selected_weapon);
     }
 #endif
     if (iVar3 == 0) {

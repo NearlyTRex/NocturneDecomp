@@ -10,6 +10,7 @@
 #include "nocturne.h"
 
 #include "core/debug_log.h"
+#include "core/fnv1a.h"
 
 #include <cstdio>
 #include <cstring>
@@ -77,13 +78,7 @@ static int  s_mismatches = 0;
 // would only hide the very drift this exists to catch.
 static uint sync_hash_bytes(uint hash, const void *data, int length)
 {
-    const unsigned char *p = (const unsigned char *)data;
-    int i;
-
-    for (i = 0; i < length; i++) {
-        hash = (hash ^ (uint)p[i]) * 16777619u;
-    }
-    return hash;
+    return nocturne_fnv1a(hash, data, length);
 }
 
 // Actors that are allowed to differ, and must therefore stay out of the hash.
@@ -143,24 +138,22 @@ static int sync_is_cosmetic(CDemonActor *actor)
 // independent of position in the list.
 static uint sync_name_bucket(CDemonActor *actor)
 {
-    uint hash = 2166136261u;
+    uint hash = NOCTURNE_FNV1A_BASIS;
     int  i;
 
     for (i = 0; (i < 32) && (actor->actor_name[i] != '\0'); i++) {
-        hash = (hash ^ (uint)(unsigned char)actor->actor_name[i]) * 16777619u;
+        hash = nocturne_fnv1a_step(hash, (unsigned char)actor->actor_name[i]);
     }
     return hash % SYNC_BUCKETS;
 }
 
 static void sync_capture(SNetPacket_SyncCheck *out, int sequence_number)
 {
-    uint hash = 2166136261u;
+    uint hash = NOCTURNE_FNV1A_BASIS;
     int  count;
     int  i;
 
-    std::memset(out, 0, sizeof(*out));
-    out->header.size       = sizeof(SNetPacket_SyncCheck);
-    out->header.type       = (ENetPacketType)NOCTURNE_NET_PACKET_SYNC_CHECK;
+    nocturne_net_packet_init(out, (int)sizeof(*out), NOCTURNE_NET_PACKET_SYNC_CHECK);
     out->sequence_number   = sequence_number;
 
     count = g_HeroCount;
@@ -185,7 +178,7 @@ static void sync_capture(SNetPacket_SyncCheck *out, int sequence_number)
     // many things exist in the room.
     out->actor_count = g_CDemonSetPtr->actor_count;
     for (i = 0; i < SYNC_BUCKETS; i++) {
-        out->bucket_hash[i] = 2166136261u;
+        out->bucket_hash[i] = NOCTURNE_FNV1A_BASIS;
     }
     for (i = 0; i < g_CDemonSetPtr->actor_count; i++) {
         CDemonActor *actor = g_CDemonSetPtr->actors[i];
@@ -419,11 +412,7 @@ extern "C" void nocturne_net_sync_check(int sequence_number)
     nocturne_rng_frame_reset(sequence_number);
 
     if (net_game->connection_type == CONNECTION_HOST) {
-        for (i = 0; i < net_game->player_count; i++) {
-            if (i != net_game->local_player_index) {
-                core_netgame_cpp_CNetGame_send_FUN_005411c0(net_game, i, &own.header);
-            }
-        }
+        nocturne_net_session_broadcast(&own.header);
         return;
     }
     if (net_game->connection_type != CONNECTION_CLIENT) {
@@ -457,10 +446,8 @@ extern "C" int nocturne_net_sync_on_packet(const void *packet, int packet_size)
     const SNetPacket_SyncCheck *incoming = (const SNetPacket_SyncCheck *)packet;
     int slot;
 
-    if ((packet == (const void *)0x0) || (packet_size < (int)sizeof(SNetPacket_SyncCheck))) {
-        return 0;
-    }
-    if (incoming->header.type != (ENetPacketType)NOCTURNE_NET_PACKET_SYNC_CHECK) {
+    if (nocturne_net_packet_is(packet, packet_size, NOCTURNE_NET_PACKET_SYNC_CHECK,
+                               (int)sizeof(SNetPacket_SyncCheck)) == 0) {
         return 0;
     }
 

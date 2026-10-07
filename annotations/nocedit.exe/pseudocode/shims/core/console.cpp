@@ -2,10 +2,10 @@
 // CONSOLE — implementation
 // =============================================================================
 //
-// See game/console.h for what this is for and why the shipped grid cannot just
+// See core/console.h for what this is for and why the shipped grid cannot just
 // grow in place.
 
-#include "game/console.h"
+#include "core/console.h"
 #include "shim_config.h"
 
 #include <string.h>

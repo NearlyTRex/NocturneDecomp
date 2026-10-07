@@ -7,6 +7,7 @@
 // guarded when the shipped cheats are not.
 
 #include "game/cheats.h"
+#include "core/ini_setting.h"
 #include "shim_config.h"
 
 #include "nocturne.h"
@@ -17,17 +18,10 @@
 
 #if !NOCTURNE_AUTHENTIC_CHEAT_MENU
 
-// Defined in shims/watcom/crt.cpp — the '\\'->'/' + case-insensitive resolution the
-// CRT _fopen shim applies, so the probe below looks at the file the engine
-// will actually open.
-std::string watcom_resolve_fs_path(const char *path);
-
 namespace {
 
-// The game's own ini, the one inivar.cpp and window_mode.cpp write. Non-const
-// because the engine's INI accessors take char *.
-char kIniPath[]    = ".\\system\\nocturne.ini";
-char kIniSection[] = "Cheats";
+// In the game's own ini (core/ini_setting.h).
+const char kIniSection[] = "Cheats";
 
 // Pages, in picker order.
 #define CHEAT_PAGE_GAMEPLAY 0
@@ -39,10 +33,6 @@ char kIniSection[] = "Cheats";
 
 // Longest page is Guns & ammo at twelve.
 #define CHEAT_MENU_MAX_LINES 16
-
-// The Options screen's own start-y, so a page's lines land where the ones it
-// replaced on screen were.
-#define CHEAT_MENU_START_Y 0xfa
 
 struct CheatDef {
     char *label;
@@ -280,9 +270,7 @@ int effectiveState(int index)
 // single player.
 void expireOverrideOutsideSession(void)
 {
-    if (s_override_active &&
-        ((g_CNetGamePtr == (CNetGame *)0) ||
-         (g_CNetGamePtr->connection_type == CONNECTION_NONE))) {
+    if (s_override_active && (nocturne_net_session_active() == 0)) {
         s_override_active      = false;
         s_override_unannounced = false;
     }
@@ -290,29 +278,16 @@ void expireOverrideOutsideSession(void)
 
 void loadSettings(void)
 {
-    std::string resolved;
-    FILE       *probe;
-    int         i;
+    int i;
 
     if (s_loaded) {
         return;
     }
     s_loaded = true;
 
-    // CIni::getProfileString has NO initialised-guard: if it cannot open the
-    // file it calls displayErrorAndQuit("Unable to open input") and takes the
-    // process with it. Check the file is really there first, the same way
-    // window_mode.cpp does before its own read.
-    resolved = watcom_resolve_fs_path(kIniPath);
-    probe    = fopen(resolved.c_str(), "rb");
-    if (probe == (FILE *)0) {
-        return;                                   // every cheat stays off
-    }
-    fclose(probe);
-
+    // With no ini yet every cheat stays off.
     for (i = 0; i < NOCTURNE_CHEAT_COUNT; i++) {
-        int value = engine_ini_cpp_getProfileInteger_FUN_004fb9a0(
-                        kIniSection, kCheats[i].ini_key, 0, kIniPath);
+        int value = nocturne_ini_get_int(kIniSection, kCheats[i].ini_key, 0);
         if ((value < 0) || (kCheats[i].state_count <= value)) {
             value = 0;                            // a hand-edited key
         }
@@ -322,11 +297,7 @@ void loadSettings(void)
 
 void saveSetting(int index)
 {
-    char value[8];
-
-    snprintf(value, sizeof(value), "%d", s_state[index]);
-    engine_ini_cpp_writeProfileString_FUN_004fba40(
-        kIniSection, kCheats[index].ini_key, value, kIniPath);
+    nocturne_ini_set_int(kIniSection, kCheats[index].ini_key, s_state[index]);
 }
 
 // The hero the grants go to, or null when no mission is running.
@@ -337,7 +308,7 @@ CHero *localHero(void)
     if (g_HeroCount < 1) {
         return (CHero *)0;
     }
-    return g_HeroActors[g_LocalHeroIndex];
+    return nocturne_hero_local();
 }
 
 // -----------------------------------------------------------------------------
@@ -1052,14 +1023,8 @@ void applyOne(int index, int value)
 // off rather than letting whichever applied last win.
 void cycleOne(int index)
 {
-    int states = kCheats[index].state_count;
-
-    if (g_MenuLeftRightPressed == 1) {
-        s_state[index] = (s_state[index] + states - 1) % states;
-    }
-    else {
-        s_state[index] = (s_state[index] + 1) % states;
-    }
+    s_state[index] = nocturne_ini_cycle(s_state[index], (g_MenuLeftRightPressed == 1) ? -1 : 1,
+                                        kCheats[index].state_count);
     saveSetting(index);
 
     if ((index == NOCTURNE_CHEAT_BIG_HEAD) && (s_state[index] != 0) &&
@@ -1083,31 +1048,6 @@ char *stateLabel(int index, int value)
     return g_OnOffLabels[value];
 }
 
-// One frame of moon backdrop, shared by the picker and the pages.
-void menuFrame(void)
-{
-    core_game_cpp_CGame_updateDT_FUN_004d7d90(g_CGamePtr);
-    core_moon_cpp_CMoon_update_FUN_00529d60(&g_CMoonInstance, g_CGamePtr->delta_time_float);
-    core_moon_cpp_CMoon_render_FUN_00529ed0(&g_CMoonInstance);
-}
-
-// A titled menu single-spaces its lines and spends two character heights on the
-// title. Lift the start where a short window would otherwise push the last line
-// under the copyright.
-int menuStartY(int line_count)
-{
-    int menu_ch = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_ThemeFont, 0x58);
-    int menu_y  = CHEAT_MENU_START_Y;
-
-    if (g_WindowHeight < menu_y + (line_count + 4) * menu_ch) {
-        menu_y = g_WindowHeight - (line_count + 4) * menu_ch;
-    }
-    if (menu_y < 0) {
-        menu_y = 0;
-    }
-    return menu_y;
-}
-
 // Titles say who is deciding, so a guest whose lines refuse to move can see
 // why rather than think the menu is broken.
 char *menuTitle(char *buffer, int size, char *base)
@@ -1119,17 +1059,6 @@ char *menuTitle(char *buffer, int size, char *base)
              support_newmsg_cpp_getLocalizedString_FUN_005441f0(base),
              support_newmsg_cpp_getLocalizedString_FUN_005441f0((char *)"(set by host)"));
     return buffer;
-}
-
-// True when the player has asked to leave the screen they are on.
-int menuCancelled(void)
-{
-    if ((*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr, DIK_ESCAPE) != 0) {
-        return 1;
-    }
-    // Set when the window is closed. The Options screen treats it as a quit, so
-    // this must not sit here spinning through a shutdown.
-    return g_InputDisabled != 0;
 }
 
 // One page's On/Off list, over the contiguous run of cheats belonging to it.
@@ -1157,7 +1086,7 @@ void cheatsPage(int page)
     engine_2d_c_clearInputAndWait_FUN_00403260();
 
     for (;;) {
-        menuFrame();
+        nocturne_menu_backdrop_frame();
 
         // Rebuilt every frame, as the Options screen rebuilds its own: the
         // strings are localized and the language can change under this screen.
@@ -1170,7 +1099,7 @@ void cheatsPage(int page)
                         stateLabel(items[i], effectiveState(items[i]))));
         }
         choice = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(
-                     menu_ptrs, item_count, &selected, menuStartY(item_count),
+                     menu_ptrs, item_count, &selected, nocturne_menu_start_y(NOCTURNE_MENU_ROWS_TITLED(item_count)),
                      menuTitle(title, sizeof(title), kPageTitles[page]));
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
 
@@ -1181,7 +1110,7 @@ void cheatsPage(int page)
             cycleOne(items[choice]);
             applyOne(items[choice], s_state[items[choice]]);
         }
-        if (menuCancelled() != 0) {
+        if (nocturne_menu_cancelled() != 0) {
             return;
         }
     }
@@ -1211,7 +1140,7 @@ void nocturne_cheats_menu(void)
     engine_2d_c_clearInputAndWait_FUN_00403260();
 
     for (;;) {
-        menuFrame();
+        nocturne_menu_backdrop_frame();
 
         for (i = 0; i < CHEAT_PAGE_COUNT; i++) {
             strcpy(lines[i],
@@ -1219,7 +1148,7 @@ void nocturne_cheats_menu(void)
         }
         choice = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(
                      menu_ptrs, CHEAT_PAGE_COUNT, &selected,
-                     menuStartY(CHEAT_PAGE_COUNT),
+                     nocturne_menu_start_y(NOCTURNE_MENU_ROWS_TITLED(CHEAT_PAGE_COUNT)),
                      menuTitle(title, sizeof(title), (char *)"Cheats"));
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
 
@@ -1227,7 +1156,7 @@ void nocturne_cheats_menu(void)
             cheatsPage(choice);
             engine_2d_c_clearInputAndWait_FUN_00403260();
         }
-        if (menuCancelled() != 0) {
+        if (nocturne_menu_cancelled() != 0) {
             return;
         }
     }

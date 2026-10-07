@@ -2,14 +2,14 @@
 // PERF OVERLAY — see perf_overlay.h
 // =============================================================================
 
-#include "game/perf_overlay.h"
+#include "debug/perf_overlay.h"
 #include "shim_config.h"
 
 #if !NOCTURNE_AUTHENTIC_CHEAT_MENU
 
 #include "nocturne.h"
 #include "game/cheats.h"
-#include "game/ui_scale.h"
+#include "core/ui_scale.h"
 
 #include <SDL.h>
 #include <cstdio>

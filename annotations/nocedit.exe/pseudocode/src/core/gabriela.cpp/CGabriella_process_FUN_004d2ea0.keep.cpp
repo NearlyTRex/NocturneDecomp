@@ -77,7 +77,7 @@ void __cdecl core_gabriela_cpp_CGabriella_process_FUN_004d2ea0(CGabriella *this_
   }
 #if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
   nocturne_hero_gabriella_hold_weapon(this_ptr);
-  nocturne_hero_items_process(&this_ptr->base);
+  nocturne_hero_frame(&this_ptr->base,delta_time);
 #endif
   if ((this_ptr->base).control_type == HERO_CONTROL_AI) {
     core_gabriela_cpp_CGabriella_processAI_FUN_004d4190(this_ptr,delta_time);
@@ -407,7 +407,11 @@ LAB_004d3cb4:
       local_178.x = local_178.x + (this_ptr->base).base.velocity.x * delta_time;
       local_178.y = local_178.y + (this_ptr->base).base.velocity.y * delta_time;
       local_178.z = local_178.z + delta_time * (this_ptr->base).base.velocity.z;
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+      nocturne_hero_fall_move(&this_ptr->base,&local_178);
+#else
       core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40((CCharacter *)this_ptr,&local_178);
+#endif
     }
   }
   else {

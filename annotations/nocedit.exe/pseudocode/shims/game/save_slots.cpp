@@ -564,10 +564,6 @@ extern "C" int  nocturne_load_pick_slot(char *, int) { return 0; }
 // Continue, Start, Load — the most the submenu ever lists.
 #define SP_MENU_MAX_ITEMS 3
 
-// The main menu's own start-y, so the submenu's lines land where the ones it
-// replaced on screen were.
-#define SP_MENU_START_Y 0xfa
-
 extern "C" int nocturne_single_player_menu(void)
 {
     char  continue_line[256];
@@ -580,8 +576,6 @@ extern "C" int nocturne_single_player_menu(void)
     int   selected = 0;
     int   menu_count;
     int   choice;
-    int   menu_ch;
-    int   menu_y;
 
     // The caller reached here on a RETURN that renderMenuAndGetChoice has
     // already consumed, but the key can still be down; without this the
@@ -589,10 +583,7 @@ extern "C" int nocturne_single_player_menu(void)
     engine_2d_c_clearInputAndWait_FUN_00403260();
 
     for (;;) {
-        core_game_cpp_CGame_updateDT_FUN_004d7d90(g_CGamePtr);
-        core_moon_cpp_CMoon_update_FUN_00529d60(&g_CMoonInstance,
-                                                g_CGamePtr->delta_time_float);
-        core_moon_cpp_CMoon_render_FUN_00529ed0(&g_CMoonInstance);
+        nocturne_menu_backdrop_frame();
 
         // Rebuilt every frame, as the main menu rebuilds its own: the strings
         // are localized and the language can change under the options screen.
@@ -617,20 +608,12 @@ extern "C" int nocturne_single_player_menu(void)
         menu_ptrs[menu_count]  = load_line;
         menu_count             = menu_count + 1;
 
-        // An untitled menu double-spaces its lines (see renderMenuAndGetChoice),
-        // so each entry occupies two character heights. Lift the start where a
-        // short window would otherwise push the last line under the copyright.
-        menu_ch = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_ThemeFont, 0x58);
-        menu_y  = SP_MENU_START_Y;
-        if (g_WindowHeight < menu_y + (menu_count * 2 + 1) * menu_ch) {
-            menu_y = g_WindowHeight - (menu_count * 2 + 1) * menu_ch;
-        }
-        if (menu_y < 0) {
-            menu_y = 0;
-        }
-
+        // From the main menu's own start-y, so the submenu's lines land where
+        // the ones it replaced on screen were.
         choice = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(
-                     menu_ptrs, menu_count, &selected, menu_y, (char *)0x0);
+                     menu_ptrs, menu_count, &selected,
+                     nocturne_menu_start_y(NOCTURNE_MENU_ROWS_UNTITLED(menu_count)),
+                     (char *)0x0);
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
 
         if (choice >= 0) {
@@ -645,12 +628,7 @@ extern "C" int nocturne_single_player_menu(void)
             }
             return NOCTURNE_SP_MENU_CANCEL;
         }
-        if ((*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr, DIK_ESCAPE) != 0) {
-            return NOCTURNE_SP_MENU_CANCEL;
-        }
-        // Set when the window is closed. The main menu treats it as a quit, so
-        // this must not sit here spinning through a shutdown.
-        if (g_InputDisabled != 0) {
+        if (nocturne_menu_cancelled() != 0) {
             return NOCTURNE_SP_MENU_CANCEL;
         }
     }
@@ -741,7 +719,7 @@ extern "C" void nocturne_autosave_poll(CGame *game)
         (g_HeroCount < 1)) {
         return;
     }
-    if (g_CNetGamePtr->connection_type != CONNECTION_NONE) {
+    if (nocturne_net_session_active() != 0) {
         s_prev_mission[0] = '\0';
         s_prev_letterbox  = 0;
         return;

@@ -18,8 +18,8 @@ extern "C" {
 
 // findActorByName, then every CHero's inventory, the same set
 // CDemonMission::writeFile saves. Case-insensitive, as findActorByName is.
-struct CDemonActor *nocturne_find_actor_or_carried_item(struct CDemonMission *mission,
-                                                        const char *name);
+struct CDemonActor *nocturne_item_names_find_actor(struct CDemonMission *mission,
+                                                   const char *name);
 
 #ifdef __cplusplus
 }
