@@ -148,9 +148,60 @@ void nocturne_net_sim_note_trigger_hero(struct CDemonActor *actor);
 // The recorded hero, or null if there is none.
 struct CHero *nocturne_net_sim_trigger_hero(void);
 
-// Clears the record. Called from CDemonMission::removeAllActors, so a record
-// never outlives its mission and a fresh process matches one that has played.
+// Clears the record, and the gas room's below. Called from
+// CDemonMission::removeAllActors, so a record never outlives its mission and a
+// fresh process matches one that has played.
 void nocturne_net_sim_forget_trigger_hero(void);
+
+// THE GAS ROOM
+//
+// In a network game resolveActorByName gives the script specifier `$` as
+// g_HeroActors[0]. ACT2's mission script chokes `$` when TriggerGasRoom raises
+// InGasRoom and iswearinggasmask($) fails, and kills `$` when the choke runs
+// out, so a guest who walked in unmasked choked the host, wherever the host
+// stood, and breathed the gas unharmed. TriggerGasRoom is the only gas in the
+// shipped missions, and those two script lines the only reads of the mask.
+//
+// `$` therefore means, in a network game, the first player hero in slot order
+// standing in TriggerGasRoom without the mask on, and that hero is kept while
+// the script's choking flag (a persistent event, as flagOn keeps it) is on -
+// through the choke, an escape from the room, or the mask going on - and on
+// the frame Escape is raised, when the script has turned choking off and
+// speaks its escape line. With no one unmasked in the room and no choke under
+// way it stays g_HeroActors[0].
+//
+// InGasRoom is raised while any CDemonActor is inside, a corpse included, and
+// for a frame after the last one leaves, so outside a choke iswearinggasmask
+// passes for a hero not alive and unmasked in the room; otherwise the fallback
+// g_HeroActors[0] is choked wherever it stands. The script leaves its choke
+// only through the mask or the escape, and a dead hero respawns in a network
+// game, so a hero the choke has killed also answers as masked and the choke
+// ends. Containment, mask state, hit points and persistent events are
+// simulation state, so every machine picks the same hero.
+//
+// The room's two dbSay lines are the Stranger's recordings; spoken by another
+// hero they take a caption from game/dialogue_override.h and play no sound.
+
+// The hero `$` means in a network game.
+struct CHero *nocturne_net_sim_script_hero(void);
+
+// Nonzero when iswearinggasmask must pass for `hero` whatever its mask: a
+// network game's dead hero, or, with no choke under way, one not alive and
+// unmasked inside TriggerGasRoom. 0 outside a network game.
+int nocturne_net_sim_gas_spares(struct CHero *hero);
+
+// TriggerGasRoomEscape raises Escape when the room holds no CDemonActor, so
+// with a masked partner inside, a choking hero who walks out never escapes and
+// the choke kills them outside. Raises Escape, as the trigger does, on a frame
+// the choke is under way and its hero is alive outside the room. Called at the
+// end of CEventList::process, so the event is pending for the next frame as a
+// trigger's would be.
+void nocturne_net_sim_gas_tick(void);
+
+// Nonzero when a hero standing with its feet at `feet` would be inside
+// TriggerGasRoom, by CTrigger::containsActor's test. The respawn refuses such
+// a spot, since a hero revived there unmasked chokes again.
+int nocturne_net_sim_spot_in_gas(const struct CVector3f *feet);
 
 // Simulation code must not call rand() directly either — that is the other half
 // of the same problem, and it lives in rng.h (nocturne_rng_sim).

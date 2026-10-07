@@ -10,7 +10,7 @@
 ;
 ; XREF[3]:
 ;   core_script.cpp_CCmdParm_getCharacterByContext_FUN_005627f0 at 0056284e
-;   core_script.cpp_CScript_getDialogDuration_FUN_0055ff00 at 0055ff3e
+;   core_script.cpp_CScript_startDialogLine_FUN_0055ff00 at 0055ff3e
 ;   core_script.cpp_CScript_step_FUN_0055a810 at 0055bc6f
 ;
 ; Referenced Globals:

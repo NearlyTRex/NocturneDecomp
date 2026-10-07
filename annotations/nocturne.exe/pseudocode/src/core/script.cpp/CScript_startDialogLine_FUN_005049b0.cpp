@@ -1,14 +1,14 @@
-// Name: core_script.cpp_CScript_getDialogDuration_FUN_005049b0
+// Name: core_script.cpp_CScript_startDialogLine_FUN_005049b0
 // Address: 005049b0
 // Address Range: [[005049b0, 00504b69]]
 // Convention: __cdecl
-// Signature: float __cdecl core_script_cpp_CScript_getDialogDuration_FUN_005049b0(CScript *this_ptr,char *actor_specifier,char *sound_name,char *dialog_text)
+// Signature: float __cdecl core_script_cpp_CScript_startDialogLine_FUN_005049b0(CScript *this_ptr,char *actor_specifier,char *sound_name,char *dialog_text)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-float __cdecl core_script_cpp_CScript_getDialogDuration_FUN_005049b0(CScript *this_ptr,char *actor_specifier,char *sound_name,char *dialog_text)
+float __cdecl core_script_cpp_CScript_startDialogLine_FUN_005049b0(CScript *this_ptr,char *actor_specifier,char *sound_name,char *dialog_text)
 
 {
   char cVar1;

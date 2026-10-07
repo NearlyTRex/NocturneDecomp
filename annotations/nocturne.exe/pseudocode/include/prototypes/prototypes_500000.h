@@ -32,7 +32,7 @@
 // FUNCTION PROTOTYPES - Range 0x500000
 // =============================================================================
 
-float __cdecl core_script_cpp_CScript_getDialogDuration_FUN_005049b0(CScript *this_ptr,char *actor_specifier,char *sound_name,char *dialog_text);
+float __cdecl core_script_cpp_CScript_startDialogLine_FUN_005049b0(CScript *this_ptr,char *actor_specifier,char *sound_name,char *dialog_text);
 int __cdecl core_script_cpp_CScript_processTimer_FUN_00504b70(CScript *this_ptr,float delta_time,float *timer_value);
 void __cdecl core_script_cpp_CScript_setSpeaker_FUN_00504bf0(CScript *this_ptr,CDemonActor *actor);
 int __cdecl core_script_cpp_CScript_findLabelIndex_FUN_00504c10(CScript *this_ptr,char *label_name);

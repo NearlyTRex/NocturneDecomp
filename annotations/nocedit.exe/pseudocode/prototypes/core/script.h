@@ -99,9 +99,9 @@ void __cdecl CScript::executeInitSection(CScript *this_ptr);
 // Address: 0055a810
 int __cdecl CScript::step(CScript *this_ptr,float *time_remaining);
 
-// Original: core_script.cpp_CScript_getDialogDuration_FUN_0055ff00
+// Original: core_script.cpp_CScript_startDialogLine_FUN_0055ff00
 // Address: 0055ff00
-float __cdecl CScript::getDialogDuration(CScript *this_ptr,char *actor_specifier,char *sound_name,char *dialog_text);
+float __cdecl CScript::startDialogLine(CScript *this_ptr,char *actor_specifier,char *sound_name,char *dialog_text);
 
 // Original: core_script.cpp_CScript_processTimer_FUN_005600c0
 // Address: 005600c0

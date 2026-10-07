@@ -47,5 +47,8 @@ void __cdecl core_event_cpp_CEventList_process_FUN_004aaac0(CEventList *this_ptr
       }
     } while (iVar1 < (this_ptr->timers).count);
   }
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+  nocturne_net_sim_gas_tick();
+#endif
   return;
 }

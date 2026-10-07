@@ -1892,6 +1892,14 @@ extern "C" int nocturne_hero_gabriella_pickup(CGabriella *gabriella)
     return 1;
 }
 
+extern "C" float nocturne_hero_gabriella_pickup_reach(CGabriella *gabriella)
+{
+    if ((gabriella != (CGabriella *)0x0) && (is_player_hero((CDemonActor *)gabriella) != 0)) {
+        return 5.0f;
+    }
+    return 2.0f;
+}
+
 // =============================================================================
 // Turning in place
 // =============================================================================

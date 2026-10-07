@@ -11,7 +11,7 @@
 ;
 ; XREF[2]:
 ;   core_mobster.cpp_CMobster_playTaunt_FUN_005279f0 at 00527a90
-;   core_script.cpp_CScript_getDialogDuration_FUN_0055ff00 at 0055ff90
+;   core_script.cpp_CScript_startDialogLine_FUN_0055ff00 at 0055ff90
 ;
 ; Referenced Globals:
 ;   uchar[257] g_CharacterClassificationTable

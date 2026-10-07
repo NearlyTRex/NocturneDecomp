@@ -699,7 +699,7 @@ LAB_0055c37e:
                                       }
                                       if (this_ptr->dialog_wav_time < 0.0) {
                                         local_14 =
-                                                  core_script_cpp_CScript_getDialogDuration_FUN_0055ff00
+                                                  core_script_cpp_CScript_startDialogLine_FUN_0055ff00
                                                             (this_ptr,local_e4,local_c14,local_104);
                                         this_ptr->dialog_wav_time = local_14;
                                         if (this_ptr->dialog_wav_time < 0.0) {
@@ -752,7 +752,7 @@ LAB_0055c37e:
                                           strcpy(local_1ec,pSVar3[iVar8].data + 0x3c);
                                         }
                                         local_14 =
-                                                  core_script_cpp_CScript_getDialogDuration_FUN_0055ff00
+                                                  core_script_cpp_CScript_startDialogLine_FUN_0055ff00
                                                             (this_ptr,local_f8,local_1ec,local_f4);
                                         this_ptr->dialog_wav_time = local_14;
                                         fVar1 = this_ptr->dialog_wav_time;
@@ -2133,7 +2133,7 @@ LAB_0055e656:
                                                   core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (local_3b6c + local_88);
                                                   local_14 =
-                                                  core_script_cpp_CScript_getDialogDuration_FUN_0055ff00
+                                                  core_script_cpp_CScript_startDialogLine_FUN_0055ff00
                                                             (this_ptr,local_258c,local_145c,pcVar7);
                                                   this_ptr->dialog_wav_time = local_14;
                                                   if (this_ptr->dialog_wav_time < 0.0) {
@@ -2380,17 +2380,9 @@ LAB_0055e656:
                                                   if (pCVar18_00 == (CDemonActor *)0x0)
                                                   goto joined_r0x0055c026;
 #if !NOCTURNE_AUTHENTIC_NETPLAY
-                                                  if (((g_CNetGamePtr->
-                                                        connection_type !=
-                                                        CONNECTION_NONE) &&
-                                                      (pCVar18_00 ==
-                                                       (CDemonActor *)
-                                                       g_HeroActors[0])) &&
-                                                     (g_HeroActors[g_LocalHeroIndex] !=
-                                                      (CHero *)0x0)) {
-                                                    pCVar18_00 = (CDemonActor *)
-                                                  g_HeroActors[g_LocalHeroIndex];
-                                                  }
+                                                  pCVar18_00 =
+                                                       nocturne_net_camera_focus_actor
+                                                                 (pCVar18_00);
 #endif
                                                   if (pCVar18_00 != this_ptr->focus_actor) {
                                                     this_ptr->focus_actor_changed = 1;
@@ -2807,7 +2799,7 @@ LAB_0055f0a8:
                                                   core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (local_3978 + local_3c);
                                                   local_14 =
-                                                  core_script_cpp_CScript_getDialogDuration_FUN_0055ff00
+                                                  core_script_cpp_CScript_startDialogLine_FUN_0055ff00
                                                             (this_ptr,local_15ec,local_21a4,pcVar7);
                                                   this_ptr->dialog_wav_time = local_14;
                                                   fVar1 = this_ptr->dialog_wav_time;

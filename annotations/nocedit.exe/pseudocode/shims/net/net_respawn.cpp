@@ -185,6 +185,13 @@ static int respawn_clear_line(const CVector3f *from, const CVector3f *to)
                (g_CDemonSetPtr, &start, &end) == 0;
 }
 
+// A spot with floor that still kills whoever is revived on it: a script's
+// hazard volume. One check, so another hazard joins here.
+static int respawn_spot_is_trap(const CVector3f *feet)
+{
+    return nocturne_net_sim_spot_in_gas(feet) != 0;
+}
+
 static int respawn_too_close(const CVector3f *candidate,
                              const CVector3f *taken, int taken_count)
 {
@@ -234,6 +241,9 @@ static int respawn_find_spot(const CVector3f *anchor, float anchor_ground,
             }
             candidate.y = ground_y;
 
+            if (respawn_spot_is_trap(&candidate) != 0) {
+                continue;                       // floor inside a hazard
+            }
             if (respawn_too_close(&candidate, taken, taken_count) != 0) {
                 continue;
             }
@@ -429,7 +439,13 @@ extern "C" int nocturne_net_respawn_request(void)
         }
         else if (respawn_find_spot(&anchor_pos, anchor_ground,
                                    taken, taken_count, &spot) == 0) {
-            if ((i == g_LocalHeroIndex) && (s_have_safe != 0)) {
+            // The host's last safe footing is never in a hazard; another hero
+            // takes it too when it is clear of the anchor and the heroes
+            // placed so far, as when the anchor stands in a hazard of its own.
+            if ((s_have_safe != 0) &&
+                ((i == g_LocalHeroIndex) ||
+                 ((respawn_too_close(&s_safe_pos, &anchor_pos, 1) == 0) &&
+                  (respawn_too_close(&s_safe_pos, taken, taken_count) == 0)))) {
                 spot              = s_safe_pos;
                 s_pending.area_id = s_safe_area;
                 source            = "safe";
@@ -510,6 +526,13 @@ static void respawn_sample_safe(int sequence_number)
     }
     if (0.25f < fabsf((hero->base).base.location.position.y - ground_y)) {
         return;                         // airborne: jumping, or already falling
+    }
+    {
+        CVector3f feet = (hero->base).base.location.position;
+        feet.y = ground_y;
+        if (respawn_spot_is_trap(&feet) != 0) {
+            return;                     // alive in a hazard only for now
+        }
     }
     s_safe_pos   = (hero->base).base.location.position;
     s_safe_pos.y = ground_y;

@@ -9,7 +9,7 @@
 ; XREF[7]:
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047c4f0
 ;   core_game.cpp_CGame_rollCredits_FUN_004a6e90 at 004a71fb
-;   core_script.cpp_CScript_getDialogDuration_FUN_005049b0 at 00504b16
+;   core_script.cpp_CScript_startDialogLine_FUN_005049b0 at 00504b16
 ;   core_sound.cpp_CSound_configure_FUN_0052e850 at 0052e95f
 ;   core_sound.cpp_CSound_init_FUN_0052ddf0 at 0052decc
 ;   core_sound.cpp_CSound_process_FUN_0052dff0 at 0052e3b5

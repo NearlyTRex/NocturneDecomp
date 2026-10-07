@@ -29,6 +29,7 @@ int __cdecl core_gabriela_cpp_CGabriella_findAndPickupNearbyObject_FUN_004d5870(
   CVector3f local_38;
   uint local_28;
   float local_24;
+  float reach;
   int local_18;
   CDemonActor *pCVar1;
   float fVar2;
@@ -60,6 +61,10 @@ int __cdecl core_gabriela_cpp_CGabriella_findAndPickupNearbyObject_FUN_004d5870(
     local_bc[3] = *pCVar8;
   }
   local_24 = 4.0;
+  reach = 2.0f;
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+  reach = nocturne_hero_gabriella_pickup_reach(this_ptr);
+#endif
   for (local_18 = 0; local_18 < g_CDemonSetPtr->actor_count; local_18 = local_18 + 1) {
     pCVar1 = g_CDemonSetPtr->actors[local_18];
 #if !NOCTURNE_AUTHENTIC_HERO_WEAPON
@@ -96,7 +101,7 @@ int __cdecl core_gabriela_cpp_CGabriella_findAndPickupNearbyObject_FUN_004d5870(
 LAB_004d59f9:
         fVar6 = (pCVar1->location).position.x - local_bc[uVar9].x;
         fVar7 = (pCVar1->location).position.z - local_bc[uVar9].z;
-        if ((ABS((pCVar1->location).position.y - local_bc[uVar9].y) <= (float)2)
+        if ((ABS((pCVar1->location).position.y - local_bc[uVar9].y) <= reach)
            && (fVar6 = fVar6 * fVar6 + fVar7 * fVar7, fVar6 <= local_24)) {
           (this_ptr->base).object_to_pick_up = pCVar1;
           local_28 = uVar9;

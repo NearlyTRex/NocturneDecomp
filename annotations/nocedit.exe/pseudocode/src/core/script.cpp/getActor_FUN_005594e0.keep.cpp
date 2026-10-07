@@ -47,7 +47,7 @@ CDemonActor * __cdecl core_script_cpp_getActor_FUN_005594e0(char *actor_specifie
         actor_ptr = g_HeroActors[g_LocalHeroIndex];
       }
       else {
-        actor_ptr = g_HeroActors[0];
+        actor_ptr = nocturne_net_sim_script_hero();
       }
 #endif
       if (actor_ptr == (CHero *)0x0) {

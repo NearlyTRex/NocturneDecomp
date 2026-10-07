@@ -2931,8 +2931,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x3ecc]    ; 0050102e
     PUSH EDI                            ; 00501035
     PUSH EBX                            ; 00501036
-    CALL core_script.cpp_CScript_getDialogDuration_FUN_005049b0 ; 00501037
-        ;   XREF to: 005049b0 (UNCONDITIONAL_CALL)  ; float core_script.cpp_CScript_getDialogDuration_FUN_005049b0(CScript * this_ptr, char * actor_specifier, char * sound_name, char * dialog_text)
+    CALL core_script.cpp_CScript_startDialogLine_FUN_005049b0 ; 00501037
+        ;   XREF to: 005049b0 (UNCONDITIONAL_CALL)  ; float core_script.cpp_CScript_startDialogLine_FUN_005049b0(CScript * this_ptr, char * actor_specifier, char * sound_name, char * dialog_text)
     MOV dword ptr [ESP + 0x3fa4],EAX    ; 0050103c
     FLDZ                                ; 00501043
     MOV EAX,dword ptr [ESP + 0x3fa4]    ; 00501045
@@ -3017,8 +3017,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x3eb8]    ; 00501144
     PUSH EDI                            ; 0050114b | = "$"
     PUSH EBX                            ; 0050114c
-    CALL core_script.cpp_CScript_getDialogDuration_FUN_005049b0 ; 0050114d
-        ;   XREF to: 005049b0 (UNCONDITIONAL_CALL)  ; float core_script.cpp_CScript_getDialogDuration_FUN_005049b0(CScript * this_ptr, char * actor_specifier, char * sound_name, char * dialog_text)
+    CALL core_script.cpp_CScript_startDialogLine_FUN_005049b0 ; 0050114d
+        ;   XREF to: 005049b0 (UNCONDITIONAL_CALL)  ; float core_script.cpp_CScript_startDialogLine_FUN_005049b0(CScript * this_ptr, char * actor_specifier, char * sound_name, char * dialog_text)
     MOV dword ptr [ESP + 0x3fa4],EAX    ; 00501152
     FLDZ                                ; 00501159
     MOV EAX,dword ptr [ESP + 0x3fa4]    ; 0050115b
@@ -5703,8 +5703,8 @@ section .text
     LEA EAX,[ESP + 0x10c4]              ; 00503210
     PUSH EAX                            ; 00503217
     PUSH EBX                            ; 00503218
-    CALL core_script.cpp_CScript_getDialogDuration_FUN_005049b0 ; 00503219
-        ;   XREF to: 005049b0 (UNCONDITIONAL_CALL)  ; float core_script.cpp_CScript_getDialogDuration_FUN_005049b0(CScript * this_ptr, char * actor_specifier, char * sound_name, char * dialog_text)
+    CALL core_script.cpp_CScript_startDialogLine_FUN_005049b0 ; 00503219
+        ;   XREF to: 005049b0 (UNCONDITIONAL_CALL)  ; float core_script.cpp_CScript_startDialogLine_FUN_005049b0(CScript * this_ptr, char * actor_specifier, char * sound_name, char * dialog_text)
     MOV dword ptr [ESP + 0x3fa4],EAX    ; 0050321e
     FLDZ                                ; 00503225
     MOV EAX,dword ptr [ESP + 0x3fa4]    ; 00503227
@@ -6987,8 +6987,8 @@ section .text
     LEA EAX,[ESP + 0x29c4]              ; 0050416a
     PUSH EAX                            ; 00504171
     PUSH EBX                            ; 00504172
-    CALL core_script.cpp_CScript_getDialogDuration_FUN_005049b0 ; 00504173
-        ;   XREF to: 005049b0 (UNCONDITIONAL_CALL)  ; float core_script.cpp_CScript_getDialogDuration_FUN_005049b0(CScript * this_ptr, char * actor_specifier, char * sound_name, char * dialog_text)
+    CALL core_script.cpp_CScript_startDialogLine_FUN_005049b0 ; 00504173
+        ;   XREF to: 005049b0 (UNCONDITIONAL_CALL)  ; float core_script.cpp_CScript_startDialogLine_FUN_005049b0(CScript * this_ptr, char * actor_specifier, char * sound_name, char * dialog_text)
     MOV dword ptr [ESP + 0x3fa4],EAX    ; 00504178
     FLDZ                                ; 0050417f
     MOV EAX,dword ptr [ESP + 0x3fa4]    ; 00504181
