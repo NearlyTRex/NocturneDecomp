@@ -376,11 +376,6 @@ extern "C" void nocturne_net_sync_reset(void)
     s_ring_used  = 0;
     s_mismatches = 0;
     std::memset(s_ring_seq, 0, sizeof(s_ring_seq));
-    nocturne_rng_reset();
-    nocturne_sim_trace_reset();
-    nocturne_net_weapon_reset();
-    nocturne_net_camera_reset();
-    nocturne_net_skip_reset();
 }
 
 extern "C" void nocturne_net_sync_check(int sequence_number)

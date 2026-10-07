@@ -38,11 +38,8 @@ static SNetPacket_Camera s_pending[CAMERA_MAX_PENDING];
 static int s_pending_count = 0;
 static int s_synced_camera[NOCTURNE_HERO_SLOTS] = {
     CAMERA_NONE, CAMERA_NONE, CAMERA_NONE, CAMERA_NONE};
-// Serials taken from each peer: the highest, plus a bit for each of the 32
-// below it. A lost change re-sent after a later one still gets in, which a
-// highest-only mark (as net_weapon uses) would refuse.
-static int          s_highest_serial[NOCTURNE_HERO_SLOTS];
-static unsigned int s_seen_below[NOCTURNE_HERO_SLOTS];
+// Serials taken from each peer (net_packets.h).
+static SNetSerialWindow s_serials[NOCTURNE_HERO_SLOTS];
 // Serial of the change each player's synced camera came from.
 static int s_applied_serial[NOCTURNE_HERO_SLOTS];
 static int s_next_serial = 1;
@@ -66,33 +63,6 @@ static void camera_queue(const SNetPacket_Camera *change)
     s_pending_count = s_pending_count + 1;
 }
 
-// Marks `serial` from `origin` as taken. 0 if it was already taken, or is too
-// far below the newest to tell.
-static int camera_take_serial(int origin, int serial)
-{
-    int highest = s_highest_serial[origin];
-
-    if (highest < serial) {
-        int shift = serial - highest;
-        s_seen_below[origin] = (shift < 32)
-            ? ((s_seen_below[origin] << shift) | (1u << (shift - 1)))
-            : 0u;
-        if (highest == 0) {
-            s_seen_below[origin] = 0u;
-        }
-        s_highest_serial[origin] = serial;
-        return 1;
-    }
-    if ((serial == highest) || (32 < highest - serial)) {
-        return 0;
-    }
-    unsigned int bit = 1u << (highest - serial - 1);
-    if ((s_seen_below[origin] & bit) != 0u) {
-        return 0;
-    }
-    s_seen_below[origin] |= bit;
-    return 1;
-}
 
 static void camera_publish_local(void)
 {
@@ -148,7 +118,7 @@ extern "C" int nocturne_net_camera_on_packet(const void *packet, int packet_size
     if ((incoming->origin_player < 0) || (NOCTURNE_HERO_SLOTS <= incoming->origin_player)) {
         return 1;
     }
-    if (camera_take_serial(incoming->origin_player, incoming->serial) == 0) {
+    if (nocturne_net_serial_take(&s_serials[incoming->origin_player], incoming->serial) == 0) {
         return 1;               // a re-send of one already queued
     }
     camera_queue(incoming);
@@ -204,8 +174,7 @@ extern "C" void nocturne_net_camera_reset(void)
     s_next_serial      = 1;
     s_published_camera = -2;
     s_reported_late    = 0;
-    std::memset(s_highest_serial, 0, sizeof(s_highest_serial));
-    std::memset(s_seen_below, 0, sizeof(s_seen_below));
+    std::memset(s_serials, 0, sizeof(s_serials));
     std::memset(s_applied_serial, 0, sizeof(s_applied_serial));
     for (int i = 0; i < NOCTURNE_HERO_SLOTS; i++) {
         s_synced_camera[i] = CAMERA_NONE;

@@ -43,6 +43,14 @@ int nocturne_net_session_local_frame(void);
 // Sends `header`'s packet to every other player in the session.
 void nocturne_net_session_broadcast(struct SNetPacketHeader *header);
 
+// Clears every netplay module's per-mission state — the sync checker's ring,
+// the RNG reports, the sim trace, and the weapon, camera and skip queues —
+// so nothing scheduled in one mission applies inside the next. Called from
+// CDemonMission::createOneHero. Each module's reset is a no-op under
+// NOCTURNE_AUTHENTIC_NETPLAY, and the sync ring's when the checker is
+// compiled out.
+void nocturne_net_session_reset(void);
+
 #ifdef __cplusplus
 }
 #endif

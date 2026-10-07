@@ -57,10 +57,11 @@ typedef struct SNetPacket_WeaponSelect {
 static SNetPacket_WeaponSelect s_pending[WEAPON_MAX_PENDING];
 static int s_pending_count = 0;
 
-// Highest serial seen from each origin. A re-broadcast carries a serial we have
-// already taken, so it is dropped; a first copy that was lost still arrives
-// with a serial above the mark and is accepted.
-static int s_highest_serial[NOCTURNE_HERO_SLOTS];
+// Serials taken from each origin (net_packets.h). A re-broadcast of one already
+// taken is dropped; a change whose copies were lost until after a later one
+// arrived is still taken. A selection steps relative to the current weapon, so
+// one dropped on a single machine leaves the two disagreeing from then on.
+static SNetSerialWindow s_serials[NOCTURNE_HERO_SLOTS];
 
 // Our own outgoing serial.
 static int s_next_serial = 1;
@@ -110,7 +111,23 @@ static void weapon_queue(const SNetPacket_WeaponSelect *request)
               "machines will disagree about a weapon from here on");
         return;
     }
-    s_pending[s_pending_count] = *request;
+    // Kept in (apply frame, origin, serial) order rather than arrival order: a
+    // change that arrives late, after a later one from the same player, must
+    // still apply before it, as it does on the machine that sent both.
+    int at = s_pending_count;
+    while (0 < at) {
+        const SNetPacket_WeaponSelect *before = &s_pending[at - 1];
+        if ((before->apply_sequence < request->apply_sequence) ||
+            ((before->apply_sequence == request->apply_sequence) &&
+             ((before->origin_player < request->origin_player) ||
+              ((before->origin_player == request->origin_player) &&
+               (before->serial < request->serial))))) {
+            break;
+        }
+        s_pending[at] = *before;
+        at = at - 1;
+    }
+    s_pending[at] = *request;
     s_pending_count = s_pending_count + 1;
 }
 
@@ -161,10 +178,9 @@ extern "C" int nocturne_net_weapon_on_packet(const void *packet, int packet_size
     }
 
     // Re-broadcasts repeat a serial we have already taken.
-    if (incoming->serial <= s_highest_serial[incoming->origin_player]) {
+    if (nocturne_net_serial_take(&s_serials[incoming->origin_player], incoming->serial) == 0) {
         return 1;
     }
-    s_highest_serial[incoming->origin_player] = incoming->serial;
 
     weapon_queue(incoming);
     return 1;
@@ -215,7 +231,7 @@ extern "C" void nocturne_net_weapon_reset(void)
     s_pending_count = 0;
     s_next_serial   = 1;
     s_reported_late = 0;
-    std::memset(s_highest_serial, 0, sizeof(s_highest_serial));
+    std::memset(s_serials, 0, sizeof(s_serials));
     nocturne_hero_goggles_reset();
 }
 

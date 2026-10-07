@@ -342,7 +342,6 @@ extern "C" int nocturne_net_respawn_hero_in_world(CHero *hero)
 
 extern "C" int nocturne_net_respawn_request(int include_guests)
 {
-    CNetGame *net_game = g_CNetGamePtr;
     CHero    *anchor;
     CVector3f anchor_pos;
     int       anchor_area;
@@ -356,7 +355,7 @@ extern "C" int nocturne_net_respawn_request(int include_guests)
     if (nocturne_net_respawn_available() == 0) {
         return 0;
     }
-    if ((net_game->local_player_index < 0) || (RESPAWN_MAX_HEROES <= g_LocalHeroIndex)) {
+    if ((g_LocalHeroIndex < 0) || (RESPAWN_MAX_HEROES <= g_LocalHeroIndex)) {
         return 0;
     }
     hero_count = g_HeroCount;

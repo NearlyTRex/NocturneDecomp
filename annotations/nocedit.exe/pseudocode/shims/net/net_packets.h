@@ -24,9 +24,23 @@ enum {
     NOCTURNE_NET_PACKET_CAMERA              // net_camera.h
 };
 
+// The serials taken from one peer, for a change that is re-sent every frame
+// until it is due: the highest, plus a bit for each of the 32 below it. A lost
+// change re-sent after a later one still gets in, which a highest-only mark
+// would refuse — leaving the two machines to disagree about it for good.
+// Zero-initialised means nothing taken.
+typedef struct SNetSerialWindow {
+    int          highest;
+    unsigned int seen_below;
+} SNetSerialWindow;
+
 #ifdef __cplusplus
 extern "C" {
 #endif
+
+// Marks `serial` taken. 0 if it already was, or is too far below the newest to
+// tell — either way a repeat to drop.
+int nocturne_net_serial_take(SNetSerialWindow *window, int serial);
 
 // Zeroes `size` bytes of `packet` and fills in its SNetPacketHeader.
 void nocturne_net_packet_init(void *packet, int size, int type);

@@ -688,10 +688,11 @@ void applyHatModel(void)
     if (stranger == (CStranger *)0) {
         return;                                   // not playing the Stranger
     }
-    if (s_state[NOCTURNE_CHEAT_BIG_HEAD] != 0) {
+    // The settings in force, which in a network game are the host's.
+    if (effectiveState(NOCTURNE_CHEAT_BIG_HEAD) != 0) {
         model_name = (char *)"big-hat.kfm";
     }
-    else if (s_state[NOCTURNE_CHEAT_OLD_HAT] != 0) {
+    else if (effectiveState(NOCTURNE_CHEAT_OLD_HAT) != 0) {
         model_name = (char *)"oldhat.kfm";
     }
     else {

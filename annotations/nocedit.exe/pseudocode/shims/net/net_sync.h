@@ -66,8 +66,8 @@ void nocturne_net_sync_check(int sequence_number);
 // module. Returns 1 if it was one and has been consumed.
 int nocturne_net_sync_on_packet(const void *packet, int packet_size);
 
-// Drops the recorded history. Called when a mission is torn down so frame
-// numbers from a previous session can never be compared against this one.
+// Drops the recorded history, so frame numbers from a previous mission can
+// never be compared against this one. Called from nocturne_net_session_reset.
 void nocturne_net_sync_reset(void);
 
 #ifdef __cplusplus

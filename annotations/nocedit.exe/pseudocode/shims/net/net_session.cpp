@@ -35,6 +35,16 @@ extern "C" int nocturne_net_session_local_frame(void)
     return g_CNetGamePtr->players[g_CNetGamePtr->local_player_index].sim_frame_index;
 }
 
+extern "C" void nocturne_net_session_reset(void)
+{
+    nocturne_net_sync_reset();
+    nocturne_rng_reset();
+    nocturne_sim_trace_reset();
+    nocturne_net_weapon_reset();
+    nocturne_net_camera_reset();
+    nocturne_net_skip_reset();
+}
+
 extern "C" void nocturne_net_session_broadcast(SNetPacketHeader *header)
 {
     CNetGame *net_game = g_CNetGamePtr;

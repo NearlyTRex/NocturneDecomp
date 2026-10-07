@@ -449,7 +449,12 @@ static HRESULT ddraw_SetDisplayMode(IDirectDraw* this_ptr, DWORD width, DWORD he
             ddraw->window = g_sdlWindow;
             ddraw->owns_window = 0;
         } else {
+            // As the CreateWindowExA shim makes its window (user32.cpp): GL can
+            // only take a window created with SDL_WINDOW_OPENGL.
             Uint32 flags = SDL_WINDOW_HIDDEN;
+#if NOCTURNE_GL_PRESENT
+            flags |= SDL_WINDOW_OPENGL;
+#endif
             ddraw->window = SDL_CreateWindow("Nocturne",
                                               SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
                                               win_w, win_h, flags);

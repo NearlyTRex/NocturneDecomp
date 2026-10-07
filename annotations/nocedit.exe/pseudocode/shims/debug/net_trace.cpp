@@ -82,7 +82,9 @@ void trace_camera(void)
     DLOG("netplay",
          "t=%u ms sim=%d pending_sim=%d camera %d '%s' (zone %d) focus=%p (own=%p) zone=%d "
          "at %.2f %.2f %.2f hold=%g pending=%d goggles=%d letterbox=%d",
-         (unsigned)SDL_GetTicks(), net->players[net->local_player_index].sim_frame_index,
+         (unsigned)SDL_GetTicks(),
+         // No local player outside a session: local_player_index is -1.
+         (nocturne_net_session_active() != 0) ? nocturne_net_session_local_frame() : -1,
          net->has_pending_sim_frame,
          camera, (0 <= camera) ? set->cameras[camera].name : "",
          (0 <= camera) ? set->cameras[camera].vdir_zone : -1,
