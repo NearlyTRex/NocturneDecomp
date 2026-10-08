@@ -1,0 +1,117 @@
+cmake_minimum_required(VERSION 3.24)
+project(NocturneRecreation LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+option(NOCTURNE_RECREATION_COVERAGE "Instrument for clang source-based coverage" OFF)
+
+# Modules are the directories that carry a fwd.h.
+file(GLOB _fwd_headers RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}" CONFIGURE_DEPENDS
+     "${CMAKE_CURRENT_SOURCE_DIR}/*/fwd.h")
+set(NOCTURNE_RECREATION_MODULES "")
+foreach(_fwd IN LISTS _fwd_headers)
+    get_filename_component(_module "${_fwd}" DIRECTORY)
+    list(APPEND NOCTURNE_RECREATION_MODULES "${_module}")
+endforeach()
+
+add_library(nocturne_recreation_options INTERFACE)
+target_include_directories(nocturne_recreation_options INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}")
+target_compile_options(nocturne_recreation_options INTERFACE -Wall -Wextra -Wpedantic -Werror)
+if(NOCTURNE_RECREATION_COVERAGE)
+    target_compile_options(nocturne_recreation_options INTERFACE
+        -fprofile-instr-generate -fcoverage-mapping)
+    target_link_options(nocturne_recreation_options INTERFACE -fprofile-instr-generate)
+endif()
+
+set(_sources "")
+set(_headers "")
+foreach(_module IN LISTS NOCTURNE_RECREATION_MODULES)
+    file(GLOB_RECURSE _module_sources CONFIGURE_DEPENDS "${_module}/*.cpp")
+    file(GLOB_RECURSE _module_headers RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}" CONFIGURE_DEPENDS
+         "${_module}/*.h")
+    list(APPEND _sources ${_module_sources})
+    list(APPEND _headers ${_module_headers})
+endforeach()
+
+if(_sources)
+    add_library(nocturne_recreation STATIC ${_sources})
+    target_link_libraries(nocturne_recreation PUBLIC nocturne_recreation_options)
+else()
+    add_library(nocturne_recreation INTERFACE)
+    target_link_libraries(nocturne_recreation INTERFACE nocturne_recreation_options)
+endif()
+
+# Every header must compile on its own.
+set(_header_checks "")
+foreach(_header IN LISTS _headers)
+    set(_check "${CMAKE_CURRENT_BINARY_DIR}/header_checks/${_header}.cpp")
+    file(CONFIGURE OUTPUT "${_check}" CONTENT "#include \"${_header}\"\n")
+    list(APPEND _header_checks "${_check}")
+endforeach()
+if(_header_checks)
+    add_library(nocturne_recreation_header_checks OBJECT ${_header_checks})
+    target_link_libraries(nocturne_recreation_header_checks PRIVATE nocturne_recreation_options)
+endif()
+
+include(FetchContent)
+FetchContent_Declare(googletest
+    GIT_REPOSITORY https://github.com/google/googletest.git
+    GIT_TAG        v1.17.0
+    GIT_SHALLOW    TRUE)
+set(INSTALL_GTEST OFF CACHE BOOL "" FORCE)
+FetchContent_MakeAvailable(googletest)
+
+enable_testing()
+include(GoogleTest)
+
+set(NOCTURNE_RECREATION_TEST_BINARIES "")
+foreach(_module IN LISTS NOCTURNE_RECREATION_MODULES)
+    file(GLOB_RECURSE _tests CONFIGURE_DEPENDS "tests/${_module}/*_test.cpp")
+    if(NOT _tests)
+        continue()
+    endif()
+    set(_target recreation_${_module}_tests)
+    add_executable(${_target} ${_tests})
+    if(_sources)
+        # Whole archive, so code no test reaches still lands in the binary and
+        # counts as uncovered instead of vanishing from the report.
+        target_link_libraries(${_target} PRIVATE "$<LINK_LIBRARY:WHOLE_ARCHIVE,nocturne_recreation>")
+    else()
+        target_link_libraries(${_target} PRIVATE nocturne_recreation)
+    endif()
+    target_link_libraries(${_target} PRIVATE GTest::gtest_main GTest::gmock)
+    gtest_discover_tests(${_target} DISCOVERY_MODE PRE_TEST)
+    list(APPEND NOCTURNE_RECREATION_TEST_BINARIES $<TARGET_FILE:${_target}>)
+endforeach()
+
+if(NOCTURNE_RECREATION_COVERAGE)
+    find_program(LLVM_PROFDATA llvm-profdata REQUIRED)
+    find_program(LLVM_COV llvm-cov REQUIRED)
+    add_custom_target(coverage
+        COMMAND ${CMAKE_COMMAND}
+            -DBINARY_DIR=${CMAKE_CURRENT_BINARY_DIR}
+            -DSOURCE_DIR=${CMAKE_CURRENT_SOURCE_DIR}
+            -DLLVM_PROFDATA=${LLVM_PROFDATA}
+            -DLLVM_COV=${LLVM_COV}
+            "-DTEST_BINARIES=${NOCTURNE_RECREATION_TEST_BINARIES}"
+            -P ${CMAKE_CURRENT_SOURCE_DIR}/cmake/coverage.cmake
+        WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+        VERBATIM)
+endif()
+
+find_program(CLANG_FORMAT clang-format)
+if(CLANG_FORMAT)
+    file(GLOB_RECURSE _format_files CONFIGURE_DEPENDS
+         "${CMAKE_CURRENT_SOURCE_DIR}/*.h" "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp")
+    add_custom_target(format
+        COMMAND ${CLANG_FORMAT} -i --style=file ${_format_files}
+        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        VERBATIM)
+    add_custom_target(format-check
+        COMMAND ${CLANG_FORMAT} --dry-run --Werror --style=file ${_format_files}
+        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        VERBATIM)
+endif()

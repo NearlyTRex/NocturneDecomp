@@ -247,6 +247,11 @@ class Declarations:
         return [self.type_ref(p["type"]) for p in params]
 
 
+def void_pointer_count(f):
+    return sum(1 for p in f.get("params", [])
+               if p["type"]["name"] == "void" and p["type"].get("ptr", 0) > 0)
+
+
 def parameter_key(f):
     refs = [p["type"] for p in f.get("params", [])]
     return json.dumps(refs, sort_keys=True) + str(bool(f.get("variadic")))
@@ -323,8 +328,8 @@ class Scaffold:
         introducing class. Without one, every implementation votes once and
         names already used higher in the hierarchy are skipped, so two slots
         never collapse into one declaration. The signature is taken from an
-        implementation bearing that name, the introducer's own when it
-        qualifies. A body that fills several slots carries only one of their
+        implementation bearing that name: the one with the fewest void *
+        parameters, then the introducer's own. A body that fills several slots carries only one of their
         names, so it is not counted as a disagreement.
         """
         votes = collections.defaultdict(collections.Counter)
@@ -373,8 +378,10 @@ class Scaffold:
             taken[intro].add(name)
             # A body shared by several slots carries one slot's prototype, so the
             # signature comes from an implementation that bears the slot's name.
-            named = [f for f in impls[key] if f["method"] == name]
-            source = next((f for f in named if f["cls"] == intro), named[0] if named else impls[key][0])
+            # Ghidra types some parameters void * where the decompiled output reads
+            # better that way; the most specific prototype wins, then the introducer's.
+            named = [f for f in impls[key] if f["method"] == name] or impls[key]
+            source = min(named, key=lambda f: (void_pointer_count(f), f["cls"] != intro))
             self.virtual_decl[key] = (name, source)
 
     def virtuals_above(self, cls):
