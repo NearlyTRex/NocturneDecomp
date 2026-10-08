@@ -18,8 +18,8 @@
 ;
 ; XREF[3]:
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_0042cdb0 at 0042ce6c
+;   core_charactr.cpp_CCharacter_processCharacter_FUN_00429870 at 00429a53
 ;   core_charactr.cpp_CCharacter_processInEditor_FUN_0042f800 at 0042f88a
-;   core_charactr.cpp_CCharacter_process_FUN_00429870 at 00429a53
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_charactr_cpp_00617329

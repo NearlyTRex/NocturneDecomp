@@ -2,11 +2,11 @@
 // Address: 00438f80
 // Address Range: [[00438f80, 00438f85]]
 // Convention: __cdecl
-// Signature: int __cdecl support_codec_cpp_CCodec_finalize_FUN_00438f80(CCodec *this_ptr,_FILE *output_file)
+// Signature: int __cdecl support_codec_cpp_CCodec_finalize_FUN_00438f80(CCodec *this_ptr,void *ostream)
 
 #include "nocturne.h"
 
-int __cdecl support_codec_cpp_CCodec_finalize_FUN_00438f80(CCodec *this_ptr,_FILE *output_file)
+int __cdecl support_codec_cpp_CCodec_finalize_FUN_00438f80(CCodec *this_ptr,void *ostream)
 
 {
   return 1;

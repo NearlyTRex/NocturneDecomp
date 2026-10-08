@@ -59,7 +59,8 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_00543c50(CTentacle *this_pt
   float fStack_18;
   
   bVar14 = 0;
-  iVar4 = core_charactr_cpp_CCharacter_process_FUN_004259f0((CCharacter *)this_ptr,delta_time);
+  iVar4 = core_charactr_cpp_CCharacter_processCharacter_FUN_004259f0
+                    ((CCharacter *)this_ptr,delta_time);
   if (iVar4 != 0) {
     local_24 = (CVector3f *)&(this_ptr->base).base.base.orient;
     local_258 = delta_time * (this_ptr->base).speed;

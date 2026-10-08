@@ -9421,7 +9421,7 @@
     "conv":"__stack2_esi",
     "importable":true,
     "name":"core_charactr.cpp_CCharacter_getCarryObjToBodyXForm_FUN_0042d300",
-    "ret":"void",
+    "ret":"CMatrix3x4f*",
     "vars":{
       "locals":[
         {
@@ -9536,7 +9536,17 @@
           },
           "type":"CMatrix3x4f*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -12633,7 +12643,7 @@
           "type":"CCodec*"
         },
         {
-          "name":"output_file",
+          "name":"ostream",
           "storage":{
             "offset":8,
             "size":4,
@@ -12646,7 +12656,7 @@
               }
             ]
           },
-          "type":"_FILE*"
+          "type":"void*"
         }
       ],
       "ret_storage":{

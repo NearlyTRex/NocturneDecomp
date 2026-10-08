@@ -141,7 +141,7 @@ CCrate * __cdecl core_crate_cpp_CCrate_ctor_FUN_004484d0(CCrate *this_ptr);
 void __cdecl core_crate_cpp_CCrate_setup_FUN_00448530(CCrate *this_ptr);
 int __cdecl core_crate_cpp_CCrate_canPickup_FUN_00448600(CCrate *this_ptr,CDemonActor *picker);
 void __cdecl core_crate_cpp_CCrate_pickup_FUN_00448620(CCrate *this_ptr,CDemonActor *carrier);
-void __cdecl core_crate_cpp_CCrate_drop_FUN_00448630(CCrate *this_ptr,CVector3f *drop_position);
+void __cdecl core_crate_cpp_CCrate_onDropped_FUN_00448630(CCrate *this_ptr,CVector3f *drop_position);
 CDemonActor * __cdecl core_crate_cpp_CCrate_getCarrier_FUN_00448650(CCrate *this_ptr);
 void __cdecl core_crate_cpp_CCrate_process_FUN_00448660(CCrate *this_ptr,float delta_time);
 int __cdecl core_crate_cpp_CCrate_renderOpaque_FUN_00448880(CCrate *this_ptr);

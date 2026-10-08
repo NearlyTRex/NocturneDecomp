@@ -66,7 +66,8 @@ void __cdecl core_sentinel_cpp_CSentinel_process_FUN_00505ba0(CSentinel *this_pt
   float local_18;
   float local_14;
   
-  iVar5 = core_charactr_cpp_CCharacter_process_FUN_004259f0((CCharacter *)this_ptr,delta_time);
+  iVar5 = core_charactr_cpp_CCharacter_processCharacter_FUN_004259f0
+                    ((CCharacter *)this_ptr,delta_time);
   if (iVar5 == 0) {
     return;
   }

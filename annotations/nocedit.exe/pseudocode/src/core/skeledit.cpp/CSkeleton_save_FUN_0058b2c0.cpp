@@ -15,7 +15,7 @@ void __cdecl core_skeledit_cpp_CSkeleton_save_FUN_0058b2c0(CSkeleton *this_ptr,c
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Saving skeleton to %s...",filename);
   pCVar1 = engine_pod_cpp_CPod_locateFile_FUN_005512f0
-                     ((CPod *)g_CDemonPodPtr,"data",filename,(int *)0x0);
+                     (&g_CDemonPodPtr->base,"data",filename,(int *)0x0);
   if (pCVar1 != (CPodFile *)0x0) {
     shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
               (g_CEditorToolsPtr,"%s\\%s already exists in a mounted pod file:\n%s\nI'm still saving it to the local file,\nbut just thought you would want to know about the\none in the pod.","data",filename,

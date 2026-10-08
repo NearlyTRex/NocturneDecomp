@@ -11,7 +11,7 @@ int __cdecl core_lightgun_cpp_CLightGun_isLightVulnerable_FUN_004c6f50(CLightGun
 {
   int iVar1;
   
-  iVar1 = (*(((this_ptr->base).base.vtable._uc)->_uc).canWalk)((CCharacter *)this_ptr);
+  iVar1 = (*(((this_ptr->base).base.vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
   if (iVar1 == 0) {
     iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0((CDemonActor *)this_ptr,"CGhoul");
     if (iVar1 != 0) {

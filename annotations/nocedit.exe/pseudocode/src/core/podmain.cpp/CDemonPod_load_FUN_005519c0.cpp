@@ -21,12 +21,12 @@ void __cdecl core_podmain_cpp_CDemonPod_load_FUN_005519c0(CDemonPod *this_ptr)
     engine_dosio_cpp_CFileFinder_ctor_FUN_00481c30(&local_170);
     engine_dosio_cpp_CFileFinder_openSearch_FUN_00481c70(&local_170,"*.pod");
     while (local_170.filename[0] != '\0') {
-      (*this_ptr->vtable->mount)((CPod *)this_ptr,local_170.filename);
+      (*((this_ptr->base).vtable)->mount)(&this_ptr->base,local_170.filename);
       engine_dosio_cpp_CFileFinder_findNext_FUN_00481cf0(&local_170);
     }
     engine_dosio_cpp_CFileFinder_closeSearch_FUN_00481d70(&local_170);
     engine_dosio_cpp_CFileFinder_dtor_FUN_00481c50(&local_170,0);
-    engine_pod_cpp_CPod_resolveDependenciesAndSort_FUN_005513d0((CPod *)this_ptr);
+    engine_pod_cpp_CPod_resolveDependenciesAndSort_FUN_005513d0(&this_ptr->base);
     return;
   }
   _fscanf(file,"%d\n",&local_c);
@@ -34,11 +34,11 @@ void __cdecl core_podmain_cpp_CDemonPod_load_FUN_005519c0(CDemonPod *this_ptr)
   if (0 < local_c) {
     do {
       _fscanf(file,"%s\n",local_5c);
-      (*this_ptr->vtable->mount)((CPod *)this_ptr,local_5c);
+      (*((this_ptr->base).vtable)->mount)(&this_ptr->base,local_5c);
       iVar1 = iVar1 + 1;
     } while (iVar1 < local_c);
   }
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\podmain.cpp",67);
-  engine_pod_cpp_CPod_resolveDependenciesAndSort_FUN_005513d0((CPod *)this_ptr);
+  engine_pod_cpp_CPod_resolveDependenciesAndSort_FUN_005513d0(&this_ptr->base);
   return;
 }

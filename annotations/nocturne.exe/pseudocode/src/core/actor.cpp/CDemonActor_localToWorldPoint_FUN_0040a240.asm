@@ -11,7 +11,7 @@
 ; undefined        Stack[-0x10]:1  local_10
 ;
 ; XREF[144]:
-;   core_actor.cpp_CDemonActor_processFootstepAt_FUN_0040d9f0 at 0040da03
+;   core_actor.cpp_CDemonActor_processFootstepAtOffset_FUN_0040d9f0 at 0040da03
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040b300 at 0040b36a
 ;   core_baron.cpp_CBaron_performLightningAttack_FUN_00410cc0 at 00410e8b
 ;   core_baron.cpp_CBaron_process_FUN_00410490 at 0041088a

@@ -67,7 +67,8 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
   CCharacter *pCVar1;
   float fVar3;
   
-  iVar4 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
+  iVar4 = core_charactr_cpp_CCharacter_processCharacter_FUN_00429870
+                    ((CCharacter *)this_ptr,delta_time);
   if (iVar4 != 0) {
     local_258 = delta_time * (this_ptr->base).speed;
     position = &(this_ptr->base).base.base.location;

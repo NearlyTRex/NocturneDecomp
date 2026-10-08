@@ -58,55 +58,55 @@
       {
         "category": "undeclared_identifier",
         "column": 51,
-        "line": 276,
+        "line": 277,
         "message": "use of undeclared identifier 'DAT_02dd1184'"
       },
       {
         "category": "undeclared_identifier",
         "column": 27,
-        "line": 278,
+        "line": 279,
         "message": "use of undeclared identifier '_DAT_01c78b20'"
       },
       {
         "category": "format_error",
         "column": 85,
-        "line": 321,
+        "line": 322,
         "message": "format specifies type 'char *' but the argument has type 'CGargoyle *' [-Werror,-Wformat]"
       },
       {
         "category": "undeclared_identifier",
         "column": 50,
-        "line": 374,
+        "line": 375,
         "message": "use of undeclared identifier '_DAT_01bd1d80'; did you mean 'DAT_005c1d80'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 50,
-        "line": 382,
+        "line": 383,
         "message": "use of undeclared identifier '_DAT_01bd1d80'; did you mean 'DAT_005c1d80'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 50,
-        "line": 392,
+        "line": 393,
         "message": "use of undeclared identifier '_DAT_01bd1d80'; did you mean 'DAT_005c1d80'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 50,
-        "line": 400,
+        "line": 401,
         "message": "use of undeclared identifier '_DAT_01bd1d80'; did you mean 'DAT_005c1d80'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 50,
-        "line": 410,
+        "line": 411,
         "message": "use of undeclared identifier '_DAT_01bd1d80'; did you mean 'DAT_005c1d80'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 50,
-        "line": 419,
+        "line": 420,
         "message": "use of undeclared identifier '_DAT_01bd1d80'; did you mean 'DAT_005c1d80'?"
       }
     ],
@@ -116,12 +116,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 878,
-    "complexity_score": 507,
+    "complexity_score": 508,
     "cross_reference_count": 0,
     "function_call_count": 24,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 417,
+    "pseudocode_lines": 418,
     "suspect_count": 7,
     "suspect_types": [
       "undefined_data",
@@ -129,7 +129,7 @@
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 1295
+    "total_lines": 1296
   },
   "cross_references": [],
   "function": {
@@ -189,7 +189,7 @@
     {
       "addr": "004259f0",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_process_FUN_004259f0"
+      "name": "core_charactr.cpp_CCharacter_processCharacter_FUN_004259f0"
     },
     {
       "addr": "0042add0",
@@ -755,7 +755,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 269,
+      "line": 270,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(&local_8c,(CVector3f *)&DAT_02dd1184,",
@@ -763,7 +763,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 60,
+      "line": 61,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -771,7 +771,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 316,
+      "line": 317,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -779,7 +779,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 340,
+      "line": 341,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.position_delta.z = 0.0;",
@@ -787,7 +787,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 343,
+      "line": 344,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",

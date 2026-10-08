@@ -57,7 +57,7 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_00545c30(CTommyGun *this_ptr)
   }
   pCVar2 = (this_ptr->base).base.vtable._uc;
   (this_ptr->base).fire_cooldown_timer = (this_ptr->base).fire_cooldown_timer + 0.1f;
-  pCVar3 = (CVector3f *)(*(pCVar2->_uc).canWalk)((CCharacter *)this_ptr);
+  pCVar3 = (CVector3f *)(*(pCVar2->_uc).isInvulnerable)((CCharacter *)this_ptr);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
             ((CDemonActor *)this_ptr,&CStack_98,pCVar3);
   iVar4 = core_weapon_cpp_CWeapon_fire_FUN_00554600(&this_ptr->base);
@@ -169,7 +169,7 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_00545c30(CTommyGun *this_ptr)
       }
     }
     else {
-      iVar4 = (*(((this_ptr_01->base).vtable._uc)->_uc).canWalk)(this_ptr_01);
+      iVar4 = (*(((this_ptr_01->base).vtable._uc)->_uc).isInvulnerable)(this_ptr_01);
       pCVar9 = (CDemonActor *)((ulonglong)dVar8 >> 0x20);
       if ((iVar4 != 0) &&
          (pCVar7 = core_actor_cpp_castToClassHash_FUN_0040d890

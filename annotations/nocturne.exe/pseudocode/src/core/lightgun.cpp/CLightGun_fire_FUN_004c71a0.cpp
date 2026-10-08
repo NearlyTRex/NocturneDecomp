@@ -57,7 +57,8 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_004c71a0(CLightGun *this_ptr)
   this_ptr->charge_level = 0.0;
   this_ptr->beam_length = fVar2;
   input_local_point =
-       (CVector3f *)(*(((this_ptr->base).base.vtable._uc)->_uc).canWalk)((CCharacter *)this_ptr);
+       (CVector3f *)
+       (*(((this_ptr->base).base.vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
             ((CDemonActor *)this_ptr,aCStack_a4,input_local_point);
   local_60.x = (this_ptr->base).bolt_velocity;
@@ -109,7 +110,7 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_004c71a0(CLightGun *this_ptr)
                              g_CTriggerActorType_02dd1084.name_hash);
     pCStack_28 = this_ptr_02;
     if (pCStack_18 != (CCharacter *)0x0) {
-      iVar6 = (*(((pCStack_18->base).vtable._uc)->_uc).canWalk)(pCStack_18);
+      iVar6 = (*(((pCStack_18->base).vtable._uc)->_uc).isInvulnerable)(pCStack_18);
       this_ptr_01 = g_CDemonSet_PTR_005be368;
       if ((iVar6 != 0) && (iVar8 == 0)) {
         this_ptr->charge_level = 30.0f;
@@ -158,7 +159,7 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_004c71a0(CLightGun *this_ptr)
       return 1;
     }
     this_ptr_00 = *(CCharacter **)((int)g_CDemonSet_PTR_005be368->characters + iStack_20);
-    iVar8 = (*(((this_ptr_00->base).vtable._uc)->_uc).canWalk)(this_ptr_00);
+    iVar8 = (*(((this_ptr_00->base).vtable._uc)->_uc).isInvulnerable)(this_ptr_00);
     if (((iVar8 == 0) &&
         ((((iVar8 = core_actor_cpp_isOfClass_FUN_0040d7e0(&this_ptr_00->base,"CGhoul"),
            iVar8 != 0 ||

@@ -11,7 +11,7 @@ CDemonPod * __cdecl core_podmain_cpp_CDemonPod_ctor_FUN_004f93c0(CDemonPod *this
 {
   CPod *pCVar1;
   
-  pCVar1 = engine_pod_cpp_CPod_ctor_FUN_004f8810((CPod *)this_ptr);
+  pCVar1 = engine_pod_cpp_CPod_ctor_FUN_004f8810(&this_ptr->base);
   pCVar1->vtable = (CPod_vtable *)&g_CDemonPodVTable;
   return (CDemonPod *)pCVar1;
 }

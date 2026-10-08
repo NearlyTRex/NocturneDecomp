@@ -13,7 +13,8 @@ void __cdecl core_beast_cpp_CBeast_process_FUN_004150d0(CBeast *this_ptr,float d
   int iVar1;
   float local_10;
   
-  iVar1 = core_charactr_cpp_CCharacter_process_FUN_004259f0((CCharacter *)this_ptr,delta_time);
+  iVar1 = core_charactr_cpp_CCharacter_processCharacter_FUN_004259f0
+                    ((CCharacter *)this_ptr,delta_time);
   if (iVar1 != 0) {
     (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
     (this_ptr->base).base.model.accumulated_root_motion.y =

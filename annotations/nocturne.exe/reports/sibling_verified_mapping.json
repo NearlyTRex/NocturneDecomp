@@ -3356,7 +3356,7 @@
   {
    "a": "004090c0",
    "b": "0040a390",
-   "name": "core_actor.cpp_CDemonActor_testPointInCylinder_FUN_004090c0",
+   "name": "core_actor.cpp_CDemonActor_testCylinderCollision_FUN_004090c0",
    "confidence": 0.82,
    "ambiguous": false,
    "evidence": [
@@ -4667,7 +4667,7 @@
   {
    "a": "0040c8f0",
    "b": "0040d9f0",
-   "name": "core_actor.cpp_CDemonActor_processFootstepAt_FUN_0040c8f0",
+   "name": "core_actor.cpp_CDemonActor_processFootstepAtOffset_FUN_0040c8f0",
    "confidence": 0.78,
    "ambiguous": false,
    "evidence": [
@@ -6219,7 +6219,7 @@
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
-   "ret": "int",
+   "ret": "void",
    "sig_verdict": "unverifiable",
    "sig_detail": "no conclusive measurement; wants 4 (pop None, push None, store None)"
   },
@@ -11282,7 +11282,7 @@
   {
    "a": "00429870",
    "b": "004259f0",
-   "name": "core_charactr.cpp_CCharacter_process_FUN_00429870",
+   "name": "core_charactr.cpp_CCharacter_processCharacter_FUN_00429870",
    "confidence": 1.0,
    "ambiguous": false,
    "evidence": [
@@ -12029,7 +12029,7 @@
   {
    "a": "0042ca60",
    "b": "00428bf0",
-   "name": "core_charactr.cpp_CCharacter_canWalk_FUN_0042ca60",
+   "name": "core_charactr.cpp_CCharacter_isInvulnerable_FUN_0042ca60",
    "confidence": 0.78,
    "ambiguous": false,
    "evidence": [
@@ -12192,7 +12192,7 @@
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__stack2_esi",
-   "ret": "void",
+   "ret": "CMatrix3x4f*",
    "sig_verdict": "unverifiable",
    "sig_detail": "no conclusive measurement; wants 8 (pop 0, push 0, store None)"
   },
@@ -16574,7 +16574,7 @@
   {
    "a": "00448630",
    "b": "0043c970",
-   "name": "core_crate.cpp_CCrate_drop_FUN_00448630",
+   "name": "core_crate.cpp_CCrate_onDropped_FUN_00448630",
    "confidence": 1.0,
    "ambiguous": false,
    "evidence": [
@@ -40237,7 +40237,7 @@
   {
    "a": "004f28a0",
    "b": "004b4c30",
-   "name": "core_hero.cpp_CHero_canWalk_FUN_004f28a0",
+   "name": "core_hero.cpp_CHero_isInvulnerable_FUN_004f28a0",
    "confidence": 0.82,
    "ambiguous": false,
    "evidence": [
@@ -45756,7 +45756,7 @@
   {
    "a": "0050b3c0",
    "b": "004cbdb0",
-   "name": "core_manpuz.cpp_CMirrorHack_stopUsing_FUN_0050b3c0",
+   "name": "core_manpuz.cpp_CMirrorHack_stopInteraction_FUN_0050b3c0",
    "confidence": 0.82,
    "ambiguous": false,
    "evidence": [
@@ -69814,7 +69814,7 @@
   {
    "a": "005db9d0",
    "b": "005445c0",
-   "name": "core_tentacle.cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0",
+   "name": "core_tentacle.cpp_CTentacle_attractActorToward_FUN_005db9d0",
    "confidence": 1.0,
    "ambiguous": false,
    "evidence": [
@@ -69824,7 +69824,7 @@
    "conv": "__cdecl",
    "ret": "int",
    "sig_verdict": "unverifiable",
-   "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)"
+   "sig_detail": "no conclusive measurement; wants 12 (pop None, push None, store None)"
   },
   {
    "a": "005dbb30",

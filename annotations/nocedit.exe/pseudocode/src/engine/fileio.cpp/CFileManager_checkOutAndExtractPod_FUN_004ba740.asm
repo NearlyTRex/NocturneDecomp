@@ -772,7 +772,7 @@ section .text
     ADD ESP,0x4                         ; 004baebe
     MOV EAX,[0x00680cdc]                ; 004baec1 | g_CDemonPodPtr
     PUSH EAX                            ; 004baec6 | g_CDemonPodInstance
-    MOV EBX,dword ptr [EAX + 0x194]     ; 004baec7 | g_CDemonPodInstance.vtable
+    MOV EBX,dword ptr [EAX + 0x194]     ; 004baec7 | g_CDemonPodInstance.base.vtable
     CALL dword ptr [EBX + 0x4]          ; 004baecd
     ADD ESP,0x4                         ; 004baed0
     PUSH 0x0                            ; 004baed3

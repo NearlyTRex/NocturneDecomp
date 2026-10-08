@@ -63,9 +63,9 @@ int __cdecl CCharacter::isOnGround(CCharacter *this_ptr);
 // Address: 004259a0
 void __cdecl CCharacter::preProcess(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_CCharacter_process_FUN_004259f0
+// Original: core_charactr.cpp_CCharacter_processCharacter_FUN_004259f0
 // Address: 004259f0
-int __cdecl CCharacter::process(CCharacter *this_ptr,float delta_time);
+int __cdecl CCharacter::processCharacter(CCharacter *this_ptr,float delta_time);
 
 // Original: core_charactr.cpp_CCharacter_renderCharacter_FUN_00425c20
 // Address: 00425c20
@@ -227,9 +227,9 @@ void __cdecl CCharacter::setWalkTimeout(CCharacter *this_ptr,float timeout);
 // Address: 00428bc0
 int __cdecl CCharacter::isWalkComplete(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_CCharacter_canWalk_FUN_00428bf0
+// Original: core_charactr.cpp_CCharacter_isInvulnerable_FUN_00428bf0
 // Address: 00428bf0
-int __cdecl CCharacter::canWalk(CCharacter *this_ptr);
+int __cdecl CCharacter::isInvulnerable(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_CCharacter_processWalking_FUN_00428c00
 // Address: 00428c00
@@ -269,7 +269,7 @@ void __cdecl CCharacter::updateCarriedObjects(CCharacter *this_ptr,float delta_t
 
 // Original: core_charactr.cpp_CCharacter_getCarryObjToBodyXForm_FUN_00429490
 // Address: 00429490
-void __stack2_esi CCharacter::getCarryObjToBodyXForm(CCharacter *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
+CMatrix3x4f * __stack2_esi CCharacter::getCarryObjToBodyXForm(CCharacter *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
 // Original: core_charactr.cpp_CCharacter_isCarryingAnything_FUN_004294f0
 // Address: 004294f0

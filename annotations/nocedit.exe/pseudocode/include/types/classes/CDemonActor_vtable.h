@@ -62,7 +62,7 @@ union UOrientationVector;
 #include "types/funcdefs/CDemonActor_process.h"
 #include "types/funcdefs/CDemonActor_processActionButton.h"
 #include "types/funcdefs/CDemonActor_processFootstep.h"
-#include "types/funcdefs/CDemonActor_processFootstepAt.h"
+#include "types/funcdefs/CDemonActor_processFootstepAtOffset.h"
 #include "types/funcdefs/CDemonActor_processInEditor.h"
 #include "types/funcdefs/CDemonActor_processMeleeHit.h"
 #include "types/funcdefs/CDemonActor_renderBackground.h"
@@ -92,12 +92,12 @@ typedef struct CDemonActor_vtable {
     CDemonActor_renderBackground* renderBackground; // 0x10
     CDemonActor_getBoundingBox* getBoundingBox; // 0x14
     CDemonActor_processFootstep* processFootstep; // 0x18
-    CDemonActor_processFootstepAt* processFootstepAtOffset; // 0x1c
+    CDemonActor_processFootstepAtOffset* processFootstepAtOffset; // 0x1c
     CDemonActor_handleFootstep* handleFootstep; // 0x20
     CDemonActor_playSound* playSound; // 0x24
     CDemonActor_playAmbientSound* playAmbientSound; // 0x28
     CDemonActor_playSoundWithDelay* playSoundWithDelay; // 0x2c
-    CDemonActor_playAmbientSoundWithDelay* playAmbientSoundWithVolume; // 0x30
+    CDemonActor_playAmbientSoundWithDelay* playAmbientSoundWithDelay; // 0x30
     CDemonActor_getCollisionType* getCollisionType; // 0x34
     CDemonActor_cylinderGroundCheck* cylinderGroundCheck; // 0x38
     CDemonActor_getGroundType* getGroundType; // 0x3c
@@ -128,7 +128,7 @@ typedef struct CDemonActor_vtable {
     CDemonActor_spawnFlies* spawnFlies; // 0xa0
     CDemonActor_testCylinderCollision* testCylinderCollision; // 0xa4
     CDemonActor_testLineIntersection* testLineIntersection; // 0xa8
-    CDemonActor_onLaserHit* getSurfaceProperties; // 0xac
+    CDemonActor_onLaserHit* onLaserHit; // 0xac
     CDemonActor_customRayIntersect* customRayIntersect; // 0xb0
     CDemonActor_customIntersectCylinderXZ* customIntersectCylinderXZ; // 0xb4
     CDemonActor_customGetFloorHeight* customGetFloorHeight; // 0xb8

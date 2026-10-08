@@ -21,7 +21,7 @@ CBackgroundActor * __cdecl CBackgroundActor::ctor(CBackgroundActor *this_ptr);
 
 // Original: core_backgnd.cpp_CBackgroundActor_setup_FUN_00412810
 // Address: 00412810
-int __cdecl CBackgroundActor::setup(CBackgroundActor *this_ptr);
+void __cdecl CBackgroundActor::setup(CBackgroundActor *this_ptr);
 
 // Original: core_backgnd.cpp_CBackgroundActor_process_FUN_00412850
 // Address: 00412850

@@ -241,7 +241,7 @@ void __cdecl core_manpuz_cpp_CMirrorHack_onLaserHit_FUN_0050b2c0(CMirrorHack *th
 void __cdecl core_manpuz_cpp_CMirrorHack_getInteractionInfo_FUN_0050b2f0(CMirrorHack *this_ptr,SInteractionInfo *out_info);
 int __cdecl core_manpuz_cpp_CMirrorHack_startInteraction_FUN_0050b340(CMirrorHack *this_ptr,CDemonActor *user);
 int __cdecl core_manpuz_cpp_CMirrorHack_updateInteraction_FUN_0050b360(CMirrorHack *this_ptr,UOrientationVector *user_orientation,SPlayerInput *player_control);
-void __cdecl core_manpuz_cpp_CMirrorHack_stopUsing_FUN_0050b3c0(CMirrorHack *this_ptr,CDemonActor *user);
+void __cdecl core_manpuz_cpp_CMirrorHack_stopInteraction_FUN_0050b3c0(CMirrorHack *this_ptr,CDemonActor *user);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_getPropertyList_FUN_0050b3e0(CMansionPuzzleCircle *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_processInEditor_FUN_0050b440(CMansionPuzzleCircle *this_ptr);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_addFilesToExtract_FUN_0050b7d0(CMansionPuzzleCircle *this_ptr,_FILE *file_handle);

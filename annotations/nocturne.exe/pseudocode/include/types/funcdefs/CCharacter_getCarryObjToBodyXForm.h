@@ -8,5 +8,5 @@ struct CCharacter;
 struct CMatrix3x4f;
 
 // Function Definition: CCharacter_getCarryObjToBodyXForm
-typedef void CCharacter_getCarryObjToBodyXForm(struct CCharacter* this_ptr, int hand_index, struct CMatrix3x4f* out_matrix);
+typedef struct CMatrix3x4f* CCharacter_getCarryObjToBodyXForm(struct CCharacter* this_ptr, int hand_index, struct CMatrix3x4f* out_matrix);
 

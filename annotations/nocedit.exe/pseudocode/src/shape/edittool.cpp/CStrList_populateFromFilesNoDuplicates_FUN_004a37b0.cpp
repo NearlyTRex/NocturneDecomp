@@ -46,7 +46,7 @@ void __cdecl shape_edittool_cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a3
     _sprintf(local_110,"%s\\%s",directory_path,file_pattern);
   }
   if (g_CDemonPodPtr != (CDemonPod *)0x0) {
-    engine_pod_cpp_CPod_initSearch_FUN_00550ea0((CPod *)g_CDemonPodPtr,local_110,&local_844);
+    engine_pod_cpp_CPod_initSearch_FUN_00550ea0(&g_CDemonPodPtr->base,local_110,&local_844);
     while (local_844.current_file_info.found_path[0] != '\0') {
       engine_dosio_cpp_splitPath_FUN_00481f20
                 ((char *)&local_844,(char *)0x0,(char *)0x0,local_210,&local_310);
@@ -67,7 +67,7 @@ void __cdecl shape_edittool_cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a3
       if (iVar2 < 0) {
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(this_ptr,local_414);
       }
-      engine_pod_cpp_CPod_getNextSearchResult_FUN_00550ef0((CPod *)g_CDemonPodPtr,&local_844);
+      engine_pod_cpp_CPod_getNextSearchResult_FUN_00550ef0(&g_CDemonPodPtr->base,&local_844);
     }
   }
   iVar3 = this_ptr->item_count;

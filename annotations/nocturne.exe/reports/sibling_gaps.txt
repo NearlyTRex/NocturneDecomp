@@ -269,7 +269,7 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
   pairs compared        : 5264
   never transferred     : 5   (nocturne side has no signature at all -- transfer work, not drift)
   genuine divergence    : 40   (both sides typed, and they disagree -- investigate)
-  name core differs     : 69   (mapped as the same function under two different names)
+  name core differs     : 67   (mapped as the same function under two different names)
 
   -- genuine divergence, highest confidence first --
   by kind: {'ret': 28, 'param': 12, 'param0': 7, 'param1': 4, 'param2': 4, 'param3': 1, 'conv': 1}
@@ -413,7 +413,7 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
         ret CPathMap* -> int
 
   -- same pair, different name core --
-  {'unnamed on one side': 56, 'renamed': 7, 'MAPPING SUSPECT': 3, 'stubbed in nocturne': 3}
+  {'unnamed on one side': 56, 'renamed': 5, 'MAPPING SUSPECT': 3, 'stubbed in nocturne': 3}
     MAPPING SUSPECT     the two names claim different CLASSES, so the
                         pair is probably wrong, not the names
     case-only spelling  same name, different capitalisation -- one build
@@ -437,15 +437,9 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
     [renamed] 0042cd50 -> 00428ee0  conf 1.00  shape same_mnemonics
       nocedit  CCharacter_setDoorTarget
       nocturne CCharacter_setWalkTimeout
-    [renamed] 00448630 -> 0043c970  conf 1.00  shape same_mnemonics
-      nocedit  CCrate_drop
-      nocturne CCrate_onDropped
     [renamed] 005bac80 -> 00534c80  conf 1.00  shape identical
       nocedit  CDemonTriangle_arrdtor40
       nocturne SFly_arrdtor40
-    [renamed] 005db9d0 -> 005445c0  conf 1.00  shape same_mnemonics
-      nocedit  CTentacle_updateGrabbedVictim
-      nocturne CTentacle_attractActorToward
     [renamed] 005e3540 -> 0054a900  conf 1.00  shape same_mnemonics
       nocedit  CTurret_stopInteraction
       nocturne CTurret_stopUsing

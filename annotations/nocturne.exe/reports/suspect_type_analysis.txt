@@ -6,7 +6,7 @@ SUSPECT TYPE COUNTS
 --------------------------------------------------
   undefined_data                  4062 ( 19.4%)
   pointer_cast                    3557 ( 17.0%)
-  pointer_truncation              2880 ( 13.7%)
+  pointer_truncation              2881 ( 13.7%)
   unrolled_memcpy                 1476 (  7.0%)
   warning_overlapping_globals      864 (  4.1%)
   stack_param                      766 (  3.7%)
@@ -816,7 +816,7 @@ Unique patterns:
     43x  (CDemonActor **)((int)g_CDemonSet_PTR_005be368
     43x  (CMatrix3x4f *)((int)pCVar4
     42x  (SRenderVertex *)((int)pSVar4
-    38x  (CMatrix3x4f *)((int)pCVar3
+    39x  (CMatrix3x4f *)((int)pCVar3
     33x  (SRenderVertex *)((int)pSVar3
     30x  (uint *)((int)pvVar1
     27x  (T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach
@@ -1557,7 +1557,7 @@ Functions:
   wincore_winrun.cpp_winMain_FUN_00559260
 
 ====================================================================================================
-TYPE: pointer_truncation (2880 occurrences)
+TYPE: pointer_truncation (2881 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -1566,8 +1566,8 @@ Unique patterns:
     81x  (int)pvVar3
     75x  (int)g_ScreenBufferArray
     50x  (int)pSVar4
+    47x  (int)pCVar3
     47x  (int)pvVar1
-    46x  (int)pCVar3
     46x  (int)pCVar4
     42x  (int)pSVar3
     38x  (int)pCVar6
@@ -3985,8 +3985,8 @@ Functions:
   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00427eb0
   core_charactr.cpp_CCharacter_igniteBone_FUN_00427730
   core_charactr.cpp_CCharacter_isCarryingAnything_FUN_004294f0
+  core_charactr.cpp_CCharacter_processCharacter_FUN_004259f0
   core_charactr.cpp_CCharacter_processFire_FUN_004269b0
-  core_charactr.cpp_CCharacter_process_FUN_004259f0
   core_charactr.cpp_CCharacter_renderBurn_FUN_00426e80
   core_charactr.cpp_CCharacter_renderFlames_FUN_00427290
   core_charactr.cpp_CCharacter_setup_FUN_00424260
@@ -5119,7 +5119,7 @@ Functions:
   cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_004f4e40
   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040b300
   core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_00417730
-  core_charactr.cpp_CCharacter_process_FUN_004259f0
+  core_charactr.cpp_CCharacter_processCharacter_FUN_004259f0
   core_console.cpp_staticInit_FUN_0043abb0
   core_dcamera.cpp_CDemonCamera_addLightmapToCorona_FUN_00444c90
   core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_00445750
@@ -5384,7 +5384,7 @@ Functions:
   core_chain.cpp_CChain_process_FUN_0042bca0
   core_chain.cpp_CChain_setup_FUN_0042b8f0
   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050
-  core_charactr.cpp_CCharacter_process_FUN_004259f0
+  core_charactr.cpp_CCharacter_processCharacter_FUN_004259f0
   core_charactr.cpp_CCharacter_setPositionAndOrientation_FUN_004246e0
   core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0
   core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0

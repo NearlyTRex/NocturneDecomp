@@ -2,11 +2,11 @@
 // Address: 005445c0
 // Address Range: [[005445c0, 00544719]]
 // Convention: __cdecl
-// Signature: int __cdecl core_tentacle_cpp_CTentacle_attractActorToward_FUN_005445c0(CTentacle *this_ptr,CCharacter *character)
+// Signature: int __cdecl core_tentacle_cpp_CTentacle_attractActorToward_FUN_005445c0(CTentacle *this_ptr,CDemonActor *actor,CVector3f *target_local_point)
 
 #include "nocturne.h"
 
-int __cdecl core_tentacle_cpp_CTentacle_attractActorToward_FUN_005445c0(CTentacle *this_ptr,CCharacter *character)
+int __cdecl core_tentacle_cpp_CTentacle_attractActorToward_FUN_005445c0(CTentacle *this_ptr,CDemonActor *actor,CVector3f *target_local_point)
 
 {
   CCharacter *pCVar1;
@@ -30,7 +30,7 @@ int __cdecl core_tentacle_cpp_CTentacle_attractActorToward_FUN_005445c0(CTentacl
   CVector3f local_10;
   
   bVar7 = 0;
-  if (character != (this_ptr->base).victim) {
+  if ((CCharacter *)actor != (this_ptr->base).victim) {
     return 0;
   }
   core_xform_cpp_lerpMatrix3x4_FUN_0055cc30

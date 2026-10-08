@@ -16,7 +16,8 @@ void __cdecl core_shotgun_cpp_CShotgun_process_FUN_00515db0(CShotgun *this_ptr,f
   if (this_ptr->muzzle_flash_active != 0) {
     g_CDemonLight_01c74640.light_enabled_flag = 1;
     input_local_point =
-         (CVector3f *)(*(((this_ptr->base).base.vtable._uc)->_uc).canWalk)((CCharacter *)this_ptr);
+         (CVector3f *)
+         (*(((this_ptr->base).base.vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
               ((CDemonActor *)this_ptr,&CStack_1c,input_local_point);
     g_CDemonLight_01c74640.volumetric_enabled = 0;

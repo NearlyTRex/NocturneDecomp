@@ -54,6 +54,7 @@
 #   metadata         - Program metadata
 #   type_info        - Type info
 #   vtables          - Virtual tables
+#   recreation       - Source-recreation input (needs vtables exported first)
 #   pseudocode       - Decompiled pseudocode
 #
 #@author NearlyTRex
@@ -77,7 +78,7 @@ CATEGORY_NAMES = [
     "applied_unions", "symbols_class", "symbols_label",
     "symbols_namespace", "equates", "external_imports",
     "cross_references", "entry_points", "memory_layout",
-    "metadata", "type_info", "vtables", "pseudocode",
+    "metadata", "type_info", "vtables", "recreation", "pseudocode",
 ]
 
 SIBLING_PAIR = ("nocedit.exe", "nocturne.exe")
@@ -131,7 +132,7 @@ def get_export_categories():
         export_symbols_label, export_symbols_namespace, export_equates,
         export_external_imports, export_cross_references, export_entry_points,
         export_memory_layout, export_metadata, export_type_info,
-        export_vtables, export_pseudocode
+        export_vtables, export_recreation, export_pseudocode
     )
     return {
         "data_types": export_data_types,
@@ -156,6 +157,7 @@ def get_export_categories():
         "metadata": export_metadata,
         "type_info": export_type_info,
         "vtables": export_vtables,
+        "recreation": export_recreation,
         "pseudocode": export_pseudocode,
     }
 

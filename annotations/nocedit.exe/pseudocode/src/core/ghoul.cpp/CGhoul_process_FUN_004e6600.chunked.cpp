@@ -132,7 +132,7 @@ typedef struct CGhoul_process_Ctx {
 // 0 = normal continuation
 #define GOTO_LAB_004e7576 1
 
-// Chunk: check_0_0 (lines 13-209 of original)
+// Chunk: check_0_0 (lines 14-210 of original)
 static int CGhoul_process_check_0_0(CGhoul_process_Ctx *ctx) {
     CGhoul *&this_ptr = ctx->this_ptr;
     float &fVar1 = ctx->fVar1;
@@ -373,7 +373,7 @@ LAB_004e6a5f:
     return 0;
 }
 
-// Chunk: branch_0_check_this_ptr_0 (lines 235-281 of original)
+// Chunk: branch_0_check_this_ptr_0 (lines 236-282 of original)
 static int CGhoul_process_branch_0_check_this_ptr_0(CGhoul_process_Ctx *ctx) {
     CGhoul *&this_ptr = ctx->this_ptr;
     float &delta_time = ctx->delta_time;
@@ -433,7 +433,7 @@ static int CGhoul_process_branch_0_check_this_ptr_0(CGhoul_process_Ctx *ctx) {
     return 0;
 }
 
-// Chunk: branch_0_else_1_check_EVar13_0 (lines 311-432 of original)
+// Chunk: branch_0_else_1_check_EVar13_0 (lines 312-433 of original)
 static int CGhoul_process_branch_0_else_1_check_EVar13_0(CGhoul_process_Ctx *ctx) {
     CGhoul *&this_ptr = ctx->this_ptr;
     float &delta_time = ctx->delta_time;
@@ -585,7 +585,7 @@ static int CGhoul_process_branch_0_else_1_check_EVar13_0(CGhoul_process_Ctx *ctx
     return 0;
 }
 
-// Chunk: branch_0_else_1_else_1 (lines 432-500 of original)
+// Chunk: branch_0_else_1_else_1 (lines 433-501 of original)
 static int CGhoul_process_branch_0_else_1_else_1(CGhoul_process_Ctx *ctx) {
     CGhoul *&this_ptr = ctx->this_ptr;
     CDemonActor_vtable *&pCVar4 = ctx->pCVar4;
@@ -675,7 +675,7 @@ LAB_004e7a33:
     return 0;
 }
 
-// Chunk: branch_0_else_2 (lines 509-557 of original)
+// Chunk: branch_0_else_2 (lines 510-558 of original)
 static int CGhoul_process_branch_0_else_2(CGhoul_process_Ctx *ctx) {
     CGhoul *&this_ptr = ctx->this_ptr;
     CCharacter *&pCVar3 = ctx->pCVar3;
@@ -742,7 +742,7 @@ static int CGhoul_process_branch_0_else_2(CGhoul_process_Ctx *ctx) {
     return 0;
 }
 
-// Chunk: branch_0_check_0_3 (lines 582-666 of original)
+// Chunk: branch_0_check_0_3 (lines 583-667 of original)
 static int CGhoul_process_branch_0_check_0_3(CGhoul_process_Ctx *ctx) {
     CGhoul *&this_ptr = ctx->this_ptr;
     float &delta_time = ctx->delta_time;
@@ -849,7 +849,7 @@ LAB_004e7243:
     return 0;
 }
 
-// Chunk: branch_0_chunk_4 (lines 702-738 of original)
+// Chunk: branch_0_chunk_4 (lines 703-739 of original)
 static int CGhoul_process_branch_0_chunk_4(CGhoul_process_Ctx *ctx) {
     CGhoul *&this_ptr = ctx->this_ptr;
     int &iVar9 = ctx->iVar9;
@@ -902,7 +902,7 @@ static int CGhoul_process_branch_0_chunk_4(CGhoul_process_Ctx *ctx) {
     return 0;
 }
 
-// Chunk: check_iVar9_2 (lines 816-846 of original)
+// Chunk: check_iVar9_2 (lines 817-847 of original)
 static int CGhoul_process_check_iVar9_2(CGhoul_process_Ctx *ctx) {
     CGhoul *&this_ptr = ctx->this_ptr;
     float &delta_time = ctx->delta_time;
@@ -949,7 +949,7 @@ static int CGhoul_process_check_iVar9_2(CGhoul_process_Ctx *ctx) {
     return 0;
 }
 
-// Chunk: branch_0 (lines 881-908 of original)
+// Chunk: branch_0 (lines 882-909 of original)
 static int CGhoul_process_branch_0(CGhoul_process_Ctx *ctx) {
     CGhoul *&this_ptr = ctx->this_ptr;
     int &iVar9 = ctx->iVar9;
@@ -1111,7 +1111,8 @@ void __cdecl core_ghoul_cpp_CGhoul_process_FUN_004e6600(CGhoul *this_ptr,float d
   // param this_ptr aliased into ctx above
   // param delta_time aliased into ctx above
 
-  iVar7 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
+  iVar7 = core_charactr_cpp_CCharacter_processCharacter_FUN_00429870
+                    ((CCharacter *)this_ptr,delta_time);
   if (iVar7 == 0) {
     return;
   }

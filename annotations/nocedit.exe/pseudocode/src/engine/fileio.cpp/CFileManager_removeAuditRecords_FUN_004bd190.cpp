@@ -173,7 +173,7 @@ LAB_004bd3c3:
         _fflush(file);
         if ((file->_flag & 0x20) == 0) {
           shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\fileio.cpp",4491);
-          engine_pod_cpp_CPod_computeAndStoreCRC_FUN_00551000((CPod *)g_CDemonPodPtr,local_204);
+          engine_pod_cpp_CPod_computeAndStoreCRC_FUN_00551000(&g_CDemonPodPtr->base,local_204);
           engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_9d8,0);
           return;
         }

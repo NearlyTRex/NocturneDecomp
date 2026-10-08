@@ -39,7 +39,7 @@ void __cdecl core_mimic_cpp_CMimic_process_FUN_0051f780(CMimic *this_ptr,float d
     core_mimic_cpp_CMimic_processMorph_FUN_00520ba0(this_ptr,delta_time);
     return;
   }
-  iVar3 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
+  iVar3 = core_charactr_cpp_CCharacter_processCharacter_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar3 != 0) {
     if (this_ptr->attack_mode < 2) {
       if ((this_ptr->attack_mode < 1) &&

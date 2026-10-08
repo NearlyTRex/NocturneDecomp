@@ -87,7 +87,8 @@ void __cdecl core_gabriela_cpp_CGabriella_process_FUN_00495a20(CGabriella *this_
   float local_18;
   CCharacter_full_vtable *local_14;
   
-  iVar10 = core_charactr_cpp_CCharacter_process_FUN_004259f0((CCharacter *)this_ptr,delta_time);
+  iVar10 = core_charactr_cpp_CCharacter_processCharacter_FUN_004259f0
+                     ((CCharacter *)this_ptr,delta_time);
   if (iVar10 == 0) {
     return;
   }

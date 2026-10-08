@@ -95,7 +95,7 @@ void __cdecl core_hostage_cpp_CHostage_process_FUN_004f4bd0(CHostage *this_ptr,f
     (this_ptr->base).base.ai_detection_range_max = 99999.0;
     (this_ptr->base).base.ai_detection_range_min = 99999.0;
   }
-  iVar13 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
+  iVar13 = core_charactr_cpp_CCharacter_processCharacter_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar13 == 0) {
     return;
   }

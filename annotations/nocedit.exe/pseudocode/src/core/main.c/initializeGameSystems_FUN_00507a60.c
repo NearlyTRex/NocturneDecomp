@@ -60,7 +60,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(int argc,char **argv
   core_flattn_cpp_doNothing_FUN_004cbce0();
   core_inivar_cpp_readIniData_FUN_004fbd90();
   g_AGPTextureMode = 2;
-  engine_pod_cpp_CPod_init_FUN_00550c30((CPod *)g_CDemonPodPtr);
+  engine_pod_cpp_CPod_init_FUN_00550c30(&g_CDemonPodPtr->base);
   engine_dosio_cpp_addGetFileInfoHook_FUN_00481710(engine_pod_cpp_findFileInPod_FUN_00551960);
   engine_dosio_cpp_addGetFileInfoHook_FUN_00481710(engine_dosio_cpp_findFileNormally_FUN_004817c0);
   support_newmsg_cpp_readMessageFile_FUN_00543e40("msglist.txt");

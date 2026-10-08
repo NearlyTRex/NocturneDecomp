@@ -21,7 +21,7 @@ void __cdecl core_weapon_cpp_CWeapon_updateLighting_FUN_005543c0(CWeapon *this_p
   float fStack_14;
   
   input_local_point =
-       (CVector3f *)(*(((this_ptr->base).vtable._uc)->_uc).canWalk)((CCharacter *)this_ptr);
+       (CVector3f *)(*(((this_ptr->base).vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
             (&this_ptr->base,(CVector3f *)auStack_1c,input_local_point);
   g_CDemonLight_01c74640.light_enabled_flag = 1;

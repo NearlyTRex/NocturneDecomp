@@ -55,9 +55,9 @@ int __cdecl CHero::isGrabbable(CHero *this_ptr,CDemonActor *grabber);
 // Address: 004f2890
 int __cdecl CHero::canBeGrabbed(CHero *this_ptr,CDemonActor *grabber,int grab_type);
 
-// Original: core_hero.cpp_CHero_canWalk_FUN_004f28a0
+// Original: core_hero.cpp_CHero_isInvulnerable_FUN_004f28a0
 // Address: 004f28a0
-int __cdecl CHero::canWalk(CHero *this_ptr);
+int __cdecl CHero::isInvulnerable(CHero *this_ptr);
 
 // Original: core_hero.cpp_CHero_getGrabbed_FUN_004f28d0
 // Address: 004f28d0

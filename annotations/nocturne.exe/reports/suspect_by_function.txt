@@ -7,7 +7,7 @@ SUMMARY
 Total functions analyzed: 4922
 Clean: 2505 (50.9%)
 With suspects: 2417
-Total suspects: 20956
+Total suspects: 20957
 
 ====================================================================================================
 cockpit_ckptutil.c_applyActPalette_FUN_0042d370 (1 suspect)
@@ -2133,8 +2133,8 @@ core_armour.cpp_CArmour_dtor_FUN_0040fc30 (2 suspects)
 core_armour.cpp_CArmour_process_FUN_0040fa20 (2 suspects)
   File: core/armour.cpp
 ====================================================================================================
-  Line 14 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 34 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 15 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 35 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
 
 ====================================================================================================
 core_armour.cpp_CEnemy_dtor_FUN_0040fcf0 (2 suspects)
@@ -2293,13 +2293,13 @@ core_batcreat.cpp_CBatCreature_process_FUN_00412480 (8 suspects)
   File: core/batcreat.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
-  Line 57 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 177 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 270 [undefined_data]: (&local_ac,(CVector3f *)&DAT_02dd1184,
-  Line 272 [undefined_data]: DAT_007645a4);
-  Line 311 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 335 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
-  Line 338 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 58 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 178 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 271 [undefined_data]: (&local_ac,(CVector3f *)&DAT_02dd1184,
+  Line 273 [undefined_data]: DAT_007645a4);
+  Line 312 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 336 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
+  Line 339 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
 
 ====================================================================================================
 core_batcreat.cpp_CBatCreature_setup_FUN_00412160 (4 suspects)
@@ -2347,18 +2347,18 @@ core_batman.cpp_CBatman_process_FUN_00413800 (13 suspects)
   File: core/batman.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
-  Line 73 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 115 [pointer_cast]: (*(CDemonActor **)
-  Line 130 [unrolled_memcpy]: (this_ptr->new_pos).x = (pCVar13->position).x;
-  Line 181 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 246 [undefined_data]: (&local_104,(CVector3f *)&DAT_02dd1184,
-  Line 248 [undefined_data]: DAT_00764610);
-  Line 327 [pointer_cast]: this_ptr_00 = *(CBatman **)((int)g_CDemonSet_PTR_005be368->characters + local_1c);
-  Line 343 [unrolled_memcpy]: (pCVar13->position).x = (this_ptr->new_pos).x;
-  Line 357 [unrolled_memcpy]: (pUVar1->vec).x = pCVar10->x;
-  Line 417 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 441 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
-  Line 444 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 74 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 116 [pointer_cast]: (*(CDemonActor **)
+  Line 131 [unrolled_memcpy]: (this_ptr->new_pos).x = (pCVar13->position).x;
+  Line 182 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 247 [undefined_data]: (&local_104,(CVector3f *)&DAT_02dd1184,
+  Line 249 [undefined_data]: DAT_00764610);
+  Line 328 [pointer_cast]: this_ptr_00 = *(CBatman **)((int)g_CDemonSet_PTR_005be368->characters + local_1c);
+  Line 344 [unrolled_memcpy]: (pCVar13->position).x = (this_ptr->new_pos).x;
+  Line 358 [unrolled_memcpy]: (pUVar1->vec).x = pCVar10->x;
+  Line 418 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 442 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
+  Line 445 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
 
 ====================================================================================================
 core_batman.cpp_CBatman_renderOpaque_FUN_00414340 (1 suspect)
@@ -2409,7 +2409,7 @@ core_beast.cpp_CBeast_getTargetPoints_FUN_004151e0 (1 suspect)
 core_beast.cpp_CBeast_process_FUN_004150d0 (1 suspect)
   File: core/beast.cpp
 ====================================================================================================
-  Line 11 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 12 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
 
 ====================================================================================================
 core_biggs.cpp_CBiggs_ctor_FUN_00415370 (5 suspects)
@@ -2438,10 +2438,10 @@ core_biggs.cpp_CBiggs_getTargetPoints_FUN_004159c0 (1 suspect)
 core_biggs.cpp_CBiggs_process_FUN_004154b0 (4 suspects)
   File: core/biggs.cpp
 ====================================================================================================
-  Line 25 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 66 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 90 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
-  Line 93 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 26 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 67 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 91 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
+  Line 94 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
 
 ====================================================================================================
 core_biggs.cpp_CBiggs_renderOpaque_FUN_00415760 (1 suspect)
@@ -2944,31 +2944,31 @@ core_boneguy.cpp_CBoneGuy_process_FUN_00418a00 (27 suspects)
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
   Line 24 [stack_alignment_array]: uint auStackY_1908 [1483];
-  Line 127 [pointer_truncation]: puVar15 = (uint *)((int)&local_12c + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8);
-  Line 127 [pointer_cast]: puVar15 = (uint *)((int)&local_12c + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8);
-  Line 128 [pointer_truncation]: puVar14 = (uint *)((int)&local_11c + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8);
-  Line 128 [pointer_cast]: puVar14 = (uint *)((int)&local_11c + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8);
-  Line 129 [pointer_truncation]: *(uint *)((int)&local_12c + (uint)bVar16 * -8 + 4) =
-  Line 129 [pointer_cast]: *(uint *)((int)&local_12c + (uint)bVar16 * -8 + 4) =
-  Line 130 [pointer_truncation]: *(uint *)((int)&local_11c + (uint)bVar16 * -8 + 4);
-  Line 130 [pointer_cast]: *(uint *)((int)&local_11c + (uint)bVar16 * -8 + 4);
-  Line 140 [unrolled_memcpy]: (pUVar1->vec).x = local_88.x;
-  Line 151 [unrolled_memcpy]: pCVar13->x = local_88.x;
-  Line 155 [shadow_pointer_walk]: local_28 = (CQuaternion4f *)&local_28[4].y;
-  Line 156 [shadow_pointer_walk]: local_20 = (CQuaternion4f *)&local_20[4].y;
-  Line 157 [shadow_pointer_walk]: local_18 = local_18 + 6;
-  Line 172 [shadow_pointer_walk]: pCVar11 = (CBoneGuy *)((pCVar11->base).base.base.orient_matrix.m + 1);
-  Line 183 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 301 [undefined_data]: (&local_94,(CVector3f *)&DAT_02dd1184,
-  Line 303 [undefined_data]: DAT_00764794);
-  Line 320 [unknown_field]: local_c4.x = local_10c * 5.2220990168285998e-315._0_4_;
-  Line 323 [unknown_field]: local_c4.y = local_108 * 5.2220990168285998e-315._0_4_;
-  Line 324 [unknown_field]: local_c4.z = local_104 * 5.2220990168285998e-315._0_4_;
-  Line 338 [unrolled_memcpy]: local_100.x = pCVar13->x;
-  Line 345 [unrolled_memcpy]: local_f4.x = pCVar13->x;
-  Line 381 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 412 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
-  Line 415 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 128 [pointer_truncation]: puVar15 = (uint *)((int)&local_12c + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8);
+  Line 128 [pointer_cast]: puVar15 = (uint *)((int)&local_12c + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8);
+  Line 129 [pointer_truncation]: puVar14 = (uint *)((int)&local_11c + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8);
+  Line 129 [pointer_cast]: puVar14 = (uint *)((int)&local_11c + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8);
+  Line 130 [pointer_truncation]: *(uint *)((int)&local_12c + (uint)bVar16 * -8 + 4) =
+  Line 130 [pointer_cast]: *(uint *)((int)&local_12c + (uint)bVar16 * -8 + 4) =
+  Line 131 [pointer_truncation]: *(uint *)((int)&local_11c + (uint)bVar16 * -8 + 4);
+  Line 131 [pointer_cast]: *(uint *)((int)&local_11c + (uint)bVar16 * -8 + 4);
+  Line 141 [unrolled_memcpy]: (pUVar1->vec).x = local_88.x;
+  Line 152 [unrolled_memcpy]: pCVar13->x = local_88.x;
+  Line 156 [shadow_pointer_walk]: local_28 = (CQuaternion4f *)&local_28[4].y;
+  Line 157 [shadow_pointer_walk]: local_20 = (CQuaternion4f *)&local_20[4].y;
+  Line 158 [shadow_pointer_walk]: local_18 = local_18 + 6;
+  Line 173 [shadow_pointer_walk]: pCVar11 = (CBoneGuy *)((pCVar11->base).base.base.orient_matrix.m + 1);
+  Line 184 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 302 [undefined_data]: (&local_94,(CVector3f *)&DAT_02dd1184,
+  Line 304 [undefined_data]: DAT_00764794);
+  Line 321 [unknown_field]: local_c4.x = local_10c * 5.2220990168285998e-315._0_4_;
+  Line 324 [unknown_field]: local_c4.y = local_108 * 5.2220990168285998e-315._0_4_;
+  Line 325 [unknown_field]: local_c4.z = local_104 * 5.2220990168285998e-315._0_4_;
+  Line 339 [unrolled_memcpy]: local_100.x = pCVar13->x;
+  Line 346 [unrolled_memcpy]: local_f4.x = pCVar13->x;
+  Line 382 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 413 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
+  Line 416 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
 
 ====================================================================================================
 core_boneguy.cpp_CBoneGuy_setup_FUN_00418800 (15 suspects)
@@ -3419,16 +3419,16 @@ core_bride.cpp_CBride_process_FUN_0041fe40 (11 suspects)
   File: core/bride.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
-  Line 193 [undefined_data]: DAT_00764b30);
-  Line 213 [undefined_data]: DAT_00764b34);
-  Line 260 [undefined_data]: DAT_00764b34);
-  Line 285 [undefined_data]: DAT_00764b30);
-  Line 332 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 375 [undefined_data]: ((CCharacter *)this_ptr,this_ptr->part_indices[0],DAT_00764b40,0.2);
-  Line 378 [undefined_data]: ((CCharacter *)this_ptr,this_ptr->part_indices[1],DAT_00764b38,0.2);
-  Line 381 [undefined_data]: ((CCharacter *)this_ptr,this_ptr->part_indices[2],DAT_00764b44,0.2);
-  Line 384 [undefined_data]: ((CCharacter *)this_ptr,this_ptr->part_indices[3],DAT_00764b3c,0.2);
-  Line 387 [undefined_data]: ((CCharacter *)this_ptr,this_ptr->part_indices[8],DAT_00764b2c,0.7);
+  Line 194 [undefined_data]: DAT_00764b30);
+  Line 214 [undefined_data]: DAT_00764b34);
+  Line 261 [undefined_data]: DAT_00764b34);
+  Line 286 [undefined_data]: DAT_00764b30);
+  Line 333 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 376 [undefined_data]: ((CCharacter *)this_ptr,this_ptr->part_indices[0],DAT_00764b40,0.2);
+  Line 379 [undefined_data]: ((CCharacter *)this_ptr,this_ptr->part_indices[1],DAT_00764b38,0.2);
+  Line 382 [undefined_data]: ((CCharacter *)this_ptr,this_ptr->part_indices[2],DAT_00764b44,0.2);
+  Line 385 [undefined_data]: ((CCharacter *)this_ptr,this_ptr->part_indices[3],DAT_00764b3c,0.2);
+  Line 388 [undefined_data]: ((CCharacter *)this_ptr,this_ptr->part_indices[8],DAT_00764b2c,0.7);
 
 ====================================================================================================
 core_bride.cpp_CBride_setup_FUN_0041fc20 (9 suspects)
@@ -4172,13 +4172,14 @@ core_charactr.cpp_CCharacter_getBoundingBox_FUN_00427a20 (1 suspect)
   Line 5 [unrolled_memcpy]: (out_box->min).x = (this_ptr->cached_bounding_box).min.x;
 
 ====================================================================================================
-core_charactr.cpp_CCharacter_getCarryObjToBodyXForm_FUN_00429490 (5 suspects)
+core_charactr.cpp_CCharacter_getCarryObjToBodyXForm_FUN_00429490 (6 suspects)
   File: core/charactr.cpp
 ====================================================================================================
-  Line 16 [unrolled_memcpy]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-  Line 18 [pointer_cast]: pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar3 * -2 + 1) * 4);
-  Line 18 [pointer_truncation]: pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar3 * -2 + 1) * 4);
-  Line 19 [pointer_cast]: out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar3 * -2 + 1) * 4);
+  Line 18 [unrolled_memcpy]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 20 [pointer_cast]: pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
+  Line 20 [pointer_truncation]: pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
+  Line 21 [pointer_cast]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
+  Line 21 [pointer_truncation]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
   Line 31 [unrolled_memcpy]: // 004294e5: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
@@ -4239,6 +4240,14 @@ core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042af70 (8 suspects)
   Line 156 [undefined_data]: (CVector3f *)&DAT_02dd1184,0.0,0.0), iVar3 == 0)) {
 
 ====================================================================================================
+core_charactr.cpp_CCharacter_processCharacter_FUN_004259f0 (3 suspects)
+  File: core/charactr.cpp
+====================================================================================================
+  Line 26 [raw_address_constant]: this_ptr_00 = 0x01E56DA0, fVar3 < 0.0)) {
+  Line 44 [shadow_pointer_walk]: pCVar5 = (CCharacter *)&(pCVar5->base).orient_matrix.m[0].z;
+  Line 59 [unrolled_memset]: (this_ptr->position_delta).z = 0.0;
+
+====================================================================================================
 core_charactr.cpp_CCharacter_processFire_FUN_004269b0 (20 suspects)
   File: core/charactr.cpp
 ====================================================================================================
@@ -4270,14 +4279,6 @@ core_charactr.cpp_CCharacter_processWalking_FUN_00428c00 (3 suspects)
   Line 30 [unrolled_memcpy]: (this_ptr->base).location.position.x = (pCVar2->location).position.x;
   Line 37 [unrolled_memcpy]: (pUVar1->vec).x = (pCVar2->orient).vec.x;
   Line 72 [undefined_data]: pCVar5 = (CVector3f *)&DAT_02dd1184;
-
-====================================================================================================
-core_charactr.cpp_CCharacter_process_FUN_004259f0 (3 suspects)
-  File: core/charactr.cpp
-====================================================================================================
-  Line 26 [raw_address_constant]: this_ptr_00 = 0x01E56DA0, fVar3 < 0.0)) {
-  Line 44 [shadow_pointer_walk]: pCVar5 = (CCharacter *)&(pCVar5->base).orient_matrix.m[0].z;
-  Line 59 [unrolled_memset]: (this_ptr->position_delta).z = 0.0;
 
 ====================================================================================================
 core_charactr.cpp_CCharacter_renderAttachedModels_FUN_004265a0 (6 suspects)
@@ -4902,20 +4903,20 @@ core_colonel.cpp_CColonel_process_FUN_00439f50 (17 suspects)
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
   Line 20 [stack_alignment_array]: float afStackY_1870 [1521];
   Line 24 [unresolved_funcptr]: code *blend_callback;
-  Line 54 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 179 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 183 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
-  Line 198 [unknown_field]: local_98 = (float)local_14 + 5.3286462644388174e-315._0_4_;
-  Line 201 [unknown_field]: local_98 = local_98 + 1.5938625219265179e-314._0_4_;
-  Line 240 [undefined_data]: iVar5 = DAT_0077ac8c;
-  Line 245 [pointer_truncation]: puVar11 = (uint *)((int)&CStack_84 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
-  Line 245 [pointer_cast]: puVar11 = (uint *)((int)&CStack_84 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
-  Line 246 [pointer_truncation]: puVar10 = (uint *)((int)&CStack_94 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
-  Line 246 [pointer_cast]: puVar10 = (uint *)((int)&CStack_94 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
-  Line 247 [pointer_truncation]: *(uint *)((int)&CStack_84 + (uint)bVar12 * -8 + 4) =
-  Line 247 [pointer_cast]: *(uint *)((int)&CStack_84 + (uint)bVar12 * -8 + 4) =
-  Line 248 [pointer_truncation]: *(uint *)((int)&CStack_94 + (uint)bVar12 * -8 + 4);
-  Line 248 [pointer_cast]: *(uint *)((int)&CStack_94 + (uint)bVar12 * -8 + 4);
+  Line 55 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 180 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 184 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
+  Line 199 [unknown_field]: local_98 = (float)local_14 + 5.3286462644388174e-315._0_4_;
+  Line 202 [unknown_field]: local_98 = local_98 + 1.5938625219265179e-314._0_4_;
+  Line 241 [undefined_data]: iVar5 = DAT_0077ac8c;
+  Line 246 [pointer_truncation]: puVar11 = (uint *)((int)&CStack_84 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
+  Line 246 [pointer_cast]: puVar11 = (uint *)((int)&CStack_84 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
+  Line 247 [pointer_truncation]: puVar10 = (uint *)((int)&CStack_94 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
+  Line 247 [pointer_cast]: puVar10 = (uint *)((int)&CStack_94 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
+  Line 248 [pointer_truncation]: *(uint *)((int)&CStack_84 + (uint)bVar12 * -8 + 4) =
+  Line 248 [pointer_cast]: *(uint *)((int)&CStack_84 + (uint)bVar12 * -8 + 4) =
+  Line 249 [pointer_truncation]: *(uint *)((int)&CStack_94 + (uint)bVar12 * -8 + 4);
+  Line 249 [pointer_cast]: *(uint *)((int)&CStack_94 + (uint)bVar12 * -8 + 4);
 
 ====================================================================================================
 core_colonel.cpp_CColonel_setup_FUN_00439da0 (2 suspects)
@@ -5056,12 +5057,12 @@ core_cow.cpp_CZombieCow_process_FUN_0043bdb0 (7 suspects)
   File: core/cow.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
-  Line 42 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 99 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 138 [undefined_data]: (&local_3c,(CVector3f *)&DAT_02dd1184,
-  Line 180 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 211 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
-  Line 214 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 43 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 100 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 139 [undefined_data]: (&local_3c,(CVector3f *)&DAT_02dd1184,
+  Line 181 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 212 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
+  Line 215 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
 
 ====================================================================================================
 core_crate.cpp_CCrate_ctor_FUN_0043c810 (2 suspects)
@@ -7359,13 +7360,13 @@ core_dog.cpp_CZombieDog_process_FUN_00454750 (8 suspects)
   File: core/dog.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
-  Line 49 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 89 [fast_sqrt_inline]: local_18 = (float)(((int)local_24 >> 1) + g_FastSqrtMagic);
-  Line 144 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 189 [undefined_data]: (&local_98,(CVector3f *)&DAT_02dd1184,
-  Line 238 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 269 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
-  Line 272 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 50 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 90 [fast_sqrt_inline]: local_18 = (float)(((int)local_24 >> 1) + g_FastSqrtMagic);
+  Line 145 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 190 [undefined_data]: (&local_98,(CVector3f *)&DAT_02dd1184,
+  Line 239 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 270 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
+  Line 273 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
 
 ====================================================================================================
 core_door.cpp_CDoor_archive_FUN_00455ee0 (1 suspect)
@@ -7558,23 +7559,23 @@ core_dracbrid.cpp_CDraculaBride_process_FUN_00458a90 (21 suspects)
   Line 3 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
   Line 110 [shadow_pointer_walk]: pCVar11 = (CDraculaBride *)((pCVar11->base).base.base.actor_name + 4);
   Line 124 [shadow_pointer_walk]: pCVar11 = (CDraculaBride *)((pCVar11->base).base.base.actor_name + 4);
-  Line 137 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 204 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 230 [pointer_cast]: (*(CDemonActor **)
-  Line 249 [unrolled_memcpy]: (this_ptr->new_pos).x = (pCVar17->position).x;
-  Line 274 [undefined_data]: (&local_b8,(CVector3f *)&DAT_02dd1184,
-  Line 291 [undefined_data]: (&local_184,(CVector3f *)&DAT_02dd1184,
-  Line 308 [unknown_field]: local_a0.x = (this_ptr->base).base.base.orient.vec.x + 1.5897179988972888e-314._0_4_;
-  Line 381 [unrolled_memcpy]: local_7c.x = local_124.x;
-  Line 452 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 532 [undefined_data]: (&local_13c,(CVector3f *)&DAT_02dd1184,
-  Line 549 [undefined_data]: (&local_88,(CVector3f *)&DAT_02dd1184,
-  Line 566 [undefined_data]: (&local_1c0,(CVector3f *)&DAT_02dd1184,
-  Line 618 [pointer_cast]: pCVar11 = *(CDraculaBride **)((int)g_CDemonSet_PTR_005be368->characters + local_1c);
-  Line 634 [unrolled_memcpy]: (pCVar17->position).x = (this_ptr->new_pos).x;
-  Line 648 [unrolled_memcpy]: (pUVar1->vec).x = pCVar13->x;
-  Line 730 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
-  Line 733 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 138 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 205 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 231 [pointer_cast]: (*(CDemonActor **)
+  Line 250 [unrolled_memcpy]: (this_ptr->new_pos).x = (pCVar17->position).x;
+  Line 275 [undefined_data]: (&local_b8,(CVector3f *)&DAT_02dd1184,
+  Line 292 [undefined_data]: (&local_184,(CVector3f *)&DAT_02dd1184,
+  Line 309 [unknown_field]: local_a0.x = (this_ptr->base).base.base.orient.vec.x + 1.5897179988972888e-314._0_4_;
+  Line 382 [unrolled_memcpy]: local_7c.x = local_124.x;
+  Line 453 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 533 [undefined_data]: (&local_13c,(CVector3f *)&DAT_02dd1184,
+  Line 550 [undefined_data]: (&local_88,(CVector3f *)&DAT_02dd1184,
+  Line 567 [undefined_data]: (&local_1c0,(CVector3f *)&DAT_02dd1184,
+  Line 619 [pointer_cast]: pCVar11 = *(CDraculaBride **)((int)g_CDemonSet_PTR_005be368->characters + local_1c);
+  Line 635 [unrolled_memcpy]: (pCVar17->position).x = (this_ptr->new_pos).x;
+  Line 649 [unrolled_memcpy]: (pUVar1->vec).x = pCVar13->x;
+  Line 731 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
+  Line 734 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
 
 ====================================================================================================
 core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_0045a260 (1 suspect)
@@ -7661,13 +7662,13 @@ core_drone.cpp_CDrone_process_FUN_00462a60 (8 suspects)
   File: core/drone.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
-  Line 47 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 102 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 146 [undefined_data]: (&local_88,(CVector3f *)&DAT_02dd1184,
-  Line 159 [undefined_data]: (&local_4c,(CVector3f *)&DAT_02dd1184,
-  Line 206 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 258 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
-  Line 261 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 48 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 103 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 147 [undefined_data]: (&local_88,(CVector3f *)&DAT_02dd1184,
+  Line 160 [undefined_data]: (&local_4c,(CVector3f *)&DAT_02dd1184,
+  Line 207 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 259 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
+  Line 262 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
 
 ====================================================================================================
 core_dskybox.cpp_generateSkyDomeVertex_FUN_00463440 (5 suspects)
@@ -9326,17 +9327,17 @@ core_elephant.cpp_CElephantGun_process_FUN_004777a0 (4 suspects)
   File: core/elephant.cpp
 ====================================================================================================
   Line 6 [stack_param]: float in_stack_0000000c;
-  Line 16 [stack_ref]: if ((float *)&stack0x00000000 != &g_CDemonLight_01c74640.base.rotation_matrix.m[1].y) {
-  Line 17 [unrolled_memcpy]: g_CDemonLight_01c74640.base.position.x = CStack_1c.x;
-  Line 31 [stack_param]: core_weapon_cpp_CWeapon_process_FUN_00554030(&this_ptr->base,in_stack_0000000c);
+  Line 17 [stack_ref]: if ((float *)&stack0x00000000 != &g_CDemonLight_01c74640.base.rotation_matrix.m[1].y) {
+  Line 18 [unrolled_memcpy]: g_CDemonLight_01c74640.base.position.x = CStack_1c.x;
+  Line 32 [stack_param]: core_weapon_cpp_CWeapon_process_FUN_00554030(&this_ptr->base,in_stack_0000000c);
 
 ====================================================================================================
 core_elephant.cpp_CElephantGun_renderAimBeam_FUN_00478120 (3 suspects)
   File: core/elephant.cpp
 ====================================================================================================
-  Line 39 [self_copy_guard]: if (&fStack_50 != &fStack_38) {
-  Line 51 [static_uninitvar]: fVar1 = SQRT(fStack_48 * fStack_48 + fStack_50 * fStack_50 + fStack_4c * fStack_4c);
-  Line 51 [static_uninitvar]: fVar1 = SQRT(fStack_48 * fStack_48 + fStack_50 * fStack_50 + fStack_4c * fStack_4c);
+  Line 40 [self_copy_guard]: if (&fStack_50 != &fStack_38) {
+  Line 52 [static_uninitvar]: fVar1 = SQRT(fStack_48 * fStack_48 + fStack_50 * fStack_50 + fStack_4c * fStack_4c);
+  Line 52 [static_uninitvar]: fVar1 = SQRT(fStack_48 * fStack_48 + fStack_50 * fStack_50 + fStack_4c * fStack_4c);
 
 ====================================================================================================
 core_emitter.cpp_CEmitter_ctor_FUN_004783c0 (8 suspects)
@@ -10307,13 +10308,13 @@ core_fire.cpp_CFireEffect_traceLaser_FUN_0048b6f0 (13 suspects)
   Line 159 [unrolled_memcpy]: local_20->x = pCVar2->x;
   Line 167 [unrolled_memcpy]: local_1c->x = pCVar2->x;
   Line 174 [unrolled_memcpy]: local_18->x = pCVar2->x;
-  Line 226 [unknown_field]: local_a4.x * direction->x + local_a4.y * direction->y) * 5.3049894774131808e-315._0_4_;
-  Line 237 [unrolled_memcpy]: local_bc.x = local_f8.x;
-  Line 247 [unrolled_memcpy]: local_23c.intensity = laser_info->intensity;
-  Line 264 [unrolled_memcpy]: local_23c.incidence_angle = laser_info->incidence_angle;
-  Line 278 [unrolled_memcpy]: local_104.x = direction->x;
-  Line 312 [unrolled_memcpy]: local_1e8.intensity = laser_info->intensity;
-  Line 329 [unrolled_memcpy]: local_1e8.incidence_angle = laser_info->incidence_angle;
+  Line 227 [unknown_field]: local_a4.x * direction->x + local_a4.y * direction->y) * 5.3049894774131808e-315._0_4_;
+  Line 238 [unrolled_memcpy]: local_bc.x = local_f8.x;
+  Line 248 [unrolled_memcpy]: local_23c.intensity = laser_info->intensity;
+  Line 265 [unrolled_memcpy]: local_23c.incidence_angle = laser_info->incidence_angle;
+  Line 279 [unrolled_memcpy]: local_104.x = direction->x;
+  Line 313 [unrolled_memcpy]: local_1e8.intensity = laser_info->intensity;
+  Line 330 [unrolled_memcpy]: local_1e8.incidence_angle = laser_info->incidence_angle;
 
 ====================================================================================================
 core_fire.cpp_CFireball_process_FUN_00484050 (5 suspects)
@@ -11417,12 +11418,12 @@ core_gabriela.cpp_CGabriella_process_FUN_00495a20 (8 suspects)
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
   Line 3 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 98 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 391 [unrolled_memcpy]: local_178.x = (this_ptr->base).base.position_delta.x;
-  Line 443 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 670 [pointer_truncation]: pCVar12 = (CVector3f *)((int)&pCVar13[4].orient + 4);
-  Line 670 [pointer_cast]: pCVar12 = (CVector3f *)((int)&pCVar13[4].orient + 4);
-  Line 670 [derived_field_index_pun]: pCVar12 = (CVector3f *)((int)&pCVar13[4].orient + 4);
+  Line 99 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 392 [unrolled_memcpy]: local_178.x = (this_ptr->base).base.position_delta.x;
+  Line 444 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 671 [pointer_truncation]: pCVar12 = (CVector3f *)((int)&pCVar13[4].orient + 4);
+  Line 671 [pointer_cast]: pCVar12 = (CVector3f *)((int)&pCVar13[4].orient + 4);
+  Line 671 [derived_field_index_pun]: pCVar12 = (CVector3f *)((int)&pCVar13[4].orient + 4);
 
 ====================================================================================================
 core_gabriela.cpp_CGabriella_scoreTargetVisibility_FUN_00498de0 (1 suspect)
@@ -12428,11 +12429,11 @@ core_gargoyle.cpp_CGargoyle_process_FUN_004a7870 (7 suspects)
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
   Line 3 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 60 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 269 [undefined_data]: (&local_8c,(CVector3f *)&DAT_02dd1184,
-  Line 316 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 340 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
-  Line 343 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 61 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 270 [undefined_data]: (&local_8c,(CVector3f *)&DAT_02dd1184,
+  Line 317 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 341 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
+  Line 344 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
 
 ====================================================================================================
 core_gargoyle.cpp_CGargoyle_setup_FUN_004a7450 (1 suspect)
@@ -12537,90 +12538,90 @@ core_ghoul.cpp_CGhoul_process_FUN_004a9270 (88 suspects)
   Line 32 [stack_param]: char *in_stack_fffffc88;
   Line 33 [stack_param]: CVector3f *in_stack_fffffc8c;
   Line 35 [stack_param]: CGhoul *in_stack_fffffc94;
-  Line 128 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 146 [stack_param]: in_stack_fffffc88 = (char *)(this_ptr->base).victim;
-  Line 147 [unresolved_funcptr]: pCVar14 = (**(code **)((int)(&((UOrientationVector *)
-  Line 148 [stack_param]: ((CPathMap *)in_stack_fffffc88)->height_cache)->vec)[0x17].z +
-  Line 149 [stack_param]: 0xec))((CCharacter *)in_stack_fffffc88);
-  Line 151 [stack_param]: in_stack_fffffc8c = (CVector3f *)0x0;
-  Line 153 [stack_param]: in_stack_fffffc88 = (char *)this_ptr;
-  Line 158 [stack_param]: in_stack_fffffc94 = (CGhoul *)&local_1c8;
-  Line 161 [stack_param]: in_stack_fffffc8c = (CVector3f *)0x4a975c;
-  Line 163 [stack_param]: ((CDemonActor *)this_ptr,(CVector3f *)in_stack_fffffc94,&local_174);
-  Line 171 [stack_param]: in_stack_fffffc8c = (CVector3f *)0x4a97cb;
-  Line 172 [stack_param]: in_stack_fffffc94 = this_ptr;
-  Line 173 [static_uninitvar]: fVar1 = local_1c0 - (pCVar3->base).location.position.z;
-  Line 176 [static_uninitvar]: if (ABS(local_1c4 - (pCVar3->base).location.position.y) <= (float)4) {
-  Line 211 [stack_param]: in_stack_fffffc88 = (char *)0x4a98e1;
-  Line 216 [unrolled_memcpy]: local_29c.impact_direction.x = pCVar12->x;
-  Line 223 [stack_param]: in_stack_fffffc8c = (CVector3f *)0x4a9930;
-  Line 227 [raw_address_constant]: iVar7 = 0x4a995e;
-  Line 230 [stack_param]: in_stack_fffffc8c = &local_168;
-  Line 231 [stack_param]: in_stack_fffffc88 = &g_CGore_PTR_005b96c4->singleton;
-  Line 233 [stack_param]: (g_CGore_PTR_005b96c4,in_stack_fffffc8c,(CVector3f *)0x0,(int)local_70,iVar7
-  Line 242 [stack_param]: in_stack_fffffc94 = this_ptr;
-  Line 249 [stack_param]: in_stack_fffffc8c = (CVector3f *)0x1;
-  Line 252 [stack_param]: in_stack_fffffc88 = (char *)pCVar11;
-  Line 256 [stack_param]: in_stack_fffffc88 = (char *)0x1;
-  Line 275 [raw_address_constant]: iVar7 = 0x4a9a56;
-  Line 291 [raw_address_constant]: iVar7 = 0x4a9ae1;
-  Line 311 [raw_address_constant]: iVar7 = 0x4a9b6c;
-  Line 315 [pointer_truncation]: (g_CGore_PTR_005b96c4,&local_15c,(CVector3f *)0x0,(int)local_84,iVar7);
-  Line 324 [unrolled_strcpy]: do {
-  Line 376 [stack_param]: in_stack_fffffc88 = (char *)0x4aa254;
-  Line 380 [stack_param]: in_stack_fffffc88 = (char *)this_ptr;
-  Line 424 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 443 [stack_param]: in_stack_fffffc88 = (char *)0x4aa46a;
-  Line 446 [stack_param]: in_stack_fffffc88 = (char *)&(this_ptr->base).base.model;
-  Line 448 [stack_param]: ((CMotionController *)in_stack_fffffc88,0,1);
-  Line 470 [stack_param]: in_stack_fffffc88 = (char *)(*((pCVar3->base).vtable._ub)->getPathMap)(&pCVar3->base);
-  Line 474 [stack_param]: (CPathMap *)in_stack_fffffc88,pCVar12,fVar25,
-  Line 475 [stack_param]: (float)in_stack_fffffc94);
-  Line 477 [stack_param]: in_stack_fffffc88 = (char *)0x4aa677;
-  Line 535 [stack_param]: in_stack_fffffc88 = (char *)(*((pCVar14->vtable)._ub)->getPathMap)(pCVar14);
-  Line 539 [stack_param]: (CPathMap *)in_stack_fffffc88,pCVar12,fVar25,
-  Line 540 [stack_param]: (float)in_stack_fffffc94);
-  Line 542 [stack_param]: in_stack_fffffc88 = (char *)0x4aa3ef;
-  Line 553 [stack_param]: in_stack_fffffc88 = (char *)0x4aa42c;
-  Line 589 [stack_param]: in_stack_fffffc88 = (char *)0x3db2b8c2;
-  Line 603 [stack_param]: (float)in_stack_fffffc88,(float)in_stack_fffffc8c);
-  Line 603 [stack_param]: (float)in_stack_fffffc88,(float)in_stack_fffffc8c);
-  Line 605 [stack_param]: in_stack_fffffc88 = (char *)0x4aa770;
-  Line 609 [stack_param]: in_stack_fffffc88 = (char *)&(this_ptr->base).base.model;
-  Line 611 [stack_param]: ((CMotionController *)in_stack_fffffc88,this_ptr->pending_eat_state,1);
-  Line 616 [stack_param]: in_stack_fffffc88 = (char *)this_ptr;
-  Line 625 [stack_param]: in_stack_fffffc88 = (char *)0x1;
-  Line 641 [stack_param]: in_stack_fffffc88 = (char *)0x3f000000;
-  Line 651 [stack_param]: in_stack_fffffc88 = (char *)pCVar11;
-  Line 662 [stack_param]: in_stack_fffffc88 = (char *)&local_2d8;
-  Line 674 [stack_param]: (&this_ptr->base,pCVar12,fVar25,(SDamageInfo *)in_stack_fffffc88);
-  Line 676 [stack_param]: in_stack_fffffc88 = "gh-hits?.wav";
-  Line 684 [stack_param]: in_stack_fffffc88 = (char *)0x1;
-  Line 711 [raw_address_constant]: iVar9 = 0x4a9e4f;
-  Line 734 [self_copy_guard]: if (&local_c0 != &local_120) {
-  Line 741 [pointer_cast]: local_78 = (CMotionList *)(((int)local_7c._ub >> 1) + g_FastSqrtMagic);
-  Line 741 [pointer_truncation]: local_78 = (CMotionList *)(((int)local_7c._ub >> 1) + g_FastSqrtMagic);
-  Line 788 [pointer_truncation]: (10.0,(float)(int)local_14 * (float)10);
-  Line 801 [stack_param]: in_stack_fffffc88 = (char *)0x4a9e85;
-  Line 821 [stack_param]: in_stack_fffffc88 = (char *)(this_ptr->base).victim;
-  Line 823 [unresolved_funcptr]: (**(code **)((int)(&((UOrientationVector *)
-  Line 824 [stack_param]: ((CPathMap *)in_stack_fffffc88)->height_cache)->vec)[0x17].z
-  Line 825 [stack_param]: + 0xec))((CCharacter *)in_stack_fffffc88);
-  Line 827 [stack_param]: in_stack_fffffc88 = (char *)0x1;
-  Line 839 [stack_param]: in_stack_fffffc88 = (char *)0x3f000000;
-  Line 848 [stack_param]: in_stack_fffffc88 = (char *)pCVar11;
-  Line 860 [stack_param]: in_stack_fffffc88 = (char *)&local_314;
-  Line 872 [stack_param]: (&this_ptr->base,pCVar12,fVar25,(SDamageInfo *)in_stack_fffffc88);
-  Line 874 [stack_param]: in_stack_fffffc88 = "gh-hits?.wav";
-  Line 889 [stack_param]: in_stack_fffffc88 = (char *)0x41700000;
-  Line 897 [stack_param]: in_stack_fffffc88 = (char *)0x0;
-  Line 917 [stack_param]: (float)in_stack_fffffc88);
-  Line 950 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 982 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
-  Line 985 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 1019 [stack_ref]: _sprintf(&stack0xfffffc88,"ghoul-walk-?.wav *%f",(double)(this_ptr->base).speed);
-  Line 1021 [stack_ref]: ((CDemonActor *)this_ptr,&stack0xfffffc88);
-  Line 1075 [unrolled_memcpy]: (this_ptr->prev_position).x = (pCVar16->position).x;
+  Line 129 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 147 [stack_param]: in_stack_fffffc88 = (char *)(this_ptr->base).victim;
+  Line 148 [unresolved_funcptr]: pCVar14 = (**(code **)((int)(&((UOrientationVector *)
+  Line 149 [stack_param]: ((CPathMap *)in_stack_fffffc88)->height_cache)->vec)[0x17].z +
+  Line 150 [stack_param]: 0xec))((CCharacter *)in_stack_fffffc88);
+  Line 152 [stack_param]: in_stack_fffffc8c = (CVector3f *)0x0;
+  Line 154 [stack_param]: in_stack_fffffc88 = (char *)this_ptr;
+  Line 159 [stack_param]: in_stack_fffffc94 = (CGhoul *)&local_1c8;
+  Line 162 [stack_param]: in_stack_fffffc8c = (CVector3f *)0x4a975c;
+  Line 164 [stack_param]: ((CDemonActor *)this_ptr,(CVector3f *)in_stack_fffffc94,&local_174);
+  Line 172 [stack_param]: in_stack_fffffc8c = (CVector3f *)0x4a97cb;
+  Line 173 [stack_param]: in_stack_fffffc94 = this_ptr;
+  Line 174 [static_uninitvar]: fVar1 = local_1c0 - (pCVar3->base).location.position.z;
+  Line 177 [static_uninitvar]: if (ABS(local_1c4 - (pCVar3->base).location.position.y) <= (float)4) {
+  Line 212 [stack_param]: in_stack_fffffc88 = (char *)0x4a98e1;
+  Line 217 [unrolled_memcpy]: local_29c.impact_direction.x = pCVar12->x;
+  Line 224 [stack_param]: in_stack_fffffc8c = (CVector3f *)0x4a9930;
+  Line 228 [raw_address_constant]: iVar7 = 0x4a995e;
+  Line 231 [stack_param]: in_stack_fffffc8c = &local_168;
+  Line 232 [stack_param]: in_stack_fffffc88 = &g_CGore_PTR_005b96c4->singleton;
+  Line 234 [stack_param]: (g_CGore_PTR_005b96c4,in_stack_fffffc8c,(CVector3f *)0x0,(int)local_70,iVar7
+  Line 243 [stack_param]: in_stack_fffffc94 = this_ptr;
+  Line 250 [stack_param]: in_stack_fffffc8c = (CVector3f *)0x1;
+  Line 253 [stack_param]: in_stack_fffffc88 = (char *)pCVar11;
+  Line 257 [stack_param]: in_stack_fffffc88 = (char *)0x1;
+  Line 276 [raw_address_constant]: iVar7 = 0x4a9a56;
+  Line 292 [raw_address_constant]: iVar7 = 0x4a9ae1;
+  Line 312 [raw_address_constant]: iVar7 = 0x4a9b6c;
+  Line 316 [pointer_truncation]: (g_CGore_PTR_005b96c4,&local_15c,(CVector3f *)0x0,(int)local_84,iVar7);
+  Line 325 [unrolled_strcpy]: do {
+  Line 377 [stack_param]: in_stack_fffffc88 = (char *)0x4aa254;
+  Line 381 [stack_param]: in_stack_fffffc88 = (char *)this_ptr;
+  Line 425 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 444 [stack_param]: in_stack_fffffc88 = (char *)0x4aa46a;
+  Line 447 [stack_param]: in_stack_fffffc88 = (char *)&(this_ptr->base).base.model;
+  Line 449 [stack_param]: ((CMotionController *)in_stack_fffffc88,0,1);
+  Line 471 [stack_param]: in_stack_fffffc88 = (char *)(*((pCVar3->base).vtable._ub)->getPathMap)(&pCVar3->base);
+  Line 475 [stack_param]: (CPathMap *)in_stack_fffffc88,pCVar12,fVar25,
+  Line 476 [stack_param]: (float)in_stack_fffffc94);
+  Line 478 [stack_param]: in_stack_fffffc88 = (char *)0x4aa677;
+  Line 536 [stack_param]: in_stack_fffffc88 = (char *)(*((pCVar14->vtable)._ub)->getPathMap)(pCVar14);
+  Line 540 [stack_param]: (CPathMap *)in_stack_fffffc88,pCVar12,fVar25,
+  Line 541 [stack_param]: (float)in_stack_fffffc94);
+  Line 543 [stack_param]: in_stack_fffffc88 = (char *)0x4aa3ef;
+  Line 554 [stack_param]: in_stack_fffffc88 = (char *)0x4aa42c;
+  Line 590 [stack_param]: in_stack_fffffc88 = (char *)0x3db2b8c2;
+  Line 604 [stack_param]: (float)in_stack_fffffc88,(float)in_stack_fffffc8c);
+  Line 604 [stack_param]: (float)in_stack_fffffc88,(float)in_stack_fffffc8c);
+  Line 606 [stack_param]: in_stack_fffffc88 = (char *)0x4aa770;
+  Line 610 [stack_param]: in_stack_fffffc88 = (char *)&(this_ptr->base).base.model;
+  Line 612 [stack_param]: ((CMotionController *)in_stack_fffffc88,this_ptr->pending_eat_state,1);
+  Line 617 [stack_param]: in_stack_fffffc88 = (char *)this_ptr;
+  Line 626 [stack_param]: in_stack_fffffc88 = (char *)0x1;
+  Line 642 [stack_param]: in_stack_fffffc88 = (char *)0x3f000000;
+  Line 652 [stack_param]: in_stack_fffffc88 = (char *)pCVar11;
+  Line 663 [stack_param]: in_stack_fffffc88 = (char *)&local_2d8;
+  Line 675 [stack_param]: (&this_ptr->base,pCVar12,fVar25,(SDamageInfo *)in_stack_fffffc88);
+  Line 677 [stack_param]: in_stack_fffffc88 = "gh-hits?.wav";
+  Line 685 [stack_param]: in_stack_fffffc88 = (char *)0x1;
+  Line 712 [raw_address_constant]: iVar9 = 0x4a9e4f;
+  Line 735 [self_copy_guard]: if (&local_c0 != &local_120) {
+  Line 742 [pointer_cast]: local_78 = (CMotionList *)(((int)local_7c._ub >> 1) + g_FastSqrtMagic);
+  Line 742 [pointer_truncation]: local_78 = (CMotionList *)(((int)local_7c._ub >> 1) + g_FastSqrtMagic);
+  Line 789 [pointer_truncation]: (10.0,(float)(int)local_14 * (float)10);
+  Line 802 [stack_param]: in_stack_fffffc88 = (char *)0x4a9e85;
+  Line 822 [stack_param]: in_stack_fffffc88 = (char *)(this_ptr->base).victim;
+  Line 824 [unresolved_funcptr]: (**(code **)((int)(&((UOrientationVector *)
+  Line 825 [stack_param]: ((CPathMap *)in_stack_fffffc88)->height_cache)->vec)[0x17].z
+  Line 826 [stack_param]: + 0xec))((CCharacter *)in_stack_fffffc88);
+  Line 828 [stack_param]: in_stack_fffffc88 = (char *)0x1;
+  Line 840 [stack_param]: in_stack_fffffc88 = (char *)0x3f000000;
+  Line 849 [stack_param]: in_stack_fffffc88 = (char *)pCVar11;
+  Line 861 [stack_param]: in_stack_fffffc88 = (char *)&local_314;
+  Line 873 [stack_param]: (&this_ptr->base,pCVar12,fVar25,(SDamageInfo *)in_stack_fffffc88);
+  Line 875 [stack_param]: in_stack_fffffc88 = "gh-hits?.wav";
+  Line 890 [stack_param]: in_stack_fffffc88 = (char *)0x41700000;
+  Line 898 [stack_param]: in_stack_fffffc88 = (char *)0x0;
+  Line 918 [stack_param]: (float)in_stack_fffffc88);
+  Line 951 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 983 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
+  Line 986 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 1020 [stack_ref]: _sprintf(&stack0xfffffc88,"ghoul-walk-?.wav *%f",(double)(this_ptr->base).speed);
+  Line 1022 [stack_ref]: ((CDemonActor *)this_ptr,&stack0xfffffc88);
+  Line 1076 [unrolled_memcpy]: (this_ptr->prev_position).x = (pCVar16->position).x;
 
 ====================================================================================================
 core_ghoul.cpp_CGhoul_setup_FUN_004a8dd0 (1 suspect)
@@ -13562,18 +13563,18 @@ core_haystack.cpp_CHaystack_process_FUN_004b32d0 (16 suspects)
   Line 3 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
   Line 22 [stack_alignment_array]: float afStackY_1868 [1521];
   Line 26 [unresolved_funcptr]: code *blend_callback;
-  Line 61 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 191 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 195 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
-  Line 225 [unknown_field]: local_90 = local_90 + 1.5938625219265179e-314._0_4_;
-  Line 271 [pointer_truncation]: puVar12 = (uint *)((int)&CStack_7c + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
-  Line 271 [pointer_cast]: puVar12 = (uint *)((int)&CStack_7c + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
-  Line 272 [pointer_truncation]: puVar11 = (uint *)((int)&CStack_8c + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
-  Line 272 [pointer_cast]: puVar11 = (uint *)((int)&CStack_8c + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
-  Line 273 [pointer_truncation]: *(uint *)((int)&CStack_7c + (uint)bVar13 * -8 + 4) =
-  Line 273 [pointer_cast]: *(uint *)((int)&CStack_7c + (uint)bVar13 * -8 + 4) =
-  Line 274 [pointer_truncation]: *(uint *)((int)&CStack_8c + (uint)bVar13 * -8 + 4);
-  Line 274 [pointer_cast]: *(uint *)((int)&CStack_8c + (uint)bVar13 * -8 + 4);
+  Line 62 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 192 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 196 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
+  Line 226 [unknown_field]: local_90 = local_90 + 1.5938625219265179e-314._0_4_;
+  Line 272 [pointer_truncation]: puVar12 = (uint *)((int)&CStack_7c + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
+  Line 272 [pointer_cast]: puVar12 = (uint *)((int)&CStack_7c + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
+  Line 273 [pointer_truncation]: puVar11 = (uint *)((int)&CStack_8c + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
+  Line 273 [pointer_cast]: puVar11 = (uint *)((int)&CStack_8c + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
+  Line 274 [pointer_truncation]: *(uint *)((int)&CStack_7c + (uint)bVar13 * -8 + 4) =
+  Line 274 [pointer_cast]: *(uint *)((int)&CStack_7c + (uint)bVar13 * -8 + 4) =
+  Line 275 [pointer_truncation]: *(uint *)((int)&CStack_8c + (uint)bVar13 * -8 + 4);
+  Line 275 [pointer_cast]: *(uint *)((int)&CStack_8c + (uint)bVar13 * -8 + 4);
 
 ====================================================================================================
 core_haystack.cpp_CHaystack_setup_FUN_004b3110 (1 suspect)
@@ -13763,7 +13764,7 @@ core_hiram.cpp_CHiram_dtor_FUN_004b6670 (3 suspects)
 core_hiram.cpp_CHiram_process_FUN_004b6770 (1 suspect)
   File: core/hiram.cpp
 ====================================================================================================
-  Line 38 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 39 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
 
 ====================================================================================================
 core_hostage.cpp_CHostage_ctor_FUN_004b69f0 (1 suspect)
@@ -13815,18 +13816,18 @@ core_hostage.cpp_CHostage_process_FUN_004b6d80 (14 suspects)
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
   Line 31 [stack_param]: ulonglong in_stack_fffffe40;
-  Line 111 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 117 [stack_param]: while (pCVar21 = (CDemonActor *)in_stack_fffffe40, 0.0 < local_1a0) {
-  Line 150 [pointer_cast]: (*(CDemonActor **)
-  Line 181 [stack_param]: in_stack_fffffe40 = CONCAT44(pCVar21,&g_HeroActors[g_LocalHeroIndex]->inventory);
-  Line 181 [concat_reconstruction]: in_stack_fffffe40 = CONCAT44(pCVar21,&g_HeroActors[g_LocalHeroIndex]->inventory);
-  Line 403 [sub84_truncation]: pCVar21 = SUB84(__BITCAST_UINT64((double)fVar4),0);
-  Line 412 [unrolled_memcpy]: pCVar15->x = pCVar19->x;
-  Line 536 [suspect_float]: local_20 = 1.4013e-45;
-  Line 537 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 590 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
-  Line 593 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 679 [suspect_float]: (pCVar17->model).transformed_vertices[0x4f].z = 8.40779e-45;
+  Line 112 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 118 [stack_param]: while (pCVar21 = (CDemonActor *)in_stack_fffffe40, 0.0 < local_1a0) {
+  Line 151 [pointer_cast]: (*(CDemonActor **)
+  Line 182 [stack_param]: in_stack_fffffe40 = CONCAT44(pCVar21,&g_HeroActors[g_LocalHeroIndex]->inventory);
+  Line 182 [concat_reconstruction]: in_stack_fffffe40 = CONCAT44(pCVar21,&g_HeroActors[g_LocalHeroIndex]->inventory);
+  Line 404 [sub84_truncation]: pCVar21 = SUB84(__BITCAST_UINT64((double)fVar4),0);
+  Line 413 [unrolled_memcpy]: pCVar15->x = pCVar19->x;
+  Line 537 [suspect_float]: local_20 = 1.4013e-45;
+  Line 538 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 591 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
+  Line 594 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 680 [suspect_float]: (pCVar17->model).transformed_vertices[0x4f].z = 8.40779e-45;
 
 ====================================================================================================
 core_hostage.cpp_CHostage_setup_FUN_004b6b20 (1 suspect)
@@ -13856,12 +13857,12 @@ core_hotdemon.cpp_CHotDemon_process_FUN_004b8f20 (8 suspects)
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
   Line 3 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 53 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 96 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 166 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 265 [undefined_data]: (&local_4c,(CVector3f *)&DAT_02dd1184,
-  Line 303 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
-  Line 306 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 54 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 97 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 167 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 266 [undefined_data]: (&local_4c,(CVector3f *)&DAT_02dd1184,
+  Line 304 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
+  Line 307 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
 
 ====================================================================================================
 core_hotdemon.cpp_CHotDemon_setup_FUN_004b8d00 (1 suspect)
@@ -13938,21 +13939,21 @@ core_icepick.cpp_CIcePick_process_FUN_004b9fe0 (21 suspects)
   Line 23 [stack_param]: CDemonActor *in_stack_ffffff68;
   Line 25 [unresolved_funcptr]: code *blend_callback;
   Line 26 [stack_param]: float in_stack_ffffff78;
-  Line 63 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 160 [stack_param]: (*(((pCVar10->base).vtable._uc)->_uc).isGrabbable)(pCVar10,in_stack_ffffff68);
-  Line 193 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 226 [unrolled_memcpy]: local_30.x = (this_ptr->base).base.model.accumulated_root_motion.x;
-  Line 252 [unknown_field]: pCVar7 = (CDeformableModelInstance *)((float)pCVar7 + 1.5938625219265179e-314._0_4_);
-  Line 281 [stack_param]: in_stack_ffffff78 = 1.4013e-45;
-  Line 281 [suspect_float]: in_stack_ffffff78 = 1.4013e-45;
-  Line 291 [suspect_float]: pCVar8[4].location.position.x = 1.4013e-43;
-  Line 302 [stack_ref]: (&this_ptr->head_look_euler,(CQuaternion4f *)&stack0xffffff78);
-  Line 303 [stack_param]: auStack_78._0_4_ = in_stack_ffffff78;
-  Line 303 [unknown_field]: auStack_78._0_4_ = in_stack_ffffff78;
-  Line 305 [stack_ref]: *(uint *)(&stack0xffffff7c + (uint)bVar14 * -8);
-  Line 307 [stack_ref]: *(uint *)(&stack0xffffff80 + (uint)bVar14 * -8 + (uint)bVar14 * -8);
-  Line 311 [stack_ref]: ((int)(&stack0xffffff80 + (uint)bVar14 * -8 + (uint)bVar14 * -8) +
-  Line 311 [pointer_truncation]: ((int)(&stack0xffffff80 + (uint)bVar14 * -8 + (uint)bVar14 * -8) +
+  Line 64 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 161 [stack_param]: (*(((pCVar10->base).vtable._uc)->_uc).isGrabbable)(pCVar10,in_stack_ffffff68);
+  Line 194 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 227 [unrolled_memcpy]: local_30.x = (this_ptr->base).base.model.accumulated_root_motion.x;
+  Line 253 [unknown_field]: pCVar7 = (CDeformableModelInstance *)((float)pCVar7 + 1.5938625219265179e-314._0_4_);
+  Line 282 [stack_param]: in_stack_ffffff78 = 1.4013e-45;
+  Line 282 [suspect_float]: in_stack_ffffff78 = 1.4013e-45;
+  Line 292 [suspect_float]: pCVar8[4].location.position.x = 1.4013e-43;
+  Line 303 [stack_ref]: (&this_ptr->head_look_euler,(CQuaternion4f *)&stack0xffffff78);
+  Line 304 [stack_param]: auStack_78._0_4_ = in_stack_ffffff78;
+  Line 304 [unknown_field]: auStack_78._0_4_ = in_stack_ffffff78;
+  Line 306 [stack_ref]: *(uint *)(&stack0xffffff7c + (uint)bVar14 * -8);
+  Line 308 [stack_ref]: *(uint *)(&stack0xffffff80 + (uint)bVar14 * -8 + (uint)bVar14 * -8);
+  Line 312 [stack_ref]: ((int)(&stack0xffffff80 + (uint)bVar14 * -8 + (uint)bVar14 * -8) +
+  Line 312 [pointer_truncation]: ((int)(&stack0xffffff80 + (uint)bVar14 * -8 + (uint)bVar14 * -8) +
 
 ====================================================================================================
 core_icepick.cpp_CIcePick_setup_FUN_004b9db0 (1 suspect)
@@ -14012,14 +14013,14 @@ core_imp.cpp_CImp_process_FUN_004bbaf0 (10 suspects)
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
   Line 3 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 74 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 141 [raw_address_constant]: iVar6 = 0x4bbd84;
-  Line 259 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 387 [undefined_data]: (&local_b0,(CVector3f *)&DAT_02dd1184,
-  Line 399 [pointer_cast]: (*(CDemonActor **)
-  Line 472 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 496 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
-  Line 499 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 75 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 142 [raw_address_constant]: iVar6 = 0x4bbd84;
+  Line 260 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 388 [undefined_data]: (&local_b0,(CVector3f *)&DAT_02dd1184,
+  Line 400 [pointer_cast]: (*(CDemonActor **)
+  Line 473 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 497 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
+  Line 500 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
 
 ====================================================================================================
 core_imp.cpp_CImp_setup_FUN_004bb7d0 (1 suspect)
@@ -14471,22 +14472,22 @@ core_larva.cpp_CLarva_process_FUN_004c4970 (19 suspects)
   Line 2 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x004c518e) */
   Line 19 [unknown_type]: unkbyte10 Var11;
   Line 26 [stack_param]: float in_stack_fffffe18;
-  Line 73 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 90 [self_copy_guard]: if (&local_ec != &local_d4) {
-  Line 122 [unrolled_memcpy]: local_b0.x = local_8c.x;
-  Line 168 [fast_sqrt_inline]: local_2c = (float)(((int)local_54 >> 1) + g_FastSqrtMagic);
-  Line 196 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 211 [stack_param]: fVar17,in_stack_fffffe18);
-  Line 227 [fast_sqrt_inline]: local_40 = (float)(((int)local_44 >> 1) + g_FastSqrtMagic);
-  Line 232 [unrolled_memcpy]: local_f8.x = pCVar9->x;
-  Line 282 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 296 [dropped_fyl2x]: (float10)0.6931471805599453 * (float10)(this_ptr->base).base.size_scale *
-  Line 298 [inline_exp_idiom]: fVar15 = (float10)f2xm1(fVar14 - (fVar14 / fVar16) * fVar16);
-  Line 299 [inline_exp_idiom]: fVar16 = (float10)fscale(fVar15 + fVar16,fVar14);
-  Line 302 [stack_ref]: _sprintf(&stack0xfffffe10,"slime.wav @%f *%f",(double)(this_ptr->base).base.size_scale,
-  Line 305 [stack_ref]: ((CDemonActor *)this_ptr,&stack0xfffffe10);
-  Line 334 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
-  Line 337 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 74 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 91 [self_copy_guard]: if (&local_ec != &local_d4) {
+  Line 123 [unrolled_memcpy]: local_b0.x = local_8c.x;
+  Line 169 [fast_sqrt_inline]: local_2c = (float)(((int)local_54 >> 1) + g_FastSqrtMagic);
+  Line 197 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 212 [stack_param]: fVar17,in_stack_fffffe18);
+  Line 228 [fast_sqrt_inline]: local_40 = (float)(((int)local_44 >> 1) + g_FastSqrtMagic);
+  Line 233 [unrolled_memcpy]: local_f8.x = pCVar9->x;
+  Line 283 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 297 [dropped_fyl2x]: (float10)0.6931471805599453 * (float10)(this_ptr->base).base.size_scale *
+  Line 299 [inline_exp_idiom]: fVar15 = (float10)f2xm1(fVar14 - (fVar14 / fVar16) * fVar16);
+  Line 300 [inline_exp_idiom]: fVar16 = (float10)fscale(fVar15 + fVar16,fVar14);
+  Line 303 [stack_ref]: _sprintf(&stack0xfffffe10,"slime.wav @%f *%f",(double)(this_ptr->base).base.size_scale,
+  Line 306 [stack_ref]: ((CDemonActor *)this_ptr,&stack0xfffffe10);
+  Line 335 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
+  Line 338 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
 
 ====================================================================================================
 core_level.cpp_CLevelLoader_show_FUN_004c5640 (1 suspect)
@@ -14561,26 +14562,26 @@ core_lever.cpp_CLever_setup_FUN_004c6110 (1 suspect)
 core_lightgun.cpp_CLightGun_fire_FUN_004c71a0 (20 suspects)
   File: core/lightgun.cpp
 ====================================================================================================
-  Line 57 [unknown_field]: auStack_6c._4_4_ = 0.0;
-  Line 61 [unknown_field]: auStack_44._0_4_ = aCStack_a4[0].x + (float)auStack_8c._0_4_;
-  Line 61 [unknown_field]: auStack_44._0_4_ = aCStack_a4[0].x + (float)auStack_8c._0_4_;
-  Line 62 [unknown_field]: auStack_44._4_4_ = aCStack_a4[0].y + (float)auStack_8c._4_4_;
-  Line 62 [unknown_field]: auStack_44._4_4_ = aCStack_a4[0].y + (float)auStack_8c._4_4_;
-  Line 63 [unknown_field]: auStack_44._8_4_ = aCStack_a4[0].z + (float)auStack_8c._8_4_;
-  Line 63 [unknown_field]: auStack_44._8_4_ = aCStack_a4[0].z + (float)auStack_8c._8_4_;
-  Line 65 [unknown_field]: fStack_38 = (float)auStack_8c._0_4_ * fStack_2c;
-  Line 66 [unknown_field]: fStack_34 = (float)auStack_8c._4_4_ * fStack_2c;
-  Line 67 [unknown_field]: fStack_30 = (float)auStack_8c._8_4_ * fStack_2c;
-  Line 122 [sub84_truncation]: ((CCharacter *)this_ptr,SUB84(__BITCAST_UINT64(dVar9),0),
-  Line 153 [pointer_cast]: this_ptr_00 = *(CCharacter **)((int)g_CDemonSet_PTR_005be368->characters + iStack_20);
-  Line 187 [unknown_field]: auStack_8c._8_4_ = (pCVar3->min).x + ((CVector3f *)this_ptr)->x;
-  Line 191 [unknown_field]: local_60.x = (float)auStack_8c._8_4_ * 0.5f;
-  Line 211 [static_uninitvar]: if (pCVar5 == unaff_retaddr) {
-  Line 217 [unknown_field]: auStack_fc._4_4_ = 0.1;
-  Line 223 [unknown_field]: auStack_c8._0_4_ = this_ptr;
-  Line 224 [pointer_cast]: auStack_c8._8_4_ = (**(code **)((int)pCVar3[0xe].min.z + 0x8c))((CDemonActor *)this_ptr);
-  Line 224 [unknown_field]: auStack_c8._8_4_ = (**(code **)((int)pCVar3[0xe].min.z + 0x8c))((CDemonActor *)this_ptr);
-  Line 224 [unresolved_funcptr]: auStack_c8._8_4_ = (**(code **)((int)pCVar3[0xe].min.z + 0x8c))((CDemonActor *)this_ptr);
+  Line 58 [unknown_field]: auStack_6c._4_4_ = 0.0;
+  Line 62 [unknown_field]: auStack_44._0_4_ = aCStack_a4[0].x + (float)auStack_8c._0_4_;
+  Line 62 [unknown_field]: auStack_44._0_4_ = aCStack_a4[0].x + (float)auStack_8c._0_4_;
+  Line 63 [unknown_field]: auStack_44._4_4_ = aCStack_a4[0].y + (float)auStack_8c._4_4_;
+  Line 63 [unknown_field]: auStack_44._4_4_ = aCStack_a4[0].y + (float)auStack_8c._4_4_;
+  Line 64 [unknown_field]: auStack_44._8_4_ = aCStack_a4[0].z + (float)auStack_8c._8_4_;
+  Line 64 [unknown_field]: auStack_44._8_4_ = aCStack_a4[0].z + (float)auStack_8c._8_4_;
+  Line 66 [unknown_field]: fStack_38 = (float)auStack_8c._0_4_ * fStack_2c;
+  Line 67 [unknown_field]: fStack_34 = (float)auStack_8c._4_4_ * fStack_2c;
+  Line 68 [unknown_field]: fStack_30 = (float)auStack_8c._8_4_ * fStack_2c;
+  Line 123 [sub84_truncation]: ((CCharacter *)this_ptr,SUB84(__BITCAST_UINT64(dVar9),0),
+  Line 154 [pointer_cast]: this_ptr_00 = *(CCharacter **)((int)g_CDemonSet_PTR_005be368->characters + iStack_20);
+  Line 188 [unknown_field]: auStack_8c._8_4_ = (pCVar3->min).x + ((CVector3f *)this_ptr)->x;
+  Line 192 [unknown_field]: local_60.x = (float)auStack_8c._8_4_ * 0.5f;
+  Line 212 [static_uninitvar]: if (pCVar5 == unaff_retaddr) {
+  Line 218 [unknown_field]: auStack_fc._4_4_ = 0.1;
+  Line 224 [unknown_field]: auStack_c8._0_4_ = this_ptr;
+  Line 225 [pointer_cast]: auStack_c8._8_4_ = (**(code **)((int)pCVar3[0xe].min.z + 0x8c))((CDemonActor *)this_ptr);
+  Line 225 [unknown_field]: auStack_c8._8_4_ = (**(code **)((int)pCVar3[0xe].min.z + 0x8c))((CDemonActor *)this_ptr);
+  Line 225 [unresolved_funcptr]: auStack_c8._8_4_ = (**(code **)((int)pCVar3[0xe].min.z + 0x8c))((CDemonActor *)this_ptr);
 
 ====================================================================================================
 core_lightgun.cpp_CLightGun_process_FUN_004c79a0 (2 suspects)
@@ -14593,22 +14594,22 @@ core_lightgun.cpp_CLightGun_process_FUN_004c79a0 (2 suspects)
 core_lightgun.cpp_CLightGun_renderAimBeam_FUN_004c7ca0 (6 suspects)
   File: core/lightgun.cpp
 ====================================================================================================
-  Line 48 [self_copy_guard]: if (&fStack_34 != &fStack_58) {
-  Line 60 [static_uninitvar]: fVar1 = SQRT(fStack_2c * fStack_2c + fStack_34 * fStack_34 + fStack_30 * fStack_30);
-  Line 60 [static_uninitvar]: fVar1 = SQRT(fStack_2c * fStack_2c + fStack_34 * fStack_34 + fStack_30 * fStack_30);
-  Line 60 [static_uninitvar]: fVar1 = SQRT(fStack_2c * fStack_2c + fStack_34 * fStack_34 + fStack_30 * fStack_30);
-  Line 82 [unrolled_memcpy]: CStack_88.x = CStack_4c.x;
-  Line 101 [self_copy_guard]: if (&fStack_70 != &fStack_7c) {
+  Line 49 [self_copy_guard]: if (&fStack_34 != &fStack_58) {
+  Line 61 [static_uninitvar]: fVar1 = SQRT(fStack_2c * fStack_2c + fStack_34 * fStack_34 + fStack_30 * fStack_30);
+  Line 61 [static_uninitvar]: fVar1 = SQRT(fStack_2c * fStack_2c + fStack_34 * fStack_34 + fStack_30 * fStack_30);
+  Line 61 [static_uninitvar]: fVar1 = SQRT(fStack_2c * fStack_2c + fStack_34 * fStack_34 + fStack_30 * fStack_30);
+  Line 83 [unrolled_memcpy]: CStack_88.x = CStack_4c.x;
+  Line 102 [self_copy_guard]: if (&fStack_70 != &fStack_7c) {
 
 ====================================================================================================
 core_lightgun.cpp_CLightGun_updateBeamLight_FUN_004c6ff0 (5 suspects)
   File: core/lightgun.cpp
 ====================================================================================================
   Line 6 [unaffected_reg]: float unaff_ESI;
-  Line 16 [stack_ref]: if ((float *)&stack0x00000000 != &g_CDemonLight_01c74640.base.rotation_matrix.m[0].y) {
-  Line 19 [unaffected_reg]: g_CDemonLight_01c74640.base.position.z = unaff_ESI;
-  Line 25 [static_uninitvar]: g_CDemonLight_01c74640.base.position.y = fStack_c;
-  Line 26 [static_uninitvar]: g_CDemonLight_01c74640.base.position.z = unaff_ESI;
+  Line 17 [stack_ref]: if ((float *)&stack0x00000000 != &g_CDemonLight_01c74640.base.rotation_matrix.m[0].y) {
+  Line 20 [unaffected_reg]: g_CDemonLight_01c74640.base.position.z = unaff_ESI;
+  Line 26 [static_uninitvar]: g_CDemonLight_01c74640.base.position.y = fStack_c;
+  Line 27 [static_uninitvar]: g_CDemonLight_01c74640.base.position.z = unaff_ESI;
 
 ====================================================================================================
 core_litecone.cpp_CLightCone_ctor_FUN_004c80f0 (2 suspects)
@@ -16100,33 +16101,33 @@ core_mobster.cpp_CMobster_process_FUN_004da790 (34 suspects)
   Line 27 [stack_param]: CDemonActor *in_stack_fffffe88;
   Line 28 [stack_param]: EAmmoType in_stack_fffffe8c;
   Line 29 [stack_param]: CDemonActor *in_stack_fffffe94;
-  Line 83 [stack_ref]: core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0((SDamageInfo *)&stack0xfffffe64);
-  Line 85 [stack_ref]: ((CCharacter *)this_ptr,(SDamageInfo *)&stack0xfffffe64);
-  Line 93 [stack_param]: in_stack_fffffe74 = (CDemonActor *)0x0;
-  Line 97 [stack_param]: in_stack_fffffe80 = this_ptr;
-  Line 100 [stack_param]: in_stack_fffffe80 = (CMobster *)0x4da86a;
-  Line 103 [stack_param]: in_stack_fffffe80 = (CMobster *)0x4da9a3;
-  Line 106 [stack_param]: in_stack_fffffe80 = this_ptr;
-  Line 137 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 226 [suspect_float]: fVar15 = 1.12104e-44;
-  Line 229 [suspect_float]: fVar15 = 1.4013e-45;
-  Line 282 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 296 [stack_param]: fVar15,(float)in_stack_fffffe74);
-  Line 378 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 389 [stack_param]: pCVar12,fVar15,(float)in_stack_fffffe74);
-  Line 415 [suspect_float]: (pCVar13->model).transformed_vertices[0x4f].y = 1.4013e-43;
-  Line 416 [stack_param]: iVar5 = (*(pCVar4->_uc).canBeGrabbed)(pCVar13,in_stack_fffffe74,(int)in_stack_fffffe78);
-  Line 416 [stack_param]: iVar5 = (*(pCVar4->_uc).canBeGrabbed)(pCVar13,in_stack_fffffe74,(int)in_stack_fffffe78);
-  Line 419 [stack_param]: (pCVar13,(CDemonActor *)in_stack_fffffe80);
-  Line 432 [suspect_float]: (pCVar13->model).transformed_vertices[0x4f].y = 1.4013e-43;
-  Line 433 [stack_param]: iVar5 = (*(pCVar4->_uc).canBeGrabbed)(pCVar13,in_stack_fffffe88,in_stack_fffffe8c);
-  Line 433 [stack_param]: iVar5 = (*(pCVar4->_uc).canBeGrabbed)(pCVar13,in_stack_fffffe88,in_stack_fffffe8c);
-  Line 438 [stack_param]: (*(((pCVar13->base).vtable._uc)->_uc).isGrabbable)(pCVar13,in_stack_fffffe94);
-  Line 483 [undefined_data]: (&local_118,(CVector3f *)&DAT_02dd1184,
-  Line 497 [undefined_data]: (&local_94,(CVector3f *)&DAT_02dd1184,
-  Line 534 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 566 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
-  Line 569 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 84 [stack_ref]: core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0((SDamageInfo *)&stack0xfffffe64);
+  Line 86 [stack_ref]: ((CCharacter *)this_ptr,(SDamageInfo *)&stack0xfffffe64);
+  Line 94 [stack_param]: in_stack_fffffe74 = (CDemonActor *)0x0;
+  Line 98 [stack_param]: in_stack_fffffe80 = this_ptr;
+  Line 101 [stack_param]: in_stack_fffffe80 = (CMobster *)0x4da86a;
+  Line 104 [stack_param]: in_stack_fffffe80 = (CMobster *)0x4da9a3;
+  Line 107 [stack_param]: in_stack_fffffe80 = this_ptr;
+  Line 138 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 227 [suspect_float]: fVar15 = 1.12104e-44;
+  Line 230 [suspect_float]: fVar15 = 1.4013e-45;
+  Line 283 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 297 [stack_param]: fVar15,(float)in_stack_fffffe74);
+  Line 379 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 390 [stack_param]: pCVar12,fVar15,(float)in_stack_fffffe74);
+  Line 416 [suspect_float]: (pCVar13->model).transformed_vertices[0x4f].y = 1.4013e-43;
+  Line 417 [stack_param]: iVar5 = (*(pCVar4->_uc).canBeGrabbed)(pCVar13,in_stack_fffffe74,(int)in_stack_fffffe78);
+  Line 417 [stack_param]: iVar5 = (*(pCVar4->_uc).canBeGrabbed)(pCVar13,in_stack_fffffe74,(int)in_stack_fffffe78);
+  Line 420 [stack_param]: (pCVar13,(CDemonActor *)in_stack_fffffe80);
+  Line 433 [suspect_float]: (pCVar13->model).transformed_vertices[0x4f].y = 1.4013e-43;
+  Line 434 [stack_param]: iVar5 = (*(pCVar4->_uc).canBeGrabbed)(pCVar13,in_stack_fffffe88,in_stack_fffffe8c);
+  Line 434 [stack_param]: iVar5 = (*(pCVar4->_uc).canBeGrabbed)(pCVar13,in_stack_fffffe88,in_stack_fffffe8c);
+  Line 439 [stack_param]: (*(((pCVar13->base).vtable._uc)->_uc).isGrabbable)(pCVar13,in_stack_fffffe94);
+  Line 484 [undefined_data]: (&local_118,(CVector3f *)&DAT_02dd1184,
+  Line 498 [undefined_data]: (&local_94,(CVector3f *)&DAT_02dd1184,
+  Line 535 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 567 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
+  Line 570 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
 
 ====================================================================================================
 core_mobster.cpp_CMobster_setup_FUN_004da290 (1 suspect)
@@ -16181,12 +16182,12 @@ core_moloch.cpp_CMoloch_process_FUN_004ddb20 (8 suspects)
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
   Line 3 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 52 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 140 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 144 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
-  Line 160 [unknown_field]: local_1b18 = local_1b18 + 1.5938625219265179e-314._0_4_;
-  Line 178 [pointer_cast]: iVar6 = (*((CCharacter_vtable *)((int)local_14 + 0xd0))->attractActorToward)
-  Line 178 [pointer_truncation]: iVar6 = (*((CCharacter_vtable *)((int)local_14 + 0xd0))->attractActorToward)
+  Line 53 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 141 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 145 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
+  Line 161 [unknown_field]: local_1b18 = local_1b18 + 1.5938625219265179e-314._0_4_;
+  Line 179 [pointer_cast]: iVar6 = (*((CCharacter_vtable *)((int)local_14 + 0xd0))->attractActorToward)
+  Line 179 [pointer_truncation]: iVar6 = (*((CCharacter_vtable *)((int)local_14 + 0xd0))->attractActorToward)
 
 ====================================================================================================
 core_moloch.cpp_CMoloch_renderOpaque_FUN_004de550 (1 suspect)
@@ -17788,28 +17789,28 @@ core_scat.cpp_CScat_process_FUN_004fbf20 (29 suspects)
   Line 33 [stack_param]: int in_stack_ffffff7c;
   Line 34 [stack_param]: CDemonActor *in_stack_ffffff84;
   Line 36 [unresolved_funcptr]: code *blend_callback;
-  Line 61 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 115 [stack_param]: (pCVar7,in_stack_ffffff78,in_stack_ffffff7c), iVar12 != 0)) {
-  Line 115 [stack_param]: (pCVar7,in_stack_ffffff78,in_stack_ffffff7c), iVar12 != 0)) {
-  Line 117 [stack_param]: ((CCharacter *)this_ptr->weapon_actor,in_stack_ffffff84);
-  Line 146 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 204 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 208 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
-  Line 230 [unknown_field]: pCVar14 = (CDeformableModelInstance *)((float)pCVar14 + 1.5938625219265179e-314._0_4_);
-  Line 232 [unaffected_reg]: unaff_EBX = (CDeformableModelInstance *)(delta_time * (float)3.1415926535000001);
-  Line 233 [unaffected_reg]: if ((float)pCVar14 < -(float)unaff_EBX) {
-  Line 234 [unaffected_reg]: pCVar14 = (CDeformableModelInstance *)-(float)unaff_EBX;
-  Line 236 [unaffected_reg]: if ((float)unaff_EBX < (float)pCVar14) {
-  Line 237 [unaffected_reg]: pCVar14 = unaff_EBX;
-  Line 307 [pointer_truncation]: puVar21 = (uint *)((int)&CStack_68 + (uint)bVar22 * -8 + (uint)bVar22 * -8 + 8);
-  Line 307 [pointer_cast]: puVar21 = (uint *)((int)&CStack_68 + (uint)bVar22 * -8 + (uint)bVar22 * -8 + 8);
-  Line 308 [pointer_truncation]: puVar20 = (uint *)((int)&local_58 + ((uint)bVar22 * -2 + (uint)bVar22 * -2) * 4 + 8);
-  Line 308 [pointer_cast]: puVar20 = (uint *)((int)&local_58 + ((uint)bVar22 * -2 + (uint)bVar22 * -2) * 4 + 8);
-  Line 309 [pointer_truncation]: *(uint *)((int)&CStack_68 + (uint)bVar22 * -8 + 4) =
-  Line 309 [pointer_cast]: *(uint *)((int)&CStack_68 + (uint)bVar22 * -8 + 4) =
-  Line 310 [pointer_truncation]: *(uint *)((int)&local_58 + (uint)bVar22 * -8 + 4);
-  Line 310 [pointer_cast]: *(uint *)((int)&local_58 + (uint)bVar22 * -8 + 4);
-  Line 314 [unaffected_reg]: (unaff_EBX,source_quaternions,fVar16,iVar12,blend_callback);
+  Line 62 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 116 [stack_param]: (pCVar7,in_stack_ffffff78,in_stack_ffffff7c), iVar12 != 0)) {
+  Line 116 [stack_param]: (pCVar7,in_stack_ffffff78,in_stack_ffffff7c), iVar12 != 0)) {
+  Line 118 [stack_param]: ((CCharacter *)this_ptr->weapon_actor,in_stack_ffffff84);
+  Line 147 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 205 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 209 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
+  Line 231 [unknown_field]: pCVar14 = (CDeformableModelInstance *)((float)pCVar14 + 1.5938625219265179e-314._0_4_);
+  Line 233 [unaffected_reg]: unaff_EBX = (CDeformableModelInstance *)(delta_time * (float)3.1415926535000001);
+  Line 234 [unaffected_reg]: if ((float)pCVar14 < -(float)unaff_EBX) {
+  Line 235 [unaffected_reg]: pCVar14 = (CDeformableModelInstance *)-(float)unaff_EBX;
+  Line 237 [unaffected_reg]: if ((float)unaff_EBX < (float)pCVar14) {
+  Line 238 [unaffected_reg]: pCVar14 = unaff_EBX;
+  Line 308 [pointer_truncation]: puVar21 = (uint *)((int)&CStack_68 + (uint)bVar22 * -8 + (uint)bVar22 * -8 + 8);
+  Line 308 [pointer_cast]: puVar21 = (uint *)((int)&CStack_68 + (uint)bVar22 * -8 + (uint)bVar22 * -8 + 8);
+  Line 309 [pointer_truncation]: puVar20 = (uint *)((int)&local_58 + ((uint)bVar22 * -2 + (uint)bVar22 * -2) * 4 + 8);
+  Line 309 [pointer_cast]: puVar20 = (uint *)((int)&local_58 + ((uint)bVar22 * -2 + (uint)bVar22 * -2) * 4 + 8);
+  Line 310 [pointer_truncation]: *(uint *)((int)&CStack_68 + (uint)bVar22 * -8 + 4) =
+  Line 310 [pointer_cast]: *(uint *)((int)&CStack_68 + (uint)bVar22 * -8 + 4) =
+  Line 311 [pointer_truncation]: *(uint *)((int)&local_58 + (uint)bVar22 * -8 + 4);
+  Line 311 [pointer_cast]: *(uint *)((int)&local_58 + (uint)bVar22 * -8 + 4);
+  Line 315 [unaffected_reg]: (unaff_EBX,source_quaternions,fVar16,iVar12,blend_callback);
 
 ====================================================================================================
 core_scat.cpp_CScat_scoreAimTarget_FUN_004fda20 (1 suspect)
@@ -18247,14 +18248,14 @@ core_sentinel.cpp_CSentinel_process_FUN_00505ba0 (10 suspects)
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
   Line 3 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 66 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 209 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 290 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 352 [undefined_data]: (&local_b0,(CVector3f *)&DAT_02dd1184,
-  Line 365 [undefined_data]: (&local_50,(CVector3f *)&DAT_02dd1184,
-  Line 432 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 456 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
-  Line 459 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 67 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 210 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 291 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 353 [undefined_data]: (&local_b0,(CVector3f *)&DAT_02dd1184,
+  Line 366 [undefined_data]: (&local_50,(CVector3f *)&DAT_02dd1184,
+  Line 433 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 457 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
+  Line 460 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
 
 ====================================================================================================
 core_sentinel.cpp_CSentinel_setup_FUN_00505990 (1 suspect)
@@ -19903,17 +19904,17 @@ core_shotgun.cpp_CShotgun_process_FUN_00515db0 (4 suspects)
   File: core/shotgun.cpp
 ====================================================================================================
   Line 6 [stack_param]: float in_stack_0000000c;
-  Line 16 [stack_ref]: if ((float *)&stack0x00000000 != &g_CDemonLight_01c74640.base.rotation_matrix.m[1].y) {
-  Line 17 [unrolled_memcpy]: g_CDemonLight_01c74640.base.position.x = CStack_1c.x;
-  Line 31 [stack_param]: core_weapon_cpp_CWeapon_process_FUN_00554030(&this_ptr->base,in_stack_0000000c);
+  Line 17 [stack_ref]: if ((float *)&stack0x00000000 != &g_CDemonLight_01c74640.base.rotation_matrix.m[1].y) {
+  Line 18 [unrolled_memcpy]: g_CDemonLight_01c74640.base.position.x = CStack_1c.x;
+  Line 32 [stack_param]: core_weapon_cpp_CWeapon_process_FUN_00554030(&this_ptr->base,in_stack_0000000c);
 
 ====================================================================================================
 core_shotgun.cpp_CShotgun_renderAimBeam_FUN_00516770 (3 suspects)
   File: core/shotgun.cpp
 ====================================================================================================
-  Line 39 [self_copy_guard]: if (&fStack_50 != &fStack_38) {
-  Line 51 [static_uninitvar]: fVar1 = SQRT(fStack_48 * fStack_48 + fStack_50 * fStack_50 + fStack_4c * fStack_4c);
-  Line 51 [static_uninitvar]: fVar1 = SQRT(fStack_48 * fStack_48 + fStack_50 * fStack_50 + fStack_4c * fStack_4c);
+  Line 40 [self_copy_guard]: if (&fStack_50 != &fStack_38) {
+  Line 52 [static_uninitvar]: fVar1 = SQRT(fStack_48 * fStack_48 + fStack_50 * fStack_50 + fStack_4c * fStack_4c);
+  Line 52 [static_uninitvar]: fVar1 = SQRT(fStack_48 * fStack_48 + fStack_50 * fStack_50 + fStack_4c * fStack_4c);
 
 ====================================================================================================
 core_simbox.cpp_CSimBox_ctor_FUN_00516ba0 (21 suspects)
@@ -21120,16 +21121,16 @@ core_smiley.cpp_CSmiley_process_FUN_005200c0 (12 suspects)
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
   Line 3 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 74 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 115 [unresolved_funcptr]: (**(code **)(iRam0000014c + 0xe8))(0);
-  Line 191 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 228 [unresolved_funcptr]: (**(code **)(iRam0000014c + 0xe8))(0);
-  Line 241 [undefined_data]: (&local_b8,(CVector3f *)&DAT_02dd1184,
-  Line 277 [undefined_data]: (&local_88,(CVector3f *)&DAT_02dd1184,
-  Line 326 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 345 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 373 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
-  Line 376 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 75 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 116 [unresolved_funcptr]: (**(code **)(iRam0000014c + 0xe8))(0);
+  Line 192 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 229 [unresolved_funcptr]: (**(code **)(iRam0000014c + 0xe8))(0);
+  Line 242 [undefined_data]: (&local_b8,(CVector3f *)&DAT_02dd1184,
+  Line 278 [undefined_data]: (&local_88,(CVector3f *)&DAT_02dd1184,
+  Line 327 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 346 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 374 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
+  Line 377 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
 
 ====================================================================================================
 core_smiley.cpp_CSmiley_setup_FUN_0051fd90 (1 suspect)
@@ -22252,14 +22253,14 @@ core_succubus.cpp_CSuccubus_process_FUN_00540f50 (10 suspects)
 ====================================================================================================
   Line 2 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x005415cb) */
   Line 3 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
-  Line 50 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 61 [unrolled_memset]: (this_ptr->hotdemon_model).accumulated_root_motion.z = 0.0;
-  Line 123 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 179 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 203 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
-  Line 206 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 246 [unrolled_memcpy]: (pUVar13->vec).x = (pUVar1->vec).x;
-  Line 253 [unrolled_strcpy]: do {
+  Line 51 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 62 [unrolled_memset]: (this_ptr->hotdemon_model).accumulated_root_motion.z = 0.0;
+  Line 124 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 180 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 204 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
+  Line 207 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 247 [unrolled_memcpy]: (pUVar13->vec).x = (pUVar1->vec).x;
+  Line 254 [unrolled_strcpy]: do {
 
 ====================================================================================================
 core_succubus.cpp_CSuccubus_renderOpaque_FUN_00541640 (1 suspect)
@@ -22322,18 +22323,18 @@ core_svetlana.cpp_CSvetlana_process_FUN_00541d00 (16 suspects)
   Line 3 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
   Line 23 [stack_alignment_array]: float afStackY_1870 [1520];
   Line 25 [unresolved_funcptr]: code *blend_callback;
-  Line 65 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 161 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 196 [unrolled_memcpy]: local_5c.x = (this_ptr->base).base.model.accumulated_root_motion.x;
-  Line 239 [unknown_field]: local_98 = local_98 + 1.5938625219265179e-314._0_4_;
-  Line 280 [pointer_truncation]: puVar11 = (uint *)((int)&CStack_94 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
-  Line 280 [pointer_cast]: puVar11 = (uint *)((int)&CStack_94 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
-  Line 281 [pointer_truncation]: puVar10 = (uint *)((int)&CStack_84 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
-  Line 281 [pointer_cast]: puVar10 = (uint *)((int)&CStack_84 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
-  Line 282 [pointer_truncation]: *(uint *)((int)&CStack_94 + (uint)bVar12 * -8 + 4) =
-  Line 282 [pointer_cast]: *(uint *)((int)&CStack_94 + (uint)bVar12 * -8 + 4) =
-  Line 283 [pointer_truncation]: *(uint *)((int)&CStack_84 + (uint)bVar12 * -8 + 4);
-  Line 283 [pointer_cast]: *(uint *)((int)&CStack_84 + (uint)bVar12 * -8 + 4);
+  Line 66 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 162 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 197 [unrolled_memcpy]: local_5c.x = (this_ptr->base).base.model.accumulated_root_motion.x;
+  Line 240 [unknown_field]: local_98 = local_98 + 1.5938625219265179e-314._0_4_;
+  Line 281 [pointer_truncation]: puVar11 = (uint *)((int)&CStack_94 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
+  Line 281 [pointer_cast]: puVar11 = (uint *)((int)&CStack_94 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
+  Line 282 [pointer_truncation]: puVar10 = (uint *)((int)&CStack_84 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
+  Line 282 [pointer_cast]: puVar10 = (uint *)((int)&CStack_84 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
+  Line 283 [pointer_truncation]: *(uint *)((int)&CStack_94 + (uint)bVar12 * -8 + 4) =
+  Line 283 [pointer_cast]: *(uint *)((int)&CStack_94 + (uint)bVar12 * -8 + 4) =
+  Line 284 [pointer_truncation]: *(uint *)((int)&CStack_84 + (uint)bVar12 * -8 + 4);
+  Line 284 [pointer_cast]: *(uint *)((int)&CStack_84 + (uint)bVar12 * -8 + 4);
 
 ====================================================================================================
 core_svetlana.cpp_CSvetlana_renderOpaque_FUN_00542d20 (5 suspects)
@@ -22460,31 +22461,31 @@ core_tentacle.cpp_CTentacle_process_FUN_00543c50 (29 suspects)
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
   Line 3 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 75 [unrolled_memcpy]: for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-  Line 77 [pointer_cast]: pCVar12 = (CMatrix3x4f *)((int)pCVar12 + ((uint)bVar14 * -2 + 1) * 4);
-  Line 77 [pointer_truncation]: pCVar12 = (CMatrix3x4f *)((int)pCVar12 + ((uint)bVar14 * -2 + 1) * 4);
-  Line 78 [pointer_cast]: pCVar11 = (CMatrix3x4f *)((int)pCVar11 + ((uint)bVar14 * -2 + 1) * 4);
-  Line 78 [pointer_truncation]: pCVar11 = (CMatrix3x4f *)((int)pCVar11 + ((uint)bVar14 * -2 + 1) * 4);
-  Line 102 [unrolled_memcpy]: for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-  Line 104 [pointer_cast]: pCVar11 = (CMatrix3x4f *)((int)pCVar11 + ((uint)bVar14 * -2 + 1) * 4);
-  Line 104 [pointer_truncation]: pCVar11 = (CMatrix3x4f *)((int)pCVar11 + ((uint)bVar14 * -2 + 1) * 4);
-  Line 105 [pointer_cast]: pCVar13 = (CMatrix3x4f *)((int)pCVar13 + ((uint)bVar14 * -2 + 1) * 4);
-  Line 105 [pointer_truncation]: pCVar13 = (CMatrix3x4f *)((int)pCVar13 + ((uint)bVar14 * -2 + 1) * 4);
-  Line 110 [unrolled_memcpy]: for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-  Line 112 [pointer_cast]: pCVar11 = (CMatrix3x4f *)((int)pCVar11 + ((uint)bVar14 * -2 + 1) * 4);
-  Line 112 [pointer_truncation]: pCVar11 = (CMatrix3x4f *)((int)pCVar11 + ((uint)bVar14 * -2 + 1) * 4);
-  Line 113 [pointer_cast]: pCVar13 = (CMatrix3x4f *)((int)pCVar13 + ((uint)bVar14 * -2 + 1) * 4);
-  Line 113 [pointer_truncation]: pCVar13 = (CMatrix3x4f *)((int)pCVar13 + ((uint)bVar14 * -2 + 1) * 4);
-  Line 118 [unrolled_memcpy]: for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-  Line 120 [pointer_cast]: pCVar12 = (CMatrix3x4f *)((int)pCVar12 + ((uint)bVar14 * -2 + 1) * 4);
-  Line 120 [pointer_truncation]: pCVar12 = (CMatrix3x4f *)((int)pCVar12 + ((uint)bVar14 * -2 + 1) * 4);
-  Line 121 [pointer_cast]: pCVar11 = (CMatrix3x4f *)((int)pCVar11 + (uint)bVar14 * -8 + 4);
-  Line 121 [pointer_truncation]: pCVar11 = (CMatrix3x4f *)((int)pCVar11 + (uint)bVar14 * -8 + 4);
-  Line 125 [unrolled_memcpy]: for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-  Line 127 [pointer_cast]: pCVar12 = (CMatrix3x4f *)((int)pCVar12 + (uint)bVar14 * -8 + 4);
-  Line 127 [pointer_truncation]: pCVar12 = (CMatrix3x4f *)((int)pCVar12 + (uint)bVar14 * -8 + 4);
-  Line 128 [pointer_cast]: pCVar11 = (CMatrix3x4f *)((int)pCVar11 + (uint)bVar14 * -8 + 4);
-  Line 128 [pointer_truncation]: pCVar11 = (CMatrix3x4f *)((int)pCVar11 + (uint)bVar14 * -8 + 4);
+  Line 76 [unrolled_memcpy]: for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
+  Line 78 [pointer_cast]: pCVar12 = (CMatrix3x4f *)((int)pCVar12 + ((uint)bVar14 * -2 + 1) * 4);
+  Line 78 [pointer_truncation]: pCVar12 = (CMatrix3x4f *)((int)pCVar12 + ((uint)bVar14 * -2 + 1) * 4);
+  Line 79 [pointer_cast]: pCVar11 = (CMatrix3x4f *)((int)pCVar11 + ((uint)bVar14 * -2 + 1) * 4);
+  Line 79 [pointer_truncation]: pCVar11 = (CMatrix3x4f *)((int)pCVar11 + ((uint)bVar14 * -2 + 1) * 4);
+  Line 103 [unrolled_memcpy]: for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
+  Line 105 [pointer_cast]: pCVar11 = (CMatrix3x4f *)((int)pCVar11 + ((uint)bVar14 * -2 + 1) * 4);
+  Line 105 [pointer_truncation]: pCVar11 = (CMatrix3x4f *)((int)pCVar11 + ((uint)bVar14 * -2 + 1) * 4);
+  Line 106 [pointer_cast]: pCVar13 = (CMatrix3x4f *)((int)pCVar13 + ((uint)bVar14 * -2 + 1) * 4);
+  Line 106 [pointer_truncation]: pCVar13 = (CMatrix3x4f *)((int)pCVar13 + ((uint)bVar14 * -2 + 1) * 4);
+  Line 111 [unrolled_memcpy]: for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
+  Line 113 [pointer_cast]: pCVar11 = (CMatrix3x4f *)((int)pCVar11 + ((uint)bVar14 * -2 + 1) * 4);
+  Line 113 [pointer_truncation]: pCVar11 = (CMatrix3x4f *)((int)pCVar11 + ((uint)bVar14 * -2 + 1) * 4);
+  Line 114 [pointer_cast]: pCVar13 = (CMatrix3x4f *)((int)pCVar13 + ((uint)bVar14 * -2 + 1) * 4);
+  Line 114 [pointer_truncation]: pCVar13 = (CMatrix3x4f *)((int)pCVar13 + ((uint)bVar14 * -2 + 1) * 4);
+  Line 119 [unrolled_memcpy]: for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
+  Line 121 [pointer_cast]: pCVar12 = (CMatrix3x4f *)((int)pCVar12 + ((uint)bVar14 * -2 + 1) * 4);
+  Line 121 [pointer_truncation]: pCVar12 = (CMatrix3x4f *)((int)pCVar12 + ((uint)bVar14 * -2 + 1) * 4);
+  Line 122 [pointer_cast]: pCVar11 = (CMatrix3x4f *)((int)pCVar11 + (uint)bVar14 * -8 + 4);
+  Line 122 [pointer_truncation]: pCVar11 = (CMatrix3x4f *)((int)pCVar11 + (uint)bVar14 * -8 + 4);
+  Line 126 [unrolled_memcpy]: for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
+  Line 128 [pointer_cast]: pCVar12 = (CMatrix3x4f *)((int)pCVar12 + (uint)bVar14 * -8 + 4);
+  Line 128 [pointer_truncation]: pCVar12 = (CMatrix3x4f *)((int)pCVar12 + (uint)bVar14 * -8 + 4);
+  Line 129 [pointer_cast]: pCVar11 = (CMatrix3x4f *)((int)pCVar11 + (uint)bVar14 * -8 + 4);
+  Line 129 [pointer_truncation]: pCVar11 = (CMatrix3x4f *)((int)pCVar11 + (uint)bVar14 * -8 + 4);
   Line 262 [unrolled_memcpy]: // 00543fa3: MOVSD.REP ES:EDI,ESI
   Line 266 [unrolled_memcpy]: // 00543fb6: MOVSD.REP ES:EDI,ESI
 
@@ -22893,37 +22894,37 @@ core_vampboss.cpp_CVampireBoss_process_FUN_0054c690 (33 suspects)
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
   Line 81 [shadow_pointer_walk]: pCVar15 = (CVampireBoss *)((pCVar15->base).base.base.actor_name + 4);
-  Line 117 [pointer_truncation]: if ((float10)0 != ABS((float10)(int)local_18)) {
-  Line 162 [pointer_cast]: iVar8 = *(int *)((int)this_ptr + (4 - this_ptr->waypoint_index) * 4 + 0xbedb0);
-  Line 163 [pointer_cast]: if (&local_b8 != (float *)(iVar8 + 0x20)) {
-  Line 164 [pointer_cast]: local_b8 = *(float *)(iVar8 + 0x20);
-  Line 165 [pointer_cast]: local_b4 = *(float *)(iVar8 + 0x24);
-  Line 166 [pointer_cast]: local_b0 = *(float *)(iVar8 + 0x28);
-  Line 177 [pointer_cast]: fVar3 = *(float *)((int)(&this_ptr->morph + 1) + (this_ptr->waypoint_index + 7) * 4);
-  Line 177 [pointer_truncation]: fVar3 = *(float *)((int)(&this_ptr->morph + 1) + (this_ptr->waypoint_index + 7) * 4);
-  Line 177 [static_legacy_uninitvar]: fVar5 = local_b0 - (this_ptr->base).base.base.location.position.z,
-  Line 178 [pointer_cast]: if (&local_b8 != (float *)((int)fVar3 + 0x20)) {
-  Line 179 [pointer_cast]: local_b8 = *(float *)((int)fVar3 + 0x20);
-  Line 180 [pointer_cast]: local_b4 = *(float *)((int)fVar3 + 0x24);
-  Line 181 [pointer_cast]: local_b0 = *(float *)((int)fVar3 + 0x28);
-  Line 199 [static_legacy_uninitvar]: local_b4 = local_b4 + 4.0f;
-  Line 205 [static_legacy_uninitvar]: fVar16 = SQRT((float10)local_ec * (float10)local_ec + (float10)local_e4 * (float10)local_e4);
-  Line 259 [unrolled_memcpy]: (pCVar1->min).x = (pCVar10->min).x;
-  Line 265 [unrolled_memcpy]: pCVar12->x = (pCVar10->max).x;
-  Line 274 [raw_address_constant]: pCVar6 = 0x01C03A10;
-  Line 304 [unrolled_memcpy]: (pCVar1->min).x = (pCVar10->min).x;
-  Line 310 [unrolled_memcpy]: pCVar12->x = (pCVar10->max).x;
-  Line 327 [raw_address_constant]: pCVar6 = 0x01C03A10;
-  Line 366 [unrolled_memcpy]: (pCVar1->min).x = (pCVar10->min).x;
-  Line 372 [unrolled_memcpy]: pCVar12->x = (pCVar10->max).x;
-  Line 419 [pointer_cast]: (*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->enemies + iVar8)
-  Line 436 [unrolled_memcpy]: (pCVar1->min).x = (pCVar10->min).x;
-  Line 442 [unrolled_memcpy]: pCVar12->x = (pCVar10->max).x;
-  Line 454 [raw_address_constant]: pCVar6 = 0x01C03A10;
-  Line 460 [pointer_cast]: *(CDemonActor **)((int)(&this_ptr->morph + 1) + (iVar13 + 7) * 4),0.2,999999.0,
-  Line 460 [pointer_truncation]: *(CDemonActor **)((int)(&this_ptr->morph + 1) + (iVar13 + 7) * 4),0.2,999999.0,
-  Line 579 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
-  Line 582 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 118 [pointer_truncation]: if ((float10)0 != ABS((float10)(int)local_18)) {
+  Line 163 [pointer_cast]: iVar8 = *(int *)((int)this_ptr + (4 - this_ptr->waypoint_index) * 4 + 0xbedb0);
+  Line 164 [pointer_cast]: if (&local_b8 != (float *)(iVar8 + 0x20)) {
+  Line 165 [pointer_cast]: local_b8 = *(float *)(iVar8 + 0x20);
+  Line 166 [pointer_cast]: local_b4 = *(float *)(iVar8 + 0x24);
+  Line 167 [pointer_cast]: local_b0 = *(float *)(iVar8 + 0x28);
+  Line 178 [pointer_cast]: fVar3 = *(float *)((int)(&this_ptr->morph + 1) + (this_ptr->waypoint_index + 7) * 4);
+  Line 178 [pointer_truncation]: fVar3 = *(float *)((int)(&this_ptr->morph + 1) + (this_ptr->waypoint_index + 7) * 4);
+  Line 178 [static_legacy_uninitvar]: fVar5 = local_b0 - (this_ptr->base).base.base.location.position.z,
+  Line 179 [pointer_cast]: if (&local_b8 != (float *)((int)fVar3 + 0x20)) {
+  Line 180 [pointer_cast]: local_b8 = *(float *)((int)fVar3 + 0x20);
+  Line 181 [pointer_cast]: local_b4 = *(float *)((int)fVar3 + 0x24);
+  Line 182 [pointer_cast]: local_b0 = *(float *)((int)fVar3 + 0x28);
+  Line 200 [static_legacy_uninitvar]: local_b4 = local_b4 + 4.0f;
+  Line 206 [static_legacy_uninitvar]: fVar16 = SQRT((float10)local_ec * (float10)local_ec + (float10)local_e4 * (float10)local_e4);
+  Line 260 [unrolled_memcpy]: (pCVar1->min).x = (pCVar10->min).x;
+  Line 266 [unrolled_memcpy]: pCVar12->x = (pCVar10->max).x;
+  Line 275 [raw_address_constant]: pCVar6 = 0x01C03A10;
+  Line 305 [unrolled_memcpy]: (pCVar1->min).x = (pCVar10->min).x;
+  Line 311 [unrolled_memcpy]: pCVar12->x = (pCVar10->max).x;
+  Line 328 [raw_address_constant]: pCVar6 = 0x01C03A10;
+  Line 367 [unrolled_memcpy]: (pCVar1->min).x = (pCVar10->min).x;
+  Line 373 [unrolled_memcpy]: pCVar12->x = (pCVar10->max).x;
+  Line 420 [pointer_cast]: (*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->enemies + iVar8)
+  Line 437 [unrolled_memcpy]: (pCVar1->min).x = (pCVar10->min).x;
+  Line 443 [unrolled_memcpy]: pCVar12->x = (pCVar10->max).x;
+  Line 455 [raw_address_constant]: pCVar6 = 0x01C03A10;
+  Line 461 [pointer_cast]: *(CDemonActor **)((int)(&this_ptr->morph + 1) + (iVar13 + 7) * 4),0.2,999999.0,
+  Line 461 [pointer_truncation]: *(CDemonActor **)((int)(&this_ptr->morph + 1) + (iVar13 + 7) * 4),0.2,999999.0,
+  Line 580 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
+  Line 583 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
 
 ====================================================================================================
 core_vampboss.cpp_CVampireBoss_renderOpaque_FUN_0054dac0 (1 suspect)
@@ -23502,28 +23503,28 @@ core_werewolf.cpp_CWerewolf_process_FUN_00555c60 (23 suspects)
   File: core/werewolf.cpp
 ====================================================================================================
   Line 25 [stack_param]: float in_stack_fffffcec;
-  Line 101 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 120 [raw_address_constant]: iVar6 = 0x555d7d;
-  Line 162 [undefined_data]: (&local_e0,(CVector3f *)&DAT_02dd1184,
-  Line 176 [undefined_data]: (&local_d4,(CVector3f *)&DAT_02dd1184,
-  Line 190 [undefined_data]: (&local_17c,(CVector3f *)&DAT_02dd1184,
-  Line 203 [stack_ref]: core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0((SDamageInfo *)&stack0xfffffce0);
-  Line 205 [stack_ref]: pSVar17 = (SDamageInfo *)&stack0xfffffce0;
-  Line 208 [undefined_data]: (&local_74,(CVector3f *)&DAT_02dd1184,
-  Line 324 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 329 [unknown_field]: uVar18._0_4_ = 0.5;
-  Line 330 [unknown_field]: uVar18._4_4_ = 0.17453292;
-  Line 337 [stack_param]: ,SUB84(uVar18,4),in_stack_fffffcec);
-  Line 337 [sub84_truncation]: ,SUB84(uVar18,4),in_stack_fffffcec);
-  Line 354 [unrolled_memcpy]: local_bc.x = local_194.x;
-  Line 385 [pointer_cast]: (*(CDemonActor **)
-  Line 459 [undefined_data]: (&local_11c,(CVector3f *)&DAT_02dd1184,
-  Line 498 [undefined_data]: (&local_1d0,(CVector3f *)&DAT_02dd1184,
-  Line 509 [undefined_data]: (&local_68,(CVector3f *)&DAT_02dd1184,
-  Line 520 [undefined_data]: (&local_1a0,(CVector3f *)&DAT_02dd1184,
-  Line 546 [undefined_data]: (&local_1f4,(CVector3f *)&DAT_02dd1184,
-  Line 704 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 708 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
+  Line 102 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 121 [raw_address_constant]: iVar6 = 0x555d7d;
+  Line 163 [undefined_data]: (&local_e0,(CVector3f *)&DAT_02dd1184,
+  Line 177 [undefined_data]: (&local_d4,(CVector3f *)&DAT_02dd1184,
+  Line 191 [undefined_data]: (&local_17c,(CVector3f *)&DAT_02dd1184,
+  Line 204 [stack_ref]: core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0((SDamageInfo *)&stack0xfffffce0);
+  Line 206 [stack_ref]: pSVar17 = (SDamageInfo *)&stack0xfffffce0;
+  Line 209 [undefined_data]: (&local_74,(CVector3f *)&DAT_02dd1184,
+  Line 325 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 330 [unknown_field]: uVar18._0_4_ = 0.5;
+  Line 331 [unknown_field]: uVar18._4_4_ = 0.17453292;
+  Line 338 [stack_param]: ,SUB84(uVar18,4),in_stack_fffffcec);
+  Line 338 [sub84_truncation]: ,SUB84(uVar18,4),in_stack_fffffcec);
+  Line 355 [unrolled_memcpy]: local_bc.x = local_194.x;
+  Line 386 [pointer_cast]: (*(CDemonActor **)
+  Line 460 [undefined_data]: (&local_11c,(CVector3f *)&DAT_02dd1184,
+  Line 499 [undefined_data]: (&local_1d0,(CVector3f *)&DAT_02dd1184,
+  Line 510 [undefined_data]: (&local_68,(CVector3f *)&DAT_02dd1184,
+  Line 521 [undefined_data]: (&local_1a0,(CVector3f *)&DAT_02dd1184,
+  Line 547 [undefined_data]: (&local_1f4,(CVector3f *)&DAT_02dd1184,
+  Line 705 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 709 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
 
 ====================================================================================================
 core_werewolf.cpp_CWerewolf_renderEyeGlow_FUN_005570b0 (8 suspects)
@@ -24282,18 +24283,18 @@ core_zombie.cpp_CZombie_process_FUN_0055ef50 (14 suspects)
 ====================================================================================================
   Line 2 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x00560989) */
   Line 3 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
-  Line 272 [raw_address_constant]: iVar6 = 0x55f37c;
-  Line 360 [unrolled_memcpy]: local_23c.x = local_d4.x;
-  Line 404 [unrolled_strcpy]: do {
-  Line 537 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 734 [pointer_cast]: iVar9 = *(int *)((int)g_CDemonSet_PTR_005be368->characters + iVar6);
-  Line 735 [unresolved_funcptr]: iVar18 = (**(code **)(*(int *)(iVar9 + 0x14c) + 0xdc))(iVar9,this_ptr);
-  Line 802 [self_copy_guard]: if (&local_134 != &local_254) {
-  Line 808 [fast_sqrt_inline]: local_5c = (float)(((int)local_1c >> 1) + g_FastSqrtMagic);
-  Line 897 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 937 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
-  Line 940 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 947 [undefined_data]: (DAT_00765a9c,g_CDoorActorType_01af4e9c.name_hash),
+  Line 273 [raw_address_constant]: iVar6 = 0x55f37c;
+  Line 361 [unrolled_memcpy]: local_23c.x = local_d4.x;
+  Line 405 [unrolled_strcpy]: do {
+  Line 538 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 735 [pointer_cast]: iVar9 = *(int *)((int)g_CDemonSet_PTR_005be368->characters + iVar6);
+  Line 736 [unresolved_funcptr]: iVar18 = (**(code **)(*(int *)(iVar9 + 0x14c) + 0xdc))(iVar9,this_ptr);
+  Line 803 [self_copy_guard]: if (&local_134 != &local_254) {
+  Line 809 [fast_sqrt_inline]: local_5c = (float)(((int)local_1c >> 1) + g_FastSqrtMagic);
+  Line 898 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 938 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
+  Line 941 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 948 [undefined_data]: (DAT_00765a9c,g_CDoorActorType_01af4e9c.name_hash),
 
 ====================================================================================================
 core_zombie.cpp_CZombie_renderTransparent_FUN_00561940 (6 suspects)

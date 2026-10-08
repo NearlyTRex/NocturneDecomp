@@ -87,7 +87,8 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_0054c690(CVampireBoss *t
     }
     pCVar15 = (CVampireBoss *)((pCVar15->base).base.base.actor_name + 4);
   } while (pCVar15 != (CVampireBoss *)((this_ptr->base).base.base.actor_name + 0x10));
-  iVar8 = core_charactr_cpp_CCharacter_process_FUN_004259f0((CCharacter *)this_ptr,delta_time);
+  iVar8 = core_charactr_cpp_CCharacter_processCharacter_FUN_004259f0
+                    ((CCharacter *)this_ptr,delta_time);
   if (iVar8 == 0) {
     return;
   }

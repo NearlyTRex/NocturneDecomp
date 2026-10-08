@@ -309,8 +309,8 @@ LAB_004baa7f:
   if (g_CDemonPodPtr != (CDemonPod *)0x0) {
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
               (g_CEditorToolsPtr,"Remounting all pods...");
-    engine_pod_cpp_CPod_cleanup_FUN_00550c80((CPod *)g_CDemonPodPtr);
-    (*g_CDemonPodPtr->vtable->load)((CPod *)g_CDemonPodPtr);
+    engine_pod_cpp_CPod_cleanup_FUN_00550c80(&g_CDemonPodPtr->base);
+    (*((g_CDemonPodPtr->base).vtable)->load)(&g_CDemonPodPtr->base);
   }
   shape_edittool_cpp_CStrList_dtor_FUN_004a2a40((CStrList *)(auStack_30 + 4),0);
   return 1;

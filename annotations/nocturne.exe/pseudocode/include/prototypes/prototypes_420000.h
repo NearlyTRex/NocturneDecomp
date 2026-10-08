@@ -104,7 +104,7 @@ void __cdecl core_charactr_cpp_CCharacter_applyDamage_FUN_00424ff0(CCharacter *t
 void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00425050(CCharacter *this_ptr,CVector3f *velocity);
 int __cdecl core_charactr_cpp_CCharacter_isOnGround_FUN_00425960(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_preProcess_FUN_004259a0(CCharacter *this_ptr);
-int __cdecl core_charactr_cpp_CCharacter_process_FUN_004259f0(CCharacter *this_ptr,float delta_time);
+int __cdecl core_charactr_cpp_CCharacter_processCharacter_FUN_004259f0(CCharacter *this_ptr,float delta_time);
 void __cdecl core_charactr_cpp_CCharacter_renderCharacter_FUN_00425c20(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00425cc0(CCharacter *this_ptr);
 int __cdecl core_charactr_cpp_CCharacter_renderOpaque_FUN_00426440(CCharacter *this_ptr);
@@ -145,7 +145,7 @@ void __cdecl core_charactr_cpp_CCharacter_setWalkTarget_FUN_00428ab0(CCharacter 
 void __cdecl core_charactr_cpp_CCharacter_setWalkTargetImmediate_FUN_00428b60(CCharacter *this_ptr,CDemonActor *target);
 void __cdecl core_charactr_cpp_CCharacter_setWalkTimeout_FUN_00428bb0(CCharacter *this_ptr,float timeout);
 int __cdecl core_charactr_cpp_CCharacter_isWalkComplete_FUN_00428bc0(CCharacter *this_ptr);
-int __cdecl core_charactr_cpp_CCharacter_canWalk_FUN_00428bf0(CCharacter *this_ptr);
+int __cdecl core_charactr_cpp_CCharacter_isInvulnerable_FUN_00428bf0(CCharacter *this_ptr);
 int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_00428c00(CCharacter *this_ptr,float delta_time);
 void __cdecl core_charactr_cpp_CCharacter_setWalkTimeout_FUN_00428ee0(CCharacter *this_ptr,float timeout);
 void __cdecl core_charactr_cpp_CCharacter_clearDoorTarget_FUN_00428ef0(CCharacter *this_ptr);
@@ -155,7 +155,7 @@ void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_00429010(CCharacter 
 void __cdecl core_charactr_cpp_CCharacter_dropCarriedObject_FUN_00429170(CCharacter *this_ptr,int hand_index,CVector3f *drop_direction);
 void __cdecl core_charactr_cpp_CCharacter_dropAllCarriedObjects_FUN_004291f0(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_updateCarriedObjects_FUN_00429220(CCharacter *this_ptr,float delta_time);
-void __stack2_esi core_charactr_cpp_CCharacter_getCarryObjToBodyXForm_FUN_00429490(CCharacter *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
+CMatrix3x4f * __stack2_esi core_charactr_cpp_CCharacter_getCarryObjToBodyXForm_FUN_00429490(CCharacter *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 int __cdecl core_charactr_cpp_CCharacter_isCarryingAnything_FUN_004294f0(CCharacter *this_ptr);
 int __cdecl core_charactr_cpp_CCharacter_initGesture_FUN_00429520(CCharacter *this_ptr,char *motion_name);
 void __cdecl core_charactr_cpp_CCharacter_applyGesture_FUN_00429560(CCharacter *this_ptr);

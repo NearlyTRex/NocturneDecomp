@@ -24,6 +24,7 @@ from ghidra_annotations.annotations.type_info import *
 from ghidra_annotations.annotations.vtables import *
 from ghidra_annotations.annotations.switch_tables import *
 from ghidra_annotations.annotations.code_caves import *
+from ghidra_annotations.annotations.recreation import *
 
 def delete_annotations(currentProgram, path):
     delete_data_types(currentProgram, path)
@@ -78,6 +79,7 @@ def export_annotations(currentProgram, folder, strict=False, deep_analysis=False
     export_vtables(currentProgram, folder)
     export_switch_tables(currentProgram, folder)
     export_code_caves(currentProgram, folder)
+    export_recreation(currentProgram, folder)
     export_pseudocode(currentProgram, folder, strict=strict, deep_analysis=deep_analysis)
 
 def import_annotations(currentProgram, folder):

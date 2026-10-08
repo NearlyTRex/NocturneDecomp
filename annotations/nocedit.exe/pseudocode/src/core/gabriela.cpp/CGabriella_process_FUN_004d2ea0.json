@@ -8,15 +8,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1655,
-    "complexity_score": 691,
+    "complexity_score": 692,
     "cross_reference_count": 0,
     "function_call_count": 47,
     "global_count": 42,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 691,
+    "pseudocode_lines": 692,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 2346
+    "total_lines": 2347
   },
   "cross_references": [],
   "function": {
@@ -96,7 +96,7 @@
     {
       "addr": "00429870",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_process_FUN_00429870"
+      "name": "core_charactr.cpp_CCharacter_processCharacter_FUN_00429870"
     },
     {
       "addr": "0042ca70",
@@ -590,7 +590,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 381,
+      "line": 382,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -599,7 +599,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 656,
+      "line": 657,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -608,7 +608,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 112,
+      "line": 113,
       "match": "cascade_constant_fill",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -617,7 +617,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 430,
+      "line": 431,
       "match": "cascade_constant_fill",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -626,7 +626,7 @@
     },
     {
       "description": "core_actor_cpp_castToClassHash_FUN_0040c790 is passed as &((this_ptr->base).pushed_object)->base, member access through a pointer that may be NULL here. The callee accepts NULL; pass (CDemonActor *)(this_ptr->base).pushed_object instead (\u00a736).",
-      "line": 610,
+      "line": 611,
       "match": "(this_ptr->base).pushed_object",
       "resolution_source": "keep",
       "severity": "major",
@@ -635,7 +635,7 @@
     },
     {
       "description": "core_actor_cpp_castToClassHash_FUN_0040c790 is passed as &((this_ptr->base).inventory.selected_weapon)->base, member access through a pointer that may be NULL here. The callee accepts NULL; pass (CDemonActor *)(this_ptr->base).inventory.selected_weapon instead (\u00a736).",
-      "line": 629,
+      "line": 630,
       "match": "(this_ptr->base).inventory.selected_weapon",
       "resolution_source": "keep",
       "severity": "major",

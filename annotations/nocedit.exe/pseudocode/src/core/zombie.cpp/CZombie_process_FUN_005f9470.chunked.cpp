@@ -147,7 +147,7 @@ typedef struct CZombie_process_Ctx {
 #define GOTO_LAB_005fa18b 3
 #define GOTO_LAB_005f9f22 4
 
-// Chunk: check_0_0_check_uVar8_0 (lines 35-152 of original)
+// Chunk: check_0_0_check_uVar8_0 (lines 36-153 of original)
 static int CZombie_process_check_0_0_check_uVar8_0(CZombie_process_Ctx *ctx) {
     CZombie *&this_ptr = ctx->this_ptr;
     CCharacter *&pCVar3 = ctx->pCVar3;
@@ -295,7 +295,7 @@ LAB_005f9541:
     return 0;
 }
 
-// Chunk: check_0_0_check_uVar8_1 (lines 172-236 of original)
+// Chunk: check_0_0_check_uVar8_1 (lines 173-237 of original)
 static int CZombie_process_check_0_0_check_uVar8_1(CZombie_process_Ctx *ctx) {
     CZombie *&this_ptr = ctx->this_ptr;
     CCharacter *&pCVar3 = ctx->pCVar3;
@@ -387,7 +387,7 @@ static int CZombie_process_check_0_0_check_uVar8_1(CZombie_process_Ctx *ctx) {
     return 0;
 }
 
-// Chunk: check_0_0_else_2 (lines 244-280 of original)
+// Chunk: check_0_0_else_2 (lines 245-281 of original)
 static int CZombie_process_check_0_0_else_2(CZombie_process_Ctx *ctx) {
     CZombie *&this_ptr = ctx->this_ptr;
     CDeformableModelInstance *&pCVar2 = ctx->pCVar2;
@@ -438,7 +438,7 @@ static int CZombie_process_check_0_0_else_2(CZombie_process_Ctx *ctx) {
     return 0;
 }
 
-// Chunk: branch_0_check_uVar8_0_branch_0 (lines 316-359 of original)
+// Chunk: branch_0_check_uVar8_0_branch_0 (lines 317-360 of original)
 static int CZombie_process_branch_0_check_uVar8_0_branch_0(CZombie_process_Ctx *ctx) {
     CZombie *&this_ptr = ctx->this_ptr;
     float &delta_time = ctx->delta_time;
@@ -493,7 +493,7 @@ static int CZombie_process_branch_0_check_uVar8_0_branch_0(CZombie_process_Ctx *
     return 0;
 }
 
-// Chunk: branch_0_check_uVar8_0_check_uVar8_1 (lines 359-512 of original)
+// Chunk: branch_0_check_uVar8_0_check_uVar8_1 (lines 360-513 of original)
 static int CZombie_process_branch_0_check_uVar8_0_check_uVar8_1(CZombie_process_Ctx *ctx) {
     CZombie *&this_ptr = ctx->this_ptr;
     float &delta_time = ctx->delta_time;
@@ -678,7 +678,7 @@ LAB_005fa85e:
     return 0;
 }
 
-// Chunk: branch_0_check_uVar8_0_check_uVar8_2 (lines 512-554 of original)
+// Chunk: branch_0_check_uVar8_0_check_uVar8_2 (lines 513-555 of original)
 static int CZombie_process_branch_0_check_uVar8_0_check_uVar8_2(CZombie_process_Ctx *ctx) {
     CZombie *&this_ptr = ctx->this_ptr;
     CCharacter *&pCVar3 = ctx->pCVar3;
@@ -739,7 +739,7 @@ LAB_005fac96:
     return 0;
 }
 
-// Chunk: branch_0_else_1 (lines 579-709 of original)
+// Chunk: branch_0_else_1 (lines 580-710 of original)
 static int CZombie_process_branch_0_else_1(CZombie_process_Ctx *ctx) {
     CZombie *&this_ptr = ctx->this_ptr;
     float &delta_time = ctx->delta_time;
@@ -905,7 +905,7 @@ LAB_005fa279:
     return 0;
 }
 
-// Chunk: branch_0_chunk_2 (lines 710-733 of original)
+// Chunk: branch_0_chunk_2 (lines 711-734 of original)
 static int CZombie_process_branch_0_chunk_2(CZombie_process_Ctx *ctx) {
     CZombie *&this_ptr = ctx->this_ptr;
     float &delta_time = ctx->delta_time;
@@ -945,7 +945,7 @@ static int CZombie_process_branch_0_chunk_2(CZombie_process_Ctx *ctx) {
     return 0;
 }
 
-// Chunk: else_2 (lines 734-763 of original)
+// Chunk: else_2 (lines 735-764 of original)
 static int CZombie_process_else_2(CZombie_process_Ctx *ctx) {
     CZombie *&this_ptr = ctx->this_ptr;
     int &iVar6 = ctx->iVar6;
@@ -981,7 +981,7 @@ LAB_005fa14f:
     return 0;
 }
 
-// Chunk: else_3 (lines 773-847 of original)
+// Chunk: else_3 (lines 774-848 of original)
 static int CZombie_process_else_3(CZombie_process_Ctx *ctx) {
     CZombie *&this_ptr = ctx->this_ptr;
     float &delta_time = ctx->delta_time;
@@ -1089,7 +1089,7 @@ static int CZombie_process_else_3(CZombie_process_Ctx *ctx) {
     return 0;
 }
 
-// Chunk: branch_0 (lines 857-891 of original)
+// Chunk: branch_0 (lines 858-892 of original)
 static int CZombie_process_branch_0(CZombie_process_Ctx *ctx) {
     CZombie *&this_ptr = ctx->this_ptr;
     int &iVar6 = ctx->iVar6;
@@ -1268,7 +1268,8 @@ void __cdecl core_zombie_cpp_CZombie_process_FUN_005f9470(CZombie *this_ptr,floa
   // param this_ptr aliased into ctx above
   // param delta_time aliased into ctx above
 
-  iVar6 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
+  iVar6 = core_charactr_cpp_CCharacter_processCharacter_FUN_00429870
+                    ((CCharacter *)this_ptr,delta_time);
   if (iVar6 == 0) {
     return;
   }

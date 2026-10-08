@@ -58,61 +58,61 @@
       {
         "category": "format_error",
         "column": 87,
-        "line": 209,
+        "line": 210,
         "message": "format specifies type 'char *' but the argument has type 'CDraculaBride *' [-Werror,-Wformat]"
       },
       {
         "category": "undeclared_identifier",
         "column": 50,
-        "line": 281,
+        "line": 282,
         "message": "use of undeclared identifier 'DAT_02dd1184'"
       },
       {
         "category": "undeclared_identifier",
         "column": 26,
-        "line": 283,
+        "line": 284,
         "message": "use of undeclared identifier '_DAT_01b4d260'"
       },
       {
         "category": "undeclared_identifier",
         "column": 51,
-        "line": 298,
+        "line": 299,
         "message": "use of undeclared identifier 'DAT_02dd1184'"
       },
       {
         "category": "undeclared_identifier",
         "column": 26,
-        "line": 300,
+        "line": 301,
         "message": "use of undeclared identifier '_DAT_01b4d260'"
       },
       {
         "category": "undeclared_identifier",
         "column": 67,
-        "line": 308,
+        "line": 309,
         "message": "use of undeclared identifier '_DAT_01b4d27c'"
       },
       {
         "category": "type_error",
         "column": 85,
-        "line": 315,
+        "line": 316,
         "message": "invalid suffix '._0_4_' on floating constant"
       },
       {
         "category": "format_error",
         "column": 82,
-        "line": 375,
+        "line": 376,
         "message": "format specifies type 'char *' but the argument has type 'CDraculaBride *' [-Werror,-Wformat]"
       },
       {
         "category": "incompatible_types",
         "column": 17,
-        "line": 432,
+        "line": 433,
         "message": "no matching function for call to 'core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30'"
       },
       {
         "category": "format_error",
         "column": 80,
-        "line": 477,
+        "line": 478,
         "message": "format specifies type 'char *' but the argument has type 'CDraculaBride *' [-Werror,-Wformat]"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1793,
-    "complexity_score": 996,
+    "complexity_score": 997,
     "cross_reference_count": 0,
     "function_call_count": 38,
     "global_count": 47,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 746,
+    "pseudocode_lines": 747,
     "suspect_count": 21,
     "suspect_types": [
       "pointer_cast",
@@ -139,7 +139,7 @@
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 2539
+    "total_lines": 2540
   },
   "cross_references": [],
   "function": {
@@ -214,7 +214,7 @@
     {
       "addr": "004259f0",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_process_FUN_004259f0"
+      "name": "core_charactr.cpp_CCharacter_processCharacter_FUN_004259f0"
     },
     {
       "addr": "0042add0",
@@ -1402,7 +1402,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 274,
+      "line": 275,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(&local_b8,(CVector3f *)&DAT_02dd1184,",
@@ -1410,7 +1410,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 291,
+      "line": 292,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(&local_184,(CVector3f *)&DAT_02dd1184,",
@@ -1418,7 +1418,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 308,
+      "line": 309,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_a0.x = (this_ptr->base).base.base.orient.vec.x + 1.5897179988972888e-314._0_4_;",
@@ -1426,7 +1426,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 532,
+      "line": 533,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(&local_13c,(CVector3f *)&DAT_02dd1184,",
@@ -1434,7 +1434,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 549,
+      "line": 550,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(&local_88,(CVector3f *)&DAT_02dd1184,",
@@ -1442,7 +1442,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 566,
+      "line": 567,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(&local_1c0,(CVector3f *)&DAT_02dd1184,",
@@ -1450,7 +1450,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 618,
+      "line": 619,
       "match": "(CDraculaBride **)((int)g_CDemonSet_PTR_005be368",
       "severity": "moderate",
       "text": "pCVar11 = *(CDraculaBride **)((int)g_CDemonSet_PTR_005be368->characters + local_1c);",
@@ -1458,7 +1458,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 249,
+      "line": 250,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(this_ptr->new_pos).x = (pCVar17->position).x;",
@@ -1466,7 +1466,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 381,
+      "line": 382,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_7c.x = local_124.x;",
@@ -1474,7 +1474,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 634,
+      "line": 635,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(pCVar17->position).x = (this_ptr->new_pos).x;",
@@ -1482,7 +1482,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 648,
+      "line": 649,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(pUVar1->vec).x = pCVar13->x;",
@@ -1490,7 +1490,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 137,
+      "line": 138,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -1498,7 +1498,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 204,
+      "line": 205,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -1506,7 +1506,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 452,
+      "line": 453,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -1514,7 +1514,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 730,
+      "line": 731,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.position_delta.z = 0.0;",
@@ -1522,7 +1522,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 733,
+      "line": 734,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -1530,7 +1530,7 @@
     },
     {
       "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
-      "line": 230,
+      "line": 231,
       "match": "(TYPE *) ((int)NAME ...) split across lines",
       "severity": "moderate",
       "text": "(*(CDemonActor **)",

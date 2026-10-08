@@ -109,7 +109,7 @@
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050
 ;   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042af70
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_004259a0
-;   core_charactr.cpp_CCharacter_process_FUN_004259f0
+;   core_charactr.cpp_CCharacter_processCharacter_FUN_004259f0
 ;   ... and 24 more
 ;
 ; *****************************************************************************
@@ -147,8 +147,8 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 004b6ddb
         ;   Label: LAB_004b6ddb
     PUSH EBX                            ; 004b6dde
-    CALL core_charactr.cpp_CCharacter_process_FUN_004259f0 ; 004b6ddf
-        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_process_FUN_004259f0(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_processCharacter_FUN_004259f0 ; 004b6ddf
+        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processCharacter_FUN_004259f0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004b6de4
     TEST EAX,EAX                        ; 004b6de7
     JZ 0x004b7404                       ; 004b6de9

@@ -351,7 +351,7 @@ section .text
     LEA ESI,[ESP + 0x158]               ; 004b8b48
     LEA EDI,[ESP + 0x8]                 ; 004b8b4f
     CALL core_charactr.cpp_CCharacter_getCarryObjToBodyXForm_FUN_00429490 ; 004b8b53
-        ;   XREF to: 00429490 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_getCarryObjToBodyXForm_FUN_00429490(CCharacter * this_ptr, int hand_index, CMatrix3x4f * out_matrix)
+        ;   XREF to: 00429490 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_charactr.cpp_CCharacter_getCarryObjToBodyXForm_FUN_00429490(CCharacter * this_ptr, int hand_index, CMatrix3x4f * out_matrix)
     MOV ECX,0xc                         ; 004b8b58
     LEA ESI,[ESP + 0x158]               ; 004b8b5d
     JMP 0x004b8846                      ; 004b8b64

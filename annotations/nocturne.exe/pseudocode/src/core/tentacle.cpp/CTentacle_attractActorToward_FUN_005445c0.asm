@@ -1,11 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_tentacle_cpp_CTentacle_attractActorToward_FUN_005445c0(CTentacle *this_ptr,CCharacter *character)
+; int __cdecl core_tentacle_cpp_CTentacle_attractActorToward_FUN_005445c0(CTentacle *this_ptr,CDemonActor *actor,CVector3f *target_local_point)
 ;
 ; Parameters:
 ; CTentacle *      Stack[0x4]:4   this_ptr
-; CCharacter *     Stack[0x8]:4   character
+; CDemonActor *    Stack[0x8]:4   actor
+; CVector3f *      Stack[0xc]:4   target_local_point
 ; Local Variables:
 ; undefined        Stack[-0x1cc]:1  local_1cc
 ; undefined        Stack[-0x19c]:1  local_19c

@@ -4,7 +4,6 @@
 #include "system/basetypes.h"
 #include "system/fstream.h"
 #include "system/iostream.h"
-#include "system/stdio.h"
 #include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CCloth.h"
 #include "types/classes/CClothList.h"
@@ -136,7 +135,7 @@ int __cdecl support_codec_cpp_extractBitsFromBuffer_FUN_00438dc0(SBitBuffer *bit
 CCodec * __cdecl support_codec_cpp_CCodec_ctor_FUN_00438f20(CCodec *this_ptr);
 CCodec * __cdecl support_codec_cpp_CCodec_dtor_FUN_00438f30(CCodec *this_ptr,uint flags);
 void __cdecl support_codec_cpp_CCodec_init_FUN_00438f50(CCodec *this_ptr);
-int __cdecl support_codec_cpp_CCodec_finalize_FUN_00438f80(CCodec *this_ptr,_FILE *output_file);
+int __cdecl support_codec_cpp_CCodec_finalize_FUN_00438f80(CCodec *this_ptr,void *ostream);
 int __cdecl support_codec_cpp_CCodec_process_FUN_00438f90(CCodec *this_ptr,_istream *istream,int *byte_count,_ostream *ostream);
 int __cdecl support_codec_cpp_CCodec_processToBuffer_FUN_00439000(CCodec *this_ptr,_istream *ifstream,int *byte_count,char *output_buffer,int *output_size,int enable_finalize);
 int __cdecl support_codec_cpp_CCodec_processFromBuffer_FUN_004390b0(CCodec *this_ptr,char *input,int *input_length,_ostream *ostream);

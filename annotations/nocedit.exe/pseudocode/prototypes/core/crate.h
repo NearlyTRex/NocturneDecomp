@@ -31,9 +31,9 @@ int __cdecl CCrate::canPickup(CCrate *this_ptr,CDemonActor *picker);
 // Address: 00448620
 void __cdecl CCrate::pickup(CCrate *this_ptr,CDemonActor *carrier);
 
-// Original: core_crate.cpp_CCrate_drop_FUN_00448630
+// Original: core_crate.cpp_CCrate_onDropped_FUN_00448630
 // Address: 00448630
-void __cdecl CCrate::drop(CCrate *this_ptr,CVector3f *drop_position);
+void __cdecl CCrate::onDropped(CCrate *this_ptr,CVector3f *drop_position);
 
 // Original: core_crate.cpp_CCrate_getCarrier_FUN_00448650
 // Address: 00448650

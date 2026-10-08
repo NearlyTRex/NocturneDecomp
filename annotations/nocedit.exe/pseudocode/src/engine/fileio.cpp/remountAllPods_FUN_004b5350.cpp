@@ -14,7 +14,7 @@ void __cdecl engine_fileio_cpp_remountAllPods_FUN_004b5350(void)
   }
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Remounting all pods...");
-  engine_pod_cpp_CPod_cleanup_FUN_00550c80((CPod *)g_CDemonPodPtr);
-  (*g_CDemonPodPtr->vtable->load)((CPod *)g_CDemonPodPtr);
+  engine_pod_cpp_CPod_cleanup_FUN_00550c80(&g_CDemonPodPtr->base);
+  (*((g_CDemonPodPtr->base).vtable)->load)(&g_CDemonPodPtr->base);
   return;
 }

@@ -62,17 +62,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 170,
-    "complexity_score": 77,
+    "complexity_score": 78,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 62,
+    "pseudocode_lines": 63,
     "suspect_count": 1,
     "suspect_types": [
       "self_copy_guard"
     ],
-    "total_lines": 232
+    "total_lines": 233
   },
   "cross_references": [],
   "function": {
@@ -242,14 +242,14 @@
         {
           "check_id": "uninitvar",
           "column": 16,
-          "line": 51,
+          "line": 52,
           "message": "Uninitialized variable: fStack_48",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 64,
-          "line": 51,
+          "line": 52,
           "message": "Uninitialized variable: fStack_4c",
           "severity": "warning"
         }
@@ -261,7 +261,7 @@
   "suspects": [
     {
       "description": "Watcom dead self-copy guard: `if (&fStack_50 != &fStack_38)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 39,
+      "line": 40,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&fStack_50 != &fStack_38) {",
@@ -269,7 +269,7 @@
     },
     {
       "description": "Uninitialized variable: fStack_48",
-      "line": 51,
+      "line": 52,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "fVar1 = SQRT(fStack_48 * fStack_48 + fStack_50 * fStack_50 + fStack_4c * fStack_4c);",
@@ -277,7 +277,7 @@
     },
     {
       "description": "Uninitialized variable: fStack_4c",
-      "line": 51,
+      "line": 52,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "fVar1 = SQRT(fStack_48 * fStack_48 + fStack_50 * fStack_50 + fStack_4c * fStack_4c);",

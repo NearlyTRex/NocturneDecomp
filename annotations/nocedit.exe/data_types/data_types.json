@@ -269,10 +269,6 @@
       "type":"function_definition"
     },
     {
-      "name":"CCharacter_canWalk",
-      "type":"function_definition"
-    },
-    {
       "name":"CCharacter_checkCylinderCollisionWorld",
       "type":"function_definition"
     },
@@ -306,6 +302,10 @@
     },
     {
       "name":"CCharacter_isGrabbable",
+      "type":"function_definition"
+    },
+    {
+      "name":"CCharacter_isInvulnerable",
       "type":"function_definition"
     },
     {
@@ -605,7 +605,7 @@
       "type":"function_definition"
     },
     {
-      "name":"CDemonActor_processFootstepAt",
+      "name":"CDemonActor_processFootstepAtOffset",
       "type":"function_definition"
     },
     {
@@ -1309,11 +1309,11 @@
       "type":"struct"
     },
     {
-      "name":"CDemonPod",
+      "name":"CPod",
       "type":"struct"
     },
     {
-      "name":"CPod",
+      "name":"CDemonPod",
       "type":"struct"
     },
     {
@@ -11798,20 +11798,6 @@
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
-      "name":"CCharacter_canWalk",
-      "parameters":[
-        {
-          "name":"this_ptr",
-          "type":"CCharacter*"
-        }
-      ],
-      "return_type":"int",
-      "type":"function_definition"
-    },
-    {
-      "calling_convention":"__cdecl",
-      "cat":"/Nocturne/FunctionDefinition/Game",
-      "importable":true,
       "name":"CCharacter_checkCylinderCollisionWorld",
       "parameters":[
         {
@@ -11889,7 +11875,7 @@
           "type":"CMatrix3x4f*"
         }
       ],
-      "return_type":"void",
+      "return_type":"CMatrix3x4f*",
       "type":"function_definition"
     },
     {
@@ -11987,6 +11973,20 @@
         {
           "name":"grabber",
           "type":"CDemonActor*"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CCharacter_isInvulnerable",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CCharacter*"
         }
       ],
       "return_type":"int",
@@ -13257,7 +13257,7 @@
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
-      "name":"CDemonActor_processFootstepAt",
+      "name":"CDemonActor_processFootstepAtOffset",
       "parameters":[
         {
           "name":"this_ptr",
@@ -29356,9 +29356,9 @@
         },
         {
           "len":4,
-          "name":"canWalk",
+          "name":"isInvulnerable",
           "offset":8,
-          "type":"CCharacter_canWalk*"
+          "type":"CCharacter_isInvulnerable*"
         },
         {
           "len":4,
@@ -31514,7 +31514,7 @@
           "len":4,
           "name":"processFootstepAtOffset",
           "offset":28,
-          "type":"CDemonActor_processFootstepAt*"
+          "type":"CDemonActor_processFootstepAtOffset*"
         },
         {
           "len":4,
@@ -31542,7 +31542,7 @@
         },
         {
           "len":4,
-          "name":"playAmbientSoundWithVolume",
+          "name":"playAmbientSoundWithDelay",
           "offset":48,
           "type":"CDemonActor_playAmbientSoundWithDelay*"
         },
@@ -31728,7 +31728,7 @@
         },
         {
           "len":4,
-          "name":"getSurfaceProperties",
+          "name":"onLaserHit",
           "offset":172,
           "type":"CDemonActor_onLaserHit*"
         },
@@ -32827,22 +32827,10 @@
       "desc":"",
       "fields":[
         {
-          "len":4,
-          "name":"pod_file_count",
+          "len":408,
+          "name":"base",
           "offset":0,
-          "type":"int"
-        },
-        {
-          "len":400,
-          "name":"pod_files",
-          "offset":4,
-          "type":"CPodFile*[100]"
-        },
-        {
-          "len":4,
-          "name":"vtable",
-          "offset":404,
-          "type":"CDemonPod_vtable*"
+          "type":"CPod"
         }
       ],
       "importable":true,

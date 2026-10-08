@@ -55,8 +55,8 @@ int __cdecl core_shotgun_cpp_CShotgun_fire_FUN_00515ea0(CShotgun *this_ptr)
   int iStack_20;
   CDemonActor *pCStack_14;
   
-  pCVar2 = (CVector3f *)(*(((this_ptr->base).base.vtable._uc)->_uc).canWalk)((CCharacter *)this_ptr)
-  ;
+  pCVar2 = (CVector3f *)
+           (*(((this_ptr->base).base.vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
             ((CDemonActor *)this_ptr,&CStack_7c,pCVar2);
   iVar3 = core_weapon_cpp_CWeapon_fire_FUN_00554600(&this_ptr->base);

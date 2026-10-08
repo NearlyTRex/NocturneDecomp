@@ -125,7 +125,7 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_00448f20(CCrossbow *this_ptr)
       }
     }
     else {
-      iVar5 = (*(((this_ptr_01->base).vtable._uc)->_uc).canWalk)(this_ptr_01);
+      iVar5 = (*(((this_ptr_01->base).vtable._uc)->_uc).isInvulnerable)(this_ptr_01);
       this_ptr_00 = g_CDemonSetPtr;
       if (iVar5 != 0) {
         if (iStack_20 == 0) {

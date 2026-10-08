@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1656,
-    "complexity_score": 680,
+    "complexity_score": 681,
     "cross_reference_count": 0,
     "function_call_count": 39,
     "global_count": 49,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 680,
+    "pseudocode_lines": 681,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 2336
+    "total_lines": 2337
   },
   "cross_references": [],
   "function": {
@@ -105,7 +105,7 @@
     {
       "addr": "00429870",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_process_FUN_00429870"
+      "name": "core_charactr.cpp_CCharacter_processCharacter_FUN_00429870"
     },
     {
       "addr": "0042ec40",
@@ -591,7 +591,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 163,
+      "line": 164,
       "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -600,7 +600,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 413,
+      "line": 414,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -609,7 +609,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 124,
+      "line": 125,
       "match": "cascade_constant_fill",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -618,7 +618,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 531,
+      "line": 532,
       "match": "cascade_constant_fill",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -627,7 +627,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 590,
+      "line": 591,
       "match": "cascade_constant_fill",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -636,7 +636,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 593,
+      "line": 594,
       "match": "cascade_constant_fill",
       "resolution_source": "keep",
       "severity": "moderate",

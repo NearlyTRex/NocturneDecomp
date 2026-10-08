@@ -99,7 +99,7 @@
 ;   core_charactr.cpp_CCharacter_followActor_FUN_00428780
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_004259a0
-;   core_charactr.cpp_CCharacter_process_FUN_004259f0
+;   core_charactr.cpp_CCharacter_processCharacter_FUN_004259f0
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0
 ;   core_cloth.cpp_CCloth_process_FUN_00436e50
 ;   ... and 20 more
@@ -130,8 +130,8 @@ section .text
         ;   XREF to: 0054c6a7 (CONDITIONAL_JUMP)  ; LAB_0054c6a7
     PUSH dword ptr [EBP + 0x18]         ; 0054c6bb
     PUSH EBX                            ; 0054c6be
-    CALL core_charactr.cpp_CCharacter_process_FUN_004259f0 ; 0054c6bf
-        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_process_FUN_004259f0(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_processCharacter_FUN_004259f0 ; 0054c6bf
+        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processCharacter_FUN_004259f0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0054c6c4
     TEST EAX,EAX                        ; 0054c6c7
     JZ 0x0054cca8                       ; 0054c6c9

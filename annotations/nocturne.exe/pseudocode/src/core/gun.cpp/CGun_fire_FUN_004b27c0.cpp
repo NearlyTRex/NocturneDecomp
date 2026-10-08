@@ -46,8 +46,8 @@ int __cdecl core_gun_cpp_CGun_fire_FUN_004b27c0(CGun *this_ptr)
   CGlass *pCStack_1c;
   float fStack_14;
   
-  pCVar1 = (CVector3f *)(*(((this_ptr->base).base.vtable._uc)->_uc).canWalk)((CCharacter *)this_ptr)
-  ;
+  pCVar1 = (CVector3f *)
+           (*(((this_ptr->base).base.vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
             ((CDemonActor *)this_ptr,&CStack_98,pCVar1);
   iVar2 = core_weapon_cpp_CWeapon_fire_FUN_00554600(&this_ptr->base);
@@ -152,7 +152,7 @@ int __cdecl core_gun_cpp_CGun_fire_FUN_004b27c0(CGun *this_ptr)
       }
     }
     else {
-      iVar2 = (*(((this_ptr_01->base).vtable._uc)->_uc).canWalk)(this_ptr_01);
+      iVar2 = (*(((this_ptr_01->base).vtable._uc)->_uc).isInvulnerable)(this_ptr_01);
       this_ptr_00 = g_CDemonSet_PTR_005be368;
       pCVar6 = (CDemonActor *)((ulonglong)dVar5 >> 0x20);
       if (iVar2 != 0) {

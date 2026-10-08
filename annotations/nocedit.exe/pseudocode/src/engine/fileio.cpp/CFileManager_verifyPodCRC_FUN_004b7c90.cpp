@@ -36,7 +36,7 @@ void __cdecl engine_fileio_cpp_CFileManager_verifyPodCRC_FUN_004b7c90(CFileManag
       pcVar3 = pcVar3 + 2;
     } while (cVar2 != '\0');
   }
-  iVar3 = engine_pod_cpp_CPod_verifyIntegrity_FUN_00551280((CPod *)g_CDemonPodPtr,local_108);
+  iVar3 = engine_pod_cpp_CPod_verifyIntegrity_FUN_00551280(&g_CDemonPodPtr->base,local_108);
   if (iVar3 != 0) {
     shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
               (g_CEditorToolsPtr,"CRC check is valid",0,0);

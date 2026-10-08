@@ -134,7 +134,8 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_process_FUN_00458a90(CDraculaBride 
     }
   }
   core_dracbrid_cpp_CDraculaBride_updateFreakySounds_FUN_0045b020(this_ptr,delta_time);
-  iVar8 = core_charactr_cpp_CCharacter_process_FUN_004259f0((CCharacter *)this_ptr,delta_time);
+  iVar8 = core_charactr_cpp_CCharacter_processCharacter_FUN_004259f0
+                    ((CCharacter *)this_ptr,delta_time);
   if (iVar8 == 0) {
     return;
   }

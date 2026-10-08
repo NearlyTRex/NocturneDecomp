@@ -55,7 +55,7 @@
 ;   core_baron.cpp_CBaron_updateMountedPosition_FUN_00410bf0
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042a150
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_004259a0
-;   core_charactr.cpp_CCharacter_process_FUN_004259f0
+;   core_charactr.cpp_CCharacter_processCharacter_FUN_004259f0
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00428c00
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30
 ;   core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0048afe0
@@ -134,8 +134,8 @@ section .text
     PUSH dword ptr [ESP + 0xac]         ; 00410530
         ;   Label: LAB_00410530
     PUSH EBP                            ; 00410537
-    CALL core_charactr.cpp_CCharacter_process_FUN_004259f0 ; 00410538
-        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_process_FUN_004259f0(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_processCharacter_FUN_004259f0 ; 00410538
+        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processCharacter_FUN_004259f0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0041053d
     TEST EAX,EAX                        ; 00410540
     JZ 0x004104e9                       ; 00410542

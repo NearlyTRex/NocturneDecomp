@@ -58,19 +58,19 @@
       {
         "category": "format_error",
         "column": 82,
-        "line": 168,
+        "line": 169,
         "message": "format specifies type 'char *' but the argument has type 'CZombieDog *' [-Werror,-Wformat]"
       },
       {
         "category": "undeclared_identifier",
         "column": 51,
-        "line": 196,
+        "line": 197,
         "message": "use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
       },
       {
         "category": "format_error",
         "column": 85,
-        "line": 243,
+        "line": 244,
         "message": "format specifies type 'char *' but the argument has type 'CZombieDog *' [-Werror,-Wformat]"
       }
     ],
@@ -80,12 +80,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 592,
-    "complexity_score": 379,
+    "complexity_score": 380,
     "cross_reference_count": 0,
     "function_call_count": 23,
     "global_count": 19,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 279,
+    "pseudocode_lines": 280,
     "suspect_count": 8,
     "suspect_types": [
       "fast_sqrt_inline",
@@ -93,7 +93,7 @@
       "unrolled_memset",
       "warning_type_propagation"
     ],
-    "total_lines": 871
+    "total_lines": 872
   },
   "cross_references": [],
   "function": {
@@ -143,7 +143,7 @@
     {
       "addr": "004259f0",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_process_FUN_004259f0"
+      "name": "core_charactr.cpp_CCharacter_processCharacter_FUN_004259f0"
     },
     {
       "addr": "0042add0",
@@ -653,7 +653,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 189,
+      "line": 190,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(&local_98,(CVector3f *)&DAT_02dd1184,",
@@ -661,7 +661,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 49,
+      "line": 50,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -669,7 +669,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 144,
+      "line": 145,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -677,7 +677,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 238,
+      "line": 239,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -685,7 +685,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 269,
+      "line": 270,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.position_delta.z = 0.0;",
@@ -693,7 +693,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 272,
+      "line": 273,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -701,7 +701,7 @@
     },
     {
       "description": "Inlined fast sqrt bit-trick (bias `g_FastSqrtMagic`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Replace with `fastSqrt(<expr>)` in a .keep - the helper function exists in the binary (FUN_00431350).",
-      "line": 89,
+      "line": 90,
       "match": "local_18 = (float)(((int)local_24 >> 1) + g_FastSqrtMagic);",
       "severity": "moderate",
       "text": "local_18 = (float)(((int)local_24 >> 1) + g_FastSqrtMagic);",

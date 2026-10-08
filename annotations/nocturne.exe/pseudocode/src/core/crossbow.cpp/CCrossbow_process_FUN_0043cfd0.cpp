@@ -13,8 +13,8 @@ void __cdecl core_crossbow_cpp_CCrossbow_process_FUN_0043cfd0(CCrossbow *this_pt
   CVector3f aCStack_1c [2];
   
   core_weapon_cpp_CWeapon_process_FUN_00554030(&this_ptr->base,delta_time);
-  pCVar1 = (CVector3f *)(*(((this_ptr->base).base.vtable._uc)->_uc).canWalk)((CCharacter *)this_ptr)
-  ;
+  pCVar1 = (CVector3f *)
+           (*(((this_ptr->base).base.vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
   pCVar1 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                      ((CDemonActor *)this_ptr,aCStack_1c,pCVar1);
   (this_ptr->bolt_flame).base.location.position.x = pCVar1->x;

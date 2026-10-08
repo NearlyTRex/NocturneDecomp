@@ -39,8 +39,8 @@ int __cdecl core_turret_cpp_CTurret_fire_FUN_0054ab10(CTurret *this_ptr)
   CGlass *pCStack_1c;
   float fStack_14;
   
-  pCVar1 = (CVector3f *)(*(((this_ptr->base).base.vtable._uc)->_uc).canWalk)((CCharacter *)this_ptr)
-  ;
+  pCVar1 = (CVector3f *)
+           (*(((this_ptr->base).base.vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
             ((CDemonActor *)this_ptr,&CStack_a0,pCVar1);
   aCStack_64[0].z = (this_ptr->base).bolt_velocity;

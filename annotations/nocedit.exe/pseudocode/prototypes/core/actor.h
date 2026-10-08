@@ -155,9 +155,9 @@ void __cdecl CDemonActor::drop(CDemonActor *this_ptr,CDemonActor *carrier,CVecto
 // Address: 004090a0
 CPathMap * __cdecl CDemonActor::getPathMap(CDemonActor *this_ptr);
 
-// Original: core_actor.cpp_CDemonActor_testPointInCylinder_FUN_004090c0
+// Original: core_actor.cpp_CDemonActor_testCylinderCollision_FUN_004090c0
 // Address: 004090c0
-int __cdecl CDemonActor::testPointInCylinder(CDemonActor *this_ptr,SCollisionReturnInfo *collision_info,float tolerance);
+int __cdecl CDemonActor::testCylinderCollision(CDemonActor *this_ptr,SCollisionReturnInfo *collision_info,float tolerance);
 
 // Original: core_actor.cpp_CDemonActor_testLineIntersection_FUN_00409150
 // Address: 00409150
@@ -435,9 +435,9 @@ void __cdecl resetActorTypeInfo(void);
 // Address: 0040c830
 uint __cdecl CDemonActor::processFootstep(CDemonActor *this_ptr,float volume);
 
-// Original: core_actor.cpp_CDemonActor_processFootstepAt_FUN_0040c8f0
+// Original: core_actor.cpp_CDemonActor_processFootstepAtOffset_FUN_0040c8f0
 // Address: 0040c8f0
-uint __cdecl CDemonActor::processFootstepAt(CDemonActor *this_ptr,CVector3f *location,float volume);
+uint __cdecl CDemonActor::processFootstepAtOffset(CDemonActor *this_ptr,CVector3f *location,float volume);
 
 // Original: core_actor.cpp_CDemonActor_handleFootstep_FUN_0040ca10
 // Address: 0040ca10

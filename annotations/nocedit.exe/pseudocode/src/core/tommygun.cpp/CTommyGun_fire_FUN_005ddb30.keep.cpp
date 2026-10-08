@@ -148,7 +148,7 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_005ddb30(CTommyGun *this_ptr)
       }
     }
     else {
-      iVar8 = (*(((this_ptr_01->base).vtable._uc)->_uc).canWalk)(this_ptr_01);
+      iVar8 = (*(((this_ptr_01->base).vtable._uc)->_uc).isInvulnerable)(this_ptr_01);
       if ((iVar8 != 0) &&
          (pCVar6 = (CHero *)core_actor_cpp_castToClassHash_FUN_0040c790
                                       ((this_ptr->base).carried_by_actor,g_CHeroClassInfo.name_hash)

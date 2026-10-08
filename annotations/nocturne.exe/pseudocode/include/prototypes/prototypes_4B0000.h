@@ -160,7 +160,7 @@ void __cdecl core_hero_cpp_CHero_archive_FUN_004b49a0(CHero *this_ptr);
 CPathMap * __cdecl core_hero_cpp_CHero_getPathMap_FUN_004b4c00(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_isGrabbable_FUN_004b4c10(CHero *this_ptr,CDemonActor *grabber);
 int __cdecl core_hero_cpp_CHero_canBeGrabbed_FUN_004b4c20(CHero *this_ptr,CDemonActor *grabber,int grab_type);
-int __cdecl core_hero_cpp_CHero_canWalk_FUN_004b4c30(CHero *this_ptr);
+int __cdecl core_hero_cpp_CHero_isInvulnerable_FUN_004b4c30(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHeroPlaceholder_renderTransparent_FUN_004b4c60(CHeroPlaceholder *this_ptr);
 int __cdecl core_hero_cpp_CHero_getGrabbed_FUN_004b4c70(CHero *this_ptr,CDemonActor *grabber,int grab_type);
 void __cdecl core_hero_cpp_CHero_releaseFromGrab_FUN_004b4d50(CHero *this_ptr);

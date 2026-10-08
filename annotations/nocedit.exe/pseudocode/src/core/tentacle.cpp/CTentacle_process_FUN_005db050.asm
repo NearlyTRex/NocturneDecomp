@@ -61,7 +61,7 @@
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_00429820
-;   core_charactr.cpp_CCharacter_process_FUN_00429870
+;   core_charactr.cpp_CCharacter_processCharacter_FUN_00429870
 ;   core_gore.cpp_CGore_spawnBloodParticles_FUN_004edaa0
 ;   core_grave.cpp_CGrave_startAnimation_FUN_004ee790
 ;   core_motion.cpp_CMotionController_advance_FUN_0052d610
@@ -88,8 +88,8 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 005db05f
     PUSH dword ptr [EBP + 0x18]         ; 005db062
     PUSH EBX                            ; 005db065
-    CALL core_charactr.cpp_CCharacter_process_FUN_00429870 ; 005db066
-        ;   XREF to: 00429870 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_process_FUN_00429870(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_processCharacter_FUN_00429870 ; 005db066
+        ;   XREF to: 00429870 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processCharacter_FUN_00429870(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 005db06b
     TEST EAX,EAX                        ; 005db06e
     JZ 0x005db1bb                       ; 005db070

@@ -28,7 +28,7 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005448b0(CNPC *this_ptr,float delta_t
   uint uVar3;
   CVector3f *pCVar2;
   
-  iVar6 = core_charactr_cpp_CCharacter_process_FUN_00429870(&this_ptr->base,delta_time);
+  iVar6 = core_charactr_cpp_CCharacter_processCharacter_FUN_00429870(&this_ptr->base,delta_time);
   if (iVar6 == 0) {
     return;
   }

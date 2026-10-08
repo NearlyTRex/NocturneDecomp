@@ -62,19 +62,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 980,
-    "complexity_score": 513,
+    "complexity_score": 514,
     "cross_reference_count": 0,
     "function_call_count": 25,
     "global_count": 23,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 388,
+    "pseudocode_lines": 389,
     "suspect_count": 11,
     "suspect_types": [
       "undefined_data",
       "unrolled_memset",
       "warning_type_propagation"
     ],
-    "total_lines": 1368
+    "total_lines": 1369
   },
   "cross_references": [],
   "function": {
@@ -129,7 +129,7 @@
     {
       "addr": "004259f0",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_process_FUN_004259f0"
+      "name": "core_charactr.cpp_CCharacter_processCharacter_FUN_004259f0"
     },
     {
       "addr": "004277f0",
@@ -791,7 +791,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 193,
+      "line": 194,
       "match": "DAT_00764b30",
       "severity": "mild",
       "text": "DAT_00764b30);",
@@ -799,7 +799,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 213,
+      "line": 214,
       "match": "DAT_00764b34",
       "severity": "mild",
       "text": "DAT_00764b34);",
@@ -807,7 +807,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 260,
+      "line": 261,
       "match": "DAT_00764b34",
       "severity": "mild",
       "text": "DAT_00764b34);",
@@ -815,7 +815,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 285,
+      "line": 286,
       "match": "DAT_00764b30",
       "severity": "mild",
       "text": "DAT_00764b30);",
@@ -823,7 +823,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 375,
+      "line": 376,
       "match": "DAT_00764b40",
       "severity": "mild",
       "text": "((CCharacter *)this_ptr,this_ptr->part_indices[0],DAT_00764b40,0.2);",
@@ -831,7 +831,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 378,
+      "line": 379,
       "match": "DAT_00764b38",
       "severity": "mild",
       "text": "((CCharacter *)this_ptr,this_ptr->part_indices[1],DAT_00764b38,0.2);",
@@ -839,7 +839,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 381,
+      "line": 382,
       "match": "DAT_00764b44",
       "severity": "mild",
       "text": "((CCharacter *)this_ptr,this_ptr->part_indices[2],DAT_00764b44,0.2);",
@@ -847,7 +847,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 384,
+      "line": 385,
       "match": "DAT_00764b3c",
       "severity": "mild",
       "text": "((CCharacter *)this_ptr,this_ptr->part_indices[3],DAT_00764b3c,0.2);",
@@ -855,7 +855,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 387,
+      "line": 388,
       "match": "DAT_00764b2c",
       "severity": "mild",
       "text": "((CCharacter *)this_ptr,this_ptr->part_indices[8],DAT_00764b2c,0.7);",
@@ -863,7 +863,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 332,
+      "line": 333,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",

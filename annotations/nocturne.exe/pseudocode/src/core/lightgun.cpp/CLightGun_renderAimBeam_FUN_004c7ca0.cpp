@@ -38,7 +38,8 @@ void __cdecl core_lightgun_cpp_CLightGun_renderAimBeam_FUN_004c7ca0(CLightGun *t
   ;
   if (iVar2 == 0) {
     input_local_point =
-         (CVector3f *)(*(((this_ptr->base).base.vtable._uc)->_uc).canWalk)((CCharacter *)this_ptr);
+         (CVector3f *)
+         (*(((this_ptr->base).base.vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
               ((CDemonActor *)this_ptr,&CStack_4c,input_local_point);
     CStack_64.z = (this_ptr->base).bolt_velocity;

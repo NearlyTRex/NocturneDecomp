@@ -41,7 +41,7 @@ void __cdecl CCodec::init(CCodec *this_ptr);
 
 // Original: support_codec.cpp_CCodec_finalize_FUN_00438f80
 // Address: 00438f80
-int __cdecl CCodec::finalize(CCodec *this_ptr,_FILE *output_file);
+int __cdecl CCodec::finalize(CCodec *this_ptr,void *ostream);
 
 // Original: support_codec.cpp_CCodec_process_FUN_00438f90
 // Address: 00438f90

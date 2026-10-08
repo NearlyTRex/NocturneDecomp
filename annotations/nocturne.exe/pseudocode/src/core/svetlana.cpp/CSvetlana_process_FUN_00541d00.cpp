@@ -55,7 +55,8 @@ void __cdecl core_svetlana_cpp_CSvetlana_process_FUN_00541d00(CSvetlana *this_pt
      (this_ptr->base).base.hit_points = fVar13, (float)100 < fVar13)) {
     (this_ptr->base).base.hit_points = 100.0;
   }
-  iVar4 = core_charactr_cpp_CCharacter_process_FUN_004259f0((CCharacter *)this_ptr,delta_time);
+  iVar4 = core_charactr_cpp_CCharacter_processCharacter_FUN_004259f0
+                    ((CCharacter *)this_ptr,delta_time);
   if ((iVar4 == 0) || ((this_ptr->base).ai_task == HERO_TASK_SUSPEND)) {
 switchD_005420d7_caseD_9:
     return;

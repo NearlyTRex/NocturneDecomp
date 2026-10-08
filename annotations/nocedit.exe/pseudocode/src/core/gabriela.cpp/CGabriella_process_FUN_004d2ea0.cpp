@@ -101,7 +101,8 @@ void __cdecl core_gabriela_cpp_CGabriella_process_FUN_004d2ea0(CGabriella *this_
   CLadder *pCVar7;
   byte bVar6;
   
-  iVar10 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
+  iVar10 = core_charactr_cpp_CCharacter_processCharacter_FUN_00429870
+                     ((CCharacter *)this_ptr,delta_time);
   if (iVar10 == 0) {
     return;
   }

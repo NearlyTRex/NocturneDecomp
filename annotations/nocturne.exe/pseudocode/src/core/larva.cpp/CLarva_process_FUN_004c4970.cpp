@@ -73,7 +73,8 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_004c4970(CLarva *this_ptr,float d
   float local_18;
   float local_14;
   
-  iVar6 = core_charactr_cpp_CCharacter_process_FUN_004259f0((CCharacter *)this_ptr,delta_time);
+  iVar6 = core_charactr_cpp_CCharacter_processCharacter_FUN_004259f0
+                    ((CCharacter *)this_ptr,delta_time);
   if (iVar6 == 0) {
     return;
   }

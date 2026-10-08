@@ -14,7 +14,8 @@ void __cdecl core_beast_cpp_CBeast_process_FUN_004182a0(CBeast *this_ptr,float d
   float local_10;
   CDeformableModelInstance *this_ptr_00;
   
-  iVar1 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
+  iVar1 = core_charactr_cpp_CCharacter_processCharacter_FUN_00429870
+                    ((CCharacter *)this_ptr,delta_time);
   if (iVar1 != 0) {
     (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
     (this_ptr->base).base.model.accumulated_root_motion.y =

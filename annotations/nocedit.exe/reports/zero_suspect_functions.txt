@@ -280,7 +280,7 @@ annotations/nocedit.exe/pseudocode/src/core/actor.cpp/CDemonActor_playAttackHitE
 annotations/nocedit.exe/pseudocode/src/core/actor.cpp/CDemonActor_playSoundWithDelay_FUN_00408fa0.cpp
 annotations/nocedit.exe/pseudocode/src/core/actor.cpp/CDemonActor_playSound_FUN_00408f60.cpp
 annotations/nocedit.exe/pseudocode/src/core/actor.cpp/CDemonActor_processActionButton_FUN_00409f60.cpp
-annotations/nocedit.exe/pseudocode/src/core/actor.cpp/CDemonActor_processFootstepAt_FUN_0040c8f0.cpp
+annotations/nocedit.exe/pseudocode/src/core/actor.cpp/CDemonActor_processFootstepAtOffset_FUN_0040c8f0.cpp
 annotations/nocedit.exe/pseudocode/src/core/actor.cpp/CDemonActor_processFootstep_FUN_0040c830.cpp
 annotations/nocedit.exe/pseudocode/src/core/actor.cpp/CDemonActor_processInEditor_FUN_0040d040.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/actor.cpp/CDemonActor_processMeleeHit_FUN_0040a210.keep.cpp
@@ -303,8 +303,8 @@ annotations/nocedit.exe/pseudocode/src/core/actor.cpp/CDemonActor_showEditorHelp
 annotations/nocedit.exe/pseudocode/src/core/actor.cpp/CDemonActor_spawnFlies_FUN_00409e70.cpp
 annotations/nocedit.exe/pseudocode/src/core/actor.cpp/CDemonActor_startInteraction_FUN_0040a090.cpp
 annotations/nocedit.exe/pseudocode/src/core/actor.cpp/CDemonActor_stopInteraction_FUN_0040a0d0.cpp
+annotations/nocedit.exe/pseudocode/src/core/actor.cpp/CDemonActor_testCylinderCollision_FUN_004090c0.cpp
 annotations/nocedit.exe/pseudocode/src/core/actor.cpp/CDemonActor_testLineIntersection_FUN_00409150.cpp
-annotations/nocedit.exe/pseudocode/src/core/actor.cpp/CDemonActor_testPointInCylinder_FUN_004090c0.cpp
 annotations/nocedit.exe/pseudocode/src/core/actor.cpp/CDemonActor_testRayIntersection_FUN_004093f0.cpp
 annotations/nocedit.exe/pseudocode/src/core/actor.cpp/CDemonActor_transformVector_FUN_00408e80.cpp
 annotations/nocedit.exe/pseudocode/src/core/actor.cpp/CDemonActor_updateCollisionData_FUN_004098c0.cpp
@@ -478,7 +478,7 @@ annotations/nocedit.exe/pseudocode/src/core/baron.cpp/CBaronWeapon_renderOpaque_
 annotations/nocedit.exe/pseudocode/src/core/baron.cpp/CBaronWeapon_setWeaponState_FUN_00413e90.cpp
 annotations/nocedit.exe/pseudocode/src/core/baron.cpp/CBaronWeapon_setup_FUN_00413da0.cpp
 annotations/nocedit.exe/pseudocode/src/core/baron.cpp/CBaron_addFilesToExtract_FUN_00414070.cpp
-annotations/nocedit.exe/pseudocode/src/core/baron.cpp/CBaron_advanceMotion_FUN_00413a00.cpp
+annotations/nocedit.exe/pseudocode/src/core/baron.cpp/CBaron_advanceMotion_FUN_00413a00.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/baron.cpp/CBaron_archive_FUN_00413a70.cpp
 annotations/nocedit.exe/pseudocode/src/core/baron.cpp/CBaron_attachToOwner_FUN_00413470.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/baron.cpp/CBaron_ctor_FUN_00412bc0.keep.cpp
@@ -853,7 +853,6 @@ annotations/nocedit.exe/pseudocode/src/core/charactr.cpp/CCharacter_blendLayerAc
 annotations/nocedit.exe/pseudocode/src/core/charactr.cpp/CCharacter_buildLayerActionTransitionCosts_FUN_0042e670.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/charactr.cpp/CCharacter_calculateChecksum_FUN_0042dde0.cpp
 annotations/nocedit.exe/pseudocode/src/core/charactr.cpp/CCharacter_canLookAt_FUN_0042de50.cpp
-annotations/nocedit.exe/pseudocode/src/core/charactr.cpp/CCharacter_canWalk_FUN_0042ca60.cpp
 annotations/nocedit.exe/pseudocode/src/core/charactr.cpp/CCharacter_checkCylinderCollisionWorld_FUN_0042c110.cpp
 annotations/nocedit.exe/pseudocode/src/core/charactr.cpp/CCharacter_chooseNextLayerAction_FUN_0042e8c0.cpp
 annotations/nocedit.exe/pseudocode/src/core/charactr.cpp/CCharacter_clearDoorTarget_FUN_0042cd60.cpp
@@ -883,6 +882,7 @@ annotations/nocedit.exe/pseudocode/src/core/charactr.cpp/CCharacter_igniteBone_F
 annotations/nocedit.exe/pseudocode/src/core/charactr.cpp/CCharacter_initGesture_FUN_0042d390.cpp
 annotations/nocedit.exe/pseudocode/src/core/charactr.cpp/CCharacter_isCarryingAnything_FUN_0042d360.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/charactr.cpp/CCharacter_isGrabbable_FUN_0042bf30.cpp
+annotations/nocedit.exe/pseudocode/src/core/charactr.cpp/CCharacter_isInvulnerable_FUN_0042ca60.cpp
 annotations/nocedit.exe/pseudocode/src/core/charactr.cpp/CCharacter_isOnGround_FUN_004297e0.cpp
 annotations/nocedit.exe/pseudocode/src/core/charactr.cpp/CCharacter_isWalkComplete_FUN_0042ca30.cpp
 annotations/nocedit.exe/pseudocode/src/core/charactr.cpp/CCharacter_kill_FUN_00428e30.keep.cpp
@@ -892,6 +892,7 @@ annotations/nocedit.exe/pseudocode/src/core/charactr.cpp/CCharacter_onActorDelet
 annotations/nocedit.exe/pseudocode/src/core/charactr.cpp/CCharacter_pickupObjectNow_FUN_0042cdb0.cpp
 annotations/nocedit.exe/pseudocode/src/core/charactr.cpp/CCharacter_playSoundWithCooldown_FUN_0042f300.cpp
 annotations/nocedit.exe/pseudocode/src/core/charactr.cpp/CCharacter_preProcess_FUN_00429820.cpp
+annotations/nocedit.exe/pseudocode/src/core/charactr.cpp/CCharacter_processCharacter_FUN_00429870.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/charactr.cpp/CCharacter_processDamageDecals_FUN_0042b670.cpp
 annotations/nocedit.exe/pseudocode/src/core/charactr.cpp/CCharacter_processDamage_FUN_0042c3c0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/charactr.cpp/CCharacter_processFire_FUN_0042a830.keep.cpp
@@ -899,7 +900,6 @@ annotations/nocedit.exe/pseudocode/src/core/charactr.cpp/CCharacter_processInEdi
 annotations/nocedit.exe/pseudocode/src/core/charactr.cpp/CCharacter_processMotion_FUN_0042ec40.cpp
 annotations/nocedit.exe/pseudocode/src/core/charactr.cpp/CCharacter_processSmoking_FUN_0042ea40.cpp
 annotations/nocedit.exe/pseudocode/src/core/charactr.cpp/CCharacter_processWalking_FUN_0042ca70.keep.cpp
-annotations/nocedit.exe/pseudocode/src/core/charactr.cpp/CCharacter_process_FUN_00429870.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/charactr.cpp/CCharacter_propertyActionCallback_FUN_0042f3e0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/charactr.cpp/CCharacter_propertyDisplayCallback_FUN_0042f340.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/charactr.cpp/CCharacter_releaseFromGrab_FUN_0042bf40.cpp
@@ -1071,7 +1071,6 @@ annotations/nocedit.exe/pseudocode/src/core/crate.cpp/CCrate_addFilesToExtract_F
 annotations/nocedit.exe/pseudocode/src/core/crate.cpp/CCrate_archive_FUN_00448910.cpp
 annotations/nocedit.exe/pseudocode/src/core/crate.cpp/CCrate_canPickup_FUN_00448600.cpp
 annotations/nocedit.exe/pseudocode/src/core/crate.cpp/CCrate_ctor_FUN_004484d0.cpp
-annotations/nocedit.exe/pseudocode/src/core/crate.cpp/CCrate_drop_FUN_00448630.cpp
 annotations/nocedit.exe/pseudocode/src/core/crate.cpp/CCrate_dtor_FUN_00448bb0.cpp
 annotations/nocedit.exe/pseudocode/src/core/crate.cpp/CCrate_explode_FUN_00448a70.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/crate.cpp/CCrate_getActorType_FUN_004484c0.cpp
@@ -1080,6 +1079,7 @@ annotations/nocedit.exe/pseudocode/src/core/crate.cpp/CCrate_getCarrier_FUN_0044
 annotations/nocedit.exe/pseudocode/src/core/crate.cpp/CCrate_getCollisionType_FUN_00448960.cpp
 annotations/nocedit.exe/pseudocode/src/core/crate.cpp/CCrate_getPropertyList_FUN_00448b20.cpp
 annotations/nocedit.exe/pseudocode/src/core/crate.cpp/CCrate_getTargetPoints_FUN_004489d0.cpp
+annotations/nocedit.exe/pseudocode/src/core/crate.cpp/CCrate_onDropped_FUN_00448630.cpp
 annotations/nocedit.exe/pseudocode/src/core/crate.cpp/CCrate_pickup_FUN_00448620.cpp
 annotations/nocedit.exe/pseudocode/src/core/crate.cpp/CCrate_process_FUN_00448660.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/crate.cpp/CCrate_renderBackground_FUN_004488f0.cpp
@@ -2390,7 +2390,6 @@ annotations/nocedit.exe/pseudocode/src/core/hero.cpp/CHero_addFilesToExtract_FUN
 annotations/nocedit.exe/pseudocode/src/core/hero.cpp/CHero_archive_FUN_004f2610.cpp
 annotations/nocedit.exe/pseudocode/src/core/hero.cpp/CHero_canBeGrabbed_FUN_004f2890.cpp
 annotations/nocedit.exe/pseudocode/src/core/hero.cpp/CHero_canLookAt_FUN_004f37d0.cpp
-annotations/nocedit.exe/pseudocode/src/core/hero.cpp/CHero_canWalk_FUN_004f28a0.cpp
 annotations/nocedit.exe/pseudocode/src/core/hero.cpp/CHero_closestEnemy_FUN_004f3960.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/hero.cpp/CHero_createDefaultWeapon_FUN_004f2a30.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/hero.cpp/CHero_ctor_FUN_004f2340.cpp
@@ -2402,6 +2401,7 @@ annotations/nocedit.exe/pseudocode/src/core/hero.cpp/CHero_getGrabbed_FUN_004f28
 annotations/nocedit.exe/pseudocode/src/core/hero.cpp/CHero_getPathMap_FUN_004f2870.cpp
 annotations/nocedit.exe/pseudocode/src/core/hero.cpp/CHero_getPropertyList_FUN_004f3f20.cpp
 annotations/nocedit.exe/pseudocode/src/core/hero.cpp/CHero_isGrabbable_FUN_004f2880.cpp
+annotations/nocedit.exe/pseudocode/src/core/hero.cpp/CHero_isInvulnerable_FUN_004f28a0.cpp
 annotations/nocedit.exe/pseudocode/src/core/hero.cpp/CHero_kill_FUN_004f3af0.cpp
 annotations/nocedit.exe/pseudocode/src/core/hero.cpp/CHero_releaseFromGrab_FUN_004f29b0.cpp
 annotations/nocedit.exe/pseudocode/src/core/hero.cpp/CHero_removeMatchingKeys_FUN_004f3910.cpp
@@ -2718,7 +2718,7 @@ annotations/nocedit.exe/pseudocode/src/core/manpuz.cpp/CMirrorHack_process_FUN_0
 annotations/nocedit.exe/pseudocode/src/core/manpuz.cpp/CMirrorHack_renderOpaque_FUN_0050b180.cpp
 annotations/nocedit.exe/pseudocode/src/core/manpuz.cpp/CMirrorHack_setup_FUN_0050b160.cpp
 annotations/nocedit.exe/pseudocode/src/core/manpuz.cpp/CMirrorHack_startInteraction_FUN_0050b340.cpp
-annotations/nocedit.exe/pseudocode/src/core/manpuz.cpp/CMirrorHack_stopUsing_FUN_0050b3c0.cpp
+annotations/nocedit.exe/pseudocode/src/core/manpuz.cpp/CMirrorHack_stopInteraction_FUN_0050b3c0.cpp
 annotations/nocedit.exe/pseudocode/src/core/manpuz.cpp/CMirrorHack_updateInteraction_FUN_0050b360.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/manpuz.cpp/SGem_arrdtor12_FUN_0050bab0.cpp
 annotations/nocedit.exe/pseudocode/src/core/manpuz.cpp/SGem_ctor_FUN_0050b940.cpp
@@ -4124,6 +4124,7 @@ annotations/nocedit.exe/pseudocode/src/core/teleport.cpp/matchesTeleportDestinat
 annotations/nocedit.exe/pseudocode/src/core/teleport.cpp/staticInit_FUN_005da6e0.cpp
 annotations/nocedit.exe/pseudocode/src/core/tentacle.cpp/CTentacle_addFilesToExtract_FUN_005dbcc0.cpp
 annotations/nocedit.exe/pseudocode/src/core/tentacle.cpp/CTentacle_archive_FUN_005db880.cpp
+annotations/nocedit.exe/pseudocode/src/core/tentacle.cpp/CTentacle_attractActorToward_FUN_005db9d0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/tentacle.cpp/CTentacle_computeGripBoneMatrix_FUN_005dbb70.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/tentacle.cpp/CTentacle_ctor_FUN_005daf60.cpp
 annotations/nocedit.exe/pseudocode/src/core/tentacle.cpp/CTentacle_dtor_FUN_005dbcf0.cpp
@@ -4134,7 +4135,6 @@ annotations/nocedit.exe/pseudocode/src/core/tentacle.cpp/CTentacle_process_FUN_0
 annotations/nocedit.exe/pseudocode/src/core/tentacle.cpp/CTentacle_renderOpaque_FUN_005db840.cpp
 annotations/nocedit.exe/pseudocode/src/core/tentacle.cpp/CTentacle_setup_FUN_005dafc0.cpp
 annotations/nocedit.exe/pseudocode/src/core/tentacle.cpp/CTentacle_shouldIgnoreForTargeting_FUN_005dbb30.cpp
-annotations/nocedit.exe/pseudocode/src/core/tentacle.cpp/CTentacle_updateGrabbedVictim_FUN_005db9d0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/tentacle.cpp/factoryFuncTentacle_FUN_005daf20.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/tentacle.cpp/staticInit_FUN_005daef0.cpp
 annotations/nocedit.exe/pseudocode/src/core/terrain.cpp/CTerrain_free_FUN_005e1f30.cpp

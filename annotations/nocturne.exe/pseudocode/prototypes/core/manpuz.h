@@ -175,9 +175,9 @@ int __cdecl CMirrorHack::startInteraction(CMirrorHack *this_ptr,CDemonActor *use
 // Address: 004cbd50
 int __cdecl CMirrorHack::updateInteraction(CMirrorHack *this_ptr,UOrientationVector *user_orientation,SPlayerInput *player_control);
 
-// Original: core_manpuz.cpp_CMirrorHack_stopUsing_FUN_004cbdb0
+// Original: core_manpuz.cpp_CMirrorHack_stopInteraction_FUN_004cbdb0
 // Address: 004cbdb0
-void __cdecl CMirrorHack::stopUsing(CMirrorHack *this_ptr,CDemonActor *user);
+void __cdecl CMirrorHack::stopInteraction(CMirrorHack *this_ptr,CDemonActor *user);
 
 // Original: core_manpuz.cpp_CMirrorHack_dtor_FUN_004cbdd0
 // Address: 004cbdd0

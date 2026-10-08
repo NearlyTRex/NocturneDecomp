@@ -124,7 +124,7 @@ typedef struct CWerewolf_process_Ctx {
 #define GOTO_LAB_005f094d 4
 #define GOTO_LAB_005f092a 5
 
-// Chunk: branch_0_chunk_0 (lines 56-99 of original)
+// Chunk: branch_0_chunk_0 (lines 57-100 of original)
 static int CWerewolf_process_branch_0_chunk_0(CWerewolf_process_Ctx *ctx) {
     CWerewolf *&this_ptr = ctx->this_ptr;
     float &fVar13 = ctx->fVar13;
@@ -182,7 +182,7 @@ static int CWerewolf_process_branch_0_chunk_0(CWerewolf_process_Ctx *ctx) {
     return 0;
 }
 
-// Chunk: branch_0_check_uVar5_1_branch_0 (lines 100-129 of original)
+// Chunk: branch_0_check_uVar5_1_branch_0 (lines 101-130 of original)
 static int CWerewolf_process_branch_0_check_uVar5_1_branch_0(CWerewolf_process_Ctx *ctx) {
     CWerewolf *&this_ptr = ctx->this_ptr;
     uint &uVar5 = ctx->uVar5;
@@ -223,7 +223,7 @@ static int CWerewolf_process_branch_0_check_uVar5_1_branch_0(CWerewolf_process_C
     return 0;
 }
 
-// Chunk: branch_0_check_uVar5_1_chunk_1 (lines 156-336 of original)
+// Chunk: branch_0_check_uVar5_1_chunk_1 (lines 157-337 of original)
 static int CWerewolf_process_branch_0_check_uVar5_1_chunk_1(CWerewolf_process_Ctx *ctx) {
     CWerewolf *&this_ptr = ctx->this_ptr;
     float &delta_time = ctx->delta_time;
@@ -436,7 +436,7 @@ LAB_005f0ae7:
     return 0;
 }
 
-// Chunk: branch_0_else_2 (lines 340-500 of original)
+// Chunk: branch_0_else_2 (lines 341-501 of original)
 static int CWerewolf_process_branch_0_else_2(CWerewolf_process_Ctx *ctx) {
     CWerewolf *&this_ptr = ctx->this_ptr;
     float &delta_time = ctx->delta_time;
@@ -628,7 +628,7 @@ LAB_005f0481:
     return 0;
 }
 
-// Chunk: chunk_1 (lines 570-599 of original)
+// Chunk: chunk_1 (lines 571-600 of original)
 static int CWerewolf_process_chunk_1(CWerewolf_process_Ctx *ctx) {
     CWerewolf *&this_ptr = ctx->this_ptr;
     float &delta_time = ctx->delta_time;
@@ -782,7 +782,8 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
   // param this_ptr aliased into ctx above
   // param delta_time aliased into ctx above
 
-  iVar7 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
+  iVar7 = core_charactr_cpp_CCharacter_processCharacter_FUN_00429870
+                    ((CCharacter *)this_ptr,delta_time);
   if (iVar7 == 0) {
     sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handles[1]);
     return;

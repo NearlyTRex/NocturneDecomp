@@ -30,7 +30,7 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_004eea20(CNPC *this_ptr,float delta_t
   float fStack_20;
   float fStack_1c;
   
-  iVar6 = core_charactr_cpp_CCharacter_process_FUN_004259f0(&this_ptr->base,delta_time);
+  iVar6 = core_charactr_cpp_CCharacter_processCharacter_FUN_004259f0(&this_ptr->base,delta_time);
   if (iVar6 == 0) {
     return;
   }

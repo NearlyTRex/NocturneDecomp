@@ -728,7 +728,7 @@ LAB_004b9af4:
                       }
                       if (local_44[local_20].action_index != 3) {
                         iVar2 = engine_pod_cpp_CPod_verifyIntegrity_FUN_00551280
-                                          ((CPod *)g_CDemonPodPtr,local_44[local_20].pod_name);
+                                          (&g_CDemonPodPtr->base,local_44[local_20].pod_name);
                         if (iVar2 == 0) {
                           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                                     (g_CEditorToolsPtr,"Warning: %s failed CRC check",

@@ -58,24 +58,12 @@
       {
         "category": "type_error",
         "column": 13,
-        "line": 64,
+        "line": 65,
         "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
         "category": "type_error",
         "column": 13,
-        "line": 68,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 57,
-        "line": 68,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 13,
         "line": 69,
         "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
       },
@@ -99,8 +87,14 @@
       },
       {
         "category": "type_error",
-        "column": 32,
-        "line": 72,
+        "column": 13,
+        "line": 71,
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
+      },
+      {
+        "category": "type_error",
+        "column": 57,
+        "line": 71,
         "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
       },
       {
@@ -114,6 +108,12 @@
         "column": 32,
         "line": 74,
         "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
+      },
+      {
+        "category": "type_error",
+        "column": 32,
+        "line": 75,
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
       }
     ],
     "success": false,
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 644,
-    "complexity_score": 440,
+    "complexity_score": 441,
     "cross_reference_count": 0,
     "function_call_count": 22,
     "global_count": 31,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 230,
+    "pseudocode_lines": 231,
     "suspect_count": 19,
     "suspect_types": [
       "pointer_cast",
@@ -135,7 +135,7 @@
       "unknown_field",
       "unresolved_funcptr"
     ],
-    "total_lines": 874
+    "total_lines": 875
   },
   "cross_references": [],
   "function": {
@@ -550,7 +550,7 @@
         {
           "check_id": "uninitvar",
           "column": 25,
-          "line": 211,
+          "line": 212,
           "message": "Uninitialized variable: unaff_retaddr",
           "severity": "error"
         }
@@ -562,7 +562,7 @@
   "suspects": [
     {
       "description": "Unknown/mangled field access",
-      "line": 57,
+      "line": 58,
       "match": "._4_4_",
       "severity": "mild",
       "text": "auStack_6c._4_4_ = 0.0;",
@@ -570,15 +570,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 61,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "auStack_44._0_4_ = aCStack_a4[0].x + (float)auStack_8c._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 61,
+      "line": 62,
       "match": "._0_4_",
       "severity": "mild",
       "text": "auStack_44._0_4_ = aCStack_a4[0].x + (float)auStack_8c._0_4_;",
@@ -587,14 +579,14 @@
     {
       "description": "Unknown/mangled field access",
       "line": 62,
-      "match": "._4_4_",
+      "match": "._0_4_",
       "severity": "mild",
-      "text": "auStack_44._4_4_ = aCStack_a4[0].y + (float)auStack_8c._4_4_;",
+      "text": "auStack_44._0_4_ = aCStack_a4[0].x + (float)auStack_8c._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 62,
+      "line": 63,
       "match": "._4_4_",
       "severity": "mild",
       "text": "auStack_44._4_4_ = aCStack_a4[0].y + (float)auStack_8c._4_4_;",
@@ -603,6 +595,14 @@
     {
       "description": "Unknown/mangled field access",
       "line": 63,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "auStack_44._4_4_ = aCStack_a4[0].y + (float)auStack_8c._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 64,
       "match": "._8_4_",
       "severity": "mild",
       "text": "auStack_44._8_4_ = aCStack_a4[0].z + (float)auStack_8c._8_4_;",
@@ -610,7 +610,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 63,
+      "line": 64,
       "match": "._8_4_",
       "severity": "mild",
       "text": "auStack_44._8_4_ = aCStack_a4[0].z + (float)auStack_8c._8_4_;",
@@ -618,7 +618,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 65,
+      "line": 66,
       "match": "._0_4_",
       "severity": "mild",
       "text": "fStack_38 = (float)auStack_8c._0_4_ * fStack_2c;",
@@ -626,7 +626,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 66,
+      "line": 67,
       "match": "._4_4_",
       "severity": "mild",
       "text": "fStack_34 = (float)auStack_8c._4_4_ * fStack_2c;",
@@ -634,7 +634,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 67,
+      "line": 68,
       "match": "._8_4_",
       "severity": "mild",
       "text": "fStack_30 = (float)auStack_8c._8_4_ * fStack_2c;",
@@ -642,7 +642,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 122,
+      "line": 123,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "((CCharacter *)this_ptr,SUB84(__BITCAST_UINT64(dVar9),0),",
@@ -650,7 +650,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 153,
+      "line": 154,
       "match": "(CCharacter **)((int)g_CDemonSet_PTR_005be368",
       "severity": "moderate",
       "text": "this_ptr_00 = *(CCharacter **)((int)g_CDemonSet_PTR_005be368->characters + iStack_20);",
@@ -658,7 +658,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 187,
+      "line": 188,
       "match": "._8_4_",
       "severity": "mild",
       "text": "auStack_8c._8_4_ = (pCVar3->min).x + ((CVector3f *)this_ptr)->x;",
@@ -666,7 +666,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 191,
+      "line": 192,
       "match": "._8_4_",
       "severity": "mild",
       "text": "local_60.x = (float)auStack_8c._8_4_ * 0.5f;",
@@ -674,7 +674,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 217,
+      "line": 218,
       "match": "._4_4_",
       "severity": "mild",
       "text": "auStack_fc._4_4_ = 0.1;",
@@ -682,7 +682,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 223,
+      "line": 224,
       "match": "._0_4_",
       "severity": "mild",
       "text": "auStack_c8._0_4_ = this_ptr;",
@@ -690,7 +690,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 224,
+      "line": 225,
       "match": "(code **)((int)pCVar3",
       "severity": "moderate",
       "text": "auStack_c8._8_4_ = (**(code **)((int)pCVar3[0xe].min.z + 0x8c))((CDemonActor *)this_ptr);",
@@ -698,7 +698,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 224,
+      "line": 225,
       "match": "._8_4_",
       "severity": "mild",
       "text": "auStack_c8._8_4_ = (**(code **)((int)pCVar3[0xe].min.z + 0x8c))((CDemonActor *)this_ptr);",
@@ -706,7 +706,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 224,
+      "line": 225,
       "match": "code *",
       "severity": "moderate",
       "text": "auStack_c8._8_4_ = (**(code **)((int)pCVar3[0xe].min.z + 0x8c))((CDemonActor *)this_ptr);",
@@ -714,7 +714,7 @@
     },
     {
       "description": "Uninitialized variable: unaff_retaddr",
-      "line": 211,
+      "line": 212,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "if (pCVar5 == unaff_retaddr) {",

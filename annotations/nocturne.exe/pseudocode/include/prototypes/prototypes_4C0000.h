@@ -231,7 +231,7 @@ void __cdecl core_manpuz_cpp_CMirrorHack_onLaserHit_FUN_004cbcb0(CMirrorHack *th
 void __cdecl core_manpuz_cpp_CMirrorHack_getInteractionInfo_FUN_004cbce0(CMirrorHack *this_ptr,SInteractionInfo *out_info);
 int __cdecl core_manpuz_cpp_CMirrorHack_startInteraction_FUN_004cbd30(CMirrorHack *this_ptr,CDemonActor *user);
 int __cdecl core_manpuz_cpp_CMirrorHack_updateInteraction_FUN_004cbd50(CMirrorHack *this_ptr,UOrientationVector *user_orientation,SPlayerInput *player_control);
-void __cdecl core_manpuz_cpp_CMirrorHack_stopUsing_FUN_004cbdb0(CMirrorHack *this_ptr,CDemonActor *user);
+void __cdecl core_manpuz_cpp_CMirrorHack_stopInteraction_FUN_004cbdb0(CMirrorHack *this_ptr,CDemonActor *user);
 CMirrorHack * __cdecl core_manpuz_cpp_CMirrorHack_dtor_FUN_004cbdd0(CMirrorHack *this_ptr,uint flags);
 CMansionPuzzleCircle * __cdecl core_manpuz_cpp_CMansionPuzzleCircle_dtor_FUN_004cbe20(CMansionPuzzleCircle *this_ptr,uint flags);
 SReflector * __cdecl core_manpuz_cpp_SReflector_ctor_FUN_004cbeb0(SReflector *this_ptr);

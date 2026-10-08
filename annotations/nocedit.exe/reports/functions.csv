@@ -212,7 +212,7 @@ core_actor.cpp_CDemonActor_onDropped_FUN_00409040,00409040,core/actor.cpp,6,0,,6
 core_actor.cpp_CDemonActor_getCarrier_FUN_00409060,00409060,core/actor.cpp,6,0,,6
 core_actor.cpp_CDemonActor_drop_FUN_00409080,00409080,core/actor.cpp,6,0,,6
 core_actor.cpp_CDemonActor_getPathMap_FUN_004090a0,004090a0,core/actor.cpp,6,0,,6
-core_actor.cpp_CDemonActor_testPointInCylinder_FUN_004090c0,004090c0,core/actor.cpp,19,0,,19
+core_actor.cpp_CDemonActor_testCylinderCollision_FUN_004090c0,004090c0,core/actor.cpp,19,0,,19
 core_actor.cpp_CDemonActor_testLineIntersection_FUN_00409150,00409150,core/actor.cpp,34,0,,34
 core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_00409270,00409270,core/actor.cpp,66,0,,66
 core_actor.cpp_CDemonActor_testRayIntersection_FUN_004093f0,004093f0,core/actor.cpp,15,0,,15
@@ -282,7 +282,7 @@ core_actor.cpp_castToClassHash_FUN_0040c790,0040c790,core/actor.cpp,9,0,,9
 core_actor.cpp_syncActorTypeIDs_FUN_0040c7c0,0040c7c0,core/actor.cpp,17,0,,17
 core_actor.cpp_resetActorTypeInfo_FUN_0040c7f0,0040c7f0,core/actor.cpp,17,0,,17
 core_actor.cpp_CDemonActor_processFootstep_FUN_0040c830,0040c830,core/actor.cpp,23,0,,23
-core_actor.cpp_CDemonActor_processFootstepAt_FUN_0040c8f0,0040c8f0,core/actor.cpp,36,0,,36
+core_actor.cpp_CDemonActor_processFootstepAtOffset_FUN_0040c8f0,0040c8f0,core/actor.cpp,36,0,,36
 core_actor.cpp_CDemonActor_handleFootstep_FUN_0040ca10,0040ca10,core/actor.cpp,53,0,,53
 core_actor.cpp_setRandomSeed_FUN_0040cb90,0040cb90,core/actor.cpp,5,0,,5
 core_actor.cpp_generateRandomValue_FUN_0040cba0,0040cba0,core/actor.cpp,5,0,,5
@@ -420,7 +420,7 @@ core_armour.cpp_factoryFuncArmour_FUN_00412160,00412160,core/armour.cpp,10,0,,10
 core_armour.cpp_CArmour_getActorType_FUN_00412190,00412190,core/armour.cpp,4,0,,4
 core_armour.cpp_CArmour_ctor_FUN_004121a0,004121a0,core/armour.cpp,32,0,,32
 core_armour.cpp_CArmour_setup_FUN_00412240,00412240,core/armour.cpp,6,0,,6
-core_armour.cpp_CArmour_process_FUN_00412260,00412260,core/armour.cpp,55,0,,55
+core_armour.cpp_CArmour_process_FUN_00412260,00412260,core/armour.cpp,56,0,,56
 core_armour.cpp_CArmour_archive_FUN_004123a0,004123a0,core/armour.cpp,12,0,,12
 core_armour.cpp_CArmour_processDamage_FUN_00412400,00412400,core/armour.cpp,9,0,,9
 core_armour.cpp_CArmour_getTargetPoints_FUN_00412440,00412440,core/armour.cpp,4,0,,4
@@ -438,7 +438,7 @@ core_backgnd.cpp_staticInit_FUN_00412740,00412740,core/backgnd.cpp,8,0,,8
 core_backgnd.cpp_factoryFuncBackgroundActor_FUN_00412770,00412770,core/backgnd.cpp,10,0,,10
 core_backgnd.cpp_CBackgroundActor_getActorType_FUN_004127a0,004127a0,core/backgnd.cpp,4,0,,4
 core_backgnd.cpp_CBackgroundActor_ctor_FUN_004127b0,004127b0,core/backgnd.cpp,13,0,,13
-core_backgnd.cpp_CBackgroundActor_setup_FUN_00412810,00412810,core/backgnd.cpp,9,0,,9
+core_backgnd.cpp_CBackgroundActor_setup_FUN_00412810,00412810,core/backgnd.cpp,7,0,,7
 core_backgnd.cpp_CBackgroundActor_process_FUN_00412850,00412850,core/backgnd.cpp,4,0,,4
 core_backgnd.cpp_CBackgroundActor_renderBackground_FUN_00412860,00412860,core/backgnd.cpp,18,0,,18
 core_backgnd.cpp_CBackgroundActor_renderOpaque_FUN_004128d0,004128d0,core/backgnd.cpp,18,0,,18
@@ -518,7 +518,7 @@ core_batcreat.cpp_factoryFuncBatCreature_FUN_004150b0,004150b0,core/batcreat.cpp
 core_batcreat.cpp_CBatCreature_getActorType_FUN_004150e0,004150e0,core/batcreat.cpp,4,0,,4
 core_batcreat.cpp_CBatCreature_ctor_FUN_004150f0,004150f0,core/batcreat.cpp,17,0,,17
 core_batcreat.cpp_CBatCreature_setup_FUN_00415150,00415150,core/batcreat.cpp,93,0,,93
-core_batcreat.cpp_CBatCreature_process_FUN_00415470,00415470,core/batcreat.cpp,351,0,,351
+core_batcreat.cpp_CBatCreature_process_FUN_00415470,00415470,core/batcreat.cpp,352,0,,352
 core_batcreat.cpp_CBatCreature_archive_FUN_00415d70,00415d70,core/batcreat.cpp,11,0,,11
 core_batcreat.cpp_CBatCreature_processDismemberment_FUN_00415dd0,00415dd0,core/batcreat.cpp,95,0,,95
 core_batcreat.cpp_CBatCreature_processDamage_FUN_00416030,00416030,core/batcreat.cpp,81,0,,81
@@ -533,7 +533,7 @@ core_batman.cpp_CBatman_getActorType_FUN_00416440,00416440,core/batman.cpp,4,0,,
 core_batman.cpp_CBatman_ctor_FUN_00416450,00416450,core/batman.cpp,36,0,,36
 core_batman.cpp_CBatman_setup_FUN_00416510,00416510,core/batman.cpp,89,0,,89
 core_batman.cpp_CBatman_pickRandomMovementState_FUN_004167f0,004167f0,core/batman.cpp,15,0,,15
-core_batman.cpp_CBatman_process_FUN_00416870,00416870,core/batman.cpp,460,0,,460
+core_batman.cpp_CBatman_process_FUN_00416870,00416870,core/batman.cpp,461,0,,461
 core_batman.cpp_CBatman_renderOpaque_FUN_004173b0,004173b0,core/batman.cpp,68,0,,68
 core_batman.cpp_CBatman_archive_FUN_00417580,00417580,core/batman.cpp,25,0,,25
 core_batman.cpp_CBatman_processDismemberment_FUN_00417660,00417660,core/batman.cpp,126,0,,126
@@ -565,7 +565,7 @@ core_beast.cpp_factoryFuncBeast_FUN_004181e0,004181e0,core/beast.cpp,10,0,,10
 core_beast.cpp_CBeast_getActorType_FUN_00418210,00418210,core/beast.cpp,4,0,,4
 core_beast.cpp_CBeast_ctor_FUN_00418220,00418220,core/beast.cpp,17,0,,17
 core_beast.cpp_CBeast_setup_FUN_00418280,00418280,core/beast.cpp,6,0,,6
-core_beast.cpp_CBeast_process_FUN_004182a0,004182a0,core/beast.cpp,25,0,,25
+core_beast.cpp_CBeast_process_FUN_004182a0,004182a0,core/beast.cpp,26,0,,26
 core_beast.cpp_CBeast_archive_FUN_00418330,00418330,core/beast.cpp,11,0,,11
 core_beast.cpp_CBeast_processDamage_FUN_00418380,00418380,core/beast.cpp,6,0,,6
 core_beast.cpp_CBeast_getDeathState_FUN_004183a0,004183a0,core/beast.cpp,4,0,,4
@@ -579,7 +579,7 @@ core_biggs.cpp_factoryFuncBiggs_FUN_00418580,00418580,core/biggs.cpp,10,0,,10
 core_biggs.cpp_CBiggs_getActorType_FUN_004185b0,004185b0,core/biggs.cpp,4,0,,4
 core_biggs.cpp_CBiggs_ctor_FUN_004185c0,004185c0,core/biggs.cpp,39,0,,39
 core_biggs.cpp_CBiggs_setup_FUN_00418680,00418680,core/biggs.cpp,20,0,,20
-core_biggs.cpp_CBiggs_process_FUN_00418700,00418700,core/biggs.cpp,115,0,,115
+core_biggs.cpp_CBiggs_process_FUN_00418700,00418700,core/biggs.cpp,116,0,,116
 core_biggs.cpp_CBiggs_renderOpaque_FUN_004189b0,004189b0,core/biggs.cpp,47,0,,47
 core_biggs.cpp_CBiggs_archive_FUN_00418ac0,00418ac0,core/biggs.cpp,14,0,,14
 core_biggs.cpp_CBiggs_processDamage_FUN_00418b50,00418b50,core/biggs.cpp,33,0,,33
@@ -642,7 +642,7 @@ core_boneguy.cpp_rgbToHsv_FUN_0041b860,0041b860,core/boneguy.cpp,58,0,,58
 core_boneguy.cpp_hsvToRgb_FUN_0041ba10,0041ba10,core/boneguy.cpp,71,0,,71
 core_boneguy.cpp_CBoneGuy_ctor_FUN_0041bbc0,0041bbc0,core/boneguy.cpp,60,0,,60
 core_boneguy.cpp_CBoneGuy_setup_FUN_0041bd90,0041bd90,core/boneguy.cpp,55,0,,55
-core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90,0041bf90,core/boneguy.cpp,431,0,,431
+core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90,0041bf90,core/boneguy.cpp,432,0,,432
 core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40,0041ca40,core/boneguy.cpp,78,0,,78
 core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_0041cc40,0041cc40,core/boneguy.cpp,162,0,,162
 core_boneguy.cpp_CBoneGuy_renderOpaque_FUN_0041d180,0041d180,core/boneguy.cpp,10,0,,10
@@ -747,7 +747,7 @@ core_bride.cpp_factoryFuncBride_FUN_00423760,00423760,core/bride.cpp,10,0,,10
 core_bride.cpp_CBride_getActorType_FUN_00423790,00423790,core/bride.cpp,4,0,,4
 core_bride.cpp_CBride_ctor_FUN_004237a0,004237a0,core/bride.cpp,18,0,,18
 core_bride.cpp_CBride_setup_FUN_00423810,00423810,core/bride.cpp,68,0,,68
-core_bride.cpp_CBride_process_FUN_00423a30,00423a30,core/bride.cpp,392,0,,392
+core_bride.cpp_CBride_process_FUN_00423a30,00423a30,core/bride.cpp,393,0,,393
 core_bride.cpp_CBride_archive_FUN_00424560,00424560,core/bride.cpp,19,0,,19
 core_bride.cpp_CBride_processDismemberment_FUN_00424600,00424600,core/bride.cpp,82,0,,82
 core_bride.cpp_CBride_processDamage_FUN_00424830,00424830,core/bride.cpp,71,0,,71
@@ -761,7 +761,7 @@ core_bugs.cpp_factoryFuncBugs_FUN_00424c70,00424c70,core/bugs.cpp,10,0,,10
 core_bugs.cpp_CBugs_getActorType_FUN_00424ca0,00424ca0,core/bugs.cpp,4,0,,4
 core_bugs.cpp_CBugs_ctor_FUN_00424cb0,00424cb0,core/bugs.cpp,70,0,,70
 core_bugs.cpp_CBugs_setup_FUN_00424e50,00424e50,core/bugs.cpp,92,0,,92
-core_bugs.cpp_CBugs_process_FUN_004250f0,004250f0,core/bugs.cpp,29,0,,29
+core_bugs.cpp_CBugs_process_FUN_004250f0,004250f0,core/bugs.cpp,30,0,,30
 core_bugs.cpp_CBugs_renderOpaque_FUN_004251b0,004251b0,core/bugs.cpp,59,0,,59
 core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_00425340,00425340,core/bugs.cpp,63,0,,63
 core_bugs.cpp_CBugs_getBoundingBox_FUN_004254b0,004254b0,core/bugs.cpp,10,0,,10
@@ -821,7 +821,7 @@ core_charactr.cpp_CCharacter_applyDamage_FUN_00428ee0,00428ee0,core/charactr.cpp
 core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40,00428f40,core/charactr.cpp,292,0,,292
 core_charactr.cpp_CCharacter_isOnGround_FUN_004297e0,004297e0,core/charactr.cpp,13,0,,13
 core_charactr.cpp_CCharacter_preProcess_FUN_00429820,00429820,core/charactr.cpp,10,0,,10
-core_charactr.cpp_CCharacter_process_FUN_00429870,00429870,core/charactr.cpp,76,0,,76
+core_charactr.cpp_CCharacter_processCharacter_FUN_00429870,00429870,core/charactr.cpp,76,0,,76
 core_charactr.cpp_CCharacter_renderCharacter_FUN_00429aa0,00429aa0,core/charactr.cpp,24,0,,24
 core_charactr.cpp_CCharacter_renderCollision_FUN_00429b40,00429b40,core/charactr.cpp,258,0,,258
 core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0,0042a2c0,core/charactr.cpp,32,0,,32
@@ -861,7 +861,7 @@ core_charactr.cpp_CCharacter_setWalkTarget_FUN_0042c920,0042c920,core/charactr.c
 core_charactr.cpp_CCharacter_setWalkTargetImmediate_FUN_0042c9d0,0042c9d0,core/charactr.cpp,11,0,,11
 core_charactr.cpp_CCharacter_setWalkTimeout_FUN_0042ca20,0042ca20,core/charactr.cpp,5,0,,5
 core_charactr.cpp_CCharacter_isWalkComplete_FUN_0042ca30,0042ca30,core/charactr.cpp,8,0,,8
-core_charactr.cpp_CCharacter_canWalk_FUN_0042ca60,0042ca60,core/charactr.cpp,4,0,,4
+core_charactr.cpp_CCharacter_isInvulnerable_FUN_0042ca60,0042ca60,core/charactr.cpp,4,0,,4
 core_charactr.cpp_CCharacter_processWalking_FUN_0042ca70,0042ca70,core/charactr.cpp,107,0,,107
 core_charactr.cpp_CCharacter_setDoorTarget_FUN_0042cd50,0042cd50,core/charactr.cpp,5,0,,5
 core_charactr.cpp_CCharacter_clearDoorTarget_FUN_0042cd60,0042cd60,core/charactr.cpp,9,0,,9
@@ -1119,7 +1119,7 @@ core_colonel.cpp_factoryFuncColonel_FUN_0043f7a0,0043f7a0,core/colonel.cpp,11,0,
 core_colonel.cpp_CColonel_getActorType_FUN_0043f7d0,0043f7d0,core/colonel.cpp,4,0,,4
 core_colonel.cpp_CColonel_ctor_FUN_0043f7e0,0043f7e0,core/colonel.cpp,15,0,,15
 core_colonel.cpp_CColonel_setup_FUN_0043f850,0043f850,core/colonel.cpp,43,0,,43
-core_colonel.cpp_CColonel_process_FUN_0043fa00,0043fa00,core/colonel.cpp,244,0,,244
+core_colonel.cpp_CColonel_process_FUN_0043fa00,0043fa00,core/colonel.cpp,245,0,,245
 core_colonel.cpp_CColonel_processAI_FUN_0043ff20,0043ff20,core/colonel.cpp,174,0,,174
 core_colonel.cpp_CColonel_processMotionEvents_FUN_00440430,00440430,core/colonel.cpp,15,0,,15
 core_colonel.cpp_CColonel_archive_FUN_00440490,00440490,core/colonel.cpp,5,0,,5
@@ -1186,7 +1186,7 @@ core_cow.cpp_factoryFuncZombieCow_FUN_00444100,00444100,core/cow.cpp,10,0,,10
 core_cow.cpp_CZombieCow_getActorType_FUN_00444130,00444130,core/cow.cpp,4,0,,4
 core_cow.cpp_CZombieCow_ctor_FUN_00444140,00444140,core/cow.cpp,18,0,,18
 core_cow.cpp_CZombieCow_setup_FUN_004441b0,004441b0,core/cow.cpp,47,0,,47
-core_cow.cpp_CZombieCow_process_FUN_00444310,00444310,core/cow.cpp,226,0,,226
+core_cow.cpp_CZombieCow_process_FUN_00444310,00444310,core/cow.cpp,227,0,,227
 core_cow.cpp_CZombieCow_archive_FUN_00444840,00444840,core/cow.cpp,14,0,,14
 core_cow.cpp_CZombieCow_processDismemberment_FUN_004448c0,004448c0,core/cow.cpp,88,0,,88
 core_cow.cpp_CZombieCow_processDamage_FUN_00444b40,00444b40,core/cow.cpp,35,0,,35
@@ -1223,7 +1223,7 @@ core_crate.cpp_CCrate_ctor_FUN_004484d0,004484d0,core/crate.cpp,13,0,,13
 core_crate.cpp_CCrate_setup_FUN_00448530,00448530,core/crate.cpp,24,0,,24
 core_crate.cpp_CCrate_canPickup_FUN_00448600,00448600,core/crate.cpp,11,0,,11
 core_crate.cpp_CCrate_pickup_FUN_00448620,00448620,core/crate.cpp,5,0,,5
-core_crate.cpp_CCrate_drop_FUN_00448630,00448630,core/crate.cpp,7,0,,7
+core_crate.cpp_CCrate_onDropped_FUN_00448630,00448630,core/crate.cpp,7,0,,7
 core_crate.cpp_CCrate_getCarrier_FUN_00448650,00448650,core/crate.cpp,4,0,,4
 core_crate.cpp_CCrate_process_FUN_00448660,00448660,core/crate.cpp,93,0,,93
 core_crate.cpp_CCrate_renderOpaque_FUN_00448880,00448880,core/crate.cpp,18,0,,18
@@ -1721,7 +1721,7 @@ core_dog.cpp_factoryFuncZombieDog_FUN_0047f010,0047f010,core/dog.cpp,10,0,,10
 core_dog.cpp_CZombieDog_getActorType_FUN_0047f040,0047f040,core/dog.cpp,4,0,,4
 core_dog.cpp_CZombieDog_ctor_FUN_0047f050,0047f050,core/dog.cpp,18,0,,18
 core_dog.cpp_CZombieDog_setup_FUN_0047f0c0,0047f0c0,core/dog.cpp,15,0,,15
-core_dog.cpp_CZombieDog_process_FUN_0047f140,0047f140,core/dog.cpp,282,0,,282
+core_dog.cpp_CZombieDog_process_FUN_0047f140,0047f140,core/dog.cpp,283,0,,283
 core_dog.cpp_CZombieDog_archive_FUN_0047f7b0,0047f7b0,core/dog.cpp,14,0,,14
 core_dog.cpp_CZombieDog_processDamage_FUN_0047f820,0047f820,core/dog.cpp,34,0,,34
 core_dog.cpp_CZombieDog_getTargetPoints_FUN_0047f8d0,0047f8d0,core/dog.cpp,14,0,,14
@@ -1804,7 +1804,7 @@ core_dracbrid.cpp_factoryFuncDraculaBride_FUN_00483f80,00483f80,core/dracbrid.cp
 core_dracbrid.cpp_CDraculaBride_getActorType_FUN_00483fb0,00483fb0,core/dracbrid.cpp,4,0,,4
 core_dracbrid.cpp_CDraculaBride_ctor_FUN_00483fc0,00483fc0,core/dracbrid.cpp,38,0,,38
 core_dracbrid.cpp_CDraculaBride_setup_FUN_004840b0,004840b0,core/dracbrid.cpp,98,0,,98
-core_dracbrid.cpp_CDraculaBride_process_FUN_00484410,00484410,core/dracbrid.cpp,752,0,,752
+core_dracbrid.cpp_CDraculaBride_process_FUN_00484410,00484410,core/dracbrid.cpp,753,0,,753
 core_dracbrid.cpp_CDraculaBride_explode_FUN_004858f0,004858f0,core/dracbrid.cpp,72,0,,72
 core_dracbrid.cpp_CDraculaBride_dismemberPart_FUN_00485b20,00485b20,core/dracbrid.cpp,22,0,,22
 core_dracbrid.cpp_CDraculaBride_getCollisionType_FUN_00485bc0,00485bc0,core/dracbrid.cpp,10,0,,10
@@ -2025,7 +2025,7 @@ core_drone.cpp_factoryFuncDrone_FUN_0048eb10,0048eb10,core/drone.cpp,10,0,,10
 core_drone.cpp_CDrone_getActorType_FUN_0048eb40,0048eb40,core/drone.cpp,4,0,,4
 core_drone.cpp_CDrone_ctor_FUN_0048eb50,0048eb50,core/drone.cpp,19,0,,19
 core_drone.cpp_CDrone_setup_FUN_0048ebc0,0048ebc0,core/drone.cpp,19,0,,19
-core_drone.cpp_CDrone_process_FUN_0048ec70,0048ec70,core/drone.cpp,275,0,,275
+core_drone.cpp_CDrone_process_FUN_0048ec70,0048ec70,core/drone.cpp,276,0,,276
 core_drone.cpp_CDrone_archive_FUN_0048f2f0,0048f2f0,core/drone.cpp,14,0,,14
 core_drone.cpp_CDrone_processDamage_FUN_0048f360,0048f360,core/drone.cpp,53,0,,53
 core_drone.cpp_CDrone_getTargetPoints_FUN_0048f4d0,0048f4d0,core/drone.cpp,14,0,,14
@@ -2645,7 +2645,7 @@ core_fire.cpp_CFireEffect_createLaserSegment_FUN_004c7eb0,004c7eb0,core/fire.cpp
 core_fire.cpp_CFireEffect_createLaserCone_FUN_004c7f20,004c7f20,core/fire.cpp,11,0,,11
 core_fire.cpp_CFireEffect_createLaserPath_FUN_004c7f80,004c7f80,core/fire.cpp,64,0,,64
 core_fire.cpp_SLaserInfo_ctor_FUN_004c81f0,004c81f0,core/fire.cpp,12,0,,12
-core_fire.cpp_CFireEffect_traceLaser_FUN_004c8230,004c8230,core/fire.cpp,298,0,,298
+core_fire.cpp_CFireEffect_traceLaser_FUN_004c8230,004c8230,core/fire.cpp,299,0,,299
 core_fire.cpp_CFireEffect_createExplosion_FUN_004c8c10,004c8c10,core/fire.cpp,13,0,,13
 core_fire.cpp_CFireEffect_getExplosionEffect_FUN_004c8c90,004c8c90,core/fire.cpp,47,0,,47
 core_fire.cpp_CFireEffect_createToss_FUN_004c8dd0,004c8dd0,core/fire.cpp,13,0,,13
@@ -2881,7 +2881,7 @@ core_gabriela.cpp_factoryFuncGabriella_FUN_004d2ae0,004d2ae0,core/gabriela.cpp,1
 core_gabriela.cpp_CGabriella_getActorType_FUN_004d2b10,004d2b10,core/gabriela.cpp,4,0,,4
 core_gabriela.cpp_CGabriella_ctor_FUN_004d2b20,004d2b20,core/gabriela.cpp,32,0,,32
 core_gabriela.cpp_CGabriella_setup_FUN_004d2c40,004d2c40,core/gabriela.cpp,74,0,,74
-core_gabriela.cpp_CGabriella_process_FUN_004d2ea0,004d2ea0,core/gabriela.cpp,691,0,,691
+core_gabriela.cpp_CGabriella_process_FUN_004d2ea0,004d2ea0,core/gabriela.cpp,692,0,,692
 core_gabriela.cpp_CGabriella_processAI_FUN_004d4190,004d4190,core/gabriela.cpp,206,0,,206
 core_gabriela.cpp_CGabriella_processMotionEvents_FUN_004d4890,004d4890,core/gabriela.cpp,162,0,,162
 core_gabriela.cpp_CGabriella_getFlashlightMinAngle_FUN_004d4c90,004d4c90,core/gabriela.cpp,14,0,,14
@@ -2983,7 +2983,7 @@ core_gargoyle.cpp_CGargoyle_getActorType_FUN_004e44d0,004e44d0,core/gargoyle.cpp
 core_gargoyle.cpp_CGargoyle_ctor_FUN_004e44e0,004e44e0,core/gargoyle.cpp,32,0,,32
 core_gargoyle.cpp_CGargoyle_setup_FUN_004e45e0,004e45e0,core/gargoyle.cpp,85,0,,85
 core_gargoyle.cpp_CGargoyle_shouldMove_FUN_004e48a0,004e48a0,core/gargoyle.cpp,52,0,,52
-core_gargoyle.cpp_CGargoyle_process_FUN_004e4a00,004e4a00,core/gargoyle.cpp,422,0,,422
+core_gargoyle.cpp_CGargoyle_process_FUN_004e4a00,004e4a00,core/gargoyle.cpp,423,0,,423
 core_gargoyle.cpp_CGargoyle_renderOpaque_FUN_004e53f0,004e53f0,core/gargoyle.cpp,19,0,,19
 core_gargoyle.cpp_CGargoyle_archive_FUN_004e5470,004e5470,core/gargoyle.cpp,18,0,,18
 core_gargoyle.cpp_CGargoyle_processDismemberment_FUN_004e5530,004e5530,core/gargoyle.cpp,98,0,,98
@@ -3013,7 +3013,7 @@ core_ghoul.cpp_CGhoul_getActorType_FUN_004e6020,004e6020,core/ghoul.cpp,4,0,,4
 core_ghoul.cpp_CGhoul_ctor_FUN_004e6030,004e6030,core/ghoul.cpp,37,0,,37
 core_ghoul.cpp_CGhoul_setup_FUN_004e6160,004e6160,core/ghoul.cpp,76,0,,76
 core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004e63d0,004e63d0,core/ghoul.cpp,66,0,,66
-core_ghoul.cpp_CGhoul_process_FUN_004e6600,004e6600,core/ghoul.cpp,1052,0,,1052
+core_ghoul.cpp_CGhoul_process_FUN_004e6600,004e6600,core/ghoul.cpp,1053,0,,1053
 core_ghoul.cpp_CGhoul_renderBackground_FUN_004e8190,004e8190,core/ghoul.cpp,8,0,,8
 core_ghoul.cpp_CGhoul_archive_FUN_004e81c0,004e81c0,core/ghoul.cpp,28,0,,28
 core_ghoul.cpp_CGhoul_canBeAttracted_FUN_004e82d0,004e82d0,core/ghoul.cpp,61,0,,61
@@ -3152,7 +3152,7 @@ core_haystack.cpp_factoryFuncHaystack_FUN_004f0bd0,004f0bd0,core/haystack.cpp,11
 core_haystack.cpp_CHaystack_getActorType_FUN_004f0c00,004f0c00,core/haystack.cpp,4,0,,4
 core_haystack.cpp_CHaystack_ctor_FUN_004f0c10,004f0c10,core/haystack.cpp,15,0,,15
 core_haystack.cpp_CHaystack_setup_FUN_004f0c80,004f0c80,core/haystack.cpp,43,0,,43
-core_haystack.cpp_CHaystack_process_FUN_004f0e40,004f0e40,core/haystack.cpp,270,0,,270
+core_haystack.cpp_CHaystack_process_FUN_004f0e40,004f0e40,core/haystack.cpp,271,0,,271
 core_haystack.cpp_CHaystack_updateAI_FUN_004f13f0,004f13f0,core/haystack.cpp,185,0,,185
 core_haystack.cpp_CHaystack_advanceMotion_FUN_004f1970,004f1970,core/haystack.cpp,51,0,,51
 core_haystack.cpp_CHaystack_checkMeleeHit_FUN_004f1ab0,004f1ab0,core/haystack.cpp,32,0,,32
@@ -3194,7 +3194,7 @@ core_hero.cpp_CHero_archive_FUN_004f2610,004f2610,core/hero.cpp,75,0,,75
 core_hero.cpp_CHero_getPathMap_FUN_004f2870,004f2870,core/hero.cpp,4,0,,4
 core_hero.cpp_CHero_isGrabbable_FUN_004f2880,004f2880,core/hero.cpp,4,0,,4
 core_hero.cpp_CHero_canBeGrabbed_FUN_004f2890,004f2890,core/hero.cpp,17,0,,17
-core_hero.cpp_CHero_canWalk_FUN_004f28a0,004f28a0,core/hero.cpp,4,0,,4
+core_hero.cpp_CHero_isInvulnerable_FUN_004f28a0,004f28a0,core/hero.cpp,4,0,,4
 core_hero.cpp_CHero_getGrabbed_FUN_004f28d0,004f28d0,core/hero.cpp,48,0,,48
 core_hero.cpp_CHero_releaseFromGrab_FUN_004f29b0,004f29b0,core/hero.cpp,30,0,,30
 core_hero.cpp_CHero_createDefaultWeapon_FUN_004f2a30,004f2a30,core/hero.cpp,34,0,,34
@@ -3238,7 +3238,7 @@ core_hiram.cpp_CHiram_getActorType_FUN_004f43e0,004f43e0,core/hiram.cpp,4,0,,4
 core_hiram.cpp_CHiram_ctor_FUN_004f43f0,004f43f0,core/hiram.cpp,25,0,,25
 core_hiram.cpp_CHiram_dtor_FUN_004f4450,004f4450,core/hiram.cpp,38,0,,38
 core_hiram.cpp_CHiram_setup_FUN_004f4530,004f4530,core/hiram.cpp,6,0,,6
-core_hiram.cpp_CHiram_process_FUN_004f4550,004f4550,core/hiram.cpp,59,0,,59
+core_hiram.cpp_CHiram_process_FUN_004f4550,004f4550,core/hiram.cpp,60,0,,60
 core_hiram.cpp_CHiram_archive_FUN_004f4690,004f4690,core/hiram.cpp,5,0,,5
 core_hiram.cpp_CHiram_getPropertyList_FUN_004f46a0,004f46a0,core/hiram.cpp,7,0,,7
 core_hiram.cpp_CHiram_addFilesToExtract_FUN_004f46e0,004f46e0,core/hiram.cpp,5,0,,5
@@ -3249,7 +3249,7 @@ core_hostage.cpp_CHostage_getActorType_FUN_004f4830,004f4830,core/hostage.cpp,4,
 core_hostage.cpp_CHostage_ctor_FUN_004f4840,004f4840,core/hostage.cpp,46,0,,46
 core_hostage.cpp_CHostage_setup_FUN_004f4970,004f4970,core/hostage.cpp,67,0,,67
 core_hostage.cpp_CHostage_renderOpaque_FUN_004f4b40,004f4b40,core/hostage.cpp,17,0,,17
-core_hostage.cpp_CHostage_process_FUN_004f4bd0,004f4bd0,core/hostage.cpp,680,0,,680
+core_hostage.cpp_CHostage_process_FUN_004f4bd0,004f4bd0,core/hostage.cpp,681,0,,681
 core_hostage.cpp_CHostage_processGrabberFlee_FUN_004f5ff0,004f5ff0,core/hostage.cpp,40,0,,40
 core_hostage.cpp_CHostage_renderBackground_FUN_004f6120,004f6120,core/hostage.cpp,17,0,,17
 core_hostage.cpp_CHostage_archive_FUN_004f6170,004f6170,core/hostage.cpp,56,0,,56
@@ -3266,7 +3266,7 @@ core_hotdemon.cpp_factoryFuncHotDemon_FUN_004f6c60,004f6c60,core/hotdemon.cpp,11
 core_hotdemon.cpp_CHotDemon_getActorType_FUN_004f6c90,004f6c90,core/hotdemon.cpp,4,0,,4
 core_hotdemon.cpp_CHotDemon_ctor_FUN_004f6ca0,004f6ca0,core/hotdemon.cpp,17,0,,17
 core_hotdemon.cpp_CHotDemon_setup_FUN_004f6d00,004f6d00,core/hotdemon.cpp,56,0,,56
-core_hotdemon.cpp_CHotDemon_process_FUN_004f6f20,004f6f20,core/hotdemon.cpp,315,0,,315
+core_hotdemon.cpp_CHotDemon_process_FUN_004f6f20,004f6f20,core/hotdemon.cpp,316,0,,316
 core_hotdemon.cpp_CHotDemon_getDeathState_FUN_004f7680,004f7680,core/hotdemon.cpp,16,0,,16
 core_hotdemon.cpp_CHotDemon_archive_FUN_004f76c0,004f76c0,core/hotdemon.cpp,11,0,,11
 core_hotdemon.cpp_CHotDemon_processDamage_FUN_004f7720,004f7720,core/hotdemon.cpp,72,0,,72
@@ -3289,7 +3289,7 @@ core_icepick.cpp_factoryFuncIcePick_FUN_004f7db0,004f7db0,core/icepick.cpp,11,0,
 core_icepick.cpp_CIcePick_getActorType_FUN_004f7de0,004f7de0,core/icepick.cpp,4,0,,4
 core_icepick.cpp_CIcePick_ctor_FUN_004f7df0,004f7df0,core/icepick.cpp,18,0,,18
 core_icepick.cpp_CIcePick_setup_FUN_004f7e80,004f7e80,core/icepick.cpp,58,0,,58
-core_icepick.cpp_CIcePick_process_FUN_004f80b0,004f80b0,core/icepick.cpp,313,0,,313
+core_icepick.cpp_CIcePick_process_FUN_004f80b0,004f80b0,core/icepick.cpp,314,0,,314
 core_icepick.cpp_CIcePick_updateShootBlend_FUN_004f8810,004f8810,core/icepick.cpp,58,0,,58
 core_icepick.cpp_CIcePick_findAndPickupGun_FUN_004f8970,004f8970,core/icepick.cpp,55,0,,55
 core_icepick.cpp_CIcePick_startThrowAttack_FUN_004f8ad0,004f8ad0,core/icepick.cpp,9,0,,9
@@ -3312,7 +3312,7 @@ core_imp.cpp_factoryFuncImp_FUN_004f9860,004f9860,core/imp.cpp,10,0,,10
 core_imp.cpp_CImp_getActorType_FUN_004f9890,004f9890,core/imp.cpp,4,0,,4
 core_imp.cpp_CImp_ctor_FUN_004f98a0,004f98a0,core/imp.cpp,18,0,,18
 core_imp.cpp_CImp_setup_FUN_004f9910,004f9910,core/imp.cpp,90,0,,90
-core_imp.cpp_CImp_process_FUN_004f9c30,004f9c30,core/imp.cpp,492,0,,492
+core_imp.cpp_CImp_process_FUN_004f9c30,004f9c30,core/imp.cpp,493,0,,493
 core_imp.cpp_setVector_FUN_004fa900,004fa900,core/imp.cpp,7,0,,7
 core_imp.cpp_CImp_getCarryObjToBodyXForm_FUN_004fa920,004fa920,core/imp.cpp,70,0,,70
 core_imp.cpp_CImp_attractActorToward_FUN_004faaf0,004faaf0,core/imp.cpp,4,0,,4
@@ -3440,7 +3440,7 @@ core_larva.cpp_factoryFuncLarva_FUN_00502f50,00502f50,core/larva.cpp,10,0,,10
 core_larva.cpp_CLarva_getActorType_FUN_00502f80,00502f80,core/larva.cpp,4,0,,4
 core_larva.cpp_CLarva_ctor_FUN_00502f90,00502f90,core/larva.cpp,21,0,,21
 core_larva.cpp_CLarva_setup_FUN_00503020,00503020,core/larva.cpp,13,0,,13
-core_larva.cpp_CLarva_process_FUN_00503080,00503080,core/larva.cpp,332,0,,332
+core_larva.cpp_CLarva_process_FUN_00503080,00503080,core/larva.cpp,333,0,,333
 core_larva.cpp_CLarva_archive_FUN_00503960,00503960,core/larva.cpp,14,0,,14
 core_larva.cpp_getSizeCategory_FUN_005039d0,005039d0,core/larva.cpp,10,0,,10
 core_larva.cpp_CLarva_processDamage_FUN_00503a20,00503a20,core/larva.cpp,75,0,,75
@@ -3569,7 +3569,7 @@ core_manpuz.cpp_CMirrorHack_onLaserHit_FUN_0050b2c0,0050b2c0,core/manpuz.cpp,9,0
 core_manpuz.cpp_CMirrorHack_getInteractionInfo_FUN_0050b2f0,0050b2f0,core/manpuz.cpp,13,0,,13
 core_manpuz.cpp_CMirrorHack_startInteraction_FUN_0050b340,0050b340,core/manpuz.cpp,8,0,,8
 core_manpuz.cpp_CMirrorHack_updateInteraction_FUN_0050b360,0050b360,core/manpuz.cpp,20,0,,20
-core_manpuz.cpp_CMirrorHack_stopUsing_FUN_0050b3c0,0050b3c0,core/manpuz.cpp,8,0,,8
+core_manpuz.cpp_CMirrorHack_stopInteraction_FUN_0050b3c0,0050b3c0,core/manpuz.cpp,8,0,,8
 core_manpuz.cpp_CMansionPuzzleCircle_getPropertyList_FUN_0050b3e0,0050b3e0,core/manpuz.cpp,12,0,,12
 core_manpuz.cpp_CMansionPuzzleCircle_processInEditor_FUN_0050b440,0050b440,core/manpuz.cpp,144,0,,144
 core_manpuz.cpp_CMansionPuzzleCircle_addFilesToExtract_FUN_0050b7d0,0050b7d0,core/manpuz.cpp,9,0,,9
@@ -3827,7 +3827,7 @@ core_mimic.cpp_CMimic_getActorType_FUN_0051f1c0,0051f1c0,core/mimic.cpp,4,0,,4
 core_mimic.cpp_CMimic_ctor_FUN_0051f1d0,0051f1d0,core/mimic.cpp,43,0,,43
 core_mimic.cpp_CMimic_dtor_FUN_0051f2c0,0051f2c0,core/mimic.cpp,48,0,,48
 core_mimic.cpp_CMimic_setup_FUN_0051f3e0,0051f3e0,core/mimic.cpp,134,0,,134
-core_mimic.cpp_CMimic_process_FUN_0051f780,0051f780,core/mimic.cpp,65,0,,65
+core_mimic.cpp_CMimic_process_FUN_0051f780,0051f780,core/mimic.cpp,66,0,,66
 core_mimic.cpp_CMimic_updatePose_FUN_0051f930,0051f930,core/mimic.cpp,169,0,,169
 core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc0,0051fcc0,core/mimic.cpp,321,0,,321
 core_mimic.cpp_CMimic_setupCloth_FUN_00520500,00520500,core/mimic.cpp,51,0,,51
@@ -3927,7 +3927,7 @@ core_mobster.cpp_CMobster_ctor_FUN_00525200,00525200,core/mobster.cpp,50,0,,50
 core_mobster.cpp_CMobster_setup_FUN_00525340,00525340,core/mobster.cpp,93,0,,93
 core_mobster.cpp_CMobster_positionOnVehicle_FUN_00525650,00525650,core/mobster.cpp,39,0,,39
 core_mobster.cpp_CMobster_dismountVehicle_FUN_00525720,00525720,core/mobster.cpp,42,0,,42
-core_mobster.cpp_CMobster_process_FUN_00525840,00525840,core/mobster.cpp,594,0,,594
+core_mobster.cpp_CMobster_process_FUN_00525840,00525840,core/mobster.cpp,595,0,,595
 core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0,005267a0,core/mobster.cpp,129,0,,129
 core_mobster.cpp_setEulerAngles_FUN_00526b00,00526b00,core/mobster.cpp,7,0,,7
 core_mobster.cpp_CMobster_getCarryObjToBodyXForm_FUN_00526b20,00526b20,core/mobster.cpp,97,0,,97
@@ -3958,7 +3958,7 @@ core_moloch.cpp_CMoloch_getActorType_FUN_00528b20,00528b20,core/moloch.cpp,4,0,,
 core_moloch.cpp_CMoloch_ctor_FUN_00528b30,00528b30,core/moloch.cpp,41,0,,41
 core_moloch.cpp_CMoloch_dtor_FUN_00528bf0,00528bf0,core/moloch.cpp,21,0,,21
 core_moloch.cpp_CMoloch_setup_FUN_00528c70,00528c70,core/moloch.cpp,26,0,,26
-core_moloch.cpp_CMoloch_process_FUN_00528d20,00528d20,core/moloch.cpp,250,0,,250
+core_moloch.cpp_CMoloch_process_FUN_00528d20,00528d20,core/moloch.cpp,251,0,,251
 core_moloch.cpp_CMoloch_processAI_FUN_005293b0,005293b0,core/moloch.cpp,132,0,,132
 core_moloch.cpp_CMoloch_renderOpaque_FUN_00529750,00529750,core/moloch.cpp,47,0,,47
 core_moloch.cpp_CMoloch_archive_FUN_00529880,00529880,core/moloch.cpp,12,0,,12
@@ -4139,7 +4139,7 @@ core_msnedit.cpp_CDemonMission_showOptionsMenu_FUN_00537680,00537680,core/msnedi
 core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0,005379e0,core/msnedit.cpp,141,0,,141
 core_msnedit.cpp_copyFile_FUN_00537dd0,00537dd0,core/msnedit.cpp,48,0,,48
 core_msnedit.cpp_CDemonMission_saveWithNewName_FUN_00537f60,00537f60,core/msnedit.cpp,78,0,,78
-core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0,005381e0,core/msnedit.cpp,281,0,,281
+core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0,005381e0,core/msnedit.cpp,280,0,,280
 core_msnedit.cpp_CDemonMission_playMission_FUN_00538ba0,00538ba0,core/msnedit.cpp,52,0,,52
 core_msnedit.cpp_CDemonMission_addSet_FUN_00538d60,00538d60,core/msnedit.cpp,29,0,,29
 core_msnedit.cpp_CDemonMission_removeSet_FUN_00538df0,00538df0,core/msnedit.cpp,26,0,,26
@@ -4543,7 +4543,7 @@ core_scat.cpp_CScat_getActorType_FUN_00556ec0,00556ec0,core/scat.cpp,4,0,,4
 core_scat.cpp_CScat_ctor_FUN_00556ed0,00556ed0,core/scat.cpp,24,0,,24
 core_scat.cpp_CScat_setup_FUN_00556f90,00556f90,core/scat.cpp,48,0,,48
 core_scat.cpp_CScat_createDefaultWeapon_FUN_00557150,00557150,core/scat.cpp,26,0,,26
-core_scat.cpp_CScat_process_FUN_005571f0,005571f0,core/scat.cpp,311,0,,311
+core_scat.cpp_CScat_process_FUN_005571f0,005571f0,core/scat.cpp,312,0,,312
 core_scat.cpp_CScat_updateAI_FUN_005578e0,005578e0,core/scat.cpp,158,0,,158
 core_scat.cpp_CScat_advanceMotionWithGrabDamage_FUN_00557d20,00557d20,core/scat.cpp,27,0,,27
 core_scat.cpp_CScat_archive_FUN_00557db0,00557db0,core/scat.cpp,5,0,,5
@@ -4663,7 +4663,7 @@ core_sentinel.cpp_factoryFuncSentinel_FUN_00567d70,00567d70,core/sentinel.cpp,11
 core_sentinel.cpp_CSentinel_getActorType_FUN_00567da0,00567da0,core/sentinel.cpp,4,0,,4
 core_sentinel.cpp_CSentinel_ctor_FUN_00567db0,00567db0,core/sentinel.cpp,18,0,,18
 core_sentinel.cpp_CSentinel_setup_FUN_00567e20,00567e20,core/sentinel.cpp,47,0,,47
-core_sentinel.cpp_CSentinel_process_FUN_00568030,00568030,core/sentinel.cpp,457,0,,457
+core_sentinel.cpp_CSentinel_process_FUN_00568030,00568030,core/sentinel.cpp,458,0,,458
 core_sentinel.cpp_CSentinel_attractActorToward_FUN_00568b70,00568b70,core/sentinel.cpp,29,0,,29
 core_sentinel.cpp_CSentinel_archive_FUN_00568c70,00568c70,core/sentinel.cpp,13,0,,13
 core_sentinel.cpp_CSentinel_processDamage_FUN_00568cd0,00568cd0,core/sentinel.cpp,45,0,,45
@@ -5159,7 +5159,7 @@ core_smiley.cpp_factorFunc_FUN_005a23f0,005a23f0,core/smiley.cpp,10,0,,10
 core_smiley.cpp_CSmiley_getActorType_FUN_005a2420,005a2420,core/smiley.cpp,4,0,,4
 core_smiley.cpp_CSmiley_ctor_FUN_005a2430,005a2430,core/smiley.cpp,23,0,,23
 core_smiley.cpp_CSmiley_setup_FUN_005a24d0,005a24d0,core/smiley.cpp,95,0,,95
-core_smiley.cpp_CSmiley_process_FUN_005a2800,005a2800,core/smiley.cpp,392,0,,392
+core_smiley.cpp_CSmiley_process_FUN_005a2800,005a2800,core/smiley.cpp,393,0,,393
 core_smiley.cpp_CSmiley_attractActorToward_FUN_005a3160,005a3160,core/smiley.cpp,26,0,,26
 core_smiley.cpp_CSmiley_archive_FUN_005a3220,005a3220,core/smiley.cpp,12,0,,12
 core_smiley.cpp_CSmiley_reset_FUN_005a3280,005a3280,core/smiley.cpp,4,0,,4
@@ -5606,7 +5606,7 @@ core_stranger.cpp_factoryFuncStranger_FUN_005bb0e0,005bb0e0,core/stranger.cpp,11
 core_stranger.cpp_CStranger_getActorType_FUN_005bb110,005bb110,core/stranger.cpp,4,0,,4
 core_stranger.cpp_CStranger_ctor_FUN_005bb120,005bb120,core/stranger.cpp,100,0,,100
 core_stranger.cpp_CStranger_setup_FUN_005bb4b0,005bb4b0,core/stranger.cpp,110,0,,110
-core_stranger.cpp_CStranger_process_FUN_005bb830,005bb830,core/stranger.cpp,46,0,,46
+core_stranger.cpp_CStranger_process_FUN_005bb830,005bb830,core/stranger.cpp,47,0,,47
 core_stranger.cpp_CStranger_processFrame_FUN_005bb960,005bb960,core/stranger.cpp,1140,0,,1140
 core_stranger.cpp_CStranger_processMotionEvents_FUN_005bdd20,005bdd20,core/stranger.cpp,275,0,,275
 core_stranger.cpp_CStranger_getCarryLightIntensity_FUN_005be430,005be430,core/stranger.cpp,14,0,,14
@@ -5664,7 +5664,7 @@ core_succubus.cpp_factoryFuncSuccubus_FUN_005c6a40,005c6a40,core/succubus.cpp,11
 core_succubus.cpp_CSuccubus_getActorType_FUN_005c6a70,005c6a70,core/succubus.cpp,4,0,,4
 core_succubus.cpp_CSuccubus_ctor_FUN_005c6a80,005c6a80,core/succubus.cpp,42,0,,42
 core_succubus.cpp_CSuccubus_setup_FUN_005c6b60,005c6b60,core/succubus.cpp,98,0,,98
-core_succubus.cpp_CSuccubus_process_FUN_005c6e90,005c6e90,core/succubus.cpp,308,0,,308
+core_succubus.cpp_CSuccubus_process_FUN_005c6e90,005c6e90,core/succubus.cpp,309,0,,309
 core_succubus.cpp_CSuccubus_renderOpaque_FUN_005c7590,005c7590,core/succubus.cpp,57,0,,57
 core_succubus.cpp_CSuccubus_archive_FUN_005c7710,005c7710,core/succubus.cpp,11,0,,11
 core_succubus.cpp_CSuccubus_processDamage_FUN_005c7760,005c7760,core/succubus.cpp,6,0,,6
@@ -5864,7 +5864,7 @@ core_svetlana.cpp_factoryFuncSvetlana_FUN_005d8810,005d8810,core/svetlana.cpp,11
 core_svetlana.cpp_CSvetlana_getActorType_FUN_005d8840,005d8840,core/svetlana.cpp,4,0,,4
 core_svetlana.cpp_CSvetlana_ctor_FUN_005d8850,005d8850,core/svetlana.cpp,19,0,,19
 core_svetlana.cpp_CSvetlana_setup_FUN_005d88e0,005d88e0,core/svetlana.cpp,80,0,,80
-core_svetlana.cpp_CSvetlana_process_FUN_005d8ba0,005d8ba0,core/svetlana.cpp,296,0,,296
+core_svetlana.cpp_CSvetlana_process_FUN_005d8ba0,005d8ba0,core/svetlana.cpp,297,0,,297
 core_svetlana.cpp_CSvetlana_processAI_FUN_005d9260,005d9260,core/svetlana.cpp,243,0,,243
 core_svetlana.cpp_CSvetlana_advanceMotion_FUN_005d9970,005d9970,core/svetlana.cpp,34,0,,34
 core_svetlana.cpp_CSvetlana_performBladeAttack_FUN_005d9a10,005d9a10,core/svetlana.cpp,86,0,,86
@@ -5922,11 +5922,11 @@ core_tentacle.cpp_factoryFuncTentacle_FUN_005daf20,005daf20,core/tentacle.cpp,11
 core_tentacle.cpp_CTentacle_getActorType_FUN_005daf50,005daf50,core/tentacle.cpp,4,0,,4
 core_tentacle.cpp_CTentacle_ctor_FUN_005daf60,005daf60,core/tentacle.cpp,14,0,,14
 core_tentacle.cpp_CTentacle_setup_FUN_005dafc0,005dafc0,core/tentacle.cpp,18,0,,18
-core_tentacle.cpp_CTentacle_process_FUN_005db050,005db050,core/tentacle.cpp,258,0,,258
+core_tentacle.cpp_CTentacle_process_FUN_005db050,005db050,core/tentacle.cpp,259,0,,259
 core_tentacle.cpp_CTentacle_renderOpaque_FUN_005db840,005db840,core/tentacle.cpp,14,0,,14
 core_tentacle.cpp_CTentacle_archive_FUN_005db880,005db880,core/tentacle.cpp,17,0,,17
 core_tentacle.cpp_CTentacle_findNearbyTarget_FUN_005db900,005db900,core/tentacle.cpp,36,0,,36
-core_tentacle.cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0,005db9d0,core/tentacle.cpp,45,0,,45
+core_tentacle.cpp_CTentacle_attractActorToward_FUN_005db9d0,005db9d0,core/tentacle.cpp,45,0,,45
 core_tentacle.cpp_CTentacle_shouldIgnoreForTargeting_FUN_005dbb30,005dbb30,core/tentacle.cpp,15,0,,15
 core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70,005dbb70,core/tentacle.cpp,35,0,,35
 core_tentacle.cpp_CTentacle_getPropertyList_FUN_005dbc60,005dbc60,core/tentacle.cpp,13,0,,13
@@ -6118,7 +6118,7 @@ core_vampboss.cpp_CVampireBoss_getActorType_FUN_005e5580,005e5580,core/vampboss.
 core_vampboss.cpp_CVampireBoss_ctor_FUN_005e5590,005e5590,core/vampboss.cpp,37,0,,37
 core_vampboss.cpp_CVampireBoss_setup_FUN_005e56c0,005e56c0,core/vampboss.cpp,67,0,,67
 core_vampboss.cpp_clampAngle_FUN_005e58d0,005e58d0,core/vampboss.cpp,11,0,,11
-core_vampboss.cpp_CVampireBoss_process_FUN_005e5970,005e5970,core/vampboss.cpp,626,0,,626
+core_vampboss.cpp_CVampireBoss_process_FUN_005e5970,005e5970,core/vampboss.cpp,627,0,,627
 core_vampboss.cpp_CVampireBoss_getCarryObjToBodyXForm_FUN_005e6b80,005e6b80,core/vampboss.cpp,48,0,,48
 core_vampboss.cpp_CVampireBoss_advanceAnimation_FUN_005e6ca0,005e6ca0,core/vampboss.cpp,44,0,,44
 core_vampboss.cpp_CVampireBoss_renderOpaque_FUN_005e6da0,005e6da0,core/vampboss.cpp,70,0,,70
@@ -6292,7 +6292,7 @@ core_werewolf.cpp_factoryFuncWerewolf_FUN_005efbd0,005efbd0,core/werewolf.cpp,11
 core_werewolf.cpp_CWerewolf_getActorType_FUN_005efc00,005efc00,core/werewolf.cpp,4,0,,4
 core_werewolf.cpp_CWerewolf_ctor_FUN_005efc10,005efc10,core/werewolf.cpp,27,0,,27
 core_werewolf.cpp_CWerewolf_setup_FUN_005efcc0,005efcc0,core/werewolf.cpp,37,0,,37
-core_werewolf.cpp_CWerewolf_process_FUN_005efde0,005efde0,core/werewolf.cpp,714,0,,714
+core_werewolf.cpp_CWerewolf_process_FUN_005efde0,005efde0,core/werewolf.cpp,715,0,,715
 core_werewolf.cpp_CWerewolf_setWalkTarget_FUN_005f11a0,005f11a0,core/werewolf.cpp,12,0,,12
 core_werewolf.cpp_CWerewolf_playHowl_FUN_005f11e0,005f11e0,core/werewolf.cpp,15,0,,15
 core_werewolf.cpp_CWerewolf_renderEyeGlow_FUN_005f1230,005f1230,core/werewolf.cpp,152,0,,152
@@ -6425,7 +6425,7 @@ core_zombie.cpp_factoryFuncZombie_FUN_005f8fa0,005f8fa0,core/zombie.cpp,10,0,,10
 core_zombie.cpp_CZombie_getActorType_FUN_005f8fd0,005f8fd0,core/zombie.cpp,4,0,,4
 core_zombie.cpp_CZombie_ctor_FUN_005f8fe0,005f8fe0,core/zombie.cpp,54,0,,54
 core_zombie.cpp_CZombie_setup_FUN_005f9140,005f9140,core/zombie.cpp,101,0,,101
-core_zombie.cpp_CZombie_process_FUN_005f9470,005f9470,core/zombie.cpp,1031,0,,1031
+core_zombie.cpp_CZombie_process_FUN_005f9470,005f9470,core/zombie.cpp,1032,0,,1032
 core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0,005fb1f0,core/zombie.cpp,135,0,,135
 core_zombie.cpp_CZombie_processPickup_FUN_005fb530,005fb530,core/zombie.cpp,262,0,,262
 core_zombie.cpp_CZombie_getPickupHandIndex_FUN_005fbd00,005fbd00,core/zombie.cpp,35,0,,35
