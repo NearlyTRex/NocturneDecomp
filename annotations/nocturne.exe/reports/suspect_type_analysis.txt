@@ -6,7 +6,7 @@ SUSPECT TYPE COUNTS
 --------------------------------------------------
   undefined_data                  4062 ( 19.4%)
   pointer_cast                    3557 ( 17.0%)
-  pointer_truncation              2881 ( 13.7%)
+  pointer_truncation              2891 ( 13.8%)
   unrolled_memcpy                 1476 (  7.0%)
   warning_overlapping_globals      864 (  4.1%)
   stack_param                      766 (  3.7%)
@@ -813,17 +813,17 @@ Unique patterns:
     68x  (int *)((int)g_ScreenBufferArray
     60x  (uint *)((int)pvVar3
     47x  (int)&NAME byte-offset arithmetic split across lines
+    45x  (CMatrix3x4f *)((int)pCVar3
+    45x  (CMatrix3x4f *)((int)pCVar4
     43x  (CDemonActor **)((int)g_CDemonSet_PTR_005be368
-    43x  (CMatrix3x4f *)((int)pCVar4
     42x  (SRenderVertex *)((int)pSVar4
-    39x  (CMatrix3x4f *)((int)pCVar3
     33x  (SRenderVertex *)((int)pSVar3
     30x  (uint *)((int)pvVar1
     27x  (T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach
     27x  (TYPE *) ((int)NAME ...) split across lines
+    27x  (CMatrix3x4f *)((int)pCVar5
     27x  (void *)((int)sprite_data
-    26x  (CMatrix3x4f *)((int)pCVar5
-    25x  (CMatrix3x4f *)((int)pCVar6
+    26x  (CMatrix3x4f *)((int)pCVar6
     24x  (SRenderVertex *)((int)pSVar13
     23x  (uint *)((int)this_ptr
     23x  (CMatrix3x4f *)((int)pCVar2
@@ -1557,7 +1557,7 @@ Functions:
   wincore_winrun.cpp_winMain_FUN_00559260
 
 ====================================================================================================
-TYPE: pointer_truncation (2881 occurrences)
+TYPE: pointer_truncation (2891 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -1565,13 +1565,13 @@ Unique patterns:
    112x  (int)pvVar4
     81x  (int)pvVar3
     75x  (int)g_ScreenBufferArray
+    53x  (int)pCVar3
     50x  (int)pSVar4
-    47x  (int)pCVar3
+    48x  (int)pCVar4
     47x  (int)pvVar1
-    46x  (int)pCVar4
     42x  (int)pSVar3
-    38x  (int)pCVar6
-    33x  (int)pCVar5
+    39x  (int)pCVar6
+    34x  (int)pCVar5
     27x  (int)pCVar2
     26x  (int)piVar4
     26x  (int)pSVar13

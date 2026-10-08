@@ -7,7 +7,7 @@ SUMMARY
 Total functions analyzed: 4922
 Clean: 2505 (50.9%)
 With suspects: 2417
-Total suspects: 20957
+Total suspects: 20967
 
 ====================================================================================================
 cockpit_ckptutil.c_applyActPalette_FUN_0042d370 (1 suspect)
@@ -2902,7 +2902,7 @@ core_boneguy.cpp_CBoneGuy_explode_FUN_0041a0f0 (12 suspects)
   Line 84 [pointer_cast]: *puVar8 = *(uint *)((int)&local_48 + (uint)bVar10 * -8 + 4);
 
 ====================================================================================================
-core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_004194b0 (17 suspects)
+core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_004194b0 (18 suspects)
   File: core/boneguy.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
@@ -2916,10 +2916,11 @@ core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_004194b0 (17 suspects)
   Line 69 [pointer_truncation]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
   Line 70 [pointer_cast]: pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
   Line 70 [pointer_truncation]: pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
-  Line 80 [unrolled_memcpy]: for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-  Line 82 [pointer_cast]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
-  Line 82 [pointer_truncation]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
-  Line 83 [pointer_cast]: out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar5 * -2 + 1) * 4);
+  Line 81 [unrolled_memcpy]: for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
+  Line 83 [pointer_cast]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
+  Line 83 [pointer_truncation]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
+  Line 84 [pointer_cast]: pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
+  Line 84 [pointer_truncation]: pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
   Line 137 [unrolled_memcpy]: // 00419640: MOVSD.REP ES:EDI,ESI
   Line 172 [unrolled_memcpy]: // 0041969c: MOVSD.REP ES:EDI,ESI
 
@@ -11361,7 +11362,7 @@ core_gabriela.cpp_CGabriella_findAndPickupNearbyObject_FUN_004983f0 (7 suspects)
   Line 127 [static_array_oob_cond]: ((pCVar4->location).position.z - local_bc[uStack_28 * 3 + 2]) +
 
 ====================================================================================================
-core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_00499ca0 (18 suspects)
+core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_00499ca0 (19 suspects)
   File: core/gabriela.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
@@ -11378,10 +11379,11 @@ core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_00499ca0 (18 suspects)
   Line 103 [pointer_truncation]: pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);
   Line 107 [unrolled_memcpy]: local_58.x = pCVar2->x;
   Line 116 [unrolled_memcpy]: // 00499e50: MOVSD.REP ES:EDI,ESI
-  Line 149 [unrolled_memcpy]: for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-  Line 151 [pointer_cast]: pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);
-  Line 151 [pointer_truncation]: pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);
-  Line 152 [pointer_cast]: out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar6 * -2 + 1) * 4);
+  Line 150 [unrolled_memcpy]: for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
+  Line 152 [pointer_cast]: pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);
+  Line 152 [pointer_truncation]: pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);
+  Line 153 [pointer_cast]: pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);
+  Line 153 [pointer_truncation]: pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);
 
 ====================================================================================================
 core_gabriela.cpp_CGabriella_getTorsoCenterPosition_FUN_00497870 (1 suspect)
@@ -13898,14 +13900,15 @@ core_icepick.cpp_CIcePick_findAndPickupGun_FUN_004ba8a0 (2 suspects)
   Line 27 [pointer_cast]: this_ptr_00 = *(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + iVar5);
 
 ====================================================================================================
-core_icepick.cpp_CIcePick_getCarryObjToBodyXForm_FUN_004baa50 (6 suspects)
+core_icepick.cpp_CIcePick_getCarryObjToBodyXForm_FUN_004baa50 (7 suspects)
   File: core/icepick.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
-  Line 47 [unrolled_memcpy]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-  Line 49 [pointer_cast]: pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar3 * -2 + 1) * 4);
-  Line 49 [pointer_truncation]: pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar3 * -2 + 1) * 4);
-  Line 50 [pointer_cast]: out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar3 * -2 + 1) * 4);
+  Line 49 [unrolled_memcpy]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 51 [pointer_cast]: pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
+  Line 51 [pointer_truncation]: pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
+  Line 52 [pointer_cast]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
+  Line 52 [pointer_truncation]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
   Line 71 [unrolled_memcpy]: // 004bab54: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
@@ -13985,14 +13988,15 @@ core_imp.cpp_CImp_dtor_FUN_004bcfd0 (2 suspects)
   Line 28 [negative_offset]: ((CDemonActor *)(pCVar5[-1].part_data.visibility_flags + 9),1);
 
 ====================================================================================================
-core_imp.cpp_CImp_getCarryObjToBodyXForm_FUN_004bc7e0 (6 suspects)
+core_imp.cpp_CImp_getCarryObjToBodyXForm_FUN_004bc7e0 (7 suspects)
   File: core/imp.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
-  Line 62 [unrolled_memcpy]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-  Line 64 [pointer_cast]: pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar3 * -2 + 1) * 4);
-  Line 64 [pointer_truncation]: pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar3 * -2 + 1) * 4);
-  Line 65 [pointer_cast]: out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar3 * -2 + 1) * 4);
+  Line 64 [unrolled_memcpy]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 66 [pointer_cast]: pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
+  Line 66 [pointer_truncation]: pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
+  Line 67 [pointer_cast]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
+  Line 67 [pointer_truncation]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
   Line 77 [unrolled_memcpy]: // 004bc907: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
@@ -16036,15 +16040,16 @@ core_mobster.cpp_CMobster_dtor_FUN_004dcac0 (2 suspects)
   Line 29 [negative_offset]: ((CDemonActor *)(pCVar5[-1].part_data.visibility_flags + 9),1);
 
 ====================================================================================================
-core_mobster.cpp_CMobster_getCarryObjToBodyXForm_FUN_004dba70 (6 suspects)
+core_mobster.cpp_CMobster_getCarryObjToBodyXForm_FUN_004dba70 (7 suspects)
   File: core/mobster.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
   Line 73 [unrolled_memcpy]: // 004dbb83: MOVSD.REP ES:EDI,ESI
-  Line 88 [unrolled_memcpy]: for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-  Line 90 [pointer_cast]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
-  Line 90 [pointer_truncation]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
-  Line 91 [pointer_cast]: out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar4 * -2 + 1) * 4);
+  Line 90 [unrolled_memcpy]: for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
+  Line 92 [pointer_cast]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
+  Line 92 [pointer_truncation]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
+  Line 93 [pointer_cast]: pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
+  Line 93 [pointer_truncation]: pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
 
 ====================================================================================================
 core_mobster.cpp_CMobster_getTargetPoints_FUN_004dc820 (5 suspects)
@@ -21853,13 +21858,14 @@ core_stranger.cpp_CStranger_ctor_FUN_005350c0 (16 suspects)
   Line 177 [negative_offset]: ((CKeyFramedModelInstance *)(*(int *)(pCVar6[-2].model_name + 0x10) + 0x150),
 
 ====================================================================================================
-core_stranger.cpp_CStranger_getCarryObjToBodyXForm_FUN_0053f210 (5 suspects)
+core_stranger.cpp_CStranger_getCarryObjToBodyXForm_FUN_0053f210 (6 suspects)
   File: core/stranger.cpp
 ====================================================================================================
-  Line 15 [unrolled_memcpy]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-  Line 17 [pointer_cast]: pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar3 * -2 + 1) * 4);
-  Line 17 [pointer_truncation]: pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar3 * -2 + 1) * 4);
-  Line 18 [pointer_cast]: out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar3 * -2 + 1) * 4);
+  Line 17 [unrolled_memcpy]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 19 [pointer_cast]: pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
+  Line 19 [pointer_truncation]: pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
+  Line 20 [pointer_cast]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
+  Line 20 [pointer_truncation]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
   Line 22 [unrolled_memcpy]: // 0053f247: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
@@ -22361,14 +22367,15 @@ core_tbplayer.cpp_CBassPlayer_dtor_FUN_005436f0 (3 suspects)
   Line 32 [negative_offset]: ((CDemonActor *)(pCVar6[-1].part_data.visibility_flags + 9),1);
 
 ====================================================================================================
-core_tbplayer.cpp_CBassPlayer_getCarryObjToBodyXForm_FUN_00543210 (6 suspects)
+core_tbplayer.cpp_CBassPlayer_getCarryObjToBodyXForm_FUN_00543210 (7 suspects)
   File: core/tbplayer.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
-  Line 42 [unrolled_memcpy]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-  Line 44 [pointer_cast]: pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar3 * -2 + 1) * 4);
-  Line 44 [pointer_truncation]: pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar3 * -2 + 1) * 4);
-  Line 45 [pointer_cast]: out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar3 * -2 + 1) * 4);
+  Line 44 [unrolled_memcpy]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 46 [pointer_cast]: pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
+  Line 46 [pointer_truncation]: pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
+  Line 47 [pointer_cast]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
+  Line 47 [pointer_truncation]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
   Line 74 [unrolled_memcpy]: // 0054331b: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
@@ -22380,16 +22387,17 @@ core_tbplayer.cpp_CDrummer_dtor_FUN_00543620 (3 suspects)
   Line 32 [negative_offset]: ((CDemonActor *)(pCVar6[-1].part_data.visibility_flags + 9),1);
 
 ====================================================================================================
-core_tbplayer.cpp_CDrummer_getCarryObjToBodyXForm_FUN_00543450 (8 suspects)
+core_tbplayer.cpp_CDrummer_getCarryObjToBodyXForm_FUN_00543450 (9 suspects)
   File: core/tbplayer.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
-  Line 33 [dropped_self_copy]: if (&local_3c == &local_30) goto LAB_0054350c;
-  Line 47 [dropped_self_copy]: if (&local_3c == &local_48) goto LAB_0054350c;
-  Line 58 [unrolled_memcpy]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-  Line 60 [pointer_cast]: pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar3 * -2 + 1) * 4);
-  Line 60 [pointer_truncation]: pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar3 * -2 + 1) * 4);
-  Line 61 [pointer_cast]: out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar3 * -2 + 1) * 4);
+  Line 34 [dropped_self_copy]: if (&local_3c == &local_30) goto LAB_0054350c;
+  Line 48 [dropped_self_copy]: if (&local_3c == &local_48) goto LAB_0054350c;
+  Line 60 [unrolled_memcpy]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 62 [pointer_cast]: pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
+  Line 62 [pointer_truncation]: pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
+  Line 63 [pointer_cast]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
+  Line 63 [pointer_truncation]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
   Line 75 [unrolled_memcpy]: // 00543561: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
@@ -22878,14 +22886,15 @@ core_vampboss.cpp_CVampireBoss_dtor_FUN_0054e370 (4 suspects)
   Line 40 [negative_offset]: ((CDemonActor *)(pCVar3[-1].part_data.visibility_flags + 9),1);
 
 ====================================================================================================
-core_vampboss.cpp_CVampireBoss_getCarryObjToBodyXForm_FUN_0054d8a0 (6 suspects)
+core_vampboss.cpp_CVampireBoss_getCarryObjToBodyXForm_FUN_0054d8a0 (7 suspects)
   File: core/vampboss.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
-  Line 40 [unrolled_memcpy]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-  Line 42 [pointer_cast]: pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar3 * -2 + 1) * 4);
-  Line 42 [pointer_truncation]: pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar3 * -2 + 1) * 4);
-  Line 43 [pointer_cast]: out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar3 * -2 + 1) * 4);
+  Line 42 [unrolled_memcpy]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 44 [pointer_cast]: pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
+  Line 44 [pointer_truncation]: pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
+  Line 45 [pointer_cast]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
+  Line 45 [pointer_truncation]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
   Line 68 [unrolled_memcpy]: // 0054d992: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
@@ -24215,7 +24224,7 @@ core_zombie.cpp_CZombie_dtor_FUN_00562550 (2 suspects)
   Line 29 [negative_offset]: ((CDemonActor *)(pCVar5[-1].part_data.visibility_flags + 9),1);
 
 ====================================================================================================
-core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN_00560cd0 (22 suspects)
+core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN_00560cd0 (23 suspects)
   File: core/zombie.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
@@ -24233,10 +24242,11 @@ core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN_00560cd0 (22 suspects)
   Line 124 [pointer_truncation]: pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar7 * -2 + 1) * 4);
   Line 125 [pointer_cast]: pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);
   Line 125 [pointer_truncation]: pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);
-  Line 135 [unrolled_memcpy]: for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-  Line 137 [pointer_cast]: pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar7 * -2 + 1) * 4);
-  Line 137 [pointer_truncation]: pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar7 * -2 + 1) * 4);
-  Line 138 [pointer_cast]: out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar7 * -2 + 1) * 4);
+  Line 136 [unrolled_memcpy]: for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
+  Line 138 [pointer_cast]: pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar7 * -2 + 1) * 4);
+  Line 138 [pointer_truncation]: pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar7 * -2 + 1) * 4);
+  Line 139 [pointer_cast]: pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);
+  Line 139 [pointer_truncation]: pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);
   Line 165 [unrolled_memcpy]: // 00560ebb: MOVSD.REP ES:EDI,ESI
   Line 200 [unrolled_memcpy]: // 00560f1a: MOVSD.REP ES:EDI,ESI
   Line 273 [unrolled_memcpy]: // 00560fdd: MOVSD.REP ES:EDI,ESI

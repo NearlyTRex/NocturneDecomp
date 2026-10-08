@@ -33,7 +33,7 @@ void __cdecl CZombie::process(CZombie *this_ptr,float delta_time);
 
 // Original: core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN_00560cd0
 // Address: 00560cd0
-void __stack2_esi CZombie::getCarryObjToBodyXForm(CZombie *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
+CMatrix3x4f * __stack2_esi CZombie::getCarryObjToBodyXForm(CZombie *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
 // Original: core_zombie.cpp_CZombie_processPickup_FUN_00561010
 // Address: 00561010

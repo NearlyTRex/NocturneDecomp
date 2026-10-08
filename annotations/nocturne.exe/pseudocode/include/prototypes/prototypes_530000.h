@@ -175,7 +175,7 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0053d910(CStranger 
 void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_0053e320(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_0053e860(CStranger *this_ptr,SDamageInfo *damage_info);
 void __cdecl core_stranger_cpp_CStranger_updateArmRecoilBlend_FUN_0053ecc0(CStranger *this_ptr,float delta_time,int is_weapon_active);
-void __stack2_esi core_stranger_cpp_CStranger_getCarryObjToBodyXForm_FUN_0053f210(CStranger *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
+CMatrix3x4f * __stack2_esi core_stranger_cpp_CStranger_getCarryObjToBodyXForm_FUN_0053f210(CStranger *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 CVector3f * __cdecl core_stranger_cpp_CStranger_getThrowDirection_FUN_0053f260(CStranger *this_ptr,CVector3f *out_direction);
 void __cdecl core_stranger_cpp_CStranger_updateWeaponLayerActions_FUN_0053f310(CStranger *this_ptr,float delta_time);
 void __cdecl core_stranger_cpp_CStranger_handleActionButton_FUN_0053fc60(CStranger *this_ptr);

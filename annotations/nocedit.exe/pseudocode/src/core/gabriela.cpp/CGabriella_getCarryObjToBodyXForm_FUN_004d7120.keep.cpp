@@ -3,11 +3,11 @@
 // MANUAL RECONSTRUCTION
 // Address Range: [[004d7120, 004d7589] [03fc2f37, 03fc2f9b] [03fc5808, 03fc585d]]
 // Convention: __stack2_esi
-// Signature: void __stack2_esi core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120(CGabriella *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
+// Signature: CMatrix3x4f * __stack2_esi core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120(CGabriella *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 #include "nocturne.h"
 
-void __stack2_esi core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120(CGabriella *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
+CMatrix3x4f * __stack2_esi core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120(CGabriella *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 {
   int iVar1;
@@ -118,5 +118,5 @@ LAB_004d719a:
   local_160.m[1].z = local_160.m[1].z + (local_34.y - pCVar2->y);
   local_160.m[2].z = local_160.m[2].z + (local_34.z - pCVar2->z);
   *out_matrix = local_160;
-  return;
+  return out_matrix;
 }

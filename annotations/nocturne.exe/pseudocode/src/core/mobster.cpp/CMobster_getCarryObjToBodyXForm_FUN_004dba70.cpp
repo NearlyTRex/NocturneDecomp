@@ -2,19 +2,20 @@
 // Address: 004dba70
 // Address Range: [[004dba70, 004dbcdb]]
 // Convention: __stack2_esi
-// Signature: void __stack2_esi core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_004dba70(CMobster *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
+// Signature: CMatrix3x4f * __stack2_esi core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_004dba70(CMobster *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 
-void __stack2_esi core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_004dba70(CMobster *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
+CMatrix3x4f * __stack2_esi core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_004dba70(CMobster *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 {
   CDemonActor *pCVar1;
   int iVar2;
   CMatrix3x4f *pCVar3;
-  byte bVar4;
+  CMatrix3x4f *pCVar4;
+  byte bVar5;
   CMatrix3x4f local_d8;
   CMatrix3x4f local_a8;
   CVector3f local_78 [2];
@@ -26,7 +27,7 @@ void __stack2_esi core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_004dba70(
   CVector3f local_24;
   CVector3f local_18;
   
-  bVar4 = 0;
+  bVar5 = 0;
   iVar2 = (this_ptr->base).base.carry_hands[hand_index].bone_index;
   if (hand_index == 1) {
     pCVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
@@ -92,10 +93,11 @@ void __stack2_esi core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_004dba70(
             (&local_d8,(this_ptr->base).base.model.bone_transform.bone_model_matrices + iVar2,
              &local_a8);
   pCVar3 = &local_a8;
+  pCVar4 = out_matrix;
   for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-    out_matrix->m[0].w = pCVar3->m[0].w;
-    pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
-    out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar4 * -2 + 1) * 4);
+    pCVar4->m[0].w = pCVar3->m[0].w;
+    pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
+    pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
   }
-  return;
+  return out_matrix;
 }

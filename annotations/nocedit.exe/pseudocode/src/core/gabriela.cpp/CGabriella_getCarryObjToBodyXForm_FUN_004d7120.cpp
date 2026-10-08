@@ -2,13 +2,13 @@
 // Address: 004d7120
 // Address Range: [[004d7120, 004d7589] [03fc2f37, 03fc2f9b] [03fc5808, 03fc585d]]
 // Convention: __stack2_esi
-// Signature: void __stack2_esi core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120(CGabriella *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
+// Signature: CMatrix3x4f * __stack2_esi core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120(CGabriella *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 
-void __stack2_esi core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120(CGabriella *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
+CMatrix3x4f * __stack2_esi core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120(CGabriella *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 {
   int iVar1;
@@ -18,6 +18,7 @@ void __stack2_esi core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d71
   int iVar3;
   CMatrix3x4f *pCVar6;
   CMatrix3x4f *pCVar4;
+  CMatrix3x4f *pCVar7;
   CMatrix3x4f *pCVar5;
   byte bVar6;
   CMatrix3x4f CStack_190;
@@ -150,10 +151,11 @@ LAB_004d719a:
   local_160.m[1].z = local_160.m[1].z + (local_34.y - pCVar2->y);
   local_160.m[2].z = local_160.m[2].z + (local_34.z - pCVar2->z);
   pCVar6 = &local_160;
+  pCVar7 = out_matrix;
   for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-    out_matrix->m[0].w = pCVar6->m[0].w;
+    pCVar7->m[0].w = pCVar6->m[0].w;
     pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar6 * -2 + 1) * 4);
-    out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar6 * -2 + 1) * 4);
+    pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar6 * -2 + 1) * 4);
   }
-  return;
+  return out_matrix;
 }

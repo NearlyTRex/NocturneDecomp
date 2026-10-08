@@ -3,11 +3,11 @@
 // MANUAL RECONSTRUCTION
 // Address Range: [[005e6b80, 005e6c95] [03fc3b81, 03fc3bdf]]
 // Convention: __stack2_esi
-// Signature: void __stack2_esi core_vampboss_cpp_CVampireBoss_getCarryObjToBodyXForm_FUN_005e6b80(CVampireBoss *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
+// Signature: CMatrix3x4f * __stack2_esi core_vampboss_cpp_CVampireBoss_getCarryObjToBodyXForm_FUN_005e6b80(CVampireBoss *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 #include "nocturne.h"
 
-void __stack2_esi core_vampboss_cpp_CVampireBoss_getCarryObjToBodyXForm_FUN_005e6b80(CVampireBoss *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
+CMatrix3x4f * __stack2_esi core_vampboss_cpp_CVampireBoss_getCarryObjToBodyXForm_FUN_005e6b80(CVampireBoss *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 {
   int iVar2;
@@ -40,5 +40,5 @@ void __stack2_esi core_vampboss_cpp_CVampireBoss_getCarryObjToBodyXForm_FUN_005e
             (&local_78,(this_ptr->base).base.model.bone_transform.bone_model_matrices + iVar2,
              &local_a8);
   *out_matrix = local_a8;
-  return;
+  return out_matrix;
 }

@@ -2,18 +2,19 @@
 // Address: 00543210
 // Address Range: [[00543210, 00543328]]
 // Convention: __stack2_esi
-// Signature: void __stack2_esi core_tbplayer_cpp_CBassPlayer_getCarryObjToBodyXForm_FUN_00543210(CBassPlayer *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
+// Signature: CMatrix3x4f * __stack2_esi core_tbplayer_cpp_CBassPlayer_getCarryObjToBodyXForm_FUN_00543210(CBassPlayer *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 
-void __stack2_esi core_tbplayer_cpp_CBassPlayer_getCarryObjToBodyXForm_FUN_00543210(CBassPlayer *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
+CMatrix3x4f * __stack2_esi core_tbplayer_cpp_CBassPlayer_getCarryObjToBodyXForm_FUN_00543210(CBassPlayer *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 {
   int iVar1;
   CMatrix3x4f *pCVar2;
-  byte bVar3;
+  CMatrix3x4f *pCVar3;
+  byte bVar4;
   CMatrix3x4f local_a8;
   CMatrix3x4f local_78;
   CVector3f local_3c;
@@ -21,7 +22,7 @@ void __stack2_esi core_tbplayer_cpp_CBassPlayer_getCarryObjToBodyXForm_FUN_00543
   CVector3f local_24;
   CVector3f local_18;
   
-  bVar3 = 0;
+  bVar4 = 0;
   iVar1 = (this_ptr->base).base.carry_hands[hand_index].bone_index;
   if (hand_index == 0) {
     local_18.y = -1.866;
@@ -46,10 +47,11 @@ void __stack2_esi core_tbplayer_cpp_CBassPlayer_getCarryObjToBodyXForm_FUN_00543
             (&local_78,(this_ptr->base).base.model.bone_transform.bone_model_matrices + iVar1,
              &local_a8);
   pCVar2 = &local_a8;
+  pCVar3 = out_matrix;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    out_matrix->m[0].w = pCVar2->m[0].w;
-    pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar3 * -2 + 1) * 4);
-    out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar3 * -2 + 1) * 4);
+    pCVar3->m[0].w = pCVar2->m[0].w;
+    pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
+    pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
   }
-  return;
+  return out_matrix;
 }

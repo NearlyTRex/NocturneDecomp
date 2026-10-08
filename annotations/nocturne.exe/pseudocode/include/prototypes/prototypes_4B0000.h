@@ -249,7 +249,7 @@ void __cdecl core_icepick_cpp_CIcePick_process_FUN_004b9fe0(CIcePick *this_ptr,f
 void __cdecl core_icepick_cpp_CIcePick_updateShootBlend_FUN_004ba740(CIcePick *this_ptr,float delta_time);
 int __cdecl core_icepick_cpp_CIcePick_findAndPickupGun_FUN_004ba8a0(CIcePick *this_ptr);
 int __cdecl core_icepick_cpp_CIcePick_startThrowAttack_FUN_004baa00(CIcePick *this_ptr);
-void __stack2_esi core_icepick_cpp_CIcePick_getCarryObjToBodyXForm_FUN_004baa50(CIcePick *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
+CMatrix3x4f * __stack2_esi core_icepick_cpp_CIcePick_getCarryObjToBodyXForm_FUN_004baa50(CIcePick *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 void __cdecl core_icepick_cpp_CIcePick_processAI_FUN_004baba0(CIcePick *this_ptr,float delta_time);
 void __cdecl core_icepick_cpp_CIcePick_processMotionEvents_FUN_004bb2d0(CIcePick *this_ptr,float delta_time);
 void __cdecl core_icepick_cpp_CIcePick_performMeleeAttack_FUN_004bb3c0(CIcePick *this_ptr,int bone_index);
@@ -266,7 +266,7 @@ CImp * __cdecl core_imp_cpp_CImp_ctor_FUN_004bb760(CImp *this_ptr);
 void __cdecl core_imp_cpp_CImp_setup_FUN_004bb7d0(CImp *this_ptr);
 void __cdecl core_imp_cpp_CImp_process_FUN_004bbaf0(CImp *this_ptr,float delta_time);
 CVector3f * __cdecl core_imp_cpp_setVector_FUN_004bc7c0(CVector3f *out,float x,float y,float z);
-void __stack2_esi core_imp_cpp_CImp_getCarryObjToBodyXForm_FUN_004bc7e0(CImp *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
+CMatrix3x4f * __stack2_esi core_imp_cpp_CImp_getCarryObjToBodyXForm_FUN_004bc7e0(CImp *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 int __cdecl core_imp_cpp_CImp_attractActorToward_FUN_004bc9b0(CImp *this_ptr,CDemonActor *actor,CVector3f *target_local_point);
 void __cdecl core_imp_cpp_CImp_archive_FUN_004bc9c0(CImp *this_ptr);
 void __cdecl core_imp_cpp_CImp_processDismemberment_FUN_004bca20(CImp *this_ptr,SDamageInfo *damage_info);

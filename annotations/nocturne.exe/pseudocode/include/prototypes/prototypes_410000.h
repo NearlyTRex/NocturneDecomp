@@ -222,7 +222,7 @@ CColor3f * __cdecl core_boneguy_cpp_hsvToRgb_FUN_00418480(CColor3f *out_rgb,CCol
 CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_ctor_FUN_00418630(CBoneGuy *this_ptr);
 void __cdecl core_boneguy_cpp_CBoneGuy_setup_FUN_00418800(CBoneGuy *this_ptr);
 void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_00418a00(CBoneGuy *this_ptr,float delta_time);
-void __stack2_esi core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_004194b0(CBoneGuy *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
+CMatrix3x4f * __stack2_esi core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_004194b0(CBoneGuy *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 int __cdecl core_boneguy_cpp_CBoneGuy_updatePickupBehavior_FUN_004196b0(CBoneGuy *this_ptr,float delta_time);
 int __cdecl core_boneguy_cpp_CBoneGuy_renderOpaque_FUN_00419bf0(CBoneGuy *this_ptr);
 int __cdecl core_boneguy_cpp_CBoneGuy_renderTransparent_FUN_00419c20(CBoneGuy *this_ptr);

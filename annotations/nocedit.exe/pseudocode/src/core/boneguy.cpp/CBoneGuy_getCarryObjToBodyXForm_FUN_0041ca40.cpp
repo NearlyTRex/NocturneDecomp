@@ -2,13 +2,13 @@
 // Address: 0041ca40
 // Address Range: [[0041ca40, 0041cc36] [03fc48ab, 03fc490d]]
 // Convention: __stack2_esi
-// Signature: void __stack2_esi core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40(CBoneGuy *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
+// Signature: CMatrix3x4f * __stack2_esi core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40(CBoneGuy *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 
-void __stack2_esi core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40(CBoneGuy *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
+CMatrix3x4f * __stack2_esi core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40(CBoneGuy *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 {
   CVector3f *pCVar1;
@@ -17,6 +17,7 @@ void __stack2_esi core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40(
   int iVar3;
   CMatrix3x4f *pCVar3;
   CMatrix3x4f *pCVar4;
+  CMatrix3x4f *pCVar5;
   byte bVar5;
   CMatrix3x4f local_120;
   CMatrix3x4f local_f0;
@@ -79,11 +80,12 @@ void __stack2_esi core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40(
   local_f0.m[1].z = local_f0.m[1].z + (local_18.y - pCVar2->y);
   local_f0.m[2].z = local_f0.m[2].z + (local_18.z - pCVar2->z);
   pCVar3 = &local_f0;
+  pCVar5 = out_matrix;
   for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
     pCVar3 = (CMatrix3x4f *)((int)pCVar3 + (uint)bVar5 * -8 + 4);
-    out_matrix->m[0].w = pCVar3->m[0].w;
+    pCVar5->m[0].w = pCVar3->m[0].w;
     pCVar3 = pCVar3;
-    out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar5 * -2 + 1) * 4);
+    pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar5 * -2 + 1) * 4);
   }
-  return;
+  return out_matrix;
 }

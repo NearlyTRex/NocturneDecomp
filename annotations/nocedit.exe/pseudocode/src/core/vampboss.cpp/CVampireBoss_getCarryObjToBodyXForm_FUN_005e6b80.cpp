@@ -2,13 +2,13 @@
 // Address: 005e6b80
 // Address Range: [[005e6b80, 005e6c95] [03fc3b81, 03fc3bdf]]
 // Convention: __stack2_esi
-// Signature: void __stack2_esi core_vampboss_cpp_CVampireBoss_getCarryObjToBodyXForm_FUN_005e6b80(CVampireBoss *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
+// Signature: CMatrix3x4f * __stack2_esi core_vampboss_cpp_CVampireBoss_getCarryObjToBodyXForm_FUN_005e6b80(CVampireBoss *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 
-void __stack2_esi core_vampboss_cpp_CVampireBoss_getCarryObjToBodyXForm_FUN_005e6b80(CVampireBoss *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
+CMatrix3x4f * __stack2_esi core_vampboss_cpp_CVampireBoss_getCarryObjToBodyXForm_FUN_005e6b80(CVampireBoss *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 {
   int iVar2;
@@ -55,5 +55,5 @@ void __stack2_esi core_vampboss_cpp_CVampireBoss_getCarryObjToBodyXForm_FUN_005e
   out_matrix->m[2].x = local_a8.m[2].x;
   out_matrix->m[2].y = local_a8.m[2].y;
   out_matrix->m[2].z = local_a8.m[2].z;
-  return;
+  return out_matrix;
 }

@@ -27,7 +27,7 @@
 // FUNCTION PROTOTYPES - Range 0x560000
 // =============================================================================
 
-void __stack2_esi core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_00560cd0(CZombie *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
+CMatrix3x4f * __stack2_esi core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_00560cd0(CZombie *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 int __cdecl core_zombie_cpp_CZombie_processPickup_FUN_00561010(CZombie *this_ptr,float delta_time);
 int __cdecl core_zombie_cpp_CZombie_getPickupHandIndex_FUN_005617e0(CZombie *this_ptr,int object_shape_type);
 int __cdecl core_zombie_cpp_CZombie_canPickupWithHand_FUN_00561880(CZombie *this_ptr,int object_shape_type);

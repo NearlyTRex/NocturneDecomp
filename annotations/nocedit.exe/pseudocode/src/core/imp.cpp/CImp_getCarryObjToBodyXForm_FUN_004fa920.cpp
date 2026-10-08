@@ -2,13 +2,13 @@
 // Address: 004fa920
 // Address Range: [[004fa920, 004faaef] [03fc43bc, 03fc441a]]
 // Convention: __stack2_esi
-// Signature: void __stack2_esi core_imp_cpp_CImp_getCarryObjToBodyXForm_FUN_004fa920(CImp *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
+// Signature: CMatrix3x4f * __stack2_esi core_imp_cpp_CImp_getCarryObjToBodyXForm_FUN_004fa920(CImp *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 
-void __stack2_esi core_imp_cpp_CImp_getCarryObjToBodyXForm_FUN_004fa920(CImp *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
+CMatrix3x4f * __stack2_esi core_imp_cpp_CImp_getCarryObjToBodyXForm_FUN_004fa920(CImp *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 {
   int iVar2;
@@ -77,5 +77,5 @@ void __stack2_esi core_imp_cpp_CImp_getCarryObjToBodyXForm_FUN_004fa920(CImp *th
   out_matrix->m[2].x = local_c0.m[2].x;
   out_matrix->m[2].y = local_c0.m[2].y;
   out_matrix->m[2].z = local_c0.m[2].z;
-  return;
+  return out_matrix;
 }

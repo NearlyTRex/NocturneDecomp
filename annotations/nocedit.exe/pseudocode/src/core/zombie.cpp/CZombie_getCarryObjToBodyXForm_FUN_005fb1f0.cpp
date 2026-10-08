@@ -2,13 +2,13 @@
 // Address: 005fb1f0
 // Address Range: [[005fb1f0, 005fb521] [03fc346b, 03fc3534]]
 // Convention: __stack2_esi
-// Signature: void __stack2_esi core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0(CZombie *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
+// Signature: CMatrix3x4f * __stack2_esi core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0(CZombie *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 
-void __stack2_esi core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0(CZombie *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
+CMatrix3x4f * __stack2_esi core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0(CZombie *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 {
   int iVar2;
@@ -18,6 +18,7 @@ void __stack2_esi core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0(CZ
   int iVar3;
   CMatrix3x4f *pCVar5;
   CMatrix3x4f *pCVar6;
+  CMatrix3x4f *pCVar7;
   byte bVar7;
   CMatrix3x4f local_16c;
   CMatrix3x4f local_13c;
@@ -136,11 +137,12 @@ void __stack2_esi core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0(CZ
   local_10c.m[1].z = local_10c.m[1].z + (local_40.y - pCVar1->y);
   local_10c.m[2].z = local_10c.m[2].z + (local_40.z - pCVar1->z);
   pCVar5 = &local_10c;
+  pCVar7 = out_matrix;
   for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
     pCVar5 = (CMatrix3x4f *)((int)pCVar5 + (uint)bVar7 * -8 + 4);
-    out_matrix->m[0].w = pCVar5->m[0].w;
+    pCVar7->m[0].w = pCVar5->m[0].w;
     pCVar5 = pCVar5;
-    out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar7 * -2 + 1) * 4);
+    pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar7 * -2 + 1) * 4);
   }
-  return;
+  return out_matrix;
 }

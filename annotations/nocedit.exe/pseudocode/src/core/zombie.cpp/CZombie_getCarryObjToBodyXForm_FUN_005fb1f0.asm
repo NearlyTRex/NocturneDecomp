@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __stack2_esi core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0(CZombie *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
+; CMatrix3x4f * __stack2_esi core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0(CZombie *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 ;
 ; Parameters:
 ; CZombie *        Stack[0x4]:4   this_ptr

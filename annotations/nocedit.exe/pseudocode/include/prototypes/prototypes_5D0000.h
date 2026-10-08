@@ -200,13 +200,13 @@ CDemonActorType * __cdecl core_tbplayer_cpp_CBassPlayer_getActorType_FUN_005da05
 CBassPlayer * __cdecl core_tbplayer_cpp_CBassPlayer_ctor_FUN_005da060(CBassPlayer *this_ptr);
 void __cdecl core_tbplayer_cpp_CBassPlayer_setup_FUN_005da090(CBassPlayer *this_ptr);
 CVector3f * __cdecl core_tbplayer_cpp_setVector_FUN_005da100(CVector3f *out,float x,float y,float z);
-void __stack2_esi core_tbplayer_cpp_CBassPlayer_getCarryObjToBodyXForm_FUN_005da120(CBassPlayer *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
+CMatrix3x4f * __stack2_esi core_tbplayer_cpp_CBassPlayer_getCarryObjToBodyXForm_FUN_005da120(CBassPlayer *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 void __cdecl core_tbplayer_cpp_CBassPlayer_processDamage_FUN_005da240(CBassPlayer *this_ptr,SDamageInfo *damage_info);
 CDrummer * __cdecl core_tbplayer_cpp_factoryFuncDrummer_FUN_005da280(void);
 CDemonActorType * __cdecl core_tbplayer_cpp_CDrummer_getActorType_FUN_005da2b0(CDrummer *this_ptr);
 CDrummer * __cdecl core_tbplayer_cpp_CDrummer_ctor_FUN_005da2c0(CDrummer *this_ptr);
 void __cdecl core_tbplayer_cpp_CDrummer_setup_FUN_005da2f0(CDrummer *this_ptr);
-void __stack2_esi core_tbplayer_cpp_CDrummer_getCarryObjToBodyXForm_FUN_005da370(CDrummer *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
+CMatrix3x4f * __stack2_esi core_tbplayer_cpp_CDrummer_getCarryObjToBodyXForm_FUN_005da370(CDrummer *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 void __cdecl core_tbplayer_cpp_CDrummer_processDamage_FUN_005da510(CDrummer *this_ptr,SDamageInfo *damage_info);
 CDrummer * __cdecl core_tbplayer_cpp_CDrummer_dtor_FUN_005da540(CDrummer *this_ptr,uint flags);
 CBassPlayer * __cdecl core_tbplayer_cpp_CBassPlayer_dtor_FUN_005da610(CBassPlayer *this_ptr,uint flags);

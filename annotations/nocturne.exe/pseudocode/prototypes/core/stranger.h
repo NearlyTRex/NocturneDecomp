@@ -149,7 +149,7 @@ void __cdecl CStranger::updateArmRecoilBlend(CStranger *this_ptr,float delta_tim
 
 // Original: core_stranger.cpp_CStranger_getCarryObjToBodyXForm_FUN_0053f210
 // Address: 0053f210
-void __stack2_esi CStranger::getCarryObjToBodyXForm(CStranger *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
+CMatrix3x4f * __stack2_esi CStranger::getCarryObjToBodyXForm(CStranger *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
 // Original: core_stranger.cpp_CStranger_getThrowDirection_FUN_0053f260
 // Address: 0053f260

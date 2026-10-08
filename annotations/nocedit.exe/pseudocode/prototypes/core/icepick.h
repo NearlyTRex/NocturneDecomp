@@ -45,7 +45,7 @@ CVector3f * __cdecl setEulerAngles(CVector3f *out,float x,float z,float y);
 
 // Original: core_icepick.cpp_CIcePick_getCarryObjToBodyXForm_FUN_004f8b20
 // Address: 004f8b20
-void __stack2_esi CIcePick::getCarryObjToBodyXForm(CIcePick *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
+CMatrix3x4f * __stack2_esi CIcePick::getCarryObjToBodyXForm(CIcePick *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
 // Original: core_icepick.cpp_CIcePick_processAI_FUN_004f8c70
 // Address: 004f8c70

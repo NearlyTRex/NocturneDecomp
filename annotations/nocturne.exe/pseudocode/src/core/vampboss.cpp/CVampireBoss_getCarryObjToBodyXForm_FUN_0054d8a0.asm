@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __stack2_esi core_vampboss_cpp_CVampireBoss_getCarryObjToBodyXForm_FUN_0054d8a0(CVampireBoss *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
+; CMatrix3x4f * __stack2_esi core_vampboss_cpp_CVampireBoss_getCarryObjToBodyXForm_FUN_0054d8a0(CVampireBoss *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 ;
 ; Parameters:
 ; CVampireBoss *   Stack[0x4]:4   this_ptr

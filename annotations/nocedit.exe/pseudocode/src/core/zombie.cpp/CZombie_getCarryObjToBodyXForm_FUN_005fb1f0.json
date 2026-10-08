@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 352,
-    "complexity_score": 135,
+    "complexity_score": 137,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 4,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 135,
+    "pseudocode_lines": 137,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 487
+    "total_lines": 489
   },
   "cross_references": [],
   "function": {
@@ -33,7 +33,7 @@
     "convention": "__stack2_esi",
     "is_ebp_frame": true,
     "name": "core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0",
-    "signature": "void __stack2_esi core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0(CZombie *this_ptr,int hand_index,CMatrix3x4f *out_matrix)"
+    "signature": "CMatrix3x4f * __stack2_esi core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0(CZombie *this_ptr,int hand_index,CMatrix3x4f *out_matrix)"
   },
   "function_calls": [
     {
@@ -146,7 +146,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 133,
+      "line": 135,
       "match": "(CMatrix3x4f *)((int)pCVar5",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -155,16 +155,16 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 136,
-      "match": "(CMatrix3x4f *)((int)out_matrix",
+      "line": 138,
+      "match": "(CMatrix3x4f *)((int)pCVar7",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar7 * -2 + 1) * 4);",
+      "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Pointer value `pCVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 133,
+      "line": 135,
       "match": "(int)pCVar5",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -172,8 +172,17 @@
       "type": "pointer_truncation"
     },
     {
+      "description": "Pointer value `pCVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 138,
+      "match": "(int)pCVar7",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar7 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 132,
+      "line": 134,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -182,7 +191,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 52,
+      "line": 53,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -191,7 +200,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (12 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 56,
+      "line": 57,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -200,7 +209,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 94,
+      "line": 95,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -209,7 +218,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 117,
+      "line": 118,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -218,7 +227,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 124,
+      "line": 125,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",

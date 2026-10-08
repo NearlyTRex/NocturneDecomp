@@ -100,7 +100,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateAimTracking_FUN_004d6540(CGabrie
 void __cdecl core_gabriela_cpp_CGabriella_processDamage_FUN_004d6b30(CGabriella *this_ptr,SDamageInfo *damage_info);
 void __cdecl core_gabriela_cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_004d6d40(CGabriella *this_ptr,float delta_time,int has_carried_objects);
 void __cdecl core_gabriela_cpp_CGabriella_binarySearchClavicleBlend_FUN_004d6f80(CGabriella *this_ptr,float delta_time,float *clavicle_blend,int probe_bone_index,int blend_bone_index,CVector3f *probe_offset);
-void __stack2_esi core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120(CGabriella *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
+CMatrix3x4f * __stack2_esi core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120(CGabriella *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 int __cdecl core_gabriela_cpp_CGabriella_isWeaponDrawn_FUN_004d7590(CGabriella *this_ptr);
 void __cdecl core_gabriela_cpp_CGabriella_drawWeapon_FUN_004d75b0(CGabriella *this_ptr,int drawn);
 void __cdecl core_gabriela_cpp_CGabriella_onActorDeleted_FUN_004d75e0(CGabriella *this_ptr,CDemonActor *deleted_actor);

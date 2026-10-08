@@ -102,13 +102,13 @@ CDemonActorType * __cdecl core_tbplayer_cpp_CBassPlayer_getActorType_FUN_0054314
 CBassPlayer * __cdecl core_tbplayer_cpp_CBassPlayer_ctor_FUN_00543150(CBassPlayer *this_ptr);
 void __cdecl core_tbplayer_cpp_CBassPlayer_setup_FUN_00543180(CBassPlayer *this_ptr);
 CVector3f * __cdecl core_tbplayer_cpp_setVector_FUN_005431f0(CVector3f *out,float x,float y,float z);
-void __stack2_esi core_tbplayer_cpp_CBassPlayer_getCarryObjToBodyXForm_FUN_00543210(CBassPlayer *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
+CMatrix3x4f * __stack2_esi core_tbplayer_cpp_CBassPlayer_getCarryObjToBodyXForm_FUN_00543210(CBassPlayer *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 void __cdecl core_tbplayer_cpp_CBassPlayer_processDamage_FUN_00543330(CBassPlayer *this_ptr,SDamageInfo *damage_info);
 CDrummer * __cdecl core_tbplayer_cpp_factoryFuncDrummer_FUN_00543370(void);
 CDemonActorType * __cdecl core_tbplayer_cpp_CDrummer_getActorType_FUN_00543390(CDrummer *this_ptr);
 CDrummer * __cdecl core_tbplayer_cpp_CDrummer_ctor_FUN_005433a0(CDrummer *this_ptr);
 void __cdecl core_tbplayer_cpp_CDrummer_setup_FUN_005433d0(CDrummer *this_ptr);
-void __stack2_esi core_tbplayer_cpp_CDrummer_getCarryObjToBodyXForm_FUN_00543450(CDrummer *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
+CMatrix3x4f * __stack2_esi core_tbplayer_cpp_CDrummer_getCarryObjToBodyXForm_FUN_00543450(CDrummer *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 void __cdecl core_tbplayer_cpp_CDrummer_processDamage_FUN_005435f0(CDrummer *this_ptr,SDamageInfo *damage_info);
 CDrummer * __cdecl core_tbplayer_cpp_CDrummer_dtor_FUN_00543620(CDrummer *this_ptr,uint flags);
 CBassPlayer * __cdecl core_tbplayer_cpp_CBassPlayer_dtor_FUN_005436f0(CBassPlayer *this_ptr,uint flags);
@@ -299,7 +299,7 @@ CVampireBoss * __cdecl core_vampboss_cpp_CVampireBoss_ctor_FUN_0054c2b0(CVampire
 void __cdecl core_vampboss_cpp_CVampireBoss_setup_FUN_0054c3e0(CVampireBoss *this_ptr);
 float __cdecl core_vampboss_cpp_clampAngle_FUN_0054c5f0(float angle,float max_angle);
 void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_0054c690(CVampireBoss *this_ptr,float delta_time);
-void __stack2_esi core_vampboss_cpp_CVampireBoss_getCarryObjToBodyXForm_FUN_0054d8a0(CVampireBoss *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
+CMatrix3x4f * __stack2_esi core_vampboss_cpp_CVampireBoss_getCarryObjToBodyXForm_FUN_0054d8a0(CVampireBoss *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 void __cdecl core_vampboss_cpp_CVampireBoss_advanceAnimation_FUN_0054d9c0(CVampireBoss *this_ptr,float delta_time);
 int __cdecl core_vampboss_cpp_CVampireBoss_renderOpaque_FUN_0054dac0(CVampireBoss *this_ptr);
 void __cdecl core_vampboss_cpp_CVampireBoss_archive_FUN_0054dc70(CVampireBoss *this_ptr);
