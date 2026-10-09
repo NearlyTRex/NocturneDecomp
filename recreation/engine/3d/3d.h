@@ -1,14 +1,15 @@
 #pragma once
 
-#include "core/fwd.h"
+#include "common/fwd.h"
 #include "engine/fwd.h"
+#include "platform/fwd.h"
 
 namespace nocturne::engine {
 
 SMRGLHeaderExtended *badMRGLStruct(SMRGLHeaderExtended *prim);
-SMRGLHeaderExtended *processCameraRelativePoint(core::CQuaternion4f *input_point);
+SMRGLHeaderExtended *processCameraRelativePoint(common::CQuaternion4f *input_point);
 SMRGLHeaderExtended *transformAndBufferVertices(SMRGLHeaderExtended *mrgl);
-int isVisiblePlane(core::SClipPlane *plane);
+int isVisiblePlane(SClipPlane *plane);
 SMRGLHeaderExtended *processVertexLighting(SMRGLHeaderExtended *mrgl);
 SMRGLHeaderExtended *processTextureCoordinates(SMRGLHeaderPrimitive *prim);
 SMRGLHeaderExtended *renderPolygonGrayscaleLitOp5(SMRGLHeaderPrimitive *primitive);
@@ -74,6 +75,6 @@ void renderPolygonWithRenderFlags(SMRGLHeaderPrimitive *primitive, int render_fl
                                   int render_state_flags);
 void dispatchMRGLBlockChain(SMRGLHeaderExtended *chain);
 void drawLine2DFromIndices(int vertex_index1, int vertex_index2);
-void clipAndDrawLine2D(SRenderVertex vertex1, SRenderVertex vertex2);
+void clipAndDrawLine2D(platform::SRenderVertex vertex1, platform::SRenderVertex vertex2);
 
 } // namespace nocturne::engine

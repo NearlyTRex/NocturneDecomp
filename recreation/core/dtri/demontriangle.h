@@ -1,6 +1,6 @@
 #pragma once
 
-#include "core/fwd.h"
+#include "common/fwd.h"
 
 #include <cstdio>
 
@@ -8,11 +8,9 @@ namespace nocturne::core {
 
 class CDemonTriangle {
 public:
-    CDemonTriangle();
-    ~CDemonTriangle();
-
     void readDataBinary(std::FILE *file_handle);
-    void buildCollision(CVector3f *vertex1, CVector3f *vertex2, CVector3f *vertex3);
+    void buildCollision(common::CVector3f *vertex1, common::CVector3f *vertex2,
+                        common::CVector3f *vertex3);
 };
 
 } // namespace nocturne::core

@@ -1,11 +1,10 @@
 #pragma once
 
-#include "core/fwd.h"
 #include "engine/fwd.h"
 
 namespace nocturne::engine {
 
-using CustomScanlineFunc = void(int, core::SSoftwareEdge *, core::SSoftwareEdge *);
+using CustomScanlineFunc = void(int, SSoftwareEdge *, SSoftwareEdge *);
 
 void staticInit();
 int qsortByCapturedFaceDepthAscending(SFace **face_ptr_a, SFace **face_ptr_b);

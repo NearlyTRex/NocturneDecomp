@@ -1,5 +1,6 @@
 #pragma once
 
+#include "common/fwd.h"
 #include "core/fwd.h"
 #include "core/skeleton/deformablemodel.h"
 
@@ -25,13 +26,15 @@ public:
                      int bone_index, CDeformableModel::MotionBlendWeightFunc *callback_func);
     void blendWithPoseData(SPoseData *pose_data, float blend_weight, int bone_index,
                            CDeformableModel::MotionBlendWeightFunc *blend_callback);
-    void blendBoneRotations(CQuaternion4f *source_quaternions, float blend_weight, int bone_index,
+    void blendBoneRotations(common::CQuaternion4f *source_quaternions, float blend_weight,
+                            int bone_index,
                             CDeformableModel::MotionBlendWeightFunc *blend_callback);
-    CMatrix3x4f *getBoneModelMatrix(int bone_index, CMatrix3x4f *out_matrix);
-    CVector3f *getBoneModelPosition(CVector3f *out_position, int bone_index);
-    CVector3f *getBoneCachedModelPosition(CVector3f *out_position, int bone_index);
+    common::CMatrix3x4f *getBoneModelMatrix(int bone_index, common::CMatrix3x4f *out_matrix);
+    common::CVector3f *getBoneModelPosition(common::CVector3f *out_position, int bone_index);
+    common::CVector3f *getBoneCachedModelPosition(common::CVector3f *out_position, int bone_index);
     void computeBoneTransforms();
-    void applyRotationToHierarchy(CQuaternion4f *rotation_quat, float blend_weight, int bone_index,
+    void applyRotationToHierarchy(common::CQuaternion4f *rotation_quat, float blend_weight,
+                                  int bone_index,
                                   CDeformableModel::MotionBlendWeightFunc *blend_callback);
     void scalePoseDataForHierarchy(float scale_factor, int target_bone_index);
     void renderWithOptions(int lod_index, std::uint32_t render_flags, int lighting_mode,
@@ -46,11 +49,13 @@ public:
     CDeformableModel *getModelPtr();
     CSkeleton *getSkeletonPtr();
     void init(char *model_name);
-    CVector3f *getRootMotionDelta(CVector3f *output_buffer, float start_frame, float end_frame);
+    common::CVector3f *getRootMotionDelta(common::CVector3f *output_buffer, float start_frame,
+                                          float end_frame);
     void dismemberPart(CBodyPart *body_part, int part_index);
-    float rayIntersect(CVector3f *ray_origin, CVector3f *ray_direction);
-    int findClosestBone(CVector3f *point);
-    void shatter(CVector3f *center_position, CVector3f *orientation_vector, int desired_lod_index);
+    float rayIntersect(common::CVector3f *ray_origin, common::CVector3f *ray_direction);
+    int findClosestBone(common::CVector3f *point);
+    void shatter(common::CVector3f *center_position, common::CVector3f *orientation_vector,
+                 int desired_lod_index);
     SPose *getBoneTransform(SPose *bone_transform);
     void setBoneTransform(SPose *bone_transform);
     CBoundingBox3D *computeBoundingBoxFromBones(CBoundingBox3D *output_bbox);

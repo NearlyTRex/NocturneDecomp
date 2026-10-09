@@ -22,18 +22,19 @@ TEST(CKeyFramedModel, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CKeyFramedModel::prepareForRender),
                                  void (CKeyFramedModel::*)(int, CKeyFramedModelInstance *, int)>);
     static_assert(std::is_same_v<decltype(&CKeyFramedModel::getFrameVertices),
-                                 CVector3i *(CKeyFramedModel::*)(int)>);
+                                 common::CVector3i *(CKeyFramedModel::*)(int)>);
     static_assert(
         std::is_same_v<decltype(&CKeyFramedModel::captureTextures), void (CKeyFramedModel::*)()>);
     static_assert(
         std::is_same_v<decltype(&CKeyFramedModel::intersectRay),
-                       float (CKeyFramedModel::*)(int, CVector3f *, CVector3f *, CVector3f *)>);
-    static_assert(
-        std::is_same_v<decltype(&CKeyFramedModel::intersectCylinder),
-                       void (CKeyFramedModel::*)(int, SIntersectXZCylinder *, CVector3f *)>);
-    static_assert(
-        std::is_same_v<decltype(&CKeyFramedModel::getFloorHeight),
-                       int (CKeyFramedModel::*)(int, CVector3f *, float, float *, CVector3f *)>);
+                       float (CKeyFramedModel::*)(int, common::CVector3f *, common::CVector3f *,
+                                                  common::CVector3f *)>);
+    static_assert(std::is_same_v<decltype(&CKeyFramedModel::intersectCylinder),
+                                 void (CKeyFramedModel::*)(int, SIntersectXZCylinder *,
+                                                           common::CVector3f *)>);
+    static_assert(std::is_same_v<decltype(&CKeyFramedModel::getFloorHeight),
+                                 int (CKeyFramedModel::*)(int, common::CVector3f *, float, float *,
+                                                          common::CVector3f *)>);
 }
 
 } // namespace

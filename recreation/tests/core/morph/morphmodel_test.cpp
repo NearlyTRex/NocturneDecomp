@@ -17,16 +17,16 @@ TEST(CMorphModel, Constructors) {
 
 TEST(CMorphModel, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CMorphModel::free), void (CMorphModel::*)()>);
-    static_assert(
-        std::is_same_v<decltype(&CMorphModel::addPartFromPolygon),
-                       void (CMorphModel::*)(int, CVector3i *, int, engine::SMRGLHeaderPrimitive *,
-                                             int, SMRGLTextureModel *, int *)>);
+    static_assert(std::is_same_v<decltype(&CMorphModel::addPartFromPolygon),
+                                 void (CMorphModel::*)(int, common::CVector3i *, int,
+                                                       engine::SMRGLHeaderPrimitive *, int,
+                                                       SMRGLTextureModel *, int *)>);
     static_assert(std::is_same_v<decltype(&CMorphModel::addPartFromDeformableModel),
                                  void (CMorphModel::*)(CDeformableModelInstance *)>);
     static_assert(std::is_same_v<decltype(&CMorphModel::addPartFromKeyFramedModel),
                                  void (CMorphModel::*)(CKeyFramedModel *, int)>);
     static_assert(std::is_same_v<decltype(&CMorphModel::animateFromPartVertexBuffer),
-                                 void (CMorphModel::*)(int, CVector3i *)>);
+                                 void (CMorphModel::*)(int, common::CVector3i *)>);
     static_assert(std::is_same_v<decltype(&CMorphModel::animateFromDeformableModel),
                                  void (CMorphModel::*)(int, CDeformableModelInstance *)>);
     static_assert(std::is_same_v<decltype(&CMorphModel::animateFromKeyframedModel),
@@ -34,7 +34,7 @@ TEST(CMorphModel, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CMorphModel::render),
                                  void (CMorphModel::*)(float, SMorphPoint *)>);
     static_assert(std::is_same_v<decltype(&CMorphModel::findNearestPoint),
-                                 int (CMorphModel::*)(CVector3f *)>);
+                                 int (CMorphModel::*)(common::CVector3f *)>);
 }
 
 } // namespace

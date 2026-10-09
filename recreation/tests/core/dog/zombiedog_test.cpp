@@ -26,8 +26,8 @@ TEST(CZombieDog, Constructors) {
 TEST(CZombieDog, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CZombieDog::setup), void (CZombieDog::*)()>);
     static_assert(std::is_same_v<decltype(&CZombieDog::process), void (CZombieDog::*)(float)>);
-    static_assert(
-        std::is_same_v<decltype(&CZombieDog::getTargetPoints), int (CZombieDog::*)(CVector3f *)>);
+    static_assert(std::is_same_v<decltype(&CZombieDog::getTargetPoints),
+                                 int (CZombieDog::*)(common::CVector3f *)>);
     static_assert(
         std::is_same_v<decltype(&CZombieDog::getActorType), CDemonActorType *(CZombieDog::*)()>);
     static_assert(std::is_same_v<decltype(&CZombieDog::archive), void (CZombieDog::*)()>);

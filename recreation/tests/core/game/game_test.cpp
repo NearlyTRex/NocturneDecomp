@@ -19,8 +19,8 @@ TEST(CGame, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CGame::saveClockTime), void (CGame::*)()>);
     static_assert(std::is_same_v<decltype(&CGame::updateDT), void (CGame::*)()>);
     static_assert(std::is_same_v<decltype(&CGame::displayMessage), void (CGame::*)(char *, float)>);
-    static_assert(
-        std::is_same_v<decltype(&CGame::setFudgeTarget), void (CGame::*)(CVector3f *, float)>);
+    static_assert(std::is_same_v<decltype(&CGame::setFudgeTarget),
+                                 void (CGame::*)(common::CVector3f *, float)>);
     static_assert(std::is_same_v<decltype(&CGame::runGameSession), int (CGame::*)()>);
     static_assert(std::is_same_v<decltype(&CGame::restoreDefaultControls), void (CGame::*)()>);
     static_assert(std::is_same_v<decltype(&CGame::resetKeyState), void (CGame::*)()>);

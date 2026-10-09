@@ -1,5 +1,6 @@
 #pragma once
 
+#include "common/fwd.h"
 #include "core/fwd.h"
 #include "core/weapon/weapon.h"
 
@@ -17,12 +18,12 @@ public:
     int canPickup(CDemonActor *picker) override;
     void getInteractionInfo(SInteractionInfo *out_info) override;
     int startInteraction(CDemonActor *user) override;
-    int updateInteraction(UOrientationVector *user_orientation,
+    int updateInteraction(common::UOrientationVector *user_orientation,
                           SPlayerInput *player_control) override;
     void stopInteraction(CDemonActor *user) override;
     CDemonActorType *getActorType() override;
     void archive() override;
-    CVector3f *getMuzzlePoint(CVector3f *out_point) override;
+    common::CVector3f *getMuzzlePoint(common::CVector3f *out_point) override;
     int fire() override;
     float getDamage() override;
 };

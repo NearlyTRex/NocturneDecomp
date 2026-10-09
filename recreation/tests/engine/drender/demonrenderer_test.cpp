@@ -47,21 +47,23 @@ TEST(CDemonRenderer, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDemonRenderer::renderOverlayDirect),
                                  void (CDemonRenderer::*)(SMRGLHeaderPrimitive *)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::setCameraOrigin),
-                                 void (CDemonRenderer::*)(core::CVector3i *)>);
+                                 void (CDemonRenderer::*)(common::CVector3i *)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::setCameraOriginFromScaledPoint),
-                                 void (CDemonRenderer::*)(core::CVector3f *)>);
+                                 void (CDemonRenderer::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::setupSceneRendering),
-                                 void (CDemonRenderer::*)(core::CVector3f *)>);
+                                 void (CDemonRenderer::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::setupCameraAndProjection),
-                                 void (CDemonRenderer::*)(core::CMatrix3x3f *)>);
+                                 void (CDemonRenderer::*)(common::CMatrix3x3f *)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::copyAndTransform3DPoint),
-                                 void (CDemonRenderer::*)(core::CVector3f *)>);
+                                 void (CDemonRenderer::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::processCameraRelativeVertex),
-                                 void (CDemonRenderer::*)(core::CVector3f *)>);
-    static_assert(std::is_same_v<decltype(&CDemonRenderer::applyDirectTransform),
-                                 void (CDemonRenderer::*)(core::CVector3i *, core::CVector3i *)>);
-    static_assert(std::is_same_v<decltype(&CDemonRenderer::applyScaledTransform),
-                                 void (CDemonRenderer::*)(core::CVector3f *, core::CVector3f *)>);
+                                 void (CDemonRenderer::*)(common::CVector3f *)>);
+    static_assert(
+        std::is_same_v<decltype(&CDemonRenderer::applyDirectTransform),
+                       void (CDemonRenderer::*)(common::CVector3i *, common::CVector3i *)>);
+    static_assert(
+        std::is_same_v<decltype(&CDemonRenderer::applyScaledTransform),
+                       void (CDemonRenderer::*)(common::CVector3f *, common::CVector3f *)>);
     static_assert(
         std::is_same_v<decltype(&CDemonRenderer::matrixPush), void (CDemonRenderer::*)()>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::matrixPop), void (CDemonRenderer::*)()>);
@@ -70,15 +72,15 @@ TEST(CDemonRenderer, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDemonRenderer::setLightIntensity),
                                  void (CDemonRenderer::*)(float)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::setLightDirection),
-                                 void (CDemonRenderer::*)(core::CVector3i *)>);
+                                 void (CDemonRenderer::*)(common::CVector3i *)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::getCameraOriginFixed),
-                                 core::CVector3i *(CDemonRenderer::*)(core::CVector3i *)>);
+                                 common::CVector3i *(CDemonRenderer::*)(common::CVector3i *)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::getCameraOriginWorld),
-                                 core::CVector3f *(CDemonRenderer::*)(core::CVector3f *)>);
+                                 common::CVector3f *(CDemonRenderer::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::getCameraRotationFixed),
-                                 core::CVector3i *(CDemonRenderer::*)(core::CVector3i *)>);
+                                 common::CVector3i *(CDemonRenderer::*)(common::CVector3i *)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::getCameraRotationRadians),
-                                 core::CVector3f *(CDemonRenderer::*)(core::CVector3f *)>);
+                                 common::CVector3f *(CDemonRenderer::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::calculateProjectionFactor),
                                  float (CDemonRenderer::*)()>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::pushViewport),
@@ -118,21 +120,22 @@ TEST(CDemonRenderer, PublicInterface) {
                                  void (CDemonRenderer::*)(int)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::renderTriangleBatch),
                                  void (CDemonRenderer::*)(SMRGLPrimitiveTriangle *, int, int)>);
-    static_assert(std::is_same_v<decltype(&CDemonRenderer::renderQuadBatch),
-                                 void (CDemonRenderer::*)(SMRGLPrimitiveQuad *, int, int)>);
+    static_assert(
+        std::is_same_v<decltype(&CDemonRenderer::renderQuadBatch),
+                       void (CDemonRenderer::*)(platform::SMRGLPrimitiveQuad *, int, int)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::renderFaceList),
-                                 void (CDemonRenderer::*)(SInputFace *, int, int)>);
+                                 void (CDemonRenderer::*)(platform::SInputFace *, int, int)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::setTextureCaptureMode),
                                  void (CDemonRenderer::*)(int)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::processCapturedFaces),
                                  void (CDemonRenderer::*)()>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::captureTexture),
-                                 void (CDemonRenderer::*)(core::SMRGLTextureBasic *)>);
-    static_assert(
-        std::is_same_v<decltype(&CDemonRenderer::updateTexture),
-                       void (CDemonRenderer::*)(core::SMRGLTextureBasic *, SRGBColorPalette *)>);
+                                 void (CDemonRenderer::*)(platform::SMRGLTextureBasic *)>);
+    static_assert(std::is_same_v<decltype(&CDemonRenderer::updateTexture),
+                                 void (CDemonRenderer::*)(platform::SMRGLTextureBasic *,
+                                                          SRGBColorPalette *)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::depthTest),
-                                 int (CDemonRenderer::*)(SRenderVertex *)>);
+                                 int (CDemonRenderer::*)(platform::SRenderVertex *)>);
 }
 
 } // namespace

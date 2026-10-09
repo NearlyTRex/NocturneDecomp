@@ -26,7 +26,8 @@ TEST(CSpark, Constructors) {
 TEST(CSpark, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CSpark::process), void (CSpark::*)()>);
     static_assert(std::is_same_v<decltype(&CSpark::render), void (CSpark::*)()>);
-    static_assert(std::is_same_v<decltype(&CSpark::onCollision), int (CSpark::*)(CVector3f *)>);
+    static_assert(
+        std::is_same_v<decltype(&CSpark::onCollision), int (CSpark::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CSpark::setupRenderState), void (CSpark::*)()>);
 }
 

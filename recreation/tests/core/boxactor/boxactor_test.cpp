@@ -37,7 +37,7 @@ TEST(CBoxActor, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CBoxActor::getBlockVirtualDirectorFlag), int (CBoxActor::*)()>);
     static_assert(std::is_same_v<decltype(&CBoxActor::setPositionAndOrientation),
-                                 void (CBoxActor::*)(CVector3f *, CVector3f *)>);
+                                 void (CBoxActor::*)(common::CVector3f *, common::CVector3f *)>);
     static_assert(
         std::is_same_v<decltype(&CBoxActor::onPickup), void (CBoxActor::*)(CDemonActor *)>);
     static_assert(
@@ -46,13 +46,13 @@ TEST(CBoxActor, PublicInterface) {
         std::is_same_v<decltype(&CBoxActor::canPickup), int (CBoxActor::*)(CDemonActor *)>);
     static_assert(std::is_same_v<decltype(&CBoxActor::pickup), void (CBoxActor::*)(CDemonActor *)>);
     static_assert(
-        std::is_same_v<decltype(&CBoxActor::onDropped), void (CBoxActor::*)(CVector3f *)>);
+        std::is_same_v<decltype(&CBoxActor::onDropped), void (CBoxActor::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CBoxActor::getCarrier), CDemonActor *(CBoxActor::*)()>);
     static_assert(
         std::is_same_v<decltype(&CBoxActor::getActorType), CDemonActorType *(CBoxActor::*)()>);
     static_assert(std::is_same_v<decltype(&CBoxActor::archive), void (CBoxActor::*)()>);
     static_assert(std::is_same_v<decltype(&CBoxActor::resolveRayPush),
-                                 void (CBoxActor::*)(CVector3f *, CVector3f *)>);
+                                 void (CBoxActor::*)(common::CVector3f *, common::CVector3f *)>);
 }
 
 } // namespace

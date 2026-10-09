@@ -25,7 +25,8 @@ TEST(CPopcorn, Constructors) {
 
 TEST(CPopcorn, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CPopcorn::render), void (CPopcorn::*)()>);
-    static_assert(std::is_same_v<decltype(&CPopcorn::onCollision), int (CPopcorn::*)(CVector3f *)>);
+    static_assert(
+        std::is_same_v<decltype(&CPopcorn::onCollision), int (CPopcorn::*)(common::CVector3f *)>);
 }
 
 } // namespace

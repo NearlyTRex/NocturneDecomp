@@ -6,7 +6,7 @@ class CCodec;
 class CLZWCompress;
 class CLZWDecompress;
 class CLZWDictionary;
+class CSocket;
 struct SBitBuffer;
-struct SNetworkAddr;
 
 } // namespace nocturne::support

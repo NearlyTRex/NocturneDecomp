@@ -35,8 +35,9 @@ TEST(CMirrorHack, PublicInterface) {
                                  void (CMirrorHack::*)(SInteractionInfo *)>);
     static_assert(std::is_same_v<decltype(&CMirrorHack::startInteraction),
                                  int (CMirrorHack::*)(CDemonActor *)>);
-    static_assert(std::is_same_v<decltype(&CMirrorHack::updateInteraction),
-                                 int (CMirrorHack::*)(UOrientationVector *, SPlayerInput *)>);
+    static_assert(
+        std::is_same_v<decltype(&CMirrorHack::updateInteraction),
+                       int (CMirrorHack::*)(common::UOrientationVector *, SPlayerInput *)>);
     static_assert(std::is_same_v<decltype(&CMirrorHack::stopInteraction),
                                  void (CMirrorHack::*)(CDemonActor *)>);
     static_assert(

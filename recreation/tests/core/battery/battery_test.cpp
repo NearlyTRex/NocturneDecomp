@@ -33,7 +33,8 @@ TEST(CBattery, PublicInterface) {
                                  ECollisionType (CBattery::*)(SCollisionInfo *)>);
     static_assert(std::is_same_v<decltype(&CBattery::canPickup), int (CBattery::*)(CDemonActor *)>);
     static_assert(std::is_same_v<decltype(&CBattery::pickup), void (CBattery::*)(CDemonActor *)>);
-    static_assert(std::is_same_v<decltype(&CBattery::onDropped), void (CBattery::*)(CVector3f *)>);
+    static_assert(
+        std::is_same_v<decltype(&CBattery::onDropped), void (CBattery::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CBattery::getCarrier), CDemonActor *(CBattery::*)()>);
     static_assert(
         std::is_same_v<decltype(&CBattery::getActorType), CDemonActorType *(CBattery::*)()>);

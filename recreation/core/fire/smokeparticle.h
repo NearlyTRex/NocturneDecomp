@@ -1,17 +1,15 @@
 #pragma once
 
-#include "core/fwd.h"
+#include "common/fwd.h"
 
 namespace nocturne::core {
 
 class CSmokeParticle {
 public:
-    CSmokeParticle();
-    ~CSmokeParticle();
-
     void setupRenderState();
     void reset();
-    void init(CVector3f *position, float drag_factor, CVector3f *wind_influence, int alpha_value);
+    void init(common::CVector3f *position, float drag_factor, common::CVector3f *wind_influence,
+              int alpha_value);
     void process();
     void render();
 };

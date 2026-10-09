@@ -1,12 +1,13 @@
 #pragma once
 
-#include "core/fwd.h"
+#include "common/fwd.h"
 
 namespace nocturne::core {
 
 void staticInit();
 void resetRestoreMemoryAllocator();
 void captureLightTextures();
-void renderConeLightGeometry(CVector3f *position, CVector3f *rotation, float fov, float falloff);
+void renderConeLightGeometry(common::CVector3f *position, common::CVector3f *rotation, float fov,
+                             float falloff);
 
 } // namespace nocturne::core

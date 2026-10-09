@@ -52,6 +52,29 @@ jobs:
         cmake --build build/exe-linux-x86_64 --target nocturne_tests
       test-command: ctest --test-dir build/exe-linux-x86_64 --output-on-failure
 
+  # The source recreation is a standalone CMake project with none of the game's
+  # dependencies. Every header compiles on its own, then format, clang-tidy and
+  # the tests under the 100% line, function and branch coverage gate.
+  recreation:
+    name: Recreation
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@4fe68c91984dd09dea6988fd603b128bc3f44ff7 # v0.2.9
+    permissions:
+      contents: read
+    with:
+      apt-packages: cmake clang clang-format clang-tidy llvm ninja-build
+      cache-paths: build/recreation/coverage/_deps
+      cache-key-files: recreation/CMakeLists.txt
+      cache-key: recreation-coverage
+      build-command: |
+        cd recreation
+        cmake --preset coverage
+        cmake --build --preset coverage
+        cmake --build --preset coverage --target format-check
+        cmake --build --preset coverage --target tidy
+      test-command: |
+        cd recreation
+        cmake --build --preset coverage --target coverage
+
   lint:
     name: Lint
     uses: NearlyTRex/Workflows/.github/workflows/lint.yml@4fe68c91984dd09dea6988fd603b128bc3f44ff7 # v0.2.9

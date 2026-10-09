@@ -9,25 +9,25 @@ namespace {
 
 TEST(CoreDstrenderFunctions, PublicInterface) {
     static_assert(std::is_same_v<decltype(&renderDepthOnlyStandard),
-                                 void (*)(SSoftwareEdge *, SSoftwareEdge *, int)>);
+                                 void (*)(engine::SSoftwareEdge *, engine::SSoftwareEdge *, int)>);
     static_assert(std::is_same_v<decltype(&renderDepth16BitConditional),
-                                 void (*)(SSoftwareEdge *, SSoftwareEdge *, int)>);
+                                 void (*)(engine::SSoftwareEdge *, engine::SSoftwareEdge *, int)>);
     static_assert(std::is_same_v<decltype(&renderTexturedAlphaMMXScanline),
-                                 void (*)(SSoftwareEdge *, SSoftwareEdge *, int)>);
+                                 void (*)(engine::SSoftwareEdge *, engine::SSoftwareEdge *, int)>);
     static_assert(std::is_same_v<decltype(&renderZBufferFill16xUnrolled),
-                                 void (*)(SSoftwareEdge *, SSoftwareEdge *, int)>);
+                                 void (*)(engine::SSoftwareEdge *, engine::SSoftwareEdge *, int)>);
     static_assert(std::is_same_v<decltype(&renderSolidColorDepth16xUnrolled),
-                                 void (*)(SSoftwareEdge *, SSoftwareEdge *, int)>);
+                                 void (*)(engine::SSoftwareEdge *, engine::SSoftwareEdge *, int)>);
     static_assert(std::is_same_v<decltype(&renderDepthInterlacedProfiled),
-                                 void (*)(SSoftwareEdge *, SSoftwareEdge *, int)>);
+                                 void (*)(engine::SSoftwareEdge *, engine::SSoftwareEdge *, int)>);
     static_assert(std::is_same_v<decltype(&renderScreenDepthTestInterlacedProfiled),
-                                 void (*)(SSoftwareEdge *, SSoftwareEdge *, int)>);
+                                 void (*)(engine::SSoftwareEdge *, engine::SSoftwareEdge *, int)>);
     static_assert(std::is_same_v<decltype(&renderDepthTestStatistics16xUnrolled),
-                                 void (*)(SSoftwareEdge *, SSoftwareEdge *, int)>);
+                                 void (*)(engine::SSoftwareEdge *, engine::SSoftwareEdge *, int)>);
     static_assert(std::is_same_v<decltype(&renderPerspectiveCorrectTextured16xCached),
-                                 void (*)(SSoftwareEdge *, SSoftwareEdge *, int)>);
+                                 void (*)(engine::SSoftwareEdge *, engine::SSoftwareEdge *, int)>);
     static_assert(std::is_same_v<decltype(&renderTexturedDecalMMXScanline),
-                                 void (*)(SSoftwareEdge *, SSoftwareEdge *, int)>);
+                                 void (*)(engine::SSoftwareEdge *, engine::SSoftwareEdge *, int)>);
     static_assert(std::is_same_v<decltype(&blendHBilerpLightmapSharedU64toU64pBB12Px2MMX),
                                  void (*)(std::uint64_t *, std::uint64_t *, std::uint8_t *,
                                           std::uint8_t *, int)>);

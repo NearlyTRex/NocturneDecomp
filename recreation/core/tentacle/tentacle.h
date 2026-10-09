@@ -1,5 +1,6 @@
 #pragma once
 
+#include "common/fwd.h"
 #include "core/enemy/enemy.h"
 #include "core/fwd.h"
 
@@ -16,7 +17,7 @@ public:
     int shouldIgnoreForTargeting() override;
     CDemonActorType *getActorType() override;
     void archive() override;
-    int attractActorToward(CDemonActor *actor, CVector3f *target_local_point) override;
+    int attractActorToward(CDemonActor *actor, common::CVector3f *target_local_point) override;
 };
 
 } // namespace nocturne::core

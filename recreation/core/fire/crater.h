@@ -1,5 +1,6 @@
 #pragma once
 
+#include "common/fwd.h"
 #include "core/fwd.h"
 
 #include <cstdio>
@@ -12,7 +13,7 @@ public:
     ~CCrater();
 
     void reset();
-    void activate(CVector3f *center_position, float radius);
+    void activate(common::CVector3f *center_position, float radius);
     void process();
     void render();
     void load(std::FILE *file_handle);

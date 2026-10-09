@@ -1,16 +1,13 @@
 #pragma once
 
-#include "core/fwd.h"
+#include "common/fwd.h"
 
 namespace nocturne::core {
 
 class CGunFlame {
 public:
-    CGunFlame();
-    ~CGunFlame();
-
     void reset();
-    void activate(CVector3f *position, CVector3f *euler_angles, int flame_type);
+    void activate(common::CVector3f *position, common::CVector3f *euler_angles, int flame_type);
     void process();
     void render();
 };

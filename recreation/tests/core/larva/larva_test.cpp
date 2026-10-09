@@ -26,7 +26,8 @@ TEST(CLarva, Constructors) {
 TEST(CLarva, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CLarva::setup), void (CLarva::*)()>);
     static_assert(std::is_same_v<decltype(&CLarva::process), void (CLarva::*)(float)>);
-    static_assert(std::is_same_v<decltype(&CLarva::getTargetPoints), int (CLarva::*)(CVector3f *)>);
+    static_assert(
+        std::is_same_v<decltype(&CLarva::getTargetPoints), int (CLarva::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CLarva::getActorType), CDemonActorType *(CLarva::*)()>);
     static_assert(std::is_same_v<decltype(&CLarva::archive), void (CLarva::*)()>);
     static_assert(

@@ -26,11 +26,12 @@ TEST(CBloodParticle, Constructors) {
 TEST(CBloodParticle, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CBloodParticle::render), void (CBloodParticle::*)()>);
     static_assert(std::is_same_v<decltype(&CBloodParticle::onCollision),
-                                 int (CBloodParticle::*)(CVector3f *)>);
+                                 int (CBloodParticle::*)(common::CVector3f *)>);
     static_assert(
-        std::is_same_v<decltype(static_cast<void (CBloodParticle::*)(CVector3f *, CVector3f *,
-                                                                     int)>(&CBloodParticle::setup)),
-                       void (CBloodParticle::*)(CVector3f *, CVector3f *, int)>);
+        std::is_same_v<decltype(static_cast<void (CBloodParticle::*)(common::CVector3f *,
+                                                                     common::CVector3f *, int)>(
+                           &CBloodParticle::setup)),
+                       void (CBloodParticle::*)(common::CVector3f *, common::CVector3f *, int)>);
     static_assert(
         std::is_same_v<decltype(&CBloodParticle::setupRenderState), void (CBloodParticle::*)()>);
 }

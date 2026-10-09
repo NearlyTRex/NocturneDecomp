@@ -7,7 +7,6 @@ namespace nocturne::sound {
 class CSfxSlot {
 public:
     CSfxSlot();
-    ~CSfxSlot();
 
     int compute(float delta_time);
     void mix(SMixBuffer mix_buffer);

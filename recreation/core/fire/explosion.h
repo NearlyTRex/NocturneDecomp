@@ -1,5 +1,6 @@
 #pragma once
 
+#include "common/fwd.h"
 #include "core/fwd.h"
 
 namespace nocturne::core {
@@ -7,9 +8,8 @@ namespace nocturne::core {
 class CExplosion {
 public:
     CExplosion();
-    ~CExplosion();
 
-    void activate(CVector3f *position, float scale, float gore_multiplier);
+    void activate(common::CVector3f *position, float scale, float gore_multiplier);
     void process();
     void render();
 };

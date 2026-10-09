@@ -29,8 +29,9 @@ TEST(CBassPlayer, PublicInterface) {
         std::is_same_v<decltype(&CBassPlayer::getActorType), CDemonActorType *(CBassPlayer::*)()>);
     static_assert(std::is_same_v<decltype(&CBassPlayer::processDamage),
                                  void (CBassPlayer::*)(SDamageInfo *)>);
-    static_assert(std::is_same_v<decltype(&CBassPlayer::getCarryObjToBodyXForm),
-                                 CMatrix3x4f *(CBassPlayer::*)(int, CMatrix3x4f *)>);
+    static_assert(
+        std::is_same_v<decltype(&CBassPlayer::getCarryObjToBodyXForm),
+                       common::CMatrix3x4f *(CBassPlayer::*)(int, common::CMatrix3x4f *)>);
 }
 
 } // namespace

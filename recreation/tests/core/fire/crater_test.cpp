@@ -17,8 +17,8 @@ TEST(CCrater, Constructors) {
 
 TEST(CCrater, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CCrater::reset), void (CCrater::*)()>);
-    static_assert(
-        std::is_same_v<decltype(&CCrater::activate), void (CCrater::*)(CVector3f *, float)>);
+    static_assert(std::is_same_v<decltype(&CCrater::activate),
+                                 void (CCrater::*)(common::CVector3f *, float)>);
     static_assert(std::is_same_v<decltype(&CCrater::process), void (CCrater::*)()>);
     static_assert(std::is_same_v<decltype(&CCrater::render), void (CCrater::*)()>);
     static_assert(std::is_same_v<decltype(&CCrater::load), void (CCrater::*)(std::FILE *)>);

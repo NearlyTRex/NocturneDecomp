@@ -38,7 +38,8 @@ TEST(CGlass, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CGlass::getActorType), CDemonActorType *(CGlass::*)()>);
     static_assert(std::is_same_v<decltype(&CGlass::archive), void (CGlass::*)()>);
     static_assert(std::is_same_v<decltype(&CGlass::renderBrokenGlass), void (CGlass::*)()>);
-    static_assert(std::is_same_v<decltype(&CGlass::shatter), void (CGlass::*)(CVector3f *)>);
+    static_assert(
+        std::is_same_v<decltype(&CGlass::shatter), void (CGlass::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CGlass::checkBreakableCondition), int (CGlass::*)()>);
 }
 

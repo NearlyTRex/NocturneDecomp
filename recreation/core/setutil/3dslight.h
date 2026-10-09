@@ -9,7 +9,6 @@ namespace nocturne::core {
 class C3DSLight {
 public:
     C3DSLight();
-    ~C3DSLight();
 
     void load(std::FILE *file_handle);
     CDemonLight *create();

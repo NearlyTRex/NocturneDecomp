@@ -9,7 +9,7 @@ namespace {
 
 TEST(EngineKeyframeFunctions, PublicInterface) {
     static_assert(std::is_same_v<decltype(&calculateSurfaceNormal),
-                                 void (*)(core::CVector3i *, SMRGLPrimitiveTriangle *)>);
+                                 void (*)(common::CVector3i *, SMRGLPrimitiveTriangle *)>);
     static_assert(
         std::is_same_v<decltype(&loadAndInterpolateKeyframes), void (*)(SMRGLKeyframeModel *)>);
     static_assert(std::is_same_v<decltype(&interpolateCubicKeyframes),

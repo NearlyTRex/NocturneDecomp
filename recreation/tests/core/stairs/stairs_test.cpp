@@ -33,11 +33,12 @@ TEST(CStairs, PublicInterface) {
                                  ECollisionType (CStairs::*)(SCollisionInfo *)>);
     static_assert(std::is_same_v<decltype(&CStairs::getGroundType), EGroundType (CStairs::*)()>);
     static_assert(std::is_same_v<decltype(&CStairs::customRayIntersect),
-                                 float (CStairs::*)(CVector3f *, CVector3f *, CVector3f *)>);
+                                 float (CStairs::*)(common::CVector3f *, common::CVector3f *,
+                                                    common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CStairs::customIntersectCylinderXZ),
                                  void (CStairs::*)(SIntersectXZCylinder *)>);
     static_assert(std::is_same_v<decltype(&CStairs::customGetFloorHeight),
-                                 int (CStairs::*)(CVector3f *, float, float *)>);
+                                 int (CStairs::*)(common::CVector3f *, float, float *)>);
     static_assert(
         std::is_same_v<decltype(&CStairs::getActorType), CDemonActorType *(CStairs::*)()>);
     static_assert(std::is_same_v<decltype(&CStairs::archive), void (CStairs::*)()>);

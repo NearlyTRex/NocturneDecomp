@@ -20,12 +20,12 @@ TEST(CParticle, Constructors) {
 }
 
 TEST(CParticle, PublicInterface) {
-    static_assert(
-        std::is_same_v<decltype(&CParticle::setup), void (CParticle::*)(CVector3f *, CVector3f *)>);
+    static_assert(std::is_same_v<decltype(&CParticle::setup),
+                                 void (CParticle::*)(common::CVector3f *, common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CParticle::process), void (CParticle::*)()>);
     static_assert(std::is_same_v<decltype(&CParticle::render), void (CParticle::*)()>);
     static_assert(
-        std::is_same_v<decltype(&CParticle::onCollision), int (CParticle::*)(CVector3f *)>);
+        std::is_same_v<decltype(&CParticle::onCollision), int (CParticle::*)(common::CVector3f *)>);
 }
 
 } // namespace

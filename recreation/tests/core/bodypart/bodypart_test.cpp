@@ -41,16 +41,18 @@ TEST(CBodyPart, PublicInterface) {
         std::is_same_v<decltype(&CBodyPart::canPickup), int (CBodyPart::*)(CDemonActor *)>);
     static_assert(std::is_same_v<decltype(&CBodyPart::pickup), void (CBodyPart::*)(CDemonActor *)>);
     static_assert(
-        std::is_same_v<decltype(&CBodyPart::onDropped), void (CBodyPart::*)(CVector3f *)>);
+        std::is_same_v<decltype(&CBodyPart::onDropped), void (CBodyPart::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CBodyPart::getCarrier), CDemonActor *(CBodyPart::*)()>);
     static_assert(
         std::is_same_v<decltype(&CBodyPart::getActorType), CDemonActorType *(CBodyPart::*)()>);
     static_assert(std::is_same_v<decltype(&CBodyPart::archive), void (CBodyPart::*)()>);
     static_assert(std::is_same_v<decltype(&CBodyPart::setCounts), void (CBodyPart::*)(int, int)>);
     static_assert(std::is_same_v<decltype(&CBodyPart::finalizeGeometry), void (CBodyPart::*)()>);
-    static_assert(std::is_same_v<decltype(&CBodyPart::addAttachedModel),
-                                 void (CBodyPart::*)(char *, CVector3f *, CVector3f *)>);
-    static_assert(std::is_same_v<decltype(&CBodyPart::addFire), void (CBodyPart::*)(CVector3f *)>);
+    static_assert(
+        std::is_same_v<decltype(&CBodyPart::addAttachedModel),
+                       void (CBodyPart::*)(char *, common::CVector3f *, common::CVector3f *)>);
+    static_assert(
+        std::is_same_v<decltype(&CBodyPart::addFire), void (CBodyPart::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CBodyPart::addTexture), int (CBodyPart::*)(char *)>);
 }
 

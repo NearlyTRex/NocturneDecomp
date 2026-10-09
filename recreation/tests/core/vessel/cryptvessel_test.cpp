@@ -39,8 +39,8 @@ TEST(CCryptVessel, PublicInterface) {
         std::is_same_v<decltype(&CCryptVessel::canPickup), int (CCryptVessel::*)(CDemonActor *)>);
     static_assert(
         std::is_same_v<decltype(&CCryptVessel::pickup), void (CCryptVessel::*)(CDemonActor *)>);
-    static_assert(
-        std::is_same_v<decltype(&CCryptVessel::onDropped), void (CCryptVessel::*)(CVector3f *)>);
+    static_assert(std::is_same_v<decltype(&CCryptVessel::onDropped),
+                                 void (CCryptVessel::*)(common::CVector3f *)>);
     static_assert(
         std::is_same_v<decltype(&CCryptVessel::getCarrier), CDemonActor *(CCryptVessel::*)()>);
     static_assert(std::is_same_v<decltype(&CCryptVessel::getActorType),

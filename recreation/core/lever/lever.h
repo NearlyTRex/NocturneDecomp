@@ -1,5 +1,6 @@
 #pragma once
 
+#include "common/fwd.h"
 #include "core/actor/demonactor.h"
 #include "core/fwd.h"
 
@@ -20,8 +21,8 @@ public:
 
     void setState(float new_state);
     void activate();
-    CVector3f *getHandlePosition(CVector3f *out_position);
-    int isAccessibleFrom(CVector3f *world_position);
+    common::CVector3f *getHandlePosition(common::CVector3f *out_position);
+    int isAccessibleFrom(common::CVector3f *world_position);
 };
 
 } // namespace nocturne::core

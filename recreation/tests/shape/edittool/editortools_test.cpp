@@ -59,12 +59,12 @@ TEST(CEditorTools, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CEditorTools::draw3DAxisLabels),
                                  void (CEditorTools::*)(float, int)>);
     static_assert(std::is_same_v<decltype(&CEditorTools::draw3DAxisLabelsAt),
-                                 void (CEditorTools::*)(float, int, core::CVector3f *,
-                                                        core::UOrientationVector *)>);
+                                 void (CEditorTools::*)(float, int, common::CVector3f *,
+                                                        common::UOrientationVector *)>);
     static_assert(std::is_same_v<decltype(&CEditorTools::displayMemoryDiagnostics),
                                  void (CEditorTools::*)(char *)>);
     static_assert(std::is_same_v<decltype(&CEditorTools::draw3DProjectedLine),
-                                 void (CEditorTools::*)(core::CVector3f *, int)>);
+                                 void (CEditorTools::*)(common::CVector3f *, int)>);
 }
 
 } // namespace

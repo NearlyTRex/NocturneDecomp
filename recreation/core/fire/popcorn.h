@@ -1,5 +1,6 @@
 #pragma once
 
+#include "common/fwd.h"
 #include "core/fwd.h"
 #include "core/particle/particle.h"
 
@@ -11,7 +12,7 @@ public:
     ~CPopcorn() override;
 
     void render() override;
-    int onCollision(CVector3f *collision_normal) override;
+    int onCollision(common::CVector3f *collision_normal) override;
 };
 
 } // namespace nocturne::core

@@ -34,13 +34,14 @@ TEST(CWeapon, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CWeapon::onPickup), void (CWeapon::*)(CDemonActor *)>);
     static_assert(std::is_same_v<decltype(&CWeapon::canPickup), int (CWeapon::*)(CDemonActor *)>);
     static_assert(std::is_same_v<decltype(&CWeapon::pickup), void (CWeapon::*)(CDemonActor *)>);
-    static_assert(std::is_same_v<decltype(&CWeapon::onDropped), void (CWeapon::*)(CVector3f *)>);
+    static_assert(
+        std::is_same_v<decltype(&CWeapon::onDropped), void (CWeapon::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CWeapon::getCarrier), CDemonActor *(CWeapon::*)()>);
     static_assert(std::is_same_v<decltype(&CWeapon::archive), void (CWeapon::*)()>);
     static_assert(std::is_same_v<decltype(&CWeapon::onFired), void (CWeapon::*)()>);
     static_assert(std::is_same_v<decltype(&CWeapon::setWeaponState), void (CWeapon::*)(int)>);
-    static_assert(
-        std::is_same_v<decltype(&CWeapon::getMuzzlePoint), CVector3f *(CWeapon::*)(CVector3f *)>);
+    static_assert(std::is_same_v<decltype(&CWeapon::getMuzzlePoint),
+                                 common::CVector3f *(CWeapon::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CWeapon::fire), int (CWeapon::*)()>);
     static_assert(std::is_same_v<decltype(&CWeapon::isReadyToFire), int (CWeapon::*)()>);
     static_assert(std::is_same_v<decltype(&CWeapon::getDamage), float (CWeapon::*)()>);

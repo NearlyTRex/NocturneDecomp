@@ -31,10 +31,10 @@ TEST(CTrigger, PublicInterface) {
                                  CBoundingBox3D *(CTrigger::*)(CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CTrigger::getCollisionType),
                                  ECollisionType (CTrigger::*)(SCollisionInfo *)>);
-    static_assert(
-        std::is_same_v<decltype(&CTrigger::getTargetPoints), int (CTrigger::*)(CVector3f *)>);
+    static_assert(std::is_same_v<decltype(&CTrigger::getTargetPoints),
+                                 int (CTrigger::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CTrigger::evaluateTriggerCondition),
-                                 float (CTrigger::*)(CDemonActor *, CVector3f *)>);
+                                 float (CTrigger::*)(CDemonActor *, common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CTrigger::processActionButton), int (CTrigger::*)()>);
     static_assert(
         std::is_same_v<decltype(&CTrigger::onLaserHit), void (CTrigger::*)(SLaserInfo *)>);

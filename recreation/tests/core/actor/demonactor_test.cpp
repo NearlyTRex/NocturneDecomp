@@ -32,9 +32,10 @@ TEST(CDemonActor, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDemonActor::processFootstep),
                                  std::uint32_t (CDemonActor::*)(float)>);
     static_assert(std::is_same_v<decltype(&CDemonActor::processFootstepAtOffset),
-                                 std::uint32_t (CDemonActor::*)(CVector3f *, float)>);
-    static_assert(std::is_same_v<decltype(&CDemonActor::handleFootstep),
-                                 std::uint32_t (CDemonActor::*)(CVector3f *, EGroundType, float)>);
+                                 std::uint32_t (CDemonActor::*)(common::CVector3f *, float)>);
+    static_assert(
+        std::is_same_v<decltype(&CDemonActor::handleFootstep),
+                       std::uint32_t (CDemonActor::*)(common::CVector3f *, EGroundType, float)>);
     static_assert(
         std::is_same_v<decltype(&CDemonActor::playSound), std::uint32_t (CDemonActor::*)(char *)>);
     static_assert(std::is_same_v<decltype(&CDemonActor::playAmbientSound),
@@ -46,7 +47,7 @@ TEST(CDemonActor, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDemonActor::getCollisionType),
                                  ECollisionType (CDemonActor::*)(SCollisionInfo *)>);
     static_assert(std::is_same_v<decltype(&CDemonActor::cylinderGroundCheck),
-                                 float (CDemonActor::*)(float, CVector3f *)>);
+                                 float (CDemonActor::*)(float, common::CVector3f *)>);
     static_assert(
         std::is_same_v<decltype(&CDemonActor::getGroundType), EGroundType (CDemonActor::*)()>);
     static_assert(std::is_same_v<decltype(&CDemonActor::getBlockVirtualDirectorFlag),
@@ -54,17 +55,17 @@ TEST(CDemonActor, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDemonActor::allowBulletHoles), int (CDemonActor::*)()>);
     static_assert(
         std::is_same_v<decltype(&CDemonActor::updateCollisionData), void (CDemonActor::*)()>);
-    static_assert(
-        std::is_same_v<decltype(&CDemonActor::getTargetPoints), int (CDemonActor::*)(CVector3f *)>);
+    static_assert(std::is_same_v<decltype(&CDemonActor::getTargetPoints),
+                                 int (CDemonActor::*)(common::CVector3f *)>);
     static_assert(
         std::is_same_v<decltype(&CDemonActor::renderTargetPoints), void (CDemonActor::*)()>);
     static_assert(std::is_same_v<decltype(&CDemonActor::canLookAt), int (CDemonActor::*)()>);
     static_assert(std::is_same_v<decltype(&CDemonActor::evaluateTriggerCondition),
-                                 float (CDemonActor::*)(CDemonActor *, CVector3f *)>);
+                                 float (CDemonActor::*)(CDemonActor *, common::CVector3f *)>);
     static_assert(
         std::is_same_v<decltype(&CDemonActor::processActionButton), int (CDemonActor::*)()>);
     static_assert(std::is_same_v<decltype(&CDemonActor::setPositionAndOrientation),
-                                 void (CDemonActor::*)(CVector3f *, CVector3f *)>);
+                                 void (CDemonActor::*)(common::CVector3f *, common::CVector3f *)>);
     static_assert(
         std::is_same_v<decltype(&CDemonActor::onPickup), void (CDemonActor::*)(CDemonActor *)>);
     static_assert(
@@ -81,18 +82,19 @@ TEST(CDemonActor, PublicInterface) {
         std::is_same_v<decltype(&CDemonActor::canPickup), int (CDemonActor::*)(CDemonActor *)>);
     static_assert(
         std::is_same_v<decltype(&CDemonActor::pickup), void (CDemonActor::*)(CDemonActor *)>);
-    static_assert(
-        std::is_same_v<decltype(&CDemonActor::onDropped), void (CDemonActor::*)(CVector3f *)>);
+    static_assert(std::is_same_v<decltype(&CDemonActor::onDropped),
+                                 void (CDemonActor::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CDemonActor::drop),
-                                 void (CDemonActor::*)(CDemonActor *, CVector3f *)>);
+                                 void (CDemonActor::*)(CDemonActor *, common::CVector3f *)>);
     static_assert(
         std::is_same_v<decltype(&CDemonActor::getCarrier), CDemonActor *(CDemonActor::*)()>);
     static_assert(std::is_same_v<decltype(&CDemonActor::getInteractionInfo),
                                  void (CDemonActor::*)(SInteractionInfo *)>);
     static_assert(std::is_same_v<decltype(&CDemonActor::startInteraction),
                                  int (CDemonActor::*)(CDemonActor *)>);
-    static_assert(std::is_same_v<decltype(&CDemonActor::updateInteraction),
-                                 int (CDemonActor::*)(UOrientationVector *, SPlayerInput *)>);
+    static_assert(
+        std::is_same_v<decltype(&CDemonActor::updateInteraction),
+                       int (CDemonActor::*)(common::UOrientationVector *, SPlayerInput *)>);
     static_assert(std::is_same_v<decltype(&CDemonActor::stopInteraction),
                                  void (CDemonActor::*)(CDemonActor *)>);
     static_assert(
@@ -100,31 +102,22 @@ TEST(CDemonActor, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDemonActor::testCylinderCollision),
                                  int (CDemonActor::*)(SCollisionReturnInfo *, float)>);
     static_assert(std::is_same_v<decltype(&CDemonActor::testLineIntersection),
-                                 int (CDemonActor::*)(CVector3f *, CVector3f *, CVector3f *)>);
+                                 int (CDemonActor::*)(common::CVector3f *, common::CVector3f *,
+                                                      common::CVector3f *)>);
     static_assert(
         std::is_same_v<decltype(&CDemonActor::onLaserHit), void (CDemonActor::*)(SLaserInfo *)>);
     static_assert(std::is_same_v<decltype(&CDemonActor::customRayIntersect),
-                                 float (CDemonActor::*)(CVector3f *, CVector3f *, CVector3f *)>);
+                                 float (CDemonActor::*)(common::CVector3f *, common::CVector3f *,
+                                                        common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CDemonActor::customIntersectCylinderXZ),
                                  void (CDemonActor::*)(SIntersectXZCylinder *)>);
     static_assert(std::is_same_v<decltype(&CDemonActor::customGetFloorHeight),
-                                 int (CDemonActor::*)(CVector3f *, float, float *)>);
+                                 int (CDemonActor::*)(common::CVector3f *, float, float *)>);
     static_assert(std::is_same_v<decltype(&CDemonActor::getPathMap), CPathMap *(CDemonActor::*)()>);
     static_assert(std::is_same_v<decltype(&CDemonActor::calculateChecksum),
                                  void (CDemonActor::*)(std::uint32_t *)>);
     static_assert(
         std::is_same_v<decltype(&CDemonActor::getActorType), CDemonActorType *(CDemonActor::*)()>);
-    static_assert(
-        std::is_same_v<decltype(&CDemonActor::onAreaDeleted), void (CDemonActor::*)(int)>);
-    static_assert(std::is_same_v<decltype(&CDemonActor::onActorDeleted),
-                                 void (CDemonActor::*)(CDemonActor *)>);
-    static_assert(std::is_same_v<decltype(&CDemonActor::processInEditor), void (CDemonActor::*)()>);
-    static_assert(
-        std::is_same_v<decltype(&CDemonActor::initializeInEditor), int (CDemonActor::*)()>);
-    static_assert(
-        std::is_same_v<decltype(&CDemonActor::showEditorHelp), void (CDemonActor::*)(int *)>);
-    static_assert(std::is_same_v<decltype(&CDemonActor::addFilesToExtract),
-                                 void (CDemonActor::*)(std::FILE *)>);
     static_assert(std::is_same_v<decltype(&CDemonActor::archive), void (CDemonActor::*)()>);
     static_assert(
         std::is_same_v<decltype(&CDemonActor::setupRenderState), void (CDemonActor::*)()>);
@@ -135,19 +128,24 @@ TEST(CDemonActor, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CDemonActor::updateOrientationMatrix), void (CDemonActor::*)()>);
     static_assert(std::is_same_v<decltype(&CDemonActor::transformVector),
-                                 CVector3f *(CDemonActor::*)(CVector3f *, CVector3f *)>);
+                                 common::CVector3f *(CDemonActor::*)(common::CVector3f *,
+                                                                     common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CDemonActor::inverseTransformVector),
-                                 CVector3f *(CDemonActor::*)(CVector3f *, CVector3f *)>);
+                                 common::CVector3f *(CDemonActor::*)(common::CVector3f *,
+                                                                     common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CDemonActor::localToWorldPoint),
-                                 CVector3f *(CDemonActor::*)(CVector3f *, CVector3f *)>);
+                                 common::CVector3f *(CDemonActor::*)(common::CVector3f *,
+                                                                     common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CDemonActor::worldToLocalPoint),
-                                 CVector3f *(CDemonActor::*)(CVector3f *, CVector3f *)>);
+                                 common::CVector3f *(CDemonActor::*)(common::CVector3f *,
+                                                                     common::CVector3f *)>);
     static_assert(
         std::is_same_v<decltype(&CDemonActor::getWorldBoundingBox),
                        CBoundingBox3D *(CDemonActor::*)(CBoundingBox3D *, SCollisionInfo *, int)>);
     static_assert(std::is_same_v<decltype(&CDemonActor::rayIntersect),
-                                 float (CDemonActor::*)(CVector3f *, CVector3f *, SActorRayHit *,
-                                                        SCollisionInfo *, int, CBoundingBox3D *)>);
+                                 float (CDemonActor::*)(common::CVector3f *, common::CVector3f *,
+                                                        SActorRayHit *, SCollisionInfo *, int,
+                                                        CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CDemonActor::doCheckForInvalidPointers),
                                  void (CDemonActor::*)(char *, int)>);
     static_assert(std::is_same_v<decltype(&CDemonActor::save), void (CDemonActor::*)(std::FILE *)>);

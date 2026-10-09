@@ -29,8 +29,8 @@ TEST(CSuccubus, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CSuccubus::renderOpaque), int (CSuccubus::*)()>);
     static_assert(std::is_same_v<decltype(&CSuccubus::getCollisionType),
                                  ECollisionType (CSuccubus::*)(SCollisionInfo *)>);
-    static_assert(
-        std::is_same_v<decltype(&CSuccubus::getTargetPoints), int (CSuccubus::*)(CVector3f *)>);
+    static_assert(std::is_same_v<decltype(&CSuccubus::getTargetPoints),
+                                 int (CSuccubus::*)(common::CVector3f *)>);
     static_assert(
         std::is_same_v<decltype(&CSuccubus::getActorType), CDemonActorType *(CSuccubus::*)()>);
     static_assert(std::is_same_v<decltype(&CSuccubus::archive), void (CSuccubus::*)()>);

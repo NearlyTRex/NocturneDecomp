@@ -1,5 +1,6 @@
 #pragma once
 
+#include "common/fwd.h"
 #include "core/fwd.h"
 
 #include <cstdio>
@@ -15,7 +16,7 @@ public:
     void load(std::FILE *file_handle);
     void loadPVS(std::FILE *file_handle);
     void apply(CDemonCamera *camera);
-    int testSphereInFrustum(CVector3f *world_position, float radius);
+    int testSphereInFrustum(common::CVector3f *world_position, float radius);
 };
 
 } // namespace nocturne::core

@@ -12,7 +12,7 @@ TEST(CoreDlightFunctions, PublicInterface) {
     static_assert(std::is_same_v<decltype(&resetRestoreMemoryAllocator), void (*)()>);
     static_assert(std::is_same_v<decltype(&captureLightTextures), void (*)()>);
     static_assert(std::is_same_v<decltype(&renderConeLightGeometry),
-                                 void (*)(CVector3f *, CVector3f *, float, float)>);
+                                 void (*)(common::CVector3f *, common::CVector3f *, float, float)>);
 }
 
 } // namespace

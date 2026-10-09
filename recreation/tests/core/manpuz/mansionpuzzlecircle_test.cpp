@@ -38,11 +38,13 @@ TEST(CMansionPuzzleCircle, PublicInterface) {
                                  void (CMansionPuzzleCircle::*)(SLaserInfo *)>);
     static_assert(
         std::is_same_v<decltype(&CMansionPuzzleCircle::customRayIntersect),
-                       float (CMansionPuzzleCircle::*)(CVector3f *, CVector3f *, CVector3f *)>);
+                       float (CMansionPuzzleCircle::*)(common::CVector3f *, common::CVector3f *,
+                                                       common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CMansionPuzzleCircle::customIntersectCylinderXZ),
                                  void (CMansionPuzzleCircle::*)(SIntersectXZCylinder *)>);
-    static_assert(std::is_same_v<decltype(&CMansionPuzzleCircle::customGetFloorHeight),
-                                 int (CMansionPuzzleCircle::*)(CVector3f *, float, float *)>);
+    static_assert(
+        std::is_same_v<decltype(&CMansionPuzzleCircle::customGetFloorHeight),
+                       int (CMansionPuzzleCircle::*)(common::CVector3f *, float, float *)>);
     static_assert(std::is_same_v<decltype(&CMansionPuzzleCircle::getActorType),
                                  CDemonActorType *(CMansionPuzzleCircle::*)()>);
     static_assert(

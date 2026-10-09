@@ -27,16 +27,18 @@ TEST(CSound, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CSound::playAmbientSound), void (CSound::*)(char *)>);
     static_assert(
         std::is_same_v<decltype(&CSound::playSound), std::uint32_t (CSound::*)(void *, char *)>);
-    static_assert(std::is_same_v<decltype(&CSound::playActorSound),
-                                 std::uint32_t (CSound::*)(CDemonActor *, char *, CVector3f *)>);
-    static_assert(std::is_same_v<decltype(&CSound::playTrackedActorSound),
-                                 std::uint32_t (CSound::*)(CDemonActor *, char *, CVector3f *)>);
     static_assert(
-        std::is_same_v<decltype(&CSound::playActorPositionalSoundWithDelay),
-                       std::uint32_t (CSound::*)(CDemonActor *, char *, CVector3f *, float)>);
+        std::is_same_v<decltype(&CSound::playActorSound),
+                       std::uint32_t (CSound::*)(CDemonActor *, char *, common::CVector3f *)>);
     static_assert(
-        std::is_same_v<decltype(&CSound::playTrackedActorSoundWithDelay),
-                       std::uint32_t (CSound::*)(CDemonActor *, char *, CVector3f *, float)>);
+        std::is_same_v<decltype(&CSound::playTrackedActorSound),
+                       std::uint32_t (CSound::*)(CDemonActor *, char *, common::CVector3f *)>);
+    static_assert(std::is_same_v<decltype(&CSound::playActorPositionalSoundWithDelay),
+                                 std::uint32_t (CSound::*)(CDemonActor *, char *,
+                                                           common::CVector3f *, float)>);
+    static_assert(std::is_same_v<decltype(&CSound::playTrackedActorSoundWithDelay),
+                                 std::uint32_t (CSound::*)(CDemonActor *, char *,
+                                                           common::CVector3f *, float)>);
     static_assert(
         std::is_same_v<decltype(&CSound::isSoundPlaying), int (CSound::*)(std::uint32_t)>);
     static_assert(std::is_same_v<decltype(&CSound::killSound), void (CSound::*)(std::uint32_t)>);

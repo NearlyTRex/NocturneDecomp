@@ -36,7 +36,7 @@ TEST(CFilmReel, PublicInterface) {
         std::is_same_v<decltype(&CFilmReel::canPickup), int (CFilmReel::*)(CDemonActor *)>);
     static_assert(std::is_same_v<decltype(&CFilmReel::pickup), void (CFilmReel::*)(CDemonActor *)>);
     static_assert(
-        std::is_same_v<decltype(&CFilmReel::onDropped), void (CFilmReel::*)(CVector3f *)>);
+        std::is_same_v<decltype(&CFilmReel::onDropped), void (CFilmReel::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CFilmReel::getCarrier), CDemonActor *(CFilmReel::*)()>);
     static_assert(
         std::is_same_v<decltype(&CFilmReel::getActorType), CDemonActorType *(CFilmReel::*)()>);

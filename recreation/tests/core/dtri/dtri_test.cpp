@@ -9,12 +9,13 @@ namespace {
 
 TEST(CoreDtriFunctions, PublicInterface) {
     static_assert(std::is_same_v<decltype(&staticInit), void (*)()>);
-    static_assert(std::is_same_v<decltype(&rayTriangleIntersection),
-                                 float (*)(CDemonTriangle *, CVector3f *, CVector3f *)>);
+    static_assert(
+        std::is_same_v<decltype(&rayTriangleIntersection),
+                       float (*)(CDemonTriangle *, common::CVector3f *, common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&cylinderTriangleTest),
                                  void (*)(CDemonTriangle *, SIntersectXZCylinder *)>);
     static_assert(std::is_same_v<decltype(&rayTriangleFloorTest),
-                                 int (*)(CDemonTriangle *, CVector3f *, float, float *)>);
+                                 int (*)(CDemonTriangle *, common::CVector3f *, float, float *)>);
 }
 
 } // namespace

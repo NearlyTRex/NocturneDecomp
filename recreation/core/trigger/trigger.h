@@ -1,5 +1,6 @@
 #pragma once
 
+#include "common/fwd.h"
 #include "core/actor/demonactor.h"
 #include "core/fwd.h"
 
@@ -15,8 +16,9 @@ public:
     int renderTransparent() override;
     CBoundingBox3D *getBoundingBox(CBoundingBox3D *out_box) override;
     ECollisionType getCollisionType(SCollisionInfo *collision_info) override;
-    int getTargetPoints(CVector3f *out_points_array) override;
-    float evaluateTriggerCondition(CDemonActor *querying_actor, CVector3f *query_position) override;
+    int getTargetPoints(common::CVector3f *out_points_array) override;
+    float evaluateTriggerCondition(CDemonActor *querying_actor,
+                                   common::CVector3f *query_position) override;
     int processActionButton() override;
     void onLaserHit(SLaserInfo *laser_info) override;
     CDemonActorType *getActorType() override;

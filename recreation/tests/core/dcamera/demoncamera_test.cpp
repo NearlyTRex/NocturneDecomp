@@ -24,10 +24,12 @@ TEST(CDemonCamera, Constructors) {
 }
 
 TEST(CDemonCamera, PublicInterface) {
-    static_assert(std::is_same_v<decltype(&CDemonCamera::setupPerspectiveAndFog),
-                                 void (CDemonCamera::*)(CVector3f *, SProjectedVertex *)>);
-    static_assert(std::is_same_v<decltype(&CDemonCamera::getFogValueAtPosition),
-                                 int (CDemonCamera::*)(CVector3i *, SProjectedVertex *)>);
+    static_assert(
+        std::is_same_v<decltype(&CDemonCamera::setupPerspectiveAndFog),
+                       void (CDemonCamera::*)(common::CVector3f *, engine::SProjectedVertex *)>);
+    static_assert(
+        std::is_same_v<decltype(&CDemonCamera::getFogValueAtPosition),
+                       int (CDemonCamera::*)(common::CVector3i *, engine::SProjectedVertex *)>);
     static_assert(
         std::is_same_v<decltype(&CDemonCamera::saveAlphaTransform), void (CDemonCamera::*)(int)>);
     static_assert(
@@ -51,17 +53,20 @@ TEST(CDemonCamera, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CDemonCamera::updateTransformMatrices), void (CDemonCamera::*)()>);
     static_assert(std::is_same_v<decltype(&CDemonCamera::screenToWorldCoord),
-                                 int (CDemonCamera::*)(int, int, CVector3i *)>);
+                                 int (CDemonCamera::*)(int, int, common::CVector3i *)>);
     static_assert(std::is_same_v<decltype(&CDemonCamera::screenToWorldTransform),
-                                 CVector3i *(CDemonCamera::*)(CVector3i *, CVector3i *)>);
+                                 common::CVector3i *(CDemonCamera::*)(common::CVector3i *,
+                                                                      common::CVector3i *)>);
     static_assert(std::is_same_v<decltype(&CDemonCamera::worldToScreenWithFrustumCull),
-                                 CVector3i *(CDemonCamera::*)(CVector3i *, CVector3i *)>);
+                                 common::CVector3i *(CDemonCamera::*)(common::CVector3i *,
+                                                                      common::CVector3i *)>);
     static_assert(std::is_same_v<decltype(&CDemonCamera::precomputeLight),
                                  void (CDemonCamera::*)(CDemonLight *, CRect *)>);
     static_assert(
         std::is_same_v<decltype(&CDemonCamera::precomputeNormals), void (CDemonCamera::*)()>);
     static_assert(std::is_same_v<decltype(&CDemonCamera::calculateAttenuatedDirectionalLight),
-                                 int (CDemonCamera::*)(CVector3i *, CDemonLight *, CVector3i *)>);
+                                 int (CDemonCamera::*)(common::CVector3i *, CDemonLight *,
+                                                       common::CVector3i *)>);
     static_assert(
         std::is_same_v<decltype(&CDemonCamera::loadImage), void (CDemonCamera::*)(char *)>);
     static_assert(std::is_same_v<decltype(&CDemonCamera::renderLightCoronas),
@@ -77,11 +82,11 @@ TEST(CDemonCamera, PublicInterface) {
         std::is_same_v<decltype(&CDemonCamera::lockAndRenderToBuffer), int (CDemonCamera::*)()>);
     static_assert(std::is_same_v<decltype(&CDemonCamera::renderGlobeCoronas),
                                  void (CDemonCamera::*)(CDemonGlobe *, int)>);
-    static_assert(
-        std::is_same_v<decltype(&CDemonCamera::isBoundingBoxVisible),
-                       int (CDemonCamera::*)(CVector3f *, CVector3f *, CVector3f *, CVector3f *)>);
+    static_assert(std::is_same_v<decltype(&CDemonCamera::isBoundingBoxVisible),
+                                 int (CDemonCamera::*)(common::CVector3f *, common::CVector3f *,
+                                                       common::CVector3f *, common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CDemonCamera::isSphereVisible),
-                                 int (CDemonCamera::*)(CVector3f *, float)>);
+                                 int (CDemonCamera::*)(common::CVector3f *, float)>);
     static_assert(
         std::is_same_v<decltype(&CDemonCamera::setEffectIntensity), void (CDemonCamera::*)(float)>);
     static_assert(
@@ -93,7 +98,7 @@ TEST(CDemonCamera, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDemonCamera::initCameraShake),
                                  void (CDemonCamera::*)(float, float, float, float)>);
     static_assert(std::is_same_v<decltype(&CDemonCamera::computeVisibleFrustumBounds),
-                                 CVector3f *(CDemonCamera::*)(CVector3f *)>);
+                                 common::CVector3f *(CDemonCamera::*)(common::CVector3f *)>);
     static_assert(
         std::is_same_v<decltype(&CDemonCamera::saveZBufferScanlines), void (CDemonCamera::*)()>);
     static_assert(

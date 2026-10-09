@@ -29,8 +29,8 @@ TEST(CGargoyle, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CGargoyle::renderOpaque), int (CGargoyle::*)()>);
     static_assert(std::is_same_v<decltype(&CGargoyle::getCollisionType),
                                  ECollisionType (CGargoyle::*)(SCollisionInfo *)>);
-    static_assert(
-        std::is_same_v<decltype(&CGargoyle::getTargetPoints), int (CGargoyle::*)(CVector3f *)>);
+    static_assert(std::is_same_v<decltype(&CGargoyle::getTargetPoints),
+                                 int (CGargoyle::*)(common::CVector3f *)>);
     static_assert(
         std::is_same_v<decltype(&CGargoyle::getActorType), CDemonActorType *(CGargoyle::*)()>);
     static_assert(std::is_same_v<decltype(&CGargoyle::archive), void (CGargoyle::*)()>);

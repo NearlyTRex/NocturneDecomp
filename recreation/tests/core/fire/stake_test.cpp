@@ -16,10 +16,11 @@ TEST(CStake, Constructors) {
 }
 
 TEST(CStake, PublicInterface) {
-    static_assert(
-        std::is_same_v<decltype(&CStake::init), void (CStake::*)(CVector3f *, CVector3f *)>);
+    static_assert(std::is_same_v<decltype(&CStake::init),
+                                 void (CStake::*)(common::CVector3f *, common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CStake::spawn),
-                                 void (CStake::*)(CVector3f *, CVector3f *, CVector3f *)>);
+                                 void (CStake::*)(common::CVector3f *, common::CVector3f *,
+                                                  common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CStake::render), void (CStake::*)()>);
     static_assert(std::is_same_v<decltype(&CStake::process), void (CStake::*)()>);
 }

@@ -1,17 +1,14 @@
 #pragma once
 
-#include "core/fwd.h"
+#include "common/fwd.h"
 
 namespace nocturne::core {
 
 class CLaserBeam {
 public:
-    CLaserBeam();
-    ~CLaserBeam();
-
-    void init(CVector3f *origin, CVector3f *hit_position, float beam_width, float reticle_intensity,
-              CVector3f *reflection_normal, int red, int green, int blue, float halo_spread,
-              float cone_angle);
+    void init(common::CVector3f *origin, common::CVector3f *hit_position, float beam_width,
+              float reticle_intensity, common::CVector3f *reflection_normal, int red, int green,
+              int blue, float halo_spread, float cone_angle);
     void render();
 };
 

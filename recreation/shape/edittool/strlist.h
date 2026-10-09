@@ -8,6 +8,7 @@ class CStrList {
 public:
     CStrList();
     CStrList(const CStrList &other);
+    CStrList &operator=(const CStrList &other);
     virtual ~CStrList();
 
     virtual void remove(int start_index, int end_index);

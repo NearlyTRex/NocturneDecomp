@@ -26,11 +26,12 @@ TEST(CRock, Constructors) {
 TEST(CRock, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CRock::process), void (CRock::*)()>);
     static_assert(std::is_same_v<decltype(&CRock::render), void (CRock::*)()>);
-    static_assert(std::is_same_v<decltype(&CRock::onCollision), int (CRock::*)(CVector3f *)>);
     static_assert(
-        std::is_same_v<decltype(static_cast<void (CRock::*)(CVector3f *, CVector3f *,
-                                                            CKeyFramedModel *)>(&CRock::setup)),
-                       void (CRock::*)(CVector3f *, CVector3f *, CKeyFramedModel *)>);
+        std::is_same_v<decltype(&CRock::onCollision), int (CRock::*)(common::CVector3f *)>);
+    static_assert(std::is_same_v<
+                  decltype(static_cast<void (CRock::*)(common::CVector3f *, common::CVector3f *,
+                                                       CKeyFramedModel *)>(&CRock::setup)),
+                  void (CRock::*)(common::CVector3f *, common::CVector3f *, CKeyFramedModel *)>);
 }
 
 } // namespace

@@ -20,10 +20,10 @@ TEST(CSkeleton, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CSkeleton::load), void (CSkeleton::*)(char *)>);
     static_assert(std::is_same_v<decltype(&CSkeleton::findBone), int (CSkeleton::*)(char *, int)>);
     static_assert(std::is_same_v<decltype(&CSkeleton::getBoneAngleAtFrame),
-                                 CQuaternion4f *(CSkeleton::*)(int, int)>);
-    static_assert(
-        std::is_same_v<decltype(&CSkeleton::getBoneAngleInterpolated),
-                       CQuaternion4f *(CSkeleton::*)(int, int, int, float, CQuaternion4f *)>);
+                                 common::CQuaternion4f *(CSkeleton::*)(int, int)>);
+    static_assert(std::is_same_v<decltype(&CSkeleton::getBoneAngleInterpolated),
+                                 common::CQuaternion4f *(CSkeleton::*)(int, int, int, float,
+                                                                       common::CQuaternion4f *)>);
     static_assert(
         std::is_same_v<decltype(&CSkeleton::getHierarchyDistance), int (CSkeleton::*)(int, int)>);
     static_assert(

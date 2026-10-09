@@ -27,14 +27,16 @@ TEST(CGhoul, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CGhoul::setup), void (CGhoul::*)()>);
     static_assert(std::is_same_v<decltype(&CGhoul::process), void (CGhoul::*)(float)>);
     static_assert(std::is_same_v<decltype(&CGhoul::renderBackground), void (CGhoul::*)(int)>);
-    static_assert(std::is_same_v<decltype(&CGhoul::getTargetPoints), int (CGhoul::*)(CVector3f *)>);
+    static_assert(
+        std::is_same_v<decltype(&CGhoul::getTargetPoints), int (CGhoul::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CGhoul::getActorType), CDemonActorType *(CGhoul::*)()>);
     static_assert(std::is_same_v<decltype(&CGhoul::archive), void (CGhoul::*)()>);
     static_assert(
         std::is_same_v<decltype(&CGhoul::processDamage), void (CGhoul::*)(SDamageInfo *)>);
-    static_assert(std::is_same_v<decltype(&CGhoul::canBeAttracted), int (CGhoul::*)(CVector3f *)>);
     static_assert(
-        std::is_same_v<decltype(&CGhoul::getTargetPoint), CVector3f *(CGhoul::*)(CVector3f *)>);
+        std::is_same_v<decltype(&CGhoul::canBeAttracted), int (CGhoul::*)(common::CVector3f *)>);
+    static_assert(std::is_same_v<decltype(&CGhoul::getTargetPoint),
+                                 common::CVector3f *(CGhoul::*)(common::CVector3f *)>);
 }
 
 } // namespace

@@ -1,5 +1,6 @@
 #pragma once
 
+#include "common/fwd.h"
 #include "core/charactr/character.h"
 #include "core/fwd.h"
 
@@ -15,11 +16,11 @@ public:
     void setup() override;
     int canLookAt() override;
     int testCylinderCollision(SCollisionReturnInfo *collision_info, float tolerance) override;
-    int testLineIntersection(CVector3f *line_start, CVector3f *line_end,
-                             CVector3f *out_intersection_point) override;
+    int testLineIntersection(common::CVector3f *line_start, common::CVector3f *line_end,
+                             common::CVector3f *out_intersection_point) override;
     CPathMap *getPathMap() override;
     void archive() override;
-    void kill(int damage_type, CVector3f *damage_direction, float impact_force) override;
+    void kill(int damage_type, common::CVector3f *damage_direction, float impact_force) override;
     int isInvulnerable() override;
     int isGrabbable(CDemonActor *grabber) override;
     int canBeGrabbed(CDemonActor *grabber, int grab_type) override;

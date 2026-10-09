@@ -11,10 +11,10 @@ TEST(Engine3dFunctions, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&badMRGLStruct), SMRGLHeaderExtended *(*)(SMRGLHeaderExtended *)>);
     static_assert(std::is_same_v<decltype(&processCameraRelativePoint),
-                                 SMRGLHeaderExtended *(*)(core::CQuaternion4f *)>);
+                                 SMRGLHeaderExtended *(*)(common::CQuaternion4f *)>);
     static_assert(std::is_same_v<decltype(&transformAndBufferVertices),
                                  SMRGLHeaderExtended *(*)(SMRGLHeaderExtended *)>);
-    static_assert(std::is_same_v<decltype(&isVisiblePlane), int (*)(core::SClipPlane *)>);
+    static_assert(std::is_same_v<decltype(&isVisiblePlane), int (*)(SClipPlane *)>);
     static_assert(std::is_same_v<decltype(&processVertexLighting),
                                  SMRGLHeaderExtended *(*)(SMRGLHeaderExtended *)>);
     static_assert(std::is_same_v<decltype(&processTextureCoordinates),
@@ -140,8 +140,8 @@ TEST(Engine3dFunctions, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&dispatchMRGLBlockChain), void (*)(SMRGLHeaderExtended *)>);
     static_assert(std::is_same_v<decltype(&drawLine2DFromIndices), void (*)(int, int)>);
-    static_assert(
-        std::is_same_v<decltype(&clipAndDrawLine2D), void (*)(SRenderVertex, SRenderVertex)>);
+    static_assert(std::is_same_v<decltype(&clipAndDrawLine2D),
+                                 void (*)(platform::SRenderVertex, platform::SRenderVertex)>);
 }
 
 } // namespace

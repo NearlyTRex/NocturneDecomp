@@ -2,7 +2,6 @@
 
 namespace nocturne::sound {
 
-class CDirectSoundDevice;
 class CFileBitStream;
 class CMP3Decoder;
 class CSampleInfo;
@@ -10,8 +9,6 @@ class CSfxOptions;
 class CSfxSample;
 class CSfxSlot;
 class CSoundDevice;
-class CVector3d;
-class CWavOutDevice;
 struct SHuffmanTable;
 struct SMixBuffer;
 struct SMpegFrame;

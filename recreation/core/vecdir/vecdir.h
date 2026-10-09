@@ -1,11 +1,11 @@
 #pragma once
 
-#include "core/fwd.h"
+#include "common/fwd.h"
 
 namespace nocturne::core {
 
 void staticInit();
-CVector3f *convertDirectionVectorToEulerAngles(CVector3f *out_euler_angles,
-                                               CVector3f *in_direction_vector);
+common::CVector3f *convertDirectionVectorToEulerAngles(common::CVector3f *out_euler_angles,
+                                                       common::CVector3f *in_direction_vector);
 
 } // namespace nocturne::core

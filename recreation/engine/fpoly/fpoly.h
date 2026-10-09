@@ -1,9 +1,9 @@
 #pragma once
 
-#include "engine/fwd.h"
+#include "platform/fwd.h"
 
 namespace nocturne::engine {
 
-void rasterizePolygonHardware(SRenderVertex **vertices, int vertex_count);
+void rasterizePolygonHardware(platform::SRenderVertex **vertices, int vertex_count);
 
 } // namespace nocturne::engine

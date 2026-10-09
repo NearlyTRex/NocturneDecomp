@@ -1,17 +1,15 @@
 #pragma once
 
-#include "core/fwd.h"
 #include "engine/fwd.h"
+#include "platform/fwd.h"
 
 namespace nocturne::engine {
 
-CTextureCache *initTextureCache();
-void freeTextureCache();
-SMRGLHeaderExtended *ensureTextureLoaded(core::SMRGLTextureBasic *texture);
-SMRGLHeaderExtended *loadTextureAndGetData(core::SMRGLTextureBasic *texture_info);
+SMRGLHeaderExtended *ensureTextureLoaded(platform::SMRGLTextureBasic *texture);
+SMRGLHeaderExtended *loadTextureAndGetData(platform::SMRGLTextureBasic *texture_info);
 void clearTextureCache();
-void loadAndUpdateTexture(core::SMRGLTextureBasic *texture, SRGBColorPalette *palette);
+void loadAndUpdateTexture(platform::SMRGLTextureBasic *texture, SRGBColorPalette *palette);
 void getTextureCacheStats(char *output_buffer);
-core::SMRGLTextureBasic *getCurrentTexture();
+platform::SMRGLTextureBasic *getCurrentTexture();
 
 } // namespace nocturne::engine

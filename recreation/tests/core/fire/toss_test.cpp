@@ -17,9 +17,10 @@ TEST(CToss, Constructors) {
 
 TEST(CToss, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CToss::reset), void (CToss::*)()>);
-    static_assert(std::is_same_v<decltype(&CToss::create),
-                                 void (CToss::*)(int, CVector3f *, UOrientationVector *,
-                                                 CVector3f *, float)>);
+    static_assert(
+        std::is_same_v<decltype(&CToss::create),
+                       void (CToss::*)(int, common::CVector3f *, common::UOrientationVector *,
+                                       common::CVector3f *, float)>);
     static_assert(std::is_same_v<decltype(&CToss::process), void (CToss::*)()>);
     static_assert(std::is_same_v<decltype(&CToss::render), void (CToss::*)()>);
 }

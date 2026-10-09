@@ -1,5 +1,6 @@
 #pragma once
 
+#include "common/fwd.h"
 #include "core/actor/demonactor.h"
 #include "core/fwd.h"
 
@@ -17,7 +18,7 @@ public:
     ECollisionType getCollisionType(SCollisionInfo *collision_info) override;
     void getInteractionInfo(SInteractionInfo *out_info) override;
     int startInteraction(CDemonActor *user) override;
-    int updateInteraction(UOrientationVector *user_orientation,
+    int updateInteraction(common::UOrientationVector *user_orientation,
                           SPlayerInput *player_control) override;
     void stopInteraction(CDemonActor *user) override;
     void onLaserHit(SLaserInfo *laser_info) override;

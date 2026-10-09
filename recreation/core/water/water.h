@@ -7,7 +7,6 @@ namespace nocturne::core {
 class CWater {
 public:
     CWater();
-    ~CWater();
 
     void captureTextures();
     void calculateVisibleTiles();

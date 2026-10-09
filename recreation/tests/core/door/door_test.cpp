@@ -40,8 +40,10 @@ TEST(CDoor, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDoor::archive), void (CDoor::*)()>);
     static_assert(std::is_same_v<decltype(&CDoor::onOpened), void (CDoor::*)()>);
     static_assert(std::is_same_v<decltype(&CDoor::setSwingRange), void (CDoor::*)(float)>);
-    static_assert(std::is_same_v<decltype(&CDoor::getOpenStandPos),
-                                 CVector3f *(CDoor::*)(CVector3f *, CVector3f *, CVector3f *)>);
+    static_assert(
+        std::is_same_v<decltype(&CDoor::getOpenStandPos),
+                       common::CVector3f *(CDoor::*)(common::CVector3f *, common::CVector3f *,
+                                                     common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CDoor::getMoveType), int (CDoor::*)(CDemonActor *)>);
     static_assert(std::is_same_v<decltype(&CDoor::onLocked), std::uint32_t (CDoor::*)()>);
 }

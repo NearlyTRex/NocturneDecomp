@@ -9,21 +9,26 @@ namespace {
 
 TEST(EnginePrimFunctions, PublicInterface) {
     static_assert(std::is_same_v<decltype(&setCullingMode), void (*)(int)>);
-    static_assert(std::is_same_v<decltype(&prepareDepthBuffer), void (*)(SRenderVertex *, int)>);
     static_assert(
-        std::is_same_v<decltype(&normalizeTextureCoords), void (*)(SRenderVertex *, int)>);
+        std::is_same_v<decltype(&prepareDepthBuffer), void (*)(platform::SRenderVertex *, int)>);
+    static_assert(std::is_same_v<decltype(&normalizeTextureCoords),
+                                 void (*)(platform::SRenderVertex *, int)>);
+    static_assert(std::is_same_v<decltype(&adjustNearPlaneTextureCoords),
+                                 void (*)(platform::SRenderVertex *, int)>);
     static_assert(
-        std::is_same_v<decltype(&adjustNearPlaneTextureCoords), void (*)(SRenderVertex *, int)>);
-    static_assert(std::is_same_v<decltype(&replaceWWithDepth), void (*)(SRenderVertex *, int)>);
+        std::is_same_v<decltype(&replaceWWithDepth), void (*)(platform::SRenderVertex *, int)>);
     static_assert(std::is_same_v<decltype(&calculateTriangleWindingOrder),
-                                 int (*)(SRenderVertex *, SRenderVertex *, SRenderVertex *)>);
+                                 int (*)(platform::SRenderVertex *, platform::SRenderVertex *,
+                                         platform::SRenderVertex *)>);
     static_assert(std::is_same_v<decltype(&getTriangleWindingFromIndices1),
                                  int (*)(SMRGLPrimitiveTriangle *)>);
     static_assert(std::is_same_v<decltype(&getTriangleWindingFromPackedIndices),
                                  int (*)(STrianglePackedIndices *)>);
-    static_assert(std::is_same_v<decltype(&renderPolygonSoftware), void (*)(SRenderVertex *, int)>);
+    static_assert(
+        std::is_same_v<decltype(&renderPolygonSoftware), void (*)(platform::SRenderVertex *, int)>);
     static_assert(std::is_same_v<decltype(&renderIndexedPolygonSoftware), void (*)(int *, int)>);
-    static_assert(std::is_same_v<decltype(&renderScanlinePolygon), void (*)(SRenderVertex *, int)>);
+    static_assert(
+        std::is_same_v<decltype(&renderScanlinePolygon), void (*)(platform::SRenderVertex *, int)>);
     static_assert(std::is_same_v<decltype(&renderIndexedPolygonAdvanced), void (*)(int *, int)>);
 }
 

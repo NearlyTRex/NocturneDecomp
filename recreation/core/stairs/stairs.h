@@ -1,5 +1,6 @@
 #pragma once
 
+#include "common/fwd.h"
 #include "core/actor/demonactor.h"
 #include "core/fwd.h"
 
@@ -16,10 +17,10 @@ public:
     CBoundingBox3D *getBoundingBox(CBoundingBox3D *out_box) override;
     ECollisionType getCollisionType(SCollisionInfo *collision_info) override;
     EGroundType getGroundType() override;
-    float customRayIntersect(CVector3f *ray_origin, CVector3f *ray_direction,
-                             CVector3f *out_normal) override;
+    float customRayIntersect(common::CVector3f *ray_origin, common::CVector3f *ray_direction,
+                             common::CVector3f *out_normal) override;
     void customIntersectCylinderXZ(SIntersectXZCylinder *cylinder) override;
-    int customGetFloorHeight(CVector3f *position, float search_radius,
+    int customGetFloorHeight(common::CVector3f *position, float search_radius,
                              float *out_floor_height) override;
     CDemonActorType *getActorType() override;
     void archive() override;

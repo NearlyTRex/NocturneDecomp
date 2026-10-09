@@ -9,7 +9,6 @@ namespace nocturne::core {
 class CTextureList {
 public:
     CTextureList();
-    ~CTextureList();
 
     void load(char *filename);
     void captureTexture(std::uint32_t texture_index);

@@ -37,9 +37,9 @@ TEST(CDemonLight, PublicInterface) {
         std::is_same_v<decltype(&CDemonLight::endBackgroundScene), void (CDemonLight::*)()>);
     static_assert(
         std::is_same_v<decltype(&CDemonLight::restoreDirtyRegions), void (CDemonLight::*)()>);
-    static_assert(
-        std::is_same_v<decltype(&CDemonLight::projectLightAndMarkVisibility),
-                       std::uint16_t *(CDemonLight::*)(CVector3i *, std::uint8_t, std::uint8_t)>);
+    static_assert(std::is_same_v<decltype(&CDemonLight::projectLightAndMarkVisibility),
+                                 std::uint16_t *(CDemonLight::*)(common::CVector3i *, std::uint8_t,
+                                                                 std::uint8_t)>);
     static_assert(std::is_same_v<decltype(&CDemonLight::renderShadowMapDebugView),
                                  void (CDemonLight::*)(int, int, int)>);
     static_assert(std::is_same_v<decltype(&CDemonLight::clearCircularShadowMapEdges),

@@ -1,5 +1,6 @@
 #pragma once
 
+#include "common/fwd.h"
 #include "core/dcamera/demoncamera.h"
 #include "core/fwd.h"
 
@@ -20,7 +21,7 @@ public:
     void beginBackgroundScene();
     void endBackgroundScene();
     void restoreDirtyRegions();
-    std::uint16_t *projectLightAndMarkVisibility(CVector3i *projected_coord,
+    std::uint16_t *projectLightAndMarkVisibility(common::CVector3i *projected_coord,
                                                  std::uint8_t x_round_flag,
                                                  std::uint8_t y_round_flag);
     void renderShadowMapDebugView(int screen_x, int screen_y, int display_size);

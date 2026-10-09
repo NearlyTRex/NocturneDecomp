@@ -26,7 +26,7 @@ TEST(CRainDrop, Constructors) {
 TEST(CRainDrop, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CRainDrop::render), void (CRainDrop::*)()>);
     static_assert(
-        std::is_same_v<decltype(&CRainDrop::onCollision), int (CRainDrop::*)(CVector3f *)>);
+        std::is_same_v<decltype(&CRainDrop::onCollision), int (CRainDrop::*)(common::CVector3f *)>);
 }
 
 } // namespace

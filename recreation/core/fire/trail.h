@@ -1,17 +1,15 @@
 #pragma once
 
-#include "core/fwd.h"
+#include "common/fwd.h"
+#include "platform/fwd.h"
 
 namespace nocturne::core {
 
 class CTrail {
 public:
-    CTrail();
-    ~CTrail();
-
     void reset();
-    void activate(CVector3f *position, float size, float alpha, float lifetime,
-                  SMRGLTextureBasic *texture_ptr);
+    void activate(common::CVector3f *position, float size, float alpha, float lifetime,
+                  platform::SMRGLTextureBasic *texture_ptr);
     void process();
     void render();
 };

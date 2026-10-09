@@ -26,11 +26,14 @@ TEST(CShell, Constructors) {
 TEST(CShell, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CShell::process), void (CShell::*)()>);
     static_assert(std::is_same_v<decltype(&CShell::render), void (CShell::*)()>);
-    static_assert(std::is_same_v<decltype(&CShell::onCollision), int (CShell::*)(CVector3f *)>);
     static_assert(
-        std::is_same_v<decltype(static_cast<void (CShell::*)(CVector3f *, CVector3f *, CVector3f *,
-                                                             CKeyFramedModel *)>(&CShell::setup)),
-                       void (CShell::*)(CVector3f *, CVector3f *, CVector3f *, CKeyFramedModel *)>);
+        std::is_same_v<decltype(&CShell::onCollision), int (CShell::*)(common::CVector3f *)>);
+    static_assert(
+        std::is_same_v<decltype(static_cast<void (CShell::*)(
+                                    common::CVector3f *, common::CVector3f *, common::CVector3f *,
+                                    CKeyFramedModel *)>(&CShell::setup)),
+                       void (CShell::*)(common::CVector3f *, common::CVector3f *,
+                                        common::CVector3f *, CKeyFramedModel *)>);
 }
 
 } // namespace

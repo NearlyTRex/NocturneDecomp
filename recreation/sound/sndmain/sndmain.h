@@ -1,6 +1,6 @@
 #pragma once
 
-#include "core/fwd.h"
+#include "common/fwd.h"
 #include "engine/fwd.h"
 #include "sound/fwd.h"
 
@@ -10,8 +10,8 @@ namespace nocturne::sound {
 
 void staticInit();
 void setNextSfxStaticPosition(double pos_x, double pos_y, double pos_z);
-void setNextSfxTrackedFloatPosition(core::CVector3f *position_source_ptr);
-void setNextSfxTrackedVelocity1(core::CVector3f *velocity_source_ptr);
+void setNextSfxTrackedFloatPosition(common::CVector3f *position_source_ptr);
+void setNextSfxTrackedVelocity1(common::CVector3f *velocity_source_ptr);
 void setNextSfxVolume(float volume);
 void setNextSfxBaseFrequency(float base_frequency);
 void setNextSfxUserData(int index, void *userdata);
@@ -29,8 +29,8 @@ int setSoundMuted(int muted);
 int getSfxSampleInfo(std::uint32_t sfx_handle, CSfxSample *output_buffer);
 double getSfxPlaybackPosition(std::uint32_t sfx_handle, std::uint32_t output_format);
 int setSfxPosition(std::uint32_t sfx_handle, double pos_x, double pos_y, double pos_z);
-int setSfxTrackedFloatPosition(std::uint32_t sfx_handle, core::CVector3f *position_source_ptr);
-int setSfxTrackedFloatVelocity(std::uint32_t sfx_handle, core::CVector3f *velocity_source_ptr);
+int setSfxTrackedFloatPosition(std::uint32_t sfx_handle, common::CVector3f *position_source_ptr);
+int setSfxTrackedFloatVelocity(std::uint32_t sfx_handle, common::CVector3f *velocity_source_ptr);
 int setSfxVolume(std::uint32_t sfx_handle, float volume);
 int setSfxBaseFrequency(std::uint32_t sfx_handle, float base_frequency);
 int killSfx(std::uint32_t sfx_handle);
@@ -77,18 +77,11 @@ int closeSoundDevice();
 int getCurrentSoundDevice();
 void set3DListenerOrientRight(float orient_right_x, float orient_right_y, float orient_right_z);
 std::uint32_t audioThreadProc(void *lpThreadParam);
-int startSoundThread(double latency_seconds);
-int killSoundThread();
 void lockSound();
 void unlockSound();
 void processAudio();
-float getMaxSwLatency();
 void readIni(engine::CIniFile *ini_file);
 void writeIni(engine::CIniFile *ini_file);
 float analyzeFrequencyBand(int channel, float freq_start_hz, float freq_end_hz);
-void pollAndMixSfx(void **channel_buffers, int bits_per_sample, int num_channels,
-                   int samples_per_sec, int samples_per_block, int block_align);
-void pollAllSfxSlots();
-void logSoundError(char *format, ...);
 
 } // namespace nocturne::sound

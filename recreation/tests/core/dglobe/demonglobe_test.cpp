@@ -11,23 +11,19 @@ TEST(CDemonGlobe, IsConcrete) {
     static_assert(!std::is_abstract_v<CDemonGlobe>);
 }
 
-TEST(CDemonGlobe, Constructors) {
-    static_assert(std::is_constructible_v<CDemonGlobe>);
-}
-
 TEST(CDemonGlobe, PublicInterface) {
-    static_assert(
-        std::is_same_v<decltype(&CDemonGlobe::setPosition), void (CDemonGlobe::*)(CVector3f *)>);
+    static_assert(std::is_same_v<decltype(&CDemonGlobe::setPosition),
+                                 void (CDemonGlobe::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CDemonGlobe::precomputeAttenuation),
                                  void (CDemonGlobe::*)(float)>);
     static_assert(std::is_same_v<decltype(&CDemonGlobe::renderCorona), void (CDemonGlobe::*)()>);
     static_assert(
         std::is_same_v<decltype(&CDemonGlobe::renderCoronaTextured), void (CDemonGlobe::*)()>);
-    static_assert(
-        std::is_same_v<decltype(&CDemonGlobe::intersectAABB),
-                       int (CDemonGlobe::*)(CVector3f *, CMatrix3x3f *, CVector3f *, CVector3f *)>);
+    static_assert(std::is_same_v<decltype(&CDemonGlobe::intersectAABB),
+                                 int (CDemonGlobe::*)(common::CVector3f *, common::CMatrix3x3f *,
+                                                      common::CVector3f *, common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CDemonGlobe::getAttenuationAtVertex),
-                                 int (CDemonGlobe::*)(CVector3i *, CVector3i *)>);
+                                 int (CDemonGlobe::*)(common::CVector3i *, common::CVector3i *)>);
 }
 
 } // namespace

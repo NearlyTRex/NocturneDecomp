@@ -11,10 +11,6 @@ TEST(CDemonMission, IsConcrete) {
     static_assert(!std::is_abstract_v<CDemonMission>);
 }
 
-TEST(CDemonMission, Constructors) {
-    static_assert(std::is_constructible_v<CDemonMission>);
-}
-
 TEST(CDemonMission, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDemonMission::reset), void (CDemonMission::*)()>);
     static_assert(

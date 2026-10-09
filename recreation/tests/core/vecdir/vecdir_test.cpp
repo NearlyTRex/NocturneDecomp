@@ -10,7 +10,7 @@ namespace {
 TEST(CoreVecdirFunctions, PublicInterface) {
     static_assert(std::is_same_v<decltype(&staticInit), void (*)()>);
     static_assert(std::is_same_v<decltype(&convertDirectionVectorToEulerAngles),
-                                 CVector3f *(*)(CVector3f *, CVector3f *)>);
+                                 common::CVector3f *(*)(common::CVector3f *, common::CVector3f *)>);
 }
 
 } // namespace

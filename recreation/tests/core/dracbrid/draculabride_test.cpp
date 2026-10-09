@@ -31,7 +31,7 @@ TEST(CDraculaBride, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDraculaBride::getCollisionType),
                                  ECollisionType (CDraculaBride::*)(SCollisionInfo *)>);
     static_assert(std::is_same_v<decltype(&CDraculaBride::getTargetPoints),
-                                 int (CDraculaBride::*)(CVector3f *)>);
+                                 int (CDraculaBride::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CDraculaBride::getActorType),
                                  CDemonActorType *(CDraculaBride::*)()>);
     static_assert(std::is_same_v<decltype(&CDraculaBride::archive), void (CDraculaBride::*)()>);

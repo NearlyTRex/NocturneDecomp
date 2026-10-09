@@ -30,15 +30,15 @@ TEST(CBoneGuy, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CBoneGuy::renderTransparent), int (CBoneGuy::*)()>);
     static_assert(std::is_same_v<decltype(&CBoneGuy::getCollisionType),
                                  ECollisionType (CBoneGuy::*)(SCollisionInfo *)>);
-    static_assert(
-        std::is_same_v<decltype(&CBoneGuy::getTargetPoints), int (CBoneGuy::*)(CVector3f *)>);
+    static_assert(std::is_same_v<decltype(&CBoneGuy::getTargetPoints),
+                                 int (CBoneGuy::*)(common::CVector3f *)>);
     static_assert(
         std::is_same_v<decltype(&CBoneGuy::getActorType), CDemonActorType *(CBoneGuy::*)()>);
     static_assert(std::is_same_v<decltype(&CBoneGuy::archive), void (CBoneGuy::*)()>);
     static_assert(
         std::is_same_v<decltype(&CBoneGuy::processDamage), void (CBoneGuy::*)(SDamageInfo *)>);
     static_assert(std::is_same_v<decltype(&CBoneGuy::getCarryObjToBodyXForm),
-                                 CMatrix3x4f *(CBoneGuy::*)(int, CMatrix3x4f *)>);
+                                 common::CMatrix3x4f *(CBoneGuy::*)(int, common::CMatrix3x4f *)>);
     static_assert(std::is_same_v<decltype(&CBoneGuy::reset), void (CBoneGuy::*)()>);
 }
 

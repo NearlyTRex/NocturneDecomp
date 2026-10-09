@@ -28,14 +28,15 @@ TEST(CImp, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CImp::process), void (CImp::*)(float)>);
     static_assert(std::is_same_v<decltype(&CImp::getCollisionType),
                                  ECollisionType (CImp::*)(SCollisionInfo *)>);
-    static_assert(std::is_same_v<decltype(&CImp::getTargetPoints), int (CImp::*)(CVector3f *)>);
+    static_assert(
+        std::is_same_v<decltype(&CImp::getTargetPoints), int (CImp::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CImp::getActorType), CDemonActorType *(CImp::*)()>);
     static_assert(std::is_same_v<decltype(&CImp::archive), void (CImp::*)()>);
     static_assert(std::is_same_v<decltype(&CImp::processDamage), void (CImp::*)(SDamageInfo *)>);
     static_assert(std::is_same_v<decltype(&CImp::attractActorToward),
-                                 int (CImp::*)(CDemonActor *, CVector3f *)>);
+                                 int (CImp::*)(CDemonActor *, common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CImp::getCarryObjToBodyXForm),
-                                 CMatrix3x4f *(CImp::*)(int, CMatrix3x4f *)>);
+                                 common::CMatrix3x4f *(CImp::*)(int, common::CMatrix3x4f *)>);
 }
 
 } // namespace

@@ -7,7 +7,6 @@ namespace nocturne::core {
 class CTire {
 public:
     CTire();
-    ~CTire();
 };
 
 } // namespace nocturne::core

@@ -8,9 +8,10 @@ namespace nocturne::engine {
 namespace {
 
 TEST(EngineZrasterFunctions, PublicInterface) {
-    static_assert(std::is_same_v<decltype(&rasterizeTriangle), void (*)(SRenderVertex *, int)>);
+    static_assert(
+        std::is_same_v<decltype(&rasterizeTriangle), void (*)(platform::SRenderVertex *, int)>);
     static_assert(std::is_same_v<decltype(&rasterizePolygonCustom),
-                                 void (*)(SRenderVertex *, int, CustomScanlineFunc *)>);
+                                 void (*)(platform::SRenderVertex *, int, CustomScanlineFunc *)>);
 }
 
 } // namespace

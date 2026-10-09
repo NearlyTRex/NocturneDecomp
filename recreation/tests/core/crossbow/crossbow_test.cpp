@@ -30,7 +30,7 @@ TEST(CCrossbow, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CCrossbow::getActorType), CDemonActorType *(CCrossbow::*)()>);
     static_assert(std::is_same_v<decltype(&CCrossbow::getMuzzlePoint),
-                                 CVector3f *(CCrossbow::*)(CVector3f *)>);
+                                 common::CVector3f *(CCrossbow::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CCrossbow::fire), int (CCrossbow::*)()>);
     static_assert(std::is_same_v<decltype(&CCrossbow::getDamage), float (CCrossbow::*)()>);
 }

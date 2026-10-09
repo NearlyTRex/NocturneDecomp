@@ -1,5 +1,6 @@
 #pragma once
 
+#include "common/fwd.h"
 #include "core/fwd.h"
 #include "core/hero/hero.h"
 
@@ -16,7 +17,8 @@ public:
     CDemonActorType *getActorType() override;
     void archive() override;
     void processDamage(SDamageInfo *damage_info) override;
-    CMatrix3x4f *getCarryObjToBodyXForm(int hand_index, CMatrix3x4f *out_matrix) override;
+    common::CMatrix3x4f *getCarryObjToBodyXForm(int hand_index,
+                                                common::CMatrix3x4f *out_matrix) override;
     void drawWeapon(int drawn) override;
     int isWeaponDrawn() override;
 };

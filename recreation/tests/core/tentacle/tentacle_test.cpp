@@ -33,7 +33,7 @@ TEST(CTentacle, PublicInterface) {
         std::is_same_v<decltype(&CTentacle::getActorType), CDemonActorType *(CTentacle::*)()>);
     static_assert(std::is_same_v<decltype(&CTentacle::archive), void (CTentacle::*)()>);
     static_assert(std::is_same_v<decltype(&CTentacle::attractActorToward),
-                                 int (CTentacle::*)(CDemonActor *, CVector3f *)>);
+                                 int (CTentacle::*)(CDemonActor *, common::CVector3f *)>);
 }
 
 } // namespace

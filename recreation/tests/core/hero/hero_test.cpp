@@ -25,10 +25,12 @@ TEST(CHero, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CHero::testCylinderCollision),
                                  int (CHero::*)(SCollisionReturnInfo *, float)>);
     static_assert(std::is_same_v<decltype(&CHero::testLineIntersection),
-                                 int (CHero::*)(CVector3f *, CVector3f *, CVector3f *)>);
+                                 int (CHero::*)(common::CVector3f *, common::CVector3f *,
+                                                common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CHero::getPathMap), CPathMap *(CHero::*)()>);
     static_assert(std::is_same_v<decltype(&CHero::archive), void (CHero::*)()>);
-    static_assert(std::is_same_v<decltype(&CHero::kill), void (CHero::*)(int, CVector3f *, float)>);
+    static_assert(
+        std::is_same_v<decltype(&CHero::kill), void (CHero::*)(int, common::CVector3f *, float)>);
     static_assert(std::is_same_v<decltype(&CHero::isInvulnerable), int (CHero::*)()>);
     static_assert(std::is_same_v<decltype(&CHero::isGrabbable), int (CHero::*)(CDemonActor *)>);
     static_assert(

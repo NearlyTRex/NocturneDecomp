@@ -7,7 +7,6 @@ namespace nocturne::sound {
 class CSfxOptions {
 public:
     CSfxOptions();
-    ~CSfxOptions();
 
     void reset();
 };

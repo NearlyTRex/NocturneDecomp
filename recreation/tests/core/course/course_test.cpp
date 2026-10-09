@@ -18,8 +18,9 @@ TEST(CCourse, Constructors) {
 TEST(CCourse, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CCourse::load), void (CCourse::*)(char *)>);
     static_assert(std::is_same_v<decltype(&CCourse::free), void (CCourse::*)()>);
-    static_assert(std::is_same_v<decltype(&CCourse::evaluate),
-                                 void (CCourse::*)(float, CVector3f *, CVector3f *)>);
+    static_assert(
+        std::is_same_v<decltype(&CCourse::evaluate),
+                       void (CCourse::*)(float, common::CVector3f *, common::CVector3f *)>);
 }
 
 } // namespace

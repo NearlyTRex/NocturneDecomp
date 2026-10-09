@@ -1,5 +1,6 @@
 #pragma once
 
+#include "common/fwd.h"
 #include "core/actor/demonactor.h"
 #include "core/fwd.h"
 
@@ -23,7 +24,7 @@ public:
     void archive() override;
 
     void renderBrokenGlass();
-    void shatter(CVector3f *location);
+    void shatter(common::CVector3f *location);
     int checkBreakableCondition();
 };
 

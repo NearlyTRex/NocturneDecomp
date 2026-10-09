@@ -1,0 +1,40 @@
+---
+# Pass-1 signatures mirror the binary's parameter order and pointer types, so
+# the checks that would rewrite an interface wholesale stay off until the
+# function is implemented and its read sites are known.
+Checks: >
+  -*,
+  bugprone-*,
+  -bugprone-easily-swappable-parameters,
+  clang-analyzer-*,
+  cppcoreguidelines-avoid-goto,
+  cppcoreguidelines-init-variables,
+  cppcoreguidelines-no-malloc,
+  cppcoreguidelines-pro-type-cstyle-cast,
+  cppcoreguidelines-slicing,
+  cppcoreguidelines-special-member-functions,
+  cppcoreguidelines-virtual-class-destructor,
+  misc-*,
+  -misc-include-cleaner,
+  -misc-no-recursion,
+  -misc-non-private-member-variables-in-classes,
+  modernize-*,
+  -modernize-avoid-c-arrays,
+  -modernize-use-trailing-return-type,
+  performance-*,
+  readability-*,
+  -readability-identifier-length,
+  -readability-magic-numbers,
+  -readability-named-parameter,
+WarningsAsErrors: '*'
+HeaderFilterRegex: '/recreation/(common|platform|engine|sound|support|cockpit|shape|core|wincore)/'
+FormatStyle: file
+CheckOptions:
+  - key: readability-function-cognitive-complexity.Threshold
+    value: 25
+  - key: cppcoreguidelines-special-member-functions.AllowSoleDefaultDtor
+    value: true
+  # Copying classes follow the rule of three; moves fall back to copies until
+  # an implementation shows a move is worth having.
+  - key: cppcoreguidelines-special-member-functions.AllowMissingMoveFunctions
+    value: true

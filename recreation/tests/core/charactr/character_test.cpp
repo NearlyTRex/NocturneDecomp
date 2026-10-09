@@ -35,9 +35,9 @@ TEST(CCharacter, PublicInterface) {
                                  ECollisionType (CCharacter::*)(SCollisionInfo *)>);
     static_assert(std::is_same_v<decltype(&CCharacter::canLookAt), int (CCharacter::*)()>);
     static_assert(std::is_same_v<decltype(&CCharacter::setPositionAndOrientation),
-                                 void (CCharacter::*)(CVector3f *, CVector3f *)>);
+                                 void (CCharacter::*)(common::CVector3f *, common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CCharacter::drop),
-                                 void (CCharacter::*)(CDemonActor *, CVector3f *)>);
+                                 void (CCharacter::*)(CDemonActor *, common::CVector3f *)>);
     static_assert(
         std::is_same_v<decltype(&CCharacter::spawnFlies), void (CCharacter::*)(int, float)>);
     static_assert(std::is_same_v<decltype(&CCharacter::calculateChecksum),
@@ -45,8 +45,8 @@ TEST(CCharacter, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CCharacter::archive), void (CCharacter::*)()>);
     static_assert(
         std::is_same_v<decltype(&CCharacter::applyDamage), void (CCharacter::*)(int, float)>);
-    static_assert(
-        std::is_same_v<decltype(&CCharacter::kill), void (CCharacter::*)(int, CVector3f *, float)>);
+    static_assert(std::is_same_v<decltype(&CCharacter::kill),
+                                 void (CCharacter::*)(int, common::CVector3f *, float)>);
     static_assert(std::is_same_v<decltype(&CCharacter::isInvulnerable), int (CCharacter::*)()>);
     static_assert(
         std::is_same_v<decltype(&CCharacter::isGrabbable), int (CCharacter::*)(CDemonActor *)>);
@@ -61,18 +61,18 @@ TEST(CCharacter, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CCharacter::onVictimLost), void (CCharacter::*)(CDemonActor *)>);
     static_assert(std::is_same_v<decltype(&CCharacter::checkCylinderCollisionWorld),
-                                 int (CCharacter::*)(CVector3f *, float, SDamageInfo *)>);
-    static_assert(
-        std::is_same_v<decltype(&CCharacter::testDamageLine),
-                       int (CCharacter::*)(CVector3f *, CVector3f *, SDamageInfo *, CVector3f *)>);
+                                 int (CCharacter::*)(common::CVector3f *, float, SDamageInfo *)>);
+    static_assert(std::is_same_v<decltype(&CCharacter::testDamageLine),
+                                 int (CCharacter::*)(common::CVector3f *, common::CVector3f *,
+                                                     SDamageInfo *, common::CVector3f *)>);
     static_assert(
         std::is_same_v<decltype(&CCharacter::processDamage), void (CCharacter::*)(SDamageInfo *)>);
     static_assert(
         std::is_same_v<decltype(&CCharacter::getDeathState), EDeathState (CCharacter::*)()>);
     static_assert(std::is_same_v<decltype(&CCharacter::attractActorToward),
-                                 int (CCharacter::*)(CDemonActor *, CVector3f *)>);
-    static_assert(
-        std::is_same_v<decltype(&CCharacter::canBeAttracted), int (CCharacter::*)(CVector3f *)>);
+                                 int (CCharacter::*)(CDemonActor *, common::CVector3f *)>);
+    static_assert(std::is_same_v<decltype(&CCharacter::canBeAttracted),
+                                 int (CCharacter::*)(common::CVector3f *)>);
     static_assert(
         std::is_same_v<decltype(&CCharacter::getPartDominantBone), int (CCharacter::*)(int)>);
     static_assert(
@@ -80,9 +80,9 @@ TEST(CCharacter, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CCharacter::clearDoorTarget), void (CCharacter::*)()>);
     static_assert(std::is_same_v<decltype(&CCharacter::hasDoorTarget), int (CCharacter::*)()>);
     static_assert(std::is_same_v<decltype(&CCharacter::dropCarriedObject),
-                                 void (CCharacter::*)(int, CVector3f *)>);
+                                 void (CCharacter::*)(int, common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CCharacter::getCarryObjToBodyXForm),
-                                 CMatrix3x4f *(CCharacter::*)(int, CMatrix3x4f *)>);
+                                 common::CMatrix3x4f *(CCharacter::*)(int, common::CMatrix3x4f *)>);
     static_assert(std::is_same_v<decltype(&CCharacter::setWalkTarget),
                                  void (CCharacter::*)(CDemonActor *, float, float)>);
     static_assert(std::is_same_v<decltype(&CCharacter::setWalkTargetImmediate),
@@ -90,13 +90,13 @@ TEST(CCharacter, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CCharacter::setWalkTimeout), void (CCharacter::*)(float)>);
     static_assert(std::is_same_v<decltype(&CCharacter::isWalkComplete), int (CCharacter::*)()>);
-    static_assert(
-        std::is_same_v<decltype(&CCharacter::walkToPoint),
-                       int (CCharacter::*)(CVector3f *, CPathMap *, CVector3f *, float, float)>);
-    static_assert(
-        std::is_same_v<decltype(&CCharacter::turnTowardPoint), void (CCharacter::*)(CVector3f *)>);
-    static_assert(
-        std::is_same_v<decltype(&CCharacter::moveAndCollide), void (CCharacter::*)(CVector3f *)>);
+    static_assert(std::is_same_v<decltype(&CCharacter::walkToPoint),
+                                 int (CCharacter::*)(common::CVector3f *, CPathMap *,
+                                                     common::CVector3f *, float, float)>);
+    static_assert(std::is_same_v<decltype(&CCharacter::turnTowardPoint),
+                                 void (CCharacter::*)(common::CVector3f *)>);
+    static_assert(std::is_same_v<decltype(&CCharacter::moveAndCollide),
+                                 void (CCharacter::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CCharacter::isOnGround), int (CCharacter::*)()>);
     static_assert(std::is_same_v<decltype(&CCharacter::preProcess), void (CCharacter::*)()>);
     static_assert(
@@ -105,7 +105,7 @@ TEST(CCharacter, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CCharacter::renderAttachedModels), void (CCharacter::*)()>);
     static_assert(std::is_same_v<decltype(&CCharacter::igniteBone),
-                                 void (CCharacter::*)(CVector3f *, int, int, float, int)>);
+                                 void (CCharacter::*)(common::CVector3f *, int, int, float, int)>);
     static_assert(
         std::is_same_v<decltype(&CCharacter::processDamageDecals), void (CCharacter::*)()>);
     static_assert(std::is_same_v<decltype(&CCharacter::spawnGoreAtBone),
@@ -114,9 +114,9 @@ TEST(CCharacter, PublicInterface) {
                                  void (CCharacter::*)(int, int, float)>);
     static_assert(std::is_same_v<decltype(&CCharacter::shatter), void (CCharacter::*)()>);
     static_assert(std::is_same_v<decltype(&CCharacter::dismember),
-                                 void (CCharacter::*)(CVector3f *, float, int)>);
+                                 void (CCharacter::*)(common::CVector3f *, float, int)>);
     static_assert(std::is_same_v<decltype(&CCharacter::detachBodyPart),
-                                 void (CCharacter::*)(int, CVector3f *, int)>);
+                                 void (CCharacter::*)(int, common::CVector3f *, int)>);
     static_assert(std::is_same_v<decltype(&CCharacter::dismemberPartInternal),
                                  void (CCharacter::*)(CBodyPart *, int, int)>);
     static_assert(std::is_same_v<decltype(&CCharacter::followActor),
@@ -138,7 +138,7 @@ TEST(CCharacter, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CCharacter::setLookAtTarget),
                                  void (CCharacter::*)(CDemonActor *)>);
     static_assert(std::is_same_v<decltype(&CCharacter::setOrientation),
-                                 void (CCharacter::*)(UOrientationVector *)>);
+                                 void (CCharacter::*)(common::UOrientationVector *)>);
     static_assert(
         std::is_same_v<decltype(&CCharacter::applyGestureLookAt), void (CCharacter::*)(float)>);
     static_assert(std::is_same_v<decltype(&CCharacter::updateWanderToWaypoint),

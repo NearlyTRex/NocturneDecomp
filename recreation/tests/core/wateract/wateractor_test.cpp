@@ -37,7 +37,8 @@ TEST(CWaterActor, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CWaterActor::onLaserHit), void (CWaterActor::*)(SLaserInfo *)>);
     static_assert(std::is_same_v<decltype(&CWaterActor::customRayIntersect),
-                                 float (CWaterActor::*)(CVector3f *, CVector3f *, CVector3f *)>);
+                                 float (CWaterActor::*)(common::CVector3f *, common::CVector3f *,
+                                                        common::CVector3f *)>);
     static_assert(
         std::is_same_v<decltype(&CWaterActor::getActorType), CDemonActorType *(CWaterActor::*)()>);
     static_assert(std::is_same_v<decltype(&CWaterActor::archive), void (CWaterActor::*)()>);

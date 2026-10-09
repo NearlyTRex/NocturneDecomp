@@ -27,7 +27,7 @@ TEST(CFireball, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CFireball::process), void (CFireball::*)()>);
     static_assert(std::is_same_v<decltype(&CFireball::render), void (CFireball::*)()>);
     static_assert(
-        std::is_same_v<decltype(&CFireball::onCollision), int (CFireball::*)(CVector3f *)>);
+        std::is_same_v<decltype(&CFireball::onCollision), int (CFireball::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CFireball::setupRenderState), void (CFireball::*)()>);
 }
 

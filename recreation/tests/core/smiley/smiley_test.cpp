@@ -29,14 +29,14 @@ TEST(CSmiley, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CSmiley::getCollisionType),
                                  ECollisionType (CSmiley::*)(SCollisionInfo *)>);
     static_assert(
-        std::is_same_v<decltype(&CSmiley::getTargetPoints), int (CSmiley::*)(CVector3f *)>);
+        std::is_same_v<decltype(&CSmiley::getTargetPoints), int (CSmiley::*)(common::CVector3f *)>);
     static_assert(
         std::is_same_v<decltype(&CSmiley::getActorType), CDemonActorType *(CSmiley::*)()>);
     static_assert(std::is_same_v<decltype(&CSmiley::archive), void (CSmiley::*)()>);
     static_assert(
         std::is_same_v<decltype(&CSmiley::processDamage), void (CSmiley::*)(SDamageInfo *)>);
     static_assert(std::is_same_v<decltype(&CSmiley::attractActorToward),
-                                 int (CSmiley::*)(CDemonActor *, CVector3f *)>);
+                                 int (CSmiley::*)(CDemonActor *, common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CSmiley::reset), void (CSmiley::*)()>);
 }
 

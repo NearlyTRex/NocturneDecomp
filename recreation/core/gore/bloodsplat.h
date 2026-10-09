@@ -1,6 +1,6 @@
 #pragma once
 
-#include "core/fwd.h"
+#include "common/fwd.h"
 
 #include <cstdio>
 
@@ -8,11 +8,8 @@ namespace nocturne::core {
 
 class CBloodSplat {
 public:
-    CBloodSplat();
-    ~CBloodSplat();
-
-    void initGroundSplat(CVector3f *position, int blood_type);
-    void initWallSplat(CVector3f *position, CVector3f *normal, int blood_type);
+    void initGroundSplat(common::CVector3f *position, int blood_type);
+    void initWallSplat(common::CVector3f *position, common::CVector3f *normal, int blood_type);
     void setupRenderState();
     void render(int expire_flag);
     void processAge();

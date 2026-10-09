@@ -1,6 +1,6 @@
 #pragma once
 
-#include "core/fwd.h"
+#include "common/fwd.h"
 #include "shape/fwd.h"
 
 #include <cstdint>
@@ -39,10 +39,10 @@ public:
     char *getClipboardText();
     void setClipboardText(char *text_data);
     void draw3DAxisLabels(float scale_factor, int text_color);
-    void draw3DAxisLabelsAt(float scale_factor, int text_color, core::CVector3f *world_position,
-                            core::UOrientationVector *orientation);
+    void draw3DAxisLabelsAt(float scale_factor, int text_color, common::CVector3f *world_position,
+                            common::UOrientationVector *orientation);
     void displayMemoryDiagnostics(char *output_buffer);
-    void draw3DProjectedLine(core::CVector3f *world_point, int line_length);
+    void draw3DProjectedLine(common::CVector3f *world_point, int line_length);
 };
 
 } // namespace nocturne::shape

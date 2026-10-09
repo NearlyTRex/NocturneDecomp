@@ -1,5 +1,6 @@
 #pragma once
 
+#include "common/fwd.h"
 #include "core/fwd.h"
 #include "engine/fwd.h"
 
@@ -10,8 +11,8 @@ public:
     CMirror();
     ~CMirror();
 
-    void setupCorners(CVector3f *corner1, CVector3f *corner2, CVector3f *corner3,
-                      CVector3f *corner4);
+    void setupCorners(common::CVector3f *corner1, common::CVector3f *corner2,
+                      common::CVector3f *corner3, common::CVector3f *corner4);
     void clipAndRenderReflectedPrimitive(engine::SMRGLHeaderPrimitive *prim);
     int renderReflectedPrimitive(engine::SMRGLHeaderPrimitive *prim);
     void renderMirroredPrimitive(engine::SMRGLHeaderPrimitive *prim);

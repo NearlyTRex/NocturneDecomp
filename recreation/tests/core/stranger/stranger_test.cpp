@@ -29,9 +29,9 @@ TEST(CStranger, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CStranger::renderOpaque), int (CStranger::*)()>);
     static_assert(std::is_same_v<decltype(&CStranger::renderTransparent), int (CStranger::*)()>);
     static_assert(std::is_same_v<decltype(&CStranger::setPositionAndOrientation),
-                                 void (CStranger::*)(CVector3f *, CVector3f *)>);
+                                 void (CStranger::*)(common::CVector3f *, common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CStranger::drop),
-                                 void (CStranger::*)(CDemonActor *, CVector3f *)>);
+                                 void (CStranger::*)(CDemonActor *, common::CVector3f *)>);
     static_assert(
         std::is_same_v<decltype(&CStranger::getActorType), CDemonActorType *(CStranger::*)()>);
     static_assert(std::is_same_v<decltype(&CStranger::archive), void (CStranger::*)()>);
@@ -42,9 +42,9 @@ TEST(CStranger, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CStranger::getDeathState), EDeathState (CStranger::*)()>);
     static_assert(std::is_same_v<decltype(&CStranger::dropCarriedObject),
-                                 void (CStranger::*)(int, CVector3f *)>);
+                                 void (CStranger::*)(int, common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CStranger::getCarryObjToBodyXForm),
-                                 CMatrix3x4f *(CStranger::*)(int, CMatrix3x4f *)>);
+                                 common::CMatrix3x4f *(CStranger::*)(int, common::CMatrix3x4f *)>);
     static_assert(std::is_same_v<decltype(&CStranger::drawWeapon), void (CStranger::*)(int)>);
     static_assert(std::is_same_v<decltype(&CStranger::isWeaponDrawn), int (CStranger::*)()>);
     static_assert(std::is_same_v<decltype(&CStranger::reset), void (CStranger::*)()>);

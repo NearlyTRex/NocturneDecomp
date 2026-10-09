@@ -1,8 +1,9 @@
 #pragma once
 
-#include "core/fwd.h"
+#include "common/fwd.h"
 #include "engine/drender/drender.h"
 #include "engine/fwd.h"
+#include "platform/fwd.h"
 
 namespace nocturne::engine {
 
@@ -25,23 +26,23 @@ public:
     void renderBlendedDirect(SMRGLHeaderPrimitive *prim);
     void renderBlendedPoly(SMRGLPrimitivePoly *poly);
     void renderOverlayDirect(SMRGLHeaderPrimitive *prim);
-    void setCameraOrigin(core::CVector3i *origin);
-    void setCameraOriginFromScaledPoint(core::CVector3f *point_ptr);
-    void setupSceneRendering(core::CVector3f *euler_angles);
-    void setupCameraAndProjection(core::CMatrix3x3f *transform_matrix);
-    void copyAndTransform3DPoint(core::CVector3f *input_point);
-    void processCameraRelativeVertex(core::CVector3f *world_position);
-    void applyDirectTransform(core::CVector3i *position, core::CVector3i *rotation);
-    void applyScaledTransform(core::CVector3f *euler_angles, core::CVector3f *translation);
+    void setCameraOrigin(common::CVector3i *origin);
+    void setCameraOriginFromScaledPoint(common::CVector3f *point_ptr);
+    void setupSceneRendering(common::CVector3f *euler_angles);
+    void setupCameraAndProjection(common::CMatrix3x3f *transform_matrix);
+    void copyAndTransform3DPoint(common::CVector3f *input_point);
+    void processCameraRelativeVertex(common::CVector3f *world_position);
+    void applyDirectTransform(common::CVector3i *position, common::CVector3i *rotation);
+    void applyScaledTransform(common::CVector3f *euler_angles, common::CVector3f *translation);
     void matrixPush();
     void matrixPop();
     void setProjectionScale(float field_of_view);
     void setLightIntensity(float intensity);
-    void setLightDirection(core::CVector3i *direction);
-    core::CVector3i *getCameraOriginFixed(core::CVector3i *output);
-    core::CVector3f *getCameraOriginWorld(core::CVector3f *output);
-    core::CVector3i *getCameraRotationFixed(core::CVector3i *output);
-    core::CVector3f *getCameraRotationRadians(core::CVector3f *output);
+    void setLightDirection(common::CVector3i *direction);
+    common::CVector3i *getCameraOriginFixed(common::CVector3i *output);
+    common::CVector3f *getCameraOriginWorld(common::CVector3f *output);
+    common::CVector3i *getCameraRotationFixed(common::CVector3i *output);
+    common::CVector3f *getCameraRotationRadians(common::CVector3f *output);
     float calculateProjectionFactor();
     void pushViewport(int x, int y, int width, int height);
     void popViewport();
@@ -62,14 +63,14 @@ public:
     void enableAdvancedCulling(int enabled);
     void renderTriangleBatch(SMRGLPrimitiveTriangle *primitive_array, int primitive_count,
                              int render_flags);
-    void renderQuadBatch(SMRGLPrimitiveQuad *primitive_array, int primitive_count,
+    void renderQuadBatch(platform::SMRGLPrimitiveQuad *primitive_array, int primitive_count,
                          int render_flags);
-    void renderFaceList(SInputFace *face_array, int face_count, int render_flags);
+    void renderFaceList(platform::SInputFace *face_array, int face_count, int render_flags);
     void setTextureCaptureMode(int enable_advanced_mode);
     void processCapturedFaces();
-    void captureTexture(core::SMRGLTextureBasic *texture);
-    void updateTexture(core::SMRGLTextureBasic *texture, SRGBColorPalette *palette);
-    int depthTest(SRenderVertex *vertex_ptr);
+    void captureTexture(platform::SMRGLTextureBasic *texture);
+    void updateTexture(platform::SMRGLTextureBasic *texture, SRGBColorPalette *palette);
+    int depthTest(platform::SRenderVertex *vertex_ptr);
 };
 
 } // namespace nocturne::engine

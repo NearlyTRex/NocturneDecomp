@@ -1,5 +1,6 @@
 #pragma once
 
+#include "common/fwd.h"
 #include "core/fwd.h"
 #include "core/particle/particle.h"
 
@@ -14,9 +15,10 @@ public:
 
     void process() override;
     void render() override;
-    int onCollision(CVector3f *collision_normal) override;
+    int onCollision(common::CVector3f *collision_normal) override;
 
-    void setup(CVector3f *position, CVector3f *velocity, CKeyFramedModel *model_ptr);
+    void setup(common::CVector3f *position, common::CVector3f *velocity,
+               CKeyFramedModel *model_ptr);
 };
 
 } // namespace nocturne::core

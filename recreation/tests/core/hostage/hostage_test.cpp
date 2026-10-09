@@ -40,7 +40,7 @@ TEST(CHostage, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CHostage::processDamage), void (CHostage::*)(SDamageInfo *)>);
     static_assert(std::is_same_v<decltype(&CHostage::getCarryObjToBodyXForm),
-                                 CMatrix3x4f *(CHostage::*)(int, CMatrix3x4f *)>);
+                                 common::CMatrix3x4f *(CHostage::*)(int, common::CMatrix3x4f *)>);
 }
 
 } // namespace

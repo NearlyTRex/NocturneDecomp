@@ -13,12 +13,15 @@ TEST(CMirrorReflection, IsConcrete) {
 
 TEST(CMirrorReflection, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CMirrorReflection::setupMirrorReflection),
-                                 void (CMirrorReflection::*)(CVector3f *, CVector3f *, float)>);
+                                 void (CMirrorReflection::*)(common::CVector3f *,
+                                                             common::CVector3f *, float)>);
     static_assert(std::is_same_v<decltype(&CMirrorReflection::transformMirrorVertex),
-                                 CVector3i *(CMirrorReflection::*)(CVector3i *, CVector3i *)>);
-    static_assert(
-        std::is_same_v<decltype(&CMirrorReflection::transformMirrorEdgeToIntegerSpace),
-                       CVector3i *(CMirrorReflection::*)(CVector3i *, CVector3i *, CVector3i *)>);
+                                 common::CVector3i *(CMirrorReflection::*)(common::CVector3i *,
+                                                                           common::CVector3i *)>);
+    static_assert(std::is_same_v<decltype(&CMirrorReflection::transformMirrorEdgeToIntegerSpace),
+                                 common::CVector3i *(CMirrorReflection::*)(common::CVector3i *,
+                                                                           common::CVector3i *,
+                                                                           common::CVector3i *)>);
 }
 
 } // namespace

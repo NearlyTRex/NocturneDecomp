@@ -12,9 +12,9 @@ TEST(SoundSndmainFunctions, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&setNextSfxStaticPosition), void (*)(double, double, double)>);
     static_assert(
-        std::is_same_v<decltype(&setNextSfxTrackedFloatPosition), void (*)(core::CVector3f *)>);
+        std::is_same_v<decltype(&setNextSfxTrackedFloatPosition), void (*)(common::CVector3f *)>);
     static_assert(
-        std::is_same_v<decltype(&setNextSfxTrackedVelocity1), void (*)(core::CVector3f *)>);
+        std::is_same_v<decltype(&setNextSfxTrackedVelocity1), void (*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&setNextSfxVolume), void (*)(float)>);
     static_assert(std::is_same_v<decltype(&setNextSfxBaseFrequency), void (*)(float)>);
     static_assert(std::is_same_v<decltype(&setNextSfxUserData), void (*)(int, void *)>);
@@ -36,9 +36,9 @@ TEST(SoundSndmainFunctions, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&setSfxPosition), int (*)(std::uint32_t, double, double, double)>);
     static_assert(std::is_same_v<decltype(&setSfxTrackedFloatPosition),
-                                 int (*)(std::uint32_t, core::CVector3f *)>);
+                                 int (*)(std::uint32_t, common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&setSfxTrackedFloatVelocity),
-                                 int (*)(std::uint32_t, core::CVector3f *)>);
+                                 int (*)(std::uint32_t, common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&setSfxVolume), int (*)(std::uint32_t, float)>);
     static_assert(std::is_same_v<decltype(&setSfxBaseFrequency), int (*)(std::uint32_t, float)>);
     static_assert(std::is_same_v<decltype(&killSfx), int (*)(std::uint32_t)>);
@@ -87,19 +87,12 @@ TEST(SoundSndmainFunctions, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&set3DListenerOrientRight), void (*)(float, float, float)>);
     static_assert(std::is_same_v<decltype(&audioThreadProc), std::uint32_t (*)(void *)>);
-    static_assert(std::is_same_v<decltype(&startSoundThread), int (*)(double)>);
-    static_assert(std::is_same_v<decltype(&killSoundThread), int (*)()>);
     static_assert(std::is_same_v<decltype(&lockSound), void (*)()>);
     static_assert(std::is_same_v<decltype(&unlockSound), void (*)()>);
     static_assert(std::is_same_v<decltype(&processAudio), void (*)()>);
-    static_assert(std::is_same_v<decltype(&getMaxSwLatency), float (*)()>);
     static_assert(std::is_same_v<decltype(&readIni), void (*)(engine::CIniFile *)>);
     static_assert(std::is_same_v<decltype(&writeIni), void (*)(engine::CIniFile *)>);
     static_assert(std::is_same_v<decltype(&analyzeFrequencyBand), float (*)(int, float, float)>);
-    static_assert(
-        std::is_same_v<decltype(&pollAndMixSfx), void (*)(void **, int, int, int, int, int)>);
-    static_assert(std::is_same_v<decltype(&pollAllSfxSlots), void (*)()>);
-    static_assert(std::is_same_v<decltype(&logSoundError), void (*)(char *, ...)>);
 }
 
 } // namespace

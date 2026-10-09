@@ -17,13 +17,14 @@ TEST(CBox, Constructors) {
 
 TEST(CBox, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CBox::setupCorners),
-                                 void (CBox::*)(CVector3f *, CVector3f *, CVector3f *, float)>);
+                                 void (CBox::*)(common::CVector3f *, common::CVector3f *,
+                                                common::CVector3f *, float)>);
     static_assert(std::is_same_v<decltype(&CBox::process), void (CBox::*)(float)>);
     static_assert(std::is_same_v<decltype(&CBox::processPhysics), void (CBox::*)(float)>);
     static_assert(std::is_same_v<decltype(&CBox::loadFromFile), void (CBox::*)(std::FILE *)>);
     static_assert(std::is_same_v<decltype(&CBox::saveToFile), void (CBox::*)(std::FILE *, char *)>);
-    static_assert(
-        std::is_same_v<decltype(&CBox::setupVelocities), void (CBox::*)(CVector3f *, CVector3f *)>);
+    static_assert(std::is_same_v<decltype(&CBox::setupVelocities),
+                                 void (CBox::*)(common::CVector3f *, common::CVector3f *)>);
 }
 
 } // namespace

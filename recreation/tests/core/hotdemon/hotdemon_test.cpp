@@ -28,8 +28,8 @@ TEST(CHotDemon, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CHotDemon::process), void (CHotDemon::*)(float)>);
     static_assert(std::is_same_v<decltype(&CHotDemon::getCollisionType),
                                  ECollisionType (CHotDemon::*)(SCollisionInfo *)>);
-    static_assert(
-        std::is_same_v<decltype(&CHotDemon::getTargetPoints), int (CHotDemon::*)(CVector3f *)>);
+    static_assert(std::is_same_v<decltype(&CHotDemon::getTargetPoints),
+                                 int (CHotDemon::*)(common::CVector3f *)>);
     static_assert(
         std::is_same_v<decltype(&CHotDemon::getActorType), CDemonActorType *(CHotDemon::*)()>);
     static_assert(std::is_same_v<decltype(&CHotDemon::archive), void (CHotDemon::*)()>);

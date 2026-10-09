@@ -102,6 +102,17 @@ if(NOCTURNE_RECREATION_COVERAGE)
         VERBATIM)
 endif()
 
+find_program(RUN_CLANG_TIDY run-clang-tidy)
+if(RUN_CLANG_TIDY)
+    # Every translation unit this build compiles: header checks, tests and
+    # implementation files. GoogleTest's own sources are left out.
+    add_custom_target(tidy
+        COMMAND ${RUN_CLANG_TIDY} -quiet -p ${CMAKE_CURRENT_BINARY_DIR}
+                "${CMAKE_CURRENT_SOURCE_DIR}/|${CMAKE_CURRENT_BINARY_DIR}/header_checks/"
+        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        VERBATIM)
+endif()
+
 find_program(CLANG_FORMAT clang-format)
 if(CLANG_FORMAT)
     file(GLOB_RECURSE _format_files CONFIGURE_DEPENDS

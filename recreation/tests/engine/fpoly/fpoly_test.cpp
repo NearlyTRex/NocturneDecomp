@@ -8,8 +8,8 @@ namespace nocturne::engine {
 namespace {
 
 TEST(EngineFpolyFunctions, PublicInterface) {
-    static_assert(
-        std::is_same_v<decltype(&rasterizePolygonHardware), void (*)(SRenderVertex **, int)>);
+    static_assert(std::is_same_v<decltype(&rasterizePolygonHardware),
+                                 void (*)(platform::SRenderVertex **, int)>);
 }
 
 } // namespace

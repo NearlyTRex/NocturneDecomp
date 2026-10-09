@@ -1,30 +1,31 @@
 #pragma once
 
-#include "core/fwd.h"
+#include "engine/fwd.h"
 
 #include <cstdint>
 
 namespace nocturne::core {
 
-void renderDepthOnlyStandard(SSoftwareEdge *left_edge, SSoftwareEdge *right_edge, int scanline_y);
-void renderDepth16BitConditional(SSoftwareEdge *left_edge, SSoftwareEdge *right_edge,
-                                 int scanline_y);
-void renderTexturedAlphaMMXScanline(SSoftwareEdge *left_edge, SSoftwareEdge *right_edge,
-                                    int scanline_y);
-void renderZBufferFill16xUnrolled(SSoftwareEdge *left_edge, SSoftwareEdge *right_edge,
-                                  int scanline_y);
-void renderSolidColorDepth16xUnrolled(SSoftwareEdge *left_edge, SSoftwareEdge *right_edge,
-                                      int scanline_y);
-void renderDepthInterlacedProfiled(SSoftwareEdge *left_edge, SSoftwareEdge *right_edge,
-                                   int scanline_y);
-void renderScreenDepthTestInterlacedProfiled(SSoftwareEdge *left_edge, SSoftwareEdge *right_edge,
-                                             int scanline_y);
-void renderDepthTestStatistics16xUnrolled(SSoftwareEdge *left_edge, SSoftwareEdge *right_edge,
-                                          int scanline_y);
-void renderPerspectiveCorrectTextured16xCached(SSoftwareEdge *left_edge, SSoftwareEdge *right_edge,
-                                               int scanline_y);
-void renderTexturedDecalMMXScanline(SSoftwareEdge *left_edge, SSoftwareEdge *right_edge,
-                                    int scanline_y);
+void renderDepthOnlyStandard(engine::SSoftwareEdge *left_edge, engine::SSoftwareEdge *right_edge,
+                             int scanline_y);
+void renderDepth16BitConditional(engine::SSoftwareEdge *left_edge,
+                                 engine::SSoftwareEdge *right_edge, int scanline_y);
+void renderTexturedAlphaMMXScanline(engine::SSoftwareEdge *left_edge,
+                                    engine::SSoftwareEdge *right_edge, int scanline_y);
+void renderZBufferFill16xUnrolled(engine::SSoftwareEdge *left_edge,
+                                  engine::SSoftwareEdge *right_edge, int scanline_y);
+void renderSolidColorDepth16xUnrolled(engine::SSoftwareEdge *left_edge,
+                                      engine::SSoftwareEdge *right_edge, int scanline_y);
+void renderDepthInterlacedProfiled(engine::SSoftwareEdge *left_edge,
+                                   engine::SSoftwareEdge *right_edge, int scanline_y);
+void renderScreenDepthTestInterlacedProfiled(engine::SSoftwareEdge *left_edge,
+                                             engine::SSoftwareEdge *right_edge, int scanline_y);
+void renderDepthTestStatistics16xUnrolled(engine::SSoftwareEdge *left_edge,
+                                          engine::SSoftwareEdge *right_edge, int scanline_y);
+void renderPerspectiveCorrectTextured16xCached(engine::SSoftwareEdge *left_edge,
+                                               engine::SSoftwareEdge *right_edge, int scanline_y);
+void renderTexturedDecalMMXScanline(engine::SSoftwareEdge *left_edge,
+                                    engine::SSoftwareEdge *right_edge, int scanline_y);
 void blendHBilerpLightmapSharedU64toU64pBB12Px2MMX(std::uint64_t *output_buffer,
                                                    std::uint64_t *texture_buffer,
                                                    std::uint8_t *texture_indices,

@@ -10,9 +10,10 @@ namespace {
 TEST(CoreHeroFunctions, PublicInterface) {
     static_assert(std::is_same_v<decltype(&staticInit), void (*)()>);
     static_assert(std::is_same_v<decltype(&closestHeroToPoint), CHero *(*)(CLocation *)>);
-    static_assert(std::is_same_v<decltype(&isAnyHeroWithinRadius), int (*)(CVector3f *, float)>);
     static_assert(
-        std::is_same_v<decltype(&isAnyHeroWithinCylinder), int (*)(CVector3f *, float, float)>);
+        std::is_same_v<decltype(&isAnyHeroWithinRadius), int (*)(common::CVector3f *, float)>);
+    static_assert(std::is_same_v<decltype(&isAnyHeroWithinCylinder),
+                                 int (*)(common::CVector3f *, float, float)>);
     static_assert(std::is_same_v<decltype(&factoryFuncHeroPlaceholder), CHeroPlaceholder *(*)()>);
 }
 

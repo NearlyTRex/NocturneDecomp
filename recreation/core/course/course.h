@@ -1,5 +1,6 @@
 #pragma once
 
+#include "common/fwd.h"
 #include "core/fwd.h"
 
 namespace nocturne::core {
@@ -11,7 +12,7 @@ public:
 
     void load(char *filename);
     void free();
-    void evaluate(float time, CVector3f *out_pos, CVector3f *out_euler);
+    void evaluate(float time, common::CVector3f *out_pos, common::CVector3f *out_euler);
 };
 
 } // namespace nocturne::core

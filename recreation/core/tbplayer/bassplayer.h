@@ -1,5 +1,6 @@
 #pragma once
 
+#include "common/fwd.h"
 #include "core/fwd.h"
 #include "core/npc/npc.h"
 
@@ -13,7 +14,8 @@ public:
     void setup() override;
     CDemonActorType *getActorType() override;
     void processDamage(SDamageInfo *damage_info) override;
-    CMatrix3x4f *getCarryObjToBodyXForm(int hand_index, CMatrix3x4f *out_matrix) override;
+    common::CMatrix3x4f *getCarryObjToBodyXForm(int hand_index,
+                                                common::CMatrix3x4f *out_matrix) override;
 };
 
 } // namespace nocturne::core

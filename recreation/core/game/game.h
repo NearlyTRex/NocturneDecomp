@@ -1,5 +1,6 @@
 #pragma once
 
+#include "common/fwd.h"
 #include "core/fwd.h"
 
 #include <cstdint>
@@ -9,12 +10,11 @@ namespace nocturne::core {
 class CGame {
 public:
     CGame();
-    ~CGame();
 
     void saveClockTime();
     void updateDT();
     void displayMessage(char *message, float duration);
-    void setFudgeTarget(CVector3f *fudge_target, float fudge_step);
+    void setFudgeTarget(common::CVector3f *fudge_target, float fudge_step);
     int runGameSession();
     void restoreDefaultControls();
     void resetKeyState();

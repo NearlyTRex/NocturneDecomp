@@ -9,13 +9,17 @@ namespace {
 
 TEST(EngineClipperFunctions, PublicInterface) {
     static_assert(std::is_same_v<decltype(&interpolateVertexLeftClip),
-                                 void (*)(SRenderVertex *, SRenderVertex *, SRenderVertex *)>);
+                                 void (*)(platform::SRenderVertex *, platform::SRenderVertex *,
+                                          platform::SRenderVertex *)>);
     static_assert(std::is_same_v<decltype(&interpolateVertexRightClip),
-                                 void (*)(SRenderVertex *, SRenderVertex *, SRenderVertex *)>);
+                                 void (*)(platform::SRenderVertex *, platform::SRenderVertex *,
+                                          platform::SRenderVertex *)>);
     static_assert(std::is_same_v<decltype(&interpolateVertexBottomClip),
-                                 void (*)(SRenderVertex *, SRenderVertex *, SRenderVertex *)>);
+                                 void (*)(platform::SRenderVertex *, platform::SRenderVertex *,
+                                          platform::SRenderVertex *)>);
     static_assert(std::is_same_v<decltype(&interpolateVertexTopClip),
-                                 void (*)(SRenderVertex *, SRenderVertex *, SRenderVertex *)>);
+                                 void (*)(platform::SRenderVertex *, platform::SRenderVertex *,
+                                          platform::SRenderVertex *)>);
     static_assert(std::is_same_v<decltype(&clipAndRasterize), void (*)(int, int *)>);
     static_assert(std::is_same_v<decltype(&clipPolygonToViewport), void (*)(int, int *)>);
 }

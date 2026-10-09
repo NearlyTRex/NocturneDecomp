@@ -16,9 +16,9 @@ TEST(CMirror, Constructors) {
 }
 
 TEST(CMirror, PublicInterface) {
-    static_assert(
-        std::is_same_v<decltype(&CMirror::setupCorners),
-                       void (CMirror::*)(CVector3f *, CVector3f *, CVector3f *, CVector3f *)>);
+    static_assert(std::is_same_v<decltype(&CMirror::setupCorners),
+                                 void (CMirror::*)(common::CVector3f *, common::CVector3f *,
+                                                   common::CVector3f *, common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CMirror::clipAndRenderReflectedPrimitive),
                                  void (CMirror::*)(engine::SMRGLHeaderPrimitive *)>);
     static_assert(std::is_same_v<decltype(&CMirror::renderReflectedPrimitive),

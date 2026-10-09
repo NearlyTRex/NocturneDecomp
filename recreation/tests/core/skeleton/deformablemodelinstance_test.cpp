@@ -44,19 +44,22 @@ TEST(CDeformableModelInstance, PublicInterface) {
                            SPoseData *, float, int, CDeformableModel::MotionBlendWeightFunc *)>);
     static_assert(std::is_same_v<decltype(&CDeformableModelInstance::blendBoneRotations),
                                  void (CDeformableModelInstance::*)(
-                                     CQuaternion4f *, float, int,
+                                     common::CQuaternion4f *, float, int,
                                      CDeformableModel::MotionBlendWeightFunc *)>);
     static_assert(std::is_same_v<decltype(&CDeformableModelInstance::getBoneModelMatrix),
-                                 CMatrix3x4f *(CDeformableModelInstance::*)(int, CMatrix3x4f *)>);
-    static_assert(std::is_same_v<decltype(&CDeformableModelInstance::getBoneModelPosition),
-                                 CVector3f *(CDeformableModelInstance::*)(CVector3f *, int)>);
-    static_assert(std::is_same_v<decltype(&CDeformableModelInstance::getBoneCachedModelPosition),
-                                 CVector3f *(CDeformableModelInstance::*)(CVector3f *, int)>);
+                                 common::CMatrix3x4f *(
+                                     CDeformableModelInstance::*)(int, common::CMatrix3x4f *)>);
+    static_assert(
+        std::is_same_v<decltype(&CDeformableModelInstance::getBoneModelPosition),
+                       common::CVector3f *(CDeformableModelInstance::*)(common::CVector3f *, int)>);
+    static_assert(
+        std::is_same_v<decltype(&CDeformableModelInstance::getBoneCachedModelPosition),
+                       common::CVector3f *(CDeformableModelInstance::*)(common::CVector3f *, int)>);
     static_assert(std::is_same_v<decltype(&CDeformableModelInstance::computeBoneTransforms),
                                  void (CDeformableModelInstance::*)()>);
     static_assert(std::is_same_v<decltype(&CDeformableModelInstance::applyRotationToHierarchy),
                                  void (CDeformableModelInstance::*)(
-                                     CQuaternion4f *, float, int,
+                                     common::CQuaternion4f *, float, int,
                                      CDeformableModel::MotionBlendWeightFunc *)>);
     static_assert(std::is_same_v<decltype(&CDeformableModelInstance::scalePoseDataForHierarchy),
                                  void (CDeformableModelInstance::*)(float, int)>);
@@ -84,16 +87,18 @@ TEST(CDeformableModelInstance, PublicInterface) {
                                  void (CDeformableModelInstance::*)(char *)>);
     static_assert(
         std::is_same_v<decltype(&CDeformableModelInstance::getRootMotionDelta),
-                       CVector3f *(CDeformableModelInstance::*)(CVector3f *, float, float)>);
+                       common::CVector3f *(CDeformableModelInstance::*)(common::CVector3f *, float,
+                                                                        float)>);
     static_assert(std::is_same_v<decltype(&CDeformableModelInstance::dismemberPart),
                                  void (CDeformableModelInstance::*)(CBodyPart *, int)>);
     static_assert(std::is_same_v<decltype(&CDeformableModelInstance::rayIntersect),
-                                 float (CDeformableModelInstance::*)(CVector3f *, CVector3f *)>);
+                                 float (CDeformableModelInstance::*)(common::CVector3f *,
+                                                                     common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CDeformableModelInstance::findClosestBone),
-                                 int (CDeformableModelInstance::*)(CVector3f *)>);
-    static_assert(
-        std::is_same_v<decltype(&CDeformableModelInstance::shatter),
-                       void (CDeformableModelInstance::*)(CVector3f *, CVector3f *, int)>);
+                                 int (CDeformableModelInstance::*)(common::CVector3f *)>);
+    static_assert(std::is_same_v<decltype(&CDeformableModelInstance::shatter),
+                                 void (CDeformableModelInstance::*)(common::CVector3f *,
+                                                                    common::CVector3f *, int)>);
     static_assert(std::is_same_v<decltype(&CDeformableModelInstance::getBoneTransform),
                                  SPose *(CDeformableModelInstance::*)(SPose *)>);
     static_assert(std::is_same_v<decltype(&CDeformableModelInstance::setBoneTransform),

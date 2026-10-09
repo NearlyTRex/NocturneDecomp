@@ -1,5 +1,6 @@
 #pragma once
 
+#include "common/fwd.h"
 #include "core/fwd.h"
 #include "core/particle/particle.h"
 
@@ -12,7 +13,7 @@ public:
 
     void process() override;
     void render() override;
-    int onCollision(CVector3f *collision_normal) override;
+    int onCollision(common::CVector3f *collision_normal) override;
 
     void setupRenderState();
 };

@@ -30,7 +30,7 @@ TEST(CDrummer, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CDrummer::processDamage), void (CDrummer::*)(SDamageInfo *)>);
     static_assert(std::is_same_v<decltype(&CDrummer::getCarryObjToBodyXForm),
-                                 CMatrix3x4f *(CDrummer::*)(int, CMatrix3x4f *)>);
+                                 common::CMatrix3x4f *(CDrummer::*)(int, common::CMatrix3x4f *)>);
 }
 
 } // namespace

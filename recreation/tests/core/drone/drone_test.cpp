@@ -26,7 +26,8 @@ TEST(CDrone, Constructors) {
 TEST(CDrone, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDrone::setup), void (CDrone::*)()>);
     static_assert(std::is_same_v<decltype(&CDrone::process), void (CDrone::*)(float)>);
-    static_assert(std::is_same_v<decltype(&CDrone::getTargetPoints), int (CDrone::*)(CVector3f *)>);
+    static_assert(
+        std::is_same_v<decltype(&CDrone::getTargetPoints), int (CDrone::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CDrone::getActorType), CDemonActorType *(CDrone::*)()>);
     static_assert(std::is_same_v<decltype(&CDrone::archive), void (CDrone::*)()>);
     static_assert(

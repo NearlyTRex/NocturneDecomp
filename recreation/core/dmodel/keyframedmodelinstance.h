@@ -7,7 +7,6 @@ namespace nocturne::core {
 class CKeyFramedModelInstance {
 public:
     CKeyFramedModelInstance();
-    ~CKeyFramedModelInstance();
 
     void prepareForRendering(float animation_frame, int render_flags);
     CKeyFramedModel *preCache();

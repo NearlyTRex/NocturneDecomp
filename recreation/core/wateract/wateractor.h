@@ -1,5 +1,6 @@
 #pragma once
 
+#include "common/fwd.h"
 #include "core/actor/demonactor.h"
 #include "core/fwd.h"
 
@@ -17,8 +18,8 @@ public:
     ECollisionType getCollisionType(SCollisionInfo *collision_info) override;
     EGroundType getGroundType() override;
     void onLaserHit(SLaserInfo *laser_info) override;
-    float customRayIntersect(CVector3f *ray_origin, CVector3f *ray_direction,
-                             CVector3f *out_normal) override;
+    float customRayIntersect(common::CVector3f *ray_origin, common::CVector3f *ray_direction,
+                             common::CVector3f *out_normal) override;
     CDemonActorType *getActorType() override;
     void archive() override;
 };

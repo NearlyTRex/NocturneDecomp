@@ -23,7 +23,7 @@ TEST(CWeather, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CWeather::setWeatherType), void (CWeather::*)(EWeatherType)>);
     static_assert(std::is_same_v<decltype(&CWeather::setOriginAndRotation),
-                                 void (CWeather::*)(CVector3f *, CVector3f *)>);
+                                 void (CWeather::*)(common::CVector3f *, common::CVector3f *)>);
 }
 
 } // namespace

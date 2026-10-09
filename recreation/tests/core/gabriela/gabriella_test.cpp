@@ -34,7 +34,7 @@ TEST(CGabriella, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CGabriella::processDamage), void (CGabriella::*)(SDamageInfo *)>);
     static_assert(std::is_same_v<decltype(&CGabriella::getCarryObjToBodyXForm),
-                                 CMatrix3x4f *(CGabriella::*)(int, CMatrix3x4f *)>);
+                                 common::CMatrix3x4f *(CGabriella::*)(int, common::CMatrix3x4f *)>);
     static_assert(std::is_same_v<decltype(&CGabriella::drawWeapon), void (CGabriella::*)(int)>);
     static_assert(std::is_same_v<decltype(&CGabriella::isWeaponDrawn), int (CGabriella::*)()>);
 }

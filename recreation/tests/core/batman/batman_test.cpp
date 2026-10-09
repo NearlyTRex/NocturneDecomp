@@ -30,7 +30,7 @@ TEST(CBatman, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CBatman::getCollisionType),
                                  ECollisionType (CBatman::*)(SCollisionInfo *)>);
     static_assert(
-        std::is_same_v<decltype(&CBatman::getTargetPoints), int (CBatman::*)(CVector3f *)>);
+        std::is_same_v<decltype(&CBatman::getTargetPoints), int (CBatman::*)(common::CVector3f *)>);
     static_assert(
         std::is_same_v<decltype(&CBatman::getActorType), CDemonActorType *(CBatman::*)()>);
     static_assert(std::is_same_v<decltype(&CBatman::archive), void (CBatman::*)()>);

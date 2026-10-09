@@ -1,5 +1,6 @@
 #pragma once
 
+#include "common/fwd.h"
 #include "core/actor/demonactor.h"
 #include "core/fwd.h"
 
@@ -16,10 +17,10 @@ public:
     void renderBackground(int layer_flag) override;
     CBoundingBox3D *getBoundingBox(CBoundingBox3D *out_box) override;
     ECollisionType getCollisionType(SCollisionInfo *collision_info) override;
-    int getTargetPoints(CVector3f *out_points_array) override;
+    int getTargetPoints(common::CVector3f *out_points_array) override;
     int canPickup(CDemonActor *picker) override;
     void pickup(CDemonActor *carrier) override;
-    void onDropped(CVector3f *drop_position) override;
+    void onDropped(common::CVector3f *drop_position) override;
     CDemonActor *getCarrier() override;
     CDemonActorType *getActorType() override;
     void archive() override;

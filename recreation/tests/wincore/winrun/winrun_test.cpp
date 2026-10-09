@@ -8,8 +8,6 @@ namespace nocturne::wincore {
 namespace {
 
 TEST(WincoreWinrunFunctions, PublicInterface) {
-    static_assert(std::is_same_v<decltype(&calibrateCPUSpeed), void (*)()>);
-    static_assert(std::is_same_v<decltype(&endPeriod), void (*)()>);
     static_assert(std::is_same_v<decltype(&getTime), int (*)()>);
     static_assert(std::is_same_v<decltype(&clearKeypresses), void (*)()>);
     static_assert(std::is_same_v<decltype(&getNextKeypress), int (*)()>);
@@ -20,11 +18,7 @@ TEST(WincoreWinrunFunctions, PublicInterface) {
     static_assert(std::is_same_v<decltype(&processWindowMessages), void (*)()>);
     static_assert(std::is_same_v<decltype(&displayMessageBoxAndQuit), void (*)(char *)>);
     static_assert(std::is_same_v<decltype(&getKeyName), char *(*)(engine::EInputCodeType)>);
-    static_assert(std::is_same_v<decltype(&sleep), void (*)(double)>);
-    static_assert(
-        std::is_same_v<decltype(&setRegistryStringValue), void (*)(char *, char *, char *)>);
     static_assert(std::is_same_v<decltype(&initJoystick), void (*)()>);
-    static_assert(std::is_same_v<decltype(&doNothing2), void (*)()>);
     static_assert(std::is_same_v<decltype(&getJoystickState), void (*)()>);
 }
 

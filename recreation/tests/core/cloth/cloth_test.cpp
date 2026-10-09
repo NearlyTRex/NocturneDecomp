@@ -17,19 +17,20 @@ TEST(CCloth, Constructors) {
 
 TEST(CCloth, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CCloth::load), int (CCloth::*)(char *)>);
-    static_assert(
-        std::is_same_v<decltype(&CCloth::setup),
-                       void (CCloth::*)(CVector3f *, CVector3f *, CDeformableModelInstance *)>);
-    static_assert(std::is_same_v<decltype(&CCloth::process),
-                                 void (CCloth::*)(CVector3f *, CVector3f *, float, float,
+    static_assert(std::is_same_v<decltype(&CCloth::setup),
+                                 void (CCloth::*)(common::CVector3f *, common::CVector3f *,
                                                   CDeformableModelInstance *)>);
+    static_assert(std::is_same_v<decltype(&CCloth::process),
+                                 void (CCloth::*)(common::CVector3f *, common::CVector3f *, float,
+                                                  float, CDeformableModelInstance *)>);
     static_assert(std::is_same_v<decltype(&CCloth::saveJoinedLight),
                                  int (CCloth::*)(CDeformableModelInstance *)>);
     static_assert(
         std::is_same_v<decltype(&CCloth::render), void (CCloth::*)(CDeformableModelInstance *)>);
     static_assert(std::is_same_v<decltype(&CCloth::grabCloth), void (CCloth::*)(char *, int)>);
     static_assert(std::is_same_v<decltype(&CCloth::resetState), void (CCloth::*)(int)>);
-    static_assert(std::is_same_v<decltype(&CCloth::applyRotation), void (CCloth::*)(CVector3f *)>);
+    static_assert(
+        std::is_same_v<decltype(&CCloth::applyRotation), void (CCloth::*)(common::CVector3f *)>);
 }
 
 } // namespace

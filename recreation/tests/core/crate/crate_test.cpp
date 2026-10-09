@@ -32,10 +32,12 @@ TEST(CCrate, PublicInterface) {
                                  CBoundingBox3D *(CCrate::*)(CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CCrate::getCollisionType),
                                  ECollisionType (CCrate::*)(SCollisionInfo *)>);
-    static_assert(std::is_same_v<decltype(&CCrate::getTargetPoints), int (CCrate::*)(CVector3f *)>);
+    static_assert(
+        std::is_same_v<decltype(&CCrate::getTargetPoints), int (CCrate::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CCrate::canPickup), int (CCrate::*)(CDemonActor *)>);
     static_assert(std::is_same_v<decltype(&CCrate::pickup), void (CCrate::*)(CDemonActor *)>);
-    static_assert(std::is_same_v<decltype(&CCrate::onDropped), void (CCrate::*)(CVector3f *)>);
+    static_assert(
+        std::is_same_v<decltype(&CCrate::onDropped), void (CCrate::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CCrate::getCarrier), CDemonActor *(CCrate::*)()>);
     static_assert(std::is_same_v<decltype(&CCrate::getActorType), CDemonActorType *(CCrate::*)()>);
     static_assert(std::is_same_v<decltype(&CCrate::archive), void (CCrate::*)()>);

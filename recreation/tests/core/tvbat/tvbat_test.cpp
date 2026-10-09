@@ -31,7 +31,8 @@ TEST(CTVBat, PublicInterface) {
                                  CBoundingBox3D *(CTVBat::*)(CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CTVBat::getCollisionType),
                                  ECollisionType (CTVBat::*)(SCollisionInfo *)>);
-    static_assert(std::is_same_v<decltype(&CTVBat::getTargetPoints), int (CTVBat::*)(CVector3f *)>);
+    static_assert(
+        std::is_same_v<decltype(&CTVBat::getTargetPoints), int (CTVBat::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CTVBat::getActorType), CDemonActorType *(CTVBat::*)()>);
     static_assert(std::is_same_v<decltype(&CTVBat::archive), void (CTVBat::*)()>);
     static_assert(

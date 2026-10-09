@@ -11,9 +11,10 @@ TEST(CoreActorFunctions, PublicInterface) {
     static_assert(std::is_same_v<decltype(&staticInit), void (*)()>);
     static_assert(std::is_same_v<decltype(&deleteActor), void (*)(CDemonActor *)>);
     static_assert(std::is_same_v<decltype(&adjustIndentationLevel), int (*)(int)>);
-    static_assert(std::is_same_v<decltype(&archiveVector), void (*)(CVector3f *, char *)>);
+    static_assert(std::is_same_v<decltype(&archiveVector), void (*)(common::CVector3f *, char *)>);
     static_assert(std::is_same_v<decltype(&archiveOrientation), void (*)(COrientation *, char *)>);
-    static_assert(std::is_same_v<decltype(&archiveQuaternion), void (*)(CQuaternion4f *, char *)>);
+    static_assert(
+        std::is_same_v<decltype(&archiveQuaternion), void (*)(common::CQuaternion4f *, char *)>);
     static_assert(std::is_same_v<decltype(&archiveString), void (*)(char *, char *)>);
     static_assert(std::is_same_v<decltype(&archiveLocalizedString), void (*)(char *, char *)>);
     static_assert(std::is_same_v<decltype(&archiveFloat), void (*)(float *, char *)>);
@@ -51,7 +52,8 @@ TEST(CoreActorFunctions, PublicInterface) {
         std::is_same_v<decltype(&crc32ProcessByte), void (*)(std::uint32_t *, std::uint8_t)>);
     static_assert(std::is_same_v<decltype(&crc32ProcessInt), void (*)(std::uint32_t *, int)>);
     static_assert(std::is_same_v<decltype(&crc32ProcessString), void (*)(std::uint32_t *, char *)>);
-    static_assert(std::is_same_v<decltype(&copyVector), void (*)(CVector3f *, CVector3f *)>);
+    static_assert(
+        std::is_same_v<decltype(&copyVector), void (*)(common::CVector3f *, common::CVector3f *)>);
 }
 
 } // namespace

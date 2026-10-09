@@ -29,7 +29,7 @@ TEST(CZombie, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CZombie::renderOpaque), int (CZombie::*)()>);
     static_assert(std::is_same_v<decltype(&CZombie::renderTransparent), int (CZombie::*)()>);
     static_assert(
-        std::is_same_v<decltype(&CZombie::getTargetPoints), int (CZombie::*)(CVector3f *)>);
+        std::is_same_v<decltype(&CZombie::getTargetPoints), int (CZombie::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CZombie::shouldIgnoreForTargeting), int (CZombie::*)()>);
     static_assert(
         std::is_same_v<decltype(&CZombie::getActorType), CDemonActorType *(CZombie::*)()>);
@@ -42,9 +42,9 @@ TEST(CZombie, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CZombie::processDamage), void (CZombie::*)(SDamageInfo *)>);
     static_assert(
-        std::is_same_v<decltype(&CZombie::canBeAttracted), int (CZombie::*)(CVector3f *)>);
+        std::is_same_v<decltype(&CZombie::canBeAttracted), int (CZombie::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CZombie::getCarryObjToBodyXForm),
-                                 CMatrix3x4f *(CZombie::*)(int, CMatrix3x4f *)>);
+                                 common::CMatrix3x4f *(CZombie::*)(int, common::CMatrix3x4f *)>);
 }
 
 } // namespace

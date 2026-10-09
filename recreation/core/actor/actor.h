@@ -1,5 +1,6 @@
 #pragma once
 
+#include "common/fwd.h"
 #include "core/actor/demonactor.h"
 #include "core/fwd.h"
 
@@ -10,9 +11,9 @@ namespace nocturne::core {
 void staticInit();
 void deleteActor(CDemonActor *actor_ptr);
 int adjustIndentationLevel(int indent_delta);
-void archiveVector(CVector3f *vector_ptr, char *property_name);
+void archiveVector(common::CVector3f *vector_ptr, char *property_name);
 void archiveOrientation(COrientation *orient_ptr, char *property_name);
-void archiveQuaternion(CQuaternion4f *quat_ptr, char *property_type);
+void archiveQuaternion(common::CQuaternion4f *quat_ptr, char *property_type);
 void archiveString(char *string_buffer, char *property_type);
 void archiveLocalizedString(char *string_buffer, char *localization_key);
 void archiveFloat(float *float_ptr, char *property_name);
@@ -43,6 +44,6 @@ float normalizeAngleToPi(float angle_radians);
 void crc32ProcessByte(std::uint32_t *crc_state, std::uint8_t input_byte);
 void crc32ProcessInt(std::uint32_t *crc_state, int value);
 void crc32ProcessString(std::uint32_t *crc_state, char *string);
-void copyVector(CVector3f *dst_ptr, CVector3f *src_ptr);
+void copyVector(common::CVector3f *dst_ptr, common::CVector3f *src_ptr);
 
 } // namespace nocturne::core

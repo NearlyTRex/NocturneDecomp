@@ -35,10 +35,10 @@ TEST(CLever, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CLever::archive), void (CLever::*)()>);
     static_assert(std::is_same_v<decltype(&CLever::setState), void (CLever::*)(float)>);
     static_assert(std::is_same_v<decltype(&CLever::activate), void (CLever::*)()>);
+    static_assert(std::is_same_v<decltype(&CLever::getHandlePosition),
+                                 common::CVector3f *(CLever::*)(common::CVector3f *)>);
     static_assert(
-        std::is_same_v<decltype(&CLever::getHandlePosition), CVector3f *(CLever::*)(CVector3f *)>);
-    static_assert(
-        std::is_same_v<decltype(&CLever::isAccessibleFrom), int (CLever::*)(CVector3f *)>);
+        std::is_same_v<decltype(&CLever::isAccessibleFrom), int (CLever::*)(common::CVector3f *)>);
 }
 
 } // namespace

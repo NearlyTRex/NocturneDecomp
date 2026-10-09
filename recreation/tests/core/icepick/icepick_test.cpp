@@ -33,7 +33,7 @@ TEST(CIcePick, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CIcePick::processDamage), void (CIcePick::*)(SDamageInfo *)>);
     static_assert(std::is_same_v<decltype(&CIcePick::getCarryObjToBodyXForm),
-                                 CMatrix3x4f *(CIcePick::*)(int, CMatrix3x4f *)>);
+                                 common::CMatrix3x4f *(CIcePick::*)(int, common::CMatrix3x4f *)>);
     static_assert(std::is_same_v<decltype(&CIcePick::drawWeapon), void (CIcePick::*)(int)>);
     static_assert(std::is_same_v<decltype(&CIcePick::isWeaponDrawn), int (CIcePick::*)()>);
 }

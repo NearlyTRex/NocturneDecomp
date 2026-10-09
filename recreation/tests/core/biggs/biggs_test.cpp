@@ -29,7 +29,8 @@ TEST(CBiggs, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CBiggs::renderOpaque), int (CBiggs::*)()>);
     static_assert(std::is_same_v<decltype(&CBiggs::getCollisionType),
                                  ECollisionType (CBiggs::*)(SCollisionInfo *)>);
-    static_assert(std::is_same_v<decltype(&CBiggs::getTargetPoints), int (CBiggs::*)(CVector3f *)>);
+    static_assert(
+        std::is_same_v<decltype(&CBiggs::getTargetPoints), int (CBiggs::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CBiggs::getActorType), CDemonActorType *(CBiggs::*)()>);
     static_assert(std::is_same_v<decltype(&CBiggs::archive), void (CBiggs::*)()>);
     static_assert(

@@ -11,13 +11,10 @@ TEST(CBulletHole, IsConcrete) {
     static_assert(!std::is_abstract_v<CBulletHole>);
 }
 
-TEST(CBulletHole, Constructors) {
-    static_assert(std::is_constructible_v<CBulletHole>);
-}
-
 TEST(CBulletHole, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CBulletHole::init),
-                                 void (CBulletHole::*)(CVector3f *, CVector3f *, CDemonActor *)>);
+                                 void (CBulletHole::*)(common::CVector3f *, common::CVector3f *,
+                                                       CDemonActor *)>);
     static_assert(std::is_same_v<decltype(&CBulletHole::process), void (CBulletHole::*)()>);
     static_assert(
         std::is_same_v<decltype(&CBulletHole::setupRenderState), void (CBulletHole::*)()>);

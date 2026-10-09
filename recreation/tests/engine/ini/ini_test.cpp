@@ -11,10 +11,6 @@ TEST(CIni, IsConcrete) {
     static_assert(!std::is_abstract_v<CIni>);
 }
 
-TEST(CIni, Constructors) {
-    static_assert(std::is_constructible_v<CIni>);
-}
-
 TEST(CIni, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CIni::getProfileString),
                                  int (CIni::*)(char *, char *, char *, char *, int, char *)>);

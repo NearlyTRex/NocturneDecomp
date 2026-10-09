@@ -29,7 +29,7 @@ TEST(CBatCreature, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CBatCreature::getCollisionType),
                                  ECollisionType (CBatCreature::*)(SCollisionInfo *)>);
     static_assert(std::is_same_v<decltype(&CBatCreature::getTargetPoints),
-                                 int (CBatCreature::*)(CVector3f *)>);
+                                 int (CBatCreature::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CBatCreature::getActorType),
                                  CDemonActorType *(CBatCreature::*)()>);
     static_assert(std::is_same_v<decltype(&CBatCreature::archive), void (CBatCreature::*)()>);

@@ -9,9 +9,6 @@ namespace nocturne::core {
 
 class CDemonMission {
 public:
-    CDemonMission();
-    ~CDemonMission();
-
     void reset();
     void clearMission();
     void load(char *mission_filename, int load_flags);

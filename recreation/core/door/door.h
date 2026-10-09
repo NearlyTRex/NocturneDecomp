@@ -1,5 +1,6 @@
 #pragma once
 
+#include "common/fwd.h"
 #include "core/actor/demonactor.h"
 #include "core/fwd.h"
 
@@ -27,7 +28,8 @@ public:
 
     void onOpened();
     void setSwingRange(float swing_range);
-    CVector3f *getOpenStandPos(CVector3f *out_pos, CVector3f *direction, CVector3f *actor_pos);
+    common::CVector3f *getOpenStandPos(common::CVector3f *out_pos, common::CVector3f *direction,
+                                       common::CVector3f *actor_pos);
     int getMoveType(CDemonActor *opener);
     std::uint32_t onLocked();
 };

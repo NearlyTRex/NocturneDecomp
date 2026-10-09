@@ -33,7 +33,8 @@ TEST(CTrap, PublicInterface) {
                                  ECollisionType (CTrap::*)(SCollisionInfo *)>);
     static_assert(std::is_same_v<decltype(&CTrap::canPickup), int (CTrap::*)(CDemonActor *)>);
     static_assert(std::is_same_v<decltype(&CTrap::pickup), void (CTrap::*)(CDemonActor *)>);
-    static_assert(std::is_same_v<decltype(&CTrap::onDropped), void (CTrap::*)(CVector3f *)>);
+    static_assert(
+        std::is_same_v<decltype(&CTrap::onDropped), void (CTrap::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CTrap::getCarrier), CDemonActor *(CTrap::*)()>);
     static_assert(std::is_same_v<decltype(&CTrap::getActorType), CDemonActorType *(CTrap::*)()>);
     static_assert(std::is_same_v<decltype(&CTrap::archive), void (CTrap::*)()>);

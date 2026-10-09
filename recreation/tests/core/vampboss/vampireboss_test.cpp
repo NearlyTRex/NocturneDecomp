@@ -30,7 +30,7 @@ TEST(CVampireBoss, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CVampireBoss::getCollisionType),
                                  ECollisionType (CVampireBoss::*)(SCollisionInfo *)>);
     static_assert(std::is_same_v<decltype(&CVampireBoss::getTargetPoints),
-                                 int (CVampireBoss::*)(CVector3f *)>);
+                                 int (CVampireBoss::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CVampireBoss::getActorType),
                                  CDemonActorType *(CVampireBoss::*)()>);
     static_assert(std::is_same_v<decltype(&CVampireBoss::archive), void (CVampireBoss::*)()>);
@@ -38,8 +38,9 @@ TEST(CVampireBoss, PublicInterface) {
                                  void (CVampireBoss::*)(SDamageInfo *)>);
     static_assert(
         std::is_same_v<decltype(&CVampireBoss::getDeathState), EDeathState (CVampireBoss::*)()>);
-    static_assert(std::is_same_v<decltype(&CVampireBoss::getCarryObjToBodyXForm),
-                                 CMatrix3x4f *(CVampireBoss::*)(int, CMatrix3x4f *)>);
+    static_assert(
+        std::is_same_v<decltype(&CVampireBoss::getCarryObjToBodyXForm),
+                       common::CMatrix3x4f *(CVampireBoss::*)(int, common::CMatrix3x4f *)>);
 }
 
 } // namespace
