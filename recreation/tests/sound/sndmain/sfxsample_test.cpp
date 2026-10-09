@@ -17,14 +17,7 @@ TEST(CSfxSample, Constructors) {
 
 TEST(CSfxSample, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CSfxSample::parseConfigFile), void (CSfxSample::*)()>);
-    static_assert(std::is_same_v<decltype(&CSfxSample::allocateHwSample), int (CSfxSample::*)()>);
     static_assert(std::is_same_v<decltype(&CSfxSample::freeMemory), void (CSfxSample::*)()>);
-    static_assert(std::is_same_v<decltype(&CSfxSample::lock), void *(CSfxSample::*)(int, int)>);
-    static_assert(
-        std::is_same_v<decltype(&CSfxSample::releaseSoundBuffer), void (CSfxSample::*)()>);
-    static_assert(std::is_same_v<decltype(&CSfxSample::seek), void (CSfxSample::*)(int, int)>);
-    static_assert(
-        std::is_same_v<decltype(&CSfxSample::pollStream), int (CSfxSample::*)(float, float)>);
     static_assert(std::is_same_v<decltype(&CSfxSample::init), CSfxSample *(CSfxSample::*)()>);
     static_assert(std::is_same_v<decltype(&CSfxSample::getBytesPerFrame), int (CSfxSample::*)()>);
     static_assert(std::is_same_v<decltype(&CSfxSample::normalizePlaybackPos),

@@ -61,16 +61,19 @@ names. Shared math lives in `common/`. Each module has a `fwd.h`, and module dep
 way: `core` → `engine` → `platform` → `common`.
 
 Game code never calls the OS. It talks to the interfaces in `platform/` (`IClock`, `IWindow`,
-`IDisplay`, `IRenderer`, `INetwork` and the rest), which the SDL adapters implement. Where the
-original already had an abstract base over OS code, that base is the seam instead:
-`sound::CSoundDevice` and `engine::CFont`, created through `ISoundDeviceProvider` and
-`IFontFactory`.
+`IDisplay`, `IRenderer`, `IAudioDevice`, `INetwork` and the rest), which the SDL adapters
+implement. Where the original already had an abstract base over OS code, that base is the seam
+instead: `engine::CFont`, created through `IFontFactory` when the message list selects an OS font.
+Sound keeps the game's API, sample loading and 3D math; miniaudio mixes, resamples and decodes,
+and `IAudioDevice` pulls the mix as it plays.
 
 | Path | Contents |
 |---|---|
 | `<module>/<tu>/` | Class headers and the TU's free-function header |
 | `<module>/fwd.h` | Forward declarations and opaque enums for the module |
 | `platform/` | Hand-written OS interfaces; the scaffold never writes here |
+| `common/serial/` | `CBinaryReader` / `CBinaryWriter`: every file and wire format is read and written through these, little-endian with explicit widths |
+| `tests/mocks/` | gMock implementations of the platform interfaces and seam factories, shared by all tests |
 | `tests/` | GoogleTest tests, mirroring the source paths |
 | `cmake/coverage.cmake` | The coverage gate |
 | `coverage_exclusions.txt` | The only paths exempt from coverage, one reason per line |

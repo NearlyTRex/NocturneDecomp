@@ -17,10 +17,7 @@ TEST(CSfxSlot, Constructors) {
 
 TEST(CSfxSlot, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CSfxSlot::compute), int (CSfxSlot::*)(float)>);
-    static_assert(std::is_same_v<decltype(&CSfxSlot::mix), void (CSfxSlot::*)(SMixBuffer)>);
     static_assert(std::is_same_v<decltype(&CSfxSlot::kill), void (CSfxSlot::*)()>);
-    static_assert(std::is_same_v<decltype(&CSfxSlot::pollHwHandle), void (CSfxSlot::*)()>);
-    static_assert(std::is_same_v<decltype(&CSfxSlot::pollHwPlaybackPos), int (CSfxSlot::*)()>);
     static_assert(std::is_same_v<decltype(&CSfxSlot::seek), void (CSfxSlot::*)()>);
 }
 

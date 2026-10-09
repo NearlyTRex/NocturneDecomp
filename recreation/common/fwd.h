@@ -2,6 +2,8 @@
 
 namespace nocturne::common {
 
+class CBinaryReader;
+class CBinaryWriter;
 class CMatrix3x3f;
 class CMatrix3x4f;
 class CQuaternion4f;

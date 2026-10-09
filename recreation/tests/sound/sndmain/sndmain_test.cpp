@@ -78,18 +78,11 @@ TEST(SoundSndmainFunctions, PublicInterface) {
     static_assert(std::is_same_v<decltype(&getSoundDeviceInfo), void (*)(int, SSoundDeviceInfo *)>);
     static_assert(std::is_same_v<decltype(&selectSoundDevice), void (*)(int)>);
     static_assert(std::is_same_v<decltype(&isSoundBusy), int (*)()>);
-    static_assert(std::is_same_v<decltype(&enableHwSoundMixing), void (*)(int)>);
-    static_assert(std::is_same_v<decltype(&isHardwareMixingEnabled), int (*)()>);
-    static_assert(std::is_same_v<decltype(&hasHardware3DSound), std::uint32_t (*)()>);
     static_assert(std::is_same_v<decltype(&initializeSoundDevice), int (*)()>);
     static_assert(std::is_same_v<decltype(&closeSoundDevice), int (*)()>);
     static_assert(std::is_same_v<decltype(&getCurrentSoundDevice), int (*)()>);
     static_assert(
         std::is_same_v<decltype(&set3DListenerOrientRight), void (*)(float, float, float)>);
-    static_assert(std::is_same_v<decltype(&audioThreadProc), std::uint32_t (*)(void *)>);
-    static_assert(std::is_same_v<decltype(&lockSound), void (*)()>);
-    static_assert(std::is_same_v<decltype(&unlockSound), void (*)()>);
-    static_assert(std::is_same_v<decltype(&processAudio), void (*)()>);
     static_assert(std::is_same_v<decltype(&readIni), void (*)(engine::CIniFile *)>);
     static_assert(std::is_same_v<decltype(&writeIni), void (*)(engine::CIniFile *)>);
     static_assert(std::is_same_v<decltype(&analyzeFrequencyBand), float (*)(int, float, float)>);

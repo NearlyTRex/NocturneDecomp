@@ -9,10 +9,7 @@ public:
     CSfxSlot();
 
     int compute(float delta_time);
-    void mix(SMixBuffer mix_buffer);
     void kill();
-    void pollHwHandle();
-    int pollHwPlaybackPos();
     void seek();
 };
 

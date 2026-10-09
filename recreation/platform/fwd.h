@@ -5,6 +5,8 @@
 namespace nocturne::platform {
 
 class CExternalRendererBridge;
+class IAudioDevice;
+class IAudioSource;
 class IClipboard;
 class IClock;
 class IDisplay;
@@ -15,6 +17,7 @@ class INetwork;
 class IRenderer;
 class IUdpSocket;
 class IWindow;
+struct SAudioFormat;
 struct SFileInfo;
 struct SInputFace;
 struct SJoystickCaps;

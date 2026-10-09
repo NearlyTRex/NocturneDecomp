@@ -32,6 +32,9 @@ foreach(_module IN LISTS NOCTURNE_RECREATION_MODULES)
     file(GLOB_RECURSE _module_sources CONFIGURE_DEPENDS "${_module}/*.cpp")
     file(GLOB_RECURSE _module_headers RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}" CONFIGURE_DEPENDS
          "${_module}/*.h")
+    # The SDL adapters build only with the game; see NOCTURNE_RECREATION_GAME.
+    list(FILTER _module_sources EXCLUDE REGEX "/platform/sdl/")
+    list(FILTER _module_headers EXCLUDE REGEX "^platform/sdl/")
     list(APPEND _sources ${_module_sources})
     list(APPEND _headers ${_module_headers})
 endforeach()
@@ -66,6 +69,21 @@ FetchContent_MakeAvailable(googletest)
 
 enable_testing()
 include(GoogleTest)
+
+# gMock stand-ins for the platform interfaces and seams, shared by every test.
+file(GLOB_RECURSE _mock_headers RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}" CONFIGURE_DEPENDS
+     "tests/mocks/*.h")
+set(_mock_checks "")
+foreach(_header IN LISTS _mock_headers)
+    set(_check "${CMAKE_CURRENT_BINARY_DIR}/header_checks/${_header}.cpp")
+    file(CONFIGURE OUTPUT "${_check}" CONTENT "#include \"${_header}\"\n")
+    list(APPEND _mock_checks "${_check}")
+endforeach()
+if(_mock_checks)
+    add_library(nocturne_recreation_mock_checks OBJECT ${_mock_checks})
+    target_link_libraries(nocturne_recreation_mock_checks
+        PRIVATE nocturne_recreation_options GTest::gmock)
+endif()
 
 set(NOCTURNE_RECREATION_TEST_BINARIES "")
 foreach(_module IN LISTS NOCTURNE_RECREATION_MODULES)

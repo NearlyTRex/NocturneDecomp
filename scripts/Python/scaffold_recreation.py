@@ -60,14 +60,58 @@ PLATFORM_TYPES = {
 
 # Abstract bases whose only implementations are OS code, with their home TU.
 # The base stays as the seam and an adapter derives from it.
-SEAM_CLASSES = {"CSoundDevice": "sound/sndmain.cpp", "CFont": "engine/palette.cpp"}
+SEAM_CLASSES = {"CFont": "engine/palette.cpp"}
 
 # In-scope originals that are not recreated as game code, keyed by TU, class,
-# "tu:function" or "tu:Class::method", with where each job goes.
+# "tu:function" or "tu:Class::method", with where each job goes: an OS adapter,
+# a third-party library for a standard format, or the standard library.
 PLATFORM_BOUNDARY = {
-    "sound/snddx.cpp": "platform/sdl audio adapter, implementing sound::CSoundDevice",
-    "sound/sndwav.cpp": "platform/sdl audio adapter, implementing sound::CSoundDevice",
+    "sound/snddx.cpp": "platform::IAudioDevice; miniaudio mixes in software",
+    "sound/sndwav.cpp": "platform::IAudioDevice; miniaudio mixes in software",
+    "sound/mp3.cpp": "miniaudio's decoder, which reads MP3",
     "engine/winfont.cpp": "platform/sdl font adapter, implementing engine::CFont",
+    # sndmain keeps its game API, sample loading and 3D math; miniaudio does the mixing,
+    # resampling and streaming, pulled by platform::IAudioDevice, so there is no
+    # pre-mixed queue to delay a new sound.
+    "sound/sndmain.cpp:allocateHwSample": "dropped: no hardware mixing",
+    "sound/sndmain.cpp:CSfxSample::allocateHwSample": "dropped: no hardware mixing",
+    "sound/sndmain.cpp:CSfxSample::releaseBufferId": "dropped: no hardware mixing",
+    "sound/sndmain.cpp:CSfxSlot::pollHwHandle": "dropped: no hardware mixing",
+    "sound/sndmain.cpp:CSfxSlot::pollHwPlaybackPos": "dropped: no hardware mixing",
+    "sound/sndmain.cpp:enableHwSoundMixing": "dropped: no hardware mixing",
+    "sound/sndmain.cpp:isHardwareMixingEnabled": "dropped: no hardware mixing",
+    "sound/sndmain.cpp:hasHardware3DSound": "dropped: no hardware mixing",
+    "sound/sndmain.cpp:allocMixBuffers": "miniaudio mixing",
+    "sound/sndmain.cpp:freeMixBuffers": "miniaudio mixing",
+    "sound/sndmain.cpp:nextMixingBuffer": "miniaudio mixing",
+    "sound/sndmain.cpp:getMixBufferCount": "miniaudio mixing",
+    "sound/sndmain.cpp:convertMixBufToOutput": "miniaudio mixing",
+    "sound/sndmain.cpp:generateSilence": "miniaudio mixing",
+    "sound/sndmain.cpp:convertDoubleToFixed": "miniaudio mixing",
+    "sound/sndmain.cpp:mixResampleMonoToStereo": "miniaudio resampling",
+    "sound/sndmain.cpp:mixResampleStereoToStereo": "miniaudio resampling",
+    "sound/sndmain.cpp:pollAndMixSfx": "miniaudio mixing",
+    "sound/sndmain.cpp:pollAllSfxSlots": "miniaudio mixing",
+    "sound/sndmain.cpp:CSfxSlot::mix": "miniaudio mixing; compute() sets each voice's gain, pan and pitch",
+    "sound/sndmain.cpp:CSfxSlot::computeChannelDelays": "dropped: panning comes from the per-ear gains",
+    "sound/sndmain.cpp:CSfxSlot::autoCalcDelayRemaining": "dropped: only debug output read it",
+    "sound/sndmain.cpp:isStreamableFile": "miniaudio streaming",
+    "sound/sndmain.cpp:loadStreamingSoundFile": "miniaudio streaming",
+    "sound/sndmain.cpp:pollAllStreams": "miniaudio streaming",
+    "sound/sndmain.cpp:CSfxSample::getStreamingBufferSizeBytes": "miniaudio streaming",
+    "sound/sndmain.cpp:CSfxSample::lock": "miniaudio streaming",
+    "sound/sndmain.cpp:CSfxSample::releaseSoundBuffer": "miniaudio streaming",
+    "sound/sndmain.cpp:CSfxSample::seek": "miniaudio streaming",
+    "sound/sndmain.cpp:CSfxSample::pollStream": "miniaudio streaming",
+    "sound/sndmain.cpp:audioThreadProc": "platform::IAudioDevice pulls on its own thread",
+    "sound/sndmain.cpp:startSoundThread": "platform::IAudioDevice pulls on its own thread",
+    "sound/sndmain.cpp:killSoundThread": "platform::IAudioDevice pulls on its own thread",
+    "sound/sndmain.cpp:processAudio": "platform::IAudioDevice pulls on its own thread",
+    "sound/sndmain.cpp:lockSound": "dropped: slots are touched only on the game thread",
+    "sound/sndmain.cpp:unlockSound": "dropped: slots are touched only on the game thread",
+    "sound/sndmain.cpp:getMaxSwLatency": "dropped: mixing happens as the device pulls",
+    "sound/sndmain.cpp:setMaxSwSoundLatency": "dropped: mixing happens as the device pulls",
+    "shape/memdbg.cpp": "std::make_unique and containers; the sanitizers cover what it tracked",
     "CExternalRenderer": "platform::IRenderer adapter; there is no renderer DLL to validate",
     "engine/special.cpp:bindRequiredDllFunction": "platform::IRenderer adapter; no renderer DLL",
     "engine/special.cpp:bindDllFunction": "platform::IRenderer adapter; no renderer DLL",
@@ -109,10 +153,12 @@ PLATFORM_BOUNDARY = {
 
 # Hand-written files inside generated modules: interfaces at the seams that
 # platform/ cannot hold because they name a module above it.
-HAND_WRITTEN = {
-    "sound/sndmain/sounddeviceprovider.h", "tests/sound/sndmain/sounddeviceprovider_test.cpp",
-    "engine/palette/fontfactory.h", "tests/engine/palette/fontfactory_test.cpp",
-}
+HAND_WRITTEN = {"engine/palette/fontfactory.h", "tests/engine/palette/fontfactory_test.cpp"}
+
+# Classes written by hand in a generated module, declared in its fwd.h with the rest,
+# and the directories holding them, which --prune leaves alone.
+HAND_WRITTEN_CLASSES = {"common": ["CBinaryReader", "CBinaryWriter"]}
+HAND_WRITTEN_DIRS = {"common/serial", "tests/common/serial"}
 
 # Parameters naming an OS handle the adapter owns; the kept function loses them.
 DROPPED_PARAMS = {"engine/special.cpp:loadExternalRenderer": {"window_handle"}}
@@ -233,7 +279,7 @@ class Model:
             destination = boundary_destination(f)
             if destination:
                 self.replaced[addr] = f
-                self.report["replaced at the platform boundary (not an error)"].append(
+                self.report["not recreated as game code (not an error)"].append(
                     "%s -> %s" % (f["name"], destination))
                 continue
             self.in_scope[addr] = f
@@ -898,7 +944,11 @@ class Scaffold:
                 self.check_platform_fwd(names)
                 continue
             lines, needs_cstdint = [], False
-            for name in sorted(names):
+            hand_written = HAND_WRITTEN_CLASSES.get(module, [])
+            for name in sorted(set(names) | set(hand_written)):
+                if name in hand_written:
+                    lines.append("class %s;" % name)
+                    continue
                 t = self.model.types[name]
                 if t["kind"] == "enum":
                     width = {1: "std::int8_t", 2: "std::int16_t"}.get(t.get("size"), "std::int32_t")
@@ -991,7 +1041,8 @@ def stale_files(root, planned):
                 for name in filenames:
                     relpath = os.path.relpath(os.path.join(dirpath, name), root)
                     generated = name.endswith(".h") or name.endswith("_test.cpp")
-                    if generated and relpath not in planned and relpath not in HAND_WRITTEN:
+                    hand_written = relpath in HAND_WRITTEN or os.path.dirname(relpath) in HAND_WRITTEN_DIRS
+                    if generated and relpath not in planned and not hand_written:
                         stale.append(relpath)
     return sorted(stale)
 
