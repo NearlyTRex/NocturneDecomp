@@ -1,7 +1,7 @@
-Scanning 484 ctor/dtor asm files in /home/aryie/Repositories/NocturneDecomp/annotations/nocturne.exe/pseudocode/src...
+Scanning 486 ctor/dtor asm files in /home/aryie/Repositories/NocturneDecomp/annotations/nocturne.exe/pseudocode/src...
 
 ======================================================================
-UNFINISHED CTORS/DTORS (159 files still need ADJ)
+UNFINISHED CTORS/DTORS (160 files still need ADJ)
 ======================================================================
 
   [core/ammo.cpp]
@@ -424,6 +424,9 @@ UNFINISHED CTORS/DTORS (159 files still need ADJ)
   [core/netgame.cpp]
     CNetGame_ctor_FUN_004e9860:
       _arrinit @ this+0x20 (32) -> CNetGame_ptr_32
+      CSocket_ctor @ this+0x170 (368) -> CNetGame_ptr_368
+    CNetGame_dtor_FUN_004e98f0:
+      CSocket_dtor @ this+0x170 (368) -> CNetGame_ptr_368
 
   [core/npc.cpp]
     CNPC_ctor_FUN_004ee950:
@@ -770,6 +773,7 @@ NEEDED ADJ POINTER TYPES
   CMouse_ptr_300  (0x12c)
   CNPC_ptr_48268  (0xbc8c)
   CNetGame_ptr_32  (0x20)
+  CNetGame_ptr_368  (0x170)
   CPassenger_ptr_48268  (0xbc8c)
   CPassenger_ptr_128636  (0x1f67c)
   CPendulum_ptr_336  (0x150)
@@ -824,7 +828,7 @@ NEEDED ADJ POINTER TYPES
   SGem_ptr_60  (0x3c)
   SVert_ptr_16  (0x10)
 
-Total: 161 types across 113 classes
+Total: 162 types across 113 classes
 
 ======================================================================
 MANUAL REVIEW NEEDED (78 calls with unknown offset)

@@ -2,7 +2,7 @@
 // DO NOT EDIT BY HAND. Re-run the generator after updating types.
 //
 // Category: game
-// Structs : 557
+// Structs : 558
 
 #include "nocturne.h"
 
@@ -6371,6 +6371,12 @@ static_assert(__builtin_offsetof(CSmokeParticle, wind_influence) == 28,
 static_assert(__builtin_offsetof(CSmokeParticle, alpha_value) == 40,
               "offsetof(CSmokeParticle, alpha_value) != 40");
 
+// ---- CSocket (4 bytes) ----
+static_assert(sizeof(CSocket) == 4,
+              "sizeof(CSocket) != 4");
+static_assert(__builtin_offsetof(CSocket, handle) == 0,
+              "offsetof(CSocket, handle) != 0");
+
 // ---- CSound (4 bytes) ----
 static_assert(sizeof(CSound) == 4,
               "sizeof(CSound) != 4");
@@ -9582,8 +9588,8 @@ static_assert(__builtin_offsetof(SNetworkAddr, ip_address) == 0,
               "offsetof(SNetworkAddr, ip_address) != 0");
 static_assert(__builtin_offsetof(SNetworkAddr, port) == 4,
               "offsetof(SNetworkAddr, port) != 4");
-static_assert(__builtin_offsetof(SNetworkAddr, other) == 6,
-              "offsetof(SNetworkAddr, other) != 6");
+static_assert(__builtin_offsetof(SNetworkAddr, padding) == 6,
+              "offsetof(SNetworkAddr, padding) != 6");
 
 // ---- SPBMFileHeader (28 bytes) ----
 static_assert(sizeof(SPBMFileHeader) == 28,

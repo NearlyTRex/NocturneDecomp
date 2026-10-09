@@ -477,7 +477,7 @@ annotations/nocedit.exe/pseudocode/src/core/trash.cpp/CTrash_getActorType_FUN_00
 annotations/nocedit.exe/pseudocode/src/core/trash.cpp/CTrash_getCollisionType_FUN_005df6d0.cpp
 annotations/nocedit.exe/pseudocode/src/core/trigger.cpp/CTrigger_getActorType_FUN_005df830.cpp
 annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/getIPAddress_FUN_005e1930.cpp
-annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/isSocketValid_FUN_005e1b70.cpp
+annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/CSocket_isSocketValid_FUN_005e1b70.cpp
 annotations/nocedit.exe/pseudocode/src/core/turret.cpp/CTurret_getActorType_FUN_005e20e0.cpp
 annotations/nocedit.exe/pseudocode/src/core/tvbat.cpp/CTVBat_getActorType_FUN_005e3eb0.cpp
 annotations/nocedit.exe/pseudocode/src/core/tvbat.cpp/CTVBat_getTargetPoints_FUN_005e50f0.cpp
@@ -531,7 +531,7 @@ annotations/nocedit.exe/pseudocode/src/engine/2d.c/enableTextWrap_FUN_00402810.c
 annotations/nocedit.exe/pseudocode/src/engine/2d.c/disableTextWrap_FUN_00402820.c
 annotations/nocedit.exe/pseudocode/src/engine/2d.c/setTextColor_FUN_00402840.c
 annotations/nocedit.exe/pseudocode/src/engine/2d.c/resetGraphicsSystem_FUN_00402a70.c
-annotations/nocedit.exe/pseudocode/src/wincore/wddvmem.cpp/freeTextureCache_FUN_004037a0.cpp
+annotations/nocedit.exe/pseudocode/src/engine/3d.c/freeTextureCache_FUN_004037a0.c
 annotations/nocedit.exe/pseudocode/src/engine/3d.c/setRenderAlphaFromBlock_FUN_00406d60.c
 annotations/nocedit.exe/pseudocode/src/engine/3d.c/setBlendMode_FUN_00406dd0.c
 annotations/nocedit.exe/pseudocode/src/engine/3d.c/setProcessorType_FUN_00407870.c
@@ -815,8 +815,8 @@ annotations/nocedit.exe/pseudocode/src/core/trap.cpp/CTrap_pickup_FUN_005de740.c
 annotations/nocedit.exe/pseudocode/src/core/trap.cpp/CTrap_onDropped_FUN_005de750.cpp
 annotations/nocedit.exe/pseudocode/src/core/trap.cpp/CTrap_addFilesToExtract_FUN_005dea90.cpp
 annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/copyIPAddress_FUN_005e16f0.cpp
-annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/invalidateSocket_FUN_005e1ae0.cpp
-annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/bindSocketWrapper_FUN_005e1af0.cpp
+annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/CSocket_ctor_FUN_005e1ae0.cpp
+annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/CSocket_dtor_FUN_005e1af0.cpp
 annotations/nocedit.exe/pseudocode/src/core/tvbat.cpp/CTVBat_orderAttack_FUN_005e4d70.cpp
 annotations/nocedit.exe/pseudocode/src/core/tvbat.cpp/CTVBat_addFilesToExtract_FUN_005e5440.cpp
 annotations/nocedit.exe/pseudocode/src/core/vehicle.cpp/CVehicle_processInEditor_FUN_005e8cf0.cpp
@@ -835,6 +835,7 @@ annotations/nocedit.exe/pseudocode/src/wincore/winrun.cpp/clearMouseClicks_FUN_0
 annotations/nocedit.exe/pseudocode/src/engine/zraster.c/assignInt_FUN_005fcd10.c
 annotations/nocedit.exe/pseudocode/src/shape/memdbg.cpp/free_FUN_005fe659.cpp
 annotations/nocedit.exe/pseudocode/src/engine/2d.c/clipLineGlobal_FUN_00402c50.c
+annotations/nocedit.exe/pseudocode/src/engine/3d.c/initTextureCache_FUN_00403790.c
 annotations/nocedit.exe/pseudocode/src/engine/3d.c/resetRenderBuffer_FUN_00407060.c
 annotations/nocedit.exe/pseudocode/src/core/actor.cpp/CDemonActor_process_FUN_00408a80.cpp
 annotations/nocedit.exe/pseudocode/src/core/actor.cpp/CDemonActor_renderOpaque_FUN_00408aa0.cpp
@@ -1174,9 +1175,10 @@ annotations/nocedit.exe/pseudocode/src/engine/texture.cpp/getTextureCacheStats_F
 annotations/nocedit.exe/pseudocode/src/core/tommygun.cpp/CTommyGun_getDamage_FUN_005de330.cpp
 annotations/nocedit.exe/pseudocode/src/core/tommygun.cpp/CTommyGun_setWeaponState_FUN_005de5a0.cpp
 annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/staticInit_FUN_005e16b0.cpp
+annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/formatIPAddress_FUN_005e17c0.cpp
 annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/createNetworkAddr_FUN_005e1940.cpp
-annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/listenSocket_FUN_005e1d60.cpp
-annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/setSocketBroadcast_FUN_005e1e90.cpp
+annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/CSocket_listenSocket_FUN_005e1d60.cpp
+annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/CSocket_setSocketBroadcast_FUN_005e1e90.cpp
 annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/cleanupWinsock_FUN_005e1ee0.cpp
 annotations/nocedit.exe/pseudocode/src/core/terrain.cpp/CTerrain_free_FUN_005e1f30.cpp
 annotations/nocedit.exe/pseudocode/src/core/turret.cpp/CTurret_getDamage_FUN_005e36f0.cpp
@@ -1494,7 +1496,6 @@ annotations/nocedit.exe/pseudocode/src/core/trash.cpp/CTrash_archive_FUN_005dec8
 annotations/nocedit.exe/pseudocode/src/core/trash.cpp/addRandomJitter_FUN_005decc0.cpp
 annotations/nocedit.exe/pseudocode/src/core/trash.cpp/CTrash_getPropertyList_FUN_005df6e0.cpp
 annotations/nocedit.exe/pseudocode/src/core/trash.cpp/CTrash_addFilesToExtract_FUN_005df720.cpp
-annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/formatIPAddress_FUN_005e17c0.cpp
 annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/shouldNeverBeCalled1_FUN_005e1a80.cpp
 annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/shouldNeverBeCalled2_FUN_005e1ab0.cpp
 annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/startupWinsock_FUN_005e1ec0.cpp
@@ -1704,9 +1705,9 @@ annotations/nocedit.exe/pseudocode/src/core/trap.cpp/CTrap_archive_FUN_005de9c0.
 annotations/nocedit.exe/pseudocode/src/core/trigger.cpp/staticInit_FUN_005df7d0.cpp
 annotations/nocedit.exe/pseudocode/src/core/trigger.cpp/CTrigger_processActionButton_FUN_005e0a20.cpp
 annotations/nocedit.exe/pseudocode/src/core/trigger.cpp/CTrigger_onProjectileHit_FUN_005e0aa0.cpp
-annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/createSocket_FUN_005e1b10.cpp
-annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/createUDPSocket_FUN_005e1b40.cpp
-annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/setSocketBlocking_FUN_005e1e50.cpp
+annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/CSocket_createSocket_FUN_005e1b10.cpp
+annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/CSocket_createUDPSocket_FUN_005e1b40.cpp
+annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/CSocket_setSocketBlocking_FUN_005e1e50.cpp
 annotations/nocedit.exe/pseudocode/src/core/turret.cpp/CTurret_startInteraction_FUN_005e34b0.cpp
 annotations/nocedit.exe/pseudocode/src/core/turret.cpp/CTurret_stopInteraction_FUN_005e3540.cpp
 annotations/nocedit.exe/pseudocode/src/core/vampboss.cpp/staticInit_FUN_005e5520.cpp
@@ -2138,7 +2139,7 @@ annotations/nocedit.exe/pseudocode/src/core/teleport.cpp/CTeleportDest_getBoundi
 annotations/nocedit.exe/pseudocode/src/core/trap.cpp/factoryFuncTrap_FUN_005de650.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/trash.cpp/factoryFuncTrash_FUN_005deb30.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/trigger.cpp/factoryFuncTrigger_FUN_005df800.keep.cpp
-annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/bindSocket_FUN_005e1b80.cpp
+annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/CSocket_bindSocket_FUN_005e1b80.cpp
 annotations/nocedit.exe/pseudocode/src/core/terrain.cpp/CTerrain_init_FUN_005e1ef0.cpp
 annotations/nocedit.exe/pseudocode/src/core/turret.cpp/factoryFuncTurret_FUN_005e20b0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/tvbat.cpp/factoryFuncTVBat_FUN_005e3e80.keep.cpp
@@ -2335,7 +2336,7 @@ annotations/nocedit.exe/pseudocode/src/core/tentacle.cpp/factoryFuncTentacle_FUN
 annotations/nocedit.exe/pseudocode/src/core/tommygun.cpp/factoryFuncTommyGun_FUN_005dda50.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/trash.cpp/CTrash_ctor_FUN_005deb70.cpp
 annotations/nocedit.exe/pseudocode/src/core/trigger.cpp/CTrigger_onLaserHit_FUN_005e0a50.cpp
-annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/bindAndInvalidateSocket_FUN_005e1d20.cpp
+annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/CSocket_closeSocket_FUN_005e1d20.cpp
 annotations/nocedit.exe/pseudocode/src/core/vampboss.cpp/factoryFuncVampireBoss_FUN_005e5550.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/vampboss.cpp/clampAngle_FUN_005e58d0.cpp
 annotations/nocedit.exe/pseudocode/src/core/vampboss.cpp/CVampireBoss_transformToHuman_FUN_005e74c0.cpp
@@ -2348,7 +2349,6 @@ annotations/nocedit.exe/pseudocode/src/wincore/winrun.cpp/addWindowsMessageHook_
 annotations/nocedit.exe/pseudocode/src/core/xform.cpp/getTranslation_FUN_005f6110.cpp
 annotations/nocedit.exe/pseudocode/src/core/zombie.cpp/getObjectGrabPointLocal_FUN_005f8d30.cpp
 annotations/nocedit.exe/pseudocode/src/core/zombie.cpp/CZombie_canPickupWithHand_FUN_005fbda0.keep.cpp
-annotations/nocedit.exe/pseudocode/src/wincore/wddvmem.cpp/initTextureCache_FUN_00403790.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/actor.cpp/crc32ProcessString_FUN_0040cf90.cpp
 annotations/nocedit.exe/pseudocode/src/core/ammobox.cpp/CAmmoBox_openBox_FUN_00411690.cpp
 annotations/nocedit.exe/pseudocode/src/core/anvil.cpp/CAnvil_getPropertyList_FUN_00412030.cpp
@@ -2597,7 +2597,7 @@ annotations/nocedit.exe/pseudocode/src/core/trash.cpp/CTrash_processInEditor_FUN
 annotations/nocedit.exe/pseudocode/src/core/trigger.cpp/CTrigger_acceptsDamageFrom_FUN_005e0ac0.cpp
 annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/parseIPAddress_FUN_005e1700.cpp
 annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/buildIPAddressOrDie_FUN_005e1750.cpp
-annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/connectSocket_FUN_005e1bd0.keep.cpp
+annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/CSocket_connectSocket_FUN_005e1bd0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/terrain.cpp/CTerrain_process_FUN_005e2050.cpp
 annotations/nocedit.exe/pseudocode/src/core/turret.cpp/CTurret_processInEditor_FUN_005e3dd0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/tvbat.cpp/CTVBat_setup_FUN_005e4050.cpp
@@ -2776,7 +2776,7 @@ annotations/nocedit.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModel_captureTe
 annotations/nocedit.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModelInstance_addFilesToExtract_FUN_0047edd0.cpp
 annotations/nocedit.exe/pseudocode/src/core/dog.cpp/CZombieDog_setup_FUN_0047f0c0.cpp
 annotations/nocedit.exe/pseudocode/src/engine/dosio.cpp/copyFileTimestamp_FUN_00481910.cpp
-annotations/nocedit.exe/pseudocode/src/engine/dosio.cpp/getFileSizeWithFinder_FUN_00481960.cpp
+annotations/nocedit.exe/pseudocode/src/engine/dosio.cpp/getFileAttributes_FUN_00481960.cpp
 annotations/nocedit.exe/pseudocode/src/core/dracbrid.cpp/randomizePosition_FUN_00486430.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/dracbrid.cpp/CDraculaBride_getPropertyList_FUN_00486c90.cpp
 annotations/nocedit.exe/pseudocode/src/cockpit/drawsurf.cpp/computeCohenSutherlandOutcode_FUN_00487de0.cpp
@@ -3100,7 +3100,8 @@ annotations/nocedit.exe/pseudocode/src/core/tbplayer.cpp/CDrummer_setup_FUN_005d
 annotations/nocedit.exe/pseudocode/src/core/tentacle.cpp/CTentacle_archive_FUN_005db880.cpp
 annotations/nocedit.exe/pseudocode/src/core/texlist.cpp/CTextureList_renderTexture_FUN_005dca30.keep.cpp
 annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/extractIPOctets_FUN_005e18e0.cpp
-annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/performSocketOperation_FUN_005e1ca0.keep.cpp
+annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/formatSocketAddress_FUN_005e1a30.keep.cpp
+annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/CSocket_sendSocketData_FUN_005e1ca0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/tvbat.cpp/CTVBat_getBoundingBox_FUN_005e5050.keep.cpp
 annotations/nocedit.exe/pseudocode/src/wincore/wddvmem.cpp/cleanupDirectDrawSurfaces_FUN_005ec920.cpp
 annotations/nocedit.exe/pseudocode/src/core/xform.cpp/inverseInPlace_FUN_005f6190.keep.cpp
@@ -3397,7 +3398,6 @@ annotations/nocedit.exe/pseudocode/src/core/werewolf.cpp/CWerewolf_getDeathState
 annotations/nocedit.exe/pseudocode/src/core/werewolf.cpp/CWerewolf_propertyDisplayCallback_FUN_005f2010.cpp
 annotations/nocedit.exe/pseudocode/src/wincore/winrun.cpp/getTime_FUN_005f2dc0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/xform.cpp/eulerToQuaternionIndirect_FUN_005f7b70.keep.cpp
-annotations/nocedit.exe/pseudocode/src/engine/dosio.cpp/setReadonlyAttribute_FUN_00600c30.cpp
 annotations/nocedit.exe/pseudocode/src/engine/2d.c/plotPixelWithDepth_FUN_00401290.keep.c
 annotations/nocedit.exe/pseudocode/src/engine/3d.c/dispatchMRGLBlockChain_FUN_00407890.c
 annotations/nocedit.exe/pseudocode/src/engine/3d.c/renderPrim_FUN_00407920.c
@@ -3467,8 +3467,7 @@ annotations/nocedit.exe/pseudocode/src/shape/superopt.cpp/CObj_setStateFlagToAtt
 annotations/nocedit.exe/pseudocode/src/shape/superopt.cpp/COptimize_splitToConvex_FUN_005d7690.keep.cpp
 annotations/nocedit.exe/pseudocode/src/engine/texture.cpp/CTextureCache_renderAllTextures_FUN_005dd580.cpp
 annotations/nocedit.exe/pseudocode/src/core/tommygun.cpp/CTommyGun_ctor_FUN_005dda90.cpp
-annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/formatSocketAddress_FUN_005e1a30.keep.cpp
-annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/getSocketName_FUN_005e1df0.keep.cpp
+annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/CSocket_getSocketName_FUN_005e1df0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/waypoint.cpp/CWayPoint_addAdj_FUN_005ec700.cpp
 annotations/nocedit.exe/pseudocode/src/engine/winfont.cpp/CWinFont_ctor_FUN_005f22e0.cpp
 annotations/nocedit.exe/pseudocode/src/core/xform.cpp/buildTranslationMatrix_FUN_005f6dc0.keep.cpp
@@ -3557,7 +3556,6 @@ annotations/nocedit.exe/pseudocode/src/shape/superopt.cpp/CObj_projectPlanarUVsW
 annotations/nocedit.exe/pseudocode/src/shape/superopt.cpp/CObj_setPolyMaterialIdsWithFlag_FUN_005d3f10.cpp
 annotations/nocedit.exe/pseudocode/src/core/teleport.cpp/CTeleport_process_FUN_005daa20.keep.cpp
 annotations/nocedit.exe/pseudocode/src/engine/texture.cpp/getCurrentTexture_FUN_005dd9c0.keep.cpp
-annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/acceptConnection_FUN_005e1d80.cpp
 annotations/nocedit.exe/pseudocode/src/core/vampboss.cpp/CVampireBoss_archive_FUN_005e6f50.cpp
 annotations/nocedit.exe/pseudocode/src/wincore/wddvmem.cpp/shutdownDirectDraw_FUN_005eca30.cpp
 annotations/nocedit.exe/pseudocode/src/wincore/winrun.cpp/getNextKeypress_FUN_005f2e90.keep.cpp
@@ -3785,6 +3783,7 @@ annotations/nocedit.exe/pseudocode/src/engine/special.cpp/clearZBufferNative_FUN
 annotations/nocedit.exe/pseudocode/src/engine/special.cpp/fillDepthRegion_FUN_005b3fc2.keep.cpp
 annotations/nocedit.exe/pseudocode/src/shape/superopt.cpp/CObj_removePolygon_FUN_005d2f50.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/trap.cpp/CTrap_renderOpaque_FUN_005de920.cpp
+annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/CSocket_acceptConnection_FUN_005e1d80.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/terrain.cpp/CTerrain_render_FUN_005e1f50.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/waypoint.cpp/CWayPoint_archive_FUN_005ec280.cpp
 annotations/nocedit.exe/pseudocode/src/engine/3d.c/renderPolygonTexturedLitOp7_FUN_00403cc0.c
@@ -3852,7 +3851,7 @@ annotations/nocedit.exe/pseudocode/src/sound/snddx.cpp/CDirectSoundDevice_isSfxP
 annotations/nocedit.exe/pseudocode/src/core/stranger.cpp/getWeaponInteractionType_FUN_005baf20.cpp
 annotations/nocedit.exe/pseudocode/src/shape/superopt.cpp/CObj_clearStateFlags_FUN_005d35e0.cpp
 annotations/nocedit.exe/pseudocode/src/core/trash.cpp/CTrash_renderOpaque_FUN_005df550.keep.cpp
-annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/receiveSocketData_FUN_005e1c20.keep.cpp
+annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/CSocket_receiveSocketData_FUN_005e1c20.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/vecdir.cpp/convertDirectionVectorToEulerAngles_FUN_005e7830.keep.cpp
 annotations/nocedit.exe/pseudocode/src/wincore/winrun.cpp/processWindowMessages_FUN_005f35e0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/engine/2d.c/fillRectColor_FUN_00403170.c
@@ -6313,8 +6312,8 @@ annotations/nocedit.exe/pseudocode/src/core/dog.cpp/CZombieDog_process_FUN_0047f
 annotations/nocedit.exe/pseudocode/src/core/stranger.cpp/CStranger_tryPickupObject_FUN_005c1680.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/script.cpp/parseCommandWithTemplates_FUN_00561690.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/curtain.cpp/CCurtain_process_FUN_0044a920.keep.cpp
-annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/resampleAndConvertAudio_FUN_005aa7f0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/netgame.cpp/CNetGame_runLobby_FUN_00541390.keep.cpp
+annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/resampleAndConvertAudio_FUN_005aa7f0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/engine/prim.c/renderScanlinePolygon_FUN_00553470.keep.c
 annotations/nocedit.exe/pseudocode/src/core/ladder.cpp/CLadder_renderOpaque_FUN_00502620.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/path.cpp/CPathMap_findPathToDestination_FUN_00547320.keep.cpp

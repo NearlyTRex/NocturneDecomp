@@ -5,6 +5,7 @@
     "data_refs":[
       "0043178f"
     ],
+    "instructions":101,
     "method":"optimizedMemcpy",
     "name":"cockpit_ckptutil.c_optimizedMemcpy_FUN_00431528",
     "params":[
@@ -85,6 +86,7 @@
       "005fdbd0"
     ],
     "conv":"__cdecl",
+    "instructions":14,
     "method":"vsprintf",
     "name":"crt_stdio.c_vsprintf_FUN_005fdba8",
     "params":[
@@ -129,10 +131,14 @@
       "00601620",
       "0060d128"
     ],
+    "calls":[
+      "00606660"
+    ],
     "conv":"__watcallRegister",
     "data_refs":[
       "00684c84"
     ],
+    "instructions":5,
     "method":"reportAbnormalTermination",
     "name":"crt_startup.c_reportAbnormalTermination_FUN_00601628",
     "receiver":false,
@@ -149,7 +155,17 @@
     "callers":[
       "00609e70"
     ],
+    "calls":[
+      "0060242c",
+      "00602458",
+      "0060245c",
+      "0060a6a0",
+      "0060aba8",
+      "0060ac30",
+      "EXTERNAL:00000078"
+    ],
     "conv":"__watcallRegister",
+    "instructions":25,
     "method":"InitializeWinAppRuntime",
     "name":"crt_startup.cpp_InitializeWinAppRuntime_FUN_006026a8",
     "params":[
@@ -173,10 +189,14 @@
   },
   {
     "addr":"00606ca8",
+    "calls":[
+      "00606960"
+    ],
     "conv":"unknown",
     "data_refs":[
       "0068745c"
     ],
+    "instructions":9,
     "method":"FUN_00606ca8",
     "name":"crt_math.c_FUN_00606ca8",
     "receiver":false,
@@ -193,7 +213,12 @@
     "callers":[
       "006026a8"
     ],
+    "calls":[
+      "0060242c",
+      "EXTERNAL:0000009b"
+    ],
     "conv":"__cdecl",
+    "instructions":21,
     "method":"installExceptionHandler",
     "name":"crt_exception.c_installExceptionHandler_FUN_0060aba8",
     "params":[
@@ -222,7 +247,12 @@
       "0060a9d8",
       "0060d128"
     ],
+    "calls":[
+      "0060ce60",
+      "0060ceb4"
+    ],
     "conv":"__cdecl",
+    "instructions":26,
     "method":"raiseFPE",
     "name":"crt_signal.c_raiseFPE_FUN_0060d028",
     "params":[
@@ -249,10 +279,19 @@
     "callers":[
       "0060cf20"
     ],
+    "calls":[
+      "00601628",
+      "0060ce60",
+      "0060ceb4",
+      "0060cf80",
+      "0060cfe4",
+      "0060d028"
+    ],
     "conv":"__watcallStack",
     "data_refs":[
       "0060d01e"
     ],
+    "instructions":50,
     "method":"processSignal",
     "name":"crt_signal.c_processSignal_FUN_0060d128",
     "params":[
@@ -283,7 +322,11 @@
       "0060d677",
       "0060db8c"
     ],
+    "calls":[
+      "0060d7a0"
+    ],
     "conv":"__watcallStack",
+    "instructions":44,
     "method":"setBuffer",
     "name":"crt_iostream.cpp_setBuffer_FUN_0060d6a8",
     "params":[

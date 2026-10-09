@@ -27,9 +27,9 @@ int __cdecl core_netgame_cpp_CNetGame_addPlayer_FUN_005412b0(CNetGame *this_ptr,
   memset(dest,0,sizeof(*dest));
   strcpy(dest->name,name);
   (dest->addr).ip_address = addr->ip_address;
-  uVar3 = addr->other;
+  uVar3 = addr->padding;
   (dest->addr).port = addr->port;
-  (dest->addr).other = uVar3;
+  (dest->addr).padding = uVar3;
   dest->ping_quality = -1.0;
   dest->ready_flag = 0;
   dest->state_change_time = 0;

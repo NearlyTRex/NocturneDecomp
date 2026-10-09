@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   wincore_wddvmem.cpp_freeTextureCache_FUN_004037a0 at 004037a0
+;   engine_3d.c_freeTextureCache_FUN_004037a0 at 004037a0
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_texture_cpp_0065546b

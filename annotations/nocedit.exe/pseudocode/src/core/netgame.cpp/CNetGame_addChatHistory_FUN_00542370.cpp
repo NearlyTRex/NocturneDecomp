@@ -21,9 +21,9 @@ void __cdecl core_netgame_cpp_CNetGame_addChatHistory_FUN_00542370(CNetGame *thi
   }
   iVar3 = g_ChatHistoryCount;
   g_ChatHistory[g_ChatHistoryCount].sender_addr.ip_address = sender_addr->ip_address;
-  uVar2 = sender_addr->other;
+  uVar2 = sender_addr->padding;
   g_ChatHistory[iVar3].sender_addr.port = sender_addr->port;
-  g_ChatHistory[iVar3].sender_addr.other = uVar2;
+  g_ChatHistory[iVar3].sender_addr.padding = uVar2;
   g_ChatHistory[iVar3].message_id = message_id;
   pcVar4 = g_ChatHistory[iVar3].sender_name;
   do {

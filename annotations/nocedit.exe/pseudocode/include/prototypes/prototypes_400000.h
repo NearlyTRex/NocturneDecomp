@@ -129,8 +129,8 @@ int __cdecl engine_2d_c_mapFrameBuffer_FUN_00403430(void *frame_buffer,int width
 int __cdecl engine_2d_c_mapTextureFrameBuffer_FUN_00403650(void);
 void __cdecl engine_2d_c_unmapFrameBuffer_FUN_00403670(void);
 void * __cdecl engine_3d_c_abortOldFuncNoOpcode_FUN_00403740(SMRGLHeaderPrimitive *prim);
-CTextureCache * __cdecl wincore_wddvmem_cpp_initTextureCache_FUN_00403790(void);
-void __cdecl wincore_wddvmem_cpp_freeTextureCache_FUN_004037a0(void);
+CTextureCache * __cdecl engine_3d_c_initTextureCache_FUN_00403790(void);
+void __cdecl engine_3d_c_freeTextureCache_FUN_004037a0(void);
 SMRGLHeaderExtended * __cdecl engine_3d_c_badMRGLStruct_FUN_004037b0(SMRGLHeaderExtended *prim);
 SMRGLHeaderExtended * __cdecl engine_3d_c_processCameraRelativePoint_FUN_004037e0(CQuaternion4f *input_point);
 SMRGLHeaderExtended * __cdecl engine_3d_c_transformAndBufferVertices_FUN_00403840(SMRGLHeaderExtended *mrgl);

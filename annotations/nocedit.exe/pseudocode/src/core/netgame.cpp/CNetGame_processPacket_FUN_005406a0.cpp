@@ -124,9 +124,9 @@ void __cdecl core_netgame_cpp_CNetGame_processPacket_FUN_005406a0(CNetGame *this
     core_netgame_cpp_CNetGame_send_FUN_005411c0(this_ptr,uVar2,&local_e4);
     iVar5 = this_ptr->local_player_index;
     this_ptr->players[iVar5].addr.ip_address = (packet->player_announce).addr.ip_address;
-    uVar4 = ((SNetworkAddr *)((int)packet + 5))->other;
+    uVar4 = ((SNetworkAddr *)((int)packet + 5))->padding;
     this_ptr->players[iVar5].addr.port = ((SNetworkAddr *)((int)packet + 5))->port;
-    this_ptr->players[iVar5].addr.other = uVar4;
+    this_ptr->players[iVar5].addr.padding = uVar4;
     return;
   case PACKET_SERVER_ACCEPT:
     if (((this_ptr->connection_type != CONNECTION_CLIENT) || ((int)uVar2 < 0)) ||
@@ -149,9 +149,9 @@ LAB_0054097f:
       } while (cVar2 != '\0');
       iVar5 = this_ptr->local_player_index;
       this_ptr->players[iVar5].addr.ip_address = (packet->server_accept).client_addr.ip_address;
-      uVar4 = ((SNetworkAddr *)((int)packet + 0x69))->other;
+      uVar4 = ((SNetworkAddr *)((int)packet + 0x69))->padding;
       this_ptr->players[iVar5].addr.port = ((SNetworkAddr *)((int)packet + 0x69))->port;
-      this_ptr->players[iVar5].addr.other = uVar4;
+      this_ptr->players[iVar5].addr.padding = uVar4;
       INT_02f7c8c4 = -1;
       return;
     }

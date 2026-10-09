@@ -97840,6 +97840,54 @@
             ]
           },
           "type":"double"
+        },
+        {
+          "name":"x_right",
+          "storage":{
+            "offset":56,
+            "size":8,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x38]",
+                "offset":56,
+                "size":8
+              }
+            ]
+          },
+          "type":"double"
+        },
+        {
+          "name":"y_right",
+          "storage":{
+            "offset":64,
+            "size":8,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x40]",
+                "offset":64,
+                "size":8
+              }
+            ]
+          },
+          "type":"double"
+        },
+        {
+          "name":"z_right",
+          "storage":{
+            "offset":72,
+            "size":8,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x48]",
+                "offset":72,
+                "size":8
+              }
+            ]
+          },
+          "type":"double"
         }
       ]
     }
@@ -106077,12 +106125,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"support_trisock.cpp_bindSocketWrapper_FUN_005e1af0",
-    "ret":"_SOCKET*",
+    "name":"support_trisock.cpp_CSocket_dtor_FUN_005e1af0",
+    "ret":"CSocket*",
     "vars":{
       "params":[
         {
-          "name":"socket_handle",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -106095,7 +106143,7 @@
               }
             ]
           },
-          "type":"_SOCKET*"
+          "type":"CSocket*"
         },
         {
           "name":"flags",
@@ -106111,7 +106159,7 @@
               }
             ]
           },
-          "type":"int"
+          "type":"uint"
         }
       ],
       "ret_storage":{
@@ -106137,12 +106185,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"support_trisock.cpp_isSocketValid_FUN_005e1b70",
+    "name":"support_trisock.cpp_CSocket_isSocketValid_FUN_005e1b70",
     "ret":"int",
     "vars":{
       "params":[
         {
-          "name":"socket_handle",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -106155,7 +106203,7 @@
               }
             ]
           },
-          "type":"_SOCKET*"
+          "type":"CSocket*"
         }
       ],
       "ret_storage":{
@@ -106186,7 +106234,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"support_trisock.cpp_getSocketName_FUN_005e1df0",
+    "name":"support_trisock.cpp_CSocket_getSocketName_FUN_005e1df0",
     "ret":"int",
     "vars":{
       "locals":[
@@ -106302,7 +106350,7 @@
       ],
       "params":[
         {
-          "name":"socket_handle",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -106315,7 +106363,7 @@
               }
             ]
           },
-          "type":"_SOCKET*"
+          "type":"CSocket*"
         },
         {
           "name":"out_address",

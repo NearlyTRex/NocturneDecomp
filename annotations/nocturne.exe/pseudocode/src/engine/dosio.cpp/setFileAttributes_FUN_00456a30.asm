@@ -8,7 +8,7 @@
 ; byte             Stack[0x8]:1   flags
 ;
 ; Called Functions:
-;   engine_dosio.cpp_setReadonlyAttribute_FUN_00565dd0
+;   crt_io.c__chmod_FUN_00565dd0
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
         ;   Label: LAB_00456a43
     MOV EDX,dword ptr [ESP + 0x8]       ; 00456a44
     PUSH EDX                            ; 00456a48
-    CALL engine_dosio.cpp_setReadonlyAttribute_FUN_00565dd0 ; 00456a49
-        ;   XREF to: 00565dd0 (UNCONDITIONAL_CALL)  ; DWORD engine_dosio.cpp_setReadonlyAttribute_FUN_00565dd0(char * filename, DWORD file_attributes)
+    CALL crt_io.c__chmod_FUN_00565dd0   ; 00456a49
+        ;   XREF to: 00565dd0 (UNCONDITIONAL_CALL)  ; int crt_io.c__chmod_FUN_00565dd0(char * path, int mode)
     ADD ESP,0x8                         ; 00456a4e
     TEST EAX,EAX                        ; 00456a51
     SETZ AL                             ; 00456a53

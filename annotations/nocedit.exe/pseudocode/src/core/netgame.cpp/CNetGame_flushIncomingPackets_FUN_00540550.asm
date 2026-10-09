@@ -14,8 +14,8 @@
 ;   UNetPacket g_NetworkReceivePacket
 ;
 ; Called Functions:
-;   support_trisock.cpp_isSocketValid_FUN_005e1b70
-;   support_trisock.cpp_receiveSocketData_FUN_005e1c20
+;   support_trisock.cpp_CSocket_isSocketValid_FUN_005e1b70
+;   support_trisock.cpp_CSocket_receiveSocketData_FUN_005e1c20
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
 ;
 ; *****************************************************************************
@@ -28,8 +28,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0xc]       ; 00540552
     ADD ESI,0x170                       ; 00540556
     PUSH ESI                            ; 0054055c
-    CALL support_trisock.cpp_isSocketValid_FUN_005e1b70 ; 0054055d
-        ;   XREF to: 005e1b70 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_isSocketValid_FUN_005e1b70(_SOCKET * socket_handle)
+    CALL support_trisock.cpp_CSocket_isSocketValid_FUN_005e1b70 ; 0054055d
+        ;   XREF to: 005e1b70 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_CSocket_isSocketValid_FUN_005e1b70(CSocket * this_ptr)
     ADD ESP,0x4                         ; 00540562
     TEST EAX,EAX                        ; 00540565
     JZ 0x005405aa                       ; 00540567
@@ -49,8 +49,8 @@ section .text
     PUSH 0x405                          ; 00540583
     PUSH 0x2fa88c8                      ; 00540588 | g_NetworkReceivePacket
     PUSH ESI                            ; 0054058d
-    CALL support_trisock.cpp_receiveSocketData_FUN_005e1c20 ; 0054058e
-        ;   XREF to: 005e1c20 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_receiveSocketData_FUN_005e1c20(_SOCKET * socket_handle, char * buffer, int length, SNetworkAddr * source_addr)
+    CALL support_trisock.cpp_CSocket_receiveSocketData_FUN_005e1c20 ; 0054058e
+        ;   XREF to: 005e1c20 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_CSocket_receiveSocketData_FUN_005e1c20(CSocket * this_ptr, char * buffer, int length, SNetworkAddr * source_addr)
     ADD ESP,0x10                        ; 00540593
     TEST EAX,EAX                        ; 00540596
     JLE 0x005405a2                      ; 00540598

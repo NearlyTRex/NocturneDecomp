@@ -49,7 +49,7 @@ void __cdecl CWavOutDevice::set3DListenerPos(CWavOutDevice *this_ptr,double x,do
 
 // Original: sound_sndwav.cpp_CWavOutDevice_set3DListenerOrient_FUN_0052c7d0
 // Address: 0052c7d0
-void __cdecl CWavOutDevice::set3DListenerOrient(CWavOutDevice *this_ptr,double x_front,double y_front,double z_front,double x_top,double y_top,double z_top);
+void __cdecl CWavOutDevice::set3DListenerOrient(CWavOutDevice *this_ptr,double x_front,double y_front,double z_front,double x_top,double y_top,double z_top,double x_right,double y_right,double z_right);
 
 // Original: sound_sndwav.cpp_CWavOutDevice_set3DListenerVelocity_FUN_0052c7e0
 // Address: 0052c7e0
@@ -73,7 +73,7 @@ void __cdecl CWavOutDevice::freeSample(CWavOutDevice *this_ptr,int buffer_id);
 
 // Original: sound_sndwav.cpp_CWavOutDevice_lockSample_FUN_0052c830
 // Address: 0052c830
-int __cdecl CWavOutDevice::lockSample(CWavOutDevice *this_ptr,int buffer_id,int offset,int size);
+void * __cdecl CWavOutDevice::lockSample(CWavOutDevice *this_ptr,int buffer_id,int offset,int size);
 
 // Original: sound_sndwav.cpp_CWavOutDevice_unlockSample_FUN_0052c840
 // Address: 0052c840

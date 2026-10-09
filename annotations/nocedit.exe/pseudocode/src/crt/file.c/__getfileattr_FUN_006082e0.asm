@@ -7,7 +7,7 @@
 ; char *           Stack[0x4]:4   filename
 ;
 ; XREF[1]:
-;   engine_dosio.cpp_setReadonlyAttribute_FUN_00600c30 at 00600c36
+;   crt_io.c__chmod_FUN_00600c30 at 00600c36
 ;
 ; Referenced Globals:
 ;   FIND_FIRST_FILE_A_FUNC* g_FindFirstFileAFunc = 00211d84

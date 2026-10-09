@@ -26,11 +26,11 @@
 ;   core_netgame.cpp_CNetGame_flushIncomingPackets_FUN_00540550
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
-;   support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20
-;   support_trisock.cpp_bindSocket_FUN_005e1b80
-;   support_trisock.cpp_createUDPSocket_FUN_005e1b40
-;   support_trisock.cpp_getSocketName_FUN_005e1df0
-;   support_trisock.cpp_setSocketBlocking_FUN_005e1e50
+;   support_trisock.cpp_CSocket_bindSocket_FUN_005e1b80
+;   support_trisock.cpp_CSocket_closeSocket_FUN_005e1d20
+;   support_trisock.cpp_CSocket_createUDPSocket_FUN_005e1b40
+;   support_trisock.cpp_CSocket_getSocketName_FUN_005e1df0
+;   support_trisock.cpp_CSocket_setSocketBlocking_FUN_005e1e50
 ;   wincore_winrun.cpp_getTime_FUN_005f2dc0
 ;
 ; *****************************************************************************
@@ -50,28 +50,28 @@ section .text
     ADD ESP,0x8                         ; 0053fbd8
     LEA EBX,[ESI + 0x170]               ; 0053fbdb
     PUSH EBX                            ; 0053fbe1
-    CALL support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20 ; 0053fbe2
-        ;   XREF to: 005e1d20 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20(_SOCKET * socket_handle)
+    CALL support_trisock.cpp_CSocket_closeSocket_FUN_005e1d20 ; 0053fbe2
+        ;   XREF to: 005e1d20 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_CSocket_closeSocket_FUN_005e1d20(CSocket * this_ptr)
     ADD ESP,0x4                         ; 0053fbe7
     PUSH EBX                            ; 0053fbea
-    CALL support_trisock.cpp_createUDPSocket_FUN_005e1b40 ; 0053fbeb
-        ;   XREF to: 005e1b40 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_createUDPSocket_FUN_005e1b40(_SOCKET * socket_handle)
+    CALL support_trisock.cpp_CSocket_createUDPSocket_FUN_005e1b40 ; 0053fbeb
+        ;   XREF to: 005e1b40 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_CSocket_createUDPSocket_FUN_005e1b40(CSocket * this_ptr)
     ADD ESP,0x4                         ; 0053fbf0
     TEST EAX,EAX                        ; 0053fbf3
     JZ 0x0053fc91                       ; 0053fbf5
         ;   XREF to: 0053fc91 (CONDITIONAL_JUMP)  ; LAB_0053fc91
     PUSH 0x0                            ; 0053fbfb
     PUSH EBX                            ; 0053fbfd
-    CALL support_trisock.cpp_setSocketBlocking_FUN_005e1e50 ; 0053fbfe
-        ;   XREF to: 005e1e50 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_setSocketBlocking_FUN_005e1e50(_SOCKET * socket_handle, int blocking_mode)
+    CALL support_trisock.cpp_CSocket_setSocketBlocking_FUN_005e1e50 ; 0053fbfe
+        ;   XREF to: 005e1e50 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_CSocket_setSocketBlocking_FUN_005e1e50(CSocket * this_ptr, int blocking_mode)
     ADD ESP,0x8                         ; 0053fc03
     TEST EAX,EAX                        ; 0053fc06
     JZ 0x0053fcab                       ; 0053fc08
         ;   XREF to: 0053fcab (CONDITIONAL_JUMP)  ; LAB_0053fcab
     PUSH 0x1ddf                         ; 0053fc0e
     PUSH EBX                            ; 0053fc13
-    CALL support_trisock.cpp_bindSocket_FUN_005e1b80 ; 0053fc14
-        ;   XREF to: 005e1b80 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_bindSocket_FUN_005e1b80(_SOCKET * socket_handle, uint16_t port)
+    CALL support_trisock.cpp_CSocket_bindSocket_FUN_005e1b80 ; 0053fc14
+        ;   XREF to: 005e1b80 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_CSocket_bindSocket_FUN_005e1b80(CSocket * this_ptr, ushort port)
     ADD ESP,0x8                         ; 0053fc19
     TEST EAX,EAX                        ; 0053fc1c
     JZ 0x0053fcc5                       ; 0053fc1e
@@ -86,8 +86,8 @@ section .text
     ADD EAX,0x1c                        ; 0053fc39
     PUSH EAX                            ; 0053fc3c
     PUSH EBX                            ; 0053fc3d
-    CALL support_trisock.cpp_getSocketName_FUN_005e1df0 ; 0053fc3e
-        ;   XREF to: 005e1df0 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_getSocketName_FUN_005e1df0(_SOCKET * socket_handle, SNetworkAddr * out_address)
+    CALL support_trisock.cpp_CSocket_getSocketName_FUN_005e1df0 ; 0053fc3e
+        ;   XREF to: 005e1df0 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_CSocket_getSocketName_FUN_005e1df0(CSocket * this_ptr, SNetworkAddr * out_address)
     ADD ESP,0x8                         ; 0053fc43
     TEST EAX,EAX                        ; 0053fc46
     JZ 0x0053fcdf                       ; 0053fc48

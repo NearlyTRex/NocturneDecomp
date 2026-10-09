@@ -74,13 +74,13 @@ int __cdecl sound_sndwav_cpp_enumerateWavInDevice_FUN_005b1560(UINT device_id,SR
 CWavInDevice * __cdecl sound_sndwav_cpp_getWavInDevice_FUN_005b1600(UINT device_id);
 int __cdecl sound_sndwav_cpp_CWavOutDevice_hasHardware3D_FUN_005b1650(CWavOutDevice *this_ptr);
 void __cdecl sound_sndwav_cpp_CWavOutDevice_set3DListenerPos_FUN_005b1660(CWavOutDevice *this_ptr,double x,double y,double z);
-void __cdecl sound_sndwav_cpp_CWavOutDevice_set3DListenerOrient_FUN_005b1670(CWavOutDevice *this_ptr,double x_front,double y_front,double z_front,double x_top,double y_top,double z_top);
+void __cdecl sound_sndwav_cpp_CWavOutDevice_set3DListenerOrient_FUN_005b1670(CWavOutDevice *this_ptr,double x_front,double y_front,double z_front,double x_top,double y_top,double z_top,double x_right,double y_right,double z_right);
 void __cdecl sound_sndwav_cpp_CWavOutDevice_set3DListenerVelocity_FUN_005b1680(CWavOutDevice *this_ptr,double x_velocity,double y_velocity,double z_velocity);
 void __cdecl sound_sndwav_cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690(CWavOutDevice *this_ptr,double distance_in_feet);
 void __cdecl sound_sndwav_cpp_CWavOutDevice_commitDeferredSettings_FUN_005b16a0(CWavOutDevice *this_ptr);
 int __cdecl sound_sndwav_cpp_CWavOutDevice_allocateSample_FUN_005b16b0(CWavOutDevice *this_ptr,int bits_per_sample,int channel_count,int sample_rate,int sample_count);
 void __cdecl sound_sndwav_cpp_CWavOutDevice_freeSample_FUN_005b16c0(CWavOutDevice *this_ptr,int buffer_id);
-int __cdecl sound_sndwav_cpp_CWavOutDevice_lockSample_FUN_005b16d0(CWavOutDevice *this_ptr,int buffer_id,int offset,int size);
+void * __cdecl sound_sndwav_cpp_CWavOutDevice_lockSample_FUN_005b16d0(CWavOutDevice *this_ptr,int buffer_id,int offset,int size);
 void __cdecl sound_sndwav_cpp_CWavOutDevice_unlockSample_FUN_005b16e0(CWavOutDevice *this_ptr,int buffer_id);
 int __cdecl sound_sndwav_cpp_CWavOutDevice_allocateSfx_FUN_005b16f0(CWavOutDevice *this_ptr,int sample_buffer_id);
 int __cdecl sound_sndwav_cpp_CWavOutDevice_setSfxPos_FUN_005b1700(CWavOutDevice *this_ptr,CSfxSlot *slot,int update_flags);

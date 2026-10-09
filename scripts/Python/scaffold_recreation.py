@@ -15,9 +15,11 @@ public when something outside its class calls it, takes its address, or
 dispatches it through a vtable; a free function when something outside its TU
 does.
 
-Existing files are never overwritten unless --force is given; everything the
-scaffold could not express (platform types, slot-name disagreements, foreign
-vtable slots) is printed as a report for correction in Ghidra.
+Existing files are never overwritten unless --force is given, and platform/ is
+never written at all. Originals that stay outside game code are listed in
+PLATFORM_BOUNDARY with where their job went. Everything else the scaffold could
+not express (unmapped OS types, slot-name disagreements, foreign vtable slots)
+is printed as a report: a Ghidra correction, or a new PLATFORM_BOUNDARY entry.
 
 Run from anywhere:
     python3 scripts/Python/scaffold_recreation.py --report-only
@@ -39,6 +41,83 @@ ANNOTATIONS = os.path.join(ROOT, "annotations")
 OUTPUT = os.path.join(ROOT, "recreation")
 
 SKIPPED_MODULES = {"crt", "globals", "entry"}
+
+# Lowest first. A module may name types from modules before it, never after.
+MODULE_LAYERS = ["common", "platform", "engine", "sound", "support", "cockpit", "shape", "core", "wincore"]
+
+# platform/ is hand-written: interfaces over the OS, implemented by the
+# adapters in platform/sdl/. The scaffold only homes the original types those
+# interfaces name, and never writes into the module.
+PLATFORM_MODULE = "platform"
+PLATFORM_TYPES = {
+    "SNetworkAddr": "platform/network.cpp",
+    "CExternalRendererBridge": "platform/renderer.cpp",
+    "SInputFace": "platform/renderer.cpp",
+    "SMRGLPrimitiveQuad": "platform/renderer.cpp",
+    "SMRGLTextureBasic": "platform/renderer.cpp",
+    "SRenderVertex": "platform/renderer.cpp",
+}
+
+# Abstract bases whose only implementations are OS code, with their home TU.
+# The base stays as the seam and an adapter derives from it.
+SEAM_CLASSES = {"CSoundDevice": "sound/sndmain.cpp", "CFont": "engine/palette.cpp"}
+
+# In-scope originals that are not recreated as game code, keyed by TU, class,
+# "tu:function" or "tu:Class::method", with where each job goes.
+PLATFORM_BOUNDARY = {
+    "sound/snddx.cpp": "platform/sdl audio adapter, implementing sound::CSoundDevice",
+    "sound/sndwav.cpp": "platform/sdl audio adapter, implementing sound::CSoundDevice",
+    "engine/winfont.cpp": "platform/sdl font adapter, implementing engine::CFont",
+    "CExternalRenderer": "platform::IRenderer adapter; there is no renderer DLL to validate",
+    "engine/special.cpp:bindRequiredDllFunction": "platform::IRenderer adapter; no renderer DLL",
+    "engine/special.cpp:bindDllFunction": "platform::IRenderer adapter; no renderer DLL",
+    "engine/special.cpp:initializeExternalRenderer": "platform::IRenderer adapter; no renderer DLL",
+    "engine/special.cpp:shutdownExternalRenderer": "platform::IRenderer adapter; no renderer DLL",
+    "engine/special.cpp:switchRenderer": "platform::IRenderer adapter; no renderer DLL",
+    "engine/special.cpp:getCurrentRenderer": "platform::IRenderer adapter; no renderer DLL",
+    "engine/3d.c:initTextureCache": "engine::initTextureCache in texture.cpp; this is a JMP thunk to it",
+    "engine/3d.c:freeTextureCache": "engine::freeTextureCache in texture.cpp; this is a JMP thunk to it",
+    "support/trisock.cpp:startupWinsock": "platform::INetwork adapter lifetime",
+    "support/trisock.cpp:cleanupWinsock": "platform::INetwork adapter lifetime",
+    "wincore/wddvmem.cpp:reinitializeDirectDraw": "platform::IDisplay adapter",
+    "wincore/wddvmem.cpp:shutdownDirectDraw": "platform::IDisplay adapter",
+    "wincore/wddvmem.cpp:restoreVideoAndMinimizeWindow": "platform::IDisplay adapter",
+    "wincore/wddvmem.cpp:videoRestore": "platform::IDisplay adapter (surface-lost recovery)",
+    "wincore/wddvmem.cpp:stubFunction": "dropped: empty body",
+    "wincore/wddvmem.cpp:loadLibrary": "dropped: no renderer DLL",
+    "wincore/wddvmem.cpp:getProcAddress": "dropped: no renderer DLL",
+    "wincore/wddvmem.cpp:freeLibrary": "dropped: no renderer DLL",
+    "wincore/winvideo.cpp:openMovie": "platform::IMoviePlayer::openMovie",
+    "wincore/winvideo.cpp:closeMovie": "platform::IMoviePlayer::closeMovie",
+    "wincore/winvideo.cpp:toggleMoviePlayback": "platform::IMoviePlayer::toggleMoviePlayback",
+    "wincore/winvideo.cpp:positionMovieWindow": "platform::IMoviePlayer adapter",
+    "wincore/winrun.cpp:winMain": "main.cpp",
+    "wincore/winrun.cpp:mainWindowProc": "kept; declared with its first body, taking platform::SWindowEvent",
+    "wincore/winrun.cpp:calibrateCPUSpeed": "platform::IClock adapter; the calibrated speed is never read",
+    "wincore/winrun.cpp:endPeriod": "platform::IClock adapter",
+    "wincore/winrun.cpp:sleep": "platform::IClock::sleep",
+    "wincore/winrun.cpp:createMutex": "std::timed_mutex",
+    "wincore/winrun.cpp:waitForMutex": "std::timed_mutex",
+    "wincore/winrun.cpp:waitForMutexTimeout": "std::timed_mutex",
+    "wincore/winrun.cpp:releaseMutex": "std::timed_mutex",
+    "wincore/winrun.cpp:createThread": "std::thread",
+    "wincore/winrun.cpp:setThreadPriority": "dropped: audio is mixed on the adapter's callback thread",
+    "wincore/winrun.cpp:getRegistryStringValue": "dropped: only reads the Matrox setting below",
+    "wincore/winrun.cpp:setRegistryStringValue": "dropped: only writes a Matrox driver setting",
+    "wincore/winrun.cpp:doNothing2": "dropped: empty body",
+}
+
+# Hand-written files inside generated modules: interfaces at the seams that
+# platform/ cannot hold because they name a module above it.
+HAND_WRITTEN = {
+    "sound/sndmain/sounddeviceprovider.h", "tests/sound/sndmain/sounddeviceprovider_test.cpp",
+    "engine/palette/fontfactory.h", "tests/engine/palette/fontfactory_test.cpp",
+}
+
+# Parameters naming an OS handle the adapter owns; the kept function loses them.
+DROPPED_PARAMS = {"engine/special.cpp:loadExternalRenderer": {"window_handle"}}
+MATH_TYPE = re.compile(r"^(C(Vector|Matrix|Quaternion)\d\w*|UOrientationVector)$")
+MATH_HOME = "common/math.cpp"
 ARTIFACT_METHOD = re.compile(r"^arr(c|d)tor\d*$")
 SPECIAL_METHOD = re.compile(r"^(ctor|dtor|copy)\d*$")
 
@@ -104,6 +183,19 @@ def module_of(tu):
     return tu.split("/")[0]
 
 
+def boundary_destination(f):
+    cls = f.get("cls")
+    qualified = "%s::%s" % (cls, f["method"]) if cls else f["method"]
+    for key in (f["tu"], cls, "%s:%s" % (f["tu"], qualified)):
+        if key and key in PLATFORM_BOUNDARY:
+            return PLATFORM_BOUNDARY[key]
+    return None
+
+
+def module_layer(module):
+    return MODULE_LAYERS.index(module) if module in MODULE_LAYERS else len(MODULE_LAYERS)
+
+
 def tu_stem(tu):
     return os.path.splitext(os.path.basename(tu))[0]
 
@@ -127,6 +219,7 @@ class Model:
 
         self.report = collections.defaultdict(list)
         self.in_scope = {}
+        self.replaced = {}
         for addr, f in self.functions.items():
             if module_of(f["tu"]) in SKIPPED_MODULES or f["tu"] not in game_tus:
                 continue
@@ -137,7 +230,25 @@ class Model:
             cls = f.get("cls")
             if cls and self.types.get(cls, {}).get("kind") == "struct" and SPECIAL_METHOD.match(f["method"]):
                 continue  # compiler-generated member-wise specials
+            destination = boundary_destination(f)
+            if destination:
+                self.replaced[addr] = f
+                self.report["replaced at the platform boundary (not an error)"].append(
+                    "%s -> %s" % (f["name"], destination))
+                continue
             self.in_scope[addr] = f
+        for f in self.in_scope.values():
+            dropped = DROPPED_PARAMS.get("%s:%s" % (f["tu"], f["method"]))
+            if dropped:
+                f["params"] = [p for p in f.get("params", []) if p["name"] not in dropped]
+        self.replaced_classes = {f["cls"] for f in self.replaced.values() if f.get("cls")}
+        matched = set()
+        for f in self.replaced.values():
+            cls = f.get("cls")
+            qualified = "%s::%s" % (cls, f["method"]) if cls else f["method"]
+            matched.update({f["tu"], cls, "%s:%s" % (f["tu"], qualified)})
+        for key in sorted(set(PLATFORM_BOUNDARY) - matched):
+            self.report["platform boundary entry matches nothing in scope"].append(key)
 
         # Table entries are data references too; they are not address-taken uses.
         self.slot_addrs = set()
@@ -252,6 +363,11 @@ def void_pointer_count(f):
                if p["type"]["name"] == "void" and p["type"].get("ptr", 0) > 0)
 
 
+def is_trivial(f):
+    """No calls and at most `MOV EAX,[ESP+4]; RET`: the body only returns `this`."""
+    return not f.get("calls") and f.get("instructions", 3) <= 2
+
+
 def parameter_key(f):
     refs = [p["type"] for p in f.get("params", [])]
     return json.dumps(refs, sort_keys=True) + str(bool(f.get("variadic")))
@@ -277,6 +393,7 @@ class Scaffold:
             else:
                 self.free[f["tu"]].append(f)
         self.vtable_of = self.primary_vtables()
+        self.add_abstract_tables()
         self.classes = self.select_classes()
         self.type_home = self.assign_homes()
         self.header_files = self.assign_header_files()
@@ -296,6 +413,36 @@ class Scaffold:
                 self.report["secondary vtable ignored"].append(
                     "%s: %s (%d slots) besides %s" % (owner, extra["addr"], len(extra["slots"]), owned[0]["addr"]))
         return primary
+
+    def add_abstract_tables(self):
+        """Give a table-less base the slots all its derived tables share.
+
+        Watcom emits no vtable for an abstract class that is never
+        instantiated, so its virtuals are visible only in the derived tables.
+        Two or more derived classes agreeing on a slot is the evidence that
+        the base introduced it; destructor slots are left to the destructor.
+        Only derived classes with in-scope methods count.
+        """
+        children = collections.defaultdict(list)
+        for owner in self.vtable_of:
+            parent = self.model.parent(owner)
+            in_scope = self.methods.get(owner) or owner in self.model.replaced_classes
+            if parent and parent not in self.vtable_of and in_scope:
+                children[parent].append(self.vtable_of[owner])
+        for base, tables in sorted(children.items()):
+            if len(tables) < 2:
+                continue
+            shared = None
+            for table in tables:
+                offsets = set()
+                for slot in table["slots"]:
+                    f = self.slot_method(slot)
+                    if f is None or not re.match(r"^dtor\d*$", f["method"]):
+                        offsets.add(slot["offset"])
+                shared = offsets if shared is None else shared & offsets
+            if shared:
+                self.vtable_of[base] = {"addr": None, "owner": base, "synthetic": True,
+                                        "slots": [{"addr": None, "offset": o, "pure": True} for o in sorted(shared)]}
 
     def slot_method(self, slot):
         f = self.model.functions.get(slot["addr"])
@@ -331,10 +478,15 @@ class Scaffold:
         implementation bearing that name: the one with the fewest void *
         parameters, then the introducer's own. A body that fills several slots carries only one of their
         names, so it is not counted as a disagreement.
+
+        A slot none of whose implementations is in scope belongs to the
+        editor (retail's tables omit it) and is not declared.
         """
         votes = collections.defaultdict(collections.Counter)
         impls = collections.defaultdict(list)
-        for owner in sorted(self.classes):
+        # Implementations replaced by platform adapters still name and type a
+        # seam's slots.
+        for owner in sorted(self.classes | self.model.replaced_classes):
             table = self.vtable_of.get(owner)
             if not table:
                 continue
@@ -351,9 +503,14 @@ class Scaffold:
                     votes[key][f["method"]] += 1
 
         self.virtual_decl = {}
+        self.virtual_impls = impls
+        game = self.model.in_scope.keys() | self.model.replaced.keys()
+        self.editor_slots = {key for key, fs in impls.items() if not any(f["addr"] in game for f in fs)}
         taken = collections.defaultdict(set)
         order = sorted(impls, key=lambda k: (len(self.model.ancestors(k[0])), k[0], k[1]))
         for key in order:
+            if key in self.editor_slots:
+                continue
             intro, offset = key
             struct_name = self.struct_slot_name(intro, offset)
             if struct_name:
@@ -395,7 +552,7 @@ class Scaffold:
     # -- classes and homes ------------------------------------------------
 
     def select_classes(self):
-        classes = set(self.methods)
+        classes = set(self.methods) | set(SEAM_CLASSES)
         for owner in self.vtable_of:
             if owner in classes or any(c in classes for c in self.descendants(owner)):
                 classes.add(owner)
@@ -407,8 +564,19 @@ class Scaffold:
         return [c for c in self.model.types if cls in self.model.ancestors(c)]
 
     def assign_homes(self):
-        homes = {}
+        """Home TU per type, keeping module dependencies one-way.
+
+        Math value types go to common/math: their only bodies are inline
+        copies scattered across core. A class with methods lives in the TU
+        holding most of them. Any other type lives in the lowest-layer module
+        whose signatures use it, so a lower module never names a higher one.
+        """
+        homes = {name: MATH_HOME for name in self.model.types if MATH_TYPE.match(name)}
+        homes.update(PLATFORM_TYPES)
+        homes.update(SEAM_CLASSES)
         for cls in self.classes:
+            if cls in homes:
+                continue
             counts = collections.Counter(f["tu"] for f in self.methods.get(cls, []))
             rtti = self.model.types[cls].get("rtti_file")
             if counts:
@@ -416,7 +584,6 @@ class Scaffold:
                 homes[cls] = max(sorted(counts), key=lambda tu: (counts[tu], tu in ctor_tus))
             elif rtti and rtti in {f["tu"] for f in self.model.in_scope.values()}:
                 homes[cls] = rtti
-        # Remaining types home where the in-scope signatures use them most.
         usage = collections.defaultdict(collections.Counter)
         for f in self.model.in_scope.values():
             for ref in [f["ret"]] + [p["type"] for p in f.get("params", [])]:
@@ -425,7 +592,12 @@ class Scaffold:
             if name in homes or t["kind"] not in ("class", "struct", "union", "enum", "funcdef"):
                 continue
             if usage.get(name):
-                homes[name] = max(sorted(usage[name]), key=lambda tu: usage[name][tu])
+                lowest = min({module_of(tu) for tu in usage[name]}, key=module_layer)
+                tus = [tu for tu in sorted(usage[name]) if module_of(tu) == lowest]
+                homes[name] = max(tus, key=lambda tu: usage[name][tu])
+        for name in [n for n, home in homes.items() if home == MATH_HOME]:
+            if name not in self.classes and name not in usage:
+                del homes[name]
         for cls in self.classes:
             if cls not in homes:
                 fallback = next((homes[d] for d in self.descendants(cls) if d in homes), None)
@@ -516,6 +688,8 @@ class Scaffold:
         own_table = self.vtable_of.get(cls)
         for slot in (own_table or {}).get("slots", []):
             intro = self.introducer(cls, slot["offset"])
+            if (intro, slot["offset"]) in self.editor_slots:
+                continue
             decl = self.virtual_decl.get((intro, slot["offset"]))
             f = self.slot_method(slot)
             # A foreign slot is a body shared with a sibling class; it is still
@@ -561,6 +735,14 @@ class Scaffold:
                     f["name"])
                 continue
             try:
+                # Compiler-generated specials are left to the compiler: a default
+                # constructor or destructor that only returns `this`, and a copy
+                # constructor that copies member by member without calling anything.
+                if is_trivial(f) and (re.match(r"^dtor\d*$", method)
+                                      or (re.match(r"^ctor\d*$", method) and not f.get("params"))):
+                    continue
+                if f["addr"] in self.model.copy_ctors and not f.get("calls"):
+                    continue
                 if re.match(r"^ctor\d*$", method):
                     entry = self.method_entry(decls, cls, f)
                     key = ("ctor", tuple(entry["types"]))
@@ -580,10 +762,16 @@ class Scaffold:
             except Unmappable as exc:
                 self.report["left out: unmappable type"].append("%s (%s)" % (f["name"], exc))
 
-        # A non-virtual that shares a base virtual's name would hide it.
+        # A non-virtual that shares a base virtual's name would hide it. One that
+        # calls the base implementation is a wider overload, not a misnamed override.
         unhidden = sorted({e["name"] for e in plain} & set(above) - {e["name"] for e in resolved})
+        ancestors = self.model.ancestors(cls)
         for name in unhidden:
-            self.report["method shares a base virtual's name (check in Ghidra)"].append("%s::%s" % (cls, name))
+            base_impls = {f["addr"] for key, (n, _) in self.virtual_decl.items()
+                          if n == name and key[0] in ancestors for f in self.virtual_impls[key]}
+            calls = {c for f in self.methods.get(cls, []) if f["method"] == name for c in f.get("calls", [])}
+            if not calls & base_impls:
+                self.report["method shares a base virtual's name (check in Ghidra)"].append("%s::%s" % (cls, name))
 
         # Names brought in by `using` are overloaded too, so tests must pick one.
         names = collections.Counter(e["name"] for e in resolved + plain) + collections.Counter(unhidden)
@@ -604,7 +792,10 @@ class Scaffold:
             explicit = "explicit " if len(e["params"]) == 1 and e["params"][0] != "..." else ""
             lines.append("    %s%s(%s);" % (explicit, cls, ", ".join(e["params"])))
         if copy_ctor:
+            # A copy that does real work needs a matching assignment; the
+            # original's implicit one copied member by member.
             lines.append("    %s(const %s &other);" % (cls, cls))
+            lines.append("    %s &operator=(const %s &other);" % (cls, cls))
         is_poly = cls in polymorphic
         if dtor or is_poly:
             parent_poly = parent in polymorphic if parent else False
@@ -625,6 +816,12 @@ class Scaffold:
         for e in plain:
             head = "static " if e["static"] else ""
             lines.append("    %s%s%s(%s);" % (head, pointer_join(e["ret"]), e["name"], ", ".join(e["params"])))
+
+        # Nothing public to declare yet: fwd.h names it, and an empty definition
+        # would claim a complete type before its members exist. A base class
+        # still needs one for its derived classes.
+        if not lines and not any(self.model.parent(c) == cls for c in self.classes):
+            return
 
         keyword = "struct" if self.model.types[cls]["kind"] == "struct" else "class"
         inheritance = " : public %s" % base_spelled if parent else ""
@@ -697,6 +894,9 @@ class Scaffold:
             if kind in ("class", "struct", "union", "enum"):
                 by_module[module_of(home)].append(name)
         for module, names in sorted(by_module.items()):
+            if module == PLATFORM_MODULE:
+                self.check_platform_fwd(names)
+                continue
             lines, needs_cstdint = [], False
             for name in sorted(names):
                 t = self.model.types[name]
@@ -714,6 +914,13 @@ class Scaffold:
                 out += ["#include <cstdint>", ""]
             out += ["namespace nocturne::%s {" % module, ""] + lines + ["", "} // namespace nocturne::%s" % module]
             emit(os.path.join(module, "fwd.h"), "\n".join(out) + "\n")
+
+    def check_platform_fwd(self, names):
+        path = os.path.join(OUTPUT, PLATFORM_MODULE, "fwd.h")
+        text = open(path).read() if os.path.exists(path) else ""
+        for name in sorted(names):
+            if not re.search(r"\b(class|struct|union|enum class)\s+%s\b" % re.escape(name), text):
+                self.report["homed in platform/ but not declared in platform/fwd.h"].append(name)
 
     # -- tests ------------------------------------------------------------
 
@@ -769,10 +976,32 @@ class Scaffold:
         emit(test_path, "\n".join(out) + "\n")
 
 
+def stale_files(root, planned):
+    """Generated-shaped files under the module trees that nothing plans any more.
+
+    Only headers and interface tests are candidates; implementation files,
+    platform/ and the hand-written seam interfaces are never touched.
+    """
+    stale = []
+    for module in MODULE_LAYERS:
+        if module == PLATFORM_MODULE:
+            continue
+        for base in (module, os.path.join("tests", module)):
+            for dirpath, _, filenames in os.walk(os.path.join(root, base)):
+                for name in filenames:
+                    relpath = os.path.relpath(os.path.join(dirpath, name), root)
+                    generated = name.endswith(".h") or name.endswith("_test.cpp")
+                    if generated and relpath not in planned and relpath not in HAND_WRITTEN:
+                        stale.append(relpath)
+    return sorted(stale)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     parser.add_argument("--report-only", action="store_true", help="print the report, write nothing")
     parser.add_argument("--force", action="store_true", help="overwrite files that already exist")
+    parser.add_argument("--prune", action="store_true",
+                        help="delete generated headers and tests the scaffold no longer plans")
     parser.add_argument("--output", default=OUTPUT, help="recreation root (default: %(default)s)")
     args = parser.parse_args()
 
@@ -794,6 +1023,12 @@ def main():
         written.append(relpath)
 
     scaffold.render(emit)
+    stale = stale_files(args.output, set(planned))
+    if args.prune and not args.report_only:
+        for relpath in stale:
+            os.remove(os.path.join(args.output, relpath))
+    elif stale:
+        model.report["stale generated files (remove with --prune)"].extend(stale)
     if written:
         clang_format = shutil.which("clang-format")
         if clang_format is None:

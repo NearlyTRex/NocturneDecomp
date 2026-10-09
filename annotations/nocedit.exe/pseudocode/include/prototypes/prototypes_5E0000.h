@@ -15,6 +15,7 @@
 #include "types/classes/CDemonGlobe.h"
 #include "types/classes/CLocation.h"
 #include "types/classes/CMatrix3x4f.h"
+#include "types/classes/CSocket.h"
 #include "types/classes/CTVBat.h"
 #include "types/classes/CTerrain.h"
 #include "types/classes/CTire.h"
@@ -67,7 +68,7 @@ void __cdecl support_trisock_cpp_staticInit_FUN_005e16b0(void);
 uint * __cdecl support_trisock_cpp_copyIPAddress_FUN_005e16f0(uint *dest_ip,uint *src_ip);
 uint * __cdecl support_trisock_cpp_parseIPAddress_FUN_005e1700(uint *result_ptr,char *dotted_decimal_string);
 uint8_t * __cdecl support_trisock_cpp_buildIPAddressOrDie_FUN_005e1750(uchar *dest_ip,int octet1,int octet2,int octet3,int octet4);
-void __cdecl support_trisock_cpp_formatIPAddress_FUN_005e17c0(char *output_buffer,uchar *ip_bytes);
+void __cdecl support_trisock_cpp_formatIPAddress_FUN_005e17c0(uchar *ip_bytes,char *output_buffer);
 int __cdecl support_trisock_cpp_parseIPComponents_FUN_005e1800(uint *result_ptr,char *dotted_decimal_string);
 int __cdecl support_trisock_cpp_buildIPAddress_FUN_005e1870(uint8_t *dest_ip,int octet1,int octet2,int octet3,int octet4);
 void __cdecl support_trisock_cpp_extractIPOctets_FUN_005e18e0(uchar *ip_bytes,uint *octet1_ptr,uint *octet2_ptr,uint *octet3_ptr,uint *octet4_ptr);
@@ -75,24 +76,24 @@ uint __cdecl support_trisock_cpp_getIPAddress_FUN_005e1930(SNetworkAddr *net_add
 void __cdecl support_trisock_cpp_createNetworkAddr_FUN_005e1940(SNetworkAddr *dest_addr,uint32_t *ip_address_ptr,uint16_t port);
 SOCKADDR_IN * __cdecl support_trisock_cpp_convertSockAddr_FUN_005e1960(SNetworkAddr *dest_addr,SOCKADDR *src_addr);
 SOCKADDR_IN * __stack_esi support_trisock_cpp_buildSockaddrIn_FUN_005e19d0(SNetworkAddr *net_addr,SOCKADDR_IN *dest_buffer);
-void __cdecl support_trisock_cpp_formatSocketAddress_FUN_005e1a30(char *output_buffer,SNetworkAddr *network_addr);
+void __cdecl support_trisock_cpp_formatSocketAddress_FUN_005e1a30(SNetworkAddr *network_addr,char *output_buffer);
 int __cdecl support_trisock_cpp_shouldNeverBeCalled1_FUN_005e1a80(int unknown1,int unknown2);
 int __cdecl support_trisock_cpp_shouldNeverBeCalled2_FUN_005e1ab0(int unknown1,int unknown2);
-_SOCKET * __cdecl support_trisock_cpp_invalidateSocket_FUN_005e1ae0(_SOCKET *socket_handle);
-_SOCKET * __cdecl support_trisock_cpp_bindSocketWrapper_FUN_005e1af0(_SOCKET *socket_handle,int flags);
-int __cdecl support_trisock_cpp_createSocket_FUN_005e1b10(_SOCKET *socket_handle);
-int __cdecl support_trisock_cpp_createUDPSocket_FUN_005e1b40(_SOCKET *socket_handle);
-int __cdecl support_trisock_cpp_isSocketValid_FUN_005e1b70(_SOCKET *socket_handle);
-int __cdecl support_trisock_cpp_bindSocket_FUN_005e1b80(_SOCKET *socket_handle,uint16_t port);
-int __cdecl support_trisock_cpp_connectSocket_FUN_005e1bd0(_SOCKET *socket_handle,SNetworkAddr *dest_addr);
-int __cdecl support_trisock_cpp_receiveSocketData_FUN_005e1c20(_SOCKET *socket_handle,char *buffer,int length,SNetworkAddr *source_addr);
-int __cdecl support_trisock_cpp_performSocketOperation_FUN_005e1ca0(_SOCKET *socket_handle,char *buffer,int length,SNetworkAddr *dest_addr);
-int __cdecl support_trisock_cpp_bindAndInvalidateSocket_FUN_005e1d20(_SOCKET *socket_handle);
-int __cdecl support_trisock_cpp_listenSocket_FUN_005e1d60(_SOCKET *socket_handle);
-int __cdecl support_trisock_cpp_acceptConnection_FUN_005e1d80(_SOCKET *listen_socket,SNetworkAddr *client_addr,_SOCKET *new_socket);
-int __cdecl support_trisock_cpp_getSocketName_FUN_005e1df0(_SOCKET *socket_handle,SNetworkAddr *out_address);
-int __cdecl support_trisock_cpp_setSocketBlocking_FUN_005e1e50(_SOCKET *socket_handle,int blocking_mode);
-int __cdecl support_trisock_cpp_setSocketBroadcast_FUN_005e1e90(_SOCKET *socket_handle,int broadcast_flag);
+CSocket * __cdecl support_trisock_cpp_CSocket_ctor_FUN_005e1ae0(CSocket *this_ptr);
+CSocket * __cdecl support_trisock_cpp_CSocket_dtor_FUN_005e1af0(CSocket *this_ptr,uint flags);
+int __cdecl support_trisock_cpp_CSocket_createSocket_FUN_005e1b10(CSocket *this_ptr);
+int __cdecl support_trisock_cpp_CSocket_createUDPSocket_FUN_005e1b40(CSocket *this_ptr);
+int __cdecl support_trisock_cpp_CSocket_isSocketValid_FUN_005e1b70(CSocket *this_ptr);
+int __cdecl support_trisock_cpp_CSocket_bindSocket_FUN_005e1b80(CSocket *this_ptr,ushort port);
+int __cdecl support_trisock_cpp_CSocket_connectSocket_FUN_005e1bd0(CSocket *this_ptr,SNetworkAddr *dest_addr);
+int __cdecl support_trisock_cpp_CSocket_receiveSocketData_FUN_005e1c20(CSocket *this_ptr,char *buffer,int length,SNetworkAddr *source_addr);
+int __cdecl support_trisock_cpp_CSocket_sendSocketData_FUN_005e1ca0(CSocket *this_ptr,char *buffer,int length,SNetworkAddr *dest_addr);
+int __cdecl support_trisock_cpp_CSocket_closeSocket_FUN_005e1d20(CSocket *this_ptr);
+int __cdecl support_trisock_cpp_CSocket_listenSocket_FUN_005e1d60(CSocket *this_ptr);
+int __cdecl support_trisock_cpp_CSocket_acceptConnection_FUN_005e1d80(CSocket *this_ptr,CSocket *new_socket,SNetworkAddr *client_addr);
+int __cdecl support_trisock_cpp_CSocket_getSocketName_FUN_005e1df0(CSocket *this_ptr,SNetworkAddr *out_address);
+int __cdecl support_trisock_cpp_CSocket_setSocketBlocking_FUN_005e1e50(CSocket *this_ptr,int blocking_mode);
+int __cdecl support_trisock_cpp_CSocket_setSocketBroadcast_FUN_005e1e90(CSocket *this_ptr,int broadcast_flag);
 int __cdecl support_trisock_cpp_startupWinsock_FUN_005e1ec0(void);
 int __cdecl support_trisock_cpp_cleanupWinsock_FUN_005e1ee0(void);
 void __cdecl core_terrain_cpp_CTerrain_init_FUN_005e1ef0(CTerrain *this_ptr);

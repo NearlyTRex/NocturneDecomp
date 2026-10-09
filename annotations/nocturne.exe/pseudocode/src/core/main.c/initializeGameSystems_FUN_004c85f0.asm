@@ -40,10 +40,10 @@
 ;   core_netgame.cpp_CNetGame_init_FUN_004e9910
 ;   core_sound.cpp_CSound_findAllSoundFiles_FUN_0052dd20
 ;   crt_env.c_getenv_FUN_00566e10
+;   crt_io.c__chmod_FUN_00565dd0
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fopen_FUN_0056568c
 ;   crt_stdio.c_freopen_FUN_00565724
-;   crt_stdio.c_sprintf_FUN_00563c90
 ;   ... and 24 more
 ;
 ; *****************************************************************************
@@ -87,8 +87,8 @@ section .text
     ADD ESP,0x4                         ; 004c8658
     PUSH 0x1c0                          ; 004c865b
     PUSH 0x587b73                       ; 004c8660 | = "stderr.txt"
-    CALL engine_dosio.cpp_setReadonlyAttribute_FUN_00565dd0 ; 004c8665
-        ;   XREF to: 00565dd0 (UNCONDITIONAL_CALL)  ; DWORD engine_dosio.cpp_setReadonlyAttribute_FUN_00565dd0(char * filename, DWORD file_attributes)
+    CALL crt_io.c__chmod_FUN_00565dd0   ; 004c8665
+        ;   XREF to: 00565dd0 (UNCONDITIONAL_CALL)  ; int crt_io.c__chmod_FUN_00565dd0(char * path, int mode)
     ADD ESP,0x8                         ; 004c866a
     TEST EAX,EAX                        ; 004c866d
     JZ 0x004c8694                       ; 004c866f

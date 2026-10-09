@@ -4,15 +4,15 @@ STRUCT QUALITY REPORT
 
 SUMMARY
 ----------------------------------------------------------------------
-Total structs:              557
+Total structs:              558
 Fully clean structs:        544
-Structs with issues:        13
+Structs with issues:        14
 Unreferenced structs:       13
 
-Total fields:               4206
+Total fields:               4207
 Clean fields:               4187
 Unknown (unk*) fields:      10
-Padding (pad*) fields:      4
+Padding (pad*) fields:      5
 Reserved (reserved*) fields:5
 Default (field_*) fields:   0
 Overall field quality:      99.5%
@@ -37,7 +37,7 @@ These structs are not referenced in any source or header file.
   SMRGLVertexBlock                          /Nocturne/Struct/Game
 
 ======================================================================
-STRUCTS WITH PROBLEMATIC FIELDS (13)
+STRUCTS WITH PROBLEMATIC FIELDS (14)
 ----------------------------------------------------------------------
 
 SVPHHeader                                 33.3% complete  (1/3 fields clean)
@@ -51,6 +51,10 @@ SMRGLSkyTexture                            66.7% complete  (2/3 fields clean)
 SMRGLTextureList                           66.7% complete  (2/3 fields clean)
   Issues: 1 reserved
   Fields: reserved
+
+SNetworkAddr                               66.7% complete  (2/3 fields clean)
+  Issues: 1 padding
+  Fields: padding
 
 SPBMFileHeader                             71.4% complete  (5/7 fields clean)
   Issues: 2 reserved
@@ -364,6 +368,7 @@ FULLY CLEAN STRUCTS (544)
   CSmiley_full_vtable
   CSmiley_vtable
   CSmokeParticle
+  CSocket
   CSound
   CSoundDevice
   CSoundDeviceBasic_vtable
@@ -564,7 +569,6 @@ FULLY CLEAN STRUCTS (544)
   SNetPacket_SimFrame
   SNetPacket_Simple
   SNetPlayer
-  SNetworkAddr
   SPaletteEntry
   SPanel
   SPart

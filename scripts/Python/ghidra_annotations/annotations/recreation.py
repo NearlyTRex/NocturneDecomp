@@ -12,6 +12,7 @@ from ghidra.program.model.data import Pointer
 from ghidra.program.model.data import Structure
 from ghidra.program.model.data import TypeDef
 from ghidra.program.model.data import Undefined
+from ghidra.util.task import TaskMonitor
 
 
 # Input for scaffolding the source recreation: the program's classes, their
@@ -156,6 +157,7 @@ def split_function_name(name, type_names):
 
 def export_recreation_functions(currentProgram, type_names):
     function_manager = currentProgram.getFunctionManager()
+    listing = currentProgram.getListing()
     reference_manager = currentProgram.getReferenceManager()
 
     functions = []
@@ -192,6 +194,8 @@ def export_recreation_functions(currentProgram, type_names):
             "conv": str(f.getCallingConventionName()),
             "callers": sorted(callers),
             "data_refs": sorted(data_refs),
+            "calls": sorted(str(c.getEntryPoint()) for c in f.getCalledFunctions(TaskMonitor.DUMMY)),
+            "instructions": sum(1 for _ in listing.getInstructions(f.getBody(), True)),
         }))
     return functions
 

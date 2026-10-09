@@ -9,7 +9,7 @@
 ; char *           Stack[0xc]:4   filename
 ;
 ; XREF[6]:
-;   engine_dosio.cpp_getFileSizeWithFinder_FUN_004569a0 at 004569bc
+;   engine_dosio.cpp_getFileAttributes_FUN_004569a0 at 004569bc
 ;   engine_dosio.cpp_getFileSize_FUN_004568c0 at 004568db
 ;   engine_dosio.cpp_getFileTimestamp_FUN_00456910 at 0045692b
 ;   engine_dosio.cpp_getFile_FUN_00456a60 at 00456a87

@@ -62,15 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 21,
-    "complexity_score": 7,
+    "complexity_score": 6,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 7,
+    "pseudocode_lines": 6,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 28
+    "total_lines": 27
   },
   "cross_references": [
     {
@@ -96,7 +96,7 @@
     ],
     "convention": "__cdecl",
     "name": "support_trisock.cpp_formatIPAddress_FUN_00548bb0",
-    "signature": "void __cdecl support_trisock_cpp_formatIPAddress_FUN_00548bb0(char *output_buffer,uchar *ip_bytes)"
+    "signature": "void __cdecl support_trisock_cpp_formatIPAddress_FUN_00548bb0(uchar *ip_bytes,char *output_buffer)"
   },
   "function_calls": [
     {
@@ -175,17 +175,17 @@
     "variables": [
       {
         "is_param": true,
-        "name": "output_buffer",
+        "name": "ip_bytes",
         "offset": 4,
         "size": 4,
-        "type": "char *"
+        "type": "uchar *"
       },
       {
         "is_param": true,
-        "name": "ip_bytes",
+        "name": "output_buffer",
         "offset": 8,
         "size": 4,
-        "type": "uchar *"
+        "type": "char *"
       }
     ]
   },

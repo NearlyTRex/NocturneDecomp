@@ -96446,7 +96446,7 @@
     "vars":{
       "params":[
         {
-          "name":"output_buffer",
+          "name":"network_addr",
           "storage":{
             "offset":4,
             "size":4,
@@ -96459,10 +96459,10 @@
               }
             ]
           },
-          "type":"char*"
+          "type":"SNetworkAddr*"
         },
         {
-          "name":"network_addr",
+          "name":"output_buffer",
           "storage":{
             "offset":8,
             "size":4,
@@ -96475,7 +96475,7 @@
               }
             ]
           },
-          "type":"SNetworkAddr*"
+          "type":"char*"
         }
       ]
     }
@@ -101336,12 +101336,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_dosio.cpp_setReadonlyAttribute_FUN_00600c30",
-    "ret":"DWORD",
+    "name":"crt_io.c__chmod_FUN_00600c30",
+    "ret":"int",
     "vars":{
       "params":[
         {
-          "name":"filename",
+          "name":"path",
           "storage":{
             "offset":4,
             "size":4,
@@ -101357,7 +101357,7 @@
           "type":"char*"
         },
         {
-          "name":"file_attributes",
+          "name":"mode",
           "storage":{
             "offset":8,
             "size":4,
@@ -101370,7 +101370,7 @@
               }
             ]
           },
-          "type":"DWORD"
+          "type":"int"
         }
       ],
       "ret_storage":{

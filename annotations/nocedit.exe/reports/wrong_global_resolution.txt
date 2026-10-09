@@ -12,8 +12,8 @@ SUMMARY
 ----------------------------------------------------------------------------------------------------
 
   Functions checked: 6911
-  Functions with suspicious globals: 98
-  Total suspicious global references: 161
+  Functions with suspicious globals: 97
+  Total suspicious global references: 160
 
   Most commonly misresolved globals:
     g_SfxOptions                                       13 functions
@@ -29,15 +29,15 @@ SUMMARY
     g_ModalDialogActive                                3 functions
     g_CNetGamePtr                                      3 functions
     g_GetLastErrorFunc                                 3 functions
-    g_TextureCacheInstance                             2 functions
     g_MirrorCullCameraState                            2 functions
     g_CScriptPtr                                       2 functions
     g_SimFrameCount                                    2 functions
     g_CGamePtr                                         2 functions
     g_CDemonMissionPtr                                 2 functions
     g_EditorFont                                       2 functions
+    g_CMoonInstance                                    2 functions
 
-  .keep files with issues: 65 (these need manual review)
+  .keep files with issues: 64 (these need manual review)
   Raw .cpp files with issues: 33
 
 ====================================================================================================
@@ -722,14 +722,6 @@ sound_sndmain.cpp_setNextSfxUserData_FUN_005a8aa0  [.keep]  (1 suspicious global
 
   g_SfxOptions
     Used at lines: 18
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-wincore_wddvmem.cpp_initTextureCache_FUN_00403790  [.keep]  (1 suspicious globals)
-  File: wincore/wddvmem.cpp
-
-  g_TextureCacheInstance
-    Used at lines: 18, 21, 22
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

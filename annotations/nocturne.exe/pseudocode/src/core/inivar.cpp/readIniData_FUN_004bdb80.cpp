@@ -12,11 +12,11 @@ void __cdecl core_inivar_cpp_readIniData_FUN_004bdb80(void)
 
 {
   CGame *pCVar1;
-  DWORD DVar2;
+  int iVar2;
   CIniFile local_204;
   
-  DVar2 = engine_dosio_cpp_setReadonlyAttribute_FUN_00565dd0(".\\system\\nocturne.ini",0x180);
-  if (DVar2 != 0) {
+  iVar2 = _chmod(".\\system\\nocturne.ini",0x180);
+  if (iVar2 != 0) {
     g_CurrentFilename = "..\\core\\inivar.cpp";
     g_CurrentLineNumber = 84;
     core_main_c_displayErrorAndQuit_FUN_004c8440("Please copy Nocturne to your hard drive");

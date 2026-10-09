@@ -9,12 +9,12 @@
 int __cdecl engine_dosio_cpp_setFileAttributes_FUN_004819f0(char *filename,byte flags)
 
 {
-  DWORD DVar1;
+  int iVar1;
   
-  DVar1 = 0x180;
+  iVar1 = 0x180;
   if ((flags & 8) != 0) {
-    DVar1 = 0x100;
+    iVar1 = 0x100;
   }
-  DVar1 = engine_dosio_cpp_setReadonlyAttribute_FUN_00600c30(filename,DVar1);
-  return (uint)(DVar1 == 0);
+  iVar1 = _chmod(filename,iVar1);
+  return (uint)(iVar1 == 0);
 }

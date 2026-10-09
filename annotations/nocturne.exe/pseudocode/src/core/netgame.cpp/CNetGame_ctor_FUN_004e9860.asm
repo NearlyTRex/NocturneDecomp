@@ -18,7 +18,7 @@
 ;
 ; Called Functions:
 ;   crt_memory.c___arrinit_FUN_005644a7
-;   support_trisock.cpp_invalidateSocket_FUN_00548ed0
+;   support_trisock.cpp_CSocket_ctor_FUN_00548ed0
 ;
 ; *****************************************************************************
 
@@ -37,8 +37,8 @@ section .text
     ADD ESP,0xc                         ; 004e9876
     ADD EAX,0x150                       ; 004e9879
     PUSH EAX                            ; 004e987e
-    CALL support_trisock.cpp_invalidateSocket_FUN_00548ed0 ; 004e987f
-        ;   XREF to: 00548ed0 (UNCONDITIONAL_CALL)  ; _SOCKET * support_trisock.cpp_invalidateSocket_FUN_00548ed0(_SOCKET * socket_handle)
+    CALL support_trisock.cpp_CSocket_ctor_FUN_00548ed0 ; 004e987f
+        ;   XREF to: 00548ed0 (UNCONDITIONAL_CALL)  ; CSocket * support_trisock.cpp_CSocket_ctor_FUN_00548ed0(CSocket * this_ptr)
     LEA EDX,[EAX + 0xfffffe90]          ; 004e9884
     MOV dword ptr [EDX],0x0             ; 004e988a
     MOV dword ptr [EDX + 0x4],0x0       ; 004e9890

@@ -9,8 +9,8 @@
 CNetGame * __cdecl core_netgame_cpp_CNetGame_dtor_FUN_004e98f0(CNetGame *this_ptr,uint flags)
 
 {
-  _SOCKET *p_Var1;
+  CSocket *pCVar1;
   
-  p_Var1 = support_trisock_cpp_bindSocketWrapper_FUN_00548ee0(&this_ptr->socket,0);
-  return (CNetGame *)(p_Var1 + -0x5c);
+  pCVar1 = support_trisock_cpp_CSocket_dtor_FUN_00548ee0(&this_ptr->socket,0);
+  return (CNetGame *)(pCVar1 + -0x5c);
 }

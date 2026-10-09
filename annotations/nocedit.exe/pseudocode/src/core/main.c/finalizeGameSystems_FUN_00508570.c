@@ -115,7 +115,7 @@ void __cdecl core_main_c_finalizeGameSystems_FUN_00508570(void)
   local_110[1] = -0x78;
   local_110[2] = 'P';
   local_110[3] = '\0';
-  wincore_wddvmem_cpp_freeTextureCache_FUN_004037a0();
+  engine_3d_c_freeTextureCache_FUN_004037a0();
   local_110[0] = '\x0e';
   local_110[1] = -0x78;
   local_110[2] = 'P';

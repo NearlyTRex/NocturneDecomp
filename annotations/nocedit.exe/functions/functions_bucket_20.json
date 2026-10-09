@@ -944,14 +944,14 @@
     "addr":"004037a0",
     "body":[
       {
-        "end":"004037a4",
-        "size":5,
+        "end":"004037a5",
+        "size":6,
         "start":"004037a0"
       }
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"wincore_wddvmem.cpp_freeTextureCache_FUN_004037a0",
+    "name":"engine_3d.c_freeTextureCache_FUN_004037a0",
     "ret":"void",
     "thtarget":"005dd7a0",
     "thunk":true
@@ -100468,7 +100468,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"support_trisock.cpp_receiveSocketData_FUN_005e1c20",
+    "name":"support_trisock.cpp_CSocket_receiveSocketData_FUN_005e1c20",
     "ret":"int",
     "vars":{
       "locals":[
@@ -100584,7 +100584,7 @@
       ],
       "params":[
         {
-          "name":"socket_handle",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -100597,7 +100597,7 @@
               }
             ]
           },
-          "type":"_SOCKET*"
+          "type":"CSocket*"
         },
         {
           "name":"buffer",
@@ -100676,7 +100676,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"support_trisock.cpp_performSocketOperation_FUN_005e1ca0",
+    "name":"support_trisock.cpp_CSocket_sendSocketData_FUN_005e1ca0",
     "ret":"int",
     "vars":{
       "locals":[
@@ -100781,7 +100781,7 @@
       ],
       "params":[
         {
-          "name":"socket_handle",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -100794,7 +100794,7 @@
               }
             ]
           },
-          "type":"_SOCKET*"
+          "type":"CSocket*"
         },
         {
           "name":"buffer",
@@ -100871,12 +100871,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20",
+    "name":"support_trisock.cpp_CSocket_closeSocket_FUN_005e1d20",
     "ret":"int",
     "vars":{
       "params":[
         {
-          "name":"socket_handle",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -100889,7 +100889,7 @@
               }
             ]
           },
-          "type":"_SOCKET*"
+          "type":"CSocket*"
         }
       ],
       "ret_storage":{

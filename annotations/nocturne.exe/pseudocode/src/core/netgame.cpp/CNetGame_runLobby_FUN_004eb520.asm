@@ -364,7 +364,7 @@ section .text
     PUSH EAX                            ; 004eb892
     PUSH ESI                            ; 004eb893
     CALL support_trisock.cpp_formatIPAddress_FUN_00548bb0 ; 004eb894
-        ;   XREF to: 00548bb0 (UNCONDITIONAL_CALL)  ; void support_trisock.cpp_formatIPAddress_FUN_00548bb0(char * output_buffer, uchar * ip_bytes)
+        ;   XREF to: 00548bb0 (UNCONDITIONAL_CALL)  ; void support_trisock.cpp_formatIPAddress_FUN_00548bb0(uchar * ip_bytes, char * output_buffer)
     ADD ESP,0x8                         ; 004eb899
     JMP 0x004eb72e                      ; 004eb89c
         ;   XREF to: 004eb72e (UNCONDITIONAL_JUMP)  ; LAB_004eb72e

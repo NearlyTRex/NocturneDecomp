@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl support_trisock_cpp_formatIPAddress_FUN_005e17c0(char *output_buffer,uchar *ip_bytes)
+; void __cdecl support_trisock_cpp_formatIPAddress_FUN_005e17c0(uchar *ip_bytes,char *output_buffer)
 ;
 ; Parameters:
-; char *           Stack[0x4]:4   output_buffer
-; uchar *          Stack[0x8]:4   ip_bytes
+; uchar *          Stack[0x4]:4   ip_bytes
+; char *           Stack[0x8]:4   output_buffer
 ;
 ; XREF[2]:
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_00541390 at 00541704

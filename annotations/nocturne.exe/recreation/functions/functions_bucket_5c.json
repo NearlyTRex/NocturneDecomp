@@ -6,6 +6,7 @@
       "0040e8c0"
     ],
     "conv":"__cdecl",
+    "instructions":50,
     "method":"renderAlphaRow32",
     "name":"engine_special.cpp_renderAlphaRow32_FUN_0053055c",
     "params":[
@@ -130,6 +131,7 @@
       "005570b0"
     ],
     "conv":"__cdecl",
+    "instructions":205,
     "method":"transformAndProjectPoint",
     "name":"engine_special.cpp_transformAndProjectPoint_FUN_0053075c",
     "params":[
@@ -184,7 +186,11 @@
       "0052d120",
       "00548bf0"
     ],
+    "calls":[
+      "00566b20"
+    ],
     "conv":"__cdecl",
+    "instructions":15,
     "method":"sscanf",
     "name":"crt_stdio.c_sscanf_FUN_00566b5c",
     "params":[
@@ -239,6 +245,7 @@
     "data_refs":[
       "005c1abc"
     ],
+    "instructions":2,
     "method":"GetTLS",
     "name":"crt_thread.c_GetTLS_FUN_005671dc",
     "receiver":false,
@@ -256,7 +263,14 @@
     "callers":[
       "00567560"
     ],
+    "calls":[
+      "00567540",
+      "0056754c",
+      "00568528",
+      "0056f040"
+    ],
     "conv":"unknown",
+    "instructions":129,
     "method":"FUN_00567a5c",
     "name":"crt_unknown.c_FUN_00567a5c",
     "receiver":false,
@@ -274,7 +288,13 @@
       "00564ce5",
       "00565a13"
     ],
+    "calls":[
+      "00568890",
+      "0056b3c2",
+      "0056fdf0"
+    ],
     "conv":"__cdecl",
+    "instructions":36,
     "method":"prepare_stream_for_write",
     "name":"crt_stdio.c_prepare_stream_for_write_FUN_0056b35c",
     "params":[
@@ -300,10 +320,14 @@
   },
   {
     "addr":"0056e4dc",
+    "calls":[
+      "0056e3f4"
+    ],
     "conv":"unknown",
     "data_refs":[
       "0056e780"
     ],
+    "instructions":4,
     "method":"FUN_0056e4dc",
     "name":"crt_unknown.c_FUN_0056e4dc",
     "receiver":false,
@@ -321,7 +345,11 @@
       "0056f9c4",
       "0056fa00"
     ],
+    "calls":[
+      "0056a388"
+    ],
     "conv":"unknown",
+    "instructions":52,
     "method":"FUN_00571bdc",
     "name":"crt_unknown.c_FUN_00571bdc",
     "receiver":false,
@@ -335,10 +363,14 @@
   },
   {
     "addr":"005722dc",
+    "calls":[
+      "00571df8"
+    ],
     "conv":"__watcallStack",
     "data_refs":[
       "005a4b20"
     ],
+    "instructions":41,
     "method":"filebuf_setbuf",
     "name":"crt_fstream.cpp_filebuf_setbuf_FUN_005722dc",
     "params":[

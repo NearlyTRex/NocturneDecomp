@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; Called Functions:
-;   support_trisock.cpp_bindSocketWrapper_FUN_00548ee0
+;   support_trisock.cpp_CSocket_dtor_FUN_00548ee0
 ;
 ; *****************************************************************************
 
@@ -19,8 +19,8 @@ section .text
     PUSH 0x0                            ; 004e98f4
     ADD EAX,0x170                       ; 004e98f6
     PUSH EAX                            ; 004e98fb
-    CALL support_trisock.cpp_bindSocketWrapper_FUN_00548ee0 ; 004e98fc
-        ;   XREF to: 00548ee0 (UNCONDITIONAL_CALL)  ; _SOCKET * support_trisock.cpp_bindSocketWrapper_FUN_00548ee0(_SOCKET * socket_handle, int flags)
+    CALL support_trisock.cpp_CSocket_dtor_FUN_00548ee0 ; 004e98fc
+        ;   XREF to: 00548ee0 (UNCONDITIONAL_CALL)  ; CSocket * support_trisock.cpp_CSocket_dtor_FUN_00548ee0(CSocket * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004e9901
     SUB EAX,0x170                       ; 004e9904
     RET                                 ; 004e9909

@@ -5,11 +5,15 @@
       "10001a80",
       "10002340"
     ],
+    "calls":[
+      "10002370"
+    ],
     "conv":"__cdecl",
     "data_refs":[
       "10012f24",
       "Entry Point"
     ],
+    "instructions":17,
     "method":"APIDLLkill",
     "name":"dll_dx7.cpp_APIDLLkill_FUN_10002460",
     "receiver":false,
@@ -23,11 +27,18 @@
   },
   {
     "addr":"10002be0",
+    "calls":[
+      "10002340",
+      "10002370",
+      "10002c50",
+      "EXTERNAL:00000044"
+    ],
     "conv":"__cdecl",
     "data_refs":[
       "10012f34",
       "Entry Point"
     ],
+    "instructions":32,
     "method":"APIDLLrestoreVideoMode",
     "name":"dll_dx7.cpp_APIDLLrestoreVideoMode_FUN_10002be0",
     "receiver":false,
@@ -49,6 +60,7 @@
       "10012eec",
       "Entry Point"
     ],
+    "instructions":15,
     "method":"APIDLLbeginScene",
     "name":"dll_dx7.cpp_APIDLLbeginScene_FUN_10002ce0",
     "receiver":false,
@@ -62,11 +74,16 @@
   },
   {
     "addr":"10002e60",
+    "calls":[
+      "10002340",
+      "10002c50"
+    ],
     "conv":"__cdecl",
     "data_refs":[
       "10012f60",
       "Entry Point"
     ],
+    "instructions":12,
     "method":"APIDLLunlockFrame",
     "name":"dll_dx7.cpp_APIDLLunlockFrame_FUN_10002e60",
     "receiver":false,
@@ -83,7 +100,12 @@
     "callers":[
       "10001020"
     ],
+    "calls":[
+      "10002340",
+      "10003090"
+    ],
     "conv":"__cdecl",
+    "instructions":80,
     "method":"createTexture",
     "name":"dll_dx7.cpp_createTexture_FUN_10002f60",
     "params":[
@@ -111,7 +133,11 @@
       "10001090",
       "10001180"
     ],
+    "calls":[
+      "10003a80"
+    ],
     "conv":"__cdecl",
+    "instructions":6,
     "method":"loadTexture",
     "name":"dll_dx7.cpp_loadTexture_FUN_100030e0",
     "params":[
@@ -140,7 +166,11 @@
       "10003f10",
       "100049f0"
     ],
+    "calls":[
+      "100047b0"
+    ],
     "conv":"__cdecl",
+    "instructions":23,
     "method":"setRenderStateCached",
     "name":"dll_dx7.cpp_setRenderStateCached_FUN_100037e0",
     "params":[
@@ -173,11 +203,15 @@
   },
   {
     "addr":"10004a60",
+    "calls":[
+      "100047b0"
+    ],
     "conv":"__cdecl",
     "data_refs":[
       "10012f58",
       "Entry Point"
     ],
+    "instructions":3,
     "method":"APIDLLsync",
     "name":"dll_dx7.cpp_APIDLLsync_FUN_10004a60",
     "receiver":false,
@@ -196,6 +230,7 @@
       "10012ef0",
       "Entry Point"
     ],
+    "instructions":35,
     "method":"APIDLLbuildCardList",
     "name":"dll_dx7.cpp_APIDLLbuildCardList_FUN_100052e0",
     "params":[
@@ -255,7 +290,11 @@
       "10001200",
       "10002500"
     ],
+    "calls":[
+      "10005520"
+    ],
     "conv":"__cdecl",
+    "instructions":8,
     "method":"fopen",
     "name":"crt_stdio.c_fopen_FUN_10005560",
     "params":[
@@ -292,7 +331,12 @@
       "10005d90",
       "10006c40"
     ],
+    "calls":[
+      "10005a10",
+      "EXTERNAL:0000000f"
+    ],
     "conv":"__cdecl",
+    "instructions":17,
     "method":"_unlock_file2",
     "name":"crt_stdio.c__unlock_file2_FUN_10005ae0",
     "params":[
@@ -327,7 +371,12 @@
     "callers":[
       "100054d0"
     ],
+    "calls":[
+      "10008830",
+      "100091b0"
+    ],
     "conv":"__cdecl",
+    "instructions":55,
     "method":"_stbuf",
     "name":"crt_stdio.c__stbuf_FUN_10005e60",
     "params":[
@@ -356,6 +405,7 @@
     "data_refs":[
       "100055b0"
     ],
+    "instructions":41,
     "method":"_cropzeros",
     "name":"crt_stdio.c__cropzeros_FUN_10006f60",
     "params":[
@@ -379,10 +429,15 @@
   },
   {
     "addr":"10006fe0",
+    "calls":[
+      "1000a200",
+      "1000a280"
+    ],
     "conv":"__cdecl",
     "data_refs":[
       "100055ba"
     ],
+    "instructions":25,
     "method":"_fassign",
     "name":"crt_stdio.c__fassign_FUN_10006fe0",
     "params":[
@@ -425,7 +480,11 @@
     "callers":[
       "100056a0"
     ],
+    "calls":[
+      "10007600"
+    ],
     "conv":"__cdecl",
+    "instructions":6,
     "method":"_cexit",
     "name":"crt_startup.c__cexit_FUN_100075e0",
     "receiver":false,
@@ -444,6 +503,7 @@
       "10007600"
     ],
     "conv":"__cdecl",
+    "instructions":16,
     "method":"_initterm",
     "name":"crt_startup.c__initterm_FUN_100076e0",
     "params":[
@@ -479,7 +539,12 @@
       "100056a0",
       "100057f0"
     ],
+    "calls":[
+      "10005930",
+      "EXTERNAL:00000019"
+    ],
     "conv":"__cdecl",
+    "instructions":8,
     "method":"_mtterm",
     "name":"crt_thread.c__mtterm_FUN_10007760",
     "receiver":false,
@@ -496,7 +561,13 @@
     "callers":[
       "100056a0"
     ],
+    "calls":[
+      "100058c0",
+      "10005b30",
+      "10008830"
+    ],
     "conv":"__cdecl",
+    "instructions":82,
     "method":"_setenvp",
     "name":"crt_env.c__setenvp_FUN_10007b60",
     "receiver":false,
@@ -514,6 +585,7 @@
       "10007c40"
     ],
     "conv":"__cdecl",
+    "instructions":193,
     "method":"parse_cmdline",
     "name":"crt_stdlib.c_parse_cmdline_FUN_10007ce0",
     "params":[
@@ -573,6 +645,7 @@
       "10007eb0"
     ],
     "conv":"__cdecl",
+    "instructions":15,
     "method":"getSystemCP",
     "name":"crt_locale.c_getSystemCP_FUN_100080e0",
     "receiver":false,
@@ -586,7 +659,18 @@
   },
   {
     "addr":"100081e0",
+    "calls":[
+      "10005b30",
+      "10008830",
+      "1000a930",
+      "EXTERNAL:00000027",
+      "EXTERNAL:00000028",
+      "EXTERNAL:00000029",
+      "EXTERNAL:0000002a",
+      "EXTERNAL:0000002b"
+    ],
     "conv":"__cdecl",
+    "instructions":203,
     "method":"__crtGetEnvironmentStringsW",
     "name":"crt_env.c___crtGetEnvironmentStringsW_FUN_100081e0",
     "receiver":false,
@@ -604,7 +688,17 @@
     "callers":[
       "100056a0"
     ],
+    "calls":[
+      "10005b30",
+      "10008830",
+      "EXTERNAL:00000027",
+      "EXTERNAL:00000029",
+      "EXTERNAL:0000002a",
+      "EXTERNAL:0000002b",
+      "EXTERNAL:0000002c"
+    ],
     "conv":"__cdecl",
+    "instructions":173,
     "method":"__crtGetEnvironmentStringsA",
     "name":"crt_env.c___crtGetEnvironmentStringsA_FUN_100083e0",
     "receiver":false,
@@ -628,7 +722,14 @@
       "1000b6a0",
       "1000e810"
     ],
+    "calls":[
+      "100059a0",
+      "10005a10",
+      "EXTERNAL:0000000c",
+      "EXTERNAL:0000000e"
+    ],
     "conv":"__cdecl",
+    "instructions":36,
     "method":"_lock_fhandle",
     "name":"crt_io.c__lock_fhandle_FUN_10008de0",
     "params":[
@@ -655,7 +756,13 @@
     "callers":[
       "10005f40"
     ],
+    "calls":[
+      "100059a0",
+      "10005a10",
+      "10009240"
+    ],
     "conv":"__cdecl",
+    "instructions":32,
     "method":"_wctomb",
     "name":"crt_locale.c__wctomb_FUN_100091e0",
     "params":[
@@ -691,6 +798,7 @@
       "10005f40"
     ],
     "conv":"__cdecl",
+    "instructions":43,
     "method":"_aulldiv",
     "name":"crt_math.c__aulldiv_FUN_100092e0",
     "params":[
@@ -742,6 +850,7 @@
       "10009890"
     ],
     "conv":"__cdecl",
+    "instructions":47,
     "method":"_hw_cw",
     "name":"crt_fpu.c__hw_cw_FUN_100099e0",
     "params":[
@@ -769,7 +878,12 @@
       "10009b70",
       "1000ff20"
     ],
+    "calls":[
+      "10009ac0",
+      "1000c340"
+    ],
     "conv":"__cdecl",
+    "instructions":81,
     "method":"_tolower_lk",
     "name":"crt_ctype.c__tolower_lk_FUN_10009be0",
     "params":[
@@ -797,6 +911,7 @@
       "10009f60"
     ],
     "conv":"__cdecl",
+    "instructions":12,
     "method":"_CopyMan",
     "name":"crt_math.c__CopyMan_FUN_10009e60",
     "params":[
@@ -832,7 +947,15 @@
       "1000a130",
       "1000a150"
     ],
+    "calls":[
+      "10009db0",
+      "10009e60",
+      "10009e80",
+      "10009e90",
+      "10009eb0"
+    ],
     "conv":"__cdecl",
+    "instructions":157,
     "method":"_ld12cvt",
     "name":"crt_math.c__ld12cvt_FUN_10009f60",
     "params":[
@@ -876,6 +999,7 @@
       "1000a350"
     ],
     "conv":"__cdecl",
+    "instructions":70,
     "method":"_dtold",
     "name":"crt_math.c__dtold_FUN_1000a3e0",
     "params":[
@@ -910,7 +1034,13 @@
     "callers":[
       "1000ac10"
     ],
+    "calls":[
+      "10005b30",
+      "10008830",
+      "1000b150"
+    ],
     "conv":"__cdecl",
+    "instructions":120,
     "method":"setlocale_set_cat",
     "name":"crt_locale.c_setlocale_set_cat_FUN_1000aee0",
     "params":[
@@ -945,7 +1075,13 @@
     "callers":[
       "1000ac10"
     ],
+    "calls":[
+      "10005b30",
+      "10008830",
+      "1000b330"
+    ],
     "conv":"__cdecl",
+    "instructions":87,
     "method":"setlocale_get_all",
     "name":"crt_locale.c_setlocale_get_all_FUN_1000b060",
     "receiver":false,
@@ -963,7 +1099,19 @@
       "100093f0",
       "1000b4f0"
     ],
+    "calls":[
+      "10005600",
+      "10008a20",
+      "10008a30",
+      "10008cd0",
+      "10008fb0",
+      "1000a670",
+      "1000e880",
+      "EXTERNAL:00000012",
+      "EXTERNAL:00000036"
+    ],
     "conv":"__cdecl",
+    "instructions":107,
     "method":"_chsize_lk",
     "name":"crt_io.c__chsize_lk_FUN_1000b560",
     "params":[
@@ -998,7 +1146,13 @@
     "callers":[
       "1000d3a0"
     ],
+    "calls":[
+      "10005b30",
+      "10008830",
+      "1000f6e0"
+    ],
     "conv":"__cdecl",
+    "instructions":93,
     "method":"_maketimefmt",
     "name":"crt_time.c__maketimefmt_FUN_1000d960",
     "params":[
@@ -1032,12 +1186,16 @@
   },
   {
     "addr":"1000df60",
+    "calls":[
+      "10005b30"
+    ],
     "conv":"__cdecl",
     "data_refs":[
       "1000dd05",
       "1000dd49",
       "1000dd9a"
     ],
+    "instructions":36,
     "method":"__free_lconv_mon",
     "name":"crt_locale.c___free_lconv_mon_FUN_1000df60",
     "params":[
@@ -1066,6 +1224,7 @@
       "1000e710"
     ],
     "conv":"__cdecl",
+    "instructions":8,
     "method":"GetLcidFromDefault",
     "name":"crt_locale.c_GetLcidFromDefault_FUN_1000e760",
     "params":[
@@ -1093,6 +1252,7 @@
       "1000f2d0"
     ],
     "conv":"__cdecl",
+    "instructions":46,
     "method":"_store_number_rev",
     "name":"crt_time.c__store_number_rev_FUN_1000f360",
     "params":[
@@ -1138,6 +1298,15 @@
       "1000d960",
       "1000ddc0"
     ],
+    "calls":[
+      "10005b30",
+      "10008830",
+      "10009ac0",
+      "1000a9f0",
+      "1000f9a0",
+      "1000fad0",
+      "EXTERNAL:00000012"
+    ],
     "conv":"__cdecl",
     "data_refs":[
       "1000da84",
@@ -1145,6 +1314,7 @@
       "1000daac",
       "1000e002"
     ],
+    "instructions":157,
     "method":"__getlocaleinfo",
     "name":"crt_locale.c___getlocaleinfo_FUN_1000f6e0",
     "params":[
@@ -1198,7 +1368,11 @@
       "1000ff10",
       "10010050"
     ],
+    "calls":[
+      "10009ac0"
+    ],
     "conv":"__cdecl",
+    "instructions":70,
     "method":"atol",
     "name":"crt_stdlib.c_atol_FUN_1000fe60",
     "params":[
@@ -1225,7 +1399,11 @@
     "callers":[
       "10010330"
     ],
+    "calls":[
+      "100105c0"
+    ],
     "conv":"__cdecl",
+    "instructions":205,
     "method":"_isindst_lk",
     "name":"crt_time.c__isindst_lk_FUN_10010360",
     "params":[
@@ -1254,6 +1432,7 @@
       "10010970"
     ],
     "conv":"__cdecl",
+    "instructions":21,
     "method":"_wcsnlen",
     "name":"crt_string.c__wcsnlen_FUN_10010be0",
     "params":[
@@ -1290,7 +1469,18 @@
     "callers":[
       "10010d30"
     ],
+    "calls":[
+      "10005b30",
+      "10008830",
+      "10010d30",
+      "100115b0",
+      "10011610",
+      "10011680",
+      "100116f0",
+      "EXTERNAL:00000006"
+    ],
     "conv":"__cdecl",
+    "instructions":210,
     "method":"__crtsetenv",
     "name":"crt_env.c___crtsetenv_FUN_10011360",
     "params":[

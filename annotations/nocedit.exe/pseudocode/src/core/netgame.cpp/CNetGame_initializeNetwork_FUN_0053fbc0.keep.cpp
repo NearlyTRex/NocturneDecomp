@@ -10,37 +10,37 @@
 int __cdecl core_netgame_cpp_CNetGame_initializeNetwork_FUN_0053fbc0(CNetGame *this_ptr)
 
 {
-  _SOCKET *socket_handle;
+  CSocket *socket_handle;
   int iVar1;
   
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Initializing network...");
   socket_handle = &this_ptr->socket;
-  support_trisock_cpp_bindAndInvalidateSocket_FUN_005e1d20(socket_handle);
-  iVar1 = support_trisock_cpp_createUDPSocket_FUN_005e1b40(socket_handle);
+  support_trisock_cpp_CSocket_closeSocket_FUN_005e1d20(socket_handle);
+  iVar1 = support_trisock_cpp_CSocket_createUDPSocket_FUN_005e1b40(socket_handle);
   if (iVar1 == 0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't create datagram socket");
     return 0;
   }
-  iVar1 = support_trisock_cpp_setSocketBlocking_FUN_005e1e50(socket_handle,0);
+  iVar1 = support_trisock_cpp_CSocket_setSocketBlocking_FUN_005e1e50(socket_handle,0);
   if (iVar1 == 0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't turn off blocking mode for socket");
     return 0;
   }
 #if !NOCTURNE_AUTHENTIC_NET_CONFIG
-  iVar1 = support_trisock_cpp_bindSocket_FUN_005e1b80
+  iVar1 = support_trisock_cpp_CSocket_bindSocket_FUN_005e1b80
                     (socket_handle,(uint16_t)nocturne_net_port(0x1ddf));
 #else
-  iVar1 = support_trisock_cpp_bindSocket_FUN_005e1b80(socket_handle,0x1ddf);
+  iVar1 = support_trisock_cpp_CSocket_bindSocket_FUN_005e1b80(socket_handle,0x1ddf);
 #endif
   if (iVar1 == 0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't bind UDP socket");
     return 0;
   }
-  iVar1 = support_trisock_cpp_getSocketName_FUN_005e1df0
+  iVar1 = support_trisock_cpp_CSocket_getSocketName_FUN_005e1df0
                     (socket_handle,&this_ptr->players[this_ptr->local_player_index].addr);
   if (iVar1 != 0) {
     core_netgame_cpp_CNetGame_flushIncomingPackets_FUN_00540550(this_ptr);

@@ -5,7 +5,7 @@ VIRTUAL FILE COMPLETION REPORT
 SUMMARY
 --------------------------------------------------
 Total virtual files: 203
-Total functions: 4922
+Total functions: 4921
 Clean functions: 2533 (51.5%)
 Files at 100%: 10
 Files at 90%+: 12
@@ -213,13 +213,6 @@ FILES AT 50-89%
            - engine_special.cpp_toggle_FUN_00532ba0 (49 lines) [pointer_cast, pointer_truncation, signed_shift_global_idiom, unaffected_reg, unrolled_memcpy]
            - engine_special.cpp_CExternalRenderer_validate_FUN_00532df0 (59 lines) [shadow_pointer_walk, unknown_field]
            - engine_special.cpp_switchRenderer_FUN_00532f50 (20 lines) [unrolled_strcpy]
-   73.7% | engine/dosio.cpp
-         14/19 clean, 5 remaining
-           - engine_dosio.cpp_getRelativeFilePath_FUN_00456700 (20 lines) [unrolled_strcpy]
-           - engine_dosio.cpp_addGetFileInfoHook_FUN_00456750 (12 lines) [raw_address_pointer_store, warning_overlapping_globals]
-           - engine_dosio.cpp_findFile_FUN_004567a0 (24 lines) [raw_address_pointer_store, unresolved_funcptr, warning_overlapping_globals]
-           - engine_dosio.cpp_findFileNormally_FUN_00456800 (35 lines) [unrolled_strcpy]
-           - engine_dosio.cpp_reopenFileStream_FUN_00456b20 (29 lines) [pointer_cast]
    73.5% | core/motion.cpp
          25/34 clean, 9 remaining
            - core_motion.cpp_FUN_004e08e0 (11 lines) [unnamed_param]
@@ -252,6 +245,13 @@ FILES AT 50-89%
            - core_anvil.cpp_CAnvil_ctor_FUN_0040f560 (31 lines) [negative_offset, pointer_cast]
            - core_anvil.cpp_CAnvil_process_FUN_0040f610 (45 lines) [unrolled_memcpy, warning_type_propagation]
            - core_anvil.cpp_CAnvil_getBoundingBox_FUN_0040f860 (14 lines) [unrolled_memcpy]
+   72.2% | engine/dosio.cpp
+         13/18 clean, 5 remaining
+           - engine_dosio.cpp_getRelativeFilePath_FUN_00456700 (20 lines) [unrolled_strcpy]
+           - engine_dosio.cpp_addGetFileInfoHook_FUN_00456750 (12 lines) [raw_address_pointer_store, warning_overlapping_globals]
+           - engine_dosio.cpp_findFile_FUN_004567a0 (24 lines) [raw_address_pointer_store, unresolved_funcptr, warning_overlapping_globals]
+           - engine_dosio.cpp_findFileNormally_FUN_00456800 (35 lines) [unrolled_strcpy]
+           - engine_dosio.cpp_reopenFileStream_FUN_00456b20 (29 lines) [pointer_cast]
    72.2% | engine/ini.cpp
          13/18 clean, 5 remaining
            - engine_ini.cpp_CIni_getProfileString_FUN_004bd0a0 (107 lines) [unaffected_reg, unrolled_strchr, unrolled_strcpy, unrolled_strlen]
@@ -309,6 +309,17 @@ FILES AT 50-89%
            - core_larva.cpp_CLarva_process_FUN_004c4970 (345 lines) [dropped_fyl2x, fast_sqrt_inline, inline_exp_idiom, self_copy_guard, stack_param, stack_ref, unknown_type, unrolled_memcpy, unrolled_memset, warning_unreachable]
            - core_larva.cpp_CLarva_getTargetPoints_FUN_004c54f0 (14 lines) [unrolled_memcpy]
            - core_larva.cpp_CLarva_dtor_FUN_004c5540 (32 lines) [negative_offset]
+   70.0% | support/trisock.cpp
+         21/30 clean, 9 remaining
+           - support_trisock.cpp_staticInit_FUN_00548aa0 (6 lines) [undefined_data]
+           - support_trisock.cpp_parseIPAddress_FUN_00548af0 (14 lines) [stack_param]
+           - support_trisock.cpp_buildIPAddressOrDie_FUN_00548b40 (14 lines) [stack_param]
+           - support_trisock.cpp_buildSockaddrIn_FUN_00548dc0 (23 lines) [pointer_cast, stack_alignment_array]
+           - support_trisock.cpp_CSocket_connectSocket_FUN_00548fc0 (25 lines) [pointer_cast, pointer_truncation, stack_alignment_array]
+           - support_trisock.cpp_CSocket_receiveSocketData_FUN_00549010 (27 lines) [pointer_cast, pointer_truncation]
+           - support_trisock.cpp_CSocket_sendSocketData_FUN_00549090 (26 lines) [pointer_cast, pointer_truncation, stack_alignment_array]
+           - support_trisock.cpp_CSocket_acceptConnection_FUN_00549170 (26 lines) [pointer_cast, pointer_truncation]
+           - support_trisock.cpp_CSocket_getSocketName_FUN_005491e0 (22 lines) [pointer_cast, pointer_truncation]
    69.6% | core/door.cpp
          16/23 clean, 7 remaining
            - core_door.cpp_CDoor_ctor_FUN_00455050 (109 lines) [negative_offset, pointer_cast, pointer_truncation, unrolled_strcpy]
@@ -395,18 +406,6 @@ FILES AT 50-89%
            - core_tommygun.cpp_CTommyGun_ctor_FUN_00545b90 (22 lines) [warning_overlapping_globals]
            - core_tommygun.cpp_CTommyGun_fire_FUN_00545c30 (253 lines) [stack_param, stack_ref, sub84_truncation, suspect_float, unknown_field, unrolled_memcpy]
            - core_tommygun.cpp_CTommyGun_process_FUN_005464a0 (75 lines) [bitcast_double_pair, sub84_truncation]
-   66.7% | support/trisock.cpp
-         20/30 clean, 10 remaining
-           - support_trisock.cpp_staticInit_FUN_00548aa0 (6 lines) [undefined_data]
-           - support_trisock.cpp_parseIPAddress_FUN_00548af0 (14 lines) [stack_param]
-           - support_trisock.cpp_buildIPAddressOrDie_FUN_00548b40 (14 lines) [stack_param]
-           - support_trisock.cpp_buildSockaddrIn_FUN_00548dc0 (23 lines) [pointer_cast, stack_alignment_array]
-           - support_trisock.cpp_formatSocketAddress_FUN_00548e20 (21 lines) [pointer_cast, pointer_truncation]
-           - support_trisock.cpp_connectSocket_FUN_00548fc0 (25 lines) [pointer_cast, pointer_truncation, stack_alignment_array]
-           - support_trisock.cpp_receiveSocketData_FUN_00549010 (27 lines) [pointer_cast, pointer_truncation]
-           - support_trisock.cpp_performSocketOperation_FUN_00549090 (26 lines) [pointer_cast, pointer_truncation, stack_alignment_array]
-           - support_trisock.cpp_acceptConnection_FUN_00549170 (23 lines) [pointer_cast, pointer_truncation]
-           - support_trisock.cpp_getSocketName_FUN_005491e0 (22 lines) [pointer_cast, pointer_truncation]
    64.7% | core/boxactor.cpp
          22/34 clean, 12 remaining
            - core_boxactor.cpp_CBoxActor_ctor_FUN_0041e300 (39 lines) [negative_offset, pointer_cast, suspect_float, unrolled_memset]
@@ -1945,7 +1944,7 @@ FILES BELOW 50%
            - core_netgame.cpp_findSimFrame_FUN_004e96e0 (18 lines) [warning_overlapping_globals]
            - core_netgame.cpp_allocSimFrame_FUN_004e9730 (31 lines) [warning_overlapping_globals]
            - core_netgame.cpp_purgeOldSimFrames_FUN_004e97e0 (26 lines) [pointer_stride_bytecount, undefined_data, warning_overlapping_globals]
-           - core_netgame.cpp_CNetGame_ctor_FUN_004e9860 (28 lines) [pointer_cast, pointer_truncation]
+           - core_netgame.cpp_CNetGame_ctor_FUN_004e9860 (28 lines) [negative_offset, pointer_cast, pointer_truncation]
            - core_netgame.cpp_CNetGame_init_FUN_004e9910 (33 lines) [unrolled_strcpy, warning_overlapping_globals]
            - core_netgame.cpp_CNetGame_initializeNetworkToHost_FUN_004e99f0 (29 lines) [undefined_data]
            - core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_004e9a90 (126 lines) [undefined_data, unknown_field, unrolled_strcpy, warning_overlapping_globals]
@@ -1957,7 +1956,7 @@ FILES BELOW 50%
            - core_netgame.cpp_CNetGame_processPacket_FUN_004ea830 (416 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, undefined_data, unrolled_memcpy, unrolled_strcpy, warning_overlapping_globals, warning_unreachable]
            - core_netgame.cpp_CNetGame_findPlayerByAddr_FUN_004eb3f0 (17 lines) [shadow_pointer_walk]
            - core_netgame.cpp_CNetGame_addPlayer_FUN_004eb440 (48 lines) [pointer_cast, pointer_truncation, unrolled_strcpy, warning_overlapping_globals]
-           - core_netgame.cpp_CNetGame_runLobby_FUN_004eb520 (285 lines) [raw_address_constant, shadow_pointer_walk, undefined_data, unrolled_strcpy, warning_overlapping_globals]
+           - core_netgame.cpp_CNetGame_runLobby_FUN_004eb520 (287 lines) [raw_address_constant, shadow_pointer_walk, undefined_data, unrolled_strcpy, warning_overlapping_globals]
            - core_netgame.cpp_CNetGame_updatePing_FUN_004ebe10 (63 lines) [warning_overlapping_globals]
            - core_netgame.cpp_CNetGame_processChatOut_FUN_004ebfd0 (58 lines) [pointer_cast, pointer_truncation, undefined_data, warning_overlapping_globals]
            - core_netgame.cpp_CNetGame_removeChatOut_FUN_004ec180 (121 lines) [pointer_cast, pointer_stride_bytecount, pointer_truncation, shadow_pointer_walk, undefined_data, warning_overlapping_globals]
@@ -2138,7 +2137,7 @@ FILES BELOW 50%
          3/9 clean, 6 remaining
            - core_main.c_displayErrorAndQuit_FUN_004c8440 (43 lines) [stack_ref, undefined_data, unrolled_strchr, warning_noreturn]
            - core_main.c_enterMainGameMenu_FUN_004c85e0 (182 lines) [pointer_cast, pointer_truncation, raw_address_pointer_store, undefined_data, unrolled_strcpy]
-           - core_main.c_initializeGameSystems_FUN_004c85f0 (509 lines) [pointer_cast, pointer_truncation, stack_ref, undefined_data, unrolled_strcat, unrolled_strcpy, unrolled_strlen, warning_overlapping_globals]
+           - core_main.c_initializeGameSystems_FUN_004c85f0 (508 lines) [pointer_cast, pointer_truncation, stack_ref, undefined_data, unrolled_strcat, unrolled_strcpy, unrolled_strlen, warning_overlapping_globals]
            - core_main.c_waitWithSkip_FUN_004c8e10 (35 lines) [warning_overlapping_globals]
            - core_main.c_showPromoScreen_FUN_004c8eb0 (58 lines) [warning_overlapping_globals]
            - core_main.c_finalizeGameSystems_FUN_004c90e0 (84 lines) [stack_ref, warning_overlapping_globals]

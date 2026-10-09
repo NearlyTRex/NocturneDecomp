@@ -11,7 +11,7 @@ manual annotation work.
 SUMMARY STATISTICS
 ====================================================================================================
 
-  Total functions analyzed:          4,922
+  Total functions analyzed:          4,921
   Unnamed functions (FUN_):          77 ( 1.6%)
   Functions with unnamed params:     15 ( 0.3%)
   Functions with type issues:        1,667 (33.9%)
@@ -5804,7 +5804,7 @@ Undefined types in variables (1604)
     Locals:  local_24 (undefined4), local_20 (undefined), local_1f (undefined1)
     Suggested: Resolve undefined types to concrete types
 
-  getFileSizeWithFinder
+  getFileAttributes
     Address: 0x004569a0  File: engine/dosio.cpp
     Locals:  local_32c (undefined), local_118 (undefined), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -6986,24 +6986,24 @@ Undefined types in variables (1604)
     Locals:  local_18 (undefined1), local_14 (undefined)
     Suggested: Resolve undefined types to concrete types
 
-  acceptConnection
+  CSocket_acceptConnection
     Address: 0x00549170  File: support/trisock.cpp
     Locals:  local_20 (undefined), local_8 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  connectSocket
+  CSocket_connectSocket
     Address: 0x00548fc0  File: support/trisock.cpp
     Locals:  local_28 (undefined), local_18 (undefined)
     Suggested: Resolve undefined types to concrete types
 
-  performSocketOperation
-    Address: 0x00549090  File: support/trisock.cpp
-    Locals:  local_2c (undefined), local_1c (undefined)
-    Suggested: Resolve undefined types to concrete types
-
-  receiveSocketData
+  CSocket_receiveSocketData
     Address: 0x00549010  File: support/trisock.cpp
     Locals:  local_2c (undefined), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CSocket_sendSocketData
+    Address: 0x00549090  File: support/trisock.cpp
+    Locals:  local_2c (undefined), local_1c (undefined)
     Suggested: Resolve undefined types to concrete types
 
   convertPaletteToDirectColor

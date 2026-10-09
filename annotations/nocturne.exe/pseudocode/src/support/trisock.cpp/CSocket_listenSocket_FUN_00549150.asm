@@ -1,0 +1,27 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; int __cdecl support_trisock_cpp_CSocket_listenSocket_FUN_00549150(CSocket *this_ptr)
+;
+; Parameters:
+; CSocket *        Stack[0x4]:4   this_ptr
+;
+; Called Functions:
+;   crt_wsock32.c_listen
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EAX,dword ptr [ESP + 0x4]       ; 00549150
+        ;   Label: support_trisock.cpp_CSocket_listenSocket_FUN_00549150
+    PUSH 0x1                            ; 00549154
+    MOV EDX,dword ptr [EAX]             ; 00549156
+    PUSH EDX                            ; 00549158
+    CALL crt_wsock32.c_listen           ; 00549159
+        ;   XREF to: 00574bcc (UNCONDITIONAL_CALL)  ; int crt_wsock32.c_listen(_SOCKET s, int backlog)
+    TEST EAX,EAX                        ; 0054915e
+    SETZ AL                             ; 00549160
+    AND EAX,0xff                        ; 00549163
+    RET                                 ; 00549168
+

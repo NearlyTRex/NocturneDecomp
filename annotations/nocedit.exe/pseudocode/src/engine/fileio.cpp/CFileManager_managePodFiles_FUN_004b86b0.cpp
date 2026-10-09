@@ -578,8 +578,8 @@ LAB_004b9590:
                 (local_44[local_20].count_newer_local == 0)) &&
                ((local_44[local_20].is_mounted != 0 &&
                 (((g_VersionControlDirectory[0] != '\0' &&
-                  (uVar5 = engine_dosio_cpp_getFileSizeWithFinder_FUN_00481960((char *)0x0,local_24)
-                  , -1 < (int)uVar5)) && ((uVar5 & 8) == 0)))))) {
+                  (uVar5 = engine_dosio_cpp_getFileAttributes_FUN_00481960((char *)0x0,local_24),
+                  -1 < (int)uVar5)) && ((uVar5 & 8) == 0)))))) {
               engine_dosio_cpp_setFileAttributes_FUN_004819f0(local_24,(byte)uVar5 | 8);
             }
           }
@@ -611,7 +611,7 @@ LAB_004b9590:
             else {
               pcVar12 = local_44[local_20].pod_name;
               if (g_VersionControlDirectory[0] == '\0') {
-                uVar5 = engine_dosio_cpp_getFileSizeWithFinder_FUN_00481960((char *)0x0,pcVar12);
+                uVar5 = engine_dosio_cpp_getFileAttributes_FUN_00481960((char *)0x0,pcVar12);
                 if ((-1 < (int)uVar5) && ((uVar5 & 8) != 0)) {
                   shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                             (g_CEditorToolsPtr,"%s exists and is read only.  Cannot copy POD.",pcVar12);
@@ -619,7 +619,7 @@ LAB_004b9590:
                 }
               }
               else {
-                uVar5 = engine_dosio_cpp_getFileSizeWithFinder_FUN_00481960((char *)0x0,pcVar12);
+                uVar5 = engine_dosio_cpp_getFileAttributes_FUN_00481960((char *)0x0,pcVar12);
                 pcVar3 = local_44[local_20].checked_out_by;
                 if (-1 < (int)uVar5) {
                   if (((pcVar3 == (char *)0x0) || (*pcVar3 == '\0')) ||

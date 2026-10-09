@@ -4861,6 +4861,10 @@
       "type":"typedef"
     },
     {
+      "name":"CSocket",
+      "type":"struct"
+    },
+    {
       "name":"CNetGame",
       "type":"struct"
     },
@@ -34814,7 +34818,7 @@
           "len":4,
           "name":"socket",
           "offset":368,
-          "type":"_SOCKET"
+          "type":"CSocket"
         }
       ],
       "importable":true,
@@ -38006,6 +38010,24 @@
       "importable":true,
       "len":44,
       "name":"CSmokeParticle",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"handle",
+          "offset":0,
+          "type":"_SOCKET"
+        }
+      ],
+      "importable":true,
+      "len":4,
+      "name":"CSocket",
       "pack":false,
       "type":"struct"
     },
@@ -51957,7 +51979,7 @@
         },
         {
           "len":2,
-          "name":"other",
+          "name":"padding",
           "offset":6,
           "type":"ushort"
         }
