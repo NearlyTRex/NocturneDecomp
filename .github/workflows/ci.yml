@@ -62,7 +62,13 @@ jobs:
     permissions:
       contents: read
     with:
-      apt-packages: cmake clang clang-format clang-tidy llvm ninja-build
+      # SDL3 needs the same X11/Wayland/audio headers as the native lane.
+      apt-packages: >-
+        cmake clang clang-format clang-tidy llvm ninja-build pkg-config
+        libx11-dev libxext-dev libxcursor-dev libxi-dev libxfixes-dev
+        libxrandr-dev libxss-dev libwayland-dev libxkbcommon-dev
+        wayland-protocols libegl-dev libdecor-0-dev libpulse-dev
+        libasound2-dev
       cache-paths: build/recreation/ci/_deps
       cache-key-files: recreation/CMakeLists.txt
       cache-key: recreation-ci
