@@ -62,11 +62,11 @@ jobs:
     permissions:
       contents: read
     with:
-      # SDL3 needs the same X11/Wayland/audio headers as the native lane.
+      # SDL3 needs the native lane's X11/Wayland/audio headers plus XTest.
       apt-packages: >-
         cmake clang clang-format clang-tidy llvm ninja-build pkg-config
         libx11-dev libxext-dev libxcursor-dev libxi-dev libxfixes-dev
-        libxrandr-dev libxss-dev libwayland-dev libxkbcommon-dev
+        libxrandr-dev libxss-dev libxtst-dev libwayland-dev libxkbcommon-dev
         wayland-protocols libegl-dev libdecor-0-dev libpulse-dev
         libasound2-dev
       cache-paths: build/recreation/ci/_deps
