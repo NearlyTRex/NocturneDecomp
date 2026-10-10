@@ -27,9 +27,9 @@ TEST(EngineSpecialFunctions, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&renderScanline), void (*)(SSoftwareEdge *, SSoftwareEdge *, int)>);
     static_assert(std::is_same_v<decltype(&transformAndProjectPoint),
-                                 void (*)(SProjectedVertex *, common::CVector3i *)>);
+                                 void (*)(platform::SProjectedVertex *, common::CVector3i *)>);
     static_assert(std::is_same_v<decltype(&transformPoint),
-                                 void (*)(SProjectedVertex *, common::CVector3i *)>);
+                                 void (*)(platform::SProjectedVertex *, common::CVector3i *)>);
     static_assert(std::is_same_v<decltype(&loadExternalRenderer), int (*)()>);
     static_assert(std::is_same_v<decltype(&kill), int (*)()>);
     static_assert(std::is_same_v<decltype(&lockFrame), int (*)()>);

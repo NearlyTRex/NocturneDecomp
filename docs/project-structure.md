@@ -75,6 +75,7 @@ and `IAudioDevice` pulls the mix as it plays.
 | `platform/sdl/` | The adapters behind those interfaces (`CSdlWindow` implements `IWindow`). The only code that includes SDL or OS headers; they hold no logic, and build only with `NOCTURNE_RECREATION_GAME` into `nocturne_platform_sdl` |
 | `main.cpp` | The `nocturne` executable: constructs the adapters and runs the loop |
 | `common/serial/` | `CBinaryReader` / `CBinaryWriter`: every file and wire format is read and written through these, little-endian with explicit widths |
+| `common/render/` | The hardware renderer's GL-free core, ported from the decomp's `trigl`: render flags to pipeline state, engine vertices to screen vertices, polygon batching, texture palette expansion |
 | `common/input/`, `common/text/`, `common/net/`, `common/video/` | What the adapters would otherwise compute, to the Win32 behaviour the original saw: the HID-to-set-1 scancode table and `WM_CHAR` control characters, the FindFirstFile wildcard match, UTF-8 to Windows-1252, IPv4 address bytes, the framebuffer formats and 8-bit palette expansion, and the letterbox with its mouse mapping |
 | `tests/mocks/` | gMock implementations of the platform interfaces and seam factories, shared by all tests |
 | `tests/` | GoogleTest tests, mirroring the source paths |

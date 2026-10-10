@@ -69,9 +69,9 @@ TEST(CDemonSet, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDemonSet::renderFaceListOrEnvMap),
                                  void (CDemonSet::*)(platform::SInputFace *, int, int)>);
     static_assert(std::is_same_v<decltype(&CDemonSet::renderPrimitiveList),
-                                 void (CDemonSet::*)(engine::SMRGLHeaderPrimitive *, int)>);
+                                 void (CDemonSet::*)(platform::SMRGLHeaderPrimitive *, int)>);
     static_assert(std::is_same_v<decltype(&CDemonSet::renderTexturedPrimitiveListVariant),
-                                 void (CDemonSet::*)(engine::SMRGLHeaderPrimitive *, int)>);
+                                 void (CDemonSet::*)(platform::SMRGLHeaderPrimitive *, int)>);
     static_assert(
         std::is_same_v<decltype(&CDemonSet::markMirrorCameraDirty), void (CDemonSet::*)()>);
     static_assert(

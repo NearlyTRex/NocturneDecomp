@@ -13,7 +13,7 @@ void replaceWWithDepth(platform::SRenderVertex *vertices, int vertex_count);
 int calculateTriangleWindingOrder(platform::SRenderVertex *v0, platform::SRenderVertex *v1,
                                   platform::SRenderVertex *v2);
 int getTriangleWindingFromIndices1(SMRGLPrimitiveTriangle *triangle);
-int getTriangleWindingFromPackedIndices(STrianglePackedIndices *triangle);
+int getTriangleWindingFromPackedIndices(platform::STrianglePackedIndices *triangle);
 void renderPolygonSoftware(platform::SRenderVertex *vertices, int vertex_count);
 void renderIndexedPolygonSoftware(int *vertex_indices, int vertex_count);
 void renderScanlinePolygon(platform::SRenderVertex *vertices, int vertex_count);

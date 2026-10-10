@@ -26,10 +26,10 @@ TEST(CDemonCamera, Constructors) {
 TEST(CDemonCamera, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CDemonCamera::setupPerspectiveAndFog),
-                       void (CDemonCamera::*)(common::CVector3f *, engine::SProjectedVertex *)>);
+                       void (CDemonCamera::*)(common::CVector3f *, platform::SProjectedVertex *)>);
     static_assert(
         std::is_same_v<decltype(&CDemonCamera::getFogValueAtPosition),
-                       int (CDemonCamera::*)(common::CVector3i *, engine::SProjectedVertex *)>);
+                       int (CDemonCamera::*)(common::CVector3i *, platform::SProjectedVertex *)>);
     static_assert(
         std::is_same_v<decltype(&CDemonCamera::saveAlphaTransform), void (CDemonCamera::*)(int)>);
     static_assert(

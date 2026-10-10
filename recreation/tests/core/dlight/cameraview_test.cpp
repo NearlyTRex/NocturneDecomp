@@ -18,10 +18,10 @@ TEST(CCameraView, IsConcrete) {
 TEST(CCameraView, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CCameraView::setupPerspectiveAndFog),
-                       void (CCameraView::*)(common::CVector3f *, engine::SProjectedVertex *)>);
+                       void (CCameraView::*)(common::CVector3f *, platform::SProjectedVertex *)>);
     static_assert(
         std::is_same_v<decltype(&CCameraView::getFogValueAtPosition),
-                       int (CCameraView::*)(common::CVector3i *, engine::SProjectedVertex *)>);
+                       int (CCameraView::*)(common::CVector3i *, platform::SProjectedVertex *)>);
     static_assert(
         std::is_same_v<decltype(&CCameraView::saveAlphaTransform), void (CCameraView::*)(int)>);
 }

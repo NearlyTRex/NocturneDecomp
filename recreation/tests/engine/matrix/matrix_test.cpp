@@ -15,7 +15,8 @@ TEST(EngineMatrixFunctions, PublicInterface) {
     static_assert(std::is_same_v<decltype(&invertTransformMatrix), void (*)()>);
     static_assert(std::is_same_v<decltype(&transformToCache), void (*)(int, common::CVector3i *)>);
     static_assert(std::is_same_v<decltype(&projectCachedPoint), void (*)(int)>);
-    static_assert(std::is_same_v<decltype(&projectTransformedPoint), void (*)(SProjectedVertex *)>);
+    static_assert(
+        std::is_same_v<decltype(&projectTransformedPoint), void (*)(platform::SProjectedVertex *)>);
     static_assert(std::is_same_v<decltype(&projectCachedPointUnchecked), void (*)(int)>);
     static_assert(
         std::is_same_v<decltype(&matrixPushAndTransform), void (*)(int, int, int, int, int, int)>);

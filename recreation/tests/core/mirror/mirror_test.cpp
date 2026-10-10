@@ -20,11 +20,11 @@ TEST(CMirror, PublicInterface) {
                                  void (CMirror::*)(common::CVector3f *, common::CVector3f *,
                                                    common::CVector3f *, common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CMirror::clipAndRenderReflectedPrimitive),
-                                 void (CMirror::*)(engine::SMRGLHeaderPrimitive *)>);
+                                 void (CMirror::*)(platform::SMRGLHeaderPrimitive *)>);
     static_assert(std::is_same_v<decltype(&CMirror::renderReflectedPrimitive),
-                                 int (CMirror::*)(engine::SMRGLHeaderPrimitive *)>);
+                                 int (CMirror::*)(platform::SMRGLHeaderPrimitive *)>);
     static_assert(std::is_same_v<decltype(&CMirror::renderMirroredPrimitive),
-                                 void (CMirror::*)(engine::SMRGLHeaderPrimitive *)>);
+                                 void (CMirror::*)(platform::SMRGLHeaderPrimitive *)>);
     static_assert(std::is_same_v<decltype(&CMirror::renderMirrorQuadDepth), void (CMirror::*)()>);
 }
 

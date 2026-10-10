@@ -2,7 +2,7 @@
 
 #include "common/fwd.h"
 #include "core/fwd.h"
-#include "engine/fwd.h"
+#include "platform/fwd.h"
 
 namespace nocturne::core {
 
@@ -13,7 +13,7 @@ public:
 
     void free();
     void addPartFromPolygon(int vertex_count, common::CVector3i *vertex_data, int poly_count,
-                            engine::SMRGLHeaderPrimitive *poly_data, int poly_stride,
+                            platform::SMRGLHeaderPrimitive *poly_data, int poly_stride,
                             SMRGLTextureModel *texture_list, int *texture_index_list);
     void addPartFromDeformableModel(CDeformableModelInstance *model_ptr);
     void addPartFromKeyFramedModel(CKeyFramedModel *model_ptr, int frame_index);

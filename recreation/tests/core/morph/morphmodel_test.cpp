@@ -19,7 +19,7 @@ TEST(CMorphModel, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CMorphModel::free), void (CMorphModel::*)()>);
     static_assert(std::is_same_v<decltype(&CMorphModel::addPartFromPolygon),
                                  void (CMorphModel::*)(int, common::CVector3i *, int,
-                                                       engine::SMRGLHeaderPrimitive *, int,
+                                                       platform::SMRGLHeaderPrimitive *, int,
                                                        SMRGLTextureModel *, int *)>);
     static_assert(std::is_same_v<decltype(&CMorphModel::addPartFromDeformableModel),
                                  void (CMorphModel::*)(CDeformableModelInstance *)>);

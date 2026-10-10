@@ -56,6 +56,13 @@ PLATFORM_TYPES = {
     "SMRGLPrimitiveQuad": "platform/renderer.cpp",
     "SMRGLTextureBasic": "platform/renderer.cpp",
     "SRenderVertex": "platform/renderer.cpp",
+    # The members of the types above, which platform holds by value.
+    "SClipPlane": "platform/renderer.cpp",
+    "SMRGLHeaderBasic": "platform/renderer.cpp",
+    "SMRGLHeaderPrimitive": "platform/renderer.cpp",
+    "SMRGLVertex": "platform/renderer.cpp",
+    "SProjectedVertex": "platform/renderer.cpp",
+    "STrianglePackedIndices": "platform/renderer.cpp",
 }
 
 # In-scope originals that are not recreated as game code, keyed by TU, class,
@@ -158,6 +165,17 @@ HAND_WRITTEN_CLASSES = {"common": {
     "CBinaryWriter": "class {};",
     "CFrameConverter": "class {};",
     "CMovieClock": "class {};",
+    "CPolygonBatch": "class {};",
+    "EBlendFactor": "enum class {} : std::uint8_t;",
+    "EDepthFunction": "enum class {} : std::uint8_t;",
+    "EMipFilter": "enum class {} : std::uint8_t;",
+    "ETextureFilter": "enum class {} : std::uint8_t;",
+    "SLighting": "struct {};",
+    "SPipelineState": "struct {};",
+    "SRenderStateInput": "struct {};",
+    "SScreenVertex": "struct {};",
+    "SVertexContext": "struct {};",
+    "SVertexInput": "struct {};",
     "SMovieProgress": "struct {};",
     "EPixelLayout": "enum class {} : std::uint8_t;",
     "SExtent": "struct {};",
@@ -168,9 +186,10 @@ HAND_WRITTEN_CLASSES = {"common": {
     "SViewport": "struct {};",
     "SWildcardPath": "struct {};",
 }}
-HAND_WRITTEN_DIRS = {"common/input", "common/net", "common/serial", "common/text", "common/video",
-                     "tests/common/input", "tests/common/net", "tests/common/serial",
-                     "tests/common/text", "tests/common/video"}
+HAND_WRITTEN_DIRS = {"common/input", "common/net", "common/render", "common/serial", "common/text",
+                     "common/video", "tests/common/input", "tests/common/net",
+                     "tests/common/render", "tests/common/serial", "tests/common/text",
+                     "tests/common/video"}
 
 # Parameters naming an OS handle the adapter owns; the kept function loses them.
 DROPPED_PARAMS = {"engine/special.cpp:loadExternalRenderer": {"window_handle"}}

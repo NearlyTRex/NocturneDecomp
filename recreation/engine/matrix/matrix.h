@@ -1,7 +1,7 @@
 #pragma once
 
 #include "common/fwd.h"
-#include "engine/fwd.h"
+#include "platform/fwd.h"
 
 namespace nocturne::engine {
 
@@ -12,7 +12,7 @@ int interpolatedCos(int angle);
 void invertTransformMatrix();
 void transformToCache(int cacheIndex, common::CVector3i *inputPoint);
 void projectCachedPoint(int cacheIndex);
-void projectTransformedPoint(SProjectedVertex *point);
+void projectTransformedPoint(platform::SProjectedVertex *point);
 void projectCachedPointUnchecked(int cache_index);
 void matrixPushAndTransform(int rot_x, int rot_y, int rot_z, int translate_x, int translate_y,
                             int translate_z);

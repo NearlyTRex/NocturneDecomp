@@ -3,7 +3,7 @@
 #include "common/fwd.h"
 #include "core/dlight/cameraview.h"
 #include "core/fwd.h"
-#include "engine/fwd.h"
+#include "platform/fwd.h"
 
 namespace nocturne::core {
 
@@ -13,9 +13,9 @@ public:
     ~CDemonCamera() override;
 
     void setupPerspectiveAndFog(common::CVector3f *position,
-                                engine::SProjectedVertex *projected_vertex) override;
+                                platform::SProjectedVertex *projected_vertex) override;
     int getFogValueAtPosition(common::CVector3i *world_position,
-                              engine::SProjectedVertex *projected_vertex) override;
+                              platform::SProjectedVertex *projected_vertex) override;
     void saveAlphaTransform(int alpha_index) override;
 
     void initLookupTable();

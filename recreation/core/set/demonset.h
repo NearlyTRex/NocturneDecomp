@@ -2,7 +2,6 @@
 
 #include "common/fwd.h"
 #include "core/fwd.h"
-#include "engine/fwd.h"
 #include "platform/fwd.h"
 
 #include <cstdio>
@@ -50,8 +49,8 @@ public:
     void renderPrimitiveBatch(platform::SMRGLPrimitiveQuad *primitive_array, int primitive_count,
                               int render_flags);
     void renderFaceListOrEnvMap(platform::SInputFace *faces, int count, int flags);
-    void renderPrimitiveList(engine::SMRGLHeaderPrimitive *primitive_array, int primitive_count);
-    void renderTexturedPrimitiveListVariant(engine::SMRGLHeaderPrimitive *prim, int count);
+    void renderPrimitiveList(platform::SMRGLHeaderPrimitive *primitive_array, int primitive_count);
+    void renderTexturedPrimitiveListVariant(platform::SMRGLHeaderPrimitive *prim, int count);
     void markMirrorCameraDirty();
     void setFlatColor(int light_scale, int color_scale, int fog_scale);
     void cacheMirrorLighting(common::CVector3f *position);

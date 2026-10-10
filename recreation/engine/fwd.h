@@ -21,23 +21,18 @@ class CPodSearchContext;
 class CTextureCache;
 class CWinFont;
 enum class EInputCodeType : std::int32_t;
-struct SClipPlane;
 struct SFace;
 struct SFoundFileInfo;
 struct SHardwareEdge;
 struct SLineStrip;
 struct SMRGLAnimatedTexture;
-struct SMRGLHeaderBasic;
 struct SMRGLHeaderExtended;
-struct SMRGLHeaderPrimitive;
 struct SMRGLKeyframeModel;
 struct SMRGLModelBounds;
 struct SMRGLPrimitivePoly;
 struct SMRGLPrimitiveTriangle;
 struct SMRGLPrimitiveTriangleIndex;
-struct SProjectedVertex;
 struct SRGBColorPalette;
 struct SSoftwareEdge;
-struct STrianglePackedIndices;
 
 } // namespace nocturne::engine

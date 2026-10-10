@@ -23,8 +23,8 @@ void renderAlphaRow32(std::uint32_t *destPixels, std::uint8_t *srcIndices, std::
 void renderAlphaRow16(std::uint16_t *destPixels, std::uint8_t *srcIndices, std::uint8_t *srcAlpha,
                       int globalAlpha, int pixelCount);
 void renderScanline(SSoftwareEdge *left, SSoftwareEdge *right, int scanline_y);
-void transformAndProjectPoint(SProjectedVertex *output, common::CVector3i *input);
-void transformPoint(SProjectedVertex *output, common::CVector3i *input);
+void transformAndProjectPoint(platform::SProjectedVertex *output, common::CVector3i *input);
+void transformPoint(platform::SProjectedVertex *output, common::CVector3i *input);
 int loadExternalRenderer();
 int kill();
 int lockFrame();

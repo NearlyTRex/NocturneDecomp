@@ -11,21 +11,21 @@ class CDemonRenderer {
 public:
     CDemonRenderer();
 
-    void renderSolidColorDepthDirect(SMRGLHeaderPrimitive *prim);
+    void renderSolidColorDepthDirect(platform::SMRGLHeaderPrimitive *prim);
     void renderSolidColorPoly(SMRGLPrimitivePoly *poly);
     void renderZPrepassPoly(SMRGLPrimitivePoly *poly);
-    int renderDepthProfiledDirect(SMRGLHeaderPrimitive *prim);
-    void renderTexturedDirect(SMRGLHeaderPrimitive *prim, int render_flags);
+    int renderDepthProfiledDirect(platform::SMRGLHeaderPrimitive *prim);
+    void renderTexturedDirect(platform::SMRGLHeaderPrimitive *prim, int render_flags);
     void renderTexturedPoly(SMRGLPrimitivePoly *poly, int render_flags);
     void renderAlphaBlendedPoly(SMRGLPrimitivePoly *poly);
     void renderDecalPoly(SMRGLPrimitivePoly *poly);
     void renderSolidTexturedPoly(SMRGLPrimitivePoly *poly);
     void renderDestReadBlendPoly(SMRGLPrimitivePoly *poly);
-    void renderVertexAlphaDirect(SMRGLHeaderPrimitive *prim);
+    void renderVertexAlphaDirect(platform::SMRGLHeaderPrimitive *prim);
     void renderVertexAlphaPoly(SMRGLPrimitivePoly *poly);
-    void renderBlendedDirect(SMRGLHeaderPrimitive *prim);
+    void renderBlendedDirect(platform::SMRGLHeaderPrimitive *prim);
     void renderBlendedPoly(SMRGLPrimitivePoly *poly);
-    void renderOverlayDirect(SMRGLHeaderPrimitive *prim);
+    void renderOverlayDirect(platform::SMRGLHeaderPrimitive *prim);
     void setCameraOrigin(common::CVector3i *origin);
     void setCameraOriginFromScaledPoint(common::CVector3f *point_ptr);
     void setupSceneRendering(common::CVector3f *euler_angles);
@@ -46,7 +46,8 @@ public:
     float calculateProjectionFactor();
     void pushViewport(int x, int y, int width, int height);
     void popViewport();
-    void renderCustomScanline(SMRGLHeaderPrimitive *prim, CustomScanlineFunc *scanline_renderer);
+    void renderCustomScanline(platform::SMRGLHeaderPrimitive *prim,
+                              CustomScanlineFunc *scanline_renderer);
     void setCurrentPolygonColor(int color);
     void setRGBAColor(int red_component, int green_component, int blue_component);
     void setPlaneCullingEnabled(int enabled);

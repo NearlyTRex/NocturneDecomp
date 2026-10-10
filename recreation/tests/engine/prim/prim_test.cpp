@@ -23,7 +23,7 @@ TEST(EnginePrimFunctions, PublicInterface) {
     static_assert(std::is_same_v<decltype(&getTriangleWindingFromIndices1),
                                  int (*)(SMRGLPrimitiveTriangle *)>);
     static_assert(std::is_same_v<decltype(&getTriangleWindingFromPackedIndices),
-                                 int (*)(STrianglePackedIndices *)>);
+                                 int (*)(platform::STrianglePackedIndices *)>);
     static_assert(
         std::is_same_v<decltype(&renderPolygonSoftware), void (*)(platform::SRenderVertex *, int)>);
     static_assert(std::is_same_v<decltype(&renderIndexedPolygonSoftware), void (*)(int *, int)>);
