@@ -62,9 +62,9 @@ way: `core` → `engine` → `platform` → `common`.
 
 Game code never calls the OS. It talks to the interfaces in `platform/` (`IClock`, `IWindow`,
 `IDisplay`, `IRenderer`, `IAudioDevice`, `INetwork` and the rest), which the SDL adapters
-implement. Where the original already had an abstract base over OS code, that base is the seam
-instead: `engine::CFont`, created through `IFontFactory` when the message list selects an OS font.
-Sound keeps the game's API, sample loading and 3D math; miniaudio mixes, resamples and decodes,
+implement. A class that mixes game logic with OS calls stays game code and reaches the OS through
+one of them: `engine::CWinFont` keeps its colouring, shadow and framebuffer copy, and draws its
+glyphs through `IOsFont`. Movies decode with FFmpeg behind `IMoviePlayer`. Sound keeps the game's API, sample loading and 3D math; miniaudio mixes, resamples and decodes,
 and `IAudioDevice` pulls the mix as it plays.
 
 | Path | Contents |

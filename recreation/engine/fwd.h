@@ -19,6 +19,7 @@ class CPodAuditRecord;
 class CPodFile;
 class CPodSearchContext;
 class CTextureCache;
+class CWinFont;
 enum class EInputCodeType : std::int32_t;
 struct SClipPlane;
 struct SFace;

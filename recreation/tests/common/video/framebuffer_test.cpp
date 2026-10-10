@@ -64,6 +64,17 @@ TEST(Framebuffer, BytesPerPixelFollowTheDepth) {
     EXPECT_EQ(getBytesPerPixel(EPixelLayout::Bgra8888), 4);
 }
 
+TEST(Framebuffer, PackRowsDropsThePitchPadding) {
+    EXPECT_EQ(packRows(bytes({1, 2, 9, 3, 4}), 2, 2, 3), (std::vector<std::uint8_t>{1, 2, 3, 4}));
+}
+
+TEST(Framebuffer, PackRowsRejectsShortOrNarrowImages) {
+    EXPECT_TRUE(packRows(bytes({1, 2, 9, 3}), 2, 2, 3).empty());
+    EXPECT_TRUE(packRows(bytes({1, 2, 3, 4}), 2, 2, 1).empty());
+    EXPECT_TRUE(packRows(bytes({1}), 0, 1, 1).empty());
+    EXPECT_TRUE(packRows(bytes({1}), 1, 0, 1).empty());
+}
+
 TEST(CFrameConverter, PassesDirectColourThroughWithItsPitchInPixels) {
     CFrameConverter converter;
     converter.setMode(EPixelLayout::Rgb565, 2, 2);

@@ -79,6 +79,31 @@ std::optional<char> encode(char32_t code_point) {
     return static_cast<char>(found->byte);
 }
 
+std::optional<char32_t> toCodePoint(std::uint8_t byte) {
+    if (byte < 0x80U || byte >= 0xa0U) {
+        return byte;
+    }
+    const auto *const found = std::ranges::find(kUpperControlRow, byte, &SCodePage::byte);
+    if (found == kUpperControlRow.end()) {
+        return std::nullopt;
+    }
+    return found->code_point;
+}
+
+// Every Windows-1252 code point is below U+10000, so three bytes at most.
+void appendUtf8(char32_t code_point, std::string &out) {
+    if (code_point < 0x80) {
+        out.push_back(static_cast<char>(code_point));
+    } else if (code_point < 0x800) {
+        out.push_back(static_cast<char>(0xc0U | (code_point >> 6U)));
+        out.push_back(static_cast<char>(0x80U | (code_point & 0x3fU)));
+    } else {
+        out.push_back(static_cast<char>(0xe0U | (code_point >> 12U)));
+        out.push_back(static_cast<char>(0x80U | ((code_point >> 6U) & 0x3fU)));
+        out.push_back(static_cast<char>(0x80U | (code_point & 0x3fU)));
+    }
+}
+
 } // namespace
 
 std::string utf8ToWindows1252(std::string_view text) {
@@ -89,6 +114,18 @@ std::string utf8ToWindows1252(std::string_view text) {
         const std::optional<char> encoded = code_point ? encode(*code_point) : std::nullopt;
         if (encoded) {
             out.push_back(*encoded);
+        }
+    }
+    return out;
+}
+
+std::string windows1252ToUtf8(std::string_view text) {
+    std::string out;
+    for (const char character : text) {
+        const std::optional<char32_t> code_point =
+            toCodePoint(static_cast<std::uint8_t>(character));
+        if (code_point) {
+            appendUtf8(*code_point, out);
         }
     }
     return out;

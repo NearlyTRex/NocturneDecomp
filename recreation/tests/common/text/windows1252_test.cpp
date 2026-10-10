@@ -52,6 +52,37 @@ TEST(Windows1252, InvalidLeadAndStrayContinuationBytesAreDropped) {
 
 TEST(Windows1252, EmptyTextGivesEmptyText) {
     EXPECT_EQ(utf8ToWindows1252(""), "");
+    EXPECT_EQ(windows1252ToUtf8(""), "");
+}
+
+TEST(Windows1252, AsciiEncodesAsItself) {
+    EXPECT_EQ(windows1252ToUtf8("Nocturne 1999"), "Nocturne 1999");
+}
+
+TEST(Windows1252, Latin1BytesEncodeInTwoBytes) {
+    EXPECT_EQ(windows1252ToUtf8("caf\xe9"), "caf\xc3\xa9"); // U+00E9
+    EXPECT_EQ(windows1252ToUtf8("\xa0"), "\xc2\xa0");       // U+00A0
+    EXPECT_EQ(windows1252ToUtf8("\xff"), "\xc3\xbf");       // U+00FF
+}
+
+TEST(Windows1252, UpperControlRowEncodesItsCodePoints) {
+    EXPECT_EQ(windows1252ToUtf8("\x99"), "\xe2\x84\xa2"); // U+2122 trade mark
+    EXPECT_EQ(windows1252ToUtf8("\x80"), "\xe2\x82\xac"); // U+20AC euro
+    EXPECT_EQ(windows1252ToUtf8("\x83"), "\xc6\x92");     // U+0192 f hook
+}
+
+TEST(Windows1252, UndefinedBytesAreDropped) {
+    EXPECT_EQ(windows1252ToUtf8("x\x81y\x8dz\x8f\x90\x9d"), "xyz");
+}
+
+TEST(Windows1252, EveryDefinedByteRoundTrips) {
+    for (int byte = 1; byte < 256; ++byte) {
+        const std::string text(1, static_cast<char>(byte));
+        const std::string encoded = windows1252ToUtf8(text);
+        if (!encoded.empty()) {
+            EXPECT_EQ(utf8ToWindows1252(encoded), text) << byte;
+        }
+    }
 }
 
 } // namespace

@@ -125,11 +125,28 @@ if(NOCTURNE_RECREATION_GAME)
     set(BUILD_SHARED_LIBS OFF)
     FetchContent_MakeAvailable(SDL3_net)
 
+    # The game draws single-byte Windows text, so there is no shaping and no colour emoji;
+    # FreeType comes vendored so no system -dev package is needed.
+    FetchContent_Declare(SDL3_ttf
+        GIT_REPOSITORY https://github.com/libsdl-org/SDL_ttf.git
+        GIT_TAG        release-3.2.2
+        GIT_SHALLOW    TRUE
+        GIT_SUBMODULES external/freetype
+        SYSTEM)
+    set(SDLTTF_VENDORED ON CACHE BOOL "" FORCE)
+    set(SDLTTF_HARFBUZZ OFF CACHE BOOL "" FORCE)
+    set(SDLTTF_PLUTOSVG OFF CACHE BOOL "" FORCE)
+    set(SDLTTF_SAMPLES OFF CACHE BOOL "" FORCE)
+    set(SDLTTF_INSTALL OFF CACHE BOOL "" FORCE)
+    FetchContent_MakeAvailable(SDL3_ttf)
+
+    include(cmake/ffmpeg.cmake)
+
     file(GLOB _sdl_sources CONFIGURE_DEPENDS "platform/sdl/*.cpp")
     add_library(nocturne_platform_sdl STATIC ${_sdl_sources})
     target_link_libraries(nocturne_platform_sdl
         PUBLIC nocturne_recreation
-        PRIVATE SDL3::SDL3 SDL3_net::SDL3_net)
+        PRIVATE SDL3::SDL3 SDL3_net::SDL3_net SDL3_ttf::SDL3_ttf nocturne_ffmpeg)
 
     file(GLOB _sdl_headers RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}" CONFIGURE_DEPENDS
          "platform/sdl/*.h")
@@ -141,7 +158,8 @@ if(NOCTURNE_RECREATION_GAME)
     endforeach()
     add_library(nocturne_platform_sdl_header_checks OBJECT ${_sdl_header_checks})
     target_link_libraries(nocturne_platform_sdl_header_checks
-        PRIVATE nocturne_recreation_options SDL3::SDL3 SDL3_net::SDL3_net)
+        PRIVATE nocturne_recreation_options SDL3::SDL3 SDL3_net::SDL3_net SDL3_ttf::SDL3_ttf
+                nocturne_ffmpeg)
 
     add_executable(nocturne main.cpp)
     target_link_libraries(nocturne PRIVATE nocturne_platform_sdl)

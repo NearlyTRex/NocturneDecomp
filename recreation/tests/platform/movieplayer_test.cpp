@@ -14,11 +14,17 @@ TEST(IMoviePlayer, IsAbstractWithVirtualDestructor) {
 
 TEST(IMoviePlayer, PublicInterface) {
     static_assert(std::is_same_v<decltype(&IMoviePlayer::openMovie),
-                                 bool (IMoviePlayer::*)(const std::filesystem::path &, bool)>);
+                                 bool (IMoviePlayer::*)(const std::filesystem::path &,
+                                                        common::SExtent, common::EPixelLayout)>);
     static_assert(
-        std::is_same_v<decltype(&IMoviePlayer::toggleMoviePlayback), void (IMoviePlayer::*)(bool)>);
+        std::is_same_v<decltype(&IMoviePlayer::getMovieSize), common::SExtent (IMoviePlayer::*)()>);
+    static_assert(
+        std::is_same_v<decltype(&IMoviePlayer::setMoviePlayback), void (IMoviePlayer::*)(bool)>);
+    static_assert(std::is_same_v<decltype(&IMoviePlayer::updateMovie), void (IMoviePlayer::*)()>);
     static_assert(
         std::is_same_v<decltype(&IMoviePlayer::isMoviePlaying), bool (IMoviePlayer::*)()>);
+    static_assert(
+        std::is_same_v<decltype(&IMoviePlayer::setMovieVolume), void (IMoviePlayer::*)(float)>);
     static_assert(std::is_same_v<decltype(&IMoviePlayer::closeMovie), void (IMoviePlayer::*)()>);
 }
 

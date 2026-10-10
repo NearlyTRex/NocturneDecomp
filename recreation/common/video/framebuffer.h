@@ -32,6 +32,11 @@ struct SPixelFormat {
 [[nodiscard]] SPixelFormat getPixelFormat(EPixelLayout layout);
 [[nodiscard]] int getBytesPerPixel(EPixelLayout layout);
 
+// A one-byte-per-pixel image with rows pitch bytes apart, packed to width bytes per row.
+// Empty when the pitch is narrower than a row or pixels is too small.
+[[nodiscard]] std::vector<std::uint8_t> packRows(std::span<const std::byte> pixels, int width,
+                                                 int height, int pitch);
+
 // A frame ready to upload: Rgb565 or Bgra8888, rows row_length pixels apart.
 struct SFrameUpload {
     EPixelLayout layout = EPixelLayout::Bgra8888;

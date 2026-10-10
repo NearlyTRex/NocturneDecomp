@@ -1,6 +1,7 @@
 #include "common/video/framebuffer.h"
 
 #include <algorithm>
+#include <iterator>
 
 namespace nocturne::common {
 namespace {
@@ -35,6 +36,27 @@ SPixelFormat getPixelFormat(EPixelLayout layout) {
 int getBytesPerPixel(EPixelLayout layout) {
     constexpr std::array<int, 3> kSizes = {1, 2, 4};
     return kSizes.at(static_cast<std::size_t>(layout));
+}
+
+std::vector<std::uint8_t> packRows(std::span<const std::byte> pixels, int width, int height,
+                                   int pitch) {
+    if (width <= 0 || height <= 0 || pitch < width) {
+        return {};
+    }
+    const auto row = static_cast<std::size_t>(width);
+    const auto rows = static_cast<std::size_t>(height);
+    const auto stride = static_cast<std::size_t>(pitch);
+    if (pixels.size() < (stride * (rows - 1)) + row) {
+        return {};
+    }
+    std::vector<std::uint8_t> packed;
+    packed.reserve(row * rows);
+    for (std::size_t y = 0; y < rows; ++y) {
+        std::ranges::transform(
+            pixels.subspan(y * stride, row), std::back_inserter(packed),
+            [](std::byte value) { return std::to_integer<std::uint8_t>(value); });
+    }
+    return packed;
 }
 
 void CFrameConverter::setMode(EPixelLayout layout, int width, int height) {

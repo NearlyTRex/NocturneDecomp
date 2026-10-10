@@ -5,7 +5,9 @@
 #include "platform/sdl/sdldisplay.h"
 #include "platform/sdl/sdlfilesystem.h"
 #include "platform/sdl/sdlgamepad.h"
+#include "platform/sdl/sdlmovieplayer.h"
 #include "platform/sdl/sdlnetwork.h"
+#include "platform/sdl/sdlosfontfactory.h"
 #include "platform/sdl/sdlwindow.h"
 
 #include <cstddef>
@@ -37,6 +39,8 @@ int run() {
     [[maybe_unused]] const sdl::CSdlFileSystem file_system{};
     [[maybe_unused]] const sdl::CSdlNetwork network;
     [[maybe_unused]] const sdl::CSdlAudioDevice audio;
+    [[maybe_unused]] const sdl::CSdlOsFontFactory fonts;
+    [[maybe_unused]] const sdl::CSdlMoviePlayer movies(display);
 
     if (!display.setDisplayMode(kWidth, kHeight, kBitsPerPixel)) {
         throw std::runtime_error("Unable to set 640x480x32 display mode");

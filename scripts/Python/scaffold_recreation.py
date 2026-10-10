@@ -58,10 +58,6 @@ PLATFORM_TYPES = {
     "SRenderVertex": "platform/renderer.cpp",
 }
 
-# Abstract bases whose only implementations are OS code, with their home TU.
-# The base stays as the seam and an adapter derives from it.
-SEAM_CLASSES = {"CFont": "engine/palette.cpp"}
-
 # In-scope originals that are not recreated as game code, keyed by TU, class,
 # "tu:function" or "tu:Class::method", with where each job goes: an OS adapter,
 # a third-party library for a standard format, or the standard library.
@@ -69,7 +65,6 @@ PLATFORM_BOUNDARY = {
     "sound/snddx.cpp": "platform::IAudioDevice; miniaudio mixes in software",
     "sound/sndwav.cpp": "platform::IAudioDevice; miniaudio mixes in software",
     "sound/mp3.cpp": "miniaudio's decoder, which reads MP3",
-    "engine/winfont.cpp": "platform/sdl font adapter, implementing engine::CFont",
     # The winmm poll is the shipped gamepad path; the enhanced one reads platform::IGamepad
     # and CGame::resetKeyState never reaches these.
     "wincore/winrun.cpp:initJoystick": "platform::IGamepad",
@@ -155,10 +150,6 @@ PLATFORM_BOUNDARY = {
     "wincore/winrun.cpp:doNothing2": "dropped: empty body",
 }
 
-# Hand-written files inside generated modules: interfaces at the seams that
-# platform/ cannot hold because they name a module above it.
-HAND_WRITTEN = {"engine/palette/fontfactory.h", "tests/engine/palette/fontfactory_test.cpp"}
-
 # Types written by hand in a generated module, each with its forward declaration ({} is
 # the name), declared in its fwd.h with the rest, and the directories holding them, which
 # --prune leaves alone.
@@ -166,6 +157,8 @@ HAND_WRITTEN_CLASSES = {"common": {
     "CBinaryReader": "class {};",
     "CBinaryWriter": "class {};",
     "CFrameConverter": "class {};",
+    "CMovieClock": "class {};",
+    "SMovieProgress": "struct {};",
     "EPixelLayout": "enum class {} : std::uint8_t;",
     "SExtent": "struct {};",
     "SFrameUpload": "struct {};",
@@ -549,8 +542,8 @@ class Scaffold:
         """
         votes = collections.defaultdict(collections.Counter)
         impls = collections.defaultdict(list)
-        # Implementations replaced by platform adapters still name and type a
-        # seam's slots.
+        # Implementations replaced by platform adapters still name and type the
+        # slots they fill.
         for owner in sorted(self.classes | self.model.replaced_classes):
             table = self.vtable_of.get(owner)
             if not table:
@@ -617,7 +610,7 @@ class Scaffold:
     # -- classes and homes ------------------------------------------------
 
     def select_classes(self):
-        classes = set(self.methods) | set(SEAM_CLASSES)
+        classes = set(self.methods)
         for owner in self.vtable_of:
             if owner in classes or any(c in classes for c in self.descendants(owner)):
                 classes.add(owner)
@@ -638,7 +631,6 @@ class Scaffold:
         """
         homes = {name: MATH_HOME for name in self.model.types if MATH_TYPE.match(name)}
         homes.update(PLATFORM_TYPES)
-        homes.update(SEAM_CLASSES)
         for cls in self.classes:
             if cls in homes:
                 continue
@@ -1050,7 +1042,7 @@ def stale_files(root, planned):
     """Generated-shaped files under the module trees that nothing plans any more.
 
     Only headers and interface tests are candidates; implementation files,
-    platform/ and the hand-written seam interfaces are never touched.
+    platform/ and the hand-written directories are never touched.
     """
     stale = []
     for module in MODULE_LAYERS:
@@ -1061,7 +1053,7 @@ def stale_files(root, planned):
                 for name in filenames:
                     relpath = os.path.relpath(os.path.join(dirpath, name), root)
                     generated = name.endswith(".h") or name.endswith("_test.cpp")
-                    hand_written = relpath in HAND_WRITTEN or os.path.dirname(relpath) in HAND_WRITTEN_DIRS
+                    hand_written = os.path.dirname(relpath) in HAND_WRITTEN_DIRS
                     if generated and relpath not in planned and not hand_written:
                         stale.append(relpath)
     return sorted(stale)
