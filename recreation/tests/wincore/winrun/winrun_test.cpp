@@ -18,8 +18,6 @@ TEST(WincoreWinrunFunctions, PublicInterface) {
     static_assert(std::is_same_v<decltype(&processWindowMessages), void (*)()>);
     static_assert(std::is_same_v<decltype(&displayMessageBoxAndQuit), void (*)(char *)>);
     static_assert(std::is_same_v<decltype(&getKeyName), char *(*)(engine::EInputCodeType)>);
-    static_assert(std::is_same_v<decltype(&initJoystick), void (*)()>);
-    static_assert(std::is_same_v<decltype(&getJoystickState), void (*)()>);
 }
 
 } // namespace

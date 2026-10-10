@@ -19,11 +19,31 @@
       "cacheVariables": {
         "NOCTURNE_RECREATION_COVERAGE": "ON"
       }
+    },
+    {
+      "name": "game",
+      "displayName": "Recreation with the SDL adapters and the nocturne executable",
+      "inherits": "default",
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "clang",
+        "NOCTURNE_RECREATION_GAME": "ON"
+      }
+    },
+    {
+      "name": "ci",
+      "displayName": "Coverage and the game together, as CI builds them",
+      "inherits": "coverage",
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "clang",
+        "NOCTURNE_RECREATION_GAME": "ON"
+      }
     }
   ],
   "buildPresets": [
     { "name": "default", "configurePreset": "default" },
-    { "name": "coverage", "configurePreset": "coverage" }
+    { "name": "coverage", "configurePreset": "coverage" },
+    { "name": "game", "configurePreset": "game" },
+    { "name": "ci", "configurePreset": "ci" }
   ],
   "testPresets": [
     { "name": "default", "configurePreset": "default", "output": { "outputOnFailure": true } }

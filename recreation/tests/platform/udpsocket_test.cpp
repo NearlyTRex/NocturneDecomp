@@ -13,8 +13,8 @@ TEST(IUdpSocket, IsAbstractWithVirtualDestructor) {
 }
 
 TEST(IUdpSocket, PublicInterface) {
-    static_assert(
-        std::is_same_v<decltype(&IUdpSocket::bindSocket), bool (IUdpSocket::*)(std::uint16_t)>);
+    static_assert(std::is_same_v<decltype(&IUdpSocket::bindSocket),
+                                 bool (IUdpSocket::*)(const SNetworkAddr &)>);
     static_assert(
         std::is_same_v<decltype(&IUdpSocket::setSocketBlocking), bool (IUdpSocket::*)(bool)>);
     static_assert(
@@ -24,6 +24,19 @@ TEST(IUdpSocket, PublicInterface) {
                        int (IUdpSocket::*)(std::span<const std::byte>, const SNetworkAddr &)>);
     static_assert(std::is_same_v<decltype(&IUdpSocket::receiveSocketData),
                                  int (IUdpSocket::*)(std::span<std::byte>, SNetworkAddr *)>);
+}
+
+TEST(SNetworkAddr, DefaultsToTheUnspecifiedAddress) {
+    const SNetworkAddr address;
+    EXPECT_EQ(address.ip_address, (common::Ipv4Octets{0, 0, 0, 0}));
+    EXPECT_EQ(address.port, 0);
+}
+
+TEST(SNetworkAddr, ComparesAddressAndPort) {
+    const SNetworkAddr address{.ip_address = {10, 0, 0, 1}, .port = 4000};
+    EXPECT_EQ(address, (SNetworkAddr{.ip_address = {10, 0, 0, 1}, .port = 4000}));
+    EXPECT_NE(address, (SNetworkAddr{.ip_address = {10, 0, 0, 2}, .port = 4000}));
+    EXPECT_NE(address, (SNetworkAddr{.ip_address = {10, 0, 0, 1}, .port = 4001}));
 }
 
 } // namespace

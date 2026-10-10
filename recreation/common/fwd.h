@@ -12,6 +12,7 @@ class CVector3d;
 class CVector3f;
 class CVector3i;
 class CVector4i;
+struct SWildcardPath;
 union UOrientationVector;
 
 } // namespace nocturne::common

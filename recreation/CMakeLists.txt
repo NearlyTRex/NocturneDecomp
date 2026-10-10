@@ -7,6 +7,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 option(NOCTURNE_RECREATION_COVERAGE "Instrument for clang source-based coverage" OFF)
+option(NOCTURNE_RECREATION_GAME "Build the SDL adapters and the nocturne executable" OFF)
 
 # Modules are the directories that carry a fwd.h.
 file(GLOB _fwd_headers RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}" CONFIGURE_DEPENDS
@@ -83,6 +84,49 @@ if(_mock_checks)
     add_library(nocturne_recreation_mock_checks OBJECT ${_mock_checks})
     target_link_libraries(nocturne_recreation_mock_checks
         PRIVATE nocturne_recreation_options GTest::gmock)
+endif()
+
+if(NOCTURNE_RECREATION_GAME)
+    FetchContent_Declare(SDL3
+        GIT_REPOSITORY https://github.com/libsdl-org/SDL.git
+        GIT_TAG        release-3.4.16
+        GIT_SHALLOW    TRUE
+        SYSTEM)
+    set(SDL_SHARED OFF CACHE BOOL "" FORCE)
+    set(SDL_STATIC ON CACHE BOOL "" FORCE)
+    set(SDL_TEST_LIBRARY OFF CACHE BOOL "" FORCE)
+    FetchContent_MakeAvailable(SDL3)
+
+    FetchContent_Declare(SDL3_net
+        GIT_REPOSITORY https://github.com/libsdl-org/SDL_net.git
+        GIT_TAG        release-3.2.0
+        GIT_SHALLOW    TRUE
+        SYSTEM)
+    set(SDLNET_INSTALL OFF CACHE BOOL "" FORCE)
+    set(SDLNET_SAMPLES OFF CACHE BOOL "" FORCE)
+    set(BUILD_SHARED_LIBS OFF)
+    FetchContent_MakeAvailable(SDL3_net)
+
+    file(GLOB _sdl_sources CONFIGURE_DEPENDS "platform/sdl/*.cpp")
+    add_library(nocturne_platform_sdl STATIC ${_sdl_sources})
+    target_link_libraries(nocturne_platform_sdl
+        PUBLIC nocturne_recreation
+        PRIVATE SDL3::SDL3 SDL3_net::SDL3_net)
+
+    file(GLOB _sdl_headers RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}" CONFIGURE_DEPENDS
+         "platform/sdl/*.h")
+    set(_sdl_header_checks "")
+    foreach(_header IN LISTS _sdl_headers)
+        set(_check "${CMAKE_CURRENT_BINARY_DIR}/header_checks/${_header}.cpp")
+        file(CONFIGURE OUTPUT "${_check}" CONTENT "#include \"${_header}\"\n")
+        list(APPEND _sdl_header_checks "${_check}")
+    endforeach()
+    add_library(nocturne_platform_sdl_header_checks OBJECT ${_sdl_header_checks})
+    target_link_libraries(nocturne_platform_sdl_header_checks
+        PRIVATE nocturne_recreation_options SDL3::SDL3 SDL3_net::SDL3_net)
+
+    add_executable(nocturne main.cpp)
+    target_link_libraries(nocturne PRIVATE nocturne_platform_sdl)
 endif()
 
 set(NOCTURNE_RECREATION_TEST_BINARIES "")

@@ -14,7 +14,5 @@ void setCursorPosition(int x, int y);
 void processWindowMessages();
 void displayMessageBoxAndQuit(char *message);
 char *getKeyName(engine::EInputCodeType keycode);
-void initJoystick();
-void getJoystickState();
 
 } // namespace nocturne::wincore

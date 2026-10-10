@@ -16,6 +16,7 @@ enum class EWindowEventType : std::uint8_t {
     MouseMove,
     MouseButtonDown,
     MouseButtonUp,
+    MouseWheel,
 };
 
 enum class EMouseButton : std::uint8_t { Left, Right, Middle };
@@ -28,6 +29,8 @@ struct SWindowEvent {
     int x = 0;
     int y = 0;
     EMouseButton button = EMouseButton::Left;
+    // Multiples of WHEEL_DELTA (120) per notch, as WM_MOUSEWHEEL; positive is away from the user.
+    int wheel_delta = 0;
 };
 
 class IWindow {
@@ -39,7 +42,8 @@ public:
     virtual void warpMouse(int x, int y) = 0;
     // Empty when the OS has no name for the key.
     [[nodiscard]] virtual std::string getScancodeName(std::uint16_t scancode) = 0;
-    virtual void showMessageBox(std::string_view message) = 0;
+    // A warning box with an OK button, as MessageBoxA with MB_ICONWARNING.
+    virtual void showMessageBox(std::string_view message, std::string_view title) = 0;
 };
 
 } // namespace nocturne::platform

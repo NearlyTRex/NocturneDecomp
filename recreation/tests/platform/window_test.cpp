@@ -17,8 +17,8 @@ TEST(IWindow, PublicInterface) {
     static_assert(std::is_same_v<decltype(&IWindow::warpMouse), void (IWindow::*)(int, int)>);
     static_assert(std::is_same_v<decltype(&IWindow::getScancodeName),
                                  std::string (IWindow::*)(std::uint16_t)>);
-    static_assert(
-        std::is_same_v<decltype(&IWindow::showMessageBox), void (IWindow::*)(std::string_view)>);
+    static_assert(std::is_same_v<decltype(&IWindow::showMessageBox),
+                                 void (IWindow::*)(std::string_view, std::string_view)>);
 }
 
 TEST(SWindowEvent, DefaultsToAnEmptyQuit) {
@@ -29,6 +29,7 @@ TEST(SWindowEvent, DefaultsToAnEmptyQuit) {
     EXPECT_EQ(event.x, 0);
     EXPECT_EQ(event.y, 0);
     EXPECT_EQ(event.button, EMouseButton::Left);
+    EXPECT_EQ(event.wheel_delta, 0);
 }
 
 } // namespace

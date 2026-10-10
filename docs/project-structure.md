@@ -72,7 +72,10 @@ and `IAudioDevice` pulls the mix as it plays.
 | `<module>/<tu>/` | Class headers and the TU's free-function header |
 | `<module>/fwd.h` | Forward declarations and opaque enums for the module |
 | `platform/` | Hand-written OS interfaces; the scaffold never writes here |
+| `platform/sdl/` | The adapters behind those interfaces (`CSdlWindow` implements `IWindow`). The only code that includes SDL or OS headers; they hold no logic, and build only with `NOCTURNE_RECREATION_GAME` into `nocturne_platform_sdl` |
+| `main.cpp` | The `nocturne` executable: constructs the adapters and runs the loop |
 | `common/serial/` | `CBinaryReader` / `CBinaryWriter`: every file and wire format is read and written through these, little-endian with explicit widths |
+| `common/input/`, `common/text/`, `common/net/` | What the adapters would otherwise compute, to the Win32 behaviour the original saw: the HID-to-set-1 scancode table and `WM_CHAR` control characters, the FindFirstFile wildcard match, UTF-8 to Windows-1252, IPv4 address bytes |
 | `tests/mocks/` | gMock implementations of the platform interfaces and seam factories, shared by all tests |
 | `tests/` | GoogleTest tests, mirroring the source paths |
 | `cmake/coverage.cmake` | The coverage gate |
@@ -85,8 +88,9 @@ job went; the report lists them. `--prune` removes generated headers and tests t
 longer plans. Build it on its own with
 `cmake --preset default` and `cmake --build --preset default` inside `recreation/`. The targets
 `format-check` and `tidy` run clang-format and clang-tidy. The `coverage` preset's `coverage`
-target runs the tests and fails below 100% line, function or branch coverage. CI runs all of
-them.
+target runs the tests and fails below 100% line, function or branch coverage. The `game` preset
+also fetches SDL3 and SDL3_net, builds them from source with the adapters, and links
+`nocturne`. CI runs all of it under the `ci` preset, which is `coverage` and `game` together.
 
 ## `scripts/`
 
