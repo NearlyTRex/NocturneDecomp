@@ -195,4 +195,51 @@ NOCTURNE_TEST(invalidating_the_state_record_is_observable) {
     end();
 }
 
+// -----------------------------------------------------------------------------
+// A depth clear turns writes on, and the record has to know. Left believing they
+// are still off, the cache drops the next draw's DepthMask(GL_FALSE) as redundant
+// and a draw meant only to test depth writes it as well.
+// -----------------------------------------------------------------------------
+
+NOCTURNE_TEST(a_depth_clear_does_not_leave_writes_on_for_the_next_draw) {
+    begin();
+    NocturneTriglPipelineState tested_only = {};
+    tested_only.depth_test_enabled = 1;
+    tested_only.depth_write_enabled = 0;
+    tested_only.depth_func = NOCTURNE_TRIGL_DEPTH_LEQUAL;
+    nocturne_trigl_gl_apply_state(&tested_only);
+    CHECK_EQ(gl_recorder::state().depth_write, 0);
+
+    const unsigned epoch = nocturne_trigl_gl_state_epoch();
+    nocturne_trigl_gl_enable_depth_write();
+    CHECK_EQ(gl_recorder::state().depth_write, 1);
+    CHECK(nocturne_trigl_gl_state_epoch() != epoch);
+
+    nocturne_trigl_gl_apply_state(&tested_only);
+    CHECK_EQ(gl_recorder::state().depth_write, 0);
+    end();
+}
+
+// -----------------------------------------------------------------------------
+// A master depth slot has no colour attachment, so its draw and read buffers
+// must say NONE or a GL 3.3 core driver reports it incomplete and nothing saves.
+// -----------------------------------------------------------------------------
+
+NOCTURNE_TEST(a_master_depth_slot_names_no_colour_buffer) {
+    begin();
+    gl_recorder::state().scene_fbo = 99;
+    CHECK_EQ(nocturne_trigl_gl_save_depth(0, 64, 64), 1);
+
+    const gl_recorder::State &log = gl_recorder::state();
+    const int draw_buffer = log.index_of_last("DrawBuffer");
+    const int read_buffer = log.index_of_last("ReadBuffer");
+    CHECK(draw_buffer >= 0);
+    CHECK(read_buffer >= 0);
+    CHECK_EQ(log.calls[(size_t)draw_buffer].a, (unsigned)GL_NONE);
+    CHECK_EQ(log.calls[(size_t)read_buffer].a, (unsigned)GL_NONE);
+    CHECK(draw_buffer < log.index_of_last("BlitFramebuffer"));
+    nocturne_trigl_gl_release_depth();
+    end();
+}
+
 NOCTURNE_TEST_MAIN()

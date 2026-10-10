@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl dll_dx7_cpp_APIDLLmasterZBuffer_FUN_10004e10(int z_buffer_mode)
+; int __cdecl dll_dx7_cpp_APIDLLmasterZBuffer_FUN_10004e10(int slot)
 ;
 ; Parameters:
-; int              Stack[0x4]:4   z_buffer_mode
+; int              Stack[0x4]:4   slot
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10
 ; undefined4       Stack[-0xc]:4  local_c

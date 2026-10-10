@@ -335,7 +335,7 @@ void nocturne_trigl_device_clear_depth(void) {
     nocturne_trigl_device_flush();
     // Depth writes have to be on for a clear to land, and a draw may have left
     // them off.
-    gl.DepthMask(GL_TRUE);
+    nocturne_trigl_gl_enable_depth_write();
     gl.ClearDepth(1.0);
     gl.Clear(GL_DEPTH_BUFFER_BIT);
 }
@@ -348,7 +348,7 @@ void nocturne_trigl_device_clear_depth_box(int left, int right, int top, int bot
     const int y = g_dev.height - bottom;
     gl.Enable(GL_SCISSOR_TEST);
     gl.Scissor(left, y, right - left, bottom - top);
-    gl.DepthMask(GL_TRUE);
+    nocturne_trigl_gl_enable_depth_write();
     gl.ClearDepth(1.0);
     gl.Clear(GL_DEPTH_BUFFER_BIT);
     gl.Disable(GL_SCISSOR_TEST);

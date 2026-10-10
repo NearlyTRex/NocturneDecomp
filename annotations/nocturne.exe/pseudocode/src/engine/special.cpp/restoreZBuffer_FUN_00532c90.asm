@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_special_cpp_restoreZBuffer_FUN_00532c90(int left,int top,int mode,int right,int bottom)
+; int __cdecl engine_special_cpp_restoreZBuffer_FUN_00532c90(int slot,int left,int top,int right,int bottom)
 ;
 ; Parameters:
-; int              Stack[0x4]:4   left
-; int              Stack[0x8]:4   top
-; int              Stack[0xc]:4   mode
+; int              Stack[0x4]:4   slot
+; int              Stack[0x8]:4   left
+; int              Stack[0xc]:4   top
 ; int              Stack[0x10]:4   right
 ; int              Stack[0x14]:4   bottom
 ;

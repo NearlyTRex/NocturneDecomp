@@ -98,8 +98,8 @@ int __cdecl dll_dx7_cpp_APIDLLsetColorTable16_FUN_10004b30(uchar *source_palette
 int __cdecl dll_dx7_cpp_floorLog2_FUN_10004d10(uint value);
 void __cdecl dll_dx7_cpp_APIDLLGetDisplayContext_FUN_10004d30(HDC *hdc);
 void __cdecl dll_dx7_cpp_APIDLLReleaseDisplayContext_FUN_10004da0(HDC hdc);
-int __cdecl dll_dx7_cpp_APIDLLmasterZBuffer_FUN_10004e10(int z_buffer_mode);
-int __cdecl dll_dx7_cpp_APIDLLrestoreZBuffer_FUN_10004e90(int left,int top,int mode,int right,int bottom);
+int __cdecl dll_dx7_cpp_APIDLLmasterZBuffer_FUN_10004e10(int slot);
+int __cdecl dll_dx7_cpp_APIDLLrestoreZBuffer_FUN_10004e90(int slot,int left,int top,int right,int bottom);
 int __cdecl dll_dx7_cpp_APIDLLdrawPolyList_FUN_10004f00(SRenderVertex *vertex_buffer,SMRGLPrimitiveQuad **polygons,int polygon_count,int render_flags);
 uint __cdecl dll_dx7_cpp_getOrAddVertex_FUN_10005010(SMRGLVertex *poly_vertex,SRenderVertex *vertex_array,uint render_flags);
 int __cdecl dll_dx7_cpp_APIDLLdrawPolyList2_FUN_10005130(SRenderVertex *vertex_buffer,SInputFace **polygons,int polygon_count,int render_flags );

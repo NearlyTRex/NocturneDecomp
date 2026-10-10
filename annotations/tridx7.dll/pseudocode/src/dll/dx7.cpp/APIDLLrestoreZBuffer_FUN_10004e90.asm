@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl dll_dx7_cpp_APIDLLrestoreZBuffer_FUN_10004e90(int left,int top,int mode,int right,int bottom)
+; int __cdecl dll_dx7_cpp_APIDLLrestoreZBuffer_FUN_10004e90(int slot,int left,int top,int right,int bottom)
 ;
 ; Parameters:
-; int              Stack[0x4]:4   left
-; int              Stack[0x8]:4   top
-; int              Stack[0xc]:4   mode
+; int              Stack[0x4]:4   slot
+; int              Stack[0x8]:4   left
+; int              Stack[0xc]:4   top
 ; int              Stack[0x10]:4   right
 ; int              Stack[0x14]:4   bottom
 ; Local Variables:

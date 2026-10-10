@@ -62,6 +62,10 @@ struct State {
     // renderer turned one off and nothing turned it back on.
     int depth_test = 0;
     int depth_write = 1;
+
+    // What nocturne_gl_scene_fbo answers. Zero, no scene target, unless a test
+    // needs the paths that only run against one.
+    unsigned scene_fbo = 0;
     int blend = 0;
     int cull = 0;
     int scissor = 0;
@@ -81,6 +85,7 @@ struct State {
         bound_program = bound_vao = 0;
         depth_test = blend = cull = scissor = 0;
         depth_write = 1;
+        scene_fbo = 0;
         next_texture = next_buffer = next_vao = next_shader = next_program = 1;
     }
 

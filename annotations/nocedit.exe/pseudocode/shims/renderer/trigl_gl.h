@@ -57,6 +57,13 @@ void nocturne_trigl_gl_invalidate_state(void);
 // a change as "everything differs"; see the note beside the counter.
 unsigned nocturne_trigl_gl_state_epoch(void);
 
+// Turn depth writes on for a clear, which needs them. Goes through here rather
+// than straight to GL so the pipeline record stays true: left believing writes
+// are off, the cache would skip the next draw's DepthMask(GL_FALSE) as redundant
+// and that draw would write depth it should only test. Moves the state epoch, so
+// records kept outside this file are stale as well.
+void nocturne_trigl_gl_enable_depth_write(void);
+
 
 // The colour a fully fogged fragment becomes. Components are 0..1.
 void nocturne_trigl_gl_set_fog_color(float r, float g, float b);

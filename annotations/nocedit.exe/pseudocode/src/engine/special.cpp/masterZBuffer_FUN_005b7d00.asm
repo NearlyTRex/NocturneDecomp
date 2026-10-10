@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_special_cpp_masterZBuffer_FUN_005b7d00(int z_buffer_mode)
+; int __cdecl engine_special_cpp_masterZBuffer_FUN_005b7d00(int slot)
 ;
 ; Parameters:
-; int              Stack[0x4]:4   z_buffer_mode
+; int              Stack[0x4]:4   slot
 ;
 ; XREF[2]:
 ;   core_dcamera.cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0 at 0044cf0f

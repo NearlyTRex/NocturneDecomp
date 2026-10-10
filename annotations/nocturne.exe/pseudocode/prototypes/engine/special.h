@@ -197,11 +197,11 @@ int __cdecl toggle(void);
 
 // Original: engine_special.cpp_masterZBuffer_FUN_00532c70
 // Address: 00532c70
-int __cdecl masterZBuffer(int z_buffer_mode);
+int __cdecl masterZBuffer(int slot);
 
 // Original: engine_special.cpp_restoreZBuffer_FUN_00532c90
 // Address: 00532c90
-int __cdecl restoreZBuffer(int left,int top,int mode,int right,int bottom);
+int __cdecl restoreZBuffer(int slot,int left,int top,int right,int bottom);
 
 // Original: engine_special.cpp_getVideoMemory_FUN_00532cd0
 // Address: 00532cd0

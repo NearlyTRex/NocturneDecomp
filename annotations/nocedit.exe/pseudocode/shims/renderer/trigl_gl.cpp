@@ -536,6 +536,10 @@ MasterDepth *ensure_master_depth(int slot, int width, int height) {
     gl.GenFramebuffers(1, &m.fbo);
     gl.BindFramebuffer(GL_FRAMEBUFFER, m.fbo);
     gl.FramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, m.depth);
+    // Depth only: before GL 4.1 a framebuffer whose draw or read buffer names a
+    // missing colour attachment is incomplete.
+    gl.DrawBuffer(GL_NONE);
+    gl.ReadBuffer(GL_NONE);
     const GLenum status = (gl.CheckFramebufferStatus != nullptr)
                               ? gl.CheckFramebufferStatus(GL_FRAMEBUFFER)
                               : (GLenum)GL_FRAMEBUFFER_COMPLETE;
@@ -608,6 +612,14 @@ void nocturne_trigl_gl_invalidate_state(void) {
 
 unsigned nocturne_trigl_gl_state_epoch(void) {
     return g_state_epoch;
+}
+
+void nocturne_trigl_gl_enable_depth_write(void) {
+    gl.DepthMask(GL_TRUE);
+    g_current.depth_write_enabled = 1;
+    // The entry points' own record of the last draw is stale too; without this a
+    // draw matching it returns before the state is applied at all.
+    ++g_state_epoch;
 }
 
 
@@ -1082,6 +1094,7 @@ void nocturne_trigl_gl_set_target_size(int, int) {}
 void nocturne_trigl_gl_set_fog_color(float, float, float) {}
 void nocturne_trigl_gl_apply_state(const NocturneTriglPipelineState *) {}
 void nocturne_trigl_gl_invalidate_state(void) {}
+void nocturne_trigl_gl_enable_depth_write(void) {}
 unsigned nocturne_trigl_gl_state_epoch(void) { return 0; }
 unsigned nocturne_trigl_gl_texture(const char *, int, const unsigned *, int, int) { return 0; }
 unsigned nocturne_trigl_gl_texture_cached(const char *, int) { return 0; }
