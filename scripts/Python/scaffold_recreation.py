@@ -159,13 +159,25 @@ PLATFORM_BOUNDARY = {
 # platform/ cannot hold because they name a module above it.
 HAND_WRITTEN = {"engine/palette/fontfactory.h", "tests/engine/palette/fontfactory_test.cpp"}
 
-# Classes and structs written by hand in a generated module, declared in its fwd.h with
-# the rest, and the directories holding them, which --prune leaves alone.
-HAND_WRITTEN_CLASSES = {"common": {"CBinaryReader": "class", "CBinaryWriter": "class",
-                                   "SWildcardPath": "struct"}}
-HAND_WRITTEN_DIRS = {"common/input", "common/net", "common/serial", "common/text",
+# Types written by hand in a generated module, each with its forward declaration ({} is
+# the name), declared in its fwd.h with the rest, and the directories holding them, which
+# --prune leaves alone.
+HAND_WRITTEN_CLASSES = {"common": {
+    "CBinaryReader": "class {};",
+    "CBinaryWriter": "class {};",
+    "CFrameConverter": "class {};",
+    "EPixelLayout": "enum class {} : std::uint8_t;",
+    "SExtent": "struct {};",
+    "SFrameUpload": "struct {};",
+    "SPixelFormat": "struct {};",
+    "SPoint": "struct {};",
+    "SPresentation": "struct {};",
+    "SViewport": "struct {};",
+    "SWildcardPath": "struct {};",
+}}
+HAND_WRITTEN_DIRS = {"common/input", "common/net", "common/serial", "common/text", "common/video",
                      "tests/common/input", "tests/common/net", "tests/common/serial",
-                     "tests/common/text"}
+                     "tests/common/text", "tests/common/video"}
 
 # Parameters naming an OS handle the adapter owns; the kept function loses them.
 DROPPED_PARAMS = {"engine/special.cpp:loadExternalRenderer": {"window_handle"}}
@@ -954,7 +966,8 @@ class Scaffold:
             hand_written = HAND_WRITTEN_CLASSES.get(module, {})
             for name in sorted(set(names) | set(hand_written)):
                 if name in hand_written:
-                    lines.append("%s %s;" % (hand_written[name], name))
+                    lines.append(hand_written[name].format(name))
+                    needs_cstdint = needs_cstdint or "std::" in hand_written[name]
                     continue
                 t = self.model.types[name]
                 if t["kind"] == "enum":

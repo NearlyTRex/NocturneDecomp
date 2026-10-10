@@ -40,12 +40,30 @@ foreach(_module IN LISTS NOCTURNE_RECREATION_MODULES)
     list(APPEND _headers ${_module_headers})
 endforeach()
 
+include(FetchContent)
+
+# sound/ uses miniaudio to mix, resample and decode; the SDL adapter owns the device, so
+# miniaudio is built without one. Its feature defines are private to its own build, and
+# MA_NO_DEVICE_IO changes its structs, so it is re-exported to everything that includes it.
+FetchContent_Declare(miniaudio
+    GIT_REPOSITORY https://github.com/mackron/miniaudio.git
+    GIT_TAG        0.11.25
+    GIT_SHALLOW    TRUE
+    SYSTEM)
+set(MINIAUDIO_NO_DEVICEIO ON CACHE BOOL "" FORCE)
+set(MINIAUDIO_NO_LIBVORBIS ON CACHE BOOL "" FORCE)
+set(MINIAUDIO_NO_LIBOPUS ON CACHE BOOL "" FORCE)
+set(MINIAUDIO_NO_ENCODING ON CACHE BOOL "" FORCE)
+set(MINIAUDIO_INSTALL OFF CACHE BOOL "" FORCE)
+FetchContent_MakeAvailable(miniaudio)
+target_compile_definitions(miniaudio PUBLIC MA_NO_DEVICE_IO)
+
 if(_sources)
     add_library(nocturne_recreation STATIC ${_sources})
-    target_link_libraries(nocturne_recreation PUBLIC nocturne_recreation_options)
+    target_link_libraries(nocturne_recreation PUBLIC nocturne_recreation_options miniaudio)
 else()
     add_library(nocturne_recreation INTERFACE)
-    target_link_libraries(nocturne_recreation INTERFACE nocturne_recreation_options)
+    target_link_libraries(nocturne_recreation INTERFACE nocturne_recreation_options miniaudio)
 endif()
 
 # Every header must compile on its own.
@@ -57,10 +75,10 @@ foreach(_header IN LISTS _headers)
 endforeach()
 if(_header_checks)
     add_library(nocturne_recreation_header_checks OBJECT ${_header_checks})
-    target_link_libraries(nocturne_recreation_header_checks PRIVATE nocturne_recreation_options)
+    target_link_libraries(nocturne_recreation_header_checks
+        PRIVATE nocturne_recreation_options miniaudio)
 endif()
 
-include(FetchContent)
 FetchContent_Declare(googletest
     GIT_REPOSITORY https://github.com/google/googletest.git
     GIT_TAG        v1.17.0

@@ -23,13 +23,13 @@ struct SInputFace;
 struct SMRGLPrimitiveQuad;
 struct SMRGLTextureBasic;
 struct SNetworkAddr;
-struct SPixelFormat;
 struct SRenderVertex;
 struct SWindowEvent;
 enum class EGamepadAxis : std::uint8_t;
 enum class EGamepadButton : std::uint8_t;
 enum class EGamepadType : std::uint8_t;
 enum class EMouseButton : std::uint8_t;
+enum class EWindowMode : std::uint8_t;
 enum class EWindowEventType : std::uint8_t;
 
 } // namespace nocturne::platform

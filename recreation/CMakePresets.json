@@ -8,6 +8,7 @@
       "generator": "Ninja",
       "binaryDir": "${sourceDir}/../build/recreation/${presetName}",
       "cacheVariables": {
+        "CMAKE_C_COMPILER": "clang",
         "CMAKE_CXX_COMPILER": "clang++",
         "CMAKE_BUILD_TYPE": "Debug"
       }
@@ -25,7 +26,6 @@
       "displayName": "Recreation with the SDL adapters and the nocturne executable",
       "inherits": "default",
       "cacheVariables": {
-        "CMAKE_C_COMPILER": "clang",
         "NOCTURNE_RECREATION_GAME": "ON"
       }
     },
@@ -34,7 +34,6 @@
       "displayName": "Coverage and the game together, as CI builds them",
       "inherits": "coverage",
       "cacheVariables": {
-        "CMAKE_C_COMPILER": "clang",
         "NOCTURNE_RECREATION_GAME": "ON"
       }
     }

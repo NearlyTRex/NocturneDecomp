@@ -16,18 +16,20 @@ TEST(IDisplay, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&IDisplay::setDisplayMode), bool (IDisplay::*)(int, int, int)>);
     static_assert(
-        std::is_same_v<decltype(&IDisplay::getPixelFormat), SPixelFormat (IDisplay::*)()>);
+        std::is_same_v<decltype(&IDisplay::getPixelFormat), common::SPixelFormat (IDisplay::*)()>);
     static_assert(std::is_same_v<decltype(&IDisplay::setPalette),
                                  void (IDisplay::*)(std::span<const std::uint8_t, 768>)>);
     static_assert(std::is_same_v<decltype(&IDisplay::present),
                                  void (IDisplay::*)(std::span<const std::byte>, int)>);
+    static_assert(
+        std::is_same_v<decltype(&IDisplay::setWindowMode), void (IDisplay::*)(EWindowMode)>);
+    static_assert(std::is_same_v<decltype(&IDisplay::setWindowSize), void (IDisplay::*)(int, int)>);
 }
 
-TEST(SPixelFormat, DefaultsToNoMasks) {
-    const SPixelFormat format;
-    EXPECT_EQ(format.red_mask, 0U);
-    EXPECT_EQ(format.green_mask, 0U);
-    EXPECT_EQ(format.blue_mask, 0U);
+TEST(EWindowMode, KeepsThePersistedValues) {
+    static_assert(static_cast<int>(EWindowMode::Windowed) == 0);
+    static_assert(static_cast<int>(EWindowMode::Fullscreen) == 1);
+    static_assert(static_cast<int>(EWindowMode::Borderless) == 2);
 }
 
 } // namespace

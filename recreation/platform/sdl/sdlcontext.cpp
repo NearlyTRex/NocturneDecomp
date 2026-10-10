@@ -13,7 +13,7 @@ CSdlContext::CSdlContext() {
     SDL_SetHint(SDL_HINT_WINDOWS_CLOSE_ON_ALT_F4, "0");
     // mainWindowProc refuses SC_SCREENSAVE and SC_MONITORPOWER.
     SDL_SetHint(SDL_HINT_VIDEO_ALLOW_SCREENSAVER, "0");
-    if (!SDL_Init(SDL_INIT_VIDEO | SDL_INIT_GAMEPAD)) {
+    if (!SDL_Init(SDL_INIT_VIDEO | SDL_INIT_GAMEPAD | SDL_INIT_AUDIO)) {
         throw std::runtime_error(SDL_GetError());
     }
 }

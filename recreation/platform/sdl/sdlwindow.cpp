@@ -30,10 +30,15 @@ void queueText(const char *text, std::deque<SWindowEvent> &out) {
     }
 }
 
+common::SPoint toLogical(const common::SPresentation &presentation, float x, float y) {
+    return common::windowToLogical(presentation,
+                                   {.x = static_cast<int>(x), .y = static_cast<int>(y)});
+}
+
 void queueButton(EWindowEventType type, const SDL_MouseButtonEvent &button,
-                 std::deque<SWindowEvent> &out) {
-    SWindowEvent event{
-        .type = type, .x = static_cast<int>(button.x), .y = static_cast<int>(button.y)};
+                 const common::SPresentation &presentation, std::deque<SWindowEvent> &out) {
+    const common::SPoint point = toLogical(presentation, button.x, button.y);
+    SWindowEvent event{.type = type, .x = point.x, .y = point.y};
     switch (button.button) {
     case SDL_BUTTON_LEFT:
         event.button = EMouseButton::Left;
@@ -50,7 +55,8 @@ void queueButton(EWindowEventType type, const SDL_MouseButtonEvent &button,
     out.push_back(event);
 }
 
-void queueWheel(const SDL_MouseWheelEvent &wheel, std::deque<SWindowEvent> &out) {
+void queueWheel(const SDL_MouseWheelEvent &wheel, const common::SPresentation &presentation,
+                std::deque<SWindowEvent> &out) {
     constexpr int kWheelDelta = 120;
     // Whole notches only; a high-resolution wheel's fractions accumulate until one completes.
     const int sign = wheel.direction == SDL_MOUSEWHEEL_FLIPPED ? -1 : 1;
@@ -58,13 +64,15 @@ void queueWheel(const SDL_MouseWheelEvent &wheel, std::deque<SWindowEvent> &out)
     if (notches == 0) {
         return;
     }
+    const common::SPoint point = toLogical(presentation, wheel.mouse_x, wheel.mouse_y);
     out.push_back({.type = EWindowEventType::MouseWheel,
-                   .x = static_cast<int>(wheel.mouse_x),
-                   .y = static_cast<int>(wheel.mouse_y),
+                   .x = point.x,
+                   .y = point.y,
                    .wheel_delta = notches * kWheelDelta});
 }
 
-void queueEvents(const SDL_Event &event, std::deque<SWindowEvent> &out) {
+void queueEvents(const SDL_Event &event, const common::SPresentation &presentation,
+                 std::deque<SWindowEvent> &out) {
     switch (event.type) {
     case SDL_EVENT_QUIT:
         out.push_back({.type = EWindowEventType::Quit});
@@ -84,19 +92,19 @@ void queueEvents(const SDL_Event &event, std::deque<SWindowEvent> &out) {
     case SDL_EVENT_TEXT_INPUT:
         queueText(event.text.text, out);
         break;
-    case SDL_EVENT_MOUSE_MOTION:
-        out.push_back({.type = EWindowEventType::MouseMove,
-                       .x = static_cast<int>(event.motion.x),
-                       .y = static_cast<int>(event.motion.y)});
+    case SDL_EVENT_MOUSE_MOTION: {
+        const common::SPoint point = toLogical(presentation, event.motion.x, event.motion.y);
+        out.push_back({.type = EWindowEventType::MouseMove, .x = point.x, .y = point.y});
         break;
+    }
     case SDL_EVENT_MOUSE_BUTTON_DOWN:
-        queueButton(EWindowEventType::MouseButtonDown, event.button, out);
+        queueButton(EWindowEventType::MouseButtonDown, event.button, presentation, out);
         break;
     case SDL_EVENT_MOUSE_BUTTON_UP:
-        queueButton(EWindowEventType::MouseButtonUp, event.button, out);
+        queueButton(EWindowEventType::MouseButtonUp, event.button, presentation, out);
         break;
     case SDL_EVENT_MOUSE_WHEEL:
-        queueWheel(event.wheel, out);
+        queueWheel(event.wheel, presentation, out);
         break;
     default:
         break;
@@ -110,7 +118,9 @@ void CSdlWindow::SWindowDeleter::operator()(SDL_Window *window) const {
 }
 
 CSdlWindow::CSdlWindow(std::string_view title, int width, int height) {
-    window_.reset(SDL_CreateWindow(std::string(title).c_str(), width, height, 0));
+    // Hidden until the first display mode sizes it, so no default-sized window flashes up.
+    window_.reset(SDL_CreateWindow(std::string(title).c_str(), width, height,
+                                   SDL_WINDOW_OPENGL | SDL_WINDOW_HIDDEN));
     if (!window_ || !SDL_StartTextInput(window_.get())) {
         throw std::runtime_error(SDL_GetError());
     }
@@ -118,10 +128,18 @@ CSdlWindow::CSdlWindow(std::string_view title, int width, int height) {
     SDL_HideCursor();
 }
 
+SDL_Window *CSdlWindow::getSdlWindow() const {
+    return window_.get();
+}
+
+void CSdlWindow::setLogicalSize(common::SExtent logical) {
+    logical_ = logical;
+}
+
 bool CSdlWindow::pollEvent(SWindowEvent &event) {
     SDL_Event sdl_event;
     while (pending_.empty() && SDL_PollEvent(&sdl_event)) {
-        queueEvents(sdl_event, pending_);
+        queueEvents(sdl_event, getPresentation(), pending_);
     }
     if (pending_.empty()) {
         return false;
@@ -132,7 +150,8 @@ bool CSdlWindow::pollEvent(SWindowEvent &event) {
 }
 
 void CSdlWindow::warpMouse(int x, int y) {
-    SDL_WarpMouseInWindow(window_.get(), static_cast<float>(x), static_cast<float>(y));
+    const common::SPoint point = common::logicalToWindow(getPresentation(), {.x = x, .y = y});
+    SDL_WarpMouseInWindow(window_.get(), static_cast<float>(point.x), static_cast<float>(point.y));
 }
 
 std::string CSdlWindow::getScancodeName(std::uint16_t scancode) {
@@ -142,6 +161,14 @@ std::string CSdlWindow::getScancodeName(std::uint16_t scancode) {
 void CSdlWindow::showMessageBox(std::string_view message, std::string_view title) {
     SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_WARNING, std::string(title).c_str(),
                              std::string(message).c_str(), window_.get());
+}
+
+common::SPresentation CSdlWindow::getPresentation() const {
+    common::SPresentation presentation{.window = {}, .drawable = {}, .logical = logical_};
+    SDL_GetWindowSize(window_.get(), &presentation.window.width, &presentation.window.height);
+    SDL_GetWindowSizeInPixels(window_.get(), &presentation.drawable.width,
+                              &presentation.drawable.height);
+    return presentation;
 }
 
 } // namespace nocturne::platform::sdl

@@ -23,11 +23,14 @@ TEST(IAudioDevice, IsAbstractWithVirtualDestructor) {
 }
 
 TEST(IAudioDevice, PublicInterface) {
+    static_assert(
+        std::is_same_v<decltype(&IAudioDevice::getDriverName), std::string (IAudioDevice::*)()>);
     static_assert(std::is_same_v<decltype(&IAudioDevice::getDeviceNames),
                                  std::vector<std::string> (IAudioDevice::*)()>);
-    static_assert(
-        std::is_same_v<decltype(&IAudioDevice::open),
-                       bool (IAudioDevice::*)(std::size_t, const SAudioFormat &, IAudioSource &)>);
+    static_assert(std::is_same_v<decltype(&IAudioDevice::open),
+                                 bool (IAudioDevice::*)(std::string_view, const SAudioFormat &,
+                                                        IAudioSource &)>);
+    static_assert(std::is_same_v<decltype(&IAudioDevice::setPaused), void (IAudioDevice::*)(bool)>);
     static_assert(std::is_same_v<decltype(&IAudioDevice::close), void (IAudioDevice::*)()>);
 }
 
