@@ -203,14 +203,25 @@ if(NOCTURNE_RECREATION_COVERAGE)
         VERBATIM)
 endif()
 
-find_program(RUN_CLANG_TIDY run-clang-tidy)
-if(RUN_CLANG_TIDY)
-    # Every translation unit this build compiles: header checks, tests and
-    # implementation files. GoogleTest's own sources are left out.
+find_program(CLANG_TIDY NAMES clang-tidy clang-tidy-18)
+find_package(Python3 COMPONENTS Interpreter)
+if(CLANG_TIDY AND Python3_FOUND)
+    # Source and test files, and header checks for headers no .cpp includes; clean results are
+    # cached in NOCTURNE_RECREATION_TIDY_CACHE (see cmake/tidy.py).
+    set(NOCTURNE_RECREATION_TIDY_CACHE "${CMAKE_CURRENT_BINARY_DIR}/tidy-cache"
+        CACHE PATH "Where clang-tidy's clean results are kept; empty disables the cache")
+    set(_tidy_cache "")
+    if(NOCTURNE_RECREATION_TIDY_CACHE)
+        set(_tidy_cache "--cache-dir=${NOCTURNE_RECREATION_TIDY_CACHE}")
+    endif()
     add_custom_target(tidy
-        COMMAND ${RUN_CLANG_TIDY} -quiet -p ${CMAKE_CURRENT_BINARY_DIR}
-                "${CMAKE_CURRENT_SOURCE_DIR}/|${CMAKE_CURRENT_BINARY_DIR}/header_checks/"
+        COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/cmake/tidy.py
+                --clang-tidy ${CLANG_TIDY}
+                --source-dir ${CMAKE_CURRENT_SOURCE_DIR}
+                --build-dir ${CMAKE_CURRENT_BINARY_DIR}
+                ${_tidy_cache}
         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        USES_TERMINAL
         VERBATIM)
 endif()
 

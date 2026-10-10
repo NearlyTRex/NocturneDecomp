@@ -18,7 +18,7 @@ jobs:
   # that cannot run here, so they are built only on release.
   build:
     name: Build (exe-linux-x86_64)
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@4fe68c91984dd09dea6988fd603b128bc3f44ff7 # v0.2.9
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@4af6d51284dd438d7a0aed231624528e30e5a514 # v0.2.11
     permissions:
       contents: read
     with:
@@ -54,17 +54,18 @@ jobs:
 
   # The source recreation is a standalone CMake project that fetches and builds
   # its third-party libraries from source. Every header compiles on its own, the
-  # SDL adapters and the executable build, then format, clang-tidy and the tests
-  # under the 100% line, function and branch coverage gate.
+  # SDL adapters and the executable build, then format and the tests under the
+  # 100% line, function and branch coverage gate. Each phase is a log group and
+  # a row of timings on the run's summary page.
   recreation:
     name: Recreation
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@4fe68c91984dd09dea6988fd603b128bc3f44ff7 # v0.2.9
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@4af6d51284dd438d7a0aed231624528e30e5a514 # v0.2.11
     permissions:
       contents: read
     with:
       # SDL3 needs the native lane's X11/Wayland/audio headers plus XTest.
       apt-packages: >-
-        cmake clang clang-format clang-tidy llvm ninja-build pkg-config
+        cmake clang clang-format llvm ninja-build pkg-config
         libx11-dev libxext-dev libxcursor-dev libxi-dev libxfixes-dev
         libxrandr-dev libxss-dev libxtst-dev libwayland-dev libxkbcommon-dev
         wayland-protocols libegl-dev libdecor-0-dev libpulse-dev
@@ -80,17 +81,46 @@ jobs:
       cache-key: recreation-ci
       build-command: |
         cd recreation
-        cmake --preset ci
-        cmake --build --preset ci
-        cmake --build --preset ci --target format-check
-        cmake --build --preset ci --target tidy
+        ci-phase Configure cmake --preset ci
+        ci-phase Build cmake --build --preset ci
+        ci-phase Format cmake --build --preset ci --target format-check
       test-command: |
         cd recreation
-        cmake --build --preset ci --target coverage
+        ci-phase "Tests and coverage" cmake --build --preset ci --target coverage
+
+  # clang-tidy over the recreation, beside the build rather than after it. It
+  # needs the compile database and FFmpeg's headers but compiles nothing else,
+  # and cmake/tidy.py skips files an earlier run found clean; the rolling cache
+  # carries those results from run to run.
+  recreation-tidy:
+    name: Recreation tidy
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@4af6d51284dd438d7a0aed231624528e30e5a514 # v0.2.11
+    permissions:
+      contents: read
+    with:
+      apt-packages: >-
+        cmake clang clang-tidy llvm ninja-build pkg-config python3
+        libx11-dev libxext-dev libxcursor-dev libxi-dev libxfixes-dev
+        libxrandr-dev libxss-dev libxtst-dev libwayland-dev libxkbcommon-dev
+        wayland-protocols libegl-dev libdecor-0-dev libpulse-dev
+        libasound2-dev
+      cache-paths: build/recreation/ci/_deps
+      cache-key-files: |
+        recreation/CMakeLists.txt
+        recreation/cmake/*.cmake
+      # FFmpeg is the only compile, and only on a cold cache.
+      ccache: true
+      cache-key: recreation-tidy
+      rolling-cache-paths: build/recreation/tidy-cache
+      build-command: |
+        cd recreation
+        ci-phase Configure cmake --preset ci -DNOCTURNE_RECREATION_TIDY_CACHE="$PWD/../build/recreation/tidy-cache"
+        ci-phase FFmpeg cmake --build --preset ci --target ffmpeg_ext
+        ci-phase Tidy cmake --build --preset ci --target tidy
 
   lint:
     name: Lint
-    uses: NearlyTRex/Workflows/.github/workflows/lint.yml@4fe68c91984dd09dea6988fd603b128bc3f44ff7 # v0.2.9
+    uses: NearlyTRex/Workflows/.github/workflows/lint.yml@4af6d51284dd438d7a0aed231624528e30e5a514 # v0.2.11
     permissions:
       contents: read
     with:
