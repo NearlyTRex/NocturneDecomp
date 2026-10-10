@@ -3,7 +3,8 @@
 #include "common/video/framebuffer.h"
 #include "common/video/presentation.h"
 #include "platform/display.h"
-#include "platform/sdl/glapi.h"
+#include "platform/gl/glapi.h"
+#include "platform/gl/glquad.h"
 
 #include <memory>
 
@@ -34,16 +35,14 @@ private:
         void operator()(SDL_GLContextState *context) const;
     };
 
-    void buildQuad();
     void applyWindowSize();
     void drawFrame();
 
     CSdlWindow &window_;
     std::unique_ptr<SDL_GLContextState, SContextDeleter> context_;
-    SGlApi gl_;
-    GLuint program_ = 0;
-    GLuint vertex_buffer_ = 0;
-    GLuint vertex_array_ = 0;
+    gl::SGlApi gl_;
+    // Built once the context is current.
+    std::unique_ptr<gl::CGlQuad> quad_;
     GLuint texture_ = 0;
     common::CFrameConverter converter_;
     common::EPixelLayout layout_ = common::EPixelLayout::Indexed8;

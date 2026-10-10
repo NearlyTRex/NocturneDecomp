@@ -73,6 +73,7 @@ and `IAudioDevice` pulls the mix as it plays.
 | `<module>/fwd.h` | Forward declarations and opaque enums for the module |
 | `platform/` | Hand-written OS interfaces; the scaffold never writes here |
 | `platform/sdl/` | The adapters behind those interfaces (`CSdlWindow` implements `IWindow`). The only code that includes SDL or OS headers; they hold no logic, and build only with `NOCTURNE_RECREATION_GAME` into `nocturne_platform_sdl` |
+| `platform/gl/` | The hardware renderer's GL backend and device, GL without SDL: the state cache, texture cache, persistent scene target with lock/unlock readback, hold buffer and master depth slots. It reaches GL only through the `SGlApi` table, which tests fill from `tests/mocks/platform/glrecorder.h` to assert call sequences without a context. The core-profile header comes from the Khronos registries, pinned in `cmake/khronos.cmake` |
 | `main.cpp` | The `nocturne` executable: constructs the adapters and runs the loop |
 | `common/serial/` | `CBinaryReader` / `CBinaryWriter`: every file and wire format is read and written through these, little-endian with explicit widths |
 | `common/render/` | The hardware renderer's GL-free core, ported from the decomp's `trigl`: render flags to pipeline state, engine vertices to screen vertices, polygon batching, texture palette expansion |

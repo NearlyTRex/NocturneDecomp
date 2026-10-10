@@ -1,104 +1,18 @@
 #include "platform/sdl/sdldisplay.h"
 
+#include "platform/gl/glformat.h"
 #include "platform/sdl/sdlwindow.h"
 
 #include <SDL3/SDL.h>
 #include <array>
-#include <bit>
-#include <cstdint>
 #include <stdexcept>
-#include <string>
 
 namespace nocturne::platform::sdl {
 namespace {
 
-// Positions are already in clip space; the first texel row lands at the top of the viewport.
-constexpr const char *kVertexSource = R"(#version 150 core
-in vec2 a_pos;
-in vec2 a_uv;
-out vec2 v_uv;
-void main() {
-    gl_Position = vec4(a_pos, 0.0, 1.0);
-    v_uv = a_uv;
-}
-)";
-
-// The game leaves the fourth byte zero; on a compositor that honours window alpha it would show
-// the desktop through the frame, so the presented pixel is always opaque.
-constexpr const char *kFragmentSource = R"(#version 150 core
-uniform sampler2D u_tex;
-in vec2 v_uv;
-out vec4 o_color;
-void main() {
-    o_color = vec4(texture(u_tex, v_uv).rgb, 1.0);
-}
-)";
-
-// x, y, u, v as a triangle strip.
-constexpr std::array<GLfloat, 16> kQuad = {
-    -1.0F, 1.0F,  0.0F, 0.0F, 1.0F, 1.0F,  1.0F, 0.0F,
-    -1.0F, -1.0F, 0.0F, 1.0F, 1.0F, -1.0F, 1.0F, 1.0F,
-};
-
-constexpr GLuint kPositionAttribute = 0;
-constexpr GLuint kTexCoordAttribute = 1;
-
-struct SGlFormat {
-    GLenum format;
-    GLenum type;
-};
-
-// Indexed by EPixelLayout; Indexed8 frames are expanded to Bgra8888 before upload.
-constexpr std::array<SGlFormat, 3> kUploadFormats = {{
-    {.format = GL_BGRA, .type = GL_UNSIGNED_BYTE},
-    {.format = GL_RGB, .type = GL_UNSIGNED_SHORT_5_6_5},
-    {.format = GL_BGRA, .type = GL_UNSIGNED_BYTE},
-}};
-
 // Indexed by whether the frame is a whole multiple of its size on screen: nearest stays even
 // there, and makes pixels uneven anywhere else.
 constexpr std::array<GLint, 2> kFilters = {GL_LINEAR, GL_NEAREST};
-
-SGlFormat uploadFormat(common::EPixelLayout layout) {
-    return kUploadFormats.at(static_cast<std::size_t>(layout));
-}
-
-GLuint compileStage(const SGlApi &gl, GLenum type, const char *source) {
-    const GLuint shader = gl.CreateShader(type);
-    gl.ShaderSource(shader, 1, &source, nullptr);
-    gl.CompileShader(shader);
-    GLint compiled = GL_FALSE;
-    gl.GetShaderiv(shader, GL_COMPILE_STATUS, &compiled);
-    if (compiled == GL_FALSE) {
-        std::array<GLchar, 1024> log{};
-        gl.GetShaderInfoLog(shader, static_cast<GLsizei>(log.size()), nullptr, log.data());
-        gl.DeleteShader(shader);
-        throw std::runtime_error(std::string("present shader: ") + log.data());
-    }
-    return shader;
-}
-
-GLuint linkProgram(const SGlApi &gl) {
-    const GLuint vertex = compileStage(gl, GL_VERTEX_SHADER, kVertexSource);
-    const GLuint fragment = compileStage(gl, GL_FRAGMENT_SHADER, kFragmentSource);
-    const GLuint program = gl.CreateProgram();
-    gl.AttachShader(program, vertex);
-    gl.AttachShader(program, fragment);
-    gl.BindAttribLocation(program, kPositionAttribute, "a_pos");
-    gl.BindAttribLocation(program, kTexCoordAttribute, "a_uv");
-    gl.LinkProgram(program);
-    gl.DeleteShader(vertex);
-    gl.DeleteShader(fragment);
-    GLint linked = GL_FALSE;
-    gl.GetProgramiv(program, GL_LINK_STATUS, &linked);
-    if (linked == GL_FALSE) {
-        std::array<GLchar, 1024> log{};
-        gl.GetProgramInfoLog(program, static_cast<GLsizei>(log.size()), nullptr, log.data());
-        gl.DeleteProgram(program);
-        throw std::runtime_error(std::string("present program: ") + log.data());
-    }
-    return program;
-}
 
 } // namespace
 
@@ -118,20 +32,17 @@ CSdlDisplay::CSdlDisplay(CSdlWindow &window) : window_(window) {
     if (!context_) {
         throw std::runtime_error(SDL_GetError());
     }
-    gl_.load();
+    gl_.load(SDL_GL_GetProcAddress);
     // Adaptive vsync where the driver has it, plain vsync otherwise.
     if (!SDL_GL_SetSwapInterval(-1)) {
         SDL_GL_SetSwapInterval(1);
     }
-    buildQuad();
+    quad_ = std::make_unique<gl::CGlQuad>(gl_);
     gl_.GenTextures(1, &texture_);
 }
 
 CSdlDisplay::~CSdlDisplay() {
     gl_.DeleteTextures(1, &texture_);
-    gl_.DeleteVertexArrays(1, &vertex_array_);
-    gl_.DeleteBuffers(1, &vertex_buffer_);
-    gl_.DeleteProgram(program_);
 }
 
 bool CSdlDisplay::setDisplayMode(int width, int height, int bits_per_pixel) {
@@ -142,7 +53,7 @@ bool CSdlDisplay::setDisplayMode(int width, int height, int bits_per_pixel) {
     layout_ = *layout;
     logical_ = {.width = width, .height = height};
     converter_.setMode(layout_, width, height);
-    const SGlFormat format = uploadFormat(converter_.getUploadLayout());
+    const gl::SGlPixelFormat format = gl::getGlPixelFormat(converter_.getUploadLayout());
     gl_.BindTexture(GL_TEXTURE_2D, texture_);
     gl_.TexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, width, height, 0, format.format, format.type,
                    nullptr);
@@ -168,7 +79,7 @@ void CSdlDisplay::present(std::span<const std::byte> pixels, int pitch) {
     if (!upload) {
         return;
     }
-    const SGlFormat format = uploadFormat(upload->layout);
+    const gl::SGlPixelFormat format = gl::getGlPixelFormat(upload->layout);
     gl_.PixelStorei(GL_UNPACK_ALIGNMENT, 1);
     gl_.PixelStorei(GL_UNPACK_ROW_LENGTH, upload->row_length);
     gl_.BindTexture(GL_TEXTURE_2D, texture_);
@@ -214,23 +125,6 @@ void CSdlDisplay::setWindowSize(int width, int height) {
     }
 }
 
-void CSdlDisplay::buildQuad() {
-    program_ = linkProgram(gl_);
-    gl_.UseProgram(program_);
-    gl_.Uniform1i(gl_.GetUniformLocation(program_, "u_tex"), 0);
-    gl_.GenVertexArrays(1, &vertex_array_);
-    gl_.GenBuffers(1, &vertex_buffer_);
-    gl_.BindVertexArray(vertex_array_);
-    gl_.BindBuffer(GL_ARRAY_BUFFER, vertex_buffer_);
-    gl_.BufferData(GL_ARRAY_BUFFER, sizeof(kQuad), kQuad.data(), GL_STATIC_DRAW);
-    constexpr GLsizei kStride = 4 * sizeof(GLfloat);
-    gl_.EnableVertexAttribArray(kPositionAttribute);
-    gl_.VertexAttribPointer(kPositionAttribute, 2, GL_FLOAT, GL_FALSE, kStride, nullptr);
-    gl_.EnableVertexAttribArray(kTexCoordAttribute);
-    gl_.VertexAttribPointer(kTexCoordAttribute, 2, GL_FLOAT, GL_FALSE, kStride,
-                            std::bit_cast<const void *>(std::uintptr_t{2 * sizeof(GLfloat)}));
-}
-
 void CSdlDisplay::applyWindowSize() {
     SDL_Window *const window = window_.getSdlWindow();
     SDL_SetWindowSize(window, window_size_.width, window_size_.height);
@@ -262,9 +156,7 @@ void CSdlDisplay::drawFrame() {
     gl_.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, filter);
     gl_.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
     gl_.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-    gl_.UseProgram(program_);
-    gl_.BindVertexArray(vertex_array_);
-    gl_.DrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+    quad_->draw(texture_, gl::EQuadRows::TopFirst);
 }
 
 } // namespace nocturne::platform::sdl

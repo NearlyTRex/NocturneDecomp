@@ -42,6 +42,9 @@ endforeach()
 
 include(FetchContent)
 
+include(cmake/khronos.cmake)
+target_link_libraries(nocturne_recreation_options INTERFACE nocturne_khronos)
+
 # sound/ uses miniaudio to mix, resample and decode; the SDL adapter owns the device, so
 # miniaudio is built without one. Its feature defines are private to its own build, and
 # MA_NO_DEVICE_IO changes its structs, so it is re-exported to everything that includes it.
