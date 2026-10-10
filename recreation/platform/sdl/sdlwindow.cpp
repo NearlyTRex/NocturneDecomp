@@ -124,8 +124,6 @@ CSdlWindow::CSdlWindow(std::string_view title, int width, int height) {
     if (!window_ || !SDL_StartTextInput(window_.get())) {
         throw std::runtime_error(SDL_GetError());
     }
-    // mainWindowProc answers WM_SETCURSOR with SetCursor(NULL).
-    SDL_HideCursor();
 }
 
 SDL_Window *CSdlWindow::getSdlWindow() const {

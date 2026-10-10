@@ -1,3 +1,4 @@
+#include "platform/gl/glrenderer.h"
 #include "platform/sdl/sdlaudiodevice.h"
 #include "platform/sdl/sdlclipboard.h"
 #include "platform/sdl/sdlclock.h"
@@ -33,6 +34,10 @@ int run() {
     const sdl::CSdlContext context;
     sdl::CSdlWindow window("Nocturne", kWidth, kHeight);
     sdl::CSdlDisplay display(window);
+    // Declared after the display, so it is gone before the context it draws in. The engine calls
+    // init, with its bridge, only when the INI turns acceleration on.
+    [[maybe_unused]] const nocturne::platform::gl::CGlRenderer renderer(display.getGlApi(),
+                                                                        display);
     [[maybe_unused]] const sdl::CSdlClock clock{};
     [[maybe_unused]] const sdl::CSdlGamepad gamepad{};
     [[maybe_unused]] const sdl::CSdlClipboard clipboard{};
