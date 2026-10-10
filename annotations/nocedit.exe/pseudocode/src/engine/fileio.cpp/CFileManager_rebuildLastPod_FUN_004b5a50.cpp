@@ -123,7 +123,7 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
         pcVar11 = pcVar11 + 2;
       } while (cVar2 != '\0');
     }
-    uVar3 = engine_dosio_cpp_getFileSizeWithFinder_FUN_00481960((char *)0x0,local_290);
+    uVar3 = engine_dosio_cpp_getFileAttributes_FUN_00481960((char *)0x0,local_290);
     if ((-1 < (int)uVar3) && ((uVar3 & 8) != 0)) {
       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                 (g_CEditorToolsPtr,"%s exists and is read only.  Cannot build POD.",local_290);
@@ -581,12 +581,12 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
                       (g_AuditRecordsArray,"..\\engine\\fileio.cpp",1946);
             g_AuditRecordsArray = (CPodAuditRecord *)0x0;
           }
-          engine_pod_cpp_CPod_computeAndStoreCRC_FUN_00551000((CPod *)g_CDemonPodPtr,local_290);
+          engine_pod_cpp_CPod_computeAndStoreCRC_FUN_00551000(&g_CDemonPodPtr->base,local_290);
           if (g_CDemonPodPtr != (CDemonPod *)0x0) {
             shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                       (g_CEditorToolsPtr,"Remounting all pods...");
-            engine_pod_cpp_CPod_cleanup_FUN_00550c80((CPod *)g_CDemonPodPtr);
-            (*g_CDemonPodPtr->vtable->load)((CPod *)g_CDemonPodPtr);
+            engine_pod_cpp_CPod_cleanup_FUN_00550c80(&g_CDemonPodPtr->base);
+            (*((g_CDemonPodPtr->base).vtable)->load)(&g_CDemonPodPtr->base);
           }
           _sprintf(local_aa8,"Successfully built %s\n\n%d files totaling %d bytes\n\n%d files added\n%d files removed\n%d files changed\n\nTotal pod size %d bytes",local_290,
                      this_ptr->tracked_file_count,local_38 - SVar8,local_50,local_4c,local_48,lVar7)

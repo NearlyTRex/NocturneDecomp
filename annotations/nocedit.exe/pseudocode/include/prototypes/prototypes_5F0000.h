@@ -169,7 +169,7 @@ CDemonActorType * __cdecl core_zombie_cpp_CZombie_getActorType_FUN_005f8fd0(CZom
 CZombie * __cdecl core_zombie_cpp_CZombie_ctor_FUN_005f8fe0(CZombie *this_ptr);
 void __cdecl core_zombie_cpp_CZombie_setup_FUN_005f9140(CZombie *this_ptr);
 void __cdecl core_zombie_cpp_CZombie_process_FUN_005f9470(CZombie *this_ptr,float delta_time);
-void __stack2_esi core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0(CZombie *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
+CMatrix3x4f * __stack2_esi core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0(CZombie *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 int __cdecl core_zombie_cpp_CZombie_processPickup_FUN_005fb530(CZombie *this_ptr,float delta_time);
 int __cdecl core_zombie_cpp_CZombie_getPickupHandIndex_FUN_005fbd00(CZombie *this_ptr,int object_shape_type);
 int __cdecl core_zombie_cpp_CZombie_canPickupWithHand_FUN_005fbda0(CZombie *this_ptr,int object_shape_type);

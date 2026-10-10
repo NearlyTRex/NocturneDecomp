@@ -29,7 +29,8 @@ void __cdecl core_elephant_cpp_CElephantGun_renderAimBeam_FUN_00478120(CElephant
     return;
   }
   input_local_point =
-       (CVector3f *)(*(((this_ptr->base).base.vtable._uc)->_uc).canWalk)((CCharacter *)this_ptr);
+       (CVector3f *)
+       (*(((this_ptr->base).base.vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
             ((CDemonActor *)this_ptr,aCStack_68,input_local_point);
   CStack_20.z = (this_ptr->base).bolt_velocity;

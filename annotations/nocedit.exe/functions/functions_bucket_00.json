@@ -9421,7 +9421,7 @@
     "conv":"__stack2_esi",
     "importable":true,
     "name":"core_charactr.cpp_CCharacter_getCarryObjToBodyXForm_FUN_0042d300",
-    "ret":"void",
+    "ret":"CMatrix3x4f*",
     "vars":{
       "locals":[
         {
@@ -9536,7 +9536,17 @@
           },
           "type":"CMatrix3x4f*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -12633,7 +12643,7 @@
           "type":"CCodec*"
         },
         {
-          "name":"output_file",
+          "name":"ostream",
           "storage":{
             "offset":8,
             "size":4,
@@ -12646,7 +12656,7 @@
               }
             ]
           },
-          "type":"_FILE*"
+          "type":"void*"
         }
       ],
       "ret_storage":{
@@ -82767,7 +82777,7 @@
     "vars":{
       "params":[
         {
-          "name":"z_buffer_mode",
+          "name":"slot",
           "storage":{
             "offset":4,
             "size":4,
@@ -94291,7 +94301,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"support_trisock.cpp_bindSocket_FUN_005e1b80",
+    "name":"support_trisock.cpp_CSocket_bindSocket_FUN_005e1b80",
     "ret":"int",
     "vars":{
       "locals":[
@@ -94329,7 +94339,7 @@
       ],
       "params":[
         {
-          "name":"socket_handle",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -94342,7 +94352,7 @@
               }
             ]
           },
-          "type":"_SOCKET*"
+          "type":"CSocket*"
         },
         {
           "name":"port",
@@ -94358,7 +94368,7 @@
               }
             ]
           },
-          "type":"uint16_t"
+          "type":"ushort"
         }
       ],
       "ret_storage":{
@@ -94389,7 +94399,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"support_trisock.cpp_acceptConnection_FUN_005e1d80",
+    "name":"support_trisock.cpp_CSocket_acceptConnection_FUN_005e1d80",
     "ret":"int",
     "vars":{
       "locals":[
@@ -94489,7 +94499,7 @@
       ],
       "params":[
         {
-          "name":"listen_socket",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -94502,10 +94512,10 @@
               }
             ]
           },
-          "type":"_SOCKET*"
+          "type":"CSocket*"
         },
         {
-          "name":"client_addr",
+          "name":"new_socket",
           "storage":{
             "offset":8,
             "size":4,
@@ -94518,10 +94528,10 @@
               }
             ]
           },
-          "type":"SNetworkAddr*"
+          "type":"CSocket*"
         },
         {
-          "name":"new_socket",
+          "name":"client_addr",
           "storage":{
             "offset":12,
             "size":4,
@@ -94534,7 +94544,7 @@
               }
             ]
           },
-          "type":"_SOCKET*"
+          "type":"SNetworkAddr*"
         }
       ],
       "ret_storage":{
@@ -95070,7 +95080,7 @@
     "conv":"__stack2_esi",
     "importable":true,
     "name":"core_vampboss.cpp_CVampireBoss_getCarryObjToBodyXForm_FUN_005e6b80",
-    "ret":"void",
+    "ret":"CMatrix3x4f*",
     "vars":{
       "locals":[
         {
@@ -95265,7 +95275,17 @@
           },
           "type":"CMatrix3x4f*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {

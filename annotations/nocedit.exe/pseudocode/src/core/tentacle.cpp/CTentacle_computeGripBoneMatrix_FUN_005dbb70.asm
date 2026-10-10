@@ -13,8 +13,8 @@
 ; CMatrix3x4f      Stack[-0x3c]:48  local_3c
 ;
 ; XREF[2]:
+;   core_tentacle.cpp_CTentacle_attractActorToward_FUN_005db9d0 at 005dba57
 ;   core_tentacle.cpp_CTentacle_process_FUN_005db050 at 005db204
-;   core_tentacle.cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0 at 005dba57
 ;
 ; Referenced Globals:
 ;   int[4] g_TentacleIndices

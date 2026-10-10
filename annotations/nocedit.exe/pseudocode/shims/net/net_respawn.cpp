@@ -55,7 +55,8 @@ typedef struct SNetPacket_HeroRespawn {
     int   area_id;                            // 0xd
     float position[RESPAWN_MAX_HEROES][3];    // 0x11
     float orient[3];                          // 0x41  shared facing
-} SNetPacket_HeroRespawn;                     // 0x4d
+    int   hero_mask;                          // 0x4d  bit i: g_HeroActors[i] respawns
+} SNetPacket_HeroRespawn;                     // 0x51
 #pragma pack(pop)
 
 static SNetPacket_HeroRespawn s_pending;
@@ -275,34 +276,19 @@ static int respawn_find_spot(const CVector3f *anchor, float anchor_ground,
 
 static void respawn_broadcast(void)
 {
-    CNetGame *net_game = g_CNetGamePtr;
-    int i;
-
-    for (i = 0; i < net_game->player_count; i++) {
-        if (i != net_game->local_player_index) {
-            core_netgame_cpp_CNetGame_send_FUN_005411c0(net_game, i, &s_pending.header);
-        }
-    }
+    nocturne_net_session_broadcast(&s_pending.header);
 }
 
 extern "C" int nocturne_net_respawn_available(void)
 {
-    CNetGame *net_game = g_CNetGamePtr;
-
-    if (net_game == (CNetGame *)0x0) {
-        return 0;
-    }
-    if (net_game->connection_type != CONNECTION_HOST) {
-        return 0;
-    }
-    if (net_game->network_mode != NET_MODE_PLAYING) {
+    if ((nocturne_net_session_is_host() == 0) || (nocturne_net_session_playing() == 0)) {
         return 0;
     }
     // Not during a cinematic (the letterbox, as net_skip reads it).
     if ((g_CGamePtr != (CGame *)0x0) && (g_CGamePtr->letterbox_mode == 1)) {
         return 0;
     }
-    return (1 < net_game->player_count);
+    return (1 < g_CNetGamePtr->player_count);
 }
 
 static int respawn_hero_alive(CHero *hero)
@@ -343,8 +329,7 @@ extern "C" int nocturne_net_respawn_hero_in_world(CHero *hero)
     }
     // Only a network game holds a hero out of the world, and answering the
     // shipped question outside one keeps single player bit-identical.
-    if ((g_CNetGamePtr == (CNetGame *)0x0) ||
-        (g_CNetGamePtr->connection_type == CONNECTION_NONE)) {
+    if (nocturne_net_session_active() == 0) {
         return 1;
     }
     // A hero that exploded or was dismembered is ACTOR_DESTROYED: its body is
@@ -355,9 +340,8 @@ extern "C" int nocturne_net_respawn_hero_in_world(CHero *hero)
     return (0 <= (hero->base).base.location.area_id) ? 1 : 0;
 }
 
-extern "C" int nocturne_net_respawn_request(void)
+extern "C" int nocturne_net_respawn_request(int include_guests)
 {
-    CNetGame *net_game = g_CNetGamePtr;
     CHero    *anchor;
     CVector3f anchor_pos;
     int       anchor_area;
@@ -371,7 +355,7 @@ extern "C" int nocturne_net_respawn_request(void)
     if (nocturne_net_respawn_available() == 0) {
         return 0;
     }
-    if ((net_game->local_player_index < 0) || (RESPAWN_MAX_HEROES <= g_LocalHeroIndex)) {
+    if ((g_LocalHeroIndex < 0) || (RESPAWN_MAX_HEROES <= g_LocalHeroIndex)) {
         return 0;
     }
     hero_count = g_HeroCount;
@@ -416,14 +400,23 @@ extern "C" int nocturne_net_respawn_request(void)
         anchor_ground = anchor_pos.y;
     }
 
-    std::memset(&s_pending, 0, sizeof(s_pending));
-    s_pending.header.size = sizeof(SNetPacket_HeroRespawn);
-    s_pending.header.type = (ENetPacketType)NOCTURNE_NET_PACKET_RESPAWN;
+    nocturne_net_packet_init(&s_pending, (int)sizeof(s_pending), NOCTURNE_NET_PACKET_RESPAWN);
     s_pending.hero_count  = hero_count;
     s_pending.area_id     = anchor_area;
     s_pending.orient[0]   = (anchor->base).base.orient.vec.x;
     s_pending.orient[1]   = (anchor->base).base.orient.vec.y;
     s_pending.orient[2]   = (anchor->base).base.orient.vec.z;
+
+    // A guest left where it is still occupies its spot, so the host is not
+    // placed on top of it.
+    if (include_guests == 0) {
+        for (i = 0; i < hero_count; i++) {
+            if ((i != g_LocalHeroIndex) && (respawn_hero_alive(g_HeroActors[i]) != 0)) {
+                taken[taken_count] = (g_HeroActors[i]->base).base.location.position;
+                taken_count        = taken_count + 1;
+            }
+        }
+    }
 
     for (i = 0; i < hero_count; i++) {
         CHero      *hero = g_HeroActors[i];
@@ -433,6 +426,10 @@ extern "C" int nocturne_net_respawn_request(void)
         if (hero == (CHero *)0x0) {
             continue;
         }
+        if ((include_guests == 0) && (i != g_LocalHeroIndex)) {
+            continue;
+        }
+        s_pending.hero_mask = s_pending.hero_mask | (1 << i);
         if ((i == anchor_index) || ((anchor_index < 0) && (i == g_LocalHeroIndex))) {
             spot   = anchor_pos;
             source = "anchor";
@@ -474,8 +471,7 @@ extern "C" int nocturne_net_respawn_request(void)
         s_pending.position[i][2] = spot.z;
     }
 
-    s_pending.apply_sequence =
-        net_game->players[net_game->local_player_index].sim_frame_index + RESPAWN_LEAD_FRAMES;
+    s_pending.apply_sequence = nocturne_net_session_local_frame() + RESPAWN_LEAD_FRAMES;
     s_have_pending = 1;
     respawn_broadcast();
 
@@ -488,10 +484,8 @@ extern "C" int nocturne_net_respawn_on_packet(const void *packet, int packet_siz
 {
     const SNetPacket_HeroRespawn *incoming = (const SNetPacket_HeroRespawn *)packet;
 
-    if ((packet == (const void *)0x0) || (packet_size < (int)sizeof(SNetPacket_HeroRespawn))) {
-        return 0;
-    }
-    if (incoming->header.type != (ENetPacketType)NOCTURNE_NET_PACKET_RESPAWN) {
+    if (nocturne_net_packet_is(packet, packet_size, NOCTURNE_NET_PACKET_RESPAWN,
+                               (int)sizeof(SNetPacket_HeroRespawn)) == 0) {
         return 0;
     }
 
@@ -510,8 +504,7 @@ static void respawn_sample_safe(int sequence_number)
     CHero *hero;
     float  ground_y;
 
-    if ((g_CNetGamePtr == (CNetGame *)0x0) ||
-        (g_CNetGamePtr->connection_type != CONNECTION_HOST) ||
+    if ((nocturne_net_session_is_host() == 0) ||
         ((sequence_number % RESPAWN_SAFE_SAMPLE_FRAMES) != 0) ||
         (g_LocalHeroIndex < 0) || (RESPAWN_MAX_HEROES <= g_LocalHeroIndex)) {
         return;
@@ -540,82 +533,6 @@ static void respawn_sample_safe(int sequence_number)
     s_have_safe  = 1;
 }
 
-extern "C" int nocturne_net_respawn_revive(CHero *hero)
-{
-    int          destroyed;
-    int          stand_state;
-    CMotionList *motion_list;
-
-    if (hero == (CHero *)0x0) {
-        return 0;
-    }
-
-    // Ordinary death does not destroy a hero — CCharacter::getDeathState reads
-    // the motion controller's current state name, so "dead" is just the DEAD
-    // animation playing over a zeroed hit_points. Putting both back is the
-    // whole revive.
-    //
-    // One death is not ordinary. CTentacle::process swallows its victim by
-    // setting that actor's lifecycle_state to ACTOR_DESTROYED, and
-    // CDemonMission::buildActiveSetActorList only ever admits ACTOR_CREATED
-    // — so the hero leaves the world for good while still sitting on the
-    // mission's actor list, invisible and unprocessed, and no amount of
-    // health or animation brings it back. It also bypasses processDamage
-    // entirely, so such a hero can be destroyed with its health intact and
-    // the test below would not even look at it.
-    destroyed = ((hero->base).base.lifecycle_state == ACTOR_DESTROYED) ? 1 : 0;
-    if (destroyed != 0) {
-        (hero->base).base.lifecycle_state = ACTOR_CREATED;
-
-        // Two of the three destroying deaths also take the model apart.
-        // CCharacter::dismember detaches every part in turn and
-        // CDeformableModelInstance::dismemberPart clears each one's
-        // visibility flag, so a hero brought back from that would stand up
-        // invisible. CCharacter::shatter only reads those flags — it uses
-        // them to choose which parts become debris — so its model is intact
-        // and this is a no-op there, as it is for the tentacle.
-        //
-        // This is how the engine reassembles a character: CBoneGuy::process
-        // calls the same function when it puts itself back together after
-        // being blown apart. The detached CBodyPart actors need no cleanup
-        // here — unlike the bone guy's, they are not tracked, and
-        // CBodyPart::process destroys each one on its own.
-        core_skeleton_cpp_CDeformableModelInstance_showAllParts_FUN_005a0410(
-            &(hero->base).model);
-    }
-    if (((hero->base).hit_points > 0.0f) && (destroyed == 0)) {
-        return 0;
-    }
-
-    (hero->base).hit_points = (hero->base).max_hit_points;
-    core_motion_cpp_CMotionController_jumpToMotion_FUN_0052dde0
-        (&(hero->base).model.motion_controller, 0, 0.0f);
-
-    // Dying is a DESIRED state, not just an animation: every death path
-    // ends in setDesiredState with a death state, and the controller
-    // keeps that in state_index. jumpToMotion above only moves
-    // current_motion_index, so on its own it leaves the controller
-    // still wanting to be dead — CMotionController::advance finds a
-    // transition back and the hero plays the death again and drops.
-    // Worse, that second death costs no health, so nothing here would
-    // fire on a later respawn and it would only move the body.
-    //
-    // Forcing STAND is how the engine gets a hero out of a stuck state
-    // elsewhere; CHero::releaseFromGrab does exactly this. The index is
-    // looked up rather than passed by name because the byName form asks
-    // findStateIndex to quit the process when the state is missing, and
-    // a revive must not be able to end the session.
-    motion_list = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
-        (&(hero->base).model.motion_controller);
-    stand_state = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0
-        (motion_list, (char *)"STAND", 0);
-    if (0 <= stand_state) {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-            (&(hero->base).model.motion_controller, stand_state, 1);
-    }
-    return 1;
-}
-
 extern "C" void nocturne_net_respawn_apply_if_due(int sequence_number)
 {
     int i;
@@ -625,8 +542,7 @@ extern "C" void nocturne_net_respawn_apply_if_due(int sequence_number)
         return;
     }
     if (sequence_number < s_pending.apply_sequence) {
-        if ((g_CNetGamePtr != (CNetGame *)0x0) &&
-            (g_CNetGamePtr->connection_type == CONNECTION_HOST)) {
+        if (nocturne_net_session_is_host() != 0) {
             respawn_broadcast();        // UDP: a lost respawn would be a desync
         }
         return;
@@ -641,7 +557,7 @@ extern "C" void nocturne_net_respawn_apply_if_due(int sequence_number)
         CVector3f orient;
         int       revived;
 
-        if (hero == (CHero *)0x0) {
+        if ((hero == (CHero *)0x0) || ((s_pending.hero_mask & (1 << i)) == 0)) {
             continue;
         }
         position.x = s_pending.position[i][0];
@@ -653,7 +569,7 @@ extern "C" void nocturne_net_respawn_apply_if_due(int sequence_number)
 
         // Arcade continue, applied on the same sim frame on every machine,
         // exactly like the move.
-        revived = nocturne_net_respawn_revive(hero);
+        revived = nocturne_hero_revive(hero);
 
         // Whatever had hold of the hero does not still have hold of him
         // somewhere else. CHero::releaseFromGrab forces STAND when a GETGRABBED
@@ -734,7 +650,7 @@ extern "C" int nocturne_net_host_death_menu(void)
     } while (choice < 0);
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&list, 0);
 
-    if ((can_continue != 0) && (choice == 0) && (nocturne_net_respawn_request() != 0)) {
+    if ((can_continue != 0) && (choice == 0) && (nocturne_net_respawn_request(0) != 0)) {
         return 1;
     }
     core_netgame_cpp_CNetGame_disconnect_FUN_0053fd00(g_CNetGamePtr, 1);
@@ -756,10 +672,9 @@ extern "C" int  nocturne_net_respawn_hero_in_world(CHero *hero)
 {
     return (hero != (CHero *)0x0) ? 1 : 0;
 }
-extern "C" int  nocturne_net_respawn_request(void) { return 0; }
+extern "C" int  nocturne_net_respawn_request(int) { return 0; }
 extern "C" int  nocturne_net_respawn_on_packet(const void *, int) { return 0; }
 extern "C" void nocturne_net_respawn_apply_if_due(int) {}
-extern "C" int  nocturne_net_respawn_revive(CHero *) { return 0; }
 extern "C" int  nocturne_net_host_death_menu(void) { return 0; }
 
 #endif /* NOCTURNE_AUTHENTIC_NETPLAY */

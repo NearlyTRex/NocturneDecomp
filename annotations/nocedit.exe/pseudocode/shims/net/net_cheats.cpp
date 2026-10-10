@@ -33,41 +33,21 @@ static int s_host_auto_use_health = -1;
 // at each of two points cannot realistically all be.
 #define CHEATS_SEND_REPEATS 3
 
-static int cheats_is_network_game(void)
-{
-    return ((g_CNetGamePtr != (CNetGame *)0x0) &&
-            (g_CNetGamePtr->connection_type != CONNECTION_NONE));
-}
-
-static int cheats_is_host(void)
-{
-    return (cheats_is_network_game() &&
-            (g_CNetGamePtr->connection_type == CONNECTION_HOST));
-}
-
 extern "C" void nocturne_net_cheats_announce(void)
 {
     SNetPacket_Cheats packet;
-    CNetGame         *net_game = g_CNetGamePtr;
     int               repeat;
-    int               i;
 
-    if (cheats_is_host() == 0) {
+    if (nocturne_net_session_is_host() == 0) {
         return;
     }
 
-    std::memset(&packet, 0, sizeof(packet));
-    packet.header.type = (ENetPacketType)NOCTURNE_NET_PACKET_CHEATS;
-    packet.header.size = sizeof(SNetPacket_Cheats);
+    nocturne_net_packet_init(&packet, (int)sizeof(packet), NOCTURNE_NET_PACKET_CHEATS);
     packet.count       = nocturne_cheats_pack(packet.state, (int)sizeof(packet.state));
     packet.auto_use_health = g_CGamePtr->auto_use_health;
 
     for (repeat = 0; repeat < CHEATS_SEND_REPEATS; repeat++) {
-        for (i = 0; i < net_game->player_count; i++) {
-            if (i != net_game->local_player_index) {
-                core_netgame_cpp_CNetGame_send_FUN_005411c0(net_game, i, &packet.header);
-            }
-        }
+        nocturne_net_session_broadcast(&packet.header);
     }
     DLOG("netplay", "CHEATS announce count=%d auto_use_health=%d",
             packet.count, packet.auto_use_health);
@@ -84,7 +64,8 @@ extern "C" void nocturne_net_cheats_reset(void)
 
 extern "C" int nocturne_net_cheats_auto_use_health(void)
 {
-    if (cheats_is_network_game() && (cheats_is_host() == 0) && (0 <= s_host_auto_use_health)) {
+    if (nocturne_net_session_active() && (nocturne_net_session_is_host() == 0) &&
+        (0 <= s_host_auto_use_health)) {
         return s_host_auto_use_health;
     }
     return g_CGamePtr->auto_use_health;
@@ -94,10 +75,8 @@ extern "C" int nocturne_net_cheats_on_packet(const void *packet, int packet_size
 {
     const SNetPacket_Cheats *in = (const SNetPacket_Cheats *)packet;
 
-    if ((packet == (const void *)0) || (packet_size < (int)sizeof(SNetPacket_Cheats))) {
-        return 0;
-    }
-    if (in->header.type != (ENetPacketType)NOCTURNE_NET_PACKET_CHEATS) {
+    if (nocturne_net_packet_is(packet, packet_size, NOCTURNE_NET_PACKET_CHEATS,
+                               (int)sizeof(SNetPacket_Cheats)) == 0) {
         return 0;
     }
     // Not part of the cheat table, so a table mismatch below does not void it.

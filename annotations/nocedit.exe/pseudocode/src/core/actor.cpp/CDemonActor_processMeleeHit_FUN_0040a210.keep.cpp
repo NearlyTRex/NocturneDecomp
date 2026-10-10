@@ -149,7 +149,7 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor 
         // Character actor-scan: cylinder collision; skip CHero if we have a carrier.
         else {
           if ((carrier != (CDemonActor *)0x0) &&
-             (iVar4 = (*(((pCVar3->base).vtable._uc)->_uc).canWalk)(pCVar3), iVar4 != 0)) {
+             (iVar4 = (*(((pCVar3->base).vtable._uc)->_uc).isInvulnerable)(pCVar3), iVar4 != 0)) {
             iVar4 = core_actor_cpp_isOfClass_FUN_0040c6d0(current_actor,"CHero");
             if (iVar4 != 0) goto LAB_0040a3e0;
           }
@@ -251,7 +251,7 @@ LAB_0040a3e0:
       }
       // Character raycast: process damage with impact direction = ray velocity (mag 10).
       else if (((carrier == (CDemonActor *)0x0) ||
-               (iVar4 = (*(((pCVar3->base).vtable._uc)->_uc).canWalk)(pCVar3), iVar4 == 0)) ||
+               (iVar4 = (*(((pCVar3->base).vtable._uc)->_uc).isInvulnerable)(pCVar3), iVar4 == 0)) ||
 #if NOCTURNE_AUTHENTIC_FRIENDLY_FIRE
               (iVar4 = core_actor_cpp_isOfClass_FUN_0040c6d0(current_actor,"CHero"),
 #else

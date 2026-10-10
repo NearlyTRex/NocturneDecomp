@@ -58,50 +58,44 @@
       {
         "category": "undeclared_identifier",
         "column": 51,
-        "line": 169,
+        "line": 170,
         "message": "use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 51,
-        "line": 183,
+        "line": 184,
         "message": "use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 52,
-        "line": 197,
+        "line": 198,
         "message": "use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 77,
-        "line": 210,
+        "line": 211,
         "message": "use of undeclared identifier 'stack0xfffffce0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 39,
-        "line": 212,
+        "line": 213,
         "message": "use of undeclared identifier 'stack0xfffffce0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 57,
-        "line": 215,
+        "line": 216,
         "message": "use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
       },
       {
         "category": "format_error",
         "column": 55,
-        "line": 273,
+        "line": 274,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "type_error",
-        "column": 15,
-        "line": 336,
-        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
       {
         "category": "type_error",
@@ -110,9 +104,15 @@
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
       {
+        "category": "type_error",
+        "column": 15,
+        "line": 338,
+        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
+      },
+      {
         "category": "format_error",
         "column": 48,
-        "line": 347,
+        "line": 348,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1745,
-    "complexity_score": 992,
+    "complexity_score": 993,
     "cross_reference_count": 0,
     "function_call_count": 35,
     "global_count": 34,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 717,
+    "pseudocode_lines": 718,
     "suspect_count": 23,
     "suspect_types": [
       "pointer_cast",
@@ -140,7 +140,7 @@
       "unrolled_memcpy",
       "unrolled_memset"
     ],
-    "total_lines": 2462
+    "total_lines": 2463
   },
   "cross_references": [],
   "function": {
@@ -210,7 +210,7 @@
     {
       "addr": "004259f0",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_process_FUN_004259f0"
+      "name": "core_charactr.cpp_CCharacter_processCharacter_FUN_004259f0"
     },
     {
       "addr": "0042add0",
@@ -1257,7 +1257,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 162,
+      "line": 163,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(&local_e0,(CVector3f *)&DAT_02dd1184,",
@@ -1265,7 +1265,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 176,
+      "line": 177,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(&local_d4,(CVector3f *)&DAT_02dd1184,",
@@ -1273,7 +1273,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 190,
+      "line": 191,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(&local_17c,(CVector3f *)&DAT_02dd1184,",
@@ -1281,7 +1281,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 203,
+      "line": 204,
       "match": "&stack0xfffffce0",
       "severity": "moderate",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0((SDamageInfo *)&stack0xfffffce0);",
@@ -1289,7 +1289,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 205,
+      "line": 206,
       "match": "&stack0xfffffce0",
       "severity": "moderate",
       "text": "pSVar17 = (SDamageInfo *)&stack0xfffffce0;",
@@ -1297,7 +1297,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 208,
+      "line": 209,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(&local_74,(CVector3f *)&DAT_02dd1184,",
@@ -1305,7 +1305,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 329,
+      "line": 330,
       "match": "._0_4_",
       "severity": "mild",
       "text": "uVar18._0_4_ = 0.5;",
@@ -1313,7 +1313,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 330,
+      "line": 331,
       "match": "._4_4_",
       "severity": "mild",
       "text": "uVar18._4_4_ = 0.17453292;",
@@ -1321,7 +1321,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 337,
+      "line": 338,
       "match": "in_stack_fffffcec",
       "severity": "moderate",
       "text": ",SUB84(uVar18,4),in_stack_fffffcec);",
@@ -1329,7 +1329,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 337,
+      "line": 338,
       "match": "SUB84(",
       "severity": "moderate",
       "text": ",SUB84(uVar18,4),in_stack_fffffcec);",
@@ -1337,7 +1337,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 459,
+      "line": 460,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(&local_11c,(CVector3f *)&DAT_02dd1184,",
@@ -1345,7 +1345,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 498,
+      "line": 499,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(&local_1d0,(CVector3f *)&DAT_02dd1184,",
@@ -1353,7 +1353,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 509,
+      "line": 510,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(&local_68,(CVector3f *)&DAT_02dd1184,",
@@ -1361,7 +1361,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 520,
+      "line": 521,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(&local_1a0,(CVector3f *)&DAT_02dd1184,",
@@ -1369,7 +1369,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 546,
+      "line": 547,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(&local_1f4,(CVector3f *)&DAT_02dd1184,",
@@ -1377,7 +1377,7 @@
     },
     {
       "description": "Raw hex address 0x555d7d assigned to bare local `iVar6`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar6` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 120,
+      "line": 121,
       "match": "0x555d7d",
       "severity": "moderate",
       "text": "iVar6 = 0x555d7d;",
@@ -1385,7 +1385,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 354,
+      "line": 355,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_bc.x = local_194.x;",
@@ -1393,7 +1393,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 101,
+      "line": 102,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -1401,7 +1401,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 324,
+      "line": 325,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -1409,7 +1409,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 704,
+      "line": 705,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -1417,7 +1417,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 708,
+      "line": 709,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.position_delta.z = 0.0;",
@@ -1425,7 +1425,7 @@
     },
     {
       "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
-      "line": 385,
+      "line": 386,
       "match": "(TYPE *) ((int)NAME ...) split across lines",
       "severity": "moderate",
       "text": "(*(CDemonActor **)",

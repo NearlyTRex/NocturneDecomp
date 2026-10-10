@@ -73,7 +73,8 @@ void __cdecl core_sentinel_cpp_CSentinel_process_FUN_00568030(CSentinel *this_pt
   SDamageInfo *pSVar13;
   float max_distance;
   
-  iVar5 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
+  iVar5 = core_charactr_cpp_CCharacter_processCharacter_FUN_00429870
+                    ((CCharacter *)this_ptr,delta_time);
   if (iVar5 == 0) {
     return;
   }

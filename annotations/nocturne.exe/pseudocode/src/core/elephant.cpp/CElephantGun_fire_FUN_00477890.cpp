@@ -54,8 +54,8 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_00477890(CElephantGun *this_
   int iStack_20;
   CDemonActor *pCStack_14;
   
-  pCVar2 = (CVector3f *)(*(((this_ptr->base).base.vtable._uc)->_uc).canWalk)((CCharacter *)this_ptr)
-  ;
+  pCVar2 = (CVector3f *)
+           (*(((this_ptr->base).base.vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
             ((CDemonActor *)this_ptr,aCStack_d0,pCVar2);
   iVar3 = core_weapon_cpp_CWeapon_fire_FUN_00554600(&this_ptr->base);

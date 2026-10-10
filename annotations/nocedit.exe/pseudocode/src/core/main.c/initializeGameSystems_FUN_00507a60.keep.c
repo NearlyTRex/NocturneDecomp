@@ -39,7 +39,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(int argc,char **argv
                        );
   if (file_ptr != (_FILE *)0x0) {
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\main.c",958);
-    DVar7 = engine_dosio_cpp_setReadonlyAttribute_FUN_00600c30("stderr.txt",0x1c0);
+    DVar7 = _chmod("stderr.txt",0x1c0);
     if (DVar7 != 0) {
       g_CurrentFilename = "..\\core\\main.c";
       g_CurrentLineNumber = 960;
@@ -51,12 +51,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(int argc,char **argv
   core_flattn_cpp_doNothing_FUN_004cbce0();
   core_inivar_cpp_readIniData_FUN_004fbd90();
 #if !NOCTURNE_AUTHENTIC_RENDERER_DLL
-  if (nocturne_builtin_dll_available(g_RendererDllPath) == 0) {
-    pcVar8 = (char *)nocturne_builtin_dll_next(g_RendererDllPath);
-    if (pcVar8 != (char *)0x0) {
-      strcpy(g_RendererDllPath,pcVar8);
-    }
-  }
+  nocturne_builtin_dll_snap(g_RendererDllPath);
 #endif
   g_AGPTextureMode = 2;
   engine_pod_cpp_CPod_init_FUN_00550c30((CPod *)g_CDemonPodPtr);
@@ -74,7 +69,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(int argc,char **argv
     core_main_c_displayErrorAndQuit_FUN_00506f10(pcVar8);
   }
   engine_matrix_c_initializeTrigTables_FUN_0050c530();
-  wincore_wddvmem_cpp_initTextureCache_FUN_00403790();
+  engine_3d_c_initTextureCache_FUN_00403790();
   engine_2d_c_initGraphicsSystem_FUN_00401010();
   wincore_winrun_cpp_calibrateCPUSpeed_FUN_005f2b80();
   wincore_winrun_cpp_initJoystick_FUN_005f4310();

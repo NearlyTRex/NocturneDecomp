@@ -31,7 +31,7 @@ int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_00524920(CDemonMiss
 #if !NOCTURNE_AUTHENTIC_NETPLAY
   if (index == 0) {
     nocturne_net_respawn_clear_placeholder();
-    nocturne_net_sync_reset();
+    nocturne_net_session_reset();
   }
 #endif
   actor_ptr = this_ptr->first_actor;

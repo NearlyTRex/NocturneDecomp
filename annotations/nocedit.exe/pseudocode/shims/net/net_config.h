@@ -67,6 +67,12 @@ const char *nocturne_net_player_name(void);
 // readable.
 int nocturne_net_port(int game_default);
 
+// What CNetGame::initializeNetworkToHost and ...ToJoin take from the ini
+// before building the local player: the player name, written into `net_game`
+// when one is set, and the UDP port (nocturne_net_port) returned.
+struct CNetGame;
+int nocturne_net_apply_config(struct CNetGame *net_game, int game_default_port);
+
 #ifdef __cplusplus
 }
 #endif

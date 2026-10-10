@@ -62,18 +62,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 304,
-    "complexity_score": 156,
+    "complexity_score": 157,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 116,
+    "pseudocode_lines": 117,
     "suspect_count": 3,
     "suspect_types": [
       "self_copy_guard",
       "unrolled_memcpy"
     ],
-    "total_lines": 420
+    "total_lines": 421
   },
   "cross_references": [],
   "function": {
@@ -261,21 +261,21 @@
         {
           "check_id": "uninitvar",
           "column": 18,
-          "line": 60,
+          "line": 61,
           "message": "Uninitialized variable: fStack_2c",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 42,
-          "line": 60,
+          "line": 61,
           "message": "Uninitialized variable: fStack_34",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 66,
-          "line": 60,
+          "line": 61,
           "message": "Uninitialized variable: fStack_30",
           "severity": "warning"
         }
@@ -287,7 +287,7 @@
   "suspects": [
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 82,
+      "line": 83,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_88.x = CStack_4c.x;",
@@ -295,7 +295,7 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&fStack_34 != &fStack_58)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 48,
+      "line": 49,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&fStack_34 != &fStack_58) {",
@@ -303,7 +303,7 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&fStack_70 != &fStack_7c)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 101,
+      "line": 102,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&fStack_70 != &fStack_7c) {",
@@ -311,7 +311,7 @@
     },
     {
       "description": "Uninitialized variable: fStack_2c",
-      "line": 60,
+      "line": 61,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "fVar1 = SQRT(fStack_2c * fStack_2c + fStack_34 * fStack_34 + fStack_30 * fStack_30);",
@@ -319,7 +319,7 @@
     },
     {
       "description": "Uninitialized variable: fStack_34",
-      "line": 60,
+      "line": 61,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "fVar1 = SQRT(fStack_2c * fStack_2c + fStack_34 * fStack_34 + fStack_30 * fStack_30);",
@@ -327,7 +327,7 @@
     },
     {
       "description": "Uninitialized variable: fStack_30",
-      "line": 60,
+      "line": 61,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "fVar1 = SQRT(fStack_2c * fStack_2c + fStack_34 * fStack_34 + fStack_30 * fStack_30);",

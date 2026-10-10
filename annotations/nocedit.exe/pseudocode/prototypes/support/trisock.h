@@ -21,7 +21,7 @@ uint8_t * __cdecl buildIPAddressOrDie(uchar *dest_ip,int octet1,int octet2,int o
 
 // Original: support_trisock.cpp_formatIPAddress_FUN_005e17c0
 // Address: 005e17c0
-void __cdecl formatIPAddress(char *output_buffer,uchar *ip_bytes);
+void __cdecl formatIPAddress(uchar *ip_bytes,char *output_buffer);
 
 // Original: support_trisock.cpp_parseIPComponents_FUN_005e1800
 // Address: 005e1800
@@ -53,7 +53,7 @@ SOCKADDR_IN * __stack_esi buildSockaddrIn(SNetworkAddr *net_addr,SOCKADDR_IN *de
 
 // Original: support_trisock.cpp_formatSocketAddress_FUN_005e1a30
 // Address: 005e1a30
-void __cdecl formatSocketAddress(char *output_buffer,SNetworkAddr *network_addr);
+void __cdecl formatSocketAddress(SNetworkAddr *network_addr,char *output_buffer);
 
 // Original: support_trisock.cpp_shouldNeverBeCalled1_FUN_005e1a80
 // Address: 005e1a80
@@ -63,65 +63,65 @@ int __cdecl shouldNeverBeCalled1(int unknown1,int unknown2);
 // Address: 005e1ab0
 int __cdecl shouldNeverBeCalled2(int unknown1,int unknown2);
 
-// Original: support_trisock.cpp_invalidateSocket_FUN_005e1ae0
+// Original: support_trisock.cpp_CSocket_ctor_FUN_005e1ae0
 // Address: 005e1ae0
-_SOCKET * __cdecl invalidateSocket(_SOCKET *socket_handle);
+CSocket * __cdecl CSocket::ctor(CSocket *this_ptr);
 
-// Original: support_trisock.cpp_bindSocketWrapper_FUN_005e1af0
+// Original: support_trisock.cpp_CSocket_dtor_FUN_005e1af0
 // Address: 005e1af0
-_SOCKET * __cdecl bindSocketWrapper(_SOCKET *socket_handle,int flags);
+CSocket * __cdecl CSocket::dtor(CSocket *this_ptr,uint flags);
 
-// Original: support_trisock.cpp_createSocket_FUN_005e1b10
+// Original: support_trisock.cpp_CSocket_createSocket_FUN_005e1b10
 // Address: 005e1b10
-int __cdecl createSocket(_SOCKET *socket_handle);
+int __cdecl CSocket::createSocket(CSocket *this_ptr);
 
-// Original: support_trisock.cpp_createUDPSocket_FUN_005e1b40
+// Original: support_trisock.cpp_CSocket_createUDPSocket_FUN_005e1b40
 // Address: 005e1b40
-int __cdecl createUDPSocket(_SOCKET *socket_handle);
+int __cdecl CSocket::createUDPSocket(CSocket *this_ptr);
 
-// Original: support_trisock.cpp_isSocketValid_FUN_005e1b70
+// Original: support_trisock.cpp_CSocket_isSocketValid_FUN_005e1b70
 // Address: 005e1b70
-int __cdecl isSocketValid(_SOCKET *socket_handle);
+int __cdecl CSocket::isSocketValid(CSocket *this_ptr);
 
-// Original: support_trisock.cpp_bindSocket_FUN_005e1b80
+// Original: support_trisock.cpp_CSocket_bindSocket_FUN_005e1b80
 // Address: 005e1b80
-int __cdecl bindSocket(_SOCKET *socket_handle,uint16_t port);
+int __cdecl CSocket::bindSocket(CSocket *this_ptr,ushort port);
 
-// Original: support_trisock.cpp_connectSocket_FUN_005e1bd0
+// Original: support_trisock.cpp_CSocket_connectSocket_FUN_005e1bd0
 // Address: 005e1bd0
-int __cdecl connectSocket(_SOCKET *socket_handle,SNetworkAddr *dest_addr);
+int __cdecl CSocket::connectSocket(CSocket *this_ptr,SNetworkAddr *dest_addr);
 
-// Original: support_trisock.cpp_receiveSocketData_FUN_005e1c20
+// Original: support_trisock.cpp_CSocket_receiveSocketData_FUN_005e1c20
 // Address: 005e1c20
-int __cdecl receiveSocketData(_SOCKET *socket_handle,char *buffer,int length,SNetworkAddr *source_addr);
+int __cdecl CSocket::receiveSocketData(CSocket *this_ptr,char *buffer,int length,SNetworkAddr *source_addr);
 
-// Original: support_trisock.cpp_performSocketOperation_FUN_005e1ca0
+// Original: support_trisock.cpp_CSocket_sendSocketData_FUN_005e1ca0
 // Address: 005e1ca0
-int __cdecl performSocketOperation(_SOCKET *socket_handle,char *buffer,int length,SNetworkAddr *dest_addr);
+int __cdecl CSocket::sendSocketData(CSocket *this_ptr,char *buffer,int length,SNetworkAddr *dest_addr);
 
-// Original: support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20
+// Original: support_trisock.cpp_CSocket_closeSocket_FUN_005e1d20
 // Address: 005e1d20
-int __cdecl bindAndInvalidateSocket(_SOCKET *socket_handle);
+int __cdecl CSocket::closeSocket(CSocket *this_ptr);
 
-// Original: support_trisock.cpp_listenSocket_FUN_005e1d60
+// Original: support_trisock.cpp_CSocket_listenSocket_FUN_005e1d60
 // Address: 005e1d60
-int __cdecl listenSocket(_SOCKET *socket_handle);
+int __cdecl CSocket::listenSocket(CSocket *this_ptr);
 
-// Original: support_trisock.cpp_acceptConnection_FUN_005e1d80
+// Original: support_trisock.cpp_CSocket_acceptConnection_FUN_005e1d80
 // Address: 005e1d80
-int __cdecl acceptConnection(_SOCKET *listen_socket,SNetworkAddr *client_addr,_SOCKET *new_socket);
+int __cdecl CSocket::acceptConnection(CSocket *this_ptr,CSocket *new_socket,SNetworkAddr *client_addr);
 
-// Original: support_trisock.cpp_getSocketName_FUN_005e1df0
+// Original: support_trisock.cpp_CSocket_getSocketName_FUN_005e1df0
 // Address: 005e1df0
-int __cdecl getSocketName(_SOCKET *socket_handle,SNetworkAddr *out_address);
+int __cdecl CSocket::getSocketName(CSocket *this_ptr,SNetworkAddr *out_address);
 
-// Original: support_trisock.cpp_setSocketBlocking_FUN_005e1e50
+// Original: support_trisock.cpp_CSocket_setSocketBlocking_FUN_005e1e50
 // Address: 005e1e50
-int __cdecl setSocketBlocking(_SOCKET *socket_handle,int blocking_mode);
+int __cdecl CSocket::setSocketBlocking(CSocket *this_ptr,int blocking_mode);
 
-// Original: support_trisock.cpp_setSocketBroadcast_FUN_005e1e90
+// Original: support_trisock.cpp_CSocket_setSocketBroadcast_FUN_005e1e90
 // Address: 005e1e90
-int __cdecl setSocketBroadcast(_SOCKET *socket_handle,int broadcast_flag);
+int __cdecl CSocket::setSocketBroadcast(CSocket *this_ptr,int broadcast_flag);
 
 // Original: support_trisock.cpp_startupWinsock_FUN_005e1ec0
 // Address: 005e1ec0

@@ -24,8 +24,8 @@
 ; Called Functions:
 ;   core_netgame.cpp_CNetGame_processPacket_FUN_004ea830
 ;   core_netgame.cpp_CNetGame_removeChatOut_FUN_004ec180
-;   support_trisock.cpp_isSocketValid_FUN_00548f60
-;   support_trisock.cpp_receiveSocketData_FUN_00549010
+;   support_trisock.cpp_CSocket_isSocketValid_FUN_00548f60
+;   support_trisock.cpp_CSocket_receiveSocketData_FUN_00549010
 ;   wincore_winrun.cpp_getTime_FUN_00558a30
 ;
 ; *****************************************************************************
@@ -58,8 +58,8 @@ section .text
     LEA EBX,[ESI + 0x170]               ; 004ea77b
     PUSH EBX                            ; 004ea781
         ;   Label: LAB_004ea781
-    CALL support_trisock.cpp_isSocketValid_FUN_00548f60 ; 004ea782
-        ;   XREF to: 00548f60 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_isSocketValid_FUN_00548f60(_SOCKET * socket_handle)
+    CALL support_trisock.cpp_CSocket_isSocketValid_FUN_00548f60 ; 004ea782
+        ;   XREF to: 00548f60 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_CSocket_isSocketValid_FUN_00548f60(CSocket * this_ptr)
     ADD ESP,0x4                         ; 004ea787
     TEST EAX,EAX                        ; 004ea78a
     JNZ 0x004ea79f                      ; 004ea78c
@@ -82,8 +82,8 @@ section .text
     PUSH 0x404                          ; 004ea7a2
     PUSH 0x1d1640c                      ; 004ea7a7
     PUSH EBX                            ; 004ea7ac
-    CALL support_trisock.cpp_receiveSocketData_FUN_00549010 ; 004ea7ad
-        ;   XREF to: 00549010 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_receiveSocketData_FUN_00549010(_SOCKET * socket_handle, char * buffer, int length, SNetworkAddr * source_addr)
+    CALL support_trisock.cpp_CSocket_receiveSocketData_FUN_00549010 ; 004ea7ad
+        ;   XREF to: 00549010 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_CSocket_receiveSocketData_FUN_00549010(CSocket * this_ptr, char * buffer, int length, SNetworkAddr * source_addr)
     ADD ESP,0x10                        ; 004ea7b2
     TEST EAX,EAX                        ; 004ea7b5
     JLE 0x004ea7d4                      ; 004ea7b7

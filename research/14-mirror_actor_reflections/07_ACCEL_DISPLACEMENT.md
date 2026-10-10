@@ -145,7 +145,7 @@ Both halves sit behind `NOCTURNE_AUTHENTIC_MIRROR_PROJECTION`.
    origin/rotation/projection-factor triple. This is what stops the accelerated second pass
    inheriting a clobbered matrix.
 2. **Sample the factor over the stacked scale.** `nocturne_mirror_projection_factor`
-   (`shims/game/mirror_projection.h`) computes `calculateProjectionFactor`'s
+   (`shims/renderer/mirror_projection.h`) computes `calculateProjectionFactor`'s
    `18 * 65536 / scale` over `g_ViewportStack_ProjectionScale[g_ViewportStackIndex - 1]`
    when the live scale is still the `0x10000` `pushViewport` wrote. This is what makes the
    mirror's own camera match the scene's.

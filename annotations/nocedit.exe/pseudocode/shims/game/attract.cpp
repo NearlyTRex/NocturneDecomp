@@ -5,6 +5,7 @@
 // in game globals.
 
 #include "game/attract.h"
+#include "core/clock.h"
 #include "core/debug_log.h"
 
 #include <chrono>
@@ -73,18 +74,14 @@ const double kPreMovieSilenceSeconds = 0.40;
 // options screen arrives as a quarter of a second.
 const double kMenuAwayGapSeconds = 0.5;
 
-// A monotonic clock, not the frame delta.
+// Timed on a monotonic clock (core/clock.h), not the frame delta.
 //
-// The deadline is a point on this clock rather than a running total of frame
+// The deadline is a point on that clock rather than a running total of frame
 // deltas, so it cannot drift against the music: both run on real time, whatever
 // the menu loop is doing. The music is started by the sound hardware and plays
 // on through anything that blocks that loop, which is exactly why a wrap can
 // come round with the menu off screen - the tick's away-gap test is what
 // notices that and moves on to the next one.
-double now_seconds() {
-    using namespace std::chrono;
-    return duration<double>(steady_clock::now().time_since_epoch()).count();
-}
 
 } // namespace
 
@@ -95,7 +92,7 @@ extern "C" void nocturne_attract_set_opening_played(int played) {
 
 extern "C" void nocturne_attract_set_music_duration(float seconds) {
     if (seconds > 0.0f) {
-        s_armed_at = now_seconds();
+        s_armed_at = nocturne_now_seconds();
         s_last_tick = s_armed_at;
         s_music_period = (double)seconds;
         s_music_deadline = s_armed_at + s_music_period - kMusicEndLeadSeconds;
@@ -121,7 +118,7 @@ extern "C" int nocturne_attract_tick(void) {
     if (!s_opening_played || !s_armed) {
         return 0;
     }
-    now = now_seconds();
+    now = nocturne_now_seconds();
     gap = now - s_last_tick;
     s_last_tick = now;
 

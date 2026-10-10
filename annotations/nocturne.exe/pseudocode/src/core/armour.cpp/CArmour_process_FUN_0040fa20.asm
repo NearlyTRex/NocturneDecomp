@@ -17,7 +17,7 @@
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042a150
 ;   core_charactr.cpp_CCharacter_dismember_FUN_00427b60
-;   core_charactr.cpp_CCharacter_process_FUN_004259f0
+;   core_charactr.cpp_CCharacter_processCharacter_FUN_004259f0
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00428c00
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30
 ;   core_motion.cpp_CMotionController_advance_FUN_004e11c0
@@ -39,8 +39,8 @@ section .text
     MOV ESI,dword ptr [EBP + 0x14]      ; 0040fa2c
     PUSH dword ptr [EBP + 0x18]         ; 0040fa2f
     PUSH ESI                            ; 0040fa32
-    CALL core_charactr.cpp_CCharacter_process_FUN_004259f0 ; 0040fa33
-        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_process_FUN_004259f0(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_processCharacter_FUN_004259f0 ; 0040fa33
+        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processCharacter_FUN_004259f0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0040fa38
     TEST EAX,EAX                        ; 0040fa3b
     JZ 0x0040fb06                       ; 0040fa3d

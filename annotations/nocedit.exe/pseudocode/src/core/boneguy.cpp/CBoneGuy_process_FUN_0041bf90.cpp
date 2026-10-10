@@ -98,7 +98,8 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
     core_motion_cpp_CMotionController_jumpToMotion_FUN_0052dde0
               (&(this_ptr->base).base.model.motion_controller,5,0.0);
   }
-  iVar11 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
+  iVar11 = core_charactr_cpp_CCharacter_processCharacter_FUN_00429870
+                     ((CCharacter *)this_ptr,delta_time);
   if (iVar11 == 0) goto LAB_0041c220;
   if ((this_ptr->blown_up == 1) && (0.0 < (this_ptr->base).base.hit_points)) {
     fVar15 = this_ptr->recombine_interpolation + delta_time;

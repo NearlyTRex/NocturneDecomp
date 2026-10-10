@@ -52,7 +52,8 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch *this_ptr,floa
   if ((this_ptr->base).ai_task == HERO_TASK_SUSPEND) {
     return;
   }
-  iVar6 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
+  iVar6 = core_charactr_cpp_CCharacter_processCharacter_FUN_00429870
+                    ((CCharacter *)this_ptr,delta_time);
   if (iVar6 == 0) {
     return;
   }

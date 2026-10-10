@@ -10,6 +10,7 @@
 
 #include "gl/gl_blit.h"
 #include "gl/gl_api.h"
+#include "gl/gl_program.h"
 #include "core/debug_log.h"
 
 #include <stdint.h>
@@ -88,85 +89,15 @@ bool have_entry_points() {
            gl.GenVertexArrays != nullptr && gl.BindVertexArray != nullptr;
 }
 
-GLuint compile_stage(GLenum type, const char *source, const char *label) {
-    GLuint shader = gl.CreateShader(type);
-    if (shader == 0) {
-        DLOG("render","gl_blit: glCreateShader failed for %s", label);
-        return 0;
-    }
-    gl.ShaderSource(shader, 1, &source, nullptr);
-    gl.CompileShader(shader);
-
-    GLint ok = 0;
-    gl.GetShaderiv(shader, GL_COMPILE_STATUS, &ok);
-    if (!ok) {
-        char log[1024];
-        log[0] = '\0';
-        if (gl.GetShaderInfoLog != nullptr) {
-            gl.GetShaderInfoLog(shader, (GLsizei)sizeof(log), nullptr, log);
-        }
-        DLOG("render","gl_blit: %s failed to compile: %s", label, log);
-        gl.DeleteShader(shader);
-        return 0;
-    }
-    return shader;
-}
-
 bool build_program() {
-    GLuint vs = compile_stage(GL_VERTEX_SHADER, kVertexSource, "vertex shader");
-    if (vs == 0) return false;
-
-    GLuint fs = compile_stage(GL_FRAGMENT_SHADER, kFragmentSource, "fragment shader");
-    if (fs == 0) {
-        gl.DeleteShader(vs);
-        return false;
-    }
-
-    GLuint program = gl.CreateProgram();
+    GLuint program = nocturne_gl_build_program(kVertexSource, kFragmentSource, "gl_blit");
     if (program == 0) {
-        DLOG("render","gl_blit: glCreateProgram failed");
-        gl.DeleteShader(vs);
-        gl.DeleteShader(fs);
-        return false;
-    }
-
-    gl.AttachShader(program, vs);
-    gl.AttachShader(program, fs);
-    // Before linking. Generic attribute 0 aliases gl_Vertex in a compatibility
-    // context, and a draw with neither attribute 0 nor the fixed-function vertex
-    // array enabled produces no geometry at all — silently, with no GL error.
-    // The linker is free to put a_pos anywhere, so pin it rather than hope.
-    gl.BindAttribLocation(program, 0, "a_pos");
-    gl.LinkProgram(program);
-
-    // Reference-counted by the program now, whether or not the link succeeded.
-    gl.DeleteShader(vs);
-    gl.DeleteShader(fs);
-
-    GLint linked = 0;
-    gl.GetProgramiv(program, GL_LINK_STATUS, &linked);
-    if (!linked) {
-        char log[1024];
-        log[0] = '\0';
-        if (gl.GetProgramInfoLog != nullptr) {
-            gl.GetProgramInfoLog(program, (GLsizei)sizeof(log), nullptr, log);
-        }
-        DLOG("render","gl_blit: link failed: %s", log);
-        if (gl.DeleteProgram != nullptr) gl.DeleteProgram(program);
         return false;
     }
 
     g_loc_tex  = gl.GetUniformLocation(program, "u_tex");
-    g_attr_pos = gl.GetAttribLocation(program, "a_pos");
+    g_attr_pos = 0;                           // pinned by nocturne_gl_build_program
     g_attr_uv  = gl.GetAttribLocation(program, "a_uv");
-    if (g_attr_pos != 0) {
-        // Anything other than 0 means the bind above did not take. Refuse the
-        // path rather than draw through a layout nothing asked for.
-        DLOG("render","gl_blit: a_pos landed at %d, not 0 — quad unavailable",
-                  (int)g_attr_pos);
-        if (gl.DeleteProgram != nullptr) gl.DeleteProgram(program);
-        return false;
-    }
 
     gl.GenBuffers(1, &g_vbo);
     gl.GenVertexArrays(1, &g_vao);

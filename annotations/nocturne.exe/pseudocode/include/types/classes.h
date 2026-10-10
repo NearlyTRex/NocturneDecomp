@@ -254,6 +254,7 @@
 #include "types/classes/CSmiley_full_vtable.h"
 #include "types/classes/CSmiley_vtable.h"
 #include "types/classes/CSmokeParticle.h"
+#include "types/classes/CSocket.h"
 #include "types/classes/CSound.h"
 #include "types/classes/CSoundDevice.h"
 #include "types/classes/CSoundDeviceFull_vtable.h"

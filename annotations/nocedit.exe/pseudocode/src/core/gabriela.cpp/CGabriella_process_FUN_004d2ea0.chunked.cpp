@@ -109,7 +109,7 @@ typedef struct CGabriella_process_Ctx {
 #define GOTO_LAB_004d4145 4
 #define GOTO_LAB_004d4152 5
 
-// Chunk: check_iVar17_0 (lines 55-82 of original)
+// Chunk: check_iVar17_0 (lines 56-83 of original)
 static int CGabriella_process_check_iVar17_0(CGabriella_process_Ctx *ctx) {
     CGabriella *&this_ptr = ctx->this_ptr;
     float &delta_time = ctx->delta_time;
@@ -147,7 +147,7 @@ static int CGabriella_process_check_iVar17_0(CGabriella_process_Ctx *ctx) {
     return 0;
 }
 
-// Chunk: check_pCVar5_1 (lines 84-248 of original)
+// Chunk: check_pCVar5_1 (lines 85-249 of original)
 static int CGabriella_process_check_pCVar5_1(CGabriella_process_Ctx *ctx) {
     CGabriella *&this_ptr = ctx->this_ptr;
     float &delta_time = ctx->delta_time;
@@ -344,7 +344,7 @@ LAB_004d3af9:
     return 0;
 }
 
-// Chunk: else_2 (lines 248-277 of original)
+// Chunk: else_2 (lines 249-278 of original)
 static int CGabriella_process_else_2(CGabriella_process_Ctx *ctx) {
     CGabriella *&this_ptr = ctx->this_ptr;
     CLadder *&pCVar5 = ctx->pCVar5;
@@ -386,7 +386,7 @@ LAB_004d3215:
     return 0;
 }
 
-// Chunk: chunk_3 (lines 278-323 of original)
+// Chunk: chunk_3 (lines 279-324 of original)
 static int CGabriella_process_chunk_3(CGabriella_process_Ctx *ctx) {
     CGabriella *&this_ptr = ctx->this_ptr;
     float &delta_time = ctx->delta_time;
@@ -442,7 +442,7 @@ LAB_004d3cb4:
     return 0;
 }
 
-// Chunk: branch_0 (lines 455-497 of original)
+// Chunk: branch_0 (lines 456-498 of original)
 static int CGabriella_process_branch_0(CGabriella_process_Ctx *ctx) {
     CGabriella *&this_ptr = ctx->this_ptr;
     int &iVar17 = ctx->iVar17;
@@ -489,7 +489,7 @@ static int CGabriella_process_branch_0(CGabriella_process_Ctx *ctx) {
     return 0;
 }
 
-// Chunk: branch_3 (lines 529-572 of original)
+// Chunk: branch_3 (lines 530-573 of original)
 static int CGabriella_process_branch_3(CGabriella_process_Ctx *ctx) {
     CGabriella *&this_ptr = ctx->this_ptr;
     float &delta_time = ctx->delta_time;
@@ -647,7 +647,8 @@ void __cdecl core_gabriela_cpp_CGabriella_process_FUN_004d2ea0(CGabriella *this_
   // param this_ptr aliased into ctx above
   // param delta_time aliased into ctx above
 
-  iVar10 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
+  iVar10 = core_charactr_cpp_CCharacter_processCharacter_FUN_00429870
+                     ((CCharacter *)this_ptr,delta_time);
   if (iVar10 == 0) {
     return;
   }

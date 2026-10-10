@@ -39,8 +39,7 @@ void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_005c4370(CStranger *t
     g_CurrentLineNumber = 4288;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CStranger::aimLeftPistol - no weapon?");
   }
-  (*(((((CCharacter *)this_ptr->weapon)->base).vtable._uc)->_uc).canWalk)
-            ((CCharacter *)this_ptr->weapon);
+  (*(((this_ptr->weapon->base).vtable._uw)->_uw).getMuzzlePoint)(this_ptr->weapon,&local_9c);
   bone_index = g_StrangerIndices[3];
   fStack_24 = -1.3089969;
   fStack_2c = 0.5235988;

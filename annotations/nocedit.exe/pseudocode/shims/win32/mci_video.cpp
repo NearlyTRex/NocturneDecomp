@@ -61,13 +61,13 @@ extern "C" {
 #include <cstdio>
 #include <string>
 
-// Defined in shims/watcom/crt.cpp. The game hands MCI a Watcom-style path
-// ("video\\opening.avi"); the CRT _fopen shim resolves those against the real
-// filesystem ('\\' -> '/' plus case-insensitive component matching), which is
-// why playMovie's own existence check succeeds. libav's avformat_open_input
-// does neither, so the same path has to go through the same resolver or the
-// open fails on a case difference the game never sees.
-std::string watcom_resolve_fs_path(const char *path);
+// The game hands MCI a Watcom-style path ("video\\opening.avi"); the CRT _fopen
+// shim resolves those against the real filesystem ('\\' -> '/' plus
+// case-insensitive component matching), which is why playMovie's own existence
+// check succeeds. libav's avformat_open_input does neither, so the same path has
+// to go through the same resolver or the open fails on a case difference the
+// game never sees.
+#include "watcom/path.h"
 
 // =============================================================================
 // Tunables

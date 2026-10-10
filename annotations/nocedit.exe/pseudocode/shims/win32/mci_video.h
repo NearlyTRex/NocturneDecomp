@@ -40,4 +40,12 @@ int mci_video_is_playing(void);
 
 #ifdef __cplusplus
 }
+
+// The MCI string interface behind winmm's import table (win32/mmsystem.cpp):
+// "open", "play", "close" and the rest, carried out by the libav pump above.
+#include "system/mmsystem.h"
+
+MCIERROR shim_mciSendStringA(LPCSTR lpstrCommand, LPSTR lpstrReturnString,
+                             UINT uReturnLength, HWND hwndCallback);
+BOOL shim_mciGetErrorStringA(MCIERROR mcierr, LPSTR pszText, UINT cchText);
 #endif

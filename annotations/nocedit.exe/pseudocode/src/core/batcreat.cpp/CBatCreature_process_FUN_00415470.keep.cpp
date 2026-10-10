@@ -53,7 +53,7 @@ void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_00415470(CBatCreature *t
   CVector3f *pCVar2;
   float local_18;
   
-  iVar4 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
+  iVar4 = core_charactr_cpp_CCharacter_processCharacter_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar4 == 0) {
     return;
   }

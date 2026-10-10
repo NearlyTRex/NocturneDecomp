@@ -37,6 +37,9 @@ void __cdecl core_scat_cpp_CScat_updateWeaponState_FUN_00558060(CScat *this_ptr,
       pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                          (&pCVar1->motion_controller);
       if (pSVar3->state_index == 0) {
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+        nocturne_hero_put_away_weapon(&this_ptr->base,this_ptr->weapon_actor);
+#endif
         this_ptr->weapon_actor = (CWeapon *)0x0;
       }
       else {

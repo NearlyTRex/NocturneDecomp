@@ -101,17 +101,10 @@ extern "C" {
 // own "not grabbed" branch picks the frame up and no other code has to change.
 //
 // Returns 1 on the frame the hero was released, 0 otherwise. Safe to call
-// every frame whether or not the hero is grabbed, and a no-op for an AI hero,
-// for a scripted grab, and when NOCTURNE_AUTHENTIC_HERO_ACTIONS is 1.
+// every frame whether or not the hero is grabbed. Runs for every hero, AI or
+// player (see above); a no-op for a scripted grab and when
+// NOCTURNE_AUTHENTIC_HERO_ACTIONS is 1.
 int nocturne_hero_grab_escape(struct CHero *hero, float delta_time);
-
-// CSvetlana::getGrabbed is `return 0`: she refuses every grab, though SVETLANA.SKL
-// has GETGRABBED and PUSHOFF and CSvetlana::process handles grabbed_by like every
-// other class. That keeps the ACT1 escort from being carried off, and is kept
-// for her as an NPC. A player Svetlana is grabbed through CHero::getGrabbed like
-// the rest. Returns what the vtable slot returns: 1 when the grab took.
-int nocturne_svetlana_get_grabbed(struct CHero *svetlana, struct CDemonActor *grabber,
-                                  int grab_type);
 
 // Moves `victim` to the world point `world_target` through the collision
 // system rather than by writing the position. Call it from an

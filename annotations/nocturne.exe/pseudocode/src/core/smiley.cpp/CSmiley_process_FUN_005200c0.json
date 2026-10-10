@@ -58,61 +58,61 @@
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 122,
+        "line": 123,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 22,
-        "line": 122,
+        "line": 123,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 24,
-        "line": 122,
+        "line": 123,
         "message": "use of undeclared identifier 'iRam0000014c'"
       },
       {
         "category": "incompatible_types",
         "column": 15,
-        "line": 152,
+        "line": 153,
         "message": "no matching function for call to 'core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30'"
       },
       {
         "category": "incompatible_types",
         "column": 15,
-        "line": 185,
+        "line": 186,
         "message": "no matching function for call to 'core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30'"
       },
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 235,
+        "line": 236,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 20,
-        "line": 235,
+        "line": 236,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 22,
-        "line": 235,
+        "line": 236,
         "message": "use of undeclared identifier 'iRam0000014c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 54,
-        "line": 248,
+        "line": 249,
         "message": "use of undeclared identifier 'DAT_02dd1184'"
       },
       {
         "category": "undeclared_identifier",
         "column": 30,
-        "line": 250,
+        "line": 251,
         "message": "use of undeclared identifier '_DAT_02da8a7c'"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 847,
-    "complexity_score": 529,
+    "complexity_score": 530,
     "cross_reference_count": 0,
     "function_call_count": 25,
     "global_count": 16,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 384,
+    "pseudocode_lines": 385,
     "suspect_count": 12,
     "suspect_types": [
       "undefined_data",
@@ -136,7 +136,7 @@
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 1231
+    "total_lines": 1232
   },
   "cross_references": [],
   "function": {
@@ -196,7 +196,7 @@
     {
       "addr": "004259f0",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_process_FUN_004259f0"
+      "name": "core_charactr.cpp_CCharacter_processCharacter_FUN_004259f0"
     },
     {
       "addr": "0042add0",
@@ -815,7 +815,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 115,
+      "line": 116,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(iRam0000014c + 0xe8))(0);",
@@ -823,7 +823,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 228,
+      "line": 229,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(iRam0000014c + 0xe8))(0);",
@@ -831,7 +831,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 241,
+      "line": 242,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(&local_b8,(CVector3f *)&DAT_02dd1184,",
@@ -839,7 +839,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 277,
+      "line": 278,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(&local_88,(CVector3f *)&DAT_02dd1184,",
@@ -847,7 +847,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 74,
+      "line": 75,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -855,7 +855,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 191,
+      "line": 192,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -863,7 +863,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 326,
+      "line": 327,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -871,7 +871,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 345,
+      "line": 346,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -879,7 +879,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 373,
+      "line": 374,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.position_delta.z = 0.0;",
@@ -887,7 +887,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 376,
+      "line": 377,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",

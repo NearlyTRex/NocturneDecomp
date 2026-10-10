@@ -146,7 +146,7 @@ int __cdecl core_gun_cpp_CGun_fire_FUN_004f0350(CGun *this_ptr)
       }
     }
     else {
-      iVar6 = (*(((this_ptr_01->base).vtable._uc)->_uc).canWalk)(this_ptr_01);
+      iVar6 = (*(((this_ptr_01->base).vtable._uc)->_uc).isInvulnerable)(this_ptr_01);
       this_ptr_00 = g_CDemonSetPtr;
       if (iVar6 != 0) {
         if (iStack_24 == 0) {

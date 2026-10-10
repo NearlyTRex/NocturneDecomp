@@ -52152,7 +52152,7 @@
           "type":"CTentacle*"
         },
         {
-          "name":"character",
+          "name":"actor",
           "storage":{
             "offset":8,
             "size":4,
@@ -52165,7 +52165,23 @@
               }
             ]
           },
-          "type":"CCharacter*"
+          "type":"CDemonActor*"
+        },
+        {
+          "name":"target_local_point",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
         }
       ],
       "ret_storage":{
@@ -52550,7 +52566,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"support_trisock.cpp_connectSocket_FUN_00548fc0",
+    "name":"support_trisock.cpp_CSocket_connectSocket_FUN_00548fc0",
     "ret":"int",
     "vars":{
       "locals":[
@@ -52589,7 +52605,7 @@
       ],
       "params":[
         {
-          "name":"socket_handle",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -52602,7 +52618,7 @@
               }
             ]
           },
-          "type":"_SOCKET*"
+          "type":"CSocket*"
         },
         {
           "name":"dest_addr",
@@ -52644,12 +52660,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"support_trisock.cpp_setSocketBlocking_FUN_00549240",
+    "name":"support_trisock.cpp_CSocket_setSocketBlocking_FUN_00549240",
     "ret":"int",
     "vars":{
       "params":[
         {
-          "name":"socket_handle",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -52662,7 +52678,7 @@
               }
             ]
           },
-          "type":"_SOCKET*"
+          "type":"CSocket*"
         },
         {
           "name":"blocking_mode",

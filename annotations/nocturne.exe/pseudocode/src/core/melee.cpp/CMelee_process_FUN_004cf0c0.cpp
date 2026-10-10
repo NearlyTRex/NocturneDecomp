@@ -23,7 +23,7 @@ void __cdecl core_melee_cpp_CMelee_process_FUN_004cf0c0(CMelee *this_ptr,float d
     this_ptr->blood_spurt_count = this_ptr->blood_spurt_count + -1;
     this_ptr->blood_spurt_interval = fVar2;
     this_ptr->blood_spurt_timer = fVar2;
-    input_local_point = (CVector3f *)(*(pCVar1->_uc).canWalk)((CCharacter *)this_ptr);
+    input_local_point = (CVector3f *)(*(pCVar1->_uc).isInvulnerable)((CCharacter *)this_ptr);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
               ((CDemonActor *)this_ptr,&CStack_18,input_local_point);
     core_gore_cpp_CGore_spawnBloodParticles_FUN_004b00f0

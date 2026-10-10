@@ -13,7 +13,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_saveMissionAndScript_FUN_0053d190(CD
   char local_10c [100];
   
   pCVar1 = engine_pod_cpp_CPod_locateFile_FUN_005512f0
-                     ((CPod *)g_CDemonPodPtr,"world",filename,(int *)0x0);
+                     (&g_CDemonPodPtr->base,"world",filename,(int *)0x0);
   if (pCVar1 != (CPodFile *)0x0) {
     shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
               (g_CEditorToolsPtr,"Warning: %s exists in mounted pod %s.\n\nI'm saving the mission to local file, anyway.\n\nJust thought you'd like to know.",filename,pCVar1->filename);

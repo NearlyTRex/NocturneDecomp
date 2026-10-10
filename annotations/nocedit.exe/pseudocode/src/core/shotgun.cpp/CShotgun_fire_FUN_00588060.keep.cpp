@@ -154,7 +154,7 @@ int __cdecl core_shotgun_cpp_CShotgun_fire_FUN_00588060(CShotgun *this_ptr)
           }
         }
         else {
-          iVar13 = (*(((this_ptr_00->base).vtable._uc)->_uc).canWalk)(this_ptr_00);
+          iVar13 = (*(((this_ptr_00->base).vtable._uc)->_uc).isInvulnerable)(this_ptr_00);
           if (iVar13 != 0) break;
           core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&SStack_11c);
           SStack_11c.hit_part_index = g_CDemonSetPtr->collision_part_index;

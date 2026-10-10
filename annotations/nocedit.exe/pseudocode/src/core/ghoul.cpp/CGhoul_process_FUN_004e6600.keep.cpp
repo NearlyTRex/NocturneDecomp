@@ -117,7 +117,7 @@ void __cdecl core_ghoul_cpp_CGhoul_process_FUN_004e6600(CGhoul *this_ptr,float d
 #else
   sim_target = nocturne_net_sim_target_for((CDemonActor *)this_ptr);
 #endif
-  iVar7 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
+  iVar7 = core_charactr_cpp_CCharacter_processCharacter_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar7 == 0) {
     return;
   }

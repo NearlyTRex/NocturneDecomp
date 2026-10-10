@@ -7,8 +7,8 @@
 ; SCollisionInfo * Stack[0x4]:4   this_ptr
 ;
 ; XREF[16]:
+;   core_actor.cpp_CDemonActor_testCylinderCollision_FUN_004090c0 at 004090cb
 ;   core_actor.cpp_CDemonActor_testLineIntersection_FUN_00409150 at 0040916a
-;   core_actor.cpp_CDemonActor_testPointInCylinder_FUN_004090c0 at 004090cb
 ;   core_actor.cpp_CDemonActor_testRayIntersection_FUN_004093f0 at 004093fb
 ;   core_door.cpp_CDoor_process_FUN_004800c0 at 00480450
 ;   core_flame.cpp_CFlame_process_FUN_004c9c00 at 004c9dad

@@ -7,6 +7,7 @@
 #include "game/dialogue_override.h"
 #include "core/ascii_case.h"
 #include "net/net_hero.h"
+#include "watcom/path.h"
 #include "shim_config.h"
 
 #include "nocturne.h"
@@ -46,14 +47,9 @@ char s_caption[1024];
 // dbLoad keys a line by its sound's stem and stores the file it found for it,
 // <stem>.wav or else <stem>.mp3, which is what startDialogLine is handed.
 void sound_stem(const char *sound_name, char *out, size_t out_size) {
-    const char *start = sound_name;
+    const char *start = watcom_path_leaf(sound_name);
     size_t length;
 
-    for (const char *p = sound_name; *p != '\0'; p++) {
-        if (*p == '\\' || *p == '/' || *p == ':') {
-            start = p + 1;
-        }
-    }
     const char *dot = std::strrchr(start, '.');
     length = (dot != nullptr) ? (size_t)(dot - start) : std::strlen(start);
     if (length >= out_size) {
@@ -68,28 +64,6 @@ bool key_matches(const char *key, const char *value) {
         return true;
     }
     return value != nullptr && nocturne_ascii_icompare(key, value) == 0;
-}
-
-// The EHeroType of `actor` when it is one of g_HeroActors, otherwise -1.
-// createHeros builds slot i from player i's hero_number, and a game without a
-// connection from CGame::hero_number.
-int hero_type_of(CDemonActor *actor) {
-    if (actor == nullptr) {
-        return -1;
-    }
-    for (int i = 0; i < g_HeroCount && i < 4; i++) {
-        if ((CDemonActor *)g_HeroActors[i] != actor) {
-            continue;
-        }
-        if (g_CNetGamePtr == nullptr || g_CNetGamePtr->connection_type == CONNECTION_NONE) {
-            return (int)g_CGamePtr->hero_number;
-        }
-        if (i >= (int)(sizeof(g_CNetGamePtr->players) / sizeof(g_CNetGamePtr->players[0]))) {
-            return -1;
-        }
-        return (int)g_CNetGamePtr->players[i].hero_number;
-    }
-    return -1;
 }
 
 const DialogueOverride *find(const char *mission, const char *sound_name, int speaker) {
@@ -140,7 +114,7 @@ void format_caption(const DialogueOverride *entry, int speaker, char *out, size_
 extern "C" int nocturne_dialogue_override_apply(CDemonActor *speaker, char **sound_name,
                                                 char **dialog_text, float *duration,
                                                 int timed_by_line) {
-    const int speaker_type = hero_type_of(speaker);
+    const int speaker_type = nocturne_net_hero_type_of(speaker);
     const DialogueOverride *entry =
         find(g_CDemonMissionPtr != nullptr ? g_CDemonMissionPtr->mission_name : nullptr,
              *sound_name, speaker_type);

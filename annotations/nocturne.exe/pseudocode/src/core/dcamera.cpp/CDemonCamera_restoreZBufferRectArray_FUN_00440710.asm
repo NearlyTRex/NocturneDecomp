@@ -271,7 +271,7 @@ section .text
     PUSH 0x0                            ; 00440974
     PUSH 0x0                            ; 00440976
     CALL engine_special.cpp_restoreZBuffer_FUN_00532c90 ; 00440978
-        ;   XREF to: 00532c90 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_restoreZBuffer_FUN_00532c90(int left, int top, int mode, int right, ...)
+        ;   XREF to: 00532c90 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_restoreZBuffer_FUN_00532c90(int slot, int left, int top, int right, ...)
     ADD ESP,0x14                        ; 0044097d
     ADD ESP,0x2c                        ; 00440980
     POP EBP                             ; 00440983

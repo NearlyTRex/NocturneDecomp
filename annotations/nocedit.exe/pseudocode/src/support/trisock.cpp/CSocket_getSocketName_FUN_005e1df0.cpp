@@ -1,0 +1,31 @@
+// Name: support_trisock.cpp_CSocket_getSocketName_FUN_005e1df0
+// Address: 005e1df0
+// Address Range: [[005e1df0, 005e1e42] [0060c552, 0060c56b]]
+// Convention: __cdecl
+// Signature: int __cdecl support_trisock_cpp_CSocket_getSocketName_FUN_005e1df0(CSocket *this_ptr,SNetworkAddr *out_address)
+
+#include "nocturne.h"
+
+int __cdecl support_trisock_cpp_CSocket_getSocketName_FUN_005e1df0(CSocket *this_ptr,SNetworkAddr *out_address)
+
+{
+  ushort uVar1;
+  int iVar2;
+  SOCKADDR_IN *pSVar3;
+  byte bVar4;
+  SOCKADDR local_1c;
+  SNetworkAddr SStack_c;
+  int local_4;
+  
+  local_4 = 0x10;
+  iVar2 = getsockname(this_ptr->handle,&local_1c,&local_4);
+  if (iVar2 != 0) {
+    return 0;
+  }
+  pSVar3 = support_trisock_cpp_convertSockAddr_FUN_005e1960(&SStack_c,&local_1c);
+  out_address->ip_address = *(uint *)pSVar3;
+  uVar1 = *(ushort *)((int)&pSVar3->sin_addr + 2);
+  out_address->port = *(ushort *)&pSVar3->sin_addr;
+  out_address->padding = uVar1;
+  return 1;
+}

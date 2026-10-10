@@ -97,8 +97,8 @@ void __cdecl core_set_cpp_CDemonSet_renderGogglesView_FUN_0056c990(CDemonSet *th
       iVar2 = g_CDemonLightInstance.shadow_map_height * -2;
     }
 #else
-    iVar1 = -(g_CDemonLightInstance.shadow_map_width * nocturne_goggles_scale_x());
-    iVar2 = -(g_CDemonLightInstance.shadow_map_height * nocturne_goggles_scale_y());
+    iVar1 = -(g_CDemonLightInstance.shadow_map_width * nocturne_ui_goggles_scale_x());
+    iVar2 = -(g_CDemonLightInstance.shadow_map_height * nocturne_ui_goggles_scale_y());
 #endif
     if ((g_HeroActors[g_LocalHeroIndex]->inventory).battery_charge <= 0.0) {
       engine_special_cpp_clearScreen_FUN_005b3e70();

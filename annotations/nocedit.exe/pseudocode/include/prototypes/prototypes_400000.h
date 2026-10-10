@@ -129,8 +129,8 @@ int __cdecl engine_2d_c_mapFrameBuffer_FUN_00403430(void *frame_buffer,int width
 int __cdecl engine_2d_c_mapTextureFrameBuffer_FUN_00403650(void);
 void __cdecl engine_2d_c_unmapFrameBuffer_FUN_00403670(void);
 void * __cdecl engine_3d_c_abortOldFuncNoOpcode_FUN_00403740(SMRGLHeaderPrimitive *prim);
-CTextureCache * __cdecl wincore_wddvmem_cpp_initTextureCache_FUN_00403790(void);
-void __cdecl wincore_wddvmem_cpp_freeTextureCache_FUN_004037a0(void);
+CTextureCache * __cdecl engine_3d_c_initTextureCache_FUN_00403790(void);
+void __cdecl engine_3d_c_freeTextureCache_FUN_004037a0(void);
 SMRGLHeaderExtended * __cdecl engine_3d_c_badMRGLStruct_FUN_004037b0(SMRGLHeaderExtended *prim);
 SMRGLHeaderExtended * __cdecl engine_3d_c_processCameraRelativePoint_FUN_004037e0(CQuaternion4f *input_point);
 SMRGLHeaderExtended * __cdecl engine_3d_c_transformAndBufferVertices_FUN_00403840(SMRGLHeaderExtended *mrgl);
@@ -264,7 +264,7 @@ void __cdecl core_actor_cpp_CDemonActor_onDropped_FUN_00409040(CDemonActor *this
 CDemonActor * __cdecl core_actor_cpp_CDemonActor_getCarrier_FUN_00409060(CDemonActor *this_ptr);
 void __cdecl core_actor_cpp_CDemonActor_drop_FUN_00409080(CDemonActor *this_ptr,CDemonActor *carrier,CVector3f *drop_position);
 CPathMap * __cdecl core_actor_cpp_CDemonActor_getPathMap_FUN_004090a0(CDemonActor *this_ptr);
-int __cdecl core_actor_cpp_CDemonActor_testPointInCylinder_FUN_004090c0(CDemonActor *this_ptr,SCollisionReturnInfo *collision_info,float tolerance);
+int __cdecl core_actor_cpp_CDemonActor_testCylinderCollision_FUN_004090c0(CDemonActor *this_ptr,SCollisionReturnInfo *collision_info,float tolerance);
 int __cdecl core_actor_cpp_CDemonActor_testLineIntersection_FUN_00409150(CDemonActor *this_ptr,CVector3f *line_start,CVector3f *line_end,CVector3f *out_intersection_point);
 CBoundingBox3D * __cdecl core_actor_cpp_CDemonActor_getWorldBoundingBox_FUN_00409270(CDemonActor *this_ptr,CBoundingBox3D *output_bbox,SCollisionInfo *collision_info,int bounding_box_type);
 float __cdecl core_actor_cpp_CDemonActor_testRayIntersection_FUN_004093f0(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,SActorRayHit *out_hit,int ray_type,CBoundingBox3D *clip_bounds);
@@ -338,7 +338,7 @@ CDemonActor * __cdecl core_actor_cpp_castToClassHash_FUN_0040c790(CDemonActor *a
 void __cdecl core_actor_cpp_syncActorTypeIDs_FUN_0040c7c0(void);
 void __cdecl core_actor_cpp_resetActorTypeInfo_FUN_0040c7f0(void);
 uint __cdecl core_actor_cpp_CDemonActor_processFootstep_FUN_0040c830(CDemonActor *this_ptr,float volume);
-uint __cdecl core_actor_cpp_CDemonActor_processFootstepAt_FUN_0040c8f0(CDemonActor *this_ptr,CVector3f *location,float volume);
+uint __cdecl core_actor_cpp_CDemonActor_processFootstepAtOffset_FUN_0040c8f0(CDemonActor *this_ptr,CVector3f *location,float volume);
 uint __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040ca10(CDemonActor *this_ptr,CVector3f *position,EGroundType ground_type,float volume);
 void __cdecl core_actor_cpp_setRandomSeed_FUN_0040cb90(uint seed_value);
 uint __cdecl core_actor_cpp_generateRandomValue_FUN_0040cba0(void);

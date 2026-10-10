@@ -5,6 +5,7 @@
 ;
 ;
 ; XREF[19]:
+;   crt_io.c__chmod_FUN_00600c30 at 00600c43
 ;   crt_io.c__findfirst_FUN_006021f0 at 00602210
 ;   crt_io.c__findnext_FUN_00602300 at 0060231d
 ;   crt_io.c__utime_FUN_00608160 at 0060818e
@@ -14,7 +15,6 @@
 ;   crt_io.c_tell_FUN_00606720 at 00606776
 ;   crt_io.c_write_FUN_006084ec at 006087c2
 ;   crt_process.c_spawn_FUN_006105a0 at 006106a0
-;   crt_stdio.c_CreateFileImpl_FUN_006090a0 at 00609230
 ;   ... and 9 more
 ;
 ; Referenced Globals:

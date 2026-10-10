@@ -10,15 +10,13 @@ namespace {
 
 enum { kUseItem, kLight, kDraw, kJump, kPulseCount };
 
-#define INPUT_MAX_PLAYERS 4
-
 // A count that moves backwards, or further than any human presses inside one
 // ack, belongs to a different player: CNetGame::swapPlayerData reorders the
 // table. Adopt it without pulsing.
 #define INPUT_MAX_STEP 16
 
 int s_local_count[kPulseCount];
-int s_delivered[INPUT_MAX_PLAYERS][kPulseCount];
+int s_delivered[NOCTURNE_HERO_SLOTS][kPulseCount];
 
 int *pulse_field(SPlayerInput *input, int field)
 {
@@ -30,20 +28,13 @@ int *pulse_field(SPlayerInput *input, int field)
     }
 }
 
-int is_guest(void)
-{
-    return (g_CNetGamePtr != (CNetGame *)0x0) &&
-           (g_CNetGamePtr->connection_type == CONNECTION_CLIENT) &&
-           (g_CNetGamePtr->network_mode == NET_MODE_PLAYING);
-}
-
 } // namespace
 
 extern "C" void nocturne_net_input_note_local(const SPlayerInput *controls)
 {
     int field;
 
-    if ((controls == (const SPlayerInput *)0x0) || (is_guest() == 0)) {
+    if ((controls == (const SPlayerInput *)0x0) || (nocturne_net_session_is_guest() == 0)) {
         return;
     }
     for (field = 0; field < kPulseCount; field++) {
@@ -66,7 +57,7 @@ extern "C" void nocturne_net_input_decode(int player, SPlayerInput *input)
 {
     int field;
 
-    if ((player < 0) || (INPUT_MAX_PLAYERS <= player)) {
+    if ((player < 0) || (NOCTURNE_HERO_SLOTS <= player)) {
         return;
     }
     for (field = 0; field < kPulseCount; field++) {

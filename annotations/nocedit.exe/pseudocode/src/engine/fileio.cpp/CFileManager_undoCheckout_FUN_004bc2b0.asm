@@ -29,7 +29,7 @@
 ;   CDemonPod* g_CDemonPodPtr = 030e5090
 ;   CEditorTools g_CEditorToolsInstance
 ;   CDemonPod g_CDemonPodInstance
-;   undefined4 g_CDemonPodInstance.vtable
+;   undefined4 g_CDemonPodInstance.base.vtable
 ;
 ; Called Functions:
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
@@ -176,7 +176,7 @@ section .text
     ADD ESP,0x4                         ; 004bc3f9
     MOV EAX,[0x00680cdc]                ; 004bc3fc | g_CDemonPodPtr
     PUSH EAX                            ; 004bc401 | g_CDemonPodInstance
-    MOV EBX,dword ptr [EAX + 0x194]     ; 004bc402 | g_CDemonPodInstance.vtable
+    MOV EBX,dword ptr [EAX + 0x194]     ; 004bc402 | g_CDemonPodInstance.base.vtable
     CALL dword ptr [EBX + 0x4]          ; 004bc408
     ADD ESP,0x4                         ; 004bc40b
     POP EDI                             ; 004bc40e

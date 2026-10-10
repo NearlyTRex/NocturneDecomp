@@ -20,6 +20,7 @@ nocturne_test_suite(shims_renderer_gl
     TESTS test_*_sequence.cpp
     SUBJECTS
         ${_trigl_pure}
+        shims/gl/gl_program.cpp
         shims/renderer/trigl_gl.cpp
         shims/renderer/trigl_device.cpp
         shims/renderer/trigl_exports.cpp

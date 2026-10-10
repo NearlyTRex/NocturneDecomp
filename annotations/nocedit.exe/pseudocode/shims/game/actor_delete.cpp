@@ -69,8 +69,42 @@ extern "C" void nocturne_actor_delete_unbind_sounds(CDemonActor *actor)
     sound_sndmain_cpp_unlockSound_FUN_005abdc0();
 }
 
+extern "C" void nocturne_actor_delete_unbind_heroes(CDemonActor *actor)
+{
+    CStranger *stranger;
+    CHero *hero;
+    CInventory *inventory;
+    int hero_index;
+    int hand_index;
+
+    for (hero_index = 0; hero_index < g_HeroCount; hero_index = hero_index + 1) {
+        hero = g_HeroActors[hero_index];
+        if (hero == (CHero *)0x0) {
+            continue;
+        }
+        stranger = (CStranger *)core_actor_cpp_castToClassHash_FUN_0040c790
+                                    (&(hero->base).base, g_CStrangerClassInfo.name_hash);
+        if ((stranger != (CStranger *)0x0) && (stranger->weapon == (CWeapon *)actor)) {
+            stranger->weapon = (CWeapon *)0x0;
+        }
+        for (hand_index = 0; hand_index < 2; hand_index = hand_index + 1) {
+            if ((hero->base).carry_hands[hand_index].carry_actor == actor) {
+                (hero->base).carry_hands[hand_index].carry_actor = (CDemonActor *)0x0;
+            }
+        }
+        inventory = &hero->inventory;
+        if (inventory->selected_weapon == (CWeapon *)actor) {
+            inventory->selected_weapon = (CWeapon *)0x0;
+        }
+        if (inventory->selected_item == actor) {
+            inventory->selected_item = (CDemonActor *)0x0;
+        }
+    }
+}
+
 #else
 
 extern "C" void nocturne_actor_delete_unbind_sounds(CDemonActor *actor) { (void)actor; }
+extern "C" void nocturne_actor_delete_unbind_heroes(CDemonActor *actor) { (void)actor; }
 
 #endif // !NOCTURNE_AUTHENTIC_ACTOR_DELETE

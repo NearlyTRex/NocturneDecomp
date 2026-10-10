@@ -50,7 +50,8 @@ void __cdecl core_scat_cpp_CScat_process_FUN_004fbf20(CScat *this_ptr,float delt
   CVector3f CStack_20;
   
   bVar22 = 0;
-  iVar12 = core_charactr_cpp_CCharacter_process_FUN_004259f0((CCharacter *)this_ptr,delta_time);
+  iVar12 = core_charactr_cpp_CCharacter_processCharacter_FUN_004259f0
+                     ((CCharacter *)this_ptr,delta_time);
   pCVar11 = g_CGame_PTR_005b9354;
   if (iVar12 == 0) {
     return;

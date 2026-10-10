@@ -156,7 +156,7 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor 
         }
         else {
           if ((pCStack_18 != (CDemonActor *)0x0) &&
-             (iVar4 = (*(((pCVar3->base).vtable._uc)->_uc).canWalk)(pCVar3), iVar4 != 0)) {
+             (iVar4 = (*(((pCVar3->base).vtable._uc)->_uc).isInvulnerable)(pCVar3), iVar4 != 0)) {
             in_stack_fffffd70 = "CHero";
             iVar4 = core_actor_cpp_isOfClass_FUN_0040c6d0(pCStack_14,"CHero");
             if (iVar4 != 0) goto LAB_0040a3e0;
@@ -265,9 +265,9 @@ LAB_0040a3e0:
         }
       }
       else if (((pCStack_18 == (CDemonActor *)0x0) ||
-               (iVar4 = (*(((pCVar3->base).vtable._uc)->_uc).canWalk)(pCVar3), iVar4 == 0)) ||
-              (iVar4 = core_actor_cpp_isOfClass_FUN_0040c6d0(pCStack_14,"CHero"),
-              iVar4 == 0)) {
+               (iVar4 = (*(((pCVar3->base).vtable._uc)->_uc).isInvulnerable)(pCVar3), iVar4 == 0))
+              || (iVar4 = core_actor_cpp_isOfClass_FUN_0040c6d0(pCStack_14,"CHero"),
+                 iVar4 == 0)) {
         core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&local_218.impact_point.y);
         local_218.impact_point.y = (float)g_CDemonSetPtr->collision_part_index;
         (*((this_ptr->vtable)._ub)->fillAttackDamageInfo)

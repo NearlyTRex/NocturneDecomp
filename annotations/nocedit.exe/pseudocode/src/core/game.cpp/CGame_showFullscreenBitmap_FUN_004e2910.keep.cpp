@@ -139,7 +139,7 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004e2910(CGame *this_p
               (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,this_ptr->key_fire),
               (int)g_MouseButtonFlags.dword);
 #if !NOCTURNE_AUTHENTIC_NETPLAY
-      if (g_CNetGamePtr->connection_type != CONNECTION_NONE) {
+      if (nocturne_net_session_active() != 0) {
         nocturne_net_hold_begin();
         do {
           nocturne_net_keepalive();

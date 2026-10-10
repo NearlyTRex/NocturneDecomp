@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl support_trisock_cpp_formatSocketAddress_FUN_005e1a30(char *output_buffer,SNetworkAddr *network_addr)
+; void __cdecl support_trisock_cpp_formatSocketAddress_FUN_005e1a30(SNetworkAddr *network_addr,char *output_buffer)
 ;
 ; Parameters:
-; char *           Stack[0x4]:4   output_buffer
-; SNetworkAddr *   Stack[0x8]:4   network_addr
+; SNetworkAddr *   Stack[0x4]:4   network_addr
+; char *           Stack[0x8]:4   output_buffer
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_d_0065652e
@@ -26,7 +26,7 @@ section .text
     PUSH EBX                            ; 005e1a3a
     PUSH ESI                            ; 005e1a3b
     CALL support_trisock.cpp_formatIPAddress_FUN_005e17c0 ; 005e1a3c
-        ;   XREF to: 005e17c0 (UNCONDITIONAL_CALL)  ; void support_trisock.cpp_formatIPAddress_FUN_005e17c0(char * output_buffer, uchar * ip_bytes)
+        ;   XREF to: 005e17c0 (UNCONDITIONAL_CALL)  ; void support_trisock.cpp_formatIPAddress_FUN_005e17c0(uchar * ip_bytes, char * output_buffer)
     ADD ESP,0x8                         ; 005e1a41
     MOV SI,word ptr [ESI + 0x4]         ; 005e1a44
     AND ESI,0xffff                      ; 005e1a48

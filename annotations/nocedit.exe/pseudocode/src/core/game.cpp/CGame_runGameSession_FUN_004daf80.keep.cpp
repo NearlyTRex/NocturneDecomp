@@ -169,7 +169,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
      (iVar5 = core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(g_CNetGamePtr,4), iVar5 != 0)) {
     g_CNetGamePtr->network_mode = NET_MODE_PLAYING;
 #if !NOCTURNE_AUTHENTIC_NETPLAY && NOCTURNE_NETPLAY_SIM_TRACE
-    if (g_CNetGamePtr->connection_type != CONNECTION_NONE &&
+    if (nocturne_net_session_active() != 0 &&
         0 <= g_CNetGamePtr->local_player_index) {
       DLOG("netplay",
               "PLAYING conn=%d local_idx=%d server_idx=%d history=%d process=%d",
@@ -442,7 +442,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
         }
 #if !NOCTURNE_AUTHENTIC_NETPLAY
         if ((-1 < net_respawn_item) && (iVar4 == net_respawn_item)) {
-          nocturne_net_respawn_request();
+          nocturne_net_respawn_request(1);
           net_respawn_item = -1;
         }
         if ((-1 < net_skip_item) && (iVar4 == net_skip_item)) {

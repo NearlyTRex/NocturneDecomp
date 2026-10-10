@@ -60,6 +60,7 @@ extern "C" int nocturne_gl_load_api(void) {
     NOCTURNE_GL_LOAD(Clear);
     NOCTURNE_GL_LOAD(PixelStorei);
     NOCTURNE_GL_LOAD(ReadBuffer);
+    NOCTURNE_GL_LOAD(DrawBuffer);
     NOCTURNE_GL_LOAD(ReadPixels);
     NOCTURNE_GL_LOAD_OPT(GetTexImage);
 

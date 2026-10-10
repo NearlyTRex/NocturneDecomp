@@ -14,7 +14,7 @@ CNetGame * __cdecl core_netgame_cpp_CNetGame_ctor_FUN_0053f6d0(CNetGame *this_pt
   CNetGame_ptr_368 pSVar4;
 
   pvVar4 = __arrinit(this_ptr->players,2,&g_SNetPlayerTypeInfo);
-  pSVar4 = support_trisock_cpp_invalidateSocket_FUN_005e1ae0(&ADJ(pvVar4)->socket);
+  pSVar4 = support_trisock_cpp_CSocket_ctor_FUN_005e1ae0(&ADJ(pvVar4)->socket);
   ADJ(pSVar4)->connection_type = CONNECTION_NONE;
   ADJ(pSVar4)->network_mode = NET_MODE_DISCONNECTED;
   ADJ(pSVar4)->player_count = 0;

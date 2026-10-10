@@ -50,7 +50,7 @@ DETAILED FINDINGS
 ====================================================================================================
 
   core/turret.cpp (7)
-    CTurret_fire_FUN_0054ab10                           this_ptr on CTurret          used _uc, need _uw  canWalk -> getMuzzlePoint
+    CTurret_fire_FUN_0054ab10                           this_ptr on CTurret          used _uc, need _uw  isInvulnerable -> getMuzzlePoint
     CTurret_fire_FUN_0054ab10                           this_ptr on CTurret          used _uc, need _uw  getGrabbed -> getDamage
     CTurret_fire_FUN_0054ab10                           this_ptr on CTurret          used _uc, need _uw  getGrabbed -> getDamage
     CTurret_process_FUN_005497f0                        this_ptr on CTurret          used _uc, need _uw  releaseFromGrab -> renderAimBeam
@@ -59,38 +59,38 @@ DETAILED FINDINGS
     CTurret_updateTargeting_FUN_0054a110                this_ptr on CTurret          used _uc, need _uw  isGrabbable -> fire
 
   core/lightgun.cpp (5)
-    CLightGun_fire_FUN_004c71a0                         this_ptr on CLightGun        used _uc, need _uw  canWalk -> getMuzzlePoint
+    CLightGun_fire_FUN_004c71a0                         this_ptr on CLightGun        used _uc, need _uw  isInvulnerable -> getMuzzlePoint
     CLightGun_fire_FUN_004c71a0                         this_ptr on CLightGun        used _uc, need _uw  getGrabbed -> getDamage
-    CLightGun_isLightVulnerable_FUN_004c6f50            this_ptr on CLightGun        used _uc, need _uw  canWalk -> getMuzzlePoint
-    CLightGun_renderAimBeam_FUN_004c7ca0                this_ptr on CLightGun        used _uc, need _uw  canWalk -> getMuzzlePoint
-    CLightGun_updateBeamLight_FUN_004c6ff0              this_ptr on CLightGun        used _uc, need _uw  canWalk -> getMuzzlePoint
+    CLightGun_isLightVulnerable_FUN_004c6f50            this_ptr on CLightGun        used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CLightGun_renderAimBeam_FUN_004c7ca0                this_ptr on CLightGun        used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CLightGun_updateBeamLight_FUN_004c6ff0              this_ptr on CLightGun        used _uc, need _uw  isInvulnerable -> getMuzzlePoint
 
   core/crossbow.cpp (4)
-    CCrossbow_fire_FUN_0043d1c0                         this_ptr on CCrossbow        used _uc, need _uw  canWalk -> getMuzzlePoint
+    CCrossbow_fire_FUN_0043d1c0                         this_ptr on CCrossbow        used _uc, need _uw  isInvulnerable -> getMuzzlePoint
     CCrossbow_fire_FUN_0043d1c0                         this_ptr on CCrossbow        used _uc, need _uw  getGrabbed -> getDamage
     CCrossbow_fire_FUN_0043d1c0                         this_ptr on CCrossbow        used _uc, need _uw  getGrabbed -> getDamage
-    CCrossbow_process_FUN_0043cfd0                      this_ptr on CCrossbow        used _uc, need _uw  canWalk -> getMuzzlePoint
+    CCrossbow_process_FUN_0043cfd0                      this_ptr on CCrossbow        used _uc, need _uw  isInvulnerable -> getMuzzlePoint
 
   core/elephant.cpp (4)
-    CElephantGun_fire_FUN_00477890                      this_ptr on CElephantGun     used _uc, need _uw  canWalk -> getMuzzlePoint
+    CElephantGun_fire_FUN_00477890                      this_ptr on CElephantGun     used _uc, need _uw  isInvulnerable -> getMuzzlePoint
     CElephantGun_fire_FUN_00477890                      this_ptr on CElephantGun     used _uc, need _uw  getGrabbed -> getDamage
-    CElephantGun_process_FUN_004777a0                   this_ptr on CElephantGun     used _uc, need _uw  canWalk -> getMuzzlePoint
-    CElephantGun_renderAimBeam_FUN_00478120             this_ptr on CElephantGun     used _uc, need _uw  canWalk -> getMuzzlePoint
+    CElephantGun_process_FUN_004777a0                   this_ptr on CElephantGun     used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CElephantGun_renderAimBeam_FUN_00478120             this_ptr on CElephantGun     used _uc, need _uw  isInvulnerable -> getMuzzlePoint
 
   core/shotgun.cpp (4)
-    CShotgun_fire_FUN_00515ea0                          this_ptr on CShotgun         used _uc, need _uw  canWalk -> getMuzzlePoint
+    CShotgun_fire_FUN_00515ea0                          this_ptr on CShotgun         used _uc, need _uw  isInvulnerable -> getMuzzlePoint
     CShotgun_fire_FUN_00515ea0                          this_ptr on CShotgun         used _uc, need _uw  getGrabbed -> getDamage
-    CShotgun_process_FUN_00515db0                       this_ptr on CShotgun         used _uc, need _uw  canWalk -> getMuzzlePoint
-    CShotgun_renderAimBeam_FUN_00516770                 this_ptr on CShotgun         used _uc, need _uw  canWalk -> getMuzzlePoint
+    CShotgun_process_FUN_00515db0                       this_ptr on CShotgun         used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CShotgun_renderAimBeam_FUN_00516770                 this_ptr on CShotgun         used _uc, need _uw  isInvulnerable -> getMuzzlePoint
 
   core/weapon.cpp (4)
     CWeapon_onDropped_FUN_00554310                      this_ptr on CWeapon          used _uc, need _uw  kill -> setWeaponState
     CWeapon_process_FUN_00554030                        this_ptr on CWeapon          used _uc, need _uw  getGrabber -> updateLighting
-    CWeapon_renderAimBeam_FUN_00554750                  this_ptr on CWeapon          used _uc, need _uw  canWalk -> getMuzzlePoint
-    CWeapon_updateLighting_FUN_005543c0                 this_ptr on CWeapon          used _uc, need _uw  canWalk -> getMuzzlePoint
+    CWeapon_renderAimBeam_FUN_00554750                  this_ptr on CWeapon          used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CWeapon_updateLighting_FUN_005543c0                 this_ptr on CWeapon          used _uc, need _uw  isInvulnerable -> getMuzzlePoint
 
   core/gun.cpp (3)
-    CGun_fire_FUN_004b27c0                              this_ptr on CGun             used _uc, need _uw  canWalk -> getMuzzlePoint
+    CGun_fire_FUN_004b27c0                              this_ptr on CGun             used _uc, need _uw  isInvulnerable -> getMuzzlePoint
     CGun_fire_FUN_004b27c0                              this_ptr on CGun             used _uc, need _uw  getGrabbed -> getDamage
     CGun_fire_FUN_004b27c0                              this_ptr on CGun             used _uc, need _uw  getGrabbed -> getDamage
 
@@ -99,7 +99,7 @@ DETAILED FINDINGS
     CTommyGun_fire_FUN_00545c30                         this_ptr on CTommyGun        used _uc, need _uw  getGrabbed -> getDamage
 
   core/flamegun.cpp (1)
-    CFlameThrower_fire_FUN_0048ea60                     this_ptr on CFlameThrower    used _uc, need _uw  canWalk -> getMuzzlePoint
+    CFlameThrower_fire_FUN_0048ea60                     this_ptr on CFlameThrower    used _uc, need _uw  isInvulnerable -> getMuzzlePoint
 
   core/hero.cpp (1)
     CHero_reset_FUN_004b5ec0                            this_ptr on CHero            used _ue, need _uh  updateVictim -> drawWeapon
@@ -118,7 +118,7 @@ OFFSET COLLISION REFERENCE
   ------------------------------------------------------------------------
   0xec      applyDamage                     onFired                       
   0xf0      kill                            setWeaponState                
-  0xf4      canWalk                         getMuzzlePoint                
+  0xf4      isInvulnerable                  getMuzzlePoint                
   0xf8      isGrabbable                     fire                          
   0xfc      canBeGrabbed                    isReadyToFire                 
   0x100     getGrabbed                      getDamage                     

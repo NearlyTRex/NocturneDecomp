@@ -16,6 +16,7 @@
 
 #include "gl/gl_api.h"
 #include "gl/gl_blit.h"
+#include "gl/gl_pixels.h"
 #include <stdlib.h>
 #include <string.h>
 
@@ -53,16 +54,19 @@ GLPresentState g_gl;
 // then, and read by nocturne_gl_version_short() for the 3D API menu line.
 char g_gl_version_short[16] = "";
 
-// Map the game's back-buffer bit depth onto a GL upload format. The 32bpp case
-// is SDL_PIXELFORMAT_ARGB8888, which on little-endian is B,G,R,A in memory —
-// GL_BGRA, not GL_RGBA.
-bool format_for_bpp(int bpp, GLenum *format, GLenum *type) {
-    switch (bpp) {
-        case 16: *format = GL_RGB;  *type = GL_UNSIGNED_SHORT_5_6_5; return true;
-        case 24: *format = GL_RGB;  *type = GL_UNSIGNED_BYTE;        return true;
-        case 32: *format = GL_BGRA; *type = GL_UNSIGNED_BYTE;        return true;
-        default: return false;
-    }
+// Binds `texture` and fully re-specifies its sampling state. The renderer DLL's
+// D3DTSS_MINFILTER/MIPFILTER handling calls glTexParameteri against whatever
+// texture happens to be bound, and the frame textures stay bound between
+// frames. A mipmap MIN_FILTER on a texture with no mipmap chain makes it
+// *incomplete*, and GL then behaves as if texturing were disabled — the quad
+// comes out in the primary colour (white). Filters are cheap; do not rely on
+// them surviving a frame of someone else's state changes.
+void set_sampling(GLuint texture, GLint filter) {
+    gl.BindTexture(GL_TEXTURE_2D, texture);
+    gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, filter);
+    gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, filter);
+    gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+    gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 }
 
 // (Re)allocate the streaming texture when the resolution or format changes.
@@ -79,11 +83,7 @@ bool ensure_texture(int width, int height, GLenum format, GLenum type) {
         if (g_gl.framebuffer_texture == 0) return false;
     }
 
-    gl.BindTexture(GL_TEXTURE_2D, g_gl.framebuffer_texture);
-    gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-    gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-    gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-    gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+    set_sampling(g_gl.framebuffer_texture, GL_NEAREST);
     gl.TexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, format, type, nullptr);
 
     g_gl.texture_width  = width;
@@ -315,30 +315,36 @@ extern "C" void nocturne_gl_set_logical_size(int width, int height) {
     g_gl.logical_height = height;
 }
 
-extern "C" void nocturne_gl_present_framebuffer(const void *pixels, int width, int height,
-                                                int pitch, int bpp) {
-    if (!g_gl.active || pixels == nullptr || width <= 0 || height <= 0) return;
+namespace {
 
-    GLenum format = 0, type = 0;
-    if (!format_for_bpp(bpp, &format, &type)) {
-        DLOG_RL("render",4, 300, "gl_present: unsupported bpp=%d", bpp);
-        return;
-    }
-    if (!ensure_texture(width, height, format, type)) return;
-
-    // The back buffer's pitch is not necessarily width*bytes-per-pixel, so tell
-    // GL the real stride rather than repacking rows on the CPU.
+// Uploads a CPU image into the frame texture. Its pitch is not necessarily
+// width*bytes-per-pixel, so GL is told the real stride rather than the rows
+// being repacked on the CPU.
+void upload_frame(const void *pixels, int width, int height, int pitch, int bpp,
+                  GLenum format, GLenum type) {
     const int bytes_per_pixel = bpp / 8;
     gl.PixelStorei(GL_UNPACK_ALIGNMENT, 1);
     gl.PixelStorei(GL_UNPACK_ROW_LENGTH, (pitch > 0) ? pitch / bytes_per_pixel : width);
-
     gl.BindTexture(GL_TEXTURE_2D, g_gl.framebuffer_texture);
     gl.TexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, width, height, format, type, pixels);
     gl.PixelStorei(GL_UNPACK_ROW_LENGTH, 0);
+}
 
-    // The composited frame goes to the WINDOW. When a scene FBO is in use it is
-    // still bound at this point (the DLL renders into it), so switch to the
-    // default framebuffer for the blit and switch back after the swap.
+// Back to the persistent scene target, when there is one, for the next
+// frame's 3D.
+void restore_scene_target() {
+    if (g_gl.scene_fbo != 0) {
+        gl.BindFramebuffer(GL_FRAMEBUFFER, g_gl.scene_fbo);
+        gl.Viewport(0, 0, g_gl.scene_width, g_gl.scene_height);
+    }
+}
+
+// Draws `texture` to the WINDOW, letterboxed to the logical size (or, with no
+// logical size set, `fallback_w` x `fallback_h`), swaps, and goes back to the
+// scene target. `flipped` samples it bottom-up, as a render target is drawn.
+void present_to_window(GLuint texture, int fallback_w, int fallback_h, bool flipped) {
+    // When a scene FBO is in use it is still bound at this point (the DLL
+    // renders into it), so switch to the default framebuffer for the blit.
     if (g_gl.scene_fbo != 0) {
         gl.BindFramebuffer(GL_FRAMEBUFFER, 0);
     }
@@ -346,8 +352,8 @@ extern "C" void nocturne_gl_present_framebuffer(const void *pixels, int width, i
     int drawable_w = 0, drawable_h = 0;
     SDL_GL_GetDrawableSize(g_gl.window, &drawable_w, &drawable_h);
 
-    const int logical_w = (g_gl.logical_width  > 0) ? g_gl.logical_width  : width;
-    const int logical_h = (g_gl.logical_height > 0) ? g_gl.logical_height : height;
+    const int logical_w = (g_gl.logical_width  > 0) ? g_gl.logical_width  : fallback_w;
+    const int logical_h = (g_gl.logical_height > 0) ? g_gl.logical_height : fallback_h;
     int vp_x = 0, vp_y = 0, vp_w = 0, vp_h = 0;
     compute_viewport(drawable_w, drawable_h, logical_w, logical_h,
                      &vp_x, &vp_y, &vp_w, &vp_h);
@@ -360,44 +366,44 @@ extern "C" void nocturne_gl_present_framebuffer(const void *pixels, int width, i
 
     gl.Viewport(vp_x, vp_y, vp_w, vp_h);
 
-    // The 2D layer is an opaque full-frame blit: no depth, no blend, no culling.
+    // An opaque full-frame blit: no depth, no blend, no culling.
     gl.Disable(GL_DEPTH_TEST);
     gl.Disable(GL_BLEND);
     gl.Disable(GL_CULL_FACE);
-    // Bind and fully re-specify the sampling state every frame. The renderer
-    // DLL's D3DTSS_MINFILTER/MIPFILTER handling calls glTexParameteri against
-    // whatever texture happens to be bound, and this one is still bound from the
-    // previous present. A mipmap MIN_FILTER on a texture with no mipmap chain
-    // makes it *incomplete*, and GL then behaves as if texturing were disabled —
-    // the quad comes out in the primary colour (white), which is exactly the
-    // white screen this produced. Filters are cheap; do not rely on them
-    // surviving a frame of someone else's state changes.
     // Nearest keeps whole-multiple scaling crisp; at a fractional scale it makes
     // pixel sizes visibly uneven (some source pixels land on 1 screen pixel,
     // their neighbours on 2), so blend instead.
-    const GLint present_filter =
-        viewport_is_integer_scale(vp_w, logical_w) ? GL_NEAREST : GL_LINEAR;
-    gl.BindTexture(GL_TEXTURE_2D, g_gl.framebuffer_texture);
-    gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, present_filter);
-    gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, present_filter);
-    gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-    gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+    set_sampling(texture, viewport_is_integer_scale(vp_w, logical_w) ? GL_NEAREST : GL_LINEAR);
 
     // Every frame reaches the screen through this one quad — software mode
     // included, since nothing else draws there. A failure here is a black window
     // and it says so, rather than being carried by a second path that would hide
     // a program that stopped building.
-    if (!nocturne_gl_blit_quad(g_gl.framebuffer_texture)) {
+    const int drawn = flipped ? nocturne_gl_blit_quad_flipped(texture)
+                              : nocturne_gl_blit_quad(texture);
+    if (!drawn) {
         DLOG_RL("render", 1, 600, "gl_present: present quad unavailable — frame not drawn");
     }
 
     SDL_GL_SwapWindow(g_gl.window);
+    restore_scene_target();
+}
 
-    // Back to the persistent scene target for the next frame's 3D.
-    if (g_gl.scene_fbo != 0) {
-        gl.BindFramebuffer(GL_FRAMEBUFFER, g_gl.scene_fbo);
-        gl.Viewport(0, 0, g_gl.scene_width, g_gl.scene_height);
+} // namespace
+
+extern "C" void nocturne_gl_present_framebuffer(const void *pixels, int width, int height,
+                                                int pitch, int bpp) {
+    if (!g_gl.active || pixels == nullptr || width <= 0 || height <= 0) return;
+
+    GLenum format = 0, type = 0;
+    if (!nocturne_gl_format_for_bpp(bpp, &format, &type)) {
+        DLOG_RL("render",4, 300, "gl_present: unsupported bpp=%d", bpp);
+        return;
     }
+    if (!ensure_texture(width, height, format, type)) return;
+
+    upload_frame(pixels, width, height, pitch, bpp, format, type);
+    present_to_window(g_gl.framebuffer_texture, width, height, false);
 }
 
 extern "C" void nocturne_gl_scene_upload(const void *pixels, int width, int height,
@@ -406,7 +412,7 @@ extern "C" void nocturne_gl_scene_upload(const void *pixels, int width, int heig
     if (pixels == nullptr || width <= 0 || height <= 0) return;
 
     GLenum format = 0, type = 0;
-    if (!format_for_bpp(bpp, &format, &type)) {
+    if (!nocturne_gl_format_for_bpp(bpp, &format, &type)) {
         DLOG_RL("render",4, 300, "gl_present: scene upload unsupported bpp=%d", bpp);
         return;
     }
@@ -430,12 +436,7 @@ extern "C" void nocturne_gl_scene_upload(const void *pixels, int width, int heig
     gl.GetIntegerv(GL_VIEWPORT, prev_viewport);
     gl.GetIntegerv(GL_UNPACK_ALIGNMENT, &prev_unpack_alignment);
 
-    const int bytes_per_pixel = bpp / 8;
-    gl.PixelStorei(GL_UNPACK_ALIGNMENT, 1);
-    gl.PixelStorei(GL_UNPACK_ROW_LENGTH, (pitch > 0) ? pitch / bytes_per_pixel : width);
-    gl.BindTexture(GL_TEXTURE_2D, g_gl.framebuffer_texture);
-    gl.TexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, width, height, format, type, pixels);
-    gl.PixelStorei(GL_UNPACK_ROW_LENGTH, 0);
+    upload_frame(pixels, width, height, pitch, bpp, format, type);
 
     gl.BindFramebuffer(GL_FRAMEBUFFER, g_gl.scene_fbo);
     gl.Viewport(0, 0, g_gl.scene_width, g_gl.scene_height);
@@ -446,14 +447,8 @@ extern "C" void nocturne_gl_scene_upload(const void *pixels, int width, int heig
     gl.Disable(GL_BLEND);
     gl.Disable(GL_CULL_FACE);
 
-    // Re-specify sampling state: the renderer's filter handling runs against
-    // whatever texture is bound, and a mipmap MIN_FILTER on this single-level
-    // texture would make it incomplete — GL then drops texturing silently and
-    // the quad comes out flat white. Same trap as the present path.
-    gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-    gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-    gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-    gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+    // Same incomplete-texture trap as the present path (see set_sampling).
+    set_sampling(g_gl.framebuffer_texture, GL_NEAREST);
 
     // Same quad as the present path. gl_blit puts back the program and the
     // vertex array itself — without that, the renderer's very next draw would
@@ -477,54 +472,15 @@ extern "C" void nocturne_gl_scene_upload(const void *pixels, int width, int heig
 extern "C" void nocturne_gl_present_scene(void) {
     if (!g_gl.active || g_gl.scene_fbo == 0 || g_gl.scene_color == 0) return;
 
-    gl.BindFramebuffer(GL_FRAMEBUFFER, 0);
-
-    int drawable_w = 0, drawable_h = 0;
-    SDL_GL_GetDrawableSize(g_gl.window, &drawable_w, &drawable_h);
-
-    const int logical_w = (g_gl.logical_width  > 0) ? g_gl.logical_width  : g_gl.scene_width;
-    const int logical_h = (g_gl.logical_height > 0) ? g_gl.logical_height : g_gl.scene_height;
-    int vp_x = 0, vp_y = 0, vp_w = 0, vp_h = 0;
-    compute_viewport(drawable_w, drawable_h, logical_w, logical_h,
-                     &vp_x, &vp_y, &vp_w, &vp_h);
-
-    gl.Viewport(0, 0, drawable_w, drawable_h);
-    gl.Disable(GL_SCISSOR_TEST);
-    gl.ClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-    gl.Clear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    gl.Viewport(vp_x, vp_y, vp_w, vp_h);
-
-    gl.Disable(GL_DEPTH_TEST);
-    gl.Disable(GL_BLEND);
-    gl.Disable(GL_CULL_FACE);
-
-    const GLint present_filter =
-        viewport_is_integer_scale(vp_w, logical_w) ? GL_NEAREST : GL_LINEAR;
-    gl.BindTexture(GL_TEXTURE_2D, g_gl.scene_color);
-    gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, present_filter);
-    gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, present_filter);
-    gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-    gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-
     // A render target is drawn bottom-up, unlike an uploaded CPU image, so the
     // quad samples it the other way round.
-    if (!nocturne_gl_blit_quad_flipped(g_gl.scene_color)) {
-        DLOG_RL("render", 1, 600, "gl_present: scene quad unavailable — frame not drawn");
-    }
-
-    SDL_GL_SwapWindow(g_gl.window);
-
-    gl.BindFramebuffer(GL_FRAMEBUFFER, g_gl.scene_fbo);
-    gl.Viewport(0, 0, g_gl.scene_width, g_gl.scene_height);
+    present_to_window(g_gl.scene_color, g_gl.scene_width, g_gl.scene_height, true);
 }
 
 extern "C" void nocturne_gl_swap_only(void) {
     if (!g_gl.active) return;
     SDL_GL_SwapWindow(g_gl.window);
-    if (g_gl.scene_fbo != 0) {
-        gl.BindFramebuffer(GL_FRAMEBUFFER, g_gl.scene_fbo);
-        gl.Viewport(0, 0, g_gl.scene_width, g_gl.scene_height);
-    }
+    restore_scene_target();
 }
 
 extern "C" int nocturne_gl_read_front(unsigned char **out_rgb, int *out_width, int *out_height) {
@@ -552,23 +508,10 @@ extern "C" int nocturne_gl_read_front(unsigned char **out_rgb, int *out_width, i
     gl.ReadBuffer(GL_BACK);
     gl.ReadPixels(0, 0, drawable_w, drawable_h, GL_RGB, GL_UNSIGNED_BYTE, buf);
 
-    if (g_gl.scene_fbo != 0) {
-        gl.BindFramebuffer(GL_FRAMEBUFFER, g_gl.scene_fbo);
-        gl.Viewport(0, 0, g_gl.scene_width, g_gl.scene_height);
-    }
+    restore_scene_target();
 
     // GL's origin is bottom-left; PPM (and every caller here) wants top-down.
-    unsigned char *row = (unsigned char *)malloc(row_bytes);
-    if (row != nullptr) {
-        for (int y = 0; y < drawable_h / 2; y++) {
-            unsigned char *top    = buf + (size_t)y * row_bytes;
-            unsigned char *bottom = buf + (size_t)(drawable_h - 1 - y) * row_bytes;
-            memcpy(row, top, row_bytes);
-            memcpy(top, bottom, row_bytes);
-            memcpy(bottom, row, row_bytes);
-        }
-        free(row);
-    }
+    nocturne_gl_flip_rows(buf, (int)row_bytes, drawable_h);
 
     *out_rgb = buf;
     if (out_width)  *out_width  = drawable_w;

@@ -13,7 +13,7 @@ void __cdecl core_netgame_cpp_CNetGame_flushIncomingPackets_FUN_00540550(CNetGam
   int iVar2;
   int iVar3;
   
-  iVar2 = support_trisock_cpp_isSocketValid_FUN_005e1b70(&this_ptr->socket);
+  iVar2 = support_trisock_cpp_CSocket_isSocketValid_FUN_005e1b70(&this_ptr->socket);
   iVar1 = g_ForceMessagePump;
   if (iVar2 == 0) {
     return;
@@ -23,7 +23,7 @@ void __cdecl core_netgame_cpp_CNetGame_flushIncomingPackets_FUN_00540550(CNetGam
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     iVar2 = 0;
     do {
-      iVar3 = support_trisock_cpp_receiveSocketData_FUN_005e1c20
+      iVar3 = support_trisock_cpp_CSocket_receiveSocketData_FUN_005e1c20
                         (&this_ptr->socket,g_NetworkReceivePacket.raw,0x405,(SNetworkAddr *)0x0);
       if (iVar3 < 1) {
         g_ForceMessagePump = iVar1;

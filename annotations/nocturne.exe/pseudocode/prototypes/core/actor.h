@@ -127,9 +127,9 @@ uint __cdecl CDemonActor::playAmbientSoundWithDelay(CDemonActor *this_ptr,char *
 // Address: 0040a380
 void __cdecl CDemonActor::doNothing(CDemonActor *this_ptr);
 
-// Original: core_actor.cpp_CDemonActor_testPointInCylinder_FUN_0040a390
+// Original: core_actor.cpp_CDemonActor_testCylinderCollision_FUN_0040a390
 // Address: 0040a390
-int __cdecl CDemonActor::testPointInCylinder(CDemonActor *this_ptr,SCollisionReturnInfo *collision_info,float tolerance);
+int __cdecl CDemonActor::testCylinderCollision(CDemonActor *this_ptr,SCollisionReturnInfo *collision_info,float tolerance);
 
 // Original: core_actor.cpp_CDemonActor_testLineIntersection_FUN_0040a420
 // Address: 0040a420
@@ -359,9 +359,9 @@ void __cdecl resetActorTypeInfo(void);
 // Address: 0040d930
 uint __cdecl CDemonActor::processFootstep(CDemonActor *this_ptr,float volume);
 
-// Original: core_actor.cpp_CDemonActor_processFootstepAt_FUN_0040d9f0
+// Original: core_actor.cpp_CDemonActor_processFootstepAtOffset_FUN_0040d9f0
 // Address: 0040d9f0
-uint __cdecl CDemonActor::processFootstepAt(CDemonActor *this_ptr,CVector3f *location,float volume);
+uint __cdecl CDemonActor::processFootstepAtOffset(CDemonActor *this_ptr,CVector3f *location,float volume);
 
 // Original: core_actor.cpp_CDemonActor_handleFootstep_FUN_0040db50
 // Address: 0040db50

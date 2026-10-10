@@ -7,27 +7,15 @@
 #include "gl/window_mode.h"
 #include "shim_config.h"
 #include "core/debug_log.h"
+#include "core/ini_setting.h"
 #include <SDL.h>
 
-// Reaches engine_ini_cpp_getProfileInteger / _writeProfileString, which operate
-// on the engine's g_CIniInstance.
 #include "nocturne.h"
-
-#include <cstdio>
-#include <string>
-
-// Defined in shims/watcom/crt.cpp — the same '\\'->'/' + case-insensitive resolution
-// the CRT _fopen shim applies, so the probe below looks at the file the engine
-// will actually open.
-std::string watcom_resolve_fs_path(const char *path);
 
 namespace {
 
-// Same path inivar.cpp uses. Kept as a non-const buffer because the engine's
-// INI accessors take char* rather than const char*.
-char kIniPath[] = ".\\system\\nocturne.ini";
-char kIniSection[] = "Graphics";
-char kIniKey[] = "windowMode";
+const char kIniSection[] = "Graphics";
+const char kIniKey[] = "windowMode";
 
 int  s_mode = NOCTURNE_WINDOW_MODE_WINDOWED;
 bool s_loaded = false;
@@ -83,20 +71,13 @@ extern "C" int nocturne_window_mode_get(void) {
     return NOCTURNE_WINDOW_MODE_FULLSCREEN;
 #endif
     if (!s_loaded) {
-        // CIni::getProfileString has NO initialised-guard: if it cannot open the
-        // file it calls displayErrorAndQuit("Unable to open input") and takes the
-        // process with it. This runs from the ddraw shim during startup, so
-        // check the file is really there first rather than trusting init order.
-        std::string resolved = watcom_resolve_fs_path(kIniPath);
-        FILE *probe = fopen(resolved.c_str(), "rb");
-        if (probe != nullptr) {
-            fclose(probe);
-            s_mode = clamp_mode(engine_ini_cpp_getProfileInteger_FUN_004fb9a0(
-                kIniSection, kIniKey, NOCTURNE_WINDOW_MODE_WINDOWED, kIniPath));
-        } else {
-            s_mode = NOCTURNE_WINDOW_MODE_WINDOWED;
-            DLOG("render", "no %s yet; defaulting to windowed", kIniPath);
+        // Runs from the ddraw shim during startup, before anything has written
+        // the ini (see core/ini_setting.h).
+        if (nocturne_ini_exists() == 0) {
+            DLOG("render", "no %s yet; defaulting to windowed", NOCTURNE_INI_PATH);
         }
+        s_mode = clamp_mode(nocturne_ini_get_int(kIniSection, kIniKey,
+                                                 NOCTURNE_WINDOW_MODE_WINDOWED));
         s_loaded = true;
         DLOG("render", "loaded windowMode=%d (%s)", s_mode,
                 nocturne_window_mode_name(s_mode));
@@ -109,20 +90,14 @@ extern "C" void nocturne_window_mode_set(int mode) {
     s_mode = mode;
     s_loaded = true;
 
-    char value[16];
-    snprintf(value, sizeof(value), "%d", mode);
-    engine_ini_cpp_writeProfileString_FUN_004fba40(kIniSection, kIniKey, value, kIniPath);
+    nocturne_ini_set_int(kIniSection, kIniKey, mode);
 
     DLOG("render", "set windowMode=%d (%s)", mode, nocturne_window_mode_name(mode));
     nocturne_window_mode_apply(s_window);
 }
 
 extern "C" int nocturne_window_mode_cycle(int step) {
-    // C's % keeps the sign of the dividend, and step is -1 for a left press.
-    int next = (nocturne_window_mode_get() + step) % NOCTURNE_WINDOW_MODE_COUNT;
-    if (next < 0) {
-        next += NOCTURNE_WINDOW_MODE_COUNT;
-    }
+    int next = nocturne_ini_cycle(nocturne_window_mode_get(), step, NOCTURNE_WINDOW_MODE_COUNT);
     nocturne_window_mode_set(next);
     return next;
 }

@@ -99,7 +99,7 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_00505c70(CLightGun *this_ptr)
                   core_actor_cpp_castToClassHash_FUN_0040c790
                             (g_CDemonSetPtr->collision_actor,g_CTriggerClassInfo.name_hash);
     if (pCStack_1c != (CCharacter *)0x0) {
-      iVar3 = (*(((pCStack_1c->base).vtable._uc)->_uc).canWalk)(pCStack_1c);
+      iVar3 = (*(((pCStack_1c->base).vtable._uc)->_uc).isInvulnerable)(pCStack_1c);
       this_ptr_01 = g_CDemonSetPtr;
       if ((iVar3 != 0) && (iVar5 == 0)) {
         this_ptr->charge_level = 30.0f;
@@ -142,7 +142,7 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_00505c70(CLightGun *this_ptr)
       return 1;
     }
     this_ptr_03 = *(CCharacter **)((int)g_CDemonSetPtr->characters + iStack_24);
-    iVar3 = (*(((this_ptr_03->base).vtable._uc)->_uc).canWalk)(this_ptr_03);
+    iVar3 = (*(((this_ptr_03->base).vtable._uc)->_uc).isInvulnerable)(this_ptr_03);
     if (((iVar3 == 0) &&
         ((((iVar3 = core_actor_cpp_isOfClass_FUN_0040c6d0(&this_ptr_03->base,"CGhoul"),
            iVar3 != 0 ||

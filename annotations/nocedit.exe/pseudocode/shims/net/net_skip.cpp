@@ -20,9 +20,6 @@
 // at the rate sim frames are produced.
 #define SKIP_LEAD_FRAMES 12
 
-// Matches the player table the shipped protocol supports.
-#define SKIP_MAX_PLAYERS 4
-
 // How long the "waiting" and "wants to skip" notices stay up, in seconds.
 #define SKIP_NOTICE_SECONDS 3.0f
 
@@ -44,7 +41,7 @@ typedef struct SNetPacket_SkipCommit {
 // Each player's current answer for the cinematic s_table_label names. Levels
 // rather than events, so a re-broadcast changes nothing and a withdrawal needs
 // no message of its own.
-static int s_votes[SKIP_MAX_PLAYERS];
+static int s_votes[NOCTURNE_HERO_SLOTS];
 static int s_table_label = -2;       // no cinematic; -1 is a real label index
 
 static int s_local_voted    = 0;
@@ -56,13 +53,6 @@ static int s_commit_label   = 0;
 static int s_reported_late  = 0;
 
 // -----------------------------------------------------------------------------
-
-static int skip_is_network_game(void)
-{
-    return ((g_CNetGamePtr != (CNetGame *)0x0) &&
-            (g_CNetGamePtr->connection_type != CONNECTION_NONE) &&
-            (g_CNetGamePtr->network_mode == NET_MODE_PLAYING));
-}
 
 // The skippable cinematic this machine is in, or -2 when it is in none.
 // setSkipLabel leaves -1 behind for a cinematic that declared no target, which
@@ -108,23 +98,14 @@ static void skip_announce_control(void)
 
 static void skip_broadcast(SNetPacketHeader *packet)
 {
-    CNetGame *net_game = g_CNetGamePtr;
-    int       i;
-
-    for (i = 0; i < net_game->player_count; i++) {
-        if (i != net_game->local_player_index) {
-            core_netgame_cpp_CNetGame_send_FUN_005411c0(net_game, i, packet);
-        }
-    }
+    nocturne_net_session_broadcast(packet);
 }
 
 static void skip_send_vote(int label, int wants_skip)
 {
     SNetPacket_SkipVote vote;
 
-    std::memset(&vote, 0, sizeof(vote));
-    vote.header.size   = sizeof(SNetPacket_SkipVote);
-    vote.header.type   = (ENetPacketType)NOCTURNE_NET_PACKET_SKIP_VOTE;
+    nocturne_net_packet_init(&vote, (int)sizeof(vote), NOCTURNE_NET_PACKET_SKIP_VOTE);
     vote.voter_player  = g_CNetGamePtr->local_player_index;
     vote.skip_label    = label;
     vote.wants_skip    = wants_skip;
@@ -135,9 +116,7 @@ static void skip_send_commit(void)
 {
     SNetPacket_SkipCommit commit;
 
-    std::memset(&commit, 0, sizeof(commit));
-    commit.header.size    = sizeof(SNetPacket_SkipCommit);
-    commit.header.type    = (ENetPacketType)NOCTURNE_NET_PACKET_SKIP_COMMIT;
+    nocturne_net_packet_init(&commit, (int)sizeof(commit), NOCTURNE_NET_PACKET_SKIP_COMMIT);
     commit.apply_sequence = s_commit_sequence;
     commit.skip_label     = s_commit_label;
     skip_broadcast(&commit.header);
@@ -149,7 +128,7 @@ static int skip_everyone_voted(void)
     int       i;
 
     for (i = 0; i < net_game->player_count; i++) {
-        if ((SKIP_MAX_PLAYERS <= i) || (s_votes[i] == 0)) {
+        if ((NOCTURNE_HERO_SLOTS <= i) || (s_votes[i] == 0)) {
             return 0;
         }
     }
@@ -189,11 +168,10 @@ static void skip_run(void)
 
 extern "C" void nocturne_net_skip_poll(void)
 {
-    CNetGame *net_game;
     int       label;
     int       local_index;
 
-    if (skip_is_network_game() == 0) {
+    if (nocturne_net_session_playing() == 0) {
         skip_clear_votes();
         s_commit_pending = 0;
         s_table_label    = -2;
@@ -217,9 +195,8 @@ extern "C" void nocturne_net_skip_poll(void)
         skip_announce_control();
     }
 
-    net_game    = g_CNetGamePtr;
-    local_index = net_game->local_player_index;
-    if ((local_index < 0) || (SKIP_MAX_PLAYERS <= local_index)) {
+    local_index = g_CNetGamePtr->local_player_index;
+    if ((local_index < 0) || (NOCTURNE_HERO_SLOTS <= local_index)) {
         return;
     }
 
@@ -229,12 +206,11 @@ extern "C" void nocturne_net_skip_poll(void)
     // nocturne_net_skip_toggle_vote — and this is the only thing that carries it.
     skip_send_vote(label, s_local_voted);
 
-    if (net_game->connection_type == CONNECTION_HOST) {
+    if (nocturne_net_session_is_host() != 0) {
         if ((s_commit_pending == 0) && (skip_everyone_voted() != 0)) {
             s_commit_pending  = 1;
             s_commit_label    = label;
-            s_commit_sequence =
-                net_game->players[local_index].sim_frame_index + SKIP_LEAD_FRAMES;
+            s_commit_sequence = nocturne_net_session_local_frame() + SKIP_LEAD_FRAMES;
         }
         if (s_commit_pending != 0) {
             skip_send_commit();
@@ -256,7 +232,7 @@ static int skip_menu_label(void)
 {
     int label;
 
-    if (skip_is_network_game() == 0) {
+    if (nocturne_net_session_playing() == 0) {
         return -2;
     }
     label = skip_current_label();
@@ -279,7 +255,7 @@ extern "C" int nocturne_net_skip_vote_available(void)
         return 0;
     }
     local_index = g_CNetGamePtr->local_player_index;
-    if ((local_index < 0) || (SKIP_MAX_PLAYERS <= local_index)) {
+    if ((local_index < 0) || (NOCTURNE_HERO_SLOTS <= local_index)) {
         return 0;
     }
     return 1;
@@ -316,13 +292,11 @@ extern "C" int nocturne_net_skip_on_vote(const void *packet, int packet_size)
 {
     const SNetPacket_SkipVote *incoming = (const SNetPacket_SkipVote *)packet;
 
-    if ((packet == (const void *)0x0) || (packet_size < (int)sizeof(SNetPacket_SkipVote))) {
+    if (nocturne_net_packet_is(packet, packet_size, NOCTURNE_NET_PACKET_SKIP_VOTE,
+                               (int)sizeof(SNetPacket_SkipVote)) == 0) {
         return 0;
     }
-    if (incoming->header.type != (ENetPacketType)NOCTURNE_NET_PACKET_SKIP_VOTE) {
-        return 0;
-    }
-    if ((incoming->voter_player < 0) || (SKIP_MAX_PLAYERS <= incoming->voter_player)) {
+    if ((incoming->voter_player < 0) || (NOCTURNE_HERO_SLOTS <= incoming->voter_player)) {
         return 1;               // ours by type, but not addressable - consumed
     }
     // A vote only counts for the cinematic this machine is actually in.
@@ -346,10 +320,8 @@ extern "C" int nocturne_net_skip_on_commit(const void *packet, int packet_size)
 {
     const SNetPacket_SkipCommit *incoming = (const SNetPacket_SkipCommit *)packet;
 
-    if ((packet == (const void *)0x0) || (packet_size < (int)sizeof(SNetPacket_SkipCommit))) {
-        return 0;
-    }
-    if (incoming->header.type != (ENetPacketType)NOCTURNE_NET_PACKET_SKIP_COMMIT) {
+    if (nocturne_net_packet_is(packet, packet_size, NOCTURNE_NET_PACKET_SKIP_COMMIT,
+                               (int)sizeof(SNetPacket_SkipCommit)) == 0) {
         return 0;
     }
     if (incoming->skip_label != skip_current_label()) {
@@ -413,6 +385,9 @@ extern "C" void nocturne_net_skip_reset(void)
 #else  /* authentic: no netplay skip, and the pause menu keeps its own item */
 
 extern "C" void nocturne_net_skip_poll(void)                    {}
+extern "C" int  nocturne_net_skip_vote_available(void)          { return 0; }
+extern "C" const char *nocturne_net_skip_vote_label(void)       { return ""; }
+extern "C" void nocturne_net_skip_toggle_vote(void)             {}
 extern "C" int  nocturne_net_skip_on_vote(const void *, int)    { return 0; }
 extern "C" int  nocturne_net_skip_on_commit(const void *, int)  { return 0; }
 extern "C" void nocturne_net_skip_apply_if_due(int)             {}

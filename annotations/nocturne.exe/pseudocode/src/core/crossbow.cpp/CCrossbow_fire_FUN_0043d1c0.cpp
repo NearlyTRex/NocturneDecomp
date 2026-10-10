@@ -45,8 +45,8 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_0043d1c0(CCrossbow *this_ptr)
   CVector3f CStack_20;
   CGlass *pCStack_14;
   
-  pCVar2 = (CVector3f *)(*(((this_ptr->base).base.vtable._uc)->_uc).canWalk)((CCharacter *)this_ptr)
-  ;
+  pCVar2 = (CVector3f *)
+           (*(((this_ptr->base).base.vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
             ((CDemonActor *)this_ptr,aCStack_3c,pCVar2);
   iVar3 = core_weapon_cpp_CWeapon_fire_FUN_00554600(&this_ptr->base);
@@ -128,7 +128,7 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_0043d1c0(CCrossbow *this_ptr)
       }
     }
     else {
-      iVar3 = (*(((this_ptr_01->base).vtable._uc)->_uc).canWalk)(this_ptr_01);
+      iVar3 = (*(((this_ptr_01->base).vtable._uc)->_uc).isInvulnerable)(this_ptr_01);
       this_ptr_00 = g_CDemonSet_PTR_005be368;
       pCVar7 = (CDemonActor *)((ulonglong)dVar6 >> 0x20);
       if (iVar3 != 0) {

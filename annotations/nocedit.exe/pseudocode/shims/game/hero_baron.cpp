@@ -18,17 +18,11 @@ struct Claim {
 Claim s_claims[kMaxClaims];
 int s_claim_count;
 
-bool network_game(void)
-{
-    return (g_CNetGamePtr != (CNetGame *)0x0) &&
-           (g_CNetGamePtr->connection_type != CONNECTION_NONE);
-}
-
 } // namespace
 
 extern "C" int nocturne_baron_claimed_by_other(CBaronWeapon *weapon, CBaron *baron)
 {
-    if (!network_game()) {
+    if (!nocturne_net_session_active()) {
         return 0;
     }
     for (int i = 0; i < s_claim_count; i++) {
@@ -41,7 +35,7 @@ extern "C" int nocturne_baron_claimed_by_other(CBaronWeapon *weapon, CBaron *bar
 
 extern "C" void nocturne_baron_claim(CBaronWeapon *weapon, CBaron *baron)
 {
-    if (!network_game() || (baron == (CBaron *)0x0)) {
+    if (!nocturne_net_session_active() || (baron == (CBaron *)0x0)) {
         return;
     }
     for (int i = 0; i < s_claim_count; i++) {

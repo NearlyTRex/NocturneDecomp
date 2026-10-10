@@ -3095,7 +3095,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_actor.cpp_CDemonActor_testPointInCylinder_FUN_0040a390",
+    "name":"core_actor.cpp_CDemonActor_testCylinderCollision_FUN_0040a390",
     "ret":"int",
     "vars":{
       "locals":[
@@ -12174,7 +12174,7 @@
     "conv":"__stack2_esi",
     "importable":true,
     "name":"core_charactr.cpp_CCharacter_getCarryObjToBodyXForm_FUN_00429490",
-    "ret":"void",
+    "ret":"CMatrix3x4f*",
     "vars":{
       "locals":[
         {
@@ -12242,7 +12242,17 @@
           },
           "type":"CMatrix3x4f*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -65681,7 +65691,7 @@
     "vars":{
       "params":[
         {
-          "name":"left",
+          "name":"slot",
           "storage":{
             "offset":4,
             "size":4,
@@ -65697,7 +65707,7 @@
           "type":"int"
         },
         {
-          "name":"top",
+          "name":"left",
           "storage":{
             "offset":8,
             "size":4,
@@ -65713,7 +65723,7 @@
           "type":"int"
         },
         {
-          "name":"mode",
+          "name":"top",
           "storage":{
             "offset":12,
             "size":4,
@@ -67867,7 +67877,7 @@
     "conv":"__stack2_esi",
     "importable":true,
     "name":"core_stranger.cpp_CStranger_getCarryObjToBodyXForm_FUN_0053f210",
-    "ret":"void",
+    "ret":"CMatrix3x4f*",
     "vars":{
       "locals":[
         {
@@ -67935,7 +67945,17 @@
           },
           "type":"CMatrix3x4f*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -68534,7 +68554,7 @@
     "conv":"__stack2_esi",
     "importable":true,
     "name":"core_tbplayer.cpp_CBassPlayer_getCarryObjToBodyXForm_FUN_00543210",
-    "ret":"void",
+    "ret":"CMatrix3x4f*",
     "vars":{
       "locals":[
         {
@@ -68810,7 +68830,17 @@
           },
           "type":"CMatrix3x4f*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -70790,7 +70820,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"support_trisock.cpp_receiveSocketData_FUN_00549010",
+    "name":"support_trisock.cpp_CSocket_receiveSocketData_FUN_00549010",
     "ret":"int",
     "vars":{
       "locals":[
@@ -70829,7 +70859,7 @@
       ],
       "params":[
         {
-          "name":"socket_handle",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -70842,7 +70872,7 @@
               }
             ]
           },
-          "type":"_SOCKET*"
+          "type":"CSocket*"
         },
         {
           "name":"buffer",
@@ -70916,7 +70946,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"support_trisock.cpp_performSocketOperation_FUN_00549090",
+    "name":"support_trisock.cpp_CSocket_sendSocketData_FUN_00549090",
     "ret":"int",
     "vars":{
       "locals":[
@@ -70955,7 +70985,7 @@
       ],
       "params":[
         {
-          "name":"socket_handle",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -70968,7 +70998,7 @@
               }
             ]
           },
-          "type":"_SOCKET*"
+          "type":"CSocket*"
         },
         {
           "name":"buffer",
@@ -71042,12 +71072,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"support_trisock.cpp_bindAndInvalidateSocket_FUN_00549110",
+    "name":"support_trisock.cpp_CSocket_closeSocket_FUN_00549110",
     "ret":"int",
     "vars":{
       "params":[
         {
-          "name":"socket_handle",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -71060,7 +71090,7 @@
               }
             ]
           },
-          "type":"_SOCKET*"
+          "type":"CSocket*"
         }
       ],
       "ret_storage":{

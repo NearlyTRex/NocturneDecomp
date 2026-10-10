@@ -91,7 +91,7 @@ int __cdecl core_netgame_cpp_CNetGame_runLobby_FUN_00541390(CNetGame *this_ptr)
         }
         else {
           support_trisock_cpp_formatIPAddress_FUN_005e17c0
-                    ((char *)&player->addr,(uchar *)local_130);
+                    ((uchar *)&player->addr,local_130);
         }
         engine_2d_c_drawText_FUN_00401fd0(local_130,100,iVar4);
         if (local_20 == g_CNetGamePtr->local_player_index) {

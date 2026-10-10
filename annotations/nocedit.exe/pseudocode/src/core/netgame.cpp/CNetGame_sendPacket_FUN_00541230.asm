@@ -15,7 +15,7 @@
 ;   core_netgame.cpp_CNetGame_send_FUN_005411c0 at 005411f1
 ;
 ; Called Functions:
-;   support_trisock.cpp_performSocketOperation_FUN_005e1ca0
+;   support_trisock.cpp_CSocket_sendSocketData_FUN_005e1ca0
 ;
 ; *****************************************************************************
 
@@ -33,8 +33,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x10]      ; 00541243
     ADD EAX,0x170                       ; 00541247
     PUSH EAX                            ; 0054124c
-    CALL support_trisock.cpp_performSocketOperation_FUN_005e1ca0 ; 0054124d
-        ;   XREF to: 005e1ca0 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_performSocketOperation_FUN_005e1ca0(_SOCKET * socket_handle, char * buffer, int length, SNetworkAddr * dest_addr)
+    CALL support_trisock.cpp_CSocket_sendSocketData_FUN_005e1ca0 ; 0054124d
+        ;   XREF to: 005e1ca0 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_CSocket_sendSocketData_FUN_005e1ca0(CSocket * this_ptr, char * buffer, int length, SNetworkAddr * dest_addr)
     ADD ESP,0x10                        ; 00541252
     RET                                 ; 00541255
 

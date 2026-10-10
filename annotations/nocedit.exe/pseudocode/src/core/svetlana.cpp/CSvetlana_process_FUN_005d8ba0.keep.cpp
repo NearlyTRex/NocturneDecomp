@@ -39,18 +39,25 @@ void __cdecl core_svetlana_cpp_CSvetlana_process_FUN_005d8ba0(CSvetlana *this_pt
   bool bVar2;
   CDemonActor *pCVar1;
 
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+  if (((this_ptr->base).base.hit_points < (float)100) &&
+     (nocturne_hero_regenerates(&this_ptr->base) != 0) &&
+     (fVar7 = (this_ptr->base).base.hit_points + delta_time,
+     (this_ptr->base).base.hit_points = fVar7, (float)100 < fVar7)) {
+#else
   if (((this_ptr->base).base.hit_points < (float)100) &&
      (fVar7 = (this_ptr->base).base.hit_points + delta_time,
      (this_ptr->base).base.hit_points = fVar7, (float)100 < fVar7)) {
+#endif
     (this_ptr->base).base.hit_points = 100.0;
   }
-  iVar4 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
+  iVar4 = core_charactr_cpp_CCharacter_processCharacter_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if ((iVar4 == 0) || ((this_ptr->base).ai_task == HERO_TASK_SUSPEND)) {
 switchD_005d8f77_caseD_9:
     return;
   }
 #if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
-  nocturne_hero_items_process(&this_ptr->base);
+  nocturne_hero_frame(&this_ptr->base,delta_time);
 #endif
   core_charactr_cpp_CCharacter_processSmoking_FUN_0042ea40((CCharacter *)this_ptr,delta_time);
   fVar7 = (this_ptr->base).invincibility_timer - delta_time;

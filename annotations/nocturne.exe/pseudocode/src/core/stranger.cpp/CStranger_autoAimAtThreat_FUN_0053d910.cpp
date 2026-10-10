@@ -138,7 +138,7 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0053d910(CStranger 
     EStack_78 = EVar1;
     EStack_74 = EVar1;
     if ((pCVar7 != (CCharacter *)0x0) &&
-       (pEVar5 = (EAimMode *)(*(((pCVar7->base).vtable._uc)->_uc).canWalk)(pCVar7),
+       (pEVar5 = (EAimMode *)(*(((pCVar7->base).vtable._uc)->_uc).isInvulnerable)(pCVar7),
        &EStack_7c != pEVar5)) {
       EStack_7c = *pEVar5;
       EStack_78 = pEVar5[1];

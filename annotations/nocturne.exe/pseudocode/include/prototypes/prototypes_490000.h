@@ -124,7 +124,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateAimTracking_FUN_004990c0(CGabrie
 void __cdecl core_gabriela_cpp_CGabriella_processDamage_FUN_004996b0(CGabriella *this_ptr,SDamageInfo *damage_info);
 void __cdecl core_gabriela_cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_004998c0(CGabriella *this_ptr,float delta_time,int has_carried_objects);
 void __cdecl core_gabriela_cpp_CGabriella_binarySearchClavicleBlend_FUN_00499b00(CGabriella *this_ptr,float delta_time,float *clavicle_blend,int probe_bone_index,int blend_bone_index,CVector3f *probe_offset);
-void __stack2_esi core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_FUN_00499ca0(CGabriella *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
+CMatrix3x4f * __stack2_esi core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_FUN_00499ca0(CGabriella *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 int __cdecl core_gabriela_cpp_CGabriella_isWeaponDrawn_FUN_0049a110(CGabriella *this_ptr);
 void __cdecl core_gabriela_cpp_CGabriella_drawWeapon_FUN_0049a130(CGabriella *this_ptr,int drawn);
 CWeapon * __cdecl core_gabriela_cpp_getSelectedWeapon_FUN_0049a160(CInventory *inventory_ptr);

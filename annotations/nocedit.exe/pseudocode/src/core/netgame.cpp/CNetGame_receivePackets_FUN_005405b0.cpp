@@ -25,11 +25,11 @@ void __cdecl core_netgame_cpp_CNetGame_receivePackets_FUN_005405b0(CNetGame *thi
   g_CurrentGameTime = g_CurrentGameTime + iVar2;
   g_LastPingTime = iVar1 / 0x12;
   while( true ) {
-    iVar3 = support_trisock_cpp_isSocketValid_FUN_005e1b70(&this_ptr->socket);
+    iVar3 = support_trisock_cpp_CSocket_isSocketValid_FUN_005e1b70(&this_ptr->socket);
     if (iVar3 == 0) {
       return;
     }
-    iVar3 = support_trisock_cpp_receiveSocketData_FUN_005e1c20
+    iVar3 = support_trisock_cpp_CSocket_receiveSocketData_FUN_005e1c20
                       (&this_ptr->socket,g_NetworkReceivePacket.raw + 4,0x404,&local_10);
     if (iVar3 < 1) break;
     g_NetworkReceivePacket.header.size = iVar3 + 1;

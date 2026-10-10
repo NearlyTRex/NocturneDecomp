@@ -161,7 +161,7 @@ void __cdecl core_mobster_cpp_CMobster_dismountVehicle_FUN_00525720(CMobster *th
 void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,float delta_time);
 void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(CMobster *this_ptr,float delta_time);
 CVector3f * __cdecl core_mobster_cpp_setEulerAngles_FUN_00526b00(CVector3f *out,float x,float z,float y);
-void __stack2_esi core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_00526b20(CMobster *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
+CMatrix3x4f * __stack2_esi core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_00526b20(CMobster *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 int __cdecl core_mobster_cpp_CMobster_processWeaponPickup_FUN_00526d90(CMobster *this_ptr,float delta_time);
 void __cdecl core_mobster_cpp_CMobster_startFiringAttack_FUN_005271c0(CMobster *this_ptr);
 void __cdecl core_mobster_cpp_CMobster_archive_FUN_00527230(CMobster *this_ptr);

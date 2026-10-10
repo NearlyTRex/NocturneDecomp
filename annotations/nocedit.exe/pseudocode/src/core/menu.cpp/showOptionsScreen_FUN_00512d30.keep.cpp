@@ -20,7 +20,6 @@ void __cdecl core_menu_cpp_showOptionsScreen_FUN_00512d30(int initialize_systems
 #if NOCTURNE_EDITOR_BUILD || !NOCTURNE_AUTHENTIC_CHEAT_MENU
   char *menu_ptrs [8];
   int menu_count;
-  int menu_ch;
   int menu_y;
 #endif
 #if NOCTURNE_EDITOR_BUILD
@@ -81,14 +80,7 @@ void __cdecl core_menu_cpp_showOptionsScreen_FUN_00512d30(int initialize_systems
       menu_count = menu_count + 1;
     }
 #endif
-    menu_ch = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_ThemeFont,0x58);
-    menu_y = 0xfa;
-    if (g_WindowHeight < menu_y + (menu_count + 4) * menu_ch) {
-      menu_y = g_WindowHeight - (menu_count + 4) * menu_ch;
-    }
-    if (menu_y < 0) {
-      menu_y = 0;
-    }
+    menu_y = nocturne_menu_start_y(NOCTURNE_MENU_ROWS_TITLED(menu_count));
     iVar3 = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000
                       (menu_ptrs,menu_count,&local_10,menu_y,pcVar1);
 #else

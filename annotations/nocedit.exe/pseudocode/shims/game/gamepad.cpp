@@ -16,12 +16,10 @@
 #include <cstring>
 #include <string>
 
-#if !NOCTURNE_AUTHENTIC_GAMEPAD
+// The mapping file is looked for where the engine would look for it.
+#include "watcom/path.h"
 
-// Defined in shims/watcom/crt.cpp — the same '\\'->'/' + case-insensitive
-// resolution the CRT _fopen shim applies, so the mapping file is looked for
-// where the engine would look for it.
-std::string watcom_resolve_fs_path(const char *path);
+#if !NOCTURNE_AUTHENTIC_GAMEPAD
 
 namespace {
 

@@ -8,15 +8,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1745,
-    "complexity_score": 714,
+    "complexity_score": 715,
     "cross_reference_count": 0,
     "function_call_count": 35,
     "global_count": 39,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 714,
+    "pseudocode_lines": 715,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 2459
+    "total_lines": 2460
   },
   "cross_references": [],
   "function": {
@@ -86,7 +86,7 @@
     {
       "addr": "00429870",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_process_FUN_00429870"
+      "name": "core_charactr.cpp_CCharacter_processCharacter_FUN_00429870"
     },
     {
       "addr": "0042ec40",
@@ -520,7 +520,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 216,
+      "line": 217,
       "match": "&stack0xfffffce0",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -529,7 +529,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 218,
+      "line": 219,
       "match": "&stack0xfffffce0",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -538,7 +538,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 337,
+      "line": 338,
       "match": "._0_4_",
       "resolution_source": "keep",
       "severity": "mild",
@@ -547,7 +547,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 338,
+      "line": 339,
       "match": "._4_4_",
       "resolution_source": "keep",
       "severity": "mild",
@@ -556,7 +556,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 343,
+      "line": 344,
       "match": "in_stack_fffffcec",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -565,7 +565,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 343,
+      "line": 344,
       "match": "SUB84(",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -574,7 +574,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 390,
+      "line": 391,
       "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -587,7 +587,7 @@
       "expected_args": 2,
       "format_string": "Phase: %d, Timer: %f\\n",
       "function_name": "engine_console_cpp_CConsole_printf_FUN_00441890",
-      "line_number": 277,
+      "line_number": 278,
       "match": "engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,\"Phase: %d, Timer: %f\\n\");",
       "resolution_source": "keep",
       "text": "Format string expects 2 args but got 0",
@@ -595,7 +595,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 360,
+      "line": 361,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -604,7 +604,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 120,
+      "line": 121,
       "match": "cascade_constant_fill",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -613,7 +613,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 332,
+      "line": 333,
       "match": "cascade_constant_fill",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -622,7 +622,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 702,
+      "line": 703,
       "match": "cascade_constant_fill",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -631,7 +631,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 706,
+      "line": 707,
       "match": "cascade_constant_fill",
       "resolution_source": "keep",
       "severity": "moderate",

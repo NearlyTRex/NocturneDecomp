@@ -27,7 +27,7 @@
 // FUNCTION PROTOTYPES - Range 0x560000
 // =============================================================================
 
-void __stack2_esi core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_00560cd0(CZombie *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
+CMatrix3x4f * __stack2_esi core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_00560cd0(CZombie *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 int __cdecl core_zombie_cpp_CZombie_processPickup_FUN_00561010(CZombie *this_ptr,float delta_time);
 int __cdecl core_zombie_cpp_CZombie_getPickupHandIndex_FUN_005617e0(CZombie *this_ptr,int object_shape_type);
 int __cdecl core_zombie_cpp_CZombie_canPickupWithHand_FUN_00561880(CZombie *this_ptr,int object_shape_type);
@@ -155,7 +155,7 @@ double __fpustack_safe crt_math_c_acos_FUN_00565ca4(double x);
 char * __cdecl crt_stdlib_c__fullpath_FUN_00565d00(char *buffer,char *path,SIZE_T buffer_size);
 int __cdecl crt_io_c_getFileStat_FUN_00565dc0(char *filename,WatcomStat *file_info);
 int __cdecl crt_io_c__utime_FUN_00565dc6(char *filename,WatcomUtimbuf *timestamps);
-DWORD __cdecl engine_dosio_cpp_setReadonlyAttribute_FUN_00565dd0(char *filename,DWORD file_attributes);
+int __cdecl crt_io_c__chmod_FUN_00565dd0(char *path,int mode);
 int __cdecl crt_ctype_c_toupper_FUN_00565e20(int c);
 int __cdecl crt_watcom_c__mkdir_FUN_00565e40(char *path);
 int __cdecl crt_iostream_cpp_ostream_flush_FUN_00565e59(void *this_ptr);

@@ -85,8 +85,8 @@ void __cdecl engine_fileio_cpp_CFileManager_managePodMounts_FUN_004bcec0(CFileMa
   if (g_CDemonPodPtr != (CDemonPod *)0x0) {
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
               (g_CEditorToolsPtr,"Remounting all pods...");
-    engine_pod_cpp_CPod_cleanup_FUN_00550c80((CPod *)g_CDemonPodPtr);
-    (*g_CDemonPodPtr->vtable->load)((CPod *)g_CDemonPodPtr);
+    engine_pod_cpp_CPod_cleanup_FUN_00550c80(&g_CDemonPodPtr->base);
+    (*((g_CDemonPodPtr->base).vtable)->load)(&g_CDemonPodPtr->base);
   }
   shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_5d8,0);
   shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_30,0);

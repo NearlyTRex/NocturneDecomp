@@ -127,7 +127,7 @@ void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004dcee0(CGame *this_ptr)
     }
     iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_F3);
 #if !NOCTURNE_AUTHENTIC_NETPLAY
-    if (g_CNetGamePtr->connection_type != CONNECTION_NONE) {
+    if (nocturne_net_session_active() != 0) {
       iVar4 = 0;
     }
 #endif

@@ -12,6 +12,7 @@
 
 #include "nocturne.h"
 #include "gl/gl_present.h"
+#include "directx/ddraw.h"
 #include <SDL2/SDL.h>
 #include <cmath>
 #include <cstdio>
@@ -1227,8 +1228,7 @@ extern "C" void nocturne_auto_dump_tick(void)
 
 static CDemonActor *find_player_actor()
 {
-    if (g_LocalHeroIndex < 0 || g_LocalHeroIndex >= 4) return nullptr;
-    return (CDemonActor *)g_HeroActors[g_LocalHeroIndex];
+    return (CDemonActor *)nocturne_hero_local();
 }
 
 static CDemonActor *find_svetlana_actor()
@@ -1653,8 +1653,6 @@ extern "C" void nocturne_probe_flame_draw(const char *name, int fog, int alpha)
 // nocturne_dump_screenshot samples, so it captures the finished frame whenever
 // it is called. Output is a PPM at the presenting surface's size, which
 // includes any integer up-scaling of the 640x480 logical one.
-
-extern "C" SDL_Renderer *nocturne_ddraw_present_renderer(void);
 
 extern "C" int nocturne_dump_frontbuffer(const char *path)
 {

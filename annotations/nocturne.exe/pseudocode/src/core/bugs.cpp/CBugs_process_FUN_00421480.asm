@@ -15,7 +15,7 @@
 ;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422370
 ;   core_bugs.cpp_CBugs_updateBoundingBox_FUN_004227a0
 ;   core_bugs.cpp_CBugs_updateBugsBehavior_FUN_00422050
-;   core_charactr.cpp_CCharacter_process_FUN_004259f0
+;   core_charactr.cpp_CCharacter_processCharacter_FUN_004259f0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30
 ;
 ; *****************************************************************************
@@ -28,8 +28,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 00421482
     PUSH dword ptr [ESP + 0x10]         ; 00421486
     PUSH EBX                            ; 0042148a
-    CALL core_charactr.cpp_CCharacter_process_FUN_004259f0 ; 0042148b
-        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_process_FUN_004259f0(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_processCharacter_FUN_004259f0 ; 0042148b
+        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processCharacter_FUN_004259f0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00421490
     TEST EAX,EAX                        ; 00421493
     JZ 0x004214c8                       ; 00421495

@@ -116,7 +116,8 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
   CDeformableModelInstance *pCVar1;
   ulonglong uVar18;
   
-  iVar7 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
+  iVar7 = core_charactr_cpp_CCharacter_processCharacter_FUN_00429870
+                    ((CCharacter *)this_ptr,delta_time);
   if (iVar7 == 0) {
     sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handles[1]);
     return;

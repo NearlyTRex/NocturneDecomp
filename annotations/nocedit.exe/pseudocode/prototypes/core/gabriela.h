@@ -125,7 +125,7 @@ void __cdecl CGabriella::binarySearchClavicleBlend(CGabriella *this_ptr,float de
 
 // Original: core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120
 // Address: 004d7120
-void __stack2_esi CGabriella::getCarryObjToBodyXForm(CGabriella *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
+CMatrix3x4f * __stack2_esi CGabriella::getCarryObjToBodyXForm(CGabriella *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
 // Original: core_gabriela.cpp_CGabriella_isWeaponDrawn_FUN_004d7590
 // Address: 004d7590

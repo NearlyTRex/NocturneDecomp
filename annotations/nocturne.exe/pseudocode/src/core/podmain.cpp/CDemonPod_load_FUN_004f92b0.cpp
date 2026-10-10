@@ -20,7 +20,7 @@ void __cdecl core_podmain_cpp_CDemonPod_load_FUN_004f92b0(CDemonPod *this_ptr)
     engine_dosio_cpp_CFileFinder_ctor_FUN_00456c00(&local_170);
     engine_dosio_cpp_CFileFinder_openSearch_FUN_00456c40(&local_170,"*.pod");
     while (local_170.filename[0] != '\0') {
-      (*this_ptr->vtable->mount)((CPod *)this_ptr,local_170.filename);
+      (*((this_ptr->base).vtable)->mount)(&this_ptr->base,local_170.filename);
       engine_dosio_cpp_CFileFinder_findNext_FUN_00456cc0(&local_170);
     }
     engine_dosio_cpp_CFileFinder_closeSearch_FUN_00456d40(&local_170);
@@ -32,7 +32,7 @@ void __cdecl core_podmain_cpp_CDemonPod_load_FUN_004f92b0(CDemonPod *this_ptr)
   if (0 < local_c) {
     do {
       _fscanf(file,"%s\n",local_5c);
-      (*this_ptr->vtable->mount)((CPod *)this_ptr,local_5c);
+      (*((this_ptr->base).vtable)->mount)(&this_ptr->base,local_5c);
       iVar1 = iVar1 + 1;
     } while (iVar1 < local_c);
   }

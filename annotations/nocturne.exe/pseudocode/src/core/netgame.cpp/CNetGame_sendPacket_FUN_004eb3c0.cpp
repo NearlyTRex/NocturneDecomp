@@ -9,7 +9,7 @@
 void __cdecl core_netgame_cpp_CNetGame_sendPacket_FUN_004eb3c0(CNetGame *this_ptr,SNetworkAddr *dest_addr,SNetPacketHeader *packet)
 
 {
-  support_trisock_cpp_performSocketOperation_FUN_00549090
+  support_trisock_cpp_CSocket_sendSocketData_FUN_00549090
             (&this_ptr->socket,(char *)&packet->type,packet->size + -4,dest_addr);
   return;
 }

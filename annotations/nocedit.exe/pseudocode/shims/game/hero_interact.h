@@ -47,6 +47,13 @@ extern "C" {
 // Safe to call for any hero; every step is a no-op when nothing is in range.
 int nocturne_hero_interact(struct CHero *hero);
 
+// The fire button as the action button, for a class whose process never
+// reached the interaction set (CScat, CMoloch): with fire held by a hero that
+// is not AI-driven, runs nocturne_hero_interact and consumes the press when
+// it acted. Every player hero is HERO_CONTROL_PLAYER or 1, never AI, on every
+// machine, so this is a lockstep test.
+void nocturne_hero_fire_interact(struct CHero *hero);
+
 #ifdef __cplusplus
 }
 #endif

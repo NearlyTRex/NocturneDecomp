@@ -49,7 +49,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004e4a00(CGargoyle *this_pt
   float fVar10;
   float local_18;
   
-  iVar4 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
+  iVar4 = core_charactr_cpp_CCharacter_processCharacter_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar4 == 0) {
     pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        (&(this_ptr->base).base.model.motion_controller);

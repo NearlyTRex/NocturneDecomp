@@ -33,7 +33,7 @@ void __cdecl CVampireBoss::process(CVampireBoss *this_ptr,float delta_time);
 
 // Original: core_vampboss.cpp_CVampireBoss_getCarryObjToBodyXForm_FUN_005e6b80
 // Address: 005e6b80
-void __stack2_esi CVampireBoss::getCarryObjToBodyXForm(CVampireBoss *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
+CMatrix3x4f * __stack2_esi CVampireBoss::getCarryObjToBodyXForm(CVampireBoss *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
 // Original: core_vampboss.cpp_CVampireBoss_advanceAnimation_FUN_005e6ca0
 // Address: 005e6ca0

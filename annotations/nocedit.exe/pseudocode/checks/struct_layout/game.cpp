@@ -2,7 +2,7 @@
 // DO NOT EDIT BY HAND. Re-run the generator after updating types.
 //
 // Category: game
-// Structs : 557
+// Structs : 558
 
 #include "nocturne.h"
 
@@ -1122,8 +1122,8 @@ static_assert(__builtin_offsetof(CCharacter_vtable, applyDamage) == 0,
               "offsetof(CCharacter_vtable, applyDamage) != 0");
 static_assert(__builtin_offsetof(CCharacter_vtable, kill) == 4,
               "offsetof(CCharacter_vtable, kill) != 4");
-static_assert(__builtin_offsetof(CCharacter_vtable, canWalk) == 8,
-              "offsetof(CCharacter_vtable, canWalk) != 8");
+static_assert(__builtin_offsetof(CCharacter_vtable, isInvulnerable) == 8,
+              "offsetof(CCharacter_vtable, isInvulnerable) != 8");
 static_assert(__builtin_offsetof(CCharacter_vtable, isGrabbable) == 12,
               "offsetof(CCharacter_vtable, isGrabbable) != 12");
 static_assert(__builtin_offsetof(CCharacter_vtable, canBeGrabbed) == 16,
@@ -1890,8 +1890,8 @@ static_assert(__builtin_offsetof(CDemonActor_vtable, playAmbientSound) == 40,
               "offsetof(CDemonActor_vtable, playAmbientSound) != 40");
 static_assert(__builtin_offsetof(CDemonActor_vtable, playSoundWithDelay) == 44,
               "offsetof(CDemonActor_vtable, playSoundWithDelay) != 44");
-static_assert(__builtin_offsetof(CDemonActor_vtable, playAmbientSoundWithVolume) == 48,
-              "offsetof(CDemonActor_vtable, playAmbientSoundWithVolume) != 48");
+static_assert(__builtin_offsetof(CDemonActor_vtable, playAmbientSoundWithDelay) == 48,
+              "offsetof(CDemonActor_vtable, playAmbientSoundWithDelay) != 48");
 static_assert(__builtin_offsetof(CDemonActor_vtable, getCollisionType) == 52,
               "offsetof(CDemonActor_vtable, getCollisionType) != 52");
 static_assert(__builtin_offsetof(CDemonActor_vtable, cylinderGroundCheck) == 56,
@@ -1952,8 +1952,8 @@ static_assert(__builtin_offsetof(CDemonActor_vtable, testCylinderCollision) == 1
               "offsetof(CDemonActor_vtable, testCylinderCollision) != 164");
 static_assert(__builtin_offsetof(CDemonActor_vtable, testLineIntersection) == 168,
               "offsetof(CDemonActor_vtable, testLineIntersection) != 168");
-static_assert(__builtin_offsetof(CDemonActor_vtable, getSurfaceProperties) == 172,
-              "offsetof(CDemonActor_vtable, getSurfaceProperties) != 172");
+static_assert(__builtin_offsetof(CDemonActor_vtable, onLaserHit) == 172,
+              "offsetof(CDemonActor_vtable, onLaserHit) != 172");
 static_assert(__builtin_offsetof(CDemonActor_vtable, customRayIntersect) == 176,
               "offsetof(CDemonActor_vtable, customRayIntersect) != 176");
 static_assert(__builtin_offsetof(CDemonActor_vtable, customIntersectCylinderXZ) == 180,
@@ -2292,12 +2292,8 @@ static_assert(__builtin_offsetof(CDemonPart, current_vertex_group) == 900,
 // ---- CDemonPod (408 bytes) ----
 static_assert(sizeof(CDemonPod) == 408,
               "sizeof(CDemonPod) != 408");
-static_assert(__builtin_offsetof(CDemonPod, pod_file_count) == 0,
-              "offsetof(CDemonPod, pod_file_count) != 0");
-static_assert(__builtin_offsetof(CDemonPod, pod_files) == 4,
-              "offsetof(CDemonPod, pod_files) != 4");
-static_assert(__builtin_offsetof(CDemonPod, vtable) == 404,
-              "offsetof(CDemonPod, vtable) != 404");
+static_assert(__builtin_offsetof(CDemonPod, base) == 0,
+              "offsetof(CDemonPod, base) != 0");
 
 // ---- CDemonPod_vtable (24 bytes) ----
 static_assert(sizeof(CDemonPod_vtable) == 24,
@@ -6375,6 +6371,12 @@ static_assert(__builtin_offsetof(CSmokeParticle, wind_influence) == 28,
 static_assert(__builtin_offsetof(CSmokeParticle, alpha_value) == 40,
               "offsetof(CSmokeParticle, alpha_value) != 40");
 
+// ---- CSocket (4 bytes) ----
+static_assert(sizeof(CSocket) == 4,
+              "sizeof(CSocket) != 4");
+static_assert(__builtin_offsetof(CSocket, handle) == 0,
+              "offsetof(CSocket, handle) != 0");
+
 // ---- CSound (4 bytes) ----
 static_assert(sizeof(CSound) == 4,
               "sizeof(CSound) != 4");
@@ -9586,8 +9588,8 @@ static_assert(__builtin_offsetof(SNetworkAddr, ip_address) == 0,
               "offsetof(SNetworkAddr, ip_address) != 0");
 static_assert(__builtin_offsetof(SNetworkAddr, port) == 4,
               "offsetof(SNetworkAddr, port) != 4");
-static_assert(__builtin_offsetof(SNetworkAddr, other) == 6,
-              "offsetof(SNetworkAddr, other) != 6");
+static_assert(__builtin_offsetof(SNetworkAddr, padding) == 6,
+              "offsetof(SNetworkAddr, padding) != 6");
 
 // ---- SPBMFileHeader (28 bytes) ----
 static_assert(sizeof(SPBMFileHeader) == 28,

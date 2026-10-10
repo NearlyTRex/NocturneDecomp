@@ -58,7 +58,7 @@
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 23,
+        "line": 24,
         "message": "use of undeclared identifier 'stack0x00000000'"
       }
     ],
@@ -68,18 +68,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 65,
+    "complexity_score": 66,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 25,
+    "pseudocode_lines": 26,
     "suspect_count": 3,
     "suspect_types": [
       "stack_ref",
       "unaffected_reg"
     ],
-    "total_lines": 79
+    "total_lines": 80
   },
   "cross_references": [
     {
@@ -274,14 +274,14 @@
         {
           "check_id": "uninitvar",
           "column": 46,
-          "line": 25,
+          "line": 26,
           "message": "Uninitialized variable: fStack_c",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 46,
-          "line": 26,
+          "line": 27,
           "message": "Uninitialized variable: unaff_ESI",
           "severity": "error"
         }
@@ -301,7 +301,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 16,
+      "line": 17,
       "match": "&stack0x00000000",
       "severity": "moderate",
       "text": "if ((float *)&stack0x00000000 != &g_CDemonLight_01c74640.base.rotation_matrix.m[0].y) {",
@@ -309,7 +309,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 19,
+      "line": 20,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "g_CDemonLight_01c74640.base.position.z = unaff_ESI;",
@@ -317,7 +317,7 @@
     },
     {
       "description": "Uninitialized variable: fStack_c",
-      "line": 25,
+      "line": 26,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "g_CDemonLight_01c74640.base.position.y = fStack_c;",
@@ -325,7 +325,7 @@
     },
     {
       "description": "Uninitialized variable: unaff_ESI",
-      "line": 26,
+      "line": 27,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "g_CDemonLight_01c74640.base.position.z = unaff_ESI;",

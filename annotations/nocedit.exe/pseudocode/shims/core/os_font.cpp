@@ -5,27 +5,18 @@
 // See os_font.h, and NOCTURNE_AUTHENTIC_OS_FONT in config/shim_config_authentic.h.
 
 #include "core/os_font.h"
+#include "core/ini_setting.h"
 #include "shim_config.h"
 
 #include "nocturne.h"
-
-#include <cstdio>
-#include <string>
-
-// watcom_resolve_fs_path applies the same '\\' -> '/' and case-insensitive
-// resolution the CRT _fopen shim does, so the probe below looks at the file the
-// engine will actually open.
-std::string watcom_resolve_fs_path(const char *path);
 
 #if !NOCTURNE_AUTHENTIC_OS_FONT
 
 namespace {
 
-// Same path and section the window mode option uses. Non-const buffers because
-// the engine's INI accessors take char* rather than const char*.
-char kIniPath[]    = ".\\system\\nocturne.ini";
-char kIniSection[] = "Graphics";
-char kIniKey[]     = "osFont";
+// Same section the window mode option uses.
+const char kIniSection[] = "Graphics";
+const char kIniKey[]     = "osFont";
 
 int  s_mode   = NOCTURNE_OS_FONT_AUTO;
 bool s_loaded = false;
@@ -41,20 +32,8 @@ int clamp_mode(int mode)
 extern "C" int nocturne_os_font_get(void)
 {
     if (!s_loaded) {
-        // CIni::getProfileString has no initialised-guard: if it cannot open
-        // the file it calls displayErrorAndQuit and takes the process with it.
-        // This is read during startup, so check the file is really there rather
-        // than trusting init order.
-        std::string resolved = watcom_resolve_fs_path(kIniPath);
-        FILE *probe = fopen(resolved.c_str(), "rb");
-        if (probe != nullptr) {
-            fclose(probe);
-            s_mode = clamp_mode(engine_ini_cpp_getProfileInteger_FUN_004fb9a0(
-                kIniSection, kIniKey, NOCTURNE_OS_FONT_AUTO, kIniPath));
-        }
-        else {
-            s_mode = NOCTURNE_OS_FONT_AUTO;
-        }
+        // Read during startup (see core/ini_setting.h).
+        s_mode = clamp_mode(nocturne_ini_get_int(kIniSection, kIniKey, NOCTURNE_OS_FONT_AUTO));
         s_loaded = true;
     }
     return s_mode;
@@ -62,23 +41,15 @@ extern "C" int nocturne_os_font_get(void)
 
 extern "C" void nocturne_os_font_set(int mode)
 {
-    char value[16];
-
     s_mode   = clamp_mode(mode);
     s_loaded = true;
-
-    snprintf(value, sizeof(value), "%d", s_mode);
-    engine_ini_cpp_writeProfileString_FUN_004fba40(kIniSection, kIniKey, value, kIniPath);
+    nocturne_ini_set_int(kIniSection, kIniKey, s_mode);
 }
 
 extern "C" int nocturne_os_font_cycle(int step)
 {
-    // C's % keeps the sign of the dividend, and step is -1 for a left press.
-    int next = (nocturne_os_font_get() + step) % NOCTURNE_OS_FONT_COUNT;
+    int next = nocturne_ini_cycle(nocturne_os_font_get(), step, NOCTURNE_OS_FONT_COUNT);
 
-    if (next < 0) {
-        next += NOCTURNE_OS_FONT_COUNT;
-    }
     nocturne_os_font_set(next);
     return next;
 }

@@ -269,11 +269,11 @@ void __cdecl APIDLLReleaseDisplayContext(HDC hdc);
 
 // Original: dll_dx7.cpp_APIDLLmasterZBuffer_FUN_10004e10
 // Address: 10004e10
-int __cdecl APIDLLmasterZBuffer(int z_buffer_mode);
+int __cdecl APIDLLmasterZBuffer(int slot);
 
 // Original: dll_dx7.cpp_APIDLLrestoreZBuffer_FUN_10004e90
 // Address: 10004e90
-int __cdecl APIDLLrestoreZBuffer(int left,int top,int mode,int right,int bottom);
+int __cdecl APIDLLrestoreZBuffer(int slot,int left,int top,int right,int bottom);
 
 // Original: dll_dx7.cpp_APIDLLdrawPolyList_FUN_10004f00
 // Address: 10004f00

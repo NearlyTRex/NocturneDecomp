@@ -12,7 +12,7 @@ void __cdecl core_skeledit_cpp_warnIfFileExistsInPod_FUN_00589f40(char *base_pat
   CPodFile *pCVar1;
   
   pCVar1 = engine_pod_cpp_CPod_locateFile_FUN_005512f0
-                     ((CPod *)g_CDemonPodPtr,base_path,filename,(int *)0x0);
+                     (&g_CDemonPodPtr->base,base_path,filename,(int *)0x0);
   if (pCVar1 == (CPodFile *)0x0) {
     return;
   }

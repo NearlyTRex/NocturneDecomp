@@ -141,8 +141,7 @@ char *currentMission(void)
 // for the length of one. Same reasoning as the host override in cheats.h.
 bool inNetworkSession(void)
 {
-    return (g_CNetGamePtr != (CNetGame *)0) &&
-           (g_CNetGamePtr->connection_type != CONNECTION_NONE);
+    return nocturne_net_session_active() != 0;
 }
 
 // Fills s_rows with the running mission's warps and returns how many there are.

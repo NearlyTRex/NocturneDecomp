@@ -83,8 +83,6 @@ static int s_reported_stray_sim  = 0;
 
 #if NOCTURNE_NETPLAY_RNG_TRACE
 
-static int rng_is_network_game(void);
-
 static FILE *s_draw_log     = (FILE *)0;
 static int   s_draw_failed  = 0;
 static int   s_frame        = -1;
@@ -119,7 +117,7 @@ static void rng_note_draw(void *caller)
 
     // Before the first applied sim frame, only a network game's mission load is
     // logged (as frame -1): its draws count towards frame 0's fingerprint.
-    if ((s_frame < 0) && (rng_is_network_game() == 0)) {
+    if ((s_frame < 0) && (nocturne_net_session_active() == 0)) {
         return;
     }
     out = rng_draw_log();
@@ -157,12 +155,6 @@ static void rng_trace_reset(void)      {}
 
 #endif
 
-static int rng_is_network_game(void)
-{
-    return ((g_CNetGamePtr != (CNetGame *)0x0) &&
-            (g_CNetGamePtr->connection_type != CONNECTION_NONE));
-}
-
 // Whether a sim frame is running. Everything that reaches simulation state
 // happens between CGame::process setting this and clearing it again, and the
 // seed the whole frame draws from is set immediately after it goes up.
@@ -183,7 +175,7 @@ static unsigned int rng_declared_rand(void)
 
 extern "C" unsigned int nocturne_rng_sim(void)
 {
-    if (rng_is_network_game() == 0) {
+    if (nocturne_net_session_active() == 0) {
         return rng_declared_rand();
     }
 
@@ -251,7 +243,7 @@ extern "C" int nocturne_rng_fx_int(int min_value, int max_value)
 
 extern "C" unsigned int nocturne_rng_offframe(void)
 {
-    if ((rng_is_network_game() != 0) && (s_reported_offframe == 0)) {
+    if ((nocturne_net_session_active() != 0) && (s_reported_offframe == 0)) {
         s_reported_offframe = 1;
         DLOG("netplay", "RNG: the game's RNG primitives took their "
                            "is_processing == 0 fallback during a network game - a "
@@ -277,7 +269,7 @@ extern "C" void nocturne_rng_note_raw_draw(void)
 
     s_undeclared_draws = s_undeclared_draws + 1;
 
-    if ((rng_is_network_game() != 0) && (s_reported_undeclared == 0)) {
+    if ((nocturne_net_session_active() != 0) && (s_reported_undeclared == 0)) {
         s_reported_undeclared = 1;
         DLOG("netplay", "RNG: bare rand() called inside a sim frame - a call site "
                            "that has not been routed through rng.h. If its result "

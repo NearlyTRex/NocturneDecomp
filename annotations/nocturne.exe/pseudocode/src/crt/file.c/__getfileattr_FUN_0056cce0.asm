@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x148]:4  local_148
 ;
 ; XREF[1]:
-;   engine_dosio.cpp_setReadonlyAttribute_FUN_00565dd0 at 00565dd6
+;   crt_io.c__chmod_FUN_00565dd0 at 00565dd6
 ;
 ; Referenced Globals:
 ;   void* PTR_FindFirstFileA_005754cc = 00175bfc

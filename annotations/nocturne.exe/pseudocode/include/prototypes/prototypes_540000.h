@@ -13,6 +13,7 @@
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDrummer.h"
 #include "types/classes/CMatrix3x4f.h"
+#include "types/classes/CSocket.h"
 #include "types/classes/CStranger.h"
 #include "types/classes/CSuccubus.h"
 #include "types/classes/CSvetlana.h"
@@ -102,13 +103,13 @@ CDemonActorType * __cdecl core_tbplayer_cpp_CBassPlayer_getActorType_FUN_0054314
 CBassPlayer * __cdecl core_tbplayer_cpp_CBassPlayer_ctor_FUN_00543150(CBassPlayer *this_ptr);
 void __cdecl core_tbplayer_cpp_CBassPlayer_setup_FUN_00543180(CBassPlayer *this_ptr);
 CVector3f * __cdecl core_tbplayer_cpp_setVector_FUN_005431f0(CVector3f *out,float x,float y,float z);
-void __stack2_esi core_tbplayer_cpp_CBassPlayer_getCarryObjToBodyXForm_FUN_00543210(CBassPlayer *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
+CMatrix3x4f * __stack2_esi core_tbplayer_cpp_CBassPlayer_getCarryObjToBodyXForm_FUN_00543210(CBassPlayer *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 void __cdecl core_tbplayer_cpp_CBassPlayer_processDamage_FUN_00543330(CBassPlayer *this_ptr,SDamageInfo *damage_info);
 CDrummer * __cdecl core_tbplayer_cpp_factoryFuncDrummer_FUN_00543370(void);
 CDemonActorType * __cdecl core_tbplayer_cpp_CDrummer_getActorType_FUN_00543390(CDrummer *this_ptr);
 CDrummer * __cdecl core_tbplayer_cpp_CDrummer_ctor_FUN_005433a0(CDrummer *this_ptr);
 void __cdecl core_tbplayer_cpp_CDrummer_setup_FUN_005433d0(CDrummer *this_ptr);
-void __stack2_esi core_tbplayer_cpp_CDrummer_getCarryObjToBodyXForm_FUN_00543450(CDrummer *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
+CMatrix3x4f * __stack2_esi core_tbplayer_cpp_CDrummer_getCarryObjToBodyXForm_FUN_00543450(CDrummer *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 void __cdecl core_tbplayer_cpp_CDrummer_processDamage_FUN_005435f0(CDrummer *this_ptr,SDamageInfo *damage_info);
 CDrummer * __cdecl core_tbplayer_cpp_CDrummer_dtor_FUN_00543620(CDrummer *this_ptr,uint flags);
 CBassPlayer * __cdecl core_tbplayer_cpp_CBassPlayer_dtor_FUN_005436f0(CBassPlayer *this_ptr,uint flags);
@@ -135,7 +136,7 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_00543c50(CTentacle *this_pt
 int __cdecl core_tentacle_cpp_CTentacle_renderOpaque_FUN_00544440(CTentacle *this_ptr);
 void __cdecl core_tentacle_cpp_CTentacle_archive_FUN_00544470(CTentacle *this_ptr);
 int __cdecl core_tentacle_cpp_CTentacle_findNearbyTarget_FUN_005444f0(CTentacle *this_ptr,char *class_name);
-int __cdecl core_tentacle_cpp_CTentacle_attractActorToward_FUN_005445c0(CTentacle *this_ptr,CCharacter *character);
+int __cdecl core_tentacle_cpp_CTentacle_attractActorToward_FUN_005445c0(CTentacle *this_ptr,CDemonActor *actor,CVector3f *target_local_point);
 int __cdecl core_tentacle_cpp_CTentacle_shouldIgnoreForTargeting_FUN_00544720(CTentacle *this_ptr);
 CMatrix3x4f * __stack_esi core_tentacle_cpp_CTentacle_computeGripBoneMatrix_FUN_00544760(CTentacle *this_ptr,CMatrix3x4f *out_matrix);
 CTentacle * __cdecl core_tentacle_cpp_CTentacle_dtor_FUN_00544850(CTentacle *this_ptr,uint flags);
@@ -224,7 +225,7 @@ void __cdecl support_trisock_cpp_staticInit_FUN_00548aa0(void);
 uint * __cdecl support_trisock_cpp_copyIPAddress_FUN_00548ae0(uint *dest_ip,uint *src_ip);
 uint * __cdecl support_trisock_cpp_parseIPAddress_FUN_00548af0(uint *result_ptr,char *dotted_decimal_string);
 uint8_t * __cdecl support_trisock_cpp_buildIPAddressOrDie_FUN_00548b40(uchar *dest_ip,int octet1,int octet2,int octet3,int octet4);
-void __cdecl support_trisock_cpp_formatIPAddress_FUN_00548bb0(char *output_buffer,uchar *ip_bytes);
+void __cdecl support_trisock_cpp_formatIPAddress_FUN_00548bb0(uchar *ip_bytes,char *output_buffer);
 int __cdecl support_trisock_cpp_parseIPComponents_FUN_00548bf0(uint *result_ptr,char *dotted_decimal_string);
 int __cdecl support_trisock_cpp_buildIPAddress_FUN_00548c60(uint8_t *dest_ip,int octet1,int octet2,int octet3,int octet4);
 void __cdecl support_trisock_cpp_extractIPOctets_FUN_00548cd0(uchar *ip_bytes,uint *octet1_ptr,uint *octet2_ptr,uint *octet3_ptr,uint *octet4_ptr);
@@ -232,23 +233,23 @@ uint __cdecl support_trisock_cpp_getIPAddress_FUN_00548d20(SNetworkAddr *net_add
 void __cdecl support_trisock_cpp_createNetworkAddr_FUN_00548d30(SNetworkAddr *dest_addr,uint32_t *ip_address_ptr,uint16_t port);
 SOCKADDR_IN * __cdecl support_trisock_cpp_convertSockAddr_FUN_00548d50(SNetworkAddr *dest_addr,SOCKADDR *src_addr);
 SOCKADDR_IN * __stack_esi support_trisock_cpp_buildSockaddrIn_FUN_00548dc0(SNetworkAddr *net_addr,SOCKADDR_IN *dest_buffer);
-void __cdecl support_trisock_cpp_formatSocketAddress_FUN_00548e20(char *output_buffer,SNetworkAddr *network_addr);
+void __cdecl support_trisock_cpp_formatSocketAddress_FUN_00548e20(SNetworkAddr *network_addr,char *output_buffer);
 int __cdecl support_trisock_cpp_shouldNeverBeCalled1_FUN_00548e70(int unknown1,int unknown2);
 int __cdecl support_trisock_cpp_shouldNeverBeCalled2_FUN_00548ea0(int unknown1,int unknown2);
-_SOCKET * __cdecl support_trisock_cpp_invalidateSocket_FUN_00548ed0(_SOCKET *socket_handle);
-_SOCKET * __cdecl support_trisock_cpp_bindSocketWrapper_FUN_00548ee0(_SOCKET *socket_handle,int flags);
-int __cdecl support_trisock_cpp_createSocket_FUN_00548f00(_SOCKET *socket_handle);
-int __cdecl support_trisock_cpp_createUDPSocket_FUN_00548f30(_SOCKET *socket_handle);
-int __cdecl support_trisock_cpp_isSocketValid_FUN_00548f60(_SOCKET *socket_handle);
-int __cdecl support_trisock_cpp_bindSocket_FUN_00548f70(_SOCKET *socket_handle,uint16_t port);
-int __cdecl support_trisock_cpp_connectSocket_FUN_00548fc0(_SOCKET *socket_handle,SNetworkAddr *dest_addr);
-int __cdecl support_trisock_cpp_receiveSocketData_FUN_00549010(_SOCKET *socket_handle,char *buffer,int length,SNetworkAddr *source_addr);
-int __cdecl support_trisock_cpp_performSocketOperation_FUN_00549090(_SOCKET *socket_handle,char *buffer,int length,SNetworkAddr *dest_addr);
-int __cdecl support_trisock_cpp_bindAndInvalidateSocket_FUN_00549110(_SOCKET *socket_handle);
-int __cdecl support_trisock_cpp_listenSocket_FUN_00549150(_SOCKET *socket_handle);
-int __cdecl support_trisock_cpp_acceptConnection_FUN_00549170(_SOCKET *listen_socket,SNetworkAddr *client_addr,_SOCKET *new_socket);
-int __cdecl support_trisock_cpp_getSocketName_FUN_005491e0(_SOCKET *socket_handle,SNetworkAddr *out_address);
-int __cdecl support_trisock_cpp_setSocketBlocking_FUN_00549240(_SOCKET *socket_handle,int blocking_mode);
+CSocket * __cdecl support_trisock_cpp_CSocket_ctor_FUN_00548ed0(CSocket *this_ptr);
+CSocket * __cdecl support_trisock_cpp_CSocket_dtor_FUN_00548ee0(CSocket *this_ptr,uint flags);
+int __cdecl support_trisock_cpp_CSocket_createSocket_FUN_00548f00(CSocket *this_ptr);
+int __cdecl support_trisock_cpp_CSocket_createUDPSocket_FUN_00548f30(CSocket *this_ptr);
+int __cdecl support_trisock_cpp_CSocket_isSocketValid_FUN_00548f60(CSocket *this_ptr);
+int __cdecl support_trisock_cpp_CSocket_bindSocket_FUN_00548f70(CSocket *this_ptr,ushort port);
+int __cdecl support_trisock_cpp_CSocket_connectSocket_FUN_00548fc0(CSocket *this_ptr,SNetworkAddr *dest_addr);
+int __cdecl support_trisock_cpp_CSocket_receiveSocketData_FUN_00549010(CSocket *this_ptr,char *buffer,int length,SNetworkAddr *source_addr);
+int __cdecl support_trisock_cpp_CSocket_sendSocketData_FUN_00549090(CSocket *this_ptr,char *buffer,int length,SNetworkAddr *dest_addr);
+int __cdecl support_trisock_cpp_CSocket_closeSocket_FUN_00549110(CSocket *this_ptr);
+int __cdecl support_trisock_cpp_CSocket_listenSocket_FUN_00549150(CSocket *this_ptr);
+int __cdecl support_trisock_cpp_CSocket_acceptConnection_FUN_00549170(CSocket *this_ptr,CSocket *new_socket,SNetworkAddr *client_addr);
+int __cdecl support_trisock_cpp_CSocket_getSocketName_FUN_005491e0(CSocket *this_ptr,SNetworkAddr *out_address);
+int __cdecl support_trisock_cpp_CSocket_setSocketBlocking_FUN_00549240(CSocket *this_ptr,int blocking_mode);
 int __cdecl support_trisock_cpp_startupWinsock_FUN_00549280(void);
 void __cdecl core_terrain_cpp_CTerrain_init_FUN_005492b0(CTerrain *this_ptr);
 void __cdecl core_terrain_cpp_CTerrain_free_FUN_005492f0(CTerrain *this_ptr);
@@ -299,7 +300,7 @@ CVampireBoss * __cdecl core_vampboss_cpp_CVampireBoss_ctor_FUN_0054c2b0(CVampire
 void __cdecl core_vampboss_cpp_CVampireBoss_setup_FUN_0054c3e0(CVampireBoss *this_ptr);
 float __cdecl core_vampboss_cpp_clampAngle_FUN_0054c5f0(float angle,float max_angle);
 void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_0054c690(CVampireBoss *this_ptr,float delta_time);
-void __stack2_esi core_vampboss_cpp_CVampireBoss_getCarryObjToBodyXForm_FUN_0054d8a0(CVampireBoss *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
+CMatrix3x4f * __stack2_esi core_vampboss_cpp_CVampireBoss_getCarryObjToBodyXForm_FUN_0054d8a0(CVampireBoss *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 void __cdecl core_vampboss_cpp_CVampireBoss_advanceAnimation_FUN_0054d9c0(CVampireBoss *this_ptr,float delta_time);
 int __cdecl core_vampboss_cpp_CVampireBoss_renderOpaque_FUN_0054dac0(CVampireBoss *this_ptr);
 void __cdecl core_vampboss_cpp_CVampireBoss_archive_FUN_0054dc70(CVampireBoss *this_ptr);

@@ -37305,7 +37305,7 @@
     "conv":"__stack2_esi",
     "importable":true,
     "name":"core_icepick.cpp_CIcePick_getCarryObjToBodyXForm_FUN_004baa50",
-    "ret":"void",
+    "ret":"CMatrix3x4f*",
     "vars":{
       "locals":[
         {
@@ -37581,7 +37581,17 @@
           },
           "type":"CMatrix3x4f*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -60575,6 +60585,54 @@
             ]
           },
           "type":"double"
+        },
+        {
+          "name":"x_right",
+          "storage":{
+            "offset":56,
+            "size":8,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x38]",
+                "offset":56,
+                "size":8
+              }
+            ]
+          },
+          "type":"double"
+        },
+        {
+          "name":"y_right",
+          "storage":{
+            "offset":64,
+            "size":8,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x40]",
+                "offset":64,
+                "size":8
+              }
+            ]
+          },
+          "type":"double"
+        },
+        {
+          "name":"z_right",
+          "storage":{
+            "offset":72,
+            "size":8,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x48]",
+                "offset":72,
+                "size":8
+              }
+            ]
+          },
+          "type":"double"
         }
       ]
     }
@@ -66333,7 +66391,7 @@
     "conv":"__stack2_esi",
     "importable":true,
     "name":"core_tbplayer.cpp_CDrummer_getCarryObjToBodyXForm_FUN_00543450",
-    "ret":"void",
+    "ret":"CMatrix3x4f*",
     "vars":{
       "locals":[
         {
@@ -66705,7 +66763,17 @@
           },
           "type":"CMatrix3x4f*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -67645,12 +67713,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"support_trisock.cpp_invalidateSocket_FUN_00548ed0",
-    "ret":"_SOCKET*",
+    "name":"support_trisock.cpp_CSocket_ctor_FUN_00548ed0",
+    "ret":"CSocket*",
     "vars":{
       "params":[
         {
-          "name":"socket_handle",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -67663,7 +67731,7 @@
               }
             ]
           },
-          "type":"_SOCKET*"
+          "type":"CSocket*"
         }
       ],
       "ret_storage":{
@@ -67689,12 +67757,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"support_trisock.cpp_listenSocket_FUN_00549150",
+    "name":"support_trisock.cpp_CSocket_listenSocket_FUN_00549150",
     "ret":"int",
     "vars":{
       "params":[
         {
-          "name":"socket_handle",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -67707,7 +67775,7 @@
               }
             ]
           },
-          "type":"_SOCKET*"
+          "type":"CSocket*"
         }
       ],
       "ret_storage":{
@@ -73909,7 +73977,7 @@
     "conv":"__stack2_esi",
     "importable":true,
     "name":"core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN_00560cd0",
-    "ret":"void",
+    "ret":"CMatrix3x4f*",
     "vars":{
       "locals":[
         {
@@ -74729,7 +74797,17 @@
           },
           "type":"CMatrix3x4f*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -75220,12 +75298,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_dosio.cpp_setReadonlyAttribute_FUN_00565dd0",
-    "ret":"DWORD",
+    "name":"crt_io.c__chmod_FUN_00565dd0",
+    "ret":"int",
     "vars":{
       "params":[
         {
-          "name":"filename",
+          "name":"path",
           "storage":{
             "offset":4,
             "size":4,
@@ -75241,7 +75319,7 @@
           "type":"char*"
         },
         {
-          "name":"file_attributes",
+          "name":"mode",
           "storage":{
             "offset":8,
             "size":4,
@@ -75254,7 +75332,7 @@
               }
             ]
           },
-          "type":"DWORD"
+          "type":"int"
         }
       ],
       "ret_storage":{

@@ -39,6 +39,11 @@ extern "C" {
 // out-of-range value comes back as "?" rather than reading off the table.
 const char *nocturne_net_hero_name(int hero_type);
 
+// The EHeroType of `actor` when it is one of g_HeroActors, otherwise -1.
+// CDemonMission::createHeros builds slot i from player i's hero_number, and a
+// game without a connection from CGame::hero_number.
+int nocturne_net_hero_type_of(const void *actor);
+
 // The next selectable hero `direction` steps away from `hero_type`, wrapping at
 // both ends and skipping heroes the lobby does not offer. `direction` is +1 or
 // -1. An out-of-range input restarts at the first hero. A hero the selector

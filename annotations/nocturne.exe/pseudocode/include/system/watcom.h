@@ -316,6 +316,19 @@ extern int _findclose(long handle);
 extern int _mkdir(const char* path);
 
 // ---------------------------------------------------------------------------
+// Watcom File Attribute Functions (io.h)
+// ---------------------------------------------------------------------------
+//
+// Windows' own _chmod takes the same arguments and paths, so the shim only
+// stands in for it elsewhere.
+
+#ifdef _WIN32
+#include <io.h>
+#else
+extern int _chmod(const char* path, int mode);
+#endif
+
+// ---------------------------------------------------------------------------
 // Watcom Heap Functions (malloc.h)
 // ---------------------------------------------------------------------------
 

@@ -28,7 +28,8 @@ void __cdecl core_biggs_cpp_CBiggs_process_FUN_00418700(CBiggs *this_ptr,float d
   float fVar3;
   float fVar5;
   
-  iVar6 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
+  iVar6 = core_charactr_cpp_CCharacter_processCharacter_FUN_00429870
+                    ((CCharacter *)this_ptr,delta_time);
   if (iVar6 == 0) {
     return;
   }

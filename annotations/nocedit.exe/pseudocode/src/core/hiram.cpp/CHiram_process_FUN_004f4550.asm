@@ -21,7 +21,7 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
-;   core_charactr.cpp_CCharacter_process_FUN_00429870
+;   core_charactr.cpp_CCharacter_processCharacter_FUN_00429870
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 ;   core_glass.cpp_CGlass_shatter_FUN_004eaef0
@@ -47,8 +47,8 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 004f455c
     PUSH dword ptr [EBP + 0x18]         ; 004f455f
     PUSH EBX                            ; 004f4562
-    CALL core_charactr.cpp_CCharacter_process_FUN_00429870 ; 004f4563
-        ;   XREF to: 00429870 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_process_FUN_00429870(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_processCharacter_FUN_00429870 ; 004f4563
+        ;   XREF to: 00429870 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processCharacter_FUN_00429870(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004f4568
     TEST EAX,EAX                        ; 004f456b
     JNZ 0x004f4576                      ; 004f456d

@@ -2,15 +2,14 @@
 // Address: 005e17c0
 // Address Range: [[005e17c0, 005e17f0]]
 // Convention: __cdecl
-// Signature: void __cdecl support_trisock_cpp_formatIPAddress_FUN_005e17c0(char *output_buffer,uchar *ip_bytes)
+// Signature: void __cdecl support_trisock_cpp_formatIPAddress_FUN_005e17c0(uchar *ip_bytes,char *output_buffer)
 
 #include "nocturne.h"
 
-void __cdecl support_trisock_cpp_formatIPAddress_FUN_005e17c0(char *output_buffer,uchar *ip_bytes)
+void __cdecl support_trisock_cpp_formatIPAddress_FUN_005e17c0(uchar *ip_bytes,char *output_buffer)
 
 {
-  _sprintf((char *)ip_bytes,"%d.%d.%d.%d",(uint)(byte)*output_buffer,
-             (uint)(byte)output_buffer[1],(uint)(byte)output_buffer[2],(uint)(byte)output_buffer[3])
-  ;
+  _sprintf(output_buffer,"%d.%d.%d.%d",(uint)*ip_bytes,(uint)ip_bytes[1],(uint)ip_bytes[2],
+             (uint)ip_bytes[3]);
   return;
 }

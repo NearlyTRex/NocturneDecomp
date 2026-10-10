@@ -40,9 +40,9 @@
 ;   crt_stdlib.c_rand_FUN_005feb5c
 ;   engine_2d.c_cleanupGraphicsSystem_FUN_00401130
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
+;   engine_3d.c_freeTextureCache_FUN_004037a0
 ;   engine_alphabit.cpp_CAlphaBitmap_display_FUN_00410950
 ;   engine_alphabit.cpp_CAlphaBitmap_free_FUN_00410560
-;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_004105d0
 ;   ... and 17 more
 ;
 ; *****************************************************************************
@@ -291,8 +291,8 @@ section .text
         ;   XREF to: 005f2db0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_endPeriod_FUN_005f2db0()
     CALL engine_2d.c_cleanupGraphicsSystem_FUN_00401130 ; 005087ff
         ;   XREF to: 00401130 (UNCONDITIONAL_CALL)  ; void engine_2d.c_cleanupGraphicsSystem_FUN_00401130()
-    CALL wincore_wddvmem.cpp_freeTextureCache_FUN_004037a0 ; 00508804
-        ;   XREF to: 004037a0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_freeTextureCache_FUN_004037a0()
+    CALL engine_3d.c_freeTextureCache_FUN_004037a0 ; 00508804
+        ;   XREF to: 004037a0 (UNCONDITIONAL_CALL)  ; void engine_3d.c_freeTextureCache_FUN_004037a0()
     CALL core_dfont.cpp_freeFonts_FUN_004710a0 ; 00508809
         ;   XREF to: 004710a0 (UNCONDITIONAL_CALL)  ; void core_dfont.cpp_freeFonts_FUN_004710a0()
     CALL wincore_winrun.cpp_doNothing2_FUN_005f4380 ; 0050880e

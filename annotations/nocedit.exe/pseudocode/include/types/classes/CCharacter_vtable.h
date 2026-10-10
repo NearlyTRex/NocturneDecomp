@@ -15,7 +15,6 @@ struct SDamageInfo;
 #include "types/funcdefs/CCharacter_attractActorToward.h"
 #include "types/funcdefs/CCharacter_canBeAttracted.h"
 #include "types/funcdefs/CCharacter_canBeGrabbed.h"
-#include "types/funcdefs/CCharacter_canWalk.h"
 #include "types/funcdefs/CCharacter_checkCylinderCollisionWorld.h"
 #include "types/funcdefs/CCharacter_clearDoorTarget.h"
 #include "types/funcdefs/CCharacter_dropCarriedObject.h"
@@ -26,6 +25,7 @@ struct SDamageInfo;
 #include "types/funcdefs/CCharacter_getPartDominantBone.h"
 #include "types/funcdefs/CCharacter_hasDoorTarget.h"
 #include "types/funcdefs/CCharacter_isGrabbable.h"
+#include "types/funcdefs/CCharacter_isInvulnerable.h"
 #include "types/funcdefs/CCharacter_isWalkComplete.h"
 #include "types/funcdefs/CCharacter_kill.h"
 #include "types/funcdefs/CCharacter_onVictimLost.h"
@@ -43,7 +43,7 @@ struct SDamageInfo;
 typedef struct CCharacter_vtable {
     CCharacter_applyDamage* applyDamage; // 0x0
     CCharacter_kill* kill; // 0x4
-    CCharacter_canWalk* canWalk; // 0x8
+    CCharacter_isInvulnerable* isInvulnerable; // 0x8
     CCharacter_isGrabbable* isGrabbable; // 0xc
     CCharacter_canBeGrabbed* canBeGrabbed; // 0x10
     CCharacter_getGrabbed* getGrabbed; // 0x14

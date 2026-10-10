@@ -371,7 +371,7 @@
 //      bracketed exactly and the transient disagreement is reproduced rather
 //      than collapsed — nothing is re-baked, and no call site has to know which
 //      field of view was in force. The saved state lives in
-//      shims/game/mirror_projection.h. setupMirrorRendering also samples the
+//      shims/renderer/mirror_projection.h. setupMirrorRendering also samples the
 //      field of view over the stacked scale rather than the 0x10000 left live,
 //      so the mirror's own camera is built at the camera's field of view and
 //      the reflected room registers with the glass.
@@ -1180,7 +1180,10 @@
 //                   with no target snaps it back to centre.
 //     weapon switch CGabriella::updateWeaponPosition sets the state of the
 //                   selected weapon only, so a weapon switched away from stays
-//                   IN_HAND. For the Baron that leaves him summoned.
+//                   IN_HAND. For the Baron that leaves him summoned. Switching
+//                   back to him while he is still going away re-attaches him,
+//                   and GOAWAY's signal 110 then clears that summon
+//                   (CBaron::advanceMotion), leaving him frozen and undrawn.
 //     held fire     CGabriella::updateAimTracking, in auto aim with no target,
 //                   drops aim_weight on every frame fire_state is not 2, and
 //                   canFireWeapon needs it at 1. A weapon that keeps fire held
@@ -1200,6 +1203,12 @@
 //                   in state KICK_DOOR, and nothing ever asks for it.
 //     turning       GABRIELA.SKL authors TURN_LEFT and TURN_RIGHT, and
 //                   nothing ever asks for them.
+//     fall damage   Only CStranger::processFrame reads the speed a landing
+//                   was made at. Every other class lands from any height
+//                   unhurt.
+//     cold breath   Only CStranger, CSvetlana and CNPC call
+//                   CCharacter::processSmoking, so the other six stand in a
+//                   cold set without breath.
 //     ladders       CGabriella::tryClimbLadder asks for LADDER from any
 //                   state but only STAND routes there; pressed while moving,
 //                   she keeps ladder_to_climb and runs on without collision.
@@ -1229,6 +1238,9 @@
 //      hp_restored percent of it and cap at it,
 //      select refuses above 98% of it, and the cheats restore it. Scat's auto
 //      aim eases back to centre at its normal turn rate once it has no target.
+//      A Baron called back while going away stays summoned and rises again,
+//      and a player's Scat who puts the Baron away while standing dismisses
+//      him rather than leaving him out.
 //      Gabriella stows the weapon she switched away from, as Scat does, and
 //      holds her aim while fire is held on a continuous weapon, and her
 //      action button tries her own pickup first; she strafes on the
@@ -1253,7 +1265,20 @@
 //      plays "draw" backwards), and fire the pistol
 //      HERO_WEAPON gives him; his arm aims it at the nearest enemy in front of
 //      him, or level with look up/down, with Scat's laser sight
-//      (hero_colonel.h).
+//      (hero_colonel.h). Every player hero but Moloch, who has no death of
+//      his own, and Svetlana, who makes high jumps, takes the Stranger's fall
+//      damage under his two fall flags, dying in its own class's death
+//      (hero_fall.h), and every player hero but Moloch breathes in a cold set
+//      as he does (hero_breath.h). A player's Moloch,
+//      whom the inherited CCharacter::processDamage never hurt, takes damage
+//      down to 1 hit point and no further, cannot be blown or cut apart, and
+//      regenerates (hero_moloch.h). A player's Colonel dies in COLONEL.SKL's
+//      DIE, where his processDamage asked for DAMAGE2 and he never died, and
+//      breaking out of a grab hits and shoves back every enemy around him
+//      (hero_colonel.h). A player hero killed while its DIE request has no
+//      route, or is overridden by locomotion, is put into DIE rather than left
+//      standing at zero hit points, and a player Svetlana does not regenerate
+//      while dead (hero_death.h).
 //
 //      Not included: object pickup for classes other than Gabriella, using
 //      items other than health for classes other than Gabriella, and box
@@ -2164,7 +2189,7 @@
 //
 //   Both paths are a share on Terminal Reality's network. The open fails
 //   anywhere else and each report is dropped, leaving only the console line.
-//   See shims/game/sound_report.h.
+//   See shims/debug/sound_report.h.
 //
 //   Override with -DNOCTURNE_AUTHENTIC_SOUND_ERROR_LOG=1.
 #ifndef NOCTURNE_AUTHENTIC_SOUND_ERROR_LOG
@@ -2500,7 +2525,7 @@
 //   affected. Both shipped binaries do this (nocedit.exe: the CMP EDI,0x300 /
 //   JNZ default at 0051151b).
 //   1: shipped behaviour — the six-mode chain, left-step gap included.
-//   0: dev-friendly default. One ordered table in shims/game/resolution.cpp
+//   0: dev-friendly default. One ordered table in shims/gl/resolution.cpp
 //      drives both the label and the stepping, so the two cannot disagree; it
 //      adds 1600x1200, makes 400x300 reachable, and steps left from 1280x1024
 //      to 1024x768 like every other entry. Accelerated only, as before.
@@ -2608,7 +2633,7 @@
 //   0: dev-friendly mode. The console fills the window: glyphs scale up
 //      with the framebuffer and the grid is sized to fit, so 1920 × 1080
 //      gives 137 × 49 at 2x where the shipped code gave 40 × 32 in a
-//      corner. Three departures, all in shims/game/console.{h,cpp}:
+//      corner. Three departures, all in shims/core/console.{h,cpp}:
 //        - The grid belongs to the shim (256 × 200) instead of the
 //          struct's 4000-byte buffer, whose 80-byte row stride is baked
 //          into writeChar's addressing and caps the console at 80 × 50.

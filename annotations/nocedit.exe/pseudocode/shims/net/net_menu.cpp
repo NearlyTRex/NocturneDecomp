@@ -16,10 +16,6 @@
 
 #define NET_MENU_ITEMS 2
 
-// The main menu's own start-y, so the submenu's lines land where the ones it
-// replaced on screen were.
-#define NET_MENU_START_Y 0xfa
-
 int nocturne_net_menu_multiplayer(void)
 {
     char  host_line[256];
@@ -27,8 +23,6 @@ int nocturne_net_menu_multiplayer(void)
     char *menu_ptrs[NET_MENU_ITEMS];
     int   selected = 0;
     int   choice;
-    int   menu_ch;
-    int   menu_y;
 
     menu_ptrs[0] = host_line;
     menu_ptrs[1] = join_line;
@@ -39,10 +33,7 @@ int nocturne_net_menu_multiplayer(void)
     engine_2d_c_clearInputAndWait_FUN_00403260();
 
     for (;;) {
-        core_game_cpp_CGame_updateDT_FUN_004d7d90(g_CGamePtr);
-        core_moon_cpp_CMoon_update_FUN_00529d60(&g_CMoonInstance,
-                                                g_CGamePtr->delta_time_float);
-        core_moon_cpp_CMoon_render_FUN_00529ed0(&g_CMoonInstance);
+        nocturne_menu_backdrop_frame();
 
         // Rebuilt every frame, as the main menu rebuilds its own: the strings
         // are localized and the language can change under the options screen.
@@ -51,33 +42,36 @@ int nocturne_net_menu_multiplayer(void)
         strcpy(join_line,
                support_newmsg_cpp_getLocalizedString_FUN_005441f0("J O I N   G A M E"));
 
-        // An untitled menu double-spaces its lines (see renderMenuAndGetChoice),
-        // so two entries occupy four character heights. Lift the start where a
-        // short window would otherwise push the last line under the copyright.
-        menu_ch = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_ThemeFont, 0x58);
-        menu_y  = NET_MENU_START_Y;
-        if (g_WindowHeight < menu_y + (NET_MENU_ITEMS * 2 + 1) * menu_ch) {
-            menu_y = g_WindowHeight - (NET_MENU_ITEMS * 2 + 1) * menu_ch;
-        }
-        if (menu_y < 0) {
-            menu_y = 0;
-        }
-
+        // From the main menu's own start-y, so the submenu's lines land where
+        // the ones it replaced on screen were.
         choice = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(
-                     menu_ptrs, NET_MENU_ITEMS, &selected, menu_y, (char *)0x0);
+                     menu_ptrs, NET_MENU_ITEMS, &selected,
+                     nocturne_menu_start_y(NOCTURNE_MENU_ROWS_UNTITLED(NET_MENU_ITEMS)),
+                     (char *)0x0);
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
 
         if (choice >= 0) {
             return choice;
         }
-        if ((*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr, DIK_ESCAPE) != 0) {
+        if (nocturne_menu_cancelled() != 0) {
             return NOCTURNE_NET_MENU_CANCEL;
         }
-        // Set when the window is closed. The main menu treats it as a quit, so
-        // this must not sit here spinning through a shutdown.
-        if (g_InputDisabled != 0) {
-            return NOCTURNE_NET_MENU_CANCEL;
-        }
+    }
+}
+
+void nocturne_net_menu_hotkeys(void)
+{
+    if (((*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr, DIK_LCONTROL) != 0) &&
+        ((*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr, DIK_H) != 0)) {
+        core_sound_cpp_CSound_reset_FUN_005b39a0(g_CSoundPtr);
+        core_game_cpp_hostNetworkGame_FUN_004e2f10();
+        core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
+    }
+    if (((*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr, DIK_LCONTROL) != 0) &&
+        ((*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr, DIK_J) != 0)) {
+        core_sound_cpp_CSound_reset_FUN_005b39a0(g_CSoundPtr);
+        core_game_cpp_joinNetworkGame_FUN_004e2fc0();
+        core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
     }
 }
 
@@ -86,6 +80,10 @@ int nocturne_net_menu_multiplayer(void)
 int nocturne_net_menu_multiplayer(void)
 {
     return NOCTURNE_NET_MENU_CANCEL;
+}
+
+void nocturne_net_menu_hotkeys(void)
+{
 }
 
 #endif

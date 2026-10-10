@@ -42,7 +42,7 @@ void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_0053e320(CStranger *t
     g_CurrentLineNumber = 4276;
     core_main_c_displayErrorAndQuit_FUN_004c8440("CStranger::aimLeftPistol - no weapon?");
   }
-  (*(((((CCharacter *)this_ptr->weapon)->base).vtable._uc)->_uc).canWalk)
+  (*(((((CCharacter *)this_ptr->weapon)->base).vtable._uc)->_uc).isInvulnerable)
             ((CCharacter *)this_ptr->weapon);
   bone_index = _DAT_02dc9f5c;
   fStack_24 = -1.3089969;

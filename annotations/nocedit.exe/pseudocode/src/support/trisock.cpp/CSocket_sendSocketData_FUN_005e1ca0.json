@@ -1,0 +1,167 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "compile_source": "keep.cpp",
+  "complexity": {
+    "assembly_lines": 74,
+    "complexity_score": 17,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 17,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 91
+  },
+  "cross_references": [
+    {
+      "addr": "00541230",
+      "from_addr": "0054124d",
+      "name": "core_netgame.cpp_CNetGame_sendPacket_FUN_00541230",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005e1ca0",
+    "address_range": [
+      [
+        "005e1ca0",
+        "005e1d1a"
+      ],
+      [
+        "0060e3af",
+        "0060e3d1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_trisock.cpp_CSocket_sendSocketData_FUN_005e1ca0",
+    "signature": "int __cdecl support_trisock_cpp_CSocket_sendSocketData_FUN_005e1ca0(CSocket *this_ptr,char *buffer,int length,SNetworkAddr *dest_addr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00610f0a",
+      "is_variadic": false,
+      "name": "crt_wsock32.c_send"
+    },
+    {
+      "addr": "00610f04",
+      "is_variadic": false,
+      "name": "crt_wsock32.c_sendto"
+    },
+    {
+      "addr": "005e19d0",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_buildSockaddrIn_FUN_005e19d0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0054124d",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_CNetGame_sendPacket_FUN_00541230",
+        "estimated_params": 4,
+        "instructions_analyzed": 11,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 4,
+    "declared_stack_bytes": 16,
+    "estimated_params": 4,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.65625,
+    "instruction_count": 64,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 2,
+      "CALL": 3,
+      "CBRANCH": 1,
+      "COPY": 58,
+      "INT_ADD": 31,
+      "INT_AND": 19,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 18,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 9,
+      "INT_SUB": 21,
+      "LOAD": 22,
+      "POPCOUNT": 9,
+      "RETURN": 2,
+      "STORE": 22
+    },
+    "pcode_op_count": 234
+  },
+  "stack_frame": {
+    "frame_size": 6172,
+    "local_size": 6156,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "auStackY_1808",
+        "offset": -6152,
+        "size": 6084,
+        "type": "undefined4[1521]"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 16,
+        "type": "SOCKADDR_IN"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 16,
+        "type": "SOCKADDR_IN"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSocket *"
+      },
+      {
+        "is_param": true,
+        "name": "buffer",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "length",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "dest_addr",
+        "offset": 16,
+        "size": 4,
+        "type": "SNetworkAddr *"
+      }
+    ]
+  },
+  "suspects": []
+}

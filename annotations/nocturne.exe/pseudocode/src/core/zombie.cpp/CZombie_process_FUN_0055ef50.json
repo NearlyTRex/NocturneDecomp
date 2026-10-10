@@ -58,61 +58,61 @@
       {
         "category": "format_error",
         "column": 84,
-        "line": 189,
+        "line": 190,
         "message": "format specifies type 'char *' but the argument has type 'CZombie *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 26,
-        "line": 190,
+        "line": 191,
         "message": "format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
       },
       {
         "category": "cast_error",
         "column": 20,
-        "line": 275,
+        "line": 276,
         "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
       },
       {
         "category": "format_error",
         "column": 62,
-        "line": 308,
+        "line": 309,
         "message": "format specifies type 'char *' but the argument has type 'CZombie *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 71,
-        "line": 308,
+        "line": 309,
         "message": "format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 62,
-        "line": 328,
+        "line": 329,
         "message": "format specifies type 'char *' but the argument has type 'CZombie *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 71,
-        "line": 328,
+        "line": 329,
         "message": "format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 86,
-        "line": 583,
+        "line": 584,
         "message": "format specifies type 'char *' but the argument has type 'CZombie *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 73,
-        "line": 610,
+        "line": 611,
         "message": "format specifies type 'char *' but the argument has type 'CZombie *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 71,
-        "line": 619,
+        "line": 620,
         "message": "format specifies type 'char *' but the argument has type 'CZombie *' [-Werror,-Wformat]"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 2528,
-    "complexity_score": 1230,
+    "complexity_score": 1231,
     "cross_reference_count": 0,
     "function_call_count": 49,
     "global_count": 70,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 1035,
+    "pseudocode_lines": 1036,
     "suspect_count": 14,
     "suspect_types": [
       "fast_sqrt_inline",
@@ -142,7 +142,7 @@
       "warning_type_propagation",
       "warning_unreachable"
     ],
-    "total_lines": 3563
+    "total_lines": 3564
   },
   "cross_references": [],
   "function": {
@@ -227,7 +227,7 @@
     {
       "addr": "004259f0",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_process_FUN_004259f0"
+      "name": "core_charactr.cpp_CCharacter_processCharacter_FUN_004259f0"
     },
     {
       "addr": "004277f0",
@@ -1909,7 +1909,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 734,
+      "line": 735,
       "match": "(int *)((int)g_CDemonSet_PTR_005be368",
       "severity": "moderate",
       "text": "iVar9 = *(int *)((int)g_CDemonSet_PTR_005be368->characters + iVar6);",
@@ -1917,7 +1917,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 735,
+      "line": 736,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar18 = (**(code **)(*(int *)(iVar9 + 0x14c) + 0xdc))(iVar9,this_ptr);",
@@ -1925,7 +1925,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 947,
+      "line": 948,
       "match": "DAT_00765a9c",
       "severity": "mild",
       "text": "(DAT_00765a9c,g_CDoorActorType_01af4e9c.name_hash),",
@@ -1933,7 +1933,7 @@
     },
     {
       "description": "Raw hex address 0x55f37c assigned to bare local `iVar6`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar6` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 272,
+      "line": 273,
       "match": "0x55f37c",
       "severity": "moderate",
       "text": "iVar6 = 0x55f37c;",
@@ -1941,7 +1941,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 404,
+      "line": 405,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1949,7 +1949,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 360,
+      "line": 361,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_23c.x = local_d4.x;",
@@ -1957,7 +1957,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 537,
+      "line": 538,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -1965,7 +1965,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 897,
+      "line": 898,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -1973,7 +1973,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 937,
+      "line": 938,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.position_delta.z = 0.0;",
@@ -1981,7 +1981,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 940,
+      "line": 941,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -1989,7 +1989,7 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_134 != &local_254)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 802,
+      "line": 803,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&local_134 != &local_254) {",
@@ -1997,7 +1997,7 @@
     },
     {
       "description": "Inlined fast sqrt bit-trick (bias `g_FastSqrtMagic`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Replace with `fastSqrt(<expr>)` in a .keep - the helper function exists in the binary (FUN_00431350).",
-      "line": 808,
+      "line": 809,
       "match": "local_5c = (float)(((int)local_1c >> 1) + g_FastSqrtMagic);",
       "severity": "moderate",
       "text": "local_5c = (float)(((int)local_1c >> 1) + g_FastSqrtMagic);",

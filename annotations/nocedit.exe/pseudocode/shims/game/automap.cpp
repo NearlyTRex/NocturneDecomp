@@ -263,8 +263,7 @@ inline bool keyboard_code(int code) {
 }
 
 CDemonActor *local_hero(void) {
-    if (g_LocalHeroIndex < 0 || g_LocalHeroIndex >= 4) return nullptr;
-    return (CDemonActor *)g_HeroActors[g_LocalHeroIndex];
+    return (CDemonActor *)nocturne_hero_local();
 }
 
 // Whether the hero is dying or dead. Through the vtable rather than
@@ -1398,8 +1397,7 @@ extern "C" int nocturne_automap_handle_cancel(void)
 extern "C" int nocturne_automap_freezes_world(void)
 {
     if (!g_open) return 0;
-    if (g_CNetGamePtr != (CNetGame *)0x0 &&
-        g_CNetGamePtr->connection_type != CONNECTION_NONE) {
+    if (nocturne_net_session_active() != 0) {
         return 0;
     }
     return 1;

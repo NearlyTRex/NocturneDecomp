@@ -46,7 +46,8 @@ void __cdecl core_icepick_cpp_CIcePick_process_FUN_004b9fe0(CIcePick *this_ptr,f
   CDeformableModelInstance *local_14;
   
   bVar14 = 0;
-  iVar5 = core_charactr_cpp_CCharacter_process_FUN_004259f0((CCharacter *)this_ptr,delta_time);
+  iVar5 = core_charactr_cpp_CCharacter_processCharacter_FUN_004259f0
+                    ((CCharacter *)this_ptr,delta_time);
   if (iVar5 == 0) {
     return;
   }

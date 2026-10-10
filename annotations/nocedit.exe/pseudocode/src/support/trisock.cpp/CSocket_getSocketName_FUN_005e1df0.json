@@ -1,0 +1,168 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "compile_source": "keep.cpp",
+  "complexity": {
+    "assembly_lines": 48,
+    "complexity_score": 21,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 21,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 69
+  },
+  "cross_references": [
+    {
+      "addr": "0053fbc0",
+      "from_addr": "0053fc3e",
+      "name": "core_netgame.cpp_CNetGame_initializeNetwork_FUN_0053fbc0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005e1df0",
+    "address_range": [
+      [
+        "005e1df0",
+        "005e1e42"
+      ],
+      [
+        "0060c552",
+        "0060c56b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_trisock.cpp_CSocket_getSocketName_FUN_005e1df0",
+    "signature": "int __cdecl support_trisock_cpp_CSocket_getSocketName_FUN_005e1df0(CSocket *this_ptr,SNetworkAddr *out_address)"
+  },
+  "function_calls": [
+    {
+      "addr": "00610eec",
+      "is_variadic": false,
+      "name": "crt_wsock32.c_getsockname"
+    },
+    {
+      "addr": "005e1960",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_convertSockAddr_FUN_005e1960"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0053fc3e",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_CNetGame_initializeNetwork_FUN_0053fbc0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.7948717948717947,
+    "instruction_count": 39,
+    "opcode_distribution": {
+      "BRANCH": 2,
+      "CALL": 2,
+      "CBRANCH": 1,
+      "COPY": 30,
+      "INT_ADD": 18,
+      "INT_AND": 17,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 16,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 8,
+      "INT_SUB": 10,
+      "INT_XOR": 1,
+      "LOAD": 9,
+      "POPCOUNT": 8,
+      "RETURN": 2,
+      "STORE": 12
+    },
+    "pcode_op_count": 148
+  },
+  "resolved_suspects": [
+    {
+      "description": "Pointer value `&pSVar3->sin_addr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 20,
+      "match": "(int)&pSVar3->sin_addr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar1 = *(ushort *)((int)&pSVar3->sin_addr + 2);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 20,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar1 = *(ushort *)((int)&pSVar3->sin_addr + 2);",
+      "type": "pointer_cast"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 32,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 16,
+        "type": "SOCKADDR"
+      },
+      {
+        "is_param": false,
+        "name": "SStack_c",
+        "offset": -12,
+        "size": 8,
+        "type": "SNetworkAddr"
+      },
+      {
+        "is_param": false,
+        "name": "local_4",
+        "offset": -4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSocket *"
+      },
+      {
+        "is_param": true,
+        "name": "out_address",
+        "offset": 8,
+        "size": 4,
+        "type": "SNetworkAddr *"
+      }
+    ]
+  },
+  "suspects": []
+}

@@ -2,11 +2,11 @@
 // Address: 005b7d00
 // Address Range: [[005b7d00, 005b7d1a]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_special_cpp_masterZBuffer_FUN_005b7d00(int z_buffer_mode)
+// Signature: int __cdecl engine_special_cpp_masterZBuffer_FUN_005b7d00(int slot)
 
 #include "nocturne.h"
 
-int __cdecl engine_special_cpp_masterZBuffer_FUN_005b7d00(int z_buffer_mode)
+int __cdecl engine_special_cpp_masterZBuffer_FUN_005b7d00(int slot)
 
 {
   int iVar1;
@@ -14,6 +14,6 @@ int __cdecl engine_special_cpp_masterZBuffer_FUN_005b7d00(int z_buffer_mode)
   if (g_UseExternalRenderer == 0) {
     return 0;
   }
-  iVar1 = (*g_APIDLL_masterZBuffer)(z_buffer_mode);
+  iVar1 = (*g_APIDLL_masterZBuffer)(slot);
   return iVar1;
 }

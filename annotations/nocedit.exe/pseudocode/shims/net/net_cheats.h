@@ -46,16 +46,12 @@
 // never receives one keeps its own list — which is the pre-existing behaviour,
 // not a new failure — and the desync detector remains the backstop.
 //
-// The packet type is 0x14: the shipped protocol's own types stop at
-// PACKET_PLAYER_INPUT (0x10), and 0x11, 0x12 and 0x13 are taken by net_sync,
-// net_weapon and net_mission.
+// The packet type is NOCTURNE_NET_PACKET_CHEATS (net_packets.h).
 //
 // Every entry point is a no-op outside a network game and when
 // NOCTURNE_AUTHENTIC_NETPLAY is 1. Under NOCTURNE_AUTHENTIC_CHEAT_MENU there is
 // nothing to synchronise — no menu, no armed cheats — so the announcement
 // carries an all-zero list and costs one datagram.
-
-#define NOCTURNE_NET_PACKET_CHEATS 0x14
 
 #ifdef __cplusplus
 extern "C" {

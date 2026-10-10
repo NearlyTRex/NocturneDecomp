@@ -8,9 +8,9 @@
 ; SOCKADDR *       Stack[0x8]:4   src_addr
 ;
 ; XREF[3]:
-;   support_trisock.cpp_acceptConnection_FUN_00549170 at 005491c2
-;   support_trisock.cpp_getSocketName_FUN_005491e0 at 00549218
-;   support_trisock.cpp_receiveSocketData_FUN_00549010 at 00549072
+;   support_trisock.cpp_CSocket_acceptConnection_FUN_00549170 at 005491c2
+;   support_trisock.cpp_CSocket_getSocketName_FUN_005491e0 at 00549218
+;   support_trisock.cpp_CSocket_receiveSocketData_FUN_00549010 at 00549072
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_support_trisock_cpp_00596c29

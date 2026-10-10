@@ -82,11 +82,8 @@
 // Gated by NOCTURNE_AUTHENTIC_NETPLAY in shim_config_authentic.h: with authentic
 // netplay on, every entry point here compiles to nothing.
 
-// The packet types. The shipped protocol's own types stop at
-// PACKET_PLAYER_INPUT (0x10), and 0x11 to 0x15 are taken by net_sync,
-// net_weapon, net_mission, net_cheats and net_respawn.
-#define NOCTURNE_NET_PACKET_SKIP_VOTE   0x16
-#define NOCTURNE_NET_PACKET_SKIP_COMMIT 0x17
+// The packet types are NOCTURNE_NET_PACKET_SKIP_VOTE and _SKIP_COMMIT
+// (net_packets.h).
 
 #ifdef __cplusplus
 extern "C" {

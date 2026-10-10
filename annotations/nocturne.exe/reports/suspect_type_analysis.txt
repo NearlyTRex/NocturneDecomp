@@ -5,8 +5,8 @@ SUSPECT TYPE ANALYSIS
 SUSPECT TYPE COUNTS
 --------------------------------------------------
   undefined_data                  4062 ( 19.4%)
-  pointer_cast                    3557 ( 17.0%)
-  pointer_truncation              2880 ( 13.7%)
+  pointer_cast                    3555 ( 17.0%)
+  pointer_truncation              2889 ( 13.8%)
   unrolled_memcpy                 1476 (  7.0%)
   warning_overlapping_globals      864 (  4.1%)
   stack_param                      766 (  3.7%)
@@ -15,7 +15,7 @@ SUSPECT TYPE COUNTS
   shadow_pointer_walk              544 (  2.6%)
   unrolled_strcpy                  485 (  2.3%)
   stack_ref                        463 (  2.2%)
-  negative_offset                  460 (  2.2%)
+  negative_offset                  461 (  2.2%)
   unaffected_reg                   388 (  1.9%)
   unnamed_param                    371 (  1.8%)
   static_uninitvar                 370 (  1.8%)
@@ -803,7 +803,7 @@ Functions:
   wincore_winrun.cpp_winMain_FUN_00559260
 
 ====================================================================================================
-TYPE: pointer_cast (3557 occurrences)
+TYPE: pointer_cast (3555 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -813,17 +813,17 @@ Unique patterns:
     68x  (int *)((int)g_ScreenBufferArray
     60x  (uint *)((int)pvVar3
     47x  (int)&NAME byte-offset arithmetic split across lines
+    45x  (CMatrix3x4f *)((int)pCVar3
+    45x  (CMatrix3x4f *)((int)pCVar4
     43x  (CDemonActor **)((int)g_CDemonSet_PTR_005be368
-    43x  (CMatrix3x4f *)((int)pCVar4
     42x  (SRenderVertex *)((int)pSVar4
-    38x  (CMatrix3x4f *)((int)pCVar3
     33x  (SRenderVertex *)((int)pSVar3
     30x  (uint *)((int)pvVar1
     27x  (T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach
     27x  (TYPE *) ((int)NAME ...) split across lines
+    27x  (CMatrix3x4f *)((int)pCVar5
     27x  (void *)((int)sprite_data
-    26x  (CMatrix3x4f *)((int)pCVar5
-    25x  (CMatrix3x4f *)((int)pCVar6
+    26x  (CMatrix3x4f *)((int)pCVar6
     24x  (SRenderVertex *)((int)pSVar13
     23x  (uint *)((int)this_ptr
     23x  (CMatrix3x4f *)((int)pCVar2
@@ -1537,13 +1537,12 @@ Functions:
   sound_sndwav.cpp_enumerateWavOutDevice_FUN_0052c6c0
   sound_sndwav.cpp_writeWavOutBuffer_FUN_0052c130
   support_codec.cpp_CLZWDictionary_initTable_FUN_00439450
-  support_trisock.cpp_acceptConnection_FUN_00549170
+  support_trisock.cpp_CSocket_acceptConnection_FUN_00549170
+  support_trisock.cpp_CSocket_connectSocket_FUN_00548fc0
+  support_trisock.cpp_CSocket_getSocketName_FUN_005491e0
+  support_trisock.cpp_CSocket_receiveSocketData_FUN_00549010
+  support_trisock.cpp_CSocket_sendSocketData_FUN_00549090
   support_trisock.cpp_buildSockaddrIn_FUN_00548dc0
-  support_trisock.cpp_connectSocket_FUN_00548fc0
-  support_trisock.cpp_formatSocketAddress_FUN_00548e20
-  support_trisock.cpp_getSocketName_FUN_005491e0
-  support_trisock.cpp_performSocketOperation_FUN_00549090
-  support_trisock.cpp_receiveSocketData_FUN_00549010
   wincore_wddvmem.cpp_allocateRenderBuffers_FUN_00552a20
   wincore_wddvmem.cpp_closeScreenDevice_FUN_00553520
   wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004b63f0
@@ -1557,7 +1556,7 @@ Functions:
   wincore_winrun.cpp_winMain_FUN_00559260
 
 ====================================================================================================
-TYPE: pointer_truncation (2880 occurrences)
+TYPE: pointer_truncation (2889 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -1565,13 +1564,13 @@ Unique patterns:
    112x  (int)pvVar4
     81x  (int)pvVar3
     75x  (int)g_ScreenBufferArray
+    53x  (int)pCVar3
     50x  (int)pSVar4
+    48x  (int)pCVar4
     47x  (int)pvVar1
-    46x  (int)pCVar3
-    46x  (int)pCVar4
-    42x  (int)pSVar3
-    38x  (int)pCVar6
-    33x  (int)pCVar5
+    43x  (int)pSVar3
+    39x  (int)pCVar6
+    34x  (int)pCVar5
     27x  (int)pCVar2
     26x  (int)piVar4
     26x  (int)pSVar13
@@ -2130,12 +2129,11 @@ Functions:
   support_codec.cpp_CLZWDecompress_ctor_FUN_004399f0
   support_codec.cpp_CLZWDecompress_processBuffer_FUN_00439b30
   support_codec.cpp_CLZWDictionary_initTable_FUN_00439450
-  support_trisock.cpp_acceptConnection_FUN_00549170
-  support_trisock.cpp_connectSocket_FUN_00548fc0
-  support_trisock.cpp_formatSocketAddress_FUN_00548e20
-  support_trisock.cpp_getSocketName_FUN_005491e0
-  support_trisock.cpp_performSocketOperation_FUN_00549090
-  support_trisock.cpp_receiveSocketData_FUN_00549010
+  support_trisock.cpp_CSocket_acceptConnection_FUN_00549170
+  support_trisock.cpp_CSocket_connectSocket_FUN_00548fc0
+  support_trisock.cpp_CSocket_getSocketName_FUN_005491e0
+  support_trisock.cpp_CSocket_receiveSocketData_FUN_00549010
+  support_trisock.cpp_CSocket_sendSocketData_FUN_00549090
   wincore_wddvmem.cpp_allocateRenderBuffers_FUN_00552a20
   wincore_wddvmem.cpp_closeScreenDevice_FUN_00553520
   wincore_wddvmem.cpp_initializeGraphicsSystem_FUN_00552b40
@@ -3985,8 +3983,8 @@ Functions:
   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00427eb0
   core_charactr.cpp_CCharacter_igniteBone_FUN_00427730
   core_charactr.cpp_CCharacter_isCarryingAnything_FUN_004294f0
+  core_charactr.cpp_CCharacter_processCharacter_FUN_004259f0
   core_charactr.cpp_CCharacter_processFire_FUN_004269b0
-  core_charactr.cpp_CCharacter_process_FUN_004259f0
   core_charactr.cpp_CCharacter_renderBurn_FUN_00426e80
   core_charactr.cpp_CCharacter_renderFlames_FUN_00427290
   core_charactr.cpp_CCharacter_setup_FUN_00424260
@@ -4658,7 +4656,7 @@ Functions:
   sound_sndmain.cpp_startSfx_FUN_005265a0
 
 ====================================================================================================
-TYPE: negative_offset (460 occurrences)
+TYPE: negative_offset (461 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -4667,8 +4665,8 @@ Unique patterns:
     30x  pCVar1[-2].
     28x  pCVar1[-1].
     24x  pCVar5[-1].
+    24x  pCVar3[-2].
     24x  pCVar4[-1].
-    23x  pCVar3[-2].
     22x  pCVar2[-2].
     22x  pCVar6[-1].
     19x  pCVar2[-1].
@@ -4778,6 +4776,7 @@ Functions:
   core_moloch.cpp_CMoloch_dtor_FUN_004dd9f0
   core_moon.cpp_CMoon_ctor_FUN_004de800
   core_moon.cpp_CMoon_dtor_FUN_004de830
+  core_netgame.cpp_CNetGame_ctor_FUN_004e9860
   core_npc.cpp_CNPC_ctor_FUN_004ee950
   core_npc.cpp_CNPC_dtor_FUN_004b68c0
   core_passngr.cpp_CPassenger_ctor_FUN_004ef4e0
@@ -5119,7 +5118,7 @@ Functions:
   cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_004f4e40
   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040b300
   core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_00417730
-  core_charactr.cpp_CCharacter_process_FUN_004259f0
+  core_charactr.cpp_CCharacter_processCharacter_FUN_004259f0
   core_console.cpp_staticInit_FUN_0043abb0
   core_dcamera.cpp_CDemonCamera_addLightmapToCorona_FUN_00444c90
   core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_00445750
@@ -5384,7 +5383,7 @@ Functions:
   core_chain.cpp_CChain_process_FUN_0042bca0
   core_chain.cpp_CChain_setup_FUN_0042b8f0
   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050
-  core_charactr.cpp_CCharacter_process_FUN_004259f0
+  core_charactr.cpp_CCharacter_processCharacter_FUN_004259f0
   core_charactr.cpp_CCharacter_setPositionAndOrientation_FUN_004246e0
   core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0
   core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0
@@ -6045,9 +6044,9 @@ Functions:
   engine_matrix.c_normalizeVector3DFixed_FUN_004cde10
   engine_matrix.c_projectToScreen_FUN_004cea50
   engine_pod.cpp_CPodFile_FUN_004f7ae0
+  support_trisock.cpp_CSocket_connectSocket_FUN_00548fc0
+  support_trisock.cpp_CSocket_sendSocketData_FUN_00549090
   support_trisock.cpp_buildSockaddrIn_FUN_00548dc0
-  support_trisock.cpp_connectSocket_FUN_00548fc0
-  support_trisock.cpp_performSocketOperation_FUN_00549090
 
 ====================================================================================================
 TYPE: unrolled_strcat (90 occurrences)

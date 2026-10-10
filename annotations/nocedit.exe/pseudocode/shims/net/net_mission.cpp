@@ -49,17 +49,6 @@ static int s_acted_serial = 0;
 
 // -----------------------------------------------------------------------------
 
-static int mission_is_network_game(void)
-{
-    return ((g_CNetGamePtr != (CNetGame *)0x0) &&
-            (g_CNetGamePtr->connection_type != CONNECTION_NONE));
-}
-
-static int mission_is_host(void)
-{
-    return (mission_is_network_game() &&
-            (g_CNetGamePtr->connection_type == CONNECTION_HOST));
-}
 
 // The frames a guest still needs to reach end_frame. processServerFrame
 // re-sends unacknowledged frames on every pass, but the host stops calling it
@@ -76,9 +65,7 @@ static void mission_send_final_frames(int player)
             (s_announced.end_frame <= g_SimFrameHistory[i].sequence_number)) {
             continue;
         }
-        std::memset(&packet, 0, sizeof(packet));
-        packet.header.size = sizeof(SNetPacket_SimFrame);
-        packet.header.type = PACKET_SIM_FRAME;
+        nocturne_net_packet_init(&packet, (int)sizeof(packet), PACKET_SIM_FRAME);
         packet.frame       = g_SimFrameHistory[i];
         core_netgame_cpp_CNetGame_send_FUN_005411c0(net_game, player, &packet.header);
     }
@@ -150,7 +137,7 @@ static void mission_apply_seed(uint seed)
     srand(seed);
     core_actor_cpp_setRandomSeed_FUN_0040cb90(seed);
     DLOG("netplay", "MISSION SEED %s random_seed=%u (0x%06x masked)",
-            mission_is_host() ? "(host)" : "(guest)", seed, seed & 0xffffff);
+            nocturne_net_session_is_host() ? "(host)" : "(guest)", seed, seed & 0xffffff);
 }
 
 // The guest's fallback: an announcement has not arrived yet, so pump the socket
@@ -195,16 +182,13 @@ static int mission_wait_for_announcement(void)
 // skip it and start the next mission behind the host.
 extern "C" int nocturne_net_mission_pending(void)
 {
-    CNetGame *net_game = g_CNetGamePtr;
-
-    if (mission_is_network_game() == 0) {
+    if (nocturne_net_session_active() == 0) {
         return 0;
     }
     if ((s_have_announced == 0) || (s_announced.serial <= s_acted_serial)) {
         return 0;
     }
-    return (s_announced.end_frame <=
-            net_game->players[net_game->local_player_index].sim_frame_index);
+    return (s_announced.end_frame <= nocturne_net_session_local_frame());
 }
 
 extern "C" void nocturne_net_mission_resolve(char *name, int name_size)
@@ -212,21 +196,19 @@ extern "C" void nocturne_net_mission_resolve(char *name, int name_size)
     if ((name == (char *)0x0) || (name_size < 1)) {
         return;
     }
-    if (mission_is_network_game() == 0) {
+    if (nocturne_net_session_active() == 0) {
         return;
     }
 
-    if (mission_is_host()) {
+    if (nocturne_net_session_is_host()) {
         mission_unwind_unsimulated_frame();
         s_serial = s_serial + 1;
 
-        std::memset(&s_announced, 0, sizeof(s_announced));
-        s_announced.header.type = (ENetPacketType)NOCTURNE_NET_PACKET_MISSION;
-        s_announced.header.size = sizeof(SNetPacket_MissionChange);
+        nocturne_net_packet_init(&s_announced, (int)sizeof(s_announced),
+                                 NOCTURNE_NET_PACKET_MISSION);
         s_announced.seed        = nocturne_rng_seed();
         s_announced.serial      = s_serial;
-        s_announced.end_frame   =
-            g_CNetGamePtr->players[g_CNetGamePtr->local_player_index].sim_frame_index;
+        s_announced.end_frame   = nocturne_net_session_local_frame();
         strncpy(s_announced.mission, name, sizeof(s_announced.mission) - 1);
         s_have_announced = 1;
 
@@ -253,11 +235,11 @@ extern "C" void nocturne_net_mission_resolve(char *name, int name_size)
 
 extern "C" int nocturne_net_mission_begin(void)
 {
-    if (mission_is_network_game() == 0) {
+    if (nocturne_net_session_active() == 0) {
         return 1;
     }
 
-    if (mission_is_host()) {
+    if (nocturne_net_session_is_host()) {
         // Once more before the barrier: the guest spends the barrier pumping
         // the socket, so this is the copy it is most likely to catch.
         mission_broadcast();
@@ -273,9 +255,8 @@ extern "C" int nocturne_net_mission_begin(void)
         return 0;
     }
     DLOG("netplay", "MISSION begin %s sim_idx=%d end_frame=%d",
-            mission_is_host() ? "(host)" : "(guest)",
-            g_CNetGamePtr->players[g_CNetGamePtr->local_player_index].sim_frame_index,
-            s_announced.end_frame);
+            nocturne_net_session_is_host() ? "(host)" : "(guest)",
+            nocturne_net_session_local_frame(), s_announced.end_frame);
 
     // Same two generators the lobby seeds, in the same order, for the same
     // reason: the mission load and everything startMission does run outside
@@ -289,37 +270,32 @@ extern "C" int nocturne_net_mission_begin(void)
 
 extern "C" int nocturne_net_mission_finish(void)
 {
-    CNetGame *net_game = g_CNetGamePtr;
-
-    if (mission_is_network_game() == 0) {
+    if (nocturne_net_session_active() == 0) {
         return 1;
     }
-    if (core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(net_game, 2) == 0) {
+    if (core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(g_CNetGamePtr, 2) == 0) {
         return 0;
     }
     // The host sent its unsimulated frame before unwinding it, and would send
     // a fresh frame under the same sequence number once play starts. Drop the
     // stale copy so a guest cannot apply it first.
-    if (mission_is_host() == 0) {
-        mission_drop_frames_from(net_game->players[net_game->local_player_index].sim_frame_index);
+    if (nocturne_net_session_is_host() == 0) {
+        mission_drop_frames_from(nocturne_net_session_local_frame());
     }
     return 1;
 }
 
 extern "C" int nocturne_net_mission_skip_prompt(void)
 {
-    return mission_is_network_game();
+    return nocturne_net_session_active();
 }
 
 extern "C" int nocturne_net_mission_on_packet(const void *packet, int packet_size)
 {
     const SNetPacket_MissionChange *incoming = (const SNetPacket_MissionChange *)packet;
 
-    if ((packet == (const void *)0x0) ||
-        (packet_size < (int)sizeof(SNetPacket_MissionChange))) {
-        return 0;
-    }
-    if (incoming->header.type != (ENetPacketType)NOCTURNE_NET_PACKET_MISSION) {
+    if (nocturne_net_packet_is(packet, packet_size, NOCTURNE_NET_PACKET_MISSION,
+                               (int)sizeof(SNetPacket_MissionChange)) == 0) {
         return 0;
     }
     // Sent several times over, and again at the barrier, so all but the first

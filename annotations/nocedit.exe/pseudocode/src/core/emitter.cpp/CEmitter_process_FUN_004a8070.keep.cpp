@@ -51,8 +51,7 @@ void __cdecl core_emitter_cpp_CEmitter_process_FUN_004a8070(CEmitter *this_ptr,f
 #endif
 #if !NOCTURNE_AUTHENTIC_NETPLAY
   iVar8 = this_ptr->was_on_screen;
-  if ((g_CNetGamePtr != (CNetGame *)0x0) &&
-      (g_CNetGamePtr->connection_type != CONNECTION_NONE)) {
+  if (nocturne_net_session_active() != 0) {
     iVar8 = 1;
   }
 #else

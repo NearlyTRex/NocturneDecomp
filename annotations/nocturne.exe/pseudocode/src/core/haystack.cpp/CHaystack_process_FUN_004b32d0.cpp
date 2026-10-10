@@ -48,7 +48,8 @@ void __cdecl core_haystack_cpp_CHaystack_process_FUN_004b32d0(CHaystack *this_pt
   CCharacter_full_vtable *local_18;
   
   bVar13 = 0;
-  iVar5 = core_charactr_cpp_CCharacter_process_FUN_004259f0((CCharacter *)this_ptr,delta_time);
+  iVar5 = core_charactr_cpp_CCharacter_processCharacter_FUN_004259f0
+                    ((CCharacter *)this_ptr,delta_time);
   if (iVar5 == 0) {
     return;
   }

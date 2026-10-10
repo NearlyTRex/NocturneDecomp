@@ -52,6 +52,42 @@ jobs:
         cmake --build build/exe-linux-x86_64 --target nocturne_tests
       test-command: ctest --test-dir build/exe-linux-x86_64 --output-on-failure
 
+  # The source recreation is a standalone CMake project that fetches and builds
+  # its third-party libraries from source. Every header compiles on its own, the
+  # SDL adapters and the executable build, then format, clang-tidy and the tests
+  # under the 100% line, function and branch coverage gate.
+  recreation:
+    name: Recreation
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@4fe68c91984dd09dea6988fd603b128bc3f44ff7 # v0.2.9
+    permissions:
+      contents: read
+    with:
+      # SDL3 needs the native lane's X11/Wayland/audio headers plus XTest.
+      apt-packages: >-
+        cmake clang clang-format clang-tidy llvm ninja-build pkg-config
+        libx11-dev libxext-dev libxcursor-dev libxi-dev libxfixes-dev
+        libxrandr-dev libxss-dev libxtst-dev libwayland-dev libxkbcommon-dev
+        wayland-protocols libegl-dev libdecor-0-dev libpulse-dev
+        libasound2-dev
+      cache-paths: build/recreation/ci/_deps
+      # The pinned dependency versions live in both.
+      cache-key-files: |
+        recreation/CMakeLists.txt
+        recreation/cmake/*.cmake
+      # About 950 translation units, rebuilt with coverage flags on every run.
+      ccache: true
+      ccache-max-size: 1G
+      cache-key: recreation-ci
+      build-command: |
+        cd recreation
+        cmake --preset ci
+        cmake --build --preset ci
+        cmake --build --preset ci --target format-check
+        cmake --build --preset ci --target tidy
+      test-command: |
+        cd recreation
+        cmake --build --preset ci --target coverage
+
   lint:
     name: Lint
     uses: NearlyTRex/Workflows/.github/workflows/lint.yml@4fe68c91984dd09dea6988fd603b128bc3f44ff7 # v0.2.9

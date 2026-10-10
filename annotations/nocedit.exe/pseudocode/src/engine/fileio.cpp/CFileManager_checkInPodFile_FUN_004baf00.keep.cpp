@@ -420,7 +420,7 @@ LAB_004bbfdd:
                               (local_54,"..\\engine\\fileio.cpp",196);
                     local_54 = (_FILE *)0x0;
                   }
-                  iVar3 = engine_dosio_cpp_getFileSizeWithFinder_FUN_00481960((char *)0x0,local_12b4.found_path)
+                  iVar3 = engine_dosio_cpp_getFileAttributes_FUN_00481960((char *)0x0,local_12b4.found_path)
                   ;
                   if (((-1 < iVar3) &&
                       (iVar4 = engine_dosio_cpp_setFileAttributes_FUN_004819f0
@@ -485,7 +485,7 @@ LAB_004bb492:
                     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                               (g_CEditorToolsPtr,"Remounting all pods...");
                     engine_pod_cpp_CPod_cleanup_FUN_00550c80((CPod *)g_CDemonPodPtr);
-                    (*g_CDemonPodPtr->vtable->load)((CPod *)g_CDemonPodPtr);
+                    (*g_CDemonPodPtr->base.vtable->load)((CPod *)g_CDemonPodPtr);
                   }
                   shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_70,0);
                   engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_2600,0);

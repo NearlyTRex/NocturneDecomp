@@ -46,9 +46,7 @@
 // is idempotent — the transport is UDP and the shipped protocol has no acks for
 // anything but sim frames.
 
-// Packet type. ENetPacketType runs to 0x10 in the shipped game and net_sync.h
-// claimed 0x11, so this is the next free value.
-#define NOCTURNE_NET_PACKET_WEAPON 0x12
+// The packet type is NOCTURNE_NET_PACKET_WEAPON (net_packets.h).
 
 #ifdef __cplusplus
 extern "C" {

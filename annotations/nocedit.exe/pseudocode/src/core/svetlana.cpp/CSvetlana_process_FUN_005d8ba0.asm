@@ -50,7 +50,7 @@
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_00429820
-;   core_charactr.cpp_CCharacter_process_FUN_00429870
+;   core_charactr.cpp_CCharacter_processCharacter_FUN_00429870
 ;   core_charactr.cpp_CCharacter_processSmoking_FUN_0042ea40
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_0042ca70
 ;   core_cloth.cpp_CCloth_process_FUN_0043ab80
@@ -92,8 +92,8 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 005d8be7
         ;   Label: LAB_005d8be7
     PUSH EBX                            ; 005d8bea
-    CALL core_charactr.cpp_CCharacter_process_FUN_00429870 ; 005d8beb
-        ;   XREF to: 00429870 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_process_FUN_00429870(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_processCharacter_FUN_00429870 ; 005d8beb
+        ;   XREF to: 00429870 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processCharacter_FUN_00429870(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 005d8bf0
     TEST EAX,EAX                        ; 005d8bf3
     JZ 0x005d8c00                       ; 005d8bf5

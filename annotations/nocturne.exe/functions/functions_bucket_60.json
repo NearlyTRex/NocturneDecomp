@@ -31462,7 +31462,7 @@
     "conv":"__stack2_esi",
     "importable":true,
     "name":"core_imp.cpp_CImp_getCarryObjToBodyXForm_FUN_004bc7e0",
-    "ret":"void",
+    "ret":"CMatrix3x4f*",
     "vars":{
       "locals":[
         {
@@ -31834,7 +31834,17 @@
           },
           "type":"CMatrix3x4f*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -57935,12 +57945,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"support_trisock.cpp_bindSocketWrapper_FUN_00548ee0",
-    "ret":"_SOCKET*",
+    "name":"support_trisock.cpp_CSocket_dtor_FUN_00548ee0",
+    "ret":"CSocket*",
     "vars":{
       "params":[
         {
-          "name":"socket_handle",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -57953,7 +57963,7 @@
               }
             ]
           },
-          "type":"_SOCKET*"
+          "type":"CSocket*"
         },
         {
           "name":"flags",
@@ -57969,7 +57979,7 @@
               }
             ]
           },
-          "type":"int"
+          "type":"uint"
         }
       ],
       "ret_storage":{
@@ -57995,12 +58005,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"support_trisock.cpp_isSocketValid_FUN_00548f60",
+    "name":"support_trisock.cpp_CSocket_isSocketValid_FUN_00548f60",
     "ret":"int",
     "vars":{
       "params":[
         {
-          "name":"socket_handle",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -58013,7 +58023,7 @@
               }
             ]
           },
-          "type":"_SOCKET*"
+          "type":"CSocket*"
         }
       ],
       "ret_storage":{
@@ -58039,12 +58049,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"support_trisock.cpp_getSocketName_FUN_005491e0",
+    "name":"support_trisock.cpp_CSocket_getSocketName_FUN_005491e0",
     "ret":"int",
     "vars":{
       "params":[
         {
-          "name":"socket_handle",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -58057,7 +58067,7 @@
               }
             ]
           },
-          "type":"_SOCKET*"
+          "type":"CSocket*"
         },
         {
           "name":"out_address",

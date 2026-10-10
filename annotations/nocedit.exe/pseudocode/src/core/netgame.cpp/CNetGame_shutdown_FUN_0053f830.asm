@@ -11,8 +11,8 @@
 ;
 ; Called Functions:
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_0053fd00
-;   support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20
 ;   support_trisock.cpp_cleanupWinsock_FUN_005e1ee0
+;   support_trisock.cpp_CSocket_closeSocket_FUN_005e1d20
 ;
 ; *****************************************************************************
 
@@ -28,8 +28,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 0053f83f
     ADD EAX,0x170                       ; 0053f843
     PUSH EAX                            ; 0053f848
-    CALL support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20 ; 0053f849
-        ;   XREF to: 005e1d20 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20(_SOCKET * socket_handle)
+    CALL support_trisock.cpp_CSocket_closeSocket_FUN_005e1d20 ; 0053f849
+        ;   XREF to: 005e1d20 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_CSocket_closeSocket_FUN_005e1d20(CSocket * this_ptr)
     ADD ESP,0x4                         ; 0053f84e
     JMP 0x005e1ee0                      ; 0053f851
         ;   XREF to: 005e1ee0 (UNCONDITIONAL_CALL)

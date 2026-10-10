@@ -14,6 +14,7 @@
 
 #include "system/watcom.h"
 #include "core/file_search.h"   // nocturne_find_files() — shared with kernel32
+#include "watcom/path.h"        // watcom_resolve_fs_path()
 
 #include <cerrno>
 #include <cstdlib>
@@ -258,6 +259,28 @@ int _mkdir(const char* path) {
     // directory is already there.
     return std::filesystem::create_directory(std::filesystem::path(path), ec) ? 0 : -1;
 }
+
+// =============================================================================
+// File Attribute Functions (io.h)
+// =============================================================================
+
+#if !defined(_WIN32)
+
+// Watcom maps the mode onto the one attribute Windows has: read-only unless
+// S_IWRITE (0x80) is set. Owner write is the POSIX equivalent.
+int _chmod(const char* path, int mode) {
+    namespace fs = std::filesystem;
+    std::error_code ec;
+    fs::permissions(fs::path(watcom_resolve_fs_path(path)), fs::perms::owner_write,
+                    (mode & 0x80) ? fs::perm_options::add : fs::perm_options::remove, ec);
+    if (ec) {
+        errno = ec.value();
+        return -1;
+    }
+    return 0;
+}
+
+#endif
 
 // =============================================================================
 // Heap Functions (malloc.h)

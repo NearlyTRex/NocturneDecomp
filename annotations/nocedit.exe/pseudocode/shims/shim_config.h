@@ -26,10 +26,6 @@
 // addition is with its feature. Where that split separates the two halves of
 // one subsystem, each side names the other.
 
-// Numeric magnitude constants used by keep/shim code (kept separate from the
-// behavior toggles below).
-#include "config/shim_constants.h"
-
 // The toggles. Authenticity first: NOCTURNE_AUTHENTIC_NETPLAY and
 // NOCTURNE_AUTHENTIC_RNG gate features whose own config headers follow.
 #include "config/shim_config_authentic.h"
@@ -62,33 +58,21 @@
 
 // The Graphics Options resolution list (nocturne_resolution_*) — one ordered
 // table in place of the shipped selector's hardcoded game_pixy chain.
-#include "game/resolution.h"
+#include "gl/resolution.h"
 
 // Window mode (nocturne_window_mode_*) — declared here so decompiled TUs
 // reach it through nocturne.h.
 #include "gl/window_mode.h"
 
-// Holding the screen across a video mode change, for a caller that changes mode
-// with the simulation standing still and so has nothing that would draw the
-// picture again. Save copies the frame buffer aside; restore puts it back and
-// pushes it to the target, and declines if the mode is no longer the one it was
-// saved from. No caller today — the pause menu draws the scene again instead,
-// so that the graphics settings it just changed are visible in it.
-//
-// Declared rather than included: renderer/trigl_device.h carries the batch
-// types with it, and no decompiled TU needs those.
-#ifdef __cplusplus
-extern "C" {
-#endif
-int nocturne_trigl_device_save_screen(void);
-int nocturne_trigl_device_restore_screen(void);
-
 // The draws between these carry a reflection direction rather than a position in
 // an image, which only the pass emitting them knows. Reached from
 // CDemonSet::renderEnvMapTriangles and gated there on
-// NOCTURNE_AUTHENTIC_ENVMAP_SHADING. Declared rather than included for the same
-// reason as the pair above: renderer/trigl_gl.h carries the batch and pipeline
-// types with it, and no decompiled TU needs those.
+// NOCTURNE_AUTHENTIC_ENVMAP_SHADING. Declared rather than included:
+// renderer/trigl_gl.h carries the batch and pipeline types with it, and no
+// decompiled TU needs those.
+#ifdef __cplusplus
+extern "C" {
+#endif
 void nocturne_trigl_envmap_pass_begin(void);
 void nocturne_trigl_envmap_pass_end(void);
 
@@ -103,7 +87,7 @@ void nocturne_trigl_envmap_pass_end(void);
 // Console sizing, history and glyphs (nocturne_console_*) — declared here so
 // the engine/console.cpp TUs reach it through nocturne.h. Inert under
 // NOCTURNE_AUTHENTIC_CONSOLE.
-#include "game/console.h"
+#include "core/console.h"
 
 // The window proc's extension point for messages the shipped one never saw
 // (nocturne_window_message, the mouse wheel) — declared here so the wincore TU
@@ -113,7 +97,7 @@ void nocturne_trigl_envmap_pass_end(void);
 
 // HUD scaling (nocturne_ui_*) — declared here so the HUD TUs reach it through
 // nocturne.h.
-#include "game/ui_scale.h"
+#include "core/ui_scale.h"
 
 // The level movies play at (nocturne_movie_*), reached from the menu TU for
 // the Sound Options line and from the movie decoder for the gain itself.
@@ -123,6 +107,11 @@ void nocturne_trigl_envmap_pass_end(void);
 // (nocturne_goggle_look_*), reached from the set and game TUs. Inert under
 // NOCTURNE_AUTHENTIC_GOGGLE_LOOK.
 #include "game/goggle_look.h"
+
+// A script's timed camera hold counted down while the goggles skip the
+// director (nocturne_goggles_camera_hold_tick), from CGame::runGameSession.
+// Gated there on NOCTURNE_AUTHENTIC_GOGGLES_CAMERA_HOLD.
+#include "game/goggles_camera_hold.h"
 
 // Flashlight, beam, goggles and battery per hero (nocturne_hero_*), reached
 // from the stranger, weapon, inv, set and game TUs. Inert under
@@ -149,6 +138,14 @@ void nocturne_trigl_envmap_pass_end(void);
 // reach it through nocturne.h.
 #include "net/net_config.h"
 
+// Network session state and the broadcast every netplay module sends with
+// (nocturne_net_session_*). Not gated: it only reads g_CNetGamePtr.
+#include "net/net_session.h"
+
+// The packet types the netplay additions send, in one enum so no two collide,
+// and the header fill and type test every module makes (nocturne_net_packet_*).
+#include "net/net_packets.h"
+
 // The main menu's MULTIPLAYER submenu (nocturne_net_menu_*), reached from the
 // main.c menu loop.
 #include "net/net_menu.h"
@@ -171,7 +168,7 @@ void nocturne_trigl_envmap_pass_end(void);
 
 // The detailed sound error console lines (nocturne_sound_report_*), reached
 // from snddx.cpp's allocateSfx. Gated by NOCTURNE_AUTHENTIC_SOUND_ERROR_LOG.
-#include "game/sound_report.h"
+#include "debug/sound_report.h"
 
 // Re-applying a script's opening addLightFilter lines after a save load
 // (nocturne_light_filter_load_replay), reached from game.cpp's loadGame.
@@ -190,7 +187,7 @@ void nocturne_trigl_envmap_pass_end(void);
 
 // The Debug page's frame-rate readout (nocturne_perf_overlay_render), drawn from
 // CGame::processFrame after the HUD. Inert under NOCTURNE_AUTHENTIC_CHEAT_MENU.
-#include "game/perf_overlay.h"
+#include "debug/perf_overlay.h"
 
 // The HQ missions' refusal of the draw and flashlight keys
 // (nocturne_hq_filter_input), applied in CGame::playerControls. Gated by
@@ -224,6 +221,18 @@ void nocturne_trigl_envmap_pass_end(void);
 // ordinary functions; it is the lobby's call sites that are gated.
 #include "net/net_hero.h"
 
+// Which heroes are players (nocturne_hero_slot, nocturne_hero_is_player): the
+// one membership test every hero shim keys on.
+#include "game/hero_slot.h"
+
+// Motion, movement and aim helpers the hero shims share (nocturne_hero_motion_*,
+// nocturne_hero_move_world, nocturne_hero_approach, nocturne_hero_look_pitch).
+#include "game/hero_motion.h"
+
+// Melee helpers the hero shims share (nocturne_hero_melee_*,
+// nocturne_hero_bone_world, nocturne_hero_in_set).
+#include "game/hero_melee.h"
+
 // The weapon each hero class starts holding (nocturne_hero_default_weapon),
 // reached from CDemonMission::createOneHero — the one place a player hero is
 // built, and the only one whose inventory is not immediately overwritten by
@@ -243,17 +252,46 @@ void nocturne_trigl_envmap_pass_end(void);
 #include "game/hero_interact.h"
 #include "game/hero_grab.h"
 
+// A player Svetlana can be grabbed (nocturne_svetlana_get_grabbed), from
+// CSvetlana::getGrabbed. Gated on NOCTURNE_AUTHENTIC_HERO_ACTIONS.
+#include "game/hero_svetlana.h"
+
 // Health-item use, auto-use and the health bar on damage (nocturne_hero_items_*),
 // reached from the process and processDamage of the classes that had none of
 // it. Gated at those call sites on NOCTURNE_AUTHENTIC_HERO_ACTIONS.
 #include "game/hero_items.h"
+
+// The Stranger's fall damage (nocturne_hero_fall_move), reached from the
+// moveAndCollide call in each other class's process. Gated at those call sites
+// on NOCTURNE_AUTHENTIC_HERO_ACTIONS.
+#include "game/hero_fall.h"
+
+// A killed hero whose DIE request was lost (nocturne_hero_check_death),
+// checked from the process of each class that is not the Stranger. Gated at
+// those call sites on NOCTURNE_AUTHENTIC_HERO_ACTIONS.
+#include "game/hero_death.h"
+
+// Cold breath (nocturne_hero_breath), reached from the process of the six
+// classes that never call CCharacter::processSmoking. Gated at those call
+// sites on NOCTURNE_AUTHENTIC_HERO_ACTIONS.
+#include "game/hero_breath.h"
+
+// The one per-frame call each non-Stranger hero class makes
+// (nocturne_hero_frame), which runs the death check, health items, breath and
+// Moloch's regeneration for the classes each applies to. Gated at the call
+// sites on NOCTURNE_AUTHENTIC_HERO_ACTIONS.
+#include "game/hero_frame.h"
+
+// Shoving an enemy back from a hero (nocturne_hero_shove_*), used by
+// Gabriella's kick and the Colonel's push-off.
+#include "game/hero_shove.h"
 
 // Status bars sized by a hero's maximum health (nocturne_status_bar_*), noted
 // from CCharacter::process and processDamage and read by CGame::renderOverlay.
 // Gated at those call sites on NOCTURNE_AUTHENTIC_STATUS_BAR_WIDTH.
 #include "game/status_bar.h"
 
-// Name lookup that also sees carried items (nocturne_find_actor_or_carried_item),
+// Name lookup that also sees carried items (nocturne_item_names_find_actor),
 // reached from CDemonMission::generateUniqueActorName and gated there on
 // NOCTURNE_AUTHENTIC_ITEM_NAMES.
 #include "game/item_names.h"
@@ -282,6 +320,10 @@ void nocturne_trigl_envmap_pass_end(void);
 // Options screen and asked for wherever the game would set g_ThemeFont. Gated
 // at those sites on NOCTURNE_AUTHENTIC_MENU_FONT.
 #include "core/menu_font.h"
+
+// The moon backdrop, start-y and cancel test every front-end list shares
+// (nocturne_menu_*), reached from the main menu, Options and Graphics Options.
+#include "core/menu_screen.h"
 
 // What this build calls itself (nocturne_version*), reached from the entry
 // point for --version and from the game TU for the console banner and the menu
@@ -382,11 +424,11 @@ void nocturne_trigl_envmap_pass_end(void);
 // reflected actor's bounding box is tested against the mirror camera rather
 // than through the actor transform its caller pushed. Declares nothing when
 // NOCTURNE_AUTHENTIC_MIRROR_CULL is 1.
-#include "game/mirror_cull.h"
+#include "renderer/mirror_cull.h"
 
 // The other saved camera state (g_MirrorSceneCameraState), shared by
 // CDemonSet::setupMirrorRendering and CDemonSet::restoreCameraAfterMirror, so
 // the scene camera is put back after a reflected pass rather than rebuilt from
 // a field of view sampled while a pushed viewport had reset it. Declares
 // nothing when NOCTURNE_AUTHENTIC_MIRROR_PROJECTION is 1.
-#include "game/mirror_projection.h"
+#include "renderer/mirror_projection.h"

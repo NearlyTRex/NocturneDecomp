@@ -36,12 +36,12 @@ void __cdecl core_colonel_cpp_CColonel_process_FUN_0043fa00(CColonel *this_ptr,f
   CDemonActor *pCVar3;
   CVector3f *pCVar1;
 
-  iVar5 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
+  iVar5 = core_charactr_cpp_CCharacter_processCharacter_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar5 == 0) {
     return;
   }
 #if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
-  nocturne_hero_items_process(&this_ptr->base);
+  nocturne_hero_frame(&this_ptr->base,delta_time);
 #endif
   fVar10 = (this_ptr->base).invincibility_timer - delta_time;
   (this_ptr->base).invincibility_timer = fVar10;
@@ -165,7 +165,10 @@ LAB_0043fad3:
   }
 switchD_0043fe37_caseD_5:
 #if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
-  nocturne_hero_grab_escape(&this_ptr->base,delta_time);
+  if (nocturne_hero_grab_escape(&this_ptr->base,delta_time) != 0) {
+    nocturne_colonel_push_off(this_ptr);
+  }
+  nocturne_hero_shove_step(&this_ptr->base,delta_time);
 #endif
   pCVar3 = (this_ptr->base).base.grabbed_by;
   if (pCVar3 == (CDemonActor *)0x0) {
@@ -186,7 +189,11 @@ switchD_0043fe37_caseD_5:
     (this_ptr->base).base.position_delta.x = 0.0f;
     (this_ptr->base).base.position_delta.y = 0.0f;
     (this_ptr->base).base.position_delta.z = 0.0f;
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+    nocturne_hero_fall_move(&this_ptr->base,&local_68);
+#else
     core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40((CCharacter *)this_ptr,&local_68);
+#endif
   }
   else {
     if ((this_ptr->base).base.grabbed_type == 0) {

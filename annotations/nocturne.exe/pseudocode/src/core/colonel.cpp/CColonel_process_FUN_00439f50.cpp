@@ -49,7 +49,8 @@ void __cdecl core_colonel_cpp_CColonel_process_FUN_00439f50(CColonel *this_ptr,f
   CCharacter_full_vtable *local_14;
   
   bVar12 = 0;
-  iVar5 = core_charactr_cpp_CCharacter_process_FUN_004259f0((CCharacter *)this_ptr,delta_time);
+  iVar5 = core_charactr_cpp_CCharacter_processCharacter_FUN_004259f0
+                    ((CCharacter *)this_ptr,delta_time);
   if (iVar5 == 0) {
     return;
   }

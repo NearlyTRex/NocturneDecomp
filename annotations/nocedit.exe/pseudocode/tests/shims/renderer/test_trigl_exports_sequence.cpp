@@ -177,8 +177,8 @@ struct Frame {
             (uchar *)palette.data(), nullptr);
     }
 
-    void draw() {
-        ((DrawPolyListFn)entry("APIDLLdrawPolyList"))(quad.vertices, quad.list, 1, kOpaque);
+    void draw(int render_flags = kOpaque) {
+        ((DrawPolyListFn)entry("APIDLLdrawPolyList"))(quad.vertices, quad.list, 1, render_flags);
     }
 
     void end() {
@@ -413,6 +413,33 @@ NOCTURNE_TEST(depth_survives_the_frame_being_locked_and_unlocked) {
         if (call.name != "DrawElements") continue;
         CHECK(call.depth_test != 0);
         CHECK(call.depth_write != 0);
+    }
+}
+
+// A draw that only tests depth keeps writes off across a depth clear between its
+// draws. The clear needs writes on and must not leave them on.
+NOCTURNE_TEST(depth_writes_stay_off_across_a_depth_clear) {
+    Frame frame;
+    std::vector<unsigned char> palette(768, 0x40);
+    std::vector<unsigned> pixels = image(64);
+    SMRGLTextureBasic wall = named("wall.raw");
+    // TEXTURED | DEPTH_TEST, no DEPTH_WRITE.
+    const int tested_only = 0x001 | 0x040;
+
+    frame.begin();
+    frame.select(&wall, pixels, palette);
+    frame.draw(tested_only);
+    ((VoidIntFn)entry("APIDLLclearZBuffer"))();
+    frame.select(&wall, pixels, palette);
+    frame.draw(tested_only);
+    frame.end();
+
+    const gl_recorder::State &log = gl_recorder::state();
+    CHECK(log.count("DrawElements") >= 2);
+    for (const gl_recorder::Call &call : log.calls) {
+        if (call.name != "DrawElements") continue;
+        CHECK(call.depth_test != 0);
+        CHECK(call.depth_write == 0);
     }
 }
 

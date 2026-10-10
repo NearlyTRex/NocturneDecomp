@@ -213,11 +213,11 @@ void __cdecl presentToExternalRenderer(int skip_buffer_copy);
 
 // Original: engine_special.cpp_masterZBuffer_FUN_005b7d00
 // Address: 005b7d00
-int __cdecl masterZBuffer(int z_buffer_mode);
+int __cdecl masterZBuffer(int slot);
 
 // Original: engine_special.cpp_restoreZBuffer_FUN_005b7d20
 // Address: 005b7d20
-int __cdecl restoreZBuffer(int left,int top,int mode,int right,int bottom);
+int __cdecl restoreZBuffer(int slot,int left,int top,int right,int bottom);
 
 // Original: engine_special.cpp_getVideoMemory_FUN_005b7d60
 // Address: 005b7d60

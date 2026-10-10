@@ -241,6 +241,7 @@ void APIENTRY r_BindFramebuffer(GLenum, GLuint fbo) { note("BindFramebuffer", fb
 // into it. Nothing is rendered here, so the read leaves the buffer as it found
 // it — what these tests ask about is the order of the calls around it.
 void APIENTRY r_ReadBuffer(GLenum which) { note("ReadBuffer", (unsigned)which); }
+void APIENTRY r_DrawBuffer(GLenum which) { note("DrawBuffer", (unsigned)which); }
 void APIENTRY r_ReadPixels(GLint, GLint, GLsizei w, GLsizei h, GLenum, GLenum, void *) {
     note("ReadPixels", (unsigned)w, (unsigned)h);
 }
@@ -329,6 +330,7 @@ void install() {
     gl.DrawElements = r_DrawElements;
 
     gl.ReadBuffer = r_ReadBuffer;
+    gl.DrawBuffer = r_DrawBuffer;
     gl.ReadPixels = r_ReadPixels;
     gl.GetTexImage = r_GetTexImage;
     gl.Clear = r_Clear;
@@ -395,9 +397,9 @@ void install() {
 
 }  // namespace gl_recorder
 
-// The renderer draws into the scene framebuffer when there is one. There is no
-// framebuffer here, and 0 is the answer that means exactly that.
-extern "C" unsigned nocturne_gl_scene_fbo(void) { return 0; }
+// The renderer draws into the scene framebuffer when there is one. There is none
+// unless a test asks for one, and 0 is the answer that means exactly that.
+extern "C" unsigned nocturne_gl_scene_fbo(void) { return gl_recorder::state().scene_fbo; }
 
 // The table the renderer reaches GL through. Owned by the recorder in a test
 // build, so gl_api.cpp — which would pull in SDL — stays out of the link.

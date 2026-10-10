@@ -46,10 +46,10 @@
 ;   core_netgame.cpp_CNetGame_init_FUN_0053f780
 ;   core_sound.cpp_CSound_findAllSoundFiles_FUN_005b2d00
 ;   crt_env.c_getenv_FUN_006013f0
+;   crt_io.c__chmod_FUN_00600c30
 ;   crt_stdio.c_freopen_FUN_00601b14
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_2d.c_initGraphicsSystem_FUN_00401010
-;   engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_00410520
 ;   ... and 24 more
 ;
 ; *****************************************************************************
@@ -98,8 +98,8 @@ section .text
     ADD ESP,0xc                         ; 00507ade
     PUSH 0x1c0                          ; 00507ae1
     PUSH 0x6352cc                       ; 00507ae6 | = "stderr.txt"
-    CALL engine_dosio.cpp_setReadonlyAttribute_FUN_00600c30 ; 00507aeb
-        ;   XREF to: 00600c30 (UNCONDITIONAL_CALL)  ; DWORD engine_dosio.cpp_setReadonlyAttribute_FUN_00600c30(char * filename, DWORD file_attributes)
+    CALL crt_io.c__chmod_FUN_00600c30   ; 00507aeb
+        ;   XREF to: 00600c30 (UNCONDITIONAL_CALL)  ; int crt_io.c__chmod_FUN_00600c30(char * path, int mode)
     ADD ESP,0x8                         ; 00507af0
     TEST EAX,EAX                        ; 00507af3
     JZ 0x00507b1a                       ; 00507af5
@@ -164,8 +164,8 @@ section .text
     CALL engine_matrix.c_initializeTrigTables_FUN_0050c530 ; 00507bc1
         ;   XREF to: 0050c530 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_initializeTrigTables_FUN_0050c530()
         ;   Label: LAB_00507bc1
-    CALL wincore_wddvmem.cpp_initTextureCache_FUN_00403790 ; 00507bc6
-        ;   XREF to: 00403790 (UNCONDITIONAL_CALL)  ; CTextureCache * wincore_wddvmem.cpp_initTextureCache_FUN_00403790()
+    CALL engine_3d.c_initTextureCache_FUN_00403790 ; 00507bc6
+        ;   XREF to: 00403790 (UNCONDITIONAL_CALL)  ; CTextureCache * engine_3d.c_initTextureCache_FUN_00403790()
     CALL engine_2d.c_initGraphicsSystem_FUN_00401010 ; 00507bcb
         ;   XREF to: 00401010 (UNCONDITIONAL_CALL)  ; void engine_2d.c_initGraphicsSystem_FUN_00401010()
     CALL wincore_winrun.cpp_calibrateCPUSpeed_FUN_005f2b80 ; 00507bd0

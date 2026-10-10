@@ -41,7 +41,7 @@ int __cdecl CIcePick::startThrowAttack(CIcePick *this_ptr);
 
 // Original: core_icepick.cpp_CIcePick_getCarryObjToBodyXForm_FUN_004baa50
 // Address: 004baa50
-void __stack2_esi CIcePick::getCarryObjToBodyXForm(CIcePick *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
+CMatrix3x4f * __stack2_esi CIcePick::getCarryObjToBodyXForm(CIcePick *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
 // Original: core_icepick.cpp_CIcePick_processAI_FUN_004baba0
 // Address: 004baba0

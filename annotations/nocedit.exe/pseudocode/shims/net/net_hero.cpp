@@ -56,6 +56,22 @@ const char *nocturne_net_hero_name(int hero_type)
     return k_hero_names[hero_type];
 }
 
+int nocturne_net_hero_type_of(const void *actor)
+{
+    int slot = nocturne_hero_slot(actor);
+
+    if (slot < 0) {
+        return -1;
+    }
+    if (nocturne_net_session_active() == 0) {
+        return (int)g_CGamePtr->hero_number;
+    }
+    if (slot >= (int)(sizeof(g_CNetGamePtr->players) / sizeof(g_CNetGamePtr->players[0]))) {
+        return -1;
+    }
+    return (int)g_CNetGamePtr->players[slot].hero_number;
+}
+
 // -1 until the host has broadcast a settings packet this session.
 static int s_host_view = -1;
 

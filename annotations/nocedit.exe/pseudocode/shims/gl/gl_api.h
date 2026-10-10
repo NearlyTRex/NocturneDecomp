@@ -37,6 +37,7 @@ struct NocturneGLApi {
     void (APIENTRY *Clear)(GLbitfield);
     void (APIENTRY *PixelStorei)(GLenum, GLint);
     void (APIENTRY *ReadBuffer)(GLenum);
+    void (APIENTRY *DrawBuffer)(GLenum);
     void (APIENTRY *ReadPixels)(GLint, GLint, GLsizei, GLsizei, GLenum, GLenum, void *);
     void (APIENTRY *GetTexImage)(GLenum, GLint, GLenum, GLenum, void *);
 

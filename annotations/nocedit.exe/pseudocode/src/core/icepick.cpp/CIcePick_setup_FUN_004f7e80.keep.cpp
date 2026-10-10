@@ -62,8 +62,7 @@ void __cdecl core_icepick_cpp_CIcePick_setup_FUN_004f7e80(CIcePick *this_ptr)
 #if NOCTURNE_AUTHENTIC_NETPLAY
   if (this_ptr == (CIcePick *)g_HeroActors[iVar1]) {
 #else
-  if ((this_ptr == (CIcePick *)g_HeroActors[iVar1]) &&
-      (g_CNetGamePtr->connection_type == CONNECTION_NONE)) {
+  if ((this_ptr == (CIcePick *)g_HeroActors[iVar1]) && (nocturne_net_session_active() == 0)) {
 #endif
     (((CIcePick *)g_HeroActors[iVar1])->base).base.collision_cylinder_radius = 1.5;
   }

@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 43,
-    "complexity_score": 21,
+    "complexity_score": 17,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 21,
+    "pseudocode_lines": 17,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 64
+    "total_lines": 60
   },
   "cross_references": [],
   "function": {
@@ -28,7 +28,7 @@
     ],
     "convention": "__cdecl",
     "name": "support_trisock.cpp_formatSocketAddress_FUN_005e1a30",
-    "signature": "void __cdecl support_trisock_cpp_formatSocketAddress_FUN_005e1a30(char *output_buffer,SNetworkAddr *network_addr)"
+    "signature": "void __cdecl support_trisock_cpp_formatSocketAddress_FUN_005e1a30(SNetworkAddr *network_addr,char *output_buffer)"
   },
   "function_calls": [
     {
@@ -84,44 +84,6 @@
     },
     "pcode_op_count": 156
   },
-  "resolved_suspects": [
-    {
-      "description": "Pointer value `&network_addr->ip_address` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 14,
-      "match": "(int)&network_addr->ip_address",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "buffer = (SNetworkAddr *)((int)&network_addr->ip_address + 1);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `&network_addr->ip_address` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 17,
-      "match": "(int)&network_addr->ip_address",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "network_addr = (SNetworkAddr *)((int)&network_addr->ip_address + 2);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 14,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "buffer = (SNetworkAddr *)((int)&network_addr->ip_address + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 17,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "network_addr = (SNetworkAddr *)((int)&network_addr->ip_address + 2);",
-      "type": "pointer_cast"
-    }
-  ],
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -131,17 +93,17 @@
     "variables": [
       {
         "is_param": true,
-        "name": "output_buffer",
+        "name": "network_addr",
         "offset": 4,
         "size": 4,
-        "type": "char *"
+        "type": "SNetworkAddr *"
       },
       {
         "is_param": true,
-        "name": "network_addr",
+        "name": "output_buffer",
         "offset": 8,
         "size": 4,
-        "type": "SNetworkAddr *"
+        "type": "char *"
       }
     ]
   },

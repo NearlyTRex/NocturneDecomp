@@ -26,10 +26,7 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_0053f900(CNetG
 
   core_netgame_cpp_CNetGame_disconnect_FUN_0053fd00(this_ptr,0);
 #if !NOCTURNE_AUTHENTIC_NET_CONFIG
-  if (nocturne_net_player_name()[0] != '\0') {
-    strcpy(this_ptr->player_name,nocturne_net_player_name());
-  }
-  net_port = (uint16_t)nocturne_net_port(0x1ddf);
+  net_port = (uint16_t)nocturne_net_apply_config(this_ptr,0x1ddf);
 #else
   net_port = 0x1ddf;
 #endif

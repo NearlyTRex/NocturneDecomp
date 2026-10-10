@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 964,
-    "complexity_score": 431,
+    "complexity_score": 432,
     "cross_reference_count": 0,
     "function_call_count": 37,
     "global_count": 26,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 431,
+    "pseudocode_lines": 432,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 1395
+    "total_lines": 1396
   },
   "cross_references": [],
   "function": {
@@ -89,7 +89,7 @@
     {
       "addr": "00429870",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_process_FUN_00429870"
+      "name": "core_charactr.cpp_CCharacter_processCharacter_FUN_00429870"
     },
     {
       "addr": "0042ec40",
@@ -447,7 +447,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 132,
+      "line": 133,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -456,7 +456,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 143,
+      "line": 144,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -465,7 +465,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 327,
+      "line": 328,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -474,7 +474,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 334,
+      "line": 335,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -483,7 +483,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 175,
+      "line": 176,
       "match": "cascade_constant_fill",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -492,7 +492,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 370,
+      "line": 371,
       "match": "cascade_constant_fill",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -501,7 +501,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 399,
+      "line": 400,
       "match": "cascade_constant_fill",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -510,7 +510,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 402,
+      "line": 403,
       "match": "cascade_constant_fill",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -519,7 +519,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_28` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*local_28) + offsetof(subfield)` equals the real array stride. Replace `local_28->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 147,
+      "line": 148,
       "match": "local_28 = (T *)&local_28[N].SUBFIELD",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -528,7 +528,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_20` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*local_20) + offsetof(subfield)` equals the real array stride. Replace `local_20->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 148,
+      "line": 149,
       "match": "local_20 = (T *)&local_20[N].SUBFIELD",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -537,7 +537,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_18` was initialized to the address of an array element's subfield (`local_18 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*local_18)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `local_18->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
-      "line": 149,
+      "line": 150,
       "match": "local_18 = local_18 + N",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -546,7 +546,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar14` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar14->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 164,
+      "line": 165,
       "match": "pCVar14 = (T *)((pCVar14->FIELD).SUBFIELD...ARRAY + CONST)",
       "resolution_source": "keep",
       "severity": "moderate",

@@ -23,6 +23,9 @@ typedef struct SHeroWeapon {
     // Add a pistol as a *second* weapon, in a network game only. The class has
     // to be able to hold one for this to mean anything - see hero_add_pistol.
     int         net_extra_gun;
+    // HERO_WEAPON_MELEE only: the weapon's actor name, when it needs a slot
+    // text of its own. Null leaves it "Your_weapon".
+    const char *actor_name;
 } SHeroWeapon;
 
 // One row per EHeroType, in enum order. The models are ITEMLIST.TXT rows, so
@@ -54,7 +57,7 @@ static const SHeroWeapon k_hero_weapon[] = {
     { HERO_WEAPON_SIDEARM, (const char *)0x0, 0 },  // HERO_TYPE_COLONEL
     // The amulet names his two buttons: draw morphs, fire strikes as the demon.
     // See hero_moloch.h.
-    { HERO_WEAPON_MELEE,  "AMULET.KFM",       0 },  // HERO_TYPE_MOLOCH
+    { HERO_WEAPON_MELEE,  "AMULET.KFM",       0, NOCTURNE_MOLOCH_AMULET_NAME },  // HERO_TYPE_MOLOCH
 };
 
 #define HERO_WEAPON_COUNT ((int)(sizeof(k_hero_weapon) / sizeof(k_hero_weapon[0])))
@@ -77,10 +80,26 @@ static CInventory *hero_reset_inventory(CHero *hero)
     return inventory;
 }
 
-static void hero_install_melee(CHero *hero, const char *item_model_name)
+// A new `class_name` weapon named `actor_name`, or null if the class did not
+// come out as a CWeapon. The two steps are the ones CHero::createDefaultWeapon
+// takes for its CGun.
+static CWeapon *hero_create_weapon(const char *class_name, const char *actor_name)
+{
+    CDemonActor *actor_ptr;
+    CWeapon *weapon;
+
+    actor_ptr = core_actor_cpp_createActorByName_FUN_0040c430((char *)class_name);
+    weapon = (CWeapon *)core_actor_cpp_castToClassHash_FUN_0040c790
+                                  (actor_ptr, g_CWeaponClassInfo.name_hash);
+    if (weapon != (CWeapon *)0x0) {
+        strcpy(weapon->base.actor_name, actor_name);
+    }
+    return weapon;
+}
+
+static void hero_install_melee(CHero *hero, const char *item_model_name, const char *actor_name)
 {
     CInventory *inventory;
-    CDemonActor *actor_ptr;
     CWeapon *weapon;
 
     inventory = hero_reset_inventory(hero);
@@ -98,18 +117,15 @@ static void hero_install_melee(CHero *hero, const char *item_model_name)
     // world, which this one never is.
     //
     // Nothing below touches a subclass field, so the CWeapon view is the whole
-    // of it; the two steps are the ones CHero::createDefaultWeapon takes for
-    // its CGun.
-    actor_ptr = core_actor_cpp_createActorByName_FUN_0040c430((char *)"CShovel");
-    weapon = (CWeapon *)core_actor_cpp_castToClassHash_FUN_0040c790
-                                  (actor_ptr, g_CWeaponClassInfo.name_hash);
+    // of it.
+    weapon = hero_create_weapon("CShovel",
+                                (actor_name != (const char *)0x0) ? actor_name : "Your_weapon");
     if (weapon == (CWeapon *)0x0) {
         // The hero keeps an empty slot rather than the pistol. Losing the
         // weapon is not worth quitting the process over.
         return;
     }
 
-    strcpy(weapon->base.actor_name, "Your_weapon");
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
               (&weapon->model, (char *)item_model_name);
 
@@ -135,12 +151,6 @@ static void hero_rename_weapon(CHero *hero, const char *item_model_name)
 // What the extra pistol is loaded with, and what it is put back to after every
 // shot. One constant so the reserve and the top-up cannot drift apart.
 #define HERO_EXTRA_GUN_AMMO 100
-
-static int hero_is_network_game(void)
-{
-    return ((g_CNetGamePtr != (CNetGame *)0x0) &&
-            (g_CNetGamePtr->connection_type != CONNECTION_NONE));
-}
 
 // A second weapon, added beside whatever the hero already holds.
 //
@@ -201,22 +211,30 @@ static int is_extra_gun(const CHero *hero, const CWeapon *weapon)
     return 0;
 }
 
-static void hero_add_pistol(CHero *hero)
+// A CGun named `actor_name`, loaded with the extra-gun reserve and added to
+// the hero's inventory. Null if the CGun could not be made.
+static CWeapon *hero_add_gun(CHero *hero, const char *actor_name)
 {
-    CDemonActor *actor_ptr;
     CWeapon *weapon;
 
-    actor_ptr = core_actor_cpp_createActorByName_FUN_0040c430((char *)"CGun");
-    weapon = (CWeapon *)core_actor_cpp_castToClassHash_FUN_0040c790
-                                  (actor_ptr, g_CWeaponClassInfo.name_hash);
+    weapon = hero_create_weapon("CGun", actor_name);
     if (weapon == (CWeapon *)0x0) {
-        return;
+        return weapon;
     }
-    strcpy(weapon->base.actor_name, "Your_weapon");
     weapon->ammo_count = HERO_EXTRA_GUN_AMMO;
     core_inv_cpp_CInventory_addItem_FUN_004fd600
               (&hero->inventory, (CDemonActor *)weapon, 0);
-    remember_extra_gun(hero, weapon);
+    return weapon;
+}
+
+static void hero_add_pistol(CHero *hero)
+{
+    CWeapon *weapon;
+
+    weapon = hero_add_gun(hero, "Your_weapon");
+    if (weapon != (CWeapon *)0x0) {
+        remember_extra_gun(hero, weapon);
+    }
 }
 
 // The Colonel's pistol replaces the CHero one outright. It is a CGun like the
@@ -225,22 +243,24 @@ static void hero_add_pistol(CHero *hero)
 // bottomless. The name survives a save, where a pointer would not.
 static void hero_install_sidearm(CHero *hero)
 {
-    CDemonActor *actor_ptr;
-    CWeapon *weapon;
-
     hero_reset_inventory(hero);
-    actor_ptr = core_actor_cpp_createActorByName_FUN_0040c430((char *)"CGun");
-    weapon = (CWeapon *)core_actor_cpp_castToClassHash_FUN_0040c790
-                                  (actor_ptr, g_CWeaponClassInfo.name_hash);
-    if (weapon == (CWeapon *)0x0) {
+    if (hero_add_gun(hero, NOCTURNE_COLONEL_SIDEARM_NAME) == (CWeapon *)0x0) {
         return;
     }
-    strcpy(weapon->base.actor_name, NOCTURNE_COLONEL_SIDEARM_NAME);
-    weapon->ammo_count = HERO_EXTRA_GUN_AMMO;
-    core_inv_cpp_CInventory_addItem_FUN_004fd600
-              (&hero->inventory, (CDemonActor *)weapon, 0);
     core_inv_cpp_CInventory_selectWeapon_FUN_004feb10
               (&hero->inventory, (CDemonActor *)0x0, 5, 1);
+}
+
+extern "C" int nocturne_hero_weapon_is_sidearm(CWeapon *weapon)
+{
+    return (weapon != (CWeapon *)0x0) &&
+           (_stricmp(weapon->base.actor_name, (char *)NOCTURNE_COLONEL_SIDEARM_NAME) == 0);
+}
+
+extern "C" int nocturne_hero_weapon_hides_ammo(CWeapon *weapon)
+{
+    return (core_actor_cpp_isOfClass_FUN_0040c6d0(&weapon->base, (char *)"CBaronWeapon") != 0) ||
+           (core_actor_cpp_isOfClass_FUN_0040c6d0(&weapon->base, (char *)"CShovel") != 0);
 }
 
 extern "C" void nocturne_hero_reload_extra_gun(CHero *hero, CWeapon *weapon)
@@ -250,11 +270,11 @@ extern "C" void nocturne_hero_reload_extra_gun(CHero *hero, CWeapon *weapon)
     }
     // The Colonel's pistol is bottomless in any game: he has no way to collect
     // ammunition either, and it is the only weapon he has.
-    if (_stricmp(weapon->base.actor_name, (char *)NOCTURNE_COLONEL_SIDEARM_NAME) == 0) {
+    if (nocturne_hero_weapon_is_sidearm(weapon) != 0) {
         weapon->ammo_count = HERO_EXTRA_GUN_AMMO;
         return;
     }
-    if (hero_is_network_game() == 0) {
+    if (nocturne_net_session_active() == 0) {
         return;
     }
     // Only the pistol handed out above: not the Baron, and not a gun the hero
@@ -281,7 +301,7 @@ extern "C" void nocturne_hero_default_weapon(CHero *hero, int hero_type)
 
     switch (entry->action) {
     case HERO_WEAPON_MELEE:
-        hero_install_melee(hero, entry->item_model_name);
+        hero_install_melee(hero, entry->item_model_name, entry->actor_name);
         break;
     case HERO_WEAPON_NONE:
         // The clear inside initialize is the whole operation: it leaves
@@ -301,24 +321,9 @@ extern "C" void nocturne_hero_default_weapon(CHero *hero, int hero_type)
 
     // After the action, so it is added beside the weapon chosen above rather
     // than being wiped by the initialize inside it.
-    if (entry->net_extra_gun != 0 && hero_is_network_game() != 0) {
+    if (entry->net_extra_gun != 0 && nocturne_net_session_active() != 0) {
         hero_add_pistol(hero);
     }
-    if (hero_type == HERO_TYPE_MOLOCH) {
-        nocturne_moloch_setup_items(hero);
-    }
-}
-
-static int hero_is_player(CHero *hero)
-{
-    int i;
-
-    for (i = 0; (i < 4) && (i < g_HeroCount); i++) {
-        if (g_HeroActors[i] == hero) {
-            return 1;
-        }
-    }
-    return 0;
 }
 
 static int hero_is_class(CHero *hero, uint name_hash)
@@ -334,7 +339,7 @@ static int item_is_class(CDemonActor *item, uint name_hash)
 
 extern "C" int nocturne_hero_can_hold_kind(CHero *hero, EHeroItemKind kind)
 {
-    if ((hero == (CHero *)0x0) || (hero_is_player(hero) == 0)) {
+    if ((hero == (CHero *)0x0) || (nocturne_hero_is_player(hero) == 0)) {
         return 1;
     }
     if ((kind == HERO_ITEM_OTHER) || (kind == HERO_ITEM_HEALTH)) {
@@ -450,7 +455,16 @@ extern "C" void nocturne_hero_stow_unselected_weapons(CHero *hero)
     }
 }
 
-extern "C" int nocturne_weapon_ejects_shell(CWeapon *weapon)
+extern "C" void nocturne_hero_put_away_weapon(CHero *hero, CWeapon *weapon)
+{
+    if ((hero == (CHero *)0x0) || (weapon == (CWeapon *)0x0) || (nocturne_hero_is_player(hero) == 0) ||
+        (weapon->weapon_state != WEAPON_STATE_IN_HAND)) {
+        return;
+    }
+    (*(((weapon->base).vtable._uw)->_uw).setWeaponState)(weapon, WEAPON_STATE_IN_INVENTORY);
+}
+
+extern "C" int nocturne_hero_weapon_ejects_shell(CWeapon *weapon)
 {
     if (weapon == (CWeapon *)0x0) {
         return 0;

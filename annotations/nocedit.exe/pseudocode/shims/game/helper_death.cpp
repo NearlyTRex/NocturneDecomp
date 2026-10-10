@@ -36,10 +36,8 @@ extern "C" int nocturne_helper_death_hold_hero(void)
     }
     // The companions are CHero subclasses (CSvetlana, CScat, CIcePick), so the
     // test is against the player heroes, not the class.
-    for (int i = 0; i < g_HeroCount; i++) {
-        if (focus == (CDemonActor *)g_HeroActors[i]) {
-            return 0;
-        }
+    if (nocturne_hero_is_player(focus) != 0) {
+        return 0;
     }
     character = (CCharacter *)focus;
     // isDead's own test in CEventList::evaluateAtom.

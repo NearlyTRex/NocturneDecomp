@@ -256,7 +256,7 @@ uint __cdecl core_actor_cpp_CDemonActor_playAmbientSound_FUN_0040a300(CDemonActo
 uint __cdecl core_actor_cpp_CDemonActor_playSoundWithDelay_FUN_0040a320(CDemonActor *this_ptr,char *sound_name,float volume);
 uint __cdecl core_actor_cpp_CDemonActor_playAmbientSoundWithDelay_FUN_0040a350(CDemonActor *this_ptr,char *sound_name,float delay);
 void __cdecl core_actor_cpp_CDemonActor_doNothing_FUN_0040a380(CDemonActor *this_ptr);
-int __cdecl core_actor_cpp_CDemonActor_testPointInCylinder_FUN_0040a390(CDemonActor *this_ptr,SCollisionReturnInfo *collision_info,float tolerance);
+int __cdecl core_actor_cpp_CDemonActor_testCylinderCollision_FUN_0040a390(CDemonActor *this_ptr,SCollisionReturnInfo *collision_info,float tolerance);
 int __cdecl core_actor_cpp_CDemonActor_testLineIntersection_FUN_0040a420(CDemonActor *this_ptr,CVector3f *line_start,CVector3f *line_end,CVector3f *out_intersection_point);
 CBoundingBox3D * __cdecl core_actor_cpp_CDemonActor_getWorldBoundingBox_FUN_0040a540(CDemonActor *this_ptr,CBoundingBox3D *output_bbox,SCollisionInfo *collision_info,int bounding_box_type);
 float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_0040a740(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,SActorRayHit *out_hit,SCollisionInfo *collision_info,int bbox_type,CBoundingBox3D *ray_bbox);
@@ -318,7 +318,7 @@ CDemonActor * __cdecl core_actor_cpp_castToClassHash_FUN_0040d890(CDemonActor *a
 void __cdecl core_actor_cpp_syncActorTypeIDs_FUN_0040d8c0(void);
 void __cdecl core_actor_cpp_resetActorTypeInfo_FUN_0040d8f0(void);
 uint __cdecl core_actor_cpp_CDemonActor_processFootstep_FUN_0040d930(CDemonActor *this_ptr,float volume);
-uint __cdecl core_actor_cpp_CDemonActor_processFootstepAt_FUN_0040d9f0(CDemonActor *this_ptr,CVector3f *location,float volume);
+uint __cdecl core_actor_cpp_CDemonActor_processFootstepAtOffset_FUN_0040d9f0(CDemonActor *this_ptr,CVector3f *location,float volume);
 uint __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040db50(CDemonActor *this_ptr,CVector3f *position,EGroundType ground_type,float volume);
 void __cdecl core_actor_cpp_setRandomSeed_FUN_0040dd20(uint seed_value);
 uint __cdecl core_actor_cpp_generateRandomValue_FUN_0040dd30(void);
@@ -415,7 +415,7 @@ void __cdecl core_backgnd_cpp_staticInit_FUN_0040fe70(void);
 CBackgroundActor * __cdecl core_backgnd_cpp_factoryFuncBackgroundActor_FUN_0040fea0(void);
 CDemonActorType * __cdecl core_backgnd_cpp_CBackgroundActor_getActorType_FUN_0040fec0(CBackgroundActor *this_ptr);
 CBackgroundActor * __cdecl core_backgnd_cpp_CBackgroundActor_ctor_FUN_0040fed0(CBackgroundActor *this_ptr);
-int __cdecl core_backgnd_cpp_CBackgroundActor_setup_FUN_0040ff30(CBackgroundActor *this_ptr);
+void __cdecl core_backgnd_cpp_CBackgroundActor_setup_FUN_0040ff30(CBackgroundActor *this_ptr);
 void __cdecl core_backgnd_cpp_CBackgroundActor_process_FUN_0040ff70(CBackgroundActor *this_ptr,float delta_time);
 void __cdecl core_backgnd_cpp_CBackgroundActor_renderBackground_FUN_0040ff80(CBackgroundActor *this_ptr,int layer_flag);
 int __cdecl core_backgnd_cpp_CBackgroundActor_renderOpaque_FUN_0040ffe0(CBackgroundActor *this_ptr);

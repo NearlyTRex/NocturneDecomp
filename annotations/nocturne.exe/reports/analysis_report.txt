@@ -6,11 +6,11 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 
 SUMMARY
 ----------------------------------------
-Total functions: 4922
+Total functions: 4921
 Clean functions: 2533 (51.5%)
-Functions with suspects: 2389 (48.5%)
+Functions with suspects: 2388 (48.5%)
 
-Total suspect patterns: 20956
+Total suspect patterns: 20964
 Average suspects per function: 4.26
 
 Virtual files: 203 total, 10 at 100%, 12 at 90%+
@@ -22,15 +22,15 @@ Average complexity score: 91.4
 
 COMPILATION STATUS
 ----------------------------------------
-Functions compiled: 4922
+Functions compiled: 4921
 Successful: 0 (0.0%)
-Failed: 4922
+Failed: 4921
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
   undefined_data            4062
-  pointer_cast              3557
-  pointer_truncation        2880
+  pointer_cast              3555
+  pointer_truncation        2889
   unrolled_memcpy           1476
   warning_overlapping_globals 864
   stack_param               766
@@ -39,7 +39,7 @@ SUSPECT PATTERN BREAKDOWN
   shadow_pointer_walk       544
   unrolled_strcpy           485
   stack_ref                 463
-  negative_offset           460
+  negative_offset           461
   unaffected_reg            388
   unnamed_param             371
   static_uninitvar          370
@@ -182,7 +182,7 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   0051b920: core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0051b920 (score: 2261, suspects: 178, lines: 456)
   0052f823: engine_special.cpp_renderMMXPerspectiveScanline16_FUN_0052f823 (score: 2042, suspects: 142, lines: 587)
   0052f031: engine_special.cpp_renderMMXPerspectiveScanline32_FUN_0052f031 (score: 2025, suspects: 142, lines: 570)
-  004a9270: core_ghoul.cpp_CGhoul_process_FUN_004a9270 (score: 1990, suspects: 86, lines: 1075)
+  004a9270: core_ghoul.cpp_CGhoul_process_FUN_004a9270 (score: 1991, suspects: 86, lines: 1076)
   0053a760: core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760 (score: 1952, suspects: 133, lines: 582)
   005384d0: core_stranger.cpp_CStranger_FUN_005384d0 (score: 1900, suspects: 120, lines: 645)
   0055e040: core_xform.cpp_transformAndClipGeometry_FUN_0055e040 (score: 1840, suspects: 135, lines: 455)
@@ -214,7 +214,7 @@ FUNCTIONS BY SUSPECT TYPE
     00404790: engine_3d.c_processTextureCoordinates_FUN_00404790
     ... and 677 more
 
-  pointer_cast (726 functions):
+  pointer_cast (725 functions):
     00401010: engine_2d.c_initGraphicsSystem_FUN_00401010
     004012d0: engine_2d.c_drawAntialiasedCharShadow_FUN_004012d0
     004013d0: engine_2d.c_drawAntialiasedChar_FUN_004013d0
@@ -225,9 +225,9 @@ FUNCTIONS BY SUSPECT TYPE
     00401f30: engine_2d.c_drawCharacterMasked_FUN_00401f30
     00402040: engine_2d.c_drawCharacterMaskedColor_FUN_00402040
     004021a0: engine_2d.c_drawCharacterHighlighted_FUN_004021a0
-    ... and 716 more
+    ... and 715 more
 
-  pointer_truncation (561 functions):
+  pointer_truncation (560 functions):
     00401010: engine_2d.c_initGraphicsSystem_FUN_00401010
     004012d0: engine_2d.c_drawAntialiasedCharShadow_FUN_004012d0
     004013d0: engine_2d.c_drawAntialiasedChar_FUN_004013d0
@@ -238,7 +238,7 @@ FUNCTIONS BY SUSPECT TYPE
     00402040: engine_2d.c_drawCharacterMaskedColor_FUN_00402040
     004021a0: engine_2d.c_drawCharacterHighlighted_FUN_004021a0
     004023b0: engine_2d.c_wrapTextToWidth_FUN_004023b0
-    ... and 551 more
+    ... and 550 more
 
   unrolled_memcpy (537 functions):
     004023b0: engine_2d.c_wrapTextToWidth_FUN_004023b0
@@ -344,7 +344,7 @@ FUNCTIONS BY SUSPECT TYPE
     00405900: engine_3d.c_drawLineStrip3D_FUN_00405900
     ... and 155 more
 
-  negative_offset (142 functions):
+  negative_offset (143 functions):
     00409d30: core_actor.cpp_CDemonActor_ctor_FUN_00409d30
     0040eb70: core_ammo.cpp_CAmmo_ctor_FUN_0040eb70
     0040f040: core_ammobox.cpp_CAmmoBox_ctor_FUN_0040f040
@@ -355,7 +355,7 @@ FUNCTIONS BY SUSPECT TYPE
     00411a10: core_bat.cpp_CBat_ctor_FUN_00411a10
     004132c0: core_batcreat.cpp_CBatCreature_dtor_FUN_004132c0
     00414c60: core_batman.cpp_CBatman_dtor_FUN_00414c60
-    ... and 132 more
+    ... and 133 more
 
   unaffected_reg (45 functions):
     00401710: engine_2d.c_drawLine3D_FUN_00401710
@@ -393,7 +393,7 @@ FUNCTIONS BY SUSPECT TYPE
     00405900: engine_3d.c_drawLineStrip3D_FUN_00405900
     0040b300: core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040b300
     00417730: core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_00417730
-    004259f0: core_charactr.cpp_CCharacter_process_FUN_004259f0
+    004259f0: core_charactr.cpp_CCharacter_processCharacter_FUN_004259f0
     0043abb0: core_console.cpp_staticInit_FUN_0043abb0
     00444920: core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_00444920
     ... and 106 more

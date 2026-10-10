@@ -31,9 +31,9 @@ uint __cdecl getFileTimestamp(char *directory_path,char *filename);
 // Address: 00456950
 int __cdecl copyFileTimestamp(char *source_file,uint modtime);
 
-// Original: engine_dosio.cpp_getFileSizeWithFinder_FUN_004569a0
+// Original: engine_dosio.cpp_getFileAttributes_FUN_004569a0
 // Address: 004569a0
-int __cdecl getFileSizeWithFinder(char *directory,char *filename);
+int __cdecl getFileAttributes(char *directory,char *filename);
 
 // Original: engine_dosio.cpp_setFileAttributes_FUN_00456a30
 // Address: 00456a30
@@ -74,7 +74,3 @@ void __cdecl CFileFinder::reset(CFileFinder *this_ptr);
 // Original: engine_dosio.cpp_CFileFinder_convertStruct_FUN_00456d90
 // Address: 00456d90
 void __cdecl CFileFinder::convertStruct(CFileFinder *this_ptr,LPWIN32_FIND_DATAA find_data);
-
-// Original: engine_dosio.cpp_setReadonlyAttribute_FUN_00565dd0
-// Address: 00565dd0
-DWORD __cdecl setReadonlyAttribute(char *filename,DWORD file_attributes);

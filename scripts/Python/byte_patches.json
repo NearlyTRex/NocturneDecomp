@@ -270,13 +270,29 @@
                     "original": "e9bb1b08008d",
                     "patched": "e8bb1b0800c3",
                     "description": "Convert JMP popViewport to CALL + RET so decompiler sees CDemonRenderer* this_ptr parameter"
+                },
+                {
+                    "name": "engine_3d.c_initTextureCache_FUN_00403790: JMP->CALL+RET for own signature",
+                    "address": "0x00403790",
+                    "original": "e9cb9f1d008d",
+                    "patched": "e8cb9f1d00c3",
+                    "description": "Convert JMP engine_texture.cpp_initTextureCache_FUN_005dd760 to CALL + RET so the wrapper carries its own signature instead of sharing the target's"
+                },
+                {
+                    "name": "engine_3d.c_freeTextureCache_FUN_004037a0: JMP->CALL+RET for own signature",
+                    "address": "0x004037a0",
+                    "original": "e9fb9f1d008d",
+                    "patched": "e8fb9f1d00c3",
+                    "description": "Convert JMP engine_texture.cpp_freeTextureCache_FUN_005dd7a0 to CALL + RET so the wrapper carries its own signature instead of sharing the target's"
                 }
             ],
             "clear_thunks": [
                 "0x0048c630",
                 "0x0048c640",
                 "0x005b2d60",
-                "0x0048c8c0"
+                "0x0048c8c0",
+                "0x00403790",
+                "0x004037a0"
             ]
         },
         {

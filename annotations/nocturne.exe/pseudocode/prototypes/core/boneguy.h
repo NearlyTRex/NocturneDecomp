@@ -45,7 +45,7 @@ void __cdecl CBoneGuy::process(CBoneGuy *this_ptr,float delta_time);
 
 // Original: core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_004194b0
 // Address: 004194b0
-void __stack2_esi CBoneGuy::getCarryObjToBodyXForm(CBoneGuy *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
+CMatrix3x4f * __stack2_esi CBoneGuy::getCarryObjToBodyXForm(CBoneGuy *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
 // Original: core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_004196b0
 // Address: 004196b0

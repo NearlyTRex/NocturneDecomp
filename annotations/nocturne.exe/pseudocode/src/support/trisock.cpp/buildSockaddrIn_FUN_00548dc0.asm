@@ -9,8 +9,8 @@
 ; undefined2       Stack[-0x18]:2  local_18
 ;
 ; XREF[2]:
-;   support_trisock.cpp_connectSocket_FUN_00548fc0 at 00548fce
-;   support_trisock.cpp_performSocketOperation_FUN_00549090 at 005490ce
+;   support_trisock.cpp_CSocket_connectSocket_FUN_00548fc0 at 00548fce
+;   support_trisock.cpp_CSocket_sendSocketData_FUN_00549090 at 005490ce
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_00563cc0

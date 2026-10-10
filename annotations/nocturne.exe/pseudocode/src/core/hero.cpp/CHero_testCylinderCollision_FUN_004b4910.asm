@@ -13,7 +13,7 @@
 ;   undefined4 g_CGame_01c775ec.god_mode_enabled
 ;
 ; Called Functions:
-;   core_actor.cpp_CDemonActor_testPointInCylinder_FUN_0040a390
+;   core_actor.cpp_CDemonActor_testCylinderCollision_FUN_0040a390
 ;
 ; *****************************************************************************
 
@@ -37,8 +37,8 @@ section .text
     PUSH dword ptr [ESP + 0x10]         ; 004b4936
     PUSH ESI                            ; 004b493a
     PUSH EDX                            ; 004b493b
-    CALL core_actor.cpp_CDemonActor_testPointInCylinder_FUN_0040a390 ; 004b493c
-        ;   XREF to: 0040a390 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_CDemonActor_testPointInCylinder_FUN_0040a390(CDemonActor * this_ptr, SCollisionReturnInfo * collision_info, float tolerance)
+    CALL core_actor.cpp_CDemonActor_testCylinderCollision_FUN_0040a390 ; 004b493c
+        ;   XREF to: 0040a390 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_CDemonActor_testCylinderCollision_FUN_0040a390(CDemonActor * this_ptr, SCollisionReturnInfo * collision_info, float tolerance)
     ADD ESP,0xc                         ; 004b4941
     POP ESI                             ; 004b4944
     RET                                 ; 004b4945

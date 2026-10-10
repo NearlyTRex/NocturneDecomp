@@ -151,20 +151,7 @@ LAB_005131d5:
       core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
     }
 #if !NOCTURNE_AUTHENTIC_NETPLAY
-    iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
-    if ((iVar8 != 0) &&
-       (iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_H), iVar8 != 0)) {
-      core_sound_cpp_CSound_reset_FUN_005b39a0(g_CSoundPtr);
-      core_game_cpp_hostNetworkGame_FUN_004e2f10();
-      core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
-    }
-    iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
-    if ((iVar8 != 0) &&
-       (iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_J), iVar8 != 0)) {
-      core_sound_cpp_CSound_reset_FUN_005b39a0(g_CSoundPtr);
-      core_game_cpp_joinNetworkGame_FUN_004e2fc0();
-      core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
-    }
+    nocturne_net_menu_hotkeys();
 #endif
     if (iStack_8 != 0) {
       iStack_8 = 0;

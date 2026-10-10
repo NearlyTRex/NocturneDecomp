@@ -36,34 +36,9 @@ float clamp01(float x)
     return clamp(x, 0.0f, 1.0f);
 }
 
-// `value` moved toward `target` by no more than `step`.
-float approach(float value, float target, float step)
-{
-    return value + clamp(target - value, -step, step);
-}
-
 uint current_state(CGabriella *gabriella)
 {
-    return core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-               (&(gabriella->base).base.model.motion_controller)->state_index;
-}
-
-// Hero slots are shared by every machine, so per-slot state stays in lockstep.
-int hero_slot(CDemonActor *actor)
-{
-    int i;
-
-    for (i = 0; (i < 4) && (i < g_HeroCount); i++) {
-        if ((CDemonActor *)g_HeroActors[i] == actor) {
-            return i;
-        }
-    }
-    return -1;
-}
-
-int is_player_hero(CDemonActor *actor)
-{
-    return hero_slot(actor) >= 0;
+    return (uint)nocturne_hero_motion_state(&(gabriella->base).base);
 }
 
 } // namespace
@@ -102,7 +77,51 @@ struct SThrow {
     ERefetch refetch;       // the fetch of the next stick
 };
 
-SThrow s_throw[4];
+SThrow s_throw[NOCTURNE_HERO_SLOTS];
+
+// `table`'s entry for `gabriella`'s hero slot, or null for a Gabriella who is
+// not a player hero. Hero slots are shared by every machine, so per-slot state
+// stays in lockstep.
+template <typename T>
+T *slot_entry(CGabriella *gabriella, T *table)
+{
+    int slot = nocturne_hero_slot((CDemonActor *)gabriella);
+
+    return (slot < 0) ? (T *)0x0 : &table[slot];
+}
+
+// The swing takes over from the wind-up wherever it had got to.
+void start_swing(SThrow *t)
+{
+    t->swinging = 1;
+    t->swing_t = 0.0f;
+    t->swing_from = t->windup;
+    t->released = 0;
+    t->windup = 0.0f;
+}
+
+// The aim line a throw from `start` at world `velocity` would follow, as
+// CStranger::renderOpaque draws his: a raycast that ignores her and the
+// object, drawn as a laser path to the first hit or 10 seconds out.
+void draw_throw_arc(CGabriella *gabriella, CDemonActor *object, CVector3f *start,
+                    CVector3f *velocity)
+{
+    float hit_time;
+
+    core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
+    core_setcolid_cpp_CDemonSet_setRayType_FUN_00574230(g_CDemonSetPtr, 1);
+    core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr, (CDemonActor *)gabriella);
+    core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr, object);
+    hit_time = core_setcolid_cpp_CDemonSet_iterativeRaycast_FUN_00572800
+                   (g_CDemonSetPtr, start, velocity);
+    if (hit_time < 0.0f) {
+        hit_time = 10.0f;
+    }
+    core_fire_cpp_CFireEffect_createLaserPath_FUN_004c7f80
+        (g_CFireEffectPtr, start, velocity, 1.0f, 1.0f,
+         &g_CDemonSetPtr->collision_normal, hit_time, 0xff, 0, 0);
+    core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
+}
 
 // Arm pitches for the throw, in the convention of her aim_pitch (negative is
 // up). The wind-up raises the arm in front of her, above the shoulder; the
@@ -122,8 +141,6 @@ const float kSwingBlendInRate = 16.0f;
 // CStranger::autoAimAtThreat's throwing arm: look input moves the aim between
 // 60 degrees up and 70 degrees down, and the throw's pitch follows it at
 // half pi per second.
-const float kThrowAimUp = -1.047198f;
-const float kThrowAimDown = 1.22173f;
 const float kThrowAimRate = 3.1415927f * 0.5f;
 
 // updateAimTracking's aim weight rate, per second.
@@ -151,9 +168,7 @@ CDynamite *selected_dynamite(CGabriella *gabriella)
 // at once, with no swing or fetch.
 SThrow *throw_state(CGabriella *gabriella)
 {
-    int slot = hero_slot((CDemonActor *)gabriella);
-
-    return (slot < 0) ? (SThrow *)0x0 : &s_throw[slot];
+    return slot_entry(gabriella, s_throw);
 }
 
 // Dynamite drawn with no stick in hand: thrown and not yet replaced, or none left.
@@ -375,9 +390,9 @@ extern "C" int nocturne_hero_gabriella_dynamite_aim(CGabriella *gabriella, float
     // target_aim_pitch is the Stranger's aim_pitch, the look-driven aim;
     // aim_pitch is his target_pitch, which eases after it and is thrown along.
     gabriella->target_aim_pitch =
-        clamp((gabriella->base).player_input.look_up_down_speed * 3.1415927f * 2.0f * delta_time +
-                  gabriella->target_aim_pitch,
-              kThrowAimUp, kThrowAimDown);
+        nocturne_hero_look_pitch(gabriella->target_aim_pitch,
+                                 (gabriella->base).player_input.look_up_down_speed, delta_time,
+                                 NOCTURNE_STRANGER_PITCH_UP, NOCTURNE_STRANGER_PITCH_DOWN);
     gabriella->target_aim_yaw = 0.0f;
 
     // Her aim weight carries both her raised arm and her head and body turning
@@ -394,8 +409,8 @@ extern "C" int nocturne_hero_gabriella_dynamite_aim(CGabriella *gabriella, float
                                     ((raised != 0) ? kAimWeightRate : -kAimWeightRate) * delta_time);
 
     step = delta_time * kThrowAimRate;
-    gabriella->aim_pitch = approach(gabriella->aim_pitch, gabriella->target_aim_pitch, step);
-    gabriella->aim_yaw = approach(gabriella->aim_yaw, 0.0f, step);
+    gabriella->aim_pitch = nocturne_hero_approach(gabriella->aim_pitch, gabriella->target_aim_pitch, step);
+    gabriella->aim_yaw = nocturne_hero_approach(gabriella->aim_yaw, 0.0f, step);
     return 1;
 }
 
@@ -411,11 +426,7 @@ extern "C" int nocturne_hero_gabriella_throw_ready(CGabriella *gabriella)
         return 1;
     }
     if (t->swinging == 0) {
-        t->swinging = 1;
-        t->swing_t = 0.0f;
-        t->swing_from = t->windup;
-        t->released = 0;
-        t->windup = 0.0f;
+        start_swing(t);
         return 0;
     }
     if ((t->released == 0) && (kReleasePitch <= swing_pitch(t))) {
@@ -523,9 +534,6 @@ extern "C" int nocturne_hero_gabriella_weapon_hidden(CGabriella *gabriella)
 
 extern "C" void nocturne_hero_gabriella_render_throw_arc(CGabriella *gabriella, CDynamite *dynamite)
 {
-    CVector3f *start_pos;
-    float hit_time;
-
     // Only while charging: toss_velocity outlives the charge until the stick
     // is thrown, through the swing.
     if ((gabriella == (CGabriella *)0x0) || (dynamite == (CDynamite *)0x0) ||
@@ -534,20 +542,8 @@ extern "C" void nocturne_hero_gabriella_render_throw_arc(CGabriella *gabriella, 
     }
     // toss_velocity is already in world space: CGabriella::process transforms
     // it by her orientation when she charges.
-    start_pos = &dynamite->base.base.location.position;
-    core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
-    core_setcolid_cpp_CDemonSet_setRayType_FUN_00574230(g_CDemonSetPtr, 1);
-    core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr, (CDemonActor *)gabriella);
-    core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr, (CDemonActor *)dynamite);
-    hit_time = core_setcolid_cpp_CDemonSet_iterativeRaycast_FUN_00572800
-                   (g_CDemonSetPtr, start_pos, &dynamite->toss_velocity);
-    if (hit_time < 0.0f) {
-        hit_time = 10.0f;
-    }
-    core_fire_cpp_CFireEffect_createLaserPath_FUN_004c7f80
-        (g_CFireEffectPtr, start_pos, &dynamite->toss_velocity, 1.0f, 1.0f,
-         &g_CDemonSetPtr->collision_normal, hit_time, 0xff, 0, 0);
-    core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
+    draw_throw_arc(gabriella, (CDemonActor *)dynamite, &dynamite->base.base.location.position,
+                   &dynamite->toss_velocity);
 }
 
 // =============================================================================
@@ -569,15 +565,13 @@ struct SSwitch {
     int      redraw;    // she was drawn when the switch began
 };
 
-SSwitch s_switch[4];
+SSwitch s_switch[NOCTURNE_HERO_SLOTS];
 
 // Her switch, or null for a Gabriella who is not a player hero, who swaps at
 // once as she always did.
 SSwitch *switch_state(CGabriella *gabriella)
 {
-    int slot = hero_slot((CDemonActor *)gabriella);
-
-    return (slot < 0) ? (SSwitch *)0x0 : &s_switch[slot];
+    return slot_entry(gabriella, s_switch);
 }
 
 // By pointer only: `weapon` may be stale from an earlier mission.
@@ -689,13 +683,11 @@ struct SPump {
     int      ejected;
 };
 
-SPump s_pump[4];
+SPump s_pump[NOCTURNE_HERO_SLOTS];
 
 SPump *pump_state(CGabriella *gabriella)
 {
-    int slot = hero_slot((CDemonActor *)gabriella);
-
-    return (slot < 0) ? (SPump *)0x0 : &s_pump[slot];
+    return slot_entry(gabriella, s_pump);
 }
 
 } // namespace
@@ -724,7 +716,7 @@ extern "C" int nocturne_hero_gabriella_keep_pending_shot(CGabriella *gabriella)
 {
     CWeapon *weapon;
 
-    if ((gabriella == (CGabriella *)0x0) || (hero_slot((CDemonActor *)gabriella) < 0)) {
+    if ((gabriella == (CGabriella *)0x0) || (nocturne_hero_slot((CDemonActor *)gabriella) < 0)) {
         return 1;
     }
     weapon = (gabriella->base).inventory.selected_weapon;
@@ -772,7 +764,7 @@ extern "C" void nocturne_hero_gabriella_fire_tick(CGabriella *gabriella, float d
     if ((p->ejected == 0) && (kPumpSeconds * kPumpShellAt <= p->elapsed)) {
         // As CStranger::updateWeaponLayerActions does.
         p->ejected = 1;
-        if (nocturne_weapon_ejects_shell(p->weapon) != 0) {
+        if (nocturne_hero_weapon_ejects_shell(p->weapon) != 0) {
             (*(((p->weapon->base).vtable._uw)->_uw).onFired)(p->weapon);
         }
     }
@@ -791,7 +783,7 @@ namespace {
 // is released. In single player a consumer clears player_input.fire and it stays
 // clear while the button is held; in a network game the synced input is applied
 // again every frame, and a held press would repeat the action each time.
-int s_press_used[4];
+int s_press_used[NOCTURNE_HERO_SLOTS];
 
 // Marks the press as used and clears it for the rest of this frame.
 void use_press(CGabriella *gabriella, int slot)
@@ -859,8 +851,8 @@ struct SCarryThrow {
 };
 
 // Per hero slot.
-SCarryThrow s_carry_throw[4];
-float       s_put_down_buffer[4];
+SCarryThrow s_carry_throw[NOCTURNE_HERO_SLOTS];
+float       s_put_down_buffer[NOCTURNE_HERO_SLOTS];
 
 // What her left hand carries that she may let go of: anything but her flashlight.
 CDemonActor *carried_object(CGabriella *gabriella)
@@ -873,11 +865,6 @@ CDemonActor *carried_object(CGabriella *gabriella)
         return (CDemonActor *)0x0;
     }
     return carried;
-}
-
-int is_throwable(CDemonActor *object)
-{
-    return ((*((object->vtable)._ub)->getAllowedMeleeAttackTypes)(object) & 4) != 0;
 }
 
 int can_act(CGabriella *gabriella)
@@ -965,9 +952,7 @@ int try_start_put_down(CGabriella *gabriella)
 
 SCarryThrow *carry_throw_state(CGabriella *gabriella)
 {
-    int slot = hero_slot((CDemonActor *)gabriella);
-
-    return (slot < 0) ? (SCarryThrow *)0x0 : &s_carry_throw[slot];
+    return slot_entry(gabriella, s_carry_throw);
 }
 
 // CStranger::getThrowDirection, with her throw's pitch and speed, in her
@@ -1022,11 +1007,7 @@ void step_carry_throw(CGabriella *gabriella, SCarryThrow *t, float delta_time)
         }
         else {
             t->charging = 0;
-            arm->swinging = 1;
-            arm->swing_t = 0.0f;
-            arm->swing_from = arm->windup;
-            arm->released = 0;
-            arm->windup = 0.0f;
+            start_swing(arm);
         }
     }
     else if (arm->swinging == 0) {
@@ -1035,11 +1016,11 @@ void step_carry_throw(CGabriella *gabriella, SCarryThrow *t, float delta_time)
 
     if ((t->charging != 0) || (arm->swinging != 0)) {
         // nocturne_hero_gabriella_dynamite_aim's look-driven pitch.
-        t->target_pitch = clamp(input->look_up_down_speed * 3.1415927f * 2.0f * delta_time +
-                                    t->target_pitch,
-                                kThrowAimUp, kThrowAimDown);
+        t->target_pitch = nocturne_hero_look_pitch(t->target_pitch, input->look_up_down_speed,
+                                                   delta_time, NOCTURNE_STRANGER_PITCH_UP,
+                                                   NOCTURNE_STRANGER_PITCH_DOWN);
         step = delta_time * kThrowAimRate;
-        t->pitch = approach(t->pitch, t->target_pitch, step);
+        t->pitch = nocturne_hero_approach(t->pitch, t->target_pitch, step);
     }
 
     if (arm->swinging != 0) {
@@ -1075,7 +1056,7 @@ extern "C" int nocturne_hero_gabriella_throw_carried(CGabriella *gabriella)
         return 1;
     }
     object = carried_object(gabriella);
-    if ((object == (CDemonActor *)0x0) || (is_throwable(object) == 0) || (can_act(gabriella) == 0)) {
+    if ((object == (CDemonActor *)0x0) || (nocturne_hero_is_throwable(object) == 0) || (can_act(gabriella) == 0)) {
         return 0;
     }
     // Not while the pickup or put-down is still under way.
@@ -1096,10 +1077,8 @@ extern "C" void nocturne_hero_gabriella_render_carry_arc(CGabriella *gabriella)
 {
     const SCarryThrow *t;
     CDemonActor *object;
-    CVector3f *start_pos;
     CVector3f local;
     CVector3f velocity;
-    float hit_time;
 
     if (gabriella == (CGabriella *)0x0) {
         return;
@@ -1111,23 +1090,10 @@ extern "C" void nocturne_hero_gabriella_render_carry_arc(CGabriella *gabriella)
         (object == (CDemonActor *)0x0)) {
         return;
     }
-    start_pos = &(object->location).position;
     carry_throw_direction(t, &local);
     core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
         ((CDemonActor *)gabriella, &velocity, &local);
-    core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
-    core_setcolid_cpp_CDemonSet_setRayType_FUN_00574230(g_CDemonSetPtr, 1);
-    core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr, (CDemonActor *)gabriella);
-    core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr, object);
-    hit_time = core_setcolid_cpp_CDemonSet_iterativeRaycast_FUN_00572800
-                   (g_CDemonSetPtr, start_pos, &velocity);
-    if (hit_time < 0.0f) {
-        hit_time = 10.0f;
-    }
-    core_fire_cpp_CFireEffect_createLaserPath_FUN_004c7f80
-        (g_CFireEffectPtr, start_pos, &velocity, 1.0f, 1.0f,
-         &g_CDemonSetPtr->collision_normal, hit_time, 0xff, 0, 0);
-    core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
+    draw_throw_arc(gabriella, object, &(object->location).position, &velocity);
 }
 
 extern "C" int nocturne_hero_gabriella_put_down(CGabriella *gabriella)
@@ -1138,7 +1104,7 @@ extern "C" int nocturne_hero_gabriella_put_down(CGabriella *gabriella)
     if (gabriella == (CGabriella *)0x0) {
         return 0;
     }
-    slot = hero_slot((CDemonActor *)gabriella);
+    slot = nocturne_hero_slot((CDemonActor *)gabriella);
     object = carried_object(gabriella);
     if ((slot < 0) || (object == (CDemonActor *)0x0)) {
         return 0;
@@ -1169,7 +1135,7 @@ extern "C" void nocturne_hero_gabriella_use_item(CGabriella *gabriella)
     if ((hero->player_input).action_state.use_item == 0) {
         return;
     }
-    if (hero_slot((CDemonActor *)gabriella) < 0) {
+    if (nocturne_hero_slot((CDemonActor *)gabriella) < 0) {
         if (core_gabriela_cpp_CGabriella_findAndPickupNearbyObject_FUN_004d5870(gabriella) == 0) {
             core_gabriela_cpp_CGabriella_tryThrowObject_FUN_004d6050(gabriella);
         }
@@ -1216,7 +1182,7 @@ struct SMaskArm {
 };
 
 // Per hero slot.
-SMaskArm s_mask_arm[4];
+SMaskArm s_mask_arm[NOCTURNE_HERO_SLOTS];
 
 // The inventory's gas mask: CInventory::select stores it in light_gun_ptr.
 CGasMask *inventory_mask(CGabriella *gabriella)
@@ -1245,7 +1211,7 @@ extern "C" void nocturne_hero_gabriella_mask_tick(CGabriella *gabriella, float d
     if (gabriella == (CGabriella *)0x0) {
         return;
     }
-    slot = hero_slot((CDemonActor *)gabriella);
+    slot = nocturne_hero_slot((CDemonActor *)gabriella);
     if (slot < 0) {
         return;
     }
@@ -1298,7 +1264,7 @@ extern "C" void nocturne_hero_gabriella_pose_arms(CGabriella *gabriella)
     if (gabriella == (CGabriella *)0x0) {
         return;
     }
-    slot = hero_slot((CDemonActor *)gabriella);
+    slot = nocturne_hero_slot((CDemonActor *)gabriella);
     if (slot < 0) {
         return;
     }
@@ -1373,8 +1339,6 @@ namespace {
 // The kick. The thigh peaks at frame 19 and the knee straightens on the way
 // down at 22-24; the motion exits at 29. Values to tune in play.
 const float kKickHitFrame   = 22.0f;
-const float kKickMinDamage  = 10.0f;    // her grab-escape kick, signal 6
-const float kKickMaxDamage  = 15.0f;
 
 // Who the kick reaches: an enemy whose collision cylinder comes within this
 // distance of her, in front of her within 45 degrees widened by its radius, and
@@ -1387,72 +1351,26 @@ const float kKickHeightBand = 2.0f;
 // in place) waits this long for her to arrive rather than being dropped.
 const float kKickBufferSeconds = 0.5f;
 
-// The shove after a hit.
+// The shove after a hit (hero_shove.h).
 const float kShoveDistance = 1.5f;
-const float kShoveSeconds  = 0.25f;
-
-struct SShove {
-    CGabriella *owner;
-    CCharacter *target;
-    float       dir_x;
-    float       dir_z;
-    float       elapsed;    // seconds; kShoveSeconds or more is a free slot
-};
-
-// Shoves are stepped from their owner's process, once per owner per frame.
-SShove s_shoves[16];
-#define SHOVE_COUNT ((int)(sizeof(s_shoves) / sizeof(s_shoves[0])))
 
 // Seconds a buffered kick press has left, per hero slot.
-float s_kick_buffer[4];
+float s_kick_buffer[NOCTURNE_HERO_SLOTS];
 
-// A live enemy in the set: what the kick may hit and shove.
-int is_kickable(CCharacter *target)
-{
-    if ((target == (CCharacter *)0x0) || ((target->base).lifecycle_state != ACTOR_CREATED)) {
-        return 0;
-    }
-    if (target->hit_points <= 0.0f) {
-        return 0;
-    }
-    if (is_player_hero(&target->base) != 0) {
-        return 0;
-    }
-    return core_actor_cpp_castToClassHash_FUN_0040c790(&target->base, g_CEnemyClassInfo.name_hash)
-           != (CDemonActor *)0x0;
-}
-
-int in_set(CCharacter *target)
-{
-    int i;
-
-    for (i = 0; i < g_CDemonSetPtr->character_count; i++) {
-        if (g_CDemonSetPtr->characters[i] == target) {
-            return 1;
-        }
-    }
-    return 0;
-}
-
-// Whether `target` is a live enemy the kick reaches. Measured to the edge of
-// its collision cylinder, so a broad enemy is reached as early as a narrow one.
+// Whether `target` is a live enemy the kick reaches.
 int in_reach(CGabriella *gabriella, CCharacter *target)
 {
     CVector3f local;
-    float radius;
     float distance;
 
-    if (is_kickable(target) == 0) {
+    if (nocturne_hero_melee_target(target) == 0) {
         return 0;
     }
-    radius = target->collision_cylinder_radius;
-    core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-        ((CDemonActor *)gabriella, &local, &(target->base).location.position);
-    if ((local.z <= 0.0f) || (std::fabs(local.x) > local.z + radius) ||
+    distance = nocturne_hero_melee_edge_distance((CDemonActor *)gabriella, target, &local);
+    if ((local.z <= 0.0f) || (std::fabs(local.x) > local.z + target->collision_cylinder_radius) ||
         (std::fabs(local.y) > kKickHeightBand)) {
         return 0;
     }
-    distance = std::sqrt(local.x * local.x + local.z * local.z) - radius;
     return distance <= kKickReach;
 }
 
@@ -1484,146 +1402,45 @@ int try_start_kick(CGabriella *gabriella)
     return 1;
 }
 
-void start_shove(CGabriella *gabriella, CCharacter *target)
-{
-    CVector3f *from = &(gabriella->base).base.base.location.position;
-    CVector3f *to   = &(target->base).location.position;
-    float dx = to->x - from->x;
-    float dz = to->z - from->z;
-    float length = std::sqrt(dx * dx + dz * dz);
-    int i;
-
-    if (length <= 0.0f) {
-        return;
-    }
-    for (i = 0; i < SHOVE_COUNT; i++) {
-        SShove *shove = &s_shoves[i];
-
-        // A slot is free once finished, or once its owner is no longer a
-        // player hero (a mission ended under it).
-        if ((shove->target == (CCharacter *)0x0) || (kShoveSeconds <= shove->elapsed) ||
-            (is_player_hero((CDemonActor *)shove->owner) == 0)) {
-            shove->owner   = gabriella;
-            shove->target  = target;
-            shove->dir_x   = dx / length;
-            shove->dir_z   = dz / length;
-            shove->elapsed = 0.0f;
-            return;
-        }
-    }
-}
-
-// Eased out: fast at the hit, slowing to a stop.
-float shove_progress(float elapsed)
-{
-    float t = elapsed / kShoveSeconds;
-
-    if (t >= 1.0f) {
-        return 1.0f;
-    }
-    return 1.0f - (1.0f - t) * (1.0f - t);
-}
-
-void step_shoves(CGabriella *gabriella, float delta_time)
-{
-    int i;
-
-    for (i = 0; i < SHOVE_COUNT; i++) {
-        SShove *shove = &s_shoves[i];
-        CVector3f world_delta;
-        CVector3f local_delta;
-        float step;
-
-        if ((shove->owner != gabriella) || (shove->target == (CCharacter *)0x0) ||
-            (kShoveSeconds <= shove->elapsed)) {
-            continue;
-        }
-        // The target may have been deleted since the hit.
-        if ((in_set(shove->target) == 0) ||
-            ((shove->target->base).lifecycle_state != ACTOR_CREATED)) {
-            shove->target = (CCharacter *)0x0;
-            continue;
-        }
-        step = shove_progress(shove->elapsed + delta_time) - shove_progress(shove->elapsed);
-        shove->elapsed = shove->elapsed + delta_time;
-
-        world_delta.x = shove->dir_x * kShoveDistance * step;
-        world_delta.y = 0.0f;
-        world_delta.z = shove->dir_z * kShoveDistance * step;
-        // moveAndCollide takes the step in the actor's own frame.
-        core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
-            (&shove->target->base, &local_delta, &world_delta);
-        core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(shove->target, &local_delta);
-    }
-}
-
 void land_kick(CGabriella *gabriella)
 {
-    CDeformableModelInstance *model = &(gabriella->base).base.model;
-    CSkeleton *skeleton;
-    int bone_index;
-    CVector3f local_point;
     CVector3f foot;
-    CVector3f *bone_point;
-    SDamageInfo damage;
     float amount;
+    float dealt;
     int i;
 
-    skeleton = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(model);
-    bone_index = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                     (skeleton, (char *)"Bip01 L Foot", 1);
-    if (bone_index < 0) {
+    if (nocturne_hero_bone_world(&(gabriella->base).base, "Bip01 L Foot", &foot) == 0) {
         return;
     }
-    bone_point = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0059fb00
-                     (model, &local_point, bone_index);
-    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-        ((CDemonActor *)gabriella, &foot, bone_point);
 
     // One draw per kick, from the simulation stream.
-    amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(kKickMinDamage, kKickMaxDamage);
+    amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(NOCTURNE_HERO_ESCAPE_KICK_MIN,
+                                                                 NOCTURNE_HERO_ESCAPE_KICK_MAX);
     for (i = 0; i < g_CDemonSetPtr->character_count; i++) {
         CCharacter *target = g_CDemonSetPtr->characters[i];
 
         if (in_reach(gabriella, target) == 0) {
             continue;
         }
-        // Her grab-escape kick's damage record (signal 6 in processMotionEvents):
-        // the foot as the impact point, seen from the target.
-        core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&damage);
-        damage.damage_amount = amount;
-        damage.damage_type   = DAMAGE_TYPE_MELEE;
-        damage.impact_point  = foot;
-        core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-            (&target->base, &damage.impact_direction, &foot);
-        damage.attacker      = (CDemonActor *)gabriella;
-        damage.wielder       = (CDemonActor *)gabriella;
-        (*(((target->base).vtable._uc)->_uc).processDamage)(target, &damage);
-        if (damage.damage_amount <= 0.0f) {
+        // Her grab-escape kick's damage record (signal 6 in processMotionEvents),
+        // with the foot as the impact point.
+        dealt = nocturne_hero_melee_hit(&(gabriella->base).base, target, &foot, amount);
+        if (dealt <= 0.0f) {
             continue;
         }
         core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0
-            (g_CGorePtr, &foot, (CVector3f *)0x0, (int)(damage.damage_amount * 0.2f) + 1, 0);
+            (g_CGorePtr, &foot, (CVector3f *)0x0, (int)(dealt * 0.2f) + 1, 0);
         (*(((CDemonActor *)gabriella)->vtable._ub)->playSound)
             ((CDemonActor *)gabriella, (char *)"kick1.wav");
-        start_shove(gabriella, target);
+        nocturne_hero_shove_start(&gabriella->base, target, kShoveDistance);
     }
 }
 
 // Whether the kick crossed its hit frame during the advance that just ran.
 int kick_crossed(CGabriella *gabriella, uint prev_state, float prev_frame)
 {
-    CMotionController *controller = &(gabriella->base).base.model.motion_controller;
-    float frame;
-
-    if (current_state(gabriella) != kKickDoor) {
-        return 0;
-    }
-    frame = controller->current_frame_number;
-    if ((prev_state != kKickDoor) || (frame < prev_frame)) {
-        return kKickHitFrame <= frame;      // the motion started this frame
-    }
-    return (prev_frame < kKickHitFrame) && (kKickHitFrame <= frame);
+    return nocturne_hero_motion_crossed(&(gabriella->base).base, (int)kKickDoor, (int)prev_state,
+                                        prev_frame, kKickHitFrame);
 }
 
 float motion_rate(CGabriella *gabriella)
@@ -1681,8 +1498,8 @@ struct SLadderBlend {
 };
 
 // Per hero slot.
-SLadderBlend s_ladder_blend[4];
-float        s_climb_buffer[4];
+SLadderBlend s_ladder_blend[NOCTURNE_HERO_SLOTS];
+float        s_climb_buffer[NOCTURNE_HERO_SLOTS];
 
 // The first ladder she may take, and which face of it she is on (1 in front,
 // -1 behind).
@@ -1806,7 +1623,7 @@ extern "C" int nocturne_hero_gabriella_climb(CGabriella *gabriella)
     if (gabriella == (CGabriella *)0x0) {
         return 0;
     }
-    slot = hero_slot((CDemonActor *)gabriella);
+    slot = nocturne_hero_slot((CDemonActor *)gabriella);
     if (slot < 0) {
         return core_gabriela_cpp_CGabriella_tryClimbLadder_FUN_004d5c60(gabriella);
     }
@@ -1835,7 +1652,7 @@ extern "C" int nocturne_hero_gabriella_ladder_tick(CGabriella *gabriella, float 
     if (gabriella == (CGabriella *)0x0) {
         return 1;
     }
-    slot = hero_slot((CDemonActor *)gabriella);
+    slot = nocturne_hero_slot((CDemonActor *)gabriella);
     if (on_ladder_motion(gabriella) == 0) {
         (gabriella->base).ladder_to_climb = (CLadder *)0x0;
         if (slot >= 0) {
@@ -1888,13 +1705,13 @@ extern "C" int nocturne_hero_gabriella_pickup(CGabriella *gabriella)
     if (core_gabriela_cpp_CGabriella_findAndPickupNearbyObject_FUN_004d5870(gabriella) == 0) {
         return 0;
     }
-    use_press(gabriella, hero_slot((CDemonActor *)gabriella));
+    use_press(gabriella, nocturne_hero_slot((CDemonActor *)gabriella));
     return 1;
 }
 
 extern "C" float nocturne_hero_gabriella_pickup_reach(CGabriella *gabriella)
 {
-    if ((gabriella != (CGabriella *)0x0) && (is_player_hero((CDemonActor *)gabriella) != 0)) {
+    if ((gabriella != (CGabriella *)0x0) && (nocturne_hero_is_player((CDemonActor *)gabriella) != 0)) {
         return 5.0f;
     }
     return 2.0f;
@@ -1919,7 +1736,7 @@ const float kTurnChainFrames = 1.0f;
 const float kTurnChainTween  = 0.2f;
 
 // Per hero slot: seconds turn input has lasted.
-float s_turn_held[4];
+float s_turn_held[NOCTURNE_HERO_SLOTS];
 
 // The turn state her turn input asks for, or STAND (0) for none.
 uint turn_wanted(CGabriella *gabriella, int slot)
@@ -1974,7 +1791,7 @@ extern "C" int nocturne_hero_gabriella_locomotion_state(CGabriella *gabriella, i
     if (gabriella == (CGabriella *)0x0) {
         return chosen_state;
     }
-    slot = hero_slot((CDemonActor *)gabriella);
+    slot = nocturne_hero_slot((CDemonActor *)gabriella);
     current = current_state(gabriella);
     // A request made during a crossfade out of a step restarts the crossfade
     // from nothing (findAndStartTransition clears it), and the pose jumps. The
@@ -2019,7 +1836,7 @@ extern "C" int nocturne_hero_gabriella_kick(CGabriella *gabriella)
     if ((gabriella == (CGabriella *)0x0) || (enemy_in_reach(gabriella) == 0)) {
         return 0;
     }
-    slot = hero_slot((CDemonActor *)gabriella);
+    slot = nocturne_hero_slot((CDemonActor *)gabriella);
     if (try_start_kick(gabriella) != 0) {
         if (slot >= 0) {
             s_kick_buffer[slot] = 0.0f;
@@ -2047,7 +1864,7 @@ extern "C" void nocturne_hero_gabriella_process_motion(CGabriella *gabriella, fl
         return;
     }
     controller = &(gabriella->base).base.model.motion_controller;
-    slot = hero_slot((CDemonActor *)gabriella);
+    slot = nocturne_hero_slot((CDemonActor *)gabriella);
     filter_press(gabriella, slot);
     prev_state = current_state(gabriella);
     prev_frame = controller->current_frame_number;
@@ -2068,7 +1885,7 @@ extern "C" void nocturne_hero_gabriella_process_motion(CGabriella *gabriella, fl
     if (kick_crossed(gabriella, prev_state, prev_frame) != 0) {
         land_kick(gabriella);
     }
-    step_shoves(gabriella, delta_time);
+    nocturne_hero_shove_step(&gabriella->base, delta_time);
 
     if ((slot >= 0) && (0.0f < s_climb_buffer[slot])) {
         s_climb_buffer[slot] = s_climb_buffer[slot] - delta_time;

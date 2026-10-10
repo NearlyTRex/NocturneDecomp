@@ -35,3 +35,16 @@
 // missing files are ordinary here, and the game asks for plenty that are not
 // there.
 std::string watcom_resolve_fs_path(const char *path);
+
+// The last component of a Windows-style path: everything after the last '\',
+// '/' or drive ':'. The extension is left on; callers differ on whether a name
+// ends at its first dot or its last.
+inline const char *watcom_path_leaf(const char *path) {
+    const char *leaf = path;
+    for (const char *p = path; *p != '\0'; p++) {
+        if (*p == '\\' || *p == '/' || *p == ':') {
+            leaf = p + 1;
+        }
+    }
+    return leaf;
+}

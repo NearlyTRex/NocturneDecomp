@@ -117,7 +117,7 @@ section .text
         ;   XREF to: 00440c67 (CONDITIONAL_JUMP)  ; LAB_00440c67
     PUSH 0x0                            ; 00440d2d
     CALL engine_special.cpp_masterZBuffer_FUN_00532c70 ; 00440d2f
-        ;   XREF to: 00532c70 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_masterZBuffer_FUN_00532c70(int z_buffer_mode)
+        ;   XREF to: 00532c70 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_masterZBuffer_FUN_00532c70(int slot)
     ADD ESP,0x4                         ; 00440d34
     POP EBP                             ; 00440d37
     POP EDI                             ; 00440d38

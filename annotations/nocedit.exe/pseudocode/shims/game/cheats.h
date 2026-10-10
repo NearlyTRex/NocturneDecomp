@@ -351,7 +351,7 @@ extern "C" {
 // read where that menu is built rather than written into engine state at
 // mission start. See shims/game/warps.h.
 #define NOCTURNE_CHEAT_WARPS            45
-// Nothing to apply: a frame-rate readout drawn by shims/game/perf_overlay.h.
+// Nothing to apply: a frame-rate readout drawn by shims/debug/perf_overlay.h.
 #define NOCTURNE_CHEAT_PERF_STATS       46
 #define NOCTURNE_CHEAT_COUNT            47
 

@@ -1,0 +1,24 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; int __cdecl support_trisock_cpp_CSocket_isSocketValid_FUN_005e1b70(CSocket *this_ptr)
+;
+; Parameters:
+; CSocket *        Stack[0x4]:4   this_ptr
+;
+; XREF[3]:
+;   core_netgame.cpp_CNetGame_flushIncomingPackets_FUN_00540550 at 0054055d
+;   core_netgame.cpp_CNetGame_receivePackets_FUN_005405b0 at 005405f2
+;   support_trisock.cpp_CSocket_closeSocket_FUN_005e1d20 at 005e1d26
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EAX,dword ptr [ESP + 0x4]       ; 005e1b70
+        ;   Label: support_trisock.cpp_CSocket_isSocketValid_FUN_005e1b70
+    CMP dword ptr [EAX],-0x1            ; 005e1b74
+    SETNZ AL                            ; 005e1b77
+    AND EAX,0xff                        ; 005e1b7a
+    RET                                 ; 005e1b7f
+

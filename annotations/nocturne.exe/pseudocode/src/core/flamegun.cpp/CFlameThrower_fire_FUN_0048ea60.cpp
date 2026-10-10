@@ -19,7 +19,8 @@ int __cdecl core_flamegun_cpp_CFlameThrower_fire_FUN_0048ea60(CFlameThrower *thi
     return 0;
   }
   input_local_point =
-       (CVector3f *)(*(((this_ptr->base).base.vtable._uc)->_uc).canWalk)((CCharacter *)this_ptr);
+       (CVector3f *)
+       (*(((this_ptr->base).base.vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
             ((CDemonActor *)this_ptr,&CStack_14,input_local_point);
   core_fire_cpp_CFireEffect_createGunFlames_FUN_0048c3c0

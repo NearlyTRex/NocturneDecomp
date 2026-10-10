@@ -7,6 +7,14 @@
 // Address: 00403740
 void * __cdecl abortOldFuncNoOpcode(SMRGLHeaderPrimitive *prim);
 
+// Original: engine_3d.c_initTextureCache_FUN_00403790
+// Address: 00403790
+CTextureCache * __cdecl initTextureCache(void);
+
+// Original: engine_3d.c_freeTextureCache_FUN_004037a0
+// Address: 004037a0
+void __cdecl freeTextureCache(void);
+
 // Original: engine_3d.c_badMRGLStruct_FUN_004037b0
 // Address: 004037b0
 SMRGLHeaderExtended * __cdecl badMRGLStruct(SMRGLHeaderExtended *prim);

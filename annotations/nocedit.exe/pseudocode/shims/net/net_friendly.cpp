@@ -32,8 +32,7 @@ extern "C" int nocturne_net_friendly_fire_blocked(CCharacter *victim, SDamageInf
     if (victim == (CCharacter *)0x0 || damage_info == (SDamageInfo *)0x0) {
         return 0;
     }
-    if (g_CNetGamePtr == (CNetGame *)0x0 ||
-        g_CNetGamePtr->connection_type == CONNECTION_NONE) {
+    if (nocturne_net_session_active() == 0) {
         return 0;
     }
     if (actor_is_hero(&victim->base) == 0) {

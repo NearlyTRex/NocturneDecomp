@@ -29,7 +29,8 @@ void __cdecl core_shotgun_cpp_CShotgun_renderAimBeam_FUN_00516770(CShotgun *this
     return;
   }
   input_local_point =
-       (CVector3f *)(*(((this_ptr->base).base.vtable._uc)->_uc).canWalk)((CCharacter *)this_ptr);
+       (CVector3f *)
+       (*(((this_ptr->base).base.vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
             ((CDemonActor *)this_ptr,aCStack_68,input_local_point);
   CStack_20.z = (this_ptr->base).bolt_velocity;

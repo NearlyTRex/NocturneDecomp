@@ -2,11 +2,11 @@
 // Address: 10004e10
 // Address Range: [[10004e10, 10004e75] [10004e79, 10004e87]]
 // Convention: __cdecl
-// Signature: int __cdecl dll_dx7_cpp_APIDLLmasterZBuffer_FUN_10004e10(int z_buffer_mode)
+// Signature: int __cdecl dll_dx7_cpp_APIDLLmasterZBuffer_FUN_10004e10(int slot)
 
 #include "nocturne.h"
 
-int __cdecl dll_dx7_cpp_APIDLLmasterZBuffer_FUN_10004e10(int z_buffer_mode)
+int __cdecl dll_dx7_cpp_APIDLLmasterZBuffer_FUN_10004e10(int slot)
 
 {
   IDirectDrawSurface *this_ptr;
@@ -14,10 +14,10 @@ int __cdecl dll_dx7_cpp_APIDLLmasterZBuffer_FUN_10004e10(int z_buffer_mode)
   RECT local_10;
   
                     /* 0x4e10  23  APIDLLmasterZBuffer */
-  if ((z_buffer_mode < 0) || ((int)g_MasterZBufferCount <= z_buffer_mode)) {
+  if ((slot < 0) || ((int)g_MasterZBufferCount <= slot)) {
     return 0;
   }
-  this_ptr = g_MasterZBufferSurfaces[z_buffer_mode];
+  this_ptr = g_MasterZBufferSurfaces[slot];
   if (this_ptr == (IDirectDrawSurface *)0x0) {
     return 0;
   }

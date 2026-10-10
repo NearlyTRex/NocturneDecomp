@@ -2,7 +2,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
-#include "system/winsock.h"
+#include "types/classes/CSocket.h"
 #include "types/enums/EConnectionType.h"
 #include "types/enums/ENetworkMode.h"
 #include "types/structs/SNetPlayer.h"
@@ -21,7 +21,7 @@ typedef struct CNetGame {
     char mission_name[80]; // 0x118
     int has_pending_sim_frame; // 0x168
     uint random_seed; // 0x16c
-    _SOCKET socket; // 0x170
+    CSocket socket; // 0x170
 } CNetGame;
 #pragma pack(pop)
 

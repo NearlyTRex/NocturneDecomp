@@ -16,7 +16,7 @@ void __cdecl core_msnedit_cpp_convertAllMissionFiles_FUN_00537230(void)
   engine_dosio_cpp_CFileFinder_openSearch_FUN_00481c70(&local_124,"world\\*.msn");
   while (local_124.filename[0] != '\0') {
     pCVar1 = engine_pod_cpp_CPod_locateFile_FUN_005512f0
-                       ((CPod *)g_CDemonPodPtr,"world",local_124.filename,(int *)0x0);
+                       (&g_CDemonPodPtr->base,"world",local_124.filename,(int *)0x0);
     if (pCVar1 == (CPodFile *)0x0) {
       shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                 (g_CEditorToolsPtr,"Loading %s...",&local_124);

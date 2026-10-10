@@ -68,7 +68,8 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
   SDamageInfo *pSVar12;
   float max_distance;
   
-  iVar4 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
+  iVar4 = core_charactr_cpp_CCharacter_processCharacter_FUN_00429870
+                    ((CCharacter *)this_ptr,delta_time);
   if (iVar4 != 0) {
     if (0.0 <= this_ptr->action_timer) {
       this_ptr->action_timer = this_ptr->action_timer - delta_time;

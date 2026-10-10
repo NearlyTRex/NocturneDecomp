@@ -14,7 +14,8 @@ void __cdecl core_stranger_cpp_CStranger_process_FUN_005bb830(CStranger *this_pt
   float delta_time_00;
   bool bVar1;
   
-  iVar2 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
+  iVar2 = core_charactr_cpp_CCharacter_processCharacter_FUN_00429870
+                    ((CCharacter *)this_ptr,delta_time);
   if (iVar2 == 0) {
     return;
   }

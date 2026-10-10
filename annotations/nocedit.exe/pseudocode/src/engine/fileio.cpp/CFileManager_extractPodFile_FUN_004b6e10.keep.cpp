@@ -154,7 +154,7 @@ void __cdecl engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10(CFileMan
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                   (g_CEditorToolsPtr,"Remounting all pods...");
         engine_pod_cpp_CPod_cleanup_FUN_00550c80((CPod *)g_CDemonPodPtr);
-        (*g_CDemonPodPtr->vtable->load)((CPod *)g_CDemonPodPtr);
+        (*g_CDemonPodPtr->base.vtable->load)((CPod *)g_CDemonPodPtr);
       }
     }
     shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_30,0);

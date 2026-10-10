@@ -15,8 +15,8 @@
 ;   core_chain.cpp_CChain_process_FUN_004300d0 at 004307da
 ;   core_charactr.cpp_CCharacter_dismember_FUN_0042b9e0 at 0042ba02
 ;   core_charactr.cpp_CCharacter_kill_FUN_00428e30 at 00428e5e
+;   core_charactr.cpp_CCharacter_processCharacter_FUN_00429870 at 00429a84
 ;   core_charactr.cpp_CCharacter_processFire_FUN_0042a830 at 0042ab73
-;   core_charactr.cpp_CCharacter_process_FUN_00429870 at 00429a84
 ;   ... and 39 more
 ;
 ; Called Functions:

@@ -30,7 +30,7 @@
 ; Called Functions:
 ;   core_game.cpp_CGame_restoreDefaultControls_FUN_0049e610
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
-;   engine_dosio.cpp_setReadonlyAttribute_FUN_00565dd0
+;   crt_io.c__chmod_FUN_00565dd0
 ;   engine_ini.cpp_CIniFile_ctor_FUN_004bd860
 ;   engine_ini.cpp_CIniFile_getInteger_FUN_004bda20
 ;   engine_ini.cpp_CIniFile_getString_FUN_004bd910
@@ -48,8 +48,8 @@ section .text
     PUSH ESI                            ; 004bdb88
     PUSH 0x180                          ; 004bdb89
     PUSH 0x5baa00                       ; 004bdb8e | = ".\\system\\nocturne.ini"
-    CALL engine_dosio.cpp_setReadonlyAttribute_FUN_00565dd0 ; 004bdb93
-        ;   XREF to: 00565dd0 (UNCONDITIONAL_CALL)  ; DWORD engine_dosio.cpp_setReadonlyAttribute_FUN_00565dd0(char * filename, DWORD file_attributes)
+    CALL crt_io.c__chmod_FUN_00565dd0   ; 004bdb93
+        ;   XREF to: 00565dd0 (UNCONDITIONAL_CALL)  ; int crt_io.c__chmod_FUN_00565dd0(char * path, int mode)
     ADD ESP,0x8                         ; 004bdb98
     TEST EAX,EAX                        ; 004bdb9b
     JNZ 0x004be29f                      ; 004bdb9d

@@ -32,7 +32,7 @@
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_00425960
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_004259a0
-;   core_charactr.cpp_CCharacter_process_FUN_004259f0
+;   core_charactr.cpp_CCharacter_processCharacter_FUN_004259f0
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_0042add0
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00428c00
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30
@@ -56,8 +56,8 @@ section .text
     MOV EBX,dword ptr [EBP + 0x10]      ; 004154bb
     PUSH dword ptr [EBP + 0x14]         ; 004154be
     PUSH EBX                            ; 004154c1
-    CALL core_charactr.cpp_CCharacter_process_FUN_004259f0 ; 004154c2
-        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_process_FUN_004259f0(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_processCharacter_FUN_004259f0 ; 004154c2
+        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processCharacter_FUN_004259f0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004154c7
     TEST EAX,EAX                        ; 004154ca
     JZ 0x004156f4                       ; 004154cc

@@ -56,8 +56,8 @@ void __cdecl core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_00476670(CDem
   goggles_scale_x = (0x140 < g_WindowWidth) ? 2 : 1;
   goggles_scale_y = (0xf0 < g_WindowHeight) ? 2 : 1;
 #else
-  goggles_scale_x = nocturne_goggles_scale_x();
-  goggles_scale_y = nocturne_goggles_scale_y();
+  goggles_scale_x = nocturne_ui_goggles_scale_x();
+  goggles_scale_y = nocturne_ui_goggles_scale_y();
 #endif
   lit_rows = (goggles_scale_y + 1) / 2;
   if (g_BitsPerPixel == 0x20) {

@@ -17,7 +17,7 @@ CDemonPod * __cdecl core_podmain_cpp_CDemonPod_dtor_FUN_00551b20(CDemonPod *this
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  ptr = engine_pod_cpp_CPod_dtor_FUN_005509b0((CPod *)this_ptr,1);
+  ptr = engine_pod_cpp_CPod_dtor_FUN_005509b0(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return (CDemonPod *)ptr;
   }

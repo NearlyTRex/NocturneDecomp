@@ -11,28 +11,28 @@ CNetGame * __cdecl core_netgame_cpp_CNetGame_ctor_FUN_004e9860(CNetGame *this_pt
 {
   char cVar1;
   void *pvVar2;
-  _SOCKET *p_Var3;
+  CSocket *pCVar3;
   char *pcVar4;
-  _SOCKET *p_Var5;
+  CSocket *pCVar5;
   
   pvVar2 = __arrinit(this_ptr->players,2,&g_SNetPlayerTypeInfo_005a0e20);
-  p_Var3 = support_trisock_cpp_invalidateSocket_FUN_00548ed0((_SOCKET *)((int)pvVar2 + 0x150));
-  ((CNetGame *)(p_Var3 + -0x5c))->connection_type = CONNECTION_NONE;
-  p_Var3[-0x5b] = 0;
+  pCVar3 = support_trisock_cpp_CSocket_ctor_FUN_00548ed0((CSocket *)((int)pvVar2 + 0x150));
+  ((CNetGame *)(pCVar3 + -0x5c))->connection_type = CONNECTION_NONE;
+  pCVar3[-0x5b].handle = 0;
   pcVar4 = "MyComputer";
-  p_Var3[-0x55] = 0;
-  p_Var3[-0x18] = 0xffffffff;
-  p_Var5 = p_Var3 + -0x5a;
-  p_Var3[-0x17] = 0xffffffff;
+  pCVar3[-0x55].handle = 0;
+  pCVar3[-0x18].handle = 0xffffffff;
+  pCVar5 = pCVar3 + -0x5a;
+  pCVar3[-0x17].handle = 0xffffffff;
   do {
     cVar1 = *pcVar4;
-    *(char *)p_Var5 = cVar1;
+    *(char *)&pCVar5->handle = cVar1;
     if (cVar1 == '\0') break;
     cVar1 = pcVar4[1];
     pcVar4 = pcVar4 + 2;
-    *(char *)((int)p_Var5 + 1) = cVar1;
-    p_Var5 = (_SOCKET *)((int)p_Var5 + 2);
+    *(char *)((int)&pCVar5->handle + 1) = cVar1;
+    pCVar5 = (CSocket *)((int)&pCVar5->handle + 2);
   } while (cVar1 != '\0');
-  p_Var3[-2] = 0;
-  return (CNetGame *)(p_Var3 + -0x5c);
+  pCVar3[-2].handle = 0;
+  return (CNetGame *)(pCVar3 + -0x5c);
 }

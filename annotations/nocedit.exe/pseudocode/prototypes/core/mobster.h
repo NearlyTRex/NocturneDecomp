@@ -53,7 +53,7 @@ CVector3f * __cdecl setEulerAngles(CVector3f *out,float x,float z,float y);
 
 // Original: core_mobster.cpp_CMobster_getCarryObjToBodyXForm_FUN_00526b20
 // Address: 00526b20
-void __stack2_esi CMobster::getCarryObjToBodyXForm(CMobster *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
+CMatrix3x4f * __stack2_esi CMobster::getCarryObjToBodyXForm(CMobster *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
 // Original: core_mobster.cpp_CMobster_processWeaponPickup_FUN_00526d90
 // Address: 00526d90

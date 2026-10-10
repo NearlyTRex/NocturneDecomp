@@ -41,6 +41,11 @@ extern "C" {
 // for Escape or a window close.
 int nocturne_net_menu_multiplayer(void);
 
+// The main menu's Ctrl+H (host) and Ctrl+J (join) hotkeys, checked once a menu
+// frame. Each resets the sound around the session as the menu's other entries
+// do.
+void nocturne_net_menu_hotkeys(void);
+
 #ifdef __cplusplus
 }
 #endif

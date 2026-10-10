@@ -25,8 +25,8 @@
 ; Called Functions:
 ;   core_netgame.cpp_CNetGame_processPacket_FUN_005406a0
 ;   core_netgame.cpp_CNetGame_removeChatOut_FUN_00541ff0
-;   support_trisock.cpp_isSocketValid_FUN_005e1b70
-;   support_trisock.cpp_receiveSocketData_FUN_005e1c20
+;   support_trisock.cpp_CSocket_isSocketValid_FUN_005e1b70
+;   support_trisock.cpp_CSocket_receiveSocketData_FUN_005e1c20
 ;   wincore_winrun.cpp_getTime_FUN_005f2dc0
 ;
 ; *****************************************************************************
@@ -59,8 +59,8 @@ section .text
     LEA EBX,[ESI + 0x170]               ; 005405eb
     PUSH EBX                            ; 005405f1
         ;   Label: LAB_005405f1
-    CALL support_trisock.cpp_isSocketValid_FUN_005e1b70 ; 005405f2
-        ;   XREF to: 005e1b70 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_isSocketValid_FUN_005e1b70(_SOCKET * socket_handle)
+    CALL support_trisock.cpp_CSocket_isSocketValid_FUN_005e1b70 ; 005405f2
+        ;   XREF to: 005e1b70 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_CSocket_isSocketValid_FUN_005e1b70(CSocket * this_ptr)
     ADD ESP,0x4                         ; 005405f7
     TEST EAX,EAX                        ; 005405fa
     JNZ 0x0054060f                      ; 005405fc
@@ -83,8 +83,8 @@ section .text
     PUSH 0x404                          ; 00540612
     PUSH 0x2fa88cc                      ; 00540617 | g_NetworkReceivePacket+4
     PUSH EBX                            ; 0054061c
-    CALL support_trisock.cpp_receiveSocketData_FUN_005e1c20 ; 0054061d
-        ;   XREF to: 005e1c20 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_receiveSocketData_FUN_005e1c20(_SOCKET * socket_handle, char * buffer, int length, SNetworkAddr * source_addr)
+    CALL support_trisock.cpp_CSocket_receiveSocketData_FUN_005e1c20 ; 0054061d
+        ;   XREF to: 005e1c20 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_CSocket_receiveSocketData_FUN_005e1c20(CSocket * this_ptr, char * buffer, int length, SNetworkAddr * source_addr)
     ADD ESP,0x10                        ; 00540622
     TEST EAX,EAX                        ; 00540625
     JLE 0x00540644                      ; 00540627

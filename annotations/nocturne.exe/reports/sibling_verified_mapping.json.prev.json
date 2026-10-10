@@ -1154,11 +1154,11 @@
   {
    "a": "00403790",
    "b": "00404480",
-   "name": "wincore_wddvmem.cpp_initTextureCache_FUN_00403790",
-   "confidence": 0.75,
+   "name": "engine_3d.c_initTextureCache_FUN_00403790",
+   "confidence": 0.78,
    "ambiguous": false,
    "evidence": [
-    "caller:calls 005dd760"
+    "order_multi:engine_3d.c between 00403740 and 004037e0"
    ],
    "shape_agreement": "unshaped",
    "conv": "__cdecl",
@@ -1169,11 +1169,11 @@
   {
    "a": "004037a0",
    "b": "00404490",
-   "name": "wincore_wddvmem.cpp_freeTextureCache_FUN_004037a0",
-   "confidence": 0.75,
+   "name": "engine_3d.c_freeTextureCache_FUN_004037a0",
+   "confidence": 0.78,
    "ambiguous": false,
    "evidence": [
-    "caller:calls 005dd7a0"
+    "order_multi:engine_3d.c between 00403740 and 004037e0"
    ],
    "shape_agreement": "unshaped",
    "conv": "__cdecl",
@@ -1185,11 +1185,12 @@
    "a": "004037b0",
    "b": "004044a0",
    "name": "engine_3d.c_badMRGLStruct_FUN_004037b0",
-   "confidence": 0.82,
+   "confidence": 0.91,
    "ambiguous": false,
    "evidence": [
     "vtable_order:0066df88<->005acab8 forced",
-    "vtable_order:0066df88<->005acab8 forced"
+    "vtable_order:0066df88<->005acab8 forced",
+    "order_multi:engine_3d.c between 00403740 and 004037e0"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -3356,7 +3357,7 @@
   {
    "a": "004090c0",
    "b": "0040a390",
-   "name": "core_actor.cpp_CDemonActor_testPointInCylinder_FUN_004090c0",
+   "name": "core_actor.cpp_CDemonActor_testCylinderCollision_FUN_004090c0",
    "confidence": 0.82,
    "ambiguous": false,
    "evidence": [
@@ -4667,7 +4668,7 @@
   {
    "a": "0040c8f0",
    "b": "0040d9f0",
-   "name": "core_actor.cpp_CDemonActor_processFootstepAt_FUN_0040c8f0",
+   "name": "core_actor.cpp_CDemonActor_processFootstepAtOffset_FUN_0040c8f0",
    "confidence": 0.78,
    "ambiguous": false,
    "evidence": [
@@ -6219,7 +6220,7 @@
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
-   "ret": "int",
+   "ret": "void",
    "sig_verdict": "unverifiable",
    "sig_detail": "no conclusive measurement; wants 4 (pop None, push None, store None)"
   },
@@ -8958,7 +8959,7 @@
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__stack2_esi",
-   "ret": "void",
+   "ret": "CMatrix3x4f*",
    "sig_verdict": "unverifiable",
    "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)"
   },
@@ -11282,7 +11283,7 @@
   {
    "a": "00429870",
    "b": "004259f0",
-   "name": "core_charactr.cpp_CCharacter_process_FUN_00429870",
+   "name": "core_charactr.cpp_CCharacter_processCharacter_FUN_00429870",
    "confidence": 1.0,
    "ambiguous": false,
    "evidence": [
@@ -12029,7 +12030,7 @@
   {
    "a": "0042ca60",
    "b": "00428bf0",
-   "name": "core_charactr.cpp_CCharacter_canWalk_FUN_0042ca60",
+   "name": "core_charactr.cpp_CCharacter_isInvulnerable_FUN_0042ca60",
    "confidence": 0.78,
    "ambiguous": false,
    "evidence": [
@@ -12192,7 +12193,7 @@
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__stack2_esi",
-   "ret": "void",
+   "ret": "CMatrix3x4f*",
    "sig_verdict": "unverifiable",
    "sig_detail": "no conclusive measurement; wants 8 (pop 0, push 0, store None)"
   },
@@ -16574,7 +16575,7 @@
   {
    "a": "00448630",
    "b": "0043c970",
-   "name": "core_crate.cpp_CCrate_drop_FUN_00448630",
+   "name": "core_crate.cpp_CCrate_onDropped_FUN_00448630",
    "confidence": 1.0,
    "ambiguous": false,
    "evidence": [
@@ -21447,7 +21448,7 @@
   {
    "a": "00481960",
    "b": "004569a0",
-   "name": "engine_dosio.cpp_getFileSizeWithFinder_FUN_00481960",
+   "name": "engine_dosio.cpp_getFileAttributes_FUN_00481960",
    "confidence": 0.99,
    "ambiguous": false,
    "evidence": [
@@ -36191,7 +36192,7 @@
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__stack2_esi",
-   "ret": "void",
+   "ret": "CMatrix3x4f*",
    "sig_verdict": "unverifiable",
    "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)"
   },
@@ -40237,7 +40238,7 @@
   {
    "a": "004f28a0",
    "b": "004b4c30",
-   "name": "core_hero.cpp_CHero_canWalk_FUN_004f28a0",
+   "name": "core_hero.cpp_CHero_isInvulnerable_FUN_004f28a0",
    "confidence": 0.82,
    "ambiguous": false,
    "evidence": [
@@ -41625,7 +41626,7 @@
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__stack2_esi",
-   "ret": "void",
+   "ret": "CMatrix3x4f*",
    "sig_verdict": "unverifiable",
    "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)"
   },
@@ -41883,7 +41884,7 @@
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__stack2_esi",
-   "ret": "void",
+   "ret": "CMatrix3x4f*",
    "sig_verdict": "unverifiable",
    "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)"
   },
@@ -45756,7 +45757,7 @@
   {
    "a": "0050b3c0",
    "b": "004cbdb0",
-   "name": "core_manpuz.cpp_CMirrorHack_stopUsing_FUN_0050b3c0",
+   "name": "core_manpuz.cpp_CMirrorHack_stopInteraction_FUN_0050b3c0",
    "confidence": 0.82,
    "ambiguous": false,
    "evidence": [
@@ -48977,7 +48978,7 @@
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__stack2_esi",
-   "ret": "void",
+   "ret": "CMatrix3x4f*",
    "sig_verdict": "unverifiable",
    "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)"
   },
@@ -65377,7 +65378,7 @@
    "conv": "__cdecl",
    "ret": "void",
    "sig_verdict": "unverifiable",
-   "sig_detail": "no conclusive measurement; wants 52 (pop None, push None, store None)"
+   "sig_detail": "no conclusive measurement; wants 76 (pop None, push None, store None)"
   },
   {
    "a": "005b1680",
@@ -65465,7 +65466,7 @@
    ],
    "shape_agreement": "unshaped",
    "conv": "__cdecl",
-   "ret": "int",
+   "ret": "void*",
    "sig_verdict": "unverifiable",
    "sig_detail": "no conclusive measurement; wants 16 (pop None, push None, store None)"
   },
@@ -68485,7 +68486,7 @@
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__stack2_esi",
-   "ret": "void",
+   "ret": "CMatrix3x4f*",
    "sig_verdict": "unverifiable",
    "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)"
   },
@@ -69324,7 +69325,7 @@
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__stack2_esi",
-   "ret": "void",
+   "ret": "CMatrix3x4f*",
    "sig_verdict": "unverifiable",
    "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)"
   },
@@ -69415,7 +69416,7 @@
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__stack2_esi",
-   "ret": "void",
+   "ret": "CMatrix3x4f*",
    "sig_verdict": "unverifiable",
    "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)"
   },
@@ -69814,7 +69815,7 @@
   {
    "a": "005db9d0",
    "b": "005445c0",
-   "name": "core_tentacle.cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0",
+   "name": "core_tentacle.cpp_CTentacle_attractActorToward_FUN_005db9d0",
    "confidence": 1.0,
    "ambiguous": false,
    "evidence": [
@@ -69824,7 +69825,7 @@
    "conv": "__cdecl",
    "ret": "int",
    "sig_verdict": "unverifiable",
-   "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)"
+   "sig_detail": "no conclusive measurement; wants 12 (pop None, push None, store None)"
   },
   {
    "a": "005dbb30",
@@ -71355,7 +71356,7 @@
   {
    "a": "005e1ae0",
    "b": "00548ed0",
-   "name": "support_trisock.cpp_invalidateSocket_FUN_005e1ae0",
+   "name": "support_trisock.cpp_CSocket_ctor_FUN_005e1ae0",
    "confidence": 0.99,
    "ambiguous": false,
    "evidence": [
@@ -71363,14 +71364,14 @@
    ],
    "shape_agreement": "identical",
    "conv": "__cdecl",
-   "ret": "_SOCKET*",
+   "ret": "CSocket*",
    "sig_verdict": "agree",
    "sig_detail": "callers push 4 == 4 stack bytes"
   },
   {
    "a": "005e1af0",
    "b": "00548ee0",
-   "name": "support_trisock.cpp_bindSocketWrapper_FUN_005e1af0",
+   "name": "support_trisock.cpp_CSocket_dtor_FUN_005e1af0",
    "confidence": 0.9625,
    "ambiguous": false,
    "evidence": [
@@ -71380,14 +71381,14 @@
    ],
    "shape_agreement": "identical",
    "conv": "__cdecl",
-   "ret": "_SOCKET*",
+   "ret": "CSocket*",
    "sig_verdict": "agree",
    "sig_detail": "callers pop 8 == 8 stack bytes"
   },
   {
    "a": "005e1b10",
    "b": "00548f00",
-   "name": "support_trisock.cpp_createSocket_FUN_005e1b10",
+   "name": "support_trisock.cpp_CSocket_createSocket_FUN_005e1b10",
    "confidence": 0.99,
    "ambiguous": false,
    "evidence": [
@@ -71402,7 +71403,7 @@
   {
    "a": "005e1b40",
    "b": "00548f30",
-   "name": "support_trisock.cpp_createUDPSocket_FUN_005e1b40",
+   "name": "support_trisock.cpp_CSocket_createUDPSocket_FUN_005e1b40",
    "confidence": 0.99,
    "ambiguous": false,
    "evidence": [
@@ -71417,7 +71418,7 @@
   {
    "a": "005e1b70",
    "b": "00548f60",
-   "name": "support_trisock.cpp_isSocketValid_FUN_005e1b70",
+   "name": "support_trisock.cpp_CSocket_isSocketValid_FUN_005e1b70",
    "confidence": 0.99,
    "ambiguous": false,
    "evidence": [
@@ -71432,7 +71433,7 @@
   {
    "a": "005e1b80",
    "b": "00548f70",
-   "name": "support_trisock.cpp_bindSocket_FUN_005e1b80",
+   "name": "support_trisock.cpp_CSocket_bindSocket_FUN_005e1b80",
    "confidence": 0.99,
    "ambiguous": false,
    "evidence": [
@@ -71447,7 +71448,7 @@
   {
    "a": "005e1bd0",
    "b": "00548fc0",
-   "name": "support_trisock.cpp_connectSocket_FUN_005e1bd0",
+   "name": "support_trisock.cpp_CSocket_connectSocket_FUN_005e1bd0",
    "confidence": 0.99,
    "ambiguous": false,
    "evidence": [
@@ -71462,7 +71463,7 @@
   {
    "a": "005e1c20",
    "b": "00549010",
-   "name": "support_trisock.cpp_receiveSocketData_FUN_005e1c20",
+   "name": "support_trisock.cpp_CSocket_receiveSocketData_FUN_005e1c20",
    "confidence": 0.99,
    "ambiguous": false,
    "evidence": [
@@ -71477,7 +71478,7 @@
   {
    "a": "005e1ca0",
    "b": "00549090",
-   "name": "support_trisock.cpp_performSocketOperation_FUN_005e1ca0",
+   "name": "support_trisock.cpp_CSocket_sendSocketData_FUN_005e1ca0",
    "confidence": 0.99,
    "ambiguous": false,
    "evidence": [
@@ -71492,7 +71493,7 @@
   {
    "a": "005e1d20",
    "b": "00549110",
-   "name": "support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20",
+   "name": "support_trisock.cpp_CSocket_closeSocket_FUN_005e1d20",
    "confidence": 0.99,
    "ambiguous": false,
    "evidence": [
@@ -71507,7 +71508,7 @@
   {
    "a": "005e1d60",
    "b": "00549150",
-   "name": "support_trisock.cpp_listenSocket_FUN_005e1d60",
+   "name": "support_trisock.cpp_CSocket_listenSocket_FUN_005e1d60",
    "confidence": 0.99,
    "ambiguous": false,
    "evidence": [
@@ -71522,7 +71523,7 @@
   {
    "a": "005e1d80",
    "b": "00549170",
-   "name": "support_trisock.cpp_acceptConnection_FUN_005e1d80",
+   "name": "support_trisock.cpp_CSocket_acceptConnection_FUN_005e1d80",
    "confidence": 0.99,
    "ambiguous": false,
    "evidence": [
@@ -71537,7 +71538,7 @@
   {
    "a": "005e1df0",
    "b": "005491e0",
-   "name": "support_trisock.cpp_getSocketName_FUN_005e1df0",
+   "name": "support_trisock.cpp_CSocket_getSocketName_FUN_005e1df0",
    "confidence": 0.99,
    "ambiguous": false,
    "evidence": [
@@ -71552,7 +71553,7 @@
   {
    "a": "005e1e50",
    "b": "00549240",
-   "name": "support_trisock.cpp_setSocketBlocking_FUN_005e1e50",
+   "name": "support_trisock.cpp_CSocket_setSocketBlocking_FUN_005e1e50",
    "confidence": 0.99,
    "ambiguous": false,
    "evidence": [
@@ -72349,7 +72350,7 @@
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__stack2_esi",
-   "ret": "void",
+   "ret": "CMatrix3x4f*",
    "sig_verdict": "unverifiable",
    "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)"
   },
@@ -76554,7 +76555,7 @@
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__stack2_esi",
-   "ret": "void",
+   "ret": "CMatrix3x4f*",
    "sig_verdict": "unverifiable",
    "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)"
   },
@@ -78897,7 +78898,7 @@
   {
    "a": "00600c30",
    "b": "00565dd0",
-   "name": "engine_dosio.cpp_setReadonlyAttribute_FUN_00600c30",
+   "name": "crt_io.c__chmod_FUN_00600c30",
    "confidence": 0.99,
    "ambiguous": false,
    "evidence": [
@@ -78905,7 +78906,7 @@
    ],
    "shape_agreement": "identical",
    "conv": "__cdecl",
-   "ret": "DWORD",
+   "ret": "int",
    "sig_verdict": "agree",
    "sig_detail": "callers pop 8 == 8 stack bytes"
   },
@@ -86252,7 +86253,7 @@
   {
    "a": "005e1e90",
    "tu": "support_trisock.cpp",
-   "name": "support_trisock.cpp_setSocketBroadcast_FUN_005e1e90"
+   "name": "support_trisock.cpp_CSocket_setSocketBroadcast_FUN_005e1e90"
   },
   {
    "a": "005e3ca0",

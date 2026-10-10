@@ -9,6 +9,7 @@
 #include "shim_config.h"
 #include "core/debug_log.h"
 #include "core/ascii_case.h"
+#include "watcom/path.h"
 
 #include <stddef.h>
 #include <string.h>
@@ -38,26 +39,15 @@ static const NocturneBuiltinModule g_BuiltinModules[] = {
 static const int g_BuiltinModuleCount =
     (int)(sizeof(g_BuiltinModules) / sizeof(g_BuiltinModules[0]));
 
-// The game passes bare DLL names, but tolerate a path prefix so a value that
-// arrived via pod.ini's rendererDLLPath still matches.
-static const char *basename_of(const char *path) {
-    const char *base = path;
-    const char *p;
-    for (p = path; *p; p++) {
-        if (*p == '/' || *p == '\\') {
-            base = p + 1;
-        }
-    }
-    return base;
-}
-
 static const NocturneBuiltinModule *find_module(const char *dll_name) {
     int i;
     if (!dll_name || !*dll_name) {
         return NULL;
     }
+    // The game passes bare DLL names, but tolerate a path prefix so a value that
+    // arrived via pod.ini's rendererDLLPath still matches.
     for (i = 0; i < g_BuiltinModuleCount; i++) {
-        if (nocturne_ascii_iequals(basename_of(dll_name), g_BuiltinModules[i].dll_name)) {
+        if (nocturne_ascii_iequals(watcom_path_leaf(dll_name), g_BuiltinModules[i].dll_name)) {
             return &g_BuiltinModules[i];
         }
     }
@@ -98,6 +88,19 @@ extern "C" const char *nocturne_builtin_dll_next(const char *current) {
     (void)current;
     return NULL;
 #endif
+}
+
+extern "C" void nocturne_builtin_dll_step(char *path) {
+    const char *next = nocturne_builtin_dll_next(path);
+    if (next != NULL) {
+        strcpy(path, next);
+    }
+}
+
+extern "C" void nocturne_builtin_dll_snap(char *path) {
+    if (nocturne_builtin_dll_available(path) == 0) {
+        nocturne_builtin_dll_step(path);
+    }
 }
 
 extern "C" void *nocturne_builtin_dll_open(const char *dll_name) {

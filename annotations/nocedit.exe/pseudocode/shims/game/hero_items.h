@@ -32,8 +32,7 @@ struct SDamageInfo;
 extern "C" {
 #endif
 
-// Once per frame from the hero's process, after CCharacter::process accepts the
-// frame. A use_item press with a health item selected spends the item and is
+// Once per frame from nocturne_hero_frame (hero_frame.h). A use_item press with a health item selected spends the item and is
 // consumed, so the class's own use_item branch does not also fire. Any other
 // selection leaves the press to the class.
 void nocturne_hero_items_process(struct CHero *hero);

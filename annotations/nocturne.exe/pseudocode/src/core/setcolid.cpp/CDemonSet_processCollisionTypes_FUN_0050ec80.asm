@@ -27,7 +27,7 @@
 ;
 ; XREF[7]:
 ;   core_actor.cpp_CDemonActor_cylinderGroundCheck_FUN_0040a140 at 0040a18c
-;   core_actor.cpp_CDemonActor_processFootstepAt_FUN_0040d9f0 at 0040da81
+;   core_actor.cpp_CDemonActor_processFootstepAtOffset_FUN_0040d9f0 at 0040da81
 ;   core_actor.cpp_CDemonActor_processFootstep_FUN_0040d930 at 0040d9ab
 ;   core_fire.cpp_CCrater_activate_FUN_004876d0 at 00487725
 ;   core_gore.cpp_CBloodPool_init_FUN_004af730 at 004af75b

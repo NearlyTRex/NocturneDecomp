@@ -444,7 +444,7 @@
       "match": "(SNetworkAddr *)((int)packet",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "uVar4 = ((SNetworkAddr *)((int)packet + 5))->other;",
+      "text": "uVar4 = ((SNetworkAddr *)((int)packet + 5))->padding;",
       "type": "pointer_cast"
     },
     {
@@ -462,7 +462,7 @@
       "match": "(SNetworkAddr *)((int)packet",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "uVar4 = ((SNetworkAddr *)((int)packet + 0x69))->other;",
+      "text": "uVar4 = ((SNetworkAddr *)((int)packet + 0x69))->padding;",
       "type": "pointer_cast"
     },
     {

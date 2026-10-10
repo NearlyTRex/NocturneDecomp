@@ -25,11 +25,11 @@ void __cdecl core_netgame_cpp_CNetGame_receivePackets_FUN_004ea740(CNetGame *thi
   _DAT_01cea3f8 = _DAT_01cea3f8 + _DAT_01cea3f4;
   _DAT_01cea3f4 = iVar1 / 0x12;
   while( true ) {
-    iVar1 = support_trisock_cpp_isSocketValid_FUN_00548f60(&this_ptr->socket);
+    iVar1 = support_trisock_cpp_CSocket_isSocketValid_FUN_00548f60(&this_ptr->socket);
     if (iVar1 == 0) {
       return;
     }
-    iVar1 = support_trisock_cpp_receiveSocketData_FUN_00549010
+    iVar1 = support_trisock_cpp_CSocket_receiveSocketData_FUN_00549010
                       (&this_ptr->socket,&DAT_01d1640c,0x404,&local_10);
     if (iVar1 < 1) break;
     g_INT_01d16408 = iVar1 + 1;

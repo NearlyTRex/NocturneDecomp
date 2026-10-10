@@ -62,8 +62,8 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00410490(CBaron *this_ptr,float d
     }
   }
   if (((this_ptr->summoned == 0) && ((this_ptr->base).control_type == HERO_CONTROL_AI)) ||
-     (iVar3 = core_charactr_cpp_CCharacter_process_FUN_004259f0((CCharacter *)this_ptr,delta_time),
-     iVar3 == 0)) {
+     (iVar3 = core_charactr_cpp_CCharacter_processCharacter_FUN_004259f0
+                        ((CCharacter *)this_ptr,delta_time), iVar3 == 0)) {
     return;
   }
   if ((this_ptr->base).control_type == HERO_CONTROL_AI) {

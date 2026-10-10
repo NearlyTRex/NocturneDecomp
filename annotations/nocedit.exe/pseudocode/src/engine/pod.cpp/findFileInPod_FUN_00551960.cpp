@@ -14,6 +14,6 @@ int __cdecl engine_pod_cpp_findFileInPod_FUN_00551960(SFoundFileInfo *info)
   if (g_CDemonPodPtr == (CDemonPod *)0x0) {
     return 0;
   }
-  iVar1 = (*g_CDemonPodPtr->vtable->findFile)((CPod *)g_CDemonPodPtr,info);
+  iVar1 = (*((g_CDemonPodPtr->base).vtable)->findFile)(&g_CDemonPodPtr->base,info);
   return iVar1;
 }

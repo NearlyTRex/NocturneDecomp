@@ -7,7 +7,7 @@
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[31]:
-;   core_actor.cpp_CDemonActor_processFootstepAt_FUN_0040d9f0 at 0040dac2
+;   core_actor.cpp_CDemonActor_processFootstepAtOffset_FUN_0040d9f0 at 0040dac2
 ;   core_actor.cpp_CDemonActor_processFootstep_FUN_0040d930 at 0040d9ba
 ;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00429730 at 00429a7d
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050 at 004254e1

@@ -77,7 +77,8 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004da790(CMobster *this_ptr,f
   float local_18;
   float local_14;
   
-  iVar5 = core_charactr_cpp_CCharacter_process_FUN_004259f0((CCharacter *)this_ptr,delta_time);
+  iVar5 = core_charactr_cpp_CCharacter_processCharacter_FUN_004259f0
+                    ((CCharacter *)this_ptr,delta_time);
   if (iVar5 == 0) {
     if (this_ptr->vehicle != (CDemonActor *)0x0) {
       core_mobster_cpp_CMobster_positionOnVehicle_FUN_004da5a0(this_ptr);

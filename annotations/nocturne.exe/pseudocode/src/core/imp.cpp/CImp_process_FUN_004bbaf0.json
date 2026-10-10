@@ -58,14 +58,8 @@
       {
         "category": "undeclared_identifier",
         "column": 47,
-        "line": 138,
+        "line": 139,
         "message": "use of undeclared identifier '_DAT_01cae30c'"
-      },
-      {
-        "category": "cast_error",
-        "column": 24,
-        "line": 275,
-        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
       },
       {
         "category": "cast_error",
@@ -74,21 +68,27 @@
         "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
       },
       {
+        "category": "cast_error",
+        "column": 24,
+        "line": 277,
+        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
+      },
+      {
         "category": "undeclared_identifier",
         "column": 51,
-        "line": 394,
+        "line": 395,
         "message": "use of undeclared identifier 'DAT_02dd1184'"
       },
       {
         "category": "undeclared_identifier",
         "column": 27,
-        "line": 396,
+        "line": 397,
         "message": "use of undeclared identifier '_DAT_01cae314'"
       },
       {
         "category": "format_error",
         "column": 85,
-        "line": 477,
+        "line": 478,
         "message": "format specifies type 'char *' but the argument has type 'CImp *' [-Werror,-Wformat]"
       }
     ],
@@ -98,12 +98,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1167,
-    "complexity_score": 636,
+    "complexity_score": 637,
     "cross_reference_count": 0,
     "function_call_count": 28,
     "global_count": 28,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 506,
+    "pseudocode_lines": 507,
     "suspect_count": 10,
     "suspect_types": [
       "pointer_cast",
@@ -113,7 +113,7 @@
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 1673
+    "total_lines": 1674
   },
   "cross_references": [],
   "function": {
@@ -178,7 +178,7 @@
     {
       "addr": "004259f0",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_process_FUN_004259f0"
+      "name": "core_charactr.cpp_CCharacter_processCharacter_FUN_004259f0"
     },
     {
       "addr": "0042add0",
@@ -958,7 +958,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 387,
+      "line": 388,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(&local_b0,(CVector3f *)&DAT_02dd1184,",
@@ -966,7 +966,7 @@
     },
     {
       "description": "Raw hex address 0x4bbd84 assigned to bare local `iVar6`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar6` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 141,
+      "line": 142,
       "match": "0x4bbd84",
       "severity": "moderate",
       "text": "iVar6 = 0x4bbd84;",
@@ -974,7 +974,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 74,
+      "line": 75,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -982,7 +982,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 259,
+      "line": 260,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -990,7 +990,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 472,
+      "line": 473,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -998,7 +998,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 496,
+      "line": 497,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.position_delta.z = 0.0;",
@@ -1006,7 +1006,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 499,
+      "line": 500,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -1014,7 +1014,7 @@
     },
     {
       "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
-      "line": 399,
+      "line": 400,
       "match": "(TYPE *) ((int)NAME ...) split across lines",
       "severity": "moderate",
       "text": "(*(CDemonActor **)",

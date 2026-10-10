@@ -21,8 +21,6 @@
 // A camera can cut several times inside the lead window.
 #define CAMERA_MAX_PENDING 32
 
-#define CAMERA_MAX_PLAYERS 4
-
 // Written before the first change a player publishes: no camera.
 #define CAMERA_NONE -1
 
@@ -38,15 +36,12 @@ typedef struct SNetPacket_Camera {
 
 static SNetPacket_Camera s_pending[CAMERA_MAX_PENDING];
 static int s_pending_count = 0;
-static int s_synced_camera[CAMERA_MAX_PLAYERS] = {
+static int s_synced_camera[NOCTURNE_HERO_SLOTS] = {
     CAMERA_NONE, CAMERA_NONE, CAMERA_NONE, CAMERA_NONE};
-// Serials taken from each peer: the highest, plus a bit for each of the 32
-// below it. A lost change re-sent after a later one still gets in, which a
-// highest-only mark (as net_weapon uses) would refuse.
-static int          s_highest_serial[CAMERA_MAX_PLAYERS];
-static unsigned int s_seen_below[CAMERA_MAX_PLAYERS];
+// Serials taken from each peer (net_packets.h).
+static SNetSerialWindow s_serials[NOCTURNE_HERO_SLOTS];
 // Serial of the change each player's synced camera came from.
-static int s_applied_serial[CAMERA_MAX_PLAYERS];
+static int s_applied_serial[NOCTURNE_HERO_SLOTS];
 static int s_next_serial = 1;
 // The camera this machine last published; -2 forces the first publish.
 static int s_published_camera = -2;
@@ -54,14 +49,7 @@ static int s_reported_late = 0;
 
 static void camera_broadcast(const SNetPacket_Camera *change)
 {
-    CNetGame *net_game = g_CNetGamePtr;
-
-    for (int i = 0; i < net_game->player_count; i++) {
-        if (i != net_game->local_player_index) {
-            core_netgame_cpp_CNetGame_send_FUN_005411c0(
-                net_game, i, (SNetPacketHeader *)&change->header);
-        }
-    }
+    nocturne_net_session_broadcast((SNetPacketHeader *)&change->header);
 }
 
 static void camera_queue(const SNetPacket_Camera *change)
@@ -75,37 +63,9 @@ static void camera_queue(const SNetPacket_Camera *change)
     s_pending_count = s_pending_count + 1;
 }
 
-// Marks `serial` from `origin` as taken. 0 if it was already taken, or is too
-// far below the newest to tell.
-static int camera_take_serial(int origin, int serial)
-{
-    int highest = s_highest_serial[origin];
-
-    if (highest < serial) {
-        int shift = serial - highest;
-        s_seen_below[origin] = (shift < 32)
-            ? ((s_seen_below[origin] << shift) | (1u << (shift - 1)))
-            : 0u;
-        if (highest == 0) {
-            s_seen_below[origin] = 0u;
-        }
-        s_highest_serial[origin] = serial;
-        return 1;
-    }
-    if ((serial == highest) || (32 < highest - serial)) {
-        return 0;
-    }
-    unsigned int bit = 1u << (highest - serial - 1);
-    if ((s_seen_below[origin] & bit) != 0u) {
-        return 0;
-    }
-    s_seen_below[origin] |= bit;
-    return 1;
-}
 
 static void camera_publish_local(void)
 {
-    CNetGame         *net_game = g_CNetGamePtr;
     SNetPacket_Camera change;
     int               camera = g_CDemonSetPtr->selected_camera_index;
 
@@ -114,12 +74,9 @@ static void camera_publish_local(void)
     }
     s_published_camera = camera;
 
-    std::memset(&change, 0, sizeof(change));
-    change.header.size    = sizeof(SNetPacket_Camera);
-    change.header.type    = (ENetPacketType)NOCTURNE_NET_PACKET_CAMERA;
-    change.apply_sequence =
-        net_game->players[net_game->local_player_index].sim_frame_index + CAMERA_LEAD_FRAMES;
-    change.origin_player  = net_game->local_player_index;
+    nocturne_net_packet_init(&change, (int)sizeof(change), NOCTURNE_NET_PACKET_CAMERA);
+    change.apply_sequence = nocturne_net_session_local_frame() + CAMERA_LEAD_FRAMES;
+    change.origin_player  = g_CNetGamePtr->local_player_index;
     change.serial         = s_next_serial;
     change.camera_index   = camera;
     s_next_serial = s_next_serial + 1;
@@ -130,9 +87,7 @@ static void camera_publish_local(void)
 
 extern "C" int nocturne_net_camera_active(void)
 {
-    return ((g_CNetGamePtr != (CNetGame *)0x0) &&
-            (g_CNetGamePtr->connection_type != CONNECTION_NONE) &&
-            (g_CNetGamePtr->network_mode == NET_MODE_PLAYING));
+    return nocturne_net_session_playing();
 }
 
 extern "C" int nocturne_net_camera_is_current(const char *camera_name)
@@ -142,7 +97,7 @@ extern "C" int nocturne_net_camera_is_current(const char *camera_name)
     if ((set == (CDemonSet *)0x0) || (camera_name == (const char *)0x0)) {
         return 0;
     }
-    for (int i = 0; i < CAMERA_MAX_PLAYERS; i++) {
+    for (int i = 0; i < NOCTURNE_HERO_SLOTS; i++) {
         int camera = s_synced_camera[i];
         if ((0 <= camera) && (camera < set->camera_count) &&
             nocturne_ascii_iequals(set->cameras[camera].name, camera_name)) {
@@ -156,16 +111,14 @@ extern "C" int nocturne_net_camera_on_packet(const void *packet, int packet_size
 {
     const SNetPacket_Camera *incoming = (const SNetPacket_Camera *)packet;
 
-    if ((packet == (const void *)0x0) || (packet_size < (int)sizeof(SNetPacket_Camera))) {
+    if (nocturne_net_packet_is(packet, packet_size, NOCTURNE_NET_PACKET_CAMERA,
+                               (int)sizeof(SNetPacket_Camera)) == 0) {
         return 0;
     }
-    if (incoming->header.type != (ENetPacketType)NOCTURNE_NET_PACKET_CAMERA) {
-        return 0;
-    }
-    if ((incoming->origin_player < 0) || (CAMERA_MAX_PLAYERS <= incoming->origin_player)) {
+    if ((incoming->origin_player < 0) || (NOCTURNE_HERO_SLOTS <= incoming->origin_player)) {
         return 1;
     }
-    if (camera_take_serial(incoming->origin_player, incoming->serial) == 0) {
+    if (nocturne_net_serial_take(&s_serials[incoming->origin_player], incoming->serial) == 0) {
         return 1;               // a re-send of one already queued
     }
     camera_queue(incoming);
@@ -221,25 +174,21 @@ extern "C" void nocturne_net_camera_reset(void)
     s_next_serial      = 1;
     s_published_camera = -2;
     s_reported_late    = 0;
-    std::memset(s_highest_serial, 0, sizeof(s_highest_serial));
-    std::memset(s_seen_below, 0, sizeof(s_seen_below));
+    std::memset(s_serials, 0, sizeof(s_serials));
     std::memset(s_applied_serial, 0, sizeof(s_applied_serial));
-    for (int i = 0; i < CAMERA_MAX_PLAYERS; i++) {
+    for (int i = 0; i < NOCTURNE_HERO_SLOTS; i++) {
         s_synced_camera[i] = CAMERA_NONE;
     }
 }
 
 extern "C" CDemonActor *nocturne_net_camera_focus_actor(CDemonActor *target) {
-    if (g_CNetGamePtr == nullptr || g_CNetGamePtr->connection_type == CONNECTION_NONE ||
-        g_HeroActors[g_LocalHeroIndex] == nullptr) {
+    CHero *local = nocturne_hero_local();
+
+    if ((nocturne_net_session_active() == 0) || (local == nullptr) ||
+        (nocturne_hero_is_player(target) == 0)) {
         return target;
     }
-    for (int i = 0; i < g_HeroCount && i < 4; i++) {
-        if (target != nullptr && (CDemonActor *)g_HeroActors[i] == target) {
-            return (CDemonActor *)g_HeroActors[g_LocalHeroIndex];
-        }
-    }
-    return target;
+    return (CDemonActor *)local;
 }
 
 #else

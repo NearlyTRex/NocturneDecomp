@@ -44,8 +44,7 @@ CMotionController *controller(CHero *hero)
 
 int find_state(CHero *hero, const char *name)
 {
-    return core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0
-        (controller(hero)->motion_list_ptr, (char *)name, 0);
+    return nocturne_hero_motion_find_state(&hero->base, name);
 }
 
 SMotion *current_motion(CHero *hero)
@@ -88,25 +87,14 @@ void request(CHero *hero, int state)
 // reaches, and if the class keeps steering elsewhere, jump.
 void steer_into_grabbed(CHero *hero, int grabbed_state, float held_for)
 {
-    CMotionList *list;
     SMotion *motion;
-    int i;
 
     motion = current_motion(hero);
     if ((motion->state_index == grabbed_state) || (0.0f <= controller(hero)->tween_progress)) {
         return;
     }
     if (k_snap_seconds <= held_for) {
-        list = controller(hero)->motion_list_ptr;
-        for (i = 0; i < list->motion_count; i++) {
-            if (list->motions[i].state_index == grabbed_state) {
-                core_motion_cpp_CMotionController_jumpToMotion_FUN_0052dde0
-                    (controller(hero), i, 0.0f);
-                core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (controller(hero), grabbed_state, 0);
-                return;
-            }
-        }
+        nocturne_hero_motion_force_state(&hero->base, grabbed_state);
         return;
     }
     if (has_route(motion, grabbed_state) != 0) {
@@ -246,24 +234,6 @@ extern "C" int nocturne_hero_grab_escape(CHero *hero, float delta_time)
 #endif
 }
 
-extern "C" int nocturne_svetlana_get_grabbed(CHero *svetlana, CDemonActor *grabber,
-                                             int grab_type)
-{
-#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
-    // g_HeroActors is the same set on every machine, so this is a lockstep test.
-    for (int i = 0; (i < 4) && (i < g_HeroCount); i++) {
-        if (g_HeroActors[i] == svetlana) {
-            return core_hero_cpp_CHero_getGrabbed_FUN_004f28d0(svetlana, grabber, grab_type);
-        }
-    }
-#else
-    (void)svetlana;
-    (void)grabber;
-    (void)grab_type;
-#endif
-    return 0;
-}
-
 extern "C" int nocturne_grab_carry_move(CDemonActor *victim, CVector3f *world_target)
 {
 #if NOCTURNE_AUTHENTIC_HERO_ACTIONS
@@ -273,7 +243,6 @@ extern "C" int nocturne_grab_carry_move(CDemonActor *victim, CVector3f *world_ta
 #else
     CCharacter *character;
     CVector3f world_delta;
-    CVector3f local_delta;
 
     if ((victim == (CDemonActor *)0x0) || (world_target == (CVector3f *)0x0)) {
         return 0;
@@ -288,13 +257,7 @@ extern "C" int nocturne_grab_carry_move(CDemonActor *victim, CVector3f *world_ta
     world_delta.x = world_target->x - (victim->location).position.x;
     world_delta.y = world_target->y - (victim->location).position.y;
     world_delta.z = world_target->z - (victim->location).position.z;
-
-    // moveAndCollide takes the step in the actor's own frame - it starts by
-    // running it back through CDemonActor::transformVector - so the world
-    // delta has to be brought into that frame first.
-    core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
-        (victim, &local_delta, &world_delta);
-    core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(character, &local_delta);
+    nocturne_hero_move_world(character, &world_delta);
     return 1;
 #endif
 }

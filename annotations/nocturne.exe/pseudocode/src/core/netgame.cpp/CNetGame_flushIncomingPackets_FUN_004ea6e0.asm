@@ -13,8 +13,8 @@
 ;   undefined4 DAT_005c1664
 ;
 ; Called Functions:
-;   support_trisock.cpp_isSocketValid_FUN_00548f60
-;   support_trisock.cpp_receiveSocketData_FUN_00549010
+;   support_trisock.cpp_CSocket_isSocketValid_FUN_00548f60
+;   support_trisock.cpp_CSocket_receiveSocketData_FUN_00549010
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_00553910
 ;
 ; *****************************************************************************
@@ -27,8 +27,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0xc]       ; 004ea6e2
     ADD ESI,0x170                       ; 004ea6e6
     PUSH ESI                            ; 004ea6ec
-    CALL support_trisock.cpp_isSocketValid_FUN_00548f60 ; 004ea6ed
-        ;   XREF to: 00548f60 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_isSocketValid_FUN_00548f60(_SOCKET * socket_handle)
+    CALL support_trisock.cpp_CSocket_isSocketValid_FUN_00548f60 ; 004ea6ed
+        ;   XREF to: 00548f60 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_CSocket_isSocketValid_FUN_00548f60(CSocket * this_ptr)
     ADD ESP,0x4                         ; 004ea6f2
     TEST EAX,EAX                        ; 004ea6f5
     JZ 0x004ea73a                       ; 004ea6f7
@@ -48,8 +48,8 @@ section .text
     PUSH 0x405                          ; 004ea713
     PUSH 0x1d16408                      ; 004ea718
     PUSH ESI                            ; 004ea71d
-    CALL support_trisock.cpp_receiveSocketData_FUN_00549010 ; 004ea71e
-        ;   XREF to: 00549010 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_receiveSocketData_FUN_00549010(_SOCKET * socket_handle, char * buffer, int length, SNetworkAddr * source_addr)
+    CALL support_trisock.cpp_CSocket_receiveSocketData_FUN_00549010 ; 004ea71e
+        ;   XREF to: 00549010 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_CSocket_receiveSocketData_FUN_00549010(CSocket * this_ptr, char * buffer, int length, SNetworkAddr * source_addr)
     ADD ESP,0x10                        ; 004ea723
     TEST EAX,EAX                        ; 004ea726
     JLE 0x004ea732                      ; 004ea728

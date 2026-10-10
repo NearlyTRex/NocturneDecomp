@@ -125,7 +125,7 @@ section .text
     PUSH EBP                            ; 0044cc54
         ;   Label: LAB_0044cc54
     CALL engine_special.cpp_masterZBuffer_FUN_005b7d00 ; 0044cc55
-        ;   XREF to: 005b7d00 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_masterZBuffer_FUN_005b7d00(int z_buffer_mode)
+        ;   XREF to: 005b7d00 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_masterZBuffer_FUN_005b7d00(int slot)
     ADD ESP,0x4                         ; 0044cc5a
     JMP 0x0044cbca                      ; 0044cc5d
         ;   XREF to: 0044cbca (UNCONDITIONAL_JUMP)  ; LAB_0044cbca

@@ -139,7 +139,8 @@ void __cdecl core_zombie_cpp_CZombie_process_FUN_0055ef50(CZombie *this_ptr,floa
   CVector3f *local_18;
   CVector3f *local_14;
   
-  iVar6 = core_charactr_cpp_CCharacter_process_FUN_004259f0((CCharacter *)this_ptr,delta_time);
+  iVar6 = core_charactr_cpp_CCharacter_processCharacter_FUN_004259f0
+                    ((CCharacter *)this_ptr,delta_time);
   if (iVar6 == 0) {
     return;
   }

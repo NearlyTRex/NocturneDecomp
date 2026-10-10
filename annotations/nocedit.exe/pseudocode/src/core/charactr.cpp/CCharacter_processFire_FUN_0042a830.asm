@@ -25,7 +25,7 @@
 ; CSkeleton *      Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_charactr.cpp_CCharacter_process_FUN_00429870 at 004298a2
+;   core_charactr.cpp_CCharacter_processCharacter_FUN_00429870 at 004298a2
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_character_onfire_fallapa_006170ca

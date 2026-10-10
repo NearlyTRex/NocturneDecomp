@@ -29,7 +29,7 @@ CVector3f * __cdecl setVector(CVector3f *out,float x,float y,float z);
 
 // Original: core_tbplayer.cpp_CBassPlayer_getCarryObjToBodyXForm_FUN_00543210
 // Address: 00543210
-void __stack2_esi CBassPlayer::getCarryObjToBodyXForm(CBassPlayer *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
+CMatrix3x4f * __stack2_esi CBassPlayer::getCarryObjToBodyXForm(CBassPlayer *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
 // Original: core_tbplayer.cpp_CBassPlayer_processDamage_FUN_00543330
 // Address: 00543330
@@ -53,7 +53,7 @@ void __cdecl CDrummer::setup(CDrummer *this_ptr);
 
 // Original: core_tbplayer.cpp_CDrummer_getCarryObjToBodyXForm_FUN_00543450
 // Address: 00543450
-void __stack2_esi CDrummer::getCarryObjToBodyXForm(CDrummer *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
+CMatrix3x4f * __stack2_esi CDrummer::getCarryObjToBodyXForm(CDrummer *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
 // Original: core_tbplayer.cpp_CDrummer_processDamage_FUN_005435f0
 // Address: 005435f0

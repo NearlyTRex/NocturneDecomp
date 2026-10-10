@@ -11,6 +11,10 @@ int __cdecl getFileStat(char *filename,WatcomStat *file_info);
 // Address: 00565dc6
 int __cdecl ::utime(char *filename,WatcomUtimbuf *timestamps);
 
+// Original: crt_io.c__chmod_FUN_00565dd0
+// Address: 00565dd0
+int __cdecl ::chmod(char *path,int mode);
+
 // Original: crt_io.c_chdir_FUN_00566570
 // Address: 00566570
 int __cdecl chdir(char *path);

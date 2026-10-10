@@ -90,7 +90,7 @@
 ;   crt_string.c__stricmp_FUN_005fe7f0
 ;   crt_time.c__time_FUN_006001f0
 ;   engine_dosio.cpp_findFileNormally_FUN_004817c0
-;   engine_dosio.cpp_getFileSizeWithFinder_FUN_00481960
+;   engine_dosio.cpp_getFileAttributes_FUN_00481960
 ;   engine_fileio.cpp_CFileManager_catalogPodFile_FUN_004b7460
 ;   engine_fileio.cpp_CFileManager_load_FUN_004b6c00
 ;   engine_fileio.cpp_CFileManager_verifyPodCRC_FUN_004b7c90
@@ -191,8 +191,8 @@ section .text
         ;   Label: LAB_004b5b3d
     PUSH EAX                            ; 004b5b44
     PUSH 0x0                            ; 004b5b45
-    CALL engine_dosio.cpp_getFileSizeWithFinder_FUN_00481960 ; 004b5b47
-        ;   XREF to: 00481960 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSizeWithFinder_FUN_00481960(char * directory, char * filename)
+    CALL engine_dosio.cpp_getFileAttributes_FUN_00481960 ; 004b5b47
+        ;   XREF to: 00481960 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileAttributes_FUN_00481960(char * directory, char * filename)
     ADD ESP,0x8                         ; 004b5b4c
     TEST EAX,EAX                        ; 004b5b4f
     JL 0x004b5b5b                       ; 004b5b51
@@ -1495,7 +1495,7 @@ section .text
     ADD ESP,0x4                         ; 004b6b6d
     MOV EAX,[0x00680cdc]                ; 004b6b70 | g_CDemonPodPtr
     PUSH EAX                            ; 004b6b75 | g_CDemonPodInstance
-    MOV EDX,dword ptr [EAX + 0x194]     ; 004b6b76 | g_CDemonPodInstance.vtable
+    MOV EDX,dword ptr [EAX + 0x194]     ; 004b6b76 | g_CDemonPodInstance.base.vtable
     CALL dword ptr [EDX + 0x4]          ; 004b6b7c
     ADD ESP,0x4                         ; 004b6b7f
     JMP 0x004b6a42                      ; 004b6b82

@@ -16,7 +16,8 @@ void __cdecl core_armour_cpp_CArmour_process_FUN_0040fa20(CArmour *this_ptr,floa
   float local_20;
   CVector3f CStack_1c;
   
-  iVar3 = core_charactr_cpp_CCharacter_process_FUN_004259f0((CCharacter *)this_ptr,delta_time);
+  iVar3 = core_charactr_cpp_CCharacter_processCharacter_FUN_004259f0
+                    ((CCharacter *)this_ptr,delta_time);
   if (iVar3 != 0) {
     (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
     (this_ptr->base).base.model.accumulated_root_motion.y =

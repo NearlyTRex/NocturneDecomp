@@ -2607,7 +2607,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_actor.cpp_CDemonActor_testPointInCylinder_FUN_004090c0",
+    "name":"core_actor.cpp_CDemonActor_testCylinderCollision_FUN_004090c0",
     "ret":"int",
     "vars":{
       "locals":[
@@ -7032,7 +7032,7 @@
     "conv":"__stack2_esi",
     "importable":true,
     "name":"core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40",
-    "ret":"void",
+    "ret":"CMatrix3x4f*",
     "vars":{
       "locals":[
         {
@@ -7418,7 +7418,17 @@
           },
           "type":"CMatrix3x4f*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -56131,7 +56141,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_manpuz.cpp_CMirrorHack_stopUsing_FUN_0050b3c0",
+    "name":"core_manpuz.cpp_CMirrorHack_stopInteraction_FUN_0050b3c0",
     "ret":"void",
     "vars":{
       "params":[
@@ -97205,7 +97215,7 @@
     "vars":{
       "params":[
         {
-          "name":"output_buffer",
+          "name":"ip_bytes",
           "storage":{
             "offset":4,
             "size":4,
@@ -97218,10 +97228,10 @@
               }
             ]
           },
-          "type":"char*"
+          "type":"uchar*"
         },
         {
-          "name":"ip_bytes",
+          "name":"output_buffer",
           "storage":{
             "offset":8,
             "size":4,
@@ -97234,7 +97244,7 @@
               }
             ]
           },
-          "type":"uchar*"
+          "type":"char*"
         }
       ]
     }
@@ -97316,12 +97326,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"support_trisock.cpp_createUDPSocket_FUN_005e1b40",
+    "name":"support_trisock.cpp_CSocket_createUDPSocket_FUN_005e1b40",
     "ret":"int",
     "vars":{
       "params":[
         {
-          "name":"socket_handle",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -97334,7 +97344,7 @@
               }
             ]
           },
-          "type":"_SOCKET*"
+          "type":"CSocket*"
         }
       ],
       "ret_storage":{

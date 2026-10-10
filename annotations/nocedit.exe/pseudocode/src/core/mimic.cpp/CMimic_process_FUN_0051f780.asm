@@ -21,7 +21,7 @@
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_computeBoundingBox_FUN_0042d530
-;   core_charactr.cpp_CCharacter_process_FUN_00429870
+;   core_charactr.cpp_CCharacter_processCharacter_FUN_00429870
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc0
@@ -62,8 +62,8 @@ section .text
         ;   XREF to: 0051f840 (CONDITIONAL_JUMP)  ; LAB_0051f840
     PUSH dword ptr [ESP + 0x10]         ; 0051f7e1
     PUSH EBX                            ; 0051f7e5
-    CALL core_charactr.cpp_CCharacter_process_FUN_00429870 ; 0051f7e6
-        ;   XREF to: 00429870 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_process_FUN_00429870(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_processCharacter_FUN_00429870 ; 0051f7e6
+        ;   XREF to: 00429870 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processCharacter_FUN_00429870(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0051f7eb
     TEST EAX,EAX                        ; 0051f7ee
     JZ 0x0051f813                       ; 0051f7f0

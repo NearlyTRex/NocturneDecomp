@@ -33,7 +33,7 @@ CVector3f * __cdecl setVector(CVector3f *out,float x,float y,float z);
 
 // Original: core_imp.cpp_CImp_getCarryObjToBodyXForm_FUN_004fa920
 // Address: 004fa920
-void __stack2_esi CImp::getCarryObjToBodyXForm(CImp *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
+CMatrix3x4f * __stack2_esi CImp::getCarryObjToBodyXForm(CImp *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
 // Original: core_imp.cpp_CImp_attractActorToward_FUN_004faaf0
 // Address: 004faaf0

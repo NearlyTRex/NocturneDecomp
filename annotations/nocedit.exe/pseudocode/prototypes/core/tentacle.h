@@ -39,9 +39,9 @@ void __cdecl CTentacle::archive(CTentacle *this_ptr);
 // Address: 005db900
 int __cdecl CTentacle::findNearbyTarget(CTentacle *this_ptr,char *class_name);
 
-// Original: core_tentacle.cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0
+// Original: core_tentacle.cpp_CTentacle_attractActorToward_FUN_005db9d0
 // Address: 005db9d0
-int __cdecl CTentacle::updateGrabbedVictim(CTentacle *this_ptr,CCharacter *character);
+int __cdecl CTentacle::attractActorToward(CTentacle *this_ptr,CDemonActor *actor,CVector3f *target_local_point);
 
 // Original: core_tentacle.cpp_CTentacle_shouldIgnoreForTargeting_FUN_005dbb30
 // Address: 005dbb30

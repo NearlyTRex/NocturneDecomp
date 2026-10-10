@@ -109,7 +109,7 @@ void __cdecl core_fire_cpp_CFireEffect_traceLaser_FUN_004c8230(CFireEffect *this
                            core_actor_cpp_castToClassHash_FUN_0040c790
                                      (this_ptr_00,g_CCharacterClassInfo.name_hash),
             this_ptr_01 != (CCharacter *)0x0)) &&
-           (iVar3 = (*(((this_ptr_01->base).vtable._uc)->_uc).canWalk)(this_ptr_01), iVar3 != 0)) {
+           (iVar3 = (*(((this_ptr_01->base).vtable._uc)->_uc).isInvulnerable)(this_ptr_01), iVar3 != 0)) {
           (laser_info->color).g = 0xff;
           (laser_info->color).b = 0;
           (laser_info->color).r = 0xff;
@@ -144,7 +144,7 @@ void __cdecl core_fire_cpp_CFireEffect_traceLaser_FUN_004c8230(CFireEffect *this
           local_2c = 3.1415927;
         }
         laser_info->incidence_angle = local_2c;
-        (*((this_ptr_00->vtable)._ub)->getSurfaceProperties)(this_ptr_00,laser_info);
+        (*((this_ptr_00->vtable)._ub)->onLaserHit)(this_ptr_00,laser_info);
       }
       local_28 = 0.0;
       if (laser_info->is_damaging != 0) {
