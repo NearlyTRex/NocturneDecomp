@@ -70,7 +70,13 @@ jobs:
         wayland-protocols libegl-dev libdecor-0-dev libpulse-dev
         libasound2-dev
       cache-paths: build/recreation/ci/_deps
-      cache-key-files: recreation/CMakeLists.txt
+      # The pinned dependency versions live in both.
+      cache-key-files: |
+        recreation/CMakeLists.txt
+        recreation/cmake/*.cmake
+      # About 950 translation units, rebuilt with coverage flags on every run.
+      ccache: true
+      ccache-max-size: 1G
       cache-key: recreation-ci
       build-command: |
         cd recreation
