@@ -46,8 +46,8 @@ int setFogColor(int red, int green, int blue);
 int sync();
 int clearZBuffer();
 void presentToExternalRenderer(int skip_buffer_copy);
-int masterZBuffer(int z_buffer_mode);
-int restoreZBuffer(int left, int top, int mode, int right, int bottom);
+int masterZBuffer(int slot);
+int restoreZBuffer(int slot, int left, int top, int right, int bottom);
 int getVideoMemory(int *total_memory, int *available_memory, int *memory_type);
 int selectCard(int card_index);
 int buildCardList(int *out_card_count, char **out_driver_names, char **out_card_names,

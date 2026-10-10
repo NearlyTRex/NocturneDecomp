@@ -187,8 +187,10 @@ TEST(CGlPipeline, ADepthClearDoesNotLeaveWritesOnForTheNextDraw) {
     tested_only.depth_write_enabled = false;
     pipeline.apply(tested_only);
     gl.clear();
+    const std::uint32_t epoch = pipeline.getEpoch();
     pipeline.enableDepthWrite();
     EXPECT_THAT(gl.getCalls(), ElementsAre(glCall("DepthMask", GL_TRUE)));
+    EXPECT_EQ(pipeline.getEpoch(), epoch + 1);
     EXPECT_THAT(appliedFrom(pipeline, gl, tested_only),
                 ElementsAre(glCall("DepthMask", GL_FALSE), glCall("UseProgram", kProgram)));
 }

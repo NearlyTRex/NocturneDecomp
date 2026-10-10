@@ -35,8 +35,9 @@ public:
     virtual int clear() = 0;
     virtual int clearZBuffer() = 0;
     virtual int clearZBox(int left, int right, int top, int bottom) = 0;
-    virtual int masterZBuffer(int z_buffer_mode) = 0;
-    virtual int restoreZBuffer(int left, int top, int mode, int right, int bottom) = 0;
+    virtual int masterZBuffer(int slot) = 0;
+    // Right and bottom are inclusive.
+    virtual int restoreZBuffer(int slot, int left, int top, int right, int bottom) = 0;
     virtual int setFogColor(int red, int green, int blue) = 0;
     virtual int setMipMapLevel(int mipmap_level) = 0;
     virtual int selectTexture(SMRGLTextureBasic *texture_info, int texture_dimension,

@@ -34,8 +34,8 @@ public:
     MOCK_METHOD(int, clear, (), (override));
     MOCK_METHOD(int, clearZBuffer, (), (override));
     MOCK_METHOD(int, clearZBox, (int left, int right, int top, int bottom), (override));
-    MOCK_METHOD(int, masterZBuffer, (int z_buffer_mode), (override));
-    MOCK_METHOD(int, restoreZBuffer, (int left, int top, int mode, int right, int bottom),
+    MOCK_METHOD(int, masterZBuffer, (int slot), (override));
+    MOCK_METHOD(int, restoreZBuffer, (int slot, int left, int top, int right, int bottom),
                 (override));
     MOCK_METHOD(int, setFogColor, (int red, int green, int blue), (override));
     MOCK_METHOD(int, setMipMapLevel, (int mipmap_level), (override));

@@ -137,6 +137,7 @@ std::uint32_t CGlPipeline::getEpoch() const {
 void CGlPipeline::enableDepthWrite() {
     gl_.DepthMask(GL_TRUE);
     state_.depth_write_enabled = true;
+    ++epoch_;
 }
 
 void CGlPipeline::setTargetSize(int width, int height) {

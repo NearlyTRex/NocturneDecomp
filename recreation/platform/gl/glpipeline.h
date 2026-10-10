@@ -24,7 +24,8 @@ public:
     void invalidate();
     [[nodiscard]] std::uint32_t getEpoch() const;
     // A depth clear needs writes on; going through here keeps the record true, so the next
-    // draw that wants them off still turns them off.
+    // draw that wants them off still turns them off. Moves the epoch, since a caller's record
+    // of the last draw is stale too.
     void enableDepthWrite();
 
     // Draws arrive in pixels, y down, with depth already 0..1.
