@@ -4,7 +4,6 @@
 
 namespace nocturne::platform {
 
-class CExternalRendererBridge;
 class IAudioDevice;
 class IAudioSource;
 class IClipboard;
@@ -19,6 +18,7 @@ class IOsFontFactory;
 class IRenderer;
 class IUdpSocket;
 class IWindow;
+struct CExternalRendererBridge;
 struct SAudioFormat;
 struct SClipPlane;
 struct SFileInfo;

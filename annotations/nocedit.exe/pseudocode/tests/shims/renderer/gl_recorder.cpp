@@ -228,7 +228,9 @@ void APIENTRY r_FrontFace(GLenum f) { note("FrontFace", (unsigned)f); }
 void APIENTRY r_Viewport(GLint, GLint, GLsizei w, GLsizei h) {
     note("Viewport", (unsigned)w, (unsigned)h);
 }
-void APIENTRY r_Scissor(GLint, GLint, GLsizei, GLsizei) { note("Scissor"); }
+void APIENTRY r_Scissor(GLint x, GLint y, GLsizei w, GLsizei h) {
+    note("Scissor", (unsigned)x, (unsigned)y, (unsigned)w, (unsigned)h);
+}
 void APIENTRY r_PixelStorei(GLenum, GLint) { note("PixelStorei"); }
 void APIENTRY r_GenerateMipmap(GLenum) {
     note("GenerateMipmap", g_state.bound_texture[g_state.active_unit]);

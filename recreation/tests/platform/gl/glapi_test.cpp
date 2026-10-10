@@ -20,7 +20,7 @@ TEST(SGlApi, LoadResolvesEveryEntryPointByItsGlName) {
         asked.insert(name);
         return entryPoint;
     });
-    EXPECT_EQ(asked.size(), 64U);
+    EXPECT_EQ(asked.size(), 65U);
     EXPECT_TRUE(asked.contains("glBlitFramebuffer"));
     EXPECT_TRUE(asked.contains("glUniformMatrix4fv"));
     EXPECT_EQ(std::bit_cast<GlProc>(api.ActiveTexture), &entryPoint);

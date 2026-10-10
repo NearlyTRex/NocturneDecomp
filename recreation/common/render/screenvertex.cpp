@@ -30,13 +30,13 @@ std::uint32_t packGrey(int level) {
 }
 
 std::uint32_t paletteColour(const SVertexContext &context, std::uint32_t index) {
-    if (context.palette == nullptr) {
+    if (context.palette.empty()) {
         return 0;
     }
     const std::size_t entry = static_cast<std::size_t>(index) * 3;
-    return (std::uint32_t{context.palette->at(entry)} << 16U) |
-           (std::uint32_t{context.palette->at(entry + 1)} << 8U) |
-           std::uint32_t{context.palette->at(entry + 2)};
+    return (std::uint32_t{context.palette[entry]} << 16U) |
+           (std::uint32_t{context.palette[entry + 1]} << 8U) |
+           std::uint32_t{context.palette[entry + 2]};
 }
 
 std::uint32_t untexturedDiffuse(const SVertexContext &context, const SVertexInput &input) {

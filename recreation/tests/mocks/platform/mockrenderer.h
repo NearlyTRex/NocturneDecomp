@@ -65,6 +65,8 @@ public:
     MOCK_METHOD(int, flushParticleList, (), (override));
     MOCK_METHOD(int, add3dLine, (void *start_point, void *end_point, int line_style), (override));
     MOCK_METHOD(int, flushLineList, (), (override));
+    MOCK_METHOD(void, beginReflectionPass, (), (override));
+    MOCK_METHOD(void, endReflectionPass, (), (override));
 };
 
 } // namespace nocturne::platform

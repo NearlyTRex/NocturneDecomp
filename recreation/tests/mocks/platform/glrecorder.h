@@ -5,6 +5,7 @@
 #include <gtest/gtest.h>
 
 #include <algorithm>
+#include <array>
 #include <bit>
 #include <cstddef>
 #include <cstdint>
@@ -101,6 +102,9 @@ public:
     GLenum framebuffer_status = GL_FRAMEBUFFER_COMPLETE;
     // What ReadPixels writes, bottom row first as GL returns it.
     std::vector<std::byte> read_pixels;
+    // What GetString answers for GL_RENDERER; null as a driver that answers nothing.
+    static constexpr std::array<GLubyte, 5> kRendererName = {'T', 'e', 's', 't', '\0'};
+    const GLubyte *renderer_name = kRendererName.data();
 
 private:
     static CGlRecorder *&live() {
@@ -252,6 +256,10 @@ private:
         api_.GetShaderiv = [](GLuint shader, GLenum name, GLint *value) {
             note("GetShaderiv", shader, name);
             *value = self().shader_types_[shader] == self().failing_stage ? GL_FALSE : GL_TRUE;
+        };
+        api_.GetString = [](GLenum name) {
+            note("GetString", name);
+            return name == GL_RENDERER ? self().renderer_name : nullptr;
         };
         api_.GetUniformLocation = [](GLuint program, const GLchar *name) {
             auto &locations = self().uniform_locations_;

@@ -32,6 +32,20 @@ struct SPixelFormat {
 [[nodiscard]] SPixelFormat getPixelFormat(EPixelLayout layout);
 [[nodiscard]] int getBytesPerPixel(EPixelLayout layout);
 
+// One channel as the game's colour tables describe it: an 8-bit level divided by scale_factor,
+// shifted to bit_position. dither_shift is how many low bits of the level the channel drops.
+struct SChannelLayout {
+    int bit_position = 0;
+    int scale_factor = 1;
+    int dither_shift = 0;
+
+    bool operator==(const SChannelLayout &) const = default;
+};
+
+// From a channel mask; a channel eight bits or wider keeps every bit, and an empty mask is the
+// default layout.
+[[nodiscard]] SChannelLayout getChannelLayout(std::uint32_t mask);
+
 // A one-byte-per-pixel image with rows pitch bytes apart, packed to width bytes per row.
 // Empty when the pitch is narrower than a row or pixels is too small.
 [[nodiscard]] std::vector<std::uint8_t> packRows(std::span<const std::byte> pixels, int width,

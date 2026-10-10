@@ -71,5 +71,10 @@ TEST(IRenderer, DrawingInterface) {
     static_assert(std::is_same_v<decltype(&IRenderer::flushLineList), int (IRenderer::*)()>);
 }
 
+TEST(IRenderer, ReflectionPassInterface) {
+    static_assert(std::is_same_v<decltype(&IRenderer::beginReflectionPass), void (IRenderer::*)()>);
+    static_assert(std::is_same_v<decltype(&IRenderer::endReflectionPass), void (IRenderer::*)()>);
+}
+
 } // namespace
 } // namespace nocturne::platform

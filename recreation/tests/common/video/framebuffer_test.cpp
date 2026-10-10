@@ -64,6 +64,25 @@ TEST(Framebuffer, BytesPerPixelFollowTheDepth) {
     EXPECT_EQ(getBytesPerPixel(EPixelLayout::Bgra8888), 4);
 }
 
+// The tables trigl's setColorTable16 publishes for RGB565 and ARGB8888.
+TEST(Framebuffer, ChannelLayoutsMatchWhatTheRendererPublishes) {
+    EXPECT_EQ(getChannelLayout(0xf800),
+              (SChannelLayout{.bit_position = 11, .scale_factor = 8, .dither_shift = 3}));
+    EXPECT_EQ(getChannelLayout(0x07e0),
+              (SChannelLayout{.bit_position = 5, .scale_factor = 4, .dither_shift = 2}));
+    EXPECT_EQ(getChannelLayout(0x001f),
+              (SChannelLayout{.bit_position = 0, .scale_factor = 8, .dither_shift = 3}));
+    EXPECT_EQ(getChannelLayout(0xff0000),
+              (SChannelLayout{.bit_position = 16, .scale_factor = 1, .dither_shift = 0}));
+    EXPECT_EQ(getChannelLayout(0xff), SChannelLayout{});
+}
+
+TEST(Framebuffer, WideOrEmptyChannelsKeepEveryBit) {
+    EXPECT_EQ(getChannelLayout(0x3ff00),
+              (SChannelLayout{.bit_position = 8, .scale_factor = 1, .dither_shift = 0}));
+    EXPECT_EQ(getChannelLayout(0), SChannelLayout{});
+}
+
 TEST(Framebuffer, PackRowsDropsThePitchPadding) {
     EXPECT_EQ(packRows(bytes({1, 2, 9, 3, 4}), 2, 2, 3), (std::vector<std::uint8_t>{1, 2, 3, 4}));
 }

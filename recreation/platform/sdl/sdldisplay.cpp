@@ -86,8 +86,17 @@ void CSdlDisplay::present(std::span<const std::byte> pixels, int pitch) {
     gl_.TexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, logical_.width, logical_.height, format.format,
                       format.type, upload->pixels.data());
     gl_.PixelStorei(GL_UNPACK_ROW_LENGTH, 0);
-    drawFrame();
+    drawFrame(texture_, logical_, gl::EQuadRows::TopFirst);
     SDL_GL_SwapWindow(window_.getSdlWindow());
+}
+
+void CSdlDisplay::presentScene(GLuint texture, int width, int height) {
+    drawFrame(texture, {.width = width, .height = height}, gl::EQuadRows::BottomFirst);
+    SDL_GL_SwapWindow(window_.getSdlWindow());
+}
+
+const gl::SGlApi &CSdlDisplay::getGlApi() const {
+    return gl_;
 }
 
 void CSdlDisplay::setWindowMode(EWindowMode mode) {
@@ -131,10 +140,10 @@ void CSdlDisplay::applyWindowSize() {
     SDL_SetWindowPosition(window, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED);
 }
 
-void CSdlDisplay::drawFrame() {
+void CSdlDisplay::drawFrame(GLuint texture, common::SExtent frame, gl::EQuadRows rows) {
     common::SExtent drawable;
     SDL_GetWindowSizeInPixels(window_.getSdlWindow(), &drawable.width, &drawable.height);
-    const common::SViewport viewport = common::fitViewport(drawable, logical_);
+    const common::SViewport viewport = common::fitViewport(drawable, frame);
     gl_.BindFramebuffer(GL_FRAMEBUFFER, 0);
     gl_.Disable(GL_SCISSOR_TEST);
     gl_.Disable(GL_DEPTH_TEST);
@@ -149,14 +158,14 @@ void CSdlDisplay::drawFrame() {
                  viewport.height);
     // Sampling is restated every frame: a mipmap filter another texture user left behind would
     // make this texture incomplete, and the quad would draw white.
-    const GLint filter = kFilters.at(common::isWholeMultiple(viewport, logical_) ? 1 : 0);
+    const GLint filter = kFilters.at(common::isWholeMultiple(viewport, frame) ? 1 : 0);
     gl_.ActiveTexture(GL_TEXTURE0);
-    gl_.BindTexture(GL_TEXTURE_2D, texture_);
+    gl_.BindTexture(GL_TEXTURE_2D, texture);
     gl_.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, filter);
     gl_.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, filter);
     gl_.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
     gl_.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-    quad_->draw(texture_, gl::EQuadRows::TopFirst);
+    quad_->draw(texture, rows);
 }
 
 } // namespace nocturne::platform::sdl

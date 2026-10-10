@@ -18,6 +18,9 @@ ExternalProject_Add(ffmpeg_ext
     GIT_REPOSITORY https://github.com/FFmpeg/FFmpeg.git
     GIT_TAG        n6.1.1
     GIT_SHALLOW    TRUE
+    # The tag is pinned, so there is nothing to update; an update step would otherwise run on
+    # every build and take configure, build and install with it.
+    UPDATE_DISCONNECTED TRUE
     PREFIX         "${_ffmpeg_root}"
     INSTALL_DIR    "${_ffmpeg_install}"
     CONFIGURE_COMMAND <SOURCE_DIR>/configure --prefix=<INSTALL_DIR>
