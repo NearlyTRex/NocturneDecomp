@@ -1,12 +1,12 @@
-// Name: engine_pod.cpp_CPodFile_FUN_004f7ae0
+// Name: engine_pod.cpp_CPodFile_mountFromFile_FUN_004f7ae0
 // Address: 004f7ae0
 // Address Range: [[004f7ae0, 004f80d1]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_pod_cpp_CPodFile_FUN_004f7ae0(CPodFile *this_ptr,char *filename)
+// Signature: int __cdecl engine_pod_cpp_CPodFile_mountFromFile_FUN_004f7ae0(CPodFile *this_ptr,char *filename)
 
 #include "nocturne.h"
 
-int __cdecl engine_pod_cpp_CPodFile_FUN_004f7ae0(CPodFile *this_ptr,char *filename)
+int __cdecl engine_pod_cpp_CPodFile_mountFromFile_FUN_004f7ae0(CPodFile *this_ptr,char *filename)
 
 {
   char cVar1;

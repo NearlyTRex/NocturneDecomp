@@ -1,14 +1,14 @@
-// Name: support_newmsg.cpp_FUN_004edfc0
+// Name: support_newmsg.cpp_readMessageFile_FUN_004edfc0
 // Address: 004edfc0
 // Address Range: [[004edfc0, 004ee2e2]]
 // Convention: unknown
-// Signature: int support_newmsg_cpp_FUN_004edfc0(char *param_1)
+// Signature: int support_newmsg_cpp_readMessageFile_FUN_004edfc0(char *param_1)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int support_newmsg_cpp_FUN_004edfc0(char *param_1)
+int support_newmsg_cpp_readMessageFile_FUN_004edfc0(char *param_1)
 
 {
   char cVar1;

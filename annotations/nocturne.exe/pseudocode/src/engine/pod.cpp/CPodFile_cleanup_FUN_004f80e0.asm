@@ -7,8 +7,8 @@
 ; CPodFile *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
-;   engine_pod.cpp_CPodFile_FUN_004f7ae0 at 004f7af9
 ;   engine_pod.cpp_CPodFile_dtor_FUN_004f7ac0 at 004f7ac6
+;   engine_pod.cpp_CPodFile_mountFromFile_FUN_004f7ae0 at 004f7af9
 ;   engine_pod.cpp_CPod_computeAndStoreCRC_FUN_004f8eb0 at 004f8f25
 ;
 ; Called Functions:

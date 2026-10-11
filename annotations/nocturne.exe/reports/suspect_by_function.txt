@@ -4,8 +4,8 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 
 SUMMARY
 --------------------------------------------------
-Total functions analyzed: 4921
-Clean: 2505 (50.9%)
+Total functions analyzed: 4922
+Clean: 2506 (50.9%)
 With suspects: 2416
 Total suspects: 20964
 
@@ -28162,7 +28162,25 @@ engine_pcx.c_writePCXScanline_FUN_004f2550 (6 suspects)
   Line 39 [pointer_cast]: *(byte *)((int)&pcx_file->_flag + 1) = *(byte *)((int)&pcx_file->_flag + 1) | 0x10;
 
 ====================================================================================================
-engine_pod.cpp_CPodFile_FUN_004f7ae0 (37 suspects)
+engine_pod.cpp_CPodFile_computeFileCRC_FUN_004f86a0 (4 suspects)
+  File: engine/pod.cpp
+====================================================================================================
+  Line 28 [undefined_data]: puVar3 = &DAT_01e428d0;
+  Line 30 [undefined_data]: _fread(&DAT_01e428d0,0x10000,1,file);
+  Line 38 [undefined_data]: puVar3 = &DAT_01e428d0;
+  Line 39 [undefined_data]: _fread(&DAT_01e428d0,size,1,file);
+
+====================================================================================================
+engine_pod.cpp_CPodFile_getAuditRecord_FUN_004f8570 (4 suspects)
+  File: engine/pod.cpp
+====================================================================================================
+  Line 30 [unrolled_memcpy]: for (iVar1 = 0x4e; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 33 [pointer_cast]: pCVar3 = (CPodAuditRecord *)((int)pCVar3 + (uint)bVar4 * -8 + 4);
+  Line 33 [pointer_truncation]: pCVar3 = (CPodAuditRecord *)((int)pCVar3 + (uint)bVar4 * -8 + 4);
+  Line 65 [unrolled_memcpy]: // 004f8624: MOVSD.REP ES:EDI,ESI
+
+====================================================================================================
+engine_pod.cpp_CPodFile_mountFromFile_FUN_004f7ae0 (37 suspects)
   File: engine/pod.cpp
 ====================================================================================================
   Line 23 [stack_alignment_array]: int aiStackY_2004 [1977];
@@ -28202,24 +28220,6 @@ engine_pod.cpp_CPodFile_FUN_004f7ae0 (37 suspects)
   Line 199 [pointer_cast]: puVar14 = (uint *)((int)&pCVar4->name + iVar8);
   Line 210 [pointer_truncation]: puVar11 = (uint *)((int)&this_ptr->directory_entries->name + iVar8);
   Line 210 [pointer_cast]: puVar11 = (uint *)((int)&this_ptr->directory_entries->name + iVar8);
-
-====================================================================================================
-engine_pod.cpp_CPodFile_computeFileCRC_FUN_004f86a0 (4 suspects)
-  File: engine/pod.cpp
-====================================================================================================
-  Line 28 [undefined_data]: puVar3 = &DAT_01e428d0;
-  Line 30 [undefined_data]: _fread(&DAT_01e428d0,0x10000,1,file);
-  Line 38 [undefined_data]: puVar3 = &DAT_01e428d0;
-  Line 39 [undefined_data]: _fread(&DAT_01e428d0,size,1,file);
-
-====================================================================================================
-engine_pod.cpp_CPodFile_getAuditRecord_FUN_004f8570 (4 suspects)
-  File: engine/pod.cpp
-====================================================================================================
-  Line 30 [unrolled_memcpy]: for (iVar1 = 0x4e; iVar1 != 0; iVar1 = iVar1 + -1) {
-  Line 33 [pointer_cast]: pCVar3 = (CPodAuditRecord *)((int)pCVar3 + (uint)bVar4 * -8 + 4);
-  Line 33 [pointer_truncation]: pCVar3 = (CPodAuditRecord *)((int)pCVar3 + (uint)bVar4 * -8 + 4);
-  Line 65 [unrolled_memcpy]: // 004f8624: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
 engine_pod.cpp_CPodFile_populateFileInfo_FUN_004f81c0 (1 suspect)
@@ -32628,26 +32628,6 @@ support_codec.cpp_readBitsFromStream_FUN_00438ab0 (1 suspect)
   Line 51 [unknown_field]: bit_count._0_1_ = (byte)iVar3;
 
 ====================================================================================================
-support_newmsg.cpp_FUN_004edfc0 (15 suspects)
-  File: support/newmsg.cpp
-====================================================================================================
-  Line 0 [param_count_too_few]: Function declares 0 params but call sites push 1 (1 missing)
-  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 4 [unnamed_param]: int support_newmsg_cpp_FUN_004edfc0(char *param_1)
-  Line 26 [unnamed_param]: iVar3 = engine_dosio_cpp_getFileSize_FUN_004568c0(&CHAR_00h_0058c922,param_1);
-  Line 29 [unnamed_param]: file_handle = engine_dosio_cpp_getFile_FUN_00456a60(&CHAR_00h_0058c926,param_1,"rt");
-  Line 37 [undefined_data]: _fscanf(file_handle,"%d\n",&DAT_01d16810);
-  Line 44 [undefined_data]: _fscanf(file_handle,"\"%[^\"]\"\n",&DAT_005bdf50);
-  Line 51 [raw_address_constant]: iVar8 = 0x1d177c0;
-  Line 52 [raw_address_constant]: iVar3 = 0x1d271c0;
-  Line 70 [raw_address_pointer_store]: (*(char **)(iVar3 + 0x1d1681c),*(char **)(iVar8 + 0x1d1681c));
-  Line 70 [raw_address_pointer_store]: (*(char **)(iVar3 + 0x1d1681c),*(char **)(iVar8 + 0x1d1681c));
-  Line 92 [unnamed_param]: core_main_c_displayErrorAndQuit_FUN_004c8440("Error reading %s",param_1);
-  Line 97 [unnamed_param]: core_main_c_displayErrorAndQuit_FUN_004c8440("Too many messages in %s",param_1);
-  Line 101 [unrolled_strcpy]: do {
-  Line 112 [unrolled_strcpy]: do {
-
-====================================================================================================
 support_newmsg.cpp_findLocalizedString_FUN_004ee2f0 (2 suspects)
   File: support/newmsg.cpp
 ====================================================================================================
@@ -32661,6 +32641,26 @@ support_newmsg.cpp_getLocalizedString_FUN_004ee370 (3 suspects)
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
   Line 20 [raw_address_pointer_store]: iVar2 = _strcmp(key,*(char **)(iVar1 * 4 + 0x1d1681c));
   Line 26 [raw_address_pointer_store]: return *(char **)(iVar1 * 4 + 0x1d16fec);
+
+====================================================================================================
+support_newmsg.cpp_readMessageFile_FUN_004edfc0 (15 suspects)
+  File: support/newmsg.cpp
+====================================================================================================
+  Line 0 [param_count_too_few]: Function declares 0 params but call sites push 1 (1 missing)
+  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+  Line 4 [unnamed_param]: int support_newmsg_cpp_readMessageFile_FUN_004edfc0(char *param_1)
+  Line 26 [unnamed_param]: iVar3 = engine_dosio_cpp_getFileSize_FUN_004568c0(&CHAR_00h_0058c922,param_1);
+  Line 29 [unnamed_param]: file_handle = engine_dosio_cpp_getFile_FUN_00456a60(&CHAR_00h_0058c926,param_1,"rt");
+  Line 37 [undefined_data]: _fscanf(file_handle,"%d\n",&DAT_01d16810);
+  Line 44 [undefined_data]: _fscanf(file_handle,"\"%[^\"]\"\n",&DAT_005bdf50);
+  Line 51 [raw_address_constant]: iVar8 = 0x1d177c0;
+  Line 52 [raw_address_constant]: iVar3 = 0x1d271c0;
+  Line 70 [raw_address_pointer_store]: (*(char **)(iVar3 + 0x1d1681c),*(char **)(iVar8 + 0x1d1681c));
+  Line 70 [raw_address_pointer_store]: (*(char **)(iVar3 + 0x1d1681c),*(char **)(iVar8 + 0x1d1681c));
+  Line 92 [unnamed_param]: core_main_c_displayErrorAndQuit_FUN_004c8440("Error reading %s",param_1);
+  Line 97 [unnamed_param]: core_main_c_displayErrorAndQuit_FUN_004c8440("Too many messages in %s",param_1);
+  Line 101 [unrolled_strcpy]: do {
+  Line 112 [unrolled_strcpy]: do {
 
 ====================================================================================================
 support_trisock.cpp_CSocket_acceptConnection_FUN_00549170 (2 suspects)

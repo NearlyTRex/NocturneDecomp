@@ -227,7 +227,7 @@ void __cdecl core_netgame_cpp_copyPlayerInput_FUN_004edf30(SPlayerInput *dest,SP
 void __cdecl core_netgame_cpp_copyNetAddr_FUN_004edf80(SNetworkAddr *dest,SNetworkAddr *src);
 int * __cdecl core_netgame_cpp_assignInt1_FUN_004edfa0(int *dest,int *src);
 int * __cdecl core_netgame_cpp_assignInt2_FUN_004edfb0(int *dest,int *src);
-int support_newmsg_cpp_FUN_004edfc0(char *param_1);
+int support_newmsg_cpp_readMessageFile_FUN_004edfc0(char *param_1);
 char * __cdecl support_newmsg_cpp_findLocalizedString_FUN_004ee2f0(char *key,int lower_bound,int upper_bound);
 char * __cdecl support_newmsg_cpp_getLocalizedString_FUN_004ee370(char *key);
 char * __cdecl support_newmsg_cpp_decryptMessage_FUN_004ee3f0(char *encrypted_msg);

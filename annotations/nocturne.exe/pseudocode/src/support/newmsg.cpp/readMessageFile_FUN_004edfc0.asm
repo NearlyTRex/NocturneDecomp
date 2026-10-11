@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int support_newmsg_cpp_FUN_004edfc0(char *param_1)
+; int support_newmsg_cpp_readMessageFile_FUN_004edfc0(char *param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x31c]:1  local_31c
@@ -49,7 +49,7 @@
 section .text
 
     PUSH EBX                            ; 004edfc0
-        ;   Label: support_newmsg.cpp_FUN_004edfc0
+        ;   Label: support_newmsg.cpp_readMessageFile_FUN_004edfc0
     PUSH ESI                            ; 004edfc1
     PUSH EDI                            ; 004edfc2
     PUSH EBP                            ; 004edfc3

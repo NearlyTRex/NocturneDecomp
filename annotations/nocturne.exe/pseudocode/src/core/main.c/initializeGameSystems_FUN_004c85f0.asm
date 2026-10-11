@@ -121,7 +121,7 @@ section .text
     CALL engine_pod.cpp_CPod_init_FUN_004f8af0 ; 004c86d2
         ;   XREF to: 004f8af0 (UNCONDITIONAL_CALL)  ; void engine_pod.cpp_CPod_init_FUN_004f8af0(CPod * this_ptr)
     ADD ESP,0x4                         ; 004c86d7
-    PUSH 0x4f9250                       ; 004c86da | LAB_004f9250
+    PUSH 0x4f9250                       ; 004c86da
     CALL engine_dosio.cpp_addGetFileInfoHook_FUN_00456750 ; 004c86df
         ;   XREF to: 00456750 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_addGetFileInfoHook_FUN_00456750(FileSearchHandlerFunc * handler)
     ADD ESP,0x4                         ; 004c86e4
@@ -130,8 +130,8 @@ section .text
         ;   XREF to: 00456750 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_addGetFileInfoHook_FUN_00456750(FileSearchHandlerFunc * handler)
     ADD ESP,0x4                         ; 004c86f1
     PUSH 0x587bc3                       ; 004c86f4 | = "msglist.txt"
-    CALL support_newmsg.cpp_FUN_004edfc0 ; 004c86f9
-        ;   XREF to: 004edfc0 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_FUN_004edfc0()
+    CALL support_newmsg.cpp_readMessageFile_FUN_004edfc0 ; 004c86f9
+        ;   XREF to: 004edfc0 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_readMessageFile_FUN_004edfc0()
     ADD ESP,0x4                         ; 004c86fe
     CALL core_mmx.c_detectCPUFeatures_FUN_004d9e70 ; 004c8701
         ;   XREF to: 004d9e70 (UNCONDITIONAL_CALL)  ; void core_mmx.c_detectCPUFeatures_FUN_004d9e70()

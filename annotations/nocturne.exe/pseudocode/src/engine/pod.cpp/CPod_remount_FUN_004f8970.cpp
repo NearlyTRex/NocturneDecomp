@@ -32,7 +32,7 @@ void __cdecl engine_pod_cpp_CPod_remount_FUN_004f8970(CPod *this_ptr)
         pcVar6[1] = cVar1;
         pcVar6 = pcVar6 + 2;
       } while (cVar1 != '\0');
-      iVar2 = engine_pod_cpp_CPodFile_FUN_004f7ae0(pCVar3->pod_files[0],local_110);
+      iVar2 = engine_pod_cpp_CPodFile_mountFromFile_FUN_004f7ae0(pCVar3->pod_files[0],local_110);
       if (iVar2 == 0) {
         g_CurrentLineNumber = 640;
         g_CurrentFilename = "..\\engine\\pod.cpp";

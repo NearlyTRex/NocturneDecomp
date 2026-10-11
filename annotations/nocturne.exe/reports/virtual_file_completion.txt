@@ -5,8 +5,8 @@ VIRTUAL FILE COMPLETION REPORT
 SUMMARY
 --------------------------------------------------
 Total virtual files: 203
-Total functions: 4921
-Clean functions: 2533 (51.5%)
+Total functions: 4922
+Clean functions: 2534 (51.5%)
 Files at 100%: 10
 Files at 90%+: 12
 Files at 50%+: 139
@@ -1755,6 +1755,25 @@ FILES BELOW 50%
            - core_bride.cpp_CBride_getTargetPoints_FUN_00420e20 (27 lines) [undefined_data, unrolled_memcpy, warning_type_propagation]
            - core_bride.cpp_CBride_getTargetPoint_FUN_00420eb0 (25 lines) [pointer_cast, pointer_truncation, undefined_data, unrolled_memcpy]
            - core_bride.cpp_CBride_dtor_FUN_00420f20 (32 lines) [negative_offset]
+   41.4% | engine/pod.cpp
+         12/29 clean, 17 remaining
+           - engine_pod.cpp_crc32ComputeFromFile_FUN_004f78d0 (31 lines) [undefined_data]
+           - engine_pod.cpp_crc32ComputeFileRange_FUN_004f7980 (39 lines) [undefined_data]
+           - engine_pod.cpp_CPodFile_mountFromFile_FUN_004f7ae0 (233 lines) [alloc_magic_size, pointer_cast, pointer_truncation, stack_alignment_array, unrolled_strcpy, unrolled_strlen]
+           - engine_pod.cpp_CPodFile_populateFileInfo_FUN_004f81c0 (27 lines) [unrolled_strcpy]
+           - engine_pod.cpp_CPodFile_verifyChecksum_FUN_004f8240 (114 lines) [pointer_cast, pointer_truncation, stack_param, stack_ref, undefined_data]
+           - engine_pod.cpp_CPodFile_getAuditRecord_FUN_004f8570 (33 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
+           - engine_pod.cpp_CPodFile_computeFileCRC_FUN_004f86a0 (48 lines) [undefined_data]
+           - engine_pod.cpp_CPod_ctor_FUN_004f8810 (12 lines) [shadow_pointer_walk]
+           - engine_pod.cpp_CPod_remount_FUN_004f8970 (36 lines) [shadow_pointer_walk, unrolled_strcpy]
+           - engine_pod.cpp_CPod_dismount_FUN_004f8a10 (54 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, unrolled_strcpy]
+           - engine_pod.cpp_CPod_cleanup_FUN_004f8b40 (21 lines) [shadow_pointer_walk]
+           - engine_pod.cpp_findFilesByExtension_FUN_004f8b90 (110 lines) [pointer_cast, shadow_pointer_walk, unrolled_strcpy, unrolled_strlen]
+           - engine_pod.cpp_CPod_initSearch_FUN_004f8d50 (19 lines) [unrolled_strcpy]
+           - engine_pod.cpp_CPod_getNextSearchResult_FUN_004f8da0 (53 lines) [shadow_pointer_walk]
+           - engine_pod.cpp_CPod_computeAndStoreCRC_FUN_004f8eb0 (78 lines) [undefined_data]
+           - engine_pod.cpp_CPod_locateFile_FUN_004f9170 (24 lines) [shadow_pointer_walk]
+           - engine_pod.cpp_CPod_findFile_FUN_004f9200 (22 lines) [shadow_pointer_walk]
    40.9% | core/dracbrid.cpp
          9/22 clean, 13 remaining
            - core_dracbrid.cpp_CDraculaBride_ctor_FUN_00458640 (38 lines) [shadow_pointer_walk, unrolled_memset]
@@ -1913,25 +1932,6 @@ FILES BELOW 50%
            - engine_matrix.c_projectToScreen_FUN_004cea50 (29 lines) [pointer_cast, stack_alignment_array, undefined_data]
            - engine_matrix.c_pushMatrixRelativeOffset_FUN_004ceae0 (24 lines) [warning_overlapping_globals]
            - engine_matrix.c_popMatrixRelativeOffset_FUN_004ceb90 (14 lines) [warning_overlapping_globals]
-   39.3% | engine/pod.cpp
-         11/28 clean, 17 remaining
-           - engine_pod.cpp_crc32ComputeFromFile_FUN_004f78d0 (31 lines) [undefined_data]
-           - engine_pod.cpp_crc32ComputeFileRange_FUN_004f7980 (39 lines) [undefined_data]
-           - engine_pod.cpp_CPodFile_FUN_004f7ae0 (233 lines) [alloc_magic_size, pointer_cast, pointer_truncation, stack_alignment_array, unrolled_strcpy, unrolled_strlen]
-           - engine_pod.cpp_CPodFile_populateFileInfo_FUN_004f81c0 (27 lines) [unrolled_strcpy]
-           - engine_pod.cpp_CPodFile_verifyChecksum_FUN_004f8240 (114 lines) [pointer_cast, pointer_truncation, stack_param, stack_ref, undefined_data]
-           - engine_pod.cpp_CPodFile_getAuditRecord_FUN_004f8570 (33 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
-           - engine_pod.cpp_CPodFile_computeFileCRC_FUN_004f86a0 (48 lines) [undefined_data]
-           - engine_pod.cpp_CPod_ctor_FUN_004f8810 (12 lines) [shadow_pointer_walk]
-           - engine_pod.cpp_CPod_remount_FUN_004f8970 (36 lines) [shadow_pointer_walk, unrolled_strcpy]
-           - engine_pod.cpp_CPod_dismount_FUN_004f8a10 (54 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, unrolled_strcpy]
-           - engine_pod.cpp_CPod_cleanup_FUN_004f8b40 (21 lines) [shadow_pointer_walk]
-           - engine_pod.cpp_findFilesByExtension_FUN_004f8b90 (110 lines) [pointer_cast, shadow_pointer_walk, unrolled_strcpy, unrolled_strlen]
-           - engine_pod.cpp_CPod_initSearch_FUN_004f8d50 (19 lines) [unrolled_strcpy]
-           - engine_pod.cpp_CPod_getNextSearchResult_FUN_004f8da0 (53 lines) [shadow_pointer_walk]
-           - engine_pod.cpp_CPod_computeAndStoreCRC_FUN_004f8eb0 (78 lines) [undefined_data]
-           - engine_pod.cpp_CPod_locateFile_FUN_004f9170 (24 lines) [shadow_pointer_walk]
-           - engine_pod.cpp_CPod_findFile_FUN_004f9200 (22 lines) [shadow_pointer_walk]
    39.1% | core/netgame.cpp
          25/64 clean, 39 remaining
            - core_netgame.cpp_staticInit_FUN_004e94a0 (10 lines) [undefined_data]
@@ -2468,7 +2468,7 @@ FILES BELOW 50%
            - engine_model.c_loadModelChunk_FUN_004dd790 (39 lines) [pointer_cast]
    25.0% | support/newmsg.cpp
          1/4 clean, 3 remaining
-           - support_newmsg.cpp_FUN_004edfc0 (122 lines) [param_count_too_few, raw_address_constant, raw_address_pointer_store, undefined_data, unnamed_param, unrolled_strcpy, warning_overlapping_globals]
+           - support_newmsg.cpp_readMessageFile_FUN_004edfc0 (122 lines) [param_count_too_few, raw_address_constant, raw_address_pointer_store, undefined_data, unnamed_param, unrolled_strcpy, warning_overlapping_globals]
            - support_newmsg.cpp_findLocalizedString_FUN_004ee2f0 (20 lines) [raw_address_pointer_store]
            - support_newmsg.cpp_getLocalizedString_FUN_004ee370 (26 lines) [raw_address_pointer_store, warning_overlapping_globals]
    23.3% | core/dtrace.cpp

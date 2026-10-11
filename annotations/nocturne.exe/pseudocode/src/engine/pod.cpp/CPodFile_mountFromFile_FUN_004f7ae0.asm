@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_pod_cpp_CPodFile_FUN_004f7ae0(CPodFile *this_ptr,char *filename)
+; int __cdecl engine_pod_cpp_CPodFile_mountFromFile_FUN_004f7ae0(CPodFile *this_ptr,char *filename)
 ;
 ; Parameters:
 ; CPodFile *       Stack[0x4]:4   this_ptr
@@ -61,7 +61,7 @@
 section .text
 
     PUSH EBX                            ; 004f7ae0
-        ;   Label: engine_pod.cpp_CPodFile_FUN_004f7ae0
+        ;   Label: engine_pod.cpp_CPodFile_mountFromFile_FUN_004f7ae0
     PUSH ESI                            ; 004f7ae1
     PUSH EDI                            ; 004f7ae2
     PUSH EBP                            ; 004f7ae3

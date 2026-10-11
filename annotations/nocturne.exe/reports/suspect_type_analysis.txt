@@ -791,7 +791,7 @@ Functions:
   sound_sndmain.cpp_writeIni_FUN_00528c80
   sound_sndwav.cpp_CWavOutDevice_setMode_FUN_0052c460
   sound_sndwav.cpp_getWavOutDevice_FUN_0052c760
-  support_newmsg.cpp_FUN_004edfc0
+  support_newmsg.cpp_readMessageFile_FUN_004edfc0
   support_trisock.cpp_staticInit_FUN_00548aa0
   wincore_winrun.cpp_calibrateCPUSpeed_FUN_005587f0
   wincore_winrun.cpp_enqueueInput_FUN_00558ba0
@@ -1453,8 +1453,8 @@ Functions:
   engine_pcx.c_saveScreenRaw32_FUN_004f27e0
   engine_pcx.c_saveScreenshotGeneral_FUN_004f2990
   engine_pcx.c_writePCXScanline_FUN_004f2550
-  engine_pod.cpp_CPodFile_FUN_004f7ae0
   engine_pod.cpp_CPodFile_getAuditRecord_FUN_004f8570
+  engine_pod.cpp_CPodFile_mountFromFile_FUN_004f7ae0
   engine_pod.cpp_CPodFile_verifyChecksum_FUN_004f8240
   engine_pod.cpp_CPod_dismount_FUN_004f8a10
   engine_pod.cpp_findFilesByExtension_FUN_004f8b90
@@ -2060,8 +2060,8 @@ Functions:
   engine_pcx.c_saveScreenRaw32_FUN_004f27e0
   engine_pcx.c_saveScreenshotGeneral_FUN_004f2990
   engine_pcx.c_writePCXScanline_FUN_004f2550
-  engine_pod.cpp_CPodFile_FUN_004f7ae0
   engine_pod.cpp_CPodFile_getAuditRecord_FUN_004f8570
+  engine_pod.cpp_CPodFile_mountFromFile_FUN_004f7ae0
   engine_pod.cpp_CPodFile_verifyChecksum_FUN_004f8240
   engine_pod.cpp_CPod_dismount_FUN_004f8a10
   engine_special.cpp_clearScreenRegion_FUN_0052ef37
@@ -3536,8 +3536,8 @@ Functions:
   sound_sndwav.cpp_CWavOutDevice_start_FUN_0052c340
   sound_sndwav.cpp_staticInit_FUN_0052c120
   sound_sndwav.cpp_writeWavOutBuffer_FUN_0052c130
-  support_newmsg.cpp_FUN_004edfc0
   support_newmsg.cpp_getLocalizedString_FUN_004ee370
+  support_newmsg.cpp_readMessageFile_FUN_004edfc0
   wincore_wddvmem.cpp_closeScreenDevice_FUN_00553520
   wincore_wddvmem.cpp_openScreenDevice_FUN_00553470
   wincore_wddvmem.cpp_reinitializeGraphicsSystem_FUN_005533a0
@@ -4431,7 +4431,7 @@ Functions:
   engine_ini.cpp_initIniFile_FUN_004bd890
   engine_pcx.c_saveScreenRaw16_FUN_004f2620
   engine_pcx.c_saveScreenRaw32_FUN_004f27e0
-  engine_pod.cpp_CPodFile_FUN_004f7ae0
+  engine_pod.cpp_CPodFile_mountFromFile_FUN_004f7ae0
   engine_pod.cpp_CPodFile_populateFileInfo_FUN_004f81c0
   engine_pod.cpp_CPod_dismount_FUN_004f8a10
   engine_pod.cpp_CPod_initSearch_FUN_004f8d50
@@ -4459,7 +4459,7 @@ Functions:
   sound_sndmain.cpp_startSfx_FUN_005265a0
   sound_sndmain.cpp_writeIni_FUN_00528c80
   sound_sndwav.cpp_enumerateWavOutDevice_FUN_0052c6c0
-  support_newmsg.cpp_FUN_004edfc0
+  support_newmsg.cpp_readMessageFile_FUN_004edfc0
   wincore_winrun.cpp_winMain_FUN_00559260
 
 ====================================================================================================
@@ -4921,7 +4921,7 @@ Functions:
   shape_edittool.cpp_FUN_004703f0
   shape_edittool.cpp_FUN_00477680
   sound_mp3.cpp_CFileBitStream_init_FUN_004e28a0
-  support_newmsg.cpp_FUN_004edfc0
+  support_newmsg.cpp_readMessageFile_FUN_004edfc0
 
 ====================================================================================================
 TYPE: static_uninitvar (370 occurrences)
@@ -5073,7 +5073,7 @@ Functions:
   engine_matrix.c_invertTransformMatrix_FUN_004ccae0
   engine_matrix.c_matrixPushAndRotate_FUN_004cdfa0
   engine_model.c_getMRGLBounds_FUN_004dcf60
-  engine_pod.cpp_CPodFile_FUN_004f7ae0
+  engine_pod.cpp_CPodFile_mountFromFile_FUN_004f7ae0
   engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005580b0
   shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0
   shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00473190
@@ -5229,7 +5229,7 @@ Functions:
   sound_sndmain.cpp_CSfxSlot_seek_FUN_00525a80
   sound_sndmain.cpp_nextMixingBuffer_FUN_00523170
   sound_sndmain.cpp_pollAndMixSfx_FUN_005294f0
-  support_newmsg.cpp_FUN_004edfc0
+  support_newmsg.cpp_readMessageFile_FUN_004edfc0
 
 ====================================================================================================
 TYPE: nonstandard_int (267 occurrences)
@@ -5323,7 +5323,7 @@ Functions:
   engine_console.cpp_CConsole_printf_FUN_0043ac60
   engine_ini.cpp_CIni_getProfileString_FUN_004bd0a0
   engine_ini.cpp_CIni_writeProfileString_FUN_004bd480
-  engine_pod.cpp_CPodFile_FUN_004f7ae0
+  engine_pod.cpp_CPodFile_mountFromFile_FUN_004f7ae0
   engine_pod.cpp_findFilesByExtension_FUN_004f8b90
   engine_winfont.cpp_CWinFont_getStringHeight_FUN_00558770
   engine_winfont.cpp_CWinFont_getStringWidth_FUN_00558710
@@ -6043,7 +6043,7 @@ Functions:
   engine_light.cpp_calculatePhongLighting_FUN_004c6a70
   engine_matrix.c_normalizeVector3DFixed_FUN_004cde10
   engine_matrix.c_projectToScreen_FUN_004cea50
-  engine_pod.cpp_CPodFile_FUN_004f7ae0
+  engine_pod.cpp_CPodFile_mountFromFile_FUN_004f7ae0
   support_trisock.cpp_CSocket_connectSocket_FUN_00548fc0
   support_trisock.cpp_CSocket_sendSocketData_FUN_00549090
   support_trisock.cpp_buildSockaddrIn_FUN_00548dc0
@@ -6234,9 +6234,9 @@ Functions:
   sound_sndmain.cpp_pollAndMixSfx_FUN_005294f0
   sound_sndmain.cpp_setNextSfxUserData_FUN_00526150
   sound_sndwav.cpp_CWavOutDevice_start_FUN_0052c340
-  support_newmsg.cpp_FUN_004edfc0
   support_newmsg.cpp_findLocalizedString_FUN_004ee2f0
   support_newmsg.cpp_getLocalizedString_FUN_004ee370
+  support_newmsg.cpp_readMessageFile_FUN_004edfc0
   wincore_winrun.cpp_winMain_FUN_00559260
 
 ====================================================================================================
@@ -6570,7 +6570,7 @@ Functions:
   core_script.cpp_CScript_buildParsedLines_FUN_004fee30
   core_script.cpp_CScript_dbLoad_FUN_00504e70
   core_skeleton.cpp_CDeformableModel_allocLOD_FUN_00517ec0
-  engine_pod.cpp_CPodFile_FUN_004f7ae0
+  engine_pod.cpp_CPodFile_mountFromFile_FUN_004f7ae0
   shape_edittool.cpp_CStrList_allocate_FUN_00473de0
   support_codec.cpp_CLZWDictionary_init_FUN_004393d0
 
@@ -7022,7 +7022,7 @@ Unique patterns:
 Functions:
   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0
   shape_edittool.cpp_FUN_00470230
-  support_newmsg.cpp_FUN_004edfc0
+  support_newmsg.cpp_readMessageFile_FUN_004edfc0
 
 ====================================================================================================
 TYPE: warning_deadcode_restart (3 occurrences)

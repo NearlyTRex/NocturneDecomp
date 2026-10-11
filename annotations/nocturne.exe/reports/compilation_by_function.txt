@@ -4,9 +4,9 @@ FUNCTION COMPILATION ERRORS (GROUPED BY FUNCTION)
 
 SUMMARY
 --------------------------------------------------
-Total functions compiled: 4921
+Total functions compiled: 4922
 Successful: 0 (0.0%)
-Failed: 4921
+Failed: 4922
 
 ====================================================================================================
 cockpit_ckptutil.c_applyActPalette_FUN_0042d370 (12 errors)
@@ -33498,8 +33498,7 @@ core_main.c_initializeGameSystems_FUN_004c85f0 (19 errors)
   Line 53 [other]: unknown type name 'PCONTEXT'
   Line 56 [undeclared_identifier]: use of undeclared identifier 'stack0xfffff8d8'
   Line 57 [undeclared_identifier]: use of undeclared identifier 'DAT_005c18c8'; did you mean 'DAT_005c1cc8'?
-  Line 63 [undeclared_identifier]: use of undeclared identifier 'LAB_004f9250'; did you mean 'DAT_004A9250'?
-  Line 65 [incompatible_types]: no matching function for call to 'support_newmsg_cpp_FUN_004edfc0'
+  Line 65 [incompatible_types]: no matching function for call to 'support_newmsg_cpp_readMessageFile_FUN_004edfc0'
   Line 86 [undeclared_identifier]: use of undeclared identifier '_DAT_02de20a8'
   Line 98 [undeclared_identifier]: use of undeclared identifier '_DAT_02de20a8'
   Line 258 [other]: unknown type name 'code'
@@ -33507,6 +33506,7 @@ core_main.c_initializeGameSystems_FUN_004c85f0 (19 errors)
   Line 315 [undeclared_identifier]: use of undeclared identifier '_DAT_02de20ac'
   Line 326 [undeclared_identifier]: use of undeclared identifier '_DAT_02de20ac'
   Line 329 [undeclared_identifier]: use of undeclared identifier 'stack0xfffff8d8'
+  Line 351 [undeclared_identifier]: use of undeclared identifier 'stack0xfffff8d8'
   Line 497 [other]: invalid suffix 'x' on integer constant
   Line 497 [other]: invalid digit 'C' in decimal constant
   Line 498 [other]: invalid suffix 'x' on integer constant
@@ -60839,21 +60839,6 @@ engine_pcx.c_writePCXScanline_FUN_004f2550 (10 errors)
   Line 498 [other]: exponent has no digits
 
 ====================================================================================================
-engine_pod.cpp_CPodFile_FUN_004f7ae0 (11 errors)
-====================================================================================================
-  Line 20 [other]: unknown type name 'FLOATING_SAVE_AREA'
-  Line 52 [other]: unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?
-  Line 53 [other]: unknown type name 'PCONTEXT'
-  Line 197 [pointer_type]: assigning to 'int *' from 'uint *' (aka 'unsigned int *') converts between pointers to integer types with different sign
-  Line 218 [pointer_type]: assigning to 'int *' from 'uint *' (aka 'unsigned int *') converts between pointers to integer types with different sign
-  Line 258 [other]: unknown type name 'code'
-  Line 267 [other]: unknown type name 'code'
-  Line 497 [other]: invalid suffix 'x' on integer constant
-  Line 497 [other]: invalid digit 'C' in decimal constant
-  Line 498 [other]: invalid suffix 'x' on integer constant
-  Line 498 [other]: exponent has no digits
-
-====================================================================================================
 engine_pod.cpp_CPodFile_cleanup_FUN_004f80e0 (9 errors)
 ====================================================================================================
   Line 20 [other]: unknown type name 'FLOATING_SAVE_AREA'
@@ -60928,6 +60913,21 @@ engine_pod.cpp_CPodFile_getAuditRecord_FUN_004f8570 (9 errors)
   Line 20 [other]: unknown type name 'FLOATING_SAVE_AREA'
   Line 52 [other]: unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?
   Line 53 [other]: unknown type name 'PCONTEXT'
+  Line 258 [other]: unknown type name 'code'
+  Line 267 [other]: unknown type name 'code'
+  Line 497 [other]: invalid suffix 'x' on integer constant
+  Line 497 [other]: invalid digit 'C' in decimal constant
+  Line 498 [other]: invalid suffix 'x' on integer constant
+  Line 498 [other]: exponent has no digits
+
+====================================================================================================
+engine_pod.cpp_CPodFile_mountFromFile_FUN_004f7ae0 (11 errors)
+====================================================================================================
+  Line 20 [other]: unknown type name 'FLOATING_SAVE_AREA'
+  Line 52 [other]: unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?
+  Line 53 [other]: unknown type name 'PCONTEXT'
+  Line 197 [pointer_type]: assigning to 'int *' from 'uint *' (aka 'unsigned int *') converts between pointers to integer types with different sign
+  Line 218 [pointer_type]: assigning to 'int *' from 'uint *' (aka 'unsigned int *') converts between pointers to integer types with different sign
   Line 258 [other]: unknown type name 'code'
   Line 267 [other]: unknown type name 'code'
   Line 497 [other]: invalid suffix 'x' on integer constant
@@ -61213,6 +61213,19 @@ engine_pod.cpp_crc32UpdateBuffer_FUN_004f7890 (9 errors)
 
 ====================================================================================================
 engine_pod.cpp_crc32UpdateByte_FUN_004f77d0 (9 errors)
+====================================================================================================
+  Line 20 [other]: unknown type name 'FLOATING_SAVE_AREA'
+  Line 52 [other]: unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?
+  Line 53 [other]: unknown type name 'PCONTEXT'
+  Line 258 [other]: unknown type name 'code'
+  Line 267 [other]: unknown type name 'code'
+  Line 497 [other]: invalid suffix 'x' on integer constant
+  Line 497 [other]: invalid digit 'C' in decimal constant
+  Line 498 [other]: invalid suffix 'x' on integer constant
+  Line 498 [other]: exponent has no digits
+
+====================================================================================================
+engine_pod.cpp_findFileInPod_FUN_004f9250 (9 errors)
 ====================================================================================================
   Line 20 [other]: unknown type name 'FLOATING_SAVE_AREA'
   Line 52 [other]: unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?
@@ -70050,29 +70063,6 @@ support_codec.cpp_writeBitsToStream_FUN_00438c40 (9 errors)
   Line 498 [other]: exponent has no digits
 
 ====================================================================================================
-support_newmsg.cpp_FUN_004edfc0 (19 errors)
-====================================================================================================
-  Line 20 [other]: unknown type name 'FLOATING_SAVE_AREA'
-  Line 44 [undeclared_identifier]: use of undeclared identifier 'DAT_01d16810'; did you mean 'DAT_02DE6810'?
-  Line 51 [undeclared_identifier]: use of undeclared identifier 'DAT_005bdf50'
-  Line 52 [other]: unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?
-  Line 53 [other]: unknown type name 'PCONTEXT'
-  Line 57 [undeclared_identifier]: use of undeclared identifier '_DAT_01d16818'
-  Line 60 [undeclared_identifier]: use of undeclared identifier '_DAT_01d16818'
-  Line 71 [undeclared_identifier]: use of undeclared identifier '_DAT_01d16818'
-  Line 73 [undeclared_identifier]: use of undeclared identifier '_DAT_01d16818'
-  Line 88 [undeclared_identifier]: use of undeclared identifier '_DAT_01d16818'
-  Line 92 [undeclared_identifier]: use of undeclared identifier '_DAT_01d16814'
-  Line 93 [undeclared_identifier]: use of undeclared identifier '_DAT_01d16818'
-  Line 101 [undeclared_identifier]: use of undeclared identifier '_DAT_01d16818'
-  Line 258 [other]: unknown type name 'code'
-  Line 267 [other]: unknown type name 'code'
-  Line 497 [other]: invalid suffix 'x' on integer constant
-  Line 497 [other]: invalid digit 'C' in decimal constant
-  Line 498 [other]: invalid suffix 'x' on integer constant
-  Line 498 [other]: exponent has no digits
-
-====================================================================================================
 support_newmsg.cpp_decryptMessage_FUN_004ee3f0 (9 errors)
 ====================================================================================================
   Line 20 [other]: unknown type name 'FLOATING_SAVE_AREA'
@@ -70106,6 +70096,29 @@ support_newmsg.cpp_getLocalizedString_FUN_004ee370 (11 errors)
   Line 22 [undeclared_identifier]: use of undeclared identifier '_DAT_01d16818'
   Line 52 [other]: unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?
   Line 53 [other]: unknown type name 'PCONTEXT'
+  Line 258 [other]: unknown type name 'code'
+  Line 267 [other]: unknown type name 'code'
+  Line 497 [other]: invalid suffix 'x' on integer constant
+  Line 497 [other]: invalid digit 'C' in decimal constant
+  Line 498 [other]: invalid suffix 'x' on integer constant
+  Line 498 [other]: exponent has no digits
+
+====================================================================================================
+support_newmsg.cpp_readMessageFile_FUN_004edfc0 (19 errors)
+====================================================================================================
+  Line 20 [other]: unknown type name 'FLOATING_SAVE_AREA'
+  Line 44 [undeclared_identifier]: use of undeclared identifier 'DAT_01d16810'; did you mean 'DAT_02DE6810'?
+  Line 51 [undeclared_identifier]: use of undeclared identifier 'DAT_005bdf50'
+  Line 52 [other]: unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?
+  Line 53 [other]: unknown type name 'PCONTEXT'
+  Line 57 [undeclared_identifier]: use of undeclared identifier '_DAT_01d16818'
+  Line 60 [undeclared_identifier]: use of undeclared identifier '_DAT_01d16818'
+  Line 71 [undeclared_identifier]: use of undeclared identifier '_DAT_01d16818'
+  Line 73 [undeclared_identifier]: use of undeclared identifier '_DAT_01d16818'
+  Line 88 [undeclared_identifier]: use of undeclared identifier '_DAT_01d16818'
+  Line 92 [undeclared_identifier]: use of undeclared identifier '_DAT_01d16814'
+  Line 93 [undeclared_identifier]: use of undeclared identifier '_DAT_01d16818'
+  Line 101 [undeclared_identifier]: use of undeclared identifier '_DAT_01d16818'
   Line 258 [other]: unknown type name 'code'
   Line 267 [other]: unknown type name 'code'
   Line 497 [other]: invalid suffix 'x' on integer constant

@@ -27,7 +27,7 @@ void __cdecl engine_pod_cpp_CPod_computeAndStoreCRC_FUN_004f8eb0(CPod *this_ptr,
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0
             (g_CEditorTools_PTR_005b6d50,"Computing CRC over entire pod: %s...",pod_filename);
   engine_pod_cpp_CPodFile_ctor_FUN_004f7a80(&local_240);
-  iVar2 = engine_pod_cpp_CPodFile_FUN_004f7ae0(&local_240,pod_filename);
+  iVar2 = engine_pod_cpp_CPodFile_mountFromFile_FUN_004f7ae0(&local_240,pod_filename);
   if (iVar2 == 0) {
     g_CurrentFilename = "..\\engine\\pod.cpp";
     g_CurrentLineNumber = 890;

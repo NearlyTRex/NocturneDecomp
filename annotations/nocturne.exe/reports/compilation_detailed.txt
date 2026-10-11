@@ -4,13 +4,13 @@ FUNCTION COMPILATION DETAILED ERRORS
 
 SUMMARY
 --------------------------------------------------
-Total functions compiled: 4921
+Total functions compiled: 4922
 Successful: 0 (0.0%)
-Failed: 4921
+Failed: 4922
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                          44492
+  other                          44501
   undeclared_identifier           5819
   format_error                     387
   type_error                       369
@@ -21,7 +21,7 @@ ERROR CATEGORIES
   argument_error                     2
 
 ====================================================================================================
-CATEGORY: other (44492 errors)
+CATEGORY: other (44501 errors)
 ====================================================================================================
 
   cockpit_ckptutil.c_applyActPalette_FUN_0042d370
@@ -8492,8 +8492,6 @@ CATEGORY: other (44492 errors)
     Line 20: unknown type name 'FLOATING_SAVE_AREA'
   engine_pcx.c_writePCXScanline_FUN_004f2550
     Line 20: unknown type name 'FLOATING_SAVE_AREA'
-  engine_pod.cpp_CPodFile_FUN_004f7ae0
-    Line 20: unknown type name 'FLOATING_SAVE_AREA'
   engine_pod.cpp_CPodFile_cleanup_FUN_004f80e0
     Line 20: unknown type name 'FLOATING_SAVE_AREA'
   engine_pod.cpp_CPodFile_computeFileCRC_FUN_004f86a0
@@ -8505,6 +8503,8 @@ CATEGORY: other (44492 errors)
   engine_pod.cpp_CPodFile_findFileIndex_FUN_004f8150
     Line 20: unknown type name 'FLOATING_SAVE_AREA'
   engine_pod.cpp_CPodFile_getAuditRecord_FUN_004f8570
+    Line 20: unknown type name 'FLOATING_SAVE_AREA'
+  engine_pod.cpp_CPodFile_mountFromFile_FUN_004f7ae0
     Line 20: unknown type name 'FLOATING_SAVE_AREA'
   engine_pod.cpp_CPodFile_populateFileInfo_FUN_004f81c0
     Line 20: unknown type name 'FLOATING_SAVE_AREA'
@@ -8545,6 +8545,8 @@ CATEGORY: other (44492 errors)
   engine_pod.cpp_crc32UpdateBuffer_FUN_004f7890
     Line 20: unknown type name 'FLOATING_SAVE_AREA'
   engine_pod.cpp_crc32UpdateByte_FUN_004f77d0
+    Line 20: unknown type name 'FLOATING_SAVE_AREA'
+  engine_pod.cpp_findFileInPod_FUN_004f9250
     Line 20: unknown type name 'FLOATING_SAVE_AREA'
   engine_pod.cpp_findFilesByExtension_FUN_004f8b90
     Line 20: unknown type name 'FLOATING_SAVE_AREA'
@@ -9680,13 +9682,13 @@ CATEGORY: other (44492 errors)
     Line 20: unknown type name 'FLOATING_SAVE_AREA'
   support_codec.cpp_writeBitsToStream_FUN_00438c40
     Line 20: unknown type name 'FLOATING_SAVE_AREA'
-  support_newmsg.cpp_FUN_004edfc0
-    Line 20: unknown type name 'FLOATING_SAVE_AREA'
   support_newmsg.cpp_decryptMessage_FUN_004ee3f0
     Line 20: unknown type name 'FLOATING_SAVE_AREA'
   support_newmsg.cpp_findLocalizedString_FUN_004ee2f0
     Line 20: unknown type name 'FLOATING_SAVE_AREA'
   support_newmsg.cpp_getLocalizedString_FUN_004ee370
+    Line 20: unknown type name 'FLOATING_SAVE_AREA'
+  support_newmsg.cpp_readMessageFile_FUN_004edfc0
     Line 20: unknown type name 'FLOATING_SAVE_AREA'
   support_trisock.cpp_CSocket_acceptConnection_FUN_00549170
     Line 20: unknown type name 'FLOATING_SAVE_AREA'
@@ -10283,7 +10285,7 @@ CATEGORY: undeclared_identifier (5819 errors)
     Line 34: use of undeclared identifier 'DAT_01cd944c'
   core_netgame.cpp_staticInit_FUN_004e94a0
     Line 17: use of undeclared identifier 'DAT_01d1640c'
-  support_newmsg.cpp_FUN_004edfc0
+  support_newmsg.cpp_readMessageFile_FUN_004edfc0
     Line 44: use of undeclared identifier 'DAT_01d16810'; did you mean 'DAT_02DE6810'?
   core_path.cpp_getOrCreatePathMap_FUN_004f1c90
     Line 25: use of undeclared identifier 'DAT_01e312f0'
@@ -13659,7 +13661,7 @@ CATEGORY: incompatible_types (344 errors)
   sound_sndmain.cpp_getSampleInfo_FUN_005279e0
     Line 95: no matching function for call to 'sound_sndmain_cpp_parseWavFile_FUN_00521830'
   core_main.c_initializeGameSystems_FUN_004c85f0
-    Line 65: no matching function for call to 'support_newmsg_cpp_FUN_004edfc0'
+    Line 65: no matching function for call to 'support_newmsg_cpp_readMessageFile_FUN_004edfc0'
 
 ====================================================================================================
 CATEGORY: cast_error (211 errors)
@@ -14009,7 +14011,7 @@ CATEGORY: pointer_type (55 errors)
     Line 27: assigning to 'int *' from 'uint *' (aka 'unsigned int *') converts between pointers to integer types with different sign
   core_inv.cpp_CInventory_load_FUN_004c1190
     Line 55: assigning to 'int *' from 'uint *' (aka 'unsigned int *') converts between pointers to integer types with different sign
-  engine_pod.cpp_CPodFile_FUN_004f7ae0
+  engine_pod.cpp_CPodFile_mountFromFile_FUN_004f7ae0
     Line 197: assigning to 'int *' from 'uint *' (aka 'unsigned int *') converts between pointers to integer types with different sign
   core_xform.cpp_clampClippedVertices_FUN_0055df90
     Line 18: assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between pointers to integer types with different sign

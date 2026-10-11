@@ -21,7 +21,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_memory.c_operator_new_FUN_0056497c
 ;   engine_pod.cpp_CPodFile_ctor_FUN_004f7a80
-;   engine_pod.cpp_CPodFile_FUN_004f7ae0
+;   engine_pod.cpp_CPodFile_mountFromFile_FUN_004f7ae0
 ;
 ; *****************************************************************************
 
@@ -68,8 +68,8 @@ section .text
     PUSH EDX                            ; 004f88fd
     MOV ECX,dword ptr [EBX + EAX*0x4 + 0x4] ; 004f88fe
     PUSH ECX                            ; 004f8902
-    CALL engine_pod.cpp_CPodFile_FUN_004f7ae0 ; 004f8903
-        ;   XREF to: 004f7ae0 (UNCONDITIONAL_CALL)  ; int engine_pod.cpp_CPodFile_FUN_004f7ae0(CPodFile * this_ptr, char * filename)
+    CALL engine_pod.cpp_CPodFile_mountFromFile_FUN_004f7ae0 ; 004f8903
+        ;   XREF to: 004f7ae0 (UNCONDITIONAL_CALL)  ; int engine_pod.cpp_CPodFile_mountFromFile_FUN_004f7ae0(CPodFile * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004f8908
     TEST EAX,EAX                        ; 004f890b
     JZ 0x004f893d                       ; 004f890d

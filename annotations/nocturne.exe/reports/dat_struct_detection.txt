@@ -40,10 +40,10 @@ Consider removing the Ghidra label and leaving the raw number.
       CMP dword ptr [EBX + 0x68],0x78a123 ; 00554677 | DAT_0078a123
 
   DAT_005bdf50  value=0x5BDF50 (6020944)  refs=5
-    FUN_004edfc0
-      PUSH 0x5bdf50                       ; 004ee09e | DAT_005bdf50
     initFonts
       PUSH 0x5bdf50                       ; 0044ca64 | DAT_005bdf50
+    readMessageFile
+      PUSH 0x5bdf50                       ; 004ee09e | DAT_005bdf50
 
   DAT_0076934c  value=0x76934C (7770956)  refs=4
     CCloth_render

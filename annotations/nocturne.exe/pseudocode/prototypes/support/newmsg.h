@@ -3,9 +3,9 @@
 // Function prototypes for support/newmsg.cpp
 // Generated from Ghidra function signatures
 
-// Original: support_newmsg.cpp_FUN_004edfc0
+// Original: support_newmsg.cpp_readMessageFile_FUN_004edfc0
 // Address: 004edfc0
-int FUN_004edfc0(char *param_1);
+int readMessageFile(char *param_1);
 
 // Original: support_newmsg.cpp_findLocalizedString_FUN_004ee2f0
 // Address: 004ee2f0
