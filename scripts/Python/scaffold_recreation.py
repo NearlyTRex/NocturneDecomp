@@ -186,10 +186,10 @@ HAND_WRITTEN_CLASSES = {"common": {
     "SViewport": "struct {};",
     "SWildcardPath": "struct {};",
 }}
-HAND_WRITTEN_DIRS = {"common/input", "common/net", "common/render", "common/serial", "common/text",
-                     "common/video", "tests/common/input", "tests/common/net",
-                     "tests/common/render", "tests/common/serial", "tests/common/text",
-                     "tests/common/video"}
+HAND_WRITTEN_DIRS = {"common/input", "common/math", "common/net", "common/render", "common/serial",
+                     "common/text", "common/video", "tests/common/input", "tests/common/math",
+                     "tests/common/net", "tests/common/render", "tests/common/serial",
+                     "tests/common/text", "tests/common/video"}
 
 # Parameters naming an OS handle the adapter owns; the kept function loses them.
 DROPPED_PARAMS = {"engine/special.cpp:loadExternalRenderer": {"window_handle"}}
@@ -443,6 +443,13 @@ def void_pointer_count(f):
 def is_trivial(f):
     """No calls and at most `MOV EAX,[ESP+4]; RET`: the body only returns `this`."""
     return not f.get("calls") and f.get("instructions", 3) <= 2
+
+
+def is_copy_assignment(f):
+    """An `assign` from its own class that calls nothing: a member-wise operator=."""
+    params = f.get("params", [])
+    return (re.match(r"^assign\d*$", f["method"]) is not None and not f.get("calls")
+            and len(params) == 1 and params[0]["type"]["name"] == f.get("cls"))
 
 
 def parameter_key(f):
@@ -813,11 +820,13 @@ class Scaffold:
             try:
                 # Compiler-generated specials are left to the compiler: a default
                 # constructor or destructor that only returns `this`, and a copy
-                # constructor that copies member by member without calling anything.
+                # constructor or assignment that copies member by member without calling anything.
                 if is_trivial(f) and (re.match(r"^dtor\d*$", method)
                                       or (re.match(r"^ctor\d*$", method) and not f.get("params"))):
                     continue
                 if f["addr"] in self.model.copy_ctors and not f.get("calls"):
+                    continue
+                if is_copy_assignment(f):
                     continue
                 if re.match(r"^ctor\d*$", method):
                     entry = self.method_entry(decls, cls, f)

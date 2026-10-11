@@ -38,3 +38,7 @@ CheckOptions:
   # an implementation shows a move is worth having.
   - key: cppcoreguidelines-special-member-functions.AllowMissingMoveFunctions
     value: true
+  # The original's constants are kept where they differ from the exact ones, as its own pi
+  # does; an exact constant written out still gets the std::numbers name.
+  - key: modernize-use-std-numbers.DiffThreshold
+    value: '1e-15'
