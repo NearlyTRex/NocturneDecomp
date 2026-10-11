@@ -42,7 +42,7 @@ section .text
 
     PUSH EBP                            ; 005ed630
         ;   Label: wincore_wddvmem.cpp_closeScreenDevice_FUN_005ed630
-    CMP dword ptr [0x03f9593c],0x0      ; 005ed631 | g_UseSoftwareRendering
+    CMP dword ptr [0x03f9593c],0x0      ; 005ed631 | g_Display24BitFallback
     JNZ 0x005ed6fa                      ; 005ed638
         ;   XREF to: 005ed6fa (CONDITIONAL_JUMP)  ; LAB_005ed6fa
     MOV ECX,dword ptr [0x02d03e94]      ; 005ed63e | g_UseExternalRenderer
@@ -101,14 +101,14 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005ed6e6
         ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 005ed6eb
-    MOV dword ptr [0x03f95934],0x1      ; 005ed6ee | g_RenderingInProgress
+    MOV dword ptr [0x03f95934],0x1      ; 005ed6ee | g_FlipPending
         ;   Label: LAB_005ed6ee
     POP ESI                             ; 005ed6f8
     POP EDI                             ; 005ed6f9
     POP EBP                             ; 005ed6fa
         ;   Label: LAB_005ed6fa
     RET                                 ; 005ed6fb
-    MOV dword ptr [0x03f95934],0x1      ; 005ed6fc | g_RenderingInProgress
+    MOV dword ptr [0x03f95934],0x1      ; 005ed6fc | g_FlipPending
         ;   Label: LAB_005ed6fc
     POP EBP                             ; 005ed706
     RET                                 ; 005ed707

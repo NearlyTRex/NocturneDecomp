@@ -37,8 +37,8 @@
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   IDirectDrawSurface* g_DirectDrawSurface
-;   int g_RenderingInProgress
-;   int g_UseSoftwareRendering
+;   int g_FlipPending
+;   int g_Display24BitFallback
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -67,16 +67,16 @@ section .text
     TEST ECX,ECX                        ; 005eda3c
     JNZ 0x005edb06                      ; 005eda3e
         ;   XREF to: 005edb06 (CONDITIONAL_JUMP)  ; LAB_005edb06
-    MOV EBX,dword ptr [0x03f95934]      ; 005eda44 | g_RenderingInProgress
+    MOV EBX,dword ptr [0x03f95934]      ; 005eda44 | g_FlipPending
     TEST EBX,EBX                        ; 005eda4a
     JNZ 0x005edace                      ; 005eda4c
         ;   XREF to: 005edace (CONDITIONAL_JUMP)  ; LAB_005edace
-    MOV ESI,dword ptr [0x03f9593c]      ; 005eda52 | g_UseSoftwareRendering
+    MOV ESI,dword ptr [0x03f9593c]      ; 005eda52 | g_Display24BitFallback
     TEST ESI,ESI                        ; 005eda58
     JZ 0x005edb24                       ; 005eda5a
         ;   XREF to: 005edb24 (CONDITIONAL_JUMP)  ; LAB_005edb24
     MOV EBX,dword ptr [0x00688010]      ; 005eda60 | g_BackBuffer
-    MOV dword ptr [0x03f9593c],ECX      ; 005eda66 | g_UseSoftwareRendering
+    MOV dword ptr [0x03f9593c],ECX      ; 005eda66 | g_Display24BitFallback
     CALL wincore_wddvmem.cpp_openScreenDevice_FUN_005ed580 ; 005eda6c
         ;   XREF to: 005ed580 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_openScreenDevice_FUN_005ed580()
     MOV ESI,dword ptr [0x00679398]      ; 005eda71 | g_WindowHeight
@@ -116,7 +116,7 @@ section .text
     CALL wincore_wddvmem.cpp_closeScreenDevice_FUN_005ed630 ; 005edabf
         ;   XREF to: 005ed630 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_closeScreenDevice_FUN_005ed630()
         ;   Label: LAB_005edabf
-    MOV dword ptr [0x03f9593c],0x1      ; 005edac4 | g_UseSoftwareRendering
+    MOV dword ptr [0x03f9593c],0x1      ; 005edac4 | g_Display24BitFallback
     MOV EBX,dword ptr [0x03f95924]      ; 005edace | g_DirectDrawSurface
         ;   Label: LAB_005edace
     TEST EBX,EBX                        ; 005edad4
@@ -137,7 +137,7 @@ section .text
         ;   XREF to: 005edc80 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_videoRestore_FUN_005edc80()
     XOR ESI,ESI                         ; 005edaf2
         ;   Label: LAB_005edaf2
-    MOV dword ptr [0x03f95934],ESI      ; 005edaf4 | g_RenderingInProgress
+    MOV dword ptr [0x03f95934],ESI      ; 005edaf4 | g_FlipPending
     CALL wincore_winrun.cpp_processWindowMessages_FUN_005f35e0 ; 005edafa
         ;   XREF to: 005f35e0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_processWindowMessages_FUN_005f35e0()
     MOV ESP,EBP                         ; 005edaff
@@ -152,7 +152,7 @@ section .text
         ;   XREF to: 005b7c30 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_presentToExternalRenderer_FUN_005b7c30(int skip_buffer_copy)
     ADD ESP,0x4                         ; 005edb0d
     XOR ESI,ESI                         ; 005edb10
-    MOV dword ptr [0x03f95934],ESI      ; 005edb12 | g_RenderingInProgress
+    MOV dword ptr [0x03f95934],ESI      ; 005edb12 | g_FlipPending
     CALL wincore_winrun.cpp_processWindowMessages_FUN_005f35e0 ; 005edb18
         ;   XREF to: 005f35e0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_processWindowMessages_FUN_005f35e0()
     MOV ESP,EBP                         ; 005edb1d
@@ -256,7 +256,7 @@ section .text
         ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 005edc38
     XOR ESI,ESI                         ; 005edc3b
-    MOV dword ptr [0x03f95934],ESI      ; 005edc3d | g_RenderingInProgress
+    MOV dword ptr [0x03f95934],ESI      ; 005edc3d | g_FlipPending
     CALL wincore_winrun.cpp_processWindowMessages_FUN_005f35e0 ; 005edc43
         ;   XREF to: 005f35e0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_processWindowMessages_FUN_005f35e0()
     MOV ESP,EBP                         ; 005edc48

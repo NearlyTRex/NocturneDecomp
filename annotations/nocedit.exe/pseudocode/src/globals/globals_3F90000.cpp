@@ -151,9 +151,9 @@ dword DWORD_03f9d000 = 0x1000;
 float g_WeatherParticleGroundHeights[200] = {};
 
 // int
-int g_RenderingInProgress = {};
+int g_FlipPending = {};
 int g_GraphicsResetFlag = {};
-int g_UseSoftwareRendering = {};
+int g_Display24BitFallback = {};
 int g_AccumulatedGameTime = {};
 int g_InputReadIndex = {};
 int g_InputWriteIndex = {};
@@ -161,7 +161,7 @@ int g_InputCountOld = {};
 int g_UnknownInputValue = {};
 int g_CrosshairBrightness = {};
 int g_InputDisabled = {};
-int g_ApplicationActive = {};
+int g_FocusRegained = {};
 int g_TotalPhysicalMemory = {};
 int g_AvailableSwapSpace = {};
 int g_NumWindowMessageHandlers = {};

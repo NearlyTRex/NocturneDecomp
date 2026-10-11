@@ -16,14 +16,14 @@ __asm {
         mov ECX,dword ptr [g_UseExternalRenderer]
         test ECX,ECX
         jnz LAB_005edb06
-        mov EBX,dword ptr [g_RenderingInProgress]
+        mov EBX,dword ptr [g_FlipPending]
         test EBX,EBX
         jnz LAB_005edace
-        mov ESI,dword ptr [g_UseSoftwareRendering]
+        mov ESI,dword ptr [g_Display24BitFallback]
         test ESI,ESI
         jz LAB_005edb24
         mov EBX,dword ptr [g_BackBuffer]
-        mov dword ptr [g_UseSoftwareRendering],ECX
+        mov dword ptr [g_Display24BitFallback],ECX
         call wincore_wddvmem_cpp_openScreenDevice_FUN_005ed580
         mov ESI,dword ptr [g_WindowHeight]
         xor EDI,EDI
@@ -57,7 +57,7 @@ __asm {
         jl LAB_005eda7f
     LAB_005edabf:
         call wincore_wddvmem_cpp_closeScreenDevice_FUN_005ed630
-        mov dword ptr [g_UseSoftwareRendering],0x1
+        mov dword ptr [g_Display24BitFallback],0x1
     LAB_005edace:
         mov EBX,dword ptr [g_DirectDrawSurface]
         test EBX,EBX
@@ -74,7 +74,7 @@ __asm {
         call wincore_wddvmem_cpp_videoRestore_FUN_005edc80
     LAB_005edaf2:
         xor ESI,ESI
-        mov dword ptr [g_RenderingInProgress],ESI
+        mov dword ptr [g_FlipPending],ESI
         call wincore_winrun_cpp_processWindowMessages_FUN_005f35e0
         mov ESP,EBP
         pop EBP
@@ -87,7 +87,7 @@ __asm {
         call engine_special_cpp_presentToExternalRenderer_FUN_005b7c30
         add ESP,0x4
         xor ESI,ESI
-        mov dword ptr [g_RenderingInProgress],ESI
+        mov dword ptr [g_FlipPending],ESI
         call wincore_winrun_cpp_processWindowMessages_FUN_005f35e0
         mov ESP,EBP
         pop EBP
@@ -182,7 +182,7 @@ __asm {
         call core_main_c_displayErrorAndQuit_FUN_00506f10
         add ESP,0x4
         xor ESI,ESI
-        mov dword ptr [g_RenderingInProgress],ESI
+        mov dword ptr [g_FlipPending],ESI
         call wincore_winrun_cpp_processWindowMessages_FUN_005f35e0
         mov ESP,EBP
 }

@@ -132,14 +132,14 @@ LRESULT __stdcall wincore_winrun_cpp_mainWindowProc_FUN_005f3150(HWND hWnd,UINT 
             if (g_WindowActive == 0) {
               wincore_wddvmem_cpp_restoreVideoAndMinimizeWindow_FUN_005edc50();
               (*g_SetThreadPriorityFunc)(hThread,-0xf);
-              g_ApplicationActive = iVar4;
+              g_FocusRegained = iVar4;
             }
             else {
               (*g_SetThreadPriorityFunc)(hThread,1);
               wincore_wddvmem_cpp_videoRestore_FUN_005edc80();
               if (g_PreviousActiveState != -1) {
                 engine_2d_c_clearInputAndWait_FUN_00403260();
-                g_ApplicationActive = 1;
+                g_FocusRegained = 1;
               }
             }
           }

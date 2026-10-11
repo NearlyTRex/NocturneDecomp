@@ -105,10 +105,10 @@ extern "C" void nocturne_focus_trace_presented(void)
     char path[512];
     snprintf(path, sizeof(path), "%s/focus_%d_%02d.ppm", s_dir, s_gains, s_present_index);
     int ok = nocturne_dump_frontbuffer(path);
-    fprintf(s_log, "  -- present %d: game frame %d pending_sim=%d app_active=%d dump=%s\n",
+    fprintf(s_log, "  -- present %d: game frame %d pending_sim=%d focus_regained=%d dump=%s\n",
             s_present_index, (g_CGamePtr != nullptr) ? g_CGamePtr->frame_counter : -1,
             (g_CNetGamePtr != nullptr) ? g_CNetGamePtr->has_pending_sim_frame : -1,
-            g_ApplicationActive, (ok == 0) ? path : "failed");
+            g_FocusRegained, (ok == 0) ? path : "failed");
     fflush(s_log);
     s_present_index++;
     s_presents_left--;

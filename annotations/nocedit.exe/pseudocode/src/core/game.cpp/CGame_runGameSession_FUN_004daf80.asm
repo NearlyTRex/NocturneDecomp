@@ -603,13 +603,13 @@ section .text
     CALL wincore_winrun.cpp_processWindowMessages_FUN_005f35e0 ; 004db679
         ;   XREF to: 005f35e0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_processWindowMessages_FUN_005f35e0()
         ;   Label: LAB_004db679
-    CMP dword ptr [0x03f98470],0x0      ; 004db67e | g_ApplicationActive
+    CMP dword ptr [0x03f98470],0x0      ; 004db67e | g_FocusRegained
         ;   Label: LAB_004db67e
     JZ 0x004db6a4                       ; 004db685
         ;   XREF to: 004db6a4 (CONDITIONAL_JUMP)  ; LAB_004db6a4
     XOR EDX,EDX                         ; 004db687
     MOV EAX,[0x006810c8]                ; 004db689 | g_CDemonSetInstance | g_CDemonSetPtr
-    MOV dword ptr [0x03f98470],EDX      ; 004db68e | g_ApplicationActive
+    MOV dword ptr [0x03f98470],EDX      ; 004db68e | g_FocusRegained
     MOV EDX,dword ptr [EAX + 0x15aea4]  ; 004db694 | g_CDemonSetInstance.selected_camera_index
     PUSH EDX                            ; 004db69a
     PUSH EAX                            ; 004db69b | g_CDemonSetInstance

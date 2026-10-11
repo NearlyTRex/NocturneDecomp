@@ -38,7 +38,7 @@ int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_005ecef0(int width,int h
   }
   g_BitsPerPixel = bits_per_pixel;
   g_WindowWidth = width;
-  g_UseSoftwareRendering = 0;
+  g_Display24BitFallback = 0;
   g_WindowHeight = height;
   if (g_BackBuffer != (void *)0x0) {
     shape_memdbg_cpp_debugFree_FUN_0050f460(g_BackBuffer,"..\\wincore\\wddvmem.cpp",255);
@@ -77,7 +77,7 @@ int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_005ecef0(int width,int h
     if (HVar3 != 0) {
       return 0;
     }
-    g_UseSoftwareRendering = 1;
+    g_Display24BitFallback = 1;
   }
   memset(&DStack_84,0,0x6c);
   DStack_84.dwSize = 0x6c;

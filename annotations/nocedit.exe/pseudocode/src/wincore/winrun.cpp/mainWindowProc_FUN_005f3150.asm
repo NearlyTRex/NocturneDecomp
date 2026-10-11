@@ -167,7 +167,7 @@ section .text
         ;   XREF to: 005f31d4 (CONDITIONAL_JUMP)  ; LAB_005f31d4
     CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 005f326e
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()
-    MOV dword ptr [0x03f98470],0x1      ; 005f3273 | g_ApplicationActive
+    MOV dword ptr [0x03f98470],0x1      ; 005f3273 | g_FocusRegained
     JMP 0x005f31d4                      ; 005f327d
         ;   XREF to: 005f31d4 (UNCONDITIONAL_JUMP)  ; LAB_005f31d4
     CALL wincore_wddvmem.cpp_restoreVideoAndMinimizeWindow_FUN_005edc50 ; 005f3282
@@ -176,7 +176,7 @@ section .text
     PUSH -0xf                           ; 005f3287
     PUSH EBX                            ; 005f3289
     CALL dword ptr CS:[0x61163c]        ; 005f328a | g_SetThreadPriorityFunc
-    MOV dword ptr [0x03f98470],ESI      ; 005f3291 | g_ApplicationActive
+    MOV dword ptr [0x03f98470],ESI      ; 005f3291 | g_FocusRegained
     JMP 0x005f31d4                      ; 005f3297
         ;   XREF to: 005f31d4 (UNCONDITIONAL_JUMP)  ; LAB_005f31d4
     PUSH 0x0                            ; 005f329c

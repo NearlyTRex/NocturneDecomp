@@ -15,9 +15,9 @@ void __cdecl wincore_wddvmem_cpp_closeScreenDevice_FUN_005ed630(void)
   int iVar6;
   int iVar7;
 
-  if (g_UseSoftwareRendering == 0) {
+  if (g_Display24BitFallback == 0) {
     if (g_UseExternalRenderer != 0) {
-      g_RenderingInProgress = 1;
+      g_FlipPending = 1;
       return;
     }
     if (0 < g_WindowHeight) {
@@ -38,7 +38,7 @@ void __cdecl wincore_wddvmem_cpp_closeScreenDevice_FUN_005ed630(void)
       g_CurrentLineNumber = 639;
       core_main_c_displayErrorAndQuit_FUN_00506f10("closeScreenDevice - Unable to unlock");
     }
-    g_RenderingInProgress = 1;
+    g_FlipPending = 1;
   }
   return;
 }

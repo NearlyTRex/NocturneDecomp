@@ -475,8 +475,8 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
       else {
         wincore_winrun_cpp_processWindowMessages_FUN_005f35e0();
       }
-      if (g_ApplicationActive != 0) {
-        g_ApplicationActive = 0;
+      if (g_FocusRegained != 0) {
+        g_FocusRegained = 0;
 #if NOCTURNE_AUTHENTIC_WINDOWS
         core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50
                   (g_CDemonSetPtr,g_CDemonSetPtr->selected_camera_index);

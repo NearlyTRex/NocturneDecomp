@@ -99,7 +99,7 @@ section .text
     XOR EDX,EDX                         ; 005ecf62
     MOV [0x00679394],EAX                ; 005ecf64 | g_WindowWidth
     MOV EAX,dword ptr [ESP + 0x8c]      ; 005ecf69
-    MOV dword ptr [0x03f9593c],EDX      ; 005ecf70 | g_UseSoftwareRendering
+    MOV dword ptr [0x03f9593c],EDX      ; 005ecf70 | g_Display24BitFallback
     MOV [0x00679398],EAX                ; 005ecf76 | g_WindowHeight
     TEST ECX,ECX                        ; 005ecf7b
     JZ 0x005ecf9a                       ; 005ecf7d
@@ -226,7 +226,7 @@ section .text
     TEST EAX,EAX                        ; 005ed0da
     JNZ 0x005ed0a5                      ; 005ed0dc
         ;   XREF to: 005ed0a5 (CONDITIONAL_JUMP)  ; LAB_005ed0a5
-    MOV dword ptr [0x03f9593c],0x1      ; 005ed0de | g_UseSoftwareRendering
+    MOV dword ptr [0x03f9593c],0x1      ; 005ed0de | g_Display24BitFallback
     PUSH 0x6c                           ; 005ed0e8
         ;   Label: LAB_005ed0e8
     PUSH 0x0                            ; 005ed0ea
