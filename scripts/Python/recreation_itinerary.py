@@ -22,6 +22,7 @@ Usage: recreation_itinerary.py [--out docs/recreation-itinerary.md] [--split 300
 
 import argparse
 import collections
+import math
 import os
 import re
 import sys
@@ -86,6 +87,11 @@ def done_addresses():
                 with open(os.path.join(directory, name), encoding="utf-8") as f:
                     done.update(DONE.findall(f.read()))
     return done
+
+
+def percent(done, total):
+    # Rounded down, so 100% means every function is done.
+    return "%.1f%%" % (math.floor(done * 1000 / total) / 10 if total else 0)
 
 
 class Step:
@@ -318,15 +324,17 @@ class Itinerary:
             "function's `// nocedit` address line, or when pass 1 left it to the compiler. Sizes are",
             "in instructions.",
             "",
-            "| Step | First needed by | TUs | Functions | Instructions | Done |",
-            "|---|---|---|---|---|---|",
+            "| Step | First needed by | TUs | Functions | Instructions | Done | % Done |",
+            "|---|---|---|---|---|---|---|",
         ]
         for i, step in enumerate(self.steps):
             n, instructions, done = self.counts(step.addrs)
-            lines.append("| %d | %s | %d | %d | %d | %d |"
-                         % (i, step.label, len(self.tu_groups(step)), n, instructions, done))
+            lines.append("| %d | %s | %d | %d | %d | %d | %s |"
+                         % (i, step.label, len(self.tu_groups(step)), n, instructions, done,
+                            percent(done, n)))
         n, instructions, done = self.counts(self.in_scope)
-        lines.append("| | **All** | | **%d** | **%d** | **%d** |" % (n, instructions, done))
+        lines.append("| | **All** | | **%d** | **%d** | **%d** | **%s** |"
+                     % (n, instructions, done, percent(done, n)))
         for i, step in enumerate(self.steps):
             lines += ["", "## Step %d: %s" % (i, step.label)]
             for tu, addrs in self.tu_groups(step):

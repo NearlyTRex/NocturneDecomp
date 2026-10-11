@@ -9,42 +9,42 @@ and functions come leaves first. A box is ticked when the recreation has the
 function's `// nocedit` address line, or when pass 1 left it to the compiler. Sizes are
 in instructions.
 
-| Step | First needed by | TUs | Functions | Instructions | Done |
-|---|---|---|---|---|---|
-| 0 | Math value types | 3 | 13 | 791 | 13 |
-| 1 | File system: `dosio`, pods | 5 | 43 | 2505 | 42 |
-| 2 | `doNothing`, `readMessageFile`, `detectCPUFeatures`, `getLocalizedString`, `initializeTrigTables`, `initTextureCache`, `initGraphicsSystem` | 9 | 33 | 2886 | 3 |
-| 3 | Sound system: `sndmain`, `CSound` lifetime, `readIniData` | 7 | 144 | 9293 | 14 |
-| 4 | `initFonts`, `CEditorTools::showWarning`, `showCalibrationTest` | 18 | 80 | 11551 | 1 |
-| 5 | `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 60 | 5532 | 0 |
-| 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 0 |
-| 7 | `CMoon::update`, `CMoon::render` | 15 | 86 | 11100 | 0 |
-| 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 0 |
-| 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 0 |
-| 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 17 | 52 | 5565 | 1 |
-| 11 | `CScript::loadScript` | 63 | 577 | 67325 | 0 |
-| 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 1 |
-| 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 |
-| 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 52 | 5305 | 0 |
-| 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 0 |
-| 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 0 |
-| 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 0 |
-| 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 0 |
-| 19 | Not reached from startup: `engine/` | 23 | 277 | 19378 | 6 |
-| 20 | Not reached from startup: `support/` | 2 | 24 | 593 | 0 |
-| 21 | Not reached from startup: `cockpit/` | 4 | 178 | 11527 | 0 |
-| 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 0 |
-| 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 3 |
-| 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 0 |
-| 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 3 |
-| 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 24 |
-| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 0 |
-| 28 | Not reached from startup: `core/` (part 6 of 9) | 19 | 283 | 21832 | 2 |
-| 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 2 |
-| 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 2 |
-| 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 |
-| 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 1 |
-| | **All** | | **4520** | **404477** | **122** |
+| Step | First needed by | TUs | Functions | Instructions | Done | % Done |
+|---|---|---|---|---|---|---|
+| 0 | Math value types | 3 | 13 | 791 | 13 | 100.0% |
+| 1 | File system: `dosio`, pods | 5 | 44 | 2518 | 44 | 100.0% |
+| 2 | `doNothing`, `readMessageFile`, `detectCPUFeatures`, `getLocalizedString`, `initializeTrigTables`, `initTextureCache`, `initGraphicsSystem` | 9 | 33 | 2886 | 3 | 9.0% |
+| 3 | Sound system: `sndmain`, `CSound` lifetime, `readIniData` | 7 | 144 | 9293 | 14 | 9.7% |
+| 4 | `initFonts`, `CEditorTools::showWarning`, `showCalibrationTest` | 18 | 80 | 11551 | 1 | 1.2% |
+| 5 | `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 60 | 5532 | 0 | 0.0% |
+| 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 0 | 0.0% |
+| 7 | `CMoon::update`, `CMoon::render` | 15 | 86 | 11100 | 0 | 0.0% |
+| 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 0 | 0.0% |
+| 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 0 | 0.0% |
+| 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 17 | 52 | 5565 | 1 | 1.9% |
+| 11 | `CScript::loadScript` | 63 | 577 | 67325 | 0 | 0.0% |
+| 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 1 | 3.8% |
+| 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0.0% |
+| 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 52 | 5305 | 0 | 0.0% |
+| 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 0 | 0.0% |
+| 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 0 | 0.0% |
+| 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 0 | 0.0% |
+| 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 0 | 0.0% |
+| 19 | Not reached from startup: `engine/` | 23 | 277 | 19378 | 6 | 2.1% |
+| 20 | Not reached from startup: `support/` | 2 | 24 | 593 | 0 | 0.0% |
+| 21 | Not reached from startup: `cockpit/` | 4 | 178 | 11527 | 0 | 0.0% |
+| 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 0 | 0.0% |
+| 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 3 | 1.0% |
+| 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 0 | 0.0% |
+| 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 3 | 1.0% |
+| 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 24 | 8.0% |
+| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 0 | 0.0% |
+| 28 | Not reached from startup: `core/` (part 6 of 9) | 19 | 283 | 21832 | 2 | 0.7% |
+| 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 2 | 0.7% |
+| 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 2 | 0.6% |
+| 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 | 3.6% |
+| 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 1 | 9.0% |
+| | **All** | | **4521** | **404490** | **124** | **2.7%** |
 
 ## Step 0: Math value types
 
@@ -102,7 +102,7 @@ in instructions.
 - free functions
   - [x] `wildcardStringMatch` 0x004a6e20 (81)
 
-### `engine/pod.cpp` (19 functions, 1485 instructions, 19 done)
+### `engine/pod.cpp` (20 functions, 1498 instructions, 20 done)
 - class `CPodFile`
   - [x] `ctor` 0x0054f5a0 (14)
   - [x] `cleanup` 0x00550090 (36)
@@ -125,10 +125,11 @@ in instructions.
   - [x] `locateFile` 0x005512f0 (52)
 - free functions
   - [x] `findFilesByExtension` 0x00550ce0 (159)
+  - [x] `findFileInPod` 0x00551960 (13)
 
-### `core/podmain.cpp` (4 functions, 143 instructions, 3 done)
+### `core/podmain.cpp` (4 functions, 143 instructions, 4 done)
 - free functions
-  - [ ] `staticInit` 0x00551990 (9)
+  - [x] `staticInit` 0x00551990 (9)
 - class `CDemonPod`
   - [x] `load` 0x005519c0 (97)
   - [x] `ctor` 0x00551b00 (6)

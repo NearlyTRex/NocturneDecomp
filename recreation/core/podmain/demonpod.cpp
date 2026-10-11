@@ -24,6 +24,8 @@ std::string_view nextWord(std::string_view &text) {
 
 } // namespace
 
+// staticInit built the global instance and registered its destructor; its owner constructs it now.
+// nocedit 0x00551990
 // nocedit 0x00551b00
 CDemonPod::CDemonPod(platform::IFileSystem &file_system, const engine::CDosIo &dosio)
     : CPod(file_system, dosio) {}
