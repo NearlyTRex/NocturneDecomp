@@ -1,18 +1,18 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CVector3f * __cdecl core_set_cpp_CVector3f_copy_FUN_005714c0(CVector3f *this_ptr,CVector3f *b)
+; CBoundingBox3D * __cdecl core_set_cpp_CBoundingBox3D_assign_FUN_005714c0(CBoundingBox3D *this_ptr,CBoundingBox3D *other)
 ;
 ; Parameters:
-; CVector3f *      Stack[0x4]:4   this_ptr
-; CVector3f *      Stack[0x8]:4   b
+; CBoundingBox3D * Stack[0x4]:4   this_ptr
+; CBoundingBox3D * Stack[0x8]:4   other
 ;
 ; *****************************************************************************
 
 section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 005714c0
-        ;   Label: core_set.cpp_CVector3f_copy_FUN_005714c0
+        ;   Label: core_set.cpp_CBoundingBox3D_assign_FUN_005714c0
     MOV EDX,dword ptr [ESP + 0x8]       ; 005714c4
     CMP EAX,EDX                         ; 005714c8
     JNZ 0x005714d7                      ; 005714ca

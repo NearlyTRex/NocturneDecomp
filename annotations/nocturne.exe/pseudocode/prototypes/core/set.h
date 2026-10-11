@@ -307,9 +307,9 @@ SVDBox * __cdecl SVDBox::dtor(SVDBox *this_ptr,uint flags);
 // Address: 0050ea80
 C3DSLight * __cdecl C3DSLight::dtor(C3DSLight *this_ptr,uint flags);
 
-// Original: core_set.cpp_CVector3f_copy_FUN_0050ea90
+// Original: core_set.cpp_CBoundingBox3D_assign_FUN_0050ea90
 // Address: 0050ea90
-CVector3f * __cdecl CVector3f::copy(CVector3f *this_ptr,CVector3f *b);
+CBoundingBox3D * __cdecl CBoundingBox3D::assign(CBoundingBox3D *this_ptr,CBoundingBox3D *other);
 
 // Original: core_set.cpp_CVector3f_arrdtor4000_FUN_0050eae0
 // Address: 0050eae0

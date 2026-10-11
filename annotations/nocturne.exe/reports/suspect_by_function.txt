@@ -18270,6 +18270,13 @@ core_sentinel.cpp_CSentinel_setup_FUN_00505990 (1 suspect)
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 ====================================================================================================
+core_set.cpp_CBoundingBox3D_assign_FUN_0050ea90 (2 suspects)
+  File: core/set.cpp
+====================================================================================================
+  Line 11 [unrolled_memcpy]: (this_ptr->min).x = (other->min).x;
+  Line 18 [unrolled_memcpy]: (this_ptr->max).x = (other->max).x;
+
+====================================================================================================
 core_set.cpp_CDemonSet_FUN_005090f0 (6 suspects)
   File: core/set.cpp
 ====================================================================================================
@@ -19350,13 +19357,6 @@ core_set.cpp_CDemonSet_snapshotActorTransformState_FUN_00508890 (2 suspects)
 ====================================================================================================
   Line 12 [unrolled_memcpy]: (actor->previous_transform_state).position.x = (actor->location).position.x;
   Line 19 [unrolled_memcpy]: (actor->previous_transform_state).orientation.vec.x = (actor->orient).vec.x;
-
-====================================================================================================
-core_set.cpp_CVector3f_copy_FUN_0050ea90 (2 suspects)
-  File: core/set.cpp
-====================================================================================================
-  Line 11 [unrolled_memcpy]: this_ptr->x = b->x;
-  Line 18 [unrolled_memcpy]: this_ptr[1].x = b[1].x;
 
 ====================================================================================================
 core_set.cpp_computeTriangleNormalIndexed_FUN_0050bcf0 (2 suspects)
