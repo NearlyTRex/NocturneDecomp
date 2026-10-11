@@ -12,9 +12,9 @@ in instructions.
 | Step | First needed by | TUs | Functions | Instructions | Done |
 |---|---|---|---|---|---|
 | 0 | Math value types | 3 | 13 | 791 | 13 |
-| 1 | `displayErrorAndQuit`, `doNothing`, `readIniData` | 13 | 52 | 2654 | 0 |
-| 2 | `CPod::init`, `addGetFileInfoHook`, `findFileNormally`, `detectCPUFeatures`, `initializeTrigTables`, `initTextureCache`, `initGraphicsSystem` | 9 | 35 | 2810 | 0 |
-| 3 | `calibrateCPUSpeed`, `initFonts`, `CEditorTools::showWarning`, `showCalibrationTest` | 19 | 82 | 11620 | 1 |
+| 1 | `displayErrorAndQuit`, `doNothing`, `readIniData` | 13 | 52 | 2654 | 17 |
+| 2 | `CPod::init`, `addGetFileInfoHook`, `findFileNormally`, `readMessageFile`, `detectCPUFeatures`, `initializeTrigTables`, `initTextureCache`, `initGraphicsSystem` | 10 | 37 | 3049 | 0 |
+| 3 | `calibrateCPUSpeed`, `initFonts`, `CEditorTools::showWarning`, `showCalibrationTest` | 18 | 81 | 11599 | 1 |
 | 4 | `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles` | 8 | 29 | 1999 | 0 |
 | 5 | `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 10 | 51 | 5008 | 0 |
 | 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 0 |
@@ -23,14 +23,14 @@ in instructions.
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 0 |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 17 | 52 | 5565 | 1 |
 | 11 | `CScript::loadScript` | 65 | 612 | 70138 | 0 |
-| 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 0 |
+| 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 1 |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 18 | 57 | 5690 | 0 |
 | 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 44 | 194 | 28998 | 0 |
 | 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen` | 10 | 25 | 6410 | 0 |
 | 17 | `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats`, `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 13 | 32 | 5303 | 0 |
 | 18 | `enterMainGameMenu`, `finalizeGameSystems` | 10 | 14 | 547 | 0 |
-| 19 | Not reached from startup: `engine/` | 24 | 294 | 20782 | 5 |
+| 19 | Not reached from startup: `engine/` | 24 | 294 | 20782 | 6 |
 | 20 | Not reached from startup: `sound/` | 1 | 37 | 1492 | 2 |
 | 21 | Not reached from startup: `support/` | 2 | 24 | 593 | 0 |
 | 22 | Not reached from startup: `cockpit/` | 4 | 178 | 11527 | 0 |
@@ -45,7 +45,7 @@ in instructions.
 | 31 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 2 |
 | 32 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 |
 | 33 | Not reached from startup: `wincore/` | 2 | 10 | 456 | 0 |
-| | **All** | | **4519** | **404259** | **62** |
+| | **All** | | **4520** | **404477** | **81** |
 
 ## Step 0: Math value types
 
@@ -85,49 +85,49 @@ in instructions.
 - free functions
   - [ ] `cleanupGraphicsSystem` 0x00401130 (1)
 
-### `engine/console.cpp` (3 functions, 188 instructions, 0 done)
+### `engine/console.cpp` (3 functions, 188 instructions, 3 done)
 - class `CConsole`
-  - [ ] `scrollUp` 0x00441a80 (49)
-  - [ ] `writeChar` 0x00441970 (60)
-  - [ ] `printf` 0x00441890 (79)
+  - [x] `scrollUp` 0x00441a80 (49)
+  - [x] `writeChar` 0x00441970 (60)
+  - [x] `printf` 0x00441890 (79)
 
 ### `core/sound.cpp` (1 functions, 1 instructions, 0 done)
 - class `CSound`
   - [ ] `dtor` 0x005b2d60 (1)
 
-### `wincore/winrun.cpp` (1 functions, 26 instructions, 0 done)
+### `wincore/winrun.cpp` (1 functions, 26 instructions, 1 done)
 - free functions
-  - [ ] `displayMessageBoxAndQuit` 0x005f3920 (26)
+  - [x] `displayMessageBoxAndQuit` 0x005f3920 (26)
 
-### `core/main.c` (1 functions, 147 instructions, 0 done)
+### `core/main.c` (1 functions, 147 instructions, 1 done)
 - free functions
-  - [ ] `displayErrorAndQuit` 0x00506f10 (147)
+  - [x] `displayErrorAndQuit` 0x00506f10 (147)
 
-### `core/flattn.cpp` (1 functions, 1 instructions, 0 done)
+### `core/flattn.cpp` (1 functions, 1 instructions, 1 done)
 - free functions
-  - [ ] `doNothing` 0x004cbce0 (1)
+  - [x] `doNothing` 0x004cbce0 (1)
 
-### `core/game.cpp` (1 functions, 64 instructions, 0 done)
+### `core/game.cpp` (1 functions, 64 instructions, 1 done)
 - class `CGame`
-  - [ ] `restoreDefaultControls` 0x004dbbc0 (64)
+  - [x] `restoreDefaultControls` 0x004dbbc0 (64)
 
-### `engine/ini.cpp` (8 functions, 374 instructions, 0 done)
+### `engine/ini.cpp` (8 functions, 374 instructions, 8 done)
 - free functions
-  - [ ] `initIniFile` 0x004fbaa0 (25)
-  - [ ] `getProfileString` 0x004fb960 (24)
+  - [x] `initIniFile` 0x004fbaa0 (25)
+  - [x] `getProfileString` 0x004fb960 (24)
 - class `CIniFile`
-  - [ ] `readIniHeader` 0x004fbae0 (26)
-  - [ ] `ctor` 0x004fba70 (15)
-  - [ ] `getString` 0x004fbb20 (42)
-  - [ ] `getInteger` 0x004fbc30 (31)
-  - [ ] `getFloat` 0x004fbcd0 (30)
+  - [x] `readIniHeader` 0x004fbae0 (26)
+  - [x] `ctor` 0x004fba70 (15)
+  - [x] `getString` 0x004fbb20 (42)
+  - [x] `getInteger` 0x004fbc30 (31)
+  - [x] `getFloat` 0x004fbcd0 (30)
 - class `CIni`
-  - [ ] `getProfileString` 0x004fb250 (181)
+  - [x] `getProfileString` 0x004fb250 (181)
 
-### `support/newmsg.cpp` (2 functions, 123 instructions, 0 done)
+### `support/newmsg.cpp` (2 functions, 123 instructions, 2 done)
 - free functions
-  - [ ] `findLocalizedString` 0x00544170 (59)
-  - [ ] `getLocalizedString` 0x005441f0 (64)
+  - [x] `findLocalizedString` 0x00544170 (59)
+  - [x] `getLocalizedString` 0x005441f0 (64)
 
 ### `sound/sndmain.cpp` (30 functions, 1104 instructions, 0 done)
 - class `CSfxSample`
@@ -168,11 +168,24 @@ in instructions.
 - free functions
   - [ ] `readIniData` 0x004fbd90 (546)
 
-## Step 2: `CPod::init`, `addGetFileInfoHook`, `findFileNormally`, `detectCPUFeatures`, `initializeTrigTables`, `initTextureCache`, `initGraphicsSystem`
+## Step 2: `CPod::init`, `addGetFileInfoHook`, `findFileNormally`, `readMessageFile`, `detectCPUFeatures`, `initializeTrigTables`, `initTextureCache`, `initGraphicsSystem`
 
 ### `engine/pod.cpp` (1 functions, 23 instructions, 0 done)
 - class `CPod`
   - [ ] `init` 0x00550c30 (23)
+
+### `engine/dosio.cpp` (6 functions, 264 instructions, 0 done)
+- free functions
+  - [ ] `addGetFileInfoHook` 0x00481710 (20)
+  - [ ] `findFileNormally` 0x004817c0 (55)
+  - [ ] `getRelativeFilePath` 0x004816c0 (33)
+  - [ ] `findFile` 0x00481760 (43)
+  - [ ] `getFileSize` 0x00481880 (21)
+  - [ ] `getFile` 0x00481a50 (92)
+
+### `support/newmsg.cpp` (1 functions, 218 instructions, 0 done)
+- free functions
+  - [ ] `readMessageFile` 0x00543e40 (218)
 
 ### `core/mmx.c` (3 functions, 82 instructions, 0 done)
 - free functions
@@ -189,14 +202,6 @@ in instructions.
   - [ ] `ctor` 0x005dcab0 (19)
 - free functions
   - [ ] `initTextureCache` 0x005dd760 (15)
-
-### `engine/dosio.cpp` (5 functions, 243 instructions, 0 done)
-- free functions
-  - [ ] `addGetFileInfoHook` 0x00481710 (20)
-  - [ ] `findFileNormally` 0x004817c0 (55)
-  - [ ] `getRelativeFilePath` 0x004816c0 (33)
-  - [ ] `findFile` 0x00481760 (43)
-  - [ ] `getFile` 0x00481a50 (92)
 
 ### `engine/special.cpp` (8 functions, 864 instructions, 0 done)
 - free functions
@@ -238,10 +243,6 @@ in instructions.
 ### `cockpit/ckptutil.c` (1 functions, 96 instructions, 0 done)
 - free functions
   - [ ] `readBitmapFile` 0x00431870 (96)
-
-### `engine/dosio.cpp` (1 functions, 21 instructions, 0 done)
-- free functions
-  - [ ] `getFileSize` 0x00481880 (21)
 
 ### `engine/winfont.cpp` (1 functions, 42 instructions, 0 done)
 - class `CWinFont`
@@ -1908,9 +1909,9 @@ in instructions.
   - [ ] `startMission` 0x00524760 (95)
   - [ ] `buildActiveSetActorList` 0x00524120 (77)
 
-### `engine/console.cpp` (1 functions, 15 instructions, 0 done)
+### `engine/console.cpp` (1 functions, 15 instructions, 1 done)
 - class `CConsole`
-  - [ ] `reset` 0x00441a40 (15)
+  - [x] `reset` 0x00441a40 (15)
 
 ### `shape/edittool.cpp` (1 functions, 80 instructions, 0 done)
 - class `CEditorTools`
@@ -2833,9 +2834,9 @@ in instructions.
   - [ ] `perspectiveDivideVertices` 0x00437bf0 (47)
   - [ ] `clipPolygonToViewFrustumAdvanced` 0x00437ca0 (581)
 
-### `engine/console.cpp` (3 functions, 38 instructions, 1 done)
+### `engine/console.cpp` (3 functions, 38 instructions, 2 done)
 - class `CConsole`
-  - [ ] `ctor` 0x00441810 (25)
+  - [x] `ctor` 0x00441810 (25)
   - [x] `dtor` 0x00441880 (2, compiler-generated)
 - free functions
   - [ ] `staticInit` 0x004417e0 (11)

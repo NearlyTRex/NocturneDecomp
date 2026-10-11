@@ -1,3 +1,4 @@
+#include "common/error/fatalerror.h"
 #include "platform/gl/glrenderer.h"
 #include "platform/sdl/sdlaudiodevice.h"
 #include "platform/sdl/sdlclipboard.h"
@@ -10,9 +11,11 @@
 #include "platform/sdl/sdlnetwork.h"
 #include "platform/sdl/sdlosfontfactory.h"
 #include "platform/sdl/sdlwindow.h"
+#include "wincore/winrun/winrun.h"
 
 #include <cstddef>
 #include <cstdio>
+#include <ctime>
 #include <exception>
 #include <stdexcept>
 #include <vector>
@@ -29,10 +32,9 @@ constexpr int kHeight = 480;
 constexpr int kBitsPerPixel = 32;
 constexpr int kPitch = kWidth * (kBitsPerPixel / 8);
 
-int run() {
-    // Declared first so it outlives every adapter.
-    const sdl::CSdlContext context;
-    sdl::CSdlWindow window("Nocturne", kWidth, kHeight);
+// Everything here is gone by the time a fatal error is reported, as the original tore down its
+// sound and graphics before showing the box.
+int runGame(sdl::CSdlWindow &window) {
     sdl::CSdlDisplay display(window);
     // Declared after the display, so it is gone before the context it draws in. The engine calls
     // init, with its bridge, only when the INI turns acceleration on.
@@ -41,7 +43,6 @@ int run() {
     [[maybe_unused]] const sdl::CSdlClock clock{};
     [[maybe_unused]] const sdl::CSdlGamepad gamepad{};
     [[maybe_unused]] const sdl::CSdlClipboard clipboard{};
-    [[maybe_unused]] const sdl::CSdlFileSystem file_system{};
     [[maybe_unused]] const sdl::CSdlNetwork network;
     [[maybe_unused]] const sdl::CSdlAudioDevice audio;
     [[maybe_unused]] const sdl::CSdlOsFontFactory fonts;
@@ -60,6 +61,24 @@ int run() {
         }
         // Each present waits for vsync, as swapBuffers did.
         display.present(frame, kPitch);
+    }
+}
+
+int run() {
+    // Declared first so it outlives every adapter.
+    const sdl::CSdlContext context;
+    sdl::CSdlWindow window(nocturne::wincore::CWinRun::kApplicationTitle, kWidth, kHeight);
+    sdl::CSdlFileSystem file_system;
+    nocturne::wincore::CWinRun winrun(window);
+    try {
+        return runGame(window);
+    } catch (const nocturne::common::CFatalError &error) {
+        const std::time_t now = std::time(nullptr);
+        std::tm local_time{};
+        localtime_r(&now, &local_time);
+        file_system.appendFile("gtfo.txt", error.getLogEntry(local_time));
+        winrun.displayMessageBoxAndQuit(error);
+        return 1;
     }
 }
 

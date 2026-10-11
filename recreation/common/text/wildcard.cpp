@@ -1,6 +1,7 @@
 #include "common/text/wildcard.h"
 
-#include <algorithm>
+#include "common/text/path.h"
+
 #include <cstddef>
 
 namespace nocturne::common {
@@ -17,8 +18,7 @@ bool matchesCharacter(char pattern, char name) {
 } // namespace
 
 SWildcardPath splitWildcardPath(std::string_view path) {
-    std::string normalised(path);
-    std::ranges::replace(normalised, '\\', '/');
+    const std::string normalised = toPortablePath(path);
     const std::size_t separator = normalised.rfind('/');
     if (separator == std::string::npos) {
         return {.directory = {}, .pattern = normalised};

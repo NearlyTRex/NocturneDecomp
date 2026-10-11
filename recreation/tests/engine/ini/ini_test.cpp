@@ -1,21 +1,105 @@
+#include "common/error/fatalerror.h"
 #include "engine/ini/ini.h"
+#include "tests/mocks/platform/mockfilesystem.h"
 
+#include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
-#include <type_traits>
+#include <optional>
+#include <string>
 
 namespace nocturne::engine {
 namespace {
 
-TEST(CIni, IsConcrete) {
-    static_assert(!std::is_abstract_v<CIni>);
+using ::testing::Return;
+
+constexpr const char *kFile = ".\\system\\nocturne.ini";
+constexpr std::size_t kRoomy = 100;
+
+class CIniTest : public ::testing::Test {
+protected:
+    void givenFile(const std::optional<std::string> &text) {
+        EXPECT_CALL(file_system_, readFile(std::string_view(kFile))).WillOnce(Return(text));
+    }
+
+    std::optional<std::string> read(std::string_view section, std::string_view key,
+                                    std::size_t buffer_size = kRoomy) {
+        return ini_.getProfileString(section, key, "fallback", buffer_size, kFile);
+    }
+
+    platform::MockFileSystem file_system_;
+    CIni ini_{file_system_};
+};
+
+TEST_F(CIniTest, ReadsTheKeyInItsSection) {
+    givenFile("[Graphics]\ngamePIXX=640\ngamePIXY=480\n");
+    EXPECT_EQ(read("Graphics", "gamePIXY"), "480");
 }
 
-TEST(CIni, PublicInterface) {
-    static_assert(std::is_same_v<decltype(&CIni::getProfileString),
-                                 int (CIni::*)(char *, char *, char *, char *, int, char *)>);
-    static_assert(std::is_same_v<decltype(&CIni::writeProfileString),
-                                 int (CIni::*)(char *, char *, char *, char *)>);
+TEST_F(CIniTest, AMissingKeyGivesTheDefault) {
+    givenFile("[Graphics]\ngamePIXX=640\n");
+    EXPECT_EQ(read("Graphics", "gamma"), "fallback");
+}
+
+TEST_F(CIniTest, KeysBeforeTheHeaderAreNotInTheSection) {
+    givenFile("gamma=3\n[Graphics]\ngamePIXX=640\n");
+    EXPECT_EQ(read("Graphics", "gamma"), "fallback");
+}
+
+TEST_F(CIniTest, TheHeaderMatchesExactly) {
+    givenFile("[graphics]\ngamma=3\n");
+    EXPECT_EQ(read("Graphics", "gamma"), "fallback");
+}
+
+// The original's search never stops at the next header.
+TEST_F(CIniTest, TheSearchRunsOnPastTheNextHeader) {
+    givenFile("[Graphics]\ngamePIXX=640\n[Sound]\nsfxVolume=7\n");
+    EXPECT_EQ(read("Graphics", "sfxVolume"), "7");
+}
+
+TEST_F(CIniTest, AKeyMatchesOnlyUpToItsEqualsSign) {
+    givenFile("[Control]\nkeyRun\nkeyRunFast=1\nkeyRun=42\n");
+    EXPECT_EQ(read("Control", "keyRun"), "42");
+}
+
+TEST_F(CIniTest, ValuesKeepEverythingAfterTheFirstEquals) {
+    givenFile("[Graphics]\nrendererDLLPath=C:\\a=b.dll\n");
+    EXPECT_EQ(read("Graphics", "rendererDLLPath"), "C:\\a=b.dll");
+}
+
+TEST_F(CIniTest, CrlfLinesReadAsTextMode) {
+    givenFile("[Graphics]\r\ngamma=3\r\n");
+    EXPECT_EQ(read("Graphics", "gamma"), "3");
+}
+
+// The original dropped the last character of a final line with no newline.
+TEST_F(CIniTest, AFinalLineWithoutANewlineKeepsItsWholeValue) {
+    givenFile("[Graphics]\ngamma=12");
+    EXPECT_EQ(read("Graphics", "gamma"), "12");
+}
+
+TEST_F(CIniTest, AValueThatFillsTheBufferIsRefused) {
+    givenFile("[Graphics]\ngamma=1234\n");
+    EXPECT_EQ(read("Graphics", "gamma", 4), std::nullopt);
+}
+
+TEST_F(CIniTest, AValueOneShortOfTheBufferFits) {
+    givenFile("[Graphics]\ngamma=1234\n");
+    EXPECT_EQ(read("Graphics", "gamma", 5), "1234");
+}
+
+TEST_F(CIniTest, ADefaultThatFillsTheBufferIsRefused) {
+    givenFile("[Graphics]\n");
+    EXPECT_EQ(read("Graphics", "gamma", 8), std::nullopt);
+    givenFile("[Graphics]\n");
+    EXPECT_EQ(read("Graphics", "gamma", 9), "fallback");
+}
+
+TEST_F(CIniTest, AnUnreadableFileIsFatal) {
+    givenFile(std::nullopt);
+    EXPECT_THAT([this] { (void)read("Graphics", "gamma"); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("cIni::getProfileString: Unable to open input")));
 }
 
 } // namespace

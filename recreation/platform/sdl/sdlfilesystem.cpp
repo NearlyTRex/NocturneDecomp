@@ -1,10 +1,14 @@
 #include "platform/sdl/sdlfilesystem.h"
 
+#include "common/text/path.h"
 #include "common/text/wildcard.h"
 
 #include <algorithm>
 #include <chrono>
 #include <filesystem>
+#include <fstream>
+#include <ios>
+#include <iterator>
 #include <system_error>
 
 namespace nocturne::platform::sdl {
@@ -48,6 +52,25 @@ std::vector<SFileInfo> CSdlFileSystem::findFiles(std::string_view pattern) {
     }
     std::ranges::sort(files, {}, &SFileInfo::name);
     return files;
+}
+
+std::optional<std::string> CSdlFileSystem::readFile(std::string_view path) {
+    std::ifstream file(common::toPortablePath(path), std::ios::binary);
+    if (!file) {
+        return std::nullopt;
+    }
+    return std::string(std::istreambuf_iterator<char>(file), std::istreambuf_iterator<char>());
+}
+
+bool CSdlFileSystem::appendFile(std::string_view path, std::string_view text) {
+    std::ofstream file(common::toPortablePath(path), std::ios::binary | std::ios::app);
+    file.write(text.data(), static_cast<std::streamsize>(text.size()));
+    return static_cast<bool>(file);
+}
+
+bool CSdlFileSystem::removeFile(std::string_view path) {
+    std::error_code error;
+    return std::filesystem::remove(common::toPortablePath(path), error);
 }
 
 } // namespace nocturne::platform::sdl

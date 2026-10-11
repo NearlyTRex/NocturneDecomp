@@ -1,7 +1,8 @@
 ---
 # Pass-1 signatures mirror the binary's parameter order and pointer types, so
 # the checks that would rewrite an interface wholesale stay off until the
-# function is implemented and its read sites are known.
+# function is implemented and its read sites are known. Confusable identifiers are allowed
+# because the original's names are kept, DirectInput's DIK_I beside DIK_1 among them.
 Checks: >
   -*,
   bugprone-*,
@@ -16,6 +17,7 @@ Checks: >
   cppcoreguidelines-virtual-class-destructor,
   misc-*,
   -misc-include-cleaner,
+  -misc-confusable-identifiers,
   -misc-no-recursion,
   -misc-non-private-member-variables-in-classes,
   modernize-*,

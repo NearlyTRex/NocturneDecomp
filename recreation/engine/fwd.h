@@ -20,7 +20,7 @@ class CPodFile;
 class CPodSearchContext;
 class CTextureCache;
 class CWinFont;
-enum class EInputCodeType : std::int32_t;
+enum class EInputCodeType : std::uint16_t;
 struct SFace;
 struct SFoundFileInfo;
 struct SHardwareEdge;

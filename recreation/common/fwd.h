@@ -6,6 +6,7 @@ namespace nocturne::common {
 
 class CBinaryReader;
 class CBinaryWriter;
+class CFatalError;
 class CFrameConverter;
 class CMatrix3x3f;
 class CMatrix3x4f;

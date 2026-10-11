@@ -15,6 +15,12 @@ TEST(IFileSystem, IsAbstractWithVirtualDestructor) {
 TEST(IFileSystem, PublicInterface) {
     static_assert(std::is_same_v<decltype(&IFileSystem::findFiles),
                                  std::vector<SFileInfo> (IFileSystem::*)(std::string_view)>);
+    static_assert(std::is_same_v<decltype(&IFileSystem::readFile),
+                                 std::optional<std::string> (IFileSystem::*)(std::string_view)>);
+    static_assert(std::is_same_v<decltype(&IFileSystem::appendFile),
+                                 bool (IFileSystem::*)(std::string_view, std::string_view)>);
+    static_assert(std::is_same_v<decltype(&IFileSystem::removeFile),
+                                 bool (IFileSystem::*)(std::string_view)>);
 }
 
 TEST(SFileInfo, DefaultsToAnEmptyPlainFile) {

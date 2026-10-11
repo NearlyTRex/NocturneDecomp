@@ -1,5 +1,6 @@
 #include "core/game/game.h"
 
+#include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
 #include <type_traits>
@@ -40,6 +41,27 @@ TEST(CGame, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CGame::displayActStats), void (CGame::*)()>);
     static_assert(std::is_same_v<decltype(&CGame::finishAct), void (CGame::*)()>);
     static_assert(std::is_same_v<decltype(&CGame::rollCredits), void (CGame::*)()>);
+}
+
+// The values the original constructor gives the INI's settings before the INI is read.
+TEST(CGame, StartsWithTheOriginalDefaults) {
+    const CGame game;
+    EXPECT_EQ(game.game_pixx, 640);
+    EXPECT_EQ(game.game_pixy, 480);
+    EXPECT_EQ(game.game_bpp, 32);
+    EXPECT_EQ(game.gamma, 0x10000);
+    EXPECT_EQ(game.hero_number, EHeroType::HERO_TYPE_GABRIELLA);
+    EXPECT_EQ(game.subtitle_mode, 1);
+    EXPECT_EQ(game.blood_flag, 1);
+    EXPECT_EQ(game.quimby_flag, 0);
+    EXPECT_EQ(game.game_control, EControlMode::CONTROL_MODE_KEYBOARD);
+    EXPECT_EQ(game.map_zoom, 320);
+}
+
+TEST(CGame, StartsWithTheKeyboardControls) {
+    const CGame game;
+    EXPECT_THAT(game.controls.getBindings(EGameAction::Fire),
+                ::testing::ElementsAre(engine::EInputCodeType::DIK_SPACE));
 }
 
 } // namespace

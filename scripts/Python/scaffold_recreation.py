@@ -186,10 +186,11 @@ HAND_WRITTEN_CLASSES = {"common": {
     "SViewport": "struct {};",
     "SWildcardPath": "struct {};",
 }}
-HAND_WRITTEN_DIRS = {"common/input", "common/math", "common/net", "common/render", "common/serial",
-                     "common/text", "common/video", "tests/common/input", "tests/common/math",
-                     "tests/common/net", "tests/common/render", "tests/common/serial",
-                     "tests/common/text", "tests/common/video"}
+HAND_WRITTEN_DIRS = {"common/error", "common/input", "common/math", "common/net", "common/render",
+                     "common/serial", "common/text", "common/video", "tests/common/error",
+                     "tests/common/input", "tests/common/math", "tests/common/net",
+                     "tests/common/render", "tests/common/serial", "tests/common/text",
+                     "tests/common/video"}
 
 # Parameters naming an OS handle the adapter owns; the kept function loses them.
 DROPPED_PARAMS = {"engine/special.cpp:loadExternalRenderer": {"window_handle"}}
@@ -1070,8 +1071,12 @@ def stale_files(root, planned):
     """Generated-shaped files under the module trees that nothing plans any more.
 
     Only headers and interface tests are candidates; implementation files,
-    platform/ and the hand-written directories are never touched.
+    platform/, the hand-written directories and fwd.h, which also declares
+    classes added by hand, are never touched. Neither is a header the
+    recreation's own code includes, nor a test whose implementation file
+    exists: both are ported code the scaffold never planned.
     """
+    included = included_headers(root)
     stale = []
     for module in MODULE_LAYERS:
         if module == PLATFORM_MODULE:
@@ -1080,11 +1085,35 @@ def stale_files(root, planned):
             for dirpath, _, filenames in os.walk(os.path.join(root, base)):
                 for name in filenames:
                     relpath = os.path.relpath(os.path.join(dirpath, name), root)
-                    generated = name.endswith(".h") or name.endswith("_test.cpp")
-                    hand_written = os.path.dirname(relpath) in HAND_WRITTEN_DIRS
+                    generated = (name.endswith(".h") and name != "fwd.h") or name.endswith("_test.cpp")
+                    hand_written = (os.path.dirname(relpath) in HAND_WRITTEN_DIRS
+                                    or relpath in included
+                                    or os.path.exists(os.path.join(root, tested_source(relpath))))
                     if generated and relpath not in planned and not hand_written:
                         stale.append(relpath)
     return sorted(stale)
+
+
+def tested_source(relpath):
+    """The implementation file a test mirrors: tests/a/b_test.cpp tests a/b.cpp."""
+    if not relpath.startswith("tests/") or not relpath.endswith("_test.cpp"):
+        return relpath
+    return relpath[len("tests/"):-len("_test.cpp")] + ".cpp"
+
+
+def included_headers(root):
+    """Headers included by any header or source outside tests/."""
+    included = set()
+    for dirpath, dirnames, filenames in os.walk(root):
+        relative = os.path.relpath(dirpath, root)
+        if relative == "tests" or relative.startswith("tests" + os.sep):
+            dirnames[:] = []
+            continue
+        for name in filenames:
+            if name.endswith((".h", ".cpp")):
+                with open(os.path.join(dirpath, name), encoding="utf-8") as f:
+                    included.update(re.findall(r'^#include "([^"]+)"', f.read(), re.M))
+    return included
 
 
 def main():

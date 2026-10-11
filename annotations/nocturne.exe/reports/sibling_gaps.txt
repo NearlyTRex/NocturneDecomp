@@ -1,5 +1,5 @@
 mapping: /home/aryie/Repositories/NocturneDecomp/annotations/nocturne.exe/reports/sibling_verified_mapping.json
-  nocedit.exe 7100 functions, nocturne.exe 5707 functions, 5264 pairs
+  nocedit.exe 7100 functions, nocturne.exe 5707 functions, 5265 pairs
 
 ==============================================================================
 A. TRANSLATION-UNIT RESIDUE
@@ -32,7 +32,6 @@ A. TRANSLATION-UNIT RESIDUE
   cockpit_pkbitmap.cpp                1         1         0  PAIRABLE
   core_path.cpp                       1         1         0  PAIRABLE
   shape_spotview.cpp                  1         1         0  PAIRABLE
-  support_newmsg.cpp                  1         1         0  PAIRABLE
   shape_superopt.cpp                186         0         0  EDITOR-ONLY
   shape_design.c                    163         0         0  EDITOR-ONLY
   shape_meshlod.cpp                 122         0         0  EDITOR-ONLY
@@ -181,8 +180,8 @@ A. TRANSLATION-UNIT RESIDUE
   support_trisock.cpp                 1         0         1  EDITOR-ONLY
   wincore_wddvmem.cpp                 1         0         0  EDITOR-ONLY
 
-  1592 nocedit / 65 nocturne functions unmatched across 170 units
-  units: 23 pairable, 145 editor-only, 2 game-only
+  1591 nocedit / 64 nocturne functions unmatched across 169 units
+  units: 22 pairable, 145 editor-only, 2 game-only
   (crt_* units excluded; they are archive members, not source-ordered -- --include-crt)
   families absent from the target entirely: 34 class(es), 16 method categor(ies)
 
@@ -242,9 +241,9 @@ core_slew.cpp   between 005a2050->0051f920 and 005a20b0->0051f980
 
   4 pairable brackets covering 14 nocedit / 7 nocturne functions
   225 one-sided brackets (636 editor-only, 24 game-only) -- not pairable by construction
-  942 nocedit functions in 53 regions with no bracket at all:
+  941 nocedit functions in 52 regions with no bracket at all:
         713  fewer than 2 anchors in the unit
-        135  before the unit's first anchor
+        134  before the unit's first anchor
          94  after the unit's last anchor
       (a unit with no anchors is usually absent from the game build entirely)
 
@@ -266,8 +265,8 @@ D. UNMATCHED ON BOTH SIDES UNDER THE SAME NAME
 ==============================================================================
 C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
 ==============================================================================
-  pairs compared        : 5264
-  never transferred     : 5   (nocturne side has no signature at all -- transfer work, not drift)
+  pairs compared        : 5265
+  never transferred     : 6   (nocturne side has no signature at all -- transfer work, not drift)
   genuine divergence    : 40   (both sides typed, and they disagree -- investigate)
   name core differs     : 67   (mapped as the same function under two different names)
 
@@ -624,5 +623,5 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
       nocedit  _getcwd
       nocturne getcwd
 
-  for reference, verify_sibling_signatures.py's byte-measured verdicts: {'agree': 2494, 'unverifiable': 2740, 'conflict': 30}
+  for reference, verify_sibling_signatures.py's byte-measured verdicts: {'agree': 2495, 'unverifiable': 2740, 'conflict': 30}
   those measure ARGUMENT SIZE from nocturne's own bytes and are a different axis
