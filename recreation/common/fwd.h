@@ -13,6 +13,7 @@ class CMatrix3x4f;
 class CMovieClock;
 class CPolygonBatch;
 class CQuaternion4f;
+class CTextScanner;
 class CVector2i;
 class CVector3d;
 class CVector3f;

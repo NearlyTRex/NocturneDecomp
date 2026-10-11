@@ -140,6 +140,29 @@ TEST_F(CDosIoTest, ReadingAFileNothingFindsOrThatWontOpenGivesNothing) {
     EXPECT_EQ(dosio_.getFile("", "door.wav", EFileMode::Read), nullptr);
 }
 
+TEST_F(CDosIoTest, ReadFileTakesTheLookupsSizeFromItsOffset) {
+    dosio_.addGetFileInfoHook(podHook("door.wav"));
+    std::string pod(400, 'p');
+    pod.replace(300, 12, "RIFF....WAVE");
+    EXPECT_CALL(file_system_, openFile(std::string_view("/game/ACT1.POD"), EFileMode::Read))
+        .WillOnce(Return(ByMove(std::make_unique<platform::CMemoryFile>(pod))));
+    EXPECT_EQ(dosio_.readFile("", "door.wav"), "RIFF....WAVE");
+}
+
+TEST_F(CDosIoTest, ReadFileStopsShortWhenTheFileEndsEarly) {
+    givenDiskFile("pod.ini", 40);
+    EXPECT_CALL(file_system_, openFile(std::string_view("/game/pod.ini"), EFileMode::Read))
+        .WillOnce(Return(ByMove(std::make_unique<platform::CMemoryFile>("2 A.POD"))));
+    EXPECT_EQ(dosio_.readFile("", "pod.ini"), "2 A.POD");
+}
+
+TEST_F(CDosIoTest, ReadFileGivesNothingForAFileNothingFindsOrThatWontOpen) {
+    EXPECT_EQ(dosio_.readFile("", "gone.wav"), std::nullopt);
+    dosio_.addGetFileInfoHook(podHook("door.wav"));
+    EXPECT_CALL(file_system_, openFile(_, _)).WillOnce(Return(ByMove(nullptr)));
+    EXPECT_EQ(dosio_.readFile("", "door.wav"), std::nullopt);
+}
+
 // Writing never looks the file up: it makes the directory and the file under it.
 TEST_F(CDosIoTest, WritingCreatesTheDirectoryAndTheFile) {
     EXPECT_CALL(file_system_, makeDirectory(std::string_view("save"))).WillOnce(Return(true));

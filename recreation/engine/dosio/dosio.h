@@ -7,6 +7,8 @@
 #include <ctime>
 #include <functional>
 #include <memory>
+#include <optional>
+#include <string>
 #include <string_view>
 #include <vector>
 
@@ -41,6 +43,10 @@ public:
     // finds, positioned at its start: a file in a pod is its pod, at the file's offset.
     [[nodiscard]] std::unique_ptr<platform::IFile>
     getFile(std::string_view directory, std::string_view filename, platform::EFileMode mode) const;
+    // The whole file, as its size and an open for reading find it: empty when either fails, and
+    // short when the file ends before its size.
+    [[nodiscard]] std::optional<std::string> readFile(std::string_view directory,
+                                                      std::string_view filename) const;
 
 private:
     platform::IFileSystem &file_system_;

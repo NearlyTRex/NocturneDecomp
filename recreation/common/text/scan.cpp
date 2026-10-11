@@ -1,7 +1,6 @@
 #include "common/text/scan.h"
 
 #include <charconv>
-#include <cstddef>
 #include <system_error>
 
 namespace nocturne::common {
@@ -9,8 +8,9 @@ namespace {
 
 // from_chars takes neither leading whitespace nor a '+', both of which scanf allows.
 template <typename T, typename... Format>
-std::optional<T> scan(std::string_view text, Format... format) {
-    const std::size_t start = text.find_first_not_of(" \t\n\v\f\r");
+std::optional<SScanned<T>> scan(std::string_view text, Format... format) {
+    const char *const begin = text.data();
+    const std::size_t start = text.find_first_not_of(kWhitespace);
     text.remove_prefix(start == std::string_view::npos ? text.size() : start);
     if (text.starts_with('+')) {
         text.remove_prefix(1);
@@ -24,17 +24,29 @@ std::optional<T> scan(std::string_view text, Format... format) {
     if (result.ec != std::errc{}) {
         return std::nullopt;
     }
-    return value;
+    return SScanned<T>{.value = value, .length = static_cast<std::size_t>(result.ptr - begin)};
 }
 
 } // namespace
 
 std::optional<int> scanInteger(std::string_view text) {
-    return scan<int>(text);
+    const std::optional<SScanned<int>> scanned = scanIntegerPrefix(text);
+    if (!scanned) {
+        return std::nullopt;
+    }
+    return scanned->value;
 }
 
 std::optional<float> scanFloat(std::string_view text) {
-    return scan<float>(text, std::chars_format::general);
+    const std::optional<SScanned<float>> scanned = scan<float>(text, std::chars_format::general);
+    if (!scanned) {
+        return std::nullopt;
+    }
+    return scanned->value;
+}
+
+std::optional<SScanned<int>> scanIntegerPrefix(std::string_view text) {
+    return scan<int>(text);
 }
 
 } // namespace nocturne::common

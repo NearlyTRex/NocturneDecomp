@@ -34,7 +34,7 @@ std::uint32_t packChannel(std::uint8_t level, const common::SChannelLayout &chan
 
 // Describes the frame's pixel format to the engine's 2D and converts its palette into the
 // 16-bit table it draws with. The format is the CPU image the device shares, not a surface's.
-int CGlRenderer::setColorTable16(std::uint8_t *source_palette, std::uint16_t *color_table) {
+int CGlRenderer::setColorTable16(const std::uint8_t *source_palette, std::uint16_t *color_table) {
     color_palette_ = source_palette;
     if (!bridge_ || source_palette == nullptr) {
         return 1;

@@ -15,7 +15,7 @@ TEST(CWinRun, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CWinRun::getTime), int (CWinRun::*)()>);
     static_assert(std::is_same_v<decltype(&CWinRun::clearKeypresses), void (CWinRun::*)()>);
     static_assert(std::is_same_v<decltype(&CWinRun::getNextKeypress), int (CWinRun::*)()>);
-    static_assert(std::is_same_v<decltype(&CWinRun::wasKeyPressed), int (CWinRun::*)()>);
+    static_assert(std::is_same_v<decltype(&CWinRun::wasKeyPressed), int (CWinRun::*)() const>);
     static_assert(std::is_same_v<decltype(&CWinRun::enqueueInput), void (CWinRun::*)(int)>);
     static_assert(std::is_same_v<decltype(&CWinRun::clearMouseClicks), void (CWinRun::*)()>);
     static_assert(
@@ -23,6 +23,10 @@ TEST(CWinRun, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CWinRun::processWindowMessages), void (CWinRun::*)()>);
     static_assert(
         std::is_same_v<decltype(&CWinRun::getKeyName), char *(CWinRun::*)(engine::EInputCodeType)>);
+    static_assert(std::is_same_v<decltype(&CWinRun::getInputDisabled), bool (CWinRun::*)() const>);
+    static_assert(std::is_same_v<decltype(&CWinRun::getFocusRegained), bool (CWinRun::*)() const>);
+    static_assert(std::is_same_v<decltype(&CWinRun::setFocusRegained), void (CWinRun::*)(bool)>);
+    static_assert(std::is_base_of_v<engine::IRawInput, CWinRun>);
 }
 
 TEST(CWinRun, TheMessageBoxNamesTheFileAndLine) {

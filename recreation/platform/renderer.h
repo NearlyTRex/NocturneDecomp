@@ -23,7 +23,8 @@ public:
     virtual int setVideoMode2(int width, int height, int bits_per_pixel,
                               void **screen_buffer_array) = 0;
     virtual int restoreVideoMode() = 0;
-    virtual int setColorTable16(std::uint8_t *source_palette, std::uint16_t *color_table) = 0;
+    // The renderer keeps the palette's address and reads it as it draws.
+    virtual int setColorTable16(const std::uint8_t *source_palette, std::uint16_t *color_table) = 0;
     virtual int lockFrame() = 0;
     virtual int unlockFrame() = 0;
     virtual int lockHoldBuffer() = 0;

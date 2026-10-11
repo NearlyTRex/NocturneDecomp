@@ -45,7 +45,7 @@ public:
     int setVideoMode2(int width, int height, int bits_per_pixel,
                       void **screen_buffer_array) override;
     int restoreVideoMode() override;
-    int setColorTable16(std::uint8_t *source_palette, std::uint16_t *color_table) override;
+    int setColorTable16(const std::uint8_t *source_palette, std::uint16_t *color_table) override;
     int lockFrame() override;
     int unlockFrame() override;
     int lockHoldBuffer() override;

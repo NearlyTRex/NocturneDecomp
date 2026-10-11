@@ -1,6 +1,7 @@
 #include "core/podmain/demonpod.h"
 
 #include "common/text/scan.h"
+#include "common/text/textscanner.h"
 #include "engine/dosio/filefinder.h"
 #include "platform/filesystem.h"
 
@@ -9,20 +10,6 @@
 #include <string_view>
 
 namespace nocturne::core {
-namespace {
-
-// The next whitespace-separated word, as fscanf's "%s" reads it; empty at the end.
-std::string_view nextWord(std::string_view &text) {
-    constexpr std::string_view kWhitespace = " \t\n\v\f\r";
-    const std::size_t start = text.find_first_not_of(kWhitespace);
-    text.remove_prefix(start == std::string_view::npos ? text.size() : start);
-    const std::size_t end = text.find_first_of(kWhitespace);
-    const std::string_view word = text.substr(0, end);
-    text.remove_prefix(word.size());
-    return word;
-}
-
-} // namespace
 
 // staticInit built the global instance and registered its destructor; its owner constructs it now.
 // nocedit 0x00551990
@@ -47,11 +34,11 @@ void CDemonPod::load() {
         }
         return;
     }
-    std::string_view text = *list;
-    const int count = common::scanInteger(nextWord(text)).value_or(0);
+    common::CTextScanner text(*list);
+    const int count = common::scanInteger(text.scanWord()).value_or(0);
     // The original mounted its last name again for each one the list was short of.
     for (int i = 0; i < count; ++i) {
-        const std::string_view name = nextWord(text);
+        const std::string_view name = text.scanWord();
         if (name.empty()) {
             return;
         }

@@ -4,6 +4,7 @@
 
 namespace nocturne::engine {
 
+class C2d;
 class CAlphaBitmap;
 class CBitFont;
 class CConsole;
@@ -14,15 +15,21 @@ class CFont;
 class CIni;
 class CIniFile;
 class CKeys;
+class CMatrix;
 class CMouse;
 class CPod;
 class CPodAuditRecord;
 class CPodFile;
 struct CPodDirectoryEntry;
 struct CPodSearchContext;
+class CSpecial;
 class CTextureCache;
 class CWinFont;
 enum class EInputCodeType : std::uint16_t;
+class IRawInput;
+class IScreenDevice;
+struct SColorChannels;
+struct SColorMasks;
 struct SFace;
 struct SFoundFileInfo;
 struct SHardwareEdge;
@@ -34,6 +41,7 @@ struct SMRGLModelBounds;
 struct SMRGLPrimitivePoly;
 struct SMRGLPrimitiveTriangle;
 struct SMRGLPrimitiveTriangleIndex;
+struct SProjectionParams;
 struct SRGBColorPalette;
 struct SSoftwareEdge;
 

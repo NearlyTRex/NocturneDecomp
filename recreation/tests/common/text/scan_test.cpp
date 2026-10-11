@@ -29,6 +29,14 @@ TEST(ScanInteger, OutOfRangeIsNothing) {
     EXPECT_EQ(scanInteger("99999999999"), std::nullopt);
 }
 
+TEST(ScanIntegerPrefix, CountsTheWhitespaceAndDigitsItTook) {
+    EXPECT_EQ(scanIntegerPrefix(" \t+42abc"), (SScanned<int>{.value = 42, .length = 5}));
+}
+
+TEST(ScanIntegerPrefix, NoDigitsIsNothing) {
+    EXPECT_FALSE(scanIntegerPrefix(" x"));
+}
+
 TEST(ScanFloat, ReadsFixedAndExponentForms) {
     EXPECT_EQ(scanFloat("1.5"), 1.5F);
     EXPECT_EQ(scanFloat(" -0.25"), -0.25F);

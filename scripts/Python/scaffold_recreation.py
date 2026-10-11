@@ -125,7 +125,11 @@ PLATFORM_BOUNDARY = {
     "engine/special.cpp:shutdownExternalRenderer": "platform::IRenderer adapter; no renderer DLL",
     "engine/special.cpp:switchRenderer": "platform::IRenderer adapter; no renderer DLL",
     "engine/special.cpp:getCurrentRenderer": "platform::IRenderer adapter; no renderer DLL",
-    "engine/3d.c:initTextureCache": "engine::initTextureCache in texture.cpp; this is a JMP thunk to it",
+    # The decomp's .keep fixes the CPU as an Intel P6 with MMX, so the enhanced game always
+    # takes the MMX and P6 paths and never quits for want of MMX.
+    "core/mmx.c": "dropped: the MMX and P6 paths are always taken",
+    "engine/2d.c:buildBlendTables": "dropped: its two blend tables have no reader",
+    "engine/3d.c:initTextureCache":"engine::initTextureCache in texture.cpp; this is a JMP thunk to it",
     "engine/3d.c:freeTextureCache": "engine::freeTextureCache in texture.cpp; this is a JMP thunk to it",
     "support/trisock.cpp:startupWinsock": "platform::INetwork adapter lifetime",
     "support/trisock.cpp:cleanupWinsock": "platform::INetwork adapter lifetime",
@@ -166,6 +170,7 @@ HAND_WRITTEN_CLASSES = {"common": {
     "CFrameConverter": "class {};",
     "CMovieClock": "class {};",
     "CPolygonBatch": "class {};",
+    "CTextScanner": "class {};",
     "EBlendFactor": "enum class {} : std::uint8_t;",
     "EDepthFunction": "enum class {} : std::uint8_t;",
     "EMipFilter": "enum class {} : std::uint8_t;",
@@ -1086,9 +1091,10 @@ def stale_files(root, planned):
                 for name in filenames:
                     relpath = os.path.relpath(os.path.join(dirpath, name), root)
                     generated = (name.endswith(".h") and name != "fwd.h") or name.endswith("_test.cpp")
+                    tested = name.endswith("_test.cpp") and os.path.exists(
+                        os.path.join(root, tested_source(relpath)))
                     hand_written = (os.path.dirname(relpath) in HAND_WRITTEN_DIRS
-                                    or relpath in included
-                                    or os.path.exists(os.path.join(root, tested_source(relpath))))
+                                    or relpath in included or tested)
                     if generated and relpath not in planned and not hand_written:
                         stale.append(relpath)
     return sorted(stale)

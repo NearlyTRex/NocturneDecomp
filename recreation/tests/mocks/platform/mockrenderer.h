@@ -21,8 +21,8 @@ public:
                 (int width, int height, int bits_per_pixel, void **screen_buffer_array),
                 (override));
     MOCK_METHOD(int, restoreVideoMode, (), (override));
-    MOCK_METHOD(int, setColorTable16, (std::uint8_t * source_palette, std::uint16_t *color_table),
-                (override));
+    MOCK_METHOD(int, setColorTable16,
+                (const std::uint8_t *source_palette, std::uint16_t *color_table), (override));
     MOCK_METHOD(int, lockFrame, (), (override));
     MOCK_METHOD(int, unlockFrame, (), (override));
     MOCK_METHOD(int, lockHoldBuffer, (), (override));

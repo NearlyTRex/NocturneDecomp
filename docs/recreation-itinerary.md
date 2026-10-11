@@ -13,12 +13,12 @@ in instructions.
 |---|---|---|---|---|---|---|
 | 0 | Math value types | 3 | 13 | 791 | 13 | 100.0% |
 | 1 | File system: `dosio`, pods | 5 | 44 | 2518 | 44 | 100.0% |
-| 2 | `doNothing`, `readMessageFile`, `detectCPUFeatures`, `getLocalizedString`, `initializeTrigTables`, `initTextureCache`, `initGraphicsSystem` | 9 | 33 | 2886 | 3 | 9.0% |
+| 2 | `doNothing`, `readMessageFile`, `getLocalizedString`, `initializeTrigTables`, `initTextureCache`, `initGraphicsSystem` | 8 | 30 | 2804 | 30 | 100.0% |
 | 3 | Sound system: `sndmain`, `CSound` lifetime, `readIniData` | 7 | 144 | 9293 | 14 | 9.7% |
-| 4 | `initFonts`, `CEditorTools::showWarning`, `showCalibrationTest` | 18 | 80 | 11551 | 1 | 1.2% |
-| 5 | `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 60 | 5532 | 0 | 0.0% |
+| 4 | `initFonts`, `CEditorTools::showWarning`, `showCalibrationTest` | 18 | 80 | 11551 | 3 | 3.7% |
+| 5 | `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 60 | 5532 | 1 | 1.6% |
 | 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 0 | 0.0% |
-| 7 | `CMoon::update`, `CMoon::render` | 15 | 86 | 11100 | 0 | 0.0% |
+| 7 | `CMoon::update`, `CMoon::render` | 15 | 86 | 11100 | 2 | 2.3% |
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 0 | 0.0% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 0 | 0.0% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 17 | 52 | 5565 | 1 | 1.9% |
@@ -26,11 +26,11 @@ in instructions.
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 1 | 3.8% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0.0% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 52 | 5305 | 0 | 0.0% |
-| 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 0 | 0.0% |
+| 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 1 | 0.5% |
 | 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 0 | 0.0% |
 | 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 0 | 0.0% |
 | 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 0 | 0.0% |
-| 19 | Not reached from startup: `engine/` | 23 | 277 | 19378 | 6 | 2.1% |
+| 19 | Not reached from startup: `engine/` | 23 | 276 | 19377 | 7 | 2.5% |
 | 20 | Not reached from startup: `support/` | 2 | 24 | 593 | 0 | 0.0% |
 | 21 | Not reached from startup: `cockpit/` | 4 | 178 | 11527 | 0 | 0.0% |
 | 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 0 | 0.0% |
@@ -39,12 +39,12 @@ in instructions.
 | 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 3 | 1.0% |
 | 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 24 | 8.0% |
 | 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 0 | 0.0% |
-| 28 | Not reached from startup: `core/` (part 6 of 9) | 19 | 283 | 21832 | 2 | 0.7% |
+| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 2 | 0.7% |
 | 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 2 | 0.7% |
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 2 | 0.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 | 3.6% |
-| 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 1 | 9.0% |
-| | **All** | | **4521** | **404490** | **124** | **2.7%** |
+| 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 36.3% |
+| | **All** | | **4516** | **404384** | **161** | **3.5%** |
 
 ## Step 0: Math value types
 
@@ -135,68 +135,62 @@ in instructions.
   - [x] `ctor` 0x00551b00 (6)
   - [x] `dtor` 0x00551b20 (31)
 
-## Step 2: `doNothing`, `readMessageFile`, `detectCPUFeatures`, `getLocalizedString`, `initializeTrigTables`, `initTextureCache`, `initGraphicsSystem`
+## Step 2: `doNothing`, `readMessageFile`, `getLocalizedString`, `initializeTrigTables`, `initTextureCache`, `initGraphicsSystem`
 
 ### `core/flattn.cpp` (1 functions, 1 instructions, 1 done)
 - free functions
   - [x] `doNothing` 0x004cbce0 (1)
 
-### `core/mmx.c` (3 functions, 82 instructions, 0 done)
+### `support/newmsg.cpp` (3 functions, 341 instructions, 3 done)
 - free functions
-  - [ ] `detectIntelProcessor` 0x00524f4c (62)
-  - [ ] `detectMMXSupport` 0x00524ff9 (7)
-  - [ ] `detectCPUFeatures` 0x00524f10 (13)
-
-### `support/newmsg.cpp` (3 functions, 341 instructions, 2 done)
-- free functions
-  - [ ] `readMessageFile` 0x00543e40 (218)
+  - [x] `readMessageFile` 0x00543e40 (218)
   - [x] `findLocalizedString` 0x00544170 (59)
   - [x] `getLocalizedString` 0x005441f0 (64)
 
-### `engine/matrix.c` (1 functions, 41 instructions, 0 done)
+### `engine/matrix.c` (1 functions, 41 instructions, 1 done)
 - free functions
-  - [ ] `initializeTrigTables` 0x0050c530 (41)
+  - [x] `initializeTrigTables` 0x0050c530 (41)
 
-### `engine/texture.cpp` (2 functions, 34 instructions, 0 done)
+### `engine/texture.cpp` (2 functions, 34 instructions, 2 done)
 - class `CTextureCache`
-  - [ ] `ctor` 0x005dcab0 (19)
+  - [x] `ctor` 0x005dcab0 (19)
 - free functions
-  - [ ] `initTextureCache` 0x005dd760 (15)
+  - [x] `initTextureCache` 0x005dd760 (15)
 
-### `engine/special.cpp` (8 functions, 864 instructions, 0 done)
+### `engine/special.cpp` (8 functions, 864 instructions, 8 done)
 - free functions
-  - [ ] `selectCard` 0x005b7d90 (9)
-  - [ ] `loadExternalRenderer` 0x005b6750 (639)
-  - [ ] `clear` 0x005b7a30 (6)
-  - [ ] `clearScreen` 0x005b3e70 (35)
-  - [ ] `lockFrame` 0x005b7210 (15)
-  - [ ] `unlockFrame` 0x005b7250 (13)
-  - [ ] `presentToExternalRenderer` 0x005b7c30 (66)
-  - [ ] `setResolutionAndColorTable` 0x005b7460 (81)
+  - [x] `selectCard` 0x005b7d90 (9)
+  - [x] `loadExternalRenderer` 0x005b6750 (639)
+  - [x] `clear` 0x005b7a30 (6)
+  - [x] `clearScreen` 0x005b3e70 (35)
+  - [x] `lockFrame` 0x005b7210 (15)
+  - [x] `unlockFrame` 0x005b7250 (13)
+  - [x] `presentToExternalRenderer` 0x005b7c30 (66)
+  - [x] `setResolutionAndColorTable` 0x005b7460 (81)
 
-### `wincore/winrun.cpp` (1 functions, 51 instructions, 0 done)
+### `wincore/winrun.cpp` (1 functions, 51 instructions, 1 done)
 - free functions
-  - [ ] `processWindowMessages` 0x005f35e0 (51)
+  - [x] `processWindowMessages` 0x005f35e0 (51)
 
-### `wincore/wddvmem.cpp` (8 functions, 1035 instructions, 0 done)
+### `wincore/wddvmem.cpp` (8 functions, 1035 instructions, 8 done)
 - free functions
-  - [ ] `initializeGraphicsSystem` 0x005ecc10 (112)
-  - [ ] `convertPaletteToDirectColor` 0x004f41c0 (120)
-  - [ ] `analyzePixelFormat` 0x005ed730 (145)
-  - [ ] `setupColorPalette` 0x005ed8f0 (84)
-  - [ ] `openScreenDevice` 0x005ed580 (60)
-  - [ ] `closeScreenDevice` 0x005ed630 (60)
-  - [ ] `swapBuffers` 0x005eda20 (174)
-  - [ ] `setScreenResolution` 0x005ecef0 (280)
+  - [x] `initializeGraphicsSystem` 0x005ecc10 (112)
+  - [x] `convertPaletteToDirectColor` 0x004f41c0 (120)
+  - [x] `analyzePixelFormat` 0x005ed730 (145)
+  - [x] `setupColorPalette` 0x005ed8f0 (84)
+  - [x] `openScreenDevice` 0x005ed580 (60)
+  - [x] `closeScreenDevice` 0x005ed630 (60)
+  - [x] `swapBuffers` 0x005eda20 (174)
+  - [x] `setScreenResolution` 0x005ecef0 (280)
 
-### `engine/2d.c` (6 functions, 437 instructions, 0 done)
+### `engine/2d.c` (6 functions, 437 instructions, 6 done)
 - free functions
-  - [ ] `loadPaletteFile` 0x004015a0 (33)
-  - [ ] `findBestPaletteMatch` 0x00401460 (107)
-  - [ ] `buildColorLookupTable` 0x00402870 (65)
-  - [ ] `loadOrBuildColorMap` 0x00402930 (105)
-  - [ ] `setupViewportAndClipping` 0x00401800 (51)
-  - [ ] `initGraphicsSystem` 0x00401010 (76)
+  - [x] `loadPaletteFile` 0x004015a0 (33)
+  - [x] `findBestPaletteMatch` 0x00401460 (107)
+  - [x] `buildColorLookupTable` 0x00402870 (65)
+  - [x] `loadOrBuildColorMap` 0x00402930 (105)
+  - [x] `setupViewportAndClipping` 0x00401800 (51)
+  - [x] `initGraphicsSystem` 0x00401010 (76)
 
 ## Step 3: Sound system: `sndmain`, `CSound` lifetime, `readIniData`
 
@@ -498,10 +492,10 @@ in instructions.
   - [ ] `clipCharacter` 0x004ccdd0 (65)
   - [ ] `drawAlphaBlendedPixels` 0x004ce240 (48)
 
-### `wincore/winrun.cpp` (3 functions, 44 instructions, 0 done)
+### `wincore/winrun.cpp` (3 functions, 44 instructions, 2 done)
 - free functions
-  - [ ] `clearKeypresses` 0x005f2e70 (6)
-  - [ ] `clearMouseClicks` 0x005f30c0 (3)
+  - [x] `clearKeypresses` 0x005f2e70 (6)
+  - [x] `clearMouseClicks` 0x005f30c0 (3)
   - [ ] `getNextKeypress` 0x005f2e90 (35)
 
 ### `core/menu.cpp` (2 functions, 162 instructions, 0 done)
@@ -511,9 +505,9 @@ in instructions.
 
 ## Step 5: `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init`
 
-### `wincore/winrun.cpp` (1 functions, 6 instructions, 0 done)
+### `wincore/winrun.cpp` (1 functions, 6 instructions, 1 done)
 - free functions
-  - [ ] `wasKeyPressed` 0x005f2f00 (6)
+  - [x] `wasKeyPressed` 0x005f2f00 (6)
 
 ### `wincore/winvideo.cpp` (1 functions, 270 instructions, 0 done)
 - free functions
@@ -741,10 +735,10 @@ in instructions.
   - [ ] `submitToRenderer` 0x00477980 (179)
   - [ ] `prepareForRender` 0x00477850 (29)
 
-### `engine/matrix.c` (8 functions, 853 instructions, 0 done)
+### `engine/matrix.c` (8 functions, 853 instructions, 2 done)
 - free functions
-  - [ ] `interpolatedSin` 0x0050c5c0 (18)
-  - [ ] `interpolatedCos` 0x0050c600 (18)
+  - [x] `interpolatedSin` 0x0050c5c0 (18)
+  - [x] `interpolatedCos` 0x0050c600 (18)
   - [ ] `matrixPushAndTransform` 0x0050cee0 (496)
   - [ ] `matrixPush` 0x0050d620 (48)
   - [ ] `pop` 0x0050d720 (49)
@@ -2237,9 +2231,9 @@ in instructions.
 - free functions
   - [ ] `decryptMessage` 0x00544270 (73)
 
-### `wincore/winrun.cpp` (1 functions, 19 instructions, 0 done)
+### `wincore/winrun.cpp` (1 functions, 19 instructions, 1 done)
 - free functions
-  - [ ] `enqueueInput` 0x005f2f30 (19)
+  - [x] `enqueueInput` 0x005f2f30 (19)
 
 ### `core/gore.cpp` (3 functions, 91 instructions, 0 done)
 - class `CBloodSplat`
@@ -2703,11 +2697,10 @@ in instructions.
 
 ## Step 19: Not reached from startup: `engine/`
 
-### `engine/2d.c` (37 functions, 1619 instructions, 0 done)
+### `engine/2d.c` (36 functions, 1618 instructions, 1 done)
 - free functions
   - [ ] `plotPixelWithDepth` 0x00401290 (45)
   - [ ] `drawLine3D` 0x00401320 (117)
-  - [ ] `buildBlendTables` 0x00401590 (1)
   - [ ] `project3DPointToScreen` 0x00401770 (25)
   - [ ] `project3DPointClipped` 0x004017c0 (25)
   - [ ] `drawCharacterMasked` 0x00401900 (94)
@@ -2732,7 +2725,7 @@ in instructions.
   - [ ] `drawTextCenteredAtColorWrapper` 0x00402630 (11)
   - [ ] `drawTextCenteredAtColorFormatted` 0x00402650 (27)
   - [ ] `drawTextCenteredColorFormatted` 0x00402730 (31)
-  - [ ] `loadLightTable` 0x00402860 (1)
+  - [x] `loadLightTable` 0x00402860 (1)
   - [ ] `draw320x200SizeDot` 0x00402a90 (132)
   - [ ] `computeOutcode` 0x00402c10 (19)
   - [ ] `clipAndDrawLine` 0x00402ca0 (197)
@@ -5295,10 +5288,6 @@ in instructions.
   - [ ] `staticInit` 0x00522c50 (1)
   - [ ] `skipLine` 0x00522c60 (11)
 
-### `core/mmx.c` (1 functions, 23 instructions, 0 done)
-- free functions
-  - [ ] `getCPUInfo` 0x0052500f (23)
-
 ### `core/mobster.cpp` (23 functions, 3180 instructions, 0 done)
 - class `CMobster`
   - [ ] `ctor` 0x00525200 (64)
@@ -6408,13 +6397,13 @@ in instructions.
 
 ## Step 32: Not reached from startup: `wincore/`
 
-### `wincore/wddvmem.cpp` (7 functions, 360 instructions, 0 done)
+### `wincore/wddvmem.cpp` (7 functions, 360 instructions, 3 done)
 - free functions
   - [ ] `initializeColorMasks` 0x004f3ff0 (90)
   - [ ] `populateColorTable` 0x004f4140 (42)
-  - [ ] `allocateRenderBuffers` 0x005ecac0 (61)
-  - [ ] `freeRenderBuffers` 0x005ecba0 (36)
-  - [ ] `initializeScanlinePointers` 0x005ece60 (44)
+  - [x] `allocateRenderBuffers` 0x005ecac0 (61)
+  - [x] `freeRenderBuffers` 0x005ecba0 (36)
+  - [x] `initializeScanlinePointers` 0x005ece60 (44)
   - [ ] `reinitializeGraphicsSystem` 0x005ed4b0 (74)
   - [ ] `findMostSignificantBit` 0x005ed710 (13)
 

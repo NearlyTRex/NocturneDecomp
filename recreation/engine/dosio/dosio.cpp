@@ -9,6 +9,7 @@
 
 #include <algorithm>
 #include <optional>
+#include <span>
 #include <string>
 #include <utility>
 
@@ -114,6 +115,22 @@ std::unique_ptr<platform::IFile> CDosIo::getFile(std::string_view directory,
         file->seek(info.file_offset);
     }
     return file;
+}
+
+std::optional<std::string> CDosIo::readFile(std::string_view directory,
+                                            std::string_view filename) const {
+    const std::int64_t size = getFileSize(directory, filename);
+    if (size < 0) {
+        return std::nullopt;
+    }
+    const std::unique_ptr<platform::IFile> file =
+        getFile(directory, filename, platform::EFileMode::Read);
+    if (file == nullptr) {
+        return std::nullopt;
+    }
+    std::string contents(static_cast<std::size_t>(size), '\0');
+    contents.resize(file->read(std::as_writable_bytes(std::span(contents))));
+    return contents;
 }
 
 } // namespace nocturne::engine

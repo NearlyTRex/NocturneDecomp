@@ -16,6 +16,8 @@ TEST(CTextureCache, Constructors) {
 }
 
 TEST(CTextureCache, PublicInterface) {
+    static_assert(std::is_same_v<decltype(&CTextureCache::getMaxTextureCount),
+                                 int (CTextureCache::*)() const>);
     static_assert(std::is_same_v<decltype(&CTextureCache::reset), void (CTextureCache::*)()>);
     static_assert(
         std::is_same_v<decltype(&CTextureCache::freeTextures), void (CTextureCache::*)()>);
@@ -29,6 +31,11 @@ TEST(CTextureCache, PublicInterface) {
         std::is_same_v<decltype(&CTextureCache::renderAllTextures), void (CTextureCache::*)()>);
     static_assert(std::is_same_v<decltype(&CTextureCache::getTextureCacheStats),
                                  int (CTextureCache::*)(char *)>);
+}
+
+TEST(CTextureCache, HoldsUpToItsGivenCount) {
+    const CTextureCache cache(7);
+    EXPECT_EQ(cache.getMaxTextureCount(), 7);
 }
 
 } // namespace
