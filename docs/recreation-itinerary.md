@@ -12,40 +12,39 @@ in instructions.
 | Step | First needed by | TUs | Functions | Instructions | Done |
 |---|---|---|---|---|---|
 | 0 | Math value types | 3 | 13 | 791 | 13 |
-| 1 | `displayErrorAndQuit`, `doNothing`, `readIniData` | 13 | 52 | 2654 | 17 |
-| 2 | `CPod::init`, `addGetFileInfoHook`, `findFileNormally`, `readMessageFile`, `detectCPUFeatures`, `initializeTrigTables`, `initTextureCache`, `initGraphicsSystem` | 10 | 37 | 3049 | 0 |
-| 3 | `calibrateCPUSpeed`, `initFonts`, `CEditorTools::showWarning`, `showCalibrationTest` | 18 | 81 | 11599 | 1 |
-| 4 | `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles` | 8 | 29 | 1999 | 0 |
-| 5 | `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 10 | 51 | 5008 | 0 |
+| 1 | File system: `dosio`, pods | 5 | 43 | 2505 | 42 |
+| 2 | `doNothing`, `readMessageFile`, `detectCPUFeatures`, `getLocalizedString`, `initializeTrigTables`, `initTextureCache`, `initGraphicsSystem` | 9 | 33 | 2886 | 3 |
+| 3 | Sound system: `sndmain`, `CSound` lifetime, `readIniData` | 7 | 144 | 9293 | 14 |
+| 4 | `initFonts`, `CEditorTools::showWarning`, `showCalibrationTest` | 18 | 80 | 11551 | 1 |
+| 5 | `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 60 | 5532 | 0 |
 | 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 0 |
 | 7 | `CMoon::update`, `CMoon::render` | 15 | 86 | 11100 | 0 |
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 0 |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 0 |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 17 | 52 | 5565 | 1 |
-| 11 | `CScript::loadScript` | 65 | 612 | 70138 | 0 |
+| 11 | `CScript::loadScript` | 63 | 577 | 67325 | 0 |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 1 |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 |
-| 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 18 | 57 | 5690 | 0 |
-| 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 44 | 194 | 28998 | 0 |
-| 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen` | 10 | 25 | 6410 | 0 |
-| 17 | `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats`, `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 13 | 32 | 5303 | 0 |
-| 18 | `enterMainGameMenu`, `finalizeGameSystems` | 10 | 14 | 547 | 0 |
-| 19 | Not reached from startup: `engine/` | 24 | 294 | 20782 | 6 |
-| 20 | Not reached from startup: `sound/` | 1 | 37 | 1492 | 2 |
-| 21 | Not reached from startup: `support/` | 2 | 24 | 593 | 0 |
-| 22 | Not reached from startup: `cockpit/` | 4 | 178 | 11527 | 0 |
-| 23 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 0 |
-| 24 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 3 |
-| 25 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 0 |
-| 26 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 3 |
-| 27 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 24 |
-| 28 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 0 |
-| 29 | Not reached from startup: `core/` (part 6 of 9) | 20 | 287 | 21975 | 2 |
-| 30 | Not reached from startup: `core/` (part 7 of 9) | 18 | 264 | 22731 | 2 |
-| 31 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 2 |
-| 32 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 |
-| 33 | Not reached from startup: `wincore/` | 2 | 10 | 456 | 0 |
-| | **All** | | **4520** | **404477** | **81** |
+| 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 52 | 5305 | 0 |
+| 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 0 |
+| 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 0 |
+| 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 0 |
+| 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 0 |
+| 19 | Not reached from startup: `engine/` | 23 | 277 | 19378 | 6 |
+| 20 | Not reached from startup: `support/` | 2 | 24 | 593 | 0 |
+| 21 | Not reached from startup: `cockpit/` | 4 | 178 | 11527 | 0 |
+| 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 0 |
+| 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 3 |
+| 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 0 |
+| 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 3 |
+| 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 24 |
+| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 0 |
+| 28 | Not reached from startup: `core/` (part 6 of 9) | 19 | 283 | 21832 | 2 |
+| 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 2 |
+| 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 2 |
+| 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 |
+| 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 1 |
+| | **All** | | **4520** | **404477** | **122** |
 
 ## Step 0: Math value types
 
@@ -71,127 +70,87 @@ in instructions.
 - class `CVector3f`
   - [x] `equals` 0x00571410 (21)
 
-## Step 1: `displayErrorAndQuit`, `doNothing`, `readIniData`
-
-### `engine/special.cpp` (1 functions, 8 instructions, 0 done)
-- free functions
-  - [ ] `kill` 0x005b71e0 (8)
-
-### `wincore/wddvmem.cpp` (1 functions, 71 instructions, 0 done)
-- free functions
-  - [ ] `cleanupGraphicsSystem` 0x005ecd90 (71)
-
-### `engine/2d.c` (1 functions, 1 instructions, 0 done)
-- free functions
-  - [ ] `cleanupGraphicsSystem` 0x00401130 (1)
-
-### `engine/console.cpp` (3 functions, 188 instructions, 3 done)
-- class `CConsole`
-  - [x] `scrollUp` 0x00441a80 (49)
-  - [x] `writeChar` 0x00441970 (60)
-  - [x] `printf` 0x00441890 (79)
-
-### `core/sound.cpp` (1 functions, 1 instructions, 0 done)
-- class `CSound`
-  - [ ] `dtor` 0x005b2d60 (1)
-
-### `wincore/winrun.cpp` (1 functions, 26 instructions, 1 done)
-- free functions
-  - [x] `displayMessageBoxAndQuit` 0x005f3920 (26)
+## Step 1: File system: `dosio`, pods
 
 ### `core/main.c` (1 functions, 147 instructions, 1 done)
 - free functions
   - [x] `displayErrorAndQuit` 0x00506f10 (147)
 
+### `engine/dosio.cpp` (18 functions, 649 instructions, 18 done)
+- free functions
+  - [x] `getRelativeFilePath` 0x004816c0 (33)
+  - [x] `addGetFileInfoHook` 0x00481710 (20)
+  - [x] `findFileNormally` 0x004817c0 (55)
+  - [x] `findFile` 0x00481760 (43)
+  - [x] `getFileSize` 0x00481880 (21)
+  - [x] `getFileTimestamp` 0x004818d0 (18)
+  - [x] `copyFileTimestamp` 0x00481910 (25)
+  - [x] `getFileAttributes` 0x00481960 (42)
+  - [x] `setFileAttributes` 0x004819f0 (14)
+  - [x] `getFile` 0x00481a50 (92)
+  - [x] `reopenFileStream` 0x00481b50 (72)
+- class `CFileFinder`
+  - [x] `reset` 0x00481db0 (3)
+  - [x] `ctor` 0x00481c30 (9)
+  - [x] `closeSearch` 0x00481d70 (18)
+  - [x] `dtor` 0x00481c50 (8)
+  - [x] `convertStruct` 0x00481dc0 (102)
+  - [x] `openSearch` 0x00481c70 (34)
+  - [x] `findNext` 0x00481cf0 (40)
+
+### `shape/edittool.cpp` (1 functions, 81 instructions, 1 done)
+- free functions
+  - [x] `wildcardStringMatch` 0x004a6e20 (81)
+
+### `engine/pod.cpp` (19 functions, 1485 instructions, 19 done)
+- class `CPodFile`
+  - [x] `ctor` 0x0054f5a0 (14)
+  - [x] `cleanup` 0x00550090 (36)
+  - [x] `dtor` 0x0054f610 (8)
+  - [x] `mountFromFile` 0x0054f650 (691)
+  - [x] `findFileIndex` 0x00550140 (51)
+  - [x] `populateFileInfo` 0x005501b0 (38)
+- class `CPod`
+  - [x] `ctor` 0x00550980 (11)
+  - [x] `load` 0x005509e0 (1)
+  - [x] `mount` 0x00550a10 (66)
+  - [x] `remount` 0x00550af0 (55)
+  - [x] `dismount` 0x00550b90 (62)
+  - [x] `cleanup` 0x00550c80 (36)
+  - [x] `findFile` 0x00551380 (41)
+  - [x] `dtor` 0x005509b0 (30)
+  - [x] `init` 0x00550c30 (23)
+  - [x] `getNextSearchResult` 0x00550ef0 (84)
+  - [x] `initSearch` 0x00550ea0 (27)
+  - [x] `locateFile` 0x005512f0 (52)
+- free functions
+  - [x] `findFilesByExtension` 0x00550ce0 (159)
+
+### `core/podmain.cpp` (4 functions, 143 instructions, 3 done)
+- free functions
+  - [ ] `staticInit` 0x00551990 (9)
+- class `CDemonPod`
+  - [x] `load` 0x005519c0 (97)
+  - [x] `ctor` 0x00551b00 (6)
+  - [x] `dtor` 0x00551b20 (31)
+
+## Step 2: `doNothing`, `readMessageFile`, `detectCPUFeatures`, `getLocalizedString`, `initializeTrigTables`, `initTextureCache`, `initGraphicsSystem`
+
 ### `core/flattn.cpp` (1 functions, 1 instructions, 1 done)
 - free functions
   - [x] `doNothing` 0x004cbce0 (1)
-
-### `core/game.cpp` (1 functions, 64 instructions, 1 done)
-- class `CGame`
-  - [x] `restoreDefaultControls` 0x004dbbc0 (64)
-
-### `engine/ini.cpp` (8 functions, 374 instructions, 8 done)
-- free functions
-  - [x] `initIniFile` 0x004fbaa0 (25)
-  - [x] `getProfileString` 0x004fb960 (24)
-- class `CIniFile`
-  - [x] `readIniHeader` 0x004fbae0 (26)
-  - [x] `ctor` 0x004fba70 (15)
-  - [x] `getString` 0x004fbb20 (42)
-  - [x] `getInteger` 0x004fbc30 (31)
-  - [x] `getFloat` 0x004fbcd0 (30)
-- class `CIni`
-  - [x] `getProfileString` 0x004fb250 (181)
-
-### `support/newmsg.cpp` (2 functions, 123 instructions, 2 done)
-- free functions
-  - [x] `findLocalizedString` 0x00544170 (59)
-  - [x] `getLocalizedString` 0x005441f0 (64)
-
-### `sound/sndmain.cpp` (30 functions, 1104 instructions, 0 done)
-- class `CSfxSample`
-  - [ ] `freeSampleData` 0x005a6400 (15)
-  - [ ] `freeMemory` 0x005a62c0 (58)
-  - [ ] `getBytesPerFrame` 0x005a8550 (10)
-- free functions
-  - [ ] `ensureSoundMemoryAvailable` 0x005a4450 (75)
-  - [ ] `killAllSfx` 0x005a9cc0 (15)
-  - [ ] `freeAllSamples` 0x005aa660 (16)
-  - [ ] `resetSoundDevice` 0x005ab130 (17)
-  - [ ] `closeSoundDevice` 0x005ab660 (33)
-  - [ ] `shutdownSoundSystem` 0x005aaeb0 (13)
-  - [ ] `isSoundMuted` 0x005a96b0 (2)
-  - [ ] `setSoundMuted` 0x005a96c0 (5)
-  - [ ] `isSoundSystemActive` 0x005ab530 (4)
-  - [ ] `setSfxChannelVol` 0x005a9cf0 (52)
-  - [ ] `getSfxChannelVol` 0x005a9d90 (22)
-  - [ ] `enableSfxChannel` 0x005a9e20 (34)
-  - [ ] `isSfxChannelEnabled` 0x005a9ea0 (20)
-  - [ ] `isSoundBusy` 0x005ab540 (5)
-  - [ ] `setSoundOutputMode` 0x005ab170 (56)
-  - [ ] `getAudioFormat` 0x005ab210 (21)
-  - [ ] `getAudioBitDepth` 0x005ab250 (2)
-  - [ ] `getAudioSampleRate` 0x005ab260 (2)
-  - [ ] `getAudioChannelCount` 0x005ab270 (2)
-  - [ ] `getSoundDeviceInfo` 0x005ab370 (29)
-  - [ ] `getCurrentSoundDevice` 0x005ab6c0 (2)
-  - [ ] `logSoundError` 0x005adba0 (136)
-  - [ ] `getSoundDeviceCount` 0x005ab2e0 (49)
-  - [ ] `findBestSoundDevice` 0x005ab3d0 (77)
-  - [ ] `selectSoundDevice` 0x005ab4c0 (29)
-  - [ ] `readIni` 0x005abf20 (206)
-- class `CSfxSlot`
-  - [ ] `kill` 0x005a7e60 (97)
-
-### `core/inivar.cpp` (1 functions, 546 instructions, 0 done)
-- free functions
-  - [ ] `readIniData` 0x004fbd90 (546)
-
-## Step 2: `CPod::init`, `addGetFileInfoHook`, `findFileNormally`, `readMessageFile`, `detectCPUFeatures`, `initializeTrigTables`, `initTextureCache`, `initGraphicsSystem`
-
-### `engine/pod.cpp` (1 functions, 23 instructions, 0 done)
-- class `CPod`
-  - [ ] `init` 0x00550c30 (23)
-
-### `engine/dosio.cpp` (6 functions, 264 instructions, 0 done)
-- free functions
-  - [ ] `addGetFileInfoHook` 0x00481710 (20)
-  - [ ] `findFileNormally` 0x004817c0 (55)
-  - [ ] `getRelativeFilePath` 0x004816c0 (33)
-  - [ ] `findFile` 0x00481760 (43)
-  - [ ] `getFileSize` 0x00481880 (21)
-  - [ ] `getFile` 0x00481a50 (92)
-
-### `support/newmsg.cpp` (1 functions, 218 instructions, 0 done)
-- free functions
-  - [ ] `readMessageFile` 0x00543e40 (218)
 
 ### `core/mmx.c` (3 functions, 82 instructions, 0 done)
 - free functions
   - [ ] `detectIntelProcessor` 0x00524f4c (62)
   - [ ] `detectMMXSupport` 0x00524ff9 (7)
   - [ ] `detectCPUFeatures` 0x00524f10 (13)
+
+### `support/newmsg.cpp` (3 functions, 341 instructions, 2 done)
+- free functions
+  - [ ] `readMessageFile` 0x00543e40 (218)
+  - [x] `findLocalizedString` 0x00544170 (59)
+  - [x] `getLocalizedString` 0x005441f0 (64)
 
 ### `engine/matrix.c` (1 functions, 41 instructions, 0 done)
 - free functions
@@ -238,7 +197,180 @@ in instructions.
   - [ ] `setupViewportAndClipping` 0x00401800 (51)
   - [ ] `initGraphicsSystem` 0x00401010 (76)
 
-## Step 3: `calibrateCPUSpeed`, `initFonts`, `CEditorTools::showWarning`, `showCalibrationTest`
+## Step 3: Sound system: `sndmain`, `CSound` lifetime, `readIniData`
+
+### `core/game.cpp` (1 functions, 64 instructions, 1 done)
+- class `CGame`
+  - [x] `restoreDefaultControls` 0x004dbbc0 (64)
+
+### `engine/console.cpp` (3 functions, 188 instructions, 3 done)
+- class `CConsole`
+  - [x] `scrollUp` 0x00441a80 (49)
+  - [x] `writeChar` 0x00441970 (60)
+  - [x] `printf` 0x00441890 (79)
+
+### `engine/ini.cpp` (14 functions, 846 instructions, 8 done)
+- free functions
+  - [x] `initIniFile` 0x004fbaa0 (25)
+  - [x] `getProfileString` 0x004fb960 (24)
+  - [ ] `writeProfileString` 0x004fba40 (16)
+- class `CIniFile`
+  - [x] `readIniHeader` 0x004fbae0 (26)
+  - [x] `ctor` 0x004fba70 (15)
+  - [x] `getString` 0x004fbb20 (42)
+  - [x] `getInteger` 0x004fbc30 (31)
+  - [x] `getFloat` 0x004fbcd0 (30)
+  - [ ] `setString` 0x004fbbb0 (39)
+  - [ ] `setInteger` 0x004fbc90 (20)
+  - [ ] `setFloatValue` 0x004fbd30 (19)
+- class `CIni`
+  - [x] `getProfileString` 0x004fb250 (181)
+  - [ ] `findLineNumberOfVariable` 0x004fb470 (154)
+  - [ ] `writeProfileString` 0x004fb660 (224)
+
+### `core/inivar.cpp` (2 functions, 1067 instructions, 0 done)
+- free functions
+  - [ ] `readIniData` 0x004fbd90 (546)
+  - [ ] `writeIniData` 0x004fc510 (521)
+
+### `wincore/winrun.cpp` (1 functions, 48 instructions, 0 done)
+- free functions
+  - [ ] `getTime` 0x005f2dc0 (48)
+
+### `sound/sndmain.cpp` (121 functions, 7069 instructions, 2 done)
+- free functions
+  - [ ] `isSoundMuted` 0x005a96b0 (2)
+  - [ ] `ensureSoundMemoryAvailable` 0x005a4450 (75)
+  - [ ] `killAllSfx` 0x005a9cc0 (15)
+  - [ ] `setSoundMuted` 0x005a96c0 (5)
+  - [ ] `isSoundSystemActive` 0x005ab530 (4)
+  - [ ] `setSfxChannelVol` 0x005a9cf0 (52)
+  - [ ] `getSfxChannelVol` 0x005a9d90 (22)
+  - [ ] `enableSfxChannel` 0x005a9e20 (34)
+  - [ ] `isSfxChannelEnabled` 0x005a9ea0 (20)
+  - [ ] `isSoundBusy` 0x005ab540 (5)
+  - [ ] `setSoundOutputMode` 0x005ab170 (56)
+  - [ ] `getAudioFormat` 0x005ab210 (21)
+  - [ ] `getAudioBitDepth` 0x005ab250 (2)
+  - [ ] `getAudioSampleRate` 0x005ab260 (2)
+  - [ ] `getAudioChannelCount` 0x005ab270 (2)
+  - [ ] `getSoundDeviceInfo` 0x005ab370 (29)
+  - [ ] `getCurrentSoundDevice` 0x005ab6c0 (2)
+  - [ ] `logSoundError` 0x005adba0 (136)
+  - [ ] `getSoundDeviceCount` 0x005ab2e0 (49)
+  - [ ] `findBestSoundDevice` 0x005ab3d0 (77)
+  - [ ] `selectSoundDevice` 0x005ab4c0 (29)
+  - [ ] `resetSoundDevice` 0x005ab130 (17)
+  - [ ] `closeSoundDevice` 0x005ab660 (33)
+  - [ ] `readIni` 0x005abf20 (206)
+  - [ ] `writeIni` 0x005ac220 (139)
+  - [ ] `staticInit` 0x005a3940 (22)
+  - [ ] `computeComplexFFT` 0x005a39a0 (226)
+  - [ ] `computeFFT` 0x005a3c90 (235)
+  - [ ] `parseWavFile` 0x005a3fe0 (285)
+  - [ ] `getActiveSfxCount` 0x005a43a0 (30)
+  - [ ] `findFreeSfxSample` 0x005a4400 (21)
+  - [ ] `trimLineAndRemoveComments` 0x005a4530 (62)
+  - [ ] `getSfxSample` 0x005a4c80 (336)
+  - [ ] `calculateVirtualSpeakerPositions` 0x005a5530 (62)
+  - [ ] `calculateDistanceGain` 0x005a56c0 (33)
+  - [ ] `getSfxSlotFromHandle` 0x005a5d00 (67)
+  - [ ] `setNextSfxStaticPosition` 0x005a88e0 (21)
+  - [ ] `setNextSfxTrackedFloatPosition` 0x005a8940 (9)
+  - [ ] `setNextSfxTrackedDoublePosition` 0x005a8970 (9)
+  - [ ] `setNextSfxStaticVelocity` 0x005a89a0 (21)
+  - [ ] `setNextSfxTrackedVelocity1` 0x005a8a00 (9)
+  - [ ] `setNextSfxTrackedVelocity2` 0x005a8a30 (9)
+  - [ ] `setNextSfxVolume` 0x005a8a60 (8)
+  - [ ] `setNextSfxBaseFrequency` 0x005a8a80 (8)
+  - [ ] `setNextSfxUserData` 0x005a8aa0 (24)
+  - [ ] `setNextSfxChannel` 0x005a8af0 (23)
+  - [ ] `setNextSfxDelay` 0x005a8b40 (10)
+  - [ ] `setNextSfxFlags` 0x005a8b70 (8)
+  - [ ] `setNextSfxFlagBits` 0x005a8b90 (8)
+  - [ ] `clearNextSfxFlagBits` 0x005a8bb0 (11)
+  - [ ] `setNextSfxTriggerTime` 0x005a8be0 (12)
+  - [ ] `resetCurrentSfxOptions` 0x005a8c10 (10)
+  - [ ] `pushSfxOptions` 0x005a8c30 (34)
+  - [ ] `popSfxOptions` 0x005a8cb0 (18)
+  - [ ] `formatSfxOptionsToString` 0x005a8d00 (145)
+  - [ ] `startSfx` 0x005a8e90 (437)
+  - [ ] `isSfxPlaying` 0x005a9660 (23)
+  - [ ] `getSfxSampleInfo` 0x005a96e0 (19)
+  - [ ] `getSfxPlaybackPosition` 0x005a9720 (68)
+  - [ ] `getSfxOptions` 0x005a97e0 (24)
+  - [ ] `setSfxPosition` 0x005a9820 (51)
+  - [ ] `setSfxTrackedFloatPosition` 0x005a98b0 (36)
+  - [ ] `setSfxTrackedDoublePosition` 0x005a9910 (36)
+  - [ ] `setSfxVelocity` 0x005a9970 (51)
+  - [ ] `setSfxTrackedFloatVelocity` 0x005a9a00 (40)
+  - [ ] `setSfxTrackedDoubleVelocity` 0x005a9a70 (40)
+  - [ ] `setSfxVolume` 0x005a9ae0 (39)
+  - [ ] `setSfxBaseFrequency` 0x005a9b40 (35)
+  - [ ] `setSfxUserData` 0x005a9ba0 (34)
+  - [ ] `setSfxIsActive` 0x005a9c10 (13)
+  - [ ] `killSfx` 0x005a9c40 (14)
+  - [ ] `setSfxFade` 0x005a9c70 (22)
+  - [ ] `setNumberOfSfxChannels` 0x005a9de0 (17)
+  - [ ] `getFirstActiveSfx` 0x005a9ef0 (21)
+  - [ ] `getNextActiveSfx` 0x005a9f30 (28)
+  - [ ] `formatActiveSounds` 0x005a9f80 (42)
+  - [ ] `countActiveSfx` 0x005a9ff0 (13)
+  - [ ] `set3DListenerPos` 0x005aa020 (43)
+  - [ ] `set3DListenerOrient` 0x005aa0a0 (91)
+  - [ ] `set3DListenerVelocity` 0x005aa1c0 (43)
+  - [ ] `isWithinListenerRadius` 0x005aa290 (26)
+  - [ ] `killSfxByName` 0x005aa2f0 (27)
+  - [ ] `setMemoryBudget` 0x005aa340 (8)
+  - [ ] `freeSampleByName` 0x005aa360 (33)
+  - [ ] `isSampleLoaded` 0x005aa3c0 (14)
+  - [ ] `getSampleInfo` 0x005aa3f0 (183)
+  - [ ] `freeAllSamples` 0x005aa660 (16)
+  - [ ] `getSoundMemoryStats` 0x005aa6a0 (90)
+  - [ ] `resetSoundSystemDefaults` 0x005aae00 (63)
+  - [ ] `shutdownSoundSystem` 0x005aaeb0 (13)
+  - [ ] `enableSoundSystem` 0x005aaef0 (200)
+  - [ ] `setAudioBitDepth` 0x005ab280 (9)
+  - [ ] `setAudioChannelCount` 0x005ab2a0 (9)
+  - [ ] `setAudioSampleRate` 0x005ab2c0 (9)
+  - [ ] `initializeSoundDevice` 0x005ab5b0 (56)
+  - [ ] `set3DListenerOrientRight` 0x005ab6e0 (19)
+  - [ ] `analyzeFrequencyBand` 0x005ac400 (370)
+  - [ ] `getChannelLevels` 0x005ac990 (90)
+- class `CSfxSample`
+  - [ ] `freeSampleData` 0x005a6400 (15)
+  - [ ] `freeMemory` 0x005a62c0 (58)
+  - [ ] `getBytesPerFrame` 0x005a8550 (10)
+  - [ ] `parseConfigFile` 0x005a45c0 (442)
+  - [ ] `init` 0x005a8480 (21)
+  - [ ] `ctor` 0x005a60f0 (13)
+  - [ ] `dtor` 0x005a6150 (8)
+  - [ ] `normalizePlaybackPos` 0x005a86f0 (77)
+  - [ ] `computeDataSize` 0x005a8520 (13)
+- class `CSfxSlot`
+  - [ ] `kill` 0x005a7e60 (97)
+  - [ ] `updateBoundPositionAndVelocity` 0x005a6ce0 (59)
+  - [ ] `computeDistancesToSpeakers` 0x005a6d80 (39)
+  - [ ] `computeChannelVolumes` 0x005a6f00 (108)
+  - [ ] `compute` 0x005a7100 (378)
+  - [ ] `updatePlaybackPos` 0x005a8170 (154)
+  - [ ] `seek` 0x005a8390 (73)
+  - [ ] `ctor` 0x005ade00 (8)
+  - [x] `dtor` 0x005ade20 (2, compiler-generated)
+- class `CSampleInfo`
+  - [ ] `cvtPlaybackPos` 0x005a8580 (98)
+  - [ ] `getSampleDuration` 0x005a84d0 (24)
+- class `CSfxOptions`
+  - [ ] `reset` 0x005a8830 (37)
+  - [ ] `ctor` 0x005add70 (8)
+  - [x] `dtor` 0x005ade30 (2, compiler-generated)
+
+### `core/sound.cpp` (2 functions, 11 instructions, 0 done)
+- class `CSound`
+  - [ ] `ctor` 0x005b2ce0 (10)
+  - [ ] `dtor` 0x005b2d60 (1)
+
+## Step 4: `initFonts`, `CEditorTools::showWarning`, `showCalibrationTest`
 
 ### `cockpit/ckptutil.c` (1 functions, 96 instructions, 0 done)
 - free functions
@@ -365,9 +497,8 @@ in instructions.
   - [ ] `clipCharacter` 0x004ccdd0 (65)
   - [ ] `drawAlphaBlendedPixels` 0x004ce240 (48)
 
-### `wincore/winrun.cpp` (4 functions, 92 instructions, 0 done)
+### `wincore/winrun.cpp` (3 functions, 44 instructions, 0 done)
 - free functions
-  - [ ] `getTime` 0x005f2dc0 (48)
   - [ ] `clearKeypresses` 0x005f2e70 (6)
   - [ ] `clearMouseClicks` 0x005f30c0 (3)
   - [ ] `getNextKeypress` 0x005f2e90 (35)
@@ -377,7 +508,7 @@ in instructions.
   - [ ] `showCalibrationTestPattern` 0x00510a50 (117)
   - [ ] `showCalibrationTest` 0x00510ba0 (45)
 
-## Step 4: `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`
+## Step 5: `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init`
 
 ### `wincore/winrun.cpp` (1 functions, 6 instructions, 0 done)
 - free functions
@@ -392,52 +523,9 @@ in instructions.
   - [ ] `ctor` 0x00410520 (5)
   - [ ] `dtor` 0x00410540 (8)
 
-### `engine/dosio.cpp` (7 functions, 214 instructions, 0 done)
-- class `CFileFinder`
-  - [ ] `reset` 0x00481db0 (3)
-  - [ ] `ctor` 0x00481c30 (9)
-  - [ ] `closeSearch` 0x00481d70 (18)
-  - [ ] `dtor` 0x00481c50 (8)
-  - [ ] `convertStruct` 0x00481dc0 (102)
-  - [ ] `openSearch` 0x00481c70 (34)
-  - [ ] `findNext` 0x00481cf0 (40)
-
-### `engine/pod.cpp` (3 functions, 149 instructions, 0 done)
-- class `CPodFile`
-  - [ ] `populateFileInfo` 0x005501b0 (38)
-- class `CPod`
-  - [ ] `getNextSearchResult` 0x00550ef0 (84)
-  - [ ] `initSearch` 0x00550ea0 (27)
-
-### `shape/edittool.cpp` (5 functions, 292 instructions, 0 done)
-- class `CStrList`
-  - [ ] `add` 0x004a2b80 (12)
-  - [ ] `getStringAt` 0x004a2f70 (5)
-  - [ ] `findString` 0x004a3030 (32)
-  - [ ] `populateFromFilesNoDuplicates` 0x004a37b0 (162)
-- free functions
-  - [ ] `wildcardStringMatch` 0x004a6e20 (81)
-
-### `sound/sndmain.cpp` (9 functions, 1031 instructions, 0 done)
-- class `CSampleInfo`
-  - [ ] `cvtPlaybackPos` 0x005a8580 (98)
-- class `CSfxSample`
-  - [ ] `normalizePlaybackPos` 0x005a86f0 (77)
-- class `CSfxSlot`
-  - [ ] `updatePlaybackPos` 0x005a8170 (154)
-  - [ ] `updateBoundPositionAndVelocity` 0x005a6ce0 (59)
-  - [ ] `computeDistancesToSpeakers` 0x005a6d80 (39)
-  - [ ] `computeChannelVolumes` 0x005a6f00 (108)
-  - [ ] `compute` 0x005a7100 (378)
-- free functions
-  - [ ] `calculateVirtualSpeakerPositions` 0x005a5530 (62)
-  - [ ] `initializeSoundDevice` 0x005ab5b0 (56)
-
 ### `core/sound.cpp` (1 functions, 24 instructions, 0 done)
 - class `CSound`
   - [ ] `findAllSoundFiles` 0x005b2d00 (24)
-
-## Step 5: `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init`
 
 ### `core/mission.cpp` (1 functions, 23 instructions, 0 done)
 - class `CDemonMission`
@@ -475,7 +563,12 @@ in instructions.
   - [ ] `drawTextCenterInBoundsF` 0x004cdf30 (33)
   - [ ] `wrapText` 0x004d0010 (138)
 
-### `shape/edittool.cpp` (8 functions, 1094 instructions, 0 done)
+### `shape/edittool.cpp` (12 functions, 1305 instructions, 0 done)
+- class `CStrList`
+  - [ ] `add` 0x004a2b80 (12)
+  - [ ] `getStringAt` 0x004a2f70 (5)
+  - [ ] `findString` 0x004a3030 (32)
+  - [ ] `populateFromFilesNoDuplicates` 0x004a37b0 (162)
 - class `CEditorTools`
   - [ ] `showMessage` 0x0049e6a0 (22)
   - [ ] `paintCurrentWindow` 0x004a0f80 (229)
@@ -1313,16 +1406,6 @@ in instructions.
   - [ ] `removeMatchingKeys` 0x004f3910 (8)
   - [ ] `setAiTask` 0x004f3930 (10)
 
-### `engine/ini.cpp` (5 functions, 453 instructions, 0 done)
-- class `CIni`
-  - [ ] `findLineNumberOfVariable` 0x004fb470 (154)
-  - [ ] `writeProfileString` 0x004fb660 (224)
-- free functions
-  - [ ] `writeProfileString` 0x004fba40 (16)
-- class `CIniFile`
-  - [ ] `setString` 0x004fbbb0 (39)
-  - [ ] `setInteger` 0x004fbc90 (20)
-
 ### `core/ammo.cpp` (1 functions, 139 instructions, 0 done)
 - class `CAmmo`
   - [ ] `setWeaponClass` 0x00410fd0 (139)
@@ -1720,43 +1803,6 @@ in instructions.
   - [ ] `setupRenderState` 0x004ecc40 (39)
   - [ ] `render` 0x004ecce0 (243)
 
-### `sound/sndmain.cpp` (30 functions, 2360 instructions, 0 done)
-- free functions
-  - [ ] `setNextSfxStaticPosition` 0x005a88e0 (21)
-  - [ ] `setNextSfxTrackedFloatPosition` 0x005a8940 (9)
-  - [ ] `setNextSfxVolume` 0x005a8a60 (8)
-  - [ ] `setNextSfxBaseFrequency` 0x005a8a80 (8)
-  - [ ] `setNextSfxUserData` 0x005a8aa0 (24)
-  - [ ] `setNextSfxFlags` 0x005a8b70 (8)
-  - [ ] `pushSfxOptions` 0x005a8c30 (34)
-  - [ ] `popSfxOptions` 0x005a8cb0 (18)
-  - [ ] `parseWavFile` 0x005a3fe0 (285)
-  - [ ] `getSfxSample` 0x005a4c80 (336)
-  - [ ] `startSfx` 0x005a8e90 (437)
-  - [ ] `getSfxSlotFromHandle` 0x005a5d00 (67)
-  - [ ] `killSfx` 0x005a9c40 (14)
-  - [ ] `setNextSfxDelay` 0x005a8b40 (10)
-  - [ ] `setSfxTrackedFloatPosition` 0x005a98b0 (36)
-  - [ ] `setSfxTrackedFloatVelocity` 0x005a9a00 (40)
-  - [ ] `isSfxPlaying` 0x005a9660 (23)
-  - [ ] `getSfxSampleInfo` 0x005a96e0 (19)
-  - [ ] `getSfxPlaybackPosition` 0x005a9720 (68)
-  - [ ] `setNextSfxTriggerTime` 0x005a8be0 (12)
-  - [ ] `setNextSfxChannel` 0x005a8af0 (23)
-  - [ ] `setSfxVolume` 0x005a9ae0 (39)
-  - [ ] `setSfxFade` 0x005a9c70 (22)
-  - [ ] `getSampleInfo` 0x005aa3f0 (183)
-  - [ ] `set3DListenerOrientRight` 0x005ab6e0 (19)
-- class `CSfxSample`
-  - [ ] `parseConfigFile` 0x005a45c0 (442)
-  - [ ] `init` 0x005a8480 (21)
-- class `CSfxSlot`
-  - [ ] `seek` 0x005a8390 (73)
-- class `CSfxOptions`
-  - [ ] `reset` 0x005a8830 (37)
-- class `CSampleInfo`
-  - [ ] `getSampleDuration` 0x005a84d0 (24)
-
 ### `core/sound.cpp` (14 functions, 825 instructions, 0 done)
 - class `CSound`
   - [ ] `findRandomSoundFile` 0x005b1ed0 (89)
@@ -2121,14 +2167,6 @@ in instructions.
 - class `CDemonSet`
   - [ ] `rayVoxelHeightQuery` 0x00572340 (88)
 
-### `sound/sndmain.cpp` (5 functions, 385 instructions, 0 done)
-- free functions
-  - [ ] `setNextSfxFlagBits` 0x005a8b90 (8)
-  - [ ] `set3DListenerVelocity` 0x005aa1c0 (43)
-  - [ ] `enableSoundSystem` 0x005aaef0 (200)
-  - [ ] `set3DListenerPos` 0x005aa020 (43)
-  - [ ] `set3DListenerOrient` 0x005aa0a0 (91)
-
 ### `core/sound.cpp` (3 functions, 565 instructions, 0 done)
 - free functions
   - [ ] `updateListeners` 0x005b1870 (431)
@@ -2455,14 +2493,6 @@ in instructions.
 - class `CDemonSet`
   - [ ] `testLineOcclusion` 0x00572460 (54)
 
-### `sound/sndmain.cpp` (5 functions, 161 instructions, 0 done)
-- free functions
-  - [ ] `getFirstActiveSfx` 0x005a9ef0 (21)
-  - [ ] `getNextActiveSfx` 0x005a9f30 (28)
-  - [ ] `countActiveSfx` 0x005a9ff0 (13)
-  - [ ] `getSoundMemoryStats` 0x005aa6a0 (90)
-  - [ ] `setNextSfxTrackedVelocity1` 0x005a8a00 (9)
-
 ### `core/sound.cpp` (1 functions, 508 instructions, 0 done)
 - class `CSound`
   - [ ] `process` 0x005b2fd0 (508)
@@ -2495,28 +2525,16 @@ in instructions.
   - [ ] `giveHeroWeaponAmmo` 0x004dd930 (48)
   - [ ] `scaleBoneRecursive` 0x004dda80 (37)
 
-## Step 16: `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`
+## Step 16: `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats`
 
 ### `engine/2d.c` (1 functions, 1 instructions, 0 done)
 - free functions
   - [ ] `reinitializeGraphicsSystem` 0x00402a80 (1)
 
-### `core/game.cpp` (2 functions, 327 instructions, 0 done)
-- class `CGame`
-  - [ ] `setScreenResolutionAndDisplayFangs` 0x004daed0 (47)
-  - [ ] `rollCredits` 0x004e4010 (280)
-
-### `engine/ini.cpp` (1 functions, 19 instructions, 0 done)
-- class `CIniFile`
-  - [ ] `setFloatValue` 0x004fbd30 (19)
-
-### `core/inivar.cpp` (1 functions, 521 instructions, 0 done)
-- free functions
-  - [ ] `writeIniData` 0x004fc510 (521)
-
-### `engine/special.cpp` (3 functions, 57 instructions, 0 done)
+### `engine/special.cpp` (4 functions, 65 instructions, 0 done)
 - free functions
   - [ ] `restoreVideoMode` 0x005b75b0 (14)
+  - [ ] `kill` 0x005b71e0 (8)
   - [ ] `getVideoMemory` 0x005b7d60 (17)
   - [ ] `buildCardList` 0x005b7db0 (26)
 
@@ -2527,14 +2545,6 @@ in instructions.
 ### `core/moon.cpp` (1 functions, 84 instructions, 0 done)
 - class `CMoon`
   - [ ] `renderJoystickCalibration` 0x0052a2c0 (84)
-
-### `sound/sndmain.cpp` (5 functions, 536 instructions, 0 done)
-- free functions
-  - [ ] `writeIni` 0x005ac220 (139)
-  - [ ] `setAudioBitDepth` 0x005ab280 (9)
-  - [ ] `setAudioChannelCount` 0x005ab2a0 (9)
-  - [ ] `setAudioSampleRate` 0x005ab2c0 (9)
-  - [ ] `analyzeFrequencyBand` 0x005ac400 (370)
 
 ### `core/sound.cpp` (1 functions, 112 instructions, 0 done)
 - class `CSound`
@@ -2552,15 +2562,30 @@ in instructions.
   - [ ] `configureSoundOptions` 0x00511e50 (1124)
   - [ ] `showOptionsScreen` 0x00512d30 (138)
 
-## Step 17: `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats`, `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu`
+### `core/script.cpp` (1 functions, 68 instructions, 0 done)
+- class `CScript`
+  - [ ] `skipCinematic` 0x005602e0 (68)
+
+### `core/mission.cpp` (1 functions, 35 instructions, 0 done)
+- class `CDemonMission`
+  - [ ] `countDamageableEnemies` 0x00524e00 (35)
 
 ### `core/inv.cpp` (1 functions, 43 instructions, 0 done)
 - free functions
   - [ ] `freeInventory` 0x004fd510 (43)
 
-### `core/mission.cpp` (2 functions, 185 instructions, 0 done)
+### `core/game.cpp` (5 functions, 1777 instructions, 0 done)
+- class `CGame`
+  - [ ] `setScreenResolutionAndDisplayFangs` 0x004daed0 (47)
+  - [ ] `rollCredits` 0x004e4010 (280)
+  - [ ] `showFullscreenBitmap` 0x004e2910 (387)
+  - [ ] `runGameSession` 0x004daf80 (791)
+  - [ ] `displayActStats` 0x004e3800 (272)
+
+## Step 17: `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu`
+
+### `core/mission.cpp` (1 functions, 150 instructions, 0 done)
 - class `CDemonMission`
-  - [ ] `countDamageableEnemies` 0x00524e00 (35)
   - [ ] `run` 0x00524420 (150)
 
 ### `support/codec.cpp` (6 functions, 345 instructions, 0 done)
@@ -2584,22 +2609,18 @@ in instructions.
 - class `CFireEffect`
   - [ ] `load` 0x004c9300 (37)
 
-### `core/script.cpp` (3 functions, 347 instructions, 0 done)
-- class `CScript`
-  - [ ] `skipCinematic` 0x005602e0 (68)
-  - [ ] `loadState` 0x00560820 (240)
+### `core/script.cpp` (2 functions, 279 instructions, 0 done)
 - free functions
   - [ ] `readActorReference` 0x00560760 (39)
+- class `CScript`
+  - [ ] `loadState` 0x00560820 (240)
 
 ### `core/set.cpp` (1 functions, 75 instructions, 0 done)
 - class `CDemonSet`
   - [ ] `loadStateInfo` 0x00571230 (75)
 
-### `core/game.cpp` (6 functions, 3289 instructions, 0 done)
+### `core/game.cpp` (3 functions, 1839 instructions, 0 done)
 - class `CGame`
-  - [ ] `showFullscreenBitmap` 0x004e2910 (387)
-  - [ ] `runGameSession` 0x004daf80 (791)
-  - [ ] `displayActStats` 0x004e3800 (272)
   - [ ] `finishAct` 0x004e3b90 (349)
   - [ ] `loadGame` 0x004e12b0 (645)
   - [ ] `showChapterSelect` 0x004e1cb0 (845)
@@ -2631,6 +2652,14 @@ in instructions.
   - [ ] `showDeveloperToolsMenu` 0x005073a0 (469)
 
 ## Step 18: `enterMainGameMenu`, `finalizeGameSystems`
+
+### `wincore/wddvmem.cpp` (1 functions, 71 instructions, 0 done)
+- free functions
+  - [ ] `cleanupGraphicsSystem` 0x005ecd90 (71)
+
+### `engine/2d.c` (1 functions, 1 instructions, 0 done)
+- free functions
+  - [ ] `cleanupGraphicsSystem` 0x00401130 (1)
 
 ### `engine/texture.cpp` (2 functions, 37 instructions, 0 done)
 - class `CTextureCache`
@@ -2665,13 +2694,6 @@ in instructions.
 ### `engine/ncursfx.cpp` (1 functions, 1 instructions, 0 done)
 - class `CMouse`
   - [ ] `reset` 0x00544500 (1)
-
-### `engine/pod.cpp` (3 functions, 80 instructions, 0 done)
-- class `CPodFile`
-  - [ ] `cleanup` 0x00550090 (36)
-  - [ ] `dtor` 0x0054f610 (8)
-- class `CPod`
-  - [ ] `cleanup` 0x00550c80 (36)
 
 ### `core/main.c` (2 functions, 217 instructions, 0 done)
 - free functions
@@ -2841,14 +2863,6 @@ in instructions.
 - free functions
   - [ ] `staticInit` 0x004417e0 (11)
 
-### `engine/dosio.cpp` (5 functions, 171 instructions, 0 done)
-- free functions
-  - [ ] `getFileTimestamp` 0x004818d0 (18)
-  - [ ] `copyFileTimestamp` 0x00481910 (25)
-  - [ ] `getFileAttributes` 0x00481960 (42)
-  - [ ] `setFileAttributes` 0x004819f0 (14)
-  - [ ] `reopenFileStream` 0x00481b50 (72)
-
 ### `engine/drender.cpp` (18 functions, 1601 instructions, 0 done)
 - class `CDemonRenderer`
   - [ ] `ctor` 0x0048a6c0 (10)
@@ -2973,31 +2987,19 @@ in instructions.
   - [x] `getLineSpacing` 0x00544f00 (2)
   - [x] `dtor` 0x00544ec0 (3)
 
-### `engine/pod.cpp` (21 functions, 2163 instructions, 0 done)
+### `engine/pod.cpp` (9 functions, 930 instructions, 0 done)
 - free functions
   - [ ] `crc32UpdateByte` 0x0054f2e0 (59)
   - [ ] `crc32UpdateBuffer` 0x0054f3a0 (25)
   - [ ] `crc32ComputeFromFile` 0x0054f3e0 (64)
   - [ ] `crc32ComputeFileRange` 0x0054f490 (92)
-  - [ ] `findFilesByExtension` 0x00550ce0 (159)
 - class `CPodFile`
-  - [ ] `ctor` 0x0054f5a0 (14)
-  - [ ] `mountFromFile` 0x0054f650 (691)
-  - [ ] `findFileIndex` 0x00550140 (51)
   - [ ] `computeFileCRC` 0x005507f0 (120)
   - [ ] `verifyChecksum` 0x00550230 (267)
   - [ ] `getAuditRecord` 0x00550590 (85)
 - class `CPod`
-  - [ ] `ctor` 0x00550980 (11)
-  - [ ] `load` 0x005509e0 (1)
-  - [ ] `mount` 0x00550a10 (66)
-  - [ ] `remount` 0x00550af0 (55)
-  - [ ] `dismount` 0x00550b90 (62)
-  - [ ] `findFile` 0x00551380 (41)
-  - [ ] `dtor` 0x005509b0 (30)
   - [ ] `computeAndStoreCRC` 0x00551000 (180)
   - [ ] `verifyIntegrity` 0x00551280 (38)
-  - [ ] `locateFile` 0x005512f0 (52)
 
 ### `engine/prim.c` (8 functions, 860 instructions, 0 done)
 - free functions
@@ -3055,52 +3057,7 @@ in instructions.
   - [ ] `addRasterizerEdgeWithDepth` 0x005fce40 (105)
   - [ ] `findRasterizerEdge` 0x005fcf80 (22)
 
-## Step 20: Not reached from startup: `sound/`
-
-### `sound/sndmain.cpp` (37 functions, 1492 instructions, 2 done)
-- free functions
-  - [ ] `staticInit` 0x005a3940 (22)
-  - [ ] `computeComplexFFT` 0x005a39a0 (226)
-  - [ ] `computeFFT` 0x005a3c90 (235)
-  - [ ] `getActiveSfxCount` 0x005a43a0 (30)
-  - [ ] `findFreeSfxSample` 0x005a4400 (21)
-  - [ ] `trimLineAndRemoveComments` 0x005a4530 (62)
-  - [ ] `calculateDistanceGain` 0x005a56c0 (33)
-  - [ ] `setNextSfxTrackedDoublePosition` 0x005a8970 (9)
-  - [ ] `setNextSfxStaticVelocity` 0x005a89a0 (21)
-  - [ ] `setNextSfxTrackedVelocity2` 0x005a8a30 (9)
-  - [ ] `clearNextSfxFlagBits` 0x005a8bb0 (11)
-  - [ ] `resetCurrentSfxOptions` 0x005a8c10 (10)
-  - [ ] `formatSfxOptionsToString` 0x005a8d00 (145)
-  - [ ] `getSfxOptions` 0x005a97e0 (24)
-  - [ ] `setSfxPosition` 0x005a9820 (51)
-  - [ ] `setSfxTrackedDoublePosition` 0x005a9910 (36)
-  - [ ] `setSfxVelocity` 0x005a9970 (51)
-  - [ ] `setSfxTrackedDoubleVelocity` 0x005a9a70 (40)
-  - [ ] `setSfxBaseFrequency` 0x005a9b40 (35)
-  - [ ] `setSfxUserData` 0x005a9ba0 (34)
-  - [ ] `setSfxIsActive` 0x005a9c10 (13)
-  - [ ] `setNumberOfSfxChannels` 0x005a9de0 (17)
-  - [ ] `formatActiveSounds` 0x005a9f80 (42)
-  - [ ] `isWithinListenerRadius` 0x005aa290 (26)
-  - [ ] `killSfxByName` 0x005aa2f0 (27)
-  - [ ] `setMemoryBudget` 0x005aa340 (8)
-  - [ ] `freeSampleByName` 0x005aa360 (33)
-  - [ ] `isSampleLoaded` 0x005aa3c0 (14)
-  - [ ] `resetSoundSystemDefaults` 0x005aae00 (63)
-  - [ ] `getChannelLevels` 0x005ac990 (90)
-- class `CSfxSample`
-  - [ ] `ctor` 0x005a60f0 (13)
-  - [ ] `dtor` 0x005a6150 (8)
-  - [ ] `computeDataSize` 0x005a8520 (13)
-- class `CSfxOptions`
-  - [ ] `ctor` 0x005add70 (8)
-  - [x] `dtor` 0x005ade30 (2, compiler-generated)
-- class `CSfxSlot`
-  - [ ] `ctor` 0x005ade00 (8)
-  - [x] `dtor` 0x005ade20 (2, compiler-generated)
-
-## Step 21: Not reached from startup: `support/`
+## Step 20: Not reached from startup: `support/`
 
 ### `support/codec.cpp` (4 functions, 116 instructions, 0 done)
 - free functions
@@ -3135,7 +3092,7 @@ in instructions.
   - [ ] `getSocketName` 0x005e1df0 (39)
   - [ ] `setSocketBlocking` 0x005e1e50 (17)
 
-## Step 22: Not reached from startup: `cockpit/`
+## Step 21: Not reached from startup: `cockpit/`
 
 ### `cockpit/ckptutil.c` (53 functions, 5434 instructions, 0 done)
 - free functions
@@ -3329,7 +3286,7 @@ in instructions.
   - [ ] `parsePBGFile` 0x0054b9b0 (124)
   - [ ] `loadPBGFile` 0x0054bb40 (105)
 
-## Step 23: Not reached from startup: `shape/`
+## Step 22: Not reached from startup: `shape/`
 
 ### `shape/edittool.cpp` (37 functions, 2804 instructions, 0 done)
 - class `CEditorTools`
@@ -3383,7 +3340,7 @@ in instructions.
 - free functions
   - [ ] `staticInit` 0x005b95b0 (4)
 
-## Step 24: Not reached from startup: `core/` (part 1 of 9)
+## Step 23: Not reached from startup: `core/` (part 1 of 9)
 
 ### `core/actor.cpp` (19 functions, 1173 instructions, 3 done)
 - free functions
@@ -3752,7 +3709,7 @@ in instructions.
   - [ ] `setup` 0x00422a20 (14)
   - [ ] `isLightPartVisible` 0x004235d0 (5)
 
-## Step 25: Not reached from startup: `core/` (part 2 of 9)
+## Step 24: Not reached from startup: `core/` (part 2 of 9)
 
 ### `core/bride.cpp` (12 functions, 1550 instructions, 0 done)
 - class `CBride`
@@ -4077,7 +4034,7 @@ in instructions.
   - [ ] `factoryFuncCurtain` 0x00449660 (12)
   - [ ] `staticInit` 0x00449610 (19)
 
-## Step 26: Not reached from startup: `core/` (part 3 of 9)
+## Step 25: Not reached from startup: `core/` (part 3 of 9)
 
 ### `core/dcamera.cpp` (27 functions, 2549 instructions, 0 done)
 - class `CDemonCamera`
@@ -4452,7 +4409,7 @@ in instructions.
   - [ ] `trimWhitespace` 0x004aa650 (44)
   - [ ] `getVectorDistance` 0x004b1930 (20)
 
-## Step 27: Not reached from startup: `core/` (part 4 of 9)
+## Step 26: Not reached from startup: `core/` (part 4 of 9)
 
 ### `core/filmreel.cpp` (25 functions, 588 instructions, 0 done)
 - class `CFilmReel`
@@ -4850,7 +4807,7 @@ in instructions.
   - [ ] `factoryFuncGrave` 0x004ee4d0 (12)
   - [ ] `staticInit` 0x004ee4a0 (9)
 
-## Step 28: Not reached from startup: `core/` (part 5 of 9)
+## Step 27: Not reached from startup: `core/` (part 5 of 9)
 
 ### `core/ground.cpp` (5 functions, 378 instructions, 0 done)
 - class `CGround`
@@ -5230,7 +5187,7 @@ in instructions.
   - [ ] `dtor` 0x0050b840 (31)
   - [ ] `setup` 0x0050b160 (10)
 
-## Step 29: Not reached from startup: `core/` (part 6 of 9)
+## Step 28: Not reached from startup: `core/` (part 6 of 9)
 
 ### `core/marquee.cpp` (14 functions, 729 instructions, 0 done)
 - class `CMarquee`
@@ -5590,15 +5547,7 @@ in instructions.
   - [ ] `factoryFuncPlatform` 0x0054c810 (12)
   - [ ] `staticInit` 0x0054c7e0 (9)
 
-### `core/podmain.cpp` (4 functions, 143 instructions, 0 done)
-- free functions
-  - [ ] `staticInit` 0x00551990 (9)
-- class `CDemonPod`
-  - [ ] `load` 0x005519c0 (97)
-  - [ ] `ctor` 0x00551b00 (6)
-  - [ ] `dtor` 0x00551b20 (31)
-
-## Step 30: Not reached from startup: `core/` (part 7 of 9)
+## Step 29: Not reached from startup: `core/` (part 7 of 9)
 
 ### `core/scat.cpp` (22 functions, 2672 instructions, 0 done)
 - class `CScat`
@@ -5867,13 +5816,7 @@ in instructions.
   - [ ] `factorFunc` 0x005a23f0 (12)
   - [ ] `staticInit` 0x005a23c0 (9)
 
-### `core/sound.cpp` (12 functions, 571 instructions, 0 done)
-- class `CSound`
-  - [ ] `ctor` 0x005b2ce0 (10)
-  - [ ] `playActorNonPositionalSoundWithDelay` 0x005b3aa0 (23)
-  - [ ] `getReverbPresetCount` 0x005b3c60 (2)
-  - [ ] `getSoundModeName` 0x005b3c70 (10)
-  - [ ] `selectReverbPreset` 0x005b3d20 (50)
+### `core/sound.cpp` (11 functions, 561 instructions, 0 done)
 - free functions
   - [ ] `staticInit` 0x005b1760 (15)
   - [ ] `populateSoundFiles` 0x005b17a0 (11)
@@ -5882,6 +5825,11 @@ in instructions.
   - [ ] `processTrainSounds` 0x005b2770 (316)
   - [ ] `stopTrainSounds` 0x005b2ca0 (19)
   - [ ] `syncChannel3WithChannel0` 0x005b2d70 (29)
+- class `CSound`
+  - [ ] `playActorNonPositionalSoundWithDelay` 0x005b3aa0 (23)
+  - [ ] `getReverbPresetCount` 0x005b3c60 (2)
+  - [ ] `getSoundModeName` 0x005b3c70 (10)
+  - [ ] `selectReverbPreset` 0x005b3d20 (50)
 
 ### `core/spike.cpp` (12 functions, 881 instructions, 0 done)
 - class `CSpike`
@@ -5940,7 +5888,7 @@ in instructions.
   - [ ] `factoryFuncTempleStone` 0x005bacd0 (12)
   - [ ] `staticInit` 0x005baca0 (9)
 
-## Step 31: Not reached from startup: `core/` (part 8 of 9)
+## Step 30: Not reached from startup: `core/` (part 8 of 9)
 
 ### `core/stranger.cpp` (57 functions, 13459 instructions, 0 done)
 - class `CStranger`
@@ -6324,7 +6272,7 @@ in instructions.
   - [ ] `factoryFuncWayPoint` 0x005ebe30 (12)
   - [ ] `staticInit` 0x005ebd10 (9)
 
-## Step 32: Not reached from startup: `core/` (part 9 of 9)
+## Step 31: Not reached from startup: `core/` (part 9 of 9)
 
 ### `core/weapon.cpp` (25 functions, 852 instructions, 2 done)
 - class `CWeapon`
@@ -6457,7 +6405,7 @@ in instructions.
   - [ ] `staticInit` 0x005f8c90 (9)
   - [ ] `classifyObjectShape` 0x005f8e50 (117)
 
-## Step 33: Not reached from startup: `wincore/`
+## Step 32: Not reached from startup: `wincore/`
 
 ### `wincore/wddvmem.cpp` (7 functions, 360 instructions, 0 done)
 - free functions
@@ -6469,8 +6417,9 @@ in instructions.
   - [ ] `reinitializeGraphicsSystem` 0x005ed4b0 (74)
   - [ ] `findMostSignificantBit` 0x005ed710 (13)
 
-### `wincore/winrun.cpp` (3 functions, 96 instructions, 0 done)
+### `wincore/winrun.cpp` (4 functions, 122 instructions, 1 done)
 - free functions
   - [ ] `setValue` 0x005f2f70 (3)
   - [ ] `plotClippedPixel` 0x005f2f90 (16)
   - [ ] `drawCrosshair` 0x005f2fd0 (77)
+  - [x] `displayMessageBoxAndQuit` 0x005f3920 (26)

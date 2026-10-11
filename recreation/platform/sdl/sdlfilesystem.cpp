@@ -2,9 +2,12 @@
 
 #include "common/text/path.h"
 #include "common/text/wildcard.h"
+#include "platform/sdl/sdlfile.h"
 
 #include <algorithm>
+#include <array>
 #include <chrono>
+#include <cstdio>
 #include <filesystem>
 #include <fstream>
 #include <ios>
@@ -35,11 +38,34 @@ SFileInfo describe(const std::filesystem::directory_entry &entry, std::string na
     return info;
 }
 
+std::vector<std::string> listDirectory(const std::string &directory) {
+    std::vector<std::string> names;
+    std::error_code error;
+    for (std::filesystem::directory_iterator it(directory.empty() ? "." : directory, error), end;
+         !error && it != end; it.increment(error)) {
+        names.push_back(it->path().filename().string());
+    }
+    return names;
+}
+
+// The game's paths name files the way Windows matched them: either separator, any case.
+std::string resolve(std::string_view path) {
+    static const common::SPathLookup kLookup{
+        .exists =
+            [](const std::string &candidate) {
+                std::error_code error;
+                return std::filesystem::exists(candidate, error);
+            },
+        .list_directory = listDirectory,
+    };
+    return common::resolvePathIgnoringCase(path, kLookup);
+}
+
 } // namespace
 
 std::vector<SFileInfo> CSdlFileSystem::findFiles(std::string_view pattern) {
     const common::SWildcardPath path = common::splitWildcardPath(pattern);
-    const std::filesystem::path directory = path.directory.empty() ? "." : path.directory;
+    const std::filesystem::path directory = path.directory.empty() ? "." : resolve(path.directory);
     std::vector<SFileInfo> files;
     // A directory that is missing or unreadable has no matches, as FindFirstFile reports it.
     std::error_code error;
@@ -55,7 +81,7 @@ std::vector<SFileInfo> CSdlFileSystem::findFiles(std::string_view pattern) {
 }
 
 std::optional<std::string> CSdlFileSystem::readFile(std::string_view path) {
-    std::ifstream file(common::toPortablePath(path), std::ios::binary);
+    std::ifstream file(resolve(path), std::ios::binary);
     if (!file) {
         return std::nullopt;
     }
@@ -63,14 +89,69 @@ std::optional<std::string> CSdlFileSystem::readFile(std::string_view path) {
 }
 
 bool CSdlFileSystem::appendFile(std::string_view path, std::string_view text) {
-    std::ofstream file(common::toPortablePath(path), std::ios::binary | std::ios::app);
+    std::ofstream file(resolve(path), std::ios::binary | std::ios::app);
     file.write(text.data(), static_cast<std::streamsize>(text.size()));
     return static_cast<bool>(file);
 }
 
 bool CSdlFileSystem::removeFile(std::string_view path) {
     std::error_code error;
-    return std::filesystem::remove(common::toPortablePath(path), error);
+    return std::filesystem::remove(resolve(path), error);
+}
+
+std::unique_ptr<IFile> CSdlFileSystem::openFile(std::string_view path, EFileMode mode) {
+    static constexpr std::array<const char *, 4> kModes = {"rb", "wb", "ab", "r+b"};
+    std::FILE *file = std::fopen(resolve(path).c_str(), kModes.at(static_cast<std::size_t>(mode)));
+    if (file == nullptr) {
+        return nullptr;
+    }
+    return std::make_unique<CSdlFile>(file);
+}
+
+std::optional<std::string> CSdlFileSystem::getFullPath(std::string_view path) {
+    std::error_code error;
+    const std::filesystem::path full = std::filesystem::absolute(resolve(path), error);
+    if (error) {
+        return std::nullopt;
+    }
+    return full.lexically_normal().string();
+}
+
+std::optional<SFileInfo> CSdlFileSystem::getFileInfo(std::string_view path) {
+    const std::filesystem::directory_entry entry(resolve(path));
+    std::error_code error;
+    if (!entry.exists(error)) {
+        return std::nullopt;
+    }
+    return describe(entry, entry.path().filename().string());
+}
+
+bool CSdlFileSystem::makeDirectory(std::string_view path) {
+    const std::string resolved = resolve(path);
+    std::error_code error;
+    std::filesystem::create_directories(resolved, error);
+    return std::filesystem::is_directory(resolved, error);
+}
+
+bool CSdlFileSystem::setModifiedTime(std::string_view path, std::time_t modified) {
+    std::error_code error;
+    std::filesystem::last_write_time(resolve(path),
+                                     std::chrono::clock_cast<std::chrono::file_clock>(
+                                         std::chrono::system_clock::from_time_t(modified)),
+                                     error);
+    return !error;
+}
+
+bool CSdlFileSystem::setReadOnly(std::string_view path, bool read_only) {
+    constexpr std::filesystem::perms kWrite = std::filesystem::perms::owner_write |
+                                              std::filesystem::perms::group_write |
+                                              std::filesystem::perms::others_write;
+    std::error_code error;
+    std::filesystem::permissions(resolve(path), kWrite,
+                                 read_only ? std::filesystem::perm_options::remove
+                                           : std::filesystem::perm_options::add,
+                                 error);
+    return !error;
 }
 
 } // namespace nocturne::platform::sdl

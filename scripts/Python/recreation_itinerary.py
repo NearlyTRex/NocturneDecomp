@@ -34,6 +34,31 @@ SOURCE = os.path.join(scaffold.ANNOTATIONS, "nocedit.exe", "pseudocode", "src")
 RECREATION = os.path.join(ROOT, "recreation")
 STARTUP = ["00507a60", "00507a50", "00508570"]
 INITIALIZE = STARTUP[0]
+# displayErrorAndQuit throws in the recreation, and the teardown it ran by hand is destructors,
+# so the walk doesn't follow its calls.
+THROWS = {"00506f10"}
+# Translation units ported as one step, because their halves only test together. A unit takes
+# its TUs whole, plus `extra` functions and less `exclude`, and goes in next to the step holding
+# `anchor`. An "after" unit claims what it reaches once the walk reaches the anchor; a "before"
+# unit claims it ahead of the whole walk, for a leaf everything else stands on.
+UNITS = [
+    # Lookups, the pods that answer them and the opens they lead to share one state; CDemonPod's
+    # load is what mounts them. The pods' checksum tools show dialogs and run on demand, so they
+    # come where the game reaches them.
+    {"label": "File system: `dosio`, pods",
+     "tus": {"engine/dosio.cpp", "engine/pod.cpp", "core/podmain.cpp"},
+     "extra": set(),
+     "exclude": {"0054f2e0", "0054f3a0", "0054f3e0", "0054f490", "005507f0", "00550230",
+                 "00550590", "00551000", "00551280"},
+     "anchor": "00543e40", "where": "before"},
+    # The device, voices and sample cache share one state, and samples load through the file
+    # system. CSound brings only its constructor and destructor; the rest of it plays game sounds.
+    {"label": "Sound system: `sndmain`, `CSound` lifetime, `readIniData`",
+     "tus": {"sound/sndmain.cpp", "core/inivar.cpp"},
+     "extra": {"005b2ce0", "005b2d60"},
+     "exclude": set(),
+     "anchor": "00401010", "where": "after"},
+]
 CALL = re.compile(r"FUN_([0-9a-f]{8})")
 DONE = re.compile(r"^// nocedit 0x([0-9a-f]{8})$", re.MULTILINE)
 SOURCE_SUFFIXES = (".c", ".cpp")
@@ -126,6 +151,8 @@ class Itinerary:
         return self.named[addr]
 
     def successors(self, addr):
+        if addr in THROWS:
+            return []
         f = self.functions[addr]
         out = set(f.get("calls", [])) | set(self.names_in_source(addr))
         for ref in f.get("data_refs", []):
@@ -172,12 +199,35 @@ class Itinerary:
         math = {a for a in self.in_scope
                 if scaffold.MATH_TYPE.match(self.functions[a].get("cls") or "")}
         self.record("Math value types", math, {})
-        for callee in self.names_in_source(INITIALIZE):
-            self.add_step([callee], self.label(callee))
-        for root in STARTUP:
-            self.add_step([root], self.label(root))
+        units = [(unit["label"],
+                  {a for a in self.in_scope
+                   if (self.functions[a]["tu"] in unit["tus"] or a in unit["extra"])
+                   and a not in unit["exclude"]},
+                  unit["anchor"], unit["where"])
+                 for unit in UNITS]
+        for unit in units:
+            self.reached |= unit[1]
+        placed = [(self.take_unit(label, addrs), anchor, 0)
+                  for label, addrs, anchor, where in units if where == "before"]
+        pending = [u for u in units if u[3] == "after"]
+        for roots in ([[c] for c in self.names_in_source(INITIALIZE)] + [[r] for r in STARTUP]):
+            self.add_step(roots, self.label(roots[0]))
+            for unit in [u for u in pending if u[2] in self.reached]:
+                pending.remove(unit)
+                placed.append((self.take_unit(unit[0], unit[1]), unit[2], 1))
         self.merge_small()
+        for step, anchor, offset in placed:
+            position = next(i + offset for i, s in enumerate(self.steps) if anchor in s.addrs)
+            self.steps.insert(position, step)
         self.add_unreached()
+
+    def take_unit(self, label, addrs):
+        """The unit and what it reaches that no earlier step holds, claimed as soon as its anchor
+        is, so the steps after it don't take its callees."""
+        self.reached -= addrs
+        reached, order = self.closure(sorted(addrs))
+        self.reached |= reached
+        return Step(label, reached & self.in_scope, order)
 
     def merge_small(self):
         """Joins runs of small startup steps, then folds any left alone into the step after."""

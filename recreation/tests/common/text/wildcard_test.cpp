@@ -64,5 +64,11 @@ TEST(Wildcard, EmptyPatternMatchesOnlyAnEmptyName) {
     EXPECT_TRUE(matchesWildcard("**", ""));
 }
 
+TEST(Wildcard, CaseSensitiveMatchingComparesExactly) {
+    EXPECT_TRUE(matchesWildcard("*.WAV", "DOOR.WAV", true));
+    EXPECT_FALSE(matchesWildcard("*.WAV", "door.wav", true));
+    EXPECT_TRUE(matchesWildcard("d?or*", "door.wav", true));
+}
+
 } // namespace
 } // namespace nocturne::common
