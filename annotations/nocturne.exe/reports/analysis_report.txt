@@ -6,11 +6,11 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 
 SUMMARY
 ----------------------------------------
-Total functions: 4922
+Total functions: 4923
 Clean functions: 2534 (51.5%)
-Functions with suspects: 2388 (48.5%)
+Functions with suspects: 2389 (48.5%)
 
-Total suspect patterns: 20964
+Total suspect patterns: 20970
 Average suspects per function: 4.26
 
 Virtual files: 203 total, 10 at 100%, 12 at 90%+
@@ -22,19 +22,19 @@ Average complexity score: 91.4
 
 COMPILATION STATUS
 ----------------------------------------
-Functions compiled: 4922
+Functions compiled: 4923
 Successful: 0 (0.0%)
-Failed: 4922
+Failed: 4923
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  undefined_data            4062
+  undefined_data            4064
   pointer_cast              3555
   pointer_truncation        2889
   unrolled_memcpy           1476
-  warning_overlapping_globals 864
+  warning_overlapping_globals 865
   stack_param               766
-  unknown_field             721
+  unknown_field             723
   concat_reconstruction     661
   shadow_pointer_walk       544
   unrolled_strcpy           485
@@ -48,7 +48,7 @@ SUSPECT PATTERN BREAKDOWN
   unrolled_strlen           238
   unrolled_memset           235
   static_shift_too_many_bits 200
-  unresolved_funcptr        171
+  unresolved_funcptr        172
   warning_type_propagation  143
   suspect_float             128
   sub84_truncation          98
@@ -201,7 +201,7 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
 
-  undefined_data (687 functions):
+  undefined_data (688 functions):
     00403f50: engine_2d.c_clearInputAndWait_FUN_00403f50
     00404120: engine_2d.c_mapFrameBuffer_FUN_00404120
     00404360: engine_2d.c_unmapFrameBuffer_FUN_00404360
@@ -212,7 +212,7 @@ FUNCTIONS BY SUSPECT TYPE
     00404680: engine_3d.c_lookupLitColor_FUN_00404680
     00404730: engine_3d.c_processVertexLighting_FUN_00404730
     00404790: engine_3d.c_processTextureCoordinates_FUN_00404790
-    ... and 677 more
+    ... and 678 more
 
   pointer_cast (725 functions):
     00401010: engine_2d.c_initGraphicsSystem_FUN_00401010
@@ -253,7 +253,7 @@ FUNCTIONS BY SUSPECT TYPE
     0040a540: core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_0040a540
     ... and 527 more
 
-  warning_overlapping_globals (864 functions):
+  warning_overlapping_globals (865 functions):
     00403760: engine_2d.c_resetGraphicsSystem_FUN_00403760
     00403770: engine_2d.c_reinitializeGraphicsSystem_FUN_00403770
     00404480: engine_3d.c_initTextureCache_FUN_00404480
@@ -264,7 +264,7 @@ FUNCTIONS BY SUSPECT TYPE
     00405b40: engine_3d.c_renderSortedPolygonList_FUN_00405b40
     00405c90: engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00405c90
     00406230: engine_3d.c_renderPolygonLitAlphaPlaneMaskedOp26_FUN_00406230
-    ... and 854 more
+    ... and 855 more
 
   stack_param (102 functions):
     004013d0: engine_2d.c_drawAntialiasedChar_FUN_004013d0
@@ -279,7 +279,7 @@ FUNCTIONS BY SUSPECT TYPE
     00429220: core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_00429220
     ... and 92 more
 
-  unknown_field (124 functions):
+  unknown_field (125 functions):
     00403fb0: engine_2d.c_getInputWithPrompt_FUN_00403fb0
     00405870: engine_3d.c_drawLineStrip2D_FUN_00405870
     00405900: engine_3d.c_drawLineStrip3D_FUN_00405900
@@ -290,7 +290,7 @@ FUNCTIONS BY SUSPECT TYPE
     004194b0: core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_004194b0
     0041ad10: core_box.cpp_CBox_processPhysics_FUN_0041ad10
     0041e5e0: core_boxactor.cpp_CBoxActor_process_FUN_0041e5e0
-    ... and 114 more
+    ... and 115 more
 
   concat_reconstruction (49 functions):
     00404680: engine_3d.c_lookupLitColor_FUN_00404680
@@ -439,7 +439,7 @@ FUNCTIONS BY SUSPECT TYPE
 
   static_shift_too_many_bits (0 functions):
 
-  unresolved_funcptr (95 functions):
+  unresolved_funcptr (96 functions):
     004060b0: engine_3d.c_renderPolygonAdaptiveDepthOp25_FUN_004060b0
     00408e80: engine_3d.c_dispatchMRGLBlockChain_FUN_00408e80
     00410490: core_baron.cpp_CBaron_process_FUN_00410490
@@ -450,7 +450,7 @@ FUNCTIONS BY SUSPECT TYPE
     00455640: core_door.cpp_CDoor_process_FUN_00455640
     004567a0: engine_dosio.cpp_findFile_FUN_004567a0
     00461db0: engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_00461db0
-    ... and 85 more
+    ... and 86 more
 
   warning_type_propagation (143 functions):
     0040b300: core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040b300

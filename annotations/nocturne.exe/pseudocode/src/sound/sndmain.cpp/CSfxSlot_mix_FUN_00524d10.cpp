@@ -109,7 +109,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_00524d10(CSfxSlot *this_ptr,SMix
     local_68 = this_ptr->channel_volumes;
     while (((iVar7 = mix_buffer.num_output_samples, this_ptr->playback_state != 0 &&
             (pCVar4 = this_ptr->sample, pCVar4 != (CSfxSample *)0x0)) &&
-           (0.0 <= (this_ptr->options).trigger_time))) {
+           (0.0 <= (this_ptr->options).playback_position))) {
       if (mix_buffer.num_output_samples < 1) goto LAB_00524e3c;
       dVar11 = (double)(((float)(pCVar4->sample_info).sample_rate /
                         (float)mix_buffer.output_sample_rate) * this_ptr->effective_frequency);
@@ -123,7 +123,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_00524d10(CSfxSlot *this_ptr,SMix
       if (0 < (pCVar4->sample_info).sample_count) {
         dVar11 = floor
                            (((double)(pCVar4->sample_info).sample_count -
-                            (this_ptr->options).trigger_time) / dVar11);
+                            (this_ptr->options).playback_position) / dVar11);
         local_74 = SUB84(__BITCAST_UINT64(dVar11),0);
         pSStack_70 = (SStereoGains *)((ulonglong)dVar11 >> 0x20);
         dVar11 = round(dVar11);
@@ -313,13 +313,13 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_00524d10(CSfxSlot *this_ptr,SMix
       }
       sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_00525870(this_ptr,dVar11);
       if (local_50 != 0) {
-        if (this_ptr->sample->loop_marker_count == 0) {
-          *(uint *)((int)&(this_ptr->options).trigger_time + 4) = 0xbff00000;
-          *(uint *)&(this_ptr->options).trigger_time = 0;
+        if (this_ptr->sample->loops == 0) {
+          *(uint *)((int)&(this_ptr->options).playback_position + 4) = 0xbff00000;
+          *(uint *)&(this_ptr->options).playback_position = 0;
         }
         else {
-          *(uint *)&(this_ptr->options).trigger_time = 0;
-          *(uint *)((int)&(this_ptr->options).trigger_time + 4) = 0;
+          *(uint *)&(this_ptr->options).playback_position = 0;
+          *(uint *)((int)&(this_ptr->options).playback_position + 4) = 0;
         }
       }
       mix_buffer.num_output_samples = mix_buffer.num_output_samples - iVar7;

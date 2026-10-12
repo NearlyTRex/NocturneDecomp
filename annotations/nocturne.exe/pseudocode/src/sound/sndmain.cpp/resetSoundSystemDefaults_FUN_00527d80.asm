@@ -7,11 +7,9 @@
 ; XREF[1]:
 ;   core_sound.cpp_CSound_ctor_FUN_0052dd00 at 0052dd15
 ;
-; Referenced Globals:
-;   undefined4 SUB_00527830
-;
 ; Called Functions:
 ;   sound_sndmain.cpp_enableSfxChannel_FUN_00527410
+;   sound_sndmain.cpp_set3DListenerDistanceFactor_FUN_00527830
 ;   sound_sndmain.cpp_set3DListenerOrient_FUN_00527690
 ;   sound_sndmain.cpp_set3DListenerPos_FUN_00527610
 ;   sound_sndmain.cpp_set3DListenerVelocity_FUN_005277b0
@@ -41,8 +39,8 @@ section .text
         ;   XREF to: 00527d83 (CONDITIONAL_JUMP)  ; LAB_00527d83
     PUSH 0x3ff00000                     ; 00527da2
     PUSH 0x0                            ; 00527da7
-    CALL 0x00527830                     ; 00527da9
-        ;   XREF to: 00527830 (UNCONDITIONAL_CALL)  ; SUB_00527830
+    CALL sound_sndmain.cpp_set3DListenerDistanceFactor_FUN_00527830 ; 00527da9
+        ;   XREF to: 00527830 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_set3DListenerDistanceFactor_FUN_00527830(double distance_in_feet)
     ADD ESP,0x8                         ; 00527dae
     PUSH 0x0                            ; 00527db1
     PUSH 0x0                            ; 00527db3

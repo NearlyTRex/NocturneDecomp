@@ -39,27 +39,27 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_00525870(CSfxSlot 
                *(uint *)((int)&this_ptr->prev_hardware_playback_pos + 4),(uint)local_28,
                local_28._4_4_,this_ptr->sample->streaming_buffer_size,this_ptr->sample);
   }
-  if (((this_ptr->options).trigger_time != this_ptr->prev_hardware_playback_pos) ||
-     (hardware_playback_pos < (this_ptr->options).trigger_time)) {
-    (this_ptr->options).trigger_time = (this_ptr->options).trigger_time + local_28;
+  if (((this_ptr->options).playback_position != this_ptr->prev_hardware_playback_pos) ||
+     (hardware_playback_pos < (this_ptr->options).playback_position)) {
+    (this_ptr->options).playback_position = (this_ptr->options).playback_position + local_28;
   }
   else {
-    (this_ptr->options).trigger_time = hardware_playback_pos;
+    (this_ptr->options).playback_position = hardware_playback_pos;
   }
-  if ((this_ptr->options).trigger_time < 0.0) {
-    *(uint *)&(this_ptr->options).trigger_time = 0;
-    *(uint *)((int)&(this_ptr->options).trigger_time + 4) = 0;
+  if ((this_ptr->options).playback_position < 0.0) {
+    *(uint *)&(this_ptr->options).playback_position = 0;
+    *(uint *)((int)&(this_ptr->options).playback_position + 4) = 0;
   }
   pCVar1 = this_ptr->sample;
   if ((-1 < (pCVar1->sample_info).sample_count) &&
-     (dVar2 = (double)(pCVar1->sample_info).sample_count, dVar2 <= (this_ptr->options).trigger_time)
-     ) {
-    if (pCVar1->loop_marker_count == 0) {
-      (this_ptr->options).trigger_time = dVar2;
+     (dVar2 = (double)(pCVar1->sample_info).sample_count,
+     dVar2 <= (this_ptr->options).playback_position)) {
+    if (pCVar1->loops == 0) {
+      (this_ptr->options).playback_position = dVar2;
     }
     else {
-      dVar3 = floor((this_ptr->options).trigger_time / dVar2);
-      (this_ptr->options).trigger_time = (this_ptr->options).trigger_time - dVar3 * dVar2;
+      dVar3 = floor((this_ptr->options).playback_position / dVar2);
+      (this_ptr->options).playback_position = (this_ptr->options).playback_position - dVar3 * dVar2;
     }
   }
   this_ptr->prev_hardware_playback_pos = hardware_playback_pos;

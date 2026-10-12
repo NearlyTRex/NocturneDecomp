@@ -12,8 +12,8 @@
 ;   TerminatedCString s_sfx_slot_d_s_pos_7_1f_7_00593712
 ;   undefined4 g_CSfxSlot_ARRAY_02dbd374[0].sample
 ;   undefined4 g_CSfxSlot_ARRAY_02dbd374[1].options.channel_index
-;   undefined4 g_CSfxSlot_ARRAY_02dbd374[1].options.trigger_time
-;   undefined4 g_CSfxSlot_ARRAY_02dbd374[1].options.trigger_time+4
+;   undefined4 g_CSfxSlot_ARRAY_02dbd374[1].options.playback_position
+;   undefined4 g_CSfxSlot_ARRAY_02dbd374[1].options.playback_position+4
 ;   undefined4 g_CSfxSlot_ARRAY_02dbd374[1].playback_state
 ;   undefined4 g_CSfxSlot_ARRAY_02dbd374[1].sample
 ;
@@ -67,9 +67,9 @@ section .text
     SUB ESP,0x8                         ; 005275b5
     FILD dword ptr [EAX + 0x110]        ; 005275b8
     FSTP double ptr [ESP]               ; 005275be
-    MOV EBP,dword ptr [EBX + 0x64]      ; 005275c1 | g_CSfxSlot_ARRAY_02dbd374[1].options.trigger_time+4
+    MOV EBP,dword ptr [EBX + 0x64]      ; 005275c1 | g_CSfxSlot_ARRAY_02dbd374[1].options.playback_position+4
     PUSH EBP                            ; 005275c4
-    MOV EDX,dword ptr [EBX + 0x60]      ; 005275c5 | g_CSfxSlot_ARRAY_02dbd374[1].options.trigger_time
+    MOV EDX,dword ptr [EBX + 0x60]      ; 005275c5 | g_CSfxSlot_ARRAY_02dbd374[1].options.playback_position
     PUSH EDX                            ; 005275c8
     PUSH EAX                            ; 005275c9
     PUSH ESI                            ; 005275ca

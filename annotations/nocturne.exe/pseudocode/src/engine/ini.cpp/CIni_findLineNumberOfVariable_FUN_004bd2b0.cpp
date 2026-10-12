@@ -2,11 +2,11 @@
 // Address: 004bd2b0
 // Address Range: [[004bd2b0, 004bd47e]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004bd2b0(CIni *this_ptr,char *section,char *key,char *value,char *filename)
+// Signature: int __cdecl engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004bd2b0(CIni *this_ptr,char *section,char *key,char *filename,char *value)
 
 #include "nocturne.h"
 
-int __cdecl engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004bd2b0(CIni *this_ptr,char *section,char *key,char *value,char *filename)
+int __cdecl engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004bd2b0(CIni *this_ptr,char *section,char *key,char *filename,char *value)
 
 {
   byte bVar1;
@@ -23,7 +23,7 @@ int __cdecl engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004bd2b0(CIni *this
   iVar6 = 0;
   bVar2 = false;
   this_ptr->initialized = 1;
-  stream = _fopen(value,"rt");
+  stream = _fopen(filename,"rt");
   if (stream == (_FILE *)0x0) {
     g_CurrentFilename = "..\\engine\\ini.cpp";
     g_CurrentLineNumber = 245;
@@ -81,7 +81,7 @@ LAB_004bd385:
   iVar4 = _strcmp(local_214,key);
   if (iVar4 == 0) {
     bVar2 = true;
-    iVar4 = _strcmp(local_14 + 1,filename);
+    iVar4 = _strcmp(local_14 + 1,value);
     if (iVar4 == 0) {
       this_ptr->initialized = 0;
     }

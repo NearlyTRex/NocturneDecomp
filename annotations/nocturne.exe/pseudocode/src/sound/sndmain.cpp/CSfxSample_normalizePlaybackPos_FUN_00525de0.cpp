@@ -13,7 +13,7 @@ double __cdecl sound_sndmain_cpp_CSfxSample_normalizePlaybackPos_FUN_00525de0(CS
   
   position = sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_00525c70
                        (&this_ptr->sample_info,position,input_type,2);
-  if (this_ptr->loop_marker_count == 0) {
+  if (this_ptr->loops == 0) {
     if (position < 0.0) {
       position = 0.0;
     }

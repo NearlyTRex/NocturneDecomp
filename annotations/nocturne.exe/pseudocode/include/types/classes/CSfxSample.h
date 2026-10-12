@@ -14,7 +14,7 @@ struct _FILE;
 typedef struct CSfxSample {
     CSampleInfo sample_info; // 0x0
     short* sample_data; // 0x120
-    int loop_marker_count; // 0x124
+    int loops; // 0x124
     int taken; // 0x128
     int ref_count; // 0x12c
     int buffer_id; // 0x130

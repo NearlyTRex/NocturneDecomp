@@ -64,7 +64,7 @@ int __cdecl sound_sndmain_cpp_CSfxSample_pollStream_FUN_005a6730(CSfxSample *thi
       }
       iVar2 = sound_sndmain_cpp_CSfxSample_getLoopMode_FUN_005a87d0(this_ptr);
       if (((iVar2 == 0) && (-1 < (this_ptr->sample_info).sample_count)) &&
-         ((double)(this_ptr->sample_info).sample_count <= g_SfxSlots[iVar1].options.trigger_time))
+         ((double)(this_ptr->sample_info).sample_count <= g_SfxSlots[iVar1].options.playback_position))
       goto LAB_005a69e2;
     }
     local_30 = (int)ROUND(ROUND((float)(this_ptr->sample_info).sample_rate * time_window));

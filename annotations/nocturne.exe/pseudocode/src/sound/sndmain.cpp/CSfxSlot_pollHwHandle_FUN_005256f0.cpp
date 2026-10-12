@@ -28,7 +28,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_pollHwHandle_FUN_005256f0(CSfxSlot *this
   }
   iVar1 = (**(code **)(*_DAT_02dc8318 + 0x50))(_DAT_02dc8318,this_ptr);
   if (iVar1 == 0) {
-    if (this_ptr->sample->loop_marker_count != 0) {
+    if (this_ptr->sample->loops != 0) {
       sound_sndmain_cpp_logSoundError_FUN_00529980
                 ("Killing looped sfx %s, which died??\n",this_ptr->sample);
     }

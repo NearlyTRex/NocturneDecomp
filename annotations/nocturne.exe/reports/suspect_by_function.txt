@@ -4,10 +4,10 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 
 SUMMARY
 --------------------------------------------------
-Total functions analyzed: 4922
+Total functions analyzed: 4923
 Clean: 2506 (50.9%)
-With suspects: 2416
-Total suspects: 20964
+With suspects: 2417
+Total suspects: 20970
 
 ====================================================================================================
 cockpit_ckptutil.c_applyActPalette_FUN_0042d370 (1 suspect)
@@ -31301,8 +31301,8 @@ sound_sndmain.cpp_CSfxOptions_reset_FUN_00525eb0 (5 suspects)
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
   Line 11 [pointer_cast]: *(uint *)((int)&(this_ptr->position).z + 4) = 0;
   Line 15 [pointer_cast]: *(uint *)((int)&(this_ptr->velocity).z + 4) = 0;
-  Line 28 [pointer_truncation]: *(uint *)((int)&this_ptr->trigger_time + 4) = 0;
-  Line 28 [pointer_cast]: *(uint *)((int)&this_ptr->trigger_time + 4) = 0;
+  Line 28 [pointer_truncation]: *(uint *)((int)&this_ptr->playback_position + 4) = 0;
+  Line 28 [pointer_cast]: *(uint *)((int)&this_ptr->playback_position + 4) = 0;
 
 ====================================================================================================
 sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_00523910 (2 suspects)
@@ -31509,8 +31509,8 @@ sound_sndmain.cpp_CSfxSlot_mix_FUN_00524d10 (58 suspects)
   Line 291 [bitcast_double_pair]: dVar11 = __BITCAST_DOUBLE(CONCAT44(uVar13,uVar12)) + __BITCAST_DOUBLE(CONCAT44(local_b8,uStack_bc));
   Line 303 [bitcast_double_pair]: dVar11 = __BITCAST_DOUBLE(CONCAT44(uStack_bc,local_c0));
   Line 305 [bitcast_double_pair]: dVar11 = __BITCAST_DOUBLE(CONCAT44(uStack_bc,local_c0)) - resample_delta;
-  Line 310 [pointer_cast]: *(uint *)((int)&(this_ptr->options).trigger_time + 4) = 0xbff00000;
-  Line 315 [pointer_cast]: *(uint *)((int)&(this_ptr->options).trigger_time + 4) = 0;
+  Line 310 [pointer_cast]: *(uint *)((int)&(this_ptr->options).playback_position + 4) = 0xbff00000;
+  Line 315 [pointer_cast]: *(uint *)((int)&(this_ptr->options).playback_position + 4) = 0;
   Line 323 [pointer_cast]: piVar2 = (int *)((int)mix_buffer.channel_buffers + iVar6);
   Line 336 [pointer_cast]: if (*(int *)((int)aiStack_a4 + local_4c) != 0) {
   Line 340 [pointer_cast]: local_30 = (local_58 + *(int *)((int)this_ptr->channel_target_buffer_offsets + local_4c))
@@ -31541,7 +31541,7 @@ sound_sndmain.cpp_CSfxSlot_seek_FUN_00525a80 (4 suspects)
 ====================================================================================================
   Line 27 [pointer_truncation]: *(uint *)((int)&this_ptr->prev_hardware_playback_pos + 4) =
   Line 27 [pointer_cast]: *(uint *)((int)&this_ptr->prev_hardware_playback_pos + 4) =
-  Line 28 [pointer_cast]: *(uint *)((int)&(this_ptr->options).trigger_time + 4);
+  Line 28 [pointer_cast]: *(uint *)((int)&(this_ptr->options).playback_position + 4);
   Line 31 [raw_address_constant]: dest_buffer_offset = 0x525b3c;
 
 ====================================================================================================
@@ -31580,7 +31580,7 @@ sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_00525870 (6 suspects)
   Line 32 [pointer_truncation]: *(uint *)((int)&this_ptr->prev_hardware_playback_pos + 4),(uint)local_28,
   Line 32 [pointer_cast]: *(uint *)((int)&this_ptr->prev_hardware_playback_pos + 4),(uint)local_28,
   Line 33 [unknown_field]: local_28._4_4_,this_ptr->sample->streaming_buffer_size,this_ptr->sample);
-  Line 44 [pointer_cast]: *(uint *)((int)&(this_ptr->options).trigger_time + 4) = 0;
+  Line 44 [pointer_cast]: *(uint *)((int)&(this_ptr->options).playback_position + 4) = 0;
 
 ====================================================================================================
 sound_sndmain.cpp_allocMixBuffers_FUN_00522f10 (9 suspects)
@@ -31741,7 +31741,7 @@ sound_sndmain.cpp_findFreeSfxSample_FUN_00521c50 (1 suspect)
 sound_sndmain.cpp_formatActiveSounds_FUN_00527570 (1 suspect)
   File: sound/sndmain.cpp
 ====================================================================================================
-  Line 17 [pointer_cast]: *(uint *)((int)&(this_ptr->options).trigger_time + 4),
+  Line 17 [pointer_cast]: *(uint *)((int)&(this_ptr->options).playback_position + 4),
 
 ====================================================================================================
 sound_sndmain.cpp_formatSfxOptionsToString_FUN_00526410 (6 suspects)
@@ -32207,6 +32207,17 @@ sound_sndmain.cpp_selectSoundDevice_FUN_00528410 (3 suspects)
   Line 15 [undefined_data]: device_id = DAT_005bea74;
   Line 19 [undefined_data]: DAT_005bea74 = device_id;
   Line 22 [undefined_data]: DAT_005bea74 = sound_sndmain_cpp_findBestSoundDevice_FUN_00528320();
+
+====================================================================================================
+sound_sndmain.cpp_set3DListenerDistanceFactor_FUN_00527830 (6 suspects)
+  File: sound/sndmain.cpp
+====================================================================================================
+  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+  Line 8 [unknown_field]: DAT_005bea80 = distance_in_feet._0_4_;
+  Line 8 [undefined_data]: DAT_005bea80 = distance_in_feet._0_4_;
+  Line 9 [unknown_field]: DAT_005bea84 = distance_in_feet._4_4_;
+  Line 9 [undefined_data]: DAT_005bea84 = distance_in_feet._4_4_;
+  Line 13 [unresolved_funcptr]: (**(code **)(*_DAT_02dc8318 + 0x24))(_DAT_02dc8318,distance_in_feet);
 
 ====================================================================================================
 sound_sndmain.cpp_set3DListenerOrientRight_FUN_00528630 (2 suspects)

@@ -62,9 +62,9 @@ int __cdecl sound_sndmain_cpp_CSfxSample_pollStream_FUN_00523ea0(CSfxSample *thi
         sound_sndmain_cpp_logSoundError_FUN_00529980("SfxSample::pollStream - error querrying hw playback position\n");
         goto LAB_005240fa;
       }
-      if (((this_ptr->loop_marker_count == 0) && (-1 < (this_ptr->sample_info).sample_count)) &&
+      if (((this_ptr->loops == 0) && (-1 < (this_ptr->sample_info).sample_count)) &&
          ((double)(this_ptr->sample_info).sample_count <=
-          g_CSfxSlot_ARRAY_02dbd374[iVar14].options.trigger_time)) goto LAB_005240fa;
+          g_CSfxSlot_ARRAY_02dbd374[iVar14].options.playback_position)) goto LAB_005240fa;
     }
     iVar14 = 0x523f55;
     round
@@ -120,7 +120,7 @@ int __cdecl sound_sndmain_cpp_CSfxSample_pollStream_FUN_00523ea0(CSfxSample *thi
           }
           else {
             this_ptr_00 = local_30->sample;
-            if ((this_ptr_00->loop_marker_count == 0) ||
+            if ((this_ptr_00->loops == 0) ||
                (this_ptr_00->streaming_buffer_size == (this_ptr_00->sample_info).sample_count)) {
               if (this_ptr->buffer_id == 0) {
                 return 1;

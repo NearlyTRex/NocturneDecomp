@@ -49,7 +49,7 @@ void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_00521e10(CSfxSampl
   fVar1 = 20.0f * fVar4;
   fVar5 = g_FLOAT_02dbd370 * fVar4;
   fVar4 = 10000.0f * fVar4;
-  this_ptr->loop_marker_count = 0;
+  this_ptr->loops = 0;
   (this_ptr->sample_info).reference_distance = fVar1;
   (this_ptr->sample_info).reference_volume_distance = fVar5;
   (this_ptr->sample_info).max_distance = fVar4;
@@ -58,7 +58,7 @@ void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_00521e10(CSfxSampl
   makepath(local_23c,(char *)0x0,(char *)0x0,local_138,"klp");
   iVar6 = engine_dosio_cpp_getFileSize_FUN_004568c0("sound",local_23c);
   if (0 < iVar6) {
-    this_ptr->loop_marker_count = 1;
+    this_ptr->loops = 1;
   }
   makepath(local_340,(char *)0x0,(char *)0x0,local_138,"sfx");
   iVar6 = engine_dosio_cpp_getFileSize_FUN_004568c0("sound",local_340);
@@ -206,7 +206,7 @@ joined_r0x00521ffd:
               else {
                 iVar6 = _stricmp(local_46c,"loop");
                 if (iVar6 == 0) {
-                  this_ptr->loop_marker_count = 1;
+                  this_ptr->loops = 1;
                 }
                 else {
                   g_CurrentFilename = "..\\sound\\sndmain.cpp";

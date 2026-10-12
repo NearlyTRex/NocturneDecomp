@@ -43,27 +43,27 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170(CSfxSlot 
                this_ptr->sample->streaming_buffer_size,
                (this_ptr->sample->sample_info).name);
   }
-  if (((this_ptr->options).trigger_time != this_ptr->prev_hardware_playback_pos) ||
-     (hardware_playback_pos < (this_ptr->options).trigger_time)) {
-    (this_ptr->options).trigger_time = (this_ptr->options).trigger_time + local_28;
+  if (((this_ptr->options).playback_position != this_ptr->prev_hardware_playback_pos) ||
+     (hardware_playback_pos < (this_ptr->options).playback_position)) {
+    (this_ptr->options).playback_position = (this_ptr->options).playback_position + local_28;
   }
   else {
-    (this_ptr->options).trigger_time = hardware_playback_pos;
+    (this_ptr->options).playback_position = hardware_playback_pos;
   }
-  if ((this_ptr->options).trigger_time < 0.0) {
-    (this_ptr->options).trigger_time = 0.0;
+  if ((this_ptr->options).playback_position < 0.0) {
+    (this_ptr->options).playback_position = 0.0;
   }
   this_ptr_00 = this_ptr->sample;
   if ((-1 < (this_ptr_00->sample_info).sample_count) &&
-     ((double)(this_ptr_00->sample_info).sample_count <= (this_ptr->options).trigger_time)) {
+     ((double)(this_ptr_00->sample_info).sample_count <= (this_ptr->options).playback_position)) {
     iVar2 = sound_sndmain_cpp_CSfxSample_getLoopMode_FUN_005a87d0(this_ptr_00);
     if (iVar2 == 0) {
-      (this_ptr->options).trigger_time = (double)(this_ptr->sample->sample_info).sample_count;
+      (this_ptr->options).playback_position = (double)(this_ptr->sample->sample_info).sample_count;
     }
     else {
       dVar1 = (double)(this_ptr->sample->sample_info).sample_count;
-      dVar3 = floor((this_ptr->options).trigger_time / dVar1);
-      (this_ptr->options).trigger_time = (this_ptr->options).trigger_time - dVar3 * dVar1;
+      dVar3 = floor((this_ptr->options).playback_position / dVar1);
+      (this_ptr->options).playback_position = (this_ptr->options).playback_position - dVar3 * dVar1;
     }
   }
   this_ptr->prev_hardware_playback_pos = hardware_playback_pos;

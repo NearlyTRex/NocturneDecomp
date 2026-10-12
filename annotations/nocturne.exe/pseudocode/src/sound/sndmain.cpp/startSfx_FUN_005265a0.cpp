@@ -222,7 +222,7 @@ joined_r0x00526c01:
             pCVar11->streaming_buffer_size = (int)ROUND(dVar19);
             pCVar11->stream_read_position = 0;
             pCVar11->stream_write_position = 0;
-            pCVar11->streaming_slot_index = local_8c.trigger_id;
+            pCVar11->streaming_slot_index = local_8c.playback_position_type;
             iVar3 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_00523910(pCVar11);
             pCVar11 = local_18;
             goto joined_r0x00526c01;

@@ -419,6 +419,10 @@ void __cdecl set3DListenerOrient(double front_x,double front_y,double front_z,do
 // Address: 005277b0
 void __cdecl set3DListenerVelocity(double x_velocity,double y_velocity,double z_velocity);
 
+// Original: sound_sndmain.cpp_set3DListenerDistanceFactor_FUN_00527830
+// Address: 00527830
+void __cdecl set3DListenerDistanceFactor(double distance_in_feet);
+
 // Original: sound_sndmain.cpp_isWithinListenerRadius_FUN_00527880
 // Address: 00527880
 int __cdecl isWithinListenerRadius(double pos_x,double pos_y,double pos_z,double radius);

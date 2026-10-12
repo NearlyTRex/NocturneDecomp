@@ -63834,14 +63834,28 @@
    "sig_detail": "callers pop 24 == 24 stack bytes"
   },
   {
+   "a": "005aa240",
+   "b": "00527830",
+   "name": "sound_sndmain.cpp_set3DListenerDistanceFactor_FUN_005aa240",
+   "confidence": 0.99,
+   "ambiguous": false,
+   "evidence": [
+    "shape_strict:aa056655"
+   ],
+   "shape_agreement": "identical",
+   "conv": "__cdecl",
+   "ret": "void",
+   "sig_verdict": "agree",
+   "sig_detail": "callers pop 8 == 8 stack bytes"
+  },
+  {
    "a": "005aa290",
    "b": "00527880",
    "name": "sound_sndmain.cpp_isWithinListenerRadius_FUN_005aa290",
-   "confidence": 0.85,
+   "confidence": 0.78,
    "ambiguous": false,
    "evidence": [
-    "callsite:via 0041bf90",
-    "callsite:via 004a8070"
+    "order_multi:sound_sndmain.cpp between 005aa240 and 005aa340"
    ],
    "shape_agreement": "similar_size",
    "conv": "__cdecl",
@@ -63853,11 +63867,10 @@
    "a": "005aa2f0",
    "b": "005278e0",
    "name": "sound_sndmain.cpp_killSfxByName_FUN_005aa2f0",
-   "confidence": 0.925,
+   "confidence": 0.78,
    "ambiguous": false,
    "evidence": [
-    "callsite:via 005aa360",
-    "caller:calls 005a7e60"
+    "order_multi:sound_sndmain.cpp between 005aa240 and 005aa340"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -63961,10 +63974,11 @@
    "a": "005aae00",
    "b": "00527d80",
    "name": "sound_sndmain.cpp_resetSoundSystemDefaults_FUN_005aae00",
-   "confidence": 0.85,
+   "confidence": 0.925,
    "ambiguous": false,
    "evidence": [
-    "callsite:via 005b2ce0"
+    "callsite:via 005b2ce0",
+    "caller:calls 005aa240"
    ],
    "shape_agreement": "similar_size",
    "conv": "__cdecl",
@@ -85891,11 +85905,6 @@
    "name": "sound_sndmain.cpp_startSfxTrackedDoublePosition_FUN_005a9620"
   },
   {
-   "a": "005aa240",
-   "tu": "sound_sndmain.cpp",
-   "name": "sound_sndmain.cpp_set3DListenerDistanceFactor_FUN_005aa240"
-  },
-  {
    "a": "005aa7b0",
    "tu": "sound_sndmain.cpp",
    "name": "sound_sndmain.cpp_convert8BitAudioSignedness_FUN_005aa7b0"
@@ -87716,7 +87725,6 @@
   "005a9580",
   "005a95e0",
   "005a9620",
-  "005aa240",
   "005aa7b0",
   "005aa7d0",
   "005aa7f0",
