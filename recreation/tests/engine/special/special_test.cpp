@@ -30,6 +30,10 @@ TEST(CSpecial, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CSpecial::setUseDirect3D), void (CSpecial::*)(bool)>);
     static_assert(
         std::is_same_v<decltype(&CSpecial::getUseExternalRenderer), bool (CSpecial::*)() const>);
+    static_assert(
+        std::is_same_v<decltype(&CSpecial::getCurrentGraphicsBoard), int (CSpecial::*)() const>);
+    static_assert(
+        std::is_same_v<decltype(&CSpecial::setCurrentGraphicsBoard), void (CSpecial::*)(int)>);
     static_assert(std::is_same_v<decltype(&CSpecial::clearScreen), void (CSpecial::*)()>);
     static_assert(std::is_same_v<decltype(&CSpecial::clearZBufferNative), void (CSpecial::*)()>);
     static_assert(std::is_same_v<decltype(&CSpecial::renderMMXPerspectiveScanline32),
@@ -143,6 +147,12 @@ protected:
 TEST_F(CSpecialTest, StartsWithTheRendererOff) {
     EXPECT_FALSE(special_.getUseDirect3D());
     EXPECT_FALSE(special_.getUseExternalRenderer());
+}
+
+TEST_F(CSpecialTest, KeepsTheGraphicsBoardTheOptionsPicked) {
+    EXPECT_EQ(special_.getCurrentGraphicsBoard(), 0);
+    special_.setCurrentGraphicsBoard(2);
+    EXPECT_EQ(special_.getCurrentGraphicsBoard(), 2);
 }
 
 // The original cleared in 32-byte strides, past a 4-byte row's end.

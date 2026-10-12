@@ -10,6 +10,7 @@ public:
     [[nodiscard]] std::vector<SFileInfo> findFiles(std::string_view pattern) override;
     [[nodiscard]] std::optional<std::string> readFile(std::string_view path) override;
     bool appendFile(std::string_view path, std::string_view text) override;
+    bool writeFile(std::string_view path, std::string_view text) override;
     bool removeFile(std::string_view path) override;
     [[nodiscard]] std::unique_ptr<IFile> openFile(std::string_view path, EFileMode mode) override;
     [[nodiscard]] std::optional<std::string> getFullPath(std::string_view path) override;

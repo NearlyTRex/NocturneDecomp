@@ -32,6 +32,17 @@ std::string_view pathLeaf(std::string_view path) {
     return separator == std::string_view::npos ? path : path.substr(separator + 1);
 }
 
+std::string_view pathExtension(std::string_view path) {
+    const std::string_view leaf = pathLeaf(path);
+    const std::size_t dot = leaf.rfind('.');
+    return dot == std::string_view::npos ? std::string_view() : leaf.substr(dot);
+}
+
+std::string_view pathStem(std::string_view path) {
+    const std::string_view leaf = pathLeaf(path);
+    return leaf.substr(0, leaf.size() - pathExtension(leaf).size());
+}
+
 std::string resolvePathIgnoringCase(std::string_view path, const SPathLookup &lookup) {
     std::string portable = toPortablePath(path);
     if (portable.empty() || lookup.exists(portable)) {

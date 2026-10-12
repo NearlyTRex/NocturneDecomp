@@ -2,6 +2,7 @@
 #include "engine/2d/2d.h"
 #include "engine/special/special.h"
 #include "tests/mocks/engine/podfixture.h"
+#include "tests/mocks/platform/mockclock.h"
 #include "tests/mocks/platform/mockdisplay.h"
 #include "tests/mocks/platform/mockrenderer.h"
 #include "tests/mocks/platform/mockwindow.h"
@@ -75,7 +76,8 @@ protected:
     NiceMock<platform::MockDisplay> display_;
     NiceMock<platform::MockRenderer> renderer_;
     NiceMock<platform::MockWindow> window_;
-    CWinRun winrun_{window_};
+    NiceMock<platform::MockClock> clock_;
+    CWinRun winrun_{window_, clock_};
     CWddVMem wddvmem_{display_, renderer_, winrun_, special_, two_d_};
     engine::C2d two_d_{dosio_, wddvmem_};
     engine::CSpecial special_{renderer_, wddvmem_, two_d_};

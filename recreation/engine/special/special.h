@@ -20,6 +20,9 @@ public:
     void setUseDirect3D(bool use_direct3d);
     // Whether frames go through the hardware renderer.
     [[nodiscard]] bool getUseExternalRenderer() const;
+    // The INI's currentBoard: the graphics card the Graphics Options picked.
+    [[nodiscard]] int getCurrentGraphicsBoard() const;
+    void setCurrentGraphicsBoard(int board);
 
     void clearScreen();
     void clearZBufferNative();
@@ -83,6 +86,7 @@ private:
     int saved_bits_per_pixel_ = 0;
     int external_bits_per_pixel_ = 0;
     int card_index_ = 0;
+    int current_graphics_board_ = 0;
     int fog_red_ = 0;
     int fog_green_ = 0;
     int fog_blue_ = 0;

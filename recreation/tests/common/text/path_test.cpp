@@ -25,6 +25,18 @@ TEST(Path, LeafOfABareNameIsTheName) {
     EXPECT_EQ(pathLeaf("gtfo.txt"), "gtfo.txt");
 }
 
+TEST(Path, TheExtensionRunsFromTheLeafsLastDot) {
+    EXPECT_EQ(pathExtension("sound\\pier59.wav"), ".wav");
+    EXPECT_EQ(pathExtension("music.v2/theme.tar.mp3"), ".mp3");
+    EXPECT_EQ(pathExtension("music.v2/theme"), "");
+}
+
+TEST(Path, TheStemIsTheLeafWithoutItsExtension) {
+    EXPECT_EQ(pathStem("sound\\pier59.wav"), "pier59");
+    EXPECT_EQ(pathStem("music.v2/theme.tar.mp3"), "theme.tar");
+    EXPECT_EQ(pathStem("music.v2/theme"), "theme");
+}
+
 // A small tree: directories map to their entries, and every listed path exists.
 class ResolvePathTest : public ::testing::Test {
 protected:

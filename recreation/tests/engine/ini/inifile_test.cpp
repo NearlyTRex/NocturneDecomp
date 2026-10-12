@@ -81,6 +81,33 @@ TEST_F(CIniFileTest, GetFloatReadsTheNumber) {
     EXPECT_EQ(file.getFloat("gamma", 1.5F), 1.5F);
 }
 
+TEST_F(CIniFileTest, SettersWriteToItsFileAndSection) {
+    CIniFile file(ini_, kFile, "Sound");
+    const std::string head = "[Graphics]\r\ngamePIXX=640\r\ngamma=x\r\n"
+                             "rendererDLLPath=trigl.dll\r\nfogStart=0.25\r\n[Sound]\r\n";
+    const ::testing::InSequence in_order;
+    EXPECT_CALL(file_system_, writeFile(std::string_view(kFile), head + "sfxVolume=hi\r\n"))
+        .WillOnce(Return(true));
+    EXPECT_CALL(file_system_, writeFile(std::string_view(kFile), head + "sfxVolume=-3\r\n"))
+        .WillOnce(Return(true));
+    EXPECT_CALL(file_system_, writeFile(std::string_view(kFile), head + "sfxVolume=0.333333\r\n"))
+        .WillOnce(Return(true));
+    file.setString("sfxVolume", "hi");
+    file.setInteger("sfxVolume", -3);
+    file.setFloatValue("sfxVolume", 1.0F / 3.0F);
+}
+
+TEST_F(CIniFileTest, WritingWithoutAFilenameOrSectionIsFatal) {
+    CIniFile unnamed(ini_, "", "Graphics");
+    EXPECT_THAT([&unnamed] { unnamed.setString("gamma", "3"); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("CIniFile::setString - filename not write!")));
+    CIniFile unsectioned(ini_, kFile);
+    EXPECT_THAT([&unsectioned] { unsectioned.setString("gamma", "3"); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("CIniFile::setString - section not write!")));
+}
+
 // The default goes out through "%g" and back, so a missing key rounds to six digits.
 TEST_F(CIniFileTest, GetFloatRoundsTheDefaultToSixSignificantDigits) {
     const CIniFile file(ini_, kFile, "Graphics");

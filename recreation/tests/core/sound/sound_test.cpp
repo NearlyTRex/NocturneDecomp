@@ -1,4 +1,6 @@
 #include "core/sound/sound.h"
+#include "tests/mocks/sound/sndmainfixture.h"
+#include "tests/mocks/sound/wavfile.h"
 
 #include <gtest/gtest.h>
 
@@ -7,12 +9,10 @@
 namespace nocturne::core {
 namespace {
 
-TEST(CSound, IsConcrete) {
-    static_assert(!std::is_abstract_v<CSound>);
-}
-
-TEST(CSound, Constructors) {
-    static_assert(std::is_constructible_v<CSound>);
+TEST(CSound, IsNeitherCopiedNorMoved) {
+    static_assert(!std::is_copy_constructible_v<CSound>);
+    static_assert(!std::is_move_constructible_v<CSound>);
+    static_assert(std::is_constructible_v<CSound, sound::CSndMain &>);
 }
 
 TEST(CSound, PublicInterface) {
@@ -45,6 +45,31 @@ TEST(CSound, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CSound::getSoundDuration), float (CSound::*)(char *)>);
     static_assert(std::is_same_v<decltype(&CSound::setReverbPreset), void (CSound::*)(int)>);
     static_assert(std::is_same_v<decltype(&CSound::setVolumeFade), void (CSound::*)(float, float)>);
+}
+
+class CSoundTest : public sound::CSndMainFixture {};
+
+TEST_F(CSoundTest, KeepsThreeChannelsAtFullVolumeAndTheListenerAtTheOrigin) {
+    sound_.set3DListenerPos(5.0, 5.0, 5.0);
+    const CSound game_sound(sound_);
+    EXPECT_EQ(sound_.getSfxChannelVol(2), 1.0F);
+    EXPECT_TRUE(sound_.isSfxChannelEnabled(31));
+    EXPECT_EQ(sound_.getListenerPosition(), common::CVector3d{});
+}
+
+TEST_F(CSoundTest, GoingShutsTheSoundSystemDown) {
+    givenSound("tone.wav", sound::makeConstantWav(100, 0));
+    std::uint32_t handle = 0;
+    {
+        const CSound game_sound(sound_);
+        sound_.initializeSoundDevice();
+        ASSERT_TRUE(sound_.enableSoundSystem());
+        handle = sound_.startSfx("tone.wav");
+        ASSERT_NE(handle, 0U);
+    }
+    EXPECT_FALSE(sound_.isSoundBusy());
+    EXPECT_FALSE(sound_.isSfxPlaying(handle));
+    EXPECT_EQ(sound_.getSoundMemoryStats().free_slots, 64);
 }
 
 } // namespace

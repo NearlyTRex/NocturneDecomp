@@ -11,6 +11,10 @@ namespace nocturne::common {
 [[nodiscard]] std::string toPortablePath(std::string_view path);
 // The last component: everything after the last '\' or '/'.
 [[nodiscard]] std::string_view pathLeaf(std::string_view path);
+// _splitpath's extension: the last component from its last '.', the dot included.
+[[nodiscard]] std::string_view pathExtension(std::string_view path);
+// _splitpath's file name: the last component without its extension.
+[[nodiscard]] std::string_view pathStem(std::string_view path);
 
 // What path resolution asks of a file system: whether a path exists, and a directory's entries
 // ("" is the working directory; nothing when it can't be listed).

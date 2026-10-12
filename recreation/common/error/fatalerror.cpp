@@ -1,6 +1,7 @@
 #include "common/error/fatalerror.h"
 
-#include <array>
+#include "common/text/asctime.h"
+
 #include <cstring>
 #include <format>
 #include <utility>
@@ -20,12 +21,8 @@ int CFatalError::getLine() const {
 }
 
 std::string CFatalError::getLogEntry(const std::tm &local_time) const {
-    // asctime's layout, newline included.
-    std::array<char, 32> time{};
-    const std::size_t length =
-        std::strftime(time.data(), time.size(), "%a %b %e %H:%M:%S %Y\n", &local_time);
     return std::format("{:-<64}\nMsg: {}\nFile: {} line {}\nTime: {}errno = {} ({})\n", "", what(),
-                       file_, line_, std::string_view(time.data(), length), error_number_,
+                       file_, line_, formatAsctime(local_time), error_number_,
                        std::strerror(error_number_));
 }
 
