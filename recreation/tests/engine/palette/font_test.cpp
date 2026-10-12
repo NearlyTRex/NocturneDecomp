@@ -3,6 +3,7 @@
 #include <gtest/gtest.h>
 
 #include <memory>
+#include <string_view>
 #include <type_traits>
 
 namespace nocturne::engine {
@@ -17,24 +18,26 @@ TEST(CFont, IsAbstract) {
 }
 
 TEST(CFont, PublicInterface) {
+    static_assert(std::is_same_v<decltype(&CFont::drawText),
+                                 int (CFont::*)(std::string_view, int, int, int, int)>);
     static_assert(
-        std::is_same_v<decltype(&CFont::drawText), int (CFont::*)(char *, int, int, int, int)>);
-    static_assert(std::is_same_v<decltype(&CFont::getStringWidth), int (CFont::*)(char *)>);
-    static_assert(std::is_same_v<decltype(&CFont::getStringHeight), int (CFont::*)(char *)>);
+        std::is_same_v<decltype(&CFont::getStringWidth), int (CFont::*)(std::string_view)>);
+    static_assert(
+        std::is_same_v<decltype(&CFont::getStringHeight), int (CFont::*)(std::string_view)>);
     static_assert(std::is_same_v<decltype(&CFont::getLineSpacing), int (CFont::*)()>);
 }
 
 // Only the slots CFont leaves pure; getLineSpacing is the base's.
 class CTestFont : public CFont {
 public:
-    int drawText(char * /*text_string*/, int /*x*/, int /*y*/, int /*foreground_color*/,
+    int drawText(std::string_view /*text_string*/, int /*x*/, int /*y*/, int /*foreground_color*/,
                  int /*background_color*/) override {
         return 0;
     }
-    int getStringWidth(char * /*text_string*/) override {
+    int getStringWidth(std::string_view /*text_string*/) override {
         return 0;
     }
-    int getStringHeight(char * /*text_string*/) override {
+    int getStringHeight(std::string_view /*text_string*/) override {
         return 0;
     }
 };

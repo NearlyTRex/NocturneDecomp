@@ -1,6 +1,7 @@
 #include "core/inivar/inivar.h"
 
 #include "common/error/error.h"
+#include "core/dfont/dfont.h"
 #include "core/game/game.h"
 #include "engine/console/console.h"
 #include "engine/ini/inifile.h"
@@ -53,6 +54,9 @@ void readGraphics(const engine::CIniFile &file, const SIniDataOwners &owners) {
         game.blood_flag = 0;
     }
     owners.special.setCurrentGraphicsBoard(file.getInteger("currentBoard", 0));
+    owners.fonts.setOsFontChoice(static_cast<EOsFontChoice>(
+        readEnumValue(file, "osFont", static_cast<int>(owners.fonts.getOsFontChoice()),
+                      static_cast<int>(EOsFontChoice::System))));
 }
 
 // The defaults for the control mode come first, then whatever the file binds over them.
@@ -103,6 +107,7 @@ void writeGraphics(engine::CIniFile &file, const SIniDataOwners &owners) {
     }
     file.setInteger("quimbyFlag", game.quimby_flag);
     file.setInteger("currentBoard", owners.special.getCurrentGraphicsBoard());
+    file.setInteger("osFont", static_cast<int>(owners.fonts.getOsFontChoice()));
 }
 
 void writeControls(engine::CIniFile &file, const CGame &game) {

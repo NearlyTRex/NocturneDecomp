@@ -79,7 +79,7 @@ protected:
     NiceMock<platform::MockClock> clock_;
     CWinRun winrun_{window_, clock_};
     CWddVMem wddvmem_{display_, renderer_, winrun_, special_, two_d_};
-    engine::C2d two_d_{dosio_, wddvmem_};
+    engine::C2d two_d_{dosio_, wddvmem_, winrun_};
     engine::CSpecial special_{renderer_, wddvmem_, two_d_};
 };
 

@@ -1,3 +1,4 @@
+#include "engine/screendevice.h"
 #include "platform/window.h"
 #include "wincore/winrun/winrun.h"
 
@@ -143,6 +144,20 @@ void CWinRun::enqueueInput(int input_value) {
 void CWinRun::clearKeypresses() {
     input_read_index_ = 0;
     input_write_index_ = 0;
+}
+
+// Each present pumps the window, which is what fills the queue.
+// nocedit 0x005f2e90
+int CWinRun::getNextKeypress(engine::IScreenDevice &screen) {
+    while (input_read_index_ == input_write_index_ && !input_disabled_) {
+        screen.swapBuffers();
+    }
+    if (input_read_index_ == input_write_index_) {
+        return 0;
+    }
+    const int input_value = input_buffer_[input_read_index_];
+    input_read_index_ = (input_read_index_ + 1) % kInputBufferSize;
+    return input_value;
 }
 
 // nocedit 0x005f2f00

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "engine/2d/2d.h"
+#include "tests/mocks/engine/mockrawinput.h"
 #include "tests/mocks/engine/mockscreendevice.h"
 #include "tests/mocks/engine/podfixture.h"
 #include "tests/mocks/platform/memoryfile.h"
@@ -61,7 +62,8 @@ protected:
     }
 
     ::testing::NiceMock<MockScreenDevice> screen_;
-    C2d two_d_{dosio_, screen_};
+    ::testing::NiceMock<MockRawInput> raw_input_;
+    C2d two_d_{dosio_, screen_, raw_input_};
 };
 
 } // namespace nocturne::engine

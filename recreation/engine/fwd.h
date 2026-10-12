@@ -5,6 +5,7 @@
 namespace nocturne::engine {
 
 class C2d;
+class C3d;
 class CAlphaBitmap;
 class CBitFont;
 class CConsole;
@@ -12,9 +13,11 @@ class CDemonRenderer;
 class CDosIo;
 class CFileFinder;
 class CFont;
+class CFontColors;
 class CIni;
 class CIniFile;
 class CKeys;
+class CLight;
 class CMatrix;
 class CMouse;
 class CPod;

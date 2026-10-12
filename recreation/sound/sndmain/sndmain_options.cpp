@@ -58,10 +58,11 @@ void CSndMain::setNextSfxFlagBits(std::uint32_t flag_mask) {
 }
 
 // nocedit 0x005a8be0
-void CSndMain::setNextSfxTriggerTime(double trigger_time, EPlaybackPosType trigger_id) {
+void CSndMain::setNextSfxTriggerTime(double playback_position,
+                                     EPlaybackPosType playback_position_type) {
     CSfxOptions &options = getNextSfxOptions();
-    options.trigger_time = trigger_time;
-    options.trigger_id = trigger_id;
+    options.playback_position = playback_position;
+    options.playback_position_type = playback_position_type;
 }
 
 // nocedit 0x005a8c30

@@ -63,7 +63,6 @@ public:
 
 private:
     void updateBoundPositionAndVelocity();
-    void autoCalcDelayRemaining();
     void computeDistancesToSpeakers();
     void computeChannelVolumes();
     [[nodiscard]] float computeDoppler() const;

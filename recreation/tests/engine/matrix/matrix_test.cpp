@@ -1,11 +1,18 @@
+#include "common/error/fatalerror.h"
+#include "engine/light/light.h"
 #include "engine/matrix/matrix.h"
+#include "tests/mocks/engine/twodfixture.h"
 
+#include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
 #include <type_traits>
 
 namespace nocturne::engine {
 namespace {
+
+using ::testing::StrEq;
+using ::testing::ThrowsMessage;
 
 constexpr int kEntry = 256;
 
@@ -36,17 +43,24 @@ TEST(CMatrix, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CMatrix::setCameraRotation), void (CMatrix::*)(int, int, int)>);
     static_assert(std::is_same_v<decltype(&CMatrix::getCameraOrigin),
-                                 void (CMatrix::*)(common::CVector3i *)>);
+                                 common::CVector3i (CMatrix::*)() const>);
     static_assert(std::is_same_v<decltype(&CMatrix::getCameraRotation),
-                                 void (CMatrix::*)(common::CVector3i *)>);
+                                 common::CVector3i (CMatrix::*)() const>);
     static_assert(
         std::is_same_v<decltype(&CMatrix::pushViewport), void (CMatrix::*)(int, int, int, int)>);
     static_assert(std::is_same_v<decltype(&CMatrix::popViewport), void (CMatrix::*)()>);
+    static_assert(std::is_same_v<decltype(&CMatrix::getProjectionScale), int (CMatrix::*)() const>);
 }
 
+class CMatrixTest : public C2dFixture {
+protected:
+    CLight light_;
+    CMatrix matrix_{two_d_, light_};
+};
+
 // Truncated toward zero from the original's pi, 3.1415926535: one entry is 1/256 of a turn.
-TEST(CMatrix, TheTablesHoldTruncatedSixteenSixteenSinesAndCosines) {
-    const CMatrix matrix;
+TEST_F(CMatrixTest, TheTablesHoldTruncatedSixteenSixteenSinesAndCosines) {
+    const CMatrix &matrix = matrix_;
     struct SEntry {
         int index;
         int sine;
@@ -63,24 +77,64 @@ TEST(CMatrix, TheTablesHoldTruncatedSixteenSixteenSinesAndCosines) {
     }
 }
 
-TEST(CMatrix, BetweenEntriesTheValueIsInterpolated) {
-    const CMatrix matrix;
+TEST_F(CMatrixTest, BetweenEntriesTheValueIsInterpolated) {
     // 1608 + (3215 - 1608) * 128 / 256, the half dropped.
-    EXPECT_EQ(matrix.interpolatedSin((1 * kEntry) + 128), 2411);
+    EXPECT_EQ(matrix_.interpolatedSin((1 * kEntry) + 128), 2411);
     // The last entry interpolates toward the 257th, which repeats the first.
-    EXPECT_EQ(matrix.interpolatedCos((255 * kEntry) + 255), 65535);
+    EXPECT_EQ(matrix_.interpolatedCos((255 * kEntry) + 255), 65535);
 }
 
-TEST(CMatrix, InterpolationDividesTowardZero) {
-    const CMatrix matrix;
+TEST_F(CMatrixTest, InterpolationDividesTowardZero) {
     // -1608 / 256 is -6.28: -6, where flooring would give -7.
-    EXPECT_EQ(matrix.interpolatedSin((128 * kEntry) + 1), -6);
+    EXPECT_EQ(matrix_.interpolatedSin((128 * kEntry) + 1), -6);
 }
 
-TEST(CMatrix, AnglesWrapAtAFullTurn) {
-    const CMatrix matrix;
-    EXPECT_EQ(matrix.interpolatedSin(0x10000 + kEntry), 1608);
-    EXPECT_EQ(matrix.interpolatedSin(-kEntry), -1608);
+TEST_F(CMatrixTest, AnglesWrapAtAFullTurn) {
+    EXPECT_EQ(matrix_.interpolatedSin(0x10000 + kEntry), 1608);
+    EXPECT_EQ(matrix_.interpolatedSin(-kEntry), -1608);
+}
+
+TEST_F(CMatrixTest, TheCameraStartsAtTheOriginUnrotated) {
+    EXPECT_EQ(matrix_.getCameraOrigin(), common::CVector3i{});
+    EXPECT_EQ(matrix_.getCameraRotation(), common::CVector3i{});
+    EXPECT_EQ(matrix_.getProjectionScale(), CMatrix::kUnitProjectionScale);
+}
+
+TEST_F(CMatrixTest, AWindowClipsToItsRectangleOnePixelLarger) {
+    two_d_.setupViewportAndClipping(0, 0, 639, 479);
+    matrix_.pushViewport(10, 20, 100, 50);
+    EXPECT_EQ(two_d_.getClipRect(), (SClipRect{.left = 10, .top = 20, .right = 110, .bottom = 70}));
+    EXPECT_EQ(two_d_.getViewportWidth(), 101);
+}
+
+TEST_F(CMatrixTest, ClosingAWindowPutsBackWhatOpeningItSaved) {
+    two_d_.setupViewportAndClipping(0, 0, 639, 479);
+    const SProjectionParams projection = two_d_.getProjection();
+    matrix_.setCameraOrigin(1, 2, 3);
+    light_.setDirectionalLightVector(4, 5, 6);
+    matrix_.pushViewport(10, 20, 100, 50);
+    matrix_.setCameraOrigin(7, 8, 9);
+    light_.setDirectionalLightVector(0, 0, 1);
+    matrix_.popViewport();
+    EXPECT_EQ(two_d_.getClipRect(), (SClipRect{.left = 0, .top = 0, .right = 639, .bottom = 479}));
+    EXPECT_EQ(two_d_.getProjection(), projection);
+    EXPECT_EQ(matrix_.getCameraOrigin(), (common::CVector3i{.x = 1, .y = 2, .z = 3}));
+    EXPECT_EQ(light_.getLightDirection(), (common::CVector3i{.x = 4, .y = 5, .z = 6}));
+    // The viewport size isn't saved, so it stays the window's.
+    EXPECT_EQ(two_d_.getViewportWidth(), 101);
+}
+
+TEST_F(CMatrixTest, ATenthWindowIsFatal) {
+    for (int i = 0; i < 9; ++i) {
+        matrix_.pushViewport(0, 0, 10, 10);
+    }
+    EXPECT_THAT([this] { matrix_.pushViewport(0, 0, 10, 10); },
+                ThrowsMessage<common::CFatalError>(StrEq("Too many 3D windows")));
+}
+
+TEST_F(CMatrixTest, ClosingAWindowThatIsntOpenIsFatal) {
+    EXPECT_THAT([this] { matrix_.popViewport(); },
+                ThrowsMessage<common::CFatalError>(StrEq("3D Window unbalance")));
 }
 
 } // namespace

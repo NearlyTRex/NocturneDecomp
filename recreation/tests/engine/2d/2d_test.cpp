@@ -55,11 +55,19 @@ TEST(C2d, PublicInterface) {
         std::is_same_v<decltype(&C2d::clipLineGlobal), void (C2d::*)(int, int, int, int)>);
     static_assert(std::is_same_v<decltype(&C2d::drawHLine), void (C2d::*)(int, int, int)>);
     static_assert(std::is_same_v<decltype(&C2d::drawVLine), void (C2d::*)(int, int, int)>);
+    static_assert(std::is_same_v<decltype(&C2d::drawRect), void (C2d::*)(int, int, int, int)>);
     static_assert(
         std::is_same_v<decltype(&C2d::fillRectColor), void (C2d::*)(int, int, int, int, int)>);
     static_assert(std::is_same_v<decltype(&C2d::fillRectWithBorder),
                                  void (C2d::*)(int, int, int, int, int, int)>);
     static_assert(std::is_same_v<decltype(&C2d::clearInputAndWait), void (C2d::*)()>);
+    static_assert(std::is_same_v<decltype(&C2d::getClipRect), SClipRect (C2d::*)() const>);
+    static_assert(std::is_same_v<decltype(&C2d::setClipRect), void (C2d::*)(const SClipRect &)>);
+    static_assert(
+        std::is_same_v<decltype(&C2d::setProjection), void (C2d::*)(const SProjectionParams &)>);
+    static_assert(std::is_same_v<decltype(&C2d::setViewportSize), void (C2d::*)(int, int)>);
+    static_assert(std::is_same_v<decltype(&C2d::getActiveRenderColor), int (C2d::*)() const>);
+    static_assert(std::is_same_v<decltype(&C2d::setActiveRenderColor), void (C2d::*)(int)>);
 }
 
 class C2dTest : public C2dFixture {

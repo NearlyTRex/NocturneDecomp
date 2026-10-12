@@ -14,26 +14,26 @@ in instructions.
 | 0 | Math value types | 3 | 13 | 791 | 13 | 100.0% |
 | 1 | File system: `dosio`, pods | 5 | 44 | 2518 | 44 | 100.0% |
 | 2 | `doNothing`, `readMessageFile`, `getLocalizedString`, `initializeTrigTables`, `initTextureCache`, `initGraphicsSystem` | 8 | 30 | 2804 | 30 | 100.0% |
-| 3 | Sound system: `sndmain`, `CSound` lifetime, `readIniData` | 7 | 124 | 8387 | 124 | 100.0% |
-| 4 | `initFonts`, `CEditorTools::showWarning`, `showCalibrationTest` | 18 | 80 | 11551 | 3 | 3.7% |
-| 5 | `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 60 | 5532 | 1 | 1.6% |
+| 3 | Sound system: `sndmain`, `CSound` lifetime, `readIniData` | 7 | 123 | 8346 | 123 | 100.0% |
+| 4 | `initFonts`, `CEditorTools::showWarning` | 11 | 46 | 4804 | 46 | 100.0% |
+| 5 | `showCalibrationTest`, `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 54 | 4873 | 1 | 1.8% |
 | 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 0 | 0.0% |
-| 7 | `CMoon::update`, `CMoon::render` | 15 | 86 | 11100 | 2 | 2.3% |
-| 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 0 | 0.0% |
+| 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 4 | 3.3% |
+| 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 1 | 1.5% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 0 | 0.0% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 17 | 52 | 5565 | 1 | 1.9% |
-| 11 | `CScript::loadScript` | 63 | 577 | 67325 | 0 | 0.0% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 2 | 0.3% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 1 | 3.8% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0.0% |
-| 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 52 | 5305 | 0 | 0.0% |
-| 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 1 | 0.5% |
+| 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 0 | 0.0% |
+| 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 3 | 1.5% |
 | 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 0 | 0.0% |
 | 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 0 | 0.0% |
-| 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 0 | 0.0% |
-| 19 | Not reached from startup: `engine/` | 23 | 276 | 19377 | 7 | 2.5% |
+| 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 2 | 15.3% |
+| 19 | Not reached from startup: `engine/` | 23 | 279 | 19702 | 18 | 6.4% |
 | 20 | Not reached from startup: `support/` | 2 | 24 | 593 | 0 | 0.0% |
 | 21 | Not reached from startup: `cockpit/` | 4 | 178 | 11527 | 0 | 0.0% |
-| 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 0 | 0.0% |
+| 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 4 | 9.5% |
 | 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 3 | 1.0% |
 | 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 0 | 0.0% |
 | 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 3 | 1.0% |
@@ -44,7 +44,7 @@ in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 2 | 0.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 | 3.6% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 36.3% |
-| | **All** | | **4496** | **403478** | **271** | **6.0%** |
+| | **All** | | **4493** | **402944** | **337** | **7.5%** |
 
 ## Step 0: Math value types
 
@@ -232,17 +232,17 @@ in instructions.
 - free functions
   - [x] `getTime` 0x005f2dc0 (48)
 
-### `sound/sndmain.cpp` (101 functions, 6163 instructions, 101 done)
+### `sound/sndmain.cpp` (100 functions, 6122 instructions, 100 done)
 - free functions
   - [x] `isSoundMuted` 0x005a96b0 (2)
   - [x] `ensureSoundMemoryAvailable` 0x005a4450 (75)
   - [x] `killAllSfx` 0x005a9cc0 (15)
   - [x] `setSoundMuted` 0x005a96c0 (5)
-  - [x] `isSoundSystemActive` 0x005ab530 (4)
   - [x] `setSfxChannelVol` 0x005a9cf0 (52)
   - [x] `getSfxChannelVol` 0x005a9d90 (22)
   - [x] `enableSfxChannel` 0x005a9e20 (34)
   - [x] `isSfxChannelEnabled` 0x005a9ea0 (20)
+  - [x] `isSoundSystemActive` 0x005ab530 (4)
   - [x] `isSoundBusy` 0x005ab540 (5)
   - [x] `setSoundOutputMode` 0x005ab170 (56)
   - [x] `getAudioFormat` 0x005ab210 (21)
@@ -324,7 +324,6 @@ in instructions.
   - [x] `updateBoundPositionAndVelocity` 0x005a6ce0 (59)
   - [x] `computeDistancesToSpeakers` 0x005a6d80 (39)
   - [x] `computeChannelVolumes` 0x005a6f00 (108)
-  - [x] `autoCalcDelayRemaining` 0x005a7070 (41)
   - [x] `compute` 0x005a7100 (378)
   - [x] `pollHwHandle` 0x005a7fe0 (95)
   - [x] `updatePlaybackPos` 0x005a8170 (154)
@@ -345,145 +344,100 @@ in instructions.
   - [x] `ctor` 0x005b2ce0 (10)
   - [x] `dtor` 0x005b2d60 (1)
 
-## Step 4: `initFonts`, `CEditorTools::showWarning`, `showCalibrationTest`
+## Step 4: `initFonts`, `CEditorTools::showWarning`
 
-### `cockpit/ckptutil.c` (1 functions, 96 instructions, 0 done)
+### `cockpit/ckptutil.c` (1 functions, 96 instructions, 1 done)
 - free functions
-  - [ ] `readBitmapFile` 0x00431870 (96)
+  - [x] `readBitmapFile` 0x00431870 (96)
 
-### `engine/winfont.cpp` (1 functions, 42 instructions, 0 done)
+### `engine/winfont.cpp` (1 functions, 42 instructions, 1 done)
 - class `CWinFont`
-  - [ ] `ctor` 0x005f22e0 (42)
+  - [x] `ctor` 0x005f22e0 (42)
 
-### `core/dfont.cpp` (1 functions, 438 instructions, 0 done)
+### `core/dfont.cpp` (1 functions, 438 instructions, 1 done)
 - free functions
-  - [ ] `initFonts` 0x004709a0 (438)
+  - [x] `initFonts` 0x004709a0 (438)
 
-### `shape/edittool.cpp` (1 functions, 22 instructions, 0 done)
-- class `CEditorTools`
-  - [ ] `showWarning` 0x0049e6f0 (22)
-
-### `engine/keys.cpp` (1 functions, 1 instructions, 0 done)
+### `engine/3d.c` (1 functions, 22 instructions, 1 done)
 - free functions
-  - [ ] `clearKeypresses` 0x00502450 (1)
+  - [x] `setRenderAlpha` 0x00406d80 (22)
 
-### `engine/2d.c` (1 functions, 28 instructions, 0 done)
+### `engine/2d.c` (6 functions, 329 instructions, 6 done)
 - free functions
-  - [ ] `clearInputAndWait` 0x00403260 (28)
+  - [x] `clearInputAndWait` 0x00403260 (28)
+  - [x] `drawHLine` 0x00402ee0 (89)
+  - [x] `drawVLine` 0x00402ff0 (91)
+  - [x] `drawRect` 0x00403120 (33)
+  - [x] `fillRectColor` 0x00403170 (53)
+  - [x] `fillRectWithBorder` 0x00403200 (35)
 
-### `engine/alphabit.cpp` (4 functions, 443 instructions, 0 done)
-- class `CAlphaBitmap`
-  - [ ] `free` 0x00410560 (40)
-  - [ ] `load` 0x004105d0 (241)
-  - [ ] `initPalette` 0x00410cf0 (17)
-  - [ ] `display` 0x00410950 (145)
-
-### `engine/prim.c` (10 functions, 2248 instructions, 0 done)
-- free functions
-  - [ ] `calculateTriangleWindingOrder` 0x00552150 (63)
-  - [ ] `findEdgeInBuffer` 0x00551f70 (22)
-  - [ ] `prepareDepthBuffer` 0x00551fb0 (44)
-  - [ ] `normalizeTextureCoords` 0x00552020 (61)
-  - [ ] `adjustNearPlaneTextureCoords` 0x005520a0 (41)
-  - [ ] `replaceWWithDepth` 0x00552110 (24)
-  - [ ] `renderPolygonSoftware` 0x00552510 (427)
-  - [ ] `renderIndexedPolygonSoftware` 0x00552a40 (418)
-  - [ ] `renderScanlinePolygon` 0x00553470 (538)
-  - [ ] `renderIndexedPolygonAdvanced` 0x00553b10 (610)
-
-### `engine/clipper.c` (12 functions, 2424 instructions, 0 done)
-- free functions
-  - [ ] `interpolateVertexLeftClip` 0x00435a00 (104)
-  - [ ] `interpolateVertexRightClip` 0x00435b00 (104)
-  - [ ] `interpolateVertexBottomClip` 0x00435c00 (104)
-  - [ ] `interpolateVertexTopClip` 0x00435d00 (109)
-  - [ ] `interpolateVertexNearClip` 0x00435e00 (109)
-  - [ ] `clipPolygonToViewFrustum` 0x004366e0 (782)
-  - [ ] `clipAndRasterize` 0x004371b0 (28)
-  - [ ] `interpolateVertexLeftClipAdvanced` 0x00437230 (126)
-  - [ ] `interpolateVertexRightClipAdvanced` 0x00437360 (125)
-  - [ ] `interpolateVertexBottomClipAdvanced` 0x00437490 (126)
-  - [ ] `interpolateVertexTopClipAdvanced` 0x004375c0 (126)
-  - [ ] `clipPolygonToViewport` 0x00438420 (581)
-
-### `engine/light.cpp` (1 functions, 51 instructions, 0 done)
-- free functions
-  - [ ] `calculateLighting` 0x00505780 (51)
-
-### `engine/3d.c` (3 functions, 129 instructions, 0 done)
-- free functions
-  - [ ] `setRenderAlpha` 0x00406d80 (22)
-  - [ ] `isVisiblePlane` 0x00403950 (36)
-  - [ ] `renderPolygonWithRenderFlags` 0x00407620 (71)
-
-### `engine/matrix.c` (2 functions, 75 instructions, 0 done)
-- free functions
-  - [ ] `projectTransformedPoint` 0x0050cdc0 (66)
-  - [ ] `projectCachedPoint` 0x0050cda0 (9)
-
-### `engine/special.cpp` (11 functions, 1456 instructions, 0 done)
-- free functions
-  - [ ] `renderAlphaRow32` 0x005b555c (50)
-  - [ ] `renderAlphaRow16` 0x005b55f7 (72)
-  - [ ] `drawPolygon2` 0x005b7610 (17)
-  - [ ] `renderScanline` 0x005b5710 (1)
-  - [ ] `drawPolygon` 0x005b75e0 (17)
-  - [ ] `renderMMXPerspectiveScanline32` 0x005b4031 (449)
-  - [ ] `renderMMXPerspectiveScanline16` 0x005b4823 (509)
-  - [ ] `renderPerspectiveCorrectScanline32` 0x005b50ec (144)
-  - [ ] `renderPerspectiveCorrectScanline16` 0x005b5322 (145)
-  - [ ] `selectTextureFromPalette` 0x005b7340 (26)
-  - [ ] `updateTextureFromPalette` 0x005b7380 (26)
-
-### `engine/texture.cpp` (4 functions, 763 instructions, 0 done)
-- class `CTextureCache`
-  - [ ] `loadTexture` 0x005dcc00 (396)
-  - [ ] `findTexture` 0x005dd180 (49)
-  - [ ] `setupTexture` 0x005dd200 (245)
-- free functions
-  - [ ] `ensureTextureLoaded` 0x005dd800 (73)
-
-### `engine/palette.cpp` (2 functions, 27 instructions, 1 done)
+### `engine/palette.cpp` (2 functions, 27 instructions, 2 done)
 - class `CFont`
   - [x] `ctor` 0x00544eb0 (3)
-  - [ ] `drawText` 0x00544ed0 (24)
+  - [x] `drawText` 0x00544ed0 (24)
 
-### `engine/font.cpp` (20 functions, 3102 instructions, 0 done)
+### `engine/font.cpp` (21 functions, 2925 instructions, 21 done)
 - class `CBitFont`
-  - [ ] `reset` 0x004cced0 (39)
-  - [ ] `ctor` 0x004cce90 (8)
-  - [ ] `calculateCharacterHeight` 0x004cda20 (42)
-  - [ ] `parseCharacterMetrics` 0x004cd550 (291)
-  - [ ] `remapPalette` 0x004d02a0 (129)
-  - [ ] `loadBitmap` 0x004ccff0 (192)
-  - [ ] `free` 0x004cd4e0 (27)
-  - [ ] `loadNewBitmap` 0x004cd280 (24)
-  - [ ] `openFontFile` 0x004ccfc0 (21)
-  - [ ] `setInitializedFlag` 0x004cd540 (3)
-  - [ ] `setCharYOffsetRange` 0x004d0230 (31)
-  - [ ] `setFontReady` 0x004d0290 (4)
-  - [ ] `getCharHeight` 0x004d01d0 (13)
-  - [ ] `render3DCharacter` 0x004ce2d0 (407)
-  - [ ] `drawCharacter` 0x004ce7a0 (1542)
-  - [ ] `drawText` 0x004cda80 (125)
-  - [ ] `getCharWidth` 0x004d01a0 (12)
-  - [ ] `getTextWidth` 0x004cfe80 (79)
+  - [x] `reset` 0x004cced0 (39)
+  - [x] `ctor` 0x004cce90 (8)
+  - [x] `calculateCharacterHeight` 0x004cda20 (42)
+  - [x] `parseCharacterMetrics` 0x004cd550 (291)
+  - [x] `remapPalette` 0x004d02a0 (129)
+  - [x] `loadBitmap` 0x004ccff0 (192)
+  - [x] `free` 0x004cd4e0 (27)
+  - [x] `loadNewBitmap` 0x004cd280 (24)
+  - [x] `openFontFile` 0x004ccfc0 (21)
+  - [x] `setInitializedFlag` 0x004cd540 (3)
+  - [x] `setCharYOffsetRange` 0x004d0230 (31)
+  - [x] `setFontReady` 0x004d0290 (4)
+  - [x] `getCharHeight` 0x004d01d0 (13)
+  - [x] `getTextHeight` 0x004cff40 (92)
+  - [x] `getCharWidth` 0x004d01a0 (12)
+  - [x] `getTextWidth` 0x004cfe80 (79)
+  - [x] `wrapText` 0x004d0010 (138)
+  - [x] `drawCharacter` 0x004ce7a0 (1542)
+  - [x] `drawText` 0x004cda80 (125)
 - free functions
-  - [ ] `clipCharacter` 0x004ccdd0 (65)
-  - [ ] `drawAlphaBlendedPixels` 0x004ce240 (48)
+  - [x] `clipCharacter` 0x004ccdd0 (65)
+  - [x] `drawAlphaBlendedPixels` 0x004ce240 (48)
 
-### `wincore/winrun.cpp` (3 functions, 44 instructions, 2 done)
+### `engine/matrix.c` (2 functions, 126 instructions, 2 done)
+- free functions
+  - [x] `pushViewport` 0x0050e320 (71)
+  - [x] `popViewport` 0x0050e480 (55)
+
+### `wincore/winrun.cpp` (3 functions, 44 instructions, 3 done)
 - free functions
   - [x] `clearKeypresses` 0x005f2e70 (6)
   - [x] `clearMouseClicks` 0x005f30c0 (3)
-  - [ ] `getNextKeypress` 0x005f2e90 (35)
+  - [x] `getNextKeypress` 0x005f2e90 (35)
+
+### `engine/keys.cpp` (2 functions, 4 instructions, 2 done)
+- free functions
+  - [x] `clearKeypresses` 0x00502450 (1)
+- class `CKeys`
+  - [x] `getInputKey` 0x00502460 (3)
+
+### `shape/edittool.cpp` (6 functions, 751 instructions, 6 done)
+- class `CEditorTools`
+  - [x] `createModalWindow` 0x004a0970 (309)
+  - [x] `createCenteredModal` 0x004a0890 (71)
+  - [x] `popWindowState` 0x004a0ea0 (57)
+  - [x] `restoreWindowAndCleanup` 0x004a0dd0 (63)
+  - [x] `paintCurrentWindow` 0x004a0f80 (229)
+  - [x] `showWarning` 0x0049e6f0 (22)
+
+## Step 5: `showCalibrationTest`, `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init`
+
+### `engine/special.cpp` (2 functions, 122 instructions, 0 done)
+- free functions
+  - [ ] `renderAlphaRow32` 0x005b555c (50)
+  - [ ] `renderAlphaRow16` 0x005b55f7 (72)
 
 ### `core/menu.cpp` (2 functions, 162 instructions, 0 done)
 - free functions
   - [ ] `showCalibrationTestPattern` 0x00510a50 (117)
   - [ ] `showCalibrationTest` 0x00510ba0 (45)
-
-## Step 5: `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init`
 
 ### `wincore/winrun.cpp` (1 functions, 6 instructions, 1 done)
 - free functions
@@ -493,8 +447,12 @@ in instructions.
 - free functions
   - [ ] `playMovie` 0x005f4a00 (270)
 
-### `engine/alphabit.cpp` (2 functions, 13 instructions, 0 done)
+### `engine/alphabit.cpp` (6 functions, 456 instructions, 0 done)
 - class `CAlphaBitmap`
+  - [ ] `free` 0x00410560 (40)
+  - [ ] `load` 0x004105d0 (241)
+  - [ ] `initPalette` 0x00410cf0 (17)
+  - [ ] `display` 0x00410950 (145)
   - [ ] `ctor` 0x00410520 (5)
   - [ ] `dtor` 0x00410540 (8)
 
@@ -516,29 +474,14 @@ in instructions.
 - class `CMouse`
   - [ ] `load` 0x00544420 (80)
 
-### `engine/2d.c` (5 functions, 301 instructions, 0 done)
-- free functions
-  - [ ] `drawHLine` 0x00402ee0 (89)
-  - [ ] `drawVLine` 0x00402ff0 (91)
-  - [ ] `fillRectColor` 0x00403170 (53)
-  - [ ] `drawRect` 0x00403120 (33)
-  - [ ] `fillRectWithBorder` 0x00403200 (35)
-
-### `engine/matrix.c` (2 functions, 126 instructions, 0 done)
-- free functions
-  - [ ] `pushViewport` 0x0050e320 (71)
-  - [ ] `popViewport` 0x0050e480 (55)
-
-### `engine/font.cpp` (6 functions, 354 instructions, 0 done)
+### `engine/font.cpp` (4 functions, 124 instructions, 0 done)
 - class `CBitFont`
-  - [ ] `getTextHeight` 0x004cff40 (92)
   - [ ] `drawTextWrapper` 0x004cdbf0 (23)
   - [ ] `drawTextCenterInBounds` 0x004cdee0 (33)
   - [ ] `drawTextCenterInBoundsFV` 0x004cdf80 (35)
   - [ ] `drawTextCenterInBoundsF` 0x004cdf30 (33)
-  - [ ] `wrapText` 0x004d0010 (138)
 
-### `shape/edittool.cpp` (12 functions, 1305 instructions, 0 done)
+### `shape/edittool.cpp` (7 functions, 576 instructions, 0 done)
 - class `CStrList`
   - [ ] `add` 0x004a2b80 (12)
   - [ ] `getStringAt` 0x004a2f70 (5)
@@ -546,13 +489,8 @@ in instructions.
   - [ ] `populateFromFilesNoDuplicates` 0x004a37b0 (162)
 - class `CEditorTools`
   - [ ] `showMessage` 0x0049e6a0 (22)
-  - [ ] `paintCurrentWindow` 0x004a0f80 (229)
   - [ ] `updatePercentage` 0x004a0530 (264)
-  - [ ] `createModalWindow` 0x004a0970 (309)
-  - [ ] `createCenteredModal` 0x004a0890 (71)
   - [ ] `showCenteredProgressDialog` 0x004a0430 (79)
-  - [ ] `popWindowState` 0x004a0ea0 (57)
-  - [ ] `restoreWindowAndCleanup` 0x004a0dd0 (63)
 
 ### `core/game.cpp` (1 functions, 34 instructions, 0 done)
 - class `CGame`
@@ -669,6 +607,14 @@ in instructions.
   - [ ] `getAttenuationAtVertex` 0x00471850 (124)
   - [ ] `intersectAABB` 0x00471770 (85)
 
+### `engine/texture.cpp` (4 functions, 763 instructions, 0 done)
+- class `CTextureCache`
+  - [ ] `loadTexture` 0x005dcc00 (396)
+  - [ ] `findTexture` 0x005dd180 (49)
+  - [ ] `setupTexture` 0x005dd200 (245)
+- free functions
+  - [ ] `ensureTextureLoaded` 0x005dd800 (73)
+
 ### `core/dcamera.cpp` (5 functions, 1076 instructions, 0 done)
 - class `CDemonCamera`
   - [ ] `pushRect` 0x0044c740 (27)
@@ -692,14 +638,39 @@ in instructions.
   - [ ] `clipInterpolateBottomPlane` 0x005f7e00 (81)
   - [ ] `transformAndClipGeometry` 0x005f8550 (584)
 
+### `engine/clipper.c` (12 functions, 2424 instructions, 0 done)
+- free functions
+  - [ ] `interpolateVertexLeftClip` 0x00435a00 (104)
+  - [ ] `interpolateVertexRightClip` 0x00435b00 (104)
+  - [ ] `interpolateVertexBottomClip` 0x00435c00 (104)
+  - [ ] `interpolateVertexTopClip` 0x00435d00 (109)
+  - [ ] `interpolateVertexNearClip` 0x00435e00 (109)
+  - [ ] `clipPolygonToViewFrustum` 0x004366e0 (782)
+  - [ ] `clipAndRasterize` 0x004371b0 (28)
+  - [ ] `interpolateVertexLeftClipAdvanced` 0x00437230 (126)
+  - [ ] `interpolateVertexRightClipAdvanced` 0x00437360 (125)
+  - [ ] `interpolateVertexBottomClipAdvanced` 0x00437490 (126)
+  - [ ] `interpolateVertexTopClipAdvanced` 0x004375c0 (126)
+  - [ ] `clipPolygonToViewport` 0x00438420 (581)
+
 ### `engine/zraster.c` (2 functions, 738 instructions, 0 done)
 - free functions
   - [ ] `rasterizePolygonCustom` 0x005fd4e0 (365)
   - [ ] `rasterizeTriangle` 0x005fcfc0 (373)
 
-### `engine/prim.c` (3 functions, 162 instructions, 0 done)
+### `engine/prim.c` (13 functions, 2410 instructions, 0 done)
 - free functions
   - [ ] `setCullingMode` 0x00551b90 (3)
+  - [ ] `prepareDepthBuffer` 0x00551fb0 (44)
+  - [ ] `normalizeTextureCoords` 0x00552020 (61)
+  - [ ] `adjustNearPlaneTextureCoords` 0x005520a0 (41)
+  - [ ] `replaceWWithDepth` 0x00552110 (24)
+  - [ ] `calculateTriangleWindingOrder` 0x00552150 (63)
+  - [ ] `findEdgeInBuffer` 0x00551f70 (22)
+  - [ ] `renderPolygonSoftware` 0x00552510 (427)
+  - [ ] `renderIndexedPolygonSoftware` 0x00552a40 (418)
+  - [ ] `renderScanlinePolygon` 0x00553470 (538)
+  - [ ] `renderIndexedPolygonAdvanced` 0x00553b10 (610)
   - [ ] `getTriangleWindingFromPackedIndices` 0x005523f0 (81)
   - [ ] `getTriangleWindingFromIndices1` 0x00552210 (78)
 
@@ -715,20 +686,21 @@ in instructions.
   - [ ] `submitToRenderer` 0x00477980 (179)
   - [ ] `prepareForRender` 0x00477850 (29)
 
-### `engine/matrix.c` (8 functions, 853 instructions, 2 done)
+### `engine/matrix.c` (8 functions, 853 instructions, 4 done)
 - free functions
   - [x] `interpolatedSin` 0x0050c5c0 (18)
   - [x] `interpolatedCos` 0x0050c600 (18)
   - [ ] `matrixPushAndTransform` 0x0050cee0 (496)
   - [ ] `matrixPush` 0x0050d620 (48)
   - [ ] `pop` 0x0050d720 (49)
-  - [ ] `getCameraOrigin` 0x0050e2c0 (17)
-  - [ ] `setCameraOrigin` 0x0050e270 (7)
+  - [x] `getCameraOrigin` 0x0050e2c0 (17)
+  - [x] `setCameraOrigin` 0x0050e270 (7)
   - [ ] `invertTransformMatrix` 0x0050c640 (200)
 
-### `engine/3d.c` (2 functions, 28 instructions, 0 done)
+### `engine/3d.c` (3 functions, 64 instructions, 0 done)
 - free functions
   - [ ] `setBlendMode` 0x00406dd0 (3)
+  - [ ] `isVisiblePlane` 0x00403950 (36)
   - [ ] `processCameraRelativePoint` 0x004037e0 (25)
 
 ### `engine/drender.cpp` (27 functions, 2214 instructions, 0 done)
@@ -775,9 +747,16 @@ in instructions.
   - [ ] `renderPrimitiveBatch` 0x00570770 (82)
   - [ ] `setFlatColor` 0x00570ca0 (8)
 
-### `engine/special.cpp` (3 functions, 346 instructions, 0 done)
+### `engine/special.cpp` (10 functions, 1391 instructions, 0 done)
 - free functions
   - [ ] `transformAndProjectPoint` 0x005b575c (205)
+  - [ ] `selectTextureFromPalette` 0x005b7340 (26)
+  - [ ] `updateTextureFromPalette` 0x005b7380 (26)
+  - [ ] `renderScanline` 0x005b5710 (1)
+  - [ ] `drawPolygon2` 0x005b7610 (17)
+  - [ ] `drawPolygon` 0x005b75e0 (17)
+  - [ ] `renderMMXPerspectiveScanline32` 0x005b4031 (449)
+  - [ ] `renderMMXPerspectiveScanline16` 0x005b4823 (509)
   - [ ] `drawPolyList` 0x005b7640 (106)
   - [ ] `clearZBufferNative` 0x005b3ed4 (35)
 
@@ -814,9 +793,9 @@ in instructions.
   - [ ] `plotPixel` 0x00401140 (31)
   - [ ] `drawLine` 0x004011b0 (87)
 
-### `engine/font.cpp` (1 functions, 12 instructions, 0 done)
+### `engine/font.cpp` (1 functions, 12 instructions, 1 done)
 - class `CBitFont`
-  - [ ] `getCharYOffset` 0x004d0200 (12)
+  - [x] `getCharYOffset` 0x004d0200 (12)
 
 ### `shape/edittool.cpp` (54 functions, 4786 instructions, 0 done)
 - class `CEditorTools`
@@ -1118,10 +1097,6 @@ in instructions.
   - [ ] `findFliesByFollowActor` 0x004cca50 (34)
 - class `CFlies`
   - [ ] `ctor` 0x004cbd60 (37)
-
-### `engine/matrix.c` (1 functions, 17 instructions, 0 done)
-- free functions
-  - [ ] `getCameraRotation` 0x0050e2f0 (17)
 
 ### `core/particle.cpp` (4 functions, 332 instructions, 0 done)
 - class `CParticle`
@@ -1516,10 +1491,16 @@ in instructions.
   - [ ] `generateSkyDomeVertex` 0x004900b0 (100)
   - [ ] `renderSkyDome` 0x004901f0 (328)
 
-### `engine/light.cpp` (2 functions, 21 instructions, 0 done)
+### `engine/light.cpp` (2 functions, 21 instructions, 1 done)
 - free functions
   - [ ] `setAmbientLightLevel` 0x00505490 (11)
-  - [ ] `setDirectionalLightVector` 0x005054d0 (10)
+  - [x] `setDirectionalLightVector` 0x005054d0 (10)
+
+### `engine/matrix.c` (3 functions, 92 instructions, 1 done)
+- free functions
+  - [x] `getCameraRotation` 0x0050e2f0 (17)
+  - [ ] `projectTransformedPoint` 0x0050cdc0 (66)
+  - [ ] `projectCachedPoint` 0x0050cda0 (9)
 
 ### `core/dcube.cpp` (7 functions, 1140 instructions, 0 done)
 - class `CDemonCubeTriangle`
@@ -2055,16 +2036,15 @@ in instructions.
 - class `CLevelLoader`
   - [ ] `cleanup` 0x00504720 (13)
 
+### `engine/keys.cpp` (1 functions, 8 instructions, 0 done)
+- class `CKeys`
+  - [ ] `toggleInputMask` 0x005024b0 (8)
+
 ### `support/codec.cpp` (2 functions, 107 instructions, 0 done)
 - class `CLZWDictionary`
   - [ ] `findCode` 0x0043ef50 (25)
 - class `CLZWCompress`
   - [ ] `process` 0x0043f360 (82)
-
-### `engine/keys.cpp` (2 functions, 11 instructions, 0 done)
-- class `CKeys`
-  - [ ] `toggleInputMask` 0x005024b0 (8)
-  - [ ] `getInputKey` 0x00502460 (3)
 
 ### `core/fire.cpp` (2 functions, 133 instructions, 0 done)
 - class `CCrater`
@@ -2259,12 +2239,12 @@ in instructions.
   - [ ] `saveScreenRaw32` 0x00548f00 (143)
   - [ ] `saveScreenshotGeneral` 0x005490c0 (183)
 
-### `engine/font.cpp` (3 functions, 30 instructions, 0 done)
+### `engine/font.cpp` (3 functions, 30 instructions, 2 done)
 - class `CBitFont`
   - [ ] `drawTextRight` 0x004cdce0 (25)
 - free functions
-  - [ ] `getDefaultTextColor` 0x004ce220 (2)
-  - [ ] `setDefaultTextColor` 0x004ce230 (3)
+  - [x] `getDefaultTextColor` 0x004ce220 (2)
+  - [x] `setDefaultTextColor` 0x004ce230 (3)
 
 ### `cockpit/drawsurf.cpp` (16 functions, 1149 instructions, 0 done)
 - class `CDrawSurface`
@@ -2642,13 +2622,13 @@ in instructions.
 - free functions
   - [ ] `freeTextureCache` 0x005dd7a0 (32)
 
-### `engine/font.cpp` (1 functions, 8 instructions, 0 done)
+### `engine/font.cpp` (1 functions, 8 instructions, 1 done)
 - class `CBitFont`
-  - [ ] `dtor` 0x004cceb0 (8)
+  - [x] `dtor` 0x004cceb0 (8)
 
-### `core/dfont.cpp` (1 functions, 168 instructions, 0 done)
+### `core/dfont.cpp` (1 functions, 168 instructions, 1 done)
 - free functions
-  - [ ] `freeFonts` 0x004710a0 (168)
+  - [x] `freeFonts` 0x004710a0 (168)
 
 ### `engine/matrix.c` (1 functions, 1 instructions, 0 done)
 - free functions
@@ -2716,7 +2696,7 @@ in instructions.
   - [ ] `mapTextureFrameBuffer` 0x00403650 (12)
   - [ ] `unmapFrameBuffer` 0x00403670 (50)
 
-### `engine/3d.c` (80 functions, 5669 instructions, 0 done)
+### `engine/3d.c` (81 functions, 5740 instructions, 0 done)
 - free functions
   - [ ] `abortOldFuncNoOpcode` 0x00403740 (22)
   - [ ] `badMRGLStruct` 0x004037b0 (9)
@@ -2792,6 +2772,7 @@ in instructions.
   - [ ] `renderPolygonAlphaBlendedDepthWritePerspOp59` 0x00406f20 (80)
   - [ ] `renderPolygonFullEffectsBufferedOp65` 0x00407290 (159)
   - [ ] `renderPolygonFullEffectsDirectOp66` 0x00407470 (138)
+  - [ ] `renderPolygonWithRenderFlags` 0x00407620 (71)
   - [ ] `renderPolygonWithRenderFlagsUV` 0x00407720 (90)
   - [ ] `dispatchMRGLBlockChain` 0x00407890 (40)
   - [ ] `flushRenderQueue` 0x00407a30 (40)
@@ -2859,10 +2840,9 @@ in instructions.
 - free functions
   - [ ] `staticInit` 0x0048a6b0 (4)
 
-### `engine/font.cpp` (17 functions, 1739 instructions, 0 done)
+### `engine/font.cpp` (16 functions, 1653 instructions, 0 done)
 - free functions
   - [ ] `isRectangleClipped` 0x004ccd80 (28)
-  - [ ] `setShadowColor` 0x004ce0f0 (86)
   - [ ] `packPixelScaled` 0x004d1110 (31)
   - [ ] `packPixelNative` 0x004d1170 (27)
 - class `CBitFont`
@@ -2901,15 +2881,16 @@ in instructions.
   - [ ] `interpolateCubicKeyframes` 0x00501f30 (314)
   - [ ] `recomputeKeyFrameNormals` 0x00502320 (82)
 
-### `engine/keys.cpp` (3 functions, 14 instructions, 0 done)
+### `engine/keys.cpp` (3 functions, 14 instructions, 3 done)
 - free functions
-  - [ ] `staticInit` 0x00502410 (2)
+  - [x] `staticInit` 0x00502410 (2)
 - class `CKeys`
-  - [ ] `getAndClearKeyState` 0x00502430 (8)
-  - [ ] `getKeyState` 0x00502420 (4)
+  - [x] `getAndClearKeyState` 0x00502430 (8)
+  - [x] `getKeyState` 0x00502420 (4)
 
-### `engine/light.cpp` (6 functions, 215 instructions, 0 done)
+### `engine/light.cpp` (7 functions, 266 instructions, 0 done)
 - free functions
+  - [ ] `calculateLighting` 0x00505780 (51)
   - [ ] `calculatePhongLighting` 0x00505530 (175)
   - [ ] `calculateAndStoreVertexLight` 0x00505850 (18)
   - [ ] `getAmbientLightLevel` 0x005054c0 (2)
@@ -2986,8 +2967,10 @@ in instructions.
   - [ ] `setupColoredSoftwareEdge` 0x00553190 (218)
   - [ ] `findEdgeInTable` 0x00553410 (22)
 
-### `engine/special.cpp` (15 functions, 472 instructions, 0 done)
+### `engine/special.cpp` (17 functions, 761 instructions, 0 done)
 - free functions
+  - [ ] `renderPerspectiveCorrectScanline32` 0x005b50ec (144)
+  - [ ] `renderPerspectiveCorrectScanline16` 0x005b5322 (145)
   - [ ] `drawPolyList2` 0x005b7780 (110)
   - [ ] `drawFullScreenQuad` 0x005b7a50 (43)
   - [ ] `clearScreenRegion` 0x005b3f37 (50)
@@ -3014,16 +2997,16 @@ in instructions.
   - [ ] `free` 0x005dcb00 (6)
   - [ ] `renderAllTextures` 0x005dd580 (67)
 
-### `engine/winfont.cpp` (8 functions, 638 instructions, 0 done)
+### `engine/winfont.cpp` (8 functions, 638 instructions, 8 done)
 - class `CWinFont`
-  - [ ] `setColorAndDrawText` 0x005f2440 (315)
-  - [ ] `reset` 0x005f2a30 (25)
-  - [ ] `createTextBackground` 0x005f2860 (143)
-  - [ ] `drawText` 0x005f23f0 (36)
-  - [ ] `getStringWidth` 0x005f2aa0 (38)
-  - [ ] `getStringHeight` 0x005f2b00 (44)
-  - [ ] `getLineSpacing` 0x005f2b70 (2)
-  - [ ] `dtor` 0x005f2390 (35)
+  - [x] `setColorAndDrawText` 0x005f2440 (315)
+  - [x] `reset` 0x005f2a30 (25)
+  - [x] `createTextBackground` 0x005f2860 (143)
+  - [x] `drawText` 0x005f23f0 (36)
+  - [x] `getStringWidth` 0x005f2aa0 (38)
+  - [x] `getStringHeight` 0x005f2b00 (44)
+  - [x] `getLineSpacing` 0x005f2b70 (2)
+  - [x] `dtor` 0x005f2390 (35)
 
 ### `engine/zraster.c` (3 functions, 221 instructions, 0 done)
 - free functions
@@ -3262,10 +3245,10 @@ in instructions.
 
 ## Step 22: Not reached from startup: `shape/`
 
-### `shape/edittool.cpp` (37 functions, 2804 instructions, 0 done)
+### `shape/edittool.cpp` (37 functions, 2804 instructions, 4 done)
 - class `CEditorTools`
-  - [ ] `init` 0x0049e020 (57)
-  - [ ] `ctor` 0x0049df80 (15)
+  - [x] `init` 0x0049e020 (57)
+  - [x] `ctor` 0x0049df80 (15)
   - [ ] `dtor` 0x0049dfb0 (35)
   - [ ] `drawWindowStatusMessage` 0x0049e870 (60)
   - [ ] `createCenteredDialog` 0x0049e940 (40)
@@ -3279,9 +3262,9 @@ in instructions.
   - [ ] `draw3DProjectedLine` 0x004a28a0 (39)
   - [ ] `setMousePointerType` 0x004a2920 (75)
 - free functions
-  - [ ] `staticInit` 0x0049d170 (7)
+  - [x] `staticInit` 0x0049d170 (7)
   - [ ] `plotPixelWithClipping` 0x0049d190 (26)
-  - [ ] `initEditorFontMetrics` 0x0049d1f0 (21)
+  - [x] `initEditorFontMetrics` 0x0049d1f0 (21)
   - [ ] `extractTabDelimitedField` 0x0049d250 (24)
   - [ ] `draw3DInterpolatedLine` 0x004a1f40 (136)
   - [ ] `getFontMaxCharHeight` 0x004a6ee0 (3)

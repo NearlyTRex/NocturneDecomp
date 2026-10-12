@@ -25,8 +25,8 @@ TEST(CSfxOptions, StartsAsAFullVolumeSoundAtTheOriginWithAnAutomaticDelay) {
     EXPECT_EQ(options.base_frequency, 1.0F);
     EXPECT_EQ(options.delay_remaining, CSfxOptions::kAutoDelay);
     EXPECT_EQ(options.flags, 0U);
-    EXPECT_EQ(options.trigger_time, 0.0);
-    EXPECT_EQ(options.trigger_id, EPlaybackPosType::Samples);
+    EXPECT_EQ(options.playback_position, 0.0);
+    EXPECT_EQ(options.playback_position_type, EPlaybackPosType::Samples);
 }
 
 TEST(CSfxOptions, ResetPutsEverythingBack) {
@@ -39,8 +39,8 @@ TEST(CSfxOptions, ResetPutsEverythingBack) {
     options.current_volume = 0.5F;
     options.delay_remaining = 0.17;
     options.flags = kSfxNonPositional;
-    options.trigger_time = 0.5;
-    options.trigger_id = EPlaybackPosType::Relative;
+    options.playback_position = 0.5;
+    options.playback_position_type = EPlaybackPosType::Relative;
     options.reset();
     EXPECT_EQ(options.channel_index, 0);
     EXPECT_EQ(options.position, common::CVector3d{});
@@ -49,8 +49,8 @@ TEST(CSfxOptions, ResetPutsEverythingBack) {
     EXPECT_EQ(options.current_volume, 1.0F);
     EXPECT_EQ(options.delay_remaining, CSfxOptions::kAutoDelay);
     EXPECT_EQ(options.flags, 0U);
-    EXPECT_EQ(options.trigger_time, 0.0);
-    EXPECT_EQ(options.trigger_id, EPlaybackPosType::Samples);
+    EXPECT_EQ(options.playback_position, 0.0);
+    EXPECT_EQ(options.playback_position_type, EPlaybackPosType::Samples);
 }
 
 } // namespace

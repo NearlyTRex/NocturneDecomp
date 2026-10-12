@@ -18,7 +18,8 @@ using ::testing::Return;
 TEST(CWinRun, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CWinRun::getTime), int (CWinRun::*)()>);
     static_assert(std::is_same_v<decltype(&CWinRun::clearKeypresses), void (CWinRun::*)()>);
-    static_assert(std::is_same_v<decltype(&CWinRun::getNextKeypress), int (CWinRun::*)()>);
+    static_assert(std::is_same_v<decltype(&CWinRun::getNextKeypress),
+                                 int (CWinRun::*)(engine::IScreenDevice &)>);
     static_assert(std::is_same_v<decltype(&CWinRun::wasKeyPressed), int (CWinRun::*)() const>);
     static_assert(std::is_same_v<decltype(&CWinRun::enqueueInput), void (CWinRun::*)(int)>);
     static_assert(std::is_same_v<decltype(&CWinRun::clearMouseClicks), void (CWinRun::*)()>);

@@ -97,6 +97,8 @@ PLATFORM_BOUNDARY = {
     "sound/sndmain.cpp:pollAndMixSfx": "miniaudio mixing",
     "sound/sndmain.cpp:CSfxSlot::mix": "miniaudio mixing; compute() sets each voice's gain, pan and pitch",
     "sound/sndmain.cpp:CSfxSlot::computeChannelDelays": "dropped: panning comes from the per-ear gains",
+    "sound/sndmain.cpp:CSfxSlot::autoCalcDelayRemaining":
+        "dropped: only the delays the game asks for are waited out, not a sound's travel time",
     # Nothing in either build calls these, or reads what they set.
     "sound/sndmain.cpp:computeComplexFFT": "dropped: no callers",
     "sound/sndmain.cpp:computeFFT": "dropped: no callers",
@@ -151,6 +153,8 @@ PLATFORM_BOUNDARY = {
     # takes the MMX and P6 paths and never quits for want of MMX.
     "core/mmx.c": "dropped: the MMX and P6 paths are always taken",
     "engine/2d.c:buildBlendTables": "dropped: its two blend tables have no reader",
+    "engine/font.cpp:CBitFont::render3DCharacter": "dropped: nothing sets use_3d_rendering",
+    "engine/font.cpp:setShadowColor": "dropped: no callers; the shadow colour stays black",
     "engine/3d.c:initTextureCache":"engine::initTextureCache in texture.cpp; this is a JMP thunk to it",
     "engine/3d.c:freeTextureCache": "engine::freeTextureCache in texture.cpp; this is a JMP thunk to it",
     "support/trisock.cpp:startupWinsock": "platform::INetwork adapter lifetime",

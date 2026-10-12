@@ -23,8 +23,8 @@ public:
 
     // Game ticks, 65536 * 18 a second, wrapping as the original's int did.
     int getTime();
-    void clearKeypresses();
-    int getNextKeypress();
+    void clearKeypresses() override;
+    int getNextKeypress(engine::IScreenDevice &screen) override;
     [[nodiscard]] int wasKeyPressed() const;
     // The queue holds 19 characters; one more drops the oldest.
     void enqueueInput(int input_value);

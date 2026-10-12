@@ -180,18 +180,6 @@ TEST_F(CSfxSlotTest, AFadeThatStopsTheSoundEmptiesTheSlotWhenItEnds) {
     EXPECT_EQ(sample_.ref_count, 0);
 }
 
-// The original computed this and never waited for it.
-TEST_F(CSfxSlotTest, AnAutomaticDelayIsTheTimeTheSoundTakesToArrive) {
-    slot_.options.delay_remaining = CSfxOptions::kAutoDelay;
-    placeAt(1116.4);
-    ASSERT_TRUE(slot_.compute(0.0F));
-    EXPECT_DOUBLE_EQ(slot_.options.delay_remaining, 1.0);
-    slot_.options.delay_remaining = CSfxOptions::kAutoDelay;
-    slot_.options.flags = kSfxNonPositional;
-    ASSERT_TRUE(slot_.compute(0.0F));
-    EXPECT_EQ(slot_.options.delay_remaining, 0.0);
-}
-
 TEST_F(CSfxSlotTest, AGivenDelayIsKept) {
     slot_.options.delay_remaining = 0.17;
     ASSERT_TRUE(slot_.compute(0.0F));
@@ -216,59 +204,59 @@ TEST_F(CSfxSlotTest, KillingAStreamedSampleFreesIt) {
 }
 
 TEST_F(CSfxSlotTest, SeekingConvertsToSamplesAndStopsAtTheEnd) {
-    slot_.options.trigger_time = 0.5;
-    slot_.options.trigger_id = EPlaybackPosType::Seconds;
+    slot_.options.playback_position = 0.5;
+    slot_.options.playback_position_type = EPlaybackPosType::Seconds;
     slot_.seek();
-    EXPECT_EQ(slot_.options.trigger_time, 1000.0);
-    EXPECT_EQ(slot_.options.trigger_id, EPlaybackPosType::Samples);
+    EXPECT_EQ(slot_.options.playback_position, 1000.0);
+    EXPECT_EQ(slot_.options.playback_position_type, EPlaybackPosType::Samples);
     EXPECT_EQ(slot_.prev_hardware_playback_pos, 1000.0);
 }
 
 TEST_F(CSfxSlotTest, SeekingALoopingSampleWrapsIntoIt) {
     sample_.loop_marker_count = true;
-    slot_.options.trigger_time = 1.25;
-    slot_.options.trigger_id = EPlaybackPosType::Relative;
+    slot_.options.playback_position = 1.25;
+    slot_.options.playback_position_type = EPlaybackPosType::Relative;
     slot_.seek();
-    EXPECT_EQ(slot_.options.trigger_time, 250.0);
+    EXPECT_EQ(slot_.options.playback_position, 250.0);
 }
 
 TEST_F(CSfxSlotTest, ThePositionFollowsTheCursor) {
     slot_.updatePlaybackPos(300.0);
-    EXPECT_EQ(slot_.options.trigger_time, 300.0);
+    EXPECT_EQ(slot_.options.playback_position, 300.0);
     slot_.updatePlaybackPos(500.0);
-    EXPECT_EQ(slot_.options.trigger_time, 500.0);
+    EXPECT_EQ(slot_.options.playback_position, 500.0);
 }
 
 // Moved away from where the cursor was, the position steps by what the cursor moved.
 TEST_F(CSfxSlotTest, AMovedPositionStepsWithTheCursor) {
     slot_.prev_hardware_playback_pos = 100.0;
-    slot_.options.trigger_time = 400.0;
+    slot_.options.playback_position = 400.0;
     slot_.updatePlaybackPos(150.0);
-    EXPECT_EQ(slot_.options.trigger_time, 450.0);
+    EXPECT_EQ(slot_.options.playback_position, 450.0);
 }
 
 TEST_F(CSfxSlotTest, AOneShotsPositionStopsAtItsEnd) {
     slot_.prev_hardware_playback_pos = 900.0;
-    slot_.options.trigger_time = 900.0;
+    slot_.options.playback_position = 900.0;
     slot_.updatePlaybackPos(1000.0);
-    EXPECT_EQ(slot_.options.trigger_time, 1000.0);
-    slot_.options.trigger_time = 950.0;
+    EXPECT_EQ(slot_.options.playback_position, 1000.0);
+    slot_.options.playback_position = 950.0;
     slot_.updatePlaybackPos(1100.0);
-    EXPECT_EQ(slot_.options.trigger_time, 1000.0);
+    EXPECT_EQ(slot_.options.playback_position, 1000.0);
 }
 
 TEST_F(CSfxSlotTest, ALoopingPositionWrapsWhenTheCursorComesRound) {
     sample_.loop_marker_count = true;
     slot_.prev_hardware_playback_pos = 900.0;
-    slot_.options.trigger_time = 900.0;
+    slot_.options.playback_position = 900.0;
     slot_.updatePlaybackPos(100.0);
-    EXPECT_EQ(slot_.options.trigger_time, 100.0);
+    EXPECT_EQ(slot_.options.playback_position, 100.0);
 }
 
 TEST_F(CSfxSlotTest, AnUnknownLengthNeitherStopsNorWraps) {
     sample_.sample_info.sample_count = -1;
     slot_.updatePlaybackPos(5000.0);
-    EXPECT_EQ(slot_.options.trigger_time, 5000.0);
+    EXPECT_EQ(slot_.options.playback_position, 5000.0);
 }
 
 class CSfxSlotVoiceTest : public CSfxSlotTest {
@@ -306,12 +294,21 @@ TEST_F(CSfxSlotVoiceTest, AVoiceStartsAfterItsDelay) {
     EXPECT_THAT(frames.at(std::size_t{2} * 225), FloatNear(0.5F, 1e-4F));
 }
 
+// The automatic delay was the sound's travel time, which the voice doesn't wait for.
+TEST_F(CSfxSlotVoiceTest, ADistantSoundWithoutAGivenDelayStartsAtOnce) {
+    slot_.options.delay_remaining = CSfxOptions::kAutoDelay;
+    placeAt(1116.4);
+    ASSERT_TRUE(slot_.compute(0.0F));
+    slot_.play(mixer_);
+    EXPECT_NE(mix(2)[2], 0.0F);
+}
+
 TEST_F(CSfxSlotVoiceTest, AVoiceStartsAtThePlaybackPosition) {
-    slot_.options.trigger_time = 990.0;
+    slot_.options.playback_position = 990.0;
     slot_.seek();
     slot_.play(mixer_);
     ASSERT_TRUE(slot_.pollHwPlaybackPos());
-    EXPECT_EQ(slot_.options.trigger_time, 990.0);
+    EXPECT_EQ(slot_.options.playback_position, 990.0);
 }
 
 TEST_F(CSfxSlotVoiceTest, TheSlotEmptiesOnceItsVoiceHasPlayedOut) {
@@ -331,7 +328,7 @@ TEST_F(CSfxSlotVoiceTest, ALoopingVoiceKeepsPlaying) {
     slot_.pollHwHandle();
     EXPECT_EQ(slot_.sample, &sample_);
     ASSERT_TRUE(slot_.pollHwPlaybackPos());
-    EXPECT_LE(slot_.options.trigger_time, 1000.0);
+    EXPECT_LE(slot_.options.playback_position, 1000.0);
 }
 
 TEST_F(CSfxSlotVoiceTest, WithoutAVoiceThereIsNothingToPoll) {

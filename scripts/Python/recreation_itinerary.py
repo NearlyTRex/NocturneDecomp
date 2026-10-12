@@ -22,6 +22,7 @@ Usage: recreation_itinerary.py [--out docs/recreation-itinerary.md] [--split 300
 
 import argparse
 import collections
+import json
 import math
 import os
 import re
@@ -32,12 +33,26 @@ import scaffold_recreation as scaffold  # noqa: E402
 
 ROOT = scaffold.ROOT
 SOURCE = os.path.join(scaffold.ANNOTATIONS, "nocedit.exe", "pseudocode", "src")
+RETAIL_SOURCE = os.path.join(scaffold.ANNOTATIONS, "nocturne.exe", "pseudocode", "src")
+MAPPING = os.path.join(scaffold.ANNOTATIONS, "nocturne.exe", "reports",
+                       "sibling_verified_mapping.json")
 RECREATION = os.path.join(ROOT, "recreation")
 STARTUP = ["00507a60", "00507a50", "00508570"]
 INITIALIZE = STARTUP[0]
 # displayErrorAndQuit throws in the recreation, and the teardown it ran by hand is destructors,
 # so the walk doesn't follow its calls.
 THROWS = {"00506f10"}
+# Functions whose calls the walk takes from the retail body instead, because the editor build's
+# differs: retail's showWarning opens its own modal where nocedit calls the editor's
+# drawSingleButtonPrompt, and retail's modal windows skip the editor's screen backups.
+RETAIL_BODIES = {
+    "0049e6f0",  # CEditorTools::showWarning
+    "004a0890",  # CEditorTools::createCenteredModal
+    "004a0970",  # CEditorTools::createModalWindow
+    "004a0f80",  # CEditorTools::paintCurrentWindow
+    "004a0dd0",  # CEditorTools::restoreWindowAndCleanup
+    "004a0ea0",  # CEditorTools::popWindowState
+}
 # Translation units ported as one step, because their halves only test together. A unit takes
 # its TUs whole, plus `extra` functions and less `exclude`, and goes in next to the step holding
 # `anchor`. An "after" unit claims what it reaches once the walk reaches the anchor; a "before"
@@ -66,10 +81,10 @@ SOURCE_SUFFIXES = (".c", ".cpp")
 MAX_SPLIT_DEPTH = 4
 
 
-def source_files():
+def source_files(source=SOURCE):
     """Address to the raw decompiled body, which keeps the original's call order."""
     files = {}
-    for directory, _, names in os.walk(SOURCE):
+    for directory, _, names in os.walk(source):
         for name in names:
             if not name.endswith(SOURCE_SUFFIXES) or ".keep." in name or ".chunked." in name:
                 continue
@@ -121,7 +136,15 @@ class Itinerary:
         # What the game runs: in scope, or replaced by a platform interface whose callers still
         # reach game code through it.
         self.walkable = self.in_scope | set(self.model.replaced)
+        # What the recreation drops never runs, so the walk doesn't follow its calls either.
+        self.dropped = {a for a, f in self.model.replaced.items()
+                        if scaffold.boundary_destination(f).startswith("dropped")}
         self.sources = source_files()
+        with open(MAPPING, encoding="utf-8") as f:
+            pairs = json.load(f)["pairs"]
+        retail_sources = source_files(RETAIL_SOURCE)
+        self.retail = {p["a"]: retail_sources.get(p["b"]) for p in pairs if p["a"] in RETAIL_BODIES}
+        self.from_retail = {p["b"]: p["a"] for p in pairs}
         # What pass 1 leaves to the compiler counts as done: a default constructor or destructor
         # that only returns `this`, and a copy constructor or assignment that calls nothing.
         self.generated = {a for a in self.in_scope if self.is_compiler_generated(self.functions[a])}
@@ -147,19 +170,24 @@ class Itinerary:
         """The functions a body names, in order: its calls and the callbacks it passes on."""
         if addr not in self.named:
             names = []
-            path = self.sources.get(addr)
+            path = self.retail[addr] if addr in RETAIL_BODIES else self.sources.get(addr)
             if path is not None:
                 with open(path, encoding="utf-8", errors="replace") as f:
-                    for callee in CALL.findall(f.read()):
-                        if callee != addr and callee not in names and callee in self.walkable:
+                    found = CALL.findall(f.read())
+                if addr in RETAIL_BODIES:
+                    found = [self.from_retail.get(callee) for callee in found]
+                for callee in found:
+                    if callee != addr and callee not in names and callee in self.walkable:
                             names.append(callee)
             self.named[addr] = names
         return self.named[addr]
 
     def successors(self, addr):
-        if addr in THROWS:
+        if addr in THROWS or addr in self.dropped:
             return []
         f = self.functions[addr]
+        if addr in RETAIL_BODIES:
+            return sorted(self.names_in_source(addr))
         out = set(f.get("calls", [])) | set(self.names_in_source(addr))
         for ref in f.get("data_refs", []):
             out |= self.vtable_slots.get(ref, set())

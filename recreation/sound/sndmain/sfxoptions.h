@@ -30,12 +30,11 @@ public:
     float current_volume = 1.0F;
     // A multiple of the sample's own rate.
     float base_frequency = 1.0F;
-    // Seconds before the sound starts; kAutoDelay works it out from the distance.
+    // Seconds before the sound starts; kAutoDelay, the original's travel time, starts it at once.
     double delay_remaining = kAutoDelay;
     std::uint32_t flags = 0;
-    // The playback position and its units (the names are Ghidra's).
-    double trigger_time = 0.0;
-    EPlaybackPosType trigger_id = EPlaybackPosType::Samples;
+    double playback_position = 0.0;
+    EPlaybackPosType playback_position_type = EPlaybackPosType::Samples;
 
     static constexpr double kAutoDelay = -1.0;
 };

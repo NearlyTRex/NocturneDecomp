@@ -59,7 +59,7 @@ public:
     void setNextSfxDelay(double delay_seconds);
     void setNextSfxFlags(std::uint32_t flags);
     void setNextSfxFlagBits(std::uint32_t flag_mask);
-    void setNextSfxTriggerTime(double trigger_time, EPlaybackPosType trigger_id);
+    void setNextSfxTriggerTime(double playback_position, EPlaybackPosType playback_position_type);
     void pushSfxOptions();
     void popSfxOptions();
 

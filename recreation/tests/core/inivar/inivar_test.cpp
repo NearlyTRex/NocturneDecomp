@@ -1,11 +1,21 @@
 #include "common/error/fatalerror.h"
+#include "core/dfont/dfont.h"
 #include "core/game/game.h"
 #include "core/inivar/inivar.h"
 #include "engine/2d/2d.h"
+#include "engine/3d/3d.h"
+#include "engine/font/font.h"
 #include "engine/ini/ini.h"
+#include "engine/keys/keys.h"
+#include "engine/light/light.h"
+#include "engine/matrix/matrix.h"
 #include "engine/special/special.h"
+#include "shape/edittool/editortools.h"
+#include "support/newmsg/newmsg.h"
+#include "tests/mocks/engine/mockrawinput.h"
 #include "tests/mocks/engine/mockscreendevice.h"
 #include "tests/mocks/platform/mockdisplay.h"
+#include "tests/mocks/platform/mockosfontfactory.h"
 #include "tests/mocks/platform/mockrenderer.h"
 #include "tests/mocks/sound/sndmainfixture.h"
 
@@ -55,15 +65,26 @@ protected:
     ::testing::NiceMock<platform::MockDisplay> display_;
     ::testing::NiceMock<platform::MockRenderer> renderer_;
     ::testing::NiceMock<engine::MockScreenDevice> screen_;
-    engine::C2d two_d_{dosio_, screen_};
+    ::testing::NiceMock<engine::MockRawInput> raw_input_;
+    engine::C2d two_d_{dosio_, screen_, raw_input_};
     engine::CSpecial special_{renderer_, screen_, two_d_};
+    engine::CLight light_;
+    engine::CMatrix matrix_{two_d_, light_};
+    engine::C3d three_d_;
+    engine::CKeys keys_{raw_input_, screen_};
+    shape::CEditorTools editor_tools_{two_d_, matrix_, three_d_, screen_, special_, keys_};
+    engine::CFontColors colors_;
+    ::testing::NiceMock<platform::MockOsFontFactory> os_fonts_;
+    support::CNewMsg messages_{dosio_};
+    CDFont fonts_{dosio_, screen_, two_d_, three_d_, colors_, os_fonts_, messages_, editor_tools_};
     CGame game_;
     engine::CIni ini_{file_system_};
     SIniDataOwners owners_{.game = game_,
                            .sound_main = sound_,
                            .console = console_,
                            .special = special_,
-                           .display = display_};
+                           .display = display_,
+                           .fonts = fonts_};
 };
 
 TEST_F(CInivarTest, ReadsTheGraphicsSettings) {
@@ -85,6 +106,21 @@ TEST_F(CInivarTest, ReadsTheGraphicsSettings) {
     EXPECT_EQ(game_.foul_language_flag, 0);
     EXPECT_EQ(game_.shadow_flag, 0);
     EXPECT_EQ(special_.getCurrentGraphicsBoard(), 1);
+}
+
+TEST_F(CInivarTest, TheOsFontChoiceIsReadUnlessItIsOutOfRange) {
+    text_ = "[Graphics]\r\nosFont=2\r\n";
+    read();
+    EXPECT_EQ(fonts_.getOsFontChoice(), EOsFontChoice::System);
+    text_ = "[Graphics]\r\nosFont=3\r\n";
+    read();
+    EXPECT_EQ(fonts_.getOsFontChoice(), EOsFontChoice::System);
+}
+
+TEST_F(CInivarTest, TheOsFontChoiceIsWritten) {
+    fonts_.setOsFontChoice(EOsFontChoice::Bitmap);
+    writeIniData(ini_, owners_);
+    EXPECT_THAT(text_, HasSubstr("osFont=1\r\n"));
 }
 
 TEST_F(CInivarTest, MissingKeysKeepTheirSettings) {
@@ -201,7 +237,8 @@ TEST_F(CInivarTest, WhatIsWrittenReadsBackTheSame) {
                                 .sound_main = sound_,
                                 .console = console_,
                                 .special = special_,
-                                .display = display_};
+                                .display = display_,
+                                .fonts = fonts_};
     readIniData(ini_, file_system_, reread);
     EXPECT_EQ(copy.game_control, EControlMode::CONTROL_MODE_GAMEPAD);
     EXPECT_EQ(copy.controls.formatBindings(EGameAction::Fire),

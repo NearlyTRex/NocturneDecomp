@@ -105,8 +105,8 @@ double CSndMain::getSfxPlaybackPosition(std::uint32_t sfx_handle, EPlaybackPosTy
         return -1.0;
     }
     slot->pollHwPlaybackPos();
-    return slot->sample->sample_info.cvtPlaybackPos(slot->options.trigger_time,
-                                                    slot->options.trigger_id, output_format);
+    return slot->sample->sample_info.cvtPlaybackPos(
+        slot->options.playback_position, slot->options.playback_position_type, output_format);
 }
 
 bool CSndMain::updateSfx(std::uint32_t sfx_handle, const std::function<void(CSfxSlot &)> &change) {

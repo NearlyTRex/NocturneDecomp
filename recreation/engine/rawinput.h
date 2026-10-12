@@ -1,5 +1,7 @@
 #pragma once
 
+#include "engine/fwd.h"
+
 #include <cstddef>
 #include <cstdint>
 #include <span>
@@ -27,6 +29,11 @@ public:
     [[nodiscard]] virtual int takeMouseWheelNotches() = 0;
     // Typed characters, mouse clicks and held keys all dropped.
     virtual void clearInput() = 0;
+    // Typed characters alone dropped.
+    virtual void clearKeypresses() = 0;
+    // The next typed character, presenting frames on the screen until one comes; 0 once the
+    // window has closed.
+    virtual int getNextKeypress(IScreenDevice &screen) = 0;
 };
 
 } // namespace nocturne::engine

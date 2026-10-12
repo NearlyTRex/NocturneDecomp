@@ -1,9 +1,13 @@
 #pragma once
 
 #include "common/fwd.h"
+#include "common/math/vector3i.h"
+#include "engine/2d/2d.h"
+#include "engine/fwd.h"
 #include "platform/fwd.h"
 
 #include <array>
+#include <cstddef>
 
 namespace nocturne::engine {
 
@@ -11,7 +15,10 @@ namespace nocturne::engine {
 // stacks and the camera. Angles are 65536 to a turn; sines and cosines are 16.16.
 class CMatrix {
 public:
-    CMatrix();
+    // The projection scale a fresh 3D window starts at: 1.0 in 16.16.
+    static constexpr int kUnitProjectionScale = 0x10000;
+
+    CMatrix(C2d &two_d, CLight &light);
 
     void doNothing();
     [[nodiscard]] int interpolatedSin(int angle) const;
@@ -31,19 +38,40 @@ public:
                                               common::CVector3i *output_vector);
     void setCameraOrigin(int x, int y, int z);
     void setCameraRotation(int pitch, int yaw, int roll);
-    void getCameraOrigin(common::CVector3i *output);
-    void getCameraRotation(common::CVector3i *output);
+    [[nodiscard]] common::CVector3i getCameraOrigin() const;
+    [[nodiscard]] common::CVector3i getCameraRotation() const;
+    // Opens a 3D window: saves the camera, light, projection and clip, and clips to the
+    // rectangle, which is one pixel wider and taller than width by height. Nine can be open.
     void pushViewport(int x, int y, int width, int height);
+    // Puts back what the matching push saved; the viewport size stays the window's.
     void popViewport();
+    [[nodiscard]] int getProjectionScale() const;
 
 private:
     // 256 entries to a turn, and a 257th equal to the first so interpolation can read one past.
     static constexpr int kTrigTableSize = 257;
+    static constexpr std::size_t kViewportStackSize = 10;
+
+    struct SViewportState {
+        common::CVector3i camera_origin;
+        common::CVector3i camera_rotation;
+        common::CVector3i light_direction;
+        SProjectionParams projection;
+        int projection_scale = 0;
+        SClipRect clip;
+    };
 
     void initializeTrigTables();
 
+    C2d &two_d_;
+    CLight &light_;
     std::array<int, kTrigTableSize> sin_table_{};
     std::array<int, kTrigTableSize> cos_table_{};
+    common::CVector3i camera_origin_;
+    common::CVector3i camera_rotation_;
+    int projection_scale_ = kUnitProjectionScale;
+    std::array<SViewportState, kViewportStackSize> viewport_stack_{};
+    std::size_t viewport_stack_index_ = 0;
 };
 
 } // namespace nocturne::engine

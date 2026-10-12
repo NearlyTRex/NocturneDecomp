@@ -75,9 +75,6 @@ bool CSfxSlot::compute(float delta_time) {
         }
     }
     updateBoundPositionAndVelocity();
-    if (options.delay_remaining == CSfxOptions::kAutoDelay) {
-        autoCalcDelayRemaining();
-    }
     effective_frequency = options.base_frequency;
     if (isPositional()) {
         effective_frequency *= computeDoppler();
@@ -110,15 +107,6 @@ void CSfxSlot::updateBoundPositionAndVelocity() {
     if (options.velocity_source_ptr != nullptr) {
         options.velocity = toDouble(*options.velocity_source_ptr);
     }
-}
-
-// The original worked this out and never waited for it; the voice now starts this late.
-// nocedit 0x005a7070
-void CSfxSlot::autoCalcDelayRemaining() {
-    options.delay_remaining =
-        isPositional()
-            ? length(subtract(options.position, sound_main_.getListenerPosition())) / kSpeedOfSound
-            : 0.0;
 }
 
 // nocedit 0x005a6d80
@@ -162,11 +150,12 @@ void CSfxSlot::kill() {
 
 // nocedit 0x005a8390
 void CSfxSlot::seek() {
-    options.trigger_time = sample->sample_info.cvtPlaybackPos(
-        options.trigger_time, options.trigger_id, EPlaybackPosType::Samples);
-    options.trigger_id = EPlaybackPosType::Samples;
-    options.trigger_time = sample->normalizePlaybackPos(options.trigger_time, options.trigger_id);
-    prev_hardware_playback_pos = options.trigger_time;
+    options.playback_position = sample->sample_info.cvtPlaybackPos(
+        options.playback_position, options.playback_position_type, EPlaybackPosType::Samples);
+    options.playback_position_type = EPlaybackPosType::Samples;
+    options.playback_position =
+        sample->normalizePlaybackPos(options.playback_position, options.playback_position_type);
+    prev_hardware_playback_pos = options.playback_position;
 }
 
 // The position follows the cursor, wrapping a looping sample and stopping any other at its end.
@@ -177,18 +166,18 @@ void CSfxSlot::updatePlaybackPos(double hardware_playback_pos) {
     if (step < 0.0) {
         step += sample_count;
     }
-    if (options.trigger_time != prev_hardware_playback_pos ||
-        hardware_playback_pos < options.trigger_time) {
-        options.trigger_time += step;
+    if (options.playback_position != prev_hardware_playback_pos ||
+        hardware_playback_pos < options.playback_position) {
+        options.playback_position += step;
     } else {
-        options.trigger_time = hardware_playback_pos;
+        options.playback_position = hardware_playback_pos;
     }
-    options.trigger_time = std::max(options.trigger_time, 0.0);
-    if (sample_count >= 0.0 && sample_count <= options.trigger_time) {
-        options.trigger_time =
+    options.playback_position = std::max(options.playback_position, 0.0);
+    if (sample_count >= 0.0 && sample_count <= options.playback_position) {
+        options.playback_position =
             sample->loop_marker_count
-                ? options.trigger_time -
-                      std::floor(options.trigger_time / sample_count) * sample_count
+                ? options.playback_position -
+                      std::floor(options.playback_position / sample_count) * sample_count
                 : sample_count;
     }
     prev_hardware_playback_pos = hardware_playback_pos;
@@ -197,9 +186,12 @@ void CSfxSlot::updatePlaybackPos(double hardware_playback_pos) {
 void CSfxSlot::play(CSfxMixer &mixer) {
     voice_ = std::make_unique<CSfxVoice>(mixer, *sample);
     voice_->setLooping(sample->loop_marker_count);
-    voice_->seek(static_cast<std::uint64_t>(options.trigger_time));
+    voice_->seek(static_cast<std::uint64_t>(options.playback_position));
     voice_->setGains(getChannelVolumes());
     voice_->setPitch(effective_frequency);
+    // The original never waited out a delay. A delay the game asks for is honoured; the automatic
+    // one, the sound's travel time, isn't, as it would put every distant sound behind what makes
+    // it.
     voice_->start(
         static_cast<std::uint64_t>(std::max(options.delay_remaining, 0.0) * mixer.getSampleRate()));
 }

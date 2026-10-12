@@ -1,4 +1,5 @@
 #include "platform/window.h"
+#include "tests/mocks/engine/mockscreendevice.h"
 #include "tests/mocks/platform/mockclock.h"
 #include "tests/mocks/platform/mockwindow.h"
 #include "wincore/winrun/winrun.h"
@@ -90,6 +91,41 @@ TEST_F(CWinRunInputTest, TypedCharactersQueueAndNulsDont) {
     EXPECT_EQ(winrun_.wasKeyPressed(), 1);
     winrun_.clearKeypresses();
     EXPECT_EQ(winrun_.wasKeyPressed(), 0);
+}
+
+TEST_F(CWinRunInputTest, TheNextKeypressComesOutOfTheQueueInOrder) {
+    engine::MockScreenDevice screen;
+    EXPECT_CALL(screen, swapBuffers).Times(0);
+    winrun_.enqueueInput('a');
+    winrun_.enqueueInput('b');
+    EXPECT_EQ(winrun_.getNextKeypress(screen), 'a');
+    EXPECT_EQ(winrun_.getNextKeypress(screen), 'b');
+    EXPECT_EQ(winrun_.wasKeyPressed(), 0);
+}
+
+TEST_F(CWinRunInputTest, WaitingForAKeypressPresentsFramesUntilOneIsTyped) {
+    engine::MockScreenDevice screen;
+    EXPECT_CALL(screen, swapBuffers).WillOnce([] {}).WillOnce([this] {
+        pump({{.type = EWindowEventType::Character, .character = 'x'}});
+    });
+    EXPECT_EQ(winrun_.getNextKeypress(screen), 'x');
+}
+
+TEST_F(CWinRunInputTest, WaitingForAKeypressGivesUpOnceTheWindowCloses) {
+    engine::MockScreenDevice screen;
+    EXPECT_CALL(screen, swapBuffers).WillOnce([this] { pump({{.type = EWindowEventType::Quit}}); });
+    EXPECT_EQ(winrun_.getNextKeypress(screen), 0);
+}
+
+// The read index wraps with the write index, so the twentieth character still comes out.
+TEST_F(CWinRunInputTest, TheQueueWrapsAround) {
+    engine::MockScreenDevice screen;
+    for (int i = 0; i < 19; ++i) {
+        winrun_.enqueueInput('a');
+        EXPECT_EQ(winrun_.getNextKeypress(screen), 'a');
+    }
+    winrun_.enqueueInput('z');
+    EXPECT_EQ(winrun_.getNextKeypress(screen), 'z');
 }
 
 // Twenty characters fill all twenty slots, so the oldest goes and the queue still holds some.

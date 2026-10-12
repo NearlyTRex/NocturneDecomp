@@ -16,10 +16,22 @@ struct SProjectionParams {
     int neg_half_height_fixed = 0;
     int center_x_fixed = 0;
     int center_y_fixed = 0;
+
+    bool operator==(const SProjectionParams &) const = default;
+};
+
+// The 2D clip rectangle, every edge inclusive.
+struct SClipRect {
+    int left = 0;
+    int top = 0;
+    int right = 0;
+    int bottom = 0;
+
+    bool operator==(const SClipRect &) const = default;
 };
 
 // The software renderer's 2D state: the palette and the tables built from it, the clip
-// rectangle and the viewport the projection centres on.
+// rectangle, the viewport the projection centres on and the colour lines are drawn in.
 class C2d {
 public:
     static constexpr std::size_t kPaletteBytes = 768;
@@ -31,7 +43,7 @@ public:
     using Palette = std::array<std::uint8_t, kPaletteBytes>;
     using LightRow = std::array<std::uint8_t, 256>;
 
-    C2d(const CDosIo &dosio, IScreenDevice &screen);
+    C2d(const CDosIo &dosio, IScreenDevice &screen, IRawInput &raw_input);
 
     void initGraphicsSystem();
     void cleanupGraphicsSystem();
@@ -62,10 +74,14 @@ public:
     void resetGraphicsSystem();
     void reinitializeGraphicsSystem();
     void clipLineGlobal(int x1, int y1, int x2, int y2);
+    // The line drawing below is in the active render colour, a palette index, and clipped.
     void drawHLine(int x1, int y, int x2);
     void drawVLine(int x, int y1, int y2);
+    void drawRect(int x1, int y1, int x2, int y2);
     void fillRectColor(int x1, int y1, int x2, int y2, int color);
+    // The border is drawn one pixel outside the fill.
     void fillRectWithBorder(int x1, int y1, int x2, int y2, int fill_color, int border_color);
+    // Drops typed characters, mouse clicks and held keys.
     void clearInputAndWait();
 
     // vga.act: 256 RGB triples.
@@ -86,8 +102,18 @@ public:
     [[nodiscard]] int getViewportWidth() const;
     [[nodiscard]] int getViewportHeight() const;
     [[nodiscard]] const SProjectionParams &getProjection() const;
+    [[nodiscard]] SClipRect getClipRect() const;
+    // The clip, projection and viewport size put back as a window or 3D window saved them.
+    void setClipRect(const SClipRect &clip);
+    void setProjection(const SProjectionParams &projection);
+    void setViewportSize(int width, int height);
+    [[nodiscard]] int getActiveRenderColor() const;
+    void setActiveRenderColor(int color);
 
 private:
+    // count pixels of row y from x in the active render colour; false at a depth that has no
+    // colour table.
+    bool fillRun(int x, int y, int count);
     void loadLightTable(std::string_view filename);
     void buildLightTable(int base_color_index);
     void saveLightTable(std::string_view filename);
@@ -96,6 +122,7 @@ private:
 
     const CDosIo &dosio_;
     IScreenDevice &screen_;
+    IRawInput &raw_input_;
     Palette source_palette_data_{};
     Palette default_palette_{};
     std::array<float, 256> palette_luminance_cache_{};
@@ -109,6 +136,7 @@ private:
     int viewport_width_ = 0;
     int viewport_height_ = 0;
     SProjectionParams projection_;
+    int active_render_color_ = 0;
 };
 
 } // namespace nocturne::engine

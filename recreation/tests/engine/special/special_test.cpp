@@ -1,6 +1,7 @@
 #include "engine/2d/2d.h"
 #include "engine/dosio/dosio.h"
 #include "engine/special/special.h"
+#include "tests/mocks/engine/mockrawinput.h"
 #include "tests/mocks/engine/mockscreendevice.h"
 #include "tests/mocks/platform/mockfilesystem.h"
 #include "tests/mocks/platform/mockrenderer.h"
@@ -139,7 +140,8 @@ protected:
     NiceMock<platform::MockFileSystem> file_system_;
     CDosIo dosio_{file_system_};
     NiceMock<MockScreenDevice> screen_;
-    C2d two_d_{dosio_, screen_};
+    NiceMock<MockRawInput> raw_input_;
+    C2d two_d_{dosio_, screen_, raw_input_};
     NiceMock<platform::MockRenderer> renderer_;
     CSpecial special_{renderer_, screen_, two_d_};
 };

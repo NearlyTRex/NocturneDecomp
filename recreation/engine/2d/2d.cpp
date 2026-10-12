@@ -19,7 +19,8 @@ constexpr int kStartupBitsPerPixel = 8;
 
 } // namespace
 
-C2d::C2d(const CDosIo &dosio, IScreenDevice &screen) : dosio_(dosio), screen_(screen) {}
+C2d::C2d(const CDosIo &dosio, IScreenDevice &screen, IRawInput &raw_input)
+    : dosio_(dosio), screen_(screen), raw_input_(raw_input) {}
 
 // The retail build also loads startup/font.ndx and font.bin, for an antialiased font nothing
 // draws, and builds two blend tables nothing reads; neither is kept.
@@ -119,6 +120,34 @@ int C2d::getViewportHeight() const {
 
 const SProjectionParams &C2d::getProjection() const {
     return projection_;
+}
+
+SClipRect C2d::getClipRect() const {
+    return {.left = clip_left_, .top = clip_top_, .right = clip_right_, .bottom = clip_bottom_};
+}
+
+void C2d::setClipRect(const SClipRect &clip) {
+    clip_left_ = clip.left;
+    clip_top_ = clip.top;
+    clip_right_ = clip.right;
+    clip_bottom_ = clip.bottom;
+}
+
+void C2d::setProjection(const SProjectionParams &projection) {
+    projection_ = projection;
+}
+
+void C2d::setViewportSize(int width, int height) {
+    viewport_width_ = width;
+    viewport_height_ = height;
+}
+
+int C2d::getActiveRenderColor() const {
+    return active_render_color_;
+}
+
+void C2d::setActiveRenderColor(int color) {
+    active_render_color_ = color;
 }
 
 } // namespace nocturne::engine
