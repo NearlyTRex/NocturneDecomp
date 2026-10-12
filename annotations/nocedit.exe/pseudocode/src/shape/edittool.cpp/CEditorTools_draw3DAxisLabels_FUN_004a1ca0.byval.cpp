@@ -18,13 +18,13 @@ __asm {
         push 0x6a
         mov EBX,dword ptr [EAX + 0x3168]
         push EAX
-        mov dword ptr [g_FontCharacterHeight],EBX
+        mov dword ptr [g_EditorFontMaxCharWidth],EBX
         call engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0
         add ESP,0x8
         fld float ptr [ESP + 0x3c]
         fmul double ptr [g_AxisScaleMultiplier]
         xor ESI,ESI
-        mov [g_FontCharacterWidth],EAX
+        mov [g_EditorFontLineHeight],EAX
         mov EAX,dword ptr [ESP + 0x40]
         mov dword ptr [ESP + 0x14],ESI
         mov dword ptr [ESP + 0x18],ESI

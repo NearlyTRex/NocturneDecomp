@@ -49,8 +49,8 @@ float g_EnemyVictimCandidateDistances[2000] = {};
 
 // int
 int g_WindowStackCount = {};
-int g_FontCharacterHeight = {};
-int g_FontCharacterWidth = {};
+int g_EditorFontMaxCharWidth = {};
+int g_EditorFontLineHeight = {};
 int g_MouseCursorType = {};
 int g_WindowContentColor = {};
 int g_WindowBorderHighlightColor = {};

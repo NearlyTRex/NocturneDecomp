@@ -30,8 +30,8 @@
 ;   int g_WindowHeight = 0xc8
 ;   CBitFont* g_EditorFont
 ;   CEditorTools g_CEditorToolsInstance
-;   int g_FontCharacterHeight
-;   int g_FontCharacterWidth
+;   int g_EditorFontMaxCharWidth
+;   int g_EditorFontLineHeight
 ;   int g_ClipLeft
 ;   int g_ClipTop
 ;   int g_ClipRight
@@ -75,10 +75,10 @@ section .text
     PUSH 0x6a                           ; 0049e153
     MOV EDX,dword ptr [EAX + 0x3168]    ; 0049e155
     PUSH EAX                            ; 0049e15b
-    MOV dword ptr [0x02cf2668],EDX      ; 0049e15c | g_FontCharacterHeight
+    MOV dword ptr [0x02cf2668],EDX      ; 0049e15c | g_EditorFontMaxCharWidth
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 0049e162
         ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
-    MOV [0x02cf266c],EAX                ; 0049e167 | g_FontCharacterWidth
+    MOV [0x02cf266c],EAX                ; 0049e167 | g_EditorFontLineHeight
     MOV EAX,[0x00679398]                ; 0049e16c | g_WindowHeight
     MOV EDX,EAX                         ; 0049e171
     MOV EBX,0x60                        ; 0049e173
@@ -132,13 +132,13 @@ section .text
     PUSH 0x0                            ; 0049e204
     MOV EDX,dword ptr [ESP + 0x110]     ; 0049e206
     PUSH EDX                            ; 0049e20d
-    MOV EDX,dword ptr [0x02cf266c]      ; 0049e20e | g_FontCharacterWidth
+    MOV EDX,dword ptr [0x02cf266c]      ; 0049e20e | g_EditorFontLineHeight
     ADD EDX,EDX                         ; 0049e214
     MOV EDI,EAX                         ; 0049e216
     ADD EAX,EDX                         ; 0049e218
     ADD EAX,EBX                         ; 0049e21a
     PUSH EAX                            ; 0049e21c
-    MOV EAX,[0x02cf2668]                ; 0049e21d | g_FontCharacterHeight
+    MOV EAX,[0x02cf2668]                ; 0049e21d | g_EditorFontMaxCharWidth
     MOV ECX,dword ptr [ESP + 0x100]     ; 0049e222
     SHL EAX,0x2                         ; 0049e229
     ADD EAX,ECX                         ; 0049e22c

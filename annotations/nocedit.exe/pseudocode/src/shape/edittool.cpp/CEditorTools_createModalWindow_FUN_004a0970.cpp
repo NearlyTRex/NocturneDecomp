@@ -39,8 +39,8 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_004a0970(CEdi
     g_CurrentLineNumber = 141;
     core_main_c_displayErrorAndQuit_FUN_00506f10("gEdFont must be set by the application.");
   }
-  g_FontCharacterHeight = g_EditorFont->max_char_width;
-  g_FontCharacterWidth = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_EditorFont,0x6a);
+  g_EditorFontMaxCharWidth = g_EditorFont->max_char_width;
+  g_EditorFontLineHeight = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_EditorFont,0x6a);
   if (4 < g_WindowStackCount) {
     g_CurrentFilename = "..\\shape\\edittool.cpp";
     g_CurrentLineNumber = 1976;
@@ -85,10 +85,10 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_004a0970(CEdi
       buffer[-1] = 0;
       iVar1 = engine_font_cpp_CBitFont_getTextHeight_FUN_004cff40
                         (this_ptr_00,g_WindowStack[iVar2].text_buffer);
-      local_24 = g_FontCharacterWidth + iVar1;
+      local_24 = g_EditorFontLineHeight + iVar1;
       iVar1 = engine_font_cpp_CBitFont_getTextHeight_FUN_004cff40(g_EditorFont,"j");
-      if (local_24 < iVar1 + g_FontCharacterWidth) {
-        local_24 = iVar1 + g_FontCharacterWidth;
+      if (local_24 < iVar1 + g_EditorFontLineHeight) {
+        local_24 = iVar1 + g_EditorFontLineHeight;
       }
       bottom = bottom + local_24 / 2;
       top = top - local_24 / 2;

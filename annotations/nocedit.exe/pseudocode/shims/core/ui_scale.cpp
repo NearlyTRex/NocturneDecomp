@@ -72,11 +72,10 @@ void nocturne_ui_editor_metrics(void) {
     int scale = nocturne_ui_editor_scale();
 
     if (g_EditorFont == 0) { return; }
-    // Field names as Ghidra recovered them; the engine really does take the
-    // height global from max_char_width and the width global from the height of
-    // 'j'. Reproduced as-is so this stays a scale of the shipped values.
-    g_FontCharacterHeight = g_EditorFont->max_char_width * scale;
-    g_FontCharacterWidth =
+    // The widest glyph, and the height of 'j' as the line height: a scale of
+    // the shipped values.
+    g_EditorFontMaxCharWidth = g_EditorFont->max_char_width * scale;
+    g_EditorFontLineHeight =
         nocturne_ui_char_height(g_EditorFont, 0x6a, scale);
 }
 

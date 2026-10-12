@@ -28,8 +28,8 @@ void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(CEd
     g_CurrentLineNumber = 141;
     core_main_c_displayErrorAndQuit_FUN_00506f10("gEdFont must be set by the application.");
   }
-  g_FontCharacterHeight = g_EditorFont->max_char_width;
-  g_FontCharacterWidth = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_EditorFont,0x6a);
+  g_EditorFontMaxCharWidth = g_EditorFont->max_char_width;
+  g_EditorFontLineHeight = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_EditorFont,0x6a);
   if (g_WindowStackCount < 1) {
     g_CurrentFilename = "..\\shape\\edittool.cpp";
     g_CurrentLineNumber = 2183;
@@ -62,15 +62,15 @@ void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(CEd
     return;
   }
   g_ClipTop = g_WindowStack[iVar3].rect.top;
-  iVar8 = g_FontCharacterWidth / 2 + g_WindowStack[iVar3].rect.top + -1;
-  iVar6 = g_FontCharacterWidth * 5 >> 0x1f;
+  iVar8 = g_EditorFontLineHeight / 2 + g_WindowStack[iVar3].rect.top + -1;
+  iVar6 = g_EditorFontLineHeight * 5 >> 0x1f;
   engine_2d_c_fillRectColor_FUN_00403170
             ((pSVar7->rect).left + 1,iVar8,g_WindowStack[iVar3].rect.right + -2,
-             ((int)((g_FontCharacterWidth * 5 + iVar6 * -4) - (uint)(iVar6 << 1 < 0)) >> 2) + iVar8
-             + -1,g_TitleBarFillColor);
+             ((int)((g_EditorFontLineHeight * 5 + iVar6 * -4) - (uint)(iVar6 << 1 < 0)) >> 2) +
+             iVar8 + -1,g_TitleBarFillColor);
   engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
   color_value = -1;
-  y = g_FontCharacterWidth / 2 + g_WindowStack[iVar3].rect.top;
+  y = g_EditorFontLineHeight / 2 + g_WindowStack[iVar3].rect.top;
   text = g_WindowStack[iVar3].text_buffer;
   iVar8 = (pSVar7->rect).left;
   iVar7 = g_WindowStack[iVar3].rect.right;
@@ -79,10 +79,10 @@ void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(CEd
   engine_font_cpp_CBitFont_drawText_FUN_004cda80
             (g_EditorFont,text,((iVar8 + iVar7) - iVar4) / 2,y,color_mode,color_value);
   iVar5 = engine_font_cpp_CBitFont_getTextHeight_FUN_004cff40(g_EditorFont,text);
-  iVar8 = g_FontCharacterWidth + iVar5;
+  iVar8 = g_EditorFontLineHeight + iVar5;
   iVar7 = engine_font_cpp_CBitFont_getTextHeight_FUN_004cff40(g_EditorFont,"j");
-  if (iVar8 < iVar7 + g_FontCharacterWidth) {
-    iVar8 = iVar7 + g_FontCharacterWidth;
+  if (iVar8 < iVar7 + g_EditorFontLineHeight) {
+    iVar8 = iVar7 + g_EditorFontLineHeight;
   }
   g_ActiveRenderColor = g_WindowBorderHighlightColor;
   iVar8 = iVar8 + g_WindowStack[iVar3].rect.top;

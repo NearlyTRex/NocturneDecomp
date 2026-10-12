@@ -43,10 +43,10 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
     g_CurrentLineNumber = 141;
     core_main_c_displayErrorAndQuit_FUN_00506f10("gEdFont must be set by the application.");
   }
-  g_FontCharacterHeight = g_EditorFont->max_char_width;
-  g_FontCharacterWidth = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_EditorFont,0x6a);
+  g_EditorFontMaxCharWidth = g_EditorFont->max_char_width;
+  g_EditorFontLineHeight = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_EditorFont,0x6a);
   shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_004a0890
-            (this_ptr,g_FontCharacterHeight * 0x1e,g_FontCharacterWidth * 2,dialog_title,0);
+            (this_ptr,g_EditorFontMaxCharWidth * 0x1e,g_EditorFontLineHeight * 2,dialog_title,0);
   pcVar9 = output_buffer;
   if ((flags & 1) == 0) {
     pcVar9 = (char *)0x0;
@@ -101,14 +101,14 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
     }
     engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
     color_value = -1;
-    y = g_ClipTop + g_FontCharacterWidth;
+    y = g_ClipTop + g_EditorFontLineHeight;
     iVar7 = g_ClipLeft;
     pcVar9 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Filename: ");
     engine_font_cpp_CBitFont_drawText_FUN_004cda80(g_EditorFont,pcVar9,iVar7,y,iVar6,color_value);
     pcVar9 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Filename: ");
     iVar6 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_EditorFont,pcVar9);
     shape_edittool_cpp_CInputString_draw_FUN_0049d9b0
-              (&local_158,iVar6 + g_ClipLeft,g_ClipTop + g_FontCharacterWidth);
+              (&local_158,iVar6 + g_ClipLeft,g_ClipTop + g_EditorFontLineHeight);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     if (bVar3) break;
     while (iVar6 = wincore_winrun_cpp_wasKeyPressed_FUN_005f2f00(), iVar6 != 0) {

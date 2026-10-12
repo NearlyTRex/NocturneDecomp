@@ -8,8 +8,8 @@
 ;   TerminatedCString s_shape_edittool_cpp_00622eae
 ;   TerminatedCString s_gEdFont_must_be_set_by_t_00622ec4
 ;   CBitFont* g_EditorFont
-;   int g_FontCharacterHeight
-;   int g_FontCharacterWidth
+;   int g_EditorFontMaxCharWidth
+;   int g_EditorFontLineHeight
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -30,11 +30,11 @@ section .text
     PUSH 0x6a                           ; 0049d1fe
     MOV EDX,dword ptr [EAX + 0x3168]    ; 0049d200
     PUSH EAX                            ; 0049d206
-    MOV dword ptr [0x02cf2668],EDX      ; 0049d207 | g_FontCharacterHeight
+    MOV dword ptr [0x02cf2668],EDX      ; 0049d207 | g_EditorFontMaxCharWidth
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 0049d20d
         ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 0049d212
-    MOV [0x02cf266c],EAX                ; 0049d215 | g_FontCharacterWidth
+    MOV [0x02cf266c],EAX                ; 0049d215 | g_EditorFontLineHeight
     RET                                 ; 0049d21a
     PUSH EBX                            ; 0049d21b
         ;   Label: LAB_0049d21b

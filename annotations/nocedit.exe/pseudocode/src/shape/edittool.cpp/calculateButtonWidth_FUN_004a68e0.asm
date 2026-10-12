@@ -19,8 +19,8 @@
 ;   char g_DefaultButtonText = \x00
 ;   int g_WindowWidth = 0x140
 ;   CBitFont* g_EditorFont
-;   int g_FontCharacterHeight
-;   int g_FontCharacterWidth
+;   int g_EditorFontMaxCharWidth
+;   int g_EditorFontLineHeight
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -55,11 +55,11 @@ section .text
     PUSH 0x6a                           ; 004a6919
     MOV ECX,dword ptr [EAX + 0x3168]    ; 004a691b
     PUSH EAX                            ; 004a6921
-    MOV dword ptr [0x02cf2668],ECX      ; 004a6922 | g_FontCharacterHeight
+    MOV dword ptr [0x02cf2668],ECX      ; 004a6922 | g_EditorFontMaxCharWidth
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 004a6928
         ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004a692d
-    MOV [0x02cf266c],EAX                ; 004a6930 | g_FontCharacterWidth
+    MOV [0x02cf266c],EAX                ; 004a6930 | g_EditorFontLineHeight
     TEST EBX,EBX                        ; 004a6935
     JNZ 0x004a693e                      ; 004a6937
         ;   XREF to: 004a693e (CONDITIONAL_JUMP)  ; LAB_004a693e

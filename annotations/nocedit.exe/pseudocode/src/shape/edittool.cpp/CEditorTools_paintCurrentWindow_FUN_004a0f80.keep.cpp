@@ -32,8 +32,8 @@ void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(CEd
     core_main_c_displayErrorAndQuit_FUN_00506f10("gEdFont must be set by the application.");
   }
 #if NOCTURNE_AUTHENTIC_HUD_SCALE
-  g_FontCharacterHeight = g_EditorFont->max_char_width;
-  g_FontCharacterWidth = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_EditorFont,0x6a);
+  g_EditorFontMaxCharWidth = g_EditorFont->max_char_width;
+  g_EditorFontLineHeight = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_EditorFont,0x6a);
 #else
   nocturne_ui_editor_metrics();
 #endif
@@ -74,16 +74,16 @@ void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(CEd
   }
   g_ClipTop = g_WindowStack[iVar3].rect.top;
 #if NOCTURNE_EDITOR_BUILD
-  iVar8 = g_FontCharacterWidth / 2 + g_WindowStack[iVar3].rect.top + -1;
-  iVar6 = g_FontCharacterWidth * 5 >> 0x1f;
+  iVar8 = g_EditorFontLineHeight / 2 + g_WindowStack[iVar3].rect.top + -1;
+  iVar6 = g_EditorFontLineHeight * 5 >> 0x1f;
   engine_2d_c_fillRectColor_FUN_00403170
             ((pSVar7->rect).left + 1,iVar8,g_WindowStack[iVar3].rect.right + -2,
-             ((int)((g_FontCharacterWidth * 5 + iVar6 * -4) - (uint)(iVar6 << 1 < 0)) >> 2) + iVar8
+             ((int)((g_EditorFontLineHeight * 5 + iVar6 * -4) - (uint)(iVar6 << 1 < 0)) >> 2) + iVar8
              + -1,g_TitleBarFillColor);
 #endif
   engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
   color_value = -1;
-  y = g_FontCharacterWidth / 2 + g_WindowStack[iVar3].rect.top
+  y = g_EditorFontLineHeight / 2 + g_WindowStack[iVar3].rect.top
       + (NOCTURNE_EDITOR_BUILD ? 0 : 1);
   text = g_WindowStack[iVar3].text_buffer;
   iVar8 = (pSVar7->rect).left;
@@ -101,15 +101,15 @@ void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(CEd
              nocturne_ui_editor_scale());
   iVar5 = nocturne_ui_text_height(g_EditorFont,text,nocturne_ui_editor_scale());
 #endif
-  iVar8 = g_FontCharacterWidth + iVar5;
+  iVar8 = g_EditorFontLineHeight + iVar5;
 #if NOCTURNE_EDITOR_BUILD
 #if NOCTURNE_AUTHENTIC_HUD_SCALE
   iVar7 = engine_font_cpp_CBitFont_getTextHeight_FUN_004cff40(g_EditorFont,"j");
 #else
   iVar7 = nocturne_ui_text_height(g_EditorFont,"j",nocturne_ui_editor_scale());
 #endif
-  if (iVar8 < iVar7 + g_FontCharacterWidth) {
-    iVar8 = iVar7 + g_FontCharacterWidth;
+  if (iVar8 < iVar7 + g_EditorFontLineHeight) {
+    iVar8 = iVar7 + g_EditorFontLineHeight;
   }
 #endif
   g_ActiveRenderColor = g_WindowBorderHighlightColor;

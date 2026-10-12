@@ -43,7 +43,7 @@ void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN
   char *pcVar2;
   char cVar1;
   
-  this_ptr->character_width = g_FontCharacterWidth + 1;
+  this_ptr->character_width = g_EditorFontLineHeight + 1;
   this_ptr->column_padding = 8;
   this_ptr->tab_column_count = 1;
   memset(this_ptr->tab_column_widths,0,0x28);
@@ -100,7 +100,7 @@ void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN
     } while (iVar14 < this_ptr->tab_column_count);
   }
   this_ptr->total_content_width = this_ptr->total_content_width + this_ptr->column_padding * 2;
-  iVar14 = (g_WindowHeight + g_FontCharacterWidth * -4) / this_ptr->character_width;
+  iVar14 = (g_WindowHeight + g_EditorFontLineHeight * -4) / this_ptr->character_width;
   this_ptr->vertical_page_size = iVar14;
   if (iVar14 < 1) {
     this_ptr->vertical_page_size = 1;

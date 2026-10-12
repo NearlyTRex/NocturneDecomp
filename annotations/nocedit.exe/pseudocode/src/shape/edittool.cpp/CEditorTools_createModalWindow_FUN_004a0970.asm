@@ -65,12 +65,12 @@ section .text
     PUSH 0x6a                           ; 004a098d
     MOV EDX,dword ptr [EAX + 0x3168]    ; 004a098f
     PUSH EAX                            ; 004a0995
-    MOV dword ptr [0x02cf2668],EDX      ; 004a0996 | g_FontCharacterHeight
+    MOV dword ptr [0x02cf2668],EDX      ; 004a0996 | g_EditorFontMaxCharWidth
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 004a099c
         ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     MOV ESI,dword ptr [0x02cf1cdc]      ; 004a09a1 | g_WindowStackCount
     ADD ESP,0x8                         ; 004a09a7
-    MOV [0x02cf266c],EAX                ; 004a09aa | g_FontCharacterWidth
+    MOV [0x02cf266c],EAX                ; 004a09aa | g_EditorFontLineHeight
     CMP ESI,0x5                         ; 004a09af
     JL 0x004a09d6                       ; 004a09b2
         ;   XREF to: 004a09d6 (CONDITIONAL_JUMP)  ; LAB_004a09d6
@@ -192,7 +192,7 @@ section .text
     CALL engine_font.cpp_CBitFont_getTextHeight_FUN_004cff40 ; 004a0b07
         ;   XREF to: 004cff40 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextHeight_FUN_004cff40(CBitFont * this_ptr, char * text_string)
     ADD ESP,0x8                         ; 004a0b0c
-    MOV EDX,dword ptr [0x02cf266c]      ; 004a0b0f | g_FontCharacterWidth
+    MOV EDX,dword ptr [0x02cf266c]      ; 004a0b0f | g_EditorFontLineHeight
     PUSH 0x6233d3                       ; 004a0b15 | = "j"
     MOV ESI,dword ptr [0x02cf1cd0]      ; 004a0b1a | g_EditorFont
     ADD EDX,EAX                         ; 004a0b20
@@ -201,7 +201,7 @@ section .text
     CALL engine_font.cpp_CBitFont_getTextHeight_FUN_004cff40 ; 004a0b27
         ;   XREF to: 004cff40 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextHeight_FUN_004cff40(CBitFont * this_ptr, char * text_string)
     ADD ESP,0x8                         ; 004a0b2c
-    MOV EDI,dword ptr [0x02cf266c]      ; 004a0b2f | g_FontCharacterWidth
+    MOV EDI,dword ptr [0x02cf266c]      ; 004a0b2f | g_EditorFontLineHeight
     MOV EBP,dword ptr [ESP + 0x4]       ; 004a0b35
     ADD EAX,EDI                         ; 004a0b39
     CMP EAX,EBP                         ; 004a0b3b

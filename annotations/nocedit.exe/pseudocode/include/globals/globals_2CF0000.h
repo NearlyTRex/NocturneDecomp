@@ -61,8 +61,8 @@ extern float g_EnemyVictimCandidateDistances[2000];
 
 // int
 extern int g_WindowStackCount;
-extern int g_FontCharacterHeight;
-extern int g_FontCharacterWidth;
+extern int g_EditorFontMaxCharWidth;
+extern int g_EditorFontLineHeight;
 extern int g_MouseCursorType;
 extern int g_WindowContentColor;
 extern int g_WindowBorderHighlightColor;

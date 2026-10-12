@@ -29,8 +29,8 @@
 ;   undefined4 g_WindowStack[0].rect.right
 ;   undefined4 g_WindowStack[0].rect.bottom
 ;   undefined4 g_WindowStack[0].text_buffer[0]
-;   int g_FontCharacterHeight
-;   int g_FontCharacterWidth
+;   int g_EditorFontMaxCharWidth
+;   int g_EditorFontLineHeight
 ;   int g_WindowContentColor
 ;   ... and 8 more
 ;
@@ -67,12 +67,12 @@ section .text
     PUSH 0x6a                           ; 004a0f99
     MOV EDX,dword ptr [EAX + 0x3168]    ; 004a0f9b
     PUSH EAX                            ; 004a0fa1
-    MOV dword ptr [0x02cf2668],EDX      ; 004a0fa2 | g_FontCharacterHeight
+    MOV dword ptr [0x02cf2668],EDX      ; 004a0fa2 | g_EditorFontMaxCharWidth
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 004a0fa8
         ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     MOV ESI,dword ptr [0x02cf1cdc]      ; 004a0fad | g_WindowStackCount
     ADD ESP,0x8                         ; 004a0fb3
-    MOV [0x02cf266c],EAX                ; 004a0fb6 | g_FontCharacterWidth
+    MOV [0x02cf266c],EAX                ; 004a0fb6 | g_EditorFontLineHeight
     CMP ESI,0x1                         ; 004a0fbb
     JGE 0x004a0fe3                      ; 004a0fbe
         ;   XREF to: 004a0fe3 (CONDITIONAL_JUMP)  ; LAB_004a0fe3
@@ -185,13 +185,13 @@ section .text
         ;   Label: LAB_004a10cc
     MOV EBP,dword ptr [0x02d0255c]      ; 004a10cf | g_ClipTop
     MOV [0x02d0255c],EAX                ; 004a10d5 | g_ClipTop
-    MOV EAX,[0x02cf266c]                ; 004a10da | g_FontCharacterWidth
+    MOV EAX,[0x02cf266c]                ; 004a10da | g_EditorFontLineHeight
     MOV EDX,EAX                         ; 004a10df
     SAR EDX,0x1f                        ; 004a10e1
     SUB EAX,EDX                         ; 004a10e4
     SAR EAX,0x1                         ; 004a10e6
     ADD EAX,dword ptr [EBX + 0x4]       ; 004a10e8 | g_WindowStack[0].rect.top
-    MOV EDX,dword ptr [0x02cf266c]      ; 004a10eb | g_FontCharacterWidth
+    MOV EDX,dword ptr [0x02cf266c]      ; 004a10eb | g_EditorFontLineHeight
     LEA ESI,[EAX + -0x1]                ; 004a10f1
     LEA EAX,[EDX*0x4 + 0x0]             ; 004a10f4
     ADD EDX,EAX                         ; 004a10fb
@@ -222,7 +222,7 @@ section .text
     PUSH -0x1                           ; 004a1136
     MOV EAX,[0x02cf2a84]                ; 004a1138 | g_TitleBarColor
     PUSH EAX                            ; 004a113d
-    MOV EAX,[0x02cf266c]                ; 004a113e | g_FontCharacterWidth
+    MOV EAX,[0x02cf266c]                ; 004a113e | g_EditorFontLineHeight
     MOV EDX,EAX                         ; 004a1143
     SAR EDX,0x1f                        ; 004a1145
     SUB EAX,EDX                         ; 004a1148
@@ -260,12 +260,12 @@ section .text
     ADD ESP,0x8                         ; 004a1194
     PUSH 0x6234e0                       ; 004a1197 | = "j"
     MOV EDI,dword ptr [0x02cf1cd0]      ; 004a119c | g_EditorFont
-    MOV ESI,dword ptr [0x02cf266c]      ; 004a11a2 | g_FontCharacterWidth
+    MOV ESI,dword ptr [0x02cf266c]      ; 004a11a2 | g_EditorFontLineHeight
     PUSH EDI                            ; 004a11a8
     ADD ESI,EAX                         ; 004a11a9
     CALL engine_font.cpp_CBitFont_getTextHeight_FUN_004cff40 ; 004a11ab
         ;   XREF to: 004cff40 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextHeight_FUN_004cff40(CBitFont * this_ptr, char * text_string)
-    ADD EAX,dword ptr [0x02cf266c]      ; 004a11b0 | g_FontCharacterWidth
+    ADD EAX,dword ptr [0x02cf266c]      ; 004a11b0 | g_EditorFontLineHeight
     ADD ESP,0x8                         ; 004a11b6
     CMP ESI,EAX                         ; 004a11b9
     JGE 0x004a11bf                      ; 004a11bb
