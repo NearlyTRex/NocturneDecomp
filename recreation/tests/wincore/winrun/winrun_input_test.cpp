@@ -1,4 +1,5 @@
 #include "platform/window.h"
+#include "tests/mocks/platform/mockclock.h"
 #include "tests/mocks/platform/mockwindow.h"
 #include "wincore/winrun/winrun.h"
 
@@ -52,7 +53,8 @@ protected:
 
     std::deque<SWindowEvent> events_;
     NiceMock<platform::MockWindow> window_;
-    CWinRun winrun_{window_};
+    NiceMock<platform::MockClock> clock_;
+    CWinRun winrun_{window_, clock_};
 };
 
 TEST_F(CWinRunInputTest, AHeldKeyStaysDownUntilAPumpAfterItsRelease) {

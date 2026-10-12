@@ -12,6 +12,7 @@ public:
     MOCK_METHOD(std::vector<SFileInfo>, findFiles, (std::string_view pattern), (override));
     MOCK_METHOD(std::optional<std::string>, readFile, (std::string_view path), (override));
     MOCK_METHOD(bool, appendFile, (std::string_view path, std::string_view text), (override));
+    MOCK_METHOD(bool, writeFile, (std::string_view path, std::string_view text), (override));
     MOCK_METHOD(bool, removeFile, (std::string_view path), (override));
     MOCK_METHOD(std::unique_ptr<IFile>, openFile, (std::string_view path, EFileMode mode),
                 (override));

@@ -19,8 +19,9 @@ public:
     // The retail build's title; the editor's is "Nocturne Editor".
     static constexpr std::string_view kApplicationTitle = "Nocturne";
 
-    explicit CWinRun(platform::IWindow &window);
+    CWinRun(platform::IWindow &window, platform::IClock &clock);
 
+    // Game ticks, 65536 * 18 a second, wrapping as the original's int did.
     int getTime();
     void clearKeypresses();
     int getNextKeypress();
@@ -58,6 +59,10 @@ private:
     [[nodiscard]] std::size_t getInputCode(std::uint16_t scancode) const;
 
     platform::IWindow &window_;
+    platform::IClock &clock_;
+    double timer_calibration_;
+    std::uint64_t performance_counter_;
+    std::uint32_t accumulated_game_time_ = 0;
     std::array<std::uint8_t, kInputCodeCount> keyboard_state_{};
     // Codes released during the current pump, cleared from the state at the next.
     std::array<bool, kInputCodeCount> message_flags_{};

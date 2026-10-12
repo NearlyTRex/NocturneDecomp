@@ -36,6 +36,14 @@ bool CSpecial::getUseExternalRenderer() const {
     return use_external_renderer_;
 }
 
+int CSpecial::getCurrentGraphicsBoard() const {
+    return current_graphics_board_;
+}
+
+void CSpecial::setCurrentGraphicsBoard(int board) {
+    current_graphics_board_ = board;
+}
+
 // The original cleared in 32-byte strides, past the end of a row that isn't a whole number of
 // them, and cleared one row of a zero-height mode.
 // nocedit 0x005b3e70

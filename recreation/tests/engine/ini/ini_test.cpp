@@ -95,6 +95,76 @@ TEST_F(CIniTest, ADefaultThatFillsTheBufferIsRefused) {
     EXPECT_EQ(read("Graphics", "gamma", 9), "fallback");
 }
 
+class CIniWriteTest : public CIniTest {
+protected:
+    void expectWritten(std::string_view text) {
+        EXPECT_CALL(file_system_, writeFile(std::string_view(kFile), text)).WillOnce(Return(true));
+    }
+
+    void write(std::string_view section, std::string_view key, std::string_view value) {
+        ini_.writeProfileString(section, key, value, kFile);
+    }
+};
+
+TEST_F(CIniWriteTest, ReplacesTheKeysLineInPlace) {
+    givenFile("[Graphics]\ngamePIXX=640\ngamma=3\n[Sound]\nsfxVolume=7\n");
+    expectWritten("[Graphics]\r\ngamePIXX=800\r\ngamma=3\r\n[Sound]\r\nsfxVolume=7\r\n");
+    write("Graphics", "gamePIXX", "800");
+}
+
+// The original took this key for missing and added a second copy of it on every write.
+TEST_F(CIniWriteTest, AKeyJustUnderAHeaderOnTheFirstLineIsReplacedNotRepeated) {
+    givenFile("[Graphics]\ngamma=3\n");
+    expectWritten("[Graphics]\r\ngamma=4\r\n");
+    write("Graphics", "gamma", "4");
+}
+
+TEST_F(CIniWriteTest, AnUnchangedValueLeavesTheFileAlone) {
+    givenFile("[Graphics]\ngamma=3\n");
+    EXPECT_CALL(file_system_, writeFile).Times(0);
+    write("Graphics", "gamma", "3");
+}
+
+TEST_F(CIniWriteTest, AMissingKeyGoesStraightUnderItsHeader) {
+    givenFile("[Graphics]\ngamePIXX=640\n[Sound]\nsfxVolume=7\n");
+    expectWritten("[Graphics]\r\ngamePIXX=640\r\n[Sound]\r\nmusicVolume=5\r\nsfxVolume=7\r\n");
+    write("Sound", "musicVolume", "5");
+}
+
+TEST_F(CIniWriteTest, AMissingSectionIsAddedAtTheEnd) {
+    givenFile("[Graphics]\r\ngamePIXX=640");
+    expectWritten("[Graphics]\r\ngamePIXX=640\r\n[Sound]\r\nmusicVolume=5\r\n");
+    write("Sound", "musicVolume", "5");
+}
+
+// Matching the reader, the key is found past the next header.
+TEST_F(CIniWriteTest, TheKeyIsFoundPastTheNextHeader) {
+    givenFile("[Graphics]\n[Sound]\ngamma=3\n");
+    expectWritten("[Graphics]\r\n[Sound]\r\ngamma=4\r\n");
+    write("Graphics", "gamma", "4");
+}
+
+TEST_F(CIniWriteTest, PercentSignsAreCopiedAsWritten) {
+    givenFile("[Graphics]\nname=%s%d\ngamma=3\n");
+    expectWritten("[Graphics]\r\nname=%s%d\r\ngamma=4\r\n");
+    write("Graphics", "gamma", "4");
+}
+
+TEST_F(CIniWriteTest, AnUnreadableFileIsFatal) {
+    givenFile(std::nullopt);
+    EXPECT_THAT([this] { write("Graphics", "gamma", "4"); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("cIni::writeProfileString: Unable to open input")));
+}
+
+TEST_F(CIniWriteTest, AnUnwritableFileIsFatal) {
+    givenFile("[Graphics]\ngamma=3\n");
+    EXPECT_CALL(file_system_, writeFile).WillOnce(Return(false));
+    EXPECT_THAT([this] { write("Graphics", "gamma", "4"); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("cIni::writeProfileString: Unable to open output")));
+}
+
 TEST_F(CIniTest, AnUnreadableFileIsFatal) {
     givenFile(std::nullopt);
     EXPECT_THAT([this] { (void)read("Graphics", "gamma"); },

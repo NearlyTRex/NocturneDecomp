@@ -94,6 +94,12 @@ bool CSdlFileSystem::appendFile(std::string_view path, std::string_view text) {
     return static_cast<bool>(file);
 }
 
+bool CSdlFileSystem::writeFile(std::string_view path, std::string_view text) {
+    std::ofstream file(resolve(path), std::ios::binary | std::ios::trunc);
+    file.write(text.data(), static_cast<std::streamsize>(text.size()));
+    return static_cast<bool>(file);
+}
+
 bool CSdlFileSystem::removeFile(std::string_view path) {
     std::error_code error;
     return std::filesystem::remove(resolve(path), error);

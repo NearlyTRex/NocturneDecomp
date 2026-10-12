@@ -40,7 +40,6 @@ int runGame(sdl::CSdlWindow &window) {
     // init, with its bridge, only when the INI turns acceleration on.
     [[maybe_unused]] const nocturne::platform::gl::CGlRenderer renderer(display.getGlApi(),
                                                                         display);
-    [[maybe_unused]] const sdl::CSdlClock clock{};
     [[maybe_unused]] const sdl::CSdlGamepad gamepad{};
     [[maybe_unused]] const sdl::CSdlClipboard clipboard{};
     [[maybe_unused]] const sdl::CSdlNetwork network;
@@ -69,7 +68,8 @@ int run() {
     const sdl::CSdlContext context;
     sdl::CSdlWindow window(nocturne::wincore::CWinRun::kApplicationTitle, kWidth, kHeight);
     sdl::CSdlFileSystem file_system;
-    nocturne::wincore::CWinRun winrun(window);
+    sdl::CSdlClock clock;
+    nocturne::wincore::CWinRun winrun(window, clock);
     try {
         return runGame(window);
     } catch (const nocturne::common::CFatalError &error) {

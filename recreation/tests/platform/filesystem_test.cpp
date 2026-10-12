@@ -20,6 +20,8 @@ TEST(IFileSystem, PublicInterface) {
                                  std::optional<std::string> (IFileSystem::*)(std::string_view)>);
     static_assert(std::is_same_v<decltype(&IFileSystem::appendFile),
                                  bool (IFileSystem::*)(std::string_view, std::string_view)>);
+    static_assert(std::is_same_v<decltype(&IFileSystem::writeFile),
+                                 bool (IFileSystem::*)(std::string_view, std::string_view)>);
     static_assert(std::is_same_v<decltype(&IFileSystem::removeFile),
                                  bool (IFileSystem::*)(std::string_view)>);
     static_assert(

@@ -35,6 +35,8 @@ public:
     [[nodiscard]] virtual std::optional<std::string> readFile(std::string_view path) = 0;
     // Creates the file when it's missing. False when it can't be written.
     virtual bool appendFile(std::string_view path, std::string_view text) = 0;
+    // Replaces the file's bytes, creating it when it's missing. False when it can't be written.
+    virtual bool writeFile(std::string_view path, std::string_view text) = 0;
     // False when there was nothing to remove or it couldn't be removed.
     virtual bool removeFile(std::string_view path) = 0;
     // Null when the file can't be opened in that mode.
