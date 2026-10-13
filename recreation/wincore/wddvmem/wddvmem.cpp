@@ -140,6 +140,10 @@ std::span<const std::uint32_t, 256> CWddVMem::getColorTable32() const {
     return color_table32_;
 }
 
+std::span<std::uint16_t, 256> CWddVMem::getHardwarePalette16() {
+    return hardware_palette16_;
+}
+
 std::span<std::uint32_t, 256> CWddVMem::getHardwarePalette32() {
     return hardware_palette32_;
 }

@@ -15,8 +15,9 @@ namespace nocturne::engine {
 // the software renderer its image, and the software paths that run without it.
 class CSpecial {
 public:
+    // The renderer bridge points at the current texture's dimension.
     CSpecial(platform::IRenderer &renderer, IScreenDevice &screen, const C2d &two_d,
-             const C3d &three_d);
+             const C3d &three_d, SCurrentTexture &current_texture);
 
     // The INI's useDirect3D: whether loadExternalRenderer may start the renderer.
     [[nodiscard]] bool getUseDirect3D() const;
@@ -54,8 +55,12 @@ public:
     int unlockFrame();
     int beginScene();
     int endScene();
-    int selectTextureFromPalette(platform::SMRGLTextureBasic *tex, SRGBColorPalette *palette_data);
-    int updateTextureFromPalette(platform::SMRGLTextureBasic *tex, SRGBColorPalette *palette_data);
+    // Hand the hardware renderer the current texture's texels and opacity with this palette:
+    // select for one it may already hold, update for one just loaded. 0 without it.
+    int selectTextureFromPalette(platform::SMRGLTextureBasic &texture,
+                                 std::span<std::uint8_t> palette);
+    int updateTextureFromPalette(platform::SMRGLTextureBasic &texture,
+                                 std::span<std::uint8_t> palette);
     int setResolutionAndColorTable(int width, int height, int bits_per_pixel);
     int restoreVideoMode();
     int drawPolygon(platform::SRenderVertex *vertices, int vertex_count, int render_flags);
@@ -79,7 +84,13 @@ public:
     int unlockHoldBuffer();
 
 private:
+    using TextureEntry = int (platform::IRenderer::*)(platform::SMRGLTextureBasic *, int,
+                                                      std::uint8_t *, std::uint8_t *,
+                                                      std::uint8_t *);
+
     void fillBridge();
+    int passCurrentTexture(TextureEntry entry, platform::SMRGLTextureBasic &texture,
+                           std::span<std::uint8_t> palette);
     [[nodiscard]] std::optional<std::uint32_t>
     getAlphaPixel(std::uint8_t index, std::uint32_t coverage, std::uint32_t dest) const;
 
@@ -87,6 +98,7 @@ private:
     IScreenDevice &screen_;
     const C2d &two_d_;
     const C3d &three_d_;
+    SCurrentTexture &current_texture_;
     // The renderer keeps these addresses for as long as it runs.
     platform::CExternalRendererBridge bridge_;
     bool use_direct3d_ = false;

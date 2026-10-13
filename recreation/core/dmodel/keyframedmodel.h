@@ -7,6 +7,7 @@
 #include "core/fwd.h"
 #include "engine/fwd.h"
 #include "platform/mrglprimitivequad.h"
+#include "platform/mrgltexturebasic.h"
 
 #include <cstddef>
 #include <cstdint>
@@ -53,7 +54,7 @@ public:
     [[nodiscard]] std::span<const int> getPolyTextureIndices() const;
     // Per polygon, when the model has them.
     [[nodiscard]] std::span<const std::uint8_t> getEnvMapOpacities() const;
-    [[nodiscard]] std::span<const std::string> getTextureNames() const;
+    [[nodiscard]] std::span<const platform::SMRGLTextureBasic> getTextures() const;
     [[nodiscard]] std::span<const SPart> getParts() const;
     // In world units: every frame's box, and each frame's own.
     [[nodiscard]] const CBoundingBox3D &getBounds() const;
@@ -82,7 +83,7 @@ private:
     std::vector<platform::SMRGLPrimitiveQuad> polygons_;
     std::vector<int> poly_texture_indices_;
     std::vector<std::uint8_t> env_map_opacities_;
-    std::vector<std::string> texture_names_;
+    std::vector<platform::SMRGLTextureBasic> textures_;
     std::vector<SPart> parts_;
     CBoundingBox3D bounds_;
     std::vector<CBoundingBox3D> frame_bounds_;

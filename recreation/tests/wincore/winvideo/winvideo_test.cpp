@@ -2,6 +2,7 @@
 #include "engine/3d/3d.h"
 #include "engine/dosio/dosio.h"
 #include "engine/special/special.h"
+#include "engine/texture/currenttexture.h"
 #include "tests/mocks/engine/memoryscreen.h"
 #include "tests/mocks/platform/memoryfile.h"
 #include "tests/mocks/platform/mockclock.h"
@@ -67,7 +68,8 @@ protected:
     engine::CMemoryScreen screen_{4, 2, 16};
     engine::C2d two_d_{dosio_, screen_, winrun_};
     engine::C3d three_d_;
-    engine::CSpecial special_{renderer_, screen_, two_d_, three_d_};
+    engine::SCurrentTexture current_texture_;
+    engine::CSpecial special_{renderer_, screen_, two_d_, three_d_, current_texture_};
     SMovieOwners owners_{file_system_, movies_,  window_, clock_,
                          winrun_,      special_, screen_, two_d_};
 };

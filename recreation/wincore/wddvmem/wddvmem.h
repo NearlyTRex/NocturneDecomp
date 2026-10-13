@@ -44,6 +44,7 @@ public:
     [[nodiscard]] std::span<std::uint32_t *> getZBufferRows() override;
     [[nodiscard]] std::span<std::uint16_t, 256> getColorTable16() override;
     [[nodiscard]] std::span<const std::uint32_t, 256> getColorTable32() const override;
+    [[nodiscard]] std::span<std::uint16_t, 256> getHardwarePalette16() override;
     [[nodiscard]] std::span<std::uint32_t, 256> getHardwarePalette32() override;
     [[nodiscard]] engine::SColorChannels &getColorChannels() override;
     [[nodiscard]] const engine::SColorMasks &getColorMasks() const override;
@@ -73,6 +74,7 @@ private:
     bool flip_pending_ = false;
     std::array<std::uint16_t, 256> color_table16_{};
     std::array<std::uint32_t, 256> color_table32_{};
+    std::array<std::uint16_t, 256> hardware_palette16_{};
     std::array<std::uint32_t, 256> hardware_palette32_{};
     engine::SColorChannels color_channels_;
     engine::SColorMasks color_masks_;

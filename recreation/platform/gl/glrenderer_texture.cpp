@@ -4,7 +4,6 @@
 #include "platform/gl/glrenderer.h"
 #include "platform/mrgltexturebasic.h"
 
-#include <algorithm>
 #include <cstddef>
 #include <string_view>
 
@@ -13,11 +12,6 @@ namespace {
 
 constexpr std::size_t kPaletteEntries = 256;
 constexpr std::size_t kPaletteBytes = kPaletteEntries * 3;
-
-std::string_view textureName(const SMRGLTextureBasic &texture) {
-    const auto &name = texture.texture_name;
-    return {name.data(), static_cast<std::size_t>(std::ranges::find(name, '\0') - name.begin())};
-}
 
 void publish(int *slot, int value) {
     if (slot != nullptr) {
@@ -102,7 +96,7 @@ GLuint CGlRenderer::resolveTexture(const SMRGLTextureBasic *texture_info, bool r
     if (dimension <= 0 || dimension > kMaxTextureDimension) {
         return 0;
     }
-    const std::string_view name = textureName(*texture_info);
+    const std::string_view name = texture_info->texture_name;
     CGlTextureCache &textures = device_->getTextures();
     // selectTexture comes with every state change, so a resident image is answered without
     // touching its texels.

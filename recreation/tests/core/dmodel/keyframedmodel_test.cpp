@@ -98,6 +98,16 @@ protected:
         model_.load("test.kfm");
     }
 
+    // Each texture's name, after checking it starts at the first cache slot.
+    std::vector<std::string> textureNames() const {
+        std::vector<std::string> names;
+        for (const platform::SMRGLTextureBasic &texture : model_.getTextures()) {
+            EXPECT_EQ(texture.cache_index, 0);
+            names.push_back(texture.texture_name);
+        }
+        return names;
+    }
+
     CKeyFramedModel model_{dosio_};
 };
 
@@ -123,7 +133,7 @@ TEST_F(CKeyFramedModelTest, ATextModelLoadsEverySection) {
     EXPECT_THAT(model_.getPolyTextureIndices(), ElementsAre(1, 0));
     // Opacities are bytes.
     EXPECT_THAT(model_.getEnvMapOpacities(), ElementsAre(128, 44));
-    EXPECT_THAT(model_.getTextureNames(), ElementsAre("wall.tga", "floor tile.tga"));
+    EXPECT_THAT(textureNames(), ElementsAre("wall.tga", "floor tile.tga"));
     EXPECT_THAT(model_.getParts(), ElementsAre(IsPart(4, 2)));
     EXPECT_EQ(model_.getTransparentPixelFlag(), 1);
     EXPECT_EQ(model_.getDisableBackfaceCulling(), 1);
@@ -214,7 +224,7 @@ TEST_F(CKeyFramedModelTest, FreeEmptiesTheModelButKeepsTheBounds) {
     EXPECT_THAT(model_.getPolyTextureIndices(), IsEmpty());
     EXPECT_THAT(model_.getVertexNormals(), IsEmpty());
     EXPECT_THAT(model_.getEnvMapOpacities(), IsEmpty());
-    EXPECT_THAT(model_.getTextureNames(), IsEmpty());
+    EXPECT_THAT(textureNames(), IsEmpty());
     EXPECT_THAT(model_.getParts(), IsEmpty());
     EXPECT_THAT(model_.getFrameBounds(), IsEmpty());
     EXPECT_THAT(model_.getCollisionTriangles(), IsEmpty());
@@ -261,12 +271,12 @@ TEST_F(CKeyFramedModelTest, ACornerWithoutItsCommaIsLeftZero) {
 TEST_F(CKeyFramedModelTest, AnEmptyTextureLineStopsTheNames) {
     // The newline a failed name leaves is never consumed, so the next name fails on it too.
     load("/\n5\n;\n1,0,2,0,1\n;\n0\n;\n0,0,0\n;\n;\n\nb.tga\n");
-    EXPECT_THAT(model_.getTextureNames(), ElementsAre("", ""));
+    EXPECT_THAT(textureNames(), ElementsAre("", ""));
 }
 
 TEST_F(CKeyFramedModelTest, NamesWithoutACarriageReturnAreKept) {
     load("/\n5\n;\n1,0,1,0,1\n;\n0\n;\n0,0,0\n;\n;\nrock.tga\n");
-    EXPECT_THAT(model_.getTextureNames(), ElementsAre("rock.tga"));
+    EXPECT_THAT(textureNames(), ElementsAre("rock.tga"));
 }
 
 TEST_F(CKeyFramedModelTest, PolygonsOfFewerThanThreeCornersMakeNoTriangles) {
@@ -350,7 +360,7 @@ TEST_F(CKeyFramedModelTest, ABinaryModelLoadsEveryRecord) {
     EXPECT_EQ(model_.getPolygons()[0].surface_normal,
               (SClipPlane{.a = 0, .b = 0, .c = 65535, .d = 0}));
     EXPECT_THAT(model_.getPolyTextureIndices(), ElementsAre(0));
-    EXPECT_THAT(model_.getTextureNames(), ElementsAre("rock.tga"));
+    EXPECT_THAT(textureNames(), ElementsAre("rock.tga"));
     EXPECT_THAT(model_.getParts(), ElementsAre(IsPart(3, 1)));
     EXPECT_EQ(model_.getCollisionTriangles().size(), 1U);
 }
@@ -371,7 +381,7 @@ TEST_F(CKeyFramedModelTest, VersionThreeHasNoCollisionAndKeepsFourCornersAtMost)
     EXPECT_THAT(model_.getPolygons()[1].vertices, IsEmpty());
     // Several frames keep the plane the file holds.
     EXPECT_EQ(model_.getPolygons()[0].surface_normal, (SClipPlane{.a = 1, .b = 2, .c = 3, .d = 4}));
-    EXPECT_THAT(model_.getTextureNames(), ElementsAre("abcdefghijklmnop"));
+    EXPECT_THAT(textureNames(), ElementsAre("abcdefghijklmnop"));
     EXPECT_THAT(model_.getCollisionTriangles(), IsEmpty());
 }
 

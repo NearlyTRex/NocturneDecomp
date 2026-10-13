@@ -35,6 +35,7 @@ class IRawInput;
 class IScreenDevice;
 struct SColorChannels;
 struct SColorMasks;
+struct SCurrentTexture;
 struct SFace;
 struct SFoundFileInfo;
 struct SHardwareEdge;
@@ -49,5 +50,6 @@ struct SMRGLPrimitiveTriangleIndex;
 struct SProjectionParams;
 struct SRGBColorPalette;
 struct SSoftwareEdge;
+struct STextureOwners;
 
 } // namespace nocturne::engine

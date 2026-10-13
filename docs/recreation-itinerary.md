@@ -17,8 +17,8 @@ in instructions.
 | 3 | Sound system: `sndmain`, `CSound` lifetime, `readIniData` | 7 | 123 | 8346 | 123 | 100.0% |
 | 4 | `initFonts`, `CEditorTools::showWarning` | 11 | 46 | 4804 | 46 | 100.0% |
 | 5 | `showCalibrationTest`, `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 50 | 4789 | 34 | 68.0% |
-| 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 18 | 72.0% |
-| 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 18 | 15.0% |
+| 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 20 | 80.0% |
+| 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 24 | 20.0% |
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 9 | 14.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 0 | 0.0% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 17 | 52 | 5565 | 1 | 1.9% |
@@ -44,7 +44,7 @@ in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 2 | 0.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 | 3.6% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 36.3% |
-| | **All** | | **4489** | **402860** | **425** | **9.4%** |
+| | **All** | | **4489** | **402860** | **433** | **9.6%** |
 
 ## Step 0: Math value types
 
@@ -534,11 +534,11 @@ in instructions.
 - class `CAlphaBitmap`
   - [x] `scale` 0x00410c20 (71)
 
-### `engine/texture.cpp` (2 functions, 59 instructions, 0 done)
+### `engine/texture.cpp` (2 functions, 59 instructions, 2 done)
 - class `CTextureCache`
-  - [ ] `freeTextures` 0x005dcb30 (54)
+  - [x] `freeTextures` 0x005dcb30 (54)
 - free functions
-  - [ ] `clearTextureCache` 0x005dd8e0 (5)
+  - [x] `clearTextureCache` 0x005dd8e0 (5)
 
 ### `core/actor.cpp` (2 functions, 32 instructions, 0 done)
 - free functions
@@ -603,13 +603,13 @@ in instructions.
   - [ ] `getAttenuationAtVertex` 0x00471850 (124)
   - [ ] `intersectAABB` 0x00471770 (85)
 
-### `engine/texture.cpp` (4 functions, 763 instructions, 0 done)
+### `engine/texture.cpp` (4 functions, 763 instructions, 4 done)
 - class `CTextureCache`
-  - [ ] `loadTexture` 0x005dcc00 (396)
-  - [ ] `findTexture` 0x005dd180 (49)
-  - [ ] `setupTexture` 0x005dd200 (245)
+  - [x] `loadTexture` 0x005dcc00 (396)
+  - [x] `findTexture` 0x005dd180 (49)
+  - [x] `setupTexture` 0x005dd200 (245)
 - free functions
-  - [ ] `ensureTextureLoaded` 0x005dd800 (73)
+  - [x] `ensureTextureLoaded` 0x005dd800 (73)
 
 ### `core/dcamera.cpp` (5 functions, 1076 instructions, 0 done)
 - class `CDemonCamera`
@@ -743,11 +743,11 @@ in instructions.
   - [ ] `renderPrimitiveBatch` 0x00570770 (82)
   - [ ] `setFlatColor` 0x00570ca0 (8)
 
-### `engine/special.cpp` (10 functions, 1391 instructions, 0 done)
+### `engine/special.cpp` (10 functions, 1391 instructions, 2 done)
 - free functions
   - [ ] `transformAndProjectPoint` 0x005b575c (205)
-  - [ ] `selectTextureFromPalette` 0x005b7340 (26)
-  - [ ] `updateTextureFromPalette` 0x005b7380 (26)
+  - [x] `selectTextureFromPalette` 0x005b7340 (26)
+  - [x] `updateTextureFromPalette` 0x005b7380 (26)
   - [ ] `renderScanline` 0x005b5710 (1)
   - [ ] `drawPolygon2` 0x005b7610 (17)
   - [ ] `drawPolygon` 0x005b75e0 (17)

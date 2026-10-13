@@ -2,6 +2,8 @@
 #include "engine/3d/3d.h"
 #include "engine/dosio/dosio.h"
 #include "engine/special/special.h"
+#include "engine/texture/currenttexture.h"
+#include "platform/mrgltexturebasic.h"
 #include "tests/mocks/engine/mockrawinput.h"
 #include "tests/mocks/engine/mockscreendevice.h"
 #include "tests/mocks/platform/mockfilesystem.h"
@@ -12,6 +14,8 @@
 
 #include <array>
 #include <cstddef>
+#include <cstdint>
+#include <span>
 #include <type_traits>
 #include <utility>
 
@@ -70,10 +74,10 @@ TEST(CSpecial, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CSpecial::endScene), int (CSpecial::*)()>);
     static_assert(
         std::is_same_v<decltype(&CSpecial::selectTextureFromPalette),
-                       int (CSpecial::*)(platform::SMRGLTextureBasic *, SRGBColorPalette *)>);
+                       int (CSpecial::*)(platform::SMRGLTextureBasic &, std::span<std::uint8_t>)>);
     static_assert(
         std::is_same_v<decltype(&CSpecial::updateTextureFromPalette),
-                       int (CSpecial::*)(platform::SMRGLTextureBasic *, SRGBColorPalette *)>);
+                       int (CSpecial::*)(platform::SMRGLTextureBasic &, std::span<std::uint8_t>)>);
     static_assert(std::is_same_v<decltype(&CSpecial::setResolutionAndColorTable),
                                  int (CSpecial::*)(int, int, int)>);
     static_assert(std::is_same_v<decltype(&CSpecial::restoreVideoMode), int (CSpecial::*)()>);
@@ -147,7 +151,8 @@ protected:
     C2d two_d_{dosio_, screen_, raw_input_};
     NiceMock<platform::MockRenderer> renderer_;
     C3d three_d_;
-    CSpecial special_{renderer_, screen_, two_d_, three_d_};
+    SCurrentTexture current_texture_;
+    CSpecial special_{renderer_, screen_, two_d_, three_d_, current_texture_};
 };
 
 TEST_F(CSpecialTest, StartsWithTheRendererOff) {
@@ -218,9 +223,37 @@ TEST_F(CSpecialTest, LoadingSharesTheColourChannelsAndSelectsTheCard) {
     for (const auto &[bridged, owned] : channels) {
         EXPECT_EQ(bridged, owned);
     }
+    EXPECT_EQ(shared.texture_dimension, &current_texture_.dimension);
     EXPECT_EQ(shared.blend_mode, nullptr);
     EXPECT_CALL(renderer_, selectCard(2)).WillOnce(Return(1));
     EXPECT_EQ(special_.selectCard(2), 1);
+}
+
+TEST_F(CSpecialTest, WithTheRendererOffTexturesAreNotHandedOver) {
+    platform::SMRGLTextureBasic texture;
+    EXPECT_CALL(renderer_, selectTexture).Times(0);
+    EXPECT_CALL(renderer_, updateTexture).Times(0);
+    EXPECT_EQ(special_.selectTextureFromPalette(texture, {}), 0);
+    EXPECT_EQ(special_.updateTextureFromPalette(texture, {}), 0);
+}
+
+TEST_F(CSpecialTest, TheRendererIsHandedTheCurrentTexture) {
+    startRenderer();
+    std::array<std::uint8_t, 4> texels{};
+    std::array<std::uint8_t, 4> opacity{};
+    std::array<std::uint8_t, 768> palette{};
+    current_texture_.data = texels;
+    current_texture_.dimension = 2;
+    platform::SMRGLTextureBasic texture;
+    // Without opacity the renderer is given none.
+    EXPECT_CALL(renderer_, selectTexture(&texture, 2, texels.data(), palette.data(), nullptr))
+        .WillOnce(Return(3));
+    EXPECT_EQ(special_.selectTextureFromPalette(texture, palette), 3);
+    current_texture_.opacity = opacity;
+    EXPECT_CALL(renderer_,
+                updateTexture(&texture, 2, texels.data(), palette.data(), opacity.data()))
+        .WillOnce(Return(4));
+    EXPECT_EQ(special_.updateTextureFromPalette(texture, palette), 4);
 }
 
 // The original left the renderer marked loaded after a failed init.

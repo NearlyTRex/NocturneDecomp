@@ -2,18 +2,13 @@
 
 #include <gtest/gtest.h>
 
-#include <array>
-#include <type_traits>
-
 namespace nocturne::platform {
 namespace {
 
-TEST(SMRGLTextureBasic, NameIsSixteenCharactersOfZeroPadding) {
-    static_assert(std::is_same_v<decltype(SMRGLTextureBasic::texture_name), std::array<char, 16>>);
+TEST(SMRGLTextureBasic, StartsUnnamedAtTheFirstSlot) {
     const SMRGLTextureBasic texture;
-    for (const char c : texture.texture_name) {
-        EXPECT_EQ(c, '\0');
-    }
+    EXPECT_TRUE(texture.texture_name.empty());
+    EXPECT_EQ(texture.cache_index, 0);
 }
 
 } // namespace

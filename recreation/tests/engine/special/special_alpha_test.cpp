@@ -2,6 +2,7 @@
 #include "engine/3d/3d.h"
 #include "engine/dosio/dosio.h"
 #include "engine/special/special.h"
+#include "engine/texture/currenttexture.h"
 #include "tests/mocks/engine/mockrawinput.h"
 #include "tests/mocks/engine/mockscreendevice.h"
 #include "tests/mocks/platform/mockfilesystem.h"
@@ -79,7 +80,8 @@ protected:
     C2d two_d_{dosio_, screen_, raw_input_};
     NiceMock<platform::MockRenderer> renderer_;
     C3d three_d_;
-    CSpecial special_{renderer_, screen_, two_d_, three_d_};
+    SCurrentTexture current_texture_;
+    CSpecial special_{renderer_, screen_, two_d_, three_d_, current_texture_};
 };
 
 TEST_F(CSpecialAlphaTest, NearlyFullCoverageDrawsThePaletteColourAsItIs) {

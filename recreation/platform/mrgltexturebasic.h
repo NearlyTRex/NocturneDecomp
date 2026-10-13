@@ -1,13 +1,14 @@
 #pragma once
 
-#include <array>
+#include <string>
 
 namespace nocturne::platform {
 
 // A texture as a mesh names it.
 struct SMRGLTextureBasic {
-    // NUL-padded; a name of all 16 characters has no terminator.
-    std::array<char, 16> texture_name{};
+    std::string texture_name;
+    // The engine's texture cache slot it was last found in, tried first next time.
+    int cache_index = 0;
 };
 
 } // namespace nocturne::platform

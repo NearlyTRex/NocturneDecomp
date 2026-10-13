@@ -49,7 +49,8 @@ void scanLine(common::CTextScanner &scanner, std::initializer_list<int *> fields
 
 } // namespace
 
-// A record's type and the texture record's count are read past; neither is used once loaded.
+// A record's type is read past, and so is a texture record's count, the cache slot hint that load
+// reset.
 // Empty vertex or part blocks fail, as the original's zero-sized fread did.
 // nocedit 0x00476f20
 void CKeyFramedModel::readBinaryModel(std::span<const std::byte> data) {
@@ -98,9 +99,9 @@ void CKeyFramedModel::readBinaryModel(std::span<const std::byte> data) {
     for (int &index : poly_texture_indices_) {
         index = reader.read<std::int32_t>();
     }
-    for (std::string &name : texture_names_) {
+    for (platform::SMRGLTextureBasic &texture : textures_) {
         reader.skip(2 * sizeof(std::int32_t));
-        name = reader.readString(kBinaryTextureName);
+        texture.texture_name = reader.readString(kBinaryTextureName);
     }
     if (parts_.empty()) {
         failBinaryRead();
@@ -185,10 +186,11 @@ void CKeyFramedModel::readTextModel(std::string_view text) {
         }
     }
     scanner.skipLine();
-    for (std::string &name : texture_names_) {
+    for (platform::SMRGLTextureBasic &texture : textures_) {
         if (const std::optional<std::string_view> line = scanner.scanUntil('\n')) {
             // The original read in text mode, which drops the carriage return.
-            name = line->ends_with('\r') ? line->substr(0, line->size() - 1) : *line;
+            texture.texture_name =
+                line->ends_with('\r') ? line->substr(0, line->size() - 1) : *line;
             scanner.skipWhitespace();
         }
     }

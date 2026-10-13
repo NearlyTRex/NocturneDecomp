@@ -2,6 +2,7 @@
 
 #include "engine/2d/2d.h"
 #include "engine/screendevice.h"
+#include "engine/texture/currenttexture.h"
 #include "platform/renderer.h"
 
 #include <algorithm>
@@ -22,8 +23,9 @@ std::size_t getRowBytes(const IScreenDevice &screen) {
 } // namespace
 
 CSpecial::CSpecial(platform::IRenderer &renderer, IScreenDevice &screen, const C2d &two_d,
-                   const C3d &three_d)
-    : renderer_(renderer), screen_(screen), two_d_(two_d), three_d_(three_d) {}
+                   const C3d &three_d, SCurrentTexture &current_texture)
+    : renderer_(renderer), screen_(screen), two_d_(two_d), three_d_(three_d),
+      current_texture_(current_texture) {}
 
 bool CSpecial::getUseDirect3D() const {
     return use_direct3d_;
@@ -92,6 +94,29 @@ void CSpecial::fillBridge() {
     bridge_.blue_bit_position = &channels.blue.bit_position;
     bridge_.blue_scale_factor = &channels.blue.scale_factor;
     bridge_.blue_dither_shift = &channels.blue.dither_shift;
+    bridge_.texture_dimension = &current_texture_.dimension;
+}
+
+// nocedit 0x005b7340
+int CSpecial::selectTextureFromPalette(platform::SMRGLTextureBasic &texture,
+                                       std::span<std::uint8_t> palette) {
+    return passCurrentTexture(&platform::IRenderer::selectTexture, texture, palette);
+}
+
+// nocedit 0x005b7380
+int CSpecial::updateTextureFromPalette(platform::SMRGLTextureBasic &texture,
+                                       std::span<std::uint8_t> palette) {
+    return passCurrentTexture(&platform::IRenderer::updateTexture, texture, palette);
+}
+
+int CSpecial::passCurrentTexture(TextureEntry entry, platform::SMRGLTextureBasic &texture,
+                                 std::span<std::uint8_t> palette) {
+    if (!use_external_renderer_) {
+        return 0;
+    }
+    const std::span<std::uint8_t> opacity = current_texture_.opacity;
+    return (renderer_.*entry)(&texture, current_texture_.dimension, current_texture_.data.data(),
+                              palette.data(), opacity.empty() ? nullptr : opacity.data());
 }
 
 // While locked, the rows are the renderer's image, in its depth.

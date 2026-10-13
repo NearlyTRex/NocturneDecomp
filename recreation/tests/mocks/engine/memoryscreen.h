@@ -94,6 +94,9 @@ public:
     [[nodiscard]] std::span<const std::uint32_t, 256> getColorTable32() const override {
         return color_table32_;
     }
+    [[nodiscard]] std::span<std::uint16_t, 256> getHardwarePalette16() override {
+        return hardware_palette16_;
+    }
     [[nodiscard]] std::span<std::uint32_t, 256> getHardwarePalette32() override {
         return hardware_palette32_;
     }
@@ -140,6 +143,7 @@ private:
     std::vector<void *> rows_;
     std::array<std::uint16_t, 256> color_table16_{};
     std::array<std::uint32_t, 256> color_table32_{};
+    std::array<std::uint16_t, 256> hardware_palette16_{};
     std::array<std::uint32_t, 256> hardware_palette32_{};
     SColorChannels channels_;
     SColorMasks masks_;

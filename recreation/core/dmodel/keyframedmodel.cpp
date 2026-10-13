@@ -41,7 +41,7 @@ void CKeyFramedModel::free() {
     polygons_.clear();
     poly_texture_indices_.clear();
     env_map_opacities_.clear();
-    texture_names_.clear();
+    textures_.clear();
     parts_.clear();
     frame_bounds_.clear();
     collision_triangles_.clear();
@@ -68,7 +68,7 @@ void CKeyFramedModel::allocate(int vertex_count, int poly_count, int texture_cou
                      static_cast<std::size_t>(frame_count));
     polygons_.resize(static_cast<std::size_t>(poly_count));
     poly_texture_indices_.resize(static_cast<std::size_t>(poly_count));
-    texture_names_.resize(static_cast<std::size_t>(texture_count));
+    textures_.resize(static_cast<std::size_t>(texture_count));
     parts_.resize(static_cast<std::size_t>(part_count));
     frame_bounds_.resize(static_cast<std::size_t>(frame_count));
     if (frame_count == 1) {
@@ -110,8 +110,8 @@ std::span<const std::uint8_t> CKeyFramedModel::getEnvMapOpacities() const {
     return env_map_opacities_;
 }
 
-std::span<const std::string> CKeyFramedModel::getTextureNames() const {
-    return texture_names_;
+std::span<const platform::SMRGLTextureBasic> CKeyFramedModel::getTextures() const {
+    return textures_;
 }
 
 std::span<const CKeyFramedModel::SPart> CKeyFramedModel::getParts() const {

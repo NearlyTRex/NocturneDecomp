@@ -4,6 +4,7 @@
 #include "engine/font/bitfont.h"
 #include "engine/font/font.h"
 #include "engine/special/special.h"
+#include "engine/texture/currenttexture.h"
 #include "support/newmsg/newmsg.h"
 #include "tests/mocks/engine/fontsheet.h"
 #include "tests/mocks/engine/memoryscreen.h"
@@ -87,7 +88,8 @@ protected:
     engine::C2d two_d_{dosio_, screen_, raw_input_};
     engine::C3d three_d_;
     NiceMock<platform::MockRenderer> renderer_;
-    engine::CSpecial special_{renderer_, screen_, two_d_, three_d_};
+    engine::SCurrentTexture current_texture_;
+    engine::CSpecial special_{renderer_, screen_, two_d_, three_d_, current_texture_};
     engine::CFontColors colors_;
     engine::CBitFont font_{dosio_, screen_, two_d_, three_d_, colors_};
     support::CNewMsg messages_{dosio_};

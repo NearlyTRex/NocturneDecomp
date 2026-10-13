@@ -18,6 +18,7 @@
 #include "engine/ncursfx/mouse.h"
 #include "engine/pod/pod.h"
 #include "engine/special/special.h"
+#include "engine/texture/currenttexture.h"
 #include "engine/texture/texture.h"
 #include "shape/edittool/editortools.h"
 #include "support/newmsg/newmsg.h"
@@ -136,7 +137,8 @@ protected:
     NiceMock<engine::MockGameClock> game_clock_;
     engine::C2d two_d_{dosio_, screen_, raw_input_};
     engine::C3d three_d_;
-    engine::CSpecial special_{renderer_, screen_, two_d_, three_d_};
+    engine::SCurrentTexture current_texture_;
+    engine::CSpecial special_{renderer_, screen_, two_d_, three_d_, current_texture_};
     engine::CLight light_;
     engine::CMatrix matrix_{two_d_, light_};
     engine::CKeys keys_{raw_input_, screen_};
@@ -153,7 +155,11 @@ protected:
                                .display = display_,
                                .fonts = fonts_};
     engine::CPod pod_{file_system_, dosio_};
-    engine::CTexture texture_;
+    engine::CTexture texture_{{.dosio = dosio_,
+                               .two_d = two_d_,
+                               .screen = screen_,
+                               .special = special_,
+                               .current_texture = current_texture_}};
     CSound game_sound_{sound_, pod_, file_system_};
     CDemonMission mission_;
     std::array<CDemonFilter, 8> global_filters_;

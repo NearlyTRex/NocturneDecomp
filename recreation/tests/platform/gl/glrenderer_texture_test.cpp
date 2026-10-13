@@ -24,9 +24,7 @@ std::array<std::uint8_t, 768> greyPalette() {
 }
 
 SMRGLTextureBasic named(std::string_view name) {
-    SMRGLTextureBasic texture;
-    std::ranges::copy(name, texture.texture_name.begin());
-    return texture;
+    return {.texture_name = std::string(name), .cache_index = 0};
 }
 
 std::span<const std::uint32_t> uploadedTexels(const CGlRecorder &gl, std::size_t count) {

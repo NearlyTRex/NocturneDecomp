@@ -20,6 +20,7 @@
 #include "engine/matrix/matrix.h"
 #include "engine/ncursfx/mouse.h"
 #include "engine/special/special.h"
+#include "engine/texture/currenttexture.h"
 #include "engine/texture/texture.h"
 #include "platform/gl/glrenderer.h"
 #include "platform/sdl/sdlaudiodevice.h"
@@ -126,7 +127,8 @@ private:
     wincore::CWddVMem screen_{display_, renderer_, winrun_, special_, two_d_};
     engine::C2d two_d_{dosio_, screen_, winrun_};
     engine::C3d three_d_;
-    engine::CSpecial special_{renderer_, screen_, two_d_, three_d_};
+    engine::SCurrentTexture current_texture_;
+    engine::CSpecial special_{renderer_, screen_, two_d_, three_d_, current_texture_};
     engine::CLight light_;
     engine::CMatrix matrix_{two_d_, light_};
     engine::CKeys keys_{winrun_, screen_};
@@ -147,7 +149,11 @@ private:
                                      .special = special_,
                                      .display = display_,
                                      .fonts = fonts_};
-    engine::CTexture texture_;
+    engine::CTexture texture_{{.dosio = dosio_,
+                               .two_d = two_d_,
+                               .screen = screen_,
+                               .special = special_,
+                               .current_texture = current_texture_}};
     core::CSound sound_{sound_main_, pod_, file_system_};
     core::CDemonMission mission_;
     std::array<core::CDemonFilter, 8> global_filters_;

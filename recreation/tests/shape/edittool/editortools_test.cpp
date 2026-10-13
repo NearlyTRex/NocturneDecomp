@@ -7,6 +7,7 @@
 #include "engine/light/light.h"
 #include "engine/matrix/matrix.h"
 #include "engine/special/special.h"
+#include "engine/texture/currenttexture.h"
 #include "shape/edittool/editortools.h"
 #include "tests/mocks/engine/fontsheet.h"
 #include "tests/mocks/engine/memoryscreen.h"
@@ -125,7 +126,8 @@ protected:
     engine::C2d two_d_{dosio_, screen_, raw_input_};
     NiceMock<platform::MockRenderer> renderer_;
     engine::C3d three_d_;
-    engine::CSpecial special_{renderer_, screen_, two_d_, three_d_};
+    engine::SCurrentTexture current_texture_;
+    engine::CSpecial special_{renderer_, screen_, two_d_, three_d_, current_texture_};
     engine::CLight light_;
     engine::CMatrix matrix_{two_d_, light_};
     engine::CKeys keys_{raw_input_, screen_};

@@ -288,7 +288,7 @@ TEST(CGlRenderer, ATexturedDrawBindsTheSelectedTexture) {
     std::array<std::uint8_t, 768> palette{};
     std::array<std::uint8_t, 1> texel = {0};
     SMRGLTextureBasic texture;
-    texture.texture_name = {'A'};
+    texture.texture_name = "A";
     const GLuint name = f.gl.peekName();
     ASSERT_EQ(f.renderer.selectTexture(&texture, 0, texel.data(), palette.data(), nullptr), 1);
     f.gl.clear();
@@ -308,7 +308,7 @@ TEST(CGlRenderer, AModeChangeForgetsTheSelectedTexture) {
     std::array<std::uint8_t, 768> palette{};
     std::array<std::uint8_t, 1> texel = {0};
     SMRGLTextureBasic texture;
-    texture.texture_name = {'A'};
+    texture.texture_name = "A";
     ASSERT_EQ(f.renderer.selectTexture(&texture, 0, texel.data(), palette.data(), nullptr), 1);
     ASSERT_EQ(f.renderer.setVideoMode2(640, 480, 16, f.scanlines.data()), 1);
     f.gl.clear();
