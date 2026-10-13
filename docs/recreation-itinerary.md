@@ -16,13 +16,13 @@ in instructions.
 | 2 | `doNothing`, `readMessageFile`, `getLocalizedString`, `initializeTrigTables`, `initTextureCache`, `initGraphicsSystem` | 8 | 30 | 2804 | 30 | 100.0% |
 | 3 | Sound system: `sndmain`, `CSound` lifetime, `readIniData` | 7 | 123 | 8346 | 123 | 100.0% |
 | 4 | `initFonts`, `CEditorTools::showWarning` | 11 | 46 | 4804 | 46 | 100.0% |
-| 5 | `showCalibrationTest`, `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 54 | 4873 | 11 | 20.3% |
+| 5 | `showCalibrationTest`, `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 50 | 4789 | 24 | 48.0% |
 | 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 0 | 0.0% |
 | 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 5 | 4.1% |
-| 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 1 | 1.5% |
+| 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 9 | 14.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 0 | 0.0% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 17 | 52 | 5565 | 1 | 1.9% |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 2 | 0.3% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 3 | 0.5% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 1 | 3.8% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0.0% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 0 | 0.0% |
@@ -44,7 +44,7 @@ in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 2 | 0.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 | 3.6% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 36.3% |
-| | **All** | | **4493** | **402944** | **348** | **7.7%** |
+| | **All** | | **4489** | **402860** | **370** | **8.2%** |
 
 ## Step 0: Math value types
 
@@ -443,9 +443,9 @@ in instructions.
 - free functions
   - [x] `wasKeyPressed` 0x005f2f00 (6)
 
-### `wincore/winvideo.cpp` (1 functions, 270 instructions, 0 done)
+### `wincore/winvideo.cpp` (1 functions, 270 instructions, 1 done)
 - free functions
-  - [ ] `playMovie` 0x005f4a00 (270)
+  - [x] `playMovie` 0x005f4a00 (270)
 
 ### `engine/alphabit.cpp` (6 functions, 456 instructions, 6 done)
 - class `CAlphaBitmap`
@@ -456,9 +456,9 @@ in instructions.
   - [x] `ctor` 0x00410520 (5)
   - [x] `dtor` 0x00410540 (8)
 
-### `core/sound.cpp` (1 functions, 24 instructions, 0 done)
+### `core/sound.cpp` (1 functions, 24 instructions, 1 done)
 - class `CSound`
-  - [ ] `findAllSoundFiles` 0x005b2d00 (24)
+  - [x] `findAllSoundFiles` 0x005b2d00 (24)
 
 ### `core/mission.cpp` (1 functions, 23 instructions, 0 done)
 - class `CDemonMission`
@@ -474,39 +474,35 @@ in instructions.
 - class `CMouse`
   - [ ] `load` 0x00544420 (80)
 
-### `engine/font.cpp` (4 functions, 124 instructions, 0 done)
+### `engine/font.cpp` (4 functions, 124 instructions, 4 done)
 - class `CBitFont`
-  - [ ] `drawTextWrapper` 0x004cdbf0 (23)
-  - [ ] `drawTextCenterInBounds` 0x004cdee0 (33)
-  - [ ] `drawTextCenterInBoundsFV` 0x004cdf80 (35)
-  - [ ] `drawTextCenterInBoundsF` 0x004cdf30 (33)
+  - [x] `drawTextWrapper` 0x004cdbf0 (23)
+  - [x] `drawTextCenterInBounds` 0x004cdee0 (33)
+  - [x] `drawTextCenterInBoundsFV` 0x004cdf80 (35)
+  - [x] `drawTextCenterInBoundsF` 0x004cdf30 (33)
 
-### `shape/edittool.cpp` (7 functions, 576 instructions, 0 done)
+### `shape/edittool.cpp` (7 functions, 576 instructions, 7 done)
 - class `CStrList`
-  - [ ] `add` 0x004a2b80 (12)
-  - [ ] `getStringAt` 0x004a2f70 (5)
-  - [ ] `findString` 0x004a3030 (32)
-  - [ ] `populateFromFilesNoDuplicates` 0x004a37b0 (162)
+  - [x] `add` 0x004a2b80 (12)
+  - [x] `getStringAt` 0x004a2f70 (5)
+  - [x] `findString` 0x004a3030 (32)
+  - [x] `populateFromFilesNoDuplicates` 0x004a37b0 (162)
 - class `CEditorTools`
-  - [ ] `showMessage` 0x0049e6a0 (22)
-  - [ ] `updatePercentage` 0x004a0530 (264)
-  - [ ] `showCenteredProgressDialog` 0x004a0430 (79)
+  - [x] `showMessage` 0x0049e6a0 (22)
+  - [x] `updatePercentage` 0x004a0530 (264)
+  - [x] `showCenteredProgressDialog` 0x004a0430 (79)
 
 ### `core/game.cpp` (1 functions, 34 instructions, 0 done)
 - class `CGame`
   - [ ] `displayMessage` 0x004d7f20 (34)
 
-### `support/trisock.cpp` (8 functions, 224 instructions, 0 done)
-- free functions
-  - [ ] `getIPAddress` 0x005e1930 (3)
-  - [ ] `buildSockaddrIn` 0x005e19d0 (42)
-  - [ ] `createNetworkAddr` 0x005e1940 (7)
-  - [ ] `copyIPAddress` 0x005e16f0 (6)
-  - [ ] `convertSockAddr` 0x005e1960 (33)
+### `support/trisock.cpp` (4 functions, 140 instructions, 0 done)
 - class `CSocket`
   - [ ] `sendSocketData` 0x005e1ca0 (64)
   - [ ] `isSocketValid` 0x005e1b70 (5)
   - [ ] `receiveSocketData` 0x005e1c20 (64)
+- free functions
+  - [ ] `createNetworkAddr` 0x005e1940 (7)
 
 ### `core/netgame.cpp` (16 functions, 2625 instructions, 0 done)
 - class `CNetGame`
@@ -797,7 +793,7 @@ in instructions.
 - class `CBitFont`
   - [x] `getCharYOffset` 0x004d0200 (12)
 
-### `shape/edittool.cpp` (54 functions, 4786 instructions, 0 done)
+### `shape/edittool.cpp` (54 functions, 4786 instructions, 8 done)
 - class `CEditorTools`
   - [ ] `showError` 0x0049e740 (22)
   - [ ] `setClipboardText` 0x004a1bc0 (81)
@@ -809,14 +805,14 @@ in instructions.
   - [ ] `getFieldAt` 0x004a2f80 (65)
   - [ ] `insertSortedFileRecord` 0x004a3360 (163)
   - [ ] `populateFromFileSearch` 0x004a35b0 (144)
-  - [ ] `ctor` 0x004a2a20 (6)
-  - [ ] `clear` 0x004a2b10 (41)
+  - [x] `ctor` 0x004a2a20 (6)
+  - [x] `clear` 0x004a2b10 (41)
   - [ ] `allocate` 0x004a2cc0 (57)
-  - [ ] `insert` 0x004a2bc0 (89)
-  - [ ] `remove` 0x004a2e00 (65)
-  - [ ] `sort` 0x004a2f00 (36)
-  - [ ] `swap` 0x004a31f0 (50)
-  - [ ] `dtor` 0x004a2a40 (29)
+  - [x] `insert` 0x004a2bc0 (89)
+  - [x] `remove` 0x004a2e00 (65)
+  - [x] `sort` 0x004a2f00 (36)
+  - [x] `swap` 0x004a31f0 (50)
+  - [x] `dtor` 0x004a2a40 (29)
   - [ ] `copyToClipboard` 0x004a3270 (90)
 - class `CEdScrollBar`
   - [ ] `ctor` 0x004a5ae0 (12)
@@ -845,7 +841,7 @@ in instructions.
   - [ ] `renderDialog` 0x004a4d40 (307)
   - [ ] `displayChoicesAndWaitForInput` 0x004a3e20 (65)
 - free functions
-  - [ ] `qsortByString` 0x004a2ee0 (9)
+  - [x] `qsortByString` 0x004a2ee0 (9)
   - [ ] `calculateGridWidth` 0x004a6490 (9)
   - [ ] `calculateGridHeight` 0x004a64b0 (13)
   - [ ] `calculateButtonWidth` 0x004a68e0 (40)
@@ -1078,9 +1074,9 @@ in instructions.
 
 ## Step 11: `CScript::loadScript`
 
-### `shape/edittool.cpp` (1 functions, 3 instructions, 0 done)
+### `shape/edittool.cpp` (1 functions, 3 instructions, 1 done)
 - class `CStrList`
-  - [ ] `getItemCount` 0x004a6ed0 (3)
+  - [x] `getItemCount` 0x004a6ed0 (3)
 
 ### `core/bugs.cpp` (1 functions, 3 instructions, 0 done)
 - free functions

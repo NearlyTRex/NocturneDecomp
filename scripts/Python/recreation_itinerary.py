@@ -76,7 +76,8 @@ UNITS = [
      "anchor": "00401010", "where": "after"},
 ]
 CALL = re.compile(r"FUN_([0-9a-f]{8})")
-DONE = re.compile(r"^// nocedit 0x([0-9a-f]{8})$", re.MULTILINE)
+# Indented for a template defined in its class.
+DONE = re.compile(r"^[ \t]*// nocedit 0x([0-9a-f]{8})$", re.MULTILINE)
 SOURCE_SUFFIXES = (".c", ".cpp")
 MAX_SPLIT_DEPTH = 4
 
@@ -98,7 +99,7 @@ def done_addresses():
     done = set()
     for directory, _, names in os.walk(RECREATION):
         for name in names:
-            if name.endswith(".cpp"):
+            if name.endswith((".cpp", ".h")):
                 with open(os.path.join(directory, name), encoding="utf-8") as f:
                     done.update(DONE.findall(f.read()))
     return done

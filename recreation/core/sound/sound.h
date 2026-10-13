@@ -2,6 +2,9 @@
 
 #include "common/fwd.h"
 #include "core/fwd.h"
+#include "engine/fwd.h"
+#include "platform/fwd.h"
+#include "shape/edittool/strlist.h"
 #include "sound/fwd.h"
 
 #include <cstdint>
@@ -11,7 +14,7 @@ namespace nocturne::core {
 // The game's sounds, played through the sound system it shuts down when it goes.
 class CSound {
 public:
-    explicit CSound(sound::CSndMain &sound_main);
+    CSound(sound::CSndMain &sound_main, engine::CPod &pod, platform::IFileSystem &file_system);
     ~CSound();
     CSound(const CSound &) = delete;
     CSound &operator=(const CSound &) = delete;
@@ -19,6 +22,7 @@ public:
     CSound &operator=(CSound &&) = delete;
 
     void findRandomSoundFile(char *out_result, char *wildcard_pattern);
+    // Lists sound\*.wav and sound\*.mp3 the first time, then takes up the sound device.
     void findAllSoundFiles();
     void init();
     void shutdown();
@@ -40,8 +44,13 @@ public:
     void setReverbPreset(int index);
     void setVolumeFade(float target_volume, float fade_time);
 
+    [[nodiscard]] const shape::CStrList &getSoundFileList() const;
+
 private:
     sound::CSndMain &sound_main_;
+    engine::CPod &pod_;
+    platform::IFileSystem &file_system_;
+    shape::CStrList sound_file_list_;
 };
 
 } // namespace nocturne::core

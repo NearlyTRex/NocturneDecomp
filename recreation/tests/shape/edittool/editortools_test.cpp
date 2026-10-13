@@ -12,6 +12,7 @@
 #include "tests/mocks/engine/memoryscreen.h"
 #include "tests/mocks/engine/mockrawinput.h"
 #include "tests/mocks/engine/podfixture.h"
+#include "tests/mocks/platform/mockclock.h"
 #include "tests/mocks/platform/mockrenderer.h"
 
 #include <gmock/gmock.h>
@@ -34,11 +35,11 @@ using ::testing::StrEq;
 using ::testing::ThrowsMessage;
 
 TEST(CEditorTools, PublicInterface) {
-    static_assert(
-        std::is_constructible_v<CEditorTools, engine::C2d &, engine::CMatrix &, engine::C3d &,
-                                engine::IScreenDevice &, engine::CSpecial &, engine::CKeys &>);
-    static_assert(
-        std::is_same_v<decltype(&CEditorTools::showMessage), void (CEditorTools::*)(char *, ...)>);
+    static_assert(std::is_constructible_v<CEditorTools, engine::C2d &, engine::CMatrix &,
+                                          engine::C3d &, engine::IScreenDevice &,
+                                          engine::CSpecial &, engine::CKeys &, platform::IClock &>);
+    static_assert(std::is_same_v<decltype(&CEditorTools::showMessage),
+                                 void (CEditorTools::*)(std::string_view)>);
     static_assert(std::is_same_v<decltype(&CEditorTools::showWarning),
                                  void (CEditorTools::*)(std::string_view)>);
     static_assert(
@@ -60,7 +61,7 @@ TEST(CEditorTools, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CEditorTools::showCheatInputDialog),
                                  int (CEditorTools::*)(char *, char *, int, int)>);
     static_assert(std::is_same_v<decltype(&CEditorTools::showCenteredProgressDialog),
-                                 void (CEditorTools::*)(char *)>);
+                                 void (CEditorTools::*)(std::string_view)>);
     static_assert(std::is_same_v<decltype(&CEditorTools::updatePercentage),
                                  void (CEditorTools::*)(float, float)>);
     static_assert(
@@ -130,7 +131,8 @@ protected:
     engine::CKeys keys_{raw_input_, screen_};
     engine::CFontColors colors_;
     engine::CBitFont font_{dosio_, screen_, two_d_, three_d_, colors_};
-    CEditorTools editor_tools_{two_d_, matrix_, three_d_, screen_, special_, keys_};
+    NiceMock<platform::MockClock> clock_;
+    CEditorTools editor_tools_{two_d_, matrix_, three_d_, screen_, special_, keys_, clock_};
 };
 
 TEST_F(CEditorToolsTest, WithoutAnEditorFontEveryDialogIsFatal) {
@@ -261,6 +263,120 @@ TEST_F(CEditorToolsTest, AWarningWaitsForAKeyThenPutsTheScreenBack) {
     EXPECT_EQ(editor_tools_.getWindowCount(), 0U);
     EXPECT_EQ(screen_.pixel(56, 46), kBackground);
     EXPECT_EQ(three_d_.getCurrentAlphaValue(), 0xff);
+}
+
+TEST_F(CEditorToolsTest, AMessageIsDrawnInTheWindowFontColourAndWaitsForAKey) {
+    EXPECT_CALL(raw_input_, getNextKeypress).WillOnce([&](engine::IScreenDevice &) {
+        // The '!' is drawn in the middle of the box, from (63, 47).
+        EXPECT_EQ(screen_.pixel(63, 47), 0xffffffU);
+        return 'x';
+    });
+    editor_tools_.showMessage("!");
+    EXPECT_EQ(screen_.swaps, 2);
+    EXPECT_EQ(editor_tools_.getWindowCount(), 0U);
+}
+
+// A progress window on the 128x96 screen, in a font of the digits and ':' a pixel each, whose
+// 'j' is two pixels tall; the clock counts seconds.
+class CEditorToolsProgressTest : public CEditorToolsTest {
+protected:
+    CEditorToolsProgressTest() {
+        const std::vector<std::vector<std::string>> glyphs(11, std::vector<std::string>{"#"});
+        const engine::SFontSheet sheet = engine::makeFontSheet(glyphs, 1);
+        givenFile("art\\digits.raw", sheet.pixels);
+        font_.loadNewBitmap("digits.raw", sheet.width, sheet.height, '0', ':', 0);
+        font_.setCharYOffsetRange(2, 'j', 'j');
+        ON_CALL(clock_, getCounterFrequency).WillByDefault(Return(1));
+        ON_CALL(clock_, getCounter).WillByDefault([this] { return now_; });
+    }
+
+    // Pixels of the text colour along row y of the window's inside.
+    [[nodiscard]] int textPixels(int y) const {
+        const engine::SClipRect clip = two_d_.getClipRect();
+        int count = 0;
+        for (int x = clip.left; x <= clip.right; ++x) {
+            count += screen_.pixel(x, y) == 0xffffffU ? 1 : 0;
+        }
+        return count;
+    }
+
+    // The pixel in the bar's middle row at the fraction of its width.
+    [[nodiscard]] std::uint32_t barAt(float fraction) const {
+        const engine::SClipRect clip = two_d_.getClipRect();
+        const int left = clip.left + 1;
+        const int right = clip.right - 1;
+        const auto x = left + static_cast<int>(static_cast<float>(right - left) * fraction);
+        return screen_.pixel(x, clip.top + 6);
+    }
+
+    std::uint64_t now_ = 100;
+};
+
+TEST_F(CEditorToolsProgressTest, OpensAtHalfTheScreenWideWithAnEmptyBar) {
+    editor_tools_.showCenteredProgressDialog("");
+    const engine::SClipRect clip = two_d_.getClipRect();
+    EXPECT_GE(clip.right - clip.left + 1, kScreenWidth / 2);
+    EXPECT_EQ(screen_.swaps, 1);
+    EXPECT_GT(textPixels(clip.top), 0);
+    EXPECT_EQ(barAt(0.0F), 0U);
+}
+
+TEST_F(CEditorToolsProgressTest, TheBarFillsInProportionAndKeepsItsLastPixelForTheEnd) {
+    editor_tools_.showCenteredProgressDialog("");
+    editor_tools_.updatePercentage(1.0F, 4.0F);
+    EXPECT_EQ(barAt(0.1F), 0x040404U);
+    EXPECT_EQ(barAt(0.5F), 0U);
+    editor_tools_.updatePercentage(9.0F, 4.0F);
+    EXPECT_EQ(barAt(0.99F), 0x040404U);
+    EXPECT_EQ(screen_.pixel(two_d_.getClipRect().right - 1, two_d_.getClipRect().top + 6), 0U);
+}
+
+TEST_F(CEditorToolsProgressTest, ProgressBelowZeroOrOfNothingShowsAnEmptyBar) {
+    editor_tools_.showCenteredProgressDialog("");
+    editor_tools_.updatePercentage(-1.0F, 4.0F);
+    EXPECT_EQ(barAt(0.0F), 0U);
+    editor_tools_.updatePercentage(1.0F, 0.0F);
+    EXPECT_EQ(barAt(0.0F), 0U);
+}
+
+TEST_F(CEditorToolsProgressTest, AnUnchangedPercentageRedrawsOnlyEveryFourSeconds) {
+    editor_tools_.showCenteredProgressDialog("");
+    editor_tools_.updatePercentage(0.001F, 1.0F);
+    EXPECT_EQ(screen_.swaps, 1);
+    now_ += 3;
+    editor_tools_.updatePercentage(0.001F, 1.0F);
+    EXPECT_EQ(screen_.swaps, 1);
+    now_ += 1;
+    editor_tools_.updatePercentage(0.001F, 1.0F);
+    EXPECT_EQ(screen_.swaps, 2);
+    editor_tools_.updatePercentage(0.5F, 1.0F);
+    EXPECT_EQ(screen_.swaps, 3);
+}
+
+TEST_F(CEditorToolsProgressTest, TheTimeLeftShowsAfterFiveSecondsUntilNoneIsLeft) {
+    editor_tools_.showCenteredProgressDialog("");
+    const int time_row = two_d_.getClipRect().bottom - 2;
+    now_ += 5;
+    editor_tools_.updatePercentage(0.5F, 1.0F);
+    EXPECT_EQ(textPixels(time_row), 0);
+    now_ += 1;
+    editor_tools_.updatePercentage(0.6F, 1.0F);
+    EXPECT_GT(textPixels(time_row), 0);
+    editor_tools_.updatePercentage(1.0F, 1.0F);
+    EXPECT_EQ(textPixels(time_row), 0);
+}
+
+TEST_F(CEditorToolsProgressTest, NoTimeLeftShowsAtZeroPercent) {
+    editor_tools_.showCenteredProgressDialog("");
+    now_ += 60;
+    editor_tools_.updatePercentage(0.0F, 1.0F);
+    EXPECT_EQ(textPixels(two_d_.getClipRect().bottom - 2), 0);
+}
+
+TEST_F(CEditorToolsTest, UpdatingWithNoWindowOpenIsFatal) {
+    EXPECT_THAT([this] { editor_tools_.updatePercentage(1.0F, 2.0F); },
+                ThrowsMessage<common::CFatalError>(
+                    StrEq("CEditorTools::updatePercentageWindow - no window open!")));
 }
 
 TEST_F(CEditorToolsTest, UnderTheHardwareRendererTheFrameIsPulledIntoTheScreenFirst) {

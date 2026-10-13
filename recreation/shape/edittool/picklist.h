@@ -4,6 +4,7 @@
 #include "shape/fwd.h"
 
 #include <cstdint>
+#include <string_view>
 
 namespace nocturne::shape {
 
@@ -13,8 +14,8 @@ public:
     ~CPickList() override;
 
     void remove(int start_index, int end_index) override;
-    void sort(int sort_type, int sort_order) override;
-    void insert(int insert_index, char *string_data) override;
+    void sort(int start_index, int end_index) override;
+    void insert(int insert_index, std::string_view string_data) override;
     void swap(int index1, int index2) override;
     void clear() override;
     virtual int handleInput();

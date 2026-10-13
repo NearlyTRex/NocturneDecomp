@@ -224,6 +224,28 @@ int CBitFont::drawText(std::string_view text, int x, int y, int color_mode, int 
     return pen_x - x;
 }
 
+// nocedit 0x004cdbf0
+int CBitFont::drawTextWrapper(int x, int y, int color_mode, int color_value,
+                              std::string_view text) {
+    return drawText(text, x, y, color_mode, color_value);
+}
+
+// nocedit 0x004cdee0
+int CBitFont::drawTextCenterInBounds(int left_x, int right_x, int y, int color_mode,
+                                     int color_value, std::string_view text) {
+    const int x = (left_x + right_x + 1 - getTextWidth(text)) / 2;
+    return drawTextWrapper(x, y, color_mode, color_value, text);
+}
+
+// The original formatted into a 4096-byte buffer without a bound.
+// nocedit 0x004cdf80
+int CBitFont::drawTextCenterInBoundsFV(int left_x, int right_x, int y, int color_mode,
+                                       int color_value, std::string_view format,
+                                       std::format_args args) {
+    return drawTextCenterInBounds(left_x, right_x, y, color_mode, color_value,
+                                  std::vformat(format, args));
+}
+
 // A line by line, each one the bitmap font draws itself when the OS font turns it down.
 int CBitFont::drawWithWinFont(std::string_view text, int x, int y, int color_mode,
                               int color_value) {

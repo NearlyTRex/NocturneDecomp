@@ -14,6 +14,7 @@
 #include "support/newmsg/newmsg.h"
 #include "tests/mocks/engine/mockrawinput.h"
 #include "tests/mocks/engine/mockscreendevice.h"
+#include "tests/mocks/platform/mockclock.h"
 #include "tests/mocks/platform/mockdisplay.h"
 #include "tests/mocks/platform/mockosfontfactory.h"
 #include "tests/mocks/platform/mockrenderer.h"
@@ -72,7 +73,8 @@ protected:
     engine::CLight light_;
     engine::CMatrix matrix_{two_d_, light_};
     engine::CKeys keys_{raw_input_, screen_};
-    shape::CEditorTools editor_tools_{two_d_, matrix_, three_d_, screen_, special_, keys_};
+    ::testing::NiceMock<platform::MockClock> clock_;
+    shape::CEditorTools editor_tools_{two_d_, matrix_, three_d_, screen_, special_, keys_, clock_};
     engine::CFontColors colors_;
     ::testing::NiceMock<platform::MockOsFontFactory> os_fonts_;
     support::CNewMsg messages_{dosio_};

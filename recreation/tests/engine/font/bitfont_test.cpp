@@ -38,15 +38,16 @@ TEST(CBitFont, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CBitFont::drawCharacter),
                                  int (CBitFont::*)(int, int, int, int, int, int)>);
     static_assert(std::is_same_v<decltype(&CBitFont::drawTextWrapper),
-                                 int (CBitFont::*)(int, int, int, int, char *)>);
+                                 int (CBitFont::*)(int, int, int, int, std::string_view)>);
     static_assert(std::is_same_v<decltype(&CBitFont::drawTextRight),
                                  int (CBitFont::*)(int, int, int, int, char *)>);
     static_assert(std::is_same_v<decltype(&CBitFont::drawTextCenter),
                                  int (CBitFont::*)(int, int, int, int, char *)>);
     static_assert(std::is_same_v<decltype(&CBitFont::drawTextCenterInBounds),
-                                 int (CBitFont::*)(int, int, int, int, int, char *)>);
-    static_assert(std::is_same_v<decltype(&CBitFont::drawTextCenterInBoundsF),
-                                 int (CBitFont::*)(int, int, int, int, int, char *, ...)>);
+                                 int (CBitFont::*)(int, int, int, int, int, std::string_view)>);
+    static_assert(std::is_same_v<decltype(&CBitFont::drawTextCenterInBoundsF<int>),
+                                 int (CBitFont::*)(int, int, int, int, int, std::format_string<int>,
+                                                   int &&)>);
     static_assert(std::is_same_v<decltype(&CBitFont::getTextWidth),
                                  int (CBitFont::*)(std::string_view, int) const>);
     static_assert(std::is_same_v<decltype(&CBitFont::getTextHeight),
@@ -378,6 +379,33 @@ TEST_F(CBitFontTest, TextAdvancesSkipsReturnsAndStartsLinesUnderTheFirst) {
                                            ".......\n"
                                            "#......\n"
                                            "##.....\n");
+}
+
+TEST_F(CBitFontTest, TheWrapperDrawsTheTextAtThePoint) {
+    SRig rig(*this, 32);
+    open(rig);
+    EXPECT_EQ(rig.font.drawTextWrapper(2, 1, CBitFont::kSheetColors, CBitFont::kNoShadow, "!"), 3);
+    EXPECT_EQ(rig.picture(0xff0000, 5, 3), ".....\n"
+                                           "..#..\n"
+                                           "..##.\n");
+}
+
+TEST_F(CBitFontTest, TextIsCentredBetweenInclusiveEdges) {
+    SRig rig(*this, 32);
+    open(rig);
+    EXPECT_EQ(
+        rig.font.drawTextCenterInBounds(0, 8, 0, CBitFont::kSheetColors, CBitFont::kNoShadow, "!"),
+        3);
+    EXPECT_EQ(rig.picture(0xff0000, 9, 1), "...#.....\n");
+}
+
+TEST_F(CBitFontTest, FormattedTextIsCentredAsItReads) {
+    SRig rig(*this, 32);
+    open(rig);
+    EXPECT_EQ(rig.font.drawTextCenterInBoundsF(0, 8, 0, CBitFont::kSheetColors, CBitFont::kNoShadow,
+                                               "{}{}", '!', "!"),
+              6);
+    EXPECT_EQ(rig.picture(0xff0000, 9, 1), "..#..#...\n");
 }
 
 TEST_F(CBitFontTest, ScaledTextStartsLinesAScaledLineApart) {

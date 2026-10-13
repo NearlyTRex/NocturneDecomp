@@ -20,6 +20,7 @@ namespace {
 constexpr int kMaxTitleLines = 20;
 constexpr int kTitleLineWidth = 200;
 constexpr int kOpaqueAlpha = 0xffff;
+constexpr std::string_view kMessageTitle = "Message";
 constexpr std::string_view kWarningTitle = "Warning";
 
 // Bytes in a run of pixels, rounded toward zero.
@@ -39,10 +40,11 @@ std::byte *rowAt(std::span<void *> rows, int y) {
 // nocedit 0x0049e020
 CEditorTools::CEditorTools(engine::C2d &two_d, engine::CMatrix &matrix, engine::C3d &three_d,
                            engine::IScreenDevice &screen, engine::CSpecial &special,
-                           engine::CKeys &keys)
+                           engine::CKeys &keys, platform::IClock &clock)
     : two_d_(two_d), matrix_(matrix), three_d_(three_d), screen_(screen), special_(special),
-      keys_(keys), window_border_highlight_color_(7), title_bar_color_(0xfb),
-      warning_text_color_(0xff) {}
+      keys_(keys), clock_(clock), window_border_highlight_color_(7), title_bar_color_(0xfb),
+      window_font_color_(0xff), warning_text_color_(0xff), window_status_text_color_(0xff),
+      progress_bar_border_color_(0xff), progress_bar_fill_color_(4) {}
 
 CEditorTools::~CEditorTools() = default;
 
@@ -78,23 +80,32 @@ void CEditorTools::initEditorFontMetrics() {
     editor_font_line_height_ = font.getCharHeight('j', scale);
 }
 
-// The editor's warning opens its one-button prompt; the game's draws this box itself. The caller
-// formats the message.
+// The editor's message and warning open its one-button prompt; the game's draw this box
+// themselves. The caller formats the message.
+// nocedit 0x0049e6a0
+void CEditorTools::showMessage(std::string_view message) {
+    showPrompt(kMessageTitle, message, window_font_color_);
+}
+
 // nocedit 0x0049e6f0
 void CEditorTools::showWarning(std::string_view message) {
+    showPrompt(kWarningTitle, message, warning_text_color_);
+}
+
+void CEditorTools::showPrompt(std::string_view title, std::string_view message, int text_color) {
     initEditorFontMetrics();
     engine::CBitFont &font = *editor_font_;
     const int scale = getScale();
     const int message_width = font.getTextWidth(message, scale);
-    const int width = std::max(font.getTextWidth(kWarningTitle, scale), message_width);
+    const int width = std::max(font.getTextWidth(title, scale), message_width);
     const int message_height = font.getTextHeight(message, scale);
     createCenteredModal((editor_font_max_char_width_ * 4) + width,
-                        (editor_font_line_height_ * 2) + message_height, kWarningTitle, 0);
+                        (editor_font_line_height_ * 2) + message_height, title, 0);
     paintCurrentWindow();
     three_d_.setRenderAlpha(kOpaqueAlpha);
     const engine::SClipRect clip = two_d_.getClipRect();
     font.drawText(message, ((clip.left + clip.right) - message_width) / 2,
-                  ((clip.top + clip.bottom) - message_height) / 2, warning_text_color_,
+                  ((clip.top + clip.bottom) - message_height) / 2, text_color,
                   engine::CBitFont::kNoShadow, scale);
     screen_.swapBuffers();
     two_d_.clearInputAndWait();

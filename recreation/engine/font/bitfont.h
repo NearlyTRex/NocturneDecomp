@@ -5,6 +5,7 @@
 #include <array>
 #include <cstddef>
 #include <cstdint>
+#include <format>
 #include <optional>
 #include <span>
 #include <string>
@@ -67,15 +68,25 @@ public:
     int drawText(std::string_view text, int x, int y, int color_mode, int color_value,
                  int scale = 1);
     int drawCharacter(int char_code, int x, int y, int color_mode, int color_value, int scale = 1);
-    int drawTextWrapper(int x, int y, int color_mode, int color_value, char *text);
+    int drawTextWrapper(int x, int y, int color_mode, int color_value, std::string_view text);
     int drawTextRight(int x, int y, int color_mode, int color_value, char *text);
     int drawTextCenter(int x, int y, int color_mode, int color_value, char *text);
+    // Centred between two inclusive edges.
     int drawTextCenterInBounds(int left_x, int right_x, int y, int color_mode, int color_value,
-                               char *text);
+                               std::string_view text);
+    // std::format's syntax where the original took printf's.
+    // nocedit 0x004cdf30
+    template <typename... TArgs>
     int drawTextCenterInBoundsF(int left_x, int right_x, int y, int color_mode, int color_value,
-                                char *format_string, ...);
+                                std::format_string<TArgs...> format, TArgs &&...args) {
+        return drawTextCenterInBoundsFV(left_x, right_x, y, color_mode, color_value, format.get(),
+                                        std::make_format_args(args...));
+    }
 
 private:
+    int drawTextCenterInBoundsFV(int left_x, int right_x, int y, int color_mode, int color_value,
+                                 std::string_view format, std::format_args args);
+
     struct SSheet {
         std::string name;
         std::vector<std::uint8_t> pixels;
