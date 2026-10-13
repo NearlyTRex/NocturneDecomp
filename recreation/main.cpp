@@ -45,6 +45,7 @@
 #include <cstdio>
 #include <ctime>
 #include <exception>
+#include <format>
 #include <string_view>
 
 namespace {
@@ -189,7 +190,7 @@ int main() {
     try {
         return run();
     } catch (const std::exception &error) {
-        std::fprintf(stderr, "nocturne: %s\n", error.what());
+        std::fputs(std::format("nocturne: {}\n", error.what()).c_str(), stderr);
         return 1;
     }
 }

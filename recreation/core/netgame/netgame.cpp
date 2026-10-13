@@ -30,11 +30,9 @@ void CNetGame::init() {
     file_system_.removeFile("netlog.txt");
     current_game_time_ = 1;
     last_ping_time_ = clock_.getTime() / kTicksPerNetworkUnit;
-    std::optional<std::string> name = environment_.getVariable("USERNAME");
-    if (!name) {
-        name = environment_.getVariable("COMPUTERNAME");
-    }
-    player_name_ = name.value_or(std::string(kDefaultPlayerName));
+    player_name_ = environment_.getVariable("USERNAME")
+                       .or_else([this] { return environment_.getVariable("COMPUTERNAME"); })
+                       .value_or(std::string(kDefaultPlayerName));
     resetSession();
 }
 
