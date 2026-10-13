@@ -147,6 +147,7 @@ TEST(C3d, PublicInterface) {
     static_assert(std::is_same_v<decltype(&C3d::getCurrentAlphaValue), int (C3d::*)() const>);
     static_assert(
         std::is_same_v<decltype(&C3d::getCurrentRenderColor), std::uint32_t (C3d::*)() const>);
+    static_assert(std::is_same_v<decltype(&C3d::getBlendMode), int (C3d::*)() const>);
 }
 
 TEST(C3d, StartsOpaque) {
@@ -168,6 +169,13 @@ TEST(C3d, TheRenderAlphaIsClampedToAByte) {
     EXPECT_EQ(three_d.getCurrentAlphaValue(), 0);
     EXPECT_EQ(three_d.setRenderAlpha(0x20000), 0);
     EXPECT_EQ(three_d.getCurrentAlphaValue(), 0xff);
+}
+
+TEST(C3d, BlendsByMixingUntilAModeIsSet) {
+    C3d three_d;
+    EXPECT_EQ(three_d.getBlendMode(), 0);
+    three_d.setBlendMode(C3d::kAdditiveBlend);
+    EXPECT_EQ(three_d.getBlendMode(), C3d::kAdditiveBlend);
 }
 
 } // namespace

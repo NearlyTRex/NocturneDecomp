@@ -2,7 +2,9 @@
 
 #include "cockpit/ckptutil/ckptutil.h"
 #include "common/error/error.h"
+#include "common/math/bits.h"
 #include "common/text/path.h"
+#include "common/video/framebuffer.h"
 #include "engine/2d/2d.h"
 #include "engine/dosio/dosio.h"
 #include "engine/screendevice.h"
@@ -18,10 +20,6 @@ constexpr int kFirstSheetChar = 0x21;
 constexpr int kLastChar = 0xff;
 // What a short .act reads as past its end: fgetc's EOF, stored as a byte.
 constexpr std::uint8_t kPastEndOfFile = 0xff;
-
-std::uint32_t shiftLeft(std::uint32_t value, int count) {
-    return value << (static_cast<unsigned>(count) & 31U);
-}
 
 std::string toUpperAscii(std::string_view text) {
     std::string upper(text);
@@ -208,19 +206,15 @@ void CBitFont::remapPalette() {
                     cube[((red >> 3U) << 10U) | ((green >> 3U) << 5U) | (blue >> 3U)];
                 break;
             case 16:
-                sheet.display[i] =
-                    (shiftLeft(red / static_cast<std::uint32_t>(channels.red.scale_factor),
-                               channels.red.bit_position) |
-                     shiftLeft(green / static_cast<std::uint32_t>(channels.green.scale_factor),
-                               channels.green.bit_position) |
-                     shiftLeft(blue / static_cast<std::uint32_t>(channels.blue.scale_factor),
-                               channels.blue.bit_position)) &
-                    0xffffU;
+                sheet.display[i] = (common::packLevel(red, channels.red) |
+                                    common::packLevel(green, channels.green) |
+                                    common::packLevel(blue, channels.blue)) &
+                                   0xffffU;
                 break;
             case 32:
-                sheet.display[i] = shiftLeft(red, channels.red.bit_position) |
-                                   shiftLeft(green, channels.green.bit_position) |
-                                   shiftLeft(blue, channels.blue.bit_position);
+                sheet.display[i] = common::shiftLeft(red, channels.red.bit_position) |
+                                   common::shiftLeft(green, channels.green.bit_position) |
+                                   common::shiftLeft(blue, channels.blue.bit_position);
                 break;
             default:
                 common::displayErrorAndQuit("CBitFont::remapPalette - Invalid bitsPerPixel");

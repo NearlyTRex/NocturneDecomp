@@ -1,3 +1,5 @@
+#include "common/math/bits.h"
+#include "common/video/framebuffer.h"
 #include "engine/2d/2d.h"
 #include "engine/special/special.h"
 #include "platform/display.h"
@@ -7,24 +9,6 @@
 #include <cstddef>
 
 namespace nocturne::wincore {
-namespace {
-
-// x86 shifts by the low five bits of the count; a channel with no dither bits has a shift of 32.
-std::uint32_t shiftRight(std::uint32_t value, int count) {
-    return value >> (static_cast<unsigned>(count) & 31U);
-}
-
-std::uint32_t shiftLeft(std::uint32_t value, int count) {
-    return value << (static_cast<unsigned>(count) & 31U);
-}
-
-// An 8-bit level scaled down to the channel's width and moved to its place.
-std::uint32_t packLevel(std::uint8_t level, const common::SChannelLayout &channel) {
-    return shiftLeft(level / static_cast<std::uint32_t>(channel.scale_factor),
-                     channel.bit_position);
-}
-
-} // namespace
 
 // nocedit 0x005ed8f0
 void CWddVMem::setupColorPalette() {
@@ -61,9 +45,10 @@ void CWddVMem::convertPaletteToDirectColor() {
     }
     const engine::C2d::Palette &palette = two_d_.getSourcePaletteData();
     for (std::size_t i = 0; i < color_table32_.size(); ++i) {
-        color_table32_[i] = shiftLeft(palette[i * 3], color_channels_.red.bit_position) |
-                            shiftLeft(palette[(i * 3) + 1], color_channels_.green.bit_position) |
-                            shiftLeft(palette[(i * 3) + 2], color_channels_.blue.bit_position);
+        color_table32_[i] =
+            common::shiftLeft(palette[i * 3], color_channels_.red.bit_position) |
+            common::shiftLeft(palette[(i * 3) + 1], color_channels_.green.bit_position) |
+            common::shiftLeft(palette[(i * 3) + 2], color_channels_.blue.bit_position);
     }
 }
 
@@ -72,19 +57,19 @@ void CWddVMem::convertPaletteTo16Bit() {
     const engine::SColorChannels &channels = color_channels_;
     for (std::size_t i = 0; i < color_table16_.size(); ++i) {
         color_table16_[i] =
-            static_cast<std::uint16_t>(packLevel(palette[i * 3], channels.red) |
-                                       packLevel(palette[(i * 3) + 1], channels.green) |
-                                       packLevel(palette[(i * 3) + 2], channels.blue));
+            static_cast<std::uint16_t>(common::packLevel(palette[i * 3], channels.red) |
+                                       common::packLevel(palette[(i * 3) + 1], channels.green) |
+                                       common::packLevel(palette[(i * 3) + 2], channels.blue));
     }
-    const std::uint32_t red_levels = shiftRight(0xff, channels.red.dither_shift);
-    const std::uint32_t green_levels = shiftRight(0xff, channels.green.dither_shift);
-    const std::uint32_t blue_levels = shiftRight(0xff, channels.blue.dither_shift);
-    color_masks_.red_mask16 = shiftLeft(red_levels, channels.red.bit_position);
-    color_masks_.green_mask16 = shiftLeft(green_levels, channels.green.bit_position);
-    color_masks_.blue_mask16 = shiftLeft(blue_levels, channels.blue.bit_position);
-    color_masks_.red_mask32 = shiftLeft(red_levels, channels.red.dither_shift) << 16U;
-    color_masks_.green_mask32 = shiftLeft(green_levels, channels.green.dither_shift) << 8U;
-    color_masks_.blue_mask32 = shiftLeft(blue_levels, channels.blue.dither_shift);
+    const std::uint32_t red_levels = common::shiftRight(0xff, channels.red.dither_shift);
+    const std::uint32_t green_levels = common::shiftRight(0xff, channels.green.dither_shift);
+    const std::uint32_t blue_levels = common::shiftRight(0xff, channels.blue.dither_shift);
+    color_masks_.red_mask16 = common::shiftLeft(red_levels, channels.red.bit_position);
+    color_masks_.green_mask16 = common::shiftLeft(green_levels, channels.green.bit_position);
+    color_masks_.blue_mask16 = common::shiftLeft(blue_levels, channels.blue.bit_position);
+    color_masks_.red_mask32 = common::shiftLeft(red_levels, channels.red.dither_shift) << 16U;
+    color_masks_.green_mask32 = common::shiftLeft(green_levels, channels.green.dither_shift) << 8U;
+    color_masks_.blue_mask32 = common::shiftLeft(blue_levels, channels.blue.dither_shift);
     color_masks_.blue_bit_shift = channels.blue.dither_shift;
     color_masks_.total_dither_shift =
         channels.red.dither_shift + channels.green.dither_shift + channels.blue.dither_shift;

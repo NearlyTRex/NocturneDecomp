@@ -1,5 +1,7 @@
 #include "common/video/framebuffer.h"
 
+#include "common/math/bits.h"
+
 #include <algorithm>
 #include <bit>
 #include <iterator>
@@ -48,6 +50,11 @@ SChannelLayout getChannelLayout(std::uint32_t mask) {
     return {.bit_position = std::countr_zero(mask),
             .scale_factor = 1 << dropped,
             .dither_shift = dropped};
+}
+
+std::uint32_t packLevel(std::uint32_t level, const SChannelLayout &channel) {
+    return shiftLeft(level / static_cast<std::uint32_t>(channel.scale_factor),
+                     channel.bit_position);
 }
 
 std::vector<std::uint8_t> packRows(std::span<const std::byte> pixels, int width, int height,

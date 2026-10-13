@@ -32,6 +32,14 @@ public:
         masks_.red_mask16 = format.red_mask;
         masks_.green_mask16 = format.green_mask;
         masks_.blue_mask16 = format.blue_mask;
+        if (bits_per_pixel == 16) {
+            masks_.red_mask32 = 0xf80000;
+            masks_.green_mask32 = 0xfc00;
+            masks_.blue_mask32 = 0xf8;
+            masks_.blue_bit_shift = 3;
+            masks_.total_dither_shift = 8;
+            masks_.green_blue_dither_shift = 5;
+        }
         for (std::size_t i = 0; i < 256; ++i) {
             color_table16_[i] = static_cast<std::uint16_t>(pack16(i, i, i));
             color_table32_[i] = static_cast<std::uint32_t>((i << 16U) | (i << 8U) | i);
@@ -86,6 +94,9 @@ public:
     [[nodiscard]] std::span<const std::uint32_t, 256> getColorTable32() const override {
         return color_table32_;
     }
+    [[nodiscard]] std::span<std::uint32_t, 256> getHardwarePalette32() override {
+        return hardware_palette32_;
+    }
     [[nodiscard]] SColorChannels &getColorChannels() override {
         return channels_;
     }
@@ -127,6 +138,7 @@ private:
     std::vector<void *> rows_;
     std::array<std::uint16_t, 256> color_table16_{};
     std::array<std::uint32_t, 256> color_table32_{};
+    std::array<std::uint32_t, 256> hardware_palette32_{};
     SColorChannels channels_;
     SColorMasks masks_;
 };

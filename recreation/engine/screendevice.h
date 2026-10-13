@@ -58,6 +58,8 @@ public:
     [[nodiscard]] virtual std::span<std::uint32_t *> getZBufferRows() = 0;
     [[nodiscard]] virtual std::span<std::uint16_t, 256> getColorTable16() = 0;
     [[nodiscard]] virtual std::span<const std::uint32_t, 256> getColorTable32() const = 0;
+    // The 8-8-8 colours an indexed image draws with, filled by whoever draws one.
+    [[nodiscard]] virtual std::span<std::uint32_t, 256> getHardwarePalette32() = 0;
     [[nodiscard]] virtual SColorChannels &getColorChannels() = 0;
     [[nodiscard]] virtual const SColorMasks &getColorMasks() const = 0;
 };

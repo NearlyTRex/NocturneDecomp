@@ -17,6 +17,15 @@ int C3d::setRenderAlpha(int alpha_color_value) {
     return static_cast<int>(current_render_color_ ^ kWhite);
 }
 
+// nocedit 0x00406dd0
+void C3d::setBlendMode(int blend_mode) {
+    blend_mode_ = blend_mode;
+}
+
+int C3d::getBlendMode() const {
+    return blend_mode_;
+}
+
 int C3d::getCurrentAlphaValue() const {
     return current_alpha_value_;
 }

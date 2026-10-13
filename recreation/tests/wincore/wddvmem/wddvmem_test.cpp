@@ -1,5 +1,6 @@
 #include "common/video/framebuffer.h"
 #include "engine/2d/2d.h"
+#include "engine/3d/3d.h"
 #include "engine/special/special.h"
 #include "tests/mocks/engine/podfixture.h"
 #include "tests/mocks/platform/mockclock.h"
@@ -80,7 +81,8 @@ protected:
     CWinRun winrun_{window_, clock_};
     CWddVMem wddvmem_{display_, renderer_, winrun_, special_, two_d_};
     engine::C2d two_d_{dosio_, wddvmem_, winrun_};
-    engine::CSpecial special_{renderer_, wddvmem_, two_d_};
+    engine::C3d three_d_;
+    engine::CSpecial special_{renderer_, wddvmem_, two_d_, three_d_};
 };
 
 TEST_F(CWddVMemTest, StartsAtThreeHundredAndTwentyByTwoHundredInEightBits) {
@@ -186,6 +188,13 @@ TEST_F(CWddVMemTest, AnEightBitModeBuildsNoTable) {
     wddvmem_.convertPaletteToDirectColor();
     EXPECT_EQ(wddvmem_.getColorTable16()[1], 0);
     EXPECT_EQ(wddvmem_.getColorTable32()[1], 0U);
+}
+
+TEST_F(CWddVMemTest, TheHardwarePaletteStartsBlackAndOutlivesAModeChange) {
+    EXPECT_EQ(wddvmem_.getHardwarePalette32()[7], 0U);
+    wddvmem_.getHardwarePalette32()[7] = 0x123456;
+    ASSERT_TRUE(wddvmem_.setScreenResolution(4, 2, 32));
+    EXPECT_EQ(wddvmem_.getHardwarePalette32()[7], 0x123456U);
 }
 
 TEST_F(CWddVMemTest, TheRendererBuildsTheSixteenBitTableWhileItRuns) {

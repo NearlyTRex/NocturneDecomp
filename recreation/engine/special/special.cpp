@@ -21,8 +21,9 @@ std::size_t getRowBytes(const IScreenDevice &screen) {
 
 } // namespace
 
-CSpecial::CSpecial(platform::IRenderer &renderer, IScreenDevice &screen, const C2d &two_d)
-    : renderer_(renderer), screen_(screen), two_d_(two_d) {}
+CSpecial::CSpecial(platform::IRenderer &renderer, IScreenDevice &screen, const C2d &two_d,
+                   const C3d &three_d)
+    : renderer_(renderer), screen_(screen), two_d_(two_d), three_d_(three_d) {}
 
 bool CSpecial::getUseDirect3D() const {
     return use_direct3d_;

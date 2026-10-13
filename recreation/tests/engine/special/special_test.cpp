@@ -1,4 +1,5 @@
 #include "engine/2d/2d.h"
+#include "engine/3d/3d.h"
 #include "engine/dosio/dosio.h"
 #include "engine/special/special.h"
 #include "tests/mocks/engine/mockrawinput.h"
@@ -45,12 +46,14 @@ TEST(CSpecial, PublicInterface) {
                                  void (CSpecial::*)(SSoftwareEdge *, SSoftwareEdge *, int)>);
     static_assert(std::is_same_v<decltype(&CSpecial::renderPerspectiveCorrectScanline16),
                                  void (CSpecial::*)(SSoftwareEdge *, SSoftwareEdge *, int)>);
-    static_assert(std::is_same_v<decltype(&CSpecial::renderAlphaRow32),
-                                 void (CSpecial::*)(std::uint32_t *, std::uint8_t *, std::uint8_t *,
-                                                    int, int)>);
-    static_assert(std::is_same_v<decltype(&CSpecial::renderAlphaRow16),
-                                 void (CSpecial::*)(std::uint16_t *, std::uint8_t *, std::uint8_t *,
-                                                    int, int)>);
+    static_assert(
+        std::is_same_v<decltype(&CSpecial::renderAlphaRow32),
+                       void (CSpecial::*)(std::span<std::uint32_t>, std::span<const std::uint8_t>,
+                                          std::span<const std::uint8_t>, int)>);
+    static_assert(
+        std::is_same_v<decltype(&CSpecial::renderAlphaRow16),
+                       void (CSpecial::*)(std::span<std::uint16_t>, std::span<const std::uint8_t>,
+                                          std::span<const std::uint8_t>, int)>);
     static_assert(std::is_same_v<decltype(&CSpecial::renderScanline),
                                  void (CSpecial::*)(SSoftwareEdge *, SSoftwareEdge *, int)>);
     static_assert(
@@ -143,7 +146,8 @@ protected:
     NiceMock<MockRawInput> raw_input_;
     C2d two_d_{dosio_, screen_, raw_input_};
     NiceMock<platform::MockRenderer> renderer_;
-    CSpecial special_{renderer_, screen_, two_d_};
+    C3d three_d_;
+    CSpecial special_{renderer_, screen_, two_d_, three_d_};
 };
 
 TEST_F(CSpecialTest, StartsWithTheRendererOff) {

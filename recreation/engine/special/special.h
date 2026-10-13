@@ -6,6 +6,8 @@
 #include "platform/fwd.h"
 
 #include <cstdint>
+#include <optional>
+#include <span>
 
 namespace nocturne::engine {
 
@@ -13,7 +15,8 @@ namespace nocturne::engine {
 // the software renderer its image, and the software paths that run without it.
 class CSpecial {
 public:
-    CSpecial(platform::IRenderer &renderer, IScreenDevice &screen, const C2d &two_d);
+    CSpecial(platform::IRenderer &renderer, IScreenDevice &screen, const C2d &two_d,
+             const C3d &three_d);
 
     // The INI's useDirect3D: whether loadExternalRenderer may start the renderer.
     [[nodiscard]] bool getUseDirect3D() const;
@@ -34,10 +37,14 @@ public:
                                             int scanline_y);
     void renderPerspectiveCorrectScanline16(SSoftwareEdge *left_vertex, SSoftwareEdge *right_vertex,
                                             int scanline_y);
-    void renderAlphaRow32(std::uint32_t *destPixels, std::uint8_t *srcIndices,
-                          std::uint8_t *srcAlpha, int globalAlpha, int pixelCount);
-    void renderAlphaRow16(std::uint16_t *destPixels, std::uint8_t *srcIndices,
-                          std::uint8_t *srcAlpha, int globalAlpha, int pixelCount);
+    // Draws hardware-palette indices over a row, each pixel at its own alpha scaled by the 16-bit
+    // global alpha, up to the shortest of the three rows.
+    void renderAlphaRow32(std::span<std::uint32_t> dest_pixels,
+                          std::span<const std::uint8_t> src_indices,
+                          std::span<const std::uint8_t> src_alpha, int global_alpha);
+    void renderAlphaRow16(std::span<std::uint16_t> dest_pixels,
+                          std::span<const std::uint8_t> src_indices,
+                          std::span<const std::uint8_t> src_alpha, int global_alpha);
     void renderScanline(SSoftwareEdge *left, SSoftwareEdge *right, int scanline_y);
     void transformAndProjectPoint(platform::SProjectedVertex *output, common::CVector3i *input);
     void transformPoint(platform::SProjectedVertex *output, common::CVector3i *input);
@@ -73,10 +80,13 @@ public:
 
 private:
     void fillBridge();
+    [[nodiscard]] std::optional<std::uint32_t>
+    getAlphaPixel(std::uint8_t index, std::uint32_t coverage, std::uint32_t dest) const;
 
     platform::IRenderer &renderer_;
     IScreenDevice &screen_;
     const C2d &two_d_;
+    const C3d &three_d_;
     // The renderer keeps these addresses for as long as it runs.
     platform::CExternalRendererBridge bridge_;
     bool use_direct3d_ = false;

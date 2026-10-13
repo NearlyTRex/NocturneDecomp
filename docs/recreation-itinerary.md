@@ -16,9 +16,9 @@ in instructions.
 | 2 | `doNothing`, `readMessageFile`, `getLocalizedString`, `initializeTrigTables`, `initTextureCache`, `initGraphicsSystem` | 8 | 30 | 2804 | 30 | 100.0% |
 | 3 | Sound system: `sndmain`, `CSound` lifetime, `readIniData` | 7 | 123 | 8346 | 123 | 100.0% |
 | 4 | `initFonts`, `CEditorTools::showWarning` | 11 | 46 | 4804 | 46 | 100.0% |
-| 5 | `showCalibrationTest`, `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 54 | 4873 | 1 | 1.8% |
+| 5 | `showCalibrationTest`, `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 54 | 4873 | 11 | 20.3% |
 | 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 0 | 0.0% |
-| 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 4 | 3.3% |
+| 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 5 | 4.1% |
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 1 | 1.5% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 0 | 0.0% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 17 | 52 | 5565 | 1 | 1.9% |
@@ -44,7 +44,7 @@ in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 2 | 0.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 | 3.6% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 36.3% |
-| | **All** | | **4493** | **402944** | **337** | **7.5%** |
+| | **All** | | **4493** | **402944** | **348** | **7.7%** |
 
 ## Step 0: Math value types
 
@@ -429,15 +429,15 @@ in instructions.
 
 ## Step 5: `showCalibrationTest`, `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init`
 
-### `engine/special.cpp` (2 functions, 122 instructions, 0 done)
+### `engine/special.cpp` (2 functions, 122 instructions, 2 done)
 - free functions
-  - [ ] `renderAlphaRow32` 0x005b555c (50)
-  - [ ] `renderAlphaRow16` 0x005b55f7 (72)
+  - [x] `renderAlphaRow32` 0x005b555c (50)
+  - [x] `renderAlphaRow16` 0x005b55f7 (72)
 
-### `core/menu.cpp` (2 functions, 162 instructions, 0 done)
+### `core/menu.cpp` (2 functions, 162 instructions, 2 done)
 - free functions
-  - [ ] `showCalibrationTestPattern` 0x00510a50 (117)
-  - [ ] `showCalibrationTest` 0x00510ba0 (45)
+  - [x] `showCalibrationTestPattern` 0x00510a50 (117)
+  - [x] `showCalibrationTest` 0x00510ba0 (45)
 
 ### `wincore/winrun.cpp` (1 functions, 6 instructions, 1 done)
 - free functions
@@ -447,14 +447,14 @@ in instructions.
 - free functions
   - [ ] `playMovie` 0x005f4a00 (270)
 
-### `engine/alphabit.cpp` (6 functions, 456 instructions, 0 done)
+### `engine/alphabit.cpp` (6 functions, 456 instructions, 6 done)
 - class `CAlphaBitmap`
-  - [ ] `free` 0x00410560 (40)
-  - [ ] `load` 0x004105d0 (241)
-  - [ ] `initPalette` 0x00410cf0 (17)
-  - [ ] `display` 0x00410950 (145)
-  - [ ] `ctor` 0x00410520 (5)
-  - [ ] `dtor` 0x00410540 (8)
+  - [x] `free` 0x00410560 (40)
+  - [x] `load` 0x004105d0 (241)
+  - [x] `initPalette` 0x00410cf0 (17)
+  - [x] `display` 0x00410950 (145)
+  - [x] `ctor` 0x00410520 (5)
+  - [x] `dtor` 0x00410540 (8)
 
 ### `core/sound.cpp` (1 functions, 24 instructions, 0 done)
 - class `CSound`
@@ -697,9 +697,9 @@ in instructions.
   - [x] `setCameraOrigin` 0x0050e270 (7)
   - [ ] `invertTransformMatrix` 0x0050c640 (200)
 
-### `engine/3d.c` (3 functions, 64 instructions, 0 done)
+### `engine/3d.c` (3 functions, 64 instructions, 1 done)
 - free functions
-  - [ ] `setBlendMode` 0x00406dd0 (3)
+  - [x] `setBlendMode` 0x00406dd0 (3)
   - [ ] `isVisiblePlane` 0x00403950 (36)
   - [ ] `processCameraRelativePoint` 0x004037e0 (25)
 

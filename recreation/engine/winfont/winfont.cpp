@@ -1,5 +1,6 @@
 #include "engine/winfont/winfont.h"
 
+#include "common/math/bits.h"
 #include "engine/2d/2d.h"
 #include "engine/font/font.h"
 #include "engine/screendevice.h"
@@ -28,14 +29,6 @@ std::size_t pixelIndex(int x, int y, int stride) {
            static_cast<std::size_t>(x);
 }
 
-std::uint32_t shiftLeft(std::uint32_t value, int count) {
-    return value << (static_cast<unsigned>(count) & 31U);
-}
-
-std::uint32_t shiftRight(std::uint32_t value, int count) {
-    return value >> (static_cast<unsigned>(count) & 31U);
-}
-
 // A COLORREF, red in the low byte, as an image pixel.
 std::uint32_t toImagePixel(std::uint32_t color_ref, int bits_per_pixel) {
     const std::uint32_t red = color_ref & 0xffU;
@@ -49,7 +42,8 @@ std::uint32_t toImagePixel(std::uint32_t color_ref, int bits_per_pixel) {
 
 // A 5-bit image channel as the screen packs it.
 std::uint32_t packChannel(std::uint32_t five_bits, const common::SChannelLayout &channel) {
-    return shiftLeft(shiftRight(five_bits << 3U, channel.dither_shift), channel.bit_position);
+    return common::shiftLeft(common::shiftRight(five_bits << 3U, channel.dither_shift),
+                             channel.bit_position);
 }
 
 } // namespace

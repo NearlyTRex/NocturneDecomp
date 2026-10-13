@@ -1,9 +1,11 @@
+#include "common/math/bits.h"
 #include "common/video/framebuffer.h"
 #include "engine/2d/2d.h"
 #include "engine/3d/3d.h"
 #include "engine/font/bitfont.h"
 #include "engine/font/font.h"
 #include "engine/palette/font.h"
+#include "engine/pixelblend.h"
 #include "engine/screendevice.h"
 
 #include <algorithm>
@@ -14,14 +16,6 @@ namespace {
 
 constexpr std::uint32_t kLevelMask = 0xff;
 
-std::uint32_t shiftLeft(std::uint32_t value, int count) {
-    return value << (static_cast<unsigned>(count) & 31U);
-}
-
-std::uint32_t shiftRight(std::uint32_t value, int count) {
-    return value >> (static_cast<unsigned>(count) & 31U);
-}
-
 // isspace in the C locale.
 bool isSpace(char c) {
     return std::string_view(" \t\n\v\f\r").find(c) != std::string_view::npos;
@@ -30,17 +24,16 @@ bool isSpace(char c) {
 // One channel of a 16-bit pixel as the 8-bit level the font blends.
 std::uint32_t channelLevel(std::uint32_t pixel, std::uint32_t mask,
                            const common::SChannelLayout &channel) {
-    return shiftLeft(shiftRight(pixel & mask, channel.bit_position), channel.dither_shift) &
+    return common::shiftLeft(common::shiftRight(pixel & mask, channel.bit_position),
+                             channel.dither_shift) &
            kLevelMask;
 }
 
 std::uint32_t blendChannel(std::uint32_t source, std::uint32_t screen, std::uint32_t mask,
                            const common::SChannelLayout &channel, std::uint32_t alpha) {
-    const std::uint32_t mixed = ((channelLevel(source, mask, channel) * alpha) +
-                                 (channelLevel(screen, mask, channel) * (kLevelMask - alpha))) >>
-                                8U;
-    return shiftLeft(mixed / static_cast<std::uint32_t>(channel.scale_factor),
-                     channel.bit_position);
+    const std::uint32_t mixed =
+        blendLevel(channelLevel(source, mask, channel), channelLevel(screen, mask, channel), alpha);
+    return common::packLevel(mixed, channel);
 }
 
 // The widest line, newlines ending lines.
@@ -85,10 +78,8 @@ void drawAlphaBlendedPixels(std::uint32_t *dest_buffer, std::span<const std::uin
                 const std::uint32_t alpha =
                     (((color >> shift) & kLevelMask) * ((render_color >> shift) & kLevelMask)) >>
                     8U;
-                const std::uint32_t mixed =
-                    ((((blend_color >> shift) & kLevelMask) * alpha) +
-                     (((*dest_buffer >> shift) & kLevelMask) * (alpha ^ kLevelMask))) >>
-                    8U;
+                const std::uint32_t mixed = blendLevel((blend_color >> shift) & kLevelMask,
+                                                       (*dest_buffer >> shift) & kLevelMask, alpha);
                 out |= mixed << shift;
             }
             *dest_buffer = out;

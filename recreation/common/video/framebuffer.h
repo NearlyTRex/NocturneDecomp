@@ -45,6 +45,8 @@ struct SChannelLayout {
 // From a channel mask; a channel eight bits or wider keeps every bit, and an empty mask is the
 // default layout.
 [[nodiscard]] SChannelLayout getChannelLayout(std::uint32_t mask);
+// An 8-bit level scaled down to the channel's width and moved to its place.
+[[nodiscard]] std::uint32_t packLevel(std::uint32_t level, const SChannelLayout &channel);
 
 // A one-byte-per-pixel image with rows pitch bytes apart, packed to width bytes per row.
 // Empty when the pitch is narrower than a row or pixels is too small.

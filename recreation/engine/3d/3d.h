@@ -14,6 +14,8 @@ class C3d {
 public:
     // Fully opaque.
     static constexpr int kOpaqueAlpha = 0xff;
+    // The blend mode that adds the source to the screen instead of mixing the two.
+    static constexpr int kAdditiveBlend = 1;
 
     SMRGLHeaderExtended *badMRGLStruct(SMRGLHeaderExtended *prim);
     SMRGLHeaderExtended *processCameraRelativePoint(common::CQuaternion4f *input_point);
@@ -107,9 +109,11 @@ public:
     [[nodiscard]] int getCurrentAlphaValue() const;
     // That byte in each of the three colour bytes.
     [[nodiscard]] std::uint32_t getCurrentRenderColor() const;
+    [[nodiscard]] int getBlendMode() const;
 
 private:
     int current_alpha_value_ = kOpaqueAlpha;
+    int blend_mode_ = 0;
     std::uint32_t current_render_color_ = 0xffffff;
 };
 

@@ -83,6 +83,11 @@ TEST(Framebuffer, WideOrEmptyChannelsKeepEveryBit) {
     EXPECT_EQ(getChannelLayout(0), SChannelLayout{});
 }
 
+TEST(Framebuffer, PackLevelScalesTheLevelToTheChannelAndMovesItThere) {
+    EXPECT_EQ(packLevel(0xff, getChannelLayout(0x07e0)), 0x3fU << 5U);
+    EXPECT_EQ(packLevel(0x80, getChannelLayout(0xff0000)), 0x800000U);
+}
+
 TEST(Framebuffer, PackRowsDropsThePitchPadding) {
     EXPECT_EQ(packRows(bytes({1, 2, 9, 3, 4}), 2, 2, 3), (std::vector<std::uint8_t>{1, 2, 3, 4}));
 }

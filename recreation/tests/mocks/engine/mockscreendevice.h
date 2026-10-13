@@ -23,6 +23,7 @@ public:
     MOCK_METHOD(std::span<std::uint32_t *>, getZBufferRows, (), (override));
     MOCK_METHOD((std::span<std::uint16_t, 256>), getColorTable16, (), (override));
     MOCK_METHOD((std::span<const std::uint32_t, 256>), getColorTable32, (), (const, override));
+    MOCK_METHOD((std::span<std::uint32_t, 256>), getHardwarePalette32, (), (override));
     MOCK_METHOD(SColorChannels &, getColorChannels, (), (override));
     MOCK_METHOD(const SColorMasks &, getColorMasks, (), (const, override));
 };
