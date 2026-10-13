@@ -16,7 +16,7 @@ in instructions.
 | 2 | `doNothing`, `readMessageFile`, `getLocalizedString`, `initializeTrigTables`, `initTextureCache`, `initGraphicsSystem` | 8 | 30 | 2804 | 30 | 100.0% |
 | 3 | Sound system: `sndmain`, `CSound` lifetime, `readIniData` | 7 | 123 | 8346 | 123 | 100.0% |
 | 4 | `initFonts`, `CEditorTools::showWarning` | 11 | 46 | 4804 | 46 | 100.0% |
-| 5 | `showCalibrationTest`, `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 50 | 4789 | 24 | 48.0% |
+| 5 | `showCalibrationTest`, `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 50 | 4789 | 28 | 56.0% |
 | 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 0 | 0.0% |
 | 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 5 | 4.1% |
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 9 | 14.2% |
@@ -31,7 +31,7 @@ in instructions.
 | 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 0 | 0.0% |
 | 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 2 | 15.3% |
 | 19 | Not reached from startup: `engine/` | 23 | 279 | 19702 | 18 | 6.4% |
-| 20 | Not reached from startup: `support/` | 2 | 24 | 593 | 0 | 0.0% |
+| 20 | Not reached from startup: `support/` | 2 | 24 | 593 | 3 | 12.5% |
 | 21 | Not reached from startup: `cockpit/` | 4 | 178 | 11527 | 0 | 0.0% |
 | 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 4 | 9.5% |
 | 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 3 | 1.0% |
@@ -44,7 +44,7 @@ in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 2 | 0.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 | 3.6% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 36.3% |
-| | **All** | | **4489** | **402860** | **370** | **8.2%** |
+| | **All** | | **4489** | **402860** | **377** | **8.3%** |
 
 ## Step 0: Math value types
 
@@ -496,13 +496,13 @@ in instructions.
 - class `CGame`
   - [ ] `displayMessage` 0x004d7f20 (34)
 
-### `support/trisock.cpp` (4 functions, 140 instructions, 0 done)
+### `support/trisock.cpp` (4 functions, 140 instructions, 4 done)
 - class `CSocket`
-  - [ ] `sendSocketData` 0x005e1ca0 (64)
-  - [ ] `isSocketValid` 0x005e1b70 (5)
-  - [ ] `receiveSocketData` 0x005e1c20 (64)
+  - [x] `sendSocketData` 0x005e1ca0 (64)
+  - [x] `isSocketValid` 0x005e1b70 (5)
+  - [x] `receiveSocketData` 0x005e1c20 (64)
 - free functions
-  - [ ] `createNetworkAddr` 0x005e1940 (7)
+  - [x] `createNetworkAddr` 0x005e1940 (7)
 
 ### `core/netgame.cpp` (16 functions, 2625 instructions, 0 done)
 - class `CNetGame`
@@ -3021,7 +3021,7 @@ in instructions.
 - class `CLZWCompress`
   - [ ] `dtor` 0x0043f710 (37)
 
-### `support/trisock.cpp` (20 functions, 477 instructions, 0 done)
+### `support/trisock.cpp` (20 functions, 477 instructions, 3 done)
 - free functions
   - [ ] `buildIPAddress` 0x005e1870 (36)
   - [ ] `buildIPAddressOrDie` 0x005e1750 (43)
@@ -3034,10 +3034,10 @@ in instructions.
   - [ ] `shouldNeverBeCalled1` 0x005e1a80 (9)
   - [ ] `shouldNeverBeCalled2` 0x005e1ab0 (9)
 - class `CSocket`
-  - [ ] `ctor` 0x005e1ae0 (3)
-  - [ ] `dtor` 0x005e1af0 (8)
+  - [x] `ctor` 0x005e1ae0 (3)
+  - [x] `dtor` 0x005e1af0 (8)
   - [ ] `createSocket` 0x005e1b10 (15)
-  - [ ] `createUDPSocket` 0x005e1b40 (15)
+  - [x] `createUDPSocket` 0x005e1b40 (15)
   - [ ] `bindSocket` 0x005e1b80 (22)
   - [ ] `connectSocket` 0x005e1bd0 (36)
   - [ ] `listenSocket` 0x005e1d60 (9)
