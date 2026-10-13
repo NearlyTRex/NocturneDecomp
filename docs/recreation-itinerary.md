@@ -17,8 +17,8 @@ in instructions.
 | 3 | Sound system: `sndmain`, `CSound` lifetime, `readIniData` | 7 | 123 | 8346 | 123 | 100.0% |
 | 4 | `initFonts`, `CEditorTools::showWarning` | 11 | 46 | 4804 | 46 | 100.0% |
 | 5 | `showCalibrationTest`, `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 50 | 4789 | 34 | 68.0% |
-| 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 6 | 24.0% |
-| 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 17 | 14.1% |
+| 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 18 | 72.0% |
+| 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 18 | 15.0% |
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 9 | 14.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 0 | 0.0% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 17 | 52 | 5565 | 1 | 1.9% |
@@ -28,7 +28,7 @@ in instructions.
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 0 | 0.0% |
 | 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 3 | 1.5% |
 | 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 0 | 0.0% |
-| 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 2 | 7.6% |
+| 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 4 | 15.3% |
 | 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 2 | 15.3% |
 | 19 | Not reached from startup: `engine/` | 23 | 279 | 19702 | 20 | 7.1% |
 | 20 | Not reached from startup: `support/` | 2 | 24 | 593 | 3 | 12.5% |
@@ -44,7 +44,7 @@ in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 2 | 0.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 | 3.6% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 36.3% |
-| | **All** | | **4489** | **402860** | **410** | **9.1%** |
+| | **All** | | **4489** | **402860** | **425** | **9.4%** |
 
 ## Step 0: Math value types
 
@@ -551,30 +551,30 @@ in instructions.
   - [x] `allocMemory` 0x00442500 (45)
   - [x] `load` 0x00442580 (112)
 
-### `core/dtri.cpp` (2 functions, 164 instructions, 0 done)
+### `core/dtri.cpp` (2 functions, 164 instructions, 2 done)
 - class `CDemonTriangle`
-  - [ ] `calculateData` 0x0049a640 (125)
-  - [ ] `buildCollision` 0x0049a790 (39)
+  - [x] `calculateData` 0x0049a640 (125)
+  - [x] `buildCollision` 0x0049a790 (39)
 
-### `engine/keyframe.c` (1 functions, 130 instructions, 0 done)
+### `engine/keyframe.c` (1 functions, 130 instructions, 1 done)
 - free functions
-  - [ ] `calculateSurfaceNormal` 0x00501bc0 (130)
+  - [x] `calculateSurfaceNormal` 0x00501bc0 (130)
 
 ### `core/box.cpp` (1 functions, 47 instructions, 1 done)
 - class `CBoundingBox3D`
   - [x] `expand` 0x00420240 (47)
 
-### `core/dmodel.cpp` (9 functions, 1490 instructions, 0 done)
+### `core/dmodel.cpp` (9 functions, 1490 instructions, 9 done)
 - class `CKeyFramedModel`
-  - [ ] `free` 0x00477690 (89)
-  - [ ] `allocate` 0x00477bf0 (152)
-  - [ ] `populateCollisionList` 0x00478950 (203)
-  - [ ] `buildCollisionTriList` 0x00478830 (72)
-  - [ ] `readBinaryModel` 0x00476f20 (160)
-  - [ ] `readTextModel` 0x00477110 (446)
-  - [ ] `calcNormals` 0x00477e60 (135)
-  - [ ] `calculateFrameBounds` 0x00478010 (121)
-  - [ ] `load` 0x00476db0 (112)
+  - [x] `free` 0x00477690 (89)
+  - [x] `allocate` 0x00477bf0 (152)
+  - [x] `populateCollisionList` 0x00478950 (203)
+  - [x] `buildCollisionTriList` 0x00478830 (72)
+  - [x] `readBinaryModel` 0x00476f20 (160)
+  - [x] `readTextModel` 0x00477110 (446)
+  - [x] `calcNormals` 0x00477e60 (135)
+  - [x] `calculateFrameBounds` 0x00478010 (121)
+  - [x] `load` 0x00476db0 (112)
 
 ### `core/moon.cpp` (1 functions, 127 instructions, 0 done)
 - class `CMoon`
@@ -675,9 +675,9 @@ in instructions.
   - [ ] `renderDepthOnlyStandard` 0x0049072f (32)
   - [ ] `renderTexturedAlphaMMXScanline` 0x004907e7 (74)
 
-### `core/dmodel.cpp` (4 functions, 290 instructions, 0 done)
+### `core/dmodel.cpp` (4 functions, 290 instructions, 1 done)
 - class `CKeyFramedModel`
-  - [ ] `getFrameVertices` 0x00477890 (18)
+  - [x] `getFrameVertices` 0x00477890 (18)
   - [ ] `rotateAndLightVertices` 0x004778d0 (64)
   - [ ] `submitToRenderer` 0x00477980 (179)
   - [ ] `prepareForRender` 0x00477850 (29)
@@ -2581,10 +2581,10 @@ in instructions.
   - [x] `ctor` 0x004424c0 (5)
   - [x] `dtor` 0x004424e0 (8)
 
-### `core/dmodel.cpp` (2 functions, 26 instructions, 0 done)
+### `core/dmodel.cpp` (2 functions, 26 instructions, 2 done)
 - class `CKeyFramedModel`
-  - [ ] `ctor` 0x00476cf0 (18)
-  - [ ] `dtor` 0x00476d90 (8)
+  - [x] `ctor` 0x00476cf0 (18)
+  - [x] `dtor` 0x00476d90 (8)
 
 ### `shape/edittool.cpp` (1 functions, 27 instructions, 0 done)
 - class `CEdButton`

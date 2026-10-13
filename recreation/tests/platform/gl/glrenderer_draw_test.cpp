@@ -356,11 +356,13 @@ TEST(CGlRenderer, AListPolygonTakesItsCornersTextureCoordinates) {
     f.openScene();
     std::array<SRenderVertex, 4> buffer = {vertexAt(0, 0, 10), vertexAt(8, 0, 20),
                                            vertexAt(8, 8, 30), vertexAt(0, 8, 40)};
-    SMRGLPrimitiveQuad quad{.vertices = {{.vertex_index = 3, .texture_u = 1, .texture_v = 2},
+    SMRGLPrimitiveQuad quad{.surface_normal = {},
+                            .vertices = {{.vertex_index = 3, .texture_u = 1, .texture_v = 2},
                                          {.vertex_index = 2, .texture_u = 3, .texture_v = 4},
                                          {.vertex_index = 1, .texture_u = 5, .texture_v = 6},
                                          {.vertex_index = 0, .texture_u = 7, .texture_v = 8}}};
-    SMRGLPrimitiveQuad degenerate{.vertices = {{.vertex_index = 0}, {.vertex_index = 1}}};
+    SMRGLPrimitiveQuad degenerate{.surface_normal = {},
+                                  .vertices = {{.vertex_index = 0}, {.vertex_index = 1}}};
     std::array<SMRGLPrimitiveQuad *, 3> polygons = {&quad, nullptr, &degenerate};
     ASSERT_EQ(f.renderer.drawPolyList(buffer.data(), polygons.data(), 3, 0), 1);
     ASSERT_EQ(f.renderer.sync(), 1);

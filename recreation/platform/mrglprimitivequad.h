@@ -1,5 +1,6 @@
 #pragma once
 
+#include "platform/clipplane.h"
 #include "platform/mrglvertex.h"
 
 #include <vector>
@@ -9,6 +10,8 @@ namespace nocturne::platform {
 // A mesh polygon. The MRGL record is a header and as many corners as its count says, past the
 // four the original's type declares; here the corners are the record's own.
 struct SMRGLPrimitiveQuad {
+    // The polygon's plane, as calculateSurfaceNormal finds it.
+    SClipPlane surface_normal;
     std::vector<SMRGLVertex> vertices;
 };
 
