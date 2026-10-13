@@ -2,6 +2,7 @@
 
 #include "common/fwd.h"
 #include "engine/fwd.h"
+#include "engine/gameclock.h"
 #include "engine/rawinput.h"
 #include "platform/fwd.h"
 
@@ -14,7 +15,7 @@
 namespace nocturne::wincore {
 
 // The Windows front end's state: the main window and its input queues.
-class CWinRun : public engine::IRawInput {
+class CWinRun : public engine::IRawInput, public engine::IGameClock {
 public:
     // The retail build's title; the editor's is "Nocturne Editor".
     static constexpr std::string_view kApplicationTitle = "Nocturne";
@@ -22,7 +23,7 @@ public:
     CWinRun(platform::IWindow &window, platform::IClock &clock);
 
     // Game ticks, 65536 * 18 a second, wrapping as the original's int did.
-    int getTime();
+    int getTime() override;
     void clearKeypresses() override;
     int getNextKeypress(engine::IScreenDevice &screen) override;
     [[nodiscard]] int wasKeyPressed() const;

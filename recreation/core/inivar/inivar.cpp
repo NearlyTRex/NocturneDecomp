@@ -42,6 +42,7 @@ void readGraphics(const engine::CIniFile &file, const SIniDataOwners &owners) {
         static_cast<EHeroType>(readEnumValue(file, "heroNumber", static_cast<int>(game.hero_number),
                                              static_cast<int>(EHeroType::HERO_TYPE_MOLOCH)));
     readFlag(file, "haloMode", game.halo_mode);
+    readFlag(file, "firstTimeFlag", game.first_time_flag);
     readFlag(file, "subtitleMode", game.subtitle_mode);
     readFlag(file, "bloodFlag", game.blood_flag);
     readFlag(file, "nudityFlag", game.nudity_flag);
@@ -98,6 +99,7 @@ void writeGraphics(engine::CIniFile &file, const SIniDataOwners &owners) {
     file.setInteger("gamma", game.gamma);
     file.setInteger("heroNumber", static_cast<int>(game.hero_number));
     file.setInteger("haloMode", game.halo_mode);
+    file.setInteger("firstTimeFlag", game.first_time_flag);
     file.setInteger("subtitleMode", game.subtitle_mode);
     file.setInteger("bloodFlag", game.blood_flag);
     if (game.quimby_flag == 0) {

@@ -9,6 +9,7 @@ class IAudioSource;
 class IClipboard;
 class IClock;
 class IDisplay;
+class IEnvironment;
 class IFile;
 class IFileSystem;
 class IGamepad;

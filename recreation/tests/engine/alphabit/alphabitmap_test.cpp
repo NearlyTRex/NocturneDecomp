@@ -123,6 +123,29 @@ TEST_F(CAlphaBitmapTest, AFreedImageDrawsNothingAndHasABlackPalette) {
     EXPECT_EQ(screen_.getHardwarePalette32()[1], 0U);
 }
 
+TEST_F(CAlphaBitmapTest, ScalingKeepsEveryNthPixelOfEveryNthRowWithItsOpacity) {
+    screen_.fill(0);
+    givenImage("pic", "\x01\x02\x03\x04\x05\x06\x07\x08");
+    givenFile("art\\pic.opa", std::string("\xff\xff\x00\xff\xff\xff\xff\xff", 8));
+    bitmap_.load("pic", 4, 2);
+    bitmap_.scale(2, 2);
+    bitmap_.display(0, 0, kFullAlpha);
+    EXPECT_EQ(screen_.pixel(0, 0), 0x010203U);
+    EXPECT_EQ(screen_.pixel(1, 0), 0U);
+    EXPECT_EQ(screen_.pixel(2, 0), 0U);
+    EXPECT_EQ(screen_.pixel(0, 1), 0U);
+}
+
+TEST_F(CAlphaBitmapTest, AFactorBelowOneLeavesTheImageAlone) {
+    screen_.fill(0);
+    givenImage("pic", "\x01\x02");
+    bitmap_.load("pic", 2, 1);
+    bitmap_.scale(0, 1);
+    bitmap_.scale(1, 0);
+    bitmap_.display(0, 0, kFullAlpha);
+    EXPECT_EQ(screen_.pixel(1, 0), 0x020406U);
+}
+
 TEST_F(CAlphaBitmapTest, LoadingAgainReplacesTheImage) {
     screen_.fill(0);
     givenImage("first", "\x01\x01");

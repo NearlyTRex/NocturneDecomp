@@ -7,11 +7,6 @@
 #include <format>
 
 namespace nocturne::wincore {
-namespace {
-
-constexpr double kTicksPerSecond = 65536.0 * 18.0;
-
-} // namespace
 
 // The counter is read as calibrateCPUSpeed read it; the speed it then measured was never used.
 CWinRun::CWinRun(platform::IWindow &window, platform::IClock &clock)

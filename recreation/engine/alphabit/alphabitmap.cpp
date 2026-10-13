@@ -73,6 +73,32 @@ void CAlphaBitmap::load(std::string_view filename, int width, int height) {
     loadOpacity(filename);
 }
 
+// Keeps every scaleFactorX-th pixel of every scaleFactorY-th row. The original divided by a zero
+// factor.
+// nocedit 0x00410c20
+void CAlphaBitmap::scale(int scaleFactorX, int scaleFactorY) {
+    if (scaleFactorX < 1 || scaleFactorY < 1) {
+        return;
+    }
+    const int width = width_ / scaleFactorX;
+    const int height = height_ / scaleFactorY;
+    std::size_t dest = 0;
+    for (int y = 0; y < height; ++y) {
+        const auto row = static_cast<std::size_t>(y) * static_cast<std::size_t>(width_) *
+                         static_cast<std::size_t>(scaleFactorY);
+        for (int x = 0; x < width; ++x, ++dest) {
+            const std::size_t source =
+                row + (static_cast<std::size_t>(x) * static_cast<std::size_t>(scaleFactorX));
+            raw_[dest] = raw_[source];
+            opa_[dest] = opa_[source];
+        }
+    }
+    raw_.resize(dest);
+    opa_.resize(dest);
+    width_ = width;
+    height_ = height;
+}
+
 // Missing entries are black.
 void CAlphaBitmap::loadPalette(std::string_view filename) {
     std::string rgb = readArt(dosio_, std::format("{}.act", filename));

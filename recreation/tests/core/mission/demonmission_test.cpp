@@ -2,6 +2,7 @@
 
 #include <gtest/gtest.h>
 
+#include <string_view>
 #include <type_traits>
 
 namespace nocturne::core {
@@ -41,8 +42,8 @@ TEST(CDemonMission, PublicInterface) {
                                  void (CDemonMission::*)(CDemonActor *, std::uint32_t)>);
     static_assert(std::is_same_v<decltype(&CDemonMission::process), void (CDemonMission::*)()>);
     static_assert(std::is_same_v<decltype(&CDemonMission::run), void (CDemonMission::*)()>);
-    static_assert(
-        std::is_same_v<decltype(&CDemonMission::setMissionName), void (CDemonMission::*)(char *)>);
+    static_assert(std::is_same_v<decltype(&CDemonMission::setMissionName),
+                                 void (CDemonMission::*)(std::string_view)>);
     static_assert(std::is_same_v<decltype(&CDemonMission::generateActorName),
                                  void (CDemonMission::*)(CDemonActor *)>);
     static_assert(std::is_same_v<decltype(&CDemonMission::startMission), int (CDemonMission::*)()>);
@@ -50,6 +51,31 @@ TEST(CDemonMission, PublicInterface) {
                                  int (CDemonMission::*)(CCharacter *)>);
     static_assert(
         std::is_same_v<decltype(&CDemonMission::countDamageableEnemies), int (CDemonMission::*)()>);
+}
+
+TEST(CDemonMission, StartsWithNoMissionAndNoActors) {
+    const CDemonMission mission;
+    EXPECT_FALSE(mission.isInEditor());
+    EXPECT_EQ(mission.getMissionVersionNum(), -1);
+    EXPECT_EQ(mission.getMissionName(), "");
+    EXPECT_EQ(mission.getPendingMissionName(), "");
+    EXPECT_EQ(mission.getFirstActor(), nullptr);
+    EXPECT_EQ(mission.getLastActor(), nullptr);
+}
+
+TEST(CDemonMission, SettingTheNameAsksForThatMissionNext) {
+    CDemonMission mission;
+    mission.setMissionName("chap1");
+    EXPECT_EQ(mission.getPendingMissionName(), "chap1");
+    EXPECT_EQ(mission.getMissionName(), "");
+}
+
+TEST(CDemonMission, ResetDropsTheMissionAskedFor) {
+    CDemonMission mission;
+    mission.setMissionName("chap1");
+    mission.reset();
+    EXPECT_EQ(mission.getPendingMissionName(), "");
+    EXPECT_EQ(mission.getMissionVersionNum(), -1);
 }
 
 } // namespace

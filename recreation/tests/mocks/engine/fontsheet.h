@@ -47,6 +47,17 @@ inline SFontSheet makeFontSheet(const std::vector<std::vector<std::string>> &gly
     return sheet;
 }
 
+// A sheet of the given size holding one glyph, '!', on the given transparent index.
+inline std::string makeSheetOfSize(int width, int height, char transparent) {
+    const auto row = static_cast<std::size_t>(width);
+    std::string sheet(row * static_cast<std::size_t>(height), transparent);
+    sheet[0] = '\x7f';
+    sheet[1] = '\x7f';
+    sheet[row] = '#';
+    sheet[row * 2] = '\x7f';
+    return sheet;
+}
+
 // An .act palette: entry i is (red, green, blue) from levels.
 inline std::string makePalette(const std::vector<std::uint8_t> &levels) {
     std::string palette(768, '\0');

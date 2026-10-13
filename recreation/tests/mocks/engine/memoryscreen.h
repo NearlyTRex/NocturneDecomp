@@ -56,7 +56,7 @@ public:
         return 1;
     }
     bool setScreenResolution(int, int, int) override {
-        return true;
+        return !refuse_modes;
     }
     void setupColorPalette() override {}
     void convertPaletteToDirectColor() override {}
@@ -128,6 +128,8 @@ public:
     }
 
     int swaps = 0;
+    // Every mode change is refused while set.
+    bool refuse_modes = false;
 
 private:
     int width_;

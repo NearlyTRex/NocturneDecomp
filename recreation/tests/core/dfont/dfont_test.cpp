@@ -9,6 +9,7 @@
 #include "engine/special/special.h"
 #include "shape/edittool/editortools.h"
 #include "support/newmsg/newmsg.h"
+#include "tests/mocks/engine/fontsheet.h"
 #include "tests/mocks/engine/memoryscreen.h"
 #include "tests/mocks/engine/mockrawinput.h"
 #include "tests/mocks/engine/podfixture.h"
@@ -41,17 +42,6 @@ TEST(CDFont, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDFont::getUseOSFonts), bool (CDFont::*)() const>);
 }
 
-// A sheet of the given size holding one glyph, '!', on the given transparent index.
-std::string sheetOfSize(int width, int height, char transparent) {
-    const auto row = static_cast<std::size_t>(width);
-    std::string sheet(row * static_cast<std::size_t>(height), transparent);
-    sheet[0] = '\x7f';
-    sheet[1] = '\x7f';
-    sheet[row] = '#';
-    sheet[row * 2] = '\x7f';
-    return sheet;
-}
-
 // A font with its glyph, the width of a space and the offset of the printable characters.
 void expectFont(const engine::CBitFont *font, int space_width, int offset) {
     ASSERT_NE(font, nullptr);
@@ -64,12 +54,12 @@ void expectFont(const engine::CBitFont *font, int space_width, int offset) {
 class CDFontTest : public engine::CPodFixture {
 protected:
     CDFontTest() {
-        givenFile("art\\nocfont.raw", sheetOfSize(0x136, 0x1ae, '\0'));
-        givenFile("art\\nocsmall.raw", sheetOfSize(0xf8, 0x158, '\0'));
-        givenFile("art\\menufont.raw", sheetOfSize(0xfa, 0x23f, '\0'));
-        givenFile("art\\fnte_pfd.RAW", sheetOfSize(0x94, 0xec, '\0'));
-        givenFile("art\\fnte_f.RAW", sheetOfSize(0x94, 0xec, '\xff'));
-        givenFile("art\\micro.raw", sheetOfSize(0x94, 0xec, '\0'));
+        givenFile("art\\nocfont.raw", engine::makeSheetOfSize(0x136, 0x1ae, '\0'));
+        givenFile("art\\nocsmall.raw", engine::makeSheetOfSize(0xf8, 0x158, '\0'));
+        givenFile("art\\menufont.raw", engine::makeSheetOfSize(0xfa, 0x23f, '\0'));
+        givenFile("art\\fnte_pfd.RAW", engine::makeSheetOfSize(0x94, 0xec, '\0'));
+        givenFile("art\\fnte_f.RAW", engine::makeSheetOfSize(0x94, 0xec, '\xff'));
+        givenFile("art\\micro.raw", engine::makeSheetOfSize(0x94, 0xec, '\0'));
         two_d_.setupViewportAndClipping(0, 0, 63, 47);
     }
 

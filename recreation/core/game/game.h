@@ -45,6 +45,8 @@ public:
     int gamma = 0x10000;
     EHeroType hero_number = EHeroType::HERO_TYPE_GABRIELLA;
     int halo_mode = 0;
+    // Set until startup has shown the first run's calibration.
+    int first_time_flag = 0;
     int subtitle_mode = 1;
     int blood_flag = 1;
     int nudity_flag = 1;

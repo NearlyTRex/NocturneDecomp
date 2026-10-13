@@ -16,21 +16,21 @@ in instructions.
 | 2 | `doNothing`, `readMessageFile`, `getLocalizedString`, `initializeTrigTables`, `initTextureCache`, `initGraphicsSystem` | 8 | 30 | 2804 | 30 | 100.0% |
 | 3 | Sound system: `sndmain`, `CSound` lifetime, `readIniData` | 7 | 123 | 8346 | 123 | 100.0% |
 | 4 | `initFonts`, `CEditorTools::showWarning` | 11 | 46 | 4804 | 46 | 100.0% |
-| 5 | `showCalibrationTest`, `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 50 | 4789 | 28 | 56.0% |
-| 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 0 | 0.0% |
+| 5 | `showCalibrationTest`, `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 50 | 4789 | 34 | 68.0% |
+| 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 2 | 8.0% |
 | 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 5 | 4.1% |
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 9 | 14.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 0 | 0.0% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 17 | 52 | 5565 | 1 | 1.9% |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 3 | 0.5% |
-| 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 1 | 3.8% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 5 | 0.8% |
+| 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 2 | 7.6% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0.0% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 0 | 0.0% |
 | 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 3 | 1.5% |
 | 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 0 | 0.0% |
 | 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 0 | 0.0% |
 | 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 2 | 15.3% |
-| 19 | Not reached from startup: `engine/` | 23 | 279 | 19702 | 18 | 6.4% |
+| 19 | Not reached from startup: `engine/` | 23 | 279 | 19702 | 20 | 7.1% |
 | 20 | Not reached from startup: `support/` | 2 | 24 | 593 | 3 | 12.5% |
 | 21 | Not reached from startup: `cockpit/` | 4 | 178 | 11527 | 0 | 0.0% |
 | 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 4 | 9.5% |
@@ -39,12 +39,12 @@ in instructions.
 | 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 3 | 1.0% |
 | 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 24 | 8.0% |
 | 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 0 | 0.0% |
-| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 2 | 0.7% |
+| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 4 | 1.4% |
 | 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 2 | 0.7% |
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 2 | 0.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 | 3.6% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 36.3% |
-| | **All** | | **4489** | **402860** | **377** | **8.3%** |
+| | **All** | | **4489** | **402860** | **392** | **8.7%** |
 
 ## Step 0: Math value types
 
@@ -460,19 +460,19 @@ in instructions.
 - class `CSound`
   - [x] `findAllSoundFiles` 0x005b2d00 (24)
 
-### `core/mission.cpp` (1 functions, 23 instructions, 0 done)
+### `core/mission.cpp` (1 functions, 23 instructions, 1 done)
 - class `CDemonMission`
-  - [ ] `reset` 0x00522c80 (23)
+  - [x] `reset` 0x00522c80 (23)
 
-### `core/dfilter.cpp` (3 functions, 147 instructions, 0 done)
+### `core/dfilter.cpp` (3 functions, 147 instructions, 3 done)
 - class `CDemonFilter`
-  - [ ] `freeMemory` 0x004702c0 (15)
-  - [ ] `allocMemory` 0x00470260 (28)
-  - [ ] `init` 0x004705a0 (104)
+  - [x] `freeMemory` 0x004702c0 (15)
+  - [x] `allocMemory` 0x00470260 (28)
+  - [x] `init` 0x004705a0 (104)
 
-### `engine/ncursfx.cpp` (1 functions, 80 instructions, 0 done)
+### `engine/ncursfx.cpp` (1 functions, 80 instructions, 1 done)
 - class `CMouse`
-  - [ ] `load` 0x00544420 (80)
+  - [x] `load` 0x00544420 (80)
 
 ### `engine/font.cpp` (4 functions, 124 instructions, 4 done)
 - class `CBitFont`
@@ -504,7 +504,7 @@ in instructions.
 - free functions
   - [x] `createNetworkAddr` 0x005e1940 (7)
 
-### `core/netgame.cpp` (16 functions, 2625 instructions, 0 done)
+### `core/netgame.cpp` (16 functions, 2625 instructions, 1 done)
 - class `CNetGame`
   - [ ] `sendPacket` 0x00541230 (14)
   - [ ] `send` 0x005411c0 (36)
@@ -520,19 +520,19 @@ in instructions.
   - [ ] `removeChatOut` 0x00541ff0 (222)
   - [ ] `receivePackets` 0x005405b0 (57)
   - [ ] `disconnect` 0x0053fd00 (348)
-  - [ ] `init` 0x0053f780 (53)
+  - [x] `init` 0x0053f780 (53)
 - free functions
   - [ ] `assignInt1` 0x00543e20 (6)
 
 ## Step 6: `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT`
 
-### `core/main.c` (1 functions, 642 instructions, 0 done)
+### `core/main.c` (1 functions, 642 instructions, 1 done)
 - free functions
-  - [ ] `initializeGameSystems` 0x00507a60 (642)
+  - [x] `initializeGameSystems` 0x00507a60 (642)
 
-### `engine/alphabit.cpp` (1 functions, 71 instructions, 0 done)
+### `engine/alphabit.cpp` (1 functions, 71 instructions, 1 done)
 - class `CAlphaBitmap`
-  - [ ] `scale` 0x00410c20 (71)
+  - [x] `scale` 0x00410c20 (71)
 
 ### `engine/texture.cpp` (2 functions, 59 instructions, 0 done)
 - class `CTextureCache`
@@ -1383,13 +1383,13 @@ in instructions.
   - [ ] `getItemDisplayName` 0x004fcf00 (43)
   - [ ] `getItemDescription` 0x004fcf70 (43)
 
-### `core/mission.cpp` (5 functions, 217 instructions, 0 done)
+### `core/mission.cpp` (5 functions, 217 instructions, 1 done)
 - class `CDemonMission`
   - [ ] `markActorToDelete` 0x005240a0 (35)
   - [ ] `setTeleportTarget` 0x00524070 (11)
   - [ ] `loadActor` 0x00523990 (111)
   - [ ] `saveActor` 0x00523af0 (41)
-  - [ ] `setMissionName` 0x00524630 (19)
+  - [x] `setMissionName` 0x00524630 (19)
 
 ### `core/platfrm.cpp` (2 functions, 150 instructions, 0 done)
 - class `CPlatform`
@@ -1849,9 +1849,9 @@ in instructions.
   - [ ] `evaluateVirtualDirector` 0x005751d0 (619)
   - [ ] `clearCameraSwitchCooldown` 0x00575b20 (10)
 
-### `core/dfilter.cpp` (3 functions, 286 instructions, 0 done)
+### `core/dfilter.cpp` (3 functions, 286 instructions, 1 done)
 - class `CDemonFilter`
-  - [ ] `ctor` 0x004701f0 (24)
+  - [x] `ctor` 0x004701f0 (24)
   - [ ] `load` 0x004702f0 (159)
 - class `CFilterCache`
   - [ ] `getFilter` 0x00470060 (103)
@@ -1927,9 +1927,9 @@ in instructions.
 - class `CGame`
   - [ ] `setGameRes` 0x004dade0 (75)
 
-### `core/dfilter.cpp` (2 functions, 43 instructions, 0 done)
+### `core/dfilter.cpp` (2 functions, 43 instructions, 1 done)
 - class `CDemonFilter`
-  - [ ] `dtor` 0x00470240 (8)
+  - [x] `dtor` 0x00470240 (8)
 - class `CFilterCache`
   - [ ] `free` 0x00470000 (35)
 
@@ -2922,10 +2922,10 @@ in instructions.
   - [ ] `loadMRGLTextures` 0x00528870 (78)
   - [ ] `initializeMRGLModel` 0x00528940 (18)
 
-### `engine/ncursfx.cpp` (7 functions, 192 instructions, 0 done)
+### `engine/ncursfx.cpp` (7 functions, 192 instructions, 2 done)
 - class `CMouse`
-  - [ ] `ctor` 0x00544380 (22)
-  - [ ] `dtor` 0x005443e0 (17)
+  - [x] `ctor` 0x00544380 (22)
+  - [x] `dtor` 0x005443e0 (17)
   - [ ] `startEffect` 0x00544510 (11)
   - [ ] `consumeButton` 0x00544540 (23)
   - [ ] `getPosition` 0x005445a0 (7)
@@ -5362,7 +5362,7 @@ in instructions.
   - [ ] `ctor` 0x0052cd50 (4)
   - [ ] `save` 0x0052d170 (248)
 
-### `core/netgame.cpp` (35 functions, 1904 instructions, 0 done)
+### `core/netgame.cpp` (35 functions, 1904 instructions, 2 done)
 - class `CNetGame`
   - [ ] `flushIncomingPackets` 0x00540550 (35)
   - [ ] `initializeNetwork` 0x0053fbc0 (107)
@@ -5370,8 +5370,8 @@ in instructions.
   - [ ] `processChatOut` 0x00541e40 (123)
   - [ ] `sendGameSetting` 0x00542dd0 (156)
   - [ ] `runLobby` 0x00541390 (659)
-  - [ ] `ctor` 0x0053f6d0 (38)
-  - [ ] `dtor` 0x0053f760 (8)
+  - [x] `ctor` 0x0053f6d0 (38)
+  - [x] `dtor` 0x0053f760 (8)
   - [ ] `initializeNetworkToHost` 0x0053f860 (49)
   - [ ] `setModeSyncing` 0x00543b20 (4)
   - [ ] `setModePlaying` 0x00543b30 (4)

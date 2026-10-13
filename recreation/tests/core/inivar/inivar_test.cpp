@@ -91,7 +91,8 @@ protected:
 
 TEST_F(CInivarTest, ReadsTheGraphicsSettings) {
     text_ = "[Graphics]\r\ngamePIXX=800\r\ngamePIXY=600\r\ngameBPP=16\r\nuseDirect3D=1\r\n"
-            "gamma=70000\r\nheroNumber=2\r\nhaloMode=1\r\nsubtitleMode=0\r\nbloodFlag=0\r\n"
+            "gamma=70000\r\nheroNumber=2\r\nhaloMode=1\r\nfirstTimeFlag=1\r\nsubtitleMode=0\r\n"
+            "bloodFlag=0\r\n"
             "nudityFlag=0\r\nfoulLanguageFlag=0\r\nshadowFlag=0\r\ncurrentBoard=1\r\n";
     EXPECT_CALL(display_, setWindowSize(800, 600));
     read();
@@ -102,6 +103,7 @@ TEST_F(CInivarTest, ReadsTheGraphicsSettings) {
     EXPECT_EQ(game_.gamma, 70000);
     EXPECT_EQ(game_.hero_number, EHeroType::HERO_TYPE_STRANGER);
     EXPECT_EQ(game_.halo_mode, 1);
+    EXPECT_EQ(game_.first_time_flag, 1);
     EXPECT_EQ(game_.subtitle_mode, 0);
     EXPECT_EQ(game_.blood_flag, 0);
     EXPECT_EQ(game_.nudity_flag, 0);
@@ -206,8 +208,10 @@ TEST_F(CInivarTest, WritesEverySettingBackToItsSection) {
     game_.controls.setBindings(EGameAction::Map,
                                {engine::EInputCodeType::DIK_M, engine::EInputCodeType::DIK_TAB});
     game_.aim_mode = EAimMode::AIM_MODE_MANUAL;
+    game_.first_time_flag = 1;
     console_.file_logging_enabled = 1;
     writeIniData(ini_, owners_);
+    EXPECT_THAT(text_, HasSubstr("firstTimeFlag=1\r\n"));
     EXPECT_THAT(text_, HasSubstr("gamePIXX=1024\r\n"));
     EXPECT_THAT(text_, HasSubstr("heroNumber=1\r\n"));
     EXPECT_THAT(text_, HasSubstr("useDirect3D=1\r\n"));
