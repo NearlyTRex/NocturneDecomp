@@ -57,6 +57,18 @@ TEST(CTextScanner, AFailedIntegerLeavesTheScannerAfterTheWhitespace) {
     EXPECT_TRUE(scanner.expect('x'));
 }
 
+TEST(CTextScanner, ScanFloatSkipsWhitespaceAndStopsAfterTheNumber) {
+    CTextScanner scanner(" 2.5,");
+    EXPECT_EQ(scanner.scanFloat(), 2.5F);
+    EXPECT_TRUE(scanner.expect(','));
+}
+
+TEST(CTextScanner, AFailedFloatLeavesTheScannerAfterTheWhitespace) {
+    CTextScanner scanner("  x");
+    EXPECT_EQ(scanner.scanFloat(), std::nullopt);
+    EXPECT_TRUE(scanner.expect('x'));
+}
+
 TEST(CTextScanner, ScanWordReadsWhitespaceSeparatedWords) {
     CTextScanner scanner(" ACT1.POD\r\n ACT2.POD");
     EXPECT_EQ(scanner.scanWord(), "ACT1.POD");

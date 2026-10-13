@@ -22,7 +22,8 @@ struct SScanned {
 // character that can't continue it, and nothing comes back when no digits start the text.
 [[nodiscard]] std::optional<int> scanInteger(std::string_view text);
 [[nodiscard]] std::optional<float> scanFloat(std::string_view text);
-// "%d" with the length it took, leading whitespace included.
+// "%d" and "%f" with the length each took, leading whitespace included.
 [[nodiscard]] std::optional<SScanned<int>> scanIntegerPrefix(std::string_view text);
+[[nodiscard]] std::optional<SScanned<float>> scanFloatPrefix(std::string_view text);
 
 } // namespace nocturne::common

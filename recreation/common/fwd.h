@@ -9,6 +9,7 @@ class CBinaryWriter;
 class CFatalError;
 class CFrameConverter;
 class CMatrix3x3f;
+class CMatrix3x3i;
 class CMatrix3x4f;
 class CMovieClock;
 class CPolygonBatch;

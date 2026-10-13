@@ -13,7 +13,7 @@ TEST(CBoundingBox3D, IsConcrete) {
 
 TEST(CBoundingBox3D, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CBoundingBox3D::expand),
-                                 void (CBoundingBox3D::*)(common::CVector3f *)>);
+                                 void (CBoundingBox3D::*)(const common::CVector3f &)>);
     static_assert(
         std::is_same_v<decltype(&CBoundingBox3D::getCorner),
                        common::CVector3f *(CBoundingBox3D::*)(common::CVector3f *, std::uint32_t)>);
@@ -34,6 +34,21 @@ TEST(CBoundingBox3D, PublicInterface) {
                                                                         common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CBoundingBox3D::doesSphereIntersect),
                                  int (CBoundingBox3D::*)(common::CVector3f *, float)>);
+}
+
+TEST(CBoundingBox3D, ExpandingGrowsEachSideToTakeInThePoint) {
+    CBoundingBox3D box;
+    box.expand({.x = 1, .y = -2, .z = 3});
+    box.expand({.x = -4, .y = 5, .z = -6});
+    EXPECT_TRUE(box.min.equals({.x = -4, .y = -2, .z = -6}));
+    EXPECT_TRUE(box.max.equals({.x = 1, .y = 5, .z = 3}));
+}
+
+TEST(CBoundingBox3D, APointInsideChangesNothing) {
+    CBoundingBox3D box{.min = {.x = -1, .y = -1, .z = -1}, .max = {.x = 1, .y = 1, .z = 1}};
+    box.expand({});
+    EXPECT_TRUE(box.min.equals({.x = -1, .y = -1, .z = -1}));
+    EXPECT_TRUE(box.max.equals({.x = 1, .y = 1, .z = 1}));
 }
 
 } // namespace

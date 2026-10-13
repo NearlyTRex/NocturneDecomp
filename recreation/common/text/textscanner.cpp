@@ -39,6 +39,16 @@ std::optional<int> CTextScanner::scanInteger() {
     return scanned->value;
 }
 
+std::optional<float> CTextScanner::scanFloat() {
+    const std::optional<SScanned<float>> scanned = scanFloatPrefix(text_.substr(position_));
+    if (!scanned) {
+        skipWhitespace();
+        return std::nullopt;
+    }
+    position_ += scanned->length;
+    return scanned->value;
+}
+
 std::string_view CTextScanner::scanWord() {
     skipWhitespace();
     const std::size_t end = std::min(text_.find_first_of(kWhitespace, position_), text_.size());

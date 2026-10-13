@@ -21,6 +21,8 @@ public:
     bool expect(char literal);
     // "%d", including the whitespace it skips first.
     [[nodiscard]] std::optional<int> scanInteger();
+    // "%f", likewise.
+    [[nodiscard]] std::optional<float> scanFloat();
     // "%s": the next whitespace-separated word, after skipping whitespace; empty at the end.
     [[nodiscard]] std::string_view scanWord();
     // "%[^c]": everything up to the delimiter. scanf fails on an empty match, and so does this.

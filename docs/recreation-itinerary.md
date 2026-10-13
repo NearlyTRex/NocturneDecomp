@@ -17,8 +17,8 @@ in instructions.
 | 3 | Sound system: `sndmain`, `CSound` lifetime, `readIniData` | 7 | 123 | 8346 | 123 | 100.0% |
 | 4 | `initFonts`, `CEditorTools::showWarning` | 11 | 46 | 4804 | 46 | 100.0% |
 | 5 | `showCalibrationTest`, `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 50 | 4789 | 34 | 68.0% |
-| 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 2 | 8.0% |
-| 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 5 | 4.1% |
+| 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 6 | 24.0% |
+| 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 17 | 14.1% |
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 9 | 14.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 0 | 0.0% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 17 | 52 | 5565 | 1 | 1.9% |
@@ -28,7 +28,7 @@ in instructions.
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 0 | 0.0% |
 | 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 3 | 1.5% |
 | 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 0 | 0.0% |
-| 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 0 | 0.0% |
+| 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 2 | 7.6% |
 | 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 2 | 15.3% |
 | 19 | Not reached from startup: `engine/` | 23 | 279 | 19702 | 20 | 7.1% |
 | 20 | Not reached from startup: `support/` | 2 | 24 | 593 | 3 | 12.5% |
@@ -44,7 +44,7 @@ in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 2 | 0.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 | 3.6% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 36.3% |
-| | **All** | | **4489** | **402860** | **392** | **8.7%** |
+| | **All** | | **4489** | **402860** | **410** | **9.1%** |
 
 ## Step 0: Math value types
 
@@ -545,11 +545,11 @@ in instructions.
   - [ ] `generateRandomValue` 0x0040cba0 (7)
   - [ ] `getRandomFloatFromRange` 0x0040cc10 (25)
 
-### `core/course.cpp` (3 functions, 178 instructions, 0 done)
+### `core/course.cpp` (3 functions, 178 instructions, 3 done)
 - class `CCourse`
-  - [ ] `free` 0x004426c0 (21)
-  - [ ] `allocMemory` 0x00442500 (45)
-  - [ ] `load` 0x00442580 (112)
+  - [x] `free` 0x004426c0 (21)
+  - [x] `allocMemory` 0x00442500 (45)
+  - [x] `load` 0x00442580 (112)
 
 ### `core/dtri.cpp` (2 functions, 164 instructions, 0 done)
 - class `CDemonTriangle`
@@ -560,9 +560,9 @@ in instructions.
 - free functions
   - [ ] `calculateSurfaceNormal` 0x00501bc0 (130)
 
-### `core/box.cpp` (1 functions, 47 instructions, 0 done)
+### `core/box.cpp` (1 functions, 47 instructions, 1 done)
 - class `CBoundingBox3D`
-  - [ ] `expand` 0x00420240 (47)
+  - [x] `expand` 0x00420240 (47)
 
 ### `core/dmodel.cpp` (9 functions, 1490 instructions, 0 done)
 - class `CKeyFramedModel`
@@ -587,10 +587,10 @@ in instructions.
 
 ## Step 7: `CMoon::update`, `CMoon::render`
 
-### `core/course.cpp` (2 functions, 342 instructions, 0 done)
+### `core/course.cpp` (2 functions, 342 instructions, 2 done)
 - class `CCourse`
-  - [ ] `interpolate` 0x004427a0 (267)
-  - [ ] `evaluate` 0x00442710 (75)
+  - [x] `interpolate` 0x004427a0 (267)
+  - [x] `evaluate` 0x00442710 (75)
 
 ### `core/mirror.cpp` (3 functions, 216 instructions, 0 done)
 - class `CMirrorReflection`
@@ -620,14 +620,14 @@ in instructions.
 - free functions
   - [ ] `renderFlatColorScanline` 0x004505e0 (140)
 
-### `core/xform.cpp` (11 functions, 1668 instructions, 0 done)
+### `core/xform.cpp` (11 functions, 1668 instructions, 6 done)
 - free functions
-  - [ ] `slerpQuaternion` 0x005f77e0 (179)
-  - [ ] `matrixToEulerAngles` 0x005f5690 (375)
-  - [ ] `clearTranslation` 0x005f5370 (7)
-  - [ ] `quaternionToMatrix3x3` 0x005f7280 (115)
-  - [ ] `quaternionToMatrix3x4` 0x005f73e0 (51)
-  - [ ] `transformVector3x4` 0x005f4dc0 (35)
+  - [x] `slerpQuaternion` 0x005f77e0 (179)
+  - [x] `matrixToEulerAngles` 0x005f5690 (375)
+  - [x] `clearTranslation` 0x005f5370 (7)
+  - [x] `quaternionToMatrix3x3` 0x005f7280 (115)
+  - [x] `quaternionToMatrix3x4` 0x005f73e0 (51)
+  - [x] `transformVector3x4` 0x005f4dc0 (35)
   - [ ] `clipInterpolateRightPlane` 0x005f7bc0 (81)
   - [ ] `clipInterpolateLeftPlane` 0x005f7c80 (79)
   - [ ] `clipInterpolateTopPlane` 0x005f7d40 (81)
@@ -682,16 +682,16 @@ in instructions.
   - [ ] `submitToRenderer` 0x00477980 (179)
   - [ ] `prepareForRender` 0x00477850 (29)
 
-### `engine/matrix.c` (8 functions, 853 instructions, 4 done)
+### `engine/matrix.c` (8 functions, 853 instructions, 8 done)
 - free functions
   - [x] `interpolatedSin` 0x0050c5c0 (18)
   - [x] `interpolatedCos` 0x0050c600 (18)
-  - [ ] `matrixPushAndTransform` 0x0050cee0 (496)
-  - [ ] `matrixPush` 0x0050d620 (48)
-  - [ ] `pop` 0x0050d720 (49)
+  - [x] `matrixPushAndTransform` 0x0050cee0 (496)
+  - [x] `matrixPush` 0x0050d620 (48)
+  - [x] `pop` 0x0050d720 (49)
   - [x] `getCameraOrigin` 0x0050e2c0 (17)
   - [x] `setCameraOrigin` 0x0050e270 (7)
-  - [ ] `invertTransformMatrix` 0x0050c640 (200)
+  - [x] `invertTransformMatrix` 0x0050c640 (200)
 
 ### `engine/3d.c` (3 functions, 64 instructions, 1 done)
 - free functions
@@ -2576,10 +2576,10 @@ in instructions.
   - [ ] `loadGame` 0x004e12b0 (645)
   - [ ] `showChapterSelect` 0x004e1cb0 (845)
 
-### `core/course.cpp` (2 functions, 13 instructions, 0 done)
+### `core/course.cpp` (2 functions, 13 instructions, 2 done)
 - class `CCourse`
-  - [ ] `ctor` 0x004424c0 (5)
-  - [ ] `dtor` 0x004424e0 (8)
+  - [x] `ctor` 0x004424c0 (5)
+  - [x] `dtor` 0x004424e0 (8)
 
 ### `core/dmodel.cpp` (2 functions, 26 instructions, 0 done)
 - class `CKeyFramedModel`

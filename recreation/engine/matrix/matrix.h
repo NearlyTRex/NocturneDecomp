@@ -1,6 +1,7 @@
 #pragma once
 
 #include "common/fwd.h"
+#include "common/math/matrix3x3i.h"
 #include "common/math/vector3i.h"
 #include "engine/2d/2d.h"
 #include "engine/fwd.h"
@@ -23,14 +24,19 @@ public:
     void doNothing();
     [[nodiscard]] int interpolatedSin(int angle) const;
     [[nodiscard]] int interpolatedCos(int angle) const;
+    // The transform's inverse, in 16.16, for taking points back out of camera space.
     void invertTransformMatrix();
     void transformToCache(int cacheIndex, common::CVector3i *inputPoint);
     void projectCachedPoint(int cacheIndex);
     void projectTransformedPoint(platform::SProjectedVertex *point);
     void projectCachedPointUnchecked(int cache_index);
+    // Saves the transform, origin and light direction, then turns them by the three angles and
+    // moves the origin by the translation. Nine can be saved; a tenth is fatal.
     void matrixPushAndTransform(int rot_x, int rot_y, int rot_z, int translate_x, int translate_y,
                                 int translate_z);
+    // Saves the transform, origin and light direction as they are.
     void matrixPush();
+    // Puts back the last saved; with none saved it is fatal.
     void pop();
     common::CVector3i *normalizeVector3DFixed(common::CVector3i *input_vector,
                                               common::CVector3i *output_vector);
@@ -46,11 +52,23 @@ public:
     // Puts back what the matching push saved; the viewport size stays the window's.
     void popViewport();
     [[nodiscard]] int getProjectionScale() const;
+    // What carries a point into camera space: the rotation, then the origin added.
+    [[nodiscard]] const common::CMatrix3x3i &getTransformMatrix() const;
+    void setTransformMatrix(const common::CMatrix3x3i &transform);
+    [[nodiscard]] const common::CVector3i &getRelativeOrigin() const;
+    [[nodiscard]] const common::CMatrix3x3i &getInverseMatrix() const;
 
 private:
     // 256 entries to a turn, and a 257th equal to the first so interpolation can read one past.
     static constexpr int kTrigTableSize = 257;
     static constexpr std::size_t kViewportStackSize = 10;
+    static constexpr std::size_t kMatrixStackSize = 10;
+
+    struct STransformState {
+        common::CMatrix3x3i transform;
+        common::CVector3i relative_origin;
+        common::CVector3i light_direction;
+    };
 
     struct SViewportState {
         common::CVector3i camera_origin;
@@ -62,6 +80,7 @@ private:
     };
 
     void initializeTrigTables();
+    void pushTransformState();
 
     C2d &two_d_;
     CLight &light_;
@@ -72,6 +91,11 @@ private:
     int projection_scale_ = kUnitProjectionScale;
     std::array<SViewportState, kViewportStackSize> viewport_stack_{};
     std::size_t viewport_stack_index_ = 0;
+    common::CMatrix3x3i transform_matrix_;
+    common::CVector3i relative_origin_;
+    common::CMatrix3x3i inverse_matrix_;
+    std::array<STransformState, kMatrixStackSize> matrix_stack_{};
+    std::size_t matrix_stack_index_ = 0;
 };
 
 } // namespace nocturne::engine

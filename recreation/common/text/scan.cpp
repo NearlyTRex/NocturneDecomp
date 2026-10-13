@@ -38,7 +38,7 @@ std::optional<int> scanInteger(std::string_view text) {
 }
 
 std::optional<float> scanFloat(std::string_view text) {
-    const std::optional<SScanned<float>> scanned = scan<float>(text, std::chars_format::general);
+    const std::optional<SScanned<float>> scanned = scanFloatPrefix(text);
     if (!scanned) {
         return std::nullopt;
     }
@@ -47,6 +47,10 @@ std::optional<float> scanFloat(std::string_view text) {
 
 std::optional<SScanned<int>> scanIntegerPrefix(std::string_view text) {
     return scan<int>(text);
+}
+
+std::optional<SScanned<float>> scanFloatPrefix(std::string_view text) {
+    return scan<float>(text, std::chars_format::general);
 }
 
 } // namespace nocturne::common

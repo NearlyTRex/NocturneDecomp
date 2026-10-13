@@ -37,6 +37,10 @@ TEST(ScanIntegerPrefix, NoDigitsIsNothing) {
     EXPECT_FALSE(scanIntegerPrefix(" x"));
 }
 
+TEST(ScanFloatPrefix, CountsTheWhitespaceAndNumberItTook) {
+    EXPECT_EQ(scanFloatPrefix(" -1.5,"), (SScanned<float>{.value = -1.5F, .length = 5}));
+}
+
 TEST(ScanFloat, ReadsFixedAndExponentForms) {
     EXPECT_EQ(scanFloat("1.5"), 1.5F);
     EXPECT_EQ(scanFloat(" -0.25"), -0.25F);
