@@ -6,6 +6,7 @@
 #include "engine/special/special.h"
 #include "engine/texture/currenttexture.h"
 #include "platform/mrgltexturebasic.h"
+#include "platform/rendervertex.h"
 #include "tests/mocks/engine/mockrawinput.h"
 #include "tests/mocks/engine/mockscreendevice.h"
 #include "tests/mocks/platform/mockfilesystem.h"
@@ -14,6 +15,7 @@
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include <algorithm>
 #include <array>
 #include <cstddef>
 #include <cstdint>
@@ -84,12 +86,13 @@ TEST(CSpecial, PublicInterface) {
                                  int (CSpecial::*)(int, int, int)>);
     static_assert(std::is_same_v<decltype(&CSpecial::restoreVideoMode), int (CSpecial::*)()>);
     static_assert(std::is_same_v<decltype(&CSpecial::drawPolygon),
-                                 int (CSpecial::*)(platform::SRenderVertex *, int, int)>);
+                                 int (CSpecial::*)(std::span<platform::SRenderVertex>, int)>);
     static_assert(std::is_same_v<decltype(&CSpecial::drawPolygon2),
-                                 int (CSpecial::*)(platform::SRenderVertex **, int, int)>);
-    static_assert(std::is_same_v<decltype(&CSpecial::drawPolyList),
-                                 int (CSpecial::*)(platform::SRenderVertex *,
-                                                   platform::SMRGLPrimitiveQuad **, int, int)>);
+                                 int (CSpecial::*)(std::span<platform::SRenderVertex *>, int)>);
+    static_assert(
+        std::is_same_v<decltype(&CSpecial::drawPolyList),
+                       int (CSpecial::*)(platform::SRenderVertex *,
+                                         std::span<platform::SMRGLPrimitiveQuad *>, int)>);
     static_assert(std::is_same_v<decltype(&CSpecial::drawPolyList2),
                                  int (CSpecial::*)(platform::SRenderVertex *,
                                                    platform::SInputFace **, int, int)>);
@@ -199,6 +202,40 @@ TEST_F(CSpecialTest, WithTheRendererOnClearScreenClearsThroughIt) {
     EXPECT_EQ(first_row_[0], std::byte{0xff});
 }
 
+std::array<platform::SRenderVertex *, 3>
+getCorners(std::array<platform::SRenderVertex, 3> &vertices) {
+    std::array<platform::SRenderVertex *, 3> corners{};
+    std::ranges::transform(vertices, corners.begin(),
+                           [](platform::SRenderVertex &vertex) { return &vertex; });
+    return corners;
+}
+
+TEST_F(CSpecialTest, WithoutTheRendererNoPolygonIsDrawn) {
+    std::array<platform::SRenderVertex, 3> vertices{};
+    std::array<platform::SRenderVertex *, 3> corners = getCorners(vertices);
+    std::array<platform::SMRGLPrimitiveQuad *, 1> polygons{};
+    EXPECT_CALL(renderer_, drawPolygon(_, _, _)).Times(0);
+    EXPECT_CALL(renderer_, drawPolygon2(_, _, _)).Times(0);
+    EXPECT_CALL(renderer_, drawPolyList(_, _, _, _)).Times(0);
+    EXPECT_EQ(special_.drawPolygon(vertices, 1), 0);
+    EXPECT_EQ(special_.drawPolygon2(corners, 1), 0);
+    EXPECT_EQ(special_.drawPolyList(vertices.data(), polygons, 1), 0);
+}
+
+TEST_F(CSpecialTest, WithTheRendererPolygonsGoThroughIt) {
+    startRenderer();
+    std::array<platform::SRenderVertex, 3> vertices{};
+    std::array<platform::SRenderVertex *, 3> corners = getCorners(vertices);
+    std::array<platform::SMRGLPrimitiveQuad *, 2> polygons{};
+    EXPECT_CALL(renderer_, drawPolygon(vertices.data(), 3, 5)).WillOnce(Return(7));
+    EXPECT_CALL(renderer_, drawPolygon2(corners.data(), 3, 6)).WillOnce(Return(8));
+    EXPECT_CALL(renderer_, drawPolyList(vertices.data(), polygons.data(), 2, 9))
+        .WillOnce(Return(10));
+    EXPECT_EQ(special_.drawPolygon(vertices, 5), 7);
+    EXPECT_EQ(special_.drawPolygon2(corners, 6), 8);
+    EXPECT_EQ(special_.drawPolyList(vertices.data(), polygons, 9), 10);
+}
+
 TEST_F(CSpecialTest, WithoutDirect3DTheRendererIsNotStarted) {
     EXPECT_CALL(renderer_, init(_)).Times(0);
     EXPECT_EQ(special_.loadExternalRenderer(), 0);
@@ -231,6 +268,20 @@ TEST_F(CSpecialTest, LoadingSharesTheColourChannelsAndSelectsTheCard) {
     EXPECT_EQ(shared.blend_mode, nullptr);
     EXPECT_CALL(renderer_, selectCard(2)).WillOnce(Return(1));
     EXPECT_EQ(special_.selectCard(2), 1);
+}
+
+// Processor type 0: the renderer's depth is the reciprocal the software renderer writes.
+TEST_F(CSpecialTest, LoadingSharesProcessorTypeZero) {
+    special_.setUseDirect3D(true);
+    const int *processor_type = nullptr;
+    EXPECT_CALL(renderer_, init(_))
+        .WillOnce([&processor_type](platform::CExternalRendererBridge *bridge) {
+            processor_type = bridge->processor_type;
+            return 1;
+        });
+    ASSERT_EQ(special_.loadExternalRenderer(), 1);
+    ASSERT_NE(processor_type, nullptr);
+    EXPECT_EQ(*processor_type, 0);
 }
 
 TEST_F(CSpecialTest, WithTheRendererOffTexturesAreNotHandedOver) {

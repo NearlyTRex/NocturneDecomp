@@ -95,6 +95,7 @@ void CSpecial::fillBridge() {
     bridge_.blue_scale_factor = &channels.blue.scale_factor;
     bridge_.blue_dither_shift = &channels.blue.dither_shift;
     bridge_.texture_dimension = &current_texture_.dimension;
+    bridge_.processor_type = &processor_type_;
 }
 
 // nocedit 0x005b7340
@@ -164,6 +165,34 @@ int CSpecial::setResolutionAndColorTable(int width, int height, int bits_per_pix
     lockFrame();
     unlockFrame();
     return 1;
+}
+
+// nocedit 0x005b75e0
+int CSpecial::drawPolygon(std::span<platform::SRenderVertex> vertices, int render_flags) {
+    if (!use_external_renderer_) {
+        return 0;
+    }
+    return renderer_.drawPolygon(vertices.data(), static_cast<int>(vertices.size()), render_flags);
+}
+
+// nocedit 0x005b7610
+int CSpecial::drawPolygon2(std::span<platform::SRenderVertex *> vertices, int render_flags) {
+    if (!use_external_renderer_) {
+        return 0;
+    }
+    return renderer_.drawPolygon2(vertices.data(), static_cast<int>(vertices.size()), render_flags);
+}
+
+// The original counted the triangles for the frame statistics, and drew each polygon through
+// drawPolygon2 for a renderer without a list entry; every renderer here has one.
+// nocedit 0x005b7640
+int CSpecial::drawPolyList(platform::SRenderVertex *vertex_buffer,
+                           std::span<platform::SMRGLPrimitiveQuad *> polygons, int render_flags) {
+    if (!use_external_renderer_) {
+        return 0;
+    }
+    return renderer_.drawPolyList(vertex_buffer, polygons.data(), static_cast<int>(polygons.size()),
+                                  render_flags);
 }
 
 // nocedit 0x005b7a30

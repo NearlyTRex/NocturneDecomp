@@ -66,10 +66,11 @@ public:
                                  std::span<std::uint8_t> palette);
     int setResolutionAndColorTable(int width, int height, int bits_per_pixel);
     int restoreVideoMode();
-    int drawPolygon(platform::SRenderVertex *vertices, int vertex_count, int render_flags);
-    int drawPolygon2(platform::SRenderVertex **vertex_array, int vertex_count, int render_flags);
+    // Each hands the polygons to the hardware renderer and returns what it does; 0 without it.
+    int drawPolygon(std::span<platform::SRenderVertex> vertices, int render_flags);
+    int drawPolygon2(std::span<platform::SRenderVertex *> vertices, int render_flags);
     int drawPolyList(platform::SRenderVertex *vertex_buffer,
-                     platform::SMRGLPrimitiveQuad **polygons, int polygon_count, int render_flags);
+                     std::span<platform::SMRGLPrimitiveQuad *> polygons, int render_flags);
     int drawPolyList2(platform::SRenderVertex *vertex_buffer, platform::SInputFace **polygons,
                       int polygon_count, int render_flags);
     int clear();
@@ -113,6 +114,9 @@ private:
     int external_bits_per_pixel_ = 0;
     int card_index_ = 0;
     int current_graphics_board_ = 0;
+    // The renderer's processor type, 0 for its reciprocal-depth buffer as the software renderer
+    // writes it. Both builds set 0 and never anything else.
+    int processor_type_ = 0;
     int fog_red_ = 0;
     int fog_green_ = 0;
     int fog_blue_ = 0;
