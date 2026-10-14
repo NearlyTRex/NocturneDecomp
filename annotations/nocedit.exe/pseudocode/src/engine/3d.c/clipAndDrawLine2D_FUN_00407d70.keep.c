@@ -18,39 +18,39 @@ void __cdecl engine_3d_c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex vertex1,SR
     iVar2 = 0;
     do {
       if (vertex2.projected_vertex.transformed_z < vertex2.projected_vertex.transformed_x) {
-        engine_clipper_c_interpolateVertexLeftClip_FUN_00435a00(&vertex1,&vertex2,&local_40);
+        engine_clipper_c_interpolateVertexRightClip_FUN_00435a00(&vertex1,&vertex2,&local_40);
         vertex2 = local_40;
       }
       if (-vertex2.projected_vertex.transformed_x != vertex2.projected_vertex.transformed_z &&
           vertex2.projected_vertex.transformed_x <= -vertex2.projected_vertex.transformed_z) {
-        engine_clipper_c_interpolateVertexRightClip_FUN_00435b00(&vertex1,&vertex2,&local_40);
+        engine_clipper_c_interpolateVertexLeftClip_FUN_00435b00(&vertex1,&vertex2,&local_40);
         vertex2 = local_40;
       }
       if (vertex2.projected_vertex.transformed_z < vertex2.projected_vertex.transformed_y) {
-        engine_clipper_c_interpolateVertexBottomClip_FUN_00435c00(&vertex1,&vertex2,&local_40);
+        engine_clipper_c_interpolateVertexTopClip_FUN_00435c00(&vertex1,&vertex2,&local_40);
         vertex2 = local_40;
       }
       if (-vertex2.projected_vertex.transformed_y != vertex2.projected_vertex.transformed_z &&
           vertex2.projected_vertex.transformed_y <= -vertex2.projected_vertex.transformed_z) {
-        engine_clipper_c_interpolateVertexTopClip_FUN_00435d00(&vertex1,&vertex2,&local_40);
+        engine_clipper_c_interpolateVertexBottomClip_FUN_00435d00(&vertex1,&vertex2,&local_40);
         vertex2 = local_40;
       }
       if (vertex1.projected_vertex.transformed_z < vertex1.projected_vertex.transformed_x) {
-        engine_clipper_c_interpolateVertexLeftClip_FUN_00435a00(&vertex2,&vertex1,&local_40);
+        engine_clipper_c_interpolateVertexRightClip_FUN_00435a00(&vertex2,&vertex1,&local_40);
         vertex1 = local_40;
       }
       if (-vertex1.projected_vertex.transformed_x != vertex1.projected_vertex.transformed_z &&
           vertex1.projected_vertex.transformed_x <= -vertex1.projected_vertex.transformed_z) {
-        engine_clipper_c_interpolateVertexRightClip_FUN_00435b00(&vertex2,&vertex1,&local_40);
+        engine_clipper_c_interpolateVertexLeftClip_FUN_00435b00(&vertex2,&vertex1,&local_40);
         vertex1 = local_40;
       }
       if (vertex1.projected_vertex.transformed_z < vertex1.projected_vertex.transformed_y) {
-        engine_clipper_c_interpolateVertexBottomClip_FUN_00435c00(&vertex2,&vertex1,&local_40);
+        engine_clipper_c_interpolateVertexTopClip_FUN_00435c00(&vertex2,&vertex1,&local_40);
         vertex1 = local_40;
       }
       if (-vertex1.projected_vertex.transformed_y != vertex1.projected_vertex.transformed_z &&
           vertex1.projected_vertex.transformed_y <= -vertex1.projected_vertex.transformed_z) {
-        engine_clipper_c_interpolateVertexTopClip_FUN_00435d00(&vertex2,&vertex1,&local_40);
+        engine_clipper_c_interpolateVertexBottomClip_FUN_00435d00(&vertex2,&vertex1,&local_40);
         vertex1 = local_40;
       }
       iVar2 = iVar2 + 1;

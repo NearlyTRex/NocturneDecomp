@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 4923
-Clean: 2508 (50.9%)
-With suspects: 2415
-Total suspects: 20962
+Clean: 2510 (51.0%)
+With suspects: 2413
+Total suspects: 20947
 
 ====================================================================================================
 cockpit_ckptutil.c_applyActPalette_FUN_0042d370 (1 suspect)
@@ -25586,7 +25586,7 @@ engine_clipper.c_allocateClipVertex_FUN_004314b0 (5 suspects)
   Line 14 [undefined_data]: return (SRenderVertex *)(&DAT_007678f8 + iVar1);
 
 ====================================================================================================
-engine_clipper.c_clipAndRasterize_FUN_00432cd0 (180 suspects)
+engine_clipper.c_clipAndRasterize_FUN_00432cd0 (176 suspects)
   File: engine/clipper.c
 ====================================================================================================
   Line 2 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x004335a5) */
@@ -25692,7 +25692,6 @@ engine_clipper.c_clipAndRasterize_FUN_00432cd0 (180 suspects)
   Line 427 [pointer_cast]: *(uint *)((int)plVar14 + (uint)bVar18 * -8 + 4);
   Line 427 [pointer_truncation]: *(uint *)((int)plVar14 + (uint)bVar18 * -8 + 4);
   Line 433 [undefined_data]: } while (iVar8 < (int)DAT_00766c70);
-  Line 436 [undefined_data]: if (DAT_005ad284 != 0) {
   Line 437 [undefined_data]: if (0 < (int)DAT_00766c70) {
   Line 440 [undefined_data]: if (iVar8 < *(int *)((int)&DAT_00766c7c + iVar12)) {
   Line 440 [pointer_truncation]: if (iVar8 < *(int *)((int)&DAT_00766c7c + iVar12)) {
@@ -25701,7 +25700,6 @@ engine_clipper.c_clipAndRasterize_FUN_00432cd0 (180 suspects)
   Line 441 [pointer_truncation]: iVar8 = *(int *)((int)&DAT_00766c7c + iVar12);
   Line 441 [pointer_cast]: iVar8 = *(int *)((int)&DAT_00766c7c + iVar12);
   Line 444 [undefined_data]: } while (iVar12 < (int)(DAT_00766c70 * 0x30));
-  Line 446 [undefined_data]: if (DAT_005ad284 <= iVar8) {
   Line 447 [undefined_data]: plVar9 = (longlong *)&DAT_00766c74;
   Line 448 [undefined_data]: DAT_007672f4 = DAT_00766c70;
   Line 448 [undefined_data]: DAT_007672f4 = DAT_00766c70;
@@ -25716,9 +25714,7 @@ engine_clipper.c_clipAndRasterize_FUN_00432cd0 (180 suspects)
   Line 468 [undefined_data]: pSVar11 = (SRenderVertex *)&DAT_007672f8;
   Line 471 [undefined_data]: if (uVar7 == DAT_007672f4) {
   Line 472 [undefined_data]: uVar7 = uVar7 ^ DAT_007672f4;
-  Line 474 [undefined_data]: bVar3 = DAT_005ad284 <= (pSVar11->projected_vertex).transformed_z;
-  Line 475 [undefined_data]: if (DAT_005ad284 <= (int)(&DAT_00767300)[uVar7 * 0xc]) {
-  Line 475 [undefined_data]: if (DAT_005ad284 <= (int)(&DAT_00767300)[uVar7 * 0xc]) {
+  Line 475 [undefined_data]: if (g_FarPlaneDistance <= (int)(&DAT_00767300)[uVar7 * 0xc]) {
   Line 480 [undefined_data]: plVar17 = (longlong *)(&DAT_00766c74 + DAT_00766c70 * 0xc);
   Line 480 [undefined_data]: plVar17 = (longlong *)(&DAT_00766c74 + DAT_00766c70 * 0xc);
   Line 484 [pointer_truncation]: if (((uint)plVar17 & 7) != 0) {
@@ -25771,34 +25767,17 @@ engine_clipper.c_clipAndRasterize_FUN_00432cd0 (180 suspects)
   Line 587 [undefined_data]: ((SRenderVertex *)&DAT_00766c74,DAT_00766c70);
 
 ====================================================================================================
-engine_clipper.c_clipPolygonBottomPlane_FUN_00431cd0 (12 suspects)
+engine_clipper.c_clipPolygonBottomPlaneGlobal_FUN_00434030 (43 suspects)
   File: engine/clipper.c
 ====================================================================================================
-  Line 21 [undefined_data]: iVar2 = DAT_00767b38;
-  Line 34 [undefined_data]: if (0xb < DAT_00767b38) {
-  Line 39 [undefined_data]: iVar2 = DAT_00767b38 * 0x30;
-  Line 41 [undefined_data]: DAT_00767b38 = DAT_00767b38 + 1;
-  Line 41 [undefined_data]: DAT_00767b38 = DAT_00767b38 + 1;
-  Line 42 [undefined_data]: output_vertices[iVar4] = (SRenderVertex *)(&DAT_007678f8 + iVar2);
-  Line 44 [undefined_data]: (v2,v1,(SRenderVertex *)(&DAT_007678f8 + iVar2));
-  Line 53 [undefined_data]: iVar2 = DAT_00767b38 * 0x30;
-  Line 55 [undefined_data]: DAT_00767b38 = DAT_00767b38 + 1;
-  Line 55 [undefined_data]: DAT_00767b38 = DAT_00767b38 + 1;
-  Line 56 [undefined_data]: output_vertices[iVar4 + 1] = (SRenderVertex *)(&DAT_007678f8 + iVar2);
-  Line 58 [undefined_data]: (v1,v2,(SRenderVertex *)(&DAT_007678f8 + iVar2));
-
-====================================================================================================
-engine_clipper.c_clipPolygonHorizontalPlanes_FUN_00433ef0 (43 suspects)
-  File: engine/clipper.c
-====================================================================================================
-  Line 16 [undefined_data]: if (0 < (int)DAT_00767b44) {
-  Line 17 [undefined_data]: v1 = (SRenderVertex *)&DAT_0076874c;
-  Line 20 [undefined_data]: if (uVar2 == DAT_00767b44) {
-  Line 21 [undefined_data]: uVar2 = uVar2 ^ DAT_00767b44;
-  Line 24 [undefined_data]: if ((int)(&DAT_00768754)[uVar2 * 0xc] <= *(int *)(&DAT_00768750 + uVar2 * 0x30)) {
-  Line 24 [undefined_data]: if ((int)(&DAT_00768754)[uVar2 * 0xc] <= *(int *)(&DAT_00768750 + uVar2 * 0x30)) {
-  Line 30 [undefined_data]: piVar5 = &DAT_00768d4c + DAT_00767b48 * 0xc;
-  Line 30 [undefined_data]: piVar5 = &DAT_00768d4c + DAT_00767b48 * 0xc;
+  Line 16 [undefined_data]: if (0 < (int)DAT_00767b48) {
+  Line 17 [undefined_data]: v1 = (SRenderVertex *)&DAT_00768d4c;
+  Line 20 [undefined_data]: if (uVar2 == DAT_00767b48) {
+  Line 21 [undefined_data]: uVar2 = uVar2 ^ DAT_00767b48;
+  Line 24 [undefined_data]: if (*(int *)(&DAT_00768d50 + uVar2 * 0x30) <= (int)-(&DAT_00768d54)[uVar2 * 0xc]) {
+  Line 24 [undefined_data]: if (*(int *)(&DAT_00768d50 + uVar2 * 0x30) <= (int)-(&DAT_00768d54)[uVar2 * 0xc]) {
+  Line 30 [undefined_data]: piVar5 = &DAT_00766c74 + DAT_00766c70 * 0xc;
+  Line 30 [undefined_data]: piVar5 = &DAT_00766c74 + DAT_00766c70 * 0xc;
   Line 31 [unrolled_memcpy]: for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
   Line 33 [pointer_cast]: pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -8 + 4);
   Line 33 [pointer_truncation]: pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -8 + 4);
@@ -25807,82 +25786,36 @@ engine_clipper.c_clipPolygonHorizontalPlanes_FUN_00433ef0 (43 suspects)
   Line 38 [pointer_truncation]: pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -2 + 1);
   Line 39 [pointer_cast]: piVar5 = (int *)((int)piVar5 + (uint)bVar6 * -2 + 1);
   Line 39 [pointer_truncation]: piVar5 = (int *)((int)piVar5 + (uint)bVar6 * -2 + 1);
-  Line 41 [undefined_data]: DAT_00767b48 = DAT_00767b48 + 1;
-  Line 41 [undefined_data]: DAT_00767b48 = DAT_00767b48 + 1;
-  Line 45 [undefined_data]: ((SRenderVertex *)(&DAT_0076874c + uVar2 * 0xc),v1,
-  Line 46 [undefined_data]: (SRenderVertex *)(&DAT_00768d4c + DAT_00767b48 * 0xc));
-  Line 46 [undefined_data]: (SRenderVertex *)(&DAT_00768d4c + DAT_00767b48 * 0xc));
-  Line 47 [undefined_data]: DAT_00767b48 = DAT_00767b48 + 1;
-  Line 47 [undefined_data]: DAT_00767b48 = DAT_00767b48 + 1;
-  Line 51 [undefined_data]: piVar5 = &DAT_00768d4c + DAT_00767b48 * 0xc;
-  Line 51 [undefined_data]: piVar5 = &DAT_00768d4c + DAT_00767b48 * 0xc;
+  Line 41 [undefined_data]: DAT_00766c70 = DAT_00766c70 + 1;
+  Line 41 [undefined_data]: DAT_00766c70 = DAT_00766c70 + 1;
+  Line 45 [undefined_data]: ((SRenderVertex *)(&DAT_00768d4c + uVar2 * 0xc),v1,
+  Line 46 [undefined_data]: (SRenderVertex *)(&DAT_00766c74 + DAT_00766c70 * 0xc));
+  Line 46 [undefined_data]: (SRenderVertex *)(&DAT_00766c74 + DAT_00766c70 * 0xc));
+  Line 47 [undefined_data]: DAT_00766c70 = DAT_00766c70 + 1;
+  Line 47 [undefined_data]: DAT_00766c70 = DAT_00766c70 + 1;
+  Line 51 [undefined_data]: piVar5 = &DAT_00766c74 + DAT_00766c70 * 0xc;
+  Line 51 [undefined_data]: piVar5 = &DAT_00766c74 + DAT_00766c70 * 0xc;
   Line 52 [unrolled_memcpy]: for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
   Line 54 [pointer_cast]: pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -8 + 4);
   Line 54 [pointer_truncation]: pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -8 + 4);
-  Line 54 [unrolled_memcpy]: // 00433f6c: MOVSD.REP ES:EDI,ESI  ; DAT_0076877c | DAT_00768d4c | DAT_00768780
   Line 57 [unrolled_memcpy]: for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {
+  Line 57 [unrolled_memcpy]: // 004340b2: MOVSD.REP ES:EDI,ESI  ; DAT_00768d4c | DAT_00766c74 | DAT_00768d50
   Line 59 [pointer_cast]: pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -2 + 1);
   Line 59 [pointer_truncation]: pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -2 + 1);
   Line 60 [pointer_cast]: piVar5 = (int *)((int)piVar5 + (uint)bVar6 * -2 + 1);
   Line 60 [pointer_truncation]: piVar5 = (int *)((int)piVar5 + (uint)bVar6 * -2 + 1);
-  Line 62 [undefined_data]: DAT_00767b48 = DAT_00767b48 + 1;
-  Line 62 [undefined_data]: DAT_00767b48 = DAT_00767b48 + 1;
-  Line 64 [undefined_data]: (v1,(SRenderVertex *)(&DAT_0076874c + uVar2 * 0xc),
-  Line 65 [undefined_data]: (SRenderVertex *)(&DAT_00768d4c + DAT_00767b48 * 0xc));
-  Line 65 [undefined_data]: (SRenderVertex *)(&DAT_00768d4c + DAT_00767b48 * 0xc));
-  Line 66 [undefined_data]: DAT_00767b48 = DAT_00767b48 + 1;
-  Line 66 [undefined_data]: DAT_00767b48 = DAT_00767b48 + 1;
-  Line 70 [undefined_data]: } while (local_14 < (int)DAT_00767b44);
-  Line 98 [unrolled_memcpy]: // 00433fdc: MOVSD.REP ES:EDI,ESI  ; DAT_0076877c | DAT_00768d4c | DAT_00768780
+  Line 62 [undefined_data]: DAT_00766c70 = DAT_00766c70 + 1;
+  Line 62 [undefined_data]: DAT_00766c70 = DAT_00766c70 + 1;
+  Line 64 [undefined_data]: (v1,(SRenderVertex *)(&DAT_00768d4c + uVar2 * 0xc),
+  Line 65 [undefined_data]: (SRenderVertex *)(&DAT_00766c74 + DAT_00766c70 * 0xc));
+  Line 65 [undefined_data]: (SRenderVertex *)(&DAT_00766c74 + DAT_00766c70 * 0xc));
+  Line 66 [undefined_data]: DAT_00766c70 = DAT_00766c70 + 1;
+  Line 66 [undefined_data]: DAT_00766c70 = DAT_00766c70 + 1;
+  Line 70 [undefined_data]: } while (local_14 < (int)DAT_00767b48);
+  Line 101 [unrolled_memcpy]: // 00434122: MOVSD.REP ES:EDI,ESI  ; DAT_00768d4c | DAT_00766c74 | DAT_00768d50
 
 ====================================================================================================
-engine_clipper.c_clipPolygonLeftPlaneGlobal_FUN_00433c70 (41 suspects)
-  File: engine/clipper.c
-====================================================================================================
-  Line 17 [undefined_data]: if (0 < (int)DAT_00767b3c) {
-  Line 18 [undefined_data]: v1 = (SRenderVertex *)&DAT_0076814c;
-  Line 21 [undefined_data]: if (uVar2 == DAT_00767b3c) {
-  Line 22 [undefined_data]: uVar2 = uVar2 ^ DAT_00767b3c;
-  Line 24 [undefined_data]: pSVar4 = (SRenderVertex *)(&DAT_0076814c + uVar2 * 0xc);
-  Line 26 [undefined_data]: if ((int)(&DAT_00768154)[uVar2 * 0xc] <= (pSVar4->projected_vertex).transformed_x) {
-  Line 32 [undefined_data]: piVar6 = &DAT_00767b4c + DAT_00767b40 * 0xc;
-  Line 32 [undefined_data]: piVar6 = &DAT_00767b4c + DAT_00767b40 * 0xc;
-  Line 33 [unrolled_memcpy]: for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-  Line 35 [pointer_cast]: pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar7 * -8 + 4);
-  Line 35 [pointer_truncation]: pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar7 * -8 + 4);
-  Line 38 [unrolled_memcpy]: for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {
-  Line 40 [pointer_cast]: pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar7 * -2 + 1);
-  Line 40 [pointer_truncation]: pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar7 * -2 + 1);
-  Line 41 [pointer_cast]: piVar6 = (int *)((int)piVar6 + (uint)bVar7 * -2 + 1);
-  Line 41 [pointer_truncation]: piVar6 = (int *)((int)piVar6 + (uint)bVar7 * -2 + 1);
-  Line 43 [undefined_data]: DAT_00767b40 = DAT_00767b40 + 1;
-  Line 43 [undefined_data]: DAT_00767b40 = DAT_00767b40 + 1;
-  Line 47 [undefined_data]: (pSVar4,v1,(SRenderVertex *)(&DAT_00767b4c + DAT_00767b40 * 0xc));
-  Line 47 [undefined_data]: (pSVar4,v1,(SRenderVertex *)(&DAT_00767b4c + DAT_00767b40 * 0xc));
-  Line 48 [undefined_data]: DAT_00767b40 = DAT_00767b40 + 1;
-  Line 48 [undefined_data]: DAT_00767b40 = DAT_00767b40 + 1;
-  Line 52 [undefined_data]: piVar6 = &DAT_00767b4c + DAT_00767b40 * 0xc;
-  Line 52 [undefined_data]: piVar6 = &DAT_00767b4c + DAT_00767b40 * 0xc;
-  Line 53 [unrolled_memcpy]: for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-  Line 54 [unrolled_memcpy]: // 00433ceb: MOVSD.REP ES:EDI,ESI  ; DAT_0076817c | DAT_00767b4c | DAT_00768180
-  Line 55 [pointer_cast]: pSVar5 = (SRenderVertex *)((int)pSVar5 + (uint)bVar7 * -8 + 4);
-  Line 55 [pointer_truncation]: pSVar5 = (SRenderVertex *)((int)pSVar5 + (uint)bVar7 * -8 + 4);
-  Line 58 [unrolled_memcpy]: for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {
-  Line 60 [pointer_cast]: pSVar5 = (SRenderVertex *)((int)pSVar5 + (uint)bVar7 * -2 + 1);
-  Line 60 [pointer_truncation]: pSVar5 = (SRenderVertex *)((int)pSVar5 + (uint)bVar7 * -2 + 1);
-  Line 61 [pointer_cast]: piVar6 = (int *)((int)piVar6 + (uint)bVar7 * -2 + 1);
-  Line 61 [pointer_truncation]: piVar6 = (int *)((int)piVar6 + (uint)bVar7 * -2 + 1);
-  Line 63 [undefined_data]: DAT_00767b40 = DAT_00767b40 + 1;
-  Line 63 [undefined_data]: DAT_00767b40 = DAT_00767b40 + 1;
-  Line 65 [undefined_data]: (v1,pSVar4,(SRenderVertex *)(&DAT_00767b4c + DAT_00767b40 * 0xc));
-  Line 65 [undefined_data]: (v1,pSVar4,(SRenderVertex *)(&DAT_00767b4c + DAT_00767b40 * 0xc));
-  Line 66 [undefined_data]: DAT_00767b40 = DAT_00767b40 + 1;
-  Line 66 [undefined_data]: DAT_00767b40 = DAT_00767b40 + 1;
-  Line 70 [undefined_data]: } while (local_14 < (int)DAT_00767b3c);
-  Line 98 [unrolled_memcpy]: // 00433d57: MOVSD.REP ES:EDI,ESI  ; DAT_0076817c | DAT_00767b4c | DAT_00768180
-
-====================================================================================================
-engine_clipper.c_clipPolygonLeftPlane_FUN_00431a50 (12 suspects)
+engine_clipper.c_clipPolygonBottomPlane_FUN_00431e10 (12 suspects)
   File: engine/clipper.c
 ====================================================================================================
   Line 21 [undefined_data]: iVar2 = DAT_00767b38;
@@ -25899,11 +25832,10 @@ engine_clipper.c_clipPolygonLeftPlane_FUN_00431a50 (12 suspects)
   Line 58 [undefined_data]: (v1,v2,(SRenderVertex *)(&DAT_007678f8 + iVar2));
 
 ====================================================================================================
-engine_clipper.c_clipPolygonNearPlane_FUN_00431f50 (71 suspects)
+engine_clipper.c_clipPolygonFarPlane_FUN_00431f50 (67 suspects)
   File: engine/clipper.c
 ====================================================================================================
   Line 2 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x00431fc8) */
-  Line 21 [undefined_data]: if (DAT_005ad284 != 0) {
   Line 22 [undefined_data]: if (0 < (int)DAT_00766c70) {
   Line 25 [undefined_data]: if (iVar6 < *(int *)((int)&DAT_00766c7c + iVar4)) {
   Line 25 [pointer_truncation]: if (iVar6 < *(int *)((int)&DAT_00766c7c + iVar4)) {
@@ -25912,7 +25844,6 @@ engine_clipper.c_clipPolygonNearPlane_FUN_00431f50 (71 suspects)
   Line 26 [pointer_truncation]: iVar6 = *(int *)((int)&DAT_00766c7c + iVar4);
   Line 26 [pointer_cast]: iVar6 = *(int *)((int)&DAT_00766c7c + iVar4);
   Line 29 [undefined_data]: } while (iVar4 < (int)(DAT_00766c70 * 0x30));
-  Line 31 [undefined_data]: if (DAT_005ad284 <= iVar6) {
   Line 32 [undefined_data]: DAT_007672f4 = DAT_00766c70;
   Line 32 [undefined_data]: DAT_007672f4 = DAT_00766c70;
   Line 33 [undefined_data]: plVar7 = (longlong *)&DAT_00766c74;
@@ -25927,9 +25858,7 @@ engine_clipper.c_clipPolygonNearPlane_FUN_00431f50 (71 suspects)
   Line 52 [undefined_data]: v1 = (SRenderVertex *)&DAT_007672f8;
   Line 55 [undefined_data]: if (uVar5 == DAT_007672f4) {
   Line 56 [undefined_data]: uVar5 = uVar5 ^ DAT_007672f4;
-  Line 58 [undefined_data]: bVar3 = DAT_005ad284 <= (v1->projected_vertex).transformed_z;
-  Line 59 [undefined_data]: if (DAT_005ad284 <= (int)(&DAT_00767300)[uVar5 * 0xc]) {
-  Line 59 [undefined_data]: if (DAT_005ad284 <= (int)(&DAT_00767300)[uVar5 * 0xc]) {
+  Line 59 [undefined_data]: if (g_FarPlaneDistance <= (int)(&DAT_00767300)[uVar5 * 0xc]) {
   Line 64 [undefined_data]: plVar9 = (longlong *)(&DAT_00766c74 + DAT_00766c70 * 0xc);
   Line 64 [undefined_data]: plVar9 = (longlong *)(&DAT_00766c74 + DAT_00766c70 * 0xc);
   Line 68 [pointer_truncation]: if (((uint)plVar9 & 7) != 0) {
@@ -25975,7 +25904,7 @@ engine_clipper.c_clipPolygonNearPlane_FUN_00431f50 (71 suspects)
   Line 131 [undefined_data]: } while (iVar4 < (int)DAT_007672f4);
 
 ====================================================================================================
-engine_clipper.c_clipPolygonRightPlaneGlobal_FUN_00433db0 (41 suspects)
+engine_clipper.c_clipPolygonLeftPlaneGlobal_FUN_00433db0 (41 suspects)
   File: engine/clipper.c
 ====================================================================================================
   Line 17 [undefined_data]: if (0 < (int)DAT_00767b40) {
@@ -26021,7 +25950,70 @@ engine_clipper.c_clipPolygonRightPlaneGlobal_FUN_00433db0 (41 suspects)
   Line 101 [unrolled_memcpy]: // 00433ea1: MOVSD.REP ES:EDI,ESI  ; DAT_00767b4c | DAT_0076874c | DAT_00767b50
 
 ====================================================================================================
-engine_clipper.c_clipPolygonRightPlane_FUN_00431b90 (12 suspects)
+engine_clipper.c_clipPolygonLeftPlane_FUN_00431b90 (12 suspects)
+  File: engine/clipper.c
+====================================================================================================
+  Line 21 [undefined_data]: iVar2 = DAT_00767b38;
+  Line 34 [undefined_data]: if (0xb < DAT_00767b38) {
+  Line 39 [undefined_data]: iVar2 = DAT_00767b38 * 0x30;
+  Line 41 [undefined_data]: DAT_00767b38 = DAT_00767b38 + 1;
+  Line 41 [undefined_data]: DAT_00767b38 = DAT_00767b38 + 1;
+  Line 42 [undefined_data]: output_vertices[iVar4] = (SRenderVertex *)(&DAT_007678f8 + iVar2);
+  Line 44 [undefined_data]: (v2,v1,(SRenderVertex *)(&DAT_007678f8 + iVar2));
+  Line 53 [undefined_data]: iVar2 = DAT_00767b38 * 0x30;
+  Line 55 [undefined_data]: DAT_00767b38 = DAT_00767b38 + 1;
+  Line 55 [undefined_data]: DAT_00767b38 = DAT_00767b38 + 1;
+  Line 56 [undefined_data]: output_vertices[iVar4 + 1] = (SRenderVertex *)(&DAT_007678f8 + iVar2);
+  Line 58 [undefined_data]: (v1,v2,(SRenderVertex *)(&DAT_007678f8 + iVar2));
+
+====================================================================================================
+engine_clipper.c_clipPolygonRightPlaneGlobal_FUN_00433c70 (41 suspects)
+  File: engine/clipper.c
+====================================================================================================
+  Line 17 [undefined_data]: if (0 < (int)DAT_00767b3c) {
+  Line 18 [undefined_data]: v1 = (SRenderVertex *)&DAT_0076814c;
+  Line 21 [undefined_data]: if (uVar2 == DAT_00767b3c) {
+  Line 22 [undefined_data]: uVar2 = uVar2 ^ DAT_00767b3c;
+  Line 24 [undefined_data]: pSVar4 = (SRenderVertex *)(&DAT_0076814c + uVar2 * 0xc);
+  Line 26 [undefined_data]: if ((int)(&DAT_00768154)[uVar2 * 0xc] <= (pSVar4->projected_vertex).transformed_x) {
+  Line 32 [undefined_data]: piVar6 = &DAT_00767b4c + DAT_00767b40 * 0xc;
+  Line 32 [undefined_data]: piVar6 = &DAT_00767b4c + DAT_00767b40 * 0xc;
+  Line 33 [unrolled_memcpy]: for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
+  Line 35 [pointer_cast]: pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar7 * -8 + 4);
+  Line 35 [pointer_truncation]: pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar7 * -8 + 4);
+  Line 38 [unrolled_memcpy]: for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {
+  Line 40 [pointer_cast]: pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar7 * -2 + 1);
+  Line 40 [pointer_truncation]: pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar7 * -2 + 1);
+  Line 41 [pointer_cast]: piVar6 = (int *)((int)piVar6 + (uint)bVar7 * -2 + 1);
+  Line 41 [pointer_truncation]: piVar6 = (int *)((int)piVar6 + (uint)bVar7 * -2 + 1);
+  Line 43 [undefined_data]: DAT_00767b40 = DAT_00767b40 + 1;
+  Line 43 [undefined_data]: DAT_00767b40 = DAT_00767b40 + 1;
+  Line 47 [undefined_data]: (pSVar4,v1,(SRenderVertex *)(&DAT_00767b4c + DAT_00767b40 * 0xc));
+  Line 47 [undefined_data]: (pSVar4,v1,(SRenderVertex *)(&DAT_00767b4c + DAT_00767b40 * 0xc));
+  Line 48 [undefined_data]: DAT_00767b40 = DAT_00767b40 + 1;
+  Line 48 [undefined_data]: DAT_00767b40 = DAT_00767b40 + 1;
+  Line 52 [undefined_data]: piVar6 = &DAT_00767b4c + DAT_00767b40 * 0xc;
+  Line 52 [undefined_data]: piVar6 = &DAT_00767b4c + DAT_00767b40 * 0xc;
+  Line 53 [unrolled_memcpy]: for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
+  Line 54 [unrolled_memcpy]: // 00433ceb: MOVSD.REP ES:EDI,ESI  ; DAT_0076817c | DAT_00767b4c | DAT_00768180
+  Line 55 [pointer_cast]: pSVar5 = (SRenderVertex *)((int)pSVar5 + (uint)bVar7 * -8 + 4);
+  Line 55 [pointer_truncation]: pSVar5 = (SRenderVertex *)((int)pSVar5 + (uint)bVar7 * -8 + 4);
+  Line 58 [unrolled_memcpy]: for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {
+  Line 60 [pointer_cast]: pSVar5 = (SRenderVertex *)((int)pSVar5 + (uint)bVar7 * -2 + 1);
+  Line 60 [pointer_truncation]: pSVar5 = (SRenderVertex *)((int)pSVar5 + (uint)bVar7 * -2 + 1);
+  Line 61 [pointer_cast]: piVar6 = (int *)((int)piVar6 + (uint)bVar7 * -2 + 1);
+  Line 61 [pointer_truncation]: piVar6 = (int *)((int)piVar6 + (uint)bVar7 * -2 + 1);
+  Line 63 [undefined_data]: DAT_00767b40 = DAT_00767b40 + 1;
+  Line 63 [undefined_data]: DAT_00767b40 = DAT_00767b40 + 1;
+  Line 65 [undefined_data]: (v1,pSVar4,(SRenderVertex *)(&DAT_00767b4c + DAT_00767b40 * 0xc));
+  Line 65 [undefined_data]: (v1,pSVar4,(SRenderVertex *)(&DAT_00767b4c + DAT_00767b40 * 0xc));
+  Line 66 [undefined_data]: DAT_00767b40 = DAT_00767b40 + 1;
+  Line 66 [undefined_data]: DAT_00767b40 = DAT_00767b40 + 1;
+  Line 70 [undefined_data]: } while (local_14 < (int)DAT_00767b3c);
+  Line 98 [unrolled_memcpy]: // 00433d57: MOVSD.REP ES:EDI,ESI  ; DAT_0076817c | DAT_00767b4c | DAT_00768180
+
+====================================================================================================
+engine_clipper.c_clipPolygonRightPlane_FUN_00431a50 (12 suspects)
   File: engine/clipper.c
 ====================================================================================================
   Line 21 [undefined_data]: iVar2 = DAT_00767b38;
@@ -26257,7 +26249,7 @@ engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00434210 (214 suspects)
   Line 679 [unrolled_memcpy]: // 004348de: MOVSD.REP ES:EDI,ESI  ; DAT_00768d4c | DAT_00766c74 | DAT_00768d50
 
 ====================================================================================================
-engine_clipper.c_clipPolygonToViewFrustum_FUN_00432210 (173 suspects)
+engine_clipper.c_clipPolygonToViewFrustum_FUN_00432210 (169 suspects)
   File: engine/clipper.c
 ====================================================================================================
   Line 2 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x00432ab1) */
@@ -26359,7 +26351,6 @@ engine_clipper.c_clipPolygonToViewFrustum_FUN_00432210 (173 suspects)
   Line 409 [pointer_cast]: *(uint *)((int)plVar16 + (uint)bVar21 * -8 + 4);
   Line 409 [pointer_truncation]: *(uint *)((int)plVar16 + (uint)bVar21 * -8 + 4);
   Line 415 [undefined_data]: } while (iVar4 < (int)DAT_00766c70);
-  Line 418 [undefined_data]: if (DAT_005ad284 != 0) {
   Line 419 [undefined_data]: if (0 < (int)DAT_00766c70) {
   Line 422 [undefined_data]: if (iVar4 < *(int *)((int)&DAT_00766c7c + iVar9)) {
   Line 422 [pointer_truncation]: if (iVar4 < *(int *)((int)&DAT_00766c7c + iVar9)) {
@@ -26368,7 +26359,6 @@ engine_clipper.c_clipPolygonToViewFrustum_FUN_00432210 (173 suspects)
   Line 423 [pointer_truncation]: iVar4 = *(int *)((int)&DAT_00766c7c + iVar9);
   Line 423 [pointer_cast]: iVar4 = *(int *)((int)&DAT_00766c7c + iVar9);
   Line 426 [undefined_data]: } while (iVar9 < (int)(DAT_00766c70 * 0x30));
-  Line 428 [undefined_data]: if (DAT_005ad284 <= iVar4) {
   Line 429 [undefined_data]: DAT_007672f4 = DAT_00766c70;
   Line 429 [undefined_data]: DAT_007672f4 = DAT_00766c70;
   Line 430 [undefined_data]: plVar10 = (longlong *)&DAT_00766c74;
@@ -26383,9 +26373,7 @@ engine_clipper.c_clipPolygonToViewFrustum_FUN_00432210 (173 suspects)
   Line 450 [undefined_data]: pSVar12 = (SRenderVertex *)&DAT_007672f8;
   Line 453 [undefined_data]: if (uVar8 == DAT_007672f4) {
   Line 454 [undefined_data]: uVar8 = uVar8 ^ DAT_007672f4;
-  Line 456 [undefined_data]: bVar3 = DAT_005ad284 <= (pSVar12->projected_vertex).transformed_z;
-  Line 457 [undefined_data]: if (DAT_005ad284 <= (int)(&DAT_00767300)[uVar8 * 0xc]) {
-  Line 457 [undefined_data]: if (DAT_005ad284 <= (int)(&DAT_00767300)[uVar8 * 0xc]) {
+  Line 457 [undefined_data]: if (g_FarPlaneDistance <= (int)(&DAT_00767300)[uVar8 * 0xc]) {
   Line 462 [undefined_data]: plVar19 = (longlong *)(&DAT_00766c74 + DAT_00766c70 * 0xc);
   Line 462 [undefined_data]: plVar19 = (longlong *)(&DAT_00766c74 + DAT_00766c70 * 0xc);
   Line 466 [pointer_truncation]: if (((uint)plVar19 & 7) != 0) {
@@ -26657,7 +26645,55 @@ engine_clipper.c_clipPolygonToViewport_FUN_004349a0 (217 suspects)
   Line 682 [unrolled_memcpy]: // 00435080: MOVSD.REP ES:EDI,ESI  ; DAT_00768d4c | DAT_00766c74 | DAT_00768d50
 
 ====================================================================================================
-engine_clipper.c_clipPolygonTopPlane_FUN_00431e10 (12 suspects)
+engine_clipper.c_clipPolygonTopPlaneGlobal_FUN_00433ef0 (43 suspects)
+  File: engine/clipper.c
+====================================================================================================
+  Line 16 [undefined_data]: if (0 < (int)DAT_00767b44) {
+  Line 17 [undefined_data]: v1 = (SRenderVertex *)&DAT_0076874c;
+  Line 20 [undefined_data]: if (uVar2 == DAT_00767b44) {
+  Line 21 [undefined_data]: uVar2 = uVar2 ^ DAT_00767b44;
+  Line 24 [undefined_data]: if ((int)(&DAT_00768754)[uVar2 * 0xc] <= *(int *)(&DAT_00768750 + uVar2 * 0x30)) {
+  Line 24 [undefined_data]: if ((int)(&DAT_00768754)[uVar2 * 0xc] <= *(int *)(&DAT_00768750 + uVar2 * 0x30)) {
+  Line 30 [undefined_data]: piVar5 = &DAT_00768d4c + DAT_00767b48 * 0xc;
+  Line 30 [undefined_data]: piVar5 = &DAT_00768d4c + DAT_00767b48 * 0xc;
+  Line 31 [unrolled_memcpy]: for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
+  Line 33 [pointer_cast]: pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -8 + 4);
+  Line 33 [pointer_truncation]: pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -8 + 4);
+  Line 36 [unrolled_memcpy]: for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {
+  Line 38 [pointer_cast]: pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -2 + 1);
+  Line 38 [pointer_truncation]: pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -2 + 1);
+  Line 39 [pointer_cast]: piVar5 = (int *)((int)piVar5 + (uint)bVar6 * -2 + 1);
+  Line 39 [pointer_truncation]: piVar5 = (int *)((int)piVar5 + (uint)bVar6 * -2 + 1);
+  Line 41 [undefined_data]: DAT_00767b48 = DAT_00767b48 + 1;
+  Line 41 [undefined_data]: DAT_00767b48 = DAT_00767b48 + 1;
+  Line 45 [undefined_data]: ((SRenderVertex *)(&DAT_0076874c + uVar2 * 0xc),v1,
+  Line 46 [undefined_data]: (SRenderVertex *)(&DAT_00768d4c + DAT_00767b48 * 0xc));
+  Line 46 [undefined_data]: (SRenderVertex *)(&DAT_00768d4c + DAT_00767b48 * 0xc));
+  Line 47 [undefined_data]: DAT_00767b48 = DAT_00767b48 + 1;
+  Line 47 [undefined_data]: DAT_00767b48 = DAT_00767b48 + 1;
+  Line 51 [undefined_data]: piVar5 = &DAT_00768d4c + DAT_00767b48 * 0xc;
+  Line 51 [undefined_data]: piVar5 = &DAT_00768d4c + DAT_00767b48 * 0xc;
+  Line 52 [unrolled_memcpy]: for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
+  Line 54 [pointer_cast]: pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -8 + 4);
+  Line 54 [pointer_truncation]: pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -8 + 4);
+  Line 54 [unrolled_memcpy]: // 00433f6c: MOVSD.REP ES:EDI,ESI  ; DAT_0076877c | DAT_00768d4c | DAT_00768780
+  Line 57 [unrolled_memcpy]: for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {
+  Line 59 [pointer_cast]: pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -2 + 1);
+  Line 59 [pointer_truncation]: pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -2 + 1);
+  Line 60 [pointer_cast]: piVar5 = (int *)((int)piVar5 + (uint)bVar6 * -2 + 1);
+  Line 60 [pointer_truncation]: piVar5 = (int *)((int)piVar5 + (uint)bVar6 * -2 + 1);
+  Line 62 [undefined_data]: DAT_00767b48 = DAT_00767b48 + 1;
+  Line 62 [undefined_data]: DAT_00767b48 = DAT_00767b48 + 1;
+  Line 64 [undefined_data]: (v1,(SRenderVertex *)(&DAT_0076874c + uVar2 * 0xc),
+  Line 65 [undefined_data]: (SRenderVertex *)(&DAT_00768d4c + DAT_00767b48 * 0xc));
+  Line 65 [undefined_data]: (SRenderVertex *)(&DAT_00768d4c + DAT_00767b48 * 0xc));
+  Line 66 [undefined_data]: DAT_00767b48 = DAT_00767b48 + 1;
+  Line 66 [undefined_data]: DAT_00767b48 = DAT_00767b48 + 1;
+  Line 70 [undefined_data]: } while (local_14 < (int)DAT_00767b44);
+  Line 98 [unrolled_memcpy]: // 00433fdc: MOVSD.REP ES:EDI,ESI  ; DAT_0076877c | DAT_00768d4c | DAT_00768780
+
+====================================================================================================
+engine_clipper.c_clipPolygonTopPlane_FUN_00431cd0 (12 suspects)
   File: engine/clipper.c
 ====================================================================================================
   Line 21 [undefined_data]: iVar2 = DAT_00767b38;
@@ -26674,54 +26710,6 @@ engine_clipper.c_clipPolygonTopPlane_FUN_00431e10 (12 suspects)
   Line 58 [undefined_data]: (v1,v2,(SRenderVertex *)(&DAT_007678f8 + iVar2));
 
 ====================================================================================================
-engine_clipper.c_clipPolygonVerticalPlanes_FUN_00434030 (43 suspects)
-  File: engine/clipper.c
-====================================================================================================
-  Line 16 [undefined_data]: if (0 < (int)DAT_00767b48) {
-  Line 17 [undefined_data]: v1 = (SRenderVertex *)&DAT_00768d4c;
-  Line 20 [undefined_data]: if (uVar2 == DAT_00767b48) {
-  Line 21 [undefined_data]: uVar2 = uVar2 ^ DAT_00767b48;
-  Line 24 [undefined_data]: if (*(int *)(&DAT_00768d50 + uVar2 * 0x30) <= (int)-(&DAT_00768d54)[uVar2 * 0xc]) {
-  Line 24 [undefined_data]: if (*(int *)(&DAT_00768d50 + uVar2 * 0x30) <= (int)-(&DAT_00768d54)[uVar2 * 0xc]) {
-  Line 30 [undefined_data]: piVar5 = &DAT_00766c74 + DAT_00766c70 * 0xc;
-  Line 30 [undefined_data]: piVar5 = &DAT_00766c74 + DAT_00766c70 * 0xc;
-  Line 31 [unrolled_memcpy]: for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-  Line 33 [pointer_cast]: pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -8 + 4);
-  Line 33 [pointer_truncation]: pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -8 + 4);
-  Line 36 [unrolled_memcpy]: for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {
-  Line 38 [pointer_cast]: pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -2 + 1);
-  Line 38 [pointer_truncation]: pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -2 + 1);
-  Line 39 [pointer_cast]: piVar5 = (int *)((int)piVar5 + (uint)bVar6 * -2 + 1);
-  Line 39 [pointer_truncation]: piVar5 = (int *)((int)piVar5 + (uint)bVar6 * -2 + 1);
-  Line 41 [undefined_data]: DAT_00766c70 = DAT_00766c70 + 1;
-  Line 41 [undefined_data]: DAT_00766c70 = DAT_00766c70 + 1;
-  Line 45 [undefined_data]: ((SRenderVertex *)(&DAT_00768d4c + uVar2 * 0xc),v1,
-  Line 46 [undefined_data]: (SRenderVertex *)(&DAT_00766c74 + DAT_00766c70 * 0xc));
-  Line 46 [undefined_data]: (SRenderVertex *)(&DAT_00766c74 + DAT_00766c70 * 0xc));
-  Line 47 [undefined_data]: DAT_00766c70 = DAT_00766c70 + 1;
-  Line 47 [undefined_data]: DAT_00766c70 = DAT_00766c70 + 1;
-  Line 51 [undefined_data]: piVar5 = &DAT_00766c74 + DAT_00766c70 * 0xc;
-  Line 51 [undefined_data]: piVar5 = &DAT_00766c74 + DAT_00766c70 * 0xc;
-  Line 52 [unrolled_memcpy]: for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-  Line 54 [pointer_cast]: pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -8 + 4);
-  Line 54 [pointer_truncation]: pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -8 + 4);
-  Line 57 [unrolled_memcpy]: for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {
-  Line 57 [unrolled_memcpy]: // 004340b2: MOVSD.REP ES:EDI,ESI  ; DAT_00768d4c | DAT_00766c74 | DAT_00768d50
-  Line 59 [pointer_cast]: pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -2 + 1);
-  Line 59 [pointer_truncation]: pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -2 + 1);
-  Line 60 [pointer_cast]: piVar5 = (int *)((int)piVar5 + (uint)bVar6 * -2 + 1);
-  Line 60 [pointer_truncation]: piVar5 = (int *)((int)piVar5 + (uint)bVar6 * -2 + 1);
-  Line 62 [undefined_data]: DAT_00766c70 = DAT_00766c70 + 1;
-  Line 62 [undefined_data]: DAT_00766c70 = DAT_00766c70 + 1;
-  Line 64 [undefined_data]: (v1,(SRenderVertex *)(&DAT_00768d4c + uVar2 * 0xc),
-  Line 65 [undefined_data]: (SRenderVertex *)(&DAT_00766c74 + DAT_00766c70 * 0xc));
-  Line 65 [undefined_data]: (SRenderVertex *)(&DAT_00766c74 + DAT_00766c70 * 0xc));
-  Line 66 [undefined_data]: DAT_00766c70 = DAT_00766c70 + 1;
-  Line 66 [undefined_data]: DAT_00766c70 = DAT_00766c70 + 1;
-  Line 70 [undefined_data]: } while (local_14 < (int)DAT_00767b48);
-  Line 101 [unrolled_memcpy]: // 00434122: MOVSD.REP ES:EDI,ESI  ; DAT_00768d4c | DAT_00766c74 | DAT_00768d50
-
-====================================================================================================
 engine_clipper.c_copyMemory_FUN_00433770 (5 suspects)
   File: engine/clipper.c
 ====================================================================================================
@@ -26732,105 +26720,7 @@ engine_clipper.c_copyMemory_FUN_00433770 (5 suspects)
   Line 15 [pointer_cast]: dest_ptr = (uint *)((int)dest_ptr + 1);
 
 ====================================================================================================
-engine_clipper.c_getNearPlaneDistance_FUN_00431520 (1 suspect)
-  File: engine/clipper.c
-====================================================================================================
-  Line 5 [undefined_data]: return DAT_005ad284;
-
-====================================================================================================
-engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00433a00 (9 suspects)
-  File: engine/clipper.c
-====================================================================================================
-  Line 16 [concat_reconstruction]: iVar3 = (int)(CONCAT44((int)uVar4 >> 1,(uint)((uVar4 & 1) != 0) << 0x1f) / (longlong)iVar2);
-  Line 28 [carry_arith_idiom]: iVar2 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) +
-  Line 38 [carry_arith_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) + iVar2;
-  Line 41 [carry_arith_idiom]: output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) + v1->r;
-  Line 44 [carry_arith_idiom]: output->g = v1->g + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
-  Line 47 [carry_arith_idiom]: output->b = v1->b + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
-  Line 50 [carry_arith_idiom]: output->u = v1->u + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
-  Line 53 [carry_arith_idiom]: output->v = v1->v + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
-  Line 56 [carry_arith_idiom]: output->a = v1->a + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
-
-====================================================================================================
-engine_clipper.c_interpolateVertexBottomClip_FUN_00431730 (7 suspects)
-  File: engine/clipper.c
-====================================================================================================
-  Line 16 [concat_reconstruction]: iVar3 = (int)(CONCAT44((int)uVar2 >> 1,(uint)((uVar2 & 1) != 0) << 0x1f) / (longlong)iVar4);
-  Line 28 [carry_arith_idiom]: iVar4 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) +
-  Line 36 [carry_arith_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) +
-  Line 40 [carry_arith_idiom]: output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->r;
-  Line 43 [carry_arith_idiom]: output->a = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->a;
-  Line 46 [carry_arith_idiom]: output->u = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->u;
-  Line 51 [carry_arith_idiom]: output->v = iVar3 + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2);
-
-====================================================================================================
-engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_004337a0 (9 suspects)
-  File: engine/clipper.c
-====================================================================================================
-  Line 16 [concat_reconstruction]: iVar3 = (int)(CONCAT44((int)uVar4 >> 1,(uint)((uVar4 & 1) != 0) << 0x1f) / (longlong)iVar2);
-  Line 28 [carry_arith_idiom]: iVar2 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) +
-  Line 38 [carry_arith_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) + iVar2;
-  Line 41 [carry_arith_idiom]: output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) + v1->r;
-  Line 44 [carry_arith_idiom]: output->g = v1->g + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
-  Line 47 [carry_arith_idiom]: output->b = v1->b + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
-  Line 50 [carry_arith_idiom]: output->u = v1->u + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
-  Line 53 [carry_arith_idiom]: output->v = v1->v + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
-  Line 56 [carry_arith_idiom]: output->a = v1->a + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
-
-====================================================================================================
-engine_clipper.c_interpolateVertexLeftClip_FUN_00431530 (7 suspects)
-  File: engine/clipper.c
-====================================================================================================
-  Line 16 [concat_reconstruction]: iVar3 = (int)(CONCAT44((int)uVar2 >> 1,(uint)((uVar2 & 1) != 0) << 0x1f) / (longlong)iVar4);
-  Line 28 [carry_arith_idiom]: iVar4 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) +
-  Line 36 [carry_arith_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) +
-  Line 40 [carry_arith_idiom]: output->u = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->u;
-  Line 43 [carry_arith_idiom]: output->v = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->v;
-  Line 46 [carry_arith_idiom]: output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->r;
-  Line 51 [carry_arith_idiom]: output->a = iVar3 + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2);
-
-====================================================================================================
-engine_clipper.c_interpolateVertexNearClip_FUN_00431930 (9 suspects)
-  File: engine/clipper.c
-====================================================================================================
-  Line 10 [undefined_data]: uVar2 = DAT_005ad284 - (v1->projected_vertex).transformed_z;
-  Line 13 [concat_reconstruction]: iVar3 = (int)(CONCAT44((int)uVar2 >> 1,(uint)((uVar2 & 1) != 0) << 0x1f) / (longlong)iVar3);
-  Line 26 [carry_arith_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) +
-  Line 32 [carry_arith_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) +
-  Line 38 [carry_arith_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) +
-  Line 42 [carry_arith_idiom]: output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->r;
-  Line 45 [carry_arith_idiom]: output->a = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->a;
-  Line 48 [carry_arith_idiom]: output->u = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->u;
-  Line 53 [carry_arith_idiom]: output->v = iVar3 + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2);
-
-====================================================================================================
-engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_004338d0 (9 suspects)
-  File: engine/clipper.c
-====================================================================================================
-  Line 14 [concat_reconstruction]: iVar4 = (int)(CONCAT44((int)uVar3 >> 1,(uint)((uVar3 & 1) != 0) << 0x1f) / (longlong)iVar4);
-  Line 26 [carry_arith_idiom]: iVar2 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) +
-  Line 37 [carry_arith_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + iVar2;
-  Line 40 [carry_arith_idiom]: output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->r;
-  Line 43 [carry_arith_idiom]: output->g = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->g;
-  Line 46 [carry_arith_idiom]: output->b = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->b;
-  Line 49 [carry_arith_idiom]: output->u = v1->u + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);
-  Line 52 [carry_arith_idiom]: output->v = v1->v + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);
-  Line 55 [carry_arith_idiom]: output->a = v1->a + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);
-
-====================================================================================================
-engine_clipper.c_interpolateVertexRightClip_FUN_00431630 (7 suspects)
-  File: engine/clipper.c
-====================================================================================================
-  Line 14 [concat_reconstruction]: iVar4 = (int)(CONCAT44((int)uVar3 >> 1,(uint)((uVar3 & 1) != 0) << 0x1f) / (longlong)iVar4);
-  Line 26 [carry_arith_idiom]: iVar2 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) +
-  Line 35 [carry_arith_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) +
-  Line 39 [carry_arith_idiom]: output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->r;
-  Line 42 [carry_arith_idiom]: output->a = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->a;
-  Line 45 [carry_arith_idiom]: output->u = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->u;
-  Line 50 [carry_arith_idiom]: output->v = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + iVar4;
-
-====================================================================================================
-engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_00433b30 (9 suspects)
+engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00433b30 (9 suspects)
   File: engine/clipper.c
 ====================================================================================================
   Line 14 [concat_reconstruction]: iVar4 = (int)(CONCAT44((int)uVar3 >> 1,(uint)((uVar3 & 1) != 0) << 0x1f) / (longlong)iVar4);
@@ -26844,7 +26734,7 @@ engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_00433b30 (9 suspects)
   Line 55 [carry_arith_idiom]: output->a = v1->a + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);
 
 ====================================================================================================
-engine_clipper.c_interpolateVertexTopClip_FUN_00431830 (7 suspects)
+engine_clipper.c_interpolateVertexBottomClip_FUN_00431830 (7 suspects)
   File: engine/clipper.c
 ====================================================================================================
   Line 14 [concat_reconstruction]: iVar4 = (int)(CONCAT44((int)uVar3 >> 1,(uint)((uVar3 & 1) != 0) << 0x1f) / (longlong)iVar4);
@@ -26854,6 +26744,97 @@ engine_clipper.c_interpolateVertexTopClip_FUN_00431830 (7 suspects)
   Line 42 [carry_arith_idiom]: output->a = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->a;
   Line 45 [carry_arith_idiom]: output->u = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->u;
   Line 50 [carry_arith_idiom]: output->v = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + iVar4;
+
+====================================================================================================
+engine_clipper.c_interpolateVertexFarClip_FUN_00431930 (8 suspects)
+  File: engine/clipper.c
+====================================================================================================
+  Line 13 [concat_reconstruction]: iVar3 = (int)(CONCAT44((int)uVar2 >> 1,(uint)((uVar2 & 1) != 0) << 0x1f) / (longlong)iVar3);
+  Line 26 [carry_arith_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) +
+  Line 32 [carry_arith_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) +
+  Line 38 [carry_arith_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) +
+  Line 42 [carry_arith_idiom]: output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->r;
+  Line 45 [carry_arith_idiom]: output->a = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->a;
+  Line 48 [carry_arith_idiom]: output->u = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->u;
+  Line 53 [carry_arith_idiom]: output->v = iVar3 + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2);
+
+====================================================================================================
+engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_004338d0 (9 suspects)
+  File: engine/clipper.c
+====================================================================================================
+  Line 14 [concat_reconstruction]: iVar4 = (int)(CONCAT44((int)uVar3 >> 1,(uint)((uVar3 & 1) != 0) << 0x1f) / (longlong)iVar4);
+  Line 26 [carry_arith_idiom]: iVar2 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) +
+  Line 37 [carry_arith_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + iVar2;
+  Line 40 [carry_arith_idiom]: output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->r;
+  Line 43 [carry_arith_idiom]: output->g = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->g;
+  Line 46 [carry_arith_idiom]: output->b = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->b;
+  Line 49 [carry_arith_idiom]: output->u = v1->u + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);
+  Line 52 [carry_arith_idiom]: output->v = v1->v + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);
+  Line 55 [carry_arith_idiom]: output->a = v1->a + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);
+
+====================================================================================================
+engine_clipper.c_interpolateVertexLeftClip_FUN_00431630 (7 suspects)
+  File: engine/clipper.c
+====================================================================================================
+  Line 14 [concat_reconstruction]: iVar4 = (int)(CONCAT44((int)uVar3 >> 1,(uint)((uVar3 & 1) != 0) << 0x1f) / (longlong)iVar4);
+  Line 26 [carry_arith_idiom]: iVar2 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) +
+  Line 35 [carry_arith_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) +
+  Line 39 [carry_arith_idiom]: output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->r;
+  Line 42 [carry_arith_idiom]: output->a = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->a;
+  Line 45 [carry_arith_idiom]: output->u = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->u;
+  Line 50 [carry_arith_idiom]: output->v = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + iVar4;
+
+====================================================================================================
+engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_004337a0 (9 suspects)
+  File: engine/clipper.c
+====================================================================================================
+  Line 16 [concat_reconstruction]: iVar3 = (int)(CONCAT44((int)uVar4 >> 1,(uint)((uVar4 & 1) != 0) << 0x1f) / (longlong)iVar2);
+  Line 28 [carry_arith_idiom]: iVar2 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) +
+  Line 38 [carry_arith_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) + iVar2;
+  Line 41 [carry_arith_idiom]: output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) + v1->r;
+  Line 44 [carry_arith_idiom]: output->g = v1->g + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
+  Line 47 [carry_arith_idiom]: output->b = v1->b + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
+  Line 50 [carry_arith_idiom]: output->u = v1->u + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
+  Line 53 [carry_arith_idiom]: output->v = v1->v + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
+  Line 56 [carry_arith_idiom]: output->a = v1->a + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
+
+====================================================================================================
+engine_clipper.c_interpolateVertexRightClip_FUN_00431530 (7 suspects)
+  File: engine/clipper.c
+====================================================================================================
+  Line 16 [concat_reconstruction]: iVar3 = (int)(CONCAT44((int)uVar2 >> 1,(uint)((uVar2 & 1) != 0) << 0x1f) / (longlong)iVar4);
+  Line 28 [carry_arith_idiom]: iVar4 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) +
+  Line 36 [carry_arith_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) +
+  Line 40 [carry_arith_idiom]: output->u = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->u;
+  Line 43 [carry_arith_idiom]: output->v = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->v;
+  Line 46 [carry_arith_idiom]: output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->r;
+  Line 51 [carry_arith_idiom]: output->a = iVar3 + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2);
+
+====================================================================================================
+engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_00433a00 (9 suspects)
+  File: engine/clipper.c
+====================================================================================================
+  Line 16 [concat_reconstruction]: iVar3 = (int)(CONCAT44((int)uVar4 >> 1,(uint)((uVar4 & 1) != 0) << 0x1f) / (longlong)iVar2);
+  Line 28 [carry_arith_idiom]: iVar2 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) +
+  Line 38 [carry_arith_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) + iVar2;
+  Line 41 [carry_arith_idiom]: output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) + v1->r;
+  Line 44 [carry_arith_idiom]: output->g = v1->g + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
+  Line 47 [carry_arith_idiom]: output->b = v1->b + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
+  Line 50 [carry_arith_idiom]: output->u = v1->u + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
+  Line 53 [carry_arith_idiom]: output->v = v1->v + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
+  Line 56 [carry_arith_idiom]: output->a = v1->a + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
+
+====================================================================================================
+engine_clipper.c_interpolateVertexTopClip_FUN_00431730 (7 suspects)
+  File: engine/clipper.c
+====================================================================================================
+  Line 16 [concat_reconstruction]: iVar3 = (int)(CONCAT44((int)uVar2 >> 1,(uint)((uVar2 & 1) != 0) << 0x1f) / (longlong)iVar4);
+  Line 28 [carry_arith_idiom]: iVar4 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) +
+  Line 36 [carry_arith_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) +
+  Line 40 [carry_arith_idiom]: output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->r;
+  Line 43 [carry_arith_idiom]: output->a = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->a;
+  Line 46 [carry_arith_idiom]: output->u = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->u;
+  Line 51 [carry_arith_idiom]: output->v = iVar3 + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2);
 
 ====================================================================================================
 engine_clipper.c_normalizeClippedVertices_FUN_00432150 (3 suspects)
@@ -26870,12 +26851,6 @@ engine_clipper.c_perspectiveDivideVertices_FUN_00434160 (3 suspects)
   Line 11 [undefined_data]: piVar3 = &DAT_00766c74;
   Line 13 [undefined_data]: if (0 < DAT_00766c70) {
   Line 43 [undefined_data]: } while (iVar4 < DAT_00766c70);
-
-====================================================================================================
-engine_clipper.c_setNearPlaneDistance_FUN_00431500 (1 suspect)
-  File: engine/clipper.c
-====================================================================================================
-  Line 8 [undefined_data]: DAT_005ad284 = distance;
 
 ====================================================================================================
 engine_console.cpp_CConsole_printf_FUN_0043ac60 (2 suspects)

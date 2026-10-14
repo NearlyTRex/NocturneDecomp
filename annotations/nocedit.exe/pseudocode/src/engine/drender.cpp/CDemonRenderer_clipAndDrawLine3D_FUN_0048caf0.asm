@@ -27,10 +27,10 @@
 ;
 ; Called Functions:
 ;   engine_2d.c_drawLine3D_FUN_00401320
-;   engine_clipper.c_interpolateVertexBottomClip_FUN_00435c00
-;   engine_clipper.c_interpolateVertexLeftClip_FUN_00435a00
-;   engine_clipper.c_interpolateVertexRightClip_FUN_00435b00
-;   engine_clipper.c_interpolateVertexTopClip_FUN_00435d00
+;   engine_clipper.c_interpolateVertexBottomClip_FUN_00435d00
+;   engine_clipper.c_interpolateVertexLeftClip_FUN_00435b00
+;   engine_clipper.c_interpolateVertexRightClip_FUN_00435a00
+;   engine_clipper.c_interpolateVertexTopClip_FUN_00435c00
 ;   engine_matrix.c_projectCachedPointUnchecked_FUN_0050ce60
 ;   engine_prim.c_replaceWWithDepth_FUN_00552110
 ;
@@ -76,8 +76,8 @@ section .text
     PUSH EAX                            ; 0048cb7b
     LEA EDI,[ESP + 0xc]                 ; 0048cb7c
     LEA ESI,[ESP + 0x3c]                ; 0048cb80
-    CALL engine_clipper.c_interpolateVertexLeftClip_FUN_00435a00 ; 0048cb84
-        ;   XREF to: 00435a00 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexLeftClip_FUN_00435a00(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
+    CALL engine_clipper.c_interpolateVertexRightClip_FUN_00435a00 ; 0048cb84
+        ;   XREF to: 00435a00 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexRightClip_FUN_00435a00(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     JMP 0x03fc0803                      ; 0048cb89
         ;   XREF to: 03fc0803 (UNCONDITIONAL_JUMP)  ; LAB_03fc0803
     MOV EAX,dword ptr [ESP + 0x8]       ; 0048cb93
@@ -95,8 +95,8 @@ section .text
     PUSH EAX                            ; 0048cbae
     LEA EDI,[ESP + 0xc]                 ; 0048cbaf
     LEA ESI,[ESP + 0x3c]                ; 0048cbb3
-    CALL engine_clipper.c_interpolateVertexRightClip_FUN_00435b00 ; 0048cbb7
-        ;   XREF to: 00435b00 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexRightClip_FUN_00435b00(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
+    CALL engine_clipper.c_interpolateVertexLeftClip_FUN_00435b00 ; 0048cbb7
+        ;   XREF to: 00435b00 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexLeftClip_FUN_00435b00(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     JMP 0x03fc085e                      ; 0048cbbc
         ;   XREF to: 03fc085e (UNCONDITIONAL_JUMP)  ; LAB_03fc085e
     MOV EAX,dword ptr [ESP + 0x4]       ; 0048cbc6
@@ -112,8 +112,8 @@ section .text
     PUSH EAX                            ; 0048cbde
     LEA EDI,[ESP + 0xc]                 ; 0048cbdf
     LEA ESI,[ESP + 0x3c]                ; 0048cbe3
-    CALL engine_clipper.c_interpolateVertexBottomClip_FUN_00435c00 ; 0048cbe7
-        ;   XREF to: 00435c00 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexBottomClip_FUN_00435c00(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
+    CALL engine_clipper.c_interpolateVertexTopClip_FUN_00435c00 ; 0048cbe7
+        ;   XREF to: 00435c00 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexTopClip_FUN_00435c00(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     JMP 0x03fc08b9                      ; 0048cbec
         ;   XREF to: 03fc08b9 (UNCONDITIONAL_JUMP)  ; LAB_03fc08b9
     MOV EAX,dword ptr [ESP + 0x8]       ; 0048cbf6
@@ -131,8 +131,8 @@ section .text
     PUSH EAX                            ; 0048cc12
     LEA EDI,[ESP + 0xc]                 ; 0048cc13
     LEA ESI,[ESP + 0x3c]                ; 0048cc17
-    CALL engine_clipper.c_interpolateVertexTopClip_FUN_00435d00 ; 0048cc1b
-        ;   XREF to: 00435d00 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexTopClip_FUN_00435d00(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
+    CALL engine_clipper.c_interpolateVertexBottomClip_FUN_00435d00 ; 0048cc1b
+        ;   XREF to: 00435d00 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexBottomClip_FUN_00435d00(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     JMP 0x03fc0914                      ; 0048cc20
         ;   XREF to: 03fc0914 (UNCONDITIONAL_JUMP)  ; LAB_03fc0914
     MOV EAX,dword ptr [ESP + 0x60]      ; 0048cc2a
@@ -148,8 +148,8 @@ section .text
     PUSH EAX                            ; 0048cc42
     LEA EDI,[ESP + 0x6c]                ; 0048cc43
     LEA ESI,[ESP + 0x3c]                ; 0048cc47
-    CALL engine_clipper.c_interpolateVertexLeftClip_FUN_00435a00 ; 0048cc4b
-        ;   XREF to: 00435a00 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexLeftClip_FUN_00435a00(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
+    CALL engine_clipper.c_interpolateVertexRightClip_FUN_00435a00 ; 0048cc4b
+        ;   XREF to: 00435a00 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexRightClip_FUN_00435a00(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     JMP 0x03fc096f                      ; 0048cc50
         ;   XREF to: 03fc096f (UNCONDITIONAL_JUMP)  ; LAB_03fc096f
     MOV EAX,dword ptr [ESP + 0x68]      ; 0048cc5a
@@ -167,8 +167,8 @@ section .text
     PUSH EAX                            ; 0048cc76
     LEA EDI,[ESP + 0x6c]                ; 0048cc77
     LEA ESI,[ESP + 0x3c]                ; 0048cc7b
-    CALL engine_clipper.c_interpolateVertexRightClip_FUN_00435b00 ; 0048cc7f
-        ;   XREF to: 00435b00 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexRightClip_FUN_00435b00(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
+    CALL engine_clipper.c_interpolateVertexLeftClip_FUN_00435b00 ; 0048cc7f
+        ;   XREF to: 00435b00 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexLeftClip_FUN_00435b00(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     JMP 0x03fc09ca                      ; 0048cc84
         ;   XREF to: 03fc09ca (UNCONDITIONAL_JUMP)  ; LAB_03fc09ca
     MOV EAX,dword ptr [ESP + 0x64]      ; 0048cc8e
@@ -184,8 +184,8 @@ section .text
     PUSH EAX                            ; 0048cca6
     LEA EDI,[ESP + 0x6c]                ; 0048cca7
     LEA ESI,[ESP + 0x3c]                ; 0048ccab
-    CALL engine_clipper.c_interpolateVertexBottomClip_FUN_00435c00 ; 0048ccaf
-        ;   XREF to: 00435c00 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexBottomClip_FUN_00435c00(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
+    CALL engine_clipper.c_interpolateVertexTopClip_FUN_00435c00 ; 0048ccaf
+        ;   XREF to: 00435c00 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexTopClip_FUN_00435c00(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     JMP 0x03fc0a25                      ; 0048ccb4
         ;   XREF to: 03fc0a25 (UNCONDITIONAL_JUMP)  ; LAB_03fc0a25
     MOV EAX,dword ptr [ESP + 0x68]      ; 0048ccbe
@@ -203,8 +203,8 @@ section .text
     PUSH EAX                            ; 0048ccda
     LEA EDI,[ESP + 0x6c]                ; 0048ccdb
     LEA ESI,[ESP + 0x3c]                ; 0048ccdf
-    CALL engine_clipper.c_interpolateVertexTopClip_FUN_00435d00 ; 0048cce3
-        ;   XREF to: 00435d00 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexTopClip_FUN_00435d00(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
+    CALL engine_clipper.c_interpolateVertexBottomClip_FUN_00435d00 ; 0048cce3
+        ;   XREF to: 00435d00 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexBottomClip_FUN_00435d00(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     JMP 0x03fc0a80                      ; 0048cce8
         ;   XREF to: 03fc0a80 (UNCONDITIONAL_JUMP)  ; LAB_03fc0a80
     INC EBX                             ; 0048ccf2

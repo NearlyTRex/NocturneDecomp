@@ -156,14 +156,14 @@ void __cdecl engine_clipper_c_clipPolygonToViewport_FUN_00438420(int vertex_coun
               g_OutputVertexCount = g_OutputVertexCount + 1;
               break;
             case 1:
-              engine_clipper_c_interpolateVertexLeftClipAdvanced_FUN_00437230
+              engine_clipper_c_interpolateVertexRightClipAdvanced_FUN_00437230
                         (pSVar12,pSVar10,g_ClipperOutputBuffer + g_OutputVertexCount);
               g_OutputVertexCount = g_OutputVertexCount + 1;
               break;
             case 2:
               g_ClipperOutputBuffer[g_OutputVertexCount] = *pSVar10;
               g_OutputVertexCount = g_OutputVertexCount + 1;
-              engine_clipper_c_interpolateVertexLeftClipAdvanced_FUN_00437230
+              engine_clipper_c_interpolateVertexRightClipAdvanced_FUN_00437230
                         (pSVar10,pSVar12,g_ClipperOutputBuffer + g_OutputVertexCount);
               g_OutputVertexCount = g_OutputVertexCount + 1;
             }
@@ -193,14 +193,14 @@ void __cdecl engine_clipper_c_clipPolygonToViewport_FUN_00438420(int vertex_coun
                 g_TempVertexCount = g_TempVertexCount + 1;
                 break;
               case 1:
-                engine_clipper_c_interpolateVertexRightClipAdvanced_FUN_00437360
+                engine_clipper_c_interpolateVertexLeftClipAdvanced_FUN_00437360
                           (pSVar12,pSVar10,g_ClipperWorkingBuffer + g_TempVertexCount);
                 g_TempVertexCount = g_TempVertexCount + 1;
                 break;
               case 2:
                 g_ClipperWorkingBuffer[g_TempVertexCount] = *pSVar10;
                 g_TempVertexCount = g_TempVertexCount + 1;
-                engine_clipper_c_interpolateVertexRightClipAdvanced_FUN_00437360
+                engine_clipper_c_interpolateVertexLeftClipAdvanced_FUN_00437360
                           (pSVar10,pSVar12,g_ClipperWorkingBuffer + g_TempVertexCount);
                 g_TempVertexCount = g_TempVertexCount + 1;
               }
@@ -229,7 +229,7 @@ void __cdecl engine_clipper_c_clipPolygonToViewport_FUN_00438420(int vertex_coun
                   g_IntermediateVertexCount = g_IntermediateVertexCount + 1;
                   break;
                 case 1:
-                  engine_clipper_c_interpolateVertexBottomClipAdvanced_FUN_00437490
+                  engine_clipper_c_interpolateVertexTopClipAdvanced_FUN_00437490
                             (g_ClipperWorkingBuffer + uVar8,pSVar10,
                              g_ClipperIntermediateBuffer + g_IntermediateVertexCount);
                   g_IntermediateVertexCount = g_IntermediateVertexCount + 1;
@@ -237,7 +237,7 @@ void __cdecl engine_clipper_c_clipPolygonToViewport_FUN_00438420(int vertex_coun
                 case 2:
                   g_ClipperIntermediateBuffer[g_IntermediateVertexCount] = *pSVar10;
                   g_IntermediateVertexCount = g_IntermediateVertexCount + 1;
-                  engine_clipper_c_interpolateVertexBottomClipAdvanced_FUN_00437490
+                  engine_clipper_c_interpolateVertexTopClipAdvanced_FUN_00437490
                             (pSVar10,g_ClipperWorkingBuffer + uVar8,
                              g_ClipperIntermediateBuffer + g_IntermediateVertexCount);
                   g_IntermediateVertexCount = g_IntermediateVertexCount + 1;
@@ -267,7 +267,7 @@ void __cdecl engine_clipper_c_clipPolygonToViewport_FUN_00438420(int vertex_coun
                     g_ClippedVertexCount = g_ClippedVertexCount + 1;
                     break;
                   case 1:
-                    engine_clipper_c_interpolateVertexTopClipAdvanced_FUN_004375c0
+                    engine_clipper_c_interpolateVertexBottomClipAdvanced_FUN_004375c0
                               (g_ClipperIntermediateBuffer + uVar8,pSVar10,
                                g_ClippedVertexBuffer + g_ClippedVertexCount);
                     g_ClippedVertexCount = g_ClippedVertexCount + 1;
@@ -275,7 +275,7 @@ void __cdecl engine_clipper_c_clipPolygonToViewport_FUN_00438420(int vertex_coun
                   case 2:
                     g_ClippedVertexBuffer[g_ClippedVertexCount] = *pSVar10;
                     g_ClippedVertexCount = g_ClippedVertexCount + 1;
-                    engine_clipper_c_interpolateVertexTopClipAdvanced_FUN_004375c0
+                    engine_clipper_c_interpolateVertexBottomClipAdvanced_FUN_004375c0
                               (pSVar10,g_ClipperIntermediateBuffer + uVar8,
                                g_ClippedVertexBuffer + g_ClippedVertexCount);
                     g_ClippedVertexCount = g_ClippedVertexCount + 1;

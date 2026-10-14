@@ -34,10 +34,10 @@
 ;   ... and 38 more
 ;
 ; Called Functions:
-;   engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00433a00
-;   engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_004337a0
-;   engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_004338d0
-;   engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_00433b30
+;   engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00433b30
+;   engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_004338d0
+;   engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_004337a0
+;   engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_00433a00
 ;   engine_prim.c_calculateTriangleWindingOrder_FUN_004f9a10
 ;   engine_special.cpp_drawPolygon2_FUN_00532650
 ;
@@ -578,8 +578,8 @@ section .text
     PUSH EAX                            ; 0043472a | DAT_00767b4c
     PUSH EDX                            ; 0043472b | DAT_0076817c
     PUSH EBP                            ; 0043472c
-    CALL engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_004337a0 ; 0043472d
-        ;   XREF to: 004337a0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_004337a0(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
+    CALL engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_004337a0 ; 0043472d
+        ;   XREF to: 004337a0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_004337a0(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     MOV ESI,dword ptr [0x00767b40]      ; 00434732 | DAT_00767b40
     INC ESI                             ; 00434738
     ADD ESP,0xc                         ; 00434739
@@ -607,8 +607,8 @@ section .text
     PUSH EAX                            ; 00434780 | DAT_00767b7c
     PUSH EBP                            ; 00434781
     PUSH EDX                            ; 00434782 | DAT_0076817c
-    CALL engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_004337a0 ; 00434783
-        ;   XREF to: 004337a0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_004337a0(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
+    CALL engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_004337a0 ; 00434783
+        ;   XREF to: 004337a0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_004337a0(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     MOV EDI,dword ptr [0x00767b40]      ; 00434788 | DAT_00767b40
     INC EDI                             ; 0043478e
     ADD ESP,0xc                         ; 0043478f
@@ -621,8 +621,8 @@ section .text
     PUSH EAX                            ; 004347a9 | DAT_0076874c
     PUSH EDX                            ; 004347aa | DAT_00767b4c
     PUSH EBP                            ; 004347ab
-    CALL engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_004338d0 ; 004347ac
-        ;   XREF to: 004338d0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_004338d0(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
+    CALL engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_004338d0 ; 004347ac
+        ;   XREF to: 004338d0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_004338d0(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     MOV ESI,dword ptr [0x00767b44]      ; 004347b1 | DAT_00767b44
     INC ESI                             ; 004347b7
     ADD ESP,0xc                         ; 004347b8
@@ -650,8 +650,8 @@ section .text
     PUSH EAX                            ; 004347ff | DAT_0076877c
     PUSH EBP                            ; 00434800
     PUSH EDX                            ; 00434801 | DAT_00767b4c
-    CALL engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_004338d0 ; 00434802
-        ;   XREF to: 004338d0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_004338d0(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
+    CALL engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_004338d0 ; 00434802
+        ;   XREF to: 004338d0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_004338d0(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     MOV EDI,dword ptr [0x00767b44]      ; 00434807 | DAT_00767b44
     INC EDI                             ; 0043480d
     ADD ESP,0xc                         ; 0043480e
@@ -664,8 +664,8 @@ section .text
     PUSH EAX                            ; 00434828 | DAT_00768d4c
     PUSH EDX                            ; 00434829 | DAT_0076877c
     PUSH EBP                            ; 0043482a
-    CALL engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00433a00 ; 0043482b
-        ;   XREF to: 00433a00 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00433a00(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
+    CALL engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_00433a00 ; 0043482b
+        ;   XREF to: 00433a00 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_00433a00(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     MOV ESI,dword ptr [0x00767b48]      ; 00434830 | DAT_00767b48
     INC ESI                             ; 00434836
     ADD ESP,0xc                         ; 00434837
@@ -693,8 +693,8 @@ section .text
     PUSH EAX                            ; 0043487e | DAT_00768d7c
     PUSH EBP                            ; 0043487f
     PUSH EDX                            ; 00434880 | DAT_0076877c
-    CALL engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00433a00 ; 00434881
-        ;   XREF to: 00433a00 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00433a00(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
+    CALL engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_00433a00 ; 00434881
+        ;   XREF to: 00433a00 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_00433a00(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     MOV EDI,dword ptr [0x00767b48]      ; 00434886 | DAT_00767b48
     INC EDI                             ; 0043488c
     ADD ESP,0xc                         ; 0043488d
@@ -707,8 +707,8 @@ section .text
     PUSH EAX                            ; 004348a7 | DAT_00766c74
     PUSH EDX                            ; 004348a8 | DAT_00768d4c
     PUSH EBP                            ; 004348a9
-    CALL engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_00433b30 ; 004348aa
-        ;   XREF to: 00433b30 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_00433b30(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
+    CALL engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00433b30 ; 004348aa
+        ;   XREF to: 00433b30 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00433b30(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     MOV ESI,dword ptr [0x00766c70]      ; 004348af | DAT_00766c70
     INC ESI                             ; 004348b5
     ADD ESP,0xc                         ; 004348b6
@@ -736,8 +736,8 @@ section .text
     PUSH EAX                            ; 004348fd | DAT_00766ca4
     PUSH EBP                            ; 004348fe
     PUSH EDX                            ; 004348ff | DAT_00768d4c
-    CALL engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_00433b30 ; 00434900
-        ;   XREF to: 00433b30 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_00433b30(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
+    CALL engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00433b30 ; 00434900
+        ;   XREF to: 00433b30 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00433b30(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     MOV EDI,dword ptr [0x00766c70]      ; 00434905 | DAT_00766c70
     INC EDI                             ; 0043490b
     ADD ESP,0xc                         ; 0043490c

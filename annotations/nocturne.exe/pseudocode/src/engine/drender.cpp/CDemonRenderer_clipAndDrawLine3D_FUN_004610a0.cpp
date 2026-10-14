@@ -40,7 +40,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0(CD
     iVar1 = 0;
     do {
       if (SStack_a0.projected_vertex.transformed_z < SStack_a0.projected_vertex.transformed_x) {
-        engine_clipper_c_interpolateVertexLeftClip_FUN_00431530(&SStack_40,&SStack_a0,&SStack_70);
+        engine_clipper_c_interpolateVertexRightClip_FUN_00431530(&SStack_40,&SStack_a0,&SStack_70);
         pSVar3 = &SStack_70;
         pSVar4 = &SStack_a0;
         for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -51,7 +51,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0(CD
       }
       if (-SStack_a0.projected_vertex.transformed_x != SStack_a0.projected_vertex.transformed_z &&
           SStack_a0.projected_vertex.transformed_x <= -SStack_a0.projected_vertex.transformed_z) {
-        engine_clipper_c_interpolateVertexRightClip_FUN_00431630(&SStack_40,&SStack_a0,&SStack_70);
+        engine_clipper_c_interpolateVertexLeftClip_FUN_00431630(&SStack_40,&SStack_a0,&SStack_70);
         pSVar3 = &SStack_70;
         pSVar4 = &SStack_a0;
         for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -61,7 +61,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0(CD
         }
       }
       if (SStack_a0.projected_vertex.transformed_z < SStack_a0.projected_vertex.transformed_y) {
-        engine_clipper_c_interpolateVertexBottomClip_FUN_00431730(&SStack_40,&SStack_a0,&SStack_70);
+        engine_clipper_c_interpolateVertexTopClip_FUN_00431730(&SStack_40,&SStack_a0,&SStack_70);
         pSVar3 = &SStack_70;
         pSVar4 = &SStack_a0;
         for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -72,7 +72,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0(CD
       }
       if (-SStack_a0.projected_vertex.transformed_y != SStack_a0.projected_vertex.transformed_z &&
           SStack_a0.projected_vertex.transformed_y <= -SStack_a0.projected_vertex.transformed_z) {
-        engine_clipper_c_interpolateVertexTopClip_FUN_00431830(&SStack_40,&SStack_a0,&SStack_70);
+        engine_clipper_c_interpolateVertexBottomClip_FUN_00431830(&SStack_40,&SStack_a0,&SStack_70);
         pSVar3 = &SStack_70;
         pSVar4 = &SStack_a0;
         for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -82,7 +82,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0(CD
         }
       }
       if (SStack_40.projected_vertex.transformed_z < SStack_40.projected_vertex.transformed_x) {
-        engine_clipper_c_interpolateVertexLeftClip_FUN_00431530(&SStack_a0,&SStack_40,&SStack_70);
+        engine_clipper_c_interpolateVertexRightClip_FUN_00431530(&SStack_a0,&SStack_40,&SStack_70);
         pSVar3 = &SStack_70;
         pSVar4 = &SStack_40;
         for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -93,7 +93,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0(CD
       }
       if (-SStack_40.projected_vertex.transformed_x != SStack_40.projected_vertex.transformed_z &&
           SStack_40.projected_vertex.transformed_x <= -SStack_40.projected_vertex.transformed_z) {
-        engine_clipper_c_interpolateVertexRightClip_FUN_00431630(&SStack_a0,&SStack_40,&SStack_70);
+        engine_clipper_c_interpolateVertexLeftClip_FUN_00431630(&SStack_a0,&SStack_40,&SStack_70);
         pSVar3 = &SStack_70;
         pSVar4 = &SStack_40;
         for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -103,7 +103,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0(CD
         }
       }
       if (SStack_40.projected_vertex.transformed_z < SStack_40.projected_vertex.transformed_y) {
-        engine_clipper_c_interpolateVertexBottomClip_FUN_00431730(&SStack_a0,&SStack_40,&SStack_70);
+        engine_clipper_c_interpolateVertexTopClip_FUN_00431730(&SStack_a0,&SStack_40,&SStack_70);
         pSVar3 = &SStack_70;
         pSVar4 = &SStack_40;
         for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -114,7 +114,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0(CD
       }
       if (-SStack_40.projected_vertex.transformed_y != SStack_40.projected_vertex.transformed_z &&
           SStack_40.projected_vertex.transformed_y <= -SStack_40.projected_vertex.transformed_z) {
-        engine_clipper_c_interpolateVertexTopClip_FUN_00431830(&SStack_a0,&SStack_40,&SStack_70);
+        engine_clipper_c_interpolateVertexBottomClip_FUN_00431830(&SStack_a0,&SStack_40,&SStack_70);
         pSVar3 = &SStack_70;
         pSVar4 = &SStack_40;
         for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {

@@ -61,11 +61,11 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
-;   engine_clipper.c_interpolateVertexBottomClip_FUN_00431730
-;   engine_clipper.c_interpolateVertexLeftClip_FUN_00431530
-;   engine_clipper.c_interpolateVertexNearClip_FUN_00431930
-;   engine_clipper.c_interpolateVertexRightClip_FUN_00431630
-;   engine_clipper.c_interpolateVertexTopClip_FUN_00431830
+;   engine_clipper.c_interpolateVertexBottomClip_FUN_00431830
+;   engine_clipper.c_interpolateVertexFarClip_FUN_00431930
+;   engine_clipper.c_interpolateVertexLeftClip_FUN_00431630
+;   engine_clipper.c_interpolateVertexRightClip_FUN_00431530
+;   engine_clipper.c_interpolateVertexTopClip_FUN_00431730
 ;   engine_prim.c_calculateTriangleWindingOrder_FUN_004f9a10
 ;   engine_prim.c_renderIndexedPolygonSoftware_FUN_004fa2e0
 ;   engine_prim.c_renderPolygonSoftware_FUN_004f9dd0
@@ -582,7 +582,7 @@ section .text
         ;   XREF to: 004331ae (CONDITIONAL_JUMP)  ; LAB_004331ae
     LEA EAX,[EAX]                       ; 004331f8
     MOV EDX,EDX                         ; 004331fe
-    MOV EBX,dword ptr [0x005ad284]      ; 00433200 | DAT_005ad284
+    MOV EBX,dword ptr [0x005ad284]      ; 00433200 | g_FarPlaneDistance
         ;   Label: LAB_00433200
     XOR ECX,ECX                         ; 00433206
     TEST EBX,EBX                        ; 00433208
@@ -644,8 +644,8 @@ section .text
     PUSH EDI                            ; 004332aa
     INC ESI                             ; 004332ab
     MOV dword ptr [EAX],EDX             ; 004332ac | DAT_007678f8
-    CALL engine_clipper.c_interpolateVertexLeftClip_FUN_00431530 ; 004332ae
-        ;   XREF to: 00431530 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexLeftClip_FUN_00431530(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
+    CALL engine_clipper.c_interpolateVertexRightClip_FUN_00431530 ; 004332ae
+        ;   XREF to: 00431530 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexRightClip_FUN_00431530(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     ADD ESP,0xc                         ; 004332b3
     JMP 0x00432f9a                      ; 004332b6
         ;   XREF to: 00432f9a (UNCONDITIONAL_JUMP)  ; caseD_3
@@ -681,8 +681,8 @@ section .text
     PUSH EBX                            ; 00433321
     INC ESI                             ; 00433322
     MOV dword ptr [EAX],EDX             ; 00433323 | DAT_007678f8
-    CALL engine_clipper.c_interpolateVertexLeftClip_FUN_00431530 ; 00433325
-        ;   XREF to: 00431530 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexLeftClip_FUN_00431530(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
+    CALL engine_clipper.c_interpolateVertexRightClip_FUN_00431530 ; 00433325
+        ;   XREF to: 00431530 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexRightClip_FUN_00431530(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     ADD ESP,0xc                         ; 0043332a
     JMP 0x00432f9a                      ; 0043332d
         ;   XREF to: 00432f9a (UNCONDITIONAL_JUMP)  ; caseD_3
@@ -709,8 +709,8 @@ section .text
     PUSH ESI                            ; 0043336f
     MOV [0x00767b38],EAX                ; 00433370 | DAT_00767b38
     MOV dword ptr [EBP + EBX*0x4 + -0x4],EDX ; 00433375 | DAT_007678f8
-    CALL engine_clipper.c_interpolateVertexRightClip_FUN_00431630 ; 00433379
-        ;   XREF to: 00431630 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexRightClip_FUN_00431630(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
+    CALL engine_clipper.c_interpolateVertexLeftClip_FUN_00431630 ; 00433379
+        ;   XREF to: 00431630 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexLeftClip_FUN_00431630(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     ADD ESP,0xc                         ; 0043337e
     JMP 0x00433029                      ; 00433381
         ;   XREF to: 00433029 (UNCONDITIONAL_JUMP)  ; caseD_3
@@ -740,8 +740,8 @@ section .text
     PUSH EDI                            ; 004333ca
     MOV [0x00767b38],EAX                ; 004333cb | DAT_00767b38
     MOV dword ptr [EBP + EBX*0x4 + -0x4],EDX ; 004333d0 | DAT_007678f8
-    CALL engine_clipper.c_interpolateVertexRightClip_FUN_00431630 ; 004333d4
-        ;   XREF to: 00431630 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexRightClip_FUN_00431630(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
+    CALL engine_clipper.c_interpolateVertexLeftClip_FUN_00431630 ; 004333d4
+        ;   XREF to: 00431630 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexLeftClip_FUN_00431630(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     ADD ESP,0xc                         ; 004333d9
     JMP 0x00433029                      ; 004333dc
         ;   XREF to: 00433029 (UNCONDITIONAL_JUMP)  ; caseD_3
@@ -768,8 +768,8 @@ section .text
     PUSH EBX                            ; 0043341e
     MOV [0x00767b38],EAX                ; 0043341f | DAT_00767b38
     MOV dword ptr [EBP + ESI*0x4 + -0x4],EDX ; 00433424 | DAT_007678f8
-    CALL engine_clipper.c_interpolateVertexBottomClip_FUN_00431730 ; 00433428
-        ;   XREF to: 00431730 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexBottomClip_FUN_00431730(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
+    CALL engine_clipper.c_interpolateVertexTopClip_FUN_00431730 ; 00433428
+        ;   XREF to: 00431730 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexTopClip_FUN_00431730(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     ADD ESP,0xc                         ; 0043342d
     JMP 0x004330c2                      ; 00433430
         ;   XREF to: 004330c2 (UNCONDITIONAL_JUMP)  ; caseD_3
@@ -799,8 +799,8 @@ section .text
     PUSH EDI                            ; 00433479
     MOV [0x00767b38],EAX                ; 0043347a | DAT_00767b38
     MOV dword ptr [EBP + ESI*0x4 + -0x4],EDX ; 0043347f | DAT_007678f8
-    CALL engine_clipper.c_interpolateVertexBottomClip_FUN_00431730 ; 00433483
-        ;   XREF to: 00431730 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexBottomClip_FUN_00431730(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
+    CALL engine_clipper.c_interpolateVertexTopClip_FUN_00431730 ; 00433483
+        ;   XREF to: 00431730 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexTopClip_FUN_00431730(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     ADD ESP,0xc                         ; 00433488
     JMP 0x004330c2                      ; 0043348b
         ;   XREF to: 004330c2 (UNCONDITIONAL_JUMP)  ; caseD_3
@@ -827,8 +827,8 @@ section .text
     PUSH ESI                            ; 004334cd
     MOV [0x00767b38],EAX                ; 004334ce | DAT_00767b38
     MOV dword ptr [EBP + EBX*0x4 + -0x4],EDX ; 004334d3 | DAT_007678f8
-    CALL engine_clipper.c_interpolateVertexTopClip_FUN_00431830 ; 004334d7
-        ;   XREF to: 00431830 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexTopClip_FUN_00431830(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
+    CALL engine_clipper.c_interpolateVertexBottomClip_FUN_00431830 ; 004334d7
+        ;   XREF to: 00431830 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexBottomClip_FUN_00431830(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     ADD ESP,0xc                         ; 004334dc
     JMP 0x00433165                      ; 004334df
         ;   XREF to: 00433165 (UNCONDITIONAL_JUMP)  ; caseD_3
@@ -858,8 +858,8 @@ section .text
     PUSH EDI                            ; 00433528
     MOV [0x00767b38],EAX                ; 00433529 | DAT_00767b38
     MOV dword ptr [EBP + EBX*0x4 + -0x4],EDX ; 0043352e | DAT_007678f8
-    CALL engine_clipper.c_interpolateVertexTopClip_FUN_00431830 ; 00433532
-        ;   XREF to: 00431830 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexTopClip_FUN_00431830(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
+    CALL engine_clipper.c_interpolateVertexBottomClip_FUN_00431830 ; 00433532
+        ;   XREF to: 00431830 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexBottomClip_FUN_00431830(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     ADD ESP,0xc                         ; 00433537
     JMP 0x00433165                      ; 0043353a
         ;   XREF to: 00433165 (UNCONDITIONAL_JUMP)  ; caseD_3
@@ -884,7 +884,7 @@ section .text
     CMP EAX,ESI                         ; 00433564
     JL 0x00433555                       ; 00433566
         ;   XREF to: 00433555 (CONDITIONAL_JUMP)  ; LAB_00433555
-    CMP ECX,dword ptr [0x005ad284]      ; 00433568 | DAT_005ad284
+    CMP ECX,dword ptr [0x005ad284]      ; 00433568 | g_FarPlaneDistance
         ;   Label: LAB_00433568
     JL 0x00433210                       ; 0043356e
         ;   XREF to: 00433210 (CONDITIONAL_JUMP)  ; LAB_00433210
@@ -941,7 +941,7 @@ section .text
     IMUL EAX,EAX,0x30                   ; 004335f5
         ;   Label: LAB_004335f5
     MOV EDX,0x7672f8                    ; 004335f8 | DAT_007672f8
-    MOV ESI,dword ptr [0x005ad284]      ; 004335fd | DAT_005ad284
+    MOV ESI,dword ptr [0x005ad284]      ; 004335fd | g_FarPlaneDistance
     MOV EBX,EBP                         ; 00433603
     MOV ECX,dword ptr [EBP + 0x8]       ; 00433605 | DAT_00767300 | DAT_00767330
     ADD EDX,EAX                         ; 00433608
@@ -950,7 +950,7 @@ section .text
     JL 0x00433615                       ; 0043360e
         ;   XREF to: 00433615 (CONDITIONAL_JUMP)  ; LAB_00433615
     MOV EAX,0x1                         ; 00433610
-    MOV EDI,dword ptr [0x005ad284]      ; 00433615 | DAT_005ad284
+    MOV EDI,dword ptr [0x005ad284]      ; 00433615 | g_FarPlaneDistance
         ;   Label: LAB_00433615
     CMP EDI,dword ptr [EDX + 0x8]       ; 0043361b | DAT_00767300
     JG 0x00433622                       ; 0043361e
@@ -1012,8 +1012,8 @@ section .text
     PUSH EAX                            ; 004336a4 | DAT_00766c74
     PUSH EBX                            ; 004336a5 | DAT_00767328
     PUSH EDX                            ; 004336a6
-    CALL engine_clipper.c_interpolateVertexNearClip_FUN_00431930 ; 004336a7
-        ;   XREF to: 00431930 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexNearClip_FUN_00431930(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
+    CALL engine_clipper.c_interpolateVertexFarClip_FUN_00431930 ; 004336a7
+        ;   XREF to: 00431930 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexFarClip_FUN_00431930(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     MOV EBX,dword ptr [0x00766c70]      ; 004336ac | DAT_00766c70
     INC EBX                             ; 004336b2
     ADD ESP,0xc                         ; 004336b3
@@ -1060,8 +1060,8 @@ section .text
     PUSH EAX                            ; 00433712 | DAT_00766ca4
     PUSH EDX                            ; 00433713
     PUSH EBX                            ; 00433714 | DAT_00767328
-    CALL engine_clipper.c_interpolateVertexNearClip_FUN_00431930 ; 00433715
-        ;   XREF to: 00431930 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexNearClip_FUN_00431930(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
+    CALL engine_clipper.c_interpolateVertexFarClip_FUN_00431930 ; 00433715
+        ;   XREF to: 00431930 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexFarClip_FUN_00431930(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     MOV EDI,dword ptr [0x00766c70]      ; 0043371a | DAT_00766c70
     INC EDI                             ; 00433720
     ADD ESP,0xc                         ; 00433721

@@ -7,11 +7,11 @@
 
 // GAME Constants
 #define GAME_BEEFDEAD                             0xBEEFDEAD  // -1091576147
-#define GAME_CLIP_BOTTOM                          0x80000004  // 2147483652
+#define GAME_CLIP_BOTTOM                          0x80000008  // 2147483656
 #define GAME_CLIP_LEFT                            0x80000002  // 2147483650
 #define GAME_CLIP_NEAR                            0x80000010  // 2147483664
 #define GAME_CLIP_RIGHT                           0x80000001  // 2147483649
-#define GAME_CLIP_TOP                             0x80000008  // 2147483656
+#define GAME_CLIP_TOP                             0x80000004  // 2147483652
 #define GAME_COLOR_MAGENTA_TRANSPARENT            0xFF00FF  // 16711935
 #define GAME_CONSOLE_ROW_STRIDE                   80  // 0x50
 #define GAME_DEADBEEF                             0xDEADBEEF  // -559038737

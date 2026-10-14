@@ -179,7 +179,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_co
           g_ClipperTempCount = g_ClipperTempCount + 1;
           local_cc[iVar7] = pSVar16;
           iVar7 = iVar7 + 1;
-          engine_clipper_c_interpolateVertexLeftClip_FUN_00435a00(pSVar15,pSVar11,pSVar16);
+          engine_clipper_c_interpolateVertexRightClip_FUN_00435a00(pSVar15,pSVar11,pSVar16);
           break;
         case 2:
           iVar12 = iVar7 + 1;
@@ -193,7 +193,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_co
           g_ClipperTempCount = g_ClipperTempCount + 1;
           iVar7 = iVar7 + 2;
           local_cc[iVar12] = pSVar16;
-          engine_clipper_c_interpolateVertexLeftClip_FUN_00435a00(pSVar11,pSVar15,pSVar16);
+          engine_clipper_c_interpolateVertexRightClip_FUN_00435a00(pSVar11,pSVar15,pSVar16);
         }
         local_44 = local_44 + 1;
         pSVar11 = pSVar15;
@@ -231,7 +231,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_co
             iVar10 = iVar10 + 1;
             g_ClipperTempCount = g_ClipperTempCount + 1;
             auStack_150[iVar10] = pSVar16;
-            engine_clipper_c_interpolateVertexRightClip_FUN_00435b00(pSVar15,pSVar11,pSVar16);
+            engine_clipper_c_interpolateVertexLeftClip_FUN_00435b00(pSVar15,pSVar11,pSVar16);
             break;
           case 2:
             auStack_150[iVar10 + 1] = pSVar11;
@@ -244,7 +244,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_co
             iVar10 = iVar10 + 2;
             g_ClipperTempCount = g_ClipperTempCount + 1;
             auStack_150[iVar10] = pSVar16;
-            engine_clipper_c_interpolateVertexRightClip_FUN_00435b00(pSVar11,pSVar15,pSVar16);
+            engine_clipper_c_interpolateVertexLeftClip_FUN_00435b00(pSVar11,pSVar15,pSVar16);
           }
           local_3c = local_3c + 1;
           local_24 = local_24 + 1;
@@ -284,7 +284,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_co
               iVar7 = iVar7 + 1;
               g_ClipperTempCount = g_ClipperTempCount + 1;
               local_cc[iVar7 - 1] = pSVar16;
-              engine_clipper_c_interpolateVertexBottomClip_FUN_00435c00(pSVar15,pSVar11,pSVar16);
+              engine_clipper_c_interpolateVertexTopClip_FUN_00435c00(pSVar15,pSVar11,pSVar16);
               break;
             case 2:
               local_cc[iVar7] = pSVar11;
@@ -297,7 +297,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_co
               iVar7 = iVar7 + 2;
               g_ClipperTempCount = g_ClipperTempCount + 1;
               local_cc[iVar7 - 1] = pSVar16;
-              engine_clipper_c_interpolateVertexBottomClip_FUN_00435c00(pSVar11,pSVar15,pSVar16);
+              engine_clipper_c_interpolateVertexTopClip_FUN_00435c00(pSVar11,pSVar15,pSVar16);
             }
             local_34 = local_34 + 1;
             local_20 = local_20 + 1;
@@ -337,7 +337,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_co
                 iVar10 = iVar10 + 1;
                 g_ClipperTempCount = g_ClipperTempCount + 1;
                 auStack_150[iVar10] = pSVar16;
-                engine_clipper_c_interpolateVertexTopClip_FUN_00435d00(pSVar15,pSVar11,pSVar16);
+                engine_clipper_c_interpolateVertexBottomClip_FUN_00435d00(pSVar15,pSVar11,pSVar16);
                 break;
               case 2:
                 auStack_150[iVar10 + 1] = pSVar11;
@@ -350,7 +350,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_co
                 iVar10 = iVar10 + 2;
                 g_ClipperTempCount = g_ClipperTempCount + 1;
                 auStack_150[iVar10] = pSVar16;
-                engine_clipper_c_interpolateVertexTopClip_FUN_00435d00(pSVar11,pSVar15,pSVar16);
+                engine_clipper_c_interpolateVertexBottomClip_FUN_00435d00(pSVar11,pSVar15,pSVar16);
               }
               local_2c = local_2c + 1;
               local_1c = local_1c + 1;
@@ -371,7 +371,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_co
               } while (iVar7 < g_ClippedVertexCount);
             }
             iVar7 = 0;
-            if (g_NearPlaneDistance != 0) {
+            if (g_FarPlaneDistance != 0) {
               if (0 < g_ClippedVertexCount) {
                 iVar10 = 0;
                 do {
@@ -382,7 +382,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_co
                   iVar10 = iVar10 + sizeof(SRenderVertex);
                 } while (iVar10 < g_ClippedVertexCount * sizeof(SRenderVertex));
               }
-              if (g_NearPlaneDistance <= iVar7) {
+              if (g_FarPlaneDistance <= iVar7) {
                 g_SecondaryClipVertexCount = g_ClippedVertexCount;
                 local_14 = 0;
                 memcpy(g_SecondaryClipVertexBuffer, g_ClippedVertexBuffer, g_ClippedVertexCount * sizeof(*g_SecondaryClipVertexBuffer));
@@ -394,8 +394,8 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_co
                     if (uVar8 == g_SecondaryClipVertexCount) {
                       uVar8 = uVar8 ^ g_SecondaryClipVertexCount;
                     }
-                    bVar6 = g_NearPlaneDistance <= (pSVar11->projected_vertex).transformed_z;
-                    if (g_NearPlaneDistance <=
+                    bVar6 = g_FarPlaneDistance <= (pSVar11->projected_vertex).transformed_z;
+                    if (g_FarPlaneDistance <=
                         g_SecondaryClipVertexBuffer[uVar8].projected_vertex.transformed_z) {
                       bVar6 = bVar6 | 2;
                     }
@@ -405,7 +405,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_co
                       g_ClippedVertexCount = g_ClippedVertexCount + 1;
                       break;
                     case 1:
-                      engine_clipper_c_interpolateVertexNearClip_FUN_00435e00
+                      engine_clipper_c_interpolateVertexFarClip_FUN_00435e00
                                 (g_SecondaryClipVertexBuffer + uVar8,pSVar11,
                                  g_ClippedVertexBuffer + g_ClippedVertexCount);
                       g_ClippedVertexCount = g_ClippedVertexCount + 1;
@@ -413,7 +413,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_co
                     case 2:
                       memcpy(g_ClippedVertexBuffer + g_ClippedVertexCount, pSVar11, sizeof(SRenderVertex));
                       g_ClippedVertexCount = g_ClippedVertexCount + 1;
-                      engine_clipper_c_interpolateVertexNearClip_FUN_00435e00
+                      engine_clipper_c_interpolateVertexFarClip_FUN_00435e00
                                 (pSVar11,g_SecondaryClipVertexBuffer + uVar8,
                                  g_ClippedVertexBuffer + g_ClippedVertexCount);
                       g_ClippedVertexCount = g_ClippedVertexCount + 1;

@@ -6,7 +6,7 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 203
 Total functions: 4923
-Clean functions: 2536 (51.5%)
+Clean functions: 2538 (51.6%)
 Files at 100%: 10
 Files at 90%+: 12
 Files at 50%+: 139
@@ -2693,6 +2693,34 @@ FILES BELOW 50%
            - core_dstrender.cpp_blendLightmapSharedU32toU16pNoBiasPx1MMX_FUN_00466886 (62 lines) [concat_reconstruction, nonstandard_int, undefined_data, warning_overlapping_globals]
            - core_dstrender.cpp_blendLightmapPerPxU32toU16pBB12Px2MMX_FUN_00466930 (119 lines) [concat_reconstruction, nonstandard_int, undefined_data, warning_overlapping_globals]
            - core_dstrender.cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_00466e94 (105 lines) [concat_reconstruction, nonstandard_int, pointer_cast, undefined_data, warning_overlapping_globals]
+    7.1% | engine/clipper.c
+         2/28 clean, 26 remaining
+           - engine_clipper.c_allocateClipVertex_FUN_004314b0 (12 lines) [undefined_data]
+           - engine_clipper.c_interpolateVertexRightClip_FUN_00431530 (50 lines) [carry_arith_idiom, concat_reconstruction]
+           - engine_clipper.c_interpolateVertexLeftClip_FUN_00431630 (49 lines) [carry_arith_idiom, concat_reconstruction]
+           - engine_clipper.c_interpolateVertexTopClip_FUN_00431730 (50 lines) [carry_arith_idiom, concat_reconstruction]
+           - engine_clipper.c_interpolateVertexBottomClip_FUN_00431830 (49 lines) [carry_arith_idiom, concat_reconstruction]
+           - engine_clipper.c_interpolateVertexFarClip_FUN_00431930 (52 lines) [carry_arith_idiom, concat_reconstruction]
+           - engine_clipper.c_clipPolygonRightPlane_FUN_00431a50 (64 lines) [undefined_data]
+           - engine_clipper.c_clipPolygonLeftPlane_FUN_00431b90 (64 lines) [undefined_data]
+           - engine_clipper.c_clipPolygonTopPlane_FUN_00431cd0 (64 lines) [undefined_data]
+           - engine_clipper.c_clipPolygonBottomPlane_FUN_00431e10 (64 lines) [undefined_data]
+           - engine_clipper.c_clipPolygonFarPlane_FUN_00431f50 (132 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, undefined_data, unknown_field, warning_unreachable]
+           - engine_clipper.c_normalizeClippedVertices_FUN_00432150 (43 lines) [undefined_data]
+           - engine_clipper.c_clipPolygonToViewFrustum_FUN_00432210 (575 lines) [pointer_cast, pointer_truncation, raw_address_pointer_store, shadow_pointer_walk, undefined_data, unknown_field, warning_type_propagation, warning_unreachable]
+           - engine_clipper.c_clipAndRasterize_FUN_00432cd0 (589 lines) [pointer_cast, pointer_truncation, raw_address_pointer_store, shadow_pointer_walk, undefined_data, unknown_field, warning_type_propagation, warning_unreachable]
+           - engine_clipper.c_copyMemory_FUN_00433770 (15 lines) [pointer_cast, unrolled_memcpy]
+           - engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_004337a0 (55 lines) [carry_arith_idiom, concat_reconstruction]
+           - engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_004338d0 (54 lines) [carry_arith_idiom, concat_reconstruction]
+           - engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_00433a00 (55 lines) [carry_arith_idiom, concat_reconstruction]
+           - engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00433b30 (54 lines) [carry_arith_idiom, concat_reconstruction]
+           - engine_clipper.c_clipPolygonRightPlaneGlobal_FUN_00433c70 (70 lines) [pointer_cast, pointer_truncation, undefined_data, unrolled_memcpy]
+           - engine_clipper.c_clipPolygonLeftPlaneGlobal_FUN_00433db0 (70 lines) [pointer_cast, pointer_truncation, undefined_data, unrolled_memcpy]
+           - engine_clipper.c_clipPolygonTopPlaneGlobal_FUN_00433ef0 (70 lines) [pointer_cast, pointer_truncation, undefined_data, unrolled_memcpy]
+           - engine_clipper.c_clipPolygonBottomPlaneGlobal_FUN_00434030 (70 lines) [pointer_cast, pointer_truncation, undefined_data, unrolled_memcpy]
+           - engine_clipper.c_perspectiveDivideVertices_FUN_00434160 (43 lines) [undefined_data]
+           - engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00434210 (411 lines) [pointer_cast, pointer_truncation, raw_address_pointer_store, undefined_data, unrolled_memcpy]
+           - engine_clipper.c_clipPolygonToViewport_FUN_004349a0 (425 lines) [pointer_cast, pointer_truncation, raw_address_pointer_store, undefined_data, unrolled_memcpy]
     6.5% | sound/snddx.cpp
          2/31 clean, 29 remaining
            - sound_snddx.cpp_staticInit_FUN_00529a80 (6 lines) [warning_overlapping_globals]
@@ -2761,36 +2789,6 @@ FILES BELOW 50%
          0/2 clean, 2 remaining
            - core_vecdir.cpp_staticInit_FUN_0054e480 (8 lines) [warning_overlapping_globals]
            - core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0 (29 lines) [bitcast_double_pair, extra_output]
-    0.0% | engine/clipper.c
-         0/28 clean, 28 remaining
-           - engine_clipper.c_allocateClipVertex_FUN_004314b0 (12 lines) [undefined_data]
-           - engine_clipper.c_setNearPlaneDistance_FUN_00431500 (8 lines) [undefined_data]
-           - engine_clipper.c_getNearPlaneDistance_FUN_00431520 (4 lines) [undefined_data]
-           - engine_clipper.c_interpolateVertexLeftClip_FUN_00431530 (50 lines) [carry_arith_idiom, concat_reconstruction]
-           - engine_clipper.c_interpolateVertexRightClip_FUN_00431630 (49 lines) [carry_arith_idiom, concat_reconstruction]
-           - engine_clipper.c_interpolateVertexBottomClip_FUN_00431730 (50 lines) [carry_arith_idiom, concat_reconstruction]
-           - engine_clipper.c_interpolateVertexTopClip_FUN_00431830 (49 lines) [carry_arith_idiom, concat_reconstruction]
-           - engine_clipper.c_interpolateVertexNearClip_FUN_00431930 (52 lines) [carry_arith_idiom, concat_reconstruction, undefined_data]
-           - engine_clipper.c_clipPolygonLeftPlane_FUN_00431a50 (64 lines) [undefined_data]
-           - engine_clipper.c_clipPolygonRightPlane_FUN_00431b90 (64 lines) [undefined_data]
-           - engine_clipper.c_clipPolygonBottomPlane_FUN_00431cd0 (64 lines) [undefined_data]
-           - engine_clipper.c_clipPolygonTopPlane_FUN_00431e10 (64 lines) [undefined_data]
-           - engine_clipper.c_clipPolygonNearPlane_FUN_00431f50 (132 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, undefined_data, unknown_field, warning_unreachable]
-           - engine_clipper.c_normalizeClippedVertices_FUN_00432150 (43 lines) [undefined_data]
-           - engine_clipper.c_clipPolygonToViewFrustum_FUN_00432210 (575 lines) [pointer_cast, pointer_truncation, raw_address_pointer_store, shadow_pointer_walk, undefined_data, unknown_field, warning_type_propagation, warning_unreachable]
-           - engine_clipper.c_clipAndRasterize_FUN_00432cd0 (589 lines) [pointer_cast, pointer_truncation, raw_address_pointer_store, shadow_pointer_walk, undefined_data, unknown_field, warning_type_propagation, warning_unreachable]
-           - engine_clipper.c_copyMemory_FUN_00433770 (15 lines) [pointer_cast, unrolled_memcpy]
-           - engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_004337a0 (55 lines) [carry_arith_idiom, concat_reconstruction]
-           - engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_004338d0 (54 lines) [carry_arith_idiom, concat_reconstruction]
-           - engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00433a00 (55 lines) [carry_arith_idiom, concat_reconstruction]
-           - engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_00433b30 (54 lines) [carry_arith_idiom, concat_reconstruction]
-           - engine_clipper.c_clipPolygonLeftPlaneGlobal_FUN_00433c70 (70 lines) [pointer_cast, pointer_truncation, undefined_data, unrolled_memcpy]
-           - engine_clipper.c_clipPolygonRightPlaneGlobal_FUN_00433db0 (70 lines) [pointer_cast, pointer_truncation, undefined_data, unrolled_memcpy]
-           - engine_clipper.c_clipPolygonHorizontalPlanes_FUN_00433ef0 (70 lines) [pointer_cast, pointer_truncation, undefined_data, unrolled_memcpy]
-           - engine_clipper.c_clipPolygonVerticalPlanes_FUN_00434030 (70 lines) [pointer_cast, pointer_truncation, undefined_data, unrolled_memcpy]
-           - engine_clipper.c_perspectiveDivideVertices_FUN_00434160 (43 lines) [undefined_data]
-           - engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00434210 (411 lines) [pointer_cast, pointer_truncation, raw_address_pointer_store, undefined_data, unrolled_memcpy]
-           - engine_clipper.c_clipPolygonToViewport_FUN_004349a0 (425 lines) [pointer_cast, pointer_truncation, raw_address_pointer_store, undefined_data, unrolled_memcpy]
     0.0% | engine/fpoly.c
          0/3 clean, 3 remaining
            - engine_fpoly.c_addPolygonEdge_FUN_004940e0 (65 lines) [undefined_data, warning_overlapping_globals]

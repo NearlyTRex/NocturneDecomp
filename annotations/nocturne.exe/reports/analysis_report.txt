@@ -7,11 +7,11 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 4923
-Clean functions: 2536 (51.5%)
-Functions with suspects: 2387 (48.5%)
+Clean functions: 2538 (51.6%)
+Functions with suspects: 2385 (48.4%)
 
-Total suspect patterns: 20962
-Average suspects per function: 4.26
+Total suspect patterns: 20947
+Average suspects per function: 4.25
 
 Virtual files: 203 total, 10 at 100%, 12 at 90%+
 
@@ -28,7 +28,7 @@ Failed: 4923
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  undefined_data            4058
+  undefined_data            4043
   pointer_cast              3555
   pointer_truncation        2889
   unrolled_memcpy           1476
@@ -163,7 +163,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   00414e60: core_battery.cpp_CBattery_process_FUN_00414e60 (4 lines)
   00414f40: core_battery.cpp_CBattery_getCollisionType_FUN_00414f40 (4 lines)
   00415040: core_beast.cpp_CBeast_getActorType_FUN_00415040 (4 lines)
-  ... and 2486 more
+  ... and 2488 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -175,9 +175,9 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   004accf0: core_glass.cpp_CGlass_createShatterParticles_FUN_004accf0 (score: 2610, suspects: 221, lines: 390)
   00434210: engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00434210 (score: 2576, suspects: 214, lines: 411)
   0047e0d0: core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d0 (score: 2549, suspects: 93, lines: 1584)
-  00432cd0: engine_clipper.c_clipAndRasterize_FUN_00432cd0 (score: 2419, suspects: 179, lines: 589)
   004bf360: core_inv.cpp_CInventory_addItem_FUN_004bf360 (score: 2417, suspects: 126, lines: 1127)
-  00432210: engine_clipper.c_clipPolygonToViewFrustum_FUN_00432210 (score: 2335, suspects: 172, lines: 575)
+  00432cd0: engine_clipper.c_clipAndRasterize_FUN_00432cd0 (score: 2379, suspects: 175, lines: 589)
+  00432210: engine_clipper.c_clipPolygonToViewFrustum_FUN_00432210 (score: 2295, suspects: 168, lines: 575)
   00473190: shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00473190 (score: 2266, suspects: 192, lines: 296)
   0051b920: core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0051b920 (score: 2261, suspects: 178, lines: 456)
   0052f823: engine_special.cpp_renderMMXPerspectiveScanline16_FUN_0052f823 (score: 2042, suspects: 142, lines: 587)
@@ -201,7 +201,7 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
 
-  undefined_data (686 functions):
+  undefined_data (683 functions):
     00403f50: engine_2d.c_clearInputAndWait_FUN_00403f50
     00404120: engine_2d.c_mapFrameBuffer_FUN_00404120
     00404360: engine_2d.c_unmapFrameBuffer_FUN_00404360
@@ -212,7 +212,7 @@ FUNCTIONS BY SUSPECT TYPE
     00404730: engine_3d.c_processVertexLighting_FUN_00404730
     00404790: engine_3d.c_processTextureCoordinates_FUN_00404790
     004047e0: engine_3d.c_renderPolygonGrayscaleLitOp5_FUN_004047e0
-    ... and 676 more
+    ... and 673 more
 
   pointer_cast (725 functions):
     00401010: engine_2d.c_initGraphicsSystem_FUN_00401010
@@ -296,13 +296,13 @@ FUNCTIONS BY SUSPECT TYPE
     00404680: engine_3d.c_lookupLitColor_FUN_00404680
     00423790: core_bugs.cpp_CBugs_setSwarmTarget_FUN_00423790
     0042cde0: cockpit_ckptutil.c_expandIndexedTo16Bit_FUN_0042cde0
-    00431530: engine_clipper.c_interpolateVertexLeftClip_FUN_00431530
-    00431630: engine_clipper.c_interpolateVertexRightClip_FUN_00431630
-    00431730: engine_clipper.c_interpolateVertexBottomClip_FUN_00431730
-    00431830: engine_clipper.c_interpolateVertexTopClip_FUN_00431830
-    00431930: engine_clipper.c_interpolateVertexNearClip_FUN_00431930
-    004337a0: engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_004337a0
-    004338d0: engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_004338d0
+    00431530: engine_clipper.c_interpolateVertexRightClip_FUN_00431530
+    00431630: engine_clipper.c_interpolateVertexLeftClip_FUN_00431630
+    00431730: engine_clipper.c_interpolateVertexTopClip_FUN_00431730
+    00431830: engine_clipper.c_interpolateVertexBottomClip_FUN_00431830
+    00431930: engine_clipper.c_interpolateVertexFarClip_FUN_00431930
+    004337a0: engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_004337a0
+    004338d0: engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_004338d0
     ... and 39 more
 
   shadow_pointer_walk (297 functions):
@@ -546,15 +546,15 @@ FUNCTIONS BY SUSPECT TYPE
     ... and 45 more
 
   carry_arith_idiom (15 functions):
-    00431530: engine_clipper.c_interpolateVertexLeftClip_FUN_00431530
-    00431630: engine_clipper.c_interpolateVertexRightClip_FUN_00431630
-    00431730: engine_clipper.c_interpolateVertexBottomClip_FUN_00431730
-    00431830: engine_clipper.c_interpolateVertexTopClip_FUN_00431830
-    00431930: engine_clipper.c_interpolateVertexNearClip_FUN_00431930
-    004337a0: engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_004337a0
-    004338d0: engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_004338d0
-    00433a00: engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00433a00
-    00433b30: engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_00433b30
+    00431530: engine_clipper.c_interpolateVertexRightClip_FUN_00431530
+    00431630: engine_clipper.c_interpolateVertexLeftClip_FUN_00431630
+    00431730: engine_clipper.c_interpolateVertexTopClip_FUN_00431730
+    00431830: engine_clipper.c_interpolateVertexBottomClip_FUN_00431830
+    00431930: engine_clipper.c_interpolateVertexFarClip_FUN_00431930
+    004337a0: engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_004337a0
+    004338d0: engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_004338d0
+    00433a00: engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_00433a00
+    00433b30: engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00433b30
     00523610: sound_sndmain.cpp_mixResampleMonoToStereo_FUN_00523610
     ... and 5 more
 
@@ -563,7 +563,7 @@ FUNCTIONS BY SUSPECT TYPE
     00417730: core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_00417730
     0041d550: core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041d550
     0042d5c0: cockpit_ckptutil.c_buildHardwarePalettes_FUN_0042d5c0
-    00431f50: engine_clipper.c_clipPolygonNearPlane_FUN_00431f50
+    00431f50: engine_clipper.c_clipPolygonFarPlane_FUN_00431f50
     00432210: engine_clipper.c_clipPolygonToViewFrustum_FUN_00432210
     00432cd0: engine_clipper.c_clipAndRasterize_FUN_00432cd0
     0043b610: core_course.cpp_CCourse_allocMemory_FUN_0043b610
