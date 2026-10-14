@@ -27,8 +27,8 @@ TEST(SProjectedVertex, HoldsTheEyeSpacePointAndFixedPointScreenPosition) {
 TEST(SProjectedVertex, ClipFlagsAreTheSignBitAndOneBitPerSide) {
     static_assert(SProjectedVertex::kClipRight == static_cast<int>(0x80000001U));
     static_assert(SProjectedVertex::kClipLeft == static_cast<int>(0x80000002U));
-    static_assert(SProjectedVertex::kClipBottom == static_cast<int>(0x80000004U));
-    static_assert(SProjectedVertex::kClipTop == static_cast<int>(0x80000008U));
+    static_assert(SProjectedVertex::kClipTop == static_cast<int>(0x80000004U));
+    static_assert(SProjectedVertex::kClipBottom == static_cast<int>(0x80000008U));
     static_assert(SProjectedVertex::kClipNear == static_cast<int>(0x80000010U));
 }
 

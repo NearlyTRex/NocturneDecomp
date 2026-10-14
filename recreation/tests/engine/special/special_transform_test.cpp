@@ -113,13 +113,13 @@ TEST_F(CSpecialTransformTest, APointOnTheEdgeOfTheViewIsInIt) {
 TEST_F(CSpecialTransformTest, OutsideTheViewScreenXHoldsTheSidesItIsPast) {
     EXPECT_EQ(project({.x = 101, .z = 100}).screen_x, SProjectedVertex::kClipRight);
     EXPECT_EQ(project({.x = -101, .z = 100}).screen_x, SProjectedVertex::kClipLeft);
-    EXPECT_EQ(project({.y = 101, .z = 100}).screen_x, SProjectedVertex::kClipBottom);
-    EXPECT_EQ(project({.y = -101, .z = 100}).screen_x, SProjectedVertex::kClipTop);
+    EXPECT_EQ(project({.y = 101, .z = 100}).screen_x, SProjectedVertex::kClipTop);
+    EXPECT_EQ(project({.y = -101, .z = 100}).screen_x, SProjectedVertex::kClipBottom);
     EXPECT_EQ(project({}).screen_x, SProjectedVertex::kClipNear);
     EXPECT_EQ(project({.x = 2, .y = -2, .z = 1}).screen_x,
-              SProjectedVertex::kClipRight | SProjectedVertex::kClipTop);
+              SProjectedVertex::kClipRight | SProjectedVertex::kClipBottom);
     EXPECT_EQ(project({.x = -2, .y = 2, .z = -1}).screen_x, SProjectedVertex::kClipLeft |
-                                                                SProjectedVertex::kClipBottom |
+                                                                SProjectedVertex::kClipTop |
                                                                 SProjectedVertex::kClipNear);
 }
 
@@ -133,10 +133,10 @@ TEST_F(CSpecialTransformTest, OutsideTheViewTheEyeSpacePointIsStillWritten) {
 }
 
 // Negating the most negative depth leaves it as it is, as NEG does, so nothing is past the
-// left or top.
-TEST_F(CSpecialTransformTest, TheMostNegativeDepthIsPastRightBottomAndNear) {
+// left or bottom.
+TEST_F(CSpecialTransformTest, TheMostNegativeDepthIsPastRightTopAndNear) {
     EXPECT_EQ(project({.z = kIntMin}).screen_x, SProjectedVertex::kClipRight |
-                                                    SProjectedVertex::kClipBottom |
+                                                    SProjectedVertex::kClipTop |
                                                     SProjectedVertex::kClipNear);
 }
 

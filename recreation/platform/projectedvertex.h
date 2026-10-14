@@ -10,8 +10,8 @@ struct SProjectedVertex {
     // bit, and a bit for each side it is past.
     static constexpr auto kClipRight = static_cast<std::int32_t>(0x80000001U);
     static constexpr auto kClipLeft = static_cast<std::int32_t>(0x80000002U);
-    static constexpr auto kClipBottom = static_cast<std::int32_t>(0x80000004U);
-    static constexpr auto kClipTop = static_cast<std::int32_t>(0x80000008U);
+    static constexpr auto kClipTop = static_cast<std::int32_t>(0x80000004U);
+    static constexpr auto kClipBottom = static_cast<std::int32_t>(0x80000008U);
     static constexpr auto kClipNear = static_cast<std::int32_t>(0x80000010U);
 
     // Eye space, with the projection scale and aspect baked into x and y, so a point is in view

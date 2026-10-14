@@ -16,7 +16,7 @@ TEST(EngineClipperFunctions, PublicInterface) {
     static_assert(std::is_same_v<decltype(&interpolateVertexRightClip), Interpolator>);
     static_assert(std::is_same_v<decltype(&interpolateVertexBottomClip), Interpolator>);
     static_assert(std::is_same_v<decltype(&interpolateVertexTopClip), Interpolator>);
-    static_assert(std::is_same_v<decltype(&interpolateVertexNearClip),
+    static_assert(std::is_same_v<decltype(&interpolateVertexFarClip),
                                  void (*)(const SRenderVertex &, const SRenderVertex &, int,
                                           SRenderVertex &)>);
     static_assert(std::is_same_v<decltype(&interpolateVertexLeftClipAdvanced), Interpolator>);
@@ -87,59 +87,59 @@ void expectAdvancedCarry(const SRenderVertex &vertex) {
     EXPECT_EQ(vertex.a, 300);
 }
 
-TEST(EngineClipperFunctions, LeftClipMeetsXEqualToTheDepth) {
+TEST(EngineClipperFunctions, RightClipMeetsXEqualToTheDepth) {
     SRenderVertex output = marked();
-    interpolateVertexLeftClip(makeVertex(0, 0, 10, 0), makeVertex(20, 8, 10, 1), output);
+    interpolateVertexRightClip(makeVertex(0, 0, 10, 0), makeVertex(20, 8, 10, 1), output);
     expectPoint(output, 10, 4, 10);
     expectBasicCarry(output);
 }
 
-TEST(EngineClipperFunctions, RightClipMeetsXEqualToMinusTheDepth) {
+TEST(EngineClipperFunctions, LeftClipMeetsXEqualToMinusTheDepth) {
     SRenderVertex output = marked();
-    interpolateVertexRightClip(makeVertex(0, 0, 10, 0), makeVertex(-20, 8, 10, 1), output);
+    interpolateVertexLeftClip(makeVertex(0, 0, 10, 0), makeVertex(-20, 8, 10, 1), output);
     expectPoint(output, -10, 4, 10);
     expectBasicCarry(output);
 }
 
-TEST(EngineClipperFunctions, BottomClipMeetsYEqualToTheDepth) {
+TEST(EngineClipperFunctions, TopClipMeetsYEqualToTheDepth) {
     SRenderVertex output = marked();
-    interpolateVertexBottomClip(makeVertex(0, 0, 10, 0), makeVertex(8, 20, 10, 1), output);
+    interpolateVertexTopClip(makeVertex(0, 0, 10, 0), makeVertex(8, 20, 10, 1), output);
     expectPoint(output, 4, 10, 10);
     expectBasicCarry(output);
 }
 
-TEST(EngineClipperFunctions, TopClipMeetsYEqualToMinusTheDepth) {
+TEST(EngineClipperFunctions, BottomClipMeetsYEqualToMinusTheDepth) {
     SRenderVertex output = marked();
-    interpolateVertexTopClip(makeVertex(0, 0, 10, 0), makeVertex(8, -20, 10, 1), output);
+    interpolateVertexBottomClip(makeVertex(0, 0, 10, 0), makeVertex(8, -20, 10, 1), output);
     expectPoint(output, 4, -10, 10);
     expectBasicCarry(output);
 }
 
-TEST(EngineClipperFunctions, NearClipMeetsTheGivenDepth) {
+TEST(EngineClipperFunctions, FarClipMeetsTheGivenDepth) {
     SRenderVertex output = marked();
-    interpolateVertexNearClip(makeVertex(0, 0, 2, 0), makeVertex(20, 40, 22, 1), 12, output);
+    interpolateVertexFarClip(makeVertex(0, 0, 2, 0), makeVertex(20, 40, 22, 1), 12, output);
     expectPoint(output, 10, 20, 12);
     expectBasicCarry(output);
 }
 
 TEST(EngineClipperFunctions, TheAdvancedClipsCarryGreenAndBlueToo) {
     SRenderVertex output = marked();
-    interpolateVertexLeftClipAdvanced(makeVertex(0, 0, 10, 0), makeVertex(20, 8, 10, 1), output);
+    interpolateVertexRightClipAdvanced(makeVertex(0, 0, 10, 0), makeVertex(20, 8, 10, 1), output);
     expectPoint(output, 10, 4, 10);
     expectAdvancedCarry(output);
 
     output = marked();
-    interpolateVertexRightClipAdvanced(makeVertex(0, 0, 10, 0), makeVertex(-20, 8, 10, 1), output);
+    interpolateVertexLeftClipAdvanced(makeVertex(0, 0, 10, 0), makeVertex(-20, 8, 10, 1), output);
     expectPoint(output, -10, 4, 10);
     expectAdvancedCarry(output);
 
     output = marked();
-    interpolateVertexBottomClipAdvanced(makeVertex(0, 0, 10, 0), makeVertex(8, 20, 10, 1), output);
+    interpolateVertexTopClipAdvanced(makeVertex(0, 0, 10, 0), makeVertex(8, 20, 10, 1), output);
     expectPoint(output, 4, 10, 10);
     expectAdvancedCarry(output);
 
     output = marked();
-    interpolateVertexTopClipAdvanced(makeVertex(0, 0, 10, 0), makeVertex(8, -20, 10, 1), output);
+    interpolateVertexBottomClipAdvanced(makeVertex(0, 0, 10, 0), makeVertex(8, -20, 10, 1), output);
     expectPoint(output, 4, -10, 10);
     expectAdvancedCarry(output);
 }
@@ -147,7 +147,7 @@ TEST(EngineClipperFunctions, TheAdvancedClipsCarryGreenAndBlueToo) {
 // The outside vertex lying on the plane makes the fraction its largest, a step short of one.
 TEST(EngineClipperFunctions, AnOutsideVertexOnThePlaneIsReachedJustShort) {
     SRenderVertex output = marked();
-    interpolateVertexLeftClip(makeVertex(0, 0, 10, 0), makeVertex(100, 100, 100, 1), output);
+    interpolateVertexRightClip(makeVertex(0, 0, 10, 0), makeVertex(100, 100, 100, 1), output);
     expectPoint(output, 99, 99, 99);
 }
 

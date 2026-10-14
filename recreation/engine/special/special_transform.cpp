@@ -39,10 +39,10 @@ int getClipFlags(int x, int y, int z) {
         flags |= SProjectedVertex::kClipLeft;
     }
     if (y > z) {
-        flags |= SProjectedVertex::kClipBottom;
+        flags |= SProjectedVertex::kClipTop;
     }
     if (y < neg_z) {
-        flags |= SProjectedVertex::kClipTop;
+        flags |= SProjectedVertex::kClipBottom;
     }
     if (z < 1) {
         flags |= SProjectedVertex::kClipNear;
