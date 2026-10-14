@@ -2,6 +2,7 @@
 
 #include "common/fwd.h"
 #include "engine/fwd.h"
+#include "engine/special/scanlinemode.h"
 #include "platform/externalrendererbridge.h"
 #include "platform/fwd.h"
 
@@ -30,10 +31,14 @@ public:
 
     void clearScreen();
     void clearZBufferNative();
-    void renderMMXPerspectiveScanline32(SSoftwareEdge *left_vertex, SSoftwareEdge *right_vertex,
-                                        int scanline_y);
-    void renderMMXPerspectiveScanline16(SSoftwareEdge *left_vertex, SSoftwareEdge *right_vertex,
-                                        int scanline_y);
+    // Draws a row of a polygon between two edges, from the further left up to but not including
+    // the further right, into the 32-bit or 16-bit screen and the depth buffer as the mode asks.
+    void renderMMXPerspectiveScanline32(const SSoftwareEdge &left_vertex,
+                                        const SSoftwareEdge &right_vertex, int scanline_y,
+                                        const SScanlineMode &mode);
+    void renderMMXPerspectiveScanline16(const SSoftwareEdge &left_vertex,
+                                        const SSoftwareEdge &right_vertex, int scanline_y,
+                                        const SScanlineMode &mode);
     void renderPerspectiveCorrectScanline32(SSoftwareEdge *left_vertex, SSoftwareEdge *right_vertex,
                                             int scanline_y);
     void renderPerspectiveCorrectScanline16(SSoftwareEdge *left_vertex, SSoftwareEdge *right_vertex,

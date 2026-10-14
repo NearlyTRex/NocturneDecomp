@@ -18,7 +18,7 @@ in instructions.
 | 4 | `initFonts`, `CEditorTools::showWarning` | 11 | 46 | 4804 | 46 | 100.0% |
 | 5 | `showCalibrationTest`, `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 50 | 4789 | 34 | 68.0% |
 | 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 20 | 80.0% |
-| 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 59 | 49.1% |
+| 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 63 | 52.5% |
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 9 | 14.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 0 | 0.0% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 17 | 52 | 5565 | 1 | 1.9% |
@@ -44,7 +44,7 @@ in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 2 | 0.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 | 3.6% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 36.3% |
-| | **All** | | **4489** | **402860** | **468** | **10.4%** |
+| | **All** | | **4489** | **402860** | **472** | **10.5%** |
 
 ## Step 0: Math value types
 
@@ -670,10 +670,10 @@ in instructions.
   - [ ] `getTriangleWindingFromPackedIndices` 0x005523f0 (81)
   - [ ] `getTriangleWindingFromIndices1` 0x00552210 (78)
 
-### `core/dstrender.cpp` (2 functions, 106 instructions, 0 done)
+### `core/dstrender.cpp` (2 functions, 106 instructions, 2 done)
 - free functions
-  - [ ] `renderDepthOnlyStandard` 0x0049072f (32)
-  - [ ] `renderTexturedAlphaMMXScanline` 0x004907e7 (74)
+  - [x] `renderDepthOnlyStandard` 0x0049072f (32)
+  - [x] `renderTexturedAlphaMMXScanline` 0x004907e7 (74)
 
 ### `core/dmodel.cpp` (4 functions, 290 instructions, 1 done)
 - class `CKeyFramedModel`
@@ -743,7 +743,7 @@ in instructions.
   - [ ] `renderPrimitiveBatch` 0x00570770 (82)
   - [ ] `setFlatColor` 0x00570ca0 (8)
 
-### `engine/special.cpp` (10 functions, 1391 instructions, 6 done)
+### `engine/special.cpp` (10 functions, 1391 instructions, 8 done)
 - free functions
   - [x] `transformAndProjectPoint` 0x005b575c (205)
   - [x] `selectTextureFromPalette` 0x005b7340 (26)
@@ -751,8 +751,8 @@ in instructions.
   - [ ] `renderScanline` 0x005b5710 (1)
   - [x] `drawPolygon2` 0x005b7610 (17)
   - [x] `drawPolygon` 0x005b75e0 (17)
-  - [ ] `renderMMXPerspectiveScanline32` 0x005b4031 (449)
-  - [ ] `renderMMXPerspectiveScanline16` 0x005b4823 (509)
+  - [x] `renderMMXPerspectiveScanline32` 0x005b4031 (449)
+  - [x] `renderMMXPerspectiveScanline16` 0x005b4823 (509)
   - [x] `drawPolyList` 0x005b7640 (106)
   - [ ] `clearZBufferNative` 0x005b3ed4 (35)
 

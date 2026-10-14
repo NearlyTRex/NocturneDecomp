@@ -47,9 +47,11 @@ TEST(CSpecial, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CSpecial::clearScreen), void (CSpecial::*)()>);
     static_assert(std::is_same_v<decltype(&CSpecial::clearZBufferNative), void (CSpecial::*)()>);
     static_assert(std::is_same_v<decltype(&CSpecial::renderMMXPerspectiveScanline32),
-                                 void (CSpecial::*)(SSoftwareEdge *, SSoftwareEdge *, int)>);
+                                 void (CSpecial::*)(const SSoftwareEdge &, const SSoftwareEdge &,
+                                                    int, const SScanlineMode &)>);
     static_assert(std::is_same_v<decltype(&CSpecial::renderMMXPerspectiveScanline16),
-                                 void (CSpecial::*)(SSoftwareEdge *, SSoftwareEdge *, int)>);
+                                 void (CSpecial::*)(const SSoftwareEdge &, const SSoftwareEdge &,
+                                                    int, const SScanlineMode &)>);
     static_assert(std::is_same_v<decltype(&CSpecial::renderPerspectiveCorrectScanline32),
                                  void (CSpecial::*)(SSoftwareEdge *, SSoftwareEdge *, int)>);
     static_assert(std::is_same_v<decltype(&CSpecial::renderPerspectiveCorrectScanline16),
