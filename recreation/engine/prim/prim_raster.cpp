@@ -1,6 +1,7 @@
 #include "common/math/fixed.h"
 #include "engine/3d/3d.h"
 #include "engine/prim/prim.h"
+#include "engine/rasteredges.h"
 #include "engine/screenprojection.h"
 #include "engine/softwareedge.h"
 #include "engine/special/special.h"
@@ -19,10 +20,9 @@
 namespace nocturne::engine {
 namespace {
 
-using common::fixedMultiply;
 using common::wrappingAdd;
-using common::wrappingSubtract;
 using platform::SRenderVertex;
+using raster::preprocessVertices;
 
 // The first row starts here before any edge lowers it. Both builds have setters for the simple
 // walk's row limit, which is the same, that nothing calls.
@@ -47,17 +47,11 @@ int getDepth(const SRenderVertex &vertex, EDepthSource source) {
                                               : vertex.projected_vertex.transformed_z;
 }
 
-int getRow(const SRenderVertex &vertex) {
-    return vertex.projected_vertex.screen_y >> 16;
-}
-
 // The edge between two corners on different rows, its values set for the middle of its first
-// row: each gradient is the change over the height, and each start the top value moved down by
-// what is left of the top's row. A height under a pixel gives no gradients. Green and blue are
-// carried only for the walks that step them.
+// row. Green and blue are carried only for the walks that step them.
 std::optional<SSoftwareEdge> buildEdge(const SRenderVertex &first, const SRenderVertex &second,
                                        EDepthSource depth_source, const SEdgeWalk &walk) {
-    if (getRow(first) == getRow(second)) {
+    if (raster::getRow(first) == raster::getRow(second)) {
         return std::nullopt;
     }
     const SRenderVertex *top = &first;
@@ -65,15 +59,11 @@ std::optional<SSoftwareEdge> buildEdge(const SRenderVertex &first, const SRender
     if (second.projected_vertex.screen_y < first.projected_vertex.screen_y) {
         std::swap(top, bottom);
     }
-    const std::uint32_t height = static_cast<std::uint32_t>(bottom->projected_vertex.screen_y) -
-                                 static_cast<std::uint32_t>(top->projected_vertex.screen_y);
-    const int reciprocal = height < 0x10000U ? 0 : static_cast<int>(0xffffffffU / height);
-    const int rest_of_row = static_cast<int>(
-        (static_cast<std::uint32_t>(top->projected_vertex.screen_y) & 0xffffU) ^ 0xffffU);
-    SSoftwareEdge edge{.y_min = getRow(*top), .y_max = getRow(*bottom)};
-    const auto ramp = [reciprocal, rest_of_row](int from, int to, int &current, int &gradient) {
-        gradient = fixedMultiply(reciprocal, wrappingSubtract(to, from));
-        current = wrappingAdd(from, fixedMultiply(rest_of_row, gradient));
+    const raster::SEdgeSlope slope =
+        raster::getEdgeSlope(top->projected_vertex.screen_y, bottom->projected_vertex.screen_y);
+    SSoftwareEdge edge{.y_min = raster::getRow(*top), .y_max = raster::getRow(*bottom)};
+    const auto ramp = [&slope](int from, int to, int &current, int &gradient) {
+        raster::rampEdge(slope, from, to, current, gradient);
     };
     ramp(top->projected_vertex.screen_x, bottom->projected_vertex.screen_x, edge.x_current,
          edge.x_gradient);
@@ -125,56 +115,15 @@ SEdgeList buildEdges(std::span<const SRenderVertex *const> corners, EDepthSource
     return list;
 }
 
-// Down the rows from the first between two edges; when one ends, the next to start on that row
-// takes its place, and with none the polygon is done.
+// The second edge found is the left; prim's walks ignore a request to stop.
 void walkEdges(SEdgeList &list, const ScanlineDrawer &draw_scanline, const SEdgeWalk &walk) {
-    const std::span<SSoftwareEdge> edges(list.edges);
-    SSoftwareEdge *right = findEdgeInBuffer(edges, list.first_row, nullptr);
-    if (right == nullptr) {
-        return;
-    }
-    // The top corner, or the ends of a level top, start two edges, so the original's check for
-    // a second is dropped.
-    SSoftwareEdge *left = findEdgeInBuffer(edges, list.first_row, right);
-    for (int y = list.first_row; y < walk.row_limit; ++y) {
-        if (right->y_max <= y) {
-            right->y_min = -1;
-            right = findEdgeInBuffer(edges, y, left);
-            if (right == nullptr) {
-                return;
-            }
-        }
-        if (left->y_max <= y) {
-            left->y_min = -1;
-            left = findEdgeInBuffer(edges, y, right);
-            if (left == nullptr) {
-                return;
-            }
-        }
-        draw_scanline(*left, *right, y);
-        stepEdge(*right, walk);
-        stepEdge(*left, walk);
-    }
-}
-
-void preprocessVertices(std::span<SRenderVertex> vertices, int preprocess_mode) {
-    switch (preprocess_mode) {
-    case 1:
-        prepareDepthBuffer(vertices);
-        return;
-    case 2:
-    case 5:
-        normalizeTextureCoords(vertices);
-        return;
-    case 3:
-        adjustNearPlaneTextureCoords(vertices);
-        return;
-    case 6:
-        replaceWWithDepth(vertices);
-        return;
-    default:
-        return;
-    }
+    raster::walkEdges(
+        list.edges, list.first_row, walk.row_limit,
+        [&walk](SSoftwareEdge &edge) { stepEdge(edge, walk); },
+        [&draw_scanline](const SSoftwareEdge &first, const SSoftwareEdge &second, int y) {
+            draw_scanline(second, first, y);
+            return false;
+        });
 }
 
 } // namespace

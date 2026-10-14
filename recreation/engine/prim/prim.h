@@ -1,7 +1,7 @@
 #pragma once
 
 #include "engine/fwd.h"
-#include "engine/prim/polygonstate.h"
+#include "engine/polygonstate.h"
 #include "engine/softwareedge.h"
 #include "platform/fwd.h"
 

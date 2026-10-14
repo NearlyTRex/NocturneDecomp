@@ -18,7 +18,7 @@ in instructions.
 | 4 | `initFonts`, `CEditorTools::showWarning` | 11 | 46 | 4804 | 46 | 100.0% |
 | 5 | `showCalibrationTest`, `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 50 | 4789 | 34 | 68.0% |
 | 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 20 | 80.0% |
-| 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 68 | 56.6% |
+| 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 70 | 58.3% |
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 9 | 14.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 0 | 0.0% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 17 | 52 | 5565 | 1 | 1.9% |
@@ -44,7 +44,7 @@ in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 2 | 0.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 | 3.6% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 36.3% |
-| | **All** | | **4489** | **402860** | **477** | **10.6%** |
+| | **All** | | **4489** | **402860** | **479** | **10.6%** |
 
 ## Step 0: Math value types
 
@@ -649,10 +649,10 @@ in instructions.
   - [x] `interpolateVertexBottomClipAdvanced` 0x004375c0 (126)
   - [ ] `clipPolygonToViewport` 0x00438420 (581)
 
-### `engine/zraster.c` (2 functions, 738 instructions, 0 done)
+### `engine/zraster.c` (2 functions, 738 instructions, 2 done)
 - free functions
-  - [ ] `rasterizePolygonCustom` 0x005fd4e0 (365)
-  - [ ] `rasterizeTriangle` 0x005fcfc0 (373)
+  - [x] `rasterizePolygonCustom` 0x005fd4e0 (365)
+  - [x] `rasterizeTriangle` 0x005fcfc0 (373)
 
 ### `engine/prim.c` (13 functions, 2410 instructions, 11 done)
 - free functions

@@ -56,6 +56,8 @@ protected:
                              .right_x = right.x_current,
                              .left_depth = left.depth_current,
                              .left_green = left.green_current});
+            // Asking to stop: prim's walks draw on regardless.
+            return true;
         };
         ON_CALL(screen_, getScreenRows()).WillByDefault(Return(std::span<void *>(screen_rows_)));
         ON_CALL(screen_, getColorTable16())
