@@ -18,7 +18,7 @@ in instructions.
 | 4 | `initFonts`, `CEditorTools::showWarning` | 11 | 46 | 4804 | 46 | 100.0% |
 | 5 | `showCalibrationTest`, `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 50 | 4789 | 34 | 68.0% |
 | 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 20 | 80.0% |
-| 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 37 | 30.8% |
+| 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 51 | 42.5% |
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 9 | 14.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 0 | 0.0% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 17 | 52 | 5565 | 1 | 1.9% |
@@ -44,7 +44,7 @@ in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 2 | 0.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 | 3.6% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 36.3% |
-| | **All** | | **4489** | **402860** | **446** | **9.9%** |
+| | **All** | | **4489** | **402860** | **460** | **10.2%** |
 
 ## Step 0: Math value types
 
@@ -620,7 +620,7 @@ in instructions.
 - free functions
   - [ ] `renderFlatColorScanline` 0x004505e0 (140)
 
-### `core/xform.cpp` (11 functions, 1668 instructions, 6 done)
+### `core/xform.cpp` (11 functions, 1668 instructions, 11 done)
 - free functions
   - [x] `slerpQuaternion` 0x005f77e0 (179)
   - [x] `matrixToEulerAngles` 0x005f5690 (375)
@@ -628,25 +628,25 @@ in instructions.
   - [x] `quaternionToMatrix3x3` 0x005f7280 (115)
   - [x] `quaternionToMatrix3x4` 0x005f73e0 (51)
   - [x] `transformVector3x4` 0x005f4dc0 (35)
-  - [ ] `clipInterpolateRightPlane` 0x005f7bc0 (81)
-  - [ ] `clipInterpolateLeftPlane` 0x005f7c80 (79)
-  - [ ] `clipInterpolateTopPlane` 0x005f7d40 (81)
-  - [ ] `clipInterpolateBottomPlane` 0x005f7e00 (81)
-  - [ ] `transformAndClipGeometry` 0x005f8550 (584)
+  - [x] `clipInterpolateRightPlane` 0x005f7bc0 (81)
+  - [x] `clipInterpolateLeftPlane` 0x005f7c80 (79)
+  - [x] `clipInterpolateTopPlane` 0x005f7d40 (81)
+  - [x] `clipInterpolateBottomPlane` 0x005f7e00 (81)
+  - [x] `transformAndClipGeometry` 0x005f8550 (584)
 
-### `engine/clipper.c` (12 functions, 2424 instructions, 0 done)
+### `engine/clipper.c` (12 functions, 2424 instructions, 9 done)
 - free functions
-  - [ ] `interpolateVertexLeftClip` 0x00435a00 (104)
-  - [ ] `interpolateVertexRightClip` 0x00435b00 (104)
-  - [ ] `interpolateVertexBottomClip` 0x00435c00 (104)
-  - [ ] `interpolateVertexTopClip` 0x00435d00 (109)
-  - [ ] `interpolateVertexNearClip` 0x00435e00 (109)
+  - [x] `interpolateVertexLeftClip` 0x00435a00 (104)
+  - [x] `interpolateVertexRightClip` 0x00435b00 (104)
+  - [x] `interpolateVertexBottomClip` 0x00435c00 (104)
+  - [x] `interpolateVertexTopClip` 0x00435d00 (109)
+  - [x] `interpolateVertexNearClip` 0x00435e00 (109)
   - [ ] `clipPolygonToViewFrustum` 0x004366e0 (782)
   - [ ] `clipAndRasterize` 0x004371b0 (28)
-  - [ ] `interpolateVertexLeftClipAdvanced` 0x00437230 (126)
-  - [ ] `interpolateVertexRightClipAdvanced` 0x00437360 (125)
-  - [ ] `interpolateVertexBottomClipAdvanced` 0x00437490 (126)
-  - [ ] `interpolateVertexTopClipAdvanced` 0x004375c0 (126)
+  - [x] `interpolateVertexLeftClipAdvanced` 0x00437230 (126)
+  - [x] `interpolateVertexRightClipAdvanced` 0x00437360 (125)
+  - [x] `interpolateVertexBottomClipAdvanced` 0x00437490 (126)
+  - [x] `interpolateVertexTopClipAdvanced` 0x004375c0 (126)
   - [ ] `clipPolygonToViewport` 0x00438420 (581)
 
 ### `engine/zraster.c` (2 functions, 738 instructions, 0 done)

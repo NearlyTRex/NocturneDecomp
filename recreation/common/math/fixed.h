@@ -31,4 +31,29 @@ namespace nocturne::common {
     return static_cast<std::int32_t>(static_cast<std::uint32_t>(a) - static_cast<std::uint32_t>(b));
 }
 
+// numerator over denominator in 1.31, as the clippers compute it with SAR, RCR and IDIV: the
+// largest fraction once the numerator reaches the denominator, the most negative once it falls
+// to minus the denominator.
+[[nodiscard]] constexpr std::int32_t clipFraction(std::int32_t numerator,
+                                                  std::int32_t denominator) {
+    if (numerator >= denominator) {
+        return std::numeric_limits<std::int32_t>::max();
+    }
+    if (numerator <= wrappingSubtract(0, denominator)) {
+        return std::numeric_limits<std::int32_t>::min();
+    }
+    // Only a positive denominator larger than the numerator either way gets here.
+    return static_cast<std::int32_t>((std::int64_t{numerator} * (std::int64_t{1} << 31U)) /
+                                     denominator);
+}
+
+// from moved toward to by a 1.31 fraction, as SUB, IMUL, ADD/ADC and ADD compute it: bits 31
+// to 62 of the difference times the fraction.
+[[nodiscard]] constexpr std::int32_t interpolateFraction31(std::int32_t from, std::int32_t to,
+                                                           std::int32_t fraction) {
+    const auto product =
+        static_cast<std::uint64_t>(std::int64_t{wrappingSubtract(to, from)} * fraction);
+    return wrappingAdd(static_cast<std::int32_t>(static_cast<std::uint32_t>(product >> 31U)), from);
+}
+
 } // namespace nocturne::common

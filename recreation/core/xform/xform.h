@@ -4,6 +4,11 @@
 #include "common/math/matrix3x4f.h"
 #include "common/math/quaternion4f.h"
 #include "common/math/vector3f.h"
+#include "platform/fwd.h"
+
+#include <cstdint>
+#include <span>
+#include <vector>
 
 namespace nocturne::core {
 
@@ -56,6 +61,27 @@ common::CVector3f *quaternionToEulerAngles(common::CVector3f *out_euler,
                                            common::CQuaternion4f *quat_in);
 common::CQuaternion4f *eulerToQuaternion(common::CVector3f *euler_angles,
                                          common::CQuaternion4f *quat_out);
-void transformAndClipGeometry(int vertex_count, int *vertex_indices);
+// Each writes the vertex where the edge from vertex_a, inside, to vertex_b, past the plane, meets
+// it, and carries red along when the flags ask for smooth shading. Fields it does not carry keep
+// what vertex_out held. Right clips at x equal to the depth, left at minus it, top at y equal to
+// it, bottom at minus it.
+void clipInterpolateRightPlane(const platform::SRenderVertex &vertex_a,
+                               const platform::SRenderVertex &vertex_b, std::uint32_t render_flags,
+                               platform::SRenderVertex &vertex_out);
+void clipInterpolateLeftPlane(const platform::SRenderVertex &vertex_a,
+                              const platform::SRenderVertex &vertex_b, std::uint32_t render_flags,
+                              platform::SRenderVertex &vertex_out);
+void clipInterpolateTopPlane(const platform::SRenderVertex &vertex_a,
+                             const platform::SRenderVertex &vertex_b, std::uint32_t render_flags,
+                             platform::SRenderVertex &vertex_out);
+void clipInterpolateBottomPlane(const platform::SRenderVertex &vertex_a,
+                                const platform::SRenderVertex &vertex_b, std::uint32_t render_flags,
+                                platform::SRenderVertex &vertex_out);
+// The polygon through the indexed vertices, clipped to the four sides of the view into clipped.
+// One with no vertex outside the view is copied whole. Otherwise fewer than three left after a
+// side gives none, and what is left has its points pulled onto the view.
+void transformAndClipGeometry(std::span<const platform::SRenderVertex> vertices,
+                              std::span<const int> vertex_indices, std::uint32_t render_flags,
+                              std::vector<platform::SRenderVertex> &clipped);
 
 } // namespace nocturne::core

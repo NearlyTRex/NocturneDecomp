@@ -4,7 +4,10 @@
 
 #include <array>
 #include <cstddef>
+#include <cstdint>
+#include <span>
 #include <type_traits>
+#include <vector>
 
 namespace nocturne::core {
 namespace {
@@ -86,7 +89,17 @@ TEST(CoreXformFunctions, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&eulerToQuaternion),
                        common::CQuaternion4f *(*)(common::CVector3f *, common::CQuaternion4f *)>);
-    static_assert(std::is_same_v<decltype(&transformAndClipGeometry), void (*)(int, int *)>);
+    using PlaneInterpolator =
+        void (*)(const platform::SRenderVertex &, const platform::SRenderVertex &, std::uint32_t,
+                 platform::SRenderVertex &);
+    static_assert(std::is_same_v<decltype(&clipInterpolateRightPlane), PlaneInterpolator>);
+    static_assert(std::is_same_v<decltype(&clipInterpolateLeftPlane), PlaneInterpolator>);
+    static_assert(std::is_same_v<decltype(&clipInterpolateTopPlane), PlaneInterpolator>);
+    static_assert(std::is_same_v<decltype(&clipInterpolateBottomPlane), PlaneInterpolator>);
+    static_assert(
+        std::is_same_v<decltype(&transformAndClipGeometry),
+                       void (*)(std::span<const platform::SRenderVertex>, std::span<const int>,
+                                std::uint32_t, std::vector<platform::SRenderVertex> &)>);
 }
 
 constexpr float kHalfPi = 1.5707964F;
