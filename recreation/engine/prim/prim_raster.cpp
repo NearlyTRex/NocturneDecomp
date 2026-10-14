@@ -8,9 +8,9 @@
 #include "platform/rendervertex.h"
 
 #include <algorithm>
-#include <array>
 #include <cstddef>
 #include <cstdint>
+#include <limits>
 #include <optional>
 #include <span>
 #include <utility>
@@ -24,11 +24,23 @@ using common::wrappingAdd;
 using common::wrappingSubtract;
 using platform::SRenderVertex;
 
-// The rows run up to here at most, and the first row starts here before any edge lowers it. Both
-// builds have setters for the limit that nothing calls.
+// The first row starts here before any edge lowers it. Both builds have setters for the simple
+// walk's row limit, which is the same, that nothing calls.
 constexpr int kScanlineLimit = 1200;
 
 enum class EDepthSource : std::uint8_t { Transformed, Reciprocal };
+
+// What tells the simple rasterisers from the advanced: whether edges carry green and blue, where
+// the rows stop, and whether an indexed polygon's corners are preprocessed.
+struct SEdgeWalk {
+    bool all_channels = false;
+    int row_limit = kScanlineLimit;
+    bool preprocess_corners = false;
+};
+
+constexpr SEdgeWalk kSimpleWalk{};
+constexpr SEdgeWalk kAdvancedWalk{
+    .all_channels = true, .row_limit = std::numeric_limits<int>::max(), .preprocess_corners = true};
 
 int getDepth(const SRenderVertex &vertex, EDepthSource source) {
     return source == EDepthSource::Reciprocal ? vertex.projected_vertex.inv_z
@@ -41,9 +53,10 @@ int getRow(const SRenderVertex &vertex) {
 
 // The edge between two corners on different rows, its values set for the middle of its first
 // row: each gradient is the change over the height, and each start the top value moved down by
-// what is left of the top's row. A height under a pixel gives no gradients.
+// what is left of the top's row. A height under a pixel gives no gradients. Green and blue are
+// carried only for the walks that step them.
 std::optional<SSoftwareEdge> buildEdge(const SRenderVertex &first, const SRenderVertex &second,
-                                       EDepthSource depth_source) {
+                                       EDepthSource depth_source, const SEdgeWalk &walk) {
     if (getRow(first) == getRow(second)) {
         return std::nullopt;
     }
@@ -70,31 +83,40 @@ std::optional<SSoftwareEdge> buildEdge(const SRenderVertex &first, const SRender
     ramp(top->a, bottom->a, edge.alpha_current, edge.alpha_gradient);
     ramp(getDepth(*top, depth_source), getDepth(*bottom, depth_source), edge.depth_current,
          edge.depth_gradient);
+    if (walk.all_channels) {
+        ramp(top->g, bottom->g, edge.green_current, edge.green_gradient);
+        ramp(top->b, bottom->b, edge.blue_current, edge.blue_gradient);
+    }
     return edge;
 }
 
-void stepEdge(SSoftwareEdge &edge) {
+void stepEdge(SSoftwareEdge &edge, const SEdgeWalk &walk) {
     edge.x_current = wrappingAdd(edge.x_current, edge.x_gradient);
     edge.u_current = wrappingAdd(edge.u_current, edge.u_gradient);
     edge.v_current = wrappingAdd(edge.v_current, edge.v_gradient);
     edge.red_current = wrappingAdd(edge.red_current, edge.red_gradient);
     edge.depth_current = wrappingAdd(edge.depth_current, edge.depth_gradient);
     edge.alpha_current = wrappingAdd(edge.alpha_current, edge.alpha_gradient);
+    if (walk.all_channels) {
+        edge.green_current = wrappingAdd(edge.green_current, edge.green_gradient);
+        edge.blue_current = wrappingAdd(edge.blue_current, edge.blue_gradient);
+    }
 }
 
 // Edges for each side of the polygon that spans a row, and the first row any of them starts on.
-// The original's buffer held 16, as many as the clip can leave.
+// The original's buffers held 16, as many as the clip can leave.
 struct SEdgeList {
     std::vector<SSoftwareEdge> edges;
     int first_row = kScanlineLimit;
 };
 
-SEdgeList buildEdges(std::span<const SRenderVertex *const> corners, EDepthSource depth_source) {
+SEdgeList buildEdges(std::span<const SRenderVertex *const> corners, EDepthSource depth_source,
+                     const SEdgeWalk &walk) {
     SEdgeList list;
     list.edges.reserve(corners.size());
     for (std::size_t i = 0; i < corners.size(); ++i) {
         const std::optional<SSoftwareEdge> edge =
-            buildEdge(*corners[i], *corners[(i + 1) % corners.size()], depth_source);
+            buildEdge(*corners[i], *corners[(i + 1) % corners.size()], depth_source, walk);
         if (edge) {
             list.first_row = std::min(list.first_row, edge->y_min);
             list.edges.push_back(*edge);
@@ -105,7 +127,7 @@ SEdgeList buildEdges(std::span<const SRenderVertex *const> corners, EDepthSource
 
 // Down the rows from the first between two edges; when one ends, the next to start on that row
 // takes its place, and with none the polygon is done.
-void walkEdges(SEdgeList &list, const ScanlineDrawer &draw_scanline) {
+void walkEdges(SEdgeList &list, const ScanlineDrawer &draw_scanline, const SEdgeWalk &walk) {
     const std::span<SSoftwareEdge> edges(list.edges);
     SSoftwareEdge *right = findEdgeInBuffer(edges, list.first_row, nullptr);
     if (right == nullptr) {
@@ -114,7 +136,7 @@ void walkEdges(SEdgeList &list, const ScanlineDrawer &draw_scanline) {
     // The top corner, or the ends of a level top, start two edges, so the original's check for
     // a second is dropped.
     SSoftwareEdge *left = findEdgeInBuffer(edges, list.first_row, right);
-    for (int y = list.first_row; y < kScanlineLimit; ++y) {
+    for (int y = list.first_row; y < walk.row_limit; ++y) {
         if (right->y_max <= y) {
             right->y_min = -1;
             right = findEdgeInBuffer(edges, y, left);
@@ -130,8 +152,8 @@ void walkEdges(SEdgeList &list, const ScanlineDrawer &draw_scanline) {
             }
         }
         draw_scanline(*left, *right, y);
-        stepEdge(*right);
-        stepEdge(*left);
+        stepEdge(*right, walk);
+        stepEdge(*left, walk);
     }
 }
 
@@ -188,9 +210,9 @@ bool CPrim::drawsInHardware() const {
     return special_.getUseExternalRenderer() && !texture_.textures_disabled;
 }
 
-// The original counted the polygons for the frame statistics.
-// nocedit 0x00552510
-void CPrim::renderPolygonSoftware(std::span<SRenderVertex> vertices, const SPolygonState &state) {
+void CPrim::renderPolygon(std::span<SRenderVertex> vertices, const SPolygonState &state,
+                          EVariant variant) {
+    const SEdgeWalk &walk = variant == EVariant::Simple ? kSimpleWalk : kAdvancedWalk;
     if (state.vertex_processing) {
         for (SRenderVertex &vertex : vertices) {
             if (vertex.projected_vertex.screen_x < 0) {
@@ -211,24 +233,23 @@ void CPrim::renderPolygonSoftware(std::span<SRenderVertex> vertices, const SPoly
         return;
     }
     preprocessVertices(vertices, state.mode.vertex_preprocess_mode);
-    SEdgeList edges = buildEdges(corners, EDepthSource::Transformed);
-    walkEdges(edges, state.draw_scanline);
+    SEdgeList edges = buildEdges(corners, EDepthSource::Transformed, walk);
+    walkEdges(edges, state.draw_scanline, walk);
 }
 
-// The original counted the polygons for the frame statistics, and gathered at most 16 corners
-// for the hardware renderer.
-// nocedit 0x00552a40
-void CPrim::renderIndexedPolygonSoftware(std::span<SRenderVertex> vertex_buffer,
-                                         std::span<const int> vertex_indices,
-                                         const SPolygonState &state) {
+// Unlike the vertex-list rasterisers, the original culled each run of three corners, a strip
+// rather than a fan, and gathered at most 16 corners for the hardware renderer. With
+// preprocessing 1 the edges take the reciprocal depth, which the vertex already holds.
+void CPrim::renderIndexedPolygon(std::span<SRenderVertex> vertex_buffer,
+                                 std::span<const int> vertex_indices, const SPolygonState &state,
+                                 EVariant variant) {
+    const SEdgeWalk &walk = variant == EVariant::Simple ? kSimpleWalk : kAdvancedWalk;
     std::vector<SRenderVertex *> corners;
     corners.reserve(vertex_indices.size());
     for (const int index : vertex_indices) {
         corners.push_back(&vertex_buffer[static_cast<std::size_t>(index)]);
     }
     const std::vector<const SRenderVertex *> read_corners(corners.begin(), corners.end());
-    // Unlike renderPolygonSoftware, the original culled each run of three corners, a strip
-    // rather than a fan.
     if (isCulled(read_corners, ETriangles::Strip)) {
         return;
     }
@@ -236,11 +257,44 @@ void CPrim::renderIndexedPolygonSoftware(std::span<SRenderVertex> vertex_buffer,
         special_.drawPolygon2(corners, static_cast<int>(state.mode.render_flags));
         return;
     }
-    // Preprocessing 1 is the reciprocal depth, which the vertex already holds.
-    SEdgeList edges = buildEdges(read_corners, state.mode.vertex_preprocess_mode == 1
-                                                   ? EDepthSource::Reciprocal
-                                                   : EDepthSource::Transformed);
-    walkEdges(edges, state.draw_scanline);
+    if (walk.preprocess_corners) {
+        for (SRenderVertex *corner : corners) {
+            preprocessVertices({corner, 1}, state.mode.vertex_preprocess_mode);
+        }
+    }
+    SEdgeList edges = buildEdges(read_corners,
+                                 state.mode.vertex_preprocess_mode == 1 ? EDepthSource::Reciprocal
+                                                                        : EDepthSource::Transformed,
+                                 walk);
+    walkEdges(edges, state.draw_scanline, walk);
+}
+
+// The original counted the polygons for the frame statistics.
+// nocedit 0x00552510
+void CPrim::renderPolygonSoftware(std::span<SRenderVertex> vertices, const SPolygonState &state) {
+    renderPolygon(vertices, state, EVariant::Simple);
+}
+
+// The original counted the polygons for the frame statistics.
+// nocedit 0x00552a40
+void CPrim::renderIndexedPolygonSoftware(std::span<SRenderVertex> vertex_buffer,
+                                         std::span<const int> vertex_indices,
+                                         const SPolygonState &state) {
+    renderIndexedPolygon(vertex_buffer, vertex_indices, state, EVariant::Simple);
+}
+
+// The original counted the polygons for the frame statistics.
+// nocedit 0x00553470
+void CPrim::renderScanlinePolygon(std::span<SRenderVertex> vertices, const SPolygonState &state) {
+    renderPolygon(vertices, state, EVariant::Advanced);
+}
+
+// The original counted the polygons for the frame statistics.
+// nocedit 0x00553b10
+void CPrim::renderIndexedPolygonAdvanced(std::span<SRenderVertex> vertex_buffer,
+                                         std::span<const int> vertex_indices,
+                                         const SPolygonState &state) {
+    renderIndexedPolygon(vertex_buffer, vertex_indices, state, EVariant::Advanced);
 }
 
 } // namespace nocturne::engine

@@ -39,8 +39,11 @@ TEST(EnginePrimFunctions, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CPrim::renderIndexedPolygonSoftware),
                                  void (CPrim::*)(std::span<SRenderVertex>, std::span<const int>,
                                                  const SPolygonState &)>);
-    static_assert(std::is_same_v<decltype(&renderScanlinePolygon), void (*)(SRenderVertex *, int)>);
-    static_assert(std::is_same_v<decltype(&renderIndexedPolygonAdvanced), void (*)(int *, int)>);
+    static_assert(std::is_same_v<decltype(&CPrim::renderScanlinePolygon),
+                                 void (CPrim::*)(std::span<SRenderVertex>, const SPolygonState &)>);
+    static_assert(std::is_same_v<decltype(&CPrim::renderIndexedPolygonAdvanced),
+                                 void (CPrim::*)(std::span<SRenderVertex>, std::span<const int>,
+                                                 const SPolygonState &)>);
 }
 
 SRenderVertex atDepth(int depth, int u = 0, int v = 0) {

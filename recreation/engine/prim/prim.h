@@ -31,8 +31,6 @@ int getTriangleWindingFromPackedIndices(platform::STrianglePackedIndices *triang
 // The first edge whose top row is y_value, other than edge_ptr; none if there is none.
 [[nodiscard]] SSoftwareEdge *findEdgeInBuffer(std::span<SSoftwareEdge> edges, int y_value,
                                               const SSoftwareEdge *edge_ptr);
-void renderScanlinePolygon(platform::SRenderVertex *vertices, int vertex_count);
-void renderIndexedPolygonAdvanced(int *vertex_indices, int vertex_count);
 
 // prim.c's polygon rasterisers: a polygon is culled, handed to the hardware renderer when that
 // draws, or stepped down the screen row by row, one pair of edges at a time, through the
@@ -49,10 +47,26 @@ public:
     void renderIndexedPolygonSoftware(std::span<platform::SRenderVertex> vertex_buffer,
                                       std::span<const int> vertex_indices,
                                       const SPolygonState &state);
+    // The advanced pair also carry green and blue down the edges, for vertex colour, and run
+    // the rows to the polygon's end however far down the screen.
+    void renderScanlinePolygon(std::span<platform::SRenderVertex> vertices,
+                               const SPolygonState &state);
+    // Preprocesses each corner in the buffer on its own, so normalising takes each corner's own
+    // depth as the nearest, and a corner shared with another polygon is preprocessed again.
+    void renderIndexedPolygonAdvanced(std::span<platform::SRenderVertex> vertex_buffer,
+                                      std::span<const int> vertex_indices,
+                                      const SPolygonState &state);
 
 private:
     // How the corners split into the triangles culling tests.
     enum class ETriangles : std::uint8_t { Fan, Strip };
+    enum class EVariant : std::uint8_t { Simple, Advanced };
+
+    void renderPolygon(std::span<platform::SRenderVertex> vertices, const SPolygonState &state,
+                       EVariant variant);
+    void renderIndexedPolygon(std::span<platform::SRenderVertex> vertex_buffer,
+                              std::span<const int> vertex_indices, const SPolygonState &state,
+                              EVariant variant);
 
     // Whether back-face culling drops every triangle.
     [[nodiscard]] bool isCulled(std::span<const platform::SRenderVertex *const> corners,

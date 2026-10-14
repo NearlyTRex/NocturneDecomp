@@ -25,7 +25,9 @@ struct SSoftwareEdge {
     int alpha_current = 0;
     int alpha_gradient = 0;
     int green_current = 0;
+    int green_gradient = 0;
     int blue_current = 0;
+    int blue_gradient = 0;
 };
 
 } // namespace nocturne::engine

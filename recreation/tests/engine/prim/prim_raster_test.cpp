@@ -33,6 +33,7 @@ struct SRowCall {
     int left_x = 0;
     int right_x = 0;
     int left_depth = 0;
+    int left_green = 0;
 
     bool operator==(const SRowCall &) const = default;
 };
@@ -53,7 +54,8 @@ protected:
             rows_.push_back({.y = y,
                              .left_x = left.x_current,
                              .right_x = right.x_current,
-                             .left_depth = left.depth_current});
+                             .left_depth = left.depth_current,
+                             .left_green = left.green_current});
         };
         ON_CALL(screen_, getScreenRows()).WillByDefault(Return(std::span<void *>(screen_rows_)));
         ON_CALL(screen_, getColorTable16())
@@ -295,6 +297,49 @@ TEST_F(CPrimRasterTest, WithTheRendererOnAnIndexedPolygonGoesToIt) {
         });
     prim_.renderIndexedPolygonSoftware(buffer, indices, state_);
     EXPECT_TRUE(rows_.empty());
+}
+
+// The slope from (10, 2) green 0 to (14, 6) green 0x40000 is the left edge: it gains 65532 a
+// row, and starts most of a row's worth in, as x does.
+TEST_F(CPrimRasterTest, TheAdvancedRasteriserCarriesGreenAndBlueDownTheEdges) {
+    std::vector<SRenderVertex> triangle = getTriangle();
+    triangle[2].g = 0x40000;
+    prim_.renderScanlinePolygon(triangle, state_);
+    ASSERT_EQ(rows_.size(), 4U);
+    EXPECT_EQ(rows_[0].left_green, 65531);
+    EXPECT_GT(rows_[1].left_green, rows_[0].left_green);
+}
+
+TEST_F(CPrimRasterTest, TheSimpleRasteriserLeavesGreenAndBlueAlone) {
+    std::vector<SRenderVertex> triangle = getTriangle();
+    triangle[2].g = 0x40000;
+    prim_.renderPolygonSoftware(triangle, state_);
+    EXPECT_EQ(rows_[1].left_green, 0);
+}
+
+TEST_F(CPrimRasterTest, TheAdvancedRasteriserRunsPastTheScanlineLimit) {
+    std::vector<SRenderVertex> tall{at(10, 1195), at(10, 1210), at(14, 1210)};
+    prim_.renderScanlinePolygon(tall, state_);
+    ASSERT_FALSE(rows_.empty());
+    EXPECT_EQ(rows_.back().y, 1209);
+}
+
+// Each corner is normalised on its own, so its depth becomes 1 in 8.24; the simple indexed
+// rasteriser leaves the buffer alone.
+TEST_F(CPrimRasterTest, TheAdvancedIndexedRasteriserPreprocessesEachCornerInTheBuffer) {
+    std::vector<SRenderVertex> buffer = getTriangle();
+    buffer[0].projected_vertex.transformed_z = 100;
+    buffer[1].projected_vertex.transformed_z = 400;
+    buffer[2].projected_vertex.transformed_z = 900;
+    const std::array<int, 3> indices{0, 1, 2};
+    state_.mode.vertex_preprocess_mode = 2;
+    std::vector<SRenderVertex> simple = buffer;
+    prim_.renderIndexedPolygonSoftware(simple, indices, state_);
+    EXPECT_EQ(simple[1].projected_vertex.transformed_z, 400);
+    prim_.renderIndexedPolygonAdvanced(buffer, indices, state_);
+    EXPECT_EQ(buffer[0].projected_vertex.transformed_z, 1 << 24);
+    EXPECT_EQ(buffer[1].projected_vertex.transformed_z, 1 << 24);
+    EXPECT_EQ(buffer[2].projected_vertex.transformed_z, 1 << 24);
 }
 
 } // namespace
