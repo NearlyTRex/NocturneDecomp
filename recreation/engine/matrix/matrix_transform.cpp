@@ -3,9 +3,7 @@
 #include "engine/light/light.h"
 #include "engine/matrix/matrix.h"
 
-#include <cmath>
-#include <cstdint>
-#include <limits>
+#include <cstddef>
 
 namespace nocturne::engine {
 namespace {
@@ -13,6 +11,7 @@ namespace {
 using common::CMatrix3x3i;
 using common::CVector3i;
 using common::fixedMultiply;
+using common::truncateToInt;
 using common::wrappingAdd;
 
 constexpr double kFixedOne = 65536.0;
@@ -56,15 +55,6 @@ CMatrix3x3i buildRotation(int sin_x, int cos_x, int sin_y, int cos_y, int sin_z,
     rotation.m[2] = {
         .x = fixedMultiply(cos_x, sin_z), .y = -sin_x, .z = fixedMultiply(cos_x, cos_z)};
     return rotation;
-}
-
-// Chopped toward zero, as FISTP rounds under the original's control word; a value no int holds
-// is the x87's integer indefinite.
-int toFixed(double value) {
-    if (!std::isfinite(value) || value >= 2147483648.0 || value <= -2147483649.0) {
-        return std::numeric_limits<int>::min();
-    }
-    return static_cast<int>(value);
 }
 
 } // namespace
@@ -135,15 +125,15 @@ void CMatrix::invertTransformMatrix() {
     const double c10 = (e10 * e22) - (e12 * e20);
     const double c20 = (e10 * e21) - (e11 * e20);
     const double f = kFixedOne / (((e00 * c00) - (e01 * c10)) + (e02 * c20));
-    inverse_matrix_.m[0] = {.x = toFixed(c00 * f),
-                            .y = toFixed(-((e01 * e22) - (e02 * e21)) * f),
-                            .z = toFixed(((e01 * e12) - (e02 * e11)) * f)};
-    inverse_matrix_.m[1] = {.x = toFixed(-c10 * f),
-                            .y = toFixed(((e00 * e22) - (e02 * e20)) * f),
-                            .z = toFixed(-((e00 * e12) - (e02 * e10)) * f)};
-    inverse_matrix_.m[2] = {.x = toFixed(c20 * f),
-                            .y = toFixed(-((e00 * e21) - (e01 * e20)) * f),
-                            .z = toFixed(((e00 * e11) - (e01 * e10)) * f)};
+    inverse_matrix_.m[0] = {.x = truncateToInt(c00 * f),
+                            .y = truncateToInt(-((e01 * e22) - (e02 * e21)) * f),
+                            .z = truncateToInt(((e01 * e12) - (e02 * e11)) * f)};
+    inverse_matrix_.m[1] = {.x = truncateToInt(-c10 * f),
+                            .y = truncateToInt(((e00 * e22) - (e02 * e20)) * f),
+                            .z = truncateToInt(-((e00 * e12) - (e02 * e10)) * f)};
+    inverse_matrix_.m[2] = {.x = truncateToInt(c20 * f),
+                            .y = truncateToInt(-((e00 * e21) - (e01 * e20)) * f),
+                            .z = truncateToInt(((e00 * e11) - (e01 * e10)) * f)};
 }
 
 const common::CMatrix3x3i &CMatrix::getTransformMatrix() const {
@@ -156,6 +146,10 @@ void CMatrix::setTransformMatrix(const common::CMatrix3x3i &transform) {
 
 const common::CVector3i &CMatrix::getRelativeOrigin() const {
     return relative_origin_;
+}
+
+void CMatrix::setRelativeOrigin(const common::CVector3i &origin) {
+    relative_origin_ = origin;
 }
 
 const common::CMatrix3x3i &CMatrix::getInverseMatrix() const {

@@ -5,7 +5,6 @@
 
 namespace nocturne::engine {
 
-void setCullingMode(int culling_mode);
 void prepareDepthBuffer(platform::SRenderVertex *vertices, int vertex_count);
 void normalizeTextureCoords(platform::SRenderVertex *vertices, int vertex_count);
 void adjustNearPlaneTextureCoords(platform::SRenderVertex *vertices, int vertex_count);

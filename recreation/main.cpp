@@ -126,11 +126,11 @@ private:
     core::CDemonPod pod_{file_system_, dosio_};
     wincore::CWddVMem screen_{display_, renderer_, winrun_, special_, two_d_};
     engine::C2d two_d_{dosio_, screen_, winrun_};
-    engine::C3d three_d_;
-    engine::SCurrentTexture current_texture_;
-    engine::CSpecial special_{renderer_, screen_, two_d_, three_d_, current_texture_};
     engine::CLight light_;
     engine::CMatrix matrix_{two_d_, light_};
+    engine::C3d three_d_{matrix_};
+    engine::SCurrentTexture current_texture_;
+    engine::CSpecial special_{renderer_, screen_, two_d_, three_d_, current_texture_};
     engine::CKeys keys_{winrun_, screen_};
     nocturne::shape::CEditorTools editor_tools_{two_d_,   matrix_, three_d_, screen_,
                                                 special_, keys_,   clock_};

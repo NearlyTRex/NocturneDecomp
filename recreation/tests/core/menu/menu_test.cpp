@@ -3,6 +3,8 @@
 #include "engine/3d/3d.h"
 #include "engine/font/bitfont.h"
 #include "engine/font/font.h"
+#include "engine/light/light.h"
+#include "engine/matrix/matrix.h"
 #include "engine/special/special.h"
 #include "engine/texture/currenttexture.h"
 #include "support/newmsg/newmsg.h"
@@ -86,7 +88,9 @@ protected:
     engine::CMemoryScreen screen_{kWidth, kHeight, 32};
     NiceMock<engine::MockRawInput> raw_input_;
     engine::C2d two_d_{dosio_, screen_, raw_input_};
-    engine::C3d three_d_;
+    engine::CLight light_;
+    engine::CMatrix matrix_{two_d_, light_};
+    engine::C3d three_d_{matrix_};
     NiceMock<platform::MockRenderer> renderer_;
     engine::SCurrentTexture current_texture_;
     engine::CSpecial special_{renderer_, screen_, two_d_, three_d_, current_texture_};

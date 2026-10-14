@@ -8,7 +8,6 @@ namespace nocturne::engine {
 namespace {
 
 TEST(EnginePrimFunctions, PublicInterface) {
-    static_assert(std::is_same_v<decltype(&setCullingMode), void (*)(int)>);
     static_assert(
         std::is_same_v<decltype(&prepareDepthBuffer), void (*)(platform::SRenderVertex *, int)>);
     static_assert(std::is_same_v<decltype(&normalizeTextureCoords),

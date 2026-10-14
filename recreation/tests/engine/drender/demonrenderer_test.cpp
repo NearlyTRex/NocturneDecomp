@@ -12,7 +12,8 @@ TEST(CDemonRenderer, IsConcrete) {
 }
 
 TEST(CDemonRenderer, Constructors) {
-    static_assert(std::is_constructible_v<CDemonRenderer>);
+    static_assert(std::is_constructible_v<CDemonRenderer, CMatrix &, const C2d &, C3d &>);
+    static_assert(!std::is_default_constructible_v<CDemonRenderer>);
 }
 
 TEST(CDemonRenderer, PublicInterface) {
@@ -49,21 +50,21 @@ TEST(CDemonRenderer, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDemonRenderer::setCameraOrigin),
                                  void (CDemonRenderer::*)(common::CVector3i *)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::setCameraOriginFromScaledPoint),
-                                 void (CDemonRenderer::*)(common::CVector3f *)>);
+                                 void (CDemonRenderer::*)(const common::CVector3f &)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::setupSceneRendering),
-                                 void (CDemonRenderer::*)(common::CVector3f *)>);
+                                 void (CDemonRenderer::*)(const common::CVector3f &)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::setupCameraAndProjection),
-                                 void (CDemonRenderer::*)(common::CMatrix3x3f *)>);
+                                 void (CDemonRenderer::*)(const common::CMatrix3x3f &)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::copyAndTransform3DPoint),
-                                 void (CDemonRenderer::*)(common::CVector3f *)>);
+                                 void (CDemonRenderer::*)(common::CVector3i *)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::processCameraRelativeVertex),
-                                 void (CDemonRenderer::*)(common::CVector3f *)>);
+                                 void (CDemonRenderer::*)(const common::CVector3f &)>);
     static_assert(
         std::is_same_v<decltype(&CDemonRenderer::applyDirectTransform),
                        void (CDemonRenderer::*)(common::CVector3i *, common::CVector3i *)>);
-    static_assert(
-        std::is_same_v<decltype(&CDemonRenderer::applyScaledTransform),
-                       void (CDemonRenderer::*)(common::CVector3f *, common::CVector3f *)>);
+    static_assert(std::is_same_v<decltype(&CDemonRenderer::applyScaledTransform),
+                                 void (CDemonRenderer::*)(const common::CVector3f &,
+                                                          const common::CVector3f *)>);
     static_assert(
         std::is_same_v<decltype(&CDemonRenderer::matrixPush), void (CDemonRenderer::*)()>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::matrixPop), void (CDemonRenderer::*)()>);
@@ -74,7 +75,7 @@ TEST(CDemonRenderer, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDemonRenderer::setLightDirection),
                                  void (CDemonRenderer::*)(common::CVector3i *)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::getCameraOriginFixed),
-                                 common::CVector3i *(CDemonRenderer::*)(common::CVector3i *)>);
+                                 common::CVector3i (CDemonRenderer::*)() const>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::getCameraOriginWorld),
                                  common::CVector3f *(CDemonRenderer::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::getCameraRotationFixed),

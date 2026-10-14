@@ -3,6 +3,8 @@
 #include "engine/3d/3d.h"
 #include "engine/font/bitfont.h"
 #include "engine/font/font.h"
+#include "engine/light/light.h"
+#include "engine/matrix/matrix.h"
 #include "engine/palette/font.h"
 #include "tests/mocks/engine/fontsheet.h"
 #include "tests/mocks/engine/memoryscreen.h"
@@ -121,7 +123,9 @@ protected:
 
         CMemoryScreen screen;
         C2d two_d;
-        C3d three_d;
+        CLight light;
+        CMatrix matrix{two_d, light};
+        C3d three_d{matrix};
         CFontColors colors;
         CBitFont font;
     };

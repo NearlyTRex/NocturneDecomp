@@ -1,6 +1,8 @@
 #include "common/video/framebuffer.h"
 #include "engine/2d/2d.h"
 #include "engine/3d/3d.h"
+#include "engine/light/light.h"
+#include "engine/matrix/matrix.h"
 #include "engine/special/special.h"
 #include "engine/texture/currenttexture.h"
 #include "tests/mocks/engine/podfixture.h"
@@ -82,7 +84,9 @@ protected:
     CWinRun winrun_{window_, clock_};
     CWddVMem wddvmem_{display_, renderer_, winrun_, special_, two_d_};
     engine::C2d two_d_{dosio_, wddvmem_, winrun_};
-    engine::C3d three_d_;
+    engine::CLight light_;
+    engine::CMatrix matrix_{two_d_, light_};
+    engine::C3d three_d_{matrix_};
     engine::SCurrentTexture current_texture_;
     engine::CSpecial special_{renderer_, wddvmem_, two_d_, three_d_, current_texture_};
 };

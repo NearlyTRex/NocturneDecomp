@@ -1,6 +1,8 @@
 #include "engine/2d/2d.h"
 #include "engine/3d/3d.h"
 #include "engine/dosio/dosio.h"
+#include "engine/light/light.h"
+#include "engine/matrix/matrix.h"
 #include "engine/special/special.h"
 #include "engine/texture/currenttexture.h"
 #include "tests/mocks/engine/mockrawinput.h"
@@ -79,7 +81,9 @@ protected:
     NiceMock<MockRawInput> raw_input_;
     C2d two_d_{dosio_, screen_, raw_input_};
     NiceMock<platform::MockRenderer> renderer_;
-    C3d three_d_;
+    CLight light_;
+    CMatrix matrix_{two_d_, light_};
+    C3d three_d_{matrix_};
     SCurrentTexture current_texture_;
     CSpecial special_{renderer_, screen_, two_d_, three_d_, current_texture_};
 };

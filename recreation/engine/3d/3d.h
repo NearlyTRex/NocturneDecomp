@@ -17,10 +17,16 @@ public:
     // The blend mode that adds the source to the screen instead of mixing the two.
     static constexpr int kAdditiveBlend = 1;
 
+    explicit C3d(CMatrix &matrix);
+
     SMRGLHeaderExtended *badMRGLStruct(SMRGLHeaderExtended *prim);
-    SMRGLHeaderExtended *processCameraRelativePoint(common::CQuaternion4f *input_point);
+    // Points the camera at its origin from point, in 24.8 world units.
+    void processCameraRelativePoint(const common::CVector3i &point);
     SMRGLHeaderExtended *transformAndBufferVertices(SMRGLHeaderExtended *mrgl);
-    int isVisiblePlane(platform::SClipPlane *plane);
+    // Whether the camera is on the plane's front side, or culling is off.
+    [[nodiscard]] bool isVisiblePlane(const platform::SClipPlane &plane) const;
+    // Non-zero turns plane culling off.
+    void setCullingMode(int culling_mode);
     SMRGLHeaderExtended *processVertexLighting(SMRGLHeaderExtended *mrgl);
     SMRGLHeaderExtended *processTextureCoordinates(platform::SMRGLHeaderPrimitive *prim);
     SMRGLHeaderExtended *renderPolygonGrayscaleLitOp5(platform::SMRGLHeaderPrimitive *primitive);
@@ -112,6 +118,8 @@ public:
     [[nodiscard]] int getBlendMode() const;
 
 private:
+    CMatrix &matrix_;
+    int culling_mode_ = 0;
     int current_alpha_value_ = kOpaqueAlpha;
     int blend_mode_ = 0;
     std::uint32_t current_render_color_ = 0xffffff;

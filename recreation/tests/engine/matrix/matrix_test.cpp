@@ -124,6 +124,18 @@ TEST_F(CMatrixTest, ClosingAWindowPutsBackWhatOpeningItSaved) {
     EXPECT_EQ(two_d_.getViewportWidth(), 101);
 }
 
+TEST_F(CMatrixTest, AWindowStartsAtUnitScaleAndClosingItRestoresTheRotationAndScale) {
+    const common::CVector3i rotation{.x = 0x100, .y = 0x200, .z = 0x300};
+    matrix_.storeCameraRotation(rotation);
+    matrix_.setProjectionScale(0xa000);
+    matrix_.pushViewport(0, 0, 10, 10);
+    EXPECT_EQ(matrix_.getProjectionScale(), CMatrix::kUnitProjectionScale);
+    matrix_.storeCameraRotation({});
+    matrix_.popViewport();
+    EXPECT_EQ(matrix_.getCameraRotation(), rotation);
+    EXPECT_EQ(matrix_.getProjectionScale(), 0xa000);
+}
+
 TEST_F(CMatrixTest, ATenthWindowIsFatal) {
     for (int i = 0; i < 9; ++i) {
         matrix_.pushViewport(0, 0, 10, 10);

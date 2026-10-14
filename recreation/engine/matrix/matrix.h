@@ -52,10 +52,14 @@ public:
     // Puts back what the matching push saved; the viewport size stays the window's.
     void popViewport();
     [[nodiscard]] int getProjectionScale() const;
+    void setProjectionScale(int scale);
+    // The angles alone; unlike setCameraRotation, the transform is not rebuilt from them.
+    void storeCameraRotation(const common::CVector3i &rotation);
     // What carries a point into camera space: the rotation, then the origin added.
     [[nodiscard]] const common::CMatrix3x3i &getTransformMatrix() const;
     void setTransformMatrix(const common::CMatrix3x3i &transform);
     [[nodiscard]] const common::CVector3i &getRelativeOrigin() const;
+    void setRelativeOrigin(const common::CVector3i &origin);
     [[nodiscard]] const common::CMatrix3x3i &getInverseMatrix() const;
 
 private:

@@ -96,4 +96,12 @@ int CMatrix::getProjectionScale() const {
     return projection_scale_;
 }
 
+void CMatrix::setProjectionScale(int scale) {
+    projection_scale_ = scale;
+}
+
+void CMatrix::storeCameraRotation(const common::CVector3i &rotation) {
+    camera_rotation_ = rotation;
+}
+
 } // namespace nocturne::engine

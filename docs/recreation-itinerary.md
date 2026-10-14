@@ -18,7 +18,7 @@ in instructions.
 | 4 | `initFonts`, `CEditorTools::showWarning` | 11 | 46 | 4804 | 46 | 100.0% |
 | 5 | `showCalibrationTest`, `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 50 | 4789 | 34 | 68.0% |
 | 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 20 | 80.0% |
-| 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 24 | 20.0% |
+| 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 36 | 30.0% |
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 9 | 14.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 0 | 0.0% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 17 | 52 | 5565 | 1 | 1.9% |
@@ -44,7 +44,7 @@ in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 2 | 0.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 | 3.6% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 36.3% |
-| | **All** | | **4489** | **402860** | **433** | **9.6%** |
+| | **All** | | **4489** | **402860** | **445** | **9.9%** |
 
 ## Step 0: Math value types
 
@@ -654,9 +654,9 @@ in instructions.
   - [ ] `rasterizePolygonCustom` 0x005fd4e0 (365)
   - [ ] `rasterizeTriangle` 0x005fcfc0 (373)
 
-### `engine/prim.c` (13 functions, 2410 instructions, 0 done)
+### `engine/prim.c` (13 functions, 2410 instructions, 1 done)
 - free functions
-  - [ ] `setCullingMode` 0x00551b90 (3)
+  - [x] `setCullingMode` 0x00551b90 (3)
   - [ ] `prepareDepthBuffer` 0x00551fb0 (44)
   - [ ] `normalizeTextureCoords` 0x00552020 (61)
   - [ ] `adjustNearPlaneTextureCoords` 0x005520a0 (41)
@@ -693,19 +693,19 @@ in instructions.
   - [x] `setCameraOrigin` 0x0050e270 (7)
   - [x] `invertTransformMatrix` 0x0050c640 (200)
 
-### `engine/3d.c` (3 functions, 64 instructions, 1 done)
+### `engine/3d.c` (3 functions, 64 instructions, 3 done)
 - free functions
   - [x] `setBlendMode` 0x00406dd0 (3)
-  - [ ] `isVisiblePlane` 0x00403950 (36)
-  - [ ] `processCameraRelativePoint` 0x004037e0 (25)
+  - [x] `isVisiblePlane` 0x00403950 (36)
+  - [x] `processCameraRelativePoint` 0x004037e0 (25)
 
-### `engine/drender.cpp` (27 functions, 2214 instructions, 0 done)
+### `engine/drender.cpp` (27 functions, 2214 instructions, 9 done)
 - class `CDemonRenderer`
   - [ ] `enableFaceCapture` 0x0048caa0 (5)
   - [ ] `isShadowPass` 0x0048cae0 (3)
-  - [ ] `applyScaledTransform` 0x0048c4f0 (113)
-  - [ ] `matrixPush` 0x0048c630 (2)
-  - [ ] `matrixPop` 0x0048c640 (2)
+  - [x] `applyScaledTransform` 0x0048c4f0 (113)
+  - [x] `matrixPush` 0x0048c630 (2)
+  - [x] `matrixPop` 0x0048c640 (2)
   - [ ] `setPlaneCullingEnabled` 0x0048c9f0 (4)
   - [ ] `setRenderingState` 0x0048ca00 (24)
   - [ ] `captureTexture` 0x0048db80 (47)
@@ -718,14 +718,14 @@ in instructions.
   - [ ] `renderQuadBatch` 0x0048ce90 (46)
   - [ ] `renderAlphaBlendedPoly` 0x0048b1e0 (96)
   - [ ] `renderDestReadBlendPoly` 0x0048b970 (104)
-  - [ ] `getCameraOriginFixed` 0x0048c760 (23)
+  - [x] `getCameraOriginFixed` 0x0048c760 (23)
   - [ ] `setBlendMode` 0x0048ca50 (5)
   - [ ] `setRenderAlpha` 0x0048ca60 (5)
-  - [ ] `setCameraOriginFromScaledPoint` 0x0048c150 (30)
-  - [ ] `setupCameraAndProjection` 0x0048c200 (146)
-  - [ ] `setupSceneRendering` 0x0048c1d0 (15)
-  - [ ] `processCameraRelativeVertex` 0x0048c450 (20)
-  - [ ] `setProjectionScale` 0x0048c650 (6)
+  - [x] `setCameraOriginFromScaledPoint` 0x0048c150 (30)
+  - [x] `setupCameraAndProjection` 0x0048c200 (146)
+  - [x] `setupSceneRendering` 0x0048c1d0 (15)
+  - [x] `processCameraRelativeVertex` 0x0048c450 (20)
+  - [x] `setProjectionScale` 0x0048c650 (6)
 - free functions
   - [ ] `renderTriangleTextured` 0x00483370 (502)
   - [ ] `renderTriangleSimple` 0x004839f0 (366)

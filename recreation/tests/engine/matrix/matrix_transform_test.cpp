@@ -39,6 +39,14 @@ TEST_F(CMatrixTransformTest, StartsWithNothingTransformed) {
     EXPECT_EQ(matrix_.getRelativeOrigin(), CVector3i{});
 }
 
+TEST_F(CMatrixTransformTest, APopPutsBackASetRelativeOrigin) {
+    matrix_.setRelativeOrigin({.x = 1, .y = 2, .z = 3});
+    matrix_.matrixPush();
+    matrix_.setRelativeOrigin({});
+    matrix_.pop();
+    EXPECT_EQ(matrix_.getRelativeOrigin(), (CVector3i{.x = 1, .y = 2, .z = 3}));
+}
+
 TEST_F(CMatrixTransformTest, WithoutATurnOnlyTheOriginMoves) {
     matrix_.setTransformMatrix(fixedRows({1, 2, 3}, {4, 5, 6}, {7, 8, 9}));
     light_.setLightDirection({.x = kOne});

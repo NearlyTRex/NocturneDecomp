@@ -1,8 +1,19 @@
 #pragma once
 
+#include <cmath>
 #include <cstdint>
+#include <limits>
 
 namespace nocturne::common {
+
+// value as the CRT round and FISTP leave it under the original's control word: chopped toward
+// zero, and the x87's integer indefinite when no int holds it.
+[[nodiscard]] inline std::int32_t truncateToInt(double value) {
+    if (!std::isfinite(value) || value >= 2147483648.0 || value <= -2147483649.0) {
+        return std::numeric_limits<std::int32_t>::min();
+    }
+    return static_cast<std::int32_t>(value);
+}
 
 // a * b in 16.16 fixed point as IMUL and SHRD compute it: bits 16 to 47 of the 64-bit product.
 [[nodiscard]] constexpr std::int32_t fixedMultiply(std::int32_t a, std::int32_t b) {
