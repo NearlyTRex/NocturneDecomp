@@ -252,7 +252,7 @@ section .text
     LEA EAX,[EBP + -0x58]               ; 0045f46a
     PUSH EAX                            ; 0045f46d
     CALL engine_3d.c_processCameraRelativePoint_FUN_004037e0 ; 0045f46e
-        ;   XREF to: 004037e0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_processCameraRelativePoint_FUN_004037e0(CQuaternion4f * input_point)
+        ;   XREF to: 004037e0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_processCameraRelativePoint_FUN_004037e0(SMRGLPoint * block)
     ADD ESP,0x4                         ; 0045f473
     PUSH 0x0                            ; 0045f476
     PUSH 0x0                            ; 0045f478

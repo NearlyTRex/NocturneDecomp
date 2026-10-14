@@ -21,7 +21,7 @@ SMRGLHeaderExtended * __cdecl badMRGLStruct(SMRGLHeaderExtended *prim);
 
 // Original: engine_3d.c_processCameraRelativePoint_FUN_004037e0
 // Address: 004037e0
-SMRGLHeaderExtended * __cdecl processCameraRelativePoint(CQuaternion4f *input_point);
+SMRGLHeaderExtended * __cdecl processCameraRelativePoint(SMRGLPoint *block);
 
 // Original: engine_3d.c_transformAndBufferVertices_FUN_00403840
 // Address: 00403840

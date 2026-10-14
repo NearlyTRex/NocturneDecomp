@@ -317,7 +317,7 @@ int __cdecl qsortByString(char *a,char *b);
 
 // Original: shape_edittool.cpp_CStrList_sort_FUN_004a2f00
 // Address: 004a2f00
-void __cdecl CStrList::sort(CStrList *this_ptr,int sort_type,int sort_order);
+void __cdecl CStrList::sort(CStrList *this_ptr,int start_index,int end_index);
 
 // Original: shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70
 // Address: 004a2f70
@@ -445,7 +445,7 @@ void __cdecl CPickList::clear(CPickList *this_ptr);
 
 // Original: shape_edittool.cpp_CPickList_sort_FUN_004a57f0
 // Address: 004a57f0
-void __cdecl CPickList::sort(CPickList *this_ptr,int sort_type,int sort_order);
+void __cdecl CPickList::sort(CPickList *this_ptr,int start_index,int end_index);
 
 // Original: shape_edittool.cpp_CPickList_swap_FUN_004a5870
 // Address: 004a5870

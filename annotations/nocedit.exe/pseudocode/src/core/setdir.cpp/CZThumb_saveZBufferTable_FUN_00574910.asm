@@ -166,7 +166,7 @@ section .text
     MOV EBX,dword ptr [0x006703ec]      ; 00574a47 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EBX                            ; 00574a4d | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0048c420 ; 00574a4e
-        ;   XREF to: 0048c420 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0048c420(CDemonRenderer * this_ptr, CVector3f * input_point)
+        ;   XREF to: 0048c420 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0048c420(CDemonRenderer * this_ptr, CVector3i * input_point)
     ADD ESP,0x8                         ; 00574a53
     CALL engine_special.cpp_clearZBufferNative_FUN_005b3ed4 ; 00574a56
         ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearZBufferNative_FUN_005b3ed4()

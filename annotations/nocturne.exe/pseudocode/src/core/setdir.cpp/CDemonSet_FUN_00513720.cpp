@@ -40,7 +40,7 @@ void __cdecl core_setdir_cpp_CDemonSet_FUN_00513720(CDemonSet *this_ptr)
       engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_00460780
                 ((CDemonRenderer *)PTR_DAT_005ae700,local_1c);
       engine_drender_cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_004609d0
-                ((CDemonRenderer *)PTR_DAT_005ae700,(CVector3f *)0x26635f8);
+                ((CDemonRenderer *)PTR_DAT_005ae700,(CVector3i *)0x26635f8);
       engine_special_cpp_clearZBufferNative_FUN_0052eed4();
       core_set_cpp_CDemonSet_renderSceneGeometry_FUN_00507c80(this_ptr,9999.9,0);
       iVar3 = 0;

@@ -294,7 +294,7 @@ section .text
     LEA EAX,[ESP + 0x10]                ; 0049f66f
     PUSH EAX                            ; 0049f673
     CALL shape_edittool.cpp_CPickList_sort_FUN_004a57f0 ; 0049f674
-        ;   XREF to: 004a57f0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_sort_FUN_004a57f0(CPickList * this_ptr, int sort_type, int sort_order)
+        ;   XREF to: 004a57f0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_sort_FUN_004a57f0(CPickList * this_ptr, int start_index, int end_index)
     ADD ESP,0xc                         ; 0049f679
     PUSH 0x62315c                       ; 0049f67c | = "(Change Path)"
     LEA EAX,[ESP + 0xc]                 ; 0049f681

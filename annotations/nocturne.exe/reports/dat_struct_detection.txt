@@ -2,12 +2,12 @@
 DAT_ STRUCT/ARRAY DETECTION REPORT
 ================================================================================
 
-Total DAT_ globals found: 2201
+Total DAT_ globals found: 2198
 Filtered out (inside named data): 320
 Immediate constants (not real globals): 61
-Real globals remaining: 2140
+Real globals remaining: 2137
 Clusters detected: 204
-DAT_ globals in clusters: 2066
+DAT_ globals in clusters: 2063
 
 Classification summary:
   unknown              71 clusters
@@ -650,20 +650,6 @@ MEDIUM CONFIDENCE (66 clusters)
       0x02dc8330  DAT_02dc8330  undefined4 [float]
       ... +31 more
 
-  0x006b023c - 0x006b02f8  (33 items, 188 bytes span)
-    Classification: vector_groups
-    Likely type: likely contains CVector3i/f fields
-    Reason: 10 groups of 3 consecutive ints found
-    Referenced by: 54 functions
-     near: g_TexturesDisabled (int) at -60
-      0x006b023c  DAT_006b023c  undefined4
-      0x006b0240  DAT_006b0240  undefined4
-      0x006b0244  DAT_006b0244  undefined4
-      0x006b0248  DAT_006b0248  undefined4
-      0x006b024c  DAT_006b024c  undefined4
-      0x006b0250  DAT_006b0250  undefined4
-      ... +27 more
-
   0x01bcddc8 - 0x01bcdefc  (33 items, 308 bytes span)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
@@ -703,6 +689,20 @@ MEDIUM CONFIDENCE (66 clusters)
       0x02dc78f0  DAT_02dc78f0  undefined4 [double]
       0x02dc78f4  DAT_02dc78f4  undefined4
       ... +26 more
+
+  0x006b023c - 0x006b02f8  (30 items, 188 bytes span)
+    Classification: vector_groups
+    Likely type: likely contains CVector3i/f fields
+    Reason: 9 groups of 3 consecutive ints found
+    Referenced by: 52 functions
+     near: g_TexturesDisabled (int) at -60
+      0x006b023c  DAT_006b023c  undefined4
+      0x006b0240  DAT_006b0240  undefined4
+      0x006b0244  DAT_006b0244  undefined4
+      0x006b0248  DAT_006b0248  undefined4
+      0x006b024c  DAT_006b024c  undefined4
+      0x006b0250  DAT_006b0250  undefined4
+      ... +24 more
 
   0x02dc9214 - 0x02dc9440  (30 items, 556 bytes span)
     Classification: vector_groups

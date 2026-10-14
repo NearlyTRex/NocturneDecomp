@@ -41,9 +41,9 @@
 ;   undefined4 DAT_0059aa80
 ;   undefined4 DAT_0059aa88
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   undefined4 DAT_006b028c
-;   undefined4 DAT_006b0290
-;   undefined4 DAT_006b0294
+;   int g_StoredX
+;   int g_StoredY
+;   int g_StoredZ
 ;   undefined4 DAT_007f7370
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01c038f4
@@ -127,16 +127,16 @@ section .text
     MOV dword ptr [ESP + 0x58],EAX      ; 0041cf49
     MOV EAX,dword ptr [ESP + 0x44]      ; 0041cf4d
     MOV dword ptr [ESP + 0x5c],EAX      ; 0041cf51
-    MOV EAX,0x6b028c                    ; 0041cf55 | DAT_006b028c
+    MOV EAX,0x6b028c                    ; 0041cf55 | g_StoredX
         ;   Label: LAB_0041cf55
     LEA EBX,[ESP + 0x60]                ; 0041cf5a
-    FILD dword ptr [EAX]                ; 0041cf5e | DAT_006b028c
+    FILD dword ptr [EAX]                ; 0041cf5e | g_StoredX
     FMUL float ptr [0x0059aa88]         ; 0041cf60 | DAT_0059aa88
     FSTP float ptr [EBX]                ; 0041cf66
-    FILD dword ptr [EAX + 0x4]          ; 0041cf68 | DAT_006b0290
+    FILD dword ptr [EAX + 0x4]          ; 0041cf68 | g_StoredY
     FMUL float ptr [0x0059aa88]         ; 0041cf6b | DAT_0059aa88
     FSTP float ptr [EBX + 0x4]          ; 0041cf71
-    FILD dword ptr [EAX + 0x8]          ; 0041cf74 | DAT_006b0294
+    FILD dword ptr [EAX + 0x8]          ; 0041cf74 | g_StoredZ
     FMUL float ptr [0x0059aa88]         ; 0041cf77 | DAT_0059aa88
     FSTP float ptr [EBX + 0x8]          ; 0041cf7d
     LEA EBX,[ESP + 0x48]                ; 0041cf80

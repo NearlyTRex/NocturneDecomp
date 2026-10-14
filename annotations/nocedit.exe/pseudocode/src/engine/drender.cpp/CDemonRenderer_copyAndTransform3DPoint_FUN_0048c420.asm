@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_drender_cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0048c420(CDemonRenderer *this_ptr,CVector3f *input_point)
+; void __cdecl engine_drender_cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0048c420(CDemonRenderer *this_ptr,CVector3i *input_point)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
-; CVector3f *      Stack[0x8]:4   input_point
+; CVector3i *      Stack[0x8]:4   input_point
 ; Local Variables:
-; CQuaternion4f    Stack[-0x10]:16  CStack_10
+; SMRGLPoint       Stack[-0x10]:16  CStack_10
 ;
 ; XREF[3]:
 ;   core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50 at 004983e2
@@ -33,7 +33,7 @@ section .text
     MOV EAX,ESP                         ; 0048c43b
     PUSH EAX                            ; 0048c43d
     CALL engine_3d.c_processCameraRelativePoint_FUN_004037e0 ; 0048c43e
-        ;   XREF to: 004037e0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_processCameraRelativePoint_FUN_004037e0(CQuaternion4f * input_point)
+        ;   XREF to: 004037e0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_processCameraRelativePoint_FUN_004037e0(SMRGLPoint * block)
     ADD ESP,0x4                         ; 0048c443
     ADD ESP,0x10                        ; 0048c446
     RET                                 ; 0048c449

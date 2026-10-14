@@ -4,15 +4,15 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 2534 functions
+  0 suspects: 2536 functions
   1 suspects: 755 functions
-  2 suspects: 375 functions
-  3 suspects: 196 functions
+  2 suspects: 374 functions
+  3 suspects: 195 functions
   4 suspects: 152 functions
-  5 suspects: 125 functions
+  5 suspects: 126 functions
   6 suspects: 94 functions
   7 suspects: 82 functions
-  8 suspects: 65 functions
+  8 suspects: 64 functions
   9 suspects: 55 functions
   10 suspects: 40 functions
   11 suspects: 40 functions
@@ -666,7 +666,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     core_mission.cpp_CDemonMission_setTeleportTarget_F (  8 lines)
       (this_ptr->pending_teleport).position.x = (teleport_target->...
     engine_drender.cpp_CDemonRenderer_copyAndTransform (  9 lines)
-      CStack_10.x = input_point->x;...
+      SStack_10.point.x = input_point->x;...
     core_actor.cpp_copyVector_FUN_0040e180             ( 10 lines)
       dst_ptr->x = src_ptr->x;...
     core_actor.cpp_CBoundingBox3D_copy_FUN_0040e240    ( 10 lines)
@@ -1855,8 +1855,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: sound/sndmain.cpp, Lines: 16, Types: ['unresolved_funcptr', 'warning_overlapping_globals']
   sound_sndmain.cpp_audioThreadProc_FUN_00528670
     File: sound/sndmain.cpp, Lines: 16, Types: ['bitcast_double_pair', 'warning_overlapping_globals']
-  engine_drender.cpp_CDemonRenderer_processCameraRelativeVerte
-    File: engine/drender.cpp, Lines: 17, Types: ['suspect_float']
   core_event.cpp_CRuleList_remove_FUN_00481770
     File: core/event.cpp, Lines: 17, Types: ['pointer_stride_bytecount']
   core_fire.cpp_CBulletTrail_init_FUN_00485640
@@ -2463,8 +2461,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: cockpit/pkbmpset.cpp, Lines: 9, Types: ['stack_param', 'stack_ref']
   core_scat.cpp_FUN_004fbb70
     File: core/scat.cpp, Lines: 9, Types: ['stack_param']
-  engine_3d.c_processCameraRelativePoint_FUN_004044d0
-    File: engine/3d.c, Lines: 10, Types: ['undefined_data']
   sound_snddx.cpp_CDirectSoundDevice_commitDeferredSettings_FU
     File: sound/snddx.cpp, Lines: 11, Types: ['undefined_data', 'unresolved_funcptr', 'warning_overlapping_globals']
   shape_edittool.cpp_CEdButton_calculateAndSetBounds_FUN_00476

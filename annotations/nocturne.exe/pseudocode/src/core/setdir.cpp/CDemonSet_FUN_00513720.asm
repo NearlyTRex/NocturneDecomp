@@ -112,7 +112,7 @@ section .text
     MOV ESI,dword ptr [0x005ae700]      ; 005137e9 | PTR_DAT_005ae700
     PUSH ESI                            ; 005137ef | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_004609d0 ; 005137f0
-        ;   XREF to: 004609d0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_004609d0(CDemonRenderer * this_ptr, CVector3f * input_point)
+        ;   XREF to: 004609d0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_004609d0(CDemonRenderer * this_ptr, CVector3i * input_point)
     ADD ESP,0x8                         ; 005137f5
     CALL engine_special.cpp_clearZBufferNative_FUN_0052eed4 ; 005137f8
         ;   XREF to: 0052eed4 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearZBufferNative_FUN_0052eed4()

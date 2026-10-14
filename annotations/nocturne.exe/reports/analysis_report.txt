@@ -7,10 +7,10 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 4923
-Clean functions: 2534 (51.5%)
-Functions with suspects: 2389 (48.5%)
+Clean functions: 2536 (51.5%)
+Functions with suspects: 2387 (48.5%)
 
-Total suspect patterns: 20970
+Total suspect patterns: 20962
 Average suspects per function: 4.26
 
 Virtual files: 203 total, 10 at 100%, 12 at 90%+
@@ -28,7 +28,7 @@ Failed: 4923
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  undefined_data            4064
+  undefined_data            4058
   pointer_cast              3555
   pointer_truncation        2889
   unrolled_memcpy           1476
@@ -50,7 +50,7 @@ SUSPECT PATTERN BREAKDOWN
   static_shift_too_many_bits 200
   unresolved_funcptr        172
   warning_type_propagation  143
-  suspect_float             128
+  suspect_float             126
   sub84_truncation          98
   stack_alignment_array     97
   unrolled_strcat           90
@@ -163,7 +163,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   00414e60: core_battery.cpp_CBattery_process_FUN_00414e60 (4 lines)
   00414f40: core_battery.cpp_CBattery_getCollisionType_FUN_00414f40 (4 lines)
   00415040: core_beast.cpp_CBeast_getActorType_FUN_00415040 (4 lines)
-  ... and 2484 more
+  ... and 2486 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -201,18 +201,18 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
 
-  undefined_data (688 functions):
+  undefined_data (686 functions):
     00403f50: engine_2d.c_clearInputAndWait_FUN_00403f50
     00404120: engine_2d.c_mapFrameBuffer_FUN_00404120
     00404360: engine_2d.c_unmapFrameBuffer_FUN_00404360
     00404430: engine_3d.c_abortRemovedMRGLHandler_FUN_00404430
-    004044d0: engine_3d.c_processCameraRelativePoint_FUN_004044d0
     00404530: engine_3d.c_transformAndBufferVertices_FUN_00404530
     00404610: engine_3d.c_isVisiblePlane_FUN_00404610
     00404680: engine_3d.c_lookupLitColor_FUN_00404680
     00404730: engine_3d.c_processVertexLighting_FUN_00404730
     00404790: engine_3d.c_processTextureCoordinates_FUN_00404790
-    ... and 678 more
+    004047e0: engine_3d.c_renderPolygonGrayscaleLitOp5_FUN_004047e0
+    ... and 676 more
 
   pointer_cast (725 functions):
     00401010: engine_2d.c_initGraphicsSystem_FUN_00401010
@@ -465,7 +465,7 @@ FUNCTIONS BY SUSPECT TYPE
     00414b40: core_batman.cpp_CBatman_getTargetPoints_FUN_00414b40
     ... and 133 more
 
-  suspect_float (53 functions):
+  suspect_float (52 functions):
     00409d30: core_actor.cpp_CDemonActor_ctor_FUN_00409d30
     0040b300: core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040b300
     0040db50: core_actor.cpp_CDemonActor_handleFootstep_FUN_0040db50
@@ -476,7 +476,7 @@ FUNCTIONS BY SUSPECT TYPE
     0041f310: core_boxactor.cpp_CLightActor_ctor_FUN_0041f310
     00426e80: core_charactr.cpp_CCharacter_renderBurn_FUN_00426e80
     0043d1c0: core_crossbow.cpp_CCrossbow_fire_FUN_0043d1c0
-    ... and 43 more
+    ... and 42 more
 
   sub84_truncation (42 functions):
     0040b300: core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040b300

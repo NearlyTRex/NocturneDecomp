@@ -16,6 +16,6 @@ void __cdecl engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0
   CStack_10.x = (float)(int)ROUND(ROUND((double)world_position->x * 256));
   CStack_10.y = (float)(int)ROUND(ROUND((double)world_position->y * 256));
   CStack_10.z = (float)(int)ROUND(ROUND(256 * (double)world_position->z));
-  engine_3d_c_processCameraRelativePoint_FUN_004037e0(&CStack_10);
+  engine_3d_c_processCameraRelativePoint_FUN_004037e0((SMRGLPoint *)&CStack_10);
   return;
 }

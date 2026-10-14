@@ -11,7 +11,6 @@ CDemonActorType g_CDynamiteClassInfo = {};
 CDemonTriangle g_ClippedTriangleBuffer[8] = {};
 
 // CVector3f
-CVector3f g_DebugCubeBasePoint = {};
 CVector3f g_FloorRayDirection = {};
 CVector3f CVector3f_02ceed24 = {};
 
@@ -23,6 +22,9 @@ CVector3f g_ClipBuffer3Vertices[16] = {};
 CVector3f g_ClipBuffer4Vertices[16] = {};
 CVector3f g_ClipBuffer5Vertices[16] = {};
 CVector3f g_ClipOutputVertices[16] = {};
+
+// CVector3i
+CVector3i g_DebugCubeBasePoint = {};
 
 // byte
 byte g_FloorCacheValid = {};

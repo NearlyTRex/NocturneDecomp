@@ -325,7 +325,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0(CDem
   }
   g_RenderedTriangleCount = 0;
   engine_drender_cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_004609d0
-            ((CDemonRenderer *)PTR_DAT_005ae700,(CVector3f *)0x1bc9950);
+            ((CDemonRenderer *)PTR_DAT_005ae700,(CVector3i *)0x1bc9950);
   engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_00460f20
             ((CDemonRenderer *)PTR_DAT_005ae700,0xff,0xff,0xff);
   if ((4 < this_ptr->rendering_mode) || (this_ptr->rendering_mode < 0)) {

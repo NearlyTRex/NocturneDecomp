@@ -9,6 +9,9 @@
 
 // int
 extern int g_TexturesDisabled;
+extern int g_StoredX;
+extern int g_StoredY;
+extern int g_StoredZ;
 
 // undefined4
 extern undefined4 DAT_006b023c;
@@ -29,9 +32,6 @@ extern undefined4 DAT_006b0274;
 extern undefined4 DAT_006b027c;
 extern undefined4 DAT_006b0280;
 extern undefined4 DAT_006b0288;
-extern undefined4 DAT_006b028c;
-extern undefined4 DAT_006b0290;
-extern undefined4 DAT_006b0294;
 extern undefined4 DAT_006b029c;
 extern undefined4 DAT_006b02a0;
 extern undefined4 DAT_006b415c;

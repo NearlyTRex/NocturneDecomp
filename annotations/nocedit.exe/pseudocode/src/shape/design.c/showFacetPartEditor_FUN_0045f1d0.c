@@ -133,7 +133,7 @@ void __cdecl shape_design_c_showFacetPartEditor_FUN_0045f1d0(void)
       local_68.x = 0.0;
       local_68.y = 0.0;
       local_68.z = 0.0;
-      engine_3d_c_processCameraRelativePoint_FUN_004037e0(&local_68);
+      engine_3d_c_processCameraRelativePoint_FUN_004037e0((SMRGLPoint *)&local_68);
       engine_matrix_c_matrixPushAndTransform_FUN_0050cee0(local_58,local_3c,local_38,0,0,0);
       if (g_FacetWireframeMode != 0) {
         iVar12 = (int)ROUND(ROUND(((float)((fVar16 * fVar2) / fVar8) / (fVar6 * fVar5)) * fVar4));

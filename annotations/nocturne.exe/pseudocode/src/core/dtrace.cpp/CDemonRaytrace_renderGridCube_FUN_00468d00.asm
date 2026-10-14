@@ -108,7 +108,7 @@ section .text
     PUSH EDX                            ; 00468d8b | DAT_01b4d738
     LEA EBX,[ESP + 0x5c]                ; 00468d8c
     CALL engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_004609d0 ; 00468d90
-        ;   XREF to: 004609d0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_004609d0(CDemonRenderer * this_ptr, CVector3f * input_point)
+        ;   XREF to: 004609d0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_004609d0(CDemonRenderer * this_ptr, CVector3i * input_point)
     ADD ESP,0x8                         ; 00468d95
     MOV EAX,ESI                         ; 00468d98
     MOV EDX,dword ptr [0x005ae704]      ; 00468d9a | g_CDemonRenderer_PTR_005ae704

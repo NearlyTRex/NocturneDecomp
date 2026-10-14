@@ -6,7 +6,7 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 203
 Total functions: 4923
-Clean functions: 2534 (51.5%)
+Clean functions: 2536 (51.5%)
 Files at 100%: 10
 Files at 90%+: 12
 Files at 50%+: 139
@@ -1667,37 +1667,8 @@ FILES BELOW 50%
            - wincore_wddvmem.cpp_swapBuffers_FUN_00553910 (121 lines) [pointer_cast, pointer_truncation, signed_shift_global_idiom, warning_overlapping_globals]
            - wincore_wddvmem.cpp_restoreVideoAndMinimizeWindow_FUN_00553b70 (10 lines) [warning_overlapping_globals]
            - wincore_wddvmem.cpp_videoRestore_FUN_00553ba0 (53 lines) [warning_overlapping_globals]
-   43.3% | core/box.cpp
-         13/30 clean, 17 remaining
-           - core_box.cpp_CBox_ctor_FUN_0041a610 (27 lines) [pointer_cast, pointer_truncation]
-           - core_box.cpp_CBox_dtor_FUN_0041a6c0 (6 lines) [negative_offset]
-           - core_box.cpp_CBox_setupCorners_FUN_0041a6e0 (94 lines) [unrolled_memcpy]
-           - core_box.cpp_CBox_setupN_FUN_0041a910 (76 lines) [shadow_pointer_walk]
-           - core_box.cpp_CBox_updateTransform_FUN_0041aaa0 (91 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, unrolled_memcpy, unrolled_memset]
-           - core_box.cpp_CBox_processPhysics_FUN_0041ad10 (778 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, unknown_field, unrolled_memcpy, unrolled_memset]
-           - core_box.cpp_CBox_loadFromFile_FUN_0041c850 (33 lines) [unrolled_memcpy]
-           - core_box.cpp_CBox_setupVelocities_FUN_0041cb40 (26 lines) [unrolled_memcpy]
-           - core_box.cpp_CBoundingBox3D_isVisibleWithShadow_FUN_0041cce0 (89 lines) [warning_overlapping_globals]
-           - core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0 (63 lines) [param_count_too_few, self_copy_guard, stack_param, undefined_data, warning_overlapping_globals]
-           - core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_0041d050 (163 lines) [pointer_cast, warning_overlapping_globals]
-           - core_box.cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_0041d450 (24 lines) [undefined_data, warning_overlapping_globals]
-           - core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041d550 (176 lines) [unrolled_memset, warning_unreachable]
-           - core_box.cpp_CBoundingBox3D_computeFromPoints_FUN_0041d9d0 (51 lines) [unrolled_memcpy]
-           - core_box.cpp_CBoundingBox3D_computeFromVertices_FUN_0041daa0 (53 lines) [warning_overlapping_globals]
-           - core_box.cpp_CBoundingBox3D_render_FUN_0041dcc0 (134 lines) [warning_overlapping_globals]
-           - core_box.cpp_CBoundingBox3D_clampPoint_FUN_0041e160 (26 lines) [unrolled_memcpy]
-   42.9% | core/moon.cpp
-         6/14 clean, 8 remaining
-           - core_moon.cpp_CMoon_ctor_FUN_004de800 (10 lines) [negative_offset]
-           - core_moon.cpp_CMoon_dtor_FUN_004de830 (7 lines) [negative_offset]
-           - core_moon.cpp_CMoon_init_FUN_004de860 (56 lines) [pointer_cast, pointer_truncation, undefined_data]
-           - core_moon.cpp_CMoon_free_FUN_004dea60 (22 lines) [undefined_data]
-           - core_moon.cpp_CMoon_update_FUN_004deae0 (46 lines) [pointer_cast, pointer_truncation, undefined_data, unknown_field, warning_overlapping_globals]
-           - core_moon.cpp_CMoon_render_FUN_004dec50 (142 lines) [concat_reconstruction, pointer_cast, pointer_truncation, raw_address_constant, suspect_float, undefined_data, warning_overlapping_globals]
-           - core_moon.cpp_CMoon_renderJoystickCalibration_FUN_004df040 (43 lines) [pointer_cast, pointer_truncation, stack_alignment_array, undefined_data, warning_overlapping_globals]
-           - core_moon.cpp_CMoon_isAnimationFirstHalf_FUN_004df170 (8 lines) [warning_overlapping_globals]
-   42.2% | engine/drender.cpp
-         35/83 clean, 48 remaining
+   43.4% | engine/drender.cpp
+         36/83 clean, 47 remaining
            - engine_drender.cpp_FUN_004579c0 (18 lines) [undefined_data, unnamed_param, warning_overlapping_globals]
            - engine_drender.cpp_renderTriangleTextured_FUN_00457a00 (251 lines) [undefined_data, warning_overlapping_globals]
            - engine_drender.cpp_renderTriangleSimple_FUN_00458080 (213 lines) [pointer_truncation, shadow_pointer_walk, undefined_data, warning_overlapping_globals]
@@ -1728,7 +1699,6 @@ FILES BELOW 50%
            - engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700 (14 lines) [raw_address_constant]
            - engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_004607b0 (102 lines) [undefined_data, warning_overlapping_globals]
            - engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_004609d0 (9 lines) [unrolled_memcpy]
-           - engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00 (17 lines) [suspect_float]
            - engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 (45 lines) [raw_address_constant]
            - engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_00460c00 (8 lines) [undefined_data]
            - engine_drender.cpp_CDemonRenderer_setProjectionScaleSimple_FUN_00460c20 (7 lines) [undefined_data]
@@ -1746,6 +1716,35 @@ FILES BELOW 50%
            - engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_00461db0 (54 lines) [pointer_stride_bytecount, raw_address_pointer_store, undefined_data, unresolved_funcptr, warning_overlapping_globals]
            - engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 (33 lines) [unrolled_strcpy, warning_overlapping_globals]
            - engine_drender.cpp_CDemonRenderer_depthTest_FUN_00461f80 (23 lines) [pointer_cast, pointer_truncation]
+   43.3% | core/box.cpp
+         13/30 clean, 17 remaining
+           - core_box.cpp_CBox_ctor_FUN_0041a610 (27 lines) [pointer_cast, pointer_truncation]
+           - core_box.cpp_CBox_dtor_FUN_0041a6c0 (6 lines) [negative_offset]
+           - core_box.cpp_CBox_setupCorners_FUN_0041a6e0 (94 lines) [unrolled_memcpy]
+           - core_box.cpp_CBox_setupN_FUN_0041a910 (76 lines) [shadow_pointer_walk]
+           - core_box.cpp_CBox_updateTransform_FUN_0041aaa0 (91 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, unrolled_memcpy, unrolled_memset]
+           - core_box.cpp_CBox_processPhysics_FUN_0041ad10 (778 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, unknown_field, unrolled_memcpy, unrolled_memset]
+           - core_box.cpp_CBox_loadFromFile_FUN_0041c850 (33 lines) [unrolled_memcpy]
+           - core_box.cpp_CBox_setupVelocities_FUN_0041cb40 (26 lines) [unrolled_memcpy]
+           - core_box.cpp_CBoundingBox3D_isVisibleWithShadow_FUN_0041cce0 (89 lines) [warning_overlapping_globals]
+           - core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0 (63 lines) [param_count_too_few, self_copy_guard, stack_param, warning_overlapping_globals]
+           - core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_0041d050 (163 lines) [pointer_cast, warning_overlapping_globals]
+           - core_box.cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_0041d450 (24 lines) [undefined_data, warning_overlapping_globals]
+           - core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041d550 (176 lines) [unrolled_memset, warning_unreachable]
+           - core_box.cpp_CBoundingBox3D_computeFromPoints_FUN_0041d9d0 (51 lines) [unrolled_memcpy]
+           - core_box.cpp_CBoundingBox3D_computeFromVertices_FUN_0041daa0 (53 lines) [warning_overlapping_globals]
+           - core_box.cpp_CBoundingBox3D_render_FUN_0041dcc0 (134 lines) [warning_overlapping_globals]
+           - core_box.cpp_CBoundingBox3D_clampPoint_FUN_0041e160 (26 lines) [unrolled_memcpy]
+   42.9% | core/moon.cpp
+         6/14 clean, 8 remaining
+           - core_moon.cpp_CMoon_ctor_FUN_004de800 (10 lines) [negative_offset]
+           - core_moon.cpp_CMoon_dtor_FUN_004de830 (7 lines) [negative_offset]
+           - core_moon.cpp_CMoon_init_FUN_004de860 (56 lines) [pointer_cast, pointer_truncation, undefined_data]
+           - core_moon.cpp_CMoon_free_FUN_004dea60 (22 lines) [undefined_data]
+           - core_moon.cpp_CMoon_update_FUN_004deae0 (46 lines) [pointer_cast, pointer_truncation, undefined_data, unknown_field, warning_overlapping_globals]
+           - core_moon.cpp_CMoon_render_FUN_004dec50 (142 lines) [concat_reconstruction, pointer_cast, pointer_truncation, raw_address_constant, suspect_float, undefined_data, warning_overlapping_globals]
+           - core_moon.cpp_CMoon_renderJoystickCalibration_FUN_004df040 (43 lines) [pointer_cast, pointer_truncation, stack_alignment_array, undefined_data, warning_overlapping_globals]
+           - core_moon.cpp_CMoon_isAnimationFirstHalf_FUN_004df170 (8 lines) [warning_overlapping_globals]
    41.7% | core/bride.cpp
          5/12 clean, 7 remaining
            - core_bride.cpp_CBride_setup_FUN_0041fc20 (68 lines) [undefined_data, warning_overlapping_globals]
@@ -1774,27 +1773,11 @@ FILES BELOW 50%
            - engine_pod.cpp_CPod_computeAndStoreCRC_FUN_004f8eb0 (78 lines) [undefined_data]
            - engine_pod.cpp_CPod_locateFile_FUN_004f9170 (24 lines) [shadow_pointer_walk]
            - engine_pod.cpp_CPod_findFile_FUN_004f9200 (22 lines) [shadow_pointer_walk]
-   40.9% | core/dracbrid.cpp
-         9/22 clean, 13 remaining
-           - core_dracbrid.cpp_CDraculaBride_ctor_FUN_00458640 (38 lines) [shadow_pointer_walk, unrolled_memset]
-           - core_dracbrid.cpp_CDraculaBride_setup_FUN_00458730 (95 lines) [warning_overlapping_globals]
-           - core_dracbrid.cpp_CDraculaBride_process_FUN_00458a90 (747 lines) [pointer_cast, shadow_pointer_walk, undefined_data, unknown_field, unrolled_memcpy, unrolled_memset, warning_overlapping_globals, warning_type_propagation]
-           - core_dracbrid.cpp_CDraculaBride_explode_FUN_00459f70 (75 lines) [unknown_field]
-           - core_dracbrid.cpp_CDraculaBride_dismemberPart_FUN_0045a1a0 (22 lines) [warning_type_propagation]
-           - core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_0045a260 (76 lines) [warning_overlapping_globals]
-           - core_dracbrid.cpp_CDraculaBride_archive_FUN_0045a450 (74 lines) [undefined_data]
-           - core_dracbrid.cpp_CDraculaBride_getTargetPoints_FUN_0045a9e0 (33 lines) [unrolled_memcpy, warning_overlapping_globals]
-           - core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_0045ab40 (140 lines) [unrolled_memcpy, warning_overlapping_globals]
-           - core_dracbrid.cpp_CDraculaBride_updateFreakySounds_FUN_0045b020 (111 lines) [undefined_data, unrolled_memcpy]
-           - core_dracbrid.cpp_SFreaky_ctor_FUN_0045b310 (7 lines) [pointer_cast, pointer_truncation]
-           - core_dracbrid.cpp_SFreaky_dtor_FUN_0045b330 (6 lines) [negative_offset]
-           - core_dracbrid.cpp_CDraculaBride_dtor_FUN_0045b350 (32 lines) [negative_offset]
-   40.2% | engine/3d.c
-         37/92 clean, 55 remaining
+   41.3% | engine/3d.c
+         38/92 clean, 54 remaining
            - engine_3d.c_abortRemovedMRGLHandler_FUN_00404430 (9 lines) [undefined_data]
            - engine_3d.c_initTextureCache_FUN_00404480 (12 lines) [warning_overlapping_globals]
            - engine_3d.c_freeTextureCache_FUN_00404490 (15 lines) [warning_overlapping_globals]
-           - engine_3d.c_processCameraRelativePoint_FUN_004044d0 (10 lines) [undefined_data]
            - engine_3d.c_transformAndBufferVertices_FUN_00404530 (33 lines) [undefined_data, warning_overlapping_globals]
            - engine_3d.c_isVisiblePlane_FUN_00404610 (22 lines) [sign_compare_idiom, undefined_data]
            - engine_3d.c_lookupLitColor_FUN_00404680 (15 lines) [concat_reconstruction, undefined_data]
@@ -1846,6 +1829,21 @@ FILES BELOW 50%
            - engine_3d.c_clipAndDrawLine2D_FUN_00409290 (138 lines) [pointer_cast, pointer_truncation, undefined_data, unrolled_memcpy]
            - engine_3d.c_drawLine3DFromIndices_FUN_00409510 (40 lines) [stack_param, stack_ref, undefined_data, unrolled_memcpy]
            - engine_3d.c_clipAndDrawLine3D_FUN_00409590 (140 lines) [pointer_cast, pointer_truncation, undefined_data, unrolled_memcpy, warning_overlapping_globals]
+   40.9% | core/dracbrid.cpp
+         9/22 clean, 13 remaining
+           - core_dracbrid.cpp_CDraculaBride_ctor_FUN_00458640 (38 lines) [shadow_pointer_walk, unrolled_memset]
+           - core_dracbrid.cpp_CDraculaBride_setup_FUN_00458730 (95 lines) [warning_overlapping_globals]
+           - core_dracbrid.cpp_CDraculaBride_process_FUN_00458a90 (747 lines) [pointer_cast, shadow_pointer_walk, undefined_data, unknown_field, unrolled_memcpy, unrolled_memset, warning_overlapping_globals, warning_type_propagation]
+           - core_dracbrid.cpp_CDraculaBride_explode_FUN_00459f70 (75 lines) [unknown_field]
+           - core_dracbrid.cpp_CDraculaBride_dismemberPart_FUN_0045a1a0 (22 lines) [warning_type_propagation]
+           - core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_0045a260 (76 lines) [warning_overlapping_globals]
+           - core_dracbrid.cpp_CDraculaBride_archive_FUN_0045a450 (74 lines) [undefined_data]
+           - core_dracbrid.cpp_CDraculaBride_getTargetPoints_FUN_0045a9e0 (33 lines) [unrolled_memcpy, warning_overlapping_globals]
+           - core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_0045ab40 (140 lines) [unrolled_memcpy, warning_overlapping_globals]
+           - core_dracbrid.cpp_CDraculaBride_updateFreakySounds_FUN_0045b020 (111 lines) [undefined_data, unrolled_memcpy]
+           - core_dracbrid.cpp_SFreaky_ctor_FUN_0045b310 (7 lines) [pointer_cast, pointer_truncation]
+           - core_dracbrid.cpp_SFreaky_dtor_FUN_0045b330 (6 lines) [negative_offset]
+           - core_dracbrid.cpp_CDraculaBride_dtor_FUN_0045b350 (32 lines) [negative_offset]
    40.0% | core/dcube.cpp
          14/35 clean, 21 remaining
            - core_dcube.cpp_copyVector3_FUN_004484a0 (10 lines) [unrolled_memcpy]

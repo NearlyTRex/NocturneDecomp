@@ -101,6 +101,7 @@
 #include "types/structs/SMRGLKeyframeModelOnDisk.h"
 #include "types/structs/SMRGLLightPrimitive.h"
 #include "types/structs/SMRGLModelBounds.h"
+#include "types/structs/SMRGLPoint.h"
 #include "types/structs/SMRGLPointerArray.h"
 #include "types/structs/SMRGLPrimitiveBigPoly.h"
 #include "types/structs/SMRGLPrimitiveBigPolyIndex.h"

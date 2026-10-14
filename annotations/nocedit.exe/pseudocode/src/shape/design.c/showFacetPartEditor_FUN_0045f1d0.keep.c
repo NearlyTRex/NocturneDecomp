@@ -30,7 +30,7 @@ void __cdecl shape_design_c_showFacetPartEditor_FUN_0045f1d0(void)
   float10 fVar18;
   double dVar9;
   char local_b8 [80];
-  CQuaternion4f local_68;
+  SMRGLPoint local_68;
   int local_58;
   int local_54;
   uint local_50;
@@ -116,9 +116,9 @@ void __cdecl shape_design_c_showFacetPartEditor_FUN_0045f1d0(void)
       engine_light_cpp_setAmbientLightLevel_FUN_00505490(32000);
       engine_matrix_c_setCameraRotation_FUN_0050e290(0,0,0);
       engine_matrix_c_setCameraOrigin_FUN_0050e270(local_4c,local_1c,local_40);
-      local_68.x = 0.0;
-      local_68.y = 0.0;
-      local_68.z = 0.0;
+      local_68.point.x = 0;
+      local_68.point.y = 0;
+      local_68.point.z = 0;
       engine_3d_c_processCameraRelativePoint_FUN_004037e0(&local_68);
       engine_matrix_c_matrixPushAndTransform_FUN_0050cee0(local_58,local_3c,local_38,0,0,0);
       if (g_WireframeMode != 0) {

@@ -6,6 +6,9 @@
 
 // int
 int g_TexturesDisabled = {};
+int g_StoredX = {};
+int g_StoredY = {};
+int g_StoredZ = {};
 
 // undefined4
 undefined4 DAT_006b023c = {};
@@ -26,9 +29,6 @@ undefined4 DAT_006b0274 = {};
 undefined4 DAT_006b027c = {};
 undefined4 DAT_006b0280 = {};
 undefined4 DAT_006b0288 = {};
-undefined4 DAT_006b028c = {};
-undefined4 DAT_006b0290 = {};
-undefined4 DAT_006b0294 = {};
 undefined4 DAT_006b029c = {};
 undefined4 DAT_006b02a0 = {};
 undefined4 DAT_006b415c = {};

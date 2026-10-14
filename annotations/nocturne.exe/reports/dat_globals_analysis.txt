@@ -2,21 +2,21 @@
 DAT_ GLOBALS ANALYSIS REPORT
 ================================================================================
 
-Total DAT_ globals found: 2521
+Total DAT_ globals found: 2518
 Filtered out (inside named data): 320
 Immediate constants (not real globals): 61
-Real globals remaining: 2140
+Real globals remaining: 2137
 
 Current type breakdown:
-  undefined4                     2086
+  undefined4                     2083
   undefined1                     31
   undefined8                     12
   undefined2                     11
 
-DAT_ globals with type hints: 624 / 2140
+DAT_ globals with type hints: 621 / 2137
 
 --------------------------------------------------------------------------------
-HIGH CONFIDENCE INFERENCES (431)
+HIGH CONFIDENCE INFERENCES (428)
 --------------------------------------------------------------------------------
   DAT_0057919e                    addr=0057919e    current=undefined4      likely=float           refs=1
     nearby: s_Bip01_Head_005791a2 (TerminatedCString) at offset -4
@@ -359,15 +359,9 @@ HIGH CONFIDENCE INFERENCES (431)
   DAT_006b0268                    addr=006b0268    current=undefined4      likely=SIZE_T          refs=4
     nearby: g_TexturesDisabled (int) at offset -16
   DAT_006b0288                    addr=006b0288    current=undefined4      likely=SMRGLHeaderExtended *  refs=6
-    nearby: g_TexturesDisabled (int) at offset +16
-  DAT_006b028c                    addr=006b028c    current=undefined4      likely=float           refs=2
-    nearby: g_TexturesDisabled (int) at offset +20
-  DAT_006b0290                    addr=006b0290    current=undefined4      likely=float           refs=2
-    nearby: g_TexturesDisabled (int) at offset +24
-  DAT_006b0294                    addr=006b0294    current=undefined4      likely=float           refs=2
-    nearby: g_TexturesDisabled (int) at offset +28
+    nearby: g_StoredX (int) at offset -4
   DAT_006b029c                    addr=006b029c    current=undefined4      likely=int             refs=12
-    nearby: g_TexturesDisabled (int) at offset +36
+    nearby: g_StoredZ (int) at offset +8
   DAT_006b415c                    addr=006b415c    current=undefined4      likely=int             refs=2
   DAT_00761ec8                    addr=00761ec8    current=undefined4      likely=int             refs=1
   DAT_00763e10                    addr=00763e10    current=undefined4      likely=char *          refs=2
@@ -1405,17 +1399,17 @@ NO TYPE HINTS (1516)
   DAT_006b0274                    addr=006b0274    type=undefined4      refs=2  nearby: g_TexturesDisabled at -4
   DAT_006b027c                    addr=006b027c    type=undefined4      refs=1  nearby: g_TexturesDisabled at +4
   DAT_006b0280                    addr=006b0280    type=undefined4      refs=20  nearby: g_TexturesDisabled at +8
-  DAT_006b0284                    addr=006b0284    type=undefined4      refs=1  nearby: g_TexturesDisabled at +12
-  DAT_006b0298                    addr=006b0298    type=undefined4      refs=1  nearby: g_TexturesDisabled at +32
-  DAT_006b02a0                    addr=006b02a0    type=undefined4      refs=12  nearby: g_TexturesDisabled at +40
-  DAT_006b02dc                    addr=006b02dc    type=undefined4      refs=1  nearby: g_TexturesDisabled at +100
-  DAT_006b02e0                    addr=006b02e0    type=undefined4      refs=1  nearby: g_TexturesDisabled at +104
-  DAT_006b02e4                    addr=006b02e4    type=undefined4      refs=1  nearby: g_TexturesDisabled at +108
-  DAT_006b02e8                    addr=006b02e8    type=undefined4      refs=1  nearby: g_TexturesDisabled at +112
-  DAT_006b02ec                    addr=006b02ec    type=undefined4      refs=1  nearby: g_TexturesDisabled at +116
-  DAT_006b02f0                    addr=006b02f0    type=undefined4      refs=1  nearby: g_TexturesDisabled at +120
-  DAT_006b02f4                    addr=006b02f4    type=undefined4      refs=1  nearby: g_TexturesDisabled at +124
-  DAT_006b02f8                    addr=006b02f8    type=undefined4      refs=1  nearby: g_TexturesDisabled at +128
+  DAT_006b0284                    addr=006b0284    type=undefined4      refs=1  nearby: g_StoredX at -8
+  DAT_006b0298                    addr=006b0298    type=undefined4      refs=1  nearby: g_StoredZ at +4
+  DAT_006b02a0                    addr=006b02a0    type=undefined4      refs=12  nearby: g_StoredZ at +12
+  DAT_006b02dc                    addr=006b02dc    type=undefined4      refs=1  nearby: g_StoredZ at +72
+  DAT_006b02e0                    addr=006b02e0    type=undefined4      refs=1  nearby: g_StoredZ at +76
+  DAT_006b02e4                    addr=006b02e4    type=undefined4      refs=1  nearby: g_StoredZ at +80
+  DAT_006b02e8                    addr=006b02e8    type=undefined4      refs=1  nearby: g_StoredZ at +84
+  DAT_006b02ec                    addr=006b02ec    type=undefined4      refs=1  nearby: g_StoredZ at +88
+  DAT_006b02f0                    addr=006b02f0    type=undefined4      refs=1  nearby: g_StoredZ at +92
+  DAT_006b02f4                    addr=006b02f4    type=undefined4      refs=1  nearby: g_StoredZ at +96
+  DAT_006b02f8                    addr=006b02f8    type=undefined4      refs=1  nearby: g_StoredZ at +100
   DAT_006b4160                    addr=006b4160    type=undefined4      refs=1
   DAT_006b494c                    addr=006b494c    type=undefined4      refs=2
   DAT_006b4950                    addr=006b4950    type=undefined4      refs=2

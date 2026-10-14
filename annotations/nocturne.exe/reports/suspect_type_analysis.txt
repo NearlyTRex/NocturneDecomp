@@ -4,7 +4,7 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  undefined_data                  4064 ( 19.4%)
+  undefined_data                  4058 ( 19.4%)
   pointer_cast                    3555 ( 17.0%)
   pointer_truncation              2889 ( 13.8%)
   unrolled_memcpy                 1476 (  7.0%)
@@ -26,7 +26,7 @@ SUSPECT TYPE COUNTS
   static_shift_too_many_bits       200 (  1.0%)
   unresolved_funcptr               172 (  0.8%)
   warning_type_propagation         143 (  0.7%)
-  suspect_float                    128 (  0.6%)
+  suspect_float                    126 (  0.6%)
   sub84_truncation                  98 (  0.5%)
   stack_alignment_array             97 (  0.5%)
   unrolled_strcat                   90 (  0.4%)
@@ -88,7 +88,7 @@ SUSPECT TYPE COUNTS
   mem_magic_size                     1 (  0.0%)
 
 ====================================================================================================
-TYPE: undefined_data (4064 occurrences)
+TYPE: undefined_data (4058 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -188,7 +188,6 @@ Functions:
   core_boneguy.cpp_CBoneGuy_process_FUN_00418a00
   core_boneguy.cpp_CBoneGuy_setup_FUN_00418800
   core_box.cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_0041d450
-  core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0
   core_boxactor.cpp_CBoxActor_setupPhysicsBox_FUN_0041e4d0
   core_boxactor.cpp_CLightActor_FUN_0041f6e0
   core_boxactor.cpp_CLightActor_archive_FUN_0041f600
@@ -567,7 +566,6 @@ Functions:
   engine_3d.c_flushRenderQueue_FUN_00408f50
   engine_3d.c_isVisiblePlane_FUN_00404610
   engine_3d.c_lookupLitColor_FUN_00404680
-  engine_3d.c_processCameraRelativePoint_FUN_004044d0
   engine_3d.c_processPolygonColor_FUN_00405140
   engine_3d.c_processTextureCoordinates_FUN_00404790
   engine_3d.c_processVertexLighting_FUN_00404730
@@ -5796,7 +5794,7 @@ Functions:
   engine_clipper.c_clipPolygonToViewFrustum_FUN_00432210
 
 ====================================================================================================
-TYPE: suspect_float (128 occurrences)
+TYPE: suspect_float (126 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -5872,7 +5870,6 @@ Functions:
   core_tommygun.cpp_CTommyGun_fire_FUN_00545c30
   core_turret.cpp_CTurret_fire_FUN_0054ab10
   core_weapon.cpp_CWeapon_ctor_FUN_00553d90
-  engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
   engine_matrix.c_invertTransformMatrix_FUN_004ccae0
   shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00473190
 

@@ -62,16 +62,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 42,
+    "complexity_score": 17,
     "cross_reference_count": 62,
     "function_call_count": 2,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 17,
-    "suspect_count": 2,
-    "suspect_types": [
-      "suspect_float"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 42
   },
   "cross_references": [
@@ -670,22 +668,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 10,
-      "match": "6.432103e-39",
-      "severity": "mild",
-      "text": "CStack_18.x = 6.432103e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 13,
-      "match": "6.432123e-39",
-      "severity": "mild",
-      "text": "CStack_18.w = 6.432123e-39;",
-      "type": "suspect_float"
-    }
-  ]
+  "suspects": []
 }

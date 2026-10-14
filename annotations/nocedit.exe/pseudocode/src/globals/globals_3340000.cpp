@@ -6,7 +6,9 @@
 
 // CVector3f
 CVector3f g_SavedCameraRotation = {};
-CVector3f g_VDTempVector = {};
+
+// CVector3i
+CVector3i g_VDTempVector = {};
 
 // CZThumb[1500]
 CZThumb g_CZThumbPool[1500] = {};

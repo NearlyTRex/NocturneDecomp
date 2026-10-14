@@ -17,7 +17,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90(CEd
   CStack_28.x = (float)(int)ROUND(world_position->x * 256.0f);
   CStack_28.y = (float)(int)ROUND(world_position->y * 256.0f);
   CStack_28.z = (float)(int)ROUND(world_position->z * 256.0f);
-  engine_3d_c_processCameraRelativePoint_FUN_004037e0(&CStack_28);
+  engine_3d_c_processCameraRelativePoint_FUN_004037e0((SMRGLPoint *)&CStack_28);
   engine_matrix_c_matrixPushAndTransform_FUN_0050cee0
             ((int)ROUND((orientation->vec).x * 10430.38f),
              (int)ROUND((orientation->vec).z * 10430.38f),

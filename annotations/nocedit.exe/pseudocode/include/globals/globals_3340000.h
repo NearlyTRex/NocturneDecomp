@@ -3,6 +3,7 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "types/classes/CVector3f.h"
+#include "types/classes/CVector3i.h"
 #include "types/classes/CZThumb.h"
 #include "types/structs/SDisplayListSortEntry.h"
 #include "types/structs/SRaytraceState.h"
@@ -14,7 +15,9 @@
 
 // CVector3f
 extern CVector3f g_SavedCameraRotation;
-extern CVector3f g_VDTempVector;
+
+// CVector3i
+extern CVector3i g_VDTempVector;
 
 // CZThumb[1500]
 extern CZThumb g_CZThumbPool[1500];

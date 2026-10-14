@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 4923
-Clean: 2506 (50.9%)
-With suspects: 2417
-Total suspects: 20970
+Clean: 2508 (50.9%)
+With suspects: 2415
+Total suspects: 20962
 
 ====================================================================================================
 cockpit_ckptutil.c_applyActPalette_FUN_0042d370 (1 suspect)
@@ -3074,16 +3074,13 @@ core_box.cpp_CBoundingBox3D_isVisibleWithShadow_FUN_0041cce0 (1 suspect)
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 ====================================================================================================
-core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0 (12 suspects)
+core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0 (9 suspects)
   File: core/box.cpp
 ====================================================================================================
   Line 0 [param_count_too_few]: Function declares 1 params but call sites push 2 (1 missing)
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
   Line 8 [stack_param]: int in_stack_00000008;
   Line 35 [self_copy_guard]: if (&local_20 != &local_38) {
-  Line 40 [undefined_data]: local_14.x = (float)DAT_006b028c * _DAT_0059aa88;
-  Line 41 [undefined_data]: local_14.y = (float)DAT_006b0290 * _DAT_0059aa88;
-  Line 42 [undefined_data]: local_14.z = (float)DAT_006b0294 * _DAT_0059aa88;
   Line 50 [static_uninitvar]: local_2c.x = (int)ROUND(local_20 * _DAT_0059aa80);
   Line 51 [static_uninitvar]: local_2c.y = (int)ROUND(local_1c * _DAT_0059aa80);
   Line 52 [static_uninitvar]: local_2c.z = (int)ROUND(local_18 * _DAT_0059aa80);
@@ -25077,14 +25074,6 @@ engine_3d.c_lookupLitColor_FUN_00404680 (2 suspects)
   Line 15 [concat_reconstruction]: return CONCAT13(uVar1,CONCAT12(uVar1,CONCAT11(uVar1,uVar1)));
 
 ====================================================================================================
-engine_3d.c_processCameraRelativePoint_FUN_004044d0 (3 suspects)
-  File: engine/3d.c
-====================================================================================================
-  Line 5 [undefined_data]: DAT_006b028c = input_point->x;
-  Line 6 [undefined_data]: DAT_006b0290 = input_point->y;
-  Line 7 [undefined_data]: DAT_006b0294 = input_point->z;
-
-====================================================================================================
 engine_3d.c_processPolygonColor_FUN_00405140 (2 suspects)
   File: engine/3d.c
 ====================================================================================================
@@ -27049,7 +27038,7 @@ engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80 (3 suspects)
 engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_004609d0 (1 suspect)
   File: engine/drender.cpp
 ====================================================================================================
-  Line 7 [unrolled_memcpy]: CStack_10.x = input_point->x;
+  Line 7 [unrolled_memcpy]: SStack_10.point.x = input_point->x;
 
 ====================================================================================================
 engine_drender.cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0045f090 (4 suspects)
@@ -27092,13 +27081,6 @@ engine_drender.cpp_CDemonRenderer_getCameraRotationFixed_FUN_00460d90 (5 suspect
   Line 14 [pointer_cast]: *puVar1 = *(uint *)((int)&CStack_14 + (uint)bVar2 * -8);
   Line 16 [pointer_truncation]: *(uint *)((int)&CStack_14 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 4);
   Line 16 [pointer_cast]: *(uint *)((int)&CStack_14 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 4);
-
-====================================================================================================
-engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00 (2 suspects)
-  File: engine/drender.cpp
-====================================================================================================
-  Line 10 [suspect_float]: CStack_18.x = 6.432103e-39;
-  Line 13 [suspect_float]: CStack_18.w = 6.432123e-39;
 
 ====================================================================================================
 engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_00461db0 (6 suspects)

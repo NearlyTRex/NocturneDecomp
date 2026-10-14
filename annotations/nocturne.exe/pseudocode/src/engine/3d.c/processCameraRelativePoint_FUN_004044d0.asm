@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SMRGLHeaderExtended * __cdecl engine_3d_c_processCameraRelativePoint_FUN_004044d0(CQuaternion4f *input_point)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_processCameraRelativePoint_FUN_004044d0(SMRGLPoint *block)
 ;
 ; Parameters:
-; CQuaternion4f *  Stack[0x4]:4   input_point
+; SMRGLPoint *     Stack[0x4]:4   block
 ;
 ; XREF[3]:
 ;   engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_004609d0 at 004609ee
@@ -12,9 +12,9 @@
 ;   shape_edittool.cpp_CEditorTools_draw3DAxisLabelsAt_FUN_00472fd0 at 00473003
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006b028c
-;   undefined4 DAT_006b0290
-;   undefined4 DAT_006b0294
+;   int g_StoredX
+;   int g_StoredY
+;   int g_StoredZ
 ;   int g_RelativeX
 ;   int g_RelativeY
 ;   int g_RelativeZ
@@ -31,12 +31,12 @@ section .text
     PUSH ESI                            ; 004044d1
     MOV EAX,dword ptr [ESP + 0xc]       ; 004044d2
     MOV EDX,dword ptr [EAX + 0x4]       ; 004044d6
-    MOV dword ptr [0x006b028c],EDX      ; 004044d9 | DAT_006b028c
+    MOV dword ptr [0x006b028c],EDX      ; 004044d9 | g_StoredX
     MOV EDX,dword ptr [EAX + 0x8]       ; 004044df
-    MOV dword ptr [0x006b0290],EDX      ; 004044e2 | DAT_006b0290
+    MOV dword ptr [0x006b0290],EDX      ; 004044e2 | g_StoredY
     MOV EDX,dword ptr [EAX + 0xc]       ; 004044e8
     MOV ECX,dword ptr [EAX + 0x4]       ; 004044eb
-    MOV dword ptr [0x006b0294],EDX      ; 004044ee | DAT_006b0294
+    MOV dword ptr [0x006b0294],EDX      ; 004044ee | g_StoredZ
     MOV EDX,dword ptr [0x01c039c4]      ; 004044f4 | g_CameraOriginX
     SUB EDX,ECX                         ; 004044fa
     MOV EBX,dword ptr [EAX + 0x8]       ; 004044fc

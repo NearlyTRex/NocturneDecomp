@@ -149,7 +149,7 @@ void __cdecl CDemonRenderer::setupCameraAndProjection(CDemonRenderer *this_ptr,C
 
 // Original: engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0048c420
 // Address: 0048c420
-void __cdecl CDemonRenderer::copyAndTransform3DPoint(CDemonRenderer *this_ptr,CVector3f *input_point);
+void __cdecl CDemonRenderer::copyAndTransform3DPoint(CDemonRenderer *this_ptr,CVector3i *input_point);
 
 // Original: engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
 // Address: 0048c450

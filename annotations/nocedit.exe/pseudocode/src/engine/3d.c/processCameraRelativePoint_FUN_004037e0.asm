@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SMRGLHeaderExtended * __cdecl engine_3d_c_processCameraRelativePoint_FUN_004037e0(CQuaternion4f *input_point)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_processCameraRelativePoint_FUN_004037e0(SMRGLPoint *block)
 ;
 ; Parameters:
-; CQuaternion4f *  Stack[0x4]:4   input_point
+; SMRGLPoint *     Stack[0x4]:4   block
 ;
 ; XREF[4]:
 ;   engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0048c420 at 0048c43e

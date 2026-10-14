@@ -47,7 +47,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0048c420",
-    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0048c420(CDemonRenderer *this_ptr,CVector3f *input_point)"
+    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0048c420(CDemonRenderer *this_ptr,CVector3i *input_point)"
   },
   "function_calls": [
     {
@@ -129,7 +129,7 @@
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "CStack_10.x = input_point->x;",
+      "text": "CStack_10.point.x = input_point->x;",
       "type": "unrolled_memcpy"
     }
   ],
@@ -145,7 +145,7 @@
         "name": "CStack_10",
         "offset": -16,
         "size": 16,
-        "type": "CQuaternion4f"
+        "type": "SMRGLPoint"
       },
       {
         "is_param": true,
@@ -159,7 +159,7 @@
         "name": "input_point",
         "offset": 8,
         "size": 4,
-        "type": "CVector3f *"
+        "type": "CVector3i *"
       }
     ]
   },

@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_drender_cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_004609d0(CDemonRenderer *this_ptr,CVector3f *input_point)
+; void __cdecl engine_drender_cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_004609d0(CDemonRenderer *this_ptr,CVector3i *input_point)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
-; CVector3f *      Stack[0x8]:4   input_point
+; CVector3i *      Stack[0x8]:4   input_point
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
 ; undefined4       Stack[-0x8]:4  local_8
@@ -35,7 +35,7 @@ section .text
     MOV EAX,ESP                         ; 004609eb
     PUSH EAX                            ; 004609ed
     CALL engine_3d.c_processCameraRelativePoint_FUN_004044d0 ; 004609ee
-        ;   XREF to: 004044d0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_processCameraRelativePoint_FUN_004044d0(CQuaternion4f * input_point)
+        ;   XREF to: 004044d0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_processCameraRelativePoint_FUN_004044d0(SMRGLPoint * block)
     ADD ESP,0x4                         ; 004609f3
     ADD ESP,0x10                        ; 004609f6
     RET                                 ; 004609f9
