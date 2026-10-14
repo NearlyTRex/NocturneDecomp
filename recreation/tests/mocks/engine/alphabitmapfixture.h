@@ -56,7 +56,7 @@ protected:
     C3d three_d_{matrix_};
     ::testing::NiceMock<platform::MockRenderer> renderer_;
     SCurrentTexture current_texture_;
-    CSpecial special_{renderer_, screen_, two_d_, three_d_, current_texture_};
+    CSpecial special_{renderer_, screen_, two_d_, matrix_, three_d_, current_texture_};
     CAlphaBitmap bitmap_{dosio_, screen_, special_};
 };
 

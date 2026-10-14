@@ -62,9 +62,9 @@ TEST(CSpecial, PublicInterface) {
                                           std::span<const std::uint8_t>, int)>);
     static_assert(std::is_same_v<decltype(&CSpecial::renderScanline),
                                  void (CSpecial::*)(SSoftwareEdge *, SSoftwareEdge *, int)>);
-    static_assert(
-        std::is_same_v<decltype(&CSpecial::transformAndProjectPoint),
-                       void (CSpecial::*)(platform::SProjectedVertex *, common::CVector3i *)>);
+    static_assert(std::is_same_v<decltype(&CSpecial::transformAndProjectPoint),
+                                 void (CSpecial::*)(platform::SProjectedVertex &,
+                                                    const common::CVector3i &) const>);
     static_assert(
         std::is_same_v<decltype(&CSpecial::transformPoint),
                        void (CSpecial::*)(platform::SProjectedVertex *, common::CVector3i *)>);
@@ -156,7 +156,7 @@ protected:
     CMatrix matrix_{two_d_, light_};
     C3d three_d_{matrix_};
     SCurrentTexture current_texture_;
-    CSpecial special_{renderer_, screen_, two_d_, three_d_, current_texture_};
+    CSpecial special_{renderer_, screen_, two_d_, matrix_, three_d_, current_texture_};
 };
 
 TEST_F(CSpecialTest, StartsWithTheRendererOff) {

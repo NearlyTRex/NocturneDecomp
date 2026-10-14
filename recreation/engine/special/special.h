@@ -17,7 +17,7 @@ class CSpecial {
 public:
     // The renderer bridge points at the current texture's dimension.
     CSpecial(platform::IRenderer &renderer, IScreenDevice &screen, const C2d &two_d,
-             const C3d &three_d, SCurrentTexture &current_texture);
+             const CMatrix &matrix, const C3d &three_d, SCurrentTexture &current_texture);
 
     // The INI's useDirect3D: whether loadExternalRenderer may start the renderer.
     [[nodiscard]] bool getUseDirect3D() const;
@@ -47,7 +47,10 @@ public:
                           std::span<const std::uint8_t> src_indices,
                           std::span<const std::uint8_t> src_alpha, int global_alpha);
     void renderScanline(SSoftwareEdge *left, SSoftwareEdge *right, int scanline_y);
-    void transformAndProjectPoint(platform::SProjectedVertex *output, common::CVector3i *input);
+    // Takes the point into eye space and onto the screen. Outside the view, screen_x holds the
+    // clip flags instead, and inv_z and screen_y keep what they held.
+    void transformAndProjectPoint(platform::SProjectedVertex &output,
+                                  const common::CVector3i &input) const;
     void transformPoint(platform::SProjectedVertex *output, common::CVector3i *input);
     int loadExternalRenderer();
     int kill();
@@ -97,6 +100,7 @@ private:
     platform::IRenderer &renderer_;
     IScreenDevice &screen_;
     const C2d &two_d_;
+    const CMatrix &matrix_;
     const C3d &three_d_;
     SCurrentTexture &current_texture_;
     // The renderer keeps these addresses for as long as it runs.

@@ -85,7 +85,7 @@ protected:
     CMatrix matrix_{two_d_, light_};
     C3d three_d_{matrix_};
     SCurrentTexture current_texture_;
-    CSpecial special_{renderer_, screen_, two_d_, three_d_, current_texture_};
+    CSpecial special_{renderer_, screen_, two_d_, matrix_, three_d_, current_texture_};
 };
 
 TEST_F(CSpecialAlphaTest, NearlyFullCoverageDrawsThePaletteColourAsItIs) {

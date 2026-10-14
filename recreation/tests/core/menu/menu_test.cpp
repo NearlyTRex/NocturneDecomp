@@ -93,7 +93,7 @@ protected:
     engine::C3d three_d_{matrix_};
     NiceMock<platform::MockRenderer> renderer_;
     engine::SCurrentTexture current_texture_;
-    engine::CSpecial special_{renderer_, screen_, two_d_, three_d_, current_texture_};
+    engine::CSpecial special_{renderer_, screen_, two_d_, matrix_, three_d_, current_texture_};
     engine::CFontColors colors_;
     engine::CBitFont font_{dosio_, screen_, two_d_, three_d_, colors_};
     support::CNewMsg messages_{dosio_};

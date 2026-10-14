@@ -73,7 +73,7 @@ protected:
     engine::CMatrix matrix_{two_d_, light_};
     engine::C3d three_d_{matrix_};
     engine::SCurrentTexture current_texture_;
-    engine::CSpecial special_{renderer_, screen_, two_d_, three_d_, current_texture_};
+    engine::CSpecial special_{renderer_, screen_, two_d_, matrix_, three_d_, current_texture_};
     SMovieOwners owners_{file_system_, movies_,  window_, clock_,
                          winrun_,      special_, screen_, two_d_};
 };

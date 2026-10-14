@@ -65,7 +65,7 @@ protected:
     C3d three_d_{matrix_};
     ::testing::NiceMock<platform::MockRenderer> renderer_;
     SCurrentTexture current_texture_;
-    CSpecial special_{renderer_, screen_, two_d_, three_d_, current_texture_};
+    CSpecial special_{renderer_, screen_, two_d_, matrix_, three_d_, current_texture_};
     STextureOwners owners_{.dosio = dosio_,
                            .two_d = two_d_,
                            .screen = screen_,
