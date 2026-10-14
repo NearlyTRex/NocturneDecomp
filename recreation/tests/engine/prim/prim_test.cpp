@@ -31,8 +31,14 @@ TEST(EnginePrimFunctions, PublicInterface) {
                                  int (*)(SMRGLPrimitiveTriangle *)>);
     static_assert(std::is_same_v<decltype(&getTriangleWindingFromPackedIndices),
                                  int (*)(platform::STrianglePackedIndices *)>);
-    static_assert(std::is_same_v<decltype(&renderPolygonSoftware), void (*)(SRenderVertex *, int)>);
-    static_assert(std::is_same_v<decltype(&renderIndexedPolygonSoftware), void (*)(int *, int)>);
+    static_assert(
+        std::is_same_v<decltype(&findEdgeInBuffer),
+                       SSoftwareEdge *(*)(std::span<SSoftwareEdge>, int, const SSoftwareEdge *)>);
+    static_assert(std::is_same_v<decltype(&CPrim::renderPolygonSoftware),
+                                 void (CPrim::*)(std::span<SRenderVertex>, const SPolygonState &)>);
+    static_assert(std::is_same_v<decltype(&CPrim::renderIndexedPolygonSoftware),
+                                 void (CPrim::*)(std::span<SRenderVertex>, std::span<const int>,
+                                                 const SPolygonState &)>);
     static_assert(std::is_same_v<decltype(&renderScanlinePolygon), void (*)(SRenderVertex *, int)>);
     static_assert(std::is_same_v<decltype(&renderIndexedPolygonAdvanced), void (*)(int *, int)>);
 }

@@ -1,8 +1,11 @@
 #pragma once
 
 #include "engine/fwd.h"
+#include "engine/prim/polygonstate.h"
+#include "engine/softwareedge.h"
 #include "platform/fwd.h"
 
+#include <cstdint>
 #include <span>
 
 namespace nocturne::engine {
@@ -25,9 +28,41 @@ void replaceWWithDepth(std::span<platform::SRenderVertex> vertices);
                                                  int culling_mode);
 int getTriangleWindingFromIndices1(SMRGLPrimitiveTriangle *triangle);
 int getTriangleWindingFromPackedIndices(platform::STrianglePackedIndices *triangle);
-void renderPolygonSoftware(platform::SRenderVertex *vertices, int vertex_count);
-void renderIndexedPolygonSoftware(int *vertex_indices, int vertex_count);
+// The first edge whose top row is y_value, other than edge_ptr; none if there is none.
+[[nodiscard]] SSoftwareEdge *findEdgeInBuffer(std::span<SSoftwareEdge> edges, int y_value,
+                                              const SSoftwareEdge *edge_ptr);
 void renderScanlinePolygon(platform::SRenderVertex *vertices, int vertex_count);
 void renderIndexedPolygonAdvanced(int *vertex_indices, int vertex_count);
+
+// prim.c's polygon rasterisers: a polygon is culled, handed to the hardware renderer when that
+// draws, or stepped down the screen row by row, one pair of edges at a time, through the
+// polygon's scanline. The rows run to the first edge pair to end, so only a convex polygon
+// draws whole.
+class CPrim {
+public:
+    CPrim(CSpecial &special, const C2d &two_d, const C3d &three_d, const SCurrentTexture &texture);
+
+    // Projects vertices the clip left in eye space and preprocesses them for the mode first.
+    void renderPolygonSoftware(std::span<platform::SRenderVertex> vertices,
+                               const SPolygonState &state);
+    // With preprocessing 1 the edges take the reciprocal depth as it is.
+    void renderIndexedPolygonSoftware(std::span<platform::SRenderVertex> vertex_buffer,
+                                      std::span<const int> vertex_indices,
+                                      const SPolygonState &state);
+
+private:
+    // How the corners split into the triangles culling tests.
+    enum class ETriangles : std::uint8_t { Fan, Strip };
+
+    // Whether back-face culling drops every triangle.
+    [[nodiscard]] bool isCulled(std::span<const platform::SRenderVertex *const> corners,
+                                ETriangles triangles) const;
+    [[nodiscard]] bool drawsInHardware() const;
+
+    CSpecial &special_;
+    const C2d &two_d_;
+    const C3d &three_d_;
+    const SCurrentTexture &texture_;
+};
 
 } // namespace nocturne::engine

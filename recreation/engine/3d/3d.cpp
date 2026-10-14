@@ -47,6 +47,10 @@ void C3d::setCullingMode(int culling_mode) {
     culling_mode_ = culling_mode;
 }
 
+int C3d::getCullingMode() const {
+    return culling_mode_;
+}
+
 // nocedit 0x00406d80
 int C3d::setRenderAlpha(int alpha_color_value) {
     current_alpha_value_ = std::clamp(alpha_color_value >> 8, 0, kOpaqueAlpha);

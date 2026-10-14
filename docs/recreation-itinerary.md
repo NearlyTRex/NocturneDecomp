@@ -18,7 +18,7 @@ in instructions.
 | 4 | `initFonts`, `CEditorTools::showWarning` | 11 | 46 | 4804 | 46 | 100.0% |
 | 5 | `showCalibrationTest`, `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 50 | 4789 | 34 | 68.0% |
 | 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 20 | 80.0% |
-| 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 63 | 52.5% |
+| 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 66 | 55.0% |
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 9 | 14.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 0 | 0.0% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 17 | 52 | 5565 | 1 | 1.9% |
@@ -44,7 +44,7 @@ in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 2 | 0.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 | 3.6% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 36.3% |
-| | **All** | | **4489** | **402860** | **472** | **10.5%** |
+| | **All** | | **4489** | **402860** | **475** | **10.5%** |
 
 ## Step 0: Math value types
 
@@ -654,7 +654,7 @@ in instructions.
   - [ ] `rasterizePolygonCustom` 0x005fd4e0 (365)
   - [ ] `rasterizeTriangle` 0x005fcfc0 (373)
 
-### `engine/prim.c` (13 functions, 2410 instructions, 6 done)
+### `engine/prim.c` (13 functions, 2410 instructions, 9 done)
 - free functions
   - [x] `setCullingMode` 0x00551b90 (3)
   - [x] `prepareDepthBuffer` 0x00551fb0 (44)
@@ -662,9 +662,9 @@ in instructions.
   - [x] `adjustNearPlaneTextureCoords` 0x005520a0 (41)
   - [x] `replaceWWithDepth` 0x00552110 (24)
   - [x] `calculateTriangleWindingOrder` 0x00552150 (63)
-  - [ ] `findEdgeInBuffer` 0x00551f70 (22)
-  - [ ] `renderPolygonSoftware` 0x00552510 (427)
-  - [ ] `renderIndexedPolygonSoftware` 0x00552a40 (418)
+  - [x] `findEdgeInBuffer` 0x00551f70 (22)
+  - [x] `renderPolygonSoftware` 0x00552510 (427)
+  - [x] `renderIndexedPolygonSoftware` 0x00552a40 (418)
   - [ ] `renderScanlinePolygon` 0x00553470 (538)
   - [ ] `renderIndexedPolygonAdvanced` 0x00553b10 (610)
   - [ ] `getTriangleWindingFromPackedIndices` 0x005523f0 (81)

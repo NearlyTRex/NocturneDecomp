@@ -25,8 +25,9 @@ public:
     SMRGLHeaderExtended *transformAndBufferVertices(SMRGLHeaderExtended *mrgl);
     // Whether the camera is on the plane's front side, or culling is off.
     [[nodiscard]] bool isVisiblePlane(const platform::SClipPlane &plane) const;
-    // Non-zero turns plane culling off.
+    // Non-zero turns plane culling off and back-face culling on; 1 keeps clockwise faces.
     void setCullingMode(int culling_mode);
+    [[nodiscard]] int getCullingMode() const;
     SMRGLHeaderExtended *processVertexLighting(SMRGLHeaderExtended *mrgl);
     SMRGLHeaderExtended *processTextureCoordinates(platform::SMRGLHeaderPrimitive *prim);
     SMRGLHeaderExtended *renderPolygonGrayscaleLitOp5(platform::SMRGLHeaderPrimitive *primitive);
