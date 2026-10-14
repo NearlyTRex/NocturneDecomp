@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004bd2b0(CIni *this_ptr,char *section,char *key,char *value,char *filename)
+; int __cdecl engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004bd2b0(CIni *this_ptr,char *section,char *key,char *filename,char *value)
 ;
 ; Parameters:
 ; CIni *           Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   section
 ; char *           Stack[0xc]:4   key
-; char *           Stack[0x10]:4   value
-; char *           Stack[0x14]:4   filename
+; char *           Stack[0x10]:4   filename
+; char *           Stack[0x14]:4   value
 ; Local Variables:
 ; undefined        Stack[-0x214]:1  local_214
 ; undefined1       Stack[-0x213]:1  local_213

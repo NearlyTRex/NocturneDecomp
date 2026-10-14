@@ -44,7 +44,7 @@
 ;   CKeys* g_CKeysPtr = 02dcd7d4
 ;   uchar[257] g_CharacterClassificationTable
 ;   CBitFont* g_EditorFont
-;   int g_FontCharacterHeight
+;   int g_EditorFontMaxCharWidth
 ;   ... and 8 more
 ;
 ; Called Functions:
@@ -96,17 +96,17 @@ section .text
     PUSH 0x6a                           ; 0049fbc0
     MOV ECX,dword ptr [EAX + 0x3168]    ; 0049fbc2
     PUSH EAX                            ; 0049fbc8
-    MOV dword ptr [0x02cf2668],ECX      ; 0049fbc9 | g_FontCharacterHeight
+    MOV dword ptr [0x02cf2668],ECX      ; 0049fbc9 | g_EditorFontMaxCharWidth
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 0049fbcf
         ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 0049fbd4
     PUSH 0x0                            ; 0049fbd7
     MOV EDX,dword ptr [ESP + 0x36c]     ; 0049fbd9
     PUSH EDX                            ; 0049fbe0
-    MOV [0x02cf266c],EAX                ; 0049fbe1 | g_FontCharacterWidth
+    MOV [0x02cf266c],EAX                ; 0049fbe1 | g_EditorFontLineHeight
     ADD EAX,EAX                         ; 0049fbe6
     PUSH EAX                            ; 0049fbe8
-    MOV EAX,[0x02cf2668]                ; 0049fbe9 | g_FontCharacterHeight
+    MOV EAX,[0x02cf2668]                ; 0049fbe9 | g_EditorFontMaxCharWidth
     ADD EAX,EAX                         ; 0049fbee
     MOV ECX,EAX                         ; 0049fbf0
     SHL EAX,0x4                         ; 0049fbf2
@@ -226,7 +226,7 @@ section .text
     ADD ESP,0x4                         ; 0049fd2e
     PUSH -0x1                           ; 0049fd31
     MOV EAX,[0x02d0255c]                ; 0049fd33 | g_ClipTop
-    MOV EDX,dword ptr [0x02cf266c]      ; 0049fd38 | g_FontCharacterWidth
+    MOV EDX,dword ptr [0x02cf266c]      ; 0049fd38 | g_EditorFontLineHeight
     PUSH EBX                            ; 0049fd3e
     ADD EAX,EDX                         ; 0049fd3f
     PUSH EAX                            ; 0049fd41
@@ -251,7 +251,7 @@ section .text
     PUSH ESI                            ; 0049fd7a
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80 ; 0049fd7b
         ;   XREF to: 004cfe80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80(CBitFont * this_ptr, char * text)
-    MOV EDI,dword ptr [0x02cf266c]      ; 0049fd80 | g_FontCharacterWidth
+    MOV EDI,dword ptr [0x02cf266c]      ; 0049fd80 | g_EditorFontLineHeight
     MOV ECX,EAX                         ; 0049fd86
     MOV EAX,[0x02d0255c]                ; 0049fd88 | g_ClipTop
     ADD ESP,0x8                         ; 0049fd8d

@@ -3481,6 +3481,10 @@
       "type":"struct"
     },
     {
+      "name":"SMRGLPoint",
+      "type":"struct"
+    },
+    {
       "name":"SMRGLPointerArray",
       "type":"struct"
     },
@@ -37324,13 +37328,13 @@
         },
         {
           "len":8,
-          "name":"trigger_time",
+          "name":"playback_position",
           "offset":96,
           "type":"double"
         },
         {
           "len":4,
-          "name":"trigger_id",
+          "name":"playback_position_type",
           "offset":104,
           "type":"int"
         }
@@ -37360,7 +37364,7 @@
         },
         {
           "len":4,
-          "name":"loop_marker_count",
+          "name":"loops",
           "offset":292,
           "type":"int"
         },
@@ -51147,6 +51151,30 @@
       "importable":true,
       "len":52,
       "name":"SMRGLModelBounds",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"type",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":12,
+          "name":"point",
+          "offset":4,
+          "type":"CVector3i"
+        }
+      ],
+      "importable":true,
+      "len":16,
+      "name":"SMRGLPoint",
       "pack":false,
       "type":"struct"
     },

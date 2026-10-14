@@ -6405,8 +6405,8 @@
     ],
     "conv":"__cdecl",
     "instructions":126,
-    "method":"interpolateVertexTopClipAdvanced",
-    "name":"engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_004375c0",
+    "method":"interpolateVertexBottomClipAdvanced",
+    "name":"engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_004375c0",
     "params":[
       {
         "name":"v1",
@@ -6449,8 +6449,8 @@
     ],
     "conv":"__cdecl",
     "instructions":100,
-    "method":"clipPolygonRightPlaneGlobal",
-    "name":"engine_clipper.c_clipPolygonRightPlaneGlobal_FUN_00437840",
+    "method":"clipPolygonLeftPlaneGlobal",
+    "name":"engine_clipper.c_clipPolygonLeftPlaneGlobal_FUN_00437840",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -6467,8 +6467,8 @@
     ],
     "conv":"__cdecl",
     "instructions":100,
-    "method":"clipPolygonVerticalPlanes",
-    "name":"engine_clipper.c_clipPolygonVerticalPlanes_FUN_00437ac0",
+    "method":"clipPolygonBottomPlaneGlobal",
+    "name":"engine_clipper.c_clipPolygonBottomPlaneGlobal_FUN_00437ac0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -22329,17 +22329,17 @@
   },
   {
     "addr":"005714c0",
-    "cls":"CVector3f",
+    "cls":"CBoundingBox3D",
     "conv":"__cdecl",
     "instructions":29,
-    "method":"copy",
-    "name":"core_set.cpp_CVector3f_copy_FUN_005714c0",
+    "method":"assign",
+    "name":"core_set.cpp_CBoundingBox3D_assign_FUN_005714c0",
     "params":[
       {
-        "name":"b",
+        "name":"other",
         "type":{
           "kind":"class",
-          "name":"CVector3f",
+          "name":"CBoundingBox3D",
           "ptr":1
         }
       }
@@ -22347,7 +22347,7 @@
     "receiver":true,
     "ret":{
       "kind":"class",
-      "name":"CVector3f",
+      "name":"CBoundingBox3D",
       "ptr":1
     },
     "tu":"core/set.cpp",

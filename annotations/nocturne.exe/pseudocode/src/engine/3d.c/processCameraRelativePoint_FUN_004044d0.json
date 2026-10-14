@@ -62,16 +62,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 26,
-    "complexity_score": 45,
+    "complexity_score": 10,
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 9,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 10,
-    "suspect_count": 3,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 36
   },
   "cross_references": [
@@ -104,26 +102,26 @@
     ],
     "convention": "__cdecl",
     "name": "engine_3d.c_processCameraRelativePoint_FUN_004044d0",
-    "signature": "SMRGLHeaderExtended * __cdecl engine_3d_c_processCameraRelativePoint_FUN_004044d0(CQuaternion4f *input_point)"
+    "signature": "SMRGLHeaderExtended * __cdecl engine_3d_c_processCameraRelativePoint_FUN_004044d0(SMRGLPoint *block)"
   },
   "function_calls": [],
   "globals": [
     {
       "addr": "006b028c",
-      "name": "DAT_006b028c",
-      "type": "undefined4",
+      "name": "g_StoredX",
+      "type": "int",
       "value": null
     },
     {
       "addr": "006b0290",
-      "name": "DAT_006b0290",
-      "type": "undefined4",
+      "name": "g_StoredY",
+      "type": "int",
       "value": null
     },
     {
       "addr": "006b0294",
-      "name": "DAT_006b0294",
-      "type": "undefined4",
+      "name": "g_StoredZ",
+      "type": "int",
       "value": null
     },
     {
@@ -236,39 +234,14 @@
     "variables": [
       {
         "is_param": true,
-        "name": "input_point",
+        "name": "block",
         "offset": 4,
         "size": 4,
-        "type": "CQuaternion4f *"
+        "type": "SMRGLPoint *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 5,
-      "match": "DAT_006b028c",
-      "severity": "mild",
-      "text": "DAT_006b028c = input_point->x;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 6,
-      "match": "DAT_006b0290",
-      "severity": "mild",
-      "text": "DAT_006b0290 = input_point->y;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_006b0294",
-      "severity": "mild",
-      "text": "DAT_006b0294 = input_point->z;",
-      "type": "undefined_data"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

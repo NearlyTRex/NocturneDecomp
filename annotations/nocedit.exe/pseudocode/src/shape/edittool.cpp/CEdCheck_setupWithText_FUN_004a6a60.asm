@@ -20,8 +20,8 @@
 ;   undefined4 s_ElephantGun_00623fa3
 ;   undefined4 s_lephantGun_00623fa4
 ;   CBitFont* g_EditorFont
-;   int g_FontCharacterHeight
-;   int g_FontCharacterWidth
+;   int g_EditorFontMaxCharWidth
+;   int g_EditorFontLineHeight
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -78,7 +78,7 @@ section .text
     PUSH 0x6a                           ; 004a6aae
     MOV ESI,dword ptr [EAX + 0x3168]    ; 004a6ab0
     PUSH EAX                            ; 004a6ab6
-    MOV dword ptr [0x02cf2668],ESI      ; 004a6ab7 | g_FontCharacterHeight
+    MOV dword ptr [0x02cf2668],ESI      ; 004a6ab7 | g_EditorFontMaxCharWidth
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 004a6abd
         ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004a6ac2
@@ -86,7 +86,7 @@ section .text
     PUSH ESI                            ; 004a6ac8
     MOV EDI,dword ptr [0x02cf1cd0]      ; 004a6ac9 | g_EditorFont
     PUSH EDI                            ; 004a6acf
-    MOV [0x02cf266c],EAX                ; 004a6ad0 | g_FontCharacterWidth
+    MOV [0x02cf266c],EAX                ; 004a6ad0 | g_EditorFontLineHeight
     CALL engine_font.cpp_CBitFont_getTextHeight_FUN_004cff40 ; 004a6ad5
         ;   XREF to: 004cff40 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextHeight_FUN_004cff40(CBitFont * this_ptr, char * text_string)
     MOV EDI,EAX                         ; 004a6ada

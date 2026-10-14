@@ -1,6 +1,7 @@
 #pragma once
 
 #include "common/fwd.h"
+#include "common/math/vector3f.h"
 #include "core/fwd.h"
 
 #include <cstdint>
@@ -9,7 +10,11 @@ namespace nocturne::core {
 
 class CBoundingBox3D {
 public:
-    void expand(common::CVector3f *point);
+    common::CVector3f min;
+    common::CVector3f max;
+
+    // Grows the box to take in the point.
+    void expand(const common::CVector3f &point);
     common::CVector3f *getCorner(common::CVector3f *out_point, std::uint32_t corner_index);
     int isVisible();
     float getBoundingBoxScreenSize();

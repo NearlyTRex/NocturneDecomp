@@ -21,8 +21,8 @@ public:
                 (int width, int height, int bits_per_pixel, void **screen_buffer_array),
                 (override));
     MOCK_METHOD(int, restoreVideoMode, (), (override));
-    MOCK_METHOD(int, setColorTable16, (std::uint8_t * source_palette, std::uint16_t *color_table),
-                (override));
+    MOCK_METHOD(int, setColorTable16,
+                (const std::uint8_t *source_palette, std::uint16_t *color_table), (override));
     MOCK_METHOD(int, lockFrame, (), (override));
     MOCK_METHOD(int, unlockFrame, (), (override));
     MOCK_METHOD(int, lockHoldBuffer, (), (override));
@@ -65,6 +65,8 @@ public:
     MOCK_METHOD(int, flushParticleList, (), (override));
     MOCK_METHOD(int, add3dLine, (void *start_point, void *end_point, int line_style), (override));
     MOCK_METHOD(int, flushLineList, (), (override));
+    MOCK_METHOD(void, beginReflectionPass, (), (override));
+    MOCK_METHOD(void, endReflectionPass, (), (override));
 };
 
 } // namespace nocturne::platform

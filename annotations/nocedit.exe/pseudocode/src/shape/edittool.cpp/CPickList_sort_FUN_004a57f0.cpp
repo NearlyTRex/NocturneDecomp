@@ -2,11 +2,11 @@
 // Address: 004a57f0
 // Address Range: [[004a57f0, 004a5868]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_edittool_cpp_CPickList_sort_FUN_004a57f0(CPickList *this_ptr,int sort_type,int sort_order)
+// Signature: void __cdecl shape_edittool_cpp_CPickList_sort_FUN_004a57f0(CPickList *this_ptr,int start_index,int end_index)
 
 #include "nocturne.h"
 
-void __cdecl shape_edittool_cpp_CPickList_sort_FUN_004a57f0(CPickList *this_ptr,int sort_type,int sort_order)
+void __cdecl shape_edittool_cpp_CPickList_sort_FUN_004a57f0(CPickList *this_ptr,int start_index,int end_index)
 
 {
   if (0 < this_ptr->enabled_capacity) {
@@ -19,6 +19,6 @@ void __cdecl shape_edittool_cpp_CPickList_sort_FUN_004a57f0(CPickList *this_ptr,
     g_CurrentLineNumber = 4238;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CPickList::sort - can't do this after setting hotkeys (yet)");
   }
-  shape_edittool_cpp_CStrList_sort_FUN_004a2f00(&this_ptr->base,sort_type,sort_order);
+  shape_edittool_cpp_CStrList_sort_FUN_004a2f00(&this_ptr->base,start_index,end_index);
   return;
 }

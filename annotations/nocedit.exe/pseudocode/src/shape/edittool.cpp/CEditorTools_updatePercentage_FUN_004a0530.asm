@@ -37,7 +37,7 @@
 ;   undefined4 g_WindowStack[0].progress_start_time
 ;   undefined4 g_WindowStack[0].progress_percentage
 ;   undefined4 g_WindowStack[0].progress_timestamp
-;   int g_FontCharacterWidth
+;   int g_EditorFontLineHeight
 ;   int g_WindowStatusTextColor
 ;   ... and 11 more
 ;
@@ -153,12 +153,12 @@ section .text
     PUSH EBX                            ; 004a0623
     CALL engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_004cdf30 ; 004a0624
         ;   XREF to: 004cdf30 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_004cdf30(CBitFont * this_ptr, int left_x, int right_x, int y, ...)
-    MOV EAX,[0x02cf266c]                ; 004a0629 | g_FontCharacterWidth
+    MOV EAX,[0x02cf266c]                ; 004a0629 | g_EditorFontLineHeight
     MOV EDI,dword ptr [0x02d0255c]      ; 004a062e | g_ClipTop
     ADD EAX,EAX                         ; 004a0634
     ADD EAX,EDI                         ; 004a0636
     LEA EDI,[EAX + 0x1]                 ; 004a0638
-    MOV EAX,[0x02cf266c]                ; 004a063b | g_FontCharacterWidth
+    MOV EAX,[0x02cf266c]                ; 004a063b | g_EditorFontLineHeight
     MOV EDX,dword ptr [0x02d0255c]      ; 004a0640 | g_ClipTop
     SHL EAX,0x2                         ; 004a0646
     ADD ESP,0x20                        ; 004a0649
@@ -315,7 +315,7 @@ section .text
     MOV ECX,dword ptr [0x02cf2aa8]      ; 004a07fb | g_WindowStatusTextColor
     PUSH -0x1                           ; 004a0801
     MOV EAX,[0x02d02564]                ; 004a0803 | g_ClipBottom
-    MOV EBX,dword ptr [0x02cf266c]      ; 004a0808 | g_FontCharacterWidth
+    MOV EBX,dword ptr [0x02cf266c]      ; 004a0808 | g_EditorFontLineHeight
     PUSH ECX                            ; 004a080e
     SUB EAX,EBX                         ; 004a080f
     PUSH EAX                            ; 004a0811

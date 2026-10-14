@@ -1,3 +1,4 @@
+#include "platform/file.h"
 #include "platform/filesystem.h"
 
 #include <gtest/gtest.h>
@@ -15,6 +16,27 @@ TEST(IFileSystem, IsAbstractWithVirtualDestructor) {
 TEST(IFileSystem, PublicInterface) {
     static_assert(std::is_same_v<decltype(&IFileSystem::findFiles),
                                  std::vector<SFileInfo> (IFileSystem::*)(std::string_view)>);
+    static_assert(std::is_same_v<decltype(&IFileSystem::readFile),
+                                 std::optional<std::string> (IFileSystem::*)(std::string_view)>);
+    static_assert(std::is_same_v<decltype(&IFileSystem::appendFile),
+                                 bool (IFileSystem::*)(std::string_view, std::string_view)>);
+    static_assert(std::is_same_v<decltype(&IFileSystem::writeFile),
+                                 bool (IFileSystem::*)(std::string_view, std::string_view)>);
+    static_assert(std::is_same_v<decltype(&IFileSystem::removeFile),
+                                 bool (IFileSystem::*)(std::string_view)>);
+    static_assert(
+        std::is_same_v<decltype(&IFileSystem::openFile),
+                       std::unique_ptr<IFile> (IFileSystem::*)(std::string_view, EFileMode)>);
+    static_assert(std::is_same_v<decltype(&IFileSystem::getFullPath),
+                                 std::optional<std::string> (IFileSystem::*)(std::string_view)>);
+    static_assert(std::is_same_v<decltype(&IFileSystem::getFileInfo),
+                                 std::optional<SFileInfo> (IFileSystem::*)(std::string_view)>);
+    static_assert(std::is_same_v<decltype(&IFileSystem::makeDirectory),
+                                 bool (IFileSystem::*)(std::string_view)>);
+    static_assert(std::is_same_v<decltype(&IFileSystem::setModifiedTime),
+                                 bool (IFileSystem::*)(std::string_view, std::time_t)>);
+    static_assert(std::is_same_v<decltype(&IFileSystem::setReadOnly),
+                                 bool (IFileSystem::*)(std::string_view, bool)>);
 }
 
 TEST(SFileInfo, DefaultsToAnEmptyPlainFile) {

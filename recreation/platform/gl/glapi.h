@@ -61,6 +61,7 @@ struct SGlApi {
     PFNGLGETPROGRAMIVPROC GetProgramiv = nullptr;
     PFNGLGETSHADERINFOLOGPROC GetShaderInfoLog = nullptr;
     PFNGLGETSHADERIVPROC GetShaderiv = nullptr;
+    PFNGLGETSTRINGPROC GetString = nullptr;
     PFNGLGETUNIFORMLOCATIONPROC GetUniformLocation = nullptr;
     PFNGLLINKPROGRAMPROC LinkProgram = nullptr;
     PFNGLPIXELSTOREIPROC PixelStorei = nullptr;

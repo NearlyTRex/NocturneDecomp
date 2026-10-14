@@ -52,7 +52,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0(CD
     iVar3 = 0;
     do {
       if (local_a0.projected_vertex.transformed_z < local_a0.projected_vertex.transformed_x) {
-        engine_clipper_c_interpolateVertexLeftClip_FUN_00435a00(&local_40,&local_a0,&local_70);
+        engine_clipper_c_interpolateVertexRightClip_FUN_00435a00(&local_40,&local_a0,&local_70);
         local_a0.projected_vertex.transformed_x = local_70.projected_vertex.transformed_x;
         local_a0.projected_vertex.transformed_y = local_70.projected_vertex.transformed_y;
         local_a0.projected_vertex.transformed_z = local_70.projected_vertex.transformed_z;
@@ -68,7 +68,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0(CD
       }
       if (-local_a0.projected_vertex.transformed_x != local_a0.projected_vertex.transformed_z &&
           local_a0.projected_vertex.transformed_x <= -local_a0.projected_vertex.transformed_z) {
-        engine_clipper_c_interpolateVertexRightClip_FUN_00435b00(&local_40,&local_a0,&local_70);
+        engine_clipper_c_interpolateVertexLeftClip_FUN_00435b00(&local_40,&local_a0,&local_70);
         local_a0.projected_vertex.transformed_x = local_70.projected_vertex.transformed_x;
         local_a0.projected_vertex.transformed_y = local_70.projected_vertex.transformed_y;
         local_a0.projected_vertex.transformed_z = local_70.projected_vertex.transformed_z;
@@ -83,7 +83,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0(CD
         local_a0.a = local_70.a;
       }
       if (local_a0.projected_vertex.transformed_z < local_a0.projected_vertex.transformed_y) {
-        engine_clipper_c_interpolateVertexBottomClip_FUN_00435c00(&local_40,&local_a0,&local_70);
+        engine_clipper_c_interpolateVertexTopClip_FUN_00435c00(&local_40,&local_a0,&local_70);
         local_a0.projected_vertex.transformed_x = local_70.projected_vertex.transformed_x;
         local_a0.projected_vertex.transformed_y = local_70.projected_vertex.transformed_y;
         local_a0.projected_vertex.transformed_z = local_70.projected_vertex.transformed_z;
@@ -99,7 +99,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0(CD
       }
       if (-local_a0.projected_vertex.transformed_y != local_a0.projected_vertex.transformed_z &&
           local_a0.projected_vertex.transformed_y <= -local_a0.projected_vertex.transformed_z) {
-        engine_clipper_c_interpolateVertexTopClip_FUN_00435d00(&local_40,&local_a0,&local_70);
+        engine_clipper_c_interpolateVertexBottomClip_FUN_00435d00(&local_40,&local_a0,&local_70);
         local_a0.projected_vertex.transformed_x = local_70.projected_vertex.transformed_x;
         local_a0.projected_vertex.transformed_y = local_70.projected_vertex.transformed_y;
         local_a0.projected_vertex.transformed_z = local_70.projected_vertex.transformed_z;
@@ -114,7 +114,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0(CD
         local_a0.a = local_70.a;
       }
       if (local_40.projected_vertex.transformed_z < local_40.projected_vertex.transformed_x) {
-        engine_clipper_c_interpolateVertexLeftClip_FUN_00435a00(&local_a0,&local_40,&local_70);
+        engine_clipper_c_interpolateVertexRightClip_FUN_00435a00(&local_a0,&local_40,&local_70);
         local_40.projected_vertex.transformed_x = local_70.projected_vertex.transformed_x;
         local_40.projected_vertex.transformed_y = local_70.projected_vertex.transformed_y;
         local_40.projected_vertex.transformed_z = local_70.projected_vertex.transformed_z;
@@ -130,7 +130,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0(CD
       }
       if (-local_40.projected_vertex.transformed_x != local_40.projected_vertex.transformed_z &&
           local_40.projected_vertex.transformed_x <= -local_40.projected_vertex.transformed_z) {
-        engine_clipper_c_interpolateVertexRightClip_FUN_00435b00(&local_a0,&local_40,&local_70);
+        engine_clipper_c_interpolateVertexLeftClip_FUN_00435b00(&local_a0,&local_40,&local_70);
         local_40.projected_vertex.transformed_x = local_70.projected_vertex.transformed_x;
         local_40.projected_vertex.transformed_y = local_70.projected_vertex.transformed_y;
         local_40.projected_vertex.transformed_z = local_70.projected_vertex.transformed_z;
@@ -145,7 +145,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0(CD
         local_40.a = local_70.a;
       }
       if (local_40.projected_vertex.transformed_z < local_40.projected_vertex.transformed_y) {
-        engine_clipper_c_interpolateVertexBottomClip_FUN_00435c00(&local_a0,&local_40,&local_70);
+        engine_clipper_c_interpolateVertexTopClip_FUN_00435c00(&local_a0,&local_40,&local_70);
         local_40.projected_vertex.transformed_x = local_70.projected_vertex.transformed_x;
         local_40.projected_vertex.transformed_y = local_70.projected_vertex.transformed_y;
         local_40.projected_vertex.transformed_z = local_70.projected_vertex.transformed_z;
@@ -161,7 +161,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0(CD
       }
       if (-local_40.projected_vertex.transformed_y != local_40.projected_vertex.transformed_z &&
           local_40.projected_vertex.transformed_y <= -local_40.projected_vertex.transformed_z) {
-        engine_clipper_c_interpolateVertexTopClip_FUN_00435d00(&local_a0,&local_40,&local_70);
+        engine_clipper_c_interpolateVertexBottomClip_FUN_00435d00(&local_a0,&local_40,&local_70);
         local_40.projected_vertex.transformed_x = local_70.projected_vertex.transformed_x;
         local_40.projected_vertex.transformed_y = local_70.projected_vertex.transformed_y;
         local_40.projected_vertex.transformed_z = local_70.projected_vertex.transformed_z;

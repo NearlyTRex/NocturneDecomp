@@ -276,7 +276,7 @@ ECollisionType __cdecl core_imp_cpp_CImp_getCollisionType_FUN_004bcfb0(CImp *thi
 CImp * __cdecl core_imp_cpp_CImp_dtor_FUN_004bcfd0(CImp *this_ptr,uint flags);
 void __cdecl engine_ini_cpp_staticInit_FUN_004bd090(void);
 int __cdecl engine_ini_cpp_CIni_getProfileString_FUN_004bd0a0(CIni *this_ptr,char *section,char *key,char *default_value,char *output_buffer,int buffer_size,char *filename);
-int __cdecl engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004bd2b0(CIni *this_ptr,char *section,char *key,char *value,char *filename);
+int __cdecl engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004bd2b0(CIni *this_ptr,char *section,char *key,char *filename,char *value);
 int __cdecl engine_ini_cpp_CIni_writeProfileString_FUN_004bd480(CIni *this_ptr,char *section,char *key,char *value,char *filename);
 void __cdecl engine_ini_cpp_getProfileString_FUN_004bd750(char *section,char *key,char *default_value,char *output_buffer,int buffer_size,char *filename);
 int __cdecl engine_ini_cpp_getProfileInteger_FUN_004bd790(char *section,char *key,int default_value,char *filename);

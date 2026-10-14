@@ -4,12 +4,13 @@
 
 namespace nocturne::platform {
 
-class CExternalRendererBridge;
 class IAudioDevice;
 class IAudioSource;
 class IClipboard;
 class IClock;
 class IDisplay;
+class IEnvironment;
+class IFile;
 class IFileSystem;
 class IGamepad;
 class IMoviePlayer;
@@ -19,6 +20,7 @@ class IOsFontFactory;
 class IRenderer;
 class IUdpSocket;
 class IWindow;
+struct CExternalRendererBridge;
 struct SAudioFormat;
 struct SClipPlane;
 struct SFileInfo;
@@ -34,6 +36,7 @@ struct SRenderVertex;
 struct STextMask;
 struct STrianglePackedIndices;
 struct SWindowEvent;
+enum class EFileMode : std::uint8_t;
 enum class EGamepadAxis : std::uint8_t;
 enum class EGamepadButton : std::uint8_t;
 enum class EGamepadType : std::uint8_t;

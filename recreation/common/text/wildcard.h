@@ -13,7 +13,9 @@ struct SWildcardPath {
 
 // Splits "art\\*.raw" into "art" and "*.raw"; either separator is accepted.
 [[nodiscard]] SWildcardPath splitWildcardPath(std::string_view path);
-// FindFirstFile matching: '*' is any run, '?' one character, case folded in ASCII only.
-[[nodiscard]] bool matchesWildcard(std::string_view pattern, std::string_view name);
+// FindFirstFile matching: '*' is any run, '?' one character, case folded in ASCII only unless
+// case_sensitive.
+[[nodiscard]] bool matchesWildcard(std::string_view pattern, std::string_view name,
+                                   bool case_sensitive = false);
 
 } // namespace nocturne::common

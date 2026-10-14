@@ -138,8 +138,8 @@ void nocturne_ui_push_screen_clip(void);
 // CEdScrollBar) — the in-game pause menu among them
 // =============================================================================
 //
-// That layer measures everything in two globals, g_FontCharacterWidth and
-// g_FontCharacterHeight, which every dialog entry point recomputes from
+// That layer measures everything in two globals, g_EditorFontLineHeight and
+// g_EditorFontMaxCharWidth, which every dialog entry point recomputes from
 // g_EditorFont before doing anything else. Box size, row pitch, button extents,
 // scrollbar geometry and the mouse hit-testing that shares the same arithmetic
 // all derive from them, so setting them scaled carries the whole widget — but
@@ -153,7 +153,7 @@ void nocturne_ui_push_screen_clip(void);
 // bit depth has no scaled glyph path and the text could not follow.
 int nocturne_ui_editor_scale(void);
 
-// Set g_FontCharacterWidth/g_FontCharacterHeight for the current g_EditorFont
+// Set g_EditorFontLineHeight/g_EditorFontMaxCharWidth for the current g_EditorFont
 // at that scale. Replaces the two-line recompute the dialog entry points open
 // with.
 // Safe with a null g_EditorFont — callers already fatal on that themselves.

@@ -28,8 +28,8 @@
 ;   int g_WindowStackCount
 ;   undefined4 g_WindowStack[0].progress_start_time
 ;   undefined4 g_WindowStack[0].progress_percentage
-;   int g_FontCharacterHeight
-;   int g_FontCharacterWidth
+;   int g_EditorFontMaxCharWidth
+;   int g_EditorFontLineHeight
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -67,10 +67,10 @@ section .text
     PUSH 0x6a                           ; 004a0469
     MOV EBX,dword ptr [EAX + 0x3168]    ; 004a046b
     PUSH EAX                            ; 004a0471
-    MOV dword ptr [0x02cf2668],EBX      ; 004a0472 | g_FontCharacterHeight
+    MOV dword ptr [0x02cf2668],EBX      ; 004a0472 | g_EditorFontMaxCharWidth
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 004a0478
         ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
-    MOV [0x02cf266c],EAX                ; 004a047d | g_FontCharacterWidth
+    MOV [0x02cf266c],EAX                ; 004a047d | g_EditorFontLineHeight
     MOV EAX,[0x00679394]                ; 004a0482 | g_WindowWidth
     MOV EDX,EAX                         ; 004a0487
     SAR EDX,0x1f                        ; 004a0489
@@ -84,7 +84,7 @@ section .text
     PUSH 0x0                            ; 004a0499
         ;   Label: LAB_004a0499
     PUSH ESI                            ; 004a049b
-    MOV ESI,dword ptr [0x02cf266c]      ; 004a049c | g_FontCharacterWidth
+    MOV ESI,dword ptr [0x02cf266c]      ; 004a049c | g_EditorFontLineHeight
     LEA EAX,[ESI*0x4 + 0x0]             ; 004a04a2
     SUB EAX,ESI                         ; 004a04a9
     ADD EAX,EAX                         ; 004a04ab

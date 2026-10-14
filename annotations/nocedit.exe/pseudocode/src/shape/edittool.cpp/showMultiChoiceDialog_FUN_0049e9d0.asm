@@ -93,12 +93,12 @@ section .text
     PUSH 0x6a                           ; 0049ea0a
     MOV EDX,dword ptr [EAX + 0x3168]    ; 0049ea0c
     PUSH EAX                            ; 0049ea12
-    MOV dword ptr [0x02cf2668],EDX      ; 0049ea13 | g_FontCharacterHeight
+    MOV dword ptr [0x02cf2668],EDX      ; 0049ea13 | g_EditorFontMaxCharWidth
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 0049ea19
         ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 0049ea1e
     MOV ESI,dword ptr [ESP + 0x158]     ; 0049ea21
-    MOV [0x02cf266c],EAX                ; 0049ea28 | g_FontCharacterWidth
+    MOV [0x02cf266c],EAX                ; 0049ea28 | g_EditorFontLineHeight
     TEST ESI,ESI                        ; 0049ea2d
     JZ 0x0049ee8e                       ; 0049ea2f
         ;   XREF to: 0049ee8e (CONDITIONAL_JUMP)  ; LAB_0049ee8e

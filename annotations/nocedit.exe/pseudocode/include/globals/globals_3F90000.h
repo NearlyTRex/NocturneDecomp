@@ -172,9 +172,9 @@ extern dword DWORD_03f9d000;
 extern float g_WeatherParticleGroundHeights[200];
 
 // int
-extern int g_RenderingInProgress;
+extern int g_FlipPending;
 extern int g_GraphicsResetFlag;
-extern int g_UseSoftwareRendering;
+extern int g_Display24BitFallback;
 extern int g_AccumulatedGameTime;
 extern int g_InputReadIndex;
 extern int g_InputWriteIndex;
@@ -182,7 +182,7 @@ extern int g_InputCountOld;
 extern int g_UnknownInputValue;
 extern int g_CrosshairBrightness;
 extern int g_InputDisabled;
-extern int g_ApplicationActive;
+extern int g_FocusRegained;
 extern int g_TotalPhysicalMemory;
 extern int g_AvailableSwapSpace;
 extern int g_NumWindowMessageHandlers;

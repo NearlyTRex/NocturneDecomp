@@ -2,8 +2,8 @@
 
 #include "common/render/renderstate.h"
 
-#include <array>
 #include <cstdint>
+#include <span>
 
 namespace nocturne::common {
 
@@ -38,8 +38,8 @@ struct SVertexContext {
     int current_alpha = 0xff;
     // Indexes the palette for a flat untextured draw; a smooth one indexes by the vertex's u.
     int palette_index = 0;
-    // 256 RGB triples; may be null when no untextured draw needs it.
-    const std::array<std::uint8_t, 768> *palette = nullptr;
+    // 256 RGB triples; empty when no untextured draw needs it, and then black.
+    std::span<const std::uint8_t> palette;
     bool premultiply = false;
     int blend_mode = 0;
     // The draw's light level; a smooth-shaded draw overrides it per vertex.

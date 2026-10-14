@@ -45,10 +45,10 @@
 ;   ... and 39 more
 ;
 ; Called Functions:
-;   engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00437490
-;   engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_00437230
-;   engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_00437360
-;   engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_004375c0
+;   engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_004375c0
+;   engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_00437360
+;   engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_00437230
+;   engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_00437490
 ;   engine_prim.c_calculateTriangleWindingOrder_FUN_00552150
 ;   engine_prim.c_renderIndexedPolygonAdvanced_FUN_00553b10
 ;   engine_prim.c_renderScanlinePolygon_FUN_00553470
@@ -595,8 +595,8 @@ section .text
     PUSH EAX                            ; 0043894c | g_ClipperOutputBuffer
     PUSH EDX                            ; 0043894d | g_ClipperInputBuffer | g_ClipperInputBuffer[1].projected_vertex.transformed_x
     PUSH EBP                            ; 0043894e
-    CALL engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_00437230 ; 0043894f
-        ;   XREF to: 00437230 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_00437230(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
+    CALL engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_00437230 ; 0043894f
+        ;   XREF to: 00437230 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_00437230(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     MOV ESI,dword ptr [0x00825cf4]      ; 00438954 | g_OutputVertexCount
     INC ESI                             ; 0043895a
     ADD ESP,0xc                         ; 0043895b
@@ -624,8 +624,8 @@ section .text
     PUSH EAX                            ; 004389a2 | g_ClipperOutputBuffer[1].projected_vertex.transformed_x
     PUSH EBP                            ; 004389a3
     PUSH EDX                            ; 004389a4 | g_ClipperInputBuffer | g_ClipperInputBuffer[1].projected_vertex.transformed_x
-    CALL engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_00437230 ; 004389a5
-        ;   XREF to: 00437230 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_00437230(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
+    CALL engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_00437230 ; 004389a5
+        ;   XREF to: 00437230 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_00437230(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     MOV EDI,dword ptr [0x00825cf4]      ; 004389aa | g_OutputVertexCount
     INC EDI                             ; 004389b0
     ADD ESP,0xc                         ; 004389b1
@@ -638,8 +638,8 @@ section .text
     PUSH EAX                            ; 004389cb | g_ClipperWorkingBuffer
     PUSH EDX                            ; 004389cc | g_ClipperOutputBuffer
     PUSH EBP                            ; 004389cd
-    CALL engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_00437360 ; 004389ce
-        ;   XREF to: 00437360 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_00437360(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
+    CALL engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_00437360 ; 004389ce
+        ;   XREF to: 00437360 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_00437360(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     MOV ESI,dword ptr [0x00825cf8]      ; 004389d3 | g_TempVertexCount
     INC ESI                             ; 004389d9
     ADD ESP,0xc                         ; 004389da
@@ -667,8 +667,8 @@ section .text
     PUSH EAX                            ; 00438a21 | g_ClipperWorkingBuffer[1].projected_vertex.transformed_x
     PUSH EBP                            ; 00438a22
     PUSH EDX                            ; 00438a23 | g_ClipperOutputBuffer
-    CALL engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_00437360 ; 00438a24
-        ;   XREF to: 00437360 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_00437360(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
+    CALL engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_00437360 ; 00438a24
+        ;   XREF to: 00437360 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_00437360(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     MOV EDI,dword ptr [0x00825cf8]      ; 00438a29 | g_TempVertexCount
     INC EDI                             ; 00438a2f
     ADD ESP,0xc                         ; 00438a30
@@ -681,8 +681,8 @@ section .text
     PUSH EAX                            ; 00438a4a | g_ClipperIntermediateBuffer
     PUSH EDX                            ; 00438a4b | g_ClipperWorkingBuffer | g_ClipperWorkingBuffer[1].projected_vertex.transformed_x
     PUSH EBP                            ; 00438a4c
-    CALL engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00437490 ; 00438a4d
-        ;   XREF to: 00437490 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00437490(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
+    CALL engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_00437490 ; 00438a4d
+        ;   XREF to: 00437490 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_00437490(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     MOV ESI,dword ptr [0x00825cfc]      ; 00438a52 | g_IntermediateVertexCount
     INC ESI                             ; 00438a58
     ADD ESP,0xc                         ; 00438a59
@@ -710,8 +710,8 @@ section .text
     PUSH EAX                            ; 00438aa0 | g_ClipperIntermediateBuffer[1].projected_vertex.transformed_x
     PUSH EBP                            ; 00438aa1
     PUSH EDX                            ; 00438aa2 | g_ClipperWorkingBuffer | g_ClipperWorkingBuffer[1].projected_vertex.transformed_x
-    CALL engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00437490 ; 00438aa3
-        ;   XREF to: 00437490 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00437490(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
+    CALL engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_00437490 ; 00438aa3
+        ;   XREF to: 00437490 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_00437490(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     MOV EDI,dword ptr [0x00825cfc]      ; 00438aa8 | g_IntermediateVertexCount
     INC EDI                             ; 00438aae
     ADD ESP,0xc                         ; 00438aaf
@@ -724,8 +724,8 @@ section .text
     PUSH EAX                            ; 00438ac9 | g_ClippedVertexBuffer
     PUSH EDX                            ; 00438aca | g_ClipperIntermediateBuffer
     PUSH EBP                            ; 00438acb
-    CALL engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_004375c0 ; 00438acc
-        ;   XREF to: 004375c0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_004375c0(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
+    CALL engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_004375c0 ; 00438acc
+        ;   XREF to: 004375c0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_004375c0(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     MOV ESI,dword ptr [0x00824e24]      ; 00438ad1 | g_ClippedVertexCount
     INC ESI                             ; 00438ad7
     ADD ESP,0xc                         ; 00438ad8
@@ -753,8 +753,8 @@ section .text
     PUSH EAX                            ; 00438b1f | g_ClippedVertexBuffer[1].projected_vertex.transformed_x
     PUSH EBP                            ; 00438b20
     PUSH EDX                            ; 00438b21 | g_ClipperIntermediateBuffer
-    CALL engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_004375c0 ; 00438b22
-        ;   XREF to: 004375c0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_004375c0(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
+    CALL engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_004375c0 ; 00438b22
+        ;   XREF to: 004375c0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_004375c0(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     MOV EDI,dword ptr [0x00824e24]      ; 00438b27 | g_ClippedVertexCount
     INC EDI                             ; 00438b2d
     ADD ESP,0xc                         ; 00438b2e

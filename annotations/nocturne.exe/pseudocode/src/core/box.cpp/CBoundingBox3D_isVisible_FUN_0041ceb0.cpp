@@ -44,9 +44,9 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(CBoundingBox3D *t
       local_1c = local_34;
       local_18 = local_30;
     }
-    local_14.x = (float)DAT_006b028c * _DAT_0059aa88;
-    local_14.y = (float)DAT_006b0290 * _DAT_0059aa88;
-    local_14.z = (float)DAT_006b0294 * _DAT_0059aa88;
+    local_14.x = (float)g_StoredX * _DAT_0059aa88;
+    local_14.y = (float)g_StoredY * _DAT_0059aa88;
+    local_14.z = (float)g_StoredZ * _DAT_0059aa88;
     local_2c.x = (int)ROUND(local_20 * _DAT_0059aa80);
     local_2c.y = (int)ROUND(local_1c * _DAT_0059aa80);
     local_2c.z = (int)ROUND(local_18 * _DAT_0059aa80);

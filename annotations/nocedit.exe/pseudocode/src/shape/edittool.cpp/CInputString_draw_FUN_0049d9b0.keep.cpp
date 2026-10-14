@@ -20,7 +20,7 @@ void __cdecl shape_edittool_cpp_CInputString_draw_FUN_0049d9b0(CInputString *thi
   char *text;
   CBitFont *this_ptr_00;
   
-  y2 = g_FontCharacterWidth + y_pos;
+  y2 = g_EditorFontLineHeight + y_pos;
   if (this_ptr->selection_start != this_ptr->cursor_position) {
     iVar1 = shape_edittool_cpp_CInputString_calcX_FUN_0049d8f0(this_ptr,this_ptr->selection_start);
     iVar1 = x_pos + iVar1;

@@ -23,7 +23,8 @@ public:
     virtual int setVideoMode2(int width, int height, int bits_per_pixel,
                               void **screen_buffer_array) = 0;
     virtual int restoreVideoMode() = 0;
-    virtual int setColorTable16(std::uint8_t *source_palette, std::uint16_t *color_table) = 0;
+    // The renderer keeps the palette's address and reads it as it draws.
+    virtual int setColorTable16(const std::uint8_t *source_palette, std::uint16_t *color_table) = 0;
     virtual int lockFrame() = 0;
     virtual int unlockFrame() = 0;
     virtual int lockHoldBuffer() = 0;
@@ -56,6 +57,10 @@ public:
     virtual int flushParticleList() = 0;
     virtual int add3dLine(void *start_point, void *end_point, int line_style) = 0;
     virtual int flushLineList() = 0;
+    // Brackets the environment-map overlay's draws, whose texture coordinates are sphere-map
+    // directions; the original's renderer took them as plain coordinates. Passes nest.
+    virtual void beginReflectionPass() = 0;
+    virtual void endReflectionPass() = 0;
 };
 
 } // namespace nocturne::platform

@@ -443,4 +443,26 @@ NOCTURNE_TEST(depth_writes_stay_off_across_a_depth_clear) {
     }
 }
 
+// The engine names the last row and column it wants cleared, and the shipped
+// renderer clears them too.
+NOCTURNE_TEST(a_depth_box_clear_includes_its_right_and_bottom_edges) {
+    Frame frame;
+    frame.begin();
+    typedef int(__cdecl *ClearZBoxFn)(int, int, int, int);
+    CHECK(((ClearZBoxFn)entry("APIDLLclearZBox"))(10, 19, 20, 29) == 1);
+
+    const gl_recorder::State &log = gl_recorder::state();
+    int scissors = 0;
+    for (const gl_recorder::Call &call : log.calls) {
+        if (call.name != "Scissor") continue;
+        ++scissors;
+        // 480 lines, counted from the bottom: rows 20..29 start at 480 - 30.
+        CHECK(call.a == 10);
+        CHECK(call.b == 450);
+        CHECK(call.c == 10);
+        CHECK(call.d == 10);
+    }
+    CHECK(scissors == 1);
+}
+
 NOCTURNE_TEST_MAIN()

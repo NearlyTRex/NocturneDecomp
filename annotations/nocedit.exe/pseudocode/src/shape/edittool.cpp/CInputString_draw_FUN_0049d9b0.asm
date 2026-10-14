@@ -16,7 +16,7 @@
 ;   TerminatedCString s_shape_edittool_cpp_00622f38
 ;   TerminatedCString s_CInputString_draw_string_00622f4e
 ;   CBitFont* g_EditorFont
-;   int g_FontCharacterWidth
+;   int g_EditorFontLineHeight
 ;   char[1024] g_TempStringBuffer
 ;   int g_SelectionColor
 ;   int g_TextColor
@@ -48,7 +48,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x18]      ; 0049d9b7
     MOV EDI,dword ptr [ESP + 0x1c]      ; 0049d9bb
     MOV EBP,dword ptr [ESP + 0x20]      ; 0049d9bf
-    MOV EAX,[0x02cf266c]                ; 0049d9c3 | g_FontCharacterWidth
+    MOV EAX,[0x02cf266c]                ; 0049d9c3 | g_EditorFontLineHeight
     ADD EAX,EBP                         ; 0049d9c8
     MOV EDX,dword ptr [EBX + 0x134]     ; 0049d9ca
     MOV dword ptr [ESP],EAX             ; 0049d9d0

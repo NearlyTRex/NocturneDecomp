@@ -29,7 +29,7 @@ void __cdecl engine_pod_cpp_CPod_mount_FUN_004f88a0(CPod *this_ptr,char *pod_fil
     g_CurrentLineNumber = 621;
     core_main_c_displayErrorAndQuit_FUN_004c8440("Out of memory!");
   }
-  iVar2 = engine_pod_cpp_CPodFile_FUN_004f7ae0
+  iVar2 = engine_pod_cpp_CPodFile_mountFromFile_FUN_004f7ae0
                     (this_ptr->pod_files[this_ptr->pod_file_count],pod_filename);
   if (iVar2 != 0) {
     this_ptr->pod_file_count = this_ptr->pod_file_count + 1;

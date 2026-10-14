@@ -25,7 +25,7 @@ TEST(IRenderer, ModeAndCardInterface) {
                                  int (IRenderer::*)(int, int, int, void **)>);
     static_assert(std::is_same_v<decltype(&IRenderer::restoreVideoMode), int (IRenderer::*)()>);
     static_assert(std::is_same_v<decltype(&IRenderer::setColorTable16),
-                                 int (IRenderer::*)(std::uint8_t *, std::uint16_t *)>);
+                                 int (IRenderer::*)(const std::uint8_t *, std::uint16_t *)>);
 }
 
 TEST(IRenderer, FrameInterface) {
@@ -69,6 +69,11 @@ TEST(IRenderer, DrawingInterface) {
     static_assert(
         std::is_same_v<decltype(&IRenderer::add3dLine), int (IRenderer::*)(void *, void *, int)>);
     static_assert(std::is_same_v<decltype(&IRenderer::flushLineList), int (IRenderer::*)()>);
+}
+
+TEST(IRenderer, ReflectionPassInterface) {
+    static_assert(std::is_same_v<decltype(&IRenderer::beginReflectionPass), void (IRenderer::*)()>);
+    static_assert(std::is_same_v<decltype(&IRenderer::endReflectionPass), void (IRenderer::*)()>);
 }
 
 } // namespace

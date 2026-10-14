@@ -7,9 +7,11 @@
 
 namespace nocturne::engine {
 
+// The camera and model transforms in world units, and the polygon entry points, over the
+// software renderer's fixed-point state.
 class CDemonRenderer {
 public:
-    CDemonRenderer();
+    CDemonRenderer(CMatrix &matrix, const C2d &two_d, C3d &three_d);
 
     void renderSolidColorDepthDirect(platform::SMRGLHeaderPrimitive *prim);
     void renderSolidColorPoly(SMRGLPrimitivePoly *poly);
@@ -27,19 +29,25 @@ public:
     void renderBlendedPoly(SMRGLPrimitivePoly *poly);
     void renderOverlayDirect(platform::SMRGLHeaderPrimitive *prim);
     void setCameraOrigin(common::CVector3i *origin);
-    void setCameraOriginFromScaledPoint(common::CVector3f *point_ptr);
-    void setupSceneRendering(common::CVector3f *euler_angles);
-    void setupCameraAndProjection(common::CMatrix3x3f *transform_matrix);
-    void copyAndTransform3DPoint(common::CVector3f *input_point);
-    void processCameraRelativeVertex(common::CVector3f *world_position);
+    void setCameraOriginFromScaledPoint(const common::CVector3f &point);
+    // Builds the camera's rotation from angles in radians, as setupCameraAndProjection takes it.
+    void setupSceneRendering(const common::CVector3f &euler_angles);
+    // Takes the camera's rotation, and bakes the projection scale and the clip rectangle's
+    // aspect into the transform, so a transformed point's x and y divide by z to the screen.
+    void setupCameraAndProjection(const common::CMatrix3x3f &transform_matrix);
+    void copyAndTransform3DPoint(common::CVector3i *input_point);
+    void processCameraRelativeVertex(const common::CVector3f &world_position);
     void applyDirectTransform(common::CVector3i *position, common::CVector3i *rotation);
-    void applyScaledTransform(common::CVector3f *euler_angles, common::CVector3f *translation);
+    // Pushes a turn by the angles in radians, then a move by the translation if there is one.
+    void applyScaledTransform(const common::CVector3f &euler_angles,
+                              const common::CVector3f *translation);
     void matrixPush();
     void matrixPop();
+    // The field of view in the original's units, 18 being the unit projection scale.
     void setProjectionScale(float field_of_view);
     void setLightIntensity(float intensity);
     void setLightDirection(common::CVector3i *direction);
-    common::CVector3i *getCameraOriginFixed(common::CVector3i *output);
+    [[nodiscard]] common::CVector3i getCameraOriginFixed() const;
     common::CVector3f *getCameraOriginWorld(common::CVector3f *output);
     common::CVector3i *getCameraRotationFixed(common::CVector3i *output);
     common::CVector3f *getCameraRotationRadians(common::CVector3f *output);
@@ -72,6 +80,11 @@ public:
     void captureTexture(platform::SMRGLTextureBasic *texture);
     void updateTexture(platform::SMRGLTextureBasic *texture, SRGBColorPalette *palette);
     int depthTest(platform::SRenderVertex *vertex_ptr);
+
+private:
+    CMatrix &matrix_;
+    const C2d &two_d_;
+    C3d &three_d_;
 };
 
 } // namespace nocturne::engine

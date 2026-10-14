@@ -1,6 +1,9 @@
 #include "common/video/framebuffer.h"
 
+#include "common/math/bits.h"
+
 #include <algorithm>
+#include <bit>
 #include <iterator>
 
 namespace nocturne::common {
@@ -36,6 +39,22 @@ SPixelFormat getPixelFormat(EPixelLayout layout) {
 int getBytesPerPixel(EPixelLayout layout) {
     constexpr std::array<int, 3> kSizes = {1, 2, 4};
     return kSizes.at(static_cast<std::size_t>(layout));
+}
+
+SChannelLayout getChannelLayout(std::uint32_t mask) {
+    constexpr int kLevelBits = 8;
+    if (mask == 0) {
+        return {};
+    }
+    const int dropped = std::max(kLevelBits - std::popcount(mask), 0);
+    return {.bit_position = std::countr_zero(mask),
+            .scale_factor = 1 << dropped,
+            .dither_shift = dropped};
+}
+
+std::uint32_t packLevel(std::uint32_t level, const SChannelLayout &channel) {
+    return shiftLeft(level / static_cast<std::uint32_t>(channel.scale_factor),
+                     channel.bit_position);
 }
 
 std::vector<std::uint8_t> packRows(std::span<const std::byte> pixels, int width, int height,

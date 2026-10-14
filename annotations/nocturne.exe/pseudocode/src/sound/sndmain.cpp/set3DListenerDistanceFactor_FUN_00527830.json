@@ -1,0 +1,287 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 5,
+        "line": 20,
+        "message": "unknown type name 'FLOATING_SAVE_AREA'"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 52,
+        "message": "unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 53,
+        "message": "unknown type name 'PCONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 258,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 267,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 497,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 497,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 498,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 498,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 3,
+        "line": 14,
+        "message": "use of undeclared identifier '_DAT_005bea88'"
+      },
+      {
+        "category": "type_error",
+        "column": 34,
+        "line": 15,
+        "message": "member reference base type 'double' is not a structure or union"
+      },
+      {
+        "category": "type_error",
+        "column": 34,
+        "line": 16,
+        "message": "member reference base type 'double' is not a structure or union"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 7,
+        "line": 17,
+        "message": "use of undeclared identifier '_DAT_02dc8318'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 7,
+        "line": 20,
+        "message": "use of undeclared identifier 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 14,
+        "line": 20,
+        "message": "expected expression"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 17,
+        "line": 20,
+        "message": "use of undeclared identifier '_DAT_02dc8318'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 40,
+        "line": 20,
+        "message": "use of undeclared identifier '_DAT_02dc8318'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 26,
+    "complexity_score": 92,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 12,
+    "suspect_count": 6,
+    "suspect_types": [
+      "undefined_data",
+      "unknown_field",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 38
+  },
+  "cross_references": [
+    {
+      "addr": "00527d80",
+      "from_addr": "00527da9",
+      "name": "sound_sndmain.cpp_resetSoundSystemDefaults_FUN_00527d80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00527830",
+    "address_range": [
+      [
+        "00527830",
+        "00527870"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_set3DListenerDistanceFactor_FUN_00527830",
+    "signature": "void __cdecl sound_sndmain_cpp_set3DListenerDistanceFactor_FUN_00527830(double distance_in_feet)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005bea80",
+      "name": "DAT_005bea80",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005bea84",
+      "name": "DAT_005bea84",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005bea88",
+      "name": "DAT_005bea88",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02dc8318",
+      "name": "DAT_02dc8318",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00527da9",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_resetSoundSystemDefaults_FUN_00527d80",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9130434782608696,
+    "instruction_count": 23,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALLIND": 1,
+      "CBRANCH": 1,
+      "COPY": 36,
+      "FLOAT2FLOAT": 2,
+      "FLOAT_DIV": 1,
+      "INT2FLOAT": 1,
+      "INT_ADD": 10,
+      "INT_AND": 5,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 4,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 5,
+      "LOAD": 10,
+      "POPCOUNT": 2,
+      "RETURN": 2,
+      "STORE": 5
+    },
+    "pcode_op_count": 90
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "distance_in_feet",
+        "offset": 4,
+        "size": 8,
+        "type": "double"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 8,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "DAT_005bea80 = distance_in_feet._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 8,
+      "match": "DAT_005bea80",
+      "severity": "mild",
+      "text": "DAT_005bea80 = distance_in_feet._0_4_;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 9,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "DAT_005bea84 = distance_in_feet._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 9,
+      "match": "DAT_005bea84",
+      "severity": "mild",
+      "text": "DAT_005bea84 = distance_in_feet._4_4_;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 13,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*_DAT_02dc8318 + 0x24))(_DAT_02dc8318,distance_in_feet);",
+      "type": "unresolved_funcptr"
+    }
+  ]
+}

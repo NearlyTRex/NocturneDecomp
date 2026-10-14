@@ -42,10 +42,10 @@ void __cdecl engine_special_cpp_transformAndProjectPoint_FUN_005b575c(SProjected
       uVar6 = uVar6 | GAME_CLIP_LEFT;
     }
     if ((int)uVar5 < (int)uVar4) {
-      uVar6 = uVar6 | GAME_CLIP_BOTTOM;
+      uVar6 = uVar6 | GAME_CLIP_TOP;
     }
     if ((int)uVar4 < (int)-uVar5) {
-      uVar6 = uVar6 | GAME_CLIP_TOP;
+      uVar6 = uVar6 | GAME_CLIP_BOTTOM;
     }
     if ((int)uVar5 < 1) {
       uVar6 = uVar6 | GAME_CLIP_NEAR;
@@ -89,10 +89,10 @@ void __cdecl engine_special_cpp_transformAndProjectPoint_FUN_005b575c(SProjected
     uVar5 = uVar5 | GAME_CLIP_LEFT;
   }
   if ((int)uVar4 < (int)uVar3) {
-    uVar5 = uVar5 | GAME_CLIP_BOTTOM;
+    uVar5 = uVar5 | GAME_CLIP_TOP;
   }
   if ((int)uVar3 < (int)-uVar4) {
-    uVar5 = uVar5 | GAME_CLIP_TOP;
+    uVar5 = uVar5 | GAME_CLIP_BOTTOM;
   }
   if ((int)uVar4 < 1) {
     uVar5 = uVar5 | GAME_CLIP_NEAR;

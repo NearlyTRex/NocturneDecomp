@@ -13648,7 +13648,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_clipper.c_clipPolygonRightPlane_FUN_00431b90",
+    "name":"engine_clipper.c_clipPolygonLeftPlane_FUN_00431b90",
     "ret":"int",
     "vars":{
       "locals":[
@@ -13758,7 +13758,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_clipper.c_clipPolygonTopPlane_FUN_00431e10",
+    "name":"engine_clipper.c_clipPolygonBottomPlane_FUN_00431e10",
     "ret":"int",
     "vars":{
       "locals":[
@@ -29710,7 +29710,7 @@
           "type":"CStrList*"
         },
         {
-          "name":"sort_type",
+          "name":"start_index",
           "storage":{
             "offset":8,
             "size":4,
@@ -29726,7 +29726,7 @@
           "type":"int"
         },
         {
-          "name":"sort_order",
+          "name":"end_index",
           "storage":{
             "offset":12,
             "size":4,
@@ -58289,8 +58289,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_set.cpp_CVector3f_copy_FUN_0050ea90",
-    "ret":"CVector3f*",
+    "name":"core_set.cpp_CBoundingBox3D_assign_FUN_0050ea90",
+    "ret":"CBoundingBox3D*",
     "vars":{
       "params":[
         {
@@ -58307,10 +58307,10 @@
               }
             ]
           },
-          "type":"CVector3f*"
+          "type":"CBoundingBox3D*"
         },
         {
-          "name":"b",
+          "name":"other",
           "storage":{
             "offset":8,
             "size":4,
@@ -58323,7 +58323,7 @@
               }
             ]
           },
-          "type":"CVector3f*"
+          "type":"CBoundingBox3D*"
         }
       ],
       "ret_storage":{

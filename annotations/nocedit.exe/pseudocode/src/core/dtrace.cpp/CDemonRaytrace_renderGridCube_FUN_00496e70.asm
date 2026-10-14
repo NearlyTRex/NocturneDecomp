@@ -36,7 +36,7 @@
 ;   CDemonRenderer* g_CDemonRendererPtr1 = 02c6d578
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
-;   CVector3f g_DebugCubeBasePoint
+;   CVector3i g_DebugCubeBasePoint
 ;
 ; Called Functions:
 ;   crt_stdlib.c_rand_FUN_005feb5c
@@ -84,7 +84,7 @@ section .text
     PUSH EDX                            ; 00496efb | g_CDemonRendererInstance
     LEA EBX,[ESP + 0x5c]                ; 00496efc
     CALL engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0048c420 ; 00496f00
-        ;   XREF to: 0048c420 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0048c420(CDemonRenderer * this_ptr, CVector3f * input_point)
+        ;   XREF to: 0048c420 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0048c420(CDemonRenderer * this_ptr, CVector3i * input_point)
     ADD ESP,0x8                         ; 00496f05
     MOV EAX,ESI                         ; 00496f08
     MOV EDX,dword ptr [0x006703ec]      ; 00496f0a | g_CDemonRendererPtr2

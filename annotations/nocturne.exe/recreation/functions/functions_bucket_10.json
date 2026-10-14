@@ -4954,8 +4954,8 @@
     ],
     "conv":"__cdecl",
     "instructions":98,
-    "method":"clipPolygonRightPlane",
-    "name":"engine_clipper.c_clipPolygonRightPlane_FUN_00431b90",
+    "method":"clipPolygonLeftPlane",
+    "name":"engine_clipper.c_clipPolygonLeftPlane_FUN_00431b90",
     "params":[
       {
         "name":"input_vertices",
@@ -4999,8 +4999,8 @@
     ],
     "conv":"__cdecl",
     "instructions":98,
-    "method":"clipPolygonTopPlane",
-    "name":"engine_clipper.c_clipPolygonTopPlane_FUN_00431e10",
+    "method":"clipPolygonBottomPlane",
+    "name":"engine_clipper.c_clipPolygonBottomPlane_FUN_00431e10",
     "params":[
       {
         "name":"input_vertices",
@@ -9260,7 +9260,7 @@
     "name":"shape_edittool.cpp_CStrList_sort_FUN_00474010",
     "params":[
       {
-        "name":"sort_type",
+        "name":"start_index",
         "type":{
           "kind":"builtin",
           "name":"int",
@@ -9268,7 +9268,7 @@
         }
       },
       {
-        "name":"sort_order",
+        "name":"end_index",
         "type":{
           "kind":"builtin",
           "name":"int",
@@ -17979,17 +17979,17 @@
   },
   {
     "addr":"0050ea90",
-    "cls":"CVector3f",
+    "cls":"CBoundingBox3D",
     "conv":"__cdecl",
     "instructions":29,
-    "method":"copy",
-    "name":"core_set.cpp_CVector3f_copy_FUN_0050ea90",
+    "method":"assign",
+    "name":"core_set.cpp_CBoundingBox3D_assign_FUN_0050ea90",
     "params":[
       {
-        "name":"b",
+        "name":"other",
         "type":{
           "kind":"class",
-          "name":"CVector3f",
+          "name":"CBoundingBox3D",
           "ptr":1
         }
       }
@@ -17997,7 +17997,7 @@
     "receiver":true,
     "ret":{
       "kind":"class",
-      "name":"CVector3f",
+      "name":"CBoundingBox3D",
       "ptr":1
     },
     "tu":"core/set.cpp",

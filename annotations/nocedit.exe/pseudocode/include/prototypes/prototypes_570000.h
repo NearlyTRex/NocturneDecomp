@@ -66,7 +66,7 @@ SRoom * __cdecl core_set_cpp_SRoom_dtor_FUN_00571480(SRoom *this_ptr,uint flags)
 SVDBox * __cdecl core_set_cpp_SVDBox_ctor_FUN_00571490(SVDBox *this_ptr);
 SVDBox * __cdecl core_set_cpp_SVDBox_dtor_FUN_005714a0(SVDBox *this_ptr,uint flags);
 C3DSLight * __cdecl core_set_cpp_C3DSLight_dtor_FUN_005714b0(C3DSLight *this_ptr,uint flags);
-CVector3f * __cdecl core_set_cpp_CVector3f_copy_FUN_005714c0(CVector3f *this_ptr,CVector3f *b);
+CBoundingBox3D * __cdecl core_set_cpp_CBoundingBox3D_assign_FUN_005714c0(CBoundingBox3D *this_ptr,CBoundingBox3D *other);
 CVector3f * __cdecl core_set_cpp_CVector3f_arrdtor4000_FUN_00571510(CVector3f *this_ptr,uint flags);
 C3DSCamera * __cdecl core_set_cpp_C3DSCamera_arrdtor250_FUN_00571530(C3DSCamera *objs,uint flags);
 C3DSLight * __cdecl core_set_cpp_C3DSLight_arrdtor200_FUN_00571550(C3DSLight *objs,uint flags);

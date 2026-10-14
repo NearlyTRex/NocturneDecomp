@@ -633,7 +633,7 @@
     "vars":{
       "params":[
         {
-          "name":"input_point",
+          "name":"block",
           "storage":{
             "offset":4,
             "size":4,
@@ -646,7 +646,7 @@
               }
             ]
           },
-          "type":"CQuaternion4f*"
+          "type":"SMRGLPoint*"
         }
       ],
       "ret_storage":{
@@ -8165,7 +8165,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_clipper.c_clipPolygonLeftPlane_FUN_00431a50",
+    "name":"engine_clipper.c_clipPolygonRightPlane_FUN_00431a50",
     "ret":"int",
     "vars":{
       "locals":[
@@ -8275,7 +8275,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_clipper.c_clipPolygonBottomPlane_FUN_00431cd0",
+    "name":"engine_clipper.c_clipPolygonTopPlane_FUN_00431cd0",
     "ret":"int",
     "vars":{
       "locals":[
@@ -8385,7 +8385,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_clipper.c_clipPolygonNearPlane_FUN_00431f50",
+    "name":"engine_clipper.c_clipPolygonFarPlane_FUN_00431f50",
     "ret":"void",
     "vars":{
       "locals":[
@@ -8805,7 +8805,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_004338d0",
+    "name":"engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_004338d0",
     "ret":"void",
     "vars":{
       "params":[
@@ -20258,7 +20258,7 @@
               }
             ]
           },
-          "type":"CVector3f*"
+          "type":"CVector3i*"
         }
       ]
     }
@@ -51297,6 +51297,50 @@
           "type":"CPodSearchContext*"
         }
       ]
+    }
+  },
+  {
+    "addr":"004f9250",
+    "body":[
+      {
+        "end":"004f9271",
+        "size":34,
+        "start":"004f9250"
+      }
+    ],
+    "conv":"__cdecl",
+    "importable":true,
+    "name":"engine_pod.cpp_findFileInPod_FUN_004f9250",
+    "ret":"int",
+    "vars":{
+      "params":[
+        {
+          "name":"info",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"SFoundFileInfo*"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {

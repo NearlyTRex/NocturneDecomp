@@ -22,7 +22,7 @@ void __cdecl sound_sndmain_cpp_formatActiveSounds_FUN_005a9f80(char *output_buff
       sound_sndmain_cpp_CSfxSlot_pollHwPlaybackPos_FUN_005a80e0(this_ptr);
       iVar1 = _sprintf
                         (output_buffer,"sfx slot %d: %s, pos %7.1f/%7.1f\n",iVar2,this_ptr->sample->sample_info.name,
-                         (double)(this_ptr->options).trigger_time,
+                         (double)(this_ptr->options).playback_position,
                          (double)(this_ptr->sample->sample_info).sample_count);
       output_buffer = output_buffer + iVar1;
     }

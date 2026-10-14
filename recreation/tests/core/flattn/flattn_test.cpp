@@ -12,5 +12,9 @@ TEST(CoreFlattnFunctions, PublicInterface) {
     static_assert(std::is_same_v<decltype(&doNothing), void (*)()>);
 }
 
+TEST(CoreFlattnFunctions, DoNothingReturnsWithoutThrowing) {
+    EXPECT_NO_THROW(doNothing());
+}
+
 } // namespace
 } // namespace nocturne::core

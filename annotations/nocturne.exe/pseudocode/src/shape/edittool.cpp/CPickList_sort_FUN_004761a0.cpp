@@ -2,11 +2,11 @@
 // Address: 004761a0
 // Address Range: [[004761a0, 004761f1]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_edittool_cpp_CPickList_sort_FUN_004761a0(CPickList *this_ptr,int sort_type,int sort_order)
+// Signature: void __cdecl shape_edittool_cpp_CPickList_sort_FUN_004761a0(CPickList *this_ptr,int start_index,int end_index)
 
 #include "nocturne.h"
 
-void __cdecl shape_edittool_cpp_CPickList_sort_FUN_004761a0(CPickList *this_ptr,int sort_type,int sort_order)
+void __cdecl shape_edittool_cpp_CPickList_sort_FUN_004761a0(CPickList *this_ptr,int start_index,int end_index)
 
 {
   if (0 < this_ptr->enabled_capacity) {
@@ -14,6 +14,6 @@ void __cdecl shape_edittool_cpp_CPickList_sort_FUN_004761a0(CPickList *this_ptr,
     g_CurrentLineNumber = 3632;
     core_main_c_displayErrorAndQuit_FUN_004c8440("CPickList::sort - can't do this after enableing/disabling items (yet)");
   }
-  shape_edittool_cpp_CStrList_sort_FUN_00474010(&this_ptr->base,sort_type,sort_order);
+  shape_edittool_cpp_CStrList_sort_FUN_00474010(&this_ptr->base,start_index,end_index);
   return;
 }

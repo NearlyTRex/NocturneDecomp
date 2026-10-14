@@ -200,7 +200,7 @@ void __cdecl engine_clipper_c_clipAndRasterize_FUN_00432cd0(int vertex_count,int
               iVar12 = iVar8 * 4;
               iVar8 = iVar8 + 1;
               *(SRenderVertex **)(local_4c + iVar12) = (SRenderVertex *)(&DAT_007678f8 + iVar13);
-              engine_clipper_c_interpolateVertexLeftClip_FUN_00431530
+              engine_clipper_c_interpolateVertexRightClip_FUN_00431530
                         (pSVar15,pSVar11,(SRenderVertex *)(&DAT_007678f8 + iVar13));
               break;
             case 2:
@@ -216,7 +216,7 @@ void __cdecl engine_clipper_c_clipAndRasterize_FUN_00432cd0(int vertex_count,int
               iVar8 = iVar8 + 2;
               *(SRenderVertex **)(local_4c + iVar13 * 4) = (SRenderVertex *)(&DAT_007678f8 + iVar12)
               ;
-              engine_clipper_c_interpolateVertexLeftClip_FUN_00431530
+              engine_clipper_c_interpolateVertexRightClip_FUN_00431530
                         (pSVar11,pSVar15,(SRenderVertex *)(&DAT_007678f8 + iVar12));
             }
             local_44 = local_44 + 1;
@@ -258,7 +258,7 @@ void __cdecl engine_clipper_c_clipAndRasterize_FUN_00432cd0(int vertex_count,int
               iVar12 = iVar12 + 1;
               DAT_00767b38 = DAT_00767b38 + 1;
               auStack_d4[iVar12] = (SRenderVertex *)(&DAT_007678f8 + iVar8);
-              engine_clipper_c_interpolateVertexRightClip_FUN_00431630
+              engine_clipper_c_interpolateVertexLeftClip_FUN_00431630
                         (pSVar15,pSVar11,(SRenderVertex *)(&DAT_007678f8 + iVar8));
               break;
             case 2:
@@ -272,7 +272,7 @@ void __cdecl engine_clipper_c_clipAndRasterize_FUN_00432cd0(int vertex_count,int
               iVar12 = iVar12 + 2;
               DAT_00767b38 = DAT_00767b38 + 1;
               auStack_d4[iVar12] = (SRenderVertex *)(&DAT_007678f8 + iVar8);
-              engine_clipper_c_interpolateVertexRightClip_FUN_00431630
+              engine_clipper_c_interpolateVertexLeftClip_FUN_00431630
                         (pSVar11,pSVar15,(SRenderVertex *)(&DAT_007678f8 + iVar8));
             }
             local_3c = local_3c + 1;
@@ -318,7 +318,7 @@ void __cdecl engine_clipper_c_clipAndRasterize_FUN_00432cd0(int vertex_count,int
               iVar8 = iVar13 + 1;
               DAT_00767b38 = DAT_00767b38 + 1;
               local_150[iVar13] = (SRenderVertex *)(&DAT_007678f8 + iVar12);
-              engine_clipper_c_interpolateVertexBottomClip_FUN_00431730
+              engine_clipper_c_interpolateVertexTopClip_FUN_00431730
                         (pSVar15,pSVar11,(SRenderVertex *)(&DAT_007678f8 + iVar12));
               break;
             case 2:
@@ -332,7 +332,7 @@ void __cdecl engine_clipper_c_clipAndRasterize_FUN_00432cd0(int vertex_count,int
               iVar8 = iVar13 + 2;
               DAT_00767b38 = DAT_00767b38 + 1;
               local_150[iVar13 + 1] = (SRenderVertex *)(&DAT_007678f8 + iVar12);
-              engine_clipper_c_interpolateVertexBottomClip_FUN_00431730
+              engine_clipper_c_interpolateVertexTopClip_FUN_00431730
                         (pSVar11,pSVar15,(SRenderVertex *)(&DAT_007678f8 + iVar12));
             }
             local_34 = local_34 + 1;
@@ -377,7 +377,7 @@ void __cdecl engine_clipper_c_clipAndRasterize_FUN_00432cd0(int vertex_count,int
               uVar7 = uVar7 + 1;
               DAT_00767b38 = DAT_00767b38 + 1;
               auStack_d4[uVar7] = (SRenderVertex *)(&DAT_007678f8 + iVar8);
-              engine_clipper_c_interpolateVertexTopClip_FUN_00431830
+              engine_clipper_c_interpolateVertexBottomClip_FUN_00431830
                         (pSVar15,pSVar11,(SRenderVertex *)(&DAT_007678f8 + iVar8));
               break;
             case 2:
@@ -391,7 +391,7 @@ void __cdecl engine_clipper_c_clipAndRasterize_FUN_00432cd0(int vertex_count,int
               uVar7 = uVar7 + 2;
               DAT_00767b38 = DAT_00767b38 + 1;
               auStack_d4[uVar7] = (SRenderVertex *)(&DAT_007678f8 + iVar8);
-              engine_clipper_c_interpolateVertexTopClip_FUN_00431830
+              engine_clipper_c_interpolateVertexBottomClip_FUN_00431830
                         (pSVar11,pSVar15,(SRenderVertex *)(&DAT_007678f8 + iVar8));
             }
             local_2c = local_2c + 1;
@@ -440,7 +440,7 @@ void __cdecl engine_clipper_c_clipAndRasterize_FUN_00432cd0(int vertex_count,int
           } while (iVar8 < (int)DAT_00766c70);
         }
         iVar8 = 0;
-        if (DAT_005ad284 != 0) {
+        if (g_FarPlaneDistance != 0) {
           if (0 < (int)DAT_00766c70) {
             iVar12 = 0;
             do {
@@ -450,7 +450,7 @@ void __cdecl engine_clipper_c_clipAndRasterize_FUN_00432cd0(int vertex_count,int
               iVar12 = iVar12 + 0x30;
             } while (iVar12 < (int)(DAT_00766c70 * 0x30));
           }
-          if (DAT_005ad284 <= iVar8) {
+          if (g_FarPlaneDistance <= iVar8) {
             plVar9 = (longlong *)&DAT_00766c74;
             DAT_007672f4 = DAT_00766c70;
             plVar17 = (longlong *)&DAT_007672f8;
@@ -478,8 +478,8 @@ void __cdecl engine_clipper_c_clipAndRasterize_FUN_00432cd0(int vertex_count,int
                 if (uVar7 == DAT_007672f4) {
                   uVar7 = uVar7 ^ DAT_007672f4;
                 }
-                bVar3 = DAT_005ad284 <= (pSVar11->projected_vertex).transformed_z;
-                if (DAT_005ad284 <= (int)(&DAT_00767300)[uVar7 * 0xc]) {
+                bVar3 = g_FarPlaneDistance <= (pSVar11->projected_vertex).transformed_z;
+                if (g_FarPlaneDistance <= (int)(&DAT_00767300)[uVar7 * 0xc]) {
                   bVar3 = bVar3 | 2;
                 }
                 switch(bVar3) {
@@ -512,7 +512,7 @@ void __cdecl engine_clipper_c_clipAndRasterize_FUN_00432cd0(int vertex_count,int
                   DAT_00766c70 = DAT_00766c70 + 1;
                   break;
                 case 1:
-                  engine_clipper_c_interpolateVertexNearClip_FUN_00431930
+                  engine_clipper_c_interpolateVertexFarClip_FUN_00431930
                             ((SRenderVertex *)(&DAT_007672f8 + uVar7 * 0xc),pSVar11,
                              (SRenderVertex *)(&DAT_00766c74 + DAT_00766c70 * 0xc));
                   DAT_00766c70 = DAT_00766c70 + 1;
@@ -544,7 +544,7 @@ void __cdecl engine_clipper_c_clipAndRasterize_FUN_00432cd0(int vertex_count,int
                     }
                   }
                   DAT_00766c70 = DAT_00766c70 + 1;
-                  engine_clipper_c_interpolateVertexNearClip_FUN_00431930
+                  engine_clipper_c_interpolateVertexFarClip_FUN_00431930
                             (pSVar11,(SRenderVertex *)(&DAT_007672f8 + uVar7 * 0xc),
                              (SRenderVertex *)(&DAT_00766c74 + DAT_00766c70 * 0xc));
                   DAT_00766c70 = DAT_00766c70 + 1;

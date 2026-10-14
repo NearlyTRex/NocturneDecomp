@@ -564,7 +564,7 @@ section .text
     PUSH EDI                            ; 0046a26b | DAT_01b4d738
     MOV dword ptr [0x01e52ef8],ESI      ; 0046a26c | g_RenderedTriangleCount
     CALL engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_004609d0 ; 0046a272
-        ;   XREF to: 004609d0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_004609d0(CDemonRenderer * this_ptr, CVector3f * input_point)
+        ;   XREF to: 004609d0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_004609d0(CDemonRenderer * this_ptr, CVector3i * input_point)
     ADD ESP,0x8                         ; 0046a277
     PUSH 0xff                           ; 0046a27a
     PUSH 0xff                           ; 0046a27f

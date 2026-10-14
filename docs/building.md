@@ -18,6 +18,15 @@ UBSan. Override with the first argument or `BUILD_PRESET`:
 BUILD_PRESET=check-linux-x86_64 ./build.sh
 ```
 
+The source recreation under `recreation/` is a separate CMake project with its own script. It
+builds the `game` preset into `build/recreation/game` and runs the executable from the repo root:
+
+```sh
+./recreation.sh          # build, then run
+./recreation.sh build    # build only
+./recreation.sh run      # run the last build
+```
+
 ## Presets
 
 | Preset | Target | What it does |

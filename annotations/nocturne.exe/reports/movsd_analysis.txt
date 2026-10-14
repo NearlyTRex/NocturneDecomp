@@ -64,7 +64,7 @@ Total MOVSD sites:         826
 ----------------------------------------------------------------------------------------------------
 FIXABLE 5x MOVSD SITES (20 bytes copy, 5 sites)
 ----------------------------------------------------------------------------------------------------
-  CPodFile_FUN_004f7ae0                                                    3 sites  ~135 bytes
+  CPodFile_mountFromFile_FUN_004f7ae0                                      3 sites  ~135 bytes
     0x004f7e4b  5x MOVSD (20 bytes copy, 5 bytes borrowable)
     0x004f7e55  5x MOVSD (20 bytes copy, 5 bytes borrowable)
     0x004f7e70  5x MOVSD (20 bytes copy, 5 bytes borrowable)
@@ -635,7 +635,7 @@ UNFIXABLE 1x MOVSD SITES (4 bytes copy, 93 sites)
     0x00432bee  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
     0x00432c0a  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
     0x00432c10  1x MOVSD (4 bytes copy)  only 1 bytes available (need 5)
-  clipPolygonNearPlane_FUN_00431f50                                        9 sites
+  clipPolygonFarPlane_FUN_00431f50                                         9 sites
     0x00431fc8  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
     0x00431fe4  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
     0x00431fea  1x MOVSD (4 bytes copy)  only 1 bytes available (need 5)
@@ -1059,18 +1059,18 @@ REP MOVSD — TOO LARGE FOR STRUCT COPY (buffer/string) (87 sites)
   testCameraVisibility_FUN_00511d80                                        2 sites
     0x005122f0  REP MOVSD 256 dwords (1024 bytes)
     0x005123ed  REP MOVSD 12288 dwords (49152 bytes)
-  clipPolygonHorizontalPlanes_FUN_00433ef0                                 2 sites
-    0x00433f6c  REP MOVSD 48 dwords (192 bytes)
-    0x00433fdc  REP MOVSD 48 dwords (192 bytes)
-  clipPolygonLeftPlaneGlobal_FUN_00433c70                                  2 sites
-    0x00433ceb  REP MOVSD 48 dwords (192 bytes)
-    0x00433d57  REP MOVSD 48 dwords (192 bytes)
-  clipPolygonRightPlaneGlobal_FUN_00433db0                                 2 sites
-    0x00433e31  REP MOVSD 48 dwords (192 bytes)
-    0x00433ea1  REP MOVSD 48 dwords (192 bytes)
-  clipPolygonVerticalPlanes_FUN_00434030                                   2 sites
+  clipPolygonBottomPlaneGlobal_FUN_00434030                                2 sites
     0x004340b2  REP MOVSD 48 dwords (192 bytes)
     0x00434122  REP MOVSD 48 dwords (192 bytes)
+  clipPolygonLeftPlaneGlobal_FUN_00433db0                                  2 sites
+    0x00433e31  REP MOVSD 48 dwords (192 bytes)
+    0x00433ea1  REP MOVSD 48 dwords (192 bytes)
+  clipPolygonRightPlaneGlobal_FUN_00433c70                                 2 sites
+    0x00433ceb  REP MOVSD 48 dwords (192 bytes)
+    0x00433d57  REP MOVSD 48 dwords (192 bytes)
+  clipPolygonTopPlaneGlobal_FUN_00433ef0                                   2 sites
+    0x00433f6c  REP MOVSD 48 dwords (192 bytes)
+    0x00433fdc  REP MOVSD 48 dwords (192 bytes)
   startSfx_FUN_005265a0                                                    2 sites
     0x0052662f  REP MOVSD 27 dwords (108 bytes)
     0x005266c7  REP MOVSD 27 dwords (108 bytes)

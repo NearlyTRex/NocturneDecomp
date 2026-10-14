@@ -69,14 +69,14 @@ section .text
     PUSH 0x6a                           ; 004a1cb9
     MOV EBX,dword ptr [EAX + 0x3168]    ; 004a1cbb
     PUSH EAX                            ; 004a1cc1
-    MOV dword ptr [0x02cf2668],EBX      ; 004a1cc2 | g_FontCharacterHeight
+    MOV dword ptr [0x02cf2668],EBX      ; 004a1cc2 | g_EditorFontMaxCharWidth
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 004a1cc8
         ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004a1ccd
     FLD float ptr [ESP + 0x3c]          ; 004a1cd0
     FMUL double ptr [0x006235b6]        ; 004a1cd4 | g_AxisScaleMultiplier
     XOR ESI,ESI                         ; 004a1cda
-    MOV [0x02cf266c],EAX                ; 004a1cdc | g_FontCharacterWidth
+    MOV [0x02cf266c],EAX                ; 004a1cdc | g_EditorFontLineHeight
     MOV EAX,dword ptr [ESP + 0x40]      ; 004a1ce1
     MOV dword ptr [ESP + 0x14],ESI      ; 004a1ce5
     MOV dword ptr [ESP + 0x18],ESI      ; 004a1ce9

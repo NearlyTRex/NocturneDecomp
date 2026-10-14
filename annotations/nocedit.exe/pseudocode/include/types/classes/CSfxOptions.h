@@ -20,8 +20,8 @@ typedef struct CSfxOptions {
     double delay_remaining; // 0x4c
     void* userdata[2]; // 0x54
     uint flags; // 0x5c
-    double trigger_time; // 0x60
-    int trigger_id; // 0x68
+    double playback_position; // 0x60
+    int playback_position_type; // 0x68
     int dead; // 0x6c
 } CSfxOptions;
 #pragma pack(pop)

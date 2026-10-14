@@ -23,7 +23,7 @@ void __cdecl engine_3d_c_clipAndDrawLine2D_FUN_00409290(SRenderVertex vertex1,SR
     iVar2 = 0;
     do {
       if (vertex2.projected_vertex.transformed_z < vertex2.projected_vertex.transformed_x) {
-        engine_clipper_c_interpolateVertexLeftClip_FUN_00431530(&vertex1,&vertex2,&local_40);
+        engine_clipper_c_interpolateVertexRightClip_FUN_00431530(&vertex1,&vertex2,&local_40);
         pSVar3 = &local_40;
         pSVar4 = &vertex2;
         for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -34,7 +34,7 @@ void __cdecl engine_3d_c_clipAndDrawLine2D_FUN_00409290(SRenderVertex vertex1,SR
       }
       if (-vertex2.projected_vertex.transformed_x != vertex2.projected_vertex.transformed_z &&
           vertex2.projected_vertex.transformed_x <= -vertex2.projected_vertex.transformed_z) {
-        engine_clipper_c_interpolateVertexRightClip_FUN_00431630(&vertex1,&vertex2,&local_40);
+        engine_clipper_c_interpolateVertexLeftClip_FUN_00431630(&vertex1,&vertex2,&local_40);
         pSVar3 = &local_40;
         pSVar4 = &vertex2;
         for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -44,7 +44,7 @@ void __cdecl engine_3d_c_clipAndDrawLine2D_FUN_00409290(SRenderVertex vertex1,SR
         }
       }
       if (vertex2.projected_vertex.transformed_z < vertex2.projected_vertex.transformed_y) {
-        engine_clipper_c_interpolateVertexBottomClip_FUN_00431730(&vertex1,&vertex2,&local_40);
+        engine_clipper_c_interpolateVertexTopClip_FUN_00431730(&vertex1,&vertex2,&local_40);
         pSVar3 = &local_40;
         pSVar4 = &vertex2;
         for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -55,7 +55,7 @@ void __cdecl engine_3d_c_clipAndDrawLine2D_FUN_00409290(SRenderVertex vertex1,SR
       }
       if (-vertex2.projected_vertex.transformed_y != vertex2.projected_vertex.transformed_z &&
           vertex2.projected_vertex.transformed_y <= -vertex2.projected_vertex.transformed_z) {
-        engine_clipper_c_interpolateVertexTopClip_FUN_00431830(&vertex1,&vertex2,&local_40);
+        engine_clipper_c_interpolateVertexBottomClip_FUN_00431830(&vertex1,&vertex2,&local_40);
         pSVar3 = &local_40;
         pSVar4 = &vertex2;
         for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -65,7 +65,7 @@ void __cdecl engine_3d_c_clipAndDrawLine2D_FUN_00409290(SRenderVertex vertex1,SR
         }
       }
       if (vertex1.projected_vertex.transformed_z < vertex1.projected_vertex.transformed_x) {
-        engine_clipper_c_interpolateVertexLeftClip_FUN_00431530(&vertex2,&vertex1,&local_40);
+        engine_clipper_c_interpolateVertexRightClip_FUN_00431530(&vertex2,&vertex1,&local_40);
         pSVar3 = &local_40;
         pSVar4 = &vertex1;
         for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -76,7 +76,7 @@ void __cdecl engine_3d_c_clipAndDrawLine2D_FUN_00409290(SRenderVertex vertex1,SR
       }
       if (-vertex1.projected_vertex.transformed_x != vertex1.projected_vertex.transformed_z &&
           vertex1.projected_vertex.transformed_x <= -vertex1.projected_vertex.transformed_z) {
-        engine_clipper_c_interpolateVertexRightClip_FUN_00431630(&vertex2,&vertex1,&local_40);
+        engine_clipper_c_interpolateVertexLeftClip_FUN_00431630(&vertex2,&vertex1,&local_40);
         pSVar3 = &local_40;
         pSVar4 = &vertex1;
         for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -86,7 +86,7 @@ void __cdecl engine_3d_c_clipAndDrawLine2D_FUN_00409290(SRenderVertex vertex1,SR
         }
       }
       if (vertex1.projected_vertex.transformed_z < vertex1.projected_vertex.transformed_y) {
-        engine_clipper_c_interpolateVertexBottomClip_FUN_00431730(&vertex2,&vertex1,&local_40);
+        engine_clipper_c_interpolateVertexTopClip_FUN_00431730(&vertex2,&vertex1,&local_40);
         pSVar3 = &local_40;
         pSVar4 = &vertex1;
         for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -97,7 +97,7 @@ void __cdecl engine_3d_c_clipAndDrawLine2D_FUN_00409290(SRenderVertex vertex1,SR
       }
       if (-vertex1.projected_vertex.transformed_y != vertex1.projected_vertex.transformed_z &&
           vertex1.projected_vertex.transformed_y <= -vertex1.projected_vertex.transformed_z) {
-        engine_clipper_c_interpolateVertexTopClip_FUN_00431830(&vertex2,&vertex1,&local_40);
+        engine_clipper_c_interpolateVertexBottomClip_FUN_00431830(&vertex2,&vertex1,&local_40);
         pSVar3 = &local_40;
         pSVar4 = &vertex1;
         for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {

@@ -19,24 +19,24 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_seek_FUN_00525a80(CSfxSlot *this_ptr)
     core_main_c_displayErrorAndQuit_FUN_004c8440("SfxSlot::seek - no sample?!");
   }
   dVar1 = sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_00525c70
-                    (&this_ptr->sample->sample_info,(this_ptr->options).trigger_time,
-                     (this_ptr->options).trigger_id,0);
-  (this_ptr->options).trigger_id = 0;
-  (this_ptr->options).trigger_time = dVar1;
+                    (&this_ptr->sample->sample_info,(this_ptr->options).playback_position,
+                     (this_ptr->options).playback_position_type,0);
+  (this_ptr->options).playback_position_type = 0;
+  (this_ptr->options).playback_position = dVar1;
   dVar1 = sound_sndmain_cpp_CSfxSample_normalizePlaybackPos_FUN_00525de0
-                    (this_ptr->sample,(this_ptr->options).trigger_time,
-                     (this_ptr->options).trigger_id);
+                    (this_ptr->sample,(this_ptr->options).playback_position,
+                     (this_ptr->options).playback_position_type);
   this_ptr_00 = this_ptr->sample;
-  (this_ptr->options).trigger_time = dVar1;
+  (this_ptr->options).playback_position = dVar1;
   if (this_ptr_00->streaming_slot_index < 0) {
     *(uint *)&this_ptr->prev_hardware_playback_pos =
-         *(uint *)&(this_ptr->options).trigger_time;
+         *(uint *)&(this_ptr->options).playback_position;
     *(uint *)((int)&this_ptr->prev_hardware_playback_pos + 4) =
-         *(uint *)((int)&(this_ptr->options).trigger_time + 4);
+         *(uint *)((int)&(this_ptr->options).playback_position + 4);
     return;
   }
   dest_buffer_offset = 0x525b3c;
-  dVar1 = round((this_ptr->options).trigger_time);
+  dVar1 = round((this_ptr->options).playback_position);
   sound_sndmain_cpp_CSfxSample_seek_FUN_00523d10(this_ptr_00,(int)ROUND(dVar1),dest_buffer_offset);
   this_ptr->prev_hardware_playback_pos = (double)this_ptr->sample->stream_write_position;
   return;

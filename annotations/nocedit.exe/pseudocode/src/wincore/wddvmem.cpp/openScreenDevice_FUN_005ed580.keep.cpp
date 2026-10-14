@@ -14,7 +14,7 @@ void __cdecl wincore_wddvmem_cpp_openScreenDevice_FUN_005ed580(void)
   int iVar3;
   DDSURFACEDESC local_74;
 
-  if ((g_UseSoftwareRendering == 0) && (g_UseExternalRenderer == 0)) {
+  if ((g_Display24BitFallback == 0) && (g_UseExternalRenderer == 0)) {
     memset(&local_74,0,0x6c);
     local_74.dwSize = 0x6c;
     HVar2 = (*g_SoftwareRenderSurface->vtable->Lock)

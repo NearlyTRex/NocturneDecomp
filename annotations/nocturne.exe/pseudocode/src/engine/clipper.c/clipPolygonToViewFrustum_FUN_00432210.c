@@ -195,7 +195,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_00432210(int vertex_co
           iVar4 = uVar8 * 4;
           uVar8 = uVar8 + 1;
           *(SRenderVertex **)(local_4c + iVar4) = (SRenderVertex *)(&DAT_007678f8 + iVar9);
-          engine_clipper_c_interpolateVertexLeftClip_FUN_00431530
+          engine_clipper_c_interpolateVertexRightClip_FUN_00431530
                     (pSVar17,pSVar12,(SRenderVertex *)(&DAT_007678f8 + iVar9));
           break;
         case 2:
@@ -210,7 +210,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_00432210(int vertex_co
           DAT_00767b38 = DAT_00767b38 + 1;
           uVar8 = uVar8 + 2;
           *(SRenderVertex **)(local_4c + iVar9 * 4) = (SRenderVertex *)(&DAT_007678f8 + iVar4);
-          engine_clipper_c_interpolateVertexLeftClip_FUN_00431530
+          engine_clipper_c_interpolateVertexRightClip_FUN_00431530
                     (pSVar12,pSVar17,(SRenderVertex *)(&DAT_007678f8 + iVar4));
         }
         local_44 = local_44 + 1;
@@ -249,7 +249,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_00432210(int vertex_co
             uVar13 = uVar13 + 1;
             DAT_00767b38 = DAT_00767b38 + 1;
             auStack_d0[uVar13] = (SRenderVertex *)(&DAT_007678f8 + iVar4);
-            engine_clipper_c_interpolateVertexRightClip_FUN_00431630
+            engine_clipper_c_interpolateVertexLeftClip_FUN_00431630
                       (pSVar17,pSVar12,(SRenderVertex *)(&DAT_007678f8 + iVar4));
             break;
           case 2:
@@ -263,7 +263,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_00432210(int vertex_co
             uVar13 = uVar13 + 2;
             DAT_00767b38 = DAT_00767b38 + 1;
             auStack_d0[uVar13] = (SRenderVertex *)(&DAT_007678f8 + iVar4);
-            engine_clipper_c_interpolateVertexRightClip_FUN_00431630
+            engine_clipper_c_interpolateVertexLeftClip_FUN_00431630
                       (pSVar12,pSVar17,(SRenderVertex *)(&DAT_007678f8 + iVar4));
           }
           local_3c = local_3c + 1;
@@ -306,7 +306,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_00432210(int vertex_co
               uVar8 = uVar15 + 1;
               DAT_00767b38 = DAT_00767b38 + 1;
               local_14c[uVar15] = (SRenderVertex *)(&DAT_007678f8 + iVar4);
-              engine_clipper_c_interpolateVertexBottomClip_FUN_00431730
+              engine_clipper_c_interpolateVertexTopClip_FUN_00431730
                         (pSVar17,pSVar12,(SRenderVertex *)(&DAT_007678f8 + iVar4));
               break;
             case 2:
@@ -320,7 +320,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_00432210(int vertex_co
               uVar8 = uVar15 + 2;
               DAT_00767b38 = DAT_00767b38 + 1;
               local_14c[uVar15 + 1] = (SRenderVertex *)(&DAT_007678f8 + iVar4);
-              engine_clipper_c_interpolateVertexBottomClip_FUN_00431730
+              engine_clipper_c_interpolateVertexTopClip_FUN_00431730
                         (pSVar12,pSVar17,(SRenderVertex *)(&DAT_007678f8 + iVar4));
             }
             local_34 = local_34 + 1;
@@ -362,7 +362,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_00432210(int vertex_co
                 uVar13 = uVar13 + 1;
                 DAT_00767b38 = DAT_00767b38 + 1;
                 auStack_d0[uVar13] = (SRenderVertex *)(&DAT_007678f8 + iVar4);
-                engine_clipper_c_interpolateVertexTopClip_FUN_00431830
+                engine_clipper_c_interpolateVertexBottomClip_FUN_00431830
                           (pSVar17,pSVar12,(SRenderVertex *)(&DAT_007678f8 + iVar4));
                 break;
               case 2:
@@ -376,7 +376,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_00432210(int vertex_co
                 uVar13 = uVar13 + 2;
                 DAT_00767b38 = DAT_00767b38 + 1;
                 auStack_d0[uVar13] = (SRenderVertex *)(&DAT_007678f8 + iVar4);
-                engine_clipper_c_interpolateVertexTopClip_FUN_00431830
+                engine_clipper_c_interpolateVertexBottomClip_FUN_00431830
                           (pSVar12,pSVar17,(SRenderVertex *)(&DAT_007678f8 + iVar4));
               }
               local_2c = local_2c + 1;
@@ -422,7 +422,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_00432210(int vertex_co
               } while (iVar4 < (int)DAT_00766c70);
             }
             iVar4 = 0;
-            if (DAT_005ad284 != 0) {
+            if (g_FarPlaneDistance != 0) {
               if (0 < (int)DAT_00766c70) {
                 iVar9 = 0;
                 do {
@@ -432,7 +432,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_00432210(int vertex_co
                   iVar9 = iVar9 + 0x30;
                 } while (iVar9 < (int)(DAT_00766c70 * 0x30));
               }
-              if (DAT_005ad284 <= iVar4) {
+              if (g_FarPlaneDistance <= iVar4) {
                 DAT_007672f4 = DAT_00766c70;
                 plVar10 = (longlong *)&DAT_00766c74;
                 plVar19 = (longlong *)&DAT_007672f8;
@@ -460,8 +460,8 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_00432210(int vertex_co
                     if (uVar8 == DAT_007672f4) {
                       uVar8 = uVar8 ^ DAT_007672f4;
                     }
-                    bVar3 = DAT_005ad284 <= (pSVar12->projected_vertex).transformed_z;
-                    if (DAT_005ad284 <= (int)(&DAT_00767300)[uVar8 * 0xc]) {
+                    bVar3 = g_FarPlaneDistance <= (pSVar12->projected_vertex).transformed_z;
+                    if (g_FarPlaneDistance <= (int)(&DAT_00767300)[uVar8 * 0xc]) {
                       bVar3 = bVar3 | 2;
                     }
                     switch(bVar3) {
@@ -495,7 +495,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_00432210(int vertex_co
                       DAT_00766c70 = DAT_00766c70 + 1;
                       break;
                     case 1:
-                      engine_clipper_c_interpolateVertexNearClip_FUN_00431930
+                      engine_clipper_c_interpolateVertexFarClip_FUN_00431930
                                 ((SRenderVertex *)(&DAT_007672f8 + uVar8 * 0xc),pSVar12,
                                  (SRenderVertex *)(&DAT_00766c74 + DAT_00766c70 * 0xc));
                       DAT_00766c70 = DAT_00766c70 + 1;
@@ -528,7 +528,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_00432210(int vertex_co
                         }
                       }
                       DAT_00766c70 = DAT_00766c70 + 1;
-                      engine_clipper_c_interpolateVertexNearClip_FUN_00431930
+                      engine_clipper_c_interpolateVertexFarClip_FUN_00431930
                                 (pSVar12,(SRenderVertex *)(&DAT_007672f8 + uVar8 * 0xc),
                                  (SRenderVertex *)(&DAT_00766c74 + DAT_00766c70 * 0xc));
                       DAT_00766c70 = DAT_00766c70 + 1;

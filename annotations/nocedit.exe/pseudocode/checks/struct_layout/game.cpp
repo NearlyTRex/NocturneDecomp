@@ -2,7 +2,7 @@
 // DO NOT EDIT BY HAND. Re-run the generator after updating types.
 //
 // Category: game
-// Structs : 558
+// Structs : 559
 
 #include "nocturne.h"
 
@@ -6140,10 +6140,10 @@ static_assert(__builtin_offsetof(CSfxOptions, userdata) == 84,
               "offsetof(CSfxOptions, userdata) != 84");
 static_assert(__builtin_offsetof(CSfxOptions, flags) == 92,
               "offsetof(CSfxOptions, flags) != 92");
-static_assert(__builtin_offsetof(CSfxOptions, trigger_time) == 96,
-              "offsetof(CSfxOptions, trigger_time) != 96");
-static_assert(__builtin_offsetof(CSfxOptions, trigger_id) == 104,
-              "offsetof(CSfxOptions, trigger_id) != 104");
+static_assert(__builtin_offsetof(CSfxOptions, playback_position) == 96,
+              "offsetof(CSfxOptions, playback_position) != 96");
+static_assert(__builtin_offsetof(CSfxOptions, playback_position_type) == 104,
+              "offsetof(CSfxOptions, playback_position_type) != 104");
 static_assert(__builtin_offsetof(CSfxOptions, dead) == 108,
               "offsetof(CSfxOptions, dead) != 108");
 
@@ -8986,6 +8986,14 @@ static_assert(__builtin_offsetof(SMRGLModelBounds, radius_scaled) == 36,
               "offsetof(SMRGLModelBounds, radius_scaled) != 36");
 static_assert(__builtin_offsetof(SMRGLModelBounds, extent) == 40,
               "offsetof(SMRGLModelBounds, extent) != 40");
+
+// ---- SMRGLPoint (16 bytes) ----
+static_assert(sizeof(SMRGLPoint) == 16,
+              "sizeof(SMRGLPoint) != 16");
+static_assert(__builtin_offsetof(SMRGLPoint, type) == 0,
+              "offsetof(SMRGLPoint, type) != 0");
+static_assert(__builtin_offsetof(SMRGLPoint, point) == 4,
+              "offsetof(SMRGLPoint, point) != 4");
 
 // ---- SMRGLPointerArray (16 bytes) ----
 static_assert(sizeof(SMRGLPointerArray) == 16,

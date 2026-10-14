@@ -5097,8 +5097,8 @@
     ],
     "conv":"__cdecl",
     "instructions":104,
-    "method":"interpolateVertexLeftClip",
-    "name":"engine_clipper.c_interpolateVertexLeftClip_FUN_00435a00",
+    "method":"interpolateVertexRightClip",
+    "name":"engine_clipper.c_interpolateVertexRightClip_FUN_00435a00",
     "params":[
       {
         "name":"v1",
@@ -5145,8 +5145,8 @@
     ],
     "conv":"__cdecl",
     "instructions":104,
-    "method":"interpolateVertexRightClip",
-    "name":"engine_clipper.c_interpolateVertexRightClip_FUN_00435b00",
+    "method":"interpolateVertexLeftClip",
+    "name":"engine_clipper.c_interpolateVertexLeftClip_FUN_00435b00",
     "params":[
       {
         "name":"v1",
@@ -5193,8 +5193,8 @@
     ],
     "conv":"__cdecl",
     "instructions":104,
-    "method":"interpolateVertexBottomClip",
-    "name":"engine_clipper.c_interpolateVertexBottomClip_FUN_00435c00",
+    "method":"interpolateVertexTopClip",
+    "name":"engine_clipper.c_interpolateVertexTopClip_FUN_00435c00",
     "params":[
       {
         "name":"v1",
@@ -5241,8 +5241,8 @@
     ],
     "conv":"__cdecl",
     "instructions":109,
-    "method":"interpolateVertexTopClip",
-    "name":"engine_clipper.c_interpolateVertexTopClip_FUN_00435d00",
+    "method":"interpolateVertexBottomClip",
+    "name":"engine_clipper.c_interpolateVertexBottomClip_FUN_00435d00",
     "params":[
       {
         "name":"v1",
@@ -5286,8 +5286,8 @@
     ],
     "conv":"__cdecl",
     "instructions":109,
-    "method":"interpolateVertexNearClip",
-    "name":"engine_clipper.c_interpolateVertexNearClip_FUN_00435e00",
+    "method":"interpolateVertexFarClip",
+    "name":"engine_clipper.c_interpolateVertexFarClip_FUN_00435e00",
     "params":[
       {
         "name":"v1",
@@ -5371,8 +5371,8 @@
     ],
     "conv":"__cdecl",
     "instructions":97,
-    "method":"clipPolygonLeftPlaneGlobal",
-    "name":"engine_clipper.c_clipPolygonLeftPlaneGlobal_FUN_00437700",
+    "method":"clipPolygonRightPlaneGlobal",
+    "name":"engine_clipper.c_clipPolygonRightPlaneGlobal_FUN_00437700",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -5389,8 +5389,8 @@
     ],
     "conv":"__cdecl",
     "instructions":97,
-    "method":"clipPolygonHorizontalPlanes",
-    "name":"engine_clipper.c_clipPolygonHorizontalPlanes_FUN_00437980",
+    "method":"clipPolygonTopPlaneGlobal",
+    "name":"engine_clipper.c_clipPolygonTopPlaneGlobal_FUN_00437980",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -10607,7 +10607,7 @@
     "name":"shape_edittool.cpp_CStrList_sort_FUN_004a2f00",
     "params":[
       {
-        "name":"sort_type",
+        "name":"start_index",
         "type":{
           "kind":"builtin",
           "name":"int",
@@ -10615,7 +10615,7 @@
         }
       },
       {
-        "name":"sort_order",
+        "name":"end_index",
         "type":{
           "kind":"builtin",
           "name":"int",

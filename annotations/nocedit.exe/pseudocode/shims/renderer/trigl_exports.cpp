@@ -540,9 +540,11 @@ static int __cdecl trigl_clear_z_buffer(void) {
     return 1;
 }
 
+// Right and bottom are inclusive: the shipped renderer adds one to each before
+// its blit (tridx7 0x10004adb and 0x10004af0), and the device's box is not.
 static int __cdecl trigl_clear_z_box(int left, int right, int top, int bottom) {
     NOCTURNE_FOCUS_TRACE_EVENT("clearZBox");
-    nocturne_trigl_device_clear_depth_box(left, right, top, bottom);
+    nocturne_trigl_device_clear_depth_box(left, right + 1, top, bottom + 1);
     return 1;
 }
 

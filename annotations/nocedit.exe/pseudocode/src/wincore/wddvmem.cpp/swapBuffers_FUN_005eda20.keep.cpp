@@ -24,20 +24,20 @@ void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_005eda20(void)
 
     if (g_UseExternalRenderer != 0) {
         engine_special_cpp_presentToExternalRenderer_FUN_005b7c30(0);
-        g_RenderingInProgress = 0;
+        g_FlipPending = 0;
         wincore_winrun_cpp_processWindowMessages_FUN_005f35e0();
         return;
     }
 
-    if (g_RenderingInProgress != 0) {
+    if (g_FlipPending != 0) {
         goto flip;
     }
 
-    if (g_UseSoftwareRendering != 0) {
+    if (g_Display24BitFallback != 0) {
         // Software rendering path: copy back buffer to screen device
         // with 32-bit BGRA -> 24-bit BGR conversion per pixel
         byte *src = (byte *)g_BackBuffer;
-        g_UseSoftwareRendering = 0;
+        g_Display24BitFallback = 0;
         wincore_wddvmem_cpp_openScreenDevice_FUN_005ed580();
         for (int y = 0; y < g_WindowHeight; y++) {
             byte *scanline = (byte *)g_ScreenBufferArray[y];
@@ -50,7 +50,7 @@ void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_005eda20(void)
             }
         }
         wincore_wddvmem_cpp_closeScreenDevice_FUN_005ed630();
-        g_UseSoftwareRendering = 1;
+        g_Display24BitFallback = 1;
     }
     else {
         // DirectDraw Lock path: copy back buffer directly to locked surface
@@ -81,7 +81,7 @@ void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_005eda20(void)
             g_CurrentFilename = "..\\wincore\\wddvmem.cpp";
             g_CurrentLineNumber = 878;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to unlock front buffer");
-            g_RenderingInProgress = 0;
+            g_FlipPending = 0;
             wincore_winrun_cpp_processWindowMessages_FUN_005f35e0();
             return;
         }
@@ -99,7 +99,7 @@ flip:
     }
 
 done:
-    g_RenderingInProgress = 0;
+    g_FlipPending = 0;
     wincore_winrun_cpp_processWindowMessages_FUN_005f35e0();
     return;
 }

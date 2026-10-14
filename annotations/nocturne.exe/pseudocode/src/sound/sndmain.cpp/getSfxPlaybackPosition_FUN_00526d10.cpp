@@ -33,8 +33,8 @@ double __cdecl sound_sndmain_cpp_getSfxPlaybackPosition_FUN_00526d10(uint sfx_ha
       }
     }
     dVar2 = sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_00525c70
-                      (&this_ptr->sample->sample_info,(this_ptr->options).trigger_time,
-                       (this_ptr->options).trigger_id,output_format);
+                      (&this_ptr->sample->sample_info,(this_ptr->options).playback_position,
+                       (this_ptr->options).playback_position_type,output_format);
     sound_sndmain_cpp_unlockSound_FUN_00528890();
     local_20 = SUB84(__BITCAST_UINT64(dVar2),0);
     local_28 = local_20;

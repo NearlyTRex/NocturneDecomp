@@ -17,7 +17,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
-;   engine_pod.cpp_CPodFile_FUN_004f7ae0
+;   engine_pod.cpp_CPodFile_mountFromFile_FUN_004f7ae0
 ;
 ; *****************************************************************************
 
@@ -60,8 +60,8 @@ section .text
     PUSH EAX                            ; 004f89af
     MOV ESI,dword ptr [EBX + 0x4]       ; 004f89b0
     PUSH ESI                            ; 004f89b3
-    CALL engine_pod.cpp_CPodFile_FUN_004f7ae0 ; 004f89b4
-        ;   XREF to: 004f7ae0 (UNCONDITIONAL_CALL)  ; int engine_pod.cpp_CPodFile_FUN_004f7ae0(CPodFile * this_ptr, char * filename)
+    CALL engine_pod.cpp_CPodFile_mountFromFile_FUN_004f7ae0 ; 004f89b4
+        ;   XREF to: 004f7ae0 (UNCONDITIONAL_CALL)  ; int engine_pod.cpp_CPodFile_mountFromFile_FUN_004f7ae0(CPodFile * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004f89b9
     TEST EAX,EAX                        ; 004f89bc
     JZ 0x004f89dc                       ; 004f89be

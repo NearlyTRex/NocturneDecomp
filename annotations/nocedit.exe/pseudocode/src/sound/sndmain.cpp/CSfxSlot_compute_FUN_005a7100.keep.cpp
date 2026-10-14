@@ -38,7 +38,7 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(CSfxSlot *this_ptr,f
   if (this_ptr->is_active == 1) {
     engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"SFXDBG: sample = %s\n",(this_ptr->sample->sample_info).name);
   }
-  if ((this_ptr->playback_state != 0) && (0.0 <= (this_ptr->options).trigger_time)) {
+  if ((this_ptr->playback_state != 0) && (0.0 <= (this_ptr->options).playback_position)) {
     if ((0.0 < delta_time) && (0.0 <= this_ptr->fade_time_remaining)) {
       if (this_ptr->fade_time_remaining <= delta_time) {
         if (ABS(this_ptr->stop_after_fade) != 0.0) goto LAB_005a73d3;

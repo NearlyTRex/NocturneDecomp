@@ -5365,8 +5365,8 @@
     ],
     "conv":"__cdecl",
     "instructions":104,
-    "method":"interpolateVertexLeftClip",
-    "name":"engine_clipper.c_interpolateVertexLeftClip_FUN_00431530",
+    "method":"interpolateVertexRightClip",
+    "name":"engine_clipper.c_interpolateVertexRightClip_FUN_00431530",
     "params":[
       {
         "name":"v1",
@@ -5414,8 +5414,8 @@
     ],
     "conv":"__cdecl",
     "instructions":104,
-    "method":"interpolateVertexRightClip",
-    "name":"engine_clipper.c_interpolateVertexRightClip_FUN_00431630",
+    "method":"interpolateVertexLeftClip",
+    "name":"engine_clipper.c_interpolateVertexLeftClip_FUN_00431630",
     "params":[
       {
         "name":"v1",
@@ -5463,8 +5463,8 @@
     ],
     "conv":"__cdecl",
     "instructions":104,
-    "method":"interpolateVertexBottomClip",
-    "name":"engine_clipper.c_interpolateVertexBottomClip_FUN_00431730",
+    "method":"interpolateVertexTopClip",
+    "name":"engine_clipper.c_interpolateVertexTopClip_FUN_00431730",
     "params":[
       {
         "name":"v1",
@@ -5512,8 +5512,8 @@
     ],
     "conv":"__cdecl",
     "instructions":109,
-    "method":"interpolateVertexTopClip",
-    "name":"engine_clipper.c_interpolateVertexTopClip_FUN_00431830",
+    "method":"interpolateVertexBottomClip",
+    "name":"engine_clipper.c_interpolateVertexBottomClip_FUN_00431830",
     "params":[
       {
         "name":"v1",
@@ -5558,8 +5558,8 @@
     ],
     "conv":"__cdecl",
     "instructions":109,
-    "method":"interpolateVertexNearClip",
-    "name":"engine_clipper.c_interpolateVertexNearClip_FUN_00431930",
+    "method":"interpolateVertexFarClip",
+    "name":"engine_clipper.c_interpolateVertexFarClip_FUN_00431930",
     "params":[
       {
         "name":"v1",
@@ -5604,8 +5604,8 @@
     ],
     "conv":"__cdecl",
     "instructions":126,
-    "method":"interpolateVertexTopClipAdvanced",
-    "name":"engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_00433b30",
+    "method":"interpolateVertexBottomClipAdvanced",
+    "name":"engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00433b30",
     "params":[
       {
         "name":"v1",
@@ -5648,8 +5648,8 @@
     ],
     "conv":"__cdecl",
     "instructions":100,
-    "method":"clipPolygonRightPlaneGlobal",
-    "name":"engine_clipper.c_clipPolygonRightPlaneGlobal_FUN_00433db0",
+    "method":"clipPolygonLeftPlaneGlobal",
+    "name":"engine_clipper.c_clipPolygonLeftPlaneGlobal_FUN_00433db0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -5666,8 +5666,8 @@
     ],
     "conv":"__cdecl",
     "instructions":100,
-    "method":"clipPolygonVerticalPlanes",
-    "name":"engine_clipper.c_clipPolygonVerticalPlanes_FUN_00434030",
+    "method":"clipPolygonBottomPlaneGlobal",
+    "name":"engine_clipper.c_clipPolygonBottomPlaneGlobal_FUN_00434030",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -13927,7 +13927,7 @@
         }
       },
       {
-        "name":"value",
+        "name":"filename",
         "type":{
           "kind":"builtin",
           "name":"char",
@@ -13935,7 +13935,7 @@
         }
       },
       {
-        "name":"filename",
+        "name":"value",
         "type":{
           "kind":"builtin",
           "name":"char",
@@ -18552,6 +18552,34 @@
       },
       {
         "name":"z_velocity",
+        "type":{
+          "kind":"builtin",
+          "name":"double",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "tu":"sound/sndmain.cpp",
+    "variadic":false
+  },
+  {
+    "addr":"00527830",
+    "callers":[
+      "00527d80"
+    ],
+    "conv":"__cdecl",
+    "instructions":23,
+    "method":"set3DListenerDistanceFactor",
+    "name":"sound_sndmain.cpp_set3DListenerDistanceFactor_FUN_00527830",
+    "params":[
+      {
+        "name":"distance_in_feet",
         "type":{
           "kind":"builtin",
           "name":"double",

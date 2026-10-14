@@ -11,8 +11,8 @@ manual annotation work.
 SUMMARY STATISTICS
 ====================================================================================================
 
-  Total functions analyzed:          4,921
-  Unnamed functions (FUN_):          77 ( 1.6%)
+  Total functions analyzed:          4,923
+  Unnamed functions (FUN_):          75 ( 1.5%)
   Functions with unnamed params:     15 ( 0.3%)
   Functions with type issues:        1,667 (33.9%)
   (Name/address mismatches and duplicate names are reported at the end)
@@ -59,9 +59,6 @@ Sorted by caller count (most-referenced first = highest priority to name).
   core/mission.cpp (2 unnamed)
     0x004d8cd0  __cdecl       4 callers
     0x004d7ea0  __cdecl       3 callers
-
-  engine/pod.cpp (1 unnamed)
-    0x004f7ae0  __cdecl       4 callers
 
   core/skeleton.cpp (2 unnamed)
     0x005174e0  __cdecl       4 callers
@@ -118,9 +115,6 @@ Sorted by caller count (most-referenced first = highest priority to name).
   core/manpuz.cpp (2 unnamed)
     0x004ca710  __cdecl       1 callers
     0x004ca790  __cdecl       1 callers
-
-  support/newmsg.cpp (1 unnamed)
-    0x004edfc0  unknown       1 callers
 
   core/scat.cpp (3 unnamed)
     0x004fdd00  __cdecl       1 callers
@@ -2257,7 +2251,7 @@ Undefined types in variables (1604)
     Locals:  local_150 (undefined4), local_14c (undefined4), local_d0 (undefined4), local_cc (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CPodFile
+  CPodFile_mountFromFile
     Address: 0x004f7ae0  File: engine/pod.cpp
     Locals:  local_110 (undefined), local_10f (undefined1), local_10e (undefined1), local_10d (undefined1), local_108 (undefined), local_107 (undefined1), local_b8 (undefined4), local_b4 (undefined4), local_b0 (undefined4), local_ac (undefined), local_ab (undefined1), local_5c (undefined), local_5b (undefined1), local_3c (undefined4), local_38 (undefined4), local_34 (undefined), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -3823,7 +3817,7 @@ Undefined types in variables (1604)
     Locals:  local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_004edfc0
+  readMessageFile
     Address: 0x004edfc0  File: support/newmsg.cpp
     Locals:  local_31c (undefined), local_21c (undefined), local_21b (undefined1), local_11c (undefined), local_11b (undefined1), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -6731,22 +6725,22 @@ Undefined types in variables (1604)
     Suggested: Resolve undefined types to concrete types
 
   clipPolygonBottomPlane
-    Address: 0x00431cd0  File: engine/clipper.c
+    Address: 0x00431e10  File: engine/clipper.c
     Locals:  local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   clipPolygonLeftPlane
-    Address: 0x00431a50  File: engine/clipper.c
-    Locals:  local_18 (undefined4), local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  clipPolygonRightPlane
     Address: 0x00431b90  File: engine/clipper.c
     Locals:  local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
+  clipPolygonRightPlane
+    Address: 0x00431a50  File: engine/clipper.c
+    Locals:  local_18 (undefined4), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
   clipPolygonTopPlane
-    Address: 0x00431e10  File: engine/clipper.c
+    Address: 0x00431cd0  File: engine/clipper.c
     Locals:  local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
@@ -8771,28 +8765,28 @@ Undefined types in variables (1604)
     Locals:  local_3c (undefined)
     Suggested: Resolve undefined types to concrete types
 
-  clipPolygonHorizontalPlanes
-    Address: 0x00433ef0  File: engine/clipper.c
+  clipPolygonBottomPlaneGlobal
+    Address: 0x00434030  File: engine/clipper.c
     Locals:  local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  clipPolygonLeftPlaneGlobal
-    Address: 0x00433c70  File: engine/clipper.c
-    Locals:  local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  clipPolygonNearPlane
+  clipPolygonFarPlane
     Address: 0x00431f50  File: engine/clipper.c
     Locals:  local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  clipPolygonRightPlaneGlobal
+  clipPolygonLeftPlaneGlobal
     Address: 0x00433db0  File: engine/clipper.c
     Locals:  local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  clipPolygonVerticalPlanes
-    Address: 0x00434030  File: engine/clipper.c
+  clipPolygonRightPlaneGlobal
+    Address: 0x00433c70  File: engine/clipper.c
+    Locals:  local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  clipPolygonTopPlaneGlobal
+    Address: 0x00433ef0  File: engine/clipper.c
     Locals:  local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 

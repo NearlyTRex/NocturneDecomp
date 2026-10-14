@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_CStrList_sort_FUN_004a2f00(CStrList *this_ptr,int sort_type,int sort_order)
+; void __cdecl shape_edittool_cpp_CStrList_sort_FUN_004a2f00(CStrList *this_ptr,int start_index,int end_index)
 ;
 ; Parameters:
 ; CStrList *       Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   sort_type
-; int              Stack[0xc]:4   sort_order
+; int              Stack[0x8]:4   start_index
+; int              Stack[0xc]:4   end_index
 ;
 ; XREF[1]:
 ;   shape_edittool.cpp_CPickList_sort_FUN_004a57f0 at 004a5813

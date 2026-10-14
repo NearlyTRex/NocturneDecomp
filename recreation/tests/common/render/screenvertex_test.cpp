@@ -31,7 +31,7 @@ SVertexContext baseContext(std::uint32_t flags) {
             .screen_scale_y = 1.0F,
             .current_alpha = 0x80,
             .palette_index = 0x21,
-            .palette = &kPalette,
+            .palette = kPalette,
             .premultiply = false,
             .blend_mode = 0,
             .light = {.alpha = 0xc0, .overflow = 0},
@@ -181,7 +181,7 @@ TEST(ScreenVertex, HoldBufferScaleStretchesTo640x480Space) {
 
 TEST(ScreenVertex, UntexturedWithoutAPaletteIsBlack) {
     SVertexContext ctx = baseContext(0);
-    ctx.palette = nullptr;
+    ctx.palette = {};
     EXPECT_EQ(convertVertex(ctx, {}).diffuse, 0xff000000U);
 }
 

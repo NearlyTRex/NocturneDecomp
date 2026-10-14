@@ -471,7 +471,7 @@ extern int g_CBugsClassVersion;
 extern int g_CCharacterClassVersion;
 extern int g_CChainClassVersion;
 extern int g_LineClippingDisabled;
-extern int g_NearPlaneDistance;
+extern int g_FarPlaneDistance;
 extern int g_CColonelClassVersion;
 extern int g_CConveyorClassVersion;
 extern int g_CZombieCowClassVersion;

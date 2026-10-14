@@ -31,7 +31,7 @@
 ;   int g_WindowHeight = 0xc8
 ;   CBitFont* g_EditorFont
 ;   CEditorTools g_CEditorToolsInstance
-;   int g_FontCharacterWidth
+;   int g_EditorFontLineHeight
 ;   int g_LastClickItemIndex
 ;   int g_ClipLeft
 ;   int g_ClipTop
@@ -65,7 +65,7 @@ section .text
     PUSH EBP                            ; 004a45d3
     SUB ESP,0x150                       ; 004a45d4
     PUSH 0x28                           ; 004a45da
-    MOV EAX,[0x02cf266c]                ; 004a45dc | g_FontCharacterWidth
+    MOV EAX,[0x02cf266c]                ; 004a45dc | g_EditorFontLineHeight
     MOV EDX,dword ptr [ESP + 0x168]     ; 004a45e1
     INC EAX                             ; 004a45e8
     PUSH 0x0                            ; 004a45e9
@@ -222,7 +222,7 @@ section .text
     ADD EAX,EAX                         ; 004a478a
     ADD EBP,EAX                         ; 004a478c
     MOV dword ptr [EDX + 0x18c],EBP     ; 004a478e
-    MOV EDX,dword ptr [0x02cf266c]      ; 004a4794 | g_FontCharacterWidth
+    MOV EDX,dword ptr [0x02cf266c]      ; 004a4794 | g_EditorFontLineHeight
     MOV EAX,[0x00679398]                ; 004a479a | g_WindowHeight
     SHL EDX,0x2                         ; 004a479f
     SUB EAX,EDX                         ; 004a47a2

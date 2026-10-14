@@ -2,6 +2,7 @@
 
 #include <gtest/gtest.h>
 
+#include <string_view>
 #include <type_traits>
 
 namespace nocturne::shape {
@@ -26,7 +27,8 @@ TEST(CPickList, Constructors) {
 TEST(CPickList, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CPickList::remove), void (CPickList::*)(int, int)>);
     static_assert(std::is_same_v<decltype(&CPickList::sort), void (CPickList::*)(int, int)>);
-    static_assert(std::is_same_v<decltype(&CPickList::insert), void (CPickList::*)(int, char *)>);
+    static_assert(
+        std::is_same_v<decltype(&CPickList::insert), void (CPickList::*)(int, std::string_view)>);
     static_assert(std::is_same_v<decltype(&CPickList::swap), void (CPickList::*)(int, int)>);
     static_assert(std::is_same_v<decltype(&CPickList::clear), void (CPickList::*)()>);
     static_assert(std::is_same_v<decltype(&CPickList::handleInput), int (CPickList::*)()>);

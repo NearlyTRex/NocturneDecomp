@@ -8,12 +8,17 @@ namespace nocturne::core {
 namespace {
 
 TEST(CoreDstrenderFunctions, PublicInterface) {
-    static_assert(std::is_same_v<decltype(&renderDepthOnlyStandard),
-                                 void (*)(engine::SSoftwareEdge *, engine::SSoftwareEdge *, int)>);
+    static_assert(
+        std::is_same_v<decltype(&renderDepthOnlyStandard),
+                       void (*)(const engine::SSoftwareEdge &, const engine::SSoftwareEdge &, int,
+                                engine::IScreenDevice &, const engine::C2d &)>);
     static_assert(std::is_same_v<decltype(&renderDepth16BitConditional),
                                  void (*)(engine::SSoftwareEdge *, engine::SSoftwareEdge *, int)>);
-    static_assert(std::is_same_v<decltype(&renderTexturedAlphaMMXScanline),
-                                 void (*)(engine::SSoftwareEdge *, engine::SSoftwareEdge *, int)>);
+    static_assert(
+        std::is_same_v<decltype(&renderTexturedAlphaMMXScanline),
+                       void (*)(const engine::SSoftwareEdge &, const engine::SSoftwareEdge &, int,
+                                engine::IScreenDevice &, const engine::C2d &,
+                                const engine::SCurrentTexture &)>);
     static_assert(std::is_same_v<decltype(&renderZBufferFill16xUnrolled),
                                  void (*)(engine::SSoftwareEdge *, engine::SSoftwareEdge *, int)>);
     static_assert(std::is_same_v<decltype(&renderSolidColorDepth16xUnrolled),

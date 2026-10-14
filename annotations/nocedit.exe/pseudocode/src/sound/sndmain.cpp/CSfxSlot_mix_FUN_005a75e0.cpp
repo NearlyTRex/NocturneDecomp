@@ -117,7 +117,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr,SMix
     }
     while (((iVar16 = mix_buffer.num_output_samples, this_ptr->playback_state != 0 &&
             (pCVar4 = this_ptr->sample, pCVar4 != (CSfxSample *)0x0)) &&
-           (0.0 <= (this_ptr->options).trigger_time))) {
+           (0.0 <= (this_ptr->options).playback_position))) {
       if ((mix_buffer.num_output_samples < 1) ||
          (resample_delta =
                (double)(((float)(pCVar4->sample_info).sample_rate /
@@ -129,7 +129,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr,SMix
       if (0 < (pCVar4->sample_info).sample_count) {
         dVar17 = floor
                            (((double)pCVar4->loop_endpoints[this_ptr->loop_marker_index] -
-                            (this_ptr->options).trigger_time) / resample_delta);
+                            (this_ptr->options).playback_position) / resample_delta);
         if ((int)ROUND(ROUND(dVar17)) < iVar16) {
           bVar8 = true;
           local_a8 = (int)ROUND(ROUND(dVar17));
@@ -279,7 +279,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr,SMix
         iVar16 = this_ptr->sample->loop_destinations[this_ptr->loop_marker_index];
         this_ptr->loop_marker_index = iVar12;
         pCVar5 = this_ptr->sample;
-        (this_ptr->options).trigger_time = (double)iVar16;
+        (this_ptr->options).playback_position = (double)iVar16;
         if (pCVar5->loop_marker_count <= iVar12) {
           this_ptr->loop_marker_index = 0;
         }

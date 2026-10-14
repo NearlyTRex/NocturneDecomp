@@ -29,8 +29,8 @@
 ;   int g_InputKeyMask = 0x7f
 ;   CBitFont* g_EditorFont
 ;   CEditorTools g_CEditorToolsInstance
-;   int g_FontCharacterHeight
-;   int g_FontCharacterWidth
+;   int g_EditorFontMaxCharWidth
+;   int g_EditorFontLineHeight
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -70,12 +70,12 @@ section .text
     PUSH 0x6a                           ; 004a3e59
     MOV EBX,dword ptr [EAX + 0x3168]    ; 004a3e5b
     PUSH EAX                            ; 004a3e61
-    MOV dword ptr [0x02cf2668],EBX      ; 004a3e62 | g_FontCharacterHeight
+    MOV dword ptr [0x02cf2668],EBX      ; 004a3e62 | g_EditorFontMaxCharWidth
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 004a3e68
         ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004a3e6d
     MOV EDI,dword ptr [ESI]             ; 004a3e70
-    MOV [0x02cf266c],EAX                ; 004a3e72 | g_FontCharacterWidth
+    MOV [0x02cf266c],EAX                ; 004a3e72 | g_EditorFontLineHeight
     CMP EDI,0x1                         ; 004a3e77
     JL 0x004a3ee4                       ; 004a3e7a
         ;   XREF to: 004a3ee4 (CONDITIONAL_JUMP)  ; LAB_004a3ee4

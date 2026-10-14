@@ -71,7 +71,7 @@ section .text
     PUSH EBX                            ; 004fb693
     MOV dword ptr [ESP + 0x314],EDX     ; 004fb694
     CALL engine_ini.cpp_CIni_findLineNumberOfVariable_FUN_004fb470 ; 004fb69b
-        ;   XREF to: 004fb470 (UNCONDITIONAL_CALL)  ; int engine_ini.cpp_CIni_findLineNumberOfVariable_FUN_004fb470(CIni * this_ptr, char * section, char * key, char * value, ...)
+        ;   XREF to: 004fb470 (UNCONDITIONAL_CALL)  ; int engine_ini.cpp_CIni_findLineNumberOfVariable_FUN_004fb470(CIni * this_ptr, char * section, char * key, char * filename, ...)
     MOV EBP,EAX                         ; 004fb6a0
     MOV EAX,dword ptr [EBX]             ; 004fb6a2
     ADD ESP,0x14                        ; 004fb6a4

@@ -31,10 +31,10 @@ void __cdecl sound_sndmain_cpp_CSfxOptions_reset_FUN_00525eb0(CSfxOptions *this_
   (this_ptr->position).x = (this_ptr->position).y;
   (this_ptr->velocity).x = dVar1;
   memset(this_ptr->userdata,0,8);
-  *(uint *)&this_ptr->trigger_time = 0;
-  *(uint *)((int)&this_ptr->trigger_time + 4) = 0;
+  *(uint *)&this_ptr->playback_position = 0;
+  *(uint *)((int)&this_ptr->playback_position + 4) = 0;
   dVar1 = _DAT_005a2148;
-  this_ptr->trigger_id = 0;
+  this_ptr->playback_position_type = 0;
   this_ptr->delay_remaining = dVar1;
   return;
 }

@@ -75,7 +75,7 @@ void __cdecl shape_edittool_cpp_CStrList_removeAt_FUN_00473ef0(CStrList *this_pt
 void __cdecl shape_edittool_cpp_CStrList_remove_FUN_00473f10(CStrList *this_ptr,int start_index,int end_index);
 void __cdecl shape_edittool_cpp_CStrList_sortAll_FUN_00473fd0(CStrList *this_ptr);
 int __cdecl shape_edittool_cpp_qsortByString_FUN_00473ff0(char *a,char *b);
-void __cdecl shape_edittool_cpp_CStrList_sort_FUN_00474010(CStrList *this_ptr,int sort_type,int sort_order);
+void __cdecl shape_edittool_cpp_CStrList_sort_FUN_00474010(CStrList *this_ptr,int start_index,int end_index);
 char * __cdecl shape_edittool_cpp_CStrList_getStringAt_FUN_00474080(CStrList *this_ptr,int index);
 void __cdecl shape_edittool_cpp_CStrList_getFieldAt_FUN_00474090(CStrList *this_ptr,char *output_buffer,int string_index,int field_number);
 int __cdecl shape_edittool_cpp_CStrList_findString_FUN_00474140(CStrList *this_ptr,char *search_string);
@@ -102,7 +102,7 @@ int __cdecl shape_edittool_cpp_CPickList_isItemEnabled_FUN_00476040(CPickList *t
 void __cdecl shape_edittool_cpp_CPickList_insert_FUN_004760a0(CPickList *this_ptr,int insert_index,char *string_data);
 void __cdecl shape_edittool_cpp_CPickList_remove_FUN_00476100(CPickList *this_ptr,int start_index,int end_index);
 void __cdecl shape_edittool_cpp_CPickList_clear_FUN_00476160(CPickList *this_ptr);
-void __cdecl shape_edittool_cpp_CPickList_sort_FUN_004761a0(CPickList *this_ptr,int sort_type,int sort_order);
+void __cdecl shape_edittool_cpp_CPickList_sort_FUN_004761a0(CPickList *this_ptr,int start_index,int end_index);
 void __cdecl shape_edittool_cpp_CPickList_swap_FUN_00476200(CPickList *this_ptr,int index1,int index2);
 void __cdecl shape_edittool_cpp_draw3DBorder_FUN_00476260(int left,int top,int width,int height,int border_style_flag);
 void __cdecl shape_edittool_cpp_draw3DInsetBorder_FUN_00476310(int left,int top,int right,int bottom,int inner_y,int style);

@@ -113,7 +113,7 @@
 ;   int g_CubesRenderedCount
 ;   int g_PVSDrawnCubeCount
 ;   int g_PVSReadyFlag
-;   CVector3f g_DebugCubeBasePoint
+;   CVector3i g_DebugCubeBasePoint
 ;   CMatrix3x3i g_InverseMatrix
 ;   undefined4 g_InverseMatrix[0][1]
 ;   undefined4 g_InverseMatrix[0][2]
@@ -560,7 +560,7 @@ section .text
     PUSH EDI                            ; 004983db | g_CDemonRendererInstance
     MOV dword ptr [0x030e56b8],ESI      ; 004983dc | g_RenderedTriangleCount
     CALL engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0048c420 ; 004983e2
-        ;   XREF to: 0048c420 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0048c420(CDemonRenderer * this_ptr, CVector3f * input_point)
+        ;   XREF to: 0048c420 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0048c420(CDemonRenderer * this_ptr, CVector3i * input_point)
     ADD ESP,0x8                         ; 004983e7
     PUSH 0xff                           ; 004983ea
     PUSH 0xff                           ; 004983ef

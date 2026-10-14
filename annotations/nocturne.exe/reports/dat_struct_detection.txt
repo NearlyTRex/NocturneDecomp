@@ -2,12 +2,12 @@
 DAT_ STRUCT/ARRAY DETECTION REPORT
 ================================================================================
 
-Total DAT_ globals found: 2201
+Total DAT_ globals found: 2197
 Filtered out (inside named data): 320
 Immediate constants (not real globals): 61
-Real globals remaining: 2140
+Real globals remaining: 2136
 Clusters detected: 204
-DAT_ globals in clusters: 2066
+DAT_ globals in clusters: 2062
 
 Classification summary:
   unknown              71 clusters
@@ -40,10 +40,10 @@ Consider removing the Ghidra label and leaving the raw number.
       CMP dword ptr [EBX + 0x68],0x78a123 ; 00554677 | DAT_0078a123
 
   DAT_005bdf50  value=0x5BDF50 (6020944)  refs=5
-    FUN_004edfc0
-      PUSH 0x5bdf50                       ; 004ee09e | DAT_005bdf50
     initFonts
       PUSH 0x5bdf50                       ; 0044ca64 | DAT_005bdf50
+    readMessageFile
+      PUSH 0x5bdf50                       ; 004ee09e | DAT_005bdf50
 
   DAT_0076934c  value=0x76934C (7770956)  refs=4
     CCloth_render
@@ -640,7 +640,7 @@ MEDIUM CONFIDENCE (66 clusters)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
     Reason: 7 groups of 3 consecutive ints found
-    Referenced by: 55 functions
+    Referenced by: 56 functions
      near: g_SoundMuted (int) at -12
       0x02dc8318  DAT_02dc8318  undefined4
       0x02dc831c  DAT_02dc831c  undefined4
@@ -649,20 +649,6 @@ MEDIUM CONFIDENCE (66 clusters)
       0x02dc832c  DAT_02dc832c  undefined4
       0x02dc8330  DAT_02dc8330  undefined4 [float]
       ... +31 more
-
-  0x006b023c - 0x006b02f8  (33 items, 188 bytes span)
-    Classification: vector_groups
-    Likely type: likely contains CVector3i/f fields
-    Reason: 10 groups of 3 consecutive ints found
-    Referenced by: 54 functions
-     near: g_TexturesDisabled (int) at -60
-      0x006b023c  DAT_006b023c  undefined4
-      0x006b0240  DAT_006b0240  undefined4
-      0x006b0244  DAT_006b0244  undefined4
-      0x006b0248  DAT_006b0248  undefined4
-      0x006b024c  DAT_006b024c  undefined4
-      0x006b0250  DAT_006b0250  undefined4
-      ... +27 more
 
   0x01bcddc8 - 0x01bcdefc  (33 items, 308 bytes span)
     Classification: vector_groups
@@ -703,6 +689,20 @@ MEDIUM CONFIDENCE (66 clusters)
       0x02dc78f0  DAT_02dc78f0  undefined4 [double]
       0x02dc78f4  DAT_02dc78f4  undefined4
       ... +26 more
+
+  0x006b023c - 0x006b02f8  (30 items, 188 bytes span)
+    Classification: vector_groups
+    Likely type: likely contains CVector3i/f fields
+    Reason: 9 groups of 3 consecutive ints found
+    Referenced by: 52 functions
+     near: g_TexturesDisabled (int) at -60
+      0x006b023c  DAT_006b023c  undefined4
+      0x006b0240  DAT_006b0240  undefined4
+      0x006b0244  DAT_006b0244  undefined4
+      0x006b0248  DAT_006b0248  undefined4
+      0x006b024c  DAT_006b024c  undefined4
+      0x006b0250  DAT_006b0250  undefined4
+      ... +24 more
 
   0x02dc9214 - 0x02dc9440  (30 items, 556 bytes span)
     Classification: vector_groups
@@ -2026,16 +2026,6 @@ LOW CONFIDENCE (120 clusters)
       0x005a1ab0  DAT_005a1ab0  undefined4 [float]
       0x005a1aec  DAT_005a1aec  undefined4 [float]
 
-  0x005ad1d0 - 0x005ad284  (3 items, 180 bytes span)
-    Classification: unknown
-    Likely type: unknown grouping
-    Reason: 3 items, span=180 bytes
-    Referenced by: 10 functions
-     near: g_INT_005ad1e8 (int) at -24
-      0x005ad1d0  DAT_005ad1d0  undefined4 [float]
-      0x005ad280  DAT_005ad280  undefined4
-      0x005ad284  DAT_005ad284  undefined4
-
   0x005ae6f4 - 0x005ae6fc  (3 items, 8 bytes span)
     Classification: unknown
     Likely type: unknown grouping
@@ -2374,6 +2364,15 @@ LOW CONFIDENCE (120 clusters)
      near: FLOAT_005a2158 (float) at -16
       0x005a2148  DAT_005a2148  undefined4 [double]
       0x005a2150  DAT_005a2150  undefined4 [double]
+
+  0x005ad1d0 - 0x005ad280  (2 items, 176 bytes span)
+    Classification: unknown
+    Likely type: unknown grouping
+    Reason: 2 items, span=176 bytes
+    Referenced by: 4 functions
+     near: g_INT_005ad1e8 (int) at -24
+      0x005ad1d0  DAT_005ad1d0  undefined4 [float]
+      0x005ad280  DAT_005ad280  undefined4
 
   0x005b6f70 - 0x005b6f74  (2 items, 4 bytes span)
     Classification: unknown

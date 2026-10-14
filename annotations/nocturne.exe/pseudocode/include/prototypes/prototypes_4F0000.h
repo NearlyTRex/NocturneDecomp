@@ -152,7 +152,7 @@ uint __cdecl engine_pod_cpp_crc32ComputeFromFile_FUN_004f78d0(_FILE *file_stream
 uint __cdecl engine_pod_cpp_crc32ComputeFileRange_FUN_004f7980(char *filename,int start_offset);
 CPodFile * __cdecl engine_pod_cpp_CPodFile_ctor_FUN_004f7a80(CPodFile *this_ptr);
 CPodFile * __cdecl engine_pod_cpp_CPodFile_dtor_FUN_004f7ac0(CPodFile *this_ptr,uint flags);
-int __cdecl engine_pod_cpp_CPodFile_FUN_004f7ae0(CPodFile *this_ptr,char *filename);
+int __cdecl engine_pod_cpp_CPodFile_mountFromFile_FUN_004f7ae0(CPodFile *this_ptr,char *filename);
 void __cdecl engine_pod_cpp_CPodFile_cleanup_FUN_004f80e0(CPodFile *this_ptr);
 int __cdecl engine_pod_cpp_CPodFile_findFileIndex_FUN_004f8150(CPodFile *this_ptr,char *filename);
 void __cdecl engine_pod_cpp_CPodFile_populateFileInfo_FUN_004f81c0(CPodFile *this_ptr,int file_index,SFoundFileInfo *output_info);
@@ -174,6 +174,7 @@ void __cdecl engine_pod_cpp_CPod_computeAndStoreCRC_FUN_004f8eb0(CPod *this_ptr,
 int __cdecl engine_pod_cpp_CPod_verifyIntegrity_FUN_004f9100(CPod *this_ptr,char *pod_filename);
 CPodFile * __cdecl engine_pod_cpp_CPod_locateFile_FUN_004f9170(CPod *this_ptr,char *base_path,char *filename,int *file_index_out);
 int __cdecl engine_pod_cpp_CPod_findFile_FUN_004f9200(CPod *this_ptr,SFoundFileInfo *found_file_info);
+int __cdecl engine_pod_cpp_findFileInPod_FUN_004f9250(SFoundFileInfo *info);
 void __cdecl core_podmain_cpp_staticInit_FUN_004f9280(void);
 void __cdecl core_podmain_cpp_CDemonPod_load_FUN_004f92b0(CDemonPod *this_ptr);
 CDemonPod * __cdecl core_podmain_cpp_CDemonPod_ctor_FUN_004f93c0(CDemonPod *this_ptr);

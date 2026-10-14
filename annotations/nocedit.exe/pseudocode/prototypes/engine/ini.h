@@ -13,7 +13,7 @@ int __cdecl CIni::getProfileString(CIni *this_ptr,char *section,char *key,char *
 
 // Original: engine_ini.cpp_CIni_findLineNumberOfVariable_FUN_004fb470
 // Address: 004fb470
-int __cdecl CIni::findLineNumberOfVariable(CIni *this_ptr,char *section,char *key,char *value,char *filename);
+int __cdecl CIni::findLineNumberOfVariable(CIni *this_ptr,char *section,char *key,char *filename,char *value);
 
 // Original: engine_ini.cpp_CIni_writeProfileString_FUN_004fb660
 // Address: 004fb660

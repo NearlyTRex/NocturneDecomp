@@ -34,8 +34,8 @@
 ;   uchar[257] g_CharacterClassificationTable
 ;   CBitFont* g_EditorFont
 ;   CEditorTools g_CEditorToolsInstance
-;   int g_FontCharacterHeight
-;   int g_FontCharacterWidth
+;   int g_EditorFontMaxCharWidth
+;   int g_EditorFontLineHeight
 ;   ... and 8 more
 ;
 ; Called Functions:
@@ -77,11 +77,11 @@ section .text
     PUSH 0x6a                           ; 0049db41
     MOV EDX,dword ptr [EAX + 0x3168]    ; 0049db43
     PUSH EAX                            ; 0049db49
-    MOV dword ptr [0x02cf2668],EDX      ; 0049db4a | g_FontCharacterHeight
+    MOV dword ptr [0x02cf2668],EDX      ; 0049db4a | g_EditorFontMaxCharWidth
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 0049db50
         ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 0049db55
-    MOV [0x02cf266c],EAX                ; 0049db58 | g_FontCharacterWidth
+    MOV [0x02cf266c],EAX                ; 0049db58 | g_EditorFontLineHeight
     CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 0049db5d
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()
     TEST byte ptr [ESP + 0x330],0x1     ; 0049db62
@@ -113,7 +113,7 @@ section .text
     CALL shape_edittool.cpp_calculateButtonHeight_FUN_004a6970 ; 0049dba9
         ;   XREF to: 004a6970 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_calculateButtonHeight_FUN_004a6970(char * button_text)
     ADD ESP,0x4                         ; 0049dbae
-    MOV ECX,dword ptr [0x02cf266c]      ; 0049dbb1 | g_FontCharacterWidth
+    MOV ECX,dword ptr [0x02cf266c]      ; 0049dbb1 | g_EditorFontLineHeight
     ADD EBX,EBX                         ; 0049dbb7
     PUSH 0x0                            ; 0049dbb9
     MOV EDX,dword ptr [ESP + 0x328]     ; 0049dbbb

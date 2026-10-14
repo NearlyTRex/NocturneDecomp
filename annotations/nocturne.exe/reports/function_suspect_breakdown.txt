@@ -4,16 +4,16 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 2533 functions
-  1 suspects: 755 functions
-  2 suspects: 375 functions
-  3 suspects: 196 functions
+  0 suspects: 2538 functions
+  1 suspects: 753 functions
+  2 suspects: 374 functions
+  3 suspects: 195 functions
   4 suspects: 152 functions
-  5 suspects: 125 functions
-  6 suspects: 93 functions
+  5 suspects: 126 functions
+  6 suspects: 94 functions
   7 suspects: 82 functions
   8 suspects: 65 functions
-  9 suspects: 55 functions
+  9 suspects: 54 functions
   10 suspects: 40 functions
   11 suspects: 40 functions
   12 suspects: 40 functions
@@ -66,8 +66,7 @@ SUSPECT COUNT DISTRIBUTION
   63 suspects: 1 functions
   64 suspects: 1 functions
   66 suspects: 2 functions
-  67 suspects: 1 functions
-  71 suspects: 1 functions
+  67 suspects: 2 functions
   73 suspects: 1 functions
   74 suspects: 1 functions
   76 suspects: 2 functions
@@ -89,9 +88,9 @@ SUSPECT COUNT DISTRIBUTION
   138 suspects: 1 functions
   140 suspects: 1 functions
   142 suspects: 2 functions
-  172 suspects: 1 functions
+  168 suspects: 1 functions
+  175 suspects: 1 functions
   178 suspects: 1 functions
-  179 suspects: 1 functions
   192 suspects: 1 functions
   214 suspects: 1 functions
   217 suspects: 1 functions
@@ -666,7 +665,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     core_mission.cpp_CDemonMission_setTeleportTarget_F (  8 lines)
       (this_ptr->pending_teleport).position.x = (teleport_target->...
     engine_drender.cpp_CDemonRenderer_copyAndTransform (  9 lines)
-      CStack_10.x = input_point->x;...
+      SStack_10.point.x = input_point->x;...
     core_actor.cpp_copyVector_FUN_0040e180             ( 10 lines)
       dst_ptr->x = src_ptr->x;...
     core_actor.cpp_CBoundingBox3D_copy_FUN_0040e240    ( 10 lines)
@@ -830,14 +829,12 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     core_manpuz.cpp_CMansionPuzzleCircle_updateLaser_F ( 94 lines)
       local_c0.local_origin.y = local_114.local_origin.y;...
 
-  [undefined_data] (85 functions)
+  [undefined_data] (83 functions)
   ------------------------------------------------------------
     cockpit_ckptutil.c_isLineBlendingDisabled_FUN_0043 (  4 lines)
       return DAT_00766c6c;...
     cockpit_ckptutil.c_isLineClippingDisabled_FUN_0043 (  4 lines)
       return DAT_005ad280;...
-    engine_clipper.c_getNearPlaneDistance_FUN_00431520 (  4 lines)
-      return DAT_005ad284;...
     cockpit_drawsurf.cpp_getDashLength_FUN_0045d0d0    (  4 lines)
       return DAT_005ae6f4;...
     cockpit_drawsurf.cpp_getDashAnimationThreshold_FUN (  4 lines)
@@ -894,8 +891,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       if (((0 < buffer_id) && (buffer_id < 0x19)) && (*(int *)(&DA...
     core_sound.cpp_CSound_getSoundModeName_FUN_0052ec9 (  7 lines)
       return &DAT_00594bfe;...
-    engine_clipper.c_setNearPlaneDistance_FUN_00431500 (  8 lines)
-      DAT_005ad284 = distance;...
     engine_drender.cpp_CDemonRenderer_setProjectionSca (  8 lines)
       DAT_005b7648 = (int)ROUND(dVar1);...
     engine_light.cpp_calculateAndStoreVertexLight_FUN_ (  8 lines)
@@ -1311,7 +1306,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     core_frankgen.cpp_findLeader_FUN_00495240          ( 23 lines)
       (*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + i...
     sound_sndmain.cpp_formatActiveSounds_FUN_00527570  ( 24 lines)
-      *(uint *)((int)&(this_ptr->options).trigger_time + 4),...
+      *(uint *)((int)&(this_ptr->options).playback_position + 4),...
     core_vampboss.cpp_CVampireBoss_summonStalagmites_F ( 24 lines)
       (*(CDemonActor **)...
     core_dlight.cpp_CDemonLight_blitZBuffer_FUN_0044e6 ( 25 lines)
@@ -1855,8 +1850,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: sound/sndmain.cpp, Lines: 16, Types: ['unresolved_funcptr', 'warning_overlapping_globals']
   sound_sndmain.cpp_audioThreadProc_FUN_00528670
     File: sound/sndmain.cpp, Lines: 16, Types: ['bitcast_double_pair', 'warning_overlapping_globals']
-  engine_drender.cpp_CDemonRenderer_processCameraRelativeVerte
-    File: engine/drender.cpp, Lines: 17, Types: ['suspect_float']
   core_event.cpp_CRuleList_remove_FUN_00481770
     File: core/event.cpp, Lines: 17, Types: ['pointer_stride_bytecount']
   core_fire.cpp_CBulletTrail_init_FUN_00485640
@@ -1929,7 +1922,7 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/marquee.cpp, Lines: 20, Types: ['unrolled_memcpy']
   support_newmsg.cpp_findLocalizedString_FUN_004ee2f0
     File: support/newmsg.cpp, Lines: 20, Types: ['raw_address_pointer_store']
-  core_set.cpp_CVector3f_copy_FUN_0050ea90
+  core_set.cpp_CBoundingBox3D_assign_FUN_0050ea90
     File: core/set.cpp, Lines: 20, Types: ['unrolled_memcpy']
   sound_sndmain.cpp_getNextActiveSfx_FUN_00527520
     File: sound/sndmain.cpp, Lines: 20, Types: ['pointer_cast']
@@ -2463,8 +2456,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: cockpit/pkbmpset.cpp, Lines: 9, Types: ['stack_param', 'stack_ref']
   core_scat.cpp_FUN_004fbb70
     File: core/scat.cpp, Lines: 9, Types: ['stack_param']
-  engine_3d.c_processCameraRelativePoint_FUN_004044d0
-    File: engine/3d.c, Lines: 10, Types: ['undefined_data']
   sound_snddx.cpp_CDirectSoundDevice_commitDeferredSettings_FU
     File: sound/snddx.cpp, Lines: 11, Types: ['undefined_data', 'unresolved_funcptr', 'warning_overlapping_globals']
   shape_edittool.cpp_CEdButton_calculateAndSetBounds_FUN_00476

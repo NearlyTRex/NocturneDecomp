@@ -1,6 +1,11 @@
 #pragma once
 
+#include "engine/fwd.h"
+
+#include <cstddef>
 #include <cstdint>
+#include <string_view>
+#include <vector>
 
 namespace nocturne::cockpit {
 
@@ -14,7 +19,9 @@ void basicIndexedTo16Bit(void *output_buffer, void *input_buffer, int pixel_coun
 ColorConversionFunc *getColorConversionFunction();
 OptimizedMemcpyFunc *getOptimizedMemcpyFunction();
 ColorConversionFunc *get16BitConversionFunction();
-void *readBitmapFile(char *filename, void *buffer, int size);
+// The first size bytes of art/filename; a file that can't be opened or is shorter is fatal.
+[[nodiscard]] std::vector<std::uint8_t> readBitmapFile(const engine::CDosIo &dosio,
+                                                       std::string_view filename, std::size_t size);
 void loadACTToIndexedPalette(char *filename, std::uint8_t *output_palette);
 void drawLineAA(int x0, int y0, int x1, int y1, int color);
 int isLineClippingDisabled();

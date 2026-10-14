@@ -1,5 +1,5 @@
 mapping: /home/aryie/Repositories/NocturneDecomp/annotations/nocturne.exe/reports/sibling_verified_mapping.json
-  nocedit.exe 7100 functions, nocturne.exe 5707 functions, 5264 pairs
+  nocedit.exe 7100 functions, nocturne.exe 5709 functions, 5267 pairs
 
 ==============================================================================
 A. TRANSLATION-UNIT RESIDUE
@@ -32,7 +32,6 @@ A. TRANSLATION-UNIT RESIDUE
   cockpit_pkbitmap.cpp                1         1         0  PAIRABLE
   core_path.cpp                       1         1         0  PAIRABLE
   shape_spotview.cpp                  1         1         0  PAIRABLE
-  support_newmsg.cpp                  1         1         0  PAIRABLE
   shape_superopt.cpp                186         0         0  EDITOR-ONLY
   shape_design.c                    163         0         0  EDITOR-ONLY
   shape_meshlod.cpp                 122         0         0  EDITOR-ONLY
@@ -43,7 +42,7 @@ A. TRANSLATION-UNIT RESIDUE
   core_setedit.cpp                   58         0         0  EDITOR-ONLY
   core_dmodel.cpp                    34         0        32  EDITOR-ONLY
   shape_quantize.cpp                 33         0         0  EDITOR-ONLY
-  sound_sndmain.cpp                  33         0        33  EDITOR-ONLY
+  sound_sndmain.cpp                  32         0        32  EDITOR-ONLY
   shape_cramtex.cpp                  21         0         0  EDITOR-ONLY
   shape_memdbg.cpp                   20         0         0  EDITOR-ONLY
   core_setutil.cpp                   19         0        11  EDITOR-ONLY
@@ -66,7 +65,6 @@ A. TRANSLATION-UNIT RESIDUE
   core_manpuz.cpp                     6         0         6  EDITOR-ONLY
   core_zombie.cpp                     6         0         3  EDITOR-ONLY
   engine_palette.cpp                  6         0         0  EDITOR-ONLY
-  engine_pod.cpp                      6         0         2  EDITOR-ONLY
   core_door.cpp                       5         0         5  EDITOR-ONLY
   core_drip.cpp                       5         0         5  EDITOR-ONLY
   core_frankgen.cpp                   5         0         5  EDITOR-ONLY
@@ -74,6 +72,7 @@ A. TRANSLATION-UNIT RESIDUE
   core_pendulum.cpp                   5         0         0  EDITOR-ONLY
   core_set.cpp                        5         0         5  EDITOR-ONLY
   core_werewolf.cpp                   5         0         0  EDITOR-ONLY
+  engine_pod.cpp                      5         0         5  EDITOR-ONLY
   shape_multicrm.cpp                  5         0         0  EDITOR-ONLY
   core_ammo.cpp                       4         0         4  EDITOR-ONLY
   core_ammobox.cpp                    4         0         4  EDITOR-ONLY
@@ -181,8 +180,8 @@ A. TRANSLATION-UNIT RESIDUE
   support_trisock.cpp                 1         0         1  EDITOR-ONLY
   wincore_wddvmem.cpp                 1         0         0  EDITOR-ONLY
 
-  1592 nocedit / 65 nocturne functions unmatched across 170 units
-  units: 23 pairable, 145 editor-only, 2 game-only
+  1589 nocedit / 64 nocturne functions unmatched across 169 units
+  units: 22 pairable, 145 editor-only, 2 game-only
   (crt_* units excluded; they are archive members, not source-ordered -- --include-crt)
   families absent from the target entirely: 34 class(es), 16 method categor(ies)
 
@@ -241,11 +240,11 @@ core_slew.cpp   between 005a2050->0051f920 and 005a20b0->0051f980
 ------------------------------------------------------------------------------
 
   4 pairable brackets covering 14 nocedit / 7 nocturne functions
-  225 one-sided brackets (636 editor-only, 24 game-only) -- not pairable by construction
-  942 nocedit functions in 53 regions with no bracket at all:
+  225 one-sided brackets (638 editor-only, 24 game-only) -- not pairable by construction
+  937 nocedit functions in 51 regions with no bracket at all:
         713  fewer than 2 anchors in the unit
-        135  before the unit's first anchor
-         94  after the unit's last anchor
+        134  before the unit's first anchor
+         90  after the unit's last anchor
       (a unit with no anchors is usually absent from the game build entirely)
 
 ==============================================================================
@@ -266,10 +265,10 @@ D. UNMATCHED ON BOTH SIDES UNDER THE SAME NAME
 ==============================================================================
 C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
 ==============================================================================
-  pairs compared        : 5264
-  never transferred     : 5   (nocturne side has no signature at all -- transfer work, not drift)
+  pairs compared        : 5267
+  never transferred     : 6   (nocturne side has no signature at all -- transfer work, not drift)
   genuine divergence    : 40   (both sides typed, and they disagree -- investigate)
-  name core differs     : 67   (mapped as the same function under two different names)
+  name core differs     : 66   (mapped as the same function under two different names)
 
   -- genuine divergence, highest confidence first --
   by kind: {'ret': 28, 'param': 12, 'param0': 7, 'param1': 4, 'param2': 4, 'param3': 1, 'conv': 1}
@@ -413,7 +412,7 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
         ret CPathMap* -> int
 
   -- same pair, different name core --
-  {'unnamed on one side': 56, 'renamed': 5, 'MAPPING SUSPECT': 3, 'stubbed in nocturne': 3}
+  {'unnamed on one side': 55, 'renamed': 5, 'MAPPING SUSPECT': 3, 'stubbed in nocturne': 3}
     MAPPING SUSPECT     the two names claim different CLASSES, so the
                         pair is probably wrong, not the names
     case-only spelling  same name, different capitalisation -- one build
@@ -563,9 +562,6 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
     [unnamed on one side] 0054bb40 -> 004f5110  conf 0.85  shape similar_size
       nocedit  loadPBGFile
       nocturne CPackedBitmapSet
-    [unnamed on one side] 0054f650 -> 004f7ae0  conf 0.85  shape size_mismatch
-      nocedit  CPodFile_mountFromFile
-      nocturne CPodFile
     [unnamed on one side] 00558fd0 -> 004fdd00  conf 0.85  shape same_mnemonics
       nocedit  CScat_updateWeaponAttachment
       nocturne CScat
@@ -624,5 +620,5 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
       nocedit  _getcwd
       nocturne getcwd
 
-  for reference, verify_sibling_signatures.py's byte-measured verdicts: {'agree': 2494, 'unverifiable': 2740, 'conflict': 30}
+  for reference, verify_sibling_signatures.py's byte-measured verdicts: {'agree': 2496, 'unverifiable': 2741, 'conflict': 30}
   those measure ARGUMENT SIZE from nocturne's own bytes and are a different axis

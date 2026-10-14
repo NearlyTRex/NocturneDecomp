@@ -20,8 +20,8 @@
 ;   TerminatedCString s_gEdFont_must_be_set_by_t_00622ec4
 ;   int g_WindowHeight = 0xc8
 ;   CBitFont* g_EditorFont
-;   int g_FontCharacterHeight
-;   int g_FontCharacterWidth
+;   int g_EditorFontMaxCharWidth
+;   int g_EditorFontLineHeight
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -56,11 +56,11 @@ section .text
     PUSH 0x6a                           ; 004a69a9
     MOV ECX,dword ptr [EAX + 0x3168]    ; 004a69ab
     PUSH EAX                            ; 004a69b1
-    MOV dword ptr [0x02cf2668],ECX      ; 004a69b2 | g_FontCharacterHeight
+    MOV dword ptr [0x02cf2668],ECX      ; 004a69b2 | g_EditorFontMaxCharWidth
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 004a69b8
         ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004a69bd
-    MOV [0x02cf266c],EAX                ; 004a69c0 | g_FontCharacterWidth
+    MOV [0x02cf266c],EAX                ; 004a69c0 | g_EditorFontLineHeight
     TEST EBX,EBX                        ; 004a69c5
     JNZ 0x004a69eb                      ; 004a69c7
         ;   XREF to: 004a69eb (CONDITIONAL_JUMP)  ; LAB_004a69eb

@@ -2,14 +2,14 @@
 GLOBALS GAP ANALYSIS REPORT
 ================================================================================
 
-Total globals analyzed:      12957
-  Named globals:             10436
-  DAT_ globals:              2521
-Gaps found:                  2049
-  With exact size bounds:    1599
+Total globals analyzed:      12956
+  Named globals:             10439
+  DAT_ globals:              2517
+Gaps found:                  2048
+  With exact size bounds:    1598
   With estimated bounds:     450
-Total gap bytes:             2,142,969,867
-  Exact gap bytes:           41,379,895
+Total gap bytes:             2,142,969,871
+  Exact gap bytes:           41,379,899
 Overlaps (size <= 0):        7150
 
 --------------------------------------------------------------------------------
@@ -21,7 +21,7 @@ GAP SIZE DISTRIBUTION
   65-256 bytes (medium data)                    295
   257-1024 bytes (large structs/arrays)         183
   1-4 KB                                        117
-  4-64 KB                                       126
+  4-64 KB                                       125
   64+ KB                                        46
 
 --------------------------------------------------------------------------------
@@ -179,7 +179,7 @@ LARGEST GAPS (top 50)
     before: PTR_caseD_1_0040db24                     void*                at 0x0040db24
 
 --------------------------------------------------------------------------------
-ALL EXACT GAPS (1599) - size bounds are known precisely
+ALL EXACT GAPS (1598) - size bounds are known precisely
 --------------------------------------------------------------------------------
    7,372,800 bytes  at 0x00b0e608  between DAT_00b0e604                   and DAT_01216608
    6,753,148 bytes  at 0x02737ef8  between DAT_02737ef4                   and DAT_02da8a74
@@ -225,6 +225,7 @@ ALL EXACT GAPS (1599) - size bounds are known precisely
       59,940 bytes  at 0x01e31668  between DAT_01e31664                   and DAT_01e4008c
       55,996 bytes  at 0x026639f4  between DAT_026639f0                   and DAT_026714b0
       55,972 bytes  at 0x00400080  between IMAGE_DOS_HEADER_00400000      and PTR_caseD_1_0040db24
+      54,420 bytes  at 0x00520b48  between switchdataD_00520b44           and switchdataD_0052dfdc
       51,796 bytes  at 0x0047e0b0  between switchdataD_0047e0ac           and switchdataD_0048ab04
       51,092 bytes  at 0x01d09c74  between DAT_01d09c70                   and g_INT_01d16408
       48,944 bytes  at 0x00551a7c  between PTR_caseD_3_00551a78           and switchdataD_0055d9ac
@@ -243,8 +244,6 @@ ALL EXACT GAPS (1599) - size bounds are known precisely
       30,620 bytes  at 0x0052dfe0  between switchdataD_0052dfdc           and switchdataD_0053577c
       29,076 bytes  at 0x004e3448  between switchdataD_004e3444           and caseD_0
       28,064 bytes  at 0x02dca1e0  between DAT_02dca1dc                   and DAT_02dd0f80
-      27,880 bytes  at 0x00520b48  between switchdataD_00520b44           and SUB_00527830
-      26,536 bytes  at 0x00527834  between SUB_00527830                   and switchdataD_0052dfdc
       24,100 bytes  at 0x00541cd0  between switchdataD_00541ccc           and switchdataD_00547af4
       23,988 bytes  at 0x01cce560  between DAT_01cce55c                   and DAT_01cd4314
       23,888 bytes  at 0x005358bc  between switchdataD_005358b8           and switchdataD_0053b60c
@@ -602,7 +601,7 @@ ALL EXACT GAPS (1599) - size bounds are known precisely
          216 bytes  at 0x005be238  between DAT_005be234                   and INT_005be310
          208 bytes  at 0x005b8020  between g_INT_005b801c                 and g_CFireEffect_PTR_005b80f0
          203 bytes  at 0x005b9489  between DAT_005b9485                   and DAT_005b9554
-         200 bytes  at 0x005ad288  between DAT_005ad284                   and g_CConsole_PTR_005ad350
+         200 bytes  at 0x005ad288  between g_FarPlaneDistance             and g_CConsole_PTR_005ad350
          196 bytes  at 0x01c09e10  between DAT_01c09e0c                   and DAT_01c09ed4
          192 bytes  at 0x005b7660  between DAT_005b765c                   and DAT_005b7720
          188 bytes  at 0x005bae5c  between DAT_005bae58                   and PTR_s_f0100_005baf18

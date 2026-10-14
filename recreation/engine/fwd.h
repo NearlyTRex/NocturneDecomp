@@ -4,23 +4,38 @@
 
 namespace nocturne::engine {
 
+class C2d;
+class C3d;
 class CAlphaBitmap;
 class CBitFont;
 class CConsole;
 class CDemonRenderer;
+class CDosIo;
 class CFileFinder;
 class CFont;
+class CFontColors;
 class CIni;
 class CIniFile;
 class CKeys;
+class CLight;
+class CMatrix;
 class CMouse;
 class CPod;
 class CPodAuditRecord;
 class CPodFile;
-class CPodSearchContext;
+struct CPodDirectoryEntry;
+struct CPodSearchContext;
+class CSpecial;
+class CTexture;
 class CTextureCache;
 class CWinFont;
-enum class EInputCodeType : std::int32_t;
+enum class EInputCodeType : std::uint16_t;
+class IGameClock;
+class IRawInput;
+class IScreenDevice;
+struct SColorChannels;
+struct SColorMasks;
+struct SCurrentTexture;
 struct SFace;
 struct SFoundFileInfo;
 struct SHardwareEdge;
@@ -32,7 +47,9 @@ struct SMRGLModelBounds;
 struct SMRGLPrimitivePoly;
 struct SMRGLPrimitiveTriangle;
 struct SMRGLPrimitiveTriangleIndex;
+struct SProjectionParams;
 struct SRGBColorPalette;
 struct SSoftwareEdge;
+struct STextureOwners;
 
 } // namespace nocturne::engine

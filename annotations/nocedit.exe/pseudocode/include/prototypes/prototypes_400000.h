@@ -42,6 +42,7 @@
 #include "types/structs/SMRGLAnimatedTexture.h"
 #include "types/structs/SMRGLHeaderExtended.h"
 #include "types/structs/SMRGLHeaderPrimitive.h"
+#include "types/structs/SMRGLPoint.h"
 #include "types/structs/SPlayerInput.h"
 #include "types/structs/SRenderBufferEntry.h"
 #include "types/structs/SRenderVertex.h"
@@ -132,7 +133,7 @@ void * __cdecl engine_3d_c_abortOldFuncNoOpcode_FUN_00403740(SMRGLHeaderPrimitiv
 CTextureCache * __cdecl engine_3d_c_initTextureCache_FUN_00403790(void);
 void __cdecl engine_3d_c_freeTextureCache_FUN_004037a0(void);
 SMRGLHeaderExtended * __cdecl engine_3d_c_badMRGLStruct_FUN_004037b0(SMRGLHeaderExtended *prim);
-SMRGLHeaderExtended * __cdecl engine_3d_c_processCameraRelativePoint_FUN_004037e0(CQuaternion4f *input_point);
+SMRGLHeaderExtended * __cdecl engine_3d_c_processCameraRelativePoint_FUN_004037e0(SMRGLPoint *block);
 SMRGLHeaderExtended * __cdecl engine_3d_c_transformAndBufferVertices_FUN_00403840(SMRGLHeaderExtended *mrgl);
 int __cdecl engine_3d_c_isVisiblePlane_FUN_00403950(SClipPlane *plane);
 uint __cdecl engine_3d_c_lookupLitColor_FUN_004039c0(int color_value,int lighting_value);

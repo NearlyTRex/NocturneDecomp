@@ -1,0 +1,85 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 9,
+    "complexity_score": 8,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 8,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 17
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004359d0",
+    "address_range": [
+      [
+        "004359d0",
+        "004359e2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_clipper.c_setFarPlaneDistance_FUN_004359d0",
+    "signature": "void __cdecl engine_clipper_c_setFarPlaneDistance_FUN_004359d0(int distance)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0066e804",
+      "name": "g_FarPlaneDistance",
+      "type": "int",
+      "value": "0x7fffffff"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.1666666666666665,
+    "instruction_count": 6,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CBRANCH": 1,
+      "COPY": 5,
+      "INT_ADD": 2,
+      "INT_AND": 3,
+      "INT_EQUAL": 2,
+      "INT_SLESS": 1,
+      "LOAD": 2,
+      "POPCOUNT": 1,
+      "RETURN": 1
+    },
+    "pcode_op_count": 19
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "distance",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

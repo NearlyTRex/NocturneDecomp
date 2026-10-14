@@ -10372,7 +10372,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_clipper.c_interpolateVertexLeftClip_FUN_00431530",
+    "name":"engine_clipper.c_interpolateVertexRightClip_FUN_00431530",
     "ret":"void",
     "vars":{
       "params":[
@@ -10438,7 +10438,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_clipper.c_interpolateVertexRightClip_FUN_00431630",
+    "name":"engine_clipper.c_interpolateVertexLeftClip_FUN_00431630",
     "ret":"void",
     "vars":{
       "params":[
@@ -10504,7 +10504,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_clipper.c_interpolateVertexBottomClip_FUN_00431730",
+    "name":"engine_clipper.c_interpolateVertexTopClip_FUN_00431730",
     "ret":"void",
     "vars":{
       "params":[
@@ -10570,7 +10570,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_clipper.c_interpolateVertexTopClip_FUN_00431830",
+    "name":"engine_clipper.c_interpolateVertexBottomClip_FUN_00431830",
     "ret":"void",
     "vars":{
       "params":[
@@ -10636,7 +10636,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_clipper.c_interpolateVertexNearClip_FUN_00431930",
+    "name":"engine_clipper.c_interpolateVertexFarClip_FUN_00431930",
     "ret":"void",
     "vars":{
       "params":[
@@ -10702,7 +10702,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_00433b30",
+    "name":"engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00433b30",
     "ret":"void",
     "vars":{
       "params":[
@@ -10768,7 +10768,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_clipper.c_clipPolygonRightPlaneGlobal_FUN_00433db0",
+    "name":"engine_clipper.c_clipPolygonLeftPlaneGlobal_FUN_00433db0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -10802,7 +10802,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_clipper.c_clipPolygonVerticalPlanes_FUN_00434030",
+    "name":"engine_clipper.c_clipPolygonBottomPlaneGlobal_FUN_00434030",
     "ret":"void",
     "vars":{
       "locals":[
@@ -33152,7 +33152,7 @@
           "type":"char*"
         },
         {
-          "name":"value",
+          "name":"filename",
           "storage":{
             "offset":16,
             "size":4,
@@ -33168,7 +33168,7 @@
           "type":"char*"
         },
         {
-          "name":"filename",
+          "name":"value",
           "storage":{
             "offset":20,
             "size":4,
@@ -46993,6 +46993,40 @@
               {
                 "addr":"Stack[0x14]",
                 "offset":20,
+                "size":8
+              }
+            ]
+          },
+          "type":"double"
+        }
+      ]
+    }
+  },
+  {
+    "addr":"00527830",
+    "body":[
+      {
+        "end":"00527870",
+        "size":65,
+        "start":"00527830"
+      }
+    ],
+    "conv":"__cdecl",
+    "importable":true,
+    "name":"sound_sndmain.cpp_set3DListenerDistanceFactor_FUN_00527830",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"distance_in_feet",
+          "storage":{
+            "offset":4,
+            "size":8,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
                 "size":8
               }
             ]

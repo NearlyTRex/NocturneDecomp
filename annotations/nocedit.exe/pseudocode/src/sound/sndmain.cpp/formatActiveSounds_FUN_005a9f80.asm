@@ -11,8 +11,8 @@
 ;   CSfxSlot[64] g_SfxSlots
 ;   undefined4 g_SfxSlots[0].sample
 ;   undefined4 g_SfxSlots[1].status
-;   undefined4 g_SfxSlots[1].options.trigger_time
-;   undefined4 g_SfxSlots[1].options.trigger_time+4
+;   undefined4 g_SfxSlots[1].options.playback_position
+;   undefined4 g_SfxSlots[1].options.playback_position+4
 ;   undefined4 g_SfxSlots[1].playback_state
 ;   undefined4 g_SfxSlots[1].sample
 ;
@@ -66,9 +66,9 @@ section .text
     SUB ESP,0x8                         ; 005a9fc5
     FILD dword ptr [EAX + 0x110]        ; 005a9fc8
     FSTP double ptr [ESP]               ; 005a9fce
-    MOV EBP,dword ptr [EBX + 0x64]      ; 005a9fd1 | g_SfxSlots[1].options.trigger_time+4
+    MOV EBP,dword ptr [EBX + 0x64]      ; 005a9fd1 | g_SfxSlots[1].options.playback_position+4
     PUSH EBP                            ; 005a9fd4
-    MOV EDX,dword ptr [EBX + 0x60]      ; 005a9fd5 | g_SfxSlots[1].options.trigger_time
+    MOV EDX,dword ptr [EBX + 0x60]      ; 005a9fd5 | g_SfxSlots[1].options.playback_position
     PUSH EDX                            ; 005a9fd8
     PUSH EAX                            ; 005a9fd9
     PUSH ESI                            ; 005a9fda

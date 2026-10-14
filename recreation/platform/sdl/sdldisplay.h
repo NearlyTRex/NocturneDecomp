@@ -4,6 +4,7 @@
 #include "common/video/presentation.h"
 #include "platform/display.h"
 #include "platform/gl/glapi.h"
+#include "platform/gl/glframepresenter.h"
 #include "platform/gl/glquad.h"
 
 #include <memory>
@@ -15,8 +16,9 @@ namespace nocturne::platform::sdl {
 class CSdlWindow;
 
 // Owns the window's OpenGL 3.3 core context, which the hardware renderer shares. Each present
-// uploads the frame to a texture, draws it as one letterboxed quad and swaps.
-class CSdlDisplay final : public IDisplay {
+// uploads the frame to a texture, draws it as one letterboxed quad and swaps; a hardware frame
+// is drawn the same way from the renderer's scene.
+class CSdlDisplay final : public IDisplay, public gl::IGlFramePresenter {
 public:
     explicit CSdlDisplay(CSdlWindow &window);
     ~CSdlDisplay() override;
@@ -29,6 +31,10 @@ public:
     void present(std::span<const std::byte> pixels, int pitch) override;
     void setWindowMode(EWindowMode mode) override;
     void setWindowSize(int width, int height) override;
+    void presentScene(GLuint texture, int width, int height) override;
+
+    // The context's GL, for the hardware renderer to draw with.
+    [[nodiscard]] const gl::SGlApi &getGlApi() const;
 
 private:
     struct SContextDeleter {
@@ -36,7 +42,7 @@ private:
     };
 
     void applyWindowSize();
-    void drawFrame();
+    void drawFrame(GLuint texture, common::SExtent frame, gl::EQuadRows rows);
 
     CSdlWindow &window_;
     std::unique_ptr<SDL_GLContextState, SContextDeleter> context_;

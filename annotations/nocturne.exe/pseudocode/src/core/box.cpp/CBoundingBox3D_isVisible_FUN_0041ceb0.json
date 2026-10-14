@@ -57,19 +57,19 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 40,
+        "column": 37,
         "line": 47,
         "message": "use of undeclared identifier '_DAT_0059aa88'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 40,
+        "column": 37,
         "line": 48,
         "message": "use of undeclared identifier '_DAT_0059aa88'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 40,
+        "column": 37,
         "line": 49,
         "message": "use of undeclared identifier '_DAT_0059aa88'"
       },
@@ -122,18 +122,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 156,
-    "complexity_score": 168,
+    "complexity_score": 133,
     "cross_reference_count": 71,
     "function_call_count": 5,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 63,
-    "suspect_count": 8,
+    "suspect_count": 5,
     "suspect_types": [
       "param_count_too_few",
       "self_copy_guard",
       "stack_param",
-      "undefined_data",
       "warning_overlapping_globals"
     ],
     "total_lines": 219
@@ -632,20 +631,20 @@
     },
     {
       "addr": "006b028c",
-      "name": "DAT_006b028c",
-      "type": "undefined4",
+      "name": "g_StoredX",
+      "type": "int",
       "value": null
     },
     {
       "addr": "006b0290",
-      "name": "DAT_006b0290",
-      "type": "undefined4",
+      "name": "g_StoredY",
+      "type": "int",
       "value": null
     },
     {
       "addr": "006b0294",
-      "name": "DAT_006b0294",
-      "type": "undefined4",
+      "name": "g_StoredZ",
+      "type": "int",
       "value": null
     },
     {
@@ -1003,30 +1002,6 @@
       "severity": "moderate",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_006b028c",
-      "severity": "mild",
-      "text": "local_14.x = (float)DAT_006b028c * _DAT_0059aa88;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_006b0290",
-      "severity": "mild",
-      "text": "local_14.y = (float)DAT_006b0290 * _DAT_0059aa88;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_006b0294",
-      "severity": "mild",
-      "text": "local_14.z = (float)DAT_006b0294 * _DAT_0059aa88;",
-      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

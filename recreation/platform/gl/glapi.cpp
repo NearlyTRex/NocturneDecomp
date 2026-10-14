@@ -64,6 +64,7 @@ void SGlApi::load(const GlResolver &resolver) {
     resolve(resolver, GetProgramiv, "glGetProgramiv");
     resolve(resolver, GetShaderInfoLog, "glGetShaderInfoLog");
     resolve(resolver, GetShaderiv, "glGetShaderiv");
+    resolve(resolver, GetString, "glGetString");
     resolve(resolver, GetUniformLocation, "glGetUniformLocation");
     resolve(resolver, LinkProgram, "glLinkProgram");
     resolve(resolver, PixelStorei, "glPixelStorei");

@@ -111,7 +111,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustumAdvanced_FUN_00434210(int v
           DAT_00767b40 = DAT_00767b40 + 1;
           break;
         case 1:
-          engine_clipper_c_interpolateVertexLeftClipAdvanced_FUN_004337a0
+          engine_clipper_c_interpolateVertexRightClipAdvanced_FUN_004337a0
                     (pSVar13,pSVar8,(SRenderVertex *)(&DAT_00767b4c + DAT_00767b40 * 0xc));
           DAT_00767b40 = DAT_00767b40 + 1;
           break;
@@ -129,7 +129,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustumAdvanced_FUN_00434210(int v
             piVar3 = (int *)((int)piVar3 + (uint)bVar15 * -2 + 1);
           }
           DAT_00767b40 = DAT_00767b40 + 1;
-          engine_clipper_c_interpolateVertexLeftClipAdvanced_FUN_004337a0
+          engine_clipper_c_interpolateVertexRightClipAdvanced_FUN_004337a0
                     (pSVar8,pSVar13,(SRenderVertex *)(&DAT_00767b4c + DAT_00767b40 * 0xc));
           DAT_00767b40 = DAT_00767b40 + 1;
         }
@@ -169,7 +169,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustumAdvanced_FUN_00434210(int v
             DAT_00767b44 = DAT_00767b44 + 1;
             break;
           case 1:
-            engine_clipper_c_interpolateVertexRightClipAdvanced_FUN_004338d0
+            engine_clipper_c_interpolateVertexLeftClipAdvanced_FUN_004338d0
                       (pSVar13,pSVar8,(SRenderVertex *)(&DAT_0076874c + DAT_00767b44 * 0xc));
             DAT_00767b44 = DAT_00767b44 + 1;
             break;
@@ -187,7 +187,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustumAdvanced_FUN_00434210(int v
               piVar3 = (int *)((int)piVar3 + (uint)bVar15 * -2 + 1);
             }
             DAT_00767b44 = DAT_00767b44 + 1;
-            engine_clipper_c_interpolateVertexRightClipAdvanced_FUN_004338d0
+            engine_clipper_c_interpolateVertexLeftClipAdvanced_FUN_004338d0
                       (pSVar8,pSVar13,(SRenderVertex *)(&DAT_0076874c + DAT_00767b44 * 0xc));
             DAT_00767b44 = DAT_00767b44 + 1;
           }
@@ -226,7 +226,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustumAdvanced_FUN_00434210(int v
               DAT_00767b48 = DAT_00767b48 + 1;
               break;
             case 1:
-              engine_clipper_c_interpolateVertexBottomClipAdvanced_FUN_00433a00
+              engine_clipper_c_interpolateVertexTopClipAdvanced_FUN_00433a00
                         ((SRenderVertex *)(&DAT_0076874c + uVar5 * 0xc),pSVar8,
                          (SRenderVertex *)(&DAT_00768d4c + DAT_00767b48 * 0xc));
               DAT_00767b48 = DAT_00767b48 + 1;
@@ -245,7 +245,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustumAdvanced_FUN_00434210(int v
                 piVar3 = (int *)((int)piVar3 + (uint)bVar15 * -2 + 1);
               }
               DAT_00767b48 = DAT_00767b48 + 1;
-              engine_clipper_c_interpolateVertexBottomClipAdvanced_FUN_00433a00
+              engine_clipper_c_interpolateVertexTopClipAdvanced_FUN_00433a00
                         (pSVar8,(SRenderVertex *)(&DAT_0076874c + uVar5 * 0xc),
                          (SRenderVertex *)(&DAT_00768d4c + DAT_00767b48 * 0xc));
               DAT_00767b48 = DAT_00767b48 + 1;
@@ -285,7 +285,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustumAdvanced_FUN_00434210(int v
                 DAT_00766c70 = DAT_00766c70 + 1;
                 break;
               case 1:
-                engine_clipper_c_interpolateVertexTopClipAdvanced_FUN_00433b30
+                engine_clipper_c_interpolateVertexBottomClipAdvanced_FUN_00433b30
                           ((SRenderVertex *)(&DAT_00768d4c + uVar5 * 0xc),pSVar8,
                            (SRenderVertex *)(&DAT_00766c74 + DAT_00766c70 * 0xc));
                 DAT_00766c70 = DAT_00766c70 + 1;
@@ -304,7 +304,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustumAdvanced_FUN_00434210(int v
                   piVar3 = (int *)((int)piVar3 + (uint)bVar15 * -2 + 1);
                 }
                 DAT_00766c70 = DAT_00766c70 + 1;
-                engine_clipper_c_interpolateVertexTopClipAdvanced_FUN_00433b30
+                engine_clipper_c_interpolateVertexBottomClipAdvanced_FUN_00433b30
                           (pSVar8,(SRenderVertex *)(&DAT_00768d4c + uVar5 * 0xc),
                            (SRenderVertex *)(&DAT_00766c74 + DAT_00766c70 * 0xc));
                 DAT_00766c70 = DAT_00766c70 + 1;

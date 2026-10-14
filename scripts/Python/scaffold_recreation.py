@@ -82,8 +82,6 @@ PLATFORM_BOUNDARY = {
     "sound/sndmain.cpp:allocateHwSample": "dropped: no hardware mixing",
     "sound/sndmain.cpp:CSfxSample::allocateHwSample": "dropped: no hardware mixing",
     "sound/sndmain.cpp:CSfxSample::releaseBufferId": "dropped: no hardware mixing",
-    "sound/sndmain.cpp:CSfxSlot::pollHwHandle": "dropped: no hardware mixing",
-    "sound/sndmain.cpp:CSfxSlot::pollHwPlaybackPos": "dropped: no hardware mixing",
     "sound/sndmain.cpp:enableHwSoundMixing": "dropped: no hardware mixing",
     "sound/sndmain.cpp:isHardwareMixingEnabled": "dropped: no hardware mixing",
     "sound/sndmain.cpp:hasHardware3DSound": "dropped: no hardware mixing",
@@ -97,10 +95,36 @@ PLATFORM_BOUNDARY = {
     "sound/sndmain.cpp:mixResampleMonoToStereo": "miniaudio resampling",
     "sound/sndmain.cpp:mixResampleStereoToStereo": "miniaudio resampling",
     "sound/sndmain.cpp:pollAndMixSfx": "miniaudio mixing",
-    "sound/sndmain.cpp:pollAllSfxSlots": "miniaudio mixing",
     "sound/sndmain.cpp:CSfxSlot::mix": "miniaudio mixing; compute() sets each voice's gain, pan and pitch",
     "sound/sndmain.cpp:CSfxSlot::computeChannelDelays": "dropped: panning comes from the per-ear gains",
-    "sound/sndmain.cpp:CSfxSlot::autoCalcDelayRemaining": "dropped: only debug output read it",
+    "sound/sndmain.cpp:CSfxSlot::autoCalcDelayRemaining":
+        "dropped: only the delays the game asks for are waited out, not a sound's travel time",
+    # Nothing in either build calls these, or reads what they set.
+    "sound/sndmain.cpp:computeComplexFFT": "dropped: no callers",
+    "sound/sndmain.cpp:computeFFT": "dropped: no callers",
+    "sound/sndmain.cpp:getChannelLevels": "dropped: no callers",
+    "sound/sndmain.cpp:CSfxSample::computeDataSize": "dropped: no callers",
+    "sound/sndmain.cpp:formatActiveSounds": "dropped: no callers",
+    "sound/sndmain.cpp:formatSfxOptionsToString": "dropped: no callers",
+    "sound/sndmain.cpp:freeSampleByName": "dropped: no callers",
+    "sound/sndmain.cpp:killSfxByName": "dropped: only freeSampleByName called it",
+    "sound/sndmain.cpp:getActiveSfxCount": "dropped: no callers",
+    "sound/sndmain.cpp:getSfxOptions": "dropped: no callers",
+    "sound/sndmain.cpp:isSampleLoaded": "dropped: no callers",
+    "sound/sndmain.cpp:resetCurrentSfxOptions": "dropped: no callers",
+    "sound/sndmain.cpp:setMemoryBudget": "dropped: no callers",
+    "sound/sndmain.cpp:setNextSfxStaticVelocity": "dropped: no callers",
+    "sound/sndmain.cpp:setNextSfxTrackedVelocity2": "dropped: no callers",
+    "sound/sndmain.cpp:setSfxVelocity": "dropped: no callers",
+    "sound/sndmain.cpp:setSfxTrackedDoublePosition": "dropped: no callers",
+    "sound/sndmain.cpp:setSfxTrackedDoubleVelocity": "dropped: no callers",
+    "sound/sndmain.cpp:setSfxUserData": "dropped: no callers",
+    "sound/sndmain.cpp:setSfxIsActive": "dropped: no callers; it switched on compute()'s console trace",
+    "sound/sndmain.cpp:clearNextSfxFlagBits": "dropped: only editor code called it",
+    "sound/sndmain.cpp:setNextSfxTrackedDoublePosition": "dropped: only editor code called it",
+    "sound/sndmain.cpp:setNextSfxUserData": "dropped: nothing read the user data",
+    "sound/sndmain.cpp:set3DListenerOrientRight": "dropped: only the DirectSound device read it",
+    "sound/sndmain.cpp:set3DListenerDistanceFactor": "dropped: its only caller passes 1.0, distances stay in feet",
     "sound/sndmain.cpp:isStreamableFile": "miniaudio streaming",
     "sound/sndmain.cpp:loadStreamingSoundFile": "miniaudio streaming",
     "sound/sndmain.cpp:pollAllStreams": "miniaudio streaming",
@@ -125,10 +149,20 @@ PLATFORM_BOUNDARY = {
     "engine/special.cpp:shutdownExternalRenderer": "platform::IRenderer adapter; no renderer DLL",
     "engine/special.cpp:switchRenderer": "platform::IRenderer adapter; no renderer DLL",
     "engine/special.cpp:getCurrentRenderer": "platform::IRenderer adapter; no renderer DLL",
-    "engine/3d.c:initTextureCache": "engine::initTextureCache in texture.cpp; this is a JMP thunk to it",
+    # The decomp's .keep fixes the CPU as an Intel P6 with MMX, so the enhanced game always
+    # takes the MMX and P6 paths and never quits for want of MMX.
+    "core/mmx.c": "dropped: the MMX and P6 paths are always taken",
+    "engine/2d.c:buildBlendTables": "dropped: its two blend tables have no reader",
+    "engine/font.cpp:CBitFont::render3DCharacter": "dropped: nothing sets use_3d_rendering",
+    "engine/font.cpp:setShadowColor": "dropped: no callers; the shadow colour stays black",
+    "engine/3d.c:initTextureCache":"engine::initTextureCache in texture.cpp; this is a JMP thunk to it",
     "engine/3d.c:freeTextureCache": "engine::freeTextureCache in texture.cpp; this is a JMP thunk to it",
     "support/trisock.cpp:startupWinsock": "platform::INetwork adapter lifetime",
     "support/trisock.cpp:cleanupWinsock": "platform::INetwork adapter lifetime",
+    "support/trisock.cpp:getIPAddress": "platform::IUdpSocket adapter (SOCKADDR_IN conversion)",
+    "support/trisock.cpp:buildSockaddrIn": "platform::IUdpSocket adapter (SOCKADDR_IN conversion)",
+    "support/trisock.cpp:copyIPAddress": "platform::IUdpSocket adapter (SOCKADDR_IN conversion)",
+    "support/trisock.cpp:convertSockAddr": "platform::IUdpSocket adapter (SOCKADDR_IN conversion)",
     "wincore/wddvmem.cpp:reinitializeDirectDraw": "platform::IDisplay adapter",
     "wincore/wddvmem.cpp:shutdownDirectDraw": "platform::IDisplay adapter",
     "wincore/wddvmem.cpp:restoreVideoAndMinimizeWindow": "platform::IDisplay adapter",
@@ -139,7 +173,7 @@ PLATFORM_BOUNDARY = {
     "wincore/wddvmem.cpp:freeLibrary": "dropped: no renderer DLL",
     "wincore/winvideo.cpp:openMovie": "platform::IMoviePlayer::openMovie",
     "wincore/winvideo.cpp:closeMovie": "platform::IMoviePlayer::closeMovie",
-    "wincore/winvideo.cpp:toggleMoviePlayback": "platform::IMoviePlayer::toggleMoviePlayback",
+    "wincore/winvideo.cpp:toggleMoviePlayback": "platform::IMoviePlayer::setMoviePlayback",
     "wincore/winvideo.cpp:positionMovieWindow": "platform::IMoviePlayer adapter",
     "wincore/winrun.cpp:winMain": "main.cpp",
     "wincore/winrun.cpp:mainWindowProc": "kept; declared with its first body, taking platform::SWindowEvent",
@@ -166,6 +200,7 @@ HAND_WRITTEN_CLASSES = {"common": {
     "CFrameConverter": "class {};",
     "CMovieClock": "class {};",
     "CPolygonBatch": "class {};",
+    "CTextScanner": "class {};",
     "EBlendFactor": "enum class {} : std::uint8_t;",
     "EDepthFunction": "enum class {} : std::uint8_t;",
     "EMipFilter": "enum class {} : std::uint8_t;",
@@ -186,8 +221,9 @@ HAND_WRITTEN_CLASSES = {"common": {
     "SViewport": "struct {};",
     "SWildcardPath": "struct {};",
 }}
-HAND_WRITTEN_DIRS = {"common/input", "common/net", "common/render", "common/serial", "common/text",
-                     "common/video", "tests/common/input", "tests/common/net",
+HAND_WRITTEN_DIRS = {"common/error", "common/input", "common/math", "common/net", "common/render",
+                     "common/serial", "common/text", "common/video", "tests/common/error",
+                     "tests/common/input", "tests/common/math", "tests/common/net",
                      "tests/common/render", "tests/common/serial", "tests/common/text",
                      "tests/common/video"}
 
@@ -443,6 +479,13 @@ def void_pointer_count(f):
 def is_trivial(f):
     """No calls and at most `MOV EAX,[ESP+4]; RET`: the body only returns `this`."""
     return not f.get("calls") and f.get("instructions", 3) <= 2
+
+
+def is_copy_assignment(f):
+    """An `assign` from its own class that calls nothing: a member-wise operator=."""
+    params = f.get("params", [])
+    return (re.match(r"^assign\d*$", f["method"]) is not None and not f.get("calls")
+            and len(params) == 1 and params[0]["type"]["name"] == f.get("cls"))
 
 
 def parameter_key(f):
@@ -813,11 +856,13 @@ class Scaffold:
             try:
                 # Compiler-generated specials are left to the compiler: a default
                 # constructor or destructor that only returns `this`, and a copy
-                # constructor that copies member by member without calling anything.
+                # constructor or assignment that copies member by member without calling anything.
                 if is_trivial(f) and (re.match(r"^dtor\d*$", method)
                                       or (re.match(r"^ctor\d*$", method) and not f.get("params"))):
                     continue
                 if f["addr"] in self.model.copy_ctors and not f.get("calls"):
+                    continue
+                if is_copy_assignment(f):
                     continue
                 if re.match(r"^ctor\d*$", method):
                     entry = self.method_entry(decls, cls, f)
@@ -1061,8 +1106,12 @@ def stale_files(root, planned):
     """Generated-shaped files under the module trees that nothing plans any more.
 
     Only headers and interface tests are candidates; implementation files,
-    platform/ and the hand-written directories are never touched.
+    platform/, the hand-written directories and fwd.h, which also declares
+    classes added by hand, are never touched. Neither is a header the
+    recreation's own code includes, nor a test whose implementation file
+    exists: both are ported code the scaffold never planned.
     """
+    included = included_headers(root)
     stale = []
     for module in MODULE_LAYERS:
         if module == PLATFORM_MODULE:
@@ -1071,11 +1120,36 @@ def stale_files(root, planned):
             for dirpath, _, filenames in os.walk(os.path.join(root, base)):
                 for name in filenames:
                     relpath = os.path.relpath(os.path.join(dirpath, name), root)
-                    generated = name.endswith(".h") or name.endswith("_test.cpp")
-                    hand_written = os.path.dirname(relpath) in HAND_WRITTEN_DIRS
+                    generated = (name.endswith(".h") and name != "fwd.h") or name.endswith("_test.cpp")
+                    tested = name.endswith("_test.cpp") and os.path.exists(
+                        os.path.join(root, tested_source(relpath)))
+                    hand_written = (os.path.dirname(relpath) in HAND_WRITTEN_DIRS
+                                    or relpath in included or tested)
                     if generated and relpath not in planned and not hand_written:
                         stale.append(relpath)
     return sorted(stale)
+
+
+def tested_source(relpath):
+    """The implementation file a test mirrors: tests/a/b_test.cpp tests a/b.cpp."""
+    if not relpath.startswith("tests/") or not relpath.endswith("_test.cpp"):
+        return relpath
+    return relpath[len("tests/"):-len("_test.cpp")] + ".cpp"
+
+
+def included_headers(root):
+    """Headers included by any header or source outside tests/."""
+    included = set()
+    for dirpath, dirnames, filenames in os.walk(root):
+        relative = os.path.relpath(dirpath, root)
+        if relative == "tests" or relative.startswith("tests" + os.sep):
+            dirnames[:] = []
+            continue
+        for name in filenames:
+            if name.endswith((".h", ".cpp")):
+                with open(os.path.join(dirpath, name), encoding="utf-8") as f:
+                    included.update(re.findall(r'^#include "([^"]+)"', f.read(), re.M))
+    return included
 
 
 def main():

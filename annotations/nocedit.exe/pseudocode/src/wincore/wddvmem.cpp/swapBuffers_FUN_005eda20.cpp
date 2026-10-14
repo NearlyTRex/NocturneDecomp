@@ -35,12 +35,12 @@ void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_005eda20(void)
   if (g_WindowActive != 0) {
     if (g_UseExternalRenderer != 0) {
       engine_special_cpp_presentToExternalRenderer_FUN_005b7c30(0);
-      g_RenderingInProgress = 0;
+      g_FlipPending = 0;
       wincore_winrun_cpp_processWindowMessages_FUN_005f35e0();
       return;
     }
-    if (g_RenderingInProgress == 0) {
-      if (g_UseSoftwareRendering == 0) {
+    if (g_FlipPending == 0) {
+      if (g_Display24BitFallback == 0) {
         local_20 = g_BackBuffer;
         iVar4 = g_WindowWidth *
                 ((int)((g_BitsPerPixel + (g_BitsPerPixel >> 0x1f) * -8) -
@@ -84,14 +84,14 @@ void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_005eda20(void)
             g_CurrentFilename = "..\\wincore\\wddvmem.cpp";
             g_CurrentLineNumber = 878;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to unlock front buffer");
-            g_RenderingInProgress = 0;
+            g_FlipPending = 0;
             wincore_winrun_cpp_processWindowMessages_FUN_005f35e0();
             return;
           }
         }
         goto LAB_005edaf2;
       }
-      g_UseSoftwareRendering = g_UseExternalRenderer;
+      g_Display24BitFallback = g_UseExternalRenderer;
       wincore_wddvmem_cpp_openScreenDevice_FUN_005ed580();
       iVar12 = 0;
       if (0 < g_WindowHeight) {
@@ -115,7 +115,7 @@ void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_005eda20(void)
         } while (iVar12 < g_WindowHeight);
       }
       wincore_wddvmem_cpp_closeScreenDevice_FUN_005ed630();
-      g_UseSoftwareRendering = 1;
+      g_Display24BitFallback = 1;
     }
     if (((g_DirectDrawSurface != (IDirectDrawSurface *)0x0) &&
         (HVar6 = (*g_DirectDrawSurface->vtable->Flip)
@@ -125,7 +125,7 @@ void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_005eda20(void)
     }
   }
 LAB_005edaf2:
-  g_RenderingInProgress = 0;
+  g_FlipPending = 0;
   wincore_winrun_cpp_processWindowMessages_FUN_005f35e0();
   return;
 }

@@ -27,7 +27,7 @@
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   IDirectDrawSurface* g_SoftwareRenderSurface
-;   int g_UseSoftwareRendering
+;   int g_Display24BitFallback
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -41,7 +41,7 @@ section .text
         ;   Label: wincore_wddvmem.cpp_openScreenDevice_FUN_005ed580
     PUSH EBP                            ; 005ed581
     SUB ESP,0x6c                        ; 005ed582
-    MOV EDX,dword ptr [0x03f9593c]      ; 005ed585 | g_UseSoftwareRendering
+    MOV EDX,dword ptr [0x03f9593c]      ; 005ed585 | g_Display24BitFallback
     TEST EDX,EDX                        ; 005ed58b
     JNZ 0x005ed5a0                      ; 005ed58d
         ;   XREF to: 005ed5a0 (CONDITIONAL_JUMP)  ; LAB_005ed5a0

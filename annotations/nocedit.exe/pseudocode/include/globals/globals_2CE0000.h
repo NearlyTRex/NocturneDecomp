@@ -5,6 +5,7 @@
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonTriangle.h"
 #include "types/classes/CVector3f.h"
+#include "types/classes/CVector3i.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x2CE0000
@@ -17,7 +18,6 @@ extern CDemonActorType g_CDynamiteClassInfo;
 extern CDemonTriangle g_ClippedTriangleBuffer[8];
 
 // CVector3f
-extern CVector3f g_DebugCubeBasePoint;
 extern CVector3f g_FloorRayDirection;
 extern CVector3f CVector3f_02ceed24;
 
@@ -29,6 +29,9 @@ extern CVector3f g_ClipBuffer3Vertices[16];
 extern CVector3f g_ClipBuffer4Vertices[16];
 extern CVector3f g_ClipBuffer5Vertices[16];
 extern CVector3f g_ClipOutputVertices[16];
+
+// CVector3i
+extern CVector3i g_DebugCubeBasePoint;
 
 // byte
 extern byte g_FloorCacheValid;
