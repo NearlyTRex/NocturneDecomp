@@ -18,7 +18,7 @@ in instructions.
 | 4 | `initFonts`, `CEditorTools::showWarning` | 11 | 46 | 4804 | 46 | 100.0% |
 | 5 | `showCalibrationTest`, `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 50 | 4789 | 34 | 68.0% |
 | 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 20 | 80.0% |
-| 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 70 | 58.3% |
+| 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 72 | 60.0% |
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 9 | 14.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 0 | 0.0% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 17 | 52 | 5565 | 1 | 1.9% |
@@ -44,7 +44,7 @@ in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 2 | 0.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 | 3.6% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 36.3% |
-| | **All** | | **4489** | **402860** | **479** | **10.6%** |
+| | **All** | | **4489** | **402860** | **481** | **10.7%** |
 
 ## Step 0: Math value types
 
@@ -699,7 +699,7 @@ in instructions.
   - [x] `isVisiblePlane` 0x00403950 (36)
   - [x] `processCameraRelativePoint` 0x004037e0 (25)
 
-### `engine/drender.cpp` (27 functions, 2214 instructions, 9 done)
+### `engine/drender.cpp` (27 functions, 2214 instructions, 11 done)
 - class `CDemonRenderer`
   - [ ] `enableFaceCapture` 0x0048caa0 (5)
   - [ ] `isShadowPass` 0x0048cae0 (3)
@@ -727,8 +727,8 @@ in instructions.
   - [x] `processCameraRelativeVertex` 0x0048c450 (20)
   - [x] `setProjectionScale` 0x0048c650 (6)
 - free functions
-  - [ ] `renderTriangleTextured` 0x00483370 (502)
-  - [ ] `renderTriangleSimple` 0x004839f0 (366)
+  - [x] `renderTriangleTextured` 0x00483370 (502)
+  - [x] `renderTriangleSimple` 0x004839f0 (366)
 
 ### `core/set.cpp` (10 functions, 2496 instructions, 0 done)
 - class `CDemonSet`
