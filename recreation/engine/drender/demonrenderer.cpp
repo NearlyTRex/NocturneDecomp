@@ -19,6 +19,10 @@ CDemonRenderer::CDemonRenderer(CMatrix &matrix, const C2d &two_d, C3d &three_d,
       special_(special), prim_(prim), zraster_(zraster), texture_(texture), textures_(textures),
       screen_(screen), clip_geometry_(std::move(clip_geometry)) {}
 
+std::span<platform::SRenderVertex> CDemonRenderer::getVertexBuffer() const {
+    return vertex_buffer_;
+}
+
 // nocedit 0x0048c9f0
 void CDemonRenderer::setPlaneCullingEnabled(bool enabled) {
     plane_culling_enabled_ = enabled;

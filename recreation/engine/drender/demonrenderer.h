@@ -33,6 +33,9 @@ public:
                    CZRaster &zraster, const SCurrentTexture &texture, CTexture &textures,
                    const IScreenDevice &screen, GeometryClipper clip_geometry);
 
+    // The buffer the polygons' corners index.
+    [[nodiscard]] std::span<platform::SRenderVertex> getVertexBuffer() const;
+
     void renderSolidColorDepthDirect(platform::SMRGLHeaderPrimitive *prim);
     void renderSolidColorPoly(SMRGLPrimitivePoly *poly);
     void renderZPrepassPoly(SMRGLPrimitivePoly *poly);

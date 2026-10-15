@@ -41,6 +41,7 @@ class CCloth;
 class CClothList;
 class CColonel;
 class CColor3f;
+struct CColor3i;
 class CControlBindings;
 class CConveyor;
 class CCourse;

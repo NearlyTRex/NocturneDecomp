@@ -35,8 +35,9 @@ TEST(CKeyFramedModel, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CKeyFramedModel::load),
                                  void (CKeyFramedModel::*)(std::string_view)>);
     static_assert(std::is_same_v<decltype(&CKeyFramedModel::free), void (CKeyFramedModel::*)()>);
-    static_assert(std::is_same_v<decltype(&CKeyFramedModel::prepareForRender),
-                                 void (CKeyFramedModel::*)(int, CKeyFramedModelInstance *, int)>);
+    static_assert(
+        std::is_same_v<decltype(&CKeyFramedModel::prepareForRender),
+                       void (CKeyFramedModel::*)(int, int, engine::CDemonRenderer &, CDemonSet &)>);
     static_assert(std::is_same_v<decltype(&CKeyFramedModel::getFrameVertices),
                                  std::span<const CVector3i> (CKeyFramedModel::*)(int) const>);
     static_assert(

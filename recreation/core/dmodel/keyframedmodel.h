@@ -35,7 +35,10 @@ public:
     // be opened or read.
     void load(std::string_view filename);
     void free();
-    void prepareForRender(int frame_index, CKeyFramedModelInstance *instance, int render_flags);
+    // Puts the frame's vertices on the screen, lights them and draws the polygons, a run of them
+    // to each texture, culled by winding unless the model asks for none.
+    void prepareForRender(int frame_index, int render_flags, engine::CDemonRenderer &renderer,
+                          CDemonSet &set);
     // Out-of-range frames clamp to the first or last.
     [[nodiscard]] std::span<const common::CVector3i> getFrameVertices(int frame_index) const;
     void captureTextures();
@@ -74,6 +77,11 @@ private:
     void calculateFrameBounds();
     void buildCollisionTriList();
     void populateCollisionList(const common::CVector3f &transform_vector);
+    void rotateAndLightVertices(int frame_index, CDemonSet &set) const;
+    void submitToRenderer(int render_flags, engine::CDemonRenderer &renderer, CDemonSet &set);
+    // The polygons first to end in runs of one texture, each made current before its run.
+    void submitTextureRuns(std::size_t first, std::size_t end, int render_flags,
+                           int &current_texture, engine::CDemonRenderer &renderer, CDemonSet &set);
 
     const engine::CDosIo &dosio_;
     int vertex_count_ = 0;

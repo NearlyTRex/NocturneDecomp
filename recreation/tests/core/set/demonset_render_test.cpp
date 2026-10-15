@@ -25,7 +25,7 @@ SRenderVertex at(int x, int y) {
 
 class CDemonSetRenderTest : public engine::CDemonRendererFixture {
 protected:
-    CDemonSet set_{demon_renderer_};
+    CDemonSet set_{demon_renderer_, matrix_, special_};
 };
 
 // Each polygon reaches the hardware renderer through the quad batch, -1 taking its default.
