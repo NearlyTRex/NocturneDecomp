@@ -18,7 +18,7 @@ in instructions.
 | 4 | `initFonts`, `CEditorTools::showWarning` | 11 | 46 | 4804 | 46 | 100.0% |
 | 5 | `showCalibrationTest`, `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 50 | 4789 | 34 | 68.0% |
 | 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 20 | 80.0% |
-| 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 75 | 62.5% |
+| 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 84 | 70.0% |
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 9 | 14.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 0 | 0.0% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 17 | 52 | 5565 | 1 | 1.9% |
@@ -30,7 +30,7 @@ in instructions.
 | 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 0 | 0.0% |
 | 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 4 | 15.3% |
 | 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 2 | 15.3% |
-| 19 | Not reached from startup: `engine/` | 23 | 279 | 19702 | 20 | 7.1% |
+| 19 | Not reached from startup: `engine/` | 23 | 279 | 19702 | 21 | 7.5% |
 | 20 | Not reached from startup: `support/` | 2 | 24 | 593 | 3 | 12.5% |
 | 21 | Not reached from startup: `cockpit/` | 4 | 178 | 11527 | 0 | 0.0% |
 | 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 4 | 9.5% |
@@ -44,7 +44,7 @@ in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 2 | 0.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 | 3.6% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 36.3% |
-| | **All** | | **4489** | **402860** | **484** | **10.7%** |
+| | **All** | | **4489** | **402860** | **494** | **11.0%** |
 
 ## Step 0: Math value types
 
@@ -699,28 +699,28 @@ in instructions.
   - [x] `isVisiblePlane` 0x00403950 (36)
   - [x] `processCameraRelativePoint` 0x004037e0 (25)
 
-### `engine/drender.cpp` (27 functions, 2214 instructions, 11 done)
+### `engine/drender.cpp` (27 functions, 2214 instructions, 20 done)
 - class `CDemonRenderer`
-  - [ ] `enableFaceCapture` 0x0048caa0 (5)
+  - [x] `enableFaceCapture` 0x0048caa0 (5)
   - [ ] `isShadowPass` 0x0048cae0 (3)
   - [x] `applyScaledTransform` 0x0048c4f0 (113)
   - [x] `matrixPush` 0x0048c630 (2)
   - [x] `matrixPop` 0x0048c640 (2)
-  - [ ] `setPlaneCullingEnabled` 0x0048c9f0 (4)
-  - [ ] `setRenderingState` 0x0048ca00 (24)
+  - [x] `setPlaneCullingEnabled` 0x0048c9f0 (4)
+  - [x] `setRenderingState` 0x0048ca00 (24)
   - [ ] `captureTexture` 0x0048db80 (47)
   - [ ] `renderCustomScanline` 0x0048c8d0 (54)
-  - [ ] `clipAndFillPoly` 0x0048a740 (80)
+  - [x] `clipAndFillPoly` 0x0048a740 (80)
   - [ ] `captureFace` 0x0048d8a0 (123)
   - [ ] `processQuadPrimitive` 0x0048d7a0 (84)
-  - [ ] `renderTexturedPoly` 0x0048aeb0 (112)
+  - [x] `renderTexturedPoly` 0x0048aeb0 (112)
   - [ ] `renderFacetList` 0x0048cf00 (197)
   - [ ] `renderQuadBatch` 0x0048ce90 (46)
-  - [ ] `renderAlphaBlendedPoly` 0x0048b1e0 (96)
-  - [ ] `renderDestReadBlendPoly` 0x0048b970 (104)
+  - [x] `renderAlphaBlendedPoly` 0x0048b1e0 (96)
+  - [x] `renderDestReadBlendPoly` 0x0048b970 (104)
   - [x] `getCameraOriginFixed` 0x0048c760 (23)
-  - [ ] `setBlendMode` 0x0048ca50 (5)
-  - [ ] `setRenderAlpha` 0x0048ca60 (5)
+  - [x] `setBlendMode` 0x0048ca50 (5)
+  - [x] `setRenderAlpha` 0x0048ca60 (5)
   - [x] `setCameraOriginFromScaledPoint` 0x0048c150 (30)
   - [x] `setupCameraAndProjection` 0x0048c200 (146)
   - [x] `setupSceneRendering` 0x0048c1d0 (15)
@@ -2814,9 +2814,9 @@ in instructions.
 - free functions
   - [ ] `staticInit` 0x004417e0 (11)
 
-### `engine/drender.cpp` (18 functions, 1601 instructions, 0 done)
+### `engine/drender.cpp` (18 functions, 1601 instructions, 1 done)
 - class `CDemonRenderer`
-  - [ ] `ctor` 0x0048a6c0 (10)
+  - [x] `ctor` 0x0048a6c0 (10)
   - [ ] `setProjectionMode` 0x0048a700 (14)
   - [ ] `countVisiblePixelsPoly` 0x0048aa50 (76)
   - [ ] `renderNearPlaneTexturedPoly` 0x0048ac40 (102)

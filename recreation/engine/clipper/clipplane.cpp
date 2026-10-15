@@ -6,6 +6,7 @@
 
 #include <algorithm>
 #include <cstddef>
+#include <cstdint>
 #include <span>
 #include <vector>
 
@@ -26,6 +27,14 @@ int getDistanceInside(const SProjectedVertex &point, const SFrustumPlane &plane)
 }
 
 } // namespace
+
+bool isWhollyPastASide(std::span<const SRenderVertex *const> corners) {
+    auto shared = static_cast<std::uint32_t>(-1);
+    for (const SRenderVertex *corner : corners) {
+        shared &= static_cast<std::uint32_t>(corner->projected_vertex.screen_x);
+    }
+    return (shared >> 31U) != 0 && (shared & 0xffU) != 0;
+}
 
 bool isPastPlane(const SProjectedVertex &point, const SFrustumPlane &plane) {
     const int coordinate = point.*plane.coordinate;

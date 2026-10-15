@@ -35,6 +35,10 @@ inline constexpr SFrustumPlane kNegativeYPlane{.coordinate =
                                                .other = &platform::SProjectedVertex::transformed_x,
                                                .negative = true};
 
+// Whether every corner is outside the view, past one side they share. A corner outside holds the
+// sides it is past in screen_x.
+[[nodiscard]] bool isWhollyPastASide(std::span<const platform::SRenderVertex *const> corners);
+
 // Whether the point is on the plane or past it.
 [[nodiscard]] bool isPastPlane(const platform::SProjectedVertex &point, const SFrustumPlane &plane);
 

@@ -99,22 +99,16 @@ constexpr SClipStyle kViewportClip{.passes = kAdvancedPasses,
 
 enum class EPlacement : std::uint8_t { PastASide, InView, Across };
 
-// screen_x holds the sides a corner outside the view is past.
-EPlacement getPlacement(std::span<SRenderVertex *const> corners) {
-    std::size_t outside = 0;
-    auto shared_sides = static_cast<std::uint32_t>(-1);
-    for (const SRenderVertex *corner : corners) {
-        const auto code = static_cast<std::uint32_t>(corner->projected_vertex.screen_x);
-        outside += code >> 31U;
-        shared_sides &= code;
-    }
-    if (outside == corners.size() && (shared_sides & 0xffU) != 0) {
+EPlacement getPlacement(std::span<const SRenderVertex *const> corners) {
+    if (isWhollyPastASide(corners)) {
         return EPlacement::PastASide;
     }
-    return outside == 0 ? EPlacement::InView : EPlacement::Across;
+    const bool any_outside = std::ranges::any_of(
+        corners, [](const SRenderVertex *corner) { return corner->projected_vertex.screen_x < 0; });
+    return any_outside ? EPlacement::Across : EPlacement::InView;
 }
 
-std::vector<SRenderVertex> copyCorners(std::span<SRenderVertex *const> corners) {
+std::vector<SRenderVertex> copyCorners(std::span<const SRenderVertex *const> corners) {
     std::vector<SRenderVertex> polygon;
     polygon.reserve(corners.size());
     for (const SRenderVertex *corner : corners) {
@@ -124,9 +118,9 @@ std::vector<SRenderVertex> copyCorners(std::span<SRenderVertex *const> corners) 
 }
 
 // The original tested stale pointers for a polygon of fewer than three corners, which is culled.
-void drawInHardware(std::span<SRenderVertex *> corners, const SPolygonState &state,
+void drawInHardware(std::span<SRenderVertex *> corners,
+                    std::span<const SRenderVertex *const> read_corners, const SPolygonState &state,
                     CSpecial &special, const C3d &three_d) {
-    const std::vector<const SRenderVertex *> read_corners(corners.begin(), corners.end());
     if (raster::isBackFacing(read_corners, raster::ETriangles::Fan, three_d.getCullingMode())) {
         return;
     }
@@ -169,19 +163,20 @@ void clipToFarPlane(std::vector<SRenderVertex> &polygon) {
 std::optional<std::vector<SRenderVertex>>
 clipToView(std::span<SRenderVertex *> corners, const SClipStyle &style, const SPolygonState &state,
            CSpecial &special, const C3d &three_d, const SCurrentTexture &texture) {
-    const EPlacement placement = getPlacement(corners);
+    const std::vector<const SRenderVertex *> read_corners(corners.begin(), corners.end());
+    const EPlacement placement = getPlacement(read_corners);
     if (placement == EPlacement::PastASide) {
         return std::nullopt;
     }
     if (placement == EPlacement::InView) {
         if (special.getUseExternalRenderer() &&
             !(style.hardware_needs_textures && texture.textures_disabled)) {
-            drawInHardware(corners, state, special, three_d);
+            drawInHardware(corners, read_corners, state, special, three_d);
             return std::nullopt;
         }
-        return copyCorners(corners);
+        return copyCorners(read_corners);
     }
-    std::vector<SRenderVertex> polygon = copyCorners(corners);
+    std::vector<SRenderVertex> polygon = copyCorners(read_corners);
     if (!clipToSides(polygon, style)) {
         return std::nullopt;
     }
