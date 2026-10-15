@@ -99,7 +99,10 @@ public:
     void enableAdvancedCulling(int enabled);
     void renderTriangleBatch(SMRGLPrimitiveTriangle *primitive_array, int primitive_count,
                              int render_flags);
-    void renderQuadBatch(platform::SMRGLPrimitiveQuad *primitive_array, int primitive_count,
+    // Draws each as renderTexturedPoly would, -1 taking the same default. With culling on and
+    // plane culling and face capture off, the corners go straight to the triangle rasteriser, or
+    // the polygons facing the camera to the hardware renderer as one list.
+    void renderQuadBatch(std::span<const platform::SMRGLPrimitiveQuad> primitives,
                          int render_flags);
     void renderFaceList(platform::SInputFace *face_array, int face_count, int render_flags);
     void setTextureCaptureMode(int enable_advanced_mode);
@@ -114,6 +117,8 @@ private:
     std::vector<int> takeCorners(const platform::SMRGLPrimitiveQuad &poly);
     [[nodiscard]] SPolygonState getPerspectiveState(std::uint32_t render_flags) const;
     void clipAndFillPoly(std::span<const int> vertex_indices, const SPolygonState &state);
+    void renderFacetList(std::span<const platform::SMRGLPrimitiveQuad> primitives,
+                         int render_flags);
 
     CMatrix &matrix_;
     const C2d &two_d_;

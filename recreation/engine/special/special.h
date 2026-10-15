@@ -75,7 +75,8 @@ public:
     int drawPolygon(std::span<platform::SRenderVertex> vertices, int render_flags);
     int drawPolygon2(std::span<platform::SRenderVertex *> vertices, int render_flags);
     int drawPolyList(platform::SRenderVertex *vertex_buffer,
-                     std::span<platform::SMRGLPrimitiveQuad *> polygons, int render_flags);
+                     std::span<const platform::SMRGLPrimitiveQuad *const> polygons,
+                     int render_flags);
     int drawPolyList2(platform::SRenderVertex *vertex_buffer, platform::SInputFace **polygons,
                       int polygon_count, int render_flags);
     int clear();

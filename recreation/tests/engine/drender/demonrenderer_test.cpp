@@ -129,9 +129,9 @@ TEST(CDemonRenderer, PublicInterface) {
                                  void (CDemonRenderer::*)(int)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::renderTriangleBatch),
                                  void (CDemonRenderer::*)(SMRGLPrimitiveTriangle *, int, int)>);
-    static_assert(
-        std::is_same_v<decltype(&CDemonRenderer::renderQuadBatch),
-                       void (CDemonRenderer::*)(platform::SMRGLPrimitiveQuad *, int, int)>);
+    static_assert(std::is_same_v<decltype(&CDemonRenderer::renderQuadBatch),
+                                 void (CDemonRenderer::*)(
+                                     std::span<const platform::SMRGLPrimitiveQuad>, int)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::renderFaceList),
                                  void (CDemonRenderer::*)(platform::SInputFace *, int, int)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::setTextureCaptureMode),

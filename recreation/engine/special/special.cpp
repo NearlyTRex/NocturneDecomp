@@ -187,7 +187,8 @@ int CSpecial::drawPolygon2(std::span<platform::SRenderVertex *> vertices, int re
 // drawPolygon2 for a renderer without a list entry; every renderer here has one.
 // nocedit 0x005b7640
 int CSpecial::drawPolyList(platform::SRenderVertex *vertex_buffer,
-                           std::span<platform::SMRGLPrimitiveQuad *> polygons, int render_flags) {
+                           std::span<const platform::SMRGLPrimitiveQuad *const> polygons,
+                           int render_flags) {
     if (!use_external_renderer_) {
         return 0;
     }

@@ -91,10 +91,10 @@ TEST(CSpecial, PublicInterface) {
                                  int (CSpecial::*)(std::span<platform::SRenderVertex>, int)>);
     static_assert(std::is_same_v<decltype(&CSpecial::drawPolygon2),
                                  int (CSpecial::*)(std::span<platform::SRenderVertex *>, int)>);
-    static_assert(
-        std::is_same_v<decltype(&CSpecial::drawPolyList),
-                       int (CSpecial::*)(platform::SRenderVertex *,
-                                         std::span<platform::SMRGLPrimitiveQuad *>, int)>);
+    static_assert(std::is_same_v<decltype(&CSpecial::drawPolyList),
+                                 int (CSpecial::*)(
+                                     platform::SRenderVertex *,
+                                     std::span<const platform::SMRGLPrimitiveQuad *const>, int)>);
     static_assert(std::is_same_v<decltype(&CSpecial::drawPolyList2),
                                  int (CSpecial::*)(platform::SRenderVertex *,
                                                    platform::SInputFace **, int, int)>);
@@ -215,7 +215,7 @@ getCorners(std::array<platform::SRenderVertex, 3> &vertices) {
 TEST_F(CSpecialTest, WithoutTheRendererNoPolygonIsDrawn) {
     std::array<platform::SRenderVertex, 3> vertices{};
     std::array<platform::SRenderVertex *, 3> corners = getCorners(vertices);
-    std::array<platform::SMRGLPrimitiveQuad *, 1> polygons{};
+    std::array<const platform::SMRGLPrimitiveQuad *, 1> polygons{};
     EXPECT_CALL(renderer_, drawPolygon(_, _, _)).Times(0);
     EXPECT_CALL(renderer_, drawPolygon2(_, _, _)).Times(0);
     EXPECT_CALL(renderer_, drawPolyList(_, _, _, _)).Times(0);
@@ -228,7 +228,7 @@ TEST_F(CSpecialTest, WithTheRendererPolygonsGoThroughIt) {
     startRenderer();
     std::array<platform::SRenderVertex, 3> vertices{};
     std::array<platform::SRenderVertex *, 3> corners = getCorners(vertices);
-    std::array<platform::SMRGLPrimitiveQuad *, 2> polygons{};
+    std::array<const platform::SMRGLPrimitiveQuad *, 2> polygons{};
     EXPECT_CALL(renderer_, drawPolygon(vertices.data(), 3, 5)).WillOnce(Return(7));
     EXPECT_CALL(renderer_, drawPolygon2(corners.data(), 3, 6)).WillOnce(Return(8));
     EXPECT_CALL(renderer_, drawPolyList(vertices.data(), polygons.data(), 2, 9))

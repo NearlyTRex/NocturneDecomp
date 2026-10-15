@@ -41,7 +41,7 @@ int widenCoordinate(std::uint16_t coordinate) {
 }
 
 template <typename T>
-std::span<T *> polygonList(T **polygons, int polygon_count) {
+std::span<T> polygonList(T *polygons, int polygon_count) {
     if (polygons == nullptr || polygon_count <= 0) {
         return {};
     }
@@ -171,8 +171,9 @@ int CGlRenderer::drawPolygon2(SRenderVertex **vertex_array, int vertex_count, in
     return 1;
 }
 
-int CGlRenderer::drawPolyList(SRenderVertex *vertex_buffer, SMRGLPrimitiveQuad **polygons,
-                              int polygon_count, int render_flags) {
+int CGlRenderer::drawPolyList(SRenderVertex *vertex_buffer,
+                              const SMRGLPrimitiveQuad *const *polygons, int polygon_count,
+                              int render_flags) {
     if (!canDraw() || vertex_buffer == nullptr) {
         return 0;
     }

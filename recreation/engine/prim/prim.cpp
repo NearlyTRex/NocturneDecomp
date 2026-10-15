@@ -1,9 +1,11 @@
 #include "engine/prim/prim.h"
 
 #include "common/math/fixed.h"
+#include "platform/mrglprimitivequad.h"
 #include "platform/rendervertex.h"
 
 #include <algorithm>
+#include <cstddef>
 #include <cstdint>
 #include <limits>
 #include <span>
@@ -71,6 +73,17 @@ void replaceWWithDepth(std::span<SRenderVertex> vertices) {
         platform::SProjectedVertex &point = vertex.projected_vertex;
         point.transformed_z = point.transformed_z == 0 ? kLargestDepth : point.inv_z;
     }
+}
+
+// The original repeated calculateTriangleWindingOrder's arithmetic over the global buffer.
+// nocedit 0x00552210
+bool getTriangleWindingFromIndices1(std::span<const SRenderVertex> vertices,
+                                    const platform::SMRGLPrimitiveQuad &triangle,
+                                    int culling_mode) {
+    const auto corner = [&vertices, &triangle](std::size_t i) -> const SRenderVertex & {
+        return vertices[static_cast<std::size_t>(triangle.vertices[i].vertex_index)];
+    };
+    return calculateTriangleWindingOrder(corner(0), corner(1), corner(2), culling_mode);
 }
 
 // nocedit 0x00552150

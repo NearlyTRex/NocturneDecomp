@@ -26,7 +26,10 @@ void replaceWWithDepth(std::span<platform::SRenderVertex> vertices);
                                                  const platform::SRenderVertex &v1,
                                                  const platform::SRenderVertex &v2,
                                                  int culling_mode);
-int getTriangleWindingFromIndices1(SMRGLPrimitiveTriangle *triangle);
+// calculateTriangleWindingOrder over the polygon's first three corners in the buffer.
+[[nodiscard]] bool getTriangleWindingFromIndices1(std::span<const platform::SRenderVertex> vertices,
+                                                  const platform::SMRGLPrimitiveQuad &triangle,
+                                                  int culling_mode);
 int getTriangleWindingFromPackedIndices(platform::STrianglePackedIndices *triangle);
 // The first edge whose top row is y_value, other than edge_ptr; none if there is none.
 [[nodiscard]] SSoftwareEdge *findEdgeInBuffer(std::span<SSoftwareEdge> edges, int y_value,

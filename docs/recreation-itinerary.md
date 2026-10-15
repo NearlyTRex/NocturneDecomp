@@ -18,7 +18,7 @@ in instructions.
 | 4 | `initFonts`, `CEditorTools::showWarning` | 11 | 46 | 4804 | 46 | 100.0% |
 | 5 | `showCalibrationTest`, `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 50 | 4789 | 34 | 68.0% |
 | 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 20 | 80.0% |
-| 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 84 | 70.0% |
+| 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 87 | 72.5% |
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 9 | 14.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 0 | 0.0% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 17 | 52 | 5565 | 1 | 1.9% |
@@ -44,7 +44,7 @@ in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 2 | 0.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 | 3.6% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 36.3% |
-| | **All** | | **4489** | **402860** | **494** | **11.0%** |
+| | **All** | | **4489** | **402860** | **497** | **11.0%** |
 
 ## Step 0: Math value types
 
@@ -654,7 +654,7 @@ in instructions.
   - [x] `rasterizePolygonCustom` 0x005fd4e0 (365)
   - [x] `rasterizeTriangle` 0x005fcfc0 (373)
 
-### `engine/prim.c` (13 functions, 2410 instructions, 11 done)
+### `engine/prim.c` (13 functions, 2410 instructions, 12 done)
 - free functions
   - [x] `setCullingMode` 0x00551b90 (3)
   - [x] `prepareDepthBuffer` 0x00551fb0 (44)
@@ -668,7 +668,7 @@ in instructions.
   - [x] `renderScanlinePolygon` 0x00553470 (538)
   - [x] `renderIndexedPolygonAdvanced` 0x00553b10 (610)
   - [ ] `getTriangleWindingFromPackedIndices` 0x005523f0 (81)
-  - [ ] `getTriangleWindingFromIndices1` 0x00552210 (78)
+  - [x] `getTriangleWindingFromIndices1` 0x00552210 (78)
 
 ### `core/dstrender.cpp` (2 functions, 106 instructions, 2 done)
 - free functions
@@ -699,7 +699,7 @@ in instructions.
   - [x] `isVisiblePlane` 0x00403950 (36)
   - [x] `processCameraRelativePoint` 0x004037e0 (25)
 
-### `engine/drender.cpp` (27 functions, 2214 instructions, 20 done)
+### `engine/drender.cpp` (27 functions, 2214 instructions, 22 done)
 - class `CDemonRenderer`
   - [x] `enableFaceCapture` 0x0048caa0 (5)
   - [ ] `isShadowPass` 0x0048cae0 (3)
@@ -714,8 +714,8 @@ in instructions.
   - [ ] `captureFace` 0x0048d8a0 (123)
   - [ ] `processQuadPrimitive` 0x0048d7a0 (84)
   - [x] `renderTexturedPoly` 0x0048aeb0 (112)
-  - [ ] `renderFacetList` 0x0048cf00 (197)
-  - [ ] `renderQuadBatch` 0x0048ce90 (46)
+  - [x] `renderFacetList` 0x0048cf00 (197)
+  - [x] `renderQuadBatch` 0x0048ce90 (46)
   - [x] `renderAlphaBlendedPoly` 0x0048b1e0 (96)
   - [x] `renderDestReadBlendPoly` 0x0048b970 (104)
   - [x] `getCameraOriginFixed` 0x0048c760 (23)
