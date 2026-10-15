@@ -2,10 +2,8 @@
 #include "common/render/renderstate.h"
 #include "core/xform/xform.h"
 #include "engine/clipper/clipplane.h"
-#include "platform/projectedvertex.h"
 #include "platform/rendervertex.h"
 
-#include <algorithm>
 #include <cstddef>
 #include <cstdint>
 #include <span>
@@ -16,7 +14,6 @@ namespace nocturne::core {
 namespace {
 
 using engine::SFrustumPlane;
-using platform::SProjectedVertex;
 using platform::SRenderVertex;
 
 using PlaneInterpolator = void (*)(const SRenderVertex &, const SRenderVertex &, std::uint32_t,
@@ -34,41 +31,17 @@ void clipToPlane(const SRenderVertex &vertex_a, const SRenderVertex &vertex_b,
     }
 }
 
-// One side's pass: each vertex inside is kept, and each edge crossing the side adds the point
-// where it does, in the order the original's case table adds them.
+// One side's pass from the first vertex, in the order the original's case table adds them.
 void clipPolygonToPlane(std::span<const SRenderVertex> input, const SFrustumPlane &plane,
                         PlaneInterpolator interpolate, std::uint32_t render_flags,
                         std::vector<SRenderVertex> &output) {
-    output.clear();
-    for (std::size_t i = 0; i < input.size(); ++i) {
-        const SRenderVertex &current = input[i];
-        const SRenderVertex &next = input[(i + 1) % input.size()];
-        const bool current_past = engine::isPastPlane(current.projected_vertex, plane);
-        if (!current_past) {
-            output.push_back(current);
-        }
-        if (current_past != engine::isPastPlane(next.projected_vertex, plane)) {
-            // A new vertex starts zeroed where the original reused a scratch slot.
-            interpolate(current_past ? next : current, current_past ? current : next, render_flags,
-                        output.emplace_back());
-        }
-    }
-}
-
-// A point at no depth goes to the centre one step out, and an x the y passes' chopping or a
-// wrapped sum left past a side is pulled back onto it. The original then pulled y in when x was
-// within the view, but the last two passes leave y within the depth whenever x is.
-void pullOntoView(SProjectedVertex &point) {
-    const int depth = point.transformed_z;
-    if (depth == 0) {
-        point.transformed_z = 1;
-        point.transformed_x = 0;
-        point.transformed_y = 0;
-    } else if (point.transformed_x > depth) {
-        point.transformed_x = depth;
-    } else {
-        point.transformed_x = std::max(point.transformed_x, common::wrappingSubtract(0, depth));
-    }
+    engine::clipPolygonToPlane(
+        input, plane,
+        [interpolate, render_flags](const SRenderVertex &inside, const SRenderVertex &outside,
+                                    SRenderVertex &cut) {
+            interpolate(inside, outside, render_flags, cut);
+        },
+        0, output);
 }
 
 } // namespace
@@ -137,7 +110,7 @@ void transformAndClipGeometry(std::span<const SRenderVertex> vertices,
     clipPolygonToPlane(after_top, engine::kNegativeYPlane, clipInterpolateBottomPlane, render_flags,
                        clipped);
     for (SRenderVertex &vertex : clipped) {
-        pullOntoView(vertex.projected_vertex);
+        engine::pullOntoView(vertex.projected_vertex);
     }
 }
 

@@ -8,7 +8,6 @@
 #include "platform/rendervertex.h"
 
 #include <algorithm>
-#include <cstddef>
 #include <limits>
 #include <span>
 #include <vector>
@@ -65,20 +64,6 @@ CPrim::CPrim(CSpecial &special, const C2d &two_d, const C3d &three_d,
              const SCurrentTexture &texture)
     : special_(special), two_d_(two_d), three_d_(three_d), texture_(texture) {}
 
-bool CPrim::isCulled(std::span<const SRenderVertex *const> corners, ETriangles triangles) const {
-    const int culling_mode = three_d_.getCullingMode();
-    if (culling_mode == 0) {
-        return false;
-    }
-    for (std::size_t i = 0; i + 2 < corners.size(); ++i) {
-        const SRenderVertex &first = triangles == ETriangles::Fan ? *corners[0] : *corners[i];
-        if (calculateTriangleWindingOrder(first, *corners[i + 1], *corners[i + 2], culling_mode)) {
-            return false;
-        }
-    }
-    return true;
-}
-
 bool CPrim::drawsInHardware() const {
     return special_.getUseExternalRenderer() && !texture_.textures_disabled;
 }
@@ -94,7 +79,7 @@ void CPrim::renderPolygon(std::span<SRenderVertex> vertices, const SPolygonState
         }
     }
     const std::vector<const SRenderVertex *> corners = raster::getCorners(vertices);
-    if (isCulled(corners, ETriangles::Fan)) {
+    if (raster::isBackFacing(corners, raster::ETriangles::Fan, three_d_.getCullingMode())) {
         return;
     }
     if (drawsInHardware()) {
@@ -114,7 +99,7 @@ void CPrim::renderIndexedPolygon(std::span<SRenderVertex> vertex_buffer,
     const SEdgeWalk &walk = variant == EVariant::Simple ? kSimpleWalk : kAdvancedWalk;
     std::vector<SRenderVertex *> corners = raster::getCorners(vertex_buffer, vertex_indices);
     const std::vector<const SRenderVertex *> read_corners(corners.begin(), corners.end());
-    if (isCulled(read_corners, ETriangles::Strip)) {
+    if (raster::isBackFacing(read_corners, raster::ETriangles::Strip, three_d_.getCullingMode())) {
         return;
     }
     if (drawsInHardware()) {

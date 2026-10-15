@@ -56,6 +56,20 @@ bool isBackFacing(const SRenderVertex &v0, const SRenderVertex &v1, const SRende
     return culling_mode != 0 && !calculateTriangleWindingOrder(v0, v1, v2, culling_mode);
 }
 
+bool isBackFacing(std::span<const SRenderVertex *const> corners, ETriangles triangles,
+                  int culling_mode) {
+    if (culling_mode == 0) {
+        return false;
+    }
+    for (std::size_t i = 0; i + 2 < corners.size(); ++i) {
+        const SRenderVertex &first = triangles == ETriangles::Fan ? *corners[0] : *corners[i];
+        if (calculateTriangleWindingOrder(first, *corners[i + 1], *corners[i + 2], culling_mode)) {
+            return false;
+        }
+    }
+    return true;
+}
+
 SEdgeList buildEdges(std::span<const SRenderVertex *const> corners, const EdgeRamp &ramp) {
     SEdgeList list;
     list.edges.reserve(corners.size());

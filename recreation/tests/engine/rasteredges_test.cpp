@@ -42,6 +42,21 @@ TEST(EngineRasterEdges, CullingModeZeroKeepsEveryTriangle) {
     EXPECT_FALSE(isBackFacing(v0, v1, v2, 2));
 }
 
+// (0, 1, 2) faces away under mode 1, and (1, 2, 3) faces the camera.
+TEST(EngineRasterEdges, APolygonIsCulledWhenEveryTriangleFacesAway) {
+    const std::vector<SRenderVertex> polygon{at(0, 0), at(0, 4), at(4, 4), at(9, 5)};
+    const std::vector<const SRenderVertex *> corners = getCorners(polygon);
+    EXPECT_TRUE(isBackFacing(corners, ETriangles::Fan, 1));
+    EXPECT_FALSE(isBackFacing(corners, ETriangles::Strip, 1));
+    EXPECT_FALSE(isBackFacing(corners, ETriangles::Fan, 0));
+}
+
+TEST(EngineRasterEdges, APolygonOfTwoCornersIsCulledOnlyWithCulling) {
+    const std::vector<SRenderVertex> line{at(0, 0), at(4, 4)};
+    EXPECT_TRUE(isBackFacing(getCorners(line), ETriangles::Fan, 1));
+    EXPECT_FALSE(isBackFacing(getCorners(line), ETriangles::Fan, 0));
+}
+
 // The level bottom gives no edge, and each edge runs from its higher corner.
 TEST(EngineRasterEdges, EdgesSkipLevelSidesAndRunDownTheScreen) {
     const std::vector<SRenderVertex> triangle{at(10, 2), at(10, 6), at(14, 6)};

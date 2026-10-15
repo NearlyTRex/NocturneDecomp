@@ -53,6 +53,14 @@ getCorners(std::span<platform::SRenderVertex> vertex_buffer, std::span<const int
                                 const platform::SRenderVertex &v1,
                                 const platform::SRenderVertex &v2, int culling_mode);
 
+// How a polygon's corners split into the triangles culling tests.
+enum class ETriangles : std::uint8_t { Fan, Strip };
+
+// Whether every triangle of the polygon faces away; mode 0 keeps every polygon, and one of fewer
+// than three corners is otherwise dropped.
+[[nodiscard]] bool isBackFacing(std::span<const platform::SRenderVertex *const> corners,
+                                ETriangles triangles, int culling_mode);
+
 // The edges for the sides of a polygon that span a row, and the first row any of them starts on.
 // The original's buffers held 16, as many as the clip can leave.
 struct SEdgeList {

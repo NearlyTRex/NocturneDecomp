@@ -58,8 +58,6 @@ public:
                                       const SPolygonState &state);
 
 private:
-    // How the corners split into the triangles culling tests.
-    enum class ETriangles : std::uint8_t { Fan, Strip };
     enum class EVariant : std::uint8_t { Simple, Advanced };
 
     void renderPolygon(std::span<platform::SRenderVertex> vertices, const SPolygonState &state,
@@ -68,9 +66,6 @@ private:
                               std::span<const int> vertex_indices, const SPolygonState &state,
                               EVariant variant);
 
-    // Whether back-face culling drops every triangle.
-    [[nodiscard]] bool isCulled(std::span<const platform::SRenderVertex *const> corners,
-                                ETriangles triangles) const;
     [[nodiscard]] bool drawsInHardware() const;
 
     CSpecial &special_;
