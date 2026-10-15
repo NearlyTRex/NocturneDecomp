@@ -63,7 +63,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_0048cf00(CDem
         if (0 < primitive_count) {
           local_18 = 0;
           do {
-            iVar2 = engine_prim_c_getTriangleWindingFromIndices1_FUN_00552210
+            iVar2 = engine_prim_c_calculateTriangleWindingOrderFromIndices_FUN_00552210
                               ((SMRGLPrimitiveTriangle *)primitive_array);
             if (iVar2 != 0) {
               polygon_count = polygon_count + 1;

@@ -77,9 +77,9 @@ void replaceWWithDepth(std::span<SRenderVertex> vertices) {
 
 // The original repeated calculateTriangleWindingOrder's arithmetic over the global buffer.
 // nocedit 0x00552210
-bool getTriangleWindingFromIndices1(std::span<const SRenderVertex> vertices,
-                                    const platform::SMRGLPrimitiveQuad &triangle,
-                                    int culling_mode) {
+bool calculateTriangleWindingOrderFromIndices(std::span<const SRenderVertex> vertices,
+                                              const platform::SMRGLPrimitiveQuad &triangle,
+                                              int culling_mode) {
     const auto corner = [&vertices, &triangle](std::size_t i) -> const SRenderVertex & {
         return vertices[static_cast<std::size_t>(triangle.vertices[i].vertex_index)];
     };

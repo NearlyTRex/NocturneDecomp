@@ -28,7 +28,7 @@ TEST(EnginePrimFunctions, PublicInterface) {
     static_assert(std::is_same_v<decltype(&calculateTriangleWindingOrder),
                                  bool (*)(const SRenderVertex &, const SRenderVertex &,
                                           const SRenderVertex &, int)>);
-    static_assert(std::is_same_v<decltype(&getTriangleWindingFromIndices1),
+    static_assert(std::is_same_v<decltype(&calculateTriangleWindingOrderFromIndices),
                                  bool (*)(std::span<const SRenderVertex>,
                                           const platform::SMRGLPrimitiveQuad &, int)>);
     static_assert(std::is_same_v<decltype(&getTriangleWindingFromPackedIndices),
@@ -149,9 +149,9 @@ TEST(EnginePrimFunctions, APolygonsWindingIsItsFirstThreeCornersInTheBuffer) {
                                                          {.vertex_index = c},
                                                          {.vertex_index = 3}}};
     };
-    EXPECT_TRUE(getTriangleWindingFromIndices1(buffer, polygon(1, 2, 0), 1));
-    EXPECT_FALSE(getTriangleWindingFromIndices1(buffer, polygon(1, 0, 2), 1));
-    EXPECT_TRUE(getTriangleWindingFromIndices1(buffer, polygon(1, 0, 2), 2));
+    EXPECT_TRUE(calculateTriangleWindingOrderFromIndices(buffer, polygon(1, 2, 0), 1));
+    EXPECT_FALSE(calculateTriangleWindingOrderFromIndices(buffer, polygon(1, 0, 2), 1));
+    EXPECT_TRUE(calculateTriangleWindingOrderFromIndices(buffer, polygon(1, 0, 2), 2));
 }
 
 TEST(EnginePrimFunctions, AnyOtherCullingModeKeepsAnticlockwiseTriangles) {

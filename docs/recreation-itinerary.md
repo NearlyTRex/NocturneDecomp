@@ -668,7 +668,7 @@ in instructions.
   - [x] `renderScanlinePolygon` 0x00553470 (538)
   - [x] `renderIndexedPolygonAdvanced` 0x00553b10 (610)
   - [ ] `getTriangleWindingFromPackedIndices` 0x005523f0 (81)
-  - [x] `getTriangleWindingFromIndices1` 0x00552210 (78)
+  - [x] `calculateTriangleWindingOrderFromIndices` 0x00552210 (78)
 
 ### `core/dstrender.cpp` (2 functions, 106 instructions, 2 done)
 - free functions

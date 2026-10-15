@@ -62,7 +62,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_004614b0(CDem
         if (0 < primitive_count) {
           local_18 = 0;
           do {
-            iVar2 = engine_prim_c_getTriangleWindingFromIndices1_FUN_004f9ad0
+            iVar2 = engine_prim_c_calculateTriangleWindingOrderFromIndices_FUN_004f9ad0
                               ((SMRGLPrimitiveTriangle *)primitive_array);
             if (iVar2 != 0) {
               iVar3 = iVar3 + 1;

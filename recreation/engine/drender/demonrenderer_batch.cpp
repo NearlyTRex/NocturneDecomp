@@ -39,7 +39,7 @@ void CDemonRenderer::renderFacetList(std::span<const SMRGLPrimitiveQuad> primiti
     }
     std::vector<const SMRGLPrimitiveQuad *> facing;
     for (const SMRGLPrimitiveQuad &poly : primitives) {
-        if (getTriangleWindingFromIndices1(vertex_buffer_, poly, culling_mode)) {
+        if (calculateTriangleWindingOrderFromIndices(vertex_buffer_, poly, culling_mode)) {
             facing.push_back(&poly);
         }
     }

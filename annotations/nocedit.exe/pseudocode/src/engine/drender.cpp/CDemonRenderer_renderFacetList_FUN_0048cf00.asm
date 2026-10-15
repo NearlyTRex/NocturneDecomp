@@ -36,7 +36,7 @@
 ;   engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0048aeb0
 ;   engine_drender.cpp_renderTriangleSimple_FUN_004839f0
 ;   engine_drender.cpp_renderTriangleTextured_FUN_00483370
-;   engine_prim.c_getTriangleWindingFromIndices1_FUN_00552210
+;   engine_prim.c_calculateTriangleWindingOrderFromIndices_FUN_00552210
 ;   engine_special.cpp_drawPolyList_FUN_005b7640
 ;
 ; *****************************************************************************
@@ -232,8 +232,8 @@ section .text
     MOV dword ptr [ESP + 0x10],EBP      ; 0048d0d9
     PUSH EBX                            ; 0048d0dd
         ;   Label: LAB_0048d0dd
-    CALL engine_prim.c_getTriangleWindingFromIndices1_FUN_00552210 ; 0048d0de
-        ;   XREF to: 00552210 (UNCONDITIONAL_CALL)  ; int engine_prim.c_getTriangleWindingFromIndices1_FUN_00552210(SMRGLPrimitiveTriangle * triangle)
+    CALL engine_prim.c_calculateTriangleWindingOrderFromIndices_FUN_00552210 ; 0048d0de
+        ;   XREF to: 00552210 (UNCONDITIONAL_CALL)  ; int engine_prim.c_calculateTriangleWindingOrderFromIndices_FUN_00552210(SMRGLPrimitiveTriangle * triangle)
     ADD ESP,0x4                         ; 0048d0e3
     TEST EAX,EAX                        ; 0048d0e6
     JZ 0x0048d127                       ; 0048d0e8
