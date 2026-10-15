@@ -8,6 +8,8 @@
 #include "engine/screendevice.h"
 #include "engine/special/special.h"
 #include "engine/texture/currenttexture.h"
+#include "engine/texture/texture.h"
+#include "engine/texture/texturecache.h"
 #include "engine/zraster/zraster.h"
 #include "platform/rendervertex.h"
 #include "tests/mocks/engine/twodfixture.h"
@@ -61,6 +63,12 @@ protected:
     CSpecial special_{renderer_, screen_, two_d_, matrix_, three_d_, texture_};
     CPrim prim_{special_, two_d_, three_d_, texture_};
     CZRaster zraster_{special_, two_d_, three_d_, texture_};
+    STextureOwners texture_owners_{.dosio = dosio_,
+                                   .two_d = two_d_,
+                                   .screen = screen_,
+                                   .special = special_,
+                                   .current_texture = texture_};
+    CTexture textures_{texture_owners_};
     CDemonRenderer demon_renderer_{
         matrix_,
         two_d_,
@@ -70,6 +78,7 @@ protected:
         prim_,
         zraster_,
         texture_,
+        textures_,
         screen_,
         [this](std::span<const platform::SRenderVertex>, std::span<const int> vertex_indices,
                std::uint32_t, std::vector<platform::SRenderVertex> &clipped) {

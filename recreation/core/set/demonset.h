@@ -2,16 +2,17 @@
 
 #include "common/fwd.h"
 #include "core/fwd.h"
+#include "engine/fwd.h"
 #include "platform/fwd.h"
 
 #include <cstdio>
+#include <span>
 
 namespace nocturne::core {
 
 class CDemonSet {
 public:
-    CDemonSet();
-    ~CDemonSet();
+    explicit CDemonSet(engine::CDemonRenderer &renderer);
 
     void load(char *filename);
     void renderSceneGeometry(float frustum_param, int render_mode);
@@ -46,7 +47,8 @@ public:
     void process();
     int getReverbPresetAtPosition(common::CVector3f *position);
     void loadAssets();
-    void renderPrimitiveBatch(platform::SMRGLPrimitiveQuad *primitive_array, int primitive_count,
+    // A model's polygons, drawn as the renderer's quad batch.
+    void renderPrimitiveBatch(std::span<const platform::SMRGLPrimitiveQuad> primitives,
                               int render_flags);
     void renderFaceListOrEnvMap(platform::SInputFace *faces, int count, int flags);
     void renderPrimitiveList(platform::SMRGLHeaderPrimitive *primitive_array, int primitive_count);
@@ -96,6 +98,9 @@ public:
     int evaluateVirtualDirector(CDemonActor *actor, int force_evaluation_mode);
     void setPendingCamera(int camera_index, float hold_time);
     void clearCameraSwitchCooldown();
+
+private:
+    engine::CDemonRenderer &renderer_;
 };
 
 } // namespace nocturne::core

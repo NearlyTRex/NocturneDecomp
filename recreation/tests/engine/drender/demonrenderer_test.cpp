@@ -1,11 +1,16 @@
 #include "engine/3d/3d.h"
 #include "engine/drender/demonrenderer.h"
 #include "platform/mrglprimitivequad.h"
+#include "platform/mrgltexturebasic.h"
 #include "tests/mocks/engine/demonrendererfixture.h"
 
 #include <gtest/gtest.h>
 
+#include <array>
+#include <cstddef>
+#include <cstdint>
 #include <span>
+#include <string>
 #include <type_traits>
 
 namespace nocturne::engine {
@@ -16,10 +21,10 @@ TEST(CDemonRenderer, IsConcrete) {
 }
 
 TEST(CDemonRenderer, Constructors) {
-    static_assert(
-        std::is_constructible_v<CDemonRenderer, CMatrix &, const C2d &, C3d &,
-                                std::span<platform::SRenderVertex>, CSpecial &, CPrim &, CZRaster &,
-                                const SCurrentTexture &, const IScreenDevice &, GeometryClipper>);
+    static_assert(std::is_constructible_v<CDemonRenderer, CMatrix &, const C2d &, C3d &,
+                                          std::span<platform::SRenderVertex>, CSpecial &, CPrim &,
+                                          CZRaster &, const SCurrentTexture &, CTexture &,
+                                          const IScreenDevice &, GeometryClipper>);
     static_assert(!std::is_default_constructible_v<CDemonRenderer>);
 }
 
@@ -139,7 +144,7 @@ TEST(CDemonRenderer, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDemonRenderer::processCapturedFaces),
                                  void (CDemonRenderer::*)()>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::captureTexture),
-                                 void (CDemonRenderer::*)(platform::SMRGLTextureBasic *)>);
+                                 void (CDemonRenderer::*)(platform::SMRGLTextureBasic &)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::updateTexture),
                                  void (CDemonRenderer::*)(platform::SMRGLTextureBasic *,
                                                           SRGBColorPalette *)>);
@@ -179,6 +184,24 @@ TEST_F(CDemonRendererStateTest, CullingTradesPlaneCullingForWindingCulling) {
     EXPECT_EQ(three_d_.getCullingMode(), 0);
     demon_renderer_.renderTexturedPoly(getPoly(false), 0);
     EXPECT_EQ(geometry_clips_.size(), 1U);
+}
+
+// 32 by 32 texels of 5.
+TEST_F(CDemonRendererStateTest, ACapturedTextureIsLoadedAndMadeCurrent) {
+    std::array<std::uint32_t, 256> palette{};
+    std::array<std::uint16_t, 256> palette16{};
+    ON_CALL(screen_, getBitsPerPixel()).WillByDefault(::testing::Return(32));
+    ON_CALL(screen_, getHardwarePalette32())
+        .WillByDefault(::testing::Return(std::span<std::uint32_t, 256>(palette)));
+    ON_CALL(screen_, getHardwarePalette16())
+        .WillByDefault(::testing::Return(std::span<std::uint16_t, 256>(palette16)));
+    constexpr std::size_t kTexels = std::size_t{32} * 32;
+    givenFile("art\\a.raw", std::string(kTexels, '\x05'));
+    platform::SMRGLTextureBasic texture{.texture_name = "a.raw", .cache_index = 7};
+    demon_renderer_.captureTexture(texture);
+    EXPECT_EQ(texture.cache_index, 0);
+    EXPECT_EQ(texture_.dimension, 32);
+    EXPECT_EQ(texture_.data.front(), 5);
 }
 
 TEST_F(CDemonRendererStateTest, BlendModeAndAlphaGoToThe3dState) {

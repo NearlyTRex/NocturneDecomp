@@ -1,6 +1,7 @@
 #include "engine/drender/demonrenderer.h"
 
 #include "engine/3d/3d.h"
+#include "engine/texture/texture.h"
 #include "platform/rendervertex.h"
 
 #include <span>
@@ -12,10 +13,11 @@ namespace nocturne::engine {
 CDemonRenderer::CDemonRenderer(CMatrix &matrix, const C2d &two_d, C3d &three_d,
                                std::span<platform::SRenderVertex> vertex_buffer, CSpecial &special,
                                CPrim &prim, CZRaster &zraster, const SCurrentTexture &texture,
-                               const IScreenDevice &screen, GeometryClipper clip_geometry)
+                               CTexture &textures, const IScreenDevice &screen,
+                               GeometryClipper clip_geometry)
     : matrix_(matrix), two_d_(two_d), three_d_(three_d), vertex_buffer_(vertex_buffer),
-      special_(special), prim_(prim), zraster_(zraster), texture_(texture), screen_(screen),
-      clip_geometry_(std::move(clip_geometry)) {}
+      special_(special), prim_(prim), zraster_(zraster), texture_(texture), textures_(textures),
+      screen_(screen), clip_geometry_(std::move(clip_geometry)) {}
 
 // nocedit 0x0048c9f0
 void CDemonRenderer::setPlaneCullingEnabled(bool enabled) {
@@ -38,6 +40,13 @@ void CDemonRenderer::setBlendMode(int blend_mode) {
 // nocedit 0x0048ca60
 int CDemonRenderer::setRenderAlpha(int render_alpha) {
     return three_d_.setRenderAlpha(render_alpha);
+}
+
+// The original also recorded the texture while setTextureCaptureMode had capture on, which
+// arrives with that mode's callers.
+// nocedit 0x0048db80
+void CDemonRenderer::captureTexture(platform::SMRGLTextureBasic &texture) {
+    textures_.ensureTextureLoaded(texture);
 }
 
 // The original also set the vertex processing flag 3d.c's dispatch reads, which arrives with it.

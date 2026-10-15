@@ -2,6 +2,7 @@
 
 #include <gtest/gtest.h>
 
+#include <span>
 #include <type_traits>
 
 namespace nocturne::core {
@@ -12,7 +13,8 @@ TEST(CDemonSet, IsConcrete) {
 }
 
 TEST(CDemonSet, Constructors) {
-    static_assert(std::is_constructible_v<CDemonSet>);
+    static_assert(std::is_constructible_v<CDemonSet, engine::CDemonRenderer &>);
+    static_assert(!std::is_default_constructible_v<CDemonSet>);
 }
 
 TEST(CDemonSet, PublicInterface) {
@@ -64,8 +66,9 @@ TEST(CDemonSet, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDemonSet::getReverbPresetAtPosition),
                                  int (CDemonSet::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CDemonSet::loadAssets), void (CDemonSet::*)()>);
-    static_assert(std::is_same_v<decltype(&CDemonSet::renderPrimitiveBatch),
-                                 void (CDemonSet::*)(platform::SMRGLPrimitiveQuad *, int, int)>);
+    static_assert(
+        std::is_same_v<decltype(&CDemonSet::renderPrimitiveBatch),
+                       void (CDemonSet::*)(std::span<const platform::SMRGLPrimitiveQuad>, int)>);
     static_assert(std::is_same_v<decltype(&CDemonSet::renderFaceListOrEnvMap),
                                  void (CDemonSet::*)(platform::SInputFace *, int, int)>);
     static_assert(std::is_same_v<decltype(&CDemonSet::renderPrimitiveList),

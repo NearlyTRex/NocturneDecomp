@@ -30,8 +30,8 @@ public:
     // The polygons are drawn from vertex_buffer's corners.
     CDemonRenderer(CMatrix &matrix, const C2d &two_d, C3d &three_d,
                    std::span<platform::SRenderVertex> vertex_buffer, CSpecial &special, CPrim &prim,
-                   CZRaster &zraster, const SCurrentTexture &texture, const IScreenDevice &screen,
-                   GeometryClipper clip_geometry);
+                   CZRaster &zraster, const SCurrentTexture &texture, CTexture &textures,
+                   const IScreenDevice &screen, GeometryClipper clip_geometry);
 
     void renderSolidColorDepthDirect(platform::SMRGLHeaderPrimitive *prim);
     void renderSolidColorPoly(SMRGLPrimitivePoly *poly);
@@ -107,7 +107,8 @@ public:
     void renderFaceList(platform::SInputFace *face_array, int face_count, int render_flags);
     void setTextureCaptureMode(int enable_advanced_mode);
     void processCapturedFaces();
-    void captureTexture(platform::SMRGLTextureBasic *texture);
+    // Makes the texture current for the polygons that follow.
+    void captureTexture(platform::SMRGLTextureBasic &texture);
     void updateTexture(platform::SMRGLTextureBasic *texture, SRGBColorPalette *palette);
     int depthTest(platform::SRenderVertex *vertex_ptr);
 
@@ -128,6 +129,7 @@ private:
     CPrim &prim_;
     CZRaster &zraster_;
     const SCurrentTexture &texture_;
+    CTexture &textures_;
     const IScreenDevice &screen_;
     GeometryClipper clip_geometry_;
     bool plane_culling_enabled_ = true;

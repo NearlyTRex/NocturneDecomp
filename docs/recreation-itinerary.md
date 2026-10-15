@@ -18,7 +18,7 @@ in instructions.
 | 4 | `initFonts`, `CEditorTools::showWarning` | 11 | 46 | 4804 | 46 | 100.0% |
 | 5 | `showCalibrationTest`, `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 50 | 4789 | 34 | 68.0% |
 | 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 20 | 80.0% |
-| 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 87 | 72.5% |
+| 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 89 | 74.1% |
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 9 | 14.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 0 | 0.0% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 17 | 52 | 5565 | 1 | 1.9% |
@@ -44,7 +44,7 @@ in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 2 | 0.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 | 3.6% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 36.3% |
-| | **All** | | **4489** | **402860** | **497** | **11.0%** |
+| | **All** | | **4489** | **402860** | **499** | **11.1%** |
 
 ## Step 0: Math value types
 
@@ -699,7 +699,7 @@ in instructions.
   - [x] `isVisiblePlane` 0x00403950 (36)
   - [x] `processCameraRelativePoint` 0x004037e0 (25)
 
-### `engine/drender.cpp` (27 functions, 2214 instructions, 22 done)
+### `engine/drender.cpp` (27 functions, 2214 instructions, 23 done)
 - class `CDemonRenderer`
   - [x] `enableFaceCapture` 0x0048caa0 (5)
   - [ ] `isShadowPass` 0x0048cae0 (3)
@@ -708,7 +708,7 @@ in instructions.
   - [x] `matrixPop` 0x0048c640 (2)
   - [x] `setPlaneCullingEnabled` 0x0048c9f0 (4)
   - [x] `setRenderingState` 0x0048ca00 (24)
-  - [ ] `captureTexture` 0x0048db80 (47)
+  - [x] `captureTexture` 0x0048db80 (47)
   - [ ] `renderCustomScanline` 0x0048c8d0 (54)
   - [x] `clipAndFillPoly` 0x0048a740 (80)
   - [ ] `captureFace` 0x0048d8a0 (123)
@@ -730,7 +730,7 @@ in instructions.
   - [x] `renderTriangleTextured` 0x00483370 (502)
   - [x] `renderTriangleSimple` 0x004839f0 (366)
 
-### `core/set.cpp` (10 functions, 2496 instructions, 0 done)
+### `core/set.cpp` (10 functions, 2496 instructions, 1 done)
 - class `CDemonSet`
   - [ ] `pushScreenBoundsToCamera` 0x0056e5d0 (157)
   - [ ] `rotateVerticies` 0x0056e7c0 (67)
@@ -740,7 +740,7 @@ in instructions.
   - [ ] `lightVerticies` 0x0056eac0 (1082)
   - [ ] `renderEnvMapPrimitives` 0x00570040 (156)
   - [ ] `renderEnvMapBatchQuad` 0x00570010 (16)
-  - [ ] `renderPrimitiveBatch` 0x00570770 (82)
+  - [x] `renderPrimitiveBatch` 0x00570770 (82)
   - [ ] `setFlatColor` 0x00570ca0 (8)
 
 ### `engine/special.cpp` (10 functions, 1391 instructions, 8 done)
