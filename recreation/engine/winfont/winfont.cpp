@@ -46,6 +46,13 @@ std::uint32_t packChannel(std::uint32_t five_bits, const common::SChannelLayout 
                              channel.bit_position);
 }
 
+// One channel of a 16-bit screen pixel widened to eight bits, unmasked as the original has it.
+std::uint32_t widenChannel(std::uint32_t pixel, const common::SChannelLayout &channel) {
+    return common::shiftLeft(common::shiftRight(pixel, channel.bit_position),
+                             channel.dither_shift) &
+           0xffU;
+}
+
 } // namespace
 
 // CreateFontA took the height negated, as the em height in pixels.
@@ -128,10 +135,21 @@ std::uint32_t CWinFont::getColorRef(int color) const {
            (static_cast<std::uint32_t>(palette[entry + 2]) << 16U);
 }
 
+std::uint32_t CWinFont::getDefaultColorRef() const {
+    const auto color = static_cast<std::uint32_t>(colors_.getDefaultTextColor());
+    if (screen_.getBitsPerPixel() != 16) {
+        return color;
+    }
+    const SColorChannels &channels = screen_.getColorChannels();
+    return (widenChannel(color, channels.red) << 16U) |
+           (widenChannel(color, channels.green) << 8U) | widenChannel(color, channels.blue);
+}
+
 // A string is drawn into the image only when it or its colours change. The background colour
 // is a shadow a pixel down and right, which the string's own cell then covers but for its
-// last row and column. A negative foreground is the default text colour, taken as a COLORREF
-// as the original did, so red and blue trade places in 32 bits.
+// last row and column. A negative foreground is the default text colour as 0xRRGGBB, a 16-bit
+// screen pixel widened first, taken as a COLORREF as the original did, so red and blue trade
+// places.
 // nocedit 0x005f2440
 void CWinFont::setColorAndDrawText(std::string_view text_string, int x, int y, int foreground_color,
                                    int background_color) {
@@ -140,8 +158,7 @@ void CWinFont::setColorAndDrawText(std::string_view text_string, int x, int y, i
         cached_foreground_color_ = foreground_color;
         cached_background_color_ = background_color;
         const std::uint32_t foreground =
-            foreground_color < 0 ? static_cast<std::uint32_t>(colors_.getDefaultTextColor())
-                                 : getColorRef(foreground_color);
+            foreground_color < 0 ? getDefaultColorRef() : getColorRef(foreground_color);
         text_cache_ = text_string;
         cached_string_width_ = getStringWidth(text_string);
         cached_string_height_ = getStringHeight(text_string);
@@ -156,7 +173,8 @@ void CWinFont::setColorAndDrawText(std::string_view text_string, int x, int y, i
 }
 
 // Everything but key is copied, down by the first offset; a 16-bit image is repacked for the
-// screen. Rows off the screen are skipped, and so are columns left of it.
+// screen. Rows off the screen are skipped, and so are columns left of it. The original copied
+// 32-bit pixels at 8 bits too, overrunning the image and the screen's rows; nothing is copied.
 void CWinFont::copyToScreen(int x, int y, int width, int height) {
     const int bits_per_pixel = screen_.getBitsPerPixel();
     if (bits_per_pixel != 16 && bits_per_pixel != 32) {

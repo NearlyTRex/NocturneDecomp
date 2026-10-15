@@ -53,7 +53,9 @@ CPodFile::CPodFile(platform::IFileSystem &file_system, const CDosIo &dosio)
 // nocedit 0x0054f610
 CPodFile::~CPodFile() = default;
 
-// The retail build reads POD1 and POD2 only, and sorts the directory with a stable sort.
+// The retail build reads POD1 and POD2 only, and sorts the directory with a stable sort. The
+// original also kept where a POD2's audit trail starts, for getAuditRecord, which retail never
+// calls.
 // nocedit 0x0054f650
 bool CPodFile::mountFromFile(std::string_view pod_filename) {
     cleanup();
@@ -66,6 +68,8 @@ bool CPodFile::mountFromFile(std::string_view pod_filename) {
         return false;
     }
     std::array<std::byte, kPod2HeaderSize> header{};
+    // The original took a file starting "POD2" but shorter than the header as POD2, its tail
+    // uninitialised.
     const bool is_pod2 = file->read(header) == header.size() &&
                          std::ranges::equal(std::span(header).first(kPod2Magic.size()), kPod2Magic);
     if (!(is_pod2 ? readPod2(*file, header) : readPod1(*file))) {
@@ -84,15 +88,17 @@ bool CPodFile::mountFromFile(std::string_view pod_filename) {
 bool CPodFile::readPod2(platform::IFile &file, std::span<const std::byte> header) {
     common::CBinaryReader reader(header);
     reader.skip(kPod2MagicOffset);
+    // The original copied a description with no NUL on past its 80 bytes.
     description_ = reader.readString(kDescriptionSize);
     const auto count = reader.read<std::int32_t>();
     const auto audit_count = reader.read<std::int32_t>();
-    // The original read the first entry of an empty directory, which isn't there.
+    // Retail's malloc gives null for an empty directory, which fails the mount.
     if (count <= 0) {
         return false;
     }
     version_ = 2;
     std::vector<std::uint32_t> name_offsets;
+    // The original read on past a short directory with the rest uninitialised.
     for (std::int32_t i = 0; i < count; ++i) {
         const std::optional<std::vector<std::byte>> record = readExactly(file, kPod2EntrySize);
         if (!record) {
@@ -113,6 +119,7 @@ bool CPodFile::readPod2(platform::IFile &file, std::span<const std::byte> header
     if (names_size < count || names_size > count * kMaxNameBytes) {
         return false;
     }
+    // The original read on past a short name block with the rest uninitialised.
     const std::optional<std::vector<std::byte>> names =
         readExactly(file, static_cast<std::size_t>(names_size));
     if (!names) {
@@ -132,18 +139,20 @@ bool CPodFile::readPod2(platform::IFile &file, std::span<const std::byte> header
 // Each entry holds its own name; the files carry no time of their own, so they take the pod's.
 bool CPodFile::readPod1(platform::IFile &file) {
     file.seek(0);
+    // The original parsed a short header with the rest uninitialised.
     const std::optional<std::vector<std::byte>> header = readExactly(file, kPod1HeaderSize);
     if (!header) {
         return false;
     }
     common::CBinaryReader reader(*header);
     const auto count = reader.read<std::int32_t>();
-    if (count < 0) {
+    // Retail's malloc gives null for an empty directory, which fails the mount.
+    if (count <= 0) {
         return false;
     }
     version_ = 1;
     description_ = reader.readString(kDescriptionSize);
-    // The original read past a truncated directory into whatever followed.
+    // The original took a record cut short as the one before it, or uninitialised memory.
     for (std::int32_t i = 0; i < count; ++i) {
         const std::optional<std::vector<std::byte>> record = readExactly(file, kPod1EntrySize);
         if (!record) {
@@ -151,6 +160,7 @@ bool CPodFile::readPod1(platform::IFile &file) {
         }
         common::CBinaryReader fields(*record);
         CPodDirectoryEntry &entry = entries_.emplace_back();
+        // The original took a name with no NUL on past its 32 bytes.
         entry.name = fields.readString(kPod1NameSize);
         entry.size = fields.read<std::uint32_t>();
         entry.offset = fields.read<std::uint32_t>();

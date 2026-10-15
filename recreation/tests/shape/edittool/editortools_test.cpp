@@ -355,6 +355,14 @@ TEST_F(CEditorToolsProgressTest, AnUnchangedPercentageRedrawsOnlyEveryFourSecond
     EXPECT_EQ(screen_.swaps, 3);
 }
 
+// 0.005 as a float is just under it, so the original's double product rounds to 0 percent where
+// a float product would reach 1 and redraw.
+TEST_F(CEditorToolsProgressTest, ThePercentageIsTakenInDoublePrecision) {
+    editor_tools_.showCenteredProgressDialog("");
+    editor_tools_.updatePercentage(0.005F, 1.0F);
+    EXPECT_EQ(screen_.swaps, 1);
+}
+
 TEST_F(CEditorToolsProgressTest, TheTimeLeftShowsAfterFiveSecondsUntilNoneIsLeft) {
     editor_tools_.showCenteredProgressDialog("");
     const int time_row = two_d_.getClipRect().bottom - 2;
@@ -366,6 +374,15 @@ TEST_F(CEditorToolsProgressTest, TheTimeLeftShowsAfterFiveSecondsUntilNoneIsLeft
     EXPECT_GT(textPixels(time_row), 0);
     editor_tools_.updatePercentage(1.0F, 1.0F);
     EXPECT_EQ(textPixels(time_row), 0);
+}
+
+// Ninety-nine times the elapsed time is too long for an int; FISTP leaves the integer
+// indefinite, which is not above zero.
+TEST_F(CEditorToolsProgressTest, ATimeLeftTooLongForAnIntIsNotShown) {
+    editor_tools_.showCenteredProgressDialog("");
+    now_ += 100'000'000;
+    editor_tools_.updatePercentage(0.01F, 1.0F);
+    EXPECT_EQ(textPixels(two_d_.getClipRect().bottom - 2), 0);
 }
 
 TEST_F(CEditorToolsProgressTest, NoTimeLeftShowsAtZeroPercent) {

@@ -74,11 +74,14 @@ void initFilters(const SGameSystemOwners &owners) {
 
 } // namespace
 
-// The trig tables are built with CMatrix, and flattn's empty doNothing isn't called. Gone from
-// the original: redirecting stderr to
-// stderr.txt, which nothing writes; the MMX check,
-// which every host passes; the warnings below 64MB of RAM and 200MB of swap, which no host the
-// enhanced game runs on is short of; and a Matrox driver's registry setting.
+// The trig tables are built with CMatrix; flattn's doNothing and retail's
+// CForceFeedback::processEvent are empty and aren't called. The full-screen quad depth and the
+// initialised flag are CSpecial's constants. The original also redirected stderr to stderr.txt,
+// which nothing writes, quitting with "Please copy Nocturne to your hard drive" when it was
+// read-only; set g_SoftwareRenderingForced when PROCESSOR_LEVEL is set, which nothing reads; set
+// g_AGPTextureMode to 2 for writeIniData's useAGPFlag, whose line is left as it is; checked for
+// MMX, which every host has; warned below 64MB of RAM and 200MB of swap, which no host the
+// enhanced game runs on is short of; and set a Matrox driver's registry value.
 // nocedit 0x00507a60
 void initializeGameSystems(const SGameSystemOwners &owners) {
     readIniData(owners.ini, owners.file_system, owners.ini_owners);

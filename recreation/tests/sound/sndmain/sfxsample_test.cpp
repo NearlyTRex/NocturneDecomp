@@ -45,6 +45,8 @@ TEST_F(CSfxSampleTest, PublicInterface) {
                                  void (CSfxSample::*)(const engine::CDosIo &)>);
     static_assert(
         std::is_same_v<decltype(&CSfxSample::getBytesPerFrame), int (CSfxSample::*)() const>);
+    static_assert(std::is_same_v<decltype(&CSfxSample::getStreamBufferSize),
+                                 std::size_t (CSfxSample::*)() const>);
 }
 
 TEST_F(CSfxSampleTest, StartsEmptyAndUnreferenced) {
@@ -76,9 +78,12 @@ TEST_F(CSfxSampleTest, TheBudgetCountsTheDataAtTheSizeTheFileStoresIt) {
 TEST_F(CSfxSampleTest, FreeingLetsGoOfTheDataTheStreamAndTheName) {
     sample_.sample_data.resize(64);
     sample_.sample_info.bit_depth = 16;
+    sample_.sample_info.num_channels = 1;
+    sample_.sample_info.sample_rate = 100;
     sample_.stream = std::make_unique<CSfxStream>("not audio");
     sample_.streaming_slot_index = 3;
-    EXPECT_EQ(sample_.getMemorySize(), 128U);
+    // A streamed sample holds two seconds against the budget.
+    EXPECT_EQ(sample_.getMemorySize(), 400U);
     sample_.freeMemory();
     EXPECT_EQ(sample_.getMemorySize(), 0U);
     EXPECT_EQ(sample_.stream, nullptr);

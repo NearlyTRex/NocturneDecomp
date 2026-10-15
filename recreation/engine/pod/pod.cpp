@@ -50,6 +50,8 @@ void CPod::mount(std::string_view pod_filename) {
 }
 
 // The retail build clears the texture cache here, whether or not a pod was mounted from the file.
+// deferred: clearing the texture cache, which nothing registers as the dismount handler, with
+//   retail clearTextureCache's port calling setDismountHandler
 // nocedit 0x00550b90
 void CPod::dismount(std::string_view filename) {
     SFoundFileInfo info{std::string(filename)};

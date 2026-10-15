@@ -21,8 +21,10 @@ double widen(float value) {
 common::CVector3f transformVector3x4(const common::CVector3f &input_vector,
                                      const common::CMatrix3x4f &matrix) {
     const auto row = [&input_vector](const std::array<float, 4> &m) {
-        return static_cast<float>((widen(input_vector.z) * m[2]) + (widen(input_vector.x) * m[0]) +
-                                  (widen(input_vector.y) * m[1]) + m[3]);
+        return static_cast<float>(
+            (((widen(input_vector.y) * m[1]) + (widen(input_vector.x) * m[0])) +
+             (widen(input_vector.z) * m[2])) +
+            m[3]);
     };
     return {.x = row(matrix.m[0]), .y = row(matrix.m[1]), .z = row(matrix.m[2])};
 }
@@ -35,19 +37,18 @@ void clearTranslation(common::CMatrix3x4f &matrix) {
 }
 
 // CMatrix3x3f's reading of the rotation once each row is unit length; a zero row is left as it is.
+// The original also wraps the x angle past -pi, which asin never reaches.
 // nocedit 0x005f5690
 common::CVector3f matrixToEulerAngles(const common::CMatrix3x4f &matrix_in) {
-    common::CMatrix3x3f rotation;
-    for (std::size_t i = 0; i < rotation.m.size(); ++i) {
+    common::Rows3x3d rows;
+    for (std::size_t i = 0; i < rows.size(); ++i) {
         const std::array<float, 4> &row = matrix_in.m[i];
-        const double length = std::sqrt((widen(row[2]) * row[2]) + (widen(row[0]) * row[0]) +
-                                        (widen(row[1]) * row[1]));
+        const double length = std::sqrt(((widen(row[0]) * row[0]) + (widen(row[1]) * row[1])) +
+                                        (widen(row[2]) * row[2]));
         const double scale = length > 0.0 ? 1.0 / length : length;
-        rotation.m[i] = {.x = static_cast<float>(row[0] * scale),
-                         .y = static_cast<float>(row[1] * scale),
-                         .z = static_cast<float>(row[2] * scale)};
+        rows[i] = {row[0] * scale, row[1] * scale, row[2] * scale};
     }
-    return rotation.getEulerAngles();
+    return common::eulerAnglesFromRows(rows);
 }
 
 // nocedit 0x005f7280
@@ -77,32 +78,37 @@ common::CMatrix3x4f quaternionToMatrix3x4(const common::CQuaternion4f &quat_in) 
     return matrix;
 }
 
+// As the original's unordered compares do, a NaN t gives the second rotation and a NaN cosine
+// takes the arc.
 // nocedit 0x005f77e0
 common::CQuaternion4f slerpQuaternion(const common::CQuaternion4f &quat1_in,
                                       const common::CQuaternion4f &quat2_in, float t) {
     if (t <= 0.0F) {
         return quat1_in;
     }
-    if (t >= 1.0F) {
+    if (!(t < 1.0F)) {
         return quat2_in;
     }
     common::CQuaternion4f target = quat2_in;
-    double cosine = (widen(quat1_in.w) * quat2_in.w) + (widen(quat1_in.z) * quat2_in.z) +
-                    (widen(quat1_in.y) * quat2_in.y) + (widen(quat1_in.x) * quat2_in.x);
+    double cosine = (((widen(quat1_in.x) * quat2_in.x) + (widen(quat1_in.y) * quat2_in.y)) +
+                     (widen(quat1_in.z) * quat2_in.z)) +
+                    (widen(quat1_in.w) * quat2_in.w);
     if (cosine < 0.0) {
         target = {.w = -target.w, .x = -target.x, .y = -target.y, .z = -target.z};
         cosine = -cosine;
     }
     double from_weight = 1.0 - t;
     double to_weight = t;
-    if (cosine <= kNearlyParallel) {
+    if (!(cosine > kNearlyParallel)) {
         const double sine = std::sqrt(1.0 - (cosine * cosine));
         const double angle = std::atan2(sine, cosine);
-        from_weight = std::sin((1.0 - t) * angle) / sine;
-        to_weight = std::sin(t * angle) / sine;
+        const double inverse_sine = 1.0 / sine;
+        from_weight = std::sin((1.0 - t) * angle) * inverse_sine;
+        to_weight = std::sin(t * angle) * inverse_sine;
     }
-    const auto blend = [from = static_cast<float>(from_weight), to = static_cast<float>(to_weight)](
-                           float a, float b) { return (b * to) + (a * from); };
+    const auto blend = [from_weight, to_weight](float a, float b) {
+        return static_cast<float>((a * from_weight) + (b * to_weight));
+    };
     return {.w = blend(quat1_in.w, target.w),
             .x = blend(quat1_in.x, target.x),
             .y = blend(quat1_in.y, target.y),

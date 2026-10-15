@@ -71,12 +71,15 @@ bool CSndMain::parseWavFile(std::string_view file, std::size_t &data_offset,
     };
     common::CBinaryReader reader(std::as_bytes(std::span(file)));
     const SChunk riff = readChunk(reader, 0);
-    const std::string wave = reader.readString(4);
     if (reader.hasFailed()) {
         return false;
     }
     if (riff.id != "RIFF") {
         return invalid(R"("RIFF" ID not found at offset 00000000h)");
+    }
+    const std::string wave = reader.readString(4);
+    if (reader.hasFailed()) {
+        return false;
     }
     if (wave != "WAVE") {
         return invalid(R"("WAVE" ID not found at offset 00000008h)");
@@ -155,6 +158,7 @@ CSfxSample &CSndMain::findFreeSfxSample() {
 }
 
 // The loaded sample by that name, or one loaded into the next free place, ousting what it held.
+// The original could also decode a whole MP3, which nothing asked of it: MP3s are streamed.
 // nocedit 0x005a4c80
 CSfxSample *CSndMain::getSfxSample(std::string_view filename) {
     for (CSfxSample &loaded : sfx_samples_) {
@@ -224,12 +228,14 @@ CSfxSample *CSndMain::openStreamingSample(std::string_view filename, std::size_t
     }
     info.name = filename;
     sample.parseConfigFile(dos_io_);
+    ensureSoundMemoryAvailable(sample.getStreamBufferSize());
     sample.streaming_slot_index = static_cast<int>(slot);
     sample.stream = std::move(stream);
     return &sample;
 }
 
-// An MP3's length is whatever its .sfx file says.
+// An MP3's length is whatever its .sfx file says. The original took a corrupt MP3's format from
+// its decoder anyway; here it has no info.
 // nocedit 0x005aa3f0
 std::optional<CSampleInfo> CSndMain::getSampleInfo(std::string_view sample_name) {
     for (const CSfxSample &loaded : sfx_samples_) {

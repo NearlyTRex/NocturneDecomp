@@ -42,8 +42,7 @@ public:
     int renderDepthProfiledDirect(platform::SMRGLHeaderPrimitive *prim);
     void renderTexturedDirect(platform::SMRGLHeaderPrimitive *prim, int render_flags);
     // These three skip a polygon facing away while plane culling is on, and give each corner the
-    // polygon's texture coordinates before drawing it through the perspective scanline. The
-    // shadow pass and texture capture in-game code asks for arrive with that code.
+    // polygon's texture coordinates before drawing it through the perspective scanline.
     void renderTexturedPoly(const platform::SMRGLPrimitiveQuad &poly, int render_flags);
     void renderAlphaBlendedPoly(const platform::SMRGLPrimitiveQuad &poly);
     void renderDecalPoly(SMRGLPrimitivePoly *poly);

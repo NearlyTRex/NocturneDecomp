@@ -184,6 +184,7 @@ int run() {
     try {
         return runGame(window, file_system, clock, winrun);
     } catch (const nocturne::common::CFatalError &error) {
+        // Retail writes no gtfo.txt; nocedit's log is kept so a fatal error outlives its box.
         file_system.appendFile("gtfo.txt", error.getLogEntry(getLocalTime()));
         winrun.displayMessageBoxAndQuit(error);
         return 1;

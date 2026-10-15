@@ -173,6 +173,7 @@ private:
     bool loadSampleData(CSfxSample &sample, std::string_view filename);
     bool parseWavFile(std::string_view file, std::size_t &data_offset, CSampleInfo &sample_info);
     [[nodiscard]] static int findBestSoundDevice();
+    void readMixerSettings(const engine::CIniFile &ini_file);
     [[nodiscard]] CSfxOptions &getNextSfxOptions();
     static void checkSfxChannel(std::string_view function, int channel_index);
 
@@ -210,6 +211,9 @@ private:
     int audio_bits_per_sample_ = 16;
     int audio_channel_count_ = 2;
     int audio_sample_rate_ = 22050;
+    // Only read and written back, so the INI keeps the shipped game's values.
+    int hw_mixing_enabled_ = 1;
+    float max_sw_latency_ = 0.5F;
 
     CSfxAnalyzer analyzer_;
 };

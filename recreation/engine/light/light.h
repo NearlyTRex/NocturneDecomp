@@ -18,8 +18,7 @@ public:
     void setLightDirection(const common::CVector3i &direction);
 
 private:
-    // The original's setDirectionalLightVector also kept a second copy, read only by the vertex
-    // lighting and not saved by a 3D window.
+    // The original's setDirectionalLightVector also kept a second copy, which nothing reads.
     common::CVector3i light_direction_;
 };
 

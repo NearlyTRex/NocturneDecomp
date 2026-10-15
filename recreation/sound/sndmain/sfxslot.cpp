@@ -20,7 +20,7 @@ constexpr double kMaximumDoppler = 4.0;
 constexpr float kMinimumFrequency = 0.05F;
 constexpr float kMaximumFrequency = 20.0F;
 // Nearer than this share of the reference distance, a sound is as loud as it gets.
-constexpr float kNearShare = 0.05F;
+constexpr double kNearShare = 0.05;
 constexpr float kNearGain = 20.0F;
 
 common::CVector3d toDouble(const common::CVector3f &v) {
@@ -39,11 +39,15 @@ double length(const common::CVector3d &v) {
     return std::sqrt(dot(v, v));
 }
 
-// Nothing called it; computeChannelVolumes had its own copy.
+// Nothing called it; computeChannelVolumes had its own copy. Nearer than the minimum, or NaN,
+// takes the minimum.
 // nocedit 0x005a56c0
 float calculateDistanceGain(float distance, float reference_distance, float min_distance,
                             float max_distance) {
-    distance = std::min(std::max(distance, min_distance), max_distance);
+    if (!(distance >= min_distance)) {
+        distance = min_distance;
+    }
+    distance = std::min(distance, max_distance);
     return distance > reference_distance * kNearShare ? reference_distance / distance : kNearGain;
 }
 
@@ -55,7 +59,8 @@ CSfxSlot::CSfxSlot(CSndMain &sound_main) : sound_main_(sound_main) {}
 CSfxSlot::~CSfxSlot() = default;
 
 // The original also printed its working to the console for a slot setSfxIsActive picked, which
-// nothing in the game ever did.
+// nothing in the game ever did, and worked out a delay for each ear from its distance, which the
+// per-ear gains make up for.
 // nocedit 0x005a7100
 bool CSfxSlot::compute(float delta_time) {
     if (sample == nullptr) {
@@ -69,19 +74,21 @@ bool CSfxSlot::compute(float delta_time) {
             }
             options.current_volume = fade_target_volume;
         } else {
-            options.current_volume +=
-                delta_time / fade_time_remaining * (fade_target_volume - options.current_volume);
-            fade_time_remaining -= delta_time;
+            advanceFade(delta_time);
         }
     }
     updateBoundPositionAndVelocity();
     effective_frequency = options.base_frequency;
     if (isPositional()) {
-        effective_frequency *= computeDoppler();
+        effective_frequency = static_cast<float>(effective_frequency * computeDoppler());
     }
     computeDistancesToSpeakers();
     computeChannelVolumes();
-    effective_frequency = std::clamp(effective_frequency, kMinimumFrequency, kMaximumFrequency);
+    // Below the least, or NaN, takes the least.
+    if (!(effective_frequency >= kMinimumFrequency)) {
+        effective_frequency = kMinimumFrequency;
+    }
+    effective_frequency = std::min(effective_frequency, kMaximumFrequency);
     if (voice_ != nullptr) {
         voice_->setGains(getChannelVolumes());
         voice_->setPitch(effective_frequency);
@@ -89,16 +96,27 @@ bool CSfxSlot::compute(float delta_time) {
     return true;
 }
 
-// The listener's speed towards the sound, as a share of the speed of sound.
-float CSfxSlot::computeDoppler() const {
+// The original's step, rounded to float only where it stores.
+void CSfxSlot::advanceFade(float delta_time) {
+    const double share = static_cast<double>(delta_time) / fade_time_remaining;
+    options.current_volume = static_cast<float>(
+        (static_cast<double>(fade_target_volume) - options.current_volume) * share +
+        options.current_volume);
+    fade_time_remaining -= delta_time;
+}
+
+// The listener's speed towards the sound, as a share of the speed of sound; below a quarter, or
+// NaN, takes a quarter.
+double CSfxSlot::computeDoppler() const {
     const common::CVector3d offset = subtract(options.position, sound_main_.getListenerPosition());
     const common::CVector3d closing = subtract(sound_main_.getListenerVelocity(), options.velocity);
     const double distance = length(offset);
     const double speed = distance <= 0.0 ? length(closing) : dot(offset, closing) / distance;
-    return static_cast<float>(
-        std::clamp((speed + kSpeedOfSound) / kSpeedOfSound, kMinimumDoppler, kMaximumDoppler));
+    const double doppler = (speed + kSpeedOfSound) / kSpeedOfSound;
+    return !(doppler >= kMinimumDoppler) ? kMinimumDoppler : std::min(doppler, kMaximumDoppler);
 }
 
+// The original also followed double-precision sources, which nothing in the game sets.
 // nocedit 0x005a6ce0
 void CSfxSlot::updateBoundPositionAndVelocity() {
     if (options.position_source_ptr != nullptr) {

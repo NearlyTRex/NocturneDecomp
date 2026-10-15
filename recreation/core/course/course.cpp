@@ -109,14 +109,15 @@ void CCourse::interpolate(float time, common::CVector3f &out_pos,
             index = length - 1;
         }
     } else {
-        const auto span = static_cast<float>(length);
+        const auto span = static_cast<double>(static_cast<float>(length));
+        const auto exact_time = static_cast<double>(time);
         float wrapped = 0.0F;
         if (time >= 0.0F) {
-            wrapped = time - (std::floor(time / span) * span);
+            wrapped = static_cast<float>(exact_time - (std::floor(exact_time / span) * span));
         } else {
-            wrapped = (std::floor(-time / span) * span) + time;
+            wrapped = static_cast<float>((std::floor(-exact_time / span) * span) + exact_time);
             if (wrapped < 0.0F) {
-                wrapped += span;
+                wrapped = static_cast<float>(wrapped + span);
             }
         }
         index = static_cast<int>(wrapped);
@@ -135,9 +136,11 @@ void CCourse::interpolate(float time, common::CVector3f &out_pos,
     }
     const CCourseFrame &to = frames_[static_cast<std::size_t>(next)];
     const float keep = 1.0F - fraction;
-    out_pos = {.x = (from.pos.x * keep) + (to.pos.x * fraction),
-               .y = (from.pos.y * keep) + (to.pos.y * fraction),
-               .z = (from.pos.z * keep) + (fraction * to.pos.z)};
+    // z adds the from-frame's product unrounded, as the original's register stack left it.
+    out_pos = {
+        .x = (from.pos.x * keep) + (to.pos.x * fraction),
+        .y = (from.pos.y * keep) + (to.pos.y * fraction),
+        .z = static_cast<float>((static_cast<double>(from.pos.z) * keep) + (fraction * to.pos.z))};
     out_orient = slerpQuaternion(from.orient, to.orient, fraction);
 }
 

@@ -15,7 +15,9 @@ functions is broken into the calls it makes, in their order, and consecutive ste
 than --merge are joined. Each function lands in the first step that reaches it, so a class's
 methods arrive as startup needs them; its header already declares them all. Translation units
 and functions come leaves first. A function counts as done when the recreation has its
-`// nocedit 0x...` line.
+`// nocedit 0x...` line, and as partial when the comment above that line also holds a
+`// deferred: <what>, with <what brings it>` or `// unverified: <what>, <how>` item, which may run
+on over lines starting `//` and two or more spaces.
 
 Usage: recreation_itinerary.py [--out docs/recreation-itinerary.md] [--split 300] [--merge 25]
 """
@@ -77,7 +79,10 @@ UNITS = [
 ]
 CALL = re.compile(r"FUN_([0-9a-f]{8})")
 # Indented for a template defined in its class.
-DONE = re.compile(r"^[ \t]*// nocedit 0x([0-9a-f]{8})$", re.MULTILINE)
+DONE = re.compile(r"^[ \t]*// nocedit 0x([0-9a-f]{8})$")
+DEFERRED = re.compile(r"^[ \t]*// ((?:deferred|unverified): .+)$")
+CONTINUED = re.compile(r"^[ \t]*//  +(\S.*)$")
+COMMENT = re.compile(r"^[ \t]*//")
 SOURCE_SUFFIXES = (".c", ".cpp")
 MAX_SPLIT_DEPTH = 4
 
@@ -95,13 +100,47 @@ def source_files(source=SOURCE):
     return files
 
 
+def deferred_items(lines):
+    """Each address line's deferred and unverified items, from the comment block just above it,
+    and the line number of each item no address line follows."""
+    found = {}
+    orphans = []
+    block = []
+    for number, line in enumerate(lines, 1):
+        done = DONE.match(line)
+        if done:
+            found.setdefault(done.group(1), []).extend(item for _, item in block)
+            block = []
+            continue
+        deferred = DEFERRED.match(line)
+        continued = CONTINUED.match(line)
+        if deferred:
+            block.append((number, deferred.group(1)))
+        elif continued and block:
+            block[-1] = (block[-1][0], block[-1][1] + " " + continued.group(1))
+        elif not COMMENT.match(line):
+            orphans += [n for n, _ in block]
+            block = []
+    return found, orphans + [n for n, _ in block]
+
+
 def done_addresses():
-    done = set()
+    """Every ported address, with the items it still defers or hasn't verified. An item that no
+    address line follows would go uncounted, so it is fatal."""
+    done = {}
+    orphans = []
     for directory, _, names in os.walk(RECREATION):
         for name in names:
             if name.endswith((".cpp", ".h")):
-                with open(os.path.join(directory, name), encoding="utf-8") as f:
-                    done.update(DONE.findall(f.read()))
+                path = os.path.join(directory, name)
+                with open(path, encoding="utf-8") as f:
+                    found, stray = deferred_items(f.read().splitlines())
+                for addr, items in found.items():
+                    done.setdefault(addr, []).extend(items)
+                orphans += ["%s:%d" % (os.path.relpath(path, ROOT), n) for n in stray]
+    if orphans:
+        sys.exit("deferred or unverified items with no address line under them:\n  " +
+                 "\n  ".join(orphans))
     return done
 
 
@@ -149,7 +188,9 @@ class Itinerary:
         # What pass 1 leaves to the compiler counts as done: a default constructor or destructor
         # that only returns `this`, and a copy constructor or assignment that calls nothing.
         self.generated = {a for a in self.in_scope if self.is_compiler_generated(self.functions[a])}
-        self.done = done_addresses() | self.generated
+        ported = done_addresses()
+        self.deferred = {a: items for a, items in ported.items() if items}
+        self.done = (set(ported) - set(self.deferred)) | self.generated
         self.vtable_slots = collections.defaultdict(set)
         for table in self.model.vtables:
             for slot in table["slots"]:
@@ -332,13 +373,16 @@ class Itinerary:
 
     def counts(self, addrs):
         instructions = sum(self.functions[a]["instructions"] for a in addrs)
-        return len(addrs), instructions, len(addrs & self.done)
+        return (len(addrs), instructions, len(addrs & self.done),
+                len(addrs & set(self.deferred)))
 
-    def function_line(self, addr):
+    def function_lines(self, addr):
         f = self.functions[addr]
-        mark = "x" if addr in self.done else " "
+        mark = "x" if addr in self.done else "~" if addr in self.deferred else " "
         note = ", compiler-generated" if addr in self.generated else ""
-        return "  - [%s] `%s` 0x%s (%d%s)" % (mark, f["method"], addr, f["instructions"], note)
+        lines = ["  - [%s] `%s` 0x%s (%d%s)" % (mark, f["method"], addr, f["instructions"], note)]
+        lines += ["    - %s" % item for item in self.deferred.get(addr, [])]
+        return lines
 
     def render(self):
         lines = [
@@ -350,32 +394,40 @@ class Itinerary:
             "startup makes, in the order it makes them, holding the functions that call is the first",
             "to need; then what startup never reaches, by module. Within a step, translation units",
             "and functions come leaves first. A box is ticked when the recreation has the",
-            "function's `// nocedit` address line, or when pass 1 left it to the compiler. Sizes are",
-            "in instructions.",
+            "function's `// nocedit` address line, or when pass 1 left it to the compiler. It is",
+            "marked `[~]`, partial, when the function still defers part of the original or has a",
+            "path not yet verified against it, and each such item is listed under it. Partial",
+            "functions don't count as done. Sizes are in instructions.",
             "",
-            "| Step | First needed by | TUs | Functions | Instructions | Done | % Done |",
-            "|---|---|---|---|---|---|---|",
+            "| Step | First needed by | TUs | Functions | Instructions | Done | Partial | % Done |",
+            "|---|---|---|---|---|---|---|---|",
         ]
         for i, step in enumerate(self.steps):
-            n, instructions, done = self.counts(step.addrs)
-            lines.append("| %d | %s | %d | %d | %d | %d | %s |"
+            n, instructions, done, partial = self.counts(step.addrs)
+            lines.append("| %d | %s | %d | %d | %d | %d | %d | %s |"
                          % (i, step.label, len(self.tu_groups(step)), n, instructions, done,
-                            percent(done, n)))
-        n, instructions, done = self.counts(self.in_scope)
-        lines.append("| | **All** | | **%d** | **%d** | **%d** | **%s** |"
-                     % (n, instructions, done, percent(done, n)))
+                            partial, percent(done, n)))
+        n, instructions, done, partial = self.counts(self.in_scope)
+        lines.append("| | **All** | | **%d** | **%d** | **%d** | **%d** | **%s** |"
+                     % (n, instructions, done, partial, percent(done, n)))
         for i, step in enumerate(self.steps):
             lines += ["", "## Step %d: %s" % (i, step.label)]
             for tu, addrs in self.tu_groups(step):
-                n, instructions, done = self.counts(addrs)
-                lines += ["", "### `%s` (%d functions, %d instructions, %d done)"
-                          % (tu, n, instructions, done)]
+                n, instructions, done, partial = self.counts(addrs)
+                lines += ["", "### `%s` (%d functions, %d instructions, %d done, %d partial)"
+                          % (tu, n, instructions, done, partial)]
                 by_class = collections.defaultdict(list)
                 for addr in self.leaves_first(addrs, step.order):
                     by_class[self.functions[addr].get("cls") or ""].append(addr)
                 for cls, members in by_class.items():
                     lines.append("- %s" % ("class `%s`" % cls if cls else "free functions"))
-                    lines += [self.function_line(a) for a in members]
+                    for addr in members:
+                        lines += self.function_lines(addr)
+        stray = sorted(set(self.deferred) - self.in_scope)
+        if stray:
+            lines += ["", "## Partial outside the itinerary", ""]
+            for addr in stray:
+                lines += ["- 0x%s" % addr] + ["  - %s" % item for item in self.deferred[addr]]
         return "\n".join(lines) + "\n"
 
 

@@ -1,5 +1,7 @@
 #include "engine/keyframe/keyframe.h"
 
+#include "common/math/fixed.h"
+#include "common/math/math.h"
 #include "platform/mrglprimitivequad.h"
 
 #include <algorithm>
@@ -8,6 +10,8 @@
 
 namespace nocturne::engine {
 namespace {
+
+using common::roundToFloat;
 
 constexpr double kNormalLength = 65535.0;
 
@@ -19,7 +23,8 @@ int roundToNearest(double value) {
 } // namespace
 
 // Fewer than three corners, or a corner past the vertices, makes no plane; the original read
-// past them.
+// past them. The original stores the first edge's z, the normal, its length, the scaled normal
+// and the distance as floats.
 // nocedit 0x00501bc0
 platform::SClipPlane calculateSurfaceNormal(std::span<const common::CVector3i> vertex_data,
                                             const platform::SMRGLPrimitiveQuad &polygon) {
@@ -34,26 +39,30 @@ platform::SClipPlane calculateSurfaceNormal(std::span<const common::CVector3i> v
     const common::CVector3i &p0 = vertex_data[static_cast<std::size_t>(corners[0].vertex_index)];
     const common::CVector3i &p1 = vertex_data[static_cast<std::size_t>(corners[1].vertex_index)];
     const common::CVector3i &p2 = vertex_data[static_cast<std::size_t>(corners[2].vertex_index)];
-    const double ax = static_cast<double>(p1.x) - p0.x;
-    const double ay = static_cast<double>(p1.y) - p0.y;
-    const double az = static_cast<double>(p1.z) - p0.z;
-    const double bx = static_cast<double>(p2.x) - p1.x;
-    const double by = static_cast<double>(p2.y) - p1.y;
-    const double bz = static_cast<double>(p2.z) - p1.z;
-    const double nx = (ay * bz) - (by * az);
-    const double ny = (bx * az) - (ax * bz);
-    const double nz = (ax * by) - (bx * ay);
-    double length = std::sqrt((nz * nz) + (ny * ny) + (nx * nx));
+    const auto edge = [](int to, int from) {
+        return static_cast<double>(common::wrappingSubtract(to, from));
+    };
+    const double ax = edge(p1.x, p0.x);
+    const double ay = edge(p1.y, p0.y);
+    const double az = roundToFloat(edge(p1.z, p0.z));
+    const double bx = edge(p2.x, p1.x);
+    const double by = edge(p2.y, p1.y);
+    const double bz = edge(p2.z, p1.z);
+    const double nx = roundToFloat((ay * bz) - (by * az));
+    const double ny = roundToFloat((bx * az) - (bz * ax));
+    const double nz = roundToFloat((ax * by) - (ay * bx));
+    double length = roundToFloat(std::sqrt(((nx * nx) + (ny * ny)) + (nz * nz)));
     if (length == 0.0) {
         length = kNormalLength;
     }
-    const double a = nx / length * kNormalLength;
-    const double b = ny / length * kNormalLength;
-    const double c = nz / length * kNormalLength;
+    const double inverse = 1.0 / length;
+    const double a = roundToFloat(nx * inverse * kNormalLength);
+    const double b = roundToFloat(ny * inverse * kNormalLength);
+    const double c = roundToFloat(nz * inverse * kNormalLength);
     return {.a = roundToNearest(a),
             .b = roundToNearest(b),
             .c = roundToNearest(c),
-            .d = roundToNearest((p0.z * c) + (p0.x * a) + (p0.y * b))};
+            .d = roundToNearest(roundToFloat(((p0.y * b) + (p0.x * a)) + (p0.z * c)))};
 }
 
 } // namespace nocturne::engine

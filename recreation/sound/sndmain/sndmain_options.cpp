@@ -16,11 +16,13 @@ void CSndMain::setNextSfxStaticPosition(double pos_x, double pos_y, double pos_z
     options.position_source_ptr = nullptr;
 }
 
+// The original followed a null source too, reading through it; here it stops the following.
 // nocedit 0x005a8940
 void CSndMain::setNextSfxTrackedFloatPosition(const common::CVector3f *position_source_ptr) {
     getNextSfxOptions().position_source_ptr = position_source_ptr;
 }
 
+// The original followed a null source too, reading through it; here it stops the following.
 // nocedit 0x005a8a00
 void CSndMain::setNextSfxTrackedVelocity1(const common::CVector3f *velocity_source_ptr) {
     getNextSfxOptions().velocity_source_ptr = velocity_source_ptr;

@@ -16,7 +16,8 @@ public:
     void zero();
     // 8.8 fixed point, rounded to nearest with ties to even.
     [[nodiscard]] CVector3i toFixed8() const;
-    // Exact comparison; the original returns 1 or 0.
+    // Exact comparison, where a NaN on either side counts as equal, as the original's unordered
+    // compare does.
     [[nodiscard]] bool equals(const CVector3f &b) const;
 };
 

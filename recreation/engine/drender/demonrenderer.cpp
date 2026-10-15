@@ -28,8 +28,8 @@ void CDemonRenderer::setPlaneCullingEnabled(bool enabled) {
     plane_culling_enabled_ = enabled;
 }
 
-// The original's mode 2, the mirror pass's opposite winding, arrives with enableAdvancedCulling's
-// callers in the mirror code.
+// deferred: culling mode 2, the mirror pass's opposite winding, with enableAdvancedCulling's
+//   callers
 // nocedit 0x0048ca00
 void CDemonRenderer::setRenderingState(bool culling) {
     three_d_.setCullingMode(culling ? 1 : 0);
@@ -46,14 +46,15 @@ int CDemonRenderer::setRenderAlpha(int render_alpha) {
     return three_d_.setRenderAlpha(render_alpha);
 }
 
-// The original also recorded the texture while setTextureCaptureMode had capture on, which
-// arrives with that mode's callers.
+// deferred: recording the texture while texture capture is on, with setTextureCaptureMode's
+//   callers
 // nocedit 0x0048db80
 void CDemonRenderer::captureTexture(platform::SMRGLTextureBasic &texture) {
     textures_.ensureTextureLoaded(texture);
 }
 
-// The original also set the vertex processing flag 3d.c's dispatch reads, which arrives with it.
+// deferred: setting the vertex-processing flag, with 3d.c's dispatchMRGLBlockChain and
+//   transformAndBufferVertices, which read it
 // nocedit 0x0048caa0
 void CDemonRenderer::enableFaceCapture(bool enabled) {
     face_capture_enabled_ = enabled;

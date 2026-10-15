@@ -11,6 +11,8 @@
 #include "platform/rendervertex.h"
 
 #include <algorithm>
+#include <array>
+#include <cmath>
 #include <cstddef>
 #include <format>
 #include <span>
@@ -38,20 +40,22 @@ void checkVertexCount(std::string_view what, int vertex_count, std::size_t capac
     }
 }
 
-// The face's normal, scaled to about 65535 by the rough reciprocal square root.
+// The face's normal, scaled to about 65535 by the rough reciprocal square root. The edges stay
+// whole except where the original rounds a component to a float for one of the products.
 CVector3f getFaceNormal(const CVector3i &p0, const CVector3i &p1, const CVector3i &p2) {
     const auto along = [](const CVector3i &to, const CVector3i &from) {
-        return CVector3f{.x = static_cast<float>(wrappingSubtract(to.x, from.x)),
-                         .y = static_cast<float>(wrappingSubtract(to.y, from.y)),
-                         .z = static_cast<float>(wrappingSubtract(to.z, from.z))};
+        return std::array{static_cast<double>(wrappingSubtract(to.x, from.x)),
+                          static_cast<double>(wrappingSubtract(to.y, from.y)),
+                          static_cast<double>(wrappingSubtract(to.z, from.z))};
     };
-    const CVector3f a = along(p1, p0);
-    const CVector3f b = along(p2, p1);
-    const double x = (double{a.y} * b.z) - (double{b.y} * a.z);
-    const double y = (double{b.x} * a.z) - (double{a.x} * b.z);
-    const double z = (double{a.x} * b.y) - (double{b.x} * a.y);
+    const auto [ax, ay, az] = along(p1, p0);
+    const auto [bx, by, bz] = along(p2, p1);
+    const auto stored = [](double value) { return static_cast<double>(static_cast<float>(value)); };
+    const double x = (ay * stored(bz)) - (by * az);
+    const double y = (bx * az) - (ax * stored(bz));
+    const double z = (ax * by) - (stored(bx) * stored(ay));
     const double scale =
-        double{fastInvSqrt(static_cast<float>((z * z) + (y * y) + (x * x)))} * kUnitNormal;
+        double{fastInvSqrt(static_cast<float>(((x * x) + (y * y)) + (z * z)))} * kUnitNormal;
     return {.x = static_cast<float>(x * scale),
             .y = static_cast<float>(y * scale),
             .z = static_cast<float>(z * scale)};
@@ -63,20 +67,22 @@ void addTo(CVector3f &sum, const CVector3f &normal) {
     sum.z += normal.z;
 }
 
-// The summed normal brought back to about 65535 long, and chopped to whole numbers.
+// The summed normal brought back to about 65535 long, and rounded to whole numbers by a bare
+// FISTP: to nearest, ties to even.
 CVector3i toUnitNormal(const CVector3f &sum) {
     const double scale =
-        double{fastInvSqrt(static_cast<float>((double{sum.z} * sum.z) + (double{sum.x} * sum.x) +
-                                              (double{sum.y} * sum.y)))} *
+        double{fastInvSqrt(static_cast<float>(((double{sum.y} * sum.y) + (double{sum.x} * sum.x)) +
+                                              (double{sum.z} * sum.z)))} *
         kUnitNormal;
-    return {.x = common::truncateToInt(static_cast<float>(sum.x * scale)),
-            .y = common::truncateToInt(static_cast<float>(sum.y * scale)),
-            .z = common::truncateToInt(static_cast<float>(sum.z * scale))};
+    const auto nearest = [scale](float component) {
+        return static_cast<int>(std::nearbyint(static_cast<float>(component * scale)));
+    };
+    return {.x = nearest(sum.x), .y = nearest(sum.y), .z = nearest(sum.z)};
 }
 
 } // namespace
 
-// The original also pushed the vertices' screen bounds to the scene camera, which arrives with it.
+// deferred: pushing the vertices' screen bounds to the scene camera, with the scene camera
 // nocedit 0x0056e7c0
 void CDemonSet::rotateVerticies(std::span<const CVector3i> input_vertices) {
     const std::span<SRenderVertex> buffer = renderer_.getVertexBuffer();
@@ -93,9 +99,18 @@ void CDemonSet::rotateVerticies(std::span<const CVector3i> input_vertices) {
     }
 }
 
-// The original lit by quick light only while rendering_mode asked for it, and otherwise by the
-// spatial lights, a quality mode, a cached mirror colour or none in the shadow pass; those
-// arrive with the in-game code that sets them. It kept the face normals in the polygons' planes.
+// The original kept the face normals in the polygons' planes.
+// deferred: lighting by the spatial lights while rendering_mode is 0, the given normals turned
+//   by the camera first, with the scene's lights
+// deferred: the quality modes' lighting, with setCameraView and the actors that set
+//   lighting_quality_mode
+// deferred: the cached mirror colour, with cacheMirrorLighting
+// deferred: lighting without the directional light, with the actors that set
+//   disable_directional_lighting
+// deferred: leaving the colours alone in the shadow pass, with setShadowPass's callers
+// deferred: skipping small normals' normalisation while skip_normal_normalization is set, with
+//   CSvetlana::renderOpaque
+// deferred: packed and triangle face lists, with the callers that pass them
 // nocedit 0x0056eac0
 void CDemonSet::lightVerticies(int vertex_count,
                                std::span<const platform::SMRGLPrimitiveQuad> polygons,
@@ -141,8 +156,9 @@ void CDemonSet::lightVerticies(int vertex_count,
     }
 }
 
-// The original also gave the vertex the scene camera's perspective reciprocal as its alpha, 0
-// until in-game code sets it, and lit by the spatial lights outside quick light.
+// deferred: the perspective reciprocal as the alpha, 0 until set, with the scene camera's
+//   perspective setup
+// deferred: the spatial lighting outside quick light, with the scene's lights
 // nocedit 0x0056ddb0
 void CDemonSet::lightVertexColor(const CVector3i &surface_normal, SRenderVertex &vertex) const {
     const int facing = wrappingSubtract(

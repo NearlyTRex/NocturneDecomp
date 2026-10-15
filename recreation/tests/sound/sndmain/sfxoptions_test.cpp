@@ -29,7 +29,7 @@ TEST(CSfxOptions, StartsAsAFullVolumeSoundAtTheOriginWithAnAutomaticDelay) {
     EXPECT_EQ(options.playback_position_type, EPlaybackPosType::Samples);
 }
 
-TEST(CSfxOptions, ResetPutsEverythingBack) {
+TEST(CSfxOptions, ResetPutsEverythingButTheFlagsBack) {
     const common::CVector3f tracked;
     CSfxOptions options;
     options.channel_index = 2;
@@ -48,7 +48,7 @@ TEST(CSfxOptions, ResetPutsEverythingBack) {
     EXPECT_EQ(options.velocity_source_ptr, nullptr);
     EXPECT_EQ(options.current_volume, 1.0F);
     EXPECT_EQ(options.delay_remaining, CSfxOptions::kAutoDelay);
-    EXPECT_EQ(options.flags, 0U);
+    EXPECT_EQ(options.flags, kSfxNonPositional);
     EXPECT_EQ(options.playback_position, 0.0);
     EXPECT_EQ(options.playback_position_type, EPlaybackPosType::Samples);
 }

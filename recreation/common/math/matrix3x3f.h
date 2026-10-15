@@ -6,6 +6,9 @@
 
 namespace nocturne::common {
 
+// A rotation's rows as the x87 holds them before they are stored as floats.
+using Rows3x3d = std::array<std::array<double, 3>, 3>;
+
 // Rows of a rotation; a vector transforms by row, so the transpose is the inverse rotation.
 class CMatrix3x3f {
 public:
@@ -21,5 +24,9 @@ public:
     void invert();
     [[nodiscard]] CMatrix3x3f multiply(const CMatrix3x3f &matrix_b) const;
 };
+
+// getEulerAngles on rows not yet rounded to float; the original repeats it inline in
+// matrixToEulerAngles.
+[[nodiscard]] CVector3f eulerAnglesFromRows(const Rows3x3d &rows);
 
 } // namespace nocturne::common

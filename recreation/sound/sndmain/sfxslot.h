@@ -65,7 +65,8 @@ private:
     void updateBoundPositionAndVelocity();
     void computeDistancesToSpeakers();
     void computeChannelVolumes();
-    [[nodiscard]] float computeDoppler() const;
+    void advanceFade(float delta_time);
+    [[nodiscard]] double computeDoppler() const;
     [[nodiscard]] std::size_t getChannelCount() const;
     [[nodiscard]] bool isPositional() const;
 

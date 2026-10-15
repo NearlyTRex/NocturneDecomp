@@ -267,9 +267,51 @@ TEST_F(CSpecialTest, LoadingSharesTheColourChannelsAndSelectsTheCard) {
         EXPECT_EQ(bridged, owned);
     }
     EXPECT_EQ(shared.texture_dimension, &current_texture_.dimension);
-    EXPECT_EQ(shared.blend_mode, nullptr);
     EXPECT_CALL(renderer_, selectCard(2)).WillOnce(Return(1));
     EXPECT_EQ(special_.selectCard(2), 1);
+}
+
+TEST_F(CSpecialTest, LoadingSharesTheBlendModeAndAlphaButNotTheLightOrQuality) {
+    special_.setUseDirect3D(true);
+    platform::CExternalRendererBridge shared;
+    EXPECT_CALL(renderer_, init(_)).WillOnce([&shared](platform::CExternalRendererBridge *bridge) {
+        shared = *bridge;
+        return 1;
+    });
+    ASSERT_EQ(special_.loadExternalRenderer(), 1);
+    EXPECT_EQ(shared.blend_mode, &three_d_.getBlendMode());
+    EXPECT_EQ(shared.current_alpha, &three_d_.getCurrentAlphaValue());
+    EXPECT_EQ(shared.current_lighting, nullptr);
+    EXPECT_EQ(shared.rendering_quality, nullptr);
+}
+
+// As startup leaves them: depth normalised against 0x10000, and bilinear filtering on.
+TEST_F(CSpecialTest, LoadingSharesTheQuadDepthAndTheInitialisedFlag) {
+    special_.setUseDirect3D(true);
+    platform::CExternalRendererBridge shared;
+    EXPECT_CALL(renderer_, init(_)).WillOnce([&shared](platform::CExternalRendererBridge *bridge) {
+        shared = *bridge;
+        return 1;
+    });
+    ASSERT_EQ(special_.loadExternalRenderer(), 1);
+    ASSERT_NE(shared.full_screen_quad_depth, nullptr);
+    ASSERT_NE(shared.system_initialized, nullptr);
+    EXPECT_EQ(*shared.full_screen_quad_depth, 0x10000);
+    EXPECT_EQ(*shared.system_initialized, 1);
+}
+
+// The renderer reads the blend mode as it changes.
+TEST_F(CSpecialTest, TheSharedBlendModeFollowsTheSetter) {
+    special_.setUseDirect3D(true);
+    const int *blend_mode = nullptr;
+    EXPECT_CALL(renderer_, init(_))
+        .WillOnce([&blend_mode](platform::CExternalRendererBridge *bridge) {
+            blend_mode = bridge->blend_mode;
+            return 1;
+        });
+    ASSERT_EQ(special_.loadExternalRenderer(), 1);
+    three_d_.setBlendMode(C3d::kAdditiveBlend);
+    EXPECT_EQ(*blend_mode, C3d::kAdditiveBlend);
 }
 
 // Processor type 0: the renderer's depth is the reciprocal the software renderer writes.

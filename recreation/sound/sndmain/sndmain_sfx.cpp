@@ -127,6 +127,7 @@ bool CSndMain::setSfxPosition(std::uint32_t sfx_handle, double pos_x, double pos
     });
 }
 
+// The original followed a null source too, reading through it; here it stops the following.
 // nocedit 0x005a98b0
 bool CSndMain::setSfxTrackedFloatPosition(std::uint32_t sfx_handle,
                                           const common::CVector3f *position_source_ptr) {
@@ -135,6 +136,7 @@ bool CSndMain::setSfxTrackedFloatPosition(std::uint32_t sfx_handle,
     });
 }
 
+// The original followed a null source too, reading through it; here it stops the following.
 // nocedit 0x005a9a00
 bool CSndMain::setSfxTrackedFloatVelocity(std::uint32_t sfx_handle,
                                           const common::CVector3f *velocity_source_ptr) {
@@ -232,6 +234,10 @@ void CSndMain::readFrames(std::span<float> frames) {
     analyzer_.record(frames);
 }
 
+// unverified: the band's bin bounds and sums, by running nocedit's own code on spectra poked into
+//   its transform buffers
+// unverified: the transform's float stores and its pi of 3.1415926535, which the double-precision
+//   transform doesn't keep, by running nocedit's transform on the same window
 // nocedit 0x005ac400
 float CSndMain::analyzeFrequencyBand(int channel, float freq_start_hz, float freq_end_hz) {
     return analyzer_.analyzeFrequencyBand(channel, freq_start_hz, freq_end_hz);

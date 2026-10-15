@@ -224,7 +224,15 @@ double CSfxSample::normalizePlaybackPos(double position, EPlaybackPosType input_
 }
 
 std::size_t CSfxSample::getMemorySize() const {
+    if (stream != nullptr) {
+        return getStreamBufferSize();
+    }
     return sample_data.size() * static_cast<std::size_t>(sample_info.bit_depth / 8);
+}
+
+std::size_t CSfxSample::getStreamBufferSize() const {
+    return static_cast<std::size_t>(getBytesPerFrame()) *
+           static_cast<std::size_t>(sample_info.sample_rate) * kStreamBufferSeconds;
 }
 
 } // namespace nocturne::sound

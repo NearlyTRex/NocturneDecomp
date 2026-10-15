@@ -35,6 +35,7 @@ void CDemonPod::load() {
         return;
     }
     common::CTextScanner text(*list);
+    // The original left the count uninitialised when the list didn't start with a number.
     const int count = common::scanInteger(text.scanWord()).value_or(0);
     // The original mounted its last name again for each one the list was short of.
     for (int i = 0; i < count; ++i) {

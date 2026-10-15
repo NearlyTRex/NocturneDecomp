@@ -5,6 +5,8 @@
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include <bit>
+#include <cstdint>
 #include <string>
 #include <type_traits>
 
@@ -72,6 +74,17 @@ TEST_F(CCourseTest, BetweenFramesThePositionBlendsAndTheTurnSlerps) {
     const SPoint halfway = at(1.5F);
     EXPECT_TRUE(halfway.pos.equals({.x = 10, .y = 10}));
     EXPECT_NEAR(halfway.euler.z, kQuarterPi, 1e-6F);
+}
+
+// The bits nocedit's own code gives: the z blend adds the from-frame's product unrounded, which
+// float maths throughout misses by an ulp.
+TEST_F(CCourseTest, TheZBlendKeepsTheFromFramesProductUnrounded) {
+    givenFile("data\\bat.pth", "; course\r\n1\r\n; frames, loop\r\n2,0\r\n; frames\r\n"
+                               "0,0,4909.375, 1,0,0,0\r\n"
+                               "0,0,-568, 1,0,0,0\r\n");
+    course_.load("bat.pth");
+    EXPECT_EQ(std::bit_cast<std::uint32_t>(at(std::bit_cast<float>(0x3f1971ebU)).pos.z),
+              0x44cb4887U);
 }
 
 TEST_F(CCourseTest, AlmostOnAFrameTakesTheFrame) {

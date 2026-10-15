@@ -91,7 +91,7 @@ private:
         bool operator==(const SDrawRecord &) const = default;
     };
 
-    [[nodiscard]] int readBridge(int *CExternalRendererBridge::*member, int fallback) const;
+    [[nodiscard]] int readBridge(const int *CExternalRendererBridge::*member, int fallback) const;
     [[nodiscard]] common::SRenderStateInput gatherState(int render_flags) const;
     [[nodiscard]] common::SVertexContext gatherVertexContext(std::uint32_t effective_flags,
                                                              int rhw_scale) const;

@@ -238,7 +238,7 @@ void CGlRenderer::endReflectionPass() {
     record_.reset();
 }
 
-int CGlRenderer::readBridge(int *CExternalRendererBridge::*member, int fallback) const {
+int CGlRenderer::readBridge(const int *CExternalRendererBridge::*member, int fallback) const {
     if (!bridge_ || (*bridge_).*member == nullptr) {
         return fallback;
     }

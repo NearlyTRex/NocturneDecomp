@@ -23,6 +23,8 @@ std::vector<CAlphaBitmap> makeFrames(std::size_t count, const CDosIo &dosio, ISc
 
 } // namespace
 
+// deferred: zeroing anim_timer and effect_mode, with CMouse::render, CMouse::startEffect and
+//   CMouse::consumeButton
 // nocedit 0x00544380
 CMouse::CMouse(const CDosIo &dosio, IScreenDevice &screen, CSpecial &special)
     : cursors_(makeFrames(kCursorCount, dosio, screen, special)),

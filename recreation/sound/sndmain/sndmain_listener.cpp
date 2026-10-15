@@ -35,7 +35,7 @@ bool CSndMain::isWithinListenerRadius(double pos_x, double pos_y, double pos_z,
     const double dx = pos_x - cached_3d_listener_pos_.x;
     const double dy = pos_y - cached_3d_listener_pos_.y;
     const double dz = pos_z - cached_3d_listener_pos_.z;
-    return dz * dz + dy * dy + dx * dx <= radius * radius;
+    return dx * dx + dy * dy + dz * dz <= radius * radius;
 }
 
 const common::CVector3d &CSndMain::getListenerPosition() const {
@@ -52,6 +52,7 @@ const common::CVector3d &CSndMain::getSpeakerPosition(std::size_t channel) const
 
 // Stereo puts an ear either side of the listener; any other layout hears from its centre. The
 // original worked this out before each mix; it is kept up to date as the listener moves instead.
+// The original scaled its distances by set3DListenerDistanceFactor, whose only caller passes 1.
 // nocedit 0x005a5530
 void CSndMain::calculateVirtualSpeakerPositions() {
     const common::CVector3d &centre = cached_3d_listener_pos_;

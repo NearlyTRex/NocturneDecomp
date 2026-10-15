@@ -8,6 +8,7 @@
 #include "platform/filesystem.h"
 #include "sound/sndmain/sfxmixer.h"
 
+#include <algorithm>
 #include <format>
 #include <string>
 #include <utility>
@@ -18,6 +19,9 @@ namespace {
 // The original's device table held eight.
 constexpr std::size_t kMaxSoundDevices = 8;
 constexpr std::size_t kDeviceNameBufferSize = 256;
+// Seconds; what setMaxSwSoundLatency held the latency to.
+constexpr float kMinSwLatency = 0.05F;
+constexpr float kMaxSwLatency = 2.0F;
 
 template <std::size_t... Index>
 std::array<CSfxSlot, sizeof...(Index)> makeSlots(CSndMain &sound_main,
@@ -57,6 +61,8 @@ void CSndMain::resetSoundSystemDefaults() {
     set3DListenerVelocity(0.0, 0.0, 0.0);
 }
 
+// The original also ignored a call from inside itself, which its fatal-error exit could make; a
+// fatal error here unwinds instead. Retail's: nocedit also closed the device and the recorder.
 // nocedit 0x005aaeb0
 void CSndMain::shutdownSoundSystem() {
     resetSoundDevice();
@@ -168,6 +174,8 @@ int CSndMain::getCurrentSoundDevice() const {
 }
 
 // The output is mixed and sent in float, so the bit depth only keeps the Sound Options' choice.
+// The original only set the format here; the stream opens here to check it, and plays silence
+// until enableSoundSystem.
 // nocedit 0x005ab170
 bool CSndMain::setSoundOutputMode(int bits_per_sample, int channels, int sample_rate) {
     if (isSoundBusy()) {
@@ -221,21 +229,24 @@ void CSndMain::setAudioSampleRate(int sample_rate) {
     setSoundOutputMode(audio_bits_per_sample_, audio_channel_count_, sample_rate);
 }
 
-// getAudioFormat's three reads are the getters. The original also read HwMixingEnabled and
-// MaxSwLatency, which drove the hardware mixer and the mix buffers.
+// Retail's: nocedit also closed the device first and read RecordingDeviceName. getAudioFormat's
+// three reads are the getters.
 // nocedit 0x005abf20
 // nocedit 0x005ab210
 void CSndMain::readIni(const engine::CIniFile &ini_file) {
     const std::string device_name = ini_file.getString("DeviceName", "", kDeviceNameBufferSize);
+    current_sound_device_ = -1;
     for (int device = 0; device < getSoundDeviceCount(); ++device) {
         if (common::equalsIgnoringAsciiCase(getSoundDeviceInfo(device).device_name, device_name)) {
             selectSoundDevice(device);
             break;
         }
     }
-    setSoundOutputMode(ini_file.getInteger("Bits", audio_bits_per_sample_),
-                       ini_file.getInteger("Channels", audio_channel_count_),
-                       ini_file.getInteger("Hz", audio_sample_rate_));
+    const int bits_per_sample = ini_file.getInteger("Bits", audio_bits_per_sample_);
+    const int channels = ini_file.getInteger("Channels", audio_channel_count_);
+    const int sample_rate = ini_file.getInteger("Hz", audio_sample_rate_);
+    readMixerSettings(ini_file);
+    setSoundOutputMode(bits_per_sample, channels, sample_rate);
     setSoundMuted(ini_file.getInteger("Mute", isSoundMuted() ? 1 : 0) != 0);
     for (int channel = 0; channel < max_sound_channels_; ++channel) {
         const int enabled = isSfxChannelEnabled(channel) ? 1 : 0;
@@ -246,6 +257,19 @@ void CSndMain::readIni(const engine::CIniFile &ini_file) {
     }
 }
 
+// They drove the original's hardware mixer and mix buffers. The latency setter's own check, that
+// the output isn't running, can't fail after the device check.
+void CSndMain::readMixerSettings(const engine::CIniFile &ini_file) {
+    hw_mixing_enabled_ = ini_file.getInteger("HwMixingEnabled", hw_mixing_enabled_);
+    if (isSoundSystemActive()) {
+        common::displayErrorAndQuit(
+            "enableHwSoundMixing - Can't do this while the device is open.");
+    }
+    const float latency = ini_file.getFloat("MaxSwLatency", max_sw_latency_);
+    max_sw_latency_ =
+        !(latency >= kMinSwLatency) ? kMinSwLatency : std::min(latency, kMaxSwLatency);
+}
+
 // nocedit 0x005ac220
 void CSndMain::writeIni(engine::CIniFile &ini_file) {
     ini_file.setString("DeviceName", current_sound_device_ >= 0
@@ -254,6 +278,8 @@ void CSndMain::writeIni(engine::CIniFile &ini_file) {
     ini_file.setInteger("Bits", audio_bits_per_sample_);
     ini_file.setInteger("Channels", audio_channel_count_);
     ini_file.setInteger("Hz", audio_sample_rate_);
+    ini_file.setInteger("HwMixingEnabled", hw_mixing_enabled_);
+    ini_file.setFloatValue("MaxSwLatency", max_sw_latency_);
     ini_file.setInteger("Mute", isSoundMuted() ? 1 : 0);
     for (int channel = 0; channel < max_sound_channels_; ++channel) {
         ini_file.setInteger(std::format("SfxChannel{}Enabled", channel),
@@ -262,8 +288,8 @@ void CSndMain::writeIni(engine::CIniFile &ini_file) {
     }
 }
 
-// Written beside the game, where the original wrote to a share on Terminal Reality's network.
-// The user and machine names it added mean nothing in a report from the player's own machine.
+// Retail only prints it; sounderr.txt, nocedit's, is kept so a sound failure leaves a report.
+// nocedit wrote it to a share on Terminal Reality's network, with the user and machine names.
 // nocedit 0x005adba0
 void CSndMain::logSoundError(std::string_view message) {
     console_.printf(std::format("{}\n", message));

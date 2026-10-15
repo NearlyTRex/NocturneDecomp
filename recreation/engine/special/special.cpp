@@ -1,6 +1,7 @@
 #include "engine/special/special.h"
 
 #include "engine/2d/2d.h"
+#include "engine/3d/3d.h"
 #include "engine/screendevice.h"
 #include "engine/texture/currenttexture.h"
 #include "platform/renderer.h"
@@ -63,7 +64,10 @@ void CSpecial::clearScreen() {
 }
 
 // Loading the renderer DLL and binding its entry points is the adapter's; what stays is the
-// game's switch and the state it shares.
+// game's switch and the state it shares. The original also shared the editor's drawing colour,
+// which the game never sets.
+// deferred: sharing the light level, with the scene camera's fog setup
+// deferred: sharing the rendering quality, with 3d.c's setRenderingQuality
 // nocedit 0x005b6750
 int CSpecial::loadExternalRenderer() {
     if (!use_direct3d_) {
@@ -81,7 +85,7 @@ int CSpecial::loadExternalRenderer() {
     return 1;
 }
 
-// The rest of the bridge belongs to state not yet ported, which the renderer reads as unshared.
+// A field left null reads as unshared, and the renderer takes its default.
 void CSpecial::fillBridge() {
     bridge_ = {};
     SColorChannels &channels = screen_.getColorChannels();
@@ -94,7 +98,11 @@ void CSpecial::fillBridge() {
     bridge_.blue_bit_position = &channels.blue.bit_position;
     bridge_.blue_scale_factor = &channels.blue.scale_factor;
     bridge_.blue_dither_shift = &channels.blue.dither_shift;
+    bridge_.blend_mode = &three_d_.getBlendMode();
+    bridge_.current_alpha = &three_d_.getCurrentAlphaValue();
     bridge_.texture_dimension = &current_texture_.dimension;
+    bridge_.full_screen_quad_depth = &kFullScreenQuadDepth;
+    bridge_.system_initialized = &kSystemInitialized;
     bridge_.processor_type = &processor_type_;
 }
 
@@ -183,8 +191,9 @@ int CSpecial::drawPolygon2(std::span<platform::SRenderVertex *> vertices, int re
     return renderer_.drawPolygon2(vertices.data(), static_cast<int>(vertices.size()), render_flags);
 }
 
-// The original counted the triangles for the frame statistics, and drew each polygon through
-// drawPolygon2 for a renderer without a list entry; every renderer here has one.
+// The original drew each polygon through drawPolygon2 for a renderer without a list entry; every
+// renderer here has one.
+// deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
 // nocedit 0x005b7640
 int CSpecial::drawPolyList(platform::SRenderVertex *vertex_buffer,
                            std::span<const platform::SMRGLPrimitiveQuad *const> polygons,
@@ -206,6 +215,7 @@ int CSpecial::clear() {
 
 // Software drawing since the last present goes into the renderer's image first. The renderer
 // usually points the rows at that image already, so the copy may run a row onto itself.
+// The original's skip_buffer_copy parameter, which skipped the copy, is not in retail.
 // nocedit 0x005b7c30
 void CSpecial::presentToExternalRenderer() {
     if (!use_external_renderer_) {

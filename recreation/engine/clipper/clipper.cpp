@@ -263,6 +263,8 @@ namespace {
 
 // The original quit with "Ran out of clipped verts!" when the frustum clip's passes made more
 // than 12 corners, which a polygon that is not convex can.
+// deferred: adding the corner count less two to the rendered-triangle count before the hardware
+//  draw, with CGame::processFrame's statistics
 // nocedit 0x004366e0
 std::optional<std::vector<SRenderVertex>>
 clipPolygonToViewFrustum(std::span<SRenderVertex *> corners, const SPolygonState &state,
@@ -272,8 +274,9 @@ clipPolygonToViewFrustum(std::span<SRenderVertex *> corners, const SPolygonState
 
 } // namespace
 
-// The original counted the triangles for the frame statistics. nocedit's frustum clip also quit
-// on more than 16 corners; retail inlines the clip here, without that check.
+// nocedit's frustum clip also quit on more than 16 corners; retail inlines the clip here, without
+// that check.
+// deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
 // nocedit 0x004371b0
 void clipAndRasterize(std::span<SRenderVertex> vertex_buffer, std::span<const int> vertex_indices,
                       const SPolygonState &state, CPrim &prim, CSpecial &special,
@@ -290,7 +293,7 @@ void clipAndRasterize(std::span<SRenderVertex> vertex_buffer, std::span<const in
     }
 }
 
-// The original counted the triangles for the frame statistics.
+// deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
 // nocedit 0x00438420
 void clipPolygonToViewport(std::span<SRenderVertex> vertex_buffer,
                            std::span<const int> vertex_indices, const SPolygonState &state,

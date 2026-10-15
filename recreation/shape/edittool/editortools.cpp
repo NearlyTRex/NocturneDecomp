@@ -34,7 +34,11 @@ std::byte *rowAt(std::span<void *> rows, int y) {
 
 } // namespace
 
-// staticInit built the global instance and init set its colours; the windows read these four.
+// staticInit built the global instance and init set its colours; the windows, prompts and
+// progress bar read these seven.
+// deferred: the twelve colours retail's init sets for CInputString::draw, CPickList::renderDialog,
+//   displayCenteredStatusMessage, showFilenameInputDialog and draw3DAxisLabels, with those
+//   functions
 // nocedit 0x0049d170
 // nocedit 0x0049df80
 // nocedit 0x0049e020

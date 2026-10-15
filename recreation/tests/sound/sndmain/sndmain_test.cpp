@@ -360,8 +360,50 @@ TEST_F(CSndMainIniTest, WritesWhatItReads) {
     sound_.writeIni(ini_file_);
     EXPECT_EQ(ini_text_, "[Sound]\r\nSfxChannel2Vol=1\r\nSfxChannel2Enabled=0\r\n"
                          "SfxChannel1Vol=0.5\r\nSfxChannel1Enabled=1\r\nSfxChannel0Vol=1\r\n"
-                         "SfxChannel0Enabled=1\r\nMute=0\r\nHz=44100\r\nChannels=2\r\nBits=16\r\n"
+                         "SfxChannel0Enabled=1\r\nMute=0\r\nMaxSwLatency=0.5\r\n"
+                         "HwMixingEnabled=1\r\nHz=44100\r\nChannels=2\r\nBits=16\r\n"
                          "DeviceName=pipewire: Speakers\r\n");
+}
+
+TEST_F(CSndMainIniTest, TheOriginalsMixerSettingsAreWrittenBackAsRead) {
+    ini_text_ = "[Sound]\r\nHwMixingEnabled=0\r\nMaxSwLatency=0.25\r\n";
+    sound_.readIni(ini_file_);
+    sound_.writeIni(ini_file_);
+    EXPECT_THAT(ini_text_, HasSubstr("HwMixingEnabled=0\r\n"));
+    EXPECT_THAT(ini_text_, HasSubstr("MaxSwLatency=0.25\r\n"));
+}
+
+// As setMaxSwSoundLatency held it.
+TEST_F(CSndMainIniTest, TheLatencyIsHeldBetweenATwentiethAndTwoSeconds) {
+    ini_text_ = "[Sound]\r\nMaxSwLatency=0.01\r\n";
+    sound_.readIni(ini_file_);
+    sound_.writeIni(ini_file_);
+    EXPECT_THAT(ini_text_, HasSubstr("MaxSwLatency=0.05\r\n"));
+    ini_text_ = "[Sound]\r\nMaxSwLatency=5\r\n";
+    sound_.readIni(ini_file_);
+    sound_.writeIni(ini_file_);
+    EXPECT_THAT(ini_text_, HasSubstr("MaxSwLatency=2\r\n"));
+}
+
+TEST_F(CSndMainIniTest, ReadingWhileADeviceIsOpenIsFatal) {
+    sound_.initializeSoundDevice();
+    EXPECT_THAT([this] { sound_.readIni(ini_file_); },
+                ThrowsMessage<common::CFatalError>(
+                    StrEq("enableHwSoundMixing - Can't do this while the device is open.")));
+}
+
+TEST_F(CSndMainIniTest, AChannelTheIniDoesNotNameKeepsItsSwitch) {
+    sound_.enableSfxChannel(1, false);
+    sound_.readIni(ini_file_);
+    EXPECT_FALSE(sound_.isSfxChannelEnabled(1));
+    EXPECT_TRUE(sound_.isSfxChannelEnabled(2));
+}
+
+TEST_F(CSndMainIniTest, AnUnknownDeviceDeselectsTheOneSelected) {
+    sound_.selectSoundDevice(1);
+    ini_text_ = "[Sound]\r\nDeviceName=DirectSound: Primary Sound Driver\r\n";
+    sound_.readIni(ini_file_);
+    EXPECT_EQ(sound_.getCurrentSoundDevice(), -1);
 }
 
 TEST_F(CSndMainIniTest, MutingRoundTrips) {

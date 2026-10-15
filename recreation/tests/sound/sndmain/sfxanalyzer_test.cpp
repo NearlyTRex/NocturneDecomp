@@ -30,12 +30,12 @@ protected:
         analyzer_.record(frames);
     }
 
-    // The band [bin, bin + 1) in hertz.
+    // A bin wide in hertz, starting a quarter into the bin, clear of the rounding at its edges.
     [[nodiscard]] float band(std::size_t bin, int channel = 0) {
         const std::size_t bin_count = (analyzer_.getWindowSize() / 2) + 1;
         const float width = static_cast<float>(kRate) / static_cast<float>(bin_count);
-        return analyzer_.analyzeFrequencyBand(channel, static_cast<float>(bin) * width,
-                                              static_cast<float>(bin + 1) * width);
+        const float start = static_cast<float>(bin) + 0.25F;
+        return analyzer_.analyzeFrequencyBand(channel, start * width, (start + 1.0F) * width);
     }
 
     CSfxAnalyzer analyzer_;
@@ -69,7 +69,7 @@ TEST_F(CSfxAnalyzerTest, TheSpectrumIsKeptUntilAWholeNewWindowIsMixed) {
 TEST_F(CSfxAnalyzerTest, ABandNarrowerThanABinReadsTheBinItStartsIn) {
     recordTone(100, 4096);
     const float width = static_cast<float>(kRate) / 2049.0F;
-    EXPECT_NEAR(analyzer_.analyzeFrequencyBand(0, 100.0F * width, 100.2F * width), 2.0F,
+    EXPECT_NEAR(analyzer_.analyzeFrequencyBand(0, 100.25F * width, 100.45F * width), 2.0F,
                 kTolerance);
 }
 
@@ -88,6 +88,12 @@ TEST_F(CSfxAnalyzerTest, BandsWhollyOutsideTheSpectrumReadNothing) {
     recordTone(100, 4096);
     EXPECT_EQ(analyzer_.analyzeFrequencyBand(0, -500.0F, -10.0F), 0.0F);
     EXPECT_EQ(analyzer_.analyzeFrequencyBand(0, 23000.0F, 30000.0F), 0.0F);
+}
+
+// An end past what an int holds converts to the integer indefinite, which is below the first bin.
+TEST_F(CSfxAnalyzerTest, ABandEndingPastAnIntReadsNothing) {
+    recordTone(100, 4096);
+    EXPECT_EQ(analyzer_.analyzeFrequencyBand(0, 0.0F, 1e30F), 0.0F);
 }
 
 TEST_F(CSfxAnalyzerTest, AChannelTheOutputLacksReadsNothing) {

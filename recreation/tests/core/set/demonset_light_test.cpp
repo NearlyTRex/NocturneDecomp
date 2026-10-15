@@ -105,6 +105,27 @@ TEST_F(CDemonSetLightTest, WithoutNormalsOrFacesTheQuickLightIsFatal) {
     EXPECT_NO_THROW(set_.lightVerticies(0, {}, {}));
 }
 
+// From nocedit's own code: the first vertex's normal is 30233.77 along x before a bare FISTP rounds
+// it to nearest, and the third, on only a degenerate face, has none.
+TEST_F(CDemonSetLightTest, FaceNormalsRoundToTheNearestWhole) {
+    const std::vector<CVector3i> corners{{.x = -61, .y = -62, .z = 62},
+                                         {.x = -37, .y = -45, .z = 22},
+                                         {.x = 1, .y = -53, .z = -35},
+                                         {.x = -59, .y = -53, .z = -2}};
+    for (std::size_t i = 0; i < corners.size(); ++i) {
+        vertex_buffer_[i].projected_vertex = {.transformed_x = corners[i].x,
+                                              .transformed_y = corners[i].y,
+                                              .transformed_z = corners[i].z};
+    }
+    set_.setLightDirection({.x = -kOne});
+    const std::vector<SMRGLPrimitiveQuad> polys{over({0, 0, 2}), over({0, 3, 1})};
+    set_.lightVerticies(4, polys, {});
+    EXPECT_EQ(vertex_buffer_[0].r, 30234);
+    EXPECT_EQ(vertex_buffer_[1].r, 30234);
+    EXPECT_EQ(vertex_buffer_[2].r, 0);
+    EXPECT_EQ(vertex_buffer_[3].r, 30234);
+}
+
 // The rough square roots leave the faces' normals near, not at, unit length.
 TEST_F(CDemonSetLightTest, WithoutNormalsTheFacesGiveThem) {
     placeTheSquare();

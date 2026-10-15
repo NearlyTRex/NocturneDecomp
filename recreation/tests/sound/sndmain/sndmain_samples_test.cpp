@@ -172,6 +172,12 @@ TEST_F(CSndMainSamplesTest, AFileThatEndsTooSoonIsRefusedWithoutAReport) {
     expectSilentlyRefused(wav.substr(0, 38));
 }
 
+TEST_F(CSndMainSamplesTest, AShortFileIsCheckedForRiffBeforeItsWaveIdIsRead) {
+    layout_.riff = "RIFX";
+    expectInvalidWav(makeConstantWav(10, 0, layout_).substr(0, 10),
+                     R"("RIFF" ID not found at offset 00000000h)");
+}
+
 TEST_F(CSndMainSamplesTest, AnUnknownKindOfSampleIsFatal) {
     givenSound("theme.ogg", "OggS");
     EXPECT_THAT([this] { (void)sound_.getSampleInfo("theme.ogg"); },
@@ -269,10 +275,27 @@ TEST_F(CSndMainSamplesTest, AFileOverTwoMegabytesIsStreamedAndFreedWhenItStops) 
     const std::uint32_t handle = sound_.startSfx("ambient.wav");
     ASSERT_NE(handle, 0U);
     EXPECT_THAT(mix(3)[2], FloatNear(0.5F, kTolerance));
-    EXPECT_EQ(sound_.getSoundMemoryStats().referenced_count, 0);
     EXPECT_EQ(expectInfo(sound_.getSfxSampleInfo(handle)).sample_count, 1100000);
     sound_.killSfx(handle);
+    EXPECT_EQ(sound_.getSoundMemoryStats().free_slots, 64);
     EXPECT_EQ(expectInfo(sound_.getSampleInfo("ambient.wav")).sample_count, 1100000);
+}
+
+// Two seconds of its frames, the original's ring buffer, which here won't fit beside both stopped
+// samples.
+TEST_F(CSndMainSamplesTest, AStreamCountsTwoSecondsAgainstTheBudget) {
+    layout_.channels = 2;
+    layout_.sample_rate = 60000;
+    givenSound("a.wav", makeConstantWav(kLargeFrames, 0));
+    givenSound("b.wav", makeConstantWav(kLargeFrames, 0));
+    givenSound("ambient.wav", makeConstantWav(600000, 0, layout_));
+    sound_.killSfx(sound_.startSfx("a.wav"));
+    sound_.killSfx(sound_.startSfx("b.wav"));
+    ASSERT_NE(sound_.startSfx("ambient.wav"), 0U);
+    const SSoundMemoryStats stats = sound_.getSoundMemoryStats();
+    EXPECT_EQ(stats.referenced_count, 1);
+    EXPECT_EQ(stats.total_bytes_referenced, 4U * 60000U * 2U);
+    EXPECT_EQ(stats.unreferenced_count, 1);
 }
 
 TEST_F(CSndMainSamplesTest, AnMp3IsStreamedAtTheLengthItsSfxFileGives) {

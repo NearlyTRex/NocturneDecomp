@@ -6,8 +6,9 @@
 
 namespace nocturne::common {
 
-// value as the CRT round and FISTP leave it under the original's control word: chopped toward
-// zero, and the x87's integer indefinite when no int holds it.
+// value as the CRT round and then FISTP leave it: chopped toward zero, and the x87's integer
+// indefinite when no int holds it. The CRT round sets chop around one FRNDINT; a FISTP without
+// it rounds to nearest even under the original's control word.
 [[nodiscard]] inline std::int32_t truncateToInt(double value) {
     if (!std::isfinite(value) || value >= 2147483648.0 || value <= -2147483649.0) {
         return std::numeric_limits<std::int32_t>::min();

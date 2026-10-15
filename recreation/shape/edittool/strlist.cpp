@@ -44,6 +44,8 @@ void CStrList::remove(int start_index, int end_index) {
                    std::next(strings_.begin(), end_index + 1));
 }
 
+// unverified: the order left among strings equal ignoring case, which the original's Watcom
+//   _qsort decides, by running its _qsort on such a list in the machine-code oracle
 // nocedit 0x004a2f00
 void CStrList::sort(int start_index, int end_index) {
     if (start_index >= end_index) {

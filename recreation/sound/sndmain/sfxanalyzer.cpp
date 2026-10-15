@@ -1,5 +1,7 @@
 #include "sound/sndmain/sfxanalyzer.h"
 
+#include "common/math/fixed.h"
+
 #include <algorithm>
 #include <bit>
 #include <cmath>
@@ -51,9 +53,15 @@ void fft(std::vector<std::complex<double>> &data) {
     }
 }
 
+// The bin count goes through a float, as the original stored it. A bin past what an int holds is
+// the x87's integer indefinite.
 int toBin(float frequency, std::size_t bin_count, int sample_rate) {
-    return static_cast<int>(
-        std::floor(frequency * static_cast<float>(bin_count) / static_cast<float>(sample_rate)));
+    return common::truncateToInt(
+        std::floor(static_cast<double>(frequency) * static_cast<float>(bin_count) / sample_rate));
+}
+
+double magnitude(const std::complex<double> &bin) {
+    return std::sqrt(bin.real() * bin.real() + bin.imag() * bin.imag());
 }
 
 } // namespace
@@ -108,11 +116,11 @@ float CSfxAnalyzer::analyzeFrequencyBand(int channel, float freq_start_hz, float
     first = std::max(first, 0);
     // A band narrower than a bin reads the bin it starts in.
     const int count = std::max(last - first, 1);
-    float sum = 0.0F;
+    double sum = 0.0;
     for (int bin = first; bin < first + count; ++bin) {
-        sum += static_cast<float>(std::abs(spectra_[index].bins[static_cast<std::size_t>(bin)]));
+        sum += magnitude(spectra_[index].bins[static_cast<std::size_t>(bin)]);
     }
-    return std::sqrt(sum / static_cast<float>(count) / static_cast<float>(bin_count)) * 2.0F;
+    return static_cast<float>(std::sqrt(sum / count / static_cast<double>(bin_count)) * 2.0);
 }
 
 std::size_t CSfxAnalyzer::getWindowSize() const {

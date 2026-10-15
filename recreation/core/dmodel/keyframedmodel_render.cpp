@@ -4,10 +4,25 @@
 #include "engine/drender/demonrenderer.h"
 #include "platform/mrglprimitivequad.h"
 
+#include <cmath>
 #include <cstddef>
 #include <span>
 
 namespace nocturne::core {
+namespace {
+
+constexpr double kCullingDiagonal = 250.0;
+
+// The original rounded each side to float and squared y and z against their unrounded values.
+double getDiagonal(const CBoundingBox3D &box) {
+    const double x = static_cast<float>(static_cast<double>(box.max.x) - box.min.x);
+    const double y = static_cast<double>(box.max.y) - box.min.y;
+    const double z = static_cast<double>(box.max.z) - box.min.z;
+    const double sum = (y * static_cast<float>(y)) + (x * x);
+    return std::sqrt(sum + (z * static_cast<float>(z)));
+}
+
+} // namespace
 
 // nocedit 0x004778d0
 void CKeyFramedModel::rotateAndLightVertices(int frame_index, CDemonSet &set) const {
@@ -15,17 +30,20 @@ void CKeyFramedModel::rotateAndLightVertices(int frame_index, CDemonSet &set) co
     set.lightVerticies(vertex_count_, polygons_, vertex_normals_);
 }
 
-// The original skipped the parts an instance hid, which arrives with CKeyFramedModelInstance; in
-// the shadow pass it batched each part whole without a texture, which arrives with
-// setShadowPass's callers. It read the first texture of a model that has none, and culled a model
-// with no frames by winding when its box's diagonal passed 250, which a box with no frames can't.
+// The original read the first texture of a model that has none. A model with no frames still
+// culls by winding when the box free left behind has a diagonal past 250.
+// deferred: skipping the parts an instance hides, with CKeyFramedModelInstance
+// deferred: batching each part whole without a texture in the shadow pass, with
+//   setShadowPass's callers
+// unverified: the diagonal's float roundings at the 250 threshold, by running the test against
+//   nocedit's own code with boxes either side of it
 // nocedit 0x00477980
 void CKeyFramedModel::submitToRenderer(int render_flags, engine::CDemonRenderer &renderer,
                                        CDemonSet &set) {
     if (disable_backface_culling_ != 0) {
         renderer.setRenderingState(false);
         renderer.setPlaneCullingEnabled(false);
-    } else if (frame_count_ > 0) {
+    } else if (frame_count_ > 0 || getDiagonal(bounds_) > kCullingDiagonal) {
         renderer.setRenderingState(true);
     }
     int current_texture = -1;
@@ -67,8 +85,8 @@ void CKeyFramedModel::submitTextureRuns(std::size_t first, std::size_t end, int 
     }
 }
 
-// The original took an instance to hide parts by, which arrives with CKeyFramedModelInstance,
-// and its two helpers each checked for polygons again.
+// The original's two helpers each checked for polygons again.
+// deferred: the instance parameter that hides parts, with CKeyFramedModelInstance
 // nocedit 0x00477850
 void CKeyFramedModel::prepareForRender(int frame_index, int render_flags,
                                        engine::CDemonRenderer &renderer, CDemonSet &set) {

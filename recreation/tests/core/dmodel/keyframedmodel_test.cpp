@@ -155,7 +155,7 @@ TEST_F(CKeyFramedModelTest, VertexNormalsChopTowardZero) {
     load("/\n5\n;\n3,1,0,0,1\n;\n0\n;\n1024,0,0\n0,1024,0\n0,0,1024\n;\n0,3, 0,0,0, 1,0,0, "
          "2,0,0\n");
     EXPECT_EQ(model_.getPolygons()[0].surface_normal,
-              (SClipPlane{.a = 37837, .b = 37837, .c = 37837, .d = 38744729}));
+              (SClipPlane{.a = 37837, .b = 37837, .c = 37837, .d = 38744732}));
     EXPECT_THAT(model_.getVertexNormals(),
                 ElementsAre(IsVector3i(37836, 37836, 37836), IsVector3i(37836, 37836, 37836),
                             IsVector3i(37836, 37836, 37836)));

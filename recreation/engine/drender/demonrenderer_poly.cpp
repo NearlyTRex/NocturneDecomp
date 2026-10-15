@@ -71,6 +71,8 @@ SPolygonState CDemonRenderer::getPerspectiveState(std::uint32_t render_flags) co
 }
 
 // Both builds also quit on a projection mode other than perspective, which nothing sets.
+// deferred: the shadow pass sending an untextured polygon down the depth-only route, with
+//   setShadowPass's callers
 // nocedit 0x0048a740
 void CDemonRenderer::clipAndFillPoly(std::span<const int> vertex_indices,
                                      const SPolygonState &state) {
@@ -103,6 +105,13 @@ void CDemonRenderer::clipAndFillPoly(std::span<const int> vertex_indices,
     }
 }
 
+// deferred: handing the polygon to processQuadPrimitive while texture capture is on, with
+//   setTextureCaptureMode's callers
+// deferred: the shadow pass's depth-only draw, with setShadowPass's callers
+// deferred: keeping the buffer's own texture coordinates while skip_uv_extraction is set, with
+//   CCharacter::renderEthereal
+// deferred: the scanline's light level and solid colour, 0 until set, with the scene camera's
+//   fog setup
 // nocedit 0x0048aeb0
 void CDemonRenderer::renderTexturedPoly(const SMRGLPrimitiveQuad &poly, int render_flags) {
     if (!isFacing(poly)) {
@@ -114,6 +123,11 @@ void CDemonRenderer::renderTexturedPoly(const SMRGLPrimitiveQuad &poly, int rend
                         render_flags == -1 ? kDefaultTexturedFlags : render_flags)));
 }
 
+// deferred: the shadow pass's depth-only draw, with setShadowPass's callers
+// deferred: keeping the buffer's own texture coordinates while skip_uv_extraction is set, with
+//   CCharacter::renderEthereal
+// deferred: the scanline's light level and solid colour, 0 until set, with the scene camera's
+//   fog setup
 // nocedit 0x0048b1e0
 void CDemonRenderer::renderAlphaBlendedPoly(const SMRGLPrimitiveQuad &poly) {
     if (!isFacing(poly)) {
@@ -123,6 +137,11 @@ void CDemonRenderer::renderAlphaBlendedPoly(const SMRGLPrimitiveQuad &poly) {
     clipAndFillPoly(vertex_indices, getPerspectiveState(kAlphaBlendedFlags));
 }
 
+// deferred: the shadow pass's textured-alpha depth draw, with setShadowPass's callers
+// deferred: keeping the buffer's own texture coordinates while skip_uv_extraction is set, with
+//   CCharacter::renderEthereal
+// deferred: the scanline's light level and solid colour, 0 until set, with the scene camera's
+//   fog setup
 // nocedit 0x0048b970
 void CDemonRenderer::renderDestReadBlendPoly(const SMRGLPrimitiveQuad &poly) {
     if (!isFacing(poly)) {

@@ -12,7 +12,8 @@
 namespace nocturne::engine {
 namespace {
 
-// initializeGameSystems always leaves g_RenderingMode at 4, which is 640x480 in the table.
+// initializeGameSystems always leaves g_RenderingMode at 640x480 in the table: retail's 3,
+// nocedit's 4.
 constexpr int kStartupWidth = 640;
 constexpr int kStartupHeight = 480;
 constexpr int kStartupBitsPerPixel = 8;

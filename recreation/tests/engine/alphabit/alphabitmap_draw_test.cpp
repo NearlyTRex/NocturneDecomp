@@ -93,10 +93,25 @@ TEST_F(CAlphaBitmapDrawTest, AnImageBelowTheScreenIsClippedThere) {
 TEST_F(CAlphaBitmapDrawTest, AnImageOffTheScreenLeavesThePaletteAlone) {
     loadCounting(2, 2);
     bitmap_.display(kScreenWidth, 0, kFullAlpha);
-    bitmap_.display(-2, 0, kFullAlpha);
+    bitmap_.display(-3, 0, kFullAlpha);
     bitmap_.display(0, kScreenHeight, kFullAlpha);
-    bitmap_.display(0, -2, kFullAlpha);
+    bitmap_.display(0, -3, kFullAlpha);
     EXPECT_EQ(screen_.getHardwarePalette32()[1], 0U);
+}
+
+// The original's off-screen test is x + width < 0, so an image ending at the left edge counts.
+TEST_F(CAlphaBitmapDrawTest, AnImageEndingAtTheLeftEdgeSetsThePaletteButDrawsNothing) {
+    loadCounting(2, 2);
+    bitmap_.display(-2, 0, kFullAlpha);
+    EXPECT_EQ(screen_.getHardwarePalette32()[1], ramp(1));
+    EXPECT_EQ(screen_.pixel(0, 0), kBackground);
+}
+
+TEST_F(CAlphaBitmapDrawTest, AnImageEndingAtTheTopEdgeSetsThePaletteButDrawsNothing) {
+    loadCounting(2, 2);
+    bitmap_.display(0, -2, kFullAlpha);
+    EXPECT_EQ(screen_.getHardwarePalette32()[1], ramp(1));
+    EXPECT_EQ(screen_.pixel(0, 0), kBackground);
 }
 
 TEST_F(CAlphaBitmapDraw16Test, SixteenBitsDrawsPackedPixels) {

@@ -25,8 +25,8 @@ bool CZRaster::isCulled(std::span<const SRenderVertex> vertices) const {
     return raster::isBackFacing(vertices[0], vertices[1], vertices[2], three_d_.getCullingMode());
 }
 
-// The original counted the polygons for the frame statistics, and stopped when a row set a
-// global abort flag.
+// The original stopped when a row set a global abort flag.
+// deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
 // nocedit 0x005fcfc0
 void CZRaster::rasterizeTriangle(std::span<SRenderVertex> vertex_buffer,
                                  const SPolygonState &state) {
@@ -58,8 +58,8 @@ void CZRaster::rasterizeTriangle(std::span<SRenderVertex> vertex_buffer,
     raster::rasterizeDepthPolygon(raster::getCorners(vertex_buffer), state);
 }
 
-// The original counted the polygons for the frame statistics. It projected every vertex the
-// clip left, whatever the vertex processing.
+// The original projected every vertex the clip left, whatever the vertex processing.
+// deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
 // nocedit 0x005fd4e0
 void CZRaster::rasterizePolygonCustom(std::span<SRenderVertex> vertex_buffer,
                                       const SPolygonState &state,

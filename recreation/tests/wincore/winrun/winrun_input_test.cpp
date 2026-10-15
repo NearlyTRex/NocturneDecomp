@@ -17,6 +17,7 @@ using platform::EMouseButton;
 using platform::EWindowEventType;
 using platform::SWindowEvent;
 using ::testing::NiceMock;
+using ::testing::Return;
 
 constexpr std::uint16_t kSpace = 0x39;
 constexpr std::uint16_t kLeftArrow = 0x14b;
@@ -52,10 +53,18 @@ protected:
         return winrun_.getKeyboardState()[code];
     }
 
+    // 72 counts a second, so each read moves the game clock a quarter of an eighteenth.
+    NiceMock<platform::MockClock> &primed(NiceMock<platform::MockClock> &clock) {
+        ON_CALL(clock, getCounterFrequency).WillByDefault(Return(72));
+        ON_CALL(clock, getCounter).WillByDefault([this] { return counter_++; });
+        return clock;
+    }
+
     std::deque<SWindowEvent> events_;
     NiceMock<platform::MockWindow> window_;
+    std::uint64_t counter_ = 0;
     NiceMock<platform::MockClock> clock_;
-    CWinRun winrun_{window_, clock_};
+    CWinRun winrun_{window_, primed(clock_)};
 };
 
 TEST_F(CWinRunInputTest, AHeldKeyStaysDownUntilAPumpAfterItsRelease) {
@@ -189,6 +198,15 @@ TEST_F(CWinRunInputTest, RegainingFocusDropsTheInputAndFlagsTheReturn) {
     EXPECT_TRUE(winrun_.getFocusRegained());
     winrun_.setFocusRegained(false);
     EXPECT_FALSE(winrun_.getFocusRegained());
+}
+
+// clearInputAndWait at 0x00403260 reads the clock until its tick >> 16 changes.
+TEST_F(CWinRunInputTest, RegainingFocusWaitsForTheGameClockToTickOver) {
+    pump({{.type = EWindowEventType::Activate}, {.type = EWindowEventType::Deactivate}});
+    ASSERT_EQ(winrun_.getTime(), 0x4000);
+    pump({{.type = EWindowEventType::Activate}});
+    // Read at 0x8000 and 0xc000 in the first eighteenth, and left at 0x10000 in the next.
+    EXPECT_EQ(winrun_.getTime(), 0x14000);
 }
 
 TEST_F(CWinRunInputTest, LosingFocusClearsTheReturnFlagAndARepeatChangesNothing) {

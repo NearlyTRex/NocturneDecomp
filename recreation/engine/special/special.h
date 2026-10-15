@@ -110,6 +110,12 @@ private:
     const CMatrix &matrix_;
     const C3d &three_d_;
     SCurrentTexture &current_texture_;
+    // The draw distance depth is normalised against, which startup sets over the 0x3C000 it
+    // starts as before anything reads it.
+    static constexpr int kFullScreenQuadDepth = 0x10000;
+    // 1 from the start; the renderer reads it as the bilinear filtering switch.
+    static constexpr int kSystemInitialized = 1;
+
     // The renderer keeps these addresses for as long as it runs.
     platform::CExternalRendererBridge bridge_;
     bool use_direct3d_ = false;

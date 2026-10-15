@@ -2,6 +2,13 @@
 
 namespace nocturne::core {
 
+// nocedit also clears skip_gore_load_flag and show_waypoint_coverage, editor fields retail lacks.
+// deferred: clearing the pending teleport to area -1 at the origin, with setTeleportTarget and
+//   process
+// deferred: emptying the queue of actors to delete, with markActorToDelete and process
+// deferred: clearing actors_prepared, with prepareAllActors and loadSet
+// deferred: clearing has_inventory_actors, next_inventory_actor and actor_lookup_count, with
+//   readMissionFile, getNextLoadedInventoryActor and CInventory::load
 // nocedit 0x00522c80
 void CDemonMission::reset() {
     is_in_editor_ = false;

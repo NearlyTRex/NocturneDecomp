@@ -112,11 +112,12 @@ public:
     void drawLine2DFromIndices(int vertex_index1, int vertex_index2);
     void clipAndDrawLine2D(platform::SRenderVertex vertex1, platform::SRenderVertex vertex2);
 
-    // The byte setRenderAlpha keeps.
-    [[nodiscard]] int getCurrentAlphaValue() const;
+    // The byte setRenderAlpha keeps. This and the blend mode are references so the renderer
+    // bridge can keep their addresses.
+    [[nodiscard]] const int &getCurrentAlphaValue() const;
     // That byte in each of the three colour bytes.
     [[nodiscard]] std::uint32_t getCurrentRenderColor() const;
-    [[nodiscard]] int getBlendMode() const;
+    [[nodiscard]] const int &getBlendMode() const;
 
 private:
     CMatrix &matrix_;

@@ -1,5 +1,6 @@
 #include "common/error/error.h"
 #include "common/math/fixed.h"
+#include "common/math/math.h"
 #include "engine/light/light.h"
 #include "engine/matrix/matrix.h"
 
@@ -11,6 +12,7 @@ namespace {
 using common::CMatrix3x3i;
 using common::CVector3i;
 using common::fixedMultiply;
+using common::roundToFloat;
 using common::truncateToInt;
 using common::wrappingAdd;
 
@@ -106,11 +108,15 @@ void CMatrix::pop() {
     light_.setLightDirection(saved.light_direction);
 }
 
-// The original also copied the transform for the renderer, which arrives with it.
+// The original also copied the transform into a global nothing reads. It stores the elements,
+// the determinant, the scale and six of the cofactors as floats.
 // nocedit 0x0050c640
 void CMatrix::invertTransformMatrix() {
-    const auto e = [this](std::size_t row, int CVector3i::*column) {
+    const auto loaded = [this](std::size_t row, int CVector3i::*column) {
         return static_cast<double>(transform_matrix_.m[row].*column) / kFixedOne;
+    };
+    const auto e = [&loaded](std::size_t row, int CVector3i::*column) {
+        return roundToFloat(loaded(row, column));
     };
     const double e00 = e(0, &CVector3i::x);
     const double e01 = e(0, &CVector3i::y);
@@ -121,19 +127,23 @@ void CMatrix::invertTransformMatrix() {
     const double e20 = e(2, &CVector3i::x);
     const double e21 = e(2, &CVector3i::y);
     const double e22 = e(2, &CVector3i::z);
-    const double c00 = (e11 * e22) - (e12 * e21);
-    const double c10 = (e10 * e22) - (e12 * e20);
-    const double c20 = (e10 * e21) - (e11 * e20);
-    const double f = kFixedOne / (((e00 * c00) - (e01 * c10)) + (e02 * c20));
-    inverse_matrix_.m[0] = {.x = truncateToInt(c00 * f),
-                            .y = truncateToInt(-((e01 * e22) - (e02 * e21)) * f),
-                            .z = truncateToInt(((e01 * e12) - (e02 * e11)) * f)};
-    inverse_matrix_.m[1] = {.x = truncateToInt(-c10 * f),
-                            .y = truncateToInt(((e00 * e22) - (e02 * e20)) * f),
+    // Two products take e01 and e10 as loaded, before they are stored.
+    const double e01_loaded = loaded(0, &CVector3i::y);
+    const double c00 = roundToFloat(roundToFloat(e11 * e22) - (e12 * e21));
+    const double c10 = (loaded(1, &CVector3i::x) * e22) - (e12 * e20);
+    const double c20 = roundToFloat(roundToFloat(e10 * e21) - (e11 * e20));
+    const double determinant = roundToFloat(((e00 * c00) - (e01 * c10)) + (e02 * c20));
+    const double f = roundToFloat(kFixedOne / determinant);
+    inverse_matrix_.m[0] = {
+        .x = truncateToInt(c00 * f),
+        .y = truncateToInt(roundToFloat(-((e01_loaded * e22) - (e02 * e21))) * f),
+        .z = truncateToInt(((e01 * e12) - (e02 * e11)) * f)};
+    inverse_matrix_.m[1] = {.x = truncateToInt(roundToFloat(-c10) * f),
+                            .y = truncateToInt(roundToFloat((e00 * e22) - (e02 * e20)) * f),
                             .z = truncateToInt(-((e00 * e12) - (e02 * e10)) * f)};
     inverse_matrix_.m[2] = {.x = truncateToInt(c20 * f),
-                            .y = truncateToInt(-((e00 * e21) - (e01 * e20)) * f),
-                            .z = truncateToInt(((e00 * e11) - (e01 * e10)) * f)};
+                            .y = truncateToInt(roundToFloat(-((e00 * e21) - (e01 * e20))) * f),
+                            .z = truncateToInt(roundToFloat((e00 * e11) - (e01 * e10)) * f)};
 }
 
 const common::CMatrix3x3i &CMatrix::getTransformMatrix() const {

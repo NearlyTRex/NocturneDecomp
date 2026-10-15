@@ -125,12 +125,23 @@ TEST_F(CKeyFramedModelRenderTest, AModelWithoutTexturesStillDraws) {
     EXPECT_EQ(lists_, (std::vector<std::array<int, 2>>{{1, 0}}));
 }
 
-// Without frames, nothing turns winding culling on, so each polygon is drawn alone.
+// Without frames and with an empty box, nothing turns winding culling on, so each polygon is
+// drawn alone.
 TEST_F(CKeyFramedModelRenderTest, AModelWithoutFramesIsDrawnPolygonByPolygon) {
     draw(model("4,2,1,1,0", "", "0,3, 0,0,0, 2,0,0, 1,0,0\n0,3, 0,0,0, 3,0,0, 2,0,0\n", "a.raw\n",
                "4,2\n"));
     EXPECT_TRUE(lists_.empty());
     EXPECT_EQ(single_polygons_, 2);
+}
+
+// Loading keeps the box of the model before, here 70000 / 256 world units across.
+TEST_F(CKeyFramedModelRenderTest, AModelWithoutFramesCullsWhenTheBoxLeftBehindIsLarge) {
+    givenFile("models\\big.kfm", model("2,1,1,1,1", "0,0,0\n70000,0,0\n",
+                                       "0,3, 0,0,0, 1,0,0, 1,0,0\n", "a.raw\n", "2,1\n"));
+    model_.load("big.kfm");
+    draw(model("4,2,1,1,0", "", "0,3, 0,0,0, 2,0,0, 1,0,0\n0,3, 0,0,0, 3,0,0, 2,0,0\n", "a.raw\n",
+               "4,2\n"));
+    EXPECT_EQ(single_polygons_, 0);
 }
 
 // Version 8 carries the flag that turns culling off.

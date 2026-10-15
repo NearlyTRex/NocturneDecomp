@@ -6,49 +6,51 @@ The order the game code is ported in. After the math value types, each step is a
 startup makes, in the order it makes them, holding the functions that call is the first
 to need; then what startup never reaches, by module. Within a step, translation units
 and functions come leaves first. A box is ticked when the recreation has the
-function's `// nocedit` address line, or when pass 1 left it to the compiler. Sizes are
-in instructions.
+function's `// nocedit` address line, or when pass 1 left it to the compiler. It is
+marked `[~]`, partial, when the function still defers part of the original or has a
+path not yet verified against it, and each such item is listed under it. Partial
+functions don't count as done. Sizes are in instructions.
 
-| Step | First needed by | TUs | Functions | Instructions | Done | % Done |
-|---|---|---|---|---|---|---|
-| 0 | Math value types | 3 | 13 | 791 | 13 | 100.0% |
-| 1 | File system: `dosio`, pods | 5 | 44 | 2518 | 44 | 100.0% |
-| 2 | `doNothing`, `readMessageFile`, `getLocalizedString`, `initializeTrigTables`, `initTextureCache`, `initGraphicsSystem` | 8 | 30 | 2804 | 30 | 100.0% |
-| 3 | Sound system: `sndmain`, `CSound` lifetime, `readIniData` | 7 | 123 | 8346 | 123 | 100.0% |
-| 4 | `initFonts`, `CEditorTools::showWarning` | 11 | 46 | 4804 | 46 | 100.0% |
-| 5 | `showCalibrationTest`, `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 50 | 4789 | 34 | 68.0% |
-| 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 20 | 80.0% |
-| 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 96 | 80.0% |
-| 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 9 | 14.2% |
-| 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 0 | 0.0% |
-| 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 17 | 52 | 5565 | 1 | 1.9% |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 5 | 0.8% |
-| 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 2 | 7.6% |
-| 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0.0% |
-| 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 0 | 0.0% |
-| 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 3 | 1.5% |
-| 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 0 | 0.0% |
-| 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 4 | 15.3% |
-| 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 2 | 15.3% |
-| 19 | Not reached from startup: `engine/` | 23 | 279 | 19702 | 21 | 7.5% |
-| 20 | Not reached from startup: `support/` | 2 | 24 | 593 | 3 | 12.5% |
-| 21 | Not reached from startup: `cockpit/` | 4 | 178 | 11527 | 0 | 0.0% |
-| 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 4 | 9.5% |
-| 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 3 | 1.0% |
-| 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 1 | 0.3% |
-| 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 3 | 1.0% |
-| 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 24 | 8.0% |
-| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 0 | 0.0% |
-| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 4 | 1.4% |
-| 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 2 | 0.7% |
-| 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 2 | 0.6% |
-| 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 | 3.6% |
-| 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 36.3% |
-| | **All** | | **4489** | **402860** | **507** | **11.2%** |
+| Step | First needed by | TUs | Functions | Instructions | Done | Partial | % Done |
+|---|---|---|---|---|---|---|---|
+| 0 | Math value types | 3 | 13 | 791 | 13 | 0 | 100.0% |
+| 1 | File system: `dosio`, pods | 5 | 44 | 2518 | 43 | 1 | 97.7% |
+| 2 | `doNothing`, `readMessageFile`, `getLocalizedString`, `initializeTrigTables`, `initTextureCache`, `initGraphicsSystem` | 8 | 30 | 2804 | 27 | 3 | 90.0% |
+| 3 | Sound system: `sndmain`, `CSound` lifetime, `readIniData` | 7 | 123 | 8346 | 122 | 1 | 99.1% |
+| 4 | `initFonts`, `CEditorTools::showWarning` | 11 | 46 | 4804 | 46 | 0 | 100.0% |
+| 5 | `showCalibrationTest`, `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 50 | 4789 | 32 | 2 | 64.0% |
+| 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 16 | 4 | 64.0% |
+| 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 66 | 30 | 55.0% |
+| 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 8 | 1 | 12.6% |
+| 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 0 | 0 | 0.0% |
+| 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 17 | 52 | 5565 | 1 | 0 | 1.9% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 4 | 1 | 0.6% |
+| 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 2 | 0 | 7.6% |
+| 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0 | 0.0% |
+| 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 0 | 0 | 0.0% |
+| 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 3 | 0 | 1.5% |
+| 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 0 | 0 | 0.0% |
+| 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 3 | 1 | 11.5% |
+| 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 2 | 0 | 15.3% |
+| 19 | Not reached from startup: `engine/` | 23 | 279 | 19702 | 20 | 1 | 7.1% |
+| 20 | Not reached from startup: `support/` | 2 | 24 | 593 | 3 | 0 | 12.5% |
+| 21 | Not reached from startup: `cockpit/` | 4 | 178 | 11527 | 0 | 0 | 0.0% |
+| 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 3 | 1 | 7.1% |
+| 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 3 | 0 | 1.0% |
+| 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 1 | 0 | 0.3% |
+| 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 3 | 0 | 1.0% |
+| 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 24 | 0 | 8.0% |
+| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 0 | 0 | 0.0% |
+| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 2 | 2 | 0.7% |
+| 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 2 | 0 | 0.7% |
+| 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 2 | 0 | 0.6% |
+| 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 | 0 | 3.6% |
+| 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
+| | **All** | | **4489** | **402860** | **459** | **48** | **10.2%** |
 
 ## Step 0: Math value types
 
-### `core/actor.cpp` (6 functions, 54 instructions, 6 done)
+### `core/actor.cpp` (6 functions, 54 instructions, 6 done, 0 partial)
 - class `CVector3f`
   - [x] `ctor` 0x00410340 (2, compiler-generated)
   - [x] `dtor` 0x00410350 (2, compiler-generated)
@@ -57,7 +59,7 @@ in instructions.
   - [x] `toFixed8` 0x004103d0 (14)
   - [x] `copy` 0x004104a0 (14, compiler-generated)
 
-### `core/dirmat.cpp` (6 functions, 716 instructions, 6 done)
+### `core/dirmat.cpp` (6 functions, 716 instructions, 6 done, 0 partial)
 - class `CMatrix3x3f`
   - [x] `buildRotationMatrix` 0x00471d30 (79)
   - [x] `invert` 0x00471e10 (156)
@@ -66,17 +68,17 @@ in instructions.
   - [x] `getEulerAngles` 0x00472160 (297)
   - [x] `multiply` 0x00472540 (120)
 
-### `core/set.cpp` (1 functions, 21 instructions, 1 done)
+### `core/set.cpp` (1 functions, 21 instructions, 1 done, 0 partial)
 - class `CVector3f`
   - [x] `equals` 0x00571410 (21)
 
 ## Step 1: File system: `dosio`, pods
 
-### `core/main.c` (1 functions, 147 instructions, 1 done)
+### `core/main.c` (1 functions, 147 instructions, 1 done, 0 partial)
 - free functions
   - [x] `displayErrorAndQuit` 0x00506f10 (147)
 
-### `engine/dosio.cpp` (18 functions, 649 instructions, 18 done)
+### `engine/dosio.cpp` (18 functions, 649 instructions, 18 done, 0 partial)
 - free functions
   - [x] `getRelativeFilePath` 0x004816c0 (33)
   - [x] `addGetFileInfoHook` 0x00481710 (20)
@@ -98,11 +100,11 @@ in instructions.
   - [x] `openSearch` 0x00481c70 (34)
   - [x] `findNext` 0x00481cf0 (40)
 
-### `shape/edittool.cpp` (1 functions, 81 instructions, 1 done)
+### `shape/edittool.cpp` (1 functions, 81 instructions, 1 done, 0 partial)
 - free functions
   - [x] `wildcardStringMatch` 0x004a6e20 (81)
 
-### `engine/pod.cpp` (20 functions, 1498 instructions, 20 done)
+### `engine/pod.cpp` (20 functions, 1498 instructions, 19 done, 1 partial)
 - class `CPodFile`
   - [x] `ctor` 0x0054f5a0 (14)
   - [x] `cleanup` 0x00550090 (36)
@@ -115,7 +117,8 @@ in instructions.
   - [x] `load` 0x005509e0 (1)
   - [x] `mount` 0x00550a10 (66)
   - [x] `remount` 0x00550af0 (55)
-  - [x] `dismount` 0x00550b90 (62)
+  - [~] `dismount` 0x00550b90 (62)
+    - deferred: clearing the texture cache, which nothing registers as the dismount handler, with retail clearTextureCache's port calling setDismountHandler
   - [x] `cleanup` 0x00550c80 (36)
   - [x] `findFile` 0x00551380 (41)
   - [x] `dtor` 0x005509b0 (30)
@@ -127,7 +130,7 @@ in instructions.
   - [x] `findFilesByExtension` 0x00550ce0 (159)
   - [x] `findFileInPod` 0x00551960 (13)
 
-### `core/podmain.cpp` (4 functions, 143 instructions, 4 done)
+### `core/podmain.cpp` (4 functions, 143 instructions, 4 done, 0 partial)
 - free functions
   - [x] `staticInit` 0x00551990 (9)
 - class `CDemonPod`
@@ -137,30 +140,34 @@ in instructions.
 
 ## Step 2: `doNothing`, `readMessageFile`, `getLocalizedString`, `initializeTrigTables`, `initTextureCache`, `initGraphicsSystem`
 
-### `core/flattn.cpp` (1 functions, 1 instructions, 1 done)
+### `core/flattn.cpp` (1 functions, 1 instructions, 1 done, 0 partial)
 - free functions
   - [x] `doNothing` 0x004cbce0 (1)
 
-### `support/newmsg.cpp` (3 functions, 341 instructions, 3 done)
+### `support/newmsg.cpp` (3 functions, 341 instructions, 2 done, 1 partial)
 - free functions
-  - [x] `readMessageFile` 0x00543e40 (218)
+  - [~] `readMessageFile` 0x00543e40 (218)
+    - unverified: which text a key listed twice returns; the original's exchange sort is not stable where stable_sort is, so check the shipped message files for repeated keys
   - [x] `findLocalizedString` 0x00544170 (59)
   - [x] `getLocalizedString` 0x005441f0 (64)
 
-### `engine/matrix.c` (1 functions, 41 instructions, 1 done)
+### `engine/matrix.c` (1 functions, 41 instructions, 1 done, 0 partial)
 - free functions
   - [x] `initializeTrigTables` 0x0050c530 (41)
 
-### `engine/texture.cpp` (2 functions, 34 instructions, 2 done)
+### `engine/texture.cpp` (2 functions, 34 instructions, 1 done, 1 partial)
 - class `CTextureCache`
-  - [x] `ctor` 0x005dcab0 (19)
+  - [~] `ctor` 0x005dcab0 (19)
+    - deferred: clearing the cache's has-wrapped flag, with getTextureCacheStats
 - free functions
   - [x] `initTextureCache` 0x005dd760 (15)
 
-### `engine/special.cpp` (8 functions, 864 instructions, 8 done)
+### `engine/special.cpp` (8 functions, 864 instructions, 7 done, 1 partial)
 - free functions
   - [x] `selectCard` 0x005b7d90 (9)
-  - [x] `loadExternalRenderer` 0x005b6750 (639)
+  - [~] `loadExternalRenderer` 0x005b6750 (639)
+    - deferred: sharing the light level, with the scene camera's fog setup
+    - deferred: sharing the rendering quality, with 3d.c's setRenderingQuality
   - [x] `clear` 0x005b7a30 (6)
   - [x] `clearScreen` 0x005b3e70 (35)
   - [x] `lockFrame` 0x005b7210 (15)
@@ -168,11 +175,11 @@ in instructions.
   - [x] `presentToExternalRenderer` 0x005b7c30 (66)
   - [x] `setResolutionAndColorTable` 0x005b7460 (81)
 
-### `wincore/winrun.cpp` (1 functions, 51 instructions, 1 done)
+### `wincore/winrun.cpp` (1 functions, 51 instructions, 1 done, 0 partial)
 - free functions
   - [x] `processWindowMessages` 0x005f35e0 (51)
 
-### `wincore/wddvmem.cpp` (8 functions, 1035 instructions, 8 done)
+### `wincore/wddvmem.cpp` (8 functions, 1035 instructions, 8 done, 0 partial)
 - free functions
   - [x] `initializeGraphicsSystem` 0x005ecc10 (112)
   - [x] `convertPaletteToDirectColor` 0x004f41c0 (120)
@@ -183,7 +190,7 @@ in instructions.
   - [x] `swapBuffers` 0x005eda20 (174)
   - [x] `setScreenResolution` 0x005ecef0 (280)
 
-### `engine/2d.c` (6 functions, 437 instructions, 6 done)
+### `engine/2d.c` (6 functions, 437 instructions, 6 done, 0 partial)
 - free functions
   - [x] `loadPaletteFile` 0x004015a0 (33)
   - [x] `findBestPaletteMatch` 0x00401460 (107)
@@ -194,17 +201,17 @@ in instructions.
 
 ## Step 3: Sound system: `sndmain`, `CSound` lifetime, `readIniData`
 
-### `core/game.cpp` (1 functions, 64 instructions, 1 done)
+### `core/game.cpp` (1 functions, 64 instructions, 1 done, 0 partial)
 - class `CGame`
   - [x] `restoreDefaultControls` 0x004dbbc0 (64)
 
-### `engine/console.cpp` (3 functions, 188 instructions, 3 done)
+### `engine/console.cpp` (3 functions, 188 instructions, 3 done, 0 partial)
 - class `CConsole`
   - [x] `scrollUp` 0x00441a80 (49)
   - [x] `writeChar` 0x00441970 (60)
   - [x] `printf` 0x00441890 (79)
 
-### `engine/ini.cpp` (14 functions, 846 instructions, 14 done)
+### `engine/ini.cpp` (14 functions, 846 instructions, 14 done, 0 partial)
 - free functions
   - [x] `initIniFile` 0x004fbaa0 (25)
   - [x] `getProfileString` 0x004fb960 (24)
@@ -223,16 +230,16 @@ in instructions.
   - [x] `findLineNumberOfVariable` 0x004fb470 (154)
   - [x] `writeProfileString` 0x004fb660 (224)
 
-### `core/inivar.cpp` (2 functions, 1067 instructions, 2 done)
+### `core/inivar.cpp` (2 functions, 1067 instructions, 2 done, 0 partial)
 - free functions
   - [x] `readIniData` 0x004fbd90 (546)
   - [x] `writeIniData` 0x004fc510 (521)
 
-### `wincore/winrun.cpp` (1 functions, 48 instructions, 1 done)
+### `wincore/winrun.cpp` (1 functions, 48 instructions, 1 done, 0 partial)
 - free functions
   - [x] `getTime` 0x005f2dc0 (48)
 
-### `sound/sndmain.cpp` (100 functions, 6122 instructions, 100 done)
+### `sound/sndmain.cpp` (100 functions, 6122 instructions, 99 done, 1 partial)
 - free functions
   - [x] `isSoundMuted` 0x005a96b0 (2)
   - [x] `ensureSoundMemoryAvailable` 0x005a4450 (75)
@@ -309,7 +316,9 @@ in instructions.
   - [x] `setAudioSampleRate` 0x005ab2c0 (9)
   - [x] `pollAllSfxSlots` 0x005acdb0 (63)
   - [x] `initializeSoundDevice` 0x005ab5b0 (56)
-  - [x] `analyzeFrequencyBand` 0x005ac400 (370)
+  - [~] `analyzeFrequencyBand` 0x005ac400 (370)
+    - unverified: the band's bin bounds and sums, by running nocedit's own code on spectra poked into its transform buffers
+    - unverified: the transform's float stores and its pi of 3.1415926535, which the double-precision transform doesn't keep, by running nocedit's transform on the same window
 - class `CSfxSample`
   - [x] `freeSampleData` 0x005a6400 (15)
   - [x] `freeMemory` 0x005a62c0 (58)
@@ -339,30 +348,30 @@ in instructions.
   - [x] `ctor` 0x005add70 (8)
   - [x] `dtor` 0x005ade30 (2, compiler-generated)
 
-### `core/sound.cpp` (2 functions, 11 instructions, 2 done)
+### `core/sound.cpp` (2 functions, 11 instructions, 2 done, 0 partial)
 - class `CSound`
   - [x] `ctor` 0x005b2ce0 (10)
   - [x] `dtor` 0x005b2d60 (1)
 
 ## Step 4: `initFonts`, `CEditorTools::showWarning`
 
-### `cockpit/ckptutil.c` (1 functions, 96 instructions, 1 done)
+### `cockpit/ckptutil.c` (1 functions, 96 instructions, 1 done, 0 partial)
 - free functions
   - [x] `readBitmapFile` 0x00431870 (96)
 
-### `engine/winfont.cpp` (1 functions, 42 instructions, 1 done)
+### `engine/winfont.cpp` (1 functions, 42 instructions, 1 done, 0 partial)
 - class `CWinFont`
   - [x] `ctor` 0x005f22e0 (42)
 
-### `core/dfont.cpp` (1 functions, 438 instructions, 1 done)
+### `core/dfont.cpp` (1 functions, 438 instructions, 1 done, 0 partial)
 - free functions
   - [x] `initFonts` 0x004709a0 (438)
 
-### `engine/3d.c` (1 functions, 22 instructions, 1 done)
+### `engine/3d.c` (1 functions, 22 instructions, 1 done, 0 partial)
 - free functions
   - [x] `setRenderAlpha` 0x00406d80 (22)
 
-### `engine/2d.c` (6 functions, 329 instructions, 6 done)
+### `engine/2d.c` (6 functions, 329 instructions, 6 done, 0 partial)
 - free functions
   - [x] `clearInputAndWait` 0x00403260 (28)
   - [x] `drawHLine` 0x00402ee0 (89)
@@ -371,12 +380,12 @@ in instructions.
   - [x] `fillRectColor` 0x00403170 (53)
   - [x] `fillRectWithBorder` 0x00403200 (35)
 
-### `engine/palette.cpp` (2 functions, 27 instructions, 2 done)
+### `engine/palette.cpp` (2 functions, 27 instructions, 2 done, 0 partial)
 - class `CFont`
   - [x] `ctor` 0x00544eb0 (3)
   - [x] `drawText` 0x00544ed0 (24)
 
-### `engine/font.cpp` (21 functions, 2925 instructions, 21 done)
+### `engine/font.cpp` (21 functions, 2925 instructions, 21 done, 0 partial)
 - class `CBitFont`
   - [x] `reset` 0x004cced0 (39)
   - [x] `ctor` 0x004cce90 (8)
@@ -401,24 +410,24 @@ in instructions.
   - [x] `clipCharacter` 0x004ccdd0 (65)
   - [x] `drawAlphaBlendedPixels` 0x004ce240 (48)
 
-### `engine/matrix.c` (2 functions, 126 instructions, 2 done)
+### `engine/matrix.c` (2 functions, 126 instructions, 2 done, 0 partial)
 - free functions
   - [x] `pushViewport` 0x0050e320 (71)
   - [x] `popViewport` 0x0050e480 (55)
 
-### `wincore/winrun.cpp` (3 functions, 44 instructions, 3 done)
+### `wincore/winrun.cpp` (3 functions, 44 instructions, 3 done, 0 partial)
 - free functions
   - [x] `clearKeypresses` 0x005f2e70 (6)
   - [x] `clearMouseClicks` 0x005f30c0 (3)
   - [x] `getNextKeypress` 0x005f2e90 (35)
 
-### `engine/keys.cpp` (2 functions, 4 instructions, 2 done)
+### `engine/keys.cpp` (2 functions, 4 instructions, 2 done, 0 partial)
 - free functions
   - [x] `clearKeypresses` 0x00502450 (1)
 - class `CKeys`
   - [x] `getInputKey` 0x00502460 (3)
 
-### `shape/edittool.cpp` (6 functions, 751 instructions, 6 done)
+### `shape/edittool.cpp` (6 functions, 751 instructions, 6 done, 0 partial)
 - class `CEditorTools`
   - [x] `createModalWindow` 0x004a0970 (309)
   - [x] `createCenteredModal` 0x004a0890 (71)
@@ -429,25 +438,25 @@ in instructions.
 
 ## Step 5: `showCalibrationTest`, `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init`
 
-### `engine/special.cpp` (2 functions, 122 instructions, 2 done)
+### `engine/special.cpp` (2 functions, 122 instructions, 2 done, 0 partial)
 - free functions
   - [x] `renderAlphaRow32` 0x005b555c (50)
   - [x] `renderAlphaRow16` 0x005b55f7 (72)
 
-### `core/menu.cpp` (2 functions, 162 instructions, 2 done)
+### `core/menu.cpp` (2 functions, 162 instructions, 2 done, 0 partial)
 - free functions
   - [x] `showCalibrationTestPattern` 0x00510a50 (117)
   - [x] `showCalibrationTest` 0x00510ba0 (45)
 
-### `wincore/winrun.cpp` (1 functions, 6 instructions, 1 done)
+### `wincore/winrun.cpp` (1 functions, 6 instructions, 1 done, 0 partial)
 - free functions
   - [x] `wasKeyPressed` 0x005f2f00 (6)
 
-### `wincore/winvideo.cpp` (1 functions, 270 instructions, 1 done)
+### `wincore/winvideo.cpp` (1 functions, 270 instructions, 1 done, 0 partial)
 - free functions
   - [x] `playMovie` 0x005f4a00 (270)
 
-### `engine/alphabit.cpp` (6 functions, 456 instructions, 6 done)
+### `engine/alphabit.cpp` (6 functions, 456 instructions, 6 done, 0 partial)
 - class `CAlphaBitmap`
   - [x] `free` 0x00410560 (40)
   - [x] `load` 0x004105d0 (241)
@@ -456,32 +465,36 @@ in instructions.
   - [x] `ctor` 0x00410520 (5)
   - [x] `dtor` 0x00410540 (8)
 
-### `core/sound.cpp` (1 functions, 24 instructions, 1 done)
+### `core/sound.cpp` (1 functions, 24 instructions, 1 done, 0 partial)
 - class `CSound`
   - [x] `findAllSoundFiles` 0x005b2d00 (24)
 
-### `core/mission.cpp` (1 functions, 23 instructions, 1 done)
+### `core/mission.cpp` (1 functions, 23 instructions, 0 done, 1 partial)
 - class `CDemonMission`
-  - [x] `reset` 0x00522c80 (23)
+  - [~] `reset` 0x00522c80 (23)
+    - deferred: clearing the pending teleport to area -1 at the origin, with setTeleportTarget and process
+    - deferred: emptying the queue of actors to delete, with markActorToDelete and process
+    - deferred: clearing actors_prepared, with prepareAllActors and loadSet
+    - deferred: clearing has_inventory_actors, next_inventory_actor and actor_lookup_count, with readMissionFile, getNextLoadedInventoryActor and CInventory::load
 
-### `core/dfilter.cpp` (3 functions, 147 instructions, 3 done)
+### `core/dfilter.cpp` (3 functions, 147 instructions, 3 done, 0 partial)
 - class `CDemonFilter`
   - [x] `freeMemory` 0x004702c0 (15)
   - [x] `allocMemory` 0x00470260 (28)
   - [x] `init` 0x004705a0 (104)
 
-### `engine/ncursfx.cpp` (1 functions, 80 instructions, 1 done)
+### `engine/ncursfx.cpp` (1 functions, 80 instructions, 1 done, 0 partial)
 - class `CMouse`
   - [x] `load` 0x00544420 (80)
 
-### `engine/font.cpp` (4 functions, 124 instructions, 4 done)
+### `engine/font.cpp` (4 functions, 124 instructions, 4 done, 0 partial)
 - class `CBitFont`
   - [x] `drawTextWrapper` 0x004cdbf0 (23)
   - [x] `drawTextCenterInBounds` 0x004cdee0 (33)
   - [x] `drawTextCenterInBoundsFV` 0x004cdf80 (35)
   - [x] `drawTextCenterInBoundsF` 0x004cdf30 (33)
 
-### `shape/edittool.cpp` (7 functions, 576 instructions, 7 done)
+### `shape/edittool.cpp` (7 functions, 576 instructions, 7 done, 0 partial)
 - class `CStrList`
   - [x] `add` 0x004a2b80 (12)
   - [x] `getStringAt` 0x004a2f70 (5)
@@ -492,11 +505,11 @@ in instructions.
   - [x] `updatePercentage` 0x004a0530 (264)
   - [x] `showCenteredProgressDialog` 0x004a0430 (79)
 
-### `core/game.cpp` (1 functions, 34 instructions, 0 done)
+### `core/game.cpp` (1 functions, 34 instructions, 0 done, 0 partial)
 - class `CGame`
   - [ ] `displayMessage` 0x004d7f20 (34)
 
-### `support/trisock.cpp` (4 functions, 140 instructions, 4 done)
+### `support/trisock.cpp` (4 functions, 140 instructions, 4 done, 0 partial)
 - class `CSocket`
   - [x] `sendSocketData` 0x005e1ca0 (64)
   - [x] `isSocketValid` 0x005e1b70 (5)
@@ -504,7 +517,7 @@ in instructions.
 - free functions
   - [x] `createNetworkAddr` 0x005e1940 (7)
 
-### `core/netgame.cpp` (16 functions, 2625 instructions, 1 done)
+### `core/netgame.cpp` (16 functions, 2625 instructions, 0 done, 1 partial)
 - class `CNetGame`
   - [ ] `sendPacket` 0x00541230 (14)
   - [ ] `send` 0x005411c0 (36)
@@ -520,98 +533,106 @@ in instructions.
   - [ ] `removeChatOut` 0x00541ff0 (222)
   - [ ] `receivePackets` 0x005405b0 (57)
   - [ ] `disconnect` 0x0053fd00 (348)
-  - [x] `init` 0x0053f780 (53)
+  - [~] `init` 0x0053f780 (53)
+    - deferred: zeroing g_ChatHistoryCount and g_ChatOutCount, with CNetGame::addChatHistory and CNetGame::processChatOut
+    - deferred: disconnect(0)'s other resets: server_player_index -1, mission_name emptied, player_count 0, has_pending_sim_frame 0, g_RemoteSyncStage 0 and the game-settings version INT_02f7c8c4 0, with CNetGame::disconnect
 - free functions
   - [ ] `assignInt1` 0x00543e20 (6)
 
 ## Step 6: `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT`
 
-### `core/main.c` (1 functions, 642 instructions, 1 done)
+### `core/main.c` (1 functions, 642 instructions, 1 done, 0 partial)
 - free functions
   - [x] `initializeGameSystems` 0x00507a60 (642)
 
-### `engine/alphabit.cpp` (1 functions, 71 instructions, 1 done)
+### `engine/alphabit.cpp` (1 functions, 71 instructions, 1 done, 0 partial)
 - class `CAlphaBitmap`
   - [x] `scale` 0x00410c20 (71)
 
-### `engine/texture.cpp` (2 functions, 59 instructions, 2 done)
+### `engine/texture.cpp` (2 functions, 59 instructions, 1 done, 1 partial)
 - class `CTextureCache`
-  - [x] `freeTextures` 0x005dcb30 (54)
+  - [~] `freeTextures` 0x005dcb30 (54)
+    - deferred: clearing the cache's has-wrapped flag, with getTextureCacheStats
 - free functions
   - [x] `clearTextureCache` 0x005dd8e0 (5)
 
-### `core/actor.cpp` (2 functions, 32 instructions, 0 done)
+### `core/actor.cpp` (2 functions, 32 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `generateRandomValue` 0x0040cba0 (7)
   - [ ] `getRandomFloatFromRange` 0x0040cc10 (25)
 
-### `core/course.cpp` (3 functions, 178 instructions, 3 done)
+### `core/course.cpp` (3 functions, 178 instructions, 3 done, 0 partial)
 - class `CCourse`
   - [x] `free` 0x004426c0 (21)
   - [x] `allocMemory` 0x00442500 (45)
   - [x] `load` 0x00442580 (112)
 
-### `core/dtri.cpp` (2 functions, 164 instructions, 2 done)
+### `core/dtri.cpp` (2 functions, 164 instructions, 2 done, 0 partial)
 - class `CDemonTriangle`
   - [x] `calculateData` 0x0049a640 (125)
   - [x] `buildCollision` 0x0049a790 (39)
 
-### `engine/keyframe.c` (1 functions, 130 instructions, 1 done)
+### `engine/keyframe.c` (1 functions, 130 instructions, 1 done, 0 partial)
 - free functions
   - [x] `calculateSurfaceNormal` 0x00501bc0 (130)
 
-### `core/box.cpp` (1 functions, 47 instructions, 1 done)
+### `core/box.cpp` (1 functions, 47 instructions, 1 done, 0 partial)
 - class `CBoundingBox3D`
   - [x] `expand` 0x00420240 (47)
 
-### `core/dmodel.cpp` (9 functions, 1490 instructions, 9 done)
+### `core/dmodel.cpp` (9 functions, 1490 instructions, 6 done, 3 partial)
 - class `CKeyFramedModel`
   - [x] `free` 0x00477690 (89)
   - [x] `allocate` 0x00477bf0 (152)
-  - [x] `populateCollisionList` 0x00478950 (203)
+  - [~] `populateCollisionList` 0x00478950 (203)
+    - deferred: keeping the angles and their rotation in the model, which getFloorHeight and intersectCylinder compare to rebuild the list and intersectRay turns its ray by, with CKeyFramedModel::getFloorHeight, intersectCylinder and intersectRay
   - [x] `buildCollisionTriList` 0x00478830 (72)
   - [x] `readBinaryModel` 0x00476f20 (160)
   - [x] `readTextModel` 0x00477110 (446)
-  - [x] `calcNormals` 0x00477e60 (135)
+  - [~] `calcNormals` 0x00477e60 (135)
+    - unverified: the scale and its products, which the x87 kept in extended precision before the chop, by running calcNormals against nocedit's own code with axis-aligned and large sums
   - [x] `calculateFrameBounds` 0x00478010 (121)
-  - [x] `load` 0x00476db0 (112)
+  - [~] `load` 0x00476db0 (112)
+    - deferred: keeping the filename in the model, which loadModel's pool lookup and CShell::onCollision read, with loadModel and CShell
 
-### `core/moon.cpp` (1 functions, 127 instructions, 0 done)
+### `core/moon.cpp` (1 functions, 127 instructions, 0 done, 0 partial)
 - class `CMoon`
   - [ ] `init` 0x00529ae0 (127)
 
-### `core/game.cpp` (2 functions, 48 instructions, 0 done)
+### `core/game.cpp` (2 functions, 48 instructions, 0 done, 0 partial)
 - class `CGame`
   - [ ] `saveClockTime` 0x004d7d80 (4)
   - [ ] `updateDT` 0x004d7d90 (44)
 
 ## Step 7: `CMoon::update`, `CMoon::render`
 
-### `core/course.cpp` (2 functions, 342 instructions, 2 done)
+### `core/course.cpp` (2 functions, 342 instructions, 2 done, 0 partial)
 - class `CCourse`
   - [x] `interpolate` 0x004427a0 (267)
   - [x] `evaluate` 0x00442710 (75)
 
-### `core/mirror.cpp` (3 functions, 216 instructions, 0 done)
+### `core/mirror.cpp` (3 functions, 216 instructions, 0 done, 0 partial)
 - class `CMirrorReflection`
   - [ ] `applyMirrorTransform` 0x005222f0 (13)
   - [ ] `transformMirrorVertex` 0x005229b0 (63)
   - [ ] `transformMirrorEdgeToIntegerSpace` 0x00522a50 (140)
 
-### `core/dglobe.cpp` (2 functions, 209 instructions, 0 done)
+### `core/dglobe.cpp` (2 functions, 209 instructions, 0 done, 0 partial)
 - class `CDemonGlobe`
   - [ ] `getAttenuationAtVertex` 0x00471850 (124)
   - [ ] `intersectAABB` 0x00471770 (85)
 
-### `engine/texture.cpp` (4 functions, 763 instructions, 4 done)
+### `engine/texture.cpp` (4 functions, 763 instructions, 2 done, 2 partial)
 - class `CTextureCache`
-  - [x] `loadTexture` 0x005dcc00 (396)
+  - [~] `loadTexture` 0x005dcc00 (396)
+    - deferred: setting the cache's has-wrapped flag when the next slot goes back to the first, with getTextureCacheStats
   - [x] `findTexture` 0x005dd180 (49)
   - [x] `setupTexture` 0x005dd200 (245)
 - free functions
-  - [x] `ensureTextureLoaded` 0x005dd800 (73)
+  - [~] `ensureTextureLoaded` 0x005dd800 (73)
+    - deferred: recording the slot as the current texture index, with getCurrentTexture and its callers renderPolygonFullEffectsBufferedOp65 and renderPolygonFullEffectsDirectOp66
 
-### `core/dcamera.cpp` (5 functions, 1076 instructions, 0 done)
+### `core/dcamera.cpp` (5 functions, 1076 instructions, 0 done, 0 partial)
 - class `CDemonCamera`
   - [ ] `pushRect` 0x0044c740 (27)
   - [ ] `sampleLightingAntialiased` 0x0044e790 (468)
@@ -620,7 +641,7 @@ in instructions.
 - free functions
   - [ ] `renderFlatColorScanline` 0x004505e0 (140)
 
-### `core/xform.cpp` (11 functions, 1668 instructions, 11 done)
+### `core/xform.cpp` (11 functions, 1668 instructions, 11 done, 0 partial)
 - free functions
   - [x] `slerpQuaternion` 0x005f77e0 (179)
   - [x] `matrixToEulerAngles` 0x005f5690 (375)
@@ -634,27 +655,32 @@ in instructions.
   - [x] `clipInterpolateBottomPlane` 0x005f7e00 (81)
   - [x] `transformAndClipGeometry` 0x005f8550 (584)
 
-### `engine/clipper.c` (12 functions, 2424 instructions, 12 done)
+### `engine/clipper.c` (12 functions, 2424 instructions, 9 done, 3 partial)
 - free functions
   - [x] `interpolateVertexRightClip` 0x00435a00 (104)
   - [x] `interpolateVertexLeftClip` 0x00435b00 (104)
   - [x] `interpolateVertexTopClip` 0x00435c00 (104)
   - [x] `interpolateVertexBottomClip` 0x00435d00 (109)
   - [x] `interpolateVertexFarClip` 0x00435e00 (109)
-  - [x] `clipPolygonToViewFrustum` 0x004366e0 (782)
-  - [x] `clipAndRasterize` 0x004371b0 (28)
+  - [~] `clipPolygonToViewFrustum` 0x004366e0 (782)
+    - deferred: adding the corner count less two to the rendered-triangle count before the hardware draw, with CGame::processFrame's statistics
+  - [~] `clipAndRasterize` 0x004371b0 (28)
+    - deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
   - [x] `interpolateVertexRightClipAdvanced` 0x00437230 (126)
   - [x] `interpolateVertexLeftClipAdvanced` 0x00437360 (125)
   - [x] `interpolateVertexTopClipAdvanced` 0x00437490 (126)
   - [x] `interpolateVertexBottomClipAdvanced` 0x004375c0 (126)
-  - [x] `clipPolygonToViewport` 0x00438420 (581)
+  - [~] `clipPolygonToViewport` 0x00438420 (581)
+    - deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
 
-### `engine/zraster.c` (2 functions, 738 instructions, 2 done)
+### `engine/zraster.c` (2 functions, 738 instructions, 0 done, 2 partial)
 - free functions
-  - [x] `rasterizePolygonCustom` 0x005fd4e0 (365)
-  - [x] `rasterizeTriangle` 0x005fcfc0 (373)
+  - [~] `rasterizePolygonCustom` 0x005fd4e0 (365)
+    - deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
+  - [~] `rasterizeTriangle` 0x005fcfc0 (373)
+    - deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
 
-### `engine/prim.c` (13 functions, 2410 instructions, 12 done)
+### `engine/prim.c` (13 functions, 2410 instructions, 8 done, 4 partial)
 - free functions
   - [x] `setCullingMode` 0x00551b90 (3)
   - [x] `prepareDepthBuffer` 0x00551fb0 (44)
@@ -663,26 +689,34 @@ in instructions.
   - [x] `replaceWWithDepth` 0x00552110 (24)
   - [x] `calculateTriangleWindingOrder` 0x00552150 (63)
   - [x] `findEdgeInBuffer` 0x00551f70 (22)
-  - [x] `renderPolygonSoftware` 0x00552510 (427)
-  - [x] `renderIndexedPolygonSoftware` 0x00552a40 (418)
-  - [x] `renderScanlinePolygon` 0x00553470 (538)
-  - [x] `renderIndexedPolygonAdvanced` 0x00553b10 (610)
+  - [~] `renderPolygonSoftware` 0x00552510 (427)
+    - deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
+  - [~] `renderIndexedPolygonSoftware` 0x00552a40 (418)
+    - deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
+  - [~] `renderScanlinePolygon` 0x00553470 (538)
+    - deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
+  - [~] `renderIndexedPolygonAdvanced` 0x00553b10 (610)
+    - deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
   - [ ] `getTriangleWindingFromPackedIndices` 0x005523f0 (81)
   - [x] `calculateTriangleWindingOrderFromIndices` 0x00552210 (78)
 
-### `core/dstrender.cpp` (2 functions, 106 instructions, 2 done)
+### `core/dstrender.cpp` (2 functions, 106 instructions, 2 done, 0 partial)
 - free functions
   - [x] `renderDepthOnlyStandard` 0x0049072f (32)
   - [x] `renderTexturedAlphaMMXScanline` 0x004907e7 (74)
 
-### `core/dmodel.cpp` (4 functions, 290 instructions, 4 done)
+### `core/dmodel.cpp` (4 functions, 290 instructions, 2 done, 2 partial)
 - class `CKeyFramedModel`
   - [x] `getFrameVertices` 0x00477890 (18)
   - [x] `rotateAndLightVertices` 0x004778d0 (64)
-  - [x] `submitToRenderer` 0x00477980 (179)
-  - [x] `prepareForRender` 0x00477850 (29)
+  - [~] `submitToRenderer` 0x00477980 (179)
+    - deferred: skipping the parts an instance hides, with CKeyFramedModelInstance
+    - deferred: batching each part whole without a texture in the shadow pass, with setShadowPass's callers
+    - unverified: the diagonal's float roundings at the 250 threshold, by running the test against nocedit's own code with boxes either side of it
+  - [~] `prepareForRender` 0x00477850 (29)
+    - deferred: the instance parameter that hides parts, with CKeyFramedModelInstance
 
-### `engine/matrix.c` (8 functions, 853 instructions, 8 done)
+### `engine/matrix.c` (8 functions, 853 instructions, 8 done, 0 partial)
 - free functions
   - [x] `interpolatedSin` 0x0050c5c0 (18)
   - [x] `interpolatedCos` 0x0050c600 (18)
@@ -693,31 +727,50 @@ in instructions.
   - [x] `setCameraOrigin` 0x0050e270 (7)
   - [x] `invertTransformMatrix` 0x0050c640 (200)
 
-### `engine/3d.c` (3 functions, 64 instructions, 3 done)
+### `engine/3d.c` (3 functions, 64 instructions, 2 done, 1 partial)
 - free functions
   - [x] `setBlendMode` 0x00406dd0 (3)
   - [x] `isVisiblePlane` 0x00403950 (36)
-  - [x] `processCameraRelativePoint` 0x004037e0 (25)
+  - [~] `processCameraRelativePoint` 0x004037e0 (25)
+    - deferred: keeping the point, with CBoundingBox3D::isVisible, its only reader
 
-### `engine/drender.cpp` (27 functions, 2214 instructions, 23 done)
+### `engine/drender.cpp` (27 functions, 2214 instructions, 12 done, 11 partial)
 - class `CDemonRenderer`
-  - [x] `enableFaceCapture` 0x0048caa0 (5)
+  - [~] `enableFaceCapture` 0x0048caa0 (5)
+    - deferred: setting the vertex-processing flag, with 3d.c's dispatchMRGLBlockChain and transformAndBufferVertices, which read it
   - [ ] `isShadowPass` 0x0048cae0 (3)
   - [x] `applyScaledTransform` 0x0048c4f0 (113)
   - [x] `matrixPush` 0x0048c630 (2)
   - [x] `matrixPop` 0x0048c640 (2)
   - [x] `setPlaneCullingEnabled` 0x0048c9f0 (4)
-  - [x] `setRenderingState` 0x0048ca00 (24)
-  - [x] `captureTexture` 0x0048db80 (47)
+  - [~] `setRenderingState` 0x0048ca00 (24)
+    - deferred: culling mode 2, the mirror pass's opposite winding, with enableAdvancedCulling's callers
+  - [~] `captureTexture` 0x0048db80 (47)
+    - deferred: recording the texture while texture capture is on, with setTextureCaptureMode's callers
   - [ ] `renderCustomScanline` 0x0048c8d0 (54)
-  - [x] `clipAndFillPoly` 0x0048a740 (80)
+  - [~] `clipAndFillPoly` 0x0048a740 (80)
+    - deferred: the shadow pass sending an untextured polygon down the depth-only route, with setShadowPass's callers
   - [ ] `captureFace` 0x0048d8a0 (123)
   - [ ] `processQuadPrimitive` 0x0048d7a0 (84)
-  - [x] `renderTexturedPoly` 0x0048aeb0 (112)
-  - [x] `renderFacetList` 0x0048cf00 (197)
-  - [x] `renderQuadBatch` 0x0048ce90 (46)
-  - [x] `renderAlphaBlendedPoly` 0x0048b1e0 (96)
-  - [x] `renderDestReadBlendPoly` 0x0048b970 (104)
+  - [~] `renderTexturedPoly` 0x0048aeb0 (112)
+    - deferred: handing the polygon to processQuadPrimitive while texture capture is on, with setTextureCaptureMode's callers
+    - deferred: the shadow pass's depth-only draw, with setShadowPass's callers
+    - deferred: keeping the buffer's own texture coordinates while skip_uv_extraction is set, with CCharacter::renderEthereal
+    - deferred: the scanline's light level and solid colour, 0 until set, with the scene camera's fog setup
+  - [~] `renderFacetList` 0x0048cf00 (197)
+    - deferred: the shadow pass's depth-only straight path, with setShadowPass's callers
+    - deferred: keeping the buffer's own texture coordinates while skip_uv_extraction is set, with CCharacter::renderEthereal
+    - deferred: the scanline's light level and solid colour, 0 until set, with the scene camera's fog setup
+  - [~] `renderQuadBatch` 0x0048ce90 (46)
+    - deferred: sending each polygon to processQuadPrimitive while texture capture is on, with setTextureCaptureMode's callers
+  - [~] `renderAlphaBlendedPoly` 0x0048b1e0 (96)
+    - deferred: the shadow pass's depth-only draw, with setShadowPass's callers
+    - deferred: keeping the buffer's own texture coordinates while skip_uv_extraction is set, with CCharacter::renderEthereal
+    - deferred: the scanline's light level and solid colour, 0 until set, with the scene camera's fog setup
+  - [~] `renderDestReadBlendPoly` 0x0048b970 (104)
+    - deferred: the shadow pass's textured-alpha depth draw, with setShadowPass's callers
+    - deferred: keeping the buffer's own texture coordinates while skip_uv_extraction is set, with CCharacter::renderEthereal
+    - deferred: the scanline's light level and solid colour, 0 until set, with the scene camera's fog setup
   - [x] `getCameraOriginFixed` 0x0048c760 (23)
   - [x] `setBlendMode` 0x0048ca50 (5)
   - [x] `setRenderAlpha` 0x0048ca60 (5)
@@ -727,23 +780,38 @@ in instructions.
   - [x] `processCameraRelativeVertex` 0x0048c450 (20)
   - [x] `setProjectionScale` 0x0048c650 (6)
 - free functions
-  - [x] `renderTriangleTextured` 0x00483370 (502)
-  - [x] `renderTriangleSimple` 0x004839f0 (366)
+  - [~] `renderTriangleTextured` 0x00483370 (502)
+    - deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
+  - [~] `renderTriangleSimple` 0x004839f0 (366)
+    - deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
 
-### `core/set.cpp` (10 functions, 2496 instructions, 5 done)
+### `core/set.cpp` (10 functions, 2496 instructions, 1 done, 4 partial)
 - class `CDemonSet`
   - [ ] `pushScreenBoundsToCamera` 0x0056e5d0 (157)
-  - [x] `rotateVerticies` 0x0056e7c0 (67)
+  - [~] `rotateVerticies` 0x0056e7c0 (67)
+    - deferred: pushing the vertices' screen bounds to the scene camera, with the scene camera
   - [ ] `gatherVisibleLights` 0x0056d4a0 (471)
   - [ ] `calculateSpatialLighting` 0x0056db80 (191)
-  - [x] `lightVertexColor` 0x0056ddb0 (266)
-  - [x] `lightVerticies` 0x0056eac0 (1082)
+  - [~] `lightVertexColor` 0x0056ddb0 (266)
+    - deferred: the perspective reciprocal as the alpha, 0 until set, with the scene camera's perspective setup
+    - deferred: the spatial lighting outside quick light, with the scene's lights
+  - [~] `lightVerticies` 0x0056eac0 (1082)
+    - deferred: lighting by the spatial lights while rendering_mode is 0, the given normals turned by the camera first, with the scene's lights
+    - deferred: the quality modes' lighting, with setCameraView and the actors that set lighting_quality_mode
+    - deferred: the cached mirror colour, with cacheMirrorLighting
+    - deferred: lighting without the directional light, with the actors that set disable_directional_lighting
+    - deferred: leaving the colours alone in the shadow pass, with setShadowPass's callers
+    - deferred: skipping small normals' normalisation while skip_normal_normalization is set, with CSvetlana::renderOpaque
+    - deferred: packed and triangle face lists, with the callers that pass them
   - [ ] `renderEnvMapPrimitives` 0x00570040 (156)
   - [ ] `renderEnvMapBatchQuad` 0x00570010 (16)
-  - [x] `renderPrimitiveBatch` 0x00570770 (82)
+  - [~] `renderPrimitiveBatch` 0x00570770 (82)
+    - deferred: drawing nothing while the game suppresses set geometry, with CGame's cheats and game session
+    - deferred: the env-mapped drawing in the game's env-map render modes, with renderEnvMapBatchQuad and the code that sets CGame's render_mode
+    - deferred: the per-pixel flat-colour pass first, with renderCustomScanline and the code that sets per_pixel_lighting_enabled
   - [x] `setFlatColor` 0x00570ca0 (8)
 
-### `engine/special.cpp` (10 functions, 1391 instructions, 8 done)
+### `engine/special.cpp` (10 functions, 1391 instructions, 7 done, 1 partial)
 - free functions
   - [x] `transformAndProjectPoint` 0x005b575c (205)
   - [x] `selectTextureFromPalette` 0x005b7340 (26)
@@ -753,47 +821,48 @@ in instructions.
   - [x] `drawPolygon` 0x005b75e0 (17)
   - [x] `renderMMXPerspectiveScanline32` 0x005b4031 (449)
   - [x] `renderMMXPerspectiveScanline16` 0x005b4823 (509)
-  - [x] `drawPolyList` 0x005b7640 (106)
+  - [~] `drawPolyList` 0x005b7640 (106)
+    - deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
   - [ ] `clearZBufferNative` 0x005b3ed4 (35)
 
-### `core/moon.cpp` (2 functions, 356 instructions, 0 done)
+### `core/moon.cpp` (2 functions, 356 instructions, 0 done, 0 partial)
 - class `CMoon`
   - [ ] `update` 0x00529d60 (96)
   - [ ] `render` 0x00529ed0 (260)
 
 ## Step 8: `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog`
 
-### `core/menu.cpp` (1 functions, 333 instructions, 0 done)
+### `core/menu.cpp` (1 functions, 333 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `renderMenuAndGetChoice` 0x00510000 (333)
 
-### `core/moon.cpp` (2 functions, 47 instructions, 0 done)
+### `core/moon.cpp` (2 functions, 47 instructions, 0 done, 0 partial)
 - class `CMoon`
   - [ ] `isAnimationFirstHalf` 0x0052a3f0 (9)
   - [ ] `free` 0x00529ce0 (38)
 
-### `core/sound.cpp` (1 functions, 2 instructions, 0 done)
+### `core/sound.cpp` (1 functions, 2 instructions, 0 done, 0 partial)
 - class `CSound`
   - [ ] `reset` 0x005b39a0 (2)
 
-### `engine/keys.cpp` (1 functions, 6 instructions, 0 done)
+### `engine/keys.cpp` (1 functions, 6 instructions, 0 done, 0 partial)
 - class `CKeys`
   - [ ] `getUppercasedInputKey` 0x00502470 (6)
 
-### `wincore/winrun.cpp` (1 functions, 10 instructions, 0 done)
+### `wincore/winrun.cpp` (1 functions, 10 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `setCursorPosition` 0x005f30d0 (10)
 
-### `engine/2d.c` (2 functions, 118 instructions, 0 done)
+### `engine/2d.c` (2 functions, 118 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `plotPixel` 0x00401140 (31)
   - [ ] `drawLine` 0x004011b0 (87)
 
-### `engine/font.cpp` (1 functions, 12 instructions, 1 done)
+### `engine/font.cpp` (1 functions, 12 instructions, 1 done, 0 partial)
 - class `CBitFont`
   - [x] `getCharYOffset` 0x004d0200 (12)
 
-### `shape/edittool.cpp` (54 functions, 4786 instructions, 8 done)
+### `shape/edittool.cpp` (54 functions, 4786 instructions, 7 done, 1 partial)
 - class `CEditorTools`
   - [ ] `showError` 0x0049e740 (22)
   - [ ] `setClipboardText` 0x004a1bc0 (81)
@@ -810,7 +879,8 @@ in instructions.
   - [ ] `allocate` 0x004a2cc0 (57)
   - [x] `insert` 0x004a2bc0 (89)
   - [x] `remove` 0x004a2e00 (65)
-  - [x] `sort` 0x004a2f00 (36)
+  - [~] `sort` 0x004a2f00 (36)
+    - unverified: the order left among strings equal ignoring case, which the original's Watcom _qsort decides, by running its _qsort on such a list in the machine-code oracle
   - [x] `swap` 0x004a31f0 (50)
   - [x] `dtor` 0x004a2a40 (29)
   - [ ] `copyToClipboard` 0x004a3270 (90)
@@ -857,26 +927,26 @@ in instructions.
 
 ## Step 9: `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load`
 
-### `shape/edittool.cpp` (1 functions, 57 instructions, 0 done)
+### `shape/edittool.cpp` (1 functions, 57 instructions, 0 done, 0 partial)
 - class `CPickList`
   - [ ] `enableItem` 0x004a5410 (57)
 
-### `core/event.cpp` (1 functions, 3 instructions, 0 done)
+### `core/event.cpp` (1 functions, 3 instructions, 0 done, 0 partial)
 - class `CEventList`
   - [ ] `resetGameFlags` 0x004b0460 (3)
 
-### `engine/drender.cpp` (3 functions, 63 instructions, 0 done)
+### `engine/drender.cpp` (3 functions, 63 instructions, 0 done, 0 partial)
 - class `CDemonRenderer`
   - [ ] `renderTexturedDirect` 0x0048ae10 (47)
   - [ ] `pushViewport` 0x0048c890 (15)
   - [ ] `popViewport` 0x0048c8c0 (1)
 
-### `core/level.cpp` (2 functions, 610 instructions, 0 done)
+### `core/level.cpp` (2 functions, 610 instructions, 0 done, 0 partial)
 - class `CLevelLoader`
   - [ ] `show` 0x00503dc0 (188)
   - [ ] `update` 0x00504160 (422)
 
-### `core/gore.cpp` (4 functions, 168 instructions, 0 done)
+### `core/gore.cpp` (4 functions, 168 instructions, 0 done, 0 partial)
 - class `CGore`
   - [ ] `reset` 0x004ed760 (19)
   - [ ] `load` 0x004ee1e0 (57)
@@ -885,35 +955,35 @@ in instructions.
 - class `CBloodPool`
   - [ ] `load` 0x004ed160 (38)
 
-### `core/inv.cpp` (1 functions, 27 instructions, 0 done)
+### `core/inv.cpp` (1 functions, 27 instructions, 0 done, 0 partial)
 - class `CInventory`
   - [ ] `loadItems` 0x004ff740 (27)
 
-### `core/set.cpp` (1 functions, 88 instructions, 0 done)
+### `core/set.cpp` (1 functions, 88 instructions, 0 done, 0 partial)
 - class `CDemonSet`
   - [ ] `buildActorTypeLists` 0x00570fc0 (88)
 
-### `core/dtrace.cpp` (2 functions, 110 instructions, 0 done)
+### `core/dtrace.cpp` (2 functions, 110 instructions, 0 done, 0 partial)
 - class `CDemonRaytrace`
   - [ ] `getCubeAt` 0x004952b0 (42)
   - [ ] `commitShadowBuffer` 0x00499e70 (68)
 
-### `core/path.cpp` (2 functions, 57 instructions, 0 done)
+### `core/path.cpp` (2 functions, 57 instructions, 0 done, 0 partial)
 - class `CPathMap`
   - [ ] `reset` 0x00548510 (27)
 - free functions
   - [ ] `resetAllPathMaps` 0x00548590 (30)
 
-### `core/setcolid.cpp` (2 functions, 28 instructions, 0 done)
+### `core/setcolid.cpp` (2 functions, 28 instructions, 0 done, 0 partial)
 - class `CDemonSet`
   - [ ] `buildCollidableActorList` 0x005743e0 (24)
   - [ ] `commitVoxelBuffer` 0x00574560 (4)
 
-### `core/dmodel.cpp` (1 functions, 15 instructions, 0 done)
+### `core/dmodel.cpp` (1 functions, 15 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `freeAllModels` 0x00478cb0 (15)
 
-### `core/skeleton.cpp` (4 functions, 151 instructions, 0 done)
+### `core/skeleton.cpp` (4 functions, 151 instructions, 0 done, 0 partial)
 - class `CDeformableModel`
   - [ ] `free` 0x0059a2b0 (73)
 - free functions
@@ -922,7 +992,7 @@ in instructions.
 - class `CSkeleton`
   - [ ] `free` 0x00599a50 (47)
 
-### `core/actor.cpp` (18 functions, 918 instructions, 0 done)
+### `core/actor.cpp` (18 functions, 918 instructions, 0 done, 0 partial)
 - class `CDemonActor`
   - [ ] `getActorClassName` 0x00408b90 (6)
   - [ ] `load` 0x0040b050 (125)
@@ -944,11 +1014,11 @@ in instructions.
   - [ ] `initTransformCache` 0x00408870 (14)
   - [ ] `normalizeAngleToPi` 0x0040cd70 (56)
 
-### `core/hero.cpp` (1 functions, 8 instructions, 0 done)
+### `core/hero.cpp` (1 functions, 8 instructions, 0 done, 0 partial)
 - class `CHeroPlaceholder`
   - [ ] `ctor` 0x004f3c00 (8)
 
-### `core/mission.cpp` (13 functions, 995 instructions, 0 done)
+### `core/mission.cpp` (13 functions, 995 instructions, 0 done, 0 partial)
 - class `CDemonMission`
   - [ ] `removeActorFromList` 0x00523be0 (67)
   - [ ] `buildSetActorList` 0x00523e60 (50)
@@ -966,48 +1036,48 @@ in instructions.
 
 ## Step 10: `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet`
 
-### `core/hero.cpp` (1 functions, 102 instructions, 0 done)
+### `core/hero.cpp` (1 functions, 102 instructions, 0 done, 0 partial)
 - class `CHeroPlaceholder`
   - [ ] `createHero` 0x004f3d80 (102)
 
-### `core/motion.cpp` (2 functions, 36 instructions, 0 done)
+### `core/motion.cpp` (2 functions, 36 instructions, 0 done, 0 partial)
 - class `CMotionController`
   - [ ] `clearTweenState` 0x0052de40 (4)
   - [ ] `jumpToMotion` 0x0052dde0 (32)
 
-### `core/event.cpp` (1 functions, 9 instructions, 0 done)
+### `core/event.cpp` (1 functions, 9 instructions, 0 done, 0 partial)
 - class `CEventList`
   - [ ] `reset` 0x004aaa70 (9)
 
-### `engine/2d.c` (4 functions, 263 instructions, 0 done)
+### `engine/2d.c` (4 functions, 263 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `drawCharacter` 0x00401610 (113)
   - [ ] `drawTextWrapped` 0x00401c60 (57)
   - [ ] `drawTextMultiline` 0x00401cf0 (57)
   - [ ] `drawText` 0x00401fd0 (36)
 
-### `core/dcamera.cpp` (1 functions, 61 instructions, 0 done)
+### `core/dcamera.cpp` (1 functions, 61 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `loadCameraFog` 0x00453e50 (61)
 
-### `core/dcube.cpp` (3 functions, 253 instructions, 0 done)
+### `core/dcube.cpp` (3 functions, 253 instructions, 0 done, 0 partial)
 - class `CDemonCubeTriangle`
   - [ ] `readFromFile` 0x004551d0 (40)
 - class `CDemonCube`
   - [ ] `allocGeometryMemory` 0x00456840 (102)
   - [ ] `load` 0x00457530 (111)
 
-### `core/dpart.cpp` (3 functions, 59 instructions, 0 done)
+### `core/dpart.cpp` (3 functions, 59 instructions, 0 done, 0 partial)
 - class `CDemonPart`
   - [ ] `ctor` 0x00482110 (11)
   - [ ] `free` 0x004822b0 (40)
   - [ ] `dtor` 0x00482160 (8)
 
-### `core/dtri.cpp` (1 functions, 34 instructions, 0 done)
+### `core/dtri.cpp` (1 functions, 34 instructions, 0 done, 0 partial)
 - class `CDemonTriangle`
   - [ ] `readDataBinary` 0x0049a5a0 (34)
 
-### `core/dtrace.cpp` (10 functions, 1047 instructions, 0 done)
+### `core/dtrace.cpp` (10 functions, 1047 instructions, 0 done, 0 partial)
 - class `CDemonRaytrace`
   - [ ] `allocCubeList` 0x00494270 (30)
   - [ ] `freeCubeList` 0x004942d0 (53)
@@ -1020,11 +1090,11 @@ in instructions.
   - [ ] `loadBinary` 0x004947a0 (518)
   - [ ] `loadAndSyncWithGeoFile` 0x00494de0 (108)
 
-### `core/box.cpp` (1 functions, 366 instructions, 0 done)
+### `core/box.cpp` (1 functions, 366 instructions, 0 done, 0 partial)
 - class `CBoundingBox3D`
   - [ ] `doesRayIntersect` 0x00420940 (366)
 
-### `core/setdir.cpp` (6 functions, 598 instructions, 0 done)
+### `core/setdir.cpp` (6 functions, 598 instructions, 0 done, 0 partial)
 - class `CDemonSet`
   - [ ] `writeThumbs` 0x00575e40 (87)
   - [ ] `refreshThumbs` 0x00575b40 (35)
@@ -1034,7 +1104,7 @@ in instructions.
 - free functions
   - [ ] `testOBBIntersection` 0x005763a0 (310)
 
-### `core/setutil.cpp` (5 functions, 819 instructions, 0 done)
+### `core/setutil.cpp` (5 functions, 819 instructions, 0 done, 0 partial)
 - class `C3DSCamera`
   - [ ] `free` 0x00585360 (17)
   - [ ] `reset` 0x005853b0 (22)
@@ -1043,29 +1113,29 @@ in instructions.
 - class `C3DSLight`
   - [ ] `load` 0x00586310 (467)
 
-### `core/texlist.cpp` (3 functions, 214 instructions, 1 done)
+### `core/texlist.cpp` (3 functions, 214 instructions, 1 done, 0 partial)
 - class `CTextureList`
   - [x] `dtor` 0x005dbdf0 (2, compiler-generated)
   - [ ] `ctor` 0x005dbdd0 (4)
   - [ ] `load` 0x005dbe00 (208)
 
-### `core/ground.cpp` (3 functions, 357 instructions, 0 done)
+### `core/ground.cpp` (3 functions, 357 instructions, 0 done, 0 partial)
 - class `CGround`
   - [ ] `free` 0x004eefb0 (38)
   - [ ] `init` 0x004eef00 (52)
   - [ ] `load` 0x004ef030 (267)
 
-### `core/terrain.cpp` (2 functions, 23 instructions, 0 done)
+### `core/terrain.cpp` (2 functions, 23 instructions, 0 done, 0 partial)
 - class `CTerrain`
   - [ ] `free` 0x005e1f30 (7)
   - [ ] `init` 0x005e1ef0 (16)
 
-### `core/set.cpp` (2 functions, 949 instructions, 0 done)
+### `core/set.cpp` (2 functions, 949 instructions, 0 done, 0 partial)
 - class `CDemonSet`
   - [ ] `clear` 0x005693c0 (26)
   - [ ] `load` 0x00569410 (923)
 
-### `core/mission.cpp` (4 functions, 375 instructions, 0 done)
+### `core/mission.cpp` (4 functions, 375 instructions, 0 done, 0 partial)
 - class `CDemonMission`
   - [ ] `createOneHero` 0x00524920 (109)
   - [ ] `createHeros` 0x00524a80 (110)
@@ -1074,46 +1144,46 @@ in instructions.
 
 ## Step 11: `CScript::loadScript`
 
-### `shape/edittool.cpp` (1 functions, 3 instructions, 1 done)
+### `shape/edittool.cpp` (1 functions, 3 instructions, 1 done, 0 partial)
 - class `CStrList`
   - [x] `getItemCount` 0x004a6ed0 (3)
 
-### `core/bugs.cpp` (1 functions, 3 instructions, 0 done)
+### `core/bugs.cpp` (1 functions, 3 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `getDeformableModelName` 0x00427b70 (3)
 
-### `core/dtri.cpp` (3 functions, 617 instructions, 0 done)
+### `core/dtri.cpp` (3 functions, 617 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `rayTriangleIntersection` 0x0049a800 (181)
   - [ ] `rayEdgeHeightTest` 0x0049b180 (138)
   - [ ] `rayTriangleFloorTest` 0x0049b2f0 (298)
 
-### `core/flies.cpp` (2 functions, 71 instructions, 0 done)
+### `core/flies.cpp` (2 functions, 71 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `findFliesByFollowActor` 0x004cca50 (34)
 - class `CFlies`
   - [ ] `ctor` 0x004cbd60 (37)
 
-### `core/particle.cpp` (4 functions, 332 instructions, 0 done)
+### `core/particle.cpp` (4 functions, 332 instructions, 0 done, 0 partial)
 - class `CParticle`
   - [ ] `process` 0x00545760 (248)
   - [ ] `render` 0x00545a80 (8)
   - [ ] `onCollision` 0x00545ab0 (2)
   - [ ] `setup` 0x00545680 (74)
 
-### `core/crate.cpp` (1 functions, 57 instructions, 0 done)
+### `core/crate.cpp` (1 functions, 57 instructions, 0 done, 0 partial)
 - class `CCrate`
   - [ ] `explode` 0x00448a70 (57)
 
-### `core/flamecan.cpp` (1 functions, 25 instructions, 0 done)
+### `core/flamecan.cpp` (1 functions, 25 instructions, 0 done, 0 partial)
 - class `CFlameCan`
   - [ ] `ignite` 0x004cb340 (25)
 
-### `core/vecdir.cpp` (1 functions, 58 instructions, 0 done)
+### `core/vecdir.cpp` (1 functions, 58 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `convertDirectionVectorToEulerAngles` 0x005e7830 (58)
 
-### `core/dmodel.cpp` (9 functions, 549 instructions, 0 done)
+### `core/dmodel.cpp` (9 functions, 549 instructions, 0 done, 0 partial)
 - class `CKeyFramedModel`
   - [ ] `captureTextures` 0x00478190 (25)
   - [ ] `getFloorHeight` 0x00478740 (81)
@@ -1127,16 +1197,16 @@ in instructions.
   - [ ] `getModelPtr` 0x00478d80 (21)
   - [ ] `prepareForRendering` 0x00478d20 (18)
 
-### `core/trigger.cpp` (2 functions, 53 instructions, 0 done)
+### `core/trigger.cpp` (2 functions, 53 instructions, 0 done, 0 partial)
 - class `CTrigger`
   - [ ] `acceptsDamageFrom` 0x005e0ac0 (19)
   - [ ] `applyDamage` 0x005e0b00 (34)
 
-### `core/path.cpp` (1 functions, 124 instructions, 0 done)
+### `core/path.cpp` (1 functions, 124 instructions, 0 done, 0 partial)
 - class `CPathMap`
   - [ ] `updateIfNeeded` 0x00546a60 (124)
 
-### `core/teleport.cpp` (9 functions, 183 instructions, 0 done)
+### `core/teleport.cpp` (9 functions, 183 instructions, 0 done, 0 partial)
 - class `CTeleportDest`
   - [ ] `getActorType` 0x005da760 (2)
   - [ ] `getBoundingBox` 0x005da790 (8)
@@ -1149,7 +1219,7 @@ in instructions.
   - [ ] `archive` 0x005dab30 (17)
   - [ ] `dtor` 0x005dae50 (31)
 
-### `core/actor.cpp` (66 functions, 3653 instructions, 0 done)
+### `core/actor.cpp` (66 functions, 3653 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `copyVector` 0x00410360 (12)
   - [ ] `rayCylinderIntersect` 0x00408340 (354)
@@ -1219,17 +1289,17 @@ in instructions.
   - [ ] `restoreRenderState` 0x00408b40 (5)
   - [ ] `setup` 0x00408bb0 (27)
 
-### `core/armour.cpp` (1 functions, 31 instructions, 0 done)
+### `core/armour.cpp` (1 functions, 31 instructions, 0 done, 0 partial)
 - class `CFlame`
   - [ ] `dtor` 0x00412690 (31)
 
-### `core/dglobe.cpp` (3 functions, 178 instructions, 0 done)
+### `core/dglobe.cpp` (3 functions, 178 instructions, 0 done, 0 partial)
 - class `CDemonGlobe`
   - [ ] `setPosition` 0x00471310 (27)
   - [ ] `precomputeAttenuation` 0x00471360 (48)
   - [ ] `renderCoronaTextured` 0x004715e0 (103)
 
-### `core/flame.cpp` (9 functions, 1240 instructions, 0 done)
+### `core/flame.cpp` (9 functions, 1240 instructions, 0 done, 0 partial)
 - class `CFlame`
   - [ ] `getActorType` 0x004c9a90 (2)
   - [ ] `updateGlobe` 0x004cad90 (69)
@@ -1241,7 +1311,7 @@ in instructions.
   - [ ] `getCollisionType` 0x004cad80 (2)
   - [ ] `setup` 0x004c9b90 (35)
 
-### `core/bodypart.cpp` (11 functions, 1593 instructions, 0 done)
+### `core/bodypart.cpp` (11 functions, 1593 instructions, 0 done, 0 partial)
 - class `CBodyPart`
   - [ ] `ctor` 0x00419010 (46)
   - [ ] `setCounts` 0x004191d0 (97)
@@ -1256,7 +1326,7 @@ in instructions.
   - [ ] `createBodyPart` 0x00418e10 (131)
   - [ ] `subtractVector` 0x0041b510 (13)
 
-### `core/charactr.cpp` (5 functions, 486 instructions, 0 done)
+### `core/charactr.cpp` (5 functions, 486 instructions, 0 done, 0 partial)
 - class `CCharacter`
   - [ ] `spawnFireOnBone` 0x0042a520 (222)
   - [ ] `igniteBone` 0x0042b5b0 (62)
@@ -1264,15 +1334,15 @@ in instructions.
   - [ ] `initGesture` 0x0042d390 (19)
   - [ ] `setLookAtTarget` 0x0042ddd0 (4)
 
-### `core/enemy.cpp` (1 functions, 5 instructions, 0 done)
+### `core/enemy.cpp` (1 functions, 5 instructions, 0 done, 0 partial)
 - class `CEnemy`
   - [ ] `setVictim` 0x004a9ef0 (5)
 
-### `core/lever.cpp` (1 functions, 113 instructions, 0 done)
+### `core/lever.cpp` (1 functions, 113 instructions, 0 done, 0 partial)
 - class `CLever`
   - [ ] `setState` 0x00504b20 (113)
 
-### `core/motion.cpp` (8 functions, 368 instructions, 0 done)
+### `core/motion.cpp` (8 functions, 368 instructions, 0 done, 0 partial)
 - class `CMotionList`
   - [ ] `findMotionIndex` 0x0052d460 (50)
   - [ ] `findStateIndex` 0x0052d4f0 (50)
@@ -1284,7 +1354,7 @@ in instructions.
   - [ ] `reverseTransition` 0x0052da50 (38)
   - [ ] `setDesiredState` 0x0052db00 (47)
 
-### `core/event.cpp` (34 functions, 8671 instructions, 0 done)
+### `core/event.cpp` (34 functions, 8671 instructions, 0 done, 0 partial)
 - class `CEventList`
   - [ ] `findActorVariable` 0x004b0bf0 (34)
   - [ ] `getActorByVarName` 0x004b0b80 (46)
@@ -1322,15 +1392,15 @@ in instructions.
   - [ ] `parseDamageType` 0x004aa960 (85)
   - [ ] `getSelectedCameraIndex` 0x004b1970 (3)
 
-### `core/gabriela.cpp` (1 functions, 3 instructions, 0 done)
+### `core/gabriela.cpp` (1 functions, 3 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `getSelectedWeapon` 0x004d7650 (3)
 
-### `core/netgame.cpp` (1 functions, 34 instructions, 0 done)
+### `core/netgame.cpp` (1 functions, 34 instructions, 0 done, 0 partial)
 - class `CNetGame`
   - [ ] `getMyControls` 0x005438c0 (34)
 
-### `core/game.cpp` (7 functions, 254 instructions, 0 done)
+### `core/game.cpp` (7 functions, 254 instructions, 0 done, 0 partial)
 - class `CGame`
   - [ ] `slamDT` 0x004e3080 (26)
   - [ ] `fadeIn` 0x004e0b90 (9)
@@ -1341,7 +1411,7 @@ in instructions.
 - free functions
   - [ ] `calculateIrisFadeCenter` 0x004e09a0 (13)
 
-### `core/hero.cpp` (7 functions, 121 instructions, 0 done)
+### `core/hero.cpp` (7 functions, 121 instructions, 0 done, 0 partial)
 - class `CHeroPlaceholder`
   - [ ] `getActorType` 0x004f3bf0 (2)
   - [ ] `dtor` 0x004f3c30 (32)
@@ -1352,19 +1422,19 @@ in instructions.
   - [ ] `removeMatchingKeys` 0x004f3910 (8)
   - [ ] `setAiTask` 0x004f3930 (10)
 
-### `core/ammo.cpp` (1 functions, 139 instructions, 0 done)
+### `core/ammo.cpp` (1 functions, 139 instructions, 0 done, 0 partial)
 - class `CAmmo`
   - [ ] `setWeaponClass` 0x00410fd0 (139)
 
-### `wincore/winrun.cpp` (1 functions, 520 instructions, 0 done)
+### `wincore/winrun.cpp` (1 functions, 520 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `getKeyName` 0x005f3980 (520)
 
-### `core/menu.cpp` (1 functions, 161 instructions, 0 done)
+### `core/menu.cpp` (1 functions, 161 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `getKeyDisplayName` 0x005134e0 (161)
 
-### `core/inv.cpp` (15 functions, 2404 instructions, 0 done)
+### `core/inv.cpp` (15 functions, 2404 instructions, 0 done, 0 partial)
 - class `CInventory`
   - [ ] `findItemByName` 0x004fe9d0 (35)
   - [ ] `hasItemOfClass` 0x004fea20 (35)
@@ -1383,7 +1453,7 @@ in instructions.
   - [ ] `getItemDisplayName` 0x004fcf00 (43)
   - [ ] `getItemDescription` 0x004fcf70 (43)
 
-### `core/mission.cpp` (5 functions, 217 instructions, 1 done)
+### `core/mission.cpp` (5 functions, 217 instructions, 1 done, 0 partial)
 - class `CDemonMission`
   - [ ] `markActorToDelete` 0x005240a0 (35)
   - [ ] `setTeleportTarget` 0x00524070 (11)
@@ -1391,12 +1461,12 @@ in instructions.
   - [ ] `saveActor` 0x00523af0 (41)
   - [x] `setMissionName` 0x00524630 (19)
 
-### `core/platfrm.cpp` (2 functions, 150 instructions, 0 done)
+### `core/platfrm.cpp` (2 functions, 150 instructions, 0 done, 0 partial)
 - class `CPlatform`
   - [ ] `startMovement` 0x0054d690 (38)
   - [ ] `attachActor` 0x0054e1e0 (112)
 
-### `core/skeleton.cpp` (13 functions, 1277 instructions, 0 done)
+### `core/skeleton.cpp` (13 functions, 1277 instructions, 0 done, 0 partial)
 - class `CDeformableModel`
   - [ ] `findMaxWeightBone` 0x0059dca0 (69)
   - [ ] `exactRayTrace` 0x0059cba0 (199)
@@ -1413,7 +1483,7 @@ in instructions.
   - [ ] `findClosestBone` 0x005a1160 (214)
   - [ ] `dismemberPart` 0x005a1040 (58)
 
-### `support/codec.cpp` (28 functions, 1141 instructions, 0 done)
+### `support/codec.cpp` (28 functions, 1141 instructions, 0 done, 0 partial)
 - class `CCodec`
   - [ ] `init` 0x0043e9d0 (1)
   - [ ] `finalize` 0x0043ea00 (2)
@@ -1448,11 +1518,11 @@ in instructions.
   - [ ] `init` 0x0043f4d0 (20)
   - [ ] `processBuffer` 0x0043f5d0 (78)
 
-### `engine/texture.cpp` (1 functions, 13 instructions, 0 done)
+### `engine/texture.cpp` (1 functions, 13 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `loadAndUpdateTexture` 0x005dd930 (13)
 
-### `core/dcamera.cpp` (26 functions, 3719 instructions, 0 done)
+### `core/dcamera.cpp` (26 functions, 3719 instructions, 0 done, 0 partial)
 - class `CDemonCamera`
   - [ ] `setupPerspectiveAndFog` 0x004537d0 (73)
   - [ ] `initCameraShake` 0x00453fc0 (43)
@@ -1482,23 +1552,23 @@ in instructions.
   - [ ] `sampleFogAlongRay` 0x0044bdd0 (161)
   - [ ] `updateFogScrollOffset` 0x0044bfb0 (41)
 
-### `core/dskybox.cpp` (2 functions, 428 instructions, 0 done)
+### `core/dskybox.cpp` (2 functions, 428 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `generateSkyDomeVertex` 0x004900b0 (100)
   - [ ] `renderSkyDome` 0x004901f0 (328)
 
-### `engine/light.cpp` (2 functions, 21 instructions, 1 done)
+### `engine/light.cpp` (2 functions, 21 instructions, 1 done, 0 partial)
 - free functions
   - [ ] `setAmbientLightLevel` 0x00505490 (11)
   - [x] `setDirectionalLightVector` 0x005054d0 (10)
 
-### `engine/matrix.c` (3 functions, 92 instructions, 1 done)
+### `engine/matrix.c` (3 functions, 92 instructions, 1 done, 0 partial)
 - free functions
   - [x] `getCameraRotation` 0x0050e2f0 (17)
   - [ ] `projectTransformedPoint` 0x0050cdc0 (66)
   - [ ] `projectCachedPoint` 0x0050cda0 (9)
 
-### `core/dcube.cpp` (7 functions, 1140 instructions, 0 done)
+### `core/dcube.cpp` (7 functions, 1140 instructions, 0 done, 0 partial)
 - class `CDemonCubeTriangle`
   - [ ] `rayTriangleIntersection` 0x00455460 (205)
 - class `CDemonCube`
@@ -1510,7 +1580,7 @@ in instructions.
   - [ ] `triangleCylinderCollision` 0x00456040 (307)
   - [ ] `buildAndRenderTrianglePrimitive` 0x004566e0 (39)
 
-### `engine/special.cpp` (7 functions, 258 instructions, 0 done)
+### `engine/special.cpp` (7 functions, 258 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `transformPoint` 0x005b5a25 (205)
   - [ ] `beginScene` 0x005b7280 (6)
@@ -1520,7 +1590,7 @@ in instructions.
   - [ ] `setFogColor` 0x005b7b80 (20)
   - [ ] `sync` 0x005b7bc0 (6)
 
-### `core/dtrace.cpp` (11 functions, 2901 instructions, 0 done)
+### `core/dtrace.cpp` (11 functions, 2901 instructions, 0 done, 0 partial)
 - class `CDemonRaytrace`
   - [ ] `getGroundHeight` 0x004966f0 (179)
   - [ ] `cylinderGroundCheck` 0x00496950 (186)
@@ -1534,14 +1604,14 @@ in instructions.
   - [ ] `setPVS` 0x00498e50 (99)
   - [ ] `savePVS` 0x00498fb0 (93)
 
-### `core/glass.cpp` (4 functions, 1321 instructions, 0 done)
+### `core/glass.cpp` (4 functions, 1321 instructions, 0 done, 0 partial)
 - class `CGlass`
   - [ ] `createShatterParticles` 0x004ea1c0 (949)
   - [ ] `shatter` 0x004eaef0 (223)
   - [ ] `checkBreakableCondition` 0x004eb3a0 (8)
   - [ ] `renderBrokenGlass` 0x004e9ca0 (141)
 
-### `core/xform.cpp` (7 functions, 1005 instructions, 0 done)
+### `core/xform.cpp` (7 functions, 1005 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `multiplyMatrix3x4` 0x005f4f10 (165)
   - [ ] `buildMatrixFromEulerAndPosition` 0x005f5390 (112)
@@ -1551,7 +1621,7 @@ in instructions.
   - [ ] `determinant` 0x005f61c0 (27)
   - [ ] `inverse` 0x005f6210 (223)
 
-### `core/mirror.cpp` (8 functions, 1667 instructions, 0 done)
+### `core/mirror.cpp` (8 functions, 1667 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `computePlaneIntersection` 0x00521160 (93)
   - [ ] `clipPolygonAgainstPlane` 0x00521290 (119)
@@ -1564,11 +1634,11 @@ in instructions.
   - [ ] `setupMirrorCamera` 0x00521480 (21)
   - [ ] `setupMirrorReflection` 0x005214c0 (991)
 
-### `core/texlist.cpp` (1 functions, 14 instructions, 0 done)
+### `core/texlist.cpp` (1 functions, 14 instructions, 0 done, 0 partial)
 - class `CTextureList`
   - [ ] `captureTexture` 0x005dc270 (14)
 
-### `core/ground.cpp` (11 functions, 1109 instructions, 0 done)
+### `core/ground.cpp` (11 functions, 1109 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `getGroundTypeCode` 0x004eece0 (33)
   - [ ] `getGroundTypeColor` 0x004eee20 (29)
@@ -1583,11 +1653,11 @@ in instructions.
   - [ ] `render` 0x004efc90 (56)
   - [ ] `getHeightAtPosition` 0x004efd30 (232)
 
-### `core/terrain.cpp` (1 functions, 86 instructions, 0 done)
+### `core/terrain.cpp` (1 functions, 86 instructions, 0 done, 0 partial)
 - class `CTerrain`
   - [ ] `render` 0x005e1f50 (86)
 
-### `core/dstrender.cpp` (7 functions, 558 instructions, 0 done)
+### `core/dstrender.cpp` (7 functions, 558 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `memcpyMMX` 0x00492001 (32)
   - [ ] `renderSolidColorDepth16xUnrolled` 0x00490a58 (186)
@@ -1597,12 +1667,12 @@ in instructions.
   - [ ] `renderZBufferFill16xUnrolled` 0x00490902 (131)
   - [ ] `renderTexturedDecalMMXScanline` 0x0049169d (73)
 
-### `core/water.cpp` (2 functions, 654 instructions, 0 done)
+### `core/water.cpp` (2 functions, 654 instructions, 0 done, 0 partial)
 - class `CWater`
   - [ ] `calculateVisibleTiles` 0x005e9e70 (308)
   - [ ] `render` 0x005ea320 (346)
 
-### `core/dlight.cpp` (15 functions, 1123 instructions, 0 done)
+### `core/dlight.cpp` (15 functions, 1123 instructions, 0 done, 0 partial)
 - class `CDemonLight`
   - [ ] `testShadowMapRegion` 0x00476000 (75)
   - [ ] `applyFilter` 0x00474770 (218)
@@ -1621,7 +1691,7 @@ in instructions.
   - [ ] `resetRestoreMemoryAllocator` 0x004729c0 (3)
   - [ ] `getRestoreMemory` 0x00472950 (31)
 
-### `engine/drender.cpp` (28 functions, 1059 instructions, 0 done)
+### `engine/drender.cpp` (28 functions, 1059 instructions, 0 done, 0 partial)
 - class `CDemonRenderer`
   - [ ] `renderVertexAlphaDirect` 0x0048bad0 (64)
   - [ ] `applyDirectTransform` 0x0048c4a0 (42)
@@ -1652,7 +1722,7 @@ in instructions.
   - [ ] `renderVertexAlphaPoly` 0x0048bba0 (101)
   - [ ] `setRenderAlphaNormalized` 0x0048ca70 (11)
 
-### `core/fire.cpp` (50 functions, 7676 instructions, 0 done)
+### `core/fire.cpp` (50 functions, 7676 instructions, 0 done, 0 partial)
 - class `CSpark`
   - [ ] `process` 0x004c0240 (54)
   - [ ] `render` 0x004c0420 (457)
@@ -1725,7 +1795,7 @@ in instructions.
 - class `CTrail`
   - [ ] `render` 0x004c5e90 (201)
 
-### `core/gore.cpp` (23 functions, 2504 instructions, 0 done)
+### `core/gore.cpp` (23 functions, 2504 instructions, 0 done, 0 partial)
 - class `CGore`
   - [ ] `spawnFlies` 0x004edf30 (72)
   - [ ] `spawnFliesOnActor` 0x004ee030 (20)
@@ -1755,7 +1825,7 @@ in instructions.
   - [ ] `setupRenderState` 0x004ecc40 (39)
   - [ ] `render` 0x004ecce0 (243)
 
-### `core/sound.cpp` (14 functions, 825 instructions, 0 done)
+### `core/sound.cpp` (14 functions, 825 instructions, 0 done, 0 partial)
 - class `CSound`
   - [ ] `findRandomSoundFile` 0x005b1ed0 (89)
   - [ ] `playSound` 0x005b3a20 (12)
@@ -1773,7 +1843,7 @@ in instructions.
 - free functions
   - [ ] `playSfxInternal` 0x005b1fd0 (505)
 
-### `core/setcolid.cpp` (13 functions, 1626 instructions, 0 done)
+### `core/setcolid.cpp` (13 functions, 1626 instructions, 0 done, 0 partial)
 - class `CDemonSet`
   - [ ] `isActorIgnored` 0x00572e20 (39)
   - [ ] `processCollisionTypes` 0x005716b0 (771)
@@ -1789,13 +1859,13 @@ in instructions.
   - [ ] `isPointInWater` 0x00574580 (97)
   - [ ] `disableIgnore` 0x00574210 (3)
 
-### `core/weather.cpp` (3 functions, 372 instructions, 0 done)
+### `core/weather.cpp` (3 functions, 372 instructions, 0 done, 0 partial)
 - class `CWeather`
   - [ ] `createLightningStrike` 0x005eeeb0 (188)
   - [ ] `setWeatherType` 0x005ef8c0 (30)
   - [ ] `setOriginAndRotation` 0x005ef940 (154)
 
-### `core/set.cpp` (27 functions, 2403 instructions, 0 done)
+### `core/set.cpp` (27 functions, 2403 instructions, 0 done, 0 partial)
 - class `CDemonSet`
   - [ ] `getReverbPresetAtPosition` 0x0056fac0 (77)
   - [ ] `addCoronaGlobe` 0x0056d110 (12)
@@ -1826,7 +1896,7 @@ in instructions.
 - free functions
   - [ ] `qsortByDisplayListEntry` 0x0056fba0 (18)
 
-### `core/box.cpp` (11 functions, 944 instructions, 0 done)
+### `core/box.cpp` (11 functions, 944 instructions, 0 done, 0 partial)
 - class `CBox`
   - [ ] `ctor` 0x0041dc50 (45)
   - [ ] `updateTransform` 0x0041e0e0 (158)
@@ -1841,7 +1911,7 @@ in instructions.
   - [ ] `isVisible` 0x004204f0 (128)
   - [ ] `getMaximumBound` 0x00421060 (29)
 
-### `core/setdir.cpp` (5 functions, 729 instructions, 0 done)
+### `core/setdir.cpp` (5 functions, 729 instructions, 0 done, 0 partial)
 - class `CDemonSet`
   - [ ] `setPendingCamera` 0x00575b00 (6)
   - [ ] `isPointInVdirBox` 0x005762a0 (62)
@@ -1849,14 +1919,15 @@ in instructions.
   - [ ] `evaluateVirtualDirector` 0x005751d0 (619)
   - [ ] `clearCameraSwitchCooldown` 0x00575b20 (10)
 
-### `core/dfilter.cpp` (3 functions, 286 instructions, 1 done)
+### `core/dfilter.cpp` (3 functions, 286 instructions, 0 done, 1 partial)
 - class `CDemonFilter`
-  - [x] `ctor` 0x004701f0 (24)
+  - [~] `ctor` 0x004701f0 (24)
+    - deferred: naming the filter "unnamed", which CDemonLight::applyFilter copies into the light, with CDemonFilter::load and CDemonLight::applyFilter
   - [ ] `load` 0x004702f0 (159)
 - class `CFilterCache`
   - [ ] `getFilter` 0x00470060 (103)
 
-### `core/setutil.cpp` (6 functions, 437 instructions, 0 done)
+### `core/setutil.cpp` (6 functions, 437 instructions, 0 done, 0 partial)
 - class `C3DSLight`
   - [ ] `advanceFilter` 0x00586e70 (40)
   - [ ] `setFilterFrame` 0x00586f00 (44)
@@ -1866,7 +1937,7 @@ in instructions.
   - [ ] `apply` 0x00585870 (106)
   - [ ] `testSphereInFrustum` 0x00585970 (66)
 
-### `core/script.cpp` (25 functions, 7596 instructions, 0 done)
+### `core/script.cpp` (25 functions, 7596 instructions, 0 done, 0 partial)
 - class `CScript`
   - [ ] `freeParsedLines` 0x005598f0 (40)
   - [ ] `clear` 0x00559870 (38)
@@ -1897,43 +1968,43 @@ in instructions.
 
 ## Step 12: `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene`
 
-### `core/script.cpp` (1 functions, 99 instructions, 0 done)
+### `core/script.cpp` (1 functions, 99 instructions, 0 done, 0 partial)
 - class `CScript`
   - [ ] `executeInitSection` 0x0055a6c0 (99)
 
-### `core/mission.cpp` (3 functions, 193 instructions, 0 done)
+### `core/mission.cpp` (3 functions, 193 instructions, 0 done, 0 partial)
 - class `CDemonMission`
   - [ ] `loadScript` 0x005235b0 (21)
   - [ ] `startMission` 0x00524760 (95)
   - [ ] `buildActiveSetActorList` 0x00524120 (77)
 
-### `engine/console.cpp` (1 functions, 15 instructions, 1 done)
+### `engine/console.cpp` (1 functions, 15 instructions, 1 done, 0 partial)
 - class `CConsole`
   - [x] `reset` 0x00441a40 (15)
 
-### `shape/edittool.cpp` (1 functions, 80 instructions, 0 done)
+### `shape/edittool.cpp` (1 functions, 80 instructions, 0 done, 0 partial)
 - class `CEditorTools`
   - [ ] `displayMemoryDiagnostics` 0x004a2590 (80)
 
-### `wincore/wddvmem.cpp` (1 functions, 160 instructions, 0 done)
+### `wincore/wddvmem.cpp` (1 functions, 160 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `resetGraphicsSystem` 0x005ed2a0 (160)
 
-### `engine/2d.c` (1 functions, 1 instructions, 0 done)
+### `engine/2d.c` (1 functions, 1 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `resetGraphicsSystem` 0x00402a70 (1)
 
-### `core/game.cpp` (1 functions, 75 instructions, 0 done)
+### `core/game.cpp` (1 functions, 75 instructions, 0 done, 0 partial)
 - class `CGame`
   - [ ] `setGameRes` 0x004dade0 (75)
 
-### `core/dfilter.cpp` (2 functions, 43 instructions, 1 done)
+### `core/dfilter.cpp` (2 functions, 43 instructions, 1 done, 0 partial)
 - class `CDemonFilter`
   - [x] `dtor` 0x00470240 (8)
 - class `CFilterCache`
   - [ ] `free` 0x00470000 (35)
 
-### `core/dcamera.cpp` (7 functions, 449 instructions, 0 done)
+### `core/dcamera.cpp` (7 functions, 449 instructions, 0 done, 0 partial)
 - class `CDemonCamera`
   - [ ] `free` 0x0044c360 (29)
   - [ ] `init` 0x0044c190 (108)
@@ -1944,7 +2015,7 @@ in instructions.
 - free functions
   - [ ] `generateFogGrid` 0x0044bba0 (179)
 
-### `core/dlight.cpp` (5 functions, 190 instructions, 0 done)
+### `core/dlight.cpp` (5 functions, 190 instructions, 0 done, 0 partial)
 - class `CDemonLight`
   - [ ] `free` 0x004728b0 (44)
   - [ ] `init` 0x004727c0 (64)
@@ -1952,18 +2023,18 @@ in instructions.
   - [ ] `allocateFilter` 0x00474720 (20)
   - [ ] `setVolumetricIntensity` 0x004765e0 (38)
 
-### `core/setutil.cpp` (2 functions, 169 instructions, 0 done)
+### `core/setutil.cpp` (2 functions, 169 instructions, 0 done, 0 partial)
 - class `C3DSLight`
   - [ ] `create` 0x00586a90 (106)
   - [ ] `apply` 0x00586bf0 (63)
 
-### `core/set.cpp` (1 functions, 184 instructions, 0 done)
+### `core/set.cpp` (1 functions, 184 instructions, 0 done, 0 partial)
 - class `CDemonSet`
   - [ ] `initScene` 0x0056aa10 (184)
 
 ## Step 13: `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets`
 
-### `core/fire.cpp` (17 functions, 327 instructions, 0 done)
+### `core/fire.cpp` (17 functions, 327 instructions, 0 done, 0 partial)
 - class `CSmokeParticle`
   - [ ] `reset` 0x004bf2e0 (3)
 - class `CExplosion`
@@ -1991,64 +2062,64 @@ in instructions.
   - [ ] `loadGunFlameAssets` 0x004c4d50 (31)
   - [ ] `loadLightningBoltAssets` 0x004c5600 (15)
 
-### `core/gore.cpp` (1 functions, 65 instructions, 0 done)
+### `core/gore.cpp` (1 functions, 65 instructions, 0 done, 0 partial)
 - class `CGore`
   - [ ] `loadAssets` 0x004ede60 (65)
 
-### `core/inv.cpp` (2 functions, 220 instructions, 0 done)
+### `core/inv.cpp` (2 functions, 220 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `loadItem` 0x004fcfe0 (15)
   - [ ] `loadAssets` 0x004fd220 (205)
 
-### `core/dlight.cpp` (1 functions, 20 instructions, 0 done)
+### `core/dlight.cpp` (1 functions, 20 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `captureLightTextures` 0x00474a90 (20)
 
-### `core/water.cpp` (1 functions, 15 instructions, 0 done)
+### `core/water.cpp` (1 functions, 15 instructions, 0 done, 0 partial)
 - class `CWater`
   - [ ] `captureTextures` 0x005e9e40 (15)
 
-### `core/set.cpp` (3 functions, 68 instructions, 0 done)
+### `core/set.cpp` (3 functions, 68 instructions, 0 done, 0 partial)
 - class `CDemonSet`
   - [ ] `loadMasterLightStates` 0x00571130 (21)
   - [ ] `setGamma` 0x00570d60 (41)
   - [ ] `loadAssets` 0x0056fb80 (6)
 
-### `core/game.cpp` (2 functions, 20 instructions, 0 done)
+### `core/game.cpp` (2 functions, 20 instructions, 0 done, 0 partial)
 - class `CGame`
   - [ ] `clearOverlay` 0x004d7f80 (4)
   - [ ] `loadAssets` 0x004e07a0 (16)
 
 ## Step 14: `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys`
 
-### `core/netgame.cpp` (4 functions, 851 instructions, 0 done)
+### `core/netgame.cpp` (4 functions, 851 instructions, 0 done, 0 partial)
 - class `CNetGame`
   - [ ] `updatePing` 0x00541c80 (139)
   - [ ] `syncPlayers` 0x005401e0 (258)
   - [ ] `applySimFrameHistory` 0x00543800 (83)
   - [ ] `processServerFrame` 0x00543150 (371)
 
-### `core/level.cpp` (1 functions, 13 instructions, 0 done)
+### `core/level.cpp` (1 functions, 13 instructions, 0 done, 0 partial)
 - class `CLevelLoader`
   - [ ] `cleanup` 0x00504720 (13)
 
-### `engine/keys.cpp` (1 functions, 8 instructions, 0 done)
+### `engine/keys.cpp` (1 functions, 8 instructions, 0 done, 0 partial)
 - class `CKeys`
   - [ ] `toggleInputMask` 0x005024b0 (8)
 
-### `support/codec.cpp` (2 functions, 107 instructions, 0 done)
+### `support/codec.cpp` (2 functions, 107 instructions, 0 done, 0 partial)
 - class `CLZWDictionary`
   - [ ] `findCode` 0x0043ef50 (25)
 - class `CLZWCompress`
   - [ ] `process` 0x0043f360 (82)
 
-### `core/fire.cpp` (2 functions, 133 instructions, 0 done)
+### `core/fire.cpp` (2 functions, 133 instructions, 0 done, 0 partial)
 - class `CCrater`
   - [ ] `save` 0x004c49c0 (108)
 - class `CFireEffect`
   - [ ] `save` 0x004c9380 (25)
 
-### `core/actor.cpp` (4 functions, 129 instructions, 0 done)
+### `core/actor.cpp` (4 functions, 129 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `setRandomSeed` 0x0040cb90 (3)
   - [ ] `adjustIndentationLevel` 0x0040aee0 (28)
@@ -2056,11 +2127,11 @@ in instructions.
 - class `CDemonActor`
   - [ ] `save` 0x0040af30 (79)
 
-### `engine/font.cpp` (1 functions, 28 instructions, 0 done)
+### `engine/font.cpp` (1 functions, 28 instructions, 0 done, 0 partial)
 - class `CBitFont`
   - [ ] `drawTextCenter` 0x004cdde0 (28)
 
-### `shape/edittool.cpp` (14 functions, 1087 instructions, 0 done)
+### `shape/edittool.cpp` (14 functions, 1087 instructions, 0 done, 0 partial)
 - class `CInputString`
   - [ ] `init` 0x0049d3d0 (42)
   - [ ] `setSelectionToCursor` 0x0049d460 (4)
@@ -2078,7 +2149,7 @@ in instructions.
   - [ ] `showFilenameInputDialog` 0x0049fb70 (341)
   - [ ] `displayCenteredStatusMessage` 0x0049e790 (65)
 
-### `core/gore.cpp` (3 functions, 169 instructions, 0 done)
+### `core/gore.cpp` (3 functions, 169 instructions, 0 done, 0 partial)
 - class `CBloodSplat`
   - [ ] `save` 0x004ecb90 (65)
 - class `CBloodPool`
@@ -2086,16 +2157,16 @@ in instructions.
 - class `CGore`
   - [ ] `save` 0x004ee290 (57)
 
-### `core/inv.cpp` (1 functions, 32 instructions, 0 done)
+### `core/inv.cpp` (1 functions, 32 instructions, 0 done, 0 partial)
 - class `CInventory`
   - [ ] `saveItems` 0x004ff3b0 (32)
 
-### `core/mission.cpp` (2 functions, 275 instructions, 0 done)
+### `core/mission.cpp` (2 functions, 275 instructions, 0 done, 0 partial)
 - class `CDemonMission`
   - [ ] `countActors` 0x00523cc0 (13)
   - [ ] `writeFile` 0x00523600 (262)
 
-### `core/script.cpp` (4 functions, 241 instructions, 0 done)
+### `core/script.cpp` (4 functions, 241 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `writeActorReference` 0x005607e0 (17)
 - class `CScript`
@@ -2103,29 +2174,29 @@ in instructions.
   - [ ] `saveState` 0x00560b50 (173)
   - [ ] `resetDialogState` 0x005602b0 (11)
 
-### `core/set.cpp` (3 functions, 77 instructions, 0 done)
+### `core/set.cpp` (3 functions, 77 instructions, 0 done, 0 partial)
 - class `CDemonSet`
   - [ ] `saveMasterLightStates` 0x00571170 (20)
   - [ ] `saveStateInfo` 0x005711b0 (45)
   - [ ] `reinitCamera` 0x0056b7e0 (12)
 
-### `core/event.cpp` (2 functions, 277 instructions, 0 done)
+### `core/event.cpp` (2 functions, 277 instructions, 0 done, 0 partial)
 - class `CEventList`
   - [ ] `saveState` 0x004b1380 (232)
   - [ ] `restartSfxEntries` 0x004b0f00 (45)
 
-### `core/setcolid.cpp` (1 functions, 88 instructions, 0 done)
+### `core/setcolid.cpp` (1 functions, 88 instructions, 0 done, 0 partial)
 - class `CDemonSet`
   - [ ] `rayVoxelHeightQuery` 0x00572340 (88)
 
-### `core/sound.cpp` (3 functions, 565 instructions, 0 done)
+### `core/sound.cpp` (3 functions, 565 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `updateListeners` 0x005b1870 (431)
 - class `CSound`
   - [ ] `init` 0x005b2dd0 (110)
   - [ ] `shutdown` 0x005b2f70 (24)
 
-### `core/game.cpp` (3 functions, 1222 instructions, 0 done)
+### `core/game.cpp` (3 functions, 1222 instructions, 0 done, 0 partial)
 - class `CGame`
   - [ ] `saveGame` 0x004e0cd0 (441)
   - [ ] `promptLoadGame` 0x004e36f0 (86)
@@ -2133,36 +2204,36 @@ in instructions.
 
 ## Step 15: `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame`
 
-### `engine/keys.cpp` (2 functions, 7 instructions, 0 done)
+### `engine/keys.cpp` (2 functions, 7 instructions, 0 done, 0 partial)
 - class `CKeys`
   - [ ] `setKeyAsPressed` 0x00502490 (3)
   - [ ] `clearKeyPressState` 0x005024a0 (4)
 
-### `engine/console.cpp` (1 functions, 106 instructions, 0 done)
+### `engine/console.cpp` (1 functions, 106 instructions, 0 done, 0 partial)
 - class `CConsole`
   - [ ] `render` 0x00441b00 (106)
 
-### `core/dfilter.cpp` (2 functions, 86 instructions, 0 done)
+### `core/dfilter.cpp` (2 functions, 86 instructions, 0 done, 0 partial)
 - class `CFilterCache`
   - [ ] `findFilter` 0x004701a0 (36)
 - class `CFilterFX`
   - [ ] `process` 0x004708e0 (50)
 
-### `core/event.cpp` (2 functions, 316 instructions, 0 done)
+### `core/event.cpp` (2 functions, 316 instructions, 0 done, 0 partial)
 - class `CEventList`
   - [ ] `render` 0x004addf0 (223)
   - [ ] `process` 0x004aaac0 (93)
 
-### `core/box.cpp` (2 functions, 1702 instructions, 0 done)
+### `core/box.cpp` (2 functions, 1702 instructions, 0 done, 0 partial)
 - class `CBox`
   - [ ] `processPhysics` 0x0041e350 (1667)
   - [ ] `process` 0x0041e2f0 (35)
 
-### `core/hero.cpp` (1 functions, 46 instructions, 0 done)
+### `core/hero.cpp` (1 functions, 46 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `isAnyHeroWithinRadius` 0x004f2220 (46)
 
-### `shape/edittool.cpp` (5 functions, 530 instructions, 0 done)
+### `shape/edittool.cpp` (5 functions, 530 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `showTextInputDialog` 0x0049db10 (331)
 - class `CEditorTools`
@@ -2171,27 +2242,27 @@ in instructions.
   - [ ] `promptForValidFloat` 0x004a00f0 (91)
   - [ ] `showCheatInputDialog` 0x004a0400 (16)
 
-### `core/dmodel.cpp` (1 functions, 10 instructions, 0 done)
+### `core/dmodel.cpp` (1 functions, 10 instructions, 0 done, 0 partial)
 - class `CKeyFramedModelInstance`
   - [ ] `ctor` 0x00478ce0 (10)
 
-### `core/ammo.cpp` (1 functions, 39 instructions, 0 done)
+### `core/ammo.cpp` (1 functions, 39 instructions, 0 done, 0 partial)
 - class `CAmmo`
   - [ ] `ctor` 0x00410dc0 (39)
 
-### `core/gasmask.cpp` (1 functions, 20 instructions, 0 done)
+### `core/gasmask.cpp` (1 functions, 20 instructions, 0 done, 0 partial)
 - class `CGasMask`
   - [ ] `ctor` 0x004e5d00 (20)
 
-### `support/newmsg.cpp` (1 functions, 73 instructions, 0 done)
+### `support/newmsg.cpp` (1 functions, 73 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `decryptMessage` 0x00544270 (73)
 
-### `wincore/winrun.cpp` (1 functions, 19 instructions, 1 done)
+### `wincore/winrun.cpp` (1 functions, 19 instructions, 1 done, 0 partial)
 - free functions
   - [x] `enqueueInput` 0x005f2f30 (19)
 
-### `core/gore.cpp` (3 functions, 91 instructions, 0 done)
+### `core/gore.cpp` (3 functions, 91 instructions, 0 done, 0 partial)
 - class `CBloodSplat`
   - [ ] `processAge` 0x004ecad0 (14)
 - class `CBloodPool`
@@ -2199,50 +2270,50 @@ in instructions.
 - class `CGore`
   - [ ] `process` 0x004ed9e0 (63)
 
-### `core/setutil.cpp` (1 functions, 1 instructions, 0 done)
+### `core/setutil.cpp` (1 functions, 1 instructions, 0 done, 0 partial)
 - class `C3DSLight`
   - [ ] `doNothing` 0x00586ca0 (1)
 
-### `core/mission.cpp` (1 functions, 92 instructions, 0 done)
+### `core/mission.cpp` (1 functions, 92 instructions, 0 done, 0 partial)
 - class `CDemonMission`
   - [ ] `process` 0x00524250 (92)
 
-### `core/charactr.cpp` (1 functions, 3 instructions, 0 done)
+### `core/charactr.cpp` (1 functions, 3 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `getGameDeltaTime` 0x0042f9e0 (3)
 
-### `core/terrain.cpp` (1 functions, 16 instructions, 0 done)
+### `core/terrain.cpp` (1 functions, 16 instructions, 0 done, 0 partial)
 - class `CTerrain`
   - [ ] `process` 0x005e2050 (16)
 
-### `core/water.cpp` (1 functions, 1 instructions, 0 done)
+### `core/water.cpp` (1 functions, 1 instructions, 0 done, 0 partial)
 - class `CWater`
   - [ ] `process` 0x005e9ed0 (1)
 
-### `engine/alphabit.cpp` (1 functions, 103 instructions, 0 done)
+### `engine/alphabit.cpp` (1 functions, 103 instructions, 0 done, 0 partial)
 - class `CAlphaBitmap`
   - [ ] `render` 0x00410b00 (103)
 
-### `core/netgame.cpp` (2 functions, 282 instructions, 0 done)
+### `core/netgame.cpp` (2 functions, 282 instructions, 0 done, 0 partial)
 - class `CNetGame`
   - [ ] `sendSimFrameAck` 0x00543970 (107)
   - [ ] `processClientFrame` 0x005435a0 (175)
 
-### `engine/pcx.c` (4 functions, 559 instructions, 0 done)
+### `engine/pcx.c` (4 functions, 559 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `writePCXScanline` 0x00548c50 (86)
   - [ ] `saveScreenRaw16` 0x00548d20 (147)
   - [ ] `saveScreenRaw32` 0x00548f00 (143)
   - [ ] `saveScreenshotGeneral` 0x005490c0 (183)
 
-### `engine/font.cpp` (3 functions, 30 instructions, 2 done)
+### `engine/font.cpp` (3 functions, 30 instructions, 2 done, 0 partial)
 - class `CBitFont`
   - [ ] `drawTextRight` 0x004cdce0 (25)
 - free functions
   - [x] `getDefaultTextColor` 0x004ce220 (2)
   - [x] `setDefaultTextColor` 0x004ce230 (3)
 
-### `cockpit/drawsurf.cpp` (16 functions, 1149 instructions, 0 done)
+### `cockpit/drawsurf.cpp` (16 functions, 1149 instructions, 0 done, 0 partial)
 - class `CDrawSurface`
   - [ ] `init` 0x00486ee0 (100)
   - [ ] `initFromParent` 0x00486ea0 (24)
@@ -2262,14 +2333,14 @@ in instructions.
   - [ ] `setCurrentFont` 0x004874c0 (3)
   - [ ] `drawHorizontalLineWithEffect` 0x00487630 (82)
 
-### `core/script.cpp` (4 functions, 469 instructions, 0 done)
+### `core/script.cpp` (4 functions, 469 instructions, 0 done, 0 partial)
 - class `CScript`
   - [ ] `getLetterboxHeight` 0x00559ac0 (28)
   - [ ] `process` 0x00559960 (112)
   - [ ] `renderSubtitles` 0x00559b20 (183)
   - [ ] `renderEditor` 0x00559d80 (146)
 
-### `core/dstrender.cpp` (12 functions, 1957 instructions, 0 done)
+### `core/dstrender.cpp` (12 functions, 1957 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `alphaBlendPixelsMMX` 0x00492e8a (45)
   - [ ] `verticalBlur3TapMMXStride320` 0x00492042 (81)
@@ -2284,17 +2355,17 @@ in instructions.
   - [ ] `blendLightmapPerPxU32toU16pBB12Px2MMX` 0x00493860 (287)
   - [ ] `blendLightmapPerPxU64toU16pAmbientPx2MMX` 0x00493dc4 (171)
 
-### `engine/special.cpp` (3 functions, 38 instructions, 0 done)
+### `engine/special.cpp` (3 functions, 38 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `restoreZBuffer` 0x005b7d20 (26)
   - [ ] `lockHoldBuffer` 0x005b7df0 (6)
   - [ ] `unlockHoldBuffer` 0x005b7e10 (6)
 
-### `core/dglobe.cpp` (1 functions, 132 instructions, 0 done)
+### `core/dglobe.cpp` (1 functions, 132 instructions, 0 done, 0 partial)
 - class `CDemonGlobe`
   - [ ] `renderCorona` 0x00471400 (132)
 
-### `core/dcamera.cpp` (17 functions, 2231 instructions, 0 done)
+### `core/dcamera.cpp` (17 functions, 2231 instructions, 0 done, 0 partial)
 - class `CDemonCamera`
   - [ ] `clearFramebufferAndWorkBuffers` 0x00453c90 (44)
   - [ ] `restoreZBufferRect` 0x0044c780 (74)
@@ -2315,7 +2386,7 @@ in instructions.
   - [ ] `renderVolumetricLightScanline` 0x00450440 (133)
   - [ ] `blendCoronaTextureSpan` 0x004517f0 (86)
 
-### `engine/drender.cpp` (6 functions, 285 instructions, 0 done)
+### `engine/drender.cpp` (6 functions, 285 instructions, 0 done, 0 partial)
 - class `CDemonRenderer`
   - [ ] `renderOverlayDirect` 0x0048bf10 (64)
   - [ ] `setTextureCaptureMode` 0x0048d6c0 (17)
@@ -2325,7 +2396,7 @@ in instructions.
   - [ ] `qsortByCapturedFaceDepthAscending` 0x0048da20 (19)
   - [ ] `qsortByCapturedFaceDepthDescending` 0x0048da50 (19)
 
-### `core/inv.cpp` (9 functions, 1899 instructions, 0 done)
+### `core/inv.cpp` (9 functions, 1899 instructions, 0 done, 0 partial)
 - class `CInventory`
   - [ ] `resetItemSwitchTimers` 0x004ffff0 (9)
   - [ ] `selectItem` 0x004fec10 (102)
@@ -2338,17 +2409,17 @@ in instructions.
   - [ ] `drawWeaponIconBackground` 0x00500050 (109)
   - [ ] `drawItemIconBackground` 0x005001e0 (109)
 
-### `core/setdir.cpp` (1 functions, 187 instructions, 0 done)
+### `core/setdir.cpp` (1 functions, 187 instructions, 0 done, 0 partial)
 - class `CDemonSet`
   - [ ] `renderVirtualDirectors` 0x00575f70 (187)
 
-### `core/weather.cpp` (3 functions, 778 instructions, 0 done)
+### `core/weather.cpp` (3 functions, 778 instructions, 0 done, 0 partial)
 - class `CWeather`
   - [ ] `createThunder` 0x005ef140 (21)
   - [ ] `update` 0x005eeaf0 (286)
   - [ ] `renderParticles` 0x005ef190 (471)
 
-### `core/fire.cpp` (19 functions, 1128 instructions, 0 done)
+### `core/fire.cpp` (19 functions, 1128 instructions, 0 done, 0 partial)
 - class `CSmokeParticle`
   - [ ] `process` 0x004bf390 (85)
 - class `CBulletHole`
@@ -2382,7 +2453,7 @@ in instructions.
 - class `CTrail`
   - [ ] `process` 0x004c5e40 (28)
 
-### `engine/2d.c` (16 functions, 464 instructions, 0 done)
+### `engine/2d.c` (16 functions, 464 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `drawTextXY` 0x00402130 (11)
   - [ ] `drawCharacterMaskedColor` 0x00401a10 (123)
@@ -2401,7 +2472,7 @@ in instructions.
   - [ ] `setTextColor` 0x00402840 (3)
   - [ ] `drawTextCenteredXYColor` 0x00402700 (15)
 
-### `core/dlight.cpp` (7 functions, 2579 instructions, 0 done)
+### `core/dlight.cpp` (7 functions, 2579 instructions, 0 done, 0 partial)
 - class `CDemonLight`
   - [ ] `renderExternalVolumetricShafts` 0x004758d0 (547)
   - [ ] `renderCoronaGeometry` 0x004736c0 (256)
@@ -2411,7 +2482,7 @@ in instructions.
   - [ ] `drawShadowDepthBuffer` 0x00476670 (294)
   - [ ] `renderShadowMapDebugView` 0x00473390 (180)
 
-### `core/set.cpp` (9 functions, 1845 instructions, 0 done)
+### `core/set.cpp` (9 functions, 1845 instructions, 0 done, 0 partial)
 - class `CDemonSet`
   - [ ] `clearLights` 0x0056d2d0 (55)
   - [ ] `processActors` 0x0056b810 (461)
@@ -2423,7 +2494,7 @@ in instructions.
   - [ ] `renderGogglesView` 0x0056c990 (308)
   - [ ] `renderLightDebugView` 0x0056d190 (91)
 
-### `core/skeleton.cpp` (4 functions, 144 instructions, 0 done)
+### `core/skeleton.cpp` (4 functions, 144 instructions, 0 done, 0 partial)
 - class `CSkeleton`
   - [ ] `findBone` 0x00599fc0 (52)
   - [ ] `calculateFrameDataSize` 0x0059a140 (7)
@@ -2432,29 +2503,29 @@ in instructions.
 - free functions
   - [ ] `getMemoryStats` 0x005a1ed0 (54)
 
-### `core/slew.cpp` (1 functions, 301 instructions, 0 done)
+### `core/slew.cpp` (1 functions, 301 instructions, 0 done, 0 partial)
 - class `CSlew`
   - [ ] `processInput` 0x005a20b0 (301)
 
-### `core/dtrace.cpp` (1 functions, 348 instructions, 0 done)
+### `core/dtrace.cpp` (1 functions, 348 instructions, 0 done, 0 partial)
 - class `CDemonRaytrace`
   - [ ] `rayVoxelGridTest` 0x00496220 (348)
 
-### `core/setcolid.cpp` (1 functions, 54 instructions, 0 done)
+### `core/setcolid.cpp` (1 functions, 54 instructions, 0 done, 0 partial)
 - class `CDemonSet`
   - [ ] `testLineOcclusion` 0x00572460 (54)
 
-### `core/sound.cpp` (1 functions, 508 instructions, 0 done)
+### `core/sound.cpp` (1 functions, 508 instructions, 0 done, 0 partial)
 - class `CSound`
   - [ ] `process` 0x005b2fd0 (508)
 
-### `engine/texture.cpp` (2 functions, 82 instructions, 0 done)
+### `engine/texture.cpp` (2 functions, 82 instructions, 0 done, 0 partial)
 - class `CTextureCache`
   - [ ] `getTextureCacheStats` 0x005dd690 (75)
 - free functions
   - [ ] `getTextureCacheStats` 0x005dd970 (7)
 
-### `core/game.cpp` (18 functions, 8127 instructions, 0 done)
+### `core/game.cpp` (18 functions, 8127 instructions, 0 done, 0 partial)
 - class `CGame`
   - [ ] `updateStatusDisplays` 0x004d85a0 (117)
   - [ ] `processFudge` 0x004d8750 (111)
@@ -2478,30 +2549,30 @@ in instructions.
 
 ## Step 16: `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats`
 
-### `engine/2d.c` (1 functions, 1 instructions, 0 done)
+### `engine/2d.c` (1 functions, 1 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `reinitializeGraphicsSystem` 0x00402a80 (1)
 
-### `engine/special.cpp` (4 functions, 65 instructions, 0 done)
+### `engine/special.cpp` (4 functions, 65 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `restoreVideoMode` 0x005b75b0 (14)
   - [ ] `kill` 0x005b71e0 (8)
   - [ ] `getVideoMemory` 0x005b7d60 (17)
   - [ ] `buildCardList` 0x005b7db0 (26)
 
-### `engine/matrix.c` (1 functions, 94 instructions, 0 done)
+### `engine/matrix.c` (1 functions, 94 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `normalizeVector3DFloat` 0x0050d9f0 (94)
 
-### `core/moon.cpp` (1 functions, 84 instructions, 0 done)
+### `core/moon.cpp` (1 functions, 84 instructions, 0 done, 0 partial)
 - class `CMoon`
   - [ ] `renderJoystickCalibration` 0x0052a2c0 (84)
 
-### `core/sound.cpp` (1 functions, 112 instructions, 0 done)
+### `core/sound.cpp` (1 functions, 112 instructions, 0 done, 0 partial)
 - class `CSound`
   - [ ] `configure` 0x005b3830 (112)
 
-### `core/menu.cpp` (9 functions, 4659 instructions, 0 done)
+### `core/menu.cpp` (9 functions, 4659 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `configureGraphicsOptions` 0x00510c80 (770)
   - [ ] `calibrateGamepad` 0x005104d0 (215)
@@ -2513,19 +2584,19 @@ in instructions.
   - [ ] `configureSoundOptions` 0x00511e50 (1124)
   - [ ] `showOptionsScreen` 0x00512d30 (138)
 
-### `core/script.cpp` (1 functions, 68 instructions, 0 done)
+### `core/script.cpp` (1 functions, 68 instructions, 0 done, 0 partial)
 - class `CScript`
   - [ ] `skipCinematic` 0x005602e0 (68)
 
-### `core/mission.cpp` (1 functions, 35 instructions, 0 done)
+### `core/mission.cpp` (1 functions, 35 instructions, 0 done, 0 partial)
 - class `CDemonMission`
   - [ ] `countDamageableEnemies` 0x00524e00 (35)
 
-### `core/inv.cpp` (1 functions, 43 instructions, 0 done)
+### `core/inv.cpp` (1 functions, 43 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `freeInventory` 0x004fd510 (43)
 
-### `core/game.cpp` (5 functions, 1777 instructions, 0 done)
+### `core/game.cpp` (5 functions, 1777 instructions, 0 done, 0 partial)
 - class `CGame`
   - [ ] `setScreenResolutionAndDisplayFangs` 0x004daed0 (47)
   - [ ] `rollCredits` 0x004e4010 (280)
@@ -2535,11 +2606,11 @@ in instructions.
 
 ## Step 17: `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu`
 
-### `core/mission.cpp` (1 functions, 150 instructions, 0 done)
+### `core/mission.cpp` (1 functions, 150 instructions, 0 done, 0 partial)
 - class `CDemonMission`
   - [ ] `run` 0x00524420 (150)
 
-### `support/codec.cpp` (6 functions, 345 instructions, 0 done)
+### `support/codec.cpp` (6 functions, 345 instructions, 0 done, 0 partial)
 - class `CLZWDecompress`
   - [ ] `ctor` 0x0043f490 (15)
   - [ ] `process` 0x0043f510 (46)
@@ -2550,47 +2621,48 @@ in instructions.
   - [ ] `readCodeFromStream` 0x0043f030 (76)
   - [ ] `writeCodeSequence` 0x0043f200 (45)
 
-### `core/event.cpp` (1 functions, 274 instructions, 0 done)
+### `core/event.cpp` (1 functions, 274 instructions, 0 done, 0 partial)
 - class `CEventList`
   - [ ] `loadState` 0x004b0fc0 (274)
 
-### `core/fire.cpp` (2 functions, 152 instructions, 0 done)
+### `core/fire.cpp` (2 functions, 152 instructions, 0 done, 0 partial)
 - class `CCrater`
   - [ ] `load` 0x004c4880 (115)
 - class `CFireEffect`
   - [ ] `load` 0x004c9300 (37)
 
-### `core/script.cpp` (2 functions, 279 instructions, 0 done)
+### `core/script.cpp` (2 functions, 279 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `readActorReference` 0x00560760 (39)
 - class `CScript`
   - [ ] `loadState` 0x00560820 (240)
 
-### `core/set.cpp` (1 functions, 75 instructions, 0 done)
+### `core/set.cpp` (1 functions, 75 instructions, 0 done, 0 partial)
 - class `CDemonSet`
   - [ ] `loadStateInfo` 0x00571230 (75)
 
-### `core/game.cpp` (3 functions, 1839 instructions, 0 done)
+### `core/game.cpp` (3 functions, 1839 instructions, 0 done, 0 partial)
 - class `CGame`
   - [ ] `finishAct` 0x004e3b90 (349)
   - [ ] `loadGame` 0x004e12b0 (645)
   - [ ] `showChapterSelect` 0x004e1cb0 (845)
 
-### `core/course.cpp` (2 functions, 13 instructions, 2 done)
+### `core/course.cpp` (2 functions, 13 instructions, 2 done, 0 partial)
 - class `CCourse`
   - [x] `ctor` 0x004424c0 (5)
   - [x] `dtor` 0x004424e0 (8)
 
-### `core/dmodel.cpp` (2 functions, 26 instructions, 2 done)
+### `core/dmodel.cpp` (2 functions, 26 instructions, 1 done, 1 partial)
 - class `CKeyFramedModel`
-  - [x] `ctor` 0x00476cf0 (18)
+  - [~] `ctor` 0x00476cf0 (18)
+    - deferred: the empty filename, with loadModel
   - [x] `dtor` 0x00476d90 (8)
 
-### `shape/edittool.cpp` (1 functions, 27 instructions, 0 done)
+### `shape/edittool.cpp` (1 functions, 27 instructions, 0 done, 0 partial)
 - class `CEdButton`
   - [ ] `calculateAndSetBounds` 0x004a6550 (27)
 
-### `core/morph.cpp` (4 functions, 58 instructions, 0 done)
+### `core/morph.cpp` (4 functions, 58 instructions, 0 done, 0 partial)
 - class `CMorph`
   - [ ] `ctor` 0x0052b310 (8)
   - [ ] `free` 0x0052b350 (10)
@@ -2598,62 +2670,62 @@ in instructions.
 - class `CMorphModel`
   - [ ] `free` 0x0052a510 (30)
 
-### `core/main.c` (1 functions, 469 instructions, 0 done)
+### `core/main.c` (1 functions, 469 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `showDeveloperToolsMenu` 0x005073a0 (469)
 
 ## Step 18: `enterMainGameMenu`, `finalizeGameSystems`
 
-### `wincore/wddvmem.cpp` (1 functions, 71 instructions, 0 done)
+### `wincore/wddvmem.cpp` (1 functions, 71 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `cleanupGraphicsSystem` 0x005ecd90 (71)
 
-### `engine/2d.c` (1 functions, 1 instructions, 0 done)
+### `engine/2d.c` (1 functions, 1 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `cleanupGraphicsSystem` 0x00401130 (1)
 
-### `engine/texture.cpp` (2 functions, 37 instructions, 0 done)
+### `engine/texture.cpp` (2 functions, 37 instructions, 0 done, 0 partial)
 - class `CTextureCache`
   - [ ] `reset` 0x005dcb20 (5)
 - free functions
   - [ ] `freeTextureCache` 0x005dd7a0 (32)
 
-### `engine/font.cpp` (1 functions, 8 instructions, 1 done)
+### `engine/font.cpp` (1 functions, 8 instructions, 1 done, 0 partial)
 - class `CBitFont`
   - [x] `dtor` 0x004cceb0 (8)
 
-### `core/dfont.cpp` (1 functions, 168 instructions, 1 done)
+### `core/dfont.cpp` (1 functions, 168 instructions, 1 done, 0 partial)
 - free functions
   - [x] `freeFonts` 0x004710a0 (168)
 
-### `engine/matrix.c` (1 functions, 1 instructions, 0 done)
+### `engine/matrix.c` (1 functions, 1 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `doNothing` 0x0050c5b0 (1)
 
-### `core/mission.cpp` (1 functions, 5 instructions, 0 done)
+### `core/mission.cpp` (1 functions, 5 instructions, 0 done, 0 partial)
 - class `CDemonMission`
   - [ ] `clearMission` 0x00522d20 (5)
 
-### `support/trisock.cpp` (1 functions, 19 instructions, 0 done)
+### `support/trisock.cpp` (1 functions, 19 instructions, 0 done, 0 partial)
 - class `CSocket`
   - [ ] `closeSocket` 0x005e1d20 (19)
 
-### `core/netgame.cpp` (1 functions, 11 instructions, 0 done)
+### `core/netgame.cpp` (1 functions, 11 instructions, 0 done, 0 partial)
 - class `CNetGame`
   - [ ] `shutdown` 0x0053f830 (11)
 
-### `engine/ncursfx.cpp` (1 functions, 1 instructions, 0 done)
+### `engine/ncursfx.cpp` (1 functions, 1 instructions, 0 done, 0 partial)
 - class `CMouse`
   - [ ] `reset` 0x00544500 (1)
 
-### `core/main.c` (2 functions, 217 instructions, 0 done)
+### `core/main.c` (2 functions, 217 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `enterMainGameMenu` 0x00507a50 (1)
   - [ ] `finalizeGameSystems` 0x00508570 (216)
 
 ## Step 19: Not reached from startup: `engine/`
 
-### `engine/2d.c` (36 functions, 1618 instructions, 1 done)
+### `engine/2d.c` (36 functions, 1618 instructions, 1 done, 0 partial)
 - free functions
   - [ ] `plotPixelWithDepth` 0x00401290 (45)
   - [ ] `drawLine3D` 0x00401320 (117)
@@ -2692,7 +2764,7 @@ in instructions.
   - [ ] `mapTextureFrameBuffer` 0x00403650 (12)
   - [ ] `unmapFrameBuffer` 0x00403670 (50)
 
-### `engine/3d.c` (81 functions, 5740 instructions, 0 done)
+### `engine/3d.c` (81 functions, 5740 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `abortOldFuncNoOpcode` 0x00403740 (22)
   - [ ] `badMRGLStruct` 0x004037b0 (9)
@@ -2776,11 +2848,11 @@ in instructions.
   - [ ] `drawLine2DFromIndices` 0x00407cf0 (87)
   - [ ] `drawLine3DFromIndices` 0x00407ff0 (87)
 
-### `engine/alphabit.cpp` (1 functions, 18 instructions, 0 done)
+### `engine/alphabit.cpp` (1 functions, 18 instructions, 0 done, 0 partial)
 - class `CAlphaBitmap`
   - [ ] `copyRawToOpa` 0x00410d20 (18)
 
-### `engine/boss.c` (5 functions, 84 instructions, 0 done)
+### `engine/boss.c` (5 functions, 84 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `modelStructNotSupported1` 0x0041db50 (9)
   - [ ] `modelStructNotSupported2` 0x0041db80 (9)
@@ -2788,7 +2860,7 @@ in instructions.
   - [ ] `modelStructNotSupported4` 0x0041dbe0 (50)
   - [ ] `modelStructNotSupported5` 0x0041dc20 (8)
 
-### `engine/clipper.c` (16 functions, 1664 instructions, 0 done)
+### `engine/clipper.c` (16 functions, 1664 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `allocateClipVertex` 0x00435980 (20)
   - [ ] `setFarPlaneDistance` 0x004359d0 (6)
@@ -2807,14 +2879,14 @@ in instructions.
   - [ ] `perspectiveDivideVertices` 0x00437bf0 (47)
   - [ ] `clipPolygonToViewFrustumAdvanced` 0x00437ca0 (581)
 
-### `engine/console.cpp` (3 functions, 38 instructions, 2 done)
+### `engine/console.cpp` (3 functions, 38 instructions, 2 done, 0 partial)
 - class `CConsole`
   - [x] `ctor` 0x00441810 (25)
   - [x] `dtor` 0x00441880 (2, compiler-generated)
 - free functions
   - [ ] `staticInit` 0x004417e0 (11)
 
-### `engine/drender.cpp` (18 functions, 1601 instructions, 1 done)
+### `engine/drender.cpp` (18 functions, 1601 instructions, 1 done, 0 partial)
 - class `CDemonRenderer`
   - [x] `ctor` 0x0048a6c0 (10)
   - [ ] `setProjectionMode` 0x0048a700 (14)
@@ -2836,7 +2908,7 @@ in instructions.
 - free functions
   - [ ] `staticInit` 0x0048a6b0 (4)
 
-### `engine/font.cpp` (16 functions, 1653 instructions, 0 done)
+### `engine/font.cpp` (16 functions, 1653 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `isRectangleClipped` 0x004ccd80 (28)
   - [ ] `packPixelScaled` 0x004d1110 (31)
@@ -2856,13 +2928,13 @@ in instructions.
   - [ ] `showFontTest` 0x004d04b0 (357)
   - [ ] `showExtendedFontTest` 0x004d0850 (761)
 
-### `engine/fpoly.c` (3 functions, 393 instructions, 0 done)
+### `engine/fpoly.c` (3 functions, 393 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `rasterizePolygonHardware` 0x004d1340 (264)
   - [ ] `addPolygonEdge` 0x004d11c0 (107)
   - [ ] `findHardwareEdgeByYMin` 0x004d1300 (22)
 
-### `engine/ini.cpp` (4 functions, 51 instructions, 2 done)
+### `engine/ini.cpp` (4 functions, 51 instructions, 2 done, 0 partial)
 - free functions
   - [ ] `staticInit` 0x004fb240 (1)
   - [ ] `getProfileInteger` 0x004fb9a0 (46)
@@ -2870,21 +2942,21 @@ in instructions.
   - [x] `ctor` 0x004fbd70 (2, compiler-generated)
   - [x] `dtor` 0x004fbd80 (2, compiler-generated)
 
-### `engine/keyframe.c` (4 functions, 702 instructions, 0 done)
+### `engine/keyframe.c` (4 functions, 702 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `calculatePackedSurfaceNormal` 0x00501a00 (143)
   - [ ] `loadAndInterpolateKeyframes` 0x00501d40 (163)
   - [ ] `interpolateCubicKeyframes` 0x00501f30 (314)
   - [ ] `recomputeKeyFrameNormals` 0x00502320 (82)
 
-### `engine/keys.cpp` (3 functions, 14 instructions, 3 done)
+### `engine/keys.cpp` (3 functions, 14 instructions, 3 done, 0 partial)
 - free functions
   - [x] `staticInit` 0x00502410 (2)
 - class `CKeys`
   - [x] `getAndClearKeyState` 0x00502430 (8)
   - [x] `getKeyState` 0x00502420 (4)
 
-### `engine/light.cpp` (7 functions, 266 instructions, 0 done)
+### `engine/light.cpp` (7 functions, 266 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `calculateLighting` 0x00505780 (51)
   - [ ] `calculatePhongLighting` 0x00505530 (175)
@@ -2894,7 +2966,7 @@ in instructions.
   - [ ] `setLightingMultipliers` 0x00505510 (5)
   - [ ] `calculateVertexLighting` 0x00505830 (12)
 
-### `engine/matrix.c` (14 functions, 1215 instructions, 0 done)
+### `engine/matrix.c` (14 functions, 1215 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `projectCachedPointUnchecked` 0x0050ce60 (33)
   - [ ] `integerSquareRoot` 0x0050d890 (79)
@@ -2911,7 +2983,7 @@ in instructions.
   - [ ] `pushMatrixRelativeOffset` 0x0050e640 (42)
   - [ ] `popMatrixRelativeOffset` 0x0050e6f0 (25)
 
-### `engine/model.c` (8 functions, 903 instructions, 0 done)
+### `engine/model.c` (8 functions, 903 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `getMRGLSize` 0x00528700 (95)
   - [ ] `loadModelFile` 0x00527ec0 (156)
@@ -2922,9 +2994,10 @@ in instructions.
   - [ ] `loadMRGLTextures` 0x00528870 (78)
   - [ ] `initializeMRGLModel` 0x00528940 (18)
 
-### `engine/ncursfx.cpp` (7 functions, 192 instructions, 2 done)
+### `engine/ncursfx.cpp` (7 functions, 192 instructions, 1 done, 1 partial)
 - class `CMouse`
-  - [x] `ctor` 0x00544380 (22)
+  - [~] `ctor` 0x00544380 (22)
+    - deferred: zeroing anim_timer and effect_mode, with CMouse::render, CMouse::startEffect and CMouse::consumeButton
   - [x] `dtor` 0x005443e0 (17)
   - [ ] `startEffect` 0x00544510 (11)
   - [ ] `consumeButton` 0x00544540 (23)
@@ -2933,12 +3006,12 @@ in instructions.
 - free functions
   - [ ] `staticInit` 0x00544360 (7)
 
-### `engine/palette.cpp` (2 functions, 5 instructions, 2 done)
+### `engine/palette.cpp` (2 functions, 5 instructions, 2 done, 0 partial)
 - class `CFont`
   - [x] `getLineSpacing` 0x00544f00 (2)
   - [x] `dtor` 0x00544ec0 (3)
 
-### `engine/pod.cpp` (9 functions, 930 instructions, 0 done)
+### `engine/pod.cpp` (9 functions, 930 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `crc32UpdateByte` 0x0054f2e0 (59)
   - [ ] `crc32UpdateBuffer` 0x0054f3a0 (25)
@@ -2952,7 +3025,7 @@ in instructions.
   - [ ] `computeAndStoreCRC` 0x00551000 (180)
   - [ ] `verifyIntegrity` 0x00551280 (38)
 
-### `engine/prim.c` (8 functions, 860 instructions, 0 done)
+### `engine/prim.c` (8 functions, 860 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `setMaxViewportScanline1200` 0x00551b70 (2)
   - [ ] `setMaxViewportScanline` 0x00551b80 (3)
@@ -2963,7 +3036,7 @@ in instructions.
   - [ ] `setupColoredSoftwareEdge` 0x00553190 (218)
   - [ ] `findEdgeInTable` 0x00553410 (22)
 
-### `engine/special.cpp` (17 functions, 761 instructions, 0 done)
+### `engine/special.cpp` (17 functions, 761 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `renderPerspectiveCorrectScanline32` 0x005b50ec (144)
   - [ ] `renderPerspectiveCorrectScanline16` 0x005b5322 (145)
@@ -2983,7 +3056,7 @@ in instructions.
   - [ ] `flushLineList` 0x005b7a10 (6)
   - [ ] `setFogColorFromPalette` 0x005b7b10 (29)
 
-### `engine/texture.cpp` (6 functions, 135 instructions, 0 done)
+### `engine/texture.cpp` (6 functions, 135 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `getCurrentTexture` 0x005dd9c0 (28)
   - [ ] `loadTextureAndGetData` 0x005dd8c0 (7)
@@ -2993,7 +3066,7 @@ in instructions.
   - [ ] `free` 0x005dcb00 (6)
   - [ ] `renderAllTextures` 0x005dd580 (67)
 
-### `engine/winfont.cpp` (8 functions, 638 instructions, 8 done)
+### `engine/winfont.cpp` (8 functions, 638 instructions, 8 done, 0 partial)
 - class `CWinFont`
   - [x] `setColorAndDrawText` 0x005f2440 (315)
   - [x] `reset` 0x005f2a30 (25)
@@ -3004,7 +3077,7 @@ in instructions.
   - [x] `getLineSpacing` 0x005f2b70 (2)
   - [x] `dtor` 0x005f2390 (35)
 
-### `engine/zraster.c` (3 functions, 221 instructions, 0 done)
+### `engine/zraster.c` (3 functions, 221 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `addRasterizerEdge` 0x005fcd20 (94)
   - [ ] `addRasterizerEdgeWithDepth` 0x005fce40 (105)
@@ -3012,7 +3085,7 @@ in instructions.
 
 ## Step 20: Not reached from startup: `support/`
 
-### `support/codec.cpp` (4 functions, 116 instructions, 0 done)
+### `support/codec.cpp` (4 functions, 116 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `readByteWithCount` 0x0043e4c0 (37)
 - class `CLZWDecompress`
@@ -3021,7 +3094,7 @@ in instructions.
 - class `CLZWCompress`
   - [ ] `dtor` 0x0043f710 (37)
 
-### `support/trisock.cpp` (20 functions, 477 instructions, 3 done)
+### `support/trisock.cpp` (20 functions, 477 instructions, 3 done, 0 partial)
 - free functions
   - [ ] `buildIPAddress` 0x005e1870 (36)
   - [ ] `buildIPAddressOrDie` 0x005e1750 (43)
@@ -3047,7 +3120,7 @@ in instructions.
 
 ## Step 21: Not reached from startup: `cockpit/`
 
-### `cockpit/ckptutil.c` (53 functions, 5434 instructions, 0 done)
+### `cockpit/ckptutil.c` (53 functions, 5434 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `expandIndexedTo16Bit` 0x00431410 (83)
   - [ ] `expandIndexedToRGB` 0x004314fa (23)
@@ -3103,7 +3176,7 @@ in instructions.
   - [ ] `traceConnectedEdges` 0x00434af0 (618)
   - [ ] `flipEdgeArrayHorizontally` 0x004355c0 (113)
 
-### `cockpit/drawsurf.cpp` (75 functions, 3467 instructions, 0 done)
+### `cockpit/drawsurf.cpp` (75 functions, 3467 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `setColorRGB` 0x00487220 (117)
   - [ ] `setColorBlack` 0x00487380 (6)
@@ -3182,7 +3255,7 @@ in instructions.
   - [ ] `getCharWidth` 0x00489ca0 (21)
   - [ ] `getTextWidth` 0x00489d00 (14)
 
-### `cockpit/pkbmpset.cpp` (18 functions, 886 instructions, 0 done)
+### `cockpit/pkbmpset.cpp` (18 functions, 886 instructions, 0 done, 0 partial)
 - class `CPackedBitmapSet`
   - [ ] `ctor` 0x0054bcd0 (12)
   - [ ] `init` 0x0054bd00 (34)
@@ -3203,7 +3276,7 @@ in instructions.
   - [ ] `getTotalMemoryUsage` 0x0054c6a0 (30)
   - [ ] `ensureBitmapLoaded` 0x0054c730 (40)
 
-### `cockpit/pkbitmap.cpp` (32 functions, 1740 instructions, 0 done)
+### `cockpit/pkbitmap.cpp` (32 functions, 1740 instructions, 0 done, 0 partial)
 - class `CPackedBitmap`
   - [ ] `getPixelValue` 0x0054a9b0 (47)
   - [ ] `renderClippedRegion` 0x0054ab30 (130)
@@ -3241,7 +3314,7 @@ in instructions.
 
 ## Step 22: Not reached from startup: `shape/`
 
-### `shape/edittool.cpp` (37 functions, 2804 instructions, 4 done)
+### `shape/edittool.cpp` (37 functions, 2804 instructions, 3 done, 1 partial)
 - class `CEditorTools`
   - [x] `init` 0x0049e020 (57)
   - [x] `ctor` 0x0049df80 (15)
@@ -3258,7 +3331,8 @@ in instructions.
   - [ ] `draw3DProjectedLine` 0x004a28a0 (39)
   - [ ] `setMousePointerType` 0x004a2920 (75)
 - free functions
-  - [x] `staticInit` 0x0049d170 (7)
+  - [~] `staticInit` 0x0049d170 (7)
+    - deferred: the twelve colours retail's init sets for CInputString::draw, CPickList::renderDialog, displayCenteredStatusMessage, showFilenameInputDialog and draw3DAxisLabels, with those functions
   - [ ] `plotPixelWithClipping` 0x0049d190 (26)
   - [x] `initEditorFontMetrics` 0x0049d1f0 (21)
   - [ ] `extractTabDelimitedField` 0x0049d250 (24)
@@ -3284,7 +3358,7 @@ in instructions.
   - [ ] `render` 0x004a6c00 (120)
   - [ ] `handleInput` 0x004a6d20 (74)
 
-### `shape/spotview.cpp` (5 functions, 374 instructions, 0 done)
+### `shape/spotview.cpp` (5 functions, 374 instructions, 0 done, 0 partial)
 - class `CSpotView`
   - [ ] `reset` 0x005b9620 (27)
   - [ ] `ctor` 0x005b95c0 (27)
@@ -3295,7 +3369,7 @@ in instructions.
 
 ## Step 23: Not reached from startup: `core/` (part 1 of 9)
 
-### `core/actor.cpp` (19 functions, 1173 instructions, 3 done)
+### `core/actor.cpp` (19 functions, 1173 instructions, 3 done, 0 partial)
 - free functions
   - [ ] `registerActorClass` 0x0040c2e0 (73)
   - [ ] `staticInit` 0x00408320 (9)
@@ -3318,7 +3392,7 @@ in instructions.
   - [x] `copy` 0x00410440 (26, compiler-generated)
   - [x] `dtor` 0x00410490 (2, compiler-generated)
 
-### `core/ammo.cpp` (12 functions, 174 instructions, 0 done)
+### `core/ammo.cpp` (12 functions, 174 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `factoryFuncAmmo` 0x00410d80 (12)
   - [ ] `staticInit` 0x00410d50 (9)
@@ -3334,7 +3408,7 @@ in instructions.
   - [ ] `setup` 0x00410e50 (8)
   - [ ] `setAmmoCount` 0x004111b0 (4)
 
-### `core/ammobox.cpp` (14 functions, 380 instructions, 0 done)
+### `core/ammobox.cpp` (14 functions, 380 instructions, 0 done, 0 partial)
 - class `CAmmoBox`
   - [ ] `ctor` 0x004115a0 (44)
   - [ ] `getActorType` 0x00411590 (2)
@@ -3352,7 +3426,7 @@ in instructions.
   - [ ] `factoryFuncAmmoBox` 0x00411560 (12)
   - [ ] `staticInit` 0x00411530 (9)
 
-### `core/anvil.cpp` (11 functions, 300 instructions, 0 done)
+### `core/anvil.cpp` (11 functions, 300 instructions, 0 done, 0 partial)
 - class `CAnvil`
   - [ ] `ctor` 0x00411ce0 (40)
   - [ ] `getActorType` 0x00411cd0 (2)
@@ -3367,7 +3441,7 @@ in instructions.
   - [ ] `factoryFuncAnvil` 0x00411ca0 (12)
   - [ ] `staticInit` 0x00411c70 (9)
 
-### `core/armour.cpp` (12 functions, 358 instructions, 0 done)
+### `core/armour.cpp` (12 functions, 358 instructions, 0 done, 0 partial)
 - class `CArmour`
   - [ ] `ctor` 0x004121a0 (41)
   - [ ] `getActorType` 0x00412190 (2)
@@ -3384,7 +3458,7 @@ in instructions.
 - class `CEnemy`
   - [ ] `dtor` 0x004125c0 (62)
 
-### `core/backgnd.cpp` (13 functions, 248 instructions, 0 done)
+### `core/backgnd.cpp` (13 functions, 248 instructions, 0 done, 0 partial)
 - class `CBackgroundActor`
   - [ ] `ctor` 0x004127b0 (21)
   - [ ] `getActorType` 0x004127a0 (2)
@@ -3401,7 +3475,7 @@ in instructions.
   - [ ] `factoryFuncBackgroundActor` 0x00412770 (12)
   - [ ] `staticInit` 0x00412740 (9)
 
-### `core/baron.cpp` (30 functions, 1554 instructions, 0 done)
+### `core/baron.cpp` (30 functions, 1554 instructions, 0 done, 0 partial)
 - class `CBaron`
   - [ ] `ctor` 0x00412bc0 (63)
   - [ ] `getActorType` 0x00412bb0 (2)
@@ -3436,7 +3510,7 @@ in instructions.
   - [ ] `dtor` 0x004140b0 (31)
   - [ ] `setup` 0x00413da0 (8)
 
-### `core/barrier.cpp` (11 functions, 219 instructions, 0 done)
+### `core/barrier.cpp` (11 functions, 219 instructions, 0 done, 0 partial)
 - class `CBarrier`
   - [ ] `ctor` 0x004141c0 (13)
   - [ ] `getActorType` 0x004141b0 (2)
@@ -3451,7 +3525,7 @@ in instructions.
   - [ ] `factoryFuncBarrier` 0x00414180 (12)
   - [ ] `staticInit` 0x00414150 (9)
 
-### `core/bat.cpp` (12 functions, 548 instructions, 0 done)
+### `core/bat.cpp` (12 functions, 548 instructions, 0 done, 0 partial)
 - class `CBat`
   - [ ] `ctor` 0x004147d0 (50)
   - [ ] `getActorType` 0x004147c0 (2)
@@ -3467,7 +3541,7 @@ in instructions.
   - [ ] `staticInit` 0x004146c0 (9)
   - [ ] `fmodfPositive` 0x004146f0 (54)
 
-### `core/batcreat.cpp` (12 functions, 1418 instructions, 0 done)
+### `core/batcreat.cpp` (12 functions, 1418 instructions, 0 done, 0 partial)
 - class `CBatCreature`
   - [ ] `ctor` 0x004150f0 (22)
   - [ ] `getActorType` 0x004150e0 (2)
@@ -3483,7 +3557,7 @@ in instructions.
   - [ ] `factoryFuncBatCreature` 0x004150b0 (12)
   - [ ] `staticInit` 0x00415080 (9)
 
-### `core/batman.cpp` (14 functions, 1919 instructions, 0 done)
+### `core/batman.cpp` (14 functions, 1919 instructions, 0 done, 0 partial)
 - class `CBatman`
   - [ ] `ctor` 0x00416450 (48)
   - [ ] `getActorType` 0x00416440 (2)
@@ -3501,7 +3575,7 @@ in instructions.
   - [ ] `factoryFuncBatman` 0x00416410 (12)
   - [ ] `staticInit` 0x004163e0 (9)
 
-### `core/battery.cpp` (15 functions, 204 instructions, 0 done)
+### `core/battery.cpp` (15 functions, 204 instructions, 0 done, 0 partial)
 - class `CBattery`
   - [ ] `ctor` 0x00417e90 (21)
   - [ ] `getActorType` 0x00417e80 (2)
@@ -3520,7 +3594,7 @@ in instructions.
   - [ ] `factoryFuncBattery` 0x00417e50 (12)
   - [ ] `staticInit` 0x00417e20 (9)
 
-### `core/beast.cpp` (12 functions, 237 instructions, 0 done)
+### `core/beast.cpp` (12 functions, 237 instructions, 0 done, 0 partial)
 - class `CBeast`
   - [ ] `ctor` 0x00418220 (22)
   - [ ] `getActorType` 0x00418210 (2)
@@ -3536,7 +3610,7 @@ in instructions.
   - [ ] `factoryFuncBeast` 0x004181e0 (12)
   - [ ] `staticInit` 0x004181b0 (9)
 
-### `core/biggs.cpp` (12 functions, 613 instructions, 0 done)
+### `core/biggs.cpp` (12 functions, 613 instructions, 0 done, 0 partial)
 - class `CBiggs`
   - [ ] `ctor` 0x004185c0 (53)
   - [ ] `getActorType` 0x004185b0 (2)
@@ -3552,7 +3626,7 @@ in instructions.
   - [ ] `factoryFuncBiggs` 0x00418580 (12)
   - [ ] `staticInit` 0x00418550 (9)
 
-### `core/bodypart.cpp` (26 functions, 1186 instructions, 0 done)
+### `core/bodypart.cpp` (26 functions, 1186 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `factoryFuncBodyPart` 0x00418fd0 (12)
   - [ ] `staticInit` 0x00418de0 (9)
@@ -3582,7 +3656,7 @@ in instructions.
   - [ ] `fillAttackDamageInfo` 0x0041b210 (25)
   - [ ] `setup` 0x00419810 (37)
 
-### `core/boneguy.cpp` (22 functions, 2680 instructions, 0 done)
+### `core/boneguy.cpp` (22 functions, 2680 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `hsvToRgb` 0x0041ba10 (128)
   - [ ] `factoryFuncBoneGuy` 0x0041b820 (12)
@@ -3608,7 +3682,7 @@ in instructions.
   - [ ] `dtor` 0x0041da40 (67)
   - [ ] `setup` 0x0041bd90 (135)
 
-### `core/box.cpp` (12 functions, 1030 instructions, 0 done)
+### `core/box.cpp` (12 functions, 1030 instructions, 0 done, 0 partial)
 - class `CBox`
   - [ ] `loadFromFile` 0x0041fe90 (122)
   - [ ] `saveToFile` 0x00420020 (112)
@@ -3624,7 +3698,7 @@ in instructions.
   - [ ] `isInverted` 0x00420fe0 (20)
   - [ ] `render` 0x004210b0 (270)
 
-### `core/boxactor.cpp` (33 functions, 1770 instructions, 0 done)
+### `core/boxactor.cpp` (33 functions, 1770 instructions, 0 done, 0 partial)
 - class `CBoxActor`
   - [ ] `ctor` 0x00421700 (49)
   - [ ] `getActorType` 0x004216f0 (2)
@@ -3664,7 +3738,7 @@ in instructions.
 
 ## Step 24: Not reached from startup: `core/` (part 2 of 9)
 
-### `core/bride.cpp` (12 functions, 1550 instructions, 0 done)
+### `core/bride.cpp` (12 functions, 1550 instructions, 0 done, 0 partial)
 - class `CBride`
   - [ ] `ctor` 0x004237a0 (23)
   - [ ] `getActorType` 0x00423790 (2)
@@ -3680,7 +3754,7 @@ in instructions.
   - [ ] `factoryFuncBride` 0x00423760 (12)
   - [ ] `staticInit` 0x00423700 (20)
 
-### `core/bugs.cpp` (38 functions, 3451 instructions, 0 done)
+### `core/bugs.cpp` (38 functions, 3451 instructions, 0 done, 0 partial)
 - class `CBugs`
   - [ ] `ctor` 0x00424cb0 (106)
   - [ ] `getActorType` 0x00424ca0 (2)
@@ -3722,7 +3796,7 @@ in instructions.
   - [ ] `getBugState` 0x00427b60 (3)
   - [ ] `swapIntegers` 0x00427b80 (8)
 
-### `core/charactr.cpp` (91 functions, 8559 instructions, 0 done)
+### `core/charactr.cpp` (91 functions, 8559 instructions, 0 done, 0 partial)
 - class `CCharacter`
   - [ ] `ctor` 0x00427e20 (125)
   - [ ] `detachBodyPart` 0x0042bcc0 (45)
@@ -3817,7 +3891,7 @@ in instructions.
   - [ ] `getDeformableModelPartCount` 0x0042f9c0 (3)
   - [ ] `getActorCreateEvent` 0x0042f9d0 (3)
 
-### `core/chain.cpp` (16 functions, 1639 instructions, 0 done)
+### `core/chain.cpp` (16 functions, 1639 instructions, 0 done, 0 partial)
 - class `CChain`
   - [ ] `ctor` 0x0042fb80 (74)
   - [ ] `getActorType` 0x0042fb70 (2)
@@ -3837,7 +3911,7 @@ in instructions.
   - [ ] `passthroughInt2` 0x00431340 (2)
   - [ ] `fastSqrt` 0x00431350 (5)
 
-### `core/cloth.cpp` (35 functions, 4019 instructions, 1 done)
+### `core/cloth.cpp` (35 functions, 4019 instructions, 1 done, 0 partial)
 - class `CClothList`
   - [ ] `ctor` 0x0043bf40 (18)
   - [ ] `process` 0x0043c2d0 (32)
@@ -3877,7 +3951,7 @@ in instructions.
   - [ ] `applyLightAttenuation` 0x0043e380 (28)
   - [ ] `scaleVector` 0x0043e3d0 (13)
 
-### `core/colonel.cpp` (15 functions, 1081 instructions, 0 done)
+### `core/colonel.cpp` (15 functions, 1081 instructions, 0 done, 0 partial)
 - class `CColonel`
   - [ ] `ctor` 0x0043f7e0 (24)
   - [ ] `getActorType` 0x0043f7d0 (2)
@@ -3896,7 +3970,7 @@ in instructions.
   - [ ] `staticInit` 0x0043f770 (9)
   - [ ] `getCurrentMotionState` 0x00440650 (6)
 
-### `core/conveyor.cpp` (13 functions, 378 instructions, 0 done)
+### `core/conveyor.cpp` (13 functions, 378 instructions, 0 done, 0 partial)
 - class `CConveyor`
   - [ ] `ctor` 0x00441ca0 (48)
   - [ ] `getActorType` 0x00441c90 (2)
@@ -3914,7 +3988,7 @@ in instructions.
 - class `CPlatform`
   - [ ] `dtor` 0x00442380 (37)
 
-### `core/cow.cpp` (11 functions, 903 instructions, 0 done)
+### `core/cow.cpp` (11 functions, 903 instructions, 0 done, 0 partial)
 - class `CZombieCow`
   - [ ] `ctor` 0x00444140 (23)
   - [ ] `getActorType` 0x00444130 (2)
@@ -3929,7 +4003,7 @@ in instructions.
   - [ ] `factoryFuncZombieCow` 0x00444100 (12)
   - [ ] `staticInit` 0x004440d0 (9)
 
-### `core/crate.cpp` (17 functions, 463 instructions, 0 done)
+### `core/crate.cpp` (17 functions, 463 instructions, 0 done, 0 partial)
 - class `CCrate`
   - [ ] `ctor` 0x004484d0 (21)
   - [ ] `getActorType` 0x004484c0 (2)
@@ -3950,7 +4024,7 @@ in instructions.
   - [ ] `factoryFuncCrate` 0x00448490 (12)
   - [ ] `staticInit` 0x00448460 (9)
 
-### `core/crossbow.cpp` (12 functions, 673 instructions, 0 done)
+### `core/crossbow.cpp` (12 functions, 673 instructions, 0 done, 0 partial)
 - class `CCrossbow`
   - [ ] `getActorType` 0x00448c60 (2)
   - [ ] `process` 0x00448d30 (56)
@@ -3966,7 +4040,7 @@ in instructions.
   - [ ] `factoryFuncCrossbow` 0x00448c30 (12)
   - [ ] `staticInit` 0x00448c00 (9)
 
-### `core/curtain.cpp` (17 functions, 2249 instructions, 0 done)
+### `core/curtain.cpp` (17 functions, 2249 instructions, 0 done, 0 partial)
 - class `CCurtain`
   - [ ] `ctor` 0x004496a0 (68)
   - [ ] `getActorType` 0x00449690 (2)
@@ -3989,7 +4063,7 @@ in instructions.
 
 ## Step 25: Not reached from startup: `core/` (part 3 of 9)
 
-### `core/dcamera.cpp` (27 functions, 2549 instructions, 0 done)
+### `core/dcamera.cpp` (27 functions, 2549 instructions, 0 done, 0 partial)
 - class `CDemonCamera`
   - [ ] `isSphereVisible` 0x00452730 (144)
   - [ ] `getFogValueAtPosition` 0x00453700 (69)
@@ -4020,7 +4094,7 @@ in instructions.
   - [ ] `transformAndStoreVertex` 0x00452110 (34)
   - [ ] `saveCameraFog` 0x00453f10 (57)
 
-### `core/dcube.cpp` (21 functions, 2237 instructions, 0 done)
+### `core/dcube.cpp` (21 functions, 2237 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `intersectXZCylinder` 0x004556b0 (256)
   - [ ] `intersectXZCylinderWithHeight` 0x00455990 (63)
@@ -4046,7 +4120,7 @@ in instructions.
   - [ ] `calculateNormalAndPlane` 0x004552c0 (133)
   - [ ] `init` 0x00455430 (11)
 
-### `core/dest.cpp` (11 functions, 469 instructions, 0 done)
+### `core/dest.cpp` (11 functions, 469 instructions, 0 done, 0 partial)
 - class `CActorDestination`
   - [ ] `ctor` 0x0046f900 (30)
   - [ ] `getActorType` 0x0046f8f0 (2)
@@ -4061,7 +4135,7 @@ in instructions.
   - [ ] `factoryFuncActorDestination` 0x0046f8c0 (12)
   - [ ] `staticInit` 0x0046f890 (9)
 
-### `core/dfilter.cpp` (7 functions, 199 instructions, 0 done)
+### `core/dfilter.cpp` (7 functions, 199 instructions, 0 done, 0 partial)
 - class `CFilterCache`
   - [ ] `ctor` 0x0046ffd0 (3)
   - [ ] `dtor` 0x0046ffe0 (8)
@@ -4073,11 +4147,11 @@ in instructions.
 - free functions
   - [ ] `staticInit` 0x0046ff50 (29)
 
-### `core/dfont.cpp` (1 functions, 5 instructions, 0 done)
+### `core/dfont.cpp` (1 functions, 5 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `remapFonts` 0x00471300 (5)
 
-### `core/dimage.cpp` (6 functions, 254 instructions, 0 done)
+### `core/dimage.cpp` (6 functions, 254 instructions, 0 done, 0 partial)
 - class `CDemonImage`
   - [ ] `ctor` 0x004719b0 (3)
   - [ ] `freeMemory` 0x00471a40 (15)
@@ -4086,11 +4160,11 @@ in instructions.
   - [ ] `packColor` 0x00471a70 (31)
   - [ ] `load` 0x00471ad0 (169)
 
-### `core/dirmat.cpp` (1 functions, 75 instructions, 1 done)
+### `core/dirmat.cpp` (1 functions, 75 instructions, 1 done, 0 partial)
 - free functions
   - [x] `angleFromSinCos` 0x00472090 (75)
 
-### `core/dlight.cpp` (5 functions, 816 instructions, 0 done)
+### `core/dlight.cpp` (5 functions, 816 instructions, 0 done, 0 partial)
 - class `CDemonLight`
   - [ ] `dtor` 0x00472760 (35)
   - [ ] `renderRadialVolumetricScattering` 0x00475210 (427)
@@ -4099,7 +4173,7 @@ in instructions.
   - [ ] `drawGrayscalePixel` 0x00473360 (16)
   - [ ] `renderConeLightGeometry` 0x004760d0 (333)
 
-### `core/dmodel.cpp` (5 functions, 108 instructions, 2 done)
+### `core/dmodel.cpp` (5 functions, 108 instructions, 2 done, 0 partial)
 - class `CKeyFramedModel`
   - [ ] `intersectCylinder` 0x00478650 (76)
 - free functions
@@ -4109,7 +4183,7 @@ in instructions.
   - [x] `ctor` 0x0047eef0 (2, compiler-generated)
   - [x] `dtor` 0x0047ef00 (2, compiler-generated)
 
-### `core/dog.cpp` (10 functions, 741 instructions, 0 done)
+### `core/dog.cpp` (10 functions, 741 instructions, 0 done, 0 partial)
 - class `CZombieDog`
   - [ ] `ctor` 0x0047f050 (23)
   - [ ] `getActorType` 0x0047f040 (2)
@@ -4123,7 +4197,7 @@ in instructions.
   - [ ] `factoryFuncZombieDog` 0x0047f010 (12)
   - [ ] `staticInit` 0x0047efe0 (9)
 
-### `core/door.cpp` (23 functions, 1740 instructions, 0 done)
+### `core/door.cpp` (23 functions, 1740 instructions, 0 done, 0 partial)
 - class `CDoor`
   - [ ] `getOpenStandPos` 0x00480e20 (177)
   - [ ] `onOpened` 0x0047fcf0 (8)
@@ -4150,7 +4224,7 @@ in instructions.
   - [ ] `staticInit` 0x0047fa60 (9)
   - [ ] `clearRuleList` 0x00481650 (8)
 
-### `core/dpart.cpp` (8 functions, 827 instructions, 0 done)
+### `core/dpart.cpp` (8 functions, 827 instructions, 0 done, 0 partial)
 - class `CDemonPart`
   - [ ] `alloc` 0x00482180 (84)
   - [ ] `load` 0x00482490 (8)
@@ -4162,7 +4236,7 @@ in instructions.
   - [ ] `setupTriangleEdgeInterpolation` 0x00482fb0 (210)
   - [ ] `setupDepthOnlyEdgeInterpolation` 0x00483210 (92)
 
-### `core/dracbrid.cpp` (18 functions, 3231 instructions, 0 done)
+### `core/dracbrid.cpp` (18 functions, 3231 instructions, 0 done, 0 partial)
 - class `CDraculaBride`
   - [ ] `ctor` 0x00483fc0 (47)
   - [ ] `getActorType` 0x00483fb0 (2)
@@ -4184,7 +4258,7 @@ in instructions.
   - [ ] `factoryFuncDraculaBride` 0x00483f80 (12)
   - [ ] `staticInit` 0x00483ef0 (32)
 
-### `core/drip.cpp` (12 functions, 604 instructions, 0 done)
+### `core/drip.cpp` (12 functions, 604 instructions, 0 done, 0 partial)
 - class `CDrip`
   - [ ] `ctor` 0x0048e000 (52)
   - [ ] `getActorType` 0x0048dff0 (2)
@@ -4200,7 +4274,7 @@ in instructions.
   - [ ] `factoryFuncDrip` 0x0048dfc0 (12)
   - [ ] `staticInit` 0x0048df80 (12)
 
-### `core/drone.cpp` (10 functions, 800 instructions, 0 done)
+### `core/drone.cpp` (10 functions, 800 instructions, 0 done, 0 partial)
 - class `CDrone`
   - [ ] `ctor` 0x0048eb50 (24)
   - [ ] `getActorType` 0x0048eb40 (2)
@@ -4214,12 +4288,12 @@ in instructions.
   - [ ] `factoryFuncDrone` 0x0048eb10 (12)
   - [ ] `staticInit` 0x0048eae0 (9)
 
-### `core/dskybox.cpp` (2 functions, 30 instructions, 0 done)
+### `core/dskybox.cpp` (2 functions, 30 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `initializeSkyboxTexture` 0x00490070 (22)
   - [ ] `staticInit` 0x00490040 (8)
 
-### `core/dstrender.cpp` (6 functions, 916 instructions, 0 done)
+### `core/dstrender.cpp` (6 functions, 916 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `saveMMXRegisters` 0x004906b0 (9)
   - [ ] `renderDepthTestStatistics16xUnrolled` 0x00490d35 (149)
@@ -4228,7 +4302,7 @@ in instructions.
   - [ ] `blendLightmapShared4U64toU64pBB12Px4MMX` 0x004924a9 (84)
   - [ ] `blendLightmapShared4U64toU64pAmbientPx4MMX` 0x004925c5 (84)
 
-### `core/dtrace.cpp` (18 functions, 2180 instructions, 0 done)
+### `core/dtrace.cpp` (18 functions, 2180 instructions, 0 done, 0 partial)
 - class `CDemonRaytrace`
   - [ ] `getVoxelHeightAtVoxelCoords` 0x00499a50 (95)
   - [ ] `voxelRaycast3D` 0x00499330 (379)
@@ -4250,7 +4324,7 @@ in instructions.
   - [ ] `initIntersectionCylinder` 0x00496b90 (74)
   - [ ] `staticInit` 0x004941e0 (6)
 
-### `core/dtri.cpp` (21 functions, 2594 instructions, 0 done)
+### `core/dtri.cpp` (21 functions, 2594 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `cylinderEdgeIntersection` 0x0049aa00 (256)
   - [ ] `cylinderEdgeTestWithHeight` 0x0049ace0 (61)
@@ -4275,7 +4349,7 @@ in instructions.
   - [ ] `writeDataBinary` 0x0049a5f0 (34)
   - [ ] `render` 0x0049cbd0 (97)
 
-### `core/dynamite.cpp` (12 functions, 287 instructions, 0 done)
+### `core/dynamite.cpp` (12 functions, 287 instructions, 0 done, 0 partial)
 - class `CDynamite`
   - [ ] `getActorType` 0x0049cdb0 (2)
   - [ ] `fire` 0x0049ce70 (34)
@@ -4291,7 +4365,7 @@ in instructions.
   - [ ] `factoryFuncDynamite` 0x0049cd80 (12)
   - [ ] `staticInit` 0x0049cd40 (14)
 
-### `core/elephant.cpp` (10 functions, 872 instructions, 0 done)
+### `core/elephant.cpp` (10 functions, 872 instructions, 0 done, 0 partial)
 - class `CElephantGun`
   - [ ] `getActorType` 0x004a6fd0 (2)
   - [ ] `process` 0x004a7070 (65)
@@ -4305,7 +4379,7 @@ in instructions.
   - [ ] `factoryFuncElephantGun` 0x004a6fa0 (12)
   - [ ] `staticInit` 0x004a6f70 (9)
 
-### `core/emitter.cpp` (14 functions, 1234 instructions, 0 done)
+### `core/emitter.cpp` (14 functions, 1234 instructions, 0 done, 0 partial)
 - class `CEmitter`
   - [ ] `ctor` 0x004a7ca0 (71)
   - [ ] `getActorType` 0x004a7c90 (2)
@@ -4323,7 +4397,7 @@ in instructions.
   - [ ] `factoryFuncEmitter` 0x004a7c60 (12)
   - [ ] `staticInit` 0x004a7c30 (9)
 
-### `core/enemy.cpp` (16 functions, 931 instructions, 0 done)
+### `core/enemy.cpp` (16 functions, 931 instructions, 0 done, 0 partial)
 - class `CEnemy`
   - [ ] `ctor` 0x004a9500 (68)
   - [ ] `archive` 0x004a9660 (93)
@@ -4343,7 +4417,7 @@ in instructions.
 - free functions
   - [ ] `staticInit` 0x004a94d0 (9)
 
-### `core/event.cpp` (14 functions, 435 instructions, 0 done)
+### `core/event.cpp` (14 functions, 435 instructions, 0 done, 0 partial)
 - class `CRuleList`
   - [ ] `findFirst` 0x004b1890 (34)
   - [ ] `evaluateAndRun` 0x004b18e0 (24)
@@ -4364,7 +4438,7 @@ in instructions.
 
 ## Step 26: Not reached from startup: `core/` (part 4 of 9)
 
-### `core/filmreel.cpp` (25 functions, 588 instructions, 0 done)
+### `core/filmreel.cpp` (25 functions, 588 instructions, 0 done, 0 partial)
 - class `CFilmReel`
   - [ ] `ctor` 0x004be6b0 (37)
   - [ ] `getActorType` 0x004be6a0 (2)
@@ -4394,12 +4468,12 @@ in instructions.
   - [ ] `dtor` 0x004beed0 (31)
   - [ ] `setup` 0x004beb00 (14)
 
-### `core/particle.cpp` (2 functions, 7 instructions, 0 done)
+### `core/particle.cpp` (2 functions, 7 instructions, 0 done, 0 partial)
 - class `CParticle`
   - [ ] `ctor` 0x00545650 (4)
   - [ ] `dtor` 0x00545670 (3)
 
-### `core/fire.cpp` (72 functions, 3038 instructions, 18 done)
+### `core/fire.cpp` (72 functions, 3038 instructions, 18 done, 0 partial)
 - class `CLightningBolt`
   - [ ] `activateDirectional` 0x004c5680 (34)
   - [x] `ctor` 0x004c9540 (2, compiler-generated)
@@ -4496,7 +4570,7 @@ in instructions.
 - class `CKeyFramedModelInstance`
   - [x] `dtor` 0x004c97c0 (2, compiler-generated)
 
-### `core/flame.cpp` (4 functions, 61 instructions, 0 done)
+### `core/flame.cpp` (4 functions, 61 instructions, 0 done, 0 partial)
 - class `CFlame`
   - [ ] `hide` 0x004caa70 (3)
   - [ ] `ctor` 0x004c9aa0 (37)
@@ -4504,7 +4578,7 @@ in instructions.
   - [ ] `factoryFuncFlame` 0x004c9a60 (12)
   - [ ] `staticInit` 0x004c9a30 (9)
 
-### `core/flamecan.cpp` (13 functions, 455 instructions, 0 done)
+### `core/flamecan.cpp` (13 functions, 455 instructions, 0 done, 0 partial)
 - class `CFlameCan`
   - [ ] `ctor` 0x004cb160 (44)
   - [ ] `getActorType` 0x004cb150 (2)
@@ -4521,7 +4595,7 @@ in instructions.
   - [ ] `factoryFuncFlameCan` 0x004cb120 (12)
   - [ ] `staticInit` 0x004cb0f0 (9)
 
-### `core/flamegun.cpp` (9 functions, 207 instructions, 0 done)
+### `core/flamegun.cpp` (9 functions, 207 instructions, 0 done, 0 partial)
 - class `CFlameThrower`
   - [ ] `getActorType` 0x004cb870 (2)
   - [ ] `fire` 0x004cb920 (46)
@@ -4534,7 +4608,7 @@ in instructions.
   - [ ] `factoryFuncFlameThrower` 0x004cb840 (12)
   - [ ] `staticInit` 0x004cb810 (9)
 
-### `core/flashlit.cpp` (7 functions, 83 instructions, 0 done)
+### `core/flashlit.cpp` (7 functions, 83 instructions, 0 done, 0 partial)
 - class `CFlashlight`
   - [ ] `getActorType` 0x004cbbb0 (2)
   - [ ] `fire` 0x004cbc40 (2)
@@ -4545,11 +4619,11 @@ in instructions.
   - [ ] `factoryFuncFlashlight` 0x004cbb80 (12)
   - [ ] `staticInit` 0x004cbb50 (9)
 
-### `core/flattn.cpp` (1 functions, 12 instructions, 0 done)
+### `core/flattn.cpp` (1 functions, 12 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `staticInit` 0x004cbcb0 (12)
 
-### `core/flies.cpp` (13 functions, 1038 instructions, 0 done)
+### `core/flies.cpp` (13 functions, 1038 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `factoryFuncFlies` 0x004cbd20 (12)
   - [ ] `staticInit` 0x004cbcf0 (9)
@@ -4566,7 +4640,7 @@ in instructions.
   - [ ] `dtor` 0x004cccb0 (37)
   - [ ] `setup` 0x004cbe20 (22)
 
-### `core/frankgen.cpp` (19 functions, 1037 instructions, 0 done)
+### `core/frankgen.cpp` (19 functions, 1037 instructions, 0 done, 0 partial)
 - class `CFrankenstienMachine`
   - [ ] `ctor` 0x004d1720 (23)
   - [ ] `getActorType` 0x004d1710 (2)
@@ -4589,7 +4663,7 @@ in instructions.
   - [ ] `getFrameCount` 0x004d2880 (3)
   - [ ] `getActorName` 0x004d2890 (3)
 
-### `core/gabriela.cpp` (34 functions, 5722 instructions, 0 done)
+### `core/gabriela.cpp` (34 functions, 5722 instructions, 0 done, 0 partial)
 - class `CGabriella`
   - [ ] `ctor` 0x004d2b20 (50)
   - [ ] `getActorType` 0x004d2b10 (2)
@@ -4627,7 +4701,7 @@ in instructions.
   - [ ] `flashlightBlendWeightCallback` 0x004d2a30 (28)
   - [ ] `aimRotationBlendWeightCallback` 0x004d2a80 (30)
 
-### `core/game.cpp` (19 functions, 959 instructions, 1 done)
+### `core/game.cpp` (19 functions, 959 instructions, 1 done, 0 partial)
 - class `CGame`
   - [ ] `setStatusDisplay` 0x004e0bf0 (79)
   - [ ] `resetWeaponSwitchTimers` 0x004e0bb0 (8)
@@ -4650,7 +4724,7 @@ in instructions.
   - [ ] `checkCheatAndGiveWeapon` 0x004dd9d0 (70)
   - [ ] `joinNetworkGame` 0x004e2fc0 (72)
 
-### `core/gargoyle.cpp` (14 functions, 1690 instructions, 0 done)
+### `core/gargoyle.cpp` (14 functions, 1690 instructions, 0 done, 0 partial)
 - class `CGargoyle`
   - [ ] `ctor` 0x004e44e0 (37)
   - [ ] `getActorType` 0x004e44d0 (2)
@@ -4668,7 +4742,7 @@ in instructions.
   - [ ] `factoryFuncGargoyle` 0x004e44a0 (12)
   - [ ] `staticInit` 0x004e4470 (9)
 
-### `core/gasmask.cpp` (11 functions, 161 instructions, 0 done)
+### `core/gasmask.cpp` (11 functions, 161 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `factoryFuncGasMask` 0x004e5cc0 (12)
   - [ ] `staticInit` 0x004e5c90 (9)
@@ -4683,7 +4757,7 @@ in instructions.
   - [ ] `dtor` 0x004e5f40 (31)
   - [ ] `setup` 0x004e5d50 (10)
 
-### `core/ghoul.cpp` (15 functions, 3297 instructions, 0 done)
+### `core/ghoul.cpp` (15 functions, 3297 instructions, 0 done, 0 partial)
 - class `CGhoul`
   - [ ] `ctor` 0x004e6030 (56)
   - [ ] `getActorType` 0x004e6020 (2)
@@ -4702,7 +4776,7 @@ in instructions.
   - [ ] `factoryFuncGhoul` 0x004e5ff0 (12)
   - [ ] `staticInit` 0x004e5f90 (20)
 
-### `core/glass.cpp` (15 functions, 1227 instructions, 0 done)
+### `core/glass.cpp` (15 functions, 1227 instructions, 0 done, 0 partial)
 - class `CGlass`
   - [ ] `ctor` 0x004e9040 (77)
   - [ ] `getActorType` 0x004e9030 (2)
@@ -4721,7 +4795,7 @@ in instructions.
   - [ ] `factoryFuncGlass` 0x004e9000 (12)
   - [ ] `staticInit` 0x004e8fd0 (9)
 
-### `core/gore.cpp` (14 functions, 163 instructions, 5 done)
+### `core/gore.cpp` (14 functions, 163 instructions, 5 done, 0 partial)
 - class `CBloodPool`
   - [ ] `init` 0x004ed0d0 (44)
   - [x] `ctor` 0x004ee3b0 (2, compiler-generated)
@@ -4743,7 +4817,7 @@ in instructions.
   - [ ] `ctor` 0x004ee3f0 (6)
   - [ ] `dtor` 0x004ee410 (6)
 
-### `core/grave.cpp` (13 functions, 403 instructions, 0 done)
+### `core/grave.cpp` (13 functions, 403 instructions, 0 done, 0 partial)
 - class `CGrave`
   - [ ] `ctor` 0x004ee510 (26)
   - [ ] `getActorType` 0x004ee500 (2)
@@ -4762,7 +4836,7 @@ in instructions.
 
 ## Step 27: Not reached from startup: `core/` (part 5 of 9)
 
-### `core/ground.cpp` (5 functions, 378 instructions, 0 done)
+### `core/ground.cpp` (5 functions, 378 instructions, 0 done, 0 partial)
 - class `CGround`
   - [ ] `ctor` 0x004eee80 (23)
   - [ ] `dtor` 0x004eeee0 (8)
@@ -4771,7 +4845,7 @@ in instructions.
   - [ ] `staticInit` 0x004eeb90 (9)
   - [ ] `openFileWithExtension` 0x004eebc0 (90)
 
-### `core/gun.cpp` (7 functions, 583 instructions, 0 done)
+### `core/gun.cpp` (7 functions, 583 instructions, 0 done, 0 partial)
 - class `CGun`
   - [ ] `getActorType` 0x004f02e0 (2)
   - [ ] `fire` 0x004f0350 (498)
@@ -4782,7 +4856,7 @@ in instructions.
   - [ ] `factoryFuncGun` 0x004f02b0 (12)
   - [ ] `staticInit` 0x004f0280 (9)
 
-### `core/haystack.cpp` (15 functions, 1231 instructions, 0 done)
+### `core/haystack.cpp` (15 functions, 1231 instructions, 0 done, 0 partial)
 - class `CHaystack`
   - [ ] `ctor` 0x004f0c10 (24)
   - [ ] `getActorType` 0x004f0c00 (2)
@@ -4801,7 +4875,7 @@ in instructions.
   - [ ] `factoryFuncHaystack` 0x004f0bd0 (12)
   - [ ] `staticInit` 0x004f0ba0 (9)
 
-### `core/health.cpp` (14 functions, 221 instructions, 0 done)
+### `core/health.cpp` (14 functions, 221 instructions, 0 done, 0 partial)
 - class `CHealthItem`
   - [ ] `ctor` 0x004f1dd0 (21)
   - [ ] `getActorType` 0x004f1dc0 (2)
@@ -4819,7 +4893,7 @@ in instructions.
   - [ ] `factoryFuncHealthItem` 0x004f1d90 (12)
   - [ ] `staticInit` 0x004f1d60 (9)
 
-### `core/hero.cpp` (35 functions, 2025 instructions, 0 done)
+### `core/hero.cpp` (35 functions, 2025 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `isAnyHeroWithinCylinder` 0x004f22a0 (63)
   - [ ] `closestHeroToPoint` 0x004f2170 (66)
@@ -4858,7 +4932,7 @@ in instructions.
   - [ ] `findItemUseTarget` 0x004f35b0 (143)
   - [ ] `tryUseSelectedItem` 0x004f3760 (49)
 
-### `core/hiram.cpp` (8 functions, 247 instructions, 0 done)
+### `core/hiram.cpp` (8 functions, 247 instructions, 0 done, 0 partial)
 - class `CHiram`
   - [ ] `ctor` 0x004f43f0 (33)
   - [ ] `getActorType` 0x004f43e0 (2)
@@ -4870,7 +4944,7 @@ in instructions.
   - [ ] `factoryFuncHiram` 0x004f43b0 (12)
   - [ ] `staticInit` 0x004f4380 (9)
 
-### `core/hostage.cpp` (16 functions, 2322 instructions, 0 done)
+### `core/hostage.cpp` (16 functions, 2322 instructions, 0 done, 0 partial)
 - class `CHostage`
   - [ ] `ctor` 0x004f4840 (56)
   - [ ] `getActorType` 0x004f4830 (2)
@@ -4890,7 +4964,7 @@ in instructions.
   - [ ] `factoryFuncHostage` 0x004f4800 (12)
   - [ ] `staticInit` 0x004f47d0 (9)
 
-### `core/hotdemon.cpp` (12 functions, 1060 instructions, 0 done)
+### `core/hotdemon.cpp` (12 functions, 1060 instructions, 0 done, 0 partial)
 - class `CHotDemon`
   - [ ] `ctor` 0x004f6ca0 (22)
   - [ ] `getActorType` 0x004f6c90 (2)
@@ -4906,7 +4980,7 @@ in instructions.
   - [ ] `factoryFuncHotDemon` 0x004f6c60 (12)
   - [ ] `staticInit` 0x004f6c30 (9)
 
-### `core/hpriest.cpp` (8 functions, 162 instructions, 0 done)
+### `core/hpriest.cpp` (8 functions, 162 instructions, 0 done, 0 partial)
 - class `CHighPriestOfGardath`
   - [ ] `getActorType` 0x004f7b60 (2)
   - [ ] `archive` 0x004f7bd0 (11)
@@ -4918,7 +4992,7 @@ in instructions.
   - [ ] `factoryFuncHighPriestOfGardath` 0x004f7b30 (12)
   - [ ] `staticInit` 0x004f7b00 (9)
 
-### `core/icepick.cpp` (19 functions, 1820 instructions, 0 done)
+### `core/icepick.cpp` (19 functions, 1820 instructions, 0 done, 0 partial)
 - class `CIcePick`
   - [ ] `ctor` 0x004f7df0 (27)
   - [ ] `getActorType` 0x004f7de0 (2)
@@ -4941,7 +5015,7 @@ in instructions.
   - [ ] `factoryFuncIcePick` 0x004f7db0 (12)
   - [ ] `staticInit` 0x004f7d80 (9)
 
-### `core/imp.cpp` (15 functions, 1886 instructions, 0 done)
+### `core/imp.cpp` (15 functions, 1886 instructions, 0 done, 0 partial)
 - class `CImp`
   - [ ] `ctor` 0x004f98a0 (23)
   - [ ] `getActorType` 0x004f9890 (2)
@@ -4960,7 +5034,7 @@ in instructions.
   - [ ] `staticInit` 0x004f9830 (9)
   - [ ] `setVector` 0x004fa900 (8)
 
-### `core/inv.cpp` (13 functions, 1155 instructions, 0 done)
+### `core/inv.cpp` (13 functions, 1155 instructions, 0 done, 0 partial)
 - class `CInventory`
   - [ ] `ctor` 0x004fd020 (18)
   - [ ] `save` 0x004ff210 (133)
@@ -4977,7 +5051,7 @@ in instructions.
 - free functions
   - [ ] `staticInit` 0x004fcc30 (85)
 
-### `core/keyactor.cpp` (13 functions, 252 instructions, 0 done)
+### `core/keyactor.cpp` (13 functions, 252 instructions, 0 done, 0 partial)
 - class `CKeyActor`
   - [ ] `ctor` 0x00501690 (21)
   - [ ] `getActorType` 0x00501680 (2)
@@ -4994,7 +5068,7 @@ in instructions.
   - [ ] `factoryFuncKeyActor` 0x00501650 (12)
   - [ ] `staticInit` 0x00501620 (9)
 
-### `core/ladder.cpp` (14 functions, 791 instructions, 0 done)
+### `core/ladder.cpp` (14 functions, 791 instructions, 0 done, 0 partial)
 - class `CLadder`
   - [ ] `ctor` 0x00502540 (36)
   - [ ] `getActorType` 0x00502530 (2)
@@ -5012,7 +5086,7 @@ in instructions.
   - [ ] `factoryFuncLadder` 0x00502500 (12)
   - [ ] `staticInit` 0x005024d0 (9)
 
-### `core/larva.cpp` (10 functions, 1014 instructions, 0 done)
+### `core/larva.cpp` (10 functions, 1014 instructions, 0 done, 0 partial)
 - class `CLarva`
   - [ ] `ctor` 0x00502f90 (26)
   - [ ] `getActorType` 0x00502f80 (2)
@@ -5026,13 +5100,13 @@ in instructions.
   - [ ] `factoryFuncLarva` 0x00502f50 (12)
   - [ ] `staticInit` 0x00502f20 (9)
 
-### `core/level.cpp` (2 functions, 13 instructions, 0 done)
+### `core/level.cpp` (2 functions, 13 instructions, 0 done, 0 partial)
 - class `CLevelLoader`
   - [ ] `reset` 0x00503db0 (3)
 - free functions
   - [ ] `staticInit` 0x00503d80 (10)
 
-### `core/lever.cpp` (14 functions, 639 instructions, 0 done)
+### `core/lever.cpp` (14 functions, 639 instructions, 0 done, 0 partial)
 - class `CLever`
   - [ ] `isAccessibleFrom` 0x00505080 (56)
   - [ ] `activate` 0x00504c90 (34)
@@ -5050,7 +5124,7 @@ in instructions.
   - [ ] `factoryFuncLever` 0x00504790 (12)
   - [ ] `staticInit` 0x00504760 (9)
 
-### `core/lightgun.cpp` (13 functions, 1262 instructions, 0 done)
+### `core/lightgun.cpp` (13 functions, 1262 instructions, 0 done, 0 partial)
 - class `CLightGun`
   - [ ] `getActorType` 0x005058f0 (2)
   - [ ] `updateBeamLight` 0x00505ac0 (48)
@@ -5067,7 +5141,7 @@ in instructions.
   - [ ] `factoryFuncLightGun` 0x005058c0 (12)
   - [ ] `staticInit` 0x00505890 (9)
 
-### `core/litecone.cpp` (11 functions, 243 instructions, 0 done)
+### `core/litecone.cpp` (11 functions, 243 instructions, 0 done, 0 partial)
 - class `CLightCone`
   - [ ] `ctor` 0x00506b10 (44)
   - [ ] `getActorType` 0x00506b00 (2)
@@ -5082,13 +5156,13 @@ in instructions.
   - [ ] `factoryFuncLightCone` 0x00506ad0 (12)
   - [ ] `staticInit` 0x00506aa0 (9)
 
-### `core/main.c` (3 functions, 261 instructions, 0 done)
+### `core/main.c` (3 functions, 261 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `drawCenteredText` 0x00508250 (33)
   - [ ] `waitWithSkip` 0x005082a0 (61)
   - [ ] `showPromoScreen` 0x00508340 (167)
 
-### `core/manpuz.cpp` (47 functions, 3345 instructions, 0 done)
+### `core/manpuz.cpp` (47 functions, 3345 instructions, 0 done, 0 partial)
 - class `CMansionPuzzleCircle`
   - [ ] `getPanelColor` 0x0050a420 (35)
   - [ ] `initPuzzleState` 0x005098f0 (93)
@@ -5142,7 +5216,7 @@ in instructions.
 
 ## Step 28: Not reached from startup: `core/` (part 6 of 9)
 
-### `core/marquee.cpp` (14 functions, 729 instructions, 0 done)
+### `core/marquee.cpp` (14 functions, 729 instructions, 0 done, 0 partial)
 - class `CMarquee`
   - [ ] `ctor` 0x0050bb60 (41)
   - [ ] `getActorType` 0x0050bb50 (2)
@@ -5160,7 +5234,7 @@ in instructions.
   - [ ] `factoryFuncMarquee` 0x0050bb20 (12)
   - [ ] `staticInit` 0x0050baf0 (9)
 
-### `core/melee.cpp` (16 functions, 391 instructions, 0 done)
+### `core/melee.cpp` (16 functions, 391 instructions, 0 done, 0 partial)
 - class `CMelee`
   - [ ] `getActorType` 0x0050e7c0 (2)
   - [ ] `archive` 0x0050e920 (73)
@@ -5180,7 +5254,7 @@ in instructions.
   - [ ] `factoryFuncMelee` 0x0050e790 (12)
   - [ ] `staticInit` 0x0050e760 (9)
 
-### `core/menu.cpp` (6 functions, 588 instructions, 0 done)
+### `core/menu.cpp` (6 functions, 588 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `staticInit` 0x0050fdb0 (39)
   - [ ] `showJoystickCalibrationScreen` 0x00510410 (61)
@@ -5189,7 +5263,7 @@ in instructions.
   - [ ] `addCustomKeyBinding` 0x00513460 (40)
   - [ ] `getSinglePressedKey` 0x00513860 (40)
 
-### `core/mimic.cpp` (20 functions, 2300 instructions, 0 done)
+### `core/mimic.cpp` (20 functions, 2300 instructions, 0 done, 0 partial)
 - class `CMimic`
   - [ ] `ctor` 0x0051f1d0 (50)
   - [ ] `getActorType` 0x0051f1c0 (2)
@@ -5213,7 +5287,7 @@ in instructions.
   - [ ] `staticInit` 0x0051f100 (9)
   - [ ] `mirrorXTransform` 0x0051f130 (23)
 
-### `core/minecar.cpp` (7 functions, 109 instructions, 0 done)
+### `core/minecar.cpp` (7 functions, 109 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `factoryFuncMineCar` 0x00520e50 (13)
   - [ ] `staticInit` 0x00520e20 (9)
@@ -5224,7 +5298,7 @@ in instructions.
   - [ ] `setup` 0x00520e90 (7)
   - [ ] `ctor` 0x00520f20 (6)
 
-### `core/mirror.cpp` (7 functions, 251 instructions, 0 done)
+### `core/mirror.cpp` (7 functions, 251 instructions, 0 done, 0 partial)
 - class `CMirror`
   - [ ] `renderMirroredPrimitive` 0x005225e0 (35)
   - [ ] `ctor` 0x005213c0 (9)
@@ -5235,7 +5309,7 @@ in instructions.
 - free functions
   - [ ] `staticInit` 0x00520fb0 (11)
 
-### `core/mission.cpp` (8 functions, 153 instructions, 2 done)
+### `core/mission.cpp` (8 functions, 153 instructions, 2 done, 0 partial)
 - class `CDemonMission`
   - [ ] `getNextLoadedInventoryActor` 0x00523520 (41)
   - [ ] `save` 0x00522e30 (38)
@@ -5247,7 +5321,7 @@ in instructions.
   - [ ] `staticInit` 0x00522c50 (1)
   - [ ] `skipLine` 0x00522c60 (11)
 
-### `core/mobster.cpp` (23 functions, 3180 instructions, 0 done)
+### `core/mobster.cpp` (23 functions, 3180 instructions, 0 done, 0 partial)
 - class `CMobster`
   - [ ] `ctor` 0x00525200 (64)
   - [ ] `getActorType` 0x005251f0 (2)
@@ -5274,7 +5348,7 @@ in instructions.
   - [ ] `getObjectGrabPointWorld` 0x00525110 (60)
   - [ ] `setEulerAngles` 0x00526b00 (8)
 
-### `core/moloch.cpp` (13 functions, 1031 instructions, 0 done)
+### `core/moloch.cpp` (13 functions, 1031 instructions, 0 done, 0 partial)
 - class `CMoloch`
   - [ ] `ctor` 0x00528b30 (58)
   - [ ] `getActorType` 0x00528b20 (2)
@@ -5291,14 +5365,14 @@ in instructions.
   - [ ] `factoryFuncMoloch` 0x00528af0 (12)
   - [ ] `staticInit` 0x00528ac0 (9)
 
-### `core/moon.cpp` (3 functions, 56 instructions, 0 done)
+### `core/moon.cpp` (3 functions, 56 instructions, 0 done, 0 partial)
 - class `CMoon`
   - [ ] `ctor` 0x00529a80 (9)
   - [ ] `dtor` 0x00529ab0 (13)
 - free functions
   - [ ] `staticInit` 0x005299f0 (34)
 
-### `core/morph.cpp` (32 functions, 1803 instructions, 0 done)
+### `core/morph.cpp` (32 functions, 1803 instructions, 0 done, 0 partial)
 - class `CMorphModel`
   - [ ] `animateFromVertexBuffer` 0x0052a920 (70)
   - [ ] `animateFromDeformableModel` 0x0052aa30 (28)
@@ -5335,7 +5409,7 @@ in instructions.
   - [ ] `countTrianglesFromPolygons` 0x0052a490 (19)
   - [ ] `addInts` 0x0052cc40 (3)
 
-### `core/motion.cpp` (23 functions, 1941 instructions, 0 done)
+### `core/motion.cpp` (23 functions, 1941 instructions, 0 done, 0 partial)
 - class `CMotionController`
   - [ ] `load` 0x0052e5d0 (50)
   - [ ] `save` 0x0052e670 (50)
@@ -5362,7 +5436,7 @@ in instructions.
   - [ ] `ctor` 0x0052cd50 (4)
   - [ ] `save` 0x0052d170 (248)
 
-### `core/netgame.cpp` (35 functions, 1904 instructions, 2 done)
+### `core/netgame.cpp` (35 functions, 1904 instructions, 0 done, 2 partial)
 - class `CNetGame`
   - [ ] `flushIncomingPackets` 0x00540550 (35)
   - [ ] `initializeNetwork` 0x0053fbc0 (107)
@@ -5370,8 +5444,11 @@ in instructions.
   - [ ] `processChatOut` 0x00541e40 (123)
   - [ ] `sendGameSetting` 0x00542dd0 (156)
   - [ ] `runLobby` 0x00541390 (659)
-  - [x] `ctor` 0x0053f6d0 (38)
-  - [x] `dtor` 0x0053f760 (8)
+  - [~] `ctor` 0x0053f6d0 (38)
+    - deferred: constructing the two SNetPlayer slots and the CSocket, with CNetGame::addPlayer and CNetGame::initializeNetworkToHost
+    - deferred: player_count 0, server_player_index -1 and has_pending_sim_frame 0, with CNetGame::addPlayer, CNetGame::processClientFrame and CNetGame::runLobby
+  - [~] `dtor` 0x0053f760 (8)
+    - deferred: destroying the CSocket, which closes it, with CNetGame::initializeNetworkToHost
   - [ ] `initializeNetworkToHost` 0x0053f860 (49)
   - [ ] `setModeSyncing` 0x00543b20 (4)
   - [ ] `setModePlaying` 0x00543b30 (4)
@@ -5401,7 +5478,7 @@ in instructions.
   - [ ] `copyPlayerInput` 0x00543db0 (25)
   - [ ] `copyNetAddr` 0x00543e00 (7)
 
-### `core/npc.cpp` (13 functions, 589 instructions, 0 done)
+### `core/npc.cpp` (13 functions, 589 instructions, 0 done, 0 partial)
 - class `CNPC`
   - [ ] `ctor` 0x005447e0 (26)
   - [ ] `archive` 0x00544ba0 (51)
@@ -5418,7 +5495,7 @@ in instructions.
   - [ ] `factoryFuncNPC` 0x005447a0 (12)
   - [ ] `staticInit` 0x00544770 (9)
 
-### `core/passngr.cpp` (9 functions, 601 instructions, 0 done)
+### `core/passngr.cpp` (9 functions, 601 instructions, 0 done, 0 partial)
 - class `CPassenger`
   - [ ] `ctor` 0x00545b30 (68)
   - [ ] `getActorType` 0x00545b20 (2)
@@ -5431,7 +5508,7 @@ in instructions.
   - [ ] `factoryFuncPassenger` 0x00545af0 (12)
   - [ ] `staticInit` 0x00545ac0 (9)
 
-### `core/path.cpp` (20 functions, 2841 instructions, 0 done)
+### `core/path.cpp` (20 functions, 2841 instructions, 0 done, 0 partial)
 - class `CPathMap`
   - [ ] `getDirection` 0x005465b0 (296)
   - [ ] `getCachedVoxelHeight` 0x00546ba0 (54)
@@ -5455,7 +5532,7 @@ in instructions.
   - [ ] `renderAllPathMaps` 0x005485f0 (44)
   - [ ] `renderPathMapsAtPosition` 0x00548680 (73)
 
-### `core/pendulum.cpp` (15 functions, 1407 instructions, 0 done)
+### `core/pendulum.cpp` (15 functions, 1407 instructions, 0 done, 0 partial)
 - class `CPendulum`
   - [ ] `ctor` 0x00549390 (64)
   - [ ] `getActorType` 0x00549380 (2)
@@ -5474,7 +5551,7 @@ in instructions.
   - [ ] `staticInit` 0x00549320 (9)
   - [ ] `didPhaseCross` 0x00549aa0 (73)
 
-### `core/platfrm.cpp` (18 functions, 1935 instructions, 0 done)
+### `core/platfrm.cpp` (18 functions, 1935 instructions, 0 done, 0 partial)
 - class `CPlatform`
   - [ ] `ctor` 0x0054c850 (115)
   - [ ] `archive` 0x0054dbc0 (251)
@@ -5498,7 +5575,7 @@ in instructions.
 
 ## Step 29: Not reached from startup: `core/` (part 7 of 9)
 
-### `core/scat.cpp` (22 functions, 2672 instructions, 0 done)
+### `core/scat.cpp` (22 functions, 2672 instructions, 0 done, 0 partial)
 - class `CScat`
   - [ ] `createDefaultWeapon` 0x00557150 (41)
   - [ ] `ctor` 0x00556ed0 (46)
@@ -5524,14 +5601,14 @@ in instructions.
   - [ ] `factoryFuncScat` 0x00556e90 (12)
   - [ ] `staticInit` 0x00556e00 (9)
 
-### `core/script.cpp` (3 functions, 52 instructions, 0 done)
+### `core/script.cpp` (3 functions, 52 instructions, 0 done, 0 partial)
 - class `CScript`
   - [ ] `ctor` 0x005597f0 (14)
   - [ ] `dtor` 0x00559840 (13)
 - free functions
   - [ ] `staticInit` 0x005591b0 (25)
 
-### `core/sentinel.cpp` (12 functions, 1373 instructions, 0 done)
+### `core/sentinel.cpp` (12 functions, 1373 instructions, 0 done, 0 partial)
 - class `CSentinel`
   - [ ] `ctor` 0x00567db0 (23)
   - [ ] `getActorType` 0x00567da0 (2)
@@ -5547,7 +5624,7 @@ in instructions.
   - [ ] `factoryFuncSentinel` 0x00567d70 (12)
   - [ ] `staticInit` 0x00567d40 (9)
 
-### `core/set.cpp` (15 functions, 1251 instructions, 2 done)
+### `core/set.cpp` (15 functions, 1251 instructions, 2 done, 0 partial)
 - class `CDemonSet`
   - [ ] `renderEnvMapTriangles` 0x005702b0 (289)
   - [ ] `renderFaceListOrEnvMap` 0x00570870 (42)
@@ -5568,7 +5645,7 @@ in instructions.
 - class `CBoundingBox3D`
   - [x] `assign` 0x005714c0 (29, compiler-generated)
 
-### `core/setcolid.cpp` (14 functions, 1616 instructions, 0 done)
+### `core/setcolid.cpp` (14 functions, 1616 instructions, 0 done, 0 partial)
 - class `CDemonSet`
   - [ ] `testVoxelRaycast` 0x00572510 (8)
   - [ ] `testOBBCylinderCollision` 0x00573140 (248)
@@ -5586,7 +5663,7 @@ in instructions.
   - [ ] `intersectXZCylinder` 0x00572e80 (192)
   - [ ] `testCylinderQuadCollision` 0x005730d0 (41)
 
-### `core/setdir.cpp` (4 functions, 329 instructions, 0 done)
+### `core/setdir.cpp` (4 functions, 329 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `staticInit` 0x00574790 (14)
   - [ ] `testCameraVisibility` 0x005750a0 (112)
@@ -5595,7 +5672,7 @@ in instructions.
 - class `CDemonSet`
   - [ ] `isPointInVdirGroup` 0x00576340 (44)
 
-### `core/setutil.cpp` (8 functions, 335 instructions, 0 done)
+### `core/setutil.cpp` (8 functions, 335 instructions, 0 done, 0 partial)
 - class `C3DSLight`
   - [ ] `isVisible` 0x00587df0 (34)
   - [ ] `reset` 0x005879b0 (15)
@@ -5608,7 +5685,7 @@ in instructions.
   - [ ] `generateSphereVertex` 0x00587a40 (73)
   - [ ] `calculateVertexIndex` 0x00587b30 (7)
 
-### `core/shotgun.cpp` (10 functions, 882 instructions, 0 done)
+### `core/shotgun.cpp` (10 functions, 882 instructions, 0 done, 0 partial)
 - class `CShotgun`
   - [ ] `getActorType` 0x00587ed0 (2)
   - [ ] `process` 0x00587f70 (65)
@@ -5622,7 +5699,7 @@ in instructions.
   - [ ] `factoryFuncShotgun` 0x00587ea0 (12)
   - [ ] `staticInit` 0x00587e70 (9)
 
-### `core/shovel.cpp` (8 functions, 91 instructions, 0 done)
+### `core/shovel.cpp` (8 functions, 91 instructions, 0 done, 0 partial)
 - class `CShovel`
   - [ ] `getActorType` 0x00588b90 (2)
   - [ ] `fire` 0x00588c20 (9)
@@ -5634,7 +5711,7 @@ in instructions.
   - [ ] `factoryFuncShovel` 0x00588b60 (12)
   - [ ] `staticInit` 0x00588b30 (9)
 
-### `core/simbox.cpp` (11 functions, 457 instructions, 0 done)
+### `core/simbox.cpp` (11 functions, 457 instructions, 0 done, 0 partial)
 - class `CSimBox`
   - [ ] `ctor` 0x00588d40 (55)
   - [ ] `getActorType` 0x00588d30 (2)
@@ -5649,7 +5726,7 @@ in instructions.
   - [ ] `factoryFuncSimBox` 0x00588d00 (12)
   - [ ] `staticInit` 0x00588cd0 (9)
 
-### `core/skeleton.cpp` (88 functions, 8882 instructions, 0 done)
+### `core/skeleton.cpp` (88 functions, 8882 instructions, 0 done, 0 partial)
 - class `CDeformableModelInstance`
   - [ ] `showAllParts` 0x005a0410 (8)
   - [ ] `clearAllTextureSetIndices` 0x005a0430 (8)
@@ -5743,11 +5820,11 @@ in instructions.
   - [ ] `renderSkeleton` 0x0059b640 (189)
   - [ ] `renderBones` 0x0059b800 (69)
 
-### `core/slew.cpp` (1 functions, 1 instructions, 0 done)
+### `core/slew.cpp` (1 functions, 1 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `staticInit` 0x005a2050 (1)
 
-### `core/smiley.cpp` (14 functions, 1561 instructions, 0 done)
+### `core/smiley.cpp` (14 functions, 1561 instructions, 0 done, 0 partial)
 - class `CSmiley`
   - [ ] `ctor` 0x005a2430 (28)
   - [ ] `getActorType` 0x005a2420 (2)
@@ -5765,7 +5842,7 @@ in instructions.
   - [ ] `factorFunc` 0x005a23f0 (12)
   - [ ] `staticInit` 0x005a23c0 (9)
 
-### `core/sound.cpp` (11 functions, 561 instructions, 0 done)
+### `core/sound.cpp` (11 functions, 561 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `staticInit` 0x005b1760 (15)
   - [ ] `populateSoundFiles` 0x005b17a0 (11)
@@ -5780,7 +5857,7 @@ in instructions.
   - [ ] `getSoundModeName` 0x005b3c70 (10)
   - [ ] `selectReverbPreset` 0x005b3d20 (50)
 
-### `core/spike.cpp` (12 functions, 881 instructions, 0 done)
+### `core/spike.cpp` (12 functions, 881 instructions, 0 done, 0 partial)
 - class `CSpike`
   - [ ] `ctor` 0x005b8220 (89)
   - [ ] `getActorType` 0x005b8210 (2)
@@ -5796,7 +5873,7 @@ in instructions.
   - [ ] `factoryFuncSpike` 0x005b81e0 (12)
   - [ ] `staticInit` 0x005b81b0 (9)
 
-### `core/spline.cpp` (7 functions, 424 instructions, 0 done)
+### `core/spline.cpp` (7 functions, 424 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `computeSplineBasis` 0x005b90a0 (125)
   - [ ] `evaluateSplinePoint3D` 0x005b92d0 (92)
@@ -5806,7 +5883,7 @@ in instructions.
   - [ ] `evaluateSplineTangentScalar` 0x005b93f0 (21)
   - [ ] `evaluateSplineTangentInt` 0x005b9430 (36)
 
-### `core/stairs.cpp` (16 functions, 1242 instructions, 0 done)
+### `core/stairs.cpp` (16 functions, 1242 instructions, 0 done, 0 partial)
 - class `CStairs`
   - [ ] `ctor` 0x005b9b70 (20)
   - [ ] `getActorType` 0x005b9b60 (2)
@@ -5826,7 +5903,7 @@ in instructions.
   - [ ] `factoryFuncStairs` 0x005b9b30 (12)
   - [ ] `staticInit` 0x005b9b00 (9)
 
-### `core/stone.cpp` (7 functions, 111 instructions, 0 done)
+### `core/stone.cpp` (7 functions, 111 instructions, 0 done, 0 partial)
 - class `CTempleStone`
   - [ ] `getActorType` 0x005bad00 (2)
   - [ ] `archive` 0x005bad40 (11)
@@ -5839,7 +5916,7 @@ in instructions.
 
 ## Step 30: Not reached from startup: `core/` (part 8 of 9)
 
-### `core/stranger.cpp` (57 functions, 13459 instructions, 0 done)
+### `core/stranger.cpp` (57 functions, 13459 instructions, 0 done, 0 partial)
 - class `CStranger`
   - [ ] `ctor` 0x005bb120 (207)
   - [ ] `getActorType` 0x005bb110 (2)
@@ -5900,7 +5977,7 @@ in instructions.
   - [ ] `setWindVelocity` 0x005c6970 (13)
   - [ ] `getCurrentMotionStateIndex` 0x005c69a0 (7)
 
-### `core/succubus.cpp` (12 functions, 1089 instructions, 0 done)
+### `core/succubus.cpp` (12 functions, 1089 instructions, 0 done, 0 partial)
 - class `CSuccubus`
   - [ ] `ctor` 0x005c6a80 (58)
   - [ ] `getActorType` 0x005c6a70 (2)
@@ -5916,7 +5993,7 @@ in instructions.
   - [ ] `factoryFuncSuccubus` 0x005c6a40 (12)
   - [ ] `staticInit` 0x005c6a10 (9)
 
-### `core/svetlana.cpp` (16 functions, 1634 instructions, 0 done)
+### `core/svetlana.cpp` (16 functions, 1634 instructions, 0 done, 0 partial)
 - class `CSvetlana`
   - [ ] `ctor` 0x005d8850 (32)
   - [ ] `getActorType` 0x005d8840 (2)
@@ -5936,7 +6013,7 @@ in instructions.
   - [ ] `factoryFuncSvetlana` 0x005d8810 (12)
   - [ ] `staticInit` 0x005d87e0 (9)
 
-### `core/tbplayer.cpp` (16 functions, 530 instructions, 0 done)
+### `core/tbplayer.cpp` (16 functions, 530 instructions, 0 done, 0 partial)
 - class `CBassPlayer`
   - [ ] `ctor` 0x005da060 (15)
   - [ ] `getActorType` 0x005da050 (2)
@@ -5957,7 +6034,7 @@ in instructions.
   - [ ] `dtor` 0x005da540 (67)
   - [ ] `setup` 0x005da2f0 (32)
 
-### `core/teleport.cpp` (5 functions, 57 instructions, 0 done)
+### `core/teleport.cpp` (5 functions, 57 instructions, 0 done, 0 partial)
 - class `CTeleportDest`
   - [ ] `ctor` 0x005da770 (6)
 - free functions
@@ -5967,7 +6044,7 @@ in instructions.
 - class `CTeleport`
   - [ ] `ctor` 0x005da9e0 (10)
 
-### `core/tentacle.cpp` (13 functions, 1301 instructions, 0 done)
+### `core/tentacle.cpp` (13 functions, 1301 instructions, 0 done, 0 partial)
 - class `CTentacle`
   - [ ] `ctor` 0x005daf60 (20)
   - [ ] `getActorType` 0x005daf50 (2)
@@ -5984,14 +6061,14 @@ in instructions.
   - [ ] `factoryFuncTentacle` 0x005daf20 (12)
   - [ ] `staticInit` 0x005daef0 (9)
 
-### `core/texlist.cpp` (3 functions, 146 instructions, 0 done)
+### `core/texlist.cpp` (3 functions, 146 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `staticInit` 0x005dbdb0 (7)
 - class `CTextureList`
   - [ ] `save` 0x005dc0d0 (114)
   - [ ] `captureAllTextures` 0x005dc230 (25)
 
-### `core/tommygun.cpp` (9 functions, 786 instructions, 0 done)
+### `core/tommygun.cpp` (9 functions, 786 instructions, 0 done, 0 partial)
 - class `CTommyGun`
   - [ ] `getActorType` 0x005dda80 (2)
   - [ ] `fire` 0x005ddb30 (521)
@@ -6004,7 +6081,7 @@ in instructions.
   - [ ] `factoryFuncTommyGun` 0x005dda50 (12)
   - [ ] `staticInit` 0x005dda20 (9)
 
-### `core/trap.cpp` (15 functions, 338 instructions, 0 done)
+### `core/trap.cpp` (15 functions, 338 instructions, 0 done, 0 partial)
 - class `CTrap`
   - [ ] `ctor` 0x005de690 (20)
   - [ ] `getActorType` 0x005de680 (2)
@@ -6023,7 +6100,7 @@ in instructions.
   - [ ] `factoryFuncTrap` 0x005de650 (12)
   - [ ] `staticInit` 0x005de620 (9)
 
-### `core/trash.cpp` (11 functions, 813 instructions, 0 done)
+### `core/trash.cpp` (11 functions, 813 instructions, 0 done, 0 partial)
 - class `CTrash`
   - [ ] `ctor` 0x005deb70 (19)
   - [ ] `getActorType` 0x005deb60 (2)
@@ -6038,7 +6115,7 @@ in instructions.
   - [ ] `factoryFuncTrash` 0x005deb30 (12)
   - [ ] `staticInit` 0x005deb00 (9)
 
-### `core/trigger.cpp` (18 functions, 1660 instructions, 0 done)
+### `core/trigger.cpp` (18 functions, 1660 instructions, 0 done, 0 partial)
 - class `CTrigger`
   - [ ] `onProjectileHit` 0x005e0aa0 (6)
   - [ ] `ctor` 0x005df840 (63)
@@ -6060,7 +6137,7 @@ in instructions.
   - [ ] `factoryFuncTrigger` 0x005df800 (12)
   - [ ] `staticInit` 0x005df7d0 (9)
 
-### `core/turret.cpp` (22 functions, 2055 instructions, 0 done)
+### `core/turret.cpp` (22 functions, 2055 instructions, 0 done, 0 partial)
 - class `CTurret`
   - [ ] `ctor` 0x005e20f0 (79)
   - [ ] `getActorType` 0x005e20e0 (2)
@@ -6086,7 +6163,7 @@ in instructions.
   - [ ] `factoryFuncTurret` 0x005e20b0 (12)
   - [ ] `staticInit` 0x005e2080 (9)
 
-### `core/tvbat.cpp` (16 functions, 1306 instructions, 0 done)
+### `core/tvbat.cpp` (16 functions, 1306 instructions, 0 done, 0 partial)
 - class `CTVBat`
   - [ ] `ctor` 0x005e3ef0 (66)
   - [ ] `getActorType` 0x005e3eb0 (2)
@@ -6106,7 +6183,7 @@ in instructions.
   - [ ] `staticInit` 0x005e3e50 (9)
   - [ ] `jitterValue` 0x005e3ec0 (12)
 
-### `core/vampboss.cpp` (22 functions, 2452 instructions, 0 done)
+### `core/vampboss.cpp` (22 functions, 2452 instructions, 0 done, 0 partial)
 - class `CVampireBoss`
   - [ ] `ctor` 0x005e5590 (56)
   - [ ] `getActorType` 0x005e5580 (2)
@@ -6132,11 +6209,11 @@ in instructions.
   - [ ] `staticInit` 0x005e5520 (9)
   - [ ] `clampAngle` 0x005e58d0 (33)
 
-### `core/vecdir.cpp` (1 functions, 5 instructions, 0 done)
+### `core/vecdir.cpp` (1 functions, 5 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `staticInit` 0x005e7810 (5)
 
-### `core/vehicle.cpp` (16 functions, 1309 instructions, 1 done)
+### `core/vehicle.cpp` (16 functions, 1309 instructions, 1 done, 0 partial)
 - class `CVehicle`
   - [ ] `ctor` 0x005e7940 (118)
   - [ ] `getActorType` 0x005e7930 (2)
@@ -6157,7 +6234,7 @@ in instructions.
   - [ ] `ctor` 0x005e8da0 (7)
   - [x] `dtor` 0x005e8dc0 (2, compiler-generated)
 
-### `core/vessel.cpp` (18 functions, 996 instructions, 0 done)
+### `core/vessel.cpp` (18 functions, 996 instructions, 0 done, 0 partial)
 - class `CCryptVessel`
   - [ ] `ctor` 0x005e8e60 (79)
   - [ ] `getActorType` 0x005e8e50 (2)
@@ -6179,7 +6256,7 @@ in instructions.
   - [ ] `staticInit` 0x005e8df0 (9)
   - [ ] `isStartLocTriggered` 0x005e9180 (4)
 
-### `core/water.cpp` (4 functions, 33 instructions, 1 done)
+### `core/water.cpp` (4 functions, 33 instructions, 1 done, 0 partial)
 - class `CWater`
   - [ ] `ctor` 0x005e9e10 (5)
   - [x] `dtor` 0x005e9e30 (2, compiler-generated)
@@ -6187,7 +6264,7 @@ in instructions.
   - [ ] `staticInit` 0x005e9da0 (7)
   - [ ] `calculateWaveHeight` 0x005e9dc0 (19)
 
-### `core/wateract.cpp` (16 functions, 1207 instructions, 0 done)
+### `core/wateract.cpp` (16 functions, 1207 instructions, 0 done, 0 partial)
 - class `CWaterActor`
   - [ ] `ctor` 0x005ea8a0 (67)
   - [ ] `getActorType` 0x005ea890 (2)
@@ -6207,7 +6284,7 @@ in instructions.
   - [ ] `factoryFuncWaterActor` 0x005ea860 (12)
   - [ ] `staticInit` 0x005ea810 (19)
 
-### `core/waypoint.cpp` (10 functions, 650 instructions, 0 done)
+### `core/waypoint.cpp` (10 functions, 650 instructions, 0 done, 0 partial)
 - class `CWayPoint`
   - [ ] `isReachable` 0x005ebd40 (91)
   - [ ] `findNearestReachable` 0x005ec320 (133)
@@ -6223,7 +6300,7 @@ in instructions.
 
 ## Step 31: Not reached from startup: `core/` (part 9 of 9)
 
-### `core/weapon.cpp` (25 functions, 852 instructions, 2 done)
+### `core/weapon.cpp` (25 functions, 852 instructions, 2 done, 0 partial)
 - class `CWeapon`
   - [ ] `ctor` 0x005ede70 (42)
   - [ ] `process` 0x005ee110 (95)
@@ -6253,14 +6330,14 @@ in instructions.
   - [x] `ctor` 0x005eea80 (2, compiler-generated)
   - [x] `dtor` 0x005eea90 (2, compiler-generated)
 
-### `core/weather.cpp` (3 functions, 20 instructions, 1 done)
+### `core/weather.cpp` (3 functions, 20 instructions, 1 done, 0 partial)
 - class `CWeather`
   - [ ] `ctor` 0x005eead0 (9)
   - [x] `dtor` 0x005efb40 (2, compiler-generated)
 - free functions
   - [ ] `staticInit` 0x005eeaa0 (9)
 
-### `core/werewolf.cpp` (16 functions, 2629 instructions, 0 done)
+### `core/werewolf.cpp` (16 functions, 2629 instructions, 0 done, 0 partial)
 - class `CWerewolf`
   - [ ] `ctor` 0x005efc10 (31)
   - [ ] `getActorType` 0x005efc00 (2)
@@ -6280,7 +6357,7 @@ in instructions.
   - [ ] `factoryFuncWerewolf` 0x005efbd0 (12)
   - [ ] `staticInit` 0x005efb70 (23)
 
-### `core/xform.cpp` (42 functions, 2952 instructions, 1 done)
+### `core/xform.cpp` (42 functions, 2952 instructions, 1 done, 0 partial)
 - free functions
   - [ ] `getTranslation` 0x005f6110 (15)
   - [ ] `matrixToQuaternion` 0x005f7420 (205)
@@ -6325,7 +6402,7 @@ in instructions.
   - [ ] `clipPolygonStage4` 0x005f8330 (120)
   - [ ] `clampClippedVertices` 0x005f84a0 (47)
 
-### `core/zombie.cpp` (25 functions, 4452 instructions, 0 done)
+### `core/zombie.cpp` (25 functions, 4452 instructions, 0 done, 0 partial)
 - class `CZombie`
   - [ ] `ctor` 0x005f8fe0 (77)
   - [ ] `getActorType` 0x005f8fd0 (2)
@@ -6356,7 +6433,7 @@ in instructions.
 
 ## Step 32: Not reached from startup: `wincore/`
 
-### `wincore/wddvmem.cpp` (7 functions, 360 instructions, 3 done)
+### `wincore/wddvmem.cpp` (7 functions, 360 instructions, 3 done, 0 partial)
 - free functions
   - [ ] `initializeColorMasks` 0x004f3ff0 (90)
   - [ ] `populateColorTable` 0x004f4140 (42)
@@ -6366,7 +6443,7 @@ in instructions.
   - [ ] `reinitializeGraphicsSystem` 0x005ed4b0 (74)
   - [ ] `findMostSignificantBit` 0x005ed710 (13)
 
-### `wincore/winrun.cpp` (4 functions, 122 instructions, 1 done)
+### `wincore/winrun.cpp` (4 functions, 122 instructions, 1 done, 0 partial)
 - free functions
   - [ ] `setValue` 0x005f2f70 (3)
   - [ ] `plotClippedPixel` 0x005f2f90 (16)

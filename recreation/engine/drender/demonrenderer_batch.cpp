@@ -16,8 +16,12 @@ namespace nocturne::engine {
 using platform::SMRGLPrimitiveQuad;
 
 // The original drew only a polygon's first four corners on the straight path, reading past them
-// for one of more, and quit past 1999 polygons facing the camera. The shadow pass's branch
-// arrives with setShadowPass's callers.
+// for one of more, and quit past 1999 polygons facing the camera.
+// deferred: the shadow pass's depth-only straight path, with setShadowPass's callers
+// deferred: keeping the buffer's own texture coordinates while skip_uv_extraction is set, with
+//   CCharacter::renderEthereal
+// deferred: the scanline's light level and solid colour, 0 until set, with the scene camera's
+//   fog setup
 // nocedit 0x0048cf00
 void CDemonRenderer::renderFacetList(std::span<const SMRGLPrimitiveQuad> primitives,
                                      int render_flags) {
@@ -48,8 +52,8 @@ void CDemonRenderer::renderFacetList(std::span<const SMRGLPrimitiveQuad> primiti
     }
 }
 
-// The original sent each polygon to texture capture while setTextureCaptureMode had it on, which
-// arrives with that mode's callers.
+// deferred: sending each polygon to processQuadPrimitive while texture capture is on, with
+//   setTextureCaptureMode's callers
 // nocedit 0x0048ce90
 void CDemonRenderer::renderQuadBatch(std::span<const SMRGLPrimitiveQuad> primitives,
                                      int render_flags) {

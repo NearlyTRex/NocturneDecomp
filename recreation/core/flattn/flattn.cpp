@@ -2,7 +2,8 @@
 
 namespace nocturne::core {
 
-// initializeGameSystems still calls it, between opening the logs and reading the INI.
+// Empty in both builds; the original's initializeGameSystems called it before reading the INI,
+// and nothing calls it here.
 // nocedit 0x004cbce0
 void doNothing() {}
 

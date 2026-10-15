@@ -36,8 +36,8 @@ bool isCulledOrDrawnInHardware(std::span<SRenderVertex *> corners, const SPolygo
 
 } // namespace
 
-// The original counted the polygons for the frame statistics, and stopped when a row set a
-// global abort flag.
+// The original stopped when a row set a global abort flag.
+// deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
 // nocedit 0x00483370
 void renderTriangleTextured(std::span<SRenderVertex> vertex_buffer,
                             std::span<const int> vertex_indices, const SPolygonState &state,
@@ -63,8 +63,8 @@ void renderTriangleTextured(std::span<SRenderVertex> vertex_buffer,
         state.draw_scanline, raster::ERowStop::Honoured);
 }
 
-// The original counted the polygons for the frame statistics, and stopped when a row set a
-// global abort flag.
+// The original stopped when a row set a global abort flag.
+// deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
 // nocedit 0x004839f0
 void renderTriangleSimple(std::span<SRenderVertex> vertex_buffer,
                           std::span<const int> vertex_indices, const SPolygonState &state,

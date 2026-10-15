@@ -91,8 +91,8 @@ void CPrim::renderPolygon(std::span<SRenderVertex> vertices, const SPolygonState
 }
 
 // Unlike the vertex-list rasterisers, the original culled each run of three corners, a strip
-// rather than a fan, and gathered at most 16 corners for the hardware renderer. With
-// preprocessing 1 the edges take the reciprocal depth, which the vertex already holds.
+// rather than a fan, and gathered the hardware renderer's corners into 16 slots without a bound.
+// With preprocessing 1 the edges take the reciprocal depth, which the vertex already holds.
 void CPrim::renderIndexedPolygon(std::span<SRenderVertex> vertex_buffer,
                                  std::span<const int> vertex_indices, const SPolygonState &state,
                                  EVariant variant) {
@@ -117,13 +117,15 @@ void CPrim::renderIndexedPolygon(std::span<SRenderVertex> vertex_buffer,
                    state.draw_scanline, walk);
 }
 
-// The original counted the polygons for the frame statistics.
+// deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
 // nocedit 0x00552510
 void CPrim::renderPolygonSoftware(std::span<SRenderVertex> vertices, const SPolygonState &state) {
     renderPolygon(vertices, state, EVariant::Simple);
 }
 
-// The original counted the polygons for the frame statistics.
+// The original also took preprocessing 1's edge depth as 0x7fffffff less z for a processor type
+// other than 0, which neither build ever sets.
+// deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
 // nocedit 0x00552a40
 void CPrim::renderIndexedPolygonSoftware(std::span<SRenderVertex> vertex_buffer,
                                          std::span<const int> vertex_indices,
@@ -131,13 +133,15 @@ void CPrim::renderIndexedPolygonSoftware(std::span<SRenderVertex> vertex_buffer,
     renderIndexedPolygon(vertex_buffer, vertex_indices, state, EVariant::Simple);
 }
 
-// The original counted the polygons for the frame statistics.
+// deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
 // nocedit 0x00553470
 void CPrim::renderScanlinePolygon(std::span<SRenderVertex> vertices, const SPolygonState &state) {
     renderPolygon(vertices, state, EVariant::Advanced);
 }
 
-// The original counted the polygons for the frame statistics.
+// The original also took preprocessing 1's edge depth as 0x7fffffff less z for a processor type
+// other than 0, which neither build ever sets.
+// deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
 // nocedit 0x00553b10
 void CPrim::renderIndexedPolygonAdvanced(std::span<SRenderVertex> vertex_buffer,
                                          std::span<const int> vertex_indices,
