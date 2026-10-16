@@ -18,16 +18,16 @@ functions don't count as done. Sizes are in instructions.
 | 2 | `doNothing`, `readMessageFile`, `getLocalizedString`, `initializeTrigTables`, `initTextureCache`, `initGraphicsSystem` | 8 | 30 | 2804 | 27 | 3 | 90.0% |
 | 3 | Sound system: `sndmain`, `CSound` lifetime, `readIniData` | 7 | 123 | 8346 | 122 | 1 | 99.1% |
 | 4 | `initFonts`, `CEditorTools::showWarning` | 11 | 46 | 4804 | 46 | 0 | 100.0% |
-| 5 | `showCalibrationTest`, `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 50 | 4789 | 32 | 2 | 64.0% |
-| 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 16 | 4 | 64.0% |
-| 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 66 | 30 | 55.0% |
-| 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 8 | 1 | 12.6% |
+| 5 | `showCalibrationTest`, `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 50 | 4789 | 31 | 3 | 62.0% |
+| 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 20 | 5 | 80.0% |
+| 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 68 | 31 | 56.6% |
+| 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 10 | 1 | 15.8% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 0 | 0 | 0.0% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 17 | 52 | 5565 | 1 | 0 | 1.9% |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 4 | 1 | 0.6% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 6 | 1 | 1.0% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 2 | 0 | 7.6% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0 | 0.0% |
-| 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 0 | 0 | 0.0% |
+| 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 1 | 0 | 1.9% |
 | 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 3 | 0 | 1.5% |
 | 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 0 | 0 | 0.0% |
 | 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 3 | 1 | 11.5% |
@@ -41,12 +41,12 @@ functions don't count as done. Sizes are in instructions.
 | 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 3 | 0 | 1.0% |
 | 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 24 | 0 | 8.0% |
 | 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 0 | 0 | 0.0% |
-| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 2 | 2 | 0.7% |
+| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 5 | 2 | 1.7% |
 | 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 2 | 0 | 0.7% |
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 2 | 0 | 0.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 | 0 | 3.6% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4489** | **402860** | **459** | **48** | **10.2%** |
+| | **All** | | **4489** | **402860** | **472** | **51** | **10.5%** |
 
 ## Step 0: Math value types
 
@@ -494,7 +494,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `drawTextCenterInBoundsFV` 0x004cdf80 (35)
   - [x] `drawTextCenterInBoundsF` 0x004cdf30 (33)
 
-### `shape/edittool.cpp` (7 functions, 576 instructions, 7 done, 0 partial)
+### `shape/edittool.cpp` (7 functions, 576 instructions, 6 done, 1 partial)
 - class `CStrList`
   - [x] `add` 0x004a2b80 (12)
   - [x] `getStringAt` 0x004a2f70 (5)
@@ -502,7 +502,8 @@ functions don't count as done. Sizes are in instructions.
   - [x] `populateFromFilesNoDuplicates` 0x004a37b0 (162)
 - class `CEditorTools`
   - [x] `showMessage` 0x0049e6a0 (22)
-  - [x] `updatePercentage` 0x004a0530 (264)
+  - [~] `updatePercentage` 0x004a0530 (264)
+    - unverified: the percentage's rounding and the time-remaining estimate, by running updatePercentage against nocedit's own code with getSeconds stubbed
   - [x] `showCenteredProgressDialog` 0x004a0430 (79)
 
 ### `core/game.cpp` (1 functions, 34 instructions, 0 done, 0 partial)
@@ -556,10 +557,10 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [x] `clearTextureCache` 0x005dd8e0 (5)
 
-### `core/actor.cpp` (2 functions, 32 instructions, 0 done, 0 partial)
+### `core/actor.cpp` (2 functions, 32 instructions, 2 done, 0 partial)
 - free functions
-  - [ ] `generateRandomValue` 0x0040cba0 (7)
-  - [ ] `getRandomFloatFromRange` 0x0040cc10 (25)
+  - [x] `generateRandomValue` 0x0040cba0 (7)
+  - [x] `getRandomFloatFromRange` 0x0040cc10 (25)
 
 ### `core/course.cpp` (3 functions, 178 instructions, 3 done, 0 partial)
 - class `CCourse`
@@ -595,14 +596,15 @@ functions don't count as done. Sizes are in instructions.
   - [~] `load` 0x00476db0 (112)
     - deferred: keeping the filename in the model, which loadModel's pool lookup and CShell::onCollision read, with loadModel and CShell
 
-### `core/moon.cpp` (1 functions, 127 instructions, 0 done, 0 partial)
+### `core/moon.cpp` (1 functions, 127 instructions, 1 done, 0 partial)
 - class `CMoon`
-  - [ ] `init` 0x00529ae0 (127)
+  - [x] `init` 0x00529ae0 (127)
 
-### `core/game.cpp` (2 functions, 48 instructions, 0 done, 0 partial)
+### `core/game.cpp` (2 functions, 48 instructions, 1 done, 1 partial)
 - class `CGame`
-  - [ ] `saveClockTime` 0x004d7d80 (4)
-  - [ ] `updateDT` 0x004d7d90 (44)
+  - [x] `saveClockTime` 0x004d7d80 (4)
+  - [~] `updateDT` 0x004d7d90 (44)
+    - deferred: the fixed thirtieth of a second, scaled, while a debug movie records, with setupMovieRecording
 
 ## Step 7: `CMoon::update`, `CMoon::render`
 
@@ -811,7 +813,7 @@ functions don't count as done. Sizes are in instructions.
     - deferred: the per-pixel flat-colour pass first, with renderCustomScanline and the code that sets per_pixel_lighting_enabled
   - [x] `setFlatColor` 0x00570ca0 (8)
 
-### `engine/special.cpp` (10 functions, 1391 instructions, 7 done, 1 partial)
+### `engine/special.cpp` (10 functions, 1391 instructions, 8 done, 1 partial)
 - free functions
   - [x] `transformAndProjectPoint` 0x005b575c (205)
   - [x] `selectTextureFromPalette` 0x005b7340 (26)
@@ -823,12 +825,13 @@ functions don't count as done. Sizes are in instructions.
   - [x] `renderMMXPerspectiveScanline16` 0x005b4823 (509)
   - [~] `drawPolyList` 0x005b7640 (106)
     - deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
-  - [ ] `clearZBufferNative` 0x005b3ed4 (35)
+  - [x] `clearZBufferNative` 0x005b3ed4 (35)
 
-### `core/moon.cpp` (2 functions, 356 instructions, 0 done, 0 partial)
+### `core/moon.cpp` (2 functions, 356 instructions, 1 done, 1 partial)
 - class `CMoon`
-  - [ ] `update` 0x00529d60 (96)
-  - [ ] `render` 0x00529ed0 (260)
+  - [x] `update` 0x00529d60 (96)
+  - [~] `render` 0x00529ed0 (260)
+    - deferred: switching the set to quick lighting for the moon and bats and back again, with setRenderingMode
 
 ## Step 8: `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog`
 
@@ -836,10 +839,10 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [ ] `renderMenuAndGetChoice` 0x00510000 (333)
 
-### `core/moon.cpp` (2 functions, 47 instructions, 0 done, 0 partial)
+### `core/moon.cpp` (2 functions, 47 instructions, 2 done, 0 partial)
 - class `CMoon`
-  - [ ] `isAnimationFirstHalf` 0x0052a3f0 (9)
-  - [ ] `free` 0x00529ce0 (38)
+  - [x] `isAnimationFirstHalf` 0x0052a3f0 (9)
+  - [x] `free` 0x00529ce0 (38)
 
 ### `core/sound.cpp` (1 functions, 2 instructions, 0 done, 0 partial)
 - class `CSound`
@@ -1219,7 +1222,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `archive` 0x005dab30 (17)
   - [ ] `dtor` 0x005dae50 (31)
 
-### `core/actor.cpp` (66 functions, 3653 instructions, 0 done, 0 partial)
+### `core/actor.cpp` (66 functions, 3653 instructions, 2 done, 0 partial)
 - free functions
   - [ ] `copyVector` 0x00410360 (12)
   - [ ] `rayCylinderIntersect` 0x00408340 (354)
@@ -1228,8 +1231,8 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `crc32ProcessInt` 0x0040cf50 (8)
   - [ ] `crc32ProcessVector` 0x0040cf70 (8)
   - [ ] `crc32ProcessString` 0x0040cf90 (25)
-  - [ ] `randomChance` 0x0040cd10 (22)
-  - [ ] `getRandomInt` 0x0040cc70 (54)
+  - [x] `randomChance` 0x0040cd10 (22)
+  - [x] `getRandomInt` 0x0040cc70 (54)
   - [ ] `handleActorPropertyParseError` 0x0040b210 (41)
   - [ ] `archiveDescription` 0x0040b290 (70)
   - [ ] `archiveOrientation` 0x0040b3e0 (49)
@@ -2119,9 +2122,9 @@ functions don't count as done. Sizes are in instructions.
 - class `CFireEffect`
   - [ ] `save` 0x004c9380 (25)
 
-### `core/actor.cpp` (4 functions, 129 instructions, 0 done, 0 partial)
+### `core/actor.cpp` (4 functions, 129 instructions, 1 done, 0 partial)
 - free functions
-  - [ ] `setRandomSeed` 0x0040cb90 (3)
+  - [x] `setRandomSeed` 0x0040cb90 (3)
   - [ ] `adjustIndentationLevel` 0x0040aee0 (28)
   - [ ] `syncActorTypeIDs` 0x0040c7c0 (19)
 - class `CDemonActor`
@@ -5365,12 +5368,12 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncMoloch` 0x00528af0 (12)
   - [ ] `staticInit` 0x00528ac0 (9)
 
-### `core/moon.cpp` (3 functions, 56 instructions, 0 done, 0 partial)
+### `core/moon.cpp` (3 functions, 56 instructions, 3 done, 0 partial)
 - class `CMoon`
-  - [ ] `ctor` 0x00529a80 (9)
-  - [ ] `dtor` 0x00529ab0 (13)
+  - [x] `ctor` 0x00529a80 (9)
+  - [x] `dtor` 0x00529ab0 (13)
 - free functions
-  - [ ] `staticInit` 0x005299f0 (34)
+  - [x] `staticInit` 0x005299f0 (34)
 
 ### `core/morph.cpp` (32 functions, 1803 instructions, 0 done, 0 partial)
 - class `CMorphModel`

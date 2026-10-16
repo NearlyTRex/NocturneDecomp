@@ -6,6 +6,7 @@
 #include "core/game/controlbindings.h"
 #include "core/game/controlmode.h"
 #include "core/game/herotype.h"
+#include "engine/fwd.h"
 
 #include <cstdint>
 
@@ -13,10 +14,14 @@ namespace nocturne::core {
 
 class CGame {
 public:
-    CGame();
+    explicit CGame(engine::IGameClock &clock);
 
     void saveClockTime();
+    // The time since the last saveClockTime or updateDT, scaled, at most a quarter second.
     void updateDT();
+    // updateDT's time, in 16.16 seconds and in seconds.
+    [[nodiscard]] int getDeltaTimeInt() const;
+    [[nodiscard]] float getDeltaTimeFloat() const;
     void displayMessage(char *message, float duration);
     void setFudgeTarget(common::CVector3f *fudge_target, float fudge_step);
     int runGameSession();
@@ -73,9 +78,19 @@ public:
     int head_of_horror_cheat = 0;
     // The automap's zoom, in percent.
     int map_zoom = 320;
+    // Each frame's time is multiplied by it; 1 is real time.
+    float time_scale_factor = 1.0F;
+    // Set while a sim frame runs, when the game's random draws come off the sim stream.
+    int is_processing = 0;
 
 private:
     void seedCalibration();
+
+    engine::IGameClock &clock_;
+    // In the game clock's ticks.
+    int clocktime_ = 0;
+    int delta_time_int_ = 0;
+    float delta_time_float_ = 0.0F;
 };
 
 } // namespace nocturne::core

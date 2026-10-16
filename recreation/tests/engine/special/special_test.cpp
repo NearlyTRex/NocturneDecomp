@@ -27,6 +27,7 @@ namespace nocturne::engine {
 namespace {
 
 using ::testing::_;
+using ::testing::Each;
 using ::testing::InSequence;
 using ::testing::NiceMock;
 using ::testing::Return;
@@ -194,6 +195,40 @@ TEST_F(CSpecialTest, ClearScreenOfAnEmptyModeTouchesNothing) {
     first_row_.fill(std::byte{0xff});
     special_.clearScreen();
     EXPECT_EQ(first_row_[0], std::byte{0xff});
+}
+
+// Three depth rows a pixel wider than the screen, so a write past a row's end shows.
+class CSpecialZBufferTest : public CSpecialTest {
+protected:
+    CSpecialZBufferTest() {
+        for (std::size_t y = 0; y < z_rows_.size(); ++y) {
+            z_data_[y].fill(0xffffffffU);
+            z_rows_[y] = z_data_[y].data();
+        }
+        ON_CALL(screen_, getZBufferRows())
+            .WillByDefault(Return(std::span<std::uint32_t *>(z_rows_)));
+    }
+
+    std::array<std::array<std::uint32_t, kWidth + 1>, 3> z_data_{};
+    std::array<std::uint32_t *, 3> z_rows_{};
+};
+
+TEST_F(CSpecialZBufferTest, ClearZBufferNativeZeroesTheClipsRowsAcrossTheScreen) {
+    two_d_.setClipRect({.left = 1, .top = 1, .right = 2, .bottom = 2});
+    special_.clearZBufferNative();
+    EXPECT_THAT(z_data_[0], Each(0xffffffffU));
+    for (std::size_t y = 1; y < z_data_.size(); ++y) {
+        EXPECT_THAT(std::span(z_data_[y]).first(kWidth), Each(0U)) << y;
+        EXPECT_EQ(z_data_[y][kWidth], 0xffffffffU) << y;
+    }
+}
+
+TEST_F(CSpecialZBufferTest, ClearZBufferNativeOfAnEmptyClipTouchesNothing) {
+    two_d_.setClipRect({.left = 0, .top = 1, .right = 3, .bottom = 0});
+    special_.clearZBufferNative();
+    for (const auto &row : z_data_) {
+        EXPECT_THAT(row, Each(0xffffffffU));
+    }
 }
 
 TEST_F(CSpecialTest, WithTheRendererOnClearScreenClearsThroughIt) {

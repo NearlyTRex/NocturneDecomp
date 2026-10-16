@@ -108,6 +108,9 @@ public:
     // The quick light's direction, and the ambient level it adds, 0xffff being full.
     void setLightDirection(const common::CVector3i &light_direction);
     void setAmbientBaseQuick(int ambient_base_quick);
+    [[nodiscard]] const common::CVector3i &getLightDirection() const;
+    [[nodiscard]] int getAmbientBaseQuick() const;
+    [[nodiscard]] const CColor3i &getFlatColor() const;
 
 private:
     void lightVertexColor(const common::CVector3i &surface_normal,

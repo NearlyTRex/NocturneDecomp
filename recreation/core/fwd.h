@@ -6,6 +6,7 @@ namespace nocturne::core {
 
 class C3DSCamera;
 class C3DSLight;
+class CActor;
 class CActorDestination;
 class CAmmo;
 class CAmmoBox;

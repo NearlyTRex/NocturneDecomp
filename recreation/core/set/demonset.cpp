@@ -17,6 +17,18 @@ void CDemonSet::setAmbientBaseQuick(int ambient_base_quick) {
     ambient_base_quick_ = ambient_base_quick;
 }
 
+const common::CVector3i &CDemonSet::getLightDirection() const {
+    return light_direction_;
+}
+
+int CDemonSet::getAmbientBaseQuick() const {
+    return ambient_base_quick_;
+}
+
+const CColor3i &CDemonSet::getFlatColor() const {
+    return flat_color_;
+}
+
 // nocedit 0x00570ca0
 void CDemonSet::setFlatColor(int light_scale, int color_scale, int fog_scale) {
     flat_color_ = {.r = light_scale, .g = color_scale, .b = fog_scale};

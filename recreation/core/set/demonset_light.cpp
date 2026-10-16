@@ -99,7 +99,8 @@ void CDemonSet::rotateVerticies(std::span<const CVector3i> input_vertices) {
     }
 }
 
-// The original kept the face normals in the polygons' planes.
+// The original used the polygons' planes as scratch space for the face normals, as floats.
+// Nothing reads them as planes: every caller draws them with plane culling off or zeroes them.
 // deferred: lighting by the spatial lights while rendering_mode is 0, the given normals turned
 //   by the camera first, with the scene's lights
 // deferred: the quality modes' lighting, with setCameraView and the actors that set

@@ -47,6 +47,7 @@
 #include <ctime>
 #include <exception>
 #include <format>
+#include <new>
 #include <string_view>
 
 namespace {
@@ -138,7 +139,7 @@ private:
     nocturne::support::CNewMsg messages_{dosio_};
     core::CDFont fonts_{dosio_,  screen_,   two_d_,    three_d_,
                         colors_, os_fonts_, messages_, editor_tools_};
-    core::CGame game_;
+    core::CGame game_{winrun_};
     engine::CConsole console_{file_system_, engine::CConsole::kMaxColumns,
                               engine::CConsole::kMaxRows, 1, 1};
     nocturne::sound::CSndMain sound_main_{dosio_, file_system_, audio_, console_, &getLocalTime};
@@ -165,13 +166,18 @@ private:
 };
 
 // Everything is gone by the time a fatal error is reported, as the original tore down its sound
-// and graphics before showing the box.
+// and graphics before showing the box. The original quit "Out of memory" wherever an allocation
+// failed; a failed allocation here becomes that fatal error.
 int runGame(sdl::CSdlWindow &window, sdl::CSdlFileSystem &file_system, sdl::CSdlClock &clock,
             wincore::CWinRun &winrun) {
-    CGameSystems systems(window, file_system, clock, winrun);
-    systems.initializeGameSystems();
-    systems.run();
-    return 0;
+    try {
+        CGameSystems systems(window, file_system, clock, winrun);
+        systems.initializeGameSystems();
+        systems.run();
+        return 0;
+    } catch (const std::bad_alloc &) {
+        core::displayErrorAndQuit("Out of memory");
+    }
 }
 
 int run() {

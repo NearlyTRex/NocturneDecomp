@@ -63,6 +63,18 @@ void CSpecial::clearScreen() {
     }
 }
 
+// The original cleared in 16-pixel strides from the clip's top row, past the last row's end when
+// the rows didn't fill a whole stride, and one stride of an empty clip.
+// nocedit 0x005b3ed4
+void CSpecial::clearZBufferNative() {
+    const SClipRect clip = two_d_.getClipRect();
+    const auto width = static_cast<std::size_t>(screen_.getWindowWidth());
+    const std::span<std::uint32_t *> rows = screen_.getZBufferRows();
+    for (int y = clip.top; y <= clip.bottom; ++y) {
+        std::fill_n(rows[static_cast<std::size_t>(y)], width, 0U);
+    }
+}
+
 // Loading the renderer DLL and binding its entry points is the adapter's; what stays is the
 // game's switch and the state it shares. The original also shared the editor's drawing colour,
 // which the game never sets.

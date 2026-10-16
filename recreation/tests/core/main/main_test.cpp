@@ -146,7 +146,7 @@ protected:
     engine::CFontColors colors_;
     support::CNewMsg messages_{dosio_};
     CDFont fonts_{dosio_, screen_, two_d_, three_d_, colors_, os_fonts_, messages_, editor_tools_};
-    CGame game_;
+    CGame game_{game_clock_};
     engine::CIni ini_{file_system_};
     SIniDataOwners ini_owners_{.game = game_,
                                .sound_main = sound_,

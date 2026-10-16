@@ -4,6 +4,7 @@
 
 #include <array>
 #include <cstdint>
+#include <span>
 #include <string_view>
 #include <vector>
 
@@ -26,6 +27,8 @@ public:
     void scale(int scaleFactorX, int scaleFactorY);
     // Makes this image's palette the one indexed images draw with.
     void initPalette();
+    // The palette indices, a row at a time.
+    [[nodiscard]] std::span<const std::uint8_t> getRaw() const;
 
 private:
     void loadPalette(std::string_view filename);

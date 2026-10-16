@@ -39,6 +39,8 @@ void CEditorTools::showCenteredProgressDialog(std::string_view message_text) {
     updatePercentage(0.0F, 1.0F);
 }
 
+// unverified: the percentage's rounding and the time-remaining estimate, by running
+//   updatePercentage against nocedit's own code with getSeconds stubbed
 // nocedit 0x004a0530
 void CEditorTools::updatePercentage(float current_progress, float total_progress) {
     if (window_stack_count_ == 0) {

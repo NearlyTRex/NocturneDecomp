@@ -13,6 +13,7 @@
 #include "engine/texture/currenttexture.h"
 #include "shape/edittool/editortools.h"
 #include "support/newmsg/newmsg.h"
+#include "tests/mocks/engine/mockgameclock.h"
 #include "tests/mocks/engine/mockrawinput.h"
 #include "tests/mocks/engine/mockscreendevice.h"
 #include "tests/mocks/platform/mockclock.h"
@@ -81,7 +82,8 @@ protected:
     ::testing::NiceMock<platform::MockOsFontFactory> os_fonts_;
     support::CNewMsg messages_{dosio_};
     CDFont fonts_{dosio_, screen_, two_d_, three_d_, colors_, os_fonts_, messages_, editor_tools_};
-    CGame game_;
+    ::testing::StrictMock<engine::MockGameClock> game_clock_;
+    CGame game_{game_clock_};
     engine::CIni ini_{file_system_};
     SIniDataOwners owners_{.game = game_,
                            .sound_main = sound_,
@@ -240,7 +242,7 @@ TEST_F(CInivarTest, WhatIsWrittenReadsBackTheSame) {
     game_.map_zoom = 150;
     game_.y_stick_max = 40000;
     writeIniData(ini_, owners_);
-    CGame copy;
+    CGame copy(game_clock_);
     const SIniDataOwners reread{.game = copy,
                                 .sound_main = sound_,
                                 .console = console_,
