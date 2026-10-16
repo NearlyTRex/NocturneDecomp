@@ -2800,10 +2800,10 @@ static_assert(sizeof(CEdScrollBar) == 52,
               "sizeof(CEdScrollBar) != 52");
 static_assert(__builtin_offsetof(CEdScrollBar, scroll_position) == 0,
               "offsetof(CEdScrollBar, scroll_position) != 0");
-static_assert(__builtin_offsetof(CEdScrollBar, current_value) == 4,
-              "offsetof(CEdScrollBar, current_value) != 4");
-static_assert(__builtin_offsetof(CEdScrollBar, max_value) == 8,
-              "offsetof(CEdScrollBar, max_value) != 8");
+static_assert(__builtin_offsetof(CEdScrollBar, item_count) == 4,
+              "offsetof(CEdScrollBar, item_count) != 4");
+static_assert(__builtin_offsetof(CEdScrollBar, page_size) == 8,
+              "offsetof(CEdScrollBar, page_size) != 8");
 static_assert(__builtin_offsetof(CEdScrollBar, scroll_increment) == 12,
               "offsetof(CEdScrollBar, scroll_increment) != 12");
 static_assert(__builtin_offsetof(CEdScrollBar, orientation) == 16,
