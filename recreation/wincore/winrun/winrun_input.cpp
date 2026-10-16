@@ -184,6 +184,14 @@ void CWinRun::clearMouseClicks() {
     mouse_button_flags_ = 0;
 }
 
+// In the game's coordinates, which the window maps onto its own.
+// nocedit 0x005f30d0
+void CWinRun::setCursorPosition(int x, int y) {
+    window_.warpMouse(x, y);
+    mouse_x_ = x;
+    mouse_y_ = y;
+}
+
 void CWinRun::clearInput() {
     clearKeypresses();
     clearMouseClicks();

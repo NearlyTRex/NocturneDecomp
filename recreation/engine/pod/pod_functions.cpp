@@ -1,5 +1,6 @@
 #include "engine/pod/pod_functions.h"
 
+#include "common/text/ascii.h"
 #include "engine/pod/pod.h"
 #include "engine/pod/podfile.h"
 
@@ -7,24 +8,13 @@
 #include <memory>
 
 namespace nocturne::engine {
-namespace {
-
-std::string toUpperAscii(std::string_view text) {
-    std::string upper(text);
-    std::ranges::transform(upper, upper.begin(), [](char c) {
-        return c >= 'a' && c <= 'z' ? static_cast<char>(c - 'a' + 'A') : c;
-    });
-    return upper;
-}
-
-} // namespace
 
 // The tail is compared case-sensitively, as the original did.
 // nocedit 0x00550ce0
 std::vector<std::string> findFilesByExtension(const CPod &pod, std::string_view extension,
                                               std::size_t max_results,
                                               std::size_t result_string_length) {
-    const std::string wanted = toUpperAscii(extension);
+    const std::string wanted = common::toUpperAscii(extension);
     const std::vector<std::unique_ptr<CPodFile>> &pods = pod.getPodFiles();
     std::vector<std::string> names;
     for (auto current = pods.begin(); current != pods.end(); ++current) {

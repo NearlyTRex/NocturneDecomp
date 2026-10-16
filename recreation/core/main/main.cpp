@@ -42,14 +42,7 @@ void showFirstRunCalibration(const SGameSystemOwners &owners) {
     game.game_pixy = kHeight;
     owners.special.setUseDirect3D(false);
     game.game_bpp = kBitsPerPixel;
-    const SMenuOwners menu{.dosio = owners.dosio,
-                           .screen = owners.screen,
-                           .special = owners.special,
-                           .two_d = owners.two_d,
-                           .raw_input = owners.raw_input,
-                           .small_editor_font = *owners.ini_owners.fonts.getSmallEditorFont(),
-                           .messages = owners.messages};
-    showCalibrationTest(menu);
+    owners.menu.showCalibrationTest();
 }
 
 // The original also measured a "Loading..." it never drew.

@@ -102,6 +102,13 @@ TEST_F(CWinRunInputTest, TypedCharactersQueueAndNulsDont) {
     EXPECT_EQ(winrun_.wasKeyPressed(), 0);
 }
 
+TEST_F(CWinRunInputTest, SettingTheCursorMovesThePointerAndTheMouse) {
+    EXPECT_CALL(window_, warpMouse(320, 240));
+    winrun_.setCursorPosition(320, 240);
+    EXPECT_EQ(winrun_.getMouseX(), 320);
+    EXPECT_EQ(winrun_.getMouseY(), 240);
+}
+
 TEST_F(CWinRunInputTest, TheNextKeypressComesOutOfTheQueueInOrder) {
     engine::MockScreenDevice screen;
     EXPECT_CALL(screen, swapBuffers).Times(0);

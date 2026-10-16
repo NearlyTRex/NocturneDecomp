@@ -15,6 +15,16 @@ TEST(Ascii, FoldsOnlyAsciiCapitals) {
     EXPECT_EQ(foldAscii('\xC9'), '\xC9');
 }
 
+TEST(Ascii, RaisesOnlyAsciiSmallLetters) {
+    EXPECT_EQ(upperAscii('a'), 'A');
+    EXPECT_EQ(upperAscii('z'), 'Z');
+    EXPECT_EQ(upperAscii('A'), 'A');
+    EXPECT_EQ(upperAscii('`'), '`');
+    EXPECT_EQ(upperAscii('{'), '{');
+    EXPECT_EQ(upperAscii('\xE9'), '\xE9');
+    EXPECT_EQ(toUpperAscii("menu1.pth\xE9"), "MENU1.PTH\xE9");
+}
+
 TEST(Ascii, EqualityIgnoresAsciiCase) {
     EXPECT_TRUE(equalsIgnoringAsciiCase("ACT1.POD", "act1.pod"));
     EXPECT_FALSE(equalsIgnoringAsciiCase("ACT1.POD", "act2.pod"));

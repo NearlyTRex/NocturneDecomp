@@ -21,7 +21,7 @@ functions don't count as done. Sizes are in instructions.
 | 5 | `showCalibrationTest`, `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 50 | 4789 | 31 | 3 | 62.0% |
 | 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 20 | 5 | 80.0% |
 | 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 68 | 31 | 56.6% |
-| 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 10 | 1 | 15.8% |
+| 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 14 | 1 | 22.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 0 | 0 | 0.0% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 17 | 52 | 5565 | 1 | 0 | 1.9% |
 | 11 | `CScript::loadScript` | 63 | 579 | 67400 | 6 | 1 | 1.0% |
@@ -41,12 +41,12 @@ functions don't count as done. Sizes are in instructions.
 | 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 3 | 0 | 1.0% |
 | 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 24 | 0 | 8.0% |
 | 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 0 | 0 | 0.0% |
-| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 5 | 2 | 1.7% |
+| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 6 | 2 | 2.1% |
 | 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 2 | 0 | 0.7% |
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 2 | 0 | 0.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 | 0 | 3.6% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4489** | **402860** | **472** | **51** | **10.5%** |
+| | **All** | | **4489** | **402860** | **477** | **51** | **10.6%** |
 
 ## Step 0: Math value types
 
@@ -835,26 +835,26 @@ functions don't count as done. Sizes are in instructions.
 
 ## Step 8: `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog`
 
-### `core/menu.cpp` (1 functions, 333 instructions, 0 done, 0 partial)
+### `core/menu.cpp` (1 functions, 333 instructions, 1 done, 0 partial)
 - free functions
-  - [ ] `renderMenuAndGetChoice` 0x00510000 (333)
+  - [x] `renderMenuAndGetChoice` 0x00510000 (333)
 
 ### `core/moon.cpp` (2 functions, 47 instructions, 2 done, 0 partial)
 - class `CMoon`
   - [x] `isAnimationFirstHalf` 0x0052a3f0 (9)
   - [x] `free` 0x00529ce0 (38)
 
-### `core/sound.cpp` (1 functions, 2 instructions, 0 done, 0 partial)
+### `core/sound.cpp` (1 functions, 2 instructions, 1 done, 0 partial)
 - class `CSound`
-  - [ ] `reset` 0x005b39a0 (2)
+  - [x] `reset` 0x005b39a0 (2)
 
-### `engine/keys.cpp` (1 functions, 6 instructions, 0 done, 0 partial)
+### `engine/keys.cpp` (1 functions, 6 instructions, 1 done, 0 partial)
 - class `CKeys`
-  - [ ] `getUppercasedInputKey` 0x00502470 (6)
+  - [x] `getUppercasedInputKey` 0x00502470 (6)
 
-### `wincore/winrun.cpp` (1 functions, 10 instructions, 0 done, 0 partial)
+### `wincore/winrun.cpp` (1 functions, 10 instructions, 1 done, 0 partial)
 - free functions
-  - [ ] `setCursorPosition` 0x005f30d0 (10)
+  - [x] `setCursorPosition` 0x005f30d0 (10)
 
 ### `engine/2d.c` (2 functions, 118 instructions, 0 done, 0 partial)
 - free functions
@@ -5257,9 +5257,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncMelee` 0x0050e790 (12)
   - [ ] `staticInit` 0x0050e760 (9)
 
-### `core/menu.cpp` (6 functions, 588 instructions, 0 done, 0 partial)
+### `core/menu.cpp` (6 functions, 588 instructions, 1 done, 0 partial)
 - free functions
-  - [ ] `staticInit` 0x0050fdb0 (39)
+  - [x] `staticInit` 0x0050fdb0 (39)
   - [ ] `showJoystickCalibrationScreen` 0x00510410 (61)
   - [ ] `renderAudioSpectrumBarByBounds` 0x00511e00 (14)
   - [ ] `showMainGameMenu` 0x00512f40 (394)

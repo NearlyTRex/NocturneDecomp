@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.24)
-project(NocturneRecreation LANGUAGES CXX)
+project(NocturneRecreation VERSION 0.1.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -164,7 +164,20 @@ if(NOCTURNE_RECREATION_GAME)
         PRIVATE nocturne_recreation_options SDL3::SDL3 SDL3_net::SDL3_net SDL3_ttf::SDL3_ttf
                 nocturne_ffmpeg)
 
+    # The build's version line, rewritten at every build so it follows the checkout; run once
+    # here too so the header exists before the first compile.
+    set(_generated_dir "${CMAKE_CURRENT_BINARY_DIR}/generated")
+    set(_version_command "${CMAKE_COMMAND}" -DVERSION=${PROJECT_VERSION}
+        -DSOURCE_DIR=${CMAKE_CURRENT_SOURCE_DIR} -DOUT=${_generated_dir}/buildversion.h
+        -P ${CMAKE_CURRENT_SOURCE_DIR}/cmake/version.cmake)
+    file(MAKE_DIRECTORY "${_generated_dir}")
+    execute_process(COMMAND ${_version_command})
+    add_custom_target(nocturne_version COMMAND ${_version_command}
+        BYPRODUCTS "${_generated_dir}/buildversion.h" VERBATIM)
+
     add_executable(nocturne main.cpp)
+    add_dependencies(nocturne nocturne_version)
+    target_include_directories(nocturne PRIVATE "${_generated_dir}")
     target_link_libraries(nocturne PRIVATE nocturne_platform_sdl)
 endif()
 

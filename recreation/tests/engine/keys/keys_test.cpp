@@ -60,6 +60,16 @@ TEST_F(CKeysTest, AnInputKeyIsTheNextKeypressLowByte) {
     EXPECT_EQ(keys_.getInputKey(), 0x41);
 }
 
+TEST_F(CKeysTest, AnUppercasedInputKeyRaisesOnlyAsciiLetters) {
+    EXPECT_CALL(raw_input_, getNextKeypress(Ref(screen_)))
+        .WillOnce(Return(0x1261))
+        .WillOnce(Return('{'))
+        .WillOnce(Return(0xe9));
+    EXPECT_EQ(keys_.getUppercasedInputKey(), 'A');
+    EXPECT_EQ(keys_.getUppercasedInputKey(), '{');
+    EXPECT_EQ(keys_.getUppercasedInputKey(), 0xe9);
+}
+
 TEST_F(CKeysTest, ClearingKeypressesClearsWinrunsQueue) {
     EXPECT_CALL(raw_input_, clearKeypresses);
     keys_.clearKeypresses();
