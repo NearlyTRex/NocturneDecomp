@@ -86,6 +86,12 @@ public:
     void draw3DProjectedLine(common::CVector3f *world_point, int line_length);
 
     [[nodiscard]] std::size_t getWindowCount() const;
+    // Measures the editor font's widest glyph and line, which the dialogs space by.
+    void initEditorFontMetrics();
+    // The HUD scale everything here is measured and drawn at.
+    [[nodiscard]] int getScale() const;
+    // The editor font; fatal when the application hasn't set one.
+    [[nodiscard]] engine::CBitFont &requireEditorFont();
 
 private:
     struct SWindow {
@@ -109,9 +115,6 @@ private:
     void drawTimeRemaining(float current_progress, float total_progress, double elapsed);
     void drawCentredLine(std::string_view text, int y, int color);
     [[nodiscard]] double getSeconds() const;
-    void initEditorFontMetrics();
-    [[nodiscard]] int getScale() const;
-    [[nodiscard]] engine::CBitFont &requireEditorFont();
     void pullExternalFrame();
 
     engine::C2d &two_d_;

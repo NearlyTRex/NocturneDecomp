@@ -47,6 +47,7 @@ public:
     [[nodiscard]] int getMouseX() const override;
     [[nodiscard]] int getMouseY() const override;
     [[nodiscard]] int getMouseButtonFlags() const override;
+    void releaseLeftMouseButton() override;
     [[nodiscard]] int takeMouseWheelNotches() override;
     void clearInput() override;
 

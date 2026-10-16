@@ -21,7 +21,7 @@ functions don't count as done. Sizes are in instructions.
 | 5 | `showCalibrationTest`, `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 50 | 4789 | 31 | 3 | 62.0% |
 | 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 20 | 5 | 80.0% |
 | 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 68 | 31 | 56.6% |
-| 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 14 | 1 | 22.2% |
+| 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 35 | 1 | 55.5% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 0 | 0 | 0.0% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 17 | 52 | 5565 | 1 | 0 | 1.9% |
 | 11 | `CScript::loadScript` | 63 | 579 | 67400 | 6 | 1 | 1.0% |
@@ -30,7 +30,7 @@ functions don't count as done. Sizes are in instructions.
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 1 | 0 | 1.9% |
 | 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 3 | 0 | 1.5% |
 | 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 0 | 0 | 0.0% |
-| 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 3 | 1 | 11.5% |
+| 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 4 | 1 | 15.3% |
 | 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 2 | 0 | 15.3% |
 | 19 | Not reached from startup: `engine/` | 23 | 279 | 19702 | 20 | 1 | 7.1% |
 | 20 | Not reached from startup: `support/` | 2 | 24 | 593 | 3 | 0 | 12.5% |
@@ -46,7 +46,7 @@ functions don't count as done. Sizes are in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 2 | 0 | 0.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 | 0 | 3.6% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4489** | **402860** | **477** | **51** | **10.6%** |
+| | **All** | | **4489** | **402860** | **499** | **51** | **11.1%** |
 
 ## Step 0: Math value types
 
@@ -856,16 +856,16 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [x] `setCursorPosition` 0x005f30d0 (10)
 
-### `engine/2d.c` (2 functions, 118 instructions, 0 done, 0 partial)
+### `engine/2d.c` (2 functions, 118 instructions, 2 done, 0 partial)
 - free functions
-  - [ ] `plotPixel` 0x00401140 (31)
-  - [ ] `drawLine` 0x004011b0 (87)
+  - [x] `plotPixel` 0x00401140 (31)
+  - [x] `drawLine` 0x004011b0 (87)
 
 ### `engine/font.cpp` (1 functions, 12 instructions, 1 done, 0 partial)
 - class `CBitFont`
   - [x] `getCharYOffset` 0x004d0200 (12)
 
-### `shape/edittool.cpp` (54 functions, 4786 instructions, 7 done, 1 partial)
+### `shape/edittool.cpp` (54 functions, 4786 instructions, 26 done, 1 partial)
 - class `CEditorTools`
   - [ ] `showError` 0x0049e740 (22)
   - [ ] `setClipboardText` 0x004a1bc0 (81)
@@ -888,14 +888,14 @@ functions don't count as done. Sizes are in instructions.
   - [x] `dtor` 0x004a2a40 (29)
   - [ ] `copyToClipboard` 0x004a3270 (90)
 - class `CEdScrollBar`
-  - [ ] `ctor` 0x004a5ae0 (12)
-  - [ ] `clearActiveButtonIfMatch` 0x004a5b40 (7)
-  - [ ] `dtor` 0x004a5b20 (8)
-  - [ ] `setPosition` 0x004a5b60 (65)
-  - [ ] `computeThumb` 0x004a5ea0 (101)
-  - [ ] `clampScrollPosition` 0x004a6380 (20)
-  - [ ] `handleInput` 0x004a5fc0 (291)
-  - [ ] `render` 0x004a5c10 (230)
+  - [x] `ctor` 0x004a5ae0 (12)
+  - [x] `clearActiveButtonIfMatch` 0x004a5b40 (7)
+  - [x] `dtor` 0x004a5b20 (8)
+  - [x] `setPosition` 0x004a5b60 (65)
+  - [x] `computeThumb` 0x004a5ea0 (101)
+  - [x] `clampScrollPosition` 0x004a6380 (20)
+  - [x] `handleInput` 0x004a5fc0 (291)
+  - [x] `render` 0x004a5c10 (230)
 - class `CPickList`
   - [ ] `ctor` 0x004a3b90 (68)
   - [ ] `isItemEnabled` 0x004a54e0 (30)
@@ -915,18 +915,18 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `displayChoicesAndWaitForInput` 0x004a3e20 (65)
 - free functions
   - [x] `qsortByString` 0x004a2ee0 (9)
-  - [ ] `calculateGridWidth` 0x004a6490 (9)
-  - [ ] `calculateGridHeight` 0x004a64b0 (13)
-  - [ ] `calculateButtonWidth` 0x004a68e0 (40)
-  - [ ] `calculateButtonHeight` 0x004a6970 (42)
-  - [ ] `draw3DBorder` 0x004a58f0 (66)
-  - [ ] `draw3DInsetBorder` 0x004a59a0 (141)
+  - [x] `calculateGridWidth` 0x004a6490 (9)
+  - [x] `calculateGridHeight` 0x004a64b0 (13)
+  - [x] `calculateButtonWidth` 0x004a68e0 (40)
+  - [x] `calculateButtonHeight` 0x004a6970 (42)
+  - [x] `draw3DBorder` 0x004a58f0 (66)
+  - [x] `draw3DInsetBorder` 0x004a59a0 (141)
 - class `CEdButton`
-  - [ ] `clearActiveButtonIfMatch` 0x004a6530 (4)
-  - [ ] `dtor` 0x004a6510 (8)
-  - [ ] `setBoundsAndText` 0x004a6590 (30)
-  - [ ] `wasClicked` 0x004a6830 (52)
-  - [ ] `paint` 0x004a65e0 (220)
+  - [x] `clearActiveButtonIfMatch` 0x004a6530 (4)
+  - [x] `dtor` 0x004a6510 (8)
+  - [x] `setBoundsAndText` 0x004a6590 (30)
+  - [x] `wasClicked` 0x004a6830 (52)
+  - [x] `paint` 0x004a65e0 (220)
 
 ## Step 9: `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load`
 
@@ -2661,9 +2661,9 @@ functions don't count as done. Sizes are in instructions.
     - deferred: the empty filename, with loadModel
   - [x] `dtor` 0x00476d90 (8)
 
-### `shape/edittool.cpp` (1 functions, 27 instructions, 0 done, 0 partial)
+### `shape/edittool.cpp` (1 functions, 27 instructions, 1 done, 0 partial)
 - class `CEdButton`
-  - [ ] `calculateAndSetBounds` 0x004a6550 (27)
+  - [x] `calculateAndSetBounds` 0x004a6550 (27)
 
 ### `core/morph.cpp` (4 functions, 58 instructions, 0 done, 0 partial)
 - class `CMorph`

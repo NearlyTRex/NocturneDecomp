@@ -102,6 +102,13 @@ TEST_F(CWinRunInputTest, TypedCharactersQueueAndNulsDont) {
     EXPECT_EQ(winrun_.wasKeyPressed(), 0);
 }
 
+TEST_F(CWinRunInputTest, ReleasingTheLeftButtonLeavesTheOthersHeld) {
+    pump({button(EWindowEventType::MouseButtonDown, EMouseButton::Left, 1, 2),
+          button(EWindowEventType::MouseButtonDown, EMouseButton::Right, 1, 2)});
+    winrun_.releaseLeftMouseButton();
+    EXPECT_EQ(winrun_.getMouseButtonFlags(), 2);
+}
+
 TEST_F(CWinRunInputTest, SettingTheCursorMovesThePointerAndTheMouse) {
     EXPECT_CALL(window_, warpMouse(320, 240));
     winrun_.setCursorPosition(320, 240);

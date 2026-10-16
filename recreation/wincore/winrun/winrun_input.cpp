@@ -234,6 +234,10 @@ int CWinRun::getMouseButtonFlags() const {
     return mouse_button_flags_;
 }
 
+void CWinRun::releaseLeftMouseButton() {
+    mouse_button_flags_ &= ~1;
+}
+
 int CWinRun::takeMouseWheelNotches() {
     const int notches = mouse_wheel_notches_;
     mouse_wheel_notches_ = 0;

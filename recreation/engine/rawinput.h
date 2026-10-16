@@ -25,6 +25,8 @@ public:
     [[nodiscard]] virtual int getMouseY() const = 0;
     // 1 for the left button, 2 the right and 4 the middle.
     [[nodiscard]] virtual int getMouseButtonFlags() const = 0;
+    // Counts the left button up until it is next pressed.
+    virtual void releaseLeftMouseButton() = 0;
     // Wheel notches since the last take, positive away from the user.
     [[nodiscard]] virtual int takeMouseWheelNotches() = 0;
     // Typed characters, mouse clicks and held keys all dropped.

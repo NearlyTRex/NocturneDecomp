@@ -14,6 +14,7 @@ public:
     MOCK_METHOD(int, getMouseX, (), (const, override));
     MOCK_METHOD(int, getMouseY, (), (const, override));
     MOCK_METHOD(int, getMouseButtonFlags, (), (const, override));
+    MOCK_METHOD(void, releaseLeftMouseButton, (), (override));
     MOCK_METHOD(int, takeMouseWheelNotches, (), (override));
     MOCK_METHOD(void, clearInput, (), (override));
     MOCK_METHOD(void, clearKeypresses, (), (override));
