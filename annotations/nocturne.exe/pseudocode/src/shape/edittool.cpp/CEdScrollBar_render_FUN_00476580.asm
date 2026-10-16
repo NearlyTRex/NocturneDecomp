@@ -94,7 +94,7 @@ section .text
     PUSH ECX                            ; 00476613
     PUSH EAX                            ; 00476614
     CALL shape_edittool.cpp_draw3DBorder_FUN_00476260 ; 00476615
-        ;   XREF to: 00476260 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DBorder_FUN_00476260(int left, int top, int width, int height, ...)
+        ;   XREF to: 00476260 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DBorder_FUN_00476260(int left, int top, int right, int bottom, ...)
     MOV ECX,dword ptr [EBX + 0x10]      ; 0047661a
     ADD ESP,0x14                        ; 0047661d
     TEST ECX,ECX                        ; 00476620
@@ -117,7 +117,7 @@ section .text
     MOV EDX,dword ptr [EBP + -0x8]      ; 0047664c
     PUSH EDX                            ; 0047664f
     CALL shape_edittool.cpp_draw3DBorder_FUN_00476260 ; 00476650
-        ;   XREF to: 00476260 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DBorder_FUN_00476260(int left, int top, int width, int height, ...)
+        ;   XREF to: 00476260 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DBorder_FUN_00476260(int left, int top, int right, int bottom, ...)
     ADD ESP,0x14                        ; 00476655
     MOV ECX,dword ptr [0x01bcde24]      ; 00476658 | DAT_01bcde24
     PUSH 0x2                            ; 0047665e
@@ -156,7 +156,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x28]      ; 004766ab
     PUSH EAX                            ; 004766ae
     CALL shape_edittool.cpp_draw3DBorder_FUN_00476260 ; 004766af
-        ;   XREF to: 00476260 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DBorder_FUN_00476260(int left, int top, int width, int height, ...)
+        ;   XREF to: 00476260 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DBorder_FUN_00476260(int left, int top, int right, int bottom, ...)
     ADD ESP,0x14                        ; 004766b4
     MOV EDX,dword ptr [0x01bcde24]      ; 004766b7 | DAT_01bcde24
     PUSH 0x3                            ; 004766bd
@@ -231,7 +231,7 @@ section .text
     MOV EDX,dword ptr [EBP + -0x8]      ; 00476742
     PUSH EDX                            ; 00476745
     CALL shape_edittool.cpp_draw3DBorder_FUN_00476260 ; 00476746
-        ;   XREF to: 00476260 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DBorder_FUN_00476260(int left, int top, int width, int height, ...)
+        ;   XREF to: 00476260 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DBorder_FUN_00476260(int left, int top, int right, int bottom, ...)
     ADD ESP,0x14                        ; 0047674b
     MOV ECX,dword ptr [0x01bcde24]      ; 0047674e | DAT_01bcde24
     PUSH 0x0                            ; 00476754
@@ -272,7 +272,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x8]      ; 004767a3
     PUSH EAX                            ; 004767a6
     CALL shape_edittool.cpp_draw3DBorder_FUN_00476260 ; 004767a7
-        ;   XREF to: 00476260 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DBorder_FUN_00476260(int left, int top, int width, int height, ...)
+        ;   XREF to: 00476260 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DBorder_FUN_00476260(int left, int top, int right, int bottom, ...)
     ADD ESP,0x14                        ; 004767ac
     MOV EDX,dword ptr [0x01bcde24]      ; 004767af | DAT_01bcde24
     PUSH 0x1                            ; 004767b5

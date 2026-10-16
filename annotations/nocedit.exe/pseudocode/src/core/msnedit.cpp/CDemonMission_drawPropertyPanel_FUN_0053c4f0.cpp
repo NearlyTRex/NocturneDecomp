@@ -37,8 +37,8 @@ void __cdecl core_msnedit_cpp_CDemonMission_drawPropertyPanel_FUN_0053c4f0(CDemo
               (&g_MsnEditPropertyList,0x141,0,iVar2);
     shape_edittool_cpp_CEdScrollBar_setPosition_FUN_004a5b60
               (&g_MsnEditPropertyScrollBar,iVar1 + -0xb,1,iVar1 + -1,0xee);
-    g_MsnEditPropertyScrollBar.max_value = 0xf0;
-    g_MsnEditPropertyScrollBar.current_value = g_MsnEditPropertyList.total_height;
+    g_MsnEditPropertyScrollBar.page_size = 0xf0;
+    g_MsnEditPropertyScrollBar.item_count = g_MsnEditPropertyList.total_height;
     g_MsnEditPropertyScrollBar.scroll_increment =
          g_MsnEditPropertyList.total_height / g_MsnEditPropertyList.count;
     shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0(&g_MsnEditPropertyScrollBar);

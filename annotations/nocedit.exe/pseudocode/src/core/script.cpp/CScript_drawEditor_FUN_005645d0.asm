@@ -16,7 +16,7 @@
 ;   int g_AutoIndentEnabled = 0x1
 ;   int g_ActiveRenderColor
 ;   CEdScrollBar g_ScriptEditorVScrollBar
-;   undefined4 g_ScriptEditorVScrollBar.max_value
+;   undefined4 g_ScriptEditorVScrollBar.page_size
 ;   CEdScrollBar g_ScriptEditorHScrollBar
 ;   undefined4 g_CursorBlinkTimer+1
 ;   int g_CurrentEditingColumn
@@ -120,7 +120,7 @@ section .text
         ;   XREF to: 0050e320 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pushViewport_FUN_0050e320(int x, int y, int width, int height)
     MOV EBX,dword ptr [0x0310fcd8]      ; 0056469a | g_ScriptEditorVScrollBar
     ADD ESP,0x10                        ; 005646a0
-    MOV ECX,dword ptr [0x0310fce0]      ; 005646a3 | g_ScriptEditorVScrollBar.max_value
+    MOV ECX,dword ptr [0x0310fce0]      ; 005646a3 | g_ScriptEditorVScrollBar.page_size
         ;   Label: LAB_005646a3
     MOV EAX,[0x0310fcd8]                ; 005646a9 | g_ScriptEditorVScrollBar
     ADD EAX,ECX                         ; 005646ae

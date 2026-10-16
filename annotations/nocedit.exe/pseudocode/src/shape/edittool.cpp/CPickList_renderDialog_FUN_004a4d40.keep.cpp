@@ -133,16 +133,16 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004a4d40(CPickList *t
   }
   if (this_ptr->dialog_result == 1) {
     (this_ptr->scrollbar).scroll_position = this_ptr->scroll_top;
-    (this_ptr->scrollbar).current_value = (this_ptr->base).item_count;
-    (this_ptr->scrollbar).max_value = this_ptr->vertical_page_size;
+    (this_ptr->scrollbar).item_count = (this_ptr->base).item_count;
+    (this_ptr->scrollbar).page_size = this_ptr->vertical_page_size;
   }
   else {
     if (this_ptr->dialog_result != 2) goto LAB_004a4f19;
     (this_ptr->scrollbar).scroll_position = this_ptr->scroll_top / this_ptr->vertical_page_size;
-    (this_ptr->scrollbar).current_value =
+    (this_ptr->scrollbar).item_count =
          ((this_ptr->base).item_count + this_ptr->vertical_page_size + -1) /
          this_ptr->vertical_page_size;
-    (this_ptr->scrollbar).max_value = this_ptr->column_count;
+    (this_ptr->scrollbar).page_size = this_ptr->column_count;
   }
   shape_edittool_cpp_CEdScrollBar_render_FUN_004a5c10(&this_ptr->scrollbar);
 LAB_004a4f19:

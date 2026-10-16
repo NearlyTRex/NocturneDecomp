@@ -104,8 +104,8 @@ void __cdecl shape_edittool_cpp_CPickList_remove_FUN_00476100(CPickList *this_pt
 void __cdecl shape_edittool_cpp_CPickList_clear_FUN_00476160(CPickList *this_ptr);
 void __cdecl shape_edittool_cpp_CPickList_sort_FUN_004761a0(CPickList *this_ptr,int start_index,int end_index);
 void __cdecl shape_edittool_cpp_CPickList_swap_FUN_00476200(CPickList *this_ptr,int index1,int index2);
-void __cdecl shape_edittool_cpp_draw3DBorder_FUN_00476260(int left,int top,int width,int height,int border_style_flag);
-void __cdecl shape_edittool_cpp_draw3DInsetBorder_FUN_00476310(int left,int top,int right,int bottom,int inner_y,int style);
+void __cdecl shape_edittool_cpp_draw3DBorder_FUN_00476260(int left,int top,int right,int bottom,int pressed);
+void __cdecl shape_edittool_cpp_draw3DInsetBorder_FUN_00476310(int left,int top,int right,int bottom,int pressed_offset,int direction);
 CEdScrollBar * __cdecl shape_edittool_cpp_CEdScrollBar_ctor_FUN_00476450(CEdScrollBar *this_ptr);
 CEdScrollBar * __cdecl shape_edittool_cpp_CEdScrollBar_dtor_FUN_00476490(CEdScrollBar *this_ptr,uint flags);
 void __cdecl shape_edittool_cpp_CEdScrollBar_clearActiveButtonIfMatch_FUN_004764b0(CEdScrollBar *this_ptr);

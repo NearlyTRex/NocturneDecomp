@@ -23,7 +23,7 @@ void __cdecl core_script_cpp_CScript_saveToFile_FUN_00566180(CScript *this_ptr,c
   file_ptr = engine_dosio_cpp_getFile_FUN_00481a50("world",filename,"wt");
   if (file_ptr != (_FILE *)0x0) {
     iVar1 = 0;
-    g_ScriptEditorHScrollBar.current_value = 0;
+    g_ScriptEditorHScrollBar.item_count = 0;
     while( true ) {
       iVar2 = shape_edittool_cpp_CStrList_getItemCount_FUN_004a6ed0(this_ptr_00);
       if (iVar2 <= iVar1) break;

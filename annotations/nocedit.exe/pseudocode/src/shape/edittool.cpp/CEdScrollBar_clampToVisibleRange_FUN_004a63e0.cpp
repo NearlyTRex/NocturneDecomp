@@ -12,7 +12,7 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_clampToVisibleRange_FUN_004a63e0(CE
   int iVar1;
   
   shape_edittool_cpp_CEdScrollBar_clampScrollPosition_FUN_004a6380(this_ptr);
-  iVar1 = this_ptr->scroll_position + this_ptr->max_value;
+  iVar1 = this_ptr->scroll_position + this_ptr->page_size;
   if (*value_ptr < iVar1) {
     iVar1 = this_ptr->scroll_position;
     if (iVar1 <= *value_ptr) {

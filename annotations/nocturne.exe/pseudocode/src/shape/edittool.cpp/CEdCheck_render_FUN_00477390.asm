@@ -100,7 +100,7 @@ section .text
     PUSH ESI                            ; 00477434
     PUSH EBP                            ; 00477435
     CALL shape_edittool.cpp_draw3DBorder_FUN_00476260 ; 00477436
-        ;   XREF to: 00476260 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DBorder_FUN_00476260(int left, int top, int width, int height, ...)
+        ;   XREF to: 00476260 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DBorder_FUN_00476260(int left, int top, int right, int bottom, ...)
     MOV EDX,dword ptr [EBX + 0x20]      ; 0047743b
     ADD ESP,0x14                        ; 0047743e
     TEST EDX,EDX                        ; 00477441

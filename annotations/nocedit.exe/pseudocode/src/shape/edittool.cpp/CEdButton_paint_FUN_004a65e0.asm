@@ -60,7 +60,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x8]       ; 004a660c
     PUSH EAX                            ; 004a660f
     CALL shape_edittool.cpp_draw3DBorder_FUN_004a58f0 ; 004a6610
-        ;   XREF to: 004a58f0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DBorder_FUN_004a58f0(int left, int top, int width, int height, ...)
+        ;   XREF to: 004a58f0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DBorder_FUN_004a58f0(int left, int top, int right, int bottom, ...)
     ADD ESP,0x14                        ; 004a6615
     MOV dword ptr [0x02d0255c],ESI      ; 004a6618 | g_ClipTop
     LEA ESI,[EBX + 0x1c]                ; 004a661e

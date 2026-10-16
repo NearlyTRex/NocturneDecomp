@@ -19,8 +19,8 @@
 ;   int g_MouseY
 ;   int g_ActiveRenderColor
 ;   CEdScrollBar g_MsnEditPropertyScrollBar
-;   undefined4 g_MsnEditPropertyScrollBar.current_value
-;   undefined4 g_MsnEditPropertyScrollBar.max_value
+;   undefined4 g_MsnEditPropertyScrollBar.item_count
+;   undefined4 g_MsnEditPropertyScrollBar.page_size
 ;   undefined4 g_MsnEditPropertyScrollBar.scroll_increment
 ;   uchar g_MsnEditPropertyScrollBarInitGuard
 ;   CActorPropertyList g_MsnEditPropertyList
@@ -119,11 +119,11 @@ section .text
         ;   XREF to: 004a5b60 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEdScrollBar_setPosition_FUN_004a5b60(CEdScrollBar * this_ptr, int left_pos, int top_pos, int right_pos, ...)
     MOV EDX,0xf0                        ; 0053c5c2
     MOV EAX,[0x02f7c510]                ; 0053c5c7 | g_MsnEditPropertyList.total_height
-    MOV dword ptr [0x02f797ec],EDX      ; 0053c5cc | g_MsnEditPropertyScrollBar.max_value
+    MOV dword ptr [0x02f797ec],EDX      ; 0053c5cc | g_MsnEditPropertyScrollBar.page_size
     MOV EDX,EAX                         ; 0053c5d2
     MOV ECX,dword ptr [0x02f7a028]      ; 0053c5d4 | g_MsnEditPropertyList.count
     SAR EDX,0x1f                        ; 0053c5da
-    MOV [0x02f797e8],EAX                ; 0053c5dd | g_MsnEditPropertyScrollBar.current_value
+    MOV [0x02f797e8],EAX                ; 0053c5dd | g_MsnEditPropertyScrollBar.item_count
     IDIV ECX                            ; 0053c5e2
     ADD ESP,0x14                        ; 0053c5e4
     PUSH 0x2f797e4                      ; 0053c5e7 | g_MsnEditPropertyScrollBar

@@ -15,7 +15,7 @@
 ;
 ; Referenced Globals:
 ;   uchar[257] g_CharacterClassificationTable
-;   undefined4 g_ScriptEditorHScrollBar.current_value
+;   undefined4 g_ScriptEditorHScrollBar.item_count
 ;   int g_CurrentEditingLine
 ;
 ; Called Functions:
@@ -88,11 +88,11 @@ section .text
         ;   XREF to: 0056684d (UNCONDITIONAL_JUMP)  ; LAB_0056684d
     MOV byte ptr [EAX + EBP*0x1],0x0    ; 00566867
         ;   Label: LAB_00566867
-    CMP EAX,dword ptr [0x0310fd10]      ; 0056686b | g_ScriptEditorHScrollBar.current_value
+    CMP EAX,dword ptr [0x0310fd10]      ; 0056686b | g_ScriptEditorHScrollBar.item_count
         ;   Label: LAB_0056686b
     JLE 0x0056680c                      ; 00566871
         ;   XREF to: 0056680c (CONDITIONAL_JUMP)  ; LAB_0056680c
-    MOV [0x0310fd10],EAX                ; 00566873 | g_ScriptEditorHScrollBar.current_value
+    MOV [0x0310fd10],EAX                ; 00566873 | g_ScriptEditorHScrollBar.item_count
     POP EBP                             ; 00566878
     POP EDI                             ; 00566879
     POP ESI                             ; 0056687a

@@ -10,18 +10,18 @@ void __cdecl core_script_cpp_CScript_clampCursorToView_FUN_00566880(CScript *thi
 
 {
   core_script_cpp_CScript_updateCursorBounds_FUN_00566910(this_ptr);
-  if (g_ScriptEditorVScrollBar.scroll_position + g_ScriptEditorVScrollBar.max_value <=
+  if (g_ScriptEditorVScrollBar.scroll_position + g_ScriptEditorVScrollBar.page_size <=
       g_CurrentEditingLine) {
     g_CurrentEditingLine =
-         g_ScriptEditorVScrollBar.scroll_position + g_ScriptEditorVScrollBar.max_value + -1;
+         g_ScriptEditorVScrollBar.scroll_position + g_ScriptEditorVScrollBar.page_size + -1;
   }
   if (g_CurrentEditingLine < g_ScriptEditorVScrollBar.scroll_position) {
     g_CurrentEditingLine = g_ScriptEditorVScrollBar.scroll_position;
   }
-  if (g_ScriptEditorHScrollBar.scroll_position + g_ScriptEditorHScrollBar.max_value <=
+  if (g_ScriptEditorHScrollBar.scroll_position + g_ScriptEditorHScrollBar.page_size <=
       g_CurrentEditingColumn) {
     g_CurrentEditingColumn =
-         g_ScriptEditorHScrollBar.scroll_position + g_ScriptEditorHScrollBar.max_value + -1;
+         g_ScriptEditorHScrollBar.scroll_position + g_ScriptEditorHScrollBar.page_size + -1;
   }
   if (g_CurrentEditingColumn < g_ScriptEditorHScrollBar.scroll_position) {
     g_CurrentEditingColumn = g_ScriptEditorHScrollBar.scroll_position;

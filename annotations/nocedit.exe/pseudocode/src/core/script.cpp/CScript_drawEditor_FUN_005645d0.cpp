@@ -30,7 +30,7 @@ void __cdecl core_script_cpp_CScript_drawEditor_FUN_005645d0(CScript *this_ptr)
              (g_ScriptTextAreaRight - g_ScriptTextAreaLeft) + -1,
              (g_ScriptTextAreaBottom - g_ScriptTextAreaTop) + -1);
   for (iVar1 = g_ScriptEditorVScrollBar.scroll_position;
-      iVar1 <= g_ScriptEditorVScrollBar.scroll_position + g_ScriptEditorVScrollBar.max_value;
+      iVar1 <= g_ScriptEditorVScrollBar.scroll_position + g_ScriptEditorVScrollBar.page_size;
       iVar1 = iVar1 + 1) {
     core_script_cpp_CScript_drawLine_FUN_005664d0(this_ptr,iVar1);
   }

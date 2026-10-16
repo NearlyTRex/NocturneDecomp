@@ -159,7 +159,7 @@ section .text
     MOV dword ptr [0x0310fd48],ECX      ; 00564909 | g_CurrentEditingLine
     JMP 0x005648c8                      ; 0056490f
         ;   XREF to: 005648c8 (UNCONDITIONAL_JUMP)  ; LAB_005648c8
-    MOV EAX,[0x0310fce0]                ; 00564911 | g_ScriptEditorVScrollBar.max_value
+    MOV EAX,[0x0310fce0]                ; 00564911 | g_ScriptEditorVScrollBar.page_size
         ;   Label: caseD_4
     MOV EDI,dword ptr [0x0310fd48]      ; 00564916 | g_CurrentEditingLine
     MOV EDX,dword ptr [0x0310fcd8]      ; 0056491c | g_ScriptEditorVScrollBar
@@ -170,7 +170,7 @@ section .text
     MOV dword ptr [0x0310fcd8],EDX      ; 0056492d | g_ScriptEditorVScrollBar
     JMP 0x005648c8                      ; 00564933
         ;   XREF to: 005648c8 (UNCONDITIONAL_JUMP)  ; LAB_005648c8
-    MOV EAX,[0x0310fce0]                ; 00564935 | g_ScriptEditorVScrollBar.max_value
+    MOV EAX,[0x0310fce0]                ; 00564935 | g_ScriptEditorVScrollBar.page_size
         ;   Label: caseD_5
     MOV EBX,dword ptr [0x0310fd48]      ; 0056493a | g_CurrentEditingLine
     MOV ESI,dword ptr [0x0310fcd8]      ; 00564940 | g_ScriptEditorVScrollBar
