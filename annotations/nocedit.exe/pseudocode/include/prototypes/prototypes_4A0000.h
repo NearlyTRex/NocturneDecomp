@@ -56,7 +56,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_drawCenteredWireframeCube_FUN_004a2
 void __cdecl shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004a2590(CEditorTools *this_ptr,char *output_buffer);
 void __cdecl shape_edittool_cpp_CEditorTools_drawPixelLine_FUN_004a2660(CEditorTools *this_ptr,int start_x,int start_y,int length);
 void __cdecl shape_edittool_cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0(CEditorTools *this_ptr,CVector3f *world_point,int line_length);
-void __cdecl shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a2920(CEditorTools *this_ptr,int cursor_type,int width,int height);
+void __cdecl shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a2920(CEditorTools *this_ptr,int cursor_type,int height,int width);
 CStrList * __cdecl shape_edittool_cpp_CStrList_ctor_FUN_004a2a20(CStrList *this_ptr);
 CStrList * __cdecl shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(CStrList *this_ptr,uint flags);
 CStrList * __cdecl shape_edittool_cpp_CStrList_copy_FUN_004a2a90(CStrList *this_ptr,CStrList *other);

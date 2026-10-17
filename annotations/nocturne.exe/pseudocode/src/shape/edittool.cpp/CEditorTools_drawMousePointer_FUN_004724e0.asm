@@ -19,11 +19,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057ea49
 ;   TerminatedCString s_CEditorTools_setMousePoi_0057ea5f
-;   undefined4 DAT_005b6d54
-;   undefined4 DAT_005b6d58
+;   int g_CursorSizeHorizontal = 0x9
+;   int g_CursorSizeVertical = 0x9
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
-;   undefined4 DAT_01bcd9c0
+;   int g_MouseCursorType
 ;   undefined4 DAT_01bd1d8c
 ;   undefined4 DAT_01bd1d90
 ;   int g_ClipLeft
@@ -55,7 +55,7 @@ section .text
     CALL shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_00472490 ; 004724f0
         ;   XREF to: 00472490 (UNCONDITIONAL_CALL)  ; uint shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_00472490(CEditorTools * this_ptr)
     MOV [0x01c00c70],EAX                ; 004724f5 | g_ActiveRenderColor
-    MOV EAX,[0x01bcd9c0]                ; 004724fa | DAT_01bcd9c0
+    MOV EAX,[0x01bcd9c0]                ; 004724fa | g_MouseCursorType
     ADD ESP,0x4                         ; 004724ff
     CMP EAX,0x1                         ; 00472502
     JNC 0x00472c4a                      ; 00472505
@@ -76,7 +76,7 @@ section .text
         ;   XREF to: 004725b1 (CONDITIONAL_JUMP)  ; LAB_004725b1
     MOV EDI,0x1                         ; 00472532
         ;   Label: LAB_00472532
-    MOV EAX,[0x005b6d54]                ; 00472537 | DAT_005b6d54
+    MOV EAX,[0x005b6d54]                ; 00472537 | g_CursorSizeHorizontal
         ;   Label: LAB_00472537
     MOV EDX,EAX                         ; 0047253c
     SAR EDX,0x1f                        ; 0047253e
@@ -86,7 +86,7 @@ section .text
     JLE 0x00472600                      ; 00472547
         ;   XREF to: 00472600 (CONDITIONAL_JUMP)  ; LAB_00472600
     MOV EDI,0x1                         ; 0047254d
-    MOV EAX,[0x005b6d58]                ; 00472552 | DAT_005b6d58
+    MOV EAX,[0x005b6d58]                ; 00472552 | g_CursorSizeVertical
         ;   Label: LAB_00472552
     MOV EDX,EAX                         ; 00472557
     SAR EDX,0x1f                        ; 00472559
@@ -305,7 +305,7 @@ section .text
         ;   XREF to: 00472838 (CONDITIONAL_JUMP)  ; LAB_00472838
     MOV ESI,0x1                         ; 0047277b
         ;   Label: LAB_0047277b
-    MOV EAX,[0x005b6d54]                ; 00472780 | DAT_005b6d54
+    MOV EAX,[0x005b6d54]                ; 00472780 | g_CursorSizeHorizontal
         ;   Label: LAB_00472780
     MOV EDX,EAX                         ; 00472785
     SAR EDX,0x1f                        ; 00472787
@@ -517,14 +517,14 @@ section .text
     INC ESI                             ; 004729be
     JMP 0x00472780                      ; 004729bf
         ;   XREF to: 00472780 (UNCONDITIONAL_JUMP)  ; LAB_00472780
-    MOV EAX,[0x005b6d58]                ; 004729c4 | DAT_005b6d58
+    MOV EAX,[0x005b6d58]                ; 004729c4 | g_CursorSizeVertical
         ;   Label: LAB_004729c4
     MOV EDX,EAX                         ; 004729c9
     SAR EDX,0x1f                        ; 004729cb
     SUB EAX,EDX                         ; 004729ce
     SAR EAX,0x1                         ; 004729d0
     MOV EDI,dword ptr [0x01bd1d90]      ; 004729d2 | DAT_01bd1d90
-    MOV ESI,dword ptr [0x005b6d58]      ; 004729d8 | DAT_005b6d58
+    MOV ESI,dword ptr [0x005b6d58]      ; 004729d8 | g_CursorSizeVertical
     SUB EDI,EAX                         ; 004729de
     ADD ESI,EDI                         ; 004729e0
     DEC ESI                             ; 004729e2
@@ -551,7 +551,7 @@ section .text
         ;   XREF to: 004729ea (CONDITIONAL_JUMP)  ; LAB_004729ea
     MOV EBP,0x1                         ; 00472a0a
         ;   Label: LAB_00472a0a
-    MOV EAX,[0x005b6d54]                ; 00472a0f | DAT_005b6d54
+    MOV EAX,[0x005b6d54]                ; 00472a0f | g_CursorSizeHorizontal
         ;   Label: LAB_00472a0f
     MOV EDX,EAX                         ; 00472a14
     SAR EDX,0x1f                        ; 00472a16

@@ -7,10 +7,10 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 4923
-Clean functions: 2538 (51.6%)
-Functions with suspects: 2385 (48.4%)
+Clean functions: 2539 (51.6%)
+Functions with suspects: 2384 (48.4%)
 
-Total suspect patterns: 20947
+Total suspect patterns: 20936
 Average suspects per function: 4.25
 
 Virtual files: 203 total, 10 at 100%, 12 at 90%+
@@ -18,7 +18,7 @@ Virtual files: 203 total, 10 at 100%, 12 at 90%+
 Pseudocode lines:
   Min: 4, Max: 3329, Average: 44.5
 
-Average complexity score: 91.4
+Average complexity score: 91.3
 
 COMPILATION STATUS
 ----------------------------------------
@@ -28,13 +28,13 @@ Failed: 4923
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  undefined_data            4043
+  undefined_data            4032
   pointer_cast              3555
   pointer_truncation        2889
   unrolled_memcpy           1476
-  warning_overlapping_globals 865
+  warning_overlapping_globals 864
   stack_param               766
-  unknown_field             723
+  unknown_field             724
   concat_reconstruction     661
   shadow_pointer_walk       544
   unrolled_strcpy           485
@@ -163,7 +163,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   00414e60: core_battery.cpp_CBattery_process_FUN_00414e60 (4 lines)
   00414f40: core_battery.cpp_CBattery_getCollisionType_FUN_00414f40 (4 lines)
   00415040: core_beast.cpp_CBeast_getActorType_FUN_00415040 (4 lines)
-  ... and 2488 more
+  ... and 2489 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -201,7 +201,7 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
 
-  undefined_data (683 functions):
+  undefined_data (681 functions):
     00403f50: engine_2d.c_clearInputAndWait_FUN_00403f50
     00404120: engine_2d.c_mapFrameBuffer_FUN_00404120
     00404360: engine_2d.c_unmapFrameBuffer_FUN_00404360
@@ -212,7 +212,7 @@ FUNCTIONS BY SUSPECT TYPE
     00404730: engine_3d.c_processVertexLighting_FUN_00404730
     00404790: engine_3d.c_processTextureCoordinates_FUN_00404790
     004047e0: engine_3d.c_renderPolygonGrayscaleLitOp5_FUN_004047e0
-    ... and 673 more
+    ... and 671 more
 
   pointer_cast (725 functions):
     00401010: engine_2d.c_initGraphicsSystem_FUN_00401010
@@ -253,7 +253,7 @@ FUNCTIONS BY SUSPECT TYPE
     0040a540: core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_0040a540
     ... and 527 more
 
-  warning_overlapping_globals (865 functions):
+  warning_overlapping_globals (864 functions):
     00403760: engine_2d.c_resetGraphicsSystem_FUN_00403760
     00403770: engine_2d.c_reinitializeGraphicsSystem_FUN_00403770
     00404480: engine_3d.c_initTextureCache_FUN_00404480
@@ -264,7 +264,7 @@ FUNCTIONS BY SUSPECT TYPE
     00405b40: engine_3d.c_renderSortedPolygonList_FUN_00405b40
     00405c90: engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00405c90
     00406230: engine_3d.c_renderPolygonLitAlphaPlaneMaskedOp26_FUN_00406230
-    ... and 855 more
+    ... and 854 more
 
   stack_param (102 functions):
     004013d0: engine_2d.c_drawAntialiasedChar_FUN_004013d0
@@ -279,7 +279,7 @@ FUNCTIONS BY SUSPECT TYPE
     00429220: core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_00429220
     ... and 92 more
 
-  unknown_field (125 functions):
+  unknown_field (126 functions):
     00403fb0: engine_2d.c_getInputWithPrompt_FUN_00403fb0
     00405870: engine_3d.c_drawLineStrip2D_FUN_00405870
     00405900: engine_3d.c_drawLineStrip3D_FUN_00405900
@@ -290,7 +290,7 @@ FUNCTIONS BY SUSPECT TYPE
     004194b0: core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_004194b0
     0041ad10: core_box.cpp_CBox_processPhysics_FUN_0041ad10
     0041e5e0: core_boxactor.cpp_CBoxActor_process_FUN_0041e5e0
-    ... and 115 more
+    ... and 116 more
 
   concat_reconstruction (49 functions):
     00404680: engine_3d.c_lookupLitColor_FUN_00404680

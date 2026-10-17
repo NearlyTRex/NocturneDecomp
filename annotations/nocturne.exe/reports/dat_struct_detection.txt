@@ -2,17 +2,17 @@
 DAT_ STRUCT/ARRAY DETECTION REPORT
 ================================================================================
 
-Total DAT_ globals found: 2197
+Total DAT_ globals found: 2192
 Filtered out (inside named data): 320
 Immediate constants (not real globals): 61
-Real globals remaining: 2136
+Real globals remaining: 2131
 Clusters detected: 204
-DAT_ globals in clusters: 2062
+DAT_ globals in clusters: 2057
 
 Classification summary:
-  unknown              71 clusters
+  unknown              72 clusters
   vector_groups        48 clusters
-  struct               48 clusters
+  struct               47 clusters
   array                22 clusters
   char_array           7 clusters
   byte_blob            5 clusters
@@ -1689,20 +1689,6 @@ LOW CONFIDENCE (120 clusters)
       0x005accf8  DAT_005accf8  undefined4
       ... +1 more
 
-  0x005b6d00 - 0x005b6d64  (7 items, 100 bytes span)
-    Classification: struct
-    Likely type: struct (100 bytes span, 7 fields)
-    Reason: mixed strides, shared by 10 functions
-    Referenced by: 10 functions
-     near: g_CEditorTools_PTR_005b6d50 (CEditorTools*) at -80
-      0x005b6d00  DAT_005b6d00  undefined4
-      0x005b6d08  DAT_005b6d08  undefined1 [byte]
-      0x005b6d09  DAT_005b6d09  undefined1
-      0x005b6d54  DAT_005b6d54  undefined4
-      0x005b6d58  DAT_005b6d58  undefined4
-      0x005b6d60  DAT_005b6d60  undefined4
-      ... +1 more
-
   0x005b7648 - 0x005b7790  (7 items, 328 bytes span)
     Classification: struct
     Likely type: struct (328 bytes span, 7 fields)
@@ -2036,6 +2022,16 @@ LOW CONFIDENCE (120 clusters)
       0x005ae6f8  DAT_005ae6f8  undefined4 [float]
       0x005ae6fc  DAT_005ae6fc  undefined4
 
+  0x005b6d00 - 0x005b6d09  (3 items, 9 bytes span)
+    Classification: unknown
+    Likely type: unknown grouping
+    Reason: 3 items, span=9 bytes
+    Referenced by: 7 functions
+     near: g_CEditorTools_PTR_005b6d50 (CEditorTools*) at -80
+      0x005b6d00  DAT_005b6d00  undefined4
+      0x005b6d08  DAT_005b6d08  undefined1 [byte]
+      0x005b6d09  DAT_005b6d09  undefined1
+
   0x005b8e00 - 0x005b8ec0  (3 items, 192 bytes span)
     Classification: unknown
     Likely type: unknown grouping
@@ -2157,15 +2153,6 @@ LOW CONFIDENCE (120 clusters)
       0x01bcd070  DAT_01bcd070  undefined4
       0x01bcd078  DAT_01bcd078  undefined4
       0x01bcd07c  DAT_01bcd07c  undefined4
-
-  0x01bcd9b8 - 0x01bcd9c0  (3 items, 8 bytes span)
-    Classification: unknown
-    Likely type: unknown grouping
-    Reason: 3 items, span=8 bytes
-    Referenced by: 23 functions
-      0x01bcd9b8  DAT_01bcd9b8  undefined4
-      0x01bcd9bc  DAT_01bcd9bc  undefined4
-      0x01bcd9c0  DAT_01bcd9c0  undefined4
 
   0x01c02798 - 0x01c027a4  (3 items, 12 bytes span)
     Classification: unknown
@@ -2499,6 +2486,15 @@ LOW CONFIDENCE (120 clusters)
      near: g_CDoorActorType_01af4e9c.name_hash (undefined4) at -60
       0x01af4e98  DAT_01af4e98  undefined4
       0x01af4ed8  DAT_01af4ed8  undefined4
+
+  0x01bcd9b8 - 0x01bcd9bc  (2 items, 4 bytes span)
+    Classification: unknown
+    Likely type: unknown grouping
+    Reason: 2 items, span=4 bytes
+    Referenced by: 21 functions
+     near: g_MouseCursorType (int) at -8
+      0x01bcd9b8  DAT_01bcd9b8  undefined4
+      0x01bcd9bc  DAT_01bcd9bc  undefined4
 
   0x01c094b4 - 0x01c094b8  (2 items, 4 bytes span)
     Classification: unknown

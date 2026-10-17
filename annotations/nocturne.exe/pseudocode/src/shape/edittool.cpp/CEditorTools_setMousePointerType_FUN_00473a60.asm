@@ -1,22 +1,22 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_00473a60(CEditorTools *this_ptr,int cursor_type,int width,int height)
+; void __cdecl shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_00473a60(CEditorTools *this_ptr,int cursor_type,int height,int width)
 ;
 ; Parameters:
 ; CEditorTools *   Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   cursor_type
-; int              Stack[0xc]:4   width
-; int              Stack[0x10]:4   height
+; int              Stack[0xc]:4   height
+; int              Stack[0x10]:4   width
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057eb12
 ;   TerminatedCString s_CEditorTools_setMousePoi_0057eb28
-;   undefined4 DAT_005b6d54
-;   undefined4 DAT_005b6d58
+;   int g_CursorSizeHorizontal = 0x9
+;   int g_CursorSizeVertical = 0x9
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
-;   undefined4 DAT_01bcd9c0
+;   int g_MouseCursorType
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -31,7 +31,7 @@ section .text
         ;   Label: shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_00473a60
     MOV EDX,dword ptr [ESP + 0xc]       ; 00473a61
     MOV EBX,dword ptr [ESP + 0x14]      ; 00473a65
-    MOV dword ptr [0x01bcd9c0],EDX      ; 00473a69 | DAT_01bcd9c0
+    MOV dword ptr [0x01bcd9c0],EDX      ; 00473a69 | g_MouseCursorType
     CMP EDX,0x1                         ; 00473a6f
     JNC 0x00473b16                      ; 00473a72
         ;   XREF to: 00473b16 (CONDITIONAL_JUMP)  ; LAB_00473b16
@@ -58,8 +58,8 @@ section .text
     INC EBX                             ; 00473a9b
     MOV EDX,dword ptr [ESP + 0x10]      ; 00473a9c
         ;   Label: LAB_00473a9c
-    MOV dword ptr [0x005b6d54],EBX      ; 00473aa0 | DAT_005b6d54
-    MOV dword ptr [0x005b6d58],EDX      ; 00473aa6 | DAT_005b6d58
+    MOV dword ptr [0x005b6d54],EBX      ; 00473aa0 | g_CursorSizeHorizontal
+    MOV dword ptr [0x005b6d58],EDX      ; 00473aa6 | g_CursorSizeVertical
     POP EBX                             ; 00473aac
     RET                                 ; 00473aad
     MOV dword ptr [ESP + 0x10],0xb      ; 00473aae
@@ -128,8 +128,8 @@ section .text
     POP ESI                             ; 00473b46
     POP EDI                             ; 00473b47
     MOV EDX,dword ptr [ESP + 0x10]      ; 00473b48
-    MOV dword ptr [0x005b6d54],EBX      ; 00473b4c | DAT_005b6d54
-    MOV dword ptr [0x005b6d58],EDX      ; 00473b52 | DAT_005b6d58
+    MOV dword ptr [0x005b6d54],EBX      ; 00473b4c | g_CursorSizeHorizontal
+    MOV dword ptr [0x005b6d58],EDX      ; 00473b52 | g_CursorSizeVertical
     POP EBX                             ; 00473b58
     RET                                 ; 00473b59
 

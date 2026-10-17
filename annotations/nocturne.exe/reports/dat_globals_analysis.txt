@@ -2,18 +2,18 @@
 DAT_ GLOBALS ANALYSIS REPORT
 ================================================================================
 
-Total DAT_ globals found: 2517
+Total DAT_ globals found: 2512
 Filtered out (inside named data): 320
 Immediate constants (not real globals): 61
-Real globals remaining: 2136
+Real globals remaining: 2131
 
 Current type breakdown:
-  undefined4                     2082
+  undefined4                     2077
   undefined1                     31
   undefined8                     12
   undefined2                     11
 
-DAT_ globals with type hints: 621 / 2136
+DAT_ globals with type hints: 621 / 2131
 
 --------------------------------------------------------------------------------
 HIGH CONFIDENCE INFERENCES (428)
@@ -978,7 +978,7 @@ LOW CONFIDENCE INFERENCES (0)
 --------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------
-NO TYPE HINTS (1515)
+NO TYPE HINTS (1510)
 --------------------------------------------------------------------------------
   DAT_0057c8be                    addr=0057c8be    type=undefined4      refs=1  nearby: DOUBLE_0057c8c6 at -8
   DAT_0059cda8                    addr=0059cda8    type=undefined4      refs=1  nearby: g_CEnemyVTable at -12
@@ -1133,10 +1133,6 @@ NO TYPE HINTS (1515)
   DAT_005b64e0                    addr=005b64e0    type=undefined4      refs=4
   DAT_005b6d00                    addr=005b6d00    type=undefined4      refs=1  nearby: g_CEditorTools_PTR_005b6d50 at -80
   DAT_005b6d09                    addr=005b6d09    type=undefined1      refs=1  nearby: g_CEditorTools_PTR_005b6d50 at -71
-  DAT_005b6d54                    addr=005b6d54    type=undefined4      refs=2  nearby: g_CEditorTools_PTR_005b6d50 at +4
-  DAT_005b6d58                    addr=005b6d58    type=undefined4      refs=2  nearby: g_CEditorTools_PTR_005b6d50 at +8
-  DAT_005b6d60                    addr=005b6d60    type=undefined4      refs=1  nearby: g_CEditorTools_PTR_005b6d50 at +16
-  DAT_005b6d64                    addr=005b6d64    type=undefined4      refs=1  nearby: g_CEditorTools_PTR_005b6d50 at +20
   DAT_005b6f70                    addr=005b6f70    type=undefined4      refs=1
   DAT_005b6f74                    addr=005b6f74    type=undefined4      refs=1
   DAT_005b7078                    addr=005b7078    type=undefined4      refs=1
@@ -1686,9 +1682,8 @@ NO TYPE HINTS (1515)
   DAT_01bcd070                    addr=01bcd070    type=undefined4      refs=33
   DAT_01bcd078                    addr=01bcd078    type=undefined4      refs=3
   DAT_01bcd07c                    addr=01bcd07c    type=undefined4      refs=8
-  DAT_01bcd9b8                    addr=01bcd9b8    type=undefined4      refs=18
-  DAT_01bcd9bc                    addr=01bcd9bc    type=undefined4      refs=21
-  DAT_01bcd9c0                    addr=01bcd9c0    type=undefined4      refs=2
+  DAT_01bcd9b8                    addr=01bcd9b8    type=undefined4      refs=18  nearby: g_MouseCursorType at -8
+  DAT_01bcd9bc                    addr=01bcd9bc    type=undefined4      refs=21  nearby: g_MouseCursorType at -4
   DAT_01bcddc8                    addr=01bcddc8    type=undefined4      refs=2  nearby: g_CElephantGunActorType_01bcde44.name_hash at -180
   DAT_01bcddcc                    addr=01bcddcc    type=undefined4      refs=2  nearby: g_CElephantGunActorType_01bcde44.name_hash at -176
   DAT_01bcddd0                    addr=01bcddd0    type=undefined4      refs=2  nearby: g_CElephantGunActorType_01bcde44.name_hash at -172
@@ -2510,14 +2505,14 @@ MOST REFERENCED DAT_ GLOBALS (top 50)
   DAT_01c038f4                    addr=01c038f4    refs=29    type=undefined4      nearby: g_MMXSupported(-84)
   DAT_01bd1d80                    addr=01bd1d80    refs=25    type=undefined4      likely=float
   DAT_005c5034                    addr=005c5034    refs=21    type=undefined4      likely=int  nearby: g_BackBuffer(+36)
-  DAT_01bcd9bc                    addr=01bcd9bc    refs=21    type=undefined4    
+  DAT_01bcd9bc                    addr=01bcd9bc    refs=21    type=undefined4      nearby: g_MouseCursorType(-4)
   DAT_006b0280                    addr=006b0280    refs=20    type=undefined4      nearby: g_TexturesDisabled(+8)
   DAT_02dc1b74                    addr=02dc1b74    refs=20    type=undefined4      likely=CSfxSlot *
   DAT_007f7370                    addr=007f7370    refs=19    type=undefined4    
   DAT_005c5038                    addr=005c5038    refs=19    type=undefined4      likely=int  nearby: g_BackBuffer(+40)
   DAT_005c503c                    addr=005c503c    refs=19    type=undefined4      likely=int  nearby: g_BackBuffer(+44)
   DAT_01cc9454                    addr=01cc9454    refs=18    type=undefined4    
-  DAT_01bcd9b8                    addr=01bcd9b8    refs=18    type=undefined4    
+  DAT_01bcd9b8                    addr=01bcd9b8    refs=18    type=undefined4      nearby: g_MouseCursorType(-8)
   DAT_005acc90                    addr=005acc90    refs=17    type=undefined1      likely=byte  nearby: g_INT_005acc88(+8)
   DAT_01cc9450                    addr=01cc9450    refs=17    type=undefined4    
   DAT_005be220                    addr=005be220    refs=16    type=undefined4      nearby: s_none_005be228(-8)

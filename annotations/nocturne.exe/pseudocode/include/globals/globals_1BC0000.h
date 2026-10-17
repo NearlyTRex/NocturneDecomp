@@ -35,3 +35,6 @@ extern CVector3f g_CVector3f_ARRAY_01bc9c80[16];
 extern CVector3f g_CVector3f_ARRAY_01bc9d44[16];
 extern CVector3f g_CVector3f_ARRAY_01bc9e08[16];
 
+// int
+extern int g_MouseCursorType;
+

@@ -54,6 +54,12 @@
         "column": 40,
         "line": 498,
         "message": "exponent has no digits"
+      },
+      {
+        "category": "type_error",
+        "column": 20,
+        "line": 140,
+        "message": "member reference base type 'int' is not a structure or union"
       }
     ],
     "success": false,
@@ -62,20 +68,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 617,
-    "complexity_score": 316,
+    "complexity_score": 324,
     "cross_reference_count": 0,
     "function_call_count": 24,
     "global_count": 19,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 206,
+    "pseudocode_lines": 209,
     "suspect_count": 9,
     "suspect_types": [
       "unaffected_reg",
       "undefined_data",
+      "unknown_field",
       "unrolled_memcpy",
       "unrolled_strlen"
     ],
-    "total_lines": 823
+    "total_lines": 826
   },
   "cross_references": [],
   "function": {
@@ -293,15 +300,15 @@
     },
     {
       "addr": "005b6d60",
-      "name": "DAT_005b6d60",
-      "type": "undefined4",
-      "value": null
+      "name": "INT_005b6d60",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "005b6d64",
-      "name": "DAT_005b6d64",
-      "type": "undefined4",
-      "value": null
+      "name": "INT_005b6d64",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "005b6e68",
@@ -674,32 +681,32 @@
       "type": "unaffected_reg"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 57,
-      "match": "DAT_005b6d60",
+      "description": "Unknown/mangled field access",
+      "line": 133,
+      "match": "._0_1_",
       "severity": "mild",
-      "text": "puVar7 = &DAT_005b6d60;",
-      "type": "undefined_data"
+      "text": "local_12c8[0]._0_1_ = '\\0';",
+      "type": "unknown_field"
     },
     {
       "description": "Unaffected register variable",
-      "line": 168,
+      "line": 171,
       "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "(&local_1a60,local_1c90,iVar6,unaff_ESI);",
+      "text": "(&local_1a60,local_1c90,iVar7,unaff_ESI);",
       "type": "unaffected_reg"
     },
     {
       "description": "Undefined global data reference",
-      "line": 171,
+      "line": 174,
       "match": "DAT_005b6f70",
       "severity": "mild",
-      "text": "puVar7 = &DAT_005b6f70;",
+      "text": "puVar8 = &DAT_005b6f70;",
       "type": "undefined_data"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 59,
+      "line": 61,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 0x41; iVar4 != 0; iVar4 = iVar4 + -1) {",
@@ -707,7 +714,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 76,
+      "line": 79,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 0x41; iVar4 != 0; iVar4 = iVar4 + -1) {",
@@ -715,7 +722,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 173,
+      "line": 176,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 0x41; iVar4 != 0; iVar4 = iVar4 + -1) {",
@@ -723,7 +730,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 96,
+      "line": 99,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -731,7 +738,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 147,
+      "line": 150,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",

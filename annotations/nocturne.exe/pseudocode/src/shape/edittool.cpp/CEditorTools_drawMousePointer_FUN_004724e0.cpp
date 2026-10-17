@@ -18,7 +18,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_004724e0(CEdit
   
   g_ActiveRenderColor =
        shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_00472490(this_ptr);
-  if (_DAT_01bcd9c0 == 0) {
+  if (g_MouseCursorType == 0) {
     if ((((-1 < _DAT_01bd1d8c) && (-1 < _DAT_01bd1d90)) &&
         ((_DAT_01bd1d8c < g_WindowWidth && (_DAT_01bd1d90 < g_WindowHeight)))) &&
        ((use_clipping == 0 ||
@@ -26,7 +26,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_004724e0(CEdit
           (g_ClipTop <= _DAT_01bd1d90)) && (_DAT_01bd1d90 < g_ClipBottom)))))) {
       engine_2d_c_plotPixel_FUN_00401530(_DAT_01bd1d8c,_DAT_01bd1d90);
     }
-    for (iVar3 = 1; iVar3 <= DAT_005b6d54 / 2; iVar3 = iVar3 + 1) {
+    for (iVar3 = 1; iVar3 <= g_CursorSizeHorizontal / 2; iVar3 = iVar3 + 1) {
       iVar1 = _DAT_01bd1d8c - iVar3;
       if ((((-1 < iVar1) && (-1 < _DAT_01bd1d90)) &&
           ((iVar1 < g_WindowWidth && (_DAT_01bd1d90 < g_WindowHeight)))) &&
@@ -45,7 +45,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_004724e0(CEdit
       }
     }
     iVar3 = 1;
-    while (iVar3 <= DAT_005b6d58 / 2) {
+    while (iVar3 <= g_CursorSizeVertical / 2) {
       iVar1 = _DAT_01bd1d90 - iVar3;
       if ((((-1 < _DAT_01bd1d8c) && (-1 < iVar1)) &&
           ((_DAT_01bd1d8c < g_WindowWidth && (iVar1 < g_WindowHeight)))) &&
@@ -68,9 +68,9 @@ void __cdecl shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_004724e0(CEdit
       }
     }
   }
-  else if (_DAT_01bcd9c0 < 2) {
-    iVar4 = _DAT_01bd1d90 - DAT_005b6d58 / 2;
-    iVar1 = DAT_005b6d58 + iVar4 + -1;
+  else if ((uint)g_MouseCursorType < 2) {
+    iVar4 = _DAT_01bd1d90 - g_CursorSizeVertical / 2;
+    iVar1 = g_CursorSizeVertical + iVar4 + -1;
     iVar3 = iVar4;
     while (iVar3 = iVar3 + 1, iVar3 < iVar1) {
       if (((((-1 < _DAT_01bd1d8c) && (-1 < iVar3)) && (_DAT_01bd1d8c < g_WindowWidth)) &&
@@ -82,7 +82,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_004724e0(CEdit
       }
     }
     iVar3 = 1;
-    while (iVar3 <= DAT_005b6d54 / 2) {
+    while (iVar3 <= g_CursorSizeHorizontal / 2) {
       iVar2 = _DAT_01bd1d8c - iVar3;
       if ((((-1 < iVar2) && (-1 < iVar4)) && ((iVar2 < g_WindowWidth && (iVar4 < g_WindowHeight))))
          && ((use_clipping == 0 ||
@@ -117,7 +117,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_004724e0(CEdit
       }
     }
   }
-  else if (_DAT_01bcd9c0 == 2) {
+  else if (g_MouseCursorType == 2) {
     if ((((-1 < _DAT_01bd1d8c) && (-1 < _DAT_01bd1d90)) &&
         ((_DAT_01bd1d8c < g_WindowWidth && (_DAT_01bd1d90 < g_WindowHeight)))) &&
        ((use_clipping == 0 ||
@@ -126,7 +126,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_004724e0(CEdit
       engine_2d_c_plotPixel_FUN_00401530(_DAT_01bd1d8c,_DAT_01bd1d90);
     }
     iVar3 = 1;
-    while (iVar3 <= DAT_005b6d54 / 2) {
+    while (iVar3 <= g_CursorSizeHorizontal / 2) {
       iVar4 = _DAT_01bd1d8c - iVar3;
       iVar1 = _DAT_01bd1d90 - iVar3;
       if ((((-1 < iVar4) && (-1 < iVar1)) && (iVar4 < g_WindowWidth)) &&

@@ -59,7 +59,7 @@ section .text
     MOV EDI,dword ptr [0x00678a60]      ; 00566bff | g_CEditorToolsPtr
     PUSH EDI                            ; 00566c05 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a2920 ; 00566c06
-        ;   XREF to: 004a2920 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a2920(CEditorTools * this_ptr, int cursor_type, int width, int height)
+        ;   XREF to: 004a2920 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a2920(CEditorTools * this_ptr, int cursor_type, int height, int width)
     ADD ESP,0x10                        ; 00566c0b
     POP ESI                             ; 00566c0e
     POP EDI                             ; 00566c0f

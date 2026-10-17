@@ -225,7 +225,7 @@ void __cdecl CEditorTools::draw3DProjectedLine(CEditorTools *this_ptr,CVector3f 
 
 // Original: shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_00473a60
 // Address: 00473a60
-void __cdecl CEditorTools::setMousePointerType(CEditorTools *this_ptr,int cursor_type,int width,int height);
+void __cdecl CEditorTools::setMousePointerType(CEditorTools *this_ptr,int cursor_type,int height,int width);
 
 // Original: shape_edittool.cpp_CStrList_ctor_FUN_00473b60
 // Address: 00473b60

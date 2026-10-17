@@ -815,7 +815,7 @@ section .text
     MOV ESI,dword ptr [0x00678a60]      ; 0053995b | g_CEditorToolsPtr
     PUSH ESI                            ; 00539961 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a2920 ; 00539962
-        ;   XREF to: 004a2920 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a2920(CEditorTools * this_ptr, int cursor_type, int width, int height)
+        ;   XREF to: 004a2920 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a2920(CEditorTools * this_ptr, int cursor_type, int height, int width)
     MOV EDI,dword ptr [0x02f7c634]      ; 00539967 | INT_02f7c634
     ADD ESP,0x10                        ; 0053996d
     TEST EDI,EDI                        ; 00539970
@@ -839,7 +839,7 @@ section .text
     MOV ECX,dword ptr [0x00678a60]      ; 00539999 | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH ECX                            ; 0053999f | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a2920 ; 005399a0
-        ;   XREF to: 004a2920 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a2920(CEditorTools * this_ptr, int cursor_type, int width, int height)
+        ;   XREF to: 004a2920 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a2920(CEditorTools * this_ptr, int cursor_type, int height, int width)
     ADD ESP,0x10                        ; 005399a5
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 005399a8
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

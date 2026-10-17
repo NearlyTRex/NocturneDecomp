@@ -7,7 +7,7 @@ SUMMARY
 Total functions analyzed: 4923
 Clean: 2510 (51.0%)
 With suspects: 2413
-Total suspects: 20947
+Total suspects: 20936
 
 ====================================================================================================
 cockpit_ckptutil.c_applyActPalette_FUN_0042d370 (1 suspect)
@@ -29740,16 +29740,10 @@ shape_edittool.cpp_CEditorTools_drawCenteredWireframeCube_FUN_00473650 (6 suspec
   Line 13 [unknown_field]: local_1c.z = -dimensions->z * 3.0517585321376802e-05._4_4_;
 
 ====================================================================================================
-shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004724e0 (7 suspects)
+shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004724e0 (1 suspect)
   File: shape/edittool.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 22 [undefined_data]: for (iVar3 = 1; iVar3 <= DAT_005b6d54 / 2; iVar3 = iVar3 + 1) {
-  Line 41 [undefined_data]: while (iVar3 <= DAT_005b6d58 / 2) {
-  Line 65 [undefined_data]: iVar4 = _DAT_01bd1d90 - DAT_005b6d58 / 2;
-  Line 66 [undefined_data]: iVar1 = DAT_005b6d58 + iVar4 + -1;
-  Line 78 [undefined_data]: while (iVar3 <= DAT_005b6d54 / 2) {
-  Line 122 [undefined_data]: while (iVar3 <= DAT_005b6d54 / 2) {
 
 ====================================================================================================
 shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_004700d0 (2 suspects)
@@ -29840,15 +29834,10 @@ shape_edittool.cpp_CEditorTools_setClipboardText_FUN_00472d10 (8 suspects)
   Line 83 [unrolled_memcpy]: // 00472dcc: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
-shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_00473a60 (6 suspects)
+shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_00473a60 (1 suspect)
   File: shape/edittool.cpp
 ====================================================================================================
-  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 25 [undefined_data]: DAT_005b6d54 = height;
-  Line 26 [undefined_data]: DAT_005b6d58 = width;
-  Line 42 [static_shift_too_many_bits]: iVar2 = iVar1 >> 0x1f;
-  Line 45 [undefined_data]: DAT_005b6d54 = height;
-  Line 46 [undefined_data]: DAT_005b6d58 = width;
+  Line 40 [static_shift_too_many_bits]: iVar2 = iVar1 >> 0x1f;
 
 ====================================================================================================
 shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_00471660 (1 suspect)
@@ -29861,14 +29850,14 @@ shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_00470730 (9 suspects)
   File: shape/edittool.cpp
 ====================================================================================================
   Line 11 [unaffected_reg]: uint unaff_ESI;
-  Line 57 [undefined_data]: puVar7 = &DAT_005b6d60;
-  Line 59 [unrolled_memcpy]: for (iVar4 = 0x41; iVar4 != 0; iVar4 = iVar4 + -1) {
-  Line 76 [unrolled_memcpy]: for (iVar4 = 0x41; iVar4 != 0; iVar4 = iVar4 + -1) {
-  Line 96 [unrolled_strlen]: do {
-  Line 147 [unrolled_strlen]: do {
-  Line 168 [unaffected_reg]: (&local_1a60,local_1c90,iVar6,unaff_ESI);
-  Line 171 [undefined_data]: puVar7 = &DAT_005b6f70;
-  Line 173 [unrolled_memcpy]: for (iVar4 = 0x41; iVar4 != 0; iVar4 = iVar4 + -1) {
+  Line 61 [unrolled_memcpy]: for (iVar4 = 0x41; iVar4 != 0; iVar4 = iVar4 + -1) {
+  Line 79 [unrolled_memcpy]: for (iVar4 = 0x41; iVar4 != 0; iVar4 = iVar4 + -1) {
+  Line 99 [unrolled_strlen]: do {
+  Line 133 [unknown_field]: local_12c8[0]._0_1_ = '\0';
+  Line 150 [unrolled_strlen]: do {
+  Line 171 [unaffected_reg]: (&local_1a60,local_1c90,iVar7,unaff_ESI);
+  Line 174 [undefined_data]: puVar8 = &DAT_005b6f70;
+  Line 176 [unrolled_memcpy]: for (iVar4 = 0x41; iVar4 != 0; iVar4 = iVar4 + -1) {
 
 ====================================================================================================
 shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0 (2 suspects)
