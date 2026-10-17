@@ -11,8 +11,10 @@
 #include "shape/edittool/editortools.h"
 #include "tests/mocks/engine/fontsheet.h"
 #include "tests/mocks/engine/memoryscreen.h"
+#include "tests/mocks/engine/mockgameclock.h"
 #include "tests/mocks/engine/mockrawinput.h"
 #include "tests/mocks/engine/podfixture.h"
+#include "tests/mocks/platform/mockclipboard.h"
 #include "tests/mocks/platform/mockclock.h"
 #include "tests/mocks/platform/mockrenderer.h"
 
@@ -36,15 +38,14 @@ using ::testing::StrEq;
 using ::testing::ThrowsMessage;
 
 TEST(CEditorTools, PublicInterface) {
-    static_assert(std::is_constructible_v<CEditorTools, engine::C2d &, engine::CMatrix &,
-                                          engine::C3d &, engine::IScreenDevice &,
-                                          engine::CSpecial &, engine::CKeys &, platform::IClock &>);
+    static_assert(std::is_constructible_v<CEditorTools, const SEditorToolsOwners &>);
+    static_assert(!std::is_convertible_v<const SEditorToolsOwners &, CEditorTools>);
     static_assert(std::is_same_v<decltype(&CEditorTools::showMessage),
                                  void (CEditorTools::*)(std::string_view)>);
     static_assert(std::is_same_v<decltype(&CEditorTools::showWarning),
                                  void (CEditorTools::*)(std::string_view)>);
-    static_assert(
-        std::is_same_v<decltype(&CEditorTools::showError), void (CEditorTools::*)(char *, ...)>);
+    static_assert(std::is_same_v<decltype(&CEditorTools::showError),
+                                 void (CEditorTools::*)(std::string_view)>);
     static_assert(std::is_same_v<decltype(&CEditorTools::displayCenteredStatusMessage),
                                  void (CEditorTools::*)(char *, ...)>);
     static_assert(
@@ -77,14 +78,16 @@ TEST(CEditorTools, PublicInterface) {
         std::is_same_v<decltype(&CEditorTools::popWindowState), void (CEditorTools::*)()>);
     static_assert(
         std::is_same_v<decltype(&CEditorTools::paintCurrentWindow), void (CEditorTools::*)()>);
-    static_assert(std::is_same_v<decltype(&CEditorTools::getTimeCycledColorByte),
-                                 std::uint32_t (CEditorTools::*)()>);
     static_assert(
-        std::is_same_v<decltype(&CEditorTools::drawMousePointer), void (CEditorTools::*)(int)>);
+        std::is_same_v<decltype(&CEditorTools::getTimeCycledColorByte), int (CEditorTools::*)()>);
+    static_assert(
+        std::is_same_v<decltype(&CEditorTools::drawMousePointer), void (CEditorTools::*)(bool)>);
+    static_assert(std::is_same_v<decltype(&CEditorTools::setMousePointerType),
+                                 void (CEditorTools::*)(CEditorTools::EMouseCursorType, int, int)>);
     static_assert(
         std::is_same_v<decltype(&CEditorTools::getClipboardText), char *(CEditorTools::*)()>);
-    static_assert(
-        std::is_same_v<decltype(&CEditorTools::setClipboardText), void (CEditorTools::*)(char *)>);
+    static_assert(std::is_same_v<decltype(&CEditorTools::setClipboardText),
+                                 void (CEditorTools::*)(std::string_view)>);
     static_assert(std::is_same_v<decltype(&CEditorTools::draw3DAxisLabels),
                                  void (CEditorTools::*)(float, int)>);
     static_assert(std::is_same_v<decltype(&CEditorTools::draw3DAxisLabelsAt),
@@ -134,7 +137,18 @@ protected:
     engine::CFontColors colors_;
     engine::CBitFont font_{dosio_, screen_, two_d_, three_d_, colors_};
     NiceMock<platform::MockClock> clock_;
-    CEditorTools editor_tools_{two_d_, matrix_, three_d_, screen_, special_, keys_, clock_};
+    NiceMock<engine::MockGameClock> game_clock_;
+    NiceMock<platform::MockClipboard> clipboard_;
+    CEditorTools editor_tools_{{.two_d = two_d_,
+                                .matrix = matrix_,
+                                .three_d = three_d_,
+                                .screen = screen_,
+                                .special = special_,
+                                .keys = keys_,
+                                .raw_input = raw_input_,
+                                .game_clock = game_clock_,
+                                .clock = clock_,
+                                .clipboard = clipboard_}};
 };
 
 TEST_F(CEditorToolsTest, WithoutAnEditorFontEveryDialogIsFatal) {
@@ -276,6 +290,21 @@ TEST_F(CEditorToolsTest, AMessageIsDrawnInTheWindowFontColourAndWaitsForAKey) {
     editor_tools_.showMessage("!");
     EXPECT_EQ(screen_.swaps, 2);
     EXPECT_EQ(editor_tools_.getWindowCount(), 0U);
+}
+
+TEST_F(CEditorToolsTest, AnErrorIsDrawnInTheWarningColourAndWaitsForAKey) {
+    EXPECT_CALL(raw_input_, getNextKeypress).WillOnce([&](engine::IScreenDevice &) {
+        EXPECT_EQ(screen_.pixel(63, 47), 0xffffffU);
+        return 'x';
+    });
+    editor_tools_.showError("!");
+    EXPECT_EQ(screen_.swaps, 2);
+    EXPECT_EQ(editor_tools_.getWindowCount(), 0U);
+}
+
+TEST_F(CEditorToolsTest, TextIsCopiedToTheClipboard) {
+    EXPECT_CALL(clipboard_, setClipboardText(std::string_view("a\nb\n")));
+    editor_tools_.setClipboardText("a\nb\n");
 }
 
 // A progress window on the 128x96 screen, in a font of the digits and ':' a pixel each, whose

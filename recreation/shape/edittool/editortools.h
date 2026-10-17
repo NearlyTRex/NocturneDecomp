@@ -15,6 +15,20 @@
 
 namespace nocturne::shape {
 
+// What the dialogs draw with, wait on, read the mouse and the clocks from, and copy to.
+struct SEditorToolsOwners {
+    engine::C2d &two_d;
+    engine::CMatrix &matrix;
+    engine::C3d &three_d;
+    engine::IScreenDevice &screen;
+    engine::CSpecial &special;
+    engine::CKeys &keys;
+    engine::IRawInput &raw_input;
+    engine::IGameClock &game_clock;
+    platform::IClock &clock;
+    platform::IClipboard &clipboard;
+};
+
 // The dialog layer: a stack of modal windows drawn over whatever the screen holds, each saving
 // the pixels under it and the clip it narrowed, in the editor font. Everything is measured and
 // drawn at the HUD scale.
@@ -25,9 +39,10 @@ public:
     // A window that doesn't save the screen under it.
     static constexpr std::uint32_t kNoBackup = 1;
 
-    CEditorTools(engine::C2d &two_d, engine::CMatrix &matrix, engine::C3d &three_d,
-                 engine::IScreenDevice &screen, engine::CSpecial &special, engine::CKeys &keys,
-                 platform::IClock &clock);
+    // The mouse pointer's shapes: a cross, an I-beam, and a cross turned on its diagonals.
+    enum class EMouseCursorType : std::uint8_t { Cross, IBeam, Diagonal };
+
+    explicit CEditorTools(const SEditorToolsOwners &owners);
     CEditorTools(const CEditorTools &) = delete;
     CEditorTools &operator=(const CEditorTools &) = delete;
     CEditorTools(CEditorTools &&) = delete;
@@ -42,7 +57,8 @@ public:
     void showMessage(std::string_view message);
     // A box titled "Warning" holding the message, until a key is pressed.
     void showWarning(std::string_view message);
-    void showError(char *format, ...);
+    // A box titled "Error" holding the message, until a key is pressed.
+    void showError(std::string_view message);
     void displayCenteredStatusMessage(char *format, ...);
     int showFileSelectionDialog(char *dialog_title, char *search_directory, char *file_pattern,
                                 char *output_filename, std::uint32_t flags);
@@ -75,10 +91,17 @@ public:
     void popWindowState();
     // Draws the top window: its frame, then its title over a rule.
     void paintCurrentWindow();
-    std::uint32_t getTimeCycledColorByte();
-    void drawMousePointer(int use_clipping);
+    // Black, white, green and magenta in turn, each for an eighteenth of a second.
+    [[nodiscard]] int getTimeCycledColorByte();
+    // The pointer at the mouse in the cycling colour, which it leaves as the line colour, kept
+    // inside the clip when use_clipping is set.
+    void drawMousePointer(bool use_clipping);
+    // The pointer's shape and size; a size below 1 takes the default. The crosses are 11 tall and
+    // as wide as looks square on the screen, an I-beam 11 tall and half as wide. The crosses are
+    // rounded up to odd both ways, an I-beam only across.
+    void setMousePointerType(EMouseCursorType cursor_type, int height, int width);
     char *getClipboardText();
-    void setClipboardText(char *text_data);
+    void setClipboardText(std::string_view text_data);
     void draw3DAxisLabels(float scale_factor, int text_color);
     void draw3DAxisLabelsAt(float scale_factor, int text_color, common::CVector3f *world_position,
                             common::UOrientationVector *orientation);
@@ -115,6 +138,10 @@ private:
     void drawTimeRemaining(float current_progress, float total_progress, double elapsed);
     void drawCentredLine(std::string_view text, int y, int color);
     [[nodiscard]] double getSeconds() const;
+    void plotPointerPixel(int x, int y, bool use_clipping);
+    void drawCrossPointer(int x, int y, bool use_clipping);
+    void drawIBeamPointer(int x, int y, bool use_clipping);
+    void drawDiagonalPointer(int x, int y, bool use_clipping);
     void pullExternalFrame();
 
     engine::C2d &two_d_;
@@ -123,13 +150,19 @@ private:
     engine::IScreenDevice &screen_;
     engine::CSpecial &special_;
     engine::CKeys &keys_;
+    engine::IRawInput &raw_input_;
+    engine::IGameClock &game_clock_;
     platform::IClock &clock_;
+    platform::IClipboard &clipboard_;
     engine::CBitFont *editor_font_ = nullptr;
     int editor_font_max_char_width_ = 0;
     // The height of a 'j'.
     int editor_font_line_height_ = 0;
     std::array<SWindow, kMaxWindows> window_stack_;
     std::size_t window_stack_count_ = 0;
+    EMouseCursorType mouse_cursor_type_ = EMouseCursorType::Cross;
+    int cursor_size_horizontal_ = 9;
+    int cursor_size_vertical_ = 9;
     int window_content_color_ = 0;
     int window_border_highlight_color_ = 0;
     int title_bar_color_ = 0;

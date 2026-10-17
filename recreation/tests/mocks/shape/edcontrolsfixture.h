@@ -16,6 +16,7 @@
 #include "tests/mocks/engine/mockgameclock.h"
 #include "tests/mocks/engine/mockrawinput.h"
 #include "tests/mocks/engine/podfixture.h"
+#include "tests/mocks/platform/mockclipboard.h"
 #include "tests/mocks/platform/mockclock.h"
 #include "tests/mocks/platform/mockrenderer.h"
 
@@ -78,8 +79,18 @@ protected:
     engine::CFontColors colors_;
     engine::CBitFont font_{dosio_, screen_, two_d_, three_d_, colors_};
     ::testing::NiceMock<platform::MockClock> clock_;
-    CEditorTools editor_tools_{two_d_, matrix_, three_d_, screen_, special_, keys_, clock_};
     ::testing::NiceMock<engine::MockGameClock> game_clock_;
+    ::testing::NiceMock<platform::MockClipboard> clipboard_;
+    CEditorTools editor_tools_{{.two_d = two_d_,
+                                .matrix = matrix_,
+                                .three_d = three_d_,
+                                .screen = screen_,
+                                .special = special_,
+                                .keys = keys_,
+                                .raw_input = raw_input_,
+                                .game_clock = game_clock_,
+                                .clock = clock_,
+                                .clipboard = clipboard_}};
     CEdControls controls_{SEdControlsOwners{.two_d = two_d_,
                                             .screen = screen_,
                                             .raw_input = raw_input_,

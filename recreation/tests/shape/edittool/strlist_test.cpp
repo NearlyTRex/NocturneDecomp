@@ -4,11 +4,14 @@
 #include "shape/edittool/strlist.h"
 #include "tests/mocks/engine/podfixture.h"
 #include "tests/mocks/engine/podimage.h"
+#include "tests/mocks/shape/edcontrolsfixture.h"
 #include "tests/mocks/shape/strlistitems.h"
 
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include <algorithm>
+#include <ctime>
 #include <initializer_list>
 #include <string>
 #include <string_view>
@@ -47,12 +50,15 @@ TEST(CStrList, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CStrList::getStringAt),
                                  const std::string &(CStrList::*)(int) const>);
     static_assert(
-        std::is_same_v<decltype(&CStrList::getFieldAt), void (CStrList::*)(char *, int, int)>);
+        std::is_same_v<decltype(&CStrList::getFieldAt), std::string (CStrList::*)(int, int) const>);
     static_assert(
         std::is_same_v<decltype(&CStrList::findString), int (CStrList::*)(std::string_view) const>);
-    static_assert(std::is_same_v<decltype(&CStrList::copyToClipboard), void (CStrList::*)()>);
+    static_assert(std::is_same_v<decltype(&CStrList::copyToClipboard),
+                                 void (CStrList::*)(CEditorTools &) const>);
     static_assert(std::is_same_v<decltype(&CStrList::populateFromFileSearch),
-                                 void (CStrList::*)(char *, char *)>);
+                                 void (CStrList::*)(engine::CPod *, platform::IFileSystem &,
+                                                    const CStrList::LocalTime &, std::string_view,
+                                                    std::string_view)>);
     static_assert(std::is_same_v<decltype(&CStrList::populateFromFilesNoDuplicates),
                                  void (CStrList::*)(engine::CPod *, platform::IFileSystem &,
                                                     std::string_view, std::string_view)>);
@@ -155,22 +161,100 @@ TEST(CStrList, ClearEmptiesTheList) {
     EXPECT_EQ(list.getItemCount(), 0);
 }
 
+TEST(CStrList, SortAllOrdersTheWholeList) {
+    CStrList list = listOf({"c", "A", "b"});
+    list.sortAll();
+    EXPECT_THAT(getItems(list), ElementsAre("A", "b", "c"));
+}
+
+TEST(CStrList, AFieldIsTheTextBetweenTabs) {
+    const CStrList list = listOf({"a", "x\tyy\t\tz"});
+    EXPECT_EQ(list.getFieldAt(1, 0), "x");
+    EXPECT_EQ(list.getFieldAt(1, 1), "yy");
+    EXPECT_EQ(list.getFieldAt(1, 2), "");
+    EXPECT_EQ(list.getFieldAt(1, 3), "z");
+    EXPECT_EQ(list.getFieldAt(0, 0), "a");
+}
+
+TEST(CStrList, PastTheLastFieldIsEmptyAndBeforeTheFirstIsTheFirst) {
+    const CStrList list = listOf({"x\ty"});
+    EXPECT_EQ(list.getFieldAt(0, 2), "");
+    EXPECT_EQ(list.getFieldAt(0, -1), "x");
+}
+
+class CStrListClipboardTest : public CEdControlsFixture {};
+
+TEST_F(CStrListClipboardTest, EveryStringGoesOnTheClipboardEndingInANewline) {
+    EXPECT_CALL(clipboard_, setClipboardText(std::string_view("a\nbb\n")));
+    listOf({"a", "bb"}).copyToClipboard(editor_tools_);
+}
+
+TEST_F(CStrListClipboardTest, AnEmptyListClearsTheClipboard) {
+    EXPECT_CALL(clipboard_, setClipboardText(std::string_view("")));
+    CStrList().copyToClipboard(editor_tools_);
+}
+
 // sound\door.wav and sound\rain.wav in a pod, and RAIN.WAV and thunder.wav on disk.
 class CStrListFilesTest : public engine::CPodFixture {
 protected:
     CStrListFilesTest() {
-        givenFile("ACT1.POD", engine::makePod2("", {{.name = "sound\\door.wav", .data = "D"},
-                                                    {.name = "sound\\rain.wav", .data = "R"},
-                                                    {.name = "music\\door.wav", .data = "M"}}));
+        givenFile("ACT1.POD",
+                  engine::makePod2("", {{.name = "sound\\door.wav", .data = "D", .timestamp = 0},
+                                        {.name = "sound\\rain.wav", .data = "RR", .timestamp = 13},
+                                        {.name = "music\\door.wav", .data = "M"}}));
         pod_.mount("ACT1.POD");
         ON_CALL(file_system_, findFiles(std::string_view("sound\\*.wav")))
-            .WillByDefault(Return(
-                std::vector<platform::SFileInfo>{{.name = "RAIN.WAV"}, {.name = "thunder.wav"}}));
+            .WillByDefault(Return(std::vector<platform::SFileInfo>{
+                {.name = "RAIN.WAV", .size = 7, .modified = 1},
+                {.name = "thunder.wav", .size = 12345, .modified = 23}}));
+    }
+
+    // 3 October 1999, at the hour the timestamp gives.
+    static std::tm localTime(std::time_t timestamp) {
+        std::tm time{};
+        time.tm_year = 99;
+        time.tm_mon = 9;
+        time.tm_mday = 3;
+        time.tm_hour = static_cast<int>(timestamp);
+        time.tm_min = 5;
+        time.tm_sec = 9;
+        return time;
     }
 
     engine::CPod pod_{file_system_, dosio_};
     CStrList list_;
 };
+
+TEST_F(CStrListFilesTest, AFileSearchListsARecordPerNameInOrderThePodsFirst) {
+    list_.populateFromFileSearch(&pod_, file_system_, &localTime, "sound", "*.wav");
+    EXPECT_THAT(getItems(list_), ElementsAre("DOOR\tWAV\t1\t10/03/99 12:05:09 AM\tACT1.POD",
+                                             "RAIN\tWAV\t2\t10/03/99 01:05:09 PM\tACT1.POD",
+                                             "THUNDER\tWAV\t12345\t10/03/99 11:05:09 PM\t"));
+}
+
+TEST_F(CStrListFilesTest, AFileSearchKeepsTheListInOrderOfFileName) {
+    EXPECT_CALL(file_system_, findFiles(std::string_view("*.txt")))
+        .WillOnce(Return(std::vector<platform::SFileInfo>{
+            {.name = "readme"}, {.name = "b.txt"}, {.name = "c.txt"}, {.name = "a.txt"}}));
+    list_.populateFromFileSearch(nullptr, file_system_, &localTime, "", "*.txt");
+    ASSERT_EQ(list_.getItemCount(), 4);
+    EXPECT_EQ(list_.getFieldAt(0, 0), "A");
+    EXPECT_EQ(list_.getFieldAt(1, 0), "B");
+    EXPECT_EQ(list_.getFieldAt(2, 0), "C");
+    EXPECT_EQ(list_.getStringAt(3), "README\t\t0\t10/03/99 12:05:09 AM\t");
+}
+
+// The original's sscanf read back an empty name for ".wav", so the disk's was listed again.
+TEST_F(CStrListFilesTest, AFileWithOnlyAnExtensionIsListedOnce) {
+    givenFile("ACT2.POD", engine::makePod2("", {{.name = "sound\\.wav", .data = "W"}}));
+    pod_.mount("ACT2.POD");
+    EXPECT_CALL(file_system_, findFiles(std::string_view("sound\\*.wav")))
+        .WillOnce(Return(std::vector<platform::SFileInfo>{{.name = ".WAV"}}));
+    list_.populateFromFileSearch(&pod_, file_system_, &localTime, "sound", "*.wav");
+    EXPECT_EQ(std::ranges::count_if(getItems(list_),
+                                    [](const std::string &item) { return item.starts_with("\t"); }),
+              1);
+}
 
 TEST_F(CStrListFilesTest, ThePodsNamesComeFirstAndNoNameTwice) {
     list_.populateFromFilesNoDuplicates(&pod_, file_system_, "sound", "*.wav");

@@ -149,8 +149,16 @@ private:
     engine::SCurrentTexture current_texture_;
     engine::CSpecial special_{renderer_, screen_, two_d_, matrix_, three_d_, current_texture_};
     engine::CKeys keys_{winrun_, screen_};
-    nocturne::shape::CEditorTools editor_tools_{two_d_,   matrix_, three_d_, screen_,
-                                                special_, keys_,   clock_};
+    nocturne::shape::CEditorTools editor_tools_{{.two_d = two_d_,
+                                                 .matrix = matrix_,
+                                                 .three_d = three_d_,
+                                                 .screen = screen_,
+                                                 .special = special_,
+                                                 .keys = keys_,
+                                                 .raw_input = winrun_,
+                                                 .game_clock = winrun_,
+                                                 .clock = clock_,
+                                                 .clipboard = clipboard_}};
     engine::CFontColors colors_;
     nocturne::support::CNewMsg messages_{dosio_};
     core::CDFont fonts_{dosio_,  screen_,   two_d_,    three_d_,

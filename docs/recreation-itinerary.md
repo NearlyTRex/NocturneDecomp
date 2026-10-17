@@ -21,7 +21,7 @@ functions don't count as done. Sizes are in instructions.
 | 5 | `showCalibrationTest`, `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 50 | 4789 | 31 | 3 | 62.0% |
 | 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 20 | 5 | 80.0% |
 | 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 68 | 31 | 56.6% |
-| 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 35 | 1 | 55.5% |
+| 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 44 | 2 | 69.8% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 0 | 0 | 0.0% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 17 | 52 | 5565 | 1 | 0 | 1.9% |
 | 11 | `CScript::loadScript` | 63 | 579 | 67400 | 6 | 1 | 1.0% |
@@ -35,7 +35,7 @@ functions don't count as done. Sizes are in instructions.
 | 19 | Not reached from startup: `engine/` | 23 | 279 | 19702 | 20 | 1 | 7.1% |
 | 20 | Not reached from startup: `support/` | 2 | 24 | 593 | 3 | 0 | 12.5% |
 | 21 | Not reached from startup: `cockpit/` | 4 | 178 | 11527 | 0 | 0 | 0.0% |
-| 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 3 | 1 | 7.1% |
+| 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 4 | 1 | 9.5% |
 | 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 3 | 0 | 1.0% |
 | 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 1 | 0 | 0.3% |
 | 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 3 | 0 | 1.0% |
@@ -46,7 +46,7 @@ functions don't count as done. Sizes are in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 2 | 0 | 0.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 | 0 | 3.6% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4489** | **402860** | **499** | **51** | **11.1%** |
+| | **All** | | **4489** | **402860** | **509** | **52** | **11.3%** |
 
 ## Step 0: Math value types
 
@@ -865,28 +865,29 @@ functions don't count as done. Sizes are in instructions.
 - class `CBitFont`
   - [x] `getCharYOffset` 0x004d0200 (12)
 
-### `shape/edittool.cpp` (54 functions, 4786 instructions, 26 done, 1 partial)
+### `shape/edittool.cpp` (54 functions, 4786 instructions, 35 done, 2 partial)
 - class `CEditorTools`
-  - [ ] `showError` 0x0049e740 (22)
-  - [ ] `setClipboardText` 0x004a1bc0 (81)
-  - [ ] `getTimeCycledColorByte` 0x004a1330 (25)
-  - [ ] `drawMousePointer` 0x004a1380 (501)
+  - [x] `showError` 0x0049e740 (22)
+  - [~] `setClipboardText` 0x004a1bc0 (81)
+    - deferred: the copy of the text getClipboardText falls back on when the clipboard holds none, with getClipboardText
+  - [x] `getTimeCycledColorByte` 0x004a1330 (25)
+  - [x] `drawMousePointer` 0x004a1380 (501)
   - [ ] `showFileSelectionDialog` 0x0049f270 (138)
 - class `CStrList`
-  - [ ] `sortAll` 0x004a2ec0 (10)
-  - [ ] `getFieldAt` 0x004a2f80 (65)
-  - [ ] `insertSortedFileRecord` 0x004a3360 (163)
-  - [ ] `populateFromFileSearch` 0x004a35b0 (144)
+  - [x] `sortAll` 0x004a2ec0 (10)
+  - [x] `getFieldAt` 0x004a2f80 (65)
+  - [x] `insertSortedFileRecord` 0x004a3360 (163)
+  - [x] `populateFromFileSearch` 0x004a35b0 (144)
   - [x] `ctor` 0x004a2a20 (6)
   - [x] `clear` 0x004a2b10 (41)
-  - [ ] `allocate` 0x004a2cc0 (57)
+  - [x] `allocate` 0x004a2cc0 (57)
   - [x] `insert` 0x004a2bc0 (89)
   - [x] `remove` 0x004a2e00 (65)
   - [~] `sort` 0x004a2f00 (36)
     - unverified: the order left among strings equal ignoring case, which the original's Watcom _qsort decides, by running its _qsort on such a list in the machine-code oracle
   - [x] `swap` 0x004a31f0 (50)
   - [x] `dtor` 0x004a2a40 (29)
-  - [ ] `copyToClipboard` 0x004a3270 (90)
+  - [x] `copyToClipboard` 0x004a3270 (90)
 - class `CEdScrollBar`
   - [x] `ctor` 0x004a5ae0 (12)
   - [x] `clearActiveButtonIfMatch` 0x004a5b40 (7)
@@ -3317,7 +3318,7 @@ functions don't count as done. Sizes are in instructions.
 
 ## Step 22: Not reached from startup: `shape/`
 
-### `shape/edittool.cpp` (37 functions, 2804 instructions, 3 done, 1 partial)
+### `shape/edittool.cpp` (37 functions, 2804 instructions, 4 done, 1 partial)
 - class `CEditorTools`
   - [x] `init` 0x0049e020 (57)
   - [x] `ctor` 0x0049df80 (15)
@@ -3332,7 +3333,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `drawCenteredWireframeCube` 0x004a2510 (43)
   - [ ] `drawPixelLine` 0x004a2660 (142)
   - [ ] `draw3DProjectedLine` 0x004a28a0 (39)
-  - [ ] `setMousePointerType` 0x004a2920 (75)
+  - [x] `setMousePointerType` 0x004a2920 (75)
 - free functions
   - [~] `staticInit` 0x0049d170 (7)
     - deferred: the twelve colours retail's init sets for CInputString::draw, CPickList::renderDialog, displayCenteredStatusMessage, showFilenameInputDialog and draw3DAxisLabels, with those functions

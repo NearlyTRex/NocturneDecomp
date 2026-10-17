@@ -28,6 +28,7 @@
 #include "tests/mocks/engine/mockgameclock.h"
 #include "tests/mocks/engine/mockrawinput.h"
 #include "tests/mocks/engine/podfixture.h"
+#include "tests/mocks/platform/mockclipboard.h"
 #include "tests/mocks/platform/mockclock.h"
 #include "tests/mocks/platform/mockosfont.h"
 #include "tests/mocks/platform/mockosfontfactory.h"
@@ -187,7 +188,17 @@ protected:
     engine::CSpecial special_{renderer_, screen_, two_d_, matrix_, three_d_, current_texture_};
     engine::CKeys keys_{raw_input_, screen_};
     NiceMock<platform::MockClock> clock_;
-    shape::CEditorTools editor_tools_{two_d_, matrix_, three_d_, screen_, special_, keys_, clock_};
+    NiceMock<platform::MockClipboard> clipboard_;
+    shape::CEditorTools editor_tools_{{.two_d = two_d_,
+                                       .matrix = matrix_,
+                                       .three_d = three_d_,
+                                       .screen = screen_,
+                                       .special = special_,
+                                       .keys = keys_,
+                                       .raw_input = raw_input_,
+                                       .game_clock = game_clock_,
+                                       .clock = clock_,
+                                       .clipboard = clipboard_}};
     engine::CFontColors colors_;
     NiceMock<platform::MockOsFontFactory> os_fonts_;
     support::CNewMsg messages_{dosio_};
