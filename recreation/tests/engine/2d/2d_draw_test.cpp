@@ -72,6 +72,57 @@ TEST_P(C2dDrawTest, AHorizontalLineIsClippedAtBothEnds) {
                           "........\n");
 }
 
+// The clip is rows 1 to 4; a pixel only has to be on the screen.
+TEST_P(C2dDrawTest, APixelIsBoundedByTheScreenNotTheClip) {
+    two_d_.setActiveRenderColor(9);
+    two_d_.plotPixel(0, 0);
+    two_d_.plotPixel(7, 5);
+    two_d_.plotPixel(8, 0);
+    two_d_.plotPixel(-1, 2);
+    two_d_.plotPixel(3, 6);
+    two_d_.plotPixel(3, -1);
+    EXPECT_EQ(picture(9), "#.......\n"
+                          "........\n"
+                          "........\n"
+                          "........\n"
+                          "........\n"
+                          ".......#\n");
+}
+
+// The original's error steps by the run rather than twice it, so the first rise comes early.
+TEST_P(C2dDrawTest, AShallowLineStepsAcross) {
+    two_d_.setActiveRenderColor(9);
+    two_d_.drawLine(0, 0, 7, 2);
+    EXPECT_EQ(picture(9), "###.....\n"
+                          "...####.\n"
+                          ".......#\n"
+                          "........\n"
+                          "........\n"
+                          "........\n");
+}
+
+TEST_P(C2dDrawTest, ASteepLineIsDrawnFromItsUpperEndDown) {
+    two_d_.setActiveRenderColor(9);
+    two_d_.drawLine(2, 5, 1, 0);
+    EXPECT_EQ(picture(9), ".#......\n"
+                          ".#......\n"
+                          ".#......\n"
+                          ".#......\n"
+                          ".#......\n"
+                          "..#.....\n");
+}
+
+TEST_P(C2dDrawTest, ALineRunningLeftStepsBackAcross) {
+    two_d_.setActiveRenderColor(9);
+    two_d_.drawLine(7, 0, 5, 1);
+    EXPECT_EQ(picture(9), "......##\n"
+                          ".....#..\n"
+                          "........\n"
+                          "........\n"
+                          "........\n"
+                          "........\n");
+}
+
 TEST_P(C2dDrawTest, AHorizontalLineOutsideTheClipDrawsNothing) {
     two_d_.setActiveRenderColor(9);
     two_d_.drawHLine(0, 0, 7);
@@ -165,6 +216,14 @@ TEST_F(C2dStateTest, LinesAtADepthWithNoColourTableAreFatal) {
                 ThrowsMessage<common::CFatalError>(StrEq("hLine - invalid bitsPerPixel")));
     EXPECT_THAT([this] { two_d_.drawVLine(0, 0, 3); },
                 ThrowsMessage<common::CFatalError>(StrEq("vLine - invalid bitsPerPixel")));
+}
+
+TEST_F(C2dStateTest, APixelAtADepthWithNoColourTableIsLeftOut) {
+    ON_CALL(screen_, getBitsPerPixel).WillByDefault(Return(24));
+    ON_CALL(screen_, getWindowWidth).WillByDefault(Return(10));
+    ON_CALL(screen_, getWindowHeight).WillByDefault(Return(10));
+    EXPECT_CALL(screen_, getColorTable32).Times(0);
+    two_d_.plotPixel(1, 1);
 }
 
 TEST_F(C2dStateTest, ClearingInputDropsItAll) {

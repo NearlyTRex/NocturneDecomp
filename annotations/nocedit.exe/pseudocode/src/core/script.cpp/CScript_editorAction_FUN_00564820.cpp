@@ -72,14 +72,14 @@ void __cdecl core_script_cpp_CScript_editorAction_FUN_00564820(CScript *this_ptr
     g_CurrentEditingLine = g_CurrentEditingLine + 1;
     break;
   case ACTION_TYPE_PAGE_UP:
-    g_CurrentEditingLine = g_CurrentEditingLine - g_ScriptEditorVScrollBar.max_value;
+    g_CurrentEditingLine = g_CurrentEditingLine - g_ScriptEditorVScrollBar.page_size;
     g_ScriptEditorVScrollBar.scroll_position =
-         g_ScriptEditorVScrollBar.scroll_position - g_ScriptEditorVScrollBar.max_value;
+         g_ScriptEditorVScrollBar.scroll_position - g_ScriptEditorVScrollBar.page_size;
     break;
   case ACTION_TYPE_PAGE_DOWN:
-    g_CurrentEditingLine = g_CurrentEditingLine + g_ScriptEditorVScrollBar.max_value;
+    g_CurrentEditingLine = g_CurrentEditingLine + g_ScriptEditorVScrollBar.page_size;
     g_ScriptEditorVScrollBar.scroll_position =
-         g_ScriptEditorVScrollBar.scroll_position + g_ScriptEditorVScrollBar.max_value;
+         g_ScriptEditorVScrollBar.scroll_position + g_ScriptEditorVScrollBar.page_size;
     break;
   case ACTION_TYPE_HOME:
     g_CurrentEditingColumn = 0;

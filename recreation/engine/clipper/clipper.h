@@ -1,6 +1,10 @@
 #pragma once
 
+#include "engine/fwd.h"
+#include "engine/polygonstate.h"
 #include "platform/fwd.h"
+
+#include <span>
 
 namespace nocturne::engine {
 
@@ -32,7 +36,19 @@ void interpolateVertexTopClipAdvanced(const platform::SRenderVertex &v1,
 void interpolateVertexBottomClipAdvanced(const platform::SRenderVertex &v1,
                                          const platform::SRenderVertex &v2,
                                          platform::SRenderVertex &output);
-void clipAndRasterize(int vertex_count, int *vertex_indices);
-void clipPolygonToViewport(int vertex_count, int *vertex_indices);
+// Both rasterise the polygon the indices pick as it is while vertex processing is off. Otherwise
+// one wholly past a side is dropped, one wholly in view may go to the hardware renderer, and one
+// across a side is clipped to the view's four sides and pulled onto it.
+
+// The far plane clips too, and the hardware renderer takes a polygon only with textures on.
+void clipAndRasterize(std::span<platform::SRenderVertex> vertex_buffer,
+                      std::span<const int> vertex_indices, const SPolygonState &state, CPrim &prim,
+                      CSpecial &special, const C3d &three_d, const SCurrentTexture &texture);
+// Clips green and blue too, for the advanced rasterisers, and the hardware renderer takes a
+// polygon in view whether textures are on or not.
+void clipPolygonToViewport(std::span<platform::SRenderVertex> vertex_buffer,
+                           std::span<const int> vertex_indices, const SPolygonState &state,
+                           CPrim &prim, CSpecial &special, const C3d &three_d,
+                           const SCurrentTexture &texture);
 
 } // namespace nocturne::engine

@@ -48,8 +48,15 @@ TEST(CVector3f, EqualsComparesEveryComponentExactly) {
     EXPECT_FALSE(a.equals({.x = 1.0F, .y = 2.5F, .z = 3.0F}));
     EXPECT_FALSE(a.equals({.x = 1.0F, .y = 2.0F, .z = 3.5F}));
     EXPECT_TRUE((CVector3f{.x = -0.0F}).equals(CVector3f{}));
+}
+
+// The original's FCOMP and JZ take an unordered compare as equal.
+TEST(CVector3f, ANaNOnEitherSideCountsAsEqual) {
     const float nan = std::numeric_limits<float>::quiet_NaN();
-    EXPECT_FALSE((CVector3f{.x = nan}).equals(CVector3f{.x = nan}));
+    EXPECT_TRUE((CVector3f{.x = nan}).equals(CVector3f{.x = 1.0F}));
+    EXPECT_TRUE((CVector3f{.y = 1.0F}).equals(CVector3f{.y = nan}));
+    EXPECT_TRUE((CVector3f{.z = nan}).equals(CVector3f{.z = nan}));
+    EXPECT_FALSE((CVector3f{.x = nan, .y = 1.0F}).equals(CVector3f{.x = nan}));
 }
 
 } // namespace

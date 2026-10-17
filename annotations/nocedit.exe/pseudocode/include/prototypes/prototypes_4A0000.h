@@ -56,7 +56,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_drawCenteredWireframeCube_FUN_004a2
 void __cdecl shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004a2590(CEditorTools *this_ptr,char *output_buffer);
 void __cdecl shape_edittool_cpp_CEditorTools_drawPixelLine_FUN_004a2660(CEditorTools *this_ptr,int start_x,int start_y,int length);
 void __cdecl shape_edittool_cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0(CEditorTools *this_ptr,CVector3f *world_point,int line_length);
-void __cdecl shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a2920(CEditorTools *this_ptr,int cursor_type,int width,int height);
+void __cdecl shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a2920(CEditorTools *this_ptr,int cursor_type,int height,int width);
 CStrList * __cdecl shape_edittool_cpp_CStrList_ctor_FUN_004a2a20(CStrList *this_ptr);
 CStrList * __cdecl shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(CStrList *this_ptr,uint flags);
 CStrList * __cdecl shape_edittool_cpp_CStrList_copy_FUN_004a2a90(CStrList *this_ptr,CStrList *other);
@@ -105,8 +105,8 @@ void __cdecl shape_edittool_cpp_CPickList_remove_FUN_004a56f0(CPickList *this_pt
 void __cdecl shape_edittool_cpp_CPickList_clear_FUN_004a5770(CPickList *this_ptr);
 void __cdecl shape_edittool_cpp_CPickList_sort_FUN_004a57f0(CPickList *this_ptr,int start_index,int end_index);
 void __cdecl shape_edittool_cpp_CPickList_swap_FUN_004a5870(CPickList *this_ptr,int index1,int index2);
-void __cdecl shape_edittool_cpp_draw3DBorder_FUN_004a58f0(int left,int top,int width,int height,int border_style_flag);
-void __cdecl shape_edittool_cpp_draw3DInsetBorder_FUN_004a59a0(int left,int top,int right,int bottom,int inner_y,int style);
+void __cdecl shape_edittool_cpp_draw3DBorder_FUN_004a58f0(int left,int top,int right,int bottom,int pressed);
+void __cdecl shape_edittool_cpp_draw3DInsetBorder_FUN_004a59a0(int left,int top,int right,int bottom,int pressed_offset,int direction);
 CEdScrollBar * __cdecl shape_edittool_cpp_CEdScrollBar_ctor_FUN_004a5ae0(CEdScrollBar *this_ptr);
 CEdScrollBar * __cdecl shape_edittool_cpp_CEdScrollBar_dtor_FUN_004a5b20(CEdScrollBar *this_ptr,uint flags);
 void __cdecl shape_edittool_cpp_CEdScrollBar_clearActiveButtonIfMatch_FUN_004a5b40(CEdScrollBar *this_ptr);

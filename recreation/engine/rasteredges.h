@@ -1,6 +1,7 @@
 #pragma once
 
 #include "common/math/fixed.h"
+#include "engine/polygonstate.h"
 #include "engine/prim/prim.h"
 #include "engine/softwareedge.h"
 #include "platform/rendervertex.h"
@@ -8,10 +9,14 @@
 #include <cstdint>
 #include <functional>
 #include <span>
+#include <vector>
 
-// What the software rasterisers share: the edge slope, the walk down the rows and the vertex
-// preprocessing for the polygon's mode.
+// What the software rasterisers share: the edge slope, the edges a polygon's sides give, the walk
+// down the rows and the vertex preprocessing for the polygon's mode.
 namespace nocturne::engine::raster {
+
+// The first row starts here before any edge lowers it.
+inline constexpr int kFirstRowCeiling = 1200;
 
 [[nodiscard]] inline int getRow(const platform::SRenderVertex &vertex) {
     return vertex.projected_vertex.screen_y >> 16;
@@ -38,6 +43,52 @@ inline void rampEdge(const SEdgeSlope &slope, int from, int to, int &current, in
     current = common::wrappingAdd(from, common::fixedMultiply(slope.rest_of_row, gradient));
 }
 
+[[nodiscard]] std::vector<const platform::SRenderVertex *>
+getCorners(std::span<const platform::SRenderVertex> vertices);
+[[nodiscard]] std::vector<platform::SRenderVertex *>
+getCorners(std::span<platform::SRenderVertex> vertex_buffer, std::span<const int> vertex_indices);
+
+// Whether a triangle faces away under the culling mode; mode 0 keeps every one.
+[[nodiscard]] bool isBackFacing(const platform::SRenderVertex &v0,
+                                const platform::SRenderVertex &v1,
+                                const platform::SRenderVertex &v2, int culling_mode);
+
+// How a polygon's corners split into the triangles culling tests.
+enum class ETriangles : std::uint8_t { Fan, Strip };
+
+// Whether every triangle of the polygon faces away; mode 0 keeps every polygon, and one of fewer
+// than three corners is otherwise dropped.
+[[nodiscard]] bool isBackFacing(std::span<const platform::SRenderVertex *const> corners,
+                                ETriangles triangles, int culling_mode);
+
+// The edges for the sides of a polygon that span a row, and the first row any of them starts on.
+// The original's buffers held 16, as many as the clip can leave.
+struct SEdgeList {
+    std::vector<SSoftwareEdge> edges;
+    int first_row = kFirstRowCeiling;
+};
+
+// Sets an edge's values for the middle of its first row from its top and bottom corners.
+using EdgeRamp = std::function<void(const SEdgeSlope &slope, const platform::SRenderVertex &top,
+                                    const platform::SRenderVertex &bottom, SSoftwareEdge &edge)>;
+
+// An edge for each side between corners on different rows, the last corner joined to the first.
+[[nodiscard]] SEdgeList buildEdges(std::span<const platform::SRenderVertex *const> corners,
+                                   const EdgeRamp &ramp);
+
+enum class EDepthSource : std::uint8_t { Transformed, Reciprocal };
+
+// x, u, v, red, alpha and depth, and green and blue for vertex colour.
+void rampTexturedEdge(const SEdgeSlope &slope, const platform::SRenderVertex &top,
+                      const platform::SRenderVertex &bottom, EDepthSource depth_source,
+                      bool green_blue, SSoftwareEdge &edge);
+void stepTexturedEdge(SSoftwareEdge &edge, bool green_blue);
+
+// x, depth in 24.8, and red when asked.
+void rampDepthEdge(const SEdgeSlope &slope, const platform::SRenderVertex &top,
+                   const platform::SRenderVertex &bottom, bool with_red, SSoftwareEdge &edge);
+void stepDepthEdge(SSoftwareEdge &edge, bool with_red);
+
 using EdgeStepper = std::function<void(SSoftwareEdge &edge)>;
 // Draws a row between the first and second edges found, and says whether to stop.
 using RowDrawer =
@@ -47,6 +98,18 @@ using RowDrawer =
 // takes its place, and with none, or when drawing a row asks to stop, the polygon is done.
 void walkEdges(std::span<SSoftwareEdge> edges, int first_row, int row_limit,
                const EdgeStepper &step_edge, const RowDrawer &draw_row);
+
+// Whether a row's request to stop ends the polygon.
+enum class ERowStop : std::uint8_t { Ignored, Honoured };
+
+// Walks the list's rows through a scanline, the second edge found as its left.
+void walkScanlines(SEdgeList &list, int row_limit, const EdgeStepper &step_edge,
+                   const ScanlineDrawer &draw_scanline, ERowStop stop);
+
+// The depth-only rasteriser zraster's and drender's triangles share: x, and depth in 24.8 less
+// the state's bias, to the polygon's end, and a row may stop it.
+void rasterizeDepthPolygon(std::span<const platform::SRenderVertex *const> corners,
+                           const SPolygonState &state);
 
 inline void preprocessVertices(std::span<platform::SRenderVertex> vertices, int preprocess_mode) {
     switch (preprocess_mode) {

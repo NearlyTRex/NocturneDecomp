@@ -50,6 +50,8 @@ CNewMsg::CNewMsg(const engine::CDosIo &dosio) : dosio_(dosio), os_font_name_(kDe
 
 // A comment line heads each of the three settings, which are the version (0), whether to draw
 // text with an OS font, and that font's quoted name. Then come "key", "text" pairs.
+// unverified: which text a key listed twice returns; the original's exchange sort is not stable
+//   where stable_sort is, so check the shipped message files for repeated keys
 // nocedit 0x00543e40
 void CNewMsg::readMessageFile(std::string_view message_file) {
     const std::optional<std::string> text = dosio_.readFile("", message_file);

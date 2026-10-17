@@ -73,10 +73,37 @@ TEST(CDemonFilter, AScaledLevelPastAByteIsHeldAtTheTopRatherThanWrapping) {
     EXPECT_EQ(at(filter, 2, 2), CDemonFilter::kMaxLevel);
 }
 
+// A level too big for an int is the x87's integer indefinite, whose low byte the original kept.
+TEST(CDemonFilter, ALevelTooBigForAnIntIsDark) {
+    CDemonFilter filter(4, 4);
+    filter.init(1e30F, 0);
+    EXPECT_EQ(at(filter, 2, 2), 0);
+}
+
 TEST(CDemonFilter, ScalingAFilterNeverFilledLeavesItEmpty) {
     CDemonFilter filter(4, 4);
     filter.init(1.0F, 1);
     EXPECT_TRUE(filter.getData().empty());
+}
+
+// The square root and the level are rounded to floats where the original stores them; 32 is what
+// nocedit's own code gives, where float maths throughout gives 31.
+TEST(CDemonFilter, TheFalloffRoundsToFloatsWhereTheOriginalStoresIt) {
+    CDemonFilter filter(6, 6);
+    filter.init(0.75F, 0);
+    constexpr std::size_t kX = 4;
+    constexpr std::size_t kY = 3;
+    EXPECT_EQ(filter.getData()[(kY * 6) + kX], 32);
+}
+
+// A filter one wide divides by its zero half width, which puts every level at the edge.
+TEST(CDemonFilter, AFilterOneWideIsDarkThroughout) {
+    CDemonFilter filter(1, 3);
+    filter.init(1.0F, 0);
+    ASSERT_EQ(filter.getData().size(), 3U);
+    for (const std::uint8_t level : filter.getData()) {
+        EXPECT_EQ(level, 0);
+    }
 }
 
 TEST(CDemonFilter, AFreshSpotReplacesTheLevelsBefore) {

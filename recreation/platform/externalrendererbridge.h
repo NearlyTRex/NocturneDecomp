@@ -16,24 +16,25 @@ struct CExternalRendererBridge {
     int *blue_bit_position = nullptr;
     int *blue_scale_factor = nullptr;
     int *blue_dither_shift = nullptr;
+    // The rest the renderer only reads.
     // 0 blends against the destination, 1 adds to it.
-    int *blend_mode = nullptr;
+    const int *blend_mode = nullptr;
     // A light level, 8.8 biased by one unit.
-    int *current_lighting = nullptr;
+    const int *current_lighting = nullptr;
     // 0..255.
-    int *current_alpha = nullptr;
+    const int *current_alpha = nullptr;
     // Its low byte is the palette index a flat untextured draw takes its colour from.
-    int *console_text_color = nullptr;
+    const int *console_text_color = nullptr;
     // The size the engine is working the selected texture at.
-    int *texture_dimension = nullptr;
+    const int *texture_dimension = nullptr;
     // The draw distance depth is normalised against.
-    int *full_screen_quad_depth = nullptr;
+    const int *full_screen_quad_depth = nullptr;
     // Read as the bilinear filtering switch.
-    int *system_initialized = nullptr;
+    const int *system_initialized = nullptr;
     // 0 puts depth on the reciprocal curve.
-    int *processor_type = nullptr;
+    const int *processor_type = nullptr;
     // Read as the mipmapping switch.
-    int *rendering_quality = nullptr;
+    const int *rendering_quality = nullptr;
 };
 
 } // namespace nocturne::platform

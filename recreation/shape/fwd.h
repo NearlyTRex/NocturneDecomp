@@ -4,11 +4,13 @@ namespace nocturne::shape {
 
 class CEdButton;
 class CEdCheck;
+class CEdControls;
 class CEdScrollBar;
 class CEditorTools;
 class CInputString;
 class CPickList;
 class CSpotView;
 class CStrList;
+struct SEdControlsOwners;
 
 } // namespace nocturne::shape

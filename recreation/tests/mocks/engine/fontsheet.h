@@ -58,6 +58,37 @@ inline std::string makeSheetOfSize(int width, int height, char transparent) {
     return sheet;
 }
 
+// A sheet of the given size whose glyphs, '!' to last, are each a solid block of '#' glyph_width
+// pixels wide and band_height tall, packed left to right into bands; each band's marker row
+// closes the band above.
+inline std::string makeBlockFontSheet(int width, int height, int last, int glyph_width,
+                                      int band_height, char transparent = '\0',
+                                      char marker = '\x7f') {
+    std::string sheet(static_cast<std::size_t>(width) * static_cast<std::size_t>(height),
+                      transparent);
+    const auto at = [&sheet, width](int x, int y) -> char & {
+        return sheet[(static_cast<std::size_t>(y) * static_cast<std::size_t>(width)) +
+                     static_cast<std::size_t>(x)];
+    };
+    int row = 0;
+    int left = 0;
+    for (int c = '!'; c <= last; ++c) {
+        if (left + glyph_width > width) {
+            row += band_height + 1;
+            left = 0;
+        }
+        for (int x = left; x < left + glyph_width; ++x) {
+            at(x, row) = marker;
+            for (int y = row + 1; y <= row + band_height; ++y) {
+                at(x, y) = '#';
+            }
+        }
+        left += glyph_width + 1;
+    }
+    at(0, row + band_height + 1) = marker;
+    return sheet;
+}
+
 // An .act palette: entry i is (red, green, blue) from levels.
 inline std::string makePalette(const std::vector<std::uint8_t> &levels) {
     std::string palette(768, '\0');

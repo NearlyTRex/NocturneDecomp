@@ -12,8 +12,8 @@ void __cdecl core_script_cpp_CScript_updateCursorBounds_FUN_00566910(CScript *th
   int iVar1;
   
   iVar1 = shape_edittool_cpp_CStrList_getItemCount_FUN_004a6ed0(&this_ptr->script_text);
-  g_ScriptEditorVScrollBar.current_value = iVar1 + 2;
-  if (g_ScriptEditorVScrollBar.current_value <= g_CurrentEditingLine) {
+  g_ScriptEditorVScrollBar.item_count = iVar1 + 2;
+  if (g_ScriptEditorVScrollBar.item_count <= g_CurrentEditingLine) {
     g_CurrentEditingLine = iVar1 + 1;
   }
   if (g_CurrentEditingLine < 0) {

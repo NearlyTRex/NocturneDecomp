@@ -52,14 +52,14 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_handleInput_FUN_00476920(CEdScrollB
     else if (iVar1 < this_ptr->track_end) {
       if (iVar1 < this_ptr->thumb_start) {
         _DAT_01bcde28 = 3;
-        this_ptr->scroll_position = this_ptr->scroll_position - this_ptr->max_value;
+        this_ptr->scroll_position = this_ptr->scroll_position - this_ptr->page_size;
       }
       else if (iVar1 < this_ptr->thumb_end) {
         _DAT_01bcde28 = 0;
       }
       else {
         _DAT_01bcde28 = 4;
-        this_ptr->scroll_position = this_ptr->scroll_position + this_ptr->max_value;
+        this_ptr->scroll_position = this_ptr->scroll_position + this_ptr->page_size;
       }
     }
     else {
@@ -98,7 +98,7 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_handleInput_FUN_00476920(CEdScrollB
         break;
       case 3:
         if (iVar1 < this_ptr->thumb_start) {
-          this_ptr->scroll_position = this_ptr->scroll_position - this_ptr->max_value;
+          this_ptr->scroll_position = this_ptr->scroll_position - this_ptr->page_size;
         }
         else {
           DAT_01bd1d94 = DAT_01bd1d94 & 0xfe;
@@ -107,7 +107,7 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_handleInput_FUN_00476920(CEdScrollB
         break;
       case 4:
         if (this_ptr->thumb_end < iVar1) {
-          this_ptr->scroll_position = this_ptr->scroll_position + this_ptr->max_value;
+          this_ptr->scroll_position = this_ptr->scroll_position + this_ptr->page_size;
         }
         else {
           DAT_01bd1d94 = DAT_01bd1d94 & 0xfe;
@@ -148,7 +148,7 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_handleInput_FUN_00476920(CEdScrollB
   }
   iVar2 = iVar2 + _DAT_01bcde40;
   wincore_winrun_cpp_setCursorPosition_FUN_00558d60(iVar3,iVar1);
-  if ((this_ptr->max_value < this_ptr->current_value) && (0 < this_ptr->current_value)) {
+  if ((this_ptr->page_size < this_ptr->item_count) && (0 < this_ptr->item_count)) {
     if (iVar2 == _DAT_01bcde40) {
       this_ptr->scroll_position = _DAT_01bcde3c;
       goto LAB_004769e3;
@@ -157,11 +157,11 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_handleInput_FUN_00476920(CEdScrollB
       iVar1 = this_ptr->thumb_end - this_ptr->thumb_start;
       if (iVar2 + iVar1 < this_ptr->track_end) {
         this_ptr->scroll_position =
-             ((iVar2 - this_ptr->track_start) * (this_ptr->current_value - this_ptr->max_value)) /
+             ((iVar2 - this_ptr->track_start) * (this_ptr->item_count - this_ptr->page_size)) /
              ((this_ptr->track_end - this_ptr->track_start) - iVar1);
       }
       else {
-        this_ptr->scroll_position = this_ptr->current_value - this_ptr->max_value;
+        this_ptr->scroll_position = this_ptr->item_count - this_ptr->page_size;
       }
       goto LAB_004769e3;
     }

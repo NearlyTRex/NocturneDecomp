@@ -25,14 +25,20 @@ void CAlphaBitmap::initPalette() {
 // overhanging both edges ran off the end of each row; and it drew an 8-bit screen as 16-bit.
 // nocedit 0x00410950
 void CAlphaBitmap::display(int x, int y, int alpha) {
+    const int window_width = screen_.getWindowWidth();
+    const int window_height = screen_.getWindowHeight();
+    if (x + width_ < 0 || x >= window_width || y + height_ < 0 || y >= window_height) {
+        return;
+    }
+    // An image touching the screen installs its palette even when none of it is visible.
+    initPalette();
     const int left = std::max(x, 0);
     const int top = std::max(y, 0);
-    const int right = std::min(x + width_, screen_.getWindowWidth());
-    const int bottom = std::min(y + height_, screen_.getWindowHeight());
+    const int right = std::min(x + width_, window_width);
+    const int bottom = std::min(y + height_, window_height);
     if (left >= right || top >= bottom) {
         return;
     }
-    initPalette();
     const int bits_per_pixel = screen_.getBitsPerPixel();
     const std::span<void *> rows = screen_.getScreenRows();
     const auto count = static_cast<std::size_t>(right - left);

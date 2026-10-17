@@ -101,6 +101,19 @@ TEST_F(CSoundTest, FindingTheSoundFilesListsTheWavesThenTheMp3sOnceAndTakesUpThe
                 ElementsAre("door.wav", "theme.mp3"));
 }
 
+TEST_F(CSoundTest, ResettingStopsTheSoundsAndFreesTheSamples) {
+    givenSound("tone.wav", sound::makeConstantWav(100, 0));
+    CSound game_sound(sound_, pod_, file_system_);
+    sound_.initializeSoundDevice();
+    ASSERT_TRUE(sound_.enableSoundSystem());
+    const std::uint32_t handle = sound_.startSfx("tone.wav");
+    ASSERT_NE(handle, 0U);
+    game_sound.reset();
+    EXPECT_FALSE(sound_.isSoundBusy());
+    EXPECT_FALSE(sound_.isSfxPlaying(handle));
+    EXPECT_EQ(sound_.getSoundMemoryStats().free_slots, 64);
+}
+
 TEST_F(CSoundTest, WithNoSoundFilesTheSearchRunsEachTime) {
     CSound game_sound(sound_, pod_, file_system_);
     EXPECT_CALL(file_system_, findFiles).Times(4);

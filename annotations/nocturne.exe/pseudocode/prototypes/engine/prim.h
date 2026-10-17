@@ -47,9 +47,9 @@ void __cdecl replaceWWithDepth(SRenderVertex *vertices,int vertex_count);
 // Address: 004f9a10
 int __cdecl calculateTriangleWindingOrder(SRenderVertex *v0,SRenderVertex *v1,SRenderVertex *v2);
 
-// Original: engine_prim.c_getTriangleWindingFromIndices1_FUN_004f9ad0
+// Original: engine_prim.c_calculateTriangleWindingOrderFromIndices_FUN_004f9ad0
 // Address: 004f9ad0
-int __cdecl getTriangleWindingFromIndices1(SMRGLPrimitiveTriangle *triangle);
+int __cdecl calculateTriangleWindingOrderFromIndices(SMRGLPrimitiveTriangle *triangle);
 
 // Original: engine_prim.c_getTriangleWindingFromIndices2_FUN_004f9bc0
 // Address: 004f9bc0

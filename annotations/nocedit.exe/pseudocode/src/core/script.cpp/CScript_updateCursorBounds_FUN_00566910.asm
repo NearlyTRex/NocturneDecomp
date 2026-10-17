@@ -18,7 +18,7 @@
 ;   core_script.cpp_CScript_updateScrollPosition_FUN_005669a0 at 005669a9
 ;
 ; Referenced Globals:
-;   undefined4 g_ScriptEditorVScrollBar.current_value
+;   undefined4 g_ScriptEditorVScrollBar.item_count
 ;   int g_CurrentEditingColumn
 ;   int g_CurrentEditingLine
 ;
@@ -40,9 +40,9 @@ section .text
     CALL shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0 ; 0056691a
         ;   XREF to: 004a6ed0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0(CStrList * this_ptr)
     ADD EAX,0x2                         ; 0056691f
-    MOV [0x0310fcdc],EAX                ; 00566922 | g_ScriptEditorVScrollBar.current_value
+    MOV [0x0310fcdc],EAX                ; 00566922 | g_ScriptEditorVScrollBar.item_count
     MOV EAX,[0x0310fd48]                ; 00566927 | g_CurrentEditingLine
-    MOV EDX,dword ptr [0x0310fcdc]      ; 0056692c | g_ScriptEditorVScrollBar.current_value
+    MOV EDX,dword ptr [0x0310fcdc]      ; 0056692c | g_ScriptEditorVScrollBar.item_count
     ADD ESP,0x4                         ; 00566932
     CMP EAX,EDX                         ; 00566935
     JGE 0x0056697f                      ; 00566937

@@ -11,9 +11,9 @@
 ;
 ; Referenced Globals:
 ;   CEdScrollBar g_ScriptEditorVScrollBar
-;   undefined4 g_ScriptEditorVScrollBar.max_value
+;   undefined4 g_ScriptEditorVScrollBar.page_size
 ;   CEdScrollBar g_ScriptEditorHScrollBar
-;   undefined4 g_ScriptEditorHScrollBar.max_value
+;   undefined4 g_ScriptEditorHScrollBar.page_size
 ;   int g_CurrentEditingColumn
 ;   int g_CurrentEditingLine
 ;
@@ -34,7 +34,7 @@ section .text
     CALL core_script.cpp_CScript_updateCursorBounds_FUN_00566910 ; 00566889
         ;   XREF to: 00566910 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_updateCursorBounds_FUN_00566910(CScript * this_ptr)
     MOV EAX,[0x0310fcd8]                ; 0056688e | g_ScriptEditorVScrollBar
-    MOV ECX,dword ptr [0x0310fce0]      ; 00566893 | g_ScriptEditorVScrollBar.max_value
+    MOV ECX,dword ptr [0x0310fce0]      ; 00566893 | g_ScriptEditorVScrollBar.page_size
     MOV EBX,dword ptr [0x0310fd48]      ; 00566899 | g_CurrentEditingLine
     ADD EAX,ECX                         ; 0056689f
     ADD ESP,0x4                         ; 005668a1
@@ -47,7 +47,7 @@ section .text
     JLE 0x005668bc                      ; 005668b4
         ;   XREF to: 005668bc (CONDITIONAL_JUMP)  ; LAB_005668bc
     MOV dword ptr [0x0310fd48],ESI      ; 005668b6 | g_CurrentEditingLine
-    MOV EDI,dword ptr [0x0310fd14]      ; 005668bc | g_ScriptEditorHScrollBar.max_value
+    MOV EDI,dword ptr [0x0310fd14]      ; 005668bc | g_ScriptEditorHScrollBar.page_size
         ;   Label: LAB_005668bc
     MOV EAX,[0x0310fd0c]                ; 005668c2 | g_ScriptEditorHScrollBar
     MOV EBP,dword ptr [0x0310fd44]      ; 005668c7 | g_CurrentEditingColumn

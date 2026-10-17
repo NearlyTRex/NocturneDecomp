@@ -1,8 +1,13 @@
+#include "common/math/vector3i.h"
 #include "core/set/demonset.h"
+#include "platform/rendervertex.h"
+#include "tests/mocks/engine/demonrendererfixture.h"
 
 #include <gtest/gtest.h>
 
+#include <span>
 #include <type_traits>
+#include <vector>
 
 namespace nocturne::core {
 namespace {
@@ -12,7 +17,9 @@ TEST(CDemonSet, IsConcrete) {
 }
 
 TEST(CDemonSet, Constructors) {
-    static_assert(std::is_constructible_v<CDemonSet>);
+    static_assert(std::is_constructible_v<CDemonSet, engine::CDemonRenderer &,
+                                          const engine::CMatrix &, const engine::CSpecial &>);
+    static_assert(!std::is_default_constructible_v<CDemonSet>);
 }
 
 TEST(CDemonSet, PublicInterface) {
@@ -56,16 +63,22 @@ TEST(CDemonSet, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CDemonSet::pushScreenBoundsToCamera), void (CDemonSet::*)(int)>);
     static_assert(std::is_same_v<decltype(&CDemonSet::rotateVerticies),
-                                 void (CDemonSet::*)(int, common::CVector3i *)>);
-    static_assert(std::is_same_v<decltype(&CDemonSet::lightVerticies),
-                                 void (CDemonSet::*)(int, int, void *, common::CVector3i *, int,
-                                                     common::CVector3i *)>);
+                                 void (CDemonSet::*)(std::span<const common::CVector3i>)>);
+    static_assert(
+        std::is_same_v<decltype(&CDemonSet::lightVerticies),
+                       void (CDemonSet::*)(int, std::span<const platform::SMRGLPrimitiveQuad>,
+                                           std::span<const common::CVector3i>)>);
+    static_assert(std::is_same_v<decltype(&CDemonSet::setLightDirection),
+                                 void (CDemonSet::*)(const common::CVector3i &)>);
+    static_assert(
+        std::is_same_v<decltype(&CDemonSet::setAmbientBaseQuick), void (CDemonSet::*)(int)>);
     static_assert(std::is_same_v<decltype(&CDemonSet::process), void (CDemonSet::*)()>);
     static_assert(std::is_same_v<decltype(&CDemonSet::getReverbPresetAtPosition),
                                  int (CDemonSet::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CDemonSet::loadAssets), void (CDemonSet::*)()>);
-    static_assert(std::is_same_v<decltype(&CDemonSet::renderPrimitiveBatch),
-                                 void (CDemonSet::*)(platform::SMRGLPrimitiveQuad *, int, int)>);
+    static_assert(
+        std::is_same_v<decltype(&CDemonSet::renderPrimitiveBatch),
+                       void (CDemonSet::*)(std::span<const platform::SMRGLPrimitiveQuad>, int)>);
     static_assert(std::is_same_v<decltype(&CDemonSet::renderFaceListOrEnvMap),
                                  void (CDemonSet::*)(platform::SInputFace *, int, int)>);
     static_assert(std::is_same_v<decltype(&CDemonSet::renderPrimitiveList),
@@ -146,6 +159,52 @@ TEST(CDemonSet, PublicInterface) {
         std::is_same_v<decltype(&CDemonSet::setPendingCamera), void (CDemonSet::*)(int, float)>);
     static_assert(
         std::is_same_v<decltype(&CDemonSet::clearCameraSwitchCooldown), void (CDemonSet::*)()>);
+}
+
+constexpr int kOne = 0x10000;
+
+// One vertex lit by a normal facing +z, or the given one: the quick light's level is how far the
+// light travels against the normal, plus the ambient, times each channel's flat colour.
+class CDemonSetStateTest : public engine::CDemonRendererFixture {
+protected:
+    platform::SRenderVertex lightTheVertex(const common::CVector3i &normal = {.z = kOne}) {
+        const std::vector<common::CVector3i> normals{normal};
+        set_.lightVerticies(1, {}, normals);
+        return vertex_buffer_[0];
+    }
+
+    CDemonSet set_{demon_renderer_, matrix_, special_};
+};
+
+// The light travels 37000 along +z, and the ambient is 0x280: a normal facing -z has 37640, in
+// white, and one facing +z the ambient alone.
+TEST_F(CDemonSetStateTest, TheQuickLightStartsAsTheOriginalSetsIt) {
+    const platform::SRenderVertex lit = lightTheVertex({.z = -kOne});
+    EXPECT_EQ(lit.r, 37640);
+    EXPECT_EQ(lit.g, 37640);
+    EXPECT_EQ(lit.b, 37640);
+    EXPECT_EQ(lightTheVertex().r, 0x280);
+}
+
+TEST_F(CDemonSetStateTest, TheLightDirectionAndAmbientCanBeSet) {
+    set_.setLightDirection({.z = -kOne / 4});
+    set_.setAmbientBaseQuick(10);
+    EXPECT_EQ(lightTheVertex().r, (kOne / 4) + 10);
+}
+
+TEST_F(CDemonSetStateTest, TheLevelIsCappedJustUnderOne) {
+    set_.setAmbientBaseQuick(kOne);
+    EXPECT_EQ(lightTheVertex().r, 0xffff);
+}
+
+TEST_F(CDemonSetStateTest, TheFlatColourScalesEachChannel) {
+    set_.setLightDirection({.z = -kOne / 4});
+    set_.setAmbientBaseQuick(0);
+    set_.setFlatColor(kOne / 2, kOne, 2 * kOne);
+    const platform::SRenderVertex vertex = lightTheVertex();
+    EXPECT_EQ(vertex.r, kOne / 8);
+    EXPECT_EQ(vertex.g, kOne / 4);
+    EXPECT_EQ(vertex.b, kOne / 2);
 }
 
 } // namespace

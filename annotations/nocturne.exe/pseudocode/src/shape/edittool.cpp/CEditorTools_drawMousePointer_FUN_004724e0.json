@@ -57,12 +57,6 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 7,
-        "line": 21,
-        "message": "use of undeclared identifier '_DAT_01bcd9c0'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 17,
         "line": 22,
         "message": "use of undeclared identifier '_DAT_01bd1d8c'"
@@ -114,6 +108,12 @@
         "column": 42,
         "line": 27,
         "message": "use of undeclared identifier '_DAT_01bd1d8c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 56,
+        "line": 27,
+        "message": "use of undeclared identifier '_DAT_01bd1d90'"
       }
     ],
     "success": false,
@@ -122,15 +122,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 738,
-    "complexity_score": 244,
+    "complexity_score": 179,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 16,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 164,
-    "suspect_count": 7,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "warning_overlapping_globals"
     ],
     "total_lines": 902
@@ -193,15 +192,15 @@
     },
     {
       "addr": "005b6d54",
-      "name": "DAT_005b6d54",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CursorSizeHorizontal",
+      "type": "int",
+      "value": "0x9"
     },
     {
       "addr": "005b6d58",
-      "name": "DAT_005b6d58",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CursorSizeVertical",
+      "type": "int",
+      "value": "0x9"
     },
     {
       "addr": "005b761c",
@@ -217,8 +216,8 @@
     },
     {
       "addr": "01bcd9c0",
-      "name": "DAT_01bcd9c0",
-      "type": "undefined4",
+      "name": "g_MouseCursorType",
+      "type": "int",
       "value": null
     },
     {
@@ -397,54 +396,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_005b6d54",
-      "severity": "mild",
-      "text": "for (iVar3 = 1; iVar3 <= DAT_005b6d54 / 2; iVar3 = iVar3 + 1) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_005b6d58",
-      "severity": "mild",
-      "text": "while (iVar3 <= DAT_005b6d58 / 2) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 65,
-      "match": "DAT_005b6d58",
-      "severity": "mild",
-      "text": "iVar4 = _DAT_01bd1d90 - DAT_005b6d58 / 2;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 66,
-      "match": "DAT_005b6d58",
-      "severity": "mild",
-      "text": "iVar1 = DAT_005b6d58 + iVar4 + -1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 78,
-      "match": "DAT_005b6d54",
-      "severity": "mild",
-      "text": "while (iVar3 <= DAT_005b6d54 / 2) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 122,
-      "match": "DAT_005b6d54",
-      "severity": "mild",
-      "text": "while (iVar3 <= DAT_005b6d54 / 2) {",
-      "type": "undefined_data"
     }
   ]
 }

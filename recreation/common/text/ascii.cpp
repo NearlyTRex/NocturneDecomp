@@ -8,6 +8,16 @@ char foldAscii(char c) {
     return c >= 'A' && c <= 'Z' ? static_cast<char>(c - 'A' + 'a') : c;
 }
 
+char upperAscii(char c) {
+    return c >= 'a' && c <= 'z' ? static_cast<char>(c - 'a' + 'A') : c;
+}
+
+std::string toUpperAscii(std::string_view text) {
+    std::string upper(text);
+    std::ranges::transform(upper, upper.begin(), upperAscii);
+    return upper;
+}
+
 bool equalsIgnoringAsciiCase(std::string_view a, std::string_view b) {
     return std::ranges::equal(a, b, {}, foldAscii, foldAscii);
 }

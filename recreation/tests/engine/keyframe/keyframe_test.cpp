@@ -4,6 +4,7 @@
 #include <gtest/gtest.h>
 
 #include <array>
+#include <limits>
 #include <type_traits>
 #include <vector>
 
@@ -60,6 +61,31 @@ TEST(EngineKeyframeFunctions, ComponentsRoundToNearest) {
                                              CVector3i{.x = 0, .y = 0, .z = 4}};
     EXPECT_EQ(calculateSurfaceNormal(slope, polygonOf({0, 1, 2})),
               (SClipPlane{.a = 37837, .b = 37837, .c = 37837, .d = 151347}));
+}
+
+// From nocedit's own code: the normal, its length, the scaled normal and the distance are
+// stored as floats on the way.
+TEST(EngineKeyframeFunctions, ThePlaneRoundsAsTheOriginalDoes) {
+    constexpr std::array<CVector3i, 3> first{CVector3i{.x = 70, .y = 83, .z = -51},
+                                             CVector3i{.x = 67, .y = 76, .z = 98},
+                                             CVector3i{.x = -77, .y = -50, .z = -44}};
+    EXPECT_EQ(calculateSurfaceNormal(first, polygonOf({0, 1, 2})),
+              (SClipPlane{.a = 43922, .b = -48619, .c = -1400, .d = -889443}));
+    constexpr std::array<CVector3i, 3> second{CVector3i{.x = 11, .y = 99, .z = -2},
+                                              CVector3i{.x = 63, .y = 32, .z = 7},
+                                              CVector3i{.x = -76, .y = -94, .z = -85}};
+    EXPECT_EQ(calculateSurfaceNormal(second, polygonOf({0, 1, 2})),
+              (SClipPlane{.a = 26844, .b = 12995, .c = -58356, .d = 1698526}));
+}
+
+// The original's edges are 32-bit SUBs, which wrap.
+TEST(EngineKeyframeFunctions, EdgesWrapAsThirtyTwoBitDifferences) {
+    constexpr int kMin = std::numeric_limits<int>::min();
+    constexpr int kMax = std::numeric_limits<int>::max();
+    constexpr std::array<CVector3i, 3> wrapped{CVector3i{.x = kMax}, CVector3i{.x = kMin},
+                                               CVector3i{.x = kMin, .y = 1}};
+    // The first edge is +1 along x, not -2^32 + 1, so the normal points along +z.
+    EXPECT_EQ(calculateSurfaceNormal(wrapped, polygonOf({0, 1, 2})).c, 65535);
 }
 
 TEST(EngineKeyframeFunctions, ThreeCornersOnALineMakeNoNormal) {

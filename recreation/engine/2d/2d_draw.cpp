@@ -7,6 +7,7 @@
 #include <cstddef>
 #include <cstdint>
 #include <span>
+#include <utility>
 
 namespace nocturne::engine {
 namespace {
@@ -34,6 +35,57 @@ bool C2d::fillRun(int x, int y, int count) {
         return true;
     default:
         return false;
+    }
+}
+
+// Bounded by the screen rather than the clip. The original drew any depth but 8 and 16 as 32-bit.
+// nocedit 0x00401140
+void C2d::plotPixel(int x, int y) {
+    if (static_cast<unsigned>(x) >= static_cast<unsigned>(screen_.getWindowWidth()) ||
+        static_cast<unsigned>(y) >= static_cast<unsigned>(screen_.getWindowHeight())) {
+        return;
+    }
+    fillRun(x, y, 1);
+}
+
+// Bresenham's line from the upper end down, both ends drawn.
+// nocedit 0x004011b0
+void C2d::drawLine(int x1, int y1, int x2, int y2) {
+    if (y2 < y1) {
+        std::swap(x1, x2);
+        std::swap(y1, y2);
+    }
+    const int dy = y2 - y1;
+    int dx = x2 - x1;
+    int x_step = 1;
+    if (dx < 0) {
+        dx = -dx;
+        x_step = -1;
+    }
+    int x = x1;
+    int y = y1;
+    if (dy < dx) {
+        int error = (dy * 2) - dx;
+        for (int i = 0; i <= dx; ++i) {
+            plotPixel(x, y);
+            if (error > 0) {
+                ++y;
+                error -= dx;
+            }
+            x += x_step;
+            error += dy;
+        }
+        return;
+    }
+    int error = (dx * 2) - dy;
+    for (int i = 0; i <= dy; ++i) {
+        plotPixel(x, y);
+        if (error > 0) {
+            error -= dy;
+            x += x_step;
+        }
+        ++y;
+        error += dx;
     }
 }
 

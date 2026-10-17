@@ -9,12 +9,15 @@
 
 namespace nocturne::core {
 
+// deferred: the empty filename, with loadModel
 // nocedit 0x00476cf0
 CKeyFramedModel::CKeyFramedModel(const engine::CDosIo &dosio) : dosio_(dosio) {}
 
 // nocedit 0x00476d90
 CKeyFramedModel::~CKeyFramedModel() = default;
 
+// deferred: keeping the filename in the model, which loadModel's pool lookup and
+//   CShell::onCollision read, with loadModel and CShell
 // nocedit 0x00476db0
 void CKeyFramedModel::load(std::string_view filename) {
     free();

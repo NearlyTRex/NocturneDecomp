@@ -14,6 +14,8 @@ constexpr std::size_t kRightButtonCode = 0x201;
 constexpr std::size_t kMiddleButtonCode = 0x20c;
 // WHEEL_DELTA: one notch.
 constexpr int kWheelDelta = 120;
+// Game ticks to eighteenths of a second.
+constexpr int kTickShift = 16;
 
 struct SButton {
     std::size_t code;
@@ -53,7 +55,8 @@ void CWinRun::processWindowMessages() {
 }
 
 // The cursor stays visible, Alt+F4 closes the game and the screensaver is the adapter's. A
-// finished movie is seen by playMovie polling the player rather than by a message.
+// finished movie is seen by playMovie polling the player rather than by a message. Retail
+// ignores the wheel; its notches are counted for the decomp's console scrolling.
 // nocedit 0x005f3150
 void CWinRun::mainWindowProc(const platform::SWindowEvent &event) {
     switch (event.type) {
@@ -106,9 +109,20 @@ void CWinRun::activate(int active) {
         return;
     }
     if (previous_active_state_ != -1) {
-        clearInput();
+        clearInputUntilTick();
         focus_regained_ = true;
     }
+}
+
+// clearInputAndWait as the original called it here: the queue is held empty until the game
+// clock's eighteenth of a second turns over, up to 55 ms.
+void CWinRun::clearInputUntilTick() {
+    clearInput();
+    const int tick = getTime() >> kTickShift;
+    while ((getTime() >> kTickShift) == tick) {
+        clearKeypresses();
+    }
+    clearInput();
 }
 
 void CWinRun::pressMouseButton(const platform::SWindowEvent &event) {
@@ -170,6 +184,14 @@ void CWinRun::clearMouseClicks() {
     mouse_button_flags_ = 0;
 }
 
+// In the game's coordinates, which the window maps onto its own.
+// nocedit 0x005f30d0
+void CWinRun::setCursorPosition(int x, int y) {
+    window_.warpMouse(x, y);
+    mouse_x_ = x;
+    mouse_y_ = y;
+}
+
 void CWinRun::clearInput() {
     clearKeypresses();
     clearMouseClicks();
@@ -210,6 +232,10 @@ int CWinRun::getMouseY() const {
 
 int CWinRun::getMouseButtonFlags() const {
     return mouse_button_flags_;
+}
+
+void CWinRun::releaseLeftMouseButton() {
+    mouse_button_flags_ &= ~1;
 }
 
 int CWinRun::takeMouseWheelNotches() {

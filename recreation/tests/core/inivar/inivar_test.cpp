@@ -13,8 +13,10 @@
 #include "engine/texture/currenttexture.h"
 #include "shape/edittool/editortools.h"
 #include "support/newmsg/newmsg.h"
+#include "tests/mocks/engine/mockgameclock.h"
 #include "tests/mocks/engine/mockrawinput.h"
 #include "tests/mocks/engine/mockscreendevice.h"
+#include "tests/mocks/platform/mockclipboard.h"
 #include "tests/mocks/platform/mockclock.h"
 #include "tests/mocks/platform/mockdisplay.h"
 #include "tests/mocks/platform/mockosfontfactory.h"
@@ -76,12 +78,24 @@ protected:
     engine::CSpecial special_{renderer_, screen_, two_d_, matrix_, three_d_, current_texture_};
     engine::CKeys keys_{raw_input_, screen_};
     ::testing::NiceMock<platform::MockClock> clock_;
-    shape::CEditorTools editor_tools_{two_d_, matrix_, three_d_, screen_, special_, keys_, clock_};
+    ::testing::NiceMock<engine::MockGameClock> editor_clock_;
+    ::testing::NiceMock<platform::MockClipboard> clipboard_;
+    shape::CEditorTools editor_tools_{{.two_d = two_d_,
+                                       .matrix = matrix_,
+                                       .three_d = three_d_,
+                                       .screen = screen_,
+                                       .special = special_,
+                                       .keys = keys_,
+                                       .raw_input = raw_input_,
+                                       .game_clock = editor_clock_,
+                                       .clock = clock_,
+                                       .clipboard = clipboard_}};
     engine::CFontColors colors_;
     ::testing::NiceMock<platform::MockOsFontFactory> os_fonts_;
     support::CNewMsg messages_{dosio_};
     CDFont fonts_{dosio_, screen_, two_d_, three_d_, colors_, os_fonts_, messages_, editor_tools_};
-    CGame game_;
+    ::testing::StrictMock<engine::MockGameClock> game_clock_;
+    CGame game_{game_clock_};
     engine::CIni ini_{file_system_};
     SIniDataOwners owners_{.game = game_,
                            .sound_main = sound_,
@@ -240,7 +254,7 @@ TEST_F(CInivarTest, WhatIsWrittenReadsBackTheSame) {
     game_.map_zoom = 150;
     game_.y_stick_max = 40000;
     writeIniData(ini_, owners_);
-    CGame copy;
+    CGame copy(game_clock_);
     const SIniDataOwners reread{.game = copy,
                                 .sound_main = sound_,
                                 .console = console_,

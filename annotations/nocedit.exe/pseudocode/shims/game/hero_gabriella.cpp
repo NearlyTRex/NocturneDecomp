@@ -7,6 +7,8 @@
 
 #include <cmath>
 
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+
 // =============================================================================
 // Shared
 // =============================================================================
@@ -1914,3 +1916,5 @@ extern "C" void nocturne_hero_gabriella_process_motion(CGabriella *gabriella, fl
         }
     }
 }
+
+#endif // !NOCTURNE_AUTHENTIC_HERO_ACTIONS

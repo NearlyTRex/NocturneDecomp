@@ -20,7 +20,8 @@ constexpr std::string_view kIniFilename = ".\\system\\nocturne.ini";
 // Room for a list of bindings; the original read each key as one number.
 constexpr std::size_t kBindingsBufferSize = 256;
 
-// An enum setting's number; one outside 0..last keeps the setting as it was.
+// An enum setting's number; one outside 0..last keeps the setting as it was. The original stored
+// heroNumber, gameControl and aimMode unchecked.
 int readEnumValue(const engine::CIniFile &file, std::string_view key, int value, int last) {
     const int read = file.getInteger(key, value);
     return read < 0 || read > last ? value : read;
@@ -135,8 +136,8 @@ void writeControls(engine::CIniFile &file, const CGame &game) {
 
 } // namespace
 
-// The renderer DLL, AGP texturing and first-run flag the original also read have no reader in
-// the game now, so their lines are left as they are; retail has no Editor section. The window
+// The renderer DLL and AGP texturing the original also read have no reader in the game now, so
+// their lines are left as they are; retail has no Editor section. The window
 // opens at the resolution the game will run at, as the decomp's menu resolution change has it.
 // nocedit 0x004fbd90
 void readIniData(engine::CIni &ini, platform::IFileSystem &file_system,

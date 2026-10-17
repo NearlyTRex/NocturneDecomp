@@ -27,7 +27,8 @@ CVector3i CVector3f::toFixed8() const {
 
 // nocedit 0x00571410
 bool CVector3f::equals(const CVector3f &b) const {
-    return x == b.x && y == b.y && z == b.z;
+    return !std::islessgreater(x, b.x) && !std::islessgreater(y, b.y) &&
+           !std::islessgreater(z, b.z);
 }
 
 } // namespace nocturne::common

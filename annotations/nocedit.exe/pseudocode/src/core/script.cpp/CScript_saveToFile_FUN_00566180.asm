@@ -18,7 +18,7 @@
 ;   TerminatedCString s_core_script_cpp_00643f81
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CEditorTools g_CEditorToolsInstance
-;   undefined4 g_ScriptEditorHScrollBar.current_value
+;   undefined4 g_ScriptEditorHScrollBar.item_count
 ;
 ; Called Functions:
 ;   core_script.cpp_CScript_updateLineMetrics_FUN_00566800
@@ -66,7 +66,7 @@ section .text
         ;   XREF to: 005661f8 (CONDITIONAL_JUMP)  ; LAB_005661f8
     XOR EDX,EDX                         ; 005661bb
     XOR EBX,EBX                         ; 005661bd
-    MOV dword ptr [0x0310fd10],EDX      ; 005661bf | g_ScriptEditorHScrollBar.current_value
+    MOV dword ptr [0x0310fd10],EDX      ; 005661bf | g_ScriptEditorHScrollBar.item_count
     PUSH ESI                            ; 005661c5
         ;   Label: LAB_005661c5
     CALL shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0 ; 005661c6

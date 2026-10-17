@@ -1,17 +1,21 @@
 #pragma once
 
 #include "common/fwd.h"
+#include "common/math/vector3i.h"
+#include "core/color3i.h"
 #include "core/fwd.h"
+#include "engine/fwd.h"
 #include "platform/fwd.h"
 
 #include <cstdio>
+#include <span>
 
 namespace nocturne::core {
 
 class CDemonSet {
 public:
-    CDemonSet();
-    ~CDemonSet();
+    CDemonSet(engine::CDemonRenderer &renderer, const engine::CMatrix &matrix,
+              const engine::CSpecial &special);
 
     void load(char *filename);
     void renderSceneGeometry(float frustum_param, int render_mode);
@@ -39,14 +43,18 @@ public:
     void computeVertexOmniLighting(common::CVector3f *vertex_position,
                                    common::CVector3f *position_offset, int vertex_index);
     void pushScreenBoundsToCamera(int vertex_count);
-    void rotateVerticies(int vertex_count, common::CVector3i *input_vertices);
-    void lightVerticies(int vertex_count, int tri_count, void *face_data,
-                        common::CVector3i *vertex_positions, int vertices_per_face,
-                        common::CVector3i *vertex_normals);
+    // Puts each vertex into the renderer's buffer in eye space and on the screen, and turns face
+    // capture off when every one is in view.
+    void rotateVerticies(std::span<const common::CVector3i> input_vertices);
+    // Gives the buffer's first vertex_count vertices their colour from the light direction, the
+    // ambient level and the flat colour, by the given normals or by the polygons' faces.
+    void lightVerticies(int vertex_count, std::span<const platform::SMRGLPrimitiveQuad> polygons,
+                        std::span<const common::CVector3i> vertex_normals);
     void process();
     int getReverbPresetAtPosition(common::CVector3f *position);
     void loadAssets();
-    void renderPrimitiveBatch(platform::SMRGLPrimitiveQuad *primitive_array, int primitive_count,
+    // A model's polygons, drawn as the renderer's quad batch.
+    void renderPrimitiveBatch(std::span<const platform::SMRGLPrimitiveQuad> primitives,
                               int render_flags);
     void renderFaceListOrEnvMap(platform::SInputFace *faces, int count, int flags);
     void renderPrimitiveList(platform::SMRGLHeaderPrimitive *primitive_array, int primitive_count);
@@ -96,6 +104,25 @@ public:
     int evaluateVirtualDirector(CDemonActor *actor, int force_evaluation_mode);
     void setPendingCamera(int camera_index, float hold_time);
     void clearCameraSwitchCooldown();
+
+    // The quick light's direction, and the ambient level it adds, 0xffff being full.
+    void setLightDirection(const common::CVector3i &light_direction);
+    void setAmbientBaseQuick(int ambient_base_quick);
+    [[nodiscard]] const common::CVector3i &getLightDirection() const;
+    [[nodiscard]] int getAmbientBaseQuick() const;
+    [[nodiscard]] const CColor3i &getFlatColor() const;
+
+private:
+    void lightVertexColor(const common::CVector3i &surface_normal,
+                          platform::SRenderVertex &vertex) const;
+
+    engine::CDemonRenderer &renderer_;
+    const engine::CMatrix &matrix_;
+    const engine::CSpecial &special_;
+    // As the original constructor sets them.
+    common::CVector3i light_direction_{.x = -37000, .y = -37000, .z = 37000};
+    int ambient_base_quick_ = 0x280;
+    CColor3i flat_color_{.r = 0x10000, .g = 0x10000, .b = 0x10000};
 };
 
 } // namespace nocturne::core

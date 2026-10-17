@@ -47,8 +47,9 @@ void CWddVMem::initializeScanlinePointers() {
     }
 }
 
-// The original replaced the buffers before asking for the mode, and on a refusal left the rows
-// pointing into the freed ones.
+// The original took the new size and depth and replaced the buffers before asking for the mode,
+// so a refusal left rows pointing into freed buffers; here the old mode stays whole. Its 24-bit
+// retry of a refused 32-bit mode never runs: the display takes all three depths.
 // nocedit 0x005ecef0
 bool CWddVMem::setScreenResolution(int width, int height, int bits_per_pixel) {
     if (bits_per_pixel != 8 && bits_per_pixel != 16 && bits_per_pixel != 32) {

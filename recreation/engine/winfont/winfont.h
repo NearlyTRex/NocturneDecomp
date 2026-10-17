@@ -44,6 +44,7 @@ private:
     void setColorAndDrawText(std::string_view text_string, int x, int y, int foreground_color,
                              int background_color);
     [[nodiscard]] std::uint32_t getColorRef(int color) const;
+    [[nodiscard]] std::uint32_t getDefaultColorRef() const;
     [[nodiscard]] std::uint32_t getKeyColor() const;
 
     IScreenDevice &screen_;

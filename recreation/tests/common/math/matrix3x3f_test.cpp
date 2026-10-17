@@ -3,6 +3,7 @@
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include <limits>
 #include <numbers>
 #include <stdexcept>
 #include <type_traits>
@@ -72,6 +73,31 @@ TEST(CMatrix3x3f, TransformVectorDotsEachRow) {
     EXPECT_EQ(out.z, 17.0F);
 }
 
+void expectExact(const CMatrix3x3f &actual, const CMatrix3x3f &expected) {
+    for (std::size_t r = 0; r < 3; ++r) {
+        SCOPED_TRACE(r);
+        EXPECT_EQ(actual.m.at(r).x, expected.m.at(r).x);
+        EXPECT_EQ(actual.m.at(r).y, expected.m.at(r).y);
+        EXPECT_EQ(actual.m.at(r).z, expected.m.at(r).z);
+    }
+}
+
+// The expected values in the tests below are nocedit's own code run on the same input.
+TEST(CMatrix3x3f, ARotationRoundsItsSinesAndCosinesAsTheOriginalDoes) {
+    expectExact(rotation(2.01308179F, 4.64299345F, 0.587584376F),
+                rows(vec(-0.557514489F, -0.711947322F, 0.426975965F),
+                     vec(-0.237266123F, -0.356221884F, -0.903775811F),
+                     vec(0.795539021F, -0.605175078F, 0.0296778772F)));
+}
+
+// Summed y and x first, the small y term is lost before the z term cancels the x term.
+TEST(CMatrix3x3f, TransformsSumTheYAndXTermsFirst) {
+    const CMatrix3x3f matrix = rows(vec(1, 0x1p-30F, -1), vec(0x1p-30F, 0, 0), vec(-1, 0, 0));
+    const CVector3f input = vec(1, 0x1p-30F, 1);
+    EXPECT_EQ(matrix.transformVector(input).x, 0.0F);
+    EXPECT_EQ(matrix.transformVectorTranspose(input).x, 0.0F);
+}
+
 TEST(CMatrix3x3f, TransformVectorTransposeDotsEachColumn) {
     const CMatrix3x3f matrix = rows(vec(1, 2, 3), vec(4, 5, 6), vec(7, 8, 9));
     const CVector3f out = matrix.transformVectorTranspose(vec(1, -1, 2));
@@ -103,6 +129,41 @@ TEST(CMatrix3x3f, EulerAnglesAtThePolesPutTheTurnInY) {
     EXPECT_EQ(down_angles.x, -1.5707964F);
     EXPECT_EQ(down_angles.y, 0.0F);
     EXPECT_EQ(down_angles.z, 0.0F);
+}
+
+TEST(CMatrix3x3f, EulerAnglesMatchTheOriginal) {
+    const CVector3f angles = rows(vec(0.512563884F, -0.858621955F, 0.0068209907F),
+                                  vec(-0.00372858834F, -0.0101694698F, -0.999941349F),
+                                  vec(0.858640969F, 0.512508392F, -0.00841395091F))
+                                 .getEulerAngles();
+    EXPECT_EQ(angles.x, 1.55996573F);
+    EXPECT_EQ(angles.y, 2.46029973F);
+    EXPECT_EQ(angles.z, -2.79013252F);
+}
+
+// The original's unordered compare takes a NaN sine as straight down.
+TEST(CMatrix3x3f, ANaNSineReadsAsStraightDown) {
+    const float nan = std::numeric_limits<float>::quiet_NaN();
+    const CVector3f angles = rows(vec(1, 0, 0), vec(0, 0, nan), vec(0, 0, 1)).getEulerAngles();
+    EXPECT_EQ(angles.x, -1.5707964F);
+    EXPECT_EQ(angles.y, 0.0F);
+    EXPECT_EQ(angles.z, 0.0F);
+}
+
+TEST(CMatrix3x3f, InvertRoundsAsTheOriginalDoes) {
+    CMatrix3x3f matrix = rows(vec(-0.199165344F, 0.121515036F, 0.990912437F),
+                              vec(-0.978524685F, -0.0989178419F, -0.185097456F),
+                              vec(-0.259206176F, 0.216104984F, 0.167101502F));
+    matrix.invert();
+    expectExact(matrix, rows(vec(-0.109716929F, -0.906093299F, -0.353053153F),
+                             vec(-0.98862505F, -1.04508626F, 4.70491314F),
+                             vec(1.10835326F, -0.0539590567F, -0.647921681F)));
+}
+
+// The original stores the determinant as a float before it tests it.
+TEST(CMatrix3x3f, ADeterminantTooSmallForAFloatIsSingular) {
+    CMatrix3x3f matrix = rows(vec(1e-16F, 0, 0), vec(0, 1e-16F, 0), vec(0, 0, 1e-16F));
+    EXPECT_THROW(matrix.invert(), std::domain_error);
 }
 
 TEST(CMatrix3x3f, InvertOfAScaleIsTheReciprocalScale) {

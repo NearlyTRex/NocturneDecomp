@@ -1,15 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_draw3DInsetBorder_FUN_00476310(int left,int top,int right,int bottom,int inner_y,int style)
+; void __cdecl shape_edittool_cpp_draw3DInsetBorder_FUN_00476310(int left,int top,int right,int bottom,int pressed_offset,int direction)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   left
 ; int              Stack[0x8]:4   top
 ; int              Stack[0xc]:4   right
 ; int              Stack[0x10]:4   bottom
-; int              Stack[0x14]:4   inner_y
-; int              Stack[0x18]:4   style
+; int              Stack[0x14]:4   pressed_offset
+; int              Stack[0x18]:4   direction
 ;
 ; XREF[1]:
 ;   shape_edittool.cpp_CEdScrollBar_render_FUN_00476580 at 00476681

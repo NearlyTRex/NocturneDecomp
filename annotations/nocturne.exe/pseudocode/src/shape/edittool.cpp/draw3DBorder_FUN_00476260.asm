@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_draw3DBorder_FUN_00476260(int left,int top,int width,int height,int border_style_flag)
+; void __cdecl shape_edittool_cpp_draw3DBorder_FUN_00476260(int left,int top,int right,int bottom,int pressed)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   left
 ; int              Stack[0x8]:4   top
-; int              Stack[0xc]:4   width
-; int              Stack[0x10]:4   height
-; int              Stack[0x14]:4   border_style_flag
+; int              Stack[0xc]:4   right
+; int              Stack[0x10]:4   bottom
+; int              Stack[0x14]:4   pressed
 ;
 ; XREF[3]:
 ;   shape_edittool.cpp_CEdButton_paint_FUN_00476f40 at 00476f5c

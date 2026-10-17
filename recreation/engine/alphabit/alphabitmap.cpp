@@ -60,6 +60,10 @@ void CAlphaBitmap::free() {
     height_ = 0;
 }
 
+std::span<const std::uint8_t> CAlphaBitmap::getRaw() const {
+    return raw_;
+}
+
 // nocedit 0x004105d0
 void CAlphaBitmap::load(std::string_view filename, int width, int height) {
     free();
@@ -74,7 +78,7 @@ void CAlphaBitmap::load(std::string_view filename, int width, int height) {
 }
 
 // Keeps every scaleFactorX-th pixel of every scaleFactorY-th row. The original divided by a zero
-// factor.
+// factor, and gave the image a negative size for a negative one.
 // nocedit 0x00410c20
 void CAlphaBitmap::scale(int scaleFactorX, int scaleFactorY) {
     if (scaleFactorX < 1 || scaleFactorY < 1) {

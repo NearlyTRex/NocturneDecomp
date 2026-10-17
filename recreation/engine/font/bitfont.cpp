@@ -3,6 +3,7 @@
 #include "cockpit/ckptutil/ckptutil.h"
 #include "common/error/error.h"
 #include "common/math/bits.h"
+#include "common/text/ascii.h"
 #include "common/text/path.h"
 #include "common/video/framebuffer.h"
 #include "engine/2d/2d.h"
@@ -20,14 +21,6 @@ constexpr int kFirstSheetChar = 0x21;
 constexpr int kLastChar = 0xff;
 // What a short .act reads as past its end: fgetc's EOF, stored as a byte.
 constexpr std::uint8_t kPastEndOfFile = 0xff;
-
-std::string toUpperAscii(std::string_view text) {
-    std::string upper(text);
-    std::ranges::transform(upper, upper.begin(), [](char c) {
-        return c >= 'a' && c <= 'z' ? static_cast<char>(c - 'a' + 'A') : c;
-    });
-    return upper;
-}
 
 } // namespace
 
@@ -90,7 +83,7 @@ void CBitFont::loadBitmap(std::string_view filename, int width, int height, int 
         common::displayErrorAndQuit(std::format("Invalid font file size ({}).", filename));
     }
     SSheet &sheet = sheets_.emplace_back();
-    sheet.name = toUpperAscii(filename);
+    sheet.name = common::toUpperAscii(filename);
     sheet.width = width;
     sheet.pixels = cockpit::readBitmapFile(dosio_, filename, static_cast<std::size_t>(size));
     const std::string act_name =

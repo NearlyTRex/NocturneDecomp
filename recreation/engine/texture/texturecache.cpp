@@ -41,6 +41,7 @@ void copyFile(std::string_view file, std::span<std::uint8_t> out) {
 
 } // namespace
 
+// deferred: clearing the cache's has-wrapped flag, with getTextureCacheStats
 // nocedit 0x005dcab0
 CTextureCache::CTextureCache(int max_texture_count, const STextureOwners &owners)
     : owners_(owners), max_texture_count_(max_texture_count),
@@ -50,12 +51,18 @@ int CTextureCache::getMaxTextureCount() const {
     return max_texture_count_;
 }
 
+// deferred: clearing the cache's has-wrapped flag, with getTextureCacheStats
 // nocedit 0x005dcb30
 void CTextureCache::freeTextures() {
     current_texture_count_ = 0;
     std::ranges::fill(slots_, STextureSlot{});
 }
 
+// Retail quits with "Bad texture length" on 512 and 1024 textures; they load here, as in nocedit,
+// so higher-resolution art works. The original read an .opa into a null buffer when the slot kept
+// its dimension but had lost its opacity. A failed allocation throws where it quit "Out of memory".
+// deferred: setting the cache's has-wrapped flag when the next slot goes back to the first, with
+//   getTextureCacheStats
 // nocedit 0x005dcc00
 int CTextureCache::loadTexture(std::string_view texture_name) {
     const std::int64_t size = owners_.dosio.getFileSize("art", texture_name);
@@ -107,6 +114,7 @@ int CTextureCache::findTexture(int hint_index, std::string_view texture_name) co
 }
 
 // The shifts and masks follow from the dimension; a slot never loaded leaves them as they were.
+// Retail has no 512 or 1024 case, since its loadTexture rejects those sizes.
 // nocedit 0x005dd200
 void CTextureCache::setupTexture(int texture_index) {
     STextureSlot &slot = slots_.at(static_cast<std::size_t>(texture_index));

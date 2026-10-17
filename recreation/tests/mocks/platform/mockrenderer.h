@@ -54,8 +54,8 @@ public:
     MOCK_METHOD(int, drawPolygon2,
                 (SRenderVertex * *vertex_array, int vertex_count, int render_flags), (override));
     MOCK_METHOD(int, drawPolyList,
-                (SRenderVertex * vertex_buffer, SMRGLPrimitiveQuad **polygons, int polygon_count,
-                 int render_flags),
+                (SRenderVertex * vertex_buffer, const SMRGLPrimitiveQuad *const *polygons,
+                 int polygon_count, int render_flags),
                 (override));
     MOCK_METHOD(int, drawPolyList2,
                 (SRenderVertex * vertex_buffer, SInputFace **polygons, int polygon_count,

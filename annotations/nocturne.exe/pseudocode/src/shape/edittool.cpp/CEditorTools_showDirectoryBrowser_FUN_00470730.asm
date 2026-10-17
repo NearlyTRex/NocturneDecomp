@@ -61,8 +61,8 @@
 ;   TerminatedCString s_Change_Path_0057e6fc
 ;   TerminatedCString s_Enter_new_path_0057e70a
 ;   TerminatedCString s_Can_t_change_to_s_0057e719
-;   undefined4 DAT_005b6d60
-;   undefined4 DAT_005b6d64
+;   int INT_005b6d60 = 0x0
+;   int INT_005b6d64 = 0x0
 ;   ... and 4 more
 ;
 ; Called Functions:
@@ -105,9 +105,9 @@ section .text
     PUSH ESI                            ; 0047075d
     MOV ECX,0x41                        ; 0047075e
     LEA EDI,[ESP + 0x9d0]               ; 00470763
-    MOV ESI,0x5b6d60                    ; 0047076a | DAT_005b6d60
+    MOV ESI,0x5b6d60                    ; 0047076a | INT_005b6d60
     MOV AH,byte ptr [ESP + 0x1cac]      ; 0047076f
-    MOVSD.REP ES:EDI,ESI                ; 00470776 | DAT_005b6d60 | DAT_005b6d64
+    MOVSD.REP ES:EDI,ESI                ; 00470776 | INT_005b6d60 | INT_005b6d64
     TEST AH,0x1                         ; 00470778
     JNZ 0x00470a63                      ; 0047077b
         ;   XREF to: 00470a63 (CONDITIONAL_JUMP)  ; LAB_00470a63

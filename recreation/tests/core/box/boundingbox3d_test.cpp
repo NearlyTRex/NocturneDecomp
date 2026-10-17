@@ -2,6 +2,8 @@
 
 #include <gtest/gtest.h>
 
+#include <cmath>
+#include <limits>
 #include <type_traits>
 
 namespace nocturne::core {
@@ -49,6 +51,18 @@ TEST(CBoundingBox3D, APointInsideChangesNothing) {
     box.expand({});
     EXPECT_TRUE(box.min.equals({.x = -1, .y = -1, .z = -1}));
     EXPECT_TRUE(box.max.equals({.x = 1, .y = 1, .z = 1}));
+}
+
+// The original's min tests store the point when the compare is unordered; its max tests don't.
+TEST(CBoundingBox3D, ANaNOnEitherSideOfAMinTestStoresThePoint) {
+    const float nan = std::numeric_limits<float>::quiet_NaN();
+    CBoundingBox3D box{.min = {.x = nan, .y = -1, .z = -1}, .max = {.x = 1, .y = nan, .z = 1}};
+    box.expand({.x = 0.5F, .y = 0.5F, .z = nan});
+    EXPECT_EQ(box.min.x, 0.5F);
+    EXPECT_EQ(box.min.y, -1.0F);
+    EXPECT_TRUE(std::isnan(box.min.z));
+    EXPECT_TRUE(std::isnan(box.max.y));
+    EXPECT_EQ(box.max.z, 1.0F);
 }
 
 } // namespace

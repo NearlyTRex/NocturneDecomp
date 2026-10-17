@@ -257,7 +257,7 @@ void __cdecl CEditorTools::draw3DProjectedLine(CEditorTools *this_ptr,CVector3f 
 
 // Original: shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a2920
 // Address: 004a2920
-void __cdecl CEditorTools::setMousePointerType(CEditorTools *this_ptr,int cursor_type,int width,int height);
+void __cdecl CEditorTools::setMousePointerType(CEditorTools *this_ptr,int cursor_type,int height,int width);
 
 // Original: shape_edittool.cpp_CStrList_ctor_FUN_004a2a20
 // Address: 004a2a20
@@ -453,11 +453,11 @@ void __cdecl CPickList::swap(CPickList *this_ptr,int index1,int index2);
 
 // Original: shape_edittool.cpp_draw3DBorder_FUN_004a58f0
 // Address: 004a58f0
-void __cdecl draw3DBorder(int left,int top,int width,int height,int border_style_flag);
+void __cdecl draw3DBorder(int left,int top,int right,int bottom,int pressed);
 
 // Original: shape_edittool.cpp_draw3DInsetBorder_FUN_004a59a0
 // Address: 004a59a0
-void __cdecl draw3DInsetBorder(int left,int top,int right,int bottom,int inner_y,int style);
+void __cdecl draw3DInsetBorder(int left,int top,int right,int bottom,int pressed_offset,int direction);
 
 // Original: shape_edittool.cpp_CEdScrollBar_ctor_FUN_004a5ae0
 // Address: 004a5ae0

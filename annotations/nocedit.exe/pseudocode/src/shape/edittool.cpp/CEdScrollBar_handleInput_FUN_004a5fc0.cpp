@@ -50,14 +50,14 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0(CEdScrollB
     else if (iVar1 < this_ptr->track_end) {
       if (iVar1 < this_ptr->thumb_start) {
         g_ScrollAction = 3;
-        this_ptr->scroll_position = this_ptr->scroll_position - this_ptr->max_value;
+        this_ptr->scroll_position = this_ptr->scroll_position - this_ptr->page_size;
       }
       else if (iVar1 < this_ptr->thumb_end) {
         g_ScrollAction = 0;
       }
       else {
         g_ScrollAction = 4;
-        this_ptr->scroll_position = this_ptr->scroll_position + this_ptr->max_value;
+        this_ptr->scroll_position = this_ptr->scroll_position + this_ptr->page_size;
       }
     }
     else {
@@ -96,7 +96,7 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0(CEdScrollB
         break;
       case 3:
         if (iVar1 < this_ptr->thumb_start) {
-          this_ptr->scroll_position = this_ptr->scroll_position - this_ptr->max_value;
+          this_ptr->scroll_position = this_ptr->scroll_position - this_ptr->page_size;
         }
         else {
           g_MouseButtonFlags.bytes[0] = g_MouseButtonFlags.bytes[0] & 0xfe;
@@ -105,7 +105,7 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0(CEdScrollB
         break;
       case 4:
         if (this_ptr->thumb_end < iVar1) {
-          this_ptr->scroll_position = this_ptr->scroll_position + this_ptr->max_value;
+          this_ptr->scroll_position = this_ptr->scroll_position + this_ptr->page_size;
         }
         else {
           g_MouseButtonFlags.bytes[0] = g_MouseButtonFlags.bytes[0] & 0xfe;
@@ -146,7 +146,7 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0(CEdScrollB
   }
   iVar2 = iVar2 + g_DragStartThumbPos;
   wincore_winrun_cpp_setCursorPosition_FUN_005f30d0(iVar3,iVar1);
-  if ((this_ptr->max_value < this_ptr->current_value) && (0 < this_ptr->current_value)) {
+  if ((this_ptr->page_size < this_ptr->item_count) && (0 < this_ptr->item_count)) {
     if (iVar2 == g_DragStartThumbPos) {
       this_ptr->scroll_position = g_DragStartScrollPos;
       goto LAB_004a6083;
@@ -155,11 +155,11 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0(CEdScrollB
       iVar1 = this_ptr->thumb_end - this_ptr->thumb_start;
       if (iVar2 + iVar1 < this_ptr->track_end) {
         this_ptr->scroll_position =
-             ((iVar2 - this_ptr->track_start) * (this_ptr->current_value - this_ptr->max_value)) /
+             ((iVar2 - this_ptr->track_start) * (this_ptr->item_count - this_ptr->page_size)) /
              ((this_ptr->track_end - this_ptr->track_start) - iVar1);
       }
       else {
-        this_ptr->scroll_position = this_ptr->current_value - this_ptr->max_value;
+        this_ptr->scroll_position = this_ptr->item_count - this_ptr->page_size;
       }
       goto LAB_004a6083;
     }

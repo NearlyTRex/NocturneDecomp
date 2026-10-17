@@ -1,28 +1,39 @@
 #include "core/main/main.h"
 
+#include "buildversion.h"
 #include "common/error/fatalerror.h"
+#include "common/random/watcomrandom.h"
+#include "core/actor/actor.h"
 #include "core/dfilter/demonfilter.h"
 #include "core/dfont/dfont.h"
 #include "core/game/game.h"
 #include "core/inivar/inivar.h"
+#include "core/menu/menu.h"
+#include "core/menuinput.h"
 #include "core/mission/demonmission.h"
 #include "core/netgame/netgame.h"
 #include "core/podmain/demonpod.h"
+#include "core/set/demonset.h"
 #include "core/sound/sound.h"
+#include "core/xform/xform.h"
 #include "engine/2d/2d.h"
 #include "engine/3d/3d.h"
 #include "engine/console/console.h"
 #include "engine/dosio/dosio.h"
+#include "engine/drender/demonrenderer.h"
 #include "engine/font/font.h"
 #include "engine/ini/ini.h"
 #include "engine/keys/keys.h"
 #include "engine/light/light.h"
 #include "engine/matrix/matrix.h"
 #include "engine/ncursfx/mouse.h"
+#include "engine/prim/prim.h"
 #include "engine/special/special.h"
 #include "engine/texture/currenttexture.h"
 #include "engine/texture/texture.h"
+#include "engine/zraster/zraster.h"
 #include "platform/gl/glrenderer.h"
+#include "platform/rendervertex.h"
 #include "platform/sdl/sdlaudiodevice.h"
 #include "platform/sdl/sdlclipboard.h"
 #include "platform/sdl/sdlclock.h"
@@ -43,11 +54,14 @@
 #include "wincore/winvideo/winvideo.h"
 
 #include <array>
+#include <cstddef>
 #include <cstdio>
 #include <ctime>
 #include <exception>
 #include <format>
+#include <new>
 #include <string_view>
+#include <vector>
 
 namespace {
 
@@ -58,6 +72,8 @@ namespace wincore = nocturne::wincore;
 
 constexpr int kWidth = 640;
 constexpr int kHeight = 480;
+// The size of the original's g_RenderVertexBuffer.
+constexpr std::size_t kRenderVertexCount = 20000;
 
 std::tm getLocalTime() {
     const std::time_t now = std::time(nullptr);
@@ -96,7 +112,8 @@ public:
              .global_filters = global_filters_,
              .player_filters = player_filters_,
              .mouse = mouse_,
-             .net_game = net_game_});
+             .net_game = net_game_,
+             .menu = menu_});
     }
 
     // Shows the screen until the window closes; the game beyond startup comes later.
@@ -132,13 +149,21 @@ private:
     engine::SCurrentTexture current_texture_;
     engine::CSpecial special_{renderer_, screen_, two_d_, matrix_, three_d_, current_texture_};
     engine::CKeys keys_{winrun_, screen_};
-    nocturne::shape::CEditorTools editor_tools_{two_d_,   matrix_, three_d_, screen_,
-                                                special_, keys_,   clock_};
+    nocturne::shape::CEditorTools editor_tools_{{.two_d = two_d_,
+                                                 .matrix = matrix_,
+                                                 .three_d = three_d_,
+                                                 .screen = screen_,
+                                                 .special = special_,
+                                                 .keys = keys_,
+                                                 .raw_input = winrun_,
+                                                 .game_clock = winrun_,
+                                                 .clock = clock_,
+                                                 .clipboard = clipboard_}};
     engine::CFontColors colors_;
     nocturne::support::CNewMsg messages_{dosio_};
     core::CDFont fonts_{dosio_,  screen_,   two_d_,    three_d_,
                         colors_, os_fonts_, messages_, editor_tools_};
-    core::CGame game_;
+    core::CGame game_{winrun_};
     engine::CConsole console_{file_system_, engine::CConsole::kMaxColumns,
                               engine::CConsole::kMaxRows, 1, 1};
     nocturne::sound::CSndMain sound_main_{dosio_, file_system_, audio_, console_, &getLocalTime};
@@ -162,16 +187,55 @@ private:
     core::CNetGame net_game_{file_system_, environment_, winrun_};
     wincore::SMovieOwners movie_owners_{file_system_, movies_,  window_, clock_,
                                         winrun_,      special_, screen_, two_d_};
+    std::vector<nocturne::platform::SRenderVertex> vertex_buffer_ =
+        std::vector<nocturne::platform::SRenderVertex>(kRenderVertexCount);
+    engine::CPrim prim_{special_, two_d_, three_d_, current_texture_};
+    engine::CZRaster zraster_{special_, two_d_, three_d_, current_texture_};
+    engine::CDemonRenderer demon_renderer_{matrix_,
+                                           two_d_,
+                                           three_d_,
+                                           vertex_buffer_,
+                                           special_,
+                                           prim_,
+                                           zraster_,
+                                           current_texture_,
+                                           texture_,
+                                           screen_,
+                                           &core::transformAndClipGeometry};
+    core::CDemonSet set_{demon_renderer_, matrix_, special_};
+    nocturne::common::CWatcomRandom crt_random_;
+    core::CActor actor_{game_, crt_random_};
+    core::CMenuInput menu_input_{keys_};
+    core::CMenu menu_{{.dosio = dosio_,
+                       .screen = screen_,
+                       .special = special_,
+                       .two_d = two_d_,
+                       .three_d = three_d_,
+                       .raw_input = winrun_,
+                       .menu_input = menu_input_,
+                       .fonts = fonts_,
+                       .messages = messages_,
+                       .renderer = demon_renderer_,
+                       .set = set_,
+                       .game = game_,
+                       .actor = actor_,
+                       .crt_random = crt_random_,
+                       .build_version = nocturne::kBuildVersion}};
 };
 
 // Everything is gone by the time a fatal error is reported, as the original tore down its sound
-// and graphics before showing the box.
+// and graphics before showing the box. The original quit "Out of memory" wherever an allocation
+// failed; a failed allocation here becomes that fatal error.
 int runGame(sdl::CSdlWindow &window, sdl::CSdlFileSystem &file_system, sdl::CSdlClock &clock,
             wincore::CWinRun &winrun) {
-    CGameSystems systems(window, file_system, clock, winrun);
-    systems.initializeGameSystems();
-    systems.run();
-    return 0;
+    try {
+        CGameSystems systems(window, file_system, clock, winrun);
+        systems.initializeGameSystems();
+        systems.run();
+        return 0;
+    } catch (const std::bad_alloc &) {
+        core::displayErrorAndQuit("Out of memory");
+    }
 }
 
 int run() {
@@ -184,6 +248,7 @@ int run() {
     try {
         return runGame(window, file_system, clock, winrun);
     } catch (const nocturne::common::CFatalError &error) {
+        // Retail writes no gtfo.txt; nocedit's log is kept so a fatal error outlives its box.
         file_system.appendFile("gtfo.txt", error.getLogEntry(getLocalTime()));
         winrun.displayMessageBoxAndQuit(error);
         return 1;

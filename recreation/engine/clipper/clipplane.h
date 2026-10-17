@@ -1,6 +1,12 @@
 #pragma once
 
 #include "platform/projectedvertex.h"
+#include "platform/rendervertex.h"
+
+#include <cstddef>
+#include <functional>
+#include <span>
+#include <vector>
 
 namespace nocturne::engine {
 
@@ -29,6 +35,10 @@ inline constexpr SFrustumPlane kNegativeYPlane{.coordinate =
                                                .other = &platform::SProjectedVertex::transformed_x,
                                                .negative = true};
 
+// Whether every corner is outside the view, past one side they share. A corner outside holds the
+// sides it is past in screen_x.
+[[nodiscard]] bool isWhollyPastASide(std::span<const platform::SRenderVertex *const> corners);
+
 // Whether the point is on the plane or past it.
 [[nodiscard]] bool isPastPlane(const platform::SProjectedVertex &point, const SFrustumPlane &plane);
 
@@ -38,5 +48,26 @@ inline constexpr SFrustumPlane kNegativeYPlane{.coordinate =
 int clipEdgeToPlane(const platform::SProjectedVertex &inside,
                     const platform::SProjectedVertex &outside, const SFrustumPlane &plane,
                     platform::SProjectedVertex &output);
+
+using PastPlaneTest = std::function<bool(const platform::SRenderVertex &vertex)>;
+// Writes the vertex where the edge from inside to outside meets the plane.
+using EdgeClipper =
+    std::function<void(const platform::SRenderVertex &inside,
+                       const platform::SRenderVertex &outside, platform::SRenderVertex &output)>;
+
+// One plane's pass over a polygon, from its corner first: each corner inside is kept, and each
+// edge crossing the plane adds the point where it does. A new point starts zeroed where the
+// original reused a scratch slot.
+void clipPolygonToPlane(std::span<const platform::SRenderVertex> input,
+                        const PastPlaneTest &is_past, const EdgeClipper &clip_edge,
+                        std::size_t first, std::vector<platform::SRenderVertex> &output);
+void clipPolygonToPlane(std::span<const platform::SRenderVertex> input, const SFrustumPlane &plane,
+                        const EdgeClipper &clip_edge, std::size_t first,
+                        std::vector<platform::SRenderVertex> &output);
+
+// A point at no depth goes to the centre one step out, and an x the y passes' chopping or a
+// wrapped sum left past a side is pulled back onto it. The original then pulled y in when x was
+// within the view, but the last two passes leave y within the depth whenever x is.
+void pullOntoView(platform::SProjectedVertex &point);
 
 } // namespace nocturne::engine

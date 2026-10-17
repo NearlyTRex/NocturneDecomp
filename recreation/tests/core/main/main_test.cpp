@@ -1,15 +1,22 @@
 #include "common/error/fatalerror.h"
+#include "common/random/watcomrandom.h"
+#include "core/actor/actor.h"
 #include "core/dfilter/demonfilter.h"
 #include "core/dfont/dfont.h"
 #include "core/game/game.h"
 #include "core/inivar/inivar.h"
 #include "core/main/main.h"
+#include "core/menu/menu.h"
+#include "core/menuinput.h"
 #include "core/mission/demonmission.h"
 #include "core/netgame/netgame.h"
+#include "core/set/demonset.h"
 #include "core/sound/sound.h"
+#include "core/xform/xform.h"
 #include "engine/2d/2d.h"
 #include "engine/3d/3d.h"
 #include "engine/dosio/foundfileinfo.h"
+#include "engine/drender/demonrenderer.h"
 #include "engine/font/font.h"
 #include "engine/ini/ini.h"
 #include "engine/keys/keys.h"
@@ -17,9 +24,12 @@
 #include "engine/matrix/matrix.h"
 #include "engine/ncursfx/mouse.h"
 #include "engine/pod/pod.h"
+#include "engine/prim/prim.h"
 #include "engine/special/special.h"
 #include "engine/texture/currenttexture.h"
 #include "engine/texture/texture.h"
+#include "engine/zraster/zraster.h"
+#include "platform/rendervertex.h"
 #include "shape/edittool/editortools.h"
 #include "support/newmsg/newmsg.h"
 #include "tests/mocks/engine/fontsheet.h"
@@ -27,6 +37,7 @@
 #include "tests/mocks/engine/mockgameclock.h"
 #include "tests/mocks/engine/mockrawinput.h"
 #include "tests/mocks/engine/podimage.h"
+#include "tests/mocks/platform/mockclipboard.h"
 #include "tests/mocks/platform/mockclock.h"
 #include "tests/mocks/platform/mockdisplay.h"
 #include "tests/mocks/platform/mockenvironment.h"
@@ -142,11 +153,21 @@ protected:
     engine::SCurrentTexture current_texture_;
     engine::CSpecial special_{renderer_, screen_, two_d_, matrix_, three_d_, current_texture_};
     engine::CKeys keys_{raw_input_, screen_};
-    shape::CEditorTools editor_tools_{two_d_, matrix_, three_d_, screen_, special_, keys_, clock_};
+    NiceMock<platform::MockClipboard> clipboard_;
+    shape::CEditorTools editor_tools_{{.two_d = two_d_,
+                                       .matrix = matrix_,
+                                       .three_d = three_d_,
+                                       .screen = screen_,
+                                       .special = special_,
+                                       .keys = keys_,
+                                       .raw_input = raw_input_,
+                                       .game_clock = game_clock_,
+                                       .clock = clock_,
+                                       .clipboard = clipboard_}};
     engine::CFontColors colors_;
     support::CNewMsg messages_{dosio_};
     CDFont fonts_{dosio_, screen_, two_d_, three_d_, colors_, os_fonts_, messages_, editor_tools_};
-    CGame game_;
+    CGame game_{game_clock_};
     engine::CIni ini_{file_system_};
     SIniDataOwners ini_owners_{.game = game_,
                                .sound_main = sound_,
@@ -166,6 +187,31 @@ protected:
     std::array<CDemonFilter, 4> player_filters_;
     engine::CMouse mouse_{dosio_, screen_, special_};
     CNetGame net_game_{file_system_, environment_, game_clock_};
+    std::vector<platform::SRenderVertex> vertex_buffer_ = std::vector<platform::SRenderVertex>(8);
+    engine::CPrim prim_{special_, two_d_, three_d_, current_texture_};
+    engine::CZRaster zraster_{special_, two_d_, three_d_, current_texture_};
+    engine::CDemonRenderer demon_renderer_{
+        matrix_,          two_d_,   three_d_, vertex_buffer_,           special_, prim_, zraster_,
+        current_texture_, texture_, screen_,  &transformAndClipGeometry};
+    CDemonSet set_{demon_renderer_, matrix_, special_};
+    common::CWatcomRandom crt_random_;
+    CActor actor_{game_, crt_random_};
+    CMenuInput menu_input_{keys_};
+    CMenu menu_{{.dosio = dosio_,
+                 .screen = screen_,
+                 .special = special_,
+                 .two_d = two_d_,
+                 .three_d = three_d_,
+                 .raw_input = raw_input_,
+                 .menu_input = menu_input_,
+                 .fonts = fonts_,
+                 .messages = messages_,
+                 .renderer = demon_renderer_,
+                 .set = set_,
+                 .game = game_,
+                 .actor = actor_,
+                 .crt_random = crt_random_,
+                 .build_version = "0.1.0"}};
     std::vector<std::string> movies_;
     SGameSystemOwners owners_{.ini = ini_,
                               .file_system = file_system_,
@@ -188,7 +234,8 @@ protected:
                               .global_filters = global_filters_,
                               .player_filters = player_filters_,
                               .mouse = mouse_,
-                              .net_game = net_game_};
+                              .net_game = net_game_,
+                              .menu = menu_};
 };
 
 TEST_F(CInitializeGameSystemsTest, ReadsTheIniAndKeepsItsModeAfterTheFirstRun) {

@@ -3,8 +3,10 @@
 #include <gtest/gtest.h>
 
 #include <array>
+#include <cmath>
 #include <cstddef>
 #include <cstdint>
+#include <limits>
 #include <span>
 #include <type_traits>
 #include <vector>
@@ -124,6 +126,12 @@ TEST(CoreXformFunctions, APointTransformsByRowAndTakesTheTranslation) {
     EXPECT_EQ(point.z, 54.0F);
 }
 
+// Summed y and x first, the small y term is lost before the z term cancels the x term.
+TEST(CoreXformFunctions, APointSumsTheYAndXTermsFirst) {
+    const common::CMatrix3x4f matrix = rows({1, 0x1p-30F, -1, 0}, {}, {});
+    EXPECT_EQ(transformVector3x4({.x = 1, .y = 0x1p-30F, .z = 1}, matrix).x, 0.0F);
+}
+
 TEST(CoreXformFunctions, ClearingTheTranslationLeavesTheRotation) {
     common::CMatrix3x4f matrix = rows({1, 2, 3, 10}, {4, 5, 6, 20}, {7, 8, 9, 30});
     clearTranslation(matrix);
@@ -166,6 +174,17 @@ TEST(CoreXformFunctions, StraightUpTheYAngleTakesTheWholeTurn) {
     EXPECT_EQ(angles.z, 0.0F);
 }
 
+// From nocedit's own code on the same matrix: the rows are scaled in double, not stored first.
+TEST(CoreXformFunctions, EulerAnglesMatchTheOriginal) {
+    const common::CVector3f angles =
+        matrixToEulerAngles(rows({-0.810802758F, -0.0525450148F, 0.459605277F, -99.6680984F},
+                                 {-0.828570902F, -5.77843761F, -2.12233353F, -75.1044159F},
+                                 {2.28515124F, -1.73543298F, 3.83289456F, 31.5388451F}));
+    EXPECT_EQ(angles.x, 0.348709226F);
+    EXPECT_EQ(angles.y, 0.551403224F);
+    EXPECT_EQ(angles.z, -2.9991734F);
+}
+
 TEST(CoreXformFunctions, AZeroRotationReadsAsNoAngle) {
     const common::CVector3f angles = matrixToEulerAngles({});
     EXPECT_EQ(angles.x, 0.0F);
@@ -177,6 +196,31 @@ TEST(CoreXformFunctions, SlerpHoldsItsEndsOutsideZeroToOne) {
     EXPECT_EQ(slerpQuaternion(a, b, 0.0F), a);
     EXPECT_EQ(slerpQuaternion(a, b, -1.0F), a);
     EXPECT_EQ(slerpQuaternion(a, b, 1.0F), b);
+}
+
+// The original's compares are unordered for NaN.
+TEST(CoreXformFunctions, ANaNTGivesTheSecondRotationAndANaNCosineTakesTheArc) {
+    const float nan = std::numeric_limits<float>::quiet_NaN();
+    const common::CQuaternion4f a{.w = 1};
+    const common::CQuaternion4f b{.w = kRootHalf, .z = kRootHalf};
+    EXPECT_EQ(slerpQuaternion(a, b, nan), b);
+    EXPECT_TRUE(std::isnan(slerpQuaternion({.w = nan, .x = 1}, {.x = 1}, 0.5F).x));
+}
+
+// From nocedit's own code: the weights stay double and are scaled by the sine's reciprocal.
+TEST(CoreXformFunctions, SlerpMatchesTheOriginal) {
+    EXPECT_EQ(slerpQuaternion(
+                  {.w = -0.919103861F, .x = -0.721148968F, .y = 0.820266604F, .z = 0.541486859F},
+                  {.w = -0.813401341F, .x = -0.0545834303F, .y = 0.149333239F, .z = -0.595329046F},
+                  0.907675803F),
+              (common::CQuaternion4f{
+                  .w = -0.857763946F, .x = -0.128420323F, .y = 0.227484062F, .z = -0.497335166F}));
+    EXPECT_EQ(slerpQuaternion(
+                  {.w = 0.496625423F, .x = 0.635461688F, .y = -0.776204228F, .z = -0.00804424286F},
+                  {.w = -0.496634185F, .x = -0.635457397F, .y = 0.776173711F, .z = 0.00804414973F},
+                  0.00742555875F),
+              (common::CQuaternion4f{
+                  .w = 0.496625483F, .x = 0.635461628F, .y = -0.77620399F, .z = -0.00804424193F}));
 }
 
 TEST(CoreXformFunctions, HalfwaySlerpIsHalfTheTurn) {

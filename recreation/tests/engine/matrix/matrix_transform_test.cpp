@@ -111,6 +111,31 @@ TEST_F(CMatrixTransformTest, AScaleInvertsToItsReciprocal) {
                                  CVector3i{.z = 2 * kOne}}}));
 }
 
+// The expected values here are nocedit's own code run on the same matrix.
+TEST_F(CMatrixTransformTest, TheInverseRoundsAsTheOriginalDoes) {
+    matrix_.setTransformMatrix(
+        {.m = {CVector3i{.x = 5, .y = 70, .z = 113}, CVector3i{.x = -139, .y = -70, .z = 0},
+               CVector3i{.x = -20, .y = -4, .z = 22}}});
+    matrix_.invertTransformMatrix();
+    EXPECT_EQ(matrix_.getInverseMatrix(),
+              (CMatrix3x3i{.m = {CVector3i{.x = -59594276, .y = -77085583, .z = 306097873},
+                                 CVector3i{.x = 118337205, .y = 91713269, .z = -607822920},
+                                 CVector3i{.x = -32660759, .y = -53402663, .z = 362983319}}}));
+}
+
+// Elements past a float's 24 bits show which products take an element before it is stored.
+TEST_F(CMatrixTransformTest, TwoProductsUseTheElementsAsLoaded) {
+    matrix_.setTransformMatrix(
+        {.m = {CVector3i{.x = -128269967, .y = -1360070645, .z = 1276632926},
+               CVector3i{.x = 1215361220, .y = -1686665960, .z = 293015390},
+               CVector3i{.x = -485591692, .y = -1717028924, .z = 1968919820}}});
+    matrix_.invertTransformMatrix();
+    EXPECT_EQ(matrix_.getInverseMatrix(),
+              (CMatrix3x3i{.m = {CVector3i{.x = -121, .y = 20, .z = 75},
+                                 CVector3i{.x = -109, .y = 15, .z = 68},
+                                 CVector3i{.x = -125, .y = 18, .z = 80}}}));
+}
+
 TEST_F(CMatrixTransformTest, AnInverseTooLargeForAnIntIsTheIntegerIndefinite) {
     constexpr int kIndefinite = std::numeric_limits<int>::min();
     matrix_.setTransformMatrix({.m = {CVector3i{.x = 1}, CVector3i{.y = 1}, CVector3i{.z = 1}}});

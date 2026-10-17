@@ -86,5 +86,15 @@ TEST_F(CWinRunTest, GetTimeWrapsLikeTheOriginalsInt) {
     EXPECT_EQ(winrun_.getTime(), -2'146'828'288);
 }
 
+// A single step of more than about half an hour is too long for an int; FISTP stores the
+// integer indefinite, which the count then adds.
+TEST_F(CWinRunTest, GetTimeAddsTheIntegerIndefiniteForAnOverlongStep) {
+    EXPECT_CALL(clock_, getCounter)
+        .WillOnce(Return(kStart + kFrequency))
+        .WillOnce(Return(kStart + (1'822 * kFrequency)));
+    EXPECT_EQ(winrun_.getTime(), 65536 * 18);
+    EXPECT_EQ(winrun_.getTime(), (65536 * 18) - 0x7fffffff - 1);
+}
+
 } // namespace
 } // namespace nocturne::wincore

@@ -182,8 +182,8 @@ void __cdecl core_msnedit_cpp_showEditorHelpScreen_FUN_00535e70(void)
     iVar3 = shape_edittool_cpp_calculateGridWidth_FUN_004a6490();
     shape_edittool_cpp_CEdScrollBar_setPosition_FUN_004a5b60
               (&local_48,g_WindowWidth - iVar3,iVar1,right_pos,bottom_pos);
-    local_48.current_value = local_14 + local_48.scroll_position;
-    local_48.max_value = (g_ClipBottom - g_ClipTop) + -1;
+    local_48.item_count = local_14 + local_48.scroll_position;
+    local_48.page_size = (g_ClipBottom - g_ClipTop) + -1;
     shape_edittool_cpp_CEdScrollBar_render_FUN_004a5c10(&local_48);
     shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0(&local_48);
     shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_004a1380(g_CEditorToolsPtr,0);
@@ -200,18 +200,18 @@ void __cdecl core_msnedit_cpp_showEditorHelpScreen_FUN_00535e70(void)
     }
     iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD3);
     if (iVar1 != 0) {
-      local_48.scroll_position = local_48.scroll_position + local_48.max_value;
+      local_48.scroll_position = local_48.scroll_position + local_48.page_size;
     }
     iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD9);
     if (iVar1 != 0) {
-      local_48.scroll_position = local_48.scroll_position - local_48.max_value;
+      local_48.scroll_position = local_48.scroll_position - local_48.page_size;
     }
     iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD7);
     if (iVar1 != 0) {
       local_48.scroll_position = 0;
     }
-    if (local_48.current_value - local_48.max_value < local_48.scroll_position) {
-      local_48.scroll_position = local_48.current_value - local_48.max_value;
+    if (local_48.item_count - local_48.page_size < local_48.scroll_position) {
+      local_48.scroll_position = local_48.item_count - local_48.page_size;
     }
     if (0x7fffffff < (uint)local_48.scroll_position) {
       local_48.scroll_position = 0;

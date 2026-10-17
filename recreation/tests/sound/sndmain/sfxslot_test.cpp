@@ -152,6 +152,15 @@ TEST_F(CSfxSlotTest, TrackedPositionAndVelocityAreFollowed) {
     EXPECT_EQ(slot_.options.velocity, (common::CVector3d{.x = 1.0, .y = 2.0, .z = 3.0}));
 }
 
+// The original read through a null source.
+TEST_F(CSfxSlotTest, WithoutASourceThePositionAndVelocityStayWhereTheyWere) {
+    slot_.options.position = {.x = 30.0, .y = 4.0, .z = -2.0};
+    slot_.options.velocity = {.x = 1.0, .y = 2.0, .z = 3.0};
+    ASSERT_TRUE(slot_.compute(0.0F));
+    EXPECT_EQ(slot_.options.position, (common::CVector3d{.x = 30.0, .y = 4.0, .z = -2.0}));
+    EXPECT_EQ(slot_.options.velocity, (common::CVector3d{.x = 1.0, .y = 2.0, .z = 3.0}));
+}
+
 TEST_F(CSfxSlotTest, AFadeMovesTheVolumeTowardsItsTargetOverItsTime) {
     slot_.options.flags = kSfxNonPositional;
     slot_.fade_target_volume = 0.0F;

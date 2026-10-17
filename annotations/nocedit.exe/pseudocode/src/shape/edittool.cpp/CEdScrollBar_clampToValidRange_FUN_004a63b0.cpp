@@ -9,13 +9,13 @@
 void __cdecl shape_edittool_cpp_CEdScrollBar_clampToValidRange_FUN_004a63b0(CEdScrollBar *this_ptr,int *value_ptr)
 
 {
-  if (*value_ptr < this_ptr->current_value) {
+  if (*value_ptr < this_ptr->item_count) {
     if (-1 < *value_ptr) {
       return;
     }
   }
   else {
-    *value_ptr = this_ptr->current_value + -1;
+    *value_ptr = this_ptr->item_count + -1;
     if (-1 < *value_ptr) {
       return;
     }

@@ -190,7 +190,7 @@ void __cdecl engine_prim_c_normalizeTextureCoords_FUN_004f98e0(SRenderVertex *ve
 void __cdecl engine_prim_c_adjustNearPlaneTextureCoords_FUN_004f9960(SRenderVertex *vertices,int vertex_count);
 void __cdecl engine_prim_c_replaceWWithDepth_FUN_004f99d0(SRenderVertex *vertices,int vertex_count);
 int __cdecl engine_prim_c_calculateTriangleWindingOrder_FUN_004f9a10(SRenderVertex *v0,SRenderVertex *v1,SRenderVertex *v2);
-int __cdecl engine_prim_c_getTriangleWindingFromIndices1_FUN_004f9ad0(SMRGLPrimitiveTriangle *triangle);
+int __cdecl engine_prim_c_calculateTriangleWindingOrderFromIndices_FUN_004f9ad0(SMRGLPrimitiveTriangle *triangle);
 int __cdecl engine_prim_c_getTriangleWindingFromIndices2_FUN_004f9bc0(SMRGLPrimitiveTriangle *triangle_indices);
 int __cdecl engine_prim_c_getTriangleWindingFromPackedIndices_FUN_004f9cb0(STrianglePackedIndices *triangle);
 void __cdecl engine_prim_c_renderPolygonSoftware_FUN_004f9dd0(SRenderVertex *vertices,int vertex_count);

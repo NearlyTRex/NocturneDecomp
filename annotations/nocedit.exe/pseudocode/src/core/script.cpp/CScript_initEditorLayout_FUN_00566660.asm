@@ -17,11 +17,11 @@
 ; Referenced Globals:
 ;   CBitFont* g_ConsoleFont
 ;   CEdScrollBar g_ScriptEditorVScrollBar
-;   undefined4 g_ScriptEditorVScrollBar.current_value
-;   undefined4 g_ScriptEditorVScrollBar.max_value
+;   undefined4 g_ScriptEditorVScrollBar.item_count
+;   undefined4 g_ScriptEditorVScrollBar.page_size
 ;   CEdScrollBar g_ScriptEditorHScrollBar
-;   undefined4 g_ScriptEditorHScrollBar.current_value
-;   undefined4 g_ScriptEditorHScrollBar.max_value
+;   undefined4 g_ScriptEditorHScrollBar.item_count
+;   undefined4 g_ScriptEditorHScrollBar.page_size
 ;   int g_ScriptEditorLeft
 ;   int g_ScriptEditorTop
 ;   int g_ScriptEditorRight
@@ -138,7 +138,7 @@ section .text
     MOV EDX,dword ptr [0x031141e8]      ; 0056679b | g_ScriptTextAreaRight
     MOV EBX,dword ptr [0x03114204]      ; 005667a1 | g_ScriptEditorCharWidth
     SUB EDX,ECX                         ; 005667a7
-    MOV [0x0310fce0],EAX                ; 005667a9 | g_ScriptEditorVScrollBar.max_value
+    MOV [0x0310fce0],EAX                ; 005667a9 | g_ScriptEditorVScrollBar.page_size
     MOV EAX,EDX                         ; 005667ae
     SAR EDX,0x1f                        ; 005667b0
     IDIV EBX                            ; 005667b3
@@ -146,12 +146,12 @@ section .text
     LEA ESI,[EDI + 0x38]                ; 005667b8
     PUSH ESI                            ; 005667bb
     XOR EBX,EBX                         ; 005667bc
-    MOV [0x0310fd14],EAX                ; 005667be | g_ScriptEditorHScrollBar.max_value
-    MOV dword ptr [0x0310fd10],EBX      ; 005667c3 | g_ScriptEditorHScrollBar.current_value
+    MOV [0x0310fd14],EAX                ; 005667be | g_ScriptEditorHScrollBar.page_size
+    MOV dword ptr [0x0310fd10],EBX      ; 005667c3 | g_ScriptEditorHScrollBar.item_count
     CALL shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0 ; 005667c9
         ;   XREF to: 004a6ed0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0(CStrList * this_ptr)
     ADD ESP,0x4                         ; 005667ce
-    MOV [0x0310fcdc],EAX                ; 005667d1 | g_ScriptEditorVScrollBar.current_value
+    MOV [0x0310fcdc],EAX                ; 005667d1 | g_ScriptEditorVScrollBar.item_count
     PUSH ESI                            ; 005667d6
         ;   Label: LAB_005667d6
     CALL shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0 ; 005667d7

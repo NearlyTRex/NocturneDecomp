@@ -49,8 +49,9 @@ public:
                               std::uint8_t *opacity_data) = 0;
     virtual int drawPolygon(SRenderVertex *vertices, int vertex_count, int render_flags) = 0;
     virtual int drawPolygon2(SRenderVertex **vertex_array, int vertex_count, int render_flags) = 0;
-    virtual int drawPolyList(SRenderVertex *vertex_buffer, SMRGLPrimitiveQuad **polygons,
-                             int polygon_count, int render_flags) = 0;
+    virtual int drawPolyList(SRenderVertex *vertex_buffer,
+                             const SMRGLPrimitiveQuad *const *polygons, int polygon_count,
+                             int render_flags) = 0;
     virtual int drawPolyList2(SRenderVertex *vertex_buffer, SInputFace **polygons,
                               int polygon_count, int render_flags) = 0;
     virtual int addParticle(void *particle_data, int particle_type) = 0;

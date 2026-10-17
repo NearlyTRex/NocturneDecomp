@@ -39,8 +39,8 @@ int __cdecl core_main_c_showLicenseAgreement_FUN_005070f0(void)
   iVar2 = shape_edittool_cpp_calculateGridWidth_FUN_004a6490();
   shape_edittool_cpp_CEdScrollBar_setPosition_FUN_004a5b60
             (&local_48,g_WindowWidth - iVar2,iVar4,right_pos,bottom_pos);
-  local_48.max_value = g_WindowHeight;
-  local_48.current_value = iVar1 + 100;
+  local_48.page_size = g_WindowHeight;
+  local_48.item_count = iVar1 + 100;
   shape_edittool_cpp_CEdButton_ctor_FUN_004a64e0(&local_12c);
   shape_edittool_cpp_CEdButton_ctor_FUN_004a64e0(&local_210);
   do {

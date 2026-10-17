@@ -62,10 +62,11 @@ TEST_F(CPodFileTest, MountsAPod1DirectoryWithThePodsTime) {
     EXPECT_EQ(pod_.getEntries()[0].checksum, 0U);
 }
 
-TEST_F(CPodFileTest, AnEmptyPod1Mounts) {
+// Retail's malloc(0) at 0x004f7f2f returns null, which fails the mount.
+TEST_F(CPodFileTest, AnEmptyPod1IsRefused) {
     givenFile("EMPTY.POD", makePod1("", {}));
-    ASSERT_TRUE(pod_.mountFromFile("EMPTY.POD"));
-    EXPECT_TRUE(pod_.getEntries().empty());
+    EXPECT_FALSE(pod_.mountFromFile("EMPTY.POD"));
+    EXPECT_EQ(pod_.getVersion(), 0);
 }
 
 // The retail build's sort is a bubble sort, so names equal but for case keep their order.
@@ -161,7 +162,7 @@ TEST_F(CPodFileBadImageTest, TheUnmodifiedImageMounts) {
     EXPECT_TRUE(mount(withField(kCount, 2)));
 }
 
-// The original read an entry past the end of an empty directory.
+// Retail's malloc(0) at 0x004f7c42 returns null, which fails the mount.
 TEST_F(CPodFileBadImageTest, AnEmptyDirectoryIsRefused) {
     EXPECT_FALSE(mount(makePod2("", {})));
 }
@@ -203,7 +204,7 @@ TEST_F(CPodFileBadImageTest, APod1WithANegativeCountIsRefused) {
     EXPECT_FALSE(mount(image));
 }
 
-// The original read past a truncated directory into whatever followed.
+// The original took a record cut short as the one before it.
 TEST_F(CPodFileBadImageTest, APod1WithATruncatedDirectoryIsRefused) {
     std::string image = makePod1("", {{.name = "a"}});
     image.resize(0x54 + 10);
@@ -212,6 +213,12 @@ TEST_F(CPodFileBadImageTest, APod1WithATruncatedDirectoryIsRefused) {
 
 TEST_F(CPodFileBadImageTest, AFileShorterThanAnyHeaderIsRefused) {
     EXPECT_FALSE(mount("short"));
+}
+
+// The original took this as POD2 with the header's tail uninitialised.
+TEST_F(CPodFileBadImageTest, APod2CutShortInItsHeaderIsntReadAsPod2) {
+    EXPECT_FALSE(mount(withField(kCount, 2).substr(0, 0x5c)));
+    EXPECT_EQ(pod_.getVersion(), 0);
 }
 
 } // namespace

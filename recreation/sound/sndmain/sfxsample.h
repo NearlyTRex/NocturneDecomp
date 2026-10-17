@@ -29,8 +29,11 @@ public:
     // A looping sample's position wraps into its length; any other one stops at its ends.
     [[nodiscard]] double normalizePlaybackPos(double position, EPlaybackPosType input_type) const;
     // What it holds against the sound memory budget: its data at the size the file stores it,
-    // which is what the budget was set for.
+    // which is what the budget was set for, or a streamed one's buffer.
     [[nodiscard]] std::size_t getMemorySize() const;
+    // The original's ring buffer for a streamed sample, two seconds at the file's size, which the
+    // budget counts.
+    [[nodiscard]] std::size_t getStreamBufferSize() const;
 
     CSampleInfo sample_info;
     // Whether it repeats (the name is Ghidra's).
@@ -43,6 +46,8 @@ public:
     std::unique_ptr<CSfxStream> stream;
 
 private:
+    static constexpr std::size_t kStreamBufferSeconds = 2;
+
     void freeSampleData();
 };
 

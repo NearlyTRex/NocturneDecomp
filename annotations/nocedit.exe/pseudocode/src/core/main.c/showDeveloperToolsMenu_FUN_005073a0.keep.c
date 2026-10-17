@@ -169,8 +169,8 @@ LAB_0050740e:
   iVar5 = shape_edittool_cpp_calculateGridWidth_FUN_004a6490();
   shape_edittool_cpp_CEdScrollBar_setPosition_FUN_004a5b60
             (&local_60,g_WindowWidth - iVar5,iVar2,right_pos,bottom_pos);
-  local_60.max_value = g_WindowHeight;
-  local_60.current_value = iVar4 + 100;
+  local_60.page_size = g_WindowHeight;
+  local_60.item_count = iVar4 + 100;
   shape_edittool_cpp_CEdButton_ctor_FUN_004a64e0(&local_228);
   shape_edittool_cpp_CEdButton_ctor_FUN_004a64e0(&local_144);
   do {

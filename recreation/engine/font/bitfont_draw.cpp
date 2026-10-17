@@ -119,6 +119,10 @@ int CBitFont::getMaxCharWidth() const {
     return max_char_width_;
 }
 
+int CBitFont::getMaxCharHeight() const {
+    return max_char_height_;
+}
+
 // Text an OS font draws isn't scaled.
 // nocedit 0x004cfe80
 int CBitFont::getTextWidth(std::string_view text, int scale) const {

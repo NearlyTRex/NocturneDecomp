@@ -1,4 +1,5 @@
 #include "engine/prim/prim.h"
+#include "platform/mrglprimitivequad.h"
 #include "platform/rendervertex.h"
 
 #include <gtest/gtest.h>
@@ -27,8 +28,9 @@ TEST(EnginePrimFunctions, PublicInterface) {
     static_assert(std::is_same_v<decltype(&calculateTriangleWindingOrder),
                                  bool (*)(const SRenderVertex &, const SRenderVertex &,
                                           const SRenderVertex &, int)>);
-    static_assert(std::is_same_v<decltype(&getTriangleWindingFromIndices1),
-                                 int (*)(SMRGLPrimitiveTriangle *)>);
+    static_assert(std::is_same_v<decltype(&calculateTriangleWindingOrderFromIndices),
+                                 bool (*)(std::span<const SRenderVertex>,
+                                          const platform::SMRGLPrimitiveQuad &, int)>);
     static_assert(std::is_same_v<decltype(&getTriangleWindingFromPackedIndices),
                                  int (*)(platform::STrianglePackedIndices *)>);
     static_assert(
@@ -134,6 +136,22 @@ TEST(EnginePrimFunctions, CullingModeOneKeepsClockwiseTriangles) {
     const SRenderVertex v2 = onScreen(0, 10);
     EXPECT_TRUE(calculateTriangleWindingOrder(v0, v1, v2, 1));
     EXPECT_FALSE(calculateTriangleWindingOrder(v0, v2, v1, 1));
+}
+
+// The fourth corner plays no part.
+TEST(EnginePrimFunctions, APolygonsWindingIsItsFirstThreeCornersInTheBuffer) {
+    const std::array<SRenderVertex, 4> buffer{onScreen(0, 10), onScreen(0, 0), onScreen(10, 0),
+                                              onScreen(5, 5)};
+    const auto polygon = [](int a, int b, int c) {
+        return platform::SMRGLPrimitiveQuad{.surface_normal = {},
+                                            .vertices = {{.vertex_index = a},
+                                                         {.vertex_index = b},
+                                                         {.vertex_index = c},
+                                                         {.vertex_index = 3}}};
+    };
+    EXPECT_TRUE(calculateTriangleWindingOrderFromIndices(buffer, polygon(1, 2, 0), 1));
+    EXPECT_FALSE(calculateTriangleWindingOrderFromIndices(buffer, polygon(1, 0, 2), 1));
+    EXPECT_TRUE(calculateTriangleWindingOrderFromIndices(buffer, polygon(1, 0, 2), 2));
 }
 
 TEST(EnginePrimFunctions, AnyOtherCullingModeKeepsAnticlockwiseTriangles) {

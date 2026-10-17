@@ -54,12 +54,6 @@
         "column": 40,
         "line": 498,
         "message": "exponent has no digits"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 17,
-        "message": "use of undeclared identifier '_DAT_01bcd9c0'"
       }
     ],
     "success": false,
@@ -68,18 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 105,
-    "complexity_score": 104,
+    "complexity_score": 43,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 9,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 44,
-    "suspect_count": 5,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 149
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 43,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 148
   },
   "cross_references": [],
   "function": {
@@ -92,7 +83,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_00473a60",
-    "signature": "void __cdecl shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_00473a60(CEditorTools *this_ptr,int cursor_type,int width,int height)"
+    "signature": "void __cdecl shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_00473a60(CEditorTools *this_ptr,int cursor_type,int height,int width)"
   },
   "function_calls": [
     {
@@ -116,15 +107,15 @@
     },
     {
       "addr": "005b6d54",
-      "name": "DAT_005b6d54",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CursorSizeHorizontal",
+      "type": "int",
+      "value": "0x9"
     },
     {
       "addr": "005b6d58",
-      "name": "DAT_005b6d58",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CursorSizeVertical",
+      "type": "int",
+      "value": "0x9"
     },
     {
       "addr": "005b761c",
@@ -140,8 +131,8 @@
     },
     {
       "addr": "01bcd9c0",
-      "name": "DAT_01bcd9c0",
-      "type": "undefined4",
+      "name": "g_MouseCursorType",
+      "type": "int",
       "value": null
     },
     {
@@ -227,14 +218,14 @@
       },
       {
         "is_param": true,
-        "name": "width",
+        "name": "height",
         "offset": 12,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "height",
+        "name": "width",
         "offset": 16,
         "size": 4,
         "type": "int"
@@ -249,7 +240,7 @@
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 19,
-          "line": 42,
+          "line": 40,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         }
@@ -260,48 +251,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_005b6d54",
-      "severity": "mild",
-      "text": "DAT_005b6d54 = height;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_005b6d58",
-      "severity": "mild",
-      "text": "DAT_005b6d58 = width;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 45,
-      "match": "DAT_005b6d54",
-      "severity": "mild",
-      "text": "DAT_005b6d54 = height;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 46,
-      "match": "DAT_005b6d58",
-      "severity": "mild",
-      "text": "DAT_005b6d58 = width;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 42,
+      "line": 40,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "iVar2 = iVar1 >> 0x1f;",

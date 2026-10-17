@@ -33,6 +33,8 @@ common::CVector3f toWorld(std::span<const common::CVector3i> vertices, int index
 
 // Each vertex takes the sum of the planes of the polygons using it, scaled to unit length. A
 // corner off the vertex list, a stray write in the original, adds to nothing.
+// unverified: the scale and its products, which the x87 kept in extended precision before the
+//   chop, by running calcNormals against nocedit's own code with axis-aligned and large sums
 // nocedit 0x00477e60
 void CKeyFramedModel::calcNormals() {
     if (frame_count_ != 1) {
@@ -56,7 +58,7 @@ void CKeyFramedModel::calcNormals() {
         const double x = normal.x;
         const double y = normal.y;
         const double z = normal.z;
-        const double length = std::sqrt((z * z) + (y * y) + (x * x));
+        const double length = std::sqrt((x * x) + (y * y) + (z * z));
         if (length > 0.0) {
             // The CRT round the original calls chops toward zero.
             const double scale = kUnitLength / length;
@@ -109,6 +111,9 @@ void CKeyFramedModel::buildCollisionTriList() {
 }
 
 // Each polygon fans from its first corner, in world units turned by the angles.
+// deferred: keeping the angles and their rotation in the model, which getFloorHeight and
+//   intersectCylinder compare to rebuild the list and intersectRay turns its ray by, with
+//   CKeyFramedModel::getFloorHeight, intersectCylinder and intersectRay
 // nocedit 0x00478950
 void CKeyFramedModel::populateCollisionList(const common::CVector3f &transform_vector) {
     common::CMatrix3x3f rotation;

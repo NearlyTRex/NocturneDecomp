@@ -1,12 +1,12 @@
-// Name: engine_prim.c_getTriangleWindingFromIndices1_FUN_004f9ad0
+// Name: engine_prim.c_calculateTriangleWindingOrderFromIndices_FUN_004f9ad0
 // Address: 004f9ad0
 // Address Range: [[004f9ad0, 004f9bbb]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_prim_c_getTriangleWindingFromIndices1_FUN_004f9ad0(SMRGLPrimitiveTriangle *triangle)
+// Signature: int __cdecl engine_prim_c_calculateTriangleWindingOrderFromIndices_FUN_004f9ad0(SMRGLPrimitiveTriangle *triangle)
 
 #include "nocturne.h"
 
-int __cdecl engine_prim_c_getTriangleWindingFromIndices1_FUN_004f9ad0(SMRGLPrimitiveTriangle *triangle)
+int __cdecl engine_prim_c_calculateTriangleWindingOrderFromIndices_FUN_004f9ad0(SMRGLPrimitiveTriangle *triangle)
 
 {
   int iVar1;

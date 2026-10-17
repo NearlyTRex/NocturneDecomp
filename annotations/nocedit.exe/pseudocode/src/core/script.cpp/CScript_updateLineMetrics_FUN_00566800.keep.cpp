@@ -28,8 +28,8 @@ void __cdecl core_script_cpp_CScript_updateLineMetrics_FUN_00566800(CScript *thi
         }
         pcVar3[iVar2] = '\0';
       }
-      if (g_ScriptEditorHScrollBar.current_value < iVar2) {
-        g_ScriptEditorHScrollBar.current_value = iVar2;
+      if (g_ScriptEditorHScrollBar.item_count < iVar2) {
+        g_ScriptEditorHScrollBar.item_count = iVar2;
         return;
       }
     }

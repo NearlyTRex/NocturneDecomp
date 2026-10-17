@@ -6,6 +6,7 @@ namespace nocturne::common {
 
 class CBinaryReader;
 class CBinaryWriter;
+class CExtendedFloat;
 class CFatalError;
 class CFrameConverter;
 class CMatrix3x3f;
@@ -20,6 +21,7 @@ class CVector3d;
 class CVector3f;
 class CVector3i;
 class CVector4i;
+class CWatcomRandom;
 enum class EBlendFactor : std::uint8_t;
 enum class EDepthFunction : std::uint8_t;
 enum class EMipFilter : std::uint8_t;

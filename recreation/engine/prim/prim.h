@@ -26,7 +26,11 @@ void replaceWWithDepth(std::span<platform::SRenderVertex> vertices);
                                                  const platform::SRenderVertex &v1,
                                                  const platform::SRenderVertex &v2,
                                                  int culling_mode);
-int getTriangleWindingFromIndices1(SMRGLPrimitiveTriangle *triangle);
+// calculateTriangleWindingOrder over the polygon's first three corners in the buffer.
+[[nodiscard]] bool
+calculateTriangleWindingOrderFromIndices(std::span<const platform::SRenderVertex> vertices,
+                                         const platform::SMRGLPrimitiveQuad &triangle,
+                                         int culling_mode);
 int getTriangleWindingFromPackedIndices(platform::STrianglePackedIndices *triangle);
 // The first edge whose top row is y_value, other than edge_ptr; none if there is none.
 [[nodiscard]] SSoftwareEdge *findEdgeInBuffer(std::span<SSoftwareEdge> edges, int y_value,
@@ -58,8 +62,6 @@ public:
                                       const SPolygonState &state);
 
 private:
-    // How the corners split into the triangles culling tests.
-    enum class ETriangles : std::uint8_t { Fan, Strip };
     enum class EVariant : std::uint8_t { Simple, Advanced };
 
     void renderPolygon(std::span<platform::SRenderVertex> vertices, const SPolygonState &state,
@@ -68,9 +70,6 @@ private:
                               std::span<const int> vertex_indices, const SPolygonState &state,
                               EVariant variant);
 
-    // Whether back-face culling drops every triangle.
-    [[nodiscard]] bool isCulled(std::span<const platform::SRenderVertex *const> corners,
-                                ETriangles triangles) const;
     [[nodiscard]] bool drawsInHardware() const;
 
     CSpecial &special_;

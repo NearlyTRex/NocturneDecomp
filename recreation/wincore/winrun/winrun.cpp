@@ -1,6 +1,7 @@
 #include "wincore/winrun/winrun.h"
 
 #include "common/error/fatalerror.h"
+#include "common/math/fixed.h"
 #include "platform/clock.h"
 #include "platform/window.h"
 
@@ -15,14 +16,15 @@ CWinRun::CWinRun(platform::IWindow &window, platform::IClock &clock)
       performance_counter_(clock.getCounter()) {}
 
 // The original fell back to timeGetTime without a performance counter; the clock always has one.
-// Each call truncates its own fraction of a tick, so the game clock runs slightly slow.
+// Each call truncates its own fraction of a tick, so the game clock runs slightly slow. A step
+// too long for an int adds the x87's integer indefinite.
 // nocedit 0x005f2dc0
 int CWinRun::getTime() {
     const std::uint64_t previous_counter = performance_counter_;
     performance_counter_ = clock_.getCounter();
     const auto elapsed = static_cast<double>(performance_counter_ - previous_counter);
     accumulated_game_time_ += static_cast<std::uint32_t>(
-        static_cast<std::int64_t>(elapsed / timer_calibration_ * kTicksPerSecond));
+        common::truncateToInt(elapsed / timer_calibration_ * kTicksPerSecond));
     return static_cast<int>(accumulated_game_time_);
 }
 

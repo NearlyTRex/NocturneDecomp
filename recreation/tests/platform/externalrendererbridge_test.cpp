@@ -7,10 +7,13 @@
 namespace nocturne::platform {
 namespace {
 
+// The renderer writes the colour table back; the rest it only reads.
 TEST(CExternalRendererBridge, EveryMemberAddressesAnInt) {
     static_assert(std::is_same_v<decltype(CExternalRendererBridge::red_bit_position), int *>);
     static_assert(std::is_same_v<decltype(CExternalRendererBridge::blue_dither_shift), int *>);
-    static_assert(std::is_same_v<decltype(CExternalRendererBridge::rendering_quality), int *>);
+    static_assert(std::is_same_v<decltype(CExternalRendererBridge::blend_mode), const int *>);
+    static_assert(
+        std::is_same_v<decltype(CExternalRendererBridge::rendering_quality), const int *>);
 }
 
 TEST(CExternalRendererBridge, ShareNothingUntilTheEngineFillsItIn) {

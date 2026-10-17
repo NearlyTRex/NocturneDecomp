@@ -1,4 +1,5 @@
 #include "common/error/error.h"
+#include "common/math/fixed.h"
 #include "engine/2d/2d.h"
 #include "engine/3d/3d.h"
 #include "engine/font/bitfont.h"
@@ -7,23 +8,21 @@
 #include "shape/edittool/editortools.h"
 
 #include <algorithm>
-#include <cmath>
 #include <format>
 
 namespace nocturne::shape {
 namespace {
 
 constexpr int kOpaqueAlpha = 0xffff;
-constexpr float kPercent = 100.0F;
+constexpr double kPercent = 100.0;
 // An unchanged bar is redrawn this often, and the time left shows once this much has passed.
 constexpr double kRedrawInterval = 4.0;
 constexpr double kEstimateDelay = 5.0;
 constexpr int kSecondsPerMinute = 60;
 
-// The original adds a half and chops toward zero; every value here is at least zero, where
-// flooring does the same.
+// A half added, then the CRT round's chop toward zero.
 int roundHalfUp(double value) {
-    return static_cast<int>(std::floor(value + 0.5));
+    return common::truncateToInt(value + 0.5);
 }
 
 } // namespace
@@ -40,6 +39,8 @@ void CEditorTools::showCenteredProgressDialog(std::string_view message_text) {
     updatePercentage(0.0F, 1.0F);
 }
 
+// unverified: the percentage's rounding and the time-remaining estimate, by running
+//   updatePercentage against nocedit's own code with getSeconds stubbed
 // nocedit 0x004a0530
 void CEditorTools::updatePercentage(float current_progress, float total_progress) {
     if (window_stack_count_ == 0) {
@@ -50,7 +51,7 @@ void CEditorTools::updatePercentage(float current_progress, float total_progress
         current_progress = std::clamp(current_progress, 0.0F, total_progress);
         fraction = current_progress / total_progress;
     }
-    const int percentage = roundHalfUp(fraction * kPercent);
+    const int percentage = roundHalfUp(static_cast<double>(fraction) * kPercent);
     const double now = getSeconds();
     SWindow &window = window_stack_[window_stack_count_ - 1];
     if (percentage == window.progress_percentage &&
@@ -79,17 +80,20 @@ void CEditorTools::drawProgress(int percentage, float fraction) {
     const int bottom = clip.top + (editor_font_line_height_ * 4) - 1;
     two_d_.fillRectWithBorder(left, top, right, bottom, progress_bar_background_color_,
                               progress_bar_border_color_);
-    const int fill_right = roundHalfUp(static_cast<float>(right - left + 1) * fraction) + left;
+    const int fill_right =
+        roundHalfUp(static_cast<double>(right - left + 1) * static_cast<double>(fraction)) + left;
     if (fill_right > left) {
         two_d_.fillRectColor(left, top, std::min(fill_right, right - 1), bottom,
                              progress_bar_fill_color_);
     }
 }
 
-// The time left assumes the rest goes at the rate so far.
+// The time left assumes the rest goes at the rate so far, with the elapsed time rounded to a float
+// as the original kept it for this.
 void CEditorTools::drawTimeRemaining(float current_progress, float total_progress, double elapsed) {
-    const int remaining = roundHalfUp(((total_progress - current_progress) * elapsed) /
-                                      static_cast<double>(current_progress));
+    const int remaining = roundHalfUp(
+        ((static_cast<double>(total_progress) - current_progress) * static_cast<float>(elapsed)) /
+        static_cast<double>(current_progress));
     if (remaining <= 0) {
         return;
     }

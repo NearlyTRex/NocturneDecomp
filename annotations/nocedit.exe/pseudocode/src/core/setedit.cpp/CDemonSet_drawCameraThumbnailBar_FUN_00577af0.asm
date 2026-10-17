@@ -46,8 +46,8 @@
 ;   uchar[32768] g_ColorCubeLookup
 ;   int g_ActiveRenderColor
 ;   CEdScrollBar g_ThumbnailScrollBar
-;   undefined4 g_ThumbnailScrollBar.current_value
-;   undefined4 g_ThumbnailScrollBar.max_value
+;   undefined4 g_ThumbnailScrollBar.item_count
+;   undefined4 g_ThumbnailScrollBar.page_size
 ;   uchar g_ThumbnailScrollBarInitFlag
 ;   ... and 3 more
 ;
@@ -142,8 +142,8 @@ section .text
     SAR EAX,0x6                         ; 00577bbb
     ADD ESP,0x14                        ; 00577bbe
     PUSH 0x3364ce0                      ; 00577bc1 | g_ThumbnailScrollBar
-    MOV dword ptr [0x03364ce4],EBX      ; 00577bc6 | g_ThumbnailScrollBar.current_value
-    MOV [0x03364ce8],EAX                ; 00577bcc | g_ThumbnailScrollBar.max_value
+    MOV dword ptr [0x03364ce4],EBX      ; 00577bc6 | g_ThumbnailScrollBar.item_count
+    MOV [0x03364ce8],EAX                ; 00577bcc | g_ThumbnailScrollBar.page_size
     CALL shape_edittool.cpp_CEdScrollBar_handleInput_FUN_004a5fc0 ; 00577bd1
         ;   XREF to: 004a5fc0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEdScrollBar_handleInput_FUN_004a5fc0(CEdScrollBar * this_ptr)
     ADD ESP,0x4                         ; 00577bd6

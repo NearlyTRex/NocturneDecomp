@@ -11,7 +11,7 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_scrollToMakeVisible_FUN_004a6420(CE
 {
   int iVar1;
   
-  iVar1 = target_index - this_ptr->max_value;
+  iVar1 = target_index - this_ptr->page_size;
   if (this_ptr->scroll_position <= iVar1) {
     this_ptr->scroll_position = iVar1 + 1;
   }

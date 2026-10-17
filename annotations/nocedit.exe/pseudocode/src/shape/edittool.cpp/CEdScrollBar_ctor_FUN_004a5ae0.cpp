@@ -11,9 +11,9 @@ CEdScrollBar * __cdecl shape_edittool_cpp_CEdScrollBar_ctor_FUN_004a5ae0(CEdScro
 {
   int iVar1;
   
-  this_ptr->current_value = 1;
+  this_ptr->item_count = 1;
   this_ptr->scroll_position = 0;
-  this_ptr->max_value = 1;
+  this_ptr->page_size = 1;
   this_ptr->bounds_bottom = 0;
   this_ptr->scroll_increment = 1;
   this_ptr->orientation = 0;

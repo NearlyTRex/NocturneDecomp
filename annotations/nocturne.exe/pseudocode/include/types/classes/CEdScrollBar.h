@@ -8,8 +8,8 @@
 #pragma pack(push, 1)
 typedef struct CEdScrollBar {
     int scroll_position; // 0x0
-    int current_value; // 0x4
-    int max_value; // 0x8
+    int item_count; // 0x4
+    int page_size; // 0x8
     int scroll_increment; // 0xc
     int orientation; // 0x10
     int bounds_left; // 0x14

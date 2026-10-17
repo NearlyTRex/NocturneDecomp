@@ -17,8 +17,7 @@ constexpr std::uint32_t kWhite = 0xffffff;
 
 C3d::C3d(CMatrix &matrix) : matrix_(matrix) {}
 
-// The original also kept the point, which only CBoundingBox3D::isVisible reads; it arrives with
-// that.
+// deferred: keeping the point, with CBoundingBox3D::isVisible, its only reader
 // nocedit 0x004037e0
 void C3d::processCameraRelativePoint(const common::CVector3i &point) {
     const common::CVector3i origin = matrix_.getCameraOrigin();
@@ -51,6 +50,7 @@ int C3d::getCullingMode() const {
     return culling_mode_;
 }
 
+// The original also stored the inverted colour in a global that nothing reads.
 // nocedit 0x00406d80
 int C3d::setRenderAlpha(int alpha_color_value) {
     current_alpha_value_ = std::clamp(alpha_color_value >> 8, 0, kOpaqueAlpha);
@@ -64,11 +64,11 @@ void C3d::setBlendMode(int blend_mode) {
     blend_mode_ = blend_mode;
 }
 
-int C3d::getBlendMode() const {
+const int &C3d::getBlendMode() const {
     return blend_mode_;
 }
 
-int C3d::getCurrentAlphaValue() const {
+const int &C3d::getCurrentAlphaValue() const {
     return current_alpha_value_;
 }
 

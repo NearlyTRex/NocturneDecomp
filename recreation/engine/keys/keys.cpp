@@ -1,5 +1,6 @@
 #include "engine/keys/keys.h"
 
+#include "common/text/ascii.h"
 #include "engine/keys/inputcodetype.h"
 #include "engine/rawinput.h"
 
@@ -34,6 +35,11 @@ void CKeys::clearKeypresses() {
 // nocedit 0x00502460
 int CKeys::getInputKey() {
     return raw_input_.getNextKeypress(screen_) & 0xff;
+}
+
+// nocedit 0x00502470
+int CKeys::getUppercasedInputKey() {
+    return static_cast<unsigned char>(common::upperAscii(static_cast<char>(getInputKey())));
 }
 
 } // namespace nocturne::engine

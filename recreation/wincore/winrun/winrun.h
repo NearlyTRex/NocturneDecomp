@@ -47,6 +47,7 @@ public:
     [[nodiscard]] int getMouseX() const override;
     [[nodiscard]] int getMouseY() const override;
     [[nodiscard]] int getMouseButtonFlags() const override;
+    void releaseLeftMouseButton() override;
     [[nodiscard]] int takeMouseWheelNotches() override;
     void clearInput() override;
 
@@ -55,6 +56,7 @@ private:
 
     void mainWindowProc(const platform::SWindowEvent &event);
     void activate(int active);
+    void clearInputUntilTick();
     void pressMouseButton(const platform::SWindowEvent &event);
     void releaseMouseButton(const platform::SWindowEvent &event);
     [[nodiscard]] std::size_t getInputCode(std::uint16_t scancode) const;

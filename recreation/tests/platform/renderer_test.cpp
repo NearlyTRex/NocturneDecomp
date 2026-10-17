@@ -58,9 +58,9 @@ TEST(IRenderer, DrawingInterface) {
                                  int (IRenderer::*)(SRenderVertex *, int, int)>);
     static_assert(std::is_same_v<decltype(&IRenderer::drawPolygon2),
                                  int (IRenderer::*)(SRenderVertex **, int, int)>);
-    static_assert(
-        std::is_same_v<decltype(&IRenderer::drawPolyList),
-                       int (IRenderer::*)(SRenderVertex *, SMRGLPrimitiveQuad **, int, int)>);
+    static_assert(std::is_same_v<decltype(&IRenderer::drawPolyList),
+                                 int (IRenderer::*)(SRenderVertex *,
+                                                    const SMRGLPrimitiveQuad *const *, int, int)>);
     static_assert(std::is_same_v<decltype(&IRenderer::drawPolyList2),
                                  int (IRenderer::*)(SRenderVertex *, SInputFace **, int, int)>);
     static_assert(

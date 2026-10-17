@@ -26,6 +26,8 @@ CTextureCache &CTexture::initTextureCache() {
     return *texture_cache_instance_;
 }
 
+// deferred: recording the slot as the current texture index, with getCurrentTexture and its
+//   callers renderPolygonFullEffectsBufferedOp65 and renderPolygonFullEffectsDirectOp66
 // nocedit 0x005dd800
 void CTexture::ensureTextureLoaded(platform::SMRGLTextureBasic &texture) {
     if (owners_.current_texture.textures_disabled || texture.texture_name.empty()) {

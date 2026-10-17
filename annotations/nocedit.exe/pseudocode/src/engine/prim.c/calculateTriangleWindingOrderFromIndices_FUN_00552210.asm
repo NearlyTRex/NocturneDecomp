@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_prim_c_getTriangleWindingFromIndices1_FUN_00552210(SMRGLPrimitiveTriangle *triangle)
+; int __cdecl engine_prim_c_calculateTriangleWindingOrderFromIndices_FUN_00552210(SMRGLPrimitiveTriangle *triangle)
 ;
 ; Parameters:
 ; SMRGLPrimitiveTriangle * Stack[0x4]:4   triangle
@@ -25,7 +25,7 @@
 section .text
 
     PUSH EBX                            ; 00552210
-        ;   Label: engine_prim.c_getTriangleWindingFromIndices1_FUN_00552210
+        ;   Label: engine_prim.c_calculateTriangleWindingOrderFromIndices_FUN_00552210
     PUSH ESI                            ; 00552211
     PUSH EDI                            ; 00552212
     PUSH EBP                            ; 00552213

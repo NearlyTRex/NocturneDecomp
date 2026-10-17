@@ -162,6 +162,18 @@ TEST_F(CWinFontTest, ANegativeForegroundIsTheDefaultColourReadAsAColorRef) {
     EXPECT_EQ(screen_.pixel(0, 0), 0x332211U);
 }
 
+TEST_F(CWinFontTest, SixteenBitsWidenTheDefaultColoursPixelBeforeTakingItAsAColorRef) {
+    CMemoryScreen screen(kScreenWidth, kScreenHeight, 16);
+    EXPECT_CALL(factory_, createOsFont).WillOnce([this](std::string_view, int) {
+        return std::move(owned_font_);
+    });
+    CWinFont font(factory_, screen, two_d_, colors_, "Arial", 14, 0, 0);
+    colors_.setDefaultTextColor(static_cast<int>(CMemoryScreen::pack16(0x88, 0x44, 0x20)));
+    font.drawText("ab", 0, 0, -1, -1);
+    // 0x884420 as a COLORREF is red 0x20, green 0x44, blue 0x88 (asm 0x005f2680).
+    EXPECT_EQ(screen.pixel(0, 0), CMemoryScreen::pack16(0x20, 0x40, 0x88));
+}
+
 TEST_F(CWinFontTest, SixteenBitsRepackTheImagesFiveBitChannels) {
     CMemoryScreen screen(kScreenWidth, kScreenHeight, 16);
     EXPECT_CALL(factory_, createOsFont).WillOnce([this](std::string_view, int) {

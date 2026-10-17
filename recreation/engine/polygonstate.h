@@ -8,7 +8,7 @@
 namespace nocturne::engine {
 
 // Draws one row between two edges, and says whether to stop drawing the polygon. Only zraster's
-// triangle listens; the original's scanlines asked for that through a global flag.
+// and drender's triangles listen; the original's scanlines asked for that through a global flag.
 using ScanlineDrawer =
     std::function<bool(const SSoftwareEdge &left, const SSoftwareEdge &right, int scanline_y)>;
 

@@ -8,6 +8,7 @@
 #include "engine/matrix/matrix.h"
 #include "engine/screendevice.h"
 #include "engine/special/special.h"
+#include "platform/clipboard.h"
 
 #include <algorithm>
 #include <cstring>
@@ -22,6 +23,7 @@ constexpr int kTitleLineWidth = 200;
 constexpr int kOpaqueAlpha = 0xffff;
 constexpr std::string_view kMessageTitle = "Message";
 constexpr std::string_view kWarningTitle = "Warning";
+constexpr std::string_view kErrorTitle = "Error";
 
 // Bytes in a run of pixels, rounded toward zero.
 std::size_t toBytes(int pixels, int bits_per_pixel) {
@@ -34,15 +36,19 @@ std::byte *rowAt(std::span<void *> rows, int y) {
 
 } // namespace
 
-// staticInit built the global instance and init set its colours; the windows read these four.
+// staticInit built the global instance and init set its colours; the windows, prompts and
+// progress bar read these seven.
+// deferred: the twelve colours retail's init sets for CInputString::draw, CPickList::renderDialog,
+//   displayCenteredStatusMessage, showFilenameInputDialog and draw3DAxisLabels, with those
+//   functions
 // nocedit 0x0049d170
 // nocedit 0x0049df80
 // nocedit 0x0049e020
-CEditorTools::CEditorTools(engine::C2d &two_d, engine::CMatrix &matrix, engine::C3d &three_d,
-                           engine::IScreenDevice &screen, engine::CSpecial &special,
-                           engine::CKeys &keys, platform::IClock &clock)
-    : two_d_(two_d), matrix_(matrix), three_d_(three_d), screen_(screen), special_(special),
-      keys_(keys), clock_(clock), window_border_highlight_color_(7), title_bar_color_(0xfb),
+CEditorTools::CEditorTools(const SEditorToolsOwners &owners)
+    : two_d_(owners.two_d), matrix_(owners.matrix), three_d_(owners.three_d),
+      screen_(owners.screen), special_(owners.special), keys_(owners.keys),
+      raw_input_(owners.raw_input), game_clock_(owners.game_clock), clock_(owners.clock),
+      clipboard_(owners.clipboard), window_border_highlight_color_(7), title_bar_color_(0xfb),
       window_font_color_(0xff), warning_text_color_(0xff), window_status_text_color_(0xff),
       progress_bar_border_color_(0xff), progress_bar_fill_color_(4) {}
 
@@ -90,6 +96,12 @@ void CEditorTools::showMessage(std::string_view message) {
 // nocedit 0x0049e6f0
 void CEditorTools::showWarning(std::string_view message) {
     showPrompt(kWarningTitle, message, warning_text_color_);
+}
+
+// Retail draws it as showWarning does, in the same colour.
+// nocedit 0x0049e740
+void CEditorTools::showError(std::string_view message) {
+    showPrompt(kErrorTitle, message, warning_text_color_);
 }
 
 void CEditorTools::showPrompt(std::string_view title, std::string_view message, int text_color) {
@@ -282,6 +294,13 @@ void CEditorTools::paintCurrentWindow() {
                      rect.right - 2);
     two_d_.setClipRect(saved_clip);
     two_d_.setActiveRenderColor(saved_color);
+}
+
+// deferred: the copy of the text getClipboardText falls back on when the clipboard holds none,
+//   with getClipboardText
+// nocedit 0x004a1bc0
+void CEditorTools::setClipboardText(std::string_view text_data) {
+    clipboard_.setClipboardText(text_data);
 }
 
 } // namespace nocturne::shape

@@ -27,6 +27,7 @@ namespace nocturne::engine {
 namespace {
 
 using ::testing::_;
+using ::testing::Each;
 using ::testing::InSequence;
 using ::testing::NiceMock;
 using ::testing::Return;
@@ -91,10 +92,10 @@ TEST(CSpecial, PublicInterface) {
                                  int (CSpecial::*)(std::span<platform::SRenderVertex>, int)>);
     static_assert(std::is_same_v<decltype(&CSpecial::drawPolygon2),
                                  int (CSpecial::*)(std::span<platform::SRenderVertex *>, int)>);
-    static_assert(
-        std::is_same_v<decltype(&CSpecial::drawPolyList),
-                       int (CSpecial::*)(platform::SRenderVertex *,
-                                         std::span<platform::SMRGLPrimitiveQuad *>, int)>);
+    static_assert(std::is_same_v<decltype(&CSpecial::drawPolyList),
+                                 int (CSpecial::*)(
+                                     platform::SRenderVertex *,
+                                     std::span<const platform::SMRGLPrimitiveQuad *const>, int)>);
     static_assert(std::is_same_v<decltype(&CSpecial::drawPolyList2),
                                  int (CSpecial::*)(platform::SRenderVertex *,
                                                    platform::SInputFace **, int, int)>);
@@ -196,6 +197,40 @@ TEST_F(CSpecialTest, ClearScreenOfAnEmptyModeTouchesNothing) {
     EXPECT_EQ(first_row_[0], std::byte{0xff});
 }
 
+// Three depth rows a pixel wider than the screen, so a write past a row's end shows.
+class CSpecialZBufferTest : public CSpecialTest {
+protected:
+    CSpecialZBufferTest() {
+        for (std::size_t y = 0; y < z_rows_.size(); ++y) {
+            z_data_[y].fill(0xffffffffU);
+            z_rows_[y] = z_data_[y].data();
+        }
+        ON_CALL(screen_, getZBufferRows())
+            .WillByDefault(Return(std::span<std::uint32_t *>(z_rows_)));
+    }
+
+    std::array<std::array<std::uint32_t, kWidth + 1>, 3> z_data_{};
+    std::array<std::uint32_t *, 3> z_rows_{};
+};
+
+TEST_F(CSpecialZBufferTest, ClearZBufferNativeZeroesTheClipsRowsAcrossTheScreen) {
+    two_d_.setClipRect({.left = 1, .top = 1, .right = 2, .bottom = 2});
+    special_.clearZBufferNative();
+    EXPECT_THAT(z_data_[0], Each(0xffffffffU));
+    for (std::size_t y = 1; y < z_data_.size(); ++y) {
+        EXPECT_THAT(std::span(z_data_[y]).first(kWidth), Each(0U)) << y;
+        EXPECT_EQ(z_data_[y][kWidth], 0xffffffffU) << y;
+    }
+}
+
+TEST_F(CSpecialZBufferTest, ClearZBufferNativeOfAnEmptyClipTouchesNothing) {
+    two_d_.setClipRect({.left = 0, .top = 1, .right = 3, .bottom = 0});
+    special_.clearZBufferNative();
+    for (const auto &row : z_data_) {
+        EXPECT_THAT(row, Each(0xffffffffU));
+    }
+}
+
 TEST_F(CSpecialTest, WithTheRendererOnClearScreenClearsThroughIt) {
     startRenderer();
     first_row_.fill(std::byte{0xff});
@@ -215,7 +250,7 @@ getCorners(std::array<platform::SRenderVertex, 3> &vertices) {
 TEST_F(CSpecialTest, WithoutTheRendererNoPolygonIsDrawn) {
     std::array<platform::SRenderVertex, 3> vertices{};
     std::array<platform::SRenderVertex *, 3> corners = getCorners(vertices);
-    std::array<platform::SMRGLPrimitiveQuad *, 1> polygons{};
+    std::array<const platform::SMRGLPrimitiveQuad *, 1> polygons{};
     EXPECT_CALL(renderer_, drawPolygon(_, _, _)).Times(0);
     EXPECT_CALL(renderer_, drawPolygon2(_, _, _)).Times(0);
     EXPECT_CALL(renderer_, drawPolyList(_, _, _, _)).Times(0);
@@ -228,7 +263,7 @@ TEST_F(CSpecialTest, WithTheRendererPolygonsGoThroughIt) {
     startRenderer();
     std::array<platform::SRenderVertex, 3> vertices{};
     std::array<platform::SRenderVertex *, 3> corners = getCorners(vertices);
-    std::array<platform::SMRGLPrimitiveQuad *, 2> polygons{};
+    std::array<const platform::SMRGLPrimitiveQuad *, 2> polygons{};
     EXPECT_CALL(renderer_, drawPolygon(vertices.data(), 3, 5)).WillOnce(Return(7));
     EXPECT_CALL(renderer_, drawPolygon2(corners.data(), 3, 6)).WillOnce(Return(8));
     EXPECT_CALL(renderer_, drawPolyList(vertices.data(), polygons.data(), 2, 9))
@@ -267,9 +302,51 @@ TEST_F(CSpecialTest, LoadingSharesTheColourChannelsAndSelectsTheCard) {
         EXPECT_EQ(bridged, owned);
     }
     EXPECT_EQ(shared.texture_dimension, &current_texture_.dimension);
-    EXPECT_EQ(shared.blend_mode, nullptr);
     EXPECT_CALL(renderer_, selectCard(2)).WillOnce(Return(1));
     EXPECT_EQ(special_.selectCard(2), 1);
+}
+
+TEST_F(CSpecialTest, LoadingSharesTheBlendModeAndAlphaButNotTheLightOrQuality) {
+    special_.setUseDirect3D(true);
+    platform::CExternalRendererBridge shared;
+    EXPECT_CALL(renderer_, init(_)).WillOnce([&shared](platform::CExternalRendererBridge *bridge) {
+        shared = *bridge;
+        return 1;
+    });
+    ASSERT_EQ(special_.loadExternalRenderer(), 1);
+    EXPECT_EQ(shared.blend_mode, &three_d_.getBlendMode());
+    EXPECT_EQ(shared.current_alpha, &three_d_.getCurrentAlphaValue());
+    EXPECT_EQ(shared.current_lighting, nullptr);
+    EXPECT_EQ(shared.rendering_quality, nullptr);
+}
+
+// As startup leaves them: depth normalised against 0x10000, and bilinear filtering on.
+TEST_F(CSpecialTest, LoadingSharesTheQuadDepthAndTheInitialisedFlag) {
+    special_.setUseDirect3D(true);
+    platform::CExternalRendererBridge shared;
+    EXPECT_CALL(renderer_, init(_)).WillOnce([&shared](platform::CExternalRendererBridge *bridge) {
+        shared = *bridge;
+        return 1;
+    });
+    ASSERT_EQ(special_.loadExternalRenderer(), 1);
+    ASSERT_NE(shared.full_screen_quad_depth, nullptr);
+    ASSERT_NE(shared.system_initialized, nullptr);
+    EXPECT_EQ(*shared.full_screen_quad_depth, 0x10000);
+    EXPECT_EQ(*shared.system_initialized, 1);
+}
+
+// The renderer reads the blend mode as it changes.
+TEST_F(CSpecialTest, TheSharedBlendModeFollowsTheSetter) {
+    special_.setUseDirect3D(true);
+    const int *blend_mode = nullptr;
+    EXPECT_CALL(renderer_, init(_))
+        .WillOnce([&blend_mode](platform::CExternalRendererBridge *bridge) {
+            blend_mode = bridge->blend_mode;
+            return 1;
+        });
+    ASSERT_EQ(special_.loadExternalRenderer(), 1);
+    three_d_.setBlendMode(C3d::kAdditiveBlend);
+    EXPECT_EQ(*blend_mode, C3d::kAdditiveBlend);
 }
 
 // Processor type 0: the renderer's depth is the reciprocal the software renderer writes.

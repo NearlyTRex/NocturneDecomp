@@ -1,5 +1,7 @@
 #include "core/dfilter/demonfilter.h"
 
+#include "common/math/fixed.h"
+
 #include <algorithm>
 #include <cmath>
 #include <cstddef>
@@ -15,11 +17,13 @@ constexpr double kFreshScale = 256.0 * 0.25;
 // low byte before clamping, so a level of 256 or more wrapped.
 std::uint8_t toLevel(double value) {
     return static_cast<std::uint8_t>(
-        std::clamp(static_cast<int>(value), 0, static_cast<int>(CDemonFilter::kMaxLevel)));
+        std::clamp(common::truncateToInt(value), 0, static_cast<int>(CDemonFilter::kMaxLevel)));
 }
 
 } // namespace
 
+// deferred: naming the filter "unnamed", which CDemonLight::applyFilter copies into the light,
+//   with CDemonFilter::load and CDemonLight::applyFilter
 // nocedit 0x004701f0
 CDemonFilter::CDemonFilter() : CDemonFilter(kDefaultSize, kDefaultSize) {}
 
@@ -54,9 +58,12 @@ void CDemonFilter::init(float init_value, int flags) {
         for (int x = 0; x < size_; ++x, ++i) {
             const auto dx = static_cast<double>(half_size - x);
             const auto dy = static_cast<double>(half_count - y);
-            const float distance =
-                std::min(static_cast<float>(std::sqrt((dx * dx) + (dy * dy)) / half_size), 1.0F);
-            const float value = (1.0F - distance) * init_value;
+            const auto root = static_cast<float>(std::sqrt((dx * dx) + (dy * dy)));
+            // A filter one wide divides by zero; its NaN at the centre falls to the edge.
+            const auto quotient = static_cast<float>(static_cast<double>(root) / half_size);
+            const float distance = quotient <= 1.0F ? quotient : 1.0F;
+            const auto value =
+                static_cast<float>((1.0 - static_cast<double>(distance)) * init_value);
             data_buffer_[i] = flags == 0 ? toLevel(value * kFreshScale)
                                          : toLevel(static_cast<double>(data_buffer_[i]) * value);
         }

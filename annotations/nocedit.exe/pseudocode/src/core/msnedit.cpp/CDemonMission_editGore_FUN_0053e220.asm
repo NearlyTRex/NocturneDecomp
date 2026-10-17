@@ -240,7 +240,7 @@ section .text
     MOV ECX,dword ptr [0x00678a60]      ; 0053e424 | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH ECX                            ; 0053e42a | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a2920 ; 0053e42b
-        ;   XREF to: 004a2920 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a2920(CEditorTools * this_ptr, int cursor_type, int width, int height)
+        ;   XREF to: 004a2920 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a2920(CEditorTools * this_ptr, int cursor_type, int height, int width)
     ADD ESP,0x10                        ; 0053e430
     MOV EBX,dword ptr [ESP + 0xac]      ; 0053e433
     MOV EAX,dword ptr [ESP + 0x14]      ; 0053e43a

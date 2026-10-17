@@ -38,13 +38,13 @@ void __cdecl core_script_cpp_CScript_initEditorLayout_FUN_00566660(CScript *this
   shape_edittool_cpp_CEdScrollBar_setPosition_FUN_004a5b60
             (&g_ScriptEditorVScrollBar,g_ScriptTextAreaRight,g_ScriptTextAreaTop,g_ScriptEditorRight
              ,g_ScriptTextAreaBottom);
-  g_ScriptEditorVScrollBar.max_value =
+  g_ScriptEditorVScrollBar.page_size =
        (g_ScriptTextAreaBottom - g_ScriptTextAreaTop) / g_ScriptEditorLineHeight;
-  g_ScriptEditorHScrollBar.max_value =
+  g_ScriptEditorHScrollBar.page_size =
        (g_ScriptTextAreaRight - g_ScriptTextAreaLeft) / g_ScriptEditorCharWidth;
   iVar1 = 0;
-  g_ScriptEditorHScrollBar.current_value = 0;
-  g_ScriptEditorVScrollBar.current_value =
+  g_ScriptEditorHScrollBar.item_count = 0;
+  g_ScriptEditorVScrollBar.item_count =
        shape_edittool_cpp_CStrList_getItemCount_FUN_004a6ed0(&this_ptr->script_text);
   while( true ) {
     iVar2 = shape_edittool_cpp_CStrList_getItemCount_FUN_004a6ed0(&this_ptr->script_text);

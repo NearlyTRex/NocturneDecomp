@@ -12,30 +12,30 @@ void __cdecl core_script_cpp_CScript_updateScrollPosition_FUN_005669a0(CScript *
   int iVar1;
   
   core_script_cpp_CScript_updateCursorBounds_FUN_00566910(this_ptr);
-  if (g_ScriptEditorVScrollBar.current_value - g_ScriptEditorVScrollBar.max_value <
+  if (g_ScriptEditorVScrollBar.item_count - g_ScriptEditorVScrollBar.page_size <
       g_ScriptEditorVScrollBar.scroll_position) {
     g_ScriptEditorVScrollBar.scroll_position =
-         g_ScriptEditorVScrollBar.current_value - g_ScriptEditorVScrollBar.max_value;
+         g_ScriptEditorVScrollBar.item_count - g_ScriptEditorVScrollBar.page_size;
   }
   if (g_CurrentEditingLine < g_ScriptEditorVScrollBar.scroll_position) {
     g_ScriptEditorVScrollBar.scroll_position = g_CurrentEditingLine;
   }
-  iVar1 = (g_CurrentEditingLine - g_ScriptEditorVScrollBar.max_value) + 1;
+  iVar1 = (g_CurrentEditingLine - g_ScriptEditorVScrollBar.page_size) + 1;
   if (g_ScriptEditorVScrollBar.scroll_position < iVar1) {
     g_ScriptEditorVScrollBar.scroll_position = iVar1;
   }
   if (g_ScriptEditorVScrollBar.scroll_position < 0) {
     g_ScriptEditorVScrollBar.scroll_position = 0;
   }
-  if (g_ScriptEditorHScrollBar.current_value - g_ScriptEditorHScrollBar.max_value <
+  if (g_ScriptEditorHScrollBar.item_count - g_ScriptEditorHScrollBar.page_size <
       g_ScriptEditorHScrollBar.scroll_position) {
     g_ScriptEditorHScrollBar.scroll_position =
-         g_ScriptEditorHScrollBar.current_value - g_ScriptEditorHScrollBar.max_value;
+         g_ScriptEditorHScrollBar.item_count - g_ScriptEditorHScrollBar.page_size;
   }
   if (g_CurrentEditingColumn < g_ScriptEditorHScrollBar.scroll_position) {
     g_ScriptEditorHScrollBar.scroll_position = g_CurrentEditingColumn;
   }
-  iVar1 = (g_CurrentEditingColumn - g_ScriptEditorHScrollBar.max_value) + 1;
+  iVar1 = (g_CurrentEditingColumn - g_ScriptEditorHScrollBar.page_size) + 1;
   if (g_ScriptEditorHScrollBar.scroll_position < iVar1) {
     g_ScriptEditorHScrollBar.scroll_position = iVar1;
   }

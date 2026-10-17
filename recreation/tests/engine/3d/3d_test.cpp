@@ -161,10 +161,11 @@ TEST(C3d, PublicInterface) {
     static_assert(std::is_same_v<decltype(&C3d::drawLine2DFromIndices), void (C3d::*)(int, int)>);
     static_assert(std::is_same_v<decltype(&C3d::clipAndDrawLine2D),
                                  void (C3d::*)(platform::SRenderVertex, platform::SRenderVertex)>);
-    static_assert(std::is_same_v<decltype(&C3d::getCurrentAlphaValue), int (C3d::*)() const>);
+    static_assert(
+        std::is_same_v<decltype(&C3d::getCurrentAlphaValue), const int &(C3d::*)() const>);
     static_assert(
         std::is_same_v<decltype(&C3d::getCurrentRenderColor), std::uint32_t (C3d::*)() const>);
-    static_assert(std::is_same_v<decltype(&C3d::getBlendMode), int (C3d::*)() const>);
+    static_assert(std::is_same_v<decltype(&C3d::getBlendMode), const int &(C3d::*)() const>);
 }
 
 class C3dTest : public C2dFixture {

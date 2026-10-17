@@ -56,6 +56,7 @@ public:
     [[nodiscard]] int getCharHeight(int char_code, int scale = 1) const;
     [[nodiscard]] int getCharYOffset(int char_code) const;
     [[nodiscard]] int getMaxCharWidth() const;
+    [[nodiscard]] int getMaxCharHeight() const;
     [[nodiscard]] int getTextWidth(std::string_view text, int scale = 1) const;
     [[nodiscard]] int getTextHeight(std::string_view text, int scale = 1) const;
     // Up to max_lines lines no wider than max_pixel_width and shorter than line_width, broken

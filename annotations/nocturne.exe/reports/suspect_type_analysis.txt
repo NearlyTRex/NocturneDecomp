@@ -4,13 +4,13 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  undefined_data                  4043 ( 19.3%)
+  undefined_data                  4032 ( 19.3%)
   pointer_cast                    3555 ( 17.0%)
   pointer_truncation              2889 ( 13.8%)
-  unrolled_memcpy                 1476 (  7.0%)
-  warning_overlapping_globals      865 (  4.1%)
+  unrolled_memcpy                 1476 (  7.1%)
+  warning_overlapping_globals      864 (  4.1%)
   stack_param                      766 (  3.7%)
-  unknown_field                    723 (  3.5%)
+  unknown_field                    724 (  3.5%)
   concat_reconstruction            661 (  3.2%)
   shadow_pointer_walk              544 (  2.6%)
   unrolled_strcpy                  485 (  2.3%)
@@ -88,7 +88,7 @@ SUSPECT TYPE COUNTS
   mem_magic_size                     1 (  0.0%)
 
 ====================================================================================================
-TYPE: undefined_data (4043 occurrences)
+TYPE: undefined_data (4032 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -672,10 +672,10 @@ Functions:
   engine_pod.cpp_CPod_computeAndStoreCRC_FUN_004f8eb0
   engine_pod.cpp_crc32ComputeFileRange_FUN_004f7980
   engine_pod.cpp_crc32ComputeFromFile_FUN_004f78d0
+  engine_prim.c_calculateTriangleWindingOrderFromIndices_FUN_004f9ad0
   engine_prim.c_calculateTriangleWindingOrder_FUN_004f9a10
   engine_prim.c_findEdgeInBuffer_FUN_004f9830
   engine_prim.c_findEdgeInTable_FUN_004faca0
-  engine_prim.c_getTriangleWindingFromIndices1_FUN_004f9ad0
   engine_prim.c_getTriangleWindingFromIndices2_FUN_004f9bc0
   engine_prim.c_getTriangleWindingFromPackedIndices_FUN_004f9cb0
   engine_prim.c_renderIndexedPolygonAdvanced_FUN_004fb390
@@ -700,8 +700,6 @@ Functions:
   shape_edittool.cpp_CEdScrollBar_handleInput_FUN_00476920
   shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0
   shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00473190
-  shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004724e0
-  shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_00473a60
   shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_00470730
   shape_edittool.cpp_CPickList_handleDialogInput_FUN_00475230
   shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_00474460
@@ -2691,11 +2689,11 @@ Functions:
   sound_sndmain.cpp_startSfx_FUN_005265a0
 
 ====================================================================================================
-TYPE: warning_overlapping_globals (865 occurrences)
+TYPE: warning_overlapping_globals (864 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   865x  WARNING: Globals starting with
+   864x  WARNING: Globals starting with
 
 Functions:
   cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_0045cde0
@@ -3395,7 +3393,6 @@ Functions:
   shape_edittool.cpp_CEditorTools_popWindowState_FUN_004721e0
   shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0
   shape_edittool.cpp_CEditorTools_setClipboardText_FUN_00472d10
-  shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_00473a60
   shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_00471660
   shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0
   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_00470eb0
@@ -3695,7 +3692,7 @@ Functions:
   support_trisock.cpp_parseIPAddress_FUN_00548af0
 
 ====================================================================================================
-TYPE: unknown_field (723 occurrences)
+TYPE: unknown_field (724 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -3708,7 +3705,7 @@ Unique patterns:
     13x  ._20_4_
      9x  ._28_4_
      9x  ._2_2_
-     7x  ._0_1_
+     8x  ._0_1_
      7x  ._3_1_
      6x  ._32_4_
      4x  ._0_24_
@@ -3834,6 +3831,7 @@ Functions:
   shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0
   shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00473190
   shape_edittool.cpp_CEditorTools_drawCenteredWireframeCube_FUN_00473650
+  shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_00470730
   shape_edittool.cpp_draw3DInterpolatedLine_FUN_00473080
   sound_mp3.cpp_CMP3Decoder_decodeScalefacCompress_FUN_004e4c70
   sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_0052b270
@@ -6622,8 +6620,8 @@ Functions:
   core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0
   core_water.cpp_CWater_calculateVisibleTiles_FUN_00550800
   engine_3d.c_isVisiblePlane_FUN_00404610
+  engine_prim.c_calculateTriangleWindingOrderFromIndices_FUN_004f9ad0
   engine_prim.c_calculateTriangleWindingOrder_FUN_004f9a10
-  engine_prim.c_getTriangleWindingFromIndices1_FUN_004f9ad0
   engine_prim.c_getTriangleWindingFromIndices2_FUN_004f9bc0
   engine_prim.c_getTriangleWindingFromPackedIndices_FUN_004f9cb0
   engine_prim.c_renderIndexedPolygonSoftware_FUN_004fa2e0

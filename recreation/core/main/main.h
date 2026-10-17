@@ -35,6 +35,7 @@ struct SGameSystemOwners {
     std::span<CDemonFilter> player_filters;
     engine::CMouse &mouse;
     CNetGame &net_game;
+    CMenu &menu;
 };
 
 using common::displayErrorAndQuit;

@@ -34,6 +34,12 @@ void CSound::findAllSoundFiles() {
     sound_main_.initializeSoundDevice();
 }
 
+// nocedit 0x005b39a0
+void CSound::reset() {
+    sound_main_.resetSoundDevice();
+    sound_main_.freeAllSamples();
+}
+
 const shape::CStrList &CSound::getSoundFileList() const {
     return sound_file_list_;
 }
