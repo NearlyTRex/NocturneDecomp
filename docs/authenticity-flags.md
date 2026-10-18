@@ -4,6 +4,13 @@ This is not a byte-for-byte matching decompilation, but it is a *faithful* one: 
 project deviates from what the shipped binary does, the deviation is deliberate, documented and
 switchable. That is what `NOCTURNE_AUTHENTIC_*` is for.
 
+**Most of this page is temporary.** The enhancements, bug fixes and additions gated here are
+moving to the [recreation](project-structure.md#recreation), which is where the enhanced game will
+come from. Once it is finished they leave the decompilation. What remains will be the minimal shim
+needed to play the original, vanilla game on a modern system: roughly the `host` flags below,
+where Win32 and DirectDraw behaviour can't be reproduced, and the choice of which binary to
+present as.
+
 All of them live in
 [`shims/config/shim_config_authentic.h`](../annotations/nocedit.exe/pseudocode/shims/config/shim_config_authentic.h),
 which opens with a table of every flag, its default and its kind. That table is the index; the
@@ -90,6 +97,19 @@ honest reason its default is what it is.
 | `SOUND_ERROR_LOG` | sound error and missing-wav reports are written to `sounderr.txt` and `missingwavs.txt` in the game directory, since the network share they were written to is not there, and a "no free buffers" console line names the sound and what holds the buffers |
 
 **`defect` — the shipped binary is wrong, and the doc comment carries the instruction that proves it**
+
+"The shipped binary" here means **nocedit.exe**, the editor build of the game, where the
+decompilation started. Each defect was found and proved there. Retail nocturne.exe is a
+separate build, and its function bodies are still being decompiled, so most of these have
+not yet been checked against it. Where a doc comment does settle it:
+
+- **nocedit.exe only:** `MIRROR_CULL` and `MIRROR_PROJECTION`. Retail has no camera swap in its
+  visibility test and pushes no viewport around its mirror pass, so `0` there is also what retail
+  does.
+- **Both binaries:** `MIRROR_DEPTH_WINDOW` and `ENVMAP_OVERLAY`.
+
+A defect that turns out to be nocedit-only is still gated, since `1` means "as nocedit.exe
+shipped", but it is not a bug in the retail game.
 
 | Flag | Off |
 |---|---|

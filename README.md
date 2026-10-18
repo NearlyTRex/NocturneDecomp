@@ -6,7 +6,8 @@
 [![License: 0BSD (original work)](https://img.shields.io/badge/license-0BSD%20(original%20work)-blue)](LICENSE)
 
 A work-in-progress reverse engineering and decompilation project for the 1999 game **Nocturne**,
-aimed at understanding its engine and getting it running on modern systems.
+aimed at understanding its engine and getting it running on modern systems, and a clean C++
+recreation of the game engine built from that decompilation.
 
 ## About
 
@@ -20,11 +21,22 @@ regenerate an executable whose machine code matches the shipped binary. Decompil
 rewritten into readable, portable C/C++ that preserves observable behaviour; exact instruction
 selection, register allocation and stack layout are not preserved.
 
-**Faithful, and honest about where it isn't.** Where the project deliberately departs from what
-the shipped binary does — fixing an original bug, adding a window mode, scaling the HUD past
+**Two source trees, with separate jobs.**
+
+- **The decompilation** (`annotations/*/pseudocode/src/`) is the reference. Its goal is to run as
+  the original did, with as few edits as that takes.
+- **The recreation** (`recreation/`) is the game engine rewritten as clean, tested C++23, keeping
+  the original's structure and names. It is ported function by function from the decompilation, in
+  the order of the [recreation itinerary](docs/recreation-itinerary.md), and it is where the
+  enhanced version of the game will come from.
+
+**Faithful, and honest about where it isn't.** Where the decompilation currently departs from
+what the shipped binary does — fixing an original bug, adding a window mode, scaling the HUD past
 640x480 — the deviation sits behind a `NOCTURNE_AUTHENTIC_*` flag that restores the original
 behaviour, with both paths visible in the source. See
-[docs/authenticity-flags.md](docs/authenticity-flags.md).
+[docs/authenticity-flags.md](docs/authenticity-flags.md). These inline enhancements and bug fixes
+are transitional: as the recreation takes over, they move there, and the decompilation returns to
+the original behaviour.
 
 **Portable C/C++ only — no inline assembly.** Architecture-specific code in the original (MMX
 SIMD loops, x87 FPU idioms, hand-rolled asm) is ported to equivalent scalar or standard-library
@@ -65,8 +77,19 @@ menu scaling above 640x480, a resolution list the menu can actually reach, netpl
 catalogue of rendering bugs traced to their cause. The [research index](research/README.md)
 is the record of those investigations, several of which ended in a measured fix.
 
-Ongoing: remaining ASan/UBSan findings, the `nocturne.exe` retail sibling (signatures imported,
-bodies unfinished), and the open items listed in the research documents.
+The recreation is being ported now. It builds and runs on its own, through SDL3 adapters behind
+platform interfaces, and its tests hold it at 100% line, function and branch coverage.
+[docs/recreation-itinerary.md](docs/recreation-itinerary.md) tracks how much of the game it
+covers, step by step.
+
+The Ghidra annotation is still active: types, names and signatures are still being found and
+corrected, and each fix is applied to both `nocedit.exe` and `nocturne.exe`. Porting the
+recreation turns up many of them, because every ported function is checked against its read
+sites in both binaries.
+
+Ongoing: porting the recreation, the annotation fixes above, remaining ASan/UBSan findings, the
+`nocturne.exe` function bodies (signatures imported, bodies unfinished), and the open items
+listed in the research documents.
 
 ## Progress
 
@@ -104,6 +127,12 @@ never link are available too, and need nothing beyond clang, cmake, ninja and py
 and `exe-windows-msys2` builds one natively on Windows under MSYS2. Both are opt-in and neither
 is looked for by any other preset, so a plain clone on either platform is unaffected.
 
+The recreation is a separate CMake project with its own script:
+
+```sh
+./recreation.sh     # build the recreation, then run it
+```
+
 Full prerequisites and the preset table are in **[docs/building.md](docs/building.md)**.
 
 ## Documentation
@@ -114,6 +143,7 @@ Full prerequisites and the preset table are in **[docs/building.md](docs/buildin
 |---|---|
 | [building.md](docs/building.md) | Presets, prerequisites, build commands |
 | [project-structure.md](docs/project-structure.md) | What every directory is for |
+| [recreation-itinerary.md](docs/recreation-itinerary.md) | The order the recreation is ported in, and how far it has got |
 | [decompilation-workflow.md](docs/decompilation-workflow.md) | Raw Ghidra output to clean, compiling source |
 | [decompiler-artifacts.md](docs/decompiler-artifacts.md) | What Ghidra gets wrong on this binary, and the rewrite for each |
 | [keep-files.md](docs/keep-files.md) | Writing a `.keep` reconstruction |
@@ -131,6 +161,13 @@ findings. The index there is the map.
 
 **[docs/decompiler-artifacts.md](docs/decompiler-artifacts.md)** — the artifact catalogue: every
 suspect type, the recognition pattern, and the rewrite, indexed by the detector id that reports it.
+
+## Future work
+
+- **Finish the recreation**, with the decompilation's enhancements and bug fixes merged into it,
+  leaving the decompilation as close to the original as it can run.
+- **Console ports**, such as Nintendo Switch and PlayStation 4, built from the recreation.
+- **An improved netplay lobby** to replace the current text-only one.
 
 ## Contributing
 
