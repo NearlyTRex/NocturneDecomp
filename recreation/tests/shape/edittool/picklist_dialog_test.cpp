@@ -56,13 +56,13 @@ TEST_F(CPickListDialogTest, WithoutAnEditorFontShowingIsFatal) {
     list_.add("A");
     editor_tools_.setEditorFont(nullptr);
     EXPECT_THAT(
-        [this] { static_cast<void>(list_.displayChoicesAndWaitForInput("", 0, 0)); },
+        [this] { static_cast<void>(list_.displayChoicesAndWaitForInput("", 0)); },
         ThrowsMessage<common::CFatalError>(StrEq("gEdFont must be set by the application.")));
 }
 
 TEST_F(CPickListDialogTest, AnEmptyListIsCancelledWithoutAWindow) {
     EXPECT_CALL(raw_input_, setInputKeyMask).Times(0);
-    EXPECT_EQ(list_.displayChoicesAndWaitForInput("", 0, 0), CPickList::kCancelled);
+    EXPECT_EQ(list_.displayChoicesAndWaitForInput("", 0), CPickList::kCancelled);
     EXPECT_EQ(editor_tools_.getWindowCount(), 0U);
     EXPECT_EQ(screen_.swaps, 0);
 }
@@ -82,7 +82,7 @@ TEST_F(CPickListDialogTest, ReturnPicksTheSelectionAndEverythingIsPutBack) {
         EXPECT_CALL(raw_input_, clearInput());
         EXPECT_CALL(raw_input_, setInputKeyMask(0x1ff));
     }
-    EXPECT_EQ(list_.displayChoicesAndWaitForInput("", 1, 0), 1);
+    EXPECT_EQ(list_.displayChoicesAndWaitForInput("", 1), 1);
     EXPECT_EQ(screen_.swaps, 2);
     EXPECT_EQ(editor_tools_.getWindowCount(), 0U);
     EXPECT_EQ(screen_.pixel(90, 70), kBackground);
@@ -93,7 +93,7 @@ TEST_F(CPickListDialogTest, ReturnPicksTheSelectionAndEverythingIsPutBack) {
 TEST_F(CPickListDialogTest, EscapeCancels) {
     list_.add("A");
     press(EInputCodeType::DIK_ESCAPE);
-    EXPECT_EQ(list_.displayChoicesAndWaitForInput("", 0, 0), CPickList::kCancelled);
+    EXPECT_EQ(list_.displayChoicesAndWaitForInput("", 0), CPickList::kCancelled);
     EXPECT_EQ(screen_.swaps, 1);
     EXPECT_EQ(editor_tools_.getWindowCount(), 0U);
 }
@@ -101,7 +101,7 @@ TEST_F(CPickListDialogTest, EscapeCancels) {
 TEST_F(CPickListDialogTest, AClosedWindowCancels) {
     list_.add("A");
     EXPECT_CALL(raw_input_, getInputDisabled()).WillOnce(Return(false)).WillOnce(Return(true));
-    EXPECT_EQ(list_.displayChoicesAndWaitForInput("", 0, 0), CPickList::kCancelled);
+    EXPECT_EQ(list_.displayChoicesAndWaitForInput("", 0), CPickList::kCancelled);
     EXPECT_EQ(screen_.swaps, 2);
 }
 
@@ -110,7 +110,7 @@ TEST_F(CPickListDialogTest, APickOnTheFrameTheWindowClosesStands) {
     list_.add("B");
     press(EInputCodeType::DIK_RETURN);
     EXPECT_CALL(raw_input_, getInputDisabled()).WillOnce(Return(false));
-    EXPECT_EQ(list_.displayChoicesAndWaitForInput("", 1, 0), 1);
+    EXPECT_EQ(list_.displayChoicesAndWaitForInput("", 1), 1);
 }
 
 // Three 4-pixel strings: a 20-pixel column with its padding, three rows, and the window's 8 and

@@ -21,7 +21,7 @@ functions don't count as done. Sizes are in instructions.
 | 5 | `showCalibrationTest`, `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 50 | 4789 | 31 | 3 | 62.0% |
 | 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 20 | 5 | 80.0% |
 | 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 68 | 31 | 56.6% |
-| 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 59 | 3 | 93.6% |
+| 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 1 | 0 | 1.7% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 17 | 52 | 5565 | 1 | 0 | 1.9% |
 | 11 | `CScript::loadScript` | 63 | 579 | 67400 | 6 | 1 | 1.0% |
@@ -46,7 +46,7 @@ functions don't count as done. Sizes are in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 2 | 0 | 0.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 | 0 | 3.6% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4489** | **402860** | **525** | **53** | **11.6%** |
+| | **All** | | **4489** | **402860** | **526** | **53** | **11.7%** |
 
 ## Step 0: Math value types
 
@@ -865,14 +865,14 @@ functions don't count as done. Sizes are in instructions.
 - class `CBitFont`
   - [x] `getCharYOffset` 0x004d0200 (12)
 
-### `shape/edittool.cpp` (54 functions, 4786 instructions, 50 done, 3 partial)
+### `shape/edittool.cpp` (54 functions, 4786 instructions, 51 done, 3 partial)
 - class `CEditorTools`
   - [x] `showError` 0x0049e740 (22)
   - [~] `setClipboardText` 0x004a1bc0 (81)
     - deferred: the copy of the text getClipboardText falls back on when the clipboard holds none, with getClipboardText
   - [x] `getTimeCycledColorByte` 0x004a1330 (25)
   - [x] `drawMousePointer` 0x004a1380 (501)
-  - [ ] `showFileSelectionDialog` 0x0049f270 (138)
+  - [x] `showFileSelectionDialog` 0x0049f270 (138)
 - class `CStrList`
   - [x] `sortAll` 0x004a2ec0 (10)
   - [x] `getFieldAt` 0x004a2f80 (65)

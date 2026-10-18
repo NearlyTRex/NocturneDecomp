@@ -24,6 +24,7 @@
 #include <cstddef>
 #include <cstdint>
 #include <span>
+#include <string>
 #include <string_view>
 #include <type_traits>
 #include <vector>
@@ -48,9 +49,10 @@ TEST(CEditorTools, PublicInterface) {
                                  void (CEditorTools::*)(std::string_view)>);
     static_assert(std::is_same_v<decltype(&CEditorTools::displayCenteredStatusMessage),
                                  void (CEditorTools::*)(char *, ...)>);
-    static_assert(
-        std::is_same_v<decltype(&CEditorTools::showFileSelectionDialog),
-                       int (CEditorTools::*)(char *, char *, char *, char *, std::uint32_t)>);
+    static_assert(std::is_same_v<decltype(&CEditorTools::showFileSelectionDialog),
+                                 bool (CEditorTools::*)(const SFileSelectionOwners &,
+                                                        std::string_view, std::string_view,
+                                                        std::string_view, std::string &, bool)>);
     static_assert(
         std::is_same_v<decltype(&CEditorTools::showFilenameInputDialog),
                        int (CEditorTools::*)(char *, char *, char *, char *, std::uint32_t)>);

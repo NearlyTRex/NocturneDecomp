@@ -19,6 +19,8 @@ namespace {
 
 // Extended keys fold onto their numpad twins, as the original's dialogs read them.
 constexpr int kDialogKeyMask = 0x7f;
+// No window flags: the window saves the screen under it.
+constexpr std::uint32_t kSavingWindow = 0;
 constexpr int kOpaqueAlpha = 0xffff;
 constexpr int kEnabledTextColor = 0xff;
 constexpr int kDisabledTextColor = 0xf8;
@@ -55,8 +57,7 @@ int CPickList::getColumnsNeeded() const {
 //   netplay peer doesn't time out, with CNetGame's keepalive
 // nocedit 0x004a3e20
 int CPickList::displayChoicesAndWaitForInput(std::string_view dialog_title,
-                                             int initial_selected_index,
-                                             std::uint32_t window_flags) {
+                                             int initial_selected_index) {
     const SEdControlsOwners &controls = owners_.controls.getOwners();
     controls.editor_tools.initEditorFontMetrics();
     if (getItemCount() < 1) {
@@ -67,7 +68,7 @@ int CPickList::displayChoicesAndWaitForInput(std::string_view dialog_title,
     input.setInputKeyMask(kDialogKeyMask);
     const int saved_x = input.getMouseX();
     const int saved_y = input.getMouseY();
-    initializeDialog(dialog_title, initial_selected_index, window_flags);
+    initializeDialog(dialog_title, initial_selected_index, kSavingWindow);
     int result = kStillOpen;
     while (result == kStillOpen) {
         result = handleDialogInput();
