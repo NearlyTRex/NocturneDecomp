@@ -30,4 +30,6 @@ CVector3f g_CVector3f_ARRAY_01bc9e08[16] = {};
 
 // int
 int g_MouseCursorType = {};
+int g_LastClickTimestamp = {};
+int g_LastClickItemIndex = {};
 

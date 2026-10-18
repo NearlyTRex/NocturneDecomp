@@ -19,10 +19,10 @@ void __cdecl shape_edittool_cpp_CPickList_validateScrollBounds_FUN_004a5240(CPic
     this_ptr->current_index = 0;
   }
   while (this_ptr->scroll_top < 0) {
-    this_ptr->scroll_top = this_ptr->scroll_top + this_ptr->vertical_page_size;
+    this_ptr->scroll_top = this_ptr->scroll_top + this_ptr->rows_per_column;
   }
   while ((this_ptr->base).item_count <= this_ptr->scroll_top) {
-    this_ptr->scroll_top = this_ptr->scroll_top - this_ptr->vertical_page_size;
+    this_ptr->scroll_top = this_ptr->scroll_top - this_ptr->rows_per_column;
   }
   if (this_ptr->scroll_top < 0) {
     this_ptr->scroll_top = 0;
@@ -33,7 +33,7 @@ void __cdecl shape_edittool_cpp_CPickList_validateScrollBounds_FUN_004a5240(CPic
         this_ptr->scroll_top = iVar1 + -1;
       }
       else {
-        this_ptr->scroll_top = iVar1 - this_ptr->vertical_page_size;
+        this_ptr->scroll_top = iVar1 - this_ptr->rows_per_column;
       }
       if (this_ptr->scroll_top < 0) {
         this_ptr->scroll_top = 0;
@@ -44,13 +44,13 @@ void __cdecl shape_edittool_cpp_CPickList_validateScrollBounds_FUN_004a5240(CPic
         this_ptr->scroll_top = this_ptr->scroll_top + 1;
       }
       else {
-        this_ptr->scroll_top = this_ptr->scroll_top + this_ptr->vertical_page_size;
+        this_ptr->scroll_top = this_ptr->scroll_top + this_ptr->rows_per_column;
       }
     }
   }
   if ((this_ptr->column_count == 1) &&
-     (iVar1 = (this_ptr->base).item_count - this_ptr->vertical_page_size,
-     iVar1 < this_ptr->scroll_top)) {
+     (iVar1 = (this_ptr->base).item_count - this_ptr->rows_per_column, iVar1 < this_ptr->scroll_top)
+     ) {
     this_ptr->scroll_top = iVar1;
   }
   if (this_ptr->scroll_top < 0) {

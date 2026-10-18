@@ -30,26 +30,25 @@ int __cdecl shape_edittool_cpp_CPickList_handleDialogInput_FUN_004a4340(CPickLis
   if (this_ptr->state_flag != 0) {
     return -2;
   }
-  if (this_ptr->dialog_result == 1) {
+  if (this_ptr->scroll_mode == 1) {
     (this_ptr->scrollbar).scroll_position = this_ptr->scroll_top;
     (this_ptr->scrollbar).item_count = (this_ptr->base).item_count;
-    (this_ptr->scrollbar).page_size = this_ptr->vertical_page_size;
+    (this_ptr->scrollbar).page_size = this_ptr->rows_per_column;
     shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0(&this_ptr->scrollbar);
     iVar1 = (this_ptr->scrollbar).scroll_position;
   }
   else {
-    if (this_ptr->dialog_result != 2) goto LAB_004a43f0;
-    (this_ptr->scrollbar).scroll_position = this_ptr->scroll_top / this_ptr->vertical_page_size;
+    if (this_ptr->scroll_mode != 2) goto LAB_004a43f0;
+    (this_ptr->scrollbar).scroll_position = this_ptr->scroll_top / this_ptr->rows_per_column;
     (this_ptr->scrollbar).item_count =
-         ((this_ptr->base).item_count + this_ptr->vertical_page_size + -1) /
-         this_ptr->vertical_page_size;
+         ((this_ptr->base).item_count + this_ptr->rows_per_column + -1) / this_ptr->rows_per_column;
     (this_ptr->scrollbar).page_size = this_ptr->column_count;
     shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0(&this_ptr->scrollbar);
-    iVar1 = (this_ptr->scrollbar).scroll_position * this_ptr->vertical_page_size;
+    iVar1 = (this_ptr->scrollbar).scroll_position * this_ptr->rows_per_column;
   }
   this_ptr->scroll_top = iVar1;
 LAB_004a43f0:
-  iVar1 = this_ptr->vertical_page_size * this_ptr->column_count + this_ptr->scroll_top;
+  iVar1 = this_ptr->rows_per_column * this_ptr->column_count + this_ptr->scroll_top;
   if (iVar1 <= this_ptr->current_index) {
     this_ptr->current_index = iVar1 + -1;
   }

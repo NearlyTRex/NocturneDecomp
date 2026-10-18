@@ -130,12 +130,12 @@ LAB_004a402a:
               iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD4);
               if (iVar2 != 0) {
                 this_ptr->search_text_buffer[0] = '\0';
-                this_ptr->current_index = this_ptr->current_index - this_ptr->vertical_page_size;
+                this_ptr->current_index = this_ptr->current_index - this_ptr->rows_per_column;
               }
               iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD6);
               if (iVar2 != 0) {
                 this_ptr->search_text_buffer[0] = '\0';
-                this_ptr->current_index = this_ptr->current_index + this_ptr->vertical_page_size;
+                this_ptr->current_index = this_ptr->current_index + this_ptr->rows_per_column;
               }
               return 0;
             }

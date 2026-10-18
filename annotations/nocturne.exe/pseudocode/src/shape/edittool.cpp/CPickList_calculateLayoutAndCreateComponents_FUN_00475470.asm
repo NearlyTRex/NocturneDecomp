@@ -23,7 +23,7 @@
 ;   int g_WindowHeight = 0xc8
 ;   undefined4 DAT_01bcd070
 ;   undefined4 DAT_01bcd9bc
-;   undefined4 DAT_01bcde20
+;   int g_LastClickItemIndex
 ;   int g_ClipLeft
 ;   int g_ClipTop
 ;   int g_ClipRight
@@ -411,7 +411,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x148]     ; 0047594f
     MOV EBX,0xffffffff                  ; 00475956
     MOV byte ptr [EAX + 0xa8],0x0       ; 0047595b
-    MOV dword ptr [0x01bcde20],EBX      ; 00475962 | DAT_01bcde20
+    MOV dword ptr [0x01bcde20],EBX      ; 00475962 | g_LastClickItemIndex
     MOV dword ptr [EAX + 0x10c],0x0     ; 00475968
     ADD ESP,0x134                       ; 00475972
     POP EBP                             ; 00475978

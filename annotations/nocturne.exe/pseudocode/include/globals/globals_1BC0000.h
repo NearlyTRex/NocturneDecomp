@@ -37,4 +37,6 @@ extern CVector3f g_CVector3f_ARRAY_01bc9e08[16];
 
 // int
 extern int g_MouseCursorType;
+extern int g_LastClickTimestamp;
+extern int g_LastClickItemIndex;
 

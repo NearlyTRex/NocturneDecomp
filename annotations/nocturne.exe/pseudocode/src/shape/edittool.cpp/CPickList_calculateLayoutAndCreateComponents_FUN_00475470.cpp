@@ -25,7 +25,7 @@ void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN
   int local_18;
   int local_14;
   
-  this_ptr->character_width = _DAT_01bcd9bc + 1;
+  this_ptr->row_height = _DAT_01bcd9bc + 1;
   this_ptr->column_padding = 8;
   this_ptr->tab_column_count = 1;
   memset(this_ptr->tab_column_widths,0,0x28);
@@ -71,71 +71,71 @@ void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN
     pCVar5 = (CPickList *)&(pCVar5->base).capacity;
   }
   iVar9 = 0;
-  this_ptr->total_content_width = 0;
+  this_ptr->column_width = 0;
   pCVar5 = this_ptr;
   if (0 < this_ptr->tab_column_count) {
     do {
       iVar9 = iVar9 + 1;
-      this_ptr->total_content_width = this_ptr->total_content_width + pCVar5->tab_column_widths[0];
+      this_ptr->column_width = this_ptr->column_width + pCVar5->tab_column_widths[0];
       pCVar5 = (CPickList *)&(pCVar5->base).capacity;
     } while (iVar9 < this_ptr->tab_column_count);
   }
-  this_ptr->total_content_width = this_ptr->total_content_width + this_ptr->column_padding * 2;
-  iVar9 = (g_WindowHeight + _DAT_01bcd9bc * -4) / this_ptr->character_width;
-  this_ptr->vertical_page_size = iVar9;
+  this_ptr->column_width = this_ptr->column_width + this_ptr->column_padding * 2;
+  iVar9 = (g_WindowHeight + _DAT_01bcd9bc * -4) / this_ptr->row_height;
+  this_ptr->rows_per_column = iVar9;
   if (iVar9 < 1) {
-    this_ptr->vertical_page_size = 1;
+    this_ptr->rows_per_column = 1;
   }
   iVar9 = (this_ptr->base).item_count;
-  if (iVar9 < this_ptr->vertical_page_size) {
-    this_ptr->vertical_page_size = iVar9;
+  if (iVar9 < this_ptr->rows_per_column) {
+    this_ptr->rows_per_column = iVar9;
   }
   iVar9 = g_WindowWidth * 7 >> 0x1f;
   iVar9 = ((int)((g_WindowWidth * 7 + iVar9 * -8) - (uint)(iVar9 << 2 < 0)) >> 3) /
-          this_ptr->total_content_width;
+          this_ptr->column_width;
   this_ptr->column_count = iVar9;
   if (iVar9 < 1) {
     this_ptr->column_count = 1;
   }
-  iVar9 = ((this_ptr->base).item_count + this_ptr->vertical_page_size + -1) /
-          this_ptr->vertical_page_size;
+  iVar9 = ((this_ptr->base).item_count + this_ptr->rows_per_column + -1) / this_ptr->rows_per_column
+  ;
   if (iVar9 < this_ptr->column_count) {
     this_ptr->column_count = iVar9;
   }
   if (this_ptr->forced_column_count != 0) {
     this_ptr->column_count = 1;
   }
-  this_ptr->dialog_result = 0;
-  if (this_ptr->vertical_page_size * this_ptr->column_count < (this_ptr->base).item_count) {
+  this_ptr->scroll_mode = 0;
+  if (this_ptr->rows_per_column * this_ptr->column_count < (this_ptr->base).item_count) {
     if (this_ptr->column_count < 2) {
-      this_ptr->dialog_result = 1;
+      this_ptr->scroll_mode = 1;
     }
     else {
-      this_ptr->dialog_result = 2;
+      this_ptr->scroll_mode = 2;
     }
   }
-  iVar9 = this_ptr->total_content_width * this_ptr->column_count + 8;
-  iVar4 = this_ptr->vertical_page_size * this_ptr->character_width + 6;
+  iVar9 = this_ptr->column_width * this_ptr->column_count + 8;
+  iVar4 = this_ptr->rows_per_column * this_ptr->row_height + 6;
   iVar6 = shape_edittool_cpp_calculateGridWidth_FUN_00476df0();
   local_18 = iVar6;
   iVar7 = shape_edittool_cpp_calculateGridHeight_FUN_00476e10();
-  if (this_ptr->dialog_result == 1) {
+  if (this_ptr->scroll_mode == 1) {
     iVar9 = iVar9 + iVar6;
   }
-  else if (this_ptr->dialog_result == 2) {
+  else if (this_ptr->scroll_mode == 2) {
     iVar4 = iVar4 + iVar7;
   }
   shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_00471a80
             (g_CEditorTools_PTR_005b6d50,iVar9,iVar4,dialog_title,window_flags);
   iVar9 = (g_ClipRight - g_ClipLeft) + 1;
   iVar4 = (g_ClipBottom - g_ClipTop) + 1;
-  if (this_ptr->dialog_result == 1) {
+  if (this_ptr->scroll_mode == 1) {
     iVar9 = iVar9 - local_18;
     iVar6 = (g_ClipRight - local_18) + 1;
     top_pos = g_ClipTop;
   }
   else {
-    if (this_ptr->dialog_result != 2) goto LAB_0047587b;
+    if (this_ptr->scroll_mode != 2) goto LAB_0047587b;
     top_pos = (g_ClipBottom - iVar7) + 1;
     iVar4 = iVar4 - iVar7;
     iVar6 = g_ClipLeft;
@@ -143,22 +143,22 @@ void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN
   shape_edittool_cpp_CEdScrollBar_setPosition_FUN_004764d0
             (&this_ptr->scrollbar,iVar6,top_pos,g_ClipRight,g_ClipBottom);
 LAB_0047587b:
-  this_ptr->vertical_page_size = iVar4 / this_ptr->character_width;
-  this_ptr->column_count = iVar9 / this_ptr->total_content_width;
-  iVar4 = ((this_ptr->base).item_count + this_ptr->vertical_page_size + -1) /
-          this_ptr->vertical_page_size;
+  this_ptr->rows_per_column = iVar4 / this_ptr->row_height;
+  this_ptr->column_count = iVar9 / this_ptr->column_width;
+  iVar4 = ((this_ptr->base).item_count + this_ptr->rows_per_column + -1) / this_ptr->rows_per_column
+  ;
   if (iVar4 < this_ptr->column_count) {
     this_ptr->column_count = iVar4;
   }
   if (this_ptr->column_count < 1) {
     this_ptr->column_count = 1;
   }
-  this_ptr->page_size = this_ptr->vertical_page_size * this_ptr->column_count;
+  this_ptr->page_size = this_ptr->rows_per_column * this_ptr->column_count;
   this_ptr->scroll_top = 0;
-  this_ptr->total_content_width = iVar9 / this_ptr->column_count;
+  this_ptr->column_width = iVar9 / this_ptr->column_count;
   engine_2d_c_clearInputAndWait_FUN_00403f50();
   this_ptr->search_text_buffer[0] = '\0';
-  _DAT_01bcde20 = 0xffffffff;
+  g_LastClickItemIndex = -1;
   this_ptr->confirmed_flag = 0;
   return;
 }
