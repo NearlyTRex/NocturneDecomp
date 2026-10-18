@@ -20,8 +20,8 @@ public:
     void pickup(CDemonActor *carrier) override;
     void onDropped(common::CVector3f *drop_position) override;
     CDemonActor *getCarrier() override;
-    CDemonActorType *getActorType() override;
-    void archive() override;
+    [[nodiscard]] const CDemonActorType &getActorType() const override;
+    void archive(CActorArchive &actor_archive) override;
 };
 
 } // namespace nocturne::core

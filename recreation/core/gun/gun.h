@@ -10,7 +10,7 @@ public:
     CGun();
     ~CGun() override;
 
-    CDemonActorType *getActorType() override;
+    [[nodiscard]] const CDemonActorType &getActorType() const override;
     int fire() override;
     float getDamage() override;
 };

@@ -22,7 +22,7 @@ public:
                           SPlayerInput *player_control) override;
     void stopInteraction(CDemonActor *user) override;
     void onLaserHit(SLaserInfo *laser_info) override;
-    CDemonActorType *getActorType() override;
+    [[nodiscard]] const CDemonActorType &getActorType() const override;
 };
 
 } // namespace nocturne::core

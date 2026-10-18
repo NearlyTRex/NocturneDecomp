@@ -17,8 +17,8 @@ public:
     ECollisionType getCollisionType(SCollisionInfo *collision_info) override;
     void onPickup(CDemonActor *owner) override;
     int canPickup(CDemonActor *picker) override;
-    CDemonActorType *getActorType() override;
-    void archive() override;
+    [[nodiscard]] const CDemonActorType &getActorType() const override;
+    void archive(CActorArchive &actor_archive) override;
 
     int useItem(CCharacter *user);
 };

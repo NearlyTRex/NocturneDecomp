@@ -38,9 +38,10 @@ TEST(CTrigger, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CTrigger::processActionButton), int (CTrigger::*)()>);
     static_assert(
         std::is_same_v<decltype(&CTrigger::onLaserHit), void (CTrigger::*)(SLaserInfo *)>);
+    static_assert(std::is_same_v<decltype(&CTrigger::getActorType),
+                                 const CDemonActorType &(CTrigger::*)() const>);
     static_assert(
-        std::is_same_v<decltype(&CTrigger::getActorType), CDemonActorType *(CTrigger::*)()>);
-    static_assert(std::is_same_v<decltype(&CTrigger::archive), void (CTrigger::*)()>);
+        std::is_same_v<decltype(&CTrigger::archive), void (CTrigger::*)(CActorArchive &)>);
     static_assert(std::is_same_v<decltype(&CTrigger::onProjectileHit), void (CTrigger::*)()>);
     static_assert(
         std::is_same_v<decltype(&CTrigger::acceptsDamageFrom), int (CTrigger::*)(CDemonActor *)>);

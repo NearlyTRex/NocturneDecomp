@@ -31,8 +31,9 @@ TEST(CMimic, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CMimic::renderBackground), void (CMimic::*)(int)>);
     static_assert(std::is_same_v<decltype(&CMimic::getCollisionType),
                                  ECollisionType (CMimic::*)(SCollisionInfo *)>);
-    static_assert(std::is_same_v<decltype(&CMimic::getActorType), CDemonActorType *(CMimic::*)()>);
-    static_assert(std::is_same_v<decltype(&CMimic::archive), void (CMimic::*)()>);
+    static_assert(std::is_same_v<decltype(&CMimic::getActorType),
+                                 const CDemonActorType &(CMimic::*)() const>);
+    static_assert(std::is_same_v<decltype(&CMimic::archive), void (CMimic::*)(CActorArchive &)>);
     static_assert(std::is_same_v<decltype(&CMimic::getDeathState), EDeathState (CMimic::*)()>);
 }
 

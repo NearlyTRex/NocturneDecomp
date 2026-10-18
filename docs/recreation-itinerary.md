@@ -22,9 +22,9 @@ functions don't count as done. Sizes are in instructions.
 | 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 20 | 5 | 80.0% |
 | 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 68 | 31 | 56.6% |
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
-| 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 4 | 2 | 7.1% |
+| 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 15 | 4 | 26.7% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 17 | 52 | 5565 | 1 | 0 | 1.9% |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 6 | 1 | 1.0% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 10 | 1 | 1.7% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 2 | 0 | 7.6% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0 | 0.0% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 1 | 0 | 1.9% |
@@ -36,17 +36,17 @@ functions don't count as done. Sizes are in instructions.
 | 20 | Not reached from startup: `support/` | 2 | 24 | 593 | 3 | 0 | 12.5% |
 | 21 | Not reached from startup: `cockpit/` | 4 | 178 | 11527 | 0 | 0 | 0.0% |
 | 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 4 | 1 | 9.5% |
-| 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 3 | 0 | 1.0% |
+| 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 5 | 0 | 1.7% |
 | 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 1 | 0 | 0.3% |
 | 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 3 | 0 | 1.0% |
 | 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 24 | 0 | 8.0% |
-| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 1 | 0 | 0.3% |
+| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 2 | 0 | 0.6% |
 | 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 6 | 2 | 2.1% |
 | 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 2 | 0 | 0.7% |
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 2 | 0 | 0.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 | 0 | 3.6% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4489** | **402860** | **530** | **55** | **11.8%** |
+| | **All** | | **4489** | **402860** | **548** | **57** | **12.2%** |
 
 ## Step 0: Math value types
 
@@ -1000,31 +1000,33 @@ functions don't count as done. Sizes are in instructions.
 - class `CSkeleton`
   - [ ] `free` 0x00599a50 (47)
 
-### `core/actor.cpp` (18 functions, 918 instructions, 0 done, 0 partial)
+### `core/actor.cpp` (18 functions, 918 instructions, 11 done, 1 partial)
 - class `CDemonActor`
-  - [ ] `getActorClassName` 0x00408b90 (6)
-  - [ ] `load` 0x0040b050 (125)
+  - [x] `getActorClassName` 0x00408b90 (6)
+  - [x] `load` 0x0040b050 (125)
   - [ ] `doCheckForInvalidPointers` 0x0040ac80 (193)
   - [ ] `updateOrientationMatrix` 0x00408c10 (30)
-  - [ ] `ctor` 0x004088b0 (88)
+  - [~] `ctor` 0x004088b0 (88)
+    - deferred: the defaults the constructor gives position, orientation and its matrix, scale, creation, platform, rendering, health and footstep fields, with the steps that read them
 - free functions
-  - [ ] `getActorClassByName` 0x0040c3c0 (45)
-  - [ ] `createActorByName` 0x0040c430 (51)
-  - [ ] `checkNameHash` 0x0040c700 (11)
-  - [ ] `isOfClassHash` 0x0040c760 (14)
-  - [ ] `castToClassHash` 0x0040c790 (17)
+  - [x] `getActorClassByName` 0x0040c3c0 (45)
+  - [x] `createActorByName` 0x0040c430 (51)
+  - [x] `checkNameHash` 0x0040c700 (11)
+  - [x] `isOfClassHash` 0x0040c760 (14)
+  - [x] `castToClassHash` 0x0040c790 (17)
   - [ ] `resetActorTypeInfo` 0x0040c7f0 (18)
   - [ ] `deleteActor` 0x00408820 (24)
-  - [ ] `matchClassTerm` 0x0040c4f0 (122)
-  - [ ] `matchClassExpression` 0x0040c610 (80)
-  - [ ] `matchesClassName` 0x0040c740 (10)
-  - [ ] `isOfClass` 0x0040c6d0 (14)
+  - [x] `matchClassTerm` 0x0040c4f0 (122)
+  - [x] `matchClassExpression` 0x0040c610 (80)
+  - [x] `matchesClassName` 0x0040c740 (10)
+  - [x] `isOfClass` 0x0040c6d0 (14)
   - [ ] `initTransformCache` 0x00408870 (14)
   - [ ] `normalizeAngleToPi` 0x0040cd70 (56)
 
-### `core/hero.cpp` (1 functions, 8 instructions, 0 done, 0 partial)
+### `core/hero.cpp` (1 functions, 8 instructions, 0 done, 1 partial)
 - class `CHeroPlaceholder`
-  - [ ] `ctor` 0x004f3c00 (8)
+  - [~] `ctor` 0x004f3c00 (8)
+    - deferred: drawing it transparent and its hero index starting at 0, with the steps that read them
 
 ### `core/mission.cpp` (13 functions, 995 instructions, 0 done, 0 partial)
 - class `CDemonMission`
@@ -1227,7 +1229,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `archive` 0x005dab30 (17)
   - [ ] `dtor` 0x005dae50 (31)
 
-### `core/actor.cpp` (66 functions, 3653 instructions, 2 done, 0 partial)
+### `core/actor.cpp` (66 functions, 3653 instructions, 4 done, 0 partial)
 - free functions
   - [ ] `copyVector` 0x00410360 (12)
   - [ ] `rayCylinderIntersect` 0x00408340 (354)
@@ -1250,11 +1252,11 @@ functions don't count as done. Sizes are in instructions.
 - class `CDemonActor`
   - [ ] `transformVector` 0x00408e80 (13)
   - [ ] `localToWorldPoint` 0x00408ec0 (26)
-  - [ ] `dtor` 0x00408a30 (28)
+  - [x] `dtor` 0x00408a30 (28)
   - [ ] `process` 0x00408a80 (7)
   - [ ] `renderTransparent` 0x00408ac0 (8)
   - [ ] `renderBackground` 0x00408ae0 (7)
-  - [ ] `getActorType` 0x00408b50 (17)
+  - [x] `getActorType` 0x00408b50 (17)
   - [ ] `getBoundingBox` 0x00408c70 (8)
   - [ ] `getCollisionType` 0x00408ca0 (8)
   - [ ] `customRayIntersect` 0x00408cc0 (20)
@@ -1419,10 +1421,10 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [ ] `calculateIrisFadeCenter` 0x004e09a0 (13)
 
-### `core/hero.cpp` (7 functions, 121 instructions, 0 done, 0 partial)
+### `core/hero.cpp` (7 functions, 121 instructions, 2 done, 0 partial)
 - class `CHeroPlaceholder`
-  - [ ] `getActorType` 0x004f3bf0 (2)
-  - [ ] `dtor` 0x004f3c30 (32)
+  - [x] `getActorType` 0x004f3bf0 (2)
+  - [x] `dtor` 0x004f3c30 (32)
   - [ ] `renderTransparent` 0x004f3c90 (50)
   - [ ] `getBoundingBox` 0x004f3d20 (8)
   - [ ] `archive` 0x004f3ef0 (11)
@@ -3377,10 +3379,10 @@ functions don't count as done. Sizes are in instructions.
 
 ## Step 23: Not reached from startup: `core/` (part 1 of 9)
 
-### `core/actor.cpp` (19 functions, 1173 instructions, 3 done, 0 partial)
+### `core/actor.cpp` (19 functions, 1173 instructions, 5 done, 0 partial)
 - free functions
-  - [ ] `registerActorClass` 0x0040c2e0 (73)
-  - [ ] `staticInit` 0x00408320 (9)
+  - [x] `registerActorClass` 0x0040c2e0 (73)
+  - [x] `staticInit` 0x00408320 (9)
   - [ ] `draw3DPointMarker` 0x00409930 (173)
   - [ ] `copyToActorDebugBuffer` 0x0040ac30 (27)
   - [ ] `archiveQuaternion` 0x0040b520 (54)
@@ -4901,11 +4903,11 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncHealthItem` 0x004f1d90 (12)
   - [ ] `staticInit` 0x004f1d60 (9)
 
-### `core/hero.cpp` (35 functions, 2025 instructions, 0 done, 0 partial)
+### `core/hero.cpp` (35 functions, 2025 instructions, 1 done, 0 partial)
 - free functions
   - [ ] `isAnyHeroWithinCylinder` 0x004f22a0 (63)
   - [ ] `closestHeroToPoint` 0x004f2170 (66)
-  - [ ] `factoryFuncHeroPlaceholder` 0x004f3bc0 (12)
+  - [x] `factoryFuncHeroPlaceholder` 0x004f3bc0 (12)
   - [ ] `staticInit` 0x004f2120 (17)
 - class `CHero`
   - [ ] `createDefaultWeapon` 0x004f2a30 (59)

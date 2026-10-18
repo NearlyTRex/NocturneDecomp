@@ -32,9 +32,10 @@ TEST(CGasMask, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CGasMask::getCollisionType),
                                  ECollisionType (CGasMask::*)(SCollisionInfo *)>);
     static_assert(std::is_same_v<decltype(&CGasMask::canPickup), int (CGasMask::*)(CDemonActor *)>);
+    static_assert(std::is_same_v<decltype(&CGasMask::getActorType),
+                                 const CDemonActorType &(CGasMask::*)() const>);
     static_assert(
-        std::is_same_v<decltype(&CGasMask::getActorType), CDemonActorType *(CGasMask::*)()>);
-    static_assert(std::is_same_v<decltype(&CGasMask::archive), void (CGasMask::*)()>);
+        std::is_same_v<decltype(&CGasMask::archive), void (CGasMask::*)(CActorArchive &)>);
 }
 
 } // namespace

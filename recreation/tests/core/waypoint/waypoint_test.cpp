@@ -26,9 +26,10 @@ TEST(CWayPoint, Constructors) {
 TEST(CWayPoint, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CWayPoint::setup), void (CWayPoint::*)()>);
     static_assert(std::is_same_v<decltype(&CWayPoint::renderOpaque), int (CWayPoint::*)()>);
+    static_assert(std::is_same_v<decltype(&CWayPoint::getActorType),
+                                 const CDemonActorType &(CWayPoint::*)() const>);
     static_assert(
-        std::is_same_v<decltype(&CWayPoint::getActorType), CDemonActorType *(CWayPoint::*)()>);
-    static_assert(std::is_same_v<decltype(&CWayPoint::archive), void (CWayPoint::*)()>);
+        std::is_same_v<decltype(&CWayPoint::archive), void (CWayPoint::*)(CActorArchive &)>);
     static_assert(std::is_same_v<decltype(&CWayPoint::findNearestReachable),
                                  CWayPoint *(CWayPoint::*)(CWayPoint *)>);
 }

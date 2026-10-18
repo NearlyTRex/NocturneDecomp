@@ -29,8 +29,9 @@ TEST(CGhoul, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CGhoul::renderBackground), void (CGhoul::*)(int)>);
     static_assert(
         std::is_same_v<decltype(&CGhoul::getTargetPoints), int (CGhoul::*)(common::CVector3f *)>);
-    static_assert(std::is_same_v<decltype(&CGhoul::getActorType), CDemonActorType *(CGhoul::*)()>);
-    static_assert(std::is_same_v<decltype(&CGhoul::archive), void (CGhoul::*)()>);
+    static_assert(std::is_same_v<decltype(&CGhoul::getActorType),
+                                 const CDemonActorType &(CGhoul::*)() const>);
+    static_assert(std::is_same_v<decltype(&CGhoul::archive), void (CGhoul::*)(CActorArchive &)>);
     static_assert(
         std::is_same_v<decltype(&CGhoul::processDamage), void (CGhoul::*)(SDamageInfo *)>);
     static_assert(

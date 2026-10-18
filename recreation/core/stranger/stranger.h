@@ -18,8 +18,8 @@ public:
     void setPositionAndOrientation(common::CVector3f *new_position,
                                    common::CVector3f *new_orientation) override;
     void drop(CDemonActor *carrier, common::CVector3f *drop_position) override;
-    CDemonActorType *getActorType() override;
-    void archive() override;
+    [[nodiscard]] const CDemonActorType &getActorType() const override;
+    void archive(CActorArchive &actor_archive) override;
     int getGrabbed(CDemonActor *grabber, int grab_type) override;
     void processDamage(SDamageInfo *damage_info) override;
     EDeathState getDeathState() override;

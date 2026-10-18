@@ -31,8 +31,9 @@ TEST(CLever, PublicInterface) {
                                  CBoundingBox3D *(CLever::*)(CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CLever::getCollisionType),
                                  ECollisionType (CLever::*)(SCollisionInfo *)>);
-    static_assert(std::is_same_v<decltype(&CLever::getActorType), CDemonActorType *(CLever::*)()>);
-    static_assert(std::is_same_v<decltype(&CLever::archive), void (CLever::*)()>);
+    static_assert(std::is_same_v<decltype(&CLever::getActorType),
+                                 const CDemonActorType &(CLever::*)() const>);
+    static_assert(std::is_same_v<decltype(&CLever::archive), void (CLever::*)(CActorArchive &)>);
     static_assert(std::is_same_v<decltype(&CLever::setState), void (CLever::*)(float)>);
     static_assert(std::is_same_v<decltype(&CLever::activate), void (CLever::*)()>);
     static_assert(std::is_same_v<decltype(&CLever::getHandlePosition),

@@ -29,7 +29,7 @@ TEST(CTeleportDest, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CTeleportDest::getCollisionType),
                                  ECollisionType (CTeleportDest::*)(SCollisionInfo *)>);
     static_assert(std::is_same_v<decltype(&CTeleportDest::getActorType),
-                                 CDemonActorType *(CTeleportDest::*)()>);
+                                 const CDemonActorType &(CTeleportDest::*)() const>);
 }
 
 } // namespace

@@ -25,8 +25,8 @@ TEST(CDynamite, Constructors) {
 
 TEST(CDynamite, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDynamite::process), void (CDynamite::*)(float)>);
-    static_assert(
-        std::is_same_v<decltype(&CDynamite::getActorType), CDemonActorType *(CDynamite::*)()>);
+    static_assert(std::is_same_v<decltype(&CDynamite::getActorType),
+                                 const CDemonActorType &(CDynamite::*)() const>);
     static_assert(std::is_same_v<decltype(&CDynamite::fire), int (CDynamite::*)()>);
     static_assert(std::is_same_v<decltype(&CDynamite::getDamage), float (CDynamite::*)()>);
     static_assert(std::is_same_v<decltype(&CDynamite::renderAimBeam), void (CDynamite::*)()>);

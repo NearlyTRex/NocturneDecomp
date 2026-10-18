@@ -28,9 +28,10 @@ TEST(CZombieCow, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CZombieCow::process), void (CZombieCow::*)(float)>);
     static_assert(std::is_same_v<decltype(&CZombieCow::getTargetPoints),
                                  int (CZombieCow::*)(common::CVector3f *)>);
+    static_assert(std::is_same_v<decltype(&CZombieCow::getActorType),
+                                 const CDemonActorType &(CZombieCow::*)() const>);
     static_assert(
-        std::is_same_v<decltype(&CZombieCow::getActorType), CDemonActorType *(CZombieCow::*)()>);
-    static_assert(std::is_same_v<decltype(&CZombieCow::archive), void (CZombieCow::*)()>);
+        std::is_same_v<decltype(&CZombieCow::archive), void (CZombieCow::*)(CActorArchive &)>);
     static_assert(
         std::is_same_v<decltype(&CZombieCow::processDamage), void (CZombieCow::*)(SDamageInfo *)>);
 }

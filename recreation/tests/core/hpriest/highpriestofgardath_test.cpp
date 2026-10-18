@@ -27,9 +27,9 @@ TEST(CHighPriestOfGardath, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CHighPriestOfGardath::process),
                                  void (CHighPriestOfGardath::*)(float)>);
     static_assert(std::is_same_v<decltype(&CHighPriestOfGardath::getActorType),
-                                 CDemonActorType *(CHighPriestOfGardath::*)()>);
-    static_assert(
-        std::is_same_v<decltype(&CHighPriestOfGardath::archive), void (CHighPriestOfGardath::*)()>);
+                                 const CDemonActorType &(CHighPriestOfGardath::*)() const>);
+    static_assert(std::is_same_v<decltype(&CHighPriestOfGardath::archive),
+                                 void (CHighPriestOfGardath::*)(CActorArchive &)>);
     static_assert(std::is_same_v<decltype(&CHighPriestOfGardath::processDamage),
                                  void (CHighPriestOfGardath::*)(SDamageInfo *)>);
 }

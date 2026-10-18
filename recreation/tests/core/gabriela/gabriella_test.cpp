@@ -28,9 +28,10 @@ TEST(CGabriella, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CGabriella::process), void (CGabriella::*)(float)>);
     static_assert(std::is_same_v<decltype(&CGabriella::renderOpaque), int (CGabriella::*)()>);
     static_assert(std::is_same_v<decltype(&CGabriella::renderTransparent), int (CGabriella::*)()>);
+    static_assert(std::is_same_v<decltype(&CGabriella::getActorType),
+                                 const CDemonActorType &(CGabriella::*)() const>);
     static_assert(
-        std::is_same_v<decltype(&CGabriella::getActorType), CDemonActorType *(CGabriella::*)()>);
-    static_assert(std::is_same_v<decltype(&CGabriella::archive), void (CGabriella::*)()>);
+        std::is_same_v<decltype(&CGabriella::archive), void (CGabriella::*)(CActorArchive &)>);
     static_assert(
         std::is_same_v<decltype(&CGabriella::processDamage), void (CGabriella::*)(SDamageInfo *)>);
     static_assert(std::is_same_v<decltype(&CGabriella::getCarryObjToBodyXForm),

@@ -16,8 +16,8 @@ public:
     int renderTransparent() override;
     void renderBackground(int layer_flag) override;
     ECollisionType getCollisionType(SCollisionInfo *collision_info) override;
-    CDemonActorType *getActorType() override;
-    void archive() override;
+    [[nodiscard]] const CDemonActorType &getActorType() const override;
+    void archive(CActorArchive &actor_archive) override;
     EDeathState getDeathState() override;
 };
 

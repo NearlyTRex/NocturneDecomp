@@ -32,8 +32,9 @@ TEST(CGrave, PublicInterface) {
                                  CBoundingBox3D *(CGrave::*)(CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CGrave::getCollisionType),
                                  ECollisionType (CGrave::*)(SCollisionInfo *)>);
-    static_assert(std::is_same_v<decltype(&CGrave::getActorType), CDemonActorType *(CGrave::*)()>);
-    static_assert(std::is_same_v<decltype(&CGrave::archive), void (CGrave::*)()>);
+    static_assert(std::is_same_v<decltype(&CGrave::getActorType),
+                                 const CDemonActorType &(CGrave::*)() const>);
+    static_assert(std::is_same_v<decltype(&CGrave::archive), void (CGrave::*)(CActorArchive &)>);
     static_assert(std::is_same_v<decltype(&CGrave::startAnimation), void (CGrave::*)()>);
 }
 

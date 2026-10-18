@@ -31,9 +31,9 @@ TEST(CSimBox, PublicInterface) {
                                  CBoundingBox3D *(CSimBox::*)(CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CSimBox::getCollisionType),
                                  ECollisionType (CSimBox::*)(SCollisionInfo *)>);
-    static_assert(
-        std::is_same_v<decltype(&CSimBox::getActorType), CDemonActorType *(CSimBox::*)()>);
-    static_assert(std::is_same_v<decltype(&CSimBox::archive), void (CSimBox::*)()>);
+    static_assert(std::is_same_v<decltype(&CSimBox::getActorType),
+                                 const CDemonActorType &(CSimBox::*)() const>);
+    static_assert(std::is_same_v<decltype(&CSimBox::archive), void (CSimBox::*)(CActorArchive &)>);
 }
 
 } // namespace

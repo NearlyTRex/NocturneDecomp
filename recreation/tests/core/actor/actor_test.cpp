@@ -1,17 +1,28 @@
+#include "common/error/fatalerror.h"
 #include "common/random/watcomrandom.h"
 #include "core/actor/actor.h"
+#include "core/actor/demonactor.h"
+#include "core/actor/demonactortype.h"
 #include "core/game/game.h"
+#include "core/hero/heroplaceholder.h"
+#include "tests/mocks/core/testactor.h"
 #include "tests/mocks/engine/mockgameclock.h"
 
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
 #include <cmath>
+#include <cstddef>
 #include <cstdint>
+#include <memory>
+#include <string_view>
 #include <type_traits>
 
 namespace nocturne::core {
 namespace {
+
+using ::testing::StrEq;
+using ::testing::ThrowsMessage;
 
 TEST(CActor, IsConcrete) {
     static_assert(!std::is_abstract_v<CActor>);
@@ -28,6 +39,56 @@ TEST(CActor, PublicInterface) {
                                  float (CActor::*)(float, float)>);
     static_assert(std::is_same_v<decltype(&CActor::getRandomInt), int (CActor::*)(int, int)>);
     static_assert(std::is_same_v<decltype(&CActor::randomChance), int (CActor::*)(float)>);
+    static_assert(std::is_same_v<decltype(&CActor::registerActorClass),
+                                 void (CActor::*)(const CDemonActorType &)>);
+    static_assert(std::is_same_v<decltype(&CActor::getActorClassByName),
+                                 const CDemonActorType *(CActor::*)(std::string_view) const>);
+    static_assert(std::is_same_v<decltype(&CActor::createActorByName),
+                                 std::unique_ptr<CDemonActor> (CActor::*)(std::string_view) const>);
+}
+
+class CActorRegistryTest : public ::testing::Test {
+protected:
+    ::testing::NiceMock<engine::MockGameClock> clock_;
+    CGame game_{clock_};
+    common::CWatcomRandom crt_;
+    CActor actor_{game_, crt_};
+};
+
+TEST_F(CActorRegistryTest, ThePortedClassesAreRegistered) {
+    EXPECT_EQ(actor_.getActorClassByName("CDemonActor"), &CDemonActor::kType);
+    EXPECT_EQ(actor_.getActorClassByName("CHeroPlaceholder"), &CHeroPlaceholder::kType);
+}
+
+// Only the letters and digits count, in either case.
+TEST_F(CActorRegistryTest, AClassIsFoundByItsNamesHash) {
+    EXPECT_EQ(actor_.getActorClassByName("cheroplaceholder"), &CHeroPlaceholder::kType);
+    EXPECT_EQ(actor_.getActorClassByName("C_Hero Placeholder"), &CHeroPlaceholder::kType);
+    EXPECT_EQ(actor_.getActorClassByName("CTestLeaf"), nullptr);
+    actor_.registerActorClass(kTestLeafType);
+    EXPECT_EQ(actor_.getActorClassByName("CTestLeaf"), &kTestLeafType);
+}
+
+TEST_F(CActorRegistryTest, AnActorIsCreatedByItsClassName) {
+    const std::unique_ptr<CDemonActor> actor = actor_.createActorByName("cheroplaceholder");
+    EXPECT_EQ(&actor->getActorType(), &CHeroPlaceholder::kType);
+}
+
+TEST_F(CActorRegistryTest, CreatingAnUnknownOrAbstractClassIsFatal) {
+    EXPECT_THAT([this] { static_cast<void>(actor_.createActorByName("CNothing")); },
+                ThrowsMessage<common::CFatalError>(
+                    StrEq("Can't create actor of unknown class type: CNothing")));
+    EXPECT_THAT([this] { static_cast<void>(actor_.createActorByName("CDemonActor")); },
+                ThrowsMessage<common::CFatalError>(
+                    StrEq("Can't create instance of abstract type CDemonActor")));
+}
+
+TEST_F(CActorRegistryTest, MoreThanTwoHundredClassesIsFatal) {
+    for (std::size_t i = 2; i < CActor::kMaxActorTypes; ++i) {
+        actor_.registerActorClass(kTestLeafType);
+    }
+    EXPECT_THAT([this] { actor_.registerActorClass(kTestLeafType); },
+                ThrowsMessage<common::CFatalError>(StrEq("Too many actor types!")));
 }
 
 // Expected values are nocedit's own, from its machine code run with the same seeds.

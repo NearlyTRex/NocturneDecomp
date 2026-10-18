@@ -26,8 +26,8 @@ TEST(CMineCar, Constructors) {
 TEST(CMineCar, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CMineCar::setup), void (CMineCar::*)()>);
     static_assert(std::is_same_v<decltype(&CMineCar::process), void (CMineCar::*)(float)>);
-    static_assert(
-        std::is_same_v<decltype(&CMineCar::getActorType), CDemonActorType *(CMineCar::*)()>);
+    static_assert(std::is_same_v<decltype(&CMineCar::getActorType),
+                                 const CDemonActorType &(CMineCar::*)() const>);
 }
 
 } // namespace

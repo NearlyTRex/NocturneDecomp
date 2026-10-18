@@ -14,7 +14,7 @@ public:
     void process(float delta_time) override;
     int renderOpaque() override;
     int renderTransparent() override;
-    CDemonActorType *getActorType() override;
+    [[nodiscard]] const CDemonActorType &getActorType() const override;
     common::CVector3f *getMuzzlePoint(common::CVector3f *out_point) override;
     int fire() override;
     float getDamage() override;

@@ -31,9 +31,9 @@ TEST(CZombie, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CZombie::getTargetPoints), int (CZombie::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CZombie::shouldIgnoreForTargeting), int (CZombie::*)()>);
-    static_assert(
-        std::is_same_v<decltype(&CZombie::getActorType), CDemonActorType *(CZombie::*)()>);
-    static_assert(std::is_same_v<decltype(&CZombie::archive), void (CZombie::*)()>);
+    static_assert(std::is_same_v<decltype(&CZombie::getActorType),
+                                 const CDemonActorType &(CZombie::*)() const>);
+    static_assert(std::is_same_v<decltype(&CZombie::archive), void (CZombie::*)(CActorArchive &)>);
     static_assert(std::is_same_v<decltype(&CZombie::isGrabbable), int (CZombie::*)(CDemonActor *)>);
     static_assert(
         std::is_same_v<decltype(&CZombie::canBeGrabbed), int (CZombie::*)(CDemonActor *, int)>);

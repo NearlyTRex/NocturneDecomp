@@ -27,8 +27,9 @@ TEST(CScat, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CScat::setup), void (CScat::*)()>);
     static_assert(std::is_same_v<decltype(&CScat::process), void (CScat::*)(float)>);
     static_assert(std::is_same_v<decltype(&CScat::renderOpaque), int (CScat::*)()>);
-    static_assert(std::is_same_v<decltype(&CScat::getActorType), CDemonActorType *(CScat::*)()>);
-    static_assert(std::is_same_v<decltype(&CScat::archive), void (CScat::*)()>);
+    static_assert(
+        std::is_same_v<decltype(&CScat::getActorType), const CDemonActorType &(CScat::*)() const>);
+    static_assert(std::is_same_v<decltype(&CScat::archive), void (CScat::*)(CActorArchive &)>);
     static_assert(std::is_same_v<decltype(&CScat::processDamage), void (CScat::*)(SDamageInfo *)>);
     static_assert(std::is_same_v<decltype(&CScat::createDefaultWeapon), void (CScat::*)()>);
     static_assert(std::is_same_v<decltype(&CScat::drawWeapon), void (CScat::*)(int)>);

@@ -15,12 +15,8 @@ TEST(CCharacter, HasVirtualDestructor) {
     static_assert(std::has_virtual_destructor_v<CCharacter>);
 }
 
-TEST(CCharacter, IsConcrete) {
-    static_assert(!std::is_abstract_v<CCharacter>);
-}
-
-TEST(CCharacter, Constructors) {
-    static_assert(std::is_constructible_v<CCharacter>);
+TEST(CCharacter, IsAbstract) {
+    static_assert(std::is_abstract_v<CCharacter>);
 }
 
 TEST(CCharacter, PublicInterface) {
@@ -42,7 +38,8 @@ TEST(CCharacter, PublicInterface) {
         std::is_same_v<decltype(&CCharacter::spawnFlies), void (CCharacter::*)(int, float)>);
     static_assert(std::is_same_v<decltype(&CCharacter::calculateChecksum),
                                  void (CCharacter::*)(std::uint32_t *)>);
-    static_assert(std::is_same_v<decltype(&CCharacter::archive), void (CCharacter::*)()>);
+    static_assert(
+        std::is_same_v<decltype(&CCharacter::archive), void (CCharacter::*)(CActorArchive &)>);
     static_assert(
         std::is_same_v<decltype(&CCharacter::applyDamage), void (CCharacter::*)(int, float)>);
     static_assert(std::is_same_v<decltype(&CCharacter::kill),

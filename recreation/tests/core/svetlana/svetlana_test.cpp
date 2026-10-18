@@ -27,9 +27,10 @@ TEST(CSvetlana, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CSvetlana::setup), void (CSvetlana::*)()>);
     static_assert(std::is_same_v<decltype(&CSvetlana::process), void (CSvetlana::*)(float)>);
     static_assert(std::is_same_v<decltype(&CSvetlana::renderOpaque), int (CSvetlana::*)()>);
+    static_assert(std::is_same_v<decltype(&CSvetlana::getActorType),
+                                 const CDemonActorType &(CSvetlana::*)() const>);
     static_assert(
-        std::is_same_v<decltype(&CSvetlana::getActorType), CDemonActorType *(CSvetlana::*)()>);
-    static_assert(std::is_same_v<decltype(&CSvetlana::archive), void (CSvetlana::*)()>);
+        std::is_same_v<decltype(&CSvetlana::archive), void (CSvetlana::*)(CActorArchive &)>);
     static_assert(
         std::is_same_v<decltype(&CSvetlana::getGrabbed), int (CSvetlana::*)(CDemonActor *, int)>);
     static_assert(

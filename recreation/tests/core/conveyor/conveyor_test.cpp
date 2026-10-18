@@ -32,9 +32,10 @@ TEST(CConveyor, PublicInterface) {
                                  CBoundingBox3D *(CConveyor::*)(CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CConveyor::getCollisionType),
                                  ECollisionType (CConveyor::*)(SCollisionInfo *)>);
+    static_assert(std::is_same_v<decltype(&CConveyor::getActorType),
+                                 const CDemonActorType &(CConveyor::*)() const>);
     static_assert(
-        std::is_same_v<decltype(&CConveyor::getActorType), CDemonActorType *(CConveyor::*)()>);
-    static_assert(std::is_same_v<decltype(&CConveyor::archive), void (CConveyor::*)()>);
+        std::is_same_v<decltype(&CConveyor::archive), void (CConveyor::*)(CActorArchive &)>);
 }
 
 } // namespace

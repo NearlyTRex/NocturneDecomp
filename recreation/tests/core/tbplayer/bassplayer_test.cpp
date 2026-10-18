@@ -25,8 +25,8 @@ TEST(CBassPlayer, Constructors) {
 
 TEST(CBassPlayer, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CBassPlayer::setup), void (CBassPlayer::*)()>);
-    static_assert(
-        std::is_same_v<decltype(&CBassPlayer::getActorType), CDemonActorType *(CBassPlayer::*)()>);
+    static_assert(std::is_same_v<decltype(&CBassPlayer::getActorType),
+                                 const CDemonActorType &(CBassPlayer::*)() const>);
     static_assert(std::is_same_v<decltype(&CBassPlayer::processDamage),
                                  void (CBassPlayer::*)(SDamageInfo *)>);
     static_assert(

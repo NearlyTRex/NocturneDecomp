@@ -25,8 +25,8 @@ TEST(CDrummer, Constructors) {
 
 TEST(CDrummer, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDrummer::setup), void (CDrummer::*)()>);
-    static_assert(
-        std::is_same_v<decltype(&CDrummer::getActorType), CDemonActorType *(CDrummer::*)()>);
+    static_assert(std::is_same_v<decltype(&CDrummer::getActorType),
+                                 const CDemonActorType &(CDrummer::*)() const>);
     static_assert(
         std::is_same_v<decltype(&CDrummer::processDamage), void (CDrummer::*)(SDamageInfo *)>);
     static_assert(std::is_same_v<decltype(&CDrummer::getCarryObjToBodyXForm),

@@ -29,8 +29,9 @@ TEST(CBat, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CBat::renderOpaque), int (CBat::*)()>);
     static_assert(std::is_same_v<decltype(&CBat::getBoundingBox),
                                  CBoundingBox3D *(CBat::*)(CBoundingBox3D *)>);
-    static_assert(std::is_same_v<decltype(&CBat::getActorType), CDemonActorType *(CBat::*)()>);
-    static_assert(std::is_same_v<decltype(&CBat::archive), void (CBat::*)()>);
+    static_assert(
+        std::is_same_v<decltype(&CBat::getActorType), const CDemonActorType &(CBat::*)() const>);
+    static_assert(std::is_same_v<decltype(&CBat::archive), void (CBat::*)(CActorArchive &)>);
 }
 
 } // namespace

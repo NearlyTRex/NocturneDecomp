@@ -31,8 +31,9 @@ TEST(CAnvil, PublicInterface) {
                                  CBoundingBox3D *(CAnvil::*)(CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CAnvil::getCollisionType),
                                  ECollisionType (CAnvil::*)(SCollisionInfo *)>);
-    static_assert(std::is_same_v<decltype(&CAnvil::getActorType), CDemonActorType *(CAnvil::*)()>);
-    static_assert(std::is_same_v<decltype(&CAnvil::archive), void (CAnvil::*)()>);
+    static_assert(std::is_same_v<decltype(&CAnvil::getActorType),
+                                 const CDemonActorType &(CAnvil::*)() const>);
+    static_assert(std::is_same_v<decltype(&CAnvil::archive), void (CAnvil::*)(CActorArchive &)>);
 }
 
 } // namespace

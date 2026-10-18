@@ -24,7 +24,8 @@ TEST(CGun, Constructors) {
 }
 
 TEST(CGun, PublicInterface) {
-    static_assert(std::is_same_v<decltype(&CGun::getActorType), CDemonActorType *(CGun::*)()>);
+    static_assert(
+        std::is_same_v<decltype(&CGun::getActorType), const CDemonActorType &(CGun::*)() const>);
     static_assert(std::is_same_v<decltype(&CGun::fire), int (CGun::*)()>);
     static_assert(std::is_same_v<decltype(&CGun::getDamage), float (CGun::*)()>);
 }

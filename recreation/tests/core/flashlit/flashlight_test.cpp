@@ -24,8 +24,8 @@ TEST(CFlashlight, Constructors) {
 }
 
 TEST(CFlashlight, PublicInterface) {
-    static_assert(
-        std::is_same_v<decltype(&CFlashlight::getActorType), CDemonActorType *(CFlashlight::*)()>);
+    static_assert(std::is_same_v<decltype(&CFlashlight::getActorType),
+                                 const CDemonActorType &(CFlashlight::*)() const>);
     static_assert(std::is_same_v<decltype(&CFlashlight::fire), int (CFlashlight::*)()>);
     static_assert(std::is_same_v<decltype(&CFlashlight::getDamage), float (CFlashlight::*)()>);
 }

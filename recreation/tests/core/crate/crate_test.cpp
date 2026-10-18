@@ -39,8 +39,9 @@ TEST(CCrate, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CCrate::onDropped), void (CCrate::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CCrate::getCarrier), CDemonActor *(CCrate::*)()>);
-    static_assert(std::is_same_v<decltype(&CCrate::getActorType), CDemonActorType *(CCrate::*)()>);
-    static_assert(std::is_same_v<decltype(&CCrate::archive), void (CCrate::*)()>);
+    static_assert(std::is_same_v<decltype(&CCrate::getActorType),
+                                 const CDemonActorType &(CCrate::*)() const>);
+    static_assert(std::is_same_v<decltype(&CCrate::archive), void (CCrate::*)(CActorArchive &)>);
     static_assert(std::is_same_v<decltype(&CCrate::explode), void (CCrate::*)()>);
 }
 

@@ -5,6 +5,7 @@
 #include "core/fwd.h"
 
 #include <cstdint>
+#include <string_view>
 
 namespace nocturne::core {
 
@@ -26,14 +27,15 @@ void archivePartStatus(CDeformableModelInstance *model_ptr, char *property_name)
 void archiveBox(CBox *box_ptr, char *property_name);
 void archiveClothList(CClothList *cloth_list, char *property_name);
 void archiveRules(CRuleList *rules, char *property_name);
-CDemonActorType *registerActorClass(CDemonActorType *this_ptr, char *class_name,
-                                    CDemonActor::FactoryFunc *factor_func, int *max_version,
-                                    int version, CDemonActorType *parent_class_info);
-CDemonActorType *getActorClassByName(char *className);
-CDemonActor *createActorByName(char *class_name);
-int isOfClass(CDemonActor *actor_ptr, char *class_name);
-int isOfClassHash(CDemonActor *actor_ptr, std::uint32_t class_name_hash);
-CDemonActor *castToClassHash(CDemonActor *actor_ptr, std::uint32_t class_name_hash);
+// Whether the actor's class matches a class expression: class names, '!' before a name or a
+// bracketed expression, and '&' or '|' (or "&&", "||") between them, applied left to right with
+// neither taking precedence. A name matches its own class and every class derived from it.
+// False for no actor, and for an expression that can't be read.
+[[nodiscard]] bool isOfClass(const CDemonActor *actor_ptr, std::string_view class_name);
+// Whether the actor's class, or one it derives from, has the name's hash. False for no actor.
+[[nodiscard]] bool isOfClassHash(const CDemonActor *actor_ptr, std::uint32_t class_name_hash);
+// The actor when isOfClassHash holds; null otherwise.
+[[nodiscard]] CDemonActor *castToClassHash(CDemonActor *actor_ptr, std::uint32_t class_name_hash);
 void syncActorTypeIDs();
 void resetActorTypeInfo();
 float normalizeAngleToPi(float angle_radians);

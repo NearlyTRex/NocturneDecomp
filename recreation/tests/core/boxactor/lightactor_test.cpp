@@ -26,9 +26,10 @@ TEST(CLightActor, Constructors) {
 TEST(CLightActor, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CLightActor::setup), void (CLightActor::*)()>);
     static_assert(std::is_same_v<decltype(&CLightActor::process), void (CLightActor::*)(float)>);
+    static_assert(std::is_same_v<decltype(&CLightActor::getActorType),
+                                 const CDemonActorType &(CLightActor::*)() const>);
     static_assert(
-        std::is_same_v<decltype(&CLightActor::getActorType), CDemonActorType *(CLightActor::*)()>);
-    static_assert(std::is_same_v<decltype(&CLightActor::archive), void (CLightActor::*)()>);
+        std::is_same_v<decltype(&CLightActor::archive), void (CLightActor::*)(CActorArchive &)>);
 }
 
 } // namespace

@@ -31,8 +31,9 @@ TEST(CSpike, PublicInterface) {
                                  CBoundingBox3D *(CSpike::*)(CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CSpike::getCollisionType),
                                  ECollisionType (CSpike::*)(SCollisionInfo *)>);
-    static_assert(std::is_same_v<decltype(&CSpike::getActorType), CDemonActorType *(CSpike::*)()>);
-    static_assert(std::is_same_v<decltype(&CSpike::archive), void (CSpike::*)()>);
+    static_assert(std::is_same_v<decltype(&CSpike::getActorType),
+                                 const CDemonActorType &(CSpike::*)() const>);
+    static_assert(std::is_same_v<decltype(&CSpike::archive), void (CSpike::*)(CActorArchive &)>);
 }
 
 } // namespace

@@ -34,9 +34,10 @@ TEST(CFlameCan, PublicInterface) {
                                  ECollisionType (CFlameCan::*)(SCollisionInfo *)>);
     static_assert(std::is_same_v<decltype(&CFlameCan::getTargetPoints),
                                  int (CFlameCan::*)(common::CVector3f *)>);
+    static_assert(std::is_same_v<decltype(&CFlameCan::getActorType),
+                                 const CDemonActorType &(CFlameCan::*)() const>);
     static_assert(
-        std::is_same_v<decltype(&CFlameCan::getActorType), CDemonActorType *(CFlameCan::*)()>);
-    static_assert(std::is_same_v<decltype(&CFlameCan::archive), void (CFlameCan::*)()>);
+        std::is_same_v<decltype(&CFlameCan::archive), void (CFlameCan::*)(CActorArchive &)>);
     static_assert(std::is_same_v<decltype(&CFlameCan::ignite), void (CFlameCan::*)()>);
 }
 

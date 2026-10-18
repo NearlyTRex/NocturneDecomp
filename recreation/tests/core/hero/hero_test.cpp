@@ -28,7 +28,7 @@ TEST(CHero, PublicInterface) {
                                  int (CHero::*)(common::CVector3f *, common::CVector3f *,
                                                 common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CHero::getPathMap), CPathMap *(CHero::*)()>);
-    static_assert(std::is_same_v<decltype(&CHero::archive), void (CHero::*)()>);
+    static_assert(std::is_same_v<decltype(&CHero::archive), void (CHero::*)(CActorArchive &)>);
     static_assert(
         std::is_same_v<decltype(&CHero::kill), void (CHero::*)(int, common::CVector3f *, float)>);
     static_assert(std::is_same_v<decltype(&CHero::isInvulnerable), int (CHero::*)()>);

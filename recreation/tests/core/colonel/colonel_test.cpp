@@ -27,9 +27,10 @@ TEST(CColonel, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CColonel::setup), void (CColonel::*)()>);
     static_assert(std::is_same_v<decltype(&CColonel::process), void (CColonel::*)(float)>);
     static_assert(std::is_same_v<decltype(&CColonel::renderOpaque), int (CColonel::*)()>);
+    static_assert(std::is_same_v<decltype(&CColonel::getActorType),
+                                 const CDemonActorType &(CColonel::*)() const>);
     static_assert(
-        std::is_same_v<decltype(&CColonel::getActorType), CDemonActorType *(CColonel::*)()>);
-    static_assert(std::is_same_v<decltype(&CColonel::archive), void (CColonel::*)()>);
+        std::is_same_v<decltype(&CColonel::archive), void (CColonel::*)(CActorArchive &)>);
     static_assert(
         std::is_same_v<decltype(&CColonel::processDamage), void (CColonel::*)(SDamageInfo *)>);
     static_assert(std::is_same_v<decltype(&CColonel::drawWeapon), void (CColonel::*)(int)>);

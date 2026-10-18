@@ -36,8 +36,9 @@ TEST(CTrap, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CTrap::onDropped), void (CTrap::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CTrap::getCarrier), CDemonActor *(CTrap::*)()>);
-    static_assert(std::is_same_v<decltype(&CTrap::getActorType), CDemonActorType *(CTrap::*)()>);
-    static_assert(std::is_same_v<decltype(&CTrap::archive), void (CTrap::*)()>);
+    static_assert(
+        std::is_same_v<decltype(&CTrap::getActorType), const CDemonActorType &(CTrap::*)() const>);
+    static_assert(std::is_same_v<decltype(&CTrap::archive), void (CTrap::*)(CActorArchive &)>);
 }
 
 } // namespace

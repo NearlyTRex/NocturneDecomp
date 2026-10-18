@@ -33,8 +33,9 @@ TEST(CTVBat, PublicInterface) {
                                  ECollisionType (CTVBat::*)(SCollisionInfo *)>);
     static_assert(
         std::is_same_v<decltype(&CTVBat::getTargetPoints), int (CTVBat::*)(common::CVector3f *)>);
-    static_assert(std::is_same_v<decltype(&CTVBat::getActorType), CDemonActorType *(CTVBat::*)()>);
-    static_assert(std::is_same_v<decltype(&CTVBat::archive), void (CTVBat::*)()>);
+    static_assert(std::is_same_v<decltype(&CTVBat::getActorType),
+                                 const CDemonActorType &(CTVBat::*)() const>);
+    static_assert(std::is_same_v<decltype(&CTVBat::archive), void (CTVBat::*)(CActorArchive &)>);
     static_assert(
         std::is_same_v<decltype(&CTVBat::processDamage), void (CTVBat::*)(SDamageInfo *)>);
     static_assert(std::is_same_v<decltype(&CTVBat::getDeathState), EDeathState (CTVBat::*)()>);

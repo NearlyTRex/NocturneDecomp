@@ -32,8 +32,9 @@ TEST(CFilmProjector, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CFilmProjector::getBoundingBox),
                                  CBoundingBox3D *(CFilmProjector::*)(CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CFilmProjector::getActorType),
-                                 CDemonActorType *(CFilmProjector::*)()>);
-    static_assert(std::is_same_v<decltype(&CFilmProjector::archive), void (CFilmProjector::*)()>);
+                                 const CDemonActorType &(CFilmProjector::*)() const>);
+    static_assert(std::is_same_v<decltype(&CFilmProjector::archive),
+                                 void (CFilmProjector::*)(CActorArchive &)>);
 }
 
 } // namespace

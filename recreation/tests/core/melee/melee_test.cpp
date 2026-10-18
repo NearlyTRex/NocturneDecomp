@@ -31,8 +31,9 @@ TEST(CMelee, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CMelee::playAttackHitEffects),
                                  void (CMelee::*)(int, SDamageInfo *, CDemonActor *)>);
     static_assert(std::is_same_v<decltype(&CMelee::canPickup), int (CMelee::*)(CDemonActor *)>);
-    static_assert(std::is_same_v<decltype(&CMelee::getActorType), CDemonActorType *(CMelee::*)()>);
-    static_assert(std::is_same_v<decltype(&CMelee::archive), void (CMelee::*)()>);
+    static_assert(std::is_same_v<decltype(&CMelee::getActorType),
+                                 const CDemonActorType &(CMelee::*)() const>);
+    static_assert(std::is_same_v<decltype(&CMelee::archive), void (CMelee::*)(CActorArchive &)>);
     static_assert(std::is_same_v<decltype(&CMelee::setWeaponState), void (CMelee::*)(int)>);
     static_assert(std::is_same_v<decltype(&CMelee::fire), int (CMelee::*)()>);
     static_assert(std::is_same_v<decltype(&CMelee::getDamage), float (CMelee::*)()>);

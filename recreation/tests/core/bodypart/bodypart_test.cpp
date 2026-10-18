@@ -43,9 +43,10 @@ TEST(CBodyPart, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CBodyPart::onDropped), void (CBodyPart::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CBodyPart::getCarrier), CDemonActor *(CBodyPart::*)()>);
+    static_assert(std::is_same_v<decltype(&CBodyPart::getActorType),
+                                 const CDemonActorType &(CBodyPart::*)() const>);
     static_assert(
-        std::is_same_v<decltype(&CBodyPart::getActorType), CDemonActorType *(CBodyPart::*)()>);
-    static_assert(std::is_same_v<decltype(&CBodyPart::archive), void (CBodyPart::*)()>);
+        std::is_same_v<decltype(&CBodyPart::archive), void (CBodyPart::*)(CActorArchive &)>);
     static_assert(std::is_same_v<decltype(&CBodyPart::setCounts), void (CBodyPart::*)(int, int)>);
     static_assert(std::is_same_v<decltype(&CBodyPart::finalizeGeometry), void (CBodyPart::*)()>);
     static_assert(

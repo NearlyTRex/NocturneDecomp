@@ -11,7 +11,7 @@ public:
     ~CTommyGun() override;
 
     void process(float delta_time) override;
-    CDemonActorType *getActorType() override;
+    [[nodiscard]] const CDemonActorType &getActorType() const override;
     void setWeaponState(int weapon_state) override;
     int fire() override;
     float getDamage() override;

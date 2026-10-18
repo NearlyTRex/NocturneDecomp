@@ -25,8 +25,8 @@ TEST(CShotgun, Constructors) {
 
 TEST(CShotgun, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CShotgun::process), void (CShotgun::*)(float)>);
-    static_assert(
-        std::is_same_v<decltype(&CShotgun::getActorType), CDemonActorType *(CShotgun::*)()>);
+    static_assert(std::is_same_v<decltype(&CShotgun::getActorType),
+                                 const CDemonActorType &(CShotgun::*)() const>);
     static_assert(std::is_same_v<decltype(&CShotgun::onFired), void (CShotgun::*)()>);
     static_assert(std::is_same_v<decltype(&CShotgun::fire), int (CShotgun::*)()>);
     static_assert(std::is_same_v<decltype(&CShotgun::getDamage), float (CShotgun::*)()>);

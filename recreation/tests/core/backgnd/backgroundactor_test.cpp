@@ -38,9 +38,9 @@ TEST(CBackgroundActor, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CBackgroundActor::getGroundType),
                                  EGroundType (CBackgroundActor::*)()>);
     static_assert(std::is_same_v<decltype(&CBackgroundActor::getActorType),
-                                 CDemonActorType *(CBackgroundActor::*)()>);
-    static_assert(
-        std::is_same_v<decltype(&CBackgroundActor::archive), void (CBackgroundActor::*)()>);
+                                 const CDemonActorType &(CBackgroundActor::*)() const>);
+    static_assert(std::is_same_v<decltype(&CBackgroundActor::archive),
+                                 void (CBackgroundActor::*)(CActorArchive &)>);
 }
 
 } // namespace

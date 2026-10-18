@@ -30,8 +30,9 @@ TEST(CBaron, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CBaron::renderTransparent), int (CBaron::*)()>);
     static_assert(std::is_same_v<decltype(&CBaron::getCollisionType),
                                  ECollisionType (CBaron::*)(SCollisionInfo *)>);
-    static_assert(std::is_same_v<decltype(&CBaron::getActorType), CDemonActorType *(CBaron::*)()>);
-    static_assert(std::is_same_v<decltype(&CBaron::archive), void (CBaron::*)()>);
+    static_assert(std::is_same_v<decltype(&CBaron::getActorType),
+                                 const CDemonActorType &(CBaron::*)() const>);
+    static_assert(std::is_same_v<decltype(&CBaron::archive), void (CBaron::*)(CActorArchive &)>);
     static_assert(std::is_same_v<decltype(&CBaron::isGrabbable), int (CBaron::*)(CDemonActor *)>);
     static_assert(
         std::is_same_v<decltype(&CBaron::processDamage), void (CBaron::*)(SDamageInfo *)>);

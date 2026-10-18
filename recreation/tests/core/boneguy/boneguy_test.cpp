@@ -32,9 +32,10 @@ TEST(CBoneGuy, PublicInterface) {
                                  ECollisionType (CBoneGuy::*)(SCollisionInfo *)>);
     static_assert(std::is_same_v<decltype(&CBoneGuy::getTargetPoints),
                                  int (CBoneGuy::*)(common::CVector3f *)>);
+    static_assert(std::is_same_v<decltype(&CBoneGuy::getActorType),
+                                 const CDemonActorType &(CBoneGuy::*)() const>);
     static_assert(
-        std::is_same_v<decltype(&CBoneGuy::getActorType), CDemonActorType *(CBoneGuy::*)()>);
-    static_assert(std::is_same_v<decltype(&CBoneGuy::archive), void (CBoneGuy::*)()>);
+        std::is_same_v<decltype(&CBoneGuy::archive), void (CBoneGuy::*)(CActorArchive &)>);
     static_assert(
         std::is_same_v<decltype(&CBoneGuy::processDamage), void (CBoneGuy::*)(SDamageInfo *)>);
     static_assert(std::is_same_v<decltype(&CBoneGuy::getCarryObjToBodyXForm),

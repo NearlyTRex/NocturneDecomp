@@ -32,8 +32,9 @@ TEST(CAmmo, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CAmmo::getCollisionType),
                                  ECollisionType (CAmmo::*)(SCollisionInfo *)>);
     static_assert(std::is_same_v<decltype(&CAmmo::canPickup), int (CAmmo::*)(CDemonActor *)>);
-    static_assert(std::is_same_v<decltype(&CAmmo::getActorType), CDemonActorType *(CAmmo::*)()>);
-    static_assert(std::is_same_v<decltype(&CAmmo::archive), void (CAmmo::*)()>);
+    static_assert(
+        std::is_same_v<decltype(&CAmmo::getActorType), const CDemonActorType &(CAmmo::*)() const>);
+    static_assert(std::is_same_v<decltype(&CAmmo::archive), void (CAmmo::*)(CActorArchive &)>);
     static_assert(std::is_same_v<decltype(&CAmmo::setWeaponClass), void (CAmmo::*)(char *)>);
     static_assert(std::is_same_v<decltype(&CAmmo::setAmmoCount), void (CAmmo::*)(int)>);
 }

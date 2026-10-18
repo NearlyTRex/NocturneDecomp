@@ -7,6 +7,7 @@ namespace nocturne::core {
 class C3DSCamera;
 class C3DSLight;
 class CActor;
+class CActorArchive;
 class CActorDestination;
 class CAmmo;
 class CAmmoBox;
@@ -56,7 +57,7 @@ class CDeformableModel;
 class CDeformableModelInstance;
 class CDemonActor;
 class CDemonActorTransformState;
-class CDemonActorType;
+struct CDemonActorType;
 class CDemonCamera;
 class CDemonCube;
 class CDemonCubeTriangle;

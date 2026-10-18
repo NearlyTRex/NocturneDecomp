@@ -27,8 +27,9 @@ TEST(CTempleStone, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CTempleStone::canPickup), int (CTempleStone::*)(CDemonActor *)>);
     static_assert(std::is_same_v<decltype(&CTempleStone::getActorType),
-                                 CDemonActorType *(CTempleStone::*)()>);
-    static_assert(std::is_same_v<decltype(&CTempleStone::archive), void (CTempleStone::*)()>);
+                                 const CDemonActorType &(CTempleStone::*)() const>);
+    static_assert(
+        std::is_same_v<decltype(&CTempleStone::archive), void (CTempleStone::*)(CActorArchive &)>);
 }
 
 } // namespace

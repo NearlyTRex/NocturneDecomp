@@ -30,8 +30,9 @@ TEST(CImp, PublicInterface) {
                                  ECollisionType (CImp::*)(SCollisionInfo *)>);
     static_assert(
         std::is_same_v<decltype(&CImp::getTargetPoints), int (CImp::*)(common::CVector3f *)>);
-    static_assert(std::is_same_v<decltype(&CImp::getActorType), CDemonActorType *(CImp::*)()>);
-    static_assert(std::is_same_v<decltype(&CImp::archive), void (CImp::*)()>);
+    static_assert(
+        std::is_same_v<decltype(&CImp::getActorType), const CDemonActorType &(CImp::*)() const>);
+    static_assert(std::is_same_v<decltype(&CImp::archive), void (CImp::*)(CActorArchive &)>);
     static_assert(std::is_same_v<decltype(&CImp::processDamage), void (CImp::*)(SDamageInfo *)>);
     static_assert(std::is_same_v<decltype(&CImp::attractActorToward),
                                  int (CImp::*)(CDemonActor *, common::CVector3f *)>);

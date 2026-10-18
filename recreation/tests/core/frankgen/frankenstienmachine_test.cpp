@@ -35,9 +35,9 @@ TEST(CFrankenstienMachine, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CFrankenstienMachine::getCollisionType),
                                  ECollisionType (CFrankenstienMachine::*)(SCollisionInfo *)>);
     static_assert(std::is_same_v<decltype(&CFrankenstienMachine::getActorType),
-                                 CDemonActorType *(CFrankenstienMachine::*)()>);
-    static_assert(
-        std::is_same_v<decltype(&CFrankenstienMachine::archive), void (CFrankenstienMachine::*)()>);
+                                 const CDemonActorType &(CFrankenstienMachine::*)() const>);
+    static_assert(std::is_same_v<decltype(&CFrankenstienMachine::archive),
+                                 void (CFrankenstienMachine::*)(CActorArchive &)>);
 }
 
 } // namespace

@@ -28,7 +28,7 @@ TEST(CBaronWeapon, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CBaronWeapon::process), void (CBaronWeapon::*)(float)>);
     static_assert(std::is_same_v<decltype(&CBaronWeapon::renderOpaque), int (CBaronWeapon::*)()>);
     static_assert(std::is_same_v<decltype(&CBaronWeapon::getActorType),
-                                 CDemonActorType *(CBaronWeapon::*)()>);
+                                 const CDemonActorType &(CBaronWeapon::*)() const>);
     static_assert(
         std::is_same_v<decltype(&CBaronWeapon::setWeaponState), void (CBaronWeapon::*)(int)>);
     static_assert(std::is_same_v<decltype(&CBaronWeapon::fire), int (CBaronWeapon::*)()>);

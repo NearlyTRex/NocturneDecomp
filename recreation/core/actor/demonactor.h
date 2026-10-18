@@ -5,15 +5,24 @@
 
 #include <cstdint>
 #include <cstdio>
+#include <string>
+#include <string_view>
 
 namespace nocturne::core {
 
+// Anything a mission places: what every actor class has, and what each may do differently. The
+// virtual functions not ported yet quit when called.
 class CDemonActor {
 public:
-    using FactoryFunc = CDemonActor *();
+    // Abstract: missions can't hold one.
+    static const CDemonActorType kType;
 
     CDemonActor();
     virtual ~CDemonActor();
+    CDemonActor(const CDemonActor &) = delete;
+    CDemonActor &operator=(const CDemonActor &) = delete;
+    CDemonActor(CDemonActor &&) = delete;
+    CDemonActor &operator=(CDemonActor &&) = delete;
 
     virtual void setup();
     virtual void process(float delta_time);
@@ -74,12 +83,16 @@ public:
                                      float *out_floor_height);
     virtual CPathMap *getPathMap();
     virtual void calculateChecksum(std::uint32_t *out_crc);
-    virtual CDemonActorType *getActorType();
-    virtual void archive();
+    // The original's quit when called, since nothing can be just a CDemonActor.
+    // nocedit 0x00408b50
+    [[nodiscard]] virtual const CDemonActorType &getActorType() const = 0;
+    // Reads the class's own fields, between the tags load reads.
+    virtual void archive(CActorArchive &actor_archive);
 
     void setupRenderState();
     void restoreRenderState();
-    char *getActorClassName();
+    [[nodiscard]] std::string_view getActorClassName() const;
+    [[nodiscard]] const std::string &getActorName() const;
     void updateOrientationMatrix();
     common::CVector3f *transformVector(common::CVector3f *output, common::CVector3f *input);
     common::CVector3f *inverseTransformVector(common::CVector3f *output_vector,
@@ -93,9 +106,14 @@ public:
     float rayIntersect(common::CVector3f *ray_origin, common::CVector3f *ray_direction,
                        SActorRayHit *out_hit, SCollisionInfo *collision_info, int bbox_type,
                        CBoundingBox3D *ray_bbox);
-    void doCheckForInvalidPointers(char *context_file, int context_line);
     void save(std::FILE *file_handle);
-    void load(std::FILE *file_handle);
+    // Reads the actor as a mission or save file holds it: a start tag with its class and name,
+    // the class's fields, and an end tag that repeats both. A tag naming another class or actor
+    // is fatal.
+    void load(common::CTextScanner &scanner);
+
+private:
+    std::string actor_name_;
 };
 
 } // namespace nocturne::core

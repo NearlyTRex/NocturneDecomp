@@ -33,9 +33,9 @@ TEST(CActorDestination, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CActorDestination::getBoundingBox),
                                  CBoundingBox3D *(CActorDestination::*)(CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CActorDestination::getActorType),
-                                 CDemonActorType *(CActorDestination::*)()>);
-    static_assert(
-        std::is_same_v<decltype(&CActorDestination::archive), void (CActorDestination::*)()>);
+                                 const CDemonActorType &(CActorDestination::*)() const>);
+    static_assert(std::is_same_v<decltype(&CActorDestination::archive),
+                                 void (CActorDestination::*)(CActorArchive &)>);
     static_assert(std::is_same_v<decltype(&CActorDestination::acceptsActor),
                                  int (CActorDestination::*)(CDemonActor *)>);
 }

@@ -15,8 +15,8 @@ public:
     void process(float delta_time) override;
     int renderOpaque() override;
     void renderBackground(int layer_flag) override;
-    CDemonActorType *getActorType() override;
-    void archive() override;
+    [[nodiscard]] const CDemonActorType &getActorType() const override;
+    void archive(CActorArchive &actor_archive) override;
     int isGrabbable(CDemonActor *grabber) override;
     int canBeGrabbed(CDemonActor *grabber, int grab_type) override;
     int getGrabbed(CDemonActor *grabber, int grab_type) override;

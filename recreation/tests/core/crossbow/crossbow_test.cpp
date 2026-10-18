@@ -27,8 +27,8 @@ TEST(CCrossbow, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CCrossbow::process), void (CCrossbow::*)(float)>);
     static_assert(std::is_same_v<decltype(&CCrossbow::renderOpaque), int (CCrossbow::*)()>);
     static_assert(std::is_same_v<decltype(&CCrossbow::renderTransparent), int (CCrossbow::*)()>);
-    static_assert(
-        std::is_same_v<decltype(&CCrossbow::getActorType), CDemonActorType *(CCrossbow::*)()>);
+    static_assert(std::is_same_v<decltype(&CCrossbow::getActorType),
+                                 const CDemonActorType &(CCrossbow::*)() const>);
     static_assert(std::is_same_v<decltype(&CCrossbow::getMuzzlePoint),
                                  common::CVector3f *(CCrossbow::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CCrossbow::fire), int (CCrossbow::*)()>);

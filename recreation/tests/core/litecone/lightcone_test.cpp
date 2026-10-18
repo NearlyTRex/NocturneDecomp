@@ -31,9 +31,10 @@ TEST(CLightCone, PublicInterface) {
                                  CBoundingBox3D *(CLightCone::*)(CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CLightCone::getCollisionType),
                                  ECollisionType (CLightCone::*)(SCollisionInfo *)>);
+    static_assert(std::is_same_v<decltype(&CLightCone::getActorType),
+                                 const CDemonActorType &(CLightCone::*)() const>);
     static_assert(
-        std::is_same_v<decltype(&CLightCone::getActorType), CDemonActorType *(CLightCone::*)()>);
-    static_assert(std::is_same_v<decltype(&CLightCone::archive), void (CLightCone::*)()>);
+        std::is_same_v<decltype(&CLightCone::archive), void (CLightCone::*)(CActorArchive &)>);
 }
 
 } // namespace

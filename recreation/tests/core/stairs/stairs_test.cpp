@@ -39,9 +39,9 @@ TEST(CStairs, PublicInterface) {
                                  void (CStairs::*)(SIntersectXZCylinder *)>);
     static_assert(std::is_same_v<decltype(&CStairs::customGetFloorHeight),
                                  int (CStairs::*)(common::CVector3f *, float, float *)>);
-    static_assert(
-        std::is_same_v<decltype(&CStairs::getActorType), CDemonActorType *(CStairs::*)()>);
-    static_assert(std::is_same_v<decltype(&CStairs::archive), void (CStairs::*)()>);
+    static_assert(std::is_same_v<decltype(&CStairs::getActorType),
+                                 const CDemonActorType &(CStairs::*)() const>);
+    static_assert(std::is_same_v<decltype(&CStairs::archive), void (CStairs::*)(CActorArchive &)>);
     static_assert(std::is_same_v<decltype(&CStairs::buildCollision), void (CStairs::*)()>);
 }
 

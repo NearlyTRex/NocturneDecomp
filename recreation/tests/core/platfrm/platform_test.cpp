@@ -37,9 +37,10 @@ TEST(CPlatform, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CPlatform::getBlockVirtualDirectorFlag), int (CPlatform::*)()>);
     static_assert(std::is_same_v<decltype(&CPlatform::allowBulletHoles), int (CPlatform::*)()>);
+    static_assert(std::is_same_v<decltype(&CPlatform::getActorType),
+                                 const CDemonActorType &(CPlatform::*)() const>);
     static_assert(
-        std::is_same_v<decltype(&CPlatform::getActorType), CDemonActorType *(CPlatform::*)()>);
-    static_assert(std::is_same_v<decltype(&CPlatform::archive), void (CPlatform::*)()>);
+        std::is_same_v<decltype(&CPlatform::archive), void (CPlatform::*)(CActorArchive &)>);
     static_assert(
         std::is_same_v<decltype(&CPlatform::startMovement), void (CPlatform::*)(float, float)>);
     static_assert(

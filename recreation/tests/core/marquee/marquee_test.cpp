@@ -32,9 +32,10 @@ TEST(CMarquee, PublicInterface) {
                                  CBoundingBox3D *(CMarquee::*)(CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CMarquee::getCollisionType),
                                  ECollisionType (CMarquee::*)(SCollisionInfo *)>);
+    static_assert(std::is_same_v<decltype(&CMarquee::getActorType),
+                                 const CDemonActorType &(CMarquee::*)() const>);
     static_assert(
-        std::is_same_v<decltype(&CMarquee::getActorType), CDemonActorType *(CMarquee::*)()>);
-    static_assert(std::is_same_v<decltype(&CMarquee::archive), void (CMarquee::*)()>);
+        std::is_same_v<decltype(&CMarquee::archive), void (CMarquee::*)(CActorArchive &)>);
 }
 
 } // namespace

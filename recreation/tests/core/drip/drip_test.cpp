@@ -31,8 +31,9 @@ TEST(CDrip, PublicInterface) {
                                  CBoundingBox3D *(CDrip::*)(CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CDrip::getCollisionType),
                                  ECollisionType (CDrip::*)(SCollisionInfo *)>);
-    static_assert(std::is_same_v<decltype(&CDrip::getActorType), CDemonActorType *(CDrip::*)()>);
-    static_assert(std::is_same_v<decltype(&CDrip::archive), void (CDrip::*)()>);
+    static_assert(
+        std::is_same_v<decltype(&CDrip::getActorType), const CDemonActorType &(CDrip::*)() const>);
+    static_assert(std::is_same_v<decltype(&CDrip::archive), void (CDrip::*)(CActorArchive &)>);
     static_assert(std::is_same_v<decltype(&CDrip::reset), void (CDrip::*)()>);
 }
 
