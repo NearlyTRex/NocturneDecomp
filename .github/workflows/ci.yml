@@ -18,7 +18,7 @@ jobs:
   # that cannot run here, so they are built only on release.
   build:
     name: Build (exe-linux-x86_64)
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@4af6d51284dd438d7a0aed231624528e30e5a514 # v0.2.11
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@45bf3d2ed784d826f7951b407631311bce30d435 # v0.2.14
     permissions:
       contents: read
     with:
@@ -59,7 +59,7 @@ jobs:
   # a row of timings on the run's summary page.
   recreation:
     name: Recreation
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@4af6d51284dd438d7a0aed231624528e30e5a514 # v0.2.11
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@45bf3d2ed784d826f7951b407631311bce30d435 # v0.2.14
     permissions:
       contents: read
     with:
@@ -94,7 +94,7 @@ jobs:
   # carries those results from run to run.
   recreation-tidy:
     name: Recreation tidy
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@4af6d51284dd438d7a0aed231624528e30e5a514 # v0.2.11
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@45bf3d2ed784d826f7951b407631311bce30d435 # v0.2.14
     permissions:
       contents: read
     with:
@@ -120,7 +120,7 @@ jobs:
 
   lint:
     name: Lint
-    uses: NearlyTRex/Workflows/.github/workflows/lint.yml@4af6d51284dd438d7a0aed231624528e30e5a514 # v0.2.11
+    uses: NearlyTRex/Workflows/.github/workflows/lint.yml@45bf3d2ed784d826f7951b407631311bce30d435 # v0.2.14
     permissions:
       contents: read
     with:
