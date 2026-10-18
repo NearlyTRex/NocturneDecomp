@@ -27,12 +27,18 @@ public:
     [[nodiscard]] virtual int getMouseButtonFlags() const = 0;
     // Counts the left button up until it is next pressed.
     virtual void releaseLeftMouseButton() = 0;
+    // Moves the pointer there, in the game's coordinates.
+    virtual void setCursorPosition(int x, int y) = 0;
     // Wheel notches since the last take, positive away from the user.
     [[nodiscard]] virtual int takeMouseWheelNotches() = 0;
     // Typed characters, mouse clicks and held keys all dropped.
     virtual void clearInput() = 0;
     // Typed characters alone dropped.
     virtual void clearKeypresses() = 0;
+    // Nonzero while a typed character waits.
+    [[nodiscard]] virtual int wasKeyPressed() const = 0;
+    // The window was closed: every wait for input gives up.
+    [[nodiscard]] virtual bool getInputDisabled() const = 0;
     // The next typed character, presenting frames on the screen until one comes; 0 once the
     // window has closed.
     virtual int getNextKeypress(IScreenDevice &screen) = 0;

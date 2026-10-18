@@ -21,8 +21,8 @@ functions don't count as done. Sizes are in instructions.
 | 5 | `showCalibrationTest`, `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 50 | 4789 | 31 | 3 | 62.0% |
 | 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 20 | 5 | 80.0% |
 | 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 68 | 31 | 56.6% |
-| 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 44 | 2 | 69.8% |
-| 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 0 | 0 | 0.0% |
+| 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 59 | 3 | 93.6% |
+| 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 1 | 0 | 1.7% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 17 | 52 | 5565 | 1 | 0 | 1.9% |
 | 11 | `CScript::loadScript` | 63 | 579 | 67400 | 6 | 1 | 1.0% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 2 | 0 | 7.6% |
@@ -46,7 +46,7 @@ functions don't count as done. Sizes are in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 2 | 0 | 0.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 | 0 | 3.6% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4489** | **402860** | **509** | **52** | **11.3%** |
+| | **All** | | **4489** | **402860** | **525** | **53** | **11.6%** |
 
 ## Step 0: Math value types
 
@@ -865,7 +865,7 @@ functions don't count as done. Sizes are in instructions.
 - class `CBitFont`
   - [x] `getCharYOffset` 0x004d0200 (12)
 
-### `shape/edittool.cpp` (54 functions, 4786 instructions, 35 done, 2 partial)
+### `shape/edittool.cpp` (54 functions, 4786 instructions, 50 done, 3 partial)
 - class `CEditorTools`
   - [x] `showError` 0x0049e740 (22)
   - [~] `setClipboardText` 0x004a1bc0 (81)
@@ -898,22 +898,23 @@ functions don't count as done. Sizes are in instructions.
   - [x] `handleInput` 0x004a5fc0 (291)
   - [x] `render` 0x004a5c10 (230)
 - class `CPickList`
-  - [ ] `ctor` 0x004a3b90 (68)
-  - [ ] `isItemEnabled` 0x004a54e0 (30)
-  - [ ] `handleInput` 0x004a3f20 (329)
-  - [ ] `insert` 0x004a5670 (35)
-  - [ ] `remove` 0x004a56f0 (35)
-  - [ ] `clear` 0x004a5770 (31)
-  - [ ] `sort` 0x004a57f0 (35)
-  - [ ] `swap` 0x004a5870 (35)
-  - [ ] `dtor` 0x004a3c80 (51)
-  - [ ] `calculateLayoutAndCreateComponents` 0x004a45d0 (464)
-  - [ ] `validateScrollBounds` 0x004a5240 (95)
-  - [ ] `initializeDialog` 0x004a3ef0 (16)
-  - [ ] `getItemAtMousePosition` 0x004a53a0 (40)
-  - [ ] `handleDialogInput` 0x004a4340 (170)
-  - [ ] `renderDialog` 0x004a4d40 (307)
-  - [ ] `displayChoicesAndWaitForInput` 0x004a3e20 (65)
+  - [x] `ctor` 0x004a3b90 (68)
+  - [x] `isItemEnabled` 0x004a54e0 (30)
+  - [x] `handleInput` 0x004a3f20 (329)
+  - [x] `insert` 0x004a5670 (35)
+  - [x] `remove` 0x004a56f0 (35)
+  - [x] `clear` 0x004a5770 (31)
+  - [x] `sort` 0x004a57f0 (35)
+  - [x] `swap` 0x004a5870 (35)
+  - [x] `dtor` 0x004a3c80 (51)
+  - [x] `calculateLayoutAndCreateComponents` 0x004a45d0 (464)
+  - [x] `validateScrollBounds` 0x004a5240 (95)
+  - [x] `initializeDialog` 0x004a3ef0 (16)
+  - [x] `getItemAtMousePosition` 0x004a53a0 (40)
+  - [x] `handleDialogInput` 0x004a4340 (170)
+  - [x] `renderDialog` 0x004a4d40 (307)
+  - [~] `displayChoicesAndWaitForInput` 0x004a3e20 (65)
+    - deferred: servicing the network each frame the list waits, which the enhanced game does so a netplay peer doesn't time out, with CNetGame's keepalive
 - free functions
   - [x] `qsortByString` 0x004a2ee0 (9)
   - [x] `calculateGridWidth` 0x004a6490 (9)
@@ -931,9 +932,9 @@ functions don't count as done. Sizes are in instructions.
 
 ## Step 9: `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load`
 
-### `shape/edittool.cpp` (1 functions, 57 instructions, 0 done, 0 partial)
+### `shape/edittool.cpp` (1 functions, 57 instructions, 1 done, 0 partial)
 - class `CPickList`
-  - [ ] `enableItem` 0x004a5410 (57)
+  - [x] `enableItem` 0x004a5410 (57)
 
 ### `core/event.cpp` (1 functions, 3 instructions, 0 done, 0 partial)
 - class `CEventList`
@@ -3336,7 +3337,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `setMousePointerType` 0x004a2920 (75)
 - free functions
   - [~] `staticInit` 0x0049d170 (7)
-    - deferred: the twelve colours retail's init sets for CInputString::draw, CPickList::renderDialog, displayCenteredStatusMessage, showFilenameInputDialog and draw3DAxisLabels, with those functions
+    - deferred: the seven colours retail's init sets for CInputString::draw, displayCenteredStatusMessage, showFilenameInputDialog and draw3DAxisLabels, with those functions
   - [ ] `plotPixelWithClipping` 0x0049d190 (26)
   - [x] `initEditorFontMetrics` 0x0049d1f0 (21)
   - [ ] `extractTabDelimitedField` 0x0049d250 (24)

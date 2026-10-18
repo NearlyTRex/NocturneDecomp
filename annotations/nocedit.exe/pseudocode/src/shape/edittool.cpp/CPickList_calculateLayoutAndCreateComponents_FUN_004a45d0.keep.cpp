@@ -40,7 +40,7 @@ void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN
   ui_scale = nocturne_ui_editor_scale();
 #endif
 
-  this_ptr->character_width = g_EditorFontLineHeight + 1;
+  this_ptr->row_height = g_EditorFontLineHeight + 1;
 #if NOCTURNE_AUTHENTIC_HUD_SCALE
   this_ptr->column_padding = 8;
 #else
@@ -90,55 +90,55 @@ void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN
     this_ptr->tab_column_widths[iVar14] = this_ptr->tab_column_widths[iVar14] + g_WindowWidth / 0x28;
   }
   iVar14 = 0;
-  this_ptr->total_content_width = 0;
+  this_ptr->column_width = 0;
   if (0 < this_ptr->tab_column_count) {
     do {
-      this_ptr->total_content_width = this_ptr->total_content_width + this_ptr->tab_column_widths[iVar14];
+      this_ptr->column_width = this_ptr->column_width + this_ptr->tab_column_widths[iVar14];
       iVar14 = iVar14 + 1;
     } while (iVar14 < this_ptr->tab_column_count);
   }
-  this_ptr->total_content_width = this_ptr->total_content_width + this_ptr->column_padding * 2;
-  iVar14 = (g_WindowHeight + g_EditorFontLineHeight * -4) / this_ptr->character_width;
-  this_ptr->vertical_page_size = iVar14;
+  this_ptr->column_width = this_ptr->column_width + this_ptr->column_padding * 2;
+  iVar14 = (g_WindowHeight + g_EditorFontLineHeight * -4) / this_ptr->row_height;
+  this_ptr->rows_per_column = iVar14;
   if (iVar14 < 1) {
-    this_ptr->vertical_page_size = 1;
+    this_ptr->rows_per_column = 1;
   }
   iVar14 = (this_ptr->base).item_count;
-  if (iVar14 < this_ptr->vertical_page_size) {
-    this_ptr->vertical_page_size = iVar14;
+  if (iVar14 < this_ptr->rows_per_column) {
+    this_ptr->rows_per_column = iVar14;
   }
   iVar14 = g_WindowWidth * 7 >> 0x1f;
   iVar14 = ((int)((g_WindowWidth * 7 + iVar14 * -8) - (uint)(iVar14 << 2 < 0)) >> 3) /
-           this_ptr->total_content_width;
+           this_ptr->column_width;
   this_ptr->column_count = iVar14;
   if (iVar14 < 1) {
     this_ptr->column_count = 1;
   }
-  iVar14 = ((this_ptr->base).item_count + this_ptr->vertical_page_size + -1) /
-           this_ptr->vertical_page_size;
+  iVar14 = ((this_ptr->base).item_count + this_ptr->rows_per_column + -1) /
+           this_ptr->rows_per_column;
   if (iVar14 < this_ptr->column_count) {
     this_ptr->column_count = iVar14;
   }
   if (0 < this_ptr->selected_index) {
     this_ptr->column_count = this_ptr->selected_index;
   }
-  this_ptr->dialog_result = 0;
-  if (this_ptr->vertical_page_size * this_ptr->column_count < (this_ptr->base).item_count) {
+  this_ptr->scroll_mode = 0;
+  if (this_ptr->rows_per_column * this_ptr->column_count < (this_ptr->base).item_count) {
     if (this_ptr->column_count < 2) {
-      this_ptr->dialog_result = 1;
+      this_ptr->scroll_mode = 1;
     }
     else {
-      this_ptr->dialog_result = 2;
+      this_ptr->scroll_mode = 2;
     }
   }
-  iVar14 = this_ptr->total_content_width * this_ptr->column_count + 8;
-  iVar13 = this_ptr->vertical_page_size * this_ptr->character_width + 6;
+  iVar14 = this_ptr->column_width * this_ptr->column_count + 8;
+  iVar13 = this_ptr->rows_per_column * this_ptr->row_height + 6;
   iVar6 = shape_edittool_cpp_calculateGridWidth_FUN_004a6490();
   iVar2 = shape_edittool_cpp_calculateGridHeight_FUN_004a64b0();
-  if (this_ptr->dialog_result == 1) {
+  if (this_ptr->scroll_mode == 1) {
     iVar14 = iVar14 + iVar6;
   }
-  else if (this_ptr->dialog_result == 2) {
+  else if (this_ptr->scroll_mode == 2) {
     iVar13 = iVar13 + iVar2;
   }
   iVar3 = g_WindowHeight / 0x60;
@@ -166,7 +166,7 @@ void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN
     local_1c = shape_edittool_cpp_calculateButtonHeight_FUN_004a6970((char *)0x0);
     iVar9 = iVar3 + local_1c;
     local_20 = local_18 * iVar15 + (local_18 - 1) * (g_WindowWidth / 0x80);
-    if (this_ptr->dialog_result == 2) {
+    if (this_ptr->scroll_mode == 2) {
       iVar9 = iVar9 + iVar3;
     }
     if (iVar14 < local_20) {
@@ -178,14 +178,14 @@ void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN
             (g_CEditorToolsPtr,iVar14,iVar13,dialog_title,window_flags);
   iVar14 = (g_ClipRight - g_ClipLeft) + 1;
   iVar13 = (g_ClipBottom - g_ClipTop) + 1;
-  if (this_ptr->dialog_result == 1) {
+  if (this_ptr->scroll_mode == 1) {
     iVar14 = iVar14 - iVar6;
     bottom_pos = (g_ClipBottom - local_1c) - iVar3;
     iVar2 = (g_ClipRight - iVar6) + 1;
     top_pos = g_ClipTop;
   }
   else {
-    if (this_ptr->dialog_result != 2) goto LAB_004a4afc;
+    if (this_ptr->scroll_mode != 2) goto LAB_004a4afc;
     iVar13 = iVar13 - iVar2;
     bottom_pos = g_ClipBottom - iVar9;
     top_pos = ((g_ClipBottom - iVar2) - iVar9) + 1;
@@ -210,19 +210,19 @@ LAB_004a4afc:
     }
     iVar13 = iVar13 - iVar9;
   }
-  this_ptr->vertical_page_size = iVar13 / this_ptr->character_width;
-  this_ptr->column_count = iVar14 / this_ptr->total_content_width;
-  iVar13 = ((this_ptr->base).item_count + this_ptr->vertical_page_size + -1) /
-           this_ptr->vertical_page_size;
+  this_ptr->rows_per_column = iVar13 / this_ptr->row_height;
+  this_ptr->column_count = iVar14 / this_ptr->column_width;
+  iVar13 = ((this_ptr->base).item_count + this_ptr->rows_per_column + -1) /
+           this_ptr->rows_per_column;
   if (iVar13 < this_ptr->column_count) {
     this_ptr->column_count = iVar13;
   }
   if (this_ptr->column_count < 1) {
     this_ptr->column_count = 1;
   }
-  this_ptr->page_size = this_ptr->vertical_page_size * this_ptr->column_count;
+  this_ptr->page_size = this_ptr->rows_per_column * this_ptr->column_count;
   this_ptr->scroll_top = 0;
-  this_ptr->total_content_width = iVar14 / this_ptr->column_count;
+  this_ptr->column_width = iVar14 / this_ptr->column_count;
   engine_2d_c_clearInputAndWait_FUN_00403260();
   this_ptr->search_text_buffer[0] = '\0';
   g_LastClickItemIndex = -1;

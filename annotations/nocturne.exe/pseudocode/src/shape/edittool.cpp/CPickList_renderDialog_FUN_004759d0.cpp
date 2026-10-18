@@ -35,7 +35,7 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004759d0(CPickList *t
     do {
       local_1c = g_ClipTop;
       local_2c = 0;
-      if (0 < this_ptr->vertical_page_size) {
+      if (0 < this_ptr->rows_per_column) {
         do {
           if ((this_ptr->base).item_count <= local_24) break;
           if (local_24 == this_ptr->current_index) {
@@ -44,8 +44,8 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004759d0(CPickList *t
               iVar2 = _DAT_01bcde14;
             }
             engine_2d_c_fillRectColor_FUN_00403e60
-                      (local_28,local_1c,local_28 + this_ptr->total_content_width + -1,
-                       local_1c + this_ptr->character_width + -1,iVar2);
+                      (local_28,local_1c,local_28 + this_ptr->column_width + -1,
+                       local_1c + this_ptr->row_height + -1,iVar2);
           }
           iVar2 = local_24;
           local_18 = 0;
@@ -77,9 +77,9 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004759d0(CPickList *t
             pcVar4 = pcVar4 + 4;
           } while (*pcVar5 != '\0');
           local_24 = local_24 + 1;
-          local_1c = local_1c + this_ptr->character_width;
+          local_1c = local_1c + this_ptr->row_height;
           local_2c = local_2c + 1;
-        } while (local_2c < this_ptr->vertical_page_size);
+        } while (local_2c < this_ptr->rows_per_column);
       }
       iVar2 = g_ActiveRenderColor;
       if (0 < local_30) {
@@ -87,21 +87,20 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004759d0(CPickList *t
         engine_2d_c_drawLine_FUN_004015a0(local_28,g_ClipTop,local_28,g_ClipBottom);
       }
       local_30 = local_30 + 1;
-      local_28 = local_28 + this_ptr->total_content_width;
+      local_28 = local_28 + this_ptr->column_width;
       g_ActiveRenderColor = iVar2;
     } while (local_30 < this_ptr->column_count);
   }
-  if (this_ptr->dialog_result == 1) {
+  if (this_ptr->scroll_mode == 1) {
     (this_ptr->scrollbar).scroll_position = this_ptr->scroll_top;
     (this_ptr->scrollbar).item_count = (this_ptr->base).item_count;
-    (this_ptr->scrollbar).page_size = this_ptr->vertical_page_size;
+    (this_ptr->scrollbar).page_size = this_ptr->rows_per_column;
   }
   else {
-    if (this_ptr->dialog_result != 2) goto LAB_00475b35;
-    (this_ptr->scrollbar).scroll_position = this_ptr->scroll_top / this_ptr->vertical_page_size;
+    if (this_ptr->scroll_mode != 2) goto LAB_00475b35;
+    (this_ptr->scrollbar).scroll_position = this_ptr->scroll_top / this_ptr->rows_per_column;
     (this_ptr->scrollbar).item_count =
-         ((this_ptr->base).item_count + this_ptr->vertical_page_size + -1) /
-         this_ptr->vertical_page_size;
+         ((this_ptr->base).item_count + this_ptr->rows_per_column + -1) / this_ptr->rows_per_column;
     (this_ptr->scrollbar).page_size = this_ptr->column_count;
   }
   shape_edittool_cpp_CEdScrollBar_render_FUN_00476580(&this_ptr->scrollbar);

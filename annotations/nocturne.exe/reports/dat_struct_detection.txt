@@ -2,12 +2,12 @@
 DAT_ STRUCT/ARRAY DETECTION REPORT
 ================================================================================
 
-Total DAT_ globals found: 2192
+Total DAT_ globals found: 2190
 Filtered out (inside named data): 320
 Immediate constants (not real globals): 61
-Real globals remaining: 2131
+Real globals remaining: 2129
 Clusters detected: 204
-DAT_ globals in clusters: 2057
+DAT_ globals in clusters: 2055
 
 Classification summary:
   unknown              72 clusters
@@ -650,20 +650,6 @@ MEDIUM CONFIDENCE (66 clusters)
       0x02dc8330  DAT_02dc8330  undefined4 [float]
       ... +31 more
 
-  0x01bcddc8 - 0x01bcdefc  (33 items, 308 bytes span)
-    Classification: vector_groups
-    Likely type: likely contains CVector3i/f fields
-    Reason: 10 groups of 3 consecutive ints found
-    Referenced by: 22 functions
-     near: g_CElephantGunActorType_01bcde44.name_hash (undefined4) at -180
-      0x01bcddc8  DAT_01bcddc8  undefined4
-      0x01bcddcc  DAT_01bcddcc  undefined4
-      0x01bcddd0  DAT_01bcddd0  undefined4
-      0x01bcddd4  DAT_01bcddd4  undefined4
-      0x01bcddd8  DAT_01bcddd8  undefined4
-      0x01bcdddc  DAT_01bcdddc  undefined4
-      ... +27 more
-
   0x005bbff0 - 0x005bc190  (32 items, 416 bytes span)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
@@ -689,6 +675,20 @@ MEDIUM CONFIDENCE (66 clusters)
       0x02dc78f0  DAT_02dc78f0  undefined4 [double]
       0x02dc78f4  DAT_02dc78f4  undefined4
       ... +26 more
+
+  0x01bcddc8 - 0x01bcdefc  (31 items, 308 bytes span)
+    Classification: vector_groups
+    Likely type: likely contains CVector3i/f fields
+    Reason: 9 groups of 3 consecutive ints found
+    Referenced by: 20 functions
+     near: g_LastClickTimestamp (int) at -84
+      0x01bcddc8  DAT_01bcddc8  undefined4
+      0x01bcddcc  DAT_01bcddcc  undefined4
+      0x01bcddd0  DAT_01bcddd0  undefined4
+      0x01bcddd4  DAT_01bcddd4  undefined4
+      0x01bcddd8  DAT_01bcddd8  undefined4
+      0x01bcdddc  DAT_01bcdddc  undefined4
+      ... +25 more
 
   0x006b023c - 0x006b02f8  (30 items, 188 bytes span)
     Classification: vector_groups

@@ -5582,8 +5582,8 @@ static_assert(__builtin_offsetof(CPickList, search_text_buffer) == 268,
               "offsetof(CPickList, search_text_buffer) != 268");
 static_assert(__builtin_offsetof(CPickList, confirmed_flag) == 368,
               "offsetof(CPickList, confirmed_flag) != 368");
-static_assert(__builtin_offsetof(CPickList, character_width) == 372,
-              "offsetof(CPickList, character_width) != 372");
+static_assert(__builtin_offsetof(CPickList, row_height) == 372,
+              "offsetof(CPickList, row_height) != 372");
 static_assert(__builtin_offsetof(CPickList, column_padding) == 376,
               "offsetof(CPickList, column_padding) != 376");
 static_assert(__builtin_offsetof(CPickList, current_index) == 380,
@@ -5592,10 +5592,10 @@ static_assert(__builtin_offsetof(CPickList, scroll_top) == 384,
               "offsetof(CPickList, scroll_top) != 384");
 static_assert(__builtin_offsetof(CPickList, page_size) == 388,
               "offsetof(CPickList, page_size) != 388");
-static_assert(__builtin_offsetof(CPickList, vertical_page_size) == 392,
-              "offsetof(CPickList, vertical_page_size) != 392");
-static_assert(__builtin_offsetof(CPickList, total_content_width) == 396,
-              "offsetof(CPickList, total_content_width) != 396");
+static_assert(__builtin_offsetof(CPickList, rows_per_column) == 392,
+              "offsetof(CPickList, rows_per_column) != 392");
+static_assert(__builtin_offsetof(CPickList, column_width) == 396,
+              "offsetof(CPickList, column_width) != 396");
 static_assert(__builtin_offsetof(CPickList, column_count) == 400,
               "offsetof(CPickList, column_count) != 400");
 static_assert(__builtin_offsetof(CPickList, enabled_capacity) == 404,
@@ -5608,8 +5608,8 @@ static_assert(__builtin_offsetof(CPickList, hotkey_array) == 416,
               "offsetof(CPickList, hotkey_array) != 416");
 static_assert(__builtin_offsetof(CPickList, scrollbar) == 420,
               "offsetof(CPickList, scrollbar) != 420");
-static_assert(__builtin_offsetof(CPickList, dialog_result) == 472,
-              "offsetof(CPickList, dialog_result) != 472");
+static_assert(__builtin_offsetof(CPickList, scroll_mode) == 472,
+              "offsetof(CPickList, scroll_mode) != 472");
 static_assert(__builtin_offsetof(CPickList, ok_button) == 476,
               "offsetof(CPickList, ok_button) != 476");
 static_assert(__builtin_offsetof(CPickList, cancel_button) == 704,

@@ -12,8 +12,8 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0057ee22 = 294912
-;   undefined4 DAT_01bcde1c
-;   undefined4 DAT_01bcde20
+;   int g_LastClickTimestamp
+;   int g_LastClickItemIndex
 ;   undefined4 DAT_01bd1d8c
 ;   undefined4 DAT_01bd1d90
 ;   undefined4 DAT_01bd1d94
@@ -167,7 +167,7 @@ section .text
     MOV byte ptr [0x01bd1d94],DL        ; 0047539c | DAT_01bd1d94
     CALL wincore_winrun.cpp_getTime_FUN_00558a30 ; 004753a2
         ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_00558a30()
-    MOV ECX,dword ptr [0x01bcde1c]      ; 004753a7 | DAT_01bcde1c
+    MOV ECX,dword ptr [0x01bcde1c]      ; 004753a7 | g_LastClickTimestamp
     MOV EDX,EAX                         ; 004753ad
     SUB EAX,ECX                         ; 004753af
     TEST EAX,EAX                        ; 004753b1
@@ -180,14 +180,14 @@ section .text
     SAHF                                ; 004753c3
     JNC 0x004753de                      ; 004753c4
         ;   XREF to: 004753de (CONDITIONAL_JUMP)  ; LAB_004753de
-    MOV EDI,dword ptr [0x01bcde20]      ; 004753c6 | DAT_01bcde20
+    MOV EDI,dword ptr [0x01bcde20]      ; 004753c6 | g_LastClickItemIndex
     CMP EDI,dword ptr [EBX + 0x118]     ; 004753cc
     JNZ 0x004753de                      ; 004753d2
         ;   XREF to: 004753de (CONDITIONAL_JUMP)  ; LAB_004753de
     MOV dword ptr [EBX + 0x10c],0x1     ; 004753d4
-    MOV dword ptr [0x01bcde1c],EDX      ; 004753de | DAT_01bcde1c
+    MOV dword ptr [0x01bcde1c],EDX      ; 004753de | g_LastClickTimestamp
         ;   Label: LAB_004753de
-    MOV dword ptr [0x01bcde20],ESI      ; 004753e4 | DAT_01bcde20
+    MOV dword ptr [0x01bcde20],ESI      ; 004753e4 | g_LastClickItemIndex
         ;   Label: LAB_004753e4
     MOV EAX,0xfffffffe                  ; 004753ea
         ;   Label: LAB_004753ea

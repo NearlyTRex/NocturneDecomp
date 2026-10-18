@@ -23,7 +23,7 @@ CPickList * __cdecl shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(CPickList *th
   pCVar4 = shape_edittool_cpp_CEdButton_ctor_FUN_004a64e0(&ADJ(pCVar3)->ok_button);
   pCVar5 = shape_edittool_cpp_CEdButton_ctor_FUN_004a64e0(&ADJ(pCVar4)->cancel_button);
   ADJ(pCVar5)->base.vtable._us = &g_CPickListVTable._us;
-  ADJ(pCVar5)->dialog_result = 0;
+  ADJ(pCVar5)->scroll_mode = 0;
   ADJ(pCVar5)->selection_state = -1;
   ADJ(pCVar5)->enabled_capacity = 0;
   ADJ(pCVar5)->enabled_array = (int *)0x0;

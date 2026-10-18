@@ -9,7 +9,6 @@
 #include "core/game/game.h"
 #include "core/inivar/inivar.h"
 #include "core/menu/menu.h"
-#include "core/menuinput.h"
 #include "core/mission/demonmission.h"
 #include "core/netgame/netgame.h"
 #include "core/podmain/demonpod.h"
@@ -26,6 +25,7 @@
 #include "engine/keys/keys.h"
 #include "engine/light/light.h"
 #include "engine/matrix/matrix.h"
+#include "engine/menuinput.h"
 #include "engine/ncursfx/mouse.h"
 #include "engine/prim/prim.h"
 #include "engine/special/special.h"
@@ -205,7 +205,7 @@ private:
     core::CDemonSet set_{demon_renderer_, matrix_, special_};
     nocturne::common::CWatcomRandom crt_random_;
     core::CActor actor_{game_, crt_random_};
-    core::CMenuInput menu_input_{keys_};
+    engine::CMenuInput menu_input_{keys_};
     core::CMenu menu_{{.dosio = dosio_,
                        .screen = screen_,
                        .special = special_,

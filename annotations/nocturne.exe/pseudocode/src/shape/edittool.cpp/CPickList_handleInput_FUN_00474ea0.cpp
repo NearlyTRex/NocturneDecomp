@@ -93,13 +93,13 @@ LAB_0047509f:
                             (g_CKeys_PTR_005bac64,DIK_NUMPAD4);
           if (iVar2 != 0) {
             this_ptr->search_text_buffer[0] = '\0';
-            this_ptr->current_index = this_ptr->current_index - this_ptr->vertical_page_size;
+            this_ptr->current_index = this_ptr->current_index - this_ptr->rows_per_column;
           }
           iVar2 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)
                             (g_CKeys_PTR_005bac64,DIK_NUMPAD6);
           if (iVar2 != 0) {
             this_ptr->search_text_buffer[0] = '\0';
-            this_ptr->current_index = this_ptr->current_index + this_ptr->vertical_page_size;
+            this_ptr->current_index = this_ptr->current_index + this_ptr->rows_per_column;
           }
           return 0;
         }
