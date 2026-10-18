@@ -22,7 +22,7 @@ functions don't count as done. Sizes are in instructions.
 | 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 20 | 5 | 80.0% |
 | 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 68 | 31 | 56.6% |
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
-| 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 15 | 4 | 26.7% |
+| 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 23 | 5 | 41.0% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 17 | 52 | 5565 | 1 | 0 | 1.9% |
 | 11 | `CScript::loadScript` | 63 | 579 | 67400 | 10 | 1 | 1.7% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 2 | 0 | 7.6% |
@@ -46,7 +46,7 @@ functions don't count as done. Sizes are in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 2 | 0 | 0.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 | 0 | 3.6% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4489** | **402860** | **548** | **57** | **12.2%** |
+| | **All** | | **4489** | **402860** | **556** | **58** | **12.3%** |
 
 ## Step 0: Math value types
 
@@ -1000,11 +1000,11 @@ functions don't count as done. Sizes are in instructions.
 - class `CSkeleton`
   - [ ] `free` 0x00599a50 (47)
 
-### `core/actor.cpp` (18 functions, 918 instructions, 11 done, 1 partial)
+### `core/actor.cpp` (18 functions, 918 instructions, 13 done, 1 partial)
 - class `CDemonActor`
   - [x] `getActorClassName` 0x00408b90 (6)
   - [x] `load` 0x0040b050 (125)
-  - [ ] `doCheckForInvalidPointers` 0x0040ac80 (193)
+  - [x] `doCheckForInvalidPointers` 0x0040ac80 (193)
   - [ ] `updateOrientationMatrix` 0x00408c10 (30)
   - [~] `ctor` 0x004088b0 (88)
     - deferred: the defaults the constructor gives position, orientation and its matrix, scale, creation, platform, rendering, health and footstep fields, with the steps that read them
@@ -1015,7 +1015,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `isOfClassHash` 0x0040c760 (14)
   - [x] `castToClassHash` 0x0040c790 (17)
   - [ ] `resetActorTypeInfo` 0x0040c7f0 (18)
-  - [ ] `deleteActor` 0x00408820 (24)
+  - [x] `deleteActor` 0x00408820 (24)
   - [x] `matchClassTerm` 0x0040c4f0 (122)
   - [x] `matchClassExpression` 0x0040c610 (80)
   - [x] `matchesClassName` 0x0040c740 (10)
@@ -1028,17 +1028,20 @@ functions don't count as done. Sizes are in instructions.
   - [~] `ctor` 0x004f3c00 (8)
     - deferred: drawing it transparent and its hero index starting at 0, with the steps that read them
 
-### `core/mission.cpp` (13 functions, 995 instructions, 0 done, 0 partial)
+### `core/mission.cpp` (13 functions, 995 instructions, 6 done, 1 partial)
 - class `CDemonMission`
-  - [ ] `removeActorFromList` 0x00523be0 (67)
+  - [x] `removeActorFromList` 0x00523be0 (67)
   - [ ] `buildSetActorList` 0x00523e60 (50)
-  - [ ] `removeActor` 0x00523f20 (18)
-  - [ ] `removeAllActors` 0x00523f50 (32)
+  - [x] `removeActor` 0x00523f20 (18)
+  - [~] `removeAllActors` 0x00523f50 (32)
+    - deferred: rebuilding the set's actor lists after, with the set's per-frame readers
+    - deferred: clearing the hero count, actors_prepared and the delete queue, with createHeros, prepareAllActors and markActorToDelete
+    - deferred: committing the raytracer's shadow voxels and resetting the path maps, with the raytracer and the path maps
   - [ ] `clearMissionData` 0x00522d30 (20)
-  - [ ] `findActorByName` 0x00524030 (24)
-  - [ ] `generateUniqueActorName` 0x00524660 (65)
-  - [ ] `generateActorName` 0x00524700 (39)
-  - [ ] `addActorToList` 0x00523b70 (31)
+  - [x] `findActorByName` 0x00524030 (24)
+  - [x] `generateUniqueActorName` 0x00524660 (65)
+  - [x] `generateActorName` 0x00524700 (39)
+  - [x] `addActorToList` 0x00523b70 (31)
   - [ ] `freeAllAssets` 0x005248e0 (13)
   - [ ] `readMissionFile` 0x00522eb0 (432)
   - [ ] `ensureHeroPlaceholder` 0x00524c20 (153)

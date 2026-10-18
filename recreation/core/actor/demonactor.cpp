@@ -66,6 +66,10 @@ const std::string &CDemonActor::getActorName() const {
     return actor_name_;
 }
 
+void CDemonActor::setActorName(std::string_view actor_name) {
+    actor_name_ = actor_name;
+}
+
 // The original also quit on a read error after the end tag, which text in memory can't have.
 // nocedit 0x0040b050
 void CDemonActor::load(common::CTextScanner &scanner) {

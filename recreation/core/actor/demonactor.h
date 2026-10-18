@@ -93,6 +93,7 @@ public:
     void restoreRenderState();
     [[nodiscard]] std::string_view getActorClassName() const;
     [[nodiscard]] const std::string &getActorName() const;
+    void setActorName(std::string_view actor_name);
     void updateOrientationMatrix();
     common::CVector3f *transformVector(common::CVector3f *output, common::CVector3f *input);
     common::CVector3f *inverseTransformVector(common::CVector3f *output_vector,
