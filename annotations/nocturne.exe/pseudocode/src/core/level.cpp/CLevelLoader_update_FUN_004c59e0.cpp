@@ -44,7 +44,7 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_004c59e0(CLevelLoader *this_
                  this_ptr->viewport_width,this_ptr->viewport_height);
     }
     engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700
-              (g_CDemonRenderer_PTR_005ae704,(CVector3f *)&DAT_02dd1184);
+              (g_CDemonRenderer_PTR_005ae704,&g_ZeroVector.f);
     local_18 = 56.0;
     if (this_ptr->use_custom_viewport != 0) {
       local_18 = 84.0;
@@ -52,7 +52,7 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_004c59e0(CLevelLoader *this_
     engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_00460c00
               (g_CDemonRenderer_PTR_005ae704,local_18);
     engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_00460780
-              (g_CDemonRenderer_PTR_005ae704,(CVector3f *)&DAT_02dd1184);
+              (g_CDemonRenderer_PTR_005ae704,&g_ZeroVector.f);
     local_24.x = 0.0;
     local_24.y = 0.0;
     local_24.z = 36.0;
@@ -139,12 +139,12 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_004c59e0(CLevelLoader *this_
     local_6c = 1;
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(pCVar1,1);
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-              (g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)&DAT_005baca4);
+              (g_CDemonRenderer_PTR_005ae704,&g_LoadingMoonGlowTexture);
     engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0
               (g_CDemonRenderer_PTR_005ae704,&local_88,0x327);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,0);
     core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00453040
-              (&g_CKeyFramedModel_01cc3290,0,(CKeyFramedModelInstance *)0x0,0x205);
+              (&g_LoadingMoonModel,0,(CKeyFramedModelInstance *)0x0,0x205);
     if (this_ptr->use_custom_viewport != 0) {
       engine_drender_cpp_CDemonRenderer_popViewport_FUN_00460e70(g_CDemonRenderer_PTR_005ae704);
     }

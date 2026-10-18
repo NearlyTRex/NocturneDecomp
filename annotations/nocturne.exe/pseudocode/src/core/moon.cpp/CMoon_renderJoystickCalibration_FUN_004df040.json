@@ -34,38 +34,26 @@
       {
         "category": "other",
         "column": 35,
-        "line": 497,
+        "line": 496,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 497,
+        "line": 496,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 498,
+        "line": 497,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 498,
+        "line": 497,
         "message": "exponent has no digits"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 58,
-        "line": 25,
-        "message": "use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 58,
-        "line": 29,
-        "message": "use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
       },
       {
         "category": "undeclared_identifier",
@@ -86,18 +74,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 86,
-    "complexity_score": 188,
+    "complexity_score": 163,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 12,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 43,
-    "suspect_count": 12,
+    "suspect_count": 10,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
-      "undefined_data",
       "warning_overlapping_globals"
     ],
     "total_lines": 129
@@ -233,8 +220,8 @@
     },
     {
       "addr": "02dd1184",
-      "name": "DAT_02dd1184",
-      "type": "undefined4",
+      "name": "g_ZeroVector",
+      "type": "UVector3",
       "value": null
     }
   ],
@@ -376,22 +363,6 @@
       "severity": "moderate",
       "text": "int aiStackY_101c [1014];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 18,
-      "match": "DAT_02dd1184",
-      "severity": "mild",
-      "text": "(g_CDemonRenderer_PTR_005ae704,(CVector3f *)&DAT_02dd1184);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_02dd1184",
-      "severity": "mild",
-      "text": "(g_CDemonRenderer_PTR_005ae704,(CVector3f *)&DAT_02dd1184);",
-      "type": "undefined_data"
     },
     {
       "description": "Pointer value `&local_28` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",

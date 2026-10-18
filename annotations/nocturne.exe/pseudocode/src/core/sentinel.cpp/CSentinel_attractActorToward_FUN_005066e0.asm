@@ -25,7 +25,7 @@
 ;   float FLOAT_0059009d = -4
 ;   undefined4 DAT_01e5721c
 ;   undefined4 DAT_01e57220
-;   undefined4 DAT_02dd1184
+;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -57,7 +57,7 @@ section .text
     SHL EAX,0x4                         ; 0050670e
     ADD EAX,ESI                         ; 00506711
     PUSH EAX                            ; 00506713
-    PUSH 0x2dd1184                      ; 00506714 | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 00506714 | g_ZeroVector
     LEA EAX,[ESP + 0x40]                ; 00506719
     PUSH EAX                            ; 0050671d
     CALL core_xform.cpp_transformVector3x4_FUN_0055a8b0 ; 0050671e
@@ -70,7 +70,7 @@ section .text
     ADD ESP,0xc                         ; 00506737
     ADD EAX,ESI                         ; 0050673a
     PUSH EAX                            ; 0050673c
-    PUSH 0x2dd1184                      ; 0050673d | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 0050673d | g_ZeroVector
     LEA EAX,[ESP + 0x1c]                ; 00506742
     PUSH EAX                            ; 00506746
     CALL core_xform.cpp_transformVector3x4_FUN_0055a8b0 ; 00506747

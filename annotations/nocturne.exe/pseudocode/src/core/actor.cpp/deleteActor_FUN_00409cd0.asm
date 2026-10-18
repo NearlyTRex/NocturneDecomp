@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_destroyActor_FUN_00409cd0(CDemonActor *actor)
+; void __cdecl core_actor_cpp_deleteActor_FUN_00409cd0(CDemonActor *actor)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   actor
@@ -16,7 +16,7 @@
 section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 00409cd0
-        ;   Label: core_actor.cpp_destroyActor_FUN_00409cd0
+        ;   Label: core_actor.cpp_deleteActor_FUN_00409cd0
     TEST EAX,EAX                        ; 00409cd4
     JZ 0x00409cda                       ; 00409cd6
         ;   XREF to: 00409cda (CONDITIONAL_JUMP)  ; LAB_00409cda

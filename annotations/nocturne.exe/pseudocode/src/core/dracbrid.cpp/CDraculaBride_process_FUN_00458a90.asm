@@ -949,7 +949,7 @@ section .text
     PUSH 0x3ecccccd                     ; 00459417
     PUSH EAX                            ; 0045941c
     MOV EAX,0x2dd1184                   ; 0045941d
-    PUSH EAX                            ; 00459422 | DAT_02dd1184
+    PUSH EAX                            ; 00459422 | g_ZeroVector
     LEA EAX,[EBP + -0x2e]               ; 00459423
     FLD float ptr [EBP + 0x76]          ; 00459426
     PUSH EAX                            ; 00459429
@@ -996,7 +996,7 @@ section .text
     ADD EAX,ESI                         ; 004594ae
     PUSH 0x3ecccccd                     ; 004594b0
     PUSH EAX                            ; 004594b5
-    PUSH 0x2dd1184                      ; 004594b6 | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 004594b6 | g_ZeroVector
     LEA EAX,[EBP + 0xffffff4e]          ; 004594bb
     FLD float ptr [EBP + 0x76]          ; 004594c1
     PUSH EAX                            ; 004594c4
@@ -1044,7 +1044,7 @@ section .text
     ADD EAX,ESI                         ; 0045954b
     PUSH 0x3ecccccd                     ; 0045954d
     PUSH EAX                            ; 00459552
-    PUSH 0x2dd1184                      ; 00459553 | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 00459553 | g_ZeroVector
     LEA EAX,[EBP + 0x2]                 ; 00459558
     FLD float ptr [EBP + 0x76]          ; 0045955b
     PUSH EAX                            ; 0045955e
@@ -1092,7 +1092,7 @@ section .text
     ADD EAX,ESI                         ; 004595e8
     PUSH 0x3ecccccd                     ; 004595ea
     PUSH EAX                            ; 004595ef
-    PUSH 0x2dd1184                      ; 004595f0 | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 004595f0 | g_ZeroVector
     LEA EAX,[EBP + 0xfffffeca]          ; 004595f5
     FLD float ptr [EBP + 0x76]          ; 004595fb
     PUSH EAX                            ; 004595fe
@@ -1585,7 +1585,7 @@ section .text
     PUSH 0x3ecccccd                     ; 00459b7a
     PUSH EAX                            ; 00459b7f
     MOV EAX,0x2dd1184                   ; 00459b80
-    PUSH EAX                            ; 00459b85 | DAT_02dd1184
+    PUSH EAX                            ; 00459b85 | g_ZeroVector
     LEA EAX,[EBP + 0xffffff06]          ; 00459b86
     FLD float ptr [EBP + 0x76]          ; 00459b8c
     PUSH EAX                            ; 00459b8f

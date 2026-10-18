@@ -21,9 +21,9 @@ int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderOpaque_FUN_004c9be0(CMans
   this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_2c);
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(this_ptr_00);
   if (iVar1 != 0) {
-    CStack_14.x = (int)ROUND(_DAT_02dd1184 * _DAT_005a0020);
-    CStack_14.y = (int)ROUND(_DAT_02dd1188 * _DAT_005a0020);
-    CStack_14.z = (int)ROUND(_DAT_02dd118c * _DAT_005a0020);
+    CStack_14.x = (int)ROUND(g_ZeroVector.f.x * _DAT_005a0020);
+    CStack_14.y = (int)ROUND(g_ZeroVector.f.y * _DAT_005a0020);
+    CStack_14.z = (int)ROUND(g_ZeroVector.f.z * _DAT_005a0020);
     engine_special_cpp_transformAndProjectPoint_FUN_0053075c
               (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[1000].projected_vertex,&CStack_14);
     iVar2 = 0;

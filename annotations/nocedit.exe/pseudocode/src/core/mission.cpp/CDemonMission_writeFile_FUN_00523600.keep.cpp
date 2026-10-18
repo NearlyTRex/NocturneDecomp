@@ -48,7 +48,7 @@ void __cdecl core_mission_cpp_CDemonMission_writeFile_FUN_00523600(CDemonMission
   iVar2 = 0;
   if (0 < g_NumActorClassTypes) {
     do {
-      _fprintf(file_handle,"%s %d\n",g_ActorClassRegistrations[iVar2]->class_name,g_ActorClassRegistrations[iVar2]->type_id);
+      _fprintf(file_handle,"%s %d\n",g_ActorClassRegistrations[iVar2]->class_name,g_ActorClassRegistrations[iVar2]->latest_version);
       iVar2 = iVar2 + 1;
     } while (iVar2 < g_NumActorClassTypes);
   }

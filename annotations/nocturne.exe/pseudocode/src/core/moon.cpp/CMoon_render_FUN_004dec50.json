@@ -34,38 +34,26 @@
       {
         "category": "other",
         "column": 35,
-        "line": 497,
+        "line": 496,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 497,
+        "line": 496,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 498,
+        "line": 497,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 498,
+        "line": 497,
         "message": "exponent has no digits"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 58,
-        "line": 39,
-        "message": "use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 58,
-        "line": 43,
-        "message": "use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
       },
       {
         "category": "undeclared_identifier",
@@ -98,13 +86,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 300,
-    "complexity_score": 437,
+    "complexity_score": 417,
     "cross_reference_count": 5,
     "function_call_count": 16,
     "global_count": 24,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 142,
-    "suspect_count": 26,
+    "suspect_count": 24,
     "suspect_types": [
       "concat_reconstruction",
       "pointer_cast",
@@ -384,8 +372,8 @@
     },
     {
       "addr": "02dd1184",
-      "name": "DAT_02dd1184",
-      "type": "undefined4",
+      "name": "g_ZeroVector",
+      "type": "UVector3",
       "value": null
     }
   ],
@@ -645,22 +633,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_02dd1184",
-      "severity": "mild",
-      "text": "(g_CDemonRenderer_PTR_005ae704,(CVector3f *)&DAT_02dd1184);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_02dd1184",
-      "severity": "mild",
-      "text": "(g_CDemonRenderer_PTR_005ae704,(CVector3f *)&DAT_02dd1184);",
-      "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",

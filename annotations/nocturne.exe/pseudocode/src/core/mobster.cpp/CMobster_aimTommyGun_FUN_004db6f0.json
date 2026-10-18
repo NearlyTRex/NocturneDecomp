@@ -34,25 +34,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 497,
+        "line": 496,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 497,
+        "line": 496,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 498,
+        "line": 497,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 498,
+        "line": 497,
         "message": "exponent has no digits"
       },
       {
@@ -60,12 +60,6 @@
         "column": 3,
         "line": 24,
         "message": "unknown type name 'code'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 51,
-        "line": 63,
-        "message": "use of undeclared identifier 'DAT_02dd1184'"
       },
       {
         "category": "undeclared_identifier",
@@ -114,6 +108,12 @@
         "column": 11,
         "line": 107,
         "message": "C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 63,
+        "line": 122,
+        "message": "use of undeclared identifier '_DAT_01ccdbd0'"
       }
     ],
     "success": false,
@@ -122,18 +122,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 310,
-    "complexity_score": 402,
+    "complexity_score": 387,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 12,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 142,
-    "suspect_count": 22,
+    "suspect_count": 21,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
-      "undefined_data",
       "unknown_field",
       "unresolved_funcptr",
       "warning_overlapping_globals",
@@ -282,8 +281,8 @@
     },
     {
       "addr": "02dd1184",
-      "name": "DAT_02dd1184",
-      "type": "undefined4",
+      "name": "g_ZeroVector",
+      "type": "UVector3",
       "value": null
     },
     {
@@ -541,14 +540,6 @@
       "severity": "moderate",
       "text": "code *blend_callback;",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 56,
-      "match": "DAT_02dd1184",
-      "severity": "mild",
-      "text": "(&local_50,(CVector3f *)&DAT_02dd1184,",
-      "type": "undefined_data"
     },
     {
       "description": "Unknown/mangled field access",

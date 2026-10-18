@@ -43,6 +43,9 @@ IUnknown* g_DirectDrawUnknown = {};
 // SCollisionInfo[100]
 SCollisionInfo g_SCollisionInfo_ARRAY_02dd9718[100] = {};
 
+// UVector3
+UVector3 g_ZeroVector = {};
+
 // void*
 void* g_SoftwareFrameBuffer = {};
 

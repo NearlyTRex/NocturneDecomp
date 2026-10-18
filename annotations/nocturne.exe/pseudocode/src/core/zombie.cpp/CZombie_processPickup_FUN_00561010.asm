@@ -282,12 +282,12 @@ section .text
     MOV EAX,dword ptr [ESP + 0x12c]     ; 005612eb
     MOV dword ptr [ESP + 0xcc],EAX      ; 005612f2
         ;   Label: LAB_005612f2
-    MOV EAX,[0x02dd1184]                ; 005612f9 | DAT_02dd1184
+    MOV EAX,[0x02dd1184]                ; 005612f9 | g_ZeroVector
         ;   Label: LAB_005612f9
     MOV dword ptr [ESP + 0xa0],EAX      ; 005612fe
-    MOV EAX,[0x02dd1188]                ; 00561305 | DAT_02dd1188
+    MOV EAX,[0x02dd1188]                ; 00561305 | g_ZeroVector+4
     MOV dword ptr [ESP + 0xa4],EAX      ; 0056130a
-    MOV EAX,[0x02dd118c]                ; 00561311 | DAT_02dd118c
+    MOV EAX,[0x02dd118c]                ; 00561311 | g_ZeroVector+8
     MOV dword ptr [ESP + 0xa8],EAX      ; 00561316
     TEST EDI,EDI                        ; 0056131d
     JNZ 0x00561367                      ; 0056131f

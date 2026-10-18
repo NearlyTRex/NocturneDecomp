@@ -10,18 +10,18 @@ Failed: 4923
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                          44510
-  undeclared_identifier           5820
-  format_error                     387
-  type_error                       372
-  incompatible_types               344
+  other                          44511
+  undeclared_identifier           5672
+  format_error                     390
+  type_error                       373
+  incompatible_types               352
   cast_error                       211
   syntax_error                      90
   pointer_type                      55
   argument_error                     2
 
 ====================================================================================================
-CATEGORY: other (44510 errors)
+CATEGORY: other (44511 errors)
 ====================================================================================================
 
   cockpit_ckptutil.c_applyActPalette_FUN_0042d370
@@ -612,7 +612,7 @@ CATEGORY: other (44510 errors)
     Line 20: unknown type name 'FLOATING_SAVE_AREA'
   core_actor.cpp_createActorByName_FUN_0040d540
     Line 20: unknown type name 'FLOATING_SAVE_AREA'
-  core_actor.cpp_destroyActor_FUN_00409cd0
+  core_actor.cpp_deleteActor_FUN_00409cd0
     Line 20: unknown type name 'FLOATING_SAVE_AREA'
   core_actor.cpp_draw3DPointMarker_FUN_0040ab70
     Line 20: unknown type name 'FLOATING_SAVE_AREA'
@@ -9872,7 +9872,7 @@ CATEGORY: other (44510 errors)
     Line 20: unknown type name 'FLOATING_SAVE_AREA'
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (5820 errors)
+CATEGORY: undeclared_identifier (5672 errors)
 ====================================================================================================
 
   engine_winfont.cpp_CWinFont_createTextBackground_FUN_005584d0
@@ -9887,6 +9887,8 @@ CATEGORY: undeclared_identifier (5820 errors)
     Line 54: use of undeclared identifier 'DAT_00581999'
   engine_font.cpp_CBitFont_showExtendedFontTest_FUN_00493760
     Line 94: use of undeclared identifier 'DAT_00581aa2'
+  engine_pod.cpp_CPodFile_verifyChecksum_FUN_004f8240
+    Line 88: use of undeclared identifier 'DAT_0058d9a8'
   engine_pod.cpp_CPod_computeAndStoreCRC_FUN_004f8eb0
     Line 49: use of undeclared identifier 'DAT_0058d9a8'
   engine_pod.cpp_crc32ComputeFileRange_FUN_004f7980
@@ -9897,6 +9899,8 @@ CATEGORY: undeclared_identifier (5820 errors)
     Line 16: use of undeclared identifier 'DAT_005acbc4'
   engine_3d.c_setActiveRenderColor_FUN_00405840
     Line 13: use of undeclared identifier 'DAT_005acbc4'
+  core_baron.cpp_CBaron_process_FUN_00410490
+    Line 151: use of undeclared identifier 'DAT_005acf40'
   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042af70
     Line 71: use of undeclared identifier 'DAT_005ad1d0'
   core_charactr.cpp_CCharacter_renderBurn_FUN_00426e80
@@ -9939,8 +9943,6 @@ CATEGORY: undeclared_identifier (5820 errors)
     Line 32: use of undeclared identifier 'DAT_005bac34'; did you mean 'DAT_005bacd4'?
   core_inv.cpp_drawWeaponIconBackground_FUN_004c1dd0
     Line 32: use of undeclared identifier 'DAT_005bac34'; did you mean 'DAT_005bacd4'?
-  core_level.cpp_CLevelLoader_show_FUN_004c5640
-    Line 42: use of undeclared identifier 'DAT_005baca4'; did you mean 'DAT_005bacd4'?
   core_marquee.cpp_CMarquee_renderTransparent_FUN_004cc5d0
     Line 39: use of undeclared identifier 'DAT_005badbc'
   core_mmx.c_getCPUInfo_FUN_004d9f6f
@@ -10256,7 +10258,7 @@ CATEGORY: undeclared_identifier (5820 errors)
   core_menu.cpp_configureGraphicsOptions_FUN_004d0080
     Line 45: use of undeclared identifier 'DAT_01cc64a8'
   core_menu.cpp_configureSoundOptions_FUN_004d12e0
-    Line 71: use of undeclared identifier 'DAT_01cc6ed8'
+    Line 70: use of undeclared identifier 'DAT_01cc6ed8'
   core_mission.cpp_CDemonMission_reset_FUN_004d7e00
     Line 26: use of undeclared identifier 'DAT_01ccbbf0'
   core_mission.cpp_CDemonMission_setMissionName_FUN_004d9650
@@ -10363,90 +10365,6 @@ CATEGORY: undeclared_identifier (5820 errors)
     Line 45: use of undeclared identifier 'DAT_02dd10c4'
   support_trisock.cpp_staticInit_FUN_00548aa0
     Line 13: use of undeclared identifier 'DAT_02dd10c4'
-  core_dracbrid.cpp_CDraculaBride_process_FUN_00458a90
-    Line 282: use of undeclared identifier 'DAT_02dd1184'
-  core_gargoyle.cpp_CGargoyle_process_FUN_004a7870
-    Line 277: use of undeclared identifier 'DAT_02dd1184'
-  core_hotdemon.cpp_CHotDemon_process_FUN_004b8f20
-    Line 273: use of undeclared identifier 'DAT_02dd1184'
-  core_mobster.cpp_CMobster_aimTommyGun_FUN_004db6f0
-    Line 63: use of undeclared identifier 'DAT_02dd1184'
-  core_sentinel.cpp_CSentinel_attractActorToward_FUN_005066e0
-    Line 26: use of undeclared identifier 'DAT_02dd1184'
-  core_sentinel.cpp_CSentinel_process_FUN_00505ba0
-    Line 360: use of undeclared identifier 'DAT_02dd1184'
-  core_smiley.cpp_CSmiley_attractActorToward_FUN_00520a20
-    Line 30: use of undeclared identifier 'DAT_02dd1184'
-  core_baron.cpp_CBaron_performLightningAttack_FUN_00410cc0
-    Line 78: use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?
-  core_baron.cpp_CBaron_process_FUN_00410490
-    Line 127: use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?
-  core_batcreat.cpp_CBatCreature_process_FUN_00412480
-    Line 278: use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?
-  core_batman.cpp_CBatman_process_FUN_00413800
-    Line 254: use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?
-  core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00416d40
-    Line 196: use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?
-  core_bodypart.cpp_CBodyPart_process_FUN_004168d0
-    Line 29: use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?
-  core_bodypart.cpp_CBodyPart_setupPhysicsBox_FUN_00417d70
-    Line 43: use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?
-  core_bodypart.cpp_CBodyPart_spawnGore_FUN_00417eb0
-    Line 19: use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?
-  core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_004194b0
-    Line 43: use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?
-  core_boneguy.cpp_CBoneGuy_process_FUN_00418a00
-    Line 309: use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?
-  core_boxactor.cpp_CLightActor_process_FUN_0041f3d0
-    Line 60: use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?
-  core_chain.cpp_CChain_getTargetBoneWorldPosition_FUN_0042b890
-    Line 17: use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?
-  core_charactr.cpp_CCharacter_followActor_FUN_00428780
-    Line 65: use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?
-  core_charactr.cpp_CCharacter_processWalking_FUN_00428c00
-    Line 79: use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?
-  core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_0042a1e0
-    Line 118: use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?
-  core_cow.cpp_CZombieCow_process_FUN_0043bdb0
-    Line 146: use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?
-  core_dcamera.cpp_CDemonCamera_FUN_00447f20
-    Line 52: use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?
-  core_dcube.cpp_CDemonCube_rotateVertices_FUN_0044aff0
-    Line 34: use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?
-  core_dmodel.cpp_CKeyFramedModel_buildCollisionTriList_FUN_00453ff0
-    Line 48: use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?
-  core_dog.cpp_CZombieDog_process_FUN_00454750
-    Line 197: use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?
-  core_drone.cpp_CDrone_process_FUN_00462a60
-    Line 154: use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?
-  core_filmreel.cpp_CFilmProjector_renderOpaque_FUN_004821d0
-    Line 33: use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?
-  core_fire.cpp_CFireball_render_FUN_00484390
-    Line 80: use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?
-  core_fire.cpp_CRock_render_FUN_00484d40
-    Line 30: use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?
-  core_level.cpp_CLevelLoader_update_FUN_004c59e0
-    Line 47: use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?
-  core_melee.cpp_CMelee_process_FUN_004cf0c0
-    Line 30: use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?
-  core_moon.cpp_CMoon_renderJoystickCalibration_FUN_004df040
-    Line 25: use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?
-  core_moon.cpp_CMoon_render_FUN_004dec50
-    Line 39: use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?
-  core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760
-    Line 294: use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?
-  core_trash.cpp_CTrash_process_FUN_00546e10
-    Line 252: use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?
-  core_turret.cpp_CTurret_getBoundingBox_FUN_00549cd0
-    Line 55: use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?
-  core_vehicle.cpp_CVehicle_process_FUN_0054eae0
-    Line 82: use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?
-  core_werewolf.cpp_CWerewolf_process_FUN_00555c60
-    Line 170: use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?
-  core_werewolf.cpp_CWerewolf_renderTransparent_FUN_005576a0
-    Line 43: use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?
-  core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN_00560cd0
-    Line 86: use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?
   engine_zraster.c_findRasterizerEdge_FUN_00562880
     Line 17: use of undeclared identifier 'DAT_02de4980'; did you mean 'DAT_02DF4980'?
   wincore_winrun.cpp_mainWindowProc_FUN_00558d90
@@ -10539,6 +10457,8 @@ CATEGORY: undeclared_identifier (5820 errors)
     Line 33: use of undeclared identifier 'PTR_s_Nocturne_005c1658'
   core_sound.cpp_CSound_getSoundModeName_FUN_0052ec90
     Line 13: use of undeclared identifier 'PTR_s_OFF_00594c3d_005bed6c'
+  core_sound.cpp_CSound_selectReverbPreset_FUN_0052ed40
+    Line 19: use of undeclared identifier 'PTR_s_OFF_00594c3d_005bed6c'
   core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004a9040
     Line 38: use of undeclared identifier 'PTR_s_darkPoint_00584ead_005b9654'
   core_main.c_enterMainGameMenu_FUN_004c85e0
@@ -10659,6 +10579,8 @@ CATEGORY: undeclared_identifier (5820 errors)
     Line 153: use of undeclared identifier '_DAT_0059b368'
   core_curtain.cpp_CCurtain_renderMesh_FUN_0043f330
     Line 49: use of undeclared identifier '_DAT_0059bc70'
+  core_dcube.cpp_CDemonCube_rotateVertices_FUN_0044aff0
+    Line 49: use of undeclared identifier '_DAT_0059be10'
   core_dglobe.cpp_CDemonGlobe_getAttenuationAtVertex_FUN_0044d2d0
     Line 37: use of undeclared identifier '_DAT_0059bffc'
   core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_0044f0b0
@@ -10699,8 +10621,12 @@ CATEGORY: undeclared_identifier (5820 errors)
     Line 42: use of undeclared identifier '_DAT_0059e390'; did you mean 'DAT_005be380'?
   core_glass.cpp_CGlass_renderTransparent_FUN_004ac600
     Line 40: use of undeclared identifier '_DAT_0059e390'; did you mean 'DAT_005be380'?
+  core_level.cpp_CLevelLoader_update_FUN_004c59e0
+    Line 80: use of undeclared identifier '_DAT_0059fbfc'; did you mean 'DAT_005bbbfc'?
   core_manpuz.cpp_CMansionPuzzleCircle_FUN_004ca790
     Line 62: use of undeclared identifier '_DAT_005a0020'
+  core_manpuz.cpp_CMansionPuzzleCircle_renderOpaque_FUN_004c9be0
+    Line 24: use of undeclared identifier '_DAT_005a0020'
   core_marquee.cpp_CMarquee_renderLightBulb_FUN_004cc440
     Line 28: use of undeclared identifier '_DAT_005a02b0'
   core_mirror.cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_004d7bd0
@@ -10755,6 +10681,8 @@ CATEGORY: undeclared_identifier (5820 errors)
     Line 14: use of undeclared identifier '_DAT_005bea90'
   engine_special.cpp_renderScanlineSwapped_FUN_00530716
     Line 19: use of undeclared identifier '_DAT_005bf4a4'
+  core_fire.cpp_CFireball_render_FUN_00484390
+    Line 89: use of undeclared identifier '_DAT_005c5030'
   core_fire.cpp_CGlassParticle_render_FUN_004853c0
     Line 60: use of undeclared identifier '_DAT_005c5030'
   core_fire.cpp_CTrail_render_FUN_00489360
@@ -10885,6 +10813,8 @@ CATEGORY: undeclared_identifier (5820 errors)
     Line 68: use of undeclared identifier '_DAT_01b4d1fc'
   core_dracbrid.cpp_CDraculaBride_getTargetPoints_FUN_0045a9e0
     Line 23: use of undeclared identifier '_DAT_01b4d260'
+  core_dracbrid.cpp_CDraculaBride_process_FUN_00458a90
+    Line 284: use of undeclared identifier '_DAT_01b4d260'
   core_dracbrid.cpp_CDraculaBride_setup_FUN_00458730
     Line 56: use of undeclared identifier '_DAT_01b4d260'
   core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_0045ab40
@@ -11117,6 +11047,8 @@ CATEGORY: undeclared_identifier (5820 errors)
     Line 40: use of undeclared identifier '_DAT_01c038f8'; did you mean 'DAT_01cc4808'?
   core_menu.cpp_showJoystickCalibrationScreen_FUN_004cf810
     Line 23: use of undeclared identifier '_DAT_01c038f8'; did you mean 'DAT_01cc4808'?
+  core_moon.cpp_CMoon_renderJoystickCalibration_FUN_004df040
+    Line 36: use of undeclared identifier '_DAT_01c038f8'; did you mean 'DAT_01cc4808'?
   core_game.cpp_CGame_resetKeyState_FUN_0049e8b0
     Line 16: use of undeclared identifier '_DAT_01c03908'; did you mean 'DAT_01cc4808'?
   wincore_winrun.cpp_getJoystickState_FUN_00559eb0
@@ -11287,6 +11219,8 @@ CATEGORY: undeclared_identifier (5820 errors)
     Line 26: use of undeclared identifier '_DAT_01c78b18'
   core_gargoyle.cpp_CGargoyle_setup_FUN_004a7450
     Line 23: use of undeclared identifier '_DAT_01c78b18'
+  core_gargoyle.cpp_CGargoyle_process_FUN_004a7870
+    Line 279: use of undeclared identifier '_DAT_01c78b20'
   core_ghoul.cpp_CGhoul_getTargetPoint_FUN_004ab110
     Line 24: use of undeclared identifier '_DAT_01c78c14'
   core_ghoul.cpp_CGhoul_setup_FUN_004a8dd0
@@ -11351,6 +11285,8 @@ CATEGORY: undeclared_identifier (5820 errors)
     Line 20: use of undeclared identifier '_DAT_01cae1e0'
   core_hotdemon.cpp_CHotDemon_setup_FUN_004b8d00
     Line 30: use of undeclared identifier '_DAT_01cae1e0'
+  core_hotdemon.cpp_CHotDemon_process_FUN_004b8f20
+    Line 275: use of undeclared identifier '_DAT_01cae1e8'
   core_icepick.cpp_CIcePick_setup_FUN_004b9db0
     Line 20: use of undeclared identifier '_DAT_01cae288'
   core_icepick.cpp_CIcePick_processMotionEvents_FUN_004bb2d0
@@ -11412,7 +11348,7 @@ CATEGORY: undeclared_identifier (5820 errors)
   core_menu.cpp_addCustomKeyBinding_FUN_004d2880
     Line 18: use of undeclared identifier '_DAT_01cc8120'
   core_menu.cpp_configureCustomKeyBindings_FUN_004d2d00
-    Line 64: use of undeclared identifier '_DAT_01cc8120'
+    Line 63: use of undeclared identifier '_DAT_01cc8120'
   core_menu.cpp_getKeyDisplayName_FUN_004d2900
     Line 83: use of undeclared identifier '_DAT_01cc8650'
   core_mimic.cpp_CMimic_processAnimation_FUN_004d4f30
@@ -11427,6 +11363,10 @@ CATEGORY: undeclared_identifier (5820 errors)
     Line 24: use of undeclared identifier '_DAT_01ccdba8'; did you mean 'DAT_01cc4808'?
   core_mobster.cpp_CMobster_setup_FUN_004da290
     Line 22: use of undeclared identifier '_DAT_01ccdba8'; did you mean 'DAT_01cc4808'?
+  core_mobster.cpp_CMobster_aimTommyGun_FUN_004db6f0
+    Line 65: use of undeclared identifier '_DAT_01ccdbb0'
+  core_moon.cpp_CMoon_render_FUN_004dec50
+    Line 116: use of undeclared identifier '_DAT_01ccdebc'
   core_moon.cpp_CMoon_isAnimationFirstHalf_FUN_004df170
     Line 14: use of undeclared identifier '_DAT_01ccdec4'
   core_moon.cpp_CMoon_update_FUN_004deae0
@@ -11595,6 +11535,10 @@ CATEGORY: undeclared_identifier (5820 errors)
     Line 22: use of undeclared identifier '_DAT_01e57218'
   core_sentinel.cpp_CSentinel_setup_FUN_00505990
     Line 21: use of undeclared identifier '_DAT_01e57218'
+  core_sentinel.cpp_CSentinel_attractActorToward_FUN_005066e0
+    Line 27: use of undeclared identifier '_DAT_01e5721c'
+  core_sentinel.cpp_CSentinel_process_FUN_00505ba0
+    Line 362: use of undeclared identifier '_DAT_01e57220'
   core_set.cpp_CDemonSet_FUN_0050ad20
     Line 21: use of undeclared identifier '_DAT_01fb99d0'
   core_set.cpp_CDemonSet_loadMasterLightStates_FUN_0050e820
@@ -11651,6 +11595,8 @@ CATEGORY: undeclared_identifier (5820 errors)
     Line 25: use of undeclared identifier '_DAT_02da8a74'
   core_smiley.cpp_CSmiley_setup_FUN_0051fd90
     Line 23: use of undeclared identifier '_DAT_02da8a74'
+  core_smiley.cpp_CSmiley_attractActorToward_FUN_00520a20
+    Line 31: use of undeclared identifier '_DAT_02da8a7c'
   sound_sndmain.cpp_shutdownSoundSystem_FUN_00527e10
     Line 14: use of undeclared identifier '_DAT_02dbd34c'
   sound_sndmain.cpp_clearNextSfxFlagBits_FUN_005262a0
@@ -11889,6 +11835,8 @@ CATEGORY: undeclared_identifier (5820 errors)
     Line 53: use of undeclared identifier '_DAT_02dc9f6c'; did you mean 'DAT_005c1f6c'?
   core_stranger.cpp_CStranger_autoAimAtThreat_FUN_0053d910
     Line 91: use of undeclared identifier '_DAT_02dc9f84'
+  core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760
+    Line 385: use of undeclared identifier '_DAT_02dc9f88'
   core_stranger.cpp_CStranger_getHandsMidpoint_FUN_00538440
     Line 27: use of undeclared identifier '_DAT_02dc9f88'
   core_stranger.cpp_CStranger_tryPickupObject_FUN_0053b630
@@ -11931,16 +11879,6 @@ CATEGORY: undeclared_identifier (5820 errors)
     Line 20: use of undeclared identifier '_DAT_02dd10cc'
   core_terrain.cpp_CTerrain_render_FUN_00549310
     Line 25: use of undeclared identifier '_DAT_02dd10cc'
-  core_manpuz.cpp_CMansionPuzzleCircle_renderOpaque_FUN_004c9be0
-    Line 24: use of undeclared identifier '_DAT_02dd1184'
-  core_fire.cpp_CToss_process_FUN_004874d0
-    Line 35: use of undeclared identifier '_DAT_02dd1184'; did you mean 'DAT_02DF1184'?
-  core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_0051e590
-    Line 34: use of undeclared identifier '_DAT_02dd1184'; did you mean 'DAT_02DF1184'?
-  core_zombie.cpp_CZombie_processPickup_FUN_00561010
-    Line 215: use of undeclared identifier '_DAT_02dd1184'; did you mean 'DAT_02DF1184'?
-  core_vecdir.cpp_staticInit_FUN_0054e480
-    Line 14: use of undeclared identifier '_DAT_02dd1188'; did you mean 'DAT_02DF1188'?
   core_water.cpp_CWater_calculateVisibleTiles_FUN_00550800
     Line 59: use of undeclared identifier '_DAT_02dd1220'; did you mean 'DAT_02DF1220'?
   core_water.cpp_CWater_render_FUN_00550cb0
@@ -12497,6 +12435,8 @@ CATEGORY: undeclared_identifier (5820 errors)
     Line 14: use of undeclared identifier 'operator_new'; did you mean 'operator'?
   core_minecar.cpp_factoryFuncMineCar_FUN_004d5fe0
     Line 15: use of undeclared identifier 'operator_new'; did you mean 'operator'?
+  core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004d9c20
+    Line 40: use of undeclared identifier 'operator_new'; did you mean 'operator'?
   core_mobster.cpp_factoryFuncMobster_FUN_004da120
     Line 14: use of undeclared identifier 'operator_new'; did you mean 'operator'?
   core_moloch.cpp_factoryFuncMoloch_FUN_004dd900
@@ -12565,6 +12505,8 @@ CATEGORY: undeclared_identifier (5820 errors)
     Line 14: use of undeclared identifier 'operator_new'; did you mean 'operator'?
   core_vampboss.cpp_factoryFuncVampireBoss_FUN_0054c280
     Line 14: use of undeclared identifier 'operator_new'; did you mean 'operator'?
+  core_vehicle.cpp_CVehicle_process_FUN_0054eae0
+    Line 213: use of undeclared identifier 'operator_new'; did you mean 'operator'?
   core_vehicle.cpp_factoryFuncVehicle_FUN_0054e570
     Line 14: use of undeclared identifier 'operator_new'; did you mean 'operator'?
   core_vessel.cpp_factoryFuncCryptVessel_FUN_0054f8f0
@@ -12606,11 +12548,11 @@ CATEGORY: undeclared_identifier (5820 errors)
   engine_console.cpp_CConsole_printf_FUN_0043ac60
     Line 22: use of undeclared identifier 'stack0x0000000c'
   shape_edittool.cpp_FUN_00470230
-    Line 20: use of undeclared identifier 'stack0x0000000c'
+    Line 19: use of undeclared identifier 'stack0x0000000c'
   shape_edittool.cpp_FUN_00470310
-    Line 20: use of undeclared identifier 'stack0x0000000c'
+    Line 19: use of undeclared identifier 'stack0x0000000c'
   shape_edittool.cpp_FUN_004703f0
-    Line 21: use of undeclared identifier 'stack0x0000000c'
+    Line 20: use of undeclared identifier 'stack0x0000000c'
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullHeightPrintf_FUN_0045e1f0
     Line 15: use of undeclared identifier 'stack0x00000010'
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidthPrintf_FUN_0045e130
@@ -12663,24 +12605,18 @@ CATEGORY: undeclared_identifier (5820 errors)
     Line 104: use of undeclared identifier 'stack0xfffff5d0'; did you mean 'in_stack_fffff5d0'?
   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
     Line 72: use of undeclared identifier 'stack0xfffff6c8'
-  shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_00470550
-    Line 37: use of undeclared identifier 'stack0xfffff97c'
   core_game.cpp_CGame_finishAct_FUN_004a6a10
     Line 88: use of undeclared identifier 'stack0xfffffaa4'
   core_game.cpp_CGame_displayActStats_FUN_004a6680
     Line 71: use of undeclared identifier 'stack0xfffffaa8'
+  core_werewolf.cpp_CWerewolf_process_FUN_00555c60
+    Line 211: use of undeclared identifier 'stack0xfffffce0'
   core_larva.cpp_CLarva_process_FUN_004c4970
     Line 310: use of undeclared identifier 'stack0xfffffe10'
   core_mobster.cpp_CMobster_process_FUN_004da790
     Line 91: use of undeclared identifier 'stack0xfffffe64'
-  engine_pod.cpp_CPodFile_verifyChecksum_FUN_004f8240
-    Line 38: use of undeclared identifier 'stack0xfffffe68'; did you mean 'in_stack_fffffe68'?
-  core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004d9c20
-    Line 21: use of undeclared identifier 'stack0xfffffe84'; did you mean 'in_stack_fffffe84'?
   cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f5110
     Line 42: use of undeclared identifier 'stack0xfffffe88'
-  core_sound.cpp_CSound_selectReverbPreset_FUN_0052ed40
-    Line 17: use of undeclared identifier 'stack0xfffffe8c'; did you mean 'in_stack_fffffe8c'?
   core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_004ec600
     Line 81: use of undeclared identifier 'stack0xfffffe90'
   core_gun.cpp_CGun_fire_FUN_004b27c0
@@ -12693,6 +12629,8 @@ CATEGORY: undeclared_identifier (5820 errors)
     Line 29: use of undeclared identifier 'stack0xfffffef0'
   shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00473190
     Line 74: use of undeclared identifier 'stack0xfffffef0'
+  core_turret.cpp_CTurret_getBoundingBox_FUN_00549cd0
+    Line 57: use of undeclared identifier 'stack0xfffffefc'
   cockpit_pkbitmap.cpp_CPackedBitmap_applyACTPalette_FUN_004f4a00
     Line 15: use of undeclared identifier 'stack0xffffff00'
   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadACTAndApplyToBitmapSet_FUN_004f5b20
@@ -12779,7 +12717,7 @@ CATEGORY: undeclared_identifier (5820 errors)
     Line 22: use of undeclared identifier 'waveOutGetDevCapsA'
 
 ====================================================================================================
-CATEGORY: format_error (387 errors)
+CATEGORY: format_error (390 errors)
 ====================================================================================================
 
   core_setutil.cpp_C3DSCamera_load_FUN_005144e0
@@ -12805,11 +12743,11 @@ CATEGORY: format_error (387 errors)
   core_charactr.cpp_CCharacter_applyLookAt_FUN_00429e60
     Line 33: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror,-Wformat]
   core_charactr.cpp_CCharacter_followActor_FUN_00428780
-    Line 27: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror,-Wformat]
+    Line 28: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror,-Wformat]
   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042af70
     Line 150: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror,-Wformat]
   core_charactr.cpp_CCharacter_processWalking_FUN_00428c00
-    Line 66: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror,-Wformat]
+    Line 67: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror,-Wformat]
   core_charactr.cpp_CCharacter_setup_FUN_00424260
     Line 46: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror,-Wformat]
   core_colonel.cpp_CColonel_process_FUN_00439f50
@@ -12905,7 +12843,7 @@ CATEGORY: format_error (387 errors)
   core_turret.cpp_CTurret_updateTargeting_FUN_0054a110
     Line 48: format specifies type 'char *' but the argument has type 'CTurret *' [-Werror,-Wformat]
   core_zombie.cpp_CZombie_processPickup_FUN_00561010
-    Line 135: format specifies type 'char *' but the argument has type 'CZombie *' [-Werror,-Wformat]
+    Line 134: format specifies type 'char *' but the argument has type 'CZombie *' [-Werror,-Wformat]
   core_zombie.cpp_CZombie_process_FUN_0055ef50
     Line 190: format specifies type 'char *' but the argument has type 'CZombie *' [-Werror,-Wformat]
   core_cow.cpp_CZombieCow_process_FUN_0043bdb0
@@ -13004,6 +12942,8 @@ CATEGORY: format_error (387 errors)
     Line 111: format specifies type 'int' but the argument has type 'char *' [-Werror,-Wformat]
   core_skeleton.cpp_CDeformableModel_allocLOD_FUN_00517ec0
     Line 62: format specifies type 'int' but the argument has type 'int *' [-Werror,-Wformat]
+  core_game.cpp_CGame_runGameSession_FUN_0049da10
+    Line 48: format specifies type 'unsigned int' but the argument has type 'CPickList *' [-Werror,-Wformat]
   cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00430210
     Line 24: format specifies type 'unsigned int' but the argument has type 'ulong' (aka 'unsigned long') [-Werror,-Wformat]
   cockpit_ckptutil.c_rotateBitmap_FUN_004303d0
@@ -13066,7 +13006,7 @@ CATEGORY: format_error (387 errors)
     Line 22: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
 
 ====================================================================================================
-CATEGORY: type_error (372 errors)
+CATEGORY: type_error (373 errors)
 ====================================================================================================
 
   core_actor.cpp_CDemonActor_handleFootstep_FUN_0040db50
@@ -13220,7 +13160,7 @@ CATEGORY: type_error (372 errors)
   core_setdir.cpp_CDemonSet_FUN_005125a0
     Line 146: member reference base type 'byte[48]' (aka 'unsigned char[48]') is not a structure or union
   core_turret.cpp_CTurret_getBoundingBox_FUN_00549cd0
-    Line 74: member reference base type 'byte[48]' (aka 'unsigned char[48]') is not a structure or union
+    Line 73: member reference base type 'byte[48]' (aka 'unsigned char[48]') is not a structure or union
   core_particle.cpp_CParticle_process_FUN_004ef120
     Line 48: member reference base type 'byte[52]' (aka 'unsigned char[52]') is not a structure or union
   core_boxactor.cpp_CBoxActor_process_FUN_0041e5e0
@@ -13260,7 +13200,7 @@ CATEGORY: type_error (372 errors)
   engine_special.cpp_CExternalRenderer_validate_FUN_00532df0
     Line 37: member reference base type 'int' is not a structure or union
   shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_00470730
-    Line 140: member reference base type 'int' is not a structure or union
+    Line 139: member reference base type 'int' is not a structure or union
   support_codec.cpp_readBitsFromStream_FUN_00438ab0
     Line 58: member reference base type 'int' is not a structure or union
   core_xform.cpp_clipPolygonStage1_FUN_0055d9c0
@@ -13299,7 +13239,7 @@ CATEGORY: type_error (372 errors)
     Line 54: statement requires expression of integer type ('float' invalid)
 
 ====================================================================================================
-CATEGORY: incompatible_types (344 errors)
+CATEGORY: incompatible_types (352 errors)
 ====================================================================================================
 
   core_skeleton.cpp_CSkeleton_allocMemory_FUN_005173c0
@@ -13366,6 +13306,10 @@ CATEGORY: incompatible_types (344 errors)
     Line 39: assigning to 'undefined1 *' (aka 'unsigned char *') from incompatible type 'float'
   core_dcube.cpp_CDemonCube_testCylinderGroundCollision_FUN_0044b500
     Line 44: assigning to 'undefined1 *' (aka 'unsigned char *') from incompatible type 'float'
+  core_dtrace.cpp_CDemonRaytrace_getGroundHeight_FUN_00468580
+    Line 96: assigning to 'undefined1 *' (aka 'unsigned char *') from incompatible type 'float'
+  core_dtrace.cpp_CDemonRaytrace_testCylinderCollision_FUN_00468af0
+    Line 30: assigning to 'undefined1 *' (aka 'unsigned char *') from incompatible type 'float'
   core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0
     Line 155: assigning to 'ushort *' (aka 'unsigned short *') from incompatible type 'void *'
   engine_special.cpp_renderMMXPerspectiveScanline16_FUN_0052f823
@@ -13503,7 +13447,7 @@ CATEGORY: incompatible_types (344 errors)
   core_biggs.cpp_CBiggs_process_FUN_004154b0
     Line 111: no matching function for call to 'core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30'
   core_bodypart.cpp_CBodyPart_process_FUN_004168d0
-    Line 74: no matching function for call to 'core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30'
+    Line 72: no matching function for call to 'core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30'
   core_boneguy.cpp_CBoneGuy_process_FUN_00418a00
     Line 82: no matching function for call to 'core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30'
   core_bugs.cpp_CBugs_process_FUN_00421480
@@ -13676,7 +13620,7 @@ CATEGORY: cast_error (211 errors)
   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_00497900
     Line 117: C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed
   core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_0051e590
-    Line 58: C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed
+    Line 56: C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed
   core_imp.cpp_CImp_process_FUN_004bbaf0
     Line 276: C-style cast from 'CDemonActor *' to 'float' is not allowed
   core_mobster.cpp_CMobster_process_FUN_004da790
@@ -13776,7 +13720,7 @@ CATEGORY: cast_error (211 errors)
   core_zombie.cpp_CZombie_process_FUN_0055ef50
     Line 276: cannot cast from type 'float' to pointer type 'CVector3f *'
   core_vehicle.cpp_CVehicle_process_FUN_0054eae0
-    Line 142: cannot cast from type 'float' to pointer type 'CVehicle *'
+    Line 141: cannot cast from type 'float' to pointer type 'CVehicle *'
   core_moloch.cpp_CMoloch_process_FUN_004ddb20
     Line 162: cannot cast from type 'float' to pointer type 'SMotion *'
   core_ghoul.cpp_CGhoul_process_FUN_004a9270
@@ -13852,11 +13796,11 @@ CATEGORY: cast_error (211 errors)
   shape_edittool.cpp_CEditorTools_showWarning_FUN_0046fb40
     Line 28: no matching conversion for C-style cast from 'byte **' (aka 'unsigned char **') to 'va_list_t'
   shape_edittool.cpp_FUN_00470230
-    Line 21: no matching conversion for C-style cast from 'byte **' (aka 'unsigned char **') to 'va_list_t'
+    Line 20: no matching conversion for C-style cast from 'byte **' (aka 'unsigned char **') to 'va_list_t'
   shape_edittool.cpp_FUN_00470310
-    Line 21: no matching conversion for C-style cast from 'byte **' (aka 'unsigned char **') to 'va_list_t'
+    Line 20: no matching conversion for C-style cast from 'byte **' (aka 'unsigned char **') to 'va_list_t'
   shape_edittool.cpp_FUN_004703f0
-    Line 22: no matching conversion for C-style cast from 'byte **' (aka 'unsigned char **') to 'va_list_t'
+    Line 21: no matching conversion for C-style cast from 'byte **' (aka 'unsigned char **') to 'va_list_t'
   sound_sndmain.cpp_logSoundError_FUN_00529980
     Line 16: no matching conversion for C-style cast from 'byte **' (aka 'unsigned char **') to 'va_list_t'
   engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0

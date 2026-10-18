@@ -34,85 +34,55 @@
       {
         "category": "other",
         "column": 35,
-        "line": 497,
+        "line": 496,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 497,
+        "line": 496,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 498,
+        "line": 497,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 498,
+        "line": 497,
         "message": "exponent has no digits"
       },
       {
         "category": "undeclared_identifier",
-        "column": 66,
-        "line": 38,
-        "message": "use of undeclared identifier 'stack0xfffffe68'; did you mean 'in_stack_fffffe68'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 35,
-        "line": 52,
-        "message": "use of undeclared identifier 'stack0xfffffe68'; did you mean 'in_stack_fffffe68'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 32,
-        "line": 63,
-        "message": "use of undeclared identifier 'stack0xfffffe68'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 68,
-        "line": 65,
-        "message": "use of undeclared identifier 'stack0xfffffe68'; did you mean 'in_stack_fffffe68'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 66,
-        "line": 68,
-        "message": "use of undeclared identifier 'stack0xfffffe68'; did you mean 'in_stack_fffffe68'?"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 56,
-        "line": 90,
+        "line": 88,
         "message": "use of undeclared identifier 'DAT_0058d9a8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 98,
+        "line": 96,
         "message": "use of undeclared identifier 'DAT_01e428d0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 99,
+        "line": 97,
         "message": "use of undeclared identifier 'DAT_01e428d0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 108,
+        "line": 106,
         "message": "use of undeclared identifier 'DAT_01e428d0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 109,
+        "line": 107,
         "message": "use of undeclared identifier 'DAT_01e428d0'"
       }
     ],
@@ -122,21 +92,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 303,
-    "complexity_score": 329,
+    "complexity_score": 237,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 114,
-    "suspect_count": 19,
+    "pseudocode_lines": 112,
+    "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "stack_param",
-      "stack_ref",
       "undefined_data"
     ],
-    "total_lines": 417
+    "total_lines": 415
   },
   "cross_references": [
     {
@@ -455,72 +423,8 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_fffffe68",
-      "severity": "moderate",
-      "text": "uint in_stack_fffffe68;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 31,
-      "match": "&stack0xfffffe68",
-      "severity": "moderate",
-      "text": "shape_edittool_cpp_CPickList_ctor_FUN_00474c90((CPickList *)&stack0xfffffe68);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 45,
-      "match": "&stack0xfffffe68",
-      "severity": "moderate",
-      "text": "((CStrList *)&stack0xfffffe68,",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 54,
-      "match": "in_stack_fffffe68",
-      "severity": "moderate",
-      "text": "if (in_stack_fffffe68 != 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 56,
-      "match": "&stack0xfffffe68",
-      "severity": "moderate",
-      "text": "((CPickList *)&stack0xfffffe68,\"!!!CRC CHECK FAILED!! on these files:\",-1,",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 57,
-      "match": "in_stack_fffffe68",
-      "severity": "moderate",
-      "text": "in_stack_fffffe68);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 58,
-      "match": "&stack0xfffffe68",
-      "severity": "moderate",
-      "text": "shape_edittool_cpp_CPickList_dtor_FUN_00474cf0((CPickList *)&stack0xfffffe68,0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 61,
-      "match": "&stack0xfffffe68",
-      "severity": "moderate",
-      "text": "shape_edittool_cpp_CPickList_dtor_FUN_00474cf0((CPickList *)&stack0xfffffe68,0);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 83,
+      "line": 81,
       "match": "DAT_0058d9a8",
       "severity": "mild",
       "text": "iVar4 = engine_dosio_cpp_getFileSize_FUN_004568c0(&DAT_0058d9a8,filename);",
@@ -528,7 +432,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 91,
+      "line": 89,
       "match": "DAT_01e428d0",
       "severity": "mild",
       "text": "puVar8 = &DAT_01e428d0;",
@@ -536,7 +440,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 92,
+      "line": 90,
       "match": "DAT_01e428d0",
       "severity": "mild",
       "text": "_fread(&DAT_01e428d0,0x10000,1,p_Var3);",
@@ -544,7 +448,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 101,
+      "line": 99,
       "match": "DAT_01e428d0",
       "severity": "mild",
       "text": "puVar8 = &DAT_01e428d0;",
@@ -552,7 +456,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 102,
+      "line": 100,
       "match": "DAT_01e428d0",
       "severity": "mild",
       "text": "_fread(&DAT_01e428d0,size,1,p_Var3);",
@@ -576,10 +480,10 @@
     },
     {
       "description": "Pointer value `&this_ptr->directory_entries->name` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 46,
+      "line": 45,
       "match": "(int)&this_ptr->directory_entries->name",
       "severity": "moderate",
-      "text": "*(char **)((int)&this_ptr->directory_entries->name + iVar4));",
+      "text": "(&local_198.base,*(char **)((int)&this_ptr->directory_entries->name + iVar4));",
       "type": "pointer_truncation"
     },
     {
@@ -600,10 +504,10 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 46,
+      "line": 45,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(char **)((int)&this_ptr->directory_entries->name + iVar4));",
+      "text": "(&local_198.base,*(char **)((int)&this_ptr->directory_entries->name + iVar4));",
       "type": "pointer_cast"
     }
   ]

@@ -249,9 +249,9 @@ LAB_005474f0:
   local_18 = (CVector3f *)&(this_ptr->base).orient;
   local_14 = local_1c;
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
-            (&local_1a8,(CVector3f *)&DAT_02dd1184,local_18);
+            (&local_1a8,&g_ZeroVector.f,local_18);
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
-            (&local_118,(CVector3f *)&DAT_02dd1184,&local_34);
+            (&local_118,&g_ZeroVector.f,&local_34);
   core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(&local_118,&local_1a8,&local_178);
   pCVar10 = &local_178;
   pCVar11 = &local_148;

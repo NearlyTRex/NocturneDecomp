@@ -85,7 +85,7 @@ section .text
         ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_0052ee70()
     CALL engine_special.cpp_clearZBufferNative_FUN_0052eed4 ; 004dec66
         ;   XREF to: 0052eed4 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearZBufferNative_FUN_0052eed4()
-    PUSH 0x2dd1184                      ; 004dec6b | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 004dec6b | g_ZeroVector
     MOV EDX,dword ptr [0x005ae704]      ; 004dec70 | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 004dec76 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700 ; 004dec77
@@ -97,7 +97,7 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_00460c00 ; 004dec8b
         ;   XREF to: 00460c00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_00460c00(CDemonRenderer * this_ptr, float field_of_view)
     ADD ESP,0x8                         ; 004dec90
-    PUSH 0x2dd1184                      ; 004dec93 | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 004dec93 | g_ZeroVector
     MOV EBX,dword ptr [0x005ae704]      ; 004dec98 | g_CDemonRenderer_PTR_005ae704
     PUSH EBX                            ; 004dec9e | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_00460780 ; 004dec9f

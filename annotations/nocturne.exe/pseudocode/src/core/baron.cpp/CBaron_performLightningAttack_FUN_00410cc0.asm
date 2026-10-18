@@ -31,7 +31,7 @@
 ;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
 ;   undefined4 DAT_0076431c
 ;   undefined4 DAT_00764320
-;   undefined4 DAT_02dd1184
+;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -259,7 +259,7 @@ section .text
     SHL EAX,0x4                         ; 00410f37
     ADD EAX,EDI                         ; 00410f3a
     PUSH EAX                            ; 00410f3c
-    PUSH 0x2dd1184                      ; 00410f3d | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 00410f3d | g_ZeroVector
     LEA EAX,[ESP + 0xf4]                ; 00410f42
     PUSH EAX                            ; 00410f49
     CALL core_xform.cpp_transformVector3x4_FUN_0055a8b0 ; 00410f4a
@@ -278,7 +278,7 @@ section .text
     ADD ESP,0xc                         ; 00410f73
     ADD EDI,EAX                         ; 00410f76
     PUSH EDI                            ; 00410f78
-    PUSH 0x2dd1184                      ; 00410f79 | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 00410f79 | g_ZeroVector
     LEA EAX,[ESP + 0xd0]                ; 00410f7e
     PUSH EAX                            ; 00410f85
     CALL core_xform.cpp_transformVector3x4_FUN_0055a8b0 ; 00410f86

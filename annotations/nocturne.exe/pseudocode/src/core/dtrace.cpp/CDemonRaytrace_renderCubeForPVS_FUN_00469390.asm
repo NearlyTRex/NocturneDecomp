@@ -507,7 +507,7 @@ section .text
     CALL core_dcube.cpp_CDemonCube_rotateVertices_FUN_0044aff0 ; 0046996b
         ;   XREF to: 0044aff0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_CDemonCube_rotateVertices_FUN_0044aff0(CDemonCube * this_ptr, uint rendering_mode)
     ADD ESP,0x8                         ; 00469970
-    PUSH 0x2dd1184                      ; 00469973 | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 00469973 | g_ZeroVector
     MOV EDX,dword ptr [0x005ae704]      ; 00469978 | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 0046997e | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00 ; 0046997f

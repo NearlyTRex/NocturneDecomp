@@ -306,7 +306,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_00418a00(CBoneGuy *this_ptr,f
       fVar17 = 0.4;
       local_14 = local_180.damage_amount;
       pCVar13 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
-                          (&local_94,(CVector3f *)&DAT_02dd1184,
+                          (&local_94,&g_ZeroVector.f,
                            (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                            DAT_00764794);
       pCVar13 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240

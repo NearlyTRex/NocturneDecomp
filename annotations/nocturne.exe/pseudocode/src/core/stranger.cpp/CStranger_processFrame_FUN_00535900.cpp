@@ -983,8 +983,7 @@ LAB_00537712:
                      (int)((ulonglong)in_stack_fffffd10 >> 0x20));
         }
         (*((this_ptr->base).base.base.vtable._ub)->processFootstepAtOffset)
-                  ((CDemonActor *)this_ptr,(CVector3f *)&DAT_02dd1184,fVar17 * 0.025f + 1.0)
-        ;
+                  ((CDemonActor *)this_ptr,&g_ZeroVector.f,fVar17 * 0.025f + 1.0);
       }
       iVar21 = (this_ptr->base).base.is_on_ground;
       fStack_2c4 = 0.5f;

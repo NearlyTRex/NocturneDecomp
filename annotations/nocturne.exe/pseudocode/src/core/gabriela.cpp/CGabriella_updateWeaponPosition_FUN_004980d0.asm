@@ -41,7 +41,7 @@
 ;   float FLOAT_0059dca4 = 0.6400000
 ;   undefined4 DAT_01c713c0
 ;   undefined4 DAT_01c713dc
-;   undefined4 DAT_02dd1184
+;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000
@@ -97,7 +97,7 @@ section .text
     MOV EDX,dword ptr [EAX + 0x14c]     ; 0049813b
     CALL dword ptr [EDX + 0xd4]         ; 00498141
     ADD ESP,0x8                         ; 00498147
-    PUSH 0x2dd1184                      ; 0049814a | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 0049814a | g_ZeroVector
     PUSH 0x1c71364                      ; 0049814f
     LEA EAX,[EBP + 0xffffff52]          ; 00498154
     PUSH EAX                            ; 0049815a

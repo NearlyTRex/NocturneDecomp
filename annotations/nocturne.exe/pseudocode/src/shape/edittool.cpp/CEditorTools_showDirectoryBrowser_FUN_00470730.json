@@ -34,31 +34,31 @@
       {
         "category": "other",
         "column": 35,
-        "line": 497,
+        "line": 496,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 497,
+        "line": 496,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 498,
+        "line": 497,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 498,
+        "line": 497,
         "message": "exponent has no digits"
       },
       {
         "category": "type_error",
         "column": 20,
-        "line": 140,
+        "line": 139,
         "message": "member reference base type 'int' is not a structure or union"
       }
     ],
@@ -68,21 +68,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 617,
-    "complexity_score": 324,
+    "complexity_score": 298,
     "cross_reference_count": 0,
     "function_call_count": 24,
     "global_count": 19,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 209,
-    "suspect_count": 9,
+    "pseudocode_lines": 208,
+    "suspect_count": 7,
     "suspect_types": [
-      "unaffected_reg",
       "undefined_data",
       "unknown_field",
       "unrolled_memcpy",
       "unrolled_strlen"
     ],
-    "total_lines": 826
+    "total_lines": 825
   },
   "cross_references": [],
   "function": {
@@ -673,32 +672,16 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 11,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "uint unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 133,
+      "line": 132,
       "match": "._0_1_",
       "severity": "mild",
       "text": "local_12c8[0]._0_1_ = '\\0';",
       "type": "unknown_field"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 171,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "(&local_1a60,local_1c90,iVar7,unaff_ESI);",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 174,
+      "line": 173,
       "match": "DAT_005b6f70",
       "severity": "mild",
       "text": "puVar8 = &DAT_005b6f70;",
@@ -706,7 +689,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 61,
+      "line": 60,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 0x41; iVar4 != 0; iVar4 = iVar4 + -1) {",
@@ -714,7 +697,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 79,
+      "line": 78,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 0x41; iVar4 != 0; iVar4 = iVar4 + -1) {",
@@ -722,7 +705,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 176,
+      "line": 175,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 0x41; iVar4 != 0; iVar4 = iVar4 + -1) {",
@@ -730,7 +713,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 99,
+      "line": 98,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -738,7 +721,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 150,
+      "line": 149,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",

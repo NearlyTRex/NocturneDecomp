@@ -11,7 +11,7 @@
 ; Referenced Globals:
 ;   float FLOAT_005920a5 = -4
 ;   undefined4 DAT_02da8a7c
-;   undefined4 DAT_02dd1184
+;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -60,7 +60,7 @@ section .text
     LEA EDX,[ESI + 0xfd0]               ; 00520a7a
     ADD EAX,EDX                         ; 00520a80
     PUSH EAX                            ; 00520a82
-    PUSH 0x2dd1184                      ; 00520a83 | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 00520a83 | g_ZeroVector
     LEA EAX,[ESP + 0x14]                ; 00520a88
     PUSH EAX                            ; 00520a8c
     CALL core_xform.cpp_transformVector3x4_FUN_0055a8b0 ; 00520a8d

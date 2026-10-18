@@ -19,7 +19,7 @@ void __cdecl core_game_cpp_CGame_FUN_004a4b50(CGame *this_ptr,int select_mode)
   int iVar6;
   char *pcVar7;
   bool bVar8;
-  uint in_stack_fffffb4c;
+  CIniFile local_4b4;
   CPickList local_2b4;
   char local_144 [260];
   char *local_40 [4];
@@ -55,19 +55,15 @@ void __cdecl core_game_cpp_CGame_FUN_004a4b50(CGame *this_ptr,int select_mode)
   }
   local_18 = 0;
   engine_ini_cpp_CIniFile_ctor_FUN_004bd860
-            ((CIniFile *)&stack0xfffffb4c,"system\\nocturne.ini","Game");
+            (&local_4b4,"system\\nocturne.ini","Game");
   local_2c = 0;
   local_28 = 0;
   local_24 = 0;
   local_20 = 0;
-  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            ((CIniFile *)&stack0xfffffb4c,"Act1Code",&local_2c);
-  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            ((CIniFile *)&stack0xfffffb4c,"Act2Code",&local_28);
-  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            ((CIniFile *)&stack0xfffffb4c,"Act3Code",&local_24);
-  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            ((CIniFile *)&stack0xfffffb4c,"Act4Code",&local_20);
+  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(&local_4b4,"Act1Code",&local_2c);
+  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(&local_4b4,"Act2Code",&local_28);
+  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(&local_4b4,"Act3Code",&local_24);
+  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(&local_4b4,"Act4Code",&local_20);
   if ((((local_2c == 0x331) && (local_28 == 0x3cc)) && (local_24 == 0x3ac)) && (local_20 == 0xd6)) {
     local_18 = 1;
   }
@@ -133,7 +129,7 @@ void __cdecl core_game_cpp_CGame_FUN_004a4b50(CGame *this_ptr,int select_mode)
       pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Choose a story to play")
       ;
       iVar3 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70
-                        (&local_2b4,pcVar7,iVar3,in_stack_fffffb4c);
+                        (&local_2b4,pcVar7,iVar3);
       if (iVar3 < 0) {
         shape_edittool_cpp_CPickList_dtor_FUN_00474cf0(&local_2b4,0);
         return;
@@ -186,7 +182,7 @@ LAB_004a50dc:
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
                              ("'Dark Reign of the Vampire King'");
           iVar6 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70
-                            (&local_2b4,pcVar7,iVar6,in_stack_fffffb4c);
+                            (&local_2b4,pcVar7,iVar6);
         }
         if (iVar3 == 1) {
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
@@ -228,7 +224,7 @@ LAB_004a50dc:
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
                              ("'Tomb of the Underground God'");
           iVar6 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70
-                            (&local_2b4,pcVar7,iVar6,in_stack_fffffb4c);
+                            (&local_2b4,pcVar7,iVar6);
         }
         if (iVar3 == 2) {
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
@@ -280,7 +276,7 @@ LAB_004a50dc:
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
                              ("'Windy City Massacre'");
           iVar6 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70
-                            (&local_2b4,pcVar7,iVar6,in_stack_fffffb4c);
+                            (&local_2b4,pcVar7,iVar6);
         }
         if (iVar3 == 3) {
           iVar5 = 0x9c;
@@ -311,7 +307,7 @@ LAB_004a50dc:
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
                              ("'The House on the Edge of Hell'");
           iVar6 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70
-                            (&local_2b4,pcVar7,iVar6,in_stack_fffffb4c);
+                            (&local_2b4,pcVar7,iVar6);
         }
         if (iVar3 == 4) {
           iVar5 = 0xd0;
@@ -332,7 +328,7 @@ LAB_004a50dc:
           iVar6 = -1;
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("'Epilogue'");
           iVar6 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70
-                            (&local_2b4,pcVar7,iVar6,in_stack_fffffb4c);
+                            (&local_2b4,pcVar7,iVar6);
         }
       }
       else {

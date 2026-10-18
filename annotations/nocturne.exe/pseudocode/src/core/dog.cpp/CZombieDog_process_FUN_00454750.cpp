@@ -194,7 +194,7 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_00454750(CZombieDog *this_ptr,f
       fVar10 = 0.7;
       local_14 = local_e0.damage_amount;
       pCVar9 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
-                         (&local_98,(CVector3f *)&DAT_02dd1184,
+                         (&local_98,&g_ZeroVector.f,
                           (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                           this_ptr->bone_indices[1]);
       pCVar9 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240

@@ -40,7 +40,7 @@ CMatrix3x4f * __stack2_esi core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_
   local_60.x = -0.771;
   local_60.y = -2.536;
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
-            (&local_120,(CVector3f *)&DAT_02dd1184,&local_60);
+            (&local_120,&g_ZeroVector.f,&local_60);
   (*((this_ptr_00->vtable)._ub)->getBoundingBox)(this_ptr_00,&local_90);
   core_actor_cpp_CVector3f_ctor_FUN_0040e160(&local_54);
   local_54.x = local_90.min.x + local_90.max.x;

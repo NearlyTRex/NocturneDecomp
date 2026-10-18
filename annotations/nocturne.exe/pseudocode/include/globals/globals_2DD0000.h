@@ -9,6 +9,7 @@
 #include "types/classes/CWater.h"
 #include "types/classes/CWeather.h"
 #include "types/structs/SCollisionInfo.h"
+#include "types/unions/UVector3.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x2DD0000
@@ -52,6 +53,9 @@ extern IUnknown* g_DirectDrawUnknown;
 
 // SCollisionInfo[100]
 extern SCollisionInfo g_SCollisionInfo_ARRAY_02dd9718[100];
+
+// UVector3
+extern UVector3 g_ZeroVector;
 
 // void*
 extern void* g_SoftwareFrameBuffer;

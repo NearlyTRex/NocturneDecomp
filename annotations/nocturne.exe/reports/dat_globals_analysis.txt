@@ -2,21 +2,21 @@
 DAT_ GLOBALS ANALYSIS REPORT
 ================================================================================
 
-Total DAT_ globals found: 2510
+Total DAT_ globals found: 2506
 Filtered out (inside named data): 320
-Immediate constants (not real globals): 61
-Real globals remaining: 2129
+Immediate constants (not real globals): 60
+Real globals remaining: 2126
 
 Current type breakdown:
-  undefined4                     2075
+  undefined4                     2072
   undefined1                     31
   undefined8                     12
   undefined2                     11
 
-DAT_ globals with type hints: 621 / 2129
+DAT_ globals with type hints: 618 / 2126
 
 --------------------------------------------------------------------------------
-HIGH CONFIDENCE INFERENCES (428)
+HIGH CONFIDENCE INFERENCES (425)
 --------------------------------------------------------------------------------
   DAT_0057919e                    addr=0057919e    current=undefined4      likely=float           refs=1
     nearby: s_Bip01_Head_005791a2 (TerminatedCString) at offset -4
@@ -657,12 +657,6 @@ HIGH CONFIDENCE INFERENCES (428)
     nearby: g_CTommyGunActorType_02dd0fd0.name_hash (undefined4) at offset -128
   DAT_02dd10c4                    addr=02dd10c4    current=undefined4      likely=uint32_t *      refs=2
     nearby: g_CTriggerActorType_02dd1084.name_hash (undefined4) at offset +8
-  DAT_02dd1184                    addr=02dd1184    current=undefined4      likely=float           refs=63
-    nearby: g_CTVBatActorType_02dd110c.name_hash (undefined4) at offset +64
-  DAT_02dd1188                    addr=02dd1188    current=undefined4      likely=float           refs=13
-    nearby: g_CVehicleActorType_02dd1190.name_hash (undefined4) at offset -64
-  DAT_02dd118c                    addr=02dd118c    current=undefined4      likely=float           refs=13
-    nearby: g_CVehicleActorType_02dd1190.name_hash (undefined4) at offset -60
   DAT_02dd1220                    addr=02dd1220    current=undefined4      likely=float           refs=2
     nearby: g_CWater_02dd1210.visible_area_sqft (undefined4) at offset +4
   DAT_02dd1224                    addr=02dd1224    current=undefined4      likely=float           refs=2
@@ -2494,7 +2488,6 @@ MOST REFERENCED DAT_ GLOBALS (top 50)
 --------------------------------------------------------------------------------
   DAT_01b4d738                    addr=01b4d738    refs=223   type=undefined4      likely=CDemonRenderer *
   DAT_005b7650                    addr=005b7650    refs=73    type=undefined4      nearby: INT_005b7644(+12)
-  DAT_02dd1184                    addr=02dd1184    refs=63    type=undefined4      likely=float  nearby: g_CTVBatActorType_02dd110c.name_hash(+64)
   DAT_02dc8318                    addr=02dc8318    refs=34    type=undefined4      nearby: g_SoundMuted(-12)
   DAT_01bcd070                    addr=01bcd070    refs=33    type=undefined4    
   DAT_005c502c                    addr=005c502c    refs=33    type=undefined4      nearby: g_BackBuffer(+28)
@@ -2529,8 +2522,6 @@ MOST REFERENCED DAT_ GLOBALS (top 50)
   DAT_01bd1d90                    addr=01bd1d90    refs=14    type=undefined4    
   DAT_01c039dc                    addr=01c039dc    refs=14    type=undefined4      nearby: g_TransformMatrix(-12)
   DAT_005c5018                    addr=005c5018    refs=14    type=undefined4      likely=double  nearby: g_BackBuffer(+8)
-  DAT_02dd1188                    addr=02dd1188    refs=13    type=undefined4      likely=float  nearby: g_CVehicleActorType_02dd1190.name_hash(-64)
-  DAT_02dd118c                    addr=02dd118c    refs=13    type=undefined4      likely=float  nearby: g_CVehicleActorType_02dd1190.name_hash(-60)
   DAT_005c5040                    addr=005c5040    refs=13    type=undefined4      likely=int  nearby: g_BackBuffer(+48)
   DAT_00766c70                    addr=00766c70    refs=13    type=undefined4      likely=int
   DAT_00b0e1fc                    addr=00b0e1fc    refs=12    type=undefined4    
@@ -2542,9 +2533,12 @@ MOST REFERENCED DAT_ GLOBALS (top 50)
   DAT_005c1f90                    addr=005c1f90    refs=12    type=undefined4      nearby: PTR_crt_unknown.c_FUN_0056f0f0_005c1f8c(+4)
   DAT_01c039e0                    addr=01c039e0    refs=12    type=undefined4      nearby: g_TransformMatrix(-8)
   DAT_01c039e4                    addr=01c039e4    refs=12    type=undefined4      nearby: g_TransformMatrix(-4)
+  DAT_006b029c                    addr=006b029c    refs=12    type=undefined4      likely=int  nearby: g_StoredZ(+8)
+  DAT_006b02a0                    addr=006b02a0    refs=12    type=undefined4      nearby: g_StoredZ(+12)
+  DAT_01cd4318                    addr=01cd4318    refs=11    type=undefined4    
 
 --------------------------------------------------------------------------------
-IMMEDIATE CONSTANTS - NOT REAL GLOBALS (61)
+IMMEDIATE CONSTANTS - NOT REAL GLOBALS (60)
 --------------------------------------------------------------------------------
 These DAT_ globals are never dereferenced as memory addresses.
 They appear only as inline constant values.
@@ -2565,7 +2559,6 @@ They appear only as inline constant values.
   DAT_005b96d4                    value=0x5B96D4        refs=2
   DAT_005ba84c                    value=0x5BA84C        refs=2
   DAT_005bac34                    value=0x5BAC34        refs=2
-  DAT_005baca4                    value=0x5BACA4        refs=2
   DAT_01cc3700                    value=0x1CC3700       refs=2
   DAT_005be680                    value=0x5BE680        refs=2
   DAT_005a47a4                    value=0x5A47A4        refs=2

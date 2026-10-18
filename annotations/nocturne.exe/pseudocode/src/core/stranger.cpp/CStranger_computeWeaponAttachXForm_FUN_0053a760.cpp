@@ -291,7 +291,7 @@ CMatrix3x4f * __stack3_esi core_stranger_cpp_CStranger_computeWeaponAttachXForm_
     }
     else if (hand_index == 0) {
       core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
-                (&local_75c,&CVector3f_02dc9f40,(CVector3f *)&DAT_02dd1184);
+                (&local_75c,&CVector3f_02dc9f40,&g_ZeroVector.f);
       pCVar10 = &local_75c;
       core_xform_cpp_buildRotationX_FUN_0055c730(1.5707964,&local_66c);
       pCVar9 = &local_c6c;
@@ -331,7 +331,7 @@ CMatrix3x4f * __stack3_esi core_stranger_cpp_CStranger_computeWeaponAttachXForm_
     }
     else {
       core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
-                (&local_aec,&CVector3f_02dc9f34,(CVector3f *)&DAT_02dd1184);
+                (&local_aec,&CVector3f_02dc9f34,&g_ZeroVector.f);
       pCVar10 = &local_aec;
       core_xform_cpp_buildRotationX_FUN_0055c730(1.5707964,&local_72c);
       pCVar9 = &local_36c;
@@ -380,11 +380,11 @@ CMatrix3x4f * __stack3_esi core_stranger_cpp_CStranger_computeWeaponAttachXForm_
   local_84.z = local_180.x;
   if ((this_ptr->base).base.layer_action_index == 0xe) {
     pCVar3 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
-                       (&local_d8,(CVector3f *)&DAT_02dd1184,
+                       (&local_d8,&g_ZeroVector.f,
                         (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                         _DAT_02dc9f88);
     pCVar4 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
-                       (&local_90,(CVector3f *)&DAT_02dd1184,
+                       (&local_90,&g_ZeroVector.f,
                         (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                         _DAT_02dc9f84);
     local_198 = pCVar4->x + pCVar3->x;

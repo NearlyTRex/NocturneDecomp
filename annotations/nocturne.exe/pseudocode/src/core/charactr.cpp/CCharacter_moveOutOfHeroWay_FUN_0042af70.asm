@@ -38,7 +38,7 @@
 ;   undefined4 DAT_005ad1d0
 ;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
 ;   CConsole g_CConsole_0077ad0c
-;   undefined4 DAT_02dd1184
+;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
@@ -98,7 +98,7 @@ section .text
     PUSH 0x0                            ; 0042afcd
         ;   Label: LAB_0042afcd
     PUSH 0x0                            ; 0042afcf
-    PUSH 0x2dd1184                      ; 0042afd1 | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 0042afd1 | g_ZeroVector
     PUSH 0x0                            ; 0042afd6
     LEA EAX,[EDI + 0x2dc0]              ; 0042afd8
     PUSH EAX                            ; 0042afde
@@ -252,7 +252,7 @@ section .text
     PUSH 0x0                            ; 0042b1d2
         ;   Label: LAB_0042b1d2
     PUSH 0x0                            ; 0042b1d4
-    PUSH 0x2dd1184                      ; 0042b1d6 | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 0042b1d6 | g_ZeroVector
     PUSH 0x0                            ; 0042b1db
     PUSH EBX                            ; 0042b1dd
     PUSH EDI                            ; 0042b1de
@@ -441,7 +441,7 @@ section .text
     PUSH 0x0                            ; 0042b44f
         ;   Label: LAB_0042b44f
     PUSH 0x0                            ; 0042b451
-    PUSH 0x2dd1184                      ; 0042b453 | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 0042b453 | g_ZeroVector
     PUSH 0x0                            ; 0042b458
     PUSH EBX                            ; 0042b45a
     PUSH EDI                            ; 0042b45b

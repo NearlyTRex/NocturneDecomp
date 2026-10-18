@@ -468,7 +468,7 @@ section .text
     ADD EAX,EDX                         ; 005204d4
     PUSH 0x3f800000                     ; 005204d6
     PUSH EAX                            ; 005204db
-    PUSH 0x2dd1184                      ; 005204dc | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 005204dc | g_ZeroVector
     LEA EAX,[EBP + -0x2e]               ; 005204e1
     FLD float ptr [EBP + 0x76]          ; 005204e4
     PUSH EAX                            ; 005204e7
@@ -555,7 +555,7 @@ section .text
     ADD EAX,EDX                         ; 005205c8
     PUSH 0x3f800000                     ; 005205ca
     PUSH EAX                            ; 005205cf
-    PUSH 0x2dd1184                      ; 005205d0 | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 005205d0 | g_ZeroVector
     LEA EAX,[EBP + 0x2]                 ; 005205d5
     FLD float ptr [EBP + 0x76]          ; 005205d8
     PUSH EAX                            ; 005205db

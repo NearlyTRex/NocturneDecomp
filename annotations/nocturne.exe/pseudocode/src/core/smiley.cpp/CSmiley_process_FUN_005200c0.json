@@ -34,25 +34,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 497,
+        "line": 496,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 497,
+        "line": 496,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 498,
+        "line": 497,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 498,
+        "line": 497,
         "message": "exponent has no digits"
       },
       {
@@ -105,14 +105,14 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 54,
-        "line": 249,
-        "message": "use of undeclared identifier 'DAT_02dd1184'"
+        "column": 30,
+        "line": 251,
+        "message": "use of undeclared identifier '_DAT_02da8a7c'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 30,
-        "line": 251,
+        "column": 32,
+        "line": 287,
         "message": "use of undeclared identifier '_DAT_02da8a7c'"
       }
     ],
@@ -122,15 +122,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 847,
-    "complexity_score": 530,
+    "complexity_score": 505,
     "cross_reference_count": 0,
     "function_call_count": 25,
     "global_count": 16,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 385,
-    "suspect_count": 12,
+    "suspect_count": 10,
     "suspect_types": [
-      "undefined_data",
       "unresolved_funcptr",
       "unrolled_memset",
       "warning_overlapping_globals",
@@ -372,8 +371,8 @@
     },
     {
       "addr": "02dd1184",
-      "name": "DAT_02dd1184",
-      "type": "undefined4",
+      "name": "g_ZeroVector",
+      "type": "UVector3",
       "value": null
     }
   ],
@@ -828,22 +827,6 @@
       "severity": "moderate",
       "text": "(**(code **)(iRam0000014c + 0xe8))(0);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 242,
-      "match": "DAT_02dd1184",
-      "severity": "mild",
-      "text": "(&local_b8,(CVector3f *)&DAT_02dd1184,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 278,
-      "match": "DAT_02dd1184",
-      "severity": "mild",
-      "text": "(&local_88,(CVector3f *)&DAT_02dd1184,",
-      "type": "undefined_data"
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",

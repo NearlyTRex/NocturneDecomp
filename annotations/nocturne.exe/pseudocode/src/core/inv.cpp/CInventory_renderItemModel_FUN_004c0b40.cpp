@@ -92,9 +92,9 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004c0b40(CInventory *th
     engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_00460c00
               (g_CDemonRenderer_PTR_005ae704,36.0);
     engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_00460780
-              (g_CDemonRenderer_PTR_005ae704,(CVector3f *)&DAT_02dd1184);
+              (g_CDemonRenderer_PTR_005ae704,&g_ZeroVector.f);
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
-              (g_CDemonRenderer_PTR_005ae704,(CVector3f *)&DAT_02dd1184);
+              (g_CDemonRenderer_PTR_005ae704,&g_ZeroVector.f);
     local_44 = fVar11 + fVar3;
     local_5c.x = local_44 * -0.5f;
     local_40 = fVar12 + fVar4;
@@ -126,7 +126,7 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004c0b40(CInventory *th
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
               (g_CDemonRenderer_PTR_005ae704,&local_38,(CVector3f *)0x0);
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
-              (g_CDemonRenderer_PTR_005ae704,(CVector3f *)&DAT_02dd1184,&local_5c);
+              (g_CDemonRenderer_PTR_005ae704,&g_ZeroVector.f,&local_5c);
     if (alpha < 65000) {
       engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
                 (g_CDemonRenderer_PTR_005ae704,alpha);

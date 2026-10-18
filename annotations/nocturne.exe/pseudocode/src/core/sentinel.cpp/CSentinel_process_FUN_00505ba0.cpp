@@ -357,7 +357,7 @@ LAB_005062ff:
       fVar12 = 1.0;
       local_14 = local_1a0.damage_amount;
       pCVar10 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
-                          (&local_b0,(CVector3f *)&DAT_02dd1184,
+                          (&local_b0,&g_ZeroVector.f,
                            (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                            _DAT_01e57220);
       pCVar10 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -370,7 +370,7 @@ LAB_005062ff:
       local_1a0.wielder = (CDemonActor *)this_ptr;
       local_14 = local_1a0.damage_amount;
       pCVar10 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
-                          (&local_50,(CVector3f *)&DAT_02dd1184,
+                          (&local_50,&g_ZeroVector.f,
                            (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                            _DAT_01e57218);
       pCVar10 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240

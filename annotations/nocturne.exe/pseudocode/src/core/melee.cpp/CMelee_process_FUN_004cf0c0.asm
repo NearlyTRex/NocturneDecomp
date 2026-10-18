@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   double DOUBLE_00588473 = 1.15000000000000
 ;   CGore* g_CGore_PTR_005b96c4 = 01c78c7c
-;   undefined4 DAT_02dd1184
+;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -76,7 +76,7 @@ section .text
     ADD ESP,0xc                         ; 004cf149
     MOV ESI,dword ptr [EBX + 0x584]     ; 004cf14c
     PUSH ESI                            ; 004cf152
-    PUSH 0x2dd1184                      ; 004cf153 | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 004cf153 | g_ZeroVector
     LEA EAX,[ESP + 0x1c]                ; 004cf158
     PUSH EAX                            ; 004cf15c
     MOV EDI,dword ptr [0x005b96c4]      ; 004cf15d | g_CGore_PTR_005b96c4

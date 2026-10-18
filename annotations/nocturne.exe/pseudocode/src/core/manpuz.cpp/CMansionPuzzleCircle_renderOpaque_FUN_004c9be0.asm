@@ -14,9 +14,9 @@
 ;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01cc9454
-;   undefined4 DAT_02dd1184
-;   undefined4 DAT_02dd1188
-;   undefined4 DAT_02dd118c
+;   UVector3 g_ZeroVector
+;   undefined4 g_ZeroVector+4
+;   undefined4 g_ZeroVector+8
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60
@@ -70,13 +70,13 @@ section .text
     LEA EBX,[ESP + 0x1c]                ; 004c9c27
     MOV EAX,0x2dd1184                   ; 004c9c2b
     MOV EDX,dword ptr [0x005ae704]      ; 004c9c30 | g_CDemonRenderer_PTR_005ae704
-    FLD float ptr [EAX]                 ; 004c9c36 | DAT_02dd1184
+    FLD float ptr [EAX]                 ; 004c9c36 | g_ZeroVector
     FMUL float ptr [0x005a0020]         ; 004c9c38 | DAT_005a0020
     FISTP dword ptr [EBX]               ; 004c9c3e
-    FLD float ptr [EAX + 0x4]           ; 004c9c40 | DAT_02dd1188
+    FLD float ptr [EAX + 0x4]           ; 004c9c40 | g_ZeroVector+4
     FMUL float ptr [0x005a0020]         ; 004c9c43 | DAT_005a0020
     FISTP dword ptr [EBX + 0x4]         ; 004c9c49
-    FLD float ptr [EAX + 0x8]           ; 004c9c4c | DAT_02dd118c
+    FLD float ptr [EAX + 0x8]           ; 004c9c4c | g_ZeroVector+8
     FMUL float ptr [0x005a0020]         ; 004c9c4f | DAT_005a0020
     FISTP dword ptr [EBX + 0x8]         ; 004c9c55
     LEA EAX,[ESP + 0x1c]                ; 004c9c58

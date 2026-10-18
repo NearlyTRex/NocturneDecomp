@@ -34,50 +34,26 @@
       {
         "category": "other",
         "column": 35,
-        "line": 497,
+        "line": 496,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 497,
+        "line": 496,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 498,
+        "line": 497,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 498,
+        "line": 497,
         "message": "exponent has no digits"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 31,
-        "line": 43,
-        "message": "use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 17,
-        "line": 44,
-        "message": "use of undeclared identifier '_DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 45,
-        "message": "use of undeclared identifier '_DAT_02dd1188'; did you mean 'DAT_02DF1188'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 46,
-        "message": "use of undeclared identifier '_DAT_02dd118c'"
       }
     ],
     "success": false,
@@ -86,19 +62,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 113,
-    "complexity_score": 89,
+    "complexity_score": 68,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 44,
-    "suspect_count": 3,
+    "pseudocode_lines": 43,
+    "suspect_count": 2,
     "suspect_types": [
-      "undefined_data",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 157
+    "total_lines": 156
   },
   "cross_references": [
     {
@@ -152,19 +126,19 @@
     },
     {
       "addr": "02dd1184",
-      "name": "DAT_02dd1184",
-      "type": "undefined4",
+      "name": "g_ZeroVector",
+      "type": "UVector3",
       "value": null
     },
     {
       "addr": "02dd1188",
-      "name": "DAT_02dd1188",
+      "name": "g_ZeroVector+4",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02dd118c",
-      "name": "DAT_02dd118c",
+      "name": "g_ZeroVector+8",
       "type": "undefined4",
       "value": null
     }
@@ -249,24 +223,16 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_02dd1184",
-      "severity": "mild",
-      "text": "if (pCVar1 != (CVector3f *)&DAT_02dd1184) {",
-      "type": "undefined_data"
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 35,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar1->x = g_ZeroVector.f.x;",
+      "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 44,
+      "line": 42,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(this_ptr->bounding_box).min.x = pCVar1->x;",

@@ -124,7 +124,7 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00410490(CBaron *this_ptr,float d
       goto LAB_0041061c;
     case 4:
       pCVar4 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
-                         (&local_84,(CVector3f *)&DAT_02dd1184,
+                         (&local_84,&g_ZeroVector.f,
                           (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                           DAT_0076431c);
       pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -135,7 +135,7 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00410490(CBaron *this_ptr,float d
         local_30.z = pCVar4->z;
       }
       pCVar4 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
-                         (&local_24,(CVector3f *)&DAT_02dd1184,
+                         (&local_24,&g_ZeroVector.f,
                           (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                           DAT_00764320);
       pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240

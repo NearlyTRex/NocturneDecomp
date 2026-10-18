@@ -19,6 +19,7 @@
 #include "types/classes/CSound.h"
 #include "types/classes/CVector3f.h"
 #include "types/structs/SAlphaEntry.h"
+#include "types/structs/SMRGLTextureBasic.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x5B0000
@@ -68,6 +69,9 @@ extern CVector3f CVector3f_005b0678;
 
 // SAlphaEntry[256]
 extern SAlphaEntry g_AlphaTable[256];
+
+// SMRGLTextureBasic
+extern SMRGLTextureBasic g_LoadingMoonGlowTexture;
 
 // WatcomStaticDestructorNode
 extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b6d40;

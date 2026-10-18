@@ -11,7 +11,7 @@
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_02dd1184
+;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60
@@ -71,7 +71,7 @@ section .text
     PUSH EAX                            ; 00482231
     MOV dword ptr [ESP + 0x20],EDX      ; 00482232
     MOV dword ptr [ESP + 0x28],EDX      ; 00482236
-    PUSH 0x2dd1184                      ; 0048223a | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 0048223a | g_ZeroVector
     MOV EDX,dword ptr [0x005ae704]      ; 0048223f | g_CDemonRenderer_PTR_005ae704
     MOV EBP,0x40000000                  ; 00482245
     PUSH EDX                            ; 0048224a | DAT_01b4d738
@@ -79,7 +79,7 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 ; 0048224f
         ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * euler_angles, CVector3f * translation)
     ADD ESP,0xc                         ; 00482254
-    PUSH 0x2dd1184                      ; 00482257 | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 00482257 | g_ZeroVector
     LEA EAX,[ESP + 0x2c]                ; 0048225c
     PUSH EAX                            ; 00482260
     MOV ECX,dword ptr [0x005ae704]      ; 00482261 | g_CDemonRenderer_PTR_005ae704

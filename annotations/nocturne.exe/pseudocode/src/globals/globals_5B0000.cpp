@@ -29,7 +29,7 @@ CGore* g_CGore_PTR_005b96c4 = (CGore*)&g_CGore_01c78c7c;
 CKeys* g_CKeys_PTR_005bac64 = (CKeys*)&g_CKeys_01cc30e4;
 
 // CLevelLoader*
-CLevelLoader* g_CLevelLoader_PTR_005baca0 = (CLevelLoader*)&g_CLevelLoader_01cc3160;
+CLevelLoader* g_CLevelLoader_PTR_005baca0 = (CLevelLoader*)&g_CLevelLoader;
 
 // CMouse*
 CMouse* g_CMouse_PTR_005be060 = (CMouse*)&g_CMouse_01d465c0;
@@ -1590,6 +1590,12 @@ SAlphaEntry g_AlphaTable[256] = {
     }
 };
 
+// SMRGLTextureBasic
+SMRGLTextureBasic g_LoadingMoonGlowTexture = {
+    .base = {.type = 0x0000000D, .count = 0x00000000},
+    .texture_name = "MOONGLOW.RAW"
+};
+
 // WatcomStaticDestructorNode
 WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b6d40 = {
     .next = nullptr,
@@ -1787,7 +1793,7 @@ WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bac90 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_0059fbf0,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CKeyFramedModel_01cc3290
+    .object_instance = (void *)&g_LoadingMoonModel
 };
 WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bad0e = {
     .next = nullptr,

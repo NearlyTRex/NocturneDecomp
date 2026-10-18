@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_vehicle_cpp_CVehicle_process_FUN_0054eae0(CVehicle *this_ptr,float delta_time)
 
@@ -79,10 +78,10 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_0054eae0(CVehicle *this_ptr,f
   local_80 = (this_ptr->base).location.position.z - local_70.z;
   pCVar9 = &this_ptr->world_velocity;
   if (delta_time <= 0.0) {
-    if (pCVar9 != (CVector3f *)&DAT_02dd1184) {
-      pCVar9->x = _DAT_02dd1184;
-      (this_ptr->world_velocity).y = _DAT_02dd1188;
-      (this_ptr->world_velocity).z = _DAT_02dd118c;
+    if ((UVector3 *)pCVar9 != &g_ZeroVector) {
+      pCVar9->x = g_ZeroVector.f.x;
+      (this_ptr->world_velocity).y = g_ZeroVector.f.y;
+      (this_ptr->world_velocity).z = g_ZeroVector.f.z;
     }
   }
   else {

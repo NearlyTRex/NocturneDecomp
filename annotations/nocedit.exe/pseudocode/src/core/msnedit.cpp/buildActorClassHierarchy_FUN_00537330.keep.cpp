@@ -22,7 +22,7 @@ void __cdecl core_msnedit_cpp_buildActorClassHierarchy_FUN_00537330(CStrList *cl
         memset(local_80,0x20,100);
         _sprintf
                   (local_80 + indent_level * 2,"%s\t%d",parent_class_00->class_name,
-                   parent_class_00->type_id);
+                   parent_class_00->latest_version);
         if (parent_class_00->factory_func == (CDemonActor_FactoryFunc *)0x0) {
           strcat(local_80,"\t(abstract)");
         }

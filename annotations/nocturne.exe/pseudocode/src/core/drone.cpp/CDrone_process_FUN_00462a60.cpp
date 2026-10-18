@@ -151,7 +151,7 @@ void __cdecl core_drone_cpp_CDrone_process_FUN_00462a60(CDrone *this_ptr,float d
       fVar10 = 0.4;
       local_14 = local_dc.damage_amount;
       pCVar8 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
-                         (&local_88,(CVector3f *)&DAT_02dd1184,
+                         (&local_88,&g_ZeroVector.f,
                           (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                           this_ptr->bone_indices[0]);
       pCVar8 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -164,7 +164,7 @@ void __cdecl core_drone_cpp_CDrone_process_FUN_00462a60(CDrone *this_ptr,float d
       fVar10 = 0.4;
       local_14 = local_dc.damage_amount;
       pCVar8 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
-                         (&local_4c,(CVector3f *)&DAT_02dd1184,
+                         (&local_4c,&g_ZeroVector.f,
                           (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                           this_ptr->bone_indices[1]);
       pCVar8 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240

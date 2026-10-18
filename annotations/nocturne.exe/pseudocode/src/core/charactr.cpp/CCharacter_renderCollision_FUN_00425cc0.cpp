@@ -220,9 +220,9 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00425cc0(CCharacte
     local_1c = local_1c + 1;
     iVar9 = iVar9 + 0x60;
   } while (local_1c < 0x19);
-  local_c0.x = (int)ROUND(_DAT_02dd1184 * _DAT_0059b070);
-  local_c0.y = (int)ROUND(_DAT_02dd1188 * _DAT_0059b070);
-  local_c0.z = (int)ROUND(_DAT_02dd118c * _DAT_0059b070);
+  local_c0.x = (int)ROUND(g_ZeroVector.f.x * _DAT_0059b070);
+  local_c0.y = (int)ROUND(g_ZeroVector.f.y * _DAT_0059b070);
+  local_c0.z = (int)ROUND(g_ZeroVector.f.z * _DAT_0059b070);
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
             (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex,&local_c0);
   pCVar5 = g_CDemonRenderer_PTR_005ae704;

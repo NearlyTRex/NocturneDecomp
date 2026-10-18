@@ -29,7 +29,7 @@
 ;   undefined4 g_CDemonSet_01e57284.light_direction.y
 ;   undefined4 g_CDemonSet_01e57284.light_direction.z
 ;   undefined4 g_CDemonSet_01e57284.ambient_base_quick
-;   undefined4 DAT_02dd1184
+;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00453040
@@ -55,7 +55,7 @@ section .text
         ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_0052ee70()
     CALL engine_special.cpp_clearZBufferNative_FUN_0052eed4 ; 004df04c
         ;   XREF to: 0052eed4 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearZBufferNative_FUN_0052eed4()
-    PUSH 0x2dd1184                      ; 004df051 | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 004df051 | g_ZeroVector
     MOV EDX,dword ptr [0x005ae704]      ; 004df056 | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 004df05c | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700 ; 004df05d
@@ -67,7 +67,7 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_00460c00 ; 004df071
         ;   XREF to: 00460c00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_00460c00(CDemonRenderer * this_ptr, float field_of_view)
     ADD ESP,0x8                         ; 004df076
-    PUSH 0x2dd1184                      ; 004df079 | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 004df079 | g_ZeroVector
     MOV EBX,dword ptr [0x005ae704]      ; 004df07e | g_CDemonRenderer_PTR_005ae704
     PUSH EBX                            ; 004df084 | DAT_01b4d738
     MOV EBP,0x42100000                  ; 004df085

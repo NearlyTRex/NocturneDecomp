@@ -22,9 +22,9 @@
 ;   undefined4 DAT_005b7650
 ;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   CDemonSet g_CDemonSet_01e57284
-;   undefined4 DAT_02dd1184
-;   undefined4 DAT_02dd1188
-;   undefined4 DAT_02dd118c
+;   UVector3 g_ZeroVector
+;   undefined4 g_ZeroVector+4
+;   undefined4 g_ZeroVector+8
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000
@@ -109,11 +109,11 @@ section .text
     CMP EAX,0x2dd1184                   ; 0041697f
     JZ 0x004169a0                       ; 00416984
         ;   XREF to: 004169a0 (CONDITIONAL_JUMP)  ; LAB_004169a0
-    MOV EDX,dword ptr [0x02dd1184]      ; 00416986 | DAT_02dd1184
+    MOV EDX,dword ptr [0x02dd1184]      ; 00416986 | g_ZeroVector
     MOV dword ptr [EAX],EDX             ; 0041698c
-    MOV EDX,dword ptr [0x02dd1188]      ; 0041698e | DAT_02dd1188
+    MOV EDX,dword ptr [0x02dd1188]      ; 0041698e | g_ZeroVector+4
     MOV dword ptr [EAX + 0x4],EDX       ; 00416994
-    MOV EDX,dword ptr [0x02dd118c]      ; 00416997 | DAT_02dd118c
+    MOV EDX,dword ptr [0x02dd118c]      ; 00416997 | g_ZeroVector+8
     MOV dword ptr [EAX + 0x8],EDX       ; 0041699d
     ADD EBX,0x154                       ; 004169a0
         ;   Label: LAB_004169a0

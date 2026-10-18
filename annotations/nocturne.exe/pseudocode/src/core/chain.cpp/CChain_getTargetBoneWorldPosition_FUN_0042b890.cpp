@@ -14,7 +14,7 @@ CVector3f * __cdecl core_chain_cpp_CChain_getTargetBoneWorldPosition_FUN_0042b89
   
   input_local_point =
        core_xform_cpp_transformVector3x4_FUN_0055a8b0
-                 (&local_14,(CVector3f *)&DAT_02dd1184,
+                 (&local_14,&g_ZeroVector.f,
                   (this_ptr->target->model).bone_transform.bone_model_matrices +
                   this_ptr->target_bone);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240

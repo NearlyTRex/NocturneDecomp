@@ -44,8 +44,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_buildCollisionTriList_FUN_00453ff0(
       g_CurrentLineNumber = 1136;
       core_main_c_displayErrorAndQuit_FUN_004c8440("CKeyFramedModel::buildCollisionTriList - out of memory");
     }
-    core_dmodel_cpp_CKeyFramedModel_populateCollisionList_FUN_00454100
-              (this_ptr,(CVector3f *)&DAT_02dd1184);
+    core_dmodel_cpp_CKeyFramedModel_populateCollisionList_FUN_00454100(this_ptr,&g_ZeroVector.f);
   }
   return;
 }

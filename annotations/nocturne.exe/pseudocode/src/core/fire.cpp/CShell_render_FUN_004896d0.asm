@@ -17,7 +17,7 @@
 ;   undefined4 DAT_007f7370
 ;   undefined4 DAT_01b4d738
 ;   CDemonSet g_CDemonSet_01e57284
-;   undefined4 DAT_02dd1184
+;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670
@@ -101,8 +101,8 @@ section .text
     ADD ESP,0xc                         ; 0048975e
     PUSH 0x0                            ; 00489761
         ;   Label: LAB_00489761
-    PUSH 0x2dd1184                      ; 00489763 | DAT_02dd1184
-    PUSH 0x2dd1184                      ; 00489768 | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 00489763 | g_ZeroVector
+    PUSH 0x2dd1184                      ; 00489768 | g_ZeroVector
     LEA EBX,[ESI + 0x38]                ; 0048976d
     PUSH EBX                            ; 00489770
     PUSH ESI                            ; 00489771

@@ -277,13 +277,13 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_00460c00 ; 004c0d81
         ;   XREF to: 00460c00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_00460c00(CDemonRenderer * this_ptr, float field_of_view)
     ADD ESP,0x8                         ; 004c0d86
-    PUSH 0x2dd1184                      ; 004c0d89 | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 004c0d89 | g_ZeroVector
     MOV EDI,dword ptr [0x005ae704]      ; 004c0d8e | g_CDemonRenderer_PTR_005ae704
     PUSH EDI                            ; 004c0d94 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_00460780 ; 004c0d95
         ;   XREF to: 00460780 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_00460780(CDemonRenderer * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 004c0d9a
-    PUSH 0x2dd1184                      ; 004c0d9d | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 004c0d9d | g_ZeroVector
     MOV EAX,[0x005ae704]                ; 004c0da2 | g_CDemonRenderer_PTR_005ae704
     PUSH EAX                            ; 004c0da7 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00 ; 004c0da8
@@ -386,7 +386,7 @@ section .text
     ADD ESP,0xc                         ; 004c0ea6
     LEA EAX,[EBP + -0x4c]               ; 004c0ea9
     PUSH EAX                            ; 004c0eac
-    PUSH 0x2dd1184                      ; 004c0ead | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 004c0ead | g_ZeroVector
     MOV ECX,dword ptr [0x005ae704]      ; 004c0eb2 | g_CDemonRenderer_PTR_005ae704
     PUSH ECX                            ; 004c0eb8 | DAT_01b4d738
     MOV EBX,dword ptr [EBP + 0x2c]      ; 004c0eb9

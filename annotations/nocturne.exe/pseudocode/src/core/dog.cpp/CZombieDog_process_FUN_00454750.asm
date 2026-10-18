@@ -353,7 +353,7 @@ section .text
     ADD EAX,EDX                         ; 00454a4f
     PUSH 0x3f333333                     ; 00454a51
     PUSH EAX                            ; 00454a56
-    PUSH 0x2dd1184                      ; 00454a57 | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 00454a57 | g_ZeroVector
     LEA EAX,[EBP + -0xe]                ; 00454a5c
     PUSH EAX                            ; 00454a5f
     CALL core_xform.cpp_transformVector3x4_FUN_0055a8b0 ; 00454a60

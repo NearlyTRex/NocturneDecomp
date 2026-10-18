@@ -251,7 +251,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00413800(CBatman *this_ptr,floa
       fVar14 = 0.4;
       local_14 = local_188.damage_amount;
       pCVar10 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
-                          (&local_104,(CVector3f *)&DAT_02dd1184,
+                          (&local_104,&g_ZeroVector.f,
                            (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                            DAT_00764610);
       pCVar10 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240

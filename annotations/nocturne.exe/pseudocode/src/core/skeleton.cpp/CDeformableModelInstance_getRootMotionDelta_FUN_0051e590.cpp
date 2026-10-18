@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CVector3f * __cdecl core_skeleton_cpp_CDeformableModelInstance_getRootMotionDelta_FUN_0051e590(CDeformableModelInstance *this_ptr,CVector3f *output_buffer,float start_frame,float end_frame)
 
 {
@@ -31,9 +29,9 @@ CVector3f * __cdecl core_skeleton_cpp_CDeformableModelInstance_getRootMotionDelt
   int local_18;
   
   if (end_frame <= start_frame) {
-    output_buffer->x = _DAT_02dd1184;
-    output_buffer->y = _DAT_02dd1188;
-    output_buffer->z = _DAT_02dd118c;
+    output_buffer->x = g_ZeroVector.f.x;
+    output_buffer->y = g_ZeroVector.f.y;
+    output_buffer->z = g_ZeroVector.f.z;
     return output_buffer;
   }
   pCVar12 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(this_ptr);

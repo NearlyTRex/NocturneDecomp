@@ -63,7 +63,7 @@
 ;   CGore* g_CGore_PTR_005b96c4 = 01c78c7c
 ;   CConsole g_CConsole_0077ad0c
 ;   undefined4 DAT_01cae1e8
-;   undefined4 DAT_02dd1184
+;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -364,7 +364,7 @@ section .text
     ADD EAX,EDX                         ; 004b922b
     PUSH 0x3ecccccd                     ; 004b922d
     PUSH EAX                            ; 004b9232
-    PUSH 0x2dd1184                      ; 004b9233 | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 004b9233 | g_ZeroVector
     LEA EAX,[EBP + 0x3e]                ; 004b9238
     FLD float ptr [EBP + 0x76]          ; 004b923b
     PUSH EAX                            ; 004b923e

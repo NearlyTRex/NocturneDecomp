@@ -5111,7 +5111,7 @@ WatcomDestructorCall g_WatcomDestructorCall_0059f7cc = {
 WatcomDestructorCall g_WatcomDestructorCall_0059fbf0 = {
     .delete_flags = 0x00000004,
     .destructor_func = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_dmodel_cpp_CKeyFramedModel_dtor_FUN_00452630,
-    .object_instance = (void *)&g_CKeyFramedModel_01cc3290
+    .object_instance = (void *)&g_LoadingMoonModel
 };
 WatcomDestructorCall g_WatcomDestructorCall_0059ffd0 = {
     .delete_flags = 0x00000004,

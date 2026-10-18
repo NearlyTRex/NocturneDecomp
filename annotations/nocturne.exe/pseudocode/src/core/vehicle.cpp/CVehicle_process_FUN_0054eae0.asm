@@ -291,11 +291,11 @@ section .text
         ;   Label: LAB_0054ede1
     JZ 0x0054ec89                       ; 0054ede7
         ;   XREF to: 0054ec89 (CONDITIONAL_JUMP)  ; LAB_0054ec89
-    MOV EAX,[0x02dd1184]                ; 0054eded | DAT_02dd1184
+    MOV EAX,[0x02dd1184]                ; 0054eded | g_ZeroVector
     MOV dword ptr [EDX],EAX             ; 0054edf2
-    MOV EAX,[0x02dd1188]                ; 0054edf4 | DAT_02dd1188
+    MOV EAX,[0x02dd1188]                ; 0054edf4 | g_ZeroVector+4
     MOV dword ptr [EDX + 0x4],EAX       ; 0054edf9
-    MOV EAX,[0x02dd118c]                ; 0054edfc | DAT_02dd118c
+    MOV EAX,[0x02dd118c]                ; 0054edfc | g_ZeroVector+8
     MOV dword ptr [EDX + 0x8],EAX       ; 0054ee01
     JMP 0x0054ec89                      ; 0054ee04
         ;   XREF to: 0054ec89 (UNCONDITIONAL_JUMP)  ; LAB_0054ec89

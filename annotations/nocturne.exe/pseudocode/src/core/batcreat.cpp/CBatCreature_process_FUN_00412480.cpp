@@ -275,7 +275,7 @@ LAB_0041290b:
       fVar9 = 0.4;
       local_14 = local_13c.damage_amount;
       pCVar7 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
-                         (&local_ac,(CVector3f *)&DAT_02dd1184,
+                         (&local_ac,&g_ZeroVector.f,
                           (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                           DAT_007645a4);
       pCVar7 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240

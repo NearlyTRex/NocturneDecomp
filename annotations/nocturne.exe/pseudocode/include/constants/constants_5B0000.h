@@ -225,7 +225,6 @@ static TerminatedCString s_INV3D_RAW_005bac3c = "INV3D.RAW";
 static TerminatedCString s_CKeyActor_005bac54 = "$CKeyActor$$";
 static TerminatedCString s_CLadder_005bac70 = "$CLadder$$";
 static TerminatedCString s_CLarva_005bac84 = "$CLarva$$";
-static TerminatedCString s_MOONGLOW_RAW_005bacac = "MOONGLOW.RAW";
 static TerminatedCString s_CLever_005bacc4 = "$CLever$$";
 static TerminatedCString s_CLightGun_005bace8 = "$CLightGun$$";
 static TerminatedCString s_CLightCone_005bad00 = "$CLightCone$$";

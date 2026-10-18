@@ -15,8 +15,8 @@ CDemonActorType * __cdecl core_actor_cpp_registerActorClass_FUN_0040c2e0(CDemonA
 
   strcpy(this_ptr->class_name, class_name);
   this_ptr->factory_func = factor_func;
-  this_ptr->type_info = max_version;
-  this_ptr->type_id = version;
+  this_ptr->archive_version = max_version;
+  this_ptr->latest_version = version;
   this_ptr->parent_type = parent_class_info;
   uVar4 = 0;
   for (char *p = this_ptr->class_name; *p != '\0'; p++) {

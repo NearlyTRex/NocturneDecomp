@@ -60,7 +60,7 @@
 ;   TerminatedCString s_new_0059877e
 ;   float FLOAT_00598782 = 0.5
 ;   double DOUBLE_00598786 = 0.400000000000000
-;   undefined4 DAT_02dd1184
+;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
 ;   core_actor.cpp_CVector3f_ctor_FUN_0040e160
@@ -118,7 +118,7 @@ section .text
     LEA EAX,[EBP + -0xe]                ; 00560d57
         ;   Label: LAB_00560d57
     PUSH EAX                            ; 00560d5a
-    PUSH 0x2dd1184                      ; 00560d5b | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 00560d5b | g_ZeroVector
     LEA EAX,[EBP + 0xffffff1a]          ; 00560d60
     PUSH EAX                            ; 00560d66
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0 ; 00560d67

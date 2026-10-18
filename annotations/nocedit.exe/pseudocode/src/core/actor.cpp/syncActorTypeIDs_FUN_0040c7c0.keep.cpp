@@ -13,8 +13,8 @@ void __cdecl core_actor_cpp_syncActorTypeIDs_FUN_0040c7c0(void)
   int iVar2;
 
   for (iVar2 = 0; iVar2 < g_NumActorClassTypes; iVar2 = iVar2 + 1) {
-    *(int *)g_ActorClassRegistrations[iVar2]->type_info =
-         g_ActorClassRegistrations[iVar2]->type_id;
+    *(int *)g_ActorClassRegistrations[iVar2]->archive_version =
+         g_ActorClassRegistrations[iVar2]->latest_version;
   }
   return;
 }

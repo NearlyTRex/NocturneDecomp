@@ -24,7 +24,7 @@
 ;   float FLOAT_0057a382 = 20
 ;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 g_CDemonSet_01e57284.waypoint_count
-;   undefined4 DAT_02dd1184
+;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
@@ -260,7 +260,7 @@ section .text
     PUSH 0x0                            ; 0042a495
         ;   Label: LAB_0042a495
     PUSH 0x0                            ; 0042a497
-    PUSH 0x2dd1184                      ; 0042a499 | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 0042a499 | g_ZeroVector
     MOV EAX,EBX                         ; 0042a49e
     MOV EBX,dword ptr [EBX + 0x14c]     ; 0042a4a0
     PUSH EAX                            ; 0042a4a6
