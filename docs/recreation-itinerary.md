@@ -22,7 +22,7 @@ functions don't count as done. Sizes are in instructions.
 | 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 20 | 5 | 80.0% |
 | 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 68 | 31 | 56.6% |
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
-| 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 1 | 0 | 1.7% |
+| 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 4 | 2 | 7.1% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 17 | 52 | 5565 | 1 | 0 | 1.9% |
 | 11 | `CScript::loadScript` | 63 | 579 | 67400 | 6 | 1 | 1.0% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 2 | 0 | 7.6% |
@@ -40,13 +40,13 @@ functions don't count as done. Sizes are in instructions.
 | 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 1 | 0 | 0.3% |
 | 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 3 | 0 | 1.0% |
 | 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 24 | 0 | 8.0% |
-| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 0 | 0 | 0.0% |
+| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 1 | 0 | 0.3% |
 | 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 6 | 2 | 2.1% |
 | 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 2 | 0 | 0.7% |
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 2 | 0 | 0.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 | 0 | 3.6% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4489** | **402860** | **526** | **53** | **11.7%** |
+| | **All** | | **4489** | **402860** | **530** | **55** | **11.8%** |
 
 ## Step 0: Math value types
 
@@ -940,16 +940,19 @@ functions don't count as done. Sizes are in instructions.
 - class `CEventList`
   - [ ] `resetGameFlags` 0x004b0460 (3)
 
-### `engine/drender.cpp` (3 functions, 63 instructions, 0 done, 0 partial)
+### `engine/drender.cpp` (3 functions, 63 instructions, 2 done, 1 partial)
 - class `CDemonRenderer`
-  - [ ] `renderTexturedDirect` 0x0048ae10 (47)
-  - [ ] `pushViewport` 0x0048c890 (15)
-  - [ ] `popViewport` 0x0048c8c0 (1)
+  - [~] `renderTexturedDirect` 0x0048ae10 (47)
+    - deferred: the shadow pass's depth-only draw, with setShadowPass's callers
+    - deferred: the scanline's light level and solid colour, 0 until set, with the scene camera's fog setup
+  - [x] `pushViewport` 0x0048c890 (15)
+  - [x] `popViewport` 0x0048c8c0 (1)
 
-### `core/level.cpp` (2 functions, 610 instructions, 0 done, 0 partial)
+### `core/level.cpp` (2 functions, 610 instructions, 1 done, 1 partial)
 - class `CLevelLoader`
-  - [ ] `show` 0x00503dc0 (188)
-  - [ ] `update` 0x00504160 (422)
+  - [x] `show` 0x00503dc0 (188)
+  - [~] `update` 0x00504160 (422)
+    - deferred: switching the set to quick lighting while the moon is drawn and back after, with setRenderingMode
 
 ### `core/gore.cpp` (4 functions, 168 instructions, 0 done, 0 partial)
 - class `CGore`
@@ -5105,11 +5108,11 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncLarva` 0x00502f50 (12)
   - [ ] `staticInit` 0x00502f20 (9)
 
-### `core/level.cpp` (2 functions, 13 instructions, 0 done, 0 partial)
+### `core/level.cpp` (2 functions, 13 instructions, 1 done, 0 partial)
 - class `CLevelLoader`
   - [ ] `reset` 0x00503db0 (3)
 - free functions
-  - [ ] `staticInit` 0x00503d80 (10)
+  - [x] `staticInit` 0x00503d80 (10)
 
 ### `core/lever.cpp` (14 functions, 639 instructions, 0 done, 0 partial)
 - class `CLever`

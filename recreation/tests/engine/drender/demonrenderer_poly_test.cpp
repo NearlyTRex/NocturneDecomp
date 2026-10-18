@@ -1,6 +1,7 @@
 #include "common/render/renderstate.h"
 #include "engine/2d/2d.h"
 #include "engine/drender/demonrenderer.h"
+#include "platform/mrglheaderprimitive.h"
 #include "platform/mrglprimitivequad.h"
 #include "platform/projectedvertex.h"
 #include "platform/rendervertex.h"
@@ -18,6 +19,7 @@
 namespace nocturne::engine {
 namespace {
 
+using platform::SMRGLHeaderPrimitive;
 using platform::SMRGLPrimitiveQuad;
 using platform::SRenderVertex;
 using ::testing::_;
@@ -93,6 +95,33 @@ TEST_F(CDemonRendererPolyTest, EachEntryPointDrawsWithItsOwnFlags) {
     EXPECT_EQ(hardware_flags_,
               (std::vector<int>{CDemonRenderer::kDefaultTexturedFlags, common::kRenderTextured,
                                 kAlphaBlendedFlags, kDestReadBlendFlags}));
+}
+
+// The buffer's corners keep the texture coordinates they hold.
+TEST_F(CDemonRendererPolyTest, ADirectPolygonDrawsTheBuffersCornersAsTheyAre) {
+    startRenderer();
+    vertex_buffer_[2].u = 7;
+    const SMRGLHeaderPrimitive prim{.surface_normal = {}, .vertex_indices = {1, 2, 3}};
+    demon_renderer_.renderTexturedDirect(prim, -1);
+    demon_renderer_.renderTexturedDirect(prim, common::kRenderTextured);
+    EXPECT_EQ(vertex_buffer_[2].u, 7);
+    ASSERT_EQ(hardware_corners_.size(), 2U);
+    EXPECT_EQ(
+        hardware_corners_[0],
+        (std::vector<SRenderVertex *>{&vertex_buffer_[1], &vertex_buffer_[2], &vertex_buffer_[3]}));
+    EXPECT_EQ(hardware_flags_,
+              (std::vector<int>{CDemonRenderer::kDefaultTexturedFlags, common::kRenderTextured}));
+}
+
+TEST_F(CDemonRendererPolyTest, ADirectPolygonFacingAwayIsSkippedUnlessPlaneCullingIsOff) {
+    startRenderer();
+    const SMRGLHeaderPrimitive prim{.surface_normal = {.a = 1, .d = 1},
+                                    .vertex_indices = {1, 2, 3}};
+    demon_renderer_.renderTexturedDirect(prim, -1);
+    EXPECT_TRUE(hardware_corners_.empty());
+    demon_renderer_.setPlaneCullingEnabled(false);
+    demon_renderer_.renderTexturedDirect(prim, -1);
+    EXPECT_EQ(hardware_corners_.size(), 1U);
 }
 
 TEST_F(CDemonRendererPolyTest, APolygonFacingAwayIsSkipped) {

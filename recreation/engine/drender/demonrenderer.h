@@ -40,7 +40,9 @@ public:
     void renderSolidColorPoly(SMRGLPrimitivePoly *poly);
     void renderZPrepassPoly(SMRGLPrimitivePoly *poly);
     int renderDepthProfiledDirect(platform::SMRGLHeaderPrimitive *prim);
-    void renderTexturedDirect(platform::SMRGLHeaderPrimitive *prim, int render_flags);
+    // Skips a polygon facing away while plane culling is on, and draws the buffer's corners
+    // through the perspective scanline; -1 takes kDefaultTexturedFlags.
+    void renderTexturedDirect(const platform::SMRGLHeaderPrimitive &prim, int render_flags);
     // These three skip a polygon facing away while plane culling is on, and give each corner the
     // polygon's texture coordinates before drawing it through the perspective scanline.
     void renderTexturedPoly(const platform::SMRGLPrimitiveQuad &poly, int render_flags);
@@ -78,6 +80,7 @@ public:
     common::CVector3i *getCameraRotationFixed(common::CVector3i *output);
     common::CVector3f *getCameraRotationRadians(common::CVector3f *output);
     float calculateProjectionFactor();
+    // Draws into the rectangle as its own 3D window until the matching pop.
     void pushViewport(int x, int y, int width, int height);
     void popViewport();
     void renderCustomScanline(platform::SMRGLHeaderPrimitive *prim,
@@ -115,7 +118,7 @@ public:
     int depthTest(platform::SRenderVertex *vertex_ptr);
 
 private:
-    [[nodiscard]] bool isFacing(const platform::SMRGLPrimitiveQuad &poly) const;
+    [[nodiscard]] bool isFacing(const platform::SClipPlane &surface_normal) const;
     // The polygon's corner indices, each corner given the polygon's texture coordinates.
     std::vector<int> takeCorners(const platform::SMRGLPrimitiveQuad &poly);
     [[nodiscard]] SPolygonState getPerspectiveState(std::uint32_t render_flags) const;

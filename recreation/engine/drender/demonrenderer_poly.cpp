@@ -10,6 +10,8 @@
 #include "engine/special/scanlinemode.h"
 #include "engine/special/special.h"
 #include "engine/zraster/zraster.h"
+#include "platform/clipplane.h"
+#include "platform/mrglheaderprimitive.h"
 #include "platform/mrglprimitivequad.h"
 #include "platform/rendervertex.h"
 
@@ -36,8 +38,8 @@ constexpr int kReplaceWWithDepth = 6;
 
 } // namespace
 
-bool CDemonRenderer::isFacing(const SMRGLPrimitiveQuad &poly) const {
-    return !plane_culling_enabled_ || three_d_.isVisiblePlane(poly.surface_normal);
+bool CDemonRenderer::isFacing(const platform::SClipPlane &surface_normal) const {
+    return !plane_culling_enabled_ || three_d_.isVisiblePlane(surface_normal);
 }
 
 std::vector<int> CDemonRenderer::takeCorners(const SMRGLPrimitiveQuad &poly) {
@@ -105,6 +107,20 @@ void CDemonRenderer::clipAndFillPoly(std::span<const int> vertex_indices,
     }
 }
 
+// deferred: the shadow pass's depth-only draw, with setShadowPass's callers
+// deferred: the scanline's light level and solid colour, 0 until set, with the scene camera's
+//   fog setup
+// nocedit 0x0048ae10
+void CDemonRenderer::renderTexturedDirect(const platform::SMRGLHeaderPrimitive &prim,
+                                          int render_flags) {
+    if (!isFacing(prim.surface_normal)) {
+        return;
+    }
+    clipAndFillPoly(prim.vertex_indices,
+                    getPerspectiveState(static_cast<std::uint32_t>(
+                        render_flags == -1 ? kDefaultTexturedFlags : render_flags)));
+}
+
 // deferred: handing the polygon to processQuadPrimitive while texture capture is on, with
 //   setTextureCaptureMode's callers
 // deferred: the shadow pass's depth-only draw, with setShadowPass's callers
@@ -114,7 +130,7 @@ void CDemonRenderer::clipAndFillPoly(std::span<const int> vertex_indices,
 //   fog setup
 // nocedit 0x0048aeb0
 void CDemonRenderer::renderTexturedPoly(const SMRGLPrimitiveQuad &poly, int render_flags) {
-    if (!isFacing(poly)) {
+    if (!isFacing(poly.surface_normal)) {
         return;
     }
     const std::vector<int> vertex_indices = takeCorners(poly);
@@ -130,7 +146,7 @@ void CDemonRenderer::renderTexturedPoly(const SMRGLPrimitiveQuad &poly, int rend
 //   fog setup
 // nocedit 0x0048b1e0
 void CDemonRenderer::renderAlphaBlendedPoly(const SMRGLPrimitiveQuad &poly) {
-    if (!isFacing(poly)) {
+    if (!isFacing(poly.surface_normal)) {
         return;
     }
     const std::vector<int> vertex_indices = takeCorners(poly);
@@ -144,7 +160,7 @@ void CDemonRenderer::renderAlphaBlendedPoly(const SMRGLPrimitiveQuad &poly) {
 //   fog setup
 // nocedit 0x0048b970
 void CDemonRenderer::renderDestReadBlendPoly(const SMRGLPrimitiveQuad &poly) {
-    if (!isFacing(poly)) {
+    if (!isFacing(poly.surface_normal)) {
         return;
     }
     std::vector<const SRenderVertex *> corners;
