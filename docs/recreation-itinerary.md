@@ -22,7 +22,7 @@ functions don't count as done. Sizes are in instructions.
 | 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 20 | 5 | 80.0% |
 | 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 68 | 31 | 56.6% |
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
-| 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 23 | 5 | 41.0% |
+| 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 25 | 8 | 44.6% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 17 | 52 | 5565 | 1 | 0 | 1.9% |
 | 11 | `CScript::loadScript` | 63 | 579 | 67400 | 10 | 1 | 1.7% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 2 | 0 | 7.6% |
@@ -46,7 +46,7 @@ functions don't count as done. Sizes are in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 2 | 0 | 0.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 | 0 | 3.6% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4489** | **402860** | **556** | **58** | **12.3%** |
+| | **All** | | **4489** | **402860** | **558** | **61** | **12.4%** |
 
 ## Step 0: Math value types
 
@@ -1007,7 +1007,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `doCheckForInvalidPointers` 0x0040ac80 (193)
   - [ ] `updateOrientationMatrix` 0x00408c10 (30)
   - [~] `ctor` 0x004088b0 (88)
-    - deferred: the defaults the constructor gives position, orientation and its matrix, scale, creation, platform, rendering, health and footstep fields, with the steps that read them
+    - deferred: the defaults the constructor gives the orientation's matrix, and the scale, creation, platform, rendering, health and footstep fields, with the steps that read them
 - free functions
   - [x] `getActorClassByName` 0x0040c3c0 (45)
   - [x] `createActorByName` 0x0040c430 (51)
@@ -1026,9 +1026,9 @@ functions don't count as done. Sizes are in instructions.
 ### `core/hero.cpp` (1 functions, 8 instructions, 0 done, 1 partial)
 - class `CHeroPlaceholder`
   - [~] `ctor` 0x004f3c00 (8)
-    - deferred: drawing it transparent and its hero index starting at 0, with the steps that read them
+    - deferred: drawing it transparent, with the set's renderable list
 
-### `core/mission.cpp` (13 functions, 995 instructions, 6 done, 1 partial)
+### `core/mission.cpp` (13 functions, 995 instructions, 8 done, 4 partial)
 - class `CDemonMission`
   - [x] `removeActorFromList` 0x00523be0 (67)
   - [ ] `buildSetActorList` 0x00523e60 (50)
@@ -1037,15 +1037,23 @@ functions don't count as done. Sizes are in instructions.
     - deferred: rebuilding the set's actor lists after, with the set's per-frame readers
     - deferred: clearing the hero count, actors_prepared and the delete queue, with createHeros, prepareAllActors and markActorToDelete
     - deferred: committing the raytracer's shadow voxels and resetting the path maps, with the raytracer and the path maps
-  - [ ] `clearMissionData` 0x00522d30 (20)
+  - [~] `clearMissionData` 0x00522d30 (20)
+    - deferred: clearing the set count, with loadSet
+    - deferred: clearing has_inventory_actors, next_inventory_actor and actor_lookup_count, with archiveActor, getNextLoadedInventoryActor and CInventory::load
   - [x] `findActorByName` 0x00524030 (24)
   - [x] `generateUniqueActorName` 0x00524660 (65)
   - [x] `generateActorName` 0x00524700 (39)
   - [x] `addActorToList` 0x00523b70 (31)
-  - [ ] `freeAllAssets` 0x005248e0 (13)
-  - [ ] `readMissionFile` 0x00522eb0 (432)
-  - [ ] `ensureHeroPlaceholder` 0x00524c20 (153)
-  - [ ] `load` 0x00522d90 (51)
+  - [~] `freeAllAssets` 0x005248e0 (13)
+    - deferred: freeing the keyframed models, deformable models and skeletons the mission's actors loaded, with their pools
+  - [~] `readMissionFile` 0x00522eb0 (432)
+    - deferred: noting each class's saved version for archive() to read, and resetting them first, with the archive helpers
+    - deferred: keeping the set names, with loadSet
+    - deferred: recording each actor in the table archives refer to actors by, and where the carried items start, with archiveActor and CInventory::load
+    - deferred: taking each hero's carried items off the list, with CHero
+    - deferred: reading the blood pools and splats the file ends with, and forgetting the current set, with CGore's renderers and loadSet
+  - [x] `ensureHeroPlaceholder` 0x00524c20 (153)
+  - [x] `load` 0x00522d90 (51)
 
 ## Step 10: `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet`
 

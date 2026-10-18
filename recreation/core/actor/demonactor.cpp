@@ -48,7 +48,7 @@ STag readTag(common::CTextScanner &scanner, char brace) {
 constinit const CDemonActorType CDemonActor::kType =
     makeActorType("CDemonActor", nullptr, nullptr, kVersion);
 
-// deferred: the defaults the constructor gives position, orientation and its matrix, scale,
+// deferred: the defaults the constructor gives the orientation's matrix, and the scale,
 //   creation, platform, rendering, health and footstep fields, with the steps that read them
 // nocedit 0x004088b0
 CDemonActor::CDemonActor() = default;
@@ -68,6 +68,22 @@ const std::string &CDemonActor::getActorName() const {
 
 void CDemonActor::setActorName(std::string_view actor_name) {
     actor_name_ = actor_name;
+}
+
+const CLocation &CDemonActor::getLocation() const {
+    return location_;
+}
+
+void CDemonActor::setLocation(const CLocation &location) {
+    location_ = location;
+}
+
+const common::CVector3f &CDemonActor::getOrientation() const {
+    return orientation_;
+}
+
+void CDemonActor::setOrientation(const common::CVector3f &orientation) {
+    orientation_ = orientation;
 }
 
 // The original also quit on a read error after the end tag, which text in memory can't have.

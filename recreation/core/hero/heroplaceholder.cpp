@@ -9,8 +9,7 @@ namespace nocturne::core {
 constinit const CDemonActorType CHeroPlaceholder::kType =
     makeActorType("CHeroPlaceholder", &CDemonActor::kType, &CHeroPlaceholder::create, 1);
 
-// deferred: drawing it transparent and its hero index starting at 0, with the steps that read
-//   them
+// deferred: drawing it transparent, with the set's renderable list
 // nocedit 0x004f3c00
 CHeroPlaceholder::CHeroPlaceholder() = default;
 
@@ -25,6 +24,14 @@ const CDemonActorType &CHeroPlaceholder::getActorType() const {
 // nocedit 0x004f3bc0
 std::unique_ptr<CDemonActor> CHeroPlaceholder::create() {
     return std::make_unique<CHeroPlaceholder>();
+}
+
+int CHeroPlaceholder::getIndex() const {
+    return index_;
+}
+
+void CHeroPlaceholder::setIndex(int index) {
+    index_ = index;
 }
 
 } // namespace nocturne::core

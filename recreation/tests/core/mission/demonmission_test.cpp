@@ -1,6 +1,7 @@
 #include "core/actor/demonactor.h"
 #include "core/actor/demonactortype.h"
 #include "core/mission/demonmission.h"
+#include "tests/mocks/core/missionfixture.h"
 #include "tests/mocks/core/testactor.h"
 
 #include <gtest/gtest.h>
@@ -24,10 +25,12 @@ TEST(CDemonMission, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDemonMission::reset), void (CDemonMission::*)()>);
     static_assert(
         std::is_same_v<decltype(&CDemonMission::clearMission), void (CDemonMission::*)()>);
-    static_assert(
-        std::is_same_v<decltype(&CDemonMission::load), void (CDemonMission::*)(char *, int)>);
+    static_assert(std::is_same_v<decltype(&CDemonMission::load),
+                                 void (CDemonMission::*)(std::string_view, bool)>);
     static_assert(std::is_same_v<decltype(&CDemonMission::readMissionFile),
-                                 void (CDemonMission::*)(std::FILE *, int)>);
+                                 void (CDemonMission::*)(common::CTextScanner &, bool)>);
+    static_assert(
+        std::is_same_v<decltype(&CDemonMission::freeAllAssets), void (CDemonMission::*)()>);
     static_assert(std::is_same_v<decltype(&CDemonMission::getNextLoadedInventoryActor),
                                  CDemonActor *(CDemonMission::*)(char *)>);
     static_assert(
@@ -69,28 +72,27 @@ TEST(CDemonMission, PublicInterface) {
         std::is_same_v<decltype(&CDemonMission::countDamageableEnemies), int (CDemonMission::*)()>);
 }
 
-TEST(CDemonMission, StartsWithNoMissionAndNoActors) {
-    const CDemonMission mission;
-    EXPECT_FALSE(mission.isInEditor());
-    EXPECT_EQ(mission.getMissionVersionNum(), -1);
-    EXPECT_EQ(mission.getMissionName(), "");
-    EXPECT_EQ(mission.getPendingMissionName(), "");
-    EXPECT_TRUE(mission.getActors().empty());
+class CDemonMissionTest : public CMissionFixture {};
+
+TEST_F(CDemonMissionTest, StartsWithNoMissionAndNoActors) {
+    EXPECT_FALSE(mission_.isInEditor());
+    EXPECT_EQ(mission_.getMissionVersionNum(), -1);
+    EXPECT_EQ(mission_.getMissionName(), "");
+    EXPECT_EQ(mission_.getPendingMissionName(), "");
+    EXPECT_TRUE(mission_.getActors().empty());
 }
 
-TEST(CDemonMission, SettingTheNameAsksForThatMissionNext) {
-    CDemonMission mission;
-    mission.setMissionName("chap1");
-    EXPECT_EQ(mission.getPendingMissionName(), "chap1");
-    EXPECT_EQ(mission.getMissionName(), "");
+TEST_F(CDemonMissionTest, SettingTheNameAsksForThatMissionNext) {
+    mission_.setMissionName("chap1");
+    EXPECT_EQ(mission_.getPendingMissionName(), "chap1");
+    EXPECT_EQ(mission_.getMissionName(), "");
 }
 
-TEST(CDemonMission, ResetDropsTheMissionAskedFor) {
-    CDemonMission mission;
-    mission.setMissionName("chap1");
-    mission.reset();
-    EXPECT_EQ(mission.getPendingMissionName(), "");
-    EXPECT_EQ(mission.getMissionVersionNum(), -1);
+TEST_F(CDemonMissionTest, ResetDropsTheMissionAskedFor) {
+    mission_.setMissionName("chap1");
+    mission_.reset();
+    EXPECT_EQ(mission_.getPendingMissionName(), "");
+    EXPECT_EQ(mission_.getMissionVersionNum(), -1);
 }
 
 // A class whose name has no leading 'C'.
@@ -113,7 +115,7 @@ private:
     int &destroyed_;
 };
 
-class CDemonMissionActorsTest : public ::testing::Test {
+class CDemonMissionActorsTest : public CMissionFixture {
 protected:
     // Adds an actor of the class, named as given or by the mission when the name is empty.
     CDemonActor &add(std::string_view name, const CDemonActorType &type = kTestLeafType) {
@@ -132,8 +134,12 @@ protected:
         return list;
     }
 
+    // The actors count into destroyed_, which goes before the fixture's mission does.
+    void TearDown() override {
+        mission_.removeAllActors();
+    }
+
     int destroyed_ = 0;
-    CDemonMission mission_;
 };
 
 TEST_F(CDemonMissionActorsTest, ActorsAreAddedToTheEnd) {

@@ -130,7 +130,7 @@ class CLightActor;
 class CLightCone;
 class CLightGun;
 class CLightningBolt;
-class CLocation;
+struct CLocation;
 class CMansionPuzzleCircle;
 class CMarquee;
 class CMelee;

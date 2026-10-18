@@ -1,7 +1,9 @@
 #pragma once
 
 #include "common/fwd.h"
+#include "common/math/vector3f.h"
 #include "core/fwd.h"
+#include "core/location.h"
 
 #include <cstdint>
 #include <cstdio>
@@ -94,6 +96,11 @@ public:
     [[nodiscard]] std::string_view getActorClassName() const;
     [[nodiscard]] const std::string &getActorName() const;
     void setActorName(std::string_view actor_name);
+    [[nodiscard]] const CLocation &getLocation() const;
+    void setLocation(const CLocation &location);
+    // Pitch, bank and heading in radians, as x, y and z.
+    [[nodiscard]] const common::CVector3f &getOrientation() const;
+    void setOrientation(const common::CVector3f &orientation);
     void updateOrientationMatrix();
     common::CVector3f *transformVector(common::CVector3f *output, common::CVector3f *input);
     common::CVector3f *inverseTransformVector(common::CVector3f *output_vector,
@@ -115,6 +122,8 @@ public:
 
 private:
     std::string actor_name_;
+    CLocation location_;
+    common::CVector3f orientation_;
 };
 
 } // namespace nocturne::core

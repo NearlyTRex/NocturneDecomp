@@ -23,8 +23,14 @@ public:
 
     CHero *createHero(EHeroType hero_type);
 
+    // Which of the mission's heroes this place is for, the first being 0.
+    [[nodiscard]] int getIndex() const;
+    void setIndex(int index);
+
 private:
     static std::unique_ptr<CDemonActor> create();
+
+    int index_ = 0;
 };
 
 } // namespace nocturne::core

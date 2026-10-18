@@ -8,6 +8,7 @@
 #include "core/dfont/dfont.h"
 #include "core/game/game.h"
 #include "core/inivar/inivar.h"
+#include "core/level/levelloader.h"
 #include "core/menu/menu.h"
 #include "core/mission/demonmission.h"
 #include "core/netgame/netgame.h"
@@ -46,7 +47,9 @@
 #include "platform/sdl/sdlnetwork.h"
 #include "platform/sdl/sdlosfontfactory.h"
 #include "platform/sdl/sdlwindow.h"
+#include "shape/edittool/edcontrols.h"
 #include "shape/edittool/editortools.h"
+#include "shape/edittool/picklist.h"
 #include "sound/sndmain/sndmain.h"
 #include "support/newmsg/newmsg.h"
 #include "wincore/wddvmem/wddvmem.h"
@@ -180,7 +183,6 @@ private:
                                .special = special_,
                                .current_texture = current_texture_}};
     core::CSound sound_{sound_main_, pod_, file_system_};
-    core::CDemonMission mission_;
     std::array<core::CDemonFilter, 8> global_filters_;
     std::array<core::CDemonFilter, 4> player_filters_;
     engine::CMouse mouse_{dosio_, screen_, special_};
@@ -221,6 +223,32 @@ private:
                        .actor = actor_,
                        .crt_random = crt_random_,
                        .build_version = nocturne::kBuildVersion}};
+    nocturne::shape::CEdControls controls_{{.two_d = two_d_,
+                                            .screen = screen_,
+                                            .raw_input = winrun_,
+                                            .clock = winrun_,
+                                            .editor_tools = editor_tools_}};
+    nocturne::shape::SPickListOwners pick_list_owners_{.controls = controls_,
+                                                       .keys = keys_,
+                                                       .menu_input = menu_input_,
+                                                       .three_d = three_d_,
+                                                       .screen = screen_};
+    core::CLevelLoader level_loader_{{.dosio = dosio_,
+                                      .screen = screen_,
+                                      .special = special_,
+                                      .two_d = two_d_,
+                                      .matrix = matrix_,
+                                      .renderer = demon_renderer_,
+                                      .set = set_,
+                                      .fonts = fonts_,
+                                      .crt_random = crt_random_}};
+    core::CDemonMission mission_{{.dosio = dosio_,
+                                  .messages = messages_,
+                                  .actor = actor_,
+                                  .level_loader = level_loader_,
+                                  .textures = texture_,
+                                  .editor_tools = editor_tools_,
+                                  .pick_list = pick_list_owners_}};
 };
 
 // Everything is gone by the time a fatal error is reported, as the original tore down its sound

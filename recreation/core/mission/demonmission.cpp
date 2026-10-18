@@ -7,7 +7,7 @@
 
 namespace nocturne::core {
 
-CDemonMission::CDemonMission() = default;
+CDemonMission::CDemonMission(const SMissionOwners &owners) : owners_(owners) {}
 
 CDemonMission::~CDemonMission() = default;
 
