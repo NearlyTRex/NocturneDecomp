@@ -26,17 +26,17 @@ public:
     int getTime() override;
     void clearKeypresses() override;
     int getNextKeypress(engine::IScreenDevice &screen) override;
-    [[nodiscard]] int wasKeyPressed() const;
+    [[nodiscard]] int wasKeyPressed() const override;
     // The queue holds 19 characters; one more drops the oldest.
     void enqueueInput(int input_value);
     void clearMouseClicks();
-    void setCursorPosition(int x, int y);
+    void setCursorPosition(int x, int y) override;
     // Releases the keys let go during the last pump, then handles every waiting event.
     void processWindowMessages();
     void displayMessageBoxAndQuit(const common::CFatalError &error);
     char *getKeyName(engine::EInputCodeType keycode);
     // The window was closed: waits for input give up, and menus take it as a cancel.
-    [[nodiscard]] bool getInputDisabled() const;
+    [[nodiscard]] bool getInputDisabled() const override;
     // Set when the window regains focus; the game takes it to restore its camera view.
     [[nodiscard]] bool getFocusRegained() const;
     void setFocusRegained(bool regained);

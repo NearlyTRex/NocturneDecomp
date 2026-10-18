@@ -25,6 +25,24 @@ TEST(Ascii, RaisesOnlyAsciiSmallLetters) {
     EXPECT_EQ(toUpperAscii("menu1.pth\xE9"), "MENU1.PTH\xE9");
 }
 
+// Every edge of the three ranges, and a Windows-1252 letter.
+TEST(Ascii, AlnumIsOnlyAsciiLettersAndDigits) {
+    EXPECT_TRUE(isAsciiAlnum('A'));
+    EXPECT_TRUE(isAsciiAlnum('Z'));
+    EXPECT_TRUE(isAsciiAlnum('a'));
+    EXPECT_TRUE(isAsciiAlnum('z'));
+    EXPECT_TRUE(isAsciiAlnum('0'));
+    EXPECT_TRUE(isAsciiAlnum('9'));
+    EXPECT_FALSE(isAsciiAlnum('@'));
+    EXPECT_FALSE(isAsciiAlnum('['));
+    EXPECT_FALSE(isAsciiAlnum('`'));
+    EXPECT_FALSE(isAsciiAlnum('{'));
+    EXPECT_FALSE(isAsciiAlnum('/'));
+    EXPECT_FALSE(isAsciiAlnum(':'));
+    EXPECT_FALSE(isAsciiAlnum('\b'));
+    EXPECT_FALSE(isAsciiAlnum('\xE9'));
+}
+
 TEST(Ascii, EqualityIgnoresAsciiCase) {
     EXPECT_TRUE(equalsIgnoringAsciiCase("ACT1.POD", "act1.pod"));
     EXPECT_FALSE(equalsIgnoringAsciiCase("ACT1.POD", "act2.pod"));

@@ -2,11 +2,11 @@
 
 #include "common/random/watcomrandom.h"
 #include "core/dfont/dfont.h"
-#include "core/menuinput.h"
 #include "engine/2d/2d.h"
 #include "engine/3d/3d.h"
 #include "engine/alphabit/alphabitmap.h"
 #include "engine/font/bitfont.h"
+#include "engine/menuinput.h"
 #include "engine/rawinput.h"
 #include "engine/screendevice.h"
 #include "engine/special/special.h"
@@ -177,7 +177,8 @@ void CMenu::drawFooter() {
 // the left-right flag is only cleared on one. The setting is the item selected before the
 // selection moves.
 int CMenu::readMenuActions(std::span<const std::string> items, int &selected_index) {
-    CMenuInput &input = owners_.menu_input;
+    using engine::EMenuAction;
+    engine::CMenuInput &input = owners_.menu_input;
     const auto count = static_cast<int>(items.size());
     const bool is_setting =
         items[static_cast<std::size_t>(selected_index)].find(':') != std::string::npos;

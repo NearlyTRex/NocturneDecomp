@@ -111,6 +111,8 @@ public:
     [[nodiscard]] std::size_t getWindowCount() const;
     // Measures the editor font's widest glyph and line, which the dialogs space by.
     void initEditorFontMetrics();
+    // The height of a 'j' at the HUD scale, as last measured.
+    [[nodiscard]] int getEditorFontLineHeight() const;
     // The HUD scale everything here is measured and drawn at.
     [[nodiscard]] int getScale() const;
     // The editor font; fatal when the application hasn't set one.

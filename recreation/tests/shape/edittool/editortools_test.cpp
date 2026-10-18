@@ -97,6 +97,8 @@ TEST(CEditorTools, PublicInterface) {
                                  void (CEditorTools::*)(char *)>);
     static_assert(std::is_same_v<decltype(&CEditorTools::draw3DProjectedLine),
                                  void (CEditorTools::*)(common::CVector3f *, int)>);
+    static_assert(std::is_same_v<decltype(&CEditorTools::getEditorFontLineHeight),
+                                 int (CEditorTools::*)() const>);
 }
 
 constexpr int kScreenWidth = 128;
@@ -159,6 +161,13 @@ TEST_F(CEditorToolsTest, WithoutAnEditorFontEveryDialogIsFatal) {
     EXPECT_THAT([this] { editor_tools_.createCenteredModal(10, 10, "", 0); }, fatal);
     EXPECT_THAT([this] { editor_tools_.createModalWindow(0, 0, 10, 10, "", 0); }, fatal);
     EXPECT_THAT([this] { editor_tools_.paintCurrentWindow(); }, fatal);
+}
+
+TEST_F(CEditorToolsTest, TheLineHeightIsAJsAsLastMeasured) {
+    EXPECT_EQ(editor_tools_.getEditorFontLineHeight(), 0);
+    font_.setCharYOffsetRange(3, 'j', 'j');
+    editor_tools_.initEditorFontMetrics();
+    EXPECT_EQ(editor_tools_.getEditorFontLineHeight(), 3);
 }
 
 TEST_F(CEditorToolsTest, AWindowAddsAMarginAndClipsToItsInside) {

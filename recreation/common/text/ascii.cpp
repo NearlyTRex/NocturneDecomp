@@ -12,6 +12,10 @@ char upperAscii(char c) {
     return c >= 'a' && c <= 'z' ? static_cast<char>(c - 'a' + 'A') : c;
 }
 
+bool isAsciiAlnum(char c) {
+    return (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9');
+}
+
 std::string toUpperAscii(std::string_view text) {
     std::string upper(text);
     std::ranges::transform(upper, upper.begin(), upperAscii);

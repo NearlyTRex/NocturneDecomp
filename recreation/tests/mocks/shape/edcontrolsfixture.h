@@ -27,8 +27,9 @@
 
 namespace nocturne::shape {
 
-// The controls on a 128x96 screen whose colour index i draws as grey i, with a mouse and a game
-// clock the test moves, and an editor font whose only glyph is a two-by-two '!'.
+// The controls on a 128x96 screen, unless the test asks for another size, whose colour index i
+// draws as grey i, with a mouse and a game clock the test moves, and an editor font whose only
+// glyph is a two-by-two '!'.
 class CEdControlsFixture : public engine::CPodFixture {
 protected:
     static constexpr int kScreenWidth = 128;
@@ -39,14 +40,16 @@ protected:
     static constexpr std::uint32_t kFace = 0x070707;
     static constexpr std::uint32_t kMark = 0x000000;
 
-    CEdControlsFixture() {
-        using ::testing::Return;
+    CEdControlsFixture() : CEdControlsFixture(kScreenWidth, kScreenHeight) {}
+
+    CEdControlsFixture(int screen_width, int screen_height)
+        : screen_(screen_width, screen_height, 32) {
         const engine::SFontSheet sheet = engine::makeFontSheet({{"##", "##"}}, 2);
         givenFile("art\\editor.raw", sheet.pixels);
         font_.openFontFile("editor.raw", sheet.width, sheet.height, 0);
         font_.setFontReady(1);
         editor_tools_.setEditorFont(&font_);
-        two_d_.setupViewportAndClipping(0, 0, kScreenWidth - 1, kScreenHeight - 1);
+        two_d_.setupViewportAndClipping(0, 0, screen_width - 1, screen_height - 1);
         screen_.fill(kBackground);
         ON_CALL(raw_input_, getMouseX()).WillByDefault([this] { return mouse_x_; });
         ON_CALL(raw_input_, getMouseY()).WillByDefault([this] { return mouse_y_; });
@@ -66,7 +69,7 @@ protected:
     int mouse_y_ = 0;
     int buttons_ = 0;
     int time_ = 0;
-    engine::CMemoryScreen screen_{kScreenWidth, kScreenHeight, 32};
+    engine::CMemoryScreen screen_;
     ::testing::NiceMock<engine::MockRawInput> raw_input_;
     engine::C2d two_d_{dosio_, screen_, raw_input_};
     ::testing::NiceMock<platform::MockRenderer> renderer_;

@@ -21,7 +21,7 @@ struct SMenuOwners {
     engine::C2d &two_d;
     engine::C3d &three_d;
     engine::IRawInput &raw_input;
-    CMenuInput &menu_input;
+    engine::CMenuInput &menu_input;
     const CDFont &fonts;
     const support::CNewMsg &messages;
     engine::CDemonRenderer &renderer;

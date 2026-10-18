@@ -38,7 +38,7 @@ std::byte *rowAt(std::span<void *> rows, int y) {
 
 // staticInit built the global instance and init set its colours; the windows, prompts and
 // progress bar read these seven.
-// deferred: the twelve colours retail's init sets for CInputString::draw, CPickList::renderDialog,
+// deferred: the seven colours retail's init sets for CInputString::draw,
 //   displayCenteredStatusMessage, showFilenameInputDialog and draw3DAxisLabels, with those
 //   functions
 // nocedit 0x0049d170
@@ -84,6 +84,10 @@ void CEditorTools::initEditorFontMetrics() {
     const int scale = getScale();
     editor_font_max_char_width_ = font.getMaxCharWidth() * scale;
     editor_font_line_height_ = font.getCharHeight('j', scale);
+}
+
+int CEditorTools::getEditorFontLineHeight() const {
+    return editor_font_line_height_;
 }
 
 // The editor's message and warning open its one-button prompt; the game's draw this box
