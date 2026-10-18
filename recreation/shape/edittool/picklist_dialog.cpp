@@ -48,7 +48,7 @@ std::vector<std::string_view> splitFields(std::string_view text) {
 } // namespace
 
 int CPickList::getColumnsNeeded() const {
-    return (getItemCount() + vertical_page_size_ - 1) / vertical_page_size_;
+    return (getItemCount() + rows_per_column_ - 1) / rows_per_column_;
 }
 
 // deferred: servicing the network each frame the list waits, which the enhanced game does so a
@@ -103,15 +103,15 @@ void CPickList::calculateLayoutAndCreateComponents(std::string_view dialog_title
     controls.editor_tools.initEditorFontMetrics();
     const int scale = controls.editor_tools.getScale();
     const int line_height = controls.editor_tools.getEditorFontLineHeight();
-    character_width_ = line_height + 1;
+    row_height_ = line_height + 1;
     column_padding_ = kColumnPadding * scale;
     measureFields(scale);
     sizeColumns(line_height);
-    int width = (total_content_width_ * column_count_) + kExtraWidth;
-    int height = (vertical_page_size_ * character_width_) + kExtraHeight;
-    if (dialog_result_ == EScrollMode::Vertical) {
+    int width = (column_width_ * column_count_) + kExtraWidth;
+    int height = (rows_per_column_ * row_height_) + kExtraHeight;
+    if (scroll_mode_ == EScrollMode::Vertical) {
         width += owners_.controls.calculateGridWidth();
-    } else if (dialog_result_ == EScrollMode::Horizontal) {
+    } else if (scroll_mode_ == EScrollMode::Horizontal) {
         height += owners_.controls.calculateGridHeight();
     }
     controls.editor_tools.createCenteredModal(width, height, dialog_title, window_flags);
@@ -147,22 +147,22 @@ void CPickList::sizeColumns(int line_height) {
     for (std::size_t field = 0; field + 1 < field_count; ++field) {
         tab_column_widths_[field] += window_width / kFieldGapDivisor;
     }
-    total_content_width_ =
+    column_width_ =
         std::accumulate(tab_column_widths_.begin(),
                         tab_column_widths_.begin() + static_cast<std::ptrdiff_t>(field_count), 0) +
         (column_padding_ * 2);
     const int count = getItemCount();
-    const int rows = (owners_.screen.getWindowHeight() - (line_height * 4)) / character_width_;
-    vertical_page_size_ = std::min(std::max(rows, 1), count);
-    const int columns = ((window_width * 7) / 8) / total_content_width_;
+    const int rows = (owners_.screen.getWindowHeight() - (line_height * 4)) / row_height_;
+    rows_per_column_ = std::min(std::max(rows, 1), count);
+    const int columns = ((window_width * 7) / 8) / column_width_;
     column_count_ = std::min(std::max(columns, 1), getColumnsNeeded());
     if (forced_column_count_) {
         column_count_ = 1;
     }
-    if (vertical_page_size_ * column_count_ >= count) {
-        dialog_result_ = EScrollMode::None;
+    if (rows_per_column_ * column_count_ >= count) {
+        scroll_mode_ = EScrollMode::None;
     } else {
-        dialog_result_ = column_count_ < 2 ? EScrollMode::Vertical : EScrollMode::Horizontal;
+        scroll_mode_ = column_count_ < 2 ? EScrollMode::Vertical : EScrollMode::Horizontal;
     }
 }
 
@@ -172,20 +172,20 @@ void CPickList::fitInsideWindow() {
     const engine::SClipRect clip = owners_.controls.getOwners().two_d.getClipRect();
     int width = (clip.right - clip.left) + 1;
     int height = (clip.bottom - clip.top) + 1;
-    if (dialog_result_ == EScrollMode::Vertical) {
+    if (scroll_mode_ == EScrollMode::Vertical) {
         const int bar = owners_.controls.calculateGridWidth();
         width -= bar;
         scrollbar_.setPosition((clip.right - bar) + 1, clip.top, clip.right, clip.bottom);
-    } else if (dialog_result_ == EScrollMode::Horizontal) {
+    } else if (scroll_mode_ == EScrollMode::Horizontal) {
         const int bar = owners_.controls.calculateGridHeight();
         height -= bar;
         scrollbar_.setPosition(clip.left, (clip.bottom - bar) + 1, clip.right, clip.bottom);
     }
-    vertical_page_size_ = height / character_width_;
-    column_count_ = std::max(std::min(width / total_content_width_, getColumnsNeeded()), 1);
-    page_size_ = vertical_page_size_ * column_count_;
+    rows_per_column_ = height / row_height_;
+    column_count_ = std::max(std::min(width / column_width_, getColumnsNeeded()), 1);
+    page_size_ = rows_per_column_ * column_count_;
     scroll_top_ = 0;
-    total_content_width_ = width / column_count_;
+    column_width_ = width / column_count_;
 }
 
 // Keeps the selection on the list and in view. A single column scrolls a row at a time and
@@ -194,13 +194,13 @@ void CPickList::fitInsideWindow() {
 // nocedit 0x004a5240
 void CPickList::validateScrollBounds() {
     const int count = getItemCount();
-    const int step = column_count_ == 1 ? 1 : vertical_page_size_;
+    const int step = column_count_ == 1 ? 1 : rows_per_column_;
     current_index_ = std::max(std::min(current_index_, count - 1), 0);
     while (scroll_top_ < 0) {
-        scroll_top_ += vertical_page_size_;
+        scroll_top_ += rows_per_column_;
     }
     while (scroll_top_ >= count) {
-        scroll_top_ -= vertical_page_size_;
+        scroll_top_ -= rows_per_column_;
     }
     scroll_top_ = std::max(scroll_top_, 0);
     while (current_index_ < scroll_top_) {
@@ -210,7 +210,7 @@ void CPickList::validateScrollBounds() {
         scroll_top_ += step;
     }
     if (column_count_ == 1) {
-        scroll_top_ = std::min(scroll_top_, count - vertical_page_size_);
+        scroll_top_ = std::min(scroll_top_, count - rows_per_column_);
     }
     scroll_top_ = std::max(scroll_top_, 0);
 }
@@ -225,10 +225,10 @@ void CPickList::renderDialog() {
     int left = clip.left;
     for (int column = 0; column < column_count_; ++column) {
         int top = clip.top;
-        for (int row = 0; row < vertical_page_size_ && index < getItemCount(); ++row) {
+        for (int row = 0; row < rows_per_column_ && index < getItemCount(); ++row) {
             drawItem(index, left, top);
             ++index;
-            top += character_width_;
+            top += row_height_;
         }
         if (column > 0) {
             const int saved_color = controls.two_d.getActiveRenderColor();
@@ -236,9 +236,9 @@ void CPickList::renderDialog() {
             controls.two_d.drawLine(left, clip.top, left, clip.bottom);
             controls.two_d.setActiveRenderColor(saved_color);
         }
-        left += total_content_width_;
+        left += column_width_;
     }
-    if (dialog_result_ != EScrollMode::None) {
+    if (scroll_mode_ != EScrollMode::None) {
         syncScrollBar();
         scrollbar_.render();
     }
@@ -248,9 +248,9 @@ void CPickList::renderDialog() {
 void CPickList::drawItem(int index, int left, int top) {
     const SEdControlsOwners &controls = owners_.controls.getOwners();
     if (index == current_index_) {
-        controls.two_d.fillRectColor(
-            left, top, (left + total_content_width_) - 1, (top + character_width_) - 1,
-            confirmed_flag_ ? kConfirmedSelectionColor : kSelectionHighlightColor);
+        controls.two_d.fillRectColor(left, top, (left + column_width_) - 1, (top + row_height_) - 1,
+                                     confirmed_flag_ ? kConfirmedSelectionColor
+                                                     : kSelectionHighlightColor);
     }
     const int color = isItemEnabled(index) ? kEnabledTextColor : kDisabledTextColor;
     engine::CBitFont &font = controls.editor_tools.requireEditorFont();

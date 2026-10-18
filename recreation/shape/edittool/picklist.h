@@ -107,21 +107,18 @@ private:
     std::string search_text_buffer_;
     // Picked, waiting for the frame that draws it so to answer.
     bool confirmed_flag_ = false;
-    // A row's height.
-    int character_width_ = 0;
+    int row_height_ = 0;
     int column_padding_ = 0;
     int current_index_ = 0;
     int scroll_top_ = 0;
     // Rows times columns.
     int page_size_ = 0;
-    // Rows in a column.
-    int vertical_page_size_ = 0;
-    // A column's width.
-    int total_content_width_ = 0;
+    int rows_per_column_ = 0;
+    int column_width_ = 0;
     int column_count_ = 0;
     // Empty until an item is enabled or disabled; past its end, items are enabled.
     std::vector<bool> enabled_array_;
-    EScrollMode dialog_result_ = EScrollMode::None;
+    EScrollMode scroll_mode_ = EScrollMode::None;
     // For a double click: when an item was last clicked, in game ticks, and which, -1 when the
     // last click missed.
     int last_click_timestamp_ = 0;

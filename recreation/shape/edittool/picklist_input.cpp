@@ -127,10 +127,10 @@ void CPickList::readMovementActions() {
         scroll_top_ += page_size_;
     }
     if (takeMovement(EMenuAction::Left)) {
-        current_index_ -= vertical_page_size_;
+        current_index_ -= rows_per_column_;
     }
     if (takeMovement(EMenuAction::Right)) {
-        current_index_ += vertical_page_size_;
+        current_index_ += rows_per_column_;
     }
 }
 
@@ -158,7 +158,7 @@ int CPickList::handleDialogInput() {
     }
     validateScrollBounds();
     takeScrollBar();
-    const int page_end = (vertical_page_size_ * column_count_) + scroll_top_;
+    const int page_end = (rows_per_column_ * column_count_) + scroll_top_;
     current_index_ = std::max(std::min(current_index_, page_end - 1), scroll_top_);
     readMouse();
     return kStillOpen;
@@ -166,26 +166,25 @@ int CPickList::handleDialogInput() {
 
 // A horizontal bar scrolls by columns.
 void CPickList::syncScrollBar() {
-    if (dialog_result_ == EScrollMode::Vertical) {
+    if (scroll_mode_ == EScrollMode::Vertical) {
         scrollbar_.setScrollPosition(scroll_top_);
         scrollbar_.setItemCount(getItemCount());
-        scrollbar_.setPageSize(vertical_page_size_);
+        scrollbar_.setPageSize(rows_per_column_);
         return;
     }
-    scrollbar_.setScrollPosition(scroll_top_ / vertical_page_size_);
+    scrollbar_.setScrollPosition(scroll_top_ / rows_per_column_);
     scrollbar_.setItemCount(getColumnsNeeded());
     scrollbar_.setPageSize(column_count_);
 }
 
 void CPickList::takeScrollBar() {
-    if (dialog_result_ == EScrollMode::None) {
+    if (scroll_mode_ == EScrollMode::None) {
         return;
     }
     syncScrollBar();
     scrollbar_.handleInput();
     const int position = scrollbar_.getScrollPosition();
-    scroll_top_ =
-        dialog_result_ == EScrollMode::Vertical ? position : position * vertical_page_size_;
+    scroll_top_ = scroll_mode_ == EScrollMode::Vertical ? position : position * rows_per_column_;
 }
 
 // The pointer is held inside the list. A click selects, and a second on the same item within a
@@ -219,12 +218,12 @@ void CPickList::readMouse() {
 // nocedit 0x004a53a0
 int CPickList::getItemAtMousePosition(int mouse_x, int mouse_y) const {
     const engine::SClipRect clip = owners_.controls.getOwners().two_d.getClipRect();
-    const int row = (mouse_y - clip.top) / character_width_;
-    const int column = (mouse_x - clip.left) / total_content_width_;
-    if (row >= vertical_page_size_ || column >= column_count_) {
+    const int row = (mouse_y - clip.top) / row_height_;
+    const int column = (mouse_x - clip.left) / column_width_;
+    if (row >= rows_per_column_ || column >= column_count_) {
         return -1;
     }
-    const int index = (column * vertical_page_size_) + scroll_top_ + row;
+    const int index = (column * rows_per_column_) + scroll_top_ + row;
     return index < getItemCount() ? index : -1;
 }
 
