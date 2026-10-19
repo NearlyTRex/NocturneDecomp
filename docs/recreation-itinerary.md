@@ -22,9 +22,9 @@ functions don't count as done. Sizes are in instructions.
 | 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 20 | 5 | 80.0% |
 | 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 68 | 31 | 56.6% |
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
-| 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 25 | 8 | 44.6% |
-| 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 17 | 52 | 5565 | 1 | 0 | 1.9% |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 10 | 1 | 1.7% |
+| 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 26 | 8 | 46.4% |
+| 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 8 | 0 | 19.0% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 12 | 1 | 2.0% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 2 | 0 | 7.6% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0 | 0.0% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 1 | 0 | 1.9% |
@@ -38,7 +38,7 @@ functions don't count as done. Sizes are in instructions.
 | 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 4 | 1 | 9.5% |
 | 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 5 | 0 | 1.7% |
 | 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 1 | 0 | 0.3% |
-| 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 3 | 0 | 1.0% |
+| 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 7 | 0 | 2.5% |
 | 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 24 | 0 | 8.0% |
 | 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 2 | 0 | 0.6% |
 | 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 6 | 2 | 2.1% |
@@ -46,7 +46,7 @@ functions don't count as done. Sizes are in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 2 | 0 | 0.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 | 0 | 3.6% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4489** | **402860** | **558** | **61** | **12.4%** |
+| | **All** | | **4479** | **402407** | **572** | **61** | **12.7%** |
 
 ## Step 0: Math value types
 
@@ -971,9 +971,9 @@ functions don't count as done. Sizes are in instructions.
 - class `CDemonSet`
   - [ ] `buildActorTypeLists` 0x00570fc0 (88)
 
-### `core/dtrace.cpp` (2 functions, 110 instructions, 0 done, 0 partial)
+### `core/dtrace.cpp` (2 functions, 110 instructions, 1 done, 0 partial)
 - class `CDemonRaytrace`
-  - [ ] `getCubeAt` 0x004952b0 (42)
+  - [x] `getCubeAt` 0x004952b0 (42)
   - [ ] `commitShadowBuffer` 0x00499e70 (68)
 
 ### `core/path.cpp` (2 functions, 57 instructions, 0 done, 0 partial)
@@ -1081,35 +1081,19 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [ ] `loadCameraFog` 0x00453e50 (61)
 
-### `core/dcube.cpp` (3 functions, 253 instructions, 0 done, 0 partial)
+### `core/dcube.cpp` (3 functions, 253 instructions, 3 done, 0 partial)
 - class `CDemonCubeTriangle`
-  - [ ] `readFromFile` 0x004551d0 (40)
+  - [x] `readFromFile` 0x004551d0 (40)
 - class `CDemonCube`
-  - [ ] `allocGeometryMemory` 0x00456840 (102)
-  - [ ] `load` 0x00457530 (111)
+  - [x] `allocGeometryMemory` 0x00456840 (102)
+  - [x] `load` 0x00457530 (111)
 
-### `core/dpart.cpp` (3 functions, 59 instructions, 0 done, 0 partial)
-- class `CDemonPart`
-  - [ ] `ctor` 0x00482110 (11)
-  - [ ] `free` 0x004822b0 (40)
-  - [ ] `dtor` 0x00482160 (8)
-
-### `core/dtri.cpp` (1 functions, 34 instructions, 0 done, 0 partial)
-- class `CDemonTriangle`
-  - [ ] `readDataBinary` 0x0049a5a0 (34)
-
-### `core/dtrace.cpp` (10 functions, 1047 instructions, 0 done, 0 partial)
+### `core/dtrace.cpp` (4 functions, 687 instructions, 4 done, 0 partial)
 - class `CDemonRaytrace`
-  - [ ] `allocCubeList` 0x00494270 (30)
-  - [ ] `freeCubeList` 0x004942d0 (53)
-  - [ ] `allocNewCubeList` 0x00494380 (38)
-  - [ ] `freeNewCubeList` 0x00494400 (23)
-  - [ ] `allocTriList` 0x00494600 (50)
-  - [ ] `freeTriList` 0x00494690 (38)
-  - [ ] `consolidateTriList` 0x00494450 (139)
-  - [ ] `convertCubeIndexToPosition` 0x00499ba0 (50)
-  - [ ] `loadBinary` 0x004947a0 (518)
-  - [ ] `loadAndSyncWithGeoFile` 0x00494de0 (108)
+  - [x] `allocNewCubeList` 0x00494380 (38)
+  - [x] `freeNewCubeList` 0x00494400 (23)
+  - [x] `loadBinary` 0x004947a0 (518)
+  - [x] `loadAndSyncWithGeoFile` 0x00494de0 (108)
 
 ### `core/box.cpp` (1 functions, 366 instructions, 0 done, 0 partial)
 - class `CBoundingBox3D`
@@ -1611,14 +1595,14 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setFogColor` 0x005b7b80 (20)
   - [ ] `sync` 0x005b7bc0 (6)
 
-### `core/dtrace.cpp` (11 functions, 2901 instructions, 0 done, 0 partial)
+### `core/dtrace.cpp` (11 functions, 2901 instructions, 2 done, 0 partial)
 - class `CDemonRaytrace`
   - [ ] `getGroundHeight` 0x004966f0 (179)
   - [ ] `cylinderGroundCheck` 0x00496950 (186)
   - [ ] `rayVoxelIntersection` 0x00495b70 (471)
   - [ ] `worldPositionToVoxelCoords` 0x00499880 (59)
-  - [ ] `getBBoxMin` 0x00499b40 (15)
-  - [ ] `getBBoxMax` 0x00499b70 (15)
+  - [x] `getBBoxMin` 0x00499b40 (15)
+  - [x] `getBBoxMax` 0x00499b70 (15)
   - [ ] `renderCubeForPVS` 0x00497500 (599)
   - [ ] `renderPVSCubes` 0x004990f0 (39)
   - [ ] `renderFrustumCubes` 0x00497e50 (1146)
@@ -4115,7 +4099,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `transformAndStoreVertex` 0x00452110 (34)
   - [ ] `saveCameraFog` 0x00453f10 (57)
 
-### `core/dcube.cpp` (21 functions, 2237 instructions, 0 done, 0 partial)
+### `core/dcube.cpp` (21 functions, 2237 instructions, 2 done, 0 partial)
 - free functions
   - [ ] `intersectXZCylinder` 0x004556b0 (256)
   - [ ] `intersectXZCylinderWithHeight` 0x00455990 (63)
@@ -4133,9 +4117,9 @@ functions don't count as done. Sizes are in instructions.
 - class `CDemonCube`
   - [ ] `testCylinderCollision` 0x00457a90 (74)
   - [ ] `allocVoxelMemory` 0x004567b0 (43)
-  - [ ] `ctor` 0x00456750 (9)
+  - [x] `ctor` 0x00456750 (9)
   - [ ] `freeMemory` 0x004569b0 (67)
-  - [ ] `dtor` 0x00456790 (8)
+  - [x] `dtor` 0x00456790 (8)
 - class `CDemonCubeTriangle`
   - [ ] `writeToFile` 0x00455250 (38)
   - [ ] `calculateNormalAndPlane` 0x004552c0 (133)
@@ -4323,7 +4307,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `blendLightmapShared4U64toU64pBB12Px4MMX` 0x004924a9 (84)
   - [ ] `blendLightmapShared4U64toU64pAmbientPx4MMX` 0x004925c5 (84)
 
-### `core/dtrace.cpp` (18 functions, 2180 instructions, 0 done, 0 partial)
+### `core/dtrace.cpp` (18 functions, 2180 instructions, 2 done, 0 partial)
 - class `CDemonRaytrace`
   - [ ] `getVoxelHeightAtVoxelCoords` 0x00499a50 (95)
   - [ ] `voxelRaycast3D` 0x00499330 (379)
@@ -4334,8 +4318,8 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `restoreShadowBitFromBuffer` 0x0049a280 (125)
   - [ ] `transferShadowVoxels` 0x00499f10 (178)
   - [ ] `rayIntersection` 0x00495aa0 (87)
-  - [ ] `ctor` 0x00494200 (10)
-  - [ ] `dtor` 0x00494240 (14)
+  - [x] `ctor` 0x00494200 (10)
+  - [x] `dtor` 0x00494240 (14)
   - [ ] `renderGridCube` 0x00496e70 (346)
   - [ ] `renderVoxelGrid` 0x004973b0 (107)
   - [ ] `getVoxelHeightAtPosition` 0x00499170 (140)

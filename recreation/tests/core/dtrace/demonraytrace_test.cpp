@@ -12,12 +12,14 @@ TEST(CDemonRaytrace, IsConcrete) {
 }
 
 TEST(CDemonRaytrace, Constructors) {
-    static_assert(std::is_constructible_v<CDemonRaytrace>);
+    static_assert(std::is_constructible_v<CDemonRaytrace, const engine::CDosIo &>);
 }
 
 TEST(CDemonRaytrace, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDemonRaytrace::loadAndSyncWithGeoFile),
-                                 int (CDemonRaytrace::*)(char *)>);
+                                 bool (CDemonRaytrace::*)(std::string_view)>);
+    static_assert(std::is_same_v<decltype(&CDemonRaytrace::getCubeAt),
+                                 const CDemonCube *(CDemonRaytrace::*)(int, int, int) const>);
     static_assert(std::is_same_v<decltype(&CDemonRaytrace::rayIntersection),
                                  common::CVector3f *(CDemonRaytrace::*)(common::CVector3f *,
                                                                         common::CVector3f *,
@@ -53,9 +55,9 @@ TEST(CDemonRaytrace, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDemonRaytrace::getVoxelHeightAtVoxelCoords),
                                  int (CDemonRaytrace::*)(common::CVector3i *)>);
     static_assert(std::is_same_v<decltype(&CDemonRaytrace::getBBoxMin),
-                                 common::CVector3f *(CDemonRaytrace::*)(common::CVector3f *)>);
+                                 common::CVector3f (CDemonRaytrace::*)() const>);
     static_assert(std::is_same_v<decltype(&CDemonRaytrace::getBBoxMax),
-                                 common::CVector3f *(CDemonRaytrace::*)(common::CVector3f *)>);
+                                 common::CVector3f (CDemonRaytrace::*)() const>);
     static_assert(
         std::is_same_v<decltype(&CDemonRaytrace::markShadowVoxels),
                        void (CDemonRaytrace::*)(common::CVector3f *, common::CVector3f *,
