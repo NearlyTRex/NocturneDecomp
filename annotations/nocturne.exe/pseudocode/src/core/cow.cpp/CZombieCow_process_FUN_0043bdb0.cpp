@@ -143,7 +143,7 @@ void __cdecl core_cow_cpp_CZombieCow_process_FUN_0043bdb0(CZombieCow *this_ptr,f
       fVar10 = 0.7;
       local_14 = local_c0.damage_amount;
       pCVar8 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
-                         (&local_3c,(CVector3f *)&DAT_02dd1184,
+                         (&local_3c,&g_ZeroVector.f,
                           (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                           this_ptr->bone_head);
       pCVar8 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240

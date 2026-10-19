@@ -14,7 +14,7 @@
 ;   core_chain.cpp_CChain_setup_FUN_0042b8f0 at 0042b967
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02dd1184
+;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -38,7 +38,7 @@ section .text
     LEA EDX,[ECX + 0xfd0]               ; 0042b8b5
     ADD EAX,EDX                         ; 0042b8bb
     PUSH EAX                            ; 0042b8bd
-    PUSH 0x2dd1184                      ; 0042b8be | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 0042b8be | g_ZeroVector
     LEA EAX,[ESP + 0x8]                 ; 0042b8c3
     PUSH EAX                            ; 0042b8c7
     CALL core_xform.cpp_transformVector3x4_FUN_0055a8b0 ; 0042b8c8

@@ -26,8 +26,9 @@ TEST(CHiram, Constructors) {
 TEST(CHiram, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CHiram::setup), void (CHiram::*)()>);
     static_assert(std::is_same_v<decltype(&CHiram::process), void (CHiram::*)(float)>);
-    static_assert(std::is_same_v<decltype(&CHiram::getActorType), CDemonActorType *(CHiram::*)()>);
-    static_assert(std::is_same_v<decltype(&CHiram::archive), void (CHiram::*)()>);
+    static_assert(std::is_same_v<decltype(&CHiram::getActorType),
+                                 const CDemonActorType &(CHiram::*)() const>);
+    static_assert(std::is_same_v<decltype(&CHiram::archive), void (CHiram::*)(CActorArchive &)>);
 }
 
 } // namespace

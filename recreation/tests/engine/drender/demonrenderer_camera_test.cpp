@@ -2,6 +2,7 @@
 #include "common/math/matrix3x3i.h"
 #include "common/math/vector3f.h"
 #include "common/math/vector3i.h"
+#include "engine/2d/2d.h"
 #include "engine/3d/3d.h"
 #include "engine/drender/demonrenderer.h"
 #include "engine/matrix/matrix.h"
@@ -143,6 +144,13 @@ TEST_F(CDemonRendererCameraTest, APushSavesTheTransformAsItIs) {
     matrix_.setRelativeOrigin({});
     demon_renderer_.matrixPop();
     EXPECT_EQ(matrix_.getRelativeOrigin(), (CVector3i{.y = 9}));
+}
+
+TEST_F(CDemonRendererCameraTest, AViewportClipsToItsWindowUntilItsPop) {
+    demon_renderer_.pushViewport(10, 20, 100, 50);
+    EXPECT_EQ(two_d_.getClipRect(), (SClipRect{.left = 10, .top = 20, .right = 110, .bottom = 70}));
+    demon_renderer_.popViewport();
+    EXPECT_EQ(two_d_.getClipRect(), (SClipRect{.left = 0, .top = 0, .right = 639, .bottom = 479}));
 }
 
 } // namespace

@@ -44,7 +44,7 @@ TEST(CPickList, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CPickList::clear), void (CPickList::*)()>);
     static_assert(std::is_same_v<decltype(&CPickList::handleInput), int (CPickList::*)()>);
     static_assert(std::is_same_v<decltype(&CPickList::displayChoicesAndWaitForInput),
-                                 int (CPickList::*)(std::string_view, int, std::uint32_t)>);
+                                 int (CPickList::*)(std::string_view, int)>);
     static_assert(std::is_same_v<decltype(&CPickList::initializeDialog),
                                  void (CPickList::*)(std::string_view, int, std::uint32_t)>);
     static_assert(std::is_same_v<decltype(&CPickList::handleDialogInput), int (CPickList::*)()>);

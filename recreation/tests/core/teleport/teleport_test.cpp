@@ -29,9 +29,10 @@ TEST(CTeleport, PublicInterface) {
                                  CBoundingBox3D *(CTeleport::*)(CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CTeleport::getCollisionType),
                                  ECollisionType (CTeleport::*)(SCollisionInfo *)>);
+    static_assert(std::is_same_v<decltype(&CTeleport::getActorType),
+                                 const CDemonActorType &(CTeleport::*)() const>);
     static_assert(
-        std::is_same_v<decltype(&CTeleport::getActorType), CDemonActorType *(CTeleport::*)()>);
-    static_assert(std::is_same_v<decltype(&CTeleport::archive), void (CTeleport::*)()>);
+        std::is_same_v<decltype(&CTeleport::archive), void (CTeleport::*)(CActorArchive &)>);
 }
 
 } // namespace

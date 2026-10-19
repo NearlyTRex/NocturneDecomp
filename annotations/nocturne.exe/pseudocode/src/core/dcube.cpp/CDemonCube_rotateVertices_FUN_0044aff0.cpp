@@ -31,7 +31,7 @@ void __cdecl core_dcube_cpp_CDemonCube_rotateVertices_FUN_0044aff0(CDemonCube *t
   int local_14;
   
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
-            (g_CDemonRenderer_PTR_005ae704,(CVector3f *)&DAT_02dd1184);
+            (g_CDemonRenderer_PTR_005ae704,&g_ZeroVector.f);
   if (20000 < this_ptr->vertex_count) {
     g_CurrentFilename = "..\\core\\dcube.cpp";
     g_CurrentLineNumber = 1979;

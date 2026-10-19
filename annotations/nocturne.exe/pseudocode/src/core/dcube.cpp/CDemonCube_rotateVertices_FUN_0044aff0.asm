@@ -41,7 +41,7 @@
 ;   undefined4 DAT_01b4d750
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_02dd1184
+;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
 ;   core_dcube.cpp_buildAndRenderTrianglePrimitive_FUN_0044ab60
@@ -63,7 +63,7 @@ section .text
     PUSH EBP                            ; 0044aff3
     MOV EBP,ESP                         ; 0044aff4
     SUB ESP,0x38                        ; 0044aff6
-    PUSH 0x2dd1184                      ; 0044aff9 | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 0044aff9 | g_ZeroVector
     MOV EDX,dword ptr [0x005ae704]      ; 0044affe | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 0044b004 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00 ; 0044b005

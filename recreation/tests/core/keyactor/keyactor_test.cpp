@@ -35,9 +35,10 @@ TEST(CKeyActor, PublicInterface) {
         std::is_same_v<decltype(&CKeyActor::onPickup), void (CKeyActor::*)(CDemonActor *)>);
     static_assert(
         std::is_same_v<decltype(&CKeyActor::canPickup), int (CKeyActor::*)(CDemonActor *)>);
+    static_assert(std::is_same_v<decltype(&CKeyActor::getActorType),
+                                 const CDemonActorType &(CKeyActor::*)() const>);
     static_assert(
-        std::is_same_v<decltype(&CKeyActor::getActorType), CDemonActorType *(CKeyActor::*)()>);
-    static_assert(std::is_same_v<decltype(&CKeyActor::archive), void (CKeyActor::*)()>);
+        std::is_same_v<decltype(&CKeyActor::archive), void (CKeyActor::*)(CActorArchive &)>);
 }
 
 } // namespace

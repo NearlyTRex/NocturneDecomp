@@ -32,9 +32,10 @@ TEST(CEmitter, PublicInterface) {
                                  CBoundingBox3D *(CEmitter::*)(CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CEmitter::getCollisionType),
                                  ECollisionType (CEmitter::*)(SCollisionInfo *)>);
+    static_assert(std::is_same_v<decltype(&CEmitter::getActorType),
+                                 const CDemonActorType &(CEmitter::*)() const>);
     static_assert(
-        std::is_same_v<decltype(&CEmitter::getActorType), CDemonActorType *(CEmitter::*)()>);
-    static_assert(std::is_same_v<decltype(&CEmitter::archive), void (CEmitter::*)()>);
+        std::is_same_v<decltype(&CEmitter::archive), void (CEmitter::*)(CActorArchive &)>);
     static_assert(std::is_same_v<decltype(&CEmitter::launchFireballAtHero), void (CEmitter::*)()>);
 }
 

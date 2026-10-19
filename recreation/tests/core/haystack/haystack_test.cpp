@@ -27,9 +27,10 @@ TEST(CHaystack, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CHaystack::setup), void (CHaystack::*)()>);
     static_assert(std::is_same_v<decltype(&CHaystack::process), void (CHaystack::*)(float)>);
     static_assert(std::is_same_v<decltype(&CHaystack::renderOpaque), int (CHaystack::*)()>);
+    static_assert(std::is_same_v<decltype(&CHaystack::getActorType),
+                                 const CDemonActorType &(CHaystack::*)() const>);
     static_assert(
-        std::is_same_v<decltype(&CHaystack::getActorType), CDemonActorType *(CHaystack::*)()>);
-    static_assert(std::is_same_v<decltype(&CHaystack::archive), void (CHaystack::*)()>);
+        std::is_same_v<decltype(&CHaystack::archive), void (CHaystack::*)(CActorArchive &)>);
     static_assert(
         std::is_same_v<decltype(&CHaystack::processDamage), void (CHaystack::*)(SDamageInfo *)>);
     static_assert(std::is_same_v<decltype(&CHaystack::drawWeapon), void (CHaystack::*)(int)>);

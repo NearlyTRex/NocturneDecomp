@@ -28,8 +28,9 @@ TEST(CBride, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CBride::process), void (CBride::*)(float)>);
     static_assert(
         std::is_same_v<decltype(&CBride::getTargetPoints), int (CBride::*)(common::CVector3f *)>);
-    static_assert(std::is_same_v<decltype(&CBride::getActorType), CDemonActorType *(CBride::*)()>);
-    static_assert(std::is_same_v<decltype(&CBride::archive), void (CBride::*)()>);
+    static_assert(std::is_same_v<decltype(&CBride::getActorType),
+                                 const CDemonActorType &(CBride::*)() const>);
+    static_assert(std::is_same_v<decltype(&CBride::archive), void (CBride::*)(CActorArchive &)>);
     static_assert(
         std::is_same_v<decltype(&CBride::processDamage), void (CBride::*)(SDamageInfo *)>);
     static_assert(std::is_same_v<decltype(&CBride::getTargetPoint),

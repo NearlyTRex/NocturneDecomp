@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_mission_cpp_CDemonMission_FUN_004d8cd0(CDemonMission *this_ptr,CDemonActor *param_2)
+; void __cdecl core_mission_cpp_CDemonMission_removeActorFromList_FUN_004d8cd0(CDemonMission *this_ptr,CDemonActor *param_2)
 ;
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr
@@ -18,7 +18,7 @@
 section .text
 
     PUSH EBX                            ; 004d8cd0
-        ;   Label: core_mission.cpp_CDemonMission_FUN_004d8cd0
+        ;   Label: core_mission.cpp_CDemonMission_removeActorFromList_FUN_004d8cd0
     MOV ECX,dword ptr [ESP + 0x8]       ; 004d8cd1
     MOV EDX,dword ptr [ESP + 0xc]       ; 004d8cd5
     TEST EDX,EDX                        ; 004d8cd9

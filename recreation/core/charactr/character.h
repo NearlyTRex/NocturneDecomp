@@ -25,7 +25,7 @@ public:
     void drop(CDemonActor *carrier, common::CVector3f *drop_position) override;
     void spawnFlies(int fly_count, float spawn_radius) override;
     void calculateChecksum(std::uint32_t *out_crc) override;
-    void archive() override;
+    void archive(CActorArchive &actor_archive) override;
     virtual void applyDamage(int damage_type, float damage_amount);
     virtual void kill(int damage_type, common::CVector3f *damage_direction, float impact_force);
     virtual int isInvulnerable();

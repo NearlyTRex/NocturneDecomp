@@ -106,13 +106,14 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonM
         _fscanf(file_handle,"%s %d\n",local_158,&local_1c);
         pCVar3 = core_actor_cpp_getActorClassByName_FUN_0040c3c0(local_158);
         if (pCVar3 != (CDemonActorType *)0x0) {
-          if (pCVar3->type_id < local_1c) {
+          if (pCVar3->latest_version < local_1c) {
             g_CurrentFilename = "..\\core\\mission.cpp";
             g_CurrentLineNumber = 264;
             core_main_c_displayErrorAndQuit_FUN_00506f10
-                      ("Actor type %s is saved in mission in format version %d, but the latest version this .EXE supports is %d!",local_158,local_1c,pCVar3->type_id);
+                      ("Actor type %s is saved in mission in format version %d, but the latest version this .EXE supports is %d!",local_158,local_1c,pCVar3->latest_version
+                      );
           }
-          *(int *)pCVar3->type_info = local_1c;
+          *pCVar3->archive_version = local_1c;
         }
         iVar3 = iVar3 + 1;
       } while (iVar3 < local_20);

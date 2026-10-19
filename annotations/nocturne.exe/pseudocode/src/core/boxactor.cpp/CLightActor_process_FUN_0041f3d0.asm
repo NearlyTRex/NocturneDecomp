@@ -21,7 +21,7 @@
 ;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   CDemonFilter[8] g_CDemonFilter_ARRAY_0076483c
 ;   CDemonSet g_CDemonSet_01e57284
-;   undefined4 DAT_02dd1184
+;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -174,7 +174,7 @@ section .text
     PUSH ESI                            ; 0041f54c
     LEA EAX,[EBX + 0x3620]              ; 0041f54d
     PUSH EAX                            ; 0041f553
-    PUSH 0x2dd1184                      ; 0041f554 | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 0041f554 | g_ZeroVector
     LEA EAX,[ESP + 0xa0]                ; 0041f559
     PUSH EAX                            ; 0041f560
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0 ; 0041f561
@@ -182,7 +182,7 @@ section .text
     ADD ESP,0xc                         ; 0041f566
     LEA EAX,[EBX + 0x30]                ; 0041f569
     PUSH EAX                            ; 0041f56c
-    PUSH 0x2dd1184                      ; 0041f56d | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 0041f56d | g_ZeroVector
     LEA EAX,[ESP + 0x40]                ; 0041f572
     PUSH EAX                            ; 0041f576
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0 ; 0041f577

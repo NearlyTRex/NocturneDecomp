@@ -53,8 +53,8 @@
 ;   core_inv.cpp_CInventory_loadItems_FUN_004c14d0
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60
+;   core_mission.cpp_CDemonMission_clearMissionData_FUN_004d7ea0
 ;   core_mission.cpp_CDemonMission_freeAllAssets_FUN_004d9900
-;   core_mission.cpp_CDemonMission_FUN_004d7ea0
 ;   crt_stdio.c_fgetc_FUN_00564570
 ;   crt_stdio.c_fscanf_FUN_00563350
 ;
@@ -70,8 +70,8 @@ section .text
     SUB ESP,0x148                       ; 004d7fe4
     MOV EBX,dword ptr [ESP + 0x15c]     ; 004d7fea
     PUSH EBX                            ; 004d7ff1
-    CALL core_mission.cpp_CDemonMission_FUN_004d7ea0 ; 004d7ff2
-        ;   XREF to: 004d7ea0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_004d7ea0(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_clearMissionData_FUN_004d7ea0 ; 004d7ff2
+        ;   XREF to: 004d7ea0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_clearMissionData_FUN_004d7ea0(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 004d7ff7
     CMP dword ptr [ESP + 0x164],0x0     ; 004d7ffa
     JZ 0x004d84d1                       ; 004d8002

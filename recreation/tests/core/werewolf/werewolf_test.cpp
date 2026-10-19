@@ -29,9 +29,10 @@ TEST(CWerewolf, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CWerewolf::renderTransparent), int (CWerewolf::*)()>);
     static_assert(std::is_same_v<decltype(&CWerewolf::getTargetPoints),
                                  int (CWerewolf::*)(common::CVector3f *)>);
+    static_assert(std::is_same_v<decltype(&CWerewolf::getActorType),
+                                 const CDemonActorType &(CWerewolf::*)() const>);
     static_assert(
-        std::is_same_v<decltype(&CWerewolf::getActorType), CDemonActorType *(CWerewolf::*)()>);
-    static_assert(std::is_same_v<decltype(&CWerewolf::archive), void (CWerewolf::*)()>);
+        std::is_same_v<decltype(&CWerewolf::archive), void (CWerewolf::*)(CActorArchive &)>);
     static_assert(
         std::is_same_v<decltype(&CWerewolf::processDamage), void (CWerewolf::*)(SDamageInfo *)>);
     static_assert(

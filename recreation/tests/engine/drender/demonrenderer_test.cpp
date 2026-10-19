@@ -37,8 +37,9 @@ TEST(CDemonRenderer, PublicInterface) {
                                  void (CDemonRenderer::*)(SMRGLPrimitivePoly *)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::renderDepthProfiledDirect),
                                  int (CDemonRenderer::*)(platform::SMRGLHeaderPrimitive *)>);
-    static_assert(std::is_same_v<decltype(&CDemonRenderer::renderTexturedDirect),
-                                 void (CDemonRenderer::*)(platform::SMRGLHeaderPrimitive *, int)>);
+    static_assert(
+        std::is_same_v<decltype(&CDemonRenderer::renderTexturedDirect),
+                       void (CDemonRenderer::*)(const platform::SMRGLHeaderPrimitive &, int)>);
     static_assert(
         std::is_same_v<decltype(&CDemonRenderer::renderTexturedPoly),
                        void (CDemonRenderer::*)(const platform::SMRGLPrimitiveQuad &, int)>);

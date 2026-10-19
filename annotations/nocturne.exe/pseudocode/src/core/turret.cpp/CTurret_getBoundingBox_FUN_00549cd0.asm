@@ -23,7 +23,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02dd1184
+;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00
@@ -105,7 +105,7 @@ section .text
     PUSH ESI                            ; 00549d92
     LEA EAX,[EBX + 0x570]               ; 00549d93
     PUSH EAX                            ; 00549d99
-    PUSH 0x2dd1184                      ; 00549d9a | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 00549d9a | g_ZeroVector
     LEA EAX,[ESP + 0xa0]                ; 00549d9f
     PUSH EAX                            ; 00549da6
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0 ; 00549da7
@@ -113,7 +113,7 @@ section .text
     ADD ESP,0xc                         ; 00549dac
     LEA EAX,[EBX + 0x30]                ; 00549daf
     PUSH EAX                            ; 00549db2
-    PUSH 0x2dd1184                      ; 00549db3 | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 00549db3 | g_ZeroVector
     LEA EAX,[ESP + 0x10]                ; 00549db8
     PUSH EAX                            ; 00549dbc
     CALL core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80 ; 00549dbd

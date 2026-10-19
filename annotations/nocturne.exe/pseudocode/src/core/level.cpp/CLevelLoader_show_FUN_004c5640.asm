@@ -26,7 +26,7 @@
 ;   TerminatedCString s_load3_005878c1
 ;   TerminatedCString s_load4_005878c7
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   undefined4 DAT_005baca4
+;   SMRGLTextureBasic g_LoadingMoonGlowTexture
 ;   undefined4 DAT_01b4d738
 ;
 ; Called Functions:
@@ -72,7 +72,7 @@ section .text
     CALL core_dmodel.cpp_CKeyFramedModel_load_FUN_00452650 ; 004c56ca
         ;   XREF to: 00452650 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_load_FUN_00452650(CKeyFramedModel * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004c56cf
-    PUSH 0x5baca4                       ; 004c56d2 | DAT_005baca4
+    PUSH 0x5baca4                       ; 004c56d2 | g_LoadingMoonGlowTexture
     MOV EDX,dword ptr [0x005ae704]      ; 004c56d7 | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 004c56dd | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 004c56de

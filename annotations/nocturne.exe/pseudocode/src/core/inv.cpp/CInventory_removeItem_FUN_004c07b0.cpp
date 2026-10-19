@@ -33,7 +33,7 @@ void __cdecl core_inv_cpp_CInventory_removeItem_FUN_004c07b0(CInventory *this_pt
         if (should_delete_actor == 0) {
           return;
         }
-        core_actor_cpp_destroyActor_FUN_00409cd0(actor);
+        core_actor_cpp_deleteActor_FUN_00409cd0(actor);
         return;
       }
       iVar1 = iVar1 + 1;

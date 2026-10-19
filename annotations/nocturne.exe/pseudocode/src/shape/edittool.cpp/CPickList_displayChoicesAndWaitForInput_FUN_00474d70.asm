@@ -1,13 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70(CPickList *this_ptr,char *dialog_title,int initial_selected_index,uint window_flags)
+; int __cdecl shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70(CPickList *this_ptr,char *dialog_title,int initial_selected_index)
 ;
 ; Parameters:
 ; CPickList *      Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   dialog_title
 ; int              Stack[0xc]:4   initial_selected_index
-; uint             Stack[0x10]:4   window_flags
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;

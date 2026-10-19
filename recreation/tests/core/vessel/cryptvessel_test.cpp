@@ -44,8 +44,9 @@ TEST(CCryptVessel, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CCryptVessel::getCarrier), CDemonActor *(CCryptVessel::*)()>);
     static_assert(std::is_same_v<decltype(&CCryptVessel::getActorType),
-                                 CDemonActorType *(CCryptVessel::*)()>);
-    static_assert(std::is_same_v<decltype(&CCryptVessel::archive), void (CCryptVessel::*)()>);
+                                 const CDemonActorType &(CCryptVessel::*)() const>);
+    static_assert(
+        std::is_same_v<decltype(&CCryptVessel::archive), void (CCryptVessel::*)(CActorArchive &)>);
 }
 
 } // namespace

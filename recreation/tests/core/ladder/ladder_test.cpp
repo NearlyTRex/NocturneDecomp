@@ -32,9 +32,9 @@ TEST(CLadder, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CLadder::getCollisionType),
                                  ECollisionType (CLadder::*)(SCollisionInfo *)>);
     static_assert(std::is_same_v<decltype(&CLadder::getGroundType), EGroundType (CLadder::*)()>);
-    static_assert(
-        std::is_same_v<decltype(&CLadder::getActorType), CDemonActorType *(CLadder::*)()>);
-    static_assert(std::is_same_v<decltype(&CLadder::archive), void (CLadder::*)()>);
+    static_assert(std::is_same_v<decltype(&CLadder::getActorType),
+                                 const CDemonActorType &(CLadder::*)() const>);
+    static_assert(std::is_same_v<decltype(&CLadder::archive), void (CLadder::*)(CActorArchive &)>);
 }
 
 } // namespace

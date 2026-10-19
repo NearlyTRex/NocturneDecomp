@@ -27,7 +27,7 @@ void __cdecl core_setutil_cpp_C3DSCamera_save_FUN_00585a40(C3DSCamera *this_ptr,
   _fprintf(file_handle,"%f,%f,%f\n",(double)(this_ptr->rotation_matrix).m[2].x,
              (double)(this_ptr->rotation_matrix).m[2].y,(double)(this_ptr->rotation_matrix).m[2].z);
   _fprintf(file_handle,"%d\n");
-  if (this_ptr->fog_enabled == 0) {
+  if (this_ptr->use_global_fog == 0) {
     core_dcamera_cpp_saveCameraFog_FUN_00453f10(&this_ptr->fog,file_handle);
   }
   _fprintf(file_handle,"box min, max\n");

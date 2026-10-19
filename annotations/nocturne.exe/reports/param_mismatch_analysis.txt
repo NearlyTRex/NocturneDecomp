@@ -15,11 +15,11 @@ SUMMARY
 --------------------------------------------------
 Functions with parameter estimates: 5289
 Functions with no callers: 2565
-Parameter mismatches detected: 169
+Parameter mismatches detected: 168
 Signature accuracy rate: 93.8%
 
 Mismatches by confidence:
-  High confidence:   11 (multiple call sites agree)
+  High confidence:   10 (multiple call sites agree)
   Medium confidence: 45 (some agreement)
   Low confidence:    113 (limited data)
 
@@ -127,16 +127,6 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       crt_unknown.c_FUN_005740b0 at 005741d4: 0 reg [], 1 stack (4 bytes, via add_esp)
       crt_env.c_putenv_internal_FUN_ at 00573aec: 0 reg [], 1 stack (4 bytes, via add_esp)
 
-  shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70
-    Declared: 4 params (16 bytes), Estimated: 3 stack slots (12 bytes) [-1]
-    Call sites: 18, Confidence: high
-    File: shape/edittool.cpp
-    Signature: int __cdecl shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70(CPickList *this_ptr,char *dialog_title,int initial_selected_index,uint window_flags)
-    Sample call sites:
-      core_game.cpp_CGame_FUN_004a4b at 004a5055: 0 reg [], 3 stack (12 bytes, via add_esp)
-      core_game.cpp_CGame_FUN_004a4b at 004a524a: 0 reg [], 3 stack (12 bytes, via add_esp)
-      core_game.cpp_CGame_FUN_004a4b at 004a539e: 0 reg [], 3 stack (12 bytes, via add_esp)
-
 ====================================================================================================
 MEDIUM CONFIDENCE MISMATCHES
 ====================================================================================================
@@ -208,7 +198,7 @@ LOW CONFIDENCE MISMATCHES (limited data)
 MISMATCH DIRECTION ANALYSIS
 ====================================================================================================
 
-Functions where declaration has MORE params than estimated: 48
+Functions where declaration has MORE params than estimated: 47
   (May indicate: extra params not being passed, or params in globals)
 
 Functions where declaration has FEWER params than estimated: 121
@@ -220,7 +210,7 @@ Distribution of differences (estimated - declared):
   -4 params: 1 functions
   -3 params: 4 functions
   -2 params: 8 functions
-  -1 params: 33 functions
+  -1 params: 32 functions
   +1 params: 37 functions
   +2 params: 21 functions
   +3 params: 22 functions

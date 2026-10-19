@@ -279,7 +279,7 @@ LAB_00458f79:
     fVar19 = 0.4;
     local_14 = local_28c.damage_amount;
     pCVar13 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
-                        (&local_b8,(CVector3f *)&DAT_02dd1184,
+                        (&local_b8,&g_ZeroVector.f,
                          (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                          _DAT_01b4d260);
     pCVar13 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -296,7 +296,7 @@ LAB_00458f79:
     fVar19 = 0.4;
     local_14 = local_304.damage_amount;
     pCVar13 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
-                        (&local_184,(CVector3f *)&DAT_02dd1184,
+                        (&local_184,&g_ZeroVector.f,
                          (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                          _DAT_01b4d260);
     pCVar13 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -537,7 +537,7 @@ LAB_00459978:
     fVar19 = 0.4;
     local_14 = local_2c8.damage_amount;
     pCVar13 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
-                        (&local_13c,(CVector3f *)&DAT_02dd1184,
+                        (&local_13c,&g_ZeroVector.f,
                          (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                          _DAT_01b4d260);
     pCVar13 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -554,7 +554,7 @@ LAB_00459978:
     fVar19 = 0.4;
     local_14 = local_214.damage_amount;
     pCVar13 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
-                        (&local_88,(CVector3f *)&DAT_02dd1184,
+                        (&local_88,&g_ZeroVector.f,
                          (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                          _DAT_01b4d260);
     pCVar13 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -571,7 +571,7 @@ LAB_00459978:
     fVar19 = 0.4;
     local_14 = local_250.damage_amount;
     pCVar13 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
-                        (&local_1c0,(CVector3f *)&DAT_02dd1184,
+                        (&local_1c0,&g_ZeroVector.f,
                          (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                          _DAT_01b4d268);
     pCVar13 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240

@@ -12,5 +12,7 @@ class CPickList;
 class CSpotView;
 class CStrList;
 struct SEdControlsOwners;
+struct SFileSelectionOwners;
+struct SPickListOwners;
 
 } // namespace nocturne::shape

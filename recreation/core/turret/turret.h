@@ -21,8 +21,8 @@ public:
     int updateInteraction(common::UOrientationVector *user_orientation,
                           SPlayerInput *player_control) override;
     void stopInteraction(CDemonActor *user) override;
-    CDemonActorType *getActorType() override;
-    void archive() override;
+    [[nodiscard]] const CDemonActorType &getActorType() const override;
+    void archive(CActorArchive &actor_archive) override;
     common::CVector3f *getMuzzlePoint(common::CVector3f *out_point) override;
     int fire() override;
     float getDamage() override;

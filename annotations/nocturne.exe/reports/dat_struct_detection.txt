@@ -2,24 +2,24 @@
 DAT_ STRUCT/ARRAY DETECTION REPORT
 ================================================================================
 
-Total DAT_ globals found: 2190
+Total DAT_ globals found: 2186
 Filtered out (inside named data): 320
-Immediate constants (not real globals): 61
-Real globals remaining: 2129
-Clusters detected: 204
-DAT_ globals in clusters: 2055
+Immediate constants (not real globals): 60
+Real globals remaining: 2126
+Clusters detected: 205
+DAT_ globals in clusters: 2052
 
 Classification summary:
-  unknown              72 clusters
-  vector_groups        48 clusters
+  unknown              73 clusters
+  vector_groups        47 clusters
   struct               47 clusters
-  array                22 clusters
+  array                23 clusters
   char_array           7 clusters
   byte_blob            5 clusters
   struct_array         3 clusters
 
 --------------------------------------------------------------------------------
-LIKELY IMMEDIATE CONSTANTS (61)
+LIKELY IMMEDIATE CONSTANTS (60)
 --------------------------------------------------------------------------------
 These DAT_ globals are never dereferenced as memory addresses.
 They appear only as inline constant values (e.g. MOV EDX,0xf80000).
@@ -126,12 +126,6 @@ Consider removing the Ghidra label and leaving the raw number.
       PUSH 0x5bac34                       ; 004c1fd4 | DAT_005bac34
     drawWeaponIconBackground
       PUSH 0x5bac34                       ; 004c1e14 | DAT_005bac34
-
-  DAT_005baca4  value=0x5BACA4 (6007972)  refs=2
-    CLevelLoader_show
-      PUSH 0x5baca4                       ; 004c56d2 | DAT_005baca4
-    CLevelLoader_update
-      PUSH 0x5baca4                       ; 004c5db3 | DAT_005baca4
 
   DAT_01cc3700  value=0x1CC3700  refs=2
     displayErrorAndQuit
@@ -992,20 +986,6 @@ MEDIUM CONFIDENCE (66 clusters)
       0x01cc9440  DAT_01cc9440  undefined4
       ... +6 more
 
-  0x02dd10c4 - 0x02dd1238  (12 items, 372 bytes span)
-    Classification: vector_groups
-    Likely type: likely contains CVector3i/f fields
-    Reason: 3 groups of 3 consecutive ints found
-    Referenced by: 70 functions
-     near: g_CTriggerActorType_02dd1084.name_hash (undefined4) at +8
-      0x02dd10c4  DAT_02dd10c4  undefined4
-      0x02dd10cc  DAT_02dd10cc  undefined4
-      0x02dd1184  DAT_02dd1184  undefined4 [float]
-      0x02dd1188  DAT_02dd1188  undefined4 [float]
-      0x02dd118c  DAT_02dd118c  undefined4 [float]
-      0x02dd1220  DAT_02dd1220  undefined4 [float]
-      ... +6 more
-
   0x00766c6c - 0x00766cd4  (11 items, 104 bytes span)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
@@ -1192,6 +1172,20 @@ MEDIUM CONFIDENCE (66 clusters)
       0x007647b4  DAT_007647b4  undefined4
       0x007647b8  DAT_007647b8  undefined4
       0x007647bc  DAT_007647bc  undefined4
+      ... +1 more
+
+  0x02dd1220 - 0x02dd1238  (7 items, 24 bytes span)
+    Classification: array
+    Likely type: float[7]
+    Reason: 7 elements at stride 4
+    Referenced by: 2 functions
+     near: g_CWater_02dd1210.visible_area_sqft (undefined4) at +4
+      0x02dd1220  DAT_02dd1220  undefined4 [float]
+      0x02dd1224  DAT_02dd1224  undefined4 [float]
+      0x02dd1228  DAT_02dd1228  undefined4 [float]
+      0x02dd122c  DAT_02dd122c  undefined4
+      0x02dd1230  DAT_02dd1230  undefined4
+      0x02dd1234  DAT_02dd1234  undefined4 [float]
       ... +1 more
 
   0x005bdba0 - 0x005bdbb4  (6 items, 20 bytes span)
@@ -1403,7 +1397,7 @@ MEDIUM CONFIDENCE (66 clusters)
       0x0058d030  DAT_0058d030  undefined4 [float]
 
 --------------------------------------------------------------------------------
-LOW CONFIDENCE (120 clusters)
+LOW CONFIDENCE (121 clusters)
 --------------------------------------------------------------------------------
 
   0x005b5d00 - 0x005b64f8  (65 items, 2040 bytes span)
@@ -2640,6 +2634,15 @@ LOW CONFIDENCE (120 clusters)
      near: g_FLOAT_02dbd370 (float) at -40
       0x02dbd348  DAT_02dbd348  undefined4 [byte]
       0x02dbd34c  DAT_02dbd34c  undefined4
+
+  0x02dd10c4 - 0x02dd10cc  (2 items, 8 bytes span)
+    Classification: unknown
+    Likely type: unknown grouping
+    Reason: 2 items, span=8 bytes
+    Referenced by: 5 functions
+     near: g_CTriggerActorType_02dd1084.name_hash (undefined4) at +8
+      0x02dd10c4  DAT_02dd10c4  undefined4
+      0x02dd10cc  DAT_02dd10cc  undefined4
 
   0x02dd925c - 0x02dd9260  (2 items, 4 bytes span)
     Classification: unknown

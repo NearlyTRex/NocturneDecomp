@@ -63,14 +63,14 @@ extern CDemonActorType g_CMobsterActorType_01ccdbd8;
 extern CDemonActorType g_CMolochActorType_01ccdc14;
 
 // CKeyFramedModel
-extern CKeyFramedModel g_CKeyFramedModel_01cc3290;
+extern CKeyFramedModel g_LoadingMoonModel;
 extern CKeyFramedModel g_CKeyFramedModel_01cce1bc;
 
 // CKeys
 extern CKeys g_CKeys_01cc30e4;
 
 // CLevelLoader
-extern CLevelLoader g_CLevelLoader_01cc3160;
+extern CLevelLoader g_CLevelLoader;
 
 // CMoon
 extern CMoon g_CMoon_01cc5780;

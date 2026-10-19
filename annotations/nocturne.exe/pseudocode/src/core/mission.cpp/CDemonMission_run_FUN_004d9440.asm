@@ -36,12 +36,12 @@
 ;   core_level.cpp_CLevelLoader_show_FUN_004c5640
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_004d9180
+;   core_mission.cpp_CDemonMission_clearMissionData_FUN_004d7ea0
 ;   core_mission.cpp_CDemonMission_createHeros_FUN_004d9a80
-;   core_mission.cpp_CDemonMission_FUN_004d7ea0
-;   core_mission.cpp_CDemonMission_FUN_004d8cd0
 ;   core_mission.cpp_CDemonMission_load_FUN_004d7ee0
 ;   core_mission.cpp_CDemonMission_loadSet_FUN_004d9020
 ;   core_mission.cpp_CDemonMission_removeActor_FUN_004d8f90
+;   core_mission.cpp_CDemonMission_removeActorFromList_FUN_004d8cd0
 ;   core_mission.cpp_CDemonMission_startMission_FUN_004d9780
 ;   crt_string.c__stricmp_FUN_00566fb0
 ;   engine_2d.c_clearInputAndWait_FUN_00403f50
@@ -100,16 +100,16 @@ section .text
     PUSH ESI                            ; 004d94d0
     PUSH EBX                            ; 004d94d1
     MOV EDI,EAX                         ; 004d94d2
-    CALL core_mission.cpp_CDemonMission_FUN_004d8cd0 ; 004d94d4
-        ;   XREF to: 004d8cd0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_004d8cd0(CDemonMission * this_ptr, CDemonActor * param_2)
+    CALL core_mission.cpp_CDemonMission_removeActorFromList_FUN_004d8cd0 ; 004d94d4
+        ;   XREF to: 004d8cd0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_removeActorFromList_FUN_004d8cd0(CDemonMission * this_ptr, CDemonActor * param_2)
     ADD ESP,0x8                         ; 004d94d9
     MOV EAX,dword ptr [ESI + 0x14c]     ; 004d94dc
     PUSH ESI                            ; 004d94e2
     CALL dword ptr [EAX + 0x144]        ; 004d94e3
     ADD ESP,0x4                         ; 004d94e9
     PUSH EBX                            ; 004d94ec
-    CALL core_mission.cpp_CDemonMission_FUN_004d7ea0 ; 004d94ed
-        ;   XREF to: 004d7ea0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_004d7ea0(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_clearMissionData_FUN_004d7ea0 ; 004d94ed
+        ;   XREF to: 004d7ea0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_clearMissionData_FUN_004d7ea0(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 004d94f2
     TEST EDI,EDI                        ; 004d94f5
     JZ 0x004d9502                       ; 004d94f7

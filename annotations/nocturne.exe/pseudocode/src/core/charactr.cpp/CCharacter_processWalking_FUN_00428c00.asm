@@ -27,7 +27,7 @@
 ;   double DOUBLE_0057a142 = 0.628318530700000
 ;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
 ;   CConsole g_CConsole_0077ad0c
-;   undefined4 DAT_02dd1184
+;   UVector3 g_ZeroVector
 ;   undefined4 g_CWayPointActorType_02ddf514.name_hash
 ;
 ; Called Functions:
@@ -141,7 +141,7 @@ section .text
     PUSH 0x0                            ; 00428cfc
     MOV EAX,dword ptr [EBX + 0x25ac]    ; 00428cfe
     PUSH 0x0                            ; 00428d04
-    PUSH 0x2dd1184                      ; 00428d06 | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 00428d06 | g_ZeroVector
     MOV EDX,dword ptr [EAX + 0x14c]     ; 00428d0b
     PUSH EAX                            ; 00428d11
     CALL dword ptr [EDX + 0xbc]         ; 00428d12

@@ -18,7 +18,9 @@ constexpr double kRandomIntSpan = 0.99999;
 } // namespace
 
 CActor::CActor(const CGame &game, common::CWatcomRandom &crt_random)
-    : game_(game), crt_random_(crt_random) {}
+    : game_(game), crt_random_(crt_random) {
+    registerActorClasses();
+}
 
 // nocedit 0x0040cb90
 void CActor::setRandomSeed(std::uint32_t seed_value) {

@@ -212,7 +212,7 @@
 ;   int g_CurrentLineNumber
 ;   undefined4 DAT_02dc9f84
 ;   undefined4 DAT_02dc9f88
-;   undefined4 DAT_02dd1184
+;   UVector3 g_ZeroVector
 ;   undefined4 g_CWeaponActorType_02ddf970.name_hash
 ;
 ; Called Functions:
@@ -287,7 +287,7 @@ section .text
     CMP dword ptr [EBP + 0x92],0x0      ; 0053a7ff
     JNZ 0x0053ae5a                      ; 0053a806
         ;   XREF to: 0053ae5a (CONDITIONAL_JUMP)  ; LAB_0053ae5a
-    PUSH 0x2dd1184                      ; 0053a80c | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 0053a80c | g_ZeroVector
     PUSH 0x2dc9f40                      ; 0053a811
     LEA EAX,[EBP + 0xfffff92a]          ; 0053a816
     PUSH EAX                            ; 0053a81c
@@ -732,7 +732,7 @@ section .text
     LEA ESI,[EBP + 0xfffff8fa]          ; 0053ae4f
     JMP 0x0053a8f3                      ; 0053ae55
         ;   XREF to: 0053a8f3 (UNCONDITIONAL_JUMP)  ; LAB_0053a8f3
-    PUSH 0x2dd1184                      ; 0053ae5a | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 0053ae5a | g_ZeroVector
         ;   Label: LAB_0053ae5a
     PUSH 0x2dc9f34                      ; 0053ae5f
     LEA EAX,[EBP + 0xfffff59a]          ; 0053ae64
@@ -1060,7 +1060,7 @@ section .text
     SHL EAX,0x4                         ; 0053b2f8
     ADD EAX,EDI                         ; 0053b2fb
     PUSH EAX                            ; 0053b2fd
-    PUSH 0x2dd1184                      ; 0053b2fe | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 0053b2fe | g_ZeroVector
     LEA EAX,[EBP + -0x52]               ; 0053b303
     PUSH EAX                            ; 0053b306
     CALL core_xform.cpp_transformVector3x4_FUN_0055a8b0 ; 0053b307
@@ -1073,7 +1073,7 @@ section .text
     ADD ESP,0xc                         ; 0053b320
     ADD EAX,EDI                         ; 0053b323
     PUSH EAX                            ; 0053b325
-    PUSH 0x2dd1184                      ; 0053b326 | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 0053b326 | g_ZeroVector
     LEA EAX,[EBP + -0xa]                ; 0053b32b
     PUSH EAX                            ; 0053b32e
     CALL core_xform.cpp_transformVector3x4_FUN_0055a8b0 ; 0053b32f

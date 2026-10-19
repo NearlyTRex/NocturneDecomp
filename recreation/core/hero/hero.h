@@ -19,7 +19,7 @@ public:
     int testLineIntersection(common::CVector3f *line_start, common::CVector3f *line_end,
                              common::CVector3f *out_intersection_point) override;
     CPathMap *getPathMap() override;
-    void archive() override;
+    void archive(CActorArchive &actor_archive) override;
     void kill(int damage_type, common::CVector3f *damage_direction, float impact_force) override;
     int isInvulnerable() override;
     int isGrabbable(CDemonActor *grabber) override;

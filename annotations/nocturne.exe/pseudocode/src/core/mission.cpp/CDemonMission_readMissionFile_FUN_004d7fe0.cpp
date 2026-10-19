@@ -32,7 +32,7 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_004d7fe0(CDemonM
   CDemonActor *local_14;
   
   bVar11 = 0;
-  core_mission_cpp_CDemonMission_FUN_004d7ea0(this_ptr);
+  core_mission_cpp_CDemonMission_clearMissionData_FUN_004d7ea0(this_ptr);
   if (load_flags == 0) {
     core_mission_cpp_CDemonMission_freeAllAssets_FUN_004d9900(this_ptr);
   }
@@ -96,13 +96,14 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_004d7fe0(CDemonM
         _fscanf((_FILE *)load_flags,"%s %d\n",acStack_154,&local_18);
         pCVar3 = core_actor_cpp_getActorClassByName_FUN_0040d4d0(acStack_154);
         if (pCVar3 != (CDemonActorType *)0x0) {
-          if (pCVar3->type_id < local_18) {
+          if (pCVar3->latest_version < local_18) {
             g_CurrentFilename = "..\\core\\mission.cpp";
             g_CurrentLineNumber = 264;
             core_main_c_displayErrorAndQuit_FUN_004c8440
-                      ("Actor type %s is saved in mission in format version %d, but the latest version this .EXE supports is %d!",acStack_154,local_18,pCVar3->type_id);
+                      ("Actor type %s is saved in mission in format version %d, but the latest version this .EXE supports is %d!",acStack_154,local_18,
+                       pCVar3->latest_version);
           }
-          *(int *)pCVar3->type_info = local_18;
+          *pCVar3->archive_version = local_18;
         }
         iVar2 = iVar2 + 1;
       } while (iVar2 < local_1c);

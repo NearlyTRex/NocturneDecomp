@@ -13,7 +13,7 @@ void __cdecl core_ground_cpp_CGround_renderVisibleTerrain_FUN_004b1ff0(CGround *
   int iVar2;
   int iVar3;
   int iVar4;
-  uint local_20;
+  int local_20;
   int local_1c;
   
   iVar1 = -this_ptr->grid_width;

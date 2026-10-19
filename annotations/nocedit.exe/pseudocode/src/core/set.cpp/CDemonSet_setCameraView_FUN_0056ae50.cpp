@@ -112,7 +112,7 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_p
     this_ptr_02 = this_ptr->cameras + index;
     core_setutil_cpp_C3DSCamera_apply_FUN_00585870(this_ptr_02,&g_CDemonCameraInstance);
     pCVar4 = &(this_ptr->active_fog).scroll;
-    if (this_ptr->cameras[index].fog_enabled == 0) {
+    if (this_ptr->cameras[index].use_global_fog == 0) {
       pSVar11 = &this_ptr_02->fog;
       (this_ptr->active_fog).color_index.r = (pSVar11->color_index).r;
       iVar5 = (this_ptr_02->fog).color_index.g;
@@ -238,7 +238,7 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_p
   }
   this_ptr->directional_light_ratio_enabled = 0;
   core_set_cpp_CDemonSet_renderStaticLights_FUN_0056be80(this_ptr);
-  if (this_ptr->cameras[index].fog_enabled == 0) {
+  if (this_ptr->cameras[index].use_global_fog == 0) {
     iVar5 = this_ptr->cameras[index].reverb_preset;
   }
   else {

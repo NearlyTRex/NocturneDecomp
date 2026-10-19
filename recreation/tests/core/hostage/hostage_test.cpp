@@ -28,9 +28,10 @@ TEST(CHostage, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CHostage::process), void (CHostage::*)(float)>);
     static_assert(std::is_same_v<decltype(&CHostage::renderOpaque), int (CHostage::*)()>);
     static_assert(std::is_same_v<decltype(&CHostage::renderBackground), void (CHostage::*)(int)>);
+    static_assert(std::is_same_v<decltype(&CHostage::getActorType),
+                                 const CDemonActorType &(CHostage::*)() const>);
     static_assert(
-        std::is_same_v<decltype(&CHostage::getActorType), CDemonActorType *(CHostage::*)()>);
-    static_assert(std::is_same_v<decltype(&CHostage::archive), void (CHostage::*)()>);
+        std::is_same_v<decltype(&CHostage::archive), void (CHostage::*)(CActorArchive &)>);
     static_assert(
         std::is_same_v<decltype(&CHostage::isGrabbable), int (CHostage::*)(CDemonActor *)>);
     static_assert(

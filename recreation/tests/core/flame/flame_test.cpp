@@ -32,8 +32,9 @@ TEST(CFlame, PublicInterface) {
                                  CBoundingBox3D *(CFlame::*)(CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CFlame::getCollisionType),
                                  ECollisionType (CFlame::*)(SCollisionInfo *)>);
-    static_assert(std::is_same_v<decltype(&CFlame::getActorType), CDemonActorType *(CFlame::*)()>);
-    static_assert(std::is_same_v<decltype(&CFlame::archive), void (CFlame::*)()>);
+    static_assert(std::is_same_v<decltype(&CFlame::getActorType),
+                                 const CDemonActorType &(CFlame::*)() const>);
+    static_assert(std::is_same_v<decltype(&CFlame::archive), void (CFlame::*)(CActorArchive &)>);
     static_assert(std::is_same_v<decltype(&CFlame::hide), void (CFlame::*)()>);
 }
 

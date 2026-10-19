@@ -15,12 +15,8 @@ TEST(CWeapon, HasVirtualDestructor) {
     static_assert(std::has_virtual_destructor_v<CWeapon>);
 }
 
-TEST(CWeapon, IsConcrete) {
-    static_assert(!std::is_abstract_v<CWeapon>);
-}
-
-TEST(CWeapon, Constructors) {
-    static_assert(std::is_constructible_v<CWeapon>);
+TEST(CWeapon, IsAbstract) {
+    static_assert(std::is_abstract_v<CWeapon>);
 }
 
 TEST(CWeapon, PublicInterface) {
@@ -37,7 +33,7 @@ TEST(CWeapon, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CWeapon::onDropped), void (CWeapon::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CWeapon::getCarrier), CDemonActor *(CWeapon::*)()>);
-    static_assert(std::is_same_v<decltype(&CWeapon::archive), void (CWeapon::*)()>);
+    static_assert(std::is_same_v<decltype(&CWeapon::archive), void (CWeapon::*)(CActorArchive &)>);
     static_assert(std::is_same_v<decltype(&CWeapon::onFired), void (CWeapon::*)()>);
     static_assert(std::is_same_v<decltype(&CWeapon::setWeaponState), void (CWeapon::*)(int)>);
     static_assert(std::is_same_v<decltype(&CWeapon::getMuzzlePoint),

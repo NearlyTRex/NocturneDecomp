@@ -1,6 +1,15 @@
 #include "core/mission/demonmission.h"
 
+#include "core/actor/demonactor.h"
+
+#include <memory>
+#include <span>
+
 namespace nocturne::core {
+
+CDemonMission::CDemonMission(const SMissionOwners &owners) : owners_(owners) {}
+
+CDemonMission::~CDemonMission() = default;
 
 // nocedit also clears skip_gore_load_flag and show_waypoint_coverage, editor fields retail lacks.
 // deferred: clearing the pending teleport to area -1 at the origin, with setTeleportTarget and
@@ -9,14 +18,14 @@ namespace nocturne::core {
 // deferred: clearing actors_prepared, with prepareAllActors and loadSet
 // deferred: clearing has_inventory_actors, next_inventory_actor and actor_lookup_count, with
 //   readMissionFile, getNextLoadedInventoryActor and CInventory::load
+// The original let go of any actors without destroying them.
 // nocedit 0x00522c80
 void CDemonMission::reset() {
     is_in_editor_ = false;
     mission_version_num_ = -1;
     mission_name_.clear();
     pending_mission_name_.clear();
-    first_actor_ = nullptr;
-    last_actor_ = nullptr;
+    actors_.clear();
 }
 
 // nocedit 0x00524630
@@ -40,12 +49,8 @@ const std::string &CDemonMission::getPendingMissionName() const {
     return pending_mission_name_;
 }
 
-CDemonActor *CDemonMission::getFirstActor() const {
-    return first_actor_;
-}
-
-CDemonActor *CDemonMission::getLastActor() const {
-    return last_actor_;
+std::span<const std::unique_ptr<CDemonActor>> CDemonMission::getActors() const {
+    return actors_;
 }
 
 } // namespace nocturne::core

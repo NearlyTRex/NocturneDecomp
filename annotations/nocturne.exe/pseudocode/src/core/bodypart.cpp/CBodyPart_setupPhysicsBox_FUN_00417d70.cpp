@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_bodypart_cpp_CBodyPart_setupPhysicsBox_FUN_00417d70(CBodyPart *this_ptr)
 
 {
@@ -40,10 +38,10 @@ void __cdecl core_bodypart_cpp_CBodyPart_setupPhysicsBox_FUN_00417d70(CBodyPart 
   (this_ptr->base).lifecycle_state = ACTOR_DESTROYED;
   core_bodypart_cpp_CBodyPart_setCounts_FUN_00415ee0(this_ptr,0,0);
   pCVar1 = &(this_ptr->bounding_box).max;
-  if (pCVar1 != (CVector3f *)&DAT_02dd1184) {
-    pCVar1->x = _DAT_02dd1184;
-    (this_ptr->bounding_box).max.y = _DAT_02dd1188;
-    (this_ptr->bounding_box).max.z = _DAT_02dd118c;
+  if ((UVector3 *)pCVar1 != &g_ZeroVector) {
+    pCVar1->x = g_ZeroVector.f.x;
+    (this_ptr->bounding_box).max.y = g_ZeroVector.f.y;
+    (this_ptr->bounding_box).max.z = g_ZeroVector.f.z;
   }
   if (&this_ptr->bounding_box == (CBoundingBox3D *)pCVar1) {
     return;

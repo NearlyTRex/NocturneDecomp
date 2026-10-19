@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CToss_process_FUN_004874d0(CToss *this_ptr)
 
 {
@@ -32,9 +30,9 @@ void __cdecl core_fire_cpp_CToss_process_FUN_004874d0(CToss *this_ptr)
       if (this_ptr->toss_type != 0) {
         return;
       }
-      local_30.x = _DAT_02dd1184;
-      local_30.y = _DAT_02dd1188;
-      local_30.z = _DAT_02dd118c;
+      local_30.x = g_ZeroVector.f.x;
+      local_30.y = g_ZeroVector.f.y;
+      local_30.z = g_ZeroVector.f.z;
       pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(&this_ptr->model);
       local_30.z = local_30.z + (pCVar2->bounds).max.z;
       pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40

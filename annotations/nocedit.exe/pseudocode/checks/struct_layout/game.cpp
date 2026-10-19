@@ -36,8 +36,8 @@ static_assert(__builtin_offsetof(C3DSCamera, ambient_value) == 328,
               "offsetof(C3DSCamera, ambient_value) != 328");
 static_assert(__builtin_offsetof(C3DSCamera, camera_group) == 332,
               "offsetof(C3DSCamera, camera_group) != 332");
-static_assert(__builtin_offsetof(C3DSCamera, fog_enabled) == 336,
-              "offsetof(C3DSCamera, fog_enabled) != 336");
+static_assert(__builtin_offsetof(C3DSCamera, use_global_fog) == 336,
+              "offsetof(C3DSCamera, use_global_fog) != 336");
 static_assert(__builtin_offsetof(C3DSCamera, fog) == 340,
               "offsetof(C3DSCamera, fog) != 340");
 static_assert(__builtin_offsetof(C3DSCamera, reverb_preset) == 376,
@@ -1856,10 +1856,10 @@ static_assert(__builtin_offsetof(CDemonActorType, parent_type) == 40,
               "offsetof(CDemonActorType, parent_type) != 40");
 static_assert(__builtin_offsetof(CDemonActorType, factory_func) == 44,
               "offsetof(CDemonActorType, factory_func) != 44");
-static_assert(__builtin_offsetof(CDemonActorType, type_info) == 48,
-              "offsetof(CDemonActorType, type_info) != 48");
-static_assert(__builtin_offsetof(CDemonActorType, type_id) == 52,
-              "offsetof(CDemonActorType, type_id) != 52");
+static_assert(__builtin_offsetof(CDemonActorType, archive_version) == 48,
+              "offsetof(CDemonActorType, archive_version) != 48");
+static_assert(__builtin_offsetof(CDemonActorType, latest_version) == 52,
+              "offsetof(CDemonActorType, latest_version) != 52");
 static_assert(__builtin_offsetof(CDemonActorType, name_hash) == 56,
               "offsetof(CDemonActorType, name_hash) != 56");
 

@@ -31,8 +31,9 @@ TEST(CBugs, PublicInterface) {
                                  CBoundingBox3D *(CBugs::*)(CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CBugs::getCollisionType),
                                  ECollisionType (CBugs::*)(SCollisionInfo *)>);
-    static_assert(std::is_same_v<decltype(&CBugs::getActorType), CDemonActorType *(CBugs::*)()>);
-    static_assert(std::is_same_v<decltype(&CBugs::archive), void (CBugs::*)()>);
+    static_assert(
+        std::is_same_v<decltype(&CBugs::getActorType), const CDemonActorType &(CBugs::*)() const>);
+    static_assert(std::is_same_v<decltype(&CBugs::archive), void (CBugs::*)(CActorArchive &)>);
     static_assert(std::is_same_v<decltype(&CBugs::processDamage), void (CBugs::*)(SDamageInfo *)>);
     static_assert(std::is_same_v<decltype(&CBugs::getDeathState), EDeathState (CBugs::*)()>);
 }

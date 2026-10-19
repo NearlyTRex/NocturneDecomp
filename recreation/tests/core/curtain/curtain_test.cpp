@@ -34,9 +34,10 @@ TEST(CCurtain, PublicInterface) {
                                  ECollisionType (CCurtain::*)(SCollisionInfo *)>);
     static_assert(
         std::is_same_v<decltype(&CCurtain::getBlockVirtualDirectorFlag), int (CCurtain::*)()>);
+    static_assert(std::is_same_v<decltype(&CCurtain::getActorType),
+                                 const CDemonActorType &(CCurtain::*)() const>);
     static_assert(
-        std::is_same_v<decltype(&CCurtain::getActorType), CDemonActorType *(CCurtain::*)()>);
-    static_assert(std::is_same_v<decltype(&CCurtain::archive), void (CCurtain::*)()>);
+        std::is_same_v<decltype(&CCurtain::archive), void (CCurtain::*)(CActorArchive &)>);
 }
 
 } // namespace

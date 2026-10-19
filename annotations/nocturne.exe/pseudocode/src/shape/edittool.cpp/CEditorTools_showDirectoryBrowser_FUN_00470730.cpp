@@ -15,7 +15,6 @@ int __cdecl shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_00470730(CE
   _tm *time_ptr;
   int iVar4;
   uint uVar5;
-  uint unaff_ESI;
   int *piVar6;
   int iVar7;
   uint *puVar8;
@@ -175,7 +174,7 @@ LAB_00470970:
               (&local_1a60,iVar4,local_1a60.base.item_count + -1);
     shape_edittool_cpp_CStrList_add_FUN_00473cb0(&local_1a60.base,"(Change Path)");
     iVar7 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70
-                      (&local_1a60,local_1c90,iVar7,unaff_ESI);
+                      (&local_1a60,local_1c90,iVar7);
     if (iVar7 < 0) goto LAB_00470cb8;
     if (local_1a60.base.item_count + -1 <= iVar7) {
       puVar8 = &DAT_005b6f70;

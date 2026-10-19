@@ -32,9 +32,10 @@ TEST(CStranger, PublicInterface) {
                                  void (CStranger::*)(common::CVector3f *, common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CStranger::drop),
                                  void (CStranger::*)(CDemonActor *, common::CVector3f *)>);
+    static_assert(std::is_same_v<decltype(&CStranger::getActorType),
+                                 const CDemonActorType &(CStranger::*)() const>);
     static_assert(
-        std::is_same_v<decltype(&CStranger::getActorType), CDemonActorType *(CStranger::*)()>);
-    static_assert(std::is_same_v<decltype(&CStranger::archive), void (CStranger::*)()>);
+        std::is_same_v<decltype(&CStranger::archive), void (CStranger::*)(CActorArchive &)>);
     static_assert(
         std::is_same_v<decltype(&CStranger::getGrabbed), int (CStranger::*)(CDemonActor *, int)>);
     static_assert(

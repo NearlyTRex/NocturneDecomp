@@ -25,8 +25,8 @@ TEST(CLightGun, Constructors) {
 
 TEST(CLightGun, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CLightGun::process), void (CLightGun::*)(float)>);
-    static_assert(
-        std::is_same_v<decltype(&CLightGun::getActorType), CDemonActorType *(CLightGun::*)()>);
+    static_assert(std::is_same_v<decltype(&CLightGun::getActorType),
+                                 const CDemonActorType &(CLightGun::*)() const>);
     static_assert(std::is_same_v<decltype(&CLightGun::fire), int (CLightGun::*)()>);
     static_assert(std::is_same_v<decltype(&CLightGun::getDamage), float (CLightGun::*)()>);
     static_assert(std::is_same_v<decltype(&CLightGun::renderAimBeam), void (CLightGun::*)()>);

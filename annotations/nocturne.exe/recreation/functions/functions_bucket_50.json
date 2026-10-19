@@ -748,8 +748,8 @@
     ],
     "conv":"__cdecl",
     "instructions":11,
-    "method":"destroyActor",
-    "name":"core_actor.cpp_destroyActor_FUN_00409cd0",
+    "method":"deleteActor",
+    "name":"core_actor.cpp_deleteActor_FUN_00409cd0",
     "params":[
       {
         "name":"actor",
@@ -14495,19 +14495,12 @@
       "004d8f90",
       "004d9440"
     ],
+    "cls":"CDemonMission",
     "conv":"__cdecl",
     "instructions":47,
-    "method":"CDemonMission",
-    "name":"core_mission.cpp_CDemonMission_FUN_004d8cd0",
+    "method":"removeActorFromList",
+    "name":"core_mission.cpp_CDemonMission_removeActorFromList_FUN_004d8cd0",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CDemonMission",
-          "ptr":1
-        }
-      },
       {
         "name":"param_2",
         "type":{
@@ -14517,7 +14510,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",

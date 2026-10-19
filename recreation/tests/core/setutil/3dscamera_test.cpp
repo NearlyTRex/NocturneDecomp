@@ -17,9 +17,11 @@ TEST(C3DSCamera, Constructors) {
 
 TEST(C3DSCamera, PublicInterface) {
     static_assert(std::is_same_v<decltype(&C3DSCamera::free), void (C3DSCamera::*)()>);
-    static_assert(std::is_same_v<decltype(&C3DSCamera::load), void (C3DSCamera::*)(std::FILE *)>);
-    static_assert(
-        std::is_same_v<decltype(&C3DSCamera::loadPVS), void (C3DSCamera::*)(std::FILE *)>);
+    static_assert(std::is_same_v<decltype(&C3DSCamera::reset), void (C3DSCamera::*)()>);
+    static_assert(std::is_same_v<decltype(&C3DSCamera::load),
+                                 void (C3DSCamera::*)(common::CTextScanner &, int, const SFog &)>);
+    static_assert(std::is_same_v<decltype(&C3DSCamera::loadPVS),
+                                 void (C3DSCamera::*)(common::CTextScanner &)>);
     static_assert(
         std::is_same_v<decltype(&C3DSCamera::apply), void (C3DSCamera::*)(CDemonCamera *)>);
     static_assert(std::is_same_v<decltype(&C3DSCamera::testSphereInFrustum),

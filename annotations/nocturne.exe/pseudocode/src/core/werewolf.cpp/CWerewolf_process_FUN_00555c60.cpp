@@ -167,7 +167,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_00555c60(CWerewolf *this_pt
       fVar16 = (this_ptr->base).base.size_scale;
       local_14 = local_2a8.damage_amount;
       pCVar8 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
-                         (&local_e0,(CVector3f *)&DAT_02dd1184,
+                         (&local_e0,&g_ZeroVector.f,
                           (CMatrix3x4f *)
                           (this_ptr->base).base.model.bone_transform.bone_model_matrices
                           [this_ptr->bone_indices[3]].m);
@@ -181,7 +181,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_00555c60(CWerewolf *this_pt
       fVar16 = (this_ptr->base).base.size_scale;
       local_14 = local_2a8.damage_amount;
       pCVar8 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
-                         (&local_d4,(CVector3f *)&DAT_02dd1184,
+                         (&local_d4,&g_ZeroVector.f,
                           (CMatrix3x4f *)
                           (this_ptr->base).base.model.bone_transform.bone_model_matrices
                           [this_ptr->bone_indices[2]].m);
@@ -195,7 +195,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_00555c60(CWerewolf *this_pt
       fVar16 = (this_ptr->base).base.size_scale;
       local_14 = local_2a8.damage_amount;
       pCVar8 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
-                         (&local_17c,(CVector3f *)&DAT_02dd1184,
+                         (&local_17c,&g_ZeroVector.f,
                           (CMatrix3x4f *)
                           (this_ptr->base).base.model.bone_transform.bone_model_matrices
                           [this_ptr->bone_indices[1]].m);
@@ -213,7 +213,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_00555c60(CWerewolf *this_pt
             pSVar17 = (SDamageInfo *)&stack0xfffffce0;
             fVar16 = 0.4;
             pCVar8 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
-                               (&local_74,(CVector3f *)&DAT_02dd1184,
+                               (&local_74,&g_ZeroVector.f,
                                 (CMatrix3x4f *)
                                 (this_ptr->base).base.model.bone_transform.bone_model_matrices
                                 [this_ptr->bone_indices[1]].m);
@@ -464,7 +464,7 @@ LAB_005567aa:
         fVar16 = 0.4;
         local_14 = local_26c.damage_amount;
         pCVar8 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
-                           (&local_11c,(CVector3f *)&DAT_02dd1184,
+                           (&local_11c,&g_ZeroVector.f,
                             (CMatrix3x4f *)
                             (this_ptr->base).base.model.bone_transform.bone_model_matrices
                             [this_ptr->bone_indices[2]].m);
@@ -503,7 +503,7 @@ LAB_005567aa:
           fVar16 = 1.0;
           local_14 = local_230.damage_amount;
           pCVar8 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
-                             (&local_1d0,(CVector3f *)&DAT_02dd1184,
+                             (&local_1d0,&g_ZeroVector.f,
                               (CMatrix3x4f *)
                               (this_ptr->base).base.model.bone_transform.bone_model_matrices
                               [this_ptr->bone_indices[3]].m);
@@ -514,7 +514,7 @@ LAB_005567aa:
           pSVar17 = &local_230;
           fVar16 = 1.0;
           pCVar8 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
-                             (&local_68,(CVector3f *)&DAT_02dd1184,
+                             (&local_68,&g_ZeroVector.f,
                               (CMatrix3x4f *)
                               (this_ptr->base).base.model.bone_transform.bone_model_matrices
                               [this_ptr->bone_indices[2]].m);
@@ -525,7 +525,7 @@ LAB_005567aa:
           pSVar17 = &local_230;
           fVar16 = 1.0;
           pCVar8 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
-                             (&local_1a0,(CVector3f *)&DAT_02dd1184,
+                             (&local_1a0,&g_ZeroVector.f,
                               (CMatrix3x4f *)
                               (this_ptr->base).base.model.bone_transform.bone_model_matrices
                               [this_ptr->bone_indices[1]].m);
@@ -551,7 +551,7 @@ LAB_0055637f:
           fVar16 = 0.4;
           local_14 = local_2e4.damage_amount;
           pCVar8 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
-                             (&local_1f4,(CVector3f *)&DAT_02dd1184,
+                             (&local_1f4,&g_ZeroVector.f,
                               (CMatrix3x4f *)
                               (this_ptr->base).base.model.bone_transform.bone_model_matrices
                               [this_ptr->bone_indices[3]].m);

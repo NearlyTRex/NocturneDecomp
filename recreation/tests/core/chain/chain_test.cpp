@@ -31,8 +31,9 @@ TEST(CChain, PublicInterface) {
                                  CBoundingBox3D *(CChain::*)(CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CChain::getCollisionType),
                                  ECollisionType (CChain::*)(SCollisionInfo *)>);
-    static_assert(std::is_same_v<decltype(&CChain::getActorType), CDemonActorType *(CChain::*)()>);
-    static_assert(std::is_same_v<decltype(&CChain::archive), void (CChain::*)()>);
+    static_assert(std::is_same_v<decltype(&CChain::getActorType),
+                                 const CDemonActorType &(CChain::*)() const>);
+    static_assert(std::is_same_v<decltype(&CChain::archive), void (CChain::*)(CActorArchive &)>);
 }
 
 } // namespace

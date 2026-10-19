@@ -11,7 +11,7 @@ public:
     ~CDynamite() override;
 
     void process(float delta_time) override;
-    CDemonActorType *getActorType() override;
+    [[nodiscard]] const CDemonActorType &getActorType() const override;
     int fire() override;
     float getDamage() override;
     void renderAimBeam() override;

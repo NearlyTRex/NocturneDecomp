@@ -34,86 +34,38 @@
       {
         "category": "other",
         "column": 35,
-        "line": 497,
+        "line": 496,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 497,
+        "line": 496,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 498,
+        "line": 497,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 498,
+        "line": 497,
         "message": "exponent has no digits"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 21,
+        "line": 20,
         "message": "use of undeclared identifier 'stack0x0000000c'"
       },
       {
         "category": "cast_error",
         "column": 39,
-        "line": 22,
+        "line": 21,
         "message": "no matching conversion for C-style cast from 'byte **' (aka 'unsigned char **') to 'va_list_t'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 64,
-        "line": 24,
-        "message": "use of undeclared identifier 'stack0xfffffe80'; did you mean 'in_stack_fffffe80'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 61,
-        "line": 26,
-        "message": "use of undeclared identifier 'stack0xfffffe80'; did you mean 'in_stack_fffffe80'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 61,
-        "line": 28,
-        "message": "use of undeclared identifier 'stack0xfffffe80'; did you mean 'in_stack_fffffe80'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 61,
-        "line": 30,
-        "message": "use of undeclared identifier 'stack0xfffffe80'; did you mean 'in_stack_fffffe80'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 61,
-        "line": 32,
-        "message": "use of undeclared identifier 'stack0xfffffe80'; did you mean 'in_stack_fffffe80'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 36,
-        "line": 45,
-        "message": "use of undeclared identifier 'stack0xfffffe80'; did you mean 'in_stack_fffffe80'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 68,
-        "line": 54,
-        "message": "use of undeclared identifier 'stack0xfffffe80'; did you mean 'in_stack_fffffe80'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 64,
-        "line": 59,
-        "message": "use of undeclared identifier 'stack0xfffffe80'; did you mean 'in_stack_fffffe80'?"
       }
     ],
     "success": false,
@@ -122,20 +74,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 142,
-    "complexity_score": 221,
+    "complexity_score": 115,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 51,
-    "suspect_count": 15,
+    "pseudocode_lines": 50,
+    "suspect_count": 5,
     "suspect_types": [
-      "stack_param",
       "stack_ref",
       "unnamed_param",
       "unrolled_strcpy"
     ],
-    "total_lines": 193
+    "total_lines": 192
   },
   "cross_references": [],
   "function": {
@@ -275,16 +226,8 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_fffffe80",
-      "severity": "moderate",
-      "text": "uint in_stack_fffffe80;",
-      "type": "stack_param"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 14,
+      "line": 13,
       "match": "&stack0x0000000c",
       "severity": "moderate",
       "text": "puStack_10 = &stack0x0000000c;",
@@ -292,87 +235,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 14,
       "match": "param_2",
       "severity": "mild",
       "text": "_vsprintf((char *)0x1bcbcd0,param_2,(va_list_t)&puStack_10);",
       "type": "unnamed_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 17,
-      "match": "&stack0xfffffe80",
-      "severity": "moderate",
-      "text": "shape_edittool_cpp_CPickList_ctor_FUN_00474c90((CPickList *)&stack0xfffffe80);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 19,
-      "match": "&stack0xfffffe80",
-      "severity": "moderate",
-      "text": "shape_edittool_cpp_CStrList_add_FUN_00473cb0((CStrList *)&stack0xfffffe80,pcVar2);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 21,
-      "match": "&stack0xfffffe80",
-      "severity": "moderate",
-      "text": "shape_edittool_cpp_CStrList_add_FUN_00473cb0((CStrList *)&stack0xfffffe80,pcVar2);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 23,
-      "match": "&stack0xfffffe80",
-      "severity": "moderate",
-      "text": "shape_edittool_cpp_CStrList_add_FUN_00473cb0((CStrList *)&stack0xfffffe80,pcVar2);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 25,
-      "match": "&stack0xfffffe80",
-      "severity": "moderate",
-      "text": "shape_edittool_cpp_CStrList_add_FUN_00473cb0((CStrList *)&stack0xfffffe80,pcVar2);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 38,
-      "match": "in_stack_fffffe80",
-      "severity": "moderate",
-      "text": "((CPickList *)&stack0xfffffe80,(char *)0x1bcbcd0,-1,in_stack_fffffe80);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 38,
-      "match": "&stack0xfffffe80",
-      "severity": "moderate",
-      "text": "((CPickList *)&stack0xfffffe80,(char *)0x1bcbcd0,-1,in_stack_fffffe80);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 47,
-      "match": "&stack0xfffffe80",
-      "severity": "moderate",
-      "text": "shape_edittool_cpp_CPickList_dtor_FUN_00474cf0((CPickList *)&stack0xfffffe80,0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 52,
-      "match": "&stack0xfffffe80",
-      "severity": "moderate",
-      "text": "shape_edittool_cpp_CPickList_dtor_FUN_00474cf0((CPickList *)&stack0xfffffe80,0);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 28,
+      "line": 27,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

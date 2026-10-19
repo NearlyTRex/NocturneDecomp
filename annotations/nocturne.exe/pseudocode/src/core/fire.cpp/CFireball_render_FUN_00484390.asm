@@ -170,7 +170,7 @@ section .text
     PUSH EAX                            ; 0048445d
     LEA EAX,[ESP + 0x10]                ; 0048445e
     PUSH EAX                            ; 00484462
-    PUSH 0x2dd1184                      ; 00484463 | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 00484463 | g_ZeroVector
     PUSH ESI                            ; 00484468
     MOV EAX,[0x005be368]                ; 00484469 | g_CDemonSet_PTR_005be368
     PUSH EAX                            ; 0048446e | g_CDemonSet_01e57284

@@ -14,8 +14,8 @@ CVector3f * __cdecl engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_0
   
   engine_matrix_c_getCameraOrigin_FUN_004ce760(&local_20);
   fVar1 = (float)0.00390625;
-  output->x = fVar1 * 4590917.0;
-  output->y = (float)local_20.x * fVar1;
-  output->z = (float)local_20.y * fVar1;
+  output->x = (float)local_20.x * fVar1;
+  output->y = (float)local_20.y * fVar1;
+  output->z = (float)local_20.z * fVar1;
   return output;
 }

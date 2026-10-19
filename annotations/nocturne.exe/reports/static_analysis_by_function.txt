@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 304
-  Total diagnostics: 893
+  Functions with findings: 303
+  Total diagnostics: 891
   Functions flagged by multiple tools: 3
-  .keep.cpp files: 0, raw .cpp files: 304
+  .keep.cpp files: 0, raw .cpp files: 303
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -540,11 +540,11 @@ core_dtrace.cpp_CDemonRaytrace_cylinderGroundCheck_FUN_004687e0  [.cpp] [Cppchec
 core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004d9c20  [.cpp] [Cppcheck (quick)]
   File: core/mission.cpp  (5 diagnostics)
 
+  Line   45: [nullPointer] Possible null pointer dereference: actor
+  Line   46: [nullPointer] Possible null pointer dereference: actor
   Line   47: [nullPointer] Possible null pointer dereference: actor
   Line   48: [nullPointer] Possible null pointer dereference: actor
-  Line   49: [nullPointer] Possible null pointer dereference: actor
   Line   50: [nullPointer] Possible null pointer dereference: actor
-  Line   52: [nullPointer] Possible null pointer dereference: actor
 
 ----------------------------------------------------------------------------------------------------
 core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80  [.cpp] [Cppcheck (quick)]
@@ -1314,13 +1314,6 @@ core_course.cpp_FUN_0043b500  [.cpp] [Cppcheck (quick)]
   Line   17: [uninitvar] Uninitialized variable: in_stack_00000008
 
 ----------------------------------------------------------------------------------------------------
-core_dcamera.cpp_CDemonCamera_FUN_00447f20  [.cpp] [Cppcheck (quick)]
-  File: core/dcamera.cpp  (2 diagnostics)
-
-  Line   89: [arrayIndexOutOfBounds] Array 'aiStack_70[4]' accessed at index 4, which is out of bounds.
-  Line   93: [uninitvar] Uninitialized variable: iStack_60
-
-----------------------------------------------------------------------------------------------------
 core_dcamera.cpp_CDemonCamera_initLookupTable_FUN_0043ff50  [.cpp] [Cppcheck (quick)]
   File: core/dcamera.cpp  (2 diagnostics)
 
@@ -1506,8 +1499,8 @@ core_lightgun.cpp_CLightGun_updateBeamLight_FUN_004c6ff0  [.cpp] [Cppcheck (quic
 core_menu.cpp_configureSoundOptions_FUN_004d12e0  [.cpp] [Cppcheck (quick)]
   File: core/menu.cpp  (2 diagnostics)
 
-  Line  182: [uninitvar] Uninitialized variable: iStack_38
-  Line  534: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  181: [uninitvar] Uninitialized variable: iStack_38
+  Line  533: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_004d6650  [.cpp] [Cppcheck (quick)]
@@ -1590,8 +1583,8 @@ core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_0051f080  [
 core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_0051e590  [.cpp] [Cppcheck (quick)]
   File: core/skeleton.cpp  (2 diagnostics)
 
-  Line   41: [ignoredReturnValue] Return value of function round() is not used.
-  Line   48: [uninitvar] Uninitialized variable: local_18
+  Line   39: [ignoredReturnValue] Return value of function round() is not used.
+  Line   46: [uninitvar] Uninitialized variable: local_18
 
 ----------------------------------------------------------------------------------------------------
 core_skeleton.cpp_CDeformableModel_renderParts_FUN_00518510  [.cpp] [Cppcheck (quick)]
@@ -1823,7 +1816,7 @@ cockpit_pkbmpset.cpp_FUN_004f5d00  [.cpp] [Cppcheck (quick)]
 core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00416d40  [.cpp] [Clang-Tidy (quick)]
   File: core/bodypart.cpp  (1 diagnostics)
 
-  Line   46: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
+  Line   44: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
 
 ----------------------------------------------------------------------------------------------------
 core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041d550  [.cpp] [Cppcheck (quick)]
@@ -1862,16 +1855,16 @@ core_charactr.cpp_CCharacter_testDamageLine_FUN_004282d0  [.cpp] [Cppcheck (quic
   Line   61: [uninitvar] Uninitialized variable: fStack_7c
 
 ----------------------------------------------------------------------------------------------------
+core_dcamera.cpp_CDemonCamera_FUN_00447f20  [.cpp] [Cppcheck (quick)]
+  File: core/dcamera.cpp  (1 diagnostics)
+
+  Line   91: [uninitvar] Uninitialized variable: iStack_60
+
+----------------------------------------------------------------------------------------------------
 core_dcamera.cpp_CDemonCamera_processCorona_FUN_00444f90  [.cpp] [Cppcheck (quick)]
   File: core/dcamera.cpp  (1 diagnostics)
 
   Line   19: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
-core_dcamera.cpp_CDemonCamera_saveAlphaTransform_FUN_004477f0  [.cpp] [Cppcheck (quick)]
-  File: core/dcamera.cpp  (1 diagnostics)
-
-  Line   24: [uninitvar] Uninitialized variable: unaff_retaddr
 
 ----------------------------------------------------------------------------------------------------
 core_dcamera.cpp_CDemonCamera_saveCameraTransform_FUN_00442d9c  [.cpp] [Cppcheck (quick)]

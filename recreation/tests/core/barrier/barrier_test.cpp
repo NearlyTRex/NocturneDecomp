@@ -31,9 +31,10 @@ TEST(CBarrier, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CBarrier::getCollisionType),
                                  ECollisionType (CBarrier::*)(SCollisionInfo *)>);
     static_assert(std::is_same_v<decltype(&CBarrier::updateCollisionData), void (CBarrier::*)()>);
+    static_assert(std::is_same_v<decltype(&CBarrier::getActorType),
+                                 const CDemonActorType &(CBarrier::*)() const>);
     static_assert(
-        std::is_same_v<decltype(&CBarrier::getActorType), CDemonActorType *(CBarrier::*)()>);
-    static_assert(std::is_same_v<decltype(&CBarrier::archive), void (CBarrier::*)()>);
+        std::is_same_v<decltype(&CBarrier::archive), void (CBarrier::*)(CActorArchive &)>);
 }
 
 } // namespace

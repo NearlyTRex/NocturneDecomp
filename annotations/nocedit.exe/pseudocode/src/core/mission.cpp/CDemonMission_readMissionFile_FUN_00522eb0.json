@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 579,
-    "complexity_score": 253,
+    "complexity_score": 254,
     "cross_reference_count": 2,
     "function_call_count": 15,
     "global_count": 39,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 253,
+    "pseudocode_lines": 254,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 832
+    "total_lines": 833
   },
   "cross_references": [
     {
@@ -422,7 +422,7 @@
   "resolved_suspects": [
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 162,
+      "line": 163,
       "match": "do {",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -440,7 +440,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 143,
+      "line": 144,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -449,7 +449,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 150,
+      "line": 151,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
       "severity": "moderate",

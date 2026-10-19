@@ -28,8 +28,9 @@ TEST(CNPC, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CNPC::process), void (CNPC::*)(float)>);
     static_assert(std::is_same_v<decltype(&CNPC::renderBackground), void (CNPC::*)(int)>);
     static_assert(std::is_same_v<decltype(&CNPC::getPathMap), CPathMap *(CNPC::*)()>);
-    static_assert(std::is_same_v<decltype(&CNPC::getActorType), CDemonActorType *(CNPC::*)()>);
-    static_assert(std::is_same_v<decltype(&CNPC::archive), void (CNPC::*)()>);
+    static_assert(
+        std::is_same_v<decltype(&CNPC::getActorType), const CDemonActorType &(CNPC::*)() const>);
+    static_assert(std::is_same_v<decltype(&CNPC::archive), void (CNPC::*)(CActorArchive &)>);
     static_assert(std::is_same_v<decltype(&CNPC::isInvulnerable), int (CNPC::*)()>);
     static_assert(std::is_same_v<decltype(&CNPC::processDamage), void (CNPC::*)(SDamageInfo *)>);
 }

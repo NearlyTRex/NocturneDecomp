@@ -267,11 +267,11 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
 ==============================================================================
   pairs compared        : 5267
   never transferred     : 6   (nocturne side has no signature at all -- transfer work, not drift)
-  genuine divergence    : 40   (both sides typed, and they disagree -- investigate)
-  name core differs     : 66   (mapped as the same function under two different names)
+  genuine divergence    : 41   (both sides typed, and they disagree -- investigate)
+  name core differs     : 63   (mapped as the same function under two different names)
 
   -- genuine divergence, highest confidence first --
-  by kind: {'ret': 28, 'param': 12, 'param0': 7, 'param1': 4, 'param2': 4, 'param3': 1, 'conv': 1}
+  by kind: {'ret': 28, 'param': 13, 'param0': 7, 'param1': 4, 'param2': 4, 'param3': 1, 'conv': 1}
 
     00403740 -> 00404430  conf 1.00  shape same_mnemonics
       engine_3d.c_abortOldFuncNoOpcode
@@ -378,6 +378,9 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
     00570ea0 -> 0050e550  conf 0.93  shape size_mismatch
       core_set.cpp_CDemonSet_setCameraEnabled
         param2 int -> undefined4
+    004a3e20 -> 00474d70  conf 0.85  shape similar_size
+      shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput
+        param count 4 -> 3
     0050f1b0 -> 0056497c  conf 0.85  shape size_mismatch
       shape_memdbg.cpp_debugAllocTracked1
         param count 3 -> 1
@@ -412,7 +415,7 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
         ret CPathMap* -> int
 
   -- same pair, different name core --
-  {'unnamed on one side': 55, 'renamed': 5, 'MAPPING SUSPECT': 3, 'stubbed in nocturne': 3}
+  {'unnamed on one side': 52, 'renamed': 5, 'MAPPING SUSPECT': 3, 'stubbed in nocturne': 3}
     MAPPING SUSPECT     the two names claim different CLASSES, so the
                         pair is probably wrong, not the names
     case-only spelling  same name, different capitalisation -- one build
@@ -472,9 +475,6 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
     [unnamed on one side] 004d29f0 -> 00495580  conf 1.00  shape identical
       nocedit  weaponDrawBlendWeightCallback
       nocturne motionBlendWeightFunc
-    [unnamed on one side] 00523be0 -> 004d8cd0  conf 1.00  shape size_mismatch
-      nocedit  CDemonMission_removeActorFromList
-      nocturne CDemonMission
     [unnamed on one side] 00599a50 -> 005174e0  conf 1.00  shape size_mismatch
       nocedit  CSkeleton_free
       nocturne CSkeleton
@@ -511,9 +511,6 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
     [unnamed on one side] 00600e29 -> 00565e59  conf 0.99  shape identical
       nocedit  fflush
       nocturne ostream_flush
-    [unnamed on one side] 00522d30 -> 004d7ea0  conf 0.96  shape size_mismatch
-      nocedit  CDemonMission_clearMissionData
-      nocturne CDemonMission
     [unnamed on one side] 00404420 -> 00405740  conf 0.93  shape size_mismatch
       nocedit  abortOldFuncOp18
       nocturne skipMRGLPrimitive
@@ -538,9 +535,6 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
     [unnamed on one side] 005be520 -> 005384d0  conf 0.89  shape same_mnemonics
       nocedit  CStranger_updateProceduralAnimation
       nocturne CStranger
-    [unnamed on one side] 00408820 -> 00409cd0  conf 0.85  shape size_mismatch
-      nocedit  deleteActor
-      nocturne destroyActor
     [unnamed on one side] 00454060 -> 00447f20  conf 0.85  shape same_mnemonics
       nocedit  CDemonCamera_computeVisibleFrustumBounds
       nocturne CDemonCamera

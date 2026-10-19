@@ -34,44 +34,26 @@
       {
         "category": "other",
         "column": 35,
-        "line": 497,
+        "line": 496,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 497,
+        "line": 496,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 498,
+        "line": 497,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 498,
+        "line": 497,
         "message": "exponent has no digits"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 51,
-        "line": 170,
-        "message": "use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 51,
-        "line": 184,
-        "message": "use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 52,
-        "line": 198,
-        "message": "use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
       },
       {
         "category": "undeclared_identifier",
@@ -84,12 +66,6 @@
         "column": 39,
         "line": 213,
         "message": "use of undeclared identifier 'stack0xfffffce0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 57,
-        "line": 216,
-        "message": "use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
       },
       {
         "category": "format_error",
@@ -114,6 +90,12 @@
         "column": 48,
         "line": 348,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "format_error",
+        "column": 85,
+        "line": 655,
+        "message": "format specifies type 'char *' but the argument has type 'CWerewolf *' [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -122,20 +104,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1745,
-    "complexity_score": 993,
+    "complexity_score": 898,
     "cross_reference_count": 0,
     "function_call_count": 35,
     "global_count": 34,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 718,
-    "suspect_count": 23,
+    "suspect_count": 14,
     "suspect_types": [
       "pointer_cast",
       "raw_address_constant",
       "stack_param",
       "stack_ref",
       "sub84_truncation",
-      "undefined_data",
       "unknown_field",
       "unrolled_memcpy",
       "unrolled_memset"
@@ -528,8 +509,8 @@
     },
     {
       "addr": "02dd1184",
-      "name": "DAT_02dd1184",
-      "type": "undefined4",
+      "name": "g_ZeroVector",
+      "type": "UVector3",
       "value": null
     },
     {
@@ -1256,30 +1237,6 @@
       "type": "stack_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 163,
-      "match": "DAT_02dd1184",
-      "severity": "mild",
-      "text": "(&local_e0,(CVector3f *)&DAT_02dd1184,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 177,
-      "match": "DAT_02dd1184",
-      "severity": "mild",
-      "text": "(&local_d4,(CVector3f *)&DAT_02dd1184,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 191,
-      "match": "DAT_02dd1184",
-      "severity": "mild",
-      "text": "(&local_17c,(CVector3f *)&DAT_02dd1184,",
-      "type": "undefined_data"
-    },
-    {
       "description": "Direct stack address reference",
       "line": 204,
       "match": "&stack0xfffffce0",
@@ -1294,14 +1251,6 @@
       "severity": "moderate",
       "text": "pSVar17 = (SDamageInfo *)&stack0xfffffce0;",
       "type": "stack_ref"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 209,
-      "match": "DAT_02dd1184",
-      "severity": "mild",
-      "text": "(&local_74,(CVector3f *)&DAT_02dd1184,",
-      "type": "undefined_data"
     },
     {
       "description": "Unknown/mangled field access",
@@ -1334,46 +1283,6 @@
       "severity": "moderate",
       "text": ",SUB84(uVar18,4),in_stack_fffffcec);",
       "type": "sub84_truncation"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 460,
-      "match": "DAT_02dd1184",
-      "severity": "mild",
-      "text": "(&local_11c,(CVector3f *)&DAT_02dd1184,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 499,
-      "match": "DAT_02dd1184",
-      "severity": "mild",
-      "text": "(&local_1d0,(CVector3f *)&DAT_02dd1184,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 510,
-      "match": "DAT_02dd1184",
-      "severity": "mild",
-      "text": "(&local_68,(CVector3f *)&DAT_02dd1184,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 521,
-      "match": "DAT_02dd1184",
-      "severity": "mild",
-      "text": "(&local_1a0,(CVector3f *)&DAT_02dd1184,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 547,
-      "match": "DAT_02dd1184",
-      "severity": "mild",
-      "text": "(&local_1f4,(CVector3f *)&DAT_02dd1184,",
-      "type": "undefined_data"
     },
     {
       "description": "Raw hex address 0x555d7d assigned to bare local `iVar6`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar6` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",

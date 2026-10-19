@@ -3,21 +3,21 @@ GLOBALS GAP ANALYSIS REPORT
 ================================================================================
 
 Total globals analyzed:      12956
-  Named globals:             10446
-  DAT_ globals:              2510
+  Named globals:             10450
+  DAT_ globals:              2506
 Gaps found:                  2048
-  With exact size bounds:    1598
-  With estimated bounds:     450
-Total gap bytes:             2,142,969,871
-  Exact gap bytes:           41,379,899
+  With exact size bounds:    1597
+  With estimated bounds:     451
+Total gap bytes:             2,142,969,854
+  Exact gap bytes:           41,379,879
 Overlaps (size <= 0):        7150
 
 --------------------------------------------------------------------------------
 GAP SIZE DISTRIBUTION
 --------------------------------------------------------------------------------
-  1-4 bytes (likely padding/alignment)          412
+  1-4 bytes (likely padding/alignment)          413
   5-16 bytes (small vars)                       262
-  17-64 bytes (structs/small arrays)            608
+  17-64 bytes (structs/small arrays)            607
   65-256 bytes (medium data)                    295
   257-1024 bytes (large structs/arrays)         183
   1-4 KB                                        117
@@ -179,7 +179,7 @@ LARGEST GAPS (top 50)
     before: PTR_caseD_1_0040db24                     void*                at 0x0040db24
 
 --------------------------------------------------------------------------------
-ALL EXACT GAPS (1598) - size bounds are known precisely
+ALL EXACT GAPS (1597) - size bounds are known precisely
 --------------------------------------------------------------------------------
    7,372,800 bytes  at 0x00b0e608  between DAT_00b0e604                   and DAT_01216608
    6,753,148 bytes  at 0x02737ef8  between DAT_02737ef4                   and DAT_02da8a74
@@ -743,7 +743,7 @@ ALL EXACT GAPS (1598) - size bounds are known precisely
           60 bytes  at 0x01e57248  between DAT_01e57244                   and g_CDemonSet_01e57284
           60 bytes  at 0x02dc9e64  between g_CSpikeActorType_02dc9e28.nam and DAT_02dc9ea0
           60 bytes  at 0x02dca01c  between DAT_02dca018                   and DAT_02dca058
-          60 bytes  at 0x02dd1148  between g_CTVBatActorType_02dd110c.nam and DAT_02dd1184
+          60 bytes  at 0x02dd1148  between g_CTVBatActorType_02dd110c.nam and g_ZeroVector
           56 bytes  at 0x0059c8e4  between DAT_0059c8e0                   and DAT_0059c91c
           56 bytes  at 0x005a1ab4  between DAT_005a1ab0                   and DAT_005a1aec
           56 bytes  at 0x005b4750  between DAT_005b4748                   and DAT_005b4788
@@ -773,7 +773,7 @@ ALL EXACT GAPS (1598) - size bounds are known precisely
           56 bytes  at 0x02dc9e28  between g_ExternalFrameLocked          and g_CSpikeActorType_02dc9e28.nam
           56 bytes  at 0x02dc9fac  between DAT_02dc9fa8                   and g_CStrangerActorType_02dc9fac.
           56 bytes  at 0x02dd100c  between g_CTommyGunActorType_02dd0fd0. and g_CTrapActorType_02dd100c.name
-          56 bytes  at 0x02dd1190  between DAT_02dd118c                   and g_CVehicleActorType_02dd1190.n
+          56 bytes  at 0x02dd1190  between g_ZeroVector+8                 and g_CVehicleActorType_02dd1190.n
           56 bytes  at 0x02dd11cc  between g_CVehicleActorType_02dd1190.n and g_CCryptVesselActorType_02dd11
           52 bytes  at 0x004a91f4  between switchdataD_004a91f0           and switchdataD_004a9228
           52 bytes  at 0x005ae694  between g_INT_005ae690                 and g_INT_005ae6c8
@@ -1137,7 +1137,6 @@ ALL EXACT GAPS (1598) - size bounds are known precisely
           20 bytes  at 0x005ba92c  between INT_005ba928                   and g_INT_005ba940
           20 bytes  at 0x005bac38  between DAT_005bac34                   and INT_005bac4c
           20 bytes  at 0x005bac50  between INT_005bac4c                   and g_CKeys_PTR_005bac64
-          20 bytes  at 0x005baca8  between DAT_005baca4                   and INT_005bacbc
           20 bytes  at 0x005bc16c  between DAT_005bc168                   and DAT_005bc180
           20 bytes  at 0x005be07c  between INT_005be078                   and DAT_005be090
           20 bytes  at 0x005be094  between DAT_005be090                   and g_WatcomStaticDestructorNode_0

@@ -20,8 +20,8 @@ public:
     void onLaserHit(SLaserInfo *laser_info) override;
     float customRayIntersect(common::CVector3f *ray_origin, common::CVector3f *ray_direction,
                              common::CVector3f *out_normal) override;
-    CDemonActorType *getActorType() override;
-    void archive() override;
+    [[nodiscard]] const CDemonActorType &getActorType() const override;
+    void archive(CActorArchive &actor_archive) override;
 };
 
 } // namespace nocturne::core

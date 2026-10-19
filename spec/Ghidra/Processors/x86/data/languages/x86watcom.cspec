@@ -531,7 +531,7 @@
     </prototype>
     <!-- __esi: Register-only convention - single ESI param, returns ESI.
          EBX and EDI are callee-saved (standard Watcom ABI). -->
-    <prototype name="__esi" extrapop="0" stackshift="0">
+    <prototype name="__esi" extrapop="4" stackshift="4">
         <input>
             <pentry minsize="1" maxsize="4"><register name="ESI" /></pentry>
         </input>

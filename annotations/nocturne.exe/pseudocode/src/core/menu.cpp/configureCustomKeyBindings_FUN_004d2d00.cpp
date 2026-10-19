@@ -40,7 +40,6 @@ void __cdecl core_menu_cpp_configureCustomKeyBindings_FUN_004d2d00(void)
   int *piVar27;
   int iVar28;
   EInputCodeType EVar29;
-  uint unaff_ESI;
   int iVar30;
   EInputCodeType EVar31;
   char *pcVar32;
@@ -604,7 +603,7 @@ LAB_004d2d2e:
     iVar30 = local_c;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Edit key settings");
     iVar30 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70
-                       (&local_244,pcVar2,iVar30,unaff_ESI);
+                       (&local_244,pcVar2,iVar30);
     if (-1 < iVar30) {
       if (iVar30 == 0) {
         core_game_cpp_CGame_restoreDefaultControls_FUN_0049e610(g_CGame_PTR_005b9354);

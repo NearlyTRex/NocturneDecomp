@@ -12,8 +12,8 @@ public:
 
     void setup() override;
     int renderOpaque() override;
-    CDemonActorType *getActorType() override;
-    void archive() override;
+    [[nodiscard]] const CDemonActorType &getActorType() const override;
+    void archive(CActorArchive &actor_archive) override;
 
     CWayPoint *findNearestReachable(CWayPoint *start_waypoint);
 };

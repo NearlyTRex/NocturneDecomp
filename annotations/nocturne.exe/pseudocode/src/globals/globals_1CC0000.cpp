@@ -51,14 +51,14 @@ CDemonActorType g_CMobsterActorType_01ccdbd8 = {};
 CDemonActorType g_CMolochActorType_01ccdc14 = {};
 
 // CKeyFramedModel
-CKeyFramedModel g_CKeyFramedModel_01cc3290 = {};
+CKeyFramedModel g_LoadingMoonModel = {};
 CKeyFramedModel g_CKeyFramedModel_01cce1bc = {};
 
 // CKeys
 CKeys g_CKeys_01cc30e4 = {};
 
 // CLevelLoader
-CLevelLoader g_CLevelLoader_01cc3160 = {};
+CLevelLoader g_CLevelLoader = {};
 
 // CMoon
 CMoon g_CMoon_01cc5780 = {};

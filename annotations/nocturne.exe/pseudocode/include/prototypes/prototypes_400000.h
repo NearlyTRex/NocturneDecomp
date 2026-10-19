@@ -228,7 +228,7 @@ void __cdecl engine_3d_c_drawLine3DFromIndices_FUN_00409510(int vertex_index1,in
 void __cdecl engine_3d_c_clipAndDrawLine3D_FUN_00409590(SRenderVertex vertex1,SRenderVertex vertex2);
 void __cdecl core_actor_cpp_staticInit_FUN_00409840(void);
 float __cdecl core_actor_cpp_rayCylinderIntersect_FUN_00409860(SCollisionInfo *collision_info,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal);
-void __cdecl core_actor_cpp_destroyActor_FUN_00409cd0(CDemonActor *actor);
+void __cdecl core_actor_cpp_deleteActor_FUN_00409cd0(CDemonActor *actor);
 CDemonActorTransformState * __cdecl core_actor_cpp_initTransformCache_FUN_00409cf0(CDemonActorTransformState *transform_cache);
 CDemonActor * __cdecl core_actor_cpp_CDemonActor_ctor_FUN_00409d30(CDemonActor *this_ptr);
 CDemonActor * __cdecl core_actor_cpp_CDemonActor_dtor_FUN_00409ea0(CDemonActor *this_ptr,uint flags);

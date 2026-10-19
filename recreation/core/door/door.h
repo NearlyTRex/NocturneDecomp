@@ -23,8 +23,8 @@ public:
     int getBlockVirtualDirectorFlag() override;
     int allowBulletHoles() override;
     void updateCollisionData() override;
-    CDemonActorType *getActorType() override;
-    void archive() override;
+    [[nodiscard]] const CDemonActorType &getActorType() const override;
+    void archive(CActorArchive &actor_archive) override;
 
     void onOpened();
     void setSwingRange(float swing_range);

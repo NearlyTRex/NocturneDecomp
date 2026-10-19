@@ -47,7 +47,7 @@
 ; Referenced Globals:
 ;   double DOUBLE_0057936e = 5.22209901682860E-315
 ;   double DOUBLE_00579376 = 0.400000000000000
-;   undefined4 DAT_02dd1184
+;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
 ;   core_actor.cpp_CVector3f_ctor_FUN_0040e160
@@ -80,7 +80,7 @@ section .text
     LEA EAX,[EBP + 0x26]                ; 004194eb
     PUSH EAX                            ; 004194ee
     MOV ECX,0xbf456042                  ; 004194ef
-    PUSH 0x2dd1184                      ; 004194f4 | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 004194f4 | g_ZeroVector
     LEA EAX,[EBP + 0xffffff66]          ; 004194f9
     MOV EDX,0xc0224dd3                  ; 004194ff
     PUSH EAX                            ; 00419504

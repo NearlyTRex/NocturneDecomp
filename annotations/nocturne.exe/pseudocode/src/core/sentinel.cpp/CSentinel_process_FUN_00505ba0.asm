@@ -616,7 +616,7 @@ section .text
     ADD EAX,ESI                         ; 00506145
     PUSH 0x3f800000                     ; 00506147
     PUSH EAX                            ; 0050614c
-    PUSH 0x2dd1184                      ; 0050614d | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 0050614d | g_ZeroVector
     LEA EAX,[EBP + -0x26]               ; 00506152
     FLD float ptr [EBP + 0x76]          ; 00506155
     PUSH EAX                            ; 00506158
@@ -653,7 +653,7 @@ section .text
     PUSH EAX                            ; 005061b4
     MOV dword ptr [EBP + 0xffffff1e],EBX ; 005061b5
     MOV dword ptr [EBP + 0xffffff22],EBX ; 005061bb
-    PUSH 0x2dd1184                      ; 005061c1 | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 005061c1 | g_ZeroVector
     LEA EAX,[EBP + 0x3a]                ; 005061c6
     FLD float ptr [EBP + 0x76]          ; 005061c9
     PUSH EAX                            ; 005061cc

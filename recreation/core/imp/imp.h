@@ -15,8 +15,8 @@ public:
     void process(float delta_time) override;
     ECollisionType getCollisionType(SCollisionInfo *collision_info) override;
     int getTargetPoints(common::CVector3f *out_points_array) override;
-    CDemonActorType *getActorType() override;
-    void archive() override;
+    [[nodiscard]] const CDemonActorType &getActorType() const override;
+    void archive(CActorArchive &actor_archive) override;
     void processDamage(SDamageInfo *damage_info) override;
     int attractActorToward(CDemonActor *actor, common::CVector3f *target_local_point) override;
     common::CMatrix3x4f *getCarryObjToBodyXForm(int hand_index,

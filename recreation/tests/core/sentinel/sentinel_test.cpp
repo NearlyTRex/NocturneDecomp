@@ -30,9 +30,10 @@ TEST(CSentinel, PublicInterface) {
                                  ECollisionType (CSentinel::*)(SCollisionInfo *)>);
     static_assert(std::is_same_v<decltype(&CSentinel::getTargetPoints),
                                  int (CSentinel::*)(common::CVector3f *)>);
+    static_assert(std::is_same_v<decltype(&CSentinel::getActorType),
+                                 const CDemonActorType &(CSentinel::*)() const>);
     static_assert(
-        std::is_same_v<decltype(&CSentinel::getActorType), CDemonActorType *(CSentinel::*)()>);
-    static_assert(std::is_same_v<decltype(&CSentinel::archive), void (CSentinel::*)()>);
+        std::is_same_v<decltype(&CSentinel::archive), void (CSentinel::*)(CActorArchive &)>);
     static_assert(
         std::is_same_v<decltype(&CSentinel::processDamage), void (CSentinel::*)(SDamageInfo *)>);
     static_assert(std::is_same_v<decltype(&CSentinel::attractActorToward),

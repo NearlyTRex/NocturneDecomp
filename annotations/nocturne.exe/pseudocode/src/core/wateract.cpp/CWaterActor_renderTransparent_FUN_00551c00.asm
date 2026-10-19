@@ -15,7 +15,7 @@
 ;   undefined4 DAT_005c13cc
 ;   undefined4 DAT_01b4d738
 ;   CDemonSet g_CDemonSet_01e57284
-;   undefined4 DAT_02dd1184
+;   UVector3 g_ZeroVector
 ;   undefined4 DAT_02dda6b8
 ;   undefined4 DAT_02dda6bc
 ;   undefined4 DAT_02dda6c0
@@ -151,7 +151,7 @@ section .text
     XOR EDI,EDI                         ; 00551d31
     PUSH EBX                            ; 00551d33
         ;   Label: LAB_00551d33
-    PUSH 0x2dd1184                      ; 00551d34 | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 00551d34 | g_ZeroVector
     PUSH EBP                            ; 00551d39
     MOV EDX,dword ptr [0x005be368]      ; 00551d3a | g_CDemonSet_PTR_005be368
     PUSH EDX                            ; 00551d40 | g_CDemonSet_01e57284

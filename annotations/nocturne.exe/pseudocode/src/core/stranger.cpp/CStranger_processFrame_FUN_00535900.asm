@@ -2359,7 +2359,7 @@ section .text
     FADDP                               ; 0053772a
     MOV EAX,dword ptr [EBX + 0x14c]     ; 0053772c
     FSTP float ptr [ESP]                ; 00537732
-    PUSH 0x2dd1184                      ; 00537735 | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 00537735 | g_ZeroVector
     PUSH EBX                            ; 0053773a
     CALL dword ptr [EAX + 0x1c]         ; 0053773b
     ADD ESP,0xc                         ; 0053773e

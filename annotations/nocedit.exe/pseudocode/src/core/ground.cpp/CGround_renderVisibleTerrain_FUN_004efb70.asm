@@ -6,7 +6,7 @@
 ; Parameters:
 ; CGround *        Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x20]:4  local_20
+; int              Stack[-0x20]:4  local_20
 ; int              Stack[-0x1c]:4  local_1c
 ;
 ; XREF[1]:

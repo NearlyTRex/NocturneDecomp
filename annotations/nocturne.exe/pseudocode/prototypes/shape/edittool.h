@@ -341,7 +341,7 @@ CPickList * __cdecl CPickList::dtor(CPickList *this_ptr,uint flags);
 
 // Original: shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70
 // Address: 00474d70
-int __cdecl CPickList::displayChoicesAndWaitForInput(CPickList *this_ptr,char *dialog_title,int initial_selected_index,uint window_flags);
+int __cdecl CPickList::displayChoicesAndWaitForInput(CPickList *this_ptr,char *dialog_title,int initial_selected_index);
 
 // Original: shape_edittool.cpp_CPickList_initializeDialog_FUN_00474e70
 // Address: 00474e70

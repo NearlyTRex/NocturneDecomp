@@ -11,7 +11,7 @@
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_02dd1184
+;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220
@@ -78,7 +78,7 @@ section .text
     ADD ESP,0xc                         ; 005476dd
     LEA EAX,[ESP + 0x28]                ; 005476e0
     PUSH EAX                            ; 005476e4
-    PUSH 0x2dd1184                      ; 005476e5 | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 005476e5 | g_ZeroVector
     MOV EDI,dword ptr [0x005ae704]      ; 005476ea | g_CDemonRenderer_PTR_005ae704
     PUSH EDI                            ; 005476f0 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 ; 005476f1

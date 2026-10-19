@@ -15,9 +15,10 @@ int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_00428c00(CCharacter 
   CCharacter_full_vtable *pCVar3;
   CPathMap *path_map;
   int iVar4;
+  CVector3f *pCVar5;
   CWayPoint *start_waypoint;
   CWayPoint *actor_ptr;
-  CVector3f *pCVar5;
+  UVector3 *direction;
   float fVar6;
   float fVar7;
   CVector3f CStack_48;
@@ -76,11 +77,11 @@ int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_00428c00(CCharacter 
             (this_ptr->door_target,&local_3c,&this_ptr->look_offset,&this_ptr_00->position);
   fVar7 = 0.0;
   fVar6 = 0.0;
-  pCVar5 = (CVector3f *)&DAT_02dd1184;
+  direction = &g_ZeroVector;
   path_map = (*((this_ptr->door_target->base).vtable._ub)->getPathMap)(&this_ptr->door_target->base)
   ;
   iVar4 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004247f0
-                    (this_ptr,&local_3c,path_map,pCVar5,fVar6,fVar7);
+                    (this_ptr,&local_3c,path_map,&direction->f,fVar6,fVar7);
   if (iVar4 < 0) {
     this_ptr->is_walking = 3;
     return 1;

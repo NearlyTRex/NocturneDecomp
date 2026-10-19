@@ -12,11 +12,12 @@ TEST(CTextureList, IsConcrete) {
 }
 
 TEST(CTextureList, Constructors) {
-    static_assert(std::is_constructible_v<CTextureList>);
+    static_assert(std::is_constructible_v<CTextureList, const engine::CDosIo &>);
 }
 
 TEST(CTextureList, PublicInterface) {
-    static_assert(std::is_same_v<decltype(&CTextureList::load), void (CTextureList::*)(char *)>);
+    static_assert(
+        std::is_same_v<decltype(&CTextureList::load), void (CTextureList::*)(std::string_view)>);
     static_assert(std::is_same_v<decltype(&CTextureList::captureTexture),
                                  void (CTextureList::*)(std::uint32_t)>);
 }

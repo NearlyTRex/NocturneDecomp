@@ -12,18 +12,18 @@ SUMMARY STATISTICS
 ====================================================================================================
 
   Total functions analyzed:          4,923
-  Unnamed functions (FUN_):          75 ( 1.5%)
+  Unnamed functions (FUN_):          73 ( 1.5%)
   Functions with unnamed params:     15 ( 0.3%)
-  Functions with type issues:        1,667 (33.9%)
+  Functions with type issues:        1,664 (33.8%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
     Wrong return type (void):          0
     Wrong return type (wide/64-bit):   2
     Missing register params:           3
-    Wrong calling convention:          45
+    Wrong calling convention:          43
     Undefined types in variables:      1604
-    Unresolved stack params:           102
+    Unresolved stack params:           93
 
   Excluded (.keep / MMX / by-value):   0 functions
     Wrong calling convention:          0
@@ -55,10 +55,6 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x00514390  unknown       0 callers
     0x005143a0  unknown       0 callers
     0x005143b0  unknown       0 callers
-
-  core/mission.cpp (2 unnamed)
-    0x004d8cd0  __cdecl       4 callers
-    0x004d7ea0  __cdecl       3 callers
 
   core/skeleton.cpp (2 unnamed)
     0x005174e0  __cdecl       4 callers
@@ -224,14 +220,14 @@ Sorted by number of unnamed parameters (most unnamed first).
     Unnamed: param_2 (int)
     Named:   this_ptr (CInventory *)
 
-  CDemonMission
-    Address: 0x004d8cd0  File: core/mission.cpp
-    Unnamed: param_2 (CDemonActor *)
-    Named:   this_ptr (CDemonMission *)
-
   CDemonMission_createFromSingleSet
     Address: 0x004d93d0  File: core/mission.cpp
     Unnamed: param_2 (char *)
+    Named:   this_ptr (CDemonMission *)
+
+  CDemonMission_removeActorFromList
+    Address: 0x004d8cd0  File: core/mission.cpp
+    Unnamed: param_2 (CDemonActor *)
     Named:   this_ptr (CDemonMission *)
 
   CDemonSet
@@ -293,7 +289,7 @@ Missing register parameters (likely wrong calling convention) (3)
     Suggested: Likely __fastcall (ECX, EDX params)
 
 --------------------------------------------------------------------------------
-Wrong calling convention (unaffected register usage) (45)
+Wrong calling convention (unaffected register usage) (43)
 --------------------------------------------------------------------------------
 
   drawLine3D
@@ -398,12 +394,6 @@ Wrong calling convention (unaffected register usage) (45)
     Signature: void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemonRaytrace *this_ptr,int grid_x,int grid_y,int grid_z,int render_mode)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
-  CEditorTools_showDirectoryBrowser
-    Address: 0x00470730  File: shape/edittool.cpp
-    Evidence: unaff_ESI, unaff_ESI
-    Signature: int __cdecl shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_00470730(CEditorTools *this_ptr,char *title_text,char *search_pattern,char *initial_path,uint flags)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
   CEditorTools_draw3DAxisLabels
     Address: 0x00472de0  File: shape/edittool.cpp
     Evidence: unaff_EBP, unaff_EBP
@@ -462,12 +452,6 @@ Wrong calling convention (unaffected register usage) (45)
     Address: 0x004cef80  File: core/melee.cpp
     Evidence: unaff_ESI, unaff_ESI
     Signature: void __cdecl core_melee_cpp_CMelee_fillAttackDamageInfo_FUN_004cef80(CMelee *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  configureCustomKeyBindings
-    Address: 0x004d2d00  File: core/menu.cpp
-    Evidence: unaff_ESI, unaff_ESI
-    Signature: void __cdecl core_menu_cpp_configureCustomKeyBindings_FUN_004d2d00(void)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   CDemonMission_loadActor
@@ -567,7 +551,7 @@ Wrong calling convention (unaffected register usage) (45)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
 --------------------------------------------------------------------------------
-Unresolved stack parameters (missing from signature) (102)
+Unresolved stack parameters (missing from signature) (93)
 --------------------------------------------------------------------------------
 
   drawAntialiasedChar
@@ -744,30 +728,6 @@ Unresolved stack parameters (missing from signature) (102)
     Signature: void __cdecl cockpit_drawsurf_cpp_testDrawingSurface_FUN_0045e370(CBitFont *test_font)
     Suggested: Signature is missing stack parameters entirely
 
-  FUN_00470230
-    Address: 0x00470230  File: shape/edittool.cpp
-    Evidence: in_stack_fffffe84, in_stack_fffffe84
-    Signature: bool shape_edittool_cpp_FUN_00470230(undefined4 param_1,char *param_2)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00470310
-    Address: 0x00470310  File: shape/edittool.cpp
-    Evidence: in_stack_fffffe84, in_stack_fffffe84
-    Signature: bool shape_edittool_cpp_FUN_00470310(undefined4 param_1,char *param_2)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_004703f0
-    Address: 0x004703f0  File: shape/edittool.cpp
-    Evidence: in_stack_fffffe80, in_stack_fffffe80
-    Signature: undefined4 shape_edittool_cpp_FUN_004703f0(undefined4 param_1,char *param_2)
-    Suggested: Signature is missing stack parameters entirely
-
-  CEditorTools_showFileSelectionDialog
-    Address: 0x00470550  File: shape/edittool.cpp
-    Evidence: in_stack_fffff97c, in_stack_fffff97c
-    Signature: int __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_00470550(CEditorTools *this_ptr,char *dialog_title,char *search_directory,char *file_pattern,char *output_filename,uint flags)
-    Suggested: Signature is missing stack parameters entirely
-
   CEditorTools_createModalWindow
     Address: 0x00471b50  File: shape/edittool.cpp
     Evidence: in_stack_ffffed18, in_stack_ffffed18
@@ -840,22 +800,10 @@ Unresolved stack parameters (missing from signature) (102)
     Signature: void __cdecl core_game_cpp_CGame_processFrame_FUN_0049cc10(CGame *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
-  CGame_runGameSession
-    Address: 0x0049da10  File: core/game.cpp
-    Evidence: in_stack_fffffc00, in_stack_fffffc00, in_stack_fffffc00
-    Signature: int __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(CGame *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
   CGame_processHotkeys
     Address: 0x0049f930  File: core/game.cpp
     Evidence: in_stack_00000080, in_stack_00000080, in_stack_00000080
     Signature: void __cdecl core_game_cpp_CGame_processHotkeys_FUN_0049f930(CGame *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CGame
-    Address: 0x004a4b50  File: core/game.cpp
-    Evidence: in_stack_fffffb4c, in_stack_fffffb4c, in_stack_fffffb4c, in_stack_fffffb4c, in_stack_fffffb4c, in_stack_fffffb4c, in_stack_fffffb4c
-    Signature: void __cdecl core_game_cpp_CGame_FUN_004a4b50(CGame *this_ptr,int select_mode)
     Suggested: Signature is missing stack parameters entirely
 
   CGame
@@ -904,12 +852,6 @@ Unresolved stack parameters (missing from signature) (102)
     Address: 0x004d12e0  File: core/menu.cpp
     Evidence: in_stack_fffff7ec, in_stack_fffff7ec
     Signature: void __cdecl core_menu_cpp_configureSoundOptions_FUN_004d12e0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  CDemonMission_ensureHeroPlaceholder
-    Address: 0x004d9c20  File: core/mission.cpp
-    Evidence: in_stack_fffffe84, in_stack_fffffe84, in_stack_fffffe84
-    Signature: void __cdecl core_mission_cpp_CDemonMission_ensureHeroPlaceholder_FUN_004d9c20(CDemonMission *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
   CMobster_process
@@ -970,12 +912,6 @@ Unresolved stack parameters (missing from signature) (102)
     Address: 0x004f5d00  File: cockpit/pkbmpset.cpp
     Evidence: in_stack_00000004, in_stack_00000004
     Signature: undefined4 cockpit_pkbmpset_cpp_FUN_004f5d00(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  CPodFile_verifyChecksum
-    Address: 0x004f8240  File: engine/pod.cpp
-    Evidence: in_stack_fffffe68, in_stack_fffffe68, in_stack_fffffe68
-    Signature: int __cdecl engine_pod_cpp_CPodFile_verifyChecksum_FUN_004f8240(CPodFile *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
   FUN_004fbb70
@@ -1066,12 +1002,6 @@ Unresolved stack parameters (missing from signature) (102)
     Address: 0x0052ae90  File: sound/snddx.cpp
     Evidence: in_stack_00000014, in_stack_00000014, in_stack_00000014
     Signature: void __cdecl sound_snddx_cpp_CDirectSoundDevice_unlockSample_FUN_0052ae90(CDirectSoundDevice *this_ptr,int buffer_id)
-    Suggested: Signature is missing stack parameters entirely
-
-  CSound_selectReverbPreset
-    Address: 0x0052ed40  File: core/sound.cpp
-    Evidence: in_stack_fffffe8c, in_stack_fffffe8c
-    Signature: int __cdecl core_sound_cpp_CSound_selectReverbPreset_FUN_0052ed40(CSound *this_ptr,char *title,int *selection_inout)
     Suggested: Signature is missing stack parameters entirely
 
   FUN_0052ee20
@@ -4978,11 +4908,6 @@ Undefined types in variables (1604)
     Locals:  local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CGround_renderVisibleTerrain
-    Address: 0x004b1ff0  File: core/ground.cpp
-    Locals:  local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   isAnyHeroWithinCylinder
     Address: 0x004b4630  File: core/hero.cpp
     Locals:  local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
@@ -5585,6 +5510,11 @@ Undefined types in variables (1604)
 
   CFootstep_render
     Address: 0x004afa20  File: core/gore.cpp
+    Locals:  local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CGround_renderVisibleTerrain
+    Address: 0x004b1ff0  File: core/ground.cpp
     Locals:  local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
@@ -9217,7 +9147,7 @@ FUNCTION NAME / ADDRESS MISMATCHES (0)
   No mismatches found.
 
 ====================================================================================================
-DUPLICATE FUNCTION NAMES (25 groups)
+DUPLICATE FUNCTION NAMES (24 groups)
 ====================================================================================================
 
 Functions that share the same base name (ignoring FUN_XXXXXXXX suffix).
@@ -9286,10 +9216,6 @@ Some are legitimate overloads, others may need disambiguating names.
   core_manpuz.cpp_CMansionPuzzleCircle  (2 functions)
     0x004ca710  (CMansionPuzzleCircle *this_ptr,int panel_index)
     0x004ca790  (CMansionPuzzleCircle *this_ptr,int gem_index)
-
-  core_mission.cpp_CDemonMission  (2 functions)
-    0x004d7ea0  (CDemonMission *this_ptr)
-    0x004d8cd0  (CDemonMission *this_ptr,CDemonActor *param_2)
 
   core_scat.cpp  (2 functions)
     0x004fbb70  (void)

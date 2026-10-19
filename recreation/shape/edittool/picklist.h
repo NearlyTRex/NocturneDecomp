@@ -52,8 +52,7 @@ public:
 
     // Shows the list, starting on initial_selected_index, until one is picked, and returns its
     // index; kCancelled when cancelled, when the window closes, or when the list is empty.
-    int displayChoicesAndWaitForInput(std::string_view dialog_title, int initial_selected_index,
-                                      std::uint32_t window_flags);
+    int displayChoicesAndWaitForInput(std::string_view dialog_title, int initial_selected_index);
     // Opens the window, sized to the strings, on initial_selected_index.
     void initializeDialog(std::string_view dialog_title, int initial_selected_index,
                           std::uint32_t window_flags);

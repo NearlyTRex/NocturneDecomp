@@ -89,7 +89,7 @@ void __cdecl shape_edittool_cpp_CStrList_populateFromFilesNoDuplicates_FUN_00474
 void __cdecl shape_edittool_cpp_CStrList_populateWithFullPaths_FUN_00474ae0(CStrList *this_ptr,char *base_path,char *search_path);
 CPickList * __cdecl shape_edittool_cpp_CPickList_ctor_FUN_00474c90(CPickList *this_ptr);
 CPickList * __cdecl shape_edittool_cpp_CPickList_dtor_FUN_00474cf0(CPickList *this_ptr,uint flags);
-int __cdecl shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70(CPickList *this_ptr,char *dialog_title,int initial_selected_index,uint window_flags);
+int __cdecl shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70(CPickList *this_ptr,char *dialog_title,int initial_selected_index);
 void __cdecl shape_edittool_cpp_CPickList_initializeDialog_FUN_00474e70(CPickList *this_ptr,char *dialog_title,int initial_selected_index,uint window_flags);
 int __cdecl shape_edittool_cpp_CPickList_handleInput_FUN_00474ea0(CPickList *this_ptr);
 int __cdecl shape_edittool_cpp_CPickList_handleDialogInput_FUN_00475230(CPickList *this_ptr);

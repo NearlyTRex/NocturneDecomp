@@ -16,8 +16,8 @@
 ;   core_mission.cpp_CDemonMission_run_FUN_004d9440 at 004d9506
 ;
 ; Called Functions:
-;   core_actor.cpp_destroyActor_FUN_00409cd0
-;   core_mission.cpp_CDemonMission_FUN_004d8cd0
+;   core_actor.cpp_deleteActor_FUN_00409cd0
+;   core_mission.cpp_CDemonMission_removeActorFromList_FUN_004d8cd0
 ;
 ; *****************************************************************************
 
@@ -36,15 +36,15 @@ section .text
         ;   Label: LAB_004d8f9b
     MOV EDX,dword ptr [ESP + 0xc]       ; 004d8f9c
     PUSH EDX                            ; 004d8fa0
-    CALL core_mission.cpp_CDemonMission_FUN_004d8cd0 ; 004d8fa1
-        ;   XREF to: 004d8cd0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_004d8cd0(CDemonMission * this_ptr, CDemonActor * param_2)
+    CALL core_mission.cpp_CDemonMission_removeActorFromList_FUN_004d8cd0 ; 004d8fa1
+        ;   XREF to: 004d8cd0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_removeActorFromList_FUN_004d8cd0(CDemonMission * this_ptr, CDemonActor * param_2)
     ADD ESP,0x8                         ; 004d8fa6
     CMP dword ptr [ESP + 0x10],0x0      ; 004d8fa9
     JZ 0x004d8f99                       ; 004d8fae
         ;   XREF to: 004d8f99 (CONDITIONAL_JUMP)  ; LAB_004d8f99
     PUSH EBX                            ; 004d8fb0
-    CALL core_actor.cpp_destroyActor_FUN_00409cd0 ; 004d8fb1
-        ;   XREF to: 00409cd0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_destroyActor_FUN_00409cd0(CDemonActor * actor)
+    CALL core_actor.cpp_deleteActor_FUN_00409cd0 ; 004d8fb1
+        ;   XREF to: 00409cd0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_deleteActor_FUN_00409cd0(CDemonActor * actor)
     ADD ESP,0x4                         ; 004d8fb6
     POP EBX                             ; 004d8fb9
     RET                                 ; 004d8fba

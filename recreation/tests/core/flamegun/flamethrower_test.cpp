@@ -27,7 +27,7 @@ TEST(CFlameThrower, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CFlameThrower::process), void (CFlameThrower::*)(float)>);
     static_assert(std::is_same_v<decltype(&CFlameThrower::getActorType),
-                                 CDemonActorType *(CFlameThrower::*)()>);
+                                 const CDemonActorType &(CFlameThrower::*)() const>);
     static_assert(std::is_same_v<decltype(&CFlameThrower::fire), int (CFlameThrower::*)()>);
     static_assert(std::is_same_v<decltype(&CFlameThrower::getDamage), float (CFlameThrower::*)()>);
     static_assert(

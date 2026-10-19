@@ -196,7 +196,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemon
                   (g_CDemonRenderer_PTR_005ae704,&local_64);
         core_dcube_cpp_CDemonCube_rotateVertices_FUN_0044aff0(local_4c,this_ptr->rendering_mode);
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
-                  (g_CDemonRenderer_PTR_005ae704,(CVector3f *)&DAT_02dd1184);
+                  (g_CDemonRenderer_PTR_005ae704,&g_ZeroVector.f);
         iVar3 = _DAT_01b7b744;
         *(CDemonCube **)(_DAT_01b7b744 * 4 + 0x1b7b74c) = local_4c;
         if (g_CVector3f_ARRAY_01b8efcc + iVar3 != &local_64) {

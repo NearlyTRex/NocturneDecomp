@@ -46,9 +46,9 @@ TEST(CMansionPuzzleCircle, PublicInterface) {
         std::is_same_v<decltype(&CMansionPuzzleCircle::customGetFloorHeight),
                        int (CMansionPuzzleCircle::*)(common::CVector3f *, float, float *)>);
     static_assert(std::is_same_v<decltype(&CMansionPuzzleCircle::getActorType),
-                                 CDemonActorType *(CMansionPuzzleCircle::*)()>);
-    static_assert(
-        std::is_same_v<decltype(&CMansionPuzzleCircle::archive), void (CMansionPuzzleCircle::*)()>);
+                                 const CDemonActorType &(CMansionPuzzleCircle::*)() const>);
+    static_assert(std::is_same_v<decltype(&CMansionPuzzleCircle::archive),
+                                 void (CMansionPuzzleCircle::*)(CActorArchive &)>);
 }
 
 } // namespace

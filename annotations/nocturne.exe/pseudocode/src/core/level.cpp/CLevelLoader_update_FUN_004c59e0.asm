@@ -52,7 +52,7 @@
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
-;   undefined4 DAT_005baca4
+;   SMRGLTextureBasic g_LoadingMoonGlowTexture
 ;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   CBitFont* g_CBitFont_PTR_014b9900
 ;   undefined4 DAT_01b4d738
@@ -62,7 +62,7 @@
 ;   undefined4 g_CDemonSet_01e57284.light_direction.y
 ;   undefined4 g_CDemonSet_01e57284.light_direction.z
 ;   undefined4 g_CDemonSet_01e57284.ambient_base_quick
-;   undefined4 DAT_02dd1184
+;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00453040
@@ -117,7 +117,7 @@ section .text
     ADD ESP,0x14                        ; 004c5a36
     PUSH EBX                            ; 004c5a39
         ;   Label: LAB_004c5a39
-    PUSH 0x2dd1184                      ; 004c5a3a | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 004c5a3a | g_ZeroVector
     MOV EBX,dword ptr [0x005ae704]      ; 004c5a3f | g_CDemonRenderer_PTR_005ae704
     PUSH EBX                            ; 004c5a45 | DAT_01b4d738
     MOV EDI,0x42600000                  ; 004c5a46
@@ -137,7 +137,7 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_00460c00 ; 004c5a74
         ;   XREF to: 00460c00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_00460c00(CDemonRenderer * this_ptr, float field_of_view)
     ADD ESP,0x8                         ; 004c5a79
-    PUSH 0x2dd1184                      ; 004c5a7c | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 004c5a7c | g_ZeroVector
     MOV ECX,dword ptr [0x005ae704]      ; 004c5a81 | g_CDemonRenderer_PTR_005ae704
     PUSH ECX                            ; 004c5a87 | DAT_01b4d738
     MOV EBP,0x42100000                  ; 004c5a88
@@ -375,7 +375,7 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00461000 ; 004c5dab
         ;   XREF to: 00461000 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00461000(CDemonRenderer * this_ptr, int blend_mode)
     ADD ESP,0x8                         ; 004c5db0
-    PUSH 0x5baca4                       ; 004c5db3 | DAT_005baca4
+    PUSH 0x5baca4                       ; 004c5db3 | g_LoadingMoonGlowTexture
     MOV EDX,dword ptr [0x005ae704]      ; 004c5db8 | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 004c5dbe | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 004c5dbf

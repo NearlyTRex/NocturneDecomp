@@ -33,9 +33,10 @@ TEST(CVehicle, PublicInterface) {
                                  CBoundingBox3D *(CVehicle::*)(CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CVehicle::getCollisionType),
                                  ECollisionType (CVehicle::*)(SCollisionInfo *)>);
+    static_assert(std::is_same_v<decltype(&CVehicle::getActorType),
+                                 const CDemonActorType &(CVehicle::*)() const>);
     static_assert(
-        std::is_same_v<decltype(&CVehicle::getActorType), CDemonActorType *(CVehicle::*)()>);
-    static_assert(std::is_same_v<decltype(&CVehicle::archive), void (CVehicle::*)()>);
+        std::is_same_v<decltype(&CVehicle::archive), void (CVehicle::*)(CActorArchive &)>);
 }
 
 } // namespace

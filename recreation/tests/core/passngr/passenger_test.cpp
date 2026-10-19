@@ -27,9 +27,10 @@ TEST(CPassenger, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CPassenger::setup), void (CPassenger::*)()>);
     static_assert(std::is_same_v<decltype(&CPassenger::process), void (CPassenger::*)(float)>);
     static_assert(std::is_same_v<decltype(&CPassenger::renderOpaque), int (CPassenger::*)()>);
+    static_assert(std::is_same_v<decltype(&CPassenger::getActorType),
+                                 const CDemonActorType &(CPassenger::*)() const>);
     static_assert(
-        std::is_same_v<decltype(&CPassenger::getActorType), CDemonActorType *(CPassenger::*)()>);
-    static_assert(std::is_same_v<decltype(&CPassenger::archive), void (CPassenger::*)()>);
+        std::is_same_v<decltype(&CPassenger::archive), void (CPassenger::*)(CActorArchive &)>);
 }
 
 } // namespace

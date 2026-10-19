@@ -35,8 +35,9 @@ TEST(CGlass, PublicInterface) {
                                  ECollisionType (CGlass::*)(SCollisionInfo *)>);
     static_assert(std::is_same_v<decltype(&CGlass::getGroundType), EGroundType (CGlass::*)()>);
     static_assert(std::is_same_v<decltype(&CGlass::onLaserHit), void (CGlass::*)(SLaserInfo *)>);
-    static_assert(std::is_same_v<decltype(&CGlass::getActorType), CDemonActorType *(CGlass::*)()>);
-    static_assert(std::is_same_v<decltype(&CGlass::archive), void (CGlass::*)()>);
+    static_assert(std::is_same_v<decltype(&CGlass::getActorType),
+                                 const CDemonActorType &(CGlass::*)() const>);
+    static_assert(std::is_same_v<decltype(&CGlass::archive), void (CGlass::*)(CActorArchive &)>);
     static_assert(std::is_same_v<decltype(&CGlass::renderBrokenGlass), void (CGlass::*)()>);
     static_assert(
         std::is_same_v<decltype(&CGlass::shatter), void (CGlass::*)(common::CVector3f *)>);

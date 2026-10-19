@@ -42,8 +42,8 @@ TEST(CMirrorHack, PublicInterface) {
                                  void (CMirrorHack::*)(CDemonActor *)>);
     static_assert(
         std::is_same_v<decltype(&CMirrorHack::onLaserHit), void (CMirrorHack::*)(SLaserInfo *)>);
-    static_assert(
-        std::is_same_v<decltype(&CMirrorHack::getActorType), CDemonActorType *(CMirrorHack::*)()>);
+    static_assert(std::is_same_v<decltype(&CMirrorHack::getActorType),
+                                 const CDemonActorType &(CMirrorHack::*)() const>);
 }
 
 } // namespace

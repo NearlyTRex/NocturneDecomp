@@ -1652,7 +1652,7 @@ section .text
         ;   XREF to: 004aa4a5 (CONDITIONAL_JUMP)  ; LAB_004aa4a5
     PUSH 0x0                            ; 004aa3ac
     PUSH 0x40400000                     ; 004aa3ae
-    PUSH 0x2dd1184                      ; 004aa3b3 | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 004aa3b3 | g_ZeroVector
     MOV EDX,dword ptr [EAX + 0x14c]     ; 004aa3b8
     PUSH EAX                            ; 004aa3be
     CALL dword ptr [EDX + 0xbc]         ; 004aa3bf

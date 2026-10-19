@@ -45,9 +45,9 @@
 ;   undefined4 DAT_014b8a00
 ;   undefined4 DAT_014b8a04
 ;   undefined4 DAT_014b8a08
-;   undefined4 DAT_02dd1184
-;   undefined4 DAT_02dd1188
-;   undefined4 DAT_02dd118c
+;   UVector3 g_ZeroVector
+;   undefined4 g_ZeroVector+4
+;   undefined4 g_ZeroVector+8
 ;
 ; Called Functions:
 ;   core_dcube.cpp_CDemonCube_rayIntersectTriangles_FUN_0044b290
@@ -226,9 +226,9 @@ section .text
     CMP EAX,0x2dd1184                   ; 0046873c
     JZ 0x00468765                       ; 00468741
         ;   XREF to: 00468765 (CONDITIONAL_JUMP)  ; LAB_00468765
-    FLD float ptr [0x02dd1184]          ; 00468743 | DAT_02dd1184
-    FLD float ptr [0x02dd118c]          ; 00468749 | DAT_02dd118c
-    MOV EAX,[0x02dd1188]                ; 0046874f | DAT_02dd1188
+    FLD float ptr [0x02dd1184]          ; 00468743 | g_ZeroVector
+    FLD float ptr [0x02dd118c]          ; 00468749 | g_ZeroVector+8
+    MOV EAX,[0x02dd1188]                ; 0046874f | g_ZeroVector+4
     MOV [0x014b8a04],EAX                ; 00468754 | DAT_014b8a04
     FSTP float ptr [0x014b8a08]         ; 00468759 | DAT_014b8a08
     FSTP float ptr [0x014b8a00]         ; 0046875f | DAT_014b8a00

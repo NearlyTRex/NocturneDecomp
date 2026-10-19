@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_zombie_cpp_CZombie_processPickup_FUN_00561010(CZombie *this_ptr,float delta_time)
 
@@ -212,9 +211,9 @@ LAB_005614f8:
         CStack_a4.z = CStack_50.z;
       }
     }
-    CStack_c8.x = _DAT_02dd1184;
-    CStack_c8.y = _DAT_02dd1188;
-    CStack_c8.z = _DAT_02dd118c;
+    CStack_c8.x = g_ZeroVector.f.x;
+    CStack_c8.y = g_ZeroVector.f.y;
+    CStack_c8.z = g_ZeroVector.f.z;
     if (iVar10 == 0) {
       CStack_74.x = -1.5;
       CStack_74.y = 0.0;

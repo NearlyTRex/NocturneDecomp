@@ -30,9 +30,10 @@ TEST(CMobster, PublicInterface) {
                                  ECollisionType (CMobster::*)(SCollisionInfo *)>);
     static_assert(std::is_same_v<decltype(&CMobster::getTargetPoints),
                                  int (CMobster::*)(common::CVector3f *)>);
+    static_assert(std::is_same_v<decltype(&CMobster::getActorType),
+                                 const CDemonActorType &(CMobster::*)() const>);
     static_assert(
-        std::is_same_v<decltype(&CMobster::getActorType), CDemonActorType *(CMobster::*)()>);
-    static_assert(std::is_same_v<decltype(&CMobster::archive), void (CMobster::*)()>);
+        std::is_same_v<decltype(&CMobster::archive), void (CMobster::*)(CActorArchive &)>);
     static_assert(
         std::is_same_v<decltype(&CMobster::processDamage), void (CMobster::*)(SDamageInfo *)>);
     static_assert(std::is_same_v<decltype(&CMobster::getCarryObjToBodyXForm),

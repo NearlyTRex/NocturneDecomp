@@ -743,7 +743,7 @@ section .text
     ADD EAX,ESI                         ; 00413f14
     PUSH 0x3ecccccd                     ; 00413f16
     PUSH EAX                            ; 00413f1b
-    PUSH 0x2dd1184                      ; 00413f1c | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 00413f1c | g_ZeroVector
     LEA EAX,[EBP + -0x7a]               ; 00413f21
     FLD float ptr [EBP + 0x76]          ; 00413f24
     PUSH EAX                            ; 00413f27

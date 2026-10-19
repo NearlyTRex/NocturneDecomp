@@ -32,8 +32,9 @@ TEST(CVampireBoss, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CVampireBoss::getTargetPoints),
                                  int (CVampireBoss::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CVampireBoss::getActorType),
-                                 CDemonActorType *(CVampireBoss::*)()>);
-    static_assert(std::is_same_v<decltype(&CVampireBoss::archive), void (CVampireBoss::*)()>);
+                                 const CDemonActorType &(CVampireBoss::*)() const>);
+    static_assert(
+        std::is_same_v<decltype(&CVampireBoss::archive), void (CVampireBoss::*)(CActorArchive &)>);
     static_assert(std::is_same_v<decltype(&CVampireBoss::processDamage),
                                  void (CVampireBoss::*)(SDamageInfo *)>);
     static_assert(

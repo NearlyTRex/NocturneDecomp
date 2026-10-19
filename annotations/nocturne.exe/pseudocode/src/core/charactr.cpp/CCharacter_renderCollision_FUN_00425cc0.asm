@@ -507,13 +507,13 @@ section .text
     LEA EBX,[ESP + 0x38]                ; 00426274
     MOV EAX,0x2dd1184                   ; 00426278
     MOV EDX,dword ptr [0x005ae704]      ; 0042627d | g_CDemonRenderer_PTR_005ae704
-    FLD float ptr [EAX]                 ; 00426283 | DAT_02dd1184
+    FLD float ptr [EAX]                 ; 00426283 | g_ZeroVector
     FMUL float ptr [0x0059b070]         ; 00426285 | DAT_0059b070
     FISTP dword ptr [EBX]               ; 0042628b
-    FLD float ptr [EAX + 0x4]           ; 0042628d | DAT_02dd1188
+    FLD float ptr [EAX + 0x4]           ; 0042628d | g_ZeroVector+4
     FMUL float ptr [0x0059b070]         ; 00426290 | DAT_0059b070
     FISTP dword ptr [EBX + 0x4]         ; 00426296
-    FLD float ptr [EAX + 0x8]           ; 00426299 | DAT_02dd118c
+    FLD float ptr [EAX + 0x8]           ; 00426299 | g_ZeroVector+8
     FMUL float ptr [0x0059b070]         ; 0042629c | DAT_0059b070
     FISTP dword ptr [EBX + 0x8]         ; 004262a2
     LEA EAX,[ESP + 0x38]                ; 004262a5

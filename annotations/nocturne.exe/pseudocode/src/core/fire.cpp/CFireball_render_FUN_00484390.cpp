@@ -77,7 +77,7 @@ void __cdecl core_fire_cpp_CFireball_render_FUN_00484390(CFireball *this_ptr)
   iVar5 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(&local_e0);
   if (iVar5 != 0) {
     core_set_cpp_CDemonSet_setLightingParameters_FUN_0050adc0
-              (g_CDemonSet_PTR_005be368,(CVector3f *)this_ptr,(UOrientationVector *)&DAT_02dd1184,
+              (g_CDemonSet_PTR_005be368,(CVector3f *)this_ptr,(UOrientationVector *)&g_ZeroVector,
                &local_e0.min,&local_e0.max,(CMatrix3x3f *)0x0);
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0(this_ptr_00,0.0,-1);
   }

@@ -34,25 +34,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 497,
+        "line": 496,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 497,
+        "line": 496,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 498,
+        "line": 497,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 498,
+        "line": 497,
         "message": "exponent has no digits"
       },
       {
@@ -122,23 +122,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 311,
-    "complexity_score": 871,
+    "complexity_score": 835,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 196,
-    "suspect_count": 64,
+    "pseudocode_lines": 195,
+    "suspect_count": 61,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "shadow_pointer_walk",
       "suspect_float",
-      "undefined_data",
       "unknown_field",
       "unrolled_memcpy"
     ],
-    "total_lines": 507
+    "total_lines": 506
   },
   "cross_references": [
     {
@@ -221,8 +220,8 @@
     },
     {
       "addr": "02dd1184",
-      "name": "DAT_02dd1184",
-      "type": "undefined4",
+      "name": "g_ZeroVector",
+      "type": "UVector3",
       "value": null
     }
   ],
@@ -767,24 +766,8 @@
       "type": "suspect_float"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 133,
-      "match": "DAT_02dd1184",
-      "severity": "mild",
-      "text": "(&CStack_188,(CVector3f *)&DAT_02dd1184,&euler_angles_00->vec);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 135,
-      "match": "DAT_02dd1184",
-      "severity": "mild",
-      "text": "(&CStack_158,(CVector3f *)&DAT_02dd1184,local_1c);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 141,
+      "line": 140,
       "match": "(CMatrix3x4f *)((int)pCVar15",
       "severity": "moderate",
       "text": "pCVar15 = (CMatrix3x4f *)((int)pCVar15 + ((uint)bVar18 * -2 + 1) * 4);",
@@ -792,19 +775,11 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 142,
+      "line": 141,
       "match": "(CMatrix3x4f *)((int)pCVar17",
       "severity": "moderate",
       "text": "pCVar17 = (CMatrix3x4f *)((int)pCVar17 + ((uint)bVar18 * -2 + 1) * 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 184,
-      "match": "DAT_02dd1184",
-      "severity": "mild",
-      "text": "(&CStack_1b8,(CVector3f *)&DAT_02dd1184,euler_angles_01);",
-      "type": "undefined_data"
     },
     {
       "description": "Pointer value `&pCVar1->x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
@@ -904,7 +879,7 @@
     },
     {
       "description": "Pointer value `pCVar15` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 141,
+      "line": 140,
       "match": "(int)pCVar15",
       "severity": "moderate",
       "text": "pCVar15 = (CMatrix3x4f *)((int)pCVar15 + ((uint)bVar18 * -2 + 1) * 4);",
@@ -912,7 +887,7 @@
     },
     {
       "description": "Pointer value `pCVar17` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 142,
+      "line": 141,
       "match": "(int)pCVar17",
       "severity": "moderate",
       "text": "pCVar17 = (CMatrix3x4f *)((int)pCVar17 + ((uint)bVar18 * -2 + 1) * 4);",
@@ -920,7 +895,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 139,
+      "line": 138,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar14 = 0xc; iVar14 != 0; iVar14 = iVar14 + -1) {",
@@ -928,7 +903,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 146,
+      "line": 145,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(euler_angles_00->vec).x = pCVar12->x;",
@@ -936,7 +911,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 158,
+      "line": 157,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "pCVar12->x = pCVar13->x;",
@@ -944,7 +919,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 178,
+      "line": 177,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "pCVar12->x = pCVar13->x;",
@@ -952,7 +927,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 190,
+      "line": 189,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "euler_angles_01->x = pCVar13->x;",
@@ -1056,7 +1031,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar12` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*pCVar12) + offsetof(subfield)` equals the real array stride. Replace `pCVar12->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 168,
+      "line": 167,
       "match": "pCVar12 = (T *)&pCVar12[N].SUBFIELD",
       "severity": "moderate",
       "text": "pCVar12 = (CVector3f *)&pCVar12[0x38].z;",
@@ -1064,7 +1039,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar12` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*pCVar12) + offsetof(subfield)` equals the real array stride. Replace `pCVar12->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 194,
+      "line": 193,
       "match": "pCVar12 = (T *)&pCVar12[N].SUBFIELD",
       "severity": "moderate",
       "text": "pCVar12 = (CVector3f *)&pCVar12[0x21].z;",

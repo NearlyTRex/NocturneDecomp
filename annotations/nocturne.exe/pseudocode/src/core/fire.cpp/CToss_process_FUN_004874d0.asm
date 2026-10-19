@@ -22,9 +22,9 @@
 ;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
 ;   CGame* g_CGame_PTR_005b9354 = 01c775ec
 ;   undefined4 g_CGame_01c775ec.delta_time_float
-;   undefined4 DAT_02dd1184
-;   undefined4 DAT_02dd1188
-;   undefined4 DAT_02dd118c
+;   UVector3 g_ZeroVector
+;   undefined4 g_ZeroVector+4
+;   undefined4 g_ZeroVector+8
 ;
 ; Called Functions:
 ;   core_box.cpp_CBox_process_FUN_0041acb0
@@ -91,12 +91,12 @@ section .text
     POP ESI                             ; 00487557
     POP EBX                             ; 00487558
     RET                                 ; 00487559
-    MOV EAX,[0x02dd1184]                ; 0048755a | DAT_02dd1184
+    MOV EAX,[0x02dd1184]                ; 0048755a | g_ZeroVector
         ;   Label: LAB_0048755a
     MOV dword ptr [ESP],EAX             ; 0048755f
-    MOV EAX,[0x02dd1188]                ; 00487562 | DAT_02dd1188
+    MOV EAX,[0x02dd1188]                ; 00487562 | g_ZeroVector+4
     MOV dword ptr [ESP + 0x4],EAX       ; 00487567
-    MOV EAX,[0x02dd118c]                ; 0048756b | DAT_02dd118c
+    MOV EAX,[0x02dd118c]                ; 0048756b | g_ZeroVector+8
     MOV dword ptr [ESP + 0x8],EAX       ; 00487570
     LEA EAX,[EBX + 0x4]                 ; 00487574
     PUSH EAX                            ; 00487577

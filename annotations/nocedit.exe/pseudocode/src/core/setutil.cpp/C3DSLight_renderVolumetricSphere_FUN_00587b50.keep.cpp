@@ -55,10 +55,10 @@ void __cdecl core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50(C3DS
       this_ptr_00 = g_CDemonRendererPtr2;
       vtx->u = 0x80 << 16;
       vtx->v = 0x80 << 16;
-      vtx->r = (int)ROUND(ROUND((float)(this_ptr->color).r * 255.0f));
-      vtx->g = (int)ROUND(ROUND((float)(this_ptr->color).g * 255.0f));
+      vtx->r = (int)ROUND(ROUND((this_ptr->color).r * 255.0f));
+      vtx->g = (int)ROUND(ROUND((this_ptr->color).g * 255.0f));
       iVar3 = iVar3 + 1;
-      vtx->b = (int)ROUND(ROUND((float)(this_ptr->color).b * 255.0f));
+      vtx->b = (int)ROUND(ROUND((this_ptr->color).b * 255.0f));
       vtx = vtx + 1;
     } while (iVar3 < 5);
     local_c = local_c + 1;

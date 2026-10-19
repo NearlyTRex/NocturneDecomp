@@ -12,8 +12,8 @@ CVector3i * __stack_esi engine_drender_cpp_CDemonRenderer_getCameraOriginFixed_F
   CVector3i CStack_14;
   
   engine_matrix_c_getCameraOrigin_FUN_0050e2c0(&CStack_14);
-  output->x = 0x48c770;
-  output->y = CStack_14.x;
-  output->z = CStack_14.y;
+  output->x = CStack_14.x;
+  output->y = CStack_14.y;
+  output->z = CStack_14.z;
   return output;
 }

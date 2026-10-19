@@ -35,9 +35,10 @@ TEST(CHealthItem, PublicInterface) {
         std::is_same_v<decltype(&CHealthItem::onPickup), void (CHealthItem::*)(CDemonActor *)>);
     static_assert(
         std::is_same_v<decltype(&CHealthItem::canPickup), int (CHealthItem::*)(CDemonActor *)>);
+    static_assert(std::is_same_v<decltype(&CHealthItem::getActorType),
+                                 const CDemonActorType &(CHealthItem::*)() const>);
     static_assert(
-        std::is_same_v<decltype(&CHealthItem::getActorType), CDemonActorType *(CHealthItem::*)()>);
-    static_assert(std::is_same_v<decltype(&CHealthItem::archive), void (CHealthItem::*)()>);
+        std::is_same_v<decltype(&CHealthItem::archive), void (CHealthItem::*)(CActorArchive &)>);
     static_assert(
         std::is_same_v<decltype(&CHealthItem::useItem), int (CHealthItem::*)(CCharacter *)>);
 }

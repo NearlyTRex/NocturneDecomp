@@ -13,7 +13,7 @@ void __cdecl core_actor_cpp_resetActorTypeInfo_FUN_0040c7f0(void)
   int iVar3;
 
   for (iVar3 = 0; iVar3 < g_NumActorClassTypes; iVar3 = iVar3 + 1) {
-    *(int *)g_ActorClassRegistrations[iVar3]->type_info = 1;
+    *(int *)g_ActorClassRegistrations[iVar3]->archive_version = 1;
   }
   return;
 }

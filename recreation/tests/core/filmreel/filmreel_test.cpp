@@ -38,9 +38,10 @@ TEST(CFilmReel, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CFilmReel::onDropped), void (CFilmReel::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CFilmReel::getCarrier), CDemonActor *(CFilmReel::*)()>);
+    static_assert(std::is_same_v<decltype(&CFilmReel::getActorType),
+                                 const CDemonActorType &(CFilmReel::*)() const>);
     static_assert(
-        std::is_same_v<decltype(&CFilmReel::getActorType), CDemonActorType *(CFilmReel::*)()>);
-    static_assert(std::is_same_v<decltype(&CFilmReel::archive), void (CFilmReel::*)()>);
+        std::is_same_v<decltype(&CFilmReel::archive), void (CFilmReel::*)(CActorArchive &)>);
 }
 
 } // namespace

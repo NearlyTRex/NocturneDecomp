@@ -12,9 +12,9 @@
 ;
 ; Referenced Globals:
 ;   float FLOAT_0059bde4 = 0.00390625
-;   undefined4 DAT_02dd1184
-;   undefined4 DAT_02dd1188
-;   undefined4 DAT_02dd118c
+;   UVector3 g_ZeroVector
+;   undefined4 g_ZeroVector+4
+;   undefined4 g_ZeroVector+8
 ;
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00
@@ -87,12 +87,12 @@ section .text
     MOV dword ptr [ESP + 0xb4],ECX      ; 0044800e
     JMP 0x00447f86                      ; 00448015
         ;   XREF to: 00447f86 (UNCONDITIONAL_JUMP)  ; LAB_00447f86
-    MOV EDX,dword ptr [0x02dd1184]      ; 0044801a | DAT_02dd1184
+    MOV EDX,dword ptr [0x02dd1184]      ; 0044801a | g_ZeroVector
         ;   Label: LAB_0044801a
     MOV dword ptr [EAX],EDX             ; 00448020
-    MOV EDX,dword ptr [0x02dd1188]      ; 00448022 | DAT_02dd1188
+    MOV EDX,dword ptr [0x02dd1188]      ; 00448022 | g_ZeroVector+4
     MOV dword ptr [EAX + 0x4],EDX       ; 00448028
-    MOV EDX,dword ptr [0x02dd118c]      ; 0044802b | DAT_02dd118c
+    MOV EDX,dword ptr [0x02dd118c]      ; 0044802b | g_ZeroVector+8
     MOV dword ptr [EAX + 0x8],EDX       ; 00448031
     JMP 0x00447f48                      ; 00448034
         ;   XREF to: 00447f48 (UNCONDITIONAL_JUMP)  ; LAB_00447f48

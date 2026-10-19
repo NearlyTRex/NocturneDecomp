@@ -29,9 +29,10 @@ TEST(CTentacle, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CTentacle::renderOpaque), int (CTentacle::*)()>);
     static_assert(
         std::is_same_v<decltype(&CTentacle::shouldIgnoreForTargeting), int (CTentacle::*)()>);
+    static_assert(std::is_same_v<decltype(&CTentacle::getActorType),
+                                 const CDemonActorType &(CTentacle::*)() const>);
     static_assert(
-        std::is_same_v<decltype(&CTentacle::getActorType), CDemonActorType *(CTentacle::*)()>);
-    static_assert(std::is_same_v<decltype(&CTentacle::archive), void (CTentacle::*)()>);
+        std::is_same_v<decltype(&CTentacle::archive), void (CTentacle::*)(CActorArchive &)>);
     static_assert(std::is_same_v<decltype(&CTentacle::attractActorToward),
                                  int (CTentacle::*)(CDemonActor *, common::CVector3f *)>);
 }

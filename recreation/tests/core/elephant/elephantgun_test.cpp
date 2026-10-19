@@ -26,7 +26,7 @@ TEST(CElephantGun, Constructors) {
 TEST(CElephantGun, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CElephantGun::process), void (CElephantGun::*)(float)>);
     static_assert(std::is_same_v<decltype(&CElephantGun::getActorType),
-                                 CDemonActorType *(CElephantGun::*)()>);
+                                 const CDemonActorType &(CElephantGun::*)() const>);
     static_assert(std::is_same_v<decltype(&CElephantGun::onFired), void (CElephantGun::*)()>);
     static_assert(std::is_same_v<decltype(&CElephantGun::fire), int (CElephantGun::*)()>);
     static_assert(std::is_same_v<decltype(&CElephantGun::getDamage), float (CElephantGun::*)()>);

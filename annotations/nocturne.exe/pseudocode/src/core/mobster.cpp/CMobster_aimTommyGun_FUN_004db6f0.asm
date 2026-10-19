@@ -38,7 +38,7 @@
 ;   int g_CurrentLineNumber
 ;   undefined4 DAT_01ccdbb0
 ;   undefined4 DAT_01ccdbd0
-;   undefined4 DAT_02dd1184
+;   UVector3 g_ZeroVector
 ;   undefined4 g_CWeaponActorType_02ddf970.name_hash
 ;
 ; Called Functions:
@@ -132,7 +132,7 @@ section .text
     LEA EAX,[EBX + 0xfd0]               ; 004db7a3
     ADD EAX,EDX                         ; 004db7a9
     PUSH EAX                            ; 004db7ab
-    PUSH 0x2dd1184                      ; 004db7ac | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 004db7ac | g_ZeroVector
     LEA EAX,[ESP + 0x40]                ; 004db7b1
     PUSH EAX                            ; 004db7b5
     CALL core_xform.cpp_transformVector3x4_FUN_0055a8b0 ; 004db7b6

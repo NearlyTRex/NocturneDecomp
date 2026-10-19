@@ -6,12 +6,10 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CVector3f * __cdecl core_dcamera_cpp_CDemonCamera_FUN_00447f20(CDemonCamera *this_ptr,CVector3f *output_bounds)
 
 {
-  CVector3f *pCVar1;
+  UVector3 *pUVar1;
   uint uVar2;
   byte bVar3;
   int aiStackY_10d4 [1015];
@@ -48,14 +46,14 @@ CVector3f * __cdecl core_dcamera_cpp_CDemonCamera_FUN_00447f20(CDemonCamera *thi
   int iStack_14;
   
   bVar3 = 0;
-  pCVar1 = output_bounds + 1;
-  if (pCVar1 != (CVector3f *)&DAT_02dd1184) {
-    pCVar1->x = _DAT_02dd1184;
-    output_bounds[1].y = _DAT_02dd1188;
-    output_bounds[1].z = _DAT_02dd118c;
+  pUVar1 = (UVector3 *)(output_bounds + 1);
+  if (pUVar1 != &g_ZeroVector) {
+    (pUVar1->f).x = g_ZeroVector.f.x;
+    output_bounds[1].y = g_ZeroVector.f.y;
+    output_bounds[1].z = g_ZeroVector.f.z;
   }
-  if (pCVar1 != output_bounds) {
-    output_bounds->x = pCVar1->x;
+  if (pUVar1 != (UVector3 *)output_bounds) {
+    output_bounds->x = (pUVar1->f).x;
     output_bounds->y = output_bounds[1].y;
     output_bounds->z = output_bounds[1].z;
   }

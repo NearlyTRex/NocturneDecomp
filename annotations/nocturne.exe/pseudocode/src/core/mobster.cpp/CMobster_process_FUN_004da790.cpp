@@ -488,7 +488,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004da790(CMobster *this_ptr,f
         pSVar16 = &local_160;
         fVar15 = 0.4;
         pCVar12 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
-                            (&local_118,(CVector3f *)&DAT_02dd1184,
+                            (&local_118,&g_ZeroVector.f,
                              (CMatrix3x4f *)
                              (this_ptr->base).base.model.bone_transform.bone_model_matrices
                              [_DAT_01ccdbac].m);
@@ -502,7 +502,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004da790(CMobster *this_ptr,f
         pSVar16 = &local_160;
         fVar15 = 0.4;
         pCVar12 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
-                            (&local_94,(CVector3f *)&DAT_02dd1184,
+                            (&local_94,&g_ZeroVector.f,
                              (CMatrix3x4f *)
                              (this_ptr->base).base.model.bone_transform.bone_model_matrices
                              [_DAT_01ccdbb0].m);

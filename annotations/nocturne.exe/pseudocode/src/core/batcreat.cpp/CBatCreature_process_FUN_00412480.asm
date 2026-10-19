@@ -376,7 +376,7 @@ section .text
     ADD EAX,EDX                         ; 00412792
     PUSH 0x3ecccccd                     ; 00412794
     PUSH EAX                            ; 00412799
-    PUSH 0x2dd1184                      ; 0041279a | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 0041279a | g_ZeroVector
     LEA EAX,[EBP + -0x22]               ; 0041279f
     FLD float ptr [EBP + 0x76]          ; 004127a2
     PUSH EAX                            ; 004127a5

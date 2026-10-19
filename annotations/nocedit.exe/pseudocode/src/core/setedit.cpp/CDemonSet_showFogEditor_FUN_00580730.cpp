@@ -54,12 +54,12 @@ void __cdecl core_setedit_cpp_CDemonSet_showFogEditor_FUN_00580730(CDemonSet *th
   do {
     do {
       pSVar9 = pSVar3;
-      if (this_ptr->cameras[this_ptr->selected_camera_index].fog_enabled == 0) {
+      if (this_ptr->cameras[this_ptr->selected_camera_index].use_global_fog == 0) {
         pSVar9 = &this_ptr->cameras[this_ptr->selected_camera_index].fog;
       }
       engine_special_cpp_clearScreen_FUN_005b3e70();
       engine_2d_c_drawText_FUN_00401fd0("Demented(R) Fog Editor",0,0);
-      if (this_ptr->cameras[this_ptr->selected_camera_index].fog_enabled == 0) {
+      if (this_ptr->cameras[this_ptr->selected_camera_index].use_global_fog == 0) {
         _sprintf(local_240,"1.  Fog settings for camera %s");
         pcVar7 = local_240;
       }
@@ -83,7 +83,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showFogEditor_FUN_00580730(CDemonSet *th
       engine_2d_c_drawText_FUN_00401fd0("S.  Save set",0,0x79);
       engine_2d_c_drawText_FUN_00401fd0("8.  Preview fog settings",0,0x84);
       engine_2d_c_drawText_FUN_00401fd0("9.  Precompute fog",0,0x8f);
-      if (this_ptr->cameras[this_ptr->selected_camera_index].fog_enabled == 0) {
+      if (this_ptr->cameras[this_ptr->selected_camera_index].use_global_fog == 0) {
         core_sound_cpp_CSound_getSoundModeName_FUN_005b3c70
                   (g_CSoundPtr,this_ptr->cameras[this_ptr->selected_camera_index].reverb_preset);
         _sprintf(local_140,"R.  Reverb for camera %s : %s",
@@ -101,7 +101,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showFogEditor_FUN_00580730(CDemonSet *th
         iVar6 = 0;
         pCVar3 = this_ptr;
         do {
-          *(int *)((int)g_CameraFogEnabledFlags + iVar6) = pCVar3->cameras[0].fog_enabled;
+          *(int *)((int)g_CameraFogEnabledFlags + iVar6) = pCVar3->cameras[0].use_global_fog;
           iVar6 = iVar6 + 4;
           iVar9 = iVar9 + 1;
           pCVar3 = (CDemonSet *)&pCVar3->cameras[0].enabled;
@@ -112,8 +112,8 @@ void __cdecl core_setedit_cpp_CDemonSet_showFogEditor_FUN_00580730(CDemonSet *th
       if (iVar5 != -1) {
         iVar10 = this_ptr->selected_camera_index;
         if (iVar5 == iVar10) {
-          this_ptr->cameras[iVar10].fog_enabled = (uint)(this_ptr->cameras[iVar10].fog_enabled == 0)
-          ;
+          this_ptr->cameras[iVar10].use_global_fog =
+               (uint)(this_ptr->cameras[iVar10].use_global_fog == 0);
           iVar5 = this_ptr->selected_camera_index;
           this_ptr->cameras[iVar5].fog.color_index.r = (pSVar3->color_index).r;
           this_ptr->cameras[iVar5].fog.color_index.g = (this_ptr->scene_fog).color_index.g;
@@ -142,8 +142,8 @@ void __cdecl core_setedit_cpp_CDemonSet_showFogEditor_FUN_00580730(CDemonSet *th
       if (uVar8 < 0x33) {
         if (0x30 < uVar8) {
           if (uVar8 < 0x32) {
-            this_ptr->cameras[this_ptr->selected_camera_index].fog_enabled =
-                 (uint)(this_ptr->cameras[this_ptr->selected_camera_index].fog_enabled == 0);
+            this_ptr->cameras[this_ptr->selected_camera_index].use_global_fog =
+                 (uint)(this_ptr->cameras[this_ptr->selected_camera_index].use_global_fog == 0);
             iVar5 = this_ptr->selected_camera_index;
             this_ptr->cameras[iVar5].fog.color_index.r = (pSVar3->color_index).r;
             this_ptr->cameras[iVar5].fog.color_index.g = (this_ptr->scene_fog).color_index.g;
@@ -235,7 +235,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showFogEditor_FUN_00580730(CDemonSet *th
           pSVar7 = &this_ptr->cameras[0].fog;
           pCVar11 = this_ptr;
           do {
-            pCVar11->cameras[0].fog_enabled = 1;
+            pCVar11->cameras[0].use_global_fog = 1;
             (pSVar7->color_index).r = (pSVar3->color_index).r;
             (pSVar7->color_index).g = (this_ptr->scene_fog).color_index.g;
             (pSVar7->color_index).b = (this_ptr->scene_fog).color_index.b;
@@ -267,7 +267,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showFogEditor_FUN_00580730(CDemonSet *th
       }
     }
     else if (uVar8 < 0x53) {
-      if (this_ptr->cameras[this_ptr->selected_camera_index].fog_enabled == 0) {
+      if (this_ptr->cameras[this_ptr->selected_camera_index].use_global_fog == 0) {
         _sprintf(local_140,"Edit reverb for camera %s");
         core_sound_cpp_CSound_selectReverbPreset_FUN_005b3d20
                   (g_CSoundPtr,local_140,
@@ -334,7 +334,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showFogEditor_FUN_00580730(CDemonSet *th
     }
     else if (uVar8 == 0x56) {
       iVar5 = this_ptr->default_master_reverb;
-      if (this_ptr->cameras[this_ptr->selected_camera_index].fog_enabled == 0) {
+      if (this_ptr->cameras[this_ptr->selected_camera_index].use_global_fog == 0) {
         iVar5 = this_ptr->cameras[this_ptr->selected_camera_index].reverb_preset;
       }
       core_sound_cpp_CSound_setReverbPreset_FUN_005b3cc0(g_CSoundPtr,iVar5);

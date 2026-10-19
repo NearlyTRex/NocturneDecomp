@@ -19,8 +19,8 @@ public:
     EGroundType getGroundType() override;
     int getBlockVirtualDirectorFlag() override;
     int allowBulletHoles() override;
-    CDemonActorType *getActorType() override;
-    void archive() override;
+    [[nodiscard]] const CDemonActorType &getActorType() const override;
+    void archive(CActorArchive &actor_archive) override;
 
     void startMovement(float goal_param, float movement_rate);
     void attachActor(CDemonActor *actor);

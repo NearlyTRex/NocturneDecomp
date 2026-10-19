@@ -14,7 +14,7 @@ public:
     void setup() override;
     void renderBackground(int layer_flag) override;
     int getTargetPoints(common::CVector3f *out_points_array) override;
-    void archive() override;
+    void archive(CActorArchive &actor_archive) override;
     void releaseVictim() override;
     void onVictimLost(CDemonActor *lost_actor) override;
     void processDamage(SDamageInfo *damage_info) override;

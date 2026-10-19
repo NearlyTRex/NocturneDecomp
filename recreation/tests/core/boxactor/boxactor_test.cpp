@@ -48,9 +48,10 @@ TEST(CBoxActor, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CBoxActor::onDropped), void (CBoxActor::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CBoxActor::getCarrier), CDemonActor *(CBoxActor::*)()>);
+    static_assert(std::is_same_v<decltype(&CBoxActor::getActorType),
+                                 const CDemonActorType &(CBoxActor::*)() const>);
     static_assert(
-        std::is_same_v<decltype(&CBoxActor::getActorType), CDemonActorType *(CBoxActor::*)()>);
-    static_assert(std::is_same_v<decltype(&CBoxActor::archive), void (CBoxActor::*)()>);
+        std::is_same_v<decltype(&CBoxActor::archive), void (CBoxActor::*)(CActorArchive &)>);
     static_assert(std::is_same_v<decltype(&CBoxActor::resolveRayPush),
                                  void (CBoxActor::*)(common::CVector3f *, common::CVector3f *)>);
 }

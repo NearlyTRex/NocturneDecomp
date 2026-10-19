@@ -31,8 +31,9 @@ TEST(CBatCreature, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CBatCreature::getTargetPoints),
                                  int (CBatCreature::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CBatCreature::getActorType),
-                                 CDemonActorType *(CBatCreature::*)()>);
-    static_assert(std::is_same_v<decltype(&CBatCreature::archive), void (CBatCreature::*)()>);
+                                 const CDemonActorType &(CBatCreature::*)() const>);
+    static_assert(
+        std::is_same_v<decltype(&CBatCreature::archive), void (CBatCreature::*)(CActorArchive &)>);
     static_assert(std::is_same_v<decltype(&CBatCreature::processDamage),
                                  void (CBatCreature::*)(SDamageInfo *)>);
 }

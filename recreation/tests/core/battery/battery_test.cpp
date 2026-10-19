@@ -36,9 +36,10 @@ TEST(CBattery, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CBattery::onDropped), void (CBattery::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CBattery::getCarrier), CDemonActor *(CBattery::*)()>);
+    static_assert(std::is_same_v<decltype(&CBattery::getActorType),
+                                 const CDemonActorType &(CBattery::*)() const>);
     static_assert(
-        std::is_same_v<decltype(&CBattery::getActorType), CDemonActorType *(CBattery::*)()>);
-    static_assert(std::is_same_v<decltype(&CBattery::archive), void (CBattery::*)()>);
+        std::is_same_v<decltype(&CBattery::archive), void (CBattery::*)(CActorArchive &)>);
 }
 
 } // namespace

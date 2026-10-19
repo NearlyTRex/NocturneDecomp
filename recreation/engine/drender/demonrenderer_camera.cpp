@@ -118,4 +118,14 @@ CVector3i CDemonRenderer::getCameraOriginFixed() const {
     return matrix_.getCameraOrigin();
 }
 
+// nocedit 0x0048c890
+void CDemonRenderer::pushViewport(int x, int y, int width, int height) {
+    matrix_.pushViewport(x, y, width, height);
+}
+
+// nocedit 0x0048c8c0
+void CDemonRenderer::popViewport() {
+    matrix_.popViewport();
+}
+
 } // namespace nocturne::engine

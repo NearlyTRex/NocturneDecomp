@@ -189,6 +189,18 @@ PLATFORM_BOUNDARY = {
     "wincore/winrun.cpp:getRegistryStringValue": "dropped: only reads the Matrox setting below",
     "wincore/winrun.cpp:setRegistryStringValue": "dropped: only writes a Matrox driver setting",
     "wincore/winrun.cpp:doNothing2": "dropped: empty body",
+    # Retail reads only version 4 geometry; converting older .GEO files was the editor's, and
+    # these served only that.
+    "core/dtrace.cpp:CDemonRaytrace::allocCubeList": "dropped: old geometry only",
+    "core/dtrace.cpp:CDemonRaytrace::freeCubeList": "dropped: old geometry only",
+    "core/dtrace.cpp:CDemonRaytrace::allocTriList": "dropped: old geometry only",
+    "core/dtrace.cpp:CDemonRaytrace::freeTriList": "dropped: old geometry only",
+    "core/dtrace.cpp:CDemonRaytrace::consolidateTriList": "dropped: old geometry only",
+    "core/dtrace.cpp:CDemonRaytrace::convertCubeIndexToPosition": "dropped: old geometry only",
+    "core/dtri.cpp:CDemonTriangle::readDataBinary": "dropped: old geometry only",
+    "core/dpart.cpp:CDemonPart::ctor": "dropped: old geometry only",
+    "core/dpart.cpp:CDemonPart::free": "dropped: old geometry only",
+    "core/dpart.cpp:CDemonPart::dtor": "dropped: old geometry only",
 }
 
 # Types written by hand in a generated module, each with its forward declaration ({} is

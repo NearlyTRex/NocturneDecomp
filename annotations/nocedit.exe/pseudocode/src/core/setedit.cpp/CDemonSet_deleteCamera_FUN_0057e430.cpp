@@ -69,7 +69,7 @@ void __cdecl core_setedit_cpp_CDemonSet_deleteCamera_FUN_0057e430(CDemonSet *thi
         local_20->projection_scale = local_c->projection_scale;
         local_20->ambient_value = local_c->ambient_value;
         local_20->camera_group = local_c->camera_group;
-        local_20->fog_enabled = local_c->fog_enabled;
+        local_20->use_global_fog = local_c->use_global_fog;
         (local_20->fog).color_index.r = (local_c->fog).color_index.r;
         (local_20->fog).color_index.g = (local_c->fog).color_index.g;
         pCVar1 = &(local_c->fog).scroll;

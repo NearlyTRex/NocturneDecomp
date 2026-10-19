@@ -32,9 +32,10 @@ TEST(CAmmoBox, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CAmmoBox::getCollisionType),
                                  ECollisionType (CAmmoBox::*)(SCollisionInfo *)>);
     static_assert(std::is_same_v<decltype(&CAmmoBox::canPickup), int (CAmmoBox::*)(CDemonActor *)>);
+    static_assert(std::is_same_v<decltype(&CAmmoBox::getActorType),
+                                 const CDemonActorType &(CAmmoBox::*)() const>);
     static_assert(
-        std::is_same_v<decltype(&CAmmoBox::getActorType), CDemonActorType *(CAmmoBox::*)()>);
-    static_assert(std::is_same_v<decltype(&CAmmoBox::archive), void (CAmmoBox::*)()>);
+        std::is_same_v<decltype(&CAmmoBox::archive), void (CAmmoBox::*)(CActorArchive &)>);
     static_assert(std::is_same_v<decltype(&CAmmoBox::openBox), void (CAmmoBox::*)(float)>);
     static_assert(
         std::is_same_v<decltype(&CAmmoBox::addToInventory), void (CAmmoBox::*)(CInventory *)>);

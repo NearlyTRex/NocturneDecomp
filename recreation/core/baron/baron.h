@@ -15,8 +15,8 @@ public:
     int renderOpaque() override;
     int renderTransparent() override;
     ECollisionType getCollisionType(SCollisionInfo *collision_info) override;
-    CDemonActorType *getActorType() override;
-    void archive() override;
+    [[nodiscard]] const CDemonActorType &getActorType() const override;
+    void archive(CActorArchive &actor_archive) override;
     int isGrabbable(CDemonActor *grabber) override;
     void processDamage(SDamageInfo *damage_info) override;
     void drawWeapon(int drawn) override;

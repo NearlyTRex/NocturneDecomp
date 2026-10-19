@@ -10,18 +10,18 @@ Failed: 4923
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                          44510
-  undeclared_identifier           5820
-  format_error                     387
-  type_error                       372
-  incompatible_types               344
+  other                          44511
+  undeclared_identifier           5672
+  format_error                     390
+  type_error                       373
+  incompatible_types               352
   cast_error                       211
   syntax_error                      90
   pointer_type                      55
   argument_error                     2
 
 ====================================================================================================
-CATEGORY: other (44510 errors)
+CATEGORY: other (44511 errors)
 ====================================================================================================
 
   cockpit_ckptutil.c_applyActPalette_FUN_0042d370
@@ -88,7 +88,7 @@ CATEGORY: other (44510 errors)
   ... and 4893 more errors
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (5820 errors)
+CATEGORY: undeclared_identifier (5672 errors)
 ====================================================================================================
 
   engine_winfont.cpp_CWinFont_createTextBackground_FUN_005584d0
@@ -103,6 +103,8 @@ CATEGORY: undeclared_identifier (5820 errors)
     Line 54: use of undeclared identifier 'DAT_00581999'...
   engine_font.cpp_CBitFont_showExtendedFontTest_FUN_00493760
     Line 94: use of undeclared identifier 'DAT_00581aa2'...
+  engine_pod.cpp_CPodFile_verifyChecksum_FUN_004f8240
+    Line 88: use of undeclared identifier 'DAT_0058d9a8'...
   engine_pod.cpp_CPod_computeAndStoreCRC_FUN_004f8eb0
     Line 49: use of undeclared identifier 'DAT_0058d9a8'...
   engine_pod.cpp_crc32ComputeFileRange_FUN_004f7980
@@ -113,6 +115,8 @@ CATEGORY: undeclared_identifier (5820 errors)
     Line 16: use of undeclared identifier 'DAT_005acbc4'...
   engine_3d.c_setActiveRenderColor_FUN_00405840
     Line 13: use of undeclared identifier 'DAT_005acbc4'...
+  core_baron.cpp_CBaron_process_FUN_00410490
+    Line 151: use of undeclared identifier 'DAT_005acf40'...
   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042af70
     Line 71: use of undeclared identifier 'DAT_005ad1d0'...
   core_charactr.cpp_CCharacter_renderBurn_FUN_00426e80
@@ -147,15 +151,11 @@ CATEGORY: undeclared_identifier (5820 errors)
     Line 19: use of undeclared identifier 'DAT_005b8ec0'; did you mean 'DAT_005b5ec0'?...
   engine_font.cpp_CBitFont_render3DCharacter_FUN_004911f0
     Line 52: use of undeclared identifier 'DAT_005b9250'...
-  core_gore.cpp_CGore_loadAssets_FUN_004b04b0
-    Line 16: use of undeclared identifier 'DAT_005b96ec'; did you mean 'DAT_005b06ec'?...
-  core_gore.cpp_CBloodPool_render_FUN_004af340
-    Line 38: use of undeclared identifier 'DAT_005b9d4c'...
 
-  ... and 1421 more errors
+  ... and 1390 more errors
 
 ====================================================================================================
-CATEGORY: format_error (387 errors)
+CATEGORY: format_error (390 errors)
 ====================================================================================================
 
   core_setutil.cpp_C3DSCamera_load_FUN_005144e0
@@ -181,11 +181,11 @@ CATEGORY: format_error (387 errors)
   core_charactr.cpp_CCharacter_applyLookAt_FUN_00429e60
     Line 33: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror...
   core_charactr.cpp_CCharacter_followActor_FUN_00428780
-    Line 27: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror...
+    Line 28: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror...
   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042af70
     Line 150: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror...
   core_charactr.cpp_CCharacter_processWalking_FUN_00428c00
-    Line 66: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror...
+    Line 67: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror...
   core_charactr.cpp_CCharacter_setup_FUN_00424260
     Line 46: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror...
   core_colonel.cpp_CColonel_process_FUN_00439f50
@@ -219,10 +219,10 @@ CATEGORY: format_error (387 errors)
   core_dracbrid.cpp_CDraculaBride_process_FUN_00458a90
     Line 210: format specifies type 'char *' but the argument has type 'CDraculaBride *' [-Wer...
 
-  ... and 111 more errors
+  ... and 112 more errors
 
 ====================================================================================================
-CATEGORY: type_error (372 errors)
+CATEGORY: type_error (373 errors)
 ====================================================================================================
 
   core_actor.cpp_CDemonActor_handleFootstep_FUN_0040db50
@@ -289,7 +289,7 @@ CATEGORY: type_error (372 errors)
   ... and 84 more errors
 
 ====================================================================================================
-CATEGORY: incompatible_types (344 errors)
+CATEGORY: incompatible_types (352 errors)
 ====================================================================================================
 
   core_skeleton.cpp_CSkeleton_allocMemory_FUN_005173c0
@@ -353,7 +353,7 @@ CATEGORY: incompatible_types (344 errors)
   core_dcube.cpp_CDemonCube_rayIntersectTriangles_FUN_0044b290
     Line 56: assigning to 'undefined1 *' (aka 'unsigned char *') from incompatible type 'floa...
 
-  ... and 152 more errors
+  ... and 154 more errors
 
 ====================================================================================================
 CATEGORY: cast_error (211 errors)
@@ -364,7 +364,7 @@ CATEGORY: cast_error (211 errors)
   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_00497900
     Line 117: C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed...
   core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_0051e590
-    Line 58: C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed...
+    Line 56: C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed...
   core_imp.cpp_CImp_process_FUN_004bbaf0
     Line 276: C-style cast from 'CDemonActor *' to 'float' is not allowed...
   core_mobster.cpp_CMobster_process_FUN_004da790
@@ -567,7 +567,7 @@ CATEGORY: argument_error (2 errors)
 COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
-Average suspects in failed compilations: 4.10
+Average suspects in failed compilations: 4.06
 
 Functions that compile but have suspect patterns: 0
 (These may have runtime issues even though syntax is valid)

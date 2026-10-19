@@ -27,9 +27,10 @@ TEST(CIcePick, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CIcePick::setup), void (CIcePick::*)()>);
     static_assert(std::is_same_v<decltype(&CIcePick::process), void (CIcePick::*)(float)>);
     static_assert(std::is_same_v<decltype(&CIcePick::renderOpaque), int (CIcePick::*)()>);
+    static_assert(std::is_same_v<decltype(&CIcePick::getActorType),
+                                 const CDemonActorType &(CIcePick::*)() const>);
     static_assert(
-        std::is_same_v<decltype(&CIcePick::getActorType), CDemonActorType *(CIcePick::*)()>);
-    static_assert(std::is_same_v<decltype(&CIcePick::archive), void (CIcePick::*)()>);
+        std::is_same_v<decltype(&CIcePick::archive), void (CIcePick::*)(CActorArchive &)>);
     static_assert(
         std::is_same_v<decltype(&CIcePick::processDamage), void (CIcePick::*)(SDamageInfo *)>);
     static_assert(std::is_same_v<decltype(&CIcePick::getCarryObjToBodyXForm),

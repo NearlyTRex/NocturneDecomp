@@ -31,8 +31,9 @@ TEST(CFlies, PublicInterface) {
                                  CBoundingBox3D *(CFlies::*)(CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CFlies::getCollisionType),
                                  ECollisionType (CFlies::*)(SCollisionInfo *)>);
-    static_assert(std::is_same_v<decltype(&CFlies::getActorType), CDemonActorType *(CFlies::*)()>);
-    static_assert(std::is_same_v<decltype(&CFlies::archive), void (CFlies::*)()>);
+    static_assert(std::is_same_v<decltype(&CFlies::getActorType),
+                                 const CDemonActorType &(CFlies::*)() const>);
+    static_assert(std::is_same_v<decltype(&CFlies::archive), void (CFlies::*)(CActorArchive &)>);
 }
 
 } // namespace

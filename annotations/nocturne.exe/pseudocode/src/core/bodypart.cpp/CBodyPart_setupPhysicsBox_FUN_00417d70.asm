@@ -12,9 +12,9 @@
 ;
 ; Referenced Globals:
 ;   float FLOAT_0057911a = 0.5
-;   undefined4 DAT_02dd1184
-;   undefined4 DAT_02dd1188
-;   undefined4 DAT_02dd118c
+;   UVector3 g_ZeroVector
+;   undefined4 g_ZeroVector+4
+;   undefined4 g_ZeroVector+8
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -48,11 +48,11 @@ section .text
     CMP EAX,0x2dd1184                   ; 00417da6
     JZ 0x00417dc7                       ; 00417dab
         ;   XREF to: 00417dc7 (CONDITIONAL_JUMP)  ; LAB_00417dc7
-    MOV ECX,dword ptr [0x02dd1184]      ; 00417dad | DAT_02dd1184
+    MOV ECX,dword ptr [0x02dd1184]      ; 00417dad | g_ZeroVector
     MOV dword ptr [EAX],ECX             ; 00417db3
-    MOV ECX,dword ptr [0x02dd1188]      ; 00417db5 | DAT_02dd1188
+    MOV ECX,dword ptr [0x02dd1188]      ; 00417db5 | g_ZeroVector+4
     MOV dword ptr [EAX + 0x4],ECX       ; 00417dbb
-    MOV ECX,dword ptr [0x02dd118c]      ; 00417dbe | DAT_02dd118c
+    MOV ECX,dword ptr [0x02dd118c]      ; 00417dbe | g_ZeroVector+8
     MOV dword ptr [EAX + 0x8],ECX       ; 00417dc4
     ADD EBX,0x154                       ; 00417dc7
         ;   Label: LAB_00417dc7

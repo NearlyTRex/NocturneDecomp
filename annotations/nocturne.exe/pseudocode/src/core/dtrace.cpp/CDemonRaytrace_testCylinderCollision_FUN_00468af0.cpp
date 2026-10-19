@@ -26,13 +26,13 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_testCylinderCollision_FUN_00468af0(C
   int unaff_EBX;
   int unaff_EDI;
   
-  _DAT_014b89ec = _DAT_02dd1188;
-  _DAT_014b8a08 = _DAT_02dd118c;
-  _DAT_014b8a00 = _DAT_02dd1184;
-  _DAT_014b89fc = _DAT_02dd118c;
-  _DAT_014b89f4 = _DAT_02dd1184;
-  _DAT_014b89f0 = _DAT_02dd118c;
-  _DAT_014b89e8 = _DAT_02dd1184;
+  _DAT_014b89ec = g_ZeroVector.f.y;
+  _DAT_014b8a08 = g_ZeroVector.f.z;
+  _DAT_014b8a00 = g_ZeroVector.f.x;
+  _DAT_014b89fc = g_ZeroVector.f.z;
+  _DAT_014b89f4 = g_ZeroVector.f.x;
+  _DAT_014b89f0 = g_ZeroVector.f.z;
+  _DAT_014b89e8 = g_ZeroVector.f.x;
   if (cylinder->dir_x <= 0.0) {
     fVar5 = ((cylinder->center_x + cylinder->dir_x) - (this_ptr->bbox_min).x) - cylinder->radius;
     fVar1 = (this_ptr->cell_size).x;

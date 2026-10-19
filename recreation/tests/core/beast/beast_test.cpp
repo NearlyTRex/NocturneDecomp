@@ -30,8 +30,9 @@ TEST(CBeast, PublicInterface) {
                                  ECollisionType (CBeast::*)(SCollisionInfo *)>);
     static_assert(
         std::is_same_v<decltype(&CBeast::getTargetPoints), int (CBeast::*)(common::CVector3f *)>);
-    static_assert(std::is_same_v<decltype(&CBeast::getActorType), CDemonActorType *(CBeast::*)()>);
-    static_assert(std::is_same_v<decltype(&CBeast::archive), void (CBeast::*)()>);
+    static_assert(std::is_same_v<decltype(&CBeast::getActorType),
+                                 const CDemonActorType &(CBeast::*)() const>);
+    static_assert(std::is_same_v<decltype(&CBeast::archive), void (CBeast::*)(CActorArchive &)>);
     static_assert(
         std::is_same_v<decltype(&CBeast::processDamage), void (CBeast::*)(SDamageInfo *)>);
     static_assert(std::is_same_v<decltype(&CBeast::getDeathState), EDeathState (CBeast::*)()>);

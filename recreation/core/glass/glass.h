@@ -20,8 +20,8 @@ public:
     ECollisionType getCollisionType(SCollisionInfo *collision_info) override;
     EGroundType getGroundType() override;
     void onLaserHit(SLaserInfo *laser_info) override;
-    CDemonActorType *getActorType() override;
-    void archive() override;
+    [[nodiscard]] const CDemonActorType &getActorType() const override;
+    void archive(CActorArchive &actor_archive) override;
 
     void renderBrokenGlass();
     void shatter(common::CVector3f *location);

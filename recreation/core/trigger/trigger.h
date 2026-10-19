@@ -21,8 +21,8 @@ public:
                                    common::CVector3f *query_position) override;
     int processActionButton() override;
     void onLaserHit(SLaserInfo *laser_info) override;
-    CDemonActorType *getActorType() override;
-    void archive() override;
+    [[nodiscard]] const CDemonActorType &getActorType() const override;
+    void archive(CActorArchive &actor_archive) override;
 
     void onProjectileHit();
     int acceptsDamageFrom(CDemonActor *actor);

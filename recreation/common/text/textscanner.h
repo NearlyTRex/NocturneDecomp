@@ -17,6 +17,8 @@ public:
     void skipWhitespace();
     // fgets: through the next newline, or to the end.
     void skipLine();
+    // fgets, keeping the line: what skipLine would pass over, without its newline.
+    std::string_view readLine();
     // A literal in a scanf format; false when the next character isn't it.
     bool expect(char literal);
     // "%d", including the whitespace it skips first.

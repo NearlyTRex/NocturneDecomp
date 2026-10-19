@@ -32,9 +32,9 @@ void __cdecl core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_0056e3e0(CDemo
       fVar4 = core_chain_cpp_fastSqrt_FUN_00431350(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2);
       if (fVar4 <= iVar1->atten_end) {
         fVar1 = 1.0 - fVar4 / iVar1->atten_end;
-        local_3c = *(float *)&iVar1->color.r * fVar1 + local_3c;
-        local_40 = *(float *)&iVar1->color.g * fVar1 + local_40;
-        local_38 = *(float *)&iVar1->color.b * fVar1 + local_38;
+        local_3c = iVar1->color.r * fVar1 + local_3c;
+        local_40 = iVar1->color.g * fVar1 + local_40;
+        local_38 = iVar1->color.b * fVar1 + local_38;
       }
     }
   }

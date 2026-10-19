@@ -16,7 +16,8 @@ TEST(C3DSLight, Constructors) {
 }
 
 TEST(C3DSLight, PublicInterface) {
-    static_assert(std::is_same_v<decltype(&C3DSLight::load), void (C3DSLight::*)(std::FILE *)>);
+    static_assert(std::is_same_v<decltype(&C3DSLight::load),
+                                 void (C3DSLight::*)(common::CTextScanner &, int)>);
     static_assert(std::is_same_v<decltype(&C3DSLight::create), CDemonLight *(C3DSLight::*)()>);
     static_assert(std::is_same_v<decltype(&C3DSLight::apply), void (C3DSLight::*)(CDemonLight *)>);
     static_assert(std::is_same_v<decltype(&C3DSLight::doNothing), void (C3DSLight::*)()>);

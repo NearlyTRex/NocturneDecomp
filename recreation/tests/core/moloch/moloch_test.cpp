@@ -27,9 +27,9 @@ TEST(CMoloch, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CMoloch::setup), void (CMoloch::*)()>);
     static_assert(std::is_same_v<decltype(&CMoloch::process), void (CMoloch::*)(float)>);
     static_assert(std::is_same_v<decltype(&CMoloch::renderOpaque), int (CMoloch::*)()>);
-    static_assert(
-        std::is_same_v<decltype(&CMoloch::getActorType), CDemonActorType *(CMoloch::*)()>);
-    static_assert(std::is_same_v<decltype(&CMoloch::archive), void (CMoloch::*)()>);
+    static_assert(std::is_same_v<decltype(&CMoloch::getActorType),
+                                 const CDemonActorType &(CMoloch::*)() const>);
+    static_assert(std::is_same_v<decltype(&CMoloch::archive), void (CMoloch::*)(CActorArchive &)>);
     static_assert(std::is_same_v<decltype(&CMoloch::drawWeapon), void (CMoloch::*)(int)>);
     static_assert(std::is_same_v<decltype(&CMoloch::isWeaponDrawn), int (CMoloch::*)()>);
 }

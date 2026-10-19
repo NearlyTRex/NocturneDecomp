@@ -1,7 +1,10 @@
+#include "core/actor/demonactor.h"
+#include "core/actor/demonactortype.h"
 #include "core/hero/heroplaceholder.h"
 
 #include <gtest/gtest.h>
 
+#include <memory>
 #include <type_traits>
 
 namespace nocturne::core {
@@ -24,16 +27,20 @@ TEST(CHeroPlaceholder, Constructors) {
 }
 
 TEST(CHeroPlaceholder, PublicInterface) {
-    static_assert(std::is_same_v<decltype(&CHeroPlaceholder::renderTransparent),
-                                 int (CHeroPlaceholder::*)()>);
-    static_assert(std::is_same_v<decltype(&CHeroPlaceholder::getBoundingBox),
-                                 CBoundingBox3D *(CHeroPlaceholder::*)(CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CHeroPlaceholder::getActorType),
-                                 CDemonActorType *(CHeroPlaceholder::*)()>);
-    static_assert(
-        std::is_same_v<decltype(&CHeroPlaceholder::archive), void (CHeroPlaceholder::*)()>);
+                                 const CDemonActorType &(CHeroPlaceholder::*)() const>);
     static_assert(std::is_same_v<decltype(&CHeroPlaceholder::createHero),
                                  CHero *(CHeroPlaceholder::*)(EHeroType)>);
+}
+
+TEST(CHeroPlaceholder, ItsRecordIsAVersionOneActorThatMissionsCanCreate) {
+    EXPECT_EQ(CHeroPlaceholder::kType.class_name, "CHeroPlaceholder");
+    EXPECT_EQ(CHeroPlaceholder::kType.parent_type, &CDemonActor::kType);
+    EXPECT_EQ(CHeroPlaceholder::kType.latest_version, 1);
+    EXPECT_EQ(CHeroPlaceholder::kType.name_hash, hashClassName("CHeroPlaceholder"));
+    ASSERT_NE(CHeroPlaceholder::kType.factory_func, nullptr);
+    const std::unique_ptr<CDemonActor> actor = CHeroPlaceholder::kType.factory_func();
+    EXPECT_EQ(&actor->getActorType(), &CHeroPlaceholder::kType);
 }
 
 } // namespace

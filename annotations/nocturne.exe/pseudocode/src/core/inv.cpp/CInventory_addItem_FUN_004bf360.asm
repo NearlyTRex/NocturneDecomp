@@ -42,7 +42,7 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
 ;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0
 ;   core_actor.cpp_createActorByName_FUN_0040d540
-;   core_actor.cpp_destroyActor_FUN_00409cd0
+;   core_actor.cpp_deleteActor_FUN_00409cd0
 ;   core_actor.cpp_isOfClass_FUN_0040d7e0
 ;   core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80
 ;   core_game.cpp_CGame_displayMessage_FUN_0049aa30
@@ -50,9 +50,9 @@
 ;   core_inv.cpp_getItemDescription_FUN_004bed10
 ;   core_inv.cpp_getItemDisplayName_FUN_004beca0
 ;   core_menu.cpp_getKeyDisplayName_FUN_004d2900
-;   core_mission.cpp_CDemonMission_FUN_004d8cd0
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720
 ;   core_mission.cpp_CDemonMission_markActorToDelete_FUN_004d9110
+;   core_mission.cpp_CDemonMission_removeActorFromList_FUN_004d8cd0
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   ... and 5 more
 ;
@@ -1725,8 +1725,8 @@ section .text
     INC EAX                             ; 004c029c
     MOV EBX,EDX                         ; 004c029d
     MOV dword ptr [EBP + 0x8],EAX       ; 004c029f
-    CALL core_mission.cpp_CDemonMission_FUN_004d8cd0 ; 004c02a2
-        ;   XREF to: 004d8cd0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_004d8cd0(CDemonMission * this_ptr, CDemonActor * param_2)
+    CALL core_mission.cpp_CDemonMission_removeActorFromList_FUN_004d8cd0 ; 004c02a2
+        ;   XREF to: 004d8cd0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_removeActorFromList_FUN_004d8cd0(CDemonMission * this_ptr, CDemonActor * param_2)
     ADD ESP,0x8                         ; 004c02a7
     MOV EAX,EBX                         ; 004c02aa
     PUSH EBP                            ; 004c02ac
@@ -1784,8 +1784,8 @@ section .text
     ADD ESP,0x8                         ; 004c0337
     MOV EDI,dword ptr [ESP + 0x33c]     ; 004c033a
     PUSH EDI                            ; 004c0341
-    CALL core_actor.cpp_destroyActor_FUN_00409cd0 ; 004c0342
-        ;   XREF to: 00409cd0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_destroyActor_FUN_00409cd0(CDemonActor * actor)
+    CALL core_actor.cpp_deleteActor_FUN_00409cd0 ; 004c0342
+        ;   XREF to: 00409cd0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_deleteActor_FUN_00409cd0(CDemonActor * actor)
     ADD ESP,0x4                         ; 004c0347
     PUSH 0x5870e3                       ; 004c034a | = "Found dynamite.  Creating weapon for ..."
     MOV EAX,[0x005ad350]                ; 004c034f | g_CConsole_PTR_005ad350
@@ -2034,8 +2034,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x31c]     ; 004c05ef
     MOV EDX,dword ptr [EAX + 0xc]       ; 004c05f6
     PUSH EDX                            ; 004c05f9
-    CALL core_actor.cpp_destroyActor_FUN_00409cd0 ; 004c05fa
-        ;   XREF to: 00409cd0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_destroyActor_FUN_00409cd0(CDemonActor * actor)
+    CALL core_actor.cpp_deleteActor_FUN_00409cd0 ; 004c05fa
+        ;   XREF to: 00409cd0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_deleteActor_FUN_00409cd0(CDemonActor * actor)
     ADD ESP,0x4                         ; 004c05ff
     MOV EAX,dword ptr [ESP + 0x31c]     ; 004c0602
     PUSH EDI                            ; 004c0609

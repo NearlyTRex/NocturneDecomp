@@ -24,8 +24,8 @@ TEST(CShovel, Constructors) {
 }
 
 TEST(CShovel, PublicInterface) {
-    static_assert(
-        std::is_same_v<decltype(&CShovel::getActorType), CDemonActorType *(CShovel::*)()>);
+    static_assert(std::is_same_v<decltype(&CShovel::getActorType),
+                                 const CDemonActorType &(CShovel::*)() const>);
     static_assert(std::is_same_v<decltype(&CShovel::fire), int (CShovel::*)()>);
     static_assert(std::is_same_v<decltype(&CShovel::getDamage), float (CShovel::*)()>);
     static_assert(std::is_same_v<decltype(&CShovel::renderAimBeam), void (CShovel::*)()>);

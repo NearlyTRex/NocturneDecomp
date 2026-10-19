@@ -80,7 +80,7 @@
 ;   undefined4 g_CDemonSet_01e57284.active_fog.scroll.x
 ;   undefined4 g_CDemonSet_01e57284.active_fog.scroll.y
 ;   undefined4 g_CDemonSet_01e57284.active_fog.scroll.z
-;   undefined4 DAT_02dd1184
+;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220
@@ -599,7 +599,7 @@ section .text
     LEA EAX,[EBX + 0x30]                ; 00547583
         ;   Label: LAB_00547583
     PUSH EAX                            ; 00547586
-    PUSH 0x2dd1184                      ; 00547587 | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 00547587 | g_ZeroVector
     MOV dword ptr [ESP + 0x1a8],EAX     ; 0054758c
     LEA EAX,[ESP + 0x18]                ; 00547593
     PUSH EAX                            ; 00547597
@@ -608,7 +608,7 @@ section .text
     ADD ESP,0xc                         ; 0054759d
     LEA EAX,[ESP + 0x184]               ; 005475a0
     PUSH EAX                            ; 005475a7
-    PUSH 0x2dd1184                      ; 005475a8 | DAT_02dd1184
+    PUSH 0x2dd1184                      ; 005475a8 | g_ZeroVector
     LEA EAX,[ESP + 0xa8]                ; 005475ad
     PUSH EAX                            ; 005475b4
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0 ; 005475b5

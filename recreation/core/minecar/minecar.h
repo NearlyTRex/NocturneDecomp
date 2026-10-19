@@ -12,7 +12,7 @@ public:
 
     void setup() override;
     void process(float delta_time) override;
-    CDemonActorType *getActorType() override;
+    [[nodiscard]] const CDemonActorType &getActorType() const override;
 };
 
 } // namespace nocturne::core

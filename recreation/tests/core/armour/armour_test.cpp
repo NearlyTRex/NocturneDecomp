@@ -30,9 +30,9 @@ TEST(CArmour, PublicInterface) {
                                  ECollisionType (CArmour::*)(SCollisionInfo *)>);
     static_assert(
         std::is_same_v<decltype(&CArmour::getTargetPoints), int (CArmour::*)(common::CVector3f *)>);
-    static_assert(
-        std::is_same_v<decltype(&CArmour::getActorType), CDemonActorType *(CArmour::*)()>);
-    static_assert(std::is_same_v<decltype(&CArmour::archive), void (CArmour::*)()>);
+    static_assert(std::is_same_v<decltype(&CArmour::getActorType),
+                                 const CDemonActorType &(CArmour::*)() const>);
+    static_assert(std::is_same_v<decltype(&CArmour::archive), void (CArmour::*)(CActorArchive &)>);
     static_assert(
         std::is_same_v<decltype(&CArmour::processDamage), void (CArmour::*)(SDamageInfo *)>);
 }

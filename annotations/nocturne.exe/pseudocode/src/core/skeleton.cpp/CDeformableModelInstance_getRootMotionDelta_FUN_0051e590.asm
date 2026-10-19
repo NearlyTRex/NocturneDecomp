@@ -31,9 +31,9 @@
 ;   core_skeleton.cpp_getRootMotionDeltaForMotion_FUN_0051e7d0 at 0051e841
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02dd1184
-;   undefined4 DAT_02dd1188
-;   undefined4 DAT_02dd118c
+;   UVector3 g_ZeroVector
+;   undefined4 g_ZeroVector+4
+;   undefined4 g_ZeroVector+8
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0
@@ -57,12 +57,12 @@ section .text
     SAHF                                ; 0051e5a7
     JC 0x0051e5cd                       ; 0051e5a8
         ;   XREF to: 0051e5cd (CONDITIONAL_JUMP)  ; LAB_0051e5cd
-    MOV EAX,[0x02dd1184]                ; 0051e5aa | DAT_02dd1184
+    MOV EAX,[0x02dd1184]                ; 0051e5aa | g_ZeroVector
     MOV dword ptr [ESI],EAX             ; 0051e5af
     LEA EAX,[ESI + 0x4]                 ; 0051e5b1
-    MOV EDX,dword ptr [0x02dd1188]      ; 0051e5b4 | DAT_02dd1188
+    MOV EDX,dword ptr [0x02dd1188]      ; 0051e5b4 | g_ZeroVector+4
     MOV dword ptr [EAX],EDX             ; 0051e5ba
-    MOV EDX,dword ptr [0x02dd118c]      ; 0051e5bc | DAT_02dd118c
+    MOV EDX,dword ptr [0x02dd118c]      ; 0051e5bc | g_ZeroVector+8
     MOV dword ptr [EAX + 0x4],EDX       ; 0051e5c2
     MOV EAX,ESI                         ; 0051e5c5
     ADD ESP,0x40                        ; 0051e5c7

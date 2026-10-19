@@ -38,6 +38,14 @@ TEST(CTextScanner, SkipLineOnTheLastLineRunsToTheEnd) {
     EXPECT_TRUE(scanner.atEnd());
 }
 
+TEST(CTextScanner, ReadLineReturnsTheLineWithoutItsNewline) {
+    CTextScanner scanner(" two words\r\nnext");
+    EXPECT_EQ(scanner.readLine(), " two words\r");
+    EXPECT_EQ(scanner.readLine(), "next");
+    EXPECT_TRUE(scanner.atEnd());
+    EXPECT_EQ(scanner.readLine(), "");
+}
+
 TEST(CTextScanner, ExpectFailsOnAnotherCharacterOrTheEnd) {
     CTextScanner scanner("a");
     EXPECT_FALSE(scanner.expect('b'));

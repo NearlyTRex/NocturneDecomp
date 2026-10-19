@@ -33,9 +33,10 @@ TEST(CPendulum, PublicInterface) {
                                  ECollisionType (CPendulum::*)(SCollisionInfo *)>);
     static_assert(
         std::is_same_v<decltype(&CPendulum::getGroundType), EGroundType (CPendulum::*)()>);
+    static_assert(std::is_same_v<decltype(&CPendulum::getActorType),
+                                 const CDemonActorType &(CPendulum::*)() const>);
     static_assert(
-        std::is_same_v<decltype(&CPendulum::getActorType), CDemonActorType *(CPendulum::*)()>);
-    static_assert(std::is_same_v<decltype(&CPendulum::archive), void (CPendulum::*)()>);
+        std::is_same_v<decltype(&CPendulum::archive), void (CPendulum::*)(CActorArchive &)>);
 }
 
 } // namespace

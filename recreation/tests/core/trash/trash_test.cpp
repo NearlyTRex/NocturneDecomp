@@ -31,8 +31,9 @@ TEST(CTrash, PublicInterface) {
                                  CBoundingBox3D *(CTrash::*)(CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CTrash::getCollisionType),
                                  ECollisionType (CTrash::*)(SCollisionInfo *)>);
-    static_assert(std::is_same_v<decltype(&CTrash::getActorType), CDemonActorType *(CTrash::*)()>);
-    static_assert(std::is_same_v<decltype(&CTrash::archive), void (CTrash::*)()>);
+    static_assert(std::is_same_v<decltype(&CTrash::getActorType),
+                                 const CDemonActorType &(CTrash::*)() const>);
+    static_assert(std::is_same_v<decltype(&CTrash::archive), void (CTrash::*)(CActorArchive &)>);
 }
 
 } // namespace

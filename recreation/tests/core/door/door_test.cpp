@@ -36,8 +36,9 @@ TEST(CDoor, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDoor::getBlockVirtualDirectorFlag), int (CDoor::*)()>);
     static_assert(std::is_same_v<decltype(&CDoor::allowBulletHoles), int (CDoor::*)()>);
     static_assert(std::is_same_v<decltype(&CDoor::updateCollisionData), void (CDoor::*)()>);
-    static_assert(std::is_same_v<decltype(&CDoor::getActorType), CDemonActorType *(CDoor::*)()>);
-    static_assert(std::is_same_v<decltype(&CDoor::archive), void (CDoor::*)()>);
+    static_assert(
+        std::is_same_v<decltype(&CDoor::getActorType), const CDemonActorType &(CDoor::*)() const>);
+    static_assert(std::is_same_v<decltype(&CDoor::archive), void (CDoor::*)(CActorArchive &)>);
     static_assert(std::is_same_v<decltype(&CDoor::onOpened), void (CDoor::*)()>);
     static_assert(std::is_same_v<decltype(&CDoor::setSwingRange), void (CDoor::*)(float)>);
     static_assert(

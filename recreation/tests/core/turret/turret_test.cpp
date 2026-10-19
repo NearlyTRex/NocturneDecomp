@@ -38,9 +38,9 @@ TEST(CTurret, PublicInterface) {
                                  int (CTurret::*)(common::UOrientationVector *, SPlayerInput *)>);
     static_assert(
         std::is_same_v<decltype(&CTurret::stopInteraction), void (CTurret::*)(CDemonActor *)>);
-    static_assert(
-        std::is_same_v<decltype(&CTurret::getActorType), CDemonActorType *(CTurret::*)()>);
-    static_assert(std::is_same_v<decltype(&CTurret::archive), void (CTurret::*)()>);
+    static_assert(std::is_same_v<decltype(&CTurret::getActorType),
+                                 const CDemonActorType &(CTurret::*)() const>);
+    static_assert(std::is_same_v<decltype(&CTurret::archive), void (CTurret::*)(CActorArchive &)>);
     static_assert(std::is_same_v<decltype(&CTurret::getMuzzlePoint),
                                  common::CVector3f *(CTurret::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CTurret::fire), int (CTurret::*)()>);
