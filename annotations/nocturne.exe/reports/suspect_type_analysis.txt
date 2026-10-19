@@ -5,7 +5,7 @@ SUSPECT TYPE ANALYSIS
 SUSPECT TYPE COUNTS
 --------------------------------------------------
   undefined_data                  3940 ( 19.0%)
-  pointer_cast                    3555 ( 17.1%)
+  pointer_cast                    3537 ( 17.1%)
   pointer_truncation              2889 ( 13.9%)
   unrolled_memcpy                 1482 (  7.1%)
   warning_overlapping_globals      855 (  4.1%)
@@ -16,9 +16,9 @@ SUSPECT TYPE COUNTS
   unrolled_strcpy                  485 (  2.3%)
   negative_offset                  461 (  2.2%)
   stack_ref                        412 (  2.0%)
-  unaffected_reg                   384 (  1.8%)
+  unaffected_reg                   384 (  1.9%)
   unnamed_param                    371 (  1.8%)
-  static_uninitvar                 370 (  1.8%)
+  static_uninitvar                 369 (  1.8%)
   raw_address_constant             274 (  1.3%)
   nonstandard_int                  267 (  1.3%)
   unrolled_strlen                  238 (  1.1%)
@@ -753,7 +753,7 @@ Functions:
   wincore_winrun.cpp_winMain_FUN_00559260
 
 ====================================================================================================
-TYPE: pointer_cast (3555 occurrences)
+TYPE: pointer_cast (3537 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -774,8 +774,8 @@ Unique patterns:
     27x  (CMatrix3x4f *)((int)pCVar5
     27x  (void *)((int)sprite_data
     26x  (CMatrix3x4f *)((int)pCVar6
+    24x  (uint *)((int)this_ptr
     24x  (SRenderVertex *)((int)pSVar13
-    23x  (uint *)((int)this_ptr
     23x  (CMatrix3x4f *)((int)pCVar2
 
 Functions:
@@ -4831,8 +4831,8 @@ Functions:
   core_game.cpp_giveHeroWeaponAmmo_FUN_004a03a0
   core_glass.cpp_CGlass_createShatterParticles_FUN_004accf0
   core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004c0640
-  core_mission.cpp_CDemonMission_FUN_004d8cd0
   core_mission.cpp_CDemonMission_createFromSingleSet_FUN_004d93d0
+  core_mission.cpp_CDemonMission_removeActorFromList_FUN_004d8cd0
   core_motion.cpp_FUN_004e08e0
   core_scat.cpp_FUN_004fbbb0
   core_script.cpp_CScript_FUN_004febd0
@@ -4851,11 +4851,11 @@ Functions:
   support_newmsg.cpp_readMessageFile_FUN_004edfc0
 
 ====================================================================================================
-TYPE: static_uninitvar (370 occurrences)
+TYPE: static_uninitvar (369 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   370x  Cppcheck: uninitialized variable
+   369x  Cppcheck: uninitialized variable
 
 Functions:
   cockpit_ckptutil.c_applyActPalette_FUN_0042d370
@@ -4897,7 +4897,6 @@ Functions:
   core_dcamera.cpp_CDemonCamera_FUN_00447f20
   core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_00441c50
   core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_00444920
-  core_dcamera.cpp_CDemonCamera_saveAlphaTransform_FUN_004477f0
   core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_00446810
   core_dcamera.cpp_CDemonCamera_saveCameraTransform_FUN_00442d9c
   core_dcamera.cpp_CDemonCamera_screenToWorldRay_FUN_00446760

@@ -1151,7 +1151,7 @@ core_dcamera.cpp_CDemonCamera_initCameraFog_FUN_004474e0,004474e0,core/dcamera.c
 core_dcamera.cpp_CDemonCamera_getFogValueAtPosition_FUN_004475a0,004475a0,core/dcamera.cpp,22,0,,22
 core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670,00447670,core/dcamera.cpp,36,11,undefined_data|warning_overlapping_globals,156
 core_dcamera.cpp_CDemonCamera_sampleFramebufferPixel_FUN_00447760,00447760,core/dcamera.cpp,21,2,pointer_cast|unrolled_memset,51
-core_dcamera.cpp_CDemonCamera_saveAlphaTransform_FUN_004477f0,004477f0,core/dcamera.cpp,39,24,pointer_cast|pointer_truncation|warning_overlapping_globals,294
+core_dcamera.cpp_CDemonCamera_saveAlphaTransform_FUN_004477f0,004477f0,core/dcamera.cpp,34,6,pointer_cast|pointer_truncation|warning_overlapping_globals,109
 core_dcamera.cpp_CDemonCamera_restoreAlphaTransform_FUN_00447910,00447910,core/dcamera.cpp,43,0,,43
 core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00447a70,00447a70,core/dcamera.cpp,33,7,undefined_data,108
 core_dcamera.cpp_CDemonCamera_clearFramebufferAndWorkBuffers_FUN_00447b30,00447b30,core/dcamera.cpp,35,4,pointer_cast|pointer_truncation|undefined_data,90
@@ -2741,7 +2741,7 @@ core_inv.cpp_CInventory_renderItemModel_FUN_004c0b40,004c0b40,core/inv.cpp,138,1
 core_inv.cpp_CInventory_save_FUN_004c0fa0,004c0fa0,core/inv.cpp,40,6,shadow_pointer_walk|undefined_data,110
 core_inv.cpp_CInventory_saveItems_FUN_004c1140,004c1140,core/inv.cpp,19,2,shadow_pointer_walk|undefined_data,49
 core_inv.cpp_CInventory_load_FUN_004c1190,004c1190,core/inv.cpp,105,5,shadow_pointer_walk|unrolled_memcpy|unrolled_strcpy,170
-core_inv.cpp_CInventory_loadItems_FUN_004c14d0,004c14d0,core/inv.cpp,16,1,shadow_pointer_walk,31
+core_inv.cpp_CInventory_loadItems_FUN_004c14d0,004c14d0,core/inv.cpp,17,1,shadow_pointer_walk,32
 core_inv.cpp_CInventory_setupItems_FUN_004c1510,004c1510,core/inv.cpp,20,1,shadow_pointer_walk,35
 core_inv.cpp_CInventory_select_FUN_004c1580,004c1580,core/inv.cpp,128,8,derived_field_index_pun|unrolled_strcat|unrolled_strcpy|unrolled_strlen,228
 core_inv.cpp_CInventory_getActiveLightGun_FUN_004c1830,004c1830,core/inv.cpp,9,0,,9
@@ -3063,7 +3063,7 @@ core_mission.cpp_staticInit_FUN_004d7dd0,004d7dd0,core/mission.cpp,4,0,,4
 core_mission.cpp_skipLine_FUN_004d7de0,004d7de0,core/mission.cpp,11,0,,11
 core_mission.cpp_CDemonMission_reset_FUN_004d7e00,004d7e00,core/mission.cpp,19,2,undefined_data|unrolled_memset,49
 core_mission.cpp_CDemonMission_clearMission_FUN_004d7e90,004d7e90,core/mission.cpp,5,0,,5
-core_mission.cpp_CDemonMission_FUN_004d7ea0,004d7ea0,core/mission.cpp,10,0,,10
+core_mission.cpp_CDemonMission_clearMissionData_FUN_004d7ea0,004d7ea0,core/mission.cpp,10,0,,10
 core_mission.cpp_CDemonMission_load_FUN_004d7ee0,004d7ee0,core/mission.cpp,20,0,,20
 core_mission.cpp_CDemonMission_save_FUN_004d7f80,004d7f80,core/mission.cpp,13,0,,13
 core_mission.cpp_CDemonMission_readMissionFile_FUN_004d7fe0,004d7fe0,core/mission.cpp,235,8,pointer_cast|pointer_truncation|undefined_data|unrolled_memcpy|unrolled_strcpy,340
@@ -3073,7 +3073,7 @@ core_mission.cpp_CDemonMission_writeFile_FUN_004d8720,004d8720,core/mission.cpp,
 core_mission.cpp_CDemonMission_loadActor_FUN_004d8aa0,004d8aa0,core/mission.cpp,62,9,unaffected_reg,157
 core_mission.cpp_CDemonMission_saveActor_FUN_004d8c00,004d8c00,core/mission.cpp,23,0,,23
 core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60,004d8c60,core/mission.cpp,22,0,,22
-core_mission.cpp_CDemonMission_FUN_004d8cd0,004d8cd0,core/mission.cpp,41,9,unnamed_param,136
+core_mission.cpp_CDemonMission_removeActorFromList_FUN_004d8cd0,004d8cd0,core/mission.cpp,41,9,unnamed_param,136
 core_mission.cpp_CDemonMission_countActors_FUN_004d8d80,004d8d80,core/mission.cpp,10,0,,10
 core_mission.cpp_CDemonMission_prepareAllActors_FUN_004d8db0,004d8db0,core/mission.cpp,43,0,,43
 core_mission.cpp_CDemonMission_buildSetActorList_FUN_004d8ee0,004d8ee0,core/mission.cpp,21,0,,21
@@ -3086,7 +3086,7 @@ core_mission.cpp_CDemonMission_markActorToDelete_FUN_004d9110,004d9110,core/miss
 core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_004d9180,004d9180,core/mission.cpp,46,0,,46
 core_mission.cpp_CDemonMission_process_FUN_004d92a0,004d92a0,core/mission.cpp,44,4,shadow_pointer_walk|unrolled_memcpy|unrolled_memset|warning_type_propagation,104
 core_mission.cpp_CDemonMission_createFromSingleSet_FUN_004d93d0,004d93d0,core/mission.cpp,22,6,unnamed_param|unrolled_strcpy,92
-core_mission.cpp_CDemonMission_run_FUN_004d9440,004d9440,core/mission.cpp,67,4,undefined_data|warning_overlapping_globals,117
+core_mission.cpp_CDemonMission_run_FUN_004d9440,004d9440,core/mission.cpp,68,4,undefined_data|warning_overlapping_globals,118
 core_mission.cpp_CDemonMission_setMissionName_FUN_004d9650,004d9650,core/mission.cpp,18,2,undefined_data|unrolled_strcpy,48
 core_mission.cpp_CDemonMission_generateUniqueActorName_FUN_004d9680,004d9680,core/mission.cpp,34,1,unrolled_strlen,49
 core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720,004d9720,core/mission.cpp,25,1,unrolled_strcpy,40

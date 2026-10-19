@@ -9,34 +9,29 @@
 void __cdecl core_dcamera_cpp_CDemonCamera_saveAlphaTransform_FUN_00453950(CDemonCamera *this_ptr,int alpha_index)
 
 {
-  int iVar1;
-  int iVar2;
-  int unaff_retaddr;
   CVector3i CStack_14;
   
   engine_matrix_c_getCameraOrigin_FUN_0050e2c0(&CStack_14);
-  iVar1 = (int)this_ptr * 0xc + unaff_retaddr;
-  iVar2 = (int)this_ptr * 4 + unaff_retaddr;
-  *(uint *)(iVar1 + 0x11ec) = 0x45395c;
-  *(int *)(iVar1 + 0x11f0) = CStack_14.x;
-  *(int *)(iVar1 + 0x11f4) = CStack_14.y;
-  *(int *)(iVar2 + 0x124c) = g_TransformMatrix.m[0].x;
-  *(int *)(iVar2 + 0x126c) = g_TransformMatrix.m[0].y;
-  *(int *)(iVar2 + 0x128c) = g_TransformMatrix.m[0].z;
-  *(int *)(iVar2 + 0x12ac) = g_TransformMatrix.m[1].x;
-  *(int *)(iVar2 + 0x12cc) = g_TransformMatrix.m[1].y;
-  *(int *)(iVar2 + 0x12ec) = g_TransformMatrix.m[1].z;
-  *(int *)(iVar2 + 0x130c) = g_TransformMatrix.m[2].x;
-  *(int *)(iVar2 + 0x132c) = g_TransformMatrix.m[2].y;
-  *(int *)(iVar2 + 0x134c) = g_TransformMatrix.m[2].z;
-  *(int *)(iVar2 + 0x136c) = g_InverseMatrix.m[0].x;
-  *(int *)(iVar2 + 0x138c) = g_InverseMatrix.m[0].y;
-  *(int *)(iVar2 + 0x13ac) = g_InverseMatrix.m[0].z;
-  *(int *)(iVar2 + 0x13cc) = g_InverseMatrix.m[1].x;
-  *(int *)(iVar2 + 0x13ec) = g_InverseMatrix.m[1].y;
-  *(int *)(iVar2 + 0x140c) = g_InverseMatrix.m[1].z;
-  *(int *)(iVar2 + 0x142c) = g_InverseMatrix.m[2].x;
-  *(int *)(iVar2 + 0x144c) = g_InverseMatrix.m[2].y;
-  *(int *)(iVar2 + 0x146c) = g_InverseMatrix.m[2].z;
+  this_ptr->alpha_translations[alpha_index].x = CStack_14.x;
+  this_ptr->alpha_translations[alpha_index].y = CStack_14.y;
+  this_ptr->alpha_translations[alpha_index].z = CStack_14.z;
+  this_ptr->alpha_transform_matrices[0][alpha_index] = g_TransformMatrix.m[0].x;
+  this_ptr->alpha_transform_matrices[1][alpha_index] = g_TransformMatrix.m[0].y;
+  this_ptr->alpha_transform_matrices[2][alpha_index] = g_TransformMatrix.m[0].z;
+  this_ptr->alpha_transform_matrices[3][alpha_index] = g_TransformMatrix.m[1].x;
+  this_ptr->alpha_transform_matrices[4][alpha_index] = g_TransformMatrix.m[1].y;
+  this_ptr->alpha_transform_matrices[5][alpha_index] = g_TransformMatrix.m[1].z;
+  this_ptr->alpha_transform_matrices[6][alpha_index] = g_TransformMatrix.m[2].x;
+  this_ptr->alpha_transform_matrices[7][alpha_index] = g_TransformMatrix.m[2].y;
+  this_ptr->alpha_transform_matrices[8][alpha_index] = g_TransformMatrix.m[2].z;
+  this_ptr->alpha_transform_matrices[9][alpha_index] = g_InverseMatrix.m[0].x;
+  this_ptr->alpha_transform_matrices[10][alpha_index] = g_InverseMatrix.m[0].y;
+  this_ptr->alpha_transform_matrices[0xb][alpha_index] = g_InverseMatrix.m[0].z;
+  this_ptr->alpha_transform_matrices[0xc][alpha_index] = g_InverseMatrix.m[1].x;
+  this_ptr->alpha_transform_matrices[0xd][alpha_index] = g_InverseMatrix.m[1].y;
+  this_ptr->alpha_transform_matrices[0xe][alpha_index] = g_InverseMatrix.m[1].z;
+  this_ptr->alpha_transform_matrices[0xf][alpha_index] = g_InverseMatrix.m[2].x;
+  this_ptr->alpha_transform_matrices[0x10][alpha_index] = g_InverseMatrix.m[2].y;
+  this_ptr->alpha_transform_matrices[0x11][alpha_index] = g_InverseMatrix.m[2].z;
   return;
 }

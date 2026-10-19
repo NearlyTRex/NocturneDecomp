@@ -32,7 +32,7 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_004d7fe0(CDemonM
   CDemonActor *local_14;
   
   bVar11 = 0;
-  core_mission_cpp_CDemonMission_FUN_004d7ea0(this_ptr);
+  core_mission_cpp_CDemonMission_clearMissionData_FUN_004d7ea0(this_ptr);
   if (load_flags == 0) {
     core_mission_cpp_CDemonMission_freeAllAssets_FUN_004d9900(this_ptr);
   }

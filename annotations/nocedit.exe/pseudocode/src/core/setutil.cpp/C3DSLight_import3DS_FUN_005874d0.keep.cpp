@@ -33,7 +33,8 @@ void __cdecl core_setutil_cpp_C3DSLight_import3DS_FUN_005874d0(C3DSLight *this_p
   }
   strcpy(this_ptr->name,local_188);
   _fscanf(file_handle,"%d\n",&this_ptr->light_type);
-  _fscanf(file_handle,"%d,%d,%d\n",&(this_ptr->color).r,&(this_ptr->color).g,&(this_ptr->color).b);
+  _fscanf(file_handle,"%d,%d,%d\n",(int *)&(this_ptr->color).r,(int *)&(this_ptr->color).g,
+             (int *)&(this_ptr->color).b);
   _fscanf(file_handle,"%f\n",&this_ptr->atten_start);
   _fscanf(file_handle,"%f\n",&this_ptr->atten_end);
   _fscanf(file_handle,"%f,%f,%f\n",&(this_ptr->pos).x,&(this_ptr->pos).y,&(this_ptr->pos).z);

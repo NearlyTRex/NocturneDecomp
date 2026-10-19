@@ -268,7 +268,7 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
   pairs compared        : 5267
   never transferred     : 6   (nocturne side has no signature at all -- transfer work, not drift)
   genuine divergence    : 41   (both sides typed, and they disagree -- investigate)
-  name core differs     : 65   (mapped as the same function under two different names)
+  name core differs     : 63   (mapped as the same function under two different names)
 
   -- genuine divergence, highest confidence first --
   by kind: {'ret': 28, 'param': 13, 'param0': 7, 'param1': 4, 'param2': 4, 'param3': 1, 'conv': 1}
@@ -415,7 +415,7 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
         ret CPathMap* -> int
 
   -- same pair, different name core --
-  {'unnamed on one side': 54, 'renamed': 5, 'MAPPING SUSPECT': 3, 'stubbed in nocturne': 3}
+  {'unnamed on one side': 52, 'renamed': 5, 'MAPPING SUSPECT': 3, 'stubbed in nocturne': 3}
     MAPPING SUSPECT     the two names claim different CLASSES, so the
                         pair is probably wrong, not the names
     case-only spelling  same name, different capitalisation -- one build
@@ -475,9 +475,6 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
     [unnamed on one side] 004d29f0 -> 00495580  conf 1.00  shape identical
       nocedit  weaponDrawBlendWeightCallback
       nocturne motionBlendWeightFunc
-    [unnamed on one side] 00523be0 -> 004d8cd0  conf 1.00  shape size_mismatch
-      nocedit  CDemonMission_removeActorFromList
-      nocturne CDemonMission
     [unnamed on one side] 00599a50 -> 005174e0  conf 1.00  shape size_mismatch
       nocedit  CSkeleton_free
       nocturne CSkeleton
@@ -514,9 +511,6 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
     [unnamed on one side] 00600e29 -> 00565e59  conf 0.99  shape identical
       nocedit  fflush
       nocturne ostream_flush
-    [unnamed on one side] 00522d30 -> 004d7ea0  conf 0.96  shape size_mismatch
-      nocedit  CDemonMission_clearMissionData
-      nocturne CDemonMission
     [unnamed on one side] 00404420 -> 00405740  conf 0.93  shape size_mismatch
       nocedit  abortOldFuncOp18
       nocturne skipMRGLPrimitive

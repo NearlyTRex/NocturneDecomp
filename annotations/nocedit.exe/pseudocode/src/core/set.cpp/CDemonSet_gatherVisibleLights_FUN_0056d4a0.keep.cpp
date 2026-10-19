@@ -146,9 +146,9 @@ int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_0056d4a0(CDemonSet *t
       for (iVar11 = 0; iVar11 < g_ColorCorrectionCount; iVar11 = iVar11 + 1) {
         pCVar1 = g_VisibleOmniLights[iVar11];
         if (pCVar1->atten_end == 0.0f) {
-          local_b8 = *(float *)&pCVar1->color.r + local_b8;
-          local_b4 = *(float *)&pCVar1->color.g + local_b4;
-          local_b0 = *(float *)&pCVar1->color.b + local_b0;
+          local_b8 = pCVar1->color.r + local_b8;
+          local_b4 = pCVar1->color.g + local_b4;
+          local_b0 = pCVar1->color.b + local_b0;
           iVar7 = iVar7 + 1;
         }
         else {
@@ -160,9 +160,9 @@ int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_0056d4a0(CDemonSet *t
             fVar1 = (1.0 - core_chain_cpp_fastSqrt_FUN_00431350(fVar1) *
                             pCVar1->atten_end_reciprocal) * 0.666f;
             fVar5 = (float)2;
-            local_88 = fVar1 * *(float *)&pCVar1->color.r * fVar5 + local_88;
-            local_84 = fVar1 * *(float *)&pCVar1->color.g * fVar5 + local_84;
-            local_80 = fVar1 * *(float *)&pCVar1->color.b * fVar5 + local_80;
+            local_88 = fVar1 * pCVar1->color.r * fVar5 + local_88;
+            local_84 = fVar1 * pCVar1->color.g * fVar5 + local_84;
+            local_80 = fVar1 * pCVar1->color.b * fVar5 + local_80;
           }
         }
       }

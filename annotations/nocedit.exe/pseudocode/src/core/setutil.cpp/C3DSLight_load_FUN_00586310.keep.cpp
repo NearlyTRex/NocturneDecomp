@@ -63,8 +63,8 @@ void __cdecl core_setutil_cpp_C3DSLight_load_FUN_00586310(C3DSLight *this_ptr,_F
   if (10 < g_CDemonSetPtr->set_file_version) {
     _fgets(local_148,0xff,file_handle);
   }
-  _fscanf(file_handle,"%f,%f,%f,%f,%f\n",(float *)&(this_ptr->color).r,(float *)&(this_ptr->color).g,
-             (float *)&(this_ptr->color).b,&this_ptr->atten_start,&this_ptr->atten_end);
+  _fscanf(file_handle,"%f,%f,%f,%f,%f\n",&(this_ptr->color).r,&(this_ptr->color).g,
+             &(this_ptr->color).b,&this_ptr->atten_start,&this_ptr->atten_end);
   if (10 < g_CDemonSetPtr->set_file_version) {
     _fgets(local_148,0xff,file_handle);
   }

@@ -40,12 +40,12 @@ void __cdecl core_setutil_cpp_C3DSCamera_load_FUN_00585420(C3DSCamera *this_ptr,
   _fscanf(file_handle,"%f,%f,%f\n",&(this_ptr->rotation_matrix).m[2].x,
              &(this_ptr->rotation_matrix).m[2].y,&(this_ptr->rotation_matrix).m[2].z);
   if (g_CDemonSetPtr->set_file_version < 0x12) {
-    this_ptr->fog_enabled = 1;
+    this_ptr->use_global_fog = 1;
     this_ptr->fog = g_CDemonSetPtr->scene_fog;
   }
   else {
-    _fscanf(file_handle,"%d\n",&this_ptr->fog_enabled);
-    if (this_ptr->fog_enabled == 0) {
+    _fscanf(file_handle,"%d\n",&this_ptr->use_global_fog);
+    if (this_ptr->use_global_fog == 0) {
       core_dcamera_cpp_loadCameraFog_FUN_00453e50
                 (&this_ptr->fog,file_handle,g_CDemonSetPtr->set_file_version);
     }

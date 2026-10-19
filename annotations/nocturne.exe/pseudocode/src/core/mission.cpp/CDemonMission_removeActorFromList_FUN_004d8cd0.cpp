@@ -1,12 +1,12 @@
-// Name: core_mission.cpp_CDemonMission_FUN_004d8cd0
+// Name: core_mission.cpp_CDemonMission_removeActorFromList_FUN_004d8cd0
 // Address: 004d8cd0
 // Address Range: [[004d8cd0, 004d8d70]]
 // Convention: __cdecl
-// Signature: void __cdecl core_mission_cpp_CDemonMission_FUN_004d8cd0(CDemonMission *this_ptr,CDemonActor *param_2)
+// Signature: void __cdecl core_mission_cpp_CDemonMission_removeActorFromList_FUN_004d8cd0(CDemonMission *this_ptr,CDemonActor *param_2)
 
 #include "nocturne.h"
 
-void __cdecl core_mission_cpp_CDemonMission_FUN_004d8cd0(CDemonMission *this_ptr,CDemonActor *param_2)
+void __cdecl core_mission_cpp_CDemonMission_removeActorFromList_FUN_004d8cd0(CDemonMission *this_ptr,CDemonActor *param_2)
 
 {
   CDemonActor *pCVar1;

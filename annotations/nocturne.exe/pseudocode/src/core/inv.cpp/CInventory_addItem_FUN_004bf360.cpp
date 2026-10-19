@@ -1128,7 +1128,7 @@ LAB_004bfff1:
   this_ptr->items[this_ptr->item_count] = item_actor;
   pCVar3 = g_CDemonMission_PTR_005baf90;
   this_ptr->item_count = this_ptr->item_count + 1;
-  core_mission_cpp_CDemonMission_FUN_004d8cd0(pCVar3,item_actor);
+  core_mission_cpp_CDemonMission_removeActorFromList_FUN_004d8cd0(pCVar3,item_actor);
   (*((item_actor->vtable)._ub)->onPickup)(item_actor,(CDemonActor *)this_ptr);
   if ((pCVar5 != (CDemonActor *)0x0) && (this_ptr->selected_weapon == (CWeapon *)0x0)) {
     core_inv_cpp_CInventory_selectWeapon_FUN_004c0850(this_ptr,pCVar5,5,1);

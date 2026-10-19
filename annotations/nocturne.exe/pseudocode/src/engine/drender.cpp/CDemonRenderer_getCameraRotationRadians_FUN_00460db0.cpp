@@ -16,8 +16,8 @@ CVector3f * __cdecl engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_F
   engine_matrix_c_getCameraRotation_FUN_004ce790(&local_20);
   fVar2 = (float)3.0517578125e-05;
   fVar1 = (float)3.1415926535000001;
-  output->x = fVar2 * 4591045.0 * fVar1;
-  output->z = (float)local_20.x * fVar2 * fVar1;
-  output->y = fVar1 * (float)local_20.y * fVar2;
+  output->x = (float)local_20.x * fVar2 * fVar1;
+  output->z = (float)local_20.y * fVar2 * fVar1;
+  output->y = fVar1 * (float)local_20.z * fVar2;
   return output;
 }

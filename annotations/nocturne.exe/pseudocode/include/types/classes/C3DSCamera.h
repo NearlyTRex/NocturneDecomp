@@ -19,7 +19,7 @@ typedef struct C3DSCamera {
     float projection_scale; // 0x140
     float ambient_value; // 0x144
     int camera_group; // 0x148
-    int fog_enabled; // 0x14c
+    int use_global_fog; // 0x14c
     SFog fog; // 0x150
     int reverb_preset; // 0x174
     CBoundingBox3D box; // 0x178

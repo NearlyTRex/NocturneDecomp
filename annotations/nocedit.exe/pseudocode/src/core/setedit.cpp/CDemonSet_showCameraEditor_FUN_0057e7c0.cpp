@@ -403,7 +403,7 @@ LAB_0057eb3b:
             pCVar11->projection_scale = pCVar7->projection_scale;
             pCVar11->ambient_value = pCVar7->ambient_value;
             pCVar11->camera_group = pCVar7->camera_group;
-            pCVar11->fog_enabled = pCVar7->fog_enabled;
+            pCVar11->use_global_fog = pCVar7->use_global_fog;
             (pCVar11->fog).color_index.r = (pCVar7->fog).color_index.r;
             (pCVar11->fog).color_index.g = (pCVar7->fog).color_index.g;
             pCVar2 = &(pCVar11->fog).scroll;

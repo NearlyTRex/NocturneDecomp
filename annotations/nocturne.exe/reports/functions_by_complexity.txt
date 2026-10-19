@@ -1446,7 +1446,7 @@ annotations/nocturne.exe/pseudocode/src/core/marquee.cpp/CMarquee_archive_FUN_00
 annotations/nocturne.exe/pseudocode/src/core/melee.cpp/factoryFuncMelee_FUN_004cec30.cpp
 annotations/nocturne.exe/pseudocode/src/core/mimic.cpp/factoryFuncMimic_FUN_004d4420.cpp
 annotations/nocturne.exe/pseudocode/src/core/mirror.cpp/CMirrorReflection_setupMirrorCamera_FUN_004d6610.cpp
-annotations/nocturne.exe/pseudocode/src/core/mission.cpp/CDemonMission_FUN_004d7ea0.cpp
+annotations/nocturne.exe/pseudocode/src/core/mission.cpp/CDemonMission_clearMissionData_FUN_004d7ea0.cpp
 annotations/nocturne.exe/pseudocode/src/core/mission.cpp/CDemonMission_countActors_FUN_004d8d80.cpp
 annotations/nocturne.exe/pseudocode/src/core/mobster.cpp/factoryFuncMobster_FUN_004da120.cpp
 annotations/nocturne.exe/pseudocode/src/engine/model.c/initializeMRGLModel_FUN_004dd760.c
@@ -2596,7 +2596,6 @@ annotations/nocturne.exe/pseudocode/src/core/frankgen.cpp/CFrankenstienMachine_g
 annotations/nocturne.exe/pseudocode/src/core/gore.cpp/CGore_spawnBloodParticles_FUN_004b00f0.cpp
 annotations/nocturne.exe/pseudocode/src/core/grave.cpp/CGrave_process_FUN_004b0bf0.cpp
 annotations/nocturne.exe/pseudocode/src/core/ground.cpp/getGroundTypeColor_FUN_004b12f0.cpp
-annotations/nocturne.exe/pseudocode/src/core/inv.cpp/CInventory_loadItems_FUN_004c14d0.cpp
 annotations/nocturne.exe/pseudocode/src/engine/light.cpp/setLightingMultipliers_FUN_004c6a50.cpp
 annotations/nocturne.exe/pseudocode/src/core/mobster.cpp/CMobster_archive_FUN_004dc180.cpp
 annotations/nocturne.exe/pseudocode/src/sound/mp3.cpp/CFileBitStream_readFrameHeader_FUN_004e3130.cpp
@@ -2620,6 +2619,7 @@ annotations/nocturne.exe/pseudocode/src/core/game.cpp/drawKeyBindingEntry_FUN_00
 annotations/nocturne.exe/pseudocode/src/core/gargoyle.cpp/CGargoyle_ctor_FUN_004a7350.cpp
 annotations/nocturne.exe/pseudocode/src/core/inv.cpp/staticInit_FUN_004be9d0.cpp
 annotations/nocturne.exe/pseudocode/src/core/inv.cpp/getItemModel_FUN_004beb40.cpp
+annotations/nocturne.exe/pseudocode/src/core/inv.cpp/CInventory_loadItems_FUN_004c14d0.cpp
 annotations/nocturne.exe/pseudocode/src/engine/keys.cpp/CKeys_getAndClearKeyState_FUN_004c4190.cpp
 annotations/nocturne.exe/pseudocode/src/core/mmx.c/detectMMXSupport_FUN_004d9f59.c
 annotations/nocturne.exe/pseudocode/src/core/netgame.cpp/updateGameTime_FUN_004e9520.cpp
@@ -3946,6 +3946,7 @@ annotations/nocturne.exe/pseudocode/src/core/batcreat.cpp/CBatCreature_processDi
 annotations/nocturne.exe/pseudocode/src/core/bodypart.cpp/createBodyPart_FUN_00415b30.cpp
 annotations/nocturne.exe/pseudocode/src/core/box.cpp/CBox_setupCorners_FUN_0041a6e0.cpp
 annotations/nocturne.exe/pseudocode/src/cockpit/ckptutil.c/generateScrollHeightMap_FUN_0042e7b0.c
+annotations/nocturne.exe/pseudocode/src/core/dcamera.cpp/CDemonCamera_saveAlphaTransform_FUN_004477f0.cpp
 annotations/nocturne.exe/pseudocode/src/core/dlight.cpp/CDemonLight_applyFilter_FUN_004501c0.cpp
 annotations/nocturne.exe/pseudocode/src/core/hero.cpp/CHero_archive_FUN_004b49a0.cpp
 annotations/nocturne.exe/pseudocode/src/core/hero.cpp/CHero_findItemUseTarget_FUN_004b5950.cpp
@@ -4022,12 +4023,12 @@ annotations/nocturne.exe/pseudocode/src/core/flamecan.cpp/CFlameCan_ctor_FUN_004
 annotations/nocturne.exe/pseudocode/src/core/ghoul.cpp/CGhoul_processDismemberment_FUN_004ab190.cpp
 annotations/nocturne.exe/pseudocode/src/core/hero.cpp/CHero_tryInteract_FUN_004b4e90.cpp
 annotations/nocturne.exe/pseudocode/src/core/menu.cpp/getKeyDisplayName_FUN_004d2900.cpp
-annotations/nocturne.exe/pseudocode/src/core/mission.cpp/CDemonMission_run_FUN_004d9440.cpp
 annotations/nocturne.exe/pseudocode/src/engine/prim.c/setupBasicSoftwareEdge_FUN_004f9460.c
 annotations/nocturne.exe/pseudocode/src/core/sentinel.cpp/CSentinel_getTargetPoints_FUN_00506940.cpp
 annotations/nocturne.exe/pseudocode/src/core/turret.cpp/CTurret_updatePatrol_FUN_0054a920.cpp
 annotations/nocturne.exe/pseudocode/src/core/baron.cpp/CBaron_renderTransparent_FUN_004110f0.cpp
 annotations/nocturne.exe/pseudocode/src/core/door.cpp/CDoor_getOpenStandPos_FUN_00456260.cpp
+annotations/nocturne.exe/pseudocode/src/core/mission.cpp/CDemonMission_run_FUN_004d9440.cpp
 annotations/nocturne.exe/pseudocode/src/sound/sndmain.cpp/readIni_FUN_005289f0.cpp
 annotations/nocturne.exe/pseudocode/src/core/actor.cpp/archiveString_FUN_0040c6d0.cpp
 annotations/nocturne.exe/pseudocode/src/core/charactr.cpp/CCharacter_processCharacter_FUN_004259f0.cpp
@@ -4132,7 +4133,7 @@ annotations/nocturne.exe/pseudocode/src/core/vampboss.cpp/CVampireBoss_getCarryO
 annotations/nocturne.exe/pseudocode/src/core/dcube.cpp/CDemonCube_testCylinderGroundCollision_FUN_0044b500.cpp
 annotations/nocturne.exe/pseudocode/src/engine/prim.c/setupSoftwareEdgeWithZMode_FUN_004f9620.c
 annotations/nocturne.exe/pseudocode/src/sound/sndmain.cpp/formatSfxOptionsToString_FUN_00526410.cpp
-annotations/nocturne.exe/pseudocode/src/core/mission.cpp/CDemonMission_FUN_004d8cd0.cpp
+annotations/nocturne.exe/pseudocode/src/core/mission.cpp/CDemonMission_removeActorFromList_FUN_004d8cd0.cpp
 annotations/nocturne.exe/pseudocode/src/core/netgame.cpp/CNetGame_processClientFrame_FUN_004ed720.cpp
 annotations/nocturne.exe/pseudocode/src/core/path.cpp/renderGridQuad_FUN_004f16d0.cpp
 annotations/nocturne.exe/pseudocode/src/core/set.cpp/CDemonSet_computeVertexOmniLighting_FUN_0050be20.cpp
@@ -4582,7 +4583,6 @@ annotations/nocturne.exe/pseudocode/src/sound/mp3.cpp/applyPolyphaseWindow_FUN_0
 annotations/nocturne.exe/pseudocode/src/core/cow.cpp/CZombieCow_process_FUN_0043bdb0.cpp
 annotations/nocturne.exe/pseudocode/src/core/marquee.cpp/CMarquee_renderLightBulb_FUN_004cc440.cpp
 annotations/nocturne.exe/pseudocode/src/core/vehicle.cpp/CVehicle_setup_FUN_0054e7f0.cpp
-annotations/nocturne.exe/pseudocode/src/core/dcamera.cpp/CDemonCamera_saveAlphaTransform_FUN_004477f0.cpp
 annotations/nocturne.exe/pseudocode/src/sound/snddx.cpp/CDirectSoundDevice_allocateSfx_FUN_0052af50.cpp
 annotations/nocturne.exe/pseudocode/src/core/fire.cpp/CFireEffect_init_FUN_0048a150.cpp
 annotations/nocturne.exe/pseudocode/src/core/dtrace.cpp/CDemonRaytrace_setVoxelShadowBit_FUN_0046bfe0.cpp

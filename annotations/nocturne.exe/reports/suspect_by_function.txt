@@ -7,7 +7,7 @@ SUMMARY
 Total functions analyzed: 4923
 Clean: 2517 (51.1%)
 With suspects: 2406
-Total suspects: 20758
+Total suspects: 20739
 
 ====================================================================================================
 cockpit_ckptutil.c_applyActPalette_FUN_0042d370 (1 suspect)
@@ -5897,34 +5897,15 @@ core_dcamera.cpp_CDemonCamera_sampleLightingAntialiased_FUN_004425f0 (17 suspect
   Line 164 [pointer_truncation]: *(short *)((int)piVar5 + 2) = *(short *)((int)piVar5 + 2) + 1;
 
 ====================================================================================================
-core_dcamera.cpp_CDemonCamera_saveAlphaTransform_FUN_004477f0 (25 suspects)
+core_dcamera.cpp_CDemonCamera_saveAlphaTransform_FUN_004477f0 (6 suspects)
   File: core/dcamera.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 20 [pointer_cast]: *(uint *)(iVar1 + 0x11ec) = 0x4477fc;
-  Line 21 [pointer_truncation]: *puVar3 = *(uint *)((int)&CStack_14 + (uint)bVar4 * -8);
-  Line 21 [pointer_cast]: *puVar3 = *(uint *)((int)&CStack_14 + (uint)bVar4 * -8);
-  Line 23 [pointer_truncation]: *(uint *)((int)&CStack_14 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 4);
-  Line 23 [pointer_cast]: *(uint *)((int)&CStack_14 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 4);
-  Line 24 [pointer_cast]: *(int *)(iVar2 + 0x124c) = g_TransformMatrix.m[0].x;
-  Line 24 [static_uninitvar]: iVar1 = (int)this_ptr * 0xc + unaff_retaddr;
-  Line 25 [pointer_cast]: *(int *)(iVar2 + 0x126c) = g_TransformMatrix.m[0].y;
-  Line 26 [pointer_cast]: *(int *)(iVar2 + 0x128c) = g_TransformMatrix.m[0].z;
-  Line 27 [pointer_cast]: *(int *)(iVar2 + 0x12ac) = g_TransformMatrix.m[1].x;
-  Line 28 [pointer_cast]: *(int *)(iVar2 + 0x12cc) = g_TransformMatrix.m[1].y;
-  Line 29 [pointer_cast]: *(int *)(iVar2 + 0x12ec) = g_TransformMatrix.m[1].z;
-  Line 30 [pointer_cast]: *(int *)(iVar2 + 0x130c) = g_TransformMatrix.m[2].x;
-  Line 31 [pointer_cast]: *(int *)(iVar2 + 0x132c) = g_TransformMatrix.m[2].y;
-  Line 32 [pointer_cast]: *(int *)(iVar2 + 0x134c) = g_TransformMatrix.m[2].z;
-  Line 33 [pointer_cast]: *(uint *)(iVar2 + 0x136c) = _DAT_01cc5118;
-  Line 34 [pointer_cast]: *(uint *)(iVar2 + 0x138c) = _DAT_01cc511c;
-  Line 35 [pointer_cast]: *(uint *)(iVar2 + 0x13ac) = _DAT_01cc5120;
-  Line 36 [pointer_cast]: *(uint *)(iVar2 + 0x13cc) = _DAT_01cc5124;
-  Line 37 [pointer_cast]: *(uint *)(iVar2 + 0x13ec) = _DAT_01cc5128;
-  Line 38 [pointer_cast]: *(uint *)(iVar2 + 0x140c) = _DAT_01cc512c;
-  Line 39 [pointer_cast]: *(uint *)(iVar2 + 0x142c) = _DAT_01cc5130;
-  Line 40 [pointer_cast]: *(uint *)(iVar2 + 0x144c) = _DAT_01cc5134;
-  Line 41 [pointer_cast]: *(uint *)(iVar2 + 0x146c) = _DAT_01cc5138;
+  Line 14 [pointer_cast]: puVar1 = (uint *)((int)this_ptr + (uint)bVar2 * -8 + alpha_index * 0xc + 0x11f0);
+  Line 16 [pointer_truncation]: *puVar1 = *(uint *)((int)&CStack_14 + (uint)bVar2 * -8 + 4);
+  Line 16 [pointer_cast]: *puVar1 = *(uint *)((int)&CStack_14 + (uint)bVar2 * -8 + 4);
+  Line 18 [pointer_truncation]: *(uint *)((int)&CStack_14 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
+  Line 18 [pointer_cast]: *(uint *)((int)&CStack_14 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
 
 ====================================================================================================
 core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_00446810 (27 suspects)
@@ -14151,7 +14132,7 @@ core_inv.cpp_CInventory_initialize_FUN_004bef10 (1 suspect)
 core_inv.cpp_CInventory_loadItems_FUN_004c14d0 (1 suspect)
   File: core/inv.cpp
 ====================================================================================================
-  Line 14 [shadow_pointer_walk]: pCVar2 = (CInventory *)&pCVar2->owner;
+  Line 15 [shadow_pointer_walk]: pCVar2 = (CInventory *)&pCVar2->owner;
 
 ====================================================================================================
 core_inv.cpp_CInventory_load_FUN_004c1190 (5 suspects)
@@ -15583,20 +15564,6 @@ core_mirror.cpp_clipPolygonAgainstPlane_FUN_004d6420 (2 suspects)
   Line 48 [unrolled_memcpy]: pCVar4->x = vertex_a->x;
 
 ====================================================================================================
-core_mission.cpp_CDemonMission_FUN_004d8cd0 (9 suspects)
-  File: core/mission.cpp
-====================================================================================================
-  Line 2 [unnamed_param]: void __cdecl core_mission_cpp_CDemonMission_FUN_004d8cd0(CDemonMission *this_ptr,CDemonActor *param_2)
-  Line 8 [unnamed_param]: if (param_2 != (CDemonActor *)0x0) {
-  Line 14 [unnamed_param]: if (pCVar1 == param_2) break;
-  Line 17 [unnamed_param]: pCVar1 = param_2->prev_actor;
-  Line 19 [unnamed_param]: pCVar1 = param_2->next_actor;
-  Line 30 [unnamed_param]: pCVar2 = param_2->next_actor;
-  Line 37 [unnamed_param]: pCVar2->prev_actor = param_2->prev_actor;
-  Line 40 [unnamed_param]: param_2->next_actor = (CDemonActor *)0x0;
-  Line 41 [unnamed_param]: param_2->prev_actor = (CDemonActor *)0x0;
-
-====================================================================================================
 core_mission.cpp_CDemonMission_createFromSingleSet_FUN_004d93d0 (6 suspects)
   File: core/mission.cpp
 ====================================================================================================
@@ -15707,6 +15674,20 @@ core_mission.cpp_CDemonMission_readMissionFile_FUN_004d7fe0 (8 suspects)
   Line 148 [unrolled_strcpy]: do {
 
 ====================================================================================================
+core_mission.cpp_CDemonMission_removeActorFromList_FUN_004d8cd0 (9 suspects)
+  File: core/mission.cpp
+====================================================================================================
+  Line 2 [unnamed_param]: void __cdecl core_mission_cpp_CDemonMission_removeActorFromList_FUN_004d8cd0(CDemonMission *this_ptr,CDemonActor *param_2)
+  Line 8 [unnamed_param]: if (param_2 != (CDemonActor *)0x0) {
+  Line 14 [unnamed_param]: if (pCVar1 == param_2) break;
+  Line 17 [unnamed_param]: pCVar1 = param_2->prev_actor;
+  Line 19 [unnamed_param]: pCVar1 = param_2->next_actor;
+  Line 30 [unnamed_param]: pCVar2 = param_2->next_actor;
+  Line 37 [unnamed_param]: pCVar2->prev_actor = param_2->prev_actor;
+  Line 40 [unnamed_param]: param_2->next_actor = (CDemonActor *)0x0;
+  Line 41 [unnamed_param]: param_2->prev_actor = (CDemonActor *)0x0;
+
+====================================================================================================
 core_mission.cpp_CDemonMission_removeAllActors_FUN_004d8fc0 (1 suspect)
   File: core/mission.cpp
 ====================================================================================================
@@ -15725,8 +15706,8 @@ core_mission.cpp_CDemonMission_run_FUN_004d9440 (4 suspects)
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
   Line 27 [undefined_data]: DAT_01ccbbf0 = '\0';
-  Line 34 [undefined_data]: if ((iVar1 == 0) || (DAT_01ccbbf0 == '\0')) break;
-  Line 47 [undefined_data]: core_mission_cpp_CDemonMission_load_FUN_004d7ee0(this_ptr,&DAT_01ccbbf0,0);
+  Line 35 [undefined_data]: if ((iVar1 == 0) || (DAT_01ccbbf0 == '\0')) break;
+  Line 48 [undefined_data]: core_mission_cpp_CDemonMission_load_FUN_004d7ee0(this_ptr,&DAT_01ccbbf0,0);
 
 ====================================================================================================
 core_mission.cpp_CDemonMission_setMissionName_FUN_004d9650 (2 suspects)
@@ -26875,20 +26856,20 @@ engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_00460d10 (5 suspects)
   File: engine/drender.cpp
 ====================================================================================================
   Line 12 [pointer_cast]: puVar1 = (uint *)((int)output + (uint)bVar2 * -8 + 4);
-  Line 14 [pointer_truncation]: *puVar1 = *(uint *)((int)&CStack_14 + (uint)bVar2 * -8);
-  Line 14 [pointer_cast]: *puVar1 = *(uint *)((int)&CStack_14 + (uint)bVar2 * -8);
-  Line 16 [pointer_truncation]: *(uint *)((int)&CStack_14 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 4);
-  Line 16 [pointer_cast]: *(uint *)((int)&CStack_14 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 4);
+  Line 14 [pointer_truncation]: *puVar1 = *(uint *)((int)&CStack_14 + (uint)bVar2 * -8 + 4);
+  Line 14 [pointer_cast]: *puVar1 = *(uint *)((int)&CStack_14 + (uint)bVar2 * -8 + 4);
+  Line 16 [pointer_truncation]: *(uint *)((int)&CStack_14 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
+  Line 16 [pointer_cast]: *(uint *)((int)&CStack_14 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
 
 ====================================================================================================
 engine_drender.cpp_CDemonRenderer_getCameraRotationFixed_FUN_00460d90 (5 suspects)
   File: engine/drender.cpp
 ====================================================================================================
   Line 12 [pointer_cast]: puVar1 = (uint *)((int)output + (uint)bVar2 * -8 + 4);
-  Line 14 [pointer_truncation]: *puVar1 = *(uint *)((int)&CStack_14 + (uint)bVar2 * -8);
-  Line 14 [pointer_cast]: *puVar1 = *(uint *)((int)&CStack_14 + (uint)bVar2 * -8);
-  Line 16 [pointer_truncation]: *(uint *)((int)&CStack_14 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 4);
-  Line 16 [pointer_cast]: *(uint *)((int)&CStack_14 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 4);
+  Line 14 [pointer_truncation]: *puVar1 = *(uint *)((int)&CStack_14 + (uint)bVar2 * -8 + 4);
+  Line 14 [pointer_cast]: *puVar1 = *(uint *)((int)&CStack_14 + (uint)bVar2 * -8 + 4);
+  Line 16 [pointer_truncation]: *(uint *)((int)&CStack_14 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
+  Line 16 [pointer_cast]: *(uint *)((int)&CStack_14 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
 
 ====================================================================================================
 engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_00461db0 (6 suspects)

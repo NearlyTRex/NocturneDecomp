@@ -12,7 +12,7 @@ SUMMARY STATISTICS
 ====================================================================================================
 
   Total functions analyzed:          4,923
-  Unnamed functions (FUN_):          75 ( 1.5%)
+  Unnamed functions (FUN_):          73 ( 1.5%)
   Functions with unnamed params:     15 ( 0.3%)
   Functions with type issues:        1,664 (33.8%)
   (Name/address mismatches and duplicate names are reported at the end)
@@ -55,10 +55,6 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x00514390  unknown       0 callers
     0x005143a0  unknown       0 callers
     0x005143b0  unknown       0 callers
-
-  core/mission.cpp (2 unnamed)
-    0x004d8cd0  __cdecl       4 callers
-    0x004d7ea0  __cdecl       3 callers
 
   core/skeleton.cpp (2 unnamed)
     0x005174e0  __cdecl       4 callers
@@ -224,14 +220,14 @@ Sorted by number of unnamed parameters (most unnamed first).
     Unnamed: param_2 (int)
     Named:   this_ptr (CInventory *)
 
-  CDemonMission
-    Address: 0x004d8cd0  File: core/mission.cpp
-    Unnamed: param_2 (CDemonActor *)
-    Named:   this_ptr (CDemonMission *)
-
   CDemonMission_createFromSingleSet
     Address: 0x004d93d0  File: core/mission.cpp
     Unnamed: param_2 (char *)
+    Named:   this_ptr (CDemonMission *)
+
+  CDemonMission_removeActorFromList
+    Address: 0x004d8cd0  File: core/mission.cpp
+    Unnamed: param_2 (CDemonActor *)
     Named:   this_ptr (CDemonMission *)
 
   CDemonSet
@@ -4912,11 +4908,6 @@ Undefined types in variables (1604)
     Locals:  local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CGround_renderVisibleTerrain
-    Address: 0x004b1ff0  File: core/ground.cpp
-    Locals:  local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   isAnyHeroWithinCylinder
     Address: 0x004b4630  File: core/hero.cpp
     Locals:  local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
@@ -5519,6 +5510,11 @@ Undefined types in variables (1604)
 
   CFootstep_render
     Address: 0x004afa20  File: core/gore.cpp
+    Locals:  local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CGround_renderVisibleTerrain
+    Address: 0x004b1ff0  File: core/ground.cpp
     Locals:  local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
@@ -9151,7 +9147,7 @@ FUNCTION NAME / ADDRESS MISMATCHES (0)
   No mismatches found.
 
 ====================================================================================================
-DUPLICATE FUNCTION NAMES (25 groups)
+DUPLICATE FUNCTION NAMES (24 groups)
 ====================================================================================================
 
 Functions that share the same base name (ignoring FUN_XXXXXXXX suffix).
@@ -9220,10 +9216,6 @@ Some are legitimate overloads, others may need disambiguating names.
   core_manpuz.cpp_CMansionPuzzleCircle  (2 functions)
     0x004ca710  (CMansionPuzzleCircle *this_ptr,int panel_index)
     0x004ca790  (CMansionPuzzleCircle *this_ptr,int gem_index)
-
-  core_mission.cpp_CDemonMission  (2 functions)
-    0x004d7ea0  (CDemonMission *this_ptr)
-    0x004d8cd0  (CDemonMission *this_ptr,CDemonActor *param_2)
 
   core_scat.cpp  (2 functions)
     0x004fbb70  (void)

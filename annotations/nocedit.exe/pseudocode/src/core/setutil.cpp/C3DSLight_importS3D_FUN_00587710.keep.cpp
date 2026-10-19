@@ -15,8 +15,8 @@ void __cdecl core_setutil_cpp_C3DSLight_importS3D_FUN_00587710(C3DSLight *this_p
   core_setutil_cpp_C3DSLight_reset_FUN_005879b0(this_ptr);
   iVar1 = _fscanf(file_handle,"\"%[^\"]\",%d,%f,%f,%f,%f,%f,%f ",this_ptr->name,
                      &this_ptr->light_type,&(this_ptr->pos).x,&(this_ptr->pos).y,
-                     &(this_ptr->pos).z,(float *)&(this_ptr->color).r,
-                     (float *)&(this_ptr->color).g,(float *)&(this_ptr->color).b);
+                     &(this_ptr->pos).z,&(this_ptr->color).r,
+                     &(this_ptr->color).g,&(this_ptr->color).b);
   if (iVar1 != 8) goto LAB_00587796;
   do {
     if (this_ptr->light_type == 0) {

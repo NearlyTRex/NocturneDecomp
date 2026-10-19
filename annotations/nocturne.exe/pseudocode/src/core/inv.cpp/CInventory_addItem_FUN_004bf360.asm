@@ -50,9 +50,9 @@
 ;   core_inv.cpp_getItemDescription_FUN_004bed10
 ;   core_inv.cpp_getItemDisplayName_FUN_004beca0
 ;   core_menu.cpp_getKeyDisplayName_FUN_004d2900
-;   core_mission.cpp_CDemonMission_FUN_004d8cd0
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720
 ;   core_mission.cpp_CDemonMission_markActorToDelete_FUN_004d9110
+;   core_mission.cpp_CDemonMission_removeActorFromList_FUN_004d8cd0
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   ... and 5 more
 ;
@@ -1725,8 +1725,8 @@ section .text
     INC EAX                             ; 004c029c
     MOV EBX,EDX                         ; 004c029d
     MOV dword ptr [EBP + 0x8],EAX       ; 004c029f
-    CALL core_mission.cpp_CDemonMission_FUN_004d8cd0 ; 004c02a2
-        ;   XREF to: 004d8cd0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_004d8cd0(CDemonMission * this_ptr, CDemonActor * param_2)
+    CALL core_mission.cpp_CDemonMission_removeActorFromList_FUN_004d8cd0 ; 004c02a2
+        ;   XREF to: 004d8cd0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_removeActorFromList_FUN_004d8cd0(CDemonMission * this_ptr, CDemonActor * param_2)
     ADD ESP,0x8                         ; 004c02a7
     MOV EAX,EBX                         ; 004c02aa
     PUSH EBP                            ; 004c02ac
