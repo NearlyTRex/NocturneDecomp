@@ -12,13 +12,13 @@ TEST(CGround, IsConcrete) {
 }
 
 TEST(CGround, Constructors) {
-    static_assert(std::is_constructible_v<CGround, int, int>);
+    static_assert(std::is_constructible_v<CGround, const engine::CDosIo &, int, int>);
 }
 
 TEST(CGround, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CGround::init), void (CGround::*)()>);
     static_assert(std::is_same_v<decltype(&CGround::free), void (CGround::*)()>);
-    static_assert(std::is_same_v<decltype(&CGround::load), void (CGround::*)(char *)>);
+    static_assert(std::is_same_v<decltype(&CGround::load), void (CGround::*)(std::string_view)>);
     static_assert(std::is_same_v<decltype(&CGround::render), void (CGround::*)()>);
     static_assert(
         std::is_same_v<decltype(&CGround::getHeightAtPosition), int (CGround::*)(int, int)>);

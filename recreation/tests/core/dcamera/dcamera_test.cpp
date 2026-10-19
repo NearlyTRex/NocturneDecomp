@@ -16,7 +16,8 @@ TEST(CoreDcameraFunctions, PublicInterface) {
                                  void (*)(int, engine::SSoftwareEdge *, engine::SSoftwareEdge *)>);
     static_assert(std::is_same_v<decltype(&renderFlatColorScanline),
                                  void (*)(int, engine::SSoftwareEdge *, engine::SSoftwareEdge *)>);
-    static_assert(std::is_same_v<decltype(&loadCameraFog), void (*)(SFog *, std::FILE *, int)>);
+    static_assert(
+        std::is_same_v<decltype(&loadCameraFog), void (*)(SFog &, common::CTextScanner &, int)>);
 }
 
 } // namespace

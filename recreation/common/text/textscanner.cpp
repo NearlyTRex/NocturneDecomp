@@ -17,8 +17,14 @@ void CTextScanner::skipWhitespace() {
 }
 
 void CTextScanner::skipLine() {
-    const std::size_t newline = text_.find('\n', position_);
-    position_ = newline == std::string_view::npos ? text_.size() : newline + 1;
+    static_cast<void>(readLine());
+}
+
+std::string_view CTextScanner::readLine() {
+    const std::size_t end = std::min(text_.find('\n', position_), text_.size());
+    const std::string_view line = text_.substr(position_, end - position_);
+    position_ = std::min(end + 1, text_.size());
+    return line;
 }
 
 bool CTextScanner::expect(char literal) {

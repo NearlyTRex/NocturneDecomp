@@ -23,7 +23,7 @@ functions don't count as done. Sizes are in instructions.
 | 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 68 | 31 | 56.6% |
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 26 | 8 | 46.4% |
-| 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 8 | 0 | 19.0% |
+| 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 18 | 3 | 42.8% |
 | 11 | `CScript::loadScript` | 63 | 579 | 67400 | 12 | 1 | 2.0% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 2 | 0 | 7.6% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0 | 0.0% |
@@ -40,13 +40,13 @@ functions don't count as done. Sizes are in instructions.
 | 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 1 | 0 | 0.3% |
 | 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 7 | 0 | 2.5% |
 | 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 24 | 0 | 8.0% |
-| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 2 | 0 | 0.6% |
+| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 4 | 1 | 1.3% |
 | 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 6 | 2 | 2.1% |
-| 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 2 | 0 | 0.7% |
+| 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 5 | 0 | 1.9% |
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 2 | 0 | 0.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 | 0 | 3.6% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **572** | **61** | **12.7%** |
+| | **All** | | **4479** | **402407** | **587** | **65** | **13.1%** |
 
 ## Step 0: Math value types
 
@@ -1077,9 +1077,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `drawTextMultiline` 0x00401cf0 (57)
   - [ ] `drawText` 0x00401fd0 (36)
 
-### `core/dcamera.cpp` (1 functions, 61 instructions, 0 done, 0 partial)
+### `core/dcamera.cpp` (1 functions, 61 instructions, 1 done, 0 partial)
 - free functions
-  - [ ] `loadCameraFog` 0x00453e50 (61)
+  - [x] `loadCameraFog` 0x00453e50 (61)
 
 ### `core/dcube.cpp` (3 functions, 253 instructions, 3 done, 0 partial)
 - class `CDemonCubeTriangle`
@@ -1109,31 +1109,34 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [ ] `testOBBIntersection` 0x005763a0 (310)
 
-### `core/setutil.cpp` (5 functions, 819 instructions, 0 done, 0 partial)
+### `core/setutil.cpp` (5 functions, 819 instructions, 4 done, 1 partial)
 - class `C3DSCamera`
-  - [ ] `free` 0x00585360 (17)
-  - [ ] `reset` 0x005853b0 (22)
-  - [ ] `load` 0x00585420 (255)
-  - [ ] `loadPVS` 0x005857b0 (58)
+  - [x] `free` 0x00585360 (17)
+  - [x] `reset` 0x005853b0 (22)
+  - [x] `load` 0x00585420 (255)
+  - [x] `loadPVS` 0x005857b0 (58)
 - class `C3DSLight`
-  - [ ] `load` 0x00586310 (467)
+  - [~] `load` 0x00586310 (467)
+    - deferred: forgetting each loaded filter's CDemonFilter, with create
 
-### `core/texlist.cpp` (3 functions, 214 instructions, 1 done, 0 partial)
+### `core/texlist.cpp` (3 functions, 214 instructions, 3 done, 0 partial)
 - class `CTextureList`
   - [x] `dtor` 0x005dbdf0 (2, compiler-generated)
-  - [ ] `ctor` 0x005dbdd0 (4)
-  - [ ] `load` 0x005dbe00 (208)
+  - [x] `ctor` 0x005dbdd0 (4)
+  - [x] `load` 0x005dbe00 (208)
 
-### `core/ground.cpp` (3 functions, 357 instructions, 0 done, 0 partial)
+### `core/ground.cpp` (3 functions, 357 instructions, 3 done, 0 partial)
 - class `CGround`
-  - [ ] `free` 0x004eefb0 (38)
-  - [ ] `init` 0x004eef00 (52)
-  - [ ] `load` 0x004ef030 (267)
+  - [x] `free` 0x004eefb0 (38)
+  - [x] `init` 0x004eef00 (52)
+  - [x] `load` 0x004ef030 (267)
 
-### `core/terrain.cpp` (2 functions, 23 instructions, 0 done, 0 partial)
+### `core/terrain.cpp` (2 functions, 23 instructions, 0 done, 2 partial)
 - class `CTerrain`
-  - [ ] `free` 0x005e1f30 (7)
-  - [ ] `init` 0x005e1ef0 (16)
+  - [~] `free` 0x005e1f30 (7)
+    - deferred: noting the terrain is gone, with render
+  - [~] `init` 0x005e1ef0 (16)
+    - deferred: restarting the animation and noting the terrain is there, with process and render
 
 ### `core/set.cpp` (2 functions, 949 instructions, 0 done, 0 partial)
 - class `CDemonSet`
@@ -4841,14 +4844,15 @@ functions don't count as done. Sizes are in instructions.
 
 ## Step 27: Not reached from startup: `core/` (part 5 of 9)
 
-### `core/ground.cpp` (5 functions, 378 instructions, 0 done, 0 partial)
+### `core/ground.cpp` (5 functions, 378 instructions, 2 done, 1 partial)
 - class `CGround`
-  - [ ] `ctor` 0x004eee80 (23)
-  - [ ] `dtor` 0x004eeee0 (8)
+  - [~] `ctor` 0x004eee80 (23)
+    - deferred: the 30 by 30 grid render draws and the scales it draws at, with render
+  - [x] `dtor` 0x004eeee0 (8)
   - [ ] `getNormalAtPosition` 0x004effb0 (248)
 - free functions
   - [ ] `staticInit` 0x004eeb90 (9)
-  - [ ] `openFileWithExtension` 0x004eebc0 (90)
+  - [x] `openFileWithExtension` 0x004eebc0 (90)
 
 ### `core/gun.cpp` (7 functions, 583 instructions, 0 done, 0 partial)
 - class `CGun`
@@ -5677,15 +5681,15 @@ functions don't count as done. Sizes are in instructions.
 - class `CDemonSet`
   - [ ] `isPointInVdirGroup` 0x00576340 (44)
 
-### `core/setutil.cpp` (8 functions, 335 instructions, 0 done, 0 partial)
+### `core/setutil.cpp` (8 functions, 335 instructions, 3 done, 0 partial)
 - class `C3DSLight`
   - [ ] `isVisible` 0x00587df0 (34)
   - [ ] `reset` 0x005879b0 (15)
-  - [ ] `ctor` 0x005862f0 (8)
+  - [x] `ctor` 0x005862f0 (8)
   - [ ] `renderVolumetricSphere` 0x00587b50 (185)
 - class `C3DSCamera`
-  - [ ] `ctor` 0x00585310 (5)
-  - [ ] `dtor` 0x00585340 (8)
+  - [x] `ctor` 0x00585310 (5)
+  - [x] `dtor` 0x00585340 (8)
 - free functions
   - [ ] `generateSphereVertex` 0x00587a40 (73)
   - [ ] `calculateVertexIndex` 0x00587b30 (7)
