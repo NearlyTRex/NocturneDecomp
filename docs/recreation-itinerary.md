@@ -23,7 +23,7 @@ functions don't count as done. Sizes are in instructions.
 | 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 68 | 31 | 56.6% |
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 26 | 8 | 46.4% |
-| 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 18 | 3 | 42.8% |
+| 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 20 | 3 | 47.6% |
 | 11 | `CScript::loadScript` | 63 | 579 | 67400 | 12 | 1 | 2.0% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 2 | 0 | 7.6% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0 | 0.0% |
@@ -46,7 +46,7 @@ functions don't count as done. Sizes are in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 2 | 0 | 0.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 | 0 | 3.6% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **587** | **65** | **13.1%** |
+| | **All** | | **4479** | **402407** | **589** | **65** | **13.1%** |
 
 ## Step 0: Math value types
 
@@ -1095,11 +1095,11 @@ functions don't count as done. Sizes are in instructions.
   - [x] `loadBinary` 0x004947a0 (518)
   - [x] `loadAndSyncWithGeoFile` 0x00494de0 (108)
 
-### `core/box.cpp` (1 functions, 366 instructions, 0 done, 0 partial)
+### `core/box.cpp` (1 functions, 366 instructions, 1 done, 0 partial)
 - class `CBoundingBox3D`
-  - [ ] `doesRayIntersect` 0x00420940 (366)
+  - [x] `doesRayIntersect` 0x00420940 (366)
 
-### `core/setdir.cpp` (6 functions, 598 instructions, 0 done, 0 partial)
+### `core/setdir.cpp` (6 functions, 598 instructions, 1 done, 0 partial)
 - class `CDemonSet`
   - [ ] `writeThumbs` 0x00575e40 (87)
   - [ ] `refreshThumbs` 0x00575b40 (35)
@@ -1107,7 +1107,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `findVdirBoxRoot` 0x00576820 (25)
   - [ ] `buildVdirBoxGroups` 0x00576710 (90)
 - free functions
-  - [ ] `testOBBIntersection` 0x005763a0 (310)
+  - [x] `testOBBIntersection` 0x005763a0 (310)
 
 ### `core/setutil.cpp` (5 functions, 819 instructions, 4 done, 1 partial)
 - class `C3DSCamera`
