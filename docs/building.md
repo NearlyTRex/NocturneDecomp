@@ -106,9 +106,10 @@ cmake --build --preset exe-windows-x86_64
 Configuring without the toolchain installed stops immediately and names the package, rather
 than failing thousands of files later on a missing `<windows.h>`.
 
-The build stages `SDL2.dll`, `SDL2_ttf.dll` and the target `libstdc++`/`libwinpthread` beside
-`nocturne.exe`, so the output directory is something that runs when copied to a Windows machine.
-FFmpeg is linked statically.
+The build stages `SDL2.dll`, `SDL2_ttf.dll` and the gcc runtime DLLs the compiler linked against
+beside `nocturne.exe`, so the output directory is something that runs when copied to a Windows
+machine, and then fails if the exe imports anything a staged DLL does not export
+(`scripts/Python/check_pe_imports.py`). FFmpeg is linked statically.
 
 The lane builds `nocturne.exe` and can run the syntax check. It does **not** give you the test
 binaries in a runnable form: they would cross-compile to PEs that `ctest` cannot execute on the

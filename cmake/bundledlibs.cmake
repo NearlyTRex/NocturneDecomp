@@ -292,8 +292,8 @@ set(FFMPEG_LIBRARIES
     "${_ff_libdir}/libavutil.a")
 if(WIN32)
     # No -lm: the mingw runtime has the math functions in libmsvcrt, and there
-    # is no separate libm to ask for. Threading comes from libwinpthread, which
-    # the posix-model runtime links by default, so it is not named either.
+    # is no separate libm to ask for. Threading is FFmpeg's own w32threads over
+    # kernel32, so nothing is named for it either.
     # bcrypt is avutil's: it is where BCryptGenRandom lives, which is how
     # av_get_random_seed seeds itself on this target.
     list(APPEND FFMPEG_LIBRARIES bcrypt)

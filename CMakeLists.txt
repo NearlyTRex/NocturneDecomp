@@ -532,26 +532,23 @@ if(NOCTURNE_BUILD_EXE)
         # exe. Building natively under MSYS2 they are already installed and on
         # PATH inside that shell — but only inside it, so they are staged there
         # too and the output directory means the same thing on both lanes: a
-        # folder that runs.
-        if(CMAKE_CROSSCOMPILING)
-            set(_rt_search_dirs
-                "/usr/lib/gcc/${NOCTURNE_WIN_TRIPLE}/*-posix"
-                "${NOCTURNE_WIN_SYSROOT}/lib")
-        else()
-            # Wherever this clang came from — /ucrt64/bin under MSYS2.
-            get_filename_component(_rt_bindir "${CMAKE_CXX_COMPILER}" DIRECTORY)
-            set(_rt_search_dirs "${_rt_bindir}")
-        endif()
-
+        # folder that runs. The compiler driver names each one, because a DLL
+        # from a different gcc runtime than the one linked lacks exports the
+        # exe imports and Windows refuses to start it.
+        separate_arguments(_rt_driver_flags NATIVE_COMMAND "${CMAKE_CXX_FLAGS}")
         foreach(_rt_dll libstdc++-6.dll libwinpthread-1.dll libgcc_s_seh-1.dll)
-            set(_rt_found "")
-            foreach(_rt_dir IN LISTS _rt_search_dirs)
-                if(NOT _rt_found)
-                    file(GLOB_RECURSE _rt_found "${_rt_dir}/${_rt_dll}")
-                endif()
-            endforeach()
-            if(_rt_found)
-                list(GET _rt_found 0 _rt_src)
+            execute_process(
+                COMMAND "${CMAKE_CXX_COMPILER}" ${_rt_driver_flags}
+                        "-print-file-name=${_rt_dll}"
+                OUTPUT_VARIABLE _rt_src
+                OUTPUT_STRIP_TRAILING_WHITESPACE)
+            # The driver echoes the bare name back when it finds nothing. MSYS2
+            # keeps the DLLs beside clang in /ucrt64/bin, off its library path.
+            if(NOT IS_ABSOLUTE "${_rt_src}" AND NOT CMAKE_CROSSCOMPILING)
+                get_filename_component(_rt_bindir "${CMAKE_CXX_COMPILER}" DIRECTORY)
+                set(_rt_src "${_rt_bindir}/${_rt_dll}")
+            endif()
+            if(IS_ABSOLUTE "${_rt_src}" AND EXISTS "${_rt_src}")
                 add_custom_command(TARGET nocturne POST_BUILD
                     COMMAND "${CMAKE_COMMAND}" -E copy_if_different
                             "${_rt_src}" "$<TARGET_FILE_DIR:nocturne>"
@@ -562,6 +559,14 @@ if(NOCTURNE_BUILD_EXE)
                                "start on a machine without the toolchain")
             endif()
         endforeach()
+
+        # Runs after the staging above: POST_BUILD commands run in order.
+        add_custom_command(TARGET nocturne POST_BUILD
+            COMMAND "${Python3_EXECUTABLE}"
+                    "${CMAKE_SOURCE_DIR}/scripts/Python/check_pe_imports.py"
+                    "$<TARGET_FILE:nocturne>"
+            COMMENT "Checking nocturne.exe's imports against the staged DLLs"
+            VERBATIM)
     endif()
 
     # -------------------------------------------------------------------------
