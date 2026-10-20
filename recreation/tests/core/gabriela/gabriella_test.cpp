@@ -1,7 +1,12 @@
+#include "common/text/textscanner.h"
+#include "core/actor/actorarchive.h"
+#include "core/actor/demonactortype.h"
 #include "core/gabriela/gabriella.h"
+#include "tests/mocks/core/notportedcalls.h"
 
 #include <gtest/gtest.h>
 
+#include <memory>
 #include <type_traits>
 
 namespace nocturne::core {
@@ -38,6 +43,36 @@ TEST(CGabriella, PublicInterface) {
                                  common::CMatrix3x4f *(CGabriella::*)(int, common::CMatrix3x4f *)>);
     static_assert(std::is_same_v<decltype(&CGabriella::drawWeapon), void (CGabriella::*)(int)>);
     static_assert(std::is_same_v<decltype(&CGabriella::isWeaponDrawn), int (CGabriella::*)()>);
+}
+
+TEST(CGabriella, ItsRecordIsAVersionThreeHeroThatMissionsCanCreate) {
+    EXPECT_EQ(CGabriella::kType.class_name, "CGabriella");
+    EXPECT_EQ(CGabriella::kType.parent_type, &CHero::kType);
+    EXPECT_EQ(CGabriella::kType.latest_version, 3);
+    EXPECT_EQ(CGabriella::kType.name_hash, hashClassName("CGabriella"));
+    ASSERT_NE(CGabriella::kType.factory_func, nullptr);
+    const std::unique_ptr<CDemonActor> actor = CGabriella::kType.factory_func();
+    EXPECT_EQ(&actor->getActorType(), &CGabriella::kType);
+}
+
+TEST(CGabriella, TheFunctionsNotPortedYetQuit) {
+    CGabriella hero;
+    common::CTextScanner scanner("");
+    CActorArchive archive(scanner);
+    const NotPortedCalls calls = {
+        {"setup", [&] { hero.setup(); }},
+        {"process", [&] { hero.process(0.0F); }},
+        {"renderOpaque", [&] { static_cast<void>(hero.renderOpaque()); }},
+        {"renderTransparent", [&] { static_cast<void>(hero.renderTransparent()); }},
+        {"archive", [&] { hero.archive(archive); }},
+        {"processDamage", [&] { hero.processDamage(nullptr); }},
+        {"getCarryObjToBodyXForm",
+         [&] { static_cast<void>(hero.getCarryObjToBodyXForm(0, nullptr)); }},
+        {"drawWeapon", [&] { hero.drawWeapon(0); }},
+        {"isWeaponDrawn", [&] { static_cast<void>(hero.isWeaponDrawn()); }},
+    };
+    EXPECT_EQ(calls.size(), 9U);
+    expectEachQuitsNotPorted("CGabriella", calls);
 }
 
 } // namespace

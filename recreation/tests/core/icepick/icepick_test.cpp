@@ -1,7 +1,12 @@
+#include "common/text/textscanner.h"
+#include "core/actor/actorarchive.h"
+#include "core/actor/demonactortype.h"
 #include "core/icepick/icepick.h"
+#include "tests/mocks/core/notportedcalls.h"
 
 #include <gtest/gtest.h>
 
+#include <memory>
 #include <type_traits>
 
 namespace nocturne::core {
@@ -37,6 +42,35 @@ TEST(CIcePick, PublicInterface) {
                                  common::CMatrix3x4f *(CIcePick::*)(int, common::CMatrix3x4f *)>);
     static_assert(std::is_same_v<decltype(&CIcePick::drawWeapon), void (CIcePick::*)(int)>);
     static_assert(std::is_same_v<decltype(&CIcePick::isWeaponDrawn), int (CIcePick::*)()>);
+}
+
+TEST(CIcePick, ItsRecordIsAVersionOneHeroThatMissionsCanCreate) {
+    EXPECT_EQ(CIcePick::kType.class_name, "CIcePick");
+    EXPECT_EQ(CIcePick::kType.parent_type, &CHero::kType);
+    EXPECT_EQ(CIcePick::kType.latest_version, 1);
+    EXPECT_EQ(CIcePick::kType.name_hash, hashClassName("CIcePick"));
+    ASSERT_NE(CIcePick::kType.factory_func, nullptr);
+    const std::unique_ptr<CDemonActor> actor = CIcePick::kType.factory_func();
+    EXPECT_EQ(&actor->getActorType(), &CIcePick::kType);
+}
+
+TEST(CIcePick, TheFunctionsNotPortedYetQuit) {
+    CIcePick hero;
+    common::CTextScanner scanner("");
+    CActorArchive archive(scanner);
+    const NotPortedCalls calls = {
+        {"setup", [&] { hero.setup(); }},
+        {"process", [&] { hero.process(0.0F); }},
+        {"renderOpaque", [&] { static_cast<void>(hero.renderOpaque()); }},
+        {"archive", [&] { hero.archive(archive); }},
+        {"processDamage", [&] { hero.processDamage(nullptr); }},
+        {"getCarryObjToBodyXForm",
+         [&] { static_cast<void>(hero.getCarryObjToBodyXForm(0, nullptr)); }},
+        {"drawWeapon", [&] { hero.drawWeapon(0); }},
+        {"isWeaponDrawn", [&] { static_cast<void>(hero.isWeaponDrawn()); }},
+    };
+    EXPECT_EQ(calls.size(), 8U);
+    expectEachQuitsNotPorted("CIcePick", calls);
 }
 
 } // namespace

@@ -1,4 +1,8 @@
+#include "common/text/textscanner.h"
+#include "core/actor/actorarchive.h"
+#include "core/actor/demonactortype.h"
 #include "core/hero/hero.h"
+#include "tests/mocks/core/notportedcalls.h"
 
 #include <gtest/gtest.h>
 
@@ -59,6 +63,54 @@ TEST(CHero, PublicInterface) {
         std::is_same_v<decltype(&CHero::removeMatchingKeys), void (CHero::*)(std::uint32_t)>);
     static_assert(std::is_same_v<decltype(&CHero::setAiTask), void (CHero::*)(int)>);
     static_assert(std::is_same_v<decltype(&CHero::closestEnemy), CEnemy *(CHero::*)(float *)>);
+}
+
+// A hero of no class but its own, so its calls reach CHero's.
+class CTestHero : public CHero {
+public:
+    [[nodiscard]] const CDemonActorType &getActorType() const override {
+        return kType;
+    }
+
+    void drawWeapon(int /*drawn*/) override {}
+
+    int isWeaponDrawn() override {
+        return 0;
+    }
+};
+
+TEST(CHero, ItsRecordIsAVersionTwelveCharacterThatMissionsCantCreate) {
+    EXPECT_EQ(CHero::kType.class_name, "CHero");
+    EXPECT_EQ(CHero::kType.parent_type, &CCharacter::kType);
+    EXPECT_EQ(CHero::kType.factory_func, nullptr);
+    EXPECT_EQ(CHero::kType.latest_version, 12);
+    EXPECT_EQ(CHero::kType.name_hash, hashClassName("CHero"));
+}
+
+TEST(CHero, TheFunctionsNotPortedYetQuit) {
+    CTestHero hero;
+    common::CTextScanner scanner("");
+    CActorArchive archive(scanner);
+    const NotPortedCalls calls = {
+        {"setup", [&] { hero.setup(); }},
+        {"canLookAt", [&] { static_cast<void>(hero.canLookAt()); }},
+        {"testCylinderCollision",
+         [&] { static_cast<void>(hero.testCylinderCollision(nullptr, 0.0F)); }},
+        {"testLineIntersection",
+         [&] { static_cast<void>(hero.testLineIntersection(nullptr, nullptr, nullptr)); }},
+        {"getPathMap", [&] { static_cast<void>(hero.getPathMap()); }},
+        {"archive", [&] { hero.archive(archive); }},
+        {"kill", [&] { hero.kill(0, nullptr, 0.0F); }},
+        {"isInvulnerable", [&] { static_cast<void>(hero.isInvulnerable()); }},
+        {"isGrabbable", [&] { static_cast<void>(hero.isGrabbable(nullptr)); }},
+        {"canBeGrabbed", [&] { static_cast<void>(hero.canBeGrabbed(nullptr, 0)); }},
+        {"getGrabbed", [&] { static_cast<void>(hero.getGrabbed(nullptr, 0)); }},
+        {"releaseFromGrab", [&] { hero.releaseFromGrab(); }},
+        {"createDefaultWeapon", [&] { hero.createDefaultWeapon(); }},
+        {"reset", [&] { hero.reset(); }},
+    };
+    EXPECT_EQ(calls.size(), 14U);
+    expectEachQuitsNotPorted("CHero", calls);
 }
 
 } // namespace

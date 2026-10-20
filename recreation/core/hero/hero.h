@@ -8,10 +8,19 @@
 
 namespace nocturne::core {
 
+// A character the player, or the game for the player's partner, controls. The virtual functions
+// not ported yet quit when called.
 class CHero : public CCharacter {
 public:
+    // Abstract: missions can't hold one.
+    static const CDemonActorType kType;
+
     CHero();
     ~CHero() override;
+    CHero(const CHero &) = delete;
+    CHero &operator=(const CHero &) = delete;
+    CHero(CHero &&) = delete;
+    CHero &operator=(CHero &&) = delete;
 
     void setup() override;
     int canLookAt() override;

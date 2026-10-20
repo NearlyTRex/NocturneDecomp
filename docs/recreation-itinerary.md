@@ -36,17 +36,17 @@ functions don't count as done. Sizes are in instructions.
 | 20 | Not reached from startup: `support/` | 2 | 24 | 593 | 3 | 0 | 12.5% |
 | 21 | Not reached from startup: `cockpit/` | 4 | 178 | 11527 | 0 | 0 | 0.0% |
 | 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 4 | 1 | 9.5% |
-| 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 5 | 0 | 1.7% |
-| 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 1 | 0 | 0.3% |
+| 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 8 | 1 | 2.7% |
+| 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 5 | 2 | 1.8% |
 | 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 7 | 0 | 2.5% |
-| 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 24 | 0 | 8.0% |
-| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 4 | 1 | 1.3% |
-| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 10 | 3 | 3.5% |
-| 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 5 | 0 | 1.9% |
-| 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 3 | 0 | 1.0% |
+| 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 27 | 1 | 9.0% |
+| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 10 | 5 | 3.4% |
+| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 13 | 4 | 4.6% |
+| 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 8 | 1 | 3.0% |
+| 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 9 | 2 | 3.0% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 | 0 | 3.6% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **605** | **68** | **13.5%** |
+| | **All** | | **4479** | **402407** | **633** | **80** | **14.1%** |
 
 ## Step 0: Math value types
 
@@ -3487,10 +3487,12 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncBackgroundActor` 0x00412770 (12)
   - [ ] `staticInit` 0x00412740 (9)
 
-### `core/baron.cpp` (30 functions, 1554 instructions, 0 done, 0 partial)
+### `core/baron.cpp` (30 functions, 1554 instructions, 3 done, 1 partial)
 - class `CBaron`
-  - [ ] `ctor` 0x00412bc0 (63)
-  - [ ] `getActorType` 0x00412bb0 (2)
+  - [~] `ctor` 0x00412bc0 (63)
+    - deferred: loading the model baron.dfm, with CDeformableModelInstance::init
+    - deferred: naming the shell's model baronshell.kfm, and the defaults the constructor gives the Baron's own fields, with the steps that read them
+  - [x] `getActorType` 0x00412bb0 (2)
   - [ ] `detachFromOwner` 0x004135a0 (19)
   - [ ] `updateMountedPosition` 0x004135e0 (72)
   - [ ] `performLightningAttack` 0x004136b0 (231)
@@ -3502,11 +3504,11 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `processDamage` 0x00413cd0 (9)
   - [ ] `drawWeapon` 0x00413cf0 (1)
   - [ ] `getCollisionType` 0x004140a0 (2)
-  - [ ] `dtor` 0x00414100 (31)
+  - [x] `dtor` 0x00414100 (31)
   - [ ] `setup` 0x00412cb0 (126)
   - [ ] `attachToOwner` 0x00413470 (96)
 - free functions
-  - [ ] `factoryFuncBaron` 0x00412b80 (12)
+  - [x] `factoryFuncBaron` 0x00412b80 (12)
   - [ ] `factoryFuncBaronWeapon` 0x00413d00 (12)
   - [ ] `staticInit` 0x00412b20 (20)
 - class `CBaronWeapon`
@@ -3808,9 +3810,10 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getBugState` 0x00427b60 (3)
   - [ ] `swapIntegers` 0x00427b80 (8)
 
-### `core/charactr.cpp` (91 functions, 8559 instructions, 0 done, 0 partial)
+### `core/charactr.cpp` (91 functions, 8559 instructions, 1 done, 1 partial)
 - class `CCharacter`
-  - [ ] `ctor` 0x00427e20 (125)
+  - [~] `ctor` 0x00427e20 (125)
+    - deferred: the model, cloth, collision points, fires and flames, and the defaults the constructor gives the movement, walking, looking, carrying, health, layer action and smoking fields, with the steps that read them
   - [ ] `detachBodyPart` 0x0042bcc0 (45)
   - [ ] `dismember` 0x0042b9e0 (178)
   - [ ] `processFire` 0x0042a830 (336)
@@ -3869,7 +3872,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `renderBackground` 0x0042a390 (31)
   - [ ] `releaseVictim` 0x0042bf70 (1)
   - [ ] `buildLayerActionTransitionCosts` 0x0042e670 (134)
-  - [ ] `dtor` 0x0042f9f0 (62)
+  - [x] `dtor` 0x0042f9f0 (62)
   - [ ] `setup` 0x00428140 (178)
   - [ ] `moveAndCollide` 0x00428f40 (585)
   - [ ] `setOrientation` 0x0042ded0 (71)
@@ -3963,10 +3966,12 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `applyLightAttenuation` 0x0043e380 (28)
   - [ ] `scaleVector` 0x0043e3d0 (13)
 
-### `core/colonel.cpp` (15 functions, 1081 instructions, 0 done, 0 partial)
+### `core/colonel.cpp` (15 functions, 1081 instructions, 3 done, 1 partial)
 - class `CColonel`
-  - [ ] `ctor` 0x0043f7e0 (24)
-  - [ ] `getActorType` 0x0043f7d0 (2)
+  - [~] `ctor` 0x0043f7e0 (24)
+    - deferred: loading the model colonel.dfm, with CDeformableModelInstance::init
+    - deferred: the defaults the constructor gives the Colonel's own fields, with the steps that read them
+  - [x] `getActorType` 0x0043f7d0 (2)
   - [ ] `processAI` 0x0043ff20 (345)
   - [ ] `processMotionEvents` 0x00440430 (41)
   - [ ] `process` 0x0043fa00 (381)
@@ -3975,10 +3980,10 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `processDamage` 0x004404b0 (96)
   - [ ] `isWeaponDrawn` 0x004405d0 (3)
   - [ ] `drawWeapon` 0x004405e0 (4)
-  - [ ] `dtor` 0x00440670 (31)
+  - [x] `dtor` 0x00440670 (31)
   - [ ] `setup` 0x0043f850 (117)
 - free functions
-  - [ ] `factoryFuncColonel` 0x0043f7a0 (12)
+  - [x] `factoryFuncColonel` 0x0043f7a0 (12)
   - [ ] `staticInit` 0x0043f770 (9)
   - [ ] `getCurrentMotionState` 0x00440650 (6)
 
@@ -4675,10 +4680,13 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getFrameCount` 0x004d2880 (3)
   - [ ] `getActorName` 0x004d2890 (3)
 
-### `core/gabriela.cpp` (34 functions, 5722 instructions, 0 done, 0 partial)
+### `core/gabriela.cpp` (34 functions, 5722 instructions, 3 done, 1 partial)
 - class `CGabriella`
-  - [ ] `ctor` 0x004d2b20 (50)
-  - [ ] `getActorType` 0x004d2b10 (2)
+  - [~] `ctor` 0x004d2b20 (50)
+    - deferred: loading the model gabriela.dfm, with CDeformableModelInstance::init
+    - deferred: naming the gun's model gabgun.kfm, with the weapon classes
+    - deferred: the coat's cloth, and the defaults the constructor gives Gabriella's own fields, with the steps that read them
+  - [x] `getActorType` 0x004d2b10 (2)
   - [ ] `processAI` 0x004d4190 (431)
   - [ ] `collectAmmo` 0x004d5c10 (22)
   - [ ] `processMotionEvents` 0x004d4890 (297)
@@ -4704,10 +4712,10 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getCarryObjToBodyXForm` 0x004d7120 (313)
   - [ ] `isWeaponDrawn` 0x004d7590 (5)
   - [ ] `drawWeapon` 0x004d75b0 (10)
-  - [ ] `dtor` 0x004d7660 (37)
+  - [x] `dtor` 0x004d7660 (37)
   - [ ] `setup` 0x004d2c40 (170)
 - free functions
-  - [ ] `factoryFuncGabriella` 0x004d2ae0 (12)
+  - [x] `factoryFuncGabriella` 0x004d2ae0 (12)
   - [ ] `staticInit` 0x004d2910 (49)
   - [ ] `weaponDrawBlendWeightCallback` 0x004d29f0 (20)
   - [ ] `flashlightBlendWeightCallback` 0x004d2a30 (28)
@@ -4869,10 +4877,12 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncGun` 0x004f02b0 (12)
   - [ ] `staticInit` 0x004f0280 (9)
 
-### `core/haystack.cpp` (15 functions, 1231 instructions, 0 done, 0 partial)
+### `core/haystack.cpp` (15 functions, 1231 instructions, 3 done, 1 partial)
 - class `CHaystack`
-  - [ ] `ctor` 0x004f0c10 (24)
-  - [ ] `getActorType` 0x004f0c00 (2)
+  - [~] `ctor` 0x004f0c10 (24)
+    - deferred: loading the model haystack.dfm, with CDeformableModelInstance::init
+    - deferred: the defaults the constructor gives Haystack's own fields, with the steps that read them
+  - [x] `getActorType` 0x004f0c00 (2)
   - [ ] `updateAI` 0x004f13f0 (357)
   - [ ] `checkMeleeHit` 0x004f1ab0 (55)
   - [ ] `advanceMotion` 0x004f1970 (100)
@@ -4882,10 +4892,10 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `processDamage` 0x004f1b70 (89)
   - [ ] `isWeaponDrawn` 0x004f1c90 (3)
   - [ ] `drawWeapon` 0x004f1ca0 (4)
-  - [ ] `dtor` 0x004f1d10 (31)
+  - [x] `dtor` 0x004f1d10 (31)
   - [ ] `setup` 0x004f0c80 (117)
 - free functions
-  - [ ] `factoryFuncHaystack` 0x004f0bd0 (12)
+  - [x] `factoryFuncHaystack` 0x004f0bd0 (12)
   - [ ] `staticInit` 0x004f0ba0 (9)
 
 ### `core/health.cpp` (14 functions, 221 instructions, 0 done, 0 partial)
@@ -4906,7 +4916,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncHealthItem` 0x004f1d90 (12)
   - [ ] `staticInit` 0x004f1d60 (9)
 
-### `core/hero.cpp` (35 functions, 2025 instructions, 1 done, 0 partial)
+### `core/hero.cpp` (35 functions, 2025 instructions, 1 done, 2 partial)
 - free functions
   - [ ] `isAnyHeroWithinCylinder` 0x004f22a0 (63)
   - [ ] `closestHeroToPoint` 0x004f2170 (66)
@@ -4914,10 +4924,13 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `staticInit` 0x004f2120 (17)
 - class `CHero`
   - [ ] `createDefaultWeapon` 0x004f2a30 (59)
-  - [ ] `ctor` 0x004f2340 (48)
+  - [~] `ctor` 0x004f2340 (48)
+    - deferred: the path map, inventory and input, and the defaults the constructor gives the collision, control, aiming, interaction and task fields, with the steps that read them
+    - deferred: creating the default weapon, with the weapon classes
   - [ ] `closestEnemy` 0x004f3960 (120)
   - [ ] `archive` 0x004f2610 (162)
-  - [ ] `dtor` 0x004f2470 (59)
+  - [~] `dtor` 0x004f2470 (59)
+    - deferred: taking the hero off the mission's heroes, with createOneHero
   - [ ] `testCylinderCollision` 0x004f2580 (17)
   - [ ] `testLineIntersection` 0x004f25c0 (25)
   - [ ] `getPathMap` 0x004f2870 (3)
@@ -5005,10 +5018,12 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncHighPriestOfGardath` 0x004f7b30 (12)
   - [ ] `staticInit` 0x004f7b00 (9)
 
-### `core/icepick.cpp` (19 functions, 1820 instructions, 0 done, 0 partial)
+### `core/icepick.cpp` (19 functions, 1820 instructions, 3 done, 1 partial)
 - class `CIcePick`
-  - [ ] `ctor` 0x004f7df0 (27)
-  - [ ] `getActorType` 0x004f7de0 (2)
+  - [~] `ctor` 0x004f7df0 (27)
+    - deferred: loading the model icepick.dfm, with CDeformableModelInstance::init
+    - deferred: the defaults the constructor gives Ice Pick's own fields, with the steps that read them
+  - [x] `getActorType` 0x004f7de0 (2)
   - [ ] `updateShootBlend` 0x004f8810 (101)
   - [ ] `findAndPickupGun` 0x004f8970 (112)
   - [ ] `startThrowAttack` 0x004f8ad0 (13)
@@ -5022,10 +5037,10 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `processDamage` 0x004f95b0 (133)
   - [ ] `isWeaponDrawn` 0x004f9760 (3)
   - [ ] `drawWeapon` 0x004f9770 (4)
-  - [ ] `dtor` 0x004f97e0 (31)
+  - [x] `dtor` 0x004f97e0 (31)
   - [ ] `setup` 0x004f7e80 (139)
 - free functions
-  - [ ] `factoryFuncIcePick` 0x004f7db0 (12)
+  - [x] `factoryFuncIcePick` 0x004f7db0 (12)
   - [ ] `staticInit` 0x004f7d80 (9)
 
 ### `core/imp.cpp` (15 functions, 1886 instructions, 0 done, 0 partial)
@@ -5361,11 +5376,13 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getObjectGrabPointWorld` 0x00525110 (60)
   - [ ] `setEulerAngles` 0x00526b00 (8)
 
-### `core/moloch.cpp` (13 functions, 1031 instructions, 0 done, 0 partial)
+### `core/moloch.cpp` (13 functions, 1031 instructions, 3 done, 1 partial)
 - class `CMoloch`
-  - [ ] `ctor` 0x00528b30 (58)
-  - [ ] `getActorType` 0x00528b20 (2)
-  - [ ] `dtor` 0x00528bf0 (43)
+  - [~] `ctor` 0x00528b30 (58)
+    - deferred: loading the human model moloch_h.dfm, with CDeformableModelInstance::init
+    - deferred: the morph, the events that change Moloch's form, and the defaults the constructor gives its own fields, with the steps that read them
+  - [x] `getActorType` 0x00528b20 (2)
+  - [x] `dtor` 0x00528bf0 (43)
   - [ ] `processAI` 0x005293b0 (255)
   - [ ] `startMorph` 0x00529900 (18)
   - [ ] `process` 0x00528d20 (456)
@@ -5375,7 +5392,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `isWeaponDrawn` 0x005299e0 (2)
   - [ ] `setup` 0x00528c70 (53)
 - free functions
-  - [ ] `factoryFuncMoloch` 0x00528af0 (12)
+  - [x] `factoryFuncMoloch` 0x00528af0 (12)
   - [ ] `staticInit` 0x00528ac0 (9)
 
 ### `core/moon.cpp` (3 functions, 56 instructions, 3 done, 0 partial)
@@ -5590,11 +5607,15 @@ functions don't count as done. Sizes are in instructions.
 
 ## Step 29: Not reached from startup: `core/` (part 7 of 9)
 
-### `core/scat.cpp` (22 functions, 2672 instructions, 0 done, 0 partial)
+### `core/scat.cpp` (22 functions, 2672 instructions, 3 done, 1 partial)
 - class `CScat`
   - [ ] `createDefaultWeapon` 0x00557150 (41)
-  - [ ] `ctor` 0x00556ed0 (46)
-  - [ ] `getActorType` 0x00556ec0 (2)
+  - [~] `ctor` 0x00556ed0 (46)
+    - deferred: loading the model scat.dfm, with CDeformableModelInstance::init
+    - deferred: creating Scat's default weapon, with the weapon classes
+    - deferred: adding the layer actions that draw the pistols, with addLayerAction
+    - deferred: the defaults the constructor gives Scat's own fields, with the steps that read them
+  - [x] `getActorType` 0x00556ec0 (2)
   - [ ] `updateAI` 0x005578e0 (310)
   - [ ] `advanceMotionWithGrabDamage` 0x00557d20 (55)
   - [ ] `isWeaponReady` 0x00558010 (12)
@@ -5610,10 +5631,10 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `processDamage` 0x00557ea0 (114)
   - [ ] `isWeaponDrawn` 0x00557ff0 (3)
   - [ ] `drawWeapon` 0x00558000 (4)
-  - [ ] `dtor` 0x00559160 (31)
+  - [x] `dtor` 0x00559160 (31)
   - [ ] `setup` 0x00556f90 (129)
 - free functions
-  - [ ] `factoryFuncScat` 0x00556e90 (12)
+  - [x] `factoryFuncScat` 0x00556e90 (12)
   - [ ] `staticInit` 0x00556e00 (9)
 
 ### `core/script.cpp` (3 functions, 52 instructions, 0 done, 0 partial)
@@ -5931,10 +5952,14 @@ functions don't count as done. Sizes are in instructions.
 
 ## Step 30: Not reached from startup: `core/` (part 8 of 9)
 
-### `core/stranger.cpp` (57 functions, 13459 instructions, 0 done, 0 partial)
+### `core/stranger.cpp` (57 functions, 13459 instructions, 3 done, 1 partial)
 - class `CStranger`
-  - [ ] `ctor` 0x005bb120 (207)
-  - [ ] `getActorType` 0x005bb110 (2)
+  - [~] `ctor` 0x005bb120 (207)
+    - deferred: loading the model stranger.dfm, with CDeformableModelInstance::init
+    - deferred: naming the gun's model gat.kfm, with the weapon classes
+    - deferred: adding the layer actions that draw each weapon, with addLayerAction
+    - deferred: the defaults the constructor gives the Stranger's own fields, with the steps that read them
+  - [x] `getActorType` 0x005bb110 (2)
   - [ ] `processPickupComplete` 0x005c1f00 (36)
   - [ ] `dropRightHandObject` 0x005c1f80 (22)
   - [ ] `processMotionEvents` 0x005bdd20 (482)
@@ -5975,11 +6000,11 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getDeathState` 0x005c67c0 (14)
   - [ ] `dropCarriedObject` 0x005c67f0 (27)
   - [ ] `drop` 0x005c6850 (23)
-  - [ ] `dtor` 0x005c69c0 (31)
+  - [x] `dtor` 0x005c69c0 (31)
   - [ ] `setup` 0x005bb4b0 (232)
   - [ ] `getCarryLightIntensity` 0x005be430 (26)
 - free functions
-  - [ ] `factoryFuncStranger` 0x005bb0e0 (12)
+  - [x] `factoryFuncStranger` 0x005bb0e0 (12)
   - [ ] `staticInit` 0x005bae80 (23)
   - [ ] `blendWeightCallback` 0x005baee0 (20)
   - [ ] `canPickupObject` 0x005bafe0 (15)
@@ -6008,10 +6033,12 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncSuccubus` 0x005c6a40 (12)
   - [ ] `staticInit` 0x005c6a10 (9)
 
-### `core/svetlana.cpp` (16 functions, 1634 instructions, 0 done, 0 partial)
+### `core/svetlana.cpp` (16 functions, 1634 instructions, 3 done, 1 partial)
 - class `CSvetlana`
-  - [ ] `ctor` 0x005d8850 (32)
-  - [ ] `getActorType` 0x005d8840 (2)
+  - [~] `ctor` 0x005d8850 (32)
+    - deferred: loading the model svetlana.dfm, with CDeformableModelInstance::init
+    - deferred: the cape's and hair's cloth, and the defaults the constructor gives Svetlana's own fields, with the steps that read them
+  - [x] `getActorType` 0x005d8840 (2)
   - [ ] `processAI` 0x005d9260 (436)
   - [ ] `performBladeAttack` 0x005d9a10 (120)
   - [ ] `advanceMotion` 0x005d9970 (59)
@@ -6022,10 +6049,10 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getGrabbed` 0x005d9ec0 (2)
   - [ ] `isWeaponDrawn` 0x005d9ed0 (3)
   - [ ] `drawWeapon` 0x005d9ee0 (4)
-  - [ ] `dtor` 0x005d9f50 (42)
+  - [x] `dtor` 0x005d9f50 (42)
   - [ ] `setup` 0x005d88e0 (191)
 - free functions
-  - [ ] `factoryFuncSvetlana` 0x005d8810 (12)
+  - [x] `factoryFuncSvetlana` 0x005d8810 (12)
   - [ ] `staticInit` 0x005d87e0 (9)
 
 ### `core/tbplayer.cpp` (16 functions, 530 instructions, 0 done, 0 partial)

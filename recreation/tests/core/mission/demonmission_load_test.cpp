@@ -4,6 +4,7 @@
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactor.h"
 #include "core/actor/demonactortype.h"
+#include "core/hero/hero.h"
 #include "core/hero/heroplaceholder.h"
 #include "core/location.h"
 #include "core/mission/demonmission.h"
@@ -36,8 +37,8 @@ std::unique_ptr<CDemonActor> makeHero();
 std::unique_ptr<CDemonActor> makeSpot();
 
 const CDemonActorType kDoorType = makeActorType("CTestDoor", &kTestBaseType, &makeDoor, 2);
-// Named as the game's hero class is, which is what a hero placeholder is offered for.
-const CDemonActorType kHeroType = makeActorType("CHero", &kTestBaseType, &makeHero, 1);
+// A kind of the game's hero class, which is what a hero placeholder is offered for.
+const CDemonActorType kHeroType = makeActorType("CTestHero", &CHero::kType, &makeHero, 1);
 const CDemonActorType kSpotType =
     makeActorType("CTestSpot", &CHeroPlaceholder::kType, &makeSpot, 1);
 
@@ -286,10 +287,10 @@ TEST_F(CDemonMissionLoadTest, AMissionWithNoHeroesOrPlaceholderSaysSo) {
 std::string heroMission(int placeholder_index) {
     return mission(
         "0\n", 4, 0,
-        "CTestDoor \"Door\"\nCHero \"Gabriel\"\nCHero \"Stranger\"\nCTestSpot \"Spot\"\n",
+        "CTestDoor \"Door\"\nCTestHero \"Gabriel\"\nCTestHero \"Stranger\"\nCTestSpot \"Spot\"\n",
         body("CTestDoor", "Door") +
-            "{ CHero \"Gabriel\"\n1 2 3 4 0.5 0.25 0.125\n} CHero \"Gabriel\"\n"
-            "{ CHero \"Stranger\"\n0 0 0 0 0 0 0\n} CHero \"Stranger\"\n" +
+            "{ CTestHero \"Gabriel\"\n1 2 3 4 0.5 0.25 0.125\n} CTestHero \"Gabriel\"\n"
+            "{ CTestHero \"Stranger\"\n0 0 0 0 0 0 0\n} CTestHero \"Stranger\"\n" +
             std::format("{{ CTestSpot \"Spot\"\n{}\n}} CTestSpot \"Spot\"\n", placeholder_index));
 }
 

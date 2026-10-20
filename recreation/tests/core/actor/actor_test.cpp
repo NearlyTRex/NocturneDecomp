@@ -3,8 +3,19 @@
 #include "core/actor/actor.h"
 #include "core/actor/demonactor.h"
 #include "core/actor/demonactortype.h"
+#include "core/baron/baron.h"
+#include "core/charactr/character.h"
+#include "core/colonel/colonel.h"
+#include "core/gabriela/gabriella.h"
 #include "core/game/game.h"
+#include "core/haystack/haystack.h"
+#include "core/hero/hero.h"
 #include "core/hero/heroplaceholder.h"
+#include "core/icepick/icepick.h"
+#include "core/moloch/moloch.h"
+#include "core/scat/scat.h"
+#include "core/stranger/stranger.h"
+#include "core/svetlana/svetlana.h"
 #include "tests/mocks/core/testactor.h"
 #include "tests/mocks/engine/mockgameclock.h"
 
@@ -58,6 +69,18 @@ protected:
 TEST_F(CActorRegistryTest, ThePortedClassesAreRegistered) {
     EXPECT_EQ(actor_.getActorClassByName("CDemonActor"), &CDemonActor::kType);
     EXPECT_EQ(actor_.getActorClassByName("CHeroPlaceholder"), &CHeroPlaceholder::kType);
+    EXPECT_EQ(actor_.getActorClassByName("CCharacter"), &CCharacter::kType);
+    EXPECT_EQ(actor_.getActorClassByName("CHero"), &CHero::kType);
+    EXPECT_EQ(actor_.getActorClassByName("CGabriella"), &CGabriella::kType);
+    EXPECT_EQ(actor_.getActorClassByName("CSvetlana"), &CSvetlana::kType);
+    EXPECT_EQ(actor_.getActorClassByName("CStranger"), &CStranger::kType);
+    EXPECT_EQ(actor_.getActorClassByName("CScat"), &CScat::kType);
+    EXPECT_EQ(actor_.getActorClassByName("CBaron"), &CBaron::kType);
+    EXPECT_EQ(actor_.getActorClassByName("CIcePick"), &CIcePick::kType);
+    EXPECT_EQ(actor_.getActorClassByName("CHaystack"), &CHaystack::kType);
+    EXPECT_EQ(actor_.getActorClassByName("CColonel"), &CColonel::kType);
+    EXPECT_EQ(actor_.getActorClassByName("CMoloch"), &CMoloch::kType);
+    EXPECT_EQ(actor_.getActorClassCount(), 13U);
 }
 
 // Only the letters and digits count, in either case.
@@ -84,7 +107,7 @@ TEST_F(CActorRegistryTest, CreatingAnUnknownOrAbstractClassIsFatal) {
 }
 
 TEST_F(CActorRegistryTest, MoreThanTwoHundredClassesIsFatal) {
-    for (std::size_t i = 2; i < CActor::kMaxActorTypes; ++i) {
+    for (std::size_t i = actor_.getActorClassCount(); i < CActor::kMaxActorTypes; ++i) {
         actor_.registerActorClass(kTestLeafType);
     }
     EXPECT_THAT([this] { actor_.registerActorClass(kTestLeafType); },

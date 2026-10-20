@@ -6,8 +6,15 @@
 
 namespace nocturne::core {
 
+namespace {
+
+// Of the class's fields, as save files write them.
+constexpr int kVersion = 1;
+
+} // namespace
+
 constinit const CDemonActorType CHeroPlaceholder::kType =
-    makeActorType("CHeroPlaceholder", &CDemonActor::kType, &CHeroPlaceholder::create, 1);
+    makeActorType("CHeroPlaceholder", &CDemonActor::kType, &CHeroPlaceholder::create, kVersion);
 
 // deferred: drawing it transparent, with the set's renderable list
 // nocedit 0x004f3c00

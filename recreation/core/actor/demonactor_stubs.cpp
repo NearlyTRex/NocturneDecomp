@@ -1,8 +1,7 @@
-#include "common/error/error.h"
 #include "core/actor/demonactor.h"
+#include "core/actor/notported.h"
 
 #include <cstdint>
-#include <format>
 #include <string_view>
 
 // The virtual functions every actor class reaches before their own steps port them. Each quits,
@@ -12,7 +11,7 @@ namespace nocturne::core {
 namespace {
 
 [[noreturn]] void notPorted(std::string_view function) {
-    common::displayErrorAndQuit(std::format("CDemonActor::{} is not ported yet", function));
+    quitNotPorted("CDemonActor", function);
 }
 
 } // namespace

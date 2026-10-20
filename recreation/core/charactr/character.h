@@ -8,10 +8,19 @@
 
 namespace nocturne::core {
 
+// An actor with a body, that walks, carries, is hurt and dies. The virtual functions not ported
+// yet quit when called.
 class CCharacter : public CDemonActor {
 public:
+    // Abstract: missions can't hold one.
+    static const CDemonActorType kType;
+
     CCharacter();
     ~CCharacter() override;
+    CCharacter(const CCharacter &) = delete;
+    CCharacter &operator=(const CCharacter &) = delete;
+    CCharacter(CCharacter &&) = delete;
+    CCharacter &operator=(CCharacter &&) = delete;
 
     void setup() override;
     int renderOpaque() override;
