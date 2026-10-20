@@ -20,7 +20,8 @@ constinit const CDemonActorType CHero::kType =
 // nocedit 0x004f2340
 CHero::CHero() = default;
 
-// deferred: taking the hero off the mission's heroes, with createOneHero
+// The original also took the hero off the mission's heroes, which the mission does here as it
+// destroys one.
 // nocedit 0x004f2470
 CHero::~CHero() = default;
 

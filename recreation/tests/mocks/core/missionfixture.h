@@ -64,6 +64,7 @@ protected:
                                              .screen = screen_};
     CDemonMission mission_{{.dosio = dosio_,
                             .messages = messages_,
+                            .game = game_,
                             .actor = actor_,
                             .level_loader = level_loader_,
                             .textures = textures_,

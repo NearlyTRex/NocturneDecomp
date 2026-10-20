@@ -1,6 +1,7 @@
 #include "common/text/ascii.h"
 #include "common/text/scan.h"
 #include "core/actor/demonactor.h"
+#include "core/hero/hero.h"
 #include "core/mission/demonmission.h"
 
 #include <algorithm>
@@ -43,12 +44,15 @@ std::unique_ptr<CDemonActor> CDemonMission::removeActorFromList(const CDemonActo
 // nocedit 0x00408820
 // nocedit 0x0040ac80
 void CDemonMission::removeActor(const CDemonActor &actor) {
-    removeActorFromList(actor);
+    if (removeActorFromList(actor) != nullptr) {
+        std::ranges::replace_if(
+            heroes_, [&actor](const CHero *hero) { return hero == &actor; }, nullptr);
+    }
 }
 
 // deferred: rebuilding the set's actor lists after, with the set's per-frame readers
-// deferred: clearing the hero count, actors_prepared and the delete queue, with createHeros,
-//   prepareAllActors and markActorToDelete
+// deferred: clearing actors_prepared and the delete queue, with prepareAllActors and
+//   markActorToDelete
 // deferred: committing the raytracer's shadow voxels and resetting the path maps, with the
 //   raytracer and the path maps
 // nocedit 0x00523f50
@@ -56,6 +60,7 @@ void CDemonMission::removeAllActors() {
     while (!actors_.empty()) {
         removeActor(*actors_.front());
     }
+    hero_count_ = 0;
 }
 
 // nocedit 0x00524030

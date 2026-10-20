@@ -268,6 +268,7 @@ private:
                                       .crt_random = crt_random_}};
     core::CDemonMission mission_{{.dosio = dosio_,
                                   .messages = messages_,
+                                  .game = game_,
                                   .actor = actor_,
                                   .level_loader = level_loader_,
                                   .textures = texture_,

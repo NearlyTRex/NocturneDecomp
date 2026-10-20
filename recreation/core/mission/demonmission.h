@@ -6,6 +6,8 @@
 #include "shape/fwd.h"
 #include "support/fwd.h"
 
+#include <array>
+#include <cstddef>
 #include <cstdint>
 #include <cstdio>
 #include <memory>
@@ -16,10 +18,12 @@
 
 namespace nocturne::core {
 
-// What a mission reads its file with, makes its actors from and asks about a missing hero with.
+// What a mission reads its file with, makes its actors from, asks about a missing hero with, and
+// picks its hero by.
 struct SMissionOwners {
     const engine::CDosIo &dosio;
     const support::CNewMsg &messages;
+    const CGame &game;
     const CActor &actor;
     CLevelLoader &level_loader;
     engine::CTexture &textures;
@@ -30,6 +34,9 @@ struct SMissionOwners {
 // The mission: its file, and the actors it places, in the order its file lists them.
 class CDemonMission {
 public:
+    // The most heroes a mission can hold.
+    static constexpr std::size_t kMaxHeroes = 4;
+
     explicit CDemonMission(const SMissionOwners &owners);
     ~CDemonMission();
     CDemonMission(const CDemonMission &) = delete;
@@ -58,9 +65,10 @@ public:
     void addActorToList(std::unique_ptr<CDemonActor> actor);
     // Takes the actor off the list and hands it back; null when it wasn't on it.
     std::unique_ptr<CDemonActor> removeActorFromList(const CDemonActor &actor_ptr);
-    // Takes the actor off the list and destroys it, if it is on it.
+    // Takes the actor off the list and destroys it, if it is on it; a hero is no longer one of the
+    // mission's heroes.
     void removeActor(const CDemonActor &actor);
-    // Destroys every actor, first to last.
+    // Destroys every actor, first to last, leaving no heroes.
     void removeAllActors();
     // The first actor so named, ignoring case; null when none is.
     [[nodiscard]] CDemonActor *findActorByName(std::string_view name) const;
@@ -74,7 +82,10 @@ public:
     // number following that in any actor's name, counting on past names already taken.
     void generateActorName(CDemonActor &actor) const;
     int startMission();
-    int createHeros(CCharacter *existing_hero);
+    // Puts the game's hero at the place for the first hero: the hero given, or a new one when none
+    // is, then takes away every hero placeholder. False, the hero given destroyed, when there is
+    // no place for it.
+    [[nodiscard]] bool createHeros(std::unique_ptr<CHero> existing_hero);
     int countDamageableEnemies();
 
     [[nodiscard]] bool isInEditor() const;
@@ -85,6 +96,10 @@ public:
     [[nodiscard]] const std::string &getPendingMissionName() const;
     // The actors in list order.
     [[nodiscard]] std::span<const std::unique_ptr<CDemonActor>> getActors() const;
+    // How many heroes createHeros asked for.
+    [[nodiscard]] int getHeroCount() const;
+    // The hero of that number, the first being 0; null when it hasn't been made.
+    [[nodiscard]] CHero *getHero(std::size_t index) const;
 
 private:
     [[nodiscard]] std::string generateUniqueActorName(std::string_view base_name) const;
@@ -92,6 +107,10 @@ private:
     void readActorTypes(common::CTextScanner &scanner) const;
     // Unless a hero placeholder for the first hero is there, offers to turn a hero into one.
     void ensureHeroPlaceholder();
+    // Puts the hero given, or a new one of the type, at the place for that hero and adds it to
+    // the list. False, showing an error, when there is no such place.
+    bool createOneHero(std::size_t index, EHeroType hero_type,
+                       std::unique_ptr<CHero> existing_hero);
 
     SMissionOwners owners_;
     bool is_in_editor_ = false;
@@ -99,6 +118,9 @@ private:
     std::string mission_name_;
     std::string pending_mission_name_;
     std::vector<std::unique_ptr<CDemonActor>> actors_;
+    int hero_count_ = 0;
+    // On the list, which owns them.
+    std::array<CHero *, kMaxHeroes> heroes_{};
 };
 
 } // namespace nocturne::core

@@ -9,10 +9,16 @@
 
 namespace nocturne::core {
 
+// A character's skinned model as it plays its motions. The virtual functions not ported yet quit
+// when called.
 class CDeformableModelInstance : public CMotionController {
 public:
     CDeformableModelInstance();
     ~CDeformableModelInstance() override;
+    CDeformableModelInstance(const CDeformableModelInstance &) = delete;
+    CDeformableModelInstance &operator=(const CDeformableModelInstance &) = delete;
+    CDeformableModelInstance(CDeformableModelInstance &&) = delete;
+    CDeformableModelInstance &operator=(CDeformableModelInstance &&) = delete;
 
     int findPatchToFrame(int source_motion_index, float source_frame,
                          int target_motion_index) override;

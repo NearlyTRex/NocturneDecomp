@@ -3,6 +3,7 @@
 #include "common/fwd.h"
 #include "core/actor/demonactor.h"
 #include "core/fwd.h"
+#include "core/skeleton/deformablemodelinstance.h"
 
 #include <cstdint>
 
@@ -105,6 +106,12 @@ public:
     int processMotion(int bone_index);
     int moveOutOfHeroWay(float delta_time);
     void playSoundWithCooldown(char *sound_name);
+
+    // The character's body and the motions it plays.
+    [[nodiscard]] CDeformableModelInstance &getModel();
+
+private:
+    CDeformableModelInstance model_;
 };
 
 } // namespace nocturne::core

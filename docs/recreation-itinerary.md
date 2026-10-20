@@ -23,7 +23,7 @@ functions don't count as done. Sizes are in instructions.
 | 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 68 | 31 | 56.6% |
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 26 | 8 | 46.4% |
-| 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 30 | 5 | 71.4% |
+| 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 31 | 7 | 73.8% |
 | 11 | `CScript::loadScript` | 63 | 579 | 67400 | 12 | 1 | 2.0% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 2 | 0 | 7.6% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0 | 0.0% |
@@ -40,13 +40,13 @@ functions don't count as done. Sizes are in instructions.
 | 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 5 | 2 | 1.8% |
 | 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 7 | 0 | 2.5% |
 | 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 27 | 1 | 9.0% |
-| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 10 | 5 | 3.4% |
+| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 11 | 4 | 3.7% |
 | 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 13 | 4 | 4.6% |
-| 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 8 | 1 | 3.0% |
+| 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 8 | 3 | 3.0% |
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 9 | 2 | 3.0% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 | 0 | 3.6% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **633** | **80** | **14.1%** |
+| | **All** | | **4479** | **402407** | **635** | **83** | **14.1%** |
 
 ## Step 0: Math value types
 
@@ -1035,7 +1035,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `removeActor` 0x00523f20 (18)
   - [~] `removeAllActors` 0x00523f50 (32)
     - deferred: rebuilding the set's actor lists after, with the set's per-frame readers
-    - deferred: clearing the hero count, actors_prepared and the delete queue, with createHeros, prepareAllActors and markActorToDelete
+    - deferred: clearing actors_prepared and the delete queue, with prepareAllActors and markActorToDelete
     - deferred: committing the raytracer's shadow voxels and resetting the path maps, with the raytracer and the path maps
   - [~] `clearMissionData` 0x00522d30 (20)
     - deferred: clearing the set count, with loadSet
@@ -1057,9 +1057,10 @@ functions don't count as done. Sizes are in instructions.
 
 ## Step 10: `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet`
 
-### `core/hero.cpp` (1 functions, 102 instructions, 0 done, 0 partial)
+### `core/hero.cpp` (1 functions, 102 instructions, 0 done, 1 partial)
 - class `CHeroPlaceholder`
-  - [ ] `createHero` 0x004f3d80 (102)
+  - [~] `createHero` 0x004f3d80 (102)
+    - deferred: updating the hero's orientation matrix, with updateOrientationMatrix
 
 ### `core/motion.cpp` (2 functions, 36 instructions, 2 done, 0 partial)
 - class `CMotionController`
@@ -1147,10 +1148,13 @@ functions don't count as done. Sizes are in instructions.
     - deferred: resetting every path map after new geometry, with resetAllPathMaps and the path maps
     - deferred: resetting the automap after new geometry, with the automap
 
-### `core/mission.cpp` (4 functions, 375 instructions, 0 done, 0 partial)
+### `core/mission.cpp` (4 functions, 375 instructions, 1 done, 1 partial)
 - class `CDemonMission`
-  - [ ] `createOneHero` 0x00524920 (109)
-  - [ ] `createHeros` 0x00524a80 (110)
+  - [x] `createOneHero` 0x00524920 (109)
+  - [~] `createHeros` 0x00524a80 (110)
+    - deferred: making each network player's hero, and noting which is this machine's, with CNetGame
+    - deferred: giving the hero the game's aim mode and the player's control, with the hero's aiming and control
+    - deferred: rebuilding the set's actor lists after, with the set's per-frame readers
   - [ ] `prepareAllActors` 0x00523cf0 (114)
   - [ ] `loadSet` 0x00523fb0 (42)
 
@@ -3813,7 +3817,7 @@ functions don't count as done. Sizes are in instructions.
 ### `core/charactr.cpp` (91 functions, 8559 instructions, 1 done, 1 partial)
 - class `CCharacter`
   - [~] `ctor` 0x00427e20 (125)
-    - deferred: the model, cloth, collision points, fires and flames, and the defaults the constructor gives the movement, walking, looking, carrying, health, layer action and smoking fields, with the steps that read them
+    - deferred: the cloth, collision points, fires and flames, and the defaults the constructor gives the movement, walking, looking, carrying, health, layer action and smoking fields, with the steps that read them
   - [ ] `detachBodyPart` 0x0042bcc0 (45)
   - [ ] `dismember` 0x0042b9e0 (178)
   - [ ] `processFire` 0x0042a830 (336)
@@ -4916,7 +4920,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncHealthItem` 0x004f1d90 (12)
   - [ ] `staticInit` 0x004f1d60 (9)
 
-### `core/hero.cpp` (35 functions, 2025 instructions, 1 done, 2 partial)
+### `core/hero.cpp` (35 functions, 2025 instructions, 2 done, 1 partial)
 - free functions
   - [ ] `isAnyHeroWithinCylinder` 0x004f22a0 (63)
   - [ ] `closestHeroToPoint` 0x004f2170 (66)
@@ -4929,8 +4933,7 @@ functions don't count as done. Sizes are in instructions.
     - deferred: creating the default weapon, with the weapon classes
   - [ ] `closestEnemy` 0x004f3960 (120)
   - [ ] `archive` 0x004f2610 (162)
-  - [~] `dtor` 0x004f2470 (59)
-    - deferred: taking the hero off the mission's heroes, with createOneHero
+  - [x] `dtor` 0x004f2470 (59)
   - [ ] `testCylinderCollision` 0x004f2580 (17)
   - [ ] `testLineIntersection` 0x004f25c0 (25)
   - [ ] `getPathMap` 0x004f2870 (3)
@@ -5762,12 +5765,13 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncSimBox` 0x00588d00 (12)
   - [ ] `staticInit` 0x00588cd0 (9)
 
-### `core/skeleton.cpp` (88 functions, 8882 instructions, 0 done, 0 partial)
+### `core/skeleton.cpp` (88 functions, 8882 instructions, 0 done, 2 partial)
 - class `CDeformableModelInstance`
   - [ ] `showAllParts` 0x005a0410 (8)
   - [ ] `clearAllTextureSetIndices` 0x005a0430 (8)
   - [ ] `init` 0x005a0840 (30)
-  - [ ] `ctor` 0x0059ddc0 (25)
+  - [~] `ctor` 0x0059ddc0 (25)
+    - deferred: the transformed vertices, and the defaults the constructor gives the model, skinning, root motion and scale fields, with the steps that read them
   - [ ] `blendMotion` 0x0059eb50 (479)
   - [ ] `computeBoundingBoxFromBones` 0x005a16c0 (76)
   - [ ] `computeBoneTransforms` 0x0059fb40 (124)
@@ -5779,7 +5783,8 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `findPatchToFrame` 0x005a08a0 (124)
   - [ ] `getRootMotionDelta` 0x005a0d10 (166)
   - [ ] `accumulateScaledRootMotion` 0x005a0c90 (32)
-  - [ ] `dtor` 0x0059de40 (41)
+  - [~] `dtor` 0x0059de40 (41)
+    - deferred: freeing what the model loaded, with free
   - [ ] `skinAndRotateVertices` 0x005a0250 (24)
   - [ ] `skinAndLightVertices` 0x005a02a0 (24)
   - [ ] `skinAndInitWRecip` 0x005a02f0 (24)

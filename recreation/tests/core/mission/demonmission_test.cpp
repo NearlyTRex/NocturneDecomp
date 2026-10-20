@@ -67,7 +67,7 @@ TEST(CDemonMission, PublicInterface) {
                                  void (CDemonMission::*)(CDemonActor &) const>);
     static_assert(std::is_same_v<decltype(&CDemonMission::startMission), int (CDemonMission::*)()>);
     static_assert(std::is_same_v<decltype(&CDemonMission::createHeros),
-                                 int (CDemonMission::*)(CCharacter *)>);
+                                 bool (CDemonMission::*)(std::unique_ptr<CHero>)>);
     static_assert(
         std::is_same_v<decltype(&CDemonMission::countDamageableEnemies), int (CDemonMission::*)()>);
 }
