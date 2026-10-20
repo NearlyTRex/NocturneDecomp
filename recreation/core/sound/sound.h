@@ -14,6 +14,11 @@ namespace nocturne::core {
 // The game's sounds, played through the sound system it shuts down when it goes.
 class CSound {
 public:
+    // The sound system's channels, as the game plays on them.
+    static constexpr int kEffectsChannel = 0;
+    static constexpr int kMusicChannel = 1;
+    static constexpr int kDialogChannel = 2;
+
     CSound(sound::CSndMain &sound_main, engine::CPod &pod, platform::IFileSystem &file_system);
     ~CSound();
     CSound(const CSound &) = delete;
@@ -27,6 +32,9 @@ public:
     void init();
     void shutdown();
     void process();
+    // Turns the effects and music down to the menu's level and the dialog to full at most, then,
+    // unless sound is muted, stops every sound, puts the listener at the origin and starts the
+    // menu music at the output's rate.
     void configure();
     void reset();
     void playAmbientSound(char *sound_name);

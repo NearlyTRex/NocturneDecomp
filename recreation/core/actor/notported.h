@@ -4,7 +4,7 @@
 
 namespace nocturne::core {
 
-// Quits, naming a class's virtual function that is not ported yet.
+// Quits, naming a class's function that is not ported yet.
 [[noreturn]] void quitNotPorted(std::string_view class_name, std::string_view function);
 
 } // namespace nocturne::core

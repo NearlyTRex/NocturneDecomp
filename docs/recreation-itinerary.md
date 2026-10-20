@@ -29,9 +29,9 @@ functions don't count as done. Sizes are in instructions.
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0 | 0.0% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 1 | 0 | 1.9% |
 | 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 4 | 0 | 2.1% |
-| 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 0 | 0 | 0.0% |
+| 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 1 | 0 | 4.0% |
 | 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 4 | 1 | 15.3% |
-| 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 2 | 0 | 15.3% |
+| 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 3 | 0 | 23.0% |
 | 19 | Not reached from startup: `engine/` | 23 | 279 | 19702 | 20 | 1 | 7.1% |
 | 20 | Not reached from startup: `support/` | 2 | 24 | 593 | 3 | 0 | 12.5% |
 | 21 | Not reached from startup: `cockpit/` | 4 | 178 | 11527 | 0 | 0 | 0.0% |
@@ -41,12 +41,12 @@ functions don't count as done. Sizes are in instructions.
 | 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 7 | 0 | 2.5% |
 | 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 27 | 1 | 9.0% |
 | 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 11 | 4 | 3.7% |
-| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 13 | 4 | 4.6% |
+| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 13 | 5 | 4.6% |
 | 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 8 | 3 | 3.0% |
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 9 | 2 | 3.0% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 | 0 | 3.6% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **635** | **83** | **14.1%** |
+| | **All** | | **4479** | **402407** | **637** | **84** | **14.2%** |
 
 ## Step 0: Math value types
 
@@ -2584,9 +2584,9 @@ functions don't count as done. Sizes are in instructions.
 - class `CMoon`
   - [ ] `renderJoystickCalibration` 0x0052a2c0 (84)
 
-### `core/sound.cpp` (1 functions, 112 instructions, 0 done, 0 partial)
+### `core/sound.cpp` (1 functions, 112 instructions, 1 done, 0 partial)
 - class `CSound`
-  - [ ] `configure` 0x005b3830 (112)
+  - [x] `configure` 0x005b3830 (112)
 
 ### `core/menu.cpp` (9 functions, 4659 instructions, 0 done, 0 partial)
 - free functions
@@ -2734,9 +2734,9 @@ functions don't count as done. Sizes are in instructions.
 - class `CMouse`
   - [ ] `reset` 0x00544500 (1)
 
-### `core/main.c` (2 functions, 217 instructions, 0 done, 0 partial)
+### `core/main.c` (2 functions, 217 instructions, 1 done, 0 partial)
 - free functions
-  - [ ] `enterMainGameMenu` 0x00507a50 (1)
+  - [x] `enterMainGameMenu` 0x00507a50 (1)
   - [ ] `finalizeGameSystems` 0x00508570 (216)
 
 ## Step 19: Not reached from startup: `engine/`
@@ -5285,12 +5285,19 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncMelee` 0x0050e790 (12)
   - [ ] `staticInit` 0x0050e760 (9)
 
-### `core/menu.cpp` (6 functions, 588 instructions, 1 done, 0 partial)
+### `core/menu.cpp` (6 functions, 588 instructions, 1 done, 1 partial)
 - free functions
   - [x] `staticInit` 0x0050fdb0 (39)
   - [ ] `showJoystickCalibrationScreen` 0x00510410 (61)
   - [ ] `renderAudioSpectrumBarByBounds` 0x00511e00 (14)
-  - [ ] `showMainGameMenu` 0x00512f40 (394)
+  - [~] `showMainGameMenu` 0x00512f40 (394)
+    - deferred: loading the flame and blur bitmaps, with their readers
+    - deferred: choosing a chapter from START, its debug modes picked by the shift and control keys, then starting the moon and music again, with CGame::showChapterSelect
+    - deferred: the options from OPTIONS, with showOptionsScreen
+    - deferred: loading a saved game from LOAD, then starting the moon and music again, with CGame::loadGame
+    - deferred: the developer tools on Ctrl+D or Ctrl+L, with showDeveloperToolsMenu
+    - deferred: dropping a press of F with a control key held, with the game's hotkeys
+    - deferred: the enhanced game's menu (PLAY's single-player menu with its continue, MULTIPLAYER and its hotkeys, attract movies when idle, its menu font, the window sized to the game's resolution and the items centred), with the enhanced front end
   - [ ] `addCustomKeyBinding` 0x00513460 (40)
   - [ ] `getSinglePressedKey` 0x00513860 (40)
 

@@ -19,8 +19,9 @@ enum class EMenuAction : std::uint8_t {
     End,
     PageUp,
     PageDown,
-    // Only while a control key is held.
+    // These only while a control key is held.
     Copy,
+    ToggleMute,
 };
 
 // The menu actions, read off the keys.

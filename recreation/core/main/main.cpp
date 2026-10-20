@@ -103,4 +103,10 @@ void initializeGameSystems(const SGameSystemOwners &owners) {
     owners.net_game.init();
 }
 
+// A jump to showMainGameMenu in the original.
+// nocedit 0x00507a50
+int enterMainGameMenu(CMenu &menu) {
+    return menu.showMainGameMenu();
+}
+
 } // namespace nocturne::core

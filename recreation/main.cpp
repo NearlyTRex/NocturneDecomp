@@ -126,11 +126,9 @@ public:
              .menu = menu_});
     }
 
-    // Shows the screen until the window closes; the game beyond startup comes later.
+    // The main menu, until it quits or the window closes.
     void run() {
-        while (!winrun_.getInputDisabled()) {
-            screen_.swapBuffers();
-        }
+        core::enterMainGameMenu(menu_);
     }
 
 private:
@@ -246,6 +244,9 @@ private:
                        .game = game_,
                        .actor = actor_,
                        .crt_random = crt_random_,
+                       .textures = texture_,
+                       .sound = sound_,
+                       .sound_main = sound_main_,
                        .build_version = nocturne::kBuildVersion}};
     nocturne::shape::CEdControls controls_{{.two_d = two_d_,
                                             .screen = screen_,

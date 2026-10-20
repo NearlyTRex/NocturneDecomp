@@ -114,6 +114,76 @@ TEST_F(CSoundTest, ResettingStopsTheSoundsAndFreesTheSamples) {
     EXPECT_EQ(sound_.getSoundMemoryStats().free_slots, 64);
 }
 
+TEST_F(CSoundTest, ConfiguringTurnsTheChannelsDownToTheMenusLevel) {
+    CSound game_sound(sound_, pod_, file_system_);
+    sound_.setSfxChannelVol(CSound::kEffectsChannel, 1.0F);
+    sound_.setSfxChannelVol(CSound::kMusicChannel, 0.1F);
+    sound_.setSfxChannelVol(CSound::kDialogChannel, 1.0F);
+    game_sound.configure();
+    EXPECT_EQ(sound_.getSfxChannelVol(CSound::kEffectsChannel), 0.25F);
+    EXPECT_EQ(sound_.getSfxChannelVol(CSound::kMusicChannel), 0.1F);
+    EXPECT_EQ(sound_.getSfxChannelVol(CSound::kDialogChannel), 1.0F);
+}
+
+// Both rates' music is on disk, so its name says which was picked.
+class CSoundMusicTest : public CSoundTest {
+protected:
+    CSoundMusicTest() {
+        givenSound("splash-music-22.wav", sound::makeConstantWav(100, 0));
+        givenSound("splash-music-44.wav", sound::makeConstantWav(100, 0));
+    }
+
+    // The one sound playing, which fails the test when there isn't exactly one.
+    [[nodiscard]] std::string playing() {
+        EXPECT_EQ(sound_.countActiveSfx(), 1);
+        return expectInfo(sound_.getSfxSampleInfo(sound_.getFirstActiveSfx())).name;
+    }
+
+    CSound game_sound_{sound_, pod_, file_system_};
+};
+
+TEST_F(CSoundMusicTest, ConfiguringStopsTheSoundsAndPlaysTheMenuMusicFromTheOrigin) {
+    givenSound("tone.wav", sound::makeConstantWav(100, 0));
+    startOutput();
+    sound_.set3DListenerPos(5.0, 5.0, 5.0);
+    const std::uint32_t tone = sound_.startSfx("tone.wav");
+    ASSERT_NE(tone, 0U);
+    game_sound_.configure();
+    EXPECT_FALSE(sound_.isSfxPlaying(tone));
+    EXPECT_EQ(playing(), "splash-music-22.wav");
+    EXPECT_EQ(sound_.getListenerPosition(), common::CVector3d{});
+}
+
+TEST_F(CSoundMusicTest, TheMusicPlaysOnTheMusicChannel) {
+    startOutput();
+    sound_.enableSfxChannel(CSound::kMusicChannel, false);
+    game_sound_.configure();
+    EXPECT_EQ(sound_.countActiveSfx(), 0);
+}
+
+TEST_F(CSoundMusicTest, AboveThirtyThousandTheMusicIsTheFortyFourKilohertzOne) {
+    sound_.setAudioSampleRate(30001);
+    startOutput();
+    game_sound_.configure();
+    EXPECT_EQ(playing(), "splash-music-44.wav");
+}
+
+TEST_F(CSoundMusicTest, AtThirtyThousandTheMusicIsTheTwentyTwoKilohertzOne) {
+    sound_.setAudioSampleRate(30000);
+    startOutput();
+    game_sound_.configure();
+    EXPECT_EQ(playing(), "splash-music-22.wav");
+}
+
+TEST_F(CSoundMusicTest, MutedConfiguringOnlyTurnsTheChannelsDown) {
+    startOutput();
+    sound_.setSoundMuted(true);
+    sound_.setSfxChannelVol(CSound::kEffectsChannel, 1.0F);
+    game_sound_.configure();
+    EXPECT_EQ(sound_.getSfxChannelVol(CSound::kEffectsChannel), 0.25F);
+    EXPECT_EQ(sound_.countActiveSfx(), 0);
+}
+
 TEST_F(CSoundTest, WithNoSoundFilesTheSearchRunsEachTime) {
     CSound game_sound(sound_, pod_, file_system_);
     EXPECT_CALL(file_system_, findFiles).Times(4);

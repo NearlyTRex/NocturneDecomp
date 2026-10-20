@@ -216,6 +216,9 @@ protected:
                  .game = game_,
                  .actor = actor_,
                  .crt_random = crt_random_,
+                 .textures = texture_,
+                 .sound = game_sound_,
+                 .sound_main = sound_,
                  .build_version = "0.1.0"}};
     shape::CEdControls controls_{{.two_d = two_d_,
                                   .screen = screen_,

@@ -43,6 +43,8 @@ using common::displayErrorAndQuit;
 // run's calibration, the opening movie, a loading screen, sound, the light filters, the mouse
 // and the network.
 void initializeGameSystems(const SGameSystemOwners &owners);
+// The main menu, until it quits; showMainGameMenu's result.
+int enterMainGameMenu(CMenu &menu);
 void showDeveloperToolsMenu();
 
 } // namespace nocturne::core
