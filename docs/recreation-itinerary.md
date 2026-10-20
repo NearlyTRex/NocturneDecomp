@@ -23,7 +23,7 @@ functions don't count as done. Sizes are in instructions.
 | 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 68 | 31 | 56.6% |
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 26 | 8 | 46.4% |
-| 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 24 | 3 | 57.1% |
+| 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 28 | 5 | 66.6% |
 | 11 | `CScript::loadScript` | 63 | 579 | 67400 | 12 | 1 | 2.0% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 2 | 0 | 7.6% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0 | 0.0% |
@@ -43,10 +43,10 @@ functions don't count as done. Sizes are in instructions.
 | 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 4 | 1 | 1.3% |
 | 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 6 | 2 | 2.1% |
 | 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 5 | 0 | 1.9% |
-| 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 2 | 0 | 0.6% |
+| 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 3 | 0 | 1.0% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 | 0 | 3.6% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **594** | **65** | **13.2%** |
+| | **All** | | **4479** | **402407** | **599** | **67** | **13.3%** |
 
 ## Step 0: Math value types
 
@@ -1099,13 +1099,14 @@ functions don't count as done. Sizes are in instructions.
 - class `CBoundingBox3D`
   - [x] `doesRayIntersect` 0x00420940 (366)
 
-### `core/setdir.cpp` (6 functions, 598 instructions, 1 done, 0 partial)
+### `core/setdir.cpp` (6 functions, 598 instructions, 4 done, 1 partial)
 - class `CDemonSet`
   - [ ] `writeThumbs` 0x00575e40 (87)
-  - [ ] `refreshThumbs` 0x00575b40 (35)
-  - [ ] `skipDeprecatedVirtualDirectorData` 0x00576200 (51)
-  - [ ] `findVdirBoxRoot` 0x00576820 (25)
-  - [ ] `buildVdirBoxGroups` 0x00576710 (90)
+  - [~] `refreshThumbs` 0x00575b40 (35)
+    - deferred: rendering every camera's thumb and writing the file when there is none, with renderSceneGeometry
+  - [x] `skipDeprecatedVirtualDirectorData` 0x00576200 (51)
+  - [x] `findVdirBoxRoot` 0x00576820 (25)
+  - [x] `buildVdirBoxGroups` 0x00576710 (90)
 - free functions
   - [x] `testOBBIntersection` 0x005763a0 (310)
 
@@ -1138,10 +1139,13 @@ functions don't count as done. Sizes are in instructions.
   - [~] `init` 0x005e1ef0 (16)
     - deferred: restarting the animation and noting the terrain is there, with process and render
 
-### `core/set.cpp` (2 functions, 949 instructions, 0 done, 0 partial)
+### `core/set.cpp` (2 functions, 949 instructions, 1 done, 1 partial)
 - class `CDemonSet`
-  - [ ] `clear` 0x005693c0 (26)
-  - [ ] `load` 0x00569410 (923)
+  - [x] `clear` 0x005693c0 (26)
+  - [~] `load` 0x00569410 (923)
+    - deferred: committing the voxel buffer when the geometry is the last set's, with commitVoxelBuffer and the voxel shadows it commits
+    - deferred: resetting every path map after new geometry, with resetAllPathMaps and the path maps
+    - deferred: resetting the automap after new geometry, with the automap
 
 ### `core/mission.cpp` (4 functions, 375 instructions, 0 done, 0 partial)
 - class `CDemonMission`
@@ -6265,9 +6269,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `staticInit` 0x005e8df0 (9)
   - [ ] `isStartLocTriggered` 0x005e9180 (4)
 
-### `core/water.cpp` (4 functions, 33 instructions, 1 done, 0 partial)
+### `core/water.cpp` (4 functions, 33 instructions, 2 done, 0 partial)
 - class `CWater`
-  - [ ] `ctor` 0x005e9e10 (5)
+  - [x] `ctor` 0x005e9e10 (5)
   - [x] `dtor` 0x005e9e30 (2, compiler-generated)
 - free functions
   - [ ] `staticInit` 0x005e9da0 (7)

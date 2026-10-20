@@ -28,5 +28,19 @@ TEST(C3DSCamera, PublicInterface) {
                                  int (C3DSCamera::*)(common::CVector3f *, float)>);
 }
 
+TEST(C3DSCamera, TheAmbientGroupAndSwitchingCanBeSetAndAResetClearsThem) {
+    C3DSCamera camera;
+    camera.setAmbientValue(0.5F);
+    camera.setCameraGroup(3);
+    camera.setEnabled(true);
+    EXPECT_EQ(camera.getAmbientValue(), 0.5F);
+    EXPECT_EQ(camera.getCameraGroup(), 3);
+    EXPECT_TRUE(camera.getEnabled());
+    camera.reset();
+    EXPECT_EQ(camera.getAmbientValue(), 0.0F);
+    EXPECT_EQ(camera.getCameraGroup(), 0);
+    EXPECT_FALSE(camera.getEnabled());
+}
+
 } // namespace
 } // namespace nocturne::core

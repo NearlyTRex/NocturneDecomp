@@ -43,6 +43,14 @@ public:
     [[nodiscard]] const CBoundingBox3D &getBox() const;
     // The raytrace cubes the camera can see.
     [[nodiscard]] std::span<const int> getPVSList() const;
+    // The scene's ambient light while this camera shows it, the group scripts switch it with,
+    // and whether it may be switched to.
+    void setAmbientValue(float ambient_value);
+    void setCameraGroup(int camera_group);
+    void setEnabled(bool enabled);
+    [[nodiscard]] float getAmbientValue() const;
+    [[nodiscard]] int getCameraGroup() const;
+    [[nodiscard]] bool getEnabled() const;
 
 private:
     std::string name_;
@@ -55,6 +63,9 @@ private:
     int reverb_preset_ = 0;
     CBoundingBox3D box_;
     std::vector<int> pvs_list_;
+    float ambient_value_ = 0.0F;
+    int camera_group_ = 0;
+    bool enabled_ = false;
 };
 
 } // namespace nocturne::core

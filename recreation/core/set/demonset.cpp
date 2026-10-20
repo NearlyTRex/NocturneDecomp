@@ -5,9 +5,7 @@
 namespace nocturne::core {
 
 // The original constructor's scene setup arrives with the fields it fills.
-CDemonSet::CDemonSet(engine::CDemonRenderer &renderer, const engine::CMatrix &matrix,
-                     const engine::CSpecial &special)
-    : renderer_(renderer), matrix_(matrix), special_(special) {}
+CDemonSet::CDemonSet(const SDemonSetOwners &owners) : owners_(owners) {}
 
 void CDemonSet::setLightDirection(const common::CVector3i &light_direction) {
     light_direction_ = light_direction;
@@ -32,6 +30,95 @@ const CColor3i &CDemonSet::getFlatColor() const {
 // nocedit 0x00570ca0
 void CDemonSet::setFlatColor(int light_scale, int color_scale, int fog_scale) {
     flat_color_ = {.r = light_scale, .g = color_scale, .b = fog_scale};
+}
+
+int CDemonSet::getSetFileVersion() const {
+    return set_file_version_;
+}
+
+float CDemonSet::getSetScaleFactor() const {
+    return set_scale_factor_;
+}
+
+float CDemonSet::getMinAmbientValue() const {
+    return min_ambient_value_;
+}
+
+const SFog &CDemonSet::getSceneFog() const {
+    return scene_fog_;
+}
+
+bool CDemonSet::getUseEnviroModel() const {
+    return use_enviro_model_;
+}
+
+const std::string &CDemonSet::getEnviroModelName() const {
+    return enviro_model_name_;
+}
+
+bool CDemonSet::getHasSky() const {
+    return has_sky_;
+}
+
+const std::string &CDemonSet::getSkyTextureName() const {
+    return sky_texture_name_;
+}
+
+int CDemonSet::getSkyBrightness() const {
+    return sky_brightness_;
+}
+
+bool CDemonSet::getUseWorldGeometry() const {
+    return use_world_geometry_;
+}
+
+const std::string &CDemonSet::getWorldGeometryName() const {
+    return world_geometry_name_;
+}
+
+EWeatherType CDemonSet::getWeatherType() const {
+    return weather_type_;
+}
+
+bool CDemonSet::getPlayerOnTrain() const {
+    return player_on_train_;
+}
+
+std::span<const C3DSLight> CDemonSet::getLights() const {
+    return lights_;
+}
+
+std::span<const C3DSCamera> CDemonSet::getCameras() const {
+    return cameras_;
+}
+
+int CDemonSet::getDefaultRoomSize() const {
+    return default_room_size_;
+}
+
+std::span<const SRoom> CDemonSet::getRooms() const {
+    return rooms_;
+}
+
+int CDemonSet::getDefaultGroundType() const {
+    return default_ground_type_;
+}
+
+int CDemonSet::getDefaultMasterReverb() const {
+    return default_master_reverb_;
+}
+
+std::span<const SVDBox> CDemonSet::getVdirBoxes() const {
+    return vdir_boxes_;
+}
+
+const std::string &CDemonSet::getGeometryFilename() const {
+    return geometry_filename_;
+}
+
+std::span<const std::uint32_t> CDemonSet::getThumb(std::size_t camera_index) const {
+    return std::span<const std::uint32_t>(thumbs_).subspan(
+        camera_index * kThumbWidth * kThumbHeight, kThumbWidth * kThumbHeight);
 }
 
 } // namespace nocturne::core

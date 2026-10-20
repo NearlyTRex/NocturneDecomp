@@ -10,6 +10,8 @@ struct SVDBox {
     common::CVector3f position;
     common::CVector3f extents;
     common::CMatrix3x3f rotation_matrix;
+    // The next box up its group's tree, or -1 for the group's root.
+    int parent_index = -1;
 };
 
 } // namespace nocturne::core

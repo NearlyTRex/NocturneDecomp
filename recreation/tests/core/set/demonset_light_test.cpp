@@ -5,6 +5,7 @@
 #include "core/set/demonset.h"
 #include "platform/mrglprimitivequad.h"
 #include "platform/rendervertex.h"
+#include "tests/mocks/core/setparts.h"
 #include "tests/mocks/engine/demonrendererfixture.h"
 
 #include <gtest/gtest.h>
@@ -61,7 +62,9 @@ protected:
         return geometry_clips_.size() > before;
     }
 
-    CDemonSet set_{demon_renderer_, matrix_, special_};
+    CSetParts set_parts_{dosio_};
+    CDemonSet set_{
+        set_parts_.owners(demon_renderer_, matrix_, special_, two_d_, screen_, raw_input_)};
 };
 
 TEST_F(CDemonSetLightTest, RotatingPutsTheVerticesInEyeSpaceAndOnTheScreen) {

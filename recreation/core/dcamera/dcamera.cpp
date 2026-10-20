@@ -9,7 +9,6 @@ namespace {
 
 // The .SET version that first held the fog's temperature.
 constexpr int kTemperatureVersion = 26;
-constexpr float kDefaultTemperature = 50.0F;
 
 } // namespace
 
@@ -22,7 +21,7 @@ void loadCameraFog(SFog &fog, common::CTextScanner &scanner, int file_version) {
     common::scanFormat(scanner, "%f,%f,%f\n", fog.scroll.x, fog.scroll.y, fog.scroll.z);
     common::scanFormat(scanner, "%f,%f\n", fog.height_threshold, fog.density_multiplier);
     if (file_version < kTemperatureVersion) {
-        fog.temperature = kDefaultTemperature;
+        fog.temperature = SFog::kDefaultTemperature;
         return;
     }
     common::scanFormat(scanner, "%f\n", fog.temperature);

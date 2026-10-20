@@ -4,6 +4,7 @@
 #include "core/color3i.h"
 #include "core/dmodel/keyframedmodel.h"
 #include "core/fwd.h"
+#include "core/loadingscreen.h"
 #include "engine/fwd.h"
 #include "platform/mrgltexturebasic.h"
 
@@ -27,7 +28,7 @@ struct SLevelLoaderOwners {
 // The loading screen: the moon, lit by a light that swings round it as loading goes on, behind
 // a glow that fades in, either over the whole screen or in a window of its own, with a line of
 // status text under it when it has the screen.
-class CLevelLoader {
+class CLevelLoader : public ILoadingScreen {
 public:
     // show's image_variant for one of the first three pictures, picked at random.
     static constexpr int kRandomImage = -1;
@@ -40,9 +41,8 @@ public:
     // image_variant 0 to 3 draws that picture instead and puts the moon in its window;
     // kRandomImage picks one when the moon would have had the screen.
     void show(int total_frames, bool use_custom_viewport, int image_variant);
-    // Draws the next step and presents it, blacking the screen first when clear_screen is set.
     // Without a window the step's text is centred in a black box near the bottom.
-    void update(std::string_view text, bool clear_screen);
+    void update(std::string_view text, bool clear_screen) override;
     void cleanup();
 
 private:
