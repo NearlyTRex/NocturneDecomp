@@ -84,7 +84,7 @@ void __cdecl core_scat_cpp_CScat_updateAI_FUN_004fc610(CScat *this_ptr,float del
   if (this_ptr->weapon_actor->weapon_type == WEAPON_TYPE_BARON) {
     if (local_7c < (float)8) {
       pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                         (&(this_ptr->base).base.model.motion_controller);
+                         (&(this_ptr->base).base.model.base);
       if ((pSVar5->state_index == 7) && (this_ptr->guns_drawn != 0)) {
         (this_ptr->base).player_input.action_state.fire = 1;
       }

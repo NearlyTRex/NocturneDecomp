@@ -26,8 +26,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_archive_FUN_00419ce0(CBoneGuy *this_ptr)
               (&(this_ptr->base).guard_distance,"guardDistance");
   }
   model_ptr = &(this_ptr->base).base.model;
-  core_actor_cpp_archiveMotionState_FUN_0040cb00
-            (&model_ptr->motion_controller,"motion state");
+  core_actor_cpp_archiveMotionState_FUN_0040cb00(&model_ptr->base,"motion state");
   if (1 < g_INT_005ad054) {
     core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->death_event,"deathEvent");
     core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->recombine_time,"recombineTime");

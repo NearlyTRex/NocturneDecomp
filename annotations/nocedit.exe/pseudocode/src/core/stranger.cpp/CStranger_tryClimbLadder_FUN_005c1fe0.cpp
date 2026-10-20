@@ -102,7 +102,7 @@ int __cdecl core_stranger_cpp_CStranger_tryClimbLadder_FUN_005c1fe0(CStranger *t
             if (0.0 < pCVar2->z) {
               (this_ptr->base).ladder_to_climb = this_ptr_01;
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                        (&(this_ptr->base).base.model.motion_controller,0x2a,1);
+                        (&(this_ptr->base).base.model.base,0x2a,1);
               (this_ptr->base).player_input.action_state.fire = 0;
               CStack_5c.z = 2.0;
               CStack_5c.x = 0.0;

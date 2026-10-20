@@ -608,7 +608,7 @@ extern "C" void nocturne_sim_trace_frame(int sequence_number)
                      (double)character->base.location.position.z,
                      character->base.location.area_id,
                      (double)character->hit_points,
-                     character->model.motion_controller.state_index,
+                     character->model.base.state_index,
                      victim_slot, trace_slot_name(victim_slot),
                      script_slot, trace_slot_name(script_slot),
                      in_combat, (double)search_timer);

@@ -42,15 +42,13 @@ void __cdecl core_mimic_cpp_CMimic_setupCloth_FUN_004d5770(CMimic *this_ptr)
       pSVar5 = (SClothVertex *)((int)pSVar5 + (uint)bVar6 * -2 + 1);
     }
   }
-  frame_number = (g_HeroActors[g_LocalHeroIndex]->base).model.motion_controller.current_frame_number
-  ;
+  frame_number = (g_HeroActors[g_LocalHeroIndex]->base).model.base.current_frame_number;
   motion_name = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                          (&(g_HeroActors[g_LocalHeroIndex]->base).model.motion_controller);
+                          (&(g_HeroActors[g_LocalHeroIndex]->base).model.base);
   this_ptr_00 = &(this_ptr->base).base.model;
   core_motion_cpp_CMotionController_jumpToMotionByName_FUN_004e1960
-            (&this_ptr_00->motion_controller,motion_name->motion_name,frame_number);
-  core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-            (&this_ptr_00->motion_controller,1,1);
+            (&this_ptr_00->base,motion_name->motion_name,frame_number);
+  core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,1,1);
   engine_console_cpp_CConsole_printf_FUN_0043ac60
             (g_CConsole_PTR_005ad350,"%s attacking hero\n",this_ptr);
   return;

@@ -22,7 +22,7 @@ void __cdecl core_mimic_cpp_CMimic_setup_FUN_0051f3e0(CMimic *this_ptr)
   CHero *mirror_hero;
   char *cloth_name;
 #if !NOCTURNE_AUTHENTIC_NETPLAY
-  char saved_motion_name[sizeof((this_ptr->base).base.model.motion_controller.current_motion_name)];
+  char saved_motion_name[sizeof((this_ptr->base).base.model.base.current_motion_name)];
   int motion_index;
 
   saved_motion_name[0] = '\0';
@@ -52,19 +52,19 @@ void __cdecl core_mimic_cpp_CMimic_setup_FUN_0051f3e0(CMimic *this_ptr)
 #if !NOCTURNE_AUTHENTIC_NETPLAY
   if ((nocturne_net_session_active() != 0) && (mirror_hero != (CHero *)0x0)) {
     strcpy(saved_motion_name,
-           (this_ptr->base).base.model.motion_controller.current_motion_name);
-    (this_ptr->base).base.model.motion_controller.current_motion_name[0] = '\0';
+           (this_ptr->base).base.model.base.current_motion_name);
+    (this_ptr->base).base.model.base.current_motion_name[0] = '\0';
   }
 #endif
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(pCVar1);
 #if !NOCTURNE_AUTHENTIC_NETPLAY
   if (saved_motion_name[0] != '\0') {
     motion_index = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460
-                             (pCVar1->motion_controller.motion_list_ptr,saved_motion_name,0);
+                             (pCVar1->base.motion_list_ptr,saved_motion_name,0);
     if (motion_index < 0) {
       motion_index = 0;
     }
-    pCVar1->motion_controller.current_motion_index = motion_index;
+    pCVar1->base.current_motion_index = motion_index;
   }
 #endif
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(pCVar1);

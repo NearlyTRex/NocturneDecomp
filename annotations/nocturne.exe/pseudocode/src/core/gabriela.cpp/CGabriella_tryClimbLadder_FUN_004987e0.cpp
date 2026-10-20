@@ -84,7 +84,7 @@ int __cdecl core_gabriela_cpp_CGabriella_tryClimbLadder_FUN_004987e0(CGabriella 
               if (ABS(local_18) <= (float)0.17453292519444399) {
                 (this_ptr->base).ladder_to_climb = local_24;
                 core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                          (&(this_ptr->base).base.model.motion_controller,0x16,1);
+                          (&(this_ptr->base).base.model.base,0x16,1);
                 (this_ptr->base).player_input.action_state.fire = 0;
                 local_84.x = 0.0;
                 local_84.y = 0.0;

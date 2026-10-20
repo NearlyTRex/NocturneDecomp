@@ -71,28 +71,26 @@ void __cdecl core_stranger_cpp_CStranger_makeDrawDecision_FUN_00539b10(CStranger
   }
   pCVar12 = &(this_ptr->base).base.model;
   local_30 = (CDeformableModelInstance *)
-             core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
-                       (&pCVar12->motion_controller,0x28);
-  local_18 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
-                       (&pCVar12->motion_controller,0x29);
+             core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0(&pCVar12->base,0x28)
+  ;
+  local_18 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0(&pCVar12->base,0x29)
+  ;
   local_30 = (CDeformableModelInstance *)(local_18 + (float)local_30);
-  local_18 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
-                       (&pCVar12->motion_controller,0x24);
+  local_18 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0(&pCVar12->base,0x24)
+  ;
   local_30 = (CDeformableModelInstance *)(local_18 + (float)local_30);
-  local_18 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
-                       (&pCVar12->motion_controller,0x22);
+  local_18 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0(&pCVar12->base,0x22)
+  ;
   local_f8 = (1.0 - (local_18 + (float)local_30)) * local_f8;
   if (local_f8 < 0.0) {
     local_f8 = 0.0;
   }
   if ((this_ptr->base).base.layer_action_index != 0xe) goto LAB_00539cea;
   pCVar12 = &(this_ptr->base).base.model;
-  fVar1 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004e1e60
-                    (&pCVar12->motion_controller);
+  fVar1 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004e1e60(&pCVar12->base);
   local_1c = 1.0;
   local_18 = fVar1;
-  pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                     (&pCVar12->motion_controller);
+  pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(&pCVar12->base);
   iVar16 = pSVar2->state_index;
   if ((iVar16 == 0x17) || (iVar16 == 0x18)) {
     fVar1 = fVar1 + (float)-0.75;
@@ -127,7 +125,7 @@ LAB_00539cea:
   local_20 = core_motion_cpp_CMotionList_findMotionIndex_FUN_004e1010
                        (&pCVar3->motion_list,pcVar15,iVar16);
   local_24 = core_motion_cpp_CMotionController_markerPositionToFrame_FUN_004e1f50
-                       (&pCVar12->motion_controller,local_20,(this_ptr->base).base.layer_action_t);
+                       (&pCVar12->base,local_20,(this_ptr->base).base.layer_action_t);
   local_18 = local_24;
   if ((((this_ptr->base).base.layer_action_index == 9) &&
       (1.0 <= (this_ptr->base).base.layer_action_t)) && (this_ptr->can_grab_weapon != 0)) {
@@ -139,7 +137,7 @@ LAB_00539cea:
     local_20 = iVar16;
     local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.0,1.0);
     local_18 = core_motion_cpp_CMotionController_markerPositionToFrame_FUN_004e1f50
-                         (&pCVar12->motion_controller,iVar16,local_18);
+                         (&pCVar12->base,iVar16,local_18);
   }
   local_24 = local_18;
   core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
@@ -161,9 +159,9 @@ LAB_00539cea:
     (pfVar7 + (uint)bVar10 * -2 + 1)[(uint)bVar10 * -2 + 1] = pfVar4[(uint)bVar10 * -2 + 1];
     core_xform_cpp_slerpQuaternion_FUN_0055d2d0
               ((CQuaternion4f *)
-               ((local_30->motion_controller).current_motion_name + _DAT_02dc9f84 * 0x10 + -0x30),
+               ((local_30->base).current_motion_name + _DAT_02dc9f84 * 0x10 + -0x30),
                (CQuaternion4f *)
-               ((local_30->motion_controller).current_motion_name + _DAT_02dc9f64 * 0x10 + -0x30),
+               ((local_30->base).current_motion_name + _DAT_02dc9f64 * 0x10 + -0x30),
                (this_ptr->base).base.layer_action_t,&local_f0);
     pfVar4 = &(this_ptr->base).base.model.bone_transform.pose_data.bone_rotations[_DAT_02dc9f84].w;
     pfVar7 = pfVar4 + (uint)bVar10 * -2 + 1;

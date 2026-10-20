@@ -30,7 +30,7 @@ int __cdecl core_charactr_cpp_CCharacter_renderOpaque_FUN_0042a2c0(CCharacter *t
         iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2);
         if (iVar2 == 0) {
           core_motion_cpp_CMotionController_render_FUN_0052e700
-                    (&(this_ptr->model).motion_controller,&this_ptr->base);
+                    (&(this_ptr->model).base,&this_ptr->base);
           (*((this_ptr->base).vtable._ub)->renderTargetPoints)(&this_ptr->base);
         }
       }

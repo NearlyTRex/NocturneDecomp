@@ -11,3 +11,6 @@
 // SRaytraceState[5]
 extern SRaytraceState g_SRaytraceState_ARRAY_020842d4[5];
 
+// uint[250][48][64]
+extern uint g_ThumbZBufferTable[250][48][64];
+

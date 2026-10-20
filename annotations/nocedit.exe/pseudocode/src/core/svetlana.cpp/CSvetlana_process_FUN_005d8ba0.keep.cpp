@@ -79,7 +79,7 @@ switchD_005d8f77_caseD_9:
       core_svetlana_cpp_CSvetlana_processAI_FUN_005d9260(this_ptr,delta_time);
     }
     pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                       (&(this_ptr->base).base.model.motion_controller);
+                       (&(this_ptr->base).base.model.base);
     switch(pSVar6->state_index) {
     case 0:
     case 1:
@@ -153,7 +153,7 @@ LAB_005d9032:
         (this_ptr->base).base.turn_angle_accumulator =
              (this_ptr->base).player_input.turn_speed * (this_ptr->base).base.turn_speed;
         pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                           (&(this_ptr->base).base.model.motion_controller);
+                           (&(this_ptr->base).base.model.base);
         if (iVar3 != pSVar6->state_index) goto LAB_005d8cdd;
       }
       break;
@@ -163,7 +163,7 @@ LAB_005d9032:
   }
   else {
     pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                       (&(this_ptr->base).base.model.motion_controller);
+                       (&(this_ptr->base).base.model.base);
     if ((pSVar5->state_index != 0x1a) && (pSVar5->state_index != 0x1b)) {
       (this_ptr->base).base.model.accumulated_root_motion.x = 0.0f;
       (this_ptr->base).base.model.accumulated_root_motion.y = 0.0f;
@@ -183,7 +183,7 @@ LAB_005d8f37:
       if (2 < uVar1) {
         if (uVar1 == 3) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (&(this_ptr->base).base.model.motion_controller,0,1);
+                    (&(this_ptr->base).base.model.base,0,1);
           engine_console_cpp_CConsole_printf_FUN_00441890
                     (g_CConsolePtr,"%s confused while walking to scriptDest!\n",(this_ptr->base).base.base.actor_name);
           goto switchD_005d8f77_caseD_8;
@@ -194,7 +194,7 @@ LAB_005d8f37:
     }
 LAB_005d8cdd:
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              (&(this_ptr->base).base.model.motion_controller,iVar3,1);
+              (&(this_ptr->base).base.model.base,iVar3,1);
   }
 switchD_005d8f77_caseD_8:
 #if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
@@ -204,7 +204,7 @@ switchD_005d8f77_caseD_8:
   if (pCVar1 == (CDemonActor *)0x0) {
     local_5c = (this_ptr->base).base.model.accumulated_root_motion;
     pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                       (&(this_ptr->base).base.model.motion_controller);
+                       (&(this_ptr->base).base.model.base);
     if (pSVar6->state_index != 0x1a) {
       (this_ptr->base).base.velocity.y =
            (this_ptr->base).base.velocity.y - delta_time * (float)32;
@@ -219,14 +219,14 @@ switchD_005d8f77_caseD_8:
                  delta_time * (this_ptr->base).base.velocity.z +
                  (this_ptr->base).base.position_delta.z;
     pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                       (&(this_ptr->base).base.model.motion_controller);
+                       (&(this_ptr->base).base.model.base);
     iVar3 = pSVar6->state_index;
     if ((((iVar3 != 0x17) && (iVar3 != 0x18)) && (iVar3 != 0x19)) &&
        (((iVar3 != 0x25 && (iVar3 != 0x26)) && ((iVar3 != 0x27 && (iVar3 != 0x28)))))) {
       core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40((CCharacter *)this_ptr,&local_5c);
     }
     pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                       (&(this_ptr->base).base.model.motion_controller);
+                       (&(this_ptr->base).base.model.base);
     if (pSVar6->state_index == 0x1a) {
       (this_ptr->base).base.base.location.position.y =
            delta_time * (float)3 + (this_ptr->base).base.base.location.position.y;
@@ -270,7 +270,7 @@ LAB_005d8e14:
     iVar3 = 0x10;
   }
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-            (&(this_ptr->base).base.model.motion_controller,iVar3,1);
+            (&(this_ptr->base).base.model.base,iVar3,1);
 LAB_005d8e27:
   core_charactr_cpp_CCharacter_preProcess_FUN_00429820((CCharacter *)this_ptr);
   this_ptr_01 = &(this_ptr->base).base.model;

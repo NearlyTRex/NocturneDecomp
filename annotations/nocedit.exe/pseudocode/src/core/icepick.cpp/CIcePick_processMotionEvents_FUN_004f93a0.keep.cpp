@@ -18,7 +18,7 @@ void __cdecl core_icepick_cpp_CIcePick_processMotionEvents_FUN_004f93a0(CIcePick
   this_ptr_00 = &(this_ptr->base).base.model;
   do {
     iVar1 = core_motion_cpp_CMotionController_advance_FUN_0052d610
-                      (&this_ptr_00->motion_controller,&delta_time);
+                      (&this_ptr_00->base,&delta_time);
     switch(iVar1) {
     case 100:
       iVar1 = this_ptr->attack_count + 1;
@@ -41,7 +41,7 @@ void __cdecl core_icepick_cpp_CIcePick_processMotionEvents_FUN_004f93a0(CIcePick
 #endif
       if ((uVar2 & 3) == 0) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&this_ptr_00->motion_controller,0x15,1);
+                  (&this_ptr_00->base,0x15,1);
       }
       break;
     case 0x68:

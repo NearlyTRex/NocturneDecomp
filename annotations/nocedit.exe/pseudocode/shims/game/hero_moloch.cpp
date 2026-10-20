@@ -95,7 +95,7 @@ extern "C" unsigned int nocturne_moloch_fire(CMoloch *moloch, unsigned int desir
         return desired_state;
     }
     hero = &moloch->base;
-    controller = &(hero->base).model.motion_controller;
+    controller = &(hero->base).model.base;
 
     // A requested attack blends in from stand for a tenth of a second, and the
     // current motion reads as stand until it arrives, so this branch runs again
@@ -236,7 +236,7 @@ extern "C" int nocturne_moloch_is_attacking(CMoloch *moloch)
     if (moloch == (CMoloch *)0x0) {
         return 0;
     }
-    controller = &(moloch->base).base.model.motion_controller;
+    controller = &(moloch->base).base.model.base;
     return (is_attack_state(controller->state_index) != 0) ||
            (is_attack_state(core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                                 (controller)->state_index) != 0);

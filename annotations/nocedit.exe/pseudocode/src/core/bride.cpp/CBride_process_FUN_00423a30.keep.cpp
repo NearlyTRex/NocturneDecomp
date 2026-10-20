@@ -64,7 +64,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
     pCVar4 = &(this_ptr->base).base.model;
     local_18 = -1.0;
     pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                       (&pCVar4->motion_controller);
+                       (&pCVar4->base);
     uVar9 = pSVar5->state_index;
     if (uVar9 < 5) {
       if (uVar9 == 0) {
@@ -74,7 +74,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
           ;
           if ((this_ptr->base).victim != (CCharacter *)0x0) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                      (&pCVar4->motion_controller,1,1);
+                      (&pCVar4->base,1,1);
             iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[0]);
             if ((iVar7 == 0) &&
                (iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[1]),
@@ -87,7 +87,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
         }
         else {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (&(this_ptr->base).base.model.motion_controller,1,1);
+                    (&(this_ptr->base).base.model.base,1,1);
         }
       }
       else if (uVar9 == 1) {
@@ -95,7 +95,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
           local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(10.0,20.0);
           this_ptr->action_timer = local_14;
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (&pCVar4->motion_controller,3,1);
+                    (&pCVar4->base,3,1);
           iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[0]);
           if ((iVar7 == 0) &&
              (iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[1]),
@@ -117,7 +117,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
           iVar7 = core_enemy_cpp_CEnemy_updatePatrol_FUN_004a9fd0(&this_ptr->base,delta_time);
           if (iVar7 == 0) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                      (&pCVar4->motion_controller,0,1);
+                      (&pCVar4->base,0,1);
           }
         }
         else {
@@ -135,7 +135,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
                              fVar10,fVar11);
           if (iVar7 < 0) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                      (&pCVar4->motion_controller,0,1);
+                      (&pCVar4->base,0,1);
           }
           else if (((0 < iVar7) && ((this_ptr->base).attack_cooldown <= 0.0)) &&
                   (pCVar5 = (this_ptr->base).victim,
@@ -149,7 +149,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
               iVar7 = 5;
             }
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                      (&pCVar4->motion_controller,iVar7,1);
+                      (&pCVar4->base,iVar7,1);
             iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[0]);
             if ((iVar7 == 0) &&
                (iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[1]),
@@ -166,7 +166,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
       pCVar5 = (this_ptr->base).victim;
       if (pCVar5 == (CCharacter *)0x0) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&pCVar4->motion_controller,1,1);
+                  (&pCVar4->base,1,1);
       }
       else {
         pCVar10 = (*(((pCVar5->base).vtable._uc)->_uc).getGrabber)(pCVar5);
@@ -174,7 +174,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
           local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.2,0.5);
           (this_ptr->base).attack_cooldown = local_14;
           local_20 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_0052e2b0
-                               (&pCVar4->motion_controller);
+                               (&pCVar4->base);
           local_14 = local_20;
           if (local_20 <= (float)3) {
             local_18 = 2.5f;
@@ -224,7 +224,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
         }
         else {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (&pCVar4->motion_controller,1,1);
+                    (&pCVar4->base,1,1);
         }
       }
     }
@@ -232,7 +232,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
       pCVar5 = (this_ptr->base).victim;
       if (pCVar5 == (CCharacter *)0x0) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&pCVar4->motion_controller,1,1);
+                  (&pCVar4->base,1,1);
       }
       else {
         pCVar10 = (*(((pCVar5->base).vtable._uc)->_uc).getGrabber)(pCVar5);
@@ -240,7 +240,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
           local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.2,0.5);
           (this_ptr->base).attack_cooldown = local_14;
           local_1c = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_0052e2b0
-                               (&pCVar4->motion_controller);
+                               (&pCVar4->base);
           local_14 = local_1c;
           if (local_1c <= (float)8) {
             local_18 = 2.5f;
@@ -292,7 +292,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
         }
         else {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (&pCVar4->motion_controller,1,1);
+                    (&pCVar4->base,1,1);
         }
       }
     }
@@ -324,7 +324,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
                          ,pCVar9,pCVar11,min_distance,max_distance);
       if (iVar7 != 1) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&(this_ptr->base).base.model.motion_controller,1,1);
+                  (&(this_ptr->base).base.model.base,1,1);
         (this_ptr->base).base.turn_angle_accumulator = 0.0;
       }
     }
@@ -334,7 +334,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
     local_24 = delta_time * (this_ptr->base).speed;
     while (0.0 < local_24) {
       iVar7 = core_motion_cpp_CMotionController_advance_FUN_0052d610
-                        (&(this_ptr->base).base.model.motion_controller,&local_24);
+                        (&(this_ptr->base).base.model.base,&local_24);
       if (iVar7 != 0x11) {
         core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,iVar7);
       }
@@ -356,7 +356,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
       local_ec.z = delta_time * (this_ptr->base).base.velocity.z +
                    (this_ptr->base).base.position_delta.z;
       pSVar13 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                          (&(this_ptr->base).base.model.motion_controller);
+                          (&(this_ptr->base).base.model.base);
       if (pSVar13->state_index != 1) {
         local_ec.x = local_ec.x + (this_ptr->base).base.model.accumulated_root_motion.x;
         local_ec.y = local_ec.y + (this_ptr->base).base.model.accumulated_root_motion.y;

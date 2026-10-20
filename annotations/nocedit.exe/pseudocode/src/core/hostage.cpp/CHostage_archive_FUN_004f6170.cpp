@@ -18,8 +18,7 @@ void __cdecl core_hostage_cpp_CHostage_archive_FUN_004f6170(CHostage *this_ptr)
   if (g_CHostageClassVersion < 10) {
     model_ptr = &(this_ptr->base).base.model;
     core_actor_cpp_archiveDeformableModelInstance_FUN_0040b970(model_ptr,"modelName");
-    core_actor_cpp_archiveMotionState_FUN_0040b9f0
-              (&model_ptr->motion_controller,"motion state");
+    core_actor_cpp_archiveMotionState_FUN_0040b9f0(&model_ptr->base,"motion state");
   }
   core_actor_cpp_archivePartStatus_FUN_0040bae0(&(this_ptr->base).base.model,"partStatus");
   core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->rescue_distance,"rescueDistance");

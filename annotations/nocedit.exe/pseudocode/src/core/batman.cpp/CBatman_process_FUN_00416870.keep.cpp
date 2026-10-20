@@ -77,7 +77,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
   local_3c = delta_time * (this_ptr->base).speed;
   while (0.0 < local_3c) {
     iVar17 = core_motion_cpp_CMotionController_advance_FUN_0052d610
-                       (&(this_ptr->base).base.model.motion_controller,&local_3c);
+                       (&(this_ptr->base).base.model.base,&local_3c);
     core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,iVar17);
   }
   fVar7 = (this_ptr->base).speed;
@@ -86,7 +86,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
   (this_ptr->base).base.turn_speed = delta_time * fVar9 * fVar7;
   pSVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                     (&pCVar6->motion_controller);
+                     (&pCVar6->base);
   iVar17 = pSVar7->state_index;
   local_28 = iVar17;
   iVar8 = core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70
@@ -99,7 +99,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
         iVar17 = core_enemy_cpp_CEnemy_updatePatrol_FUN_004a9fd0(&this_ptr->base,delta_time);
         if (iVar17 != 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (&pCVar6->motion_controller,1,1);
+                    (&pCVar6->base,1,1);
         }
       }
       else {
@@ -118,7 +118,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
           }
           if (iVar17 == g_CDemonSetPtr->enemy_count) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                      (&(this_ptr->base).base.model.motion_controller,0xd,1);
+                      (&(this_ptr->base).base.model.base,0xd,1);
             pCVar8 = (this_ptr->base).victim;
             pCVar12 = &(pCVar8->base).location;
             this_ptr->mist_state = 1;
@@ -146,7 +146,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
                                (local_80.y - (this_ptr->base).base.base.orient.vec.y);
           if (ABS(local_14) < (float)0.52359877558333301) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                      (&(this_ptr->base).base.model.motion_controller,3,1);
+                      (&(this_ptr->base).base.model.base,3,1);
           }
         }
         core_batman_cpp_CBatman_pickRandomMovementState_FUN_004167f0(this_ptr);
@@ -161,11 +161,11 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
         iVar17 = core_enemy_cpp_CEnemy_updatePatrol_FUN_004a9fd0(&this_ptr->base,delta_time);
         if (iVar17 == 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (&pCVar6->motion_controller,0,1);
+                    (&pCVar6->base,0,1);
         }
         else {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (&pCVar6->motion_controller,1,1);
+                    (&pCVar6->base,1,1);
         }
       }
       else {
@@ -205,7 +205,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
                                  (local_98.y - (this_ptr->base).base.base.orient.vec.y);
             if (ABS(local_14) < (float)0.52359877558333301) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                        (&pCVar6->motion_controller,3,1);
+                        (&pCVar6->base,3,1);
               uVar15 = this_ptr->sfx_handles[1];
               (this_ptr->base).attack_cooldown = 1.0;
               iVar17 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(uVar15);
@@ -220,7 +220,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
           }
           if ((this_ptr->base).guard_distance < local_34) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                      (&(this_ptr->base).base.model.motion_controller,0,1);
+                      (&(this_ptr->base).base.model.base,0,1);
           }
         }
       }
@@ -259,7 +259,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
          (iVar17 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                              (g_CEventListPtr,this_ptr->fall_event), iVar17 != 0)) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&(this_ptr->base).base.model.motion_controller,0xb,1);
+                  (&(this_ptr->base).base.model.base,0xb,1);
         iVar17 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[1]);
         if ((iVar17 == 0) &&
            ((iVar17 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[2]),
@@ -276,14 +276,14 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
       if ((this_ptr->base).base.base.location.position.y <
           (this_ptr->base).base.closest_distance_threshold + 1.0) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&pCVar6->motion_controller,0xc,1);
+                  (&pCVar6->base,0xc,1);
       }
       break;
     case 0xd:
       switch(this_ptr->mist_state) {
       case 0:
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&pCVar6->motion_controller,0,1);
+                  (&pCVar6->base,0,1);
         break;
       case 1:
         fVar7 = this_ptr->vanish_timer + delta_time;
@@ -389,13 +389,13 @@ LAB_00416b03:
       iVar17 = 0;
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              (&(this_ptr->base).base.model.motion_controller,iVar17,1);
+              (&(this_ptr->base).base.model.base,iVar17,1);
   }
   else {
     if (uVar15 < 3) goto LAB_00416943;
     if (uVar15 != 3) goto LAB_00416b03;
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              (&(this_ptr->base).base.model.motion_controller,0,1);
+              (&(this_ptr->base).base.model.base,0,1);
     engine_console_cpp_CConsole_printf_FUN_00441890
               (g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr->base.base.base.actor_name);
   }

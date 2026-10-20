@@ -71,7 +71,7 @@ int __cdecl core_batman_cpp_CBatman_renderOpaque_FUN_00414340(CBatman *this_ptr)
          (iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090
                             (g_CDemonRenderer_PTR_005ae704), iVar2 == 0)) {
         core_motion_cpp_CMotionController_render_FUN_004e22b0
-                  (&(this_ptr->base).base.model.motion_controller,(CDemonActor *)this_ptr);
+                  (&(this_ptr->base).base.model.base,(CDemonActor *)this_ptr);
         (*((this_ptr->base).base.base.vtable._ub)->renderTargetPoints)((CDemonActor *)this_ptr);
       }
     }

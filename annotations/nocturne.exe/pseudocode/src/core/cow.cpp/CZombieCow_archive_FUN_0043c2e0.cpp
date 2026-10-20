@@ -18,6 +18,6 @@ void __cdecl core_cow_cpp_CZombieCow_archive_FUN_0043c2e0(CZombieCow *this_ptr)
               (&(this_ptr->base).guard_distance,"guardDistance");
   }
   core_actor_cpp_archiveMotionState_FUN_0040cb00
-            (&(this_ptr->base).base.model.motion_controller,"motion state");
+            (&(this_ptr->base).base.model.base,"motion state");
   return;
 }

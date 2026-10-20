@@ -8,18 +8,18 @@
 extern "C" int nocturne_hero_motion_state(CCharacter *character)
 {
     return core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-               (&(character->model).motion_controller)->state_index;
+               (&(character->model).base)->state_index;
 }
 
 extern "C" int nocturne_hero_motion_find_state(CCharacter *character, const char *name)
 {
     return core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0
-        ((character->model).motion_controller.motion_list_ptr, (char *)name, 0);
+        ((character->model).base.motion_list_ptr, (char *)name, 0);
 }
 
 extern "C" int nocturne_hero_motion_force_state(CCharacter *character, int state)
 {
-    CMotionController *controller = &(character->model).motion_controller;
+    CMotionController *controller = &(character->model).base;
     CMotionList       *list = controller->motion_list_ptr;
     int                i;
 
@@ -41,7 +41,7 @@ extern "C" int nocturne_hero_motion_crossed(CCharacter *character, int state, in
     if (nocturne_hero_motion_state(character) != state) {
         return 0;
     }
-    frame = (character->model).motion_controller.current_frame_number;
+    frame = (character->model).base.current_frame_number;
     if ((prev_state != state) || (frame < prev_frame)) {
         return hit_frame <= frame;          // the motion started this frame
     }

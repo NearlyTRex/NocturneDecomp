@@ -28,8 +28,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_processDamage_FUN_004e57d0(CGargoyle *t
               (g_CFireEffectPtr,&local_1c,(CVector3f *)0x0,0x10000,0x8000,0,0xffff);
   } while (iVar4 < 3);
   this_ptr_01 = &(this_ptr->base).base.model;
-  pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                     (&this_ptr_01->motion_controller);
+  pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(&this_ptr_01->base);
   if (pSVar2->state_index != 5) {
     core_gargoyle_cpp_CGargoyle_processDismemberment_FUN_004e5530(this_ptr,damage_info);
     fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
@@ -47,11 +46,9 @@ void __cdecl core_gargoyle_cpp_CGargoyle_processDamage_FUN_004e57d0(CGargoyle *t
     else {
       sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handles[0]);
       (this_ptr->base).base.hit_points = 0.0;
-      pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                         (&this_ptr_01->motion_controller);
+      pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(&this_ptr_01->base);
       if (pSVar1->state_index != 8) {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&this_ptr_01->motion_controller,8,1);
+        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr_01->base,8,1);
         (*((this_ptr->base).base.base.vtable._ub)->playSound)
                   ((CDemonActor *)this_ptr,"gargoyle-shatter.wav");
         core_charactr_cpp_CCharacter_dismember_FUN_0042b9e0

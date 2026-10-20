@@ -38,15 +38,14 @@ void __cdecl core_biggs_cpp_CBiggs_process_FUN_004154b0(CBiggs *this_ptr,float d
   local_40 = delta_time * (this_ptr->base).speed;
   this_ptr_00 = &(this_ptr->base).base.model;
   while (0.0 < local_40) {
-    iVar6 = core_motion_cpp_CMotionController_advance_FUN_004e11c0
-                      (&this_ptr_00->motion_controller,&local_40);
+    iVar6 = core_motion_cpp_CMotionController_advance_FUN_004e11c0(&this_ptr_00->base,&local_40);
     core_charactr_cpp_CCharacter_processMotion_FUN_0042add0((CCharacter *)this_ptr,iVar6);
   }
   fVar3 = (this_ptr->base).speed;
   fVar5 = (float)3.1415926535000001;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
   (this_ptr->base).base.turn_speed = delta_time * fVar5 * fVar3;
-  core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(&this_ptr_00->motion_controller);
+  core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(&this_ptr_00->base);
   iVar6 = core_charactr_cpp_CCharacter_processWalking_FUN_00428c00
                     ((CCharacter *)this_ptr,delta_time);
   if (iVar6 == 0) goto LAB_0041558b;
@@ -61,13 +60,12 @@ LAB_00415744:
       iVar6 = 0;
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-              (&(this_ptr->base).base.model.motion_controller,iVar6,1);
+              (&(this_ptr->base).base.model.base,iVar6,1);
   }
   else {
     if (uVar4 < 3) goto LAB_00415560;
     if (uVar4 != 3) goto LAB_00415744;
-    core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-              (&this_ptr_00->motion_controller,0,1);
+    core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,0,1);
     engine_console_cpp_CConsole_printf_FUN_0043ac60
               (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",this_ptr);
   }

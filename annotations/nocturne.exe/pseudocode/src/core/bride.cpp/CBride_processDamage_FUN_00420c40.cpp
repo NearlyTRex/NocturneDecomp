@@ -54,20 +54,19 @@ void __cdecl core_bride_cpp_CBride_processDamage_FUN_00420c40(CBride *this_ptr,S
     iVar4 = 1;
     iVar2 = core_actor_cpp_randomChance_FUN_0040dea0(0.5);
     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-              (&this_ptr_00->motion_controller,(iVar2 == 0) + 7,iVar4);
+              (&this_ptr_00->base,(iVar2 == 0) + 7,iVar4);
     iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(this_ptr->sfx_handles[0]);
     if (iVar2 != 0) goto LAB_00420d65;
     sound_name = "ub-hurt?.wav";
   }
   else {
     (this_ptr->base).base.hit_points = 0.0;
-    pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                       (&this_ptr_00->motion_controller);
+    pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(&this_ptr_00->base);
     if ((pSVar1->state_index == 0xe) || (pSVar1->state_index == 0xd)) goto LAB_00420d65;
     iVar4 = 1;
     iVar2 = core_actor_cpp_randomChance_FUN_0040dea0(0.5);
     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-              (&this_ptr_00->motion_controller,(iVar2 == 0) + 0xb,iVar4);
+              (&this_ptr_00->base,(iVar2 == 0) + 0xb,iVar4);
     sound_sndmain_cpp_killSfx_FUN_00527230(this_ptr->sfx_handles[0]);
     sound_name = "ub-die?.wav";
   }

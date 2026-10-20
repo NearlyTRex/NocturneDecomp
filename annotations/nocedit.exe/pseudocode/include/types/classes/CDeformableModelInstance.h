@@ -16,7 +16,7 @@ struct CVector3i;
 // Ghidra size: 0x22b4 (8884 bytes)
 #pragma pack(push, 1)
 typedef struct CDeformableModelInstance {
-    CMotionController motion_controller; // 0x0
+    CMotionController base; // 0x0
     float scale_factor; // 0x54
     CVector3f transformed_vertices[100]; // 0x58
     CVector3f scaled_model_dimensions; // 0x508

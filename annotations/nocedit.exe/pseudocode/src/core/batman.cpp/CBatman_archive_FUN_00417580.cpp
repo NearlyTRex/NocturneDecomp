@@ -15,8 +15,7 @@ void __cdecl core_batman_cpp_CBatman_archive_FUN_00417580(CBatman *this_ptr)
   core_actor_cpp_archiveFloat_FUN_0040b770(&(this_ptr->base).speed,"speed");
   model_ptr = &(this_ptr->base).base.model;
   core_actor_cpp_archiveDeformableModelInstance_FUN_0040b970(model_ptr,"modelName");
-  core_actor_cpp_archiveMotionState_FUN_0040b9f0
-            (&model_ptr->motion_controller,"motion state");
+  core_actor_cpp_archiveMotionState_FUN_0040b9f0(&model_ptr->base,"motion state");
   if (g_CBatmanClassVersion < 2) {
     if (g_CBatmanClassVersion < 3) {
       return;

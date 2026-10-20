@@ -28,15 +28,12 @@ void __cdecl core_colonel_cpp_CColonel_processDamage_FUN_0043aa00(CColonel *this
   (this_ptr->base).base.hit_points = fVar1;
   if (fVar1 <= 0.0) {
     (this_ptr->base).base.hit_points = 0.0;
-    pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                       (&this_ptr_00->motion_controller);
+    pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(&this_ptr_00->base);
     if (pSVar2->state_index != 6) {
-      pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                         (&this_ptr_00->motion_controller);
+      pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(&this_ptr_00->base);
       if (pSVar2->state_index != 5) {
         (this_ptr->base).base.grabbed_by = (CDemonActor *)0x0;
-        core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                  (&this_ptr_00->motion_controller,5,1);
+        core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,5,1);
         core_gore_cpp_CGore_spawnFliesOnActor_FUN_004b0670
                   (g_CGore_PTR_005b96c4,(CDemonActor *)this_ptr,0x32,50.0,(CVector3f *)0x0);
         core_charactr_cpp_CCharacter_processDamage_FUN_00428510((CCharacter *)this_ptr,damage_info);
@@ -45,8 +42,7 @@ void __cdecl core_colonel_cpp_CColonel_processDamage_FUN_0043aa00(CColonel *this
     }
   }
   else if (0.0 < damage_info->damage_amount) {
-    core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-              (&this_ptr_00->motion_controller,4,1);
+    core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,4,1);
     core_charactr_cpp_CCharacter_processDamage_FUN_00428510((CCharacter *)this_ptr,damage_info);
     return;
   }

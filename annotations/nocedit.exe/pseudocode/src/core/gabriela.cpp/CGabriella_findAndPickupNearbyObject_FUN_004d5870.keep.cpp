@@ -139,6 +139,6 @@ LAB_004d5bd9:
     desired_state_index = 4;
   }
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-            (&(this_ptr->base).base.model.motion_controller,desired_state_index,1);
+            (&(this_ptr->base).base.model.base,desired_state_index,1);
   return 1;
 }

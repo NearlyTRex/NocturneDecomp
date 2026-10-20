@@ -143,7 +143,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_0054c690(CVampireBoss *t
         this_ptr->action_timer = 0.0;
       }
       pSVar9 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                         (&(this_ptr->model).motion_controller);
+                         (&(this_ptr->model).base);
       if ((((pSVar9->state_index == 0) && (this_ptr->bat_ai_state == 0)) &&
           (fVar3 < (float)24)) && (this_ptr->has_attacked == 0)) {
         this_ptr->has_attacked = 1;
@@ -155,7 +155,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_0054c690(CVampireBoss *t
           iVar8 = 1;
         }
         core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                  (&(this_ptr->model).motion_controller,iVar8,1);
+                  (&(this_ptr->model).base,iVar8,1);
       }
     }
     pCVar4 = g_HeroActors[g_LocalHeroIndex];
@@ -294,7 +294,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_0054c690(CVampireBoss *t
     pCVar2 = &(this_ptr->base).base.model;
     local_20 = delta_time;
     while (0.0 < local_20) {
-      core_motion_cpp_CMotionController_advance_FUN_004e11c0(&pCVar2->motion_controller,&local_20);
+      core_motion_cpp_CMotionController_advance_FUN_004e11c0(&pCVar2->base,&local_20);
     }
     core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0051b880(pCVar2);
     local_18 = (CVector3f *)&(this_ptr->base).base.base.orient;
@@ -356,7 +356,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_0054c690(CVampireBoss *t
     pCVar2 = &(this_ptr->base).base.model;
     local_1c = delta_time;
     while (0.0 < local_1c) {
-      core_motion_cpp_CMotionController_advance_FUN_004e11c0(&pCVar2->motion_controller,&local_1c);
+      core_motion_cpp_CMotionController_advance_FUN_004e11c0(&pCVar2->base,&local_1c);
     }
     core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0051b880(pCVar2);
     euler = &(this_ptr->base).base.base.orient;
@@ -391,8 +391,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_0054c690(CVampireBoss *t
   local_30 = &(this_ptr->base).base.model;
   local_78[0] = delta_time;
   while (0.0 < local_78[0]) {
-    uVar11 = core_motion_cpp_CMotionController_advance_FUN_004e11c0
-                       (&local_30->motion_controller,local_78);
+    uVar11 = core_motion_cpp_CMotionController_advance_FUN_004e11c0(&local_30->base,local_78);
     if (uVar11 < 2) {
       if (uVar11 == 1) {
         core_vampboss_cpp_CVampireBoss_summonStalagmites_FUN_0054e0b0(this_ptr);
@@ -452,8 +451,7 @@ LAB_0054d1ae:
     (this_ptr->base).base.cached_bounding_box.max.z = (pCVar10->max).z;
   }
   pCVar2 = &(this_ptr->base).base.model;
-  pSVar9 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                     (&pCVar2->motion_controller);
+  pSVar9 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(&pCVar2->base);
   pCVar7 = g_CGame_PTR_005b9354;
   iVar8 = pSVar9->state_index;
   switch(iVar8) {
@@ -507,16 +505,13 @@ LAB_0054d1ae:
             iVar13 = core_actor_cpp_getRandomInt_FUN_0040de00(0,2);
             pCVar2 = &(this_ptr->base).base.model;
             if (iVar13 == 0) {
-              core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                        (&pCVar2->motion_controller,4,1);
+              core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar2->base,4,1);
             }
             else if (iVar13 == 1) {
-              core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                        (&pCVar2->motion_controller,5,1);
+              core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar2->base,5,1);
             }
             else if (iVar13 == 2) {
-              core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                        (&pCVar2->motion_controller,6,1);
+              core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar2->base,6,1);
             }
           }
         }
@@ -570,8 +565,7 @@ LAB_0054d280:
     iVar13 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
                        (0x01C03A10,"flyout");
     if (iVar13 != 0) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar2->motion_controller,0,1)
-      ;
+      core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar2->base,0,1);
     }
   }
   if ((g_CGame_PTR_005b9354->letterbox_mode == 0) && (iVar8 != 2)) {
@@ -606,7 +600,7 @@ LAB_0054d280:
              (this_ptr->base).base.closest_distance_threshold,pCVar2);
 LAB_0054cc7f:
   pSVar9 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                     (&(this_ptr->base).base.model.motion_controller);
+                     (&(this_ptr->base).base.model.base);
   if ((pSVar9->state_index != 2) && (g_CGame_PTR_005b9354->letterbox_mode == 0)) {
     core_game_cpp_CGame_setStatusDisplay_FUN_004a3ab0
               (g_CGame_PTR_005b9354,(this_ptr->base).base.descriptive_name,

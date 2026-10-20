@@ -19,6 +19,6 @@ void __cdecl core_stranger_cpp_CStranger_dropRightHandObject_FUN_005c1f80(CStran
   (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
             ((CCharacter *)this_ptr,1,(CVector3f *)0x0);
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-            (&(this_ptr->base).base.model.motion_controller,0,1);
+            (&(this_ptr->base).base.model.base,0,1);
   return;
 }

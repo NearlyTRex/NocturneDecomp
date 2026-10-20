@@ -58,7 +58,7 @@
       {
         "category": "format_error",
         "column": 85,
-        "line": 317,
+        "line": 312,
         "message": "format specifies type 'char *' but the argument has type 'CBatCreature *' [-Werror,-Wformat]"
       }
     ],
@@ -68,19 +68,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 805,
-    "complexity_score": 431,
+    "complexity_score": 426,
     "cross_reference_count": 0,
     "function_call_count": 25,
     "global_count": 17,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 346,
+    "pseudocode_lines": 341,
     "suspect_count": 7,
     "suspect_types": [
       "undefined_data",
       "unrolled_memset",
       "warning_type_propagation"
     ],
-    "total_lines": 1151
+    "total_lines": 1146
   },
   "cross_references": [],
   "function": {
@@ -771,7 +771,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 273,
+      "line": 268,
       "match": "DAT_007645a4",
       "severity": "mild",
       "text": "DAT_007645a4);",
@@ -787,7 +787,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 178,
+      "line": 173,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -795,7 +795,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 312,
+      "line": 307,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -803,7 +803,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 336,
+      "line": 331,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.position_delta.z = 0.0;",
@@ -811,7 +811,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 339,
+      "line": 334,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",

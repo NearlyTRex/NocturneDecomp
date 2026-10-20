@@ -67,7 +67,7 @@ int __cdecl core_stranger_cpp_CStranger_tryPickupObject_FUN_0053b630(CStranger *
        ) || (local_14 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0
                                   ((CCharacter *)this_ptr,0), local_14 < (float)0.98999999999999999)) ||
      (((local_14 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
-                             (&(this_ptr->base).base.model.motion_controller,0), local_14 < 1.0 ||
+                             (&(this_ptr->base).base.model.base,0), local_14 < 1.0 ||
        ((this_ptr->base).base.carry_hands[0].carry_actor != (CDemonActor *)0x0)) ||
       ((this_ptr->base).base.carry_hands[1].carry_actor != (CDemonActor *)0x0)))) {
     return 0;
@@ -202,7 +202,7 @@ LAB_0053b782:
   switch(iStack_30) {
   case 1:
     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-              (&(this_ptr->base).base.model.motion_controller,0x1b,1);
+              (&(this_ptr->base).base.model.base,0x1b,1);
     pCVar8 = (this_ptr->base).object_to_pick_up;
     format = "Rummaging %s\n";
     break;
@@ -214,8 +214,7 @@ LAB_0053b782:
        (iVar5 = (*((pCVar8->vtable)._ub)->canPickup)(pCVar8,(CDemonActor *)this_ptr), iVar5 != 4)) {
       pCVar1 = &(this_ptr->base).base.model;
       if ((this_ptr->carry_object_world_center).y <= (float)2) {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                  (&pCVar1->motion_controller,0x13,1);
+        core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar1->base,0x13,1);
         pCVar8 = (this_ptr->base).object_to_pick_up;
         format = "Picking up %s off ground\n";
       }
@@ -240,8 +239,7 @@ LAB_0053b782:
           (this_ptr->base).object_to_pick_up = (CDemonActor *)0x0;
           return 0;
         }
-        core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                  (&pCVar1->motion_controller,0x15,1);
+        core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar1->base,0x15,1);
         pCVar8 = (this_ptr->base).object_to_pick_up;
         format = "Picking up %s waist level\n";
       }
@@ -254,8 +252,7 @@ LAB_0053b782:
       pCVar1 = &(this_ptr->base).base.model;
       this_ptr->pickup_facing_reversed = (uint)(0.0 < pCVar7->z);
       if ((float)2.5 < fVar2) {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                  (&pCVar1->motion_controller,0x18,1);
+        core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar1->base,0x18,1);
         pCVar7 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
                            ((CDemonActor *)this_ptr,&CStack_118,
                             &(((this_ptr->base).object_to_pick_up)->location).position);
@@ -268,8 +265,7 @@ LAB_0053b782:
         format = "Picking up heavy %s shelf\n";
       }
       else {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                  (&pCVar1->motion_controller,0x17,1);
+        core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar1->base,0x17,1);
         pCVar8 = (this_ptr->base).object_to_pick_up;
         format = "Picking up heavy %s crate\n";
       }

@@ -47,8 +47,7 @@ void __cdecl core_hostage_cpp_CHostage_setup_FUN_004b6b20(CHostage *this_ptr)
   }
   this_ptr_00 = &(this_ptr->base).base.model;
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(this_ptr_00);
-  this_ptr_02 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890
-                          (&this_ptr_00->motion_controller);
+  this_ptr_02 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890(&this_ptr_00->base);
   iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0
                     (this_ptr_01,"Bip01 R UpperArm",1);
   this_ptr->bone_indices[1] = iVar1;

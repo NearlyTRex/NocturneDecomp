@@ -122,15 +122,15 @@ void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004b3880(CHaystack *this_p
         }
         else {
           pSVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                             (&this_ptr_00->motion_controller);
+                             (&this_ptr_00->base);
           if ((pSVar7->state_index != 2) && (pSVar7->state_index != 1)) {
             (this_ptr->base).player_input.action_state.fire = 1;
           }
         }
       }
       else {
-        pSVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                           (&this_ptr_00->motion_controller);
+        pSVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(&this_ptr_00->base)
+        ;
         if ((pSVar7->state_index == 10) && (this_ptr->guns_drawn != 0)) {
           (this_ptr->base).player_input.action_state.draw = 1;
         }

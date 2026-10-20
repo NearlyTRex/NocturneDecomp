@@ -56,10 +56,10 @@ void __cdecl core_passngr_cpp_CPassenger_setup_FUN_004ef6d0(CPassenger *this_ptr
     iVar6 = 1;
     pcVar5 = "transform";
     this_ptr_02 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890
-                            (&(this_ptr->werewolf_actor->base).base.model.motion_controller);
+                            (&(this_ptr->werewolf_actor->base).base.model.base);
     iVar6 = core_motion_cpp_CMotionList_findMotionIndex_FUN_004e1010(this_ptr_02,pcVar5,iVar6);
     core_motion_cpp_CMotionController_jumpToMotion_FUN_004e1990
-              (&(this_ptr->werewolf_actor->base).base.model.motion_controller,iVar6,0.0);
+              (&(this_ptr->werewolf_actor->base).base.model.base,iVar6,0.0);
   }
   core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0051b800
             (&(this_ptr->werewolf_actor->base).base.model);

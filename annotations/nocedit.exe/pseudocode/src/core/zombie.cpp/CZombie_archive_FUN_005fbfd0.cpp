@@ -19,7 +19,7 @@ void __cdecl core_zombie_cpp_CZombie_archive_FUN_005fbfd0(CZombie *this_ptr)
                 (&(this_ptr->base).guard_distance,"guardDistance");
     }
     core_actor_cpp_archiveMotionState_FUN_0040b9f0
-              (&(this_ptr->base).base.model.motion_controller,"motion state");
+              (&(this_ptr->base).base.model.base,"motion state");
   }
   if (2 < g_CZombieClassVersion) {
     core_actor_cpp_archivePartStatus_FUN_0040bae0

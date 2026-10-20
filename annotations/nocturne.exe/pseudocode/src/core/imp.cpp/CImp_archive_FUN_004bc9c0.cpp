@@ -15,7 +15,6 @@ void __cdecl core_imp_cpp_CImp_archive_FUN_004bc9c0(CImp *this_ptr)
   core_actor_cpp_archiveFloat_FUN_0040c880(&(this_ptr->base).speed,"speed");
   model_ptr = &(this_ptr->base).base.model;
   core_actor_cpp_archiveDeformableModelInstance_FUN_0040ca80(model_ptr,"modelName");
-  core_actor_cpp_archiveMotionState_FUN_0040cb00
-            (&model_ptr->motion_controller,"motion state");
+  core_actor_cpp_archiveMotionState_FUN_0040cb00(&model_ptr->base,"motion state");
   return;
 }

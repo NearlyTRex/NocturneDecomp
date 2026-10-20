@@ -147,7 +147,7 @@ typedef struct CZombie_process_Ctx {
 #define GOTO_LAB_005fa18b 3
 #define GOTO_LAB_005f9f22 4
 
-// Chunk: check_0_0_check_uVar8_0 (lines 36-153 of original)
+// Chunk: check_0_0_check_uVar8_0 (lines 35-152 of original)
 static int CZombie_process_check_0_0_check_uVar8_0(CZombie_process_Ctx *ctx) {
     CZombie *&this_ptr = ctx->this_ptr;
     CCharacter *&pCVar3 = ctx->pCVar3;
@@ -295,7 +295,7 @@ LAB_005f9541:
     return 0;
 }
 
-// Chunk: check_0_0_check_uVar8_1 (lines 173-237 of original)
+// Chunk: check_0_0_check_uVar8_1 (lines 172-236 of original)
 static int CZombie_process_check_0_0_check_uVar8_1(CZombie_process_Ctx *ctx) {
     CZombie *&this_ptr = ctx->this_ptr;
     CCharacter *&pCVar3 = ctx->pCVar3;
@@ -387,7 +387,7 @@ static int CZombie_process_check_0_0_check_uVar8_1(CZombie_process_Ctx *ctx) {
     return 0;
 }
 
-// Chunk: check_0_0_else_2 (lines 245-281 of original)
+// Chunk: check_0_0_else_2 (lines 244-280 of original)
 static int CZombie_process_check_0_0_else_2(CZombie_process_Ctx *ctx) {
     CZombie *&this_ptr = ctx->this_ptr;
     CDeformableModelInstance *&pCVar2 = ctx->pCVar2;
@@ -438,7 +438,7 @@ static int CZombie_process_check_0_0_else_2(CZombie_process_Ctx *ctx) {
     return 0;
 }
 
-// Chunk: branch_0_check_uVar8_0_branch_0 (lines 317-360 of original)
+// Chunk: branch_0_check_uVar8_0_branch_0 (lines 314-357 of original)
 static int CZombie_process_branch_0_check_uVar8_0_branch_0(CZombie_process_Ctx *ctx) {
     CZombie *&this_ptr = ctx->this_ptr;
     float &delta_time = ctx->delta_time;
@@ -454,11 +454,11 @@ static int CZombie_process_branch_0_check_uVar8_0_branch_0(CZombie_process_Ctx *
           iVar6 = 0;
           pcVar23 = "pickass";
           pCVar7 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
-                             (&(this_ptr->base).base.model.motion_controller);
+                             (&(this_ptr->base).base.model.base);
           iVar6 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(pCVar7,pcVar23,iVar6);
           if (-1 < iVar6) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                      (&(this_ptr->base).base.model.motion_controller,0x10,1);
+                      (&(this_ptr->base).base.model.base,0x10,1);
             return GOTO_LAB_005fa18b;
           }
         }
@@ -493,7 +493,7 @@ static int CZombie_process_branch_0_check_uVar8_0_branch_0(CZombie_process_Ctx *
     return 0;
 }
 
-// Chunk: branch_0_check_uVar8_0_check_uVar8_1 (lines 360-513 of original)
+// Chunk: branch_0_check_uVar8_0_check_uVar8_1 (lines 357-509 of original)
 static int CZombie_process_branch_0_check_uVar8_0_check_uVar8_1(CZombie_process_Ctx *ctx) {
     CZombie *&this_ptr = ctx->this_ptr;
     float &delta_time = ctx->delta_time;
@@ -536,7 +536,7 @@ static int CZombie_process_branch_0_check_uVar8_0_check_uVar8_1(CZombie_process_
           iVar6 = core_enemy_cpp_CEnemy_updatePatrol_FUN_004a9fd0(&this_ptr->base,delta_time);
           if (iVar6 == 0) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                      (&(this_ptr->base).base.model.motion_controller,0,1);
+                      (&(this_ptr->base).base.model.base,0,1);
           }
         }
         else if (pCVar3 == (CCharacter *)0x0) {
@@ -602,8 +602,7 @@ LAB_005fa85e:
             if (iVar6 < 0) {
               engine_console_cpp_CConsole_printf_FUN_00441890
                         (g_CConsolePtr,"%s gave up chase - I'm confused\n",this_ptr);
-              core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                        (&pCVar2->motion_controller,0,1);
+              core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&pCVar2->base,0,1);
             }
             else if (iVar6 < 1) {
               iVar6 = core_zombie_cpp_CZombie_getPickupHandIndex_FUN_005fbd00
@@ -630,7 +629,7 @@ LAB_005fa85e:
                       engine_console_cpp_CConsole_printf_FUN_00441890
                                 (g_CConsolePtr,"%s lugging\n",this_ptr);
                       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                                (&pCVar2->motion_controller,0xd,1);
+                                (&pCVar2->base,0xd,1);
                     }
                   }
                   else if ((uVar8 == 3) &&
@@ -639,7 +638,7 @@ LAB_005fa85e:
                     engine_console_cpp_CConsole_printf_FUN_00441890
                               (g_CConsolePtr,"%s tossing\n",this_ptr);
                     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                              (&pCVar2->motion_controller,0xb,1);
+                              (&pCVar2->base,0xb,1);
                   }
                 }
               }
@@ -670,7 +669,7 @@ LAB_005fa85e:
                 iVar6 = 2;
               }
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                        (&(this_ptr->base).base.model.motion_controller,iVar6,1);
+                        (&(this_ptr->base).base.model.base,iVar6,1);
               (this_ptr->base).attack_cooldown = 0.8;
             }
           }
@@ -678,7 +677,7 @@ LAB_005fa85e:
     return 0;
 }
 
-// Chunk: branch_0_check_uVar8_0_check_uVar8_2 (lines 513-555 of original)
+// Chunk: branch_0_check_uVar8_0_check_uVar8_2 (lines 509-551 of original)
 static int CZombie_process_branch_0_check_uVar8_0_check_uVar8_2(CZombie_process_Ctx *ctx) {
     CZombie *&this_ptr = ctx->this_ptr;
     CCharacter *&pCVar3 = ctx->pCVar3;
@@ -728,7 +727,7 @@ LAB_005fac96:
             local_34 = local_3c;
             local_54 = (CVector3f *)
                        core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_0052e2b0
-                                 (&(this_ptr->base).base.model.motion_controller);
+                                 (&(this_ptr->base).base.model.base);
             local_88 = (double)(float)local_54;
             local_14 = local_54;
             if ((1.0 <= local_88) && (local_88 <= 2)) {
@@ -739,7 +738,7 @@ LAB_005fac96:
     return 0;
 }
 
-// Chunk: branch_0_else_1 (lines 580-710 of original)
+// Chunk: branch_0_else_1 (lines 576-705 of original)
 static int CZombie_process_branch_0_else_1(CZombie_process_Ctx *ctx) {
     CZombie *&this_ptr = ctx->this_ptr;
     float &delta_time = ctx->delta_time;
@@ -802,7 +801,7 @@ static int CZombie_process_branch_0_else_1(CZombie_process_Ctx *ctx) {
                     engine_console_cpp_CConsole_printf_FUN_00441890
                               (g_CConsolePtr,"%s rising from the grave\n",this_ptr);
                     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                              (&(this_ptr->base).base.model.motion_controller,0xf,1);
+                              (&(this_ptr->base).base.model.base,0xf,1);
                     if ((CGrave *)this_ptr->grave_actor != (CGrave *)0x0) {
                       core_grave_cpp_CGrave_startAnimation_FUN_004ee790
                                 ((CGrave *)this_ptr->grave_actor);
@@ -827,8 +826,7 @@ static int CZombie_process_branch_0_else_1(CZombie_process_Ctx *ctx) {
                 SQRT(fVar26 * fVar26 + fVar25 * fVar25) <= (float)3)) &&
                (ABS((this_ptr->base).base.base.location.position.y -
                     (pCVar3->base).location.position.y) <= (float)2)) {
-              core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                        (&pCVar2->motion_controller,0,1);
+              core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&pCVar2->base,0,1);
             }
           }
         }
@@ -841,7 +839,7 @@ static int CZombie_process_branch_0_else_1(CZombie_process_Ctx *ctx) {
                       (&this_ptr->base,delta_time), (this_ptr->base).victim != (CCharacter *)0x0)) {
 LAB_005fa279:
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (&(this_ptr->base).base.model.motion_controller,0,1);
+                    (&(this_ptr->base).base.model.base,0,1);
         }
       }
       else if ((uVar8 == 0x1c) &&
@@ -905,7 +903,7 @@ LAB_005fa279:
     return 0;
 }
 
-// Chunk: branch_0_chunk_2 (lines 711-734 of original)
+// Chunk: branch_0_chunk_2 (lines 706-729 of original)
 static int CZombie_process_branch_0_chunk_2(CZombie_process_Ctx *ctx) {
     CZombie *&this_ptr = ctx->this_ptr;
     float &delta_time = ctx->delta_time;
@@ -945,7 +943,7 @@ static int CZombie_process_branch_0_chunk_2(CZombie_process_Ctx *ctx) {
     return 0;
 }
 
-// Chunk: else_2 (lines 735-764 of original)
+// Chunk: else_2 (lines 730-759 of original)
 static int CZombie_process_else_2(CZombie_process_Ctx *ctx) {
     CZombie *&this_ptr = ctx->this_ptr;
     int &iVar6 = ctx->iVar6;
@@ -962,14 +960,14 @@ LAB_005f9ea6:
       else {
 LAB_005fa14f:
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&(this_ptr->base).base.model.motion_controller,0,1);
+                  (&(this_ptr->base).base.model.base,0,1);
       }
     }
     else {
       if (uVar8 < 3) goto LAB_005f9ea6;
       if (uVar8 != 3) goto LAB_005fa14f;
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                (&(this_ptr->base).base.model.motion_controller,0,1);
+                (&(this_ptr->base).base.model.base,0,1);
       engine_console_cpp_CConsole_printf_FUN_00441890
                 (g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);
     }
@@ -981,7 +979,7 @@ LAB_005fa14f:
     return 0;
 }
 
-// Chunk: else_3 (lines 774-848 of original)
+// Chunk: else_3 (lines 769-843 of original)
 static int CZombie_process_else_3(CZombie_process_Ctx *ctx) {
     CZombie *&this_ptr = ctx->this_ptr;
     float &delta_time = ctx->delta_time;
@@ -1070,7 +1068,7 @@ static int CZombie_process_else_3(CZombie_process_Ctx *ctx) {
               desired_state_index = 0x13;
             }
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                      (&(this_ptr->base).base.model.motion_controller,desired_state_index,1);
+                      (&(this_ptr->base).base.model.base,desired_state_index,1);
             this_ptr->target_door = local_58;
           }
         }
@@ -1089,7 +1087,7 @@ static int CZombie_process_else_3(CZombie_process_Ctx *ctx) {
     return 0;
 }
 
-// Chunk: branch_0 (lines 858-892 of original)
+// Chunk: branch_0 (lines 853-887 of original)
 static int CZombie_process_branch_0(CZombie_process_Ctx *ctx) {
     CZombie *&this_ptr = ctx->this_ptr;
     int &iVar6 = ctx->iVar6;
@@ -1277,7 +1275,7 @@ void __cdecl core_zombie_cpp_CZombie_process_FUN_005f9470(CZombie *this_ptr,floa
   pcVar23 = "CHASE_2";
   local_38 = 0;
   pCVar7 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
-                     (&(this_ptr->base).base.model.motion_controller);
+                     (&(this_ptr->base).base.model.base);
   iVar6 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(pCVar7,pcVar23,iVar6);
   if (iVar6 == 0x16) {
     local_38 = 1;
@@ -1302,8 +1300,7 @@ void __cdecl core_zombie_cpp_CZombie_process_FUN_005f9470(CZombie *this_ptr,floa
 LAB_005f9504:
   pCVar2 = local_20;
   if (0.0 < local_7c) {
-    uVar8 = core_motion_cpp_CMotionController_advance_FUN_0052d610
-                      (&local_20->motion_controller,&local_7c);
+    uVar8 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&local_20->base,&local_7c);
     if (uVar8 < 0xb) {
       int _rc = CZombie_process_check_0_0_check_uVar8_0(ctx);
       if (_rc == GOTO_LAB_005f9504) goto LAB_005f9504;
@@ -1366,8 +1363,7 @@ LAB_005f9504:
     this_ptr->bleedout_timer = -1.0;
   }
   pCVar2 = &(this_ptr->base).base.model;
-  pSVar16 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                      (&pCVar2->motion_controller);
+  pSVar16 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(&pCVar2->base);
   iVar6 = pSVar16->state_index;
   local_48 = 0;
   iVar10 = core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70
@@ -1375,8 +1371,7 @@ LAB_005f9504:
   if (iVar10 == 0) {
     local_34 = -1.0;
     local_4c = 0.3;
-    pSVar16 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                        (&pCVar2->motion_controller);
+    pSVar16 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(&pCVar2->base);
     uVar8 = pSVar16->state_index;
     if (uVar8 < 8) {
     if (uVar8 == 0) {
@@ -1429,7 +1424,7 @@ LAB_005fa18b:
     (this_ptr->base).attack_cooldown = (this_ptr->base).attack_cooldown - delta_time;
   }
   pSVar16 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                      (&(this_ptr->base).base.model.motion_controller);
+                      (&(this_ptr->base).base.model.base);
   pCVar11 = &(this_ptr->base).base.model.accumulated_root_motion;
   iVar6 = pSVar16->state_index;
   if (iVar6 == 0xe) {

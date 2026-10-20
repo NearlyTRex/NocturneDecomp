@@ -38,8 +38,7 @@ void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004e87e0(CGhoul *this_ptr,S
   sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handles[0]);
   if ((this_ptr->dark_waypoint != (CDemonActor *)0x0) &&
      (pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                         (&(this_ptr->base).base.model.motion_controller), pSVar3->state_index == 0)
-     ) {
+                         (&(this_ptr->base).base.model.base), pSVar3->state_index == 0)) {
     this_ptr->heal_timer = 30.0;
     this_ptr->dark_waypoint = (CDemonActor *)0x0;
     this_ptr->is_berserk = 1;
@@ -77,8 +76,7 @@ void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004e87e0(CGhoul *this_ptr,S
       core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(&this_ptr->base,damage_info);
       return;
     }
-    pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                       (&this_ptr_02->motion_controller);
+    pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(&this_ptr_02->base);
     if ((pSVar6->state_index != 10) && (pSVar6->state_index != 9)) {
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[10]] == 0) {
         this_ptr->lives_left = 0;
@@ -108,7 +106,7 @@ void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004e87e0(CGhoul *this_ptr,S
         }
       }
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                (&(this_ptr->base).base.model.motion_controller,iVar9,1);
+                (&(this_ptr->base).base.model.base,iVar9,1);
       iVar1 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[2]);
       if (iVar1 == 0) {
         uVar8 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -124,15 +122,14 @@ void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004e87e0(CGhoul *this_ptr,S
     }
   }
   else {
-    pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                       (&this_ptr_02->motion_controller);
+    pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(&this_ptr_02->base);
     iVar1 = pSVar3->state_index;
     if (((iVar1 == 0) || (iVar1 == 0xb || (iVar1 == 0xc || iVar1 == 2))) ||
        (iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(0.25), iVar1 != 0)) {
       force_immediate = 1;
       iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                (&(this_ptr->base).base.model.motion_controller,(iVar1 == 0) + 3,force_immediate);
+                (&(this_ptr->base).base.model.base,(iVar1 == 0) + 3,force_immediate);
     }
     else {
       iVar1 = core_actor_cpp_getRandomInt_FUN_0040cc70(1,2);
@@ -140,7 +137,7 @@ void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004e87e0(CGhoul *this_ptr,S
       iVar1 = 1;
       motion_name = local_78;
       this_ptr_01 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
-                              (&(this_ptr->base).base.model.motion_controller);
+                              (&(this_ptr->base).base.model.base);
       iVar1 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460
                         (this_ptr_01,motion_name,iVar1);
       this_ptr->flinch_blend_weight = 1.0;

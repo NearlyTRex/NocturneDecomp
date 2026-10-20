@@ -52,7 +52,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004e4a00(CGargoyle *this_pt
   iVar4 = core_charactr_cpp_CCharacter_processCharacter_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar4 == 0) {
     pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                       (&(this_ptr->base).base.model.motion_controller);
+                       (&(this_ptr->base).base.model.base);
     if (pSVar8->state_index == 8) {
       return;
     }
@@ -67,7 +67,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004e4a00(CGargoyle *this_pt
   pCVar4 = &(this_ptr->base).base.model;
   while (0.0 < local_2c) {
     iVar7 = core_motion_cpp_CMotionController_advance_FUN_0052d610
-                      (&pCVar4->motion_controller,&local_2c);
+                      (&pCVar4->base,&local_2c);
     core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,iVar7);
   }
   fVar13 = (this_ptr->base).speed;
@@ -75,7 +75,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004e4a00(CGargoyle *this_pt
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
   (this_ptr->base).base.turn_speed = delta_time * fVar14 * fVar13;
   pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                     (&pCVar4->motion_controller);
+                     (&pCVar4->base);
   iVar7 = pSVar5->state_index;
   local_28 = iVar7;
   iVar6 = core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70
@@ -89,7 +89,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004e4a00(CGargoyle *this_pt
         local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.0,1.0);
         this_ptr->petrify_timer = local_14;
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&pCVar4->motion_controller,5,1);
+                  (&pCVar4->base,5,1);
         iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[1]);
         if (iVar7 == 0) {
           uVar11 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -104,7 +104,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004e4a00(CGargoyle *this_pt
             iVar7 = core_enemy_cpp_CEnemy_updatePatrol_FUN_004a9fd0(&this_ptr->base,delta_time);
             if (iVar7 != 0) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                        (&pCVar4->motion_controller,1,1);
+                        (&pCVar4->base,1,1);
             }
             break;
           }
@@ -123,7 +123,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004e4a00(CGargoyle *this_pt
                                  (local_68.y - (this_ptr->base).base.base.orient.vec.y);
             if (ABS(local_14) < (float)0.52359877558333301) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                        (&pCVar4->motion_controller,3,1);
+                        (&pCVar4->base,3,1);
             }
           }
           if ((this_ptr->base).guard_distance <= local_1c) break;
@@ -132,17 +132,17 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004e4a00(CGargoyle *this_pt
             iVar7 = core_actor_cpp_randomChance_FUN_0040cd10(0.1);
             if (iVar7 == 0) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                        (&pCVar4->motion_controller,2,1);
+                        (&pCVar4->base,2,1);
             }
             else {
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                        (&pCVar4->motion_controller,4,1);
+                        (&pCVar4->base,4,1);
             }
             break;
           }
         }
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&(this_ptr->base).base.model.motion_controller,1,1);
+                  (&(this_ptr->base).base.model.base,1,1);
       }
       break;
     case 1:
@@ -154,7 +154,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004e4a00(CGargoyle *this_pt
         local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.0,1.0);
         this_ptr->petrify_timer = local_14;
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&pCVar4->motion_controller,5,1);
+                  (&pCVar4->base,5,1);
         iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[1]);
         if (iVar7 == 0) {
           uVar11 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -170,11 +170,11 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004e4a00(CGargoyle *this_pt
             iVar7 = core_enemy_cpp_CEnemy_updatePatrol_FUN_004a9fd0(&this_ptr->base,delta_time);
             if (iVar7 == 0) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                        (&pCVar4->motion_controller,0,1);
+                        (&pCVar4->base,0,1);
             }
             else {
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                        (&pCVar4->motion_controller,1,1);
+                        (&pCVar4->base,1,1);
             }
           }
           else {
@@ -211,7 +211,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004e4a00(CGargoyle *this_pt
                   iVar7 = 4;
                 }
                 core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                          (&pCVar4->motion_controller,iVar7,1);
+                          (&pCVar4->base,iVar7,1);
               }
               if ((local_24 <= local_20) && ((this_ptr->base).attack_cooldown <= 0.0)) {
                 pCVar5 = (this_ptr->base).victim;
@@ -227,13 +227,13 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004e4a00(CGargoyle *this_pt
                                      (local_c8.y - (this_ptr->base).base.base.orient.vec.y);
                 if (ABS(local_14) < (float)0.52359877558333301) {
                   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                            (&(this_ptr->base).base.model.motion_controller,3,1);
+                            (&(this_ptr->base).base.model.base,3,1);
                   (this_ptr->base).attack_cooldown = 1.0;
                 }
               }
               if ((this_ptr->base).guard_distance < local_24) {
                 core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                          (&(this_ptr->base).base.model.motion_controller,0,1);
+                          (&(this_ptr->base).base.model.base,0,1);
               }
             }
           }
@@ -281,7 +281,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004e4a00(CGargoyle *this_pt
          fVar13 < 0.0)) {
         this_ptr->petrify_timer = 0.0;
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&pCVar4->motion_controller,0,1);
+                  (&pCVar4->base,0,1);
         iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[1]);
         if (iVar7 == 0) {
           uVar8 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -303,12 +303,12 @@ LAB_004e4d57:
       iVar7 = 0;
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              (&(this_ptr->base).base.model.motion_controller,iVar7,1);
+              (&(this_ptr->base).base.model.base,iVar7,1);
   }
   else {
     if (uVar11 < 3) goto LAB_004e4b02;
     if (uVar11 != 3) goto LAB_004e4d57;
-    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&pCVar4->motion_controller,0,1);
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&pCVar4->base,0,1);
     engine_console_cpp_CConsole_printf_FUN_00441890
               (g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr->base.base.base.actor_name);
   }

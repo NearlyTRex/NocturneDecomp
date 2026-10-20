@@ -43,16 +43,14 @@ void __cdecl core_larva_cpp_CLarva_processDamage_FUN_004c5310(CLarva *this_ptr,S
       this_ptr->sfx_handles[0] = uVar4;
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-              (&(this_ptr->base).base.model.motion_controller,3,1);
+              (&(this_ptr->base).base.model.base,3,1);
   }
   else {
     this_ptr_00 = &(this_ptr->base).base.model;
     (this_ptr->base).base.hit_points = 0.0;
-    pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                       (&this_ptr_00->motion_controller);
+    pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(&this_ptr_00->base);
     if ((pSVar2->state_index != 5) && (pSVar2->state_index != 4)) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                (&this_ptr_00->motion_controller,4,1);
+      core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,4,1);
     }
     sound_sndmain_cpp_killSfx_FUN_00527230(this_ptr->sfx_handles[0]);
     sound_sndmain_cpp_killSfx_FUN_00527230(this_ptr->sfx_handles[1]);

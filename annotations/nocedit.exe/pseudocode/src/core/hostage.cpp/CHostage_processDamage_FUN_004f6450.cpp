@@ -23,16 +23,14 @@ void __cdecl core_hostage_cpp_CHostage_processDamage_FUN_004f6450(CHostage *this
   (this_ptr->base).base.hit_points = fVar1;
   if (fVar1 <= 0.0) {
     (this_ptr->base).base.hit_points = 0.0;
-    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              (&this_ptr_00->motion_controller,6,1);
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr_00->base,6,1);
     (*((this_ptr->base).base.base.vtable._ub)->spawnFlies)((CDemonActor *)this_ptr,0x32,25.0);
     (*((this_ptr->base).base.base.vtable._ub)->playSound)
               ((CDemonActor *)this_ptr,this_ptr->die_sound);
   }
   else if (0.0 < damage_info->damage_amount) {
     if ((this_ptr->base).base.grabbed_by == (CDemonActor *)0x0) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                (&this_ptr_00->motion_controller,4,1);
+      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr_00->base,4,1);
       pCVar2 = g_CurrentProcessingActor;
       this_ptr->grabber_flee_timer = 3.0;
       this_ptr->grabber = pCVar2;

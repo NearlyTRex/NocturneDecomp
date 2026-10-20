@@ -34,19 +34,16 @@ void __cdecl core_imp_cpp_CImp_processDamage_FUN_004bccc0(CImp *this_ptr,SDamage
   this_ptr_00 = &(this_ptr->base).base.model;
   (this_ptr->base).base.hit_points = fVar1;
   if (0.0 < fVar1) {
-    core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-              (&this_ptr_00->motion_controller,5,1);
+    core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,5,1);
     iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(this_ptr->sfx_handles[1]);
     if (iVar4 != 0) goto LAB_004bcdbc;
     sound_name = "imp-hurt?.wav";
   }
   else {
     (this_ptr->base).base.hit_points = 0.0;
-    pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                       (&this_ptr_00->motion_controller);
+    pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(&this_ptr_00->base);
     if ((pSVar2->state_index == 6) || (pSVar2->state_index == 7)) goto LAB_004bcdbc;
-    core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-              (&this_ptr_00->motion_controller,6,1);
+    core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,6,1);
     sound_sndmain_cpp_killSfx_FUN_00527230(this_ptr->sfx_handles[1]);
     sound_name = "imp-die?.wav";
   }

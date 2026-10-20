@@ -60,20 +60,17 @@ void __cdecl core_gabriela_cpp_CGabriella_setup_FUN_004d2c40(CGabriella *this_pt
        core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 Spine",1);
   iVar3 = 1;
   pcVar2 = "gab draw";
-  pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
-                     (&this_ptr_00->motion_controller);
+  pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0(&this_ptr_00->base);
   g_GabriellaIndices[0xd] =
        core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(pCVar1,pcVar2,iVar3);
   iVar3 = 1;
   pcVar2 = "gab shoot";
-  pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
-                     (&this_ptr_00->motion_controller);
+  pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0(&this_ptr_00->base);
   g_GabriellaIndices[0xf] =
        core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(pCVar1,pcVar2,iVar3);
   iVar3 = 1;
   pcVar2 = "gab crossbow shoot";
-  pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
-                     (&this_ptr_00->motion_controller);
+  pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0(&this_ptr_00->base);
   g_GabriellaIndices[0xe] =
        core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(pCVar1,pcVar2,iVar3);
   (this_ptr->base).pushed_object = (CBoxActor *)0x0;

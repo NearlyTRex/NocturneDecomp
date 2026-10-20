@@ -48,8 +48,7 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00410490(CBaron *this_ptr,float d
                       (0x01C03A10,this_ptr->summon_event);
     if (iVar3 != 0) {
       this_ptr->summoned = 1;
-      core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar9->motion_controller,6,1)
-      ;
+      core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar9->base,6,1);
       this_ptr->shell_visible = 1;
     }
   }
@@ -57,8 +56,7 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00410490(CBaron *this_ptr,float d
     iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
                       (0x01C03A10,this_ptr->go_away_event);
     if (iVar3 != 0) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar9->motion_controller,7,1)
-      ;
+      core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar9->base,7,1);
     }
   }
   if (((this_ptr->summoned == 0) && ((this_ptr->base).control_type == HERO_CONTROL_AI)) ||
@@ -92,8 +90,7 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00410490(CBaron *this_ptr,float d
                     ((CCharacter *)this_ptr,delta_time);
   pCVar9 = &(this_ptr->base).base.model;
   if (iVar3 == 0) {
-    pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                       (&pCVar9->motion_controller);
+    pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(&pCVar9->base);
     switch(pSVar5->state_index) {
     case 0:
     case 1:
@@ -119,7 +116,7 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00410490(CBaron *this_ptr,float d
       (this_ptr->base).base.turn_angle_accumulator =
            (this_ptr->base).player_input.turn_speed * (this_ptr->base).base.turn_speed;
       pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                         (&(this_ptr->base).base.model.motion_controller);
+                         (&(this_ptr->base).base.model.base);
       if (iVar3 == pSVar5->state_index) break;
       goto LAB_0041061c;
     case 4:
@@ -177,8 +174,7 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00410490(CBaron *this_ptr,float d
   }
   else {
     if (uVar1 == 3) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar9->motion_controller,0,1)
-      ;
+      core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar9->base,0,1);
       engine_console_cpp_CConsole_printf_FUN_0043ac60
                 (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",this_ptr);
       goto switchD_00410a6d_default;
@@ -188,7 +184,7 @@ LAB_00410847:
   }
 LAB_0041061c:
   core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-            (&(this_ptr->base).base.model.motion_controller,iVar3,1);
+            (&(this_ptr->base).base.model.base,iVar3,1);
 switchD_00410a6d_default:
   pCVar4 = &(this_ptr->base).base.model.accumulated_root_motion;
   fVar10 = (float)32;

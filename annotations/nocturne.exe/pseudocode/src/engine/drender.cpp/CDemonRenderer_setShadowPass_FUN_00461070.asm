@@ -14,7 +14,7 @@
 ;   core_dlight.cpp_CDemonLight_endScene_FUN_0044e720 at 0044e793
 ;   core_glass.cpp_CGlass_renderBrokenGlass_FUN_004ac7c0 at 004ac82b
 ;   core_setdir.cpp_CDemonSet_FUN_005125a0 at 0051264f
-;   core_setdir.cpp_CDemonSet_FUN_00513720 at 00513743
+;   core_setdir.cpp_CDemonSet_saveThumbs_FUN_00513720 at 00513743
 ;   engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190 at 0045f1e1
 ;
 ; Referenced Globals:

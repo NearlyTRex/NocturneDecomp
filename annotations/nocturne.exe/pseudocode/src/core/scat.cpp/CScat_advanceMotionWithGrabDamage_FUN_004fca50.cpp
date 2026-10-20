@@ -15,7 +15,7 @@ void __cdecl core_scat_cpp_CScat_advanceMotionWithGrabDamage_FUN_004fca50(CScat 
   
   do {
     bone_index = core_motion_cpp_CMotionController_advance_FUN_004e11c0
-                           (&(this_ptr->base).base.model.motion_controller,&delta_time);
+                           (&(this_ptr->base).base.model.base,&delta_time);
     if (bone_index == 100) {
       this_ptr_00 = (CCharacter *)
                     core_actor_cpp_castToClassHash_FUN_0040d890

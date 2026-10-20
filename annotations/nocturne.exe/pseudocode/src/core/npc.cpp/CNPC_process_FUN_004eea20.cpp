@@ -43,8 +43,7 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_004eea20(CNPC *this_ptr,float delta_t
   pCVar1 = &(this_ptr->base).model;
   local_58 = delta_time;
   while (0.0 < local_58) {
-    iVar6 = core_motion_cpp_CMotionController_advance_FUN_004e11c0
-                      (&pCVar1->motion_controller,&local_58);
+    iVar6 = core_motion_cpp_CMotionController_advance_FUN_004e11c0(&pCVar1->base,&local_58);
     core_charactr_cpp_CCharacter_processMotion_FUN_0042add0(&this_ptr->base,iVar6);
   }
   EVar7 = (*(((this_ptr->base).base.vtable._uc)->_uc).getDeathState)(&this_ptr->base);
@@ -74,24 +73,22 @@ LAB_004eecd2:
       pcVar9 = "STAND";
     }
     core_motion_cpp_CMotionController_setDesiredStateByName_FUN_004e1740
-              (&(this_ptr->base).model.motion_controller,pcVar9,1);
+              (&(this_ptr->base).model.base,pcVar9,1);
   }
   else {
     pCVar1 = &(this_ptr->base).model;
     if (uVar3 < 3) {
       iVar6 = 0;
       pcVar9 = "RUN";
-      this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890
-                              (&pCVar1->motion_controller);
+      this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890(&pCVar1->base);
       iVar6 = core_motion_cpp_CMotionList_findStateIndex_FUN_004e10a0(this_ptr_00,pcVar9,iVar6);
       if (iVar6 < 0) goto LAB_004eeb4e;
-      core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                (&pCVar1->motion_controller,iVar6,1);
+      core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar1->base,iVar6,1);
     }
     else {
       if (uVar3 != 3) goto LAB_004eecd2;
       core_motion_cpp_CMotionController_setDesiredStateByName_FUN_004e1740
-                (&pCVar1->motion_controller,"STAND",1);
+                (&pCVar1->base,"STAND",1);
       engine_console_cpp_CConsole_printf_FUN_0043ac60
                 (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",this_ptr);
     }

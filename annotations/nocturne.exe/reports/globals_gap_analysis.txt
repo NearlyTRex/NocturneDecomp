@@ -2,14 +2,14 @@
 GLOBALS GAP ANALYSIS REPORT
 ================================================================================
 
-Total globals analyzed:      12956
-  Named globals:             10450
-  DAT_ globals:              2506
-Gaps found:                  2048
-  With exact size bounds:    1597
+Total globals analyzed:      12954
+  Named globals:             10452
+  DAT_ globals:              2502
+Gaps found:                  2047
+  With exact size bounds:    1596
   With estimated bounds:     451
-Total gap bytes:             2,142,969,854
-  Exact gap bytes:           41,379,879
+Total gap bytes:             2,142,969,858
+  Exact gap bytes:           41,379,883
 Overlaps (size <= 0):        7150
 
 --------------------------------------------------------------------------------
@@ -18,7 +18,7 @@ GAP SIZE DISTRIBUTION
   1-4 bytes (likely padding/alignment)          413
   5-16 bytes (small vars)                       262
   17-64 bytes (structs/small arrays)            607
-  65-256 bytes (medium data)                    295
+  65-256 bytes (medium data)                    294
   257-1024 bytes (large structs/arrays)         183
   1-4 KB                                        117
   4-64 KB                                       125
@@ -39,8 +39,8 @@ LARGEST GAPS (top 50)
    6,291,656 bytes  at 0x014b9924
     after: DAT_014b9920                             undefined4           at 0x014b9920  size=4
     before: DAT_01ab99ec                             undefined4           at 0x01ab99ec
-   6,143,752 bytes  at 0x020876fc
-    after: DAT_020876f8                             undefined4           at 0x020876f8  size=4
+   6,144,003 bytes  at 0x02087601
+    after: g_ThumbZBufferTable[0][0][1]+1           undefined4           at 0x020875fd  size=4
     before: DAT_02663604                             undefined4           at 0x02663604
    1,446,791 bytes ~  at 0x01e57285
     after: g_CDemonSet_01e57284                     CDemonSet            at 0x01e57284  size=?
@@ -179,12 +179,12 @@ LARGEST GAPS (top 50)
     before: PTR_caseD_1_0040db24                     void*                at 0x0040db24
 
 --------------------------------------------------------------------------------
-ALL EXACT GAPS (1597) - size bounds are known precisely
+ALL EXACT GAPS (1596) - size bounds are known precisely
 --------------------------------------------------------------------------------
    7,372,800 bytes  at 0x00b0e608  between DAT_00b0e604                   and DAT_01216608
    6,753,148 bytes  at 0x02737ef8  between DAT_02737ef4                   and DAT_02da8a74
    6,291,656 bytes  at 0x014b9924  between DAT_014b9920                   and DAT_01ab99ec
-   6,143,752 bytes  at 0x020876fc  between DAT_020876f8                   and DAT_02663604
+   6,144,003 bytes  at 0x02087601  between g_ThumbZBufferTable[0][0][1]+1 and DAT_02663604
    1,228,476 bytes  at 0x012e18bc  between DAT_012e18b8                   and DAT_0140d778
    1,155,836 bytes  at 0x01d16ff4  between DAT_01d16ff0                   and DAT_01e312f0
    1,077,096 bytes  at 0x009bc090  between g_CVector3f_ARRAY_009bb178[321 and DAT_00ac2ff8
@@ -592,7 +592,6 @@ ALL EXACT GAPS (1597) - size bounds are known precisely
          249 bytes  at 0x01cc7f17  between DAT_01cc7f13                   and DAT_01cc8010
          248 bytes  at 0x005beaa8  between DAT_005beaa4                   and DAT_005beba0
          248 bytes  at 0x02de2c18  between DAT_02de2c14                   and DAT_02de2d10
-         247 bytes  at 0x02087601  between DAT_020875fd                   and DAT_020876f8
          240 bytes  at 0x005be684  between DAT_005be680                   and DAT_005be774
          240 bytes  at 0x02dbd258  between g_CMP3Decoder_02db4d18.synthes and DAT_02dbd348
          236 bytes  at 0x005bbd04  between DAT_005bbd00                   and DAT_005bbdf0
@@ -23181,9 +23180,9 @@ OVERLAPS (7150) - next global starts inside previous
   3 bytes overlap
     DAT_020845f8                             undefined4           at 0x020845f8  size=4
     DAT_020845f9                             undefined4           at 0x020845f9
-  3 bytes overlap
-    DAT_020875fc                             undefined4           at 0x020875fc  size=4
-    DAT_020875fd                             undefined4           at 0x020875fd
+  3071995 bytes overlap
+    g_ThumbZBufferTable                      uint[250][48][64]    at 0x020875f8  size=3,072,000
+    g_ThumbZBufferTable[0][0][1]+1           undefined4           at 0x020875fd
   3 bytes overlap
     DAT_02db111c                             undefined4           at 0x02db111c  size=4
     DAT_02db111d                             undefined4           at 0x02db111d

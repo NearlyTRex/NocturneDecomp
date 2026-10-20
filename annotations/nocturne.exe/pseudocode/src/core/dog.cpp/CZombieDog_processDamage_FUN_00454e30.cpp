@@ -20,16 +20,14 @@ void __cdecl core_dog_cpp_CZombieDog_processDamage_FUN_00454e30(CZombieDog *this
   (this_ptr->base).base.hit_points = fVar1;
   if (fVar1 <= 0.0) {
     (this_ptr->base).base.hit_points = 0.0;
-    pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                       (&this_ptr_00->motion_controller);
+    pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(&this_ptr_00->base);
     if ((pSVar2->state_index == 7) || (pSVar2->state_index == 6)) goto LAB_00454e65;
     iVar4 = 6;
   }
   else {
     iVar4 = 5;
   }
-  core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-            (&this_ptr_00->motion_controller,iVar4,1);
+  core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,iVar4,1);
 LAB_00454e65:
   iVar4 = core_sound_cpp_CSound_isSoundPlaying_FUN_0052eba0
                     (g_CSound_PTR_005bed68,this_ptr->sfx_handle);

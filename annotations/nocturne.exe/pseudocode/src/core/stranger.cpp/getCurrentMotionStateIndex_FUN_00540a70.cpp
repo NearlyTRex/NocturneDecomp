@@ -11,7 +11,6 @@ int __cdecl core_stranger_cpp_getCurrentMotionStateIndex_FUN_00540a70(CCharacter
 {
   SMotion *pSVar1;
   
-  pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                     (&(this_ptr->model).motion_controller);
+  pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(&(this_ptr->model).base);
   return pSVar1->state_index;
 }

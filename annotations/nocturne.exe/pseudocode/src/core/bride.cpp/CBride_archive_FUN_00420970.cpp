@@ -22,7 +22,7 @@ void __cdecl core_bride_cpp_CBride_archive_FUN_00420970(CBride *this_ptr)
   if (g_INT_005ad0e0 < 3) {
     return;
   }
-  core_actor_cpp_archiveMotionState_FUN_0040cb00
-            (&(this_ptr->base).base.model.motion_controller,"state");
+  core_actor_cpp_archiveMotionState_FUN_0040cb00(&(this_ptr->base).base.model.base,"state")
+  ;
   return;
 }

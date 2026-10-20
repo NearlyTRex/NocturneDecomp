@@ -223,7 +223,7 @@
       "match": "pCVar6 = (T *)&(pCVar6->FIELD).SUBFIELD",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "pCVar6 = (CDeformableModelInstance *)&(pCVar6->motion_controller).tween_speed;",
+      "text": "pCVar6 = (CDeformableModelInstance *)&(pCVar6->base).tween_speed;",
       "type": "shadow_pointer_walk"
     },
     {
@@ -241,7 +241,7 @@
       "match": "local_c = (T *)&(local_c->FIELD).SUBFIELD",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "local_c = (CDeformableModelInstance *)&(local_c->motion_controller).current_motion_index;",
+      "text": "local_c = (CDeformableModelInstance *)&(local_c->base).current_motion_index;",
       "type": "shadow_pointer_walk"
     },
     {

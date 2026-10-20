@@ -109,7 +109,7 @@ void __cdecl core_stranger_cpp_CStranger_applyArmAimRotation_FUN_0053a260(CStran
                       (&this_ptr_01->motion_list,pcVar5,iVar7);
     this_ptr_00 = local_1c;
     local_34 = core_motion_cpp_CMotionController_markerPositionToFrame_FUN_004e1f50
-                         (&local_1c->motion_controller,iVar7,(this_ptr->base).base.layer_action_t);
+                         (&local_1c->base,iVar7,(this_ptr->base).base.layer_action_t);
     local_18 = local_34;
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
               (this_ptr_00,iVar7,local_34,local_1e0,local_24,

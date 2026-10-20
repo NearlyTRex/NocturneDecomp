@@ -58,7 +58,7 @@
       {
         "category": "format_error",
         "column": 87,
-        "line": 96,
+        "line": 93,
         "message": "format specifies type 'char *' but the argument has type 'CNPC *' [-Werror,-Wformat]"
       }
     ],
@@ -68,17 +68,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 267,
-    "complexity_score": 164,
+    "complexity_score": 161,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 119,
+    "pseudocode_lines": 116,
     "suspect_count": 4,
     "suspect_types": [
       "unrolled_memset"
     ],
-    "total_lines": 386
+    "total_lines": 383
   },
   "cross_references": [
     {
@@ -374,7 +374,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 92,
+      "line": 89,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).model.accumulated_root_motion.z = 0.0;",
@@ -382,7 +382,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 110,
+      "line": 107,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).position_delta.z = 0.0;",
@@ -390,7 +390,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 113,
+      "line": 110,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).model.accumulated_root_motion.z = 0.0;",

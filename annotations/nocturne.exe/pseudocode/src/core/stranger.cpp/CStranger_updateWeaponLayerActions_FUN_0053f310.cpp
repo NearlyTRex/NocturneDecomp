@@ -68,7 +68,7 @@ void __cdecl core_stranger_cpp_CStranger_updateWeaponLayerActions_FUN_0053f310(C
   }
   local_18 = &(this_ptr->base).inventory;
   local_3c = 0;
-  local_28 = &(this_ptr->base).base.model.motion_controller;
+  local_28 = &(this_ptr->base).base.model.base;
   local_2c = 0;
   do {
     if (delta_time <= 0.0) {

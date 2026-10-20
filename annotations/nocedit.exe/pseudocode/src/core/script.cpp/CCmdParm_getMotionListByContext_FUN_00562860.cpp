@@ -16,7 +16,6 @@ CMotionList * __cdecl core_script_cpp_CCmdParm_getMotionListByContext_FUN_005628
   if (pCVar1 == (CCharacter *)0x0) {
     return (CMotionList *)0x0;
   }
-  pCVar2 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
-                     (&(pCVar1->model).motion_controller);
+  pCVar2 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0(&(pCVar1->model).base);
   return pCVar2;
 }

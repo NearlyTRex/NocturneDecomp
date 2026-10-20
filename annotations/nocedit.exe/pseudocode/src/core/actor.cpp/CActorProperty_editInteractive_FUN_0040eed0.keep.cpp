@@ -75,13 +75,13 @@ int __cdecl core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0(CActorPro
   _sprintf(local_2a0,"Enter %s for %s",pcVar6,actor->actor_name);
   switch(this_ptr->type) {
   case PROP_INT:
-    local_2c = (CActorProperty *)(((this_ptr->data).v_dfm_ptr)->motion_controller).motion_list_ptr;
+    local_2c = (CActorProperty *)(((this_ptr->data).v_dfm_ptr)->base).motion_list_ptr;
     while (iVar3 = shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020
                              (g_CEditorToolsPtr,local_2a0,(int *)&local_2c,(this_ptr->param1).v_int,
                               (this_ptr->param2).v_int,(this_ptr->param3).v_int,1), iVar3 != 0) {
       if (((this_ptr->callback).v_action_func == (CActorPropertyActionFunc *)0x0) ||
          (iVar3 = (*(this_ptr->callback).v_action_func)(actor,local_2c), iVar3 != 0)) {
-        (((this_ptr->data).v_dfm_ptr)->motion_controller).motion_list_ptr = (CMotionList *)local_2c;
+        (((this_ptr->data).v_dfm_ptr)->base).motion_list_ptr = (CMotionList *)local_2c;
         if (this_ptr->auto_update_flag != 0) {
           (*((actor->vtable)._ub)->setup)(actor);
         }
@@ -90,14 +90,14 @@ int __cdecl core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0(CActorPro
     }
     break;
   case PROP_FLOAT:
-    local_30 = (CActorProperty *)(((this_ptr->data).v_dfm_ptr)->motion_controller).motion_list_ptr;
+    local_30 = (CActorProperty *)(((this_ptr->data).v_dfm_ptr)->base).motion_list_ptr;
     while (iVar3 = shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
                              (g_CEditorToolsPtr,local_2a0,(float *)&local_30,
                               (this_ptr->param1).v_int,(this_ptr->param2).v_float,
                               (this_ptr->param3).v_float,1), iVar3 != 0) {
       if (((this_ptr->callback).v_action_func == (CActorPropertyActionFunc *)0x0) ||
          (iVar3 = (*(this_ptr->callback).v_action_func)(actor,local_30), iVar3 != 0)) {
-        (((this_ptr->data).v_dfm_ptr)->motion_controller).motion_list_ptr = (CMotionList *)local_30;
+        (((this_ptr->data).v_dfm_ptr)->base).motion_list_ptr = (CMotionList *)local_30;
         if (this_ptr->auto_update_flag != 0) {
           (*((actor->vtable)._ub)->setup)(actor);
         }
@@ -147,12 +147,12 @@ int __cdecl core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0(CActorPro
     *(this_ptr->data).v_int_ptr = (uint)(*(this_ptr->data).v_int_ptr == 0);
     return 1;
   case PROP_CHOICE:
-    local_28 = (CDemonActor *)(((this_ptr->data).v_dfm_ptr)->motion_controller).motion_list_ptr;
+    local_28 = (CDemonActor *)(((this_ptr->data).v_dfm_ptr)->base).motion_list_ptr;
     iVar3 = core_msnedit_cpp_CDemonMission_pickActorDialog_FUN_0053cad0
                       (g_CDemonMissionPtr,actor,local_2a0,&local_28,(this_ptr->param1).v_int,
                        this_ptr->string2,(this_ptr->callback).v_filter_func,1);
     if (iVar3 != 0) {
-      (((this_ptr->data).v_dfm_ptr)->motion_controller).motion_list_ptr = (CMotionList *)local_28;
+      (((this_ptr->data).v_dfm_ptr)->base).motion_list_ptr = (CMotionList *)local_28;
       if (this_ptr->auto_update_flag == 0) {
         return 1;
       }

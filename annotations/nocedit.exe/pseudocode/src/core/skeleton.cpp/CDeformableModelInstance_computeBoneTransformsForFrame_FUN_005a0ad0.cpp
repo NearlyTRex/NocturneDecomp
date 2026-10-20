@@ -35,8 +35,8 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoneTransformsFor
   
   pCVar8 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
   core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0
-            (&this_ptr->motion_controller,motion_index,animation_time,(int *)&local_28,
-             (int *)local_24,&local_60);
+            (&this_ptr->base,motion_index,animation_time,(int *)&local_28,(int *)local_24,&local_60)
+  ;
   bone_index = 0;
   if (0 < pCVar8->bone_count) {
     local_14 = output_bone_data;

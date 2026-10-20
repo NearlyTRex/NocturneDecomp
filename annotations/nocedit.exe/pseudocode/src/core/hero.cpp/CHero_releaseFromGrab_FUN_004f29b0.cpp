@@ -22,16 +22,15 @@ void __cdecl core_hero_cpp_CHero_releaseFromGrab_FUN_004f29b0(CHero *this_ptr)
     iVar2 = 0;
     state_name = "GETGRABBED";
     this_ptr_02 = &(this_ptr->base).model;
-    this_ptr_01 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
-                            (&this_ptr_02->motion_controller);
+    this_ptr_01 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0(&this_ptr_02->base);
     desired_state_index =
          core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr_01,state_name,iVar2);
     if (-1 < desired_state_index) {
       fVar1 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                        (&this_ptr_02->motion_controller,desired_state_index);
+                        (&this_ptr_02->base,desired_state_index);
       if (0.0 < fVar1) {
         core_motion_cpp_CMotionController_setDesiredStateByName_FUN_0052db90
-                  (&this_ptr_02->motion_controller,"STAND",1);
+                  (&this_ptr_02->base,"STAND",1);
       }
     }
   }

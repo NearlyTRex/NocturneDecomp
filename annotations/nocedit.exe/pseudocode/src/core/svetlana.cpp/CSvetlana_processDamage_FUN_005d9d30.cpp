@@ -30,15 +30,12 @@ void __cdecl core_svetlana_cpp_CSvetlana_processDamage_FUN_005d9d30(CSvetlana *t
   (this_ptr->base).base.hit_points = fVar1;
   if (fVar1 <= 0.0) {
     (this_ptr->base).base.hit_points = 0.0;
-    pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                       (&this_ptr_00->motion_controller);
+    pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(&this_ptr_00->base);
     if (pSVar2->state_index != 9) {
-      pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                         (&this_ptr_00->motion_controller);
+      pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(&this_ptr_00->base);
       if (pSVar2->state_index != 8) {
         (this_ptr->base).base.grabbed_by = (CDemonActor *)0x0;
-        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&this_ptr_00->motion_controller,8,1);
+        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr_00->base,8,1);
         core_gore_cpp_CGore_spawnFliesOnActor_FUN_004ee030
                   (g_CGorePtr,(CDemonActor *)this_ptr,0x32,50.0,(CVector3f *)0x0);
         sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handle);
@@ -57,8 +54,7 @@ void __cdecl core_svetlana_cpp_CSvetlana_processDamage_FUN_005d9d30(CSvetlana *t
     else {
       iVar4 = 0xb;
     }
-    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              (&this_ptr_00->motion_controller,iVar4,1);
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr_00->base,iVar4,1);
     iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handle);
     if (iVar4 == 0) {
       uVar3 = (*((this_ptr->base).base.base.vtable._ub)->playSound)

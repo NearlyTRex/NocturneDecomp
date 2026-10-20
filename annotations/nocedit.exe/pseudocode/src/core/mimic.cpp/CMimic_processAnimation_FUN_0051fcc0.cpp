@@ -83,8 +83,7 @@ void __cdecl core_mimic_cpp_CMimic_processAnimation_FUN_0051fcc0(CMimic *this_pt
   local_70.z = local_88.z;
   pCVar1 = &(this_ptr->base).base.model;
   local_70.y = 0.0;
-  pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                     (&pCVar1->motion_controller);
+  pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(&pCVar1->base);
   uVar2 = pSVar5->state_index;
   if (uVar2 < 2) {
     if (uVar2 == 0) {
@@ -120,8 +119,7 @@ void __cdecl core_mimic_cpp_CMimic_processAnimation_FUN_0051fcc0(CMimic *this_pt
           iVar8 = core_setcolid_cpp_CDemonSet_testVoxelRaycast_FUN_00572510
                             (g_CDemonSetPtr,&local_f4,&local_94);
           if (iVar8 == 0) {
-            core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                      (&pCVar1->motion_controller,2,1);
+            core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&pCVar1->base,2,1);
             (*((this_ptr->base).base.base.vtable._ub)->playSound)
                       ((CDemonActor *)this_ptr,"gh-alrt[1,4].wav");
           }
@@ -145,11 +143,9 @@ LAB_0051fd7d:
     fVar7 = (pCVar8->max).z - (pCVar8->min).z;
     if (-local_118.z <= SQRT(fVar7 * fVar7 + fVar6 * fVar6)) {
       pCVar1 = &(this_ptr->base).base.model;
-      fVar6 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                        (&pCVar1->motion_controller,1);
+      fVar6 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20(&pCVar1->base,1);
       (this_ptr->base).base.walk_step_speed = fVar6 * 4.242857f;
-      fVar7 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                        (&pCVar1->motion_controller,2);
+      fVar7 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20(&pCVar1->base,2);
       fVar6 = (this_ptr->base).speed;
       fVar1 = (this_ptr->base).speed;
       fVar3 = (float)1.57079632675;
@@ -192,7 +188,7 @@ LAB_0051fd7d:
         if (uVar2 != 0x13) goto LAB_005202b7;
         if ((g_HeroActors[g_LocalHeroIndex]->base).grabbed_by == (CDemonActor *)0x0) {
           fVar6 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_0052e2b0
-                            (&pCVar1->motion_controller);
+                            (&pCVar1->base);
           if (fVar6 <= (float)2) {
             local_1c = 2.5f;
             if (1.0 <= fVar6) {
@@ -236,7 +232,7 @@ LAB_005202b7:
     iVar14 = 2;
 LAB_0051fdac:
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              (&(this_ptr->base).base.model.motion_controller,iVar14,1);
+              (&(this_ptr->base).base.model.base,iVar14,1);
   }
 LAB_0051fdb4:
   if (0.0 <= local_1c) {
@@ -253,14 +249,13 @@ LAB_0051fdb4:
                        &g_HeroActors[g_LocalHeroIndex]->path_map,&local_64,3.0,0.5235988);
     if (iVar8 != 1) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                (&(this_ptr->base).base.model.motion_controller,2,1);
+                (&(this_ptr->base).base.model.base,2,1);
     }
   }
   local_2c[0] = delta_time * (this_ptr->base).speed;
   pCVar1 = &(this_ptr->base).base.model;
   while (0.0 < local_2c[0]) {
-    uVar7 = core_motion_cpp_CMotionController_advance_FUN_0052d610
-                      (&pCVar1->motion_controller,local_2c);
+    uVar7 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&pCVar1->base,local_2c);
     if (uVar7 != 0) {
       if (uVar7 < 2) {
         if ((this_ptr->base).base.is_on_ground != 0) {
@@ -281,8 +276,7 @@ LAB_0051fdb4:
     }
   }
   core_charactr_cpp_CCharacter_preProcess_FUN_00429820((CCharacter *)this_ptr);
-  pSVar9 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                     (&pCVar1->motion_controller);
+  pSVar9 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(&pCVar1->base);
   uVar2 = pSVar9->state_index;
   if (((uVar2 == 0xc) || (uVar2 == 0)) &&
      ((this_ptr->base).base.base.standing_platform == (CPlatform *)0x0)) goto LAB_00520482;

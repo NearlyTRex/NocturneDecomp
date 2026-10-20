@@ -18,7 +18,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_archive_FUN_00557800(CWerewolf *this_pt
               (&(this_ptr->base).guard_distance,"guardDistance");
   }
   core_actor_cpp_archiveMotionState_FUN_0040cb00
-            (&(this_ptr->base).base.model.motion_controller,"motion state");
+            (&(this_ptr->base).base.model.base,"motion state");
   if (1 < INT_005c1614) {
     core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->light_up_eyes,"lightUpEyes");
   }

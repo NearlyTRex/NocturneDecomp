@@ -48,7 +48,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0
         }
         quat1_in = quat1_in + 1;
         start_bone_index = start_bone_index + 1;
-        local_18 = (CDeformableModelInstance *)&(local_18->motion_controller).tween_speed;
+        local_18 = (CDeformableModelInstance *)&(local_18->base).tween_speed;
       } while (start_bone_index < local_1c->bone_count);
     }
   }

@@ -75,7 +75,7 @@ void __cdecl core_icepick_cpp_CIcePick_process_FUN_004f80b0(CIcePick *this_ptr,f
   pCVar1 = &(this_ptr->base).base.model;
   if (iVar6 == 0) {
     pSVar9 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                       (&pCVar1->motion_controller);
+                       (&pCVar1->base);
     uVar9 = pSVar9->state_index;
     if (uVar9 < 9) {
       if ((((uVar9 == 0) || (uVar9 < 2)) || (uVar9 < 3)) || (uVar9 == 3)) goto LAB_004f8427;
@@ -173,7 +173,7 @@ switchD_004f8665_default:
             (this_ptr->base).base.turn_angle_accumulator =
                  (this_ptr->base).player_input.turn_speed * (this_ptr->base).base.turn_speed;
             pSVar10 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                                (&(this_ptr->base).base.model.motion_controller);
+                                (&(this_ptr->base).base.model.base);
             if (iVar6 != pSVar10->state_index) {
               if ((((iVar6 == 0xe) || (iVar6 == 0xf)) || (iVar6 == 0x10)) &&
                  (iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[0]),
@@ -183,7 +183,7 @@ switchD_004f8665_default:
                 this_ptr->sfx_handles[0] = uVar8;
               }
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                        (&(this_ptr->base).base.model.motion_controller,iVar6,1);
+                        (&(this_ptr->base).base.model.base,iVar6,1);
             }
             if (((this_ptr->base).player_input.action_state.use_item != 0) &&
                (iVar6 = core_icepick_cpp_CIcePick_findAndPickupGun_FUN_004f8970(this_ptr),
@@ -214,7 +214,7 @@ LAB_004f8417:
       if (2 < uVar9) {
         if (uVar9 == 3) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (&pCVar1->motion_controller,0,1);
+                    (&pCVar1->base,0,1);
           engine_console_cpp_CConsole_printf_FUN_00441890
                     (g_CConsolePtr,"%s confused while walking to scriptDest!\n",(this_ptr->base).base.base.actor_name);
           goto LAB_004f81b6;
@@ -224,7 +224,7 @@ LAB_004f8417:
       iVar6 = 2;
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              (&(this_ptr->base).base.model.motion_controller,iVar6,1);
+              (&(this_ptr->base).base.model.base,iVar6,1);
   }
 LAB_004f81b6:
 #if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
@@ -287,7 +287,7 @@ LAB_004f82e5:
     iVar6 = 0x11;
   }
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-            (&(this_ptr->base).base.model.motion_controller,iVar6,1);
+            (&(this_ptr->base).base.model.base,iVar6,1);
 LAB_004f82f8:
   core_inv_cpp_CInventory_updateInventory_FUN_004ffad0(&(this_ptr->base).inventory);
   pCVar5 = (CWeapon *)

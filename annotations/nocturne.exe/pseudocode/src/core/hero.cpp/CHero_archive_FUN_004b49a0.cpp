@@ -19,8 +19,7 @@ void __cdecl core_hero_cpp_CHero_archive_FUN_004b49a0(CHero *this_ptr)
   if (g_INT_005ba940 < 4) {
     core_actor_cpp_CDemonActor_archive_FUN_0040d2d0((CDemonActor *)this_ptr);
     if (1 < g_INT_005ba940) {
-      core_actor_cpp_archiveMotionState_FUN_0040cb00
-                (&model_ptr->motion_controller,"motion state");
+      core_actor_cpp_archiveMotionState_FUN_0040cb00(&model_ptr->base,"motion state");
     }
     if (2 < g_INT_005ba940) {
       core_actor_cpp_archivePartStatus_FUN_0040cbf0(&(this_ptr->base).model,"partStatus");
@@ -30,8 +29,7 @@ void __cdecl core_hero_cpp_CHero_archive_FUN_004b49a0(CHero *this_ptr)
   }
   else {
     core_charactr_cpp_CCharacter_archive_FUN_004244b0(&this_ptr->base);
-    core_actor_cpp_archiveMotionState_FUN_0040cb00
-              (&model_ptr->motion_controller,"motion state");
+    core_actor_cpp_archiveMotionState_FUN_0040cb00(&model_ptr->base,"motion state");
     core_actor_cpp_archivePartStatus_FUN_0040cbf0(model_ptr,"partStatus");
     if (g_INT_005ba940 < 8) {
       core_actor_cpp_archiveActor_FUN_0040c980(&(this_ptr->base).grabbed_by,"grabbedBy");

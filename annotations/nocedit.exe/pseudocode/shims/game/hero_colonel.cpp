@@ -115,7 +115,7 @@ CWeapon *sidearm(CColonel *colonel)
 
 CMotionController *controller(CColonel *colonel)
 {
-    return &(colonel->base).base.model.motion_controller;
+    return &(colonel->base).base.model.base;
 }
 
 int current_state(CColonel *colonel)

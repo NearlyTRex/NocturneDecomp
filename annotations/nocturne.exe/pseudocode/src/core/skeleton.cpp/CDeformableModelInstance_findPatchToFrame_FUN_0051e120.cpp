@@ -36,8 +36,7 @@ int __cdecl core_skeleton_cpp_CDeformableModelInstance_findPatchToFrame_FUN_0051
   float local_18;
   int local_14;
   
-  pCVar2 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890
-                     (&this_ptr->motion_controller);
+  pCVar2 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890(&this_ptr->base);
   local_20 = pCVar2->motions[target_motion_index].frame_count;
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(this_ptr);
   iVar1 = pCVar3->bone_count;

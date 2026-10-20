@@ -14,7 +14,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_pasteActorProperty_FUN_0053af50(CDem
   
   switch(property->type) {
   case PROP_CHOICE:
-    actor = (((property->data).v_dfm_ptr)->motion_controller).motion_list_ptr;
+    actor = (((property->data).v_dfm_ptr)->base).motion_list_ptr;
     if (actor != (CMotionList *)0x0) {
       core_msnedit_cpp_CDemonMission_selectActor_FUN_0053c140(this_ptr,(CDemonActor *)actor);
       return;

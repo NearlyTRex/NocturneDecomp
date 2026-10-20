@@ -56,7 +56,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy
           (local_20->bone_transform).pose_data.bone_rotations[0].z = CStack_84.z;
         }
       }
-      local_20 = (CDeformableModelInstance *)&(local_20->motion_controller).tween_speed;
+      local_20 = (CDeformableModelInstance *)&(local_20->base).tween_speed;
       iVar2 = iVar2 + 1;
       local_1c = local_1c + 1;
     } while (iVar2 < local_24->bone_count);

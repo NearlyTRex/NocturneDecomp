@@ -39,7 +39,7 @@ void __cdecl core_icepick_cpp_CIcePick_updateShootBlend_FUN_004f8810(CIcePick *t
     motion_name = "shoot";
     this_ptr_02 = &(this_ptr->base).base.model;
     this_ptr_01 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
-                            (&this_ptr_02->motion_controller);
+                            (&this_ptr_02->base);
     target_motion_index =
          core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(this_ptr_01,motion_name,iVar5);
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50

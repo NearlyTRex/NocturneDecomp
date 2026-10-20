@@ -21,11 +21,9 @@ void __cdecl core_mobster_cpp_CMobster_startFiringAttack_FUN_004dc110(CMobster *
   this_ptr_00 = &(this_ptr->base).base.model;
   this_ptr->firing_cooldown = fVar2;
   if (pCVar1 != (CDemonActor *)0x0) {
-    core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-              (&this_ptr_00->motion_controller,6,1);
+    core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,6,1);
     return;
   }
-  core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-            (&this_ptr_00->motion_controller,2,1);
+  core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,2,1);
   return;
 }

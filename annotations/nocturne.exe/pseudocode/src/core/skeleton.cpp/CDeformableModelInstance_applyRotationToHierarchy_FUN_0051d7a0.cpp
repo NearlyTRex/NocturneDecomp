@@ -67,7 +67,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy
           puVar6[(uint)bVar8 * -2 + 1] = puVar3[(uint)bVar8 * -2 + 1];
         }
       }
-      local_20 = (CDeformableModelInstance *)&(local_20->motion_controller).tween_speed;
+      local_20 = (CDeformableModelInstance *)&(local_20->base).tween_speed;
       iVar2 = iVar2 + 1;
       local_1c = local_1c + 1;
     } while (iVar2 < local_24->bone_count);

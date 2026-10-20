@@ -76,8 +76,7 @@ void __cdecl core_haystack_cpp_CHaystack_process_FUN_004b32d0(CHaystack *this_pt
                     ((CCharacter *)this_ptr,delta_time);
   pCVar14 = &(this_ptr->base).base.model;
   if (iVar5 == 0) {
-    pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                       (&pCVar14->motion_controller);
+    pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(&pCVar14->base);
     switch(pSVar8->state_index) {
     case 0:
     case 1:
@@ -148,7 +147,7 @@ LAB_004b3687:
         (this_ptr->base).base.turn_angle_accumulator =
              (this_ptr->base).player_input.turn_speed * (this_ptr->base).base.turn_speed;
         pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                           (&(this_ptr->base).base.model.motion_controller);
+                           (&(this_ptr->base).base.model.base);
         if (iVar5 != pSVar8->state_index) goto LAB_004b33ac;
       }
       break;
@@ -170,8 +169,7 @@ LAB_004b35c4:
     else {
       if (2 < uVar9) {
         if (uVar9 == 3) {
-          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                    (&pCVar14->motion_controller,0,1);
+          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar14->base,0,1);
           engine_console_cpp_CConsole_printf_FUN_0043ac60
                     (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",this_ptr);
           goto switchD_004b375e_caseD_4;
@@ -182,7 +180,7 @@ LAB_004b35c4:
     }
 LAB_004b33ac:
     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-              (&(this_ptr->base).base.model.motion_controller,iVar5,1);
+              (&(this_ptr->base).base.model.base,iVar5,1);
   }
 switchD_004b375e_caseD_4:
   pCVar2 = (this_ptr->base).base.grabbed_by;
@@ -204,7 +202,7 @@ switchD_004b375e_caseD_4:
     (this_ptr->base).base.position_delta.y = (this_ptr->base).base.position_delta.z;
     pCVar1->x = (this_ptr->base).base.position_delta.y;
     pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                       (&(this_ptr->base).base.model.motion_controller);
+                       (&(this_ptr->base).base.model.base);
     if ((pSVar8->state_index == 0xe) || (pSVar8->state_index == 0xf)) {
       local_3c.y = 0.0;
       local_3c.x = 0.0;
@@ -259,7 +257,7 @@ LAB_004b34d1:
       iVar5 = 0x11;
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-              (&(this_ptr->base).base.model.motion_controller,iVar5,1);
+              (&(this_ptr->base).base.model.base,iVar5,1);
   }
 LAB_004b34e4:
   core_charactr_cpp_CCharacter_preProcess_FUN_004259a0((CCharacter *)this_ptr);
@@ -267,8 +265,8 @@ LAB_004b34e4:
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(pCStack_24);
   EVar7 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr);
   if ((EVar7 == DEATH_STATE_ALIVE) &&
-     (pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                         (&pCStack_24->motion_controller), pSVar8->state_index != 0x13)) {
+     (pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(&pCStack_24->base),
+     pSVar8->state_index != 0x13)) {
     blend_callback = core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650;
     fVar15 = this_ptr->head_look_blend_weight;
     iVar5 = _DAT_01cae018;

@@ -33,7 +33,7 @@ int __cdecl core_charactr_cpp_CCharacter_renderOpaque_FUN_00426440(CCharacter *t
                           (g_CDemonRenderer_PTR_005ae704);
         if (iVar2 == 0) {
           core_motion_cpp_CMotionController_render_FUN_004e22b0
-                    (&(this_ptr->model).motion_controller,&this_ptr->base);
+                    (&(this_ptr->model).base,&this_ptr->base);
           (*((this_ptr->base).vtable._ub)->renderTargetPoints)(&this_ptr->base);
         }
       }

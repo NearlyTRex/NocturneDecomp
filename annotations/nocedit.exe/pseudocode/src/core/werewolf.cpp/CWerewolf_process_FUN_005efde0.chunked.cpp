@@ -124,7 +124,7 @@ typedef struct CWerewolf_process_Ctx {
 #define GOTO_LAB_005f094d 4
 #define GOTO_LAB_005f092a 5
 
-// Chunk: branch_0_chunk_0 (lines 57-100 of original)
+// Chunk: branch_0_chunk_0 (lines 55-98 of original)
 static int CWerewolf_process_branch_0_chunk_0(CWerewolf_process_Ctx *ctx) {
     CWerewolf *&this_ptr = ctx->this_ptr;
     float &fVar13 = ctx->fVar13;
@@ -182,7 +182,7 @@ static int CWerewolf_process_branch_0_chunk_0(CWerewolf_process_Ctx *ctx) {
     return 0;
 }
 
-// Chunk: branch_0_check_uVar5_1_branch_0 (lines 101-130 of original)
+// Chunk: branch_0_check_uVar5_1_branch_0 (lines 99-128 of original)
 static int CWerewolf_process_branch_0_check_uVar5_1_branch_0(CWerewolf_process_Ctx *ctx) {
     CWerewolf *&this_ptr = ctx->this_ptr;
     uint &uVar5 = ctx->uVar5;
@@ -215,7 +215,7 @@ static int CWerewolf_process_branch_0_check_uVar5_1_branch_0(CWerewolf_process_C
              (EVar20 = (*(((pCVar6->base).vtable._uc)->_uc).getDeathState)(pCVar6),
              EVar20 != DEATH_STATE_ALIVE)) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                      (&(this_ptr->base).base.model.motion_controller,7,1);
+                      (&(this_ptr->base).base.model.base,7,1);
           }
           return GOTO_LAB_005f0010;
         }
@@ -223,7 +223,7 @@ static int CWerewolf_process_branch_0_check_uVar5_1_branch_0(CWerewolf_process_C
     return 0;
 }
 
-// Chunk: branch_0_check_uVar5_1_chunk_1 (lines 157-337 of original)
+// Chunk: branch_0_check_uVar5_1_chunk_1 (lines 155-333 of original)
 static int CWerewolf_process_branch_0_check_uVar5_1_chunk_1(CWerewolf_process_Ctx *ctx) {
     CWerewolf *&this_ptr = ctx->this_ptr;
     float &delta_time = ctx->delta_time;
@@ -334,7 +334,7 @@ LAB_005f0ae7:
           engine_console_cpp_CConsole_printf_FUN_00441890
                     (g_CConsolePtr,"%s gave up chase - I'm confused\n");
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (&(this_ptr->base).base.model.motion_controller,0,1);
+                    (&(this_ptr->base).base.model.base,0,1);
         }
         else if (iVar14 < 1) {
           pCVar17 = (CTrap *)core_actor_cpp_castToClassHash_FUN_0040c790
@@ -366,8 +366,7 @@ LAB_005f0ae7:
               fVar13 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                                  (local_170.y - (this_ptr->base).base.base.orient.vec.y);
               if (ABS(fVar13) < (float)0.39269908168750001) {
-                core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                          (&pCVar3->motion_controller,8,1);
+                core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&pCVar3->base,8,1);
                 iVar14 = core_actor_cpp_randomChance_FUN_0040cd10(0.85);
                 if (iVar14 != 0) {
                   core_werewolf_cpp_CWerewolf_playHowl_FUN_005f11e0(this_ptr);
@@ -380,7 +379,7 @@ LAB_005f0ae7:
                                        g_CWerewolfClassInfo.name_hash);
                   if (((pCVar19 != (CWerewolf *)0x0) && (pCVar19 != this_ptr)) &&
                      (pSVar15 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                                          (&(pCVar19->base).base.model.motion_controller),
+                                          (&(pCVar19->base).base.model.base),
                      pSVar15->state_index == 8)) {
                     iVar14 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,2);
                     if (iVar14 == 1) {
@@ -398,8 +397,7 @@ LAB_005f0ae7:
               }
             }
             else if ((fVar13 < 3.0f * 2.0f) && (uVar5 == 0xf)) {
-              core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                        (&pCVar3->motion_controller,0,1);
+              core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&pCVar3->base,0,1);
             }
           }
         }
@@ -410,15 +408,15 @@ LAB_005f0ae7:
             iVar14 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,2);
             if (iVar14 == 0) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                        (&(this_ptr->base).base.model.motion_controller,2,1);
+                        (&(this_ptr->base).base.model.base,2,1);
             }
             if (iVar14 == 1) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                        (&(this_ptr->base).base.model.motion_controller,3,1);
+                        (&(this_ptr->base).base.model.base,3,1);
             }
             if (iVar14 == 2) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                        (&(this_ptr->base).base.model.motion_controller,4,1);
+                        (&(this_ptr->base).base.model.base,4,1);
             }
             (this_ptr->base).attack_cooldown = 1.0;
             iVar14 = core_actor_cpp_randomChance_FUN_0040cd10(0.6);
@@ -436,7 +434,7 @@ LAB_005f0ae7:
     return 0;
 }
 
-// Chunk: branch_0_else_2 (lines 341-501 of original)
+// Chunk: branch_0_else_2 (lines 337-496 of original)
 static int CWerewolf_process_branch_0_else_2(CWerewolf_process_Ctx *ctx) {
     CWerewolf *&this_ptr = ctx->this_ptr;
     float &delta_time = ctx->delta_time;
@@ -487,8 +485,7 @@ static int CWerewolf_process_branch_0_else_2(CWerewolf_process_Ctx *ctx) {
         if ((pCVar6 != (CCharacter *)0x0) &&
            (EVar20 = (*(((pCVar6->base).vtable._uc)->_uc).getDeathState)(pCVar6),
            EVar20 != DEATH_STATE_ALIVE)) {
-          core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (&pCVar3->motion_controller,7,1);
+          core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&pCVar3->base,7,1);
         }
         return GOTO_LAB_005f0010;
       }
@@ -550,7 +547,7 @@ static int CWerewolf_process_branch_0_else_2(CWerewolf_process_Ctx *ctx) {
            (EVar20 = (*(((pCVar6->base).vtable._uc)->_uc).getDeathState)(pCVar6),
            EVar20 != DEATH_STATE_ALIVE)) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (&(this_ptr->base).base.model.motion_controller,7,1);
+                    (&(this_ptr->base).base.model.base,7,1);
         }
 LAB_005f04ff:
         if ((CHero *)(this_ptr->base).victim != g_HeroActors[g_LocalHeroIndex]) {
@@ -575,7 +572,7 @@ LAB_005f04ff:
            (EVar20 = (*(((pCVar6->base).vtable._uc)->_uc).getDeathState)(pCVar6),
            EVar20 != DEATH_STATE_ALIVE)) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (&(this_ptr->base).base.model.motion_controller,7,1);
+                    (&(this_ptr->base).base.model.base,7,1);
         }
         return GOTO_LAB_005f0010;
       }
@@ -614,21 +611,21 @@ LAB_005f0481:
         }
         if (uVar5 == 0xe) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (&(this_ptr->base).base.model.motion_controller,0xf,1);
+                    (&(this_ptr->base).base.model.base,0xf,1);
           return GOTO_LAB_005f0010;
         }
       }
       else if (uVar5 == 0xe) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&(this_ptr->base).base.model.motion_controller,0xf,1);
+                  (&(this_ptr->base).base.model.base,0xf,1);
         return GOTO_LAB_005f0010;
       }
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                (&(this_ptr->base).base.model.motion_controller,1,1);
+                (&(this_ptr->base).base.model.base,1,1);
     return 0;
 }
 
-// Chunk: chunk_1 (lines 571-600 of original)
+// Chunk: chunk_1 (lines 566-595 of original)
 static int CWerewolf_process_chunk_1(CWerewolf_process_Ctx *ctx) {
     CWerewolf *&this_ptr = ctx->this_ptr;
     float &delta_time = ctx->delta_time;
@@ -799,8 +796,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
   local_3c[0] = delta_time * (this_ptr->base).speed;
   pCVar3 = &(this_ptr->base).base.model;
   while (0.0 < local_3c[0]) {
-    uVar8 = core_motion_cpp_CMotionController_advance_FUN_0052d610
-                      (&pCVar3->motion_controller,local_3c);
+    uVar8 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&pCVar3->base,local_3c);
     if (uVar8 < 10) {
       core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,uVar8);
     }
@@ -831,8 +827,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
     (this_ptr->base).base.turn_speed = (this_ptr->base).base.turn_speed * (float)4;
   }
   pCVar3 = &(this_ptr->base).base.model;
-  pSVar10 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                      (&pCVar3->motion_controller);
+  pSVar10 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(&pCVar3->base);
   uVar5 = pSVar10->state_index;
   iVar14 = core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70
                      ((CCharacter *)this_ptr,delta_time);
@@ -857,7 +852,7 @@ LAB_005f094d:
         iVar14 = core_enemy_cpp_CEnemy_updatePatrol_FUN_004a9fd0(&this_ptr->base,delta_time);
         if (iVar14 == 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (&(this_ptr->base).base.model.motion_controller,0,1);
+                    (&(this_ptr->base).base.model.base,0,1);
         }
         goto LAB_005f0010;
       }
@@ -872,7 +867,7 @@ LAB_005f094d:
           (this_ptr->base).guard_distance < fVar13 || ((float)32 < fVar13)))) {
         (this_ptr->base).victim = (CCharacter *)0x0;
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&(this_ptr->base).base.model.motion_controller,0,1);
+                  (&(this_ptr->base).base.model.base,0,1);
         goto LAB_005f0010;
       }
       pCVar16 = (CTrap *)core_actor_cpp_castToClassHash_FUN_0040c790
@@ -883,7 +878,7 @@ LAB_005f094d:
     }
 LAB_005f092a:
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                (&(this_ptr->base).base.model.motion_controller,0,1);
+                (&(this_ptr->base).base.model.base,0,1);
     }
     else {
       int _rc = CWerewolf_process_branch_0_else_2(ctx);
@@ -911,7 +906,7 @@ LAB_005f028d:
     }
 LAB_005efff0:
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              (&(this_ptr->base).base.model.motion_controller,iVar14,1);
+              (&(this_ptr->base).base.model.base,iVar14,1);
   }
   else {
     if (uVar4 < 3) {
@@ -925,7 +920,7 @@ LAB_005efff0:
       goto LAB_005efff0;
     }
     if (uVar4 != 3) goto LAB_005f028d;
-    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&pCVar3->motion_controller,0,1);
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&pCVar3->base,0,1);
     engine_console_cpp_CConsole_printf_FUN_00441890
               (g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);
   }
@@ -960,7 +955,7 @@ LAB_005f0010:
     (this_ptr->base).attack_cooldown = (this_ptr->base).attack_cooldown - delta_time;
   }
   pSVar15 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                      (&(this_ptr->base).base.model.motion_controller);
+                      (&(this_ptr->base).base.model.base);
   iVar14 = pSVar15->state_index;
   if (((((iVar14 != 0xd) && (iVar14 != 0)) && (iVar14 != 0xe)) && (iVar14 != 0x14)) ||
     {

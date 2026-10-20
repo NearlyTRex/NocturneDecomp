@@ -18,6 +18,6 @@ void __cdecl core_larva_cpp_CLarva_archive_FUN_004c5250(CLarva *this_ptr)
               (&(this_ptr->base).guard_distance,"guardDistance");
   }
   core_actor_cpp_archiveMotionState_FUN_0040cb00
-            (&(this_ptr->base).base.model.motion_controller,"motion state");
+            (&(this_ptr->base).base.model.base,"motion state");
   return;
 }

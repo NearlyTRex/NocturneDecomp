@@ -61,7 +61,7 @@ int __cdecl core_stranger_cpp_CStranger_tryPlaceObject_FUN_005c2850(CStranger *t
     return 0;
   }
   fVar7 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                    (&(this_ptr->base).base.model.motion_controller,0);
+                    (&(this_ptr->base).base.model.base,0);
   if (fVar7 < 1.0) {
     return 0;
   }
@@ -104,7 +104,7 @@ int __cdecl core_stranger_cpp_CStranger_tryPlaceObject_FUN_005c2850(CStranger *t
             (this_ptr->base).target_orientation.vec = pUVar15->vec;
           }
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (&(this_ptr->base).base.model.motion_controller,0x16,1);
+                    (&(this_ptr->base).base.model.base,0x16,1);
           return 1;
         }
       }
@@ -134,7 +134,7 @@ int __cdecl core_stranger_cpp_CStranger_tryPlaceObject_FUN_005c2850(CStranger *t
             (ABS(pCVar9->x - pCVar13->x) < (float)2) &&
             (0.0 < fVar2) && (fVar2 < (float)4))) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (&(this_ptr->base).base.model.motion_controller,0x1a,1);
+                    (&(this_ptr->base).base.model.base,0x1a,1);
           pCVar13 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                               ((CDemonActor *)this_ptr,&CStack_60,&pCVar12->position);
           if (&this_ptr->carry_object_world_center != pCVar13) {
@@ -223,7 +223,7 @@ int __cdecl core_stranger_cpp_CStranger_tryPlaceObject_FUN_005c2850(CStranger *t
       iVar16 = 0x19;
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              (&(this_ptr->base).base.model.motion_controller,iVar16,1);
+              (&(this_ptr->base).base.model.base,iVar16,1);
     this_ptr->action_timer = 4.0;
     return 1;
   }

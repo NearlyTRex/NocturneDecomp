@@ -146,7 +146,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_process_FUN_00484410(CDraculaBride 
   pCVar5 = &(this_ptr->base).base.model;
   while (0.0 < local_38) {
     iVar10 = core_motion_cpp_CMotionController_advance_FUN_0052d610
-                       (&pCVar5->motion_controller,&local_38);
+                       (&pCVar5->base,&local_38);
     if (iVar10 == 0x29a) {
       (this_ptr->base).base.damage_decal_count = 0;
       local_178.x = 0.0;
@@ -166,7 +166,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_process_FUN_00484410(CDraculaBride 
     }
   }
   pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                     (&pCVar5->motion_controller);
+                     (&pCVar5->base);
   iVar10 = pSVar8->state_index;
   if (iVar10 == 9) {
     fVar22 = 6.0f * delta_time;
@@ -194,13 +194,13 @@ LAB_004848f9:
         iVar10 = 0;
       }
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                (&(this_ptr->base).base.model.motion_controller,iVar10,1);
+                (&(this_ptr->base).base.model.base,iVar10,1);
     }
     else {
       if (uVar5 < 3) goto LAB_004846a6;
       if (uVar5 != 3) goto LAB_004848f9;
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                (&(this_ptr->base).base.model.motion_controller,0,1);
+                (&(this_ptr->base).base.model.base,0,1);
       engine_console_cpp_CConsole_printf_FUN_00441890
                 (g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr->base.base.base.actor_name);
     }
@@ -216,7 +216,7 @@ LAB_004848f9:
       iVar10 = core_enemy_cpp_CEnemy_updatePatrol_FUN_004a9fd0(&this_ptr->base,delta_time);
       if (iVar10 != 0) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&(this_ptr->base).base.model.motion_controller,0xe,1);
+                  (&(this_ptr->base).base.model.base,0xe,1);
       }
       break;
     }
@@ -238,7 +238,7 @@ LAB_004848f9:
                   (local_430,"bride-%d?.wav",this_ptr->freaky_voice_number);
         core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_004864c0(this_ptr,local_430,1.0);
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&(this_ptr->base).base.model.motion_controller,0x17,1);
+                  (&(this_ptr->base).base.model.base,0x17,1);
         (*((this_ptr->base).base.base.vtable._ub)->playSound)
                   ((CDemonActor *)this_ptr,"hotbride-disappear.wav");
         pCVar8 = (this_ptr->base).victim;
@@ -255,7 +255,7 @@ LAB_004848f9:
       local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(2.0,20.0);
       this_ptr->action_delay = local_14;
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                (&(this_ptr->base).base.model.motion_controller,0xd,1);
+                (&(this_ptr->base).base.model.base,0xd,1);
       break;
     }
     goto LAB_004852f8;
@@ -313,24 +313,24 @@ LAB_004848f9:
       iVar10 = core_enemy_cpp_CEnemy_updatePatrol_FUN_004a9fd0(&this_ptr->base,delta_time);
       if (iVar10 != 0) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&(this_ptr->base).base.model.motion_controller,0xe,1);
+                  (&(this_ptr->base).base.model.base,0xe,1);
       }
     }
     else {
       if (((this_ptr->base).base.hit_points < 20.0f) || (this_ptr->action_delay < 0.0)) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&(this_ptr->base).base.model.motion_controller,0,1);
+                  (&(this_ptr->base).base.model.base,0,1);
         local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(2.0,20.0);
         this_ptr->action_delay = local_14;
       }
       pCVar5 = &(this_ptr->base).base.model;
       if (this_ptr->attack_landed == 0) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&pCVar5->motion_controller,9,1);
+                  (&pCVar5->base,9,1);
       }
       else {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&pCVar5->motion_controller,0x19,1);
+                  (&pCVar5->base,0x19,1);
         this_ptr->attack_landed = 0;
       }
     }
@@ -365,7 +365,7 @@ LAB_004848f9:
           engine_console_cpp_CConsole_printf_FUN_00441890
                     (g_CConsolePtr,"%s gave up chase - I'm confused\n",this_ptr->base.base.base.actor_name);
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (&pCVar5->motion_controller,8,1);
+                    (&pCVar5->base,8,1);
         }
         else if (iVar10 < 1) {
           pCVar8 = (this_ptr->base).victim;
@@ -386,13 +386,13 @@ LAB_004848f9:
               (this_ptr->base).base.base.orient.vec.y =
                    local_14 + (this_ptr->base).base.base.orient.vec.y;
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                        (&(this_ptr->base).base.model.motion_controller,3,1);
+                        (&(this_ptr->base).base.model.base,3,1);
             }
           }
         }
         else if ((this_ptr->base).attack_cooldown <= 0.0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (&pCVar5->motion_controller,2,1);
+                    (&pCVar5->base,2,1);
           (*((this_ptr->base).base.base.vtable._ub)->playSound)
                     ((CDemonActor *)this_ptr,"hotbride-bite?.wav");
           (this_ptr->base).attack_cooldown = 1.0;
@@ -402,7 +402,7 @@ LAB_004848f9:
         local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(2.0,20.0);
         this_ptr->action_delay = local_14;
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&pCVar5->motion_controller,0,1);
+                  (&pCVar5->base,0,1);
       }
       break;
     }
@@ -410,7 +410,7 @@ LAB_004848f9:
     if (iVar10 == 0) break;
 LAB_004852f8:
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              (&(this_ptr->base).base.model.motion_controller,0xe,1);
+              (&(this_ptr->base).base.model.base,0xe,1);
     break;
   case 0xc:
     EVar14 = (*(((sim_target->base).base.vtable._uc)->_uc).getDeathState)
@@ -419,7 +419,7 @@ LAB_004852f8:
        (iVar10 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                            (g_CEventListPtr,this_ptr->rise_event), iVar10 != 0)) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                (&(this_ptr->base).base.model.motion_controller,0xd,1);
+                (&(this_ptr->base).base.model.base,0xd,1);
     }
     break;
   case 0xe:
@@ -439,7 +439,7 @@ LAB_004852f8:
       iVar10 = core_enemy_cpp_CEnemy_updatePatrol_FUN_004a9fd0(&this_ptr->base,delta_time);
       if (iVar10 == 0) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&pCVar5->motion_controller,0,1);
+                  (&pCVar5->base,0,1);
       }
     }
     else {
@@ -463,21 +463,21 @@ LAB_004852f8:
         engine_console_cpp_CConsole_printf_FUN_00441890
                   (g_CConsolePtr,"%s gave up chase - I'm confused\n",this_ptr->base.base.base.actor_name);
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&pCVar5->motion_controller,0,1);
+                  (&pCVar5->base,0,1);
       }
       else if ((0 < iVar10) && ((this_ptr->base).attack_cooldown <= 0.0)) {
         iVar10 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,2);
         if (iVar10 == 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (&pCVar5->motion_controller,0x13,1);
+                    (&pCVar5->base,0x13,1);
         }
         if (iVar10 == 1) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (&(this_ptr->base).base.model.motion_controller,0x14,1);
+                    (&(this_ptr->base).base.model.base,0x14,1);
         }
         if (iVar10 == 2) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (&(this_ptr->base).base.model.motion_controller,0x15,1);
+                    (&(this_ptr->base).base.model.base,0x15,1);
           (*((this_ptr->base).base.base.vtable._ub)->playSound)
                     ((CDemonActor *)this_ptr,"hotbride-swipe?.wav");
         }
@@ -490,7 +490,7 @@ LAB_004852f8:
                        (g_CEventListPtr,this_ptr->rise_event);
     if (iVar10 != 0) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                (&(this_ptr->base).base.model.motion_controller,0xb,1);
+                (&(this_ptr->base).base.model.base,0xb,1);
     }
     break;
   case 0x10:
@@ -511,7 +511,7 @@ LAB_004852f8:
        (iVar10 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                            (g_CEventListPtr,this_ptr->rise_event), iVar10 != 0)) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                (&(this_ptr->base).base.model.motion_controller,0xd,1);
+                (&(this_ptr->base).base.model.base,0xd,1);
     }
     break;
   case 0x13:
@@ -577,7 +577,7 @@ LAB_004852f8:
     switch(this_ptr->mist_state) {
     case 0:
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                (&(this_ptr->base).base.model.motion_controller,0,1);
+                (&(this_ptr->base).base.model.base,0,1);
       break;
     case 1:
       fVar20 = this_ptr->vanish_timer + delta_time;
@@ -669,7 +669,7 @@ LAB_004852f8:
         this_ptr->vanish_timer = 0.0;
         this_ptr->mist_state = 0;
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&pCVar5->motion_controller,0xe,1);
+                  (&pCVar5->base,0xe,1);
         local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(2.0,20.0);
         this_ptr->action_delay = local_14;
       }
@@ -680,7 +680,7 @@ LAB_004852f8:
                        (g_CEventListPtr,this_ptr->rise_event);
     if (iVar10 != 0) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                (&(this_ptr->base).base.model.motion_controller,0,1);
+                (&(this_ptr->base).base.model.base,0,1);
     }
   }
 switchD_004858cd_caseD_1:
@@ -688,7 +688,7 @@ switchD_004858cd_caseD_1:
     (this_ptr->base).attack_cooldown = (this_ptr->base).attack_cooldown - delta_time;
   }
   pSVar11 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                      (&(this_ptr->base).base.model.motion_controller);
+                      (&(this_ptr->base).base.model.base);
   local_28 = pSVar11->state_index;
   if ((((local_28 != 0x11) && (local_28 != 0x10)) && (local_28 != 0xf)) ||
      ((this_ptr->base).base.base.standing_platform != (CPlatform *)0x0)) {

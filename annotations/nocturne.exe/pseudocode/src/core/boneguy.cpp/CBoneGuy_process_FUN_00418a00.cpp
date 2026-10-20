@@ -89,7 +89,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_00418a00(CBoneGuy *this_ptr,f
       core_boneguy_cpp_CBoneGuy_explode_FUN_0041a0f0(this_ptr);
     }
     core_motion_cpp_CMotionController_jumpToMotion_FUN_004e1990
-              (&(this_ptr->base).base.model.motion_controller,5,0.0);
+              (&(this_ptr->base).base.model.base,5,0.0);
   }
   iVar7 = core_charactr_cpp_CCharacter_processCharacter_FUN_004259f0
                     ((CCharacter *)this_ptr,delta_time);
@@ -196,8 +196,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_00418a00(CBoneGuy *this_ptr,f
   local_38 = delta_time * (this_ptr->base).speed;
   pCVar2 = &(this_ptr->base).base.model;
   while (0.0 < local_38) {
-    iVar7 = core_motion_cpp_CMotionController_advance_FUN_004e11c0
-                      (&pCVar2->motion_controller,&local_38);
+    iVar7 = core_motion_cpp_CMotionController_advance_FUN_004e11c0(&pCVar2->base,&local_38);
     if (iVar7 == 100) {
       pCVar4 = this_ptr->pickup_target;
       if (pCVar4 != (CDemonActor *)0x0) {
@@ -215,8 +214,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_00418a00(CBoneGuy *this_ptr,f
   fVar18 = (float)0.25;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
   (this_ptr->base).base.turn_speed = delta_time * fVar6 * fVar17 * fVar18;
-  pSVar9 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                     (&pCVar2->motion_controller);
+  pSVar9 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(&pCVar2->base);
   iVar7 = pSVar9->state_index;
   local_34 = iVar7;
   iVar10 = core_charactr_cpp_CCharacter_processWalking_FUN_00428c00
@@ -228,13 +226,11 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_00418a00(CBoneGuy *this_ptr,f
       if (iVar7 == 0) {
         (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
         if ((this_ptr->base).victim != (CCharacter *)0x0) {
-          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                    (&pCVar2->motion_controller,1,1);
+          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar2->base,1,1);
         }
       }
       else {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                  (&pCVar2->motion_controller,1,1);
+        core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar2->base,1,1);
       }
       break;
     case 1:
@@ -242,8 +238,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_00418a00(CBoneGuy *this_ptr,f
       if ((this_ptr->base).victim == (CCharacter *)0x0) {
         iVar7 = core_enemy_cpp_CEnemy_updatePatrol_FUN_0047a030(&this_ptr->base,delta_time);
         if (iVar7 == 0) {
-          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                    (&pCVar2->motion_controller,0,1);
+          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar2->base,0,1);
         }
       }
       else {
@@ -269,8 +264,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_00418a00(CBoneGuy *this_ptr,f
           if (iVar7 < 0) {
             engine_console_cpp_CConsole_printf_FUN_0043ac60
                       (g_CConsole_PTR_005ad350,"%s gave up chase - I'm confused\n",this_ptr);
-            core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                      (&pCVar2->motion_controller,0,1);
+            core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar2->base,0,1);
           }
           else {
             pCVar5 = (this_ptr->base).victim;
@@ -286,8 +280,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_00418a00(CBoneGuy *this_ptr,f
               else {
                 iVar7 = 6;
               }
-              core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                        (&pCVar2->motion_controller,iVar7,1);
+              core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar2->base,iVar7,1);
               sound_sndmain_cpp_killSfx_FUN_00527230(this_ptr->sfx_handle);
               (*((this_ptr->base).base.base.vtable._ub)->playSound)
                         ((CDemonActor *)this_ptr,"boneguy-swing?.wav");
@@ -376,13 +369,12 @@ LAB_0041907c:
         iVar7 = 0;
       }
       core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                (&(this_ptr->base).base.model.motion_controller,iVar7,1);
+                (&(this_ptr->base).base.model.base,iVar7,1);
     }
     else {
       if (uVar12 < 3) goto LAB_00418e39;
       if (uVar12 != 3) goto LAB_0041907c;
-      core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar2->motion_controller,0,1)
-      ;
+      core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar2->base,0,1);
       engine_console_cpp_CConsole_printf_FUN_0043ac60
                 (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",this_ptr);
     }

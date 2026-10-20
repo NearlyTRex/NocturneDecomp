@@ -8,15 +8,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 2528,
-    "complexity_score": 1032,
+    "complexity_score": 1027,
     "cross_reference_count": 0,
     "function_call_count": 49,
     "global_count": 74,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 1032,
+    "pseudocode_lines": 1027,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 3560
+    "total_lines": 3555
   },
   "cross_references": [],
   "function": {
@@ -815,7 +815,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 731,
+      "line": 727,
       "match": "(CCharacter **)((int)g_CDemonSetPtr",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -824,7 +824,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 402,
+      "line": 401,
       "match": "do {",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -833,7 +833,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 358,
+      "line": 357,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -842,7 +842,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 535,
+      "line": 532,
       "match": "cascade_constant_fill",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -851,7 +851,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 894,
+      "line": 889,
       "match": "cascade_constant_fill",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -860,7 +860,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 934,
+      "line": 929,
       "match": "cascade_constant_fill",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -869,7 +869,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 937,
+      "line": 932,
       "match": "cascade_constant_fill",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -878,7 +878,7 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_134 != &local_254)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 800,
+      "line": 795,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -887,7 +887,7 @@
     },
     {
       "description": "Inlined fast sqrt bit-trick (bias `g_FastSqrtMagic`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Replace with `fastSqrt(<expr>)` in a .keep - the helper function exists in the binary (FUN_00431350).",
-      "line": 806,
+      "line": 801,
       "match": "local_5c = (float)(((int)local_1c >> 1) + g_FastSqrtMagic);",
       "resolution_source": "keep",
       "severity": "moderate",

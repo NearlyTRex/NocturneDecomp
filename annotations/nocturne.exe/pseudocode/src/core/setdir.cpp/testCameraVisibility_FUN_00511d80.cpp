@@ -22,11 +22,14 @@ float __cdecl core_setdir_cpp_testCameraVisibility_FUN_00511d80(CDemonActor *act
   uint *puVar9;
   int iVar10;
   SProjectedVertex *point;
-  byte *puVar11;
+  uint (*pauVar11) [64];
   uint *puVar12;
-  uint uVar13;
-  uint *puVar14;
-  byte bVar15;
+  uint (*paauVar13) [48] [64];
+  byte *puVar14;
+  uint uVar15;
+  uint *puVar16;
+  uint *puVar17;
+  byte bVar18;
   float local_d8;
   SMRGLHeaderPrimitive local_d4;
   uint local_bc;
@@ -39,7 +42,7 @@ float __cdecl core_setdir_cpp_testCameraVisibility_FUN_00511d80(CDemonActor *act
   CVector3i local_7c [3];
   CBoundingBox3D *local_58;
   uint local_54;
-  uint *local_4c;
+  uint (*local_4c) [48] [64];
   float local_48;
   uint local_44;
   int local_40;
@@ -54,7 +57,7 @@ float __cdecl core_setdir_cpp_testCameraVisibility_FUN_00511d80(CDemonActor *act
   int local_1c;
   uint local_18;
   
-  bVar15 = 0;
+  bVar18 = 0;
   if (camera->enabled != 0) {
     fVar2 = (camera->position).x - (actor->location).position.x;
     fVar4 = (camera->position).y - (actor->location).position.y;
@@ -88,10 +91,10 @@ float __cdecl core_setdir_cpp_testCameraVisibility_FUN_00511d80(CDemonActor *act
                           transformed_x + iVar6),bbox_vertices);
         iVar10 = iVar6 + 0x30;
         bbox_vertices = bbox_vertices + 1;
-        uVar13 = *(uint *)((int)&(g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex
+        uVar15 = *(uint *)((int)&(g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex
                                  ).screen_x + iVar6);
-        local_38 = local_38 & uVar13;
-        local_44 = local_44 | uVar13;
+        local_38 = local_38 & uVar15;
+        local_44 = local_44 | uVar15;
         iVar6 = iVar10;
       } while (iVar10 != 0x180);
       if (((local_38 & 0x80000000) != 0) && ((char)local_38 != '\0')) {
@@ -147,7 +150,7 @@ float __cdecl core_setdir_cpp_testCameraVisibility_FUN_00511d80(CDemonActor *act
         local_48 = 100.0f * 100.0f;
         local_30 = 0;
         local_2c = g_CBoundingBox3D_ARRAY_02665930;
-        local_4c = (uint *)(&DAT_020875f8 + camera_index * 0x3000);
+        local_4c = g_ThumbZBufferTable + camera_index;
         local_34 = &camera->position;
         do {
           local_20 = *(CDemonActor **)(&DAT_026639f0 + local_30);
@@ -158,11 +161,11 @@ float __cdecl core_setdir_cpp_testCameraVisibility_FUN_00511d80(CDemonActor *act
             core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(local_20);
             local_54 = 0x800000ff;
             local_18 = 0;
-            uVar13 = 0;
+            uVar15 = 0;
             local_58 = local_2c;
             iVar6 = 0x180;
             do {
-              core_box_cpp_CBoundingBox3D_getCorner_FUN_0041cc70(local_58,&local_88,uVar13);
+              core_box_cpp_CBoundingBox3D_getCorner_FUN_0041cc70(local_58,&local_88,uVar15);
               local_7c[0].x = (int)ROUND(local_88.x * _DAT_005a1a70);
               local_7c[0].y = (int)ROUND(local_88.y * _DAT_005a1a70);
               local_7c[0].z = (int)ROUND(local_88.z * _DAT_005a1a70);
@@ -170,35 +173,35 @@ float __cdecl core_setdir_cpp_testCameraVisibility_FUN_00511d80(CDemonActor *act
                         ((SProjectedVertex *)
                          ((int)&(g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex)
                                 .transformed_x + iVar6),local_7c);
-              uVar13 = uVar13 + 1;
+              uVar15 = uVar15 + 1;
               uVar1 = *(uint *)((int)&(g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->
                                       projected_vertex).screen_x + iVar6);
               local_54 = local_54 & uVar1;
               local_18 = local_18 | uVar1;
               iVar6 = iVar6 + 0x30;
-            } while ((int)uVar13 < 8);
+            } while ((int)uVar15 < 8);
             core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(local_20);
             if (((local_54 & 0x80000000) == 0) || ((char)local_54 == '\0')) {
               if (local_3c == 0) {
                 local_3c = 1;
-                puVar9 = local_4c;
-                puVar12 = (uint *)&DAT_020845f4;
+                paauVar13 = local_4c;
+                puVar17 = (uint *)&DAT_020845f4;
                 for (iVar6 = 0xc00; iVar6 != 0; iVar6 = iVar6 + -1) {
-                  *puVar12 = *puVar9;
-                  puVar9 = puVar9 + (uint)bVar15 * -2 + 1;
-                  puVar12 = puVar12 + (uint)bVar15 * -2 + 1;
+                  *puVar17 = (*paauVar13)[0][0];
+                  paauVar13 = (uint (*) [48] [64])((int)paauVar13 + ((uint)bVar18 * -2 + 1) * 4);
+                  puVar17 = puVar17 + (uint)bVar18 * -2 + 1;
                 }
                 for (iVar6 = 0; iVar6 != 0; iVar6 = iVar6 + -1) {
-                  *(byte *)puVar12 = *(byte *)puVar9;
-                  puVar9 = (uint *)((int)puVar9 + (uint)bVar15 * -2 + 1);
-                  puVar12 = (uint *)((int)puVar12 + (uint)bVar15 * -2 + 1);
+                  *(char *)puVar17 = (char)(*paauVar13)[0][0];
+                  paauVar13 = (uint (*) [48] [64])((int)paauVar13 + (uint)bVar18 * -2 + 1);
+                  puVar17 = (uint *)((int)puVar17 + (uint)bVar18 * -2 + 1);
                 }
-                puVar11 = &DAT_020845f4;
+                puVar14 = &DAT_020845f4;
                 iVar6 = 0;
                 do {
-                  *(byte **)((int)g_ZBufferScanlineArray + iVar6) = puVar11;
+                  *(byte **)((int)g_ZBufferScanlineArray + iVar6) = puVar14;
                   iVar6 = iVar6 + 4;
-                  puVar11 = puVar11 + 0x100;
+                  puVar14 = puVar14 + 0x100;
                 } while (iVar6 != 0xc0);
                 engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0
                           (g_CDemonRenderer_PTR_005ae704,1);
@@ -252,12 +255,12 @@ float __cdecl core_setdir_cpp_testCameraVisibility_FUN_00511d80(CDemonActor *act
       engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0
                 (g_CDemonRenderer_PTR_005ae704,0);
       if (local_3c == 0) {
-        puVar11 = &DAT_020875f8 + camera_index * 0x3000;
+        pauVar11 = g_ThumbZBufferTable[camera_index];
         iVar6 = 0;
         do {
-          *(byte **)((int)g_ZBufferScanlineArray + iVar6) = puVar11;
+          *(uint (**) [64])((int)g_ZBufferScanlineArray + iVar6) = pauVar11;
           iVar6 = iVar6 + 4;
-          puVar11 = puVar11 + 0x100;
+          pauVar11 = pauVar11 + 1;
         } while (iVar6 != 0xc0);
       }
       engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0
@@ -282,16 +285,16 @@ float __cdecl core_setdir_cpp_testCameraVisibility_FUN_00511d80(CDemonActor *act
         do {
           iVar8 = iVar6 + 4;
           puVar12 = *(uint **)((int)g_ZBufferScanlineArray + iVar6);
-          puVar14 = puVar9;
+          puVar16 = puVar9;
           for (iVar10 = 0x40; iVar10 != 0; iVar10 = iVar10 + -1) {
-            *puVar14 = *puVar12;
-            puVar12 = puVar12 + (uint)bVar15 * -2 + 1;
-            puVar14 = puVar14 + (uint)bVar15 * -2 + 1;
+            *puVar16 = *puVar12;
+            puVar12 = puVar12 + (uint)bVar18 * -2 + 1;
+            puVar16 = puVar16 + (uint)bVar18 * -2 + 1;
           }
           for (iVar10 = 0; iVar10 != 0; iVar10 = iVar10 + -1) {
-            *(byte *)puVar14 = *(byte *)puVar12;
-            puVar12 = (uint *)((int)puVar12 + (uint)bVar15 * -2 + 1);
-            puVar14 = (uint *)((int)puVar14 + (uint)bVar15 * -2 + 1);
+            *(byte *)puVar16 = *(byte *)puVar12;
+            puVar12 = (uint *)((int)puVar12 + (uint)bVar18 * -2 + 1);
+            puVar16 = (uint *)((int)puVar16 + (uint)bVar18 * -2 + 1);
           }
           *(uint **)((int)g_ZBufferScanlineArray + iVar6) = puVar9;
           puVar9 = puVar9 + 0x40;

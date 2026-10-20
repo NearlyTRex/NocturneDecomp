@@ -40,8 +40,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateAimTracking_FUN_004990c0(CGabrie
   
   if ((is_holstering == 0) &&
      (pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                         (&(this_ptr->base).base.model.motion_controller), pSVar3->state_index == 2)
-     ) {
+                         (&(this_ptr->base).base.model.base), pSVar3->state_index == 2)) {
     is_holstering = 1;
   }
   if (((this_ptr->base).aim_mode == AIM_MODE_AUTO) ||

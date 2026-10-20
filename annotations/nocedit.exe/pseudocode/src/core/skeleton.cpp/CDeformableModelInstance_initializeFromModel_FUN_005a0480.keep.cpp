@@ -24,7 +24,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_initializeFromModel_FUN_
   this_ptr->model_ptr = model_ptr;
   skeleton_ptr = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
   core_motion_cpp_CMotionController_setMotionList_FUN_0052dcb0
-            (&this_ptr->motion_controller,&skeleton_ptr->motion_list);
+            (&this_ptr->base,&skeleton_ptr->motion_list);
   local_14 = skeleton_ptr->bone_count;
   pCVar1 = this_ptr->model_ptr;
   local_24 = (pCVar1->model_scale).x * this_ptr->scale_factor;

@@ -68,8 +68,8 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
   bVar20 = 0;
   if ((float)0.001 < blend_weight) {
     core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_004e2070
-              (&this_ptr->motion_controller,target_motion_index,target_frame_number,local_58,
-               &local_5c,&stack0xfffff6c8);
+              (&this_ptr->base,target_motion_index,target_frame_number,local_58,&local_5c,
+               &stack0xfffff6c8);
     this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(this_ptr);
     if (this_ptr->bone_update_mode == 0) {
       if (0 < this_ptr_00->bone_count) {
@@ -104,7 +104,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
             *puVar19 = *puVar17;
             puVar19[(uint)bVar20 * -2 + 1] = puVar17[(uint)bVar20 * -2 + 1];
           }
-          local_34 = (CDeformableModelInstance *)&(local_34->motion_controller).tween_speed;
+          local_34 = (CDeformableModelInstance *)&(local_34->base).tween_speed;
           local_2c = local_2c + 1;
           local_1c = local_1c + 1;
         } while (local_1c < this_ptr_00->bone_count);
@@ -204,7 +204,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
           local_24 = local_24 + 1;
           local_3c = local_3c + 4;
           local_30 = (CSkeleton *)((local_30->motion_list).state_names[1] + 2);
-          local_38 = (CDeformableModelInstance *)&(local_38->motion_controller).tween_speed;
+          local_38 = (CDeformableModelInstance *)&(local_38->base).tween_speed;
           local_40 = local_40 + 1;
         } while (local_24 < this_ptr_00->bone_count);
       }

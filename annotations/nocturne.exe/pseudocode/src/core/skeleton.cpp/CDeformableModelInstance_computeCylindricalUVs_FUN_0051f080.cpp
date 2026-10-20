@@ -65,7 +65,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FU
       else {
         fVar12 = atan2((float10)*piVar7,(float10)piVar7[2]);
         dVar13 = round((double)(fVar12 * (float10)2670176.8577967598));
-        pcVar8 = (this_ptr->motion_controller).current_motion_name + (int)ROUND(dVar13) + -0x30;
+        pcVar8 = (this_ptr->base).current_motion_name + (int)ROUND(dVar13) + -0x30;
         pSVar4 = g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr;
         iVar5 = extraout_ECX;
         piVar7 = extraout_EDX;

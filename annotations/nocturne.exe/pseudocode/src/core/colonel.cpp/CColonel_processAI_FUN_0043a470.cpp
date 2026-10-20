@@ -115,15 +115,14 @@ void __cdecl core_colonel_cpp_CColonel_processAI_FUN_0043a470(CColonel *this_ptr
         }
         else {
           pSVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                             (&this_ptr_00->motion_controller);
+                             (&this_ptr_00->base);
           if ((pSVar7->state_index != 2) && (pSVar7->state_index != 1)) {
             (this_ptr->base).player_input.action_state.fire = 1;
           }
         }
       }
       else {
-        core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                  (&this_ptr_00->motion_controller);
+        core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(&this_ptr_00->base);
       }
       if (bVar3) {
         pCVar6 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0

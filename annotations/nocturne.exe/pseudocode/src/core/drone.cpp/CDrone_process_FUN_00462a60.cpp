@@ -60,8 +60,7 @@ void __cdecl core_drone_cpp_CDrone_process_FUN_00462a60(CDrone *this_ptr,float d
   local_20 = delta_time * (this_ptr->base).speed;
   this_ptr_00 = &(this_ptr->base).base.model;
   while (0.0 < local_20) {
-    iVar4 = core_motion_cpp_CMotionController_advance_FUN_004e11c0
-                      (&this_ptr_00->motion_controller,&local_20);
+    iVar4 = core_motion_cpp_CMotionController_advance_FUN_004e11c0(&this_ptr_00->base,&local_20);
     core_charactr_cpp_CCharacter_processMotion_FUN_0042add0((CCharacter *)this_ptr,iVar4);
   }
   fVar10 = (this_ptr->base).speed;
@@ -71,8 +70,7 @@ void __cdecl core_drone_cpp_CDrone_process_FUN_00462a60(CDrone *this_ptr,float d
   (this_ptr->base).base.walk_step_speed =
        (this_ptr->base).base.model.accumulated_root_motion.z * fVar11;
   (this_ptr->base).base.turn_speed = delta_time * fVar3 * fVar10 * fVar13 * fVar11;
-  pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                     (&this_ptr_00->motion_controller);
+  pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(&this_ptr_00->base);
   iVar4 = pSVar5->state_index;
   local_1c = iVar4;
   iVar6 = core_charactr_cpp_CCharacter_processWalking_FUN_00428c00
@@ -84,13 +82,11 @@ void __cdecl core_drone_cpp_CDrone_process_FUN_00462a60(CDrone *this_ptr,float d
       if (iVar4 == 0) {
         (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
         if ((this_ptr->base).victim != (CCharacter *)0x0) {
-          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                    (&this_ptr_00->motion_controller,1,1);
+          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,1,1);
         }
       }
       else {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                  (&this_ptr_00->motion_controller,1,1);
+        core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,1,1);
       }
       break;
     case 1:
@@ -99,8 +95,7 @@ void __cdecl core_drone_cpp_CDrone_process_FUN_00462a60(CDrone *this_ptr,float d
       if ((this_ptr->base).victim == (CCharacter *)0x0) {
         iVar4 = core_enemy_cpp_CEnemy_updatePatrol_FUN_0047a030(&this_ptr->base,delta_time);
         if (iVar4 == 0) {
-          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                    (&this_ptr_00->motion_controller,0,1);
+          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,0,1);
         }
       }
       else {
@@ -125,12 +120,10 @@ void __cdecl core_drone_cpp_CDrone_process_FUN_00462a60(CDrone *this_ptr,float d
         if (iVar4 < 0) {
           engine_console_cpp_CConsole_printf_FUN_0043ac60
                     (g_CConsole_PTR_005ad350,"%s gave up chase - I'm confused\n",this_ptr);
-          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                    (&this_ptr_00->motion_controller,0,1);
+          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,0,1);
         }
         else if ((0 < iVar4) && ((this_ptr->base).attack_cooldown <= 0.0)) {
-          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                    (&this_ptr_00->motion_controller,2,1);
+          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,2,1);
           uVar9 = this_ptr->sfx_handles[2];
           (this_ptr->base).attack_cooldown = 1.0;
           iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(uVar9);
@@ -184,8 +177,7 @@ void __cdecl core_drone_cpp_CDrone_process_FUN_00462a60(CDrone *this_ptr,float d
       break;
     case 9:
       if ((this_ptr->base).base.is_on_ground != 0) {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                  (&this_ptr_00->motion_controller,10,1);
+        core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,10,1);
       }
     }
     goto switchD_00463074_caseD_3;
@@ -201,13 +193,12 @@ LAB_00462d6a:
       iVar4 = 0;
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-              (&(this_ptr->base).base.model.motion_controller,iVar4,1);
+              (&(this_ptr->base).base.model.base,iVar4,1);
   }
   else {
     if (uVar9 < 3) goto LAB_00462b41;
     if (uVar9 != 3) goto LAB_00462d6a;
-    core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-              (&this_ptr_00->motion_controller,0,1);
+    core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,0,1);
     engine_console_cpp_CConsole_printf_FUN_0043ac60
               (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",this_ptr);
   }

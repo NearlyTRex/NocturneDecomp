@@ -46,8 +46,7 @@ void __cdecl core_scat_cpp_CScat_updateAiming_FUN_004fd450(CScat *this_ptr,float
   this_ptr->aim_converged = 0;
   if ((is_holstered == 0) &&
      (pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                         (&(this_ptr->base).base.model.motion_controller), pSVar2->state_index == 2)
-     ) {
+                         (&(this_ptr->base).base.model.base), pSVar2->state_index == 2)) {
     is_holstered = 1;
   }
   local_13c = this_ptr->aim_pitch;

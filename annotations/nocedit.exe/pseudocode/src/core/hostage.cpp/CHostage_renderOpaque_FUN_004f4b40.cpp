@@ -16,7 +16,7 @@ int __cdecl core_hostage_cpp_CHostage_renderOpaque_FUN_004f4b40(CHostage *this_p
     iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2);
     if ((iVar1 != 0) && (this_ptr->hostage_state == 4)) {
       pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                         (&(this_ptr->base).base.model.motion_controller);
+                         (&(this_ptr->base).base.model.base);
       if (pSVar2->state_index == 10) {
         return 0;
       }

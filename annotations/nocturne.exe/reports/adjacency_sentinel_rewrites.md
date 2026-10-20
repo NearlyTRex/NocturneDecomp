@@ -8,8 +8,8 @@ globals so the sentinel never matches. See `docs/decompiler-artifacts.md` §16.
 
 - Rewrites applied: **5**
 - Functions touched: **5**
-- Pools indexed: **144**
-- Adjacency pairs in lookup: **144**
+- Pools indexed: **145**
+- Adjacency pairs in lookup: **145**
 
 ## Rewrites by function
 

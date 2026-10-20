@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 273,
-    "complexity_score": 110,
+    "complexity_score": 107,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 48,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 110,
+    "pseudocode_lines": 107,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 383
+    "total_lines": 380
   },
   "cross_references": [],
   "function": {
@@ -417,7 +417,7 @@
   "resolved_suspects": [
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 87,
+      "line": 84,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -426,7 +426,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 94,
+      "line": 91,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",

@@ -79,7 +79,7 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter
   }
   if ((this_ptr->model).model_name[0] != '\0') {
     str1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                     (&(this_ptr->model).motion_controller);
+                     (&(this_ptr->model).base);
     iVar11 = (int)strlen(str1->motion_name) - 0xb;
     iVar13 = 0;
     while (iVar13 <= iVar11) {

@@ -24,7 +24,7 @@ void __cdecl core_actor_cpp_archivePartStatus_FUN_0040cbf0(CDeformableModelInsta
     pCVar3 = model_ptr;
     do {
       pSVar4 = &pCVar3->part_data;
-      pCVar3 = (CDeformableModelInstance *)&(pCVar3->motion_controller).current_motion_index;
+      pCVar3 = (CDeformableModelInstance *)&(pCVar3->base).current_motion_index;
       _fprintf(DAT_00763e84,"%d ",pSVar4->visibility_flags[0]);
     } while (pCVar3 != (CDeformableModelInstance *)&model_ptr->transformed_vertices[2].z);
     _fprintf(DAT_00763e84,"\n");
@@ -32,7 +32,7 @@ void __cdecl core_actor_cpp_archivePartStatus_FUN_0040cbf0(CDeformableModelInsta
     _fprintf(DAT_00763e84,"%s",&DAT_005acc90);
     do {
       pSVar4 = &model_ptr->part_data;
-      model_ptr = (CDeformableModelInstance *)&(model_ptr->motion_controller).current_motion_index;
+      model_ptr = (CDeformableModelInstance *)&(model_ptr->base).current_motion_index;
       iVar1 = iVar1 + 1;
       _fprintf(DAT_00763e84,"%d ",pSVar4->texture_set_indices[0]);
     } while (iVar1 < 0x1e);

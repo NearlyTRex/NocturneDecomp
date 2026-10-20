@@ -41,8 +41,8 @@ int __cdecl core_ghoul_cpp_CGhoul_canBeAttracted_FUN_004e82d0(CGhoul *this_ptr,C
   float local_10;
   
   this_ptr_00 = &(this_ptr->base).base.model;
-  fVar3 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                    (&this_ptr_00->motion_controller,0xb);
+  fVar3 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20(&this_ptr_00->base,0xb)
+  ;
   if (fVar3 <= 0.0) {
     return 0;
   }

@@ -71,7 +71,7 @@ LAB_005e6e2e:
     iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2);
     if (iVar2 == 0) {
       core_motion_cpp_CMotionController_render_FUN_0052e700
-                (&(this_ptr->base).base.model.motion_controller,(CDemonActor *)this_ptr);
+                (&(this_ptr->base).base.model.base,(CDemonActor *)this_ptr);
     }
   }
 LAB_005e6e6c:

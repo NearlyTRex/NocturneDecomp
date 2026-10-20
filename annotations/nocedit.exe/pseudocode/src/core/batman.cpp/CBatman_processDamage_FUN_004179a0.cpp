@@ -50,11 +50,9 @@ void __cdecl core_batman_cpp_CBatman_processDamage_FUN_004179a0(CBatman *this_pt
   (this_ptr->base).base.hit_points = fVar1;
   if (fVar1 <= 0.0) {
     (this_ptr->base).base.hit_points = 0.0;
-    pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                       (&this_ptr_01->motion_controller);
+    pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(&this_ptr_01->base);
     if ((pSVar3->state_index != 7) && (pSVar3->state_index != 8)) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                (&this_ptr_01->motion_controller,7,1);
+      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr_01->base,7,1);
       sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handles[1]);
       uVar2 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                         ((CDemonActor *)this_ptr,"batman-die.wav");
@@ -66,16 +64,15 @@ void __cdecl core_batman_cpp_CBatman_processDamage_FUN_004179a0(CBatman *this_pt
   else {
     iVar2 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,2);
     if (iVar2 == 0) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                (&this_ptr_01->motion_controller,4,1);
+      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr_01->base,4,1);
     }
     if (iVar2 == 1) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                (&(this_ptr->base).base.model.motion_controller,5,1);
+                (&(this_ptr->base).base.model.base,5,1);
     }
     if (iVar2 == 2) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                (&(this_ptr->base).base.model.motion_controller,6,1);
+                (&(this_ptr->base).base.model.base,6,1);
     }
     iVar1 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[1]);
     if (iVar1 == 0) {

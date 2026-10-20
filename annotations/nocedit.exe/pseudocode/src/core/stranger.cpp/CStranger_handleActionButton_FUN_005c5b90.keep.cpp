@@ -24,9 +24,9 @@ void __cdecl core_stranger_cpp_CStranger_handleActionButton_FUN_005c5b90(CStrang
      && (this_ptr->guns_drawn == 0)) {
     pCVar3 = &(this_ptr->base).base.model;
     fVar4 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                      (&pCVar3->motion_controller,0);
+                      (&pCVar3->base,0);
     fVar5 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                      (&pCVar3->motion_controller,1);
+                      (&pCVar3->base,1);
     if ((float)0.99990000000000001 < fVar5 + fVar4) {
       iVar5 = core_hero_cpp_CHero_tryOpenNearbyDoor_FUN_004f2d70(&this_ptr->base);
       switch(iVar5) {
@@ -50,19 +50,19 @@ void __cdecl core_stranger_cpp_CStranger_handleActionButton_FUN_005c5b90(CStrang
       case 2:
       case 3:
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&(this_ptr->base).base.model.motion_controller,0x1c,1);
+                  (&(this_ptr->base).base.model.base,0x1c,1);
         this_ptr->action_pending = 5;
         (this_ptr->base).player_input.action_state.fire = 0;
         return;
       case 4:
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&pCVar3->motion_controller,0x1d,1);
+                  (&pCVar3->base,0x1d,1);
         this_ptr->action_pending = 5;
         (this_ptr->base).player_input.action_state.fire = 0;
         return;
       case 5:
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&pCVar3->motion_controller,0x1e,1);
+                  (&pCVar3->base,0x1e,1);
         this_ptr->action_pending = 5;
         (this_ptr->base).player_input.action_state.fire = 0;
         return;
@@ -96,7 +96,7 @@ void __cdecl core_stranger_cpp_CStranger_handleActionButton_FUN_005c5b90(CStrang
         (this_ptr->base).player_input.action_state.fire = 0;
 #endif
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&pCVar3->motion_controller,6,1);
+                  (&pCVar3->base,6,1);
         return;
       }
       if (((this_ptr->base).base.carry_hands[1].carry_actor == (CDemonActor *)0x0) &&
@@ -106,7 +106,7 @@ void __cdecl core_stranger_cpp_CStranger_handleActionButton_FUN_005c5b90(CStrang
         if (iVar5 != 0) {
           (this_ptr->base).player_input.action_state.fire = 0;
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (&pCVar3->motion_controller,0x1f,1);
+                    (&pCVar3->base,0x1f,1);
           return;
         }
         iVar5 = core_stranger_cpp_CStranger_tryClimbLadder_FUN_005c1fe0(this_ptr);

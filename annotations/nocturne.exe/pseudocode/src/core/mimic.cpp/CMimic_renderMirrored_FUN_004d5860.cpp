@@ -86,9 +86,8 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_004d5860(CMimic *this_ptr)
                               (g_CDemonRenderer_PTR_005ae704), iVar1 == 0)) {
           this_ptr_00 = &(this_ptr->base).base.model;
           core_motion_cpp_CMotionController_render_FUN_004e22b0
-                    (&this_ptr_00->motion_controller,(CDemonActor *)this_ptr);
-          core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                    (&this_ptr_00->motion_controller);
+                    (&this_ptr_00->base,(CDemonActor *)this_ptr);
+          core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(&this_ptr_00->base);
         }
         engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
         engine_drender_cpp_CDemonRenderer_enableAdvancedCulling_FUN_004613c0

@@ -97,7 +97,7 @@ void __cdecl core_stranger_cpp_CStranger_updateProceduralAnimation_FUN_005be520(
   CDeformableModel_MotionBlendWeightFunc *blend_callback;
 
   local_1f08 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                         (&(this_ptr->base).base.model.motion_controller,0);
+                         (&(this_ptr->base).base.model.base,0);
   if (this_ptr->turn_blend_weight < 0.15f) {
     local_1f08 = (this_ptr->turn_blend_weight / 0.15f) * local_1f08;
   }
@@ -118,7 +118,7 @@ void __cdecl core_stranger_cpp_CStranger_updateProceduralAnimation_FUN_005be520(
   pCVar1 = &(this_ptr->base).base.model;
   pCVar2 = &this_ptr->carry_object_world_center;
   pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                     (&pCVar1->motion_controller);
+                     (&pCVar1->base);
   pfVar3 = &(this_ptr->carry_object_world_center).z;
   pfVar4 = &(this_ptr->carry_object_world_center).y;
   iVar16 = pSVar4->state_index;
@@ -132,7 +132,7 @@ void __cdecl core_stranger_cpp_CStranger_updateProceduralAnimation_FUN_005be520(
     local_190.y = fVar5 - local_184.y;
     local_190.z = fVar6 - local_184.z;
     core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_7c,&local_190);
-    fVar15 = (this_ptr->base).base.model.motion_controller.current_frame_number;
+    fVar15 = (this_ptr->base).base.model.base.current_frame_number;
     if ((float)13 <= fVar15) {
       local_1ee0 = 1.0 - (fVar15 + (float)-13) * (float)0.0769230769230769;
       if (local_1ee0 < 0.0) {
@@ -165,7 +165,7 @@ LAB_0060cb6a:
     local_70.y = fVar5 - local_b8.y;
     local_70.z = fVar6 - local_b8.z;
     core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_4c,&local_70);
-    fVar15 = (this_ptr->base).base.model.motion_controller.current_frame_number;
+    fVar15 = (this_ptr->base).base.model.base.current_frame_number;
     if ((float)24 <= fVar15) {
       local_1ef4 = 1.0 - (fVar15 + (float)-24) * (float)0.10000000000000001;
       if (local_1ef4 < 0.0) {
@@ -218,7 +218,7 @@ LAB_0060cb6a:
         local_ac.y = fVar5;
         local_ac.z = fVar6;
         core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_148,&local_ac);
-        fVar7 = (this_ptr->base).base.model.motion_controller.current_frame_number;
+        fVar7 = (this_ptr->base).base.model.base.current_frame_number;
         if ((float)10 <= fVar7) {
           if (15 <= (double)fVar7) {
             local_1f04 = 1.0 - (fVar7 + (float)-15) * (float)0.066666666666666693;
@@ -259,7 +259,7 @@ LAB_0060cb6a:
         iVar16 = g_StrangerIndices[4];
       }
       else if (iVar16 == 0x17) {
-        local_1ef8 = (this_ptr->base).base.model.motion_controller.current_frame_number *
+        local_1ef8 = (this_ptr->base).base.model.base.current_frame_number *
                      (float)0.066666666666666693;
         if (1.0 < local_1ef8) {
           local_1ef8 = 1.0;
@@ -280,7 +280,7 @@ LAB_0060cb6a:
       else {
         if (iVar16 != 0x18) {
           if (iVar16 == 0x19) {
-            local_1f0c = 1.0 - ((this_ptr->base).base.model.motion_controller.current_frame_number +
+            local_1f0c = 1.0 - ((this_ptr->base).base.model.base.current_frame_number +
                                (float)-15) * (float)0.066666666666666693;
             if (local_1f0c < 0.0) {
               local_1f0c = 0.0;
@@ -300,7 +300,7 @@ LAB_0060cb6a:
           }
           else {
             if (iVar16 != 0x1a) goto LAB_005be7a1;
-            fVar15 = (this_ptr->base).base.model.motion_controller.current_frame_number;
+            fVar15 = (this_ptr->base).base.model.base.current_frame_number;
             if (fVar15 < (float)15) {
               local_1ef0 = fVar15 * (float)0.066666666666666693;
             }
@@ -339,7 +339,7 @@ LAB_0060cb6a:
           }
           goto LAB_005be799;
         }
-        fVar15 = (this_ptr->base).base.model.motion_controller.current_frame_number;
+        fVar15 = (this_ptr->base).base.model.base.current_frame_number;
         if ((float)15 <= fVar15) {
           local_1edc = 1.0 - (fVar15 + (float)-15) * (float)0.066666666666666693;
         }
@@ -415,7 +415,7 @@ LAB_0060cb6a:
     CStack_f4.y = CStack_124.y - CStack_dc.y;
     CStack_f4.z = CStack_124.z - CStack_dc.z;
     core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&CStack_118,&CStack_f4);
-    fVar15 = (this_ptr->base).base.model.motion_controller.current_frame_number;
+    fVar15 = (this_ptr->base).base.model.base.current_frame_number;
     if ((float)21 <= fVar15) {
       fStack_1ed8 = 1.0 - (fVar15 + (float)-21) * (float)0.071428571428571397;
       if (fStack_1ed8 < 0.0) {
@@ -467,7 +467,7 @@ LAB_005be7a1:
   iVar16 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460
                      (&this_ptr_01->motion_list,motion_name,iVar16);
   fVar15 = core_motion_cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
-                     (&pCVar1->motion_controller,iVar16,1.0);
+                     (&pCVar1->base,iVar16,1.0);
   core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
             (pCVar1,iVar16,fVar15,this_ptr->interact_blend,g_StrangerIndices[0x10],
              core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0);

@@ -28,8 +28,7 @@ void __cdecl core_passngr_cpp_CPassenger_process_FUN_004ef890(CPassenger *this_p
     return;
   }
   this_ptr_00 = &(this_ptr->base).base.model;
-  pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                     (&this_ptr_00->motion_controller);
+  pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(&this_ptr_00->base);
   iVar2 = pSVar5->state_index;
   if ((iVar2 == 1) || (iVar2 == 2)) {
     if ((iVar2 == 2) &&
@@ -47,8 +46,7 @@ void __cdecl core_passngr_cpp_CPassenger_process_FUN_004ef890(CPassenger *this_p
     iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
                       (0x01C03A10,this_ptr->transform_event);
     if (iVar6 != 0) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                (&this_ptr_00->motion_controller,1,1);
+      core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,1,1);
       if (this_ptr->transform_wav[0] != '\0') {
         (*((this_ptr->base).base.base.vtable._ub)->playSound)
                   ((CDemonActor *)this_ptr,this_ptr->transform_wav);
@@ -64,7 +62,7 @@ void __cdecl core_passngr_cpp_CPassenger_process_FUN_004ef890(CPassenger *this_p
        (this_ptr->base).base.model.accumulated_root_motion.y;
   while (0.0 < local_20) {
     iVar6 = core_motion_cpp_CMotionController_advance_FUN_004e11c0
-                      (&(this_ptr->base).base.model.motion_controller,&local_20);
+                      (&(this_ptr->base).base.model.base,&local_20);
     core_charactr_cpp_CCharacter_processMotion_FUN_0042add0((CCharacter *)this_ptr,iVar6);
   }
   if (iVar2 != 0) {

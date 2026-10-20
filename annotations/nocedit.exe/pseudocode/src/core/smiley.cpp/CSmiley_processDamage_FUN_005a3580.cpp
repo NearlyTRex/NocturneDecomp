@@ -34,11 +34,9 @@ LAB_005a35b4:
   (this_ptr->base).base.hit_points = fVar2;
   if (fVar2 <= 0.0) {
     (this_ptr->base).base.hit_points = 0.0;
-    pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                       (&this_ptr_00->motion_controller);
+    pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(&this_ptr_00->base);
     if ((pSVar3->state_index != 8) && (pSVar3->state_index != 7)) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                (&this_ptr_00->motion_controller,7,1);
+      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr_00->base,7,1);
       (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
                 ((CCharacter *)this_ptr,1,(CVector3f *)0x0);
       (*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -47,8 +45,7 @@ LAB_005a35b4:
     core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(&this_ptr->base,damage_info);
     return;
   }
-  core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-            (&this_ptr_00->motion_controller,3,1);
+  core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr_00->base,3,1);
   core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(&this_ptr->base,damage_info);
   return;
 }

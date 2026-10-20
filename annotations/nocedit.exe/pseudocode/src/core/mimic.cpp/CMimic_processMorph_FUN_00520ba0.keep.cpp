@@ -35,7 +35,7 @@ void __cdecl core_mimic_cpp_CMimic_processMorph_FUN_00520ba0(CMimic *this_ptr,fl
     local_18[0] = delta_time;
     while (0.0 < local_18[0]) {
       core_motion_cpp_CMotionController_advance_FUN_0052d610
-                (&(this_ptr->base).base.model.motion_controller,local_18);
+                (&(this_ptr->base).base.model.base,local_18);
     }
     local_18[0] = delta_time;
     while (0.0 < local_18[0]) {

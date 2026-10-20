@@ -24,7 +24,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_initializeFromModel_FUN_
   this_ptr->model_ptr = model_ptr;
   motion_list = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(this_ptr);
   core_motion_cpp_CMotionController_setMotionList_FUN_004e1860
-            (&this_ptr->motion_controller,&motion_list->motion_list);
+            (&this_ptr->base,&motion_list->motion_list);
   local_14 = motion_list->bone_count;
   pCVar1 = this_ptr->model_ptr;
   local_24 = (pCVar1->model_scale).x * this_ptr->scale_factor;
@@ -56,7 +56,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_initializeFromModel_FUN_
       }
       motion_list = (CSkeleton *)((motion_list->motion_list).state_names[1] + 2);
       pCVar3 = pCVar3 + 1;
-      local_18 = (CDeformableModelInstance *)&(local_18->motion_controller).current_motion_index;
+      local_18 = (CDeformableModelInstance *)&(local_18->base).current_motion_index;
       index = index + 1;
     } while (index < local_14);
   }

@@ -144,6 +144,6 @@ LAB_00498759:
     iVar5 = 4;
   }
   core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-            (&(this_ptr->base).base.model.motion_controller,iVar5,1);
+            (&(this_ptr->base).base.model.base,iVar5,1);
   return 1;
 }

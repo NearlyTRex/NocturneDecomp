@@ -18,6 +18,6 @@ void __cdecl core_tbplayer_cpp_CDrummer_processDamage_FUN_005435f0(CDrummer *thi
   }
   (this_ptr->base).base.hit_points = 0.0;
   core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-            (&(this_ptr->base).base.model.motion_controller,3,1);
+            (&(this_ptr->base).base.model.base,3,1);
   return;
 }

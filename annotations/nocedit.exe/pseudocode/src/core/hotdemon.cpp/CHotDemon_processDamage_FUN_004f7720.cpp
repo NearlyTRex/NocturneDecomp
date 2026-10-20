@@ -37,8 +37,7 @@ void __cdecl core_hotdemon_cpp_CHotDemon_processDamage_FUN_004f7720(CHotDemon *t
   (this_ptr->base).base.hit_points = fVar1;
   if (fVar1 <= 0.0) {
     (this_ptr->base).base.hit_points = 0.0;
-    pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                       (&this_ptr_01->motion_controller);
+    pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(&this_ptr_01->base);
     iVar1 = pSVar3->state_index;
     if ((((iVar1 != 4) && (iVar1 != 5)) && (iVar1 != 10)) && (iVar1 != 0xb)) {
       if (iVar1 < 6) {
@@ -47,8 +46,7 @@ void __cdecl core_hotdemon_cpp_CHotDemon_processDamage_FUN_004f7720(CHotDemon *t
       else {
         iVar1 = 10;
       }
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                (&this_ptr_01->motion_controller,iVar1,1);
+      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr_01->base,iVar1,1);
       sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handles[1]);
       uVar4 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                         ((CDemonActor *)this_ptr,"hotdemon-die.wav");
@@ -58,8 +56,7 @@ void __cdecl core_hotdemon_cpp_CHotDemon_processDamage_FUN_004f7720(CHotDemon *t
     }
   }
   else {
-    pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                       (&this_ptr_01->motion_controller);
+    pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(&this_ptr_01->base);
     if ((pSVar2->state_index < 6) || (pSVar2->state_index == 0xf)) {
       iVar4 = 3;
     }
@@ -67,7 +64,7 @@ void __cdecl core_hotdemon_cpp_CHotDemon_processDamage_FUN_004f7720(CHotDemon *t
       iVar4 = 9;
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              (&(this_ptr->base).base.model.motion_controller,iVar4,1);
+              (&(this_ptr->base).base.model.base,iVar4,1);
     iVar1 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[1]);
     if (iVar1 == 0) {
       uVar3 = (*((this_ptr->base).base.base.vtable._ub)->playSound)

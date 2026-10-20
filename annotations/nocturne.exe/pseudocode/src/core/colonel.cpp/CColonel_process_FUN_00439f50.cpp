@@ -75,8 +75,7 @@ void __cdecl core_colonel_cpp_CColonel_process_FUN_00439f50(CColonel *this_ptr,f
                     ((CCharacter *)this_ptr,delta_time);
   pCVar13 = &(this_ptr->base).base.model;
   if (iVar5 == 0) {
-    pSVar9 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                       (&pCVar13->motion_controller);
+    pSVar9 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(&pCVar13->base);
     switch(pSVar9->state_index) {
     case 0:
     case 1:
@@ -130,7 +129,7 @@ LAB_0043a2be:
         (this_ptr->base).base.turn_angle_accumulator =
              (this_ptr->base).player_input.turn_speed * (this_ptr->base).base.turn_speed;
         pSVar9 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                           (&(this_ptr->base).base.model.motion_controller);
+                           (&(this_ptr->base).base.model.base);
         if (iVar5 != pSVar9->state_index) goto LAB_0043a023;
       }
       break;
@@ -152,8 +151,7 @@ LAB_0043a224:
     else {
       if (2 < uVar2) {
         if (uVar2 == 3) {
-          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                    (&pCVar13->motion_controller,0,1);
+          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar13->base,0,1);
           engine_console_cpp_CConsole_printf_FUN_0043ac60
                     (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",this_ptr);
           goto switchD_0043a387_caseD_4;
@@ -164,7 +162,7 @@ LAB_0043a224:
     }
 LAB_0043a023:
     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-              (&(this_ptr->base).base.model.motion_controller,iVar5,1);
+              (&(this_ptr->base).base.model.base,iVar5,1);
   }
 switchD_0043a387_caseD_4:
   pCVar3 = (this_ptr->base).base.grabbed_by;
@@ -235,7 +233,7 @@ LAB_0043a151:
       iVar5 = 9;
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-              (&(this_ptr->base).base.model.motion_controller,iVar5,1);
+              (&(this_ptr->base).base.model.base,iVar5,1);
   }
 LAB_0043a164:
   core_charactr_cpp_CCharacter_preProcess_FUN_004259a0((CCharacter *)this_ptr);

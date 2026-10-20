@@ -30,7 +30,7 @@ void __cdecl core_charactr_cpp_CCharacter_processSmoking_FUN_0042ea40(CCharacter
   if ((this_ptr->was_rendered_opaque != 0) &&
      ((g_CDemonSetPtr->active_fog).temperature < (float)32)) {
     pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                       (&(this_ptr->model).motion_controller);
+                       (&(this_ptr->model).base);
     if (pSVar2->state_index == 0) {
       if ((this_ptr->smoke_occluded == 0) &&
          (fVar2 = this_ptr->smoke_emit_timer - delta_time, this_ptr->smoke_emit_timer = fVar2,

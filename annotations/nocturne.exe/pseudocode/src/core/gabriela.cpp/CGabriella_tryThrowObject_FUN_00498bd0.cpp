@@ -17,6 +17,6 @@ int __cdecl core_gabriela_cpp_CGabriella_tryThrowObject_FUN_00498bd0(CGabriella 
     return 0;
   }
   core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-            (&(this_ptr->base).base.model.motion_controller,5,1);
+            (&(this_ptr->base).base.model.base,5,1);
   return 1;
 }

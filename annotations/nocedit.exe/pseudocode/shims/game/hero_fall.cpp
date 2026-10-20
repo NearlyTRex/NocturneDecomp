@@ -92,7 +92,7 @@ extern "C" void nocturne_fall_out_of_world(CCharacter *character)
         (core_actor_cpp_castToClassHash_FUN_0040c790
              (&character->base, g_CStrangerClassInfo.name_hash) != (CDemonActor *)0x0)) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-            (&(character->model).motion_controller, 0x12, 1);
+            (&(character->model).base, 0x12, 1);
         (*((character->base).vtable._ub)->playSound)(&character->base, (char *)"fall-?.wav");
     }
 }

@@ -22,10 +22,10 @@ void __cdecl core_scat_cpp_CScat_updateWeaponState_FUN_00558060(CScat *this_ptr,
   
   pCVar1 = &(this_ptr->base).base.model;
   pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                     (&pCVar1->motion_controller);
+                     (&pCVar1->base);
   if ((pSVar3->state_index != 0xc) &&
      (pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                         (&pCVar1->motion_controller), pSVar3->state_index != 0xd)) {
+                         (&pCVar1->base), pSVar3->state_index != 0xd)) {
     selected_weapon = (this_ptr->base).inventory.selected_weapon;
     if (this_ptr->guns_drawn == 0) {
       selected_weapon = (CWeapon *)0x0;
@@ -35,7 +35,7 @@ void __cdecl core_scat_cpp_CScat_updateWeaponState_FUN_00558060(CScat *this_ptr,
        (weapon_actor->weapon_type == WEAPON_TYPE_BARON)) {
       pCVar1 = &(this_ptr->base).base.model;
       pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                         (&pCVar1->motion_controller);
+                         (&pCVar1->base);
       if (pSVar3->state_index == 0) {
 #if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
         nocturne_hero_put_away_weapon(&this_ptr->base,this_ptr->weapon_actor);
@@ -44,10 +44,10 @@ void __cdecl core_scat_cpp_CScat_updateWeaponState_FUN_00558060(CScat *this_ptr,
       }
       else {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&pCVar1->motion_controller,0,1);
+                  (&pCVar1->base,0,1);
       }
     }
-    this_ptr_01 = &(this_ptr->base).base.model.motion_controller;
+    this_ptr_01 = &(this_ptr->base).base.model.base;
     iVar7 = 0;
     while (0.0 < delta_time) {
       weapon_actor = this_ptr->weapon_actor;

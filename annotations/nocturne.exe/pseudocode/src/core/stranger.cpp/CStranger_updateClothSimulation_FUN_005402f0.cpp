@@ -96,7 +96,7 @@ void __cdecl core_stranger_cpp_CStranger_updateClothSimulation_FUN_005402f0(CStr
   }
   pCVar6 = &this_ptr_00->wind_velocity;
   pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                     (&(this_ptr->base).base.model.motion_controller);
+                     (&(this_ptr->base).base.model.base);
   if (pSVar5->state_index == 0x2a) {
     if (pCVar6 != (CVector3f *)auStack_28) {
       (this_ptr_00->wind_velocity).y = 0.0;

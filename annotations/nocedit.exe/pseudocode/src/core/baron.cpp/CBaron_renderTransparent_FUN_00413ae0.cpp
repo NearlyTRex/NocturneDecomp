@@ -30,12 +30,10 @@ int __cdecl core_baron_cpp_CBaron_renderTransparent_FUN_00413ae0(CBaron *this_pt
     return 0;
   }
   pCVar2 = &(this_ptr->base).base.model;
-  pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                     (&pCVar2->motion_controller);
+  pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(&pCVar2->base);
   uVar2 = pSVar4->state_index;
-  fVar4 = (this_ptr->base).base.model.motion_controller.current_frame_number;
-  pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                     (&pCVar2->motion_controller);
+  fVar4 = (this_ptr->base).base.model.base.current_frame_number;
+  pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(&pCVar2->base);
   if (uVar2 < 6) {
     if (uVar2 != 5) {
 LAB_00413cc3:
@@ -77,8 +75,7 @@ LAB_00413b59:
     core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150(pCVar2,-1,0x2e7,1,0);
     engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80(g_CDemonRendererPtr2);
     if (INT_02f43978 != 0) {
-      core_motion_cpp_CMotionController_render_FUN_0052e700
-                (&pCVar2->motion_controller,(CDemonActor *)this_ptr);
+      core_motion_cpp_CMotionController_render_FUN_0052e700(&pCVar2->base,(CDemonActor *)this_ptr);
     }
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
   }

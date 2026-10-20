@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_setdir_cpp_CDemonSet_FUN_00513670(CDemonSet *this_ptr,char *param_2)
+; void __cdecl core_setdir_cpp_CDemonSet_writeThumbs_FUN_00513670(CDemonSet *this_ptr,char *param_2)
 ;
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr
@@ -31,7 +31,7 @@
 section .text
 
     PUSH EBX                            ; 00513670
-        ;   Label: core_setdir.cpp_CDemonSet_FUN_00513670
+        ;   Label: core_setdir.cpp_CDemonSet_writeThumbs_FUN_00513670
     PUSH ESI                            ; 00513671
     PUSH EDI                            ; 00513672
     PUSH EBP                            ; 00513673

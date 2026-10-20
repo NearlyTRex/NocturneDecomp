@@ -150,8 +150,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004da790(CMobster *this_ptr,f
   local_38 = delta_time * (this_ptr->base).speed;
   pCVar2 = &(this_ptr->base).base.model;
   while (0.0 < local_38) {
-    iVar5 = core_motion_cpp_CMotionController_advance_FUN_004e11c0
-                      (&pCVar2->motion_controller,&local_38);
+    iVar5 = core_motion_cpp_CMotionController_advance_FUN_004e11c0(&pCVar2->base,&local_38);
     if (iVar5 == 100) {
       pCVar11 = this_ptr->target_weapon;
       if (pCVar11 != (CDemonActor *)0x0) {
@@ -168,8 +167,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004da790(CMobster *this_ptr,f
   fVar17 = (float)3.1415926535000001;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
   (this_ptr->base).base.turn_speed = delta_time * fVar17 * fVar15;
-  pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                     (&pCVar2->motion_controller);
+  pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(&pCVar2->base);
   iVar5 = pSVar8->state_index;
   iVar9 = core_charactr_cpp_CCharacter_processWalking_FUN_00428c00
                     ((CCharacter *)this_ptr,delta_time);
@@ -181,8 +179,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004da790(CMobster *this_ptr,f
         if ((this_ptr->base).victim == (CCharacter *)0x0) {
           iVar5 = core_enemy_cpp_CEnemy_updatePatrol_FUN_0047a030(&this_ptr->base,delta_time);
           if (iVar5 != 0) {
-            core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                      (&pCVar2->motion_controller,1,1);
+            core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar2->base,1,1);
           }
           break;
         }
@@ -198,8 +195,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004da790(CMobster *this_ptr,f
             if ((float)2 <
                 SQRT(local_c8 * local_c8 + local_d0 * local_d0 + local_cc * local_cc)) {
               this_ptr->post_mode = 1;
-              core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                        (&pCVar2->motion_controller,8,1);
+              core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar2->base,8,1);
               break;
             }
           }
@@ -225,7 +221,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004da790(CMobster *this_ptr,f
             if ((ABS(local_14) < (float)0.52359877558333301) &&
                ((this_ptr->base).attack_cooldown <= 0.0)) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                        (&(this_ptr->base).base.model.motion_controller,9,1);
+                        (&(this_ptr->base).base.model.base,9,1);
               (this_ptr->base).attack_cooldown = 2.0;
             }
           }
@@ -237,7 +233,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004da790(CMobster *this_ptr,f
               fVar15 = 1.4013e-45;
             }
             core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                      (&(this_ptr->base).base.model.motion_controller,(int)fVar15,1);
+                      (&(this_ptr->base).base.model.base,(int)fVar15,1);
           }
           if ((this_ptr->weapon_search_count == 0) &&
              (iVar5 = core_actor_cpp_randomChance_FUN_0040dea0(0.7), iVar5 != 0)) {
@@ -270,12 +266,10 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004da790(CMobster *this_ptr,f
       if ((this_ptr->base).victim == (CCharacter *)0x0) {
         iVar5 = core_enemy_cpp_CEnemy_updatePatrol_FUN_0047a030(&this_ptr->base,delta_time);
         if (iVar5 == 0) {
-          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                    (&pCVar2->motion_controller,0,1);
+          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar2->base,0,1);
         }
         else {
-          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                    (&pCVar2->motion_controller,1,1);
+          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar2->base,1,1);
         }
       }
       else if (this_ptr->post_mode == 0) {
@@ -325,8 +319,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004da790(CMobster *this_ptr,f
                 local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                                      (local_f4.y - (this_ptr->base).base.base.orient.vec.y);
                 if (ABS(local_14) < (float)0.52359877558333301) {
-                  core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                            (&pCVar2->motion_controller,9,1);
+                  core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar2->base,9,1);
                 }
               }
               else if (local_28 + 1.0 <= local_30) {
@@ -344,11 +337,11 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004da790(CMobster *this_ptr,f
                     pCVar2 = &(this_ptr->base).base.model;
                     if ((this_ptr->base).base.carry_hands[0].carry_actor == (CDemonActor *)0x0) {
                       core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                                (&pCVar2->motion_controller,10,1);
+                                (&pCVar2->base,10,1);
                     }
                     else {
                       core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                                (&pCVar2->motion_controller,0xb,1);
+                                (&pCVar2->base,0xb,1);
                     }
                   }
                 }
@@ -366,8 +359,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004da790(CMobster *this_ptr,f
                                      (local_58.y - (this_ptr->base).base.base.orient.vec.y);
                 if ((ABS(local_14) < (float)0.52359877558333301) &&
                    ((this_ptr->base).attack_cooldown <= 0.0)) {
-                  core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                            (&pCVar2->motion_controller,9,1);
+                  core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar2->base,9,1);
                   (this_ptr->base).attack_cooldown = 2.0;
                 }
               }
@@ -375,7 +367,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004da790(CMobster *this_ptr,f
             }
             if ((this_ptr->base).guard_distance < local_30) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                        (&(this_ptr->base).base.model.motion_controller,0,1);
+                        (&(this_ptr->base).base.model.base,0,1);
             }
           }
         }
@@ -397,14 +389,12 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004da790(CMobster *this_ptr,f
                            pCVar12,fVar15,(float)in_stack_fffffe74);
         if (iVar5 < 1) {
           if (iVar5 < 0) {
-            core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                      (&pCVar2->motion_controller,0,1);
+            core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar2->base,0,1);
             this_ptr->our_post = (CDemonActor *)0x0;
           }
         }
         else {
-          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                    (&pCVar2->motion_controller,0,1);
+          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar2->base,0,1);
         }
       }
       break;
@@ -460,7 +450,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004da790(CMobster *this_ptr,f
         local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(fVar15,fVar17);
         this_ptr->firing_cooldown = local_14;
         core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                  (&(this_ptr->base).base.model.motion_controller,0,1);
+                  (&(this_ptr->base).base.model.base,0,1);
         iVar5 = core_actor_cpp_randomChance_FUN_0040dea0(0.3);
         if (iVar5 != 0) {
           core_mobster_cpp_CMobster_playTaunt_FUN_004dc940(this_ptr,3);
@@ -530,12 +520,12 @@ LAB_004dacfc:
       iVar5 = 0;
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-              (&(this_ptr->base).base.model.motion_controller,iVar5,1);
+              (&(this_ptr->base).base.model.base,iVar5,1);
   }
   else {
     if (uVar7 < 3) goto LAB_004daabc;
     if (uVar7 != 3) goto LAB_004dacfc;
-    core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar2->motion_controller,0,1);
+    core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar2->base,0,1);
     engine_console_cpp_CConsole_printf_FUN_0043ac60
               (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n");
   }

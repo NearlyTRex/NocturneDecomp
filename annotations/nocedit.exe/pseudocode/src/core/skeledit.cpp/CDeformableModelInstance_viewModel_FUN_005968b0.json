@@ -8,15 +8,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 3423,
-    "complexity_score": 1076,
+    "complexity_score": 1060,
     "cross_reference_count": 2,
     "function_call_count": 90,
     "global_count": 144,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 1076,
+    "pseudocode_lines": 1060,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 4499
+    "total_lines": 4483
   },
   "cross_references": [
     {
@@ -1466,7 +1466,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 466,
+      "line": 455,
       "match": "&stack0xffffcc64",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1475,7 +1475,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 475,
+      "line": 464,
       "match": "&stack0xffffcc64",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1484,7 +1484,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 541,
+      "line": 530,
       "match": "3.57331e-43",
       "resolution_source": "keep",
       "severity": "mild",
@@ -1493,7 +1493,7 @@
     },
     {
       "description": "Pointer value `g_CEditorToolsPtr` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 543,
+      "line": 532,
       "match": "(uint)g_CEditorToolsPtr",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1502,7 +1502,7 @@
     },
     {
       "description": "Pointer value `g_CEditorToolsPtr` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 551,
+      "line": 540,
       "match": "(uint)g_CEditorToolsPtr",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1511,7 +1511,7 @@
     },
     {
       "description": "Raw hex literal 0xfe0000 matches address of g_LightBufferPool (+3956216 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 504,
+      "line": 493,
       "match": "0xfe0000",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1520,7 +1520,7 @@
     },
     {
       "description": "Raw hex literal 0xfe0000 matches address of g_LightBufferPool (+3956216 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 505,
+      "line": 494,
       "match": "0xfe0000",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1529,7 +1529,7 @@
     },
     {
       "description": "Raw hex literal 0xfe0000 matches address of g_LightBufferPool (+3956216 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 506,
+      "line": 495,
       "match": "0xfe0000",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1538,7 +1538,7 @@
     },
     {
       "description": "Raw hex literal 0xfe0000 matches address of g_LightBufferPool (+3956216 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 507,
+      "line": 496,
       "match": "0xfe0000",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1547,7 +1547,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 1061,
+      "line": 1045,
       "match": "do {",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1574,7 +1574,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 448,
+      "line": 437,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1583,7 +1583,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 454,
+      "line": 443,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1592,7 +1592,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 489,
+      "line": 478,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1601,7 +1601,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 598,
+      "line": 587,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1610,7 +1610,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 666,
+      "line": 655,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1619,7 +1619,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 672,
+      "line": 661,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1628,7 +1628,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 253,
+      "line": 251,
       "match": "cascade_constant_fill",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1637,7 +1637,7 @@
     },
     {
       "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 554,
+      "line": 543,
       "match": "CONCAT22",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1646,7 +1646,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 425,
+      "line": 414,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1655,7 +1655,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 426,
+      "line": 415,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1664,7 +1664,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 427,
+      "line": 416,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1673,20 +1673,20 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar15` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar15->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 394,
+      "line": 383,
       "match": "pCVar15 = (T *)&(pCVar15->FIELD).SUBFIELD",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "pCVar15 = (CDeformableModelInstance *)&(pCVar15->motion_controller).current_motion_index;",
+      "text": "pCVar15 = (CDeformableModelInstance *)&(pCVar15->base).current_motion_index;",
       "type": "shadow_pointer_walk"
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar15` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar15->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 404,
+      "line": 393,
       "match": "pCVar15 = (T *)&(pCVar15->FIELD).SUBFIELD",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "pCVar15 = (CDeformableModelInstance *)&(pCVar15->motion_controller).current_motion_index;",
+      "text": "pCVar15 = (CDeformableModelInstance *)&(pCVar15->base).current_motion_index;",
       "type": "shadow_pointer_walk"
     },
     {
