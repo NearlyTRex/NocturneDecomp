@@ -7,6 +7,10 @@
 namespace nocturne::core {
 namespace {
 
+TEST(CDeformableModelInstance, DerivesFromCMotionController) {
+    static_assert(std::is_base_of_v<CMotionController, CDeformableModelInstance>);
+}
+
 TEST(CDeformableModelInstance, HasVirtualDestructor) {
     static_assert(std::has_virtual_destructor_v<CDeformableModelInstance>);
 }

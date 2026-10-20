@@ -23,7 +23,7 @@ functions don't count as done. Sizes are in instructions.
 | 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 68 | 31 | 56.6% |
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 26 | 8 | 46.4% |
-| 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 28 | 5 | 66.6% |
+| 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 30 | 5 | 71.4% |
 | 11 | `CScript::loadScript` | 63 | 579 | 67400 | 12 | 1 | 2.0% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 2 | 0 | 7.6% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0 | 0.0% |
@@ -41,12 +41,12 @@ functions don't count as done. Sizes are in instructions.
 | 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 7 | 0 | 2.5% |
 | 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 24 | 0 | 8.0% |
 | 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 4 | 1 | 1.3% |
-| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 6 | 2 | 2.1% |
+| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 10 | 3 | 3.5% |
 | 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 5 | 0 | 1.9% |
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 3 | 0 | 1.0% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 | 0 | 3.6% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **599** | **67** | **13.3%** |
+| | **All** | | **4479** | **402407** | **605** | **68** | **13.5%** |
 
 ## Step 0: Math value types
 
@@ -1061,10 +1061,10 @@ functions don't count as done. Sizes are in instructions.
 - class `CHeroPlaceholder`
   - [ ] `createHero` 0x004f3d80 (102)
 
-### `core/motion.cpp` (2 functions, 36 instructions, 0 done, 0 partial)
+### `core/motion.cpp` (2 functions, 36 instructions, 2 done, 0 partial)
 - class `CMotionController`
-  - [ ] `clearTweenState` 0x0052de40 (4)
-  - [ ] `jumpToMotion` 0x0052dde0 (32)
+  - [x] `clearTweenState` 0x0052de40 (4)
+  - [x] `jumpToMotion` 0x0052dde0 (32)
 
 ### `core/event.cpp` (1 functions, 9 instructions, 0 done, 0 partial)
 - class `CEventList`
@@ -5422,20 +5422,22 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `countTrianglesFromPolygons` 0x0052a490 (19)
   - [ ] `addInts` 0x0052cc40 (3)
 
-### `core/motion.cpp` (23 functions, 1941 instructions, 0 done, 0 partial)
+### `core/motion.cpp` (23 functions, 1941 instructions, 4 done, 1 partial)
 - class `CMotionController`
   - [ ] `load` 0x0052e5d0 (50)
   - [ ] `save` 0x0052e670 (50)
-  - [ ] `reset` 0x0052dad0 (9)
-  - [ ] `ctor` 0x0052d570 (11)
+  - [x] `reset` 0x0052dad0 (9)
+  - [~] `ctor` 0x0052d570 (11)
+    - deferred: starting with no motion list and no motion name, with setMotionList, getMotionList and getCurrentStateName
+    - deferred: starting the tween at speed 0 towards motion 0, frame 0, direction 1 and no new state (MOTION_TWEEN_INIT), with advanceTween and reverseTransition
   - [ ] `getFramesForInterpolation` 0x0052e4c0 (97)
   - [ ] `advanceFrameAndCheckSignals` 0x0052de70 (154)
   - [ ] `advanceFrameToExitPoint` 0x0052e020 (153)
   - [ ] `advanceTween` 0x0052e1d0 (79)
   - [ ] `advance` 0x0052d610 (266)
-  - [ ] `findPatchToFrame` 0x0052dc80 (9)
-  - [ ] `accumulateScaledRootMotion` 0x0052e570 (1)
-  - [ ] `dtor` 0x0052d5a0 (27)
+  - [x] `findPatchToFrame` 0x0052dc80 (9)
+  - [x] `accumulateScaledRootMotion` 0x0052e570 (1)
+  - [x] `dtor` 0x0052d5a0 (27)
   - [ ] `getCurrentStateName` 0x0052dcf0 (14)
   - [ ] `render` 0x0052e700 (155)
   - [ ] `setDesiredStateByName` 0x0052db90 (20)
