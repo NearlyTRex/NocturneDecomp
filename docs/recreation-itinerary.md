@@ -23,12 +23,12 @@ functions don't count as done. Sizes are in instructions.
 | 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 68 | 31 | 56.6% |
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 26 | 8 | 46.4% |
-| 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 20 | 3 | 47.6% |
+| 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 24 | 3 | 57.1% |
 | 11 | `CScript::loadScript` | 63 | 579 | 67400 | 12 | 1 | 2.0% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 2 | 0 | 7.6% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0 | 0.0% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 1 | 0 | 1.9% |
-| 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 3 | 0 | 1.5% |
+| 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 4 | 0 | 2.1% |
 | 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 0 | 0 | 0.0% |
 | 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 4 | 1 | 15.3% |
 | 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 2 | 0 | 15.3% |
@@ -46,7 +46,7 @@ functions don't count as done. Sizes are in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 2 | 0 | 0.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 | 0 | 3.6% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **589** | **65** | **13.1%** |
+| | **All** | | **4479** | **402407** | **594** | **65** | **13.2%** |
 
 ## Step 0: Math value types
 
@@ -1070,12 +1070,12 @@ functions don't count as done. Sizes are in instructions.
 - class `CEventList`
   - [ ] `reset` 0x004aaa70 (9)
 
-### `engine/2d.c` (4 functions, 263 instructions, 0 done, 0 partial)
+### `engine/2d.c` (4 functions, 263 instructions, 4 done, 0 partial)
 - free functions
-  - [ ] `drawCharacter` 0x00401610 (113)
-  - [ ] `drawTextWrapped` 0x00401c60 (57)
-  - [ ] `drawTextMultiline` 0x00401cf0 (57)
-  - [ ] `drawText` 0x00401fd0 (36)
+  - [x] `drawCharacter` 0x00401610 (113)
+  - [x] `drawTextWrapped` 0x00401c60 (57)
+  - [x] `drawTextMultiline` 0x00401cf0 (57)
+  - [x] `drawText` 0x00401fd0 (36)
 
 ### `core/dcamera.cpp` (1 functions, 61 instructions, 1 done, 0 partial)
 - free functions
@@ -2461,7 +2461,7 @@ functions don't count as done. Sizes are in instructions.
 - class `CTrail`
   - [ ] `process` 0x004c5e40 (28)
 
-### `engine/2d.c` (16 functions, 464 instructions, 0 done, 0 partial)
+### `engine/2d.c` (16 functions, 464 instructions, 1 done, 0 partial)
 - free functions
   - [ ] `drawTextXY` 0x00402130 (11)
   - [ ] `drawCharacterMaskedColor` 0x00401a10 (123)
@@ -2474,7 +2474,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `drawTextCenteredAtColor` 0x004025f0 (21)
   - [ ] `drawTextCenteredColor` 0x004026c0 (25)
   - [ ] `getTextWrapEnabled` 0x004027f0 (2)
-  - [ ] `setTextWrapEnabled` 0x00402800 (3)
+  - [x] `setTextWrapEnabled` 0x00402800 (3)
   - [ ] `disableTextWrap` 0x00402820 (4)
   - [ ] `getTextColor` 0x00402830 (2)
   - [ ] `setTextColor` 0x00402840 (3)

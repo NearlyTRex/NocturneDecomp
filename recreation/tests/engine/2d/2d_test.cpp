@@ -32,7 +32,8 @@ TEST(C2d, PublicInterface) {
     static_assert(std::is_same_v<decltype(&C2d::setupViewportAndClipping),
                                  void (C2d::*)(int, int, int, int)>);
     static_assert(std::is_same_v<decltype(&C2d::getStringWidth), int (C2d::*)(char *)>);
-    static_assert(std::is_same_v<decltype(&C2d::drawText), void (C2d::*)(char *, int, int)>);
+    static_assert(
+        std::is_same_v<decltype(&C2d::drawText), void (C2d::*)(std::string_view, int, int)>);
     static_assert(std::is_same_v<decltype(&C2d::drawString), void (C2d::*)(char *, int, int, int)>);
     static_assert(std::is_same_v<decltype(&C2d::drawTextXY), void (C2d::*)(int, int, char *)>);
     static_assert(std::is_same_v<decltype(&C2d::drawTextColor), void (C2d::*)(char *, int, int)>);
@@ -45,7 +46,7 @@ TEST(C2d, PublicInterface) {
     static_assert(std::is_same_v<decltype(&C2d::drawTextCenteredXYColor),
                                  void (C2d::*)(int, int, int, char *)>);
     static_assert(std::is_same_v<decltype(&C2d::getTextWrapEnabled), int (C2d::*)()>);
-    static_assert(std::is_same_v<decltype(&C2d::setTextWrapEnabled), void (C2d::*)(int)>);
+    static_assert(std::is_same_v<decltype(&C2d::setTextWrapEnabled), void (C2d::*)(bool)>);
     static_assert(std::is_same_v<decltype(&C2d::disableTextWrap), void (C2d::*)()>);
     static_assert(std::is_same_v<decltype(&C2d::getTextColor), int (C2d::*)()>);
     static_assert(std::is_same_v<decltype(&C2d::setTextColor), void (C2d::*)(int)>);
