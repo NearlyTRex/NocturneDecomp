@@ -97,7 +97,3 @@ else()
     set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
     set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
 endif()
-
-# -mmmx matches every other lane; clang-cl takes clang's -m flags as they are.
-string(APPEND CMAKE_C_FLAGS_INIT   " -mmmx")
-string(APPEND CMAKE_CXX_FLAGS_INIT " -mmmx")

@@ -75,7 +75,7 @@ for preset in "${PRESETS[@]}"; do
 
     if [ "${DO_BUILD}" -eq 1 ]; then
         echo "package_release.sh: building ${preset}"
-        "${ROOT_DIR}/build.sh" "${preset}"
+        SKIP_REGEN=1 "${ROOT_DIR}/build.sh" "${preset}"
     fi
 
     if [ ! -d "${build_dir}" ]; then
@@ -128,7 +128,11 @@ for preset in "${PRESETS[@]}"; do
     archive="${OUT_DIR}/nocturne-${VERSION}-${preset}.${format}"
     rm -f "${archive}"
     case "${format}" in
-        zip)    ( cd "${OUT_DIR}" && zip -qr "$(basename "${archive}")" "$(basename "${stage}")" ) ;;
+        zip)    if command -v zip >/dev/null; then
+                    ( cd "${OUT_DIR}" && zip -qr "$(basename "${archive}")" "$(basename "${stage}")" )
+                else
+                    ( cd "${OUT_DIR}" && 7z a -tzip -bso0 "$(basename "${archive}")" "$(basename "${stage}")" )
+                fi ;;
         tar.gz) tar -C "${OUT_DIR}" -czf "${archive}" "$(basename "${stage}")" ;;
         *)      echo "package_release.sh: unknown archive format '${format}' in ${manifest}" >&2
                 exit 1 ;;

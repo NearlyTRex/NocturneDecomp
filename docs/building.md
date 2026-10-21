@@ -39,8 +39,13 @@ builds the `game` preset into `build/recreation/game` and runs the executable fr
 | `check-windows-msys2` | Windows 64-bit | syntax check, run **on** Windows under MSYS2 |
 | `exe-windows-msys2` | Windows 64-bit | `nocturne.exe`, built **on** Windows under MSYS2 |
 | `exe-windows-msvc` | Windows 64-bit | `nocturne.exe` with clang-cl and the Microsoft runtime, on Windows or cross from Linux — **needs MSVC libraries** |
-| `exe-macos-x86_64` | macOS, Intel 64-bit | full executable, built **on** a Mac; runs on Apple silicon through Rosetta 2 |
-| `exe-macos-vanilla-x86_64` | macOS, Intel 64-bit | the vanilla lane for macOS |
+| `exe-linux-gles-x86_64` | native 64-bit | full executable on OpenGL ES 3.0, the path the ES-only ports take ([porting.md](porting.md#opengl-es)) |
+| `exe-linux-aarch64` | Linux, 64-bit Arm | full executable; native on an Arm host, otherwise a cross build |
+| `exe-macos-arm64` | macOS, Apple silicon | full executable, built **on** a Mac |
+| `exe-macos-x86_64` | macOS, Intel 64-bit | full executable, built **on** a Mac |
+
+Each `exe-*` lane that ships has a vanilla twin with `-vanilla` before the architecture
+(`exe-macos-vanilla-arm64`); `./build.sh --vanilla <preset>` finds it.
 
 Each preset is a build directory (`build/<preset>`), a toolchain file from `cmake/toolchains/`,
 and a handful of options composed from hidden base presets in `CMakePresets.json`. What differs
@@ -200,23 +205,51 @@ every configuration links the release runtime.
 
 ### macOS
 
-`exe-macos-x86_64` builds on a Mac with Apple clang, from Xcode's command line tools:
+`exe-macos-arm64` (Apple silicon) and `exe-macos-x86_64` (Intel) build on a Mac with Apple
+clang, from Xcode's command line tools. Either builds from either kind of Mac:
 
 ```sh
 xcode-select --install
 brew install cmake ninja
 
-cmake --preset exe-macos-x86_64
-cmake --build --preset exe-macos-x86_64
+cmake --preset exe-macos-arm64
+cmake --build --preset exe-macos-arm64
 ```
 
-**x86_64 on every Mac.** On Apple silicon it is still an Intel binary, run through Rosetta 2.
-Netplay is lockstep, so every build has to produce the same floats; every other lane is x86_64
-SSE, while an arm64 build fuses multiply-adds by default and links a different libm. The SDL
-dylibs are found beside the binary through `@executable_path`, as the `.so` files are through
-`$ORIGIN` on Linux.
+Both use `cmake/toolchains/macos.cmake`; the preset sets `CMAKE_OSX_ARCHITECTURES`. One
+architecture per build rather than a universal binary, since FFmpeg's configure targets one.
+The SDL dylibs are found beside the binary through `@executable_path`, as the `.so` files are
+through `$ORIGIN` on Linux.
 
-This lane is built in CI on `macos-latest`; it has not been run on a Mac.
+These lanes are built in CI on `macos-latest`; they have not been run on a Mac.
+
+### Arm Linux
+
+`exe-linux-aarch64` builds natively on a 64-bit Arm host (a Raspberry Pi 4 or 5, an Arm
+server) with the same packages as the x86_64 lane. CI builds it and runs the unit tests on
+GitHub's `ubuntu-24.04-arm` runner. From an x86_64 host the same preset is a clang cross
+build. It needs the aarch64 C and C++ libraries and SDL's backend `-dev` packages for aarch64,
+either in the multiarch directories or in a sysroot given as `-DNOCTURNE_LINUX_SYSROOT=<dir>`.
+
+### Architectures
+
+Nothing in the build assumes x86. Where the decompiled code leans on the original CPU, the
+generated headers and the build carry a portable spelling:
+
+| Original | Portable spelling |
+|---|---|
+| MMX instructions (`paddusb`, `pmulhw`, ...) | `mmintrin.h` on x86; elsewhere `nocturne_mmx_*` in `system/intrinsics.h`, checked bit for bit against the instructions by `tests/include/system/test_intrinsics_mmx.cpp` |
+| `cpuid` | real on x86; every leaf reads zero elsewhere. The game's CPU detection is a reconstruction that reports MMX present either way |
+| x87 80-bit `float10` | `long double` where that is the x87 format (x86 outside the Microsoft ABI), `double` everywhere else |
+| Watcom's signed `char` | `-fsigned-char`, since arm64 Linux's `char` is unsigned |
+| Separate multiply and add roundings | `-ffp-contract=off`, since arm64 fuses them by default |
+
+The last two are in `NOCTURNE_CODEGEN_FLAGS` in `CMakeLists.txt`. Netplay is lockstep, so
+both players have to compute the same floats. The `float10` split means a build of one kind
+(Linux, mingw Windows and macOS on x86_64) against a build of the other (MSVC, any Arm) can
+drift where extended-precision maths feeds the simulation. So can two builds with different
+C libraries, since `sin` and friends are not required to round alike. Same platform and
+architecture against itself is the configuration that is known to stay in step.
 
 ### SDL2, SDL2_ttf and FFmpeg
 

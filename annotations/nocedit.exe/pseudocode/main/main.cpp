@@ -8,7 +8,8 @@
 // against a modern C/C++ runtime.
 //
 // Responsibilities:
-//   1. Initialize the cross-platform Win32 shim function pointers.
+//   1. Choose the data and user directories (core/path_roots.h), then
+//      initialize the cross-platform Win32 shim function pointers.
 //   2. Synthesize the HINSTANCE/cmdline arguments the decompiled winMain
 //      expects.
 //   3. Hand control to the decompiled winMain and propagate its exit code.
@@ -16,6 +17,7 @@
 
 #include "nocturne.h"
 #include "win32/shim_init.h"
+#include "core/path_roots.h"
 
 #include <cstdio>
 #include <cstring>
@@ -52,6 +54,7 @@ int main(int argc, char** argv)
         return 0;
     }
 
+    nocturne_init_path_roots(argc, argv);
     shims_init_all();
     runStaticInitializers();
 

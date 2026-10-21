@@ -36,6 +36,12 @@ option(NOCTURNE_ASAN
 # than the whole decompiled tree (shim_config.h reaches every TU via nocturne.h).
 option(NOCTURNE_GL_PRESENT "Present through OpenGL (OFF = legacy SDL_Renderer)" ON)
 
+# OpenGL ES 3.0 instead of desktop 3.3 core, for the targets that have only ES
+# (UWP and Xbox through ANGLE, most consoles and Arm boards). Same frames; see
+# shims/gl/gl_api.h. A platform file can also set it in
+# NOCTURNE_PLATFORM_DEFINITIONS. Shim targets only, as above.
+option(NOCTURNE_GLES "Ask for OpenGL ES 3.0 instead of desktop GL 3.3 core" OFF)
+
 option(NOCTURNE_USE_CCACHE
     "Route the compiler through ccache if available"
     ON)
@@ -271,6 +277,19 @@ set(NOCTURNE_COMMON_WARNINGS
     # CUSTOM_STORAGE signature in Ghidra, not a code defect).
     -Werror=sometimes-uninitialized
 )
+
+# Code generation that must not depend on the architecture. Watcom's char is
+# signed and arm64 Linux's is not. Lockstep netplay needs every build to round
+# alike, and arm64 fuses a multiply and an add into one rounding by default,
+# which the x86_64 baseline (no FMA) cannot. The Microsoft ABI's char is signed
+# everywhere, so clang-cl needs only the second. They ride on the warning list
+# because every target, the tests and the check lane already take it.
+if(CMAKE_CXX_COMPILER_FRONTEND_VARIANT STREQUAL "MSVC")
+    set(NOCTURNE_CODEGEN_FLAGS /clang:-ffp-contract=off)
+else()
+    set(NOCTURNE_CODEGEN_FLAGS -fsigned-char -ffp-contract=off)
+endif()
+list(APPEND NOCTURNE_COMMON_WARNINGS ${NOCTURNE_CODEGEN_FLAGS})
 
 set(NOCTURNE_INCLUDE_FLAGS
     -I "${NOCTURNE_INCLUDE_DIR}"
@@ -508,6 +527,9 @@ if(NOCTURNE_BUILD_EXE)
         ${NOCTURNE_SANITIZE_FLAGS}
         ${SDL2_CFLAGS_OTHER} ${SDL2TTF_CFLAGS_OTHER} ${FFMPEG_CFLAGS_OTHER})
     target_compile_features(nocturne_shims PRIVATE cxx_std_17)
+    if(NOCTURNE_GLES)
+        target_compile_definitions(nocturne_shims PRIVATE NOCTURNE_GLES=1)
+    endif()
     if(NOT NOCTURNE_GL_PRESENT)
         target_compile_definitions(nocturne_shims PRIVATE NOCTURNE_GL_PRESENT=0)
     endif()

@@ -182,7 +182,7 @@ NOCTURNE_TEST(finding_nothing_says_so_at_the_start) {
     CHECK_EQ(_findclose(0), -1);
 }
 
-NOCTURNE_TEST(the_pattern_ignores_case_and_the_directory_does_not) {
+NOCTURNE_TEST(neither_the_pattern_nor_the_directory_minds_case) {
     Tree tree;
     // The last component is a pattern and is matched without case, so a spec
     // shouting at a lower-case file finds it.
@@ -190,12 +190,11 @@ NOCTURNE_TEST(the_pattern_ignores_case_and_the_directory_does_not) {
     CHECK(handle != -1);
     CHECK_EQ(_findclose(handle), 0);
 
-    // The directory is used as spelled. This is what the POSIX version did too —
-    // it opened the directory it was given — so it is not a change, but it is
-    // worth writing down: on Windows the whole path would be found whatever its
-    // case, and here only the last part is. Nothing in the game has needed the
-    // difference, and a caller that does can resolve the path first.
-    CHECK_EQ(_findfirst("SAVE\\*.noc", nullptr), -1);
+    // The directory goes through the same resolution as an open, as it would be
+    // found on Windows whatever its case.
+    handle = _findfirst("SAVE\\*.noc", nullptr);
+    CHECK(handle != -1);
+    CHECK_EQ(_findclose(handle), 0);
 }
 
 NOCTURNE_TEST_MAIN()

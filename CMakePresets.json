@@ -53,9 +53,21 @@
       "toolchainFile": "${sourceDir}/cmake/toolchains/windows-msvc.cmake"
     },
     {
-      "name": "toolchain-macos",
+      "name": "toolchain-linux-aarch64",
       "hidden": true,
-      "toolchainFile": "${sourceDir}/cmake/toolchains/macos-x86_64.cmake"
+      "toolchainFile": "${sourceDir}/cmake/toolchains/linux-aarch64.cmake"
+    },
+    {
+      "name": "toolchain-macos-x86_64",
+      "hidden": true,
+      "toolchainFile": "${sourceDir}/cmake/toolchains/macos.cmake",
+      "cacheVariables": { "CMAKE_OSX_ARCHITECTURES": "x86_64" }
+    },
+    {
+      "name": "toolchain-macos-arm64",
+      "hidden": true,
+      "toolchainFile": "${sourceDir}/cmake/toolchains/macos.cmake",
+      "cacheVariables": { "CMAKE_OSX_ARCHITECTURES": "arm64" }
     },
 
     {
@@ -87,6 +99,25 @@
       "displayName": "Vanilla exe (Linux native 64-bit)",
       "description": "Every authenticity toggle at the shipped behaviour, bar the host-kind ones that cannot be reproduced off Win32. The retail game as it was, bugs included, on a modern system.",
       "inherits": ["exe", "vanilla", "toolchain-linux"]
+    },
+    {
+      "name": "exe-linux-gles-x86_64",
+      "displayName": "Full exe (Linux native 64-bit), OpenGL ES 3.0",
+      "description": "The GLES path the UWP, Xbox and console ports take, on a desktop Mesa driver, so it can be run and compared against the desktop GL lane.",
+      "inherits": ["exe", "toolchain-linux"],
+      "cacheVariables": { "NOCTURNE_GLES": "ON" }
+    },
+    {
+      "name": "exe-linux-aarch64",
+      "displayName": "Full exe (Linux 64-bit Arm)",
+      "description": "Compile and link nocturne for aarch64 Linux. Native on an Arm host; elsewhere a clang cross build that needs the aarch64 libraries and SDL backend -dev packages.",
+      "inherits": ["exe", "toolchain-linux-aarch64"]
+    },
+    {
+      "name": "exe-linux-vanilla-aarch64",
+      "displayName": "Vanilla exe (Linux 64-bit Arm)",
+      "description": "The vanilla lane for aarch64 Linux. Same toggles as exe-linux-vanilla-x86_64.",
+      "inherits": ["exe", "vanilla", "toolchain-linux-aarch64"]
     },
     {
       "name": "exe-windows-x86_64",
@@ -127,14 +158,26 @@
     {
       "name": "exe-macos-x86_64",
       "displayName": "Full exe (macOS, Intel 64-bit)",
-      "description": "Build on a Mac with Apple clang. x86_64 on Apple silicon too, where it runs through Rosetta 2.",
-      "inherits": ["exe", "toolchain-macos"]
+      "description": "Build on a Mac with Apple clang, for Intel Macs. Builds from an Apple silicon host too.",
+      "inherits": ["exe", "toolchain-macos-x86_64"]
     },
     {
       "name": "exe-macos-vanilla-x86_64",
       "displayName": "Vanilla exe (macOS, Intel 64-bit)",
-      "description": "The vanilla lane for macOS. Same toggles as exe-linux-vanilla-x86_64.",
-      "inherits": ["exe", "vanilla", "toolchain-macos"]
+      "description": "The vanilla lane for Intel Macs. Same toggles as exe-linux-vanilla-x86_64.",
+      "inherits": ["exe", "vanilla", "toolchain-macos-x86_64"]
+    },
+    {
+      "name": "exe-macos-arm64",
+      "displayName": "Full exe (macOS, Apple silicon)",
+      "description": "Build on a Mac with Apple clang, for Apple silicon. Builds from an Intel host too.",
+      "inherits": ["exe", "toolchain-macos-arm64"]
+    },
+    {
+      "name": "exe-macos-vanilla-arm64",
+      "displayName": "Vanilla exe (macOS, Apple silicon)",
+      "description": "The vanilla lane for Apple silicon. Same toggles as exe-linux-vanilla-x86_64.",
+      "inherits": ["exe", "vanilla", "toolchain-macos-arm64"]
     }
   ],
   "buildPresets": [
@@ -142,6 +185,9 @@
     { "name": "exe-linux-x86_64",           "configurePreset": "exe-linux-x86_64",           "targets": ["nocturne"] },
     { "name": "exe-linux-asan-x86_64",      "configurePreset": "exe-linux-asan-x86_64",      "targets": ["nocturne"] },
     { "name": "exe-linux-vanilla-x86_64",   "configurePreset": "exe-linux-vanilla-x86_64",   "targets": ["nocturne"] },
+    { "name": "exe-linux-gles-x86_64",      "configurePreset": "exe-linux-gles-x86_64",      "targets": ["nocturne"] },
+    { "name": "exe-linux-aarch64",          "configurePreset": "exe-linux-aarch64",          "targets": ["nocturne"] },
+    { "name": "exe-linux-vanilla-aarch64",  "configurePreset": "exe-linux-vanilla-aarch64",  "targets": ["nocturne"] },
     { "name": "exe-windows-x86_64",         "configurePreset": "exe-windows-x86_64",         "targets": ["nocturne"] },
     { "name": "exe-windows-vanilla-x86_64", "configurePreset": "exe-windows-vanilla-x86_64", "targets": ["nocturne"] },
     { "name": "check-windows-x86_64",       "configurePreset": "check-windows-x86_64",       "targets": ["nocturne_check"] },
@@ -149,6 +195,8 @@
     { "name": "check-windows-msys2",        "configurePreset": "check-windows-msys2",        "targets": ["nocturne_check"] },
     { "name": "exe-windows-msvc",           "configurePreset": "exe-windows-msvc",           "targets": ["nocturne"] },
     { "name": "exe-macos-x86_64",           "configurePreset": "exe-macos-x86_64",           "targets": ["nocturne"] },
-    { "name": "exe-macos-vanilla-x86_64",   "configurePreset": "exe-macos-vanilla-x86_64",   "targets": ["nocturne"] }
+    { "name": "exe-macos-vanilla-x86_64",   "configurePreset": "exe-macos-vanilla-x86_64",   "targets": ["nocturne"] },
+    { "name": "exe-macos-arm64",            "configurePreset": "exe-macos-arm64",            "targets": ["nocturne"] },
+    { "name": "exe-macos-vanilla-arm64",    "configurePreset": "exe-macos-vanilla-arm64",    "targets": ["nocturne"] }
   ]
 }

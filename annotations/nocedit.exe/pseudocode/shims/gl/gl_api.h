@@ -16,8 +16,37 @@
 // The set below is the compatibility-profile subset the shims need: the 2D
 // present blit (gl_present.cpp) and the fixed-function state machine a
 // DX6-era renderer DLL drives.
+//
+// NOCTURNE_GLES=1 asks for OpenGL ES 3.0 instead of desktop 3.3 core: what
+// ANGLE gives UWP and Xbox, and what most consoles and Arm boards have. The
+// shaders compile as `#version 300 es`, and the few desktop-only entry points
+// are filled in from their ES equivalents (gl_api.cpp) so no call site
+// changes. A host spelling, not a behaviour: the frames are the same. The
+// types and enums still come from SDL's own copy of the desktop headers, which
+// is a superset of ES 3.0's, so no ES headers are needed either.
+
+#ifndef NOCTURNE_GLES
+#define NOCTURNE_GLES 0
+#endif
 
 #include <SDL_opengl.h>
+
+#if NOCTURNE_GLES
+#define NOCTURNE_GLSL_VERSION \
+    "#version 300 es\n" \
+    "precision highp float;\n" \
+    "precision highp int;\n" \
+    "precision highp sampler2D;\n"
+// ES has no sized internal format to pair with a BGRA upload; the
+// EXT_texture_format_BGRA8888 rule is that it names the upload format itself.
+// Every unsized upload is the same: internal format and format must agree.
+#define NOCTURNE_GL_INTERNAL_BGRA8 ((GLint)GL_BGRA)
+#define NOCTURNE_GL_INTERNAL_FOR(format) ((GLint)(format))
+#else
+#define NOCTURNE_GLSL_VERSION "#version 150 core\n"
+#define NOCTURNE_GL_INTERNAL_BGRA8 ((GLint)GL_RGBA8)
+#define NOCTURNE_GL_INTERNAL_FOR(format) ((GLint)GL_RGBA)
+#endif
 
 #ifdef __cplusplus
 extern "C" {

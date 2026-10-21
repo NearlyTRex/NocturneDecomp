@@ -125,7 +125,8 @@ never link are available too, and need nothing beyond clang, cmake, ninja and py
 
 64-bit Windows builds two ways: `exe-windows-x86_64` cross-compiles a `nocturne.exe` from Linux,
 and `exe-windows-msys2` builds one natively on Windows under MSYS2. Both are opt-in and neither
-is looked for by any other preset, so a plain clone on either platform is unaffected.
+is looked for by any other preset, so a plain clone on either platform is unaffected. There are
+lanes for macOS (Apple silicon and Intel) and 64-bit Arm Linux as well.
 
 The recreation is a separate CMake project with its own script:
 

@@ -69,11 +69,6 @@ endif()
 # they always match what was linked.
 set(_NOCTURNE_TARGET_FLAGS "--target=${NOCTURNE_WIN_TRIPLE}")
 
-# -mmmx matches the Linux lanes. -fasm-blocks is deliberately absent: the exe
-# lane contains no __asm block (they live only in .byval variants the source
-# collector never selects for linking), so nothing here needs MSVC asm syntax.
-set(_NOCTURNE_TARGET_FLAGS "${_NOCTURNE_TARGET_FLAGS} -mmmx")
-
 set(CMAKE_C_FLAGS_INIT   "${_NOCTURNE_TARGET_FLAGS}")
 set(CMAKE_CXX_FLAGS_INIT "${_NOCTURNE_TARGET_FLAGS}")
 set(CMAKE_EXE_LINKER_FLAGS_INIT    "${_NOCTURNE_TARGET_FLAGS}")

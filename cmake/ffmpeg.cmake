@@ -7,6 +7,8 @@
 #   nocturne_add_ffmpeg(<target>
 #       PREFIX <dir>               where it is fetched, built and installed
 #       TARGET_OS <os>             configure's --target-os
+#       [ARCH <arch>]              configure's --arch; default the target CMake
+#                                  builds for (CMAKE_OSX_ARCHITECTURES on a Mac)
 #       [EXTRA_ARGS <arg>...]      compiler, cross prefix and flags for the target
 #       [CONFIGURE_WRAPPER <cmd>...]  runs configure; given the source and install
 #                                  directories first, then the arguments
@@ -22,9 +24,24 @@ include(ExternalProject)
 set(NOCTURNE_FFMPEG_TAG "n6.1.1" CACHE STRING "FFmpeg git tag")
 
 function(nocturne_add_ffmpeg target)
-    cmake_parse_arguments(PARSE_ARGV 1 ARG "" "PREFIX;TARGET_OS"
+    cmake_parse_arguments(PARSE_ARGV 1 ARG "" "PREFIX;TARGET_OS;ARCH"
                           "EXTRA_ARGS;CONFIGURE_WRAPPER;SYSTEM_LIBRARIES")
     set(_install "${ARG_PREFIX}/install")
+
+    if(NOT ARG_ARCH)
+        if(CMAKE_OSX_ARCHITECTURES)
+            list(GET CMAKE_OSX_ARCHITECTURES 0 ARG_ARCH)
+        else()
+            set(ARG_ARCH "${CMAKE_SYSTEM_PROCESSOR}")
+        endif()
+    endif()
+    # Windows and Apple spell them their own way.
+    string(TOLOWER "${ARG_ARCH}" ARG_ARCH)
+    if(ARG_ARCH MATCHES "^(amd64|x64)$")
+        set(ARG_ARCH x86_64)
+    elseif(ARG_ARCH STREQUAL "arm64")
+        set(ARG_ARCH aarch64)
+    endif()
 
     # Static link order: dependents before dependencies, avutil last. libavcodec
     # pulls libswresample (the opus decoder's swr_* calls), so it comes first too.
@@ -34,7 +51,7 @@ function(nocturne_add_ffmpeg target)
     endforeach()
 
     set(_args
-        --arch=x86_64 --target-os=${ARG_TARGET_OS}
+        --arch=${ARG_ARCH} --target-os=${ARG_TARGET_OS}
         --enable-static --disable-shared --enable-pic
         --disable-programs --disable-doc --disable-network --disable-debug
         --disable-x86asm

@@ -28,6 +28,7 @@
 #include "globals/globals_610000.h"
 #include "renderer/builtin_dll.h"
 #include "core/file_search.h"   // nocturne_find_files() — shared with _findfirst
+#include "watcom/path.h"        // the same path resolution and roots the CRT uses
 
 #include <SDL.h>
 
@@ -319,7 +320,9 @@ static HANDLE shim_CreateFileA(LPCSTR lpFileName, DWORD dwDesiredAccess,
     flags |= O_BINARY;
 #endif
 
-    int fd = open(lpFileName, flags, 0666);
+    const WatcomPathUse use = (flags & (O_WRONLY | O_RDWR | O_CREAT | O_TRUNC))
+                                  ? WatcomPathUse::Write : WatcomPathUse::Read;
+    int fd = open(watcom_resolve_fs_path(lpFileName, use).c_str(), flags, 0666);
     if (fd < 0) {
         s_lastError = (DWORD)errno;
         return INVALID_HANDLE;
@@ -448,7 +451,8 @@ static BOOL shim_FlushFileBuffers(HANDLE hFile) {
 
 static BOOL shim_DeleteFileA(LPCSTR lpFileName) {
     std::error_code ec;
-    if (std::filesystem::remove(std::filesystem::path(lpFileName), ec)) return 1;
+    const std::filesystem::path path(watcom_resolve_fs_path(lpFileName, WatcomPathUse::Write));
+    if (std::filesystem::remove(path, ec)) return 1;
     // remove answers false without an error when there was nothing to remove.
     s_lastError = ec ? (DWORD)ec.value() : (DWORD)2;   // ERROR_FILE_NOT_FOUND
     return 0;
@@ -465,7 +469,8 @@ static BOOL shim_CreateDirectoryA(LPCSTR lpPathName,
 {
     (void)lpSecurityAttributes;
     std::error_code ec;
-    if (std::filesystem::create_directory(std::filesystem::path(lpPathName), ec)) return 1;
+    const std::filesystem::path path(watcom_resolve_fs_path(lpPathName, WatcomPathUse::Write));
+    if (std::filesystem::create_directory(path, ec)) return 1;
     // create_directory answers false without an error when the directory is
     // already there, which Win32 reports as a failure with ERROR_ALREADY_EXISTS.
     s_lastError = ec ? (DWORD)ec.value() : (DWORD)183;
@@ -474,7 +479,7 @@ static BOOL shim_CreateDirectoryA(LPCSTR lpPathName,
 
 static DWORD shim_GetFileAttributesA(LPCSTR lpFileName) {
     struct stat st;
-    if (stat(lpFileName, &st) != 0) {
+    if (stat(watcom_resolve_fs_path(lpFileName).c_str(), &st) != 0) {
         s_lastError = (DWORD)errno;
         return SHIM_INVALID_FILE_ATTRIBUTES;
     }

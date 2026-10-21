@@ -90,15 +90,84 @@ std::string resolve_case_insensitive(const std::string &slashed) {
     return result;
 }
 
-}  // namespace
+const WatcomPathRoots &roots() {
+    return watcom_path_roots();
+}
 
-std::string watcom_resolve_fs_path(const char *path) {
-    if (path == nullptr) return std::string();
-    std::string slashed(path);
-    // Windows accepts both separators, so the game uses both, sometimes in one
-    // path. Everything downstream here is written in terms of '/'.
-    for (char &c : slashed) {
+// Windows accepts both separators, so the game uses both, sometimes in one path.
+// Everything downstream here is written in terms of '/'.
+std::string slashed(const char *path) {
+    std::string result(path);
+    for (char &c : result) {
         if (c == '\\') c = '/';
     }
-    return resolve_case_insensitive(slashed);
+    return result;
+}
+
+// "/x", "//server/x" and "C:/x" name the same file whatever the roots are.
+bool is_absolute(const std::string &path) {
+    if (!path.empty() && path[0] == '/') return true;
+    return path.size() >= 2 && path[1] == ':' &&
+           ((path[0] >= 'A' && path[0] <= 'Z') || (path[0] >= 'a' && path[0] <= 'z'));
+}
+
+// `relative` under `root`, case-resolved below the root. The root is the host's
+// own path and is used exactly as given.
+std::string under(const std::string &root, std::string relative) {
+    while (relative.size() >= 2 && relative[0] == '.' && relative[1] == '/') relative.erase(0, 2);
+    if (relative == ".") relative.clear();
+    const std::string joined = relative.empty() ? root : root + "/" + relative;
+    return resolve_case_insensitive(joined);
+}
+
+bool is_regular_file(const std::string &path) {
+    std::error_code ignored;
+    return std::filesystem::is_regular_file(std::filesystem::path(path), ignored);
+}
+
+// A write lands in the user directory. The directories above it are made there,
+// and a file that so far exists only in the data directory is copied across
+// first, so appending to it or rewriting it in place starts from what the game
+// last read rather than from nothing.
+std::string for_writing(const std::string &relative) {
+    const WatcomPathRoots &r = roots();
+    const std::string target = under(r.user, relative);
+    std::error_code ignored;
+    const std::filesystem::path path(target);
+    if (path.has_parent_path()) std::filesystem::create_directories(path.parent_path(), ignored);
+    if (!exists(target)) {
+        const std::string shipped = r.data.empty() ? resolve_case_insensitive(relative)
+                                                   : under(r.data, relative);
+        if (is_regular_file(shipped)) std::filesystem::copy_file(shipped, target, ignored);
+    }
+    return target;
+}
+
+}  // namespace
+
+std::string watcom_resolve_fs_path(const char *path, WatcomPathUse use) {
+    if (path == nullptr) return std::string();
+    const std::string relative = slashed(path);
+    const WatcomPathRoots &r = roots();
+    if (is_absolute(relative) || (r.data.empty() && r.user.empty())) {
+        return resolve_case_insensitive(relative);
+    }
+    if (!r.user.empty()) {
+        if (use == WatcomPathUse::Write) return for_writing(relative);
+        const std::string own = under(r.user, relative);
+        if (exists(own)) return own;
+    }
+    return r.data.empty() ? resolve_case_insensitive(relative) : under(r.data, relative);
+}
+
+std::vector<std::string> watcom_resolve_fs_dirs(const char *directory) {
+    const std::string relative = slashed(directory == nullptr ? "" : directory);
+    const WatcomPathRoots &r = roots();
+    if (is_absolute(relative) || (r.data.empty() && r.user.empty())) {
+        return {resolve_case_insensitive(relative)};
+    }
+    std::vector<std::string> dirs;
+    if (!r.user.empty()) dirs.push_back(under(r.user, relative));
+    dirs.push_back(r.data.empty() ? resolve_case_insensitive(relative) : under(r.data, relative));
+    return dirs;
 }

@@ -66,7 +66,8 @@ static int s_trace_truncated = 0;
 static FILE *trace_file(void)
 {
     if ((s_trace == (FILE *)0) && (s_open_failed == 0)) {
-        s_trace = std::fopen("nocturne_simtrace.log", s_trace_truncated ? "a" : "w");
+        s_trace = std::fopen(watcom_log_path("nocturne_simtrace.log").c_str(),
+                             s_trace_truncated ? "a" : "w");
         if (s_trace == (FILE *)0) {
             s_open_failed = 1;
         } else {

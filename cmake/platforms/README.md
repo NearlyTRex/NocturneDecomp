@@ -22,7 +22,7 @@ All variables are optional; the defaults are the empty list or `OFF`.
 | `NOCTURNE_PLATFORM_SHIM_EXCLUDE` | Regexes matched against shim source paths; matches are not built. Picks one socket backend. |
 | `NOCTURNE_PLATFORM_SOURCES` | Extra sources compiled into the shim library: a port's own OS adapters. |
 | `NOCTURNE_PLATFORM_INCLUDE_DIRS` | Extra include directories for the shim library. |
-| `NOCTURNE_PLATFORM_DEFINITIONS` | Extra compile definitions for the shim library. |
+| `NOCTURNE_PLATFORM_DEFINITIONS` | Extra compile definitions for the shim library. The data and user directories are set here: `NOCTURNE_DEFAULT_DATA_DIR="<dir>"` and `NOCTURNE_DEFAULT_USER_DIR="<dir>"`, or `NOCTURNE_USER_DIR_FROM_SDL` for `SDL_GetPrefPath`'s answer (`shims/core/path_roots.h`). |
 | `NOCTURNE_PLATFORM_LIBRARIES` | Extra libraries linked into the executable. |
 | `NOCTURNE_PLATFORM_LAUNCHERS` | `ON` to generate the bash `run.sh` / `debug.sh` beside the binary. |
 | `NOCTURNE_DEPENDENCIES_FILE` | The file that provides SDL2, SDL2_ttf and FFmpeg. Defaults to `cmake/bundledlibs.cmake`. |

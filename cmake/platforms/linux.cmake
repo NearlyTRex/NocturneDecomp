@@ -7,7 +7,26 @@ set(NOCTURNE_FFMPEG_TARGET_OS "linux")
 set(NOCTURNE_FFMPEG_SYSTEM_LIBRARIES m pthread)
 set(NOCTURNE_PLATFORM_LAUNCHERS ON)
 
-set(_noc_multiarch "x86_64-linux-gnu")
+# The Debian multiarch directory of the target, which CMake works out from the
+# compiler; distributions without one fall back to the plain triple.
+if(CMAKE_LIBRARY_ARCHITECTURE)
+    set(_noc_multiarch "${CMAKE_LIBRARY_ARCHITECTURE}")
+else()
+    set(_noc_multiarch "${CMAKE_SYSTEM_PROCESSOR}-linux-gnu")
+endif()
+
+# Building for another architecture than the host's: FFmpeg's configure cannot
+# run what it compiles, and has to be handed the same clang and target.
+if(NOT CMAKE_SYSTEM_PROCESSOR STREQUAL CMAKE_HOST_SYSTEM_PROCESSOR)
+    set(_noc_cross_flags "--target=${_noc_multiarch}")
+    if(CMAKE_SYSROOT)
+        string(APPEND _noc_cross_flags " --sysroot=${CMAKE_SYSROOT}")
+    endif()
+    set(NOCTURNE_FFMPEG_EXTRA_ARGS --enable-cross-compile
+        --cc=${CMAKE_C_COMPILER} --ld=${CMAKE_C_COMPILER}
+        "--extra-cflags=${_noc_cross_flags}"
+        "--extra-ldflags=${_noc_cross_flags} -fuse-ld=lld")
+endif()
 
 # An SDL with no display or audio backend still configures, builds and runs:
 # it opens an invisible offscreen window and plays into the dummy device. Fail

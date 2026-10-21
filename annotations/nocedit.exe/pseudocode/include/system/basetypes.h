@@ -136,11 +136,20 @@ typedef const char* string;  // Ghidra's generic string type
 typedef const wchar_t* unicode;  // Ghidra null-terminated UTF-16 string
 typedef const wchar_t* PascalUnicode;  // Ghidra length-prefixed UTF-16 string
 
-// Extended precision float (x87 80-bit)
+// Extended precision float (x87 80-bit). long double is that format only on
+// x86 outside the Microsoft ABI. Elsewhere it is double (MSVC, Apple arm64)
+// or a software binary128 (arm64 Linux) that is slow and rounds unlike
+// either, so every non-x87 host takes double: two behaviours, not three.
+#if (defined(__x86_64__) || defined(__i386__)) && !defined(_MSC_VER)
+#define NOCTURNE_FLOAT10_IS_X87 1
 typedef long double float10;
+#else
+#define NOCTURNE_FLOAT10_IS_X87 0
+typedef double float10;
+#endif
 
 // Unknown byte types (Ghidra's unkbyteN = N bytes of unknown data)
-typedef long double unkbyte10;  // 10-byte, typically x87 80-bit float returns
+typedef float10 unkbyte10;  // 10-byte, typically x87 80-bit float returns
 
 // =============================================================================
 // Windows Primitive Types

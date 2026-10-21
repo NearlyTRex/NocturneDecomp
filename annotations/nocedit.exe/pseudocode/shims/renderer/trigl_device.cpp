@@ -250,14 +250,11 @@ int nocturne_trigl_device_lock_frame(void) {
     GLenum format = 0, type = 0;
     if (!nocturne_gl_format_for_bpp(g_dev.bpp, &format, &type)) return 0;
 
-    gl.PixelStorei(GL_PACK_ALIGNMENT, 1);
-    gl.PixelStorei(GL_PACK_ROW_LENGTH, g_dev.pitch / (g_dev.bpp / 8));
     // With a scene target bound the frame is in its colour attachment; GL_BACK
     // means the default framebuffer and would read the previous present.
-    gl.ReadBuffer(nocturne_gl_scene_target_active() ? GL_COLOR_ATTACHMENT0 : GL_BACK);
-    gl.ReadPixels(0, 0, (GLsizei)g_dev.width, (GLsizei)g_dev.height, format, type,
-                  g_dev.image);
-    gl.PixelStorei(GL_PACK_ROW_LENGTH, 0);
+    nocturne_gl_read_pixels(nocturne_gl_scene_target_active() ? GL_COLOR_ATTACHMENT0 : GL_BACK,
+                            (GLsizei)g_dev.width, (GLsizei)g_dev.height, format, type,
+                            g_dev.image, g_dev.pitch);
     nocturne_gl_flip_rows(g_dev.image, g_dev.pitch, g_dev.height);
 
     g_dev.target_ahead = false;

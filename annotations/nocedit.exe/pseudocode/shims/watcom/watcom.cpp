@@ -175,10 +175,12 @@ char* _fullpath(char* buffer, const char* path, size_t maxlen) {
     // is what the game asks it for — a place to write. weakly_canonical does
     // the same, resolving as far as the filesystem goes and taking the rest
     // lexically. The path is handed back unchanged if even that fails, which is
-    // what the caller was going to use anyway.
+    // what the caller was going to use anyway. It is resolved against the roots
+    // (watcom/path.h) first: findFileNormally opens what this returns, and an
+    // absolute path made from the working directory would bypass them.
     std::error_code ec;
     const std::filesystem::path full =
-        std::filesystem::weakly_canonical(std::filesystem::path(path), ec);
+        std::filesystem::weakly_canonical(std::filesystem::path(watcom_resolve_fs_path(path)), ec);
     const std::string text = ec ? std::string(path) : full.string();
     const size_t room = maxlen ? maxlen : 4096;
     if (text.size() + 1 > room) {
@@ -268,7 +270,8 @@ int _mkdir(const char* path) {
     std::error_code ec;
     // Watcom answers 0 for success and -1 otherwise, including when the
     // directory is already there.
-    return std::filesystem::create_directory(std::filesystem::path(path), ec) ? 0 : -1;
+    const std::string resolved = watcom_resolve_fs_path(path, WatcomPathUse::Write);
+    return std::filesystem::create_directory(std::filesystem::path(resolved), ec) ? 0 : -1;
 }
 
 // =============================================================================
@@ -320,7 +323,7 @@ size_t memavl(void) {
 
 unsigned long __getfileattr(const char* filename) {
     std::error_code ec;
-    const std::filesystem::path path(filename);
+    const std::filesystem::path path(watcom_resolve_fs_path(filename));
     const std::filesystem::file_status status = std::filesystem::status(path, ec);
     if (ec || !std::filesystem::exists(status)) return 0xFFFFFFFF;  // INVALID_FILE_ATTRIBUTES
 

@@ -11,13 +11,6 @@ if(NOT DEFINED CMAKE_CXX_COMPILER)
     set(CMAKE_CXX_COMPILER clang++)
 endif()
 
-# -fasm-blocks is absent for the same reason as on the Windows lanes: the
-# __asm bodies live only in .byval variants the source collector never selects.
-set(_NOCTURNE_TARGET_FLAGS "-mmmx")
-
-set(CMAKE_C_FLAGS_INIT   "${_NOCTURNE_TARGET_FLAGS}")
-set(CMAKE_CXX_FLAGS_INIT "${_NOCTURNE_TARGET_FLAGS}")
-
 set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
 set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY BOTH)
 set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE BOTH)

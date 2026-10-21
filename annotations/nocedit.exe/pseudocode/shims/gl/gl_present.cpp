@@ -84,7 +84,8 @@ bool ensure_texture(int width, int height, GLenum format, GLenum type) {
     }
 
     set_sampling(g_gl.framebuffer_texture, GL_NEAREST);
-    gl.TexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, format, type, nullptr);
+    gl.TexImage2D(GL_TEXTURE_2D, 0, NOCTURNE_GL_INTERNAL_FOR(format), width, height, 0,
+                  format, type, nullptr);
 
     g_gl.texture_width  = width;
     g_gl.texture_height = height;
@@ -149,10 +150,18 @@ extern "C" int nocturne_gl_init(SDL_Window *window) {
     // objects, instanced-free indexed drawing — and asking for exactly it keeps
     // the driver from handing back something older on a machine that could do
     // better.
+#if NOCTURNE_GLES
+    // ES 3.0 is the same feature floor: GLSL ES 300, vertex array objects,
+    // framebuffer blits (gl/gl_api.h).
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_ES);
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 0);
+#else
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 3);
-#if defined(__APPLE__)
+#endif
+#if defined(__APPLE__) && !NOCTURNE_GLES
     // macOS hands out a core profile only to a forward-compatible request, and
     // answers 3.3 with its 4.1 context.
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_FLAGS, SDL_GL_CONTEXT_FORWARD_COMPATIBLE_FLAG);
@@ -254,8 +263,15 @@ extern "C" int nocturne_gl_scene_target_bind(int width, int height) {
     gl.BindTexture(GL_TEXTURE_2D, g_gl.scene_color);
     gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
     gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+#if NOCTURNE_GLES
+    // Rendered to, never uploaded to, so the format has no pixels to describe;
+    // RGBA8 is the one ES guarantees is renderable, and a BGRA texture is not.
+    gl.TexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, width, height, 0,
+                  GL_RGBA, GL_UNSIGNED_BYTE, nullptr);
+#else
     gl.TexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, width, height, 0,
                   GL_BGRA, GL_UNSIGNED_BYTE, nullptr);
+#endif
 
     gl.GenRenderbuffers(1, &g_gl.scene_depth);
     gl.BindRenderbuffer(GL_RENDERBUFFER, g_gl.scene_depth);
@@ -507,11 +523,10 @@ extern "C" int nocturne_gl_read_front(unsigned char **out_rgb, int *out_width, i
         gl.BindFramebuffer(GL_FRAMEBUFFER, 0);
     }
 
-    gl.PixelStorei(GL_PACK_ALIGNMENT, 1);
     // The swap already happened, so the finished frame is in the back buffer we
     // just drew rather than the front one on a double-buffered setup.
-    gl.ReadBuffer(GL_BACK);
-    gl.ReadPixels(0, 0, drawable_w, drawable_h, GL_RGB, GL_UNSIGNED_BYTE, buf);
+    nocturne_gl_read_pixels(GL_BACK, drawable_w, drawable_h, GL_RGB, GL_UNSIGNED_BYTE, buf,
+                            (int)row_bytes);
 
     restore_scene_target();
 

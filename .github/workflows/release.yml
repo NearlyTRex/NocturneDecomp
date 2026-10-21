@@ -62,8 +62,34 @@ jobs:
               libasound2-dev
           - preset: exe-windows-vanilla-x86_64
             packages: g++-mingw-w64-x86-64
+          - preset: exe-linux-aarch64
+            os: ubuntu-24.04-arm
+            packages: >-
+              libx11-dev libxext-dev libxcursor-dev libxi-dev libxfixes-dev
+              libxrandr-dev libxss-dev libwayland-dev libxkbcommon-dev
+              wayland-protocols libegl-dev libdecor-0-dev libpulse-dev
+              libasound2-dev
+          - preset: exe-linux-vanilla-aarch64
+            os: ubuntu-24.04-arm
+            packages: >-
+              libx11-dev libxext-dev libxcursor-dev libxi-dev libxfixes-dev
+              libxrandr-dev libxss-dev libwayland-dev libxkbcommon-dev
+              wayland-protocols libegl-dev libdecor-0-dev libpulse-dev
+              libasound2-dev
+          # The apt list is skipped off Linux; Xcode's clang and CMake are on
+          # the runner already.
+          - preset: exe-macos-x86_64
+            os: macos-latest
+          - preset: exe-macos-vanilla-x86_64
+            os: macos-latest
+          - preset: exe-macos-arm64
+            os: macos-latest
+          - preset: exe-macos-vanilla-arm64
+            os: macos-latest
     with:
+      runs-on: ${{ matrix.os || 'ubuntu-latest' }}
       apt-packages: cmake clang ninja-build pkg-config python3 zip ${{ matrix.packages }}
+      brew-packages: ninja
       # git describe needs the tags and enough history to count commits against
       # them; a shallow checkout reports a bare hash.
       fetch-depth: 0

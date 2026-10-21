@@ -10,6 +10,12 @@ Each archive is a self-contained build of the engine for one platform and flavou
 | `nocturne-{version}-exe-windows-x86_64.zip` | Windows, 64-bit | Enhanced |
 | `nocturne-{version}-exe-linux-vanilla-x86_64.tar.gz` | Linux, 64-bit | Vanilla |
 | `nocturne-{version}-exe-windows-vanilla-x86_64.zip` | Windows, 64-bit | Vanilla |
+| `nocturne-{version}-exe-linux-aarch64.tar.gz` | Linux, 64-bit Arm | Enhanced |
+| `nocturne-{version}-exe-linux-vanilla-aarch64.tar.gz` | Linux, 64-bit Arm | Vanilla |
+| `nocturne-{version}-exe-macos-arm64.tar.gz` | macOS, Apple silicon | Enhanced |
+| `nocturne-{version}-exe-macos-vanilla-arm64.tar.gz` | macOS, Apple silicon | Vanilla |
+| `nocturne-{version}-exe-macos-x86_64.tar.gz` | macOS, Intel | Enhanced |
+| `nocturne-{version}-exe-macos-vanilla-x86_64.tar.gz` | macOS, Intel | Vanilla |
 
 - **Enhanced** includes the project's additions and fixes to the original's defects: the
   automap, save slots, gamepad support, windowed and borderless modes, and HUD scaling.
@@ -33,6 +39,14 @@ so you need your own copy of **Nocturne** (1999) to play.
    `.AVI` files into it. The original installer doesn't do this. The game looks in `video`, but
    the movies ship in `AVI`, which is why the retail game never played them. The name isn't
    case-sensitive, even on Linux.
+4. **On macOS:** the build is not signed, so Gatekeeper refuses it at first. Clear the download
+   flag once with `xattr -dr com.apple.quarantine .` inside the unpacked folder. The macOS and
+   Arm builds are compiled and unit-tested in CI but have had little testing on real machines
+   yet.
+
+To keep the engine out of the install folder, run it from anywhere with
+`--data-dir <install folder>`. Add `--user-dir <folder>` to keep saves, settings and logs
+somewhere else too; the install is then only read.
 
 ## Verifying your download
 

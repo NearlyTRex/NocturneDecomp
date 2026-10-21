@@ -61,11 +61,5 @@ if(NOT DEFINED CMAKE_CXX_COMPILER)
     set(CMAKE_CXX_COMPILER clang++)
 endif()
 
-# No --target and no sysroot: the compiler is already aimed at this platform.
-# -mmmx matches every other lane. -fasm-blocks is absent for the same reason it
-# is absent from the cross lane -- neither the exe nor the check source list
-# contains an __asm block.
-set(_NOCTURNE_TARGET_FLAGS "-mmmx")
-
-set(CMAKE_C_FLAGS_INIT   "${_NOCTURNE_TARGET_FLAGS}")
-set(CMAKE_CXX_FLAGS_INIT "${_NOCTURNE_TARGET_FLAGS}")
+# No --target and no sysroot: the compiler is already aimed at this platform,
+# so there are no target flags to set.

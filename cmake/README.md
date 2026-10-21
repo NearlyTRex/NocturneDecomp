@@ -78,13 +78,16 @@ rule formats. Changes trigger a reconfigure automatically.
 ## Toolchains
 
 - `cmake/toolchains/linux-x86_64.cmake` — native clang/clang++.
+- `cmake/toolchains/linux-aarch64.cmake` — 64-bit Arm Linux; native on an Arm
+  host, a clang `--target` cross build elsewhere.
 - `cmake/toolchains/windows-x86_64.cmake` — clang targeting `x86_64-w64-mingw32`,
   cross-compiling a PE from Linux.
 - `cmake/toolchains/windows-msys2.cmake` — the same PE target, built on Windows
   under MSYS2 UCRT64.
 - `cmake/toolchains/windows-msvc.cmake` — clang-cl against the Microsoft runtime,
   on Windows from a Visual Studio prompt or cross from Linux with an xwin sysroot.
-- `cmake/toolchains/macos-x86_64.cmake` — Apple clang on a Mac, always x86_64.
+- `cmake/toolchains/macos.cmake` — Apple clang on a Mac, for the architecture in
+  `CMAKE_OSX_ARCHITECTURES` (arm64 or x86_64, set by the preset).
 
 ## Platforms
 

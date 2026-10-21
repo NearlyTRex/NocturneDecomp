@@ -91,10 +91,13 @@ translation unit, so a single binary cannot carry both sets.
 1. **Actions → Prepare Release → Run workflow**, with `patch`, `minor`, `major` or an exact
    `x.y.z`. It bumps `project(NocturneDecomp VERSION ...)` on a `release/vX.Y.Z` branch and opens
    a pull request.
-2. **Merge it.** The `Release` workflow sees a version with no tag yet, builds four lanes —
-   `exe-linux-x86_64`, `exe-windows-x86_64` and the two vanilla ones — tags the merge commit, and
+2. **Merge it.** The `Release` workflow sees a version with no tag yet, builds ten lanes —
+   `exe-linux-x86_64`, `exe-linux-aarch64`, `exe-windows-x86_64`, `exe-macos-x86_64`,
+   `exe-macos-arm64` and their vanilla twins — tags the merge commit, and
    attaches the archives and a `SHA256SUMS.txt` to a **draft** release. Don't tag it yourself:
    a tag that already exists tells the workflow the version is released, and it builds nothing.
+   `exe-windows-msvc` is built by CI but not released: one Windows archive per flavour is
+   enough, and the mingw one is what players have been running.
 3. **Check the draft, then publish it by hand.** It becomes the *Latest* release on publishing.
 
 The notes open with [`.github/release-notes.md`](../.github/release-notes.md), which says what

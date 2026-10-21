@@ -78,7 +78,7 @@ inline void watcom_stream_open(std::ifstream &fs, const char *path,
 }
 inline void watcom_stream_open(std::ofstream &fs, const char *path,
                                std::ios::openmode mode) {
-    fs.open(watcom_resolve_fs_path(path).c_str(), mode);
+    fs.open(watcom_resolve_fs_path(path, WatcomPathUse::Write).c_str(), mode);
 }
 
 // RAII wrappers for the codec keeps' "stream over a fixed buffer" pattern. They
