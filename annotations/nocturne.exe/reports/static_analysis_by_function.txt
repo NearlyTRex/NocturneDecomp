@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 303
-  Total diagnostics: 890
+  Functions with findings: 304
+  Total diagnostics: 892
   Functions flagged by multiple tools: 3
-  .keep.cpp files: 0, raw .cpp files: 303
+  .keep.cpp files: 0, raw .cpp files: 304
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -1521,6 +1521,13 @@ core_path.cpp_renderPathMapsAtPosition_FUN_004f1f80  [.cpp] [Cppcheck (quick)]
 
   Line   43: [uninitvar] Uninitialized variable: local_24
   Line   44: [uninitvar] Uninitialized variable: local_20
+
+----------------------------------------------------------------------------------------------------
+core_script.cpp_CScript_getLetterboxHeight_FUN_004fe710  [.cpp] [Clang-Tidy (quick)]
+  File: core/script.cpp  (2 diagnostics)
+
+  Line   17: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
+  Line   17: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
 
 ----------------------------------------------------------------------------------------------------
 core_setdir.cpp_FUN_00514390  [.cpp] [Cppcheck (quick)]

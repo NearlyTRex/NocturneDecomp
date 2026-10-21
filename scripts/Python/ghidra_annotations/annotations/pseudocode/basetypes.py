@@ -178,6 +178,8 @@ def format_int_by_size(int_val, num_bytes):
     elif num_bytes == 4:
         return "0x%08X" % (int_val & 0xFFFFFFFF)
     elif num_bytes == 8:
-        return "0x%016X" % int_val
+        return "0x%016X" % (int_val & 0xFFFFFFFFFFFFFFFF)
+    elif num_bytes > 0:
+        return "0x%X" % (int_val & ((1 << (8 * num_bytes)) - 1))
     else:
         return "0x%X" % int_val

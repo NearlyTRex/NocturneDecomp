@@ -120,6 +120,14 @@ typedef unsigned long long undefined8;
 // Generic pointer type
 typedef void* pointer;
 
+// Ghidra's function of unknown signature, seen as `code *`. Any arguments are
+// accepted so a call through one compiles until it is retyped.
+#ifdef __cplusplus
+typedef void code(...);
+#else
+typedef void code();
+#endif
+
 // Ghidra string types. Typed `const char *` on purpose: Ghidra auto-detects
 // some statically-initialized buffers as C string literals and emits them as
 // TerminatedCString (e.g. g_RendererDllName = "trid3d.dll"). If the game

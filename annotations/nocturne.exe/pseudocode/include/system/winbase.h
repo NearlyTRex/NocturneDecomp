@@ -4,7 +4,6 @@
 
 // Dependencies
 #include "system/basetypes.h"
-#include "system/excpt.h"
 #include "system/windef.h"
 #include "system/winnt.h"
 

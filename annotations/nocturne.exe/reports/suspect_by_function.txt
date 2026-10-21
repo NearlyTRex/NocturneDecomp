@@ -7,7 +7,7 @@ SUMMARY
 Total functions analyzed: 4923
 Clean: 2518 (51.1%)
 With suspects: 2405
-Total suspects: 20723
+Total suspects: 20725
 
 ====================================================================================================
 cockpit_ckptutil.c_applyActPalette_FUN_0042d370 (1 suspect)
@@ -17815,10 +17815,12 @@ core_script.cpp_CScript_freeParsedLines_FUN_004fe550 (2 suspects)
   Line 14 [pointer_cast]: ptr = *(void **)((int)&this_ptr->parsed_lines->text + iVar2);
 
 ====================================================================================================
-core_script.cpp_CScript_getLetterboxHeight_FUN_004fe710 (1 suspect)
+core_script.cpp_CScript_getLetterboxHeight_FUN_004fe710 (3 suspects)
   File: core/script.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+  Line 17 [static_integer_division]: ((double)((float)((g_WindowHeight - (g_WindowWidth * 100) / 0xb9) / 2) *
+  Line 17 [static_integer_division]: ((double)((float)((g_WindowHeight - (g_WindowWidth * 100) / 0xb9) / 2) *
 
 ====================================================================================================
 core_script.cpp_CScript_initRuntime_FUN_004feff0 (10 suspects)

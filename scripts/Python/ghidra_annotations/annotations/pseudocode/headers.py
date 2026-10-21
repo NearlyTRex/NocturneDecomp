@@ -2007,6 +2007,14 @@ def generate_basetypes_header(pseudocode_dir):
     content.append("// Generic pointer type")
     content.append("typedef void* pointer;")
     content.append("")
+    content.append("// Ghidra's function of unknown signature, seen as `code *`. Any arguments are")
+    content.append("// accepted so a call through one compiles until it is retyped.")
+    content.append("#ifdef __cplusplus")
+    content.append("typedef void code(...);")
+    content.append("#else")
+    content.append("typedef void code();")
+    content.append("#endif")
+    content.append("")
     content.append("// Ghidra string types. Typed `const char *` on purpose: Ghidra auto-detects")
     content.append("// some statically-initialized buffers as C string literals and emits them as")
     content.append("// TerminatedCString (e.g. g_RendererDllName = \"trid3d.dll\"). If the game")
@@ -2132,62 +2140,106 @@ def generate_basetypes_header(pseudocode_dir):
     log_info("Created system/basetypes.h with Ghidra and Windows primitive types")
 
 
-def detect_include_cycles(system_grouped_types, type_to_path_map):
-    """Detect circular include dependencies between system headers.
+_SYSTEM_TYPE_KINDS = ('function_definitions', 'enums', 'typedefs', 'structs', 'unions')
+
+
+def merge_include_cycles(currentProgram, system_grouped_types, type_to_path_map, basetypes_types):
+    """Fold system headers that include each other into one header.
+
+    Ghidra's categories decide which header a type lands in, and nothing stops
+    two of them needing each other: nocturne.exe files _CONTEXT under excpt.h
+    and FLOATING_SAVE_AREA, which it holds, under winnt.h, while winnt.h's
+    PCONTEXT needs _CONTEXT. With #pragma once, whichever is included first
+    sees the other half empty. Each cycle's types move into its largest header,
+    the type->path map follows them, and the rest of the cycle is left to be
+    written as stubs that include it, since other headers include them by path.
 
     Args:
-        system_grouped_types: Dict mapping export_path to type lists
-        type_to_path_map: Map of type names to header paths
+        currentProgram: The Ghidra program
+        system_grouped_types: Dict mapping export_path to type lists; modified
+        type_to_path_map: Map of type names to header paths; modified
+        basetypes_types: Names already defined in basetypes.h
 
     Returns:
-        Set of header paths involved in cycles
+        Dict mapping each folded export_path to the export_path it went into
     """
-    from collections import defaultdict
-
-    # Build dependency graph between headers
-    header_deps = defaultdict(set)
+    header_of = {}
+    header_deps = {}
     for export_path, types in system_grouped_types.items():
         this_header = "%s.h" % export_path
-        all_types = (types['function_definitions'] + types['enums'] +
-                    types['typedefs'] + types['structs'] + types['unions'])
+        header_of[this_header] = export_path
+        deps = header_deps.setdefault(export_path, set())
+        for kind in _SYSTEM_TYPE_KINDS:
+            for dt in types[kind]:
+                if dt.getName() in basetypes_types:
+                    continue
+                direct_deps, pointer_deps = collect_type_dependencies(currentProgram, dt)
+                for dep in direct_deps | pointer_deps:
+                    dep_path = type_to_path_map.get(strip_type_prefix(dep))
+                    if dep_path and dep_path != this_header and dep_path != "system/basetypes.h":
+                        deps.add(dep_path)
 
-        for dt in all_types:
-            dt_name = dt.getName()
-            if dt_name in type_to_path_map:
-                dep_header = type_to_path_map[dt_name]
-                if dep_header != this_header and dep_header.startswith("system/"):
-                    header_deps[this_header].add(dep_header)
+    graph = {path: set(header_of[h] for h in deps if h in header_of)
+             for path, deps in header_deps.items()}
 
-    # Find cycles using DFS
-    cycles = set()
-    visited = set()
-    rec_stack = set()
+    # Tarjan's strongly connected components, iterative.
+    index = {}
+    low = {}
+    stack = []
+    on_stack = set()
+    components = []
+    for root in graph:
+        if root in index:
+            continue
+        work = [(root, iter(sorted(graph[root])))]
+        index[root] = low[root] = len(index)
+        stack.append(root)
+        on_stack.add(root)
+        while work:
+            node, children = work[-1]
+            child = next(children, None)
+            if child is not None:
+                if child not in index:
+                    index[child] = low[child] = len(index)
+                    stack.append(child)
+                    on_stack.add(child)
+                    work.append((child, iter(sorted(graph[child]))))
+                elif child in on_stack:
+                    low[node] = min(low[node], index[child])
+                continue
+            work.pop()
+            if work:
+                low[work[-1][0]] = min(low[work[-1][0]], low[node])
+            if low[node] == index[node]:
+                component = []
+                while True:
+                    member = stack.pop()
+                    on_stack.discard(member)
+                    component.append(member)
+                    if member == node:
+                        break
+                if len(component) > 1:
+                    components.append(component)
 
-    def dfs(header, path):
-        visited.add(header)
-        rec_stack.add(header)
-        path.append(header)
+    def type_count(path):
+        return sum(len(system_grouped_types[path][kind]) for kind in _SYSTEM_TYPE_KINDS)
 
-        for dep in header_deps.get(header, []):
-            if dep not in visited:
-                if dfs(dep, path):
-                    return True
-            elif dep in rec_stack:
-                # Found a cycle
-                cycle_start = path.index(dep)
-                for h in path[cycle_start:]:
-                    cycles.add(h)
-                return True
-
-        path.pop()
-        rec_stack.remove(header)
-        return False
-
-    for header in header_deps:
-        if header not in visited:
-            dfs(header, [])
-
-    return cycles
+    folded = {}
+    for component in components:
+        target = max(sorted(component), key=type_count)
+        for path in component:
+            if path == target:
+                continue
+            for kind in _SYSTEM_TYPE_KINDS:
+                moved = system_grouped_types[path][kind]
+                system_grouped_types[target][kind].extend(moved)
+                for dt in moved:
+                    type_to_path_map[dt.getName()] = "%s.h" % target
+                system_grouped_types[path][kind] = []
+            folded[path] = target
+        log_info("Folded include cycle into %s.h: %s"
+                 % (target, ", ".join("%s.h" % p for p in sorted(component) if p != target)))
+    return folded
 
 
 def generate_watcom_runtime_inlines():
@@ -2627,11 +2679,10 @@ def export_system_grouped_files(currentProgram, pseudocode_dir, system_grouped_t
     # Get the set of types already defined in basetypes.h
     basetypes_types = get_basetypes_defined_types()
 
-    # Detect cycles in header dependencies
+    folded_headers = {}
     if type_to_path_map:
-        cyclic_headers = detect_include_cycles(system_grouped_types, type_to_path_map)
-        if cyclic_headers:
-            log_info("Detected circular dependencies in headers: %s" % ", ".join(sorted(cyclic_headers)))
+        folded_headers = merge_include_cycles(currentProgram, system_grouped_types,
+                                              type_to_path_map, basetypes_types)
 
     # Program-gated per-header injections (resolved once for this program).
     header_injections = get_header_injections(currentProgram.getName())
@@ -2641,6 +2692,25 @@ def export_system_grouped_files(currentProgram, pseudocode_dir, system_grouped_t
         # export_path is like "system/winnt" or "system/ddraw"
         header_name = export_path.split("/")[-1]
         this_header_path = "%s.h" % export_path
+
+        if export_path in folded_headers:
+            target = folded_headers[export_path]
+            stub = [
+                "#pragma once",
+                "",
+                "// =============================================================================",
+                "// %s - System Header (stub)" % header_name.upper(),
+                "// =============================================================================",
+                "//",
+                "// This header's types and %s.h's needed each other, so they are" % target.split("/")[-1],
+                "// defined there. The file is still emitted because other generated",
+                "// headers include it by path.",
+                "",
+                '#include "%s.h"' % target,
+                "",
+            ]
+            write_header_file(os.path.join(system_dir, "%s.h" % header_name), "\n".join(stub))
+            continue
 
         # Collect all types in this header
         # Put function_definitions first - they're needed by vtable structs.
@@ -3061,8 +3131,10 @@ def generate_master_include(pseudocode_dir):
     content.append("// Include this file in all source files to get access to all declarations.")
     content.append("// This provides all type definitions, constants, globals, and prototypes.")
     content.append("")
-    content.append("// Build-time behavior toggles.")
+    content.append("// Build-time behavior toggles, from the program's shims when it has them.")
+    content.append('#if __has_include("shim_config.h")')
     content.append('#include "shim_config.h"')
+    content.append("#endif")
     content.append("")
     content.append("// System type definitions (Windows API, C runtime, DirectX, DirectSound, etc.)")
     content.append('#include "system.h"')

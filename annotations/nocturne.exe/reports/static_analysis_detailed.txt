@@ -5,11 +5,11 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Clang-Tidy (quick) (12 diagnostics)
+Clang-Tidy (quick) (14 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-bugprone-integer-division (7)
+bugprone-integer-division (9)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_ckptutil.c_drawLineAA_FUN_0042f600         line 56
@@ -26,6 +26,14 @@ bugprone-integer-division (7)
 
   core_dfilter.cpp_CDemonFilter_init_FUN_0044c190    line 32
     File: core/dfilter.cpp
+    result of integer division used in a floating point context; possible loss of precision
+
+  core_script.cpp_CScript_getLetterboxHeight_FUN_004 line 17
+    File: core/script.cpp
+    result of integer division used in a floating point context; possible loss of precision
+
+  core_script.cpp_CScript_getLetterboxHeight_FUN_004 line 17
+    File: core/script.cpp
     result of integer division used in a floating point context; possible loss of precision
 
   sound_mp3.cpp_calculateIntensityStereoRatio_FUN_00 line 22

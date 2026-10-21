@@ -54,10 +54,10 @@ SUSPECT TYPE COUNTS
   fast_inv_sqrt_inline              11 (  0.1%)
   static_null_pointer_redundant_check    10 (  0.0%)
   inline_exp_idiom                  10 (  0.0%)
+  static_integer_division            9 (  0.0%)
   preinc_loop_idiom                  9 (  0.0%)
   static_null_pointer                9 (  0.0%)
   displaced_global_access            8 (  0.0%)
-  static_integer_division            7 (  0.0%)
   unresolved_register                7 (  0.0%)
   fnstsw_flag_artifact               5 (  0.0%)
   unknown_type                       5 (  0.0%)
@@ -6740,6 +6740,22 @@ Functions:
   core_weather.cpp_CWeather_update_FUN_00554980
 
 ====================================================================================================
+TYPE: static_integer_division (9 occurrences)
+====================================================================================================
+
+Unique patterns:
+     9x  Clang-Tidy: integer division in floating-point context (possible mistyped field)
+
+Functions:
+  cockpit_ckptutil.c_drawLineAA_FUN_0042f600
+  core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00416d40
+  core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042af70
+  core_dfilter.cpp_CDemonFilter_init_FUN_0044c190
+  core_script.cpp_CScript_getLetterboxHeight_FUN_004fe710
+  sound_mp3.cpp_calculateIntensityStereoRatio_FUN_004e60c0
+  sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_0052b880
+
+====================================================================================================
 TYPE: preinc_loop_idiom (9 occurrences)
 ====================================================================================================
 
@@ -6793,21 +6809,6 @@ Functions:
   core_set.cpp_CDemonSet_FUN_0050aa70
   engine_3d.c_dispatchMRGLToRenderer_FUN_00408fc0
   engine_3d.c_queueSortedPolygon_FUN_00405ab0
-
-====================================================================================================
-TYPE: static_integer_division (7 occurrences)
-====================================================================================================
-
-Unique patterns:
-     7x  Clang-Tidy: integer division in floating-point context (possible mistyped field)
-
-Functions:
-  cockpit_ckptutil.c_drawLineAA_FUN_0042f600
-  core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00416d40
-  core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042af70
-  core_dfilter.cpp_CDemonFilter_init_FUN_0044c190
-  sound_mp3.cpp_calculateIntensityStereoRatio_FUN_004e60c0
-  sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_0052b880
 
 ====================================================================================================
 TYPE: unresolved_register (7 occurrences)

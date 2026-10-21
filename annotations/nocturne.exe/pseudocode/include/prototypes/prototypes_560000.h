@@ -4,7 +4,6 @@
 
 // Dependencies
 #include "system/basetypes.h"
-#include "system/excpt.h"
 #include "system/fstream.h"
 #include "system/iostream.h"
 #include "system/stdarg.h"

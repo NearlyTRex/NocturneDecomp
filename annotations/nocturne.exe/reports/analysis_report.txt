@@ -10,7 +10,7 @@ Total functions: 4923
 Clean functions: 2547 (51.7%)
 Functions with suspects: 2376 (48.3%)
 
-Total suspect patterns: 20723
+Total suspect patterns: 20725
 Average suspects per function: 4.21
 
 Virtual files: 203 total, 10 at 100%, 12 at 90%+
@@ -23,8 +23,8 @@ Average complexity score: 90.7
 COMPILATION STATUS
 ----------------------------------------
 Functions compiled: 4923
-Successful: 0 (0.0%)
-Failed: 4923
+Successful: 3215 (65.3%)
+Failed: 1708
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
@@ -78,10 +78,10 @@ SUSPECT PATTERN BREAKDOWN
   fast_inv_sqrt_inline      11
   static_null_pointer_redundant_check 10
   inline_exp_idiom          10
+  static_integer_division   9
   preinc_loop_idiom         9
   static_null_pointer       9
   displaced_global_access   8
-  static_integer_division   7
   unresolved_register       7
   fnstsw_flag_artifact      5
   unknown_type              5
@@ -734,6 +734,8 @@ FUNCTIONS BY SUSPECT TYPE
     004f3a20: core_pendulum.cpp_CPendulum_process_FUN_004f3a20
     00554980: core_weather.cpp_CWeather_update_FUN_00554980
 
+  static_integer_division (0 functions):
+
   preinc_loop_idiom (9 functions):
     00423f40: core_charactr.cpp_CCharacter_ctor_FUN_00423f40
     004876d0: core_fire.cpp_CCrater_activate_FUN_004876d0
@@ -756,8 +758,6 @@ FUNCTIONS BY SUSPECT TYPE
     00426e80: core_charactr.cpp_CCharacter_renderBurn_FUN_00426e80
     004f1c90: core_path.cpp_getOrCreatePathMap_FUN_004f1c90
     0050aa70: core_set.cpp_CDemonSet_FUN_0050aa70
-
-  static_integer_division (0 functions):
 
   unresolved_register (3 functions):
     00477890: core_elephant.cpp_CElephantGun_fire_FUN_00477890
