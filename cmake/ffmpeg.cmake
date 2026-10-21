@@ -64,6 +64,12 @@ function(nocturne_add_ffmpeg target)
         set(_configure <SOURCE_DIR>/configure --prefix=<INSTALL_DIR> ${_args})
     endif()
 
+    include(ProcessorCount)
+    ProcessorCount(_jobs)
+    if(_jobs EQUAL 0)
+        set(_jobs 1)
+    endif()
+
     ExternalProject_Add(${target}
         GIT_REPOSITORY https://github.com/FFmpeg/FFmpeg.git
         GIT_TAG        ${NOCTURNE_FFMPEG_TAG}
@@ -74,7 +80,7 @@ function(nocturne_add_ffmpeg target)
         PREFIX         "${ARG_PREFIX}"
         INSTALL_DIR    "${_install}"
         CONFIGURE_COMMAND ${_configure}
-        BUILD_COMMAND   make -j
+        BUILD_COMMAND   make -j${_jobs}
         INSTALL_COMMAND make install
         BUILD_IN_SOURCE 1
         BUILD_BYPRODUCTS ${_libraries})
