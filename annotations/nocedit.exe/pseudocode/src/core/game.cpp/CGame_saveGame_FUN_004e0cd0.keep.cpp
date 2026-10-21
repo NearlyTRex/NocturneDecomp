@@ -34,7 +34,7 @@ void __cdecl core_game_cpp_CGame_saveGame_FUN_004e0cd0(CGame *this_ptr,char *sav
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar6);
     return;
   }
-  remove("save\\$$SAVE$$.TMP");
+  _remove("save\\$$SAVE$$.TMP");
   splitpath
             (g_CurrentSaveFile,(char *)0x0,(char *)0x0,(char *)0x0,local_24c);
   iVar3 = _stricmp(local_24c,"noc");
@@ -161,7 +161,7 @@ LAB_have_filename:
       support_codec_cpp_CCodec_dtor_FUN_0043e9b0(&local_50.base,1);
     }
   }
-  remove("save\\$$SAVE$$.TMP");
+  _remove("save\\$$SAVE$$.TMP");
   strcpy(g_CurrentSaveFile, local_558);
   return;
 }

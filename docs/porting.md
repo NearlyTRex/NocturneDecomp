@@ -88,12 +88,6 @@ the order, and `tests/shims/watcom/test_path_roots.cpp` the behaviour.
 A delete or rename in the user directory cannot hide a shipped file; the game never needs it
 to, since everything it deletes is something it wrote.
 
-The game calls the C library's own `remove` and `rename` (the INI's temp-file swap, the save
-temp file), which the shim takes over by name. The statically linked Microsoft runtime of
-`exe-windows-msvc` cannot be taken over that way, so on that lane those two calls ignore the
-user directory, and settings saved with one set do not land. Every other lane, mingw Windows
-included, is covered.
-
 ## OpenGL ES
 
 `-DNOCTURNE_GLES=ON`, or `NOCTURNE_GLES=1` in a platform file's definitions, asks for an

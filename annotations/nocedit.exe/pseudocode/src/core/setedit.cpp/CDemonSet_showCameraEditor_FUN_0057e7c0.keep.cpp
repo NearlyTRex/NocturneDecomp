@@ -402,7 +402,7 @@ LAB_0057eb3b:
         local_2c = local_5c;
         do {
           _sprintf(local_3bc,"backdrop\\%s.pvs",local_2c->name);
-          remove(local_3bc);
+          _remove(local_3bc);
           ptr = this_ptr->cameras[iVar11].pvs_list;
           this_ptr->cameras[iVar11].pvs_count = 0;
           if (ptr != (int *)0x0) {

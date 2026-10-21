@@ -29,7 +29,7 @@ int __cdecl engine_fileio_cpp_CFileManager_deleteLocalFilesFromPod_FUN_004bca50(
   if (0 < local_438.file_count) {
     iVar2 = 0;
     do {
-      remove(*(char **)((int)&(local_438.directory_entries)->name + iVar2))
+      _remove(*(char **)((int)&(local_438.directory_entries)->name + iVar2))
       ;
       iVar3 = iVar3 + 1;
       shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530

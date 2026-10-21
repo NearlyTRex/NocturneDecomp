@@ -6,11 +6,11 @@
 
 #include "nocturne.h"
 
-int __watcallStack remove(char *filename)
+int __watcallStack _remove(char *filename)
 
 {
   int iVar1;
   
-  iVar1 = remove(filename);
+  iVar1 = _remove(filename);
   return iVar1;
 }

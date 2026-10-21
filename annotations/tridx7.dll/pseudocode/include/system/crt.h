@@ -102,6 +102,8 @@ extern int _fprintf(_FILE* f, const char* format, ...);
 __attribute__((format(scanf, 2, 3)))
 extern int _fscanf(_FILE* f, const char* format, ...);
 extern _FILE* _freopen(const char* filename, const char* mode, _FILE* stream);
+extern int _remove(const char* filename);
+extern int _rename(const char* old_filename, const char* new_filename);
 
 // ---------------------------------------------------------------------------
 // Printf/Scanf Type Bridges

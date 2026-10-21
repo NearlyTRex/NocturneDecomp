@@ -13,7 +13,7 @@ void __cdecl shape_superopt_cpp_logToFile_FUN_005c7910(char *format,...)
   va_list_t local_8;
   
   if (g_LogInitialized == 0) {
-    remove("log.txt");
+    _remove("log.txt");
     g_LogInitialized = 1;
   }
   stream = shape_memdbg_cpp_openFile_FUN_0050f7a0

@@ -229,7 +229,7 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220(CCheckOutI
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Creating temporary network file %s...",local_a68);
   engine_dosio_cpp_setFileAttributes_FUN_004819f0(local_a68,0);
-  remove(local_a68);
+  _remove(local_a68);
   p_Var2 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                      (local_a68,(char *)0x0,"wb","..\\engine\\fileio.cpp",1425);
   local_2c = p_Var2;
@@ -331,8 +331,8 @@ LAB_004b4980:
         iVar4 = 0;
         while( true ) {
           engine_dosio_cpp_setFileAttributes_FUN_004819f0(local_1020.found_path,0);
-          remove(local_1020.found_path);
-          iVar3 = rename(local_a68,local_1020.found_path);
+          _remove(local_1020.found_path);
+          iVar3 = _rename(local_a68,local_1020.found_path);
           if (iVar3 == 0) break;
           if (0x27 < iVar4) {
             if (local_48 != (_FILE *)0x0) {
@@ -488,7 +488,7 @@ LAB_004b4768:
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_28,"..\\engine\\fileio.cpp",196);
   }
   if (local_a68[0] != '\0') {
-    remove(local_a68);
+    _remove(local_a68);
   }
   engine_fileio_cpp_logOffVersionControl_FUN_004b2830();
   return 0;

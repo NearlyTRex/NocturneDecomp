@@ -98,7 +98,7 @@ LAB_004b32cc:
         (local_53c.timestamp + 2 < local_328.timestamp)) ||
        (local_328.timestamp + 2 < local_53c.timestamp)) {
       engine_dosio_cpp_setFileAttributes_FUN_004819f0(local_328.found_path,0);
-      remove(local_328.found_path);
+      _remove(local_328.found_path);
       dest_file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                             (local_328.found_path,(char *)0x0,"wb",
                              "..\\engine\\fileio.cpp",965);

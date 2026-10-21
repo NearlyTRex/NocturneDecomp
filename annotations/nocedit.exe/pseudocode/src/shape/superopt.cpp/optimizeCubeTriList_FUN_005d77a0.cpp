@@ -205,7 +205,7 @@ LAB_005d7a1a:
   else {
     shape_superopt_cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00(&local_9c);
     shape_design_c_vertexReducer_FUN_00467850(0.01,-1.0,-1);
-    remove(local_100);
+    _remove(local_100);
   }
   shape_superopt_cpp_CObj_free_FUN_005d2600(&local_58);
   shape_superopt_cpp_COptimize_dtor_FUN_005d6fd0(&local_9c,0);

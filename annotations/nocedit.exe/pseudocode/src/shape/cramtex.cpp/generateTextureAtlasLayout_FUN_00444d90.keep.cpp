@@ -64,7 +64,7 @@ int __cdecl shape_cramtex_cpp_generateTextureAtlasLayout_FUN_00444d90(int textur
       iVar11 = iVar11 + 1;
     } while (iVar11 < texture_count);
   }
-  remove("..\\shape\\cramlog.txt");
+  _remove("..\\shape\\cramlog.txt");
 #if NOCTURNE_AUTHENTIC_RNG
   seed = rand();
 #else

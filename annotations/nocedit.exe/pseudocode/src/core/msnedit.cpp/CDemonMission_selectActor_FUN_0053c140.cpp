@@ -12,7 +12,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_selectActor_FUN_0053c140(CDemonMissi
   int set_index;
   _FILE *file_handle;
   
-  remove("$$UNDO$$.TMP");
+  _remove("$$UNDO$$.TMP");
   g_SelectedMotionPropertyIndex = -1;
   this_ptr->selected_actor = actor;
   if (actor != (CDemonActor *)0x0) {

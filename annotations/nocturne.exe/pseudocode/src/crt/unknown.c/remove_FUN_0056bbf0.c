@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int __watcallStack remove(char *filename)
+int __watcallStack _remove(char *filename)
 
 {
   BOOL BVar1;

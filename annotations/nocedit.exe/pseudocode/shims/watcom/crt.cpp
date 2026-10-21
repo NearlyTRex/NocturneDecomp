@@ -19,14 +19,6 @@
 #include "core/debug_log.h"
 #include "net/rng.h"            // nocturne_rng_note_raw_draw() — the rand() audit
 #include <cerrno>
-#if defined(_WIN32)
-#include <filesystem>   // the wide path _wremove and _wrename take
-#include <wchar.h>
-#else
-// Only for reaching the remove() and rename() taken over; see the note beside
-// them.
-#include <dlfcn.h>
-#endif
 // Full struct layouts for Watcom types that crt.h only forward-declares.
 // The shims bridge these to libc equivalents field-by-field.
 #include "system/stdio.h"   // _FILE       (for _FILE_to_FILE)
@@ -417,55 +409,18 @@ _FILE* _fopen(const char* filename, const char* mode) {
         fopen_text_aware(watcom_resolve_fs_path(filename, use).c_str(), mode));
 }
 
-// The game calls plain remove() and rename() with hard-coded Windows paths —
-// CIni::writeProfileString's temp-file swap of ".\\system\\nocturne.ini" among
-// them, which is how every setting in that file is persisted. Given the literal
-// backslash names those fail quietly on a host where a backslash is an ordinary
-// character, and the ini writes never land: settings appear not to save. And
-// with a user directory set (watcom/path.h) the temp file is written there, so
-// the swap has to happen there too, on every platform.
-//
-// Unlike the rest of the file these are not new functions the game calls, they
-// are the C library's own names taken over. Both are unavoidably specific to how
-// a platform links: taking over a name is one mechanism, and reaching the
-// implementation that was taken over is another. Elsewhere the dynamic linker
-// finds the next definition; a mingw link takes the definition here over the
-// import library's and reaches the runtime through the wide-character versions,
-// which are other names. The static Microsoft runtime cannot be taken over: its
-// remove shares an object with _unlink, which the C++ library pulls in, and the
-// two definitions collide. There the game's calls reach the runtime directly,
-// which accepts its paths, but not the user directory (docs/porting.md).
-#if defined(_MSC_VER)
-
-#elif defined(_WIN32)
-
-extern "C" int remove(const char* path) {
-    const std::filesystem::path host(watcom_resolve_fs_path(path, WatcomPathUse::Write));
-    return _wremove(host.c_str());
+// The game's paths are Windows paths, ".\\system\\nocturne.ini" in
+// CIni::writeProfileString's temp-file swap among them, and with a user
+// directory set (watcom/path.h) the temp file is written there, so the swap has
+// to happen there too.
+int _remove(const char* filename) {
+    return remove(watcom_resolve_fs_path(filename, WatcomPathUse::Write).c_str());
 }
 
-extern "C" int rename(const char* oldpath, const char* newpath) {
-    const std::filesystem::path from(watcom_resolve_fs_path(oldpath, WatcomPathUse::Write));
-    const std::filesystem::path to(watcom_resolve_fs_path(newpath, WatcomPathUse::Write));
-    return _wrename(from.c_str(), to.c_str());
+int _rename(const char* old_filename, const char* new_filename) {
+    return rename(watcom_resolve_fs_path(old_filename, WatcomPathUse::Write).c_str(),
+                  watcom_resolve_fs_path(new_filename, WatcomPathUse::Write).c_str());
 }
-
-#else
-
-extern "C" int remove(const char* path) {
-    using remove_fn = int (*)(const char*);
-    static remove_fn real_remove = reinterpret_cast<remove_fn>(dlsym(RTLD_NEXT, "remove"));
-    return real_remove(watcom_resolve_fs_path(path, WatcomPathUse::Write).c_str());
-}
-
-extern "C" int rename(const char* oldpath, const char* newpath) {
-    using rename_fn = int (*)(const char*, const char*);
-    static rename_fn real_rename = reinterpret_cast<rename_fn>(dlsym(RTLD_NEXT, "rename"));
-    return real_rename(watcom_resolve_fs_path(oldpath, WatcomPathUse::Write).c_str(),
-                       watcom_resolve_fs_path(newpath, WatcomPathUse::Write).c_str());
-}
-
-#endif  // _WIN32
 
 int _fclose(_FILE* f) {
     if (!f) return 0;

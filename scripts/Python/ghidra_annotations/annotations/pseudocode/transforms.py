@@ -740,10 +740,12 @@ def transform_file_pointer_casts(code):
     """
     # Stdio functions that the project shims behind a leading-underscore name
     # (mostly FILE*-taking, plus the sprintf/vsprintf printf-family entries
-    # whose shim bridges the Watcom va_list_t → glibc va_list layout).
+    # whose shim bridges the Watcom va_list_t → glibc va_list layout, and
+    # remove/rename, whose shims resolve the path as fopen's does).
     stdio_shim_funcs = [
         'fread', 'fwrite', 'fgets', 'fputs', 'fputc', 'fgetc', 'ungetc',
         'fopen', 'freopen', 'fclose', 'ftell', 'fflush', 'feof', 'ferror', 'rewind',
+        'remove', 'rename',
         'fprintf', 'fscanf', 'fseek', 'fsetpos', 'fgetpos', 'setvbuf', 'setbuf',
         'sprintf', 'vsprintf',
     ]

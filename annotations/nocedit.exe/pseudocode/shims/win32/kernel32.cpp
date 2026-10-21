@@ -459,7 +459,8 @@ static BOOL shim_DeleteFileA(LPCSTR lpFileName) {
 }
 
 static BOOL shim_MoveFileA(LPCSTR lpExistingFileName, LPCSTR lpNewFileName) {
-    if (rename(lpExistingFileName, lpNewFileName) == 0) return 1;
+    if (rename(watcom_resolve_fs_path(lpExistingFileName, WatcomPathUse::Write).c_str(),
+               watcom_resolve_fs_path(lpNewFileName, WatcomPathUse::Write).c_str()) == 0) return 1;
     s_lastError = (DWORD)errno;
     return 0;
 }

@@ -15,7 +15,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_initializeLodGeneration_FUN_00516d50(CLo
     return;
   }
   _mkdir("meshlod");
-  remove("meshlod\\simplify.log");
+  _remove("meshlod\\simplify.log");
   if (this_ptr->precompute_file == (_FILE *)0x0) {
     p_Var1 = shape_meshlod_cpp_CLodMesh_openPrecomputeFile_FUN_0051b770(this_ptr,"wt");
     this_ptr->precompute_file = p_Var1;

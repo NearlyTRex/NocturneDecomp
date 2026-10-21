@@ -50,7 +50,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_playMission_FUN_00538ba0(CDemonMissi
               (this_ptr_00,"Reloading mission from %s",local_18);
     core_mission_cpp_CDemonMission_load_FUN_00522d90(this_ptr,local_18,1);
     _sprintf(local_11c,"world\\%s",local_18);
-    remove(local_11c);
+    _remove(local_11c);
     core_event_cpp_CEventList_resetGameFlags_FUN_004b0460(g_CEventListPtr);
     return;
   }

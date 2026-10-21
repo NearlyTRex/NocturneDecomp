@@ -691,7 +691,7 @@ LAB_0046cede:
                           ((char *)local_28,g_TextureAtlasDimension * g_TextureAtlasDimension);
         if (iVar6 == 0) {
           _sprintf(local_b58,"art\\%s",local_35c);
-          remove(local_b58);
+          _remove(local_b58);
           _sprintf(local_154,"All pixels completely opaque, no .OPA file generated.");
         }
         else {

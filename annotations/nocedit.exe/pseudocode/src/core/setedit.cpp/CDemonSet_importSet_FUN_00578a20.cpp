@@ -69,10 +69,10 @@ void __cdecl core_setedit_cpp_CDemonSet_importSet_FUN_00578a20(CDemonSet *this_p
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\setedit.cpp",921);
     engine_dosio_cpp_makePath_FUN_00481f50
               (local_1d8,(char *)0x0,"data",local_2d8,"zth");
-    remove(local_1d8);
+    _remove(local_1d8);
     engine_dosio_cpp_makePath_FUN_00481f50
               (local_1d8,(char *)0x0,"data",local_2d8,"thm");
-    remove(local_1d8);
+    _remove(local_1d8);
     return;
   }
   _sprintf(local_d8,"Can't open %s",local_3d8);

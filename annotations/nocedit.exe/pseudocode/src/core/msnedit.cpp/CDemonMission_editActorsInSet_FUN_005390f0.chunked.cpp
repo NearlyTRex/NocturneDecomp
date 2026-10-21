@@ -811,7 +811,7 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
   // param reset_cameras aliased into ctx above
 
   bVar14 = 0;
-  remove("$$UNDO$$.TMP");
+  _remove("$$UNDO$$.TMP");
   this_ptr->is_in_editor = 1;
   core_actor_cpp_CActorPropertyList_resetSelection_FUN_0040e150(&g_MsnEditPropertyList);
   this_ptr_00 = g_CGamePtr;
@@ -1193,7 +1193,7 @@ LAB_00539e00:
       pCVar7->disable_spotlight_shadows = 0;
       pCVar7->disable_water_rendering = 0;
       pCVar7->disable_sky_rendering = 0;
-      remove("$$UNDO$$.TMP");
+      _remove("$$UNDO$$.TMP");
       if (iVar14 == 0) {
         return 0;
       }

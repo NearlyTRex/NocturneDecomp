@@ -35,7 +35,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
             (g_CEditorToolsPtr,"Sec...");
   core_mission_cpp_CDemonMission_clearMissionData_FUN_00522d30(this_ptr);
   core_mission_cpp_CDemonMission_freeAllAssets_FUN_005248e0(this_ptr);
-  remove("$$UNDO$$.TMP");
+  _remove("$$UNDO$$.TMP");
   core_inivar_cpp_readIniData_FUN_004fbd90();
   input_buffer = this_ptr->mission_name;
   g_IncludeCommentsWhenWriting = 0;
@@ -274,7 +274,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
     if (uVar2 == 0x1b) {
       shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                 (g_CEditorToolsPtr,"Cleaning up...");
-      remove("$$UNDO$$.TMP");
+      _remove("$$UNDO$$.TMP");
       this_ptr_00 = g_CEditorToolsPtr;
       this_ptr->is_in_editor = 0;
       this_ptr->skip_gore_load_flag = 0;
