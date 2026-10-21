@@ -13,15 +13,6 @@
 #include <cstdlib>
 #include <cstring>
 
-// Darwin's <sys/_endian.h>, which ordinary libc headers reach, defines these as
-// macros, and they would rewrite the definitions below.
-#if defined(__APPLE__)
-#undef htons
-#undef htonl
-#undef ntohs
-#undef ntohl
-#endif
-
 // POSIX wrappers defined in winsock_posix.c
 extern "C" {
     int nocturne_socket_socket(int domain, int type, int protocol);

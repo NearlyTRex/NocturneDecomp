@@ -5,7 +5,10 @@
 # Windows paths. configure is a POSIX shell script: it reads C:/foo as a
 # relative path with a stray drive colon, and the build lands somewhere
 # unintended or fails outright. cygpath is what turns those into the /c/foo
-# form the shell understands, and it is the only thing this wrapper does.
+# form the shell understands.
+#
+# NOCTURNE_TOOL_DIR, when set, is put first on PATH, so the compiler can be
+# named without a directory that has spaces in it (see platforms/windows.cmake).
 #
 # Used only when building on Windows under MSYS2. The Linux-hosted lanes run
 # configure directly off its shebang and never come through here.
@@ -23,6 +26,10 @@ shift 2
 if command -v cygpath >/dev/null 2>&1; then
     src=$(cygpath -u "$src")
     prefix=$(cygpath -u "$prefix")
+    if [ -n "$NOCTURNE_TOOL_DIR" ]; then
+        PATH="$(cygpath -u "$NOCTURNE_TOOL_DIR"):$PATH"
+        export PATH
+    fi
 fi
 
 exec "$src/configure" --prefix="$prefix" "$@"

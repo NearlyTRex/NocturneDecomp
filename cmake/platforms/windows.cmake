@@ -28,30 +28,46 @@ if(MSVC)
 
     set(NOCTURNE_FFMPEG_TARGET_OS "win64")
     # FFmpeg's msvc toolchain speaks cl.exe's flag syntax, and -MT matches the
-    # static C runtime the rest of the exe links. The compiler, linker and
-    # archiver are the ones CMake already found, and the target and sysroot
-    # flags the toolchain file gave CMake are handed on.
+    # static C runtime the rest of the exe links. The compiler and linker are
+    # the ones CMake already found, and the target and sysroot flags the
+    # toolchain file gave CMake are handed on.
+    #
+    # Built natively, the tools go by name, with their directory put on
+    # configure's PATH by the wrapper below: configure expands them unquoted,
+    # and the install is under "C:/Program Files". Flags are spelled with a
+    # dash, which clang-cl and lld-link both take, because MSYS rewrites an
+    # argument starting with a slash into a path (/DWIN32 becomes
+    # C:/msys64/DWIN32) on its way to them.
+    #
+    # configure recognises lib.exe by its banner and drives it with /OUT:; it
+    # does not recognise llvm-lib, and would call it with ar's "rc". llvm-ar
+    # writes the COFF archives lld-link reads.
+    set(_ff_cc "${CMAKE_C_COMPILER}")
+    set(_ff_cxx "${CMAKE_CXX_COMPILER}")
+    set(_ff_ld "${CMAKE_LINKER}")
+    if(NOT CMAKE_CROSSCOMPILING)
+        get_filename_component(NOCTURNE_FFMPEG_TOOL_DIR "${CMAKE_C_COMPILER}" DIRECTORY)
+        get_filename_component(_ff_cc "${_ff_cc}" NAME)
+        get_filename_component(_ff_cxx "${_ff_cxx}" NAME)
+        get_filename_component(_ff_ld "${_ff_ld}" NAME)
+    endif()
     separate_arguments(_ff_cflags NATIVE_COMMAND "${CMAKE_C_FLAGS}")
     separate_arguments(_ff_ldflags NATIVE_COMMAND "${CMAKE_EXE_LINKER_FLAGS}")
     set(NOCTURNE_FFMPEG_EXTRA_ARGS
         --toolchain=msvc
-        --cc=${CMAKE_C_COMPILER} --cxx=${CMAKE_CXX_COMPILER}
-        --ld=${CMAKE_LINKER}
+        --cc=${_ff_cc} --cxx=${_ff_cxx} --ld=${_ff_ld}
+        --ar=llvm-ar --nm=llvm-nm
         --extra-cflags=-MT)
     foreach(_flag IN LISTS _ff_cflags)
+        string(REGEX REPLACE "^/" "-" _flag "${_flag}")
         list(APPEND NOCTURNE_FFMPEG_EXTRA_ARGS --extra-cflags=${_flag})
     endforeach()
     foreach(_flag IN LISTS _ff_ldflags)
+        string(REGEX REPLACE "^/" "-" _flag "${_flag}")
         list(APPEND NOCTURNE_FFMPEG_EXTRA_ARGS --extra-ldflags=${_flag})
     endforeach()
-    # configure recognises lib.exe by its banner and drives it with /OUT:; it
-    # does not recognise llvm-lib, and would call it with ar's "rc". The cross
-    # lane archives with llvm-ar instead, whose COFF archives lld-link reads.
     if(CMAKE_CROSSCOMPILING)
-        list(APPEND NOCTURNE_FFMPEG_EXTRA_ARGS
-            --enable-cross-compile --ar=llvm-ar --nm=llvm-nm)
-    else()
-        list(APPEND NOCTURNE_FFMPEG_EXTRA_ARGS --ar=${CMAKE_AR})
+        list(APPEND NOCTURNE_FFMPEG_EXTRA_ARGS --enable-cross-compile)
     endif()
 else()
     set(NOCTURNE_FFMPEG_TARGET_OS "mingw32")
@@ -84,6 +100,7 @@ endif()
 # stray colon. The wrapper runs them through cygpath first.
 if(NOT CMAKE_CROSSCOMPILING)
     set(NOCTURNE_FFMPEG_CONFIGURE_WRAPPER
+        ${CMAKE_COMMAND} -E env "NOCTURNE_TOOL_DIR=${NOCTURNE_FFMPEG_TOOL_DIR}"
         sh "${CMAKE_SOURCE_DIR}/cmake/ffmpeg_configure_msys2.sh")
 endif()
 
