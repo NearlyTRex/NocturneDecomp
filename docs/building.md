@@ -38,6 +38,16 @@ builds the `game` preset into `build/recreation/game` and runs the executable fr
 | `exe-windows-x86_64` | Windows 64-bit | `nocturne.exe`, cross-compiled from Linux — **needs a cross toolchain** |
 | `check-windows-msys2` | Windows 64-bit | syntax check, run **on** Windows under MSYS2 |
 | `exe-windows-msys2` | Windows 64-bit | `nocturne.exe`, built **on** Windows under MSYS2 |
+| `exe-windows-msvc` | Windows 64-bit | `nocturne.exe` with clang-cl and the Microsoft runtime, on Windows or cross from Linux — **needs MSVC libraries** |
+| `exe-macos-x86_64` | macOS, Intel 64-bit | full executable, built **on** a Mac; runs on Apple silicon through Rosetta 2 |
+| `exe-macos-vanilla-x86_64` | macOS, Intel 64-bit | the vanilla lane for macOS |
+
+Each preset is a build directory (`build/<preset>`), a toolchain file from `cmake/toolchains/`,
+and a handful of options composed from hidden base presets in `CMakePresets.json`. What differs
+per operating system beyond the toolchain — socket backend, link libraries, FFmpeg's target,
+runtime library staging, launchers — lives in one file per platform under `cmake/platforms/`;
+`cmake/platforms/README.md` lists what such a file sets, and [porting.md](porting.md) covers
+adding one.
 
 **Everything is 64-bit.** There was once a 32-bit lane, matching the shipped binary's pointer
 width and struct offsets exactly, but it has been removed: it was the only thing that needed an
@@ -144,10 +154,69 @@ environment warns rather than stops, since it may well work.
 Unlike the cross lane, this one can run the test suite: `ctest --test-dir build/exe-windows-msys2`.
 
 **64-bit only, deliberately.** `include/system/basetypes.h` defines `__stdcall` and `__fastcall`
-to nothing, which is what lets the decompiled sources compile on a SysV host at all. On 32-bit
+to nothing outside MSVC and clang-cl, which is what lets the decompiled sources compile on a
+SysV host at all. On 32-bit
 Windows those keywords select a real and different ABI, so blanking them there would silently
 mis-call anything declared with one; on x86_64 there is a single calling convention and the
 keywords are already ignored.
+
+### clang-cl and the Microsoft runtime
+
+`exe-windows-msvc` builds the same `nocturne.exe` against the Microsoft C runtime, STL and
+Windows SDK instead of gcc's runtime, which is what Visual Studio, UWP and Xbox builds expect.
+It compiles with `clang-cl` rather than `cl.exe`, so the clang warning set still applies, and
+links the C runtime statically (`/MT`): the exe needs no Visual C++ redistributable, and only
+`SDL2.dll` and `SDL2_ttf.dll` are staged beside it. The toolchain is
+`cmake/toolchains/windows-msvc.cmake`, and one preset serves both hosts.
+
+**On Windows**, install Visual Studio (or the Build Tools) with *Desktop development with C++*
+and *C++ Clang tools for Windows*, plus [MSYS2](https://www.msys2.org/) with `make` for
+FFmpeg's `configure`. Configure from an *x64 Native Tools Command Prompt*, with MSYS2's
+`usr/bin` on `PATH`:
+
+```sh
+cmake --preset exe-windows-msvc
+cmake --build --preset exe-windows-msvc
+```
+
+**On Linux**, it cross-compiles with `clang-cl`, `lld-link`, `llvm-lib`, `llvm-rc` and `llvm-mt`
+(all in the `clang`/`llvm` packages) against Microsoft's CRT and SDK, which
+[xwin](https://github.com/Jake-Shadle/xwin) downloads from Microsoft's own packages.
+Downloading them accepts Microsoft's license, so it is a step you run yourself. The prebuilt
+release binary avoids needing a recent Rust toolchain:
+
+```sh
+xwin --accept-license splat --output ~/.xwin
+cmake --preset exe-windows-msvc            # or -DNOCTURNE_MSVC_SYSROOT=<dir>
+cmake --build --preset exe-windows-msvc
+```
+
+Configuring without the sysroot stops and prints the xwin command.
+
+The distro `clang-cl` is usually one major version behind the clang the current Microsoft STL
+expects; the platform file defines `_ALLOW_COMPILER_AND_STL_VERSION_MISMATCH`, Microsoft's
+documented opt-out, when the compiler is older than 19. The xwin sysroot has no debug CRT, so
+every configuration links the release runtime.
+
+### macOS
+
+`exe-macos-x86_64` builds on a Mac with Apple clang, from Xcode's command line tools:
+
+```sh
+xcode-select --install
+brew install cmake ninja
+
+cmake --preset exe-macos-x86_64
+cmake --build --preset exe-macos-x86_64
+```
+
+**x86_64 on every Mac.** On Apple silicon it is still an Intel binary, run through Rosetta 2.
+Netplay is lockstep, so every build has to produce the same floats; every other lane is x86_64
+SSE, while an arm64 build fuses multiply-adds by default and links a different libm. The SDL
+dylibs are found beside the binary through `@executable_path`, as the `.so` files are through
+`$ORIGIN` on Linux.
+
+This lane is built in CI on `macos-latest`; it has not been run on a Mac.
 
 ### SDL2, SDL2_ttf and FFmpeg
 

@@ -14,11 +14,11 @@ concurrency:
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
-  # The native lane, with the unit tests. The Windows lanes cross-compile to PEs
-  # that cannot run here, so they are built only on release.
+  # The native lane, with the unit tests. The mingw Windows lanes cross-compile
+  # to PEs that cannot run here, so they are built only on release.
   build:
     name: Build (exe-linux-x86_64)
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@45bf3d2ed784d826f7951b407631311bce30d435 # v0.2.14
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@ffafe3aa09651e679cee3ce17f828cca46f29196 # v0.2.17
     permissions:
       contents: read
     with:
@@ -36,7 +36,9 @@ jobs:
       cache-paths: |
         build/exe-linux-x86_64/_deps
         build/exe-linux-x86_64/ffmpeg
-      cache-key-files: cmake/bundledlibs.cmake
+      cache-key-files: |
+        cmake/bundledlibs.cmake
+        cmake/ffmpeg.cmake
       # About 7,400 translation units: ccache recompiles only the ones a
       # commit touched, instead of all of them on every run.
       ccache: true
@@ -52,6 +54,54 @@ jobs:
         cmake --build build/exe-linux-x86_64 --target nocturne_tests
       test-command: ctest --test-dir build/exe-linux-x86_64 --output-on-failure
 
+  # The two lanes no Linux host can build. Compiled and linked only: macOS
+  # cannot run the tests headless, and the Windows test binaries would need the
+  # same staging as the exe.
+  build-macos:
+    name: Build (exe-macos-x86_64)
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@ffafe3aa09651e679cee3ce17f828cca46f29196 # v0.2.17
+    permissions:
+      contents: read
+    with:
+      runs-on: macos-latest
+      cache-paths: |
+        build/exe-macos-x86_64/_deps
+        build/exe-macos-x86_64/ffmpeg
+      cache-key-files: |
+        cmake/bundledlibs.cmake
+        cmake/ffmpeg.cmake
+      cache-key: exe-macos-x86_64
+      brew-packages: ninja
+      ccache: true
+      ccache-max-size: 2G
+      build-command: |
+        cmake --preset exe-macos-x86_64
+        cmake --build --preset exe-macos-x86_64
+
+  build-msvc:
+    name: Build (exe-windows-msvc)
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@ffafe3aa09651e679cee3ce17f828cca46f29196 # v0.2.17
+    permissions:
+      contents: read
+    with:
+      runs-on: windows-latest
+      # The Visual Studio environment the toolchain file checks for; its CMake
+      # and Ninja come with it, and the runner's LLVM supplies clang-cl.
+      msvc: true
+      cache-paths: |
+        build/exe-windows-msvc/_deps
+        build/exe-windows-msvc/ffmpeg
+      cache-key-files: |
+        cmake/bundledlibs.cmake
+        cmake/ffmpeg.cmake
+      cache-key: exe-windows-msvc
+      # FFmpeg's configure runs under the runner's MSYS2, which needs make.
+      build-command: |
+        /c/msys64/usr/bin/pacman -S --noconfirm --needed make diffutils
+        export PATH="$PATH:/c/msys64/usr/bin"
+        cmake --preset exe-windows-msvc
+        cmake --build --preset exe-windows-msvc
+
   # The source recreation is a standalone CMake project that fetches and builds
   # its third-party libraries from source. Every header compiles on its own, the
   # SDL adapters and the executable build, then format and the tests under the
@@ -59,7 +109,7 @@ jobs:
   # a row of timings on the run's summary page.
   recreation:
     name: Recreation
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@45bf3d2ed784d826f7951b407631311bce30d435 # v0.2.14
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@ffafe3aa09651e679cee3ce17f828cca46f29196 # v0.2.17
     permissions:
       contents: read
     with:
@@ -75,6 +125,7 @@ jobs:
       cache-key-files: |
         recreation/CMakeLists.txt
         recreation/cmake/*.cmake
+        cmake/ffmpeg.cmake
       # About 950 translation units, rebuilt with coverage flags on every run.
       ccache: true
       ccache-max-size: 1G
@@ -94,7 +145,7 @@ jobs:
   # carries those results from run to run.
   recreation-tidy:
     name: Recreation tidy
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@45bf3d2ed784d826f7951b407631311bce30d435 # v0.2.14
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@ffafe3aa09651e679cee3ce17f828cca46f29196 # v0.2.17
     permissions:
       contents: read
     with:
@@ -108,6 +159,7 @@ jobs:
       cache-key-files: |
         recreation/CMakeLists.txt
         recreation/cmake/*.cmake
+        cmake/ffmpeg.cmake
       # FFmpeg is the only compile, and only on a cold cache.
       ccache: true
       cache-key: recreation-tidy
@@ -120,7 +172,7 @@ jobs:
 
   lint:
     name: Lint
-    uses: NearlyTRex/Workflows/.github/workflows/lint.yml@45bf3d2ed784d826f7951b407631311bce30d435 # v0.2.14
+    uses: NearlyTRex/Workflows/.github/workflows/lint.yml@ffafe3aa09651e679cee3ce17f828cca46f29196 # v0.2.17
     permissions:
       contents: read
     with:

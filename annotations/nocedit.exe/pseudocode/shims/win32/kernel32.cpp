@@ -50,6 +50,9 @@
       defined(__NetBSD__)
 #include <sys/sysctl.h>
 #endif
+#if defined(__APPLE__)
+#include <mach-o/dyld.h>    // _NSGetExecutablePath, for host_program_path
+#endif
 #include <sys/types.h>
 #include <errno.h>
 #include <fcntl.h>
@@ -72,6 +75,16 @@
 #include <process.h>
 #else
 #include <unistd.h>
+#endif
+// mingw's <sys/types.h> and <sys/stat.h> carry these POSIX names; the Microsoft
+// runtime has only the _S_IF* bits they test.
+#if defined(_MSC_VER)
+typedef long long ssize_t;
+#define S_ISDIR(m)  (((m) & _S_IFMT) == _S_IFDIR)
+#define S_ISREG(m)  (((m) & _S_IFMT) == _S_IFREG)
+#define S_ISCHR(m)  (((m) & _S_IFMT) == _S_IFCHR)
+#define S_ISFIFO(m) (((m) & _S_IFMT) == _S_IFIFO)
+#define S_IWUSR     _S_IWRITE
 #endif
 // The reentrant broken-down-time calls, and the UTC offset that goes with them.
 // Windows' runtime spells the first two _s with the arguments the other way
@@ -1298,7 +1311,8 @@ static HMODULE shim_GetModuleHandleA(LPCSTR lpModuleName) {
 
 // The path of the running program, without a NUL. /proc/self/exe is Linux's
 // answer; Windows' runtime holds it in _pgmptr, which is what the real
-// GetModuleFileNameA would hand back and needs no Win32 header to read.
+// GetModuleFileNameA would hand back and needs no Win32 header to read; macOS
+// has dyld's _NSGetExecutablePath, which fails rather than truncates.
 static ssize_t host_program_path(char* out, size_t cap) {
     if (cap == 0) return -1;
 #if defined(_WIN32)
@@ -1308,6 +1322,10 @@ static ssize_t host_program_path(char* out, size_t cap) {
     if (len > cap - 1) len = cap - 1;
     memcpy(out, path, len);
     return (ssize_t)len;
+#elif defined(__APPLE__)
+    uint32_t size = (uint32_t)cap;
+    if (_NSGetExecutablePath(out, &size) != 0) return -1;
+    return (ssize_t)strlen(out);
 #else
     return readlink("/proc/self/exe", out, cap - 1);
 #endif

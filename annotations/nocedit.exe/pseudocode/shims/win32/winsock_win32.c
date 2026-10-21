@@ -3,8 +3,8 @@
  *
  * Same eighteen entry points, same signatures, same extern "C" linkage, so
  * winsock.cpp is identical on both platforms and its own extern block still
- * describes this file correctly. The names keep their posix_ prefix for that
- * reason: they name a contract, not an implementation.
+ * describes this file correctly. The nocturne_socket_ prefix names that contract,
+ * not an implementation; POSIX reserves posix_ for itself (posix_close is one).
  *
  * The indirection earns its keep twice here. winsock.cpp defines functions
  * called socket, bind, recv and so on -- the Winsock API is what the game
@@ -53,42 +53,42 @@ static void win32_socket_init(void) {
 #define SOCK(fd)  ((SOCKET)(UINT_PTR)(unsigned int)(fd))
 #define UNSOCK(s) ((int)(unsigned int)(UINT_PTR)(s))
 
-int posix_socket(int domain, int type, int protocol) {
+int nocturne_socket_socket(int domain, int type, int protocol) {
     win32_socket_init();
     return UNSOCK(socket(domain, type, protocol));
 }
 
-int posix_accept(int sockfd, struct sockaddr* addr, unsigned int* addrlen) {
+int nocturne_socket_accept(int sockfd, struct sockaddr* addr, unsigned int* addrlen) {
     int len = addrlen ? (int)*addrlen : 0;
     SOCKET s = accept(SOCK(sockfd), addr, addrlen ? &len : NULL);
     if (addrlen) *addrlen = (unsigned int)len;
     return UNSOCK(s);
 }
 
-int posix_bind(int sockfd, const struct sockaddr* addr, unsigned int addrlen) {
+int nocturne_socket_bind(int sockfd, const struct sockaddr* addr, unsigned int addrlen) {
     return bind(SOCK(sockfd), addr, (int)addrlen);
 }
 
-int posix_connect(int sockfd, const struct sockaddr* addr, unsigned int addrlen) {
+int nocturne_socket_connect(int sockfd, const struct sockaddr* addr, unsigned int addrlen) {
     return connect(SOCK(sockfd), addr, (int)addrlen);
 }
 
-int posix_getsockname(int sockfd, struct sockaddr* addr, unsigned int* addrlen) {
+int nocturne_socket_getsockname(int sockfd, struct sockaddr* addr, unsigned int* addrlen) {
     int len = addrlen ? (int)*addrlen : 0;
     int rc = getsockname(SOCK(sockfd), addr, addrlen ? &len : NULL);
     if (addrlen) *addrlen = (unsigned int)len;
     return rc;
 }
 
-int posix_listen(int sockfd, int backlog) {
+int nocturne_socket_listen(int sockfd, int backlog) {
     return listen(SOCK(sockfd), backlog);
 }
 
-int posix_recv(int sockfd, void* buf, unsigned long len, int flags) {
+int nocturne_socket_recv(int sockfd, void* buf, unsigned long len, int flags) {
     return recv(SOCK(sockfd), (char*)buf, (int)len, flags);
 }
 
-int posix_recvfrom(int sockfd, void* buf, unsigned long len, int flags,
+int nocturne_socket_recvfrom(int sockfd, void* buf, unsigned long len, int flags,
                    struct sockaddr* from, unsigned int* fromlen) {
     int flen = fromlen ? (int)*fromlen : 0;
     int rc = recvfrom(SOCK(sockfd), (char*)buf, (int)len, flags,
@@ -97,31 +97,31 @@ int posix_recvfrom(int sockfd, void* buf, unsigned long len, int flags,
     return rc;
 }
 
-int posix_send(int sockfd, const void* buf, unsigned long len, int flags) {
+int nocturne_socket_send(int sockfd, const void* buf, unsigned long len, int flags) {
     return send(SOCK(sockfd), (const char*)buf, (int)len, flags);
 }
 
-int posix_sendto(int sockfd, const void* buf, unsigned long len, int flags,
+int nocturne_socket_sendto(int sockfd, const void* buf, unsigned long len, int flags,
                  const struct sockaddr* to, unsigned int tolen) {
     return sendto(SOCK(sockfd), (const char*)buf, (int)len, flags,
                   to, (int)tolen);
 }
 
-int posix_setsockopt(int sockfd, int level, int optname,
+int nocturne_socket_setsockopt(int sockfd, int level, int optname,
                      const void* optval, unsigned int optlen) {
     return setsockopt(SOCK(sockfd), level, optname,
                       (const char*)optval, (int)optlen);
 }
 
-int posix_shutdown(int sockfd, int how) {
+int nocturne_socket_shutdown(int sockfd, int how) {
     return shutdown(SOCK(sockfd), how);
 }
 
-int posix_close(int fd) {
+int nocturne_socket_close(int fd) {
     return closesocket(SOCK(fd));
 }
 
-int posix_ioctl(int fd, unsigned long request, void* argp) {
+int nocturne_socket_ioctl(int fd, unsigned long request, void* argp) {
     /* The FIONBIO the caller tests for is 0x8004667E, which is the value
      * Winsock uses as well -- the encoding came from BSD -- so the request
      * passes straight through and needs no translation. There is no fcntl
@@ -129,21 +129,21 @@ int posix_ioctl(int fd, unsigned long request, void* argp) {
     return ioctlsocket(SOCK(fd), (long)request, (u_long*)argp);
 }
 
-struct hostent* posix_gethostbyname(const char* name) {
+struct hostent* nocturne_socket_gethostbyname(const char* name) {
     win32_socket_init();
     return gethostbyname(name);
 }
 
-unsigned long posix_inet_addr(const char* cp) {
+unsigned long nocturne_socket_inet_addr(const char* cp) {
     return (unsigned long)inet_addr(cp);
 }
 
-int posix_gethostname(char* name, unsigned long namelen) {
+int nocturne_socket_gethostname(char* name, unsigned long namelen) {
     win32_socket_init();
     return gethostname(name, (int)namelen);
 }
 
-struct servent* posix_getservbyport(int port, const char* proto) {
+struct servent* nocturne_socket_getservbyport(int port, const char* proto) {
     win32_socket_init();
     return getservbyport(port, proto);
 }

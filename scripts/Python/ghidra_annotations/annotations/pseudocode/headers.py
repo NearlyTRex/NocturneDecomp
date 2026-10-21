@@ -11,7 +11,7 @@ from ghidra.program.model.data import Union
 from ghidra.program.model.data import TypeDef
 from ghidra.program.model.data import Pointer
 from ghidra.program.model.data import Array
-from ghidra_annotations.util import make_dirs, write_if_changed
+from ghidra_annotations.util import make_dirs, write_if_changed, with_generated_notice
 from ghidra_annotations.util.log import log_info
 from ghidra_annotations.util.data_type import collect_type_dependencies_with_context, get_ghidra_primitive_types
 from ghidra_annotations.annotations.pseudocode.basetypes import get_types_needing_basetypes, get_all_basetypes, get_libc_provided_types
@@ -595,7 +595,7 @@ def write_header_file(file_path, content):
         content: Content to write
     """
     try:
-        body = sanitize_string(content, preserve_newlines=True) + "\n"
+        body = with_generated_notice(sanitize_string(content, preserve_newlines=True) + "\n")
         write_if_changed(file_path, body)
     except Exception as e:
         log_info("Failed to write header file %s: %s" % (file_path, str(e)))
@@ -1946,8 +1946,7 @@ def generate_basetypes_header(pseudocode_dir):
     content.append("// =============================================================================")
     content.append("// Calling Convention Macros")
     content.append("// =============================================================================")
-    content.append("// Calling conventions parsed from x86watcom.cspec - define as empty for non-MSVC compilers")
-    content.append("#ifndef _MSC_VER")
+    content.append("// Calling conventions parsed from x86watcom.cspec, defined as empty")
 
     # Parse calling conventions from cspec file
     cspec_conventions = parse_cspec_calling_conventions()
@@ -1958,12 +1957,15 @@ def generate_basetypes_header(pseudocode_dir):
     # Unknown conventions
     unknown_conventions = ["__unknown"]
 
-    # Add standard conventions first
-    content.append("// Standard Windows calling conventions")
+    # Add standard conventions first. MSVC and clang-cl treat these as keywords.
+    content.append("// Standard Windows calling conventions: keywords under MSVC and clang-cl")
+    content.append("#ifndef _MSC_VER")
     for conv in standard_conventions:
         content.append("#define %s" % conv)
+    content.append("#endif")
 
-    # Add cspec-parsed conventions (excluding standard ones already added)
+    # Add cspec-parsed conventions (excluding standard ones already added). No
+    # compiler knows these names, so they are blanked under MSVC and clang-cl too.
     content.append("// Calling conventions from x86watcom.cspec")
     for conv in cspec_conventions:
         if conv not in standard_conventions:
@@ -1974,7 +1976,6 @@ def generate_basetypes_header(pseudocode_dir):
     for conv in unknown_conventions:
         content.append("#define %s" % conv)
 
-    content.append("#endif")
     content.append("")
     content.append("// =============================================================================")
     content.append("// Ghidra Primitive Types")
@@ -2290,6 +2291,19 @@ def generate_watcom_runtime_inlines():
     lines.append("#include <cstring>")
     lines.append("#ifndef _MSC_VER")
     lines.append("#include <unistd.h>")
+    lines.append("#else")
+    lines.append("// The UCRT declares tell(), chsize(), _fullpath() and _getcwd() with C linkage and")
+    lines.append("// defines them in its static library, and has no sleep(); the shims define the")
+    lines.append("// Watcom versions under these names. <direct.h> has chdir(). Both are included")
+    lines.append("// first so their guards absorb any later inclusion.")
+    lines.append("#include <io.h>")
+    lines.append("#include <direct.h>")
+    lines.append("#define tell nocturne_watcom_tell")
+    lines.append("#define chsize nocturne_watcom_chsize")
+    lines.append("#define _fullpath nocturne_watcom_fullpath")
+    lines.append("#define _getcwd nocturne_watcom_getcwd")
+    lines.append("#define sleep nocturne_watcom_sleep")
+    lines.append("extern unsigned int sleep(unsigned int seconds);")
     lines.append("#endif")
     lines.append("")
     lines.append("extern void* _memcpy(void* dest, const void* src, size_t count);")

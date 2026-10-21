@@ -10,7 +10,7 @@
 #include "nocturne.h"
 #include "debug/dump.h"
 #include "renderer/trigl_gl.h"
-#include <SDL2/SDL.h>
+#include <SDL.h>
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>

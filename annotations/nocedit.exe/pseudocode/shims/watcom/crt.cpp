@@ -294,8 +294,8 @@ static _FILE* make_file_wrapper(FILE* fp) {
 // via rewind() or offsets returned from ftell() on the same stream, which
 // both round-trip correctly through the underlying fseeko.
 // None of that is needed on Windows, where the CRT still does the translation
-// this layer exists to imitate — and fopencookie is glibc's, so it could not be
-// built there anyway. Passing the mode string through unaltered, 't' included,
+// this layer exists to imitate — and neither fopencookie nor funopen exists
+// there anyway. Passing the mode string through unaltered, 't' included,
 // gets the behaviour from the runtime that originally defined it.
 #if defined(_WIN32)
 
@@ -313,7 +313,7 @@ static bool mode_is_text(const char* mode) {
     return true;
 }
 
-static ssize_t text_cookie_read(void* cookie, char* buf, size_t size) {
+static size_t text_cookie_read_bytes(void* cookie, char* buf, size_t size) {
     FILE* underlying = static_cast<FILE*>(cookie);
     size_t out = 0;
     while (out < size) {
@@ -322,12 +322,44 @@ static ssize_t text_cookie_read(void* cookie, char* buf, size_t size) {
         if (c == '\r') continue;
         buf[out++] = static_cast<char>(c);
     }
-    return static_cast<ssize_t>(out);
+    return out;
+}
+
+static int text_cookie_close(void* cookie) {
+    return fclose(static_cast<FILE*>(cookie));
+}
+
+// The same layer through each libc's custom-stream call: glibc's fopencookie,
+// and funopen on Apple and the BSDs, which takes int sizes and returns the new
+// position from its seek rather than writing it back.
+#if defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
+static int text_cookie_read(void* cookie, char* buf, int size) {
+    return static_cast<int>(text_cookie_read_bytes(cookie, buf, static_cast<size_t>(size)));
+}
+
+static int text_cookie_write(void* cookie, const char* buf, int size) {
+    return static_cast<int>(fwrite(buf, 1, static_cast<size_t>(size), static_cast<FILE*>(cookie)));
+}
+
+static fpos_t text_cookie_seek(void* cookie, fpos_t offset, int whence) {
+    FILE* underlying = static_cast<FILE*>(cookie);
+    if (fseeko(underlying, static_cast<off_t>(offset), whence) != 0) {
+        return -1;
+    }
+    return static_cast<fpos_t>(ftello(underlying));
+}
+
+static FILE* open_text_cookie(FILE* underlying, const char*) {
+    return funopen(underlying, text_cookie_read, text_cookie_write, text_cookie_seek,
+                   text_cookie_close);
+}
+#else
+static ssize_t text_cookie_read(void* cookie, char* buf, size_t size) {
+    return static_cast<ssize_t>(text_cookie_read_bytes(cookie, buf, size));
 }
 
 static ssize_t text_cookie_write(void* cookie, const char* buf, size_t size) {
-    FILE* underlying = static_cast<FILE*>(cookie);
-    return static_cast<ssize_t>(fwrite(buf, 1, size, underlying));
+    return static_cast<ssize_t>(fwrite(buf, 1, size, static_cast<FILE*>(cookie)));
 }
 
 static int text_cookie_seek(void* cookie, off64_t* offset, int whence) {
@@ -339,9 +371,13 @@ static int text_cookie_seek(void* cookie, off64_t* offset, int whence) {
     return 0;
 }
 
-static int text_cookie_close(void* cookie) {
-    return fclose(static_cast<FILE*>(cookie));
+static FILE* open_text_cookie(FILE* underlying, const char* mode) {
+    cookie_io_functions_t ops = {
+        text_cookie_read, text_cookie_write, text_cookie_seek, text_cookie_close
+    };
+    return fopencookie(underlying, mode, ops);
 }
+#endif
 
 static FILE* fopen_text_aware(const char* path, const char* mode) {
     if (!mode_is_text(mode)) {
@@ -354,10 +390,7 @@ static FILE* fopen_text_aware(const char* path, const char* mode) {
     }
     FILE* underlying = fopen(path, effective.c_str());
     if (!underlying) return nullptr;
-    cookie_io_functions_t ops = {
-        text_cookie_read, text_cookie_write, text_cookie_seek, text_cookie_close
-    };
-    FILE* cooked = fopencookie(underlying, effective.c_str(), ops);
+    FILE* cooked = open_text_cookie(underlying, effective.c_str());
     if (!cooked) {
         fclose(underlying);
         return nullptr;

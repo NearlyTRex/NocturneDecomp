@@ -82,6 +82,15 @@ rule formats. Changes trigger a reconfigure automatically.
   cross-compiling a PE from Linux.
 - `cmake/toolchains/windows-msys2.cmake` — the same PE target, built on Windows
   under MSYS2 UCRT64.
+- `cmake/toolchains/windows-msvc.cmake` — clang-cl against the Microsoft runtime,
+  on Windows from a Visual Studio prompt or cross from Linux with an xwin sysroot.
+- `cmake/toolchains/macos-x86_64.cmake` — Apple clang on a Mac, always x86_64.
 
-Adding a new platform (e.g. macOS) means adding another toolchain file here.
-Nothing in the top-level `CMakeLists.txt` is Linux-specific.
+## Platforms
+
+What differs per operating system beyond the compiler lives in one file under
+`cmake/platforms/` (`linux`, `windows`, `macos`), chosen from `CMAKE_SYSTEM_NAME`:
+the socket backend, link libraries, FFmpeg's target, runtime library staging,
+launchers. `CMakeLists.txt` and `bundledlibs.cmake` hold no OS branches of their
+own. `cmake/platforms/README.md` lists what a platform file sets, and
+`docs/porting.md` covers adding one, in this tree or outside it.

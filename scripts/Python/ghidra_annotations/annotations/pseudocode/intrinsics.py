@@ -3,7 +3,7 @@
 # This module is the SINGLE SOURCE OF TRUTH for intrinsic definitions
 
 import os
-from ghidra_annotations.util import make_dirs
+from ghidra_annotations.util import make_dirs, with_generated_notice
 from ghidra_annotations.util.log import log_info
 
 
@@ -698,7 +698,7 @@ def write_intrinsics_header(pseudocode_dir):
 
     try:
         with open(intrinsics_path, 'w') as f:
-            f.write(content)
+            f.write(with_generated_notice(content))
         log_info("Generated intrinsics header: %s" % intrinsics_path)
         return intrinsics_path
     except Exception as e:

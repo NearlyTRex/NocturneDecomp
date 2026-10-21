@@ -39,14 +39,15 @@
 // =============================================================================
 // Calling Convention Macros
 // =============================================================================
-// Calling conventions parsed from x86watcom.cspec - define as empty for non-MSVC compilers
+// Calling conventions parsed from x86watcom.cspec, defined as empty
+// Standard Windows calling conventions: keywords under MSVC and clang-cl
 #ifndef _MSC_VER
-// Standard Windows calling conventions
 #define __cdecl
 #define __stdcall
 #define __fastcall
 #define __thiscall
 #define __vectorcall
+#endif
 // Calling conventions from x86watcom.cspec
 #define __watcallRegister
 #define __watcallStack
@@ -86,7 +87,6 @@
 #define __mmx_save
 // Unknown conventions
 #define __unknown
-#endif
 
 // =============================================================================
 // Ghidra Primitive Types

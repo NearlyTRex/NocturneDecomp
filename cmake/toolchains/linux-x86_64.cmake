@@ -1,7 +1,5 @@
-# EXPERIMENT: native 64-bit Linux toolchain (no -m32 / no multilib).
-# Mirrors linux-i686.cmake but drops the 32-bit target flags and points
-# pkg-config at the amd64 multiarch path. Used to probe what breaks when the
-# decomp is compiled without multilib.
+# Native 64-bit Linux with clang, the default lane. pkg-config is pointed at the
+# amd64 multiarch path so no i386 package is ever picked up.
 
 set(CMAKE_SYSTEM_NAME       Linux)
 set(CMAKE_SYSTEM_PROCESSOR  x86_64)
@@ -13,9 +11,9 @@ if(NOT DEFINED CMAKE_CXX_COMPILER)
     set(CMAKE_CXX_COMPILER clang++)
 endif()
 
-# Drop -m32; keep -mmmx/-fasm-blocks so we see only multilib-related breakage
-# rather than masking it behind missing-flag errors.
-set(_NOCTURNE_TARGET_FLAGS "-mmmx -fasm-blocks")
+# -fasm-blocks is absent for the same reason as on the Windows lanes: the
+# __asm bodies live only in .byval variants the source collector never selects.
+set(_NOCTURNE_TARGET_FLAGS "-mmmx")
 
 set(CMAKE_C_FLAGS_INIT   "${_NOCTURNE_TARGET_FLAGS}")
 set(CMAKE_CXX_FLAGS_INIT "${_NOCTURNE_TARGET_FLAGS}")

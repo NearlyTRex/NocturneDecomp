@@ -109,17 +109,59 @@ set(NOCTURNE_CHECKS_DIR   "${NOCTURNE_PSEUDOCODE_DIR}/checks")
 
 find_package(Python3 REQUIRED COMPONENTS Interpreter)
 
+# -----------------------------------------------------------------------------
+# Platform. Everything that differs per target operating system comes from one
+# file; see cmake/platforms/README.md for what it may set. A port kept outside
+# this repository names its own file with NOCTURNE_PLATFORM_FILE.
+# -----------------------------------------------------------------------------
+if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
+    set(_noc_default_platform windows)
+elseif(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
+    set(_noc_default_platform macos)
+else()
+    set(_noc_default_platform linux)
+endif()
+set(NOCTURNE_PLATFORM "${_noc_default_platform}" CACHE STRING
+    "Platform file under cmake/platforms/ (linux, windows, macos)")
+set(NOCTURNE_PLATFORM_FILE "${CMAKE_SOURCE_DIR}/cmake/platforms/${NOCTURNE_PLATFORM}.cmake"
+    CACHE FILEPATH "Platform file to include; point it outside the tree for an out-of-tree port")
+if(NOT EXISTS "${NOCTURNE_PLATFORM_FILE}")
+    message(FATAL_ERROR "No platform file at ${NOCTURNE_PLATFORM_FILE}. "
+                        "See cmake/platforms/README.md.")
+endif()
+set(NOCTURNE_PLATFORM_SHIM_EXCLUDE "")
+set(NOCTURNE_PLATFORM_SOURCES "")
+set(NOCTURNE_PLATFORM_INCLUDE_DIRS "")
+set(NOCTURNE_PLATFORM_DEFINITIONS "")
+set(NOCTURNE_PLATFORM_LIBRARIES "")
+set(NOCTURNE_PLATFORM_LAUNCHERS OFF)
+set(NOCTURNE_DEPENDENCIES_FILE "${CMAKE_SOURCE_DIR}/cmake/bundledlibs.cmake")
+set(NOCTURNE_FFMPEG_EXTRA_ARGS "")
+set(NOCTURNE_FFMPEG_CONFIGURE_WRAPPER "")
+set(NOCTURNE_FFMPEG_SYSTEM_LIBRARIES "")
+set(NOCTURNE_PACKAGE_FORMAT "tar.gz")
+# Files a release archive ships beside the binary; see "The release manifest" in
+# cmake/platforms/README.md. Generator expressions are resolved when it is written.
+function(nocturne_package_runtime)
+    set_property(GLOBAL APPEND PROPERTY NOCTURNE_PACKAGE_RUNTIME ${ARGN})
+endfunction()
+include("${NOCTURNE_PLATFORM_FILE}")
+message(STATUS "platform: ${NOCTURNE_PLATFORM_FILE}")
+
 # SDL2 / SDL2_ttf / FFmpeg — consumed by the DirectDraw/DirectSound/kernel32
 # and mci_video shims. Required only when linking the exe; the check presets
 # skip the shims.
 #
-# Built from source via cmake/bundledlibs.cmake rather than taken from system
-# pkg-config, so a build does not depend on whichever SDL the host happens to
-# have. The source build sets the same SDL2_*/SDL2TTF_*/FFMPEG_* variables
-# pkg-config did, so the rest of this file is unchanged.
+# Built from source via cmake/bundledlibs.cmake by default rather than taken from
+# system pkg-config, so a build does not depend on whichever SDL the host happens
+# to have. Any dependencies file sets the same SDL2_*/SDL2TTF_*/FFMPEG_*
+# variables, so the rest of this file is unchanged.
 set(NOCTURNE_FFMPEG_DEP "")
 if(NOCTURNE_BUILD_EXE)
-    include("${CMAKE_SOURCE_DIR}/cmake/bundledlibs.cmake")
+    include("${NOCTURNE_DEPENDENCIES_FILE}")
+    if(COMMAND nocturne_platform_after_dependencies)
+        nocturne_platform_after_dependencies()
+    endif()
 endif()
 
 # -----------------------------------------------------------------------------
@@ -370,15 +412,15 @@ if(NOCTURNE_BUILD_EXE)
         "${NOCTURNE_SHIMS_DIR}/*.cpp"
         "${NOCTURNE_SHIMS_DIR}/*.c"
     )
-    # One socket backend, chosen by platform: winsock_posix.c over BSD sockets,
-    # winsock_win32.c over Winsock. Both define the same eighteen posix_* entry
-    # points that winsock.cpp calls, so compiling both is a duplicate-symbol
-    # link error rather than a preference.
-    if(WIN32)
-        list(FILTER _shim_sources EXCLUDE REGEX "/win32/winsock_posix\\.c$")
-    else()
-        list(FILTER _shim_sources EXCLUDE REGEX "/win32/winsock_win32\\.c$")
-    endif()
+    # The platform file drops what does not belong on it, which includes picking
+    # one socket backend: winsock_posix.c over BSD sockets, winsock_win32.c over
+    # Winsock. Both define the same eighteen nocturne_socket_* entry points that
+    # winsock.cpp calls, so compiling both is a duplicate-symbol link error
+    # rather than a preference.
+    foreach(_exclude IN LISTS NOCTURNE_PLATFORM_SHIM_EXCLUDE)
+        list(FILTER _shim_sources EXCLUDE REGEX "${_exclude}")
+    endforeach()
+    list(APPEND _shim_sources ${NOCTURNE_PLATFORM_SOURCES})
     set_source_files_properties(${_shim_sources} PROPERTIES LANGUAGE CXX)
 
     # -------------------------------------------------------------------------
@@ -449,7 +491,9 @@ if(NOCTURNE_BUILD_EXE)
     # generated version header whether or not the icon was extracted.
     target_include_directories(nocturne_shims PRIVATE
         "${NOCTURNE_INCLUDE_DIR}" "${NOCTURNE_SHIMS_DIR}" "${NOCTURNE_GEN_DIR}"
-        ${SDL2_INCLUDE_DIRS} ${SDL2TTF_INCLUDE_DIRS} ${FFMPEG_INCLUDE_DIRS})
+        ${SDL2_INCLUDE_DIRS} ${SDL2TTF_INCLUDE_DIRS} ${FFMPEG_INCLUDE_DIRS}
+        ${NOCTURNE_PLATFORM_INCLUDE_DIRS})
+    target_compile_definitions(nocturne_shims PRIVATE ${NOCTURNE_PLATFORM_DEFINITIONS})
     add_dependencies(nocturne_shims nocturne_version)
     # Tells shims/core/version.cpp the generated header is on its include path.
     # Without it that file falls back to placeholder strings, which is what the
@@ -493,124 +537,65 @@ if(NOCTURNE_BUILD_EXE)
         ${NOCTURNE_SANITIZE_FLAGS}
         ${SDL2_CFLAGS_OTHER} ${SDL2TTF_CFLAGS_OTHER} ${FFMPEG_CFLAGS_OTHER})
     target_link_options(nocturne PRIVATE ${NOCTURNE_SANITIZE_FLAGS})
-    if(NOT WIN32)
-        # SDL2 and SDL2_ttf are built here as shared objects, and the link
-        # records their absolute paths inside the build tree. That is right for
-        # running from build/, and useless once the binary is copied anywhere
-        # else -- a release archive would carry a runpath naming a directory on
-        # the machine that built it. $ORIGIN is appended rather than replacing
-        # it, so the build tree keeps working and an archive that ships the .so
-        # beside the binary finds them there.
-        target_link_options(nocturne PRIVATE "-Wl,-rpath,$ORIGIN")
-    endif()
 
     foreach(_lib IN LISTS _module_libs)
         target_link_libraries(nocturne PRIVATE ${_lib})
     endforeach()
     target_link_libraries(nocturne PRIVATE nocturne_shims
-        ${SDL2_LIBRARIES} ${SDL2TTF_LIBRARIES} ${FFMPEG_LIBRARIES})
-    if(WIN32)
-        # ws2_32 backs winsock_win32.c. The rest are what the kernel32 shim
-        # reaches for once its POSIX arms give way to the Win32 ones: winmm for
-        # the multimedia timer, version and imagehlp for the module queries.
-        target_link_libraries(nocturne PRIVATE ws2_32 winmm version)
-
-        # SDL2 and SDL2_ttf are built shared, and a PE resolves its imports from
-        # the directory the exe sits in. Put them there so the build output is
-        # something that runs when copied to a Windows machine, rather than
-        # something that needs a DLL hunt first. FFmpeg is static, so it needs
-        # nothing staged.
-        add_custom_command(TARGET nocturne POST_BUILD
-            COMMAND "${CMAKE_COMMAND}" -E copy_if_different
-                    "$<TARGET_FILE:SDL2::SDL2>" "$<TARGET_FILE:SDL2_ttf::SDL2_ttf>"
-                    "$<TARGET_FILE_DIR:nocturne>"
-            COMMENT "Staging SDL DLLs beside nocturne.exe"
-            VERBATIM)
-
-        # The C++ runtime DLLs. Cross-compiling they come out of the Debian
-        # sysroot, which no Windows machine has, so they have to travel with the
-        # exe. Building natively under MSYS2 they are already installed and on
-        # PATH inside that shell — but only inside it, so they are staged there
-        # too and the output directory means the same thing on both lanes: a
-        # folder that runs. The compiler driver names each one, because a DLL
-        # from a different gcc runtime than the one linked lacks exports the
-        # exe imports and Windows refuses to start it.
-        separate_arguments(_rt_driver_flags NATIVE_COMMAND "${CMAKE_CXX_FLAGS}")
-        foreach(_rt_dll libstdc++-6.dll libwinpthread-1.dll libgcc_s_seh-1.dll)
-            execute_process(
-                COMMAND "${CMAKE_CXX_COMPILER}" ${_rt_driver_flags}
-                        "-print-file-name=${_rt_dll}"
-                OUTPUT_VARIABLE _rt_src
-                OUTPUT_STRIP_TRAILING_WHITESPACE)
-            # The driver echoes the bare name back when it finds nothing. MSYS2
-            # keeps the DLLs beside clang in /ucrt64/bin, off its library path.
-            if(NOT IS_ABSOLUTE "${_rt_src}" AND NOT CMAKE_CROSSCOMPILING)
-                get_filename_component(_rt_bindir "${CMAKE_CXX_COMPILER}" DIRECTORY)
-                set(_rt_src "${_rt_bindir}/${_rt_dll}")
-            endif()
-            if(IS_ABSOLUTE "${_rt_src}" AND EXISTS "${_rt_src}")
-                add_custom_command(TARGET nocturne POST_BUILD
-                    COMMAND "${CMAKE_COMMAND}" -E copy_if_different
-                            "${_rt_src}" "$<TARGET_FILE_DIR:nocturne>"
-                    VERBATIM)
-            else()
-                message(STATUS "windows lane: ${_rt_dll} not found — copy it "
-                               "beside the exe by hand if the build does not "
-                               "start on a machine without the toolchain")
-            endif()
-        endforeach()
-
-        # Runs after the staging above: POST_BUILD commands run in order.
-        add_custom_command(TARGET nocturne POST_BUILD
-            COMMAND "${Python3_EXECUTABLE}"
-                    "${CMAKE_SOURCE_DIR}/scripts/Python/check_pe_imports.py"
-                    "$<TARGET_FILE:nocturne>"
-            COMMENT "Checking nocturne.exe's imports against the staged DLLs"
-            VERBATIM)
+        ${SDL2_LIBRARIES} ${SDL2TTF_LIBRARIES} ${FFMPEG_LIBRARIES}
+        ${NOCTURNE_PLATFORM_LIBRARIES})
+    if(COMMAND nocturne_platform_finalize)
+        nocturne_platform_finalize(nocturne)
     endif()
+
+    # The release manifest scripts/Bash/package_release.sh reads.
+    set(_package "binary=$<TARGET_FILE:nocturne>\nformat=${NOCTURNE_PACKAGE_FORMAT}\n")
+    get_property(_package_runtime GLOBAL PROPERTY NOCTURNE_PACKAGE_RUNTIME)
+    foreach(_file IN LISTS _package_runtime)
+        string(APPEND _package "runtime=${_file}\n")
+    endforeach()
+    file(GENERATE OUTPUT "${CMAKE_BINARY_DIR}/package.txt" CONTENT "${_package}")
 
     # -------------------------------------------------------------------------
     # run.sh — launcher that sets sanitizer-friendly env defaults (symbolizer
     # path, UBSan stack traces, LSan off) and execs the built binary. Drops
-    # next to the exe so `./run.sh` just works from any build preset.
+    # next to the exe so `./run.sh` just works from any build preset. Only on
+    # platforms that ask for it: the scripts are bash and exec `nocturne`.
     # -------------------------------------------------------------------------
-    find_program(LLVM_SYMBOLIZER_PATH
-        NAMES llvm-symbolizer llvm-symbolizer-18 llvm-symbolizer-17
-              llvm-symbolizer-16 llvm-symbolizer-15 llvm-symbolizer-14)
-    if(LLVM_SYMBOLIZER_PATH)
-        message(STATUS "llvm-symbolizer: ${LLVM_SYMBOLIZER_PATH}")
-    else()
-        message(STATUS "llvm-symbolizer: not found — sanitizer reports will "
-                       "show raw addresses. Install via apt/brew for readable "
-                       "stack traces.")
-        set(LLVM_SYMBOLIZER_PATH "")
-    endif()
+    if(NOCTURNE_PLATFORM_LAUNCHERS)
+        find_program(LLVM_SYMBOLIZER_PATH
+            NAMES llvm-symbolizer llvm-symbolizer-18 llvm-symbolizer-17
+                  llvm-symbolizer-16 llvm-symbolizer-15 llvm-symbolizer-14)
+        if(LLVM_SYMBOLIZER_PATH)
+            message(STATUS "llvm-symbolizer: ${LLVM_SYMBOLIZER_PATH}")
+        else()
+            message(STATUS "llvm-symbolizer: not found — sanitizer reports will "
+                           "show raw addresses. Install via apt/brew for readable "
+                           "stack traces.")
+            set(LLVM_SYMBOLIZER_PATH "")
+        endif()
 
-    # Best-effort preset name for the "not built" hint in the script.
-    if(DEFINED ENV{CMAKE_PRESET_NAME})
-        set(NOCTURNE_PRESET_NAME "$ENV{CMAKE_PRESET_NAME}")
-    else()
-        get_filename_component(NOCTURNE_PRESET_NAME "${CMAKE_BINARY_DIR}" NAME)
-    endif()
+        # Best-effort preset name for the "not built" hint in the script.
+        if(DEFINED ENV{CMAKE_PRESET_NAME})
+            set(NOCTURNE_PRESET_NAME "$ENV{CMAKE_PRESET_NAME}")
+        else()
+            get_filename_component(NOCTURNE_PRESET_NAME "${CMAKE_BINARY_DIR}" NAME)
+        endif()
 
-    configure_file(
-        "${CMAKE_SOURCE_DIR}/cmake/run_nocturne.sh.in"
-        "${CMAKE_BINARY_DIR}/run.sh"
-        @ONLY
-        FILE_PERMISSIONS
-            OWNER_READ OWNER_WRITE OWNER_EXECUTE
-            GROUP_READ GROUP_EXECUTE
-            WORLD_READ WORLD_EXECUTE
-    )
-    configure_file(
-        "${CMAKE_SOURCE_DIR}/cmake/debug_nocturne.sh.in"
-        "${CMAKE_BINARY_DIR}/debug.sh"
-        @ONLY
-        FILE_PERMISSIONS
-            OWNER_READ OWNER_WRITE OWNER_EXECUTE
-            GROUP_READ GROUP_EXECUTE
-            WORLD_READ WORLD_EXECUTE
-    )
+        foreach(_launcher run_nocturne.sh:run.sh debug_nocturne.sh:debug.sh)
+            string(REPLACE ":" ";" _launcher "${_launcher}")
+            list(GET _launcher 0 _template)
+            list(GET _launcher 1 _script)
+            configure_file(
+                "${CMAKE_SOURCE_DIR}/cmake/${_template}.in"
+                "${CMAKE_BINARY_DIR}/${_script}"
+                @ONLY
+                FILE_PERMISSIONS
+                    OWNER_READ OWNER_WRITE OWNER_EXECUTE
+                    GROUP_READ GROUP_EXECUTE
+                    WORLD_READ WORLD_EXECUTE)
+        endforeach()
+    endif()
 endif()
 
 # =============================================================================

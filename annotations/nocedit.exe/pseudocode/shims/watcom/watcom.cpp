@@ -17,10 +17,12 @@
 #include "watcom/path.h"        // watcom_resolve_fs_path()
 
 #include <cerrno>
+#include <chrono>
 #include <cstdlib>
 #include <cstring>
 #include <filesystem>
 #include <system_error>
+#include <thread>
 // The descriptor-based half of Watcom's io.h — here just lseek and ftruncate.
 // A file descriptor is not POSIX-only: Windows' own runtime has both, as _lseek
 // and _chsize in <io.h>, so this is a spelling difference rather than a port.
@@ -146,6 +148,15 @@ void* _memset(void* dest, int value, size_t count) {
 long tell(int fd) {
     return lseek(fd, 0, SEEK_CUR);
 }
+
+#if defined(_MSC_VER)
+// system/watcom.h renames this to nocturne_watcom_sleep; the Microsoft runtime
+// has no sleep(), and the game's callers pass seconds as POSIX does.
+unsigned int sleep(unsigned int seconds) {
+    std::this_thread::sleep_for(std::chrono::seconds(seconds));
+    return 0;
+}
+#endif
 
 int chsize(int fd, long size) {
     // Watcom's own name for this was chsize, and so is Windows' — the POSIX

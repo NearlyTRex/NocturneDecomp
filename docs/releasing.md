@@ -118,6 +118,9 @@ The workflows come from the shared
 ```
 
 Archives land in `dist/`, named `nocturne-<version>-<preset>.tar.gz` (or `.zip` for Windows).
+The script knows nothing about platforms: every executable build writes `build/<preset>/package.txt`
+naming the binary, the archive format and the runtime libraries its platform file ships beside
+it (`cmake/platforms/README.md`), and the script copies what that lists.
 
 The default is **not** the ASan preset that everything else in the repository defaults to. A
 release must not carry sanitizer instrumentation: it is far slower, and UBSan aborts the process
@@ -138,9 +141,9 @@ game, which is the arrangement the build has always had.
 SDL2 and SDL2_ttf are built from source as shared objects under `build/<preset>/_deps/`, and the
 link records their absolute paths. That is right for running out of the build tree and useless
 anywhere else — an archive would carry a runpath naming a directory on the machine that built
-it. The `nocturne` target therefore appends `$ORIGIN` to its runpath on non-Windows, and
-`package_release.sh` copies those `.so` files in beside the binary under the SONAME the loader
-asks for. Both keep working: the build tree resolves through the absolute entries, the archive
+it. The Linux platform file therefore appends `$ORIGIN` to the `nocturne` target's runpath
+(macOS's appends `@executable_path`), and lists those libraries in the manifest under the SONAME
+the loader asks for, so `package_release.sh` copies them in beside the binary. Both keep working: the build tree resolves through the absolute entries, the archive
 through `$ORIGIN`.
 
 Check an archive is self-contained by unpacking it somewhere else and running `ldd ./nocturne` —

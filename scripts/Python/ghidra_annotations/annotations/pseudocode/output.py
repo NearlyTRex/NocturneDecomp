@@ -4,7 +4,7 @@
 import os
 import re
 import json
-from ghidra_annotations.util import make_dirs, write_if_changed
+from ghidra_annotations.util import make_dirs, write_if_changed, with_generated_notice
 from ghidra_annotations.util.log import log_info
 from ghidra_annotations.annotations.pseudocode.strings import sanitize_string
 from ghidra_annotations.annotations.pseudocode.functions import (
@@ -717,7 +717,7 @@ def export_function_prototypes(currentProgram, pseudocode_dir, function_groups):
 
         # Write the header file
         try:
-            if write_if_changed(header_path, "\n".join(content)):
+            if write_if_changed(header_path, with_generated_notice("\n".join(content))):
                 log_info("Created prototype header: %s with %d functions" % (virtual_filename, len(functions)))
             headers_created += 1
         except Exception as e:
