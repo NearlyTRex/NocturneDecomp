@@ -93,6 +93,15 @@ typedef uint _SOCKET;
 // Byte Order Conversion
 // ---------------------------------------------------------------------------
 
+// Darwin's <sys/_endian.h>, which ordinary libc headers reach, defines these as
+// macros, and they would rewrite the declarations below.
+#if defined(__APPLE__)
+#undef htons
+#undef htonl
+#undef ntohs
+#undef ntohl
+#endif
+
 extern ushort htons(ushort hostshort);
 extern ulong htonl(ulong hostlong);
 extern ushort ntohs(ushort netshort);

@@ -56,13 +56,11 @@ typedef QSORT_COMPARATOR_FUNC* QSORT_COMPARATOR;
 typedef void RUNTIME_HANDLER_FUNC(void);
 
 // Structure: RuntimeHandlerEntry
-#pragma pack(push, 1)
 typedef struct RuntimeHandlerEntry {
     BYTE status;
     BYTE priority;
     RUNTIME_HANDLER_FUNC* func;
 } RuntimeHandlerEntry;
-#pragma pack(pop)
 
 // Function Definition: STRTOD_FUNC
 typedef double STRTOD_FUNC(double* result, char* str);

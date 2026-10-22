@@ -11,6 +11,8 @@ from ghidra.program.model.data import Union
 from ghidra.program.model.data import TypeDef
 from ghidra.program.model.data import Pointer
 from ghidra.program.model.data import Array
+from ghidra.program.model.data import PointerType
+from ghidra.program.model.data import PointerTypeSettingsDefinition
 from ghidra_annotations.util import make_dirs, write_if_changed, with_generated_notice
 from ghidra_annotations.util.log import log_info
 from ghidra_annotations.util.data_type import collect_type_dependencies_with_context, get_ghidra_primitive_types
@@ -702,6 +704,172 @@ def _packing_and_alignment(dt):
                     struct's alignment matches what pack_value naturally
                     produces (no extra attribute needed).
     """
+    if isinstance(dt, Structure) and dt.getName() in _misaligned_pointer_structs(dt):
+        return None, None
+    return _ghidra_packing_and_alignment(dt)
+
+
+# Program -> names of structs that must drop their packing at 64-bit.
+_MISALIGNED_POINTER_STRUCTS = {}
+
+
+def _misaligned_pointer_structs(dt):
+    """Packed structs whose initialized data stores a symbol's address at a
+    64-bit offset that is not 8-aligned.
+
+    Packing mirrors the 32-bit layout, so once pointers widen to 8 bytes one
+    can land at an odd offset. A null or integer-valued pointer needs no fixup
+    and links anywhere, but arm64 Mach-O cannot encode a fixup for a misaligned
+    symbol address, so ld64 rejects the link. These structs get natural
+    alignment instead.
+    """
+    try:
+        program = dt.getDataTypeManager().getProgram()
+    except Exception:
+        return frozenset()
+    key = id(program)
+    if key not in _MISALIGNED_POINTER_STRUCTS:
+        _MISALIGNED_POINTER_STRUCTS[key] = _find_misaligned_pointer_structs(program)
+    return _MISALIGNED_POINTER_STRUCTS[key]
+
+
+def _strip_typedefs(dt):
+    while isinstance(dt, TypeDef):
+        dt = dt.getDataType()
+    return dt
+
+
+def _is_address(dt):
+    """True for a pointer that holds an address. A pointer typedef with a
+    non-default pointer type (IBO32's image-base offset, and the like) holds a
+    32-bit offset and is emitted as an integer."""
+    while isinstance(dt, TypeDef):
+        if dt.isPointer() and PointerTypeSettingsDefinition.DEF.getType(
+                dt.getDefaultSettings()) != PointerType.DEFAULT:
+            return False
+        dt = dt.getDataType()
+    return isinstance(dt, Pointer)
+
+
+def _lp64_size_and_alignment(dt, memo):
+    """(size, alignment) of a Ghidra type as the 64-bit build lays it out.
+
+    Pointers and the C long family widen to 8 bytes; basetypes.h keeps ulong
+    as the host's unsigned long, and the libc-provided names follow the target.
+    Every other scalar keeps its 32-bit width.
+    """
+    if isinstance(dt, TypeDef) and dt.getName() in get_libc_provided_types():
+        return 8, 8
+    if _is_address(dt):
+        return 8, 8
+    dt = _strip_typedefs(dt)
+    if isinstance(dt, Pointer):
+        return dt.getLength(), dt.getLength()
+    if dt.getName() in ("long", "ulong"):
+        return 8, 8
+    if isinstance(dt, Array):
+        size, align = _lp64_size_and_alignment(dt.getDataType(), memo)
+        return size * dt.getNumElements(), align
+    if isinstance(dt, (Structure, Union)):
+        name = dt.getPathName()
+        if name not in memo:
+            memo[name] = (0, 1)  # cycle guard
+            memo[name] = _lp64_aggregate_layout(dt, memo)[:2]
+        return memo[name]
+    size = max(dt.getLength(), 0)
+    align = 1
+    while align < 8 and size % (align * 2) == 0 and size >= align * 2:
+        align *= 2
+    return size, align
+
+
+def _lp64_aggregate_layout(dt, memo):
+    """(size, alignment, [(component, 64-bit offset)]) of a struct or union."""
+    pack_value, _ = _ghidra_packing_and_alignment(dt)
+    offset = size = 0
+    max_align = 1
+    placed = []
+    for comp in dt.getComponents():
+        comp_size, comp_align = _lp64_size_and_alignment(comp.getDataType(), memo)
+        if pack_value is not None:
+            comp_align = min(comp_align, pack_value)
+        max_align = max(max_align, comp_align)
+        if isinstance(dt, Union):
+            placed.append((comp, 0))
+            size = max(size, comp_size)
+            continue
+        offset = (offset + comp_align - 1) // comp_align * comp_align
+        placed.append((comp, offset))
+        offset += comp_size
+        size = offset
+    size = (size + max_align - 1) // max_align * max_align
+    return size, max_align, placed
+
+
+def _find_misaligned_pointer_structs(program):
+    # globals.py imports this module.
+    from ghidra_annotations.annotations.pseudocode.globals import resolve_pointer_to_symbol
+
+    memo = {}
+    # Packed struct -> 32-bit offsets of its own pointer fields that sit at a
+    # misaligned 64-bit offset.
+    hazards = {}
+
+    def hazard_offsets(struct):
+        name = struct.getPathName()
+        if name not in hazards:
+            hazards[name] = []
+            if _ghidra_packing_and_alignment(struct)[0] is not None:
+                for comp, offset in _lp64_aggregate_layout(struct, memo)[2]:
+                    if offset % 8 and _is_address(comp.getDataType()):
+                        hazards[name].append(comp.getOffset())
+        return hazards[name]
+
+    contains = {}
+
+    def contains_hazard(dt):
+        dt = _strip_typedefs(dt)
+        if isinstance(dt, Array):
+            return contains_hazard(dt.getDataType())
+        if not isinstance(dt, Structure):
+            return False
+        name = dt.getPathName()
+        if name not in contains:
+            contains[name] = False  # cycle guard
+            contains[name] = bool(hazard_offsets(dt)) or any(
+                contains_hazard(c.getDataType()) for c in dt.getComponents())
+        return contains[name]
+
+    memory = program.getMemory()
+    found = set()
+
+    def walk(dt, address):
+        dt = _strip_typedefs(dt)
+        if not contains_hazard(dt):
+            return
+        if isinstance(dt, Array):
+            step = dt.getElementLength()
+            for i in range(dt.getNumElements()):
+                walk(dt.getDataType(), address.add(i * step))
+            return
+        if dt.getName() not in found:
+            for offset in hazard_offsets(dt):
+                value = memory.getInt(address.add(offset)) & 0xFFFFFFFF
+                if resolve_pointer_to_symbol(program, value)[0] is not None:
+                    found.add(dt.getName())
+                    break
+        for comp in dt.getComponents():
+            walk(comp.getDataType(), address.add(comp.getOffset()))
+
+    for data in program.getListing().getDefinedData(True):
+        block = memory.getBlock(data.getAddress())
+        if block is not None and block.isInitialized():
+            walk(data.getDataType(), data.getAddress())
+    return frozenset(found)
+
+
+def _ghidra_packing_and_alignment(dt):
+    """Ghidra's packing for dt, before any 64-bit adjustment."""
     pack_value = None
     alignment = None
     is_packed = False
