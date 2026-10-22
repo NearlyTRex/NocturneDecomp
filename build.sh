@@ -86,7 +86,7 @@ fi
 # empty build dir.
 if [[ ! -f "${BUILD_DIR}/CMakeCache.txt" ]]; then
     echo "build.sh: configuring preset '${PRESET}' (first run)"
-    cmake --preset "${PRESET}" "${CONFIGURE_ARGS[@]}" || exit $?
+    cmake --preset "${PRESET}" ${CONFIGURE_ARGS[@]+"${CONFIGURE_ARGS[@]}"} || exit $?
 fi
 
 # Force a re-glob so newly added .keep.cpp / .keep.c files end up in the ninja

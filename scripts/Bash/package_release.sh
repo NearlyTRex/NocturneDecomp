@@ -112,7 +112,7 @@ for preset in "${PRESETS[@]}"; do
     cp "${binary}" "${stage}/"
     # -L: a soname is usually a symlink to the versioned file; ship the file
     # under the soname.
-    for lib in "${runtime[@]}"; do
+    for lib in ${runtime[@]+"${runtime[@]}"}; do
         cp -L "${lib}" "${stage}/"
     done
 
