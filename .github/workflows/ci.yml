@@ -115,7 +115,7 @@ jobs:
       # FFmpeg's configure runs under the runner's MSYS2, which needs make.
       build-command: |
         /c/msys64/usr/bin/pacman -S --noconfirm --needed make diffutils
-        export PATH="$PATH:/c/msys64/usr/bin"
+        export PATH="/c/msys64/usr/bin:$PATH"
         cmake --preset exe-windows-msvc
         cmake --build --preset exe-windows-msvc
 
