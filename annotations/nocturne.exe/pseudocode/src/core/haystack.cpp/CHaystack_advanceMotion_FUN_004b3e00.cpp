@@ -16,7 +16,7 @@ void __cdecl core_haystack_cpp_CHaystack_advanceMotion_FUN_004b3e00(CHaystack *t
   
   do {
     iVar1 = core_motion_cpp_CMotionController_advance_FUN_004e11c0
-                      (&(this_ptr->base).base.model.motion_controller,&delta_time);
+                      (&(this_ptr->base).base.model.base,&delta_time);
     switch(iVar1) {
     case 0x65:
       core_haystack_cpp_CHaystack_checkMeleeHit_FUN_004b3f40(this_ptr,_DAT_01cae04c);

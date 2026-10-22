@@ -14,14 +14,25 @@ concurrency:
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
-  # The native lane, with the unit tests. The Windows lanes cross-compile to PEs
-  # that cannot run here, so they are built only on release.
+  # The native lanes, with the unit tests: x86_64, and aarch64 on GitHub's Arm
+  # runner, which is what proves the portable paths (MMX, float10, char) run
+  # rather than only compile. The mingw Windows lanes cross-compile to PEs that
+  # cannot run here, so they are built only on release.
   build:
-    name: Build (exe-linux-x86_64)
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@45bf3d2ed784d826f7951b407631311bce30d435 # v0.2.14
+    name: Build (${{ matrix.preset }})
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@ffafe3aa09651e679cee3ce17f828cca46f29196 # v0.2.17
     permissions:
       contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - preset: exe-linux-x86_64
+            os: ubuntu-latest
+          - preset: exe-linux-aarch64
+            os: ubuntu-24.04-arm
     with:
+      runs-on: ${{ matrix.os }}
       # The -dev headers let SDL compile its X11/Wayland/audio backends;
       # bundledlibs.cmake fails the configure without them.
       apt-packages: >-
@@ -34,23 +45,79 @@ jobs:
       # so a cold build is most of the wall clock. The pinned tags in
       # bundledlibs.cmake decide when the cache is stale.
       cache-paths: |
-        build/exe-linux-x86_64/_deps
-        build/exe-linux-x86_64/ffmpeg
-      cache-key-files: cmake/bundledlibs.cmake
+        build/${{ matrix.preset }}/_deps
+        build/${{ matrix.preset }}/ffmpeg
+      cache-key-files: |
+        cmake/bundledlibs.cmake
+        cmake/ffmpeg.cmake
       # About 7,400 translation units: ccache recompiles only the ones a
       # commit touched, instead of all of them on every run.
       ccache: true
       # One build fills 500M, so ccache evicted as it went and kept only the tail.
       ccache-max-size: 2G
       # Shared by the CI build and the release build of the same preset.
-      cache-key: exe-linux-x86_64
+      cache-key: ${{ matrix.preset }}
       # The test binaries are EXCLUDE_FROM_ALL, and ctest only runs what is
       # already built, so they are built explicitly (see docs/testing.md).
       build-command: |
-        cmake --preset exe-linux-x86_64
-        cmake --build --preset exe-linux-x86_64
-        cmake --build build/exe-linux-x86_64 --target nocturne_tests
-      test-command: ctest --test-dir build/exe-linux-x86_64 --output-on-failure
+        cmake --preset ${{ matrix.preset }}
+        cmake --build --preset ${{ matrix.preset }}
+        cmake --build build/${{ matrix.preset }} --target nocturne_tests
+      test-command: ctest --test-dir build/${{ matrix.preset }} --output-on-failure
+
+  # The lanes no Linux host can build. Compiled and linked only: macOS cannot
+  # run the tests headless, and the Windows test binaries would need the same
+  # staging as the exe. macos-latest is Apple silicon, so the x86_64 leg is
+  # also the check that Apple clang's cross build works.
+  build-macos:
+    name: Build (${{ matrix.preset }})
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@ffafe3aa09651e679cee3ce17f828cca46f29196 # v0.2.17
+    permissions:
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        preset: [exe-macos-x86_64, exe-macos-arm64]
+    with:
+      runs-on: macos-latest
+      cache-paths: |
+        build/${{ matrix.preset }}/_deps
+        build/${{ matrix.preset }}/ffmpeg
+      cache-key-files: |
+        cmake/bundledlibs.cmake
+        cmake/ffmpeg.cmake
+      cache-key: ${{ matrix.preset }}
+      brew-packages: ninja
+      ccache: true
+      ccache-max-size: 2G
+      build-command: |
+        cmake --preset ${{ matrix.preset }}
+        cmake --build --preset ${{ matrix.preset }}
+
+  build-msvc:
+    name: Build (exe-windows-msvc)
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@ffafe3aa09651e679cee3ce17f828cca46f29196 # v0.2.17
+    permissions:
+      contents: read
+    with:
+      runs-on: windows-latest
+      # The Visual Studio environment the toolchain file checks for; its CMake
+      # and Ninja come with it, and the runner's LLVM supplies clang-cl.
+      msvc: true
+      cache-paths: |
+        build/exe-windows-msvc/_deps
+        build/exe-windows-msvc/ffmpeg
+      cache-key-files: |
+        cmake/bundledlibs.cmake
+        cmake/ffmpeg.cmake
+        cmake/platforms/windows.cmake
+      cache-key: exe-windows-msvc
+      # FFmpeg's configure runs under the runner's MSYS2, which needs make.
+      build-command: |
+        /c/msys64/usr/bin/pacman -S --noconfirm --needed make diffutils
+        export PATH="/c/msys64/usr/bin:$PATH"
+        cmake --preset exe-windows-msvc
+        cmake --build --preset exe-windows-msvc
 
   # The source recreation is a standalone CMake project that fetches and builds
   # its third-party libraries from source. Every header compiles on its own, the
@@ -59,7 +126,7 @@ jobs:
   # a row of timings on the run's summary page.
   recreation:
     name: Recreation
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@45bf3d2ed784d826f7951b407631311bce30d435 # v0.2.14
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@ffafe3aa09651e679cee3ce17f828cca46f29196 # v0.2.17
     permissions:
       contents: read
     with:
@@ -75,6 +142,7 @@ jobs:
       cache-key-files: |
         recreation/CMakeLists.txt
         recreation/cmake/*.cmake
+        cmake/ffmpeg.cmake
       # About 950 translation units, rebuilt with coverage flags on every run.
       ccache: true
       ccache-max-size: 1G
@@ -94,7 +162,7 @@ jobs:
   # carries those results from run to run.
   recreation-tidy:
     name: Recreation tidy
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@45bf3d2ed784d826f7951b407631311bce30d435 # v0.2.14
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@ffafe3aa09651e679cee3ce17f828cca46f29196 # v0.2.17
     permissions:
       contents: read
     with:
@@ -108,6 +176,7 @@ jobs:
       cache-key-files: |
         recreation/CMakeLists.txt
         recreation/cmake/*.cmake
+        cmake/ffmpeg.cmake
       # FFmpeg is the only compile, and only on a cold cache.
       ccache: true
       cache-key: recreation-tidy
@@ -120,7 +189,7 @@ jobs:
 
   lint:
     name: Lint
-    uses: NearlyTRex/Workflows/.github/workflows/lint.yml@45bf3d2ed784d826f7951b407631311bce30d435 # v0.2.14
+    uses: NearlyTRex/Workflows/.github/workflows/lint.yml@ffafe3aa09651e679cee3ce17f828cca46f29196 # v0.2.17
     permissions:
       contents: read
     with:

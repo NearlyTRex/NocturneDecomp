@@ -137,6 +137,11 @@ NOCTURNE_TEST(a_frame_calls_the_driver_the_way_it_always_has) {
     nocturne_trigl_gl_shutdown();
     gl_recorder::install();
 
+    // The blended draw is an overlay, and whether it is biased is the build's
+    // authenticity choice. The trace is of the renderer, not of that choice, so
+    // it is pinned to the default build's answer.
+    nocturne_trigl_overlay_bias = 1;
+
     // Bringing the device up is part of the trace on purpose. Building the
     // program and the vertex array is behaviour too, and a change to either
     // should be as visible as a change to a draw.

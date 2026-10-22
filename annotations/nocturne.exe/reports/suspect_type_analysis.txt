@@ -4,10 +4,10 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  undefined_data                  3940 ( 19.0%)
-  pointer_cast                    3537 ( 17.1%)
-  pointer_truncation              2889 ( 13.9%)
-  unrolled_memcpy                 1482 (  7.1%)
+  undefined_data                  3933 ( 19.0%)
+  pointer_cast                    3532 ( 17.0%)
+  pointer_truncation              2886 ( 13.9%)
+  unrolled_memcpy                 1482 (  7.2%)
   warning_overlapping_globals      855 (  4.1%)
   stack_param                      740 (  3.6%)
   unknown_field                    724 (  3.5%)
@@ -48,16 +48,16 @@ SUSPECT TYPE COUNTS
   extra_output                      19 (  0.1%)
   format_string_mismatch            17 (  0.1%)
   signed_shift_global_idiom         17 (  0.1%)
-  static_invalid_pointer_cast       12 (  0.1%)
   fast_sqrt_inline                  12 (  0.1%)
   phantom_float_to_int              12 (  0.1%)
+  static_invalid_pointer_cast       11 (  0.1%)
   fast_inv_sqrt_inline              11 (  0.1%)
   static_null_pointer_redundant_check    10 (  0.0%)
   inline_exp_idiom                  10 (  0.0%)
+  static_integer_division            9 (  0.0%)
   preinc_loop_idiom                  9 (  0.0%)
   static_null_pointer                9 (  0.0%)
   displaced_global_access            8 (  0.0%)
-  static_integer_division            7 (  0.0%)
   unresolved_register                7 (  0.0%)
   fnstsw_flag_artifact               5 (  0.0%)
   unknown_type                       5 (  0.0%)
@@ -88,7 +88,7 @@ SUSPECT TYPE COUNTS
   mem_magic_size                     1 (  0.0%)
 
 ====================================================================================================
-TYPE: undefined_data (3940 occurrences)
+TYPE: undefined_data (3933 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -470,9 +470,6 @@ Functions:
   core_set.cpp_CDemonSet_setLightingParameters_FUN_0050adc0
   core_set.cpp_CDemonSet_setupMirrorRendering_FUN_0050e080
   core_setdir.cpp_CDemonSet_FUN_005125a0
-  core_setdir.cpp_CDemonSet_FUN_00513670
-  core_setdir.cpp_CDemonSet_FUN_00513720
-  core_setdir.cpp_CDemonSet_refreshThumbs_FUN_00513610
   core_setdir.cpp_CDemonSet_renderVirtualDirectors_FUN_005138e0
   core_setdir.cpp_testCameraVisibility_FUN_00511d80
   core_setutil.cpp_C3DSLight_renderVolumetricSphere_FUN_005159a0
@@ -753,7 +750,7 @@ Functions:
   wincore_winrun.cpp_winMain_FUN_00559260
 
 ====================================================================================================
-TYPE: pointer_cast (3537 occurrences)
+TYPE: pointer_cast (3532 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -1197,9 +1194,9 @@ Functions:
   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0
   core_set.cpp_CDemonSet_setLightingParameters_FUN_0050adc0
   core_setdir.cpp_CDemonSet_FUN_005125a0
-  core_setdir.cpp_CDemonSet_FUN_00513720
   core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_005141f0
   core_setdir.cpp_CDemonSet_renderVirtualDirectors_FUN_005138e0
+  core_setdir.cpp_CDemonSet_saveThumbs_FUN_00513720
   core_setdir.cpp_testCameraVisibility_FUN_00511d80
   core_setutil.cpp_C3DSLight_load_FUN_00514a70
   core_setutil.cpp_C3DSLight_renderVolumetricSphere_FUN_005159a0
@@ -1506,7 +1503,7 @@ Functions:
   wincore_winrun.cpp_winMain_FUN_00559260
 
 ====================================================================================================
-TYPE: pointer_truncation (2889 occurrences)
+TYPE: pointer_truncation (2886 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -1852,8 +1849,8 @@ Functions:
   core_set.cpp_CDemonSet_renderEnvMapTriangles_FUN_0050d910
   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0
   core_setdir.cpp_CDemonSet_FUN_005125a0
-  core_setdir.cpp_CDemonSet_FUN_00513720
   core_setdir.cpp_CDemonSet_renderVirtualDirectors_FUN_005138e0
+  core_setdir.cpp_CDemonSet_saveThumbs_FUN_00513720
   core_setdir.cpp_testCameraVisibility_FUN_00511d80
   core_setutil.cpp_C3DSLight_load_FUN_00514a70
   core_setutil.cpp_C3DSLight_renderVolumetricSphere_FUN_005159a0
@@ -2477,7 +2474,7 @@ Functions:
   core_setcolid.cpp_CDemonSet_transferVoxelShadow_FUN_00511aa0
   core_setcolid.cpp_SDamageInfo_copy_FUN_00511ca0
   core_setdir.cpp_CDemonSet_FUN_005125a0
-  core_setdir.cpp_CDemonSet_FUN_00513720
+  core_setdir.cpp_CDemonSet_saveThumbs_FUN_00513720
   core_setdir.cpp_testCameraVisibility_FUN_00511d80
   core_setdir.cpp_testOBBIntersection_FUN_00513e80
   core_setutil.cpp_C3DSCamera_apply_FUN_005148b0
@@ -4059,8 +4056,8 @@ Functions:
   core_setcolid.cpp_CDemonSet_pushRaytraceState_FUN_005113e0
   core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_0050ffe0
   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00510a40
-  core_setdir.cpp_CDemonSet_FUN_00513720
   core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_005141f0
+  core_setdir.cpp_CDemonSet_saveThumbs_FUN_00513720
   core_setutil.cpp_C3DSCamera_apply_FUN_005148b0
   core_setutil.cpp_C3DSLight_apply_FUN_00515350
   core_setutil.cpp_C3DSLight_create_FUN_005151f0
@@ -4839,7 +4836,7 @@ Functions:
   core_set.cpp_CDemonSet_FUN_005090f0
   core_set.cpp_CDemonSet_FUN_0050e550
   core_setdir.cpp_CDemonSet_FUN_005125a0
-  core_setdir.cpp_CDemonSet_FUN_00513670
+  core_setdir.cpp_CDemonSet_writeThumbs_FUN_00513670
   core_stranger.cpp_FUN_005409c0
   engine_drender.cpp_FUN_004579c0
   engine_font.cpp_CBitFont_loadFromFile_FUN_00490210
@@ -6063,7 +6060,7 @@ Functions:
   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80
   core_set.cpp_CDemonSet_processActors_FUN_00509140
   core_set.cpp_CDemonSet_renderScene_FUN_00509a80
-  core_setdir.cpp_CDemonSet_FUN_00513720
+  core_setdir.cpp_CDemonSet_saveThumbs_FUN_00513720
   core_shotgun.cpp_CShotgun_fire_FUN_00515ea0
   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_0051e350
   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0051b920
@@ -6619,22 +6616,6 @@ Functions:
   wincore_wddvmem.cpp_swapBuffers_FUN_00553910
 
 ====================================================================================================
-TYPE: static_invalid_pointer_cast (12 occurrences)
-====================================================================================================
-
-Unique patterns:
-    12x  Cppcheck: invalid pointer cast
-
-Functions:
-  core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_0042a1e0
-  core_mimic.cpp_CMimic_setupCloth_FUN_004d5770
-  core_netgame.cpp_CNetGame_runLobby_FUN_004eb520
-  core_skeleton.cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_0051dcb0
-  core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_0051e350
-  core_skeleton.cpp_CDeformableModelInstance_showAllParts_FUN_0051dc90
-  core_stranger.cpp_CStranger_applyArmAimRotation_FUN_0053a260
-
-====================================================================================================
 TYPE: fast_sqrt_inline (12 occurrences)
 ====================================================================================================
 
@@ -6679,6 +6660,22 @@ Functions:
   core_crossbow.cpp_CCrossbow_fire_FUN_0043d1c0
   core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_004537d0
   core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760
+
+====================================================================================================
+TYPE: static_invalid_pointer_cast (11 occurrences)
+====================================================================================================
+
+Unique patterns:
+    11x  Cppcheck: invalid pointer cast
+
+Functions:
+  core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_0042a1e0
+  core_mimic.cpp_CMimic_setupCloth_FUN_004d5770
+  core_netgame.cpp_CNetGame_runLobby_FUN_004eb520
+  core_skeleton.cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_0051dcb0
+  core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_0051e350
+  core_skeleton.cpp_CDeformableModelInstance_showAllParts_FUN_0051dc90
+  core_stranger.cpp_CStranger_applyArmAimRotation_FUN_0053a260
 
 ====================================================================================================
 TYPE: fast_inv_sqrt_inline (11 occurrences)
@@ -6743,6 +6740,22 @@ Functions:
   core_weather.cpp_CWeather_update_FUN_00554980
 
 ====================================================================================================
+TYPE: static_integer_division (9 occurrences)
+====================================================================================================
+
+Unique patterns:
+     9x  Clang-Tidy: integer division in floating-point context (possible mistyped field)
+
+Functions:
+  cockpit_ckptutil.c_drawLineAA_FUN_0042f600
+  core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00416d40
+  core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042af70
+  core_dfilter.cpp_CDemonFilter_init_FUN_0044c190
+  core_script.cpp_CScript_getLetterboxHeight_FUN_004fe710
+  sound_mp3.cpp_calculateIntensityStereoRatio_FUN_004e60c0
+  sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_0052b880
+
+====================================================================================================
 TYPE: preinc_loop_idiom (9 occurrences)
 ====================================================================================================
 
@@ -6796,21 +6809,6 @@ Functions:
   core_set.cpp_CDemonSet_FUN_0050aa70
   engine_3d.c_dispatchMRGLToRenderer_FUN_00408fc0
   engine_3d.c_queueSortedPolygon_FUN_00405ab0
-
-====================================================================================================
-TYPE: static_integer_division (7 occurrences)
-====================================================================================================
-
-Unique patterns:
-     7x  Clang-Tidy: integer division in floating-point context (possible mistyped field)
-
-Functions:
-  cockpit_ckptutil.c_drawLineAA_FUN_0042f600
-  core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00416d40
-  core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042af70
-  core_dfilter.cpp_CDemonFilter_init_FUN_0044c190
-  sound_mp3.cpp_calculateIntensityStereoRatio_FUN_004e60c0
-  sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_0052b880
 
 ====================================================================================================
 TYPE: unresolved_register (7 occurrences)

@@ -2,20 +2,28 @@
 
 #include "common/fwd.h"
 #include "core/fwd.h"
+#include "core/motion/motioncontroller.h"
 #include "core/skeleton/deformablemodel.h"
 
 #include <cstdint>
 
 namespace nocturne::core {
 
-class CDeformableModelInstance {
+// A character's skinned model as it plays its motions. The virtual functions not ported yet quit
+// when called.
+class CDeformableModelInstance : public CMotionController {
 public:
     CDeformableModelInstance();
-    virtual ~CDeformableModelInstance();
+    ~CDeformableModelInstance() override;
+    CDeformableModelInstance(const CDeformableModelInstance &) = delete;
+    CDeformableModelInstance &operator=(const CDeformableModelInstance &) = delete;
+    CDeformableModelInstance(CDeformableModelInstance &&) = delete;
+    CDeformableModelInstance &operator=(CDeformableModelInstance &&) = delete;
 
-    virtual int findPatchToFrame(int source_motion_index, float source_frame,
-                                 int target_motion_index);
-    virtual void accumulateScaledRootMotion(float start_frame, float end_frame, float scale_factor);
+    int findPatchToFrame(int source_motion_index, float source_frame,
+                         int target_motion_index) override;
+    void accumulateScaledRootMotion(float start_frame, float end_frame,
+                                    float scale_factor) override;
 
     void resetToRestPose();
     void updateAnimationAndTransforms();

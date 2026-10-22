@@ -15,7 +15,6 @@ void __cdecl core_hotdemon_cpp_CHotDemon_archive_FUN_004f76c0(CHotDemon *this_pt
   core_actor_cpp_archiveFloat_FUN_0040b770(&(this_ptr->base).speed,"speed");
   model_ptr = &(this_ptr->base).base.model;
   core_actor_cpp_archiveDeformableModelInstance_FUN_0040b970(model_ptr,"modelName");
-  core_actor_cpp_archiveMotionState_FUN_0040b9f0
-            (&model_ptr->motion_controller,"motion state");
+  core_actor_cpp_archiveMotionState_FUN_0040b9f0(&model_ptr->base,"motion state");
   return;
 }

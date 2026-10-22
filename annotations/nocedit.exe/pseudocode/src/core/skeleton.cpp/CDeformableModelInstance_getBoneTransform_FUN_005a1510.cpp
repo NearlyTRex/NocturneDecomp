@@ -55,7 +55,7 @@ SPose * __cdecl core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_
            (local_14->bone_transform).pose_data.bone_rotations[0].z;
       pSVar2 = (SPose *)&(pSVar3->pose_data).bone_rotations[2].x;
       local_c->bone_scales[0] = (this_ptr->bone_transform).bone_scales[0];
-      this_ptr = (CDeformableModelInstance *)&(this_ptr->motion_controller).current_motion_index;
+      this_ptr = (CDeformableModelInstance *)&(this_ptr->base).current_motion_index;
       bone_transform = (SPose *)&(bone_transform->pose_data).bone_rotations[0].x;
       pSVar3->bone_model_matrices[0].m[0].w =
            (local_10->bone_transform).bone_model_matrices[0].m[0].w;
@@ -82,9 +82,9 @@ SPose * __cdecl core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_
       pSVar3->bone_model_matrices[0].m[2].z =
            (local_10->bone_transform).bone_model_matrices[0].m[2].z;
       iVar5 = iVar5 + 1;
-      local_10 = (CDeformableModelInstance *)(local_10->motion_controller).current_motion_name;
+      local_10 = (CDeformableModelInstance *)(local_10->base).current_motion_name;
       local_c = (SPose *)&(local_c->pose_data).root_position.y;
-      local_14 = (CDeformableModelInstance *)&(local_14->motion_controller).tween_speed;
+      local_14 = (CDeformableModelInstance *)&(local_14->base).tween_speed;
       pSVar3 = pSVar2;
     } while (iVar5 < (int)pSVar1);
   }

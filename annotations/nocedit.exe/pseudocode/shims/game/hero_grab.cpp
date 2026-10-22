@@ -39,7 +39,7 @@ const float k_escape_limit_seconds = 3.0f;
 
 CMotionController *controller(CHero *hero)
 {
-    return &(hero->base).model.motion_controller;
+    return &(hero->base).model.base;
 }
 
 int find_state(CHero *hero, const char *name)

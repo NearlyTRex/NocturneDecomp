@@ -610,7 +610,7 @@ static int CFileManager_managePodFiles_check_iVar2_0_check_0_4(CFileManager_mana
           else {
             if (local_44[local_20].action_index == 5) {
               engine_dosio_cpp_setFileAttributes_FUN_004819f0(local_24,0);
-              iVar2 = remove(local_24);
+              iVar2 = _remove(local_24);
               if (iVar2 == 0) {
                 local_4c = local_4c + 1;
               }

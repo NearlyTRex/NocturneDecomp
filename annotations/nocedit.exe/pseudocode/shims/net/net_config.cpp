@@ -127,8 +127,8 @@ static void net_load(void) {
     if (f == nullptr) {
         // For a file that does not exist yet the resolver still resolves the
         // directory component case-insensitively, so this lands inside the
-        // real system directory whatever its case.
-        net_write_template(resolved.c_str());
+        // real system directory whatever its case, or the user directory's.
+        net_write_template(watcom_resolve_fs_path(NET_INI_PATH, WatcomPathUse::Write).c_str());
         return;
     }
 

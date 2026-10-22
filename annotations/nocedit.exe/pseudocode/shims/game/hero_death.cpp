@@ -32,7 +32,7 @@ extern "C" void nocturne_hero_check_death(CHero *hero)
     if ((*(((character->base).vtable._uc)->_uc).getDeathState)(character) != DEATH_STATE_ALIVE) {
         return;
     }
-    desired    = (character->model).motion_controller.state_index;
+    desired    = (character->model).base.state_index;
     die_state  = nocturne_hero_motion_find_state(character, "DIE");
     dead_state = nocturne_hero_motion_find_state(character, "DEAD");
     if ((die_state < 0) || (desired == die_state) ||
@@ -93,7 +93,7 @@ extern "C" int nocturne_hero_revive(CHero *hero)
 
     character->hit_points = character->max_hit_points;
     core_motion_cpp_CMotionController_jumpToMotion_FUN_0052dde0
-        (&(character->model).motion_controller, 0, 0.0f);
+        (&(character->model).base, 0, 0.0f);
 
     // Dying is a DESIRED state, not just an animation: every death path
     // ends in setDesiredState with a death state, and the controller
@@ -109,7 +109,7 @@ extern "C" int nocturne_hero_revive(CHero *hero)
     stand_state = nocturne_hero_motion_find_state(character, "STAND");
     if (0 <= stand_state) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-            (&(character->model).motion_controller, stand_state, 1);
+            (&(character->model).base, stand_state, 1);
     }
     return 1;
 }

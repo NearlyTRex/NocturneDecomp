@@ -21,7 +21,10 @@ public:
 
     [[nodiscard]] const CDemonActorType &getActorType() const override;
 
-    CHero *createHero(EHeroType hero_type);
+    // A new hero of the type, named by the mission, standing here and facing as this place does.
+    // A type that isn't a hero's is fatal.
+    [[nodiscard]] std::unique_ptr<CHero> createHero(EHeroType hero_type, const CActor &actor,
+                                                    const CDemonMission &mission) const;
 
     // Which of the mission's heroes this place is for, the first being 0.
     [[nodiscard]] int getIndex() const;

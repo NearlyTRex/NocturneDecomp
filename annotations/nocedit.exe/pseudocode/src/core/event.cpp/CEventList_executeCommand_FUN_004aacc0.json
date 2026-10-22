@@ -8,15 +8,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 5057,
-    "complexity_score": 2138,
+    "complexity_score": 2136,
     "cross_reference_count": 1,
     "function_call_count": 53,
     "global_count": 177,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 2138,
+    "pseudocode_lines": 2136,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 7195
+    "total_lines": 7193
   },
   "cross_references": [
     {
@@ -1566,7 +1566,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 2032,
+      "line": 2030,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1575,7 +1575,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 2045,
+      "line": 2043,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1584,7 +1584,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 2069,
+      "line": 2067,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1593,7 +1593,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 2075,
+      "line": 2073,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1773,7 +1773,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1570,
+      "line": 1569,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1782,7 +1782,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1597,
+      "line": 1596,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1791,7 +1791,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1646,
+      "line": 1645,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1800,7 +1800,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1758,
+      "line": 1757,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1809,7 +1809,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1784,
+      "line": 1783,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1818,7 +1818,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1957,
+      "line": 1955,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1827,7 +1827,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1983,
+      "line": 1981,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1836,7 +1836,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 2081,
+      "line": 2079,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "resolution_source": "keep",
       "severity": "moderate",

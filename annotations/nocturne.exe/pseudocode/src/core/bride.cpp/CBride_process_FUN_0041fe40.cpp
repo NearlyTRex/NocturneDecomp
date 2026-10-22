@@ -65,8 +65,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_0041fe40(CBride *this_ptr,float d
     }
     pCVar1 = &(this_ptr->base).base.model;
     local_18 = -1.0;
-    pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                       (&pCVar1->motion_controller);
+    pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(&pCVar1->base);
     uVar8 = pSVar5->state_index;
     if (uVar8 < 5) {
       if (uVar8 == 0) {
@@ -75,8 +74,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_0041fe40(CBride *this_ptr,float d
           (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time)
           ;
           if ((this_ptr->base).victim != (CCharacter *)0x0) {
-            core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                      (&pCVar1->motion_controller,1,1);
+            core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar1->base,1,1);
             iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(this_ptr->sfx_handles[0]);
             if ((iVar4 == 0) &&
                (iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(this_ptr->sfx_handles[1]),
@@ -89,15 +87,14 @@ void __cdecl core_bride_cpp_CBride_process_FUN_0041fe40(CBride *this_ptr,float d
         }
         else {
           core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                    (&(this_ptr->base).base.model.motion_controller,1,1);
+                    (&(this_ptr->base).base.model.base,1,1);
         }
       }
       else if (uVar8 == 1) {
         if (this_ptr->action_timer <= 0.0) {
           local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(10.0,20.0);
           this_ptr->action_timer = local_14;
-          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                    (&pCVar1->motion_controller,3,1);
+          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar1->base,3,1);
           iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(this_ptr->sfx_handles[0]);
           if ((iVar4 == 0) &&
              (iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(this_ptr->sfx_handles[1]),
@@ -118,8 +115,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_0041fe40(CBride *this_ptr,float d
         if ((this_ptr->base).victim == (CCharacter *)0x0) {
           iVar4 = core_enemy_cpp_CEnemy_updatePatrol_FUN_0047a030(&this_ptr->base,delta_time);
           if (iVar4 == 0) {
-            core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                      (&pCVar1->motion_controller,0,1);
+            core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar1->base,0,1);
           }
         }
         else {
@@ -136,8 +132,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_0041fe40(CBride *this_ptr,float d
                              &(((this_ptr->base).victim)->base).location.position,pCVar9,pCVar6,
                              fVar10,fVar11);
           if (iVar4 < 0) {
-            core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                      (&pCVar1->motion_controller,0,1);
+            core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar1->base,0,1);
           }
           else if (((0 < iVar4) && ((this_ptr->base).attack_cooldown <= 0.0)) &&
                   (pCVar3 = (this_ptr->base).victim,
@@ -150,8 +145,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_0041fe40(CBride *this_ptr,float d
             else {
               iVar4 = 5;
             }
-            core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                      (&pCVar1->motion_controller,iVar4,1);
+            core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar1->base,iVar4,1);
             iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(this_ptr->sfx_handles[0]);
             if ((iVar4 == 0) &&
                (iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(this_ptr->sfx_handles[1]),
@@ -167,8 +161,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_0041fe40(CBride *this_ptr,float d
     else if (uVar8 < 6) {
       pCVar3 = (this_ptr->base).victim;
       if (pCVar3 == (CCharacter *)0x0) {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                  (&pCVar1->motion_controller,1,1);
+        core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar1->base,1,1);
       }
       else {
         pCVar7 = (*(((pCVar3->base).vtable._uc)->_uc).getGrabber)(pCVar3);
@@ -176,7 +169,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_0041fe40(CBride *this_ptr,float d
           local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.2,0.5);
           (this_ptr->base).attack_cooldown = local_14;
           local_20 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004e1e60
-                               (&pCVar1->motion_controller);
+                               (&pCVar1->base);
           local_4c = (double)local_20;
           local_14 = local_20;
           if (local_20 <= (float)3) {
@@ -227,16 +220,14 @@ void __cdecl core_bride_cpp_CBride_process_FUN_0041fe40(CBride *this_ptr,float d
           }
         }
         else {
-          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                    (&pCVar1->motion_controller,1,1);
+          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar1->base,1,1);
         }
       }
     }
     else if (uVar8 < 7) {
       pCVar3 = (this_ptr->base).victim;
       if (pCVar3 == (CCharacter *)0x0) {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                  (&pCVar1->motion_controller,1,1);
+        core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar1->base,1,1);
       }
       else {
         pCVar7 = (*(((pCVar3->base).vtable._uc)->_uc).getGrabber)(pCVar3);
@@ -244,7 +235,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_0041fe40(CBride *this_ptr,float d
           local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.2,0.5);
           (this_ptr->base).attack_cooldown = local_14;
           local_1c = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004e1e60
-                               (&pCVar1->motion_controller);
+                               (&pCVar1->base);
           local_54 = (double)local_1c;
           local_14 = local_1c;
           if (local_1c <= (float)8) {
@@ -300,8 +291,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_0041fe40(CBride *this_ptr,float d
           }
         }
         else {
-          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                    (&pCVar1->motion_controller,1,1);
+          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar1->base,1,1);
         }
       }
     }
@@ -333,7 +323,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_0041fe40(CBride *this_ptr,float d
                          ,pCVar9,pCVar6,min_distance,max_distance);
       if (iVar4 != 1) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                  (&(this_ptr->base).base.model.motion_controller,1,1);
+                  (&(this_ptr->base).base.model.base,1,1);
         (this_ptr->base).base.turn_angle_accumulator = 0.0;
       }
     }
@@ -345,7 +335,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_0041fe40(CBride *this_ptr,float d
     local_24 = delta_time * (this_ptr->base).speed;
     while (0.0 < local_24) {
       iVar4 = core_motion_cpp_CMotionController_advance_FUN_004e11c0
-                        (&(this_ptr->base).base.model.motion_controller,&local_24);
+                        (&(this_ptr->base).base.model.base,&local_24);
       if (iVar4 != 0x11) {
         core_charactr_cpp_CCharacter_processMotion_FUN_0042add0((CCharacter *)this_ptr,iVar4);
       }
@@ -367,7 +357,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_0041fe40(CBride *this_ptr,float d
       local_ec.y = local_b8 + (this_ptr->base).base.position_delta.y;
       local_ec.z = local_b4 + (this_ptr->base).base.position_delta.z;
       pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                         (&(this_ptr->base).base.model.motion_controller);
+                         (&(this_ptr->base).base.model.base);
       if (pSVar5->state_index != 1) {
         local_ec.x = local_ec.x + (this_ptr->base).base.model.accumulated_root_motion.x;
         local_ec.y = local_ec.y + (this_ptr->base).base.model.accumulated_root_motion.y;

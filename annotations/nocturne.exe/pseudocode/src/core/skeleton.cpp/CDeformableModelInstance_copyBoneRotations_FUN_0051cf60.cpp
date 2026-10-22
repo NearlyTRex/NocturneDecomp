@@ -36,7 +36,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_copyBoneRotations_FUN_00
         puVar5[(uint)bVar6 * -2 + 1] = puVar3[(uint)bVar6 * -2 + 1];
       }
       start_bone_index = start_bone_index + 1;
-      this_ptr = (CDeformableModelInstance *)&(this_ptr->motion_controller).tween_speed;
+      this_ptr = (CDeformableModelInstance *)&(this_ptr->base).tween_speed;
     } while (start_bone_index < this_ptr_00->bone_count);
   }
   return;

@@ -20,7 +20,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_processDamage_FUN_00557940(CWerewolf *t
   if (damage_info->damage_type == DAMAGE_TYPE_BURN) {
     core_werewolf_cpp_CWerewolf_playHowl_FUN_00557060(this_ptr);
     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-              (&(this_ptr->base).base.model.motion_controller,0x16,1);
+              (&(this_ptr->base).base.model.base,0x16,1);
     core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(&this_ptr->base,damage_info);
     return;
   }
@@ -40,11 +40,9 @@ void __cdecl core_werewolf_cpp_CWerewolf_processDamage_FUN_00557940(CWerewolf *t
   (this_ptr->base).base.hit_points = fVar1;
   if (fVar1 <= 0.0) {
     (this_ptr->base).base.hit_points = 0.0;
-    pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                       (&this_ptr_00->motion_controller);
+    pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(&this_ptr_00->base);
     if ((pSVar2->state_index != 0xd) && (pSVar2->state_index != 0xc)) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                (&this_ptr_00->motion_controller,0xc,1);
+      core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,0xc,1);
       if ((this_ptr->type == WEREWOLF_TYPE_TRAIN) &&
          (g_CDemonSet_PTR_005be368->last_switch_area_invalid != 0)) {
         fVar1 = (this_ptr->base).base.base.location.position.x;
@@ -66,24 +64,23 @@ void __cdecl core_werewolf_cpp_CWerewolf_processDamage_FUN_00557940(CWerewolf *t
     goto LAB_00557a49;
   }
   if (this_ptr->type != WEREWOLF_TYPE_FOREST) {
-    pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                       (&this_ptr_00->motion_controller);
+    pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(&this_ptr_00->base);
     iVar4 = pSVar2->state_index;
     if ((iVar4 == 0xe) || (iVar4 == 0xf)) {
       iVar4 = core_actor_cpp_getRandomInt_FUN_0040de00(0,2);
       if (iVar4 == 0) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                  (&(this_ptr->base).base.model.motion_controller,9,1);
+                  (&(this_ptr->base).base.model.base,9,1);
       }
       if (iVar4 == 1) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                  (&(this_ptr->base).base.model.motion_controller,10,1);
+                  (&(this_ptr->base).base.model.base,10,1);
       }
       if (iVar4 == 2) {
         iVar4 = 0xb;
 LAB_00557b5d:
         core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                  (&(this_ptr->base).base.model.motion_controller,iVar4,1);
+                  (&(this_ptr->base).base.model.base,iVar4,1);
       }
     }
     else if ((((iVar4 == 0) || (iVar4 == 1)) || (iVar4 == 2)) ||
@@ -91,11 +88,11 @@ LAB_00557b5d:
       iVar4 = core_actor_cpp_getRandomInt_FUN_0040de00(0,2);
       if (iVar4 == 0) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                  (&(this_ptr->base).base.model.motion_controller,0x10,1);
+                  (&(this_ptr->base).base.model.base,0x10,1);
       }
       if (iVar4 == 1) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                  (&(this_ptr->base).base.model.motion_controller,0x11,1);
+                  (&(this_ptr->base).base.model.base,0x11,1);
       }
       if (iVar4 == 2) {
         iVar4 = 0x12;

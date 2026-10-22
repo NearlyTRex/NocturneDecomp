@@ -58,13 +58,13 @@ void __cdecl core_stranger_cpp_CStranger_makeDrawDecision_FUN_005bfb60(CStranger
   }
   pCVar8 = &(this_ptr->base).base.model;
   fVar4 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                    (&pCVar8->motion_controller,0x28);
+                    (&pCVar8->base,0x28);
   fVar5 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                    (&pCVar8->motion_controller,0x29);
+                    (&pCVar8->base,0x29);
   fVar6 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                    (&pCVar8->motion_controller,0x24);
+                    (&pCVar8->base,0x24);
   fVar7 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                    (&pCVar8->motion_controller,0x22);
+                    (&pCVar8->base,0x22);
   local_f8 = (1.0 - (fVar7 + fVar6 + fVar5 + fVar4)) * local_f8;
   if (local_f8 < 0.0) {
     local_f8 = 0.0;
@@ -72,10 +72,10 @@ void __cdecl core_stranger_cpp_CStranger_makeDrawDecision_FUN_005bfb60(CStranger
   if ((this_ptr->base).base.layer_action_index != 0xe) goto LAB_005bfd3a;
   pCVar8 = &(this_ptr->base).base.model;
   fVar2 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_0052e2b0
-                    (&pCVar8->motion_controller);
+                    (&pCVar8->base);
   local_1c = 1.0;
   pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                     (&pCVar8->motion_controller);
+                     (&pCVar8->base);
   iVar9 = pSVar3->state_index;
   if ((iVar9 == 0x17) || (iVar9 == 0x18)) {
     fVar4 = fVar2 + (float)-0.75;
@@ -110,7 +110,7 @@ LAB_005bfd3a:
   local_20 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460
                        (&pCVar4->motion_list,pcVar14,iVar15);
   local_24 = core_motion_cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
-                       (&pCVar8->motion_controller,local_20,(this_ptr->base).base.layer_action_t);
+                       (&pCVar8->base,local_20,(this_ptr->base).base.layer_action_t);
   if ((((this_ptr->base).base.layer_action_index == 9) &&
       (1.0 <= (this_ptr->base).base.layer_action_t)) && (this_ptr->can_grab_weapon != 0)) {
     iVar9 = 1;
@@ -120,7 +120,7 @@ LAB_005bfd3a:
                          (&this_ptr_00->motion_list,motion_name,iVar9);
     fVar4 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.0,1.0);
     local_24 = core_motion_cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
-                         (&pCVar8->motion_controller,local_20,fVar4);
+                         (&pCVar8->base,local_20,fVar4);
   }
   core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
             (&(this_ptr->base).base.model,local_20,local_24,local_f8,g_StrangerIndices[0x11],

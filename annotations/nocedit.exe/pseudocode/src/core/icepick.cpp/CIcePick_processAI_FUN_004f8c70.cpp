@@ -157,7 +157,7 @@ void __cdecl core_icepick_cpp_CIcePick_processAI_FUN_004f8c70(CIcePick *this_ptr
         }
         else {
           pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                             (&this_ptr_01->motion_controller);
+                             (&this_ptr_01->base);
           if ((pSVar8->state_index != 2) && (pSVar8->state_index != 1)) {
             (this_ptr->base).player_input.action_state.fire = 1;
           }
@@ -165,8 +165,8 @@ void __cdecl core_icepick_cpp_CIcePick_processAI_FUN_004f8c70(CIcePick *this_ptr
         (this_ptr->base).base.hero_proximity_timer = 0.0;
       }
       else {
-        pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                           (&this_ptr_01->motion_controller);
+        pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(&this_ptr_01->base)
+        ;
         if ((pSVar5->state_index == 10) && (this_ptr->guns_drawn != 0)) {
           (this_ptr->base).player_input.action_state.draw = 1;
         }

@@ -4,6 +4,7 @@
 #include "core/set/demonset.h"
 #include "platform/mrglprimitivequad.h"
 #include "platform/rendervertex.h"
+#include "tests/mocks/core/setparts.h"
 #include "tests/mocks/engine/demonrendererfixture.h"
 
 #include <gmock/gmock.h>
@@ -77,7 +78,9 @@ protected:
     // Each list drawn: its polygons, and the texture current for it by width.
     std::vector<std::array<int, 2>> lists_;
     int single_polygons_ = 0;
-    CDemonSet set_{demon_renderer_, matrix_, special_};
+    CSetParts set_parts_{dosio_};
+    CDemonSet set_{
+        set_parts_.owners(demon_renderer_, matrix_, special_, two_d_, screen_, raw_input_)};
     CKeyFramedModel model_{dosio_};
 };
 

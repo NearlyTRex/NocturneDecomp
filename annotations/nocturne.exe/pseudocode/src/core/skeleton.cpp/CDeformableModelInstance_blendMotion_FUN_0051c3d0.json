@@ -2,62 +2,8 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 5,
-        "line": 20,
-        "message": "unknown type name 'FLOATING_SAVE_AREA'"
-      },
-      {
-        "category": "other",
-        "column": 5,
-        "line": 52,
-        "message": "unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?"
-      },
-      {
-        "category": "other",
-        "column": 5,
-        "line": 53,
-        "message": "unknown type name 'PCONTEXT'"
-      },
-      {
-        "category": "other",
-        "column": 85,
-        "line": 258,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 80,
-        "line": 267,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 496,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 496,
-        "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 497,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 497,
-        "message": "exponent has no digits"
-      },
-      {
         "category": "undeclared_identifier",
-        "column": 27,
+        "column": 17,
         "line": 72,
         "message": "use of undeclared identifier 'stack0xfffff6c8'"
       }
@@ -583,7 +529,7 @@
       "line": 65,
       "match": "&stack0xfffff6c8",
       "severity": "moderate",
-      "text": "&local_5c,&stack0xfffff6c8);",
+      "text": "&stack0xfffff6c8);",
       "type": "stack_ref"
     },
     {
@@ -1039,7 +985,7 @@
       "line": 100,
       "match": "local_34 = (T *)&(local_34->FIELD).SUBFIELD",
       "severity": "moderate",
-      "text": "local_34 = (CDeformableModelInstance *)&(local_34->motion_controller).tween_speed;",
+      "text": "local_34 = (CDeformableModelInstance *)&(local_34->base).tween_speed;",
       "type": "shadow_pointer_walk"
     },
     {
@@ -1055,7 +1001,7 @@
       "line": 200,
       "match": "local_38 = (T *)&(local_38->FIELD).SUBFIELD",
       "severity": "moderate",
-      "text": "local_38 = (CDeformableModelInstance *)&(local_38->motion_controller).tween_speed;",
+      "text": "local_38 = (CDeformableModelInstance *)&(local_38->base).tween_speed;",
       "type": "shadow_pointer_walk"
     }
   ]

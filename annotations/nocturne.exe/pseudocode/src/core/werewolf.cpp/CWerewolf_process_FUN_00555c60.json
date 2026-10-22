@@ -2,99 +2,45 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 5,
-        "line": 20,
-        "message": "unknown type name 'FLOATING_SAVE_AREA'"
-      },
-      {
-        "category": "other",
-        "column": 5,
-        "line": 52,
-        "message": "unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?"
-      },
-      {
-        "category": "other",
-        "column": 5,
-        "line": 53,
-        "message": "unknown type name 'PCONTEXT'"
-      },
-      {
-        "category": "other",
-        "column": 85,
-        "line": 258,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 80,
-        "line": 267,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 496,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 496,
-        "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 497,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 497,
-        "message": "exponent has no digits"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 77,
-        "line": 211,
+        "line": 209,
         "message": "use of undeclared identifier 'stack0xfffffce0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 39,
-        "line": 213,
+        "line": 211,
         "message": "use of undeclared identifier 'stack0xfffffce0'"
       },
       {
         "category": "format_error",
         "column": 55,
-        "line": 274,
+        "line": 272,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "type_error",
         "column": 15,
-        "line": 337,
+        "line": 335,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
       {
         "category": "type_error",
         "column": 15,
-        "line": 338,
+        "line": 336,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
       {
         "category": "format_error",
         "column": 48,
-        "line": 348,
+        "line": 346,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 85,
-        "line": 655,
+        "line": 650,
         "message": "format specifies type 'char *' but the argument has type 'CWerewolf *' [-Werror,-Wformat]"
       }
     ],
@@ -104,12 +50,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1745,
-    "complexity_score": 898,
+    "complexity_score": 893,
     "cross_reference_count": 0,
     "function_call_count": 35,
     "global_count": 34,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 718,
+    "pseudocode_lines": 713,
     "suspect_count": 14,
     "suspect_types": [
       "pointer_cast",
@@ -121,7 +67,7 @@
       "unrolled_memcpy",
       "unrolled_memset"
     ],
-    "total_lines": 2463
+    "total_lines": 2458
   },
   "cross_references": [],
   "function": {
@@ -1238,7 +1184,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 204,
+      "line": 202,
       "match": "&stack0xfffffce0",
       "severity": "moderate",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0((SDamageInfo *)&stack0xfffffce0);",
@@ -1246,7 +1192,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 206,
+      "line": 204,
       "match": "&stack0xfffffce0",
       "severity": "moderate",
       "text": "pSVar17 = (SDamageInfo *)&stack0xfffffce0;",
@@ -1254,7 +1200,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 330,
+      "line": 328,
       "match": "._0_4_",
       "severity": "mild",
       "text": "uVar18._0_4_ = 0.5;",
@@ -1262,7 +1208,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 331,
+      "line": 329,
       "match": "._4_4_",
       "severity": "mild",
       "text": "uVar18._4_4_ = 0.17453292;",
@@ -1270,7 +1216,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 338,
+      "line": 336,
       "match": "in_stack_fffffcec",
       "severity": "moderate",
       "text": ",SUB84(uVar18,4),in_stack_fffffcec);",
@@ -1278,7 +1224,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 338,
+      "line": 336,
       "match": "SUB84(",
       "severity": "moderate",
       "text": ",SUB84(uVar18,4),in_stack_fffffcec);",
@@ -1286,7 +1232,7 @@
     },
     {
       "description": "Raw hex address 0x555d7d assigned to bare local `iVar6`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar6` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 121,
+      "line": 120,
       "match": "0x555d7d",
       "severity": "moderate",
       "text": "iVar6 = 0x555d7d;",
@@ -1294,7 +1240,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 355,
+      "line": 353,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_bc.x = local_194.x;",
@@ -1310,7 +1256,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 325,
+      "line": 323,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -1318,7 +1264,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 705,
+      "line": 700,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -1326,7 +1272,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 709,
+      "line": 704,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.position_delta.z = 0.0;",
@@ -1334,7 +1280,7 @@
     },
     {
       "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
-      "line": 386,
+      "line": 383,
       "match": "(TYPE *) ((int)NAME ...) split across lines",
       "severity": "moderate",
       "text": "(*(CDemonActor **)",

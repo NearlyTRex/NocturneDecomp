@@ -35,7 +35,7 @@ void __cdecl core_charactr_cpp_CCharacter_buildLayerActionTransitionCosts_FUN_00
       iVar6 = iVar6 + 1;
     } while (iVar6 < 0x14);
     this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890
-                            (&(this_ptr->model).motion_controller);
+                            (&(this_ptr->model).base);
     iVar6 = 0;
     if (0 < this_ptr->layer_action_count) {
       pcVar8 = this_ptr->layer_actions[0].motion_name;

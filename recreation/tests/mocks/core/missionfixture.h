@@ -14,6 +14,7 @@
 #include "engine/zraster/zraster.h"
 #include "platform/rendervertex.h"
 #include "support/newmsg/newmsg.h"
+#include "tests/mocks/core/setparts.h"
 #include "tests/mocks/platform/mockosfontfactory.h"
 #include "tests/mocks/shape/picklistfixture.h"
 
@@ -41,7 +42,9 @@ protected:
     engine::CDemonRenderer demon_renderer_{
         matrix_,          two_d_,    three_d_, vertex_buffer_,           special_, prim_, zraster_,
         current_texture_, textures_, screen_,  &transformAndClipGeometry};
-    CDemonSet set_{demon_renderer_, matrix_, special_};
+    CSetParts set_parts_{dosio_};
+    CDemonSet set_{
+        set_parts_.owners(demon_renderer_, matrix_, special_, two_d_, screen_, raw_input_)};
     ::testing::NiceMock<platform::MockOsFontFactory> os_fonts_;
     support::CNewMsg messages_{dosio_};
     CDFont fonts_{dosio_, screen_, two_d_, three_d_, colors_, os_fonts_, messages_, editor_tools_};
@@ -61,6 +64,7 @@ protected:
                                              .screen = screen_};
     CDemonMission mission_{{.dosio = dosio_,
                             .messages = messages_,
+                            .game = game_,
                             .actor = actor_,
                             .level_loader = level_loader_,
                             .textures = textures_,

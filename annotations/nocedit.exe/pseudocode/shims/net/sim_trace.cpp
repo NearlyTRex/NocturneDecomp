@@ -66,7 +66,8 @@ static int s_trace_truncated = 0;
 static FILE *trace_file(void)
 {
     if ((s_trace == (FILE *)0) && (s_open_failed == 0)) {
-        s_trace = std::fopen("nocturne_simtrace.log", s_trace_truncated ? "a" : "w");
+        s_trace = std::fopen(watcom_log_path("nocturne_simtrace.log").c_str(),
+                             s_trace_truncated ? "a" : "w");
         if (s_trace == (FILE *)0) {
             s_open_failed = 1;
         } else {
@@ -608,7 +609,7 @@ extern "C" void nocturne_sim_trace_frame(int sequence_number)
                      (double)character->base.location.position.z,
                      character->base.location.area_id,
                      (double)character->hit_points,
-                     character->model.motion_controller.state_index,
+                     character->model.base.state_index,
                      victim_slot, trace_slot_name(victim_slot),
                      script_slot, trace_slot_name(script_slot),
                      in_combat, (double)search_timer);

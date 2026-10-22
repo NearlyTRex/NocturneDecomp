@@ -23,8 +23,7 @@ void __cdecl core_charactr_cpp_CCharacter_applyGesture_FUN_0042d3d0(CCharacter *
       core_main_c_displayErrorAndQuit_FUN_00506f10("CCharacter::applyGesture - never set gestureBranchRoot for actor %s",this_ptr);
     }
     iVar1 = this_ptr->gesture_motion_index;
-    pCVar4 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
-                       (&(this_ptr->model).motion_controller);
+    pCVar4 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0(&(this_ptr->model).base);
     fVar2 = 1.0 / (pCVar4->motions[iVar1].fps * 0.3f);
     fVar3 = this_ptr->gesture_frame * fVar2;
     fVar1 = ((float)pCVar4->motions[iVar1].frame_count - this_ptr->gesture_frame) * fVar2;

@@ -32,16 +32,11 @@ void __cdecl core_scat_cpp_CScat_blendLayerAction_FUN_004fcff0(CScat *this_ptr)
     local_28 = (1.0 - (this_ptr->base).base.layer_action_t) * local_28;
   }
   pCVar1 = &(this_ptr->base).base.model;
-  fVar2 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
-                    (&pCVar1->motion_controller,4);
-  fVar3 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
-                    (&pCVar1->motion_controller,5);
-  fVar4 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
-                    (&pCVar1->motion_controller,0xc);
-  fVar5 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
-                    (&pCVar1->motion_controller,0xd);
-  fVar6 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
-                    (&pCVar1->motion_controller,0xe);
+  fVar2 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0(&pCVar1->base,4);
+  fVar3 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0(&pCVar1->base,5);
+  fVar4 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0(&pCVar1->base,0xc);
+  fVar5 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0(&pCVar1->base,0xd);
+  fVar6 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0(&pCVar1->base,0xe);
   local_28 = (1.0 - (fVar6 + fVar5 + fVar4 + fVar3 + fVar2)) * local_28;
   if (local_28 < 0.0) {
     local_28 = 0.0;
@@ -58,7 +53,7 @@ void __cdecl core_scat_cpp_CScat_blendLayerAction_FUN_004fcff0(CScat *this_ptr)
     iVar7 = core_motion_cpp_CMotionList_findMotionIndex_FUN_004e1010
                       (&this_ptr_00->motion_list,motion_name,iVar7);
     fVar2 = core_motion_cpp_CMotionController_markerPositionToFrame_FUN_004e1f50
-                      (&pCVar1->motion_controller,iVar7,(this_ptr->base).base.layer_action_t);
+                      (&pCVar1->base,iVar7,(this_ptr->base).base.layer_action_t);
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
               (pCVar1,iVar7,fVar2,local_28,_DAT_01e533c8,
                core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650);

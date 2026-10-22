@@ -1,80 +1,25 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 5,
-        "line": 20,
-        "message": "unknown type name 'FLOATING_SAVE_AREA'"
-      },
-      {
-        "category": "other",
-        "column": 5,
-        "line": 52,
-        "message": "unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?"
-      },
-      {
-        "category": "other",
-        "column": 5,
-        "line": 53,
-        "message": "unknown type name 'PCONTEXT'"
-      },
-      {
-        "category": "other",
-        "column": 85,
-        "line": 258,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 80,
-        "line": 267,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 496,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 496,
-        "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 497,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 497,
-        "message": "exponent has no digits"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 980,
-    "complexity_score": 514,
+    "complexity_score": 504,
     "cross_reference_count": 0,
     "function_call_count": 25,
     "global_count": 23,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 389,
+    "pseudocode_lines": 379,
     "suspect_count": 11,
     "suspect_types": [
       "undefined_data",
       "unrolled_memset",
       "warning_type_propagation"
     ],
-    "total_lines": 1369
+    "total_lines": 1359
   },
   "cross_references": [],
   "function": {
@@ -791,7 +736,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 194,
+      "line": 187,
       "match": "DAT_00764b30",
       "severity": "mild",
       "text": "DAT_00764b30);",
@@ -799,7 +744,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 214,
+      "line": 207,
       "match": "DAT_00764b34",
       "severity": "mild",
       "text": "DAT_00764b34);",
@@ -807,7 +752,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 261,
+      "line": 252,
       "match": "DAT_00764b34",
       "severity": "mild",
       "text": "DAT_00764b34);",
@@ -815,7 +760,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 286,
+      "line": 277,
       "match": "DAT_00764b30",
       "severity": "mild",
       "text": "DAT_00764b30);",
@@ -823,7 +768,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 376,
+      "line": 366,
       "match": "DAT_00764b40",
       "severity": "mild",
       "text": "((CCharacter *)this_ptr,this_ptr->part_indices[0],DAT_00764b40,0.2);",
@@ -831,7 +776,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 379,
+      "line": 369,
       "match": "DAT_00764b38",
       "severity": "mild",
       "text": "((CCharacter *)this_ptr,this_ptr->part_indices[1],DAT_00764b38,0.2);",
@@ -839,7 +784,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 382,
+      "line": 372,
       "match": "DAT_00764b44",
       "severity": "mild",
       "text": "((CCharacter *)this_ptr,this_ptr->part_indices[2],DAT_00764b44,0.2);",
@@ -847,7 +792,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 385,
+      "line": 375,
       "match": "DAT_00764b3c",
       "severity": "mild",
       "text": "((CCharacter *)this_ptr,this_ptr->part_indices[3],DAT_00764b3c,0.2);",
@@ -855,7 +800,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 388,
+      "line": 378,
       "match": "DAT_00764b2c",
       "severity": "mild",
       "text": "((CCharacter *)this_ptr,this_ptr->part_indices[8],DAT_00764b2c,0.7);",
@@ -863,7 +808,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 333,
+      "line": 323,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",

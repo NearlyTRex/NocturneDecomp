@@ -97,7 +97,7 @@ int __cdecl engine_ini_cpp_CIni_writeProfileString_FUN_004bd480(CIni *this_ptr,c
   }
   _fclose(stream);
   _fclose(file);
-  remove(filename);
-  rename(acStack_216 + 2,filename);
+  _remove(filename);
+  _rename(acStack_216 + 2,filename);
   return 1;
 }

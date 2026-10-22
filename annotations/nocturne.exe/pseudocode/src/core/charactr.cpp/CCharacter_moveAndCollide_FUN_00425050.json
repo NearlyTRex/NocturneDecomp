@@ -2,60 +2,6 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 5,
-        "line": 20,
-        "message": "unknown type name 'FLOATING_SAVE_AREA'"
-      },
-      {
-        "category": "other",
-        "column": 5,
-        "line": 52,
-        "message": "unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?"
-      },
-      {
-        "category": "other",
-        "column": 5,
-        "line": 53,
-        "message": "unknown type name 'PCONTEXT'"
-      },
-      {
-        "category": "other",
-        "column": 85,
-        "line": 258,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 80,
-        "line": 267,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 496,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 496,
-        "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 497,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 497,
-        "message": "exponent has no digits"
-      },
-      {
         "category": "incompatible_types",
         "column": 18,
         "line": 89,
@@ -64,56 +10,110 @@
       {
         "category": "other",
         "column": 22,
-        "line": 187,
+        "line": 186,
         "message": "comparison between pointer and integer ('undefined4' (aka 'unsigned int') and 'CDemonActor *')"
       },
       {
         "category": "incompatible_types",
         "column": 48,
-        "line": 188,
+        "line": 187,
         "message": "incompatible pointer to integer conversion assigning to 'undefined4' (aka 'unsigned int') from 'struct CDemonActor *'"
       },
       {
         "category": "undeclared_identifier",
         "column": 33,
-        "line": 191,
+        "line": 190,
         "message": "use of undeclared identifier 'DAT_014b89e8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 192,
+        "line": 191,
         "message": "use of undeclared identifier '_DAT_014b89e8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 193,
+        "line": 192,
         "message": "use of undeclared identifier '_DAT_014b89ec'"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 194,
+        "line": 193,
         "message": "use of undeclared identifier '_DAT_014b89f0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 35,
-        "line": 196,
+        "line": 195,
         "message": "use of undeclared identifier 'DAT_014b89f4'"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 197,
+        "line": 196,
         "message": "use of undeclared identifier '_DAT_014b89f4'"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 198,
+        "line": 197,
         "message": "use of undeclared identifier '_DAT_014b89f8'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 21,
+        "line": 198,
+        "message": "use of undeclared identifier '_DAT_014b89fc'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 33,
+        "line": 200,
+        "message": "use of undeclared identifier 'DAT_014b8a00'; did you mean 'DAT_004B8F00'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 19,
+        "line": 201,
+        "message": "use of undeclared identifier '_DAT_014b8a00'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 19,
+        "line": 202,
+        "message": "use of undeclared identifier '_DAT_014b8a04'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 19,
+        "line": 203,
+        "message": "use of undeclared identifier '_DAT_014b8a08'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 35,
+        "line": 225,
+        "message": "use of undeclared identifier 'DAT_014b89e8'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 21,
+        "line": 226,
+        "message": "use of undeclared identifier '_DAT_014b89e8'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 21,
+        "line": 227,
+        "message": "use of undeclared identifier '_DAT_014b89ec'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 21,
+        "line": 228,
+        "message": "use of undeclared identifier '_DAT_014b89f0'"
       }
     ],
     "success": false,
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 682,
-    "complexity_score": 551,
+    "complexity_score": 550,
     "cross_reference_count": 36,
     "function_call_count": 9,
     "global_count": 28,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 306,
+    "pseudocode_lines": 305,
     "suspect_count": 21,
     "suspect_types": [
       "pointer_cast",
@@ -138,7 +138,7 @@
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 988
+    "total_lines": 987
   },
   "cross_references": [
     {
@@ -974,7 +974,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 101,
+      "line": 100,
       "match": "(SMotion *)((int)pSVar11",
       "severity": "moderate",
       "text": "pSVar11 = (SMotion *)((int)pSVar11 + (uint)bVar13 * -2 + 1);",
@@ -982,7 +982,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 180,
+      "line": 179,
       "match": "DAT_00765a9c",
       "severity": "mild",
       "text": "if (DAT_00765a9c == (CDemonActor *)0x0) {",
@@ -990,7 +990,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 181,
+      "line": 180,
       "match": "DAT_00765a9c",
       "severity": "mild",
       "text": "DAT_00765a9c = g_CDemonSet_PTR_005be368->collision_actor;",
@@ -998,7 +998,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 184,
+      "line": 183,
       "match": "DAT_014b89e8",
       "severity": "mild",
       "text": "if (pCVar7 != (CVector3f *)&DAT_014b89e8) {",
@@ -1006,7 +1006,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 189,
+      "line": 188,
       "match": "DAT_014b89f4",
       "severity": "mild",
       "text": "if (local_28 != (CVector3f *)&DAT_014b89f4) {",
@@ -1014,7 +1014,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 194,
+      "line": 193,
       "match": "DAT_014b8a00",
       "severity": "mild",
       "text": "if (pCVar6 != (CVector3f *)&DAT_014b8a00) {",
@@ -1022,7 +1022,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 219,
+      "line": 218,
       "match": "DAT_014b89e8",
       "severity": "mild",
       "text": "if (pCVar7 != (CVector3f *)&DAT_014b89e8) {",
@@ -1030,7 +1030,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 224,
+      "line": 223,
       "match": "DAT_014b89f4",
       "severity": "mild",
       "text": "if (pCVar9 != (CVector3f *)&DAT_014b89f4) {",
@@ -1038,7 +1038,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 229,
+      "line": 228,
       "match": "DAT_014b8a00",
       "severity": "mild",
       "text": "if (local_2c != (CVector3f *)&DAT_014b8a00) {",
@@ -1046,7 +1046,7 @@
     },
     {
       "description": "Pointer value `pSVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 101,
+      "line": 100,
       "match": "(int)pSVar11",
       "severity": "moderate",
       "text": "pSVar11 = (SMotion *)((int)pSVar11 + (uint)bVar13 * -2 + 1);",
@@ -1078,7 +1078,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 117,
+      "line": 116,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->velocity).z = 0.0;",
@@ -1086,7 +1086,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 135,
+      "line": 134,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "pCVar6->z = 0.0;",
@@ -1094,7 +1094,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 138,
+      "line": 137,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "pCVar9->z = 0.0;",
@@ -1102,7 +1102,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 302,
+      "line": 301,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->velocity).z = 0.0;",
@@ -1110,7 +1110,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 97,
+      "line": 96,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",

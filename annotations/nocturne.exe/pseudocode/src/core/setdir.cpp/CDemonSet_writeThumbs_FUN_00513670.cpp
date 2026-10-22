@@ -1,12 +1,12 @@
-// Name: core_setdir.cpp_CDemonSet_FUN_00513670
+// Name: core_setdir.cpp_CDemonSet_writeThumbs_FUN_00513670
 // Address: 00513670
 // Address Range: [[00513670, 00513715]]
 // Convention: __cdecl
-// Signature: void __cdecl core_setdir_cpp_CDemonSet_FUN_00513670(CDemonSet *this_ptr,char *param_2)
+// Signature: void __cdecl core_setdir_cpp_CDemonSet_writeThumbs_FUN_00513670(CDemonSet *this_ptr,char *param_2)
 
 #include "nocturne.h"
 
-void __cdecl core_setdir_cpp_CDemonSet_FUN_00513670(CDemonSet *this_ptr,char *param_2)
+void __cdecl core_setdir_cpp_CDemonSet_writeThumbs_FUN_00513670(CDemonSet *this_ptr,char *param_2)
 
 {
   _FILE *file;
@@ -17,7 +17,7 @@ void __cdecl core_setdir_cpp_CDemonSet_FUN_00513670(CDemonSet *this_ptr,char *pa
     g_CurrentLineNumber = 674;
     core_main_c_displayErrorAndQuit_FUN_004c8440("Can't create %s",param_2);
   }
-  _fwrite(&DAT_020875f8,0x3000,this_ptr->camera_count,file);
+  _fwrite(g_ThumbZBufferTable,0x3000,this_ptr->camera_count,file);
   if ((file->_flag & 0x20) == 0) {
     _fclose(file);
     return;

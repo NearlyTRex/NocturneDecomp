@@ -10,7 +10,7 @@ int __cdecl shape_meshlod_cpp_CLodMesh_initializeFromPrecomputedData_FUN_0051b8a
 
 {
   _mkdir("meshlod");
-  remove("meshlod\\simplify.log");
+  _remove("meshlod\\simplify.log");
   shape_meshlod_cpp_CLodMesh_normalizeAndCenterMesh_FUN_00516e10(this_ptr);
   shape_meshlod_cpp_CLodMesh_createNextLOD_FUN_00516f50(this_ptr);
   shape_meshlod_cpp_CLodMesh_gridLoad_FUN_0051d2d0(this_ptr->next_lod,file_handle);

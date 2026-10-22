@@ -145,4 +145,28 @@ std::span<const int> C3DSCamera::getPVSList() const {
     return pvs_list_;
 }
 
+void C3DSCamera::setAmbientValue(float ambient_value) {
+    ambient_value_ = ambient_value;
+}
+
+void C3DSCamera::setCameraGroup(int camera_group) {
+    camera_group_ = camera_group;
+}
+
+void C3DSCamera::setEnabled(bool enabled) {
+    enabled_ = enabled;
+}
+
+float C3DSCamera::getAmbientValue() const {
+    return ambient_value_;
+}
+
+int C3DSCamera::getCameraGroup() const {
+    return camera_group_;
+}
+
+bool C3DSCamera::getEnabled() const {
+    return enabled_;
+}
+
 } // namespace nocturne::core

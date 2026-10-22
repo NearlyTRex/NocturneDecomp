@@ -85,8 +85,8 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FU
         (pCVar4->bone_transform).bone_model_matrices[0].m[1].z = local_3c.y;
         (pCVar4->bone_transform).bone_model_matrices[0].m[2].z = local_3c.z;
       }
-      pCVar2 = (CDeformableModelInstance *)&(pCVar2->motion_controller).current_motion_index;
-      pCVar4 = (CDeformableModelInstance *)(pCVar4->motion_controller).current_motion_name;
+      pCVar2 = (CDeformableModelInstance *)&(pCVar2->base).current_motion_index;
+      pCVar4 = (CDeformableModelInstance *)(pCVar4->base).current_motion_name;
       iVar3 = iVar3 + 1;
       local_24 = local_24 + 1;
       local_1c = local_1c + 1;

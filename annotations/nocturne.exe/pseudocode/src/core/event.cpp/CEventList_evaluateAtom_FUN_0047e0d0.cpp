@@ -551,7 +551,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
                   *parse_position = *parse_position + local_9c;
                 }
                 else {
-                  local_dc = (uint)((pCVar10->base).model.motion_controller.state_index != 0);
+                  local_dc = (uint)((pCVar10->base).model.base.state_index != 0);
                   *parse_position = *parse_position + local_9c;
                 }
                 goto LAB_0047e580;

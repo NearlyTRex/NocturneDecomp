@@ -192,7 +192,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_005
     g_CurrentDebugLine = 0x815;
     g_CurrentDebugFilename = "..\\core\\skeleton.cpp";
     if (local_20 != (CDeformableModelInstance *)0x0) {
-      (*((local_20->motion_controller).vtable)->dtor)(&local_20->motion_controller,2);
+      (*((local_20->base).vtable)->dtor)(&local_20->base,2);
     }
     iVar4 = 0;
     pCVar14 = this_ptr;

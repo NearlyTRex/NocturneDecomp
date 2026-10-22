@@ -31,8 +31,7 @@ void __cdecl core_gabriela_cpp_CGabriella_processDamage_FUN_004996b0(CGabriella 
   if (0.0 < fVar3) {
     if (0.0 < damage_info->damage_amount) {
       if ((this_ptr->base).ladder_to_climb == (CLadder *)0x0) {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                  (&this_ptr_00->motion_controller,8,1);
+        core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,8,1);
       }
       if (g_CGame_PTR_005b9354->hero_number != HERO_TYPE_STRANGER) {
         pCVar1 = (this_ptr->base).base.base.vtable._ub;
@@ -43,18 +42,15 @@ void __cdecl core_gabriela_cpp_CGabriella_processDamage_FUN_004996b0(CGabriella 
   }
   else {
     (this_ptr->base).base.hit_points = 0.0;
-    pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                       (&this_ptr_00->motion_controller);
+    pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(&this_ptr_00->base);
     if (pSVar2->state_index != 0xc) {
-      pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                         (&this_ptr_00->motion_controller);
+      pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(&this_ptr_00->base);
       if (pSVar2->state_index != 0xb) {
         force_immediate = 1;
         (this_ptr->base).base.grabbed_by = (CDemonActor *)0x0;
         fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.0,100.0);
         core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                  (&(this_ptr->base).base.model.motion_controller,(fVar3 <= 50.0f) + 9,
-                   force_immediate);
+                  (&(this_ptr->base).base.model.base,(fVar3 <= 50.0f) + 9,force_immediate);
         if (g_CGame_PTR_005b9354->hero_number != HERO_TYPE_STRANGER) {
           pCVar1 = (this_ptr->base).base.base.vtable._ub;
           fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.25,0.4);

@@ -19,7 +19,7 @@ int __cdecl core_baron_cpp_CBaronWeapon_isReadyToFire_FUN_00411440(CBaronWeapon 
       return 0;
     }
     pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                       (&(pCVar1->base).base.model.motion_controller);
+                       (&(pCVar1->base).base.model.base);
     switch(pSVar2->state_index) {
     case 0:
     case 1:

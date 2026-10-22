@@ -25,12 +25,12 @@ void __cdecl core_hiram_cpp_CHiram_process_FUN_004f4550(CHiram *this_ptr,float d
   }
   pCVar2 = &(this_ptr->base).base.model;
   pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                     (&pCVar2->motion_controller);
+                     (&pCVar2->base);
   if (pSVar3->state_index != 1) {
     iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,this_ptr->kill_event);
     if (iVar3 != 0) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&pCVar2->motion_controller,1,1)
+      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&pCVar2->base,1,1)
       ;
       class_name_hash = g_CGlassClassInfo.name_hash;
       actor_ptr = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030
@@ -50,7 +50,7 @@ void __cdecl core_hiram_cpp_CHiram_process_FUN_004f4550(CHiram *this_ptr,float d
   (this_ptr->base).base.model.accumulated_root_motion.x = 0.0;
   while (0.0 < local_18[0]) {
     iVar3 = core_motion_cpp_CMotionController_advance_FUN_0052d610
-                      (&pCVar2->motion_controller,local_18);
+                      (&pCVar2->base,local_18);
     if (iVar3 == 0x29a) {
       core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0
                 (g_CDemonMissionPtr,(CDemonActor *)this_ptr,1);

@@ -15,7 +15,7 @@ namespace nocturne::core {
 // nocedit 0x00570770
 void CDemonSet::renderPrimitiveBatch(std::span<const platform::SMRGLPrimitiveQuad> primitives,
                                      int render_flags) {
-    renderer_.renderQuadBatch(primitives, render_flags);
+    owners_.renderer.renderQuadBatch(primitives, render_flags);
 }
 
 } // namespace nocturne::core

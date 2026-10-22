@@ -121,25 +121,25 @@ void __cdecl core_gabriela_cpp_CGabriella_process_FUN_00495a20(CGabriella *this_
   }
   local_14 = (CCharacter_full_vtable *)
              core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
-                       (&(this_ptr->base).base.model.motion_controller,8);
+                       (&(this_ptr->base).base.model.base,8);
   if (0.0 < (float)local_14) {
     is_holstering = 1;
   }
   local_14 = (CCharacter_full_vtable *)
              core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
-                       (&(this_ptr->base).base.model.motion_controller,0xb);
+                       (&(this_ptr->base).base.model.base,0xb);
   if (0.0 < (float)local_14) {
     is_holstering = 1;
   }
   local_14 = (CCharacter_full_vtable *)
              core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
-                       (&(this_ptr->base).base.model.motion_controller,0xc);
+                       (&(this_ptr->base).base.model.base,0xc);
   if (0.0 < (float)local_14) {
     is_holstering = 1;
   }
   local_14 = (CCharacter_full_vtable *)
              core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
-                       (&(this_ptr->base).base.model.motion_controller,0x12);
+                       (&(this_ptr->base).base.model.base,0x12);
   if (0.0 < (float)local_14) {
     is_holstering = 1;
   }
@@ -150,27 +150,24 @@ void __cdecl core_gabriela_cpp_CGabriella_process_FUN_00495a20(CGabriella *this_
   if (iVar10 != 0) {
     pCVar2 = &(this_ptr->base).base.model;
     local_14 = (CCharacter_full_vtable *)
-               core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
-                         (&pCVar2->motion_controller,1);
+               core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0(&pCVar2->base,1);
     (this_ptr->base).base.walk_step_speed =
          (float)local_14 * _DAT_01c71358 + (this_ptr->base).base.walk_step_speed;
     local_14 = (CCharacter_full_vtable *)
-               core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
-                         (&pCVar2->motion_controller,2);
+               core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0(&pCVar2->base,2);
     (this_ptr->base).base.walk_step_speed =
          (float)local_14 * _DAT_01c7135c + (this_ptr->base).base.walk_step_speed;
     local_14 = (CCharacter_full_vtable *)
-               core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
-                         (&pCVar2->motion_controller,3);
+               core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0(&pCVar2->base,3);
     (this_ptr->base).base.walk_step_speed =
          (this_ptr->base).base.walk_step_speed - (float)local_14 * _DAT_01c71360;
     local_14 = (CCharacter_full_vtable *)
                core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
-                         (&pCVar2->motion_controller,0x14);
+                         (&pCVar2->base,0x14);
     local_20 = 0.0 - (float)local_14 * 2.0f;
     local_14 = (CCharacter_full_vtable *)
                core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
-                         (&pCVar2->motion_controller,0x15);
+                         (&pCVar2->base,0x15);
     pCVar9 = g_CGame_PTR_005b9354;
     fVar3 = (float)local_14 * 2.0f;
     (this_ptr->base).base.turn_speed = delta_time * (float)12.566370614;
@@ -234,8 +231,7 @@ void __cdecl core_gabriela_cpp_CGabriella_process_FUN_00495a20(CGabriella *this_
       pCVar2 = &(this_ptr->base).base.model;
       if (iVar10 == 0) {
         if (is_holstering == 0) {
-          pSVar16 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                              (&pCVar2->motion_controller);
+          pSVar16 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(&pCVar2->base);
           uVar8 = pSVar16->state_index;
           if (uVar8 < 0xe) {
             if ((((uVar8 == 0) || (uVar8 < 2)) || (uVar8 < 3)) || (uVar8 == 3)) goto LAB_00496679;
@@ -248,7 +244,7 @@ void __cdecl core_gabriela_cpp_CGabriella_process_FUN_00495a20(CGabriella *this_
             if (local_2c != (CAmmoBox *)0x0) {
               local_14 = (CCharacter_full_vtable *)
                          core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004e1e60
-                                   (&pCVar2->motion_controller);
+                                   (&pCVar2->base);
               core_ammobox_cpp_CAmmoBox_openBox_FUN_0040f130(local_2c,(float)local_14);
             }
           }
@@ -270,7 +266,7 @@ LAB_00496679:
                 }
                 fVar3 = (this_ptr->base).base.walk_step_speed;
                 fVar4 = (this_ptr->base).base.position_delta.x;
-                local_3c = &(this_ptr->base).base.model.motion_controller;
+                local_3c = &(this_ptr->base).base.model.base;
                 fVar5 = (this_ptr->base).base.position_delta.z;
                 (this_ptr->base).base.turn_angle_accumulator =
                      (this_ptr->base).player_input.turn_speed * (this_ptr->base).base.turn_speed;
@@ -301,8 +297,7 @@ LAB_00496679:
       else {
         if (2 < uVar8) {
           if (uVar8 == 3) {
-            core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                      (&pCVar2->motion_controller,0,1);
+            core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar2->base,0,1);
             engine_console_cpp_CConsole_printf_FUN_0043ac60
                       (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",this_ptr);
             goto LAB_00495d9d;
@@ -355,7 +350,7 @@ LAB_00496679:
     }
     if (local_50 == (CLadder *)0x0) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                (&(this_ptr->base).base.model.motion_controller,0,1);
+                (&(this_ptr->base).base.model.base,0,1);
       core_hero_cpp_CHero_stopPushingBox_FUN_004b56f0(&this_ptr->base);
     }
   }
@@ -387,20 +382,19 @@ LAB_00495d8e:
     iVar10 = 0;
 LAB_00495d95:
     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-              (&(this_ptr->base).base.model.motion_controller,iVar10,1);
+              (&(this_ptr->base).base.model.base,iVar10,1);
   }
 LAB_00495d9d:
   if ((this_ptr->base).ladder_to_climb == (CLadder *)0x0) {
     if (((is_holstering == 0) ||
         (pSVar16 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                             (&(this_ptr->base).base.model.motion_controller),
-        pSVar16->state_index == 0xd)) ||
+                             (&(this_ptr->base).base.model.base), pSVar16->state_index == 0xd)) ||
        ((this_ptr->base).base.base.standing_platform != (CPlatform *)0x0)) {
       local_178.x = (this_ptr->base).base.position_delta.x;
       local_178.y = (this_ptr->base).base.position_delta.y;
       local_178.z = (this_ptr->base).base.position_delta.z;
       pSVar16 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                          (&(this_ptr->base).base.model.motion_controller);
+                          (&(this_ptr->base).base.model.base);
       uVar8 = pSVar16->state_index;
       if (uVar8 < 3) {
         if (uVar8 == 0) {
@@ -550,8 +544,7 @@ LAB_00495f6c:
   if (is_holstering == 0) {
     if (((pCVar13 == (CDemonActor *)0x0) || (pCVar13[0x1a].is_transparent == 0)) ||
        (pSVar16 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                            (&(this_ptr->base).base.model.motion_controller),
-       pSVar16->state_index == 5)) {
+                            (&(this_ptr->base).base.model.base), pSVar16->state_index == 5)) {
       fVar3 = delta_time / 1.2f;
       goto LAB_00495fcb;
     }
@@ -585,7 +578,7 @@ LAB_00495fcb:
         case 2:
         case 3:
           core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                    (&(this_ptr->base).base.model.motion_controller,0x12,1);
+                    (&(this_ptr->base).base.model.base,0x12,1);
           break;
         default:
           core_hero_cpp_CHero_tryOpenDoor_FUN_004b5270(&this_ptr->base);
@@ -605,7 +598,7 @@ LAB_00495fcb:
           }
           else {
             core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                      (&(this_ptr->base).base.model.motion_controller,0xd,1);
+                      (&(this_ptr->base).base.model.base,0xd,1);
           }
         }
       }
@@ -620,15 +613,13 @@ LAB_00495fcb:
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042a150((CCharacter *)this_ptr,delta_time);
   pCVar2 = &(this_ptr->base).base.model;
   local_14 = (CCharacter_full_vtable *)
-             core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
-                       (&pCVar2->motion_controller,0xd);
+             core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0(&pCVar2->base,0xd);
   if ((float)local_14 <= 0.0) {
     core_hero_cpp_CHero_stopPushingBox_FUN_004b56f0(&this_ptr->base);
   }
   else {
     local_14 = (CCharacter_full_vtable *)
-               core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004e1e60
-                         (&pCVar2->motion_controller);
+               core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004e1e60(&pCVar2->base);
     if ((1.0 < (float)local_14) &&
        (pCVar14 = (CBoxActor *)
                   core_actor_cpp_castToClassHash_FUN_0040d890

@@ -16,7 +16,7 @@ int __cdecl core_hero_cpp_CHero_canBeGrabbed_FUN_004b4c20(CHero *this_ptr,CDemon
   if (grab_type == 0) {
     state_name = "GETGRABBED";
     this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890
-                            (&(this_ptr->base).model.motion_controller);
+                            (&(this_ptr->base).model.base);
     iVar1 = core_motion_cpp_CMotionList_findStateIndex_FUN_004e10a0
                       (this_ptr_00,state_name,grab_type);
     if (iVar1 < 0) {

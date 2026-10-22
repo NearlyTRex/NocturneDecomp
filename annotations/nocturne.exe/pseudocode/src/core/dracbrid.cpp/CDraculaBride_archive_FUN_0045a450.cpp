@@ -37,11 +37,11 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_archive_FUN_0045a450(CDraculaBride 
       motion_name = "incoffin";
     }
     core_motion_cpp_CMotionController_jumpToMotionByName_FUN_004e1960
-              (&(this_ptr->base).base.model.motion_controller,motion_name,0.0);
+              (&(this_ptr->base).base.model.base,motion_name,0.0);
   }
   if (3 < g_INT_005ae6c8) {
     core_actor_cpp_archiveMotionState_FUN_0040cb00
-              (&(this_ptr->base).base.model.motion_controller,"motionState");
+              (&(this_ptr->base).base.model.base,"motionState");
   }
   if (g_INT_005ae6c8 == 4) {
     iVar1 = 0;

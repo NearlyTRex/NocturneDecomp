@@ -18,22 +18,20 @@ void __cdecl core_biggs_cpp_CBiggs_processDamage_FUN_00415900(CBiggs *this_ptr,S
   (this_ptr->base).base.hit_points = fVar1;
   if (fVar1 <= 0.0) {
     (this_ptr->base).base.hit_points = 0.0;
-    core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-              (&this_ptr_00->motion_controller,7,1);
+    core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,7,1);
   }
   else {
     iVar2 = core_actor_cpp_getRandomInt_FUN_0040de00(0,2);
     if (iVar2 == 0) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                (&this_ptr_00->motion_controller,4,1);
+      core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,4,1);
     }
     if (iVar2 == 1) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                (&(this_ptr->base).base.model.motion_controller,5,1);
+                (&(this_ptr->base).base.model.base,5,1);
     }
     if (iVar2 == 2) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                (&(this_ptr->base).base.model.motion_controller,6,1);
+                (&(this_ptr->base).base.model.base,6,1);
       core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(&this_ptr->base,damage_info);
       return;
     }

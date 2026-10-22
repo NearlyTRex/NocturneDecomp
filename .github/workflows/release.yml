@@ -15,7 +15,7 @@ permissions: {}
 jobs:
   check:
     name: Check
-    uses: NearlyTRex/Workflows/.github/workflows/lint.yml@45bf3d2ed784d826f7951b407631311bce30d435 # v0.2.14
+    uses: NearlyTRex/Workflows/.github/workflows/lint.yml@ffafe3aa09651e679cee3ce17f828cca46f29196 # v0.2.17
     permissions:
       contents: read
     with:
@@ -25,7 +25,7 @@ jobs:
 
   pending:
     name: Pending
-    uses: NearlyTRex/Workflows/.github/workflows/release-check.yml@45bf3d2ed784d826f7951b407631311bce30d435 # v0.2.14
+    uses: NearlyTRex/Workflows/.github/workflows/release-check.yml@ffafe3aa09651e679cee3ce17f828cca46f29196 # v0.2.17
     permissions:
       contents: read
     with:
@@ -35,7 +35,7 @@ jobs:
     name: Package (${{ matrix.preset }})
     needs: pending
     if: needs.pending.outputs.pending == 'true'
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@45bf3d2ed784d826f7951b407631311bce30d435 # v0.2.14
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@ffafe3aa09651e679cee3ce17f828cca46f29196 # v0.2.17
     permissions:
       contents: read
     strategy:
@@ -62,15 +62,43 @@ jobs:
               libasound2-dev
           - preset: exe-windows-vanilla-x86_64
             packages: g++-mingw-w64-x86-64
+          - preset: exe-linux-aarch64
+            os: ubuntu-24.04-arm
+            packages: >-
+              libx11-dev libxext-dev libxcursor-dev libxi-dev libxfixes-dev
+              libxrandr-dev libxss-dev libwayland-dev libxkbcommon-dev
+              wayland-protocols libegl-dev libdecor-0-dev libpulse-dev
+              libasound2-dev
+          - preset: exe-linux-vanilla-aarch64
+            os: ubuntu-24.04-arm
+            packages: >-
+              libx11-dev libxext-dev libxcursor-dev libxi-dev libxfixes-dev
+              libxrandr-dev libxss-dev libwayland-dev libxkbcommon-dev
+              wayland-protocols libegl-dev libdecor-0-dev libpulse-dev
+              libasound2-dev
+          # The apt list is skipped off Linux; Xcode's clang and CMake are on
+          # the runner already.
+          - preset: exe-macos-x86_64
+            os: macos-latest
+          - preset: exe-macos-vanilla-x86_64
+            os: macos-latest
+          - preset: exe-macos-arm64
+            os: macos-latest
+          - preset: exe-macos-vanilla-arm64
+            os: macos-latest
     with:
+      runs-on: ${{ matrix.os || 'ubuntu-latest' }}
       apt-packages: cmake clang ninja-build pkg-config python3 zip ${{ matrix.packages }}
+      brew-packages: ninja
       # git describe needs the tags and enough history to count commits against
       # them; a shallow checkout reports a bare hash.
       fetch-depth: 0
       cache-paths: |
         build/${{ matrix.preset }}/_deps
         build/${{ matrix.preset }}/ffmpeg
-      cache-key-files: cmake/bundledlibs.cmake
+      cache-key-files: |
+        cmake/bundledlibs.cmake
+        cmake/ffmpeg.cmake
       # About 7,400 translation units: ccache recompiles only the ones a
       # commit touched, instead of all of them on every run.
       ccache: true
@@ -89,7 +117,7 @@ jobs:
   release:
     name: Release
     needs: [check, package]
-    uses: NearlyTRex/Workflows/.github/workflows/release.yml@45bf3d2ed784d826f7951b407631311bce30d435 # v0.2.14
+    uses: NearlyTRex/Workflows/.github/workflows/release.yml@ffafe3aa09651e679cee3ce17f828cca46f29196 # v0.2.17
     permissions:
       contents: write
     with:

@@ -127,7 +127,7 @@ int __cdecl core_skeleton_cpp_CDeformableModel_computeBoneDominantPart_FUN_00519
       } while (local_38 < this_ptr->num_parts);
     }
     if (local_24 != (CDeformableModelInstance *)0x0) {
-      (*((local_24->motion_controller).vtable)->dtor)(&local_24->motion_controller,2);
+      (*((local_24->base).vtable)->dtor)(&local_24->base,2);
     }
     return local_44;
   }

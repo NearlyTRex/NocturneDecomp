@@ -58,6 +58,6 @@ int __cdecl core_icepick_cpp_CIcePick_findAndPickupGun_FUN_004ba8a0(CIcePick *th
        ((this_ptr->pending_pickup_target->location).position.z - local_34.z) +
        (this_ptr->base).base.base.location.position.z;
   core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-            (&(this_ptr->base).base.model.motion_controller,0x13,1);
+            (&(this_ptr->base).base.model.base,0x13,1);
   return 1;
 }

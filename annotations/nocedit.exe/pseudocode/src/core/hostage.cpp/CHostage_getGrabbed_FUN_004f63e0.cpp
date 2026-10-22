@@ -13,7 +13,7 @@ int __cdecl core_hostage_cpp_CHostage_getGrabbed_FUN_004f63e0(CHostage *this_ptr
   (this_ptr->base).base.grabbed_by = grabber;
   if (grab_type == 0) {
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              (&(this_ptr->base).base.model.motion_controller,4,1);
+              (&(this_ptr->base).base.model.base,4,1);
     core_event_cpp_CEventList_executeCommands_FUN_004aabe0
               (g_CEventListPtr,this_ptr->get_eaten_event);
   }

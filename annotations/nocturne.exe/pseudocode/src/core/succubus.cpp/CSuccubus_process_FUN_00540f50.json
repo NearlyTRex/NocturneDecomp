@@ -2,75 +2,21 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 5,
-        "line": 20,
-        "message": "unknown type name 'FLOATING_SAVE_AREA'"
-      },
-      {
-        "category": "other",
-        "column": 5,
-        "line": 52,
-        "message": "unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?"
-      },
-      {
-        "category": "other",
-        "column": 5,
-        "line": 53,
-        "message": "unknown type name 'PCONTEXT'"
-      },
-      {
-        "category": "other",
-        "column": 85,
-        "line": 258,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 80,
-        "line": 267,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 496,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 496,
-        "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 497,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 497,
-        "message": "exponent has no digits"
-      },
-      {
         "category": "format_error",
         "column": 85,
-        "line": 185,
+        "line": 180,
         "message": "format specifies type 'char *' but the argument has type 'CSuccubus *' [-Werror,-Wformat]"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 234,
+        "line": 228,
         "message": "use of undeclared identifier 'operator_new'; did you mean 'operator'?"
       },
       {
         "category": "incompatible_types",
         "column": 11,
-        "line": 292,
+        "line": 286,
         "message": "no matching function for call to 'core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30'"
       }
     ],
@@ -80,12 +26,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 642,
-    "complexity_score": 424,
+    "complexity_score": 418,
     "cross_reference_count": 0,
     "function_call_count": 25,
     "global_count": 18,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 299,
+    "pseudocode_lines": 293,
     "suspect_count": 10,
     "suspect_types": [
       "unrolled_memcpy",
@@ -94,7 +40,7 @@
       "warning_type_propagation",
       "warning_unreachable"
     ],
-    "total_lines": 941
+    "total_lines": 935
   },
   "cross_references": [],
   "function": {
@@ -600,7 +546,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 254,
+      "line": 248,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -608,7 +554,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 247,
+      "line": 241,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(pUVar13->vec).x = (pUVar1->vec).x;",
@@ -632,7 +578,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 124,
+      "line": 119,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -640,7 +586,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 180,
+      "line": 175,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -648,7 +594,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 204,
+      "line": 199,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.position_delta.z = 0.0;",
@@ -656,7 +602,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 207,
+      "line": 202,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",

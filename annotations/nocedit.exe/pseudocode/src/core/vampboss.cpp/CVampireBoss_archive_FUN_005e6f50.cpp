@@ -12,9 +12,9 @@ void __cdecl core_vampboss_cpp_CVampireBoss_archive_FUN_005e6f50(CVampireBoss *t
   core_enemy_cpp_CEnemy_archive_FUN_004a9660(&this_ptr->base);
   if (1 < g_CVampireBossVersion) {
     core_actor_cpp_archiveMotionState_FUN_0040b9f0
-              (&(this_ptr->base).base.model.motion_controller,"human model motion state");
+              (&(this_ptr->base).base.model.base,"human model motion state");
     core_actor_cpp_archiveMotionState_FUN_0040b9f0
-              (&(this_ptr->model).motion_controller,"bat model motion state");
+              (&(this_ptr->model).base,"bat model motion state");
   }
   if (2 < g_CVampireBossVersion) {
     core_actor_cpp_archiveActor_FUN_0040b870(&this_ptr->way_point_0,"wayPoint0");

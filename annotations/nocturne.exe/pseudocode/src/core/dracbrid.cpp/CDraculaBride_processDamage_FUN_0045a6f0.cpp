@@ -50,19 +50,16 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_processDamage_FUN_0045a6f0(CDracula
   (this_ptr->base).base.hit_points = fVar1;
   if (fVar1 <= 0.0) {
     (this_ptr->base).base.hit_points = 0.0;
-    pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                       (&this_ptr_00->motion_controller);
+    pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(&this_ptr_00->base);
     iVar4 = pSVar3->state_index;
     if ((((iVar4 != 0x11) && (iVar4 != 0x10)) && (iVar4 != 10)) && (iVar4 != 7)) {
       if (bVar2) {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                  (&this_ptr_00->motion_controller,7,1);
+        core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,7,1);
         (*((this_ptr->base).base.base.vtable._ub)->playAmbientSound)
                   ((CDemonActor *)this_ptr,"bride-launch.wav");
       }
       else {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                  (&this_ptr_00->motion_controller,10,1);
+        core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,10,1);
       }
     }
     iVar4 = core_actor_cpp_randomChance_FUN_0040dea0(0.4);
@@ -74,14 +71,13 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_processDamage_FUN_0045a6f0(CDracula
     }
     goto LAB_0045a7ee;
   }
-  pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                     (&this_ptr_00->motion_controller);
+  pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(&this_ptr_00->base);
   iVar4 = pSVar3->state_index;
   if (((iVar4 == 8) || (iVar4 == 9)) || (iVar4 == 2)) {
     iVar4 = 1;
 LAB_0045a8a5:
     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-              (&(this_ptr->base).base.model.motion_controller,iVar4,1);
+              (&(this_ptr->base).base.model.base,iVar4,1);
   }
   else if (((iVar4 == 0) || (iVar4 == 0xe)) ||
           (((iVar4 == 0x13 || (((iVar4 == 0xc || (iVar4 == 0x12)) || (iVar4 == 0x14)))) ||
@@ -89,11 +85,11 @@ LAB_0045a8a5:
     iVar4 = core_actor_cpp_getRandomInt_FUN_0040de00(0,2);
     if (iVar4 == 0) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                (&(this_ptr->base).base.model.motion_controller,4,1);
+                (&(this_ptr->base).base.model.base,4,1);
     }
     if (iVar4 == 1) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                (&(this_ptr->base).base.model.motion_controller,5,1);
+                (&(this_ptr->base).base.model.base,5,1);
     }
     if (iVar4 == 2) {
       iVar4 = 6;

@@ -40,6 +40,7 @@ using ::testing::Return;
 
 TEST(CLevelLoader, PublicInterface) {
     static_assert(std::is_constructible_v<CLevelLoader, const SLevelLoaderOwners &>);
+    static_assert(std::is_base_of_v<ILoadingScreen, CLevelLoader>);
     static_assert(std::is_same_v<decltype(&CLevelLoader::reset), void (CLevelLoader::*)()>);
     static_assert(
         std::is_same_v<decltype(&CLevelLoader::show), void (CLevelLoader::*)(int, bool, int)>);

@@ -101,7 +101,7 @@ static long rng_caller_offset(void *caller)
 static FILE *rng_draw_log(void)
 {
     if ((s_draw_log == (FILE *)0) && (s_draw_failed == 0)) {
-        s_draw_log = std::fopen("nocturne_rngtrace.log", "w");
+        s_draw_log = std::fopen(watcom_log_path("nocturne_rngtrace.log").c_str(), "w");
         if (s_draw_log == (FILE *)0) {
             s_draw_failed = 1;
         }

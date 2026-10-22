@@ -49,7 +49,7 @@ void __cdecl core_game_cpp_CGame_loadGame_FUN_004e12b0(CGame *this_ptr,char *sav
   int local_14;
   
   bVar11 = 0;
-  remove("save\\$$SAVE$$.TMP");
+  _remove("save\\$$SAVE$$.TMP");
   this_ptr->is_loading = 1;
   splitpath
             (g_CurrentSaveFile,(char *)0x0,(char *)0x0,(char *)0x0,local_430);
@@ -95,7 +95,7 @@ void __cdecl core_game_cpp_CGame_loadGame_FUN_004e12b0(CGame *this_ptr,char *sav
 LAB_004e17ac:
         g_EditorFont = local_3c;
         this_ptr->is_loading = 0;
-        remove("save\\$$SAVE$$.TMP");
+        _remove("save\\$$SAVE$$.TMP");
         return;
       }
     }

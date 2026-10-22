@@ -18,7 +18,7 @@
 ;   core_set.cpp_CDemonSet_renderGogglesView_FUN_0050a260 at 0050a3cf
 ;   core_set.cpp_CDemonSet_renderStaticLights_FUN_00509760 at 0050988e
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508b2f
-;   core_setdir.cpp_CDemonSet_FUN_00513720 at 00513809
+;   core_setdir.cpp_CDemonSet_saveThumbs_FUN_00513720 at 00513809
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738

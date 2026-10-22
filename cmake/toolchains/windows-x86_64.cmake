@@ -61,31 +61,13 @@ if(NOT DEFINED CMAKE_CXX_COMPILER)
     set(CMAKE_CXX_COMPILER clang++)
 endif()
 
-# Debian keeps the two threading models in sibling directories and selects
-# between them with update-alternatives. Clang's MinGW driver looks for a gcc
-# install root on its own and can land on either, so the choice is made here
-# instead: posix, because libstdc++'s std::thread and std::mutex are real only
-# in that build, and shims/win32/kernel32.cpp implements every Win32 sync
-# primitive on top of them.
-file(GLOB _noc_win_gcc_dirs "/usr/lib/gcc/${NOCTURNE_WIN_TRIPLE}/*-posix")
-if(_noc_win_gcc_dirs)
-    list(SORT _noc_win_gcc_dirs)
-    list(GET _noc_win_gcc_dirs -1 _noc_win_gcc_dir)
-    set(_NOCTURNE_GCC_TOOLCHAIN "--gcc-install-dir=${_noc_win_gcc_dir}")
-else()
-    set(_NOCTURNE_GCC_TOOLCHAIN "")
-    message(WARNING
-        "No *-posix gcc runtime under /usr/lib/gcc/${NOCTURNE_WIN_TRIPLE}. "
-        "Letting clang pick; if it selects the win32 threading model, "
-        "std::thread will be a stub and the sync shims will not work.")
-endif()
-set(_NOCTURNE_TARGET_FLAGS
-    "--target=${NOCTURNE_WIN_TRIPLE} ${_NOCTURNE_GCC_TOOLCHAIN}")
-
-# -mmmx matches the Linux lanes. -fasm-blocks is deliberately absent: the exe
-# lane contains no __asm block (they live only in .byval variants the source
-# collector never selects for linking), so nothing here needs MSVC asm syntax.
-set(_NOCTURNE_TARGET_FLAGS "${_NOCTURNE_TARGET_FLAGS} -mmmx")
+# Debian ships gcc's win32 and posix threading models side by side. Clang's
+# MinGW driver picks the gcc runtime itself, ignoring --gcc-install-dir, and
+# takes the win32 one. That model has real std::thread and std::mutex from gcc
+# 13 on, which is what shims/win32/kernel32.cpp builds its sync primitives on.
+# The runtime DLLs staged beside the exe are found through the same driver, so
+# they always match what was linked.
+set(_NOCTURNE_TARGET_FLAGS "--target=${NOCTURNE_WIN_TRIPLE}")
 
 set(CMAKE_C_FLAGS_INIT   "${_NOCTURNE_TARGET_FLAGS}")
 set(CMAKE_CXX_FLAGS_INIT "${_NOCTURNE_TARGET_FLAGS}")

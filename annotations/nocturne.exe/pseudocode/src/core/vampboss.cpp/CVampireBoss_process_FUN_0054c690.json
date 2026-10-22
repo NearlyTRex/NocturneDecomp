@@ -2,60 +2,6 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 5,
-        "line": 20,
-        "message": "unknown type name 'FLOATING_SAVE_AREA'"
-      },
-      {
-        "category": "other",
-        "column": 5,
-        "line": 52,
-        "message": "unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?"
-      },
-      {
-        "category": "other",
-        "column": 5,
-        "line": 53,
-        "message": "unknown type name 'PCONTEXT'"
-      },
-      {
-        "category": "other",
-        "column": 85,
-        "line": 258,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 80,
-        "line": 267,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 496,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 496,
-        "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 497,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 497,
-        "message": "exponent has no digits"
-      },
-      {
         "category": "cast_error",
         "column": 16,
         "line": 210,
@@ -100,19 +46,73 @@
       {
         "category": "incompatible_types",
         "column": 14,
-        "line": 462,
+        "line": 460,
         "message": "incompatible integer to pointer conversion assigning to 'CEventList *' from 'int'"
       },
       {
         "category": "cast_error",
         "column": 22,
-        "line": 488,
+        "line": 486,
         "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
       },
       {
         "category": "cast_error",
         "column": 58,
+        "line": 489,
+        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
+      },
+      {
+        "category": "cast_error",
+        "column": 22,
+        "line": 490,
+        "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
+      },
+      {
+        "category": "cast_error",
+        "column": 22,
         "line": 491,
+        "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
+      },
+      {
+        "category": "cast_error",
+        "column": 82,
+        "line": 492,
+        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
+      },
+      {
+        "category": "cast_error",
+        "column": 36,
+        "line": 493,
+        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
+      },
+      {
+        "category": "cast_error",
+        "column": 16,
+        "line": 495,
+        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
+      },
+      {
+        "category": "cast_error",
+        "column": 35,
+        "line": 495,
+        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
+      },
+      {
+        "category": "cast_error",
+        "column": 36,
+        "line": 496,
+        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
+      },
+      {
+        "category": "cast_error",
+        "column": 54,
+        "line": 496,
+        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
+      },
+      {
+        "category": "cast_error",
+        "column": 58,
+        "line": 500,
         "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1466,
-    "complexity_score": 941,
+    "complexity_score": 935,
     "cross_reference_count": 0,
     "function_call_count": 35,
     "global_count": 32,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 606,
+    "pseudocode_lines": 600,
     "suspect_count": 30,
     "suspect_types": [
       "pointer_cast",
@@ -138,7 +138,7 @@
       "unrolled_memset",
       "warning_type_propagation"
     ],
-    "total_lines": 2072
+    "total_lines": 2066
   },
   "cross_references": [],
   "function": {
@@ -1049,7 +1049,7 @@
         {
           "check_name": "cert-flp30-c",
           "column": 23,
-          "line": 424,
+          "line": 423,
           "message": "loop induction expression should not have floating-point type"
         }
       ],
@@ -1150,7 +1150,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 420,
+      "line": 419,
       "match": "(CDemonActor **)((int)g_CDemonSet_PTR_005be368",
       "severity": "moderate",
       "text": "(*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->enemies + iVar8)",
@@ -1158,7 +1158,7 @@
     },
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 461,
+      "line": 459,
       "match": "(CDemonActor **)((int)(&this_ptr->morph + 1) +",
       "severity": "moderate",
       "text": "*(CDemonActor **)((int)(&this_ptr->morph + 1) + (iVar13 + 7) * 4),0.2,999999.0,",
@@ -1182,7 +1182,7 @@
     },
     {
       "description": "Pointer value `(&this_ptr->morph + 1)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 461,
+      "line": 459,
       "match": "(int)(&this_ptr->morph + 1)",
       "severity": "moderate",
       "text": "*(CDemonActor **)((int)(&this_ptr->morph + 1) + (iVar13 + 7) * 4),0.2,999999.0,",
@@ -1206,7 +1206,7 @@
     },
     {
       "description": "Raw hex address 0x1c03a10 assigned to bare local `pCVar6`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar6` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 455,
+      "line": 453,
       "match": "0x1c03a10",
       "severity": "moderate",
       "text": "pCVar6 = 0x01C03A10;",
@@ -1262,7 +1262,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 437,
+      "line": 436,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(pCVar1->min).x = (pCVar10->min).x;",
@@ -1270,7 +1270,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 443,
+      "line": 442,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "pCVar12->x = (pCVar10->max).x;",
@@ -1278,7 +1278,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 580,
+      "line": 574,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.position_delta.z = 0.0;",
@@ -1286,7 +1286,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 583,
+      "line": 577,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",

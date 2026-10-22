@@ -14,7 +14,7 @@ namespace {
 // fold onto them under the default key mask and keep their own codes under the wide one. Then
 // the pad's: the d-pad and the left stick, which keeps the original joystick's codes, and the
 // buttons the enhanced game confirms and cancels with.
-constexpr std::array<std::array<EInputCodeType, 4>, 11> kBindings{{
+constexpr std::array<std::array<EInputCodeType, 4>, 12> kBindings{{
     {EInputCodeType::DIK_NUMPAD8, EInputCodeType::DIK_UP, EInputCodeType::PAD_DPAD_UP,
      EInputCodeType::DIJ_UP},
     {EInputCodeType::DIK_NUMPAD2, EInputCodeType::DIK_DOWN, EInputCodeType::PAD_DPAD_DOWN,
@@ -37,6 +37,8 @@ constexpr std::array<std::array<EInputCodeType, 4>, 11> kBindings{{
      EInputCodeType::INPUT_NONE},
     {EInputCodeType::DIK_NUMPAD0, EInputCodeType::DIK_INSERT, EInputCodeType::DIK_C,
      EInputCodeType::INPUT_NONE},
+    {EInputCodeType::DIK_M, EInputCodeType::INPUT_NONE, EInputCodeType::INPUT_NONE,
+     EInputCodeType::INPUT_NONE},
 }};
 
 // The right control key folds onto the left under the default mask.
@@ -48,7 +50,7 @@ constexpr std::array<EInputCodeType, 2> kControlKeys{EInputCodeType::DIK_LCONTRO
 CMenuInput::CMenuInput(CKeys &keys) : keys_(keys) {}
 
 bool CMenuInput::takeMenuAction(EMenuAction action) {
-    if (action == EMenuAction::Copy &&
+    if ((action == EMenuAction::Copy || action == EMenuAction::ToggleMute) &&
         std::ranges::none_of(
             kControlKeys, [this](EInputCodeType code) { return keys_.getKeyState(code) != 0; })) {
         return false;

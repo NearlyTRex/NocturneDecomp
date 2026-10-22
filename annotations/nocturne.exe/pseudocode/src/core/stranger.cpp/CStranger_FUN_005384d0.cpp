@@ -132,7 +132,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005384d0(CStranger *this_ptr)
   bVar15 = 0;
   local_18 = (CQuaternion4f *)
              core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
-                       (&(this_ptr->base).base.model.motion_controller,0);
+                       (&(this_ptr->base).base.model.base,0);
   local_1f08 = local_18;
   if ((int)this_ptr->turn_blend_weight < 0x3e19999a) {
     local_1f08 = (CQuaternion4f *)((this_ptr->turn_blend_weight / 0.15f) * (float)local_18)
@@ -155,8 +155,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005384d0(CStranger *this_ptr)
   core_stranger_cpp_CStranger_makeDrawDecision_FUN_00539b10(this_ptr);
   pCVar1 = &(this_ptr->base).base.model;
   pCVar7 = &this_ptr->carry_object_world_center;
-  pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                     (&pCVar1->motion_controller);
+  pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(&pCVar1->base);
   pfVar14 = &(this_ptr->carry_object_world_center).z;
   pfVar2 = &(this_ptr->carry_object_world_center).y;
   iVar20 = pSVar4->state_index;
@@ -170,7 +169,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005384d0(CStranger *this_ptr)
     local_190.y = local_15c - local_184.y;
     local_190.z = local_158 - local_184.z;
     core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(&local_7c,&local_190);
-    fVar18 = (this_ptr->base).base.model.motion_controller.current_frame_number;
+    fVar18 = (this_ptr->base).base.model.base.current_frame_number;
     if ((float)13 <= fVar18) {
       local_1ee0 = (CQuaternion4f *)
                    (1.0 - (fVar18 + (float)-13) * (float)0.0769230769230769);
@@ -224,7 +223,7 @@ LAB_00538745:
     local_70._8_4_ = local_e0.x - local_b8.z;
     core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
               (&local_4c,(CVector3f *)local_70);
-    fVar18 = (this_ptr->base).base.model.motion_controller.current_frame_number;
+    fVar18 = (this_ptr->base).base.model.base.current_frame_number;
     if ((float)24 <= fVar18) {
       local_1ef4 = (CQuaternion4f *)
                    (1.0 - (fVar18 + (float)-24) * (float)0.10000000000000001);
@@ -354,8 +353,8 @@ LAB_00538745:
       }
       else if (iVar20 == 0x17) {
         local_1ef8 = (CDeformableModel_MotionBlendWeightFunc *)
-                     ((this_ptr->base).base.model.motion_controller.current_frame_number *
-                     (float)0.066666666666666693);
+                     ((this_ptr->base).base.model.base.current_frame_number * (float)0.066666666666666693
+                     );
         if (1.0 < (float)local_1ef8) {
           local_1ef8 = (CDeformableModel_MotionBlendWeightFunc *)0x3f800000;
         }
@@ -389,8 +388,8 @@ LAB_00538745:
         if (iVar20 != 0x18) {
           if (iVar20 == 0x19) {
             local_1f0c = (CDeformableModel_MotionBlendWeightFunc *)
-                         (1.0 - ((this_ptr->base).base.model.motion_controller.current_frame_number
-                                + (float)-15) * (float)0.066666666666666693);
+                         (1.0 - ((this_ptr->base).base.model.base.current_frame_number +
+                                (float)-15) * (float)0.066666666666666693);
             if ((float)local_1f0c < 0.0) {
               local_1f0c = (CDeformableModel_MotionBlendWeightFunc *)0x0;
             }
@@ -574,7 +573,7 @@ LAB_00538745:
     local_f8.y = local_128.y - local_e0.y;
     local_f8.z = local_128.z - local_e0.z;
     core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(&CStack_11c,&local_f8);
-    fVar18 = (this_ptr->base).base.model.motion_controller.current_frame_number;
+    fVar18 = (this_ptr->base).base.model.base.current_frame_number;
     if ((float)21 <= fVar18) {
       local_1edc = (CQuaternion4f *)
                    (1.0 - (fVar18 + (float)-21) * (float)0.071428571428571397);
@@ -647,7 +646,7 @@ LAB_00538751:
   iVar20 = core_motion_cpp_CMotionList_findMotionIndex_FUN_004e1010
                      (&this_ptr_01->motion_list,motion_name,iVar20);
   local_2c = core_motion_cpp_CMotionController_markerPositionToFrame_FUN_004e1f50
-                       (&pCVar1->motion_controller,iVar20,1.0);
+                       (&pCVar1->base,iVar20,1.0);
   local_1c = (CDeformableModelInstance *)local_2c;
   core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
             (pCVar1,iVar20,local_2c,this_ptr->interact_blend,_DAT_02dc9f90,

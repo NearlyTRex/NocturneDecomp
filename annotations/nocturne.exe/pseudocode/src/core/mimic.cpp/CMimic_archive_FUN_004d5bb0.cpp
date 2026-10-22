@@ -25,8 +25,7 @@ void __cdecl core_mimic_cpp_CMimic_archive_FUN_004d5bb0(CMimic *this_ptr)
     }
   }
   else {
-    core_actor_cpp_archiveMotionState_FUN_0040cb00
-              (&model_ptr->motion_controller,"motion state");
+    core_actor_cpp_archiveMotionState_FUN_0040cb00(&model_ptr->base,"motion state");
     core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->morph_actor_type,"morphActorType");
     if (INT_005baf48 < 3) {
       return;

@@ -108,7 +108,7 @@ int __cdecl engine_ini_cpp_CIni_writeProfileString_FUN_004fb660(CIni *this_ptr,c
   }
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream,"..\\engine\\ini.cpp",488);
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\ini.cpp",489);
-  remove(filename);
-  rename(acStack_216 + 2,filename);
+  _remove(filename);
+  _rename(acStack_216 + 2,filename);
   return 1;
 }

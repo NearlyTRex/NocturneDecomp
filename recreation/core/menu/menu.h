@@ -4,6 +4,7 @@
 #include "core/fwd.h"
 #include "core/moon/moon.h"
 #include "engine/fwd.h"
+#include "sound/fwd.h"
 #include "support/fwd.h"
 
 #include <optional>
@@ -13,7 +14,7 @@
 
 namespace nocturne::core {
 
-// What the menu screens draw with and read keys from.
+// What the menu screens draw with, read keys from and play their music through.
 struct SMenuOwners {
     const engine::CDosIo &dosio;
     engine::IScreenDevice &screen;
@@ -29,6 +30,9 @@ struct SMenuOwners {
     CGame &game;
     CActor &actor;
     common::CWatcomRandom &crt_random;
+    engine::CTexture &textures;
+    CSound &sound;
+    sound::CSndMain &sound_main;
     // The line naming this build, drawn at the foot of every menu.
     std::string_view build_version;
 };
@@ -43,6 +47,8 @@ public:
     // until a key is typed.
     void showCalibrationTest();
     void showOptionsScreen(int initialize_systems);
+    // The main menu over the moon, with its music, until QUIT, Cancel or the window closing: 99.
+    // A window under 480 rows shows nothing: 1.
     int showMainGameMenu();
     char *getKeyDisplayName(engine::EInputCodeType key_code);
     // Draws the items down the left of the screen under the title, the selected one glowing,

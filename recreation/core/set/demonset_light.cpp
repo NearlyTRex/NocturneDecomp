@@ -85,17 +85,17 @@ CVector3i toUnitNormal(const CVector3f &sum) {
 // deferred: pushing the vertices' screen bounds to the scene camera, with the scene camera
 // nocedit 0x0056e7c0
 void CDemonSet::rotateVerticies(std::span<const CVector3i> input_vertices) {
-    const std::span<SRenderVertex> buffer = renderer_.getVertexBuffer();
+    const std::span<SRenderVertex> buffer = owners_.renderer.getVertexBuffer();
     checkVertexCount("rotateVerticies - tried to rotate", static_cast<int>(input_vertices.size()),
                      buffer.size());
-    renderer_.enableFaceCapture(true);
+    owners_.renderer.enableFaceCapture(true);
     bool all_in_view = true;
     for (std::size_t i = 0; i < input_vertices.size(); ++i) {
-        special_.transformAndProjectPoint(buffer[i].projected_vertex, input_vertices[i]);
+        owners_.special.transformAndProjectPoint(buffer[i].projected_vertex, input_vertices[i]);
         all_in_view = all_in_view && buffer[i].projected_vertex.screen_x >= 0;
     }
     if (all_in_view) {
-        renderer_.enableFaceCapture(false);
+        owners_.renderer.enableFaceCapture(false);
     }
 }
 
@@ -116,7 +116,7 @@ void CDemonSet::rotateVerticies(std::span<const CVector3i> input_vertices) {
 void CDemonSet::lightVerticies(int vertex_count,
                                std::span<const platform::SMRGLPrimitiveQuad> polygons,
                                std::span<const CVector3i> vertex_normals) {
-    const std::span<SRenderVertex> buffer = renderer_.getVertexBuffer();
+    const std::span<SRenderVertex> buffer = owners_.renderer.getVertexBuffer();
     checkVertexCount("lightVerticies - tried to light", vertex_count, buffer.size());
     const auto count = static_cast<std::size_t>(vertex_count);
     if (!vertex_normals.empty()) {
@@ -137,7 +137,7 @@ void CDemonSet::lightVerticies(int vertex_count,
         const platform::SProjectedVertex &point = buffer[i].projected_vertex;
         world[i] = transformToWorldSpace(
             {.x = point.transformed_x, .y = point.transformed_y, .z = point.transformed_z},
-            matrix_);
+            owners_.matrix);
     }
     std::vector<CVector3f> sums(count);
     for (const platform::SMRGLPrimitiveQuad &poly : polygons) {

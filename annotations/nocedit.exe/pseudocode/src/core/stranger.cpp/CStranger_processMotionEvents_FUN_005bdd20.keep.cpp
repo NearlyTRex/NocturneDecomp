@@ -38,7 +38,7 @@ void __cdecl core_stranger_cpp_CStranger_processMotionEvents_FUN_005bdd20(CStran
   local_20 = &(this_ptr->base).target_position;
   do {
     bone_index = core_motion_cpp_CMotionController_advance_FUN_0052d610
-                           (&this_ptr_04->motion_controller,&delta_time);
+                           (&this_ptr_04->base,&delta_time);
     if (bone_index < 0x12) {
       if (bone_index < 6) {
         if (bone_index < 2) {
@@ -55,17 +55,17 @@ LAB_005bdd85:
               if (this_ptr->ladder_to_descend == (CLadder *)0x0) {
                 if ((this_ptr->base).base.is_on_ground != 0) {
                   local_14 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                                       (&this_ptr_04->motion_controller,3);
+                                       (&this_ptr_04->base,3);
                   if ((float)0.40000000000000002 < local_14) {
                     (*((this_ptr->base).base.base.vtable._ub)->processFootstepAtOffset)
                               ((CDemonActor *)this_ptr,&local_5c,1.7);
                   }
                   else {
                     local_14 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                                         (&this_ptr_04->motion_controller,1);
+                                         (&this_ptr_04->base,1);
                     if (local_14 <= (float)0.40000000000000002) {
                       local_14 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                                           (&this_ptr_04->motion_controller,2);
+                                           (&this_ptr_04->base,2);
                       if ((float)0.40000000000000002 < local_14) {
                         (*((this_ptr->base).base.base.vtable._ub)->processFootstepAtOffset)
                                   ((CDemonActor *)this_ptr,&local_5c,1.0);
@@ -258,7 +258,7 @@ LAB_005bde44:
           iVar5 = core_hero_cpp_CHero_tryOpenDoor_FUN_004f2ed0(&this_ptr->base);
           if (iVar5 == 0) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                      (&this_ptr_04->motion_controller,0,1);
+                      (&this_ptr_04->base,0,1);
           }
         }
       }

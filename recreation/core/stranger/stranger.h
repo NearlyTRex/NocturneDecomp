@@ -4,12 +4,21 @@
 #include "core/fwd.h"
 #include "core/hero/hero.h"
 
+#include <memory>
+
 namespace nocturne::core {
 
+// The hero the Stranger. The virtual functions not ported yet quit when called.
 class CStranger : public CHero {
 public:
+    static const CDemonActorType kType;
+
     CStranger();
     ~CStranger() override;
+    CStranger(const CStranger &) = delete;
+    CStranger &operator=(const CStranger &) = delete;
+    CStranger(CStranger &&) = delete;
+    CStranger &operator=(CStranger &&) = delete;
 
     void setup() override;
     void process(float delta_time) override;
@@ -29,6 +38,9 @@ public:
     void drawWeapon(int drawn) override;
     int isWeaponDrawn() override;
     void reset() override;
+
+private:
+    static std::unique_ptr<CDemonActor> create();
 };
 
 } // namespace nocturne::core

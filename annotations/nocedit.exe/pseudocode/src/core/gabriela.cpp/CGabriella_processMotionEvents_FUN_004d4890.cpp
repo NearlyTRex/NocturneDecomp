@@ -32,8 +32,7 @@ void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004d4890(CGabr
   
   this_ptr_03 = &(this_ptr->base).base.model;
   do {
-    iVar3 = core_motion_cpp_CMotionController_advance_FUN_0052d610
-                      (&this_ptr_03->motion_controller,&delta_time);
+    iVar3 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&this_ptr_03->base,&delta_time);
     switch(iVar3) {
     case 1:
     case 7:
@@ -47,17 +46,17 @@ void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004d4890(CGabr
       if (this_ptr_04 == (CLadder *)0x0) {
         if ((this_ptr->base).base.is_on_ground != 0) {
           local_18 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                               (&this_ptr_03->motion_controller,2);
+                               (&this_ptr_03->base,2);
           if ((float)0.40000000000000002 < local_18) {
             (*((this_ptr->base).base.base.vtable._ub)->processFootstepAtOffset)
                       ((CDemonActor *)this_ptr,local_58,1.7);
           }
           else {
             local_18 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                                 (&this_ptr_03->motion_controller,1);
+                                 (&this_ptr_03->base,1);
             if (local_18 <= (float)0.40000000000000002) {
               local_18 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                                   (&this_ptr_03->motion_controller,3);
+                                   (&this_ptr_03->base,3);
               if ((float)0.40000000000000002 < local_18) {
                 (*((this_ptr->base).base.base.vtable._ub)->processFootstepAtOffset)
                           ((CDemonActor *)this_ptr,local_58,1.0);
@@ -96,8 +95,7 @@ void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004d4890(CGabr
     case 3:
       (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
                 ((CCharacter *)this_ptr,0,(CVector3f *)0x0);
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                (&this_ptr_03->motion_controller,0,1);
+      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr_03->base,0,1);
       break;
     default:
       core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,iVar3);
@@ -162,8 +160,7 @@ void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004d4890(CGabr
     case 0x16:
       iVar3 = core_hero_cpp_CHero_tryOpenDoor_FUN_004f2ed0(&this_ptr->base);
       if (iVar3 == 0) {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&this_ptr_03->motion_controller,0,1);
+        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr_03->base,0,1);
       }
     }
     if (delta_time <= 0.0) {

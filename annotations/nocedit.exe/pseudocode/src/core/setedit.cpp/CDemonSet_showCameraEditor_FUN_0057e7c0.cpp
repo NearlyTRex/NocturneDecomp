@@ -524,7 +524,7 @@ LAB_0057eb3b:
         pCVar12 = this_ptr;
         do {
           _sprintf(local_3bc,"backdrop\\%s.pvs",local_2c);
-          remove(local_3bc);
+          _remove(local_3bc);
           ptr = pCVar12->cameras[0].pvs_list;
           pCVar12->cameras[0].pvs_count = 0;
           if (ptr != (int *)0x0) {

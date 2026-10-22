@@ -24,7 +24,7 @@ void __cdecl core_ghoul_cpp_CGhoul_archive_FUN_004e81c0(CGhoul *this_ptr)
   }
   if (4 < g_CGhoulClassVersion) {
     core_actor_cpp_archiveMotionState_FUN_0040b9f0
-              (&(this_ptr->base).base.model.motion_controller,"motion state");
+              (&(this_ptr->base).base.model.base,"motion state");
   }
   if (g_CGhoulClassVersion < 6) {
     return;

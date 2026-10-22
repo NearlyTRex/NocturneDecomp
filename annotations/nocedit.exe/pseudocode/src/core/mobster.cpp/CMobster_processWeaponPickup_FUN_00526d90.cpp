@@ -94,7 +94,7 @@ int __cdecl core_mobster_cpp_CMobster_processWeaponPickup_FUN_00526d90(CMobster 
             this_ptr->target_weapon = pCVar5;
             this_ptr->ai_idle_counter = this_ptr->ai_idle_counter + 1;
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                      (&(this_ptr->base).base.model.motion_controller,1,1);
+                      (&(this_ptr->base).base.model.base,1,1);
             return 1;
           }
         }
@@ -104,7 +104,7 @@ int __cdecl core_mobster_cpp_CMobster_processWeaponPickup_FUN_00526d90(CMobster 
             this_ptr->target_weapon = (CDemonActor *)0x0;
             this_ptr->weapon_approach_timer = 0.0;
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                      (&(this_ptr->base).base.model.motion_controller,1,1);
+                      (&(this_ptr->base).base.model.base,1,1);
             return 0;
           }
           fVar2 = (pCVar1->position).x - (this_ptr->target_weapon->location).position.x;
@@ -143,14 +143,12 @@ int __cdecl core_mobster_cpp_CMobster_processWeaponPickup_FUN_00526d90(CMobster 
             if (iVar8 < 1) {
               return 1;
             }
-            core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                      (&this_ptr_00->motion_controller,7,1);
+            core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr_00->base,7,1);
             return 1;
           }
           this_ptr->target_weapon = (CDemonActor *)0x0;
           this_ptr->weapon_approach_timer = 20.0;
-          core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (&this_ptr_00->motion_controller,1,1);
+          core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr_00->base,1,1);
         }
       }
     }

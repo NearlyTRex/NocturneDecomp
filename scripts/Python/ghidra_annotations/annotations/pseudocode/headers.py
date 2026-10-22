@@ -11,7 +11,9 @@ from ghidra.program.model.data import Union
 from ghidra.program.model.data import TypeDef
 from ghidra.program.model.data import Pointer
 from ghidra.program.model.data import Array
-from ghidra_annotations.util import make_dirs, write_if_changed
+from ghidra.program.model.data import PointerType
+from ghidra.program.model.data import PointerTypeSettingsDefinition
+from ghidra_annotations.util import make_dirs, write_if_changed, with_generated_notice
 from ghidra_annotations.util.log import log_info
 from ghidra_annotations.util.data_type import collect_type_dependencies_with_context, get_ghidra_primitive_types
 from ghidra_annotations.annotations.pseudocode.basetypes import get_types_needing_basetypes, get_all_basetypes, get_libc_provided_types
@@ -595,7 +597,7 @@ def write_header_file(file_path, content):
         content: Content to write
     """
     try:
-        body = sanitize_string(content, preserve_newlines=True) + "\n"
+        body = with_generated_notice(sanitize_string(content, preserve_newlines=True) + "\n")
         write_if_changed(file_path, body)
     except Exception as e:
         log_info("Failed to write header file %s: %s" % (file_path, str(e)))
@@ -702,6 +704,172 @@ def _packing_and_alignment(dt):
                     struct's alignment matches what pack_value naturally
                     produces (no extra attribute needed).
     """
+    if isinstance(dt, Structure) and dt.getName() in _misaligned_pointer_structs(dt):
+        return None, None
+    return _ghidra_packing_and_alignment(dt)
+
+
+# Program -> names of structs that must drop their packing at 64-bit.
+_MISALIGNED_POINTER_STRUCTS = {}
+
+
+def _misaligned_pointer_structs(dt):
+    """Packed structs whose initialized data stores a symbol's address at a
+    64-bit offset that is not 8-aligned.
+
+    Packing mirrors the 32-bit layout, so once pointers widen to 8 bytes one
+    can land at an odd offset. A null or integer-valued pointer needs no fixup
+    and links anywhere, but arm64 Mach-O cannot encode a fixup for a misaligned
+    symbol address, so ld64 rejects the link. These structs get natural
+    alignment instead.
+    """
+    try:
+        program = dt.getDataTypeManager().getProgram()
+    except Exception:
+        return frozenset()
+    key = id(program)
+    if key not in _MISALIGNED_POINTER_STRUCTS:
+        _MISALIGNED_POINTER_STRUCTS[key] = _find_misaligned_pointer_structs(program)
+    return _MISALIGNED_POINTER_STRUCTS[key]
+
+
+def _strip_typedefs(dt):
+    while isinstance(dt, TypeDef):
+        dt = dt.getDataType()
+    return dt
+
+
+def _is_address(dt):
+    """True for a pointer that holds an address. A pointer typedef with a
+    non-default pointer type (IBO32's image-base offset, and the like) holds a
+    32-bit offset and is emitted as an integer."""
+    while isinstance(dt, TypeDef):
+        if dt.isPointer() and PointerTypeSettingsDefinition.DEF.getType(
+                dt.getDefaultSettings()) != PointerType.DEFAULT:
+            return False
+        dt = dt.getDataType()
+    return isinstance(dt, Pointer)
+
+
+def _lp64_size_and_alignment(dt, memo):
+    """(size, alignment) of a Ghidra type as the 64-bit build lays it out.
+
+    Pointers and the C long family widen to 8 bytes; basetypes.h keeps ulong
+    as the host's unsigned long, and the libc-provided names follow the target.
+    Every other scalar keeps its 32-bit width.
+    """
+    if isinstance(dt, TypeDef) and dt.getName() in get_libc_provided_types():
+        return 8, 8
+    if _is_address(dt):
+        return 8, 8
+    dt = _strip_typedefs(dt)
+    if isinstance(dt, Pointer):
+        return dt.getLength(), dt.getLength()
+    if dt.getName() in ("long", "ulong"):
+        return 8, 8
+    if isinstance(dt, Array):
+        size, align = _lp64_size_and_alignment(dt.getDataType(), memo)
+        return size * dt.getNumElements(), align
+    if isinstance(dt, (Structure, Union)):
+        name = dt.getPathName()
+        if name not in memo:
+            memo[name] = (0, 1)  # cycle guard
+            memo[name] = _lp64_aggregate_layout(dt, memo)[:2]
+        return memo[name]
+    size = max(dt.getLength(), 0)
+    align = 1
+    while align < 8 and size % (align * 2) == 0 and size >= align * 2:
+        align *= 2
+    return size, align
+
+
+def _lp64_aggregate_layout(dt, memo):
+    """(size, alignment, [(component, 64-bit offset)]) of a struct or union."""
+    pack_value, _ = _ghidra_packing_and_alignment(dt)
+    offset = size = 0
+    max_align = 1
+    placed = []
+    for comp in dt.getComponents():
+        comp_size, comp_align = _lp64_size_and_alignment(comp.getDataType(), memo)
+        if pack_value is not None:
+            comp_align = min(comp_align, pack_value)
+        max_align = max(max_align, comp_align)
+        if isinstance(dt, Union):
+            placed.append((comp, 0))
+            size = max(size, comp_size)
+            continue
+        offset = (offset + comp_align - 1) // comp_align * comp_align
+        placed.append((comp, offset))
+        offset += comp_size
+        size = offset
+    size = (size + max_align - 1) // max_align * max_align
+    return size, max_align, placed
+
+
+def _find_misaligned_pointer_structs(program):
+    # globals.py imports this module.
+    from ghidra_annotations.annotations.pseudocode.globals import resolve_pointer_to_symbol
+
+    memo = {}
+    # Packed struct -> 32-bit offsets of its own pointer fields that sit at a
+    # misaligned 64-bit offset.
+    hazards = {}
+
+    def hazard_offsets(struct):
+        name = struct.getPathName()
+        if name not in hazards:
+            hazards[name] = []
+            if _ghidra_packing_and_alignment(struct)[0] is not None:
+                for comp, offset in _lp64_aggregate_layout(struct, memo)[2]:
+                    if offset % 8 and _is_address(comp.getDataType()):
+                        hazards[name].append(comp.getOffset())
+        return hazards[name]
+
+    contains = {}
+
+    def contains_hazard(dt):
+        dt = _strip_typedefs(dt)
+        if isinstance(dt, Array):
+            return contains_hazard(dt.getDataType())
+        if not isinstance(dt, Structure):
+            return False
+        name = dt.getPathName()
+        if name not in contains:
+            contains[name] = False  # cycle guard
+            contains[name] = bool(hazard_offsets(dt)) or any(
+                contains_hazard(c.getDataType()) for c in dt.getComponents())
+        return contains[name]
+
+    memory = program.getMemory()
+    found = set()
+
+    def walk(dt, address):
+        dt = _strip_typedefs(dt)
+        if not contains_hazard(dt):
+            return
+        if isinstance(dt, Array):
+            step = dt.getElementLength()
+            for i in range(dt.getNumElements()):
+                walk(dt.getDataType(), address.add(i * step))
+            return
+        if dt.getName() not in found:
+            for offset in hazard_offsets(dt):
+                value = memory.getInt(address.add(offset)) & 0xFFFFFFFF
+                if resolve_pointer_to_symbol(program, value)[0] is not None:
+                    found.add(dt.getName())
+                    break
+        for comp in dt.getComponents():
+            walk(comp.getDataType(), address.add(comp.getOffset()))
+
+    for data in program.getListing().getDefinedData(True):
+        block = memory.getBlock(data.getAddress())
+        if block is not None and block.isInitialized():
+            walk(data.getDataType(), data.getAddress())
+    return frozenset(found)
+
+
+def _ghidra_packing_and_alignment(dt):
+    """Ghidra's packing for dt, before any 64-bit adjustment."""
     pack_value = None
     alignment = None
     is_packed = False
@@ -1946,8 +2114,7 @@ def generate_basetypes_header(pseudocode_dir):
     content.append("// =============================================================================")
     content.append("// Calling Convention Macros")
     content.append("// =============================================================================")
-    content.append("// Calling conventions parsed from x86watcom.cspec - define as empty for non-MSVC compilers")
-    content.append("#ifndef _MSC_VER")
+    content.append("// Calling conventions parsed from x86watcom.cspec, defined as empty")
 
     # Parse calling conventions from cspec file
     cspec_conventions = parse_cspec_calling_conventions()
@@ -1958,12 +2125,15 @@ def generate_basetypes_header(pseudocode_dir):
     # Unknown conventions
     unknown_conventions = ["__unknown"]
 
-    # Add standard conventions first
-    content.append("// Standard Windows calling conventions")
+    # Add standard conventions first. MSVC and clang-cl treat these as keywords.
+    content.append("// Standard Windows calling conventions: keywords under MSVC and clang-cl")
+    content.append("#ifndef _MSC_VER")
     for conv in standard_conventions:
         content.append("#define %s" % conv)
+    content.append("#endif")
 
-    # Add cspec-parsed conventions (excluding standard ones already added)
+    # Add cspec-parsed conventions (excluding standard ones already added). No
+    # compiler knows these names, so they are blanked under MSVC and clang-cl too.
     content.append("// Calling conventions from x86watcom.cspec")
     for conv in cspec_conventions:
         if conv not in standard_conventions:
@@ -1974,7 +2144,6 @@ def generate_basetypes_header(pseudocode_dir):
     for conv in unknown_conventions:
         content.append("#define %s" % conv)
 
-    content.append("#endif")
     content.append("")
     content.append("// =============================================================================")
     content.append("// Ghidra Primitive Types")
@@ -2006,6 +2175,14 @@ def generate_basetypes_header(pseudocode_dir):
     content.append("// Generic pointer type")
     content.append("typedef void* pointer;")
     content.append("")
+    content.append("// Ghidra's function of unknown signature, seen as `code *`. Any arguments are")
+    content.append("// accepted so a call through one compiles until it is retyped.")
+    content.append("#ifdef __cplusplus")
+    content.append("typedef void code(...);")
+    content.append("#else")
+    content.append("typedef void code();")
+    content.append("#endif")
+    content.append("")
     content.append("// Ghidra string types. Typed `const char *` on purpose: Ghidra auto-detects")
     content.append("// some statically-initialized buffers as C string literals and emits them as")
     content.append("// TerminatedCString (e.g. g_RendererDllName = \"trid3d.dll\"). If the game")
@@ -2022,11 +2199,20 @@ def generate_basetypes_header(pseudocode_dir):
     content.append("typedef const wchar_t* unicode;  // Ghidra null-terminated UTF-16 string")
     content.append("typedef const wchar_t* PascalUnicode;  // Ghidra length-prefixed UTF-16 string")
     content.append("")
-    content.append("// Extended precision float (x87 80-bit)")
+    content.append("// Extended precision float (x87 80-bit). long double is that format only on")
+    content.append("// x86 outside the Microsoft ABI. Elsewhere it is double (MSVC, Apple arm64)")
+    content.append("// or a software binary128 (arm64 Linux) that is slow and rounds unlike")
+    content.append("// either, so every non-x87 host takes double: two behaviours, not three.")
+    content.append("#if (defined(__x86_64__) || defined(__i386__)) && !defined(_MSC_VER)")
+    content.append("#define NOCTURNE_FLOAT10_IS_X87 1")
     content.append("typedef long double float10;")
+    content.append("#else")
+    content.append("#define NOCTURNE_FLOAT10_IS_X87 0")
+    content.append("typedef double float10;")
+    content.append("#endif")
     content.append("")
     content.append("// Unknown byte types (Ghidra's unkbyteN = N bytes of unknown data)")
-    content.append("typedef long double unkbyte10;  // 10-byte, typically x87 80-bit float returns")
+    content.append("typedef float10 unkbyte10;  // 10-byte, typically x87 80-bit float returns")
     content.append("")
     content.append("// =============================================================================")
     content.append("// Windows Primitive Types")
@@ -2122,62 +2308,106 @@ def generate_basetypes_header(pseudocode_dir):
     log_info("Created system/basetypes.h with Ghidra and Windows primitive types")
 
 
-def detect_include_cycles(system_grouped_types, type_to_path_map):
-    """Detect circular include dependencies between system headers.
+_SYSTEM_TYPE_KINDS = ('function_definitions', 'enums', 'typedefs', 'structs', 'unions')
+
+
+def merge_include_cycles(currentProgram, system_grouped_types, type_to_path_map, basetypes_types):
+    """Fold system headers that include each other into one header.
+
+    Ghidra's categories decide which header a type lands in, and nothing stops
+    two of them needing each other: nocturne.exe files _CONTEXT under excpt.h
+    and FLOATING_SAVE_AREA, which it holds, under winnt.h, while winnt.h's
+    PCONTEXT needs _CONTEXT. With #pragma once, whichever is included first
+    sees the other half empty. Each cycle's types move into its largest header,
+    the type->path map follows them, and the rest of the cycle is left to be
+    written as stubs that include it, since other headers include them by path.
 
     Args:
-        system_grouped_types: Dict mapping export_path to type lists
-        type_to_path_map: Map of type names to header paths
+        currentProgram: The Ghidra program
+        system_grouped_types: Dict mapping export_path to type lists; modified
+        type_to_path_map: Map of type names to header paths; modified
+        basetypes_types: Names already defined in basetypes.h
 
     Returns:
-        Set of header paths involved in cycles
+        Dict mapping each folded export_path to the export_path it went into
     """
-    from collections import defaultdict
-
-    # Build dependency graph between headers
-    header_deps = defaultdict(set)
+    header_of = {}
+    header_deps = {}
     for export_path, types in system_grouped_types.items():
         this_header = "%s.h" % export_path
-        all_types = (types['function_definitions'] + types['enums'] +
-                    types['typedefs'] + types['structs'] + types['unions'])
+        header_of[this_header] = export_path
+        deps = header_deps.setdefault(export_path, set())
+        for kind in _SYSTEM_TYPE_KINDS:
+            for dt in types[kind]:
+                if dt.getName() in basetypes_types:
+                    continue
+                direct_deps, pointer_deps = collect_type_dependencies(currentProgram, dt)
+                for dep in direct_deps | pointer_deps:
+                    dep_path = type_to_path_map.get(strip_type_prefix(dep))
+                    if dep_path and dep_path != this_header and dep_path != "system/basetypes.h":
+                        deps.add(dep_path)
 
-        for dt in all_types:
-            dt_name = dt.getName()
-            if dt_name in type_to_path_map:
-                dep_header = type_to_path_map[dt_name]
-                if dep_header != this_header and dep_header.startswith("system/"):
-                    header_deps[this_header].add(dep_header)
+    graph = {path: set(header_of[h] for h in deps if h in header_of)
+             for path, deps in header_deps.items()}
 
-    # Find cycles using DFS
-    cycles = set()
-    visited = set()
-    rec_stack = set()
+    # Tarjan's strongly connected components, iterative.
+    index = {}
+    low = {}
+    stack = []
+    on_stack = set()
+    components = []
+    for root in graph:
+        if root in index:
+            continue
+        work = [(root, iter(sorted(graph[root])))]
+        index[root] = low[root] = len(index)
+        stack.append(root)
+        on_stack.add(root)
+        while work:
+            node, children = work[-1]
+            child = next(children, None)
+            if child is not None:
+                if child not in index:
+                    index[child] = low[child] = len(index)
+                    stack.append(child)
+                    on_stack.add(child)
+                    work.append((child, iter(sorted(graph[child]))))
+                elif child in on_stack:
+                    low[node] = min(low[node], index[child])
+                continue
+            work.pop()
+            if work:
+                low[work[-1][0]] = min(low[work[-1][0]], low[node])
+            if low[node] == index[node]:
+                component = []
+                while True:
+                    member = stack.pop()
+                    on_stack.discard(member)
+                    component.append(member)
+                    if member == node:
+                        break
+                if len(component) > 1:
+                    components.append(component)
 
-    def dfs(header, path):
-        visited.add(header)
-        rec_stack.add(header)
-        path.append(header)
+    def type_count(path):
+        return sum(len(system_grouped_types[path][kind]) for kind in _SYSTEM_TYPE_KINDS)
 
-        for dep in header_deps.get(header, []):
-            if dep not in visited:
-                if dfs(dep, path):
-                    return True
-            elif dep in rec_stack:
-                # Found a cycle
-                cycle_start = path.index(dep)
-                for h in path[cycle_start:]:
-                    cycles.add(h)
-                return True
-
-        path.pop()
-        rec_stack.remove(header)
-        return False
-
-    for header in header_deps:
-        if header not in visited:
-            dfs(header, [])
-
-    return cycles
+    folded = {}
+    for component in components:
+        target = max(sorted(component), key=type_count)
+        for path in component:
+            if path == target:
+                continue
+            for kind in _SYSTEM_TYPE_KINDS:
+                moved = system_grouped_types[path][kind]
+                system_grouped_types[target][kind].extend(moved)
+                for dt in moved:
+                    type_to_path_map[dt.getName()] = "%s.h" % target
+                system_grouped_types[path][kind] = []
+            folded[path] = target
+        log_info("Folded include cycle into %s.h: %s"
+                 % (target, ", ".join("%s.h" % p for p in sorted(component) if p != target)))
+    return folded
 
 
 def generate_watcom_runtime_inlines():
@@ -2290,6 +2520,19 @@ def generate_watcom_runtime_inlines():
     lines.append("#include <cstring>")
     lines.append("#ifndef _MSC_VER")
     lines.append("#include <unistd.h>")
+    lines.append("#else")
+    lines.append("// The UCRT declares tell(), chsize(), _fullpath() and _getcwd() with C linkage and")
+    lines.append("// defines them in its static library, and has no sleep(); the shims define the")
+    lines.append("// Watcom versions under these names. <direct.h> has chdir(). Both are included")
+    lines.append("// first so their guards absorb any later inclusion.")
+    lines.append("#include <io.h>")
+    lines.append("#include <direct.h>")
+    lines.append("#define tell nocturne_watcom_tell")
+    lines.append("#define chsize nocturne_watcom_chsize")
+    lines.append("#define _fullpath nocturne_watcom_fullpath")
+    lines.append("#define _getcwd nocturne_watcom_getcwd")
+    lines.append("#define sleep nocturne_watcom_sleep")
+    lines.append("extern unsigned int sleep(unsigned int seconds);")
     lines.append("#endif")
     lines.append("")
     lines.append("extern void* _memcpy(void* dest, const void* src, size_t count);")
@@ -2412,6 +2655,15 @@ def generate_winsock_runtime_inlines():
     lines.append("// ---------------------------------------------------------------------------")
     lines.append("// Byte Order Conversion")
     lines.append("// ---------------------------------------------------------------------------")
+    lines.append("")
+    lines.append("// Darwin's <sys/_endian.h>, which ordinary libc headers reach, defines these as")
+    lines.append("// macros, and they would rewrite the declarations below.")
+    lines.append("#if defined(__APPLE__)")
+    lines.append("#undef htons")
+    lines.append("#undef htonl")
+    lines.append("#undef ntohs")
+    lines.append("#undef ntohl")
+    lines.append("#endif")
     lines.append("")
     lines.append("extern ushort htons(ushort hostshort);")
     lines.append("extern ulong htonl(ulong hostlong);")
@@ -2604,11 +2856,10 @@ def export_system_grouped_files(currentProgram, pseudocode_dir, system_grouped_t
     # Get the set of types already defined in basetypes.h
     basetypes_types = get_basetypes_defined_types()
 
-    # Detect cycles in header dependencies
+    folded_headers = {}
     if type_to_path_map:
-        cyclic_headers = detect_include_cycles(system_grouped_types, type_to_path_map)
-        if cyclic_headers:
-            log_info("Detected circular dependencies in headers: %s" % ", ".join(sorted(cyclic_headers)))
+        folded_headers = merge_include_cycles(currentProgram, system_grouped_types,
+                                              type_to_path_map, basetypes_types)
 
     # Program-gated per-header injections (resolved once for this program).
     header_injections = get_header_injections(currentProgram.getName())
@@ -2618,6 +2869,25 @@ def export_system_grouped_files(currentProgram, pseudocode_dir, system_grouped_t
         # export_path is like "system/winnt" or "system/ddraw"
         header_name = export_path.split("/")[-1]
         this_header_path = "%s.h" % export_path
+
+        if export_path in folded_headers:
+            target = folded_headers[export_path]
+            stub = [
+                "#pragma once",
+                "",
+                "// =============================================================================",
+                "// %s - System Header (stub)" % header_name.upper(),
+                "// =============================================================================",
+                "//",
+                "// This header's types and %s.h's needed each other, so they are" % target.split("/")[-1],
+                "// defined there. The file is still emitted because other generated",
+                "// headers include it by path.",
+                "",
+                '#include "%s.h"' % target,
+                "",
+            ]
+            write_header_file(os.path.join(system_dir, "%s.h" % header_name), "\n".join(stub))
+            continue
 
         # Collect all types in this header
         # Put function_definitions first - they're needed by vtable structs.
@@ -3038,8 +3308,10 @@ def generate_master_include(pseudocode_dir):
     content.append("// Include this file in all source files to get access to all declarations.")
     content.append("// This provides all type definitions, constants, globals, and prototypes.")
     content.append("")
-    content.append("// Build-time behavior toggles.")
+    content.append("// Build-time behavior toggles, from the program's shims when it has them.")
+    content.append('#if __has_include("shim_config.h")')
     content.append('#include "shim_config.h"')
+    content.append("#endif")
     content.append("")
     content.append("// System type definitions (Windows API, C runtime, DirectX, DirectSound, etc.)")
     content.append('#include "system.h"')

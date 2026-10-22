@@ -53,7 +53,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
   
   if ((float)0.001 < blend_weight) {
     core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0
-              (&this_ptr->motion_controller,target_motion_index,target_frame_number,local_58,
+              (&this_ptr->base,target_motion_index,target_frame_number,local_58,
                &local_5c,&local_938);
     this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
     if (this_ptr->bone_update_mode == 0) {

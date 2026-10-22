@@ -2,60 +2,6 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 5,
-        "line": 20,
-        "message": "unknown type name 'FLOATING_SAVE_AREA'"
-      },
-      {
-        "category": "other",
-        "column": 5,
-        "line": 52,
-        "message": "unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?"
-      },
-      {
-        "category": "other",
-        "column": 5,
-        "line": 53,
-        "message": "unknown type name 'PCONTEXT'"
-      },
-      {
-        "category": "other",
-        "column": 85,
-        "line": 258,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 80,
-        "line": 267,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 496,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 496,
-        "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 497,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 497,
-        "message": "exponent has no digits"
-      },
-      {
         "category": "incompatible_types",
         "column": 5,
         "line": 20,
@@ -113,6 +59,42 @@
         "category": "incompatible_types",
         "column": 13,
         "line": 45,
+        "message": "no matching function for call to '_fgetc'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 3,
+        "line": 51,
+        "message": "no matching function for call to '_fscanf'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 15,
+        "line": 57,
+        "message": "no matching function for call to '_fscanf'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 3,
+        "line": 66,
+        "message": "no matching function for call to '_fscanf'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 15,
+        "line": 72,
+        "message": "no matching function for call to '_fscanf'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 3,
+        "line": 81,
+        "message": "no matching function for call to '_fscanf'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 20,
+        "line": 83,
         "message": "no matching function for call to '_fgetc'"
       }
     ],
@@ -689,7 +671,7 @@
       "line": 20,
       "match": "pCVar3 = (T *)&(pCVar3->FIELD).SUBFIELD",
       "severity": "moderate",
-      "text": "pCVar3 = (CDeformableModelInstance *)&(pCVar3->motion_controller).current_motion_index;",
+      "text": "pCVar3 = (CDeformableModelInstance *)&(pCVar3->base).current_motion_index;",
       "type": "shadow_pointer_walk"
     },
     {
@@ -697,7 +679,7 @@
       "line": 28,
       "match": "model_ptr = (T *)&(model_ptr->FIELD).SUBFIELD",
       "severity": "moderate",
-      "text": "model_ptr = (CDeformableModelInstance *)&(model_ptr->motion_controller).current_motion_index;",
+      "text": "model_ptr = (CDeformableModelInstance *)&(model_ptr->base).current_motion_index;",
       "type": "shadow_pointer_walk"
     }
   ]

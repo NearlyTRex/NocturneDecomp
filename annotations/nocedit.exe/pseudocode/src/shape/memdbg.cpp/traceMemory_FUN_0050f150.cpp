@@ -12,7 +12,7 @@ void __cdecl shape_memdbg_cpp_traceMemory_FUN_0050f150(char *format,...)
   if (g_MemoryTraceInitialized != 0) {
     return;
   }
-  remove("memdbg.txt");
+  _remove("memdbg.txt");
   g_MemoryTraceInitialized = 1;
   return;
 }

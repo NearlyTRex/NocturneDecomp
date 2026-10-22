@@ -202,8 +202,7 @@ joined_r0x005c57cf:
                       ((CCharacter *)this_ptr,&delta_time,iVar15);
     iVar8 = (this_ptr->base).base.layer_actions[(this_ptr->base).base.layer_action_index].
             motion_index;
-    pCVar6 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
-                       (&this_ptr_01->motion_controller);
+    pCVar6 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0(&this_ptr_01->base);
     switch((this_ptr->base).base.layer_action_index) {
     case 6:
       this_ptr_02 = (CDynamite *)
@@ -345,8 +344,7 @@ LAB_005c53f2:
         iVar8 = core_actor_cpp_isOfClass_FUN_0040c6d0
                           ((this_ptr->base).target_actor,"CTrap");
         if (iVar8 == 0) {
-          core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (&this_ptr_01->motion_controller,0x16,1);
+          core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr_01->base,0x16,1);
           if (this_ptr->action_pending != 0) {
             shape_edittool_cpp_CEditorTools_showWarning_FUN_0049e6f0
                       (g_CEditorToolsPtr,"actionPending = %d\nstranger.cpp line %d",
@@ -355,8 +353,7 @@ LAB_005c53f2:
           this_ptr->action_pending = 2;
         }
         else {
-          core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (&this_ptr_01->motion_controller,0x14,1);
+          core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr_01->base,0x14,1);
           this_ptr->action_pending = 6;
         }
         (this_ptr->base).target_actor = (CDemonActor *)0x0;

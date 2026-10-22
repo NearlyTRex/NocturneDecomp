@@ -67,7 +67,7 @@ int __cdecl shape_cramtex_cpp_generateTextureAtlasLayout_FUN_00444d90(int textur
       iVar11 = iVar10;
     } while (iVar10 < texture_count * 0x4c);
   }
-  remove("..\\shape\\cramlog.txt");
+  _remove("..\\shape\\cramlog.txt");
   seed = rand();
   srand(0x16);
   _qsort

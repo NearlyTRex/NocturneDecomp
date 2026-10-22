@@ -13,6 +13,8 @@ namespace nocturne::common {
 // 'A'..'Z', 'a'..'z' and '0'..'9', as the CRT's isalnum; Windows-1252 letters are not.
 [[nodiscard]] bool isAsciiAlnum(char c);
 [[nodiscard]] bool equalsIgnoringAsciiCase(std::string_view a, std::string_view b);
+// _strnicmp(text, prefix, strlen(prefix)) == 0.
+[[nodiscard]] bool startsWithIgnoringAsciiCase(std::string_view text, std::string_view prefix);
 // _stricmp's order: negative, zero or positive, comparing folded bytes as unsigned.
 [[nodiscard]] int compareIgnoringAsciiCase(std::string_view a, std::string_view b);
 

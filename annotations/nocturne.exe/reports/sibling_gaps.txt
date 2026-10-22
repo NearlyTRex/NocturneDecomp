@@ -268,7 +268,7 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
   pairs compared        : 5267
   never transferred     : 6   (nocturne side has no signature at all -- transfer work, not drift)
   genuine divergence    : 41   (both sides typed, and they disagree -- investigate)
-  name core differs     : 63   (mapped as the same function under two different names)
+  name core differs     : 62   (mapped as the same function under two different names)
 
   -- genuine divergence, highest confidence first --
   by kind: {'ret': 28, 'param': 13, 'param0': 7, 'param1': 4, 'param2': 4, 'param3': 1, 'conv': 1}
@@ -415,7 +415,7 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
         ret CPathMap* -> int
 
   -- same pair, different name core --
-  {'unnamed on one side': 52, 'renamed': 5, 'MAPPING SUSPECT': 3, 'stubbed in nocturne': 3}
+  {'unnamed on one side': 50, 'renamed': 5, 'MAPPING SUSPECT': 4, 'stubbed in nocturne': 3}
     MAPPING SUSPECT     the two names claim different CLASSES, so the
                         pair is probably wrong, not the names
     case-only spelling  same name, different capitalisation -- one build
@@ -433,6 +433,9 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
     [MAPPING SUSPECT] 005ee490 -> 005543b0  conf 1.00  shape same_mnemonics
       nocedit  CWeapon_getCarrier
       nocturne CLadder_getGroundType
+    [MAPPING SUSPECT] 00574910 -> 00513720  conf 0.75  shape size_mismatch
+      nocedit  CZThumb_saveZBufferTable
+      nocturne CDemonSet_saveThumbs
     [renamed] 004111b0 -> 0040ef60  conf 1.00  shape same_mnemonics
       nocedit  CAmmo_setAmmoCount
       nocturne CAmmo_setWeaponAmmo
@@ -565,9 +568,6 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
     [unnamed on one side] 00571320 -> 0050aba0  conf 0.85  shape size_mismatch
       nocedit  CDemonSet_isCameraPanning
       nocturne CDemonSet
-    [unnamed on one side] 00575e40 -> 00513670  conf 0.85  shape size_mismatch
-      nocedit  CDemonSet_writeThumbs
-      nocturne CDemonSet
     [unnamed on one side] 005e1ee0 -> 005492a0  conf 0.85  shape unshaped
       nocedit  cleanupWinsock
       nocturne WSACleanup
@@ -606,9 +606,6 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
       nocturne CPackedBitmapSet
     [unnamed on one side] 0056d2d0 -> 0050ad20  conf 0.75  shape similar_size
       nocedit  CDemonSet_clearLights
-      nocturne CDemonSet
-    [unnamed on one side] 00574910 -> 00513720  conf 0.75  shape size_mismatch
-      nocedit  CZThumb_saveZBufferTable
       nocturne CDemonSet
     [unnamed on one side] 0060128c -> 00566440  conf 0.75  shape unshaped
       nocedit  _getcwd

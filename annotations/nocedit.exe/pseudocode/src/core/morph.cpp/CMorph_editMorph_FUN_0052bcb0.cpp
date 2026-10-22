@@ -221,8 +221,7 @@ void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *this_ptr)
           }
           engine_drender_cpp_CDemonRenderer_popViewport_FUN_0048c8c0(g_CDemonRendererPtr2);
           iVar16 = iVar16 + 1;
-          local_40 = (CDeformableModelInstance *)&(local_40->motion_controller).current_motion_index
-          ;
+          local_40 = (CDeformableModelInstance *)&(local_40->base).current_motion_index;
         } while (iVar16 < 2);
         local_4c = -NAN;
         if (-1 < iVar15) {

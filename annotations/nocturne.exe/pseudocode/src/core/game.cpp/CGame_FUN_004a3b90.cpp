@@ -41,7 +41,7 @@ void __cdecl core_game_cpp_CGame_FUN_004a3b90(CGame *this_ptr,char *save_filenam
     shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0(g_CEditorTools_PTR_005b6d50,pcVar5);
     return;
   }
-  remove("save\\$$SAVE$$.TMP");
+  _remove("save\\$$SAVE$$.TMP");
   splitpath(&DAT_01c78598,(char *)0x0,(char *)0x0,(char *)0x0,local_24c);
   iVar3 = _stricmp(local_24c,"noc");
   if ((iVar3 == 0) ||
@@ -174,7 +174,7 @@ void __cdecl core_game_cpp_CGame_FUN_004a3b90(CGame *this_ptr,char *save_filenam
     crt_fstream_cpp_ofstream_dtor_FUN_005651ca(local_cc,0);
     crt_fstream_cpp_ifstream_dtor_FUN_00565264(local_14c,0);
   }
-  remove("save\\$$SAVE$$.TMP");
+  _remove("save\\$$SAVE$$.TMP");
   pcVar4 = &DAT_01c78598;
   do {
     cVar2 = *pcVar5;

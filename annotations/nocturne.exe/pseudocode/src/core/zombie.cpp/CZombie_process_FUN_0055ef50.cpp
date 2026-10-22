@@ -148,7 +148,7 @@ void __cdecl core_zombie_cpp_CZombie_process_FUN_0055ef50(CZombie *this_ptr,floa
   pcVar24 = "CHASE_2";
   local_38 = 0;
   pCVar7 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890
-                     (&(this_ptr->base).base.model.motion_controller);
+                     (&(this_ptr->base).base.model.base);
   iVar6 = core_motion_cpp_CMotionList_findStateIndex_FUN_004e10a0(pCVar7,pcVar24,iVar6);
   if (iVar6 == 0x16) {
     local_38 = 1;
@@ -173,8 +173,7 @@ void __cdecl core_zombie_cpp_CZombie_process_FUN_0055ef50(CZombie *this_ptr,floa
 LAB_0055efe4:
   pCVar2 = local_20;
   if (0.0 < local_7c) {
-    uVar8 = core_motion_cpp_CMotionController_advance_FUN_004e11c0
-                      (&local_20->motion_controller,&local_7c);
+    uVar8 = core_motion_cpp_CMotionController_advance_FUN_004e11c0(&local_20->base,&local_7c);
     if (uVar8 < 0xb) {
       if (uVar8 < 5) {
         if (uVar8 == 2) {
@@ -447,8 +446,7 @@ LAB_0055f021:
     this_ptr->bleedout_timer = -1.0;
   }
   pCVar2 = &(this_ptr->base).base.model;
-  pSVar15 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                      (&pCVar2->motion_controller);
+  pSVar15 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(&pCVar2->base);
   iVar6 = pSVar15->state_index;
   local_48 = 0;
   iVar9 = core_charactr_cpp_CCharacter_processWalking_FUN_00428c00
@@ -456,8 +454,7 @@ LAB_0055f021:
   if (iVar9 == 0) {
     local_34 = -1.0;
     local_4c = 0.3;
-    pSVar15 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                        (&pCVar2->motion_controller);
+    pSVar15 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(&pCVar2->base);
     uVar8 = pSVar15->state_index;
     if (uVar8 < 8) {
       if (uVar8 == 0) {
@@ -466,11 +463,11 @@ LAB_0055f021:
           iVar6 = 0;
           pcVar24 = "pickass";
           pCVar7 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890
-                             (&(this_ptr->base).base.model.motion_controller);
+                             (&(this_ptr->base).base.model.base);
           iVar6 = core_motion_cpp_CMotionList_findMotionIndex_FUN_004e1010(pCVar7,pcVar24,iVar6);
           if (-1 < iVar6) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                      (&(this_ptr->base).base.model.motion_controller,0x10,1);
+                      (&(this_ptr->base).base.model.base,0x10,1);
             goto LAB_0055fc6b;
           }
         }
@@ -516,7 +513,7 @@ LAB_0055f021:
           iVar6 = core_enemy_cpp_CEnemy_updatePatrol_FUN_0047a030(&this_ptr->base,delta_time);
           if (iVar6 == 0) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                      (&(this_ptr->base).base.model.motion_controller,0,1);
+                      (&(this_ptr->base).base.model.base,0,1);
           }
         }
         else if (pCVar3 == (CCharacter *)0x0) {
@@ -582,8 +579,7 @@ LAB_0056033e:
             if (iVar6 < 0) {
               engine_console_cpp_CConsole_printf_FUN_0043ac60
                         (g_CConsole_PTR_005ad350,"%s gave up chase - I'm confused\n",this_ptr);
-              core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                        (&pCVar2->motion_controller,0,1);
+              core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar2->base,0,1);
             }
             else if (iVar6 < 1) {
               iVar6 = core_zombie_cpp_CZombie_getPickupHandIndex_FUN_005617e0
@@ -610,7 +606,7 @@ LAB_0056033e:
                       engine_console_cpp_CConsole_printf_FUN_0043ac60
                                 (g_CConsole_PTR_005ad350,"%s lugging\n",this_ptr);
                       core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                                (&pCVar2->motion_controller,0xd,1);
+                                (&pCVar2->base,0xd,1);
                     }
                   }
                   else if ((uVar8 == 3) &&
@@ -619,7 +615,7 @@ LAB_0056033e:
                     engine_console_cpp_CConsole_printf_FUN_0043ac60
                               (g_CConsole_PTR_005ad350,"%s tossing\n",this_ptr);
                     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                              (&pCVar2->motion_controller,0xb,1);
+                              (&pCVar2->base,0xb,1);
                   }
                 }
               }
@@ -650,7 +646,7 @@ LAB_0056033e:
                 iVar6 = 2;
               }
               core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                        (&(this_ptr->base).base.model.motion_controller,iVar6,1);
+                        (&(this_ptr->base).base.model.base,iVar6,1);
               (this_ptr->base).attack_cooldown = 0.8;
             }
           }
@@ -689,7 +685,7 @@ LAB_00560776:
             local_34 = local_3c;
             local_54 = (CVector3f *)
                        core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004e1e60
-                                 (&(this_ptr->base).base.model.motion_controller);
+                                 (&(this_ptr->base).base.model.base);
             local_88 = (double)(float)local_54;
             local_14 = local_54;
             if ((1.0 <= local_88) && (local_88 <= 2)) {
@@ -752,7 +748,7 @@ LAB_00560776:
                     engine_console_cpp_CConsole_printf_FUN_0043ac60
                               (g_CConsole_PTR_005ad350,"%s rising from the grave\n",this_ptr);
                     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                              (&(this_ptr->base).base.model.motion_controller,0xf,1);
+                              (&(this_ptr->base).base.model.base,0xf,1);
                     if ((CGrave *)this_ptr->grave_actor != (CGrave *)0x0) {
                       core_grave_cpp_CGrave_startAnimation_FUN_004b0dc0
                                 ((CGrave *)this_ptr->grave_actor);
@@ -777,8 +773,7 @@ LAB_00560776:
                 SQRT(fVar27 * fVar27 + fVar26 * fVar26) <= (float)3)) &&
                (ABS((this_ptr->base).base.base.location.position.y -
                     (pCVar3->base).location.position.y) <= (float)2)) {
-              core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                        (&pCVar2->motion_controller,0,1);
+              core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar2->base,0,1);
             }
           }
         }
@@ -791,7 +786,7 @@ LAB_00560776:
                       (&this_ptr->base,delta_time), (this_ptr->base).victim != (CCharacter *)0x0)) {
 LAB_0055fd59:
           core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                    (&(this_ptr->base).base.model.motion_controller,0,1);
+                    (&(this_ptr->base).base.model.base,0,1);
         }
       }
       else if ((uVar8 == 0x1c) &&
@@ -891,14 +886,14 @@ LAB_0055f986:
       else {
 LAB_0055fc2f:
         core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                  (&(this_ptr->base).base.model.motion_controller,0,1);
+                  (&(this_ptr->base).base.model.base,0,1);
       }
     }
     else {
       if (uVar8 < 3) goto LAB_0055f986;
       if (uVar8 != 3) goto LAB_0055fc2f;
       core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                (&(this_ptr->base).base.model.motion_controller,0,1);
+                (&(this_ptr->base).base.model.base,0,1);
       engine_console_cpp_CConsole_printf_FUN_0043ac60
                 (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",this_ptr);
     }
@@ -912,7 +907,7 @@ LAB_0055fc2f:
     (this_ptr->base).attack_cooldown = (this_ptr->base).attack_cooldown - delta_time;
   }
   pSVar15 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                      (&(this_ptr->base).base.model.motion_controller);
+                      (&(this_ptr->base).base.model.base);
   pCVar10 = &(this_ptr->base).base.model.accumulated_root_motion;
   iVar6 = pSVar15->state_index;
   if (iVar6 == 0xe) {
@@ -975,7 +970,7 @@ LAB_0055fc2f:
               iVar18 = 0x13;
             }
             core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                      (&(this_ptr->base).base.model.motion_controller,iVar18,1);
+                      (&(this_ptr->base).base.model.base,iVar18,1);
             this_ptr->target_door = local_58;
           }
         }

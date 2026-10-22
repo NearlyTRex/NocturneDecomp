@@ -1744,8 +1744,8 @@ static_assert(__builtin_offsetof(CDeformableModel, model_filename) == 36784,
 // ---- CDeformableModelInstance (8884 bytes) ----
 static_assert(sizeof(CDeformableModelInstance) == 8884,
               "sizeof(CDeformableModelInstance) != 8884");
-static_assert(__builtin_offsetof(CDeformableModelInstance, motion_controller) == 0,
-              "offsetof(CDeformableModelInstance, motion_controller) != 0");
+static_assert(__builtin_offsetof(CDeformableModelInstance, base) == 0,
+              "offsetof(CDeformableModelInstance, base) != 0");
 static_assert(__builtin_offsetof(CDeformableModelInstance, scale_factor) == 84,
               "offsetof(CDeformableModelInstance, scale_factor) != 84");
 static_assert(__builtin_offsetof(CDeformableModelInstance, transformed_vertices) == 88,

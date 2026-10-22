@@ -26,6 +26,11 @@ bool equalsIgnoringAsciiCase(std::string_view a, std::string_view b) {
     return std::ranges::equal(a, b, {}, foldAscii, foldAscii);
 }
 
+bool startsWithIgnoringAsciiCase(std::string_view text, std::string_view prefix) {
+    return text.size() >= prefix.size() &&
+           equalsIgnoringAsciiCase(text.substr(0, prefix.size()), prefix);
+}
+
 int compareIgnoringAsciiCase(std::string_view a, std::string_view b) {
     const auto unsignedFold = [](char c) { return static_cast<unsigned char>(foldAscii(c)); };
     const auto [mismatch_a, mismatch_b] =

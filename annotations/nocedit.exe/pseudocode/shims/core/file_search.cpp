@@ -6,6 +6,7 @@
 
 #include "core/file_search.h"
 #include "core/ascii_case.h"
+#include "watcom/path.h"
 
 #include <algorithm>
 #include <filesystem>
@@ -77,19 +78,31 @@ std::vector<std::string> nocturne_find_files(const char *filespec) {
     std::string directory, pattern;
     split(filespec, &directory, &pattern);
 
-    std::error_code ignored;
-    const std::filesystem::path where(directory.empty() ? "." : directory);
-    // The non-throwing iterator: a directory that is not there, or cannot be
-    // read, means no matches rather than an error to propagate. Both callers
-    // report that as their own API's "nothing found".
-    std::filesystem::directory_iterator it(where, ignored), end;
-    if (ignored) return found;
+    // The same directory under each root (watcom/path.h), user directory first.
+    // A name in both is the user directory's copy, which is the one an open of
+    // the returned path reaches, so it is listed once.
+    std::vector<std::string> seen;
+    for (const std::string &root_dir : watcom_resolve_fs_dirs(directory.c_str())) {
+        std::error_code ignored;
+        const std::filesystem::path where(root_dir.empty() ? "." : root_dir);
+        // The non-throwing iterator: a directory that is not there, or cannot be
+        // read, means no matches rather than an error to propagate. Both callers
+        // report that as their own API's "nothing found".
+        std::filesystem::directory_iterator it(where, ignored), end;
+        if (ignored) continue;
 
-    for (; it != end; it.increment(ignored)) {
-        if (ignored) return found;
-        const std::string name = it->path().filename().string();
-        if (!matches(pattern.c_str(), name.c_str())) continue;
-        found.push_back(directory.empty() ? name : directory + "/" + name);
+        for (; it != end; it.increment(ignored)) {
+            if (ignored) break;
+            const std::string name = it->path().filename().string();
+            if (!matches(pattern.c_str(), name.c_str())) continue;
+            bool duplicate = false;
+            for (const std::string &other : seen) {
+                if (nocturne_ascii_iequals(other.c_str(), name.c_str())) duplicate = true;
+            }
+            if (duplicate) continue;
+            seen.push_back(name);
+            found.push_back(directory.empty() ? name : directory + "/" + name);
+        }
     }
 
     std::sort(found.begin(), found.end());

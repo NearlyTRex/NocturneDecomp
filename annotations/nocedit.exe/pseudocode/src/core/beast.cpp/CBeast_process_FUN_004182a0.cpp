@@ -25,8 +25,7 @@ void __cdecl core_beast_cpp_CBeast_process_FUN_004182a0(CBeast *this_ptr,float d
     local_10 = delta_time * (this_ptr->base).speed;
     this_ptr_01 = &(this_ptr->base).base.model;
     while (0.0 < local_10) {
-      core_motion_cpp_CMotionController_advance_FUN_0052d610
-                (&this_ptr_01->motion_controller,&local_10);
+      core_motion_cpp_CMotionController_advance_FUN_0052d610(&this_ptr_01->base,&local_10);
     }
     core_charactr_cpp_CCharacter_preProcess_FUN_00429820((CCharacter *)this_ptr);
     core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(this_ptr_01);

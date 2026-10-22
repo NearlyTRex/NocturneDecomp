@@ -13,7 +13,7 @@ void __cdecl core_netgame_cpp_CNetGame_init_FUN_0053f780(CNetGame *this_ptr)
   int iVar2;
   char *pcVar3;
 
-  remove("netlog.txt");
+  _remove("netlog.txt");
   g_CurrentGameTime = 1;
   iVar2 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
   g_LastPingTime = iVar2 / 0x12;

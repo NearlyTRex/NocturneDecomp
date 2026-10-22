@@ -657,9 +657,9 @@ LAB_0057a07e:
       pCVar7 = this_ptr;
       do {
         _sprintf(local_2a0,"backdrop\\%s.fog",pCVar11);
-        remove(local_2a0);
+        _remove(local_2a0);
         _sprintf(local_2a0,"backdrop\\%s.pvs",pCVar11);
-        remove(local_2a0);
+        _remove(local_2a0);
         piVar15 = pCVar7->cameras[0].pvs_list;
         pCVar7->cameras[0].pvs_count = 0;
         if (piVar15 != (int *)0x0) {

@@ -30,7 +30,8 @@ TEST(CHeroPlaceholder, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CHeroPlaceholder::getActorType),
                                  const CDemonActorType &(CHeroPlaceholder::*)() const>);
     static_assert(std::is_same_v<decltype(&CHeroPlaceholder::createHero),
-                                 CHero *(CHeroPlaceholder::*)(EHeroType)>);
+                                 std::unique_ptr<CHero> (CHeroPlaceholder::*)(
+                                     EHeroType, const CActor &, const CDemonMission &) const>);
 }
 
 TEST(CHeroPlaceholder, ItsRecordIsAVersionOneActorThatMissionsCanCreate) {

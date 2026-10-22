@@ -30,6 +30,15 @@ struct SClipRect {
     bool operator==(const SClipRect &) const = default;
 };
 
+// A character of the built-in font, which runs from 0x20 to 0xff: its rows top down, bit width - 1
+// the leftmost pixel.
+struct SFontGlyph {
+    static constexpr std::size_t kRows = 11;
+
+    std::uint8_t width = 0;
+    std::array<std::uint16_t, kRows> rows{};
+};
+
 // The software renderer's 2D state: the palette and the tables built from it, the clip
 // rectangle, the viewport the projection centres on and the colour lines are drawn in.
 class C2d {
@@ -58,7 +67,10 @@ public:
     void drawLine3D(int x1, int y1, std::uint32_t z1, int x2, int y2, std::uint32_t z2);
     void setupViewportAndClipping(int left, int top, int right, int bottom);
     int getStringWidth(char *text);
-    void drawText(char *text, int x, int y);
+    // In the built-in font, its top left corner at x, y, each line 11 rows below the last and
+    // starting at x again, and clipped; while text wrap is on, a line also breaks at the clip's
+    // right edge. Bytes are Windows-1252, and controls other than a newline are skipped.
+    void drawText(std::string_view text, int x, int y);
     void drawString(char *text, int x_pos, int y_pos, int color);
     void drawTextXY(int x, int y, char *text);
     void drawTextColor(char *text, int x, int y);
@@ -67,7 +79,7 @@ public:
     void drawTextCenteredColor(char *text, int left_x, int right_x, int y);
     void drawTextCenteredXYColor(int left_x, int right_x, int y, char *text);
     int getTextWrapEnabled();
-    void setTextWrapEnabled(int enabled);
+    void setTextWrapEnabled(bool enabled);
     void disableTextWrap();
     int getTextColor();
     void setTextColor(int color);
@@ -114,6 +126,12 @@ private:
     // count pixels of row y from x in the active render colour; false at a depth that has no
     // colour table.
     bool fillRun(int x, int y, int count);
+    [[nodiscard]] static const SFontGlyph &getFontGlyph(unsigned char char_code);
+    // How far the next character starts to the right, or 0 when the glyph does not fit in the
+    // clip and nothing is drawn.
+    int drawCharacter(unsigned char char_code, int x_pos, int y_pos);
+    void drawTextWrapped(std::string_view text, int x_start, int y_start, int x_max, int y_max);
+    void drawTextMultiline(std::string_view text, int x_start, int y_start, int y_max);
     void loadLightTable(std::string_view filename);
     void buildLightTable(int base_color_index);
     void saveLightTable(std::string_view filename);
@@ -137,6 +155,7 @@ private:
     int viewport_height_ = 0;
     SProjectionParams projection_;
     int active_render_color_ = 0;
+    bool text_wrap_enabled_ = true;
 };
 
 } // namespace nocturne::engine

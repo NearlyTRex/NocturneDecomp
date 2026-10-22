@@ -43,7 +43,7 @@ void __cdecl shape_cramtex_cpp_generateTextureAtlas_FUN_00445820(int acceptable_
   int *piVar4;
   int *piVar3;
 
-  remove("..\\shape\\cramlog.txt");
+  _remove("..\\shape\\cramlog.txt");
 #if NOCTURNE_AUTHENTIC_RNG
   seed = rand();
 #else

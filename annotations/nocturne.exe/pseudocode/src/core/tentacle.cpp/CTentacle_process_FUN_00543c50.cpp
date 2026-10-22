@@ -68,8 +68,7 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_00543c50(CTentacle *this_pt
     local_20 = &(this_ptr->base).base.base.location.position;
     local_1c = &(this_ptr->base).base.model;
     while (0.0 < local_258) {
-      uVar7 = core_motion_cpp_CMotionController_advance_FUN_004e11c0
-                        (&local_1c->motion_controller,&local_258);
+      uVar7 = core_motion_cpp_CMotionController_advance_FUN_004e11c0(&local_1c->base,&local_258);
       if (99 < uVar7) {
         if (uVar7 < 0x65) {
           pCVar1 = (this_ptr->base).victim;
@@ -160,8 +159,7 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_00543c50(CTentacle *this_pt
         }
       }
     }
-    pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                       (&local_1c->motion_controller);
+    pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(&local_1c->base);
     uVar7 = pSVar5->state_index;
     if (uVar7 < 2) {
       if (uVar7 == 0) {
@@ -175,8 +173,8 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_00543c50(CTentacle *this_pt
             iVar4 = core_tentacle_cpp_CTentacle_findNearbyTarget_FUN_005444f0
                               (this_ptr,"CEnemy CHero CNPC");
             if (iVar4 != 0) {
-              core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                        (&this_ptr_00->motion_controller,2,1);
+              core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,2,1)
+              ;
               this_ptr->wait_timer = 0.0;
             }
           }
@@ -184,8 +182,8 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_00543c50(CTentacle *this_pt
             iVar4 = core_tentacle_cpp_CTentacle_findNearbyTarget_FUN_005444f0
                               (this_ptr,"CHero CNPC");
             if (iVar4 != 0) {
-              core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                        (&this_ptr_00->motion_controller,2,1);
+              core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,2,1)
+              ;
               this_ptr->wait_timer = 0.0;
               core_grave_cpp_CGrave_startAnimation_FUN_004b0dc0((CGrave *)this_ptr->grave_actor);
               this_ptr->grave_actor = (CDemonActor *)0x0;
@@ -230,15 +228,14 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_00543c50(CTentacle *this_pt
                      (pCVar1->base).location.position.y) < (float)4)) &&
                ((float)7 < fVar2 && fVar2 < (float)12)) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                        (&(this_ptr->base).base.model.motion_controller,6,1);
+                        (&(this_ptr->base).base.model.base,6,1);
               this_ptr->wait_timer = 25.0;
             }
           }
         }
       }
       else {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                  (&local_1c->motion_controller,0,1);
+        core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&local_1c->base,0,1);
         this_ptr->wait_timer = 25.0;
       }
     }

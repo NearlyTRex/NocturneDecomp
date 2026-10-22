@@ -38,7 +38,7 @@ int __cdecl _fclose(_FILE *file_handle,int force_close_flag)
     if ((file_handle->_flag & 0x800) != 0) {
       _tempnam(acStack_124,(uint)*(byte *)&file_handle->_link->__get_ptr)
       ;
-      remove(acStack_124);
+      _remove(acStack_124);
     }
     (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(file_handle->_handle);
     if (force_close_flag != 0) {

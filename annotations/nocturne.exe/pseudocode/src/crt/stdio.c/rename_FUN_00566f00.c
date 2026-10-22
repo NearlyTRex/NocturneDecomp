@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int __watcallStack rename(char *old_filename,char *new_filename)
+int __watcallStack _rename(char *old_filename,char *new_filename)
 
 {
   BOOL BVar1;

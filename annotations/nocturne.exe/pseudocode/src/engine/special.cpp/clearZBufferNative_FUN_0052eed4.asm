@@ -9,7 +9,7 @@
 ;   core_moon.cpp_CMoon_renderJoystickCalibration_FUN_004df040 at 004df04c
 ;   core_moon.cpp_CMoon_render_FUN_004dec50 at 004dec66
 ;   core_set.cpp_CDemonSet_renderGogglesView_FUN_0050a260 at 0050a5c7
-;   core_setdir.cpp_CDemonSet_FUN_00513720 at 005137f8
+;   core_setdir.cpp_CDemonSet_saveThumbs_FUN_00513720 at 005137f8
 ;
 ; Referenced Globals:
 ;   int g_WindowWidth = 0x140

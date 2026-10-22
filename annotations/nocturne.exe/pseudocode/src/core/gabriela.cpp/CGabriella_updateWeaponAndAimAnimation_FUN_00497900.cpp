@@ -111,7 +111,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004979
         pCVar8 = &(this_ptr->base).base.model;
         local_50 = (CDeformableModelInstance *)
                    core_motion_cpp_CMotionController_markerPositionToFrame_FUN_004e1f50
-                             (&pCVar8->motion_controller,_DAT_01c713cc,local_24);
+                             (&pCVar8->base,_DAT_01c713cc,local_24);
         local_14 = local_50;
         core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
                   (pCVar8,_DAT_01c713cc,(float)local_50,local_28,_DAT_01c713a8,
@@ -182,7 +182,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004979
         (this_ptr->base).base.model.bone_update_mode = 2;
         local_1c = (CDeformableModelInstance *)
                    core_motion_cpp_CMotionController_markerPositionToFrame_FUN_004e1f50
-                             (&pCVar8->motion_controller,iVar2,fVar10);
+                             (&pCVar8->base,iVar2,fVar10);
         local_14 = local_1c;
         core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0051b920
                   (pCVar8,_DAT_01c713d0,(float)local_1c,0);
@@ -217,7 +217,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004979
         pCVar8 = &(this_ptr->base).base.model;
         local_44 = (CDeformableModelInstance *)
                    core_motion_cpp_CMotionController_markerPositionToFrame_FUN_004e1f50
-                             (&pCVar8->motion_controller,_DAT_01c713cc,local_20);
+                             (&pCVar8->base,_DAT_01c713cc,local_20);
         local_14 = local_44;
         core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
                   (pCVar8,_DAT_01c713cc,(float)local_44,local_28,_DAT_01c713a8,
@@ -279,7 +279,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004979
         pCVar8 = &(this_ptr->base).base.model;
         local_18 = (CDeformableModelInstance *)
                    core_motion_cpp_CMotionController_markerPositionToFrame_FUN_004e1f50
-                             (&pCVar8->motion_controller,_DAT_01c713d4,1.0 - fVar10 * fVar1);
+                             (&pCVar8->base,_DAT_01c713d4,1.0 - fVar10 * fVar1);
         local_14 = local_18;
         core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0051b920
                   (pCVar8,_DAT_01c713d4,(float)local_18,_DAT_01c713b0);

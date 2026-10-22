@@ -90,7 +90,7 @@ LAB_0052499a:
                      (CVector3f *)&(this_ptr_00->base).orient);
           (existing_actor->base).location.area_id = (this_ptr_00->base).location.area_id;
           core_motion_cpp_CMotionController_jumpToMotion_FUN_0052dde0
-                    (&(existing_actor->model).motion_controller,0,0.0);
+                    (&(existing_actor->model).base,0,0.0);
           (*(((existing_actor->base).vtable._uc)->_uc).setWalkTarget)
                     (existing_actor,(CDemonActor *)0x0,0.0,0.0);
         }

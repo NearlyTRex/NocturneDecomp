@@ -108,14 +108,15 @@ int debug_mode() {
 // #version 150 core: the earliest version with `in`/`out` and a declared
 // fragment output, which is what a core profile requires. It compiles in a
 // compatibility context too, so the renderer does not have to wait for the
-// context to be narrowed.
+// context to be narrowed. `#version 300 es` under NOCTURNE_GLES (gl/gl_api.h),
+// which the same source is written to compile as.
 //
 // Position arrives premultiplied by w so the perspective divide reproduces the
 // engine's own projection while keeping texture coordinates perspective
 // correct. The engine has already projected the geometry; all this does is map
 // pixels onto clip space.
 const char *kVertexSource =
-    "#version 150 core\n"
+    NOCTURNE_GLSL_VERSION
     "in vec4 a_pos;\n"
     "in vec4 a_color;\n"
     "in vec4 a_specular;\n"
@@ -155,7 +156,7 @@ const char *kVertexSource =
 // ALPHAREF to 0 once at device init and never changes either, so the test is
 // always "drop fully transparent fragments" and needs no uniform.
 const char *kFragmentSource =
-    "#version 150 core\n"
+    NOCTURNE_GLSL_VERSION
     "uniform sampler2D u_tex;\n"
     "uniform int  u_tex_enabled;\n"
     "uniform int  u_modulate_alpha;\n"
@@ -761,7 +762,7 @@ unsigned nocturne_trigl_gl_texture(const char *name, int dimension,
     gl.PixelStorei(GL_UNPACK_ALIGNMENT, 4);
     // The expansion produces 0xAARRGGBB words, which on a little-endian host is
     // B,G,R,A in memory — GL_BGRA, not GL_RGBA.
-    gl.TexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, dimension, dimension, 0,
+    gl.TexImage2D(GL_TEXTURE_2D, 0, NOCTURNE_GL_INTERNAL_BGRA8, dimension, dimension, 0,
                   GL_BGRA, GL_UNSIGNED_BYTE, rgba);
     if (mipmapped && mipmaps() && gl.GenerateMipmap != nullptr) {
         gl.GenerateMipmap(GL_TEXTURE_2D);

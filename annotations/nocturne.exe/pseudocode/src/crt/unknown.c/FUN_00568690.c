@@ -39,7 +39,7 @@ _FILE * FUN_00568690(void)
     file_handle = (uint)DAT_005c1a9c;
     do {
       _tempnam(acStack_238,file_handle);
-      iVar2 = rename(acStack_124,acStack_238);
+      iVar2 = _rename(acStack_124,acStack_238);
       if (iVar2 == 0) {
         p_Var3 = _fopen(acStack_238,&DAT_00598b50);
         if (p_Var3 != (_FILE *)0x0) {

@@ -1,10 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_motion_cpp_CMotionController_findPatchToFrame_FUN_004e1830(CMotionController *this_ptr)
+; int __cdecl core_motion_cpp_CMotionController_findPatchToFrame_FUN_004e1830(CMotionController *this_ptr,int source_motion_index,float source_frame,int target_motion_index)
 ;
 ; Parameters:
 ; CMotionController * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   source_motion_index
+; float            Stack[0xc]:4   source_frame
+; int              Stack[0x10]:4   target_motion_index
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_motion_cpp_0058b31d

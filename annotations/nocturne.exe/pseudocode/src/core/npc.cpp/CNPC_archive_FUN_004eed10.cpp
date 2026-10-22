@@ -20,8 +20,7 @@ void __cdecl core_npc_cpp_CNPC_archive_FUN_004eed10(CNPC *this_ptr)
   if (2 < INT_005be074) {
     model_ptr = &(this_ptr->base).model;
     core_actor_cpp_archiveDeformableModelInstance_FUN_0040ca80(model_ptr,"modelName");
-    core_actor_cpp_archiveMotionState_FUN_0040cb00
-              (&model_ptr->motion_controller,"motion state");
+    core_actor_cpp_archiveMotionState_FUN_0040cb00(&model_ptr->base,"motion state");
   }
   if (3 < INT_005be074) {
     core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->shoot_me,"shootMe");

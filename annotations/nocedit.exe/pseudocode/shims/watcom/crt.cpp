@@ -19,11 +19,6 @@
 #include "core/debug_log.h"
 #include "net/rng.h"            // nocturne_rng_note_raw_draw() — the rand() audit
 #include <cerrno>
-#if !defined(_WIN32)
-// Only for taking over remove() and rename(); see the note beside them. A host
-// that accepts the game's paths as they are does not need either.
-#include <dlfcn.h>
-#endif
 // Full struct layouts for Watcom types that crt.h only forward-declares.
 // The shims bridge these to libc equivalents field-by-field.
 #include "system/stdio.h"   // _FILE       (for _FILE_to_FILE)
@@ -294,8 +289,8 @@ static _FILE* make_file_wrapper(FILE* fp) {
 // via rewind() or offsets returned from ftell() on the same stream, which
 // both round-trip correctly through the underlying fseeko.
 // None of that is needed on Windows, where the CRT still does the translation
-// this layer exists to imitate — and fopencookie is glibc's, so it could not be
-// built there anyway. Passing the mode string through unaltered, 't' included,
+// this layer exists to imitate — and neither fopencookie nor funopen exists
+// there anyway. Passing the mode string through unaltered, 't' included,
 // gets the behaviour from the runtime that originally defined it.
 #if defined(_WIN32)
 
@@ -313,7 +308,7 @@ static bool mode_is_text(const char* mode) {
     return true;
 }
 
-static ssize_t text_cookie_read(void* cookie, char* buf, size_t size) {
+static size_t text_cookie_read_bytes(void* cookie, char* buf, size_t size) {
     FILE* underlying = static_cast<FILE*>(cookie);
     size_t out = 0;
     while (out < size) {
@@ -322,12 +317,44 @@ static ssize_t text_cookie_read(void* cookie, char* buf, size_t size) {
         if (c == '\r') continue;
         buf[out++] = static_cast<char>(c);
     }
-    return static_cast<ssize_t>(out);
+    return out;
+}
+
+static int text_cookie_close(void* cookie) {
+    return fclose(static_cast<FILE*>(cookie));
+}
+
+// The same layer through each libc's custom-stream call: glibc's fopencookie,
+// and funopen on Apple and the BSDs, which takes int sizes and returns the new
+// position from its seek rather than writing it back.
+#if defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
+static int text_cookie_read(void* cookie, char* buf, int size) {
+    return static_cast<int>(text_cookie_read_bytes(cookie, buf, static_cast<size_t>(size)));
+}
+
+static int text_cookie_write(void* cookie, const char* buf, int size) {
+    return static_cast<int>(fwrite(buf, 1, static_cast<size_t>(size), static_cast<FILE*>(cookie)));
+}
+
+static fpos_t text_cookie_seek(void* cookie, fpos_t offset, int whence) {
+    FILE* underlying = static_cast<FILE*>(cookie);
+    if (fseeko(underlying, static_cast<off_t>(offset), whence) != 0) {
+        return -1;
+    }
+    return static_cast<fpos_t>(ftello(underlying));
+}
+
+static FILE* open_text_cookie(FILE* underlying, const char*) {
+    return funopen(underlying, text_cookie_read, text_cookie_write, text_cookie_seek,
+                   text_cookie_close);
+}
+#else
+static ssize_t text_cookie_read(void* cookie, char* buf, size_t size) {
+    return static_cast<ssize_t>(text_cookie_read_bytes(cookie, buf, size));
 }
 
 static ssize_t text_cookie_write(void* cookie, const char* buf, size_t size) {
-    FILE* underlying = static_cast<FILE*>(cookie);
-    return static_cast<ssize_t>(fwrite(buf, 1, size, underlying));
+    return static_cast<ssize_t>(fwrite(buf, 1, size, static_cast<FILE*>(cookie)));
 }
 
 static int text_cookie_seek(void* cookie, off64_t* offset, int whence) {
@@ -339,9 +366,13 @@ static int text_cookie_seek(void* cookie, off64_t* offset, int whence) {
     return 0;
 }
 
-static int text_cookie_close(void* cookie) {
-    return fclose(static_cast<FILE*>(cookie));
+static FILE* open_text_cookie(FILE* underlying, const char* mode) {
+    cookie_io_functions_t ops = {
+        text_cookie_read, text_cookie_write, text_cookie_seek, text_cookie_close
+    };
+    return fopencookie(underlying, mode, ops);
 }
+#endif
 
 static FILE* fopen_text_aware(const char* path, const char* mode) {
     if (!mode_is_text(mode)) {
@@ -354,10 +385,7 @@ static FILE* fopen_text_aware(const char* path, const char* mode) {
     }
     FILE* underlying = fopen(path, effective.c_str());
     if (!underlying) return nullptr;
-    cookie_io_functions_t ops = {
-        text_cookie_read, text_cookie_write, text_cookie_seek, text_cookie_close
-    };
-    FILE* cooked = fopencookie(underlying, effective.c_str(), ops);
+    FILE* cooked = open_text_cookie(underlying, effective.c_str());
     if (!cooked) {
         fclose(underlying);
         return nullptr;
@@ -376,41 +404,23 @@ static FILE* fopen_text_aware(const char* path, const char* mode) {
 #endif  // !_WIN32
 
 _FILE* _fopen(const char* filename, const char* mode) {
+    const WatcomPathUse use = watcom_mode_writes(mode) ? WatcomPathUse::Write : WatcomPathUse::Read;
     return make_file_wrapper(
-        fopen_text_aware(watcom_resolve_fs_path(filename).c_str(), mode));
+        fopen_text_aware(watcom_resolve_fs_path(filename, use).c_str(), mode));
 }
 
-// The game calls plain remove() and rename() with hard-coded Windows paths —
-// CIni::writeProfileString's temp-file swap of ".\\system\\nocturne.ini" among
-// them, which is how every setting in that file is persisted. Given the literal
-// backslash names those fail quietly on a host where a backslash is an ordinary
-// character, and the ini writes never land: settings appear not to save.
-//
-// Unlike the rest of the file these are not new functions the game calls, they
-// are the C library's own names taken over. Both are unavoidably specific to how
-// a platform links: taking over a name is one mechanism, and reaching the
-// implementation that was taken over is another.
-//
-// It is also only necessary where the problem is. On Windows the host already
-// accepts these paths — that is where they came from — so the interposition is
-// not built there and the C library's own remove and rename are called directly,
-// which is the correct behaviour rather than a fallback.
-#if !defined(_WIN32)
-
-extern "C" int remove(const char* path) {
-    using remove_fn = int (*)(const char*);
-    static remove_fn real_remove = reinterpret_cast<remove_fn>(dlsym(RTLD_NEXT, "remove"));
-    return real_remove(watcom_resolve_fs_path(path).c_str());
+// The game's paths are Windows paths, ".\\system\\nocturne.ini" in
+// CIni::writeProfileString's temp-file swap among them, and with a user
+// directory set (watcom/path.h) the temp file is written there, so the swap has
+// to happen there too.
+int _remove(const char* filename) {
+    return remove(watcom_resolve_fs_path(filename, WatcomPathUse::Write).c_str());
 }
 
-extern "C" int rename(const char* oldpath, const char* newpath) {
-    using rename_fn = int (*)(const char*, const char*);
-    static rename_fn real_rename = reinterpret_cast<rename_fn>(dlsym(RTLD_NEXT, "rename"));
-    return real_rename(watcom_resolve_fs_path(oldpath).c_str(),
-                       watcom_resolve_fs_path(newpath).c_str());
+int _rename(const char* old_filename, const char* new_filename) {
+    return rename(watcom_resolve_fs_path(old_filename, WatcomPathUse::Write).c_str(),
+                  watcom_resolve_fs_path(new_filename, WatcomPathUse::Write).c_str());
 }
-
-#endif  // !_WIN32
 
 int _fclose(_FILE* f) {
     if (!f) return 0;
@@ -535,7 +545,8 @@ int _fscanf(_FILE* f, const char* format, ...) {
 }
 
 _FILE* _freopen(const char* filename, const char* mode, _FILE* stream) {
-    FILE* fp = freopen(watcom_resolve_fs_path(filename).c_str(),
+    const WatcomPathUse use = watcom_mode_writes(mode) ? WatcomPathUse::Write : WatcomPathUse::Read;
+    FILE* fp = freopen(watcom_resolve_fs_path(filename, use).c_str(),
                        mode, _FILE_to_FILE(stream));
     if (!fp) return nullptr;
     // If the caller's stream was one of the game's static stream globals
@@ -699,5 +710,6 @@ int getFileStat(const char* path, struct WatcomStat* buf) {
 }
 
 int _utime(const char* path, void* times) {
-    return utime(watcom_resolve_fs_path(path).c_str(), (struct utimbuf*)times);
+    return utime(watcom_resolve_fs_path(path, WatcomPathUse::Write).c_str(),
+                 (struct utimbuf*)times);
 }

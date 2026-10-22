@@ -145,5 +145,14 @@ TEST_F(CMenuInputTest, TheRightControlKeyCopiesUnderTheWideMask) {
     EXPECT_TRUE(input_.takeMenuAction(EMenuAction::Copy));
 }
 
+TEST_F(CMenuInputTest, MutingIsMOnlyWhileAControlKeyIsHeld) {
+    press(EInputCodeType::DIK_M);
+    EXPECT_FALSE(input_.takeMenuAction(EMenuAction::ToggleMute));
+    EXPECT_TRUE(held(EInputCodeType::DIK_M));
+    press(EInputCodeType::DIK_LCONTROL);
+    EXPECT_TRUE(input_.takeMenuAction(EMenuAction::ToggleMute));
+    EXPECT_FALSE(input_.takeMenuAction(EMenuAction::ToggleMute));
+}
+
 } // namespace
 } // namespace nocturne::engine

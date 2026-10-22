@@ -21,6 +21,9 @@ endforeach()
 add_library(nocturne_recreation_options INTERFACE)
 target_include_directories(nocturne_recreation_options INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_compile_options(nocturne_recreation_options INTERFACE -Wall -Wextra -Wpedantic -Werror)
+# Lockstep netplay needs every architecture to round alike, and arm64 fuses a
+# multiply and an add into one rounding by default.
+target_compile_options(nocturne_recreation_options INTERFACE -ffp-contract=off)
 if(NOCTURNE_RECREATION_COVERAGE)
     target_compile_options(nocturne_recreation_options INTERFACE
         -fprofile-instr-generate -fcoverage-mapping)

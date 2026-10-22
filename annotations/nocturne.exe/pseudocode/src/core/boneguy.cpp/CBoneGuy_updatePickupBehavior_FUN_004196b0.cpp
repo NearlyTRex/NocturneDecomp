@@ -59,7 +59,7 @@ int __cdecl core_boneguy_cpp_CBoneGuy_updatePickupBehavior_FUN_004196b0(CBoneGuy
           this_ptr->pickup_target = (CDemonActor *)0x0;
           this_ptr->pickup_cooldown = 0.0;
           core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                    (&(this_ptr->base).base.model.motion_controller,1,1);
+                    (&(this_ptr->base).base.model.base,1,1);
           return 0;
         }
         iVar6 = -1;
@@ -93,8 +93,7 @@ int __cdecl core_boneguy_cpp_CBoneGuy_updatePickupBehavior_FUN_004196b0(CBoneGuy
           engine_console_cpp_CConsole_printf_FUN_0043ac60
                     (g_CConsole_PTR_005ad350,"%s beginning to pickup %s\n",this_ptr,
                      this_ptr->pickup_target);
-          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                    (&this_ptr_00->motion_controller,7,1);
+          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,7,1);
           return 1;
         }
         engine_console_cpp_CConsole_printf_FUN_0043ac60
@@ -102,8 +101,7 @@ int __cdecl core_boneguy_cpp_CBoneGuy_updatePickupBehavior_FUN_004196b0(CBoneGuy
                    this_ptr->pickup_target);
         this_ptr->pickup_target = (CDemonActor *)0x0;
         this_ptr->pickup_cooldown = 20.0;
-        core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                  (&this_ptr_00->motion_controller,1,1);
+        core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,1,1);
         return 0;
       }
       iVar6 = 0;

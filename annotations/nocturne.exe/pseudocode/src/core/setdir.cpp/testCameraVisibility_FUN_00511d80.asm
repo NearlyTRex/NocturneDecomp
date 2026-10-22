@@ -60,8 +60,8 @@
 ;   undefined4 DAT_020845f4
 ;   undefined4 DAT_020845f8
 ;   undefined4 DAT_020845f9
-;   undefined4 DAT_020875f8
-;   undefined4 DAT_020875fc
+;   uint[250][48][64] g_ThumbZBufferTable
+;   undefined4 g_ThumbZBufferTable[0][0][1]
 ;   ... and 4 more
 ;
 ; Called Functions:
@@ -525,10 +525,10 @@ section .text
     PUSH EDI                            ; 005122ea
     MOV EAX,ECX                         ; 005122eb
     SHR ECX,0x2                         ; 005122ed
-    MOVSD.REP ES:EDI,ESI                ; 005122f0 | DAT_020875f8 | DAT_020875fc | DAT_020876f8
+    MOVSD.REP ES:EDI,ESI                ; 005122f0 | g_ThumbZBufferTable | g_ThumbZBufferTable[0][0][1] | g_ThumbZBufferTable[0][1][0]
     MOV CL,AL                           ; 005122f2
     AND CL,0x3                          ; 005122f4
-    MOVSB.REP ES:EDI,ESI                ; 005122f7 | DAT_020875fc | DAT_020875fd
+    MOVSB.REP ES:EDI,ESI                ; 005122f7 | g_ThumbZBufferTable[0][0][1] | g_ThumbZBufferTable[0][0][1]+1
     POP EDI                             ; 005122f9
     MOV dword ptr [EDX + 0x1bd425c],EBX ; 005122fa | g_ZBufferScanlineArray
     ADD EBX,0x100                       ; 00512300
@@ -612,10 +612,10 @@ section .text
     PUSH EDI                            ; 005123e7 | DAT_020845f4
     MOV EAX,ECX                         ; 005123e8
     SHR ECX,0x2                         ; 005123ea
-    MOVSD.REP ES:EDI,ESI                ; 005123ed | DAT_020875f8 | DAT_020845f4 | DAT_020875fc
+    MOVSD.REP ES:EDI,ESI                ; 005123ed | g_ThumbZBufferTable | DAT_020845f4 | g_ThumbZBufferTable[0][0][1]
     MOV CL,AL                           ; 005123ef
     AND CL,0x3                          ; 005123f1
-    MOVSB.REP ES:EDI,ESI                ; 005123f4 | DAT_020875fc | DAT_020845f8 | DAT_020875fd
+    MOVSB.REP ES:EDI,ESI                ; 005123f4 | g_ThumbZBufferTable[0][0][1] | DAT_020845f8 | g_ThumbZBufferTable[0][0][1]+1
     POP EDI                             ; 005123f6
     MOV ESI,EDI                         ; 005123f7
     XOR EAX,EAX                         ; 005123f9

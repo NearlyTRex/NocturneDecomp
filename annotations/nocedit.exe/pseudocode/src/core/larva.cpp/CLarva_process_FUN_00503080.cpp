@@ -87,8 +87,7 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
   local_18 = delta_time * (this_ptr->base).speed;
   this_ptr_00 = &(this_ptr->base).base.model;
   while (0.0 < local_18) {
-    iVar7 = core_motion_cpp_CMotionController_advance_FUN_0052d610
-                      (&this_ptr_00->motion_controller,&local_18);
+    iVar7 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&this_ptr_00->base,&local_18);
     if ((iVar7 == 100) && (pCVar4 = (this_ptr->base).victim, pCVar4 != (CCharacter *)0x0)) {
       local_d4 = (pCVar4->base).location.position.x - (pCVar1->position).x;
       local_d0 = (pCVar4->base).location.position.y - (this_ptr->base).base.base.location.position.y
@@ -145,8 +144,7 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
   fVar5 = (float)3;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
   (this_ptr->base).base.turn_speed = delta_time * fVar6 * fVar11 * fVar5;
-  pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                     (&this_ptr_00->motion_controller);
+  pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(&this_ptr_00->base);
   uVar12 = pSVar8->state_index;
   iVar7 = core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70
                     ((CCharacter *)this_ptr,delta_time);
@@ -157,8 +155,7 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
       if (pCVar4 == (CCharacter *)0x0) {
         iVar7 = core_enemy_cpp_CEnemy_updatePatrol_FUN_004a9fd0(&this_ptr->base,delta_time);
         if (iVar7 != 0) {
-          core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (&this_ptr_00->motion_controller,1,1);
+          core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr_00->base,1,1);
         }
       }
       else {
@@ -175,11 +172,10 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
                              (local_80.y - (this_ptr->base).base.base.orient.vec.y);
         if (((float)0.39269908168750001 <= ABS(local_14)) || ((float)12 < fVar11)) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (&(this_ptr->base).base.model.motion_controller,1,1);
+                    (&(this_ptr->base).base.model.base,1,1);
         }
         else if ((this_ptr->base).attack_cooldown <= 0.0) {
-          core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (&this_ptr_00->motion_controller,2,1);
+          core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr_00->base,2,1);
           local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(15.0,30.0);
           (this_ptr->base).attack_cooldown = local_14;
         }
@@ -190,8 +186,7 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
       if ((this_ptr->base).victim == (CCharacter *)0x0) {
         iVar7 = core_enemy_cpp_CEnemy_updatePatrol_FUN_004a9fd0(&this_ptr->base,delta_time);
         if (iVar7 == 0) {
-          core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (&this_ptr_00->motion_controller,0,1);
+          core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr_00->base,0,1);
         }
       }
       else {
@@ -211,8 +206,7 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
         if (iVar7 < 0) {
           engine_console_cpp_CConsole_printf_FUN_00441890
                     (g_CConsolePtr,"%s gave up chase - I'm confused\n");
-          core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (&this_ptr_00->motion_controller,0,1);
+          core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr_00->base,0,1);
         }
         if ((this_ptr->base).attack_cooldown <= 0.0) {
           pCVar4 = (this_ptr->base).victim;
@@ -239,7 +233,7 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
             local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(fVar11 - local_14);
             if (ABS(local_14) < (float)0.39269908168750001) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                        (&(this_ptr->base).base.model.motion_controller,2,1);
+                        (&(this_ptr->base).base.model.base,2,1);
               (this_ptr->base).attack_cooldown = 6.0;
             }
           }
@@ -268,13 +262,12 @@ LAB_00503501:
       iVar7 = 0;
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              (&(this_ptr->base).base.model.motion_controller,iVar7,1);
+              (&(this_ptr->base).base.model.base,iVar7,1);
   }
   else {
     if (uVar3 < 3) goto LAB_00503159;
     if (uVar3 != 3) goto LAB_00503501;
-    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              (&this_ptr_00->motion_controller,0,1);
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr_00->base,0,1);
     engine_console_cpp_CConsole_printf_FUN_00441890
               (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
   }

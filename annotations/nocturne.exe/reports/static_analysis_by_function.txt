@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 303
-  Total diagnostics: 891
+  Functions with findings: 304
+  Total diagnostics: 892
   Functions flagged by multiple tools: 3
-  .keep.cpp files: 0, raw .cpp files: 303
+  .keep.cpp files: 0, raw .cpp files: 304
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -594,7 +594,7 @@ core_vampboss.cpp_CVampireBoss_process_FUN_0054c690  [.cpp] [Clang-Tidy (quick),
   Line  200: [legacyUninitvar] Uninitialized variable: local_b4
   Line  205: [ignoredReturnValue] Return value of function atan2() is not used.
   Line  206: [legacyUninitvar] Uninitialized variable: local_ec
-  Line  424: [cert-flp30-c] loop induction expression should not have floating-point type
+  Line  423: [cert-flp30-c] loop induction expression should not have floating-point type
 
 ----------------------------------------------------------------------------------------------------
 core_xform.cpp_matrixToEulerAnglesZYX_FUN_0055b6c0  [.cpp] [Cppcheck (quick)]
@@ -1142,20 +1142,12 @@ core_set.cpp_CDemonSet_processActors_FUN_00509140  [.cpp] [Cppcheck (quick)]
   Line  117: [uninitvar] Uninitialized variable: fStack_48
 
 ----------------------------------------------------------------------------------------------------
-core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_0051e350  [.cpp] [Cppcheck (quick)]
-  File: core/skeleton.cpp  (3 diagnostics)
-
-  Line   41: [invalidPointerCast] Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
-  Line   42: [invalidPointerCast] Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
-  Line   66: [legacyUninitvar] Uninitialized variable: local_60
-
-----------------------------------------------------------------------------------------------------
 core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0051b920  [.cpp] [Cppcheck (quick)]
   File: core/skeleton.cpp  (3 diagnostics)
 
-  Line  130: [legacyUninitvar] Uninitialized variable: local_1870
-  Line  285: [objectIndex] The address of local variable 'local_122c' might be accessed at non-zero index.
-  Line  314: [objectIndex] The address of local variable 'local_122c' might be accessed at non-zero index.
+  Line  129: [legacyUninitvar] Uninitialized variable: local_1870
+  Line  284: [objectIndex] The address of local variable 'local_122c' might be accessed at non-zero index.
+  Line  313: [objectIndex] The address of local variable 'local_122c' might be accessed at non-zero index.
 
 ----------------------------------------------------------------------------------------------------
 core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0  [.cpp] [Cppcheck (quick)]
@@ -1531,6 +1523,13 @@ core_path.cpp_renderPathMapsAtPosition_FUN_004f1f80  [.cpp] [Cppcheck (quick)]
   Line   44: [uninitvar] Uninitialized variable: local_20
 
 ----------------------------------------------------------------------------------------------------
+core_script.cpp_CScript_getLetterboxHeight_FUN_004fe710  [.cpp] [Clang-Tidy (quick)]
+  File: core/script.cpp  (2 diagnostics)
+
+  Line   17: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
+  Line   17: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
+
+----------------------------------------------------------------------------------------------------
 core_setdir.cpp_FUN_00514390  [.cpp] [Cppcheck (quick)]
   File: core/setdir.cpp  (2 diagnostics)
 
@@ -1564,6 +1563,13 @@ core_shotgun.cpp_CShotgun_renderAimBeam_FUN_00516770  [.cpp] [Cppcheck (quick)]
 
   Line   52: [uninitvar] Uninitialized variable: fStack_48
   Line   52: [uninitvar] Uninitialized variable: fStack_4c
+
+----------------------------------------------------------------------------------------------------
+core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_0051e350  [.cpp] [Cppcheck (quick)]
+  File: core/skeleton.cpp  (2 diagnostics)
+
+  Line   41: [invalidPointerCast] Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
+  Line   66: [legacyUninitvar] Uninitialized variable: local_60
 
 ----------------------------------------------------------------------------------------------------
 core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromVertices_FUN_0051de60  [.cpp] [Cppcheck (quick)]
@@ -2107,7 +2113,7 @@ core_set.cpp_CDemonSet_renderScene_FUN_00509a80  [.cpp] [Cppcheck (quick)]
   Line  209: [legacyUninitvar] Uninitialized variable: in_stack_ffffff9c
 
 ----------------------------------------------------------------------------------------------------
-core_setdir.cpp_CDemonSet_FUN_00513720  [.cpp] [Cppcheck (quick)]
+core_setdir.cpp_CDemonSet_saveThumbs_FUN_00513720  [.cpp] [Cppcheck (quick)]
   File: core/setdir.cpp  (1 diagnostics)
 
   Line   72: [legacyUninitvar] Uninitialized variable: local_20

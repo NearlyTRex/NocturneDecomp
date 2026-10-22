@@ -3,7 +3,7 @@
 # This module is the SINGLE SOURCE OF TRUTH for intrinsic definitions
 
 import os
-from ghidra_annotations.util import make_dirs
+from ghidra_annotations.util import make_dirs, with_generated_notice
 from ghidra_annotations.util.log import log_info
 
 
@@ -249,6 +249,183 @@ def get_mmx_intrinsics():
     }
 
 
+# Two-operand intrinsics (most of them)
+MMX_TWO_OPERAND = [
+    "paddb", "paddw", "paddd", "paddsb", "paddsw", "paddusb", "paddusw",
+    "psubb", "psubw", "psubd", "psubsb", "psubsw", "psubusb", "psubusw",
+    "pmullw", "pmulhw", "pmaddwd",
+    "pand", "pandn", "por", "pxor",
+    "pcmpeqb", "pcmpeqw", "pcmpeqd", "pcmpgtb", "pcmpgtw", "pcmpgtd",
+    "packsswb", "packssdw", "packuswb",
+    "punpckhbw", "punpckhwd", "punpckhdq",
+    "punpcklbw", "punpcklwd", "punpckldq",
+]
+
+# Shift intrinsics (value + count)
+MMX_SHIFTS = ["psllw", "pslld", "psllq", "psrlw", "psrld", "psrlq", "psraw", "psrad"]
+
+# Portable versions, by template: (lane bits, signed lanes, expression of x, y)
+# for the lane-wise ones, where SAT(v) saturates to the lane's range.
+_MMX_LANEWISE = {
+    "paddb": (8, 0, "x + y"),
+    "paddw": (16, 0, "x + y"),
+    "paddd": (32, 0, "x + y"),
+    "paddsb": (8, 1, "SAT(x + y)"),
+    "paddsw": (16, 1, "SAT(x + y)"),
+    "paddusb": (8, 0, "SAT(x + y)"),
+    "paddusw": (16, 0, "SAT(x + y)"),
+    "psubb": (8, 0, "x - y"),
+    "psubw": (16, 0, "x - y"),
+    "psubd": (32, 0, "x - y"),
+    "psubsb": (8, 1, "SAT(x - y)"),
+    "psubsw": (16, 1, "SAT(x - y)"),
+    "psubusb": (8, 0, "SAT(x - y)"),
+    "psubusw": (16, 0, "SAT(x - y)"),
+    "pmullw": (16, 1, "x * y"),
+    "pmulhw": (16, 1, "(x * y) >> 16"),
+    "pcmpeqb": (8, 0, "x == y ? -1 : 0"),
+    "pcmpeqw": (16, 0, "x == y ? -1 : 0"),
+    "pcmpeqd": (32, 0, "x == y ? -1 : 0"),
+    "pcmpgtb": (8, 1, "x > y ? -1 : 0"),
+    "pcmpgtw": (16, 1, "x > y ? -1 : 0"),
+    "pcmpgtd": (32, 1, "x > y ? -1 : 0"),
+}
+
+# Packs: (source lane bits, signed saturation of the result).
+_MMX_PACKS = {"packsswb": (16, 1), "packssdw": (32, 1), "packuswb": (16, 0)}
+
+# Unpacks: (lane bits, high half).
+_MMX_UNPACKS = {
+    "punpcklbw": (8, 0), "punpcklwd": (16, 0), "punpckldq": (32, 0),
+    "punpckhbw": (8, 1), "punpckhwd": (16, 1), "punpckhdq": (32, 1),
+}
+
+# Shifts: (lane bits, operator, arithmetic).
+_MMX_SHIFT_KINDS = {
+    "psllw": (16, "<<", 0), "pslld": (32, "<<", 0), "psllq": (64, "<<", 0),
+    "psrlw": (16, ">>", 0), "psrld": (32, ">>", 0), "psrlq": (64, ">>", 0),
+    "psraw": (16, ">>", 1), "psrad": (32, ">>", 1),
+}
+
+_PORTABLE_MMX_TEMPLATES = r"""// Every lane is widened to int64_t, computed, then masked back, so the result
+// is the hardware's bit for bit without the host's vector unit.
+static inline int64_t nocturne_mmx_lane(uint64_t v, int bits, int i, int is_signed) {
+    uint64_t mask = bits == 64 ? ~0ULL : (1ULL << bits) - 1;
+    uint64_t u = (v >> (i * bits)) & mask;
+    if (is_signed && bits < 64 && (u >> (bits - 1)))
+        return (int64_t)(u | ~mask);
+    return (int64_t)u;
+}
+
+static inline uint64_t nocturne_mmx_put(int64_t value, int bits, int i) {
+    uint64_t mask = bits == 64 ? ~0ULL : (1ULL << bits) - 1;
+    return ((uint64_t)value & mask) << (i * bits);
+}
+
+static inline int64_t nocturne_mmx_sat(int64_t v, int bits, int is_signed) {
+    int64_t lo = is_signed ? -(1LL << (bits - 1)) : 0;
+    int64_t hi = is_signed ? (1LL << (bits - 1)) - 1 : (1LL << bits) - 1;
+    return v < lo ? lo : v > hi ? hi : v;
+}
+
+// x and y are lane i of a and b.
+#define NOCTURNE_MMX_SAT(v) nocturne_mmx_sat((v), lane_bits, lane_signed)
+#define NOCTURNE_MMX_LANEWISE(name, bits, is_signed, expr)                    \
+    static inline uint64_t nocturne_mmx_##name(uint64_t a, uint64_t b) {     \
+        const int lane_bits = (bits), lane_signed = (is_signed);             \
+        uint64_t r = 0;                                                      \
+        for (int i = 0; i < 64 / lane_bits; ++i) {                           \
+            int64_t x = nocturne_mmx_lane(a, lane_bits, i, lane_signed);     \
+            int64_t y = nocturne_mmx_lane(b, lane_bits, i, lane_signed);     \
+            r |= nocturne_mmx_put(expr, lane_bits, i);                       \
+        }                                                                    \
+        return r;                                                            \
+    }
+
+// a's lanes fill the low half of the result, b's the high half.
+#define NOCTURNE_MMX_PACK(name, bits, is_signed)                              \
+    static inline uint64_t nocturne_mmx_##name(uint64_t a, uint64_t b) {     \
+        const int half = 64 / (bits);                                        \
+        uint64_t r = 0;                                                      \
+        for (int i = 0; i < half; ++i) {                                     \
+            r |= nocturne_mmx_put(nocturne_mmx_sat(nocturne_mmx_lane(a, bits, i, 1), \
+                                                   (bits) / 2, is_signed), (bits) / 2, i); \
+            r |= nocturne_mmx_put(nocturne_mmx_sat(nocturne_mmx_lane(b, bits, i, 1), \
+                                                   (bits) / 2, is_signed), (bits) / 2, i + half); \
+        }                                                                    \
+        return r;                                                            \
+    }
+
+// Interleaves the low (or high) halves of a and b, a's lane first.
+#define NOCTURNE_MMX_UNPACK(name, bits, high)                                 \
+    static inline uint64_t nocturne_mmx_##name(uint64_t a, uint64_t b) {     \
+        const int half = 32 / (bits), base = (high) ? half : 0;              \
+        uint64_t r = 0;                                                      \
+        for (int i = 0; i < half; ++i) {                                     \
+            r |= nocturne_mmx_put(nocturne_mmx_lane(a, bits, base + i, 0), bits, 2 * i); \
+            r |= nocturne_mmx_put(nocturne_mmx_lane(b, bits, base + i, 0), bits, 2 * i + 1); \
+        }                                                                    \
+        return r;                                                            \
+    }
+
+// A count of the lane width or more clears a logical shift and fills an
+// arithmetic one with the sign. The count is read unsigned, as the hardware
+// reads it, so a negative one is out of range too.
+#define NOCTURNE_MMX_SHIFT(name, bits, op, arith)                             \
+    static inline uint64_t nocturne_mmx_##name(uint64_t a, int count) {      \
+        unsigned n = (unsigned)count;                                        \
+        uint64_t r = 0;                                                      \
+        if (n >= (bits)) {                                                   \
+            if (!(arith)) return 0;                                          \
+            n = (bits) - 1;                                                  \
+        }                                                                    \
+        for (int i = 0; i < 64 / (bits); ++i)                                \
+            r |= nocturne_mmx_put((arith) ? nocturne_mmx_lane(a, bits, i, 1) op n \
+                                          : (int64_t)((uint64_t)nocturne_mmx_lane(a, bits, i, 0) op n), \
+                                  bits, i);                                  \
+        return r;                                                            \
+    }
+
+static inline uint64_t nocturne_mmx_pmaddwd(uint64_t a, uint64_t b) {
+    uint64_t r = 0;
+    for (int i = 0; i < 2; ++i) {
+        int64_t sum = nocturne_mmx_lane(a, 16, 2 * i, 1) * nocturne_mmx_lane(b, 16, 2 * i, 1)
+                    + nocturne_mmx_lane(a, 16, 2 * i + 1, 1) * nocturne_mmx_lane(b, 16, 2 * i + 1, 1);
+        r |= nocturne_mmx_put(sum, 32, i);
+    }
+    return r;
+}
+
+static inline uint64_t nocturne_mmx_pand(uint64_t a, uint64_t b) { return a & b; }
+static inline uint64_t nocturne_mmx_pandn(uint64_t a, uint64_t b) { return ~a & b; }
+static inline uint64_t nocturne_mmx_por(uint64_t a, uint64_t b) { return a | b; }
+static inline uint64_t nocturne_mmx_pxor(uint64_t a, uint64_t b) { return a ^ b; }
+"""
+
+
+def get_portable_mmx_lines():
+    """C for the portable MMX operations, one nocturne_mmx_<mnemonic> each."""
+    lines = _PORTABLE_MMX_TEMPLATES.split("\n")
+    for name, (bits, signed, expr) in _MMX_LANEWISE.items():
+        expr = expr.replace("SAT(", "NOCTURNE_MMX_SAT(")
+        lines.append(f"NOCTURNE_MMX_LANEWISE({name}, {bits}, {signed}, {expr})")
+    for name, (bits, signed) in _MMX_PACKS.items():
+        lines.append(f"NOCTURNE_MMX_PACK({name}, {bits}, {signed})")
+    for name, (bits, high) in _MMX_UNPACKS.items():
+        lines.append(f"NOCTURNE_MMX_UNPACK({name}, {bits}, {high})")
+    for name, (bits, op, arith) in _MMX_SHIFT_KINDS.items():
+        lines.append(f"NOCTURNE_MMX_SHIFT({name}, {bits}, {op}, {arith})")
+    lines += [
+        "",
+        "#undef NOCTURNE_MMX_SAT",
+        "#undef NOCTURNE_MMX_LANEWISE",
+        "#undef NOCTURNE_MMX_PACK",
+        "#undef NOCTURNE_MMX_UNPACK",
+        "#undef NOCTURNE_MMX_SHIFT",
+    ]
+    return lines
+
+
 def get_all_intrinsic_names():
     """Return set of all intrinsic names defined.
 
@@ -476,43 +653,40 @@ def generate_intrinsics_header():
     lines.append("// =============================================================================")
     lines.append("// These wrap mmintrin.h functions with Ghidra's assembly mnemonic names.")
     lines.append("// Ghidra uses uint64_t/ulonglong for MMX values, so we cast to __m64.")
+    lines.append("// Off x86 the same names call the portable nocturne_mmx_* versions below,")
+    lines.append("// which are defined everywhere so a test can hold them to the hardware.")
     lines.append("")
-    lines.append("#ifdef __MMX__")
-    lines.append("#include <mmintrin.h>")
+    lines.extend(get_portable_mmx_lines())
     lines.append("")
 
     # Group MMX intrinsics by category for readability
     mmx = get_mmx_intrinsics()
 
-    # Two-operand intrinsics (most of them)
-    two_op = ["paddb", "paddw", "paddd", "paddsb", "paddsw", "paddusb", "paddusw",
-              "psubb", "psubw", "psubd", "psubsb", "psubsw", "psubusb", "psubusw",
-              "pmullw", "pmulhw", "pmaddwd",
-              "pand", "pandn", "por", "pxor",
-              "pcmpeqb", "pcmpeqw", "pcmpeqd", "pcmpgtb", "pcmpgtw", "pcmpgtd",
-              "packsswb", "packssdw", "packuswb",
-              "punpckhbw", "punpckhwd", "punpckhdq",
-              "punpcklbw", "punpcklwd", "punpckldq"]
-
-    # Shift intrinsics (value + immediate count)
-    shift_op = ["psllw", "pslld", "psllq", "psrlw", "psrld", "psrlq", "psraw", "psrad"]
-
+    lines.append("#ifdef __MMX__")
+    lines.append("#include <mmintrin.h>")
+    lines.append("")
     lines.append("// Two-operand MMX intrinsics")
-    for name in two_op:
-        if name in mmx:
-            func, desc = mmx[name]
-            lines.append(f"#define {name}(a, b) (uint64_t){func}((__m64)(a), (__m64)(b))")
+    for name in MMX_TWO_OPERAND:
+        func, desc = mmx[name]
+        lines.append(f"#define {name}(a, b) (uint64_t){func}((__m64)(a), (__m64)(b))")
     lines.append("")
 
     lines.append("// Shift MMX intrinsics (value, count)")
-    for name in shift_op:
-        if name in mmx:
-            func, desc = mmx[name]
-            lines.append(f"#define {name}(a, count) (uint64_t){func}((__m64)(a), (count))")
+    for name in MMX_SHIFTS:
+        func, desc = mmx[name]
+        lines.append(f"#define {name}(a, count) (uint64_t){func}((__m64)(a), (count))")
     lines.append("")
 
     lines.append("// MMX state")
     lines.append("#define emms() _mm_empty()")
+    lines.append("")
+    lines.append("#else // !__MMX__")
+    lines.append("")
+    for name in MMX_TWO_OPERAND:
+        lines.append(f"#define {name}(a, b) nocturne_mmx_{name}((uint64_t)(a), (uint64_t)(b))")
+    for name in MMX_SHIFTS:
+        lines.append(f"#define {name}(a, count) nocturne_mmx_{name}((uint64_t)(a), (int)(count))")
+    lines.append("#define emms() ((void)0)")
     lines.append("")
     lines.append("#endif // __MMX__")
     lines.append("")
@@ -534,7 +708,13 @@ def generate_intrinsics_header():
     # the gcc arm there defines __cpuid as a five-argument function-like macro
     # first, which then rewrites <intrin.h>'s own declaration of it and fails
     # inside psdk_inc/intrin-impl.h, a long way from the cause.
-    lines.append("#if defined(_MSC_VER) || defined(_WIN32)")
+    lines.append("#if defined(_M_X64) || defined(_M_IX86) || defined(__x86_64__) || defined(__i386__)")
+    lines.append("#define NOCTURNE_HAS_CPUID 1")
+    lines.append("#else")
+    lines.append("#define NOCTURNE_HAS_CPUID 0")
+    lines.append("#endif")
+    lines.append("")
+    lines.append("#if NOCTURNE_HAS_CPUID && (defined(_MSC_VER) || defined(_WIN32))")
     lines.append("// mingw's <intrin.h> includes <cpuid.h> itself, so the register-named")
     lines.append("// macros have to be out of the way here too -- same reason as the arm")
     lines.append("// below, one header further back. MSVC has no <cpuid.h> and does not")
@@ -557,7 +737,7 @@ def generate_intrinsics_header():
     lines.append("    __cpuid(_cpuid_regs, leaf);")
     lines.append("    return _cpuid_regs;")
     lines.append("}")
-    lines.append("#elif defined(__GNUC__) || defined(__clang__)")
+    lines.append("#elif NOCTURNE_HAS_CPUID && (defined(__GNUC__) || defined(__clang__))")
     lines.append("// Save and undef register-named calling convention macros that clash")
     lines.append("// with variable names in clang/gcc's cpuid.h (e.g. __edx)")
     lines.append("#pragma push_macro(\"__eax\")")
@@ -579,7 +759,7 @@ def generate_intrinsics_header():
     lines.append("    return _cpuid_regs;")
     lines.append("}")
     lines.append("#else")
-    lines.append("// Fallback for compilers without CPUID intrinsics")
+    lines.append("// Not x86, or no CPUID intrinsic: every leaf reads zero")
     lines.append("static inline int* _cpuid_intrinsic(int leaf) {")
     lines.append("    static int _cpuid_regs[4] = {0, 0, 0, 0};")
     lines.append("    return _cpuid_regs;")
@@ -698,7 +878,7 @@ def write_intrinsics_header(pseudocode_dir):
 
     try:
         with open(intrinsics_path, 'w') as f:
-            f.write(content)
+            f.write(with_generated_notice(content))
         log_info("Generated intrinsics header: %s" % intrinsics_path)
         return intrinsics_path
     except Exception as e:

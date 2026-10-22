@@ -109,7 +109,7 @@ typedef struct CGabriella_process_Ctx {
 #define GOTO_LAB_004d4145 4
 #define GOTO_LAB_004d4152 5
 
-// Chunk: check_iVar17_0 (lines 56-83 of original)
+// Chunk: check_iVar17_0 (lines 56-78 of original)
 static int CGabriella_process_check_iVar17_0(CGabriella_process_Ctx *ctx) {
     CGabriella *&this_ptr = ctx->this_ptr;
     float &delta_time = ctx->delta_time;
@@ -120,23 +120,18 @@ static int CGabriella_process_check_iVar17_0(CGabriella_process_Ctx *ctx) {
     CGame *&pCVar9 = ctx->pCVar9;
 
     pCVar4 = &(this_ptr->base).base.model;
-    fVar10 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                       (&pCVar4->motion_controller,1);
+    fVar10 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20(&pCVar4->base,1);
     (this_ptr->base).base.walk_step_speed =
          fVar10 * FLOAT_02d7b808 + (this_ptr->base).base.walk_step_speed;
-    fVar10 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                       (&pCVar4->motion_controller,2);
+    fVar10 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20(&pCVar4->base,2);
     (this_ptr->base).base.walk_step_speed =
          fVar10 * FLOAT_02d7b80c + (this_ptr->base).base.walk_step_speed;
-    fVar10 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                       (&pCVar4->motion_controller,3);
+    fVar10 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20(&pCVar4->base,3);
     (this_ptr->base).base.walk_step_speed =
          (this_ptr->base).base.walk_step_speed - fVar10 * FLOAT_02d7b810;
-    fVar10 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                       (&pCVar4->motion_controller,0x14);
+    fVar10 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20(&pCVar4->base,0x14);
     fVar10 = fVar10 * 2.0f;
-    fVar11 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                       (&pCVar4->motion_controller,0x15);
+    fVar11 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20(&pCVar4->base,0x15);
     pCVar9 = g_CGamePtr;
     fVar11 = fVar11 * 2.0f;
     (this_ptr->base).base.turn_speed = delta_time * (float)12.566370614;
@@ -147,7 +142,7 @@ static int CGabriella_process_check_iVar17_0(CGabriella_process_Ctx *ctx) {
     return 0;
 }
 
-// Chunk: check_pCVar5_1 (lines 85-249 of original)
+// Chunk: check_pCVar5_1 (lines 80-242 of original)
 static int CGabriella_process_check_pCVar5_1(CGabriella_process_Ctx *ctx) {
     CGabriella *&this_ptr = ctx->this_ptr;
     float &delta_time = ctx->delta_time;
@@ -227,8 +222,7 @@ static int CGabriella_process_check_pCVar5_1(CGabriella_process_Ctx *ctx) {
       pCVar4 = &(this_ptr->base).base.model;
       if (iVar17 == 0) {
         if (is_holstering == 0) {
-          pSVar18 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                              (&pCVar4->motion_controller);
+          pSVar18 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(&pCVar4->base);
           uVar9 = pSVar18->state_index;
           if (uVar9 < 0xe) {
             if ((((uVar9 == 0) || (uVar9 < 2)) || (uVar9 < 3)) || (uVar9 == 3)) goto LAB_004d3af9;
@@ -240,7 +234,7 @@ static int CGabriella_process_check_pCVar5_1(CGabriella_process_Ctx *ctx) {
                                      g_CAmmoBoxClassInfo.name_hash);
             if (this_ptr_04 != (CAmmoBox *)0x0) {
               fVar10 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_0052e2b0
-                                 (&pCVar4->motion_controller);
+                                 (&pCVar4->base);
               core_ammobox_cpp_CAmmoBox_openBox_FUN_00411690(this_ptr_04,fVar10);
             }
           }
@@ -269,10 +263,10 @@ LAB_004d3af9:
                 (this_ptr->base).base.position_delta.z = fVar3 + fVar5;
                 (this_ptr->base).base.position_delta.x = fVar4 + local_20 * delta_time;
                 pSVar18 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                                    (&pCVar4->motion_controller);
+                                    (&pCVar4->base);
                 if (iVar17 != pSVar18->state_index) {
                   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                            (&pCVar4->motion_controller,iVar17,1);
+                            (&pCVar4->base,iVar17,1);
                 }
                 if (((this_ptr->base).player_input.action_state.use_item != 0) &&
                    (iVar17 = core_gabriela_cpp_CGabriella_findAndPickupNearbyObject_FUN_004d5870
@@ -295,8 +289,7 @@ LAB_004d3af9:
       else {
         if (2 < uVar9) {
           if (uVar9 == 3) {
-            core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                      (&pCVar4->motion_controller,0,1);
+            core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&pCVar4->base,0,1);
             engine_console_cpp_CConsole_printf_FUN_00441890
                       (g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);
             return GOTO_LAB_004d321d;
@@ -339,12 +332,12 @@ LAB_004d3af9:
       }
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              (&(this_ptr->base).base.model.motion_controller,0,1);
+              (&(this_ptr->base).base.model.base,0,1);
     core_hero_cpp_CHero_stopPushingBox_FUN_004f3350(&this_ptr->base);
     return 0;
 }
 
-// Chunk: else_2 (lines 249-278 of original)
+// Chunk: else_2 (lines 242-271 of original)
 static int CGabriella_process_else_2(CGabriella_process_Ctx *ctx) {
     CGabriella *&this_ptr = ctx->this_ptr;
     CLadder *&pCVar5 = ctx->pCVar5;
@@ -382,11 +375,11 @@ LAB_004d320e:
     iVar17 = 0;
 LAB_004d3215:
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              (&(this_ptr->base).base.model.motion_controller,iVar17,1);
+              (&(this_ptr->base).base.model.base,iVar17,1);
     return 0;
 }
 
-// Chunk: chunk_3 (lines 279-324 of original)
+// Chunk: chunk_3 (lines 272-316 of original)
 static int CGabriella_process_chunk_3(CGabriella_process_Ctx *ctx) {
     CGabriella *&this_ptr = ctx->this_ptr;
     float &delta_time = ctx->delta_time;
@@ -398,14 +391,13 @@ static int CGabriella_process_chunk_3(CGabriella_process_Ctx *ctx) {
 
     if (((is_holstering == 0) ||
         (pSVar18 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                             (&(this_ptr->base).base.model.motion_controller),
-        pSVar18->state_index == 0xd)) ||
+                             (&(this_ptr->base).base.model.base), pSVar18->state_index == 0xd)) ||
        ((this_ptr->base).base.base.standing_platform != (CPlatform *)0x0)) {
       local_178.x = (this_ptr->base).base.position_delta.x;
       local_178.y = (this_ptr->base).base.position_delta.y;
       local_178.z = (this_ptr->base).base.position_delta.z;
       pSVar18 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                          (&(this_ptr->base).base.model.motion_controller);
+                          (&(this_ptr->base).base.model.base);
       uVar8 = pSVar18->state_index;
       if (uVar8 < 3) {
         if (uVar8 == 0) {
@@ -442,7 +434,7 @@ LAB_004d3cb4:
     return 0;
 }
 
-// Chunk: branch_0 (lines 456-498 of original)
+// Chunk: branch_0 (lines 447-489 of original)
 static int CGabriella_process_branch_0(CGabriella_process_Ctx *ctx) {
     CGabriella *&this_ptr = ctx->this_ptr;
     int &iVar17 = ctx->iVar17;
@@ -458,7 +450,7 @@ static int CGabriella_process_branch_0(CGabriella_process_Ctx *ctx) {
         case 2:
         case 3:
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (&(this_ptr->base).base.model.motion_controller,0x12,1);
+                    (&(this_ptr->base).base.model.base,0x12,1);
           break;
         default:
           core_hero_cpp_CHero_tryOpenDoor_FUN_004f2ed0(&this_ptr->base);
@@ -478,7 +470,7 @@ static int CGabriella_process_branch_0(CGabriella_process_Ctx *ctx) {
           }
           else {
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                      (&(this_ptr->base).base.model.motion_controller,0xd,1);
+                      (&(this_ptr->base).base.model.base,0xd,1);
           }
         }
       }
@@ -489,7 +481,7 @@ static int CGabriella_process_branch_0(CGabriella_process_Ctx *ctx) {
     return 0;
 }
 
-// Chunk: branch_3 (lines 530-573 of original)
+// Chunk: branch_3 (lines 519-562 of original)
 static int CGabriella_process_branch_3(CGabriella_process_Ctx *ctx) {
     CGabriella *&this_ptr = ctx->this_ptr;
     float &delta_time = ctx->delta_time;
@@ -680,22 +672,22 @@ void __cdecl core_gabriela_cpp_CGabriella_process_FUN_004d2ea0(CGabriella *this_
     is_holstering = 1;
   }
   fVar10 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                     (&(this_ptr->base).base.model.motion_controller,8);
+                     (&(this_ptr->base).base.model.base,8);
   if (0.0 < fVar10) {
     is_holstering = 1;
   }
   fVar10 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                     (&(this_ptr->base).base.model.motion_controller,0xb);
+                     (&(this_ptr->base).base.model.base,0xb);
   if (0.0 < fVar10) {
     is_holstering = 1;
   }
   fVar10 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                     (&(this_ptr->base).base.model.motion_controller,0xc);
+                     (&(this_ptr->base).base.model.base,0xc);
   if (0.0 < fVar10) {
     is_holstering = 1;
   }
   fVar10 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                     (&(this_ptr->base).base.model.motion_controller,0x12);
+                     (&(this_ptr->base).base.model.base,0x12);
   if (0.0 < fVar10) {
     is_holstering = 1;
   }
@@ -832,8 +824,7 @@ LAB_004d33ec:
   if (is_holstering == 0) {
     if (((pCVar13 == (CLightActor *)0x0) || ((pCVar13->light).light_enabled_flag == 0)) ||
        (pSVar16 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                            (&(this_ptr->base).base.model.motion_controller),
-       pSVar16->state_index == 5)) {
+                            (&(this_ptr->base).base.model.base), pSVar16->state_index == 5)) {
       fVar10 = delta_time / 1.2f;
       goto LAB_004d344b;
     }
@@ -863,14 +854,12 @@ LAB_004d344b:
             (this_ptr,delta_time,(uint)(is_holstering == 0));
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr,delta_time);
   pCVar4 = &(this_ptr->base).base.model;
-  fVar10 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                     (&pCVar4->motion_controller,0xd);
+  fVar10 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20(&pCVar4->base,0xd);
   if (fVar10 <= 0.0) {
     core_hero_cpp_CHero_stopPushingBox_FUN_004f3350(&this_ptr->base);
   }
   else {
-    fVar10 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_0052e2b0
-                       (&pCVar4->motion_controller);
+    fVar10 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_0052e2b0(&pCVar4->base);
     if ((1.0 < fVar10) &&
        (pCVar14 = (CBoxActor *)
                   core_actor_cpp_castToClassHash_FUN_0040c790

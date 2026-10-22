@@ -19,7 +19,7 @@ CDeformableModelInstance * __cdecl core_skeleton_cpp_CDeformableModelInstance_dt
     shape_memdbg_cpp_free_FUN_00564486(ptr_00);
     return this_ptr;
   }
-  (this_ptr->motion_controller).vtable = &g_CDeformableModelInstanceVTable;
+  (this_ptr->base).vtable = &g_CDeformableModelInstanceVTable;
   core_skeleton_cpp_CDeformableModelInstance_FUN_0051b7d0(this_ptr);
   pCVar1 = core_curtain_cpp_CVector3f_arrdtor100_FUN_0043f9a0(this_ptr->transformed_vertices,0);
   ptr = (CDeformableModelInstance *)

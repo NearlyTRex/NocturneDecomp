@@ -1244,7 +1244,7 @@ LAB_00501802:
                                                     pcVar18 = local_19d4;
                                                     this_ptr_00 = 
                                                   core_motion_cpp_CMotionController_getMotionList_FUN_004e1890
-                                                            (&(pCVar14->model).motion_controller);
+                                                            (&(pCVar14->model).base);
                                                   iVar6 = 
                                                   core_motion_cpp_CMotionList_findMotionIndex_FUN_004e1010
                                                             (this_ptr_00,pcVar18,iVar6);

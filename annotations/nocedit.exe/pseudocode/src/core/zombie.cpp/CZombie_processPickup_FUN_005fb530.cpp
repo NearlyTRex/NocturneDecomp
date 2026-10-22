@@ -268,6 +268,6 @@ LAB_005fbae6:
   iVar10 = 10;
 LAB_005fba91:
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-            (&(this_ptr->base).base.model.motion_controller,iVar10,1);
+            (&(this_ptr->base).base.model.base,iVar10,1);
   return 1;
 }

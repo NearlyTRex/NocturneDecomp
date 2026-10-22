@@ -19,10 +19,8 @@ void __cdecl core_stranger_cpp_CStranger_handleActionButton_FUN_0053fc60(CStrang
       && (iVar3 = core_stranger_cpp_CStranger_tryThrowDynamite_FUN_0053ff50(this_ptr), iVar3 == 0))
      && (this_ptr->guns_drawn == 0)) {
     pCVar1 = &(this_ptr->base).base.model;
-    fVar4 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
-                      (&pCVar1->motion_controller,0);
-    fVar5 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
-                      (&pCVar1->motion_controller,1);
+    fVar4 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0(&pCVar1->base,0);
+    fVar5 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0(&pCVar1->base,1);
     if ((float)0.99990000000000001 < fVar5 + fVar4) {
       iVar3 = core_hero_cpp_CHero_tryOpenNearbyDoor_FUN_004b5110(&this_ptr->base);
       switch(iVar3) {
@@ -46,19 +44,17 @@ void __cdecl core_stranger_cpp_CStranger_handleActionButton_FUN_0053fc60(CStrang
       case 2:
       case 3:
         core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                  (&(this_ptr->base).base.model.motion_controller,0x1c,1);
+                  (&(this_ptr->base).base.model.base,0x1c,1);
         this_ptr->action_pending = 5;
         (this_ptr->base).player_input.action_state.fire = 0;
         return;
       case 4:
-        core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                  (&pCVar1->motion_controller,0x1d,1);
+        core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar1->base,0x1d,1);
         this_ptr->action_pending = 5;
         (this_ptr->base).player_input.action_state.fire = 0;
         return;
       case 5:
-        core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                  (&pCVar1->motion_controller,0x1e,1);
+        core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar1->base,0x1e,1);
         this_ptr->action_pending = 5;
         (this_ptr->base).player_input.action_state.fire = 0;
         return;
@@ -88,8 +84,7 @@ void __cdecl core_stranger_cpp_CStranger_handleActionButton_FUN_0053fc60(CStrang
       iVar3 = core_hero_cpp_CHero_tryPushNearbyBox_FUN_004b54c0(&this_ptr->base);
       pCVar1 = &(this_ptr->base).base.model;
       if (iVar3 != 0) {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                  (&pCVar1->motion_controller,6,1);
+        core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar1->base,6,1);
         return;
       }
       if (((this_ptr->base).base.carry_hands[1].carry_actor == (CDemonActor *)0x0) &&
@@ -98,8 +93,7 @@ void __cdecl core_stranger_cpp_CStranger_handleActionButton_FUN_0053fc60(CStrang
         iVar3 = core_hero_cpp_CHero_tryPullLever_FUN_004b52f0(&this_ptr->base);
         if (iVar3 != 0) {
           (this_ptr->base).player_input.action_state.fire = 0;
-          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                    (&pCVar1->motion_controller,0x1f,1);
+          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar1->base,0x1f,1);
           return;
         }
         iVar3 = core_stranger_cpp_CStranger_tryClimbLadder_FUN_0053bf90(this_ptr);

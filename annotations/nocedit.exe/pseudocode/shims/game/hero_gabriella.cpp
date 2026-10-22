@@ -948,7 +948,7 @@ int try_start_put_down(CGabriella *gabriella)
         return 0;
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-        (&(gabriella->base).base.model.motion_controller, (int)kPutDown, 1);
+        (&(gabriella->base).base.model.base, (int)kPutDown, 1);
     return 1;
 }
 
@@ -1400,7 +1400,7 @@ int try_start_kick(CGabriella *gabriella)
         return 0;
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-        (&(hero->base).model.motion_controller, (int)kKickDoor, 1);
+        (&(hero->base).model.base, (int)kKickDoor, 1);
     return 1;
 }
 
@@ -1450,7 +1450,7 @@ float motion_rate(CGabriella *gabriella)
     uint current;
 
     // tween_progress is negative when no crossfade is running.
-    if (0.0f <= (gabriella->base).base.model.motion_controller.tween_progress) {
+    if (0.0f <= (gabriella->base).base.model.base.tween_progress) {
         return 1.0f;
     }
     current = current_state(gabriella);
@@ -1565,7 +1565,7 @@ void start_climb(CGabriella *gabriella, int slot, CLadder *ladder, float side)
 
     (gabriella->base).ladder_to_climb = ladder;
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-        (&(gabriella->base).base.model.motion_controller, (int)kLadder, 1);
+        (&(gabriella->base).base.model.base, (int)kLadder, 1);
     stand_off.x = 0.0f;
     stand_off.y = 0.0f;
     stand_off.z = kLadderStandOff * side;
@@ -1605,7 +1605,7 @@ int try_start_climb(CGabriella *gabriella, int slot)
 // Whether LADDER is playing or being crossfaded into.
 int on_ladder_motion(CGabriella *gabriella)
 {
-    CMotionController *controller = &(gabriella->base).base.model.motion_controller;
+    CMotionController *controller = &(gabriella->base).base.model.base;
 
     if (0.0f < core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
                    (controller, (int)kLadder)) {
@@ -1756,7 +1756,7 @@ uint turn_wanted(CGabriella *gabriella, int slot)
 // exit with the same turn still wanted, crossfades into the step's start.
 void chain_turn(CGabriella *gabriella, int slot, float motion_delta)
 {
-    CMotionController *controller = &(gabriella->base).base.model.motion_controller;
+    CMotionController *controller = &(gabriella->base).base.model.base;
     SMotionTransition  next;
     SMotion           *motion;
     uint               current;
@@ -1800,7 +1800,7 @@ extern "C" int nocturne_hero_gabriella_locomotion_state(CGabriella *gabriella, i
     // request waits for the crossfade, at most kTurnChainTween or the step's
     // own 0.3 s.
     if (((current == kTurnLeft) || (current == kTurnRight)) &&
-        (0.0f <= (gabriella->base).base.model.motion_controller.tween_progress)) {
+        (0.0f <= (gabriella->base).base.model.base.tween_progress)) {
         return (int)current;
     }
     if ((slot >= 0) && ((0.0f < s_climb_buffer[slot]) || (0.0f < s_put_down_buffer[slot]))) {
@@ -1865,7 +1865,7 @@ extern "C" void nocturne_hero_gabriella_process_motion(CGabriella *gabriella, fl
     if (gabriella == (CGabriella *)0x0) {
         return;
     }
-    controller = &(gabriella->base).base.model.motion_controller;
+    controller = &(gabriella->base).base.model.base;
     slot = nocturne_hero_slot((CDemonActor *)gabriella);
     filter_press(gabriella, slot);
     prev_state = current_state(gabriella);

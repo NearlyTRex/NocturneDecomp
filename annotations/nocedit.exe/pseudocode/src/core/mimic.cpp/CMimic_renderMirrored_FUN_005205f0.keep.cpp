@@ -74,9 +74,9 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_005205f0(CMimic *this_ptr)
                               (g_CDemonRendererPtr2), iVar2 == 0)) {
           this_ptr_00 = &(this_ptr->base).base.model;
           core_motion_cpp_CMotionController_render_FUN_0052e700
-                    (&this_ptr_00->motion_controller,(CDemonActor *)this_ptr);
+                    (&this_ptr_00->base,(CDemonActor *)this_ptr);
           core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                    (&this_ptr_00->motion_controller);
+                    (&this_ptr_00->base);
         }
         engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
         engine_drender_cpp_CDemonRenderer_enableAdvancedCulling_FUN_0048ce10

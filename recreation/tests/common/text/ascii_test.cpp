@@ -49,6 +49,13 @@ TEST(Ascii, EqualityIgnoresAsciiCase) {
     EXPECT_FALSE(equalsIgnoringAsciiCase("ACT1", "ACT1.POD"));
 }
 
+TEST(Ascii, APrefixMatchIgnoresAsciiCaseAndNeedsTheWholePrefix) {
+    EXPECT_TRUE(startsWithIgnoringAsciiCase("NDUNGEON.GEO", "ndun"));
+    EXPECT_TRUE(startsWithIgnoringAsciiCase("ndun", "NDUN"));
+    EXPECT_FALSE(startsWithIgnoringAsciiCase("ndu", "ndun"));
+    EXPECT_FALSE(startsWithIgnoringAsciiCase("mauso", "ndun"));
+}
+
 TEST(Ascii, CompareOrdersLikeStricmp) {
     EXPECT_EQ(compareIgnoringAsciiCase("Door.WAV", "door.wav"), 0);
     EXPECT_LT(compareIgnoringAsciiCase("ACT1", "act2"), 0);

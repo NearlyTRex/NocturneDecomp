@@ -17,6 +17,6 @@ void __cdecl engine_console_cpp_CConsole_reset_FUN_00441a40(CConsole *this_ptr)
 #endif
   this_ptr->current_column = 0;
   this_ptr->current_row = 0;
-  remove(g_ConsoleLogFilename);
+  _remove(g_ConsoleLogFilename);
   return;
 }

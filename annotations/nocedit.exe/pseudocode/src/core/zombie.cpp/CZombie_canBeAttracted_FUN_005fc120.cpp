@@ -23,8 +23,7 @@ int __cdecl core_zombie_cpp_CZombie_canBeAttracted_FUN_005fc120(CZombie *this_pt
   CDeformableModelInstance *this_ptr_00;
   
   this_ptr_01 = &(this_ptr->base).base.model;
-  fVar1 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                    (&this_ptr_01->motion_controller,3);
+  fVar1 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20(&this_ptr_01->base,3);
   if (fVar1 <= 0.0) {
     return 0;
   }

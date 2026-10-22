@@ -2,11 +2,11 @@
 // Address: 0052dc80
 // Address Range: [[0052dc80, 0052dca5]]
 // Convention: __cdecl
-// Signature: int __cdecl core_motion_cpp_CMotionController_findPatchToFrame_FUN_0052dc80(CMotionController *this_ptr)
+// Signature: int __cdecl core_motion_cpp_CMotionController_findPatchToFrame_FUN_0052dc80(CMotionController *this_ptr,int source_motion_index,float source_frame,int target_motion_index)
 
 #include "nocturne.h"
 
-int __cdecl core_motion_cpp_CMotionController_findPatchToFrame_FUN_0052dc80(CMotionController *this_ptr)
+int __cdecl core_motion_cpp_CMotionController_findPatchToFrame_FUN_0052dc80(CMotionController *this_ptr,int source_motion_index,float source_frame,int target_motion_index)
 
 {
   g_CurrentFilename = "..\\core\\motion.cpp";

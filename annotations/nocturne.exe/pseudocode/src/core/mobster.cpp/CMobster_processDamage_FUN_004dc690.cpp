@@ -30,11 +30,9 @@ void __cdecl core_mobster_cpp_CMobster_processDamage_FUN_004dc690(CMobster *this
   (this_ptr->base).base.hit_points = fVar1;
   if (fVar1 <= 0.0) {
     (this_ptr->base).base.hit_points = 0.0;
-    pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                       (&this_ptr_00->motion_controller);
+    pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(&this_ptr_00->base);
     if ((pSVar4->state_index != 5) && (pSVar4->state_index != 4)) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                (&this_ptr_00->motion_controller,4,1);
+      core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,4,1);
       (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
                 ((CCharacter *)this_ptr,1,(CVector3f *)0x0);
       if (this_ptr->death_sound_played == 0) {
@@ -53,8 +51,7 @@ void __cdecl core_mobster_cpp_CMobster_processDamage_FUN_004dc690(CMobster *this
                      (damage_info->attacker,g_CTommyGunActorType_02dd0fd0.name_hash);
   if (pCVar2 == (CDemonActor *)0x0) {
 LAB_004dc731:
-    core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-              (&this_ptr_00->motion_controller,3,1);
+    core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,3,1);
   }
   else {
     iVar3 = core_actor_cpp_randomChance_FUN_0040dea0(0.5);

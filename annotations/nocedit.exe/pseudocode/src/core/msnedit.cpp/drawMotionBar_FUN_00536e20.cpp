@@ -41,10 +41,9 @@ void __cdecl core_msnedit_cpp_drawMotionBar_FUN_00536e20(void)
     }
     engine_2d_c_fillRectWithBorder_FUN_00403200(1,iVar2,0x9b,iVar1,0,0xff);
     motion_name = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                            (&this_ptr_00->motion_controller);
-    local_f8 = (this_ptr_00->motion_controller).current_frame_number;
-    core_motion_cpp_CMotionController_getCurrentStateName_FUN_0052dcf0
-              (&this_ptr_00->motion_controller);
+                            (&this_ptr_00->base);
+    local_f8 = (this_ptr_00->base).current_frame_number;
+    core_motion_cpp_CMotionController_getCurrentStateName_FUN_0052dcf0(&this_ptr_00->base);
     _sprintf(local_f4,"%s (%s)",motion_name);
     iVar3 = core_msnedit_cpp_drawClickableButton_FUN_00536cd0(local_f4,4,iVar4 + -0x33,1,0);
     if (iVar3 != 0) {
@@ -107,7 +106,7 @@ void __cdecl core_msnedit_cpp_drawMotionBar_FUN_00536e20(void)
       local_f8 = 0.0;
     }
     core_motion_cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0
-              (&this_ptr_00->motion_controller,motion_name->motion_name,local_f8);
+              (&this_ptr_00->base,motion_name->motion_name,local_f8);
     core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
               (this_ptr_00);
   }

@@ -2,118 +2,46 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 5,
-        "line": 20,
-        "message": "unknown type name 'FLOATING_SAVE_AREA'"
-      },
-      {
-        "category": "other",
-        "column": 5,
-        "line": 52,
-        "message": "unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?"
-      },
-      {
-        "category": "other",
-        "column": 5,
-        "line": 53,
-        "message": "unknown type name 'PCONTEXT'"
-      },
-      {
-        "category": "other",
-        "column": 85,
-        "line": 258,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 80,
-        "line": 267,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 496,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 496,
-        "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 497,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 497,
-        "message": "exponent has no digits"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 123,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 22,
-        "line": 123,
-        "message": "expected expression"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 24,
-        "line": 123,
+        "line": 120,
         "message": "use of undeclared identifier 'iRam0000014c'"
       },
       {
         "category": "incompatible_types",
         "column": 15,
-        "line": 153,
+        "line": 148,
         "message": "no matching function for call to 'core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30'"
       },
       {
         "category": "incompatible_types",
         "column": 15,
-        "line": 186,
+        "line": 180,
         "message": "no matching function for call to 'core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 13,
-        "line": 236,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 20,
-        "line": 236,
-        "message": "expected expression"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 22,
-        "line": 236,
+        "line": 229,
         "message": "use of undeclared identifier 'iRam0000014c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 30,
-        "line": 251,
+        "line": 243,
         "message": "use of undeclared identifier '_DAT_02da8a7c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 32,
-        "line": 287,
+        "line": 278,
         "message": "use of undeclared identifier '_DAT_02da8a7c'"
+      },
+      {
+        "category": "format_error",
+        "column": 85,
+        "line": 321,
+        "message": "format specifies type 'char *' but the argument has type 'CSmiley *' [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -122,12 +50,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 847,
-    "complexity_score": 505,
+    "complexity_score": 494,
     "cross_reference_count": 0,
     "function_call_count": 25,
     "global_count": 16,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 385,
+    "pseudocode_lines": 374,
     "suspect_count": 10,
     "suspect_types": [
       "unresolved_funcptr",
@@ -135,7 +63,7 @@
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 1232
+    "total_lines": 1221
   },
   "cross_references": [],
   "function": {
@@ -814,7 +742,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 116,
+      "line": 113,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(iRam0000014c + 0xe8))(0);",
@@ -822,7 +750,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 229,
+      "line": 222,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(iRam0000014c + 0xe8))(0);",
@@ -838,7 +766,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 192,
+      "line": 186,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -846,7 +774,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 327,
+      "line": 316,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -854,7 +782,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 346,
+      "line": 335,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -862,7 +790,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 374,
+      "line": 363,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.position_delta.z = 0.0;",
@@ -870,7 +798,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 377,
+      "line": 366,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",

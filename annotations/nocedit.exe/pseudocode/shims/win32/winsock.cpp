@@ -13,29 +13,37 @@
 #include <cstdlib>
 #include <cstring>
 
+// Make sure these are undefined for Darwin
+#if defined(__APPLE__)
+#undef htons
+#undef htonl
+#undef ntohs
+#undef ntohl
+#endif
+
 // POSIX wrappers defined in winsock_posix.c
 extern "C" {
-    int posix_socket(int domain, int type, int protocol);
-    int posix_accept(int sockfd, void* addr, unsigned int* addrlen);
-    int posix_bind(int sockfd, const void* addr, unsigned int addrlen);
-    int posix_connect(int sockfd, const void* addr, unsigned int addrlen);
-    int posix_getsockname(int sockfd, void* addr, unsigned int* addrlen);
-    int posix_listen(int sockfd, int backlog);
-    int posix_recv(int sockfd, void* buf, unsigned long len, int flags);
-    int posix_recvfrom(int sockfd, void* buf, unsigned long len, int flags,
+    int nocturne_socket_socket(int domain, int type, int protocol);
+    int nocturne_socket_accept(int sockfd, void* addr, unsigned int* addrlen);
+    int nocturne_socket_bind(int sockfd, const void* addr, unsigned int addrlen);
+    int nocturne_socket_connect(int sockfd, const void* addr, unsigned int addrlen);
+    int nocturne_socket_getsockname(int sockfd, void* addr, unsigned int* addrlen);
+    int nocturne_socket_listen(int sockfd, int backlog);
+    int nocturne_socket_recv(int sockfd, void* buf, unsigned long len, int flags);
+    int nocturne_socket_recvfrom(int sockfd, void* buf, unsigned long len, int flags,
                        void* from, unsigned int* fromlen);
-    int posix_send(int sockfd, const void* buf, unsigned long len, int flags);
-    int posix_sendto(int sockfd, const void* buf, unsigned long len, int flags,
+    int nocturne_socket_send(int sockfd, const void* buf, unsigned long len, int flags);
+    int nocturne_socket_sendto(int sockfd, const void* buf, unsigned long len, int flags,
                      const void* to, unsigned int tolen);
-    int posix_setsockopt(int sockfd, int level, int optname,
+    int nocturne_socket_setsockopt(int sockfd, int level, int optname,
                          const void* optval, unsigned int optlen);
-    int posix_shutdown(int sockfd, int how);
-    int posix_close(int fd);
-    int posix_ioctl(int fd, unsigned long request, void* argp);
-    void* posix_gethostbyname(const char* name);
-    unsigned long posix_inet_addr(const char* cp);
-    int posix_gethostname(char* name, unsigned long namelen);
-    void* posix_getservbyport(int port, const char* proto);
+    int nocturne_socket_shutdown(int sockfd, int how);
+    int nocturne_socket_close(int fd);
+    int nocturne_socket_ioctl(int fd, unsigned long request, void* argp);
+    void* nocturne_socket_gethostbyname(const char* name);
+    unsigned long nocturne_socket_inet_addr(const char* cp);
+    int nocturne_socket_gethostname(char* name, unsigned long namelen);
+    void* nocturne_socket_getservbyport(int port, const char* proto);
 }
 
 // =============================================================================
@@ -84,7 +92,7 @@ int WSACleanup(void) {
 
 _SOCKET accept(_SOCKET s, struct SOCKADDR* addr, int* addrlen) {
     unsigned int len = addrlen ? (unsigned int)*addrlen : 0;
-    int result = posix_accept((int)s, addr, addrlen ? &len : nullptr);
+    int result = nocturne_socket_accept((int)s, addr, addrlen ? &len : nullptr);
     if (addrlen) *addrlen = (int)len;
     if (result < 0) return (_SOCKET)-1;
     return (_SOCKET)result;
@@ -105,26 +113,26 @@ int bind(_SOCKET s, const struct SOCKADDR* addr, int namelen) {
         const char* bind_ip = nocturne_net_bind_address();
         if (bind_ip != nullptr && *bind_ip != '\0') {
             SOCKADDR local = *addr;
-            local.sin_addr = (int)posix_inet_addr(bind_ip);
+            local.sin_addr = (int)nocturne_socket_inet_addr(bind_ip);
             DLOG("netplay", "bind: INADDR_ANY -> %s port %u", bind_ip,
                     (unsigned)ntohs(local.sin_port));
-            return posix_bind((int)s, &local, (unsigned int)namelen);
+            return nocturne_socket_bind((int)s, &local, (unsigned int)namelen);
         }
     }
-    return posix_bind((int)s, addr, (unsigned int)namelen);
+    return nocturne_socket_bind((int)s, addr, (unsigned int)namelen);
 }
 
 int closesocket(_SOCKET s) {
-    return posix_close((int)s);
+    return nocturne_socket_close((int)s);
 }
 
 int connect(_SOCKET s, const struct SOCKADDR* name, int namelen) {
-    return posix_connect((int)s, name, (unsigned int)namelen);
+    return nocturne_socket_connect((int)s, name, (unsigned int)namelen);
 }
 
 int getsockname(_SOCKET s, struct SOCKADDR* name, int* namelen) {
     unsigned int len = namelen ? (unsigned int)*namelen : 0;
-    int result = posix_getsockname((int)s, name, &len);
+    int result = nocturne_socket_getsockname((int)s, name, &len);
     if (namelen) *namelen = (int)len;
     return result;
 }
@@ -133,42 +141,42 @@ int ioctlsocket(_SOCKET s, long cmd, uint* argp) {
     // Winsock ioctl codes are 32-bit _IOW values and the game passes them as
     // negative int literals — FIONBIO is 0x8004667E, i.e. -0x7ffb9982. `long`
     // is 64 bits here, so widening sign-extends that to 0xFFFFFFFF8004667E and
-    // posix_ioctl's FIONBIO case stops matching, leaving the raw ioctl() to
+    // nocturne_socket_ioctl's FIONBIO case stops matching, leaving the raw ioctl() to
     // fail; on the 32-bit build the same code matched exactly. Narrow back to
     // the 32 bits the command actually is before widening.
-    return posix_ioctl((int)s, (unsigned long)(unsigned int)cmd, argp);
+    return nocturne_socket_ioctl((int)s, (unsigned long)(unsigned int)cmd, argp);
 }
 
 int listen(_SOCKET s, int backlog) {
-    return posix_listen((int)s, backlog);
+    return nocturne_socket_listen((int)s, backlog);
 }
 
 int recv(_SOCKET s, char* buf, int len, int flags) {
-    return posix_recv((int)s, buf, (unsigned long)len, flags);
+    return nocturne_socket_recv((int)s, buf, (unsigned long)len, flags);
 }
 
 int recvfrom(_SOCKET s, char* buf, int len, int flags, struct SOCKADDR* from, int* fromlen) {
     unsigned int slen = fromlen ? (unsigned int)*fromlen : 0;
-    int result = posix_recvfrom((int)s, buf, (unsigned long)len, flags,
+    int result = nocturne_socket_recvfrom((int)s, buf, (unsigned long)len, flags,
                                 from, fromlen ? &slen : nullptr);
     if (fromlen) *fromlen = (int)slen;
     return result;
 }
 
 int send(_SOCKET s, const char* buf, int len, int flags) {
-    return posix_send((int)s, buf, (unsigned long)len, flags);
+    return nocturne_socket_send((int)s, buf, (unsigned long)len, flags);
 }
 
 int sendto(_SOCKET s, const char* buf, int len, int flags, const struct SOCKADDR* to, int tolen) {
-    return posix_sendto((int)s, buf, (unsigned long)len, flags, to, (unsigned int)tolen);
+    return nocturne_socket_sendto((int)s, buf, (unsigned long)len, flags, to, (unsigned int)tolen);
 }
 
 int setsockopt(_SOCKET s, int level, int optname, const char* optval, int optlen) {
-    return posix_setsockopt((int)s, level, optname, optval, (unsigned int)optlen);
+    return nocturne_socket_setsockopt((int)s, level, optname, optval, (unsigned int)optlen);
 }
 
 int shutdown(_SOCKET s, int how) {
-    return posix_shutdown((int)s, how);
+    return nocturne_socket_shutdown((int)s, how);
 }
 
 // =============================================================================
@@ -176,19 +184,19 @@ int shutdown(_SOCKET s, int how) {
 // =============================================================================
 
 struct HOSTENT* gethostbyname(const char* name) {
-    return (struct HOSTENT*)posix_gethostbyname(name);
+    return (struct HOSTENT*)nocturne_socket_gethostbyname(name);
 }
 
 ulong inet_addr(const char* cp) {
-    return (ulong)posix_inet_addr(cp);
+    return (ulong)nocturne_socket_inet_addr(cp);
 }
 
 int gethostname(char* name, int namelen) {
-    return posix_gethostname(name, (unsigned long)namelen);
+    return nocturne_socket_gethostname(name, (unsigned long)namelen);
 }
 
 struct SERVENT* getservbyport(int port, const char* proto) {
-    return (struct SERVENT*)posix_getservbyport(port, proto);
+    return (struct SERVENT*)nocturne_socket_getservbyport(port, proto);
 }
 
 // =============================================================================
@@ -196,7 +204,7 @@ struct SERVENT* getservbyport(int port, const char* proto) {
 // =============================================================================
 
 _SOCKET socket(int af, int type, int protocol) {
-    int fd = posix_socket(af, type, protocol);
+    int fd = nocturne_socket_socket(af, type, protocol);
     if (fd < 0) return (_SOCKET)-1;
     return (_SOCKET)fd;
 }

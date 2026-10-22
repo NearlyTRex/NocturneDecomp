@@ -78,8 +78,7 @@ void __cdecl core_icepick_cpp_CIcePick_process_FUN_004b9fe0(CIcePick *this_ptr,f
                     ((CCharacter *)this_ptr,delta_time);
   pCVar7 = &(this_ptr->base).base.model;
   if (iVar5 == 0) {
-    pSVar13 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                        (&pCVar7->motion_controller);
+    pSVar13 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(&pCVar7->base);
     uVar12 = pSVar13->state_index;
     if (uVar12 < 9) {
       if ((((uVar12 == 0) || (uVar12 < 2)) || (uVar12 < 3)) || (uVar12 == 3)) goto LAB_004ba357;
@@ -174,7 +173,7 @@ switchD_004ba595_default:
             (this_ptr->base).base.turn_angle_accumulator =
                  (this_ptr->base).player_input.turn_speed * (this_ptr->base).base.turn_speed;
             pSVar13 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                                (&(this_ptr->base).base.model.motion_controller);
+                                (&(this_ptr->base).base.model.base);
             if (iVar5 != pSVar13->state_index) {
               if ((((iVar5 == 0xe) || (iVar5 == 0xf)) || (iVar5 == 0x10)) &&
                  (iVar11 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(this_ptr->sfx_handles[0]),
@@ -184,7 +183,7 @@ switchD_004ba595_default:
                 this_ptr->sfx_handles[0] = uVar12;
               }
               core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                        (&(this_ptr->base).base.model.motion_controller,iVar5,1);
+                        (&(this_ptr->base).base.model.base,iVar5,1);
             }
             if (((this_ptr->base).player_input.action_state.use_item != 0) &&
                (iVar5 = core_icepick_cpp_CIcePick_findAndPickupGun_FUN_004ba8a0(this_ptr),
@@ -215,8 +214,7 @@ LAB_004ba347:
     else {
       if (2 < uVar12) {
         if (uVar12 == 3) {
-          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                    (&pCVar7->motion_controller,0,1);
+          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar7->base,0,1);
           engine_console_cpp_CConsole_printf_FUN_0043ac60
                     (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",this_ptr);
           goto LAB_004ba0e6;
@@ -226,7 +224,7 @@ LAB_004ba347:
       iVar5 = 2;
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-              (&(this_ptr->base).base.model.motion_controller,iVar5,1);
+              (&(this_ptr->base).base.model.base,iVar5,1);
   }
 LAB_004ba0e6:
   pCVar8 = (this_ptr->base).base.grabbed_by;
@@ -288,7 +286,7 @@ LAB_004ba215:
   }
   in_stack_ffffff78 = 1.4013e-45;
   core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-            (&(this_ptr->base).base.model.motion_controller,iVar5,1);
+            (&(this_ptr->base).base.model.base,iVar5,1);
 LAB_004ba228:
   core_inv_cpp_CInventory_updateInventory_FUN_004c1850(&(this_ptr->base).inventory);
   pCVar8 = core_actor_cpp_castToClassHash_FUN_0040d890

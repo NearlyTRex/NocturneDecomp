@@ -515,7 +515,7 @@ static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_
     return 0;
 }
 
-// Chunk: chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_else_2_check_pCVar4_0 (lines 1492-1515 of original)
+// Chunk: chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_else_2_check_pCVar4_0 (lines 1492-1514 of original)
 static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_else_2_check_pCVar4_0(CEventList_executeCommand_Ctx *ctx) {
     int &iVar2 = ctx->iVar2;
     CCharacter *&pCVar4 = ctx->pCVar4;
@@ -526,7 +526,7 @@ static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_
                                                     iVar2 = 0;
                                                     pCVar10 = 
                                                   core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
-                                                            (&(pCVar4->model).motion_controller);
+                                                            (&(pCVar4->model).base);
                                                   iVar2 = 
                                                   core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0
                                                             (pCVar10,pcVar18,iVar2);
@@ -540,13 +540,12 @@ static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_
                                                   if (local_f0 != 0) {
                                                                                                         
                                                   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                                                            (&(pCVar4->model).motion_controller,
-                                                             iVar2,1);
+                                                            (&(pCVar4->model).base,iVar2,1);
                                                   }
     return 0;
 }
 
-// Chunk: chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_else_2_else_1_check_pCVar7_0 (lines 1788-1819 of original)
+// Chunk: chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_else_2_else_1_check_pCVar7_0 (lines 1787-1817 of original)
 static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_else_2_else_1_check_pCVar7_0(CEventList_executeCommand_Ctx *ctx) {
     CDeformableModelInstance *&this_ptr_00 = ctx->this_ptr_00;
     int &iVar2 = ctx->iVar2;
@@ -560,7 +559,7 @@ static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_
                                                     this_ptr_00 = &(pCVar7->base).model;
                                                     pCVar10 = 
                                                   core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
-                                                            (&this_ptr_00->motion_controller);
+                                                            (&this_ptr_00->base);
                                                   iVar2 = 
                                                   core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460
                                                             (pCVar10,pcVar18,iVar2);
@@ -574,20 +573,19 @@ static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_
                                                   if (local_f0 != 0) {
                                                                                                         
                                                   core_motion_cpp_CMotionController_jumpToMotion_FUN_0052dde0
-                                                            (&this_ptr_00->motion_controller,iVar2,
-                                                             0.0);
+                                                            (&this_ptr_00->base,iVar2,0.0);
                                                   iVar2 = 1;
                                                   pSVar11 = 
                                                   core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                                                            (&this_ptr_00->motion_controller);
+                                                            (&this_ptr_00->base);
                                                   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                                                            (&this_ptr_00->motion_controller,
-                                                             pSVar11->state_index,iVar2);
+                                                            (&this_ptr_00->base,pSVar11->state_index
+                                                             ,iVar2);
                                                   }
     return 0;
 }
 
-// Chunk: chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_else_2_else_1_else_1 (lines 1899-2089 of original)
+// Chunk: chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_else_2_else_1_else_1 (lines 1897-2087 of original)
 static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_else_2_else_1_else_1(CEventList_executeCommand_Ctx *ctx) {
     char *&command_buffer = ctx->command_buffer;
     char &cVar1 = ctx->cVar1;

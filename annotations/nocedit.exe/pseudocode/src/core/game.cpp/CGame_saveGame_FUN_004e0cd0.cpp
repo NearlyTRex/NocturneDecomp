@@ -38,7 +38,7 @@ void __cdecl core_game_cpp_CGame_saveGame_FUN_004e0cd0(CGame *this_ptr,char *sav
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar6);
     return;
   }
-  remove("save\\$$SAVE$$.TMP");
+  _remove("save\\$$SAVE$$.TMP");
   splitpath
             (g_CurrentSaveFile,(char *)0x0,(char *)0x0,(char *)0x0,local_24c);
   iVar3 = _stricmp(local_24c,"noc");
@@ -171,7 +171,7 @@ void __cdecl core_game_cpp_CGame_saveGame_FUN_004e0cd0(CGame *this_ptr,char *sav
     crt_fstream_cpp_ofstream_dtor_FUN_005ff7bc(local_cc,0);
     crt_fstream_cpp_ifstream_dtor_FUN_005ff856(local_14c,0);
   }
-  remove("save\\$$SAVE$$.TMP");
+  _remove("save\\$$SAVE$$.TMP");
   pcVar5 = g_CurrentSaveFile;
   do {
     cVar2 = *pcVar6;

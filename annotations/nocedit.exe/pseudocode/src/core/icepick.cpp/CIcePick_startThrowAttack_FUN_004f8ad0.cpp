@@ -13,6 +13,6 @@ int __cdecl core_icepick_cpp_CIcePick_startThrowAttack_FUN_004f8ad0(CIcePick *th
     return 0;
   }
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-            (&(this_ptr->base).base.model.motion_controller,0x16,1);
+            (&(this_ptr->base).base.model.base,0x16,1);
   return 1;
 }

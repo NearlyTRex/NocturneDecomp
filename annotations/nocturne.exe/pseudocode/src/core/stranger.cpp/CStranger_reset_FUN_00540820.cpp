@@ -19,8 +19,7 @@ void __cdecl core_stranger_cpp_CStranger_reset_FUN_00540820(CStranger *this_ptr)
   (this_ptr->base).base.layer_action_index = 0;
   (this_ptr->base).base.layer_action_t = 0.0;
   core_motion_cpp_CMotionController_jumpToMotionByName_FUN_004e1960
-            (&this_ptr_00->motion_controller,"stand",0.0);
-  core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-            (&this_ptr_00->motion_controller,0,1);
+            (&this_ptr_00->base,"stand",0.0);
+  core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,0,1);
   return;
 }

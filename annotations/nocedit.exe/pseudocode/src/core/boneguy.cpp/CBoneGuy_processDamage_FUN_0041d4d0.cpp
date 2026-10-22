@@ -21,7 +21,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_processDamage_FUN_0041d4d0(CBoneGuy *this
     return;
   }
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-            (&(this_ptr->base).base.model.motion_controller,3,1);
+            (&(this_ptr->base).base.model.base,3,1);
   core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(&this_ptr->base,damage_info);
   return;
 }

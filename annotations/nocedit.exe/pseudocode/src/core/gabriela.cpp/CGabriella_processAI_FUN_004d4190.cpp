@@ -125,7 +125,7 @@ void __cdecl core_gabriela_cpp_CGabriella_processAI_FUN_004d4190(CGabriella *thi
       if ((this_ptr_01 == (CEnemy *)0x0) || ((float)30 <= local_11c)) {
         if (this_ptr->weapon_state_flags != 0) {
           pSVar10 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                              (&(this_ptr->base).base.model.motion_controller);
+                              (&(this_ptr->base).base.model.base);
           if (pSVar10->state_index == 0) {
             (this_ptr->base).player_input.action_state.draw = 1;
             return;
@@ -135,7 +135,7 @@ void __cdecl core_gabriela_cpp_CGabriella_processAI_FUN_004d4190(CGabriella *thi
       else {
         if (this_ptr->weapon_state_flags == 0) {
           pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                             (&(this_ptr->base).base.model.motion_controller);
+                             (&(this_ptr->base).base.model.base);
           if (pSVar3->state_index == 0) {
             (this_ptr->base).player_input.action_state.draw = 1;
           }

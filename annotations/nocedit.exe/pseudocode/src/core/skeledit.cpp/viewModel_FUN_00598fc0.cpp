@@ -39,7 +39,7 @@ void __cdecl core_skeledit_cpp_viewModel_FUN_00598fc0(void)
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\skeledit.cpp",301);
     shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
               (g_CEditorToolsPtr,"Deleting old %s file.","skeledit.ini");
-    remove("skeledit.ini");
+    _remove("skeledit.ini");
     goto LAB_00599119;
   }
   iVar6 = 1;
@@ -166,7 +166,7 @@ LAB_00599119:
       g_CurrentDebugLine = 0x1b7e;
       g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
       if (this_ptr_00 != (CDeformableModelInstance *)0x0) {
-        (*((this_ptr_00->motion_controller).vtable)->dtor)(&this_ptr_00->motion_controller,2);
+        (*((this_ptr_00->base).vtable)->dtor)(&this_ptr_00->base,2);
       }
     }
   } while (iVar6 != 0x1b);

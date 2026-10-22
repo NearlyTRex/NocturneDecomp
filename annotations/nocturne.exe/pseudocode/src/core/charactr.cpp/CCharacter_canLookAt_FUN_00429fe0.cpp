@@ -21,11 +21,11 @@ int __cdecl core_charactr_cpp_CCharacter_canLookAt_FUN_00429fe0(CCharacter *this
       iVar2 = 0;
       state_name = "STAND";
       this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890
-                              (&(this_ptr->model).motion_controller);
+                              (&(this_ptr->model).base);
       iVar2 = core_motion_cpp_CMotionList_findStateIndex_FUN_004e10a0(this_ptr_00,state_name,iVar2);
       if (-1 < iVar2) {
         fVar3 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
-                          (&(this_ptr->model).motion_controller,iVar2);
+                          (&(this_ptr->model).base,iVar2);
         if ((float)0.94999999999999996 < fVar3) {
           return 0;
         }

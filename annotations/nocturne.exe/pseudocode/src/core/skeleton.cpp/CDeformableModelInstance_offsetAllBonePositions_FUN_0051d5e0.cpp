@@ -25,7 +25,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_offsetAllBonePositions_F
       iVar3 = iVar3 + 1;
       (pCVar2->bone_transform).bone_model_matrices[0].m[2].z =
            offset_vector->z + (pCVar2->bone_transform).bone_model_matrices[0].m[2].z;
-      pCVar2 = (CDeformableModelInstance *)(pCVar2->motion_controller).current_motion_name;
+      pCVar2 = (CDeformableModelInstance *)(pCVar2->base).current_motion_name;
     } while (iVar3 < pCVar1->bone_count);
   }
   this_ptr->cached_skinned_lod_index = -1;

@@ -1,24 +1,24 @@
-// Name: core_setdir.cpp_CDemonSet_FUN_00513720
+// Name: core_setdir.cpp_CDemonSet_saveThumbs_FUN_00513720
 // Address: 00513720
 // Address Range: [[00513720, 005138a6]]
 // Convention: __cdecl
-// Signature: void __cdecl core_setdir_cpp_CDemonSet_FUN_00513720(CDemonSet *this_ptr)
+// Signature: void __cdecl core_setdir_cpp_CDemonSet_saveThumbs_FUN_00513720(CDemonSet *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_setdir_cpp_CDemonSet_FUN_00513720(CDemonSet *this_ptr)
+void __cdecl core_setdir_cpp_CDemonSet_saveThumbs_FUN_00513720(CDemonSet *this_ptr)
 
 {
   int iVar1;
-  uint *puVar2;
+  uint (*pauVar2) [64];
   int iVar3;
   int iVar4;
   uint *puVar5;
-  uint *puVar6;
+  uint (*pauVar6) [64];
   byte bVar7;
   C3DSCamera *local_20;
   CVector3f *local_1c;
-  uint *local_18;
+  uint (*local_18) [64];
   CVector3f *local_14;
   
   bVar7 = 0;
@@ -31,7 +31,7 @@ void __cdecl core_setdir_cpp_CDemonSet_FUN_00513720(CDemonSet *this_ptr)
     local_20 = this_ptr->cameras;
     local_1c = &this_ptr->cameras[0].orientation;
     local_14 = &this_ptr->cameras[0].position;
-    local_18 = (uint *)&DAT_020875f8;
+    local_18 = g_ThumbZBufferTable[0];
     do {
       engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700
                 ((CDemonRenderer *)PTR_DAT_005ae700,local_14);
@@ -44,26 +44,26 @@ void __cdecl core_setdir_cpp_CDemonSet_FUN_00513720(CDemonSet *this_ptr)
       engine_special_cpp_clearZBufferNative_FUN_0052eed4();
       core_set_cpp_CDemonSet_renderSceneGeometry_FUN_00507c80(this_ptr,9999.9,0);
       iVar3 = 0;
-      puVar2 = local_18;
+      pauVar2 = local_18;
       do {
         puVar5 = *(uint **)((int)g_ZBufferScanlineArray + iVar3);
-        puVar6 = puVar2;
+        pauVar6 = pauVar2;
         for (iVar1 = 0x40; iVar1 != 0; iVar1 = iVar1 + -1) {
-          *puVar6 = *puVar5;
+          (*(uint (*) [48] [64])pauVar6)[0][0] = *puVar5;
           puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
-          puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
+          pauVar6 = (uint (*) [64])((int)pauVar6 + ((uint)bVar7 * -2 + 1) * 4);
         }
         for (iVar1 = 0; iVar1 != 0; iVar1 = iVar1 + -1) {
-          *(byte *)puVar6 = *(byte *)puVar5;
+          *(char *)(*(uint (*) [48] [64])pauVar6)[0] = (char)*puVar5;
           puVar5 = (uint *)((int)puVar5 + (uint)bVar7 * -2 + 1);
-          puVar6 = (uint *)((int)puVar6 + (uint)bVar7 * -2 + 1);
+          pauVar6 = (uint (*) [64])((int)pauVar6 + (uint)bVar7 * -2 + 1);
         }
         iVar3 = iVar3 + 4;
-        puVar2 = puVar2 + 0x40;
+        pauVar2 = pauVar2 + 1;
       } while (iVar3 != 0xc0);
       iVar4 = iVar4 + 1;
       local_1c = (CVector3f *)&local_1c[0x22].z;
-      local_18 = local_18 + 0xc00;
+      local_18 = local_18 + 0x30;
       local_14 = (CVector3f *)&local_14[0x22].z;
     } while (iVar4 < this_ptr->camera_count);
   }

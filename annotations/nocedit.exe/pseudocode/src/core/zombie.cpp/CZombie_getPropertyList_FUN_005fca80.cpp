@@ -20,8 +20,7 @@ void __cdecl core_zombie_cpp_CZombie_getPropertyList_FUN_005fca80(CZombie *this_
   core_actor_cpp_CActorPropertyList_addModelDFM_FUN_0040e4a0
             (property_list,"Model",data_ptr,0);
   core_actor_cpp_CActorPropertyList_addMotion_FUN_0040e4d0(property_list,"State",data_ptr);
-  pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                     (&data_ptr->motion_controller);
+  pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(&data_ptr->base);
   if (pSVar1->state_index == 0xe) {
     core_actor_cpp_CActorPropertyList_addEvent_FUN_0040e460
               (property_list,"RiseFromGraveCondition",this_ptr->rise_from_grave_condition);
@@ -34,7 +33,7 @@ void __cdecl core_zombie_cpp_CZombie_getPropertyList_FUN_005fca80(CZombie *this_
   iVar2 = 0;
   state_name = "CHASE_2";
   this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
-                          (&(this_ptr->base).base.model.motion_controller);
+                          (&(this_ptr->base).base.model.base);
   iVar2 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr_00,state_name,iVar2);
   if (iVar2 != 0x16) {
     return;

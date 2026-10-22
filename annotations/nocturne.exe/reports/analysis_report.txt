@@ -7,30 +7,30 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 4923
-Clean functions: 2546 (51.7%)
-Functions with suspects: 2377 (48.3%)
+Clean functions: 2547 (51.7%)
+Functions with suspects: 2376 (48.3%)
 
-Total suspect patterns: 20739
+Total suspect patterns: 20725
 Average suspects per function: 4.21
 
 Virtual files: 203 total, 10 at 100%, 12 at 90%+
 
 Pseudocode lines:
-  Min: 4, Max: 3329, Average: 44.5
+  Min: 4, Max: 3329, Average: 44.4
 
-Average complexity score: 90.9
+Average complexity score: 90.7
 
 COMPILATION STATUS
 ----------------------------------------
 Functions compiled: 4923
-Successful: 0 (0.0%)
-Failed: 4923
+Successful: 3215 (65.3%)
+Failed: 1708
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  undefined_data            3940
-  pointer_cast              3537
-  pointer_truncation        2889
+  undefined_data            3933
+  pointer_cast              3532
+  pointer_truncation        2886
   unrolled_memcpy           1482
   warning_overlapping_globals 855
   stack_param               740
@@ -72,16 +72,16 @@ SUSPECT PATTERN BREAKDOWN
   extra_output              19
   format_string_mismatch    17
   signed_shift_global_idiom 17
-  static_invalid_pointer_cast 12
   fast_sqrt_inline          12
   phantom_float_to_int      12
+  static_invalid_pointer_cast 11
   fast_inv_sqrt_inline      11
   static_null_pointer_redundant_check 10
   inline_exp_idiom          10
+  static_integer_division   9
   preinc_loop_idiom         9
   static_null_pointer       9
   displaced_global_access   8
-  static_integer_division   7
   unresolved_register       7
   fnstsw_flag_artifact      5
   unknown_type              5
@@ -163,7 +163,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   00414e60: core_battery.cpp_CBattery_process_FUN_00414e60 (4 lines)
   00414f40: core_battery.cpp_CBattery_getCollisionType_FUN_00414f40 (4 lines)
   00415040: core_beast.cpp_CBeast_getActorType_FUN_00415040 (4 lines)
-  ... and 2496 more
+  ... and 2497 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -179,21 +179,21 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   00432cd0: engine_clipper.c_clipAndRasterize_FUN_00432cd0 (score: 2379, suspects: 175, lines: 589)
   00432210: engine_clipper.c_clipPolygonToViewFrustum_FUN_00432210 (score: 2295, suspects: 168, lines: 575)
   00473190: shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00473190 (score: 2266, suspects: 192, lines: 296)
-  0051b920: core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0051b920 (score: 2261, suspects: 178, lines: 456)
+  0051b920: core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0051b920 (score: 2260, suspects: 178, lines: 455)
   0052f823: engine_special.cpp_renderMMXPerspectiveScanline16_FUN_0052f823 (score: 2042, suspects: 142, lines: 587)
   0052f031: engine_special.cpp_renderMMXPerspectiveScanline32_FUN_0052f031 (score: 2025, suspects: 142, lines: 570)
   004a9270: core_ghoul.cpp_CGhoul_process_FUN_004a9270 (score: 1991, suspects: 86, lines: 1076)
   0053a760: core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760 (score: 1907, suspects: 129, lines: 582)
-  005384d0: core_stranger.cpp_CStranger_FUN_005384d0 (score: 1900, suspects: 120, lines: 645)
+  005384d0: core_stranger.cpp_CStranger_FUN_005384d0 (score: 1899, suspects: 120, lines: 644)
   0055e040: core_xform.cpp_transformAndClipGeometry_FUN_0055e040 (score: 1840, suspects: 135, lines: 455)
   00430630: cockpit_ckptutil.c_traceConnectedEdges_FUN_00430630 (score: 1785, suspects: 140, lines: 355)
-  00535900: core_stranger.cpp_CStranger_processFrame_FUN_00535900 (score: 1773, suspects: 57, lines: 1163)
+  00535900: core_stranger.cpp_CStranger_processFrame_FUN_00535900 (score: 1769, suspects: 57, lines: 1159)
   004d2d00: core_menu.cpp_configureCustomKeyBindings_FUN_004d2d00 (score: 1673, suspects: 74, lines: 903)
   004d12e0: core_menu.cpp_configureSoundOptions_FUN_004d12e0 (score: 1601, suspects: 74, lines: 791)
   00464200: core_dstrender.cpp_renderPerspectiveCorrectTextured16xCached_FUN_00464200 (score: 1521, suspects: 115, lines: 346)
   00423f40: core_charactr.cpp_CCharacter_ctor_FUN_00423f40 (score: 1488, suspects: 138, lines: 93)
-  005125a0: core_setdir.cpp_CDemonSet_FUN_005125a0 (score: 1466, suspects: 87, lines: 561)
   00497900: core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_00497900 (score: 1427, suspects: 104, lines: 352)
+  005125a0: core_setdir.cpp_CDemonSet_FUN_005125a0 (score: 1420, suspects: 82, lines: 565)
   004e6160: sound_mp3.cpp_mpegLayer3StereoProcess_FUN_004e6160 (score: 1417, suspects: 87, lines: 527)
   00472de0: shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0 (score: 1398, suspects: 114, lines: 208)
   00485a90: core_fire.cpp_CLaserBeam_render_FUN_00485a90 (score: 1323, suspects: 76, lines: 518)
@@ -201,7 +201,7 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
 
-  undefined_data (637 functions):
+  undefined_data (634 functions):
     00403f50: engine_2d.c_clearInputAndWait_FUN_00403f50
     00404120: engine_2d.c_mapFrameBuffer_FUN_00404120
     00404360: engine_2d.c_unmapFrameBuffer_FUN_00404360
@@ -212,7 +212,7 @@ FUNCTIONS BY SUSPECT TYPE
     00404730: engine_3d.c_processVertexLighting_FUN_00404730
     00404790: engine_3d.c_processTextureCoordinates_FUN_00404790
     004047e0: engine_3d.c_renderPolygonGrayscaleLitOp5_FUN_004047e0
-    ... and 627 more
+    ... and 624 more
 
   pointer_cast (725 functions):
     00401010: engine_2d.c_initGraphicsSystem_FUN_00401010
@@ -697,8 +697,6 @@ FUNCTIONS BY SUSPECT TYPE
     00553520: wincore_wddvmem.cpp_closeScreenDevice_FUN_00553520
     00553910: wincore_wddvmem.cpp_swapBuffers_FUN_00553910
 
-  static_invalid_pointer_cast (0 functions):
-
   fast_sqrt_inline (10 functions):
     0042baa0: core_chain.cpp_CChain_constrainSegmentDistance_FUN_0042baa0
     0042cd20: core_chain.cpp_fastSqrt_FUN_0042cd20
@@ -715,6 +713,8 @@ FUNCTIONS BY SUSPECT TYPE
     0043d1c0: core_crossbow.cpp_CCrossbow_fire_FUN_0043d1c0
     004537d0: core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_004537d0
     0053a760: core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760
+
+  static_invalid_pointer_cast (0 functions):
 
   fast_inv_sqrt_inline (8 functions):
     004366f0: core_cloth.cpp_CCloth_applyConstraints_FUN_004366f0
@@ -733,6 +733,8 @@ FUNCTIONS BY SUSPECT TYPE
     004f3430: core_pendulum.cpp_CPendulum_updateSwing_FUN_004f3430
     004f3a20: core_pendulum.cpp_CPendulum_process_FUN_004f3a20
     00554980: core_weather.cpp_CWeather_update_FUN_00554980
+
+  static_integer_division (0 functions):
 
   preinc_loop_idiom (9 functions):
     00423f40: core_charactr.cpp_CCharacter_ctor_FUN_00423f40
@@ -756,8 +758,6 @@ FUNCTIONS BY SUSPECT TYPE
     00426e80: core_charactr.cpp_CCharacter_renderBurn_FUN_00426e80
     004f1c90: core_path.cpp_getOrCreatePathMap_FUN_004f1c90
     0050aa70: core_set.cpp_CDemonSet_FUN_0050aa70
-
-  static_integer_division (0 functions):
 
   unresolved_register (3 functions):
     00477890: core_elephant.cpp_CElephantGun_fire_FUN_00477890

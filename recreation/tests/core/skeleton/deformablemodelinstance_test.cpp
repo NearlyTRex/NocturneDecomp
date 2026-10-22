@@ -1,4 +1,5 @@
 #include "core/skeleton/deformablemodelinstance.h"
+#include "tests/mocks/core/notportedcalls.h"
 
 #include <gtest/gtest.h>
 
@@ -6,6 +7,10 @@
 
 namespace nocturne::core {
 namespace {
+
+TEST(CDeformableModelInstance, DerivesFromCMotionController) {
+    static_assert(std::is_base_of_v<CMotionController, CDeformableModelInstance>);
+}
 
 TEST(CDeformableModelInstance, HasVirtualDestructor) {
     static_assert(std::has_virtual_destructor_v<CDeformableModelInstance>);
@@ -107,6 +112,16 @@ TEST(CDeformableModelInstance, PublicInterface) {
                                  CBoundingBox3D *(CDeformableModelInstance::*)(CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CDeformableModelInstance::computeCylindricalUVs),
                                  void (CDeformableModelInstance::*)(int, int)>);
+}
+
+TEST(CDeformableModelInstance, TheFunctionsNotPortedYetQuit) {
+    CDeformableModelInstance model;
+    const NotPortedCalls calls = {
+        {"findPatchToFrame", [&] { static_cast<void>(model.findPatchToFrame(0, 0.0F, 0)); }},
+        {"accumulateScaledRootMotion", [&] { model.accumulateScaledRootMotion(0.0F, 0.0F, 0.0F); }},
+    };
+    EXPECT_EQ(calls.size(), 2U);
+    expectEachQuitsNotPorted("CDeformableModelInstance", calls);
 }
 
 } // namespace

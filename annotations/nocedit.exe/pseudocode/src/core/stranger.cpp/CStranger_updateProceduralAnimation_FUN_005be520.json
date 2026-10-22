@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1541,
-    "complexity_score": 516,
+    "complexity_score": 514,
     "cross_reference_count": 2,
     "function_call_count": 24,
     "global_count": 33,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 516,
+    "pseudocode_lines": 514,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 2057
+    "total_lines": 2055
   },
   "cross_references": [
     {
@@ -481,7 +481,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 196,
+      "line": 195,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -490,7 +490,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 240,
+      "line": 239,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -499,7 +499,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 250,
+      "line": 249,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -508,7 +508,7 @@
     },
     {
       "description": "Sub-field-address struct field-pun \u2014 `(CQuaternion4f *)&local_2e0.z` takes the address of a field at offset 12 inside `local_2e0` (a 16-byte CQuaternion4f), then casts it to CQuaternion4f * (same type as the local). A 16-byte access from that offset has only 4 bytes left and overruns `local_2e0` by 12 bytes (ASan stack-buffer-overflow; \u00a726). Ghidra emits this when its stack-local partition disagrees with Watcom's real frame layout. Confirm the intended slot in the .asm, then pass a real contiguous CQuaternion4f local (often just `&local_2e0` itself).",
-      "line": 288,
+      "line": 287,
       "match": "(CQuaternion4f *)&local_2e0.z",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -517,7 +517,7 @@
     },
     {
       "description": "Sub-field-address struct field-pun \u2014 `(CQuaternion4f *)&local_2c0.z` takes the address of a field at offset 12 inside `local_2c0` (a 16-byte CQuaternion4f), then casts it to CQuaternion4f * (same type as the local). A 16-byte access from that offset has only 4 bytes left and overruns `local_2c0` by 12 bytes (ASan stack-buffer-overflow; \u00a726). Ghidra emits this when its stack-local partition disagrees with Watcom's real frame layout. Confirm the intended slot in the .asm, then pass a real contiguous CQuaternion4f local (often just `&local_2c0` itself).",
-      "line": 294,
+      "line": 293,
       "match": "(CQuaternion4f *)&local_2c0.z",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -526,7 +526,7 @@
     },
     {
       "description": "Sub-field-address struct field-pun \u2014 `(CQuaternion4f *)&local_1d0.z` takes the address of a field at offset 12 inside `local_1d0` (a 16-byte CQuaternion4f), then casts it to CQuaternion4f * (same type as the local). A 16-byte access from that offset has only 4 bytes left and overruns `local_1d0` by 12 bytes (ASan stack-buffer-overflow; \u00a726). Ghidra emits this when its stack-local partition disagrees with Watcom's real frame layout. Confirm the intended slot in the .asm, then pass a real contiguous CQuaternion4f local (often just `&local_1d0` itself).",
-      "line": 296,
+      "line": 295,
       "match": "(CQuaternion4f *)&local_1d0.z",
       "resolution_source": "keep",
       "severity": "moderate",

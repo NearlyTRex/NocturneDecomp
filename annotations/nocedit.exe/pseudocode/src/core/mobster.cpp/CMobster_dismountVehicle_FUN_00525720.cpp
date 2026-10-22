@@ -48,6 +48,6 @@ void __cdecl core_mobster_cpp_CMobster_dismountVehicle_FUN_00525720(CMobster *th
   (this_ptr->base).base.base.location.position.z = pCVar2->z;
   this_ptr->vehicle = (CDemonActor *)0x0;
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-            (&(this_ptr->base).base.model.motion_controller,8,1);
+            (&(this_ptr->base).base.model.base,8,1);
   return;
 }

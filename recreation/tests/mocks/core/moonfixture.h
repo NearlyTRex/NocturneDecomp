@@ -8,6 +8,8 @@
 #include "core/set/demonset.h"
 #include "platform/mrglprimitivequad.h"
 #include "platform/rendervertex.h"
+#include "tests/mocks/core/moonfiles.h"
+#include "tests/mocks/core/setparts.h"
 #include "tests/mocks/engine/demonrendererfixture.h"
 #include "tests/mocks/engine/mockgameclock.h"
 
@@ -60,67 +62,24 @@ protected:
                 ++lists_;
                 return 1;
             });
-        givenCourses(10);
-        givenModel("moon.kfm", 1);
-        givenModel("taylor_head.kfm", 1);
-        givenModel("menubat.kfm", 2);
-        givenFile("art\\a.raw", std::string(std::size_t{32} * 32, '\x01'));
-        givenImage("menucld2", cloudTexels());
-        for (int i = 0; i < 30; ++i) {
-            givenImage(std::format("noc{:05}", i),
-                       std::string(std::size_t{640} * 278, static_cast<char>(i)));
-        }
+        givenMoonFiles(given_file_);
     }
 
-    // A one-square model of the given frames; each frame is the same square.
-    void givenModel(const std::string &name, int frames) {
-        std::string corners;
-        for (int i = 0; i < frames; ++i) {
-            corners += "0,0,2048\n512,0,2048\n512,512,2048\n0,512,2048\n";
-        }
-        givenFile("models\\" + name, std::format("/\n5\n;\n4,1,1,1,{}\n;\n0\n;\n{};\n"
-                                                 "0,3, 0,0,0, 2,0,0, 1,0,0\n;\na.raw\n;\n4,1\n",
-                                                 frames, corners));
-    }
-
-    // Three courses of the given length, each standing still a hundred units ahead.
     void givenCourses(int length) {
-        std::string frames;
-        for (int i = 0; i < length; ++i) {
-            frames += "0,0,100, 1,0,0,0\r\n";
-        }
-        for (int i = 1; i <= 3; ++i) {
-            givenFile(std::format("data\\menu{}.pth", i),
-                      std::format("; course\r\n1\r\n; frames, loop\r\n{},1\r\n; frames\r\n{}",
-                                  length, frames));
-        }
+        givenMoonCourses(given_file_, length);
     }
 
-    // Each texel is its column, so the layers' scales and scroll show in the pixels.
-    static std::string cloudTexels() {
-        std::string texels;
-        for (int u = 0; u < 256; ++u) {
-            for (int v = 0; v < 256; ++v) {
-                texels += static_cast<char>(v);
-            }
-        }
-        return texels;
-    }
-
-    // name.raw and a palette whose entry i is i in every channel.
     void givenImage(const std::string &name, const std::string &raw) {
-        std::string palette;
-        for (int i = 0; i < 256; ++i) {
-            palette.append(3, static_cast<char>(i));
-        }
-        givenFile("art\\" + name + ".raw", raw);
-        givenFile("art\\" + name + ".act", palette);
+        givenGreyImage(given_file_, name, raw);
     }
 
     std::uint32_t pixel(int x, int y) const {
         return pixels_[(static_cast<std::size_t>(y) * kWidth) + static_cast<std::size_t>(x)];
     }
 
+    GivenFile given_file_ = [this](const std::string &name, const std::string &contents) {
+        givenFile(name, contents);
+    };
     int bits_per_pixel_ = 32;
     std::vector<std::uint32_t> pixels_ = std::vector<std::uint32_t>(std::size_t{kWidth} * kHeight);
     std::vector<std::uint32_t> depths_ = std::vector<std::uint32_t>(std::size_t{kWidth} * kHeight);
@@ -134,7 +93,9 @@ protected:
     CGame game_{clock_};
     common::CWatcomRandom crt_random_;
     CActor actor_{game_, crt_random_};
-    CDemonSet set_{demon_renderer_, matrix_, special_};
+    CSetParts set_parts_{dosio_};
+    CDemonSet set_{
+        set_parts_.owners(demon_renderer_, matrix_, special_, two_d_, screen_, raw_input_)};
     CMoon moon_{SMoonOwners{.dosio = dosio_,
                             .screen = screen_,
                             .special = special_,

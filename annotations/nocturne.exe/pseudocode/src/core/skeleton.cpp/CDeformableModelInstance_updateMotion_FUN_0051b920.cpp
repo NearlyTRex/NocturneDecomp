@@ -100,8 +100,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0051b92
   bVar17 = 0;
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(this_ptr);
   core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_004e2070
-            (&this_ptr->motion_controller,motion_index,frame_number,&local_84,&local_88,
-             &stack0xffffe790);
+            (&this_ptr->base,motion_index,frame_number,&local_84,&local_88,&stack0xffffe790);
   if (bone_index < 0) {
     local_34 = 0;
     if (0 < this_ptr_00->bone_count) {
@@ -111,7 +110,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0051b92
         core_skeleton_cpp_CSkeleton_getBoneAngleInterpolated_FUN_00517a80
                   (this_ptr_00,local_34,local_84,local_88,local_1870,&local_24c);
         pCVar8 = local_3c;
-        local_3c = (CDeformableModelInstance *)&(local_3c->motion_controller).current_motion_index;
+        local_3c = (CDeformableModelInstance *)&(local_3c->base).current_motion_index;
         puVar16 = (uint *)((int)local_5c + (uint)bVar17 * -8 + 0x6b4);
         (local_5c->bone_transform).pose_data.bone_rotations[0].w = local_24c.w;
         puVar15 = puVar16 + (uint)bVar17 * -2 + 1;
@@ -121,7 +120,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0051b92
         puVar15[(uint)bVar17 * -2 + 1] = puVar13[(uint)bVar17 * -2 + 1];
         (pCVar8->bone_transform).bone_scales[0] = pCVar8->rest_pose_data[0];
         local_34 = local_34 + 1;
-        local_5c = (CDeformableModelInstance *)&(local_5c->motion_controller).tween_speed;
+        local_5c = (CDeformableModelInstance *)&(local_5c->base).tween_speed;
       } while (local_34 < this_ptr_00->bone_count);
     }
     pCVar5 = this_ptr_00->frame_positions_1;
@@ -233,7 +232,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0051b92
         }
         local_2c = local_2c + 1;
         local_58 = local_58 + 4;
-        local_48 = (CDeformableModelInstance *)&(local_48->motion_controller).tween_speed;
+        local_48 = (CDeformableModelInstance *)&(local_48->base).tween_speed;
         local_4c = (CSkeleton *)((local_4c->motion_list).state_names[1] + 2);
       } while (local_2c < this_ptr_00->bone_count);
     }
@@ -434,7 +433,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0051b92
         local_30 = local_30 + 1;
         local_64 = local_64 + 4;
         local_50 = (CSkeleton *)((local_50->motion_list).state_names[1] + 2);
-        local_20 = (CDeformableModelInstance *)&(local_20->motion_controller).tween_speed;
+        local_20 = (CDeformableModelInstance *)&(local_20->base).tween_speed;
       } while (local_30 < this_ptr_00->bone_count);
     }
   }
@@ -457,7 +456,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0051b92
           *puVar15 = *puVar13;
           puVar15[(uint)bVar17 * -2 + 1] = puVar13[(uint)bVar17 * -2 + 1];
         }
-        local_60 = (CDeformableModelInstance *)&(local_60->motion_controller).tween_speed;
+        local_60 = (CDeformableModelInstance *)&(local_60->base).tween_speed;
         local_24 = local_24 + 1;
       } while (local_24 < this_ptr_00->bone_count);
     }

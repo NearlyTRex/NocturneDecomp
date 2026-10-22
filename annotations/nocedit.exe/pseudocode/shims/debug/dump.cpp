@@ -13,7 +13,8 @@
 #include "nocturne.h"
 #include "gl/gl_present.h"
 #include "directx/ddraw.h"
-#include <SDL2/SDL.h>
+#include "core/ascii_case.h"
+#include <SDL.h>
 #include <cmath>
 #include <cstdio>
 #include <cstring>
@@ -1408,7 +1409,7 @@ extern "C" int nocturne_dump_create_gates(const char *path)
         if (a->create_event[0] == '\0') {
             continue;
         }
-        if (strcasecmp(a->create_event, "none") == 0) {
+        if (nocturne_ascii_iequals(a->create_event, "none")) {
             continue;
         }
         gated++;

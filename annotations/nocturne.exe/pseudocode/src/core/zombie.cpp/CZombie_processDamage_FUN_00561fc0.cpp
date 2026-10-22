@@ -31,8 +31,7 @@ void __cdecl core_zombie_cpp_CZombie_processDamage_FUN_00561fc0(CZombie *this_pt
   this_ptr_00 = &(this_ptr->base).base.model;
   (this_ptr->base).attack_cooldown = 1.2;
   if (0.0 < fVar1) {
-    core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-              (&this_ptr_00->motion_controller,4,1);
+    core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,4,1);
     if (this_ptr->pain_cooldown <= 0.0) {
       this_ptr->pain_cooldown = 2.0;
       iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(this_ptr->sfx_handles[0]);
@@ -54,8 +53,7 @@ void __cdecl core_zombie_cpp_CZombie_processDamage_FUN_00561fc0(CZombie *this_pt
   }
   else {
     (this_ptr->base).base.hit_points = 0.0;
-    pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                       (&this_ptr_00->motion_controller);
+    pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(&this_ptr_00->base);
     if ((pSVar2->state_index != 8) && (pSVar2->state_index != 7)) {
       core_zombie_cpp_CZombie_dropAndClearTarget_FUN_005618c0(this_ptr);
       iVar4 = 6;
@@ -66,14 +64,14 @@ void __cdecl core_zombie_cpp_CZombie_processDamage_FUN_00561fc0(CZombie *this_pt
         iVar6 = 0;
         pcVar5 = "lookForHead";
         this_ptr_01 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890
-                                (&(this_ptr->base).base.model.motion_controller);
+                                (&(this_ptr->base).base.model.base);
         iVar6 = core_motion_cpp_CMotionList_findMotionIndex_FUN_004e1010(this_ptr_01,pcVar5,iVar6);
         if (-1 < iVar6) {
           iVar4 = 9;
         }
       }
       core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                (&(this_ptr->base).base.model.motion_controller,iVar4,1);
+                (&(this_ptr->base).base.model.base,iVar4,1);
       sound_sndmain_cpp_killSfx_FUN_00527230(this_ptr->sfx_handles[0]);
       if (this_ptr->is_female == 0) {
         pcVar5 = "zom-d0?.wav";

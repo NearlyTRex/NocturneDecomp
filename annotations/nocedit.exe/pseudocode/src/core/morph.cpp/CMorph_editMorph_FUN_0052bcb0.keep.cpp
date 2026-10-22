@@ -302,7 +302,7 @@ void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *this_ptr)
           shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(picklist);
           iVar10 = 0;
           iVar4 = 0;
-          pCVar16 = &local_4db8[0].motion_controller;
+          pCVar16 = &local_4db8[0].base;
           while( true ) {
             pCVar5 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0(pCVar16);
             if (pCVar5->motion_count <= iVar10) break;

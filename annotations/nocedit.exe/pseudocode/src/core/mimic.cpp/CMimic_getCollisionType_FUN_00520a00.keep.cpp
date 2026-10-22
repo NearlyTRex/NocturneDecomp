@@ -25,7 +25,7 @@ ECollisionType __cdecl core_mimic_cpp_CMimic_getCollisionType_FUN_00520a00(CMimi
     collision_info->cylinder_bottom_y = 2.0;
   }
   pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                     (&(this_ptr->base).base.model.motion_controller);
+                     (&(this_ptr->base).base.model.base);
   if (pSVar2->state_index == 0xc) {
     return COLLISION_TYPE_NONE;
   }

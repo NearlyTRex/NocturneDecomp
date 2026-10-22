@@ -59,7 +59,7 @@ void __cdecl core_drone_cpp_CDrone_process_FUN_0048ec70(CDrone *this_ptr,float d
   this_ptr_01 = &(this_ptr->base).base.model;
   while (0.0 < local_20) {
     iVar5 = core_motion_cpp_CMotionController_advance_FUN_0052d610
-                      (&this_ptr_01->motion_controller,&local_20);
+                      (&this_ptr_01->base,&local_20);
     core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,iVar5);
   }
   fVar6 = (this_ptr->base).speed;
@@ -70,7 +70,7 @@ void __cdecl core_drone_cpp_CDrone_process_FUN_0048ec70(CDrone *this_ptr,float d
        (this_ptr->base).base.model.accumulated_root_motion.z * fVar1;
   (this_ptr->base).base.turn_speed = delta_time * fVar3 * fVar6 * fVar2 * fVar1;
   pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                     (&this_ptr_01->motion_controller);
+                     (&this_ptr_01->base);
   iVar5 = pSVar5->state_index;
   local_1c = iVar5;
   iVar6 = core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70
@@ -83,12 +83,12 @@ void __cdecl core_drone_cpp_CDrone_process_FUN_0048ec70(CDrone *this_ptr,float d
         (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
         if ((this_ptr->base).victim != (CCharacter *)0x0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (&this_ptr_01->motion_controller,1,1);
+                    (&this_ptr_01->base,1,1);
         }
       }
       else {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&this_ptr_01->motion_controller,1,1);
+                  (&this_ptr_01->base,1,1);
       }
       break;
     case 1:
@@ -98,7 +98,7 @@ void __cdecl core_drone_cpp_CDrone_process_FUN_0048ec70(CDrone *this_ptr,float d
         iVar5 = core_enemy_cpp_CEnemy_updatePatrol_FUN_004a9fd0(&this_ptr->base,delta_time);
         if (iVar5 == 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (&this_ptr_01->motion_controller,0,1);
+                    (&this_ptr_01->base,0,1);
         }
       }
       else {
@@ -122,11 +122,11 @@ void __cdecl core_drone_cpp_CDrone_process_FUN_0048ec70(CDrone *this_ptr,float d
           engine_console_cpp_CConsole_printf_FUN_00441890
                     (g_CConsolePtr,"%s gave up chase - I'm confused\n",this_ptr->base.base.base.actor_name);
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (&this_ptr_01->motion_controller,0,1);
+                    (&this_ptr_01->base,0,1);
         }
         else if ((0 < iVar5) && ((this_ptr->base).attack_cooldown <= 0.0)) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (&this_ptr_01->motion_controller,2,1);
+                    (&this_ptr_01->base,2,1);
           uVar4 = this_ptr->sfx_handles[2];
           (this_ptr->base).attack_cooldown = 1.0;
           iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(uVar4);
@@ -181,7 +181,7 @@ void __cdecl core_drone_cpp_CDrone_process_FUN_0048ec70(CDrone *this_ptr,float d
     case 9:
       if ((this_ptr->base).base.is_on_ground != 0) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&this_ptr_01->motion_controller,10,1);
+                  (&this_ptr_01->base,10,1);
       }
     }
     goto switchD_0048f284_caseD_3;
@@ -197,13 +197,13 @@ LAB_0048ef7a:
       iVar5 = 0;
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              (&(this_ptr->base).base.model.motion_controller,iVar5,1);
+              (&(this_ptr->base).base.model.base,iVar5,1);
   }
   else {
     if (uVar4 < 3) goto LAB_0048ed51;
     if (uVar4 != 3) goto LAB_0048ef7a;
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              (&this_ptr_01->motion_controller,0,1);
+              (&this_ptr_01->base,0,1);
     engine_console_cpp_CConsole_printf_FUN_00441890
               (g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr->base.base.base.actor_name);
   }

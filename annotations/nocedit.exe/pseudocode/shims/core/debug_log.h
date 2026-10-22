@@ -52,6 +52,8 @@
 #include <cstdarg>
 #include <cstring>
 
+#include "watcom/path.h"  // logs go where the other writes go
+
 // Strip the directory prefix from __FILE__ at compile time.
 #define _DLOG_FILE (__builtin_strrchr(__FILE__, '/') \
     ? __builtin_strrchr(__FILE__, '/') + 1 : __FILE__)
@@ -77,8 +79,10 @@ inline FILE* _dlog_get_file_named(const char* subsys) {
 
     char path[128];
     snprintf(path, sizeof(path), "nocturne_%s.log", subsys);
-    FILE* f = fopen(path, "w");
-    if (f) setvbuf(f, nullptr, _IOLBF, 0);
+    FILE* f = fopen(watcom_log_path(path).c_str(), "w");
+    // A real size: the Microsoft runtimes reject 0 for _IOLBF as an invalid
+    // parameter, which the statically linked UCRT treats as fatal.
+    if (f) setvbuf(f, nullptr, _IOLBF, BUFSIZ);
 
     s_names[s_count] = subsys;
     s_files[s_count] = f;

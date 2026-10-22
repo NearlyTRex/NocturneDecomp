@@ -98,8 +98,7 @@ void __cdecl core_stranger_cpp_CStranger_applyArmAimRotation_FUN_005c02b0(CStran
     motion_index = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460
                              (&this_ptr_01->motion_list,motion_name,iVar7);
     fVar3 = core_motion_cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
-                      (&this_ptr_02->motion_controller,motion_index,
-                       (this_ptr->base).base.layer_action_t);
+                      (&this_ptr_02->base,motion_index,(this_ptr->base).base.layer_action_t);
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
               (this_ptr_02,motion_index,fVar3,fVar1,local_24,
                core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0);

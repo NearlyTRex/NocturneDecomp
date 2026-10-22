@@ -2,7 +2,18 @@
 #include "core/actor/actor.h"
 #include "core/actor/demonactor.h"
 #include "core/actor/demonactortype.h"
+#include "core/baron/baron.h"
+#include "core/charactr/character.h"
+#include "core/colonel/colonel.h"
+#include "core/gabriela/gabriella.h"
+#include "core/haystack/haystack.h"
+#include "core/hero/hero.h"
 #include "core/hero/heroplaceholder.h"
+#include "core/icepick/icepick.h"
+#include "core/moloch/moloch.h"
+#include "core/scat/scat.h"
+#include "core/stranger/stranger.h"
+#include "core/svetlana/svetlana.h"
 
 #include <algorithm>
 #include <array>
@@ -16,8 +27,11 @@ namespace nocturne::core {
 // one place, and each port adds its own.
 // nocedit 0x00408320
 void CActor::registerActorClasses() {
-    static constexpr std::array<const CDemonActorType *, 2> kTypes = {&CDemonActor::kType,
-                                                                      &CHeroPlaceholder::kType};
+    static constexpr std::array<const CDemonActorType *, 13> kTypes = {
+        &CDemonActor::kType, &CCharacter::kType, &CHero::kType,     &CHeroPlaceholder::kType,
+        &CGabriella::kType,  &CSvetlana::kType,  &CStranger::kType, &CScat::kType,
+        &CBaron::kType,      &CIcePick::kType,   &CHaystack::kType, &CColonel::kType,
+        &CMoloch::kType};
     for (const CDemonActorType *type : kTypes) {
         registerActorClass(*type);
     }
@@ -52,6 +66,10 @@ std::unique_ptr<CDemonActor> CActor::createActorByName(std::string_view class_na
             std::format("Can't create instance of abstract type {}", class_name));
     }
     return type->factory_func();
+}
+
+std::size_t CActor::getActorClassCount() const {
+    return registrations_.size();
 }
 
 } // namespace nocturne::core

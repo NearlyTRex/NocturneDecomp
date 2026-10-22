@@ -22,7 +22,7 @@ int __cdecl core_zombie_cpp_CZombie_canBeAttracted_FUN_00561bf0(CZombie *this_pt
   
   this_ptr_00 = &(this_ptr->base).base.model;
   local_10 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
-                       (&this_ptr_00->motion_controller,3);
+                       (&this_ptr_00->base,3);
   if (local_10 <= 0.0) {
     return 0;
   }

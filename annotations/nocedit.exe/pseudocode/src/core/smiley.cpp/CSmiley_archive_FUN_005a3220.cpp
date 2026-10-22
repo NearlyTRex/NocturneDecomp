@@ -16,7 +16,6 @@ void __cdecl core_smiley_cpp_CSmiley_archive_FUN_005a3220(CSmiley *this_ptr)
   model_ptr = &(this_ptr->base).base.model;
   core_actor_cpp_archiveDeformableModelInstance_FUN_0040b970(model_ptr,"modelName");
   core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->guard_distance,"guardDistance");
-  core_actor_cpp_archiveMotionState_FUN_0040b9f0
-            (&model_ptr->motion_controller,"motion state");
+  core_actor_cpp_archiveMotionState_FUN_0040b9f0(&model_ptr->base,"motion state");
   return;
 }

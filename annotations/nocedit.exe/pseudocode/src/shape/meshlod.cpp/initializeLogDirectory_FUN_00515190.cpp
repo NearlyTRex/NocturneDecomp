@@ -12,6 +12,6 @@ int __cdecl shape_meshlod_cpp_initializeLogDirectory_FUN_00515190(void)
   int iVar1;
   
   _mkdir("meshlod");
-  iVar1 = remove("meshlod\\simplify.log");
+  iVar1 = _remove("meshlod\\simplify.log");
   return iVar1;
 }

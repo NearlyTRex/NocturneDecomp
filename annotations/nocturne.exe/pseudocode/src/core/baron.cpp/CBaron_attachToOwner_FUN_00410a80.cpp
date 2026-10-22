@@ -52,7 +52,7 @@ void __cdecl core_baron_cpp_CBaron_attachToOwner_FUN_00410a80(CBaron *this_ptr,C
     }
     memset(&(this_ptr->base).player_input,0,0x2c);
     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-              (&(this_ptr->base).base.model.motion_controller,6,1);
+              (&(this_ptr->base).base.model.base,6,1);
     this_ptr->summoned = 1;
     this_ptr->shell_visible = 0;
     return;

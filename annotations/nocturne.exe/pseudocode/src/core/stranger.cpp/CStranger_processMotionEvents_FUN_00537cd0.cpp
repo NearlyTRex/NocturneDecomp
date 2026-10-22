@@ -44,7 +44,7 @@ void __cdecl core_stranger_cpp_CStranger_processMotionEvents_FUN_00537cd0(CStran
   CStack_28.z = (float)&(this_ptr->base).target_position;
   do {
     bone_index = core_motion_cpp_CMotionController_advance_FUN_004e11c0
-                           (&this_ptr_00->motion_controller,&delta_time);
+                           (&this_ptr_00->base,&delta_time);
     if (bone_index < 0x12) {
       if (bone_index < 6) {
         if (bone_index < 2) {
@@ -62,7 +62,7 @@ LAB_00537d35:
                 if ((this_ptr->base).base.is_on_ground != 0) {
                   local_14 = (UActorVTable)
                              core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
-                                       (&this_ptr_00->motion_controller,3);
+                                       (&this_ptr_00->base,3);
                   if ((float)0.40000000000000002 < (float)local_14) {
                     (*((this_ptr->base).base.base.vtable._ub)->processFootstepAtOffset)
                               ((CDemonActor *)this_ptr,(CVector3f *)(auStack_64 + 8),1.7);
@@ -70,11 +70,11 @@ LAB_00537d35:
                   else {
                     local_14 = (UActorVTable)
                                core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
-                                         (&this_ptr_00->motion_controller,1);
+                                         (&this_ptr_00->base,1);
                     if ((float)local_14 <= (float)0.40000000000000002) {
                       local_14 = (UActorVTable)
                                  core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
-                                           (&this_ptr_00->motion_controller,2);
+                                           (&this_ptr_00->base,2);
                       if ((float)0.40000000000000002 < (float)local_14) {
                         (*((this_ptr->base).base.base.vtable._ub)->processFootstepAtOffset)
                                   ((CDemonActor *)this_ptr,(CVector3f *)(auStack_64 + 8),1.0);
@@ -276,8 +276,7 @@ LAB_00537df4:
           }
           iVar4 = core_hero_cpp_CHero_tryOpenDoor_FUN_004b5270(&this_ptr->base);
           if (iVar4 == 0) {
-            core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                      (&this_ptr_00->motion_controller,0,1);
+            core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,0,1);
           }
         }
       }

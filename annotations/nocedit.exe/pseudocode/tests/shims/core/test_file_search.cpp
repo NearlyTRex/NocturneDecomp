@@ -158,12 +158,15 @@ NOCTURNE_TEST(either_separator_is_accepted) {
     CHECK_EQ((int)nocturne_find_files("art/*.raw").size(), 2);
 }
 
-NOCTURNE_TEST(the_directory_is_matched_as_spelled) {
+NOCTURNE_TEST(the_directory_is_found_in_any_case) {
     Tree tree;
-    // Only the last component is a pattern. The directory is used as given, so
-    // a spec naming it in the wrong case finds nothing rather than guessing —
-    // callers that need the case resolved go through the path shim first.
+    // Only the last component is a pattern. The directory goes through the
+    // path shim's resolution, as an open would, and the results keep the
+    // spelling the caller asked for.
     CHECK_EQ((int)nocturne_find_files("SAVE\\*.noc").size(), 2);
+    const std::vector<std::string> found = nocturne_find_files("save\\*.noc");
+    CHECK_EQ((int)found.size(), 2);
+    CHECK(contains(found, "save/SAVE1.noc"));
 }
 
 NOCTURNE_TEST(nothing_found_is_not_an_error) {

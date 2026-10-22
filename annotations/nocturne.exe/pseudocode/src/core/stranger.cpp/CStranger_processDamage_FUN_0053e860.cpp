@@ -93,11 +93,9 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_0053e860(CStranger *t
     pCVar1 = (this_ptr->base).base.base.vtable._uc;
     (this_ptr->base).base.hit_points = 0.0;
     (*(pCVar1->_uc).releaseFromGrab)((CCharacter *)this_ptr);
-    pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                       (&this_ptr_00->motion_controller);
+    pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(&this_ptr_00->base);
     if (pSVar5->state_index != 0x29) {
-      pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                         (&this_ptr_00->motion_controller);
+      pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(&this_ptr_00->base);
       if (pSVar5->state_index != 0x28) {
         if (((this_ptr->base).ladder_to_climb == (CLadder *)0x0) &&
            (this_ptr->ladder_to_descend == (CLadder *)0x0)) {
@@ -118,7 +116,7 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_0053e860(CStranger *t
           this_ptr->ladder_to_descend = (CLadder *)0x0;
         }
         core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                  (&(this_ptr->base).base.model.motion_controller,iVar3,(int)fVar8);
+                  (&(this_ptr->base).base.model.base,iVar3,(int)fVar8);
         sound_sndmain_cpp_killSfx_FUN_00527230(this_ptr->sfx_handle);
         if (damage_info->damage_type != DAMAGE_TYPE_DROWN) {
           uVar6 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -151,8 +149,7 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_0053e860(CStranger *t
       iVar3 = core_actor_cpp_randomChance_FUN_0040dea0(0.333);
       if (iVar3 == 0) goto LAB_0053ec87;
     }
-    core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-              (&this_ptr_00->motion_controller,0x24,1);
+    core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,0x24,1);
   }
 LAB_0053ec87:
   iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(this_ptr->sfx_handle);

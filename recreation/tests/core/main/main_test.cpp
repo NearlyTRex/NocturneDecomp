@@ -35,6 +35,7 @@
 #include "shape/edittool/editortools.h"
 #include "shape/edittool/picklist.h"
 #include "support/newmsg/newmsg.h"
+#include "tests/mocks/core/setparts.h"
 #include "tests/mocks/engine/fontsheet.h"
 #include "tests/mocks/engine/memoryscreen.h"
 #include "tests/mocks/engine/mockgameclock.h"
@@ -195,7 +196,9 @@ protected:
     engine::CDemonRenderer demon_renderer_{
         matrix_,          two_d_,   three_d_, vertex_buffer_,           special_, prim_, zraster_,
         current_texture_, texture_, screen_,  &transformAndClipGeometry};
-    CDemonSet set_{demon_renderer_, matrix_, special_};
+    CSetParts set_parts_{dosio_};
+    CDemonSet set_{
+        set_parts_.owners(demon_renderer_, matrix_, special_, two_d_, screen_, raw_input_)};
     common::CWatcomRandom crt_random_;
     CActor actor_{game_, crt_random_};
     engine::CMenuInput menu_input_{keys_};
@@ -213,6 +216,9 @@ protected:
                  .game = game_,
                  .actor = actor_,
                  .crt_random = crt_random_,
+                 .textures = texture_,
+                 .sound = game_sound_,
+                 .sound_main = sound_,
                  .build_version = "0.1.0"}};
     shape::CEdControls controls_{{.two_d = two_d_,
                                   .screen = screen_,
@@ -235,6 +241,7 @@ protected:
                                 .crt_random = crt_random_}};
     CDemonMission mission_{{.dosio = dosio_,
                             .messages = messages_,
+                            .game = game_,
                             .actor = actor_,
                             .level_loader = level_loader_,
                             .textures = texture_,

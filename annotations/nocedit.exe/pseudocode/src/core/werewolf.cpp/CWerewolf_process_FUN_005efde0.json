@@ -8,15 +8,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1745,
-    "complexity_score": 715,
+    "complexity_score": 710,
     "cross_reference_count": 0,
     "function_call_count": 35,
     "global_count": 39,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 715,
+    "pseudocode_lines": 710,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 2460
+    "total_lines": 2455
   },
   "cross_references": [],
   "function": {
@@ -520,7 +520,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 217,
+      "line": 215,
       "match": "&stack0xfffffce0",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -529,7 +529,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 219,
+      "line": 217,
       "match": "&stack0xfffffce0",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -538,7 +538,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 338,
+      "line": 336,
       "match": "._0_4_",
       "resolution_source": "keep",
       "severity": "mild",
@@ -547,7 +547,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 339,
+      "line": 337,
       "match": "._4_4_",
       "resolution_source": "keep",
       "severity": "mild",
@@ -556,7 +556,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 344,
+      "line": 342,
       "match": "in_stack_fffffcec",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -565,7 +565,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 344,
+      "line": 342,
       "match": "SUB84(",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -574,7 +574,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 391,
+      "line": 388,
       "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -587,7 +587,7 @@
       "expected_args": 2,
       "format_string": "Phase: %d, Timer: %f\\n",
       "function_name": "engine_console_cpp_CConsole_printf_FUN_00441890",
-      "line_number": 278,
+      "line_number": 276,
       "match": "engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,\"Phase: %d, Timer: %f\\n\");",
       "resolution_source": "keep",
       "text": "Format string expects 2 args but got 0",
@@ -595,7 +595,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 361,
+      "line": 359,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -613,7 +613,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 333,
+      "line": 331,
       "match": "cascade_constant_fill",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -622,7 +622,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 703,
+      "line": 698,
       "match": "cascade_constant_fill",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -631,7 +631,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 707,
+      "line": 702,
       "match": "cascade_constant_fill",
       "resolution_source": "keep",
       "severity": "moderate",

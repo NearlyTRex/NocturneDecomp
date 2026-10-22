@@ -27,7 +27,8 @@ GLint  g_attr_pos = -1;
 GLint  g_attr_uv  = -1;
 
 // #version 150 core: the earliest version with `in`/`out` and a declared
-// fragment output, which is what a core profile accepts.
+// fragment output, which is what a core profile accepts. `#version 300 es`
+// under NOCTURNE_GLES (gl/gl_api.h).
 //
 // The quad's positions are already in clip space, so there is no projection to
 // apply. A unit square under glOrtho(0, 1, 1, 0, -1, 1) maps onto NDC as
@@ -35,7 +36,7 @@ GLint  g_attr_uv  = -1;
 // top of the viewport — with z = 0 passing through unchanged. Those four points
 // are the vertex buffer below.
 const char *kVertexSource =
-    "#version 150 core\n"
+    NOCTURNE_GLSL_VERSION
     "in  vec2 a_pos;\n"
     "in  vec2 a_uv;\n"
     "out vec2 v_uv;\n"
@@ -48,7 +49,7 @@ const char *kVertexSource =
 // which matters for the scene-FBO seed — that target is RGBA8 and keeps what is
 // written to it.
 const char *kFragmentSource =
-    "#version 150 core\n"
+    NOCTURNE_GLSL_VERSION
     "uniform sampler2D u_tex;\n"
     "in  vec2 v_uv;\n"
     "out vec4 o_color;\n"

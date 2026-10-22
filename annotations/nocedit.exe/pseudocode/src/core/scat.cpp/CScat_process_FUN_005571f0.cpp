@@ -87,7 +87,7 @@ void __cdecl core_scat_cpp_CScat_process_FUN_005571f0(CScat *this_ptr,float delt
       core_scat_cpp_CScat_updateAI_FUN_005578e0(this_ptr,delta_time);
     }
     pSVar14 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                        (&(this_ptr->base).base.model.motion_controller);
+                        (&(this_ptr->base).base.model.base);
     switch(pSVar14->state_index) {
     case 0:
     case 1:
@@ -139,11 +139,10 @@ void __cdecl core_scat_cpp_CScat_process_FUN_005571f0(CScat *this_ptr,float delt
         (this_ptr->base).base.turn_angle_accumulator =
              (this_ptr->base).player_input.turn_speed * (this_ptr->base).base.turn_speed +
              (this_ptr->base).base.turn_angle_accumulator;
-        pSVar10 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                            (&pCVar2->motion_controller);
+        pSVar10 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(&pCVar2->base);
         if (desired_state_index != pSVar10->state_index) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (&pCVar2->motion_controller,desired_state_index,1);
+                    (&pCVar2->base,desired_state_index,1);
         }
         if ((this_ptr->base).player_input.action_state.draw != 0) {
           (this_ptr->base).player_input.action_state.draw = 0;
@@ -202,7 +201,7 @@ LAB_00557637:
       }
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              (&(this_ptr->base).base.model.motion_controller,iVar7,1);
+              (&(this_ptr->base).base.model.base,iVar7,1);
   }
   pCVar4 = (this_ptr->base).base.grabbed_by;
   if (pCVar4 == (CDemonActor *)0x0) {
@@ -264,7 +263,7 @@ LAB_005573f5:
       iVar7 = 0xf;
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              (&(this_ptr->base).base.model.motion_controller,iVar7,1);
+              (&(this_ptr->base).base.model.base,iVar7,1);
   }
 LAB_00557408:
   core_inv_cpp_CInventory_updateInventory_FUN_004ffad0(&(this_ptr->base).inventory);
@@ -280,22 +279,22 @@ LAB_00557408:
     uVar15 = 1;
   }
   fVar9 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                    (&(this_ptr->base).base.model.motion_controller,0xc);
+                    (&(this_ptr->base).base.model.base,0xc);
   if (0.0 < fVar9) {
     uVar15 = 1;
   }
   fVar9 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                    (&(this_ptr->base).base.model.motion_controller,0xd);
+                    (&(this_ptr->base).base.model.base,0xd);
   if (0.0 < fVar9) {
     uVar15 = 1;
   }
   fVar9 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                    (&(this_ptr->base).base.model.motion_controller,4);
+                    (&(this_ptr->base).base.model.base,4);
   if (0.0 < fVar9) {
     uVar15 = 1;
   }
   fVar9 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                    (&(this_ptr->base).base.model.motion_controller,5);
+                    (&(this_ptr->base).base.model.base,5);
   if (0.0 < fVar9) {
     uVar15 = 1;
   }

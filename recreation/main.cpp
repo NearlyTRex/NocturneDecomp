@@ -6,7 +6,10 @@
 #include "core/actor/actor.h"
 #include "core/dfilter/demonfilter.h"
 #include "core/dfont/dfont.h"
+#include "core/dmodel/keyframedmodel.h"
+#include "core/dtrace/demonraytrace.h"
 #include "core/game/game.h"
+#include "core/ground/ground.h"
 #include "core/inivar/inivar.h"
 #include "core/level/levelloader.h"
 #include "core/menu/menu.h"
@@ -15,6 +18,8 @@
 #include "core/podmain/demonpod.h"
 #include "core/set/demonset.h"
 #include "core/sound/sound.h"
+#include "core/terrain/terrain.h"
+#include "core/water/water.h"
 #include "core/xform/xform.h"
 #include "engine/2d/2d.h"
 #include "engine/3d/3d.h"
@@ -77,6 +82,8 @@ constexpr int kWidth = 640;
 constexpr int kHeight = 480;
 // The size of the original's g_RenderVertexBuffer.
 constexpr std::size_t kRenderVertexCount = 20000;
+// The original's one ground grid, as ground.cpp's static initialiser made it.
+constexpr int kGroundSize = 0x100;
 
 std::tm getLocalTime() {
     const std::time_t now = std::time(nullptr);
@@ -119,11 +126,9 @@ public:
              .menu = menu_});
     }
 
-    // Shows the screen until the window closes; the game beyond startup comes later.
+    // The main menu, until it quits or the window closes.
     void run() {
-        while (!winrun_.getInputDisabled()) {
-            screen_.swapBuffers();
-        }
+        core::enterMainGameMenu(menu_);
     }
 
 private:
@@ -204,7 +209,24 @@ private:
                                            texture_,
                                            screen_,
                                            &core::transformAndClipGeometry};
-    core::CDemonSet set_{demon_renderer_, matrix_, special_};
+    core::CDemonRaytrace raytrace_{dosio_};
+    core::CGround ground_{dosio_, kGroundSize, kGroundSize};
+    core::CTerrain terrain_{ground_};
+    core::CWater water_;
+    core::CKeyFramedModel enviro_model_{dosio_};
+    core::CDemonSet set_{{.renderer = demon_renderer_,
+                          .matrix = matrix_,
+                          .special = special_,
+                          .dosio = dosio_,
+                          .messages = messages_,
+                          .loading_screen = level_loader_,
+                          .raytrace = raytrace_,
+                          .terrain = terrain_,
+                          .water = water_,
+                          .enviro_model = enviro_model_,
+                          .two_d = two_d_,
+                          .screen = screen_,
+                          .raw_input = winrun_}};
     nocturne::common::CWatcomRandom crt_random_;
     core::CActor actor_{game_, crt_random_};
     engine::CMenuInput menu_input_{keys_};
@@ -222,6 +244,9 @@ private:
                        .game = game_,
                        .actor = actor_,
                        .crt_random = crt_random_,
+                       .textures = texture_,
+                       .sound = sound_,
+                       .sound_main = sound_main_,
                        .build_version = nocturne::kBuildVersion}};
     nocturne::shape::CEdControls controls_{{.two_d = two_d_,
                                             .screen = screen_,
@@ -244,6 +269,7 @@ private:
                                       .crt_random = crt_random_}};
     core::CDemonMission mission_{{.dosio = dosio_,
                                   .messages = messages_,
+                                  .game = game_,
                                   .actor = actor_,
                                   .level_loader = level_loader_,
                                   .textures = texture_,

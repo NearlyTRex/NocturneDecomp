@@ -1,7 +1,12 @@
+#include "common/text/textscanner.h"
+#include "core/actor/actorarchive.h"
+#include "core/actor/demonactortype.h"
 #include "core/svetlana/svetlana.h"
+#include "tests/mocks/core/notportedcalls.h"
 
 #include <gtest/gtest.h>
 
+#include <memory>
 #include <type_traits>
 
 namespace nocturne::core {
@@ -37,6 +42,34 @@ TEST(CSvetlana, PublicInterface) {
         std::is_same_v<decltype(&CSvetlana::processDamage), void (CSvetlana::*)(SDamageInfo *)>);
     static_assert(std::is_same_v<decltype(&CSvetlana::drawWeapon), void (CSvetlana::*)(int)>);
     static_assert(std::is_same_v<decltype(&CSvetlana::isWeaponDrawn), int (CSvetlana::*)()>);
+}
+
+TEST(CSvetlana, ItsRecordIsAVersionOneHeroThatMissionsCanCreate) {
+    EXPECT_EQ(CSvetlana::kType.class_name, "CSvetlana");
+    EXPECT_EQ(CSvetlana::kType.parent_type, &CHero::kType);
+    EXPECT_EQ(CSvetlana::kType.latest_version, 1);
+    EXPECT_EQ(CSvetlana::kType.name_hash, hashClassName("CSvetlana"));
+    ASSERT_NE(CSvetlana::kType.factory_func, nullptr);
+    const std::unique_ptr<CDemonActor> actor = CSvetlana::kType.factory_func();
+    EXPECT_EQ(&actor->getActorType(), &CSvetlana::kType);
+}
+
+TEST(CSvetlana, TheFunctionsNotPortedYetQuit) {
+    CSvetlana hero;
+    common::CTextScanner scanner("");
+    CActorArchive archive(scanner);
+    const NotPortedCalls calls = {
+        {"setup", [&] { hero.setup(); }},
+        {"process", [&] { hero.process(0.0F); }},
+        {"renderOpaque", [&] { static_cast<void>(hero.renderOpaque()); }},
+        {"archive", [&] { hero.archive(archive); }},
+        {"getGrabbed", [&] { static_cast<void>(hero.getGrabbed(nullptr, 0)); }},
+        {"processDamage", [&] { hero.processDamage(nullptr); }},
+        {"drawWeapon", [&] { hero.drawWeapon(0); }},
+        {"isWeaponDrawn", [&] { static_cast<void>(hero.isWeaponDrawn()); }},
+    };
+    EXPECT_EQ(calls.size(), 8U);
+    expectEachQuitsNotPorted("CSvetlana", calls);
 }
 
 } // namespace

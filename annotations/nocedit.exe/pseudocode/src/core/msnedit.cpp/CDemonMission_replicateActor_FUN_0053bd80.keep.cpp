@@ -47,7 +47,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_replicateActor_FUN_0053bd80(CDemonMi
   }
   core_actor_cpp_CDemonActor_load_FUN_0040b050(this_ptr_00,file_handle);
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\core\\msnedit.cpp",2422);
-  remove(local_20);
+  _remove(local_20);
   strcpy(local_a4,this_ptr->selected_actor->actor_name);
   iVar4 = strlen(local_a4);
   while ((iVar3 = iVar4, 0 < iVar4 &&

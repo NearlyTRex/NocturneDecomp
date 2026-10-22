@@ -39,11 +39,11 @@ int __cdecl core_hostage_cpp_CHostage_processGrabberFlee_FUN_004f5ff0(CHostage *
       (this_ptr->base).base.turn_angle_accumulator = (this_ptr->base).base.turn_speed;
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              (&(this_ptr->base).base.model.motion_controller,2,1);
+              (&(this_ptr->base).base.model.base,2,1);
     return 1;
   }
   this_ptr->grabber = (CDemonActor *)0x0;
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-            (&(this_ptr->base).base.model.motion_controller,0,1);
+            (&(this_ptr->base).base.model.base,0,1);
   return 0;
 }

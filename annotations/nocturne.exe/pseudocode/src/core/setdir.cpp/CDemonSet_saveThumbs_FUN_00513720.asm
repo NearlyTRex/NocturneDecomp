@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_setdir_cpp_CDemonSet_FUN_00513720(CDemonSet *this_ptr)
+; void __cdecl core_setdir_cpp_CDemonSet_saveThumbs_FUN_00513720(CDemonSet *this_ptr)
 ;
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr
@@ -20,10 +20,10 @@
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_01b4d738
 ;   uint*[1200] g_ZBufferScanlineArray
-;   undefined4 DAT_020875f8
-;   undefined4 DAT_020875fc
-;   undefined4 DAT_020875fd
-;   undefined4 DAT_020876f8
+;   uint[250][48][64] g_ThumbZBufferTable
+;   undefined4 g_ThumbZBufferTable[0][0][1]
+;   undefined4 g_ThumbZBufferTable[0][0][1]+1
+;   undefined4 g_ThumbZBufferTable[0][1][0]
 ;
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00507c80
@@ -42,7 +42,7 @@
 section .text
 
     PUSH EBX                            ; 00513720
-        ;   Label: core_setdir.cpp_CDemonSet_FUN_00513720
+        ;   Label: core_setdir.cpp_CDemonSet_saveThumbs_FUN_00513720
     PUSH ESI                            ; 00513721
     PUSH EDI                            ; 00513722
     PUSH EBP                            ; 00513723
@@ -132,10 +132,10 @@ section .text
     PUSH EDI                            ; 00513824
     MOV EAX,ECX                         ; 00513825
     SHR ECX,0x2                         ; 00513827
-    MOVSD.REP ES:EDI,ESI                ; 0051382a | DAT_020875f8 | DAT_020875fc | DAT_020876f8
+    MOVSD.REP ES:EDI,ESI                ; 0051382a | g_ThumbZBufferTable | g_ThumbZBufferTable[0][0][1] | g_ThumbZBufferTable[0][1][0]
     MOV CL,AL                           ; 0051382c
     AND CL,0x3                          ; 0051382e
-    MOVSB.REP ES:EDI,ESI                ; 00513831 | DAT_020875fc | DAT_020875fd
+    MOVSB.REP ES:EDI,ESI                ; 00513831 | g_ThumbZBufferTable[0][0][1] | g_ThumbZBufferTable[0][0][1]+1
     POP EDI                             ; 00513833
     ADD EBX,0x4                         ; 00513834
     ADD EDX,0x100                       ; 00513837

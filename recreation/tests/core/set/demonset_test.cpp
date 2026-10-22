@@ -1,6 +1,7 @@
 #include "common/math/vector3i.h"
 #include "core/set/demonset.h"
 #include "platform/rendervertex.h"
+#include "tests/mocks/core/setparts.h"
 #include "tests/mocks/engine/demonrendererfixture.h"
 
 #include <gtest/gtest.h>
@@ -17,13 +18,13 @@ TEST(CDemonSet, IsConcrete) {
 }
 
 TEST(CDemonSet, Constructors) {
-    static_assert(std::is_constructible_v<CDemonSet, engine::CDemonRenderer &,
-                                          const engine::CMatrix &, const engine::CSpecial &>);
+    static_assert(std::is_constructible_v<CDemonSet, const SDemonSetOwners &>);
     static_assert(!std::is_default_constructible_v<CDemonSet>);
 }
 
 TEST(CDemonSet, PublicInterface) {
-    static_assert(std::is_same_v<decltype(&CDemonSet::load), void (CDemonSet::*)(char *)>);
+    static_assert(
+        std::is_same_v<decltype(&CDemonSet::load), void (CDemonSet::*)(std::string_view)>);
     static_assert(
         std::is_same_v<decltype(&CDemonSet::renderSceneGeometry), void (CDemonSet::*)(float, int)>);
     static_assert(std::is_same_v<decltype(&CDemonSet::initScene), void (CDemonSet::*)()>);
@@ -173,7 +174,9 @@ protected:
         return vertex_buffer_[0];
     }
 
-    CDemonSet set_{demon_renderer_, matrix_, special_};
+    CSetParts set_parts_{dosio_};
+    CDemonSet set_{
+        set_parts_.owners(demon_renderer_, matrix_, special_, two_d_, screen_, raw_input_)};
 };
 
 // The light travels 37000 along +z, and the ambient is 0x280: a normal facing -z has 37640, in

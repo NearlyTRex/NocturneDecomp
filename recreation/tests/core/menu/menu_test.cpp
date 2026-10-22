@@ -4,6 +4,7 @@
 #include "core/game/game.h"
 #include "core/menu/menu.h"
 #include "core/set/demonset.h"
+#include "core/sound/sound.h"
 #include "core/xform/xform.h"
 #include "engine/2d/2d.h"
 #include "engine/3d/3d.h"
@@ -15,6 +16,7 @@
 #include "engine/light/light.h"
 #include "engine/matrix/matrix.h"
 #include "engine/menuinput.h"
+#include "engine/pod/pod.h"
 #include "engine/prim/prim.h"
 #include "engine/special/special.h"
 #include "engine/texture/currenttexture.h"
@@ -23,16 +25,18 @@
 #include "platform/rendervertex.h"
 #include "shape/edittool/editortools.h"
 #include "support/newmsg/newmsg.h"
+#include "tests/mocks/core/menufontfiles.h"
+#include "tests/mocks/core/setparts.h"
 #include "tests/mocks/engine/fontsheet.h"
 #include "tests/mocks/engine/memoryscreen.h"
 #include "tests/mocks/engine/mockgameclock.h"
 #include "tests/mocks/engine/mockrawinput.h"
-#include "tests/mocks/engine/podfixture.h"
 #include "tests/mocks/platform/mockclipboard.h"
 #include "tests/mocks/platform/mockclock.h"
 #include "tests/mocks/platform/mockosfont.h"
 #include "tests/mocks/platform/mockosfontfactory.h"
 #include "tests/mocks/platform/mockrenderer.h"
+#include "tests/mocks/sound/sndmainfixture.h"
 
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
@@ -77,31 +81,16 @@ constexpr int kWidth = 640;
 constexpr int kHeight = 480;
 // Palette entry 1 of the brightness image.
 constexpr std::uint32_t kImage = 0x112233;
-// Every glyph in the theme and small editor fonts is a block a pixel wide and two tall.
-constexpr int kLineHeight = 2;
-// The block glyphs are '#', which these palettes make full grey: full cover of the text colour.
-const std::string kSolidGlyphs = [] {
-    std::vector<std::uint8_t> levels(std::size_t{'#'} * 3, 0);
-    levels.insert(levels.end(), {0xff, 0xff, 0xff});
-    return engine::makePalette(levels);
-}();
 
 // The menus on a 640x480 screen, their fonts from sheets of block glyphs '!' to 0x99, with every
 // message translated to a run of X's: calibration step n to n of them, the prompt to one and the
 // title to seven.
-class CMenuTest : public engine::CPodFixture {
+class CMenuTest : public sound::CSndMainFixture {
 protected:
     CMenuTest() {
-        givenFile("art\\nocfont.raw", engine::makeSheetOfSize(0x136, 0x1ae, '\0'));
-        givenFile("art\\nocsmall.raw", engine::makeSheetOfSize(0xf8, 0x158, '\0'));
-        givenFile("art\\menufont.raw",
-                  engine::makeBlockFontSheet(0xfa, 0x23f, 0x99, 1, kLineHeight));
-        givenFile("art\\menufont.act", kSolidGlyphs);
-        givenFile("art\\fnte_pfd.RAW",
-                  engine::makeBlockFontSheet(0x94, 0xec, 0x99, 1, kLineHeight));
-        givenFile("art\\fnte_pfd.act", kSolidGlyphs);
-        givenFile("art\\fnte_f.RAW", engine::makeSheetOfSize(0x94, 0xec, '\xff'));
-        givenFile("art\\micro.raw", engine::makeSheetOfSize(0x94, 0xec, '\0'));
+        givenMenuFontFiles([this](const std::string &name, const std::string &contents) {
+            givenFile(name, contents);
+        });
         two_d_.setupViewportAndClipping(0, 0, kWidth - 1, kHeight - 1);
         givenFile("art\\brightness.raw", std::string(std::size_t{kWidth} * kHeight, '\x01'));
         givenFile("art\\brightness.act", engine::makePalette({0, 0, 0, 0x11, 0x22, 0x33}));
@@ -216,10 +205,14 @@ protected:
     engine::CDemonRenderer demon_renderer_{
         matrix_,          two_d_,   three_d_, vertex_buffer_,           special_, prim_, zraster_,
         current_texture_, texture_, screen_,  &transformAndClipGeometry};
-    CDemonSet set_{demon_renderer_, matrix_, special_};
+    CSetParts set_parts_{dosio_};
+    CDemonSet set_{
+        set_parts_.owners(demon_renderer_, matrix_, special_, two_d_, screen_, raw_input_)};
     common::CWatcomRandom crt_random_;
     CActor actor_{game_, crt_random_};
     engine::CMenuInput menu_input_{keys_};
+    engine::CPod pod_{file_system_, dosio_};
+    CSound game_sound_{sound_, pod_, file_system_};
     CMenu menu_{{.dosio = dosio_,
                  .screen = screen_,
                  .special = special_,
@@ -234,6 +227,9 @@ protected:
                  .game = game_,
                  .actor = actor_,
                  .crt_random = crt_random_,
+                 .textures = texture_,
+                 .sound = game_sound_,
+                 .sound_main = sound_,
                  .build_version = "X"}};
 };
 

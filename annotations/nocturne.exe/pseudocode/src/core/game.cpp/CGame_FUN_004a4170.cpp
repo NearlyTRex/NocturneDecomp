@@ -52,7 +52,7 @@ void __cdecl core_game_cpp_CGame_FUN_004a4170(CGame *this_ptr,char *save_filenam
   int local_14;
   
   bVar13 = 0;
-  remove("save\\$$SAVE$$.TMP");
+  _remove("save\\$$SAVE$$.TMP");
   this_ptr->is_loading = 1;
   splitpath(&DAT_01c78598,(char *)0x0,(char *)0x0,(char *)0x0,local_430);
   iVar2 = _stricmp(local_430,"noc");
@@ -96,7 +96,7 @@ void __cdecl core_game_cpp_CGame_FUN_004a4170(CGame *this_ptr,char *save_filenam
 LAB_004a4674:
         _DAT_01bcd070 = local_30;
         this_ptr->is_loading = 0;
-        remove("save\\$$SAVE$$.TMP");
+        _remove("save\\$$SAVE$$.TMP");
         return;
       }
     }

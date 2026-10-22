@@ -2,117 +2,63 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 5,
-        "line": 20,
-        "message": "unknown type name 'FLOATING_SAVE_AREA'"
-      },
-      {
-        "category": "other",
-        "column": 5,
-        "line": 52,
-        "message": "unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?"
-      },
-      {
-        "category": "other",
-        "column": 5,
-        "line": 53,
-        "message": "unknown type name 'PCONTEXT'"
-      },
-      {
-        "category": "other",
-        "column": 85,
-        "line": 258,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 80,
-        "line": 267,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 496,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 496,
-        "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 497,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 497,
-        "message": "exponent has no digits"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 31,
-        "line": 98,
+        "line": 97,
         "message": "use of undeclared identifier '_DAT_01cc9094'"
       },
       {
         "category": "undeclared_identifier",
         "column": 45,
-        "line": 197,
+        "line": 195,
         "message": "use of undeclared identifier '_DAT_01cc90b4'; did you mean 'DAT_005c50b4'?"
       },
       {
         "category": "type_error",
         "column": 25,
-        "line": 198,
+        "line": 196,
         "message": "member reference base type 'float' is not a structure or union"
       },
       {
         "category": "type_error",
         "column": 44,
-        "line": 198,
+        "line": 196,
         "message": "member reference base type 'float' is not a structure or union"
       },
       {
         "category": "undeclared_identifier",
         "column": 40,
-        "line": 267,
+        "line": 263,
         "message": "use of undeclared identifier '_DAT_01cc90b0'"
       },
       {
         "category": "type_error",
         "column": 21,
-        "line": 268,
+        "line": 264,
         "message": "member reference base type 'float' is not a structure or union"
       },
       {
         "category": "type_error",
         "column": 40,
-        "line": 268,
+        "line": 264,
         "message": "member reference base type 'float' is not a structure or union"
       },
       {
         "category": "undeclared_identifier",
         "column": 39,
-        "line": 275,
+        "line": 271,
         "message": "use of undeclared identifier '_DAT_01cc90b4'; did you mean 'DAT_005c50b4'?"
       },
       {
         "category": "type_error",
         "column": 20,
-        "line": 276,
+        "line": 272,
         "message": "member reference base type 'float' is not a structure or union"
       },
       {
         "category": "type_error",
         "column": 40,
-        "line": 276,
+        "line": 272,
         "message": "member reference base type 'float' is not a structure or union"
       }
     ],
@@ -122,12 +68,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 749,
-    "complexity_score": 490,
+    "complexity_score": 485,
     "cross_reference_count": 1,
     "function_call_count": 25,
     "global_count": 23,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 320,
+    "pseudocode_lines": 315,
     "suspect_count": 14,
     "suspect_types": [
       "pointer_cast",
@@ -137,7 +83,7 @@
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 1069
+    "total_lines": 1064
   },
   "cross_references": [
     {
@@ -920,7 +866,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 97,
+      "line": 96,
       "match": "(CMatrix3x4f *)((int)pCVar9",
       "severity": "moderate",
       "text": "pCVar9 = (CMatrix3x4f *)((int)pCVar9 + ((uint)bVar12 * -2 + 1) * 4);",
@@ -928,7 +874,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 98,
+      "line": 97,
       "match": "(CMatrix3x4f *)((int)pCVar10",
       "severity": "moderate",
       "text": "pCVar10 = (CMatrix3x4f *)((int)pCVar10 + ((uint)bVar12 * -2 + 1) * 4);",
@@ -936,7 +882,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 191,
+      "line": 189,
       "match": "._3_1_",
       "severity": "mild",
       "text": "local_ac.x._3_1_ = local_ac.x._3_1_ ^ 0x80;",
@@ -944,7 +890,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 191,
+      "line": 189,
       "match": "._3_1_",
       "severity": "mild",
       "text": "local_ac.x._3_1_ = local_ac.x._3_1_ ^ 0x80;",
@@ -952,7 +898,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 261,
+      "line": 257,
       "match": "._3_1_",
       "severity": "mild",
       "text": "local_c4.x._3_1_ = local_c4.x._3_1_ ^ 0x80;",
@@ -960,7 +906,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 261,
+      "line": 257,
       "match": "._3_1_",
       "severity": "mild",
       "text": "local_c4.x._3_1_ = local_c4.x._3_1_ ^ 0x80;",
@@ -968,7 +914,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 269,
+      "line": 265,
       "match": "._3_1_",
       "severity": "mild",
       "text": "local_100.x._3_1_ = local_100.x._3_1_ ^ 0x80;",
@@ -976,7 +922,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 269,
+      "line": 265,
       "match": "._3_1_",
       "severity": "mild",
       "text": "local_100.x._3_1_ = local_100.x._3_1_ ^ 0x80;",
@@ -984,7 +930,7 @@
     },
     {
       "description": "Pointer value `pCVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 97,
+      "line": 96,
       "match": "(int)pCVar9",
       "severity": "moderate",
       "text": "pCVar9 = (CMatrix3x4f *)((int)pCVar9 + ((uint)bVar12 * -2 + 1) * 4);",
@@ -992,7 +938,7 @@
     },
     {
       "description": "Pointer value `pCVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 98,
+      "line": 97,
       "match": "(int)pCVar10",
       "severity": "moderate",
       "text": "pCVar10 = (CMatrix3x4f *)((int)pCVar10 + ((uint)bVar12 * -2 + 1) * 4);",
@@ -1000,7 +946,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 95,
+      "line": 94,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar14 = 0xc; iVar14 != 0; iVar14 = iVar14 + -1) {",

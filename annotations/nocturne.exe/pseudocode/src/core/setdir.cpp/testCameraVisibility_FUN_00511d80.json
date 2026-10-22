@@ -2,118 +2,64 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 5,
-        "line": 20,
-        "message": "unknown type name 'FLOATING_SAVE_AREA'"
-      },
-      {
-        "category": "other",
-        "column": 5,
-        "line": 52,
-        "message": "unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?"
-      },
-      {
-        "category": "other",
-        "column": 5,
-        "line": 53,
-        "message": "unknown type name 'PCONTEXT'"
-      },
-      {
-        "category": "other",
-        "column": 85,
-        "line": 258,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 80,
-        "line": 267,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 496,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 496,
-        "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 497,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 497,
-        "message": "exponent has no digits"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 134,
+        "line": 137,
         "message": "use of undeclared identifier '_DAT_00590bcd'"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 137,
+        "line": 140,
         "message": "use of undeclared identifier '_DAT_00590bc5'"
       },
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 146,
+        "line": 149,
         "message": "use of undeclared identifier '_DAT_026639ec'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 30,
-        "line": 150,
-        "message": "use of undeclared identifier 'DAT_020875f8'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 41,
-        "line": 153,
+        "line": 156,
         "message": "use of undeclared identifier 'DAT_026639f0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 55,
-        "line": 166,
+        "line": 169,
         "message": "use of undeclared identifier '_DAT_005a1a70'"
       },
       {
         "category": "undeclared_identifier",
         "column": 55,
-        "line": 167,
+        "line": 170,
         "message": "use of undeclared identifier '_DAT_005a1a70'"
       },
       {
         "category": "undeclared_identifier",
         "column": 55,
-        "line": 168,
+        "line": 171,
         "message": "use of undeclared identifier '_DAT_005a1a70'"
       },
       {
         "category": "undeclared_identifier",
         "column": 36,
-        "line": 185,
+        "line": 188,
         "message": "use of undeclared identifier 'DAT_020845f4'"
       },
       {
         "category": "undeclared_identifier",
         "column": 28,
-        "line": 196,
+        "line": 199,
         "message": "use of undeclared identifier 'DAT_020845f4'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 29,
+        "line": 253,
+        "message": "use of undeclared identifier '_DAT_026639ec'"
       }
     ],
     "success": false,
@@ -122,13 +68,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 649,
-    "complexity_score": 702,
+    "complexity_score": 655,
     "cross_reference_count": 0,
     "function_call_count": 16,
     "global_count": 19,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 307,
-    "suspect_count": 37,
+    "pseudocode_lines": 310,
+    "suspect_count": 32,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -136,7 +82,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 956
+    "total_lines": 959
   },
   "cross_references": [],
   "function": {
@@ -315,25 +261,25 @@
     },
     {
       "addr": "020875f8",
-      "name": "DAT_020875f8",
-      "type": "undefined4",
+      "name": "g_ThumbZBufferTable",
+      "type": "uint[250][48][64]",
       "value": null
     },
     {
       "addr": "020875fc",
-      "name": "DAT_020875fc",
+      "name": "g_ThumbZBufferTable[0][0][1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "020875fd",
-      "name": "DAT_020875fd",
+      "name": "g_ThumbZBufferTable[0][0][1]+1",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "020876f8",
-      "name": "DAT_020876f8",
+      "name": "g_ThumbZBufferTable[0][1][0]",
       "type": "undefined4",
       "value": null
     },
@@ -723,7 +669,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 98,
+      "line": 101,
       "match": "(SMRGLHeaderPrimitive **)((int)aiStack_ac",
       "severity": "moderate",
       "text": "*(SMRGLHeaderPrimitive **)((int)aiStack_ac + iVar6) = pSVar7;",
@@ -731,15 +677,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 143,
-      "match": "DAT_020875f8",
-      "severity": "mild",
-      "text": "local_4c = (uint *)(&DAT_020875f8 + camera_index * 0x3000);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 146,
+      "line": 149,
       "match": "DAT_026639f0",
       "severity": "mild",
       "text": "local_20 = *(CDemonActor **)(&DAT_026639f0 + local_30);",
@@ -747,63 +685,39 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 178,
+      "line": 181,
       "match": "DAT_020845f4",
       "severity": "mild",
-      "text": "puVar12 = (uint *)&DAT_020845f4;",
+      "text": "puVar17 = (uint *)&DAT_020845f4;",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 186,
-      "match": "(uint *)((int)puVar9",
+      "line": 190,
+      "match": "(uint *)((int)puVar17",
       "severity": "moderate",
-      "text": "puVar9 = (uint *)((int)puVar9 + (uint)bVar15 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 187,
-      "match": "(uint *)((int)puVar12",
-      "severity": "moderate",
-      "text": "puVar12 = (uint *)((int)puVar12 + (uint)bVar15 * -2 + 1);",
+      "text": "puVar17 = (uint *)((int)puVar17 + (uint)bVar18 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 189,
-      "match": "DAT_020845f4",
-      "severity": "mild",
-      "text": "puVar11 = &DAT_020845f4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 192,
-      "match": "(byte **)((int)g_ZBufferScanlineArray",
-      "severity": "moderate",
-      "text": "*(byte **)((int)g_ZBufferScanlineArray + iVar6) = puVar11;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 248,
-      "match": "DAT_020875f8",
+      "match": "DAT_020845f4",
       "severity": "mild",
-      "text": "puVar11 = &DAT_020875f8 + camera_index * 0x3000;",
+      "text": "puVar14 = &DAT_020845f4;",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 251,
+      "line": 195,
       "match": "(byte **)((int)g_ZBufferScanlineArray",
       "severity": "moderate",
-      "text": "*(byte **)((int)g_ZBufferScanlineArray + iVar6) = puVar11;",
+      "text": "*(byte **)((int)g_ZBufferScanlineArray + iVar6) = puVar14;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 267,
+      "line": 270,
       "match": "(SMRGLPrimitivePoly **)((int)aiStack_ac",
       "severity": "moderate",
       "text": "*(SMRGLPrimitivePoly **)((int)aiStack_ac + iVar6));",
@@ -811,7 +725,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 277,
+      "line": 280,
       "match": "(uint **)((int)g_ZBufferScanlineArray",
       "severity": "moderate",
       "text": "puVar12 = *(uint **)((int)g_ZBufferScanlineArray + iVar6);",
@@ -819,63 +733,55 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 286,
+      "line": 289,
       "match": "(uint *)((int)puVar12",
       "severity": "moderate",
-      "text": "puVar12 = (uint *)((int)puVar12 + (uint)bVar15 * -2 + 1);",
+      "text": "puVar12 = (uint *)((int)puVar12 + (uint)bVar18 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 287,
-      "match": "(uint *)((int)puVar14",
+      "line": 290,
+      "match": "(uint *)((int)puVar16",
       "severity": "moderate",
-      "text": "puVar14 = (uint *)((int)puVar14 + (uint)bVar15 * -2 + 1);",
+      "text": "puVar16 = (uint *)((int)puVar16 + (uint)bVar18 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 289,
+      "line": 292,
       "match": "(uint **)((int)g_ZBufferScanlineArray",
       "severity": "moderate",
       "text": "*(uint **)((int)g_ZBufferScanlineArray + iVar6) = puVar9;",
       "type": "pointer_cast"
     },
     {
-      "description": "Pointer value `puVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 186,
-      "match": "(int)puVar9",
+      "description": "Pointer value `puVar17` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 190,
+      "match": "(int)puVar17",
       "severity": "moderate",
-      "text": "puVar9 = (uint *)((int)puVar9 + (uint)bVar15 * -2 + 1);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `puVar12` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 187,
-      "match": "(int)puVar12",
-      "severity": "moderate",
-      "text": "puVar12 = (uint *)((int)puVar12 + (uint)bVar15 * -2 + 1);",
+      "text": "puVar17 = (uint *)((int)puVar17 + (uint)bVar18 * -2 + 1);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `g_ZBufferScanlineArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 192,
+      "line": 195,
       "match": "(int)g_ZBufferScanlineArray",
       "severity": "moderate",
-      "text": "*(byte **)((int)g_ZBufferScanlineArray + iVar6) = puVar11;",
+      "text": "*(byte **)((int)g_ZBufferScanlineArray + iVar6) = puVar14;",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `g_ZBufferScanlineArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 251,
+      "line": 254,
       "match": "(int)g_ZBufferScanlineArray",
       "severity": "moderate",
-      "text": "*(byte **)((int)g_ZBufferScanlineArray + iVar6) = puVar11;",
+      "text": "*(uint (**) [64])((int)g_ZBufferScanlineArray + iVar6) = pauVar11;",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `g_ZBufferScanlineArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 277,
+      "line": 280,
       "match": "(int)g_ZBufferScanlineArray",
       "severity": "moderate",
       "text": "puVar12 = *(uint **)((int)g_ZBufferScanlineArray + iVar6);",
@@ -883,23 +789,23 @@
     },
     {
       "description": "Pointer value `puVar12` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 286,
+      "line": 289,
       "match": "(int)puVar12",
       "severity": "moderate",
-      "text": "puVar12 = (uint *)((int)puVar12 + (uint)bVar15 * -2 + 1);",
+      "text": "puVar12 = (uint *)((int)puVar12 + (uint)bVar18 * -2 + 1);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `puVar14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 287,
-      "match": "(int)puVar14",
+      "description": "Pointer value `puVar16` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 290,
+      "match": "(int)puVar16",
       "severity": "moderate",
-      "text": "puVar14 = (uint *)((int)puVar14 + (uint)bVar15 * -2 + 1);",
+      "text": "puVar16 = (uint *)((int)puVar16 + (uint)bVar18 * -2 + 1);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `g_ZBufferScanlineArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 289,
+      "line": 292,
       "match": "(int)g_ZBufferScanlineArray",
       "severity": "moderate",
       "text": "*(uint **)((int)g_ZBufferScanlineArray + iVar6) = puVar9;",
@@ -907,7 +813,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 179,
+      "line": 182,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0xc00; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -915,7 +821,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 184,
+      "line": 187,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -923,7 +829,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 279,
+      "line": 282,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar10 = 0x40; iVar10 != 0; iVar10 = iVar10 + -1) {",
@@ -931,7 +837,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 284,
+      "line": 287,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar10 = 0; iVar10 != 0; iVar10 = iVar10 + -1) {",
@@ -939,7 +845,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
-      "line": 80,
+      "line": 83,
       "match": "(int)&NAME byte-offset arithmetic split across lines",
       "severity": "moderate",
       "text": "((int)&(g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex).",
@@ -947,26 +853,18 @@
     },
     {
       "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
-      "line": 84,
+      "line": 87,
       "match": "(int)&NAME byte-offset arithmetic split across lines",
       "severity": "moderate",
-      "text": "uVar13 = *(uint *)((int)&(g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex",
+      "text": "uVar15 = *(uint *)((int)&(g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
-      "line": 107,
+      "line": 110,
       "match": "(int)&NAME byte-offset arithmetic split across lines",
       "severity": "moderate",
       "text": "((int)&(g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex).",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
-      "line": 125,
-      "match": "(int)&NAME byte-offset arithmetic split across lines",
-      "severity": "moderate",
-      "text": "if ((*(byte *)((int)&(g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex).",
       "type": "pointer_cast"
     },
     {
@@ -974,12 +872,20 @@
       "line": 128,
       "match": "(int)&NAME byte-offset arithmetic split across lines",
       "severity": "moderate",
+      "text": "if ((*(byte *)((int)&(g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex).",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 131,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "severity": "moderate",
       "text": "if (0 < *(int *)((int)&(g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
-      "line": 164,
+      "line": 167,
       "match": "(int)&NAME byte-offset arithmetic split across lines",
       "severity": "moderate",
       "text": "((int)&(g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex)",
@@ -987,7 +893,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
-      "line": 167,
+      "line": 170,
       "match": "(int)&NAME byte-offset arithmetic split across lines",
       "severity": "moderate",
       "text": "uVar1 = *(uint *)((int)&(g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->",
@@ -998,7 +904,7 @@
       "line": 440,
       "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "// 005122f0: MOVSD.REP ES:EDI,ESI  ; DAT_020875f8 | DAT_020875fc | DAT_020876f8",
+      "text": "// 005122f0: MOVSD.REP ES:EDI,ESI  ; g_ThumbZBufferTable | g_ThumbZBufferTable[0][0][1] | g_ThumbZBufferTable[0][1][0]",
       "type": "unrolled_memcpy"
     },
     {
@@ -1006,7 +912,7 @@
       "line": 527,
       "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "// 005123ed: MOVSD.REP ES:EDI,ESI  ; DAT_020875f8 | DAT_020845f4 | DAT_020875fc",
+      "text": "// 005123ed: MOVSD.REP ES:EDI,ESI  ; g_ThumbZBufferTable | DAT_020845f4 | g_ThumbZBufferTable[0][0][1]",
       "type": "unrolled_memcpy"
     }
   ]

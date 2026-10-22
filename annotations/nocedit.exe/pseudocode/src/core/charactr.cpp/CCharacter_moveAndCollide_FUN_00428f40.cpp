@@ -104,8 +104,7 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter
     return;
   }
   if ((this_ptr->model).model_name[0] != '\0') {
-    str1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                     (&(this_ptr->model).motion_controller);
+    str1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(&(this_ptr->model).base);
     uVar10 = "noCollision"._8_4_;
     uVar9 = 0xffffffff;
     pSVar12 = str1;

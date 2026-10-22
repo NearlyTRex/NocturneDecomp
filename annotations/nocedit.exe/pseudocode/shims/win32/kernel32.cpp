@@ -28,6 +28,7 @@
 #include "globals/globals_610000.h"
 #include "renderer/builtin_dll.h"
 #include "core/file_search.h"   // nocturne_find_files() — shared with _findfirst
+#include "watcom/path.h"        // the same path resolution and roots the CRT uses
 
 #include <SDL.h>
 
@@ -49,6 +50,9 @@
 #elif defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__) || \
       defined(__NetBSD__)
 #include <sys/sysctl.h>
+#endif
+#if defined(__APPLE__)
+#include <mach-o/dyld.h>    // _NSGetExecutablePath, for host_program_path
 #endif
 #include <sys/types.h>
 #include <errno.h>
@@ -72,6 +76,16 @@
 #include <process.h>
 #else
 #include <unistd.h>
+#endif
+// mingw's <sys/types.h> and <sys/stat.h> carry these POSIX names; the Microsoft
+// runtime has only the _S_IF* bits they test.
+#if defined(_MSC_VER)
+typedef long long ssize_t;
+#define S_ISDIR(m)  (((m) & _S_IFMT) == _S_IFDIR)
+#define S_ISREG(m)  (((m) & _S_IFMT) == _S_IFREG)
+#define S_ISCHR(m)  (((m) & _S_IFMT) == _S_IFCHR)
+#define S_ISFIFO(m) (((m) & _S_IFMT) == _S_IFIFO)
+#define S_IWUSR     _S_IWRITE
 #endif
 // The reentrant broken-down-time calls, and the UTC offset that goes with them.
 // Windows' runtime spells the first two _s with the arguments the other way
@@ -306,7 +320,9 @@ static HANDLE shim_CreateFileA(LPCSTR lpFileName, DWORD dwDesiredAccess,
     flags |= O_BINARY;
 #endif
 
-    int fd = open(lpFileName, flags, 0666);
+    const WatcomPathUse use = (flags & (O_WRONLY | O_RDWR | O_CREAT | O_TRUNC))
+                                  ? WatcomPathUse::Write : WatcomPathUse::Read;
+    int fd = open(watcom_resolve_fs_path(lpFileName, use).c_str(), flags, 0666);
     if (fd < 0) {
         s_lastError = (DWORD)errno;
         return INVALID_HANDLE;
@@ -435,14 +451,16 @@ static BOOL shim_FlushFileBuffers(HANDLE hFile) {
 
 static BOOL shim_DeleteFileA(LPCSTR lpFileName) {
     std::error_code ec;
-    if (std::filesystem::remove(std::filesystem::path(lpFileName), ec)) return 1;
+    const std::filesystem::path path(watcom_resolve_fs_path(lpFileName, WatcomPathUse::Write));
+    if (std::filesystem::remove(path, ec)) return 1;
     // remove answers false without an error when there was nothing to remove.
     s_lastError = ec ? (DWORD)ec.value() : (DWORD)2;   // ERROR_FILE_NOT_FOUND
     return 0;
 }
 
 static BOOL shim_MoveFileA(LPCSTR lpExistingFileName, LPCSTR lpNewFileName) {
-    if (rename(lpExistingFileName, lpNewFileName) == 0) return 1;
+    if (rename(watcom_resolve_fs_path(lpExistingFileName, WatcomPathUse::Write).c_str(),
+               watcom_resolve_fs_path(lpNewFileName, WatcomPathUse::Write).c_str()) == 0) return 1;
     s_lastError = (DWORD)errno;
     return 0;
 }
@@ -452,7 +470,8 @@ static BOOL shim_CreateDirectoryA(LPCSTR lpPathName,
 {
     (void)lpSecurityAttributes;
     std::error_code ec;
-    if (std::filesystem::create_directory(std::filesystem::path(lpPathName), ec)) return 1;
+    const std::filesystem::path path(watcom_resolve_fs_path(lpPathName, WatcomPathUse::Write));
+    if (std::filesystem::create_directory(path, ec)) return 1;
     // create_directory answers false without an error when the directory is
     // already there, which Win32 reports as a failure with ERROR_ALREADY_EXISTS.
     s_lastError = ec ? (DWORD)ec.value() : (DWORD)183;
@@ -461,7 +480,7 @@ static BOOL shim_CreateDirectoryA(LPCSTR lpPathName,
 
 static DWORD shim_GetFileAttributesA(LPCSTR lpFileName) {
     struct stat st;
-    if (stat(lpFileName, &st) != 0) {
+    if (stat(watcom_resolve_fs_path(lpFileName).c_str(), &st) != 0) {
         s_lastError = (DWORD)errno;
         return SHIM_INVALID_FILE_ATTRIBUTES;
     }
@@ -1298,7 +1317,8 @@ static HMODULE shim_GetModuleHandleA(LPCSTR lpModuleName) {
 
 // The path of the running program, without a NUL. /proc/self/exe is Linux's
 // answer; Windows' runtime holds it in _pgmptr, which is what the real
-// GetModuleFileNameA would hand back and needs no Win32 header to read.
+// GetModuleFileNameA would hand back and needs no Win32 header to read; macOS
+// has dyld's _NSGetExecutablePath, which fails rather than truncates.
 static ssize_t host_program_path(char* out, size_t cap) {
     if (cap == 0) return -1;
 #if defined(_WIN32)
@@ -1308,6 +1328,10 @@ static ssize_t host_program_path(char* out, size_t cap) {
     if (len > cap - 1) len = cap - 1;
     memcpy(out, path, len);
     return (ssize_t)len;
+#elif defined(__APPLE__)
+    uint32_t size = (uint32_t)cap;
+    if (_NSGetExecutablePath(out, &size) != 0) return -1;
+    return (ssize_t)strlen(out);
 #else
     return readlink("/proc/self/exe", out, cap - 1);
 #endif

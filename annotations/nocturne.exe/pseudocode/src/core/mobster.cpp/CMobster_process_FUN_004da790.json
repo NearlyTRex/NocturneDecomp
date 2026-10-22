@@ -2,60 +2,6 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 5,
-        "line": 20,
-        "message": "unknown type name 'FLOATING_SAVE_AREA'"
-      },
-      {
-        "category": "other",
-        "column": 5,
-        "line": 52,
-        "message": "unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?"
-      },
-      {
-        "category": "other",
-        "column": 5,
-        "line": 53,
-        "message": "unknown type name 'PCONTEXT'"
-      },
-      {
-        "category": "other",
-        "column": 85,
-        "line": 258,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 80,
-        "line": 267,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 496,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 496,
-        "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 497,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 497,
-        "message": "exponent has no digits"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 69,
         "line": 91,
@@ -76,31 +22,31 @@
       {
         "category": "cast_error",
         "column": 37,
-        "line": 304,
+        "line": 298,
         "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
       },
       {
         "category": "cast_error",
         "column": 43,
-        "line": 397,
+        "line": 389,
         "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
       },
       {
         "category": "undeclared_identifier",
         "column": 31,
-        "line": 494,
+        "line": 484,
         "message": "use of undeclared identifier '_DAT_01ccdbac'"
       },
       {
         "category": "undeclared_identifier",
         "column": 31,
-        "line": 508,
+        "line": 498,
         "message": "use of undeclared identifier '_DAT_01ccdbb0'"
       },
       {
         "category": "format_error",
         "column": 42,
-        "line": 540,
+        "line": 530,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -110,12 +56,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1369,
-    "complexity_score": 942,
+    "complexity_score": 932,
     "cross_reference_count": 0,
     "function_call_count": 38,
     "global_count": 22,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 597,
+    "pseudocode_lines": 587,
     "suspect_count": 32,
     "suspect_types": [
       "stack_param",
@@ -124,7 +70,7 @@
       "unrolled_memset",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1966
+    "total_lines": 1956
   },
   "cross_references": [],
   "function": {
@@ -1085,7 +1031,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 227,
+      "line": 223,
       "match": "1.12104e-44",
       "severity": "mild",
       "text": "fVar15 = 1.12104e-44;",
@@ -1093,7 +1039,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 230,
+      "line": 226,
       "match": "1.4013e-45",
       "severity": "mild",
       "text": "fVar15 = 1.4013e-45;",
@@ -1101,7 +1047,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 297,
+      "line": 291,
       "match": "in_stack_fffffe74",
       "severity": "moderate",
       "text": "fVar15,(float)in_stack_fffffe74);",
@@ -1109,7 +1055,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 390,
+      "line": 382,
       "match": "in_stack_fffffe74",
       "severity": "moderate",
       "text": "pCVar12,fVar15,(float)in_stack_fffffe74);",
@@ -1117,7 +1063,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 416,
+      "line": 406,
       "match": "1.4013e-43",
       "severity": "mild",
       "text": "(pCVar13->model).transformed_vertices[0x4f].y = 1.4013e-43;",
@@ -1125,7 +1071,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 417,
+      "line": 407,
       "match": "in_stack_fffffe74",
       "severity": "moderate",
       "text": "iVar5 = (*(pCVar4->_uc).canBeGrabbed)(pCVar13,in_stack_fffffe74,(int)in_stack_fffffe78);",
@@ -1133,7 +1079,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 417,
+      "line": 407,
       "match": "in_stack_fffffe78",
       "severity": "moderate",
       "text": "iVar5 = (*(pCVar4->_uc).canBeGrabbed)(pCVar13,in_stack_fffffe74,(int)in_stack_fffffe78);",
@@ -1141,7 +1087,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 420,
+      "line": 410,
       "match": "in_stack_fffffe80",
       "severity": "moderate",
       "text": "(pCVar13,(CDemonActor *)in_stack_fffffe80);",
@@ -1149,7 +1095,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 433,
+      "line": 423,
       "match": "1.4013e-43",
       "severity": "mild",
       "text": "(pCVar13->model).transformed_vertices[0x4f].y = 1.4013e-43;",
@@ -1157,7 +1103,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 434,
+      "line": 424,
       "match": "in_stack_fffffe88",
       "severity": "moderate",
       "text": "iVar5 = (*(pCVar4->_uc).canBeGrabbed)(pCVar13,in_stack_fffffe88,in_stack_fffffe8c);",
@@ -1165,7 +1111,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 434,
+      "line": 424,
       "match": "in_stack_fffffe8c",
       "severity": "moderate",
       "text": "iVar5 = (*(pCVar4->_uc).canBeGrabbed)(pCVar13,in_stack_fffffe88,in_stack_fffffe8c);",
@@ -1173,7 +1119,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 439,
+      "line": 429,
       "match": "in_stack_fffffe94",
       "severity": "moderate",
       "text": "(*(((pCVar13->base).vtable._uc)->_uc).isGrabbable)(pCVar13,in_stack_fffffe94);",
@@ -1189,7 +1135,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 283,
+      "line": 277,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -1197,7 +1143,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 379,
+      "line": 371,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -1205,7 +1151,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 535,
+      "line": 525,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -1213,7 +1159,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 567,
+      "line": 557,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.position_delta.z = 0.0;",
@@ -1221,7 +1167,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 570,
+      "line": 560,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",

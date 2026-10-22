@@ -33,16 +33,11 @@ void __cdecl core_scat_cpp_CScat_blendLayerAction_FUN_005582c0(CScat *this_ptr)
     local_28 = (1.0 - (this_ptr->base).base.layer_action_t) * local_28;
   }
   pCVar2 = &(this_ptr->base).base.model;
-  fVar2 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                    (&pCVar2->motion_controller,4);
-  fVar3 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                    (&pCVar2->motion_controller,5);
-  fVar4 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                    (&pCVar2->motion_controller,0xc);
-  fVar5 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                    (&pCVar2->motion_controller,0xd);
-  fVar6 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                    (&pCVar2->motion_controller,0xe);
+  fVar2 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20(&pCVar2->base,4);
+  fVar3 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20(&pCVar2->base,5);
+  fVar4 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20(&pCVar2->base,0xc);
+  fVar5 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20(&pCVar2->base,0xd);
+  fVar6 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20(&pCVar2->base,0xe);
   local_28 = (1.0 - (fVar6 + fVar5 + fVar4 + fVar3 + fVar2)) * local_28;
   if (local_28 < 0.0) {
     local_28 = 0.0;
@@ -60,7 +55,7 @@ void __cdecl core_scat_cpp_CScat_blendLayerAction_FUN_005582c0(CScat *this_ptr)
                              (&this_ptr_00->motion_list,motion_name,iVar7);
     target_frame_number =
          core_motion_cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
-                   (&pCVar2->motion_controller,motion_index,(this_ptr->base).base.layer_action_t);
+                   (&pCVar2->base,motion_index,(this_ptr->base).base.layer_action_t);
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
               (pCVar2,motion_index,target_frame_number,local_28,g_ScatIndices[0x10],
                core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0);

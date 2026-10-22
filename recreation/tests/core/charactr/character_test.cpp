@@ -1,4 +1,8 @@
+#include "common/text/textscanner.h"
+#include "core/actor/actorarchive.h"
+#include "core/actor/demonactortype.h"
 #include "core/charactr/character.h"
+#include "tests/mocks/core/notportedcalls.h"
 
 #include <gtest/gtest.h>
 
@@ -155,6 +159,75 @@ TEST(CCharacter, PublicInterface) {
         std::is_same_v<decltype(&CCharacter::moveOutOfHeroWay), int (CCharacter::*)(float)>);
     static_assert(
         std::is_same_v<decltype(&CCharacter::playSoundWithCooldown), void (CCharacter::*)(char *)>);
+}
+
+// A character of no class but its own, so its calls reach CCharacter's.
+class CTestCharacter : public CCharacter {
+public:
+    [[nodiscard]] const CDemonActorType &getActorType() const override {
+        return kType;
+    }
+};
+
+TEST(CCharacter, ItsRecordIsAVersionSixActorThatMissionsCantCreate) {
+    EXPECT_EQ(CCharacter::kType.class_name, "CCharacter");
+    EXPECT_EQ(CCharacter::kType.parent_type, &CDemonActor::kType);
+    EXPECT_EQ(CCharacter::kType.factory_func, nullptr);
+    EXPECT_EQ(CCharacter::kType.latest_version, 6);
+    EXPECT_EQ(CCharacter::kType.name_hash, hashClassName("CCharacter"));
+}
+
+TEST(CCharacter, TheFunctionsNotPortedYetQuit) {
+    CTestCharacter character;
+    common::CTextScanner scanner("");
+    CActorArchive archive(scanner);
+    const NotPortedCalls calls = {
+        {"setup", [&] { character.setup(); }},
+        {"renderOpaque", [&] { static_cast<void>(character.renderOpaque()); }},
+        {"renderTransparent", [&] { static_cast<void>(character.renderTransparent()); }},
+        {"renderBackground", [&] { character.renderBackground(0); }},
+        {"getBoundingBox", [&] { static_cast<void>(character.getBoundingBox(nullptr)); }},
+        {"getCollisionType", [&] { static_cast<void>(character.getCollisionType(nullptr)); }},
+        {"canLookAt", [&] { static_cast<void>(character.canLookAt()); }},
+        {"setPositionAndOrientation",
+         [&] { character.setPositionAndOrientation(nullptr, nullptr); }},
+        {"drop", [&] { character.drop(nullptr, nullptr); }},
+        {"spawnFlies", [&] { character.spawnFlies(0, 0.0F); }},
+        {"calculateChecksum", [&] { character.calculateChecksum(nullptr); }},
+        {"archive", [&] { character.archive(archive); }},
+        {"applyDamage", [&] { character.applyDamage(0, 0.0F); }},
+        {"kill", [&] { character.kill(0, nullptr, 0.0F); }},
+        {"isInvulnerable", [&] { static_cast<void>(character.isInvulnerable()); }},
+        {"isGrabbable", [&] { static_cast<void>(character.isGrabbable(nullptr)); }},
+        {"canBeGrabbed", [&] { static_cast<void>(character.canBeGrabbed(nullptr, 0)); }},
+        {"getGrabbed", [&] { static_cast<void>(character.getGrabbed(nullptr, 0)); }},
+        {"releaseFromGrab", [&] { character.releaseFromGrab(); }},
+        {"getGrabber", [&] { static_cast<void>(character.getGrabber()); }},
+        {"releaseVictim", [&] { character.releaseVictim(); }},
+        {"onVictimLost", [&] { character.onVictimLost(nullptr); }},
+        {"checkCylinderCollisionWorld",
+         [&] { static_cast<void>(character.checkCylinderCollisionWorld(nullptr, 0.0F, nullptr)); }},
+        {"testDamageLine",
+         [&] { static_cast<void>(character.testDamageLine(nullptr, nullptr, nullptr, nullptr)); }},
+        {"processDamage", [&] { character.processDamage(nullptr); }},
+        {"getDeathState", [&] { static_cast<void>(character.getDeathState()); }},
+        {"attractActorToward",
+         [&] { static_cast<void>(character.attractActorToward(nullptr, nullptr)); }},
+        {"canBeAttracted", [&] { static_cast<void>(character.canBeAttracted(nullptr)); }},
+        {"getPartDominantBone", [&] { static_cast<void>(character.getPartDominantBone(0)); }},
+        {"setDoorTarget", [&] { character.setDoorTarget(nullptr); }},
+        {"clearDoorTarget", [&] { character.clearDoorTarget(); }},
+        {"hasDoorTarget", [&] { static_cast<void>(character.hasDoorTarget()); }},
+        {"dropCarriedObject", [&] { character.dropCarriedObject(0, nullptr); }},
+        {"getCarryObjToBodyXForm",
+         [&] { static_cast<void>(character.getCarryObjToBodyXForm(0, nullptr)); }},
+        {"setWalkTarget", [&] { character.setWalkTarget(nullptr, 0.0F, 0.0F); }},
+        {"setWalkTargetImmediate", [&] { character.setWalkTargetImmediate(nullptr); }},
+        {"setWalkTimeout", [&] { character.setWalkTimeout(0.0F); }},
+        {"isWalkComplete", [&] { static_cast<void>(character.isWalkComplete()); }},
+    };
+    EXPECT_EQ(calls.size(), 38U);
+    expectEachQuitsNotPorted("CCharacter", calls);
 }
 
 } // namespace

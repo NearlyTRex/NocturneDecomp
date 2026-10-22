@@ -19,11 +19,11 @@ void __cdecl core_charactr_cpp_CCharacter_setWalkTarget_FUN_00428ab0(CCharacter 
       iVar1 = 0;
       state_name = "STAND";
       this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890
-                              (&(this_ptr->model).motion_controller);
+                              (&(this_ptr->model).base);
       iVar1 = core_motion_cpp_CMotionList_findStateIndex_FUN_004e10a0(this_ptr_00,state_name,iVar1);
       if (-1 < iVar1) {
         core_motion_cpp_CMotionController_setDesiredStateByName_FUN_004e1740
-                  (&(this_ptr->model).motion_controller,"STAND",1);
+                  (&(this_ptr->model).base,"STAND",1);
       }
     }
     this_ptr->is_walking = 0;

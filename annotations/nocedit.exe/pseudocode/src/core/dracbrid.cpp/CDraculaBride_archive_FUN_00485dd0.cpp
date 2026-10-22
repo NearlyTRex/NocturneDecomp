@@ -38,11 +38,11 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_archive_FUN_00485dd0(CDraculaBride 
       motion_name = "incoffin";
     }
     core_motion_cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0
-              (&(this_ptr->base).base.model.motion_controller,motion_name,0.0);
+              (&(this_ptr->base).base.model.base,motion_name,0.0);
   }
   if (3 < g_CDraculaBrideClassVersion) {
     core_actor_cpp_archiveMotionState_FUN_0040b9f0
-              (&(this_ptr->base).base.model.motion_controller,"motionState");
+              (&(this_ptr->base).base.model.base,"motionState");
   }
   if (g_CDraculaBrideClassVersion == 4) {
     iVar1 = 0;

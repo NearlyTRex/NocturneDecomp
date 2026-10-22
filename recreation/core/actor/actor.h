@@ -28,6 +28,7 @@ public:
     [[nodiscard]] const CDemonActorType *getActorClassByName(std::string_view class_name) const;
     // A new actor of the named class; fatal when the class is unknown or can't be created.
     [[nodiscard]] std::unique_ptr<CDemonActor> createActorByName(std::string_view class_name) const;
+    [[nodiscard]] std::size_t getActorClassCount() const;
 
     void setRandomSeed(std::uint32_t seed_value);
     [[nodiscard]] float getRandomFloatFromRange(float min_value, float max_value);

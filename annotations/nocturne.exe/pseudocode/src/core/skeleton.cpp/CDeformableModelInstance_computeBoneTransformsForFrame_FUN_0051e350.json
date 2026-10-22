@@ -2,62 +2,8 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 5,
-        "line": 20,
-        "message": "unknown type name 'FLOATING_SAVE_AREA'"
-      },
-      {
-        "category": "other",
-        "column": 5,
-        "line": 52,
-        "message": "unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?"
-      },
-      {
-        "category": "other",
-        "column": 5,
-        "line": 53,
-        "message": "unknown type name 'PCONTEXT'"
-      },
-      {
-        "category": "other",
-        "column": 85,
-        "line": 258,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 80,
-        "line": 267,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 496,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 496,
-        "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 497,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 497,
-        "message": "exponent has no digits"
-      },
-      {
         "category": "undeclared_identifier",
-        "column": 31,
+        "column": 15,
         "line": 42,
         "message": "use of undeclared identifier 'stack0xffffffa0'"
       }
@@ -367,19 +313,12 @@
   "static_analysis": {
     "analyzed_file": "CDeformableModelInstance_computeBoneTransformsForFrame_FUN_0051e350.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 3,
+      "diagnostic_count": 2,
       "diagnostics": [
         {
           "check_id": "invalidPointerCast",
-          "column": 71,
+          "column": 58,
           "line": 41,
-          "message": "Casting from float * to signed int * is not portable due to different binary data representations on different platforms.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "invalidPointerCast",
-          "column": 14,
-          "line": 42,
           "message": "Casting from float * to signed int * is not portable due to different binary data representations on different platforms.",
           "severity": "portability"
         },
@@ -417,7 +356,7 @@
       "line": 35,
       "match": "&stack0xffffffa0",
       "severity": "moderate",
-      "text": "(int *)local_24,&stack0xffffffa0);",
+      "text": "&stack0xffffffa0);",
       "type": "stack_ref"
     },
     {
@@ -489,15 +428,7 @@
       "line": 41,
       "match": "Cppcheck: invalid pointer cast",
       "severity": "moderate",
-      "text": "(&this_ptr->motion_controller,motion_index,animation_time,(int *)&local_28,",
-      "type": "static_invalid_pointer_cast"
-    },
-    {
-      "description": "Casting from float * to signed int * is not portable due to different binary data representations on different platforms.",
-      "line": 42,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "(int *)local_24,&stack0xffffffa0);",
+      "text": "(&this_ptr->base,motion_index,animation_time,(int *)&local_28,(int *)local_24,",
       "type": "static_invalid_pointer_cast"
     },
     {

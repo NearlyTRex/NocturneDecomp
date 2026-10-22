@@ -37,7 +37,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_processDamage_FUN_005e7030(CVampireB
                                 (damage_info->attacker,g_CMeleeClassInfo.name_hash),
        this_ptr_00 != (CMelee *)0x0)) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                (&(this_ptr->base).base.model.motion_controller,10,1);
+                (&(this_ptr->base).base.model.base,10,1);
       pCVar4 = (*((this_ptr_00->base).base.vtable._ub)->getCarrier)((CDemonActor *)this_ptr_00);
       if (pCVar4 != (CDemonActor *)0x0) {
         (*((pCVar4->vtable)._ub)->drop)(pCVar4,(CDemonActor *)this_ptr_00,(CVector3f *)0x0);
@@ -85,8 +85,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_processDamage_FUN_005e7030(CVampireB
     else {
       iVar1 = 5;
     }
-    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              (&(this_ptr->model).motion_controller,iVar1,1);
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&(this_ptr->model).base,iVar1,1);
     iVar1 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handle);
     if (iVar1 == 0) {
       uVar3 = (*((this_ptr->base).base.base.vtable._ub)->playSound)

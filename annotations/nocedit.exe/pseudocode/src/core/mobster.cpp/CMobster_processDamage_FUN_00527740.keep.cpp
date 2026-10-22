@@ -30,10 +30,10 @@ void __cdecl core_mobster_cpp_CMobster_processDamage_FUN_00527740(CMobster *this
   if (fVar1 <= 0.0) {
     (this_ptr->base).base.hit_points = 0.0;
     pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                       (&this_ptr_00->motion_controller);
+                       (&this_ptr_00->base);
     if ((pSVar3->state_index != 5) && (pSVar3->state_index != 4)) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                (&this_ptr_00->motion_controller,4,1);
+                (&this_ptr_00->base,4,1);
       (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
                 ((CCharacter *)this_ptr,1,(CVector3f *)0x0);
       if (this_ptr->death_sound_played == 0) {
@@ -54,7 +54,7 @@ void __cdecl core_mobster_cpp_CMobster_processDamage_FUN_00527740(CMobster *this
   if (pCVar2 == (CTommyGun *)0x0) {
 LAB_005277e1:
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              (&this_ptr_00->motion_controller,3,1);
+              (&this_ptr_00->base,3,1);
   }
   else {
     iVar2 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);

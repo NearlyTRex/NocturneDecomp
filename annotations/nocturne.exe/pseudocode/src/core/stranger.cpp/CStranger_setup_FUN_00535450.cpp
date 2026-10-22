@@ -68,18 +68,15 @@ void __cdecl core_stranger_cpp_CStranger_setup_FUN_00535450(CStranger *this_ptr)
   pcVar3 = "turnlstart";
   (this_ptr->base).base.carry_hands[0].bone_index = _DAT_02dc9f84;
   (this_ptr->base).base.carry_hands[1].bone_index = _DAT_02dc9f88;
-  pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890
-                     (&this_ptr_00->motion_controller);
+  pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890(&this_ptr_00->base);
   _DAT_02dc9fa0 = core_motion_cpp_CMotionList_findMotionIndex_FUN_004e1010(pCVar1,pcVar3,iVar4);
   iVar4 = 1;
   pcVar3 = "turnrstart";
-  pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890
-                     (&this_ptr_00->motion_controller);
+  pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890(&this_ptr_00->base);
   _DAT_02dc9fa4 = core_motion_cpp_CMotionList_findMotionIndex_FUN_004e1010(pCVar1,pcVar3,iVar4);
   iVar4 = 1;
   pcVar3 = "pickup";
-  pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890
-                     (&this_ptr_00->motion_controller);
+  pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890(&this_ptr_00->base);
   iVar4 = core_motion_cpp_CMotionList_findMotionIndex_FUN_004e1010(pCVar1,pcVar3,iVar4);
   core_skeleton_cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0051b8f0
             (this_ptr_00,iVar4,22.0);

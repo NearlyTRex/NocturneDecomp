@@ -95,7 +95,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d
         }
         pCVar1 = &(this_ptr->base).base.model;
         fVar3 = core_motion_cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
-                          (&pCVar1->motion_controller,g_GabriellaIndices[0xd],local_24);
+                          (&pCVar1->base,g_GabriellaIndices[0xd],local_24);
         core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
                   (pCVar1,g_GabriellaIndices[0xd],fVar3,local_28,g_GabriellaIndices[4],
                    core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0);
@@ -145,7 +145,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d
         pCVar1 = &(this_ptr->base).base.model;
         (this_ptr->base).base.model.bone_update_mode = 2;
         fVar3 = core_motion_cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
-                          (&pCVar1->motion_controller,iVar6,fVar3);
+                          (&pCVar1->base,iVar6,fVar3);
         core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
                   (pCVar1,g_GabriellaIndices[0xe],fVar3,0);
         (this_ptr->base).base.model.bone_update_mode = 0;
@@ -188,7 +188,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d
 #endif
         pCVar1 = &(this_ptr->base).base.model;
         fVar3 = core_motion_cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
-                          (&pCVar1->motion_controller,g_GabriellaIndices[0xd],local_20);
+                          (&pCVar1->base,g_GabriellaIndices[0xd],local_20);
         core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
                   (pCVar1,g_GabriellaIndices[0xd],fVar3,local_28,g_GabriellaIndices[4],
                    core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0);
@@ -219,7 +219,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d
         (this_ptr->base).base.model.bone_update_mode = 2;
         pCVar1 = &(this_ptr->base).base.model;
         fVar3 = core_motion_cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
-                          (&pCVar1->motion_controller,g_GabriellaIndices[0xf],1.0 - fVar3 * fVar1);
+                          (&pCVar1->base,g_GabriellaIndices[0xf],1.0 - fVar3 * fVar1);
         core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
                   (pCVar1,g_GabriellaIndices[0xf],fVar3,g_GabriellaIndices[6]);
         (this_ptr->base).base.model.bone_update_mode = 0;

@@ -62,18 +62,15 @@ void __cdecl core_gabriela_cpp_CGabriella_setup_FUN_004957c0(CGabriella *this_pt
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_01,"Bip01 Spine",1);
   iVar3 = 1;
   pcVar2 = "gab draw";
-  pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890
-                     (&this_ptr_00->motion_controller);
+  pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890(&this_ptr_00->base);
   _DAT_01c713cc = core_motion_cpp_CMotionList_findMotionIndex_FUN_004e1010(pCVar1,pcVar2,iVar3);
   iVar3 = 1;
   pcVar2 = "gab shoot";
-  pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890
-                     (&this_ptr_00->motion_controller);
+  pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890(&this_ptr_00->base);
   _DAT_01c713d4 = core_motion_cpp_CMotionList_findMotionIndex_FUN_004e1010(pCVar1,pcVar2,iVar3);
   iVar3 = 1;
   pcVar2 = "gab crossbow shoot";
-  pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890
-                     (&this_ptr_00->motion_controller);
+  pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890(&this_ptr_00->base);
   _DAT_01c713d0 = core_motion_cpp_CMotionList_findMotionIndex_FUN_004e1010(pCVar1,pcVar2,iVar3);
   (this_ptr->base).pushed_object = (CBoxActor *)0x0;
   (this_ptr->base).lever_to_pull = (CLever *)0x0;

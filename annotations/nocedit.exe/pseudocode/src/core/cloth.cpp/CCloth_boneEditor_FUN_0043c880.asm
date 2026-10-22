@@ -494,7 +494,7 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 0043cc6f
         ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0043cc74
-    FLD float ptr [0x00838e60]          ; 0043cc77 | g_CDeformableModelInstanceInstance.motion_controller.current_frame_number
+    FLD float ptr [0x00838e60]          ; 0043cc77 | g_CDeformableModelInstanceInstance.base.current_frame_number
     SUB ESP,0x8                         ; 0043cc7d
     MOV EBX,dword ptr [EBP + -0x10]     ; 0043cc80
     FSTP double ptr [EBP + 0xfffffab4]  ; 0043cc83
@@ -1350,7 +1350,7 @@ section .text
     RET                                 ; 0043d412
     FLD float ptr [ESP + 0x500]         ; 0043d413
         ;   Label: LAB_0043d413
-    MOV EDX,dword ptr [0x00838e60]      ; 0043d41a | g_CDeformableModelInstanceInstance.motion_controller.current_frame_number
+    MOV EDX,dword ptr [0x00838e60]      ; 0043d41a | g_CDeformableModelInstanceInstance.base.current_frame_number
     FMUL float ptr [EAX + 0x20]         ; 0043d420
     MOV dword ptr [ESP + 0x4ec],EDX     ; 0043d423
     FADD float ptr [ESP + 0x4ec]        ; 0043d42a

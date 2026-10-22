@@ -25,9 +25,9 @@ void __cdecl core_setedit_cpp_CDemonSet_rebuildAllFogAndPVS_FUN_005805a0(CDemonS
     pCVar4 = this_ptr->cameras;
     do {
       _sprintf(local_174,"backdrop\\%s.fog",pCVar4->name);
-      remove(local_174);
+      _remove(local_174);
       _sprintf(local_174,"backdrop\\%s.pvs",pCVar4->name);
-      remove(local_174);
+      _remove(local_174);
       ptr = pCVar4->pvs_list;
       pCVar4->pvs_count = 0;
       if (ptr != (int *)0x0) {

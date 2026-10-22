@@ -2,60 +2,6 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 5,
-        "line": 20,
-        "message": "unknown type name 'FLOATING_SAVE_AREA'"
-      },
-      {
-        "category": "other",
-        "column": 5,
-        "line": 52,
-        "message": "unknown type name 'PEXCEPTION_RECORD'; did you mean '_EXCEPTION_RECORD'?"
-      },
-      {
-        "category": "other",
-        "column": 5,
-        "line": 53,
-        "message": "unknown type name 'PCONTEXT'"
-      },
-      {
-        "category": "other",
-        "column": 85,
-        "line": 258,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 80,
-        "line": 267,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 496,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 496,
-        "message": "invalid digit 'C' in decimal constant"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 497,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 497,
-        "message": "exponent has no digits"
-      },
-      {
         "category": "incompatible_types",
         "column": 21,
         "line": 122,
@@ -94,26 +40,80 @@
       {
         "category": "format_error",
         "column": 54,
-        "line": 484,
+        "line": 483,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "type_error",
         "column": 46,
-        "line": 499,
+        "line": 498,
         "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
       },
       {
         "category": "type_error",
         "column": 48,
-        "line": 500,
+        "line": 499,
         "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
+      },
+      {
+        "category": "type_error",
+        "column": 26,
+        "line": 500,
+        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
         "category": "type_error",
         "column": 26,
         "line": 501,
         "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
+      },
+      {
+        "category": "type_error",
+        "column": 48,
+        "line": 502,
+        "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
+      },
+      {
+        "category": "type_error",
+        "column": 58,
+        "line": 513,
+        "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
+      },
+      {
+        "category": "type_error",
+        "column": 58,
+        "line": 514,
+        "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
+      },
+      {
+        "category": "type_error",
+        "column": 58,
+        "line": 518,
+        "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
+      },
+      {
+        "category": "cast_error",
+        "column": 30,
+        "line": 523,
+        "message": "cannot cast from type 'float' to pointer type 'float *'"
+      },
+      {
+        "category": "cast_error",
+        "column": 49,
+        "line": 524,
+        "message": "C-style cast from 'float *' to 'float' is not allowed"
+      },
+      {
+        "category": "cast_error",
+        "column": 47,
+        "line": 525,
+        "message": "C-style cast from 'float *' to 'float' is not allowed"
+      },
+      {
+        "category": "cast_error",
+        "column": 21,
+        "line": 527,
+        "message": "C-style cast from 'float *' to 'float' is not allowed"
       }
     ],
     "success": false,
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 2754,
-    "complexity_score": 1773,
+    "complexity_score": 1769,
     "cross_reference_count": 1,
     "function_call_count": 51,
     "global_count": 68,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 1163,
+    "pseudocode_lines": 1159,
     "suspect_count": 57,
     "suspect_types": [
       "bit_int_float_compare",
@@ -139,7 +139,7 @@
       "unrolled_memcpy",
       "unrolled_memset"
     ],
-    "total_lines": 3917
+    "total_lines": 3913
   },
   "cross_references": [
     {
@@ -1026,7 +1026,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 492,
+      "line": 491,
       "match": "._8_4_",
       "severity": "mild",
       "text": "fStack_204 = (float)auStack_260._8_4_ + fStack_24c;",
@@ -1034,7 +1034,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 493,
+      "line": 492,
       "match": "._12_4_",
       "severity": "mild",
       "text": "CStack_200.x = (float)auStack_260._12_4_ + fStack_248;",
@@ -1042,7 +1042,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 494,
+      "line": 493,
       "match": "._0_4_",
       "severity": "mild",
       "text": "auStack_15c._0_4_ = fStack_204 * 0.5f;",
@@ -1050,7 +1050,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 495,
+      "line": 494,
       "match": "._4_4_",
       "severity": "mild",
       "text": "auStack_15c._4_4_ = CStack_200.x * 0.5f;",
@@ -1058,7 +1058,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 496,
+      "line": 495,
       "match": "._16_4_",
       "severity": "mild",
       "text": "CStack_200.y = (float)auStack_260._16_4_ + fStack_244;",
@@ -1066,7 +1066,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 505,
+      "line": 504,
       "match": "in_stack_fffffd10",
       "severity": "moderate",
       "text": "in_stack_fffffd10 = __BITCAST_DOUBLE(CONCAT44(pCVar16->y,0x536fc1));",
@@ -1074,7 +1074,7 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 505,
+      "line": 504,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "in_stack_fffffd10 = __BITCAST_DOUBLE(CONCAT44(pCVar16->y,0x536fc1));",
@@ -1082,7 +1082,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 507,
+      "line": 506,
       "match": "._8_4_",
       "severity": "mild",
       "text": "fStack_f0 = fStack_24c - (float)auStack_260._8_4_;",
@@ -1090,7 +1090,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 508,
+      "line": 507,
       "match": "._16_4_",
       "severity": "mild",
       "text": "fStack_e8 = fStack_244 - (float)auStack_260._16_4_;",
@@ -1098,7 +1098,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 512,
+      "line": 511,
       "match": "._12_4_",
       "severity": "mild",
       "text": "fStack_ec = fStack_248 - (float)auStack_260._12_4_;",
@@ -1106,7 +1106,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 525,
+      "line": 524,
       "match": "in_stack_fffffd10",
       "severity": "moderate",
       "text": "in_stack_fffffd10 = __BITCAST_DOUBLE(CONCAT44(pUVar26,this_ptr));",
@@ -1114,7 +1114,7 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 525,
+      "line": 524,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "in_stack_fffffd10 = __BITCAST_DOUBLE(CONCAT44(pUVar26,this_ptr));",
@@ -1122,7 +1122,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 583,
+      "line": 582,
       "match": "in_stack_fffffd10",
       "severity": "moderate",
       "text": "in_stack_fffffd10 = __BITCAST_DOUBLE(CONCAT44(pCStack_28,0x5368ab));",
@@ -1130,7 +1130,7 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 583,
+      "line": 582,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "in_stack_fffffd10 = __BITCAST_DOUBLE(CONCAT44(pCStack_28,0x5368ab));",
@@ -1138,7 +1138,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 587,
+      "line": 586,
       "match": "in_stack_fffffd10",
       "severity": "moderate",
       "text": "in_stack_fffffd10 = __BITCAST_DOUBLE(CONCAT44(0x536e8b,SUB84(in_stack_fffffd10,0)));",
@@ -1146,7 +1146,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 587,
+      "line": 586,
       "match": "in_stack_fffffd10",
       "severity": "moderate",
       "text": "in_stack_fffffd10 = __BITCAST_DOUBLE(CONCAT44(0x536e8b,SUB84(in_stack_fffffd10,0)));",
@@ -1154,7 +1154,7 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 587,
+      "line": 586,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "in_stack_fffffd10 = __BITCAST_DOUBLE(CONCAT44(0x536e8b,SUB84(in_stack_fffffd10,0)));",
@@ -1162,7 +1162,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 587,
+      "line": 586,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "in_stack_fffffd10 = __BITCAST_DOUBLE(CONCAT44(0x536e8b,SUB84(in_stack_fffffd10,0)));",
@@ -1170,7 +1170,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 592,
+      "line": 591,
       "match": "in_stack_fffffd10",
       "severity": "moderate",
       "text": "in_stack_fffffd10 = __BITCAST_DOUBLE(CONCAT44(0x23,pCStack_28));",
@@ -1178,7 +1178,7 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 592,
+      "line": 591,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "in_stack_fffffd10 = __BITCAST_DOUBLE(CONCAT44(0x23,pCStack_28));",
@@ -1186,7 +1186,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 600,
+      "line": 599,
       "match": "in_stack_fffffd10",
       "severity": "moderate",
       "text": "in_stack_fffffd10 = (double)ZEXT48(pCVar2);",
@@ -1194,7 +1194,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 609,
+      "line": 607,
       "match": "in_stack_fffffd10",
       "severity": "moderate",
       "text": "in_stack_fffffd10 = __BITCAST_DOUBLE(CONCAT44(this_ptr,0x536e0d));",
@@ -1202,7 +1202,7 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 609,
+      "line": 607,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "in_stack_fffffd10 = __BITCAST_DOUBLE(CONCAT44(this_ptr,0x536e0d));",
@@ -1210,7 +1210,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 630,
+      "line": 628,
       "match": "._4_4_",
       "severity": "mild",
       "text": "if (local_24 < (float)auStack_260._4_4_) {",
@@ -1218,7 +1218,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 631,
+      "line": 629,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_24 = (float)auStack_260._4_4_;",
@@ -1226,7 +1226,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 633,
+      "line": 631,
       "match": "._0_4_",
       "severity": "mild",
       "text": "if ((float)auStack_260._0_4_ < local_24) {",
@@ -1234,7 +1234,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 634,
+      "line": 632,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_24 = (float)auStack_260._0_4_;",
@@ -1242,7 +1242,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 644,
+      "line": 642,
       "match": "in_stack_fffffd10",
       "severity": "moderate",
       "text": "in_stack_fffffd10 = __BITCAST_DOUBLE(CONCAT44(0x536e4f,pUVar26));",
@@ -1250,7 +1250,7 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 644,
+      "line": 642,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "in_stack_fffffd10 = __BITCAST_DOUBLE(CONCAT44(0x536e4f,pUVar26));",
@@ -1258,7 +1258,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 670,
+      "line": 668,
       "match": "._8_4_",
       "severity": "mild",
       "text": "auStack_98._8_4_ = 0.0;",
@@ -1266,7 +1266,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 676,
+      "line": 674,
       "match": "._8_4_",
       "severity": "mild",
       "text": "auStack_110._8_4_ = CStack_120.x - (this_ptr->base).base.base.location.position.x;",
@@ -1274,7 +1274,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 680,
+      "line": 678,
       "match": "in_stack_fffffd10",
       "severity": "moderate",
       "text": "in_stack_fffffd10 = __BITCAST_DOUBLE(CONCAT44(0x536d9d,pUVar26));",
@@ -1282,7 +1282,7 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 680,
+      "line": 678,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "in_stack_fffffd10 = __BITCAST_DOUBLE(CONCAT44(0x536d9d,pUVar26));",
@@ -1290,7 +1290,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 772,
+      "line": 770,
       "match": "._0_4_",
       "severity": "mild",
       "text": "auStack_1a4._0_4_ = (this_ptr->ladder_offset).z * fStack_2c8;",
@@ -1298,7 +1298,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 779,
+      "line": 777,
       "match": "._0_4_",
       "severity": "mild",
       "text": "(this_ptr->base).base.base.location.position.z = fVar22 + (float)auStack_1a4._0_4_;",
@@ -1306,7 +1306,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 972,
+      "line": 970,
       "match": "in_stack_fffffd10",
       "severity": "moderate",
       "text": "in_stack_fffffd10 = 2.12199579936439e-314;",
@@ -1314,23 +1314,23 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 975,
+      "line": 973,
       "match": "in_stack_fffffd10",
       "severity": "moderate",
-      "text": "(&(this_ptr->base).base.model.motion_controller,SUB84(in_stack_fffffd10,0),",
+      "text": "(&(this_ptr->base).base.model.base,SUB84(in_stack_fffffd10,0),",
       "type": "stack_param"
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 975,
+      "line": 973,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "(&(this_ptr->base).base.model.motion_controller,SUB84(in_stack_fffffd10,0),",
+      "text": "(&(this_ptr->base).base.model.base,SUB84(in_stack_fffffd10,0),",
       "type": "sub84_truncation"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 976,
+      "line": 974,
       "match": "in_stack_fffffd10",
       "severity": "moderate",
       "text": "(int)((ulonglong)in_stack_fffffd10 >> 0x20));",
@@ -1338,7 +1338,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 1122,
+      "line": 1118,
       "match": "._0_4_",
       "severity": "mild",
       "text": "CStack_1dc.x = (float)auStack_110._0_4_ - CStack_194.x;",
@@ -1346,7 +1346,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 1123,
+      "line": 1119,
       "match": "._8_4_",
       "severity": "mild",
       "text": "CStack_1dc.z = (float)auStack_110._8_4_ - CStack_194.z;",
@@ -1378,7 +1378,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 614,
+      "line": 612,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "UStack_a8.vec.x = (pCVar8->orient).vec.x;",
@@ -1394,7 +1394,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 479,
+      "line": 478,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -1402,7 +1402,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 803,
+      "line": 801,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->pending_velocity).z = 0.0;",
@@ -1410,7 +1410,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 821,
+      "line": 819,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -1418,7 +1418,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 825,
+      "line": 823,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.position_delta.z = 0.0;",
@@ -1426,7 +1426,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 1016,
+      "line": 1014,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -1434,7 +1434,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x42c80000 is the IEEE 754 bit pattern of 100f. Rewrite in a .keep as a plain float compare against 100f.",
-      "line": 956,
+      "line": 954,
       "match": "0x42c80000 < (int)SStack_2bc.damage_amount)",
       "severity": "moderate",
       "text": "if (0x42c80000 < (int)SStack_2bc.damage_amount) {",

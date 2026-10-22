@@ -21,7 +21,7 @@ void __cdecl core_stranger_cpp_CStranger_updateTurnBlending_FUN_005bf800(CStrang
   (this_ptr->pending_velocity).y = (this_ptr->pending_velocity).z;
   (this_ptr->pending_velocity).x = (this_ptr->pending_velocity).y;
   fVar4 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                    (&(this_ptr->base).base.model.motion_controller,0);
+                    (&(this_ptr->base).base.model.base,0);
   if ((fVar4 <= 0.0) || (1.0 <= this_ptr->turn_blend_weight)) {
     this_ptr->turn_angle = 0.0;
     this_ptr->turn_motion_index = -1;

@@ -55,8 +55,7 @@ void __cdecl core_cow_cpp_CZombieCow_process_FUN_0043bdb0(CZombieCow *this_ptr,f
   local_1c = delta_time * (this_ptr->base).speed;
   this_ptr_00 = &(this_ptr->base).base.model;
   while (0.0 < local_1c) {
-    iVar4 = core_motion_cpp_CMotionController_advance_FUN_004e11c0
-                      (&this_ptr_00->motion_controller,&local_1c);
+    iVar4 = core_motion_cpp_CMotionController_advance_FUN_004e11c0(&this_ptr_00->base,&local_1c);
     core_charactr_cpp_CCharacter_processMotion_FUN_0042add0((CCharacter *)this_ptr,iVar4);
   }
   fVar10 = (this_ptr->base).speed;
@@ -64,8 +63,7 @@ void __cdecl core_cow_cpp_CZombieCow_process_FUN_0043bdb0(CZombieCow *this_ptr,f
   fVar11 = (float)0.25;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
   (this_ptr->base).base.turn_speed = delta_time * fVar3 * fVar10 * fVar11;
-  pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                     (&this_ptr_00->motion_controller);
+  pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(&this_ptr_00->base);
   iVar4 = pSVar5->state_index;
   iVar6 = core_charactr_cpp_CCharacter_processWalking_FUN_00428c00
                     ((CCharacter *)this_ptr,delta_time);
@@ -84,12 +82,11 @@ void __cdecl core_cow_cpp_CZombieCow_process_FUN_0043bdb0(CZombieCow *this_ptr,f
             this_ptr->sfx_handle = uVar9;
           }
           core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                    (&(this_ptr->base).base.model.motion_controller,1,1);
+                    (&(this_ptr->base).base.model.base,1,1);
         }
       }
       else {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                  (&this_ptr_00->motion_controller,1,1);
+        core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,1,1);
       }
       break;
     case 1:
@@ -98,8 +95,7 @@ void __cdecl core_cow_cpp_CZombieCow_process_FUN_0043bdb0(CZombieCow *this_ptr,f
       if ((this_ptr->base).victim == (CCharacter *)0x0) {
         iVar4 = core_enemy_cpp_CEnemy_updatePatrol_FUN_0047a030(&this_ptr->base,delta_time);
         if (iVar4 == 0) {
-          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                    (&this_ptr_00->motion_controller,0,1);
+          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,0,1);
         }
       }
       else {
@@ -124,12 +120,10 @@ void __cdecl core_cow_cpp_CZombieCow_process_FUN_0043bdb0(CZombieCow *this_ptr,f
         if (iVar4 < 0) {
           engine_console_cpp_CConsole_printf_FUN_0043ac60
                     (g_CConsole_PTR_005ad350,"%s gave up chase - I'm confused\n",this_ptr);
-          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                    (&this_ptr_00->motion_controller,0,1);
+          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,0,1);
         }
         else if ((0 < iVar4) && ((this_ptr->base).attack_cooldown <= 0.0)) {
-          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                    (&this_ptr_00->motion_controller,2,1);
+          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,2,1);
           (this_ptr->base).attack_cooldown = 2.5;
         }
       }
@@ -175,13 +169,12 @@ LAB_0043c040:
       iVar4 = 0;
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-              (&(this_ptr->base).base.model.motion_controller,iVar4,1);
+              (&(this_ptr->base).base.model.base,iVar4,1);
   }
   else {
     if (uVar9 < 3) goto LAB_0043be80;
     if (uVar9 != 3) goto LAB_0043c040;
-    core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-              (&this_ptr_00->motion_controller,0,1);
+    core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,0,1);
     engine_console_cpp_CConsole_printf_FUN_0043ac60
               (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",this_ptr);
   }

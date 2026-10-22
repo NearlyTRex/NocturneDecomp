@@ -12,7 +12,7 @@ SUMMARY STATISTICS
 ====================================================================================================
 
   Total functions analyzed:          4,923
-  Unnamed functions (FUN_):          73 ( 1.5%)
+  Unnamed functions (FUN_):          71 ( 1.4%)
   Functions with unnamed params:     15 ( 0.3%)
   Functions with type issues:        1,664 (33.8%)
   (Name/address mismatches and duplicate names are reported at the end)
@@ -48,10 +48,8 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x004f5110  __cdecl       1 callers
     0x004f49d8  unknown       0 callers
 
-  core/setdir.cpp (6 unnamed)
+  core/setdir.cpp (4 unnamed)
     0x005125a0  __cdecl       5 callers
-    0x00513670  __cdecl       1 callers
-    0x00513720  __cdecl       1 callers
     0x00514390  unknown       0 callers
     0x005143a0  unknown       0 callers
     0x005143b0  unknown       0 callers
@@ -230,7 +228,7 @@ Sorted by number of unnamed parameters (most unnamed first).
     Unnamed: param_2 (CDemonActor *)
     Named:   this_ptr (CDemonMission *)
 
-  CDemonSet
+  CDemonSet_writeThumbs
     Address: 0x00513670  File: core/setdir.cpp
     Unnamed: param_2 (char *)
     Named:   this_ptr (CDemonSet *)
@@ -4608,7 +4606,7 @@ Undefined types in variables (1604)
     Locals:  local_4c (undefined), local_40 (undefined), local_34 (undefined), local_28 (undefined), local_1c (undefined)
     Suggested: Resolve undefined types to concrete types
 
-  CDemonSet
+  CDemonSet_saveThumbs
     Address: 0x00513720  File: core/setdir.cpp
     Locals:  local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -9147,7 +9145,7 @@ FUNCTION NAME / ADDRESS MISMATCHES (0)
   No mismatches found.
 
 ====================================================================================================
-DUPLICATE FUNCTION NAMES (24 groups)
+DUPLICATE FUNCTION NAMES (23 groups)
 ====================================================================================================
 
 Functions that share the same base name (ignoring FUN_XXXXXXXX suffix).
@@ -9236,11 +9234,6 @@ Some are legitimate overloads, others may need disambiguating names.
     0x00514390  (void)
     0x005143a0  (void)
     0x005143b0  (void)
-
-  core_setdir.cpp_CDemonSet  (3 functions)
-    0x005125a0  (CDemonSet *this_ptr,CDemonActor *param_2,int param_3)
-    0x00513670  (CDemonSet *this_ptr,char *param_2)
-    0x00513720  (CDemonSet *this_ptr)
 
   core_sound.cpp  (3 functions)
     0x0052ee20  (void)

@@ -3095,6 +3095,8 @@ def generate_crt_header(functions_to_process):
     lines.append("__attribute__((format(scanf, 2, 3)))")
     lines.append("extern int _fscanf(_FILE* f, const char* format, ...);")
     lines.append("extern _FILE* _freopen(const char* filename, const char* mode, _FILE* stream);")
+    lines.append("extern int _remove(const char* filename);")
+    lines.append("extern int _rename(const char* old_filename, const char* new_filename);")
     lines.append("")
     lines.append("// ---------------------------------------------------------------------------")
     lines.append("// Printf/Scanf Type Bridges")

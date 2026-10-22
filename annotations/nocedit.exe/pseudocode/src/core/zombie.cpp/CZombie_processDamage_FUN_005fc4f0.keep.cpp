@@ -31,7 +31,7 @@ void __cdecl core_zombie_cpp_CZombie_processDamage_FUN_005fc4f0(CZombie *this_pt
   (this_ptr->base).attack_cooldown = 1.2;
   if (0.0 < fVar1) {
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              (&this_ptr_00->motion_controller,4,1);
+              (&this_ptr_00->base,4,1);
     if (this_ptr->pain_cooldown <= 0.0) {
       this_ptr->pain_cooldown = 2.0;
       iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[0]);
@@ -54,7 +54,7 @@ void __cdecl core_zombie_cpp_CZombie_processDamage_FUN_005fc4f0(CZombie *this_pt
   else {
     (this_ptr->base).base.hit_points = 0.0;
     pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                       (&this_ptr_00->motion_controller);
+                       (&this_ptr_00->base);
     if ((pSVar2->state_index != 8) && (pSVar2->state_index != 7)) {
       core_zombie_cpp_CZombie_dropAndClearTarget_FUN_005fbde0(this_ptr);
       iVar4 = 6;
@@ -65,14 +65,14 @@ void __cdecl core_zombie_cpp_CZombie_processDamage_FUN_005fc4f0(CZombie *this_pt
         iVar6 = 0;
         pcVar5 = "lookForHead";
         this_ptr_01 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
-                                (&(this_ptr->base).base.model.motion_controller);
+                                (&(this_ptr->base).base.model.base);
         iVar6 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(this_ptr_01,pcVar5,iVar6);
         if (-1 < iVar6) {
           iVar4 = 9;
         }
       }
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                (&(this_ptr->base).base.model.motion_controller,iVar4,1);
+                (&(this_ptr->base).base.model.base,iVar4,1);
       sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handles[0]);
       if (this_ptr->is_female == 0) {
         pcVar5 = "zom-d0?.wav";

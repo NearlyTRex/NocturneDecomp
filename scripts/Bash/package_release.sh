@@ -75,7 +75,7 @@ for preset in "${PRESETS[@]}"; do
 
     if [ "${DO_BUILD}" -eq 1 ]; then
         echo "package_release.sh: building ${preset}"
-        "${ROOT_DIR}/build.sh" "${preset}"
+        SKIP_REGEN=1 "${ROOT_DIR}/build.sh" "${preset}"
     fi
 
     if [ ! -d "${build_dir}" ]; then
@@ -83,40 +83,38 @@ for preset in "${PRESETS[@]}"; do
         exit 1
     fi
 
+    # The build writes what its archive holds: the binary, the archive format,
+    # and the runtime libraries its platform file says belong beside it, under
+    # the name the loader asks for. cmake/platforms/README.md has the format.
+    manifest="${build_dir}/package.txt"
+    if [ ! -f "${manifest}" ]; then
+        echo "package_release.sh: ${preset} has no ${manifest}; configure it with NOCTURNE_BUILD_EXE=ON" >&2
+        exit 1
+    fi
+    binary=""
+    format=""
+    runtime=()
+    while IFS='=' read -r key value; do
+        case "${key}" in
+            binary)  binary="${value}" ;;
+            format)  format="${value}" ;;
+            runtime) runtime+=("${value}") ;;
+        esac
+    done < "${manifest}"
+    if [ ! -f "${binary}" ]; then
+        echo "package_release.sh: ${preset} produced no binary at ${binary}" >&2
+        exit 1
+    fi
+
     stage="${OUT_DIR}/nocturne-${VERSION}-${preset}"
     rm -rf "${stage}"
     mkdir -p "${stage}"
-
-    # The executable, whichever name this target produced.
-    binary=""
-    for candidate in "${build_dir}/nocturne" "${build_dir}/nocturne.exe"; do
-        if [ -f "${candidate}" ]; then binary="${candidate}"; break; fi
-    done
-    if [ -z "${binary}" ]; then
-        echo "package_release.sh: ${preset} produced no nocturne binary" >&2
-        exit 1
-    fi
     cp "${binary}" "${stage}/"
-
-    # Runtime libraries. A Windows cross build leaves its SDL2 and mingw runtime
-    # DLLs beside the executable; a Linux build leaves its SDL2 sub-builds under
-    # _deps/, and the executable is linked with $ORIGIN so it finds them once
-    # they are copied in here. Copy the real files rather than the version
-    # symlinks, under the SONAME the loader asks for.
-    shopt -s nullglob
-    for lib in "${build_dir}"/*.dll; do
-        cp "${lib}" "${stage}/"
+    # -L: a soname is usually a symlink to the versioned file; ship the file
+    # under the soname.
+    for lib in "${runtime[@]}"; do
+        cp -L "${lib}" "${stage}/"
     done
-    for lib in "${build_dir}"/_deps/*/lib*.so.[0-9]*; do
-        # libSDL2-2.0d.so.0.3000.0 and libSDL2-2.0d.so.0 are the same file; the
-        # second is what the binary records, so that is the name it ships under.
-        base="$(basename "${lib}")"
-        case "${base}" in
-            *.so.[0-9]*.[0-9]*.[0-9]*) continue ;;
-        esac
-        cp -L "${lib}" "${stage}/${base}"
-    done
-    shopt -u nullglob
 
     for f in "${COMMON_FILES[@]}"; do
         if [ -f "${ROOT_DIR}/${f}" ]; then cp "${ROOT_DIR}/${f}" "${stage}/"; fi
@@ -127,17 +125,17 @@ for preset in "${PRESETS[@]}"; do
     "${binary}" --version > "${stage}/VERSION.txt" 2>/dev/null || \
         echo "NocturneDecomp ${VERSION}, ${preset}" > "${stage}/VERSION.txt"
 
-    case "${preset}" in
-        *windows*)
-            archive="${OUT_DIR}/nocturne-${VERSION}-${preset}.zip"
-            rm -f "${archive}"
-            ( cd "${OUT_DIR}" && zip -qr "$(basename "${archive}")" "$(basename "${stage}")" )
-            ;;
-        *)
-            archive="${OUT_DIR}/nocturne-${VERSION}-${preset}.tar.gz"
-            rm -f "${archive}"
-            tar -C "${OUT_DIR}" -czf "${archive}" "$(basename "${stage}")"
-            ;;
+    archive="${OUT_DIR}/nocturne-${VERSION}-${preset}.${format}"
+    rm -f "${archive}"
+    case "${format}" in
+        zip)    if command -v zip >/dev/null; then
+                    ( cd "${OUT_DIR}" && zip -qr "$(basename "${archive}")" "$(basename "${stage}")" )
+                else
+                    ( cd "${OUT_DIR}" && 7z a -tzip -bso0 "$(basename "${archive}")" "$(basename "${stage}")" )
+                fi ;;
+        tar.gz) tar -C "${OUT_DIR}" -czf "${archive}" "$(basename "${stage}")" ;;
+        *)      echo "package_release.sh: unknown archive format '${format}' in ${manifest}" >&2
+                exit 1 ;;
     esac
 
     rm -rf "${stage}"

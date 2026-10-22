@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1402,
-    "complexity_score": 383,
+    "complexity_score": 381,
     "cross_reference_count": 1,
     "function_call_count": 45,
     "global_count": 56,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 383,
+    "pseudocode_lines": 381,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 1785
+    "total_lines": 1783
   },
   "cross_references": [
     {
@@ -520,7 +520,7 @@
     },
     {
       "addr": "00838e60",
-      "name": "g_CDeformableModelInstanceInstance.motion_controller.current_frame_number",
+      "name": "g_CDeformableModelInstanceInstance.base.current_frame_number",
       "type": "undefined4",
       "value": null
     },
@@ -673,7 +673,7 @@
   "resolved_suspects": [
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 123,
+      "line": 122,
       "match": "(CVector3f *)((int)(pCVar7 + 0x17) +",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -682,7 +682,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 230,
+      "line": 228,
       "match": "SUB84(",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -691,7 +691,7 @@
     },
     {
       "description": "Pointer value `(pCVar7 + 0x17)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 123,
+      "line": 122,
       "match": "(int)(pCVar7 + 0x17)",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -700,7 +700,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 297,
+      "line": 295,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -709,7 +709,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 302,
+      "line": 300,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -718,7 +718,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 317,
+      "line": 315,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -727,7 +727,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 118,
+      "line": 117,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -736,7 +736,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar7` self-updates via element-arithmetic `(int)(pCVar7 + N) + M`, where `N*sizeof(*pCVar7) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `pCVar7->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 123,
+      "line": 122,
       "match": "pCVar7 = (T *)((int)(pCVar7 + N) + M)",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -745,7 +745,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar6->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 174,
+      "line": 173,
       "match": "pCVar6 = (T *)((pCVar6->FIELD).SUBFIELD...ARRAY + CONST)",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -754,7 +754,7 @@
     },
     {
       "description": "mem* byte count hardcodes an element stride ((iVar2 - local_24) * 0xac) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
-      "line": 328,
+      "line": 326,
       "match": "memmove",
       "resolution_source": "keep",
       "severity": "moderate",

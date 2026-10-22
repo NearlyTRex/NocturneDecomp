@@ -42,7 +42,7 @@ void __cdecl core_mimic_cpp_CMimic_process_FUN_0051f780(CMimic *this_ptr,float d
       if ((iVar3 != 0) &&
          (core_mimic_cpp_CMimic_updatePose_FUN_0051f930(this_ptr), this_ptr->attack_mode == 1)) {
         pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                           (&(g_HeroActors[g_LocalHeroIndex]->base).model.motion_controller);
+                           (&(g_HeroActors[g_LocalHeroIndex]->base).model.base);
         uVar2 = pSVar4->state_index;
         if ((uVar2 < 3) || (uVar2 < 4)) {
 LAB_0051f8da:

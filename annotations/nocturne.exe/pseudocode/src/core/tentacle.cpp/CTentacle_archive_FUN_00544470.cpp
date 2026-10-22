@@ -19,8 +19,7 @@ void __cdecl core_tentacle_cpp_CTentacle_archive_FUN_00544470(CTentacle *this_pt
               (&(this_ptr->base).guard_distance,"guardDistance");
   }
   model_ptr = &(this_ptr->base).base.model;
-  core_actor_cpp_archiveMotionState_FUN_0040cb00
-            (&model_ptr->motion_controller,"motion state");
+  core_actor_cpp_archiveMotionState_FUN_0040cb00(&model_ptr->base,"motion state");
   core_actor_cpp_archivePartStatus_FUN_0040cbf0(model_ptr,"partStatus");
   core_actor_cpp_archiveActor_FUN_0040c980(&this_ptr->grave_actor,"graveActor");
   return;

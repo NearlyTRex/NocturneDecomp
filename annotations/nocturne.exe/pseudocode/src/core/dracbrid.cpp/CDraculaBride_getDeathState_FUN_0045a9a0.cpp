@@ -15,7 +15,7 @@ EDeathState __cdecl core_dracbrid_cpp_CDraculaBride_getDeathState_FUN_0045a9a0(C
     return DEATH_STATE_DEAD;
   }
   pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                     (&(this_ptr->base).base.model.motion_controller);
+                     (&(this_ptr->base).base.model.base);
   switch(pSVar1->state_index) {
   case 7:
   case 10:

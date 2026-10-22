@@ -2,17 +2,17 @@
 DAT_ STRUCT/ARRAY DETECTION REPORT
 ================================================================================
 
-Total DAT_ globals found: 2186
+Total DAT_ globals found: 2182
 Filtered out (inside named data): 320
 Immediate constants (not real globals): 60
-Real globals remaining: 2126
-Clusters detected: 205
-DAT_ globals in clusters: 2052
+Real globals remaining: 2122
+Clusters detected: 204
+DAT_ globals in clusters: 2047
 
 Classification summary:
   unknown              73 clusters
   vector_groups        47 clusters
-  struct               47 clusters
+  struct               46 clusters
   array                23 clusters
   char_array           7 clusters
   byte_blob            5 clusters
@@ -1397,7 +1397,7 @@ MEDIUM CONFIDENCE (66 clusters)
       0x0058d030  DAT_0058d030  undefined4 [float]
 
 --------------------------------------------------------------------------------
-LOW CONFIDENCE (121 clusters)
+LOW CONFIDENCE (120 clusters)
 --------------------------------------------------------------------------------
 
   0x005b5d00 - 0x005b64f8  (65 items, 2040 bytes span)
@@ -1898,17 +1898,6 @@ LOW CONFIDENCE (121 clusters)
       0x01fff090  DAT_01fff090  undefined4
       0x01fff094  DAT_01fff094  undefined4
       0x01fff098  DAT_01fff098  undefined4
-
-  0x020875f4 - 0x020876f8  (5 items, 260 bytes span)
-    Classification: struct
-    Likely type: struct (260 bytes span, 5 fields)
-    Reason: mixed strides, shared by 3 functions
-    Referenced by: 3 functions
-      0x020875f4  DAT_020875f4  undefined4
-      0x020875f8  DAT_020875f8  undefined4
-      0x020875fc  DAT_020875fc  undefined4
-      0x020875fd  DAT_020875fd  undefined4
-      0x020876f8  DAT_020876f8  undefined4
 
   0x005b96ec - 0x005b9764  (4 items, 120 bytes span)
     Classification: struct
@@ -2653,7 +2642,7 @@ LOW CONFIDENCE (121 clusters)
       0x02dd9260  DAT_02dd9260  undefined4 [float]
 
 --------------------------------------------------------------------------------
-ISOLATED DAT_ GLOBALS (74 - not part of any cluster)
+ISOLATED DAT_ GLOBALS (75 - not part of any cluster)
 --------------------------------------------------------------------------------
   DAT_02dc1b74                    addr=02dc1b74    type=undefined4      refs=20
   DAT_02dc1ed8                    addr=02dc1ed8    type=undefined4      refs=7
@@ -2705,7 +2694,7 @@ ISOLATED DAT_ GLOBALS (74 - not part of any cluster)
   DAT_01c4e954                    addr=01c4e954    type=undefined4      refs=1  near: g_CMuzzleFlash_ARRAY_01c4e958(-4)
   DAT_0059d560                    addr=0059d560    type=undefined4      refs=1 [likely float]  near: g_CFlameVTable(-36)
   DAT_0059d8ec                    addr=0059d8ec    type=undefined4      refs=1 [likely float]  near: g_CFlashlightVTable(-8)
-  ... +24 more
+  ... +25 more
 
 --------------------------------------------------------------------------------
 FILTERED OUT - INSIDE NAMED DATA (320)

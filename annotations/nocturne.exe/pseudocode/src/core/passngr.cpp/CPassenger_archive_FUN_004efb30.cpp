@@ -18,8 +18,7 @@ void __cdecl core_passngr_cpp_CPassenger_archive_FUN_004efb30(CPassenger *this_p
   if ((1 < INT_005be078) && (INT_005be078 < 5)) {
     model_ptr = &(this_ptr->base).base.model;
     core_actor_cpp_archiveDeformableModelInstance_FUN_0040ca80(model_ptr,"modelName");
-    core_actor_cpp_archiveMotionState_FUN_0040cb00
-              (&model_ptr->motion_controller,"motion state");
+    core_actor_cpp_archiveMotionState_FUN_0040cb00(&model_ptr->base,"motion state");
   }
   if (2 < INT_005be078) {
     core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->wolf_size,"wolfSize");

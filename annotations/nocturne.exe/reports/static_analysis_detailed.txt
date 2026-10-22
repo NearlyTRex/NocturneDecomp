@@ -5,11 +5,11 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Clang-Tidy (quick) (12 diagnostics)
+Clang-Tidy (quick) (14 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-bugprone-integer-division (7)
+bugprone-integer-division (9)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_ckptutil.c_drawLineAA_FUN_0042f600         line 56
@@ -26,6 +26,14 @@ bugprone-integer-division (7)
 
   core_dfilter.cpp_CDemonFilter_init_FUN_0044c190    line 32
     File: core/dfilter.cpp
+    result of integer division used in a floating point context; possible loss of precision
+
+  core_script.cpp_CScript_getLetterboxHeight_FUN_004 line 17
+    File: core/script.cpp
+    result of integer division used in a floating point context; possible loss of precision
+
+  core_script.cpp_CScript_getLetterboxHeight_FUN_004 line 17
+    File: core/script.cpp
     result of integer division used in a floating point context; possible loss of precision
 
   sound_mp3.cpp_calculateIntensityStereoRatio_FUN_00 line 22
@@ -60,12 +68,12 @@ cert-flp30-c (5)
     File: core/game.cpp
     loop induction expression should not have floating-point type
 
-  core_vampboss.cpp_CVampireBoss_process_FUN_0054c69 line 424
+  core_vampboss.cpp_CVampireBoss_process_FUN_0054c69 line 423
     File: core/vampboss.cpp
     loop induction expression should not have floating-point type
 
 ====================================================================================================
-Cppcheck (quick) (879 diagnostics)
+Cppcheck (quick) (878 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -2564,7 +2572,7 @@ legacyUninitvar (83)
     File: core/set.cpp
     Uninitialized variable: in_stack_ffffff9c
 
-  core_setdir.cpp_CDemonSet_FUN_00513720             line 72
+  core_setdir.cpp_CDemonSet_saveThumbs_FUN_00513720  line 72
     File: core/setdir.cpp
     Uninitialized variable: local_20
 
@@ -2580,7 +2588,7 @@ legacyUninitvar (83)
     File: core/skeleton.cpp
     Uninitialized variable: local_60
 
-  core_skeleton.cpp_CDeformableModelInstance_updateM line 130
+  core_skeleton.cpp_CDeformableModelInstance_updateM line 129
     File: core/skeleton.cpp
     Uninitialized variable: local_1870
 
@@ -3352,16 +3360,16 @@ objectIndex (25)
     File: core/path.cpp
     The address of local variable 'local_50' might be accessed at non-zero index.
 
-  core_skeleton.cpp_CDeformableModelInstance_updateM line 285
+  core_skeleton.cpp_CDeformableModelInstance_updateM line 284
     File: core/skeleton.cpp
     The address of local variable 'local_122c' might be accessed at non-zero index.
 
-  core_skeleton.cpp_CDeformableModelInstance_updateM line 314
+  core_skeleton.cpp_CDeformableModelInstance_updateM line 313
     File: core/skeleton.cpp
     The address of local variable 'local_122c' might be accessed at non-zero index.
 
 ----------------------------------------------------------------------------------------------------
-invalidPointerCast (12)
+invalidPointerCast (11)
 ----------------------------------------------------------------------------------------------------
 
   core_charactr.cpp_CCharacter_updateWanderToWaypoin line 67
@@ -3393,10 +3401,6 @@ invalidPointerCast (12)
     Casting between signed int * and float * which have an incompatible binary data representation.
 
   core_skeleton.cpp_CDeformableModelInstance_compute line 41
-    File: core/skeleton.cpp
-    Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
-
-  core_skeleton.cpp_CDeformableModelInstance_compute line 42
     File: core/skeleton.cpp
     Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
 

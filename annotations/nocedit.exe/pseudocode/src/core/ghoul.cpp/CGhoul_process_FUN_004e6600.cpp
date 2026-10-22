@@ -373,7 +373,7 @@ LAB_004e6a5f:
           ;
           if ((this_ptr->base).victim != (CCharacter *)0x0) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                      (&(this_ptr->base).base.model.motion_controller,1,1);
+                      (&(this_ptr->base).base.model.base,1,1);
             iVar9 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[0]);
             if (iVar9 != 0) {
               in_stack_fffffc88 = (char *)0x4e75e4;
@@ -418,12 +418,12 @@ LAB_004e6a5f:
     case 0x11:
       if ((this_ptr->is_berserk != 0) && (iVar7 == 1)) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&(this_ptr->base).base.model.motion_controller,0x11,1);
+                  (&(this_ptr->base).base.model.base,0x11,1);
       }
       if (0.0 < this_ptr->stun_timer) {
         this_ptr->stun_timer = this_ptr->stun_timer - delta_time;
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&(this_ptr->base).base.model.motion_controller,0,1);
+                  (&(this_ptr->base).base.model.base,0,1);
       }
       else {
         (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
@@ -463,7 +463,7 @@ LAB_004e6a5f:
                (this_ptr->dark_waypoint == (CDemonActor *)0x0)) {
               core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004e63d0(this_ptr,delta_time);
             }
-            local_30 = &(this_ptr->base).base.model.motion_controller;
+            local_30 = &(this_ptr->base).base.model.base;
             pCVar14 = this_ptr->dark_waypoint;
             if (pCVar14 == (CDemonActor *)0x0) {
               fVar23 = 0.17453292;
@@ -529,7 +529,7 @@ LAB_004e6a5f:
                   }
                   local_14 = local_28;
                   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                            (&(this_ptr->base).base.model.motion_controller,iVar9,1);
+                            (&(this_ptr->base).base.model.base,iVar9,1);
                   (this_ptr->base).attack_cooldown = 0.7;
                 }
               }
@@ -556,7 +556,7 @@ LAB_004e6a5f:
               if (iVar7 == 1) {
                 in_stack_fffffc88 = (char *)0x4e77bc;
                 core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                          (&(this_ptr->base).base.model.motion_controller,0x11,1);
+                          (&(this_ptr->base).base.model.base,0x11,1);
               }
             }
           }
@@ -627,7 +627,7 @@ LAB_004e7a33:
           }
           in_stack_fffffc88 = (char *)0x1;
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (&(this_ptr->base).base.model.motion_controller,0,1);
+                    (&(this_ptr->base).base.model.base,0,1);
         }
       }
       break;
@@ -636,7 +636,7 @@ LAB_004e7a33:
       if (pCVar3 == (CCharacter *)0x0) {
 LAB_004e7576:
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&(this_ptr->base).base.model.motion_controller,1,1);
+                  (&(this_ptr->base).base.model.base,1,1);
       }
       else {
         pCVar14 = (*(((pCVar3->base).vtable._uc)->_uc).getGrabber)(pCVar3);
@@ -708,7 +708,7 @@ LAB_004e7576:
           local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(1.0,12.0);
           this_ptr->spasm_timer = (int)ROUND(ROUND(local_14 * (float)65536));
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (&(this_ptr->base).base.model.motion_controller,0xf,1);
+                    (&(this_ptr->base).base.model.base,0xf,1);
         }
       }
       if (0 < this_ptr->lives_left) {
@@ -782,7 +782,7 @@ LAB_004e7243:
                                    (10.0,(float)(int)local_14 * (float)10);
               (this_ptr->base).base.hit_points = local_14;
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                        (&(this_ptr->base).base.model.motion_controller,0x10,1);
+                        (&(this_ptr->base).base.model.base,0x10,1);
             }
           }
         }
@@ -883,7 +883,7 @@ LAB_004e7d9a:
       if ((this_ptr->base).victim != (CCharacter *)0x0) {
         in_stack_fffffc88 = (char *)0x0;
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&(this_ptr->base).base.model.motion_controller,0,1);
+                  (&(this_ptr->base).base.model.base,0,1);
       }
     }
     if (((0.0 <= (float)local_20) && (this_ptr->flinch_blend_weight <= 0.0)) &&
@@ -904,7 +904,7 @@ LAB_004e7d9a:
                          (float)in_stack_fffffc88);
       if (iVar9 != 1) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&(this_ptr->base).base.model.motion_controller,1,1);
+                  (&(this_ptr->base).base.model.base,1,1);
         (this_ptr->base).base.turn_angle_accumulator = 0.0;
       }
     }
@@ -921,7 +921,7 @@ LAB_004e6fdc:
     }
 LAB_004e672d:
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              (&(this_ptr->base).base.model.motion_controller,iVar9,1);
+              (&(this_ptr->base).base.model.base,iVar9,1);
   }
   else {
     if (uVar15 < 3) {
@@ -930,7 +930,7 @@ LAB_004e672d:
     }
     if (uVar15 != 3) goto LAB_004e6fdc;
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              (&(this_ptr->base).base.model.motion_controller,0,1);
+              (&(this_ptr->base).base.model.base,0,1);
     engine_console_cpp_CConsole_printf_FUN_00441890
               (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
   }
@@ -980,7 +980,7 @@ LAB_004e6754:
   local_b4 = (double)this_ptr->flinch_blend_weight;
   if (0.0 < local_b4) {
     local_60 = core_motion_cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
-                         (&this_ptr_00->motion_controller,this_ptr->flinch_motion_index,
+                         (&this_ptr_00->base,this_ptr->flinch_motion_index,
                           1.0 - this_ptr->flinch_blend_weight);
     fVar23 = 1.0 - this_ptr->flinch_blend_weight;
     local_5c = 1.0 - fVar23 * fVar23 * fVar23;
