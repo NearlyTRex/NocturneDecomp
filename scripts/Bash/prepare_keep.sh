@@ -81,9 +81,5 @@ for src in "${files[@]}"; do
     # Insert // MANUAL RECONSTRUCTION after the // Address: line
     sed -i '/^\/\/ Address: [0-9a-fA-F]\+$/a // MANUAL RECONSTRUCTION' "$keep"
 
-    if [ "$force" -eq 1 ] && [ -f "$keep.pre-force" ]; then
-        :  # shouldn't happen, just defensive
-    fi
-
     echo "  OK  $keep"
 done
