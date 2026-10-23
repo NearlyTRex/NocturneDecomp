@@ -1,0 +1,19 @@
+==============================================================================
+SIBLING PAIR AUDIT  (nocedit.exe -> nocturne.exe)   103 pair(s)  [transfer-actionable only]
+==============================================================================
+Verdicts computed from the BINARIES, independent of mapper confidence.
+
+conf band    STRONG  GOOD  WEAK INCONCL  SUSPECT  UNKNOWN  n   (%corroborated)
+------------------------------------------------------------------------------
+1.00              3     0     0       0        0        0     3  (100.0%)
+0.99              5     0     0       0        0        0     5  (100.0%)
+0.90-0.98         0     0     1       0        0        0     1  (  0.0%)
+0.85-0.89        21     0    14       4        1        0    40  ( 52.5%)
+0.80-0.84         1     0     1       0        0        0     2  ( 50.0%)
+0.75-0.79        10     0    36       6        0        0    52  ( 19.2%)
+------------------------------------------------------------------------------
+ALL              40     0    52      10        1        0   103  ( 38.8%)
+
+SUSPECT rows (1) -- callgraph actively disagrees; review before transfer:
+  SUSPECT conf 0.85  00456400 -> 0044a150  core_dcube.cpp_clipTriangleToAABB_FUN_00456400
+          shape differs and only 0/6 calls corroborate

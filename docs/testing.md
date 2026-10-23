@@ -82,6 +82,13 @@ sequence of GL calls an assertable artifact.
 Golden traces live beside the tests in `renderer/golden` and are read from the source tree, so a
 changed trace shows up as a reviewable diff rather than a rebuilt copy nobody sees.
 
+## The Python tooling
+
+The scripts in `scripts/Python`, `cmake/collect_sources.py` and `recreation/cmake/tidy.py` have
+their own pytest suite under `Tests/`, held to [pytest-testrex](https://github.com/NearlyTRex/TestRex)'s
+rules and to full line and branch coverage. [Tests/README.md](../Tests/README.md) has the layout
+and how to run it.
+
 ## Beyond unit tests
 
 Much of what matters here cannot be unit tested — whether a frame looks right. The pattern the

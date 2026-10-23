@@ -21,11 +21,3 @@ regexTarget = "line"
 regexes = [
   '''"s_[A-Za-z0-9_:.%-]*_[0-9a-f]{8}"''',
 ]
-
-[[allowlists]]
-description = "Prose that generic-api-key reads as an assignment"
-regexTarget = "line"
-regexes = [
-  # A comment in scripts/Python/analyze_local_type_mismatches.py.
-  '''4-byte accesses = CQuaternion4f or CVector4f''',
-]

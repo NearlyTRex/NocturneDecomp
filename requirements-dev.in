@@ -1,0 +1,19 @@
+# What CI installs to run the tests of the Python tooling. Compile the lock after editing:
+#   pip-compile --generate-hashes --allow-unsafe --strip-extras -o requirements-dev.txt requirements-dev.in
+# Measures the tests for CI's floor
+coverage
+pytest
+# Spreads the tests across cores in CI
+pytest-xdist
+# The meta suite the tests are held to, the hermetic seal, requires_binary, and the shell
+# coverage and shell sandbox plugins CI's shell inputs turn on
+pytest-testrex[shell]>=0.1.2
+# Lints the tests, through the meta suite
+pylint
+# Builds the editable install in CI
+setuptools>=77
+# What the standalone scripts import outside the standard library
+capstone
+keystone-engine
+# extract_exe_icon.py's fallback for image formats its own decoder doesn't read
+pillow
