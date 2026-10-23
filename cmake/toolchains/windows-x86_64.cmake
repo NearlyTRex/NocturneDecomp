@@ -76,6 +76,14 @@ set(CMAKE_SHARED_LINKER_FLAGS_INIT "${_NOCTURNE_TARGET_FLAGS}")
 
 set(CMAKE_RC_COMPILER "${NOCTURNE_WIN_TRIPLE}-windres")
 
+# The unit tests are Windows executables too; with wine installed, ctest runs
+# them through it, so the shims' _WIN32 paths are exercised against a Windows
+# C runtime rather than only compiled. Without wine the tests still build.
+find_program(NOCTURNE_WINE wine)
+if(NOCTURNE_WINE AND NOT DEFINED CMAKE_CROSSCOMPILING_EMULATOR)
+    set(CMAKE_CROSSCOMPILING_EMULATOR "${NOCTURNE_WINE}")
+endif()
+
 set(CMAKE_FIND_ROOT_PATH "${NOCTURNE_WIN_SYSROOT}")
 set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
 set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)

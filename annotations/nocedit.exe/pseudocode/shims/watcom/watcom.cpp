@@ -18,11 +18,14 @@
 
 #include <cerrno>
 #include <chrono>
+#include <climits>
 #include <cstdlib>
 #include <cstring>
 #include <filesystem>
+#include <mutex>
 #include <system_error>
 #include <thread>
+#include <unordered_map>
 // The descriptor-based half of Watcom's io.h — here just lseek and ftruncate.
 // A file descriptor is not POSIX-only: Windows' own runtime has both, as _lseek
 // and _chsize in <io.h>, so this is a spelling difference rather than a port.
@@ -224,6 +227,13 @@ struct FindHandle {
     size_t current_index;
 };
 
+// The handle is a `long`, which is 32 bits on Windows even in a 64-bit build,
+// so it cannot carry a pointer. Open searches live in a table instead, keyed
+// by a number that counts up from 1: never 0 or -1, which are not handles.
+std::mutex s_find_mutex;
+std::unordered_map<long, FindHandle> s_find_handles;
+long s_next_find_handle = 1;
+
 }  // namespace
 
 long _findfirst(const char* filespec, void* fileinfo) {
@@ -232,34 +242,32 @@ long _findfirst(const char* filespec, void* fileinfo) {
     std::vector<std::string> matches = nocturne_find_files(filespec);
     if (matches.empty()) return -1;
 
-    FindHandle* handle = new FindHandle();
-    handle->matches = matches;
-    handle->current_index = 0;
-    return (long)(intptr_t)handle;
+    std::lock_guard<std::mutex> held(s_find_mutex);
+    const long handle_val = s_next_find_handle;
+    s_next_find_handle = s_next_find_handle == LONG_MAX ? 1 : s_next_find_handle + 1;
+    s_find_handles[handle_val] = FindHandle{std::move(matches), 0};
+    return handle_val;
 }
 
 // -1 is what _findfirst returns when it found nothing, so it is the value most
 // likely to arrive here by mistake — from a caller that did not check, or one
-// that passed the failure straight on. It is not a handle, and dereferencing it
-// is a fault rather than a wrong answer. Zero is not a handle either.
-static bool is_find_handle(long handle_val) {
-    return handle_val != -1 && handle_val != 0;
-}
-
+// that passed the failure straight on. Like any number _findfirst never handed
+// out, or one already closed, it is answered as no search at all.
 int _findnext(long handle_val, void* fileinfo) {
     (void)fileinfo;
-    if (!is_find_handle(handle_val)) return -1;
-    FindHandle* handle = (FindHandle*)(intptr_t)handle_val;
+    std::lock_guard<std::mutex> held(s_find_mutex);
+    auto found = s_find_handles.find(handle_val);
+    if (found == s_find_handles.end()) return -1;
 
-    handle->current_index++;
-    if (handle->current_index >= handle->matches.size()) return -1;
+    FindHandle& handle = found->second;
+    handle.current_index++;
+    if (handle.current_index >= handle.matches.size()) return -1;
     return 0;
 }
 
 int _findclose(long handle_val) {
-    if (!is_find_handle(handle_val)) return -1;
-    delete (FindHandle*)(intptr_t)handle_val;
-    return 0;
+    std::lock_guard<std::mutex> held(s_find_mutex);
+    return s_find_handles.erase(handle_val) == 1 ? 0 : -1;
 }
 
 // =============================================================================

@@ -65,9 +65,11 @@ struct Install {
 
 NOCTURNE_TEST(a_read_finds_the_shipped_file_in_any_case) {
     Install install;
-    CHECK_EQ(watcom_resolve_fs_path(".\\system\\NOCTURNE.INI"),
-             install.in_data("SYSTEM/nocturne.ini"));
-    CHECK_EQ(watcom_resolve_fs_path("act1.pod"), install.in_data("ACT1.POD"));
+    // The same file, not the same spelling: on Windows the name as asked already
+    // opens it, so the resolver keeps it rather than reading the disk's.
+    CHECK(fs::equivalent(watcom_resolve_fs_path(".\\system\\NOCTURNE.INI"),
+                         install.in_data("SYSTEM/nocturne.ini")));
+    CHECK(fs::equivalent(watcom_resolve_fs_path("act1.pod"), install.in_data("ACT1.POD")));
 }
 
 NOCTURNE_TEST(a_write_lands_in_the_user_directory_and_leaves_the_install_alone) {

@@ -7,7 +7,8 @@
 #       [EXCLUDE <regex>]         # drop matching files from TESTS
 #       [SUBJECTS <file>...]      # code under test; relative = pseudocode/
 #       [SUPPORT <file>...]       # test helpers with no main(); relative = here
-#       [DEFINITIONS <def>...])
+#       [DEFINITIONS <def>...]
+#       [LIBRARIES <lib>...])     # linked into each test, e.g. ws2_32 on Windows
 #
 # tests/ mirrors pseudocode/: the test for shims/core/file_search.cpp is
 # tests/shims/core/test_file_search.cpp.
@@ -20,7 +21,7 @@
 
 function(nocturne_test_suite _suite)
     cmake_parse_arguments(PARSE_ARGV 1 _arg ""
-        "EXCLUDE" "TESTS;SUBJECTS;SUPPORT;DEFINITIONS")
+        "EXCLUDE" "TESTS;SUBJECTS;SUPPORT;DEFINITIONS;LIBRARIES")
 
     if(NOT _arg_TESTS)
         set(_arg_TESTS "test_*.cpp")
@@ -62,8 +63,17 @@ function(nocturne_test_suite _suite)
         if(_objlib)
             target_link_libraries(${_name} PRIVATE ${_objlib})
         endif()
+        if(_arg_LIBRARIES)
+            target_link_libraries(${_name} PRIVATE ${_arg_LIBRARIES})
+        endif()
         add_test(NAME ${_test} COMMAND ${_name})
         set_tests_properties(${_test} PROPERTIES LABELS "${_suite}")
+        # Under wine, the gcc runtime DLLs a test needs are the ones the
+        # platform file stages beside the exe, in the top of the build tree.
+        if(WIN32 AND CMAKE_CROSSCOMPILING_EMULATOR)
+            set_tests_properties(${_test} PROPERTIES
+                ENVIRONMENT "WINEPATH=${CMAKE_BINARY_DIR};WINEDEBUG=-all")
+        endif()
         add_dependencies(nocturne_tests ${_name})
         set_property(GLOBAL APPEND PROPERTY NOCTURNE_TEST_TARGETS ${_name})
     endforeach()

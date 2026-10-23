@@ -111,7 +111,7 @@ NOCTURNE_TEST(a_full_path_is_absolute) {
     Tree tree;
     char buffer[4096];
     CHECK(_fullpath(buffer, "ACT1.POD", sizeof(buffer)) == buffer);
-    CHECK(buffer[0] == '/');
+    CHECK(fs::path(buffer).is_absolute());
     std::error_code ec;
     CHECK(fs::exists(fs::path(buffer), ec));
 }
@@ -122,7 +122,7 @@ NOCTURNE_TEST(a_full_path_answers_for_something_not_there_yet) {
     // realpath, which this used to use, fails here and left the caller with the
     // relative path it started with.
     CHECK(_fullpath(buffer, "save/SAVE9.noc", sizeof(buffer)) == buffer);
-    CHECK(buffer[0] == '/');
+    CHECK(fs::path(buffer).is_absolute());
     CHECK(std::string(buffer).find("SAVE9.noc") != std::string::npos);
 }
 
@@ -155,46 +155,81 @@ NOCTURNE_TEST(file_attributes_say_directory_and_read_only) {
 // The find API, in Watcom's shape: a long handle, -1 for no more.
 // -----------------------------------------------------------------------------
 
+// The find-data argument is unused. It is a typed void* rather than nullptr
+// because the Windows runtime's <io.h> renames _findfirst to _findfirst64i32,
+// and a bare nullptr matches both that function and the shim's.
+static void* const kNoInfo = nullptr;
+
 NOCTURNE_TEST(finding_walks_every_match_then_stops) {
     Tree tree;
-    long handle = _findfirst("save\\*.noc", nullptr);
+    long handle = _findfirst("save\\*.noc", kNoInfo);
     CHECK(handle != -1);
 
     // Two files match, so one first and one next, and then the end.
-    CHECK_EQ(_findnext(handle, nullptr), 0);
-    CHECK_EQ(_findnext(handle, nullptr), -1);
+    CHECK_EQ(_findnext(handle, kNoInfo), 0);
+    CHECK_EQ(_findnext(handle, kNoInfo), -1);
     // Still the end however many times it is asked.
-    CHECK_EQ(_findnext(handle, nullptr), -1);
+    CHECK_EQ(_findnext(handle, kNoInfo), -1);
     CHECK_EQ(_findclose(handle), 0);
 }
 
 NOCTURNE_TEST(finding_nothing_says_so_at_the_start) {
     Tree tree;
-    CHECK_EQ(_findfirst("*.nothing", nullptr), -1);
-    CHECK_EQ(_findfirst("no_such_dir\\*", nullptr), -1);
+    CHECK_EQ(_findfirst("*.nothing", kNoInfo), -1);
+    CHECK_EQ(_findfirst("no_such_dir\\*", kNoInfo), -1);
 
     // -1 is what _findfirst just returned, so it is the value most likely to be
     // passed back here by a caller that did not check. It is not a handle, and
     // walking it used to be a fault rather than an answer.
-    CHECK_EQ(_findnext(-1, nullptr), -1);
-    CHECK_EQ(_findnext(0, nullptr), -1);
-    CHECK_EQ(_findclose(-1), -1);
-    CHECK_EQ(_findclose(0), -1);
+    CHECK_EQ(_findnext(-1, kNoInfo), -1);
+    CHECK_EQ(_findnext(0, kNoInfo), -1);
+    // long literals: the Windows runtime has a _findclose(intptr_t) of its own
+    CHECK_EQ(_findclose(-1L), -1);
+    CHECK_EQ(_findclose(0L), -1);
 }
 
 NOCTURNE_TEST(neither_the_pattern_nor_the_directory_minds_case) {
     Tree tree;
     // The last component is a pattern and is matched without case, so a spec
     // shouting at a lower-case file finds it.
-    long handle = _findfirst("save\\*.NOC", nullptr);
+    long handle = _findfirst("save\\*.NOC", kNoInfo);
     CHECK(handle != -1);
     CHECK_EQ(_findclose(handle), 0);
 
     // The directory goes through the same resolution as an open, as it would be
     // found on Windows whatever its case.
-    handle = _findfirst("SAVE\\*.noc", nullptr);
+    handle = _findfirst("SAVE\\*.noc", kNoInfo);
     CHECK(handle != -1);
     CHECK_EQ(_findclose(handle), 0);
+}
+
+// A handle is a long, 32 bits on Windows, so it must name the search without
+// being its address: a heap pointer above 4 GB, cut to fit, was a wild write.
+NOCTURNE_TEST(searches_open_at_once_keep_their_own_place) {
+    Tree tree;
+    long first = _findfirst("save\\*.noc", kNoInfo);
+    long second = _findfirst("save\\*.noc", kNoInfo);
+    CHECK(first != -1);
+    CHECK(second != -1);
+    CHECK(first != second);
+
+    // Advancing one leaves the other where it was.
+    CHECK_EQ(_findnext(first, kNoInfo), 0);
+    CHECK_EQ(_findnext(first, kNoInfo), -1);
+    CHECK_EQ(_findnext(second, kNoInfo), 0);
+    CHECK_EQ(_findclose(first), 0);
+    CHECK_EQ(_findclose(second), 0);
+}
+
+NOCTURNE_TEST(a_closed_handle_is_no_longer_a_search) {
+    Tree tree;
+    long handle = _findfirst("save\\*.noc", kNoInfo);
+    CHECK_EQ(_findclose(handle), 0);
+    // Using or closing it again is refused, not a read of freed memory.
+    CHECK_EQ(_findnext(handle, kNoInfo), -1);
+    CHECK_EQ(_findclose(handle), -1);
+    // A handle never handed out is refused the same way.
+    CHECK_EQ(_findnext(handle + 1000, kNoInfo), -1);
 }
 
 NOCTURNE_TEST_MAIN()

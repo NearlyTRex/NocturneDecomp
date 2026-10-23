@@ -188,7 +188,7 @@ NOCTURNE_TEST(an_absolute_path_stays_absolute) {
     const std::string wanted = (tree.root / "system" / "NOCTURNE.INI").string();
     const std::string resolved = watcom_resolve_fs_path(wanted.c_str());
     CHECK(Tree::opens(resolved));
-    CHECK(resolved[0] == '/');
+    CHECK(fs::path(resolved).is_absolute());
 }
 
 NOCTURNE_TEST_MAIN()

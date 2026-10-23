@@ -143,6 +143,13 @@ static inline long tm_utc_offset(const struct tm* tm_buf) {
 #define FD_TO_HANDLE(fd) ((HANDLE)(intptr_t)(fd))
 #define HANDLE_TO_FD(h)  ((int)(intptr_t)(h))
 
+// A file handle is its descriptor, a small number; every other handle is the
+// address of a tagged object. No system maps the first 64 KB, so the value
+// alone says which, and a descriptor is never read as an object to find a tag.
+static bool is_object_handle(HANDLE h) {
+    return (uintptr_t)h >= 0x10000 && h != (HANDLE)(intptr_t)-1;
+}
+
 // Handle tag for identifying wrapper types
 enum HandleTag {
     HANDLE_TAG_THREAD = 0x54485244, // 'THRD'
@@ -364,6 +371,7 @@ static BOOL shim_WriteFile(HANDLE hFile, LPCVOID lpBuffer,
 
 static BOOL shim_CloseHandle(HANDLE hObject) {
     if (hObject == NULL || hObject == INVALID_HANDLE) return 0;
+    if (!is_object_handle(hObject)) return close(HANDLE_TO_FD(hObject)) == 0 ? 1 : 0;
 
     // Check if this is a tagged handle
     int* tagPtr = (int*)hObject;
@@ -393,9 +401,19 @@ static BOOL shim_CloseHandle(HANDLE hObject) {
         return 1;
     }
     default:
-        // Assume file descriptor
-        return close(HANDLE_TO_FD(hObject)) == 0 ? 1 : 0;
+        // An object of no kind this file makes
+        return 0;
     }
+}
+
+// Seeks in 64 bits on every host. off_t is 32 bits on Windows, where lseek
+// cannot reach past 2 GB and shifting an off_t by 32 is undefined.
+static long long seek64(int fd, long long offset, int whence) {
+#if defined(_WIN32)
+    return _lseeki64(fd, offset, whence);
+#else
+    return (long long)lseek(fd, (off_t)offset, whence);
+#endif
 }
 
 static DWORD shim_SetFilePointer(HANDLE hFile, LONGVAL lDistanceToMove,
@@ -410,15 +428,15 @@ static DWORD shim_SetFilePointer(HANDLE hFile, LONGVAL lDistanceToMove,
     default: whence = SEEK_SET; break;
     }
 
-    off_t offset;
+    // With a high word the distance is one signed 64-bit value, the low word
+    // its unsigned bottom half; without one it is the low word, sign and all.
+    long long offset = (long long)lDistanceToMove;
     if (lpDistanceToMoveHigh) {
-        offset = ((off_t)(*lpDistanceToMoveHigh) << 32) | (off_t)(unsigned long)lDistanceToMove;
-    } else {
-        offset = (off_t)lDistanceToMove;
+        offset = (long long)*lpDistanceToMoveHigh * 0x100000000LL + (unsigned int)lDistanceToMove;
     }
 
-    off_t result = lseek(fd, offset, whence);
-    if (result == (off_t)-1) {
+    long long result = seek64(fd, offset, whence);
+    if (result == -1) {
         s_lastError = (DWORD)errno;
         return 0xFFFFFFFF;
     }
@@ -430,12 +448,12 @@ static DWORD shim_SetFilePointer(HANDLE hFile, LONGVAL lDistanceToMove,
 
 static BOOL shim_SetEndOfFile(HANDLE hFile) {
     int fd = HANDLE_TO_FD(hFile);
-    off_t pos = lseek(fd, 0, SEEK_CUR);
-    if (pos == (off_t)-1) { s_lastError = (DWORD)errno; return 0; }
+    long long pos = seek64(fd, 0, SEEK_CUR);
+    if (pos == -1) { s_lastError = (DWORD)errno; return 0; }
 #if defined(_WIN32)
-    if (_chsize(fd, (long)pos) != 0) { s_lastError = (DWORD)errno; return 0; }
+    if (_chsize_s(fd, pos) != 0) { s_lastError = (DWORD)errno; return 0; }
 #else
-    if (ftruncate(fd, pos) != 0) { s_lastError = (DWORD)errno; return 0; }
+    if (ftruncate(fd, (off_t)pos) != 0) { s_lastError = (DWORD)errno; return 0; }
 #endif
     return 1;
 }
@@ -656,7 +674,7 @@ static HANDLE shim_FindFirstFileA(LPCSTR lpFileName, LPWIN32_FIND_DATAA lpFindFi
 
 static BOOL shim_FindNextFileA(HANDLE hFindFile, LPWIN32_FIND_DATAA lpFindFileData) {
     FindHandle* fh = (FindHandle*)hFindFile;
-    if (!fh || fh == INVALID_HANDLE || fh->tag != HANDLE_TAG_FIND) return 0;
+    if (!is_object_handle(hFindFile) || fh->tag != HANDLE_TAG_FIND) return 0;
     if (fh->currentIndex >= fh->matches.size()) {
         s_lastError = 18; // ERROR_NO_MORE_FILES
         return 0;
@@ -668,7 +686,7 @@ static BOOL shim_FindNextFileA(HANDLE hFindFile, LPWIN32_FIND_DATAA lpFindFileDa
 
 static BOOL shim_FindClose(HANDLE hFindFile) {
     FindHandle* fh = (FindHandle*)hFindFile;
-    if (!fh || fh == INVALID_HANDLE || fh->tag != HANDLE_TAG_FIND) return 0;
+    if (!is_object_handle(hFindFile) || fh->tag != HANDLE_TAG_FIND) return 0;
     delete fh;
     return 1;
 }
@@ -824,7 +842,7 @@ static HANDLE shim_CreateMutexA(LPSECURITY_ATTRIBUTES lpMutexAttributes,
 
 static BOOL shim_ReleaseMutex(HANDLE hMutex) {
     MutexHandle* mh = (MutexHandle*)hMutex;
-    if (!mh || mh->tag != HANDLE_TAG_MUTEX) return 0;
+    if (!is_object_handle(hMutex) || mh->tag != HANDLE_TAG_MUTEX) return 0;
     mh->mutex.unlock();
     return 1;
 }
@@ -845,7 +863,7 @@ static HANDLE shim_CreateEventA(LPSECURITY_ATTRIBUTES lpEventAttributes,
 
 static BOOL shim_SetEvent(HANDLE hEvent) {
     EventHandle* eh = (EventHandle*)hEvent;
-    if (!eh || eh->tag != HANDLE_TAG_EVENT) return 0;
+    if (!is_object_handle(hEvent) || eh->tag != HANDLE_TAG_EVENT) return 0;
     {
         std::lock_guard<std::mutex> held(eh->mutex);
         eh->signaled = 1;
@@ -858,7 +876,7 @@ static BOOL shim_SetEvent(HANDLE hEvent) {
 }
 
 static DWORD shim_WaitForSingleObject(HANDLE hHandle, DWORD dwMilliseconds) {
-    if (!hHandle) return WIN32_WAIT_FAILED;
+    if (!is_object_handle(hHandle)) return WIN32_WAIT_FAILED;
 
     const std::chrono::milliseconds timeout((long long)dwMilliseconds);
     const bool forever = (dwMilliseconds == WIN32_INFINITE);

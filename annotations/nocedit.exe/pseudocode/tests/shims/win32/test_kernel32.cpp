@@ -25,11 +25,13 @@
 
 #include <atomic>
 #include <chrono>
+#include <cstring>
 #include <filesystem>
 #include <fstream>
 #include <string>
 #include <system_error>
 #include <thread>
+#include <vector>
 
 #include "win32/shim_init.h"    // shims_init_kernel32 — C++ linkage, as declared
 
@@ -427,6 +429,250 @@ NOCTURNE_TEST(an_export_is_looked_up_in_the_module_that_was_asked) {
     CHECK(g_GetProcAddressFunc(a, "NoSuchProc") == nullptr);
     g_FreeLibraryFunc(a);
     g_FreeLibraryFunc(b);
+}
+
+// -----------------------------------------------------------------------------
+// Finding files. The pod loader mounts every *.pod this way at startup: first,
+// next until there are no more, then close, reading GetLastError on the way.
+// -----------------------------------------------------------------------------
+
+namespace {
+
+const HANDLE kInvalidHandle = (HANDLE)(intptr_t)-1;
+const DWORD kErrorFileNotFound = 2;
+const DWORD kErrorNoMoreFiles = 18;
+const DWORD kAttributeDirectory = 0x10;
+
+// A game folder: three pods, one in upper case, and something that is not one
+struct Pods : Tree {
+    Pods() {
+        std::error_code ec;
+        fs::create_directories(root / "pods", ec);
+        for (const char *name : {"act1.pod", "ENGLISH.POD", "music.pod", "notes.txt"}) {
+            std::ofstream((root / "pods" / name).string().c_str()) << name;
+        }
+    }
+};
+
+// Every name a search reports, first to last, and the error it ended on
+struct Walk {
+    std::vector<std::string> names;
+    DWORD final_error = 0;
+};
+
+Walk walk(const char *spec) {
+    Walk result;
+    WIN32_FIND_DATAA data;
+    HANDLE handle = g_FindFirstFileAFunc(spec, &data);
+    if (handle == kInvalidHandle) {
+        result.final_error = g_GetLastErrorFunc();
+        return result;
+    }
+    do {
+        result.names.push_back(data.cFileName);
+    } while (g_FindNextFileAFunc(handle, &data));
+    result.final_error = g_GetLastErrorFunc();
+    CHECK(g_FindCloseFunc(handle) != 0);
+    return result;
+}
+
+}  // namespace
+
+NOCTURNE_TEST(a_search_reports_every_match_then_no_more_files) {
+    Pods pods;
+    Walk found = walk("pods\\*.pod");
+    CHECK_EQ(found.names.size(), 3u);
+    CHECK_EQ(found.final_error, kErrorNoMoreFiles);
+}
+
+// cFileName is the name alone however the search was spelled: the game joins
+// it to its own directory, so a path here would be a path twice over.
+NOCTURNE_TEST(the_found_name_is_the_name_alone) {
+    Pods pods;
+    for (const std::string &spec : {std::string("pods\\*.pod"), std::string("pods/*.pod"),
+                                     (pods.root / "pods").string() + "\\*.pod"}) {
+        for (const std::string &name : walk(spec.c_str()).names) {
+            CHECK(name == "act1.pod" || name == "ENGLISH.POD" || name == "music.pod");
+        }
+    }
+}
+
+NOCTURNE_TEST(the_find_data_describes_the_file) {
+    Pods pods;
+    WIN32_FIND_DATAA data;
+    std::memset(&data, 0xcc, sizeof(data));
+    HANDLE handle = g_FindFirstFileAFunc("pods\\notes.txt", &data);
+    CHECK(handle != kInvalidHandle);
+    CHECK_EQ(std::string(data.cFileName), std::string("notes.txt"));
+    CHECK_EQ(data.nFileSizeLow, 9u);
+    CHECK_EQ(data.nFileSizeHigh, 0u);
+    CHECK_EQ(data.dwFileAttributes & kAttributeDirectory, 0u);
+    // Nothing is left from what the buffer held before
+    CHECK_EQ(data.cAlternateFileName[0], '\0');
+    g_FindCloseFunc(handle);
+
+    handle = g_FindFirstFileAFunc("pods", &data);
+    CHECK(handle != kInvalidHandle);
+    CHECK(data.dwFileAttributes & kAttributeDirectory);
+    g_FindCloseFunc(handle);
+}
+
+NOCTURNE_TEST(finding_nothing_is_file_not_found) {
+    Pods pods;
+    Walk found = walk("pods\\*.nothing");
+    CHECK(found.names.empty());
+    CHECK_EQ(found.final_error, kErrorFileNotFound);
+    CHECK_EQ(walk("no_such_dir\\*.pod").final_error, kErrorFileNotFound);
+}
+
+NOCTURNE_TEST(a_finished_search_stays_finished) {
+    Pods pods;
+    WIN32_FIND_DATAA data;
+    HANDLE handle = g_FindFirstFileAFunc("pods\\music.pod", &data);
+    CHECK(handle != kInvalidHandle);
+    CHECK_EQ(g_FindNextFileAFunc(handle, &data), 0);
+    CHECK_EQ(g_FindNextFileAFunc(handle, &data), 0);
+    CHECK_EQ(g_GetLastErrorFunc(), kErrorNoMoreFiles);
+    CHECK(g_FindCloseFunc(handle) != 0);
+}
+
+NOCTURNE_TEST(what_is_not_a_search_handle_is_refused) {
+    Wired wired;
+    WIN32_FIND_DATAA data;
+    CHECK_EQ(g_FindNextFileAFunc(kInvalidHandle, &data), 0);
+    CHECK_EQ(g_FindNextFileAFunc(nullptr, &data), 0);
+    CHECK_EQ(g_FindCloseFunc(kInvalidHandle), 0);
+    CHECK_EQ(g_FindCloseFunc(nullptr), 0);
+}
+
+NOCTURNE_TEST(searches_open_at_once_keep_their_own_place) {
+    Pods pods;
+    WIN32_FIND_DATAA a, b;
+    HANDLE first = g_FindFirstFileAFunc("pods\\*.pod", &a);
+    HANDLE second = g_FindFirstFileAFunc("pods\\*.pod", &b);
+    CHECK(first != second);
+    CHECK_EQ(std::string(a.cFileName), std::string(b.cFileName));
+    CHECK(g_FindNextFileAFunc(first, &a) != 0);
+    CHECK(g_FindNextFileAFunc(first, &a) != 0);
+    CHECK(g_FindNextFileAFunc(second, &b) != 0);
+    CHECK(std::string(a.cFileName) != std::string(b.cFileName));
+    g_FindCloseFunc(first);
+    g_FindCloseFunc(second);
+}
+
+// The last error is per thread. Ending a search on a worker records the error
+// there, which is a thread-local write, and leaves this thread's alone.
+NOCTURNE_TEST(a_search_ended_on_another_thread_keeps_its_error_there) {
+    Pods pods;
+    g_SetLastErrorFunc(0);
+    DWORD worker_error = 0;
+    std::thread worker([&] { worker_error = walk("pods\\*.pod").final_error; });
+    worker.join();
+    CHECK_EQ(worker_error, kErrorNoMoreFiles);
+    CHECK_EQ(g_GetLastErrorFunc(), 0u);
+}
+
+// The loader opens and walks a search per mount pass; many in a row must not
+// grow or corrupt anything a later one depends on.
+NOCTURNE_TEST(many_searches_in_a_row_all_complete) {
+    Pods pods;
+    for (int i = 0; i < 2000; i++) {
+        Walk found = walk("pods\\*.pod");
+        if (found.names.size() != 3u || found.final_error != kErrorNoMoreFiles) {
+            CHECK_EQ(found.names.size(), 3u);
+            CHECK_EQ(found.final_error, kErrorNoMoreFiles);
+            break;
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// Reading files. Bytes come back as they are on disk: no text-mode translation
+// of CR LF or of 0x1A, which a Windows runtime would otherwise apply.
+// -----------------------------------------------------------------------------
+
+namespace {
+
+const DWORD kGenericRead = 0x80000000u;
+const DWORD kGenericWrite = 0x40000000u;
+const DWORD kCreateAlways = 2;
+const DWORD kOpenExisting = 3;
+const DWORD kFileBegin = 0;
+const DWORD kFileCurrent = 1;
+const DWORD kFileEnd = 2;
+
+HANDLE open_file(const char *name, DWORD access, DWORD disposition) {
+    return g_CreateFileAFunc(name, access, 0, nullptr, disposition, 0, nullptr);
+}
+
+std::string read_all(HANDLE handle, DWORD size) {
+    std::string bytes(size, '\0');
+    DWORD read = 0;
+    CHECK(g_ReadFileFunc(handle, &bytes[0], size, &read, nullptr) != 0);
+    bytes.resize(read);
+    return bytes;
+}
+
+}  // namespace
+
+NOCTURNE_TEST(a_file_reads_back_byte_for_byte) {
+    Tree tree;
+    const std::string written("pod\r\n\x1a" "after\0end", 15);
+    std::ofstream("binary.pod", std::ios::binary) << written;
+    HANDLE handle = open_file("binary.pod", kGenericRead, kOpenExisting);
+    CHECK(handle != kInvalidHandle);
+    CHECK(read_all(handle, 64) == written);
+    g_CloseHandleFunc(handle);
+}
+
+// A file handle is a descriptor, a small number. Closing it, or handing it to a
+// call meant for another kind of handle, used to read it as an object's address.
+NOCTURNE_TEST(a_file_handle_is_never_read_as_an_object) {
+    Tree tree;
+    HANDLE handle = open_file("afile.txt", kGenericRead, kOpenExisting);
+    CHECK(handle != kInvalidHandle);
+    WIN32_FIND_DATAA data;
+    CHECK_EQ(g_FindNextFileAFunc(handle, &data), 0);
+    CHECK_EQ(g_FindCloseFunc(handle), 0);
+    CHECK_EQ(g_WaitForSingleObjectFunc(handle, 0), 0xFFFFFFFFu);  // WAIT_FAILED
+    CHECK(g_CloseHandleFunc(handle) != 0);
+    // Closed once is closed: the descriptor is gone
+    CHECK_EQ(g_CloseHandleFunc(handle), 0);
+}
+
+NOCTURNE_TEST(seeking_moves_by_the_whole_offset) {
+    Tree tree;
+    std::ofstream("seek.bin", std::ios::binary) << std::string(256, 'x');
+    HANDLE handle = open_file("seek.bin", kGenericRead, kOpenExisting);
+
+    CHECK_EQ(g_SetFilePointerFunc(handle, 100, nullptr, kFileBegin), 100u);
+    CHECK_EQ(g_SetFilePointerFunc(handle, -10, nullptr, kFileCurrent), 90u);
+    CHECK_EQ(g_SetFilePointerFunc(handle, -6, nullptr, kFileEnd), 250u);
+
+    // With a high word the offset is 64 bits: zero above, and -1 above a
+    // negative low word, are the same small moves.
+    LONG high = 0;
+    CHECK_EQ(g_SetFilePointerFunc(handle, 20, &high, kFileBegin), 20u);
+    CHECK_EQ(high, 0);
+    high = -1;
+    CHECK_EQ(g_SetFilePointerFunc(handle, -4, &high, kFileCurrent), 16u);
+    CHECK_EQ(high, 0);
+    g_CloseHandleFunc(handle);
+}
+
+// Past 4 GB the high word carries the rest. Seeking beyond the end of a file
+// opened for writing is allowed and writes nothing.
+NOCTURNE_TEST(a_high_word_reaches_past_four_gigabytes) {
+    Tree tree;
+    HANDLE handle = open_file("big.bin", kGenericRead | kGenericWrite, kCreateAlways);
+    CHECK(handle != kInvalidHandle);
+    LONG high = 1;
+    CHECK_EQ(g_SetFilePointerFunc(handle, 16, &high, kFileBegin), 16u);
+    CHECK_EQ(high, 1);
+    high = 0;
+    CHECK_EQ(g_SetFilePointerFunc(handle, 0, &high, kFileCurrent), 16u);
+    CHECK_EQ(high, 1);
+    g_CloseHandleFunc(handle);
 }
 
 NOCTURNE_TEST_MAIN()
