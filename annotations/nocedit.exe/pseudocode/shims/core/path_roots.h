@@ -14,6 +14,13 @@
 //      its writable place at run time defines NOCTURNE_USER_DIR_FROM_SDL
 //      instead, for SDL_GetPrefPath's answer.
 //
+//      NOCTURNE_DATA_DIR_FROM_SDL makes SDL_GetPrefPath's NocturneDecomp folder
+//      the data directory as well, for a platform where people copy the game
+//      files into a place of the app's choosing (the macOS app bundle). The
+//      default arrangement leaves one directory for both. When that default is
+//      in use and the folder holds no .pod, a message box names it, the folder
+//      is opened, and the process exits.
+//
 // None of them set is the working directory for both, which is how the game has
 // always run, so a desktop build that sets nothing behaves exactly as before.
 // A relative directory is made absolute here: winMain changes the working

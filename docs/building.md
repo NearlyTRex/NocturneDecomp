@@ -218,8 +218,21 @@ cmake --build --preset exe-macos-arm64
 
 Both use `cmake/toolchains/macos.cmake`; the preset sets `CMAKE_OSX_ARCHITECTURES`. One
 architecture per build rather than a universal binary, since FFmpeg's configure targets one.
-The SDL dylibs are found beside the binary through `@executable_path`, as the `.so` files are
-through `$ORIGIN` on Linux.
+
+The build produces an app bundle, `build/<preset>/Nocturne.app` (`Nocturne Vanilla.app` on the
+vanilla lanes). The SDL dylibs are staged into its `Contents/Frameworks` and found through
+`@executable_path/../Frameworks`. The controller mappings go in `Contents/Resources`, along with
+an icon made from the window icon by `scripts/Python/make_icns.py`. The bundle is then signed
+ad hoc. `run.sh` and `debug.sh` beside it launch the binary inside.
+
+An app launched from Finder starts in `/`, so the data directory defaults to
+`~/Library/Application Support/NocturneDecomp/` (`NOCTURNE_DATA_DIR_FROM_SDL` in
+`shims/core/path_roots.h`). If that folder holds no `.pod`, the app says so, opens it, and
+exits. To run against a game folder elsewhere, pass `--data-dir`:
+
+```sh
+build/exe-macos-arm64/run.sh --data-dir ~/Games/Nocturne
+```
 
 These lanes are built in CI on `macos-latest`; they have not been run on a Mac.
 

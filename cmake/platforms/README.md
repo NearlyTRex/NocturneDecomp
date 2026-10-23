@@ -22,9 +22,10 @@ All variables are optional; the defaults are the empty list or `OFF`.
 | `NOCTURNE_PLATFORM_SHIM_EXCLUDE` | Regexes matched against shim source paths; matches are not built. Picks one socket backend. |
 | `NOCTURNE_PLATFORM_SOURCES` | Extra sources compiled into the shim library: a port's own OS adapters. |
 | `NOCTURNE_PLATFORM_INCLUDE_DIRS` | Extra include directories for the shim library. |
-| `NOCTURNE_PLATFORM_DEFINITIONS` | Extra compile definitions for the shim library. The data and user directories are set here: `NOCTURNE_DEFAULT_DATA_DIR="<dir>"` and `NOCTURNE_DEFAULT_USER_DIR="<dir>"`, or `NOCTURNE_USER_DIR_FROM_SDL` for `SDL_GetPrefPath`'s answer (`shims/core/path_roots.h`). |
+| `NOCTURNE_PLATFORM_DEFINITIONS` | Extra compile definitions for the shim library. The data and user directories are set here: `NOCTURNE_DEFAULT_DATA_DIR="<dir>"` and `NOCTURNE_DEFAULT_USER_DIR="<dir>"`, or `NOCTURNE_USER_DIR_FROM_SDL` for `SDL_GetPrefPath`'s answer, or `NOCTURNE_DATA_DIR_FROM_SDL` to make that folder the data directory too (`shims/core/path_roots.h`). |
 | `NOCTURNE_PLATFORM_LIBRARIES` | Extra libraries linked into the executable. |
 | `NOCTURNE_PLATFORM_LAUNCHERS` | `ON` to generate the bash `run.sh` / `debug.sh` beside the binary. |
+| `NOCTURNE_LAUNCHER_EXE` | The binary those launchers run, relative to the build directory. Defaults to `nocturne`; an app bundle names the binary inside it. |
 | `NOCTURNE_DEPENDENCIES_FILE` | The file that provides SDL2, SDL2_ttf and FFmpeg. Defaults to `cmake/bundledlibs.cmake`. |
 | `NOCTURNE_FFMPEG_TARGET_OS` | FFmpeg's `--target-os`, for the bundled build. |
 | `NOCTURNE_FFMPEG_EXTRA_ARGS` | Further FFmpeg `configure` arguments: compiler, cross prefix, flags. |
@@ -44,6 +45,10 @@ All variables are optional; the defaults are the empty list or `OFF`.
 ships beside the binary; generator expressions such as `$<TARGET_SONAME_FILE:SDL2::SDL2>` are
 fine. Call it from `nocturne_platform_finalize`.
 
+`nocturne_package_bundle(<dir>)` names an application bundle that the archive ships whole,
+in place of the bare binary (`$<TARGET_BUNDLE_DIR:nocturne>` on macOS). Libraries already inside
+the bundle are not listed with `nocturne_package_runtime`.
+
 ## The release manifest
 
 Every executable build writes `package.txt` into its build directory, which
@@ -56,7 +61,8 @@ runtime=/abs/path/to/libSDL2-2.0.so.0
 runtime=/abs/path/to/libSDL2_ttf-2.0.so.0
 ```
 
-A runtime entry is copied following symlinks, under its own file name.
+A runtime entry is copied following symlinks, under its own file name. A `bundle=` line, when
+present, is copied whole instead of `binary`.
 
 ## Providing the dependencies another way
 

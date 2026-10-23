@@ -145,7 +145,8 @@ SDL2 and SDL2_ttf are built from source as shared objects under `build/<preset>/
 link records their absolute paths. That is right for running out of the build tree and useless
 anywhere else — an archive would carry a runpath naming a directory on the machine that built
 it. The Linux platform file therefore appends `$ORIGIN` to the `nocturne` target's runpath
-(macOS's appends `@executable_path`), and lists those libraries in the manifest under the SONAME
+(macOS's appends `@executable_path/../Frameworks` and stages the dylibs into the app bundle,
+which the manifest names as `bundle=` and the archive ships whole), and lists those libraries in the manifest under the SONAME
 the loader asks for, so `package_release.sh` copies them in beside the binary. Both keep working: the build tree resolves through the absolute entries, the archive
 through `$ORIGIN`.
 
