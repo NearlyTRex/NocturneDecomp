@@ -28,8 +28,9 @@ for exactly what differs.
 2. Unpack the archive into that same install folder, so `nocturne.exe` replaces the game's own.
 3. Set up the cutscenes ([below](#cutscenes)).
 
-If the game closes straight away, it leaves a crash report in
-`%LOCALAPPDATA%\NocturneDecomp\nocturne_crash.txt`. Please attach it to a bug report.
+**Reporting a crash:** the game shows a message box and saves a crash report to
+`%LOCALAPPDATA%\NocturneDecomp\nocturne_crash.txt`. Attach it, along with the `nocturne_*.log`
+files from the game folder.
 
 ## macOS
 
@@ -50,6 +51,11 @@ If the game closes straight away, it leaves a crash report in
    Wine or CrossOver. Both apps share this folder, saves included.
 5. Set up the cutscenes ([below](#cutscenes)), then start the app again.
 
+**Reporting a crash:** macOS saves its own crash report to
+`~/Library/Logs/DiagnosticReports/` as `Nocturne-<date>.ips` (`Nocturne Vanilla-<date>.ips` for the
+vanilla app). Attach the newest one, along with the `nocturne_*.log` files from
+`~/Library/Application Support/NocturneDecomp/`.
+
 The macOS builds are compiled in CI but have had little testing on real Macs yet.
 
 ## Linux
@@ -64,6 +70,10 @@ The macOS builds are compiled in CI but have had little testing on real Macs yet
 1. Copy a Nocturne install folder onto the machine: a Windows install, or one made under Wine.
 2. Unpack the archive into that folder, so `nocturne` sits beside the game's own files.
 3. Set up the cutscenes ([below](#cutscenes)).
+
+**Reporting a crash:** start the game from a terminal (`./nocturne`) and attach what it prints,
+along with the `nocturne_*.log` files from the game folder. On distributions that use
+systemd-coredump, `coredumpctl info nocturne` shows the backtrace of the most recent crash.
 
 The Arm builds are compiled and unit-tested in CI but have had little testing on real machines yet.
 
