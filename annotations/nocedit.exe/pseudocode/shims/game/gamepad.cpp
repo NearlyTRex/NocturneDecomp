@@ -14,6 +14,7 @@
 #include <SDL.h>
 #include <cstddef>
 #include <cstring>
+#include <filesystem>
 #include <string>
 
 // The mapping file is looked for where the engine would look for it.
@@ -260,13 +261,27 @@ extern "C" void nocturne_gamepad_init(void) {
         return;
     }
 
-    // A mapping file beside the game's own data teaches SDL a pad newer than
-    // the SDL we linked against. Absent is the normal case, not an error.
+    // A mapping file teaches SDL a pad newer than the SDL we linked against.
+    // The release ships one beside the program (inside a macOS bundle, in its
+    // Resources), which is not the data directory once --data-dir or the macOS
+    // default moves that; a copy beside the game's own data is loaded on top.
+    // Absent is the normal case, not an error.
+    const auto add_mappings = [](const std::string &file) {
+        const int added = SDL_GameControllerAddMappingsFromFile(file.c_str());
+        if (added > 0) {
+            DLOG("input", "loaded %d controller mappings from %s", added, file.c_str());
+        }
+    };
+    std::string shipped;
+    if (char *base = SDL_GetBasePath()) {
+        shipped = std::string(base) + "gamecontrollerdb.txt";
+        SDL_free(base);
+        add_mappings(shipped);
+    }
     const std::string mapping = watcom_resolve_fs_path(NOCTURNE_PAD_MAPPING_FILE);
-    const int added = SDL_GameControllerAddMappingsFromFile(mapping.c_str());
-    if (added > 0) {
-        DLOG("input", "loaded %d controller mappings from %s",
-             added, mapping.c_str());
+    std::error_code ignored;
+    if (shipped.empty() || !std::filesystem::equivalent(shipped, mapping, ignored)) {
+        add_mappings(mapping);
     }
 
     open_first_pad();

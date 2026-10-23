@@ -16,6 +16,9 @@
 #   dist/nocturne-0.1.0-exe-linux-x86_64.tar.gz
 #   dist/nocturne-0.1.0-exe-windows-x86_64.zip
 #
+# A macOS build is an app bundle; its archive holds Nocturne.app (or Nocturne
+# Vanilla.app) instead of a bare binary and libraries.
+#
 # NO GAME DATA. The PODs, BACKDROP/, MODELS/ and the original executables are
 # not in the repository and are not redistributable; an archive holds the engine
 # and the files the repository actually owns. Anyone using it supplies their own
@@ -93,11 +96,13 @@ for preset in "${PRESETS[@]}"; do
     fi
     binary=""
     format=""
+    bundle=""
     runtime=()
     while IFS='=' read -r key value; do
         case "${key}" in
             binary)  binary="${value}" ;;
             format)  format="${value}" ;;
+            bundle)  bundle="${value}" ;;
             runtime) runtime+=("${value}") ;;
         esac
     done < "${manifest}"
@@ -109,7 +114,13 @@ for preset in "${PRESETS[@]}"; do
     stage="${OUT_DIR}/nocturne-${VERSION}-${preset}"
     rm -rf "${stage}"
     mkdir -p "${stage}"
-    cp "${binary}" "${stage}/"
+    if [ -n "${bundle}" ]; then
+        # An app bundle already holds its binary, libraries and signature;
+        # -R keeps its internal symlinks as symlinks, which the seal covers.
+        cp -R "${bundle}" "${stage}/"
+    else
+        cp "${binary}" "${stage}/"
+    fi
     # -L: a soname is usually a symlink to the versioned file; ship the file
     # under the soname.
     for lib in ${runtime[@]+"${runtime[@]}"}; do
@@ -117,6 +128,8 @@ for preset in "${PRESETS[@]}"; do
     done
 
     for f in "${COMMON_FILES[@]}"; do
+        # A bundle carries the controller mappings in its own Resources.
+        case "${f}" in gamecontrollerdb*) [ -n "${bundle}" ] && continue ;; esac
         if [ -f "${ROOT_DIR}/${f}" ]; then cp "${ROOT_DIR}/${f}" "${stage}/"; fi
     done
 

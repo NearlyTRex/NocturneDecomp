@@ -18,7 +18,7 @@
 set -u
 
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
-EXE="${SCRIPT_DIR}/nocturne"
+EXE="${SCRIPT_DIR}/@NOCTURNE_LAUNCHER_EXE@"
 
 if [[ ! -x "${EXE}" ]]; then
     echo "run.sh: ${EXE} not found or not executable" >&2
