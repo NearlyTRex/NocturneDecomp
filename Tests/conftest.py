@@ -8,21 +8,20 @@ import pytest
 
 # The scripts are run as `python3 scripts/Python/<name>.py`, which puts their own
 # directory first on sys.path; the tests import them the same way. Tests/ goes on
-# the path too, for the helpers the tests import by name.
-TESTS_DIR = os.path.dirname(os.path.abspath(__file__))
-REPO_ROOT = os.path.dirname(TESTS_DIR)
-SCRIPTS_DIR = os.path.join(REPO_ROOT, "scripts", "Python")
-for path in (TESTS_DIR, SCRIPTS_DIR):
-    if path not in sys.path:
-        sys.path.insert(0, path)
+# the path too, for the helpers the tests import by name, repo_paths among them.
+_tests = os.path.dirname(os.path.abspath(__file__))
+for _path in (_tests, os.path.join(os.path.dirname(_tests), "scripts", "Python")):
+    if _path not in sys.path:
+        sys.path.insert(0, _path)
 
 
 # The shell plugins resolve script paths from the rootdir, which -c would
 # otherwise make Tests/
 def pytest_configure(config):
-    if str(config.rootpath) != REPO_ROOT:
+    repo_root = os.path.dirname(_tests)
+    if str(config.rootpath) != repo_root:
         pytest.exit(f"pytest's rootdir is {config.rootpath}, not the repository; "
-                    f"pass --rootdir={REPO_ROOT}", returncode = 2)
+                    f"pass --rootdir={repo_root}", returncode = 2)
 
 
 # What a requires_ghidra test lacks: pyghidra to drive it, and an install to drive.

@@ -5,7 +5,7 @@ import os
 import pytest
 
 # Local imports
-from conftest import REPO_ROOT
+from repo_paths import REPO_ROOT
 from shell_helpers import run_script, stub, stub_calls
 
 pytestmark = pytest.mark.requires_binary("bash", "awk", "sed", "grep", "tail", "wc")

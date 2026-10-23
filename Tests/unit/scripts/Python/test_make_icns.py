@@ -9,7 +9,7 @@ import zlib
 import pytest
 
 # Local imports
-from conftest import SCRIPTS_DIR
+from repo_paths import SCRIPTS_DIR
 import make_icns
 
 

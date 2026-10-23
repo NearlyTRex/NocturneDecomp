@@ -8,7 +8,7 @@ import sys
 import pytest
 
 # Local imports
-from conftest import REPO_ROOT
+from repo_paths import REPO_ROOT
 
 SCRIPT = os.path.join(REPO_ROOT, "cmake", "collect_sources.py")
 spec = importlib.util.spec_from_file_location("collect_sources", SCRIPT)

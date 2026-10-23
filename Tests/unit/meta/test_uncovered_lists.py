@@ -6,7 +6,7 @@ import tomllib
 import pytest
 
 # Local imports
-from conftest import REPO_ROOT
+from repo_paths import REPO_ROOT
 
 # A file not yet covered is on two lists: coverage leaves it out of the floor and
 # ruff leaves it out of the lint. Both shrink together as tests land.

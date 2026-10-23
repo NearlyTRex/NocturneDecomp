@@ -1,9 +1,8 @@
-import os
 import re
-from ghidra_annotations.util import *
-from ghidra_annotations.util.log import *
-from ghidra_annotations.util.data_type import *
-from ghidra_annotations.util.namespace import *
+from ghidra_annotations.util.log import log_error
+from ghidra_annotations.util.log import log_info
+from ghidra_annotations.util.namespace import get_or_create_namespace
+from ghidra.program.model.data import CharsetSettingsDefinition
 from ghidra.program.model.data import DataUtilities
 from ghidra.program.model.data import PascalString255DataType
 from ghidra.program.model.data import PascalStringDataType
@@ -71,9 +70,6 @@ def get_string_data_type_names():
 def is_string_data_type_obj(type_obj):
     return isinstance(type_obj, tuple(get_string_data_type_classes()))
 
-def is_string_data_type_name(type_name):
-    return type_name in get_string_data_type_names()
-
 def get_string_data_type_obj(type_name):
     type_class = get_string_data_type_names().get(type_name)
     return type_class() if type_class else None
@@ -123,11 +119,12 @@ def sanitize_c_identifier(name):
         sanitized = "_" + sanitized
     return sanitized
 
+# Memory.getByte returns a signed Java byte; the readers work in 0-255
 def read_ascii_string(memory, string_addr, max_len = 256):
     try:
         chars = bytearray()
         for i in range(max_len):
-            b = memory.getByte(string_addr.add(i))
+            b = memory.getByte(string_addr.add(i)) & 0xff
             if b == 0:
                 break
             if b < 0x20 and b not in (0x09, 0x0a, 0x0c, 0x0d):
@@ -143,8 +140,8 @@ def read_utf16le_string(memory, string_addr, max_len = 256):
     try:
         chars = bytearray()
         for i in range(max_len):
-            lo = memory.getByte(string_addr.add(i * 2))
-            hi = memory.getByte(string_addr.add(i * 2 + 1))
+            lo = memory.getByte(string_addr.add(i * 2)) & 0xff
+            hi = memory.getByte(string_addr.add(i * 2 + 1)) & 0xff
             if lo == 0 and hi == 0:
                 break
             chars.extend([lo, hi])
@@ -206,7 +203,6 @@ def create_or_replace_string(currentProgram, string_addr):
         return True
     except Exception as e:
         log_error("Failed to create TerminatedCString at %s: %s" % (string_addr, e))
-        return False
 
 def extract_string_value(string_data):
     try:
@@ -216,124 +212,21 @@ def extract_string_value(string_data):
         return None
     except Exception as e:
         log_error("Failed to extract string value: %s" % e)
-        return None
 
+# Every string type the export records is an AbstractStringDataType, which
+# reports the charset in effect for this item ("US-ASCII", "UTF-16", ...). The
+# item itself is the settings to ask: its own charset if one was set, else the
+# type's default.
 def detect_string_charset(currentProgram, string_data, string_type):
     try:
-
-        # Check settings for charset information
-        settings = string_data.getDefaultSettings()
-        if settings:
-            charset_keys = ["charsetName", "charset", "encoding", "characterEncoding"]
-            for key in charset_keys:
-                try:
-                    charset = settings.getString(key, None)
-                    if charset and charset.strip():
-                        return charset.strip()
-                except:
-                    continue
-
-        # Try data type specific methods
-        if hasattr(string_type, "getCharsetName"):
-            try:
-                charset = string_type.getCharsetName(settings) if settings else string_type.getCharsetName()
-                if charset and charset.strip():
-                    return charset.strip()
-            except:
-                pass
-        if hasattr(string_type, "getCharset"):
-            try:
-                charset = string_type.getCharset()
-                if charset:
-                    return str(charset).strip()
-            except:
-                pass
-
-        # Try type-based detection using class name patterns
-        type_name = string_type.__class__.__name__ if hasattr(string_type, '__class__') else str(type(string_type))
-
-        # Try specific Ghidra string types
-        charset_mapping = {
-
-            # UTF variants
-            "StringUTF8DataType": "UTF-8",
-            "StringUTF16DataType": "UTF-16",
-            "StringUTF32DataType": "UTF-32",
-            "UnicodeDataType": "UTF-16",
-            "WideCharDataType": "UTF-16",
-            "WideChar16DataType": "UTF-16",
-            "WideChar32DataType": "UTF-32",
-
-            # ASCII variants
-            "StringDataType": "ASCII",
-            "TerminatedStringDataType": "ASCII",
-            "CStringDataType": "ASCII",
-
-            # Other encodings
-            "PascalStringDataType": "ASCII",
-            "PascalString255DataType": "ASCII",
-        }
-        for type_pattern, charset in charset_mapping.items():
-            if type_pattern in type_name:
-                return charset
-
-        # Analyze actual string content
-        if hasattr(string_data, "getValue") or hasattr(string_data, "getStringValue"):
-            try:
-                string_value = None
-                if hasattr(string_data, "getStringValue"):
-                    string_value = string_data.getStringValue()
-                elif hasattr(string_data, "getValue"):
-                    string_value = string_data.getValue()
-                if string_value:
-                    if any(ord(c) > 127 for c in str(string_value) if isinstance(c, str)):
-                        return "UTF-8"
-            except:
-                pass
-
-        # Check data type toString for encoding hints
-        try:
-            type_str = str(string_type).lower()
-            if "utf8" in type_str or "utf-8" in type_str:
-                return "UTF-8"
-            elif "utf16" in type_str or "utf-16" in type_str:
-                return "UTF-16"
-            elif "unicode" in type_str:
-                return "UTF-16"
-            elif "wide" in type_str:
-                return "UTF-16"
-            elif "ascii" in type_str:
-                return "ASCII"
-        except:
-            pass
-
-        # Fall back to program architecture defaults
-        try:
-            language = currentProgram.getLanguage()
-            if language:
-                if language.getLanguageDescription().getProcessor().toString().lower() in ["x86", "arm", "mips"]:
-                    return "UTF-8"
-        except:
-            pass
-
-        # Default fallback
-        return "ASCII"
+        return string_type.getCharsetName(string_data)
     except Exception as e:
         log_error("Failed to detect charset: %s" % e)
-        return None
 
+# Sets the item's charset, which detect_string_charset reads back
 def apply_string_charset(string_data, string_type, charset_name):
     try:
-        if hasattr(string_data, "getSettings"):
-            settings = string_data.getSettings()
-            if settings and hasattr(settings, "setString"):
-                for key in ["charsetName", "charset", "encoding"]:
-                    try:
-                        settings.setString(key, charset_name)
-                        return True
-                    except Exception:
-                        continue
+        CharsetSettingsDefinition.CHARSET.setCharset(string_data, charset_name)
         return True
     except Exception as e:
         log_error("Failed to apply charset '%s': %s" % (charset_name, e))
-        return False

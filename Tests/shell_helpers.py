@@ -4,7 +4,7 @@ import shutil
 import subprocess
 
 # Local imports
-from conftest import REPO_ROOT
+from repo_paths import REPO_ROOT
 
 # Runs the scripts in scripts/Bash from where they live, so shell coverage maps
 # what they ran back to the source. Programs a script must not really run (a

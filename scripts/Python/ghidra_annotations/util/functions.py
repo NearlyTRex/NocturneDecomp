@@ -1,8 +1,3 @@
-import os
-import re
-import json
-from ghidra_annotations.util import *
-
 def is_function_address(currentProgram, addr):
 
     # Check address
@@ -68,7 +63,8 @@ def is_likely_function_prologue(currentProgram, instruction):
                 op1 = instruction.getDefaultOperandRepresentation(0).lower()
                 if "sp" in op1 or "esp" in op1 or "rsp" in op1:
                     return True
-        elif mnemonic == "enter":
+        else:
+            # enter
             return True
     return False
 

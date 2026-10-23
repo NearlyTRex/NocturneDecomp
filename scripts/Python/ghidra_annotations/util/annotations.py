@@ -1,12 +1,9 @@
 import os
-import sys
 import json
 import glob
 import errno
-import shutil
-import hashlib
-from ghidra_annotations.util.log import *
-from collections import defaultdict
+import zlib
+from ghidra_annotations.util.log import log_info
 
 def clean_data(obj):
     if isinstance(obj, dict):
@@ -52,16 +49,6 @@ def with_generated_notice(content):
         return content
     return GENERATED_HEADER_NOTICE + content
 
-def delete_dir_contents(path):
-    if not os.path.isdir(path):
-        return
-    for item in os.listdir(path):
-        item_path = os.path.join(path, item)
-        if os.path.isdir(item_path):
-            shutil.rmtree(item_path)
-        else:
-            os.remove(item_path)
-
 def save_json(path, data):
     make_dirs(os.path.dirname(path))
     content = json.dumps(data, indent=2, separators=(",", ":"), sort_keys=True) + '\n'
@@ -70,7 +57,6 @@ def save_json(path, data):
 def load_json(path):
     with open(path, "r") as f:
         return json.load(f)
-    return None
 
 def save_json_file(path, filename_base, data):
     save_json(os.path.join(path, filename_base, "%s.json" % filename_base), data)
@@ -116,9 +102,11 @@ def save_json_files(path, filename_base, items, addr_func, bucket_bits = 4):
     for item in items:
         try:
             addr = int(addr_func(item).replace("0x", ""), 16)
-        except:
-            # Fallback for non-hex addresses
-            addr = hash(addr_func(item)) & 0xFFFFFFFF
+        except Exception:
+            # Fallback for non-hex addresses. crc32 rather than hash(), which
+            # Python salts per process, so an item lands in the same bucket on
+            # every export.
+            addr = zlib.crc32(str(addr_func(item)).encode("utf-8"))
 
         # Use lower bits of address for bucket selection
         # This ensures even distribution regardless of address density
@@ -148,7 +136,7 @@ def save_json_files(path, filename_base, items, addr_func, bucket_bits = 4):
             try:
                 addr = int(addr_func(item).replace("0x", ""), 16)
                 addresses.append(addr)
-            except:
+            except Exception:
                 pass
 
         # Log address range
@@ -216,8 +204,8 @@ def load_json_files(path, filename_base):
                 json_data = load_json(filepath)
                 if json_data:
                     loaded_items.extend(json_data)
-                log_info("Loaded %s items from %s" % (len(json_data), os.path.basename(filepath)))
-            except:
+                log_info("Loaded %s items from %s" % (len(json_data or []), os.path.basename(filepath)))
+            except Exception:
                 log_info("Warning: Could not load %s" % filepath)
         return loaded_items
 
@@ -234,5 +222,5 @@ def load_json_files(path, filename_base):
             json_data = load_json(filepath)
             if json_data:
                 loaded_items.extend(json_data)
-            log_info("Loaded %s items from %s" % (len(json_data), filename))
+            log_info("Loaded %s items from %s" % (len(json_data or []), filename))
     return loaded_items

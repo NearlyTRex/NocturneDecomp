@@ -1,7 +1,7 @@
-import os
 import re
-from ghidra_annotations.util.log import *
-from ghidra_annotations.util.namespace import *
+from ghidra_annotations.util.log import log_error
+from ghidra_annotations.util.log import log_info
+from ghidra_annotations.util.namespace import get_or_create_namespace
 from ghidra_annotations.util.string import is_string_data_type_obj
 from ghidra_annotations.util.string import normalize_string_name
 from ghidra_annotations.util.string import sanitize_c_identifier
@@ -104,7 +104,6 @@ def create_label_for_data(currentProgram, data, label_namespace = None):
         data_label = get_data_label_name(data, get_data_label_address_suffix(data_addr))
         if not data_label:
             log_error("Failed to derive a label for data at %s" % data_addr)
-            return False
 
         # Create new data label
         if label_namespace is None:
@@ -114,7 +113,6 @@ def create_label_for_data(currentProgram, data, label_namespace = None):
         return True
     except Exception as e:
         log_error("Failed to create label at %s: %s" % (data.getMinAddress(), e))
-        return False
 
 def create_label_at_address(currentProgram, data_addr):
 

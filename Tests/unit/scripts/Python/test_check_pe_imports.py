@@ -7,7 +7,7 @@ import sys
 import pytest
 
 # Local imports
-from conftest import SCRIPTS_DIR
+from repo_paths import SCRIPTS_DIR
 from pe_helpers import build_pe, write_pe
 import check_pe_imports
 

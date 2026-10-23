@@ -2,7 +2,7 @@
 import pytest
 
 # Local imports
-from conftest import SCRIPTS_DIR
+from repo_paths import SCRIPTS_DIR
 from shell_helpers import run_script, stub, stub_calls, stubbed_env
 
 pytestmark = pytest.mark.requires_binary("bash")

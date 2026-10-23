@@ -9,7 +9,7 @@ import pytest
 from PIL import Image
 
 # Local imports
-from conftest import SCRIPTS_DIR
+from repo_paths import SCRIPTS_DIR
 from pe_helpers import OPTIONAL_OFFSET, SECTION_RAW, DataEntry, RawEntry, build_pe
 import extract_exe_icon as icon
 
