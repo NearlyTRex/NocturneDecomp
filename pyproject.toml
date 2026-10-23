@@ -42,7 +42,6 @@ patch = ["subprocess"]
 # file leaves [tool.ruff.lint.per-file-ignores] with it; the meta suite checks the
 # two lists agree. The list only shrinks.
 omit = [
-    "cmake/collect_sources.py",
     "recreation/cmake/tidy.py",
     "scripts/Python/actor_class_tree.py",
     "scripts/Python/add_cave_section.py",
@@ -60,7 +59,6 @@ omit = [
     "scripts/Python/automap_preview.py",
     "scripts/Python/check_authentic_flags.py",
     "scripts/Python/check_keep_signatures.py",
-    "scripts/Python/check_pe_imports.py",
     "scripts/Python/check_stale_keeps.py",
     "scripts/Python/check_this_ptr.py",
     "scripts/Python/check_tu_alignment.py",
@@ -87,7 +85,6 @@ omit = [
     "scripts/Python/emit_struct_drift_spec.py",
     "scripts/Python/export_annotations.py",
     "scripts/Python/extract_crt_catalog.py",
-    "scripts/Python/extract_exe_icon.py",
     "scripts/Python/extract_line_pins.py",
     "scripts/Python/extract_pod.py",
     "scripts/Python/find_code_caves.py",
@@ -252,7 +249,6 @@ select = ["E4", "E7", "E9", "F"]
 
 [tool.ruff.lint.per-file-ignores]
 # Not yet cleaned up; mirrors [tool.coverage.run] omit, and shrinks with it
-"cmake/collect_sources.py" = ["E", "F"]
 "recreation/cmake/tidy.py" = ["E", "F"]
 "scripts/Python/actor_class_tree.py" = ["E", "F"]
 "scripts/Python/add_cave_section.py" = ["E", "F"]
@@ -270,7 +266,6 @@ select = ["E4", "E7", "E9", "F"]
 "scripts/Python/automap_preview.py" = ["E", "F"]
 "scripts/Python/check_authentic_flags.py" = ["E", "F"]
 "scripts/Python/check_keep_signatures.py" = ["E", "F"]
-"scripts/Python/check_pe_imports.py" = ["E", "F"]
 "scripts/Python/check_stale_keeps.py" = ["E", "F"]
 "scripts/Python/check_this_ptr.py" = ["E", "F"]
 "scripts/Python/check_tu_alignment.py" = ["E", "F"]
@@ -297,7 +292,6 @@ select = ["E4", "E7", "E9", "F"]
 "scripts/Python/emit_struct_drift_spec.py" = ["E", "F"]
 "scripts/Python/export_annotations.py" = ["E", "F"]
 "scripts/Python/extract_crt_catalog.py" = ["E", "F"]
-"scripts/Python/extract_exe_icon.py" = ["E", "F"]
 "scripts/Python/extract_line_pins.py" = ["E", "F"]
 "scripts/Python/extract_pod.py" = ["E", "F"]
 "scripts/Python/find_code_caves.py" = ["E", "F"]

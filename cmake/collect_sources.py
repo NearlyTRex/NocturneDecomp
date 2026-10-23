@@ -44,6 +44,11 @@ IGNORED_SUFFIXES = (
 )
 
 
+def is_compiled_source(name):
+    """A .c/.cpp the build compiles: not one of the companion variants."""
+    return name.endswith(('.cpp', '.c')) and not name.endswith(IGNORED_SUFFIXES)
+
+
 def load_skip_list(path):
     rules = {'tokens': [], 'paths': set(), 'globs': []}
     if not path or not os.path.exists(path):
@@ -77,26 +82,20 @@ def is_skipped(rel_path, rules):
 
 
 def pick_function_source(func_dir):
-    """Return the winning source file in a per-function directory, or None."""
+    """Return the winning source file for each function in a per-function directory."""
     by_base = {}
     for name in os.listdir(func_dir):
         full = os.path.join(func_dir, name)
         if not os.path.isfile(full):
             continue
-        if any(name.endswith(s) for s in IGNORED_SUFFIXES):
+        if name.endswith(IGNORED_SUFFIXES):
             continue
         for ext in SRC_PRIORITY:
             if name.endswith(ext):
                 base = name[:-len(ext)]
                 by_base.setdefault(base, {})[ext] = full
                 break
-    winners = []
-    for base, variants in by_base.items():
-        for ext in SRC_PRIORITY:
-            if ext in variants:
-                winners.append(variants[ext])
-                break
-    return winners
+    return [variants[min(variants, key=SRC_PRIORITY.index)] for variants in by_base.values()]
 
 
 def collect_module(module_dir, src_root, rules):
@@ -110,8 +109,7 @@ def collect_module(module_dir, src_root, rules):
     if not has_nested:
         for name in sorted(os.listdir(module_dir)):
             full = os.path.join(module_dir, name)
-            if os.path.isfile(full) and (name.endswith('.cpp') or name.endswith('.c')) \
-                    and not any(name.endswith(s) for s in IGNORED_SUFFIXES):
+            if os.path.isfile(full) and is_compiled_source(name):
                 rel = os.path.relpath(full, src_root)
                 if not is_skipped(rel, rules):
                     winners.append(full)
@@ -121,7 +119,7 @@ def collect_module(module_dir, src_root, rules):
     # OR the module itself has flat files mixed with subdirs (entry/ pattern — handled too).
     for child in sorted(os.listdir(module_dir)):
         full_child = os.path.join(module_dir, child)
-        if os.path.isfile(full_child) and (child.endswith('.cpp') or child.endswith('.c')):
+        if os.path.isfile(full_child) and is_compiled_source(child):
             rel = os.path.relpath(full_child, src_root)
             if not is_skipped(rel, rules):
                 winners.append(full_child)
