@@ -646,7 +646,8 @@ extern "C" void nocturne_sim_trace_frame(int sequence_number)
     // One line per hero: the draw and fire inputs this frame applies, and the
     // weapon state they act on. A hero whose weapon state changes on a frame
     // where neither its own input nor an E line explains it is the lead.
-    for (i = 0; i < g_HeroCount; i++) {
+    // Bounded by g_HeroActors' slots as well as the count, as net_sync is.
+    for (i = 0; (i < g_HeroCount) && (i < NOCTURNE_HERO_SLOTS); i++) {
         CHero *hero = g_HeroActors[i];
         int    shared = -1;
         int    j;
@@ -654,7 +655,7 @@ extern "C" void nocturne_sim_trace_frame(int sequence_number)
         if (hero == (CHero *)0x0) {
             continue;
         }
-        for (j = 0; j < g_HeroCount; j++) {
+        for (j = 0; (j < g_HeroCount) && (j < NOCTURNE_HERO_SLOTS); j++) {
             if ((j != i) && (g_HeroActors[j] != (CHero *)0x0) &&
                 (hero->inventory.selected_weapon != (CWeapon *)0x0) &&
                 (g_HeroActors[j]->inventory.selected_weapon == hero->inventory.selected_weapon)) {

@@ -30,7 +30,7 @@ static const char *const k_hero_names[] = {
 // Both entries stay in the name table so a hero_number that arrives as either
 // over the wire still prints rather than as "?" — this gates the selector, not
 // the game.
-static const char k_hero_selectable[HERO_NAME_COUNT] = {
+static constexpr char k_hero_selectable[HERO_NAME_COUNT] = {
     1,  // HERO_TYPE_GABRIELLA
     1,  // HERO_TYPE_SVETLANA
     0,  // HERO_TYPE_STRANGER
@@ -47,6 +47,11 @@ static const char k_hero_selectable[HERO_NAME_COUNT] = {
 // the lobby cycle into a value createHero would quit on.
 static_assert(HERO_NAME_COUNT == HERO_TYPE_MOLOCH + 1,
               "k_hero_names must cover every EHeroType");
+
+// And the roster has to name someone, or the search in nocturne_net_hero_cycle
+// would never end. Gabriella is where a guest's default lands.
+static_assert(k_hero_selectable[HERO_TYPE_GABRIELLA] != 0,
+              "the guest roster must name Gabriella");
 
 const char *nocturne_net_hero_name(int hero_type)
 {
@@ -95,16 +100,12 @@ void nocturne_net_hero_forget_host_view(void)
 
 int nocturne_net_hero_cycle(int hero_type, int direction)
 {
-    int step;
-
     direction = direction < 0 ? -1 : 1;
     if (hero_type < 0 || hero_type >= HERO_NAME_COUNT) {
         hero_type = HERO_TYPE_GABRIELLA;
     }
 
-    // One lap at most, so a table with nothing selectable in it cannot spin
-    // forever — it just leaves the hero where it started.
-    for (step = 0; step < HERO_NAME_COUNT; step++) {
+    do {
         hero_type = hero_type + direction;
         if (hero_type < 0) {
             hero_type = HERO_NAME_COUNT - 1;
@@ -112,10 +113,7 @@ int nocturne_net_hero_cycle(int hero_type, int direction)
         else if (hero_type >= HERO_NAME_COUNT) {
             hero_type = 0;
         }
-        if (k_hero_selectable[hero_type] != 0) {
-            break;
-        }
-    }
+    } while (k_hero_selectable[hero_type] == 0);
     return hero_type;
 }
 

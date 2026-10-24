@@ -12,8 +12,11 @@
 #include "core/debug_log.h"
 #include "core/fnv1a.h"
 
+#include <algorithm>
+#include <cstdarg>
 #include <cstdio>
 #include <cstring>
+#include <string>
 
 #if !NOCTURNE_AUTHENTIC_NETPLAY && NOCTURNE_NETPLAY_SYNC_CHECK
 
@@ -231,18 +234,34 @@ static void sync_capture(SNetPacket_SyncCheck *out, int sequence_number)
 // The message is built here and passed through a "%s" rather than used as the
 // format itself: displayErrorAndQuit is variadic and vsprintf's whatever it is
 // given, so a stray %s in anything interpolated would read a pointer that was
-// never passed.
+// never passed. It vsprintf's into a 4096-byte buffer, so the message is cut
+// well inside that.
+#define SYNC_FATAL_MESSAGE_MAX 1023
+
+// One piece of the message; each is far shorter than the buffer.
+#if defined(__GNUC__) || defined(__clang__)
+__attribute__((format(printf, 1, 2)))
+#endif
+static std::string sync_piece(const char *format, ...)
+{
+    char    piece[512];
+    va_list args;
+
+    va_start(args, format);
+    std::vsnprintf(piece, sizeof(piece), format, args);
+    va_end(args);
+    return piece;
+}
+
 static void sync_fatal(const SNetPacket_SyncCheck *host_state,
                        const SNetPacket_SyncCheck *own,
                        int heroes_differ, int actors_differ,
                        int draws_differ)
 {
-    char message[1024];
-    int  used;
-    int  i;
+    std::string message;
+    int         i;
 
-    used = std::snprintf(
-        message, sizeof(message),
+    message = sync_piece(
         "Netplay desync at sim frame %d.\n\n"
         "%s, %s\n"
         "actors: host %d hash=%08x | ours %d hash=%08x\n"
@@ -255,13 +274,12 @@ static void sync_fatal(const SNetPacket_SyncCheck *host_state,
         host_state->sim_rng_draws, own->sim_rng_draws,
         (draws_differ != 0) ? "  <- diverged inside this frame" : "");
 
-    for (i = 0; (i < own->hero_count) && (used > 0) && (used < (int)sizeof(message)); i++) {
+    for (i = 0; i < own->hero_count; i++) {
         if ((own->hero_area[i] == host_state->hero_area[i]) &&
             same_bits(own->hero_position[i], host_state->hero_position[i])) {
             continue;
         }
-        used = used + std::snprintf(
-            message + used, sizeof(message) - (size_t)used,
+        message += sync_piece(
             "\nhero %d  host (%.3f, %.3f, %.3f) area %d\n"
             "        ours (%.3f, %.3f, %.3f) area %d\n",
             i,
@@ -275,15 +293,13 @@ static void sync_fatal(const SNetPacket_SyncCheck *host_state,
             own->hero_area[i]);
     }
 
-    if ((used > 0) && (used < (int)sizeof(message))) {
-        std::snprintf(message + used, sizeof(message) - (size_t)used,
-                      "\nWhich actors differ is in nocturne_netplay.log; the frame "
-                      "itself is in nocturne_simtrace.log on both machines.");
-    }
+    message += "\nWhich actors differ is in nocturne_netplay.log; the frame "
+               "itself is in nocturne_simtrace.log on both machines.";
+    message.resize((std::min)(message.size(), (size_t)SYNC_FATAL_MESSAGE_MAX));
 
     g_CurrentFilename   = (char *)"..\\shims\\net_sync.cpp";
     g_CurrentLineNumber = __LINE__;
-    core_main_c_displayErrorAndQuit_FUN_00506f10((char *)"%s", message);
+    core_main_c_displayErrorAndQuit_FUN_00506f10((char *)"%s", message.c_str());
 }
 #endif /* NOCTURNE_NETPLAY_SYNC_FATAL */
 
