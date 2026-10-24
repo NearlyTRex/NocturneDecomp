@@ -32,7 +32,7 @@ Flip any of them on the configure line:
 cmake --preset exe-linux-asan-x86_64 -DNOCTURNE_AUTHENTIC_HUD_SCALE=1
 ```
 
-`CMakeLists.txt` forwards every `NOCTURNE_AUTHENTIC_*` and `NOCTURNE_EDITOR_BUILD` set that way
+`cmake/authenticity.cmake` forwards every `NOCTURNE_AUTHENTIC_*` and `NOCTURNE_EDITOR_BUILD` set that way
 into the compile definitions of the whole build, and prints what it forwarded. Clear one again
 with `-UNOCTURNE_AUTHENTIC_HUD_SCALE` to fall back to the header's default.
 

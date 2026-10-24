@@ -28,7 +28,8 @@
 
 // Where SDL runs the app from an entry point of its own (WinRT, and SDL's ports
 // that do the same), it calls SDL_main, and its header names main below so.
-// NOCTURNE_PLATFORM_SDL_MAIN in the platform file asks for it (CMakeLists.txt).
+// NOCTURNE_PLATFORM_SDL_MAIN in the platform file asks for it
+// (cmake/game_modules.cmake).
 #if defined(NOCTURNE_SDL_MAIN)
 #include <SDL_main.h>
 #endif

@@ -76,7 +76,7 @@ jobs:
         ci-phase Build cmake --build --preset ${{ matrix.preset }}
         ci-phase "Build tests" cmake --build build/${{ matrix.preset }} --target nocturne_tests
       # With coverage, the binaries and what counts come from the build (see
-      # CMakeLists.txt).
+      # cmake/tests.cmake).
       test-command: |
         build=build/${{ matrix.preset }}
         if [ "${{ matrix.coverage }}" = ON ]; then

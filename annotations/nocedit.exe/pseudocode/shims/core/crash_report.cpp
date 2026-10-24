@@ -280,7 +280,138 @@ extern "C" void nocturne_crash_report_set_dir(const char *dir) {
 
 #else
 
-extern "C" void nocturne_install_crash_handler(const char *version) { (void)version; }
-extern "C" void nocturne_crash_report_set_dir(const char *dir) { (void)dir; }
+#include <cerrno>
+#include <csignal>
+#include <cstring>
+#include <fcntl.h>
+#include <unistd.h>
+#if __has_include(<execinfo.h>)
+#include <execinfo.h>
+#define NOCTURNE_CRASH_BACKTRACE 1
+#endif
+
+#ifndef NOCTURNE_PLATFORM_CRASH_SIGNALS
+#define NOCTURNE_PLATFORM_CRASH_SIGNALS 0
+#endif
+
+int g_nocturne_crash_signals = NOCTURNE_PLATFORM_CRASH_SIGNALS;
+
+// A coverage build's profile is written by an exit hook a signal never reaches.
+#if defined(NOCTURNE_COVERAGE_BUILD)
+extern "C" int __llvm_profile_write_file(void);
+#endif
+
+namespace {
+
+const char *s_version = "";
+char s_dir[1024];
+
+const int kSignals[] = {SIGSEGV, SIGBUS, SIGILL, SIGFPE, SIGABRT};
+
+// What a handler may call: write(2), and nothing that allocates or formats.
+void put(int fd, const char *text) {
+    size_t left = strlen(text);
+    while (left > 0) {
+        const ssize_t n = write(fd, text, left);
+        if (n <= 0) return;
+        text += n;
+        left -= (size_t)n;
+    }
+}
+
+// A signal number: never more than the ten digits an unsigned has room for.
+void put_number(int fd, int value) {
+    char digits[12];
+    int at = (int)sizeof(digits) - 1;
+    digits[at] = '\0';
+    unsigned magnitude = (unsigned)value;
+    do {
+        digits[--at] = (char)('0' + magnitude % 10u);
+        magnitude /= 10u;
+    } while (magnitude != 0u);
+    put(fd, digits + at);
+}
+
+// `src` after what `dst` holds, as much as its `size` has room for.
+void append(char *dst, size_t size, const char *src) {
+    size_t at = strlen(dst);
+    while (*src != '\0' && at + 1 < size) dst[at++] = *src++;
+    dst[at] = '\0';
+}
+
+const char *signal_name(int sig) {
+    switch (sig) {
+    case SIGSEGV: return "segmentation fault";
+    case SIGBUS:  return "bus error";
+    case SIGILL:  return "illegal instruction";
+    case SIGFPE:  return "floating-point exception";
+    default:      return "abort";
+    }
+}
+
+void report(int fd, int sig) {
+    put(fd, "Nocturne crash report\n");
+    put(fd, s_version);
+    put(fd, "\nsignal: ");
+    put_number(fd, sig);
+    put(fd, " (");
+    put(fd, signal_name(sig));
+    put(fd, ")\n\nstack:\n");
+#if defined(NOCTURNE_CRASH_BACKTRACE)
+    void *frames[48];
+    backtrace_symbols_fd(frames, backtrace(frames, 48), fd);
+#else
+    put(fd, "  (no unwinder for this platform)\n");
+#endif
+}
+
+void on_signal(int sig) {
+    const int saved_errno = errno;
+    report(STDERR_FILENO, sig);
+    char path[sizeof(s_dir) + 32];
+    path[0] = '\0';
+    append(path, sizeof(path), s_dir);
+    append(path, sizeof(path), "/nocturne_crash.txt");
+    const int fd = (s_dir[0] != '\0') ? open(path, O_WRONLY | O_CREAT | O_TRUNC, 0644) : -1;
+    if (fd >= 0) {
+        report(fd, sig);
+        close(fd);
+        put(STDERR_FILENO, "crash report saved to ");
+        put(STDERR_FILENO, path);
+        put(STDERR_FILENO, "\n");
+    }
+#if defined(NOCTURNE_COVERAGE_BUILD)
+    __llvm_profile_write_file();
+#endif
+    errno = saved_errno;
+    // SA_RESETHAND put the default back: raising again ends the process the
+    // way the fault would have.
+    raise(sig);
+}
+
+}  // namespace
+
+extern "C" void nocturne_install_crash_handler(const char *version) {
+    s_version = version != nullptr ? version : "";
+    if (g_nocturne_crash_signals == 0) return;
+
+    // Its own stack, so an overflowed one can still be reported.
+    static char alternate[64 * 1024];
+    stack_t stack = {};
+    stack.ss_sp = alternate;
+    stack.ss_size = sizeof(alternate);
+    sigaltstack(&stack, nullptr);
+
+    struct sigaction action = {};
+    action.sa_handler = on_signal;
+    action.sa_flags = SA_ONSTACK | SA_RESETHAND;
+    sigemptyset(&action.sa_mask);
+    for (int sig : kSignals) sigaction(sig, &action, nullptr);
+}
+
+extern "C" void nocturne_crash_report_set_dir(const char *dir) {
+    s_dir[0] = '\0';
+    if (dir != nullptr) append(s_dir, sizeof(s_dir), dir);
+}
 
 #endif
