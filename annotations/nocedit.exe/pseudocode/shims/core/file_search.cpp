@@ -91,8 +91,9 @@ std::vector<std::string> nocturne_find_files(const char *filespec) {
         std::filesystem::directory_iterator it(where, ignored), end;
         if (ignored) continue;
 
+        // A failed step leaves the iterator at end, so an error mid-listing
+        // stops the walk with what was found so far.
         for (; it != end; it.increment(ignored)) {
-            if (ignored) break;
             const std::string name = it->path().filename().string();
             if (!matches(pattern.c_str(), name.c_str())) continue;
             bool duplicate = false;

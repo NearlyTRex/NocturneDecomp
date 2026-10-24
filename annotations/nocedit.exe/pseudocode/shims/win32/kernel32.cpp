@@ -1639,7 +1639,20 @@ static int shim_WideCharToMultiByte(UINT CodePage, DWORD dwFlags,
 // Init Function
 // =============================================================================
 
+#if defined(_MSC_VER)
+// The Microsoft runtime ends the process when a descriptor call is handed one
+// that is not open, where Win32 and the other runtimes answer with an error —
+// CloseHandle on a closed file is FALSE, not a crash. Every descriptor call in
+// the shims checks for that error, so a handler that returns lets them see it.
+static void return_on_invalid_parameter(const wchar_t*, const wchar_t*, const wchar_t*,
+                                        unsigned int, uintptr_t) {}
+#endif
+
 void shims_init_kernel32(void) {
+#if defined(_MSC_VER)
+    _set_invalid_parameter_handler(return_on_invalid_parameter);
+#endif
+
     // File I/O
     g_CloseHandleFunc = shim_CloseHandle;
     g_CreateDirectoryAFunc = shim_CreateDirectoryA;

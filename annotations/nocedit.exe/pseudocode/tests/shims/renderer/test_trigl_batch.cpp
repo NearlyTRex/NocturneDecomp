@@ -135,6 +135,24 @@ NOCTURNE_TEST(index_capacity_binds_on_its_own) {
     CHECK(nocturne_trigl_batch_add_polygon(&s.batch, 2) != nullptr);
 }
 
+// Indices are 16 bits, so a batch holds as many vertices as they can address
+// however much storage it was given.
+NOCTURNE_TEST(vertices_stop_where_sixteen_bit_indices_do) {
+    const int kAddressable = 65536;
+    Storage s(kAddressable + 1024, kAddressable * 3);
+    CHECK(nocturne_trigl_batch_add_polygon(&s.batch, kAddressable) != nullptr);
+    CHECK_EQ(s.batch.vertex_count, kAddressable);
+    CHECK(nocturne_trigl_batch_add_polygon(&s.batch, 3) == nullptr);
+}
+
+// The index side alone can call for a flush, with vertices to spare.
+NOCTURNE_TEST(flush_is_signalled_when_indices_run_short) {
+    Storage s(4096, 100);
+    CHECK(nocturne_trigl_batch_add_polygon(&s.batch, 4) != nullptr);
+    CHECK(s.batch.vertex_count + 32 <= s.batch.vertex_capacity);
+    CHECK(nocturne_trigl_batch_should_flush(&s.batch) != 0);
+}
+
 NOCTURNE_TEST(flush_is_signalled_before_the_batch_is_actually_full) {
     Storage s(128, 4096);
     CHECK_EQ(nocturne_trigl_batch_should_flush(&s.batch), 0);

@@ -143,7 +143,11 @@ NOCTURNE_TEST(file_attributes_say_directory_and_read_only) {
     CHECK_EQ(__getfileattr("no_such_file"), kInvalid);
 
     std::error_code ec;
-    fs::permissions(fs::path("ACT1.POD"), fs::perms::owner_write,
+    // Every write bit, not the owner's alone: the Microsoft library maps the
+    // three onto Windows' one read-only attribute and sets it only when none is
+    // left.
+    fs::permissions(fs::path("ACT1.POD"),
+                    fs::perms::owner_write | fs::perms::group_write | fs::perms::others_write,
                     fs::perm_options::remove, ec);
     CHECK_EQ(__getfileattr("ACT1.POD"), kReadOnly);
     // Put it back so the tree can be removed.

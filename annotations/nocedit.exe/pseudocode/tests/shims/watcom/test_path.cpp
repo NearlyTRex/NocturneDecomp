@@ -25,6 +25,9 @@
 #include <fstream>
 #include <string>
 #include <system_error>
+#if !defined(_WIN32)
+#include <unistd.h>
+#endif
 
 namespace {
 
@@ -190,5 +193,70 @@ NOCTURNE_TEST(an_absolute_path_stays_absolute) {
     CHECK(Tree::opens(resolved));
     CHECK(fs::path(resolved).is_absolute());
 }
+
+NOCTURNE_TEST(a_one_letter_name_that_is_not_there_comes_back_as_asked) {
+    Tree tree;
+    CHECK_EQ(watcom_resolve_fs_path("q"), std::string("q"));
+}
+
+// Two separators in a row make an empty name, and "." names where it is; neither
+// is a step at all.
+NOCTURNE_TEST(a_doubled_separator_or_a_dot_is_no_step) {
+    Tree tree;
+    const std::string doubled = watcom_resolve_fs_path("system\\\\NOCTURNE.INI");
+    const std::string dotted = watcom_resolve_fs_path("system\\.\\NOCTURNE.INI");
+    CHECK(Tree::opens(doubled));
+    CHECK(Tree::opens(dotted));
+#if !defined(_WIN32)
+    // Where case matters the walk spells it out; where it does not, the path as
+    // asked already opens and comes back as it was.
+    CHECK_EQ(doubled, std::string("SYSTEM/nocturne.ini"));
+    CHECK_EQ(dotted, std::string("SYSTEM/nocturne.ini"));
+#endif
+}
+
+// -----------------------------------------------------------------------------
+// The two small helpers beside the resolver.
+// -----------------------------------------------------------------------------
+
+NOCTURNE_TEST(a_mode_writes_if_it_can_create_or_change_the_file) {
+    CHECK(!watcom_mode_writes(nullptr));
+    CHECK(!watcom_mode_writes("r"));
+    CHECK(!watcom_mode_writes("rb"));
+    CHECK(watcom_mode_writes("w"));
+    CHECK(watcom_mode_writes("ab"));
+    CHECK(watcom_mode_writes("r+"));
+}
+
+NOCTURNE_TEST(the_leaf_is_what_follows_the_last_separator_or_drive) {
+    CHECK_EQ(std::string(watcom_path_leaf("C:\\games\\save1.noc")), std::string("save1.noc"));
+    CHECK_EQ(std::string(watcom_path_leaf("save/slot.noc")), std::string("slot.noc"));
+    CHECK_EQ(std::string(watcom_path_leaf("C:slot.noc")), std::string("slot.noc"));
+    CHECK_EQ(std::string(watcom_path_leaf("slot.noc")), std::string("slot.noc"));
+    CHECK_EQ(std::string(watcom_path_leaf("dir\\")), std::string(""));
+}
+
+// A name that starts with a dot is a name, not "./".
+NOCTURNE_TEST(a_leading_dot_without_a_separator_is_part_of_the_name) {
+    Tree tree;
+    CHECK_EQ(watcom_resolve_fs_path(".hidden"), std::string(".hidden"));
+}
+
+#if !defined(_WIN32)
+// A directory that can be entered but not listed cannot be searched for a name
+// in another case; the path comes back as asked, to fail as asked. Root reads
+// any directory, so the test only means something for anyone else.
+NOCTURNE_TEST(a_directory_that_cannot_be_listed_is_not_searched) {
+    Tree tree;
+    if (geteuid() == 0) return;
+    std::error_code ec;
+    fs::create_directories(tree.root / "locked", ec);
+    Tree::write(tree.root / "locked" / "Inner.txt");
+    fs::permissions(tree.root / "locked", fs::perms::owner_exec, ec);
+    const std::string resolved = watcom_resolve_fs_path("locked\\inner.txt");
+    fs::permissions(tree.root / "locked", fs::perms::owner_all, ec);
+    CHECK_EQ(resolved, std::string("locked/inner.txt"));
+}
+#endif
 
 NOCTURNE_TEST_MAIN()

@@ -118,6 +118,73 @@ NOCTURNE_TEST(a_listing_covers_both_directories_once) {
     }
 }
 
+// A file already in the user directory is the one written: the shipped copy is
+// brought across only the first time.
+NOCTURNE_TEST(a_file_already_written_is_not_copied_over_again) {
+    Install install;
+    Install::write(watcom_resolve_fs_path("system\\nocturne.ini", WatcomPathUse::Write), "mine");
+    const std::string again = watcom_resolve_fs_path("system\\nocturne.ini", WatcomPathUse::Write);
+    CHECK_EQ(Install::read(again), std::string("mine"));
+}
+
+// With only a user directory, what it does not have is looked for where the
+// game runs, and that is what a first write copies from.
+NOCTURNE_TEST(a_user_directory_alone_falls_back_to_the_working_directory) {
+    Install install;
+    std::error_code ec;
+    const fs::path previous = fs::current_path(ec);
+    fs::current_path(install.data, ec);
+    watcom_set_path_roots({"", install.user.generic_string()});
+
+    CHECK(fs::equivalent(watcom_resolve_fs_path("act1.pod"), install.in_data("ACT1.POD")));
+    const std::string target = watcom_resolve_fs_path("system\\nocturne.ini", WatcomPathUse::Write);
+    CHECK_EQ(target, install.in_user("system/nocturne.ini"));
+    CHECK_EQ(Install::read(target), std::string("shipped"));
+    const std::vector<std::string> dirs = watcom_resolve_fs_dirs("save");
+    CHECK_EQ(dirs.size(), (size_t)2);
+    if (dirs.size() == 2) {
+        CHECK_EQ(dirs[0], install.in_user("save"));
+        CHECK_EQ(dirs[1], std::string("save"));
+    }
+    fs::current_path(previous, ec);
+}
+
+// With only a data directory, there is nowhere to prefer and one place to list.
+NOCTURNE_TEST(a_data_directory_alone_is_the_only_place) {
+    Install install;
+    watcom_set_path_roots({install.data.generic_string(), ""});
+    CHECK(fs::equivalent(watcom_resolve_fs_path("act1.pod"), install.in_data("ACT1.POD")));
+    const std::vector<std::string> dirs = watcom_resolve_fs_dirs("SAVE");
+    CHECK_EQ(dirs.size(), (size_t)1);
+    if (dirs.size() == 1) CHECK(fs::equivalent(dirs[0], install.in_data("save")));
+}
+
+// "." is the root itself, and no directory at all lists both roots whole. A name
+// that only starts with a dot is an ordinary name under them.
+NOCTURNE_TEST(the_current_directory_is_each_root_itself) {
+    Install install;
+    CHECK_EQ(watcom_resolve_fs_path("."), install.user.generic_string());
+    CHECK_EQ(watcom_resolve_fs_path(".hidden"), install.in_data(".hidden"));
+    const std::vector<std::string> dirs = watcom_resolve_fs_dirs(nullptr);
+    CHECK_EQ(dirs.size(), (size_t)2);
+    if (dirs.size() == 2) {
+        CHECK_EQ(dirs[0], install.user.generic_string());
+        CHECK_EQ(dirs[1], install.data.generic_string());
+    }
+}
+
+// A drive letter makes a path absolute, either case; anything else before a
+// colon is an ordinary name and goes under the roots.
+NOCTURNE_TEST(a_drive_letter_is_a_letter_and_a_colon) {
+    Install install;
+    CHECK_EQ(watcom_resolve_fs_path("C:\\games\\x"), std::string("C:/games/x"));
+    CHECK_EQ(watcom_resolve_fs_path("c:\\games\\x"), std::string("c:/games/x"));
+    // Joined as strings: a Windows path library reads any "X:" as a drive.
+    const std::string data = install.data.generic_string();
+    CHECK_EQ(watcom_resolve_fs_path("1:\\x"), data + "/1:/x");
+    CHECK_EQ(watcom_resolve_fs_path("{:\\x"), data + "/{:/x");
+}
+
 NOCTURNE_TEST(no_roots_is_the_working_directory) {
     watcom_set_path_roots({});
     CHECK_EQ(watcom_resolve_fs_path("no\\such\\file", WatcomPathUse::Write),

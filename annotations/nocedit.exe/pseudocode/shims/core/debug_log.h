@@ -39,7 +39,10 @@
 //
 // For a conditional log, write the condition out: `if (cond) DLOG(...);`
 //
-// All output is line-buffered and flushed immediately. Thread-safe via
+// Every message is flushed as it is written, so a crash keeps everything up to
+// it. That is spelled out per message rather than left to line buffering: the
+// Microsoft runtimes treat _IOLBF as full buffering, and on them a log cut
+// short by a crash stopped mid-line, a buffer's length in. Thread-safe via
 // fprintf (which holds the FILE lock internally on glibc). First-call file
 // registration is best-effort under contention; two threads racing to open
 // the same subsystem can cause a truncated handle to leak. This has not been
@@ -73,7 +76,7 @@ inline FILE* _dlog_get_file_named(const char* subsys) {
         if (s_names[i] == subsys) return s_files[i];
     }
     for (int i = 0; i < s_count; i++) {
-        if (s_names[i] && strcmp(s_names[i], subsys) == 0) return s_files[i];
+        if (strcmp(s_names[i], subsys) == 0) return s_files[i];
     }
     if (s_count >= _DLOG_MAX_LOGS) return nullptr;
 
@@ -139,7 +142,7 @@ inline void _dlog_print_backtrace() {}
 // Write to a named subsystem log: nocturne_<subsys>.log
 #define DLOG(subsys, fmt, ...) do { \
     FILE* _f = _dlog_get_file_named(subsys); \
-    if (_f) { fprintf(_f, "[%s:%d] " fmt "\n", _DLOG_FILE, __LINE__, ##__VA_ARGS__); } \
+    if (_f) { fprintf(_f, "[%s:%d] " fmt "\n", _DLOG_FILE, __LINE__, ##__VA_ARGS__); fflush(_f); } \
 } while(0)
 
 // Rate-limited log: log the first `first_n` calls, then every `every_n`-th call.
@@ -162,7 +165,7 @@ inline void _dlog_print_backtrace() {}
 
 #define DWARN(fmt, ...) do { \
     FILE* _f = _dlog_get_file(); \
-    if (_f) { fprintf(_f, "[WARN  %s:%d] " fmt "\n", _DLOG_FILE, __LINE__, ##__VA_ARGS__); } \
+    if (_f) { fprintf(_f, "[WARN  %s:%d] " fmt "\n", _DLOG_FILE, __LINE__, ##__VA_ARGS__); fflush(_f); } \
     fprintf(stderr, "[WARN  %s:%d] " fmt "\n", _DLOG_FILE, __LINE__, ##__VA_ARGS__); \
     fflush(stderr); \
     DBACKTRACE(); \
@@ -170,7 +173,7 @@ inline void _dlog_print_backtrace() {}
 
 #define DERROR(fmt, ...) do { \
     FILE* _f = _dlog_get_file(); \
-    if (_f) { fprintf(_f, "[ERROR %s:%d] " fmt "\n", _DLOG_FILE, __LINE__, ##__VA_ARGS__); } \
+    if (_f) { fprintf(_f, "[ERROR %s:%d] " fmt "\n", _DLOG_FILE, __LINE__, ##__VA_ARGS__); fflush(_f); } \
     fprintf(stderr, "[ERROR %s:%d] " fmt "\n", _DLOG_FILE, __LINE__, ##__VA_ARGS__); \
     fflush(stderr); \
     DBACKTRACE(); \

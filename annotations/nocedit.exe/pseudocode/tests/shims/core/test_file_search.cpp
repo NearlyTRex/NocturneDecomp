@@ -88,6 +88,9 @@ NOCTURNE_TEST(a_star_takes_any_run_including_none) {
     CHECK(nocturne_name_matches("act*.pod", "act.pod"));      // none
     CHECK(nocturne_name_matches("APIDLL*", "APIDLLinit"));
     CHECK(!nocturne_name_matches("*.pod", "act1.podx"));
+    // Stars left over once the name is used up take nothing, and still match.
+    CHECK(nocturne_name_matches("act1.pod*", "act1.pod"));
+    CHECK(nocturne_name_matches("act1**", "act1"));
 }
 
 NOCTURNE_TEST(a_question_mark_takes_exactly_one) {
