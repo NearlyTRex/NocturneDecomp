@@ -7,9 +7,15 @@ set(_trigl_pure
     shims/renderer/trigl_batch.cpp
 )
 
+# With the built-in DLL registry, whose one module's exports a stand-in table
+# provides: the real one is trigl_exports.cpp, which reaches GL.
 nocturne_test_suite(shims_renderer
     EXCLUDE "_sequence\\.cpp$"
-    SUBJECTS ${_trigl_pure}
+    SUBJECTS
+        ${_trigl_pure}
+        shims/renderer/builtin_dll.cpp
+    SUPPORT
+        trigl_exports_support.cpp
 )
 
 # Suites that test ORDER rather than answers. The renderer reaches GL through

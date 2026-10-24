@@ -29,6 +29,7 @@ extern "C" const NocturneBuiltinExport *nocturne_trigl_native_exports(int *count
 // Registry
 // -----------------------------------------------------------------------------
 // Order here is the order the Graphics Options 3D-API selector cycles through.
+// Every row has a provider, and every provider a table of named exports.
 
 static const NocturneBuiltinModule g_BuiltinModules[] = {
     { "trigl.dll",    nocturne_trigl_native_exports },
@@ -42,7 +43,7 @@ static const int g_BuiltinModuleCount =
 
 static const NocturneBuiltinModule *find_module(const char *dll_name) {
     int i;
-    if (!dll_name || !*dll_name) {
+    if (!dll_name) {
         return NULL;
     }
     // The game passes bare DLL names, but tolerate a path prefix so a value that
@@ -55,54 +56,41 @@ static const NocturneBuiltinModule *find_module(const char *dll_name) {
     return NULL;
 }
 
-extern "C" int nocturne_builtin_dll_available(const char *dll_name) {
 #if !NOCTURNE_AUTHENTIC_RENDERER_DLL
-    return find_module(dll_name) != NULL;
-#else
-    (void)dll_name;
-    return 0;
-#endif
-}
 
-extern "C" const char *nocturne_builtin_dll_next(const char *current) {
-#if !NOCTURNE_AUTHENTIC_RENDERER_DLL
-    const NocturneBuiltinModule *module;
-    if (g_BuiltinModuleCount == 0) {
-        return NULL;
-    }
-    module = find_module(current);
+// The registered DLL after `current`, wrapping round; the first for one that
+// is not registered.
+static const char *next_module(const char *current) {
+    const NocturneBuiltinModule *module = find_module(current);
     if (module == NULL) {
         // Logged because the Graphics Options line shows a label, not the DLL
         // name, so there is otherwise no way to tell which renderer the
         // selector has landed on.
         DLOG("render","builtin_dll: 3D API cycle \"%s\" (unknown) -> \"%s\"",
-                  (current != NULL) ? current : "", g_BuiltinModules[0].dll_name);
+                  current, g_BuiltinModules[0].dll_name);
         return g_BuiltinModules[0].dll_name;
     }
-    {
-        const char *next = g_BuiltinModules[(int)(module - g_BuiltinModules + 1) %
-                                            g_BuiltinModuleCount].dll_name;
-        DLOG("render","builtin_dll: 3D API cycle \"%s\" -> \"%s\"", module->dll_name, next);
-        return next;
-    }
-#else
-    (void)current;
-    return NULL;
-#endif
+    const char *next = g_BuiltinModules[(int)(module - g_BuiltinModules + 1) %
+                                        g_BuiltinModuleCount].dll_name;
+    DLOG("render","builtin_dll: 3D API cycle \"%s\" -> \"%s\"", module->dll_name, next);
+    return next;
 }
 
 // The size of g_RendererDllPath, the buffer the game hands over.
 static const size_t kRendererPathSize = 256;
 
+#endif
+
 extern "C" void nocturne_builtin_dll_step(char *path) {
-    const char *next = nocturne_builtin_dll_next(path);
-    if (next != NULL) {
-        snprintf(path, kRendererPathSize, "%s", next);
-    }
+#if !NOCTURNE_AUTHENTIC_RENDERER_DLL
+    snprintf(path, kRendererPathSize, "%s", next_module(path));
+#else
+    (void)path;
+#endif
 }
 
 extern "C" void nocturne_builtin_dll_snap(char *path) {
-    if (nocturne_builtin_dll_available(path) == 0) {
+    if (find_module(path) == NULL) {
         nocturne_builtin_dll_step(path);
     }
 }
@@ -138,20 +126,15 @@ extern "C" int nocturne_builtin_dll_is_handle(void *handle) {
 
 extern "C" void *nocturne_builtin_dll_sym(void *handle, const char *proc_name) {
     const NocturneBuiltinModule *module = (const NocturneBuiltinModule *)handle;
-    const NocturneBuiltinExport *exports;
     int count = 0;
     int i;
-    if (!nocturne_builtin_dll_is_handle(handle) || !proc_name ||
-        module->exports == NULL) {
+    if (!proc_name) {
         return NULL;
     }
-    exports = module->exports(&count);
-    if (exports == NULL) {
-        return NULL;
-    }
+    const NocturneBuiltinExport *exports = module->exports(&count);
     for (i = 0; i < count; i++) {
         // Export names are case-sensitive, as with a real PE export table.
-        if (exports[i].name && strcmp(exports[i].name, proc_name) == 0) {
+        if (strcmp(exports[i].name, proc_name) == 0) {
             return exports[i].proc;
         }
     }

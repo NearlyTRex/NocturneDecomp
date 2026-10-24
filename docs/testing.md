@@ -74,7 +74,7 @@ macros and a runner. This is those two things.
 | `shims_win32_sdl` | `user32`, `wingdi`, `mmsystem`, MCI movies and `shim_init`, on SDL's dummy video and audio drivers; the movies are written by the tests with FFmpeg, and what no movie makes fail, `ffmpeg_faults.h` does |
 | `shims_directx` | DirectDraw's display mode, flip chain, Lock and Flip, through GL and through an SDL renderer, on SDL's dummy video driver; DirectSound's mixing, read back from SDL's disk audio driver |
 | `shims_gl` | Shader program building and the pixel-format helpers, against the recorder |
-| `shims_renderer` | `trigl` batching, state, texture, vertex handling |
+| `shims_renderer` | `trigl` batching, state, texture, vertex handling, and the built-in DLL registry |
 | `shims_renderer_gl` | `trigl` GL call sequences, the device and golden traces (`test_*_sequence.cpp`) |
 
 The renderer suites are the interesting ones. They test **order**, not just answers: the

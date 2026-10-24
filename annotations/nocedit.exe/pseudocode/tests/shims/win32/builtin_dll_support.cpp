@@ -60,10 +60,6 @@ extern "C" void *nocturne_builtin_dll_sym(void *handle, const char *symbol) {
     return nullptr;
 }
 
-extern "C" int nocturne_builtin_dll_available(const char *dll_name) {
-    return nocturne_builtin_dll_open(dll_name) != nullptr;
-}
-
 // Sleep is the only thing kernel32 asks SDL for. Linking the whole of SDL to
 // reach it would make these tests want a video and audio subsystem to run, for
 // one call nothing here exercises. Waiting really does wait, so a caller that
