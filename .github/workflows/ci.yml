@@ -28,7 +28,7 @@ jobs:
   # decompiled modules compile as in the release build and hit its ccache.
   build-linux:
     name: Build (${{ matrix.preset }})
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@128538a7558f88e8031e40a3dc701eda21495b18 # v0.2.21
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@c84a2b6b942e42cf3f1c88119762f20cac536e3c # v0.2.22
     permissions:
       contents: read
     strategy:
@@ -91,7 +91,7 @@ jobs:
   # Apple clang's cross build works. Xcode's clang and CMake are on the runner.
   build-macos:
     name: Build (${{ matrix.preset }})
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@128538a7558f88e8031e40a3dc701eda21495b18 # v0.2.21
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@c84a2b6b942e42cf3f1c88119762f20cac536e3c # v0.2.22
     permissions:
       contents: read
     strategy:
@@ -120,7 +120,7 @@ jobs:
   # workflow sets it up on Linux and macOS runners only.
   build-windows:
     name: Build (${{ matrix.preset }})
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@128538a7558f88e8031e40a3dc701eda21495b18 # v0.2.21
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@c84a2b6b942e42cf3f1c88119762f20cac536e3c # v0.2.22
     permissions:
       contents: read
     strategy:
@@ -145,6 +145,44 @@ jobs:
         ci-phase Configure cmake --preset ${{ matrix.preset }}
         ci-phase Build cmake --build --preset ${{ matrix.preset }}
 
+  # The unit tests as the release builds the Windows exe: cross-compiled on
+  # Linux against mingw-w64, bundled with the runtime DLLs they need, then run
+  # on Windows itself by windows-tests. Wine has no say in that run, and its
+  # loader and heap are not Windows'.
+  build-windows-tests:
+    name: Build (exe-windows-x86_64 tests)
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@c84a2b6b942e42cf3f1c88119762f20cac536e3c # v0.2.22
+    permissions:
+      contents: read
+    with:
+      apt-packages: cmake clang ninja-build pkg-config python3 g++-mingw-w64-x86-64
+      cache-paths: |
+        build/exe-windows-x86_64/_deps
+        build/exe-windows-x86_64/ffmpeg
+      cache-key-files: |
+        cmake/bundledlibs.cmake
+        cmake/ffmpeg.cmake
+      ccache: true
+      ccache-max-size: 2G
+      # Shared with the release build of the same preset.
+      cache-key: exe-windows-x86_64
+      build-command: |
+        ci-phase Configure cmake --preset exe-windows-x86_64
+        ci-phase "Build tests" cmake --build build/exe-windows-x86_64 --target nocturne_test_bundle
+      artifact: windows-tests
+      artifact-path: build/exe-windows-x86_64/test-bundle
+
+  # Each test under full page heap, so a heap overrun or a use after free faults
+  # where it happens, and a failure runs again under cdb for its stack.
+  windows-tests:
+    name: Windows tests
+    needs: build-windows-tests
+    uses: NearlyTRex/Workflows/.github/workflows/windows-test.yml@c84a2b6b942e42cf3f1c88119762f20cac536e3c # v0.2.22
+    permissions:
+      contents: read
+    with:
+      artifact: windows-tests
+
   # The source recreation is a standalone CMake project that fetches and builds
   # its third-party libraries from source. Every header compiles on its own, the
   # SDL adapters and the executable build, then format and the tests under the
@@ -152,7 +190,7 @@ jobs:
   # a row of timings on the run's summary page.
   recreation:
     name: Recreation
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@128538a7558f88e8031e40a3dc701eda21495b18 # v0.2.21
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@c84a2b6b942e42cf3f1c88119762f20cac536e3c # v0.2.22
     permissions:
       contents: read
     with:
@@ -188,7 +226,7 @@ jobs:
   # carries those results from run to run.
   recreation-tidy:
     name: Recreation tidy
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@128538a7558f88e8031e40a3dc701eda21495b18 # v0.2.21
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@c84a2b6b942e42cf3f1c88119762f20cac536e3c # v0.2.22
     permissions:
       contents: read
     with:
@@ -218,7 +256,7 @@ jobs:
   # omit list in pyproject.toml; everything else is held to every line and branch.
   python:
     name: Python
-    uses: NearlyTRex/Workflows/.github/workflows/python-ci.yml@128538a7558f88e8031e40a3dc701eda21495b18 # v0.2.21
+    uses: NearlyTRex/Workflows/.github/workflows/python-ci.yml@c84a2b6b942e42cf3f1c88119762f20cac536e3c # v0.2.22
     permissions:
       contents: read
     with:
@@ -233,7 +271,7 @@ jobs:
 
   lint:
     name: Lint
-    uses: NearlyTRex/Workflows/.github/workflows/lint.yml@128538a7558f88e8031e40a3dc701eda21495b18 # v0.2.21
+    uses: NearlyTRex/Workflows/.github/workflows/lint.yml@c84a2b6b942e42cf3f1c88119762f20cac536e3c # v0.2.22
     permissions:
       contents: read
     with:

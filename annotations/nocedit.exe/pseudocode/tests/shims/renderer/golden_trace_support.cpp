@@ -9,6 +9,7 @@
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
+#include <filesystem>
 #include <map>
 #include <sstream>
 #include <string>
@@ -48,7 +49,9 @@ const char *cap_name(unsigned cap) {
 }
 
 std::string path_for(const char *name, const char *extension) {
-    std::string path = NOCTURNE_TEST_DATA_DIR;
+    std::error_code ec;
+    std::string path = std::filesystem::is_directory(NOCTURNE_TEST_DATA_DIR, ec)
+                           ? NOCTURNE_TEST_DATA_DIR : "golden";
     path += "/";
     path += name;
     path += extension;

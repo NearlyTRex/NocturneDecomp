@@ -683,3 +683,26 @@ if(NOCTURNE_COVERAGE)
     endforeach()
     file(GENERATE OUTPUT "${CMAKE_BINARY_DIR}/coverage_args.txt" CONTENT "${_coverage_args}")
 endif()
+
+# The Windows test binaries in one folder with what they need on a machine that
+# has none of the toolchain: the gcc runtime DLLs and the renderer's golden
+# traces, which the tests find in their working directory when the source tree is
+# not there. CI builds it on Linux and runs it on a Windows runner with
+# Workflows' windows-test.
+if(COMMAND nocturne_windows_runtime_dlls)
+    nocturne_windows_runtime_dlls(_bundle_dlls)
+    set(_bundle "${CMAKE_BINARY_DIR}/test-bundle")
+    set(_bundle_tests "")
+    foreach(_target IN LISTS _test_targets)
+        list(APPEND _bundle_tests "$<TARGET_FILE:${_target}>")
+    endforeach()
+    add_custom_target(nocturne_test_bundle
+        COMMAND "${CMAKE_COMMAND}" -E rm -rf "${_bundle}"
+        COMMAND "${CMAKE_COMMAND}" -E make_directory "${_bundle}"
+        COMMAND "${CMAKE_COMMAND}" -E copy ${_bundle_tests} ${_bundle_dlls} "${_bundle}"
+        COMMAND "${CMAKE_COMMAND}" -E copy_directory
+                "${NOCTURNE_TESTS_DIR}/shims/renderer/golden" "${_bundle}/golden"
+        COMMENT "Bundling the Windows tests into ${_bundle}"
+        VERBATIM)
+    add_dependencies(nocturne_test_bundle nocturne_tests)
+endif()
