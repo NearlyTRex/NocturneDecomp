@@ -35,6 +35,12 @@ void nocturne_gl_present_framebuffer(const void *pixels, int width, int height, 
 
 float nocturne_movie_audio_gain(void) { return stand.movie_gain; }
 
+// DirectDraw's, which shim_init links and no case here sets a mode through.
+int nocturne_gl_init(struct SDL_Window *) { return stand.gl_active; }
+void nocturne_gl_set_logical_size(int, int) {}
+void nocturne_window_mode_apply(struct SDL_Window *) {}
+int nocturne_window_preferred_size(int *, int *) { return 0; }
+
 void nocturne_gl_window_to_logical(int window_x, int window_y, int *out_x, int *out_y) {
     *out_x = window_x / stand.logical_scale;
     *out_y = window_y / stand.logical_scale;

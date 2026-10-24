@@ -37,6 +37,9 @@ if(NOCTURNE_COVERAGE)
     set(NOCTURNE_COVERAGE_FLAGS -fprofile-instr-generate -fcoverage-mapping
         -DNOCTURNE_COVERAGE_BUILD=1)
 endif()
+# clang-tidy over the shims as they compile, and only over them. The
+# exe-linux-x86_64 presets turn it on.
+option(NOCTURNE_SHIMS_TIDY "Run clang-tidy over the shims as they compile" OFF)
 # Who owns the window's pixels. ON (default) creates a GL context and presents
 # the 2D back buffer as a textured quad, which is what lets a decompiled 3D
 # renderer DLL composite into the same framebuffer. OFF selects the legacy
@@ -550,6 +553,19 @@ if(NOCTURNE_BUILD_EXE)
     endif()
     if(NOT NOCTURNE_GL_PRESENT)
         target_compile_definitions(nocturne_shims PRIVATE NOCTURNE_GL_PRESENT=0)
+    endif()
+
+    # clang-tidy over each shim as it compiles, with shims/.clang-tidy, whose
+    # findings are errors. Only this target: the decompiled modules are their
+    # own targets and never see it.
+    if(NOCTURNE_SHIMS_TIDY)
+        find_program(NOCTURNE_CLANG_TIDY NAMES clang-tidy)
+        if(NOT NOCTURNE_CLANG_TIDY)
+            message(FATAL_ERROR "NOCTURNE_SHIMS_TIDY is ON but clang-tidy is not on PATH")
+        endif()
+        set_target_properties(nocturne_shims PROPERTIES
+            C_CLANG_TIDY "${NOCTURNE_CLANG_TIDY}"
+            CXX_CLANG_TIDY "${NOCTURNE_CLANG_TIDY}")
     endif()
 
     # FFmpeg is built by ExternalProject at build time; its headers must exist

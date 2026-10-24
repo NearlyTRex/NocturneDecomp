@@ -54,6 +54,11 @@
       "hidden": true,
       "cacheVariables": { "NOCTURNE_COVERAGE": "ON" }
     },
+    {
+      "name": "shims-tidy",
+      "hidden": true,
+      "cacheVariables": { "NOCTURNE_SHIMS_TIDY": "ON" }
+    },
 
     {
       "name": "toolchain-linux",
@@ -115,8 +120,8 @@
     {
       "name": "exe-linux-x86_64",
       "displayName": "Full exe (Linux native 64-bit)",
-      "description": "Compile and link nocturne executable.",
-      "inherits": ["exe", "toolchain-linux"]
+      "description": "Compile and link nocturne executable, the shims through clang-tidy.",
+      "inherits": ["exe", "shims-tidy", "toolchain-linux"]
     },
     {
       "name": "exe-linux-aarch64",
@@ -196,13 +201,13 @@
       "name": "exe-linux-asan-x86_64",
       "displayName": "Full exe (Linux native 64-bit) with ASan + UBSan",
       "description": "Compile and link nocturne with AddressSanitizer and UBSan, native x86_64 (no multilib). Debug build type adds -g for gdb usability.",
-      "inherits": ["exe", "asan", "toolchain-linux"]
+      "inherits": ["exe", "asan", "shims-tidy", "toolchain-linux"]
     },
     {
       "name": "exe-linux-coverage-x86_64",
       "displayName": "Full exe and tests (Linux native 64-bit) with shim coverage",
       "description": "The shims and the unit tests instrumented for clang source-based coverage; coverage_args.txt holds ci-cpp-coverage's arguments.",
-      "inherits": ["exe", "coverage", "toolchain-linux"]
+      "inherits": ["exe", "coverage", "shims-tidy", "toolchain-linux"]
     }
   ],
   "buildPresets": [

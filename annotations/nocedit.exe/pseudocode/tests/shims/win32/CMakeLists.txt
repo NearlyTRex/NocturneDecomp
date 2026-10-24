@@ -13,10 +13,11 @@ else()
     set(_win32_platform_libraries)
 endif()
 
-set(_win32_sdl_tests test_mci_video.cpp test_mmsystem.cpp test_user32.cpp test_wingdi.cpp)
+set(_win32_sdl_tests
+    test_mci_video.cpp test_mmsystem.cpp test_shim_init.cpp test_user32.cpp test_wingdi.cpp)
 
 nocturne_test_suite(shims_win32
-    EXCLUDE "/(test_mci_video|test_mmsystem|test_user32|test_wingdi)\\.cpp$"
+    EXCLUDE "/(test_mci_video|test_mmsystem|test_shim_init|test_user32|test_wingdi)\\.cpp$"
     SUBJECTS
         shims/win32/advapi32.cpp
         shims/win32/kernel32.cpp
@@ -65,21 +66,34 @@ list(TRANSFORM _ffmpeg_faults REPLACE "^(.+)$" "\\1=ffmpeg_faults_\\1")
 set_source_files_properties("${NOCTURNE_PSEUDOCODE_DIR}/shims/win32/mci_video.cpp"
     PROPERTIES COMPILE_DEFINITIONS "${_ffmpeg_faults}")
 
+# With the rest of win32/ and directx/ beside them, for shim_init, which wires
+# up every module at once.
 nocturne_test_suite(shims_win32_sdl
     TESTS ${_win32_sdl_tests}
     SUBJECTS
         shims/win32/mci_video.cpp
         shims/win32/mmsystem.cpp
+        shims/win32/shim_init.cpp
         shims/win32/user32.cpp
         shims/win32/window_message.cpp
         shims/win32/wingdi.cpp
+        shims/win32/advapi32.cpp
+        shims/win32/kernel32.cpp
+        shims/win32/winsock.cpp
+        ${_win32_socket_backend}
+        shims/directx/ddraw.cpp
+        shims/directx/dsound.cpp
+        shims/net/net_config.cpp
+        shims/core/host_memory.cpp
         shims/watcom/path.cpp
         shims/core/file_search.cpp
         src/globals/globals_610000.cpp
     SUPPORT
+        builtin_dll_support.cpp
         ffmpeg_faults.cpp
         movie_writer.cpp
         sdl_support.cpp
     LIBRARIES ${SDL2_LIBRARIES} ${SDL2TTF_LIBRARIES} nocturne_test_ffmpeg
+        ${_win32_platform_libraries}
     DEFINITIONS ${_test_font_define}
 )
