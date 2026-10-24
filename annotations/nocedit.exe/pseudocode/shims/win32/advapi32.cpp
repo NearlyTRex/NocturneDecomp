@@ -1,13 +1,6 @@
 #include "system/advapi32.h"
 #include <cstring>
-// getlogin_r, for GetUserName. Who is logged in is a question every host answers
-// differently — Windows has GetUserNameA, which is what this is standing in for.
-// On Windows itself the environment answers instead: the real GetUserNameA is
-// the function being defined here, so calling it would be calling ourselves.
 #include <cstdlib>
-#if !defined(_WIN32)
-#include <unistd.h>
-#endif
 
 // ---------------------------------------------------------------------------
 // Globals (function pointers wired by shims_init_advapi32)
@@ -26,37 +19,27 @@
 // Shim implementations
 // ---------------------------------------------------------------------------
 
+// The user's name from the environment, as each host's login sets it, or "User".
+// Not getlogin_r: that asks the terminal, and a process without one — a desktop
+// launcher, a container, a CI runner — has no answer. Not the real GetUserNameA
+// on Windows either, which is the function being defined here.
+//
+// As Win32's: the length counts the terminator, and a buffer too small is told
+// the size it needs.
 static BOOL shim_GetUserNameA(char* lpBuffer, DWORD* pcbBuffer) {
     if (!lpBuffer || !pcbBuffer) return 0;
-    char buf[256];
 #if defined(_WIN32)
     const char* who = getenv("USERNAME");
-    const bool named = who != nullptr;
-    if (named) {
-        strncpy(buf, who, sizeof(buf) - 1);
-        buf[sizeof(buf) - 1] = '\0';
-    }
 #else
-    const bool named = getlogin_r(buf, sizeof(buf)) == 0;
+    const char* who = getenv("USER");
 #endif
-    if (named) {
-        DWORD len = (DWORD)strlen(buf) + 1;
-        if (len > *pcbBuffer) {
-            *pcbBuffer = len;
-            return 0;
-        }
-        memcpy(lpBuffer, buf, len);
-        *pcbBuffer = len;
-        return 1;
-    }
-    // Fallback
-    const char* fallback = "User";
-    DWORD len = 5;
+    const char* name = (who != nullptr && who[0] != '\0') ? who : "User";
+    DWORD len = (DWORD)strlen(name) + 1;
     if (len > *pcbBuffer) {
         *pcbBuffer = len;
         return 0;
     }
-    memcpy(lpBuffer, fallback, len);
+    memcpy(lpBuffer, name, len);
     *pcbBuffer = len;
     return 1;
 }

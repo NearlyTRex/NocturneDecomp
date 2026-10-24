@@ -107,7 +107,7 @@ double _strtod(const char* str) {
 // Open Watcom's limits for these, from its <stdlib.h> for Win32. Neither call
 // takes buffer sizes; the caller's buffers are sized by these, so each part is
 // cut to fit them.
-static const size_t kMaxPath = 260, kMaxPart = 256;
+static const size_t kMaxPath = 260, kMaxDrive = 3, kMaxPart = 256;
 
 // Up to len bytes of src into a buffer of cap bytes, terminated.
 static void copy_part(char* out, size_t cap, const char* src, size_t len) {
@@ -117,7 +117,11 @@ static void copy_part(char* out, size_t cap, const char* src, size_t len) {
 }
 
 void splitpath(const char* path, char* drive, char* dir, char* fname, char* ext) {
-    if (drive) drive[0] = 0;
+    // A drive is a letter and a colon, and keeps the colon; the directory is
+    // what follows it.
+    const bool has_drive = isalpha((unsigned char)path[0]) && path[1] == ':';
+    if (drive) copy_part(drive, kMaxDrive, path, has_drive ? 2 : 0);
+    if (has_drive) path += 2;
 
     // Find last separator
     const char* last_sep = nullptr;
@@ -220,11 +224,10 @@ FILE* _FILE_to_FILE(_FILE* f) {
 // behaves the same as if it were reading a native Watcom FILE. Called by
 // every shim read/write/seek path after the underlying libc op.
 //
-// Watcom flag bits: 0x10 = _IOEOF, 0x20 = _IOERR.
+// Watcom flag bits: 0x10 = _IOEOF, 0x20 = _IOERR. Every caller has just handed
+// the stream to the C library, so it is one.
 static void sync_file_flags(_FILE* f) {
-    if (!f) return;
     FILE* fp = _FILE_to_FILE(f);
-    if (!fp) return;
     unsigned int old_flag = f->_flag;
     f->_flag = (f->_flag & ~0x30u)
              | (feof(fp)   ? 0x10u : 0u)
@@ -310,7 +313,6 @@ static FILE* fopen_text_aware(const char* path, const char* mode) {
 #else
 
 static bool mode_is_text(const char* mode) {
-    if (!mode) return false;
     for (const char* p = mode; *p; ++p) {
         if (*p == 'b') return false;
     }
@@ -433,8 +435,7 @@ int _rename(const char* old_filename, const char* new_filename) {
 
 int _fclose(_FILE* f) {
     if (!f) return 0;
-    FILE* fp = _FILE_to_FILE(f);
-    int rc = fp ? fclose(fp) : 0;
+    int rc = fclose(_FILE_to_FILE(f));
     // Only free our heap-allocated wrappers. Game static globals have
     // _link == null — leave them alone.
     if (f->_link != nullptr) {
@@ -559,6 +560,8 @@ int _fscanf(_FILE* f, const char* format, ...) {
 }
 
 _FILE* _freopen(const char* filename, const char* mode, _FILE* stream) {
+    // No stream is nothing to reopen; the C library's freopen would take it as one.
+    if (!stream) return nullptr;
     const WatcomPathUse use = watcom_mode_writes(mode) ? WatcomPathUse::Write : WatcomPathUse::Read;
     FILE* fp = freopen(watcom_resolve_fs_path(filename, use).c_str(),
                        mode, _FILE_to_FILE(stream));
@@ -569,7 +572,7 @@ _FILE* _freopen(const char* filename, const char* mode, _FILE* stream) {
     // Otherwise we were handed an _fopen wrapper; update its _link to
     // point at the new libc FILE and reset _flag. Either way, return
     // the same stream pointer the caller passed in.
-    if (stream && stream->_link != nullptr) {
+    if (stream->_link != nullptr) {
         stream->_link = reinterpret_cast<struct streambuf*>(fp);
         stream->_flag = 0;
         stream->_handle = fileno(fp);
@@ -666,6 +669,8 @@ time_t _mktime(_tm* t) {
 // into a thread-local _tm so the caller gets the right layout.
 static thread_local _tm s_localtime_buf;
 
+// The 32 bits Watcom's time_t had: some callers pass a host time_t and some a
+// 32-bit timestamp out of a file record, and the low word is the time in both.
 _tm* _localtime(const void* timer) {
     time_t t = *reinterpret_cast<const int*>(timer);
     struct tm* libc_result = localtime(&t);
@@ -688,7 +693,7 @@ char* _asctime(_tm* timeptr) {
     static const char months[12][4] = {"Jan", "Feb", "Mar", "Apr", "May", "Jun",
                                        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
     static char text[64];
-    const tm* t = reinterpret_cast<tm*>(timeptr);
+    const _tm* t = timeptr;
     const bool day_ok = t->tm_wday >= 0 && t->tm_wday < 7;
     const bool month_ok = t->tm_mon >= 0 && t->tm_mon < 12;
     snprintf(text, sizeof(text), "%.3s %.3s%3d %.2d:%.2d:%.2d %d\n",
@@ -697,8 +702,12 @@ char* _asctime(_tm* timeptr) {
     return text;
 }
 
+// Through a host struct tm, which is larger: strftime reads its zone fields for
+// %z and %Z, past the end of the game's 36 bytes.
 size_t _strftime(char* dest_buffer, size_t buffer_size, const char* format_string, _tm* time_ptr) {
-    return strftime(dest_buffer, buffer_size, format_string, reinterpret_cast<tm*>(time_ptr));
+    struct tm libc_tm;
+    watcom_to_libc_tm(time_ptr, &libc_tm);
+    return strftime(dest_buffer, buffer_size, format_string, &libc_tm);
 }
 
 // ---------------------------------------------------------------------------

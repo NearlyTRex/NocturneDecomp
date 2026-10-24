@@ -2,24 +2,29 @@
 # interface. builtin_dll is stubbed: the real registry would pull in the whole
 # renderer tree, and what is under test is the loader, not which renderers exist.
 #
-# On Windows, GetComputerNameA reaches the game's own winsock shim (there is no
-# POSIX gethostname to take instead), and that in turn needs Winsock itself.
-set(_win32_platform_subjects)
-set(_win32_platform_libraries)
+# Winsock has a backend per host: POSIX sockets, or Winsock itself on Windows,
+# where GetComputerNameA also reaches it (there is no POSIX gethostname to take
+# instead). Its bind reads the network settings, so those come too.
 if(WIN32)
-    set(_win32_platform_subjects
-        shims/win32/winsock.cpp shims/win32/winsock_win32.c shims/net/net_config.cpp)
+    set(_win32_socket_backend shims/win32/winsock_win32.c)
     set(_win32_platform_libraries ws2_32)
+else()
+    set(_win32_socket_backend shims/win32/winsock_posix.c)
+    set(_win32_platform_libraries)
 endif()
 
 nocturne_test_suite(shims_win32
     SUBJECTS
+        shims/win32/advapi32.cpp
         shims/win32/kernel32.cpp
+        shims/win32/window_message.cpp
+        shims/win32/winsock.cpp
+        ${_win32_socket_backend}
+        shims/net/net_config.cpp
         shims/core/file_search.cpp
         shims/core/host_memory.cpp
         shims/watcom/path.cpp
         src/globals/globals_610000.cpp
-        ${_win32_platform_subjects}
     SUPPORT
         builtin_dll_support.cpp
     LIBRARIES ${_win32_platform_libraries}

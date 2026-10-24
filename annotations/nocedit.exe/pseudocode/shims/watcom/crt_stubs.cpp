@@ -51,7 +51,6 @@ void crt_cpp_c_handlePureVirtualCall_FUN_006015f1(void) {}
 
 // -- stdio --------------------------------------------------------------------
 
-int __cdecl crt_stdio_c__sprintf_FUN_005fdbd0(char *, char *, ...) { return 0; }
 int __watcallStack crt_stdio_c_closeUnsupported_FUN_0060b9b7(void) { return 0; }
 
 // -- iostream: ios, ostream, istream, streambuf ------------------------------

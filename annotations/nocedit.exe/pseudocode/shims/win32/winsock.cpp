@@ -111,7 +111,7 @@ int bind(_SOCKET s, const struct SOCKADDR* addr, int namelen) {
     // the player's own address.
     if (addr != nullptr && addr->sin_addr == 0) {
         const char* bind_ip = nocturne_net_bind_address();
-        if (bind_ip != nullptr && *bind_ip != '\0') {
+        if (*bind_ip != '\0') {
             SOCKADDR local = *addr;
             local.sin_addr = (int)nocturne_socket_inet_addr(bind_ip);
             DLOG("netplay", "bind: INADDR_ANY -> %s port %u", bind_ip,

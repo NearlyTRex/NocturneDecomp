@@ -15,6 +15,7 @@
 #include <arpa/inet.h>
 #include <netdb.h>
 #include <unistd.h>
+#include <errno.h>
 #include <fcntl.h>
 #include <string.h>
 
@@ -64,8 +65,25 @@ int nocturne_socket_sendto(int sockfd, const void* buf, unsigned long len, int f
     return (int)sendto(sockfd, buf, len, flags, to, tolen);
 }
 
+/* The game passes Winsock's numbers for the socket-level options: SOL_SOCKET is
+ * 0xffff there and each option has its own value. Those with the same meaning
+ * and argument here are translated; any other is passed on and refused. */
+static void win32_socket_option(int* level, int* optname) {
+    if (*level != 0xffff) return;
+    *level = SOL_SOCKET;
+    switch (*optname) {
+        case 0x0004: *optname = SO_REUSEADDR; break;
+        case 0x0008: *optname = SO_KEEPALIVE; break;
+        case 0x0020: *optname = SO_BROADCAST; break;
+        case 0x1001: *optname = SO_SNDBUF; break;
+        case 0x1002: *optname = SO_RCVBUF; break;
+        default: break;
+    }
+}
+
 int nocturne_socket_setsockopt(int sockfd, int level, int optname,
                      const void* optval, unsigned int optlen) {
+    win32_socket_option(&level, &optname);
     return setsockopt(sockfd, level, optname, optval, optlen);
 }
 
@@ -79,9 +97,14 @@ int nocturne_socket_close(int fd) {
 
 int nocturne_socket_ioctl(int fd, unsigned long request, void* argp) {
     if (request == 0x8004667EUL) {
+        /* FIONBIO with nowhere to read the setting from is a fault, as in Winsock. */
+        if (argp == NULL) {
+            errno = EFAULT;
+            return -1;
+        }
         int flags = fcntl(fd, F_GETFL, 0);
         if (flags < 0) return -1;
-        int nonblock = argp && *(unsigned int*)argp != 0;
+        int nonblock = *(unsigned int*)argp != 0;
         flags = nonblock ? (flags | O_NONBLOCK) : (flags & ~O_NONBLOCK);
         return fcntl(fd, F_SETFL, flags);
     }
