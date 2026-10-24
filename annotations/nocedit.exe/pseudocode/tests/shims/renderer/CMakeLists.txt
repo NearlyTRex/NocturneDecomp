@@ -8,14 +8,19 @@ set(_trigl_pure
 )
 
 # With the built-in DLL registry, whose one module's exports a stand-in table
-# provides: the real one is trigl_exports.cpp, which reaches GL.
+# provides: the real one is trigl_exports.cpp, which reaches GL. And the mirror
+# pass's field of view, over the engine's viewport stack and projection scale:
+# the globals files that define them reach most of the game, so a stand-in
+# defines the three.
 nocturne_test_suite(shims_renderer
     EXCLUDE "_sequence\\.cpp$"
     SUBJECTS
         ${_trigl_pure}
         shims/renderer/builtin_dll.cpp
+        shims/renderer/mirror_projection.cpp
     SUPPORT
         trigl_exports_support.cpp
+        viewport_globals_support.cpp
 )
 
 # Suites that test ORDER rather than answers. The renderer reaches GL through
