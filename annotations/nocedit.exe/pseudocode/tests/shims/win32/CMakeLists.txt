@@ -13,7 +13,10 @@ else()
     set(_win32_platform_libraries)
 endif()
 
+set(_win32_sdl_tests test_mci_video.cpp test_mmsystem.cpp test_user32.cpp test_wingdi.cpp)
+
 nocturne_test_suite(shims_win32
+    EXCLUDE "/(test_mci_video|test_mmsystem|test_user32|test_wingdi)\\.cpp$"
     SUBJECTS
         shims/win32/advapi32.cpp
         shims/win32/kernel32.cpp
@@ -28,4 +31,44 @@ nocturne_test_suite(shims_win32
     SUPPORT
         builtin_dll_support.cpp
     LIBRARIES ${_win32_platform_libraries}
+)
+
+# The shims SDL stands behind, on its dummy drivers: no window or sound device
+# is opened. The font is one SDL_ttf's own sources carry, so the text cases do
+# not depend on what the machine has installed; on Windows it travels in the
+# test bundle beside the tests.
+set(_test_font "${sdl2_ttf_SOURCE_DIR}/external/harfbuzz/perf/fonts/Roboto-Regular.ttf")
+set_property(GLOBAL APPEND PROPERTY NOCTURNE_TEST_BUNDLE_FILES "${_test_font}")
+if(WIN32)
+    get_filename_component(_test_font_name "${_test_font}" NAME)
+    set(_test_font_define "NOCTURNE_TEST_FONT=\"${_test_font_name}\"")
+else()
+    set(_test_font_define "NOCTURNE_TEST_FONT=\"${_test_font}\"")
+endif()
+
+# FFmpeg is a set of static libraries built by an external project, not a
+# target, so this carries its headers, libraries and the build that makes them.
+add_library(nocturne_test_ffmpeg INTERFACE)
+target_include_directories(nocturne_test_ffmpeg INTERFACE ${FFMPEG_INCLUDE_DIRS})
+target_link_libraries(nocturne_test_ffmpeg INTERFACE ${FFMPEG_LIBRARIES})
+if(NOCTURNE_FFMPEG_DEP)
+    add_dependencies(nocturne_test_ffmpeg ${NOCTURNE_FFMPEG_DEP})
+endif()
+
+nocturne_test_suite(shims_win32_sdl
+    TESTS ${_win32_sdl_tests}
+    SUBJECTS
+        shims/win32/mci_video.cpp
+        shims/win32/mmsystem.cpp
+        shims/win32/user32.cpp
+        shims/win32/window_message.cpp
+        shims/win32/wingdi.cpp
+        shims/watcom/path.cpp
+        shims/core/file_search.cpp
+        src/globals/globals_610000.cpp
+    SUPPORT
+        movie_writer.cpp
+        sdl_support.cpp
+    LIBRARIES ${SDL2_LIBRARIES} ${SDL2TTF_LIBRARIES} nocturne_test_ffmpeg
+    DEFINITIONS ${_test_font_define}
 )

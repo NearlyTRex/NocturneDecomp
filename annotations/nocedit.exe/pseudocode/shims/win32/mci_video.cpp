@@ -611,24 +611,18 @@ static int parse_open_command(const char* cmd, char* filepath, int maxlen) {
     return 0;
 }
 
-// Get the SDL_Renderer from the DDraw shim's window (if available)
-static SDL_Renderer* get_sdl_renderer() {
-    // Try to get the renderer from any existing SDL window
-    SDL_Window* win = SDL_GetGrabbedWindow();
-    if (!win) {
-        // Fall back to window ID 1 (usually the first created window)
-        win = SDL_GetWindowFromID(1);
-    }
-    if (win) {
-        return SDL_GetRenderer(win);
-    }
-    return nullptr;
-}
-
+// The game's window: the grabbed one, or the first made. None before SDL's
+// video is up, which SDL does not check for itself before looking.
 static SDL_Window* get_sdl_window() {
+    if (!SDL_WasInit(SDL_INIT_VIDEO)) return nullptr;
     SDL_Window* win = SDL_GetGrabbedWindow();
     if (!win) win = SDL_GetWindowFromID(1);
     return win;
+}
+
+// The DDraw shim's renderer, if it made one; SDL answers null for no window.
+static SDL_Renderer* get_sdl_renderer() {
+    return SDL_GetRenderer(get_sdl_window());
 }
 
 // =============================================================================
@@ -701,9 +695,16 @@ MCIERROR shim_mciSendStringA(LPCSTR lpstrCommand, LPSTR lpstrReturnString,
     // ---- play mov [window|fullscreen] [notify] ----
     if (strncmp(lpstrCommand, "play mov", 8) == 0) {
         if (!s_movie.is_open) return 1;
+        // A paused movie resumes where it stopped: the clock moves on by the
+        // time it was paused for, or the frames already decoded ahead would
+        // wait that long to come due.
+        if (s_movie.is_playing && s_movie.is_paused) {
+            s_movie.play_start_ticks += SDL_GetTicks() - s_movie.pause_ticks;
+        } else {
+            s_movie.play_start_ticks = SDL_GetTicks();
+        }
         s_movie.is_playing = 1;
         s_movie.is_paused = 0;
-        s_movie.play_start_ticks = SDL_GetTicks();
 
         // Recorded but not acted on. The original asked MCI for a fullscreen
         // device when g_FullscreenMovie was set; toggling the SDL window's

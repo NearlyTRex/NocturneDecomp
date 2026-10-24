@@ -5,6 +5,7 @@
 #include "gl/gl_present.h"
 #include "game/gamepad.h"
 #include "debug/focus_trace.h"
+#include "core/debug_log.h"
 #include "shim_config.h"
 #include <SDL.h>
 #include <cstdio>
@@ -136,7 +137,6 @@ static uint32_t winExtendedKeyFlag(SDL_Scancode sc) {
 // this map Shift+8 stays '8' instead of becoming '*', etc. Letters uppercase;
 // the number row and punctuation map to their US-layout shifted glyphs.
 static char winShiftChar(char ch) {
-    if (ch >= 'a' && ch <= 'z') return (char)(ch - 32);
     switch (ch) {
         case '1': return '!';
         case '2': return '@';
@@ -163,6 +163,74 @@ static char winShiftChar(char ch) {
     }
 }
 
+// The character a key types, as Win32's WM_CHAR has it: a letter is upper case
+// with Shift or Caps Lock but not both, other keys take Shift alone, and the
+// number pad types its digit with Num Lock on and its operators always. 0 for a
+// key that types nothing.
+static char winTypedChar(const SDL_Keysym& key) {
+    const bool shift = (key.mod & KMOD_SHIFT) != 0;
+    switch (key.scancode) {
+        case SDL_SCANCODE_KP_DIVIDE:   return '/';
+        case SDL_SCANCODE_KP_MULTIPLY: return '*';
+        case SDL_SCANCODE_KP_MINUS:    return '-';
+        case SDL_SCANCODE_KP_PLUS:     return '+';
+        case SDL_SCANCODE_KP_ENTER:    return '\r';
+        default: break;
+    }
+    if (key.scancode >= SDL_SCANCODE_KP_1 && key.scancode <= SDL_SCANCODE_KP_PERIOD) {
+        if ((key.mod & KMOD_NUM) == 0) return 0;
+        static const char pad[] = "1234567890.";
+        return pad[key.scancode - SDL_SCANCODE_KP_1];
+    }
+    const SDL_Keycode sym = key.sym;
+    const bool printable = sym >= 0x20 && sym < 0x7F;
+    const bool control = sym == 0x08 || sym == 0x09 || sym == 0x0D || sym == 0x1B;
+    if (!printable && !control) return 0;
+    const char ch = (char)sym;
+    if (ch >= 'a' && ch <= 'z') {
+        const bool caps = (key.mod & KMOD_CAPS) != 0;
+        return (shift != caps) ? (char)(ch - 32) : ch;
+    }
+    return shift ? winShiftChar(ch) : ch;
+}
+
+// lParam bits 30 and 31 of a key message: whether the key was already down,
+// and whether it is being released. WM_KEYUP always has both.
+static const uint32_t kKeyWasDown = 0x40000000u;
+static const uint32_t kKeyReleased = 0x80000000u;
+
+// WM_MOUSEMOVE, at the point in the game's own coordinates.
+static void queueMouseMove(MSG msg, const SDL_MouseMotionEvent& motion) {
+    int mx = 0, my = 0;
+    nocturne_gl_window_to_logical(motion.x, motion.y, &mx, &my);
+    msg.message = 0x0200; // WM_MOUSEMOVE
+    msg.lParam = (my << 16) | (mx & 0xFFFF);
+    s_msgQueue.push(msg);
+}
+
+// The shipped proc has no case for the wheel — DirectInput of the era did not
+// report one — so it is delivered only when the extra-message hook is compiled
+// in to receive it. See win32/window_message.h. A movement of no whole notch is
+// nothing.
+static void queueMouseWheel(MSG msg, const SDL_MouseWheelEvent& wheel) {
+#if NOCTURNE_AUTHENTIC_WINDOW_MESSAGES
+    (void)msg;
+    (void)wheel;
+#else
+    int notches = wheel.y;
+    if (wheel.direction == SDL_MOUSEWHEEL_FLIPPED) { notches = -notches; }
+    if (notches == 0) { return; }
+    msg.message = NOCTURNE_WM_MOUSEWHEEL;
+    // Win32 puts a signed notch count in the high word of wParam.
+    msg.wParam = (WPARAM)((unsigned int)(unsigned short)(short)
+                          (notches * NOCTURNE_WHEEL_DELTA) << 16);
+    int wx = 0, wy = 0;
+    nocturne_gl_window_to_logical(wheel.mouseX, wheel.mouseY, &wx, &wy);
+    msg.lParam = (wy << 16) | (wx & 0xFFFF);
+    s_msgQueue.push(msg);
+#endif
+}
+
 static void translateSdlEvent(const SDL_Event& ev) {
     MSG msg;
     memset(&msg, 0, sizeof(msg));
@@ -174,36 +242,13 @@ static void translateSdlEvent(const SDL_Event& ev) {
         s_msgQueue.push(msg);
         break;
 
-    case SDL_MOUSEMOTION: {
-        int mx = 0, my = 0;
-        nocturne_gl_window_to_logical(ev.motion.x, ev.motion.y, &mx, &my);
-        msg.message = 0x0200; // WM_MOUSEMOVE
-        msg.lParam = (my << 16) | (mx & 0xFFFF);
-        s_msgQueue.push(msg);
+    case SDL_MOUSEMOTION:
+        queueMouseMove(msg, ev.motion);
         break;
-    }
 
-#if !NOCTURNE_AUTHENTIC_WINDOW_MESSAGES
-    case SDL_MOUSEWHEEL: {
-        // The shipped proc has no case for this — DirectInput of the era did
-        // not report a wheel — so it is delivered only when the extra-message
-        // hook is compiled in to receive it. See win32/window_message.h.
-        int notches = ev.wheel.y;
-        if (ev.wheel.direction == SDL_MOUSEWHEEL_FLIPPED) { notches = -notches; }
-        if (notches == 0) { break; }
-        msg.message = NOCTURNE_WM_MOUSEWHEEL;
-        // Win32 puts a signed notch count in the high word of wParam.
-        msg.wParam = (WPARAM)((unsigned int)(unsigned short)(short)
-                              (notches * NOCTURNE_WHEEL_DELTA) << 16);
-        {
-            int wx = 0, wy = 0;
-            nocturne_gl_window_to_logical(ev.wheel.mouseX, ev.wheel.mouseY, &wx, &wy);
-            msg.lParam = (wy << 16) | (wx & 0xFFFF);
-        }
-        s_msgQueue.push(msg);
+    case SDL_MOUSEWHEEL:
+        queueMouseWheel(msg, ev.wheel);
         break;
-    }
-#endif
 
     case SDL_MOUSEBUTTONDOWN:
         if (ev.button.button == SDL_BUTTON_LEFT)
@@ -242,22 +287,15 @@ static void translateSdlEvent(const SDL_Event& ev) {
         msg.message = 0x0100; // WM_KEYDOWN
         msg.wParam = ev.key.keysym.sym & 0xFF;
         msg.lParam = (LPARAM)((uint32_t)sc << 16)
-                   | (LPARAM)winExtendedKeyFlag(ev.key.keysym.scancode);
+                   | (LPARAM)winExtendedKeyFlag(ev.key.keysym.scancode)
+                   | (LPARAM)(ev.key.repeat ? kKeyWasDown : 0u);
         s_msgQueue.push(msg);
-        SDL_Keycode keysym = ev.key.keysym.sym;
-        if (ev.key.keysym.scancode == SDL_SCANCODE_KP_ENTER) keysym = 0x0D;
-        bool isPrintable = (keysym >= 0x20 && keysym < 0x7F);
-        bool isWinControlChar = (keysym == 0x08 || keysym == 0x09 ||
-                                 keysym == 0x0D || keysym == 0x1B);
-        if (isPrintable || isWinControlChar) {
+        const char ch = winTypedChar(ev.key.keysym);
+        if (ch != 0) {
             MSG charMsg;
             memset(&charMsg, 0, sizeof(charMsg));
             charMsg.hwnd = msg.hwnd;
             charMsg.message = 0x0102; // WM_CHAR
-            char ch = (char)(keysym & 0xFF);
-            if (ev.key.keysym.mod & KMOD_SHIFT) {
-                ch = winShiftChar(ch);
-            }
             charMsg.wParam = (WPARAM)(unsigned char)ch;
             s_msgQueue.push(charMsg);
         }
@@ -269,7 +307,8 @@ static void translateSdlEvent(const SDL_Event& ev) {
         msg.message = 0x0101; // WM_KEYUP
         msg.wParam = ev.key.keysym.sym & 0xFF;
         msg.lParam = (LPARAM)((uint32_t)sc << 16)
-                   | (LPARAM)winExtendedKeyFlag(ev.key.keysym.scancode);
+                   | (LPARAM)winExtendedKeyFlag(ev.key.keysym.scancode)
+                   | (LPARAM)(kKeyWasDown | kKeyReleased);
         s_msgQueue.push(msg);
         break;
     }
@@ -332,10 +371,17 @@ static HWND shim_CreateWindowExA(DWORD dwExStyle, LPCSTR lpClassName,
 #endif
     if (nWidth <= 0) nWidth = 640;
     if (nHeight <= 0) nHeight = 480;
-    g_sdlWindow = SDL_CreateWindow(
-        lpWindowName ? lpWindowName : "NocturneDecomp",
-        SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
-        nWidth, nHeight, flags);
+    const char* title = lpWindowName ? lpWindowName : "NocturneDecomp";
+    // A host with no GL to put on a window still gets one: DirectDraw then
+    // draws through an SDL_Renderer instead (ddraw.cpp), as it does whenever
+    // GL does not come up.
+    const Uint32 tries[2] = {flags, flags & ~(Uint32)SDL_WINDOW_OPENGL};
+    g_sdlWindow = nullptr;
+    for (int i = 0; g_sdlWindow == nullptr && i < 2; i++) {
+        if (i == 1) DWARN("CreateWindowExA: no GL window (%s); making one without", SDL_GetError());
+        g_sdlWindow = SDL_CreateWindow(title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
+                                       nWidth, nHeight, tries[i]);
+    }
     // The Win32 build got its icon from the window class; we set it directly.
     nocturne_apply_window_icon(g_sdlWindow);
     // SDL only fires SDL_WINDOWEVENT_FOCUS_GAINED on focus *changes*, never for
@@ -406,12 +452,9 @@ static BOOL shim_InvalidateRect(HWND hWnd, const RECT* lpRect, BOOL bErase) {
     return 1;
 }
 
+// SDL answers no flags for no window.
 static BOOL shim_IsIconic(HWND hWnd) {
-    if (g_sdlWindow) {
-        Uint32 flags = SDL_GetWindowFlags(g_sdlWindow);
-        return (flags & SDL_WINDOW_MINIMIZED) ? 1 : 0;
-    }
-    return 0;
+    return (SDL_GetWindowFlags(g_sdlWindow) & SDL_WINDOW_MINIMIZED) != 0;
 }
 
 static HCURSOR shim_LoadCursorA(HINSTANCE hInstance, LPCSTR lpCursorName) {
@@ -566,7 +609,19 @@ static BOOL shim_UpdateWindow(HWND hWnd) {
 // ---------------------------------------------------------------------------
 #include "globals/globals_610000.h"
 
-static void sigint_handler(int) { _exit(1); }
+// Ctrl+C ends the process at once, as closing a console window ended the
+// original. _exit skips the exit hook that writes a coverage build's profile,
+// so that build writes it first.
+#if defined(NOCTURNE_COVERAGE_BUILD)
+extern "C" int __llvm_profile_write_file(void);
+#endif
+
+static void sigint_handler(int) {
+#if defined(NOCTURNE_COVERAGE_BUILD)
+    __llvm_profile_write_file();
+#endif
+    _exit(1);
+}
 
 void shims_init_user32(void) {
     signal(SIGINT, sigint_handler);

@@ -71,6 +71,7 @@ macros and a runner. This is those two things.
 | `shims_game` | Walk turning |
 | `shims_watcom` | The Watcom C library and its iostream stand-ins, path resolution, the C++ runtime's array helpers |
 | `shims_win32` | `kernel32`, `advapi32`, Winsock on loopback, window messages and the built-in DLL registry |
+| `shims_win32_sdl` | `user32`, `wingdi`, `mmsystem` and MCI movies, on SDL's dummy video and audio drivers; the movies are written by the tests with FFmpeg |
 | `shims_gl` | Shader program building and the pixel-format helpers, against the recorder |
 | `shims_renderer` | `trigl` batching, state, texture, vertex handling |
 | `shims_renderer_gl` | `trigl` GL call sequences, the device and golden traces (`test_*_sequence.cpp`) |

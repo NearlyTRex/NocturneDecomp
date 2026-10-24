@@ -51,6 +51,10 @@ function(nocturne_test_suite _suite)
         set(_objlib nocturne_test_${_suite}_objs)
         add_library(${_objlib} OBJECT EXCLUDE_FROM_ALL ${_objects})
         _nocturne_test_setup(${_objlib} "${_arg_DEFINITIONS}")
+        # For the include paths the subjects need, such as SDL's.
+        if(_arg_LIBRARIES)
+            target_link_libraries(${_objlib} PRIVATE ${_arg_LIBRARIES})
+        endif()
     endif()
 
     foreach(_src IN LISTS _tests)

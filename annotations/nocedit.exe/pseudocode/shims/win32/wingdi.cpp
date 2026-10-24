@@ -18,6 +18,7 @@
 #include <SDL_ttf.h>
 #include <cstdlib>
 #include <cstring>
+#include <string>
 
 // =============================================================================
 // Internal state tracking
@@ -65,26 +66,35 @@ struct GdiDC {
     HGDIOBJ prev_brush;
 };
 
-// TTF initialization
-static int s_ttf_initialized = 0;
-
+// A font that fails to open for want of it fails anyway, so a failed init needs
+// no answer of its own.
 static void ensure_ttf_init() {
-    if (!s_ttf_initialized) {
-        if (TTF_Init() == 0) {
-            s_ttf_initialized = 1;
-        }
-    }
+    if (!TTF_WasInit()) TTF_Init();
 }
 
-// Default fallback font path — try common locations
-static const char* s_fallback_font_paths[] = {
-    "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf",
-    "/usr/share/fonts/truetype/liberation/LiberationMono-Regular.ttf",
-    "/usr/share/fonts/truetype/freefont/FreeMono.ttf",
-    "/usr/share/fonts/TTF/DejaVuSansMono.ttf",
-    "/usr/share/fonts/dejavu-sans-mono-fonts/DejaVuSansMono.ttf",
-    nullptr
-};
+// Where the monospace font every CWinFont is drawn in is looked for, first to
+// last, in the form of the host's PATH. NOCTURNE_OS_FONT_PATH replaces it.
+#if defined(_WIN32)
+static const char kFontPathSeparator = ';';
+static const char* const kDefaultFontPath =
+    "C:\\Windows\\Fonts\\consola.ttf;"
+    "C:\\Windows\\Fonts\\cour.ttf;"
+    "C:\\Windows\\Fonts\\lucon.ttf";
+#elif defined(__APPLE__)
+static const char kFontPathSeparator = ':';
+static const char* const kDefaultFontPath =
+    "/System/Library/Fonts/Menlo.ttc:"
+    "/System/Library/Fonts/Supplemental/Courier New.ttf:"
+    "/Library/Fonts/Courier New.ttf";
+#else
+static const char kFontPathSeparator = ':';
+static const char* const kDefaultFontPath =
+    "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:"
+    "/usr/share/fonts/truetype/liberation/LiberationMono-Regular.ttf:"
+    "/usr/share/fonts/truetype/freefont/FreeMono.ttf:"
+    "/usr/share/fonts/TTF/DejaVuSansMono.ttf:"
+    "/usr/share/fonts/dejavu-sans-mono-fonts/DejaVuSansMono.ttf";
+#endif
 
 // The engine's text is CP1252 — the ANSI codepage GDI rendered it with on
 // Windows. SDL_ttf's TTF_*Text_* entry points read their input as Latin-1,
@@ -103,34 +113,43 @@ static const unsigned short kCp1252High[32] = {
     0x02DC, 0x2122, 0x0161, 0x203A, 0x0153, 0x009D, 0x017E, 0x0178
 };
 
-// Writes at most out_size-1 bytes plus a terminator. A UTF-8 code point from
-// this table is never more than three bytes, so the worst case is 3x the input.
-static void cp1252_to_utf8(const char* in, int in_len, char* out, size_t out_size) {
-    size_t o = 0;
-    for (int i = 0; i < in_len && o + 4 < out_size; i++) {
+// The first `in_len` bytes of `in`, up to a NUL. A NUL ends the text here as it
+// would have for GDI's renderer.
+static std::string cp1252_to_utf8(const char* in, int in_len) {
+    std::string out;
+    for (int i = 0; i < in_len && in[i] != '\0'; i++) {
         unsigned char ch = (unsigned char)in[i];
         unsigned int cp = (ch >= 0x80 && ch <= 0x9F) ? kCp1252High[ch - 0x80] : ch;
         if (cp < 0x80) {
-            out[o++] = (char)cp;
+            out += (char)cp;
         } else if (cp < 0x800) {
-            out[o++] = (char)(0xC0 | (cp >> 6));
-            out[o++] = (char)(0x80 | (cp & 0x3F));
+            out += (char)(0xC0 | (cp >> 6));
+            out += (char)(0x80 | (cp & 0x3F));
         } else {
-            out[o++] = (char)(0xE0 | (cp >> 12));
-            out[o++] = (char)(0x80 | ((cp >> 6) & 0x3F));
-            out[o++] = (char)(0x80 | (cp & 0x3F));
+            out += (char)(0xE0 | (cp >> 12));
+            out += (char)(0x80 | ((cp >> 6) & 0x3F));
+            out += (char)(0x80 | (cp & 0x3F));
         }
     }
-    out[o] = '\0';
+    return out;
 }
 
-static TTF_Font* open_fallback_font(int height) {
+// GDI's height is in pixels and negative for a character height; 0 is "a
+// reasonable default".
+static TTF_Font* open_os_font(int height) {
     if (height < 0) height = -height;
     if (height == 0) height = 14;
 
-    for (int i = 0; s_fallback_font_paths[i]; i++) {
-        TTF_Font* f = TTF_OpenFont(s_fallback_font_paths[i], height);
+    const char* asked = getenv("NOCTURNE_OS_FONT_PATH");
+    const std::string list = (asked != nullptr && asked[0] != '\0') ? asked : kDefaultFontPath;
+    size_t start = 0;
+    while (start <= list.size()) {
+        size_t end = list.find(kFontPathSeparator, start);
+        if (end == std::string::npos) end = list.size();
+        const std::string path = list.substr(start, end - start);
+        TTF_Font* f = path.empty() ? nullptr : TTF_OpenFont(path.c_str(), height);
         if (f) return f;
+        start = end + 1;
     }
     return nullptr;
 }
@@ -140,8 +159,7 @@ static TTF_Font* open_fallback_font(int height) {
 // =============================================================================
 
 static HBRUSH shim_CreateBrushIndirect(LOGBRUSH* plb) {
-    GdiBrush* brush = (GdiBrush*)calloc(1, sizeof(GdiBrush));
-    if (!brush) return (HBRUSH)nullptr;
+    GdiBrush* brush = new GdiBrush();
     brush->tag = GDI_OBJ_BRUSH;
     brush->color = plb ? plb->lbColor : 0;
     return (HBRUSH)brush;
@@ -149,8 +167,7 @@ static HBRUSH shim_CreateBrushIndirect(LOGBRUSH* plb) {
 
 static HDC shim_CreateCompatibleDC(HDC hdc) {
     (void)hdc;
-    GdiDC* dc = (GdiDC*)calloc(1, sizeof(GdiDC));
-    if (!dc) return (HDC)nullptr;
+    GdiDC* dc = new GdiDC();
     dc->tag = GDI_OBJ_DC;
     dc->bk_mode = 2;  // OPAQUE
     dc->bk_color = 0xFFFFFF;  // white
@@ -197,13 +214,7 @@ static HBITMAP shim_CreateDIBSection(HDC hdc, BITMAPINFO* pbmi, UINT usage,
         return (HBITMAP)nullptr;
     }
 
-    GdiBitmap* bmp = (GdiBitmap*)calloc(1, sizeof(GdiBitmap));
-    if (!bmp) {
-        SDL_FreeSurface(surface);
-        if (ppvBits) *ppvBits = nullptr;
-        return (HBITMAP)nullptr;
-    }
-
+    GdiBitmap* bmp = new GdiBitmap();
     bmp->tag = GDI_OBJ_BITMAP;
     bmp->surface = surface;
     bmp->pixels = surface->pixels;
@@ -240,17 +251,15 @@ static HFONT shim_CreateFontA(int cHeight, int cWidth, int cEscapement,
 
     ensure_ttf_init();
 
-    GdiFont* font = (GdiFont*)calloc(1, sizeof(GdiFont));
-    if (!font) return (HFONT)nullptr;
-
+    GdiFont* font = new GdiFont();
     font->tag = GDI_OBJ_FONT;
     font->height = cHeight;
     if (pszFaceName) {
         strncpy(font->face_name, pszFaceName, sizeof(font->face_name) - 1);
     }
 
-    // Try to open the font — fall back to system monospace fonts
-    font->ttf_font = open_fallback_font(cHeight);
+    // The face asked for is not looked up: the host's monospace stands in.
+    font->ttf_font = open_os_font(cHeight);
 
     // Even if font loading fails, return the handle — text will just not render
     return (HFONT)font;
@@ -259,7 +268,7 @@ static HFONT shim_CreateFontA(int cHeight, int cWidth, int cEscapement,
 static BOOL shim_DeleteDC(HDC hdc) {
     GdiDC* dc = (GdiDC*)hdc;
     if (dc && dc->tag == GDI_OBJ_DC) {
-        free(dc);
+        delete dc;
     }
     return 1;
 }
@@ -268,25 +277,18 @@ static BOOL shim_DeleteObject(HGDIOBJ ho) {
     if (!ho) return 1;
     int tag = *(int*)ho;
 
-    switch (tag) {
-    case GDI_OBJ_FONT: {
+    // A DC is not deleted here, and anything else is not an object of ours.
+    if (tag == GDI_OBJ_FONT) {
         GdiFont* font = (GdiFont*)ho;
         if (font->ttf_font) TTF_CloseFont(font->ttf_font);
-        free(font);
-        break;
-    }
-    case GDI_OBJ_BITMAP: {
+        delete font;
+    } else if (tag == GDI_OBJ_BITMAP) {
+        // A bitmap is only made with its surface.
         GdiBitmap* bmp = (GdiBitmap*)ho;
-        if (bmp->surface) SDL_FreeSurface(bmp->surface);
-        free(bmp);
-        break;
-    }
-    case GDI_OBJ_BRUSH: {
-        free(ho);
-        break;
-    }
-    default:
-        break;
+        SDL_FreeSurface(bmp->surface);
+        delete bmp;
+    } else if (tag == GDI_OBJ_BRUSH) {
+        delete (GdiBrush*)ho;
     }
     return 1;
 }
@@ -306,18 +308,10 @@ static BOOL shim_GetTextExtentPoint32A(HDC hdc, LPCSTR lpString, int c,
     psizl->cy = 16;
 
     if (dc && dc->tag == GDI_OBJ_DC && dc->font && dc->font->ttf_font && lpString) {
-        // Need null-terminated copy for TTF_SizeText
-        char buf[1024];
-        int len = c < (int)sizeof(buf) - 1 ? c : (int)sizeof(buf) - 1;
-        memcpy(buf, lpString, len);
-        buf[len] = '\0';
-
         // Same codepage as the render, or the extent and the glyphs disagree.
-        char utf8[sizeof(buf) * 3 + 1];
-        cp1252_to_utf8(buf, len, utf8, sizeof(utf8));
-
+        const std::string utf8 = cp1252_to_utf8(lpString, c);
         int w = 0, h = 0;
-        TTF_SizeUTF8(dc->font->ttf_font, utf8, &w, &h);
+        TTF_SizeUTF8(dc->font->ttf_font, utf8.c_str(), &w, &h);
         psizl->cx = w;
         psizl->cy = h;
     }
@@ -325,9 +319,10 @@ static BOOL shim_GetTextExtentPoint32A(HDC hdc, LPCSTR lpString, int c,
     return 1;
 }
 
+// A selected bitmap always has its surface: a section is only made with one.
 static BOOL shim_Rectangle(HDC hdc, int left, int top, int right, int bottom) {
     GdiDC* dc = (GdiDC*)hdc;
-    if (!dc || dc->tag != GDI_OBJ_DC || !dc->bitmap || !dc->bitmap->surface)
+    if (!dc || dc->tag != GDI_OBJ_DC || !dc->bitmap)
         return 1;
 
     // Fill rectangle with the current brush color
@@ -406,15 +401,9 @@ static COLORREF shim_SetTextColor(HDC hdc, COLORREF color) {
 static BOOL shim_TextOutA(HDC hdc, int x, int y, LPCSTR lpString, int c) {
     GdiDC* dc = (GdiDC*)hdc;
     if (!dc || dc->tag != GDI_OBJ_DC) return 0;
-    if (!dc->font || !dc->font->ttf_font || !dc->bitmap || !dc->bitmap->surface)
-        return 1;  // No font or surface — silently succeed
+    if (!dc->font || !dc->font->ttf_font || !dc->bitmap)
+        return 1;  // No font or section — silently succeed
     if (!lpString || c <= 0) return 1;
-
-    // Null-terminate the string
-    char buf[1024];
-    int len = c < (int)sizeof(buf) - 1 ? c : (int)sizeof(buf) - 1;
-    memcpy(buf, lpString, len);
-    buf[len] = '\0';
 
     // Render text with SDL_ttf
     // COLORREF is 0x00BBGGRR, SDL_Color is {r, g, b, a}
@@ -432,10 +421,10 @@ static BOOL shim_TextOutA(HDC hdc, int x, int y, LPCSTR lpString, int c) {
     // behind it, fails the equality, and is copied, so the text arrives inside
     // a solid block of its own fringe. Solid renders hard-edged with a colour
     // key, which is the shape the equality test was written for.
-    char utf8[sizeof(buf) * 3 + 1];
-    cp1252_to_utf8(buf, len, utf8, sizeof(utf8));
-
-    SDL_Surface* text_surface = TTF_RenderUTF8_Solid(dc->font->ttf_font, utf8, fg);
+    const std::string utf8 = cp1252_to_utf8(lpString, c);
+    // Nothing to draw, such as a string that starts with its terminator, is no
+    // surface.
+    SDL_Surface* text_surface = TTF_RenderUTF8_Solid(dc->font->ttf_font, utf8.c_str(), fg);
     if (!text_surface) return 1;
 
     // Blit text onto the DC's bitmap surface

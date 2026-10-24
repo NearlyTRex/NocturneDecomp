@@ -689,8 +689,9 @@ endif()
 
 # The Windows test binaries in one folder with what they need on a machine that
 # has none of the toolchain: the gcc runtime DLLs on the mingw lanes (the clang-cl
-# lane links its runtime statically) and the renderer's golden traces, which the
-# tests find in their working directory when the source tree is not there. CI builds it on Linux and runs it on a Windows runner with
+# lane links its runtime statically), SDL and SDL_ttf, the font the text tests
+# draw with, and the renderer's golden traces, which the tests find in their
+# working directory when the source tree is not there. CI builds it on Linux and runs it on a Windows runner with
 # Workflows' windows-test.
 if(COMMAND nocturne_windows_runtime_dlls)
     nocturne_windows_runtime_dlls(_bundle_dlls)
@@ -699,10 +700,18 @@ if(COMMAND nocturne_windows_runtime_dlls)
     foreach(_target IN LISTS _test_targets)
         list(APPEND _bundle_tests "$<TARGET_FILE:${_target}>")
     endforeach()
+    # The SDL-backed suites' libraries, and the files suites ask to travel with
+    # them (the text tests' font).
+    foreach(_lib IN ITEMS SDL2::SDL2 SDL2_ttf::SDL2_ttf)
+        if(TARGET ${_lib})
+            list(APPEND _bundle_dlls "$<TARGET_FILE:${_lib}>")
+        endif()
+    endforeach()
+    get_property(_bundle_files GLOBAL PROPERTY NOCTURNE_TEST_BUNDLE_FILES)
     add_custom_target(nocturne_test_bundle
         COMMAND "${CMAKE_COMMAND}" -E rm -rf "${_bundle}"
         COMMAND "${CMAKE_COMMAND}" -E make_directory "${_bundle}"
-        COMMAND "${CMAKE_COMMAND}" -E copy ${_bundle_tests} ${_bundle_dlls} "${_bundle}"
+        COMMAND "${CMAKE_COMMAND}" -E copy ${_bundle_tests} ${_bundle_dlls} ${_bundle_files} "${_bundle}"
         COMMAND "${CMAKE_COMMAND}" -E copy_directory
                 "${NOCTURNE_TESTS_DIR}/shims/renderer/golden" "${_bundle}/golden"
         COMMENT "Bundling the Windows tests into ${_bundle}"
