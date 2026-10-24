@@ -16,6 +16,10 @@
 #include <cstring>
 #include <string>
 
+#if NOCTURNE_FPU_TRAP && defined(__linux__)
+#include <fenv.h>
+#endif
+
 // The allocator's own figures, or a sentence saying there are none; nothing
 // written with nowhere to write it.
 NOCTURNE_TEST(the_heap_report_is_the_allocators_or_says_why_not) {
@@ -34,12 +38,17 @@ NOCTURNE_TEST(the_heap_report_is_the_allocators_or_says_why_not) {
 }
 
 // Where glibc can trap them, the exceptions asked for are armed, and turning
-// the trap off says which they were; elsewhere nothing is armed.
+// the trap off says which they were; elsewhere nothing is armed. Many Arm
+// cores have no traps, and there what is armed is nothing.
 NOCTURNE_TEST(the_fpu_trap_arms_what_it_is_asked) {
     nocturne_fpu_trap_off();
     CHECK_EQ(nocturne_fpu_trap_on(NOCTURNE_FPU_TRAP_ALL), 0);
 #if NOCTURNE_FPU_TRAP && defined(__linux__)
-    CHECK(nocturne_fpu_trap_off() != 0);
+    const int armed = fegetexcept();
+    CHECK_EQ(nocturne_fpu_trap_off(), armed);
+#if defined(__x86_64__)
+    CHECK(armed != 0);
+#endif
 #else
     CHECK_EQ(nocturne_fpu_trap_off(), 0);
 #endif
