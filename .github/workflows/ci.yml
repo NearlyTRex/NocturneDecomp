@@ -13,14 +13,22 @@ concurrency:
   # finishes, since each push's secret scan covers only that push's commits.
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
+# Each build job is a preset matrix on one kind of runner, laid out alike. The
+# mingw Windows lanes cross-compile to PEs that cannot run here, so they are
+# built only on release.
 jobs:
   # The native lanes, with the unit tests: x86_64, and aarch64 on GitHub's Arm
   # runner, which is what proves the portable paths (MMX, float10, char) run
-  # rather than only compile. The mingw Windows lanes cross-compile to PEs that
-  # cannot run here, so they are built only on release.
-  build:
+  # rather than only compile.
+  #
+  # The x86_64 lane also holds the shims to 100% line, function and branch
+  # coverage, less the shrinking tests/coverage_exclusions.txt; the decompiled
+  # and generated code doesn't count, and the recreation has its own gate.
+  # NOCTURNE_COVERAGE instruments only the shims and the tests, so the
+  # decompiled modules compile as in the release build and hit its ccache.
+  build-linux:
     name: Build (${{ matrix.preset }})
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@9e1d569f0f334c38fc2f24cc45a9428b86afb623 # v0.2.20
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@128538a7558f88e8031e40a3dc701eda21495b18 # v0.2.21
     permissions:
       contents: read
     strategy:
@@ -29,14 +37,17 @@ jobs:
         include:
           - preset: exe-linux-x86_64
             os: ubuntu-latest
+            coverage: "ON"
           - preset: exe-linux-aarch64
             os: ubuntu-24.04-arm
+            coverage: "OFF"
     with:
       runs-on: ${{ matrix.os }}
       # The -dev headers let SDL compile its X11/Wayland/audio backends;
-      # bundledlibs.cmake fails the configure without them.
+      # bundledlibs.cmake fails the configure without them. llvm has the
+      # coverage tools.
       apt-packages: >-
-        cmake clang ninja-build pkg-config python3
+        cmake clang llvm ninja-build pkg-config python3
         libx11-dev libxext-dev libxcursor-dev libxi-dev libxfixes-dev
         libxrandr-dev libxss-dev libwayland-dev libxkbcommon-dev
         wayland-protocols libegl-dev libdecor-0-dev libpulse-dev
@@ -51,27 +62,36 @@ jobs:
         cmake/bundledlibs.cmake
         cmake/ffmpeg.cmake
       # About 7,400 translation units: ccache recompiles only the ones a
-      # commit touched, instead of all of them on every run.
+      # commit touched, instead of all of them on every run. One build fills
+      # 500M, so at that size ccache evicted as it went and kept only the tail.
       ccache: true
-      # One build fills 500M, so ccache evicted as it went and kept only the tail.
       ccache-max-size: 2G
       # Shared by the CI build and the release build of the same preset.
       cache-key: ${{ matrix.preset }}
       # The test binaries are EXCLUDE_FROM_ALL, and ctest only runs what is
       # already built, so they are built explicitly (see docs/testing.md).
       build-command: |
-        cmake --preset ${{ matrix.preset }}
-        cmake --build --preset ${{ matrix.preset }}
-        cmake --build build/${{ matrix.preset }} --target nocturne_tests
-      test-command: ctest --test-dir build/${{ matrix.preset }} --output-on-failure
+        ci-phase Configure cmake --preset ${{ matrix.preset }} -DNOCTURNE_COVERAGE=${{ matrix.coverage }}
+        ci-phase Build cmake --build --preset ${{ matrix.preset }}
+        ci-phase "Build tests" cmake --build build/${{ matrix.preset }} --target nocturne_tests
+      # With coverage, the binaries and what counts come from the build (see
+      # CMakeLists.txt).
+      test-command: |
+        build=build/${{ matrix.preset }}
+        if [ "${{ matrix.coverage }}" = ON ]; then
+          mapfile -t args < "$build/coverage_args.txt"
+          ci-phase "Tests and coverage" ci-cpp-coverage "${args[@]}" \
+            -- ctest --test-dir "$build" --output-on-failure
+        else
+          ci-phase Tests ctest --test-dir "$build" --output-on-failure
+        fi
 
-  # The lanes no Linux host can build. Compiled and linked only: macOS cannot
-  # run the tests headless, and the Windows test binaries would need the same
-  # staging as the exe. macos-latest is Apple silicon, so the x86_64 leg is
-  # also the check that Apple clang's cross build works.
+  # Compiled and linked only: macOS cannot run the tests headless.
+  # macos-latest is Apple silicon, so the x86_64 leg is also the check that
+  # Apple clang's cross build works. Xcode's clang and CMake are on the runner.
   build-macos:
     name: Build (${{ matrix.preset }})
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@9e1d569f0f334c38fc2f24cc45a9428b86afb623 # v0.2.20
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@128538a7558f88e8031e40a3dc701eda21495b18 # v0.2.21
     permissions:
       contents: read
     strategy:
@@ -80,44 +100,50 @@ jobs:
         preset: [exe-macos-x86_64, exe-macos-arm64]
     with:
       runs-on: macos-latest
+      brew-packages: ninja
       cache-paths: |
         build/${{ matrix.preset }}/_deps
         build/${{ matrix.preset }}/ffmpeg
       cache-key-files: |
         cmake/bundledlibs.cmake
         cmake/ffmpeg.cmake
-      cache-key: ${{ matrix.preset }}
-      brew-packages: ninja
       ccache: true
       ccache-max-size: 2G
+      cache-key: ${{ matrix.preset }}
       build-command: |
-        cmake --preset ${{ matrix.preset }}
-        cmake --build --preset ${{ matrix.preset }}
+        ci-phase Configure cmake --preset ${{ matrix.preset }}
+        ci-phase Build cmake --build --preset ${{ matrix.preset }}
 
-  build-msvc:
-    name: Build (exe-windows-msvc)
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@9e1d569f0f334c38fc2f24cc45a9428b86afb623 # v0.2.20
+  # Compiled and linked only: the test binaries would need the same staging as
+  # the exe. The Visual Studio environment the toolchain file checks for brings
+  # CMake and Ninja, and the runner's LLVM supplies clang-cl. No ccache: the
+  # workflow sets it up on Linux and macOS runners only.
+  build-windows:
+    name: Build (${{ matrix.preset }})
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@128538a7558f88e8031e40a3dc701eda21495b18 # v0.2.21
     permissions:
       contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        preset: [exe-windows-msvc]
     with:
       runs-on: windows-latest
-      # The Visual Studio environment the toolchain file checks for; its CMake
-      # and Ninja come with it, and the runner's LLVM supplies clang-cl.
       msvc: true
       cache-paths: |
-        build/exe-windows-msvc/_deps
-        build/exe-windows-msvc/ffmpeg
+        build/${{ matrix.preset }}/_deps
+        build/${{ matrix.preset }}/ffmpeg
       cache-key-files: |
         cmake/bundledlibs.cmake
         cmake/ffmpeg.cmake
         cmake/platforms/windows.cmake
-      cache-key: exe-windows-msvc
+      cache-key: ${{ matrix.preset }}
       # FFmpeg's configure runs under the runner's MSYS2, which needs make.
       build-command: |
         /c/msys64/usr/bin/pacman -S --noconfirm --needed make diffutils
         export PATH="/c/msys64/usr/bin:$PATH"
-        cmake --preset exe-windows-msvc
-        cmake --build --preset exe-windows-msvc
+        ci-phase Configure cmake --preset ${{ matrix.preset }}
+        ci-phase Build cmake --build --preset ${{ matrix.preset }}
 
   # The source recreation is a standalone CMake project that fetches and builds
   # its third-party libraries from source. Every header compiles on its own, the
@@ -126,7 +152,7 @@ jobs:
   # a row of timings on the run's summary page.
   recreation:
     name: Recreation
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@9e1d569f0f334c38fc2f24cc45a9428b86afb623 # v0.2.20
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@128538a7558f88e8031e40a3dc701eda21495b18 # v0.2.21
     permissions:
       contents: read
     with:
@@ -162,7 +188,7 @@ jobs:
   # carries those results from run to run.
   recreation-tidy:
     name: Recreation tidy
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@9e1d569f0f334c38fc2f24cc45a9428b86afb623 # v0.2.20
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@128538a7558f88e8031e40a3dc701eda21495b18 # v0.2.21
     permissions:
       contents: read
     with:
@@ -192,7 +218,7 @@ jobs:
   # omit list in pyproject.toml; everything else is held to every line and branch.
   python:
     name: Python
-    uses: NearlyTRex/Workflows/.github/workflows/python-ci.yml@9e1d569f0f334c38fc2f24cc45a9428b86afb623 # v0.2.20
+    uses: NearlyTRex/Workflows/.github/workflows/python-ci.yml@128538a7558f88e8031e40a3dc701eda21495b18 # v0.2.21
     permissions:
       contents: read
     with:
@@ -207,7 +233,7 @@ jobs:
 
   lint:
     name: Lint
-    uses: NearlyTRex/Workflows/.github/workflows/lint.yml@9e1d569f0f334c38fc2f24cc45a9428b86afb623 # v0.2.20
+    uses: NearlyTRex/Workflows/.github/workflows/lint.yml@128538a7558f88e8031e40a3dc701eda21495b18 # v0.2.21
     permissions:
       contents: read
     with:

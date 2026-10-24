@@ -25,6 +25,15 @@ option(NOCTURNE_BUILD_EXE   "Build full linked executable"          OFF)
 option(NOCTURNE_ASAN
     "Enable AddressSanitizer + UBSan on the exe build"
     OFF)
+# Clang source-based coverage over the shims and the tests. Only the shims are
+# instrumented in the exe, so the decompiled modules compile exactly as in a
+# normal build and share its ccache. The exe is never run; it is an object so a
+# shim no test links still counts, as unrun (see "Coverage" in docs/testing.md).
+option(NOCTURNE_COVERAGE "Instrument the exe and the tests for coverage" OFF)
+set(NOCTURNE_COVERAGE_FLAGS "")
+if(NOCTURNE_COVERAGE)
+    set(NOCTURNE_COVERAGE_FLAGS -fprofile-instr-generate -fcoverage-mapping)
+endif()
 # Who owns the window's pixels. ON (default) creates a GL context and presents
 # the 2D back buffer as a textured quad, which is what lets a decompiled 3D
 # renderer DLL composite into the same framebuffer. OFF selects the legacy
@@ -530,6 +539,7 @@ if(NOCTURNE_BUILD_EXE)
     target_compile_options(nocturne_shims PRIVATE
         ${NOCTURNE_COMMON_WARNINGS}
         ${NOCTURNE_SANITIZE_FLAGS}
+        ${NOCTURNE_COVERAGE_FLAGS}
         ${SDL2_CFLAGS_OTHER} ${SDL2TTF_CFLAGS_OTHER} ${FFMPEG_CFLAGS_OTHER})
     target_compile_features(nocturne_shims PRIVATE cxx_std_17)
     if(NOCTURNE_GLES)
@@ -563,7 +573,7 @@ if(NOCTURNE_BUILD_EXE)
         ${NOCTURNE_COMMON_WARNINGS}
         ${NOCTURNE_SANITIZE_FLAGS}
         ${SDL2_CFLAGS_OTHER} ${SDL2TTF_CFLAGS_OTHER} ${FFMPEG_CFLAGS_OTHER})
-    target_link_options(nocturne PRIVATE ${NOCTURNE_SANITIZE_FLAGS})
+    target_link_options(nocturne PRIVATE ${NOCTURNE_SANITIZE_FLAGS} ${NOCTURNE_COVERAGE_FLAGS})
 
     foreach(_lib IN LISTS _module_libs)
         target_link_libraries(nocturne PRIVATE ${_lib})
@@ -652,3 +662,24 @@ endforeach()
 get_property(_test_targets GLOBAL PROPERTY NOCTURNE_TEST_TARGETS)
 list(LENGTH _test_targets _test_count)
 message(STATUS "nocturne_tests: ${_test_count} test binaries")
+
+# ci-cpp-coverage's arguments, one per line. The objects are every test binary,
+# and the exe for the shims no test links. Only the hand-written shims/ count,
+# less the files tests/coverage_exclusions.txt lists.
+if(NOCTURNE_COVERAGE)
+    set(_coverage_args "")
+    foreach(_target IN LISTS _test_targets ITEMS nocturne)
+        if(TARGET ${_target})
+            string(APPEND _coverage_args "--object\n$<TARGET_FILE:${_target}>\n")
+        endif()
+    endforeach()
+    string(APPEND _coverage_args "--exclude\n^(?!.*/nocedit\\.exe/pseudocode/shims/)\n")
+    set(_exclusions_file "${NOCTURNE_TESTS_DIR}/coverage_exclusions.txt")
+    set_property(DIRECTORY APPEND PROPERTY CMAKE_CONFIGURE_DEPENDS "${_exclusions_file}")
+    file(STRINGS "${_exclusions_file}" _exclusions REGEX "^[^#]")
+    foreach(_line IN LISTS _exclusions)
+        string(REGEX REPLACE "\t.*$" "" _path "${_line}")
+        string(APPEND _coverage_args "--exclude\n${_path}\n")
+    endforeach()
+    file(GENERATE OUTPUT "${CMAKE_BINARY_DIR}/coverage_args.txt" CONTENT "${_coverage_args}")
+endif()

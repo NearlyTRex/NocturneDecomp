@@ -8,6 +8,7 @@
       "generator": "Ninja",
       "binaryDir": "${sourceDir}/build/${presetName}"
     },
+
     {
       "name": "check",
       "hidden": true,
@@ -27,15 +28,42 @@
         "NOCTURNE_BUILD_TAG":   "${presetName}"
       }
     },
+
     {
       "name": "vanilla",
       "hidden": true,
       "cacheVariables": { "NOCTURNE_VANILLA": "ON" }
     },
     {
+      "name": "gles",
+      "hidden": true,
+      "cacheVariables": { "NOCTURNE_GLES": "ON" }
+    },
+    {
+      "name": "asan",
+      "hidden": true,
+      "cacheVariables": {
+        "NOCTURNE_ASAN": "ON",
+        "CMAKE_BUILD_TYPE": "Debug",
+        "NOCTURNE_NETPLAY_RNG_TRACE": "1",
+        "NOCTURNE_NETPLAY_SIM_TRACE": "1"
+      }
+    },
+    {
+      "name": "coverage",
+      "hidden": true,
+      "cacheVariables": { "NOCTURNE_COVERAGE": "ON" }
+    },
+
+    {
       "name": "toolchain-linux",
       "hidden": true,
       "toolchainFile": "${sourceDir}/cmake/toolchains/linux-x86_64.cmake"
+    },
+    {
+      "name": "toolchain-linux-aarch64",
+      "hidden": true,
+      "toolchainFile": "${sourceDir}/cmake/toolchains/linux-aarch64.cmake"
     },
     {
       "name": "toolchain-windows-cross",
@@ -51,11 +79,6 @@
       "name": "toolchain-windows-msvc",
       "hidden": true,
       "toolchainFile": "${sourceDir}/cmake/toolchains/windows-msvc.cmake"
-    },
-    {
-      "name": "toolchain-linux-aarch64",
-      "hidden": true,
-      "toolchainFile": "${sourceDir}/cmake/toolchains/linux-aarch64.cmake"
     },
     {
       "name": "toolchain-macos-x86_64",
@@ -77,35 +100,23 @@
       "inherits": ["check", "toolchain-linux"]
     },
     {
+      "name": "check-windows-x86_64",
+      "displayName": "Syntax check (Windows 64-bit, cross-compiled)",
+      "description": "Per-file -fsyntax-only verification against the Windows target, for checking portability without a full link.",
+      "inherits": ["check", "toolchain-windows-cross"]
+    },
+    {
+      "name": "check-windows-msys2",
+      "displayName": "Syntax check (Windows 64-bit, built ON Windows under MSYS2)",
+      "description": "Per-file -fsyntax-only verification, native on Windows.",
+      "inherits": ["check", "toolchain-windows-msys2"]
+    },
+
+    {
       "name": "exe-linux-x86_64",
       "displayName": "Full exe (Linux native 64-bit)",
       "description": "Compile and link nocturne executable.",
       "inherits": ["exe", "toolchain-linux"]
-    },
-    {
-      "name": "exe-linux-asan-x86_64",
-      "displayName": "Full exe (Linux native 64-bit) with ASan + UBSan",
-      "description": "Compile and link nocturne with AddressSanitizer and UBSan, native x86_64 (no multilib). Debug build type adds -g for gdb usability.",
-      "inherits": ["exe", "toolchain-linux"],
-      "cacheVariables": {
-        "NOCTURNE_ASAN": "ON",
-        "CMAKE_BUILD_TYPE": "Debug",
-        "NOCTURNE_NETPLAY_RNG_TRACE": "1",
-        "NOCTURNE_NETPLAY_SIM_TRACE": "1"
-      }
-    },
-    {
-      "name": "exe-linux-vanilla-x86_64",
-      "displayName": "Vanilla exe (Linux native 64-bit)",
-      "description": "Every authenticity toggle at the shipped behaviour, bar the host-kind ones that cannot be reproduced off Win32. The retail game as it was, bugs included, on a modern system.",
-      "inherits": ["exe", "vanilla", "toolchain-linux"]
-    },
-    {
-      "name": "exe-linux-gles-x86_64",
-      "displayName": "Full exe (Linux native 64-bit), OpenGL ES 3.0",
-      "description": "The GLES path the UWP, Xbox and console ports take, on a desktop Mesa driver, so it can be run and compared against the desktop GL lane.",
-      "inherits": ["exe", "toolchain-linux"],
-      "cacheVariables": { "NOCTURNE_GLES": "ON" }
     },
     {
       "name": "exe-linux-aarch64",
@@ -114,40 +125,16 @@
       "inherits": ["exe", "toolchain-linux-aarch64"]
     },
     {
-      "name": "exe-linux-vanilla-aarch64",
-      "displayName": "Vanilla exe (Linux 64-bit Arm)",
-      "description": "The vanilla lane for aarch64 Linux. Same toggles as exe-linux-vanilla-x86_64.",
-      "inherits": ["exe", "vanilla", "toolchain-linux-aarch64"]
-    },
-    {
       "name": "exe-windows-x86_64",
       "displayName": "Full exe (Windows 64-bit, cross-compiled)",
       "description": "Cross-compile nocturne.exe with clang against the mingw-w64 sysroot. Opt-in: needs a cross toolchain (sudo apt install g++-mingw-w64-x86-64) that no other preset requires. Configure fails with the package name if it is missing.",
       "inherits": ["exe", "toolchain-windows-cross"]
     },
     {
-      "name": "exe-windows-vanilla-x86_64",
-      "displayName": "Vanilla exe (Windows 64-bit, cross-compiled)",
-      "description": "The vanilla lane for the Windows target. Same toggles as exe-linux-vanilla-x86_64.",
-      "inherits": ["exe", "vanilla", "toolchain-windows-cross"]
-    },
-    {
-      "name": "check-windows-x86_64",
-      "displayName": "Syntax check (Windows 64-bit, cross-compiled)",
-      "description": "Per-file -fsyntax-only verification against the Windows target, for checking portability without a full link.",
-      "inherits": ["check", "toolchain-windows-cross"]
-    },
-    {
       "name": "exe-windows-msys2",
       "displayName": "Full exe (Windows 64-bit, built ON Windows under MSYS2)",
       "description": "Native build for someone who cloned the repository on Windows. Run it from the UCRT64 shell. Same target as exe-windows-x86_64, but with the MSYS2 toolchain instead of a Linux cross compiler.",
       "inherits": ["exe", "toolchain-windows-msys2"]
-    },
-    {
-      "name": "check-windows-msys2",
-      "displayName": "Syntax check (Windows 64-bit, built ON Windows under MSYS2)",
-      "description": "Per-file -fsyntax-only verification, native on Windows.",
-      "inherits": ["check", "toolchain-windows-msys2"]
     },
     {
       "name": "exe-windows-msvc",
@@ -162,41 +149,83 @@
       "inherits": ["exe", "toolchain-macos-x86_64"]
     },
     {
+      "name": "exe-macos-arm64",
+      "displayName": "Full exe (macOS, Apple silicon)",
+      "description": "Build on a Mac with Apple clang, for Apple silicon. Builds from an Intel host too.",
+      "inherits": ["exe", "toolchain-macos-arm64"]
+    },
+
+    {
+      "name": "exe-linux-vanilla-x86_64",
+      "displayName": "Vanilla exe (Linux native 64-bit)",
+      "description": "Every authenticity toggle at the shipped behaviour, bar the host-kind ones that cannot be reproduced off Win32. The retail game as it was, bugs included, on a modern system.",
+      "inherits": ["exe", "vanilla", "toolchain-linux"]
+    },
+    {
+      "name": "exe-linux-vanilla-aarch64",
+      "displayName": "Vanilla exe (Linux 64-bit Arm)",
+      "description": "The vanilla lane for aarch64 Linux. Same toggles as exe-linux-vanilla-x86_64.",
+      "inherits": ["exe", "vanilla", "toolchain-linux-aarch64"]
+    },
+    {
+      "name": "exe-windows-vanilla-x86_64",
+      "displayName": "Vanilla exe (Windows 64-bit, cross-compiled)",
+      "description": "The vanilla lane for the Windows target. Same toggles as exe-linux-vanilla-x86_64.",
+      "inherits": ["exe", "vanilla", "toolchain-windows-cross"]
+    },
+    {
       "name": "exe-macos-vanilla-x86_64",
       "displayName": "Vanilla exe (macOS, Intel 64-bit)",
       "description": "The vanilla lane for Intel Macs. Same toggles as exe-linux-vanilla-x86_64.",
       "inherits": ["exe", "vanilla", "toolchain-macos-x86_64"]
     },
     {
-      "name": "exe-macos-arm64",
-      "displayName": "Full exe (macOS, Apple silicon)",
-      "description": "Build on a Mac with Apple clang, for Apple silicon. Builds from an Intel host too.",
-      "inherits": ["exe", "toolchain-macos-arm64"]
-    },
-    {
       "name": "exe-macos-vanilla-arm64",
       "displayName": "Vanilla exe (macOS, Apple silicon)",
       "description": "The vanilla lane for Apple silicon. Same toggles as exe-linux-vanilla-x86_64.",
       "inherits": ["exe", "vanilla", "toolchain-macos-arm64"]
+    },
+
+    {
+      "name": "exe-linux-gles-x86_64",
+      "displayName": "Full exe (Linux native 64-bit), OpenGL ES 3.0",
+      "description": "The GLES path the UWP, Xbox and console ports take, on a desktop Mesa driver, so it can be run and compared against the desktop GL lane.",
+      "inherits": ["exe", "gles", "toolchain-linux"]
+    },
+    {
+      "name": "exe-linux-asan-x86_64",
+      "displayName": "Full exe (Linux native 64-bit) with ASan + UBSan",
+      "description": "Compile and link nocturne with AddressSanitizer and UBSan, native x86_64 (no multilib). Debug build type adds -g for gdb usability.",
+      "inherits": ["exe", "asan", "toolchain-linux"]
+    },
+    {
+      "name": "exe-linux-coverage-x86_64",
+      "displayName": "Full exe and tests (Linux native 64-bit) with shim coverage",
+      "description": "The shims and the unit tests instrumented for clang source-based coverage; coverage_args.txt holds ci-cpp-coverage's arguments.",
+      "inherits": ["exe", "coverage", "toolchain-linux"]
     }
   ],
   "buildPresets": [
     { "name": "check-linux-x86_64",         "configurePreset": "check-linux-x86_64",         "targets": ["nocturne_check"] },
-    { "name": "exe-linux-x86_64",           "configurePreset": "exe-linux-x86_64",           "targets": ["nocturne"] },
-    { "name": "exe-linux-asan-x86_64",      "configurePreset": "exe-linux-asan-x86_64",      "targets": ["nocturne"] },
-    { "name": "exe-linux-vanilla-x86_64",   "configurePreset": "exe-linux-vanilla-x86_64",   "targets": ["nocturne"] },
-    { "name": "exe-linux-gles-x86_64",      "configurePreset": "exe-linux-gles-x86_64",      "targets": ["nocturne"] },
-    { "name": "exe-linux-aarch64",          "configurePreset": "exe-linux-aarch64",          "targets": ["nocturne"] },
-    { "name": "exe-linux-vanilla-aarch64",  "configurePreset": "exe-linux-vanilla-aarch64",  "targets": ["nocturne"] },
-    { "name": "exe-windows-x86_64",         "configurePreset": "exe-windows-x86_64",         "targets": ["nocturne"] },
-    { "name": "exe-windows-vanilla-x86_64", "configurePreset": "exe-windows-vanilla-x86_64", "targets": ["nocturne"] },
     { "name": "check-windows-x86_64",       "configurePreset": "check-windows-x86_64",       "targets": ["nocturne_check"] },
-    { "name": "exe-windows-msys2",          "configurePreset": "exe-windows-msys2",          "targets": ["nocturne"] },
     { "name": "check-windows-msys2",        "configurePreset": "check-windows-msys2",        "targets": ["nocturne_check"] },
+
+    { "name": "exe-linux-x86_64",           "configurePreset": "exe-linux-x86_64",           "targets": ["nocturne"] },
+    { "name": "exe-linux-aarch64",          "configurePreset": "exe-linux-aarch64",          "targets": ["nocturne"] },
+    { "name": "exe-windows-x86_64",         "configurePreset": "exe-windows-x86_64",         "targets": ["nocturne"] },
+    { "name": "exe-windows-msys2",          "configurePreset": "exe-windows-msys2",          "targets": ["nocturne"] },
     { "name": "exe-windows-msvc",           "configurePreset": "exe-windows-msvc",           "targets": ["nocturne"] },
     { "name": "exe-macos-x86_64",           "configurePreset": "exe-macos-x86_64",           "targets": ["nocturne"] },
-    { "name": "exe-macos-vanilla-x86_64",   "configurePreset": "exe-macos-vanilla-x86_64",   "targets": ["nocturne"] },
     { "name": "exe-macos-arm64",            "configurePreset": "exe-macos-arm64",            "targets": ["nocturne"] },
-    { "name": "exe-macos-vanilla-arm64",    "configurePreset": "exe-macos-vanilla-arm64",    "targets": ["nocturne"] }
+
+    { "name": "exe-linux-vanilla-x86_64",   "configurePreset": "exe-linux-vanilla-x86_64",   "targets": ["nocturne"] },
+    { "name": "exe-linux-vanilla-aarch64",  "configurePreset": "exe-linux-vanilla-aarch64",  "targets": ["nocturne"] },
+    { "name": "exe-windows-vanilla-x86_64", "configurePreset": "exe-windows-vanilla-x86_64", "targets": ["nocturne"] },
+    { "name": "exe-macos-vanilla-x86_64",   "configurePreset": "exe-macos-vanilla-x86_64",   "targets": ["nocturne"] },
+    { "name": "exe-macos-vanilla-arm64",    "configurePreset": "exe-macos-vanilla-arm64",    "targets": ["nocturne"] },
+
+    { "name": "exe-linux-gles-x86_64",      "configurePreset": "exe-linux-gles-x86_64",      "targets": ["nocturne"] },
+    { "name": "exe-linux-asan-x86_64",      "configurePreset": "exe-linux-asan-x86_64",      "targets": ["nocturne"] },
+    { "name": "exe-linux-coverage-x86_64",  "configurePreset": "exe-linux-coverage-x86_64",  "targets": ["nocturne", "nocturne_tests"] }
   ]
 }

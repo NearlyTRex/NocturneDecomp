@@ -82,6 +82,34 @@ sequence of GL calls an assertable artifact.
 Golden traces live beside the tests in `renderer/golden` and are read from the source tree, so a
 changed trace shows up as a reviewable diff rather than a rebuilt copy nobody sees.
 
+## Coverage
+
+The shims are held to full line, function and branch coverage, as the recreation is. The
+decompiled `src/`, the generated `include/` and `main/main.cpp`, which builds with the decompiled
+modules, don't count.
+Files not there yet are listed in
+[`tests/coverage_exclusions.txt`](../annotations/nocedit.exe/pseudocode/tests/coverage_exclusions.txt).
+That list only shrinks: take a file off it once its tests cover it, and never add one, so a new
+shim needs its tests to land with it.
+
+`NOCTURNE_COVERAGE` instruments the shims and the tests with clang's source-based coverage, and
+writes `coverage_args.txt`, the arguments for Workflows' `ci-cpp-coverage`. The decompiled
+modules compile exactly as without it, so CI turns it on in the `exe-linux-x86_64` lane and the
+modules come from the same ccache as the release build. Locally, the
+`exe-linux-coverage-x86_64` preset keeps it out of your everyday build directory:
+
+```sh
+cmake --preset exe-linux-coverage-x86_64
+cmake --build --preset exe-linux-coverage-x86_64
+mapfile -t args < build/exe-linux-coverage-x86_64/coverage_args.txt
+python3 ~/Repositories/Workflows/actions/build-env/ci_cpp_coverage.py "${args[@]}" \
+    -- ctest --test-dir build/exe-linux-coverage-x86_64
+```
+
+The exe is one of the objects but never runs, so a shim no test links still counts, as unrun.
+Only the Linux x86_64 build is measured, so a file compiled only for another platform isn't
+gated.
+
 ## The Python tooling
 
 The scripts in `scripts/Python`, `cmake/collect_sources.py` and `recreation/cmake/tidy.py` have
