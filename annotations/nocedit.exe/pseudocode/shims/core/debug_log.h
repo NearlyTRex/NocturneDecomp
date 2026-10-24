@@ -57,9 +57,15 @@
 
 #include "watcom/path.h"  // logs go where the other writes go
 
-// Strip the directory prefix from __FILE__ at compile time.
-#define _DLOG_FILE (__builtin_strrchr(__FILE__, '/') \
-    ? __builtin_strrchr(__FILE__, '/') + 1 : __FILE__)
+// Strip the directory prefix from __FILE__.
+constexpr const char* _dlog_leaf(const char* path) {
+    const char* leaf = path;
+    for (; *path; ++path) {
+        if (*path == '/' || *path == '\\') leaf = path + 1;
+    }
+    return leaf;
+}
+#define _DLOG_FILE _dlog_leaf(__FILE__)
 
 // Lookup/open FILE* for a subsystem name. Files are named "nocturne_<subsys>.log"
 // and truncated on the first call each run (matching the original DLOG behavior).

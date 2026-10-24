@@ -53,6 +53,13 @@ NOCTURNE_TEST(a_message_goes_to_its_subsystems_file_with_where_it_came_from) {
     CHECK(has(text, "hello 7"));
 }
 
+// Either separator ends a directory, so every host logs just the file's name.
+NOCTURNE_TEST(a_source_path_is_cut_to_its_file_name) {
+    CHECK_EQ(std::string(_dlog_leaf("D:\\src\\shims/core\\x.cpp")), std::string("x.cpp"));
+    CHECK_EQ(std::string(_dlog_leaf("/src/y.cpp")), std::string("y.cpp"));
+    CHECK_EQ(std::string(_dlog_leaf("z.cpp")), std::string("z.cpp"));
+}
+
 // The same name by another pointer is the same subsystem and the same file.
 NOCTURNE_TEST(a_subsystem_is_its_name_not_its_pointer) {
     log_dir();
