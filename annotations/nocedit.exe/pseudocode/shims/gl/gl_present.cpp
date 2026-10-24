@@ -17,6 +17,7 @@
 #include "gl/gl_api.h"
 #include "gl/gl_blit.h"
 #include "gl/gl_pixels.h"
+#include <cmath>
 #include <stdlib.h>
 #include <string.h>
 
@@ -119,8 +120,8 @@ void compute_viewport(int drawable_w, int drawable_h, int logical_w, int logical
         // frame shrunk to fit.
         if (scale <= 0.0) scale = 1.0;
     }
-    *out_w = (int)(logical_w * scale + 0.5);
-    *out_h = (int)(logical_h * scale + 0.5);
+    *out_w = (int)std::lround(logical_w * scale);
+    *out_h = (int)std::lround(logical_h * scale);
     if (*out_w < 1) *out_w = 1;
     if (*out_h < 1) *out_h = 1;
     *out_x = (drawable_w - *out_w) / 2;

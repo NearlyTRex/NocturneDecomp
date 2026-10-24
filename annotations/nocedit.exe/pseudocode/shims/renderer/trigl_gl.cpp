@@ -909,7 +909,7 @@ int nocturne_trigl_gl_dump_texture(const char *name, int dimension, const char *
     fprintf(fp, "P6\n# %s dim=%d transparent_texels=%d\n%d %d\n255\n",
             name, dimension, keyed, dimension, dimension);
     for (int i = 0; i < dimension * dimension; ++i) {
-        fwrite(&pixels[i * 4], 1, 3, fp);
+        fwrite(&pixels[(size_t)i * 4], 1, 3, fp);
     }
     fclose(fp);
     free(pixels);

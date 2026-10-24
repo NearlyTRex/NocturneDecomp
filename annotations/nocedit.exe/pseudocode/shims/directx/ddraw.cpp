@@ -267,8 +267,8 @@ static HRESULT ddraw_CreateSurface(IDirectDraw* this_ptr, DDSURFACEDESC* desc,
     int height = ddraw->display_height;
     int bpp = ddraw->display_bpp;
 
-    if (desc->dwFlags & DDSD_WIDTH) width = desc->dwWidth;
-    if (desc->dwFlags & DDSD_HEIGHT) height = desc->dwHeight;
+    if (desc->dwFlags & DDSD_WIDTH) width = (int)desc->dwWidth;
+    if (desc->dwFlags & DDSD_HEIGHT) height = (int)desc->dwHeight;
 
     DWORD caps = 0;
     if (desc->dwFlags & DDSD_CAPS) caps = desc->ddsCaps.dwCaps;
@@ -414,8 +414,14 @@ static HRESULT ddraw_SetCooperativeLevel(IDirectDraw* this_ptr, HWND window, DWO
     return DD_OK;
 }
 
-static HRESULT ddraw_SetDisplayMode(IDirectDraw* this_ptr, DWORD width, DWORD height, DWORD bpp) {
+static HRESULT ddraw_SetDisplayMode(IDirectDraw* this_ptr, DWORD requested_width,
+                                    DWORD requested_height, DWORD requested_bpp) {
     DDraw_ShimData* ddraw = reinterpret_cast<DDraw_ShimData*>(this_ptr);
+    // A display mode is a few thousand pixels and a few dozen bits; the rest of
+    // this works in the ints the shim data and SDL take.
+    const int width = (int)requested_width;
+    const int height = (int)requested_height;
+    const int bpp = (int)requested_bpp;
     DLOG("render","SetDisplayMode: %ux%u bpp=%u (prev=%dx%d bpp=%d)",
               (unsigned)width, (unsigned)height, (unsigned)bpp,
               ddraw->display_width, ddraw->display_height, ddraw->display_bpp);
@@ -434,13 +440,13 @@ static HRESULT ddraw_SetDisplayMode(IDirectDraw* this_ptr, DWORD width, DWORD he
     // each of them and grow again on the way out. Only when nothing has stated
     // a preference does the render resolution decide, which is the case for the
     // very first mode set of a fresh profile.
-    DWORD win_w = width * NOCTURNE_WINDOW_SCALE;
-    DWORD win_h = height * NOCTURNE_WINDOW_SCALE;
+    int win_w = width * NOCTURNE_WINDOW_SCALE;
+    int win_h = height * NOCTURNE_WINDOW_SCALE;
     {
         int pref_w = 0, pref_h = 0;
         if (nocturne_window_preferred_size(&pref_w, &pref_h)) {
-            win_w = (DWORD)pref_w;
-            win_h = (DWORD)pref_h;
+            win_w = pref_w;
+            win_h = pref_h;
         }
     }
 
@@ -486,7 +492,7 @@ static HRESULT ddraw_SetDisplayMode(IDirectDraw* this_ptr, DWORD width, DWORD he
         // costs a resize event and a visible flicker on some window managers.
         int cur_w = 0, cur_h = 0;
         SDL_GetWindowSize(ddraw->window, &cur_w, &cur_h);
-        if (cur_w != (int)win_w || cur_h != (int)win_h) {
+        if (cur_w != win_w || cur_h != win_h) {
             SDL_SetWindowSize(ddraw->window, win_w, win_h);
         }
         if (nocturne_gl_is_active()) {

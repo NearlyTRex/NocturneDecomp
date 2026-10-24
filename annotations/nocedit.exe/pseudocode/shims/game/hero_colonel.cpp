@@ -248,7 +248,7 @@ CCharacter *find_target(CColonel *colonel, SColonelAim *aim)
     best_distance = 1e30f;
     for (i = 0; i < g_CDemonSetPtr->character_count; i++) {
         target = g_CDemonSetPtr->characters[i];
-        distance = score_target(colonel, target, (uint)(target == aim->target));
+        distance = score_target(colonel, target, target == aim->target ? 1 : 0);
         if ((0.0f <= distance) && (distance < best_distance)) {
             best_distance = distance;
             best = target;

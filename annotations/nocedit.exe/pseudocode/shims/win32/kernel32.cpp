@@ -308,6 +308,10 @@ static HANDLE shim_CreateFileA(LPCSTR lpFileName, DWORD dwDesiredAccess,
     case WIN32_TRUNCATE_EXISTING:
         flags |= O_TRUNC;
         break;
+    default:
+        // A disposition Win32 does not define opens what is there, as
+        // OPEN_EXISTING does.
+        break;
     }
 
     // CreateFile has no text mode; the Windows CRT's descriptor layer does, and
@@ -1159,7 +1163,8 @@ static HMODULE shim_GetModuleHandleA(LPCSTR lpModuleName) {
     return (HMODULE)nocturne_builtin_dll_open(lpModuleName);
 }
 
-// The path of the running program, without a NUL. /proc/self/exe is Linux's
+// The path of the running program and its length; the caller terminates it,
+// since readlink does not. /proc/self/exe is Linux's
 // answer; Windows' runtime holds it in _pgmptr, which is what the real
 // GetModuleFileNameA would hand back and needs no Win32 header to read; macOS
 // has dyld's _NSGetExecutablePath, which fails rather than truncates.
@@ -1171,6 +1176,7 @@ static ssize_t host_program_path(char* out, size_t cap) {
     size_t len = strlen(path);
     if (len > cap - 1) len = cap - 1;
     memcpy(out, path, len);
+    out[len] = '\0';
     return (ssize_t)len;
 #elif defined(__APPLE__)
     uint32_t size = (uint32_t)cap;

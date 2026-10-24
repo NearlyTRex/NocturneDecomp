@@ -12,6 +12,7 @@
 #include "watcom/path.h"
 
 #include <stddef.h>
+#include <stdio.h>
 #include <string.h>
 
 // -----------------------------------------------------------------------------
@@ -90,10 +91,13 @@ extern "C" const char *nocturne_builtin_dll_next(const char *current) {
 #endif
 }
 
+// The size of g_RendererDllPath, the buffer the game hands over.
+static const size_t kRendererPathSize = 256;
+
 extern "C" void nocturne_builtin_dll_step(char *path) {
     const char *next = nocturne_builtin_dll_next(path);
     if (next != NULL) {
-        strcpy(path, next);
+        snprintf(path, kRendererPathSize, "%s", next);
     }
 }
 

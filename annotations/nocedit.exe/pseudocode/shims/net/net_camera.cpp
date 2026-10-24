@@ -22,7 +22,7 @@
 #define CAMERA_MAX_PENDING 32
 
 // Written before the first change a player publishes: no camera.
-#define CAMERA_NONE -1
+#define CAMERA_NONE (-1)
 
 #pragma pack(push, 1)
 typedef struct SNetPacket_Camera {

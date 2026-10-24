@@ -10,6 +10,8 @@
 #include "core/debug_log.h"
 #include "core/ini_setting.h"
 
+#include <cmath>
+
 // Reaches the mute state.
 #include "nocturne.h"
 
@@ -48,7 +50,7 @@ extern "C" float nocturne_movie_volume_get(void) {
 extern "C" void nocturne_movie_volume_set(float volume) {
     // Round rather than truncate: the menu steps in fifths, and 0.2f * 5 lands
     // a hair under 100 in float.
-    int percent = clamp_percent((int)(volume * 100.0f + 0.5f));
+    int percent = clamp_percent((int)std::lround(volume * 100.0f));
 
     s_percent = percent;
     s_loaded = true;

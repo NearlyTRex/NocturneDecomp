@@ -716,7 +716,7 @@ static int __cdecl trigl_draw_polygon(SRenderVertex *vertices, int vertex_count,
     }
     for (int i = 0; i < vertex_count; ++i) pointers[i] = &vertices[i];
     const int result = trigl_draw_polygon2(pointers, vertex_count, render_flags);
-    if (pointers != stack_pointers) free(pointers);
+    if (pointers != stack_pointers) free((void *)pointers);
     return result;
 }
 

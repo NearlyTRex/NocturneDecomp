@@ -85,10 +85,11 @@ void* __arrcopy(void* dest, void* src, int count, WatcomTypeInfo* ti) {
 
 WATCOM_TRAMPOLINE
 void* __arrdtor(WatcomTypeArrayInfo* info) {
-    char* p = (char*)info->obj_array + (info->obj_count - 1) * info->type_info->instance_size;
+    char* p = (char*)info->obj_array +
+              (ptrdiff_t)(info->obj_count - 1) * info->type_info->instance_size;
     for (int i = info->obj_count - 1; i >= 0; i--, p -= info->type_info->instance_size)
         if (info->type_info->dtor) (*info->type_info->dtor)(p, 0);
-    return info->obj_array;
+    return (void*)info->obj_array;
 }
 
 void* __arrfini(void* obj_array, int count, WatcomTypeInfo* ti) {
@@ -187,7 +188,7 @@ char* _fullpath(char* buffer, const char* path, size_t maxlen) {
     const std::string text = ec ? std::string(path) : full.string();
     const size_t room = maxlen ? maxlen : 4096;
     if (text.size() + 1 > room) {
-        strcpy(buffer, path);
+        snprintf(buffer, room, "%s", path);
         return buffer;
     }
     memcpy(buffer, text.c_str(), text.size() + 1);

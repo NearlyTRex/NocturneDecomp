@@ -178,7 +178,7 @@ extern "C" int nocturne_dump_screenshot(const char *path)
     const unsigned char *base = (const unsigned char *)g_BackBuffer;
     if (g_BitsPerPixel == 32) {
         for (int y = 0; y < h; y++) {
-            const unsigned char *row = base + y * w * 4;
+            const unsigned char *row = base + (ptrdiff_t)y * w * 4;
             for (int x = 0; x < w; x++) {
                 // ARGB8888 SDL byte order: memory is [B, G, R, A].
                 unsigned char r = row[x * 4 + 2];
@@ -191,10 +191,10 @@ extern "C" int nocturne_dump_screenshot(const char *path)
         }
     } else {
         for (int y = 0; y < h; y++) {
-            const unsigned char *row = base + y * w * 2;
+            const unsigned char *row = base + (ptrdiff_t)y * w * 2;
             for (int x = 0; x < w; x++) {
-                unsigned int p =
-                    (unsigned int)row[x * 2] | ((unsigned int)row[x * 2 + 1] << 8);
+                unsigned int p = (unsigned int)row[(ptrdiff_t)x * 2] |
+                                 ((unsigned int)row[(ptrdiff_t)x * 2 + 1] << 8);
                 unsigned int r5 = (p >> 11) & 0x1F;
                 unsigned int g6 = (p >> 5)  & 0x3F;
                 unsigned int b5 =  p        & 0x1F;
@@ -616,9 +616,10 @@ static void dump_cube_triangles(FILE *f, CDemonRaytrace *rt,
     if (cube == nullptr || cube->triangle_count <= 0) return;
     std::fprintf(f, "\n%s (x=%d, y=%d, z=%d, %d tris):\n",
                  label, xi, yi, zi, cube->triangle_count);
-    char *base = (char *)cube->triangle_buffer;
+    // Indexed as the game indexes it: 0x20 was the 32-bit size, and the vertex
+    // pointers inside make the entry larger at 64.
     for (int t = 0; t < cube->triangle_count; t++) {
-        CDemonCubeTriangle *ct = (CDemonCubeTriangle *)(base + t * 0x20);
+        CDemonCubeTriangle *ct = &cube->triangle_buffer[t];
         CVector3f *v0 = ct->triangle.vertices[0];
         CVector3f *v1 = ct->triangle.vertices[1];
         CVector3f *v2 = ct->triangle.vertices[2];
@@ -657,9 +658,9 @@ extern "C" int nocturne_dump_collision_grid(const char *path, CVector3f *pos)
 
     // Position-relative neighborhood: where is the position in the grid,
     // what triangles live around it.
-    int gx = (int)((pos->x - rt->bbox_min.x) / rt->cell_size.x + 0.5f);
-    int gy = (int)((pos->y - rt->bbox_min.y) / rt->cell_size.y + 0.5f);
-    int gz = (int)((pos->z - rt->bbox_min.z) / rt->cell_size.z + 0.5f);
+    int gx = (int)std::lround((pos->x - rt->bbox_min.x) / rt->cell_size.x);
+    int gy = (int)std::lround((pos->y - rt->bbox_min.y) / rt->cell_size.y);
+    int gz = (int)std::lround((pos->z - rt->bbox_min.z) / rt->cell_size.z);
     std::fprintf(f, "\n[Position lookup]\n");
     std::fprintf(f, "probe position: (%.4f, %.4f, %.4f)\n", pos->x, pos->y, pos->z);
     std::fprintf(f, "grid index:     (%d, %d, %d)\n", gx, gy, gz);
@@ -675,7 +676,7 @@ extern "C" int nocturne_dump_collision_grid(const char *path, CVector3f *pos)
         CDemonCube *cube = core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004952b0(
             rt, gx, yi, gz);
         if (cube == nullptr || cube->triangle_count == 0) continue;
-        float y0 = rt->bbox_min.y + yi * rt->cell_size.y;
+        float y0 = rt->bbox_min.y + (float)yi * rt->cell_size.y;
         float y1 = y0 + rt->cell_size.y;
         const char *marker = (yi == gy) ? " <-- probe here" : "";
         std::fprintf(f, "y=%-4d [%7.2f .. %7.2f]      %d%s\n",
@@ -1131,12 +1132,9 @@ extern "C" void nocturne_auto_capture(const char *path_template,
     char dl[256];
     std::snprintf(dl, sizeof(dl), "%s", ppm);
     char *dot = std::strrchr(dl, '.');
-    if (dot != nullptr && std::strcmp(dot, ".ppm") == 0) {
-        std::strcpy(dot, ".txt");
-    } else {
-        size_t len = std::strlen(dl);
-        if (len + 4 < sizeof(dl)) std::strcpy(dl + len, ".txt");
-    }
+    const size_t stem = (dot != nullptr && std::strcmp(dot, ".ppm") == 0)
+                            ? (size_t)(dot - dl) : std::strlen(dl);
+    std::snprintf(dl + stem, sizeof(dl) - stem, ".txt");
 
     nocturne_dump_screenshot(ppm);
     nocturne_dump_display_list(dl);
@@ -1504,8 +1502,8 @@ extern "C" int nocturne_dump_flame_visibility(const char *path)
 
     // The re-test below goes through CBoundingBox3D::isVisible, which writes
     // both of these; put back what the frame had.
-    int saved_perspective = g_PerspectiveReciprocal;
-    int saved_solid_color = g_SolidColorMode;
+    const decltype(g_PerspectiveReciprocal) saved_perspective = g_PerspectiveReciprocal;
+    const decltype(g_SolidColorMode) saved_solid_color = g_SolidColorMode;
 
     std::fprintf(f, "%-20s  %5s  %5s  %4s  %6s  %5s  %4s  %4s  %-22s  %s\n",
                  "flame", "state", "check", "vis", "fresh", "frust", "wf", "gscl",

@@ -222,7 +222,7 @@ void nocturne_console_draw_char(int char_code, int x, int y, int color, int scal
     for (row = 0; row < cell_h; row++) {
         void *line = g_ScreenBufferArray[y + row];
         if (line == 0) { continue; }
-        src = glyph->bitmap + (row / scale) * glyph_w;
+        src = glyph->bitmap + (ptrdiff_t)(row / scale) * glyph_w;
 
         if (g_BitsPerPixel == 8) {
             byte *dst = (byte *)line + x;

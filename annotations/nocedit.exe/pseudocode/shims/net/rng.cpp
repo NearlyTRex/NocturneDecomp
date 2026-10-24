@@ -235,8 +235,10 @@ extern "C" int nocturne_rng_fx_int(int min_value, int max_value)
     float  fVar2 = (float)(int)rng_declared_rand() * 3.051851e-05f;
     int    iVar1 = (int)ROUND(ROUND((float)min_value + fVar2 * (float)dVar1));
 
-    if ((min_value <= iVar1) && (min_value = max_value, iVar1 <= max_value)) {
-        return iVar1;
+    // Below the range is the minimum and above it the maximum, as the original's
+    // reuse of min_value for the second answer comes to.
+    if (min_value <= iVar1) {
+        return (iVar1 <= max_value) ? iVar1 : max_value;
     }
     return min_value;
 }

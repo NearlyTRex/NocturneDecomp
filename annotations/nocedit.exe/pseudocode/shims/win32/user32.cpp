@@ -83,9 +83,10 @@ static uint8_t sdlScancodeToWin32(SDL_Scancode sc) {
         case SDL_SCANCODE_RIGHT:     return 0x4D;
         case SDL_SCANCODE_LSHIFT:    return 0x2A;
         case SDL_SCANCODE_RSHIFT:    return 0x36;
-        case SDL_SCANCODE_LCTRL:     return 0x1D;
+        // DirectInput's DIK_ codes here have one Ctrl and one Alt.
+        case SDL_SCANCODE_LCTRL:
         case SDL_SCANCODE_RCTRL:     return 0x1D;
-        case SDL_SCANCODE_LALT:      return 0x38;
+        case SDL_SCANCODE_LALT:
         case SDL_SCANCODE_RALT:      return 0x38;
         case SDL_SCANCODE_NUMLOCKCLEAR: return 0x45;
         case SDL_SCANCODE_KP_DIVIDE: return 0x35;

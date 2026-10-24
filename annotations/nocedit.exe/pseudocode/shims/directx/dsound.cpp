@@ -93,6 +93,8 @@ struct DSoundBuffer_ShimData {
     int is_looping;
     int is_primary;
     int audio_data_shared; // 1 if audio_data is borrowed from the original buffer (DuplicateSoundBuffer)
+    // long, as the generated SetVolume/SetPan signatures take them; the values
+    // fit the API's 32-bit LONG.
     long volume;    // -10000 to 0 (hundredths of dB, 0 = full volume)
     long pan;       // -10000 to 10000
     DWORD frequency;
@@ -109,11 +111,8 @@ struct DSoundBuffer_ShimData {
 // mapping. Both depths are reachable: the sound options screen exposes the
 // output bit depth, and the engine creates its buffers at whatever is selected.
 static SDL_AudioFormat sdl_format_for(const WAVEFORMATEX& fmt) {
-    switch (fmt.wBitsPerSample) {
-    case 8:  return AUDIO_U8;
-    case 16: return AUDIO_S16LSB;
-    default: return AUDIO_S16LSB;   // 0 == unset; the engine's usual case
-    }
+    // 16 bits, and 0 for unset, which is the engine's usual case.
+    return fmt.wBitsPerSample == 8 ? AUDIO_U8 : AUDIO_S16LSB;
 }
 
 struct DSound3DBuffer_ShimData {
@@ -290,18 +289,18 @@ static void mix_voice(DSoundBuffer_ShimData* buf, int* acc, int frames,
     const int src_ch    = buf->format.nChannels ? buf->format.nChannels : 1;
     const int src_bytes = (buf->format.wBitsPerSample == 8) ? 1 : 2;
     const int src_rate  = buf->frequency ? (int)buf->frequency : dev_rate;
-    const size_t frame_bytes  = (size_t)(src_ch * src_bytes);
+    const size_t frame_bytes  = (size_t)src_ch * (size_t)src_bytes;
     const size_t total_frames = buf->buffer_size / frame_bytes;
     if (total_frames == 0) return;
 
     float gain = 1.0f;
-    if (buf->volume < 0) gain = powf(10.0f, buf->volume / 2000.0f);
+    if (buf->volume < 0) gain = powf(10.0f, (float)buf->volume / 2000.0f);
     gain *= ds3d_distance_gain(buf);
 
     // DirectSound pan: hundredths of a dB of attenuation on one side.
     float gain_l = gain, gain_r = gain;
-    if (buf->pan > 0)      gain_l *= powf(10.0f, -buf->pan / 2000.0f);
-    else if (buf->pan < 0) gain_r *= powf(10.0f,  buf->pan / 2000.0f);
+    if (buf->pan > 0)      gain_l *= powf(10.0f, -(float)buf->pan / 2000.0f);
+    else if (buf->pan < 0) gain_r *= powf(10.0f,  (float)buf->pan / 2000.0f);
 
     const double step = (double)src_rate / (double)dev_rate;
     double pos = buf->play_pos_frames;
@@ -676,13 +675,13 @@ static HRESULT dsbuf_GetFormat(LPDIRECTSOUNDBUFFER this_ptr, LPWAVEFORMATEX pwfx
 
 static HRESULT dsbuf_GetVolume(LPDIRECTSOUNDBUFFER this_ptr, LPLONG plVolume) {
     DSoundBuffer_ShimData* buf = reinterpret_cast<DSoundBuffer_ShimData*>(this_ptr);
-    if (plVolume) *plVolume = buf->volume;
+    if (plVolume) *plVolume = (LONG)buf->volume;
     return DS_OK;
 }
 
 static HRESULT dsbuf_GetPan(LPDIRECTSOUNDBUFFER this_ptr, LPLONG plPan) {
     DSoundBuffer_ShimData* buf = reinterpret_cast<DSoundBuffer_ShimData*>(this_ptr);
-    if (plPan) *plPan = buf->pan;
+    if (plPan) *plPan = (LONG)buf->pan;
     return DS_OK;
 }
 
@@ -775,7 +774,9 @@ static HRESULT dsbuf_SetCurrentPosition(LPDIRECTSOUNDBUFFER this_ptr, DWORD dwNe
     SDL_AudioDeviceID dev = buf->dsound ? buf->dsound->device_id : 0;
     SDL_LockAudioDevice(dev);
     buf->play_cursor = pos;
-    buf->play_pos_frames = (double)(pos / frame_bytes);
+    // A whole frame: pos was just aligned to one.
+    const DWORD frame = pos / frame_bytes;
+    buf->play_pos_frames = (double)frame;
     SDL_UnlockAudioDevice(dev);
     DLOG("sound","SetCurrentPosition: dev=%u pos=%u -> pc=%u",
          (unsigned)buf->device_id, (unsigned)dwNewPosition, (unsigned)buf->play_cursor);
@@ -904,7 +905,8 @@ static HRESULT ds3d_GetConeOrientation(IDirectSound3DBuffer* this_ptr, D3DVECTOR
 }
 static HRESULT ds3d_GetConeOutsideVolume(IDirectSound3DBuffer* this_ptr, LPLONG pl) {
     DSound3DBuffer_ShimData* s = reinterpret_cast<DSound3DBuffer_ShimData*>(this_ptr);
-    if (pl) *pl = s->params.lConeOutsideVolume;
+    // DS3DBUFFER's field is a host long; the API's value is hundredths of a dB.
+    if (pl) *pl = (LONG)s->params.lConeOutsideVolume;
     return DS_OK;
 }
 static HRESULT ds3d_GetMaxDistance(IDirectSound3DBuffer* this_ptr, D3DVALUE* pfl) {

@@ -461,9 +461,11 @@ void giveMeleeTo(CHero *hero, const MeleeDef *def)
     // makes them props rather than inventory items, and this one is going into
     // an inventory.
     melee->can_go_in_inventory  = 1;
-    strcpy(melee->thrust_hit_character_sound, def->thrust_hit_character_sound);
-    strcpy(melee->swing_hit_character_sound,  def->swing_hit_character_sound);
-    strcpy(melee->hit_other_sound,            def->hit_other_sound);
+    snprintf(melee->thrust_hit_character_sound, sizeof(melee->thrust_hit_character_sound), "%s",
+             def->thrust_hit_character_sound);
+    snprintf(melee->swing_hit_character_sound, sizeof(melee->swing_hit_character_sound), "%s",
+             def->swing_hit_character_sound);
+    snprintf(melee->hit_other_sound, sizeof(melee->hit_other_sound), "%s", def->hit_other_sound);
 
     core_mission_cpp_CDemonMission_generateActorName_FUN_00524700(g_CDemonMissionPtr, actor);
     (*((actor->vtable)._ub)->setup)(actor);
@@ -863,6 +865,10 @@ void applyToEveryHero(int index, int value)
         case NOCTURNE_CHEAT_ITEM_CANDY:
             if (value != 0) { giveHealthTo(hero, healthDefFor(index)); }
             break;
+
+        default:
+            // A line that is not hero-scoped: nothing to do to this hero.
+            break;
         }
     }
 }
@@ -1016,6 +1022,10 @@ void applyOne(int index, int value)
     case NOCTURNE_CHEAT_ITEM_CANDY:
         applyToEveryHero(index, value);
         break;
+
+    default:
+        // An index no line has: nothing to apply.
+        break;
     }
 }
 
@@ -1144,8 +1154,8 @@ void nocturne_cheats_menu(void)
         nocturne_menu_backdrop_frame();
 
         for (i = 0; i < CHEAT_PAGE_COUNT; i++) {
-            strcpy(lines[i],
-                   support_newmsg_cpp_getLocalizedString_FUN_005441f0(kPageTitles[i]));
+            snprintf(lines[i], sizeof(lines[i]), "%s",
+                     support_newmsg_cpp_getLocalizedString_FUN_005441f0(kPageTitles[i]));
         }
         choice = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(
                      menu_ptrs, CHEAT_PAGE_COUNT, &selected,

@@ -82,9 +82,9 @@ Device g_dev;
 
 void free_mode_storage() {
     free(g_dev.image);
-    free(g_dev.scanlines);
+    free((void *)g_dev.scanlines);
     free(g_dev.hold);
-    free(g_dev.hold_lines);
+    free((void *)g_dev.hold_lines);
     g_dev.image      = nullptr;
     g_dev.scanlines  = nullptr;
     g_dev.hold       = nullptr;
@@ -183,7 +183,7 @@ int nocturne_trigl_device_set_mode(int width, int height, int bpp, void **scanli
     g_dev.engine_scanlines      = scanlines;
     g_dev.engine_scanline_count = height;
     if (scanlines != nullptr) {
-        memcpy(scanlines, g_dev.scanlines, (size_t)height * sizeof(void *));
+        memcpy((void *)scanlines, (const void *)g_dev.scanlines, (size_t)height * sizeof(void *));
     }
 
     nocturne_trigl_gl_set_target_size(width, height);
@@ -287,14 +287,15 @@ int nocturne_trigl_device_lock_hold_buffer(void) {
     // engine's to decide and writing past it lands in whatever global follows.
     int rows = kHoldHeight;
     if (rows > g_dev.engine_scanline_count) rows = g_dev.engine_scanline_count;
-    memcpy(g_dev.engine_scanlines, g_dev.hold_lines, (size_t)rows * sizeof(void *));
+    memcpy((void *)g_dev.engine_scanlines, (const void *)g_dev.hold_lines,
+           (size_t)rows * sizeof(void *));
     return 1;
 }
 
 int nocturne_trigl_device_unlock_hold_buffer(void) {
     if (!g_dev.open || g_dev.hold == nullptr) return 0;
     if (g_dev.engine_scanlines != nullptr) {
-        memcpy(g_dev.engine_scanlines, g_dev.scanlines,
+        memcpy((void *)g_dev.engine_scanlines, (const void *)g_dev.scanlines,
                (size_t)g_dev.engine_scanline_count * sizeof(void *));
     }
     // Drawn across the whole target, which is the stretch the engine's own blit

@@ -19,6 +19,7 @@
 #include "core/debug_log.h"
 #include "net/rng.h"            // nocturne_rng_note_raw_draw() — the rand() audit
 #include <cerrno>
+#include <string>
 // Full struct layouts for Watcom types that crt.h only forward-declares.
 // The shims bridge these to libc equivalents field-by-field.
 #include "system/stdio.h"   // _FILE       (for _FILE_to_FILE)
@@ -83,13 +84,15 @@ int _strnicmp(char* s1, char* s2, size_t n) {
 // String Conversion
 // ---------------------------------------------------------------------------
 
+// Through unsigned char: toupper and tolower are undefined for the negative
+// values a plain char holds above 0x7F.
 char* strupr(char* s) {
-    for (char* p = s; *p; ++p) *p = toupper(*p);
+    for (char* p = s; *p; ++p) *p = (char)toupper((unsigned char)*p);
     return s;
 }
 
 char* strlwr(char* s) {
-    for (char* p = s; *p; ++p) *p = tolower(*p);
+    for (char* p = s; *p; ++p) *p = (char)tolower((unsigned char)*p);
     return s;
 }
 
@@ -100,6 +103,18 @@ double _strtod(const char* str) {
 // ---------------------------------------------------------------------------
 // Path Manipulation
 // ---------------------------------------------------------------------------
+
+// Open Watcom's limits for these, from its <stdlib.h> for Win32. Neither call
+// takes buffer sizes; the caller's buffers are sized by these, so each part is
+// cut to fit them.
+static const size_t kMaxPath = 260, kMaxPart = 256;
+
+// Up to len bytes of src into a buffer of cap bytes, terminated.
+static void copy_part(char* out, size_t cap, const char* src, size_t len) {
+    if (len > cap - 1) len = cap - 1;
+    memcpy(out, src, len);
+    out[len] = 0;
+}
 
 void splitpath(const char* path, char* drive, char* dir, char* fname, char* ext) {
     if (drive) drive[0] = 0;
@@ -117,37 +132,28 @@ void splitpath(const char* path, char* drive, char* dir, char* fname, char* ext)
         if (*p == '.') last_dot = p;
     }
 
-    if (dir) {
-        if (last_sep) {
-            size_t len = last_sep - path + 1;
-            strncpy(dir, path, len);
-            dir[len] = 0;
-        } else {
-            dir[0] = 0;
-        }
-    }
+    if (dir) copy_part(dir, kMaxPart, path, last_sep ? (size_t)(last_sep - path + 1) : 0);
 
     if (fname) {
         const char* end = last_dot ? last_dot : fname_start + strlen(fname_start);
-        size_t len = end - fname_start;
-        strncpy(fname, fname_start, len);
-        fname[len] = 0;
+        copy_part(fname, kMaxPart, fname_start, (size_t)(end - fname_start));
     }
 
-    if (ext) {
-        if (last_dot) {
-            strcpy(ext, last_dot);
-        } else {
-            ext[0] = 0;
-        }
-    }
+    // The extension keeps its leading period, as Watcom's does.
+    if (ext) copy_part(ext, kMaxPart, last_dot ? last_dot : "", last_dot ? strlen(last_dot) : 0);
 }
 
+// The parts joined as Watcom's _makepath joins them: a colon after a drive and
+// a period before an extension unless they already carry one, so what
+// splitpath took apart goes back together unchanged.
 void makepath(char* path, const char* drive, const char* dir, const char* fname, const char* ext) {
-    path[0] = 0;
-    if (drive && drive[0]) { strcat(path, drive); strcat(path, ":"); }
+    std::string joined;
+    if (drive && drive[0]) {
+        joined += drive;
+        if (joined.back() != ':') joined += ':';
+    }
     if (dir && dir[0]) {
-        strcat(path, dir);
+        joined += dir;
         // Watcom's _makepath guarantees a separator between the directory and
         // the filename: if `dir` doesn't already end with one it inserts a
         // backslash. The game relies on this — it routinely passes directory
@@ -155,11 +161,14 @@ void makepath(char* path, const char* drive, const char* dir, const char* fname,
         // without the inserted separator `dir` and `fname` fuse into one bogus
         // name. Use '\\' to match Watcom byte for byte; the path shim rewrites
         // it to '/' at open time.
-        size_t n = strlen(path);
-        if (n && path[n - 1] != '\\' && path[n - 1] != '/') strcat(path, "\\");
+        if (joined.back() != '\\' && joined.back() != '/') joined += '\\';
     }
-    if (fname && fname[0]) strcat(path, fname);
-    if (ext && ext[0]) { strcat(path, "."); strcat(path, ext); }
+    if (fname && fname[0]) joined += fname;
+    if (ext && ext[0]) {
+        if (ext[0] != '.') joined += '.';
+        joined += ext;
+    }
+    copy_part(path, kMaxPath, joined.c_str(), joined.size());
 }
 
 // ---------------------------------------------------------------------------
@@ -457,8 +466,12 @@ long _ftell(_FILE* f) {
     return ftell(_FILE_to_FILE(f));
 }
 
+// rewind is defined as exactly this; spelled out, the seek can say whether it
+// worked.
 void _rewind(_FILE* f) {
-    rewind(_FILE_to_FILE(f));
+    FILE* file = _FILE_to_FILE(f);
+    (void)fseek(file, 0L, SEEK_SET);
+    clearerr(file);
     sync_file_flags(f);
 }
 
@@ -524,8 +537,9 @@ int _setvbuf(_FILE* f, char* buf, int mode, size_t size) {
     return setvbuf(_FILE_to_FILE(f), buf, mode, size);
 }
 
+// setbuf is defined as this setvbuf call.
 void _setbuf(_FILE* f, char* buf) {
-    setbuf(_FILE_to_FILE(f), buf);
+    (void)setvbuf(_FILE_to_FILE(f), buf, buf ? _IOFBF : _IONBF, BUFSIZ);
 }
 
 int _fprintf(_FILE* f, const char* format, ...) {
@@ -584,8 +598,10 @@ int _vsprintf(char* buffer, const char* format, va_list_t args) {
     static_assert(sizeof(va_list) <= sizeof(va_list_t),
                   "va_list_t must be large enough to hold a full va_list");
     va_list va;
-    __builtin_memcpy(&va, &args.value[0], sizeof(va_list));
-    return vsprintf(buffer, format, va);
+    __builtin_memcpy(&va, (const void*)&args.value[0], sizeof(va_list));
+    // Filled by the copy above, which the analyzer cannot see as va_start or
+    // va_copy; a va_list cannot be built any other way from va_list_t.
+    return vsprintf(buffer, format, va);  // NOLINT(clang-analyzer-valist.Uninitialized)
 }
 
 int _sprintf(void* buffer, const char* format, ...) {
@@ -664,8 +680,21 @@ time_t _time(time_t* timer) {
     return t;
 }
 
+// asctime as the C standard defines it, "Sun Sep 16 01:03:52 1973\n", written
+// with a bound. One static buffer, as asctime's own: the next call overwrites
+// it. A day or month out of range is "???" rather than a read off the table.
 char* _asctime(_tm* timeptr) {
-    return asctime(reinterpret_cast<tm*>(timeptr));
+    static const char days[7][4] = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
+    static const char months[12][4] = {"Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                                       "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
+    static char text[64];
+    const tm* t = reinterpret_cast<tm*>(timeptr);
+    const bool day_ok = t->tm_wday >= 0 && t->tm_wday < 7;
+    const bool month_ok = t->tm_mon >= 0 && t->tm_mon < 12;
+    snprintf(text, sizeof(text), "%.3s %.3s%3d %.2d:%.2d:%.2d %d\n",
+             day_ok ? days[t->tm_wday] : "???", month_ok ? months[t->tm_mon] : "???",
+             t->tm_mday, t->tm_hour, t->tm_min, t->tm_sec, 1900 + t->tm_year);
+    return text;
 }
 
 size_t _strftime(char* dest_buffer, size_t buffer_size, const char* format_string, _tm* time_ptr) {

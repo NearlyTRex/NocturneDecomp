@@ -356,7 +356,7 @@ void black_screen(void)
 void fill_disc(int cx, int cy, int r, int x0, int y0, int x1, int y1)
 {
     for (int dy = -r; dy <= r; dy++) {
-        const int half = (int)(std::sqrt((float)(r * r - dy * dy)) + 0.5f);
+        const int half = (int)std::lround(std::sqrt((float)(r * r - dy * dy)));
         if (half <= 0) continue;
         engine_2d_c_clipAndDrawLine_FUN_00402ca0(cx - half, cy + dy,
                                                  cx + half, cy + dy,
@@ -453,9 +453,10 @@ void draw_facing(CDemonActor *actor, int color, int cx, int cy, int r_outer,
     const float back = r * 0.2f;
     const float half = r * 0.75f;
     g_ActiveRenderColor = color;
-    fill_triangle(cx + dx * tip, cy + dy * tip,
-                  cx + dx * back - dy * half, cy + dy * back + dx * half,
-                  cx + dx * back + dy * half, cy + dy * back - dx * half,
+    const float fx = (float)cx, fy = (float)cy;
+    fill_triangle(fx + dx * tip, fy + dy * tip,
+                  fx + dx * back - dy * half, fy + dy * back + dx * half,
+                  fx + dx * back + dy * half, fy + dy * back - dx * half,
                   x0, y0, x1, y1);
 }
 
@@ -814,22 +815,23 @@ int build_help_segments(HelpSeg *segs)
     // taken before the next call overwrites it.
     char pan[4][40], zoom[2][40], floors[2][40];
     char centre[1][40], key[1][40], open[1][40];
-    strcpy(pan[0], core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_walk));
-    strcpy(pan[1], core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_backup));
+    const auto name_into = [](char (&out)[40], int code) {
+        snprintf(out, sizeof(out), "%s", core_menu_cpp_getKeyDisplayName_FUN_005134e0(code));
+    };
+    name_into(pan[0], g->key_walk);
+    name_into(pan[1], g->key_backup);
     // Sideways pan is named by the turn keys on a keyboard, where they are the
     // arrows beside walk/backup; strafe still pans but is not listed.
     const bool turn_pans = keyboard_code(g->key_left) && keyboard_code(g->key_right);
-    strcpy(pan[2], core_menu_cpp_getKeyDisplayName_FUN_005134e0(
-                       turn_pans ? g->key_left : g->key_strafe_left));
-    strcpy(pan[3], core_menu_cpp_getKeyDisplayName_FUN_005134e0(
-                       turn_pans ? g->key_right : g->key_strafe_right));
-    strcpy(zoom[0], core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_next_weapon));
-    strcpy(zoom[1], core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_prev_weapon));
-    strcpy(floors[0], core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_fire));
-    strcpy(floors[1], core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_draw));
-    strcpy(centre[0], core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_run));
-    strcpy(key[0], core_menu_cpp_getKeyDisplayName_FUN_005134e0(g->key_item_desc));
-    strcpy(open[0], core_menu_cpp_getKeyDisplayName_FUN_005134e0(g_key_binding));
+    name_into(pan[2], turn_pans ? g->key_left : g->key_strafe_left);
+    name_into(pan[3], turn_pans ? g->key_right : g->key_strafe_right);
+    name_into(zoom[0], g->key_next_weapon);
+    name_into(zoom[1], g->key_prev_weapon);
+    name_into(floors[0], g->key_fire);
+    name_into(floors[1], g->key_draw);
+    name_into(centre[0], g->key_run);
+    name_into(key[0], g->key_item_desc);
+    name_into(open[0], g_key_binding);
 
     help_push_control(segs, &count, "PAN ",    pan,    4);
     help_push_control(segs, &count, "ZOOM ",   zoom,   2);
@@ -984,8 +986,8 @@ extern "C" void nocturne_automap_reset(void)
                     counts.emplace(k, 0).first;
                 if (it->second == 0) {
                     Segment s;
-                    s.x1 = ax * kWeld;  s.z1 = az * kWeld;
-                    s.x2 = bx * kWeld;  s.z2 = bz * kWeld;
+                    s.x1 = (float)ax * kWeld;  s.z1 = (float)az * kWeld;
+                    s.x2 = (float)bx * kWeld;  s.z2 = (float)bz * kWeld;
                     s.y  = (a->y + b->y) * 0.5f;
                     s.cube = c;
                     s.lone = 1;
@@ -1202,11 +1204,12 @@ extern "C" void nocturne_automap_update(void)
     // is the script's allowHeroControls, which a death never touches, so without
     // this the map opens over the dying animation, the "You're dead" banner and
     // the closing iris -- and stays open into the Game Over menu.
+    // No CGame is a session being torn down, as above, and the map reads its
+    // frame time below.
     CGame *gate = g_CGamePtr;
-    if (hero_is_down(hero) ||
-        (gate != nullptr &&
-         (g_ModalDialogActive != 0 || gate->is_paused != 0 ||
-          gate->hero_controls_blocked != 0))) {
+    if (gate == nullptr || hero_is_down(hero) ||
+        g_ModalDialogActive != 0 || gate->is_paused != 0 ||
+        gate->hero_controls_blocked != 0) {
         g_open = false;
         g_key_was_down = down(g_key_binding);   // so releasing does not reopen
         return;
@@ -1226,10 +1229,8 @@ extern "C" void nocturne_automap_update(void)
             g_legend = false;        // and the heading, not the marker key
             // Primed from the button's real state, so one already held as the
             // map comes up is not read as a fresh press on the first frame.
-            g_legend_was_down = (g_CGamePtr != nullptr) &&
-                                down(g_CGamePtr->key_item_desc);
-            g_recentre_was_down = (g_CGamePtr != nullptr) &&
-                                  down(g_CGamePtr->key_run);
+            g_legend_was_down = down(gate->key_item_desc);
+            g_recentre_was_down = down(gate->key_run);
             g_zoom = (float)g_zoom_percent * 0.01f;
             if (g_zoom < kZoomMin) g_zoom = kZoomMin;
             if (g_zoom > kZoomMax) g_zoom = kZoomMax;
@@ -1238,7 +1239,7 @@ extern "C" void nocturne_automap_update(void)
     g_key_was_down = key_now;
     if (!g_open) return;
 
-    CGame *g = g_CGamePtr;
+    CGame *g = gate;
     const float dt = g->delta_time_float;
 
     // Analogue first. The pad shim hands the sticks over already deadzoned and
@@ -1329,7 +1330,7 @@ extern "C" void nocturne_automap_update(void)
     }
     if (g_zoom < kZoomMin) g_zoom = kZoomMin;
     if (g_zoom > kZoomMax) g_zoom = kZoomMax;
-    g_zoom_percent = (int)(g_zoom * 100.0f + 0.5f);
+    g_zoom_percent = (int)std::lround(g_zoom * 100.0f);
 
     // How brightly the storeys outside the band draw, on key_fire and key_draw
     // -- the two triggers on a pad. Right brings the other floors up to the
@@ -1474,7 +1475,7 @@ extern "C" void nocturne_automap_render(void)
     const int avail = g_WindowWidth - kMargin * 2;
 
     HelpSeg help[kHelpSegMax];
-    HelpLayout help_rows;
+    HelpLayout help_rows = {};
     int help_ui = ui;
     const int help_count = build_help_segments(help);
     if (help_count > 0) {
@@ -1482,7 +1483,7 @@ extern "C" void nocturne_automap_render(void)
         help_layout(&help_rows, help, help_count, help_ui, avail);
     }
 
-    LegendLayout legend;
+    LegendLayout legend = {};
     int legend_ui = ui;
     if (g_legend) {
         legend_ui = legend_fitting_scale(ui, avail);
@@ -1539,9 +1540,9 @@ extern "C" void nocturne_automap_render(void)
     int ground_dim[kGroundTypeCount];
     for (int g = 0; g < kGroundTypeCount; g++) {
         ground_color[g] = pick_color(kGroundRGB[g], color_wall);
-        const int rgb[3] = { (int)((float)kGroundRGB[g][0] * g_other_dim + 0.5f),
-                             (int)((float)kGroundRGB[g][1] * g_other_dim + 0.5f),
-                             (int)((float)kGroundRGB[g][2] * g_other_dim + 0.5f) };
+        const int rgb[3] = { (int)std::lround((float)kGroundRGB[g][0] * g_other_dim),
+                             (int)std::lround((float)kGroundRGB[g][1] * g_other_dim),
+                             (int)std::lround((float)kGroundRGB[g][2] * g_other_dim) };
         ground_dim[g] = pick_color(rgb, color_faded);
     }
 

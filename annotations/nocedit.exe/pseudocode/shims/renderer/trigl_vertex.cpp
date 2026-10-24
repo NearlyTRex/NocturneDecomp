@@ -6,6 +6,8 @@
 
 #include "renderer/trigl_vertex.h"
 
+#include <cstddef>
+
 namespace {
 
 // The engine's fixed-point scales. Screen coordinates carry 16 fractional bits,
@@ -91,7 +93,7 @@ void nocturne_trigl_convert_vertex(const NocturneTriglVertexContext *ctx,
                                  : (unsigned)(ctx->palette_index & 0xff);
             unsigned rgb = 0;
             if (ctx->palette != nullptr) {
-                const unsigned char *entry = ctx->palette + index * 3u;
+                const unsigned char *entry = ctx->palette + (size_t)index * 3u;
                 rgb = ((unsigned)entry[0] << 16) | ((unsigned)entry[1] << 8) |
                       (unsigned)entry[2];
             }
