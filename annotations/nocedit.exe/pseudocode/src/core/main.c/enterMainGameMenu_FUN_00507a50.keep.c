@@ -243,6 +243,9 @@ LAB_005131d5:
     case 3:
       iVar5 = 99;
     }
+#if !NOCTURNE_AUTHENTIC_GAMEPAD
+    nocturne_gamepad_withdraw_nav(DIK_ESCAPE);
+#endif
     iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
     if (iVar4 != 0) {
       iVar5 = 99;

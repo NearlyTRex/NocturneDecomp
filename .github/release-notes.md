@@ -87,7 +87,8 @@ it. The name isn't case-sensitive, even on Linux and macOS.
 
 On Windows and Linux, run the engine from anywhere with `--data-dir <game folder>`. Add
 `--user-dir <folder>` to keep saves, settings and logs somewhere else too; the game folder is
-then only read. On macOS, `--data-dir` replaces the Application Support folder.
+then only read. On macOS, `--data-dir` replaces the Application Support folder, or put the
+game folder's path in a `data_dir.txt` there.
 
 ## Verifying your download
 

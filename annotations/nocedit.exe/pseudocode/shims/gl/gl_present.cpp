@@ -26,6 +26,9 @@ extern SDL_Window *g_sdlWindow;
 
 namespace {
 
+// Outside the state below, which a shutdown resets: a reader takes differences.
+Uint64 s_swap_ticks = 0;
+
 struct GLPresentState {
     SDL_Window   *window        = nullptr;
     SDL_GLContext context       = nullptr;
@@ -406,7 +409,9 @@ void present_to_window(GLuint texture, int fallback_w, int fallback_h, bool flip
         DLOG_RL("render", 1, 600, "gl_present: present quad unavailable — frame not drawn");
     }
 
+    const Uint64 swap_start = SDL_GetPerformanceCounter();
     SDL_GL_SwapWindow(g_gl.window);
+    s_swap_ticks += SDL_GetPerformanceCounter() - swap_start;
     restore_scene_target();
 }
 
@@ -588,6 +593,10 @@ extern "C" void nocturne_gl_shutdown(void) {
     g_gl_version_short[0] = '\0';
 }
 
+extern "C" unsigned long long nocturne_gl_swap_ticks(void) {
+    return s_swap_ticks;
+}
+
 #else  // !NOCTURNE_GL_PRESENT
 
 extern "C" int  nocturne_gl_init(SDL_Window *w) { (void)w; return 0; }
@@ -610,5 +619,6 @@ extern "C" int nocturne_gl_read_front(unsigned char **rgb, int *w, int *h) {
     (void)rgb; (void)w; (void)h; return -1;
 }
 extern "C" void nocturne_gl_shutdown(void) {}
+extern "C" unsigned long long nocturne_gl_swap_ticks(void) { return 0; }
 
 #endif  // NOCTURNE_GL_PRESENT

@@ -262,6 +262,18 @@ NOCTURNE_TEST(a_frame_is_letterboxed_onto_the_window_and_swapped) {
     CHECK_EQ(v.y, 240u);
 }
 
+// The time inside each swap is added up, and a shutdown does not take it back.
+NOCTURNE_TEST(the_time_in_the_swap_is_added_up) {
+    up();
+    const unsigned long long before = nocturne_gl_swap_ticks();
+    stand.swap_cost = 7;
+    present(640, 480);
+    present(640, 480);
+    CHECK_EQ(nocturne_gl_swap_ticks() - before, 14ull);
+    nocturne_gl_shutdown();
+    CHECK_EQ(nocturne_gl_swap_ticks() - before, 14ull);
+}
+
 // With no game size set the frame's own decides; a minimised window, with no
 // drawable, is presented 1:1.
 NOCTURNE_TEST(a_frame_with_no_game_size_is_its_own_size) {

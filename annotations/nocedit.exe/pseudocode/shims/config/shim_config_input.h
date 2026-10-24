@@ -18,7 +18,8 @@
 //   centred. Applied radially to the pair rather than per axis, so the
 //   diagonal is not a larger dead area than the cardinals, and the live range
 //   outside it is rescaled to 0..1 so movement starts from a standstill
-//   instead of snapping to the deadzone edge.
+//   instead of snapping to the deadzone edge. The default for [Control]
+//   padDeadzone in nocturne.ini (game/pad_tuning.h), as are the three below.
 #ifndef NOCTURNE_PAD_STICK_DEADZONE
 #define NOCTURNE_PAD_STICK_DEADZONE 0.20f
 #endif
@@ -68,7 +69,8 @@
 //   reaches the same ceiling at full deflection and is proportional below it.
 //
 //   Both are scaled by the Options screen's X/Y sensitivity sliders, so the
-//   existing controls tune the pad as well as the mouse.
+//   existing controls tune the pad as well as the mouse. [Control] padTurnRate
+//   and padLookRate.
 #ifndef NOCTURNE_PAD_TURN_RATE
 #define NOCTURNE_PAD_TURN_RATE 0.25f
 #endif
@@ -79,6 +81,7 @@
 // NOCTURNE_PAD_INVERT_LOOK
 //   1 to push the right stick down to look up. The Options screen's "Invert Y
 //   Axis" line only appears in mouse mode, so the pad needs its own answer.
+//   [Control] invertPadYAxis.
 #ifndef NOCTURNE_PAD_INVERT_LOOK
 #define NOCTURNE_PAD_INVERT_LOOK 0
 #endif

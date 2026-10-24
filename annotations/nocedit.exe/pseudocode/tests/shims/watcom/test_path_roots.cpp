@@ -9,6 +9,7 @@
 #include "nocturne_test.h"
 
 #include "core/file_search.h"
+#include "system/watcom.h"
 #include "watcom/path.h"
 
 #include <filesystem>
@@ -98,6 +99,15 @@ NOCTURNE_TEST(a_new_file_gets_its_directories_made_in_the_user_directory) {
     std::error_code ec;
     CHECK(fs::is_directory(install.user / "save", ec));
     CHECK(!fs::exists(fs::path(target), ec));
+}
+
+// The game's startup checks it can change stderr.txt's mode and quits when it
+// cannot, so the file has to be found where the reads find it, on every
+// platform.
+NOCTURNE_TEST(a_mode_change_finds_the_file_in_the_data_directory) {
+    Install install;
+    CHECK_EQ(_chmod("act1.pod", 0x1c0), 0);
+    CHECK_EQ(__getfileattr("ACT1.POD") & 0x01ul, 0ul);
 }
 
 NOCTURNE_TEST(an_absolute_path_ignores_the_roots) {

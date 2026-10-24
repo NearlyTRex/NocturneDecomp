@@ -116,6 +116,11 @@ void nocturne_gl_window_to_logical(int window_x, int window_y,
 // again.
 void nocturne_gl_shutdown(void);
 
+// The time spent waiting in the swap so far, in SDL performance-counter ticks:
+// how much of a frame goes to the display or the GPU rather than to the game.
+// Only grows, across shutdowns too, so a reader takes differences.
+unsigned long long nocturne_gl_swap_ticks(void);
+
 #ifdef __cplusplus
 }
 #endif

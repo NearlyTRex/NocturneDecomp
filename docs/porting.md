@@ -80,10 +80,17 @@ roots:
 
 Neither set is the working directory for both, which is how the game has always run and what
 every in-tree platform still does. They come from `--data-dir` / `--user-dir`, then
-`NOCTURNE_DATA_DIR` / `NOCTURNE_USER_DIR`, then what the platform file compiles in through
-`NOCTURNE_PLATFORM_DEFINITIONS`. For a port whose writable place is only known at run time,
-`NOCTURNE_USER_DIR_FROM_SDL` takes `SDL_GetPrefPath`'s answer. `shims/core/path_roots.h` has
-the order, and `tests/shims/watcom/test_path_roots.cpp` the behaviour.
+`NOCTURNE_DATA_DIR` / `NOCTURNE_USER_DIR`, then, for the data directory, a `data_dir.txt` in the
+user directory naming the game files' folder, then what the platform file compiles in through
+`NOCTURNE_PLATFORM_DEFINITIONS`. A front end that runs before the game can point it at files
+left where they are by writing that file. For a port whose writable place is only known at run
+time, `NOCTURNE_USER_DIR_FROM_SDL` takes `SDL_GetPrefPath`'s answer. `shims/core/path_roots.h`
+has the order, `tests/shims/core/test_path_roots.cpp` the choice, and
+`tests/shims/watcom/test_path_roots.cpp` how paths resolve against it.
+
+The controller's deadzone, turn and look speeds and inverted look are read from `[Control]` in
+`nocturne.ini` (`padDeadzone`, `padTurnRate`, `padLookRate`, `invertPadYAxis`;
+`shims/game/pad_tuning.h`), so a front end can set those the same way.
 
 A delete or rename in the user directory cannot hide a shipped file; the game never needs it
 to, since everything it deletes is something it wrote.

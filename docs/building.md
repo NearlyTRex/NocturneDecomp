@@ -241,7 +241,8 @@ ad hoc. `run.sh` and `debug.sh` beside it launch the binary inside.
 An app launched from Finder starts in `/`, so the data directory defaults to
 `~/Library/Application Support/NocturneDecomp/` (`NOCTURNE_DATA_DIR_FROM_SDL` in
 `shims/core/path_roots.h`). If that folder holds no `.pod`, the app says so, opens it, and
-exits. To run against a game folder elsewhere, pass `--data-dir`:
+exits. To use a game folder elsewhere, put its path on the first line of a `data_dir.txt` in
+that folder; saves and settings stay there. Or pass `--data-dir`:
 
 ```sh
 build/exe-macos-arm64/run.sh --data-dir ~/Games/Nocturne

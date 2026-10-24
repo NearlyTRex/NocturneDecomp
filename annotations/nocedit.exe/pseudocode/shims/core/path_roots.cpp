@@ -48,6 +48,22 @@ std::string pick(const char *from_command_line, const char *environment_name,
     return result;
 }
 
+// The directory named on the first line of `dir`/data_dir.txt, or empty when
+// there is no such file or it names no directory that is there.
+std::string remembered_data_dir(const std::string &dir) {
+    if (dir.empty()) return std::string();
+    FILE *file = fopen((dir + "/data_dir.txt").c_str(), "rb");
+    if (file == nullptr) return std::string();
+    char line[1024] = {0};
+    const bool read = fgets(line, sizeof(line), file) != nullptr;
+    fclose(file);
+    std::string named = read ? line : "";
+    while (!named.empty() && isspace((unsigned char)named.back())) named.pop_back();
+    std::error_code ignored;
+    if (named.empty() || !std::filesystem::is_directory(named, ignored)) return std::string();
+    return named;
+}
+
 #if defined(NOCTURNE_DATA_DIR_FROM_SDL)
 // Whether `dir` holds any .pod, in any case: the one thing every install has.
 bool has_game_data(const std::string &dir) {
@@ -85,6 +101,8 @@ std::string file_url(const std::string &dir) {
         "Nocturne could not find its game files.\n\n"
         "Copy everything from your Nocturne install folder (the .POD files and "
         "the rest) into:\n\n" + dir + "\n\n"
+        "or put the path of the folder they are in on the first line of a file "
+        "named data_dir.txt there.\n\n"
         "That folder will open now. Start Nocturne again once the files are in it.";
     SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Nocturne", message.c_str(), nullptr);
     SDL_OpenURL(file_url(dir).c_str());
@@ -121,15 +139,27 @@ void nocturne_init_path_roots(int argc, char **argv) {
 #endif
 
     WatcomPathRoots roots;
+    roots.user = pick(option(argc, argv, "--user-dir"), "NOCTURNE_USER_DIR", default_user);
     const char *data_override = option(argc, argv, "--data-dir");
     if (data_override == nullptr) data_override = getenv("NOCTURNE_DATA_DIR");
+    std::string remembered;
+    if (data_override == nullptr) {
+        if (!roots.user.empty()) {
+            remembered = remembered_data_dir(roots.user);
+        } else {
+            const std::string fallback = pick(nullptr, "NOCTURNE_DATA_DIR", default_data);
+            remembered = remembered_data_dir(fallback);
+            // The folder that names the game files keeps what the game writes.
+            if (!remembered.empty()) roots.user = fallback;
+        }
+        if (!remembered.empty()) data_override = remembered.c_str();
+    }
     roots.data = pick(data_override, "NOCTURNE_DATA_DIR", default_data);
 #if defined(NOCTURNE_DATA_DIR_FROM_SDL)
     if (data_override == nullptr && !roots.data.empty() && !has_game_data(roots.data)) {
         ask_for_game_data(roots.data);
     }
 #endif
-    roots.user = pick(option(argc, argv, "--user-dir"), "NOCTURNE_USER_DIR", default_user);
     // One directory given as both is the default arrangement with a new working
     // directory, and needs no overlay.
     if (roots.user == roots.data) roots.user.clear();

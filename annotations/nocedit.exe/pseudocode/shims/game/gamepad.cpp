@@ -7,6 +7,7 @@
 
 #include "game/gamepad.h"
 #include "game/automap.h"
+#include "game/pad_tuning.h"
 #include "shim_config.h"
 #include "core/debug_log.h"
 #include "nocturne.h"
@@ -102,7 +103,7 @@ bool trigger_down(int code, float pull) {
 // Radial deadzone with the live range rescaled to 0..1, so a stick starts
 // moving the hero from a standstill rather than from the deadzone edge.
 void deadzone(float raw_x, float raw_y, float *out_x, float *out_y) {
-    const float dz = NOCTURNE_PAD_STICK_DEADZONE;
+    const float dz = nocturne_pad_tuning()->stick_deadzone;
     float magnitude = SDL_sqrtf(raw_x * raw_x + raw_y * raw_y);
 
     if (magnitude <= dz) {
@@ -341,6 +342,18 @@ void nav_release(int nav) {
     }
     s_nav_ours[nav] = false;
 }
+
+} // namespace
+
+extern "C" void nocturne_gamepad_withdraw_nav(int code) {
+    for (int nav = 0; nav < kNavCount; nav++) {
+        if (kNavCode[nav] == code) {
+            nav_release(nav);
+        }
+    }
+}
+
+namespace {
 
 // A direction: fires on the press, then repeats while held.
 void nav_repeating(int nav, bool now, uint32_t now_ms) {
@@ -706,11 +719,12 @@ extern "C" int nocturne_gamepad_apply_analog(CGame *game, SPlayerInput *input) {
         input->strafe_speed = move_x;
     }
     if (look_x != 0.0f) {
-        input->turn_speed = look_x * NOCTURNE_PAD_TURN_RATE * x_sensitivity;
+        input->turn_speed = look_x * nocturne_pad_tuning()->turn_rate * x_sensitivity;
     }
     if (look_y != 0.0f) {
-        const float look = NOCTURNE_PAD_INVERT_LOOK ? -look_y : look_y;
-        input->look_up_down_speed = look * NOCTURNE_PAD_LOOK_RATE * y_sensitivity;
+        const NocturnePadTuning *tuning = nocturne_pad_tuning();
+        const float look = tuning->invert_look ? -look_y : look_y;
+        input->look_up_down_speed = look * tuning->look_rate * y_sensitivity;
     }
 
     // Speed. SPlayerActionState has no continuous forward speed — the
@@ -740,6 +754,7 @@ extern "C" void nocturne_gamepad_init(void) {}
 extern "C" void nocturne_gamepad_pump(void) {}
 extern "C" void nocturne_gamepad_note_gameplay_frame(void) {}
 extern "C" void nocturne_gamepad_suppress_nav(int suppress) { (void)suppress; }
+extern "C" void nocturne_gamepad_withdraw_nav(int code) { (void)code; }
 extern "C" int  nocturne_gamepad_present(void) { return 0; }
 
 extern "C" void nocturne_gamepad_axes(float *move_x, float *move_y,
