@@ -1,6 +1,6 @@
 # vanilla.cmake — set every authenticity toggle to the shipped answer.
 #
-# Included from CMakeLists.txt when NOCTURNE_VANILLA is ON, before the loop that
+# Included from cmake/authenticity.cmake when NOCTURNE_VANILLA is ON, before the loop that
 # forwards NOCTURNE_AUTHENTIC_* into the compile definitions.
 #
 # THE RULE, AND WHY IT IS NOT A LIST OF NAMES. The header already classifies

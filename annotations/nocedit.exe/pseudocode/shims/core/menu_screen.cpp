@@ -5,6 +5,12 @@
 #include "core/menu_screen.h"
 #include "nocturne.h"
 
+#ifndef NOCTURNE_PLATFORM_NO_QUIT
+#define NOCTURNE_PLATFORM_NO_QUIT 0
+#endif
+
+int g_nocturne_no_quit = NOCTURNE_PLATFORM_NO_QUIT;
+
 extern "C" void nocturne_menu_backdrop_frame(void)
 {
     core_game_cpp_CGame_updateDT_FUN_004d7d90(g_CGamePtr);

@@ -38,7 +38,7 @@ nocturne_test_suite(shims_gl_api
 set(_presenter_sdl
     SDL_GL_SetAttribute SDL_GL_CreateContext SDL_GL_MakeCurrent SDL_GL_DeleteContext
     SDL_GL_SetSwapInterval SDL_GL_GetDrawableSize SDL_GL_SwapWindow SDL_GetWindowSize
-    SDL_GetError)
+    SDL_GetError SDL_GetPerformanceCounter)
 list(TRANSFORM _presenter_sdl REPLACE "^(.+)$" "\\1=sdl_gl_support_\\1")
 set_source_files_properties("${NOCTURNE_PSEUDOCODE_DIR}/shims/gl/gl_present.cpp"
     PROPERTIES COMPILE_DEFINITIONS "${_presenter_sdl}")

@@ -132,9 +132,10 @@ static int console_max_top(int cursor_row, int visible_rows) {
 int nocturne_console_view_top(int cursor_row, int visible_rows) {
     int max_top = console_max_top(cursor_row, visible_rows);
 
+    // Never below 0: scrolling clamps it there, and a scroll-up only moves a
+    // window above the first row.
     if (console_follow) { return max_top; }
     if (console_view_top > max_top) { console_view_top = max_top; }
-    if (console_view_top < 0) { console_view_top = 0; }
     return console_view_top;
 }
 

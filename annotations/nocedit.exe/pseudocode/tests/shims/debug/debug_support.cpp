@@ -112,3 +112,5 @@ int nocturne_dump_frontbuffer(const char *path) {
 
 extern "C" Uint64 debug_support_SDL_GetPerformanceCounter(void) { return stand.counter; }
 extern "C" Uint64 debug_support_SDL_GetPerformanceFrequency(void) { return 1000; }
+
+extern "C" unsigned long long nocturne_gl_swap_ticks(void) { return stand.swap_ticks; }

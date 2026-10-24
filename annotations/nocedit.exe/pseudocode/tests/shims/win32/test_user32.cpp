@@ -16,8 +16,10 @@
 #include "sdl_support.h"
 
 #include "globals/globals_610000.h"
+#include "gl/window_mode.h"
 #include "system/user32.h"
 #include "win32/shim_init.h"
+#include "win32/text_input.h"
 #include "win32/window_message.h"
 
 // The test's own main(), which SDL would otherwise rename on Windows.
@@ -172,6 +174,12 @@ NOCTURNE_TEST(the_window_is_made_hidden_and_reports_itself_active) {
     g_GetClientRectFunc(hwnd, &rect);
     CHECK_EQ(rect.right, 800L);
     CHECK_EQ(rect.bottom, 600L);
+    // Where the window is the screen, nothing moves it.
+    g_nocturne_fixed_display = 1;
+    CHECK(g_MoveWindowFunc(hwnd, 0, 0, 320, 200, 1));
+    g_GetClientRectFunc(hwnd, &rect);
+    CHECK_EQ(rect.right, 800L);
+    g_nocturne_fixed_display = 0;
 
     CHECK(g_BringWindowToTopFunc(hwnd));
     CHECK(g_SetForegroundWindowFunc(hwnd));
@@ -337,6 +345,7 @@ NOCTURNE_TEST(repeats_and_releases_carry_the_transition_bits) {
 // symbols, the number pad by Num Lock, and the control characters Win32 sends.
 NOCTURNE_TEST(a_key_types_what_win32_would_type) {
     start();
+    SDL_StopTextInput();   // what a console has outside a prompt
     drain();
     CHECK_EQ(press(SDL_SCANCODE_A, 'a').typed, (int)'a');
     CHECK_EQ(press(SDL_SCANCODE_A, 'a', KMOD_LSHIFT).typed, (int)'A');
@@ -372,6 +381,61 @@ NOCTURNE_TEST(a_key_types_what_win32_would_type) {
     CHECK_EQ(press(SDL_SCANCODE_F1, SDLK_F1).typed, 0);
     CHECK_EQ(press(SDL_SCANCODE_DELETE, SDLK_DELETE).typed, 0);
     CHECK_EQ(press(SDL_SCANCODE_UNKNOWN, 0x05).typed, 0);
+}
+
+// What SDL's text input sends, as the bytes the game's font indexes: ASCII and
+// Latin-1 as they are, anything past them or broken not at all.
+NOCTURNE_TEST(text_input_types_in_the_keyboards_own_layout) {
+    start();
+    SDL_StartTextInput();
+    drain();
+    SDL_Event ev;
+    memset(&ev, 0, sizeof(ev));
+    ev.type = SDL_TEXTINPUT;
+    // "a", e-acute, the euro sign, a lone continuation byte, a cut-short
+    // two-byte lead, "Z", a four-byte emoji, DEL, a control character, then
+    // "!".
+    const char text[] = "a\xc3\xa9\xe2\x82\xac\x80\xc3" "Z\xf0\x9f\x98\x80\x7f\x01!";
+    memcpy(ev.text.text, text, sizeof(text));
+    SDL_PushEvent(&ev);
+    std::vector<int> typed;
+    for (const MSG &m : drain()) {
+        if (m.message == kChar) typed.push_back((int)m.wParam);
+    }
+    CHECK_EQ(typed.size(), (size_t)4);
+    if (typed.size() == 4) {
+        CHECK_EQ(typed[0], (int)'a');
+        CHECK_EQ(typed[1], 0xe9);
+        CHECK_EQ(typed[2], (int)'Z');
+        CHECK_EQ(typed[3], (int)'!');
+    }
+
+    // With text input on, a key types only what has no text.
+    CHECK_EQ(press(SDL_SCANCODE_A, 'a').typed, 0);
+    CHECK_EQ(press(SDL_SCANCODE_BACKSPACE, SDLK_BACKSPACE).typed, 0x08);
+    CHECK_EQ(press(SDL_SCANCODE_KP_ENTER, SDLK_KP_ENTER).typed, (int)'\r');
+}
+
+// A prompt turns text input on only where it was off, and off again only once
+// the outermost prompt is done.
+NOCTURNE_TEST(a_prompt_asks_for_text_input_while_it_is_up) {
+    start();
+    SDL_StopTextInput();
+    nocturne_text_input_end();                 // nothing up: nothing to undo
+    CHECK(!SDL_IsTextInputActive());
+    nocturne_text_input_begin();
+    nocturne_text_input_begin();
+    CHECK(SDL_IsTextInputActive());
+    nocturne_text_input_end();
+    CHECK(SDL_IsTextInputActive());
+    nocturne_text_input_end();
+    CHECK(!SDL_IsTextInputActive());
+
+    // Already on, as the desktop has it: left on.
+    SDL_StartTextInput();
+    nocturne_text_input_begin();
+    nocturne_text_input_end();
+    CHECK(SDL_IsTextInputActive());
 }
 
 // -----------------------------------------------------------------------------
@@ -531,6 +595,27 @@ NOCTURNE_TEST(text_goes_through_the_clipboard_and_upper_cases_in_place) {
 #if !defined(_WIN32)
 // A message box is shown and answered OK. With no display to show it on, as
 // here, it is answered OK straight away.
+// The system's Back button is the game's to read, where there is one.
+NOCTURNE_TEST(back_is_the_games_to_handle) {
+    start();
+    const char *hint = SDL_GetHint(SDL_HINT_WINRT_HANDLE_BACK_BUTTON);
+    CHECK(hint != nullptr && std::string(hint) == "1");
+}
+
+// Where the window is the screen, it is made full-screen from the start.
+NOCTURNE_TEST(a_fixed_display_makes_the_window_the_screen) {
+    start();
+    SDL_Window *before = g_sdlWindow;
+    g_nocturne_fixed_display = 1;
+    g_CreateWindowExAFunc(0, "Nocturne", nullptr, 0, 0, 0, 0, 0, 0, 0, 0, nullptr);
+    g_nocturne_fixed_display = 0;
+    CHECK((SDL_GetWindowFlags(g_sdlWindow) & SDL_WINDOW_FULLSCREEN_DESKTOP) ==
+          SDL_WINDOW_FULLSCREEN_DESKTOP);
+    SDL_DestroyWindow(g_sdlWindow);
+    g_sdlWindow = before;
+    drain();
+}
+
 NOCTURNE_TEST(a_message_box_is_answered_ok) {
     start();
     SDL_setenv("DISPLAY", "", 1);

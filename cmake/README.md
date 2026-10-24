@@ -23,6 +23,25 @@ cmake --preset exe-linux-asan-x86_64
 cmake --build --preset exe-linux-asan-x86_64
 ```
 
+## What is where
+
+The top-level `CMakeLists.txt` sets the project, its version and the source paths, and
+includes the stages below in the order they run:
+
+| File | What it holds |
+|---|---|
+| `options.cmake` | The build options (`NOCTURNE_BUILD_EXE`, `NOCTURNE_ASAN`, `NOCTURNE_COVERAGE`, `NOCTURNE_GLES`, ...) and ccache |
+| `authenticity.cmake` | Forwarding `NOCTURNE_AUTHENTIC_*` from the configure line to every compile; `vanilla.cmake` sets them all |
+| `platform.cmake` | Choosing and including the platform file, and the dependencies file it names |
+| `version_header.cmake` | Stamping the generated version header (written by `write_version.cmake`) |
+| `sources.cmake` | Running `collect_sources.py` for the per-module source lists |
+| `compile_flags.cmake` | The shared warning set, the codegen flags and the sanitizers |
+| `check_target.cmake` | `nocturne_check`, the per-file syntax pass |
+| `game_modules.cmake` | One OBJECT library per decompiled module, and the shared PCH |
+| `shims.cmake` | `nocturne_shims`, its definitions and clang-tidy; `window_icon.cmake` beside it |
+| `executable.cmake` | Linking `nocturne`, the release manifest, `run.sh` / `debug.sh` |
+| `tests.cmake` | The test suites (`nocturne_tests.cmake` has `nocturne_test_suite`), coverage arguments, the Windows test bundle |
+
 ## AddressSanitizer / UBSan
 
 Enable with `-DNOCTURNE_ASAN=ON` on any `exe` configure, or use the
@@ -94,6 +113,6 @@ rule formats. Changes trigger a reconfigure automatically.
 What differs per operating system beyond the compiler lives in one file under
 `cmake/platforms/` (`linux`, `windows`, `macos`), chosen from `CMAKE_SYSTEM_NAME`:
 the socket backend, link libraries, FFmpeg's target, runtime library staging,
-launchers. `CMakeLists.txt` and `bundledlibs.cmake` hold no OS branches of their
-own. `cmake/platforms/README.md` lists what a platform file sets, and
+launchers. The rest of the build, `bundledlibs.cmake` included, holds no OS branches of
+its own. `cmake/platforms/README.md` lists what a platform file sets, and
 `docs/porting.md` covers adding one, in this tree or outside it.

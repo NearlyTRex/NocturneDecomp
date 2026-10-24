@@ -10,6 +10,7 @@
 #include "nocturne.h"
 #include "game/cheats.h"
 #include "core/ui_scale.h"
+#include "gl/gl_present.h"
 
 #include <SDL.h>
 #include <cstdio>
@@ -26,11 +27,13 @@ Uint64 s_last;              // counter at the previous call, 0 before the first
 Uint64 s_window_start;
 int    s_window_frames;
 double s_window_worst;      // seconds
+unsigned long long s_window_swap_start;
 
 // What is on screen, refreshed once per window.
 double s_fps;
 double s_mean_ms;
 double s_worst_ms;
+double s_swap_ms;
 
 void reset(Uint64 now)
 {
@@ -38,6 +41,7 @@ void reset(Uint64 now)
     s_window_start = now;
     s_window_frames = 0;
     s_window_worst = 0.0;
+    s_window_swap_start = nocturne_gl_swap_ticks();
 }
 
 void sample(void)
@@ -59,6 +63,10 @@ void sample(void)
         s_fps = (double)s_window_frames / elapsed;
         s_mean_ms = elapsed * 1000.0 / (double)s_window_frames;
         s_worst_ms = s_window_worst * 1000.0;
+        const unsigned long long swap = nocturne_gl_swap_ticks();
+        s_swap_ms = (double)(swap - s_window_swap_start) * 1000.0 / freq /
+                    (double)s_window_frames;
+        s_window_swap_start = swap;
         s_window_start = now;
         s_window_frames = 0;
         s_window_worst = 0.0;
@@ -81,16 +89,17 @@ extern "C" void nocturne_perf_overlay_render(void)
     CBitFont *font = (g_WindowHeight < 384) ? g_MicroFont : g_SmallEditorFont;
     if (font == (CBitFont *)0) return;
 
-    char lines[3][64];
+    char lines[4][64];
     snprintf(lines[0], sizeof(lines[0]), "%.0f FPS", s_fps);
     snprintf(lines[1], sizeof(lines[1]), "%.1f ms avg  %.1f max", s_mean_ms, s_worst_ms);
-    snprintf(lines[2], sizeof(lines[2]), "%dx%d %s", g_WindowWidth, g_WindowHeight,
+    snprintf(lines[2], sizeof(lines[2]), "%.1f ms in swap", s_swap_ms);
+    snprintf(lines[3], sizeof(lines[3]), "%dx%d %s", g_WindowWidth, g_WindowHeight,
              (g_UseExternalRenderer != 0) ? "hardware" : "software");
 
     const int ui = nocturne_ui_scale();
     const int margin = kMargin * ui;
     int y = margin;
-    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < 4; i++) {
         const int w = nocturne_ui_text_width(font, lines[i], ui);
         nocturne_ui_draw_text(font, lines[i], g_WindowWidth - margin - w, y, 0xf8, 0, ui);
         y += nocturne_ui_char_height(font, 'X', ui) + ui;

@@ -358,6 +358,7 @@ NOCTURNE_TEST(a_full_path_that_cannot_be_resolved_is_the_path_as_asked) {
     fs::permissions("locked", fs::perms::owner_all, ec);
     CHECK_EQ(std::string(buffer), std::string("locked/inner.txt"));
 }
+#endif
 
 // _chmod has one bit to give, write; the rest of the mode is not Windows'.
 NOCTURNE_TEST(changing_the_mode_makes_a_file_writable_or_read_only) {
@@ -370,7 +371,6 @@ NOCTURNE_TEST(changing_the_mode_makes_a_file_writable_or_read_only) {
     CHECK_EQ(_chmod("no_such_file", 0x180), -1);
     CHECK_EQ(errno, ENOENT);
 }
-#endif
 
 // -----------------------------------------------------------------------------
 // Descriptors. Watcom's io.h names for where a file is and how long it is.

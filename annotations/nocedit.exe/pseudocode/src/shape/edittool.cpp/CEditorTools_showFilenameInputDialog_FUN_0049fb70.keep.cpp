@@ -42,6 +42,9 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
     pcVar9 = (char *)0x0;
   }
   shape_edittool_cpp_CInputString_init_FUN_0049d3d0(&local_158,pcVar9,0x14,0);
+#if !NOCTURNE_AUTHENTIC_TEXT_PROMPTS
+  nocturne_text_input_begin();
+#endif
   iVar5 = g_InputKeyMask;
   g_InputKeyMask = 0x7f;
   bVar3 = false;
@@ -95,6 +98,9 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
         engine_2d_c_clearInputAndWait_FUN_00403260();
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
         g_InputKeyMask = iVar5;
+#if !NOCTURNE_AUTHENTIC_TEXT_PROMPTS
+        nocturne_text_input_end();
+#endif
         return 0;
       }
       if ((iVar6 == 0xd) && (local_158.string_data[0] != '\0')) {
@@ -126,5 +132,8 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
   strcpy(output_buffer,local_158.string_data);
   shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(this_ptr);
   g_InputKeyMask = iVar5;
+#if !NOCTURNE_AUTHENTIC_TEXT_PROMPTS
+  nocturne_text_input_end();
+#endif
   return 1;
 }

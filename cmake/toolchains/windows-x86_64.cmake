@@ -41,7 +41,7 @@ set(NOCTURNE_WIN_COMPILER "clang" CACHE STRING
 set_property(CACHE NOCTURNE_WIN_COMPILER PROPERTY STRINGS clang)
 
 # clang is not a preference here, it is the only option. The warning set in
-# CMakeLists.txt is clang's: -Wno-everything has no gcc equivalent, and
+# cmake/compile_flags.cmake is clang's: -Wno-everything has no gcc equivalent, and
 # -Werror=sometimes-uninitialized makes gcc stop with "no option
 # -Wsometimes-uninitialized". Driving x86_64-w64-mingw32-g++ would mean
 # reworking that set, and it is load bearing -- the sometimes-uninitialized

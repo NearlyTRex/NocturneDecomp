@@ -312,11 +312,14 @@ LAB_00510f71:
     extra_count = extra_count + 1;
 #endif
 #if !NOCTURNE_AUTHENTIC_WINDOW_MODE
-    _sprintf(window_line,"Window : %s",
-             nocturne_window_mode_name(nocturne_window_mode_get()));
-    window_item = extra_count;
-    menu_ptrs[extra_count] = window_line;
-    extra_count = extra_count + 1;
+    window_item = -2;
+    if (g_nocturne_fixed_display == 0) {
+      _sprintf(window_line,"Window : %s",
+               nocturne_window_mode_name(nocturne_window_mode_get()));
+      window_item = extra_count;
+      menu_ptrs[extra_count] = window_line;
+      extra_count = extra_count + 1;
+    }
 #endif
 #if !NOCTURNE_AUTHENTIC_MENU_FONT
     _sprintf(menu_font_line,"Menu text : %s",

@@ -72,7 +72,12 @@ void sdl_gl_support_SDL_GL_GetDrawableSize(SDL_Window *, int *w, int *h) {
     *h = stand.drawable_height;
 }
 
-void sdl_gl_support_SDL_GL_SwapWindow(SDL_Window *) { ++stand.swaps; }
+void sdl_gl_support_SDL_GL_SwapWindow(SDL_Window *) {
+    ++stand.swaps;
+    stand.counter += stand.swap_cost;
+}
+
+Uint64 sdl_gl_support_SDL_GetPerformanceCounter(void) { return stand.counter; }
 
 void sdl_gl_support_SDL_GetWindowSize(SDL_Window *, int *w, int *h) {
     *w = stand.window_width;

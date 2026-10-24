@@ -135,6 +135,13 @@ int nocturne_gamepad_present(void);
 // call.
 void nocturne_gamepad_suppress_nav(int suppress);
 
+// Take back a navigation press of `code` that nothing has consumed yet, for a
+// screen where the pad's button should not mean what the key does. The main
+// menu's front page is the case: Escape there quits the game, and the pad's
+// cancel would otherwise quit it from a B or Start press with no prompt. A
+// keyboard press of the same code is left alone.
+void nocturne_gamepad_withdraw_nav(int code);
+
 // Deadzoned, rescaled stick and trigger values for the analogue path.
 // Sticks are -1..1 with y positive downwards (SDL's sign, which is also the
 // engine's for look_up_down_speed); triggers are 0..1. Any pointer may be

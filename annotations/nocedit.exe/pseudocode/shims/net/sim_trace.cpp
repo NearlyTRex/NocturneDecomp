@@ -150,7 +150,7 @@ static const char *trace_slot_name(int slot)
 #define TRACE_ARMED_GABRIELLA 3
 
 static void *s_armed_vtable[TRACE_CLASS_CACHE];
-static char  s_armed_kind[TRACE_CLASS_CACHE];
+static unsigned char s_armed_kind[TRACE_CLASS_CACHE];
 static int   s_armed_count = 0;
 
 // guns_drawn is declared per class rather than on CHero, so each owner is asked
@@ -160,24 +160,24 @@ static int trace_guns_drawn(CHero *hero)
     CDemonActor *actor = (CDemonActor *)hero;
     CDemonActor *cast;
 
-    if ((cast = core_actor_cpp_castToClassHash_FUN_0040c790(
-             actor, g_CStrangerClassInfo.name_hash)) != (CDemonActor *)0x0) {
+    cast = core_actor_cpp_castToClassHash_FUN_0040c790(actor, g_CStrangerClassInfo.name_hash);
+    if (cast != (CDemonActor *)0x0) {
         return ((CStranger *)cast)->guns_drawn;
     }
-    if ((cast = core_actor_cpp_castToClassHash_FUN_0040c790(
-             actor, g_CScatClassInfo.name_hash)) != (CDemonActor *)0x0) {
+    cast = core_actor_cpp_castToClassHash_FUN_0040c790(actor, g_CScatClassInfo.name_hash);
+    if (cast != (CDemonActor *)0x0) {
         return ((CScat *)cast)->guns_drawn;
     }
-    if ((cast = core_actor_cpp_castToClassHash_FUN_0040c790(
-             actor, g_CColonelClassInfo.name_hash)) != (CDemonActor *)0x0) {
+    cast = core_actor_cpp_castToClassHash_FUN_0040c790(actor, g_CColonelClassInfo.name_hash);
+    if (cast != (CDemonActor *)0x0) {
         return ((CColonel *)cast)->guns_drawn;
     }
-    if ((cast = core_actor_cpp_castToClassHash_FUN_0040c790(
-             actor, g_CHaystackClassInfo.name_hash)) != (CDemonActor *)0x0) {
+    cast = core_actor_cpp_castToClassHash_FUN_0040c790(actor, g_CHaystackClassInfo.name_hash);
+    if (cast != (CDemonActor *)0x0) {
         return ((CHaystack *)cast)->guns_drawn;
     }
-    if ((cast = core_actor_cpp_castToClassHash_FUN_0040c790(
-             actor, g_CIcePickClassInfo.name_hash)) != (CDemonActor *)0x0) {
+    cast = core_actor_cpp_castToClassHash_FUN_0040c790(actor, g_CIcePickClassInfo.name_hash);
+    if (cast != (CDemonActor *)0x0) {
         return ((CIcePick *)cast)->guns_drawn;
     }
     return -1;
@@ -212,7 +212,7 @@ static CWeapon *trace_weapon(CCharacter *character)
         }
         if (s_armed_count < TRACE_CLASS_CACHE) {
             s_armed_vtable[s_armed_count] = vtable;
-            s_armed_kind[s_armed_count]   = (char)kind;
+            s_armed_kind[s_armed_count]   = (unsigned char)kind;
             s_armed_count++;
         }
     }
@@ -341,7 +341,8 @@ static void trace_event_changes(FILE *out, int sequence_number)
             }
         }
         for (i = 0; i < count; i++) {
-            std::strcpy(s_last_flags[i], (event_list->game_flags).names[i]);
+            std::snprintf(s_last_flags[i], sizeof(s_last_flags[i]), "%s",
+                          (event_list->game_flags).names[i]);
         }
         s_last_flag_count = count;
     }
@@ -364,7 +365,8 @@ static void trace_event_changes(FILE *out, int sequence_number)
         }
     }
     for (i = 0; i < count; i++) {
-        std::strcpy(s_last_timers[i], (event_list->timers).names[i]);
+        std::snprintf(s_last_timers[i], sizeof(s_last_timers[i]), "%s",
+                      (event_list->timers).names[i]);
     }
     s_last_timer_count = count;
 }
@@ -646,7 +648,8 @@ extern "C" void nocturne_sim_trace_frame(int sequence_number)
     // One line per hero: the draw and fire inputs this frame applies, and the
     // weapon state they act on. A hero whose weapon state changes on a frame
     // where neither its own input nor an E line explains it is the lead.
-    for (i = 0; i < g_HeroCount; i++) {
+    // Bounded by g_HeroActors' slots as well as the count, as net_sync is.
+    for (i = 0; (i < g_HeroCount) && (i < NOCTURNE_HERO_SLOTS); i++) {
         CHero *hero = g_HeroActors[i];
         int    shared = -1;
         int    j;
@@ -654,7 +657,7 @@ extern "C" void nocturne_sim_trace_frame(int sequence_number)
         if (hero == (CHero *)0x0) {
             continue;
         }
-        for (j = 0; j < g_HeroCount; j++) {
+        for (j = 0; (j < g_HeroCount) && (j < NOCTURNE_HERO_SLOTS); j++) {
             if ((j != i) && (g_HeroActors[j] != (CHero *)0x0) &&
                 (hero->inventory.selected_weapon != (CWeapon *)0x0) &&
                 (g_HeroActors[j]->inventory.selected_weapon == hero->inventory.selected_weapon)) {

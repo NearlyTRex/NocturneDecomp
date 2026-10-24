@@ -1,7 +1,8 @@
 # Porting
 
 What it takes to build and run the game on a platform the repository does not already target:
-a console homebrew SDK, another desktop OS, a sandboxed app model. This is about the
+a console's SDK (the Xbox's through UWP, a PlayStation's, a Switch's, homebrew or not), another
+desktop OS, a sandboxed app model. This is about the
 decompilation under `annotations/`, which is the codebase that runs today. The source
 recreation in `recreation/` has its own platform interfaces (`recreation/platform/`) and is
 the long-term porting base, but it is not playable yet.
@@ -37,7 +38,7 @@ bases (`exe`, `vanilla`, `toolchain-*`) in `CMakePresets.json`.
   netplay between unlike builds.
 - **Little-endian.** The PODs, saves and network packets are read as the original wrote them,
   byte for byte.
-- **A clang compiler.** The warning set in `CMakeLists.txt` is clang's, and
+- **A clang compiler.** The warning set in `cmake/compile_flags.cmake` is clang's, and
   `-Werror=sometimes-uninitialized` is what catches a class of decompiler defect
   ([decompiler-artifacts.md](decompiler-artifacts.md) §13). clang and clang-cl both work; gcc
   does not.
@@ -80,10 +81,17 @@ roots:
 
 Neither set is the working directory for both, which is how the game has always run and what
 every in-tree platform still does. They come from `--data-dir` / `--user-dir`, then
-`NOCTURNE_DATA_DIR` / `NOCTURNE_USER_DIR`, then what the platform file compiles in through
-`NOCTURNE_PLATFORM_DEFINITIONS`. For a port whose writable place is only known at run time,
-`NOCTURNE_USER_DIR_FROM_SDL` takes `SDL_GetPrefPath`'s answer. `shims/core/path_roots.h` has
-the order, and `tests/shims/watcom/test_path_roots.cpp` the behaviour.
+`NOCTURNE_DATA_DIR` / `NOCTURNE_USER_DIR`, then, for the data directory, a `data_dir.txt` in the
+user directory naming the game files' folder, then what the platform file compiles in through
+`NOCTURNE_PLATFORM_DEFINITIONS`. A front end that runs before the game can point it at files
+left where they are by writing that file. For a port whose writable place is only known at run
+time, `NOCTURNE_USER_DIR_FROM_SDL` takes `SDL_GetPrefPath`'s answer. `shims/core/path_roots.h`
+has the order, `tests/shims/core/test_path_roots.cpp` the choice, and
+`tests/shims/watcom/test_path_roots.cpp` how paths resolve against it.
+
+The controller's deadzone, turn and look speeds and inverted look are read from `[Control]` in
+`nocturne.ini` (`padDeadzone`, `padTurnRate`, `padLookRate`, `invertPadYAxis`;
+`shims/game/pad_tuning.h`), so a front end can set those the same way.
 
 A delete or rename in the user directory cannot hide a shipped file; the game never needs it
 to, since everything it deletes is something it wrote.
@@ -101,3 +109,35 @@ desktop headers, so no ES headers are needed. Uploads of BGRA textures need
 
 `exe-linux-gles-x86_64` builds the ES path for a desktop Mesa driver, so it can be run and
 compared against the desktop lane on the same machine.
+
+## Consoles and packaged apps
+
+A console — the Xbox through UWP, a PlayStation, a Switch — or a packaged app differs from a
+desktop in a few ways the shims know about. None of what follows is tied to one of them: each is
+one definition in the platform file's `NOCTURNE_PLATFORM_DEFINITIONS`, off by default, for
+whichever port needs it:
+
+| Definition | What it does |
+|---|---|
+| `NOCTURNE_PLATFORM_FIXED_DISPLAY=1` | The window is the screen: made full-screen, never sized or moved, and the Graphics Options screen has no Window line (`shims/gl/window_mode.h`). |
+| `NOCTURNE_PLATFORM_NO_QUIT=1` | The system ends the app: the main menu has no QUIT, and Escape there does nothing (`NOCTURNE_AUTHENTIC_APP_QUIT`). |
+| `NOCTURNE_PLATFORM_CRASH_SIGNALS=1` | Outside Windows, a fault signal leaves a crash report, for a platform with no core dump to fall back on (`shims/core/crash_report.h`). |
+
+`NOCTURNE_PLATFORM_SDL_MAIN` in the platform file, rather than a definition, lets SDL own the
+entry point; see `cmake/platforms/README.md`.
+
+What needs no setting:
+
+- **Typing.** The game's text prompts ask for SDL's text input while they are up, which brings
+  up the system's keyboard where there is one (`shims/win32/text_input.h`).
+- **Controller tuning.** The deadzone, turn and look speeds and inverted look are on the Control
+  Options screen in gamepad mode, and in `[Control]` in `nocturne.ini` for a front end to set.
+- **Missing game files.** Start-up stops with a message naming the folder it looked in, and the
+  ways to point the game at its files, rather than failing deep in the engine.
+- **A crash on Windows.** The report is written beside the logs, by a handler a packaged app
+  — the Xbox's — may install (`shims/core/crash_report.h`). Elsewhere it takes
+  `NOCTURNE_PLATFORM_CRASH_SIGNALS`, above.
+- **Being suspended.** A frame is capped at a quarter of a second, so a game frozen in the
+  background comes back to one short frame rather than one long one.
+- **The Back button.** On WinRT, and so the Xbox, it reaches the game as input rather than
+  closing the app.

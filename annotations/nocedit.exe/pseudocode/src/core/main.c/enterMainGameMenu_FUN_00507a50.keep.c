@@ -129,9 +129,18 @@ int __cdecl core_main_c_enterMainGameMenu_FUN_00507a50(void)
     menu_ptrs[menu_count] = g_MenuTextPointers[2];
     menu_count = menu_count + 1;
 #endif
+#if !NOCTURNE_AUTHENTIC_APP_QUIT
+    quit_item = -1;
+    if (g_nocturne_no_quit == 0) {
+      quit_item = menu_count;
+      menu_ptrs[menu_count] = g_MenuTextPointers[3];
+      menu_count = menu_count + 1;
+    }
+#else
     quit_item = menu_count;
     menu_ptrs[menu_count] = g_MenuTextPointers[3];
     menu_count = menu_count + 1;
+#endif
     menu_y = nocturne_menu_start_y(NOCTURNE_MENU_ROWS_UNTITLED(menu_count));
     iVar4 = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000
                       (menu_ptrs,menu_count,&iStack_c,menu_y,0);
@@ -243,7 +252,15 @@ LAB_005131d5:
     case 3:
       iVar5 = 99;
     }
+#if !NOCTURNE_AUTHENTIC_GAMEPAD
+    nocturne_gamepad_withdraw_nav(DIK_ESCAPE);
+#endif
     iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
+#if !NOCTURNE_AUTHENTIC_APP_QUIT
+    if (g_nocturne_no_quit != 0) {
+      iVar4 = 0;
+    }
+#endif
     if (iVar4 != 0) {
       iVar5 = 99;
     }

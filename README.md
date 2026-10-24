@@ -167,7 +167,9 @@ suspect type, the recognition pattern, and the rewrite, indexed by the detector 
 
 - **Finish the recreation**, with the decompilation's enhancements and bug fixes merged into it,
   leaving the decompilation as close to the original as it can run.
-- **Console ports**, such as Nintendo Switch and PlayStation 4, built from the recreation.
+- **Console ports**, such as Xbox, Nintendo Switch and PlayStation 4, built from the
+  recreation. The decompilation can be built for them already: see "Consoles and packaged
+  apps" in [docs/porting.md](docs/porting.md).
 - **An improved netplay lobby** to replace the current text-only one.
 
 ## Contributing

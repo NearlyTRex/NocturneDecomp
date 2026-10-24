@@ -44,6 +44,9 @@ int __cdecl shape_edittool_cpp_showTextInputDialog_FUN_0049db10(char *dialog_tit
   }
   shape_edittool_cpp_CInputString_init_FUN_0049d3d0(&local_320,source_string,max_length,dialog_mode)
   ;
+#if !NOCTURNE_AUTHENTIC_TEXT_PROMPTS
+  nocturne_text_input_begin();
+#endif
   iVar2 = g_WindowWidth / 0x80;
   iVar3 = g_WindowHeight / 0x60;
   iVar4 = shape_edittool_cpp_calculateButtonHeight_FUN_004a6970((char *)0x0);
@@ -143,6 +146,9 @@ LAB_0049de95:
     if (cVar1 == '\0') break;
   }
 LAB_0049dddc:
+#if !NOCTURNE_AUTHENTIC_TEXT_PROMPTS
+  nocturne_text_input_end();
+#endif
   shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
   engine_2d_c_clearInputAndWait_FUN_00403260();
   g_InputKeyMask = iVar1;
