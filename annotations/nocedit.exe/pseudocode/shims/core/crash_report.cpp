@@ -8,7 +8,7 @@
 // same as in winsock_win32.c: system/*.h declare DWORD, HANDLE and friends with
 // the decompiled binary's layouts, and both sets in one TU would collide.
 //
-// The filter runs in a process that has just faulted, possibly with a corrupt
+// The handler runs in a process that has just faulted, possibly with a corrupt
 // heap. So it allocates nothing: static buffers, snprintf into them, and
 // CreateFile/WriteFile.
 
@@ -22,9 +22,16 @@
 #include <cstdarg>
 #include <cstdio>
 
+// The desktop has a message box and an unhandled-exception filter of its own;
+// a packaged app has neither to rely on.
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
+#define NOCTURNE_CRASH_DESKTOP 1
+#endif
+
 namespace {
 
 const char *s_version = "";
+char s_dir[MAX_PATH];
 
 char s_report[16384];
 size_t s_used = 0;
@@ -39,6 +46,8 @@ void append(const char *fmt, ...) {
     if (s_used > sizeof(s_report) - 1) s_used = sizeof(s_report) - 1;
 }
 
+const char kUnknown[] = "unknown exception";
+
 const char *describe(DWORD code) {
     switch (code) {
     case EXCEPTION_ACCESS_VIOLATION:      return "access violation";
@@ -51,33 +60,37 @@ const char *describe(DWORD code) {
     case EXCEPTION_ARRAY_BOUNDS_EXCEEDED: return "array bounds exceeded";
     case EXCEPTION_FLT_INVALID_OPERATION: return "floating-point invalid operation";
     case EXCEPTION_FLT_DIVIDE_BY_ZERO:    return "floating-point divide by zero";
-    default:                              return "unknown exception";
+    default:                              return kUnknown;
     }
 }
 
-// "nocturne.exe+0x1a2b3c", or the bare address outside every module.
+// "nocturne.exe+0x1a2b3c", or the bare address outside every module. The image
+// base is the module's handle.
 void append_location(DWORD64 address) {
-    HMODULE module = nullptr;
-    if (GetModuleHandleExA(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS |
-                               GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT,
-                           (LPCSTR)(ULONG_PTR)address, &module)) {
+    void *base = nullptr;
+    if (RtlPcToFileHeader((PVOID)(ULONG_PTR)address, &base) != nullptr) {
         char path[MAX_PATH];
-        const DWORD length = GetModuleFileNameA(module, path, sizeof(path));
+        const DWORD length = GetModuleFileNameA((HMODULE)base, path, sizeof(path));
         const char *name = path;
         for (DWORD i = 0; i < length; i++) {
             if (path[i] == '\\' || path[i] == '/') name = path + i + 1;
         }
         append("%s+0x%llx", length != 0 ? name : "?",
-               (unsigned long long)(address - (DWORD64)(ULONG_PTR)module));
+               (unsigned long long)(address - (DWORD64)(ULONG_PTR)base));
     } else {
         append("0x%016llx", (unsigned long long)address);
     }
 }
 
 // Walks the x64 unwind tables from the faulting context. Functions without an
-// entry are leaves, whose return address is still on top of the stack.
+// entry are leaves, whose return address is still on top of the stack — read
+// only while that is inside this thread's stack, which is the thread that
+// faulted.
 void append_stack(const CONTEXT *fault) {
 #if defined(_M_X64) || defined(__x86_64__)
+    const NT_TIB *tib = (const NT_TIB *)NtCurrentTeb();
+    const DWORD64 stack_low = (DWORD64)(ULONG_PTR)tib->StackLimit;
+    const DWORD64 stack_high = (DWORD64)(ULONG_PTR)tib->StackBase;
     CONTEXT context = *fault;
     for (int frame = 0; frame < 48 && context.Rip != 0; frame++) {
         append("  #%-2d ", frame);
@@ -87,7 +100,7 @@ void append_stack(const CONTEXT *fault) {
         DWORD64 image_base = 0;
         PRUNTIME_FUNCTION entry = RtlLookupFunctionEntry(context.Rip, &image_base, nullptr);
         if (entry == nullptr) {
-            if (IsBadReadPtr((const void *)(ULONG_PTR)context.Rsp, sizeof(DWORD64))) break;
+            if (context.Rsp < stack_low || stack_high < context.Rsp + sizeof(DWORD64)) break;
             context.Rip = *(const DWORD64 *)(ULONG_PTR)context.Rsp;
             context.Rsp += sizeof(DWORD64);
             continue;
@@ -103,10 +116,17 @@ void append_stack(const CONTEXT *fault) {
 #endif
 }
 
-// %LOCALAPPDATA%\NocturneDecomp\, else the temp directory. Empty on failure.
+// The directory set for the run; else on the desktop %LOCALAPPDATA%\
+// NocturneDecomp\, and the temp directory. Empty on failure.
 bool report_path(char *out, size_t size) {
+    if (s_dir[0] != '\0') {
+        snprintf(out, size, "%s\\nocturne_crash.txt", s_dir);
+        return true;
+    }
     char base[MAX_PATH];
-    DWORD length = GetEnvironmentVariableA("LOCALAPPDATA", base, sizeof(base));
+    DWORD length;
+#if defined(NOCTURNE_CRASH_DESKTOP)
+    length = GetEnvironmentVariableA("LOCALAPPDATA", base, sizeof(base));
     if (length != 0 && length < sizeof(base)) {
         char dir[MAX_PATH];
         snprintf(dir, sizeof(dir), "%s\\NocturneDecomp", base);
@@ -114,6 +134,7 @@ bool report_path(char *out, size_t size) {
         snprintf(out, size, "%s\\nocturne_crash.txt", dir);
         return true;
     }
+#endif
     length = GetTempPathA(sizeof(base), base);
     if (length != 0 && length < sizeof(base)) {
         snprintf(out, size, "%snocturne_crash.txt", base);
@@ -122,9 +143,22 @@ bool report_path(char *out, size_t size) {
     return false;
 }
 
+HANDLE create_report_file(const char *path) {
+#if defined(NOCTURNE_CRASH_DESKTOP)
+    return CreateFileA(path, GENERIC_WRITE, 0, nullptr, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL,
+                       nullptr);
+#else
+    // A packaged app has only the wide CreateFile2.
+    static wchar_t wide[MAX_PATH];
+    if (MultiByteToWideChar(CP_ACP, 0, path, -1, wide, MAX_PATH) == 0) {
+        return INVALID_HANDLE_VALUE;
+    }
+    return CreateFile2(wide, GENERIC_WRITE, 0, CREATE_ALWAYS, nullptr);
+#endif
+}
+
 bool write_file(const char *path) {
-    HANDLE file = CreateFileA(path, GENERIC_WRITE, 0, nullptr, CREATE_ALWAYS,
-                              FILE_ATTRIBUTE_NORMAL, nullptr);
+    HANDLE file = create_report_file(path);
     if (file == INVALID_HANDLE_VALUE) return false;
     DWORD written = 0;
     const BOOL ok = WriteFile(file, s_report, (DWORD)s_used, &written, nullptr);
@@ -132,11 +166,9 @@ bool write_file(const char *path) {
     return ok && written == s_used;
 }
 
-LONG WINAPI on_unhandled_exception(EXCEPTION_POINTERS *info) {
-    // A second fault inside this filter must not recurse into it.
-    static volatile LONG entered = 0;
-    if (InterlockedExchange(&entered, 1) != 0) return EXCEPTION_EXECUTE_HANDLER;
-
+// Writes the report for `info` to stderr and the file, and on the desktop says
+// where it went.
+void report(EXCEPTION_POINTERS *info) {
     const EXCEPTION_RECORD *record = info->ExceptionRecord;
     SYSTEMTIME now;
     GetLocalTime(&now);
@@ -171,6 +203,7 @@ LONG WINAPI on_unhandled_exception(EXCEPTION_POINTERS *info) {
     char path[MAX_PATH];
     const bool saved = report_path(path, sizeof(path)) && write_file(path);
 
+#if defined(NOCTURNE_CRASH_DESKTOP)
     char message[1024];
     if (saved) {
         snprintf(message, sizeof(message),
@@ -183,20 +216,71 @@ LONG WINAPI on_unhandled_exception(EXCEPTION_POINTERS *info) {
                  describe(record->ExceptionCode));
     }
     MessageBoxA(nullptr, message, "Nocturne", MB_OK | MB_ICONERROR | MB_TOPMOST | MB_SETFOREGROUND);
+#else
+    if (saved) {
+        fprintf(stderr, "crash report saved to %s\n", path);
+        fflush(stderr);
+    }
+#endif
+}
 
+// A second fault inside the handler must not recurse into it.
+bool first_entry() {
+    static volatile LONG entered = 0;
+    return InterlockedExchange(&entered, 1) == 0;
+}
+
+#if defined(NOCTURNE_CRASH_DESKTOP)
+
+LONG WINAPI on_unhandled_exception(EXCEPTION_POINTERS *info) {
+    if (first_entry()) report(info);
     // Ends the process with the exception code as its exit code, as before.
     return EXCEPTION_EXECUTE_HANDLER;
 }
+
+void install() { SetUnhandledExceptionFilter(on_unhandled_exception); }
+
+#else
+
+// A vectored handler sees every exception first, the ones code expects to
+// catch included — a C++ throw is one. Only those describe() names end a
+// process, and only they are reported; the search then goes on, so the process
+// ends as it would have.
+LONG CALLBACK on_vectored_exception(EXCEPTION_POINTERS *info) {
+    const DWORD code = info->ExceptionRecord->ExceptionCode;
+    if (describe(code) != kUnknown && first_entry()) report(info);
+    return EXCEPTION_CONTINUE_SEARCH;
+}
+
+// AddVectoredExceptionHandler is exported to packaged apps but not declared
+// for them, so it is found at run time, in the module that holds GetLastError:
+// kernelbase, or kernel32 before it, export both. Found that way because not
+// every SDK declares GetModuleHandle for packaged apps either.
+void install() {
+    typedef PVOID(WINAPI * AddHandler)(ULONG, PVECTORED_EXCEPTION_HANDLER);
+    void *base = nullptr;
+    if (RtlPcToFileHeader((PVOID)&GetLastError, &base) == nullptr) return;
+    AddHandler add =
+        (AddHandler)(void *)GetProcAddress((HMODULE)base, "AddVectoredExceptionHandler");
+    if (add != nullptr) add(1, on_vectored_exception);
+}
+
+#endif
 
 }  // namespace
 
 extern "C" void nocturne_install_crash_handler(const char *version) {
     s_version = version != nullptr ? version : "";
-    SetUnhandledExceptionFilter(on_unhandled_exception);
+    install();
+}
+
+extern "C" void nocturne_crash_report_set_dir(const char *dir) {
+    snprintf(s_dir, sizeof(s_dir), "%s", dir != nullptr ? dir : "");
 }
 
 #else
 
 extern "C" void nocturne_install_crash_handler(const char *version) { (void)version; }
+extern "C" void nocturne_crash_report_set_dir(const char *dir) { (void)dir; }
 
 #endif

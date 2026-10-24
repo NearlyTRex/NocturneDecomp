@@ -5,6 +5,7 @@
 // See path_roots.h.
 
 #include "core/path_roots.h"
+#include "core/crash_report.h"
 #include "watcom/path.h"
 
 #if defined(NOCTURNE_USER_DIR_FROM_SDL) || defined(NOCTURNE_DATA_DIR_FROM_SDL)
@@ -169,6 +170,8 @@ void nocturne_init_path_roots(int argc, char **argv) {
         std::filesystem::create_directories(roots.user, ignored);
     }
     watcom_set_path_roots(roots);
+    // A crash report is written where the logs are.
+    nocturne_crash_report_set_dir(!roots.user.empty() ? roots.user.c_str() : roots.data.c_str());
 
     if (!roots.data.empty() || !roots.user.empty()) {
         fprintf(stderr, "nocturne: data directory %s, user directory %s\n",

@@ -28,9 +28,9 @@ for exactly what differs.
 2. Unpack the archive into that same install folder, so `nocturne.exe` replaces the game's own.
 3. Set up the cutscenes ([below](#cutscenes)).
 
-**Reporting a crash:** the game shows a message box and saves a crash report to
-`%LOCALAPPDATA%\NocturneDecomp\nocturne_crash.txt`. Attach it, along with the `nocturne_*.log`
-files from the game folder.
+**Reporting a crash:** the game shows a message box naming the crash report it saved,
+`nocturne_crash.txt`: in `%LOCALAPPDATA%\NocturneDecomp\`, or beside the `nocturne_*.log` files
+when the game was started with `--data-dir` or `--user-dir`. Attach it, along with those logs.
 
 ## macOS
 

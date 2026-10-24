@@ -47,10 +47,13 @@ NOCTURNE_TEST(the_fpu_trap_arms_what_it_is_asked) {
     CHECK_EQ(nocturne_fpu_trap_off(), 0);
 }
 
-// Installing the crash handler is quiet; it only speaks when the process faults.
+// Installing the crash handler, and naming where it writes, is quiet; it only
+// speaks when the process faults.
 NOCTURNE_TEST(installing_the_crash_handler_is_quiet) {
     nocturne_install_crash_handler("test");
     nocturne_install_crash_handler(nullptr);
+    nocturne_crash_report_set_dir("somewhere");
+    nocturne_crash_report_set_dir(nullptr);
     CHECK(true);
 }
 
