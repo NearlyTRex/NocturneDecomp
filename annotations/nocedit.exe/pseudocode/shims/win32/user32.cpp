@@ -132,10 +132,11 @@ static uint32_t winExtendedKeyFlag(SDL_Scancode sc) {
 }
 
 // Apply the SHIFT modifier to a base ASCII character the way a US keyboard
-// would. The shim synthesizes WM_CHAR from SDL_KEYDOWN (it never enables
-// SDL_TEXTINPUT), and SDL's keysym.sym is the *unshifted* symbol, so without
-// this map Shift+8 stays '8' instead of becoming '*', etc. Letters uppercase;
-// the number row and punctuation map to their US-layout shifted glyphs.
+// would. With SDL's text input off (win32/text_input.h) the shim synthesizes
+// WM_CHAR from SDL_KEYDOWN, and SDL's keysym.sym is the *unshifted* symbol, so
+// without this map Shift+8 stays '8' instead of becoming '*', etc. Letters
+// uppercase; the number row and punctuation map to their US-layout shifted
+// glyphs.
 static char winShiftChar(char ch) {
     switch (ch) {
         case '1': return '!';
@@ -192,6 +193,29 @@ static char winTypedChar(const SDL_Keysym& key) {
         return (shift != caps) ? (char)(ch - 32) : ch;
     }
     return shift ? winShiftChar(ch) : ch;
+}
+
+// A WM_CHAR for each character of SDL's UTF-8 text the game's 8-bit fonts
+// have a glyph for: printable ASCII and Latin-1's upper half, which is where a
+// code point and the byte the font is indexed by agree. Anything else, and a
+// sequence cut short or begun mid-character, types nothing.
+static void queueTypedText(MSG msg, const char *text) {
+    const unsigned char *p = (const unsigned char *)text;
+    while (*p != 0) {
+        unsigned cp = *p++;
+        if (cp >= 0x80) {
+            int more = (cp >= 0xF0) ? 3 : (cp >= 0xE0) ? 2 : (cp >= 0xC0) ? 1 : -1;
+            if (more < 0) continue;
+            cp &= 0x3Fu >> more;
+            for (; more > 0 && (*p & 0xC0) == 0x80; more--) cp = (cp << 6) | (*p++ & 0x3Fu);
+            if (more != 0) continue;
+        }
+        if ((cp >= 0x20 && cp < 0x7F) || (cp >= 0xA0 && cp <= 0xFF)) {
+            msg.message = 0x0102; // WM_CHAR
+            msg.wParam = (WPARAM)cp;
+            s_msgQueue.push(msg);
+        }
+    }
 }
 
 // lParam bits 30 and 31 of a key message: whether the key was already down,
@@ -291,7 +315,10 @@ static void translateSdlEvent(const SDL_Event& ev) {
                    | (LPARAM)(ev.key.repeat ? kKeyWasDown : 0u);
         s_msgQueue.push(msg);
         const char ch = winTypedChar(ev.key.keysym);
-        if (ch != 0) {
+        // With SDL's text input on, the printable characters arrive as
+        // SDL_TEXTINPUT, in the keyboard's own layout; the control characters,
+        // which have no text, are still typed here.
+        if (ch != 0 && (!SDL_IsTextInputActive() || (unsigned char)ch < 0x20)) {
             MSG charMsg;
             memset(&charMsg, 0, sizeof(charMsg));
             charMsg.hwnd = msg.hwnd;
@@ -301,6 +328,10 @@ static void translateSdlEvent(const SDL_Event& ev) {
         }
         break;
     }
+
+    case SDL_TEXTINPUT:
+        queueTypedText(msg, ev.text.text);
+        break;
 
     case SDL_KEYUP: {
         uint8_t sc = sdlScancodeToWin32(ev.key.keysym.scancode);
@@ -369,6 +400,9 @@ static HWND shim_CreateWindowExA(DWORD dwExStyle, LPCSTR lpClassName,
 #if NOCTURNE_GL_PRESENT
     flags |= SDL_WINDOW_OPENGL;
 #endif
+    // Where the window is the screen, it is made so, and SDL reports the
+    // screen's size from the start.
+    if (g_nocturne_fixed_display != 0) flags |= SDL_WINDOW_FULLSCREEN_DESKTOP;
     if (nWidth <= 0) nWidth = 640;
     if (nHeight <= 0) nHeight = 480;
     const char* title = lpWindowName ? lpWindowName : "NocturneDecomp";
@@ -484,7 +518,7 @@ static BOOL shim_MoveWindow(HWND hWnd, int X, int Y, int nWidth, int nHeight,
     if (hWnd != (HWND)(intptr_t)g_sdlWindow) {
         return 1;
     }
-    if (g_sdlWindow) {
+    if (g_sdlWindow && g_nocturne_fixed_display == 0) {
         SDL_SetWindowPosition(g_sdlWindow, X, Y);
         SDL_SetWindowSize(g_sdlWindow, nWidth, nHeight);
     }
@@ -625,6 +659,7 @@ static void sigint_handler(int) {
 
 void shims_init_user32(void) {
     signal(SIGINT, sigint_handler);
+    SDL_SetHint(SDL_HINT_WINRT_HANDLE_BACK_BUTTON, "1");
     g_BringWindowToTopFunc = (decltype(g_BringWindowToTopFunc))shim_BringWindowToTop;
     g_CharUpperBuffAFunc = (decltype(g_CharUpperBuffAFunc))shim_CharUpperBuffA;
     g_CloseClipboardFunc = (decltype(g_CloseClipboardFunc))shim_CloseClipboard;

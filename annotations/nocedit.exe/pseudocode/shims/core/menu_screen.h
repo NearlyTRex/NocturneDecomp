@@ -23,6 +23,12 @@
 extern "C" {
 #endif
 
+// 1 where the app does not end itself: a console's, which the system closes. A
+// platform file sets NOCTURNE_PLATFORM_NO_QUIT=1 for it, and the main menu then
+// has no QUIT line and Escape on it backs out of nothing
+// (NOCTURNE_AUTHENTIC_APP_QUIT).
+extern int g_nocturne_no_quit;
+
 // One frame of the moon backdrop: advances the frame time and the moon, and
 // draws it. The caller must be between CMoon::init and CMoon::free.
 void nocturne_menu_backdrop_frame(void);

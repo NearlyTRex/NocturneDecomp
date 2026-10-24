@@ -40,6 +40,7 @@ int nocturne_gl_init(struct SDL_Window *) { return stand.gl_active; }
 void nocturne_gl_set_logical_size(int, int) {}
 void nocturne_window_mode_apply(struct SDL_Window *) {}
 int nocturne_window_preferred_size(int *, int *) { return 0; }
+int g_nocturne_fixed_display = 0;
 
 void nocturne_gl_window_to_logical(int window_x, int window_y, int *out_x, int *out_y) {
     *out_x = window_x / stand.logical_scale;

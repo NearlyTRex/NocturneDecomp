@@ -9,6 +9,7 @@
 // own and reads back what was handed to the resolver.
 
 #include "nocturne_test.h"
+#include "message_support.h"
 
 #include "core/path_roots.h"
 #include "watcom/path.h"
@@ -228,6 +229,59 @@ NOCTURNE_TEST(a_relative_directory_with_no_working_directory_is_kept_as_given) {
     Run::init(args);
     CHECK_EQ(watcom_path_roots().data, std::string("game"));
     fs::current_path(run.base, ec);
+}
+#endif
+
+// -----------------------------------------------------------------------------
+// Whether the game is there
+// -----------------------------------------------------------------------------
+
+// A .pod, in any case, is the game; nothing is said.
+NOCTURNE_TEST(a_data_directory_with_a_pod_has_the_game) {
+    Run run;
+    run.make("game");
+    run.write("game/ACT1.Pod", "pod");
+    message_support::shown = 0;
+    const char *args[] = {"nocturne", "--data-dir", "game"};
+    Run::init(args);
+    CHECK_EQ(nocturne_check_game_data(), 1);
+    CHECK_EQ(message_support::shown, 0);
+}
+
+// Without one it says where it looked; a data directory asked for is the one
+// named, with no data_dir.txt to suggest.
+NOCTURNE_TEST(without_a_pod_it_says_where_it_looked) {
+    Run run;
+    run.make("game");
+    run.write("game/readme.txt", "not the game");
+    message_support::shown = 0;
+    const char *args[] = {"nocturne", "--data-dir", "game"};
+    Run::init(args);
+    CHECK_EQ(nocturne_check_game_data(), 0);
+    CHECK_EQ(message_support::shown, 1);
+    CHECK(message_support::last.find(run.at("game")) != std::string::npos);
+    CHECK(message_support::last.find("data_dir.txt") == std::string::npos);
+}
+
+// Where a data_dir.txt would have been read, it says so and where.
+NOCTURNE_TEST(without_a_pod_it_names_where_a_pointer_would_go) {
+    Run run;
+    run.make("saves");
+    const char *args[] = {"nocturne", "--user-dir", "saves"};
+    Run::init(args);
+    CHECK_EQ(nocturne_check_game_data(), 0);
+    CHECK(message_support::last.find("data_dir.txt in:\n\n" + run.at("saves")) !=
+          std::string::npos);
+}
+
+#if !defined(_WIN32)
+// With no data directory the game is where it was started.
+NOCTURNE_TEST(with_no_data_directory_the_working_directory_is_looked_in) {
+    Run run;
+    run.write("ACT1.POD", "pod");
+    const char *args[] = {"nocturne", "--data-dir="};
+    Run::init(args);
+    CHECK_EQ(nocturne_check_game_data(), 1);
 }
 #endif
 

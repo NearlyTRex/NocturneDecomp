@@ -329,7 +329,7 @@ static HRESULT ddraw_SetDisplayMode(IDirectDraw* this_ptr, DWORD requested_width
         // The game's window: winMain makes it before anything reaches
         // DirectDraw, and quits if it cannot.
         ddraw->window = g_sdlWindow;
-        SDL_SetWindowSize(ddraw->window, win_w, win_h);
+        if (g_nocturne_fixed_display == 0) SDL_SetWindowSize(ddraw->window, win_w, win_h);
 
         // GL owns the window's pixels when it comes up; SDL_Renderer is only
         // created as the fallback, since the two cannot share a window.
@@ -353,7 +353,7 @@ static HRESULT ddraw_SetDisplayMode(IDirectDraw* this_ptr, DWORD requested_width
         // costs a resize event and a visible flicker on some window managers.
         int cur_w = 0, cur_h = 0;
         SDL_GetWindowSize(ddraw->window, &cur_w, &cur_h);
-        if (cur_w != win_w || cur_h != win_h) {
+        if ((cur_w != win_w || cur_h != win_h) && g_nocturne_fixed_display == 0) {
             SDL_SetWindowSize(ddraw->window, win_w, win_h);
         }
         if (nocturne_gl_is_active()) {

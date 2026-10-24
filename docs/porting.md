@@ -108,3 +108,31 @@ desktop headers, so no ES headers are needed. Uploads of BGRA textures need
 
 `exe-linux-gles-x86_64` builds the ES path for a desktop Mesa driver, so it can be run and
 compared against the desktop lane on the same machine.
+
+## Consoles and packaged apps
+
+A console, or a packaged app like UWP's, differs from a desktop in a few ways the shims know
+about. Each is one definition in the platform file's `NOCTURNE_PLATFORM_DEFINITIONS`, off by
+default:
+
+| Definition | What it does |
+|---|---|
+| `NOCTURNE_PLATFORM_FIXED_DISPLAY=1` | The window is the screen: made full-screen, never sized or moved, and the Graphics Options screen has no Window line (`shims/gl/window_mode.h`). |
+| `NOCTURNE_PLATFORM_NO_QUIT=1` | The system ends the app: the main menu has no QUIT, and Escape there does nothing (`NOCTURNE_AUTHENTIC_APP_QUIT`). |
+
+`NOCTURNE_PLATFORM_SDL_MAIN` in the platform file, rather than a definition, lets SDL own the
+entry point; see `cmake/platforms/README.md`.
+
+What needs no setting:
+
+- **Typing.** The game's text prompts ask for SDL's text input while they are up, which brings
+  up the system's keyboard where there is one (`shims/win32/text_input.h`).
+- **Controller tuning.** The deadzone, turn and look speeds and inverted look are on the Control
+  Options screen in gamepad mode, and in `[Control]` in `nocturne.ini` for a front end to set.
+- **Missing game files.** Start-up stops with a message naming the folder it looked in, and the
+  ways to point the game at its files, rather than failing deep in the engine.
+- **A crash.** The report is written beside the logs, by a handler a packaged app may install
+  (`shims/core/crash_report.h`).
+- **Being suspended.** A frame is capped at a quarter of a second, so a game frozen in the
+  background comes back to one short frame rather than one long one.
+- **The Back button.** On WinRT it reaches the game as input rather than closing the app.

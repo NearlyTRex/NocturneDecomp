@@ -75,6 +75,7 @@ nocturne_test_suite(shims_win32_sdl
         shims/win32/mmsystem.cpp
         shims/win32/shim_init.cpp
         shims/win32/user32.cpp
+        shims/win32/text_input.cpp
         shims/win32/window_message.cpp
         shims/win32/wingdi.cpp
         shims/win32/advapi32.cpp

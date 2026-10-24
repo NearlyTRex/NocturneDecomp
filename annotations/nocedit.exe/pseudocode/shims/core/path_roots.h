@@ -23,9 +23,7 @@
 //      NOCTURNE_DATA_DIR_FROM_SDL makes SDL_GetPrefPath's NocturneDecomp folder
 //      the data directory as well, for a platform where people copy the game
 //      files into a place of the app's choosing (the macOS app bundle). The
-//      default arrangement leaves one directory for both. When that default is
-//      in use and the folder holds no .pod, a message box names it, the folder
-//      is opened, and the process exits.
+//      default arrangement leaves one directory for both.
 //
 // None of them set is the working directory for both, which is how the game has
 // always run, so a desktop build that sets nothing behaves exactly as before.
@@ -34,3 +32,13 @@
 
 // Before anything opens a file, the logs included.
 void nocturne_init_path_roots(int argc, char **argv);
+
+// 1 when the data directory holds the game: any .pod, in any case. Otherwise
+// says so, on stderr and in a message box where SDL can show one, naming the
+// folder and the ways to point the game at its files; opens the folder when it
+// is the platform's own one that people fill by hand (the macOS app bundle's);
+// and answers 0, for the caller to stop. With no data directory the folder is
+// the one the game will read from: the executable's on Windows, where winMain
+// moves to it, else the working directory. Without the game the engine would
+// fail deep in its start-up with nothing on screen to say why.
+int nocturne_check_game_data(void);

@@ -8,9 +8,7 @@
 #include "core/crash_report.h"
 #include "watcom/path.h"
 
-#if defined(NOCTURNE_USER_DIR_FROM_SDL) || defined(NOCTURNE_DATA_DIR_FROM_SDL)
 #include <SDL.h>
-#endif
 
 #include <cctype>
 #include <cstdio>
@@ -65,7 +63,12 @@ std::string remembered_data_dir(const std::string &dir) {
     return named;
 }
 
-#if defined(NOCTURNE_DATA_DIR_FROM_SDL)
+// Where a data_dir.txt was looked for this run, empty when none was; and
+// whether the data directory is a folder of the platform's that people fill by
+// hand, to be opened when it is empty.
+std::string s_pointer_dir;
+bool s_fill_by_hand = false;
+
 // Whether `dir` holds any .pod, in any case: the one thing every install has.
 bool has_game_data(const std::string &dir) {
     std::error_code ignored;
@@ -77,6 +80,21 @@ bool has_game_data(const std::string &dir) {
     return false;
 }
 
+// Where the game reads from with no data directory: on Windows winMain moves
+// to the executable's folder, elsewhere it stays where it was started.
+std::string game_directory() {
+#if defined(_WIN32)
+    char *base = SDL_GetBasePath();
+    const std::string dir = base != nullptr ? base : ".";
+    SDL_free(base);
+    return dir;
+#else
+    std::error_code ignored;
+    return std::filesystem::current_path(ignored).string();
+#endif
+}
+
+#if defined(NOCTURNE_DATA_DIR_FROM_SDL)
 // A file:// URL for `dir`, percent-encoding everything but the unreserved set
 // and the separator ("Application Support" has a space in it).
 std::string file_url(const std::string &dir) {
@@ -92,22 +110,6 @@ std::string file_url(const std::string &dir) {
         }
     }
     return url;
-}
-
-// The default data directory is one people fill by hand. Empty, the game would
-// fail somewhere deep in its startup with nothing on screen to say why, so say
-// where the files go, show the folder, and stop.
-[[noreturn]] void ask_for_game_data(const std::string &dir) {
-    const std::string message =
-        "Nocturne could not find its game files.\n\n"
-        "Copy everything from your Nocturne install folder (the .POD files and "
-        "the rest) into:\n\n" + dir + "\n\n"
-        "or put the path of the folder they are in on the first line of a file "
-        "named data_dir.txt there.\n\n"
-        "That folder will open now. Start Nocturne again once the files are in it.";
-    SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Nocturne", message.c_str(), nullptr);
-    SDL_OpenURL(file_url(dir).c_str());
-    exit(1);
 }
 #endif
 
@@ -144,11 +146,14 @@ void nocturne_init_path_roots(int argc, char **argv) {
     const char *data_override = option(argc, argv, "--data-dir");
     if (data_override == nullptr) data_override = getenv("NOCTURNE_DATA_DIR");
     std::string remembered;
+    s_pointer_dir.clear();
     if (data_override == nullptr) {
         if (!roots.user.empty()) {
+            s_pointer_dir = roots.user;
             remembered = remembered_data_dir(roots.user);
         } else {
             const std::string fallback = pick(nullptr, "NOCTURNE_DATA_DIR", default_data);
+            s_pointer_dir = fallback;
             remembered = remembered_data_dir(fallback);
             // The folder that names the game files keeps what the game writes.
             if (!remembered.empty()) roots.user = fallback;
@@ -157,9 +162,7 @@ void nocturne_init_path_roots(int argc, char **argv) {
     }
     roots.data = pick(data_override, "NOCTURNE_DATA_DIR", default_data);
 #if defined(NOCTURNE_DATA_DIR_FROM_SDL)
-    if (data_override == nullptr && !roots.data.empty() && !has_game_data(roots.data)) {
-        ask_for_game_data(roots.data);
-    }
+    s_fill_by_hand = (data_override == nullptr);
 #endif
     // One directory given as both is the default arrangement with a new working
     // directory, and needs no overlay.
@@ -178,4 +181,30 @@ void nocturne_init_path_roots(int argc, char **argv) {
                 roots.data.empty() ? "(working directory)" : roots.data.c_str(),
                 roots.user.empty() ? "(the data directory)" : roots.user.c_str());
     }
+}
+
+int nocturne_check_game_data(void) {
+    std::string dir = watcom_path_roots().data;
+    if (dir.empty()) dir = game_directory();
+    if (has_game_data(dir)) return 1;
+
+    std::string message =
+        "Nocturne could not find its game files in:\n\n" + dir + "\n\n"
+        "Copy everything from your Nocturne install folder (the .POD files and the "
+        "rest) there, or start Nocturne with --data-dir and the folder they are in.";
+    if (!s_pointer_dir.empty()) {
+        message += "\n\nOr put the path of that folder on the first line of a file named "
+                   "data_dir.txt in:\n\n" + s_pointer_dir;
+    }
+#if defined(NOCTURNE_DATA_DIR_FROM_SDL)
+    if (s_fill_by_hand) {
+        message += "\n\nThat folder will open now. Start Nocturne again once the files are in it.";
+    }
+#endif
+    fprintf(stderr, "nocturne: %s\n", message.c_str());
+    SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Nocturne", message.c_str(), nullptr);
+#if defined(NOCTURNE_DATA_DIR_FROM_SDL)
+    if (s_fill_by_hand) SDL_OpenURL(file_url(dir).c_str());
+#endif
+    return 0;
 }

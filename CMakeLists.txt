@@ -156,6 +156,7 @@ set(NOCTURNE_PLATFORM_INCLUDE_DIRS "")
 set(NOCTURNE_PLATFORM_DEFINITIONS "")
 set(NOCTURNE_PLATFORM_LIBRARIES "")
 set(NOCTURNE_PLATFORM_LAUNCHERS OFF)
+set(NOCTURNE_PLATFORM_SDL_MAIN OFF)
 set(NOCTURNE_LAUNCHER_EXE "nocturne")
 set(NOCTURNE_DEPENDENCIES_FILE "${CMAKE_SOURCE_DIR}/cmake/bundledlibs.cmake")
 set(NOCTURNE_FFMPEG_EXTRA_ARGS "")
@@ -435,6 +436,17 @@ if(NOCTURNE_BUILD_EXE)
             list(APPEND _module_libs nocturne_${_module})
         endif()
     endforeach()
+
+    # A platform whose SDL runs the app from an entry point of its own has
+    # main.cpp's main named SDL_main for it to call (main/main.cpp). That file
+    # alone sees SDL's headers for it, so it leaves the shared PCH, as the -O2
+    # files above do.
+    if(NOCTURNE_PLATFORM_SDL_MAIN)
+        set_source_files_properties("${NOCTURNE_MAIN_DIR}/main.cpp" PROPERTIES
+            COMPILE_DEFINITIONS "NOCTURNE_SDL_MAIN=1"
+            INCLUDE_DIRECTORIES "${SDL2_INCLUDE_DIRS}"
+            SKIP_PRECOMPILE_HEADERS ON)
+    endif()
 
 
     # RECURSE: the shims are grouped into subdirectories by responsibility.

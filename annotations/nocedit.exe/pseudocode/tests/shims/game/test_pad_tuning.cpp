@@ -12,6 +12,7 @@
 #include "shim_config.h"
 
 #include <filesystem>
+#include <string>
 #include <system_error>
 
 namespace {
@@ -69,6 +70,36 @@ NOCTURNE_TEST(values_out_of_range_are_clamped) {
     CHECK_NEAR(tuning->stick_deadzone, 0.40f, 1e-6f);
     CHECK_NEAR(tuning->turn_rate, 0.05f, 1e-6f);
     CHECK_NEAR(tuning->look_rate, 1.00f, 1e-6f);
+}
+
+// The Control Options screen's lines: percentages stepped by five, wrapping
+// at the ends of each range, and the inverted look flipped; each written to
+// the INI and read back at once.
+NOCTURNE_TEST(the_options_screen_steps_each_setting) {
+    enter_game_directory();
+    CHECK_EQ(nocturne_pad_tuning_value(NOCTURNE_PAD_SETTING_DEADZONE), 20);
+    nocturne_pad_tuning_step(NOCTURNE_PAD_SETTING_DEADZONE, 1);
+    CHECK_EQ(nocturne_pad_tuning_value(NOCTURNE_PAD_SETTING_DEADZONE), 25);
+    CHECK_EQ(ini_support::values["Control/padDeadzone"], std::string("25"));
+    CHECK_NEAR(nocturne_pad_tuning()->stick_deadzone, 0.25f, 1e-6f);
+
+    ini_support::save("Control", "padDeadzone", "40");
+    nocturne_pad_tuning_reload();
+    nocturne_pad_tuning_step(NOCTURNE_PAD_SETTING_DEADZONE, 1);
+    CHECK_EQ(nocturne_pad_tuning_value(NOCTURNE_PAD_SETTING_DEADZONE), 5);
+    nocturne_pad_tuning_step(NOCTURNE_PAD_SETTING_DEADZONE, -1);
+    CHECK_EQ(nocturne_pad_tuning_value(NOCTURNE_PAD_SETTING_DEADZONE), 40);
+
+    nocturne_pad_tuning_step(NOCTURNE_PAD_SETTING_TURN, -1);
+    CHECK_EQ(nocturne_pad_tuning_value(NOCTURNE_PAD_SETTING_TURN), 20);
+    nocturne_pad_tuning_step(NOCTURNE_PAD_SETTING_LOOK, 1);
+    CHECK_EQ(nocturne_pad_tuning_value(NOCTURNE_PAD_SETTING_LOOK), 30);
+
+    CHECK_EQ(nocturne_pad_tuning_value(NOCTURNE_PAD_SETTING_INVERT), 0);
+    nocturne_pad_tuning_step(NOCTURNE_PAD_SETTING_INVERT, 1);
+    CHECK_EQ(nocturne_pad_tuning_value(NOCTURNE_PAD_SETTING_INVERT), 1);
+    nocturne_pad_tuning_step(NOCTURNE_PAD_SETTING_INVERT, -1);
+    CHECK_EQ(nocturne_pad_tuning_value(NOCTURNE_PAD_SETTING_INVERT), 0);
 }
 
 NOCTURNE_TEST_MAIN()

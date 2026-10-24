@@ -43,6 +43,8 @@ void nocturne_gl_present_framebuffer(const void *pixels, int width, int, int, in
 
 void nocturne_window_mode_apply(struct SDL_Window *) { ++stand.mode_applies; }
 
+int g_nocturne_fixed_display = 0;
+
 int nocturne_window_preferred_size(int *width, int *height) {
     if (stand.preferred_width == 0) return 0;
     *width = stand.preferred_width;

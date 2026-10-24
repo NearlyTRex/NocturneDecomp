@@ -91,6 +91,7 @@ honest reason its default is what it is.
 | `FORMAT_STRINGS` | pointers print at their native width on 64-bit *(defaults on)* |
 | `WINDOWS` | the game keeps running unfocused and the window stays put |
 | `UI_CURSOR_WARP` | no `SetCursorPos` warping; the cursor moves freely |
+| `APP_QUIT` | where the platform file says the system ends the app, the main menu offers no QUIT |
 | `SOUND_DEVICE` | the Sound Options Device line names the host audio API SDL opened |
 | `RENDERER_DLL` | a compiled-in renderer loads without a file on disk |
 | `HEAP_REPORT` | the memory line reports the host allocator, since the Watcom heap it walks is not there |
@@ -184,6 +185,7 @@ shipped", but it is not a bug in the retail game.
 | `AUTOSAVE` | `AUTO.NOC` is written when a cutscene ends and when a mission starts, and the single-player submenu offers Continue |
 | `GAMEPAD` | SDL's game-controller layer instead of 1999's joyGetPos |
 | `WINDOW_MESSAGES` | the window proc sees a mouse wheel |
+| `TEXT_PROMPTS` | a text prompt brings up the platform's own keyboard, where it has one |
 | `CHEAT_MENU` | a CHEATS entry on Options, and WARPS on the pause menu |
 | `RESOLUTION_LIST` | one ordered table drives both the label and the stepping |
 | `HUD_SCALE` | HUD bitmaps, text and the goggles scale with the framebuffer |

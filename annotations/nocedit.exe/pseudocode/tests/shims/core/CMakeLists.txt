@@ -1,8 +1,9 @@
 # A platform data directory, read when it is asked for from a variable the test
-# sets, so a build with one and a build without are both reachable from here.
+# sets, so a build with one and a build without are both reachable from here;
+# and its message box, which message_support.cpp answers.
 set_source_files_properties("${NOCTURNE_PSEUDOCODE_DIR}/shims/core/path_roots.cpp"
     PROPERTIES COMPILE_DEFINITIONS
-        "NOCTURNE_DEFAULT_DATA_DIR=getenv(\"NOCTURNE_TEST_DEFAULT_DATA_DIR\")")
+        "NOCTURNE_DEFAULT_DATA_DIR=getenv(\"NOCTURNE_TEST_DEFAULT_DATA_DIR\");SDL_ShowSimpleMessageBox=message_support_SDL_ShowSimpleMessageBox")
 
 # The version from nocturne_version.h beside this, which names it at run time.
 set_source_files_properties("${NOCTURNE_PSEUDOCODE_DIR}/shims/core/version.cpp"
@@ -27,6 +28,8 @@ nocturne_test_suite(shims_core
         shims/core/crash_report.cpp
     SUPPORT
         version_support.cpp
+        message_support.cpp
+    LIBRARIES ${SDL2_LIBRARIES}
 )
 
 # The console, the HUD's scaling and the front end's fonts and screens: the

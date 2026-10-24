@@ -18,7 +18,8 @@
 //
 // A key that is missing takes its default from shim_config_input.h; a value
 // out of range is clamped to it, so a hand-edited file cannot leave the pad
-// unusable. Read on first use and kept, until nocturne_pad_tuning_reload.
+// unusable. Read on first use and kept, until nocturne_pad_tuning_reload. The
+// Control Options screen shows and steps them in gamepad mode.
 
 struct NocturnePadTuning {
     float stick_deadzone;
@@ -37,6 +38,24 @@ const struct NocturnePadTuning *nocturne_pad_tuning(void);
 // Forget what was read, so the next call reads the INI again: for a caller that
 // has just written it.
 void nocturne_pad_tuning_reload(void);
+
+// The settings as the Control Options screen shows them, in this order.
+enum {
+    NOCTURNE_PAD_SETTING_DEADZONE,
+    NOCTURNE_PAD_SETTING_TURN,
+    NOCTURNE_PAD_SETTING_LOOK,
+    NOCTURNE_PAD_SETTING_INVERT,
+    NOCTURNE_PAD_SETTING_COUNT
+};
+
+// A setting's value as its INI key holds it: a percentage, or 0/1 for the
+// inverted look.
+int nocturne_pad_tuning_value(int setting);
+
+// Step a setting by five in `direction` (-1 or 1), wrapping at the ends of its
+// range as the screen's other stepped lines do, or flip the inverted look; then
+// write it and read the INI again.
+void nocturne_pad_tuning_step(int setting, int direction);
 
 #ifdef __cplusplus
 }

@@ -21,6 +21,12 @@ void __cdecl core_menu_cpp_configureCustomKeys_FUN_00511890(void)
   int local_14;
   CGame *pCVar3;
   EAimMode EVar2;
+#if !NOCTURNE_AUTHENTIC_GAMEPAD
+  char pad_lines[NOCTURNE_PAD_SETTING_COUNT][128];
+  char *menu_lines[10 + NOCTURNE_PAD_SETTING_COUNT];
+  int pad_first;
+  int pad_line;
+#endif
 
   pacVar7 = g_ControlsMenuTextBuffers;
   local_14 = 0;
@@ -111,9 +117,49 @@ LAB_00511b4c:
       pcVar3 = "Calibrate";
       goto LAB_00511b4c;
     }
+#if !NOCTURNE_AUTHENTIC_GAMEPAD
+    pad_first = iVar5;
+    for (pad_line = 0; pad_line < iVar5; pad_line = pad_line + 1) {
+      menu_lines[pad_line] = g_ControlOptionsMenuPointers[pad_line];
+    }
+    if (g_CGamePtr->game_control == CONTROL_MODE_GAMEPAD) {
+      _sprintf(pad_lines[NOCTURNE_PAD_SETTING_DEADZONE],"%s%d%%",
+               support_newmsg_cpp_getLocalizedString_FUN_005441f0("Stick deadzone : "),
+               nocturne_pad_tuning_value(NOCTURNE_PAD_SETTING_DEADZONE));
+      _sprintf(pad_lines[NOCTURNE_PAD_SETTING_TURN],"%s%d",
+               support_newmsg_cpp_getLocalizedString_FUN_005441f0("Stick turn speed : "),
+               nocturne_pad_tuning_value(NOCTURNE_PAD_SETTING_TURN));
+      _sprintf(pad_lines[NOCTURNE_PAD_SETTING_LOOK],"%s%d",
+               support_newmsg_cpp_getLocalizedString_FUN_005441f0("Stick look speed : "),
+               nocturne_pad_tuning_value(NOCTURNE_PAD_SETTING_LOOK));
+      if (nocturne_pad_tuning_value(NOCTURNE_PAD_SETTING_INVERT) == 0) {
+        pcVar3 = "Invert stick look : OFF";
+      }
+      else {
+        pcVar3 = "Invert stick look : ON";
+      }
+      _sprintf(pad_lines[NOCTURNE_PAD_SETTING_INVERT],"%s",
+               support_newmsg_cpp_getLocalizedString_FUN_005441f0(pcVar3));
+      for (pad_line = 0; pad_line < NOCTURNE_PAD_SETTING_COUNT; pad_line = pad_line + 1) {
+        menu_lines[iVar5] = pad_lines[pad_line];
+        iVar5 = iVar5 + 1;
+      }
+    }
+#endif
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Control Options");
+#if NOCTURNE_AUTHENTIC_GAMEPAD
     iVar5 = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000
                       (g_ControlOptionsMenuPointers,iVar5,&local_14,0xfa,pcVar3);
+#else
+    iVar5 = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000
+                      (menu_lines,iVar5,&local_14,
+                       nocturne_menu_start_y(NOCTURNE_MENU_ROWS_TITLED(iVar5)),pcVar3);
+    if ((g_CGamePtr->game_control == CONTROL_MODE_GAMEPAD) && (pad_first <= iVar5) &&
+        (iVar5 < pad_first + NOCTURNE_PAD_SETTING_COUNT)) {
+      nocturne_pad_tuning_step(iVar5 - pad_first, (g_MenuLeftRightPressed == 1) ? -1 : 1);
+      iVar5 = -1;   /* consumed; matches no case below */
+    }
+#endif
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     pCVar3 = g_CGamePtr;
     switch(iVar5) {
