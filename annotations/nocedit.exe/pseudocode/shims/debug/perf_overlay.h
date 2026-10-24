@@ -8,9 +8,11 @@
 // (NOCTURNE_CHEAT_PERF_STATS), which is read as this machine's own setting: it
 // changes nothing in the simulation, so a netplay host has no say in it.
 //
-// Three lines, right-aligned in the HUD's font and colour:
+// Four lines, right-aligned in the HUD's font and colour:
 //   the frame rate, the mean and worst frame time over the last half second,
-//   and the resolution with the renderer in use.
+//   how much of a frame on average was spent waiting in the swap (the display
+//   or the GPU rather than the game), and the resolution with the renderer in
+//   use.
 // Measured by wall clock between calls, so it counts everything the frame
 // cost, not only the game's own delta time.
 

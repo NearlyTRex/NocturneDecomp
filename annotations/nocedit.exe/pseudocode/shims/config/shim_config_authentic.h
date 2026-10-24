@@ -47,6 +47,7 @@
 // | `NOCTURNE_AUTHENTIC_FORMAT_STRINGS` | 1 | host | prints pointers at their native width on 64-bit |
 // | `NOCTURNE_AUTHENTIC_WINDOWS` | 0 | host | keeps running unfocused; the window stays put |
 // | `NOCTURNE_AUTHENTIC_UI_CURSOR_WARP` | 0 | host | no SetCursorPos warping; the cursor moves freely |
+// | `NOCTURNE_AUTHENTIC_APP_QUIT` | 0 | host | where the system ends the app, the main menu offers no QUIT |
 // | `NOCTURNE_AUTHENTIC_SOUND_DEVICE` | 0 | host | the Device line names the host audio API SDL opened |
 // | `NOCTURNE_AUTHENTIC_RENDERER_DLL` | 0 | host | a compiled-in renderer loads without a file on disk |
 // | `NOCTURNE_AUTHENTIC_HEAP_REPORT` | 0 | host | the memory line reports the host allocator, not an unwalkable heap |
@@ -112,6 +113,7 @@
 // | `NOCTURNE_AUTHENTIC_AUTOSAVE` | 0 | addition | AUTO.NOC is written at a cutscene end and a mission start |
 // | `NOCTURNE_AUTHENTIC_GAMEPAD` | 0 | addition | SDL's game-controller layer instead of joyGetPos |
 // | `NOCTURNE_AUTHENTIC_WINDOW_MESSAGES` | 0 | addition | the window proc sees a mouse wheel |
+// | `NOCTURNE_AUTHENTIC_TEXT_PROMPTS` | 0 | addition | a text prompt brings up the platform's own keyboard |
 // | `NOCTURNE_AUTHENTIC_CHEAT_MENU` | 0 | addition | a CHEATS entry on Options, and WARPS on pause |
 // | `NOCTURNE_AUTHENTIC_RESOLUTION_LIST` | 0 | addition | one ordered table drives label and stepping |
 // | `NOCTURNE_AUTHENTIC_HUD_SCALE` | 0 | addition | the HUD scales with the framebuffer |
@@ -191,6 +193,22 @@
 // exercise the authentic behavior.
 #ifndef NOCTURNE_AUTHENTIC_WINDOWS
 #define NOCTURNE_AUTHENTIC_WINDOWS 0
+#endif
+
+// NOCTURNE_AUTHENTIC_APP_QUIT
+//   The main menu's QUIT line, and Escape on the main menu, end the process.
+//   On a console that is not the app's to do: the system ends it, and an app
+//   that closes itself is one the platform's rules turn away.
+//   1: shipped behaviour, everywhere — QUIT is on the main menu and Escape there
+//      ends the game.
+//   0: the same, except where the platform file sets
+//      NOCTURNE_PLATFORM_NO_QUIT=1 (g_nocturne_no_quit, core/menu_screen.h):
+//      there the line is left off and Escape on the main menu does nothing.
+//      Leaving a mission for the main menu is unchanged either way.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_APP_QUIT=1.
+#ifndef NOCTURNE_AUTHENTIC_APP_QUIT
+#define NOCTURNE_AUTHENTIC_APP_QUIT 0
 #endif
 
 // NOCTURNE_AUTHENTIC_UI_CURSOR_WARP
@@ -2466,6 +2484,24 @@
 //   Override with -DNOCTURNE_AUTHENTIC_WINDOW_MESSAGES=1.
 #ifndef NOCTURNE_AUTHENTIC_WINDOW_MESSAGES
 #define NOCTURNE_AUTHENTIC_WINDOW_MESSAGES 0
+#endif
+
+// NOCTURNE_AUTHENTIC_TEXT_PROMPTS
+//   1: the editor tools' text prompts (showTextInputDialog, and
+//      showFilenameInputDialog, which names a save) read typed characters as
+//      they come, as shipped. A machine whose only keyboard is the system's
+//      on-screen one — a console, a handheld — has no way to type into them.
+//   0: while a prompt is up it asks for SDL's text input
+//      (shims/win32/text_input.h), which is what brings up that keyboard. On
+//      the desktop SDL already has text input on, and nothing changes.
+//
+//   How characters are typed is not this flag's: the shipped game had them
+//   from Windows in the player's own layout, and the event pump does the same
+//   whenever SDL's text input is on.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_TEXT_PROMPTS=1.
+#ifndef NOCTURNE_AUTHENTIC_TEXT_PROMPTS
+#define NOCTURNE_AUTHENTIC_TEXT_PROMPTS 0
 #endif
 
 // NOCTURNE_AUTHENTIC_CHEAT_MENU

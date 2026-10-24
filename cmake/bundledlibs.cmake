@@ -13,7 +13,7 @@
 #   SDL2_INCLUDE_DIRS / SDL2_CFLAGS_OTHER / SDL2_LIBRARIES
 #   SDL2TTF_INCLUDE_DIRS / SDL2TTF_CFLAGS_OTHER / SDL2TTF_LIBRARIES
 #   FFMPEG_INCLUDE_DIRS / FFMPEG_CFLAGS_OTHER / FFMPEG_LIBRARIES
-# so the rest of CMakeLists.txt consumes them unchanged.
+# so the rest of the build consumes them unchanged.
 #
 # The CMake sub-builds (SDL2 / SDL2_ttf) inherit the target from the toolchain's
 # CMAKE_C/CXX_FLAGS_INIT. FFmpeg (autotools, not CMake) has to be told, through

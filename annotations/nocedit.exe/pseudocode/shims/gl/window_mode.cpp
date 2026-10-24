@@ -12,6 +12,12 @@
 
 #include "nocturne.h"
 
+#ifndef NOCTURNE_PLATFORM_FIXED_DISPLAY
+#define NOCTURNE_PLATFORM_FIXED_DISPLAY 0
+#endif
+
+int g_nocturne_fixed_display = NOCTURNE_PLATFORM_FIXED_DISPLAY;
+
 namespace {
 
 const char kIniSection[] = "Graphics";
@@ -71,6 +77,7 @@ extern "C" int nocturne_window_mode_get(void) {
     // DDSCL_FULLSCREEN | DDSCL_EXCLUSIVE is the only mode the shipped game has.
     return NOCTURNE_WINDOW_MODE_FULLSCREEN;
 #endif
+    if (g_nocturne_fixed_display != 0) return NOCTURNE_WINDOW_MODE_BORDERLESS;
     if (!s_loaded) {
         // Runs from the ddraw shim during startup, before anything has written
         // the ini (see core/ini_setting.h).
@@ -87,6 +94,7 @@ extern "C" int nocturne_window_mode_get(void) {
 }
 
 extern "C" int nocturne_window_mode_cycle(int step) {
+    if (g_nocturne_fixed_display != 0) return nocturne_window_mode_get();
     const int next =
         nocturne_ini_cycle(nocturne_window_mode_get(), step, NOCTURNE_WINDOW_MODE_COUNT);
     s_mode = next;
@@ -107,6 +115,7 @@ extern "C" const char *nocturne_window_mode_name(int mode) {
 extern "C" void nocturne_window_mode_apply(SDL_Window *window) {
     if (window == nullptr) return;
     s_window = window;
+    if (g_nocturne_fixed_display != 0) return;   // made full-screen, and left so
 
     const int mode = nocturne_window_mode_get();
 

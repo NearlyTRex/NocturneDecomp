@@ -85,7 +85,8 @@ void nocturne_ui_editor_metrics(void) {
 
 // A source rectangle of an alpha bitmap, each pixel expanded to scale x scale
 // and blitted through the engine's own row blender. Both public entry points
-// below funnel through here; only their source rectangle differs.
+// below funnel through here; only their source rectangle differs. Both have
+// already held src_w * scale within UI_ROW_MAX.
 static void ui_blit_alpha_region(CAlphaBitmap *bmp, int dst_x, int dst_y,
                                  int src_x, int src_y, int src_w, int src_h,
                                  int alpha, int scale) {
@@ -98,7 +99,6 @@ static void ui_blit_alpha_region(CAlphaBitmap *bmp, int dst_x, int dst_y,
 
     if (src_w < 1 || src_h < 1) { return; }
     dst_w = src_w * scale;
-    if (dst_w > UI_ROW_MAX) { return; }
     if (dst_x + dst_w < 0 || g_WindowWidth <= dst_x) { return; }
     if (dst_y + src_h * scale < 0 || g_WindowHeight <= dst_y) { return; }
 
@@ -216,7 +216,7 @@ static ushort ui_blend16(uint src_color, uint dst_color, int alpha) {
 // One glyph, scale x scale per source pixel. Mirrors CBitFont::drawCharacter:
 // the keyed copy when the font has no display palette loaded, and the blended
 // form when it has — the 32bpp row helper, or ui_blend16 per pixel. Returns the
-// advance.
+// advance. `character_code` is a byte.
 static int ui_draw_char(CBitFont *font, int character_code, int x, int y,
                         int color_mode, int color_value, int scale) {
     static uchar row_src[UI_ROW_MAX];
@@ -232,7 +232,6 @@ static int ui_draw_char(CBitFont *font, int character_code, int x, int y,
     int col;
     uint solid_color;
 
-    if (character_code < 0 || 0xff < character_code) { return 0; }
     advance = (font->char_widths[character_code] + font->char_spacing) * scale;
     glyph = font->char_positions[character_code];
     if (glyph == 0) { return advance; }

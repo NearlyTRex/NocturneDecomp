@@ -150,14 +150,14 @@ static int mission_wait_for_announcement(void)
     int pressed;
 
     start = wincore_winrun_cpp_getTime_FUN_005f2dc0();
-    while (s_have_announced == 0) {
+    for (;;) {
         engine_special_cpp_clearScreen_FUN_005b3e70();
         engine_2d_c_drawText_FUN_00401fd0
             ((char *)"Waiting for the host to choose the next mission...", 0, 0xb);
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
         core_netgame_cpp_CNetGame_receivePackets_FUN_005405b0(g_CNetGamePtr);
         if (s_have_announced != 0) {
-            break;
+            return 1;
         }
 
         pressed = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr, DIK_ESCAPE);
@@ -172,7 +172,6 @@ static int mission_wait_for_announcement(void)
             return 0;
         }
     }
-    return 1;
 }
 
 // -----------------------------------------------------------------------------

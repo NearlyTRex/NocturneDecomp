@@ -15,6 +15,7 @@
 
 #include "config/shim_config_video.h"
 #include "directx/ddraw.h"
+#include "gl/window_mode.h"
 #include "globals/globals_610000.h"
 #include "system/ddraw.h"
 #include "win32/shim_init.h"
@@ -275,6 +276,23 @@ NOCTURNE_TEST(a_later_mode_resizes_only_when_the_size_changes) {
         }
         CHECK_EQ(stand.mode_applies, 4);
     }
+}
+
+// Where the window is the screen, a mode never sizes it: neither the first nor
+// a later one.
+NOCTURNE_TEST(a_fixed_display_is_never_resized) {
+    Screen screen;
+    stand.preferred_width = 800;
+    stand.preferred_height = 600;
+    g_nocturne_fixed_display = 1;
+    CHECK_EQ(screen.set_mode(640, 480, 32), kOk);
+    stand.preferred_width = 1024;
+    CHECK_EQ(screen.set_mode(320, 240, 32), kOk);
+    g_nocturne_fixed_display = 0;
+    int w = 0, h = 0;
+    SDL_GetWindowSize(g_sdlWindow, &w, &h);
+    CHECK_EQ(w, 320);
+    CHECK_EQ(h, 200);
 }
 
 // The accelerated renderer with vsync is asked for first, and taken when the

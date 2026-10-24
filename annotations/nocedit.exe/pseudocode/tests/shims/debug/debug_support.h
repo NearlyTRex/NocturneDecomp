@@ -8,7 +8,8 @@
 // cheat switches, the HUD's text drawing and the front-buffer dump, stood in
 // for and recording what they were handed; and a clock for the frame-rate
 // overlay, which this directory's build of perf_overlay.cpp reads in place of
-// SDL's performance counter (CMakeLists.txt beside this). A test sets the
+// SDL's performance counter (CMakeLists.txt beside this), with the GL
+// presenter's time in the swap on the same clock. A test sets the
 // answers it needs and reads back the rest; reset() puts both back.
 
 #include <string>
@@ -37,6 +38,9 @@ struct Stand {
 
     // The performance counter, in ticks of a 1000Hz frequency.
     unsigned long long counter = 0;
+
+    // The presenter's time in the swap so far, on the same clock.
+    unsigned long long swap_ticks = 0;
 
     // What nocturne_dump_frontbuffer answers, and the paths it was asked for.
     int dump_result = 0;

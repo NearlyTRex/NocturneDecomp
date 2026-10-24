@@ -330,23 +330,26 @@ int _mkdir(const char* path) {
 // File Attribute Functions (io.h)
 // =============================================================================
 
-#if !defined(_WIN32)
-
 // Watcom maps the mode onto the one attribute Windows has: read-only unless
-// S_IWRITE (0x80) is set. Owner write is the POSIX equivalent.
+// S_IWRITE (0x80) is set. Writable gives the owner write; read-only takes write
+// from everyone, since Microsoft's std::filesystem sets the attribute only once
+// no write bit is left.
 int _chmod(const char* path, int mode) {
     namespace fs = std::filesystem;
     std::error_code ec;
-    fs::permissions(fs::path(watcom_resolve_fs_path(path)), fs::perms::owner_write,
-                    (mode & 0x80) ? fs::perm_options::add : fs::perm_options::remove, ec);
+    const bool writable = (mode & 0x80) != 0;
+    fs::permissions(fs::path(watcom_resolve_fs_path(path)),
+                    writable ? fs::perms::owner_write
+                             : fs::perms::owner_write | fs::perms::group_write |
+                                   fs::perms::others_write,
+                    writable ? fs::perm_options::add : fs::perm_options::remove, ec);
     if (ec) {
-        errno = ec.value();
+        // Windows reports its own error numbers; the condition is the errno.
+        errno = ec.default_error_condition().value();
         return -1;
     }
     return 0;
 }
-
-#endif
 
 // =============================================================================
 // Heap Functions (malloc.h)

@@ -3,7 +3,7 @@
 # The two mingw lanes link libstdc++ and msvcrt/UCRT through gcc's runtime. This
 # one links the Microsoft STL and UCRT, which is what a Visual Studio build, a
 # UWP or Xbox build, and most Windows tooling expect. clang-cl rather than cl.exe
-# keeps the clang warning set in CMakeLists.txt meaningful on this lane too.
+# keeps the clang warning set in cmake/compile_flags.cmake meaningful on this lane too.
 #
 # Two hosts:
 #   Windows  Run from a Visual Studio developer prompt (vcvars), with the

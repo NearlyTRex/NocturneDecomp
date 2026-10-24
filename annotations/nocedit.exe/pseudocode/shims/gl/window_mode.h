@@ -32,6 +32,14 @@ enum {
     NOCTURNE_WINDOW_MODE_COUNT      = 3
 };
 
+// 1 where the window is the whole screen and nothing may size it: a console, a
+// packaged app. A platform file sets NOCTURNE_PLATFORM_FIXED_DISPLAY=1 for it.
+// The window is then made full-screen and never resized or moved, the mode is
+// always borderless and never cycles or applies, and the Graphics Options
+// screen leaves its Window line out. The render resolution still changes; the
+// presenter scales it to the screen.
+extern int g_nocturne_fixed_display;
+
 // Current mode, loaded from the INI on first call. Defaults to windowed.
 int nocturne_window_mode_get(void);
 

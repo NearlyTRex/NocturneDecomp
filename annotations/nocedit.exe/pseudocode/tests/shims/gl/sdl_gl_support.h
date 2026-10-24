@@ -30,6 +30,8 @@ struct Stand {
 
     int contexts = 0;                 // made and not deleted
     int swaps = 0;
+    unsigned long long counter = 0;   // SDL_GetPerformanceCounter
+    unsigned long long swap_cost = 0; // what each swap advances it by
     std::vector<int> intervals;       // asked of SDL_GL_SetSwapInterval
 
     void reset() { *this = Stand(); }

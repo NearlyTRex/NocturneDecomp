@@ -11,6 +11,7 @@
 
 #include "core/debug_log.h"
 
+#include <cstdint>
 #include <cstdio>
 
 #if NOCTURNE_AUTHENTIC_RNG
@@ -94,8 +95,8 @@ static unsigned int s_draw_index = 0;
 // the same binary.
 static long rng_caller_offset(void *caller)
 {
-    return (long)((const char *)caller -
-                  (const char *)(const void *)&core_actor_cpp_generateRandomValue_FUN_0040cba0);
+    return (long)((intptr_t)caller -
+                  (intptr_t)&core_actor_cpp_generateRandomValue_FUN_0040cba0);
 }
 
 static FILE *rng_draw_log(void)

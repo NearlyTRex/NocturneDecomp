@@ -1,7 +1,7 @@
 # Platform files
 
 Everything the build does differently per target operating system lives in one file here,
-included early by the top-level `CMakeLists.txt`. The rest of the build is the same on every
+included early by `cmake/platform.cmake`. The rest of the build is the same on every
 platform.
 
 `NOCTURNE_PLATFORM` names the file: `linux`, `windows` or `macos`, derived from
@@ -22,9 +22,10 @@ All variables are optional; the defaults are the empty list or `OFF`.
 | `NOCTURNE_PLATFORM_SHIM_EXCLUDE` | Regexes matched against shim source paths; matches are not built. Picks one socket backend. |
 | `NOCTURNE_PLATFORM_SOURCES` | Extra sources compiled into the shim library: a port's own OS adapters. |
 | `NOCTURNE_PLATFORM_INCLUDE_DIRS` | Extra include directories for the shim library. |
-| `NOCTURNE_PLATFORM_DEFINITIONS` | Extra compile definitions for the shim library. The data and user directories are set here: `NOCTURNE_DEFAULT_DATA_DIR="<dir>"` and `NOCTURNE_DEFAULT_USER_DIR="<dir>"`, or `NOCTURNE_USER_DIR_FROM_SDL` for `SDL_GetPrefPath`'s answer, or `NOCTURNE_DATA_DIR_FROM_SDL` to make that folder the data directory too (`shims/core/path_roots.h`). |
+| `NOCTURNE_PLATFORM_DEFINITIONS` | Extra compile definitions for the shim library. The data and user directories are set here: `NOCTURNE_DEFAULT_DATA_DIR="<dir>"` and `NOCTURNE_DEFAULT_USER_DIR="<dir>"`, or `NOCTURNE_USER_DIR_FROM_SDL` for `SDL_GetPrefPath`'s answer, or `NOCTURNE_DATA_DIR_FROM_SDL` to make that folder the data directory too (`shims/core/path_roots.h`). A console's switches go here too: `NOCTURNE_PLATFORM_FIXED_DISPLAY`, `NOCTURNE_PLATFORM_NO_QUIT` and `NOCTURNE_PLATFORM_CRASH_SIGNALS`, under "Consoles and packaged apps" in `docs/porting.md`. |
 | `NOCTURNE_PLATFORM_LIBRARIES` | Extra libraries linked into the executable. |
 | `NOCTURNE_PLATFORM_LAUNCHERS` | `ON` to generate the bash `run.sh` / `debug.sh` beside the binary. |
+| `NOCTURNE_PLATFORM_SDL_MAIN` | `ON` where SDL runs the app from an entry point of its own (WinRT, and SDL's ports that do the same): `main/main.cpp` includes `SDL_main.h`, which names its `main` `SDL_main` for SDL to call. The port's sources then carry SDL's own entry, such as `SDL_winrt_main_NonXAML.cpp`. |
 | `NOCTURNE_LAUNCHER_EXE` | The binary those launchers run, relative to the build directory. Defaults to `nocturne`; an app bundle names the binary inside it. |
 | `NOCTURNE_DEPENDENCIES_FILE` | The file that provides SDL2, SDL2_ttf and FFmpeg. Defaults to `cmake/bundledlibs.cmake`. |
 | `NOCTURNE_FFMPEG_TARGET_OS` | FFmpeg's `--target-os`, for the bundled build. |
